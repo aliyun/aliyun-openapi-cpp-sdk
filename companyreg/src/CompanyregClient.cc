@@ -51,1152 +51,1908 @@ CompanyregClient::CompanyregClient(const std::string & accessKeyId, const std::s
 CompanyregClient::~CompanyregClient()
 {}
 
-CompanyregClient::AcceptBookkeepingAuditResultOutcome CompanyregClient::acceptBookkeepingAuditResult(const AcceptBookkeepingAuditResultRequest &request) const
+CompanyregClient::CheckCopyPayrollOutcome CompanyregClient::checkCopyPayroll(const CheckCopyPayrollRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return AcceptBookkeepingAuditResultOutcome(endpointOutcome.error());
+		return CheckCopyPayrollOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return AcceptBookkeepingAuditResultOutcome(AcceptBookkeepingAuditResultResult(outcome.result()));
+		return CheckCopyPayrollOutcome(CheckCopyPayrollResult(outcome.result()));
 	else
-		return AcceptBookkeepingAuditResultOutcome(outcome.error());
+		return CheckCopyPayrollOutcome(outcome.error());
 }
 
-void CompanyregClient::acceptBookkeepingAuditResultAsync(const AcceptBookkeepingAuditResultRequest& request, const AcceptBookkeepingAuditResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CompanyregClient::checkCopyPayrollAsync(const CheckCopyPayrollRequest& request, const CheckCopyPayrollAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, acceptBookkeepingAuditResult(request), context);
+		handler(this, request, checkCopyPayroll(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CompanyregClient::AcceptBookkeepingAuditResultOutcomeCallable CompanyregClient::acceptBookkeepingAuditResultCallable(const AcceptBookkeepingAuditResultRequest &request) const
+CompanyregClient::CheckCopyPayrollOutcomeCallable CompanyregClient::checkCopyPayrollCallable(const CheckCopyPayrollRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<AcceptBookkeepingAuditResultOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<CheckCopyPayrollOutcome()>>(
 			[this, request]()
 			{
-			return this->acceptBookkeepingAuditResult(request);
+			return this->checkCopyPayroll(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-CompanyregClient::AcceptBookkeepingDetailStatusChangeOutcome CompanyregClient::acceptBookkeepingDetailStatusChange(const AcceptBookkeepingDetailStatusChangeRequest &request) const
+CompanyregClient::CheckSavePayrollOutcome CompanyregClient::checkSavePayroll(const CheckSavePayrollRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return AcceptBookkeepingDetailStatusChangeOutcome(endpointOutcome.error());
+		return CheckSavePayrollOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return AcceptBookkeepingDetailStatusChangeOutcome(AcceptBookkeepingDetailStatusChangeResult(outcome.result()));
+		return CheckSavePayrollOutcome(CheckSavePayrollResult(outcome.result()));
 	else
-		return AcceptBookkeepingDetailStatusChangeOutcome(outcome.error());
+		return CheckSavePayrollOutcome(outcome.error());
 }
 
-void CompanyregClient::acceptBookkeepingDetailStatusChangeAsync(const AcceptBookkeepingDetailStatusChangeRequest& request, const AcceptBookkeepingDetailStatusChangeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CompanyregClient::checkSavePayrollAsync(const CheckSavePayrollRequest& request, const CheckSavePayrollAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, acceptBookkeepingDetailStatusChange(request), context);
+		handler(this, request, checkSavePayroll(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CompanyregClient::AcceptBookkeepingDetailStatusChangeOutcomeCallable CompanyregClient::acceptBookkeepingDetailStatusChangeCallable(const AcceptBookkeepingDetailStatusChangeRequest &request) const
+CompanyregClient::CheckSavePayrollOutcomeCallable CompanyregClient::checkSavePayrollCallable(const CheckSavePayrollRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<AcceptBookkeepingDetailStatusChangeOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<CheckSavePayrollOutcome()>>(
 			[this, request]()
 			{
-			return this->acceptBookkeepingDetailStatusChange(request);
+			return this->checkSavePayroll(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-CompanyregClient::AcceptPartnerNotificationOutcome CompanyregClient::acceptPartnerNotification(const AcceptPartnerNotificationRequest &request) const
+CompanyregClient::CheckSavePayrollDetailOutcome CompanyregClient::checkSavePayrollDetail(const CheckSavePayrollDetailRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return AcceptPartnerNotificationOutcome(endpointOutcome.error());
+		return CheckSavePayrollDetailOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return AcceptPartnerNotificationOutcome(AcceptPartnerNotificationResult(outcome.result()));
+		return CheckSavePayrollDetailOutcome(CheckSavePayrollDetailResult(outcome.result()));
 	else
-		return AcceptPartnerNotificationOutcome(outcome.error());
+		return CheckSavePayrollDetailOutcome(outcome.error());
 }
 
-void CompanyregClient::acceptPartnerNotificationAsync(const AcceptPartnerNotificationRequest& request, const AcceptPartnerNotificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CompanyregClient::checkSavePayrollDetailAsync(const CheckSavePayrollDetailRequest& request, const CheckSavePayrollDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, acceptPartnerNotification(request), context);
+		handler(this, request, checkSavePayrollDetail(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CompanyregClient::AcceptPartnerNotificationOutcomeCallable CompanyregClient::acceptPartnerNotificationCallable(const AcceptPartnerNotificationRequest &request) const
+CompanyregClient::CheckSavePayrollDetailOutcomeCallable CompanyregClient::checkSavePayrollDetailCallable(const CheckSavePayrollDetailRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<AcceptPartnerNotificationOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<CheckSavePayrollDetailOutcome()>>(
 			[this, request]()
 			{
-			return this->acceptPartnerNotification(request);
+			return this->checkSavePayrollDetail(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-CompanyregClient::CloseIcpProduceOutcome CompanyregClient::closeIcpProduce(const CloseIcpProduceRequest &request) const
+CompanyregClient::ClearTrailDataOutcome CompanyregClient::clearTrailData(const ClearTrailDataRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return CloseIcpProduceOutcome(endpointOutcome.error());
+		return ClearTrailDataOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return CloseIcpProduceOutcome(CloseIcpProduceResult(outcome.result()));
+		return ClearTrailDataOutcome(ClearTrailDataResult(outcome.result()));
 	else
-		return CloseIcpProduceOutcome(outcome.error());
+		return ClearTrailDataOutcome(outcome.error());
 }
 
-void CompanyregClient::closeIcpProduceAsync(const CloseIcpProduceRequest& request, const CloseIcpProduceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CompanyregClient::clearTrailDataAsync(const ClearTrailDataRequest& request, const ClearTrailDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, closeIcpProduce(request), context);
+		handler(this, request, clearTrailData(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CompanyregClient::CloseIcpProduceOutcomeCallable CompanyregClient::closeIcpProduceCallable(const CloseIcpProduceRequest &request) const
+CompanyregClient::ClearTrailDataOutcomeCallable CompanyregClient::clearTrailDataCallable(const ClearTrailDataRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<CloseIcpProduceOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ClearTrailDataOutcome()>>(
 			[this, request]()
 			{
-			return this->closeIcpProduce(request);
+			return this->clearTrailData(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-CompanyregClient::CloseIntentionOutcome CompanyregClient::closeIntention(const CloseIntentionRequest &request) const
+CompanyregClient::ConvertFeeOutcome CompanyregClient::convertFee(const ConvertFeeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return CloseIntentionOutcome(endpointOutcome.error());
+		return ConvertFeeOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return CloseIntentionOutcome(CloseIntentionResult(outcome.result()));
+		return ConvertFeeOutcome(ConvertFeeResult(outcome.result()));
 	else
-		return CloseIntentionOutcome(outcome.error());
+		return ConvertFeeOutcome(outcome.error());
 }
 
-void CompanyregClient::closeIntentionAsync(const CloseIntentionRequest& request, const CloseIntentionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CompanyregClient::convertFeeAsync(const ConvertFeeRequest& request, const ConvertFeeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, closeIntention(request), context);
+		handler(this, request, convertFee(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CompanyregClient::CloseIntentionOutcomeCallable CompanyregClient::closeIntentionCallable(const CloseIntentionRequest &request) const
+CompanyregClient::ConvertFeeOutcomeCallable CompanyregClient::convertFeeCallable(const ConvertFeeRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<CloseIntentionOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ConvertFeeOutcome()>>(
 			[this, request]()
 			{
-			return this->closeIntention(request);
+			return this->convertFee(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-CompanyregClient::ConfirmIntentionOutcome CompanyregClient::confirmIntention(const ConfirmIntentionRequest &request) const
+CompanyregClient::ConvertInvoiceOutcome CompanyregClient::convertInvoice(const ConvertInvoiceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ConfirmIntentionOutcome(endpointOutcome.error());
+		return ConvertInvoiceOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ConfirmIntentionOutcome(ConfirmIntentionResult(outcome.result()));
+		return ConvertInvoiceOutcome(ConvertInvoiceResult(outcome.result()));
 	else
-		return ConfirmIntentionOutcome(outcome.error());
+		return ConvertInvoiceOutcome(outcome.error());
 }
 
-void CompanyregClient::confirmIntentionAsync(const ConfirmIntentionRequest& request, const ConfirmIntentionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CompanyregClient::convertInvoiceAsync(const ConvertInvoiceRequest& request, const ConvertInvoiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, confirmIntention(request), context);
+		handler(this, request, convertInvoice(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CompanyregClient::ConfirmIntentionOutcomeCallable CompanyregClient::confirmIntentionCallable(const ConfirmIntentionRequest &request) const
+CompanyregClient::ConvertInvoiceOutcomeCallable CompanyregClient::convertInvoiceCallable(const ConvertInvoiceRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ConfirmIntentionOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ConvertInvoiceOutcome()>>(
 			[this, request]()
 			{
-			return this->confirmIntention(request);
+			return this->convertInvoice(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-CompanyregClient::ConfirmMaterialOutcome CompanyregClient::confirmMaterial(const ConfirmMaterialRequest &request) const
+CompanyregClient::CopyPayrollOutcome CompanyregClient::copyPayroll(const CopyPayrollRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ConfirmMaterialOutcome(endpointOutcome.error());
+		return CopyPayrollOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ConfirmMaterialOutcome(ConfirmMaterialResult(outcome.result()));
+		return CopyPayrollOutcome(CopyPayrollResult(outcome.result()));
 	else
-		return ConfirmMaterialOutcome(outcome.error());
+		return CopyPayrollOutcome(outcome.error());
 }
 
-void CompanyregClient::confirmMaterialAsync(const ConfirmMaterialRequest& request, const ConfirmMaterialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CompanyregClient::copyPayrollAsync(const CopyPayrollRequest& request, const CopyPayrollAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, confirmMaterial(request), context);
+		handler(this, request, copyPayroll(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CompanyregClient::ConfirmMaterialOutcomeCallable CompanyregClient::confirmMaterialCallable(const ConfirmMaterialRequest &request) const
+CompanyregClient::CopyPayrollOutcomeCallable CompanyregClient::copyPayrollCallable(const CopyPayrollRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ConfirmMaterialOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<CopyPayrollOutcome()>>(
 			[this, request]()
 			{
-			return this->confirmMaterial(request);
+			return this->copyPayroll(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-CompanyregClient::ConfirmTaxAmountOutcome CompanyregClient::confirmTaxAmount(const ConfirmTaxAmountRequest &request) const
+CompanyregClient::DeleteFeeOutcome CompanyregClient::deleteFee(const DeleteFeeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ConfirmTaxAmountOutcome(endpointOutcome.error());
+		return DeleteFeeOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ConfirmTaxAmountOutcome(ConfirmTaxAmountResult(outcome.result()));
+		return DeleteFeeOutcome(DeleteFeeResult(outcome.result()));
 	else
-		return ConfirmTaxAmountOutcome(outcome.error());
+		return DeleteFeeOutcome(outcome.error());
 }
 
-void CompanyregClient::confirmTaxAmountAsync(const ConfirmTaxAmountRequest& request, const ConfirmTaxAmountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CompanyregClient::deleteFeeAsync(const DeleteFeeRequest& request, const DeleteFeeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, confirmTaxAmount(request), context);
+		handler(this, request, deleteFee(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CompanyregClient::ConfirmTaxAmountOutcomeCallable CompanyregClient::confirmTaxAmountCallable(const ConfirmTaxAmountRequest &request) const
+CompanyregClient::DeleteFeeOutcomeCallable CompanyregClient::deleteFeeCallable(const DeleteFeeRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ConfirmTaxAmountOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DeleteFeeOutcome()>>(
 			[this, request]()
 			{
-			return this->confirmTaxAmount(request);
+			return this->deleteFee(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-CompanyregClient::CreateBookkeepingIntentionOutcome CompanyregClient::createBookkeepingIntention(const CreateBookkeepingIntentionRequest &request) const
+CompanyregClient::DeleteInvoiceOutcome CompanyregClient::deleteInvoice(const DeleteInvoiceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return CreateBookkeepingIntentionOutcome(endpointOutcome.error());
+		return DeleteInvoiceOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return CreateBookkeepingIntentionOutcome(CreateBookkeepingIntentionResult(outcome.result()));
+		return DeleteInvoiceOutcome(DeleteInvoiceResult(outcome.result()));
 	else
-		return CreateBookkeepingIntentionOutcome(outcome.error());
+		return DeleteInvoiceOutcome(outcome.error());
 }
 
-void CompanyregClient::createBookkeepingIntentionAsync(const CreateBookkeepingIntentionRequest& request, const CreateBookkeepingIntentionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CompanyregClient::deleteInvoiceAsync(const DeleteInvoiceRequest& request, const DeleteInvoiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, createBookkeepingIntention(request), context);
+		handler(this, request, deleteInvoice(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CompanyregClient::CreateBookkeepingIntentionOutcomeCallable CompanyregClient::createBookkeepingIntentionCallable(const CreateBookkeepingIntentionRequest &request) const
+CompanyregClient::DeleteInvoiceOutcomeCallable CompanyregClient::deleteInvoiceCallable(const DeleteInvoiceRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<CreateBookkeepingIntentionOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DeleteInvoiceOutcome()>>(
 			[this, request]()
 			{
-			return this->createBookkeepingIntention(request);
+			return this->deleteInvoice(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-CompanyregClient::GenerateCompanyRegUploadPolicyOutcome CompanyregClient::generateCompanyRegUploadPolicy(const GenerateCompanyRegUploadPolicyRequest &request) const
+CompanyregClient::DeletePayrollOutcome CompanyregClient::deletePayroll(const DeletePayrollRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return GenerateCompanyRegUploadPolicyOutcome(endpointOutcome.error());
+		return DeletePayrollOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return GenerateCompanyRegUploadPolicyOutcome(GenerateCompanyRegUploadPolicyResult(outcome.result()));
+		return DeletePayrollOutcome(DeletePayrollResult(outcome.result()));
 	else
-		return GenerateCompanyRegUploadPolicyOutcome(outcome.error());
+		return DeletePayrollOutcome(outcome.error());
 }
 
-void CompanyregClient::generateCompanyRegUploadPolicyAsync(const GenerateCompanyRegUploadPolicyRequest& request, const GenerateCompanyRegUploadPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CompanyregClient::deletePayrollAsync(const DeletePayrollRequest& request, const DeletePayrollAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, generateCompanyRegUploadPolicy(request), context);
+		handler(this, request, deletePayroll(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CompanyregClient::GenerateCompanyRegUploadPolicyOutcomeCallable CompanyregClient::generateCompanyRegUploadPolicyCallable(const GenerateCompanyRegUploadPolicyRequest &request) const
+CompanyregClient::DeletePayrollOutcomeCallable CompanyregClient::deletePayrollCallable(const DeletePayrollRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<GenerateCompanyRegUploadPolicyOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DeletePayrollOutcome()>>(
 			[this, request]()
 			{
-			return this->generateCompanyRegUploadPolicy(request);
+			return this->deletePayroll(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-CompanyregClient::GenerateUploadFilePolicyOutcome CompanyregClient::generateUploadFilePolicy(const GenerateUploadFilePolicyRequest &request) const
+CompanyregClient::GetBalanceSheetInfoOutcome CompanyregClient::getBalanceSheetInfo(const GetBalanceSheetInfoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return GenerateUploadFilePolicyOutcome(endpointOutcome.error());
+		return GetBalanceSheetInfoOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return GenerateUploadFilePolicyOutcome(GenerateUploadFilePolicyResult(outcome.result()));
+		return GetBalanceSheetInfoOutcome(GetBalanceSheetInfoResult(outcome.result()));
 	else
-		return GenerateUploadFilePolicyOutcome(outcome.error());
+		return GetBalanceSheetInfoOutcome(outcome.error());
 }
 
-void CompanyregClient::generateUploadFilePolicyAsync(const GenerateUploadFilePolicyRequest& request, const GenerateUploadFilePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CompanyregClient::getBalanceSheetInfoAsync(const GetBalanceSheetInfoRequest& request, const GetBalanceSheetInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, generateUploadFilePolicy(request), context);
+		handler(this, request, getBalanceSheetInfo(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CompanyregClient::GenerateUploadFilePolicyOutcomeCallable CompanyregClient::generateUploadFilePolicyCallable(const GenerateUploadFilePolicyRequest &request) const
+CompanyregClient::GetBalanceSheetInfoOutcomeCallable CompanyregClient::getBalanceSheetInfoCallable(const GetBalanceSheetInfoRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<GenerateUploadFilePolicyOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<GetBalanceSheetInfoOutcome()>>(
 			[this, request]()
 			{
-			return this->generateUploadFilePolicy(request);
+			return this->getBalanceSheetInfo(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-CompanyregClient::GetCompanyRegOrderOutcome CompanyregClient::getCompanyRegOrder(const GetCompanyRegOrderRequest &request) const
+CompanyregClient::GetCashFlowInfoOutcome CompanyregClient::getCashFlowInfo(const GetCashFlowInfoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return GetCompanyRegOrderOutcome(endpointOutcome.error());
+		return GetCashFlowInfoOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return GetCompanyRegOrderOutcome(GetCompanyRegOrderResult(outcome.result()));
+		return GetCashFlowInfoOutcome(GetCashFlowInfoResult(outcome.result()));
 	else
-		return GetCompanyRegOrderOutcome(outcome.error());
+		return GetCashFlowInfoOutcome(outcome.error());
 }
 
-void CompanyregClient::getCompanyRegOrderAsync(const GetCompanyRegOrderRequest& request, const GetCompanyRegOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CompanyregClient::getCashFlowInfoAsync(const GetCashFlowInfoRequest& request, const GetCashFlowInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, getCompanyRegOrder(request), context);
+		handler(this, request, getCashFlowInfo(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CompanyregClient::GetCompanyRegOrderOutcomeCallable CompanyregClient::getCompanyRegOrderCallable(const GetCompanyRegOrderRequest &request) const
+CompanyregClient::GetCashFlowInfoOutcomeCallable CompanyregClient::getCashFlowInfoCallable(const GetCashFlowInfoRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<GetCompanyRegOrderOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<GetCashFlowInfoOutcome()>>(
 			[this, request]()
 			{
-			return this->getCompanyRegOrder(request);
+			return this->getCashFlowInfo(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-CompanyregClient::ListApplicationLogsOutcome CompanyregClient::listApplicationLogs(const ListApplicationLogsRequest &request) const
+CompanyregClient::GetEnterprisesInfoOutcome CompanyregClient::getEnterprisesInfo(const GetEnterprisesInfoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ListApplicationLogsOutcome(endpointOutcome.error());
+		return GetEnterprisesInfoOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ListApplicationLogsOutcome(ListApplicationLogsResult(outcome.result()));
+		return GetEnterprisesInfoOutcome(GetEnterprisesInfoResult(outcome.result()));
 	else
-		return ListApplicationLogsOutcome(outcome.error());
+		return GetEnterprisesInfoOutcome(outcome.error());
 }
 
-void CompanyregClient::listApplicationLogsAsync(const ListApplicationLogsRequest& request, const ListApplicationLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CompanyregClient::getEnterprisesInfoAsync(const GetEnterprisesInfoRequest& request, const GetEnterprisesInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, listApplicationLogs(request), context);
+		handler(this, request, getEnterprisesInfo(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CompanyregClient::ListApplicationLogsOutcomeCallable CompanyregClient::listApplicationLogsCallable(const ListApplicationLogsRequest &request) const
+CompanyregClient::GetEnterprisesInfoOutcomeCallable CompanyregClient::getEnterprisesInfoCallable(const GetEnterprisesInfoRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ListApplicationLogsOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<GetEnterprisesInfoOutcome()>>(
 			[this, request]()
 			{
-			return this->listApplicationLogs(request);
+			return this->getEnterprisesInfo(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-CompanyregClient::ListBookkeepingStatisticsesOutcome CompanyregClient::listBookkeepingStatisticses(const ListBookkeepingStatisticsesRequest &request) const
+CompanyregClient::GetFeeOutcome CompanyregClient::getFee(const GetFeeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ListBookkeepingStatisticsesOutcome(endpointOutcome.error());
+		return GetFeeOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ListBookkeepingStatisticsesOutcome(ListBookkeepingStatisticsesResult(outcome.result()));
+		return GetFeeOutcome(GetFeeResult(outcome.result()));
 	else
-		return ListBookkeepingStatisticsesOutcome(outcome.error());
+		return GetFeeOutcome(outcome.error());
 }
 
-void CompanyregClient::listBookkeepingStatisticsesAsync(const ListBookkeepingStatisticsesRequest& request, const ListBookkeepingStatisticsesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CompanyregClient::getFeeAsync(const GetFeeRequest& request, const GetFeeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, listBookkeepingStatisticses(request), context);
+		handler(this, request, getFee(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CompanyregClient::ListBookkeepingStatisticsesOutcomeCallable CompanyregClient::listBookkeepingStatisticsesCallable(const ListBookkeepingStatisticsesRequest &request) const
+CompanyregClient::GetFeeOutcomeCallable CompanyregClient::getFeeCallable(const GetFeeRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ListBookkeepingStatisticsesOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<GetFeeOutcome()>>(
 			[this, request]()
 			{
-			return this->listBookkeepingStatisticses(request);
+			return this->getFee(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-CompanyregClient::ListBookkeepingSubjectBalancesOutcome CompanyregClient::listBookkeepingSubjectBalances(const ListBookkeepingSubjectBalancesRequest &request) const
+CompanyregClient::GetHomePageOutcome CompanyregClient::getHomePage(const GetHomePageRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ListBookkeepingSubjectBalancesOutcome(endpointOutcome.error());
+		return GetHomePageOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ListBookkeepingSubjectBalancesOutcome(ListBookkeepingSubjectBalancesResult(outcome.result()));
+		return GetHomePageOutcome(GetHomePageResult(outcome.result()));
 	else
-		return ListBookkeepingSubjectBalancesOutcome(outcome.error());
+		return GetHomePageOutcome(outcome.error());
 }
 
-void CompanyregClient::listBookkeepingSubjectBalancesAsync(const ListBookkeepingSubjectBalancesRequest& request, const ListBookkeepingSubjectBalancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CompanyregClient::getHomePageAsync(const GetHomePageRequest& request, const GetHomePageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, listBookkeepingSubjectBalances(request), context);
+		handler(this, request, getHomePage(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CompanyregClient::ListBookkeepingSubjectBalancesOutcomeCallable CompanyregClient::listBookkeepingSubjectBalancesCallable(const ListBookkeepingSubjectBalancesRequest &request) const
+CompanyregClient::GetHomePageOutcomeCallable CompanyregClient::getHomePageCallable(const GetHomePageRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ListBookkeepingSubjectBalancesOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<GetHomePageOutcome()>>(
 			[this, request]()
 			{
-			return this->listBookkeepingSubjectBalances(request);
+			return this->getHomePage(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-CompanyregClient::ListBookkeepingsOutcome CompanyregClient::listBookkeepings(const ListBookkeepingsRequest &request) const
+CompanyregClient::GetIncomeStatementInfoOutcome CompanyregClient::getIncomeStatementInfo(const GetIncomeStatementInfoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ListBookkeepingsOutcome(endpointOutcome.error());
+		return GetIncomeStatementInfoOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ListBookkeepingsOutcome(ListBookkeepingsResult(outcome.result()));
+		return GetIncomeStatementInfoOutcome(GetIncomeStatementInfoResult(outcome.result()));
 	else
-		return ListBookkeepingsOutcome(outcome.error());
+		return GetIncomeStatementInfoOutcome(outcome.error());
 }
 
-void CompanyregClient::listBookkeepingsAsync(const ListBookkeepingsRequest& request, const ListBookkeepingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CompanyregClient::getIncomeStatementInfoAsync(const GetIncomeStatementInfoRequest& request, const GetIncomeStatementInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, listBookkeepings(request), context);
+		handler(this, request, getIncomeStatementInfo(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CompanyregClient::ListBookkeepingsOutcomeCallable CompanyregClient::listBookkeepingsCallable(const ListBookkeepingsRequest &request) const
+CompanyregClient::GetIncomeStatementInfoOutcomeCallable CompanyregClient::getIncomeStatementInfoCallable(const GetIncomeStatementInfoRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ListBookkeepingsOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<GetIncomeStatementInfoOutcome()>>(
 			[this, request]()
 			{
-			return this->listBookkeepings(request);
+			return this->getIncomeStatementInfo(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-CompanyregClient::ListCompanyRegConsultationsOutcome CompanyregClient::listCompanyRegConsultations(const ListCompanyRegConsultationsRequest &request) const
+CompanyregClient::GetIndustryCommerceInfoOutcome CompanyregClient::getIndustryCommerceInfo(const GetIndustryCommerceInfoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ListCompanyRegConsultationsOutcome(endpointOutcome.error());
+		return GetIndustryCommerceInfoOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ListCompanyRegConsultationsOutcome(ListCompanyRegConsultationsResult(outcome.result()));
+		return GetIndustryCommerceInfoOutcome(GetIndustryCommerceInfoResult(outcome.result()));
 	else
-		return ListCompanyRegConsultationsOutcome(outcome.error());
+		return GetIndustryCommerceInfoOutcome(outcome.error());
 }
 
-void CompanyregClient::listCompanyRegConsultationsAsync(const ListCompanyRegConsultationsRequest& request, const ListCompanyRegConsultationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CompanyregClient::getIndustryCommerceInfoAsync(const GetIndustryCommerceInfoRequest& request, const GetIndustryCommerceInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, listCompanyRegConsultations(request), context);
+		handler(this, request, getIndustryCommerceInfo(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CompanyregClient::ListCompanyRegConsultationsOutcomeCallable CompanyregClient::listCompanyRegConsultationsCallable(const ListCompanyRegConsultationsRequest &request) const
+CompanyregClient::GetIndustryCommerceInfoOutcomeCallable CompanyregClient::getIndustryCommerceInfoCallable(const GetIndustryCommerceInfoRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ListCompanyRegConsultationsOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<GetIndustryCommerceInfoOutcome()>>(
 			[this, request]()
 			{
-			return this->listCompanyRegConsultations(request);
+			return this->getIndustryCommerceInfo(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-CompanyregClient::ListCompanyRegOrdersOutcome CompanyregClient::listCompanyRegOrders(const ListCompanyRegOrdersRequest &request) const
+CompanyregClient::GetInitFlowOutcome CompanyregClient::getInitFlow(const GetInitFlowRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ListCompanyRegOrdersOutcome(endpointOutcome.error());
+		return GetInitFlowOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ListCompanyRegOrdersOutcome(ListCompanyRegOrdersResult(outcome.result()));
+		return GetInitFlowOutcome(GetInitFlowResult(outcome.result()));
 	else
-		return ListCompanyRegOrdersOutcome(outcome.error());
+		return GetInitFlowOutcome(outcome.error());
 }
 
-void CompanyregClient::listCompanyRegOrdersAsync(const ListCompanyRegOrdersRequest& request, const ListCompanyRegOrdersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CompanyregClient::getInitFlowAsync(const GetInitFlowRequest& request, const GetInitFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, listCompanyRegOrders(request), context);
+		handler(this, request, getInitFlow(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CompanyregClient::ListCompanyRegOrdersOutcomeCallable CompanyregClient::listCompanyRegOrdersCallable(const ListCompanyRegOrdersRequest &request) const
+CompanyregClient::GetInitFlowOutcomeCallable CompanyregClient::getInitFlowCallable(const GetInitFlowRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ListCompanyRegOrdersOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<GetInitFlowOutcome()>>(
 			[this, request]()
 			{
-			return this->listCompanyRegOrders(request);
+			return this->getInitFlow(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-CompanyregClient::ListIcpApplicationsOutcome CompanyregClient::listIcpApplications(const ListIcpApplicationsRequest &request) const
+CompanyregClient::GetInvoiceInfoOutcome CompanyregClient::getInvoiceInfo(const GetInvoiceInfoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ListIcpApplicationsOutcome(endpointOutcome.error());
+		return GetInvoiceInfoOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ListIcpApplicationsOutcome(ListIcpApplicationsResult(outcome.result()));
+		return GetInvoiceInfoOutcome(GetInvoiceInfoResult(outcome.result()));
 	else
-		return ListIcpApplicationsOutcome(outcome.error());
+		return GetInvoiceInfoOutcome(outcome.error());
 }
 
-void CompanyregClient::listIcpApplicationsAsync(const ListIcpApplicationsRequest& request, const ListIcpApplicationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CompanyregClient::getInvoiceInfoAsync(const GetInvoiceInfoRequest& request, const GetInvoiceInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, listIcpApplications(request), context);
+		handler(this, request, getInvoiceInfo(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CompanyregClient::ListIcpApplicationsOutcomeCallable CompanyregClient::listIcpApplicationsCallable(const ListIcpApplicationsRequest &request) const
+CompanyregClient::GetInvoiceInfoOutcomeCallable CompanyregClient::getInvoiceInfoCallable(const GetInvoiceInfoRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ListIcpApplicationsOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<GetInvoiceInfoOutcome()>>(
 			[this, request]()
 			{
-			return this->listIcpApplications(request);
+			return this->getInvoiceInfo(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-CompanyregClient::ProcessCompanyRegOrderOutcome CompanyregClient::processCompanyRegOrder(const ProcessCompanyRegOrderRequest &request) const
+CompanyregClient::GetLastMonthInvoiceCountOutcome CompanyregClient::getLastMonthInvoiceCount(const GetLastMonthInvoiceCountRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ProcessCompanyRegOrderOutcome(endpointOutcome.error());
+		return GetLastMonthInvoiceCountOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ProcessCompanyRegOrderOutcome(ProcessCompanyRegOrderResult(outcome.result()));
+		return GetLastMonthInvoiceCountOutcome(GetLastMonthInvoiceCountResult(outcome.result()));
 	else
-		return ProcessCompanyRegOrderOutcome(outcome.error());
+		return GetLastMonthInvoiceCountOutcome(outcome.error());
 }
 
-void CompanyregClient::processCompanyRegOrderAsync(const ProcessCompanyRegOrderRequest& request, const ProcessCompanyRegOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CompanyregClient::getLastMonthInvoiceCountAsync(const GetLastMonthInvoiceCountRequest& request, const GetLastMonthInvoiceCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, processCompanyRegOrder(request), context);
+		handler(this, request, getLastMonthInvoiceCount(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CompanyregClient::ProcessCompanyRegOrderOutcomeCallable CompanyregClient::processCompanyRegOrderCallable(const ProcessCompanyRegOrderRequest &request) const
+CompanyregClient::GetLastMonthInvoiceCountOutcomeCallable CompanyregClient::getLastMonthInvoiceCountCallable(const GetLastMonthInvoiceCountRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ProcessCompanyRegOrderOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<GetLastMonthInvoiceCountOutcome()>>(
 			[this, request]()
 			{
-			return this->processCompanyRegOrder(request);
+			return this->getLastMonthInvoiceCount(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-CompanyregClient::QueryCommunicationLogsOutcome CompanyregClient::queryCommunicationLogs(const QueryCommunicationLogsRequest &request) const
+CompanyregClient::GetNoticeOutcome CompanyregClient::getNotice(const GetNoticeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return QueryCommunicationLogsOutcome(endpointOutcome.error());
+		return GetNoticeOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return QueryCommunicationLogsOutcome(QueryCommunicationLogsResult(outcome.result()));
+		return GetNoticeOutcome(GetNoticeResult(outcome.result()));
 	else
-		return QueryCommunicationLogsOutcome(outcome.error());
+		return GetNoticeOutcome(outcome.error());
 }
 
-void CompanyregClient::queryCommunicationLogsAsync(const QueryCommunicationLogsRequest& request, const QueryCommunicationLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CompanyregClient::getNoticeAsync(const GetNoticeRequest& request, const GetNoticeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, queryCommunicationLogs(request), context);
+		handler(this, request, getNotice(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CompanyregClient::QueryCommunicationLogsOutcomeCallable CompanyregClient::queryCommunicationLogsCallable(const QueryCommunicationLogsRequest &request) const
+CompanyregClient::GetNoticeOutcomeCallable CompanyregClient::getNoticeCallable(const GetNoticeRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<QueryCommunicationLogsOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<GetNoticeOutcome()>>(
 			[this, request]()
 			{
-			return this->queryCommunicationLogs(request);
+			return this->getNotice(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-CompanyregClient::QueryIntentionListOutcome CompanyregClient::queryIntentionList(const QueryIntentionListRequest &request) const
+CompanyregClient::GetOssStsOutcome CompanyregClient::getOssSts(const GetOssStsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return QueryIntentionListOutcome(endpointOutcome.error());
+		return GetOssStsOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return QueryIntentionListOutcome(QueryIntentionListResult(outcome.result()));
+		return GetOssStsOutcome(GetOssStsResult(outcome.result()));
 	else
-		return QueryIntentionListOutcome(outcome.error());
+		return GetOssStsOutcome(outcome.error());
 }
 
-void CompanyregClient::queryIntentionListAsync(const QueryIntentionListRequest& request, const QueryIntentionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CompanyregClient::getOssStsAsync(const GetOssStsRequest& request, const GetOssStsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, queryIntentionList(request), context);
+		handler(this, request, getOssSts(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CompanyregClient::QueryIntentionListOutcomeCallable CompanyregClient::queryIntentionListCallable(const QueryIntentionListRequest &request) const
+CompanyregClient::GetOssStsOutcomeCallable CompanyregClient::getOssStsCallable(const GetOssStsRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<QueryIntentionListOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<GetOssStsOutcome()>>(
 			[this, request]()
 			{
-			return this->queryIntentionList(request);
+			return this->getOssSts(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-CompanyregClient::QueryTradeIntentionUserListOutcome CompanyregClient::queryTradeIntentionUserList(const QueryTradeIntentionUserListRequest &request) const
+CompanyregClient::GetPayrollInfoOutcome CompanyregClient::getPayrollInfo(const GetPayrollInfoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return QueryTradeIntentionUserListOutcome(endpointOutcome.error());
+		return GetPayrollInfoOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return QueryTradeIntentionUserListOutcome(QueryTradeIntentionUserListResult(outcome.result()));
+		return GetPayrollInfoOutcome(GetPayrollInfoResult(outcome.result()));
 	else
-		return QueryTradeIntentionUserListOutcome(outcome.error());
+		return GetPayrollInfoOutcome(outcome.error());
 }
 
-void CompanyregClient::queryTradeIntentionUserListAsync(const QueryTradeIntentionUserListRequest& request, const QueryTradeIntentionUserListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CompanyregClient::getPayrollInfoAsync(const GetPayrollInfoRequest& request, const GetPayrollInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, queryTradeIntentionUserList(request), context);
+		handler(this, request, getPayrollInfo(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CompanyregClient::QueryTradeIntentionUserListOutcomeCallable CompanyregClient::queryTradeIntentionUserListCallable(const QueryTradeIntentionUserListRequest &request) const
+CompanyregClient::GetPayrollInfoOutcomeCallable CompanyregClient::getPayrollInfoCallable(const GetPayrollInfoRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<QueryTradeIntentionUserListOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<GetPayrollInfoOutcome()>>(
 			[this, request]()
 			{
-			return this->queryTradeIntentionUserList(request);
+			return this->getPayrollInfo(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-CompanyregClient::RefuseMaterialOutcome CompanyregClient::refuseMaterial(const RefuseMaterialRequest &request) const
+CompanyregClient::GetPayrollSettingOutcome CompanyregClient::getPayrollSetting(const GetPayrollSettingRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return RefuseMaterialOutcome(endpointOutcome.error());
+		return GetPayrollSettingOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return RefuseMaterialOutcome(RefuseMaterialResult(outcome.result()));
+		return GetPayrollSettingOutcome(GetPayrollSettingResult(outcome.result()));
 	else
-		return RefuseMaterialOutcome(outcome.error());
+		return GetPayrollSettingOutcome(outcome.error());
 }
 
-void CompanyregClient::refuseMaterialAsync(const RefuseMaterialRequest& request, const RefuseMaterialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CompanyregClient::getPayrollSettingAsync(const GetPayrollSettingRequest& request, const GetPayrollSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, refuseMaterial(request), context);
+		handler(this, request, getPayrollSetting(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CompanyregClient::RefuseMaterialOutcomeCallable CompanyregClient::refuseMaterialCallable(const RefuseMaterialRequest &request) const
+CompanyregClient::GetPayrollSettingOutcomeCallable CompanyregClient::getPayrollSettingCallable(const GetPayrollSettingRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<RefuseMaterialOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<GetPayrollSettingOutcome()>>(
 			[this, request]()
 			{
-			return this->refuseMaterial(request);
+			return this->getPayrollSetting(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-CompanyregClient::RejectIcpIntentionOutcome CompanyregClient::rejectIcpIntention(const RejectIcpIntentionRequest &request) const
+CompanyregClient::GetPeriodInfoOutcome CompanyregClient::getPeriodInfo(const GetPeriodInfoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return RejectIcpIntentionOutcome(endpointOutcome.error());
+		return GetPeriodInfoOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return RejectIcpIntentionOutcome(RejectIcpIntentionResult(outcome.result()));
+		return GetPeriodInfoOutcome(GetPeriodInfoResult(outcome.result()));
 	else
-		return RejectIcpIntentionOutcome(outcome.error());
+		return GetPeriodInfoOutcome(outcome.error());
 }
 
-void CompanyregClient::rejectIcpIntentionAsync(const RejectIcpIntentionRequest& request, const RejectIcpIntentionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CompanyregClient::getPeriodInfoAsync(const GetPeriodInfoRequest& request, const GetPeriodInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, rejectIcpIntention(request), context);
+		handler(this, request, getPeriodInfo(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CompanyregClient::RejectIcpIntentionOutcomeCallable CompanyregClient::rejectIcpIntentionCallable(const RejectIcpIntentionRequest &request) const
+CompanyregClient::GetPeriodInfoOutcomeCallable CompanyregClient::getPeriodInfoCallable(const GetPeriodInfoRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<RejectIcpIntentionOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<GetPeriodInfoOutcome()>>(
 			[this, request]()
 			{
-			return this->rejectIcpIntention(request);
+			return this->getPeriodInfo(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-CompanyregClient::SendVcodeOutcome CompanyregClient::sendVcode(const SendVcodeRequest &request) const
+CompanyregClient::GetQuarterCashFlowInfoOutcome CompanyregClient::getQuarterCashFlowInfo(const GetQuarterCashFlowInfoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return SendVcodeOutcome(endpointOutcome.error());
+		return GetQuarterCashFlowInfoOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return SendVcodeOutcome(SendVcodeResult(outcome.result()));
+		return GetQuarterCashFlowInfoOutcome(GetQuarterCashFlowInfoResult(outcome.result()));
 	else
-		return SendVcodeOutcome(outcome.error());
+		return GetQuarterCashFlowInfoOutcome(outcome.error());
 }
 
-void CompanyregClient::sendVcodeAsync(const SendVcodeRequest& request, const SendVcodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CompanyregClient::getQuarterCashFlowInfoAsync(const GetQuarterCashFlowInfoRequest& request, const GetQuarterCashFlowInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, sendVcode(request), context);
+		handler(this, request, getQuarterCashFlowInfo(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CompanyregClient::SendVcodeOutcomeCallable CompanyregClient::sendVcodeCallable(const SendVcodeRequest &request) const
+CompanyregClient::GetQuarterCashFlowInfoOutcomeCallable CompanyregClient::getQuarterCashFlowInfoCallable(const GetQuarterCashFlowInfoRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<SendVcodeOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<GetQuarterCashFlowInfoOutcome()>>(
 			[this, request]()
 			{
-			return this->sendVcode(request);
+			return this->getQuarterCashFlowInfo(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-CompanyregClient::SubmitCommunicationNoteOutcome CompanyregClient::submitCommunicationNote(const SubmitCommunicationNoteRequest &request) const
+CompanyregClient::GetQuarterIncomeStatementInfoOutcome CompanyregClient::getQuarterIncomeStatementInfo(const GetQuarterIncomeStatementInfoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return SubmitCommunicationNoteOutcome(endpointOutcome.error());
+		return GetQuarterIncomeStatementInfoOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return SubmitCommunicationNoteOutcome(SubmitCommunicationNoteResult(outcome.result()));
+		return GetQuarterIncomeStatementInfoOutcome(GetQuarterIncomeStatementInfoResult(outcome.result()));
 	else
-		return SubmitCommunicationNoteOutcome(outcome.error());
+		return GetQuarterIncomeStatementInfoOutcome(outcome.error());
 }
 
-void CompanyregClient::submitCommunicationNoteAsync(const SubmitCommunicationNoteRequest& request, const SubmitCommunicationNoteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CompanyregClient::getQuarterIncomeStatementInfoAsync(const GetQuarterIncomeStatementInfoRequest& request, const GetQuarterIncomeStatementInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, submitCommunicationNote(request), context);
+		handler(this, request, getQuarterIncomeStatementInfo(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CompanyregClient::SubmitCommunicationNoteOutcomeCallable CompanyregClient::submitCommunicationNoteCallable(const SubmitCommunicationNoteRequest &request) const
+CompanyregClient::GetQuarterIncomeStatementInfoOutcomeCallable CompanyregClient::getQuarterIncomeStatementInfoCallable(const GetQuarterIncomeStatementInfoRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<SubmitCommunicationNoteOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<GetQuarterIncomeStatementInfoOutcome()>>(
 			[this, request]()
 			{
-			return this->submitCommunicationNote(request);
+			return this->getQuarterIncomeStatementInfo(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-CompanyregClient::SubmitConsultationOutcome CompanyregClient::submitConsultation(const SubmitConsultationRequest &request) const
+CompanyregClient::GetServiceInfoOutcome CompanyregClient::getServiceInfo(const GetServiceInfoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return SubmitConsultationOutcome(endpointOutcome.error());
+		return GetServiceInfoOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return SubmitConsultationOutcome(SubmitConsultationResult(outcome.result()));
+		return GetServiceInfoOutcome(GetServiceInfoResult(outcome.result()));
 	else
-		return SubmitConsultationOutcome(outcome.error());
+		return GetServiceInfoOutcome(outcome.error());
 }
 
-void CompanyregClient::submitConsultationAsync(const SubmitConsultationRequest& request, const SubmitConsultationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CompanyregClient::getServiceInfoAsync(const GetServiceInfoRequest& request, const GetServiceInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, submitConsultation(request), context);
+		handler(this, request, getServiceInfo(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CompanyregClient::SubmitConsultationOutcomeCallable CompanyregClient::submitConsultationCallable(const SubmitConsultationRequest &request) const
+CompanyregClient::GetServiceInfoOutcomeCallable CompanyregClient::getServiceInfoCallable(const GetServiceInfoRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<SubmitConsultationOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<GetServiceInfoOutcome()>>(
 			[this, request]()
 			{
-			return this->submitConsultation(request);
+			return this->getServiceInfo(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-CompanyregClient::SubmitIcpSolutionOutcome CompanyregClient::submitIcpSolution(const SubmitIcpSolutionRequest &request) const
+CompanyregClient::GetSsoUserInfoOutcome CompanyregClient::getSsoUserInfo(const GetSsoUserInfoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return SubmitIcpSolutionOutcome(endpointOutcome.error());
+		return GetSsoUserInfoOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return SubmitIcpSolutionOutcome(SubmitIcpSolutionResult(outcome.result()));
+		return GetSsoUserInfoOutcome(GetSsoUserInfoResult(outcome.result()));
 	else
-		return SubmitIcpSolutionOutcome(outcome.error());
+		return GetSsoUserInfoOutcome(outcome.error());
 }
 
-void CompanyregClient::submitIcpSolutionAsync(const SubmitIcpSolutionRequest& request, const SubmitIcpSolutionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CompanyregClient::getSsoUserInfoAsync(const GetSsoUserInfoRequest& request, const GetSsoUserInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, submitIcpSolution(request), context);
+		handler(this, request, getSsoUserInfo(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CompanyregClient::SubmitIcpSolutionOutcomeCallable CompanyregClient::submitIcpSolutionCallable(const SubmitIcpSolutionRequest &request) const
+CompanyregClient::GetSsoUserInfoOutcomeCallable CompanyregClient::getSsoUserInfoCallable(const GetSsoUserInfoRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<SubmitIcpSolutionOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<GetSsoUserInfoOutcome()>>(
 			[this, request]()
 			{
-			return this->submitIcpSolution(request);
+			return this->getSsoUserInfo(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-CompanyregClient::UpdateBookkeepingOrgOutcome CompanyregClient::updateBookkeepingOrg(const UpdateBookkeepingOrgRequest &request) const
+CompanyregClient::GetTaxInfoOutcome CompanyregClient::getTaxInfo(const GetTaxInfoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return UpdateBookkeepingOrgOutcome(endpointOutcome.error());
+		return GetTaxInfoOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return UpdateBookkeepingOrgOutcome(UpdateBookkeepingOrgResult(outcome.result()));
+		return GetTaxInfoOutcome(GetTaxInfoResult(outcome.result()));
 	else
-		return UpdateBookkeepingOrgOutcome(outcome.error());
+		return GetTaxInfoOutcome(outcome.error());
 }
 
-void CompanyregClient::updateBookkeepingOrgAsync(const UpdateBookkeepingOrgRequest& request, const UpdateBookkeepingOrgAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CompanyregClient::getTaxInfoAsync(const GetTaxInfoRequest& request, const GetTaxInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, updateBookkeepingOrg(request), context);
+		handler(this, request, getTaxInfo(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CompanyregClient::UpdateBookkeepingOrgOutcomeCallable CompanyregClient::updateBookkeepingOrgCallable(const UpdateBookkeepingOrgRequest &request) const
+CompanyregClient::GetTaxInfoOutcomeCallable CompanyregClient::getTaxInfoCallable(const GetTaxInfoRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<UpdateBookkeepingOrgOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<GetTaxInfoOutcome()>>(
 			[this, request]()
 			{
-			return this->updateBookkeepingOrg(request);
+			return this->getTaxInfo(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-CompanyregClient::UploadIcpBasicMaterialOutcome CompanyregClient::uploadIcpBasicMaterial(const UploadIcpBasicMaterialRequest &request) const
+CompanyregClient::GetTaxationCalendarOutcome CompanyregClient::getTaxationCalendar(const GetTaxationCalendarRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return UploadIcpBasicMaterialOutcome(endpointOutcome.error());
+		return GetTaxationCalendarOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return UploadIcpBasicMaterialOutcome(UploadIcpBasicMaterialResult(outcome.result()));
+		return GetTaxationCalendarOutcome(GetTaxationCalendarResult(outcome.result()));
 	else
-		return UploadIcpBasicMaterialOutcome(outcome.error());
+		return GetTaxationCalendarOutcome(outcome.error());
 }
 
-void CompanyregClient::uploadIcpBasicMaterialAsync(const UploadIcpBasicMaterialRequest& request, const UploadIcpBasicMaterialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CompanyregClient::getTaxationCalendarAsync(const GetTaxationCalendarRequest& request, const GetTaxationCalendarAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, uploadIcpBasicMaterial(request), context);
+		handler(this, request, getTaxationCalendar(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CompanyregClient::UploadIcpBasicMaterialOutcomeCallable CompanyregClient::uploadIcpBasicMaterialCallable(const UploadIcpBasicMaterialRequest &request) const
+CompanyregClient::GetTaxationCalendarOutcomeCallable CompanyregClient::getTaxationCalendarCallable(const GetTaxationCalendarRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<UploadIcpBasicMaterialOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<GetTaxationCalendarOutcome()>>(
 			[this, request]()
 			{
-			return this->uploadIcpBasicMaterial(request);
+			return this->getTaxationCalendar(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-CompanyregClient::WriteCommunicationLogOutcome CompanyregClient::writeCommunicationLog(const WriteCommunicationLogRequest &request) const
+CompanyregClient::GetTaxationInfoOutcome CompanyregClient::getTaxationInfo(const GetTaxationInfoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return WriteCommunicationLogOutcome(endpointOutcome.error());
+		return GetTaxationInfoOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return WriteCommunicationLogOutcome(WriteCommunicationLogResult(outcome.result()));
+		return GetTaxationInfoOutcome(GetTaxationInfoResult(outcome.result()));
 	else
-		return WriteCommunicationLogOutcome(outcome.error());
+		return GetTaxationInfoOutcome(outcome.error());
 }
 
-void CompanyregClient::writeCommunicationLogAsync(const WriteCommunicationLogRequest& request, const WriteCommunicationLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CompanyregClient::getTaxationInfoAsync(const GetTaxationInfoRequest& request, const GetTaxationInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, writeCommunicationLog(request), context);
+		handler(this, request, getTaxationInfo(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CompanyregClient::WriteCommunicationLogOutcomeCallable CompanyregClient::writeCommunicationLogCallable(const WriteCommunicationLogRequest &request) const
+CompanyregClient::GetTaxationInfoOutcomeCallable CompanyregClient::getTaxationInfoCallable(const GetTaxationInfoRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<WriteCommunicationLogOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<GetTaxationInfoOutcome()>>(
 			[this, request]()
 			{
-			return this->writeCommunicationLog(request);
+			return this->getTaxationInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CompanyregClient::GetTypeListOutcome CompanyregClient::getTypeList(const GetTypeListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetTypeListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetTypeListOutcome(GetTypeListResult(outcome.result()));
+	else
+		return GetTypeListOutcome(outcome.error());
+}
+
+void CompanyregClient::getTypeListAsync(const GetTypeListRequest& request, const GetTypeListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getTypeList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CompanyregClient::GetTypeListOutcomeCallable CompanyregClient::getTypeListCallable(const GetTypeListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetTypeListOutcome()>>(
+			[this, request]()
+			{
+			return this->getTypeList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CompanyregClient::GetVoucherCountOutcome CompanyregClient::getVoucherCount(const GetVoucherCountRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetVoucherCountOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetVoucherCountOutcome(GetVoucherCountResult(outcome.result()));
+	else
+		return GetVoucherCountOutcome(outcome.error());
+}
+
+void CompanyregClient::getVoucherCountAsync(const GetVoucherCountRequest& request, const GetVoucherCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getVoucherCount(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CompanyregClient::GetVoucherCountOutcomeCallable CompanyregClient::getVoucherCountCallable(const GetVoucherCountRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetVoucherCountOutcome()>>(
+			[this, request]()
+			{
+			return this->getVoucherCount(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CompanyregClient::ListCashJournalOutcome CompanyregClient::listCashJournal(const ListCashJournalRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListCashJournalOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListCashJournalOutcome(ListCashJournalResult(outcome.result()));
+	else
+		return ListCashJournalOutcome(outcome.error());
+}
+
+void CompanyregClient::listCashJournalAsync(const ListCashJournalRequest& request, const ListCashJournalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listCashJournal(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CompanyregClient::ListCashJournalOutcomeCallable CompanyregClient::listCashJournalCallable(const ListCashJournalRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListCashJournalOutcome()>>(
+			[this, request]()
+			{
+			return this->listCashJournal(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CompanyregClient::ListEnterprisesOutcome CompanyregClient::listEnterprises(const ListEnterprisesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListEnterprisesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListEnterprisesOutcome(ListEnterprisesResult(outcome.result()));
+	else
+		return ListEnterprisesOutcome(outcome.error());
+}
+
+void CompanyregClient::listEnterprisesAsync(const ListEnterprisesRequest& request, const ListEnterprisesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listEnterprises(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CompanyregClient::ListEnterprisesOutcomeCallable CompanyregClient::listEnterprisesCallable(const ListEnterprisesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListEnterprisesOutcome()>>(
+			[this, request]()
+			{
+			return this->listEnterprises(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CompanyregClient::ListInvoiceOutcome CompanyregClient::listInvoice(const ListInvoiceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListInvoiceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListInvoiceOutcome(ListInvoiceResult(outcome.result()));
+	else
+		return ListInvoiceOutcome(outcome.error());
+}
+
+void CompanyregClient::listInvoiceAsync(const ListInvoiceRequest& request, const ListInvoiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listInvoice(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CompanyregClient::ListInvoiceOutcomeCallable CompanyregClient::listInvoiceCallable(const ListInvoiceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListInvoiceOutcome()>>(
+			[this, request]()
+			{
+			return this->listInvoice(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CompanyregClient::ListLastMonthInvoiceOutcome CompanyregClient::listLastMonthInvoice(const ListLastMonthInvoiceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListLastMonthInvoiceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListLastMonthInvoiceOutcome(ListLastMonthInvoiceResult(outcome.result()));
+	else
+		return ListLastMonthInvoiceOutcome(outcome.error());
+}
+
+void CompanyregClient::listLastMonthInvoiceAsync(const ListLastMonthInvoiceRequest& request, const ListLastMonthInvoiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listLastMonthInvoice(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CompanyregClient::ListLastMonthInvoiceOutcomeCallable CompanyregClient::listLastMonthInvoiceCallable(const ListLastMonthInvoiceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListLastMonthInvoiceOutcome()>>(
+			[this, request]()
+			{
+			return this->listLastMonthInvoice(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CompanyregClient::ListPayrollOutcome CompanyregClient::listPayroll(const ListPayrollRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListPayrollOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListPayrollOutcome(ListPayrollResult(outcome.result()));
+	else
+		return ListPayrollOutcome(outcome.error());
+}
+
+void CompanyregClient::listPayrollAsync(const ListPayrollRequest& request, const ListPayrollAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listPayroll(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CompanyregClient::ListPayrollOutcomeCallable CompanyregClient::listPayrollCallable(const ListPayrollRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListPayrollOutcome()>>(
+			[this, request]()
+			{
+			return this->listPayroll(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CompanyregClient::ListVoucherOutcome CompanyregClient::listVoucher(const ListVoucherRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListVoucherOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListVoucherOutcome(ListVoucherResult(outcome.result()));
+	else
+		return ListVoucherOutcome(outcome.error());
+}
+
+void CompanyregClient::listVoucherAsync(const ListVoucherRequest& request, const ListVoucherAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listVoucher(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CompanyregClient::ListVoucherOutcomeCallable CompanyregClient::listVoucherCallable(const ListVoucherRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListVoucherOutcome()>>(
+			[this, request]()
+			{
+			return this->listVoucher(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CompanyregClient::PhotoInvoiceOutcome CompanyregClient::photoInvoice(const PhotoInvoiceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return PhotoInvoiceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return PhotoInvoiceOutcome(PhotoInvoiceResult(outcome.result()));
+	else
+		return PhotoInvoiceOutcome(outcome.error());
+}
+
+void CompanyregClient::photoInvoiceAsync(const PhotoInvoiceRequest& request, const PhotoInvoiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, photoInvoice(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CompanyregClient::PhotoInvoiceOutcomeCallable CompanyregClient::photoInvoiceCallable(const PhotoInvoiceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<PhotoInvoiceOutcome()>>(
+			[this, request]()
+			{
+			return this->photoInvoice(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CompanyregClient::PrintAcctgTransOutcome CompanyregClient::printAcctgTrans(const PrintAcctgTransRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return PrintAcctgTransOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return PrintAcctgTransOutcome(PrintAcctgTransResult(outcome.result()));
+	else
+		return PrintAcctgTransOutcome(outcome.error());
+}
+
+void CompanyregClient::printAcctgTransAsync(const PrintAcctgTransRequest& request, const PrintAcctgTransAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, printAcctgTrans(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CompanyregClient::PrintAcctgTransOutcomeCallable CompanyregClient::printAcctgTransCallable(const PrintAcctgTransRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<PrintAcctgTransOutcome()>>(
+			[this, request]()
+			{
+			return this->printAcctgTrans(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CompanyregClient::RefreshCustomerInfoOutcome CompanyregClient::refreshCustomerInfo(const RefreshCustomerInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RefreshCustomerInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RefreshCustomerInfoOutcome(RefreshCustomerInfoResult(outcome.result()));
+	else
+		return RefreshCustomerInfoOutcome(outcome.error());
+}
+
+void CompanyregClient::refreshCustomerInfoAsync(const RefreshCustomerInfoRequest& request, const RefreshCustomerInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, refreshCustomerInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CompanyregClient::RefreshCustomerInfoOutcomeCallable CompanyregClient::refreshCustomerInfoCallable(const RefreshCustomerInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RefreshCustomerInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->refreshCustomerInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CompanyregClient::SaveOpeningBalanceStatusOutcome CompanyregClient::saveOpeningBalanceStatus(const SaveOpeningBalanceStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SaveOpeningBalanceStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SaveOpeningBalanceStatusOutcome(SaveOpeningBalanceStatusResult(outcome.result()));
+	else
+		return SaveOpeningBalanceStatusOutcome(outcome.error());
+}
+
+void CompanyregClient::saveOpeningBalanceStatusAsync(const SaveOpeningBalanceStatusRequest& request, const SaveOpeningBalanceStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, saveOpeningBalanceStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CompanyregClient::SaveOpeningBalanceStatusOutcomeCallable CompanyregClient::saveOpeningBalanceStatusCallable(const SaveOpeningBalanceStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SaveOpeningBalanceStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->saveOpeningBalanceStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CompanyregClient::SavePayrollOutcome CompanyregClient::savePayroll(const SavePayrollRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SavePayrollOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SavePayrollOutcome(SavePayrollResult(outcome.result()));
+	else
+		return SavePayrollOutcome(outcome.error());
+}
+
+void CompanyregClient::savePayrollAsync(const SavePayrollRequest& request, const SavePayrollAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, savePayroll(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CompanyregClient::SavePayrollOutcomeCallable CompanyregClient::savePayrollCallable(const SavePayrollRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SavePayrollOutcome()>>(
+			[this, request]()
+			{
+			return this->savePayroll(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CompanyregClient::SavePayrollSettingOutcome CompanyregClient::savePayrollSetting(const SavePayrollSettingRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SavePayrollSettingOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SavePayrollSettingOutcome(SavePayrollSettingResult(outcome.result()));
+	else
+		return SavePayrollSettingOutcome(outcome.error());
+}
+
+void CompanyregClient::savePayrollSettingAsync(const SavePayrollSettingRequest& request, const SavePayrollSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, savePayrollSetting(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CompanyregClient::SavePayrollSettingOutcomeCallable CompanyregClient::savePayrollSettingCallable(const SavePayrollSettingRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SavePayrollSettingOutcome()>>(
+			[this, request]()
+			{
+			return this->savePayrollSetting(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CompanyregClient::ScanInvoiceOutcome CompanyregClient::scanInvoice(const ScanInvoiceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ScanInvoiceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ScanInvoiceOutcome(ScanInvoiceResult(outcome.result()));
+	else
+		return ScanInvoiceOutcome(outcome.error());
+}
+
+void CompanyregClient::scanInvoiceAsync(const ScanInvoiceRequest& request, const ScanInvoiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, scanInvoice(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CompanyregClient::ScanInvoiceOutcomeCallable CompanyregClient::scanInvoiceCallable(const ScanInvoiceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ScanInvoiceOutcome()>>(
+			[this, request]()
+			{
+			return this->scanInvoice(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CompanyregClient::SendMessageOutcome CompanyregClient::sendMessage(const SendMessageRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SendMessageOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SendMessageOutcome(SendMessageResult(outcome.result()));
+	else
+		return SendMessageOutcome(outcome.error());
+}
+
+void CompanyregClient::sendMessageAsync(const SendMessageRequest& request, const SendMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, sendMessage(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CompanyregClient::SendMessageOutcomeCallable CompanyregClient::sendMessageCallable(const SendMessageRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SendMessageOutcome()>>(
+			[this, request]()
+			{
+			return this->sendMessage(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CompanyregClient::UpdateCustomerInfoOutcome CompanyregClient::updateCustomerInfo(const UpdateCustomerInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateCustomerInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateCustomerInfoOutcome(UpdateCustomerInfoResult(outcome.result()));
+	else
+		return UpdateCustomerInfoOutcome(outcome.error());
+}
+
+void CompanyregClient::updateCustomerInfoAsync(const UpdateCustomerInfoRequest& request, const UpdateCustomerInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateCustomerInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CompanyregClient::UpdateCustomerInfoOutcomeCallable CompanyregClient::updateCustomerInfoCallable(const UpdateCustomerInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateCustomerInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->updateCustomerInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CompanyregClient::UpdateFeeOutcome CompanyregClient::updateFee(const UpdateFeeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateFeeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateFeeOutcome(UpdateFeeResult(outcome.result()));
+	else
+		return UpdateFeeOutcome(outcome.error());
+}
+
+void CompanyregClient::updateFeeAsync(const UpdateFeeRequest& request, const UpdateFeeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateFee(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CompanyregClient::UpdateFeeOutcomeCallable CompanyregClient::updateFeeCallable(const UpdateFeeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateFeeOutcome()>>(
+			[this, request]()
+			{
+			return this->updateFee(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CompanyregClient::UpdateTaxInfoOutcome CompanyregClient::updateTaxInfo(const UpdateTaxInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateTaxInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateTaxInfoOutcome(UpdateTaxInfoResult(outcome.result()));
+	else
+		return UpdateTaxInfoOutcome(outcome.error());
+}
+
+void CompanyregClient::updateTaxInfoAsync(const UpdateTaxInfoRequest& request, const UpdateTaxInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateTaxInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CompanyregClient::UpdateTaxInfoOutcomeCallable CompanyregClient::updateTaxInfoCallable(const UpdateTaxInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateTaxInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->updateTaxInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CompanyregClient::UpdateTaxationProcessOutcome CompanyregClient::updateTaxationProcess(const UpdateTaxationProcessRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateTaxationProcessOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateTaxationProcessOutcome(UpdateTaxationProcessResult(outcome.result()));
+	else
+		return UpdateTaxationProcessOutcome(outcome.error());
+}
+
+void CompanyregClient::updateTaxationProcessAsync(const UpdateTaxationProcessRequest& request, const UpdateTaxationProcessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateTaxationProcess(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CompanyregClient::UpdateTaxationProcessOutcomeCallable CompanyregClient::updateTaxationProcessCallable(const UpdateTaxationProcessRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateTaxationProcessOutcome()>>(
+			[this, request]()
+			{
+			return this->updateTaxationProcess(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CompanyregClient::VerifyTaxSmsCodeOutcome CompanyregClient::verifyTaxSmsCode(const VerifyTaxSmsCodeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return VerifyTaxSmsCodeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return VerifyTaxSmsCodeOutcome(VerifyTaxSmsCodeResult(outcome.result()));
+	else
+		return VerifyTaxSmsCodeOutcome(outcome.error());
+}
+
+void CompanyregClient::verifyTaxSmsCodeAsync(const VerifyTaxSmsCodeRequest& request, const VerifyTaxSmsCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, verifyTaxSmsCode(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CompanyregClient::VerifyTaxSmsCodeOutcomeCallable CompanyregClient::verifyTaxSmsCodeCallable(const VerifyTaxSmsCodeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<VerifyTaxSmsCodeOutcome()>>(
+			[this, request]()
+			{
+			return this->verifyTaxSmsCode(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
