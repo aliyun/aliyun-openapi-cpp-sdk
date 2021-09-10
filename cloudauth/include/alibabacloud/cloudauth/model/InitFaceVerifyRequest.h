@@ -73,6 +73,8 @@ namespace AlibabaCloud
 				void setReturnUrl(const std::string& returnUrl);
 				std::string getCallbackUrl()const;
 				void setCallbackUrl(const std::string& callbackUrl);
+				std::string getCrop()const;
+				void setCrop(const std::string& crop);
 
             private:
 				std::string productCode_;
@@ -94,6 +96,7 @@ namespace AlibabaCloud
 				std::string callbackToken_;
 				std::string returnUrl_;
 				std::string callbackUrl_;
+				std::string crop_;
 
 			};
 		}

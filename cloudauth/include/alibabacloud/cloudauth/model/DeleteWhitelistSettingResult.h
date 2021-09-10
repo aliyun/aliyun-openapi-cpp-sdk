@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CLOUDAUTH_MODEL_SUBMITVERIFICATIONRESULT_H_
-#define ALIBABACLOUD_CLOUDAUTH_MODEL_SUBMITVERIFICATIONRESULT_H_
+#ifndef ALIBABACLOUD_CLOUDAUTH_MODEL_DELETEWHITELISTSETTINGRESULT_H_
+#define ALIBABACLOUD_CLOUDAUTH_MODEL_DELETEWHITELISTSETTINGRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,41 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CLOUDAUTH_EXPORT SubmitVerificationResult : public ServiceResult
+			class ALIBABACLOUD_CLOUDAUTH_EXPORT DeleteWhitelistSettingResult : public ServiceResult
 			{
 			public:
-				struct Data
-				{
-					struct VerifyStatus
-					{
-						std::string auditConclusions;
-						float trustedScore;
-						float authorityComparisonScore;
-						float similarityScore;
-						int statusCode;
-					};
-					VerifyStatus verifyStatus;
-				};
 
 
-				SubmitVerificationResult();
-				explicit SubmitVerificationResult(const std::string &payload);
-				~SubmitVerificationResult();
-				std::string getMessage()const;
-				Data getData()const;
-				std::string getCode()const;
-				bool getSuccess()const;
+				DeleteWhitelistSettingResult();
+				explicit DeleteWhitelistSettingResult(const std::string &payload);
+				~DeleteWhitelistSettingResult();
+				bool getResultObject()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string message_;
-				Data data_;
-				std::string code_;
-				bool success_;
+				bool resultObject_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CLOUDAUTH_MODEL_SUBMITVERIFICATIONRESULT_H_
+#endif // !ALIBABACLOUD_CLOUDAUTH_MODEL_DELETEWHITELISTSETTINGRESULT_H_

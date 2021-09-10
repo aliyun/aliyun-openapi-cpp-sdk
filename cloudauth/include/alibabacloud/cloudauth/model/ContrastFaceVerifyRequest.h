@@ -69,6 +69,8 @@ namespace AlibabaCloud
 				void setSceneId(long sceneId);
 				std::string getOssBucketName()const;
 				void setOssBucketName(const std::string& ossBucketName);
+				std::string getCrop()const;
+				void setCrop(const std::string& crop);
 
             private:
 				std::string productCode_;
@@ -88,6 +90,7 @@ namespace AlibabaCloud
 				std::string faceContrastFile_;
 				long sceneId_;
 				std::string ossBucketName_;
+				std::string crop_;
 
 			};
 		}

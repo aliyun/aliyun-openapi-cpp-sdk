@@ -40,18 +40,18 @@ void LivenessFaceVerifyResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto resultObjectNode = value["ResultObject"];
-	if(!resultObjectNode["Passed"].isNull())
-		resultObject_.passed = resultObjectNode["Passed"].asString();
-	if(!resultObjectNode["MaterialInfo"].isNull())
-		resultObject_.materialInfo = resultObjectNode["MaterialInfo"].asString();
-	if(!resultObjectNode["SubCode"].isNull())
-		resultObject_.subCode = resultObjectNode["SubCode"].asString();
 	if(!resultObjectNode["CertifyId"].isNull())
 		resultObject_.certifyId = resultObjectNode["CertifyId"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
+	if(!resultObjectNode["SubCode"].isNull())
+		resultObject_.subCode = resultObjectNode["SubCode"].asString();
+	if(!resultObjectNode["MaterialInfo"].isNull())
+		resultObject_.materialInfo = resultObjectNode["MaterialInfo"].asString();
+	if(!resultObjectNode["Passed"].isNull())
+		resultObject_.passed = resultObjectNode["Passed"].asString();
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 
 }
 

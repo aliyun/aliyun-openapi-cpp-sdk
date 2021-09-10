@@ -40,16 +40,16 @@ void CompareFaceVerifyResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto resultObjectNode = value["ResultObject"];
-	if(!resultObjectNode["Passed"].isNull())
-		resultObject_.passed = resultObjectNode["Passed"].asString();
-	if(!resultObjectNode["VerifyScore"].isNull())
-		resultObject_.verifyScore = std::stof(resultObjectNode["VerifyScore"].asString());
 	if(!resultObjectNode["CertifyId"].isNull())
 		resultObject_.certifyId = resultObjectNode["CertifyId"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
+	if(!resultObjectNode["VerifyScore"].isNull())
+		resultObject_.verifyScore = std::stof(resultObjectNode["VerifyScore"].asString());
+	if(!resultObjectNode["Passed"].isNull())
+		resultObject_.passed = resultObjectNode["Passed"].asString();
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 
 }
 

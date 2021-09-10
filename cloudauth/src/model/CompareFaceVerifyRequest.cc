@@ -170,3 +170,14 @@ void CompareFaceVerifyRequest::setSourceCertifyId(const std::string& sourceCerti
 	setBodyParameter("SourceCertifyId", sourceCertifyId);
 }
 
+std::string CompareFaceVerifyRequest::getCrop()const
+{
+	return crop_;
+}
+
+void CompareFaceVerifyRequest::setCrop(const std::string& crop)
+{
+	crop_ = crop;
+	setBodyParameter("Crop", crop);
+}
+

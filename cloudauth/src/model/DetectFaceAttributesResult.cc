@@ -66,8 +66,14 @@ void DetectFaceAttributesResult::parse(const std::string &payload)
 			faceAttributesDetectInfoObject.faceAttributes.facetype = faceAttributesNode["Facetype"].asString();
 		if(!faceAttributesNode["Blur"].isNull())
 			faceAttributesDetectInfoObject.faceAttributes.blur = std::stof(faceAttributesNode["Blur"].asString());
-		if(!faceAttributesNode["Ethnicity"].isNull())
-			faceAttributesDetectInfoObject.faceAttributes.ethnicity = faceAttributesNode["Ethnicity"].asString();
+		if(!faceAttributesNode["Facequal"].isNull())
+			faceAttributesDetectInfoObject.faceAttributes.facequal = std::stof(faceAttributesNode["Facequal"].asString());
+		if(!faceAttributesNode["Integrity"].isNull())
+			faceAttributesDetectInfoObject.faceAttributes.integrity = std::stoi(faceAttributesNode["Integrity"].asString());
+		if(!faceAttributesNode["Respirator"].isNull())
+			faceAttributesDetectInfoObject.faceAttributes.respirator = faceAttributesNode["Respirator"].asString();
+		if(!faceAttributesNode["AppearanceScore"].isNull())
+			faceAttributesDetectInfoObject.faceAttributes.appearanceScore = std::stof(faceAttributesNode["AppearanceScore"].asString());
 		auto genderNode = faceAttributesNode["Gender"];
 		if(!genderNode["Score"].isNull())
 			faceAttributesDetectInfoObject.faceAttributes.gender.score = std::stof(genderNode["Score"].asString());

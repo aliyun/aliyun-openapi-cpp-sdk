@@ -214,3 +214,14 @@ void ContrastFaceVerifyRequest::setOssBucketName(const std::string& ossBucketNam
 	setBodyParameter("OssBucketName", ossBucketName);
 }
 
+std::string ContrastFaceVerifyRequest::getCrop()const
+{
+	return crop_;
+}
+
+void ContrastFaceVerifyRequest::setCrop(const std::string& crop)
+{
+	crop_ = crop;
+	setBodyParameter("Crop", crop);
+}
+

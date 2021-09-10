@@ -170,3 +170,14 @@ void LivenessFaceVerifyRequest::setModel(const std::string& model)
 	setParameter("Model", model);
 }
 
+std::string LivenessFaceVerifyRequest::getCrop()const
+{
+	return crop_;
+}
+
+void LivenessFaceVerifyRequest::setCrop(const std::string& crop)
+{
+	crop_ = crop;
+	setBodyParameter("Crop", crop);
+}
+

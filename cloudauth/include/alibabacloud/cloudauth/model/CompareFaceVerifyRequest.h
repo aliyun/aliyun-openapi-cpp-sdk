@@ -61,6 +61,8 @@ namespace AlibabaCloud
 				void setSourceFaceContrastPictureUrl(const std::string& sourceFaceContrastPictureUrl);
 				std::string getSourceCertifyId()const;
 				void setSourceCertifyId(const std::string& sourceCertifyId);
+				std::string getCrop()const;
+				void setCrop(const std::string& crop);
 
             private:
 				std::string targetFaceContrastPictureUrl_;
@@ -76,6 +78,7 @@ namespace AlibabaCloud
 				long sceneId_;
 				std::string sourceFaceContrastPictureUrl_;
 				std::string sourceCertifyId_;
+				std::string crop_;
 
 			};
 		}

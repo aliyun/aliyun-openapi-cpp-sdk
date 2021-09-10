@@ -61,14 +61,17 @@ namespace AlibabaCloud
 								float rollAngle;
 								float yawAngle;
 							};
-							std::string ethnicity;
 							std::string facetype;
 							Headpose headpose;
+							std::string respirator;
 							std::string glasses;
 							float blur;
 							Smiling smiling;
 							Gender gender;
+							float appearanceScore;
 							int age;
+							float facequal;
+							int integrity;
 						};
 						FaceAttributes faceAttributes;
 						FaceRect faceRect;

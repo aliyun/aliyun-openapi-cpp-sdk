@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CLOUDAUTH_MODEL_GETSTATUSREQUEST_H_
-#define ALIBABACLOUD_CLOUDAUTH_MODEL_GETSTATUSREQUEST_H_
+#ifndef ALIBABACLOUD_CLOUDAUTH_MODEL_CREATEWHITELISTSETTINGRESULT_H_
+#define ALIBABACLOUD_CLOUDAUTH_MODEL_CREATEWHITELISTSETTINGRESULT_H_
 
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
+#include <utility>
+#include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/cloudauth/CloudauthExport.h>
 
 namespace AlibabaCloud
@@ -28,24 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CLOUDAUTH_EXPORT GetStatusRequest : public RpcServiceRequest
+			class ALIBABACLOUD_CLOUDAUTH_EXPORT CreateWhitelistSettingResult : public ServiceResult
 			{
-
 			public:
-				GetStatusRequest();
-				~GetStatusRequest();
 
-				std::string getBiz()const;
-				void setBiz(const std::string& biz);
-				std::string getTicketId()const;
-				void setTicketId(const std::string& ticketId);
 
-            private:
-				std::string biz_;
-				std::string ticketId_;
+				CreateWhitelistSettingResult();
+				explicit CreateWhitelistSettingResult(const std::string &payload);
+				~CreateWhitelistSettingResult();
+				bool getResultObject()const;
+
+			protected:
+				void parse(const std::string &payload);
+			private:
+				bool resultObject_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CLOUDAUTH_MODEL_GETSTATUSREQUEST_H_
+#endif // !ALIBABACLOUD_CLOUDAUTH_MODEL_CREATEWHITELISTSETTINGRESULT_H_

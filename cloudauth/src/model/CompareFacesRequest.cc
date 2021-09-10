@@ -19,7 +19,7 @@
 using AlibabaCloud::Cloudauth::Model::CompareFacesRequest;
 
 CompareFacesRequest::CompareFacesRequest() :
-	RpcServiceRequest("cloudauth", "2018-09-16", "CompareFaces")
+	RpcServiceRequest("cloudauth", "2019-03-07", "CompareFaces")
 {
 	setMethod(HttpRequest::Method::Post);
 }
@@ -36,17 +36,6 @@ void CompareFacesRequest::setSourceImageType(const std::string& sourceImageType)
 {
 	sourceImageType_ = sourceImageType;
 	setBodyParameter("SourceImageType", sourceImageType);
-}
-
-long CompareFacesRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void CompareFacesRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CompareFacesRequest::getTargetImageType()const
@@ -71,15 +60,15 @@ void CompareFacesRequest::setTargetImageValue(const std::string& targetImageValu
 	setBodyParameter("TargetImageValue", targetImageValue);
 }
 
-std::string CompareFacesRequest::getSourceIp()const
+std::string CompareFacesRequest::getBizType()const
 {
-	return sourceIp_;
+	return bizType_;
 }
 
-void CompareFacesRequest::setSourceIp(const std::string& sourceIp)
+void CompareFacesRequest::setBizType(const std::string& bizType)
 {
-	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
+	bizType_ = bizType;
+	setBodyParameter("BizType", bizType);
 }
 
 std::string CompareFacesRequest::getSourceImageValue()const

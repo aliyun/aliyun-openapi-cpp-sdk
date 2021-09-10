@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CLOUDAUTH_MODEL_INITSMARTVERIFYRESULT_H_
-#define ALIBABACLOUD_CLOUDAUTH_MODEL_INITSMARTVERIFYRESULT_H_
+#ifndef ALIBABACLOUD_CLOUDAUTH_MODEL_DESCRIBEWHITELISTSETTINGRESULT_H_
+#define ALIBABACLOUD_CLOUDAUTH_MODEL_DESCRIBEWHITELISTSETTINGRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,31 +29,41 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CLOUDAUTH_EXPORT InitSmartVerifyResult : public ServiceResult
+			class ALIBABACLOUD_CLOUDAUTH_EXPORT DescribeWhitelistSettingResult : public ServiceResult
 			{
 			public:
-				struct ResultObject
+				struct Item
 				{
+					long sceneId;
+					std::string status;
+					std::string validEndDate;
+					std::string validStartDate;
+					std::string gmtCreate;
 					std::string certifyId;
+					std::string gmtModified;
+					long id;
+					std::string certNo;
 				};
 
 
-				InitSmartVerifyResult();
-				explicit InitSmartVerifyResult(const std::string &payload);
-				~InitSmartVerifyResult();
-				ResultObject getResultObject()const;
-				std::string getMessage()const;
-				std::string getCode()const;
+				DescribeWhitelistSettingResult();
+				explicit DescribeWhitelistSettingResult(const std::string &payload);
+				~DescribeWhitelistSettingResult();
+				int getTotalCount()const;
+				int getPageSize()const;
+				int getCurrentPage()const;
+				std::vector<Item> getItems()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				ResultObject resultObject_;
-				std::string message_;
-				std::string code_;
+				int totalCount_;
+				int pageSize_;
+				int currentPage_;
+				std::vector<Item> items_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CLOUDAUTH_MODEL_INITSMARTVERIFYRESULT_H_
+#endif // !ALIBABACLOUD_CLOUDAUTH_MODEL_DESCRIBEWHITELISTSETTINGRESULT_H_

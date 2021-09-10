@@ -19,7 +19,7 @@
 using AlibabaCloud::Cloudauth::Model::DetectFaceAttributesRequest;
 
 DetectFaceAttributesRequest::DetectFaceAttributesRequest() :
-	RpcServiceRequest("cloudauth", "2018-09-16", "DetectFaceAttributes")
+	RpcServiceRequest("cloudauth", "2019-03-07", "DetectFaceAttributes")
 {
 	setMethod(HttpRequest::Method::Post);
 }
@@ -27,70 +27,15 @@ DetectFaceAttributesRequest::DetectFaceAttributesRequest() :
 DetectFaceAttributesRequest::~DetectFaceAttributesRequest()
 {}
 
-int DetectFaceAttributesRequest::getMaxNumPhotosPerCategory()const
+std::string DetectFaceAttributesRequest::getBizType()const
 {
-	return maxNumPhotosPerCategory_;
+	return bizType_;
 }
 
-void DetectFaceAttributesRequest::setMaxNumPhotosPerCategory(int maxNumPhotosPerCategory)
+void DetectFaceAttributesRequest::setBizType(const std::string& bizType)
 {
-	maxNumPhotosPerCategory_ = maxNumPhotosPerCategory;
-	setBodyParameter("MaxNumPhotosPerCategory", std::to_string(maxNumPhotosPerCategory));
-}
-
-int DetectFaceAttributesRequest::getMaxFaceNum()const
-{
-	return maxFaceNum_;
-}
-
-void DetectFaceAttributesRequest::setMaxFaceNum(int maxFaceNum)
-{
-	maxFaceNum_ = maxFaceNum;
-	setBodyParameter("MaxFaceNum", std::to_string(maxFaceNum));
-}
-
-long DetectFaceAttributesRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void DetectFaceAttributesRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-std::string DetectFaceAttributesRequest::getRetAttributes()const
-{
-	return retAttributes_;
-}
-
-void DetectFaceAttributesRequest::setRetAttributes(const std::string& retAttributes)
-{
-	retAttributes_ = retAttributes;
-	setBodyParameter("RetAttributes", retAttributes);
-}
-
-std::string DetectFaceAttributesRequest::getClientTag()const
-{
-	return clientTag_;
-}
-
-void DetectFaceAttributesRequest::setClientTag(const std::string& clientTag)
-{
-	clientTag_ = clientTag;
-	setBodyParameter("ClientTag", clientTag);
-}
-
-std::string DetectFaceAttributesRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DetectFaceAttributesRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
+	bizType_ = bizType;
+	setBodyParameter("BizType", bizType);
 }
 
 std::string DetectFaceAttributesRequest::getMaterialValue()const
@@ -102,16 +47,5 @@ void DetectFaceAttributesRequest::setMaterialValue(const std::string& materialVa
 {
 	materialValue_ = materialValue;
 	setBodyParameter("MaterialValue", materialValue);
-}
-
-bool DetectFaceAttributesRequest::getDontSaveDB()const
-{
-	return dontSaveDB_;
-}
-
-void DetectFaceAttributesRequest::setDontSaveDB(bool dontSaveDB)
-{
-	dontSaveDB_ = dontSaveDB;
-	setBodyParameter("DontSaveDB", dontSaveDB ? "true" : "false");
 }
 

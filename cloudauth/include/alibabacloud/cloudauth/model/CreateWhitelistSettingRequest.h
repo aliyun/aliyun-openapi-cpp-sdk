@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CLOUDAUTH_MODEL_DESCRIBESMARTVERIFYREQUEST_H_
-#define ALIBABACLOUD_CLOUDAUTH_MODEL_DESCRIBESMARTVERIFYREQUEST_H_
+#ifndef ALIBABACLOUD_CLOUDAUTH_MODEL_CREATEWHITELISTSETTINGREQUEST_H_
+#define ALIBABACLOUD_CLOUDAUTH_MODEL_CREATEWHITELISTSETTINGREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,27 +28,39 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CLOUDAUTH_EXPORT DescribeSmartVerifyRequest : public RpcServiceRequest
+			class ALIBABACLOUD_CLOUDAUTH_EXPORT CreateWhitelistSettingRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeSmartVerifyRequest();
-				~DescribeSmartVerifyRequest();
+				CreateWhitelistSettingRequest();
+				~CreateWhitelistSettingRequest();
 
 				std::string getCertifyId()const;
 				void setCertifyId(const std::string& certifyId);
-				std::string getPictureReturnType()const;
-				void setPictureReturnType(const std::string& pictureReturnType);
+				std::string getCertNo()const;
+				void setCertNo(const std::string& certNo);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
+				std::string getLang()const;
+				void setLang(const std::string& lang);
+				int getValidDay()const;
+				void setValidDay(int validDay);
+				std::string getServiceCode()const;
+				void setServiceCode(const std::string& serviceCode);
 				long getSceneId()const;
 				void setSceneId(long sceneId);
 
             private:
 				std::string certifyId_;
-				std::string pictureReturnType_;
+				std::string certNo_;
+				std::string sourceIp_;
+				std::string lang_;
+				int validDay_;
+				std::string serviceCode_;
 				long sceneId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CLOUDAUTH_MODEL_DESCRIBESMARTVERIFYREQUEST_H_
+#endif // !ALIBABACLOUD_CLOUDAUTH_MODEL_CREATEWHITELISTSETTINGREQUEST_H_

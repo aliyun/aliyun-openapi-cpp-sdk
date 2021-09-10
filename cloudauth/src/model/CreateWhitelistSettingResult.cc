@@ -14,53 +14,38 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/cloudauth/model/InitSmartVerifyResult.h>
+#include <alibabacloud/cloudauth/model/CreateWhitelistSettingResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Cloudauth;
 using namespace AlibabaCloud::Cloudauth::Model;
 
-InitSmartVerifyResult::InitSmartVerifyResult() :
+CreateWhitelistSettingResult::CreateWhitelistSettingResult() :
 	ServiceResult()
 {}
 
-InitSmartVerifyResult::InitSmartVerifyResult(const std::string &payload) :
+CreateWhitelistSettingResult::CreateWhitelistSettingResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-InitSmartVerifyResult::~InitSmartVerifyResult()
+CreateWhitelistSettingResult::~CreateWhitelistSettingResult()
 {}
 
-void InitSmartVerifyResult::parse(const std::string &payload)
+void CreateWhitelistSettingResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto resultObjectNode = value["ResultObject"];
-	if(!resultObjectNode["CertifyId"].isNull())
-		resultObject_.certifyId = resultObjectNode["CertifyId"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
+	if(!value["ResultObject"].isNull())
+		resultObject_ = value["ResultObject"].asString() == "true";
 
 }
 
-InitSmartVerifyResult::ResultObject InitSmartVerifyResult::getResultObject()const
+bool CreateWhitelistSettingResult::getResultObject()const
 {
 	return resultObject_;
-}
-
-std::string InitSmartVerifyResult::getMessage()const
-{
-	return message_;
-}
-
-std::string InitSmartVerifyResult::getCode()const
-{
-	return code_;
 }
 

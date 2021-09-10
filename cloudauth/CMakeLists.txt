@@ -27,8 +27,6 @@ set(cloudauth_public_header_model
 	include/alibabacloud/cloudauth/model/CompareFacesResult.h
 	include/alibabacloud/cloudauth/model/ContrastFaceVerifyRequest.h
 	include/alibabacloud/cloudauth/model/ContrastFaceVerifyResult.h
-	include/alibabacloud/cloudauth/model/ContrastSmartVerifyRequest.h
-	include/alibabacloud/cloudauth/model/ContrastSmartVerifyResult.h
 	include/alibabacloud/cloudauth/model/CreateAuthKeyRequest.h
 	include/alibabacloud/cloudauth/model/CreateAuthKeyResult.h
 	include/alibabacloud/cloudauth/model/CreateFaceConfigRequest.h
@@ -41,8 +39,12 @@ set(cloudauth_public_header_model
 	include/alibabacloud/cloudauth/model/CreateVerifySettingResult.h
 	include/alibabacloud/cloudauth/model/CreateWhitelistRequest.h
 	include/alibabacloud/cloudauth/model/CreateWhitelistResult.h
+	include/alibabacloud/cloudauth/model/CreateWhitelistSettingRequest.h
+	include/alibabacloud/cloudauth/model/CreateWhitelistSettingResult.h
 	include/alibabacloud/cloudauth/model/DeleteWhitelistRequest.h
 	include/alibabacloud/cloudauth/model/DeleteWhitelistResult.h
+	include/alibabacloud/cloudauth/model/DeleteWhitelistSettingRequest.h
+	include/alibabacloud/cloudauth/model/DeleteWhitelistSettingResult.h
 	include/alibabacloud/cloudauth/model/DescribeAppInfoRequest.h
 	include/alibabacloud/cloudauth/model/DescribeAppInfoResult.h
 	include/alibabacloud/cloudauth/model/DescribeDeviceInfoRequest.h
@@ -59,8 +61,6 @@ set(cloudauth_public_header_model
 	include/alibabacloud/cloudauth/model/DescribeRPSDKResult.h
 	include/alibabacloud/cloudauth/model/DescribeSdkUrlRequest.h
 	include/alibabacloud/cloudauth/model/DescribeSdkUrlResult.h
-	include/alibabacloud/cloudauth/model/DescribeSmartVerifyRequest.h
-	include/alibabacloud/cloudauth/model/DescribeSmartVerifyResult.h
 	include/alibabacloud/cloudauth/model/DescribeUpdatePackageResultRequest.h
 	include/alibabacloud/cloudauth/model/DescribeUpdatePackageResultResult.h
 	include/alibabacloud/cloudauth/model/DescribeUploadInfoRequest.h
@@ -81,40 +81,24 @@ set(cloudauth_public_header_model
 	include/alibabacloud/cloudauth/model/DescribeVerifyUsageResult.h
 	include/alibabacloud/cloudauth/model/DescribeWhitelistRequest.h
 	include/alibabacloud/cloudauth/model/DescribeWhitelistResult.h
+	include/alibabacloud/cloudauth/model/DescribeWhitelistSettingRequest.h
+	include/alibabacloud/cloudauth/model/DescribeWhitelistSettingResult.h
 	include/alibabacloud/cloudauth/model/DetectFaceAttributesRequest.h
 	include/alibabacloud/cloudauth/model/DetectFaceAttributesResult.h
-	include/alibabacloud/cloudauth/model/ElementSmartVerifyRequest.h
-	include/alibabacloud/cloudauth/model/ElementSmartVerifyResult.h
-	include/alibabacloud/cloudauth/model/GetMaterialsRequest.h
-	include/alibabacloud/cloudauth/model/GetMaterialsResult.h
-	include/alibabacloud/cloudauth/model/GetStatusRequest.h
-	include/alibabacloud/cloudauth/model/GetStatusResult.h
-	include/alibabacloud/cloudauth/model/GetVerifyTokenRequest.h
-	include/alibabacloud/cloudauth/model/GetVerifyTokenResult.h
 	include/alibabacloud/cloudauth/model/InitDeviceRequest.h
 	include/alibabacloud/cloudauth/model/InitDeviceResult.h
 	include/alibabacloud/cloudauth/model/InitFaceVerifyRequest.h
 	include/alibabacloud/cloudauth/model/InitFaceVerifyResult.h
-	include/alibabacloud/cloudauth/model/InitSmartVerifyRequest.h
-	include/alibabacloud/cloudauth/model/InitSmartVerifyResult.h
-	include/alibabacloud/cloudauth/model/LivenessDetectRequest.h
-	include/alibabacloud/cloudauth/model/LivenessDetectResult.h
 	include/alibabacloud/cloudauth/model/LivenessFaceVerifyRequest.h
 	include/alibabacloud/cloudauth/model/LivenessFaceVerifyResult.h
 	include/alibabacloud/cloudauth/model/ModifyDeviceInfoRequest.h
 	include/alibabacloud/cloudauth/model/ModifyDeviceInfoResult.h
-	include/alibabacloud/cloudauth/model/SubmitMaterialsRequest.h
-	include/alibabacloud/cloudauth/model/SubmitMaterialsResult.h
-	include/alibabacloud/cloudauth/model/SubmitVerificationRequest.h
-	include/alibabacloud/cloudauth/model/SubmitVerificationResult.h
 	include/alibabacloud/cloudauth/model/UpdateAppPackageRequest.h
 	include/alibabacloud/cloudauth/model/UpdateAppPackageResult.h
 	include/alibabacloud/cloudauth/model/UpdateFaceConfigRequest.h
 	include/alibabacloud/cloudauth/model/UpdateFaceConfigResult.h
 	include/alibabacloud/cloudauth/model/UpdateVerifySettingRequest.h
 	include/alibabacloud/cloudauth/model/UpdateVerifySettingResult.h
-	include/alibabacloud/cloudauth/model/VerifyBankElementRequest.h
-	include/alibabacloud/cloudauth/model/VerifyBankElementResult.h
 	include/alibabacloud/cloudauth/model/VerifyDeviceRequest.h
 	include/alibabacloud/cloudauth/model/VerifyDeviceResult.h
 	include/alibabacloud/cloudauth/model/VerifyMaterialRequest.h
@@ -128,8 +112,6 @@ set(cloudauth_src
 	src/model/CompareFacesResult.cc
 	src/model/ContrastFaceVerifyRequest.cc
 	src/model/ContrastFaceVerifyResult.cc
-	src/model/ContrastSmartVerifyRequest.cc
-	src/model/ContrastSmartVerifyResult.cc
 	src/model/CreateAuthKeyRequest.cc
 	src/model/CreateAuthKeyResult.cc
 	src/model/CreateFaceConfigRequest.cc
@@ -142,8 +124,12 @@ set(cloudauth_src
 	src/model/CreateVerifySettingResult.cc
 	src/model/CreateWhitelistRequest.cc
 	src/model/CreateWhitelistResult.cc
+	src/model/CreateWhitelistSettingRequest.cc
+	src/model/CreateWhitelistSettingResult.cc
 	src/model/DeleteWhitelistRequest.cc
 	src/model/DeleteWhitelistResult.cc
+	src/model/DeleteWhitelistSettingRequest.cc
+	src/model/DeleteWhitelistSettingResult.cc
 	src/model/DescribeAppInfoRequest.cc
 	src/model/DescribeAppInfoResult.cc
 	src/model/DescribeDeviceInfoRequest.cc
@@ -160,8 +146,6 @@ set(cloudauth_src
 	src/model/DescribeRPSDKResult.cc
 	src/model/DescribeSdkUrlRequest.cc
 	src/model/DescribeSdkUrlResult.cc
-	src/model/DescribeSmartVerifyRequest.cc
-	src/model/DescribeSmartVerifyResult.cc
 	src/model/DescribeUpdatePackageResultRequest.cc
 	src/model/DescribeUpdatePackageResultResult.cc
 	src/model/DescribeUploadInfoRequest.cc
@@ -182,40 +166,24 @@ set(cloudauth_src
 	src/model/DescribeVerifyUsageResult.cc
 	src/model/DescribeWhitelistRequest.cc
 	src/model/DescribeWhitelistResult.cc
+	src/model/DescribeWhitelistSettingRequest.cc
+	src/model/DescribeWhitelistSettingResult.cc
 	src/model/DetectFaceAttributesRequest.cc
 	src/model/DetectFaceAttributesResult.cc
-	src/model/ElementSmartVerifyRequest.cc
-	src/model/ElementSmartVerifyResult.cc
-	src/model/GetMaterialsRequest.cc
-	src/model/GetMaterialsResult.cc
-	src/model/GetStatusRequest.cc
-	src/model/GetStatusResult.cc
-	src/model/GetVerifyTokenRequest.cc
-	src/model/GetVerifyTokenResult.cc
 	src/model/InitDeviceRequest.cc
 	src/model/InitDeviceResult.cc
 	src/model/InitFaceVerifyRequest.cc
 	src/model/InitFaceVerifyResult.cc
-	src/model/InitSmartVerifyRequest.cc
-	src/model/InitSmartVerifyResult.cc
-	src/model/LivenessDetectRequest.cc
-	src/model/LivenessDetectResult.cc
 	src/model/LivenessFaceVerifyRequest.cc
 	src/model/LivenessFaceVerifyResult.cc
 	src/model/ModifyDeviceInfoRequest.cc
 	src/model/ModifyDeviceInfoResult.cc
-	src/model/SubmitMaterialsRequest.cc
-	src/model/SubmitMaterialsResult.cc
-	src/model/SubmitVerificationRequest.cc
-	src/model/SubmitVerificationResult.cc
 	src/model/UpdateAppPackageRequest.cc
 	src/model/UpdateAppPackageResult.cc
 	src/model/UpdateFaceConfigRequest.cc
 	src/model/UpdateFaceConfigResult.cc
 	src/model/UpdateVerifySettingRequest.cc
 	src/model/UpdateVerifySettingResult.cc
-	src/model/VerifyBankElementRequest.cc
-	src/model/VerifyBankElementResult.cc
 	src/model/VerifyDeviceRequest.cc
 	src/model/VerifyDeviceResult.cc
 	src/model/VerifyMaterialRequest.cc

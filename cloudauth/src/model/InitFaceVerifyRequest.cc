@@ -236,3 +236,14 @@ void InitFaceVerifyRequest::setCallbackUrl(const std::string& callbackUrl)
 	setParameter("CallbackUrl", callbackUrl);
 }
 
+std::string InitFaceVerifyRequest::getCrop()const
+{
+	return crop_;
+}
+
+void InitFaceVerifyRequest::setCrop(const std::string& crop)
+{
+	crop_ = crop;
+	setBodyParameter("Crop", crop);
+}
+

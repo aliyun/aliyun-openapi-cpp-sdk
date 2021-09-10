@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CLOUDAUTH_MODEL_SUBMITMATERIALSREQUEST_H_
-#define ALIBABACLOUD_CLOUDAUTH_MODEL_SUBMITMATERIALSREQUEST_H_
+#ifndef ALIBABACLOUD_CLOUDAUTH_MODEL_DELETEWHITELISTSETTINGREQUEST_H_
+#define ALIBABACLOUD_CLOUDAUTH_MODEL_DELETEWHITELISTSETTINGREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,36 +28,30 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CLOUDAUTH_EXPORT SubmitMaterialsRequest : public RpcServiceRequest
+			class ALIBABACLOUD_CLOUDAUTH_EXPORT DeleteWhitelistSettingRequest : public RpcServiceRequest
 			{
-			public:
-				struct Material
-				{
-					std::string materialType;
-					std::string value;
-				};
 
 			public:
-				SubmitMaterialsRequest();
-				~SubmitMaterialsRequest();
+				DeleteWhitelistSettingRequest();
+				~DeleteWhitelistSettingRequest();
 
-				long getResourceOwnerId()const;
-				void setResourceOwnerId(long resourceOwnerId);
-				std::string getVerifyToken()const;
-				void setVerifyToken(const std::string& verifyToken);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
-				std::vector<Material> getMaterial()const;
-				void setMaterial(const std::vector<Material>& material);
+				std::string getLang()const;
+				void setLang(const std::string& lang);
+				std::string getServiceCode()const;
+				void setServiceCode(const std::string& serviceCode);
+				std::string getIds()const;
+				void setIds(const std::string& ids);
 
             private:
-				long resourceOwnerId_;
-				std::string verifyToken_;
 				std::string sourceIp_;
-				std::vector<Material> material_;
+				std::string lang_;
+				std::string serviceCode_;
+				std::string ids_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CLOUDAUTH_MODEL_SUBMITMATERIALSREQUEST_H_
+#endif // !ALIBABACLOUD_CLOUDAUTH_MODEL_DELETEWHITELISTSETTINGREQUEST_H_
