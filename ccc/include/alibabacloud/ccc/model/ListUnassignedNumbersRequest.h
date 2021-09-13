@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CCC_MODEL_MAKECALLREQUEST_H_
-#define ALIBABACLOUD_CCC_MODEL_MAKECALLREQUEST_H_
+#ifndef ALIBABACLOUD_CCC_MODEL_LISTUNASSIGNEDNUMBERSREQUEST_H_
+#define ALIBABACLOUD_CCC_MODEL_LISTUNASSIGNEDNUMBERSREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,39 +28,30 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CCC_EXPORT MakeCallRequest : public RpcServiceRequest
+			class ALIBABACLOUD_CCC_EXPORT ListUnassignedNumbersRequest : public RpcServiceRequest
 			{
 
 			public:
-				MakeCallRequest();
-				~MakeCallRequest();
+				ListUnassignedNumbersRequest();
+				~ListUnassignedNumbersRequest();
 
-				std::string getCallee()const;
-				void setCallee(const std::string& callee);
-				std::string getUserId()const;
-				void setUserId(const std::string& userId);
-				std::string getDeviceId()const;
-				void setDeviceId(const std::string& deviceId);
-				std::string getTags()const;
-				void setTags(const std::string& tags);
-				int getTimeoutSeconds()const;
-				void setTimeoutSeconds(int timeoutSeconds);
-				std::string getCaller()const;
-				void setCaller(const std::string& caller);
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
+				std::string getSearchPattern()const;
+				void setSearchPattern(const std::string& searchPattern);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 
             private:
-				std::string callee_;
-				std::string userId_;
-				std::string deviceId_;
-				std::string tags_;
-				int timeoutSeconds_;
-				std::string caller_;
+				int pageNumber_;
+				std::string searchPattern_;
 				std::string instanceId_;
+				int pageSize_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CCC_MODEL_MAKECALLREQUEST_H_
+#endif // !ALIBABACLOUD_CCC_MODEL_LISTUNASSIGNEDNUMBERSREQUEST_H_

@@ -14,34 +14,32 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/ccc/model/MakeCallResult.h>
+#include <alibabacloud/ccc/model/StartPredictiveCallResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::CCC;
 using namespace AlibabaCloud::CCC::Model;
 
-MakeCallResult::MakeCallResult() :
+StartPredictiveCallResult::StartPredictiveCallResult() :
 	ServiceResult()
 {}
 
-MakeCallResult::MakeCallResult(const std::string &payload) :
+StartPredictiveCallResult::StartPredictiveCallResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-MakeCallResult::~MakeCallResult()
+StartPredictiveCallResult::~StartPredictiveCallResult()
 {}
 
-void MakeCallResult::parse(const std::string &payload)
+void StartPredictiveCallResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["ContextId"].isNull())
-		data_.contextId = std::stol(dataNode["ContextId"].asString());
 	auto callContextNode = dataNode["CallContext"];
 	if(!callContextNode["CallType"].isNull())
 		data_.callContext.callType = callContextNode["CallType"].asString();
@@ -84,20 +82,28 @@ void MakeCallResult::parse(const std::string &payload)
 	auto userContextNode = dataNode["UserContext"];
 	if(!userContextNode["Extension"].isNull())
 		data_.userContext.extension = userContextNode["Extension"].asString();
+	if(!userContextNode["Heartbeat"].isNull())
+		data_.userContext.heartbeat = std::stol(userContextNode["Heartbeat"].asString());
 	if(!userContextNode["WorkMode"].isNull())
 		data_.userContext.workMode = userContextNode["WorkMode"].asString();
 	if(!userContextNode["DeviceId"].isNull())
 		data_.userContext.deviceId = userContextNode["DeviceId"].asString();
-	if(!userContextNode["JobId"].isNull())
-		data_.userContext.jobId = userContextNode["JobId"].asString();
 	if(!userContextNode["UserId"].isNull())
 		data_.userContext.userId = userContextNode["UserId"].asString();
+	if(!userContextNode["Reserved"].isNull())
+		data_.userContext.reserved = std::stol(userContextNode["Reserved"].asString());
 	if(!userContextNode["BreakCode"].isNull())
 		data_.userContext.breakCode = userContextNode["BreakCode"].asString();
 	if(!userContextNode["InstanceId"].isNull())
 		data_.userContext.instanceId = userContextNode["InstanceId"].asString();
 	if(!userContextNode["OutboundScenario"].isNull())
 		data_.userContext.outboundScenario = userContextNode["OutboundScenario"].asString() == "true";
+	if(!userContextNode["DeviceState"].isNull())
+		data_.userContext.deviceState = userContextNode["DeviceState"].asString();
+	if(!userContextNode["Mobile"].isNull())
+		data_.userContext.mobile = userContextNode["Mobile"].asString();
+	if(!userContextNode["JobId"].isNull())
+		data_.userContext.jobId = userContextNode["JobId"].asString();
 	if(!userContextNode["UserState"].isNull())
 		data_.userContext.userState = userContextNode["UserState"].asString();
 		auto allSignedSkillGroupIdList = userContextNode["SignedSkillGroupIdList"]["SkillGroupId"];
@@ -115,27 +121,27 @@ void MakeCallResult::parse(const std::string &payload)
 
 }
 
-std::string MakeCallResult::getMessage()const
+std::string StartPredictiveCallResult::getMessage()const
 {
 	return message_;
 }
 
-int MakeCallResult::getHttpStatusCode()const
+int StartPredictiveCallResult::getHttpStatusCode()const
 {
 	return httpStatusCode_;
 }
 
-std::vector<std::string> MakeCallResult::getParams()const
+std::vector<std::string> StartPredictiveCallResult::getParams()const
 {
 	return params_;
 }
 
-MakeCallResult::Data MakeCallResult::getData()const
+StartPredictiveCallResult::Data StartPredictiveCallResult::getData()const
 {
 	return data_;
 }
 
-std::string MakeCallResult::getCode()const
+std::string StartPredictiveCallResult::getCode()const
 {
 	return code_;
 }

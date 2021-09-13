@@ -50,56 +50,64 @@ void ListCallDetailRecordsResult::parse(const std::string &payload)
 	for (auto dataNodeListCallDetailRecord : allListNode)
 	{
 		Data::CallDetailRecord callDetailRecordObject;
-		if(!dataNodeListCallDetailRecord["AgentIds"].isNull())
-			callDetailRecordObject.agentIds = dataNodeListCallDetailRecord["AgentIds"].asString();
-		if(!dataNodeListCallDetailRecord["AgentNames"].isNull())
-			callDetailRecordObject.agentNames = dataNodeListCallDetailRecord["AgentNames"].asString();
-		if(!dataNodeListCallDetailRecord["CallDuration"].isNull())
-			callDetailRecordObject.callDuration = dataNodeListCallDetailRecord["CallDuration"].asString();
-		if(!dataNodeListCallDetailRecord["CalledNumber"].isNull())
-			callDetailRecordObject.calledNumber = dataNodeListCallDetailRecord["CalledNumber"].asString();
-		if(!dataNodeListCallDetailRecord["CallingNumber"].isNull())
-			callDetailRecordObject.callingNumber = dataNodeListCallDetailRecord["CallingNumber"].asString();
 		if(!dataNodeListCallDetailRecord["ContactDisposition"].isNull())
 			callDetailRecordObject.contactDisposition = dataNodeListCallDetailRecord["ContactDisposition"].asString();
-		if(!dataNodeListCallDetailRecord["ContactId"].isNull())
-			callDetailRecordObject.contactId = dataNodeListCallDetailRecord["ContactId"].asString();
 		if(!dataNodeListCallDetailRecord["ContactType"].isNull())
 			callDetailRecordObject.contactType = dataNodeListCallDetailRecord["ContactType"].asString();
 		if(!dataNodeListCallDetailRecord["EstablishedTime"].isNull())
 			callDetailRecordObject.establishedTime = std::stol(dataNodeListCallDetailRecord["EstablishedTime"].asString());
-		if(!dataNodeListCallDetailRecord["InstanceId"].isNull())
-			callDetailRecordObject.instanceId = dataNodeListCallDetailRecord["InstanceId"].asString();
-		if(!dataNodeListCallDetailRecord["IvrTime"].isNull())
-			callDetailRecordObject.ivrTime = std::stol(dataNodeListCallDetailRecord["IvrTime"].asString());
-		if(!dataNodeListCallDetailRecord["QueueTime"].isNull())
-			callDetailRecordObject.queueTime = std::stol(dataNodeListCallDetailRecord["QueueTime"].asString());
-		if(!dataNodeListCallDetailRecord["RecordingDuration"].isNull())
-			callDetailRecordObject.recordingDuration = std::stol(dataNodeListCallDetailRecord["RecordingDuration"].asString());
-		if(!dataNodeListCallDetailRecord["RecordingReady"].isNull())
-			callDetailRecordObject.recordingReady = dataNodeListCallDetailRecord["RecordingReady"].asString() == "true";
-		if(!dataNodeListCallDetailRecord["ReleaseInitiator"].isNull())
-			callDetailRecordObject.releaseInitiator = dataNodeListCallDetailRecord["ReleaseInitiator"].asString();
-		if(!dataNodeListCallDetailRecord["ReleaseTime"].isNull())
-			callDetailRecordObject.releaseTime = std::stol(dataNodeListCallDetailRecord["ReleaseTime"].asString());
-		if(!dataNodeListCallDetailRecord["RingTime"].isNull())
-			callDetailRecordObject.ringTime = std::stol(dataNodeListCallDetailRecord["RingTime"].asString());
-		if(!dataNodeListCallDetailRecord["SatisfactionDescription"].isNull())
-			callDetailRecordObject.satisfactionDescription = dataNodeListCallDetailRecord["SatisfactionDescription"].asString();
+		if(!dataNodeListCallDetailRecord["CalledNumber"].isNull())
+			callDetailRecordObject.calledNumber = dataNodeListCallDetailRecord["CalledNumber"].asString();
+		if(!dataNodeListCallDetailRecord["AdditionalBroker"].isNull())
+			callDetailRecordObject.additionalBroker = dataNodeListCallDetailRecord["AdditionalBroker"].asString();
 		if(!dataNodeListCallDetailRecord["SatisfactionIndex"].isNull())
 			callDetailRecordObject.satisfactionIndex = std::stoi(dataNodeListCallDetailRecord["SatisfactionIndex"].asString());
 		if(!dataNodeListCallDetailRecord["SatisfactionSurveyChannel"].isNull())
 			callDetailRecordObject.satisfactionSurveyChannel = dataNodeListCallDetailRecord["SatisfactionSurveyChannel"].asString();
-		if(!dataNodeListCallDetailRecord["SatisfactionSurveyOffered"].isNull())
-			callDetailRecordObject.satisfactionSurveyOffered = dataNodeListCallDetailRecord["SatisfactionSurveyOffered"].asString() == "true";
-		if(!dataNodeListCallDetailRecord["SkillGroupIds"].isNull())
-			callDetailRecordObject.skillGroupIds = dataNodeListCallDetailRecord["SkillGroupIds"].asString();
-		if(!dataNodeListCallDetailRecord["SkillGroupNames"].isNull())
-			callDetailRecordObject.skillGroupNames = dataNodeListCallDetailRecord["SkillGroupNames"].asString();
-		if(!dataNodeListCallDetailRecord["StartTime"].isNull())
-			callDetailRecordObject.startTime = std::stol(dataNodeListCallDetailRecord["StartTime"].asString());
+		if(!dataNodeListCallDetailRecord["ReleaseTime"].isNull())
+			callDetailRecordObject.releaseTime = std::stol(dataNodeListCallDetailRecord["ReleaseTime"].asString());
 		if(!dataNodeListCallDetailRecord["WaitTime"].isNull())
 			callDetailRecordObject.waitTime = std::stol(dataNodeListCallDetailRecord["WaitTime"].asString());
+		if(!dataNodeListCallDetailRecord["SkillGroupNames"].isNull())
+			callDetailRecordObject.skillGroupNames = dataNodeListCallDetailRecord["SkillGroupNames"].asString();
+		if(!dataNodeListCallDetailRecord["IvrTime"].isNull())
+			callDetailRecordObject.ivrTime = std::stol(dataNodeListCallDetailRecord["IvrTime"].asString());
+		if(!dataNodeListCallDetailRecord["SatisfactionDescription"].isNull())
+			callDetailRecordObject.satisfactionDescription = dataNodeListCallDetailRecord["SatisfactionDescription"].asString();
+		if(!dataNodeListCallDetailRecord["ReleaseInitiator"].isNull())
+			callDetailRecordObject.releaseInitiator = dataNodeListCallDetailRecord["ReleaseInitiator"].asString();
+		if(!dataNodeListCallDetailRecord["AgentIds"].isNull())
+			callDetailRecordObject.agentIds = dataNodeListCallDetailRecord["AgentIds"].asString();
+		if(!dataNodeListCallDetailRecord["CallDuration"].isNull())
+			callDetailRecordObject.callDuration = dataNodeListCallDetailRecord["CallDuration"].asString();
+		if(!dataNodeListCallDetailRecord["RecordingReady"].isNull())
+			callDetailRecordObject.recordingReady = dataNodeListCallDetailRecord["RecordingReady"].asString() == "true";
+		if(!dataNodeListCallDetailRecord["InstanceId"].isNull())
+			callDetailRecordObject.instanceId = dataNodeListCallDetailRecord["InstanceId"].asString();
+		if(!dataNodeListCallDetailRecord["RingTime"].isNull())
+			callDetailRecordObject.ringTime = std::stol(dataNodeListCallDetailRecord["RingTime"].asString());
+		if(!dataNodeListCallDetailRecord["SatisfactionSurveyOffered"].isNull())
+			callDetailRecordObject.satisfactionSurveyOffered = dataNodeListCallDetailRecord["SatisfactionSurveyOffered"].asString() == "true";
+		if(!dataNodeListCallDetailRecord["AgentNames"].isNull())
+			callDetailRecordObject.agentNames = dataNodeListCallDetailRecord["AgentNames"].asString();
+		if(!dataNodeListCallDetailRecord["StartTime"].isNull())
+			callDetailRecordObject.startTime = std::stol(dataNodeListCallDetailRecord["StartTime"].asString());
+		if(!dataNodeListCallDetailRecord["ContactId"].isNull())
+			callDetailRecordObject.contactId = dataNodeListCallDetailRecord["ContactId"].asString();
+		if(!dataNodeListCallDetailRecord["RecordingDuration"].isNull())
+			callDetailRecordObject.recordingDuration = std::stol(dataNodeListCallDetailRecord["RecordingDuration"].asString());
+		if(!dataNodeListCallDetailRecord["CallingNumber"].isNull())
+			callDetailRecordObject.callingNumber = dataNodeListCallDetailRecord["CallingNumber"].asString();
+		if(!dataNodeListCallDetailRecord["QueueTime"].isNull())
+			callDetailRecordObject.queueTime = std::stol(dataNodeListCallDetailRecord["QueueTime"].asString());
+		if(!dataNodeListCallDetailRecord["Broker"].isNull())
+			callDetailRecordObject.broker = dataNodeListCallDetailRecord["Broker"].asString();
+		if(!dataNodeListCallDetailRecord["SkillGroupIds"].isNull())
+			callDetailRecordObject.skillGroupIds = dataNodeListCallDetailRecord["SkillGroupIds"].asString();
+		if(!dataNodeListCallDetailRecord["CallerLocation"].isNull())
+			callDetailRecordObject.callerLocation = dataNodeListCallDetailRecord["CallerLocation"].asString();
+		if(!dataNodeListCallDetailRecord["CalleeLocation"].isNull())
+			callDetailRecordObject.calleeLocation = dataNodeListCallDetailRecord["CalleeLocation"].asString();
 		data_.list.push_back(callDetailRecordObject);
 	}
 	if(!value["Code"].isNull())

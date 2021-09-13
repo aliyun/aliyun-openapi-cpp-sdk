@@ -60,6 +60,17 @@ void MakeCallRequest::setDeviceId(const std::string& deviceId)
 	setParameter("DeviceId", deviceId);
 }
 
+std::string MakeCallRequest::getTags()const
+{
+	return tags_;
+}
+
+void MakeCallRequest::setTags(const std::string& tags)
+{
+	tags_ = tags;
+	setParameter("Tags", tags);
+}
+
 int MakeCallRequest::getTimeoutSeconds()const
 {
 	return timeoutSeconds_;

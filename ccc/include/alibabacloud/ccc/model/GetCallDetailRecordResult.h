@@ -42,8 +42,8 @@ namespace AlibabaCloud
 							std::string event;
 						};
 						std::vector<AgentEventsItem::EventSequenceItem> eventSequence;
-						std::string agentId;
 						std::string agentName;
+						std::string agentId;
 						std::string skillGroupId;
 					};
 					struct IvrEventsItem
@@ -73,22 +73,24 @@ namespace AlibabaCloud
 					std::string skillGroupIds;
 					std::string calledNumber;
 					std::string contactType;
+					std::string releaseInitiator;
 					std::string contactDisposition;
 					std::string instanceId;
-					std::string releaseInitiator;
 					int satisfaction;
 					long startTime;
 					std::string contactId;
 					long callDuration;
 					std::string callingNumber;
 					std::vector<QueueEventsItem> queueEvents;
-					long releaseTime;
+					std::string calleeLocation;
 					bool recordingReady;
+					long releaseTime;
 					std::string skillGroupNames;
 					std::string satisfactionSurveyChannel;
 					std::string agentIds;
 					bool satisfactionSurveyOffered;
 					long establishedTime;
+					std::string callerLocation;
 					std::string agentNames;
 					std::vector<IvrEventsItem> ivrEvents;
 				};

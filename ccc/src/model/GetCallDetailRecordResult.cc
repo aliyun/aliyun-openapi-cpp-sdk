@@ -40,52 +40,56 @@ void GetCallDetailRecordResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["AgentIds"].isNull())
-		data_.agentIds = dataNode["AgentIds"].asString();
-	if(!dataNode["AgentNames"].isNull())
-		data_.agentNames = dataNode["AgentNames"].asString();
-	if(!dataNode["CalledNumber"].isNull())
-		data_.calledNumber = dataNode["CalledNumber"].asString();
-	if(!dataNode["CallingNumber"].isNull())
-		data_.callingNumber = dataNode["CallingNumber"].asString();
+	if(!dataNode["ReleaseInitiator"].isNull())
+		data_.releaseInitiator = dataNode["ReleaseInitiator"].asString();
 	if(!dataNode["ContactDisposition"].isNull())
 		data_.contactDisposition = dataNode["ContactDisposition"].asString();
-	if(!dataNode["ContactId"].isNull())
-		data_.contactId = dataNode["ContactId"].asString();
 	if(!dataNode["ContactType"].isNull())
 		data_.contactType = dataNode["ContactType"].asString();
+	if(!dataNode["AgentIds"].isNull())
+		data_.agentIds = dataNode["AgentIds"].asString();
 	if(!dataNode["CallDuration"].isNull())
 		data_.callDuration = std::stol(dataNode["CallDuration"].asString());
+	if(!dataNode["RecordingReady"].isNull())
+		data_.recordingReady = dataNode["RecordingReady"].asString() == "true";
 	if(!dataNode["EstablishedTime"].isNull())
 		data_.establishedTime = std::stol(dataNode["EstablishedTime"].asString());
 	if(!dataNode["InstanceId"].isNull())
 		data_.instanceId = dataNode["InstanceId"].asString();
-	if(!dataNode["StartTime"].isNull())
-		data_.startTime = std::stol(dataNode["StartTime"].asString());
-	if(!dataNode["ReleaseTime"].isNull())
-		data_.releaseTime = std::stol(dataNode["ReleaseTime"].asString());
-	if(!dataNode["SkillGroupIds"].isNull())
-		data_.skillGroupIds = dataNode["SkillGroupIds"].asString();
-	if(!dataNode["SkillGroupNames"].isNull())
-		data_.skillGroupNames = dataNode["SkillGroupNames"].asString();
 	if(!dataNode["SatisfactionSurveyOffered"].isNull())
 		data_.satisfactionSurveyOffered = dataNode["SatisfactionSurveyOffered"].asString() == "true";
+	if(!dataNode["CalledNumber"].isNull())
+		data_.calledNumber = dataNode["CalledNumber"].asString();
+	if(!dataNode["AgentNames"].isNull())
+		data_.agentNames = dataNode["AgentNames"].asString();
 	if(!dataNode["Satisfaction"].isNull())
 		data_.satisfaction = std::stoi(dataNode["Satisfaction"].asString());
+	if(!dataNode["StartTime"].isNull())
+		data_.startTime = std::stol(dataNode["StartTime"].asString());
+	if(!dataNode["ContactId"].isNull())
+		data_.contactId = dataNode["ContactId"].asString();
 	if(!dataNode["SatisfactionSurveyChannel"].isNull())
 		data_.satisfactionSurveyChannel = dataNode["SatisfactionSurveyChannel"].asString();
-	if(!dataNode["ReleaseInitiator"].isNull())
-		data_.releaseInitiator = dataNode["ReleaseInitiator"].asString();
-	if(!dataNode["RecordingReady"].isNull())
-		data_.recordingReady = dataNode["RecordingReady"].asString() == "true";
+	if(!dataNode["ReleaseTime"].isNull())
+		data_.releaseTime = std::stol(dataNode["ReleaseTime"].asString());
+	if(!dataNode["CallingNumber"].isNull())
+		data_.callingNumber = dataNode["CallingNumber"].asString();
+	if(!dataNode["SkillGroupNames"].isNull())
+		data_.skillGroupNames = dataNode["SkillGroupNames"].asString();
+	if(!dataNode["SkillGroupIds"].isNull())
+		data_.skillGroupIds = dataNode["SkillGroupIds"].asString();
+	if(!dataNode["CallerLocation"].isNull())
+		data_.callerLocation = dataNode["CallerLocation"].asString();
+	if(!dataNode["CalleeLocation"].isNull())
+		data_.calleeLocation = dataNode["CalleeLocation"].asString();
 	auto allAgentEventsNode = dataNode["AgentEvents"]["AgentEventsItem"];
 	for (auto dataNodeAgentEventsAgentEventsItem : allAgentEventsNode)
 	{
 		Data::AgentEventsItem agentEventsItemObject;
-		if(!dataNodeAgentEventsAgentEventsItem["AgentId"].isNull())
-			agentEventsItemObject.agentId = dataNodeAgentEventsAgentEventsItem["AgentId"].asString();
 		if(!dataNodeAgentEventsAgentEventsItem["AgentName"].isNull())
 			agentEventsItemObject.agentName = dataNodeAgentEventsAgentEventsItem["AgentName"].asString();
+		if(!dataNodeAgentEventsAgentEventsItem["AgentId"].isNull())
+			agentEventsItemObject.agentId = dataNodeAgentEventsAgentEventsItem["AgentId"].asString();
 		if(!dataNodeAgentEventsAgentEventsItem["SkillGroupId"].isNull())
 			agentEventsItemObject.skillGroupId = dataNodeAgentEventsAgentEventsItem["SkillGroupId"].asString();
 		auto allEventSequenceNode = dataNodeAgentEventsAgentEventsItem["EventSequence"]["EventSequenceItem"];
@@ -122,12 +126,12 @@ void GetCallDetailRecordResult::parse(const std::string &payload)
 	for (auto dataNodeQueueEventsQueueEventsItem : allQueueEventsNode)
 	{
 		Data::QueueEventsItem queueEventsItemObject;
-		if(!dataNodeQueueEventsQueueEventsItem["FlowId"].isNull())
-			queueEventsItemObject.flowId = dataNodeQueueEventsQueueEventsItem["FlowId"].asString();
 		if(!dataNodeQueueEventsQueueEventsItem["QueueId"].isNull())
 			queueEventsItemObject.queueId = dataNodeQueueEventsQueueEventsItem["QueueId"].asString();
 		if(!dataNodeQueueEventsQueueEventsItem["QueueName"].isNull())
 			queueEventsItemObject.queueName = dataNodeQueueEventsQueueEventsItem["QueueName"].asString();
+		if(!dataNodeQueueEventsQueueEventsItem["FlowId"].isNull())
+			queueEventsItemObject.flowId = dataNodeQueueEventsQueueEventsItem["FlowId"].asString();
 		if(!dataNodeQueueEventsQueueEventsItem["QueueType"].isNull())
 			queueEventsItemObject.queueType = std::stoi(dataNodeQueueEventsQueueEventsItem["QueueType"].asString());
 		auto allEventSequence3Node = dataNodeQueueEventsQueueEventsItem["EventSequence"]["EventSequenceItem"];

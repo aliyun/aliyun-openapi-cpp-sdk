@@ -146,6 +146,8 @@
 #include "model/ListSkillGroupsResult.h"
 #include "model/ListSkillLevelsOfUserRequest.h"
 #include "model/ListSkillLevelsOfUserResult.h"
+#include "model/ListUnassignedNumbersRequest.h"
+#include "model/ListUnassignedNumbersResult.h"
 #include "model/ListUserLevelsOfSkillGroupRequest.h"
 #include "model/ListUserLevelsOfSkillGroupResult.h"
 #include "model/ListUsersRequest.h"
@@ -214,6 +216,8 @@
 #include "model/SignOutGroupResult.h"
 #include "model/StartBack2BackCallRequest.h"
 #include "model/StartBack2BackCallResult.h"
+#include "model/StartPredictiveCallRequest.h"
+#include "model/StartPredictiveCallResult.h"
 #include "model/TakeBreakRequest.h"
 #include "model/TakeBreakResult.h"
 #include "model/UnmuteCallRequest.h"
@@ -415,6 +419,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListSkillLevelsOfUserResult> ListSkillLevelsOfUserOutcome;
 			typedef std::future<ListSkillLevelsOfUserOutcome> ListSkillLevelsOfUserOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::ListSkillLevelsOfUserRequest&, const ListSkillLevelsOfUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListSkillLevelsOfUserAsyncHandler;
+			typedef Outcome<Error, Model::ListUnassignedNumbersResult> ListUnassignedNumbersOutcome;
+			typedef std::future<ListUnassignedNumbersOutcome> ListUnassignedNumbersOutcomeCallable;
+			typedef std::function<void(const CCCClient*, const Model::ListUnassignedNumbersRequest&, const ListUnassignedNumbersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListUnassignedNumbersAsyncHandler;
 			typedef Outcome<Error, Model::ListUserLevelsOfSkillGroupResult> ListUserLevelsOfSkillGroupOutcome;
 			typedef std::future<ListUserLevelsOfSkillGroupOutcome> ListUserLevelsOfSkillGroupOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::ListUserLevelsOfSkillGroupRequest&, const ListUserLevelsOfSkillGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListUserLevelsOfSkillGroupAsyncHandler;
@@ -517,6 +524,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::StartBack2BackCallResult> StartBack2BackCallOutcome;
 			typedef std::future<StartBack2BackCallOutcome> StartBack2BackCallOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::StartBack2BackCallRequest&, const StartBack2BackCallOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartBack2BackCallAsyncHandler;
+			typedef Outcome<Error, Model::StartPredictiveCallResult> StartPredictiveCallOutcome;
+			typedef std::future<StartPredictiveCallOutcome> StartPredictiveCallOutcomeCallable;
+			typedef std::function<void(const CCCClient*, const Model::StartPredictiveCallRequest&, const StartPredictiveCallOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartPredictiveCallAsyncHandler;
 			typedef Outcome<Error, Model::TakeBreakResult> TakeBreakOutcome;
 			typedef std::future<TakeBreakOutcome> TakeBreakOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::TakeBreakRequest&, const TakeBreakOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TakeBreakAsyncHandler;
@@ -717,6 +727,9 @@ namespace AlibabaCloud
 			ListSkillLevelsOfUserOutcome listSkillLevelsOfUser(const Model::ListSkillLevelsOfUserRequest &request)const;
 			void listSkillLevelsOfUserAsync(const Model::ListSkillLevelsOfUserRequest& request, const ListSkillLevelsOfUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListSkillLevelsOfUserOutcomeCallable listSkillLevelsOfUserCallable(const Model::ListSkillLevelsOfUserRequest& request) const;
+			ListUnassignedNumbersOutcome listUnassignedNumbers(const Model::ListUnassignedNumbersRequest &request)const;
+			void listUnassignedNumbersAsync(const Model::ListUnassignedNumbersRequest& request, const ListUnassignedNumbersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListUnassignedNumbersOutcomeCallable listUnassignedNumbersCallable(const Model::ListUnassignedNumbersRequest& request) const;
 			ListUserLevelsOfSkillGroupOutcome listUserLevelsOfSkillGroup(const Model::ListUserLevelsOfSkillGroupRequest &request)const;
 			void listUserLevelsOfSkillGroupAsync(const Model::ListUserLevelsOfSkillGroupRequest& request, const ListUserLevelsOfSkillGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListUserLevelsOfSkillGroupOutcomeCallable listUserLevelsOfSkillGroupCallable(const Model::ListUserLevelsOfSkillGroupRequest& request) const;
@@ -819,6 +832,9 @@ namespace AlibabaCloud
 			StartBack2BackCallOutcome startBack2BackCall(const Model::StartBack2BackCallRequest &request)const;
 			void startBack2BackCallAsync(const Model::StartBack2BackCallRequest& request, const StartBack2BackCallAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StartBack2BackCallOutcomeCallable startBack2BackCallCallable(const Model::StartBack2BackCallRequest& request) const;
+			StartPredictiveCallOutcome startPredictiveCall(const Model::StartPredictiveCallRequest &request)const;
+			void startPredictiveCallAsync(const Model::StartPredictiveCallRequest& request, const StartPredictiveCallAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			StartPredictiveCallOutcomeCallable startPredictiveCallCallable(const Model::StartPredictiveCallRequest& request) const;
 			TakeBreakOutcome takeBreak(const Model::TakeBreakRequest &request)const;
 			void takeBreakAsync(const Model::TakeBreakRequest& request, const TakeBreakAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			TakeBreakOutcomeCallable takeBreakCallable(const Model::TakeBreakRequest& request) const;

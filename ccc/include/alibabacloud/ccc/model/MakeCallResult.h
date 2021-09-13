@@ -62,12 +62,12 @@ namespace AlibabaCloud
 						std::string extension;
 						std::string userState;
 						std::string instanceId;
-						std::string breakCode;
 						std::string deviceId;
 						std::string userId;
+						std::string breakCode;
 						bool outboundScenario;
-						std::string jobId;
 						std::string workMode;
+						std::string jobId;
 						std::vector<std::string> signedSkillGroupIdList;
 					};
 					UserContext userContext;

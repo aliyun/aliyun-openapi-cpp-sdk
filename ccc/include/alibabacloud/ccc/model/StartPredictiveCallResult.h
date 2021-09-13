@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CCC_MODEL_POLLUSERSTATUSRESULT_H_
-#define ALIBABACLOUD_CCC_MODEL_POLLUSERSTATUSRESULT_H_
+#ifndef ALIBABACLOUD_CCC_MODEL_STARTPREDICTIVECALLRESULT_H_
+#define ALIBABACLOUD_CCC_MODEL_STARTPREDICTIVECALLRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,7 +29,7 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CCC_EXPORT PollUserStatusResult : public ServiceResult
+			class ALIBABACLOUD_CCC_EXPORT StartPredictiveCallResult : public ServiceResult
 			{
 			public:
 				struct Data
@@ -42,12 +42,9 @@ namespace AlibabaCloud
 							std::string channelState;
 							std::string releaseInitiator;
 							std::string callType;
-							int index;
-							std::string skillGroupId;
 							std::string associatedData;
 							std::string channelId;
 							long timestamp;
-							std::string channelVariables;
 							std::string releaseReason;
 							std::string channelFlags;
 							std::string originator;
@@ -70,6 +67,7 @@ namespace AlibabaCloud
 						std::string mobile;
 						std::vector<std::string> signedSkillGroupIdList;
 						std::string extension;
+						std::string deviceState;
 						std::string userId;
 						long heartbeat;
 						std::string workMode;
@@ -77,14 +75,13 @@ namespace AlibabaCloud
 						long reserved;
 					};
 					UserContext userContext;
-					long contextId;
 					CallContext callContext;
 				};
 
 
-				PollUserStatusResult();
-				explicit PollUserStatusResult(const std::string &payload);
-				~PollUserStatusResult();
+				StartPredictiveCallResult();
+				explicit StartPredictiveCallResult(const std::string &payload);
+				~StartPredictiveCallResult();
 				std::string getMessage()const;
 				int getHttpStatusCode()const;
 				std::vector<std::string> getParams()const;
@@ -104,4 +101,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CCC_MODEL_POLLUSERSTATUSRESULT_H_
+#endif // !ALIBABACLOUD_CCC_MODEL_STARTPREDICTIVECALLRESULT_H_

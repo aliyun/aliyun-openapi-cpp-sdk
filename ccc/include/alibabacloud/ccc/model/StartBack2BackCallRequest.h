@@ -39,10 +39,6 @@ namespace AlibabaCloud
 				void setCallee(const std::string& callee);
 				std::string getBroker()const;
 				void setBroker(const std::string& broker);
-				std::string getUserId()const;
-				void setUserId(const std::string& userId);
-				std::string getDeviceId()const;
-				void setDeviceId(const std::string& deviceId);
 				std::string getAdditionalBroker()const;
 				void setAdditionalBroker(const std::string& additionalBroker);
 				std::string getTags()const;
@@ -57,8 +53,6 @@ namespace AlibabaCloud
             private:
 				std::string callee_;
 				std::string broker_;
-				std::string userId_;
-				std::string deviceId_;
 				std::string additionalBroker_;
 				std::string tags_;
 				int timeoutSeconds_;

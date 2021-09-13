@@ -2283,6 +2283,42 @@ CCCClient::ListSkillLevelsOfUserOutcomeCallable CCCClient::listSkillLevelsOfUser
 	return task->get_future();
 }
 
+CCCClient::ListUnassignedNumbersOutcome CCCClient::listUnassignedNumbers(const ListUnassignedNumbersRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListUnassignedNumbersOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListUnassignedNumbersOutcome(ListUnassignedNumbersResult(outcome.result()));
+	else
+		return ListUnassignedNumbersOutcome(outcome.error());
+}
+
+void CCCClient::listUnassignedNumbersAsync(const ListUnassignedNumbersRequest& request, const ListUnassignedNumbersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listUnassignedNumbers(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CCCClient::ListUnassignedNumbersOutcomeCallable CCCClient::listUnassignedNumbersCallable(const ListUnassignedNumbersRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListUnassignedNumbersOutcome()>>(
+			[this, request]()
+			{
+			return this->listUnassignedNumbers(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CCCClient::ListUserLevelsOfSkillGroupOutcome CCCClient::listUserLevelsOfSkillGroup(const ListUserLevelsOfSkillGroupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3501,6 +3537,42 @@ CCCClient::StartBack2BackCallOutcomeCallable CCCClient::startBack2BackCallCallab
 			[this, request]()
 			{
 			return this->startBack2BackCall(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CCCClient::StartPredictiveCallOutcome CCCClient::startPredictiveCall(const StartPredictiveCallRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return StartPredictiveCallOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return StartPredictiveCallOutcome(StartPredictiveCallResult(outcome.result()));
+	else
+		return StartPredictiveCallOutcome(outcome.error());
+}
+
+void CCCClient::startPredictiveCallAsync(const StartPredictiveCallRequest& request, const StartPredictiveCallAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, startPredictiveCall(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CCCClient::StartPredictiveCallOutcomeCallable CCCClient::startPredictiveCallCallable(const StartPredictiveCallRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<StartPredictiveCallOutcome()>>(
+			[this, request]()
+			{
+			return this->startPredictiveCall(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

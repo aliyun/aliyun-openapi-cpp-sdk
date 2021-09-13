@@ -145,6 +145,8 @@ set(ccc_public_header_model
 	include/alibabacloud/ccc/model/ListSkillGroupsResult.h
 	include/alibabacloud/ccc/model/ListSkillLevelsOfUserRequest.h
 	include/alibabacloud/ccc/model/ListSkillLevelsOfUserResult.h
+	include/alibabacloud/ccc/model/ListUnassignedNumbersRequest.h
+	include/alibabacloud/ccc/model/ListUnassignedNumbersResult.h
 	include/alibabacloud/ccc/model/ListUserLevelsOfSkillGroupRequest.h
 	include/alibabacloud/ccc/model/ListUserLevelsOfSkillGroupResult.h
 	include/alibabacloud/ccc/model/ListUsersRequest.h
@@ -213,6 +215,8 @@ set(ccc_public_header_model
 	include/alibabacloud/ccc/model/SignOutGroupResult.h
 	include/alibabacloud/ccc/model/StartBack2BackCallRequest.h
 	include/alibabacloud/ccc/model/StartBack2BackCallResult.h
+	include/alibabacloud/ccc/model/StartPredictiveCallRequest.h
+	include/alibabacloud/ccc/model/StartPredictiveCallResult.h
 	include/alibabacloud/ccc/model/TakeBreakRequest.h
 	include/alibabacloud/ccc/model/TakeBreakResult.h
 	include/alibabacloud/ccc/model/UnmuteCallRequest.h
@@ -346,6 +350,8 @@ set(ccc_src
 	src/model/ListSkillGroupsResult.cc
 	src/model/ListSkillLevelsOfUserRequest.cc
 	src/model/ListSkillLevelsOfUserResult.cc
+	src/model/ListUnassignedNumbersRequest.cc
+	src/model/ListUnassignedNumbersResult.cc
 	src/model/ListUserLevelsOfSkillGroupRequest.cc
 	src/model/ListUserLevelsOfSkillGroupResult.cc
 	src/model/ListUsersRequest.cc
@@ -414,6 +420,8 @@ set(ccc_src
 	src/model/SignOutGroupResult.cc
 	src/model/StartBack2BackCallRequest.cc
 	src/model/StartBack2BackCallResult.cc
+	src/model/StartPredictiveCallRequest.cc
+	src/model/StartPredictiveCallResult.cc
 	src/model/TakeBreakRequest.cc
 	src/model/TakeBreakResult.cc
 	src/model/UnmuteCallRequest.cc
