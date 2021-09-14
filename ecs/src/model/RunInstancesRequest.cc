@@ -115,6 +115,17 @@ void RunInstancesRequest::setPassword(const std::string& password)
 	setParameter("Password", password);
 }
 
+Struct RunInstancesRequest::getSystemDisk()const
+{
+	return systemDisk_;
+}
+
+void RunInstancesRequest::setSystemDisk(const Struct& systemDisk)
+{
+	systemDisk_ = systemDisk;
+	setParameter("SystemDisk", std::to_string(systemDisk));
+}
+
 int RunInstancesRequest::getDeploymentSetGroupNo()const
 {
 	return deploymentSetGroupNo_;
@@ -970,6 +981,7 @@ void RunInstancesRequest::setDataDisk(const std::vector<DataDisk>& dataDisk)
 		setParameter(dataDiskObjStr + ".EncryptAlgorithm", dataDiskObj.encryptAlgorithm);
 		setParameter(dataDiskObjStr + ".DeleteWithInstance", dataDiskObj.deleteWithInstance ? "true" : "false");
 		setParameter(dataDiskObjStr + ".KMSKeyId", dataDiskObj.kMSKeyId);
+		setParameter(dataDiskObjStr + ".StorageClusterId", dataDiskObj.storageClusterId);
 	}
 }
 

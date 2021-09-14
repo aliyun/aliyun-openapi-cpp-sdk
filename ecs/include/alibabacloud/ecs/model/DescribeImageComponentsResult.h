@@ -40,6 +40,7 @@ namespace AlibabaCloud
 						std::string tagValue;
 					};
 					std::string componentType;
+					std::string owner;
 					std::string description;
 					std::string resourceGroupId;
 					std::string content;

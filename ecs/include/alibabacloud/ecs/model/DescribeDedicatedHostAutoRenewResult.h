@@ -37,6 +37,7 @@ namespace AlibabaCloud
 					bool autoRenewEnabled;
 					std::string dedicatedHostId;
 					std::string renewalStatus;
+					std::string autoRenewWithEcs;
 					int duration;
 					std::string periodUnit;
 				};

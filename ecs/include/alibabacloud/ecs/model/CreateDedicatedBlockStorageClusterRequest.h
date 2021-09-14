@@ -43,6 +43,8 @@ namespace AlibabaCloud
 				void setClientToken(const std::string& clientToken);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
+				std::string getType()const;
+				void setType(const std::string& type);
 				int getCapacity()const;
 				void setCapacity(int capacity);
 				std::string getRegionId()const;
@@ -53,8 +55,6 @@ namespace AlibabaCloud
 				void setFromApp(const std::string& fromApp);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getPerformanceLevel()const;
-				void setPerformanceLevel(const std::string& performanceLevel);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
@@ -71,12 +71,12 @@ namespace AlibabaCloud
 				std::string dedicatedBlockStorageClusterName_;
 				std::string clientToken_;
 				std::string description_;
+				std::string type_;
 				int capacity_;
 				std::string regionId_;
 				int period_;
 				std::string fromApp_;
 				std::string resourceOwnerAccount_;
-				std::string performanceLevel_;
 				std::string ownerAccount_;
 				long ownerId_;
 				std::string periodUnit_;

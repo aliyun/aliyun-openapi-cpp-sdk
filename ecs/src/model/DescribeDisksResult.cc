@@ -65,8 +65,8 @@ void DescribeDisksResult::parse(const std::string &payload)
 			disksObject.diskId = valueDisksDisk["DiskId"].asString();
 		if(!valueDisksDisk["DeleteAutoSnapshot"].isNull())
 			disksObject.deleteAutoSnapshot = valueDisksDisk["DeleteAutoSnapshot"].asString() == "true";
-		if(!valueDisksDisk["DedicatedBlockStorageClusterId"].isNull())
-			disksObject.dedicatedBlockStorageClusterId = valueDisksDisk["DedicatedBlockStorageClusterId"].asString();
+		if(!valueDisksDisk["StorageClusterId"].isNull())
+			disksObject.storageClusterId = valueDisksDisk["StorageClusterId"].asString();
 		if(!valueDisksDisk["Encrypted"].isNull())
 			disksObject.encrypted = valueDisksDisk["Encrypted"].asString() == "true";
 		if(!valueDisksDisk["IOPSRead"].isNull())

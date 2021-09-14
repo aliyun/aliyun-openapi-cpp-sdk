@@ -51,6 +51,7 @@ namespace AlibabaCloud
 					std::string performanceLevel;
 					std::string encryptAlgorithm;
 					std::string description;
+					std::string storageClusterId;
 					std::string category;
 					std::string kMSKeyId;
 					std::string device;
@@ -83,6 +84,8 @@ namespace AlibabaCloud
 				void setHostName(const std::string& hostName);
 				std::string getPassword()const;
 				void setPassword(const std::string& password);
+				Struct getSystemDisk()const;
+				void setSystemDisk(const Struct& systemDisk);
 				int getDeploymentSetGroupNo()const;
 				void setDeploymentSetGroupNo(int deploymentSetGroupNo);
 				int getStorageSetPartitionNumber()const;
@@ -210,6 +213,7 @@ namespace AlibabaCloud
 				std::string privatePoolOptionsMatchCriteria_;
 				std::string hostName_;
 				std::string password_;
+				Struct systemDisk_;
 				int deploymentSetGroupNo_;
 				int storageSetPartitionNumber_;
 				std::vector<Tag> tag_;

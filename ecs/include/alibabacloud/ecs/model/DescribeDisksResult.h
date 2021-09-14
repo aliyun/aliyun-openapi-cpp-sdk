@@ -60,7 +60,6 @@ namespace AlibabaCloud
 					std::string kMSKeyId;
 					std::string category;
 					std::string resourceGroupId;
-					std::string dedicatedBlockStorageClusterId;
 					bool encrypted;
 					int size;
 					bool deleteAutoSnapshot;
@@ -76,6 +75,7 @@ namespace AlibabaCloud
 					std::string status;
 					int iOPSRead;
 					std::string attachedTime;
+					std::string storageClusterId;
 					int iOPSWrite;
 					std::string zoneId;
 					std::string sourceSnapshotId;

@@ -148,6 +148,17 @@ void CreateInstanceRequest::setPassword(const std::string& password)
 	setParameter("Password", password);
 }
 
+Struct CreateInstanceRequest::getSystemDisk()const
+{
+	return systemDisk_;
+}
+
+void CreateInstanceRequest::setSystemDisk(const Struct& systemDisk)
+{
+	systemDisk_ = systemDisk;
+	setParameter("SystemDisk", std::to_string(systemDisk));
+}
+
 int CreateInstanceRequest::getDeploymentSetGroupNo()const
 {
 	return deploymentSetGroupNo_;
@@ -738,6 +749,7 @@ void CreateInstanceRequest::setDataDisk(const std::vector<DataDisk>& dataDisk)
 		setParameter(dataDiskObjStr + ".PerformanceLevel", dataDiskObj.performanceLevel);
 		setParameter(dataDiskObjStr + ".EncryptAlgorithm", dataDiskObj.encryptAlgorithm);
 		setParameter(dataDiskObjStr + ".Description", dataDiskObj.description);
+		setParameter(dataDiskObjStr + ".StorageClusterId", dataDiskObj.storageClusterId);
 		setParameter(dataDiskObjStr + ".Category", dataDiskObj.category);
 		setParameter(dataDiskObjStr + ".KMSKeyId", dataDiskObj.kMSKeyId);
 		setParameter(dataDiskObjStr + ".Device", dataDiskObj.device);

@@ -73,6 +73,17 @@ void CreateSnapshotGroupRequest::setDescription(const std::string& description)
 	setParameter("Description", description);
 }
 
+std::string CreateSnapshotGroupRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void CreateSnapshotGroupRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 int CreateSnapshotGroupRequest::getInstantAccessRetentionDays()const
 {
 	return instantAccessRetentionDays_;
@@ -93,6 +104,35 @@ void CreateSnapshotGroupRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setParameter("RegionId", regionId);
+}
+
+std::vector<std::string> CreateSnapshotGroupRequest::getDiskId()const
+{
+	return diskId_;
+}
+
+void CreateSnapshotGroupRequest::setDiskId(const std::vector<std::string>& diskId)
+{
+	diskId_ = diskId;
+	for(int dep1 = 0; dep1!= diskId.size(); dep1++) {
+		setParameter("DiskId."+ std::to_string(dep1), diskId.at(dep1));
+	}
+}
+
+std::vector<CreateSnapshotGroupRequest::Tag> CreateSnapshotGroupRequest::getTag()const
+{
+	return tag_;
+}
+
+void CreateSnapshotGroupRequest::setTag(const std::vector<Tag>& tag)
+{
+	tag_ = tag;
+	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
+		auto tagObj = tag.at(dep1);
+		std::string tagObjStr = "Tag." + std::to_string(dep1 + 1);
+		setParameter(tagObjStr + ".Key", tagObj.key);
+		setParameter(tagObjStr + ".Value", tagObj.value);
+	}
 }
 
 std::string CreateSnapshotGroupRequest::getResourceOwnerAccount()const

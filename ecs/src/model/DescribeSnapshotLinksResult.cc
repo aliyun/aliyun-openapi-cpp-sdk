@@ -43,38 +43,38 @@ void DescribeSnapshotLinksResult::parse(const std::string &payload)
 	for (auto valueSnapshotLinksSnapshotLink : allSnapshotLinksNode)
 	{
 		SnapshotLink snapshotLinksObject;
-		if(!valueSnapshotLinksSnapshotLink["SnapshotLinkId"].isNull())
-			snapshotLinksObject.snapshotLinkId = valueSnapshotLinksSnapshotLink["SnapshotLinkId"].asString();
-		if(!valueSnapshotLinksSnapshotLink["RegionId"].isNull())
-			snapshotLinksObject.regionId = valueSnapshotLinksSnapshotLink["RegionId"].asString();
-		if(!valueSnapshotLinksSnapshotLink["InstanceId"].isNull())
-			snapshotLinksObject.instanceId = valueSnapshotLinksSnapshotLink["InstanceId"].asString();
-		if(!valueSnapshotLinksSnapshotLink["InstanceName"].isNull())
-			snapshotLinksObject.instanceName = valueSnapshotLinksSnapshotLink["InstanceName"].asString();
-		if(!valueSnapshotLinksSnapshotLink["SourceDiskId"].isNull())
-			snapshotLinksObject.sourceDiskId = valueSnapshotLinksSnapshotLink["SourceDiskId"].asString();
+		if(!valueSnapshotLinksSnapshotLink["InstantAccess"].isNull())
+			snapshotLinksObject.instantAccess = valueSnapshotLinksSnapshotLink["InstantAccess"].asString() == "true";
+		if(!valueSnapshotLinksSnapshotLink["TotalSize"].isNull())
+			snapshotLinksObject.totalSize = std::stol(valueSnapshotLinksSnapshotLink["TotalSize"].asString());
 		if(!valueSnapshotLinksSnapshotLink["SourceDiskName"].isNull())
 			snapshotLinksObject.sourceDiskName = valueSnapshotLinksSnapshotLink["SourceDiskName"].asString();
 		if(!valueSnapshotLinksSnapshotLink["SourceDiskSize"].isNull())
 			snapshotLinksObject.sourceDiskSize = std::stoi(valueSnapshotLinksSnapshotLink["SourceDiskSize"].asString());
 		if(!valueSnapshotLinksSnapshotLink["SourceDiskType"].isNull())
 			snapshotLinksObject.sourceDiskType = valueSnapshotLinksSnapshotLink["SourceDiskType"].asString();
-		if(!valueSnapshotLinksSnapshotLink["Category"].isNull())
-			snapshotLinksObject.category = valueSnapshotLinksSnapshotLink["Category"].asString();
-		if(!valueSnapshotLinksSnapshotLink["InstantAccess"].isNull())
-			snapshotLinksObject.instantAccess = valueSnapshotLinksSnapshotLink["InstantAccess"].asString() == "true";
-		if(!valueSnapshotLinksSnapshotLink["TotalSize"].isNull())
-			snapshotLinksObject.totalSize = std::stol(valueSnapshotLinksSnapshotLink["TotalSize"].asString());
+		if(!valueSnapshotLinksSnapshotLink["InstanceId"].isNull())
+			snapshotLinksObject.instanceId = valueSnapshotLinksSnapshotLink["InstanceId"].asString();
+		if(!valueSnapshotLinksSnapshotLink["SnapshotLinkId"].isNull())
+			snapshotLinksObject.snapshotLinkId = valueSnapshotLinksSnapshotLink["SnapshotLinkId"].asString();
 		if(!valueSnapshotLinksSnapshotLink["TotalCount"].isNull())
 			snapshotLinksObject.totalCount = std::stoi(valueSnapshotLinksSnapshotLink["TotalCount"].asString());
+		if(!valueSnapshotLinksSnapshotLink["RegionId"].isNull())
+			snapshotLinksObject.regionId = valueSnapshotLinksSnapshotLink["RegionId"].asString();
+		if(!valueSnapshotLinksSnapshotLink["SourceDiskId"].isNull())
+			snapshotLinksObject.sourceDiskId = valueSnapshotLinksSnapshotLink["SourceDiskId"].asString();
+		if(!valueSnapshotLinksSnapshotLink["InstanceName"].isNull())
+			snapshotLinksObject.instanceName = valueSnapshotLinksSnapshotLink["InstanceName"].asString();
+		if(!valueSnapshotLinksSnapshotLink["Category"].isNull())
+			snapshotLinksObject.category = valueSnapshotLinksSnapshotLink["Category"].asString();
 		snapshotLinks_.push_back(snapshotLinksObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 

@@ -45,6 +45,8 @@ void DescribeZonesResult::parse(const std::string &payload)
 		Zone zonesObject;
 		if(!valueZonesZone["ZoneId"].isNull())
 			zonesObject.zoneId = valueZonesZone["ZoneId"].asString();
+		if(!valueZonesZone["ZoneType"].isNull())
+			zonesObject.zoneType = valueZonesZone["ZoneType"].asString();
 		if(!valueZonesZone["LocalName"].isNull())
 			zonesObject.localName = valueZonesZone["LocalName"].asString();
 		auto allAvailableResourcesNode = valueZonesZone["AvailableResources"]["ResourcesInfo"];
@@ -56,41 +58,41 @@ void DescribeZonesResult::parse(const std::string &payload)
 			auto allSystemDiskCategories = value["SystemDiskCategories"]["supportedSystemDiskCategory"];
 			for (auto value : allSystemDiskCategories)
 				availableResourcesObject.systemDiskCategories.push_back(value.asString());
+			auto allInstanceGenerations = value["InstanceGenerations"]["supportedInstanceGeneration"];
+			for (auto value : allInstanceGenerations)
+				availableResourcesObject.instanceGenerations.push_back(value.asString());
 			auto allDataDiskCategories = value["DataDiskCategories"]["supportedDataDiskCategory"];
 			for (auto value : allDataDiskCategories)
 				availableResourcesObject.dataDiskCategories.push_back(value.asString());
-			auto allNetworkTypes = value["NetworkTypes"]["supportedNetworkCategory"];
-			for (auto value : allNetworkTypes)
-				availableResourcesObject.networkTypes.push_back(value.asString());
 			auto allInstanceTypes = value["InstanceTypes"]["supportedInstanceType"];
 			for (auto value : allInstanceTypes)
 				availableResourcesObject.instanceTypes.push_back(value.asString());
 			auto allInstanceTypeFamilies = value["InstanceTypeFamilies"]["supportedInstanceTypeFamily"];
 			for (auto value : allInstanceTypeFamilies)
 				availableResourcesObject.instanceTypeFamilies.push_back(value.asString());
-			auto allInstanceGenerations = value["InstanceGenerations"]["supportedInstanceGeneration"];
-			for (auto value : allInstanceGenerations)
-				availableResourcesObject.instanceGenerations.push_back(value.asString());
+			auto allNetworkTypes = value["NetworkTypes"]["supportedNetworkCategory"];
+			for (auto value : allNetworkTypes)
+				availableResourcesObject.networkTypes.push_back(value.asString());
 			zonesObject.availableResources.push_back(availableResourcesObject);
 		}
 		auto allAvailableResourceCreation = value["AvailableResourceCreation"]["ResourceTypes"];
 		for (auto value : allAvailableResourceCreation)
 			zonesObject.availableResourceCreation.push_back(value.asString());
-		auto allAvailableDiskCategories = value["AvailableDiskCategories"]["DiskCategories"];
-		for (auto value : allAvailableDiskCategories)
-			zonesObject.availableDiskCategories.push_back(value.asString());
-		auto allAvailableInstanceTypes = value["AvailableInstanceTypes"]["InstanceTypes"];
-		for (auto value : allAvailableInstanceTypes)
-			zonesObject.availableInstanceTypes.push_back(value.asString());
-		auto allAvailableVolumeCategories = value["AvailableVolumeCategories"]["VolumeCategories"];
-		for (auto value : allAvailableVolumeCategories)
-			zonesObject.availableVolumeCategories.push_back(value.asString());
-		auto allAvailableDedicatedHostTypes = value["AvailableDedicatedHostTypes"]["DedicatedHostType"];
-		for (auto value : allAvailableDedicatedHostTypes)
-			zonesObject.availableDedicatedHostTypes.push_back(value.asString());
 		auto allDedicatedHostGenerations = value["DedicatedHostGenerations"]["DedicatedHostGeneration"];
 		for (auto value : allDedicatedHostGenerations)
 			zonesObject.dedicatedHostGenerations.push_back(value.asString());
+		auto allAvailableInstanceTypes = value["AvailableInstanceTypes"]["InstanceTypes"];
+		for (auto value : allAvailableInstanceTypes)
+			zonesObject.availableInstanceTypes.push_back(value.asString());
+		auto allAvailableDiskCategories = value["AvailableDiskCategories"]["DiskCategories"];
+		for (auto value : allAvailableDiskCategories)
+			zonesObject.availableDiskCategories.push_back(value.asString());
+		auto allAvailableDedicatedHostTypes = value["AvailableDedicatedHostTypes"]["DedicatedHostType"];
+		for (auto value : allAvailableDedicatedHostTypes)
+			zonesObject.availableDedicatedHostTypes.push_back(value.asString());
+		auto allAvailableVolumeCategories = value["AvailableVolumeCategories"]["VolumeCategories"];
+		for (auto value : allAvailableVolumeCategories)
+			zonesObject.availableVolumeCategories.push_back(value.asString());
 		zones_.push_back(zonesObject);
 	}
 

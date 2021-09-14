@@ -75,8 +75,6 @@ namespace AlibabaCloud
 				void setAdvancedFeatures(const std::string& advancedFeatures);
 				std::vector<Arn> getArn()const;
 				void setArn(const std::vector<Arn>& arn);
-				std::string getDedicatedBlockStorageClusterId()const;
-				void setDedicatedBlockStorageClusterId(const std::string& dedicatedBlockStorageClusterId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getPerformanceLevel()const;
@@ -95,6 +93,8 @@ namespace AlibabaCloud
 				void setEncrypted(bool encrypted);
 				std::string getZoneId()const;
 				void setZoneId(const std::string& zoneId);
+				std::string getStorageClusterId()const;
+				void setStorageClusterId(const std::string& storageClusterId);
 				std::string getKMSKeyId()const;
 				void setKMSKeyId(const std::string& kMSKeyId);
 
@@ -113,7 +113,6 @@ namespace AlibabaCloud
 				std::vector<Tag> tag_;
 				std::string advancedFeatures_;
 				std::vector<Arn> arn_;
-				std::string dedicatedBlockStorageClusterId_;
 				std::string resourceOwnerAccount_;
 				std::string performanceLevel_;
 				std::string ownerAccount_;
@@ -123,6 +122,7 @@ namespace AlibabaCloud
 				int size_;
 				bool encrypted_;
 				std::string zoneId_;
+				std::string storageClusterId_;
 				std::string kMSKeyId_;
 
 			};

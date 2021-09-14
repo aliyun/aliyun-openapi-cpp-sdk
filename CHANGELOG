@@ -1,3 +1,6 @@
+2021-09-14 Version: 1.36.874
+- Add DiskIds for CreateSnapshotGroup.
+
 2021-09-13 Version: 1.36.873
 - Generated 2019-03-01 for `LinkWAN`.
 

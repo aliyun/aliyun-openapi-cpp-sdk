@@ -192,17 +192,6 @@ void CreateDiskRequest::setArn(const std::vector<Arn>& arn)
 	}
 }
 
-std::string CreateDiskRequest::getDedicatedBlockStorageClusterId()const
-{
-	return dedicatedBlockStorageClusterId_;
-}
-
-void CreateDiskRequest::setDedicatedBlockStorageClusterId(const std::string& dedicatedBlockStorageClusterId)
-{
-	dedicatedBlockStorageClusterId_ = dedicatedBlockStorageClusterId;
-	setParameter("DedicatedBlockStorageClusterId", dedicatedBlockStorageClusterId);
-}
-
 std::string CreateDiskRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -300,6 +289,17 @@ void CreateDiskRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
 	setParameter("ZoneId", zoneId);
+}
+
+std::string CreateDiskRequest::getStorageClusterId()const
+{
+	return storageClusterId_;
+}
+
+void CreateDiskRequest::setStorageClusterId(const std::string& storageClusterId)
+{
+	storageClusterId_ = storageClusterId;
+	setParameter("StorageClusterId", storageClusterId);
 }
 
 std::string CreateDiskRequest::getKMSKeyId()const

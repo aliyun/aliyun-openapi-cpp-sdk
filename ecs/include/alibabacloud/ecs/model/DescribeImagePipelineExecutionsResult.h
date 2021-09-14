@@ -41,8 +41,8 @@ namespace AlibabaCloud
 					};
 					std::string status;
 					std::string modifiedTime;
-					std::string message;
 					std::string resourceGroupId;
+					std::string message;
 					std::string imagePipelineId;
 					std::string creationTime;
 					std::string imageId;

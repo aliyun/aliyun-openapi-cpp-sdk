@@ -126,6 +126,17 @@ void DescribeSecurityGroupsRequest::setRegionId(const std::string& regionId)
 	setParameter("RegionId", regionId);
 }
 
+std::string DescribeSecurityGroupsRequest::getNextToken()const
+{
+	return nextToken_;
+}
+
+void DescribeSecurityGroupsRequest::setNextToken(const std::string& nextToken)
+{
+	nextToken_ = nextToken;
+	setParameter("NextToken", nextToken);
+}
+
 int DescribeSecurityGroupsRequest::getPageSize()const
 {
 	return pageSize_;
@@ -228,5 +239,16 @@ void DescribeSecurityGroupsRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
 	setParameter("VpcId", vpcId);
+}
+
+int DescribeSecurityGroupsRequest::getMaxResults()const
+{
+	return maxResults_;
+}
+
+void DescribeSecurityGroupsRequest::setMaxResults(int maxResults)
+{
+	maxResults_ = maxResults;
+	setParameter("MaxResults", std::to_string(maxResults));
 }
 

@@ -71,6 +71,17 @@ void CreateDedicatedBlockStorageClusterRequest::setDescription(const std::string
 	setParameter("Description", description);
 }
 
+std::string CreateDedicatedBlockStorageClusterRequest::getType()const
+{
+	return type_;
+}
+
+void CreateDedicatedBlockStorageClusterRequest::setType(const std::string& type)
+{
+	type_ = type;
+	setParameter("Type", type);
+}
+
 int CreateDedicatedBlockStorageClusterRequest::getCapacity()const
 {
 	return capacity_;
@@ -124,17 +135,6 @@ void CreateDedicatedBlockStorageClusterRequest::setResourceOwnerAccount(const st
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string CreateDedicatedBlockStorageClusterRequest::getPerformanceLevel()const
-{
-	return performanceLevel_;
-}
-
-void CreateDedicatedBlockStorageClusterRequest::setPerformanceLevel(const std::string& performanceLevel)
-{
-	performanceLevel_ = performanceLevel;
-	setParameter("PerformanceLevel", performanceLevel);
 }
 
 std::string CreateDedicatedBlockStorageClusterRequest::getOwnerAccount()const

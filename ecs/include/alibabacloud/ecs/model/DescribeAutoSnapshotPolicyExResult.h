@@ -42,6 +42,7 @@ namespace AlibabaCloud
 					std::string status;
 					std::string timePoints;
 					int volumeNums;
+					std::string resourceGroupId;
 					std::string autoSnapshotPolicyId;
 					int retentionDays;
 					std::string repeatWeekdays;

@@ -30,6 +30,12 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_ECS_EXPORT CreateSnapshotGroupRequest : public RpcServiceRequest
 			{
+			public:
+				struct Tag
+				{
+					std::string key;
+					std::string value;
+				};
 
 			public:
 				CreateSnapshotGroupRequest();
@@ -43,10 +49,16 @@ namespace AlibabaCloud
 				void setExcludeDiskId(const std::vector<std::string>& excludeDiskId);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
 				int getInstantAccessRetentionDays()const;
 				void setInstantAccessRetentionDays(int instantAccessRetentionDays);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
+				std::vector<std::string> getDiskId()const;
+				void setDiskId(const std::vector<std::string>& diskId);
+				std::vector<Tag> getTag()const;
+				void setTag(const std::vector<Tag>& tag);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
@@ -63,8 +75,11 @@ namespace AlibabaCloud
 				bool instantAccess_;
 				std::vector<std::string> excludeDiskId_;
 				std::string description_;
+				std::string resourceGroupId_;
 				int instantAccessRetentionDays_;
 				std::string regionId_;
+				std::vector<std::string> diskId_;
+				std::vector<Tag> tag_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;

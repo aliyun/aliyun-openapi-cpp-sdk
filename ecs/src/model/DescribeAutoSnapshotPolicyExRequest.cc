@@ -60,6 +60,17 @@ void DescribeAutoSnapshotPolicyExRequest::setPageNumber(int pageNumber)
 	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
+std::string DescribeAutoSnapshotPolicyExRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DescribeAutoSnapshotPolicyExRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string DescribeAutoSnapshotPolicyExRequest::getRegionId()const
 {
 	return regionId_;

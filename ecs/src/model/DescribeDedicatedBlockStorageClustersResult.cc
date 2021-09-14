@@ -43,29 +43,29 @@ void DescribeDedicatedBlockStorageClustersResult::parse(const std::string &paylo
 	for (auto valueDedicatedBlockStorageClustersDedicatedBlockStorageCluster : allDedicatedBlockStorageClustersNode)
 	{
 		DedicatedBlockStorageCluster dedicatedBlockStorageClustersObject;
-		if(!valueDedicatedBlockStorageClustersDedicatedBlockStorageCluster["DedicatedBlockStorageClusterId"].isNull())
-			dedicatedBlockStorageClustersObject.dedicatedBlockStorageClusterId = valueDedicatedBlockStorageClustersDedicatedBlockStorageCluster["DedicatedBlockStorageClusterId"].asString();
-		if(!valueDedicatedBlockStorageClustersDedicatedBlockStorageCluster["DedicatedBlockStorageClusterName"].isNull())
-			dedicatedBlockStorageClustersObject.dedicatedBlockStorageClusterName = valueDedicatedBlockStorageClustersDedicatedBlockStorageCluster["DedicatedBlockStorageClusterName"].asString();
-		if(!valueDedicatedBlockStorageClustersDedicatedBlockStorageCluster["Description"].isNull())
-			dedicatedBlockStorageClustersObject.description = valueDedicatedBlockStorageClustersDedicatedBlockStorageCluster["Description"].asString();
-		if(!valueDedicatedBlockStorageClustersDedicatedBlockStorageCluster["ZoneId"].isNull())
-			dedicatedBlockStorageClustersObject.zoneId = valueDedicatedBlockStorageClustersDedicatedBlockStorageCluster["ZoneId"].asString();
 		if(!valueDedicatedBlockStorageClustersDedicatedBlockStorageCluster["Status"].isNull())
 			dedicatedBlockStorageClustersObject.status = valueDedicatedBlockStorageClustersDedicatedBlockStorageCluster["Status"].asString();
-		if(!valueDedicatedBlockStorageClustersDedicatedBlockStorageCluster["Category"].isNull())
-			dedicatedBlockStorageClustersObject.category = valueDedicatedBlockStorageClustersDedicatedBlockStorageCluster["Category"].asString();
-		if(!valueDedicatedBlockStorageClustersDedicatedBlockStorageCluster["PerformanceLevel"].isNull())
-			dedicatedBlockStorageClustersObject.performanceLevel = valueDedicatedBlockStorageClustersDedicatedBlockStorageCluster["PerformanceLevel"].asString();
+		if(!valueDedicatedBlockStorageClustersDedicatedBlockStorageCluster["Type"].isNull())
+			dedicatedBlockStorageClustersObject.type = valueDedicatedBlockStorageClustersDedicatedBlockStorageCluster["Type"].asString();
+		if(!valueDedicatedBlockStorageClustersDedicatedBlockStorageCluster["Description"].isNull())
+			dedicatedBlockStorageClustersObject.description = valueDedicatedBlockStorageClustersDedicatedBlockStorageCluster["Description"].asString();
 		if(!valueDedicatedBlockStorageClustersDedicatedBlockStorageCluster["ExpiredTime"].isNull())
 			dedicatedBlockStorageClustersObject.expiredTime = valueDedicatedBlockStorageClustersDedicatedBlockStorageCluster["ExpiredTime"].asString();
 		if(!valueDedicatedBlockStorageClustersDedicatedBlockStorageCluster["CreateTime"].isNull())
 			dedicatedBlockStorageClustersObject.createTime = valueDedicatedBlockStorageClustersDedicatedBlockStorageCluster["CreateTime"].asString();
+		if(!valueDedicatedBlockStorageClustersDedicatedBlockStorageCluster["ZoneId"].isNull())
+			dedicatedBlockStorageClustersObject.zoneId = valueDedicatedBlockStorageClustersDedicatedBlockStorageCluster["ZoneId"].asString();
+		if(!valueDedicatedBlockStorageClustersDedicatedBlockStorageCluster["Category"].isNull())
+			dedicatedBlockStorageClustersObject.category = valueDedicatedBlockStorageClustersDedicatedBlockStorageCluster["Category"].asString();
+		if(!valueDedicatedBlockStorageClustersDedicatedBlockStorageCluster["DedicatedBlockStorageClusterName"].isNull())
+			dedicatedBlockStorageClustersObject.dedicatedBlockStorageClusterName = valueDedicatedBlockStorageClustersDedicatedBlockStorageCluster["DedicatedBlockStorageClusterName"].asString();
+		if(!valueDedicatedBlockStorageClustersDedicatedBlockStorageCluster["DedicatedBlockStorageClusterId"].isNull())
+			dedicatedBlockStorageClustersObject.dedicatedBlockStorageClusterId = valueDedicatedBlockStorageClustersDedicatedBlockStorageCluster["DedicatedBlockStorageClusterId"].asString();
 		auto dedicatedBlockStorageClusterCapacityNode = value["DedicatedBlockStorageClusterCapacity"];
-		if(!dedicatedBlockStorageClusterCapacityNode["AvailableCapacity"].isNull())
-			dedicatedBlockStorageClustersObject.dedicatedBlockStorageClusterCapacity.availableCapacity = std::stol(dedicatedBlockStorageClusterCapacityNode["AvailableCapacity"].asString());
 		if(!dedicatedBlockStorageClusterCapacityNode["TotalCapacity"].isNull())
 			dedicatedBlockStorageClustersObject.dedicatedBlockStorageClusterCapacity.totalCapacity = std::stol(dedicatedBlockStorageClusterCapacityNode["TotalCapacity"].asString());
+		if(!dedicatedBlockStorageClusterCapacityNode["AvailableCapacity"].isNull())
+			dedicatedBlockStorageClustersObject.dedicatedBlockStorageClusterCapacity.availableCapacity = std::stol(dedicatedBlockStorageClusterCapacityNode["AvailableCapacity"].asString());
 		dedicatedBlockStorageClusters_.push_back(dedicatedBlockStorageClustersObject);
 	}
 	if(!value["NextToken"].isNull())

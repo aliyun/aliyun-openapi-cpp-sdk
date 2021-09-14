@@ -47,6 +47,8 @@ namespace AlibabaCloud
 				void setAutoSnapshotPolicyId(const std::string& autoSnapshotPolicyId);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				int getPageSize()const;
@@ -64,6 +66,7 @@ namespace AlibabaCloud
 				long resourceOwnerId_;
 				std::string autoSnapshotPolicyId_;
 				int pageNumber_;
+				std::string resourceGroupId_;
 				std::string regionId_;
 				int pageSize_;
 				std::vector<Tag> tag_;

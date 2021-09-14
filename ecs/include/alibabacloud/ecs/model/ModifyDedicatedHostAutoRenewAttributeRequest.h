@@ -45,6 +45,8 @@ namespace AlibabaCloud
 				void setRegionId(const std::string& regionId);
 				std::string getRenewalStatus()const;
 				void setRenewalStatus(const std::string& renewalStatus);
+				std::string getAutoRenewWithEcs()const;
+				void setAutoRenewWithEcs(const std::string& autoRenewWithEcs);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
@@ -62,6 +64,7 @@ namespace AlibabaCloud
 				int duration_;
 				std::string regionId_;
 				std::string renewalStatus_;
+				std::string autoRenewWithEcs_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;

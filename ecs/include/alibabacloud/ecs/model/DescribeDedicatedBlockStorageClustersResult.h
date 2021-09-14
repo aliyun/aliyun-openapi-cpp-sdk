@@ -40,11 +40,11 @@ namespace AlibabaCloud
 						long totalCapacity;
 					};
 					std::string status;
+					std::string type;
 					std::string description;
 					std::string category;
 					std::string zoneId;
 					std::string dedicatedBlockStorageClusterId;
-					std::string performanceLevel;
 					std::string expiredTime;
 					std::string createTime;
 					std::string dedicatedBlockStorageClusterName;

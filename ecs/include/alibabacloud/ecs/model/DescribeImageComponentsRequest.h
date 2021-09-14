@@ -53,6 +53,8 @@ namespace AlibabaCloud
 				void setNextToken(const std::string& nextToken);
 				std::vector<Tag> getTag()const;
 				void setTag(const std::vector<Tag>& tag);
+				std::string getOwner()const;
+				void setOwner(const std::string& owner);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
@@ -71,6 +73,7 @@ namespace AlibabaCloud
 				std::string regionId_;
 				std::string nextToken_;
 				std::vector<Tag> tag_;
+				std::string owner_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;

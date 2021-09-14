@@ -47,8 +47,8 @@ namespace AlibabaCloud
 					std::string vSwitchId;
 					std::vector<std::string> toRegionIds;
 					std::string name;
-					std::string imageName;
 					bool deleteInstanceOnFailure;
+					std::string imageName;
 					std::vector<std::string> addAccounts;
 					int internetMaxBandwidthOut;
 					std::string creationTime;

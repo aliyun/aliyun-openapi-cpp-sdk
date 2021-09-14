@@ -82,6 +82,17 @@ void ModifyDedicatedHostAutoRenewAttributeRequest::setRenewalStatus(const std::s
 	setParameter("RenewalStatus", renewalStatus);
 }
 
+std::string ModifyDedicatedHostAutoRenewAttributeRequest::getAutoRenewWithEcs()const
+{
+	return autoRenewWithEcs_;
+}
+
+void ModifyDedicatedHostAutoRenewAttributeRequest::setAutoRenewWithEcs(const std::string& autoRenewWithEcs)
+{
+	autoRenewWithEcs_ = autoRenewWithEcs;
+	setParameter("AutoRenewWithEcs", autoRenewWithEcs);
+}
+
 std::string ModifyDedicatedHostAutoRenewAttributeRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;

@@ -43,16 +43,18 @@ void DescribeDedicatedHostAutoRenewResult::parse(const std::string &payload)
 	for (auto valueDedicatedHostRenewAttributesDedicatedHostRenewAttribute : allDedicatedHostRenewAttributesNode)
 	{
 		DedicatedHostRenewAttribute dedicatedHostRenewAttributesObject;
-		if(!valueDedicatedHostRenewAttributesDedicatedHostRenewAttribute["DedicatedHostId"].isNull())
-			dedicatedHostRenewAttributesObject.dedicatedHostId = valueDedicatedHostRenewAttributesDedicatedHostRenewAttribute["DedicatedHostId"].asString();
-		if(!valueDedicatedHostRenewAttributesDedicatedHostRenewAttribute["AutoRenewEnabled"].isNull())
-			dedicatedHostRenewAttributesObject.autoRenewEnabled = valueDedicatedHostRenewAttributesDedicatedHostRenewAttribute["AutoRenewEnabled"].asString() == "true";
-		if(!valueDedicatedHostRenewAttributesDedicatedHostRenewAttribute["Duration"].isNull())
-			dedicatedHostRenewAttributesObject.duration = std::stoi(valueDedicatedHostRenewAttributesDedicatedHostRenewAttribute["Duration"].asString());
 		if(!valueDedicatedHostRenewAttributesDedicatedHostRenewAttribute["PeriodUnit"].isNull())
 			dedicatedHostRenewAttributesObject.periodUnit = valueDedicatedHostRenewAttributesDedicatedHostRenewAttribute["PeriodUnit"].asString();
+		if(!valueDedicatedHostRenewAttributesDedicatedHostRenewAttribute["Duration"].isNull())
+			dedicatedHostRenewAttributesObject.duration = std::stoi(valueDedicatedHostRenewAttributesDedicatedHostRenewAttribute["Duration"].asString());
+		if(!valueDedicatedHostRenewAttributesDedicatedHostRenewAttribute["DedicatedHostId"].isNull())
+			dedicatedHostRenewAttributesObject.dedicatedHostId = valueDedicatedHostRenewAttributesDedicatedHostRenewAttribute["DedicatedHostId"].asString();
 		if(!valueDedicatedHostRenewAttributesDedicatedHostRenewAttribute["RenewalStatus"].isNull())
 			dedicatedHostRenewAttributesObject.renewalStatus = valueDedicatedHostRenewAttributesDedicatedHostRenewAttribute["RenewalStatus"].asString();
+		if(!valueDedicatedHostRenewAttributesDedicatedHostRenewAttribute["AutoRenewEnabled"].isNull())
+			dedicatedHostRenewAttributesObject.autoRenewEnabled = valueDedicatedHostRenewAttributesDedicatedHostRenewAttribute["AutoRenewEnabled"].asString() == "true";
+		if(!valueDedicatedHostRenewAttributesDedicatedHostRenewAttribute["AutoRenewWithEcs"].isNull())
+			dedicatedHostRenewAttributesObject.autoRenewWithEcs = valueDedicatedHostRenewAttributesDedicatedHostRenewAttribute["AutoRenewWithEcs"].asString();
 		dedicatedHostRenewAttributes_.push_back(dedicatedHostRenewAttributesObject);
 	}
 

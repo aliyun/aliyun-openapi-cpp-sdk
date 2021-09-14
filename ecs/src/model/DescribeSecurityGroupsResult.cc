@@ -43,48 +43,50 @@ void DescribeSecurityGroupsResult::parse(const std::string &payload)
 	for (auto valueSecurityGroupsSecurityGroup : allSecurityGroupsNode)
 	{
 		SecurityGroup securityGroupsObject;
-		if(!valueSecurityGroupsSecurityGroup["SecurityGroupId"].isNull())
-			securityGroupsObject.securityGroupId = valueSecurityGroupsSecurityGroup["SecurityGroupId"].asString();
-		if(!valueSecurityGroupsSecurityGroup["Description"].isNull())
-			securityGroupsObject.description = valueSecurityGroupsSecurityGroup["Description"].asString();
-		if(!valueSecurityGroupsSecurityGroup["SecurityGroupName"].isNull())
-			securityGroupsObject.securityGroupName = valueSecurityGroupsSecurityGroup["SecurityGroupName"].asString();
-		if(!valueSecurityGroupsSecurityGroup["VpcId"].isNull())
-			securityGroupsObject.vpcId = valueSecurityGroupsSecurityGroup["VpcId"].asString();
 		if(!valueSecurityGroupsSecurityGroup["CreationTime"].isNull())
 			securityGroupsObject.creationTime = valueSecurityGroupsSecurityGroup["CreationTime"].asString();
+		if(!valueSecurityGroupsSecurityGroup["VpcId"].isNull())
+			securityGroupsObject.vpcId = valueSecurityGroupsSecurityGroup["VpcId"].asString();
+		if(!valueSecurityGroupsSecurityGroup["ServiceManaged"].isNull())
+			securityGroupsObject.serviceManaged = valueSecurityGroupsSecurityGroup["ServiceManaged"].asString() == "true";
+		if(!valueSecurityGroupsSecurityGroup["Description"].isNull())
+			securityGroupsObject.description = valueSecurityGroupsSecurityGroup["Description"].asString();
+		if(!valueSecurityGroupsSecurityGroup["SecurityGroupId"].isNull())
+			securityGroupsObject.securityGroupId = valueSecurityGroupsSecurityGroup["SecurityGroupId"].asString();
+		if(!valueSecurityGroupsSecurityGroup["ResourceGroupId"].isNull())
+			securityGroupsObject.resourceGroupId = valueSecurityGroupsSecurityGroup["ResourceGroupId"].asString();
+		if(!valueSecurityGroupsSecurityGroup["SecurityGroupName"].isNull())
+			securityGroupsObject.securityGroupName = valueSecurityGroupsSecurityGroup["SecurityGroupName"].asString();
+		if(!valueSecurityGroupsSecurityGroup["EcsCount"].isNull())
+			securityGroupsObject.ecsCount = std::stoi(valueSecurityGroupsSecurityGroup["EcsCount"].asString());
+		if(!valueSecurityGroupsSecurityGroup["ServiceID"].isNull())
+			securityGroupsObject.serviceID = std::stol(valueSecurityGroupsSecurityGroup["ServiceID"].asString());
 		if(!valueSecurityGroupsSecurityGroup["SecurityGroupType"].isNull())
 			securityGroupsObject.securityGroupType = valueSecurityGroupsSecurityGroup["SecurityGroupType"].asString();
 		if(!valueSecurityGroupsSecurityGroup["AvailableInstanceAmount"].isNull())
 			securityGroupsObject.availableInstanceAmount = std::stoi(valueSecurityGroupsSecurityGroup["AvailableInstanceAmount"].asString());
-		if(!valueSecurityGroupsSecurityGroup["EcsCount"].isNull())
-			securityGroupsObject.ecsCount = std::stoi(valueSecurityGroupsSecurityGroup["EcsCount"].asString());
-		if(!valueSecurityGroupsSecurityGroup["ResourceGroupId"].isNull())
-			securityGroupsObject.resourceGroupId = valueSecurityGroupsSecurityGroup["ResourceGroupId"].asString();
-		if(!valueSecurityGroupsSecurityGroup["ServiceID"].isNull())
-			securityGroupsObject.serviceID = std::stol(valueSecurityGroupsSecurityGroup["ServiceID"].asString());
-		if(!valueSecurityGroupsSecurityGroup["ServiceManaged"].isNull())
-			securityGroupsObject.serviceManaged = valueSecurityGroupsSecurityGroup["ServiceManaged"].asString() == "true";
 		auto allTagsNode = valueSecurityGroupsSecurityGroup["Tags"]["Tag"];
 		for (auto valueSecurityGroupsSecurityGroupTagsTag : allTagsNode)
 		{
 			SecurityGroup::Tag tagsObject;
-			if(!valueSecurityGroupsSecurityGroupTagsTag["TagKey"].isNull())
-				tagsObject.tagKey = valueSecurityGroupsSecurityGroupTagsTag["TagKey"].asString();
 			if(!valueSecurityGroupsSecurityGroupTagsTag["TagValue"].isNull())
 				tagsObject.tagValue = valueSecurityGroupsSecurityGroupTagsTag["TagValue"].asString();
+			if(!valueSecurityGroupsSecurityGroupTagsTag["TagKey"].isNull())
+				tagsObject.tagKey = valueSecurityGroupsSecurityGroupTagsTag["TagKey"].asString();
 			securityGroupsObject.tags.push_back(tagsObject);
 		}
 		securityGroups_.push_back(securityGroupsObject);
 	}
-	if(!value["RegionId"].isNull())
-		regionId_ = value["RegionId"].asString();
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["RegionId"].isNull())
+		regionId_ = value["RegionId"].asString();
+	if(!value["NextToken"].isNull())
+		nextToken_ = value["NextToken"].asString();
 
 }
 
@@ -101,6 +103,11 @@ int DescribeSecurityGroupsResult::getTotalCount()const
 int DescribeSecurityGroupsResult::getPageSize()const
 {
 	return pageSize_;
+}
+
+std::string DescribeSecurityGroupsResult::getNextToken()const
+{
+	return nextToken_;
 }
 
 int DescribeSecurityGroupsResult::getPageNumber()const

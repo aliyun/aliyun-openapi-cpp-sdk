@@ -43,8 +43,8 @@ namespace AlibabaCloud
 					std::string snapshotLinkId;
 					std::string sourceDiskName;
 					std::string regionId;
-					std::string sourceDiskType;
 					long totalSize;
+					std::string sourceDiskType;
 					std::string sourceDiskId;
 				};
 

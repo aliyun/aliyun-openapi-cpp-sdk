@@ -59,6 +59,8 @@ namespace AlibabaCloud
 				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
+				std::string getNextToken()const;
+				void setNextToken(const std::string& nextToken);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				std::vector<Tag> getTag()const;
@@ -77,6 +79,8 @@ namespace AlibabaCloud
 				void setSecurityGroupType(const std::string& securityGroupType);
 				std::string getVpcId()const;
 				void setVpcId(const std::string& vpcId);
+				int getMaxResults()const;
+				void setMaxResults(int maxResults);
 
             private:
 				long resourceOwnerId_;
@@ -88,6 +92,7 @@ namespace AlibabaCloud
 				int pageNumber_;
 				std::string resourceGroupId_;
 				std::string regionId_;
+				std::string nextToken_;
 				int pageSize_;
 				std::vector<Tag> tag_;
 				bool dryRun_;
@@ -97,6 +102,7 @@ namespace AlibabaCloud
 				std::string securityGroupIds_;
 				std::string securityGroupType_;
 				std::string vpcId_;
+				int maxResults_;
 
 			};
 		}

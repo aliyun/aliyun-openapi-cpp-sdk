@@ -45,36 +45,36 @@ void DescribeImagePipelineExecutionsResult::parse(const std::string &payload)
 		ImagePipelineExecutionSet imagePipelineExecutionObject;
 		if(!valueImagePipelineExecutionImagePipelineExecutionSet["CreationTime"].isNull())
 			imagePipelineExecutionObject.creationTime = valueImagePipelineExecutionImagePipelineExecutionSet["CreationTime"].asString();
-		if(!valueImagePipelineExecutionImagePipelineExecutionSet["ModifiedTime"].isNull())
-			imagePipelineExecutionObject.modifiedTime = valueImagePipelineExecutionImagePipelineExecutionSet["ModifiedTime"].asString();
-		if(!valueImagePipelineExecutionImagePipelineExecutionSet["ImageId"].isNull())
-			imagePipelineExecutionObject.imageId = valueImagePipelineExecutionImagePipelineExecutionSet["ImageId"].asString();
 		if(!valueImagePipelineExecutionImagePipelineExecutionSet["ImagePipelineId"].isNull())
 			imagePipelineExecutionObject.imagePipelineId = valueImagePipelineExecutionImagePipelineExecutionSet["ImagePipelineId"].asString();
-		if(!valueImagePipelineExecutionImagePipelineExecutionSet["ExecutionId"].isNull())
-			imagePipelineExecutionObject.executionId = valueImagePipelineExecutionImagePipelineExecutionSet["ExecutionId"].asString();
 		if(!valueImagePipelineExecutionImagePipelineExecutionSet["Status"].isNull())
 			imagePipelineExecutionObject.status = valueImagePipelineExecutionImagePipelineExecutionSet["Status"].asString();
-		if(!valueImagePipelineExecutionImagePipelineExecutionSet["Message"].isNull())
-			imagePipelineExecutionObject.message = valueImagePipelineExecutionImagePipelineExecutionSet["Message"].asString();
+		if(!valueImagePipelineExecutionImagePipelineExecutionSet["ModifiedTime"].isNull())
+			imagePipelineExecutionObject.modifiedTime = valueImagePipelineExecutionImagePipelineExecutionSet["ModifiedTime"].asString();
 		if(!valueImagePipelineExecutionImagePipelineExecutionSet["ResourceGroupId"].isNull())
 			imagePipelineExecutionObject.resourceGroupId = valueImagePipelineExecutionImagePipelineExecutionSet["ResourceGroupId"].asString();
+		if(!valueImagePipelineExecutionImagePipelineExecutionSet["Message"].isNull())
+			imagePipelineExecutionObject.message = valueImagePipelineExecutionImagePipelineExecutionSet["Message"].asString();
+		if(!valueImagePipelineExecutionImagePipelineExecutionSet["ImageId"].isNull())
+			imagePipelineExecutionObject.imageId = valueImagePipelineExecutionImagePipelineExecutionSet["ImageId"].asString();
+		if(!valueImagePipelineExecutionImagePipelineExecutionSet["ExecutionId"].isNull())
+			imagePipelineExecutionObject.executionId = valueImagePipelineExecutionImagePipelineExecutionSet["ExecutionId"].asString();
 		auto allTagsNode = valueImagePipelineExecutionImagePipelineExecutionSet["Tags"]["Tag"];
 		for (auto valueImagePipelineExecutionImagePipelineExecutionSetTagsTag : allTagsNode)
 		{
 			ImagePipelineExecutionSet::Tag tagsObject;
-			if(!valueImagePipelineExecutionImagePipelineExecutionSetTagsTag["TagKey"].isNull())
-				tagsObject.tagKey = valueImagePipelineExecutionImagePipelineExecutionSetTagsTag["TagKey"].asString();
 			if(!valueImagePipelineExecutionImagePipelineExecutionSetTagsTag["TagValue"].isNull())
 				tagsObject.tagValue = valueImagePipelineExecutionImagePipelineExecutionSetTagsTag["TagValue"].asString();
+			if(!valueImagePipelineExecutionImagePipelineExecutionSetTagsTag["TagKey"].isNull())
+				tagsObject.tagKey = valueImagePipelineExecutionImagePipelineExecutionSetTagsTag["TagKey"].asString();
 			imagePipelineExecutionObject.tags.push_back(tagsObject);
 		}
 		imagePipelineExecution_.push_back(imagePipelineExecutionObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
 	if(!value["NextToken"].isNull())
 		nextToken_ = value["NextToken"].asString();
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 	if(!value["MaxResults"].isNull())
 		maxResults_ = std::stoi(value["MaxResults"].asString());
 

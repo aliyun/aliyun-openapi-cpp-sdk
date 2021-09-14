@@ -38,6 +38,17 @@ void DescribeSnapshotGroupsRequest::setResourceOwnerId(long resourceOwnerId)
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string DescribeSnapshotGroupsRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DescribeSnapshotGroupsRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string DescribeSnapshotGroupsRequest::getRegionId()const
 {
 	return regionId_;
@@ -58,6 +69,22 @@ void DescribeSnapshotGroupsRequest::setNextToken(const std::string& nextToken)
 {
 	nextToken_ = nextToken;
 	setParameter("NextToken", nextToken);
+}
+
+std::vector<DescribeSnapshotGroupsRequest::Tag> DescribeSnapshotGroupsRequest::getTag()const
+{
+	return tag_;
+}
+
+void DescribeSnapshotGroupsRequest::setTag(const std::vector<Tag>& tag)
+{
+	tag_ = tag;
+	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
+		auto tagObj = tag.at(dep1);
+		std::string tagObjStr = "Tag." + std::to_string(dep1 + 1);
+		setParameter(tagObjStr + ".Key", tagObj.key);
+		setParameter(tagObjStr + ".Value", tagObj.value);
+	}
 }
 
 std::string DescribeSnapshotGroupsRequest::getResourceOwnerAccount()const

@@ -34,11 +34,22 @@ namespace AlibabaCloud
 			public:
 				struct SnapshotGroup
 				{
+					struct Tag
+					{
+						std::string value;
+						std::string key;
+					};
 					struct Snapshot
 					{
+						struct Tag2
+						{
+							std::string value;
+							std::string key;
+						};
 						std::string snapshotId;
 						bool instantAccess;
 						std::string progress;
+						std::vector<Snapshot::Tag2> tags1;
 						std::string sourceDiskType;
 						int instantAccessRetentionDays;
 						std::string sourceDiskId;
@@ -46,10 +57,12 @@ namespace AlibabaCloud
 					std::string status;
 					std::string progressStatus;
 					std::string description;
+					std::string resourceGroupId;
 					std::string instanceId;
 					std::string creationTime;
 					std::string snapshotGroupId;
 					std::vector<SnapshotGroup::Snapshot> snapshots;
+					std::vector<SnapshotGroup::Tag> tags;
 					std::string name;
 				};
 

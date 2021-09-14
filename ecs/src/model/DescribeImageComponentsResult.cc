@@ -45,36 +45,38 @@ void DescribeImageComponentsResult::parse(const std::string &payload)
 		ImageComponentSet imageComponentObject;
 		if(!valueImageComponentImageComponentSet["CreationTime"].isNull())
 			imageComponentObject.creationTime = valueImageComponentImageComponentSet["CreationTime"].asString();
-		if(!valueImageComponentImageComponentSet["ImageComponentId"].isNull())
-			imageComponentObject.imageComponentId = valueImageComponentImageComponentSet["ImageComponentId"].asString();
-		if(!valueImageComponentImageComponentSet["Name"].isNull())
-			imageComponentObject.name = valueImageComponentImageComponentSet["Name"].asString();
 		if(!valueImageComponentImageComponentSet["Description"].isNull())
 			imageComponentObject.description = valueImageComponentImageComponentSet["Description"].asString();
 		if(!valueImageComponentImageComponentSet["SystemType"].isNull())
 			imageComponentObject.systemType = valueImageComponentImageComponentSet["SystemType"].asString();
+		if(!valueImageComponentImageComponentSet["ImageComponentId"].isNull())
+			imageComponentObject.imageComponentId = valueImageComponentImageComponentSet["ImageComponentId"].asString();
 		if(!valueImageComponentImageComponentSet["ComponentType"].isNull())
 			imageComponentObject.componentType = valueImageComponentImageComponentSet["ComponentType"].asString();
-		if(!valueImageComponentImageComponentSet["Content"].isNull())
-			imageComponentObject.content = valueImageComponentImageComponentSet["Content"].asString();
 		if(!valueImageComponentImageComponentSet["ResourceGroupId"].isNull())
 			imageComponentObject.resourceGroupId = valueImageComponentImageComponentSet["ResourceGroupId"].asString();
+		if(!valueImageComponentImageComponentSet["Name"].isNull())
+			imageComponentObject.name = valueImageComponentImageComponentSet["Name"].asString();
+		if(!valueImageComponentImageComponentSet["Content"].isNull())
+			imageComponentObject.content = valueImageComponentImageComponentSet["Content"].asString();
+		if(!valueImageComponentImageComponentSet["Owner"].isNull())
+			imageComponentObject.owner = valueImageComponentImageComponentSet["Owner"].asString();
 		auto allTagsNode = valueImageComponentImageComponentSet["Tags"]["Tag"];
 		for (auto valueImageComponentImageComponentSetTagsTag : allTagsNode)
 		{
 			ImageComponentSet::Tag tagsObject;
-			if(!valueImageComponentImageComponentSetTagsTag["TagKey"].isNull())
-				tagsObject.tagKey = valueImageComponentImageComponentSetTagsTag["TagKey"].asString();
 			if(!valueImageComponentImageComponentSetTagsTag["TagValue"].isNull())
 				tagsObject.tagValue = valueImageComponentImageComponentSetTagsTag["TagValue"].asString();
+			if(!valueImageComponentImageComponentSetTagsTag["TagKey"].isNull())
+				tagsObject.tagKey = valueImageComponentImageComponentSetTagsTag["TagKey"].asString();
 			imageComponentObject.tags.push_back(tagsObject);
 		}
 		imageComponent_.push_back(imageComponentObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
 	if(!value["NextToken"].isNull())
 		nextToken_ = value["NextToken"].asString();
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 	if(!value["MaxResults"].isNull())
 		maxResults_ = std::stoi(value["MaxResults"].asString());
 

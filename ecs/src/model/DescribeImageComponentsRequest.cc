@@ -100,6 +100,17 @@ void DescribeImageComponentsRequest::setTag(const std::vector<Tag>& tag)
 	}
 }
 
+std::string DescribeImageComponentsRequest::getOwner()const
+{
+	return owner_;
+}
+
+void DescribeImageComponentsRequest::setOwner(const std::string& owner)
+{
+	owner_ = owner;
+	setParameter("Owner", owner);
+}
+
 std::string DescribeImageComponentsRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;

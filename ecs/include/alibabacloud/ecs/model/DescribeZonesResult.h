@@ -36,8 +36,8 @@ namespace AlibabaCloud
 				{
 					struct ResourcesInfo
 					{
-						std::vector<std::string> networkTypes;
 						std::vector<std::string> instanceGenerations;
+						std::vector<std::string> networkTypes;
 						bool ioOptimized;
 						std::vector<std::string> systemDiskCategories;
 						std::vector<std::string> instanceTypes;
@@ -50,6 +50,7 @@ namespace AlibabaCloud
 					std::vector<std::string> availableDedicatedHostTypes;
 					std::vector<Zone::ResourcesInfo> availableResources;
 					std::vector<std::string> availableDiskCategories;
+					std::string zoneType;
 					std::string localName;
 					std::vector<std::string> availableResourceCreation;
 					std::vector<std::string> availableVolumeCategories;

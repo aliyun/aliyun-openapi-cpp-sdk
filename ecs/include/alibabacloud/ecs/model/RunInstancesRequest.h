@@ -66,6 +66,7 @@ namespace AlibabaCloud
 					std::string encryptAlgorithm;
 					bool deleteWithInstance;
 					std::string kMSKeyId;
+					std::string storageClusterId;
 				};
 
 			public:
@@ -88,6 +89,8 @@ namespace AlibabaCloud
 				void setHostName(const std::string& hostName);
 				std::string getPassword()const;
 				void setPassword(const std::string& password);
+				Struct getSystemDisk()const;
+				void setSystemDisk(const Struct& systemDisk);
 				int getDeploymentSetGroupNo()const;
 				void setDeploymentSetGroupNo(int deploymentSetGroupNo);
 				std::string getSystemDiskAutoSnapshotPolicyId()const;
@@ -252,6 +255,7 @@ namespace AlibabaCloud
 				std::string privatePoolOptionsMatchCriteria_;
 				std::string hostName_;
 				std::string password_;
+				Struct systemDisk_;
 				int deploymentSetGroupNo_;
 				std::string systemDiskAutoSnapshotPolicyId_;
 				int cpuOptionsCore_;

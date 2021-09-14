@@ -43,36 +43,58 @@ void DescribeSnapshotGroupsResult::parse(const std::string &payload)
 	for (auto valueSnapshotGroupsSnapshotGroup : allSnapshotGroupsNode)
 	{
 		SnapshotGroup snapshotGroupsObject;
-		if(!valueSnapshotGroupsSnapshotGroup["InstanceId"].isNull())
-			snapshotGroupsObject.instanceId = valueSnapshotGroupsSnapshotGroup["InstanceId"].asString();
-		if(!valueSnapshotGroupsSnapshotGroup["SnapshotGroupId"].isNull())
-			snapshotGroupsObject.snapshotGroupId = valueSnapshotGroupsSnapshotGroup["SnapshotGroupId"].asString();
 		if(!valueSnapshotGroupsSnapshotGroup["Status"].isNull())
 			snapshotGroupsObject.status = valueSnapshotGroupsSnapshotGroup["Status"].asString();
-		if(!valueSnapshotGroupsSnapshotGroup["Name"].isNull())
-			snapshotGroupsObject.name = valueSnapshotGroupsSnapshotGroup["Name"].asString();
-		if(!valueSnapshotGroupsSnapshotGroup["Description"].isNull())
-			snapshotGroupsObject.description = valueSnapshotGroupsSnapshotGroup["Description"].asString();
 		if(!valueSnapshotGroupsSnapshotGroup["CreationTime"].isNull())
 			snapshotGroupsObject.creationTime = valueSnapshotGroupsSnapshotGroup["CreationTime"].asString();
+		if(!valueSnapshotGroupsSnapshotGroup["Description"].isNull())
+			snapshotGroupsObject.description = valueSnapshotGroupsSnapshotGroup["Description"].asString();
 		if(!valueSnapshotGroupsSnapshotGroup["ProgressStatus"].isNull())
 			snapshotGroupsObject.progressStatus = valueSnapshotGroupsSnapshotGroup["ProgressStatus"].asString();
+		if(!valueSnapshotGroupsSnapshotGroup["SnapshotGroupId"].isNull())
+			snapshotGroupsObject.snapshotGroupId = valueSnapshotGroupsSnapshotGroup["SnapshotGroupId"].asString();
+		if(!valueSnapshotGroupsSnapshotGroup["InstanceId"].isNull())
+			snapshotGroupsObject.instanceId = valueSnapshotGroupsSnapshotGroup["InstanceId"].asString();
+		if(!valueSnapshotGroupsSnapshotGroup["Name"].isNull())
+			snapshotGroupsObject.name = valueSnapshotGroupsSnapshotGroup["Name"].asString();
+		if(!valueSnapshotGroupsSnapshotGroup["ResourceGroupId"].isNull())
+			snapshotGroupsObject.resourceGroupId = valueSnapshotGroupsSnapshotGroup["ResourceGroupId"].asString();
+		auto allTagsNode = valueSnapshotGroupsSnapshotGroup["Tags"]["Tag"];
+		for (auto valueSnapshotGroupsSnapshotGroupTagsTag : allTagsNode)
+		{
+			SnapshotGroup::Tag tagsObject;
+			if(!valueSnapshotGroupsSnapshotGroupTagsTag["Key"].isNull())
+				tagsObject.key = valueSnapshotGroupsSnapshotGroupTagsTag["Key"].asString();
+			if(!valueSnapshotGroupsSnapshotGroupTagsTag["Value"].isNull())
+				tagsObject.value = valueSnapshotGroupsSnapshotGroupTagsTag["Value"].asString();
+			snapshotGroupsObject.tags.push_back(tagsObject);
+		}
 		auto allSnapshotsNode = valueSnapshotGroupsSnapshotGroup["Snapshots"]["Snapshot"];
 		for (auto valueSnapshotGroupsSnapshotGroupSnapshotsSnapshot : allSnapshotsNode)
 		{
 			SnapshotGroup::Snapshot snapshotsObject;
-			if(!valueSnapshotGroupsSnapshotGroupSnapshotsSnapshot["SnapshotId"].isNull())
-				snapshotsObject.snapshotId = valueSnapshotGroupsSnapshotGroupSnapshotsSnapshot["SnapshotId"].asString();
-			if(!valueSnapshotGroupsSnapshotGroupSnapshotsSnapshot["Progress"].isNull())
-				snapshotsObject.progress = valueSnapshotGroupsSnapshotGroupSnapshotsSnapshot["Progress"].asString();
 			if(!valueSnapshotGroupsSnapshotGroupSnapshotsSnapshot["SourceDiskId"].isNull())
 				snapshotsObject.sourceDiskId = valueSnapshotGroupsSnapshotGroupSnapshotsSnapshot["SourceDiskId"].asString();
-			if(!valueSnapshotGroupsSnapshotGroupSnapshotsSnapshot["SourceDiskType"].isNull())
-				snapshotsObject.sourceDiskType = valueSnapshotGroupsSnapshotGroupSnapshotsSnapshot["SourceDiskType"].asString();
-			if(!valueSnapshotGroupsSnapshotGroupSnapshotsSnapshot["InstantAccess"].isNull())
-				snapshotsObject.instantAccess = valueSnapshotGroupsSnapshotGroupSnapshotsSnapshot["InstantAccess"].asString() == "true";
+			if(!valueSnapshotGroupsSnapshotGroupSnapshotsSnapshot["Progress"].isNull())
+				snapshotsObject.progress = valueSnapshotGroupsSnapshotGroupSnapshotsSnapshot["Progress"].asString();
 			if(!valueSnapshotGroupsSnapshotGroupSnapshotsSnapshot["InstantAccessRetentionDays"].isNull())
 				snapshotsObject.instantAccessRetentionDays = std::stoi(valueSnapshotGroupsSnapshotGroupSnapshotsSnapshot["InstantAccessRetentionDays"].asString());
+			if(!valueSnapshotGroupsSnapshotGroupSnapshotsSnapshot["SnapshotId"].isNull())
+				snapshotsObject.snapshotId = valueSnapshotGroupsSnapshotGroupSnapshotsSnapshot["SnapshotId"].asString();
+			if(!valueSnapshotGroupsSnapshotGroupSnapshotsSnapshot["InstantAccess"].isNull())
+				snapshotsObject.instantAccess = valueSnapshotGroupsSnapshotGroupSnapshotsSnapshot["InstantAccess"].asString() == "true";
+			if(!valueSnapshotGroupsSnapshotGroupSnapshotsSnapshot["SourceDiskType"].isNull())
+				snapshotsObject.sourceDiskType = valueSnapshotGroupsSnapshotGroupSnapshotsSnapshot["SourceDiskType"].asString();
+			auto allTags1Node = valueSnapshotGroupsSnapshotGroupSnapshotsSnapshot["Tags"]["Tag"];
+			for (auto valueSnapshotGroupsSnapshotGroupSnapshotsSnapshotTagsTag : allTags1Node)
+			{
+				SnapshotGroup::Snapshot::Tag2 tags1Object;
+				if(!valueSnapshotGroupsSnapshotGroupSnapshotsSnapshotTagsTag["Key"].isNull())
+					tags1Object.key = valueSnapshotGroupsSnapshotGroupSnapshotsSnapshotTagsTag["Key"].asString();
+				if(!valueSnapshotGroupsSnapshotGroupSnapshotsSnapshotTagsTag["Value"].isNull())
+					tags1Object.value = valueSnapshotGroupsSnapshotGroupSnapshotsSnapshotTagsTag["Value"].asString();
+				snapshotsObject.tags1.push_back(tags1Object);
+			}
 			snapshotGroupsObject.snapshots.push_back(snapshotsObject);
 		}
 		snapshotGroups_.push_back(snapshotGroupsObject);

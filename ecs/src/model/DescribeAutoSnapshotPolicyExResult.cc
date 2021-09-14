@@ -43,50 +43,52 @@ void DescribeAutoSnapshotPolicyExResult::parse(const std::string &payload)
 	for (auto valueAutoSnapshotPoliciesAutoSnapshotPolicy : allAutoSnapshotPoliciesNode)
 	{
 		AutoSnapshotPolicy autoSnapshotPoliciesObject;
-		if(!valueAutoSnapshotPoliciesAutoSnapshotPolicy["AutoSnapshotPolicyId"].isNull())
-			autoSnapshotPoliciesObject.autoSnapshotPolicyId = valueAutoSnapshotPoliciesAutoSnapshotPolicy["AutoSnapshotPolicyId"].asString();
-		if(!valueAutoSnapshotPoliciesAutoSnapshotPolicy["RegionId"].isNull())
-			autoSnapshotPoliciesObject.regionId = valueAutoSnapshotPoliciesAutoSnapshotPolicy["RegionId"].asString();
-		if(!valueAutoSnapshotPoliciesAutoSnapshotPolicy["AutoSnapshotPolicyName"].isNull())
-			autoSnapshotPoliciesObject.autoSnapshotPolicyName = valueAutoSnapshotPoliciesAutoSnapshotPolicy["AutoSnapshotPolicyName"].asString();
 		if(!valueAutoSnapshotPoliciesAutoSnapshotPolicy["TimePoints"].isNull())
 			autoSnapshotPoliciesObject.timePoints = valueAutoSnapshotPoliciesAutoSnapshotPolicy["TimePoints"].asString();
-		if(!valueAutoSnapshotPoliciesAutoSnapshotPolicy["RepeatWeekdays"].isNull())
-			autoSnapshotPoliciesObject.repeatWeekdays = valueAutoSnapshotPoliciesAutoSnapshotPolicy["RepeatWeekdays"].asString();
-		if(!valueAutoSnapshotPoliciesAutoSnapshotPolicy["RetentionDays"].isNull())
-			autoSnapshotPoliciesObject.retentionDays = std::stoi(valueAutoSnapshotPoliciesAutoSnapshotPolicy["RetentionDays"].asString());
-		if(!valueAutoSnapshotPoliciesAutoSnapshotPolicy["DiskNums"].isNull())
-			autoSnapshotPoliciesObject.diskNums = std::stoi(valueAutoSnapshotPoliciesAutoSnapshotPolicy["DiskNums"].asString());
-		if(!valueAutoSnapshotPoliciesAutoSnapshotPolicy["VolumeNums"].isNull())
-			autoSnapshotPoliciesObject.volumeNums = std::stoi(valueAutoSnapshotPoliciesAutoSnapshotPolicy["VolumeNums"].asString());
 		if(!valueAutoSnapshotPoliciesAutoSnapshotPolicy["CreationTime"].isNull())
 			autoSnapshotPoliciesObject.creationTime = valueAutoSnapshotPoliciesAutoSnapshotPolicy["CreationTime"].asString();
 		if(!valueAutoSnapshotPoliciesAutoSnapshotPolicy["Status"].isNull())
 			autoSnapshotPoliciesObject.status = valueAutoSnapshotPoliciesAutoSnapshotPolicy["Status"].asString();
-		if(!valueAutoSnapshotPoliciesAutoSnapshotPolicy["EnableCrossRegionCopy"].isNull())
-			autoSnapshotPoliciesObject.enableCrossRegionCopy = valueAutoSnapshotPoliciesAutoSnapshotPolicy["EnableCrossRegionCopy"].asString() == "true";
+		if(!valueAutoSnapshotPoliciesAutoSnapshotPolicy["AutoSnapshotPolicyName"].isNull())
+			autoSnapshotPoliciesObject.autoSnapshotPolicyName = valueAutoSnapshotPoliciesAutoSnapshotPolicy["AutoSnapshotPolicyName"].asString();
 		if(!valueAutoSnapshotPoliciesAutoSnapshotPolicy["TargetCopyRegions"].isNull())
 			autoSnapshotPoliciesObject.targetCopyRegions = valueAutoSnapshotPoliciesAutoSnapshotPolicy["TargetCopyRegions"].asString();
 		if(!valueAutoSnapshotPoliciesAutoSnapshotPolicy["CopiedSnapshotsRetentionDays"].isNull())
 			autoSnapshotPoliciesObject.copiedSnapshotsRetentionDays = std::stoi(valueAutoSnapshotPoliciesAutoSnapshotPolicy["CopiedSnapshotsRetentionDays"].asString());
+		if(!valueAutoSnapshotPoliciesAutoSnapshotPolicy["AutoSnapshotPolicyId"].isNull())
+			autoSnapshotPoliciesObject.autoSnapshotPolicyId = valueAutoSnapshotPoliciesAutoSnapshotPolicy["AutoSnapshotPolicyId"].asString();
+		if(!valueAutoSnapshotPoliciesAutoSnapshotPolicy["RetentionDays"].isNull())
+			autoSnapshotPoliciesObject.retentionDays = std::stoi(valueAutoSnapshotPoliciesAutoSnapshotPolicy["RetentionDays"].asString());
+		if(!valueAutoSnapshotPoliciesAutoSnapshotPolicy["RegionId"].isNull())
+			autoSnapshotPoliciesObject.regionId = valueAutoSnapshotPoliciesAutoSnapshotPolicy["RegionId"].asString();
+		if(!valueAutoSnapshotPoliciesAutoSnapshotPolicy["DiskNums"].isNull())
+			autoSnapshotPoliciesObject.diskNums = std::stoi(valueAutoSnapshotPoliciesAutoSnapshotPolicy["DiskNums"].asString());
+		if(!valueAutoSnapshotPoliciesAutoSnapshotPolicy["EnableCrossRegionCopy"].isNull())
+			autoSnapshotPoliciesObject.enableCrossRegionCopy = valueAutoSnapshotPoliciesAutoSnapshotPolicy["EnableCrossRegionCopy"].asString() == "true";
+		if(!valueAutoSnapshotPoliciesAutoSnapshotPolicy["RepeatWeekdays"].isNull())
+			autoSnapshotPoliciesObject.repeatWeekdays = valueAutoSnapshotPoliciesAutoSnapshotPolicy["RepeatWeekdays"].asString();
+		if(!valueAutoSnapshotPoliciesAutoSnapshotPolicy["VolumeNums"].isNull())
+			autoSnapshotPoliciesObject.volumeNums = std::stoi(valueAutoSnapshotPoliciesAutoSnapshotPolicy["VolumeNums"].asString());
+		if(!valueAutoSnapshotPoliciesAutoSnapshotPolicy["ResourceGroupId"].isNull())
+			autoSnapshotPoliciesObject.resourceGroupId = valueAutoSnapshotPoliciesAutoSnapshotPolicy["ResourceGroupId"].asString();
 		auto allTagsNode = valueAutoSnapshotPoliciesAutoSnapshotPolicy["Tags"]["Tag"];
 		for (auto valueAutoSnapshotPoliciesAutoSnapshotPolicyTagsTag : allTagsNode)
 		{
 			AutoSnapshotPolicy::Tag tagsObject;
-			if(!valueAutoSnapshotPoliciesAutoSnapshotPolicyTagsTag["TagKey"].isNull())
-				tagsObject.tagKey = valueAutoSnapshotPoliciesAutoSnapshotPolicyTagsTag["TagKey"].asString();
 			if(!valueAutoSnapshotPoliciesAutoSnapshotPolicyTagsTag["TagValue"].isNull())
 				tagsObject.tagValue = valueAutoSnapshotPoliciesAutoSnapshotPolicyTagsTag["TagValue"].asString();
+			if(!valueAutoSnapshotPoliciesAutoSnapshotPolicyTagsTag["TagKey"].isNull())
+				tagsObject.tagKey = valueAutoSnapshotPoliciesAutoSnapshotPolicyTagsTag["TagKey"].asString();
 			autoSnapshotPoliciesObject.tags.push_back(tagsObject);
 		}
 		autoSnapshotPolicies_.push_back(autoSnapshotPoliciesObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 
