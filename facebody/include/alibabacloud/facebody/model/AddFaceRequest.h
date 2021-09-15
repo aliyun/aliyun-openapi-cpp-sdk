@@ -37,8 +37,14 @@ namespace AlibabaCloud
 
 				std::string getEntityId()const;
 				void setEntityId(const std::string& entityId);
+				float getQualityScoreThreshold()const;
+				void setQualityScoreThreshold(float qualityScoreThreshold);
+				float getSimilarityScoreThresholdBetweenEntity()const;
+				void setSimilarityScoreThresholdBetweenEntity(float similarityScoreThresholdBetweenEntity);
 				std::string getExtraData()const;
 				void setExtraData(const std::string& extraData);
+				float getSimilarityScoreThresholdInEntity()const;
+				void setSimilarityScoreThresholdInEntity(float similarityScoreThresholdInEntity);
 				std::string getDbName()const;
 				void setDbName(const std::string& dbName);
 				std::string getImageUrl()const;
@@ -46,7 +52,10 @@ namespace AlibabaCloud
 
             private:
 				std::string entityId_;
+				float qualityScoreThreshold_;
+				float similarityScoreThresholdBetweenEntity_;
 				std::string extraData_;
+				float similarityScoreThresholdInEntity_;
 				std::string dbName_;
 				std::string imageUrl_;
 

@@ -58,6 +58,8 @@ void SearchFaceResult::parse(const std::string &payload)
 				faceItemsObject.extraData = dataNodeMatchListMatchListItemFaceItemsFaceItemsItem["ExtraData"].asString();
 			if(!dataNodeMatchListMatchListItemFaceItemsFaceItemsItem["DbName"].isNull())
 				faceItemsObject.dbName = dataNodeMatchListMatchListItemFaceItemsFaceItemsItem["DbName"].asString();
+			if(!dataNodeMatchListMatchListItemFaceItemsFaceItemsItem["Confidence"].isNull())
+				faceItemsObject.confidence = std::stof(dataNodeMatchListMatchListItemFaceItemsFaceItemsItem["Confidence"].asString());
 			matchListItemObject.faceItems.push_back(faceItemsObject);
 		}
 		auto locationNode = value["Location"];

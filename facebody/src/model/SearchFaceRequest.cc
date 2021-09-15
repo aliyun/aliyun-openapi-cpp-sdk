@@ -27,6 +27,17 @@ SearchFaceRequest::SearchFaceRequest() :
 SearchFaceRequest::~SearchFaceRequest()
 {}
 
+float SearchFaceRequest::getQualityScoreThreshold()const
+{
+	return qualityScoreThreshold_;
+}
+
+void SearchFaceRequest::setQualityScoreThreshold(float qualityScoreThreshold)
+{
+	qualityScoreThreshold_ = qualityScoreThreshold;
+	setBodyParameter("QualityScoreThreshold", std::to_string(qualityScoreThreshold));
+}
+
 int SearchFaceRequest::getLimit()const
 {
 	return limit_;
@@ -46,7 +57,7 @@ std::string SearchFaceRequest::getDbNames()const
 void SearchFaceRequest::setDbNames(const std::string& dbNames)
 {
 	dbNames_ = dbNames;
-	setParameter("DbNames", dbNames);
+	setBodyParameter("DbNames", dbNames);
 }
 
 std::string SearchFaceRequest::getDbName()const

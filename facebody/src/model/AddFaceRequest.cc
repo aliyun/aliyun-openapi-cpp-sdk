@@ -38,6 +38,28 @@ void AddFaceRequest::setEntityId(const std::string& entityId)
 	setBodyParameter("EntityId", entityId);
 }
 
+float AddFaceRequest::getQualityScoreThreshold()const
+{
+	return qualityScoreThreshold_;
+}
+
+void AddFaceRequest::setQualityScoreThreshold(float qualityScoreThreshold)
+{
+	qualityScoreThreshold_ = qualityScoreThreshold;
+	setBodyParameter("QualityScoreThreshold", std::to_string(qualityScoreThreshold));
+}
+
+float AddFaceRequest::getSimilarityScoreThresholdBetweenEntity()const
+{
+	return similarityScoreThresholdBetweenEntity_;
+}
+
+void AddFaceRequest::setSimilarityScoreThresholdBetweenEntity(float similarityScoreThresholdBetweenEntity)
+{
+	similarityScoreThresholdBetweenEntity_ = similarityScoreThresholdBetweenEntity;
+	setBodyParameter("SimilarityScoreThresholdBetweenEntity", std::to_string(similarityScoreThresholdBetweenEntity));
+}
+
 std::string AddFaceRequest::getExtraData()const
 {
 	return extraData_;
@@ -47,6 +69,17 @@ void AddFaceRequest::setExtraData(const std::string& extraData)
 {
 	extraData_ = extraData;
 	setBodyParameter("ExtraData", extraData);
+}
+
+float AddFaceRequest::getSimilarityScoreThresholdInEntity()const
+{
+	return similarityScoreThresholdInEntity_;
+}
+
+void AddFaceRequest::setSimilarityScoreThresholdInEntity(float similarityScoreThresholdInEntity)
+{
+	similarityScoreThresholdInEntity_ = similarityScoreThresholdInEntity;
+	setBodyParameter("SimilarityScoreThresholdInEntity", std::to_string(similarityScoreThresholdInEntity));
 }
 
 std::string AddFaceRequest::getDbName()const

@@ -48,6 +48,7 @@ namespace AlibabaCloud
 							std::string entityId;
 							std::string faceId;
 							float score;
+							float confidence;
 							std::string dbName;
 							std::string extraData;
 						};

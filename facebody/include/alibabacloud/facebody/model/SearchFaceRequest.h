@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				SearchFaceRequest();
 				~SearchFaceRequest();
 
+				float getQualityScoreThreshold()const;
+				void setQualityScoreThreshold(float qualityScoreThreshold);
 				int getLimit()const;
 				void setLimit(int limit);
 				std::string getDbNames()const;
@@ -45,6 +47,7 @@ namespace AlibabaCloud
 				void setImageUrl(const std::string& imageUrl);
 
             private:
+				float qualityScoreThreshold_;
 				int limit_;
 				std::string dbNames_;
 				std::string dbName_;
