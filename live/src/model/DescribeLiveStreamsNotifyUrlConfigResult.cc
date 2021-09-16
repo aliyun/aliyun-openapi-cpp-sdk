@@ -44,6 +44,10 @@ void DescribeLiveStreamsNotifyUrlConfigResult::parse(const std::string &payload)
 		liveStreamsNotifyConfig_.domainName = liveStreamsNotifyConfigNode["DomainName"].asString();
 	if(!liveStreamsNotifyConfigNode["NotifyUrl"].isNull())
 		liveStreamsNotifyConfig_.notifyUrl = liveStreamsNotifyConfigNode["NotifyUrl"].asString();
+	if(!liveStreamsNotifyConfigNode["NotifyReqAuth"].isNull())
+		liveStreamsNotifyConfig_.notifyReqAuth = liveStreamsNotifyConfigNode["NotifyReqAuth"].asString();
+	if(!liveStreamsNotifyConfigNode["NotifyAuthKey"].isNull())
+		liveStreamsNotifyConfig_.notifyAuthKey = liveStreamsNotifyConfigNode["NotifyAuthKey"].asString();
 	if(!liveStreamsNotifyConfigNode["AuthType"].isNull())
 		liveStreamsNotifyConfig_.authType = liveStreamsNotifyConfigNode["AuthType"].asString();
 	if(!liveStreamsNotifyConfigNode["AuthKey"].isNull())

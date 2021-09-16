@@ -37,6 +37,7 @@ namespace AlibabaCloud
 					int endOffset;
 					int beginOffset;
 					std::string materialId;
+					std::string flvUrl;
 					std::string resourceId;
 					std::string resourceName;
 					std::string locationId;

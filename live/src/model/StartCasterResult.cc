@@ -47,6 +47,8 @@ void StartCasterResult::parse(const std::string &payload)
 			pvwSceneInfosObject.sceneId = valuePvwSceneInfosSceneInfo["SceneId"].asString();
 		if(!valuePvwSceneInfosSceneInfo["StreamUrl"].isNull())
 			pvwSceneInfosObject.streamUrl = valuePvwSceneInfosSceneInfo["StreamUrl"].asString();
+		if(!valuePvwSceneInfosSceneInfo["RtsUrl"].isNull())
+			pvwSceneInfosObject.rtsUrl = valuePvwSceneInfosSceneInfo["RtsUrl"].asString();
 		pvwSceneInfos_.push_back(pvwSceneInfosObject);
 	}
 	auto allPgmSceneInfosNode = value["PgmSceneInfos"]["SceneInfo"];
@@ -57,6 +59,8 @@ void StartCasterResult::parse(const std::string &payload)
 			pgmSceneInfosObject.sceneId = valuePgmSceneInfosSceneInfo["SceneId"].asString();
 		if(!valuePgmSceneInfosSceneInfo["StreamUrl"].isNull())
 			pgmSceneInfosObject.streamUrl = valuePgmSceneInfosSceneInfo["StreamUrl"].asString();
+		if(!valuePgmSceneInfosSceneInfo["RtsUrl"].isNull())
+			pgmSceneInfosObject.rtsUrl = valuePgmSceneInfosSceneInfo["RtsUrl"].asString();
 		auto allStreamInfosNode = valuePgmSceneInfosSceneInfo["StreamInfos"]["StreamInfo"];
 		for (auto valuePgmSceneInfosSceneInfoStreamInfosStreamInfo : allStreamInfosNode)
 		{

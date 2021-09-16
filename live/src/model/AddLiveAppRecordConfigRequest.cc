@@ -38,6 +38,19 @@ void AddLiveAppRecordConfigRequest::setOssEndpoint(const std::string& ossEndpoin
 	setParameter("OssEndpoint", ossEndpoint);
 }
 
+std::vector<std::string> AddLiveAppRecordConfigRequest::getTranscodeTemplates()const
+{
+	return transcodeTemplates_;
+}
+
+void AddLiveAppRecordConfigRequest::setTranscodeTemplates(const std::vector<std::string>& transcodeTemplates)
+{
+	transcodeTemplates_ = transcodeTemplates;
+	for(int dep1 = 0; dep1!= transcodeTemplates.size(); dep1++) {
+		setParameter("TranscodeTemplates."+ std::to_string(dep1), transcodeTemplates.at(dep1));
+	}
+}
+
 std::string AddLiveAppRecordConfigRequest::getStartTime()const
 {
 	return startTime_;
@@ -69,6 +82,25 @@ void AddLiveAppRecordConfigRequest::setSecurityToken(const std::string& security
 {
 	securityToken_ = securityToken;
 	setParameter("SecurityToken", securityToken);
+}
+
+std::vector<AddLiveAppRecordConfigRequest::TranscodeRecordFormat> AddLiveAppRecordConfigRequest::getTranscodeRecordFormat()const
+{
+	return transcodeRecordFormat_;
+}
+
+void AddLiveAppRecordConfigRequest::setTranscodeRecordFormat(const std::vector<TranscodeRecordFormat>& transcodeRecordFormat)
+{
+	transcodeRecordFormat_ = transcodeRecordFormat;
+	for(int dep1 = 0; dep1!= transcodeRecordFormat.size(); dep1++) {
+		auto transcodeRecordFormatObj = transcodeRecordFormat.at(dep1);
+		std::string transcodeRecordFormatObjStr = "TranscodeRecordFormat." + std::to_string(dep1 + 1);
+		setParameter(transcodeRecordFormatObjStr + ".SliceOssObjectPrefix", transcodeRecordFormatObj.sliceOssObjectPrefix);
+		setParameter(transcodeRecordFormatObjStr + ".SliceDuration", std::to_string(transcodeRecordFormatObj.sliceDuration));
+		setParameter(transcodeRecordFormatObjStr + ".Format", transcodeRecordFormatObj.format);
+		setParameter(transcodeRecordFormatObjStr + ".OssObjectPrefix", transcodeRecordFormatObj.ossObjectPrefix);
+		setParameter(transcodeRecordFormatObjStr + ".CycleDuration", std::to_string(transcodeRecordFormatObj.cycleDuration));
+	}
 }
 
 int AddLiveAppRecordConfigRequest::getOnDemand()const
@@ -149,6 +181,7 @@ void AddLiveAppRecordConfigRequest::setRecordFormat(const std::vector<RecordForm
 		auto recordFormatObj = recordFormat.at(dep1);
 		std::string recordFormatObjStr = "RecordFormat." + std::to_string(dep1 + 1);
 		setParameter(recordFormatObjStr + ".SliceOssObjectPrefix", recordFormatObj.sliceOssObjectPrefix);
+		setParameter(recordFormatObjStr + ".SliceDuration", std::to_string(recordFormatObj.sliceDuration));
 		setParameter(recordFormatObjStr + ".Format", recordFormatObj.format);
 		setParameter(recordFormatObjStr + ".OssObjectPrefix", recordFormatObj.ossObjectPrefix);
 		setParameter(recordFormatObjStr + ".CycleDuration", std::to_string(recordFormatObj.cycleDuration));

@@ -53,6 +53,8 @@ void DescribeCasterScenesResult::parse(const std::string &payload)
 			sceneListObject.layoutId = valueSceneListScene["LayoutId"].asString();
 		if(!valueSceneListScene["StreamUrl"].isNull())
 			sceneListObject.streamUrl = valueSceneListScene["StreamUrl"].asString();
+		if(!valueSceneListScene["RtsUrl"].isNull())
+			sceneListObject.rtsUrl = valueSceneListScene["RtsUrl"].asString();
 		if(!valueSceneListScene["Status"].isNull())
 			sceneListObject.status = std::stoi(valueSceneListScene["Status"].asString());
 		auto allStreamInfosNode = valueSceneListScene["StreamInfos"]["StreamInfo"];

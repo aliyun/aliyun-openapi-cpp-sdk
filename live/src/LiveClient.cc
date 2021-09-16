@@ -1563,6 +1563,42 @@ LiveClient::CreateCasterOutcomeCallable LiveClient::createCasterCallable(const C
 	return task->get_future();
 }
 
+LiveClient::CreateCustomTemplateOutcome LiveClient::createCustomTemplate(const CreateCustomTemplateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateCustomTemplateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateCustomTemplateOutcome(CreateCustomTemplateResult(outcome.result()));
+	else
+		return CreateCustomTemplateOutcome(outcome.error());
+}
+
+void LiveClient::createCustomTemplateAsync(const CreateCustomTemplateRequest& request, const CreateCustomTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createCustomTemplate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::CreateCustomTemplateOutcomeCallable LiveClient::createCustomTemplateCallable(const CreateCustomTemplateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateCustomTemplateOutcome()>>(
+			[this, request]()
+			{
+			return this->createCustomTemplate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::CreateLiveRealTimeLogDeliveryOutcome LiveClient::createLiveRealTimeLogDelivery(const CreateLiveRealTimeLogDeliveryRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2031,6 +2067,42 @@ LiveClient::DeleteCasterVideoResourceOutcomeCallable LiveClient::deleteCasterVid
 	return task->get_future();
 }
 
+LiveClient::DeleteCustomTemplateOutcome LiveClient::deleteCustomTemplate(const DeleteCustomTemplateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteCustomTemplateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteCustomTemplateOutcome(DeleteCustomTemplateResult(outcome.result()));
+	else
+		return DeleteCustomTemplateOutcome(outcome.error());
+}
+
+void LiveClient::deleteCustomTemplateAsync(const DeleteCustomTemplateRequest& request, const DeleteCustomTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteCustomTemplate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DeleteCustomTemplateOutcomeCallable LiveClient::deleteCustomTemplateCallable(const DeleteCustomTemplateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteCustomTemplateOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteCustomTemplate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::DeleteHtmlResourceOutcome LiveClient::deleteHtmlResource(const DeleteHtmlResourceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2385,6 +2457,42 @@ LiveClient::DeleteLiveDomainPlayMappingOutcomeCallable LiveClient::deleteLiveDom
 			[this, request]()
 			{
 			return this->deleteLiveDomainPlayMapping(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::DeleteLiveEdgeTransferOutcome LiveClient::deleteLiveEdgeTransfer(const DeleteLiveEdgeTransferRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteLiveEdgeTransferOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteLiveEdgeTransferOutcome(DeleteLiveEdgeTransferResult(outcome.result()));
+	else
+		return DeleteLiveEdgeTransferOutcome(outcome.error());
+}
+
+void LiveClient::deleteLiveEdgeTransferAsync(const DeleteLiveEdgeTransferRequest& request, const DeleteLiveEdgeTransferAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteLiveEdgeTransfer(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DeleteLiveEdgeTransferOutcomeCallable LiveClient::deleteLiveEdgeTransferCallable(const DeleteLiveEdgeTransferRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteLiveEdgeTransferOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteLiveEdgeTransfer(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4839,6 +4947,78 @@ LiveClient::DescribeLiveDrmUsageDataOutcomeCallable LiveClient::describeLiveDrmU
 	return task->get_future();
 }
 
+LiveClient::DescribeLiveEdgeTransferOutcome LiveClient::describeLiveEdgeTransfer(const DescribeLiveEdgeTransferRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeLiveEdgeTransferOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeLiveEdgeTransferOutcome(DescribeLiveEdgeTransferResult(outcome.result()));
+	else
+		return DescribeLiveEdgeTransferOutcome(outcome.error());
+}
+
+void LiveClient::describeLiveEdgeTransferAsync(const DescribeLiveEdgeTransferRequest& request, const DescribeLiveEdgeTransferAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeLiveEdgeTransfer(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DescribeLiveEdgeTransferOutcomeCallable LiveClient::describeLiveEdgeTransferCallable(const DescribeLiveEdgeTransferRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeLiveEdgeTransferOutcome()>>(
+			[this, request]()
+			{
+			return this->describeLiveEdgeTransfer(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::DescribeLiveIpInfoOutcome LiveClient::describeLiveIpInfo(const DescribeLiveIpInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeLiveIpInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeLiveIpInfoOutcome(DescribeLiveIpInfoResult(outcome.result()));
+	else
+		return DescribeLiveIpInfoOutcome(outcome.error());
+}
+
+void LiveClient::describeLiveIpInfoAsync(const DescribeLiveIpInfoRequest& request, const DescribeLiveIpInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeLiveIpInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DescribeLiveIpInfoOutcomeCallable LiveClient::describeLiveIpInfoCallable(const DescribeLiveIpInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeLiveIpInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->describeLiveIpInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::DescribeLiveLazyPullStreamConfigOutcome LiveClient::describeLiveLazyPullStreamConfig(const DescribeLiveLazyPullStreamConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5553,6 +5733,42 @@ LiveClient::DescribeLiveStreamSnapshotInfoOutcomeCallable LiveClient::describeLi
 			[this, request]()
 			{
 			return this->describeLiveStreamSnapshotInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::DescribeLiveStreamStateOutcome LiveClient::describeLiveStreamState(const DescribeLiveStreamStateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeLiveStreamStateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeLiveStreamStateOutcome(DescribeLiveStreamStateResult(outcome.result()));
+	else
+		return DescribeLiveStreamStateOutcome(outcome.error());
+}
+
+void LiveClient::describeLiveStreamStateAsync(const DescribeLiveStreamStateRequest& request, const DescribeLiveStreamStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeLiveStreamState(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DescribeLiveStreamStateOutcomeCallable LiveClient::describeLiveStreamStateCallable(const DescribeLiveStreamStateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeLiveStreamStateOutcome()>>(
+			[this, request]()
+			{
+			return this->describeLiveStreamState(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -6639,6 +6855,42 @@ LiveClient::EnableLiveRealtimeLogDeliveryOutcomeCallable LiveClient::enableLiveR
 	return task->get_future();
 }
 
+LiveClient::ForbidLiveCustomStreamOutcome LiveClient::forbidLiveCustomStream(const ForbidLiveCustomStreamRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ForbidLiveCustomStreamOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ForbidLiveCustomStreamOutcome(ForbidLiveCustomStreamResult(outcome.result()));
+	else
+		return ForbidLiveCustomStreamOutcome(outcome.error());
+}
+
+void LiveClient::forbidLiveCustomStreamAsync(const ForbidLiveCustomStreamRequest& request, const ForbidLiveCustomStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, forbidLiveCustomStream(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::ForbidLiveCustomStreamOutcomeCallable LiveClient::forbidLiveCustomStreamCallable(const ForbidLiveCustomStreamRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ForbidLiveCustomStreamOutcome()>>(
+			[this, request]()
+			{
+			return this->forbidLiveCustomStream(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::ForbidLiveStreamOutcome LiveClient::forbidLiveStream(const ForbidLiveStreamRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -6705,6 +6957,42 @@ LiveClient::ForbidPushStreamOutcomeCallable LiveClient::forbidPushStreamCallable
 			[this, request]()
 			{
 			return this->forbidPushStream(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::GetCustomTemplateOutcome LiveClient::getCustomTemplate(const GetCustomTemplateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetCustomTemplateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetCustomTemplateOutcome(GetCustomTemplateResult(outcome.result()));
+	else
+		return GetCustomTemplateOutcome(outcome.error());
+}
+
+void LiveClient::getCustomTemplateAsync(const GetCustomTemplateRequest& request, const GetCustomTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getCustomTemplate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::GetCustomTemplateOutcomeCallable LiveClient::getCustomTemplateCallable(const GetCustomTemplateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetCustomTemplateOutcome()>>(
+			[this, request]()
+			{
+			return this->getCustomTemplate(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -7821,6 +8109,42 @@ LiveClient::SetLiveDomainStagingConfigOutcomeCallable LiveClient::setLiveDomainS
 			[this, request]()
 			{
 			return this->setLiveDomainStagingConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::SetLiveEdgeTransferOutcome LiveClient::setLiveEdgeTransfer(const SetLiveEdgeTransferRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetLiveEdgeTransferOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetLiveEdgeTransferOutcome(SetLiveEdgeTransferResult(outcome.result()));
+	else
+		return SetLiveEdgeTransferOutcome(outcome.error());
+}
+
+void LiveClient::setLiveEdgeTransferAsync(const SetLiveEdgeTransferRequest& request, const SetLiveEdgeTransferAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setLiveEdgeTransfer(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::SetLiveEdgeTransferOutcomeCallable LiveClient::setLiveEdgeTransferCallable(const SetLiveEdgeTransferRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetLiveEdgeTransferOutcome()>>(
+			[this, request]()
+			{
+			return this->setLiveEdgeTransfer(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

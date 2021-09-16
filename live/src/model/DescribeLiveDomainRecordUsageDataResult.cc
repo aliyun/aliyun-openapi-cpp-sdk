@@ -49,8 +49,8 @@ void DescribeLiveDomainRecordUsageDataResult::parse(const std::string &payload)
 			recordUsageDataObject.domain = valueRecordUsageDataDataModule["Domain"].asString();
 		if(!valueRecordUsageDataDataModule["Type"].isNull())
 			recordUsageDataObject.type = valueRecordUsageDataDataModule["Type"].asString();
-		if(!valueRecordUsageDataDataModule["Size"].isNull())
-			recordUsageDataObject.size = std::stol(valueRecordUsageDataDataModule["Size"].asString());
+		if(!valueRecordUsageDataDataModule["Duration"].isNull())
+			recordUsageDataObject.duration = std::stol(valueRecordUsageDataDataModule["Duration"].asString());
 		if(!valueRecordUsageDataDataModule["Count"].isNull())
 			recordUsageDataObject.count = std::stol(valueRecordUsageDataDataModule["Count"].asString());
 		recordUsageData_.push_back(recordUsageDataObject);

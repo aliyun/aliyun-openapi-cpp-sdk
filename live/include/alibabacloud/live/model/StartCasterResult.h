@@ -35,6 +35,7 @@ namespace AlibabaCloud
 				struct SceneInfo
 				{
 					std::string sceneId;
+					std::string rtsUrl;
 					std::string streamUrl;
 				};
 				struct SceneInfo1
@@ -47,6 +48,7 @@ namespace AlibabaCloud
 					};
 					std::string sceneId;
 					std::vector<SceneInfo1::StreamInfo> streamInfos;
+					std::string rtsUrl;
 					std::string streamUrl;
 				};
 

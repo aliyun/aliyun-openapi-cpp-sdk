@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				SetCasterChannelRequest();
 				~SetCasterChannelRequest();
 
+				std::string getFaceBeauty()const;
+				void setFaceBeauty(const std::string& faceBeauty);
 				int getSeekOffset()const;
 				void setSeekOffset(int seekOffset);
 				int getPlayStatus()const;
@@ -51,6 +53,7 @@ namespace AlibabaCloud
 				void setChannelId(const std::string& channelId);
 
             private:
+				std::string faceBeauty_;
 				int seekOffset_;
 				int playStatus_;
 				std::string resourceId_;

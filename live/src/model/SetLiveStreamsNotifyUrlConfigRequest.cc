@@ -49,6 +49,17 @@ void SetLiveStreamsNotifyUrlConfigRequest::setAuthType(const std::string& authTy
 	setParameter("AuthType", authType);
 }
 
+std::string SetLiveStreamsNotifyUrlConfigRequest::getNotifyReqAuth()const
+{
+	return notifyReqAuth_;
+}
+
+void SetLiveStreamsNotifyUrlConfigRequest::setNotifyReqAuth(const std::string& notifyReqAuth)
+{
+	notifyReqAuth_ = notifyReqAuth;
+	setParameter("NotifyReqAuth", notifyReqAuth);
+}
+
 std::string SetLiveStreamsNotifyUrlConfigRequest::getNotifyUrl()const
 {
 	return notifyUrl_;
@@ -91,5 +102,16 @@ void SetLiveStreamsNotifyUrlConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string SetLiveStreamsNotifyUrlConfigRequest::getNotifyAuthKey()const
+{
+	return notifyAuthKey_;
+}
+
+void SetLiveStreamsNotifyUrlConfigRequest::setNotifyAuthKey(const std::string& notifyAuthKey)
+{
+	notifyAuthKey_ = notifyAuthKey;
+	setParameter("NotifyAuthKey", notifyAuthKey);
 }
 

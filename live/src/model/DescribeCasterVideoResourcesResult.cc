@@ -53,6 +53,8 @@ void DescribeCasterVideoResourcesResult::parse(const std::string &payload)
 			videoResourcesObject.locationId = valueVideoResourcesVideoResource["LocationId"].asString();
 		if(!valueVideoResourcesVideoResource["LiveStreamUrl"].isNull())
 			videoResourcesObject.liveStreamUrl = valueVideoResourcesVideoResource["LiveStreamUrl"].asString();
+		if(!valueVideoResourcesVideoResource["FlvUrl"].isNull())
+			videoResourcesObject.flvUrl = valueVideoResourcesVideoResource["FlvUrl"].asString();
 		if(!valueVideoResourcesVideoResource["RepeatNum"].isNull())
 			videoResourcesObject.repeatNum = std::stoi(valueVideoResourcesVideoResource["RepeatNum"].asString());
 		if(!valueVideoResourcesVideoResource["VodUrl"].isNull())

@@ -46,6 +46,7 @@ namespace AlibabaCloud
 					std::string sceneName;
 					std::string layoutId;
 					std::vector<Scene::StreamInfo> streamInfos;
+					std::string rtsUrl;
 					std::string streamUrl;
 					std::string outputType;
 				};

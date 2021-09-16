@@ -31,9 +31,18 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_LIVE_EXPORT AddLiveAppRecordConfigRequest : public RpcServiceRequest
 			{
 			public:
+				struct TranscodeRecordFormat
+				{
+					std::string sliceOssObjectPrefix;
+					int sliceDuration;
+					std::string format;
+					std::string ossObjectPrefix;
+					int cycleDuration;
+				};
 				struct RecordFormat
 				{
 					std::string sliceOssObjectPrefix;
+					int sliceDuration;
 					std::string format;
 					std::string ossObjectPrefix;
 					int cycleDuration;
@@ -45,12 +54,16 @@ namespace AlibabaCloud
 
 				std::string getOssEndpoint()const;
 				void setOssEndpoint(const std::string& ossEndpoint);
+				std::vector<std::string> getTranscodeTemplates()const;
+				void setTranscodeTemplates(const std::vector<std::string>& transcodeTemplates);
 				std::string getStartTime()const;
 				void setStartTime(const std::string& startTime);
 				std::string getAppName()const;
 				void setAppName(const std::string& appName);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
+				std::vector<TranscodeRecordFormat> getTranscodeRecordFormat()const;
+				void setTranscodeRecordFormat(const std::vector<TranscodeRecordFormat>& transcodeRecordFormat);
 				int getOnDemand()const;
 				void setOnDemand(int onDemand);
 				std::string getStreamName()const;
@@ -68,9 +81,11 @@ namespace AlibabaCloud
 
             private:
 				std::string ossEndpoint_;
+				std::vector<std::string> transcodeTemplates_;
 				std::string startTime_;
 				std::string appName_;
 				std::string securityToken_;
+				std::vector<TranscodeRecordFormat> transcodeRecordFormat_;
 				int onDemand_;
 				std::string streamName_;
 				std::string ossBucket_;

@@ -37,6 +37,7 @@ namespace AlibabaCloud
 					long syncDelayThreshold;
 					std::string hostResourceId;
 					std::vector<std::string> resourceIds;
+					std::vector<int> syncOffsets;
 				};
 
 			public:

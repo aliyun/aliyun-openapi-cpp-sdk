@@ -66,6 +66,9 @@ void SetCasterSyncGroupRequest::setSyncGroup(const std::vector<SyncGroup>& syncG
 		for(int dep2 = 0; dep2!= syncGroupObj.resourceIds.size(); dep2++) {
 			setParameter(syncGroupObjStr + ".ResourceIds."+ std::to_string(dep2), syncGroupObj.resourceIds.at(dep2));
 		}
+		for(int dep2 = 0; dep2!= syncGroupObj.syncOffsets.size(); dep2++) {
+			setParameter(syncGroupObjStr + ".SyncOffsets."+ std::to_string(dep2), std::to_string(syncGroupObj.syncOffsets.at(dep2)));
+		}
 	}
 }
 

@@ -36,7 +36,9 @@ namespace AlibabaCloud
 				{
 					std::string domainName;
 					std::string notifyUrl;
+					std::string notifyReqAuth;
 					std::string authKey;
+					std::string notifyAuthKey;
 					std::string authType;
 				};
 

@@ -27,6 +27,17 @@ AddCasterVideoResourceRequest::AddCasterVideoResourceRequest() :
 AddCasterVideoResourceRequest::~AddCasterVideoResourceRequest()
 {}
 
+int AddCasterVideoResourceRequest::getInputType()const
+{
+	return inputType_;
+}
+
+void AddCasterVideoResourceRequest::setInputType(int inputType)
+{
+	inputType_ = inputType;
+	setParameter("InputType", std::to_string(inputType));
+}
+
 int AddCasterVideoResourceRequest::getEndOffset()const
 {
 	return endOffset_;
@@ -91,6 +102,17 @@ void AddCasterVideoResourceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
+}
+
+int AddCasterVideoResourceRequest::getStreamMonitor()const
+{
+	return streamMonitor_;
+}
+
+void AddCasterVideoResourceRequest::setStreamMonitor(int streamMonitor)
+{
+	streamMonitor_ = streamMonitor;
+	setParameter("StreamMonitor", std::to_string(streamMonitor));
 }
 
 int AddCasterVideoResourceRequest::getBeginOffset()const

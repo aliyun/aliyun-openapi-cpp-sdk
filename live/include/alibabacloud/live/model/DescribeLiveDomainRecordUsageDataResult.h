@@ -35,7 +35,7 @@ namespace AlibabaCloud
 				struct DataModule
 				{
 					std::string type;
-					long size;
+					long duration;
 					long count;
 					std::string domain;
 					std::string timeStamp;

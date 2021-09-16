@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				AddCasterVideoResourceRequest();
 				~AddCasterVideoResourceRequest();
 
+				int getInputType()const;
+				void setInputType(int inputType);
 				int getEndOffset()const;
 				void setEndOffset(int endOffset);
 				std::string getMaterialId()const;
@@ -47,6 +49,8 @@ namespace AlibabaCloud
 				void setCasterId(const std::string& casterId);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				int getStreamMonitor()const;
+				void setStreamMonitor(int streamMonitor);
 				int getBeginOffset()const;
 				void setBeginOffset(int beginOffset);
 				std::string getLiveStreamUrl()const;
@@ -61,12 +65,14 @@ namespace AlibabaCloud
 				void setRepeatNum(int repeatNum);
 
             private:
+				int inputType_;
 				int endOffset_;
 				std::string materialId_;
 				std::string vodUrl_;
 				std::string streamId_;
 				std::string casterId_;
 				long ownerId_;
+				int streamMonitor_;
 				int beginOffset_;
 				std::string liveStreamUrl_;
 				std::string locationId_;

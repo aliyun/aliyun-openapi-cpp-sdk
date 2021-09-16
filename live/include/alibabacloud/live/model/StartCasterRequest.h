@@ -35,12 +35,15 @@ namespace AlibabaCloud
 				StartCasterRequest();
 				~StartCasterRequest();
 
+				int getPlayerType()const;
+				void setPlayerType(int playerType);
 				std::string getCasterId()const;
 				void setCasterId(const std::string& casterId);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 
             private:
+				int playerType_;
 				std::string casterId_;
 				long ownerId_;
 

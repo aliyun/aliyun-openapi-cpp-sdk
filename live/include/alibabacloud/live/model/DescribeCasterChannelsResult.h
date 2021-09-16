@@ -34,7 +34,10 @@ namespace AlibabaCloud
 			public:
 				struct Channel
 				{
+					std::string faceBeauty;
+					int inputType;
 					std::string resourceId;
+					std::string rtsUrl;
 					std::string channelId;
 					std::string streamUrl;
 					std::string rtmpUrl;

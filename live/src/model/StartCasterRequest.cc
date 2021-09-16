@@ -27,6 +27,17 @@ StartCasterRequest::StartCasterRequest() :
 StartCasterRequest::~StartCasterRequest()
 {}
 
+int StartCasterRequest::getPlayerType()const
+{
+	return playerType_;
+}
+
+void StartCasterRequest::setPlayerType(int playerType)
+{
+	playerType_ = playerType;
+	setParameter("PlayerType", std::to_string(playerType));
+}
+
 std::string StartCasterRequest::getCasterId()const
 {
 	return casterId_;

@@ -51,6 +51,12 @@ void DescribeCasterChannelsResult::parse(const std::string &payload)
 			channelsObject.streamUrl = valueChannelsChannel["StreamUrl"].asString();
 		if(!valueChannelsChannel["RtmpUrl"].isNull())
 			channelsObject.rtmpUrl = valueChannelsChannel["RtmpUrl"].asString();
+		if(!valueChannelsChannel["RtsUrl"].isNull())
+			channelsObject.rtsUrl = valueChannelsChannel["RtsUrl"].asString();
+		if(!valueChannelsChannel["InputType"].isNull())
+			channelsObject.inputType = std::stoi(valueChannelsChannel["InputType"].asString());
+		if(!valueChannelsChannel["FaceBeauty"].isNull())
+			channelsObject.faceBeauty = valueChannelsChannel["FaceBeauty"].asString();
 		channels_.push_back(channelsObject);
 	}
 	if(!value["Total"].isNull())

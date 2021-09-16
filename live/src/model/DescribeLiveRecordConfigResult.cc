@@ -73,8 +73,29 @@ void DescribeLiveRecordConfigResult::parse(const std::string &payload)
 				recordFormatListObject.sliceOssObjectPrefix = valueLiveAppRecordListLiveAppRecordRecordFormatListRecordFormat["SliceOssObjectPrefix"].asString();
 			if(!valueLiveAppRecordListLiveAppRecordRecordFormatListRecordFormat["CycleDuration"].isNull())
 				recordFormatListObject.cycleDuration = std::stoi(valueLiveAppRecordListLiveAppRecordRecordFormatListRecordFormat["CycleDuration"].asString());
+			if(!valueLiveAppRecordListLiveAppRecordRecordFormatListRecordFormat["SliceDuration"].isNull())
+				recordFormatListObject.sliceDuration = std::stoi(valueLiveAppRecordListLiveAppRecordRecordFormatListRecordFormat["SliceDuration"].asString());
 			liveAppRecordListObject.recordFormatList.push_back(recordFormatListObject);
 		}
+		auto allTranscodeRecordFormatListNode = valueLiveAppRecordListLiveAppRecord["TranscodeRecordFormatList"]["RecordFormat"];
+		for (auto valueLiveAppRecordListLiveAppRecordTranscodeRecordFormatListRecordFormat : allTranscodeRecordFormatListNode)
+		{
+			LiveAppRecord::RecordFormat transcodeRecordFormatListObject;
+			if(!valueLiveAppRecordListLiveAppRecordTranscodeRecordFormatListRecordFormat["Format"].isNull())
+				transcodeRecordFormatListObject.format = valueLiveAppRecordListLiveAppRecordTranscodeRecordFormatListRecordFormat["Format"].asString();
+			if(!valueLiveAppRecordListLiveAppRecordTranscodeRecordFormatListRecordFormat["OssObjectPrefix"].isNull())
+				transcodeRecordFormatListObject.ossObjectPrefix = valueLiveAppRecordListLiveAppRecordTranscodeRecordFormatListRecordFormat["OssObjectPrefix"].asString();
+			if(!valueLiveAppRecordListLiveAppRecordTranscodeRecordFormatListRecordFormat["SliceOssObjectPrefix"].isNull())
+				transcodeRecordFormatListObject.sliceOssObjectPrefix = valueLiveAppRecordListLiveAppRecordTranscodeRecordFormatListRecordFormat["SliceOssObjectPrefix"].asString();
+			if(!valueLiveAppRecordListLiveAppRecordTranscodeRecordFormatListRecordFormat["CycleDuration"].isNull())
+				transcodeRecordFormatListObject.cycleDuration = std::stoi(valueLiveAppRecordListLiveAppRecordTranscodeRecordFormatListRecordFormat["CycleDuration"].asString());
+			if(!valueLiveAppRecordListLiveAppRecordTranscodeRecordFormatListRecordFormat["SliceDuration"].isNull())
+				transcodeRecordFormatListObject.sliceDuration = std::stoi(valueLiveAppRecordListLiveAppRecordTranscodeRecordFormatListRecordFormat["SliceDuration"].asString());
+			liveAppRecordListObject.transcodeRecordFormatList.push_back(transcodeRecordFormatListObject);
+		}
+		auto allTranscodeTemplates = value["TranscodeTemplates"]["Templates"];
+		for (auto value : allTranscodeTemplates)
+			liveAppRecordListObject.transcodeTemplates.push_back(value.asString());
 		liveAppRecordList_.push_back(liveAppRecordListObject);
 	}
 	if(!value["PageNum"].isNull())

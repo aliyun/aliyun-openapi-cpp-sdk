@@ -27,6 +27,17 @@ SetCasterChannelRequest::SetCasterChannelRequest() :
 SetCasterChannelRequest::~SetCasterChannelRequest()
 {}
 
+std::string SetCasterChannelRequest::getFaceBeauty()const
+{
+	return faceBeauty_;
+}
+
+void SetCasterChannelRequest::setFaceBeauty(const std::string& faceBeauty)
+{
+	faceBeauty_ = faceBeauty;
+	setParameter("FaceBeauty", faceBeauty);
+}
+
 int SetCasterChannelRequest::getSeekOffset()const
 {
 	return seekOffset_;

@@ -105,6 +105,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/CreateBoardResult.h
 	include/alibabacloud/live/model/CreateCasterRequest.h
 	include/alibabacloud/live/model/CreateCasterResult.h
+	include/alibabacloud/live/model/CreateCustomTemplateRequest.h
+	include/alibabacloud/live/model/CreateCustomTemplateResult.h
 	include/alibabacloud/live/model/CreateLiveRealTimeLogDeliveryRequest.h
 	include/alibabacloud/live/model/CreateLiveRealTimeLogDeliveryResult.h
 	include/alibabacloud/live/model/CreateLiveStreamRecordIndexFilesRequest.h
@@ -131,6 +133,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DeleteCasterSceneConfigResult.h
 	include/alibabacloud/live/model/DeleteCasterVideoResourceRequest.h
 	include/alibabacloud/live/model/DeleteCasterVideoResourceResult.h
+	include/alibabacloud/live/model/DeleteCustomTemplateRequest.h
+	include/alibabacloud/live/model/DeleteCustomTemplateResult.h
 	include/alibabacloud/live/model/DeleteHtmlResourceRequest.h
 	include/alibabacloud/live/model/DeleteHtmlResourceResult.h
 	include/alibabacloud/live/model/DeleteLiveASRConfigRequest.h
@@ -151,6 +155,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DeleteLiveDomainMappingResult.h
 	include/alibabacloud/live/model/DeleteLiveDomainPlayMappingRequest.h
 	include/alibabacloud/live/model/DeleteLiveDomainPlayMappingResult.h
+	include/alibabacloud/live/model/DeleteLiveEdgeTransferRequest.h
+	include/alibabacloud/live/model/DeleteLiveEdgeTransferResult.h
 	include/alibabacloud/live/model/DeleteLiveLazyPullStreamInfoConfigRequest.h
 	include/alibabacloud/live/model/DeleteLiveLazyPullStreamInfoConfigResult.h
 	include/alibabacloud/live/model/DeleteLivePullStreamInfoConfigRequest.h
@@ -287,6 +293,10 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DescribeLiveDomainTranscodeDataResult.h
 	include/alibabacloud/live/model/DescribeLiveDrmUsageDataRequest.h
 	include/alibabacloud/live/model/DescribeLiveDrmUsageDataResult.h
+	include/alibabacloud/live/model/DescribeLiveEdgeTransferRequest.h
+	include/alibabacloud/live/model/DescribeLiveEdgeTransferResult.h
+	include/alibabacloud/live/model/DescribeLiveIpInfoRequest.h
+	include/alibabacloud/live/model/DescribeLiveIpInfoResult.h
 	include/alibabacloud/live/model/DescribeLiveLazyPullStreamConfigRequest.h
 	include/alibabacloud/live/model/DescribeLiveLazyPullStreamConfigResult.h
 	include/alibabacloud/live/model/DescribeLivePullStreamConfigRequest.h
@@ -327,6 +337,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DescribeLiveStreamRecordIndexFilesResult.h
 	include/alibabacloud/live/model/DescribeLiveStreamSnapshotInfoRequest.h
 	include/alibabacloud/live/model/DescribeLiveStreamSnapshotInfoResult.h
+	include/alibabacloud/live/model/DescribeLiveStreamStateRequest.h
+	include/alibabacloud/live/model/DescribeLiveStreamStateResult.h
 	include/alibabacloud/live/model/DescribeLiveStreamTranscodeInfoRequest.h
 	include/alibabacloud/live/model/DescribeLiveStreamTranscodeInfoResult.h
 	include/alibabacloud/live/model/DescribeLiveStreamTranscodeStreamNumRequest.h
@@ -387,10 +399,14 @@ set(live_public_header_model
 	include/alibabacloud/live/model/EffectCasterVideoResourceResult.h
 	include/alibabacloud/live/model/EnableLiveRealtimeLogDeliveryRequest.h
 	include/alibabacloud/live/model/EnableLiveRealtimeLogDeliveryResult.h
+	include/alibabacloud/live/model/ForbidLiveCustomStreamRequest.h
+	include/alibabacloud/live/model/ForbidLiveCustomStreamResult.h
 	include/alibabacloud/live/model/ForbidLiveStreamRequest.h
 	include/alibabacloud/live/model/ForbidLiveStreamResult.h
 	include/alibabacloud/live/model/ForbidPushStreamRequest.h
 	include/alibabacloud/live/model/ForbidPushStreamResult.h
+	include/alibabacloud/live/model/GetCustomTemplateRequest.h
+	include/alibabacloud/live/model/GetCustomTemplateResult.h
 	include/alibabacloud/live/model/GetMultiRateConfigRequest.h
 	include/alibabacloud/live/model/GetMultiRateConfigResult.h
 	include/alibabacloud/live/model/GetMultiRateConfigListRequest.h
@@ -453,6 +469,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/SetLiveDomainCertificateResult.h
 	include/alibabacloud/live/model/SetLiveDomainStagingConfigRequest.h
 	include/alibabacloud/live/model/SetLiveDomainStagingConfigResult.h
+	include/alibabacloud/live/model/SetLiveEdgeTransferRequest.h
+	include/alibabacloud/live/model/SetLiveEdgeTransferResult.h
 	include/alibabacloud/live/model/SetLiveLazyPullStreamInfoConfigRequest.h
 	include/alibabacloud/live/model/SetLiveLazyPullStreamInfoConfigResult.h
 	include/alibabacloud/live/model/SetLiveStreamDelayConfigRequest.h
@@ -604,6 +622,8 @@ set(live_src
 	src/model/CreateBoardResult.cc
 	src/model/CreateCasterRequest.cc
 	src/model/CreateCasterResult.cc
+	src/model/CreateCustomTemplateRequest.cc
+	src/model/CreateCustomTemplateResult.cc
 	src/model/CreateLiveRealTimeLogDeliveryRequest.cc
 	src/model/CreateLiveRealTimeLogDeliveryResult.cc
 	src/model/CreateLiveStreamRecordIndexFilesRequest.cc
@@ -630,6 +650,8 @@ set(live_src
 	src/model/DeleteCasterSceneConfigResult.cc
 	src/model/DeleteCasterVideoResourceRequest.cc
 	src/model/DeleteCasterVideoResourceResult.cc
+	src/model/DeleteCustomTemplateRequest.cc
+	src/model/DeleteCustomTemplateResult.cc
 	src/model/DeleteHtmlResourceRequest.cc
 	src/model/DeleteHtmlResourceResult.cc
 	src/model/DeleteLiveASRConfigRequest.cc
@@ -650,6 +672,8 @@ set(live_src
 	src/model/DeleteLiveDomainMappingResult.cc
 	src/model/DeleteLiveDomainPlayMappingRequest.cc
 	src/model/DeleteLiveDomainPlayMappingResult.cc
+	src/model/DeleteLiveEdgeTransferRequest.cc
+	src/model/DeleteLiveEdgeTransferResult.cc
 	src/model/DeleteLiveLazyPullStreamInfoConfigRequest.cc
 	src/model/DeleteLiveLazyPullStreamInfoConfigResult.cc
 	src/model/DeleteLivePullStreamInfoConfigRequest.cc
@@ -786,6 +810,10 @@ set(live_src
 	src/model/DescribeLiveDomainTranscodeDataResult.cc
 	src/model/DescribeLiveDrmUsageDataRequest.cc
 	src/model/DescribeLiveDrmUsageDataResult.cc
+	src/model/DescribeLiveEdgeTransferRequest.cc
+	src/model/DescribeLiveEdgeTransferResult.cc
+	src/model/DescribeLiveIpInfoRequest.cc
+	src/model/DescribeLiveIpInfoResult.cc
 	src/model/DescribeLiveLazyPullStreamConfigRequest.cc
 	src/model/DescribeLiveLazyPullStreamConfigResult.cc
 	src/model/DescribeLivePullStreamConfigRequest.cc
@@ -826,6 +854,8 @@ set(live_src
 	src/model/DescribeLiveStreamRecordIndexFilesResult.cc
 	src/model/DescribeLiveStreamSnapshotInfoRequest.cc
 	src/model/DescribeLiveStreamSnapshotInfoResult.cc
+	src/model/DescribeLiveStreamStateRequest.cc
+	src/model/DescribeLiveStreamStateResult.cc
 	src/model/DescribeLiveStreamTranscodeInfoRequest.cc
 	src/model/DescribeLiveStreamTranscodeInfoResult.cc
 	src/model/DescribeLiveStreamTranscodeStreamNumRequest.cc
@@ -886,10 +916,14 @@ set(live_src
 	src/model/EffectCasterVideoResourceResult.cc
 	src/model/EnableLiveRealtimeLogDeliveryRequest.cc
 	src/model/EnableLiveRealtimeLogDeliveryResult.cc
+	src/model/ForbidLiveCustomStreamRequest.cc
+	src/model/ForbidLiveCustomStreamResult.cc
 	src/model/ForbidLiveStreamRequest.cc
 	src/model/ForbidLiveStreamResult.cc
 	src/model/ForbidPushStreamRequest.cc
 	src/model/ForbidPushStreamResult.cc
+	src/model/GetCustomTemplateRequest.cc
+	src/model/GetCustomTemplateResult.cc
 	src/model/GetMultiRateConfigRequest.cc
 	src/model/GetMultiRateConfigResult.cc
 	src/model/GetMultiRateConfigListRequest.cc
@@ -952,6 +986,8 @@ set(live_src
 	src/model/SetLiveDomainCertificateResult.cc
 	src/model/SetLiveDomainStagingConfigRequest.cc
 	src/model/SetLiveDomainStagingConfigResult.cc
+	src/model/SetLiveEdgeTransferRequest.cc
+	src/model/SetLiveEdgeTransferResult.cc
 	src/model/SetLiveLazyPullStreamInfoConfigRequest.cc
 	src/model/SetLiveLazyPullStreamInfoConfigResult.cc
 	src/model/SetLiveStreamDelayConfigRequest.cc
