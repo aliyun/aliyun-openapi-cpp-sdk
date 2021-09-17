@@ -59,6 +59,7 @@ void MassPushRequest::setPushTask(const std::vector<PushTask>& pushTask)
 		setParameter(pushTaskObjStr + ".IOSRemindBody", pushTaskObj.iOSRemindBody);
 		setParameter(pushTaskObjStr + ".AndroidNotifyType", pushTaskObj.androidNotifyType);
 		setParameter(pushTaskObjStr + ".AndroidPopupTitle", pushTaskObj.androidPopupTitle);
+		setParameter(pushTaskObjStr + ".AndroidMessageHuaweiCategory", pushTaskObj.androidMessageHuaweiCategory);
 		setParameter(pushTaskObjStr + ".IOSMusic", pushTaskObj.iOSMusic);
 		setParameter(pushTaskObjStr + ".IOSApnsEnv", pushTaskObj.iOSApnsEnv);
 		setParameter(pushTaskObjStr + ".IOSMutableContent", pushTaskObj.iOSMutableContent ? "true" : "false");
@@ -79,6 +80,7 @@ void MassPushRequest::setPushTask(const std::vector<PushTask>& pushTask)
 		setParameter(pushTaskObjStr + ".IOSNotificationThreadId", pushTaskObj.iOSNotificationThreadId);
 		setParameter(pushTaskObjStr + ".AndroidMusic", pushTaskObj.androidMusic);
 		setParameter(pushTaskObjStr + ".IOSNotificationCollapseId", pushTaskObj.iOSNotificationCollapseId);
+		setParameter(pushTaskObjStr + ".AndroidMessageHuaweiUrgency", pushTaskObj.androidMessageHuaweiUrgency);
 		setParameter(pushTaskObjStr + ".PushType", pushTaskObj.pushType);
 		setParameter(pushTaskObjStr + ".AndroidExtParameters", pushTaskObj.androidExtParameters);
 		setParameter(pushTaskObjStr + ".IOSBadge", std::to_string(pushTaskObj.iOSBadge));
@@ -92,6 +94,7 @@ void MassPushRequest::setPushTask(const std::vector<PushTask>& pushTask)
 		setParameter(pushTaskObjStr + ".AndroidPopupBody", pushTaskObj.androidPopupBody);
 		setParameter(pushTaskObjStr + ".AndroidBigPictureUrl", pushTaskObj.androidBigPictureUrl);
 		setParameter(pushTaskObjStr + ".IOSSilentNotification", pushTaskObj.iOSSilentNotification ? "true" : "false");
+		setParameter(pushTaskObjStr + ".SendChannels", pushTaskObj.sendChannels);
 		setParameter(pushTaskObjStr + ".Target", pushTaskObj.target);
 		setParameter(pushTaskObjStr + ".AndroidBigTitle", pushTaskObj.androidBigTitle);
 		setParameter(pushTaskObjStr + ".AndroidNotificationChannel", pushTaskObj.androidNotificationChannel);

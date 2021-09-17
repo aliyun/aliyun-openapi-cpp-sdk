@@ -148,6 +148,17 @@ void PushRequest::setAndroidPopupTitle(const std::string& androidPopupTitle)
 	setParameter("AndroidPopupTitle", androidPopupTitle);
 }
 
+std::string PushRequest::getAndroidMessageHuaweiCategory()const
+{
+	return androidMessageHuaweiCategory_;
+}
+
+void PushRequest::setAndroidMessageHuaweiCategory(const std::string& androidMessageHuaweiCategory)
+{
+	androidMessageHuaweiCategory_ = androidMessageHuaweiCategory;
+	setParameter("AndroidMessageHuaweiCategory", androidMessageHuaweiCategory);
+}
+
 std::string PushRequest::getIOSMusic()const
 {
 	return iOSMusic_;
@@ -379,6 +390,17 @@ void PushRequest::setIOSNotificationCollapseId(const std::string& iOSNotificatio
 	setParameter("IOSNotificationCollapseId", iOSNotificationCollapseId);
 }
 
+std::string PushRequest::getAndroidMessageHuaweiUrgency()const
+{
+	return androidMessageHuaweiUrgency_;
+}
+
+void PushRequest::setAndroidMessageHuaweiUrgency(const std::string& androidMessageHuaweiUrgency)
+{
+	androidMessageHuaweiUrgency_ = androidMessageHuaweiUrgency;
+	setParameter("AndroidMessageHuaweiUrgency", androidMessageHuaweiUrgency);
+}
+
 std::string PushRequest::getPushType()const
 {
 	return pushType_;
@@ -553,6 +575,17 @@ void PushRequest::setIOSSilentNotification(bool iOSSilentNotification)
 {
 	iOSSilentNotification_ = iOSSilentNotification;
 	setParameter("IOSSilentNotification", iOSSilentNotification ? "true" : "false");
+}
+
+std::string PushRequest::getSendChannels()const
+{
+	return sendChannels_;
+}
+
+void PushRequest::setSendChannels(const std::string& sendChannels)
+{
+	sendChannels_ = sendChannels;
+	setParameter("SendChannels", sendChannels);
 }
 
 std::string PushRequest::getTarget()const

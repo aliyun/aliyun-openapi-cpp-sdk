@@ -57,6 +57,8 @@ namespace AlibabaCloud
 				void setAndroidNotifyType(const std::string& androidNotifyType);
 				std::string getAndroidPopupTitle()const;
 				void setAndroidPopupTitle(const std::string& androidPopupTitle);
+				std::string getAndroidMessageHuaweiCategory()const;
+				void setAndroidMessageHuaweiCategory(const std::string& androidMessageHuaweiCategory);
 				std::string getIOSMusic()const;
 				void setIOSMusic(const std::string& iOSMusic);
 				std::string getIOSApnsEnv()const;
@@ -99,6 +101,8 @@ namespace AlibabaCloud
 				void setAndroidMusic(const std::string& androidMusic);
 				std::string getIOSNotificationCollapseId()const;
 				void setIOSNotificationCollapseId(const std::string& iOSNotificationCollapseId);
+				std::string getAndroidMessageHuaweiUrgency()const;
+				void setAndroidMessageHuaweiUrgency(const std::string& androidMessageHuaweiUrgency);
 				std::string getPushType()const;
 				void setPushType(const std::string& pushType);
 				std::string getAndroidExtParameters()const;
@@ -131,6 +135,8 @@ namespace AlibabaCloud
 				void setAndroidBigPictureUrl(const std::string& androidBigPictureUrl);
 				bool getIOSSilentNotification()const;
 				void setIOSSilentNotification(bool iOSSilentNotification);
+				std::string getSendChannels()const;
+				void setSendChannels(const std::string& sendChannels);
 				std::string getTarget()const;
 				void setTarget(const std::string& target);
 				std::string getAndroidBigTitle()const;
@@ -166,6 +172,7 @@ namespace AlibabaCloud
 				std::string iOSRemindBody_;
 				std::string androidNotifyType_;
 				std::string androidPopupTitle_;
+				std::string androidMessageHuaweiCategory_;
 				std::string iOSMusic_;
 				std::string iOSApnsEnv_;
 				bool iOSMutableContent_;
@@ -187,6 +194,7 @@ namespace AlibabaCloud
 				std::string iOSNotificationThreadId_;
 				std::string androidMusic_;
 				std::string iOSNotificationCollapseId_;
+				std::string androidMessageHuaweiUrgency_;
 				std::string pushType_;
 				std::string androidExtParameters_;
 				int iOSBadge_;
@@ -203,6 +211,7 @@ namespace AlibabaCloud
 				std::string androidPopupBody_;
 				std::string androidBigPictureUrl_;
 				bool iOSSilentNotification_;
+				std::string sendChannels_;
 				std::string target_;
 				std::string androidBigTitle_;
 				std::string androidNotificationChannel_;
