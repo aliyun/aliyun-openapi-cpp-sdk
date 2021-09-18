@@ -44,6 +44,7 @@ namespace AlibabaCloud
 					int cateId;
 					std::string cateName;
 					std::string source;
+					std::string materialType;
 					std::string modifiedTime;
 					std::vector<std::string> sprites;
 					std::string creationTime;

@@ -35,8 +35,6 @@ namespace AlibabaCloud
 				CreateUploadVideoRequest();
 				~CreateUploadVideoRequest();
 
-				long getResourceOwnerId()const;
-				void setResourceOwnerId(long resourceOwnerId);
 				std::string getTranscodeMode()const;
 				void setTranscodeMode(const std::string& transcodeMode);
 				std::string getDescription()const;
@@ -57,12 +55,8 @@ namespace AlibabaCloud
 				void setWorkflowId(const std::string& workflowId);
 				std::string getCustomMediaInfo()const;
 				void setCustomMediaInfo(const std::string& customMediaInfo);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getIP()const;
 				void setIP(const std::string& iP);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getTags()const;
 				void setTags(const std::string& tags);
 				std::string getFileName()const;
@@ -73,7 +67,6 @@ namespace AlibabaCloud
 				void setAppId(const std::string& appId);
 
             private:
-				long resourceOwnerId_;
 				std::string transcodeMode_;
 				std::string description_;
 				long fileSize_;
@@ -84,9 +77,7 @@ namespace AlibabaCloud
 				long cateId_;
 				std::string workflowId_;
 				std::string customMediaInfo_;
-				std::string resourceOwnerAccount_;
 				std::string iP_;
-				long ownerId_;
 				std::string tags_;
 				std::string fileName_;
 				std::string templateGroupId_;

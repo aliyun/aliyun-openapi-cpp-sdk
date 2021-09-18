@@ -35,8 +35,6 @@ namespace AlibabaCloud
 				ListLiveRecordVideoRequest();
 				~ListLiveRecordVideoRequest();
 
-				long getResourceOwnerId()const;
-				void setResourceOwnerId(long resourceOwnerId);
 				std::string getStartTime()const;
 				void setStartTime(const std::string& startTime);
 				std::string getAppName()const;
@@ -47,30 +45,23 @@ namespace AlibabaCloud
 				void setStreamName(const std::string& streamName);
 				std::string getQueryType()const;
 				void setQueryType(const std::string& queryType);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
 				std::string getEndTime()const;
 				void setEndTime(const std::string& endTime);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				int getPageNo()const;
 				void setPageNo(int pageNo);
 				std::string getSortBy()const;
 				void setSortBy(const std::string& sortBy);
 
             private:
-				long resourceOwnerId_;
 				std::string startTime_;
 				std::string appName_;
 				int pageSize_;
 				std::string streamName_;
 				std::string queryType_;
-				std::string resourceOwnerAccount_;
 				std::string domainName_;
 				std::string endTime_;
-				long ownerId_;
 				int pageNo_;
 				std::string sortBy_;
 

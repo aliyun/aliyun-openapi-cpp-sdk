@@ -41,8 +41,6 @@ namespace AlibabaCloud
 				void setStartTime(const std::string& startTime);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
-				std::string getResourceGroupId()const;
-				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
 				int getPageSize()const;
@@ -64,7 +62,6 @@ namespace AlibabaCloud
 				std::string objectPath_;
 				std::string startTime_;
 				int pageNumber_;
-				std::string resourceGroupId_;
 				std::string securityToken_;
 				int pageSize_;
 				std::string objectType_;

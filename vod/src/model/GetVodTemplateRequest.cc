@@ -27,39 +27,6 @@ GetVodTemplateRequest::GetVodTemplateRequest() :
 GetVodTemplateRequest::~GetVodTemplateRequest()
 {}
 
-long GetVodTemplateRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void GetVodTemplateRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-std::string GetVodTemplateRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void GetVodTemplateRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-long GetVodTemplateRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void GetVodTemplateRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
-}
-
 std::string GetVodTemplateRequest::getVodTemplateId()const
 {
 	return vodTemplateId_;

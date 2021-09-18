@@ -81,12 +81,12 @@ void GetVideoInfosResult::parse(const std::string &payload)
 			videoListObject.customMediaInfo = valueVideoListVideo["CustomMediaInfo"].asString();
 		if(!valueVideoListVideo["AppId"].isNull())
 			videoListObject.appId = valueVideoListVideo["AppId"].asString();
-		auto allThumbnailListNode = allVideoListNode["ThumbnailList"]["Thumbnail"];
-		for (auto allVideoListNodeThumbnailListThumbnail : allThumbnailListNode)
+		auto allThumbnailListNode = valueVideoListVideo["ThumbnailList"]["Thumbnail"];
+		for (auto valueVideoListVideoThumbnailListThumbnail : allThumbnailListNode)
 		{
 			Video::Thumbnail thumbnailListObject;
-			if(!allVideoListNodeThumbnailListThumbnail["URL"].isNull())
-				thumbnailListObject.uRL = allVideoListNodeThumbnailListThumbnail["URL"].asString();
+			if(!valueVideoListVideoThumbnailListThumbnail["URL"].isNull())
+				thumbnailListObject.uRL = valueVideoListVideoThumbnailListThumbnail["URL"].asString();
 			videoListObject.thumbnailList.push_back(thumbnailListObject);
 		}
 		auto allSnapshots = value["Snapshots"]["Snapshot"];

@@ -35,28 +35,19 @@ namespace AlibabaCloud
 				DetachAppPolicyFromIdentityRequest();
 				~DetachAppPolicyFromIdentityRequest();
 
-				long getResourceOwnerId()const;
-				void setResourceOwnerId(long resourceOwnerId);
+				std::string getIdentityType()const;
+				void setIdentityType(const std::string& identityType);
 				std::string getPolicyNames()const;
 				void setPolicyNames(const std::string& policyNames);
 				std::string getIdentityName()const;
 				void setIdentityName(const std::string& identityName);
-				std::string getIdentityType()const;
-				void setIdentityType(const std::string& identityType);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getAppId()const;
 				void setAppId(const std::string& appId);
 
             private:
-				long resourceOwnerId_;
+				std::string identityType_;
 				std::string policyNames_;
 				std::string identityName_;
-				std::string identityType_;
-				std::string resourceOwnerAccount_;
-				long ownerId_;
 				std::string appId_;
 
 			};

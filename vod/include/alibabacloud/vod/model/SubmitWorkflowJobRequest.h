@@ -35,26 +35,17 @@ namespace AlibabaCloud
 				SubmitWorkflowJobRequest();
 				~SubmitWorkflowJobRequest();
 
-				long getResourceOwnerId()const;
-				void setResourceOwnerId(long resourceOwnerId);
-				std::string getWorkflowId()const;
-				void setWorkflowId(const std::string& workflowId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getMediaId()const;
 				void setMediaId(const std::string& mediaId);
 				std::string getFileUrl()const;
 				void setFileUrl(const std::string& fileUrl);
+				std::string getWorkflowId()const;
+				void setWorkflowId(const std::string& workflowId);
 
             private:
-				long resourceOwnerId_;
-				std::string workflowId_;
-				std::string resourceOwnerAccount_;
-				long ownerId_;
 				std::string mediaId_;
 				std::string fileUrl_;
+				std::string workflowId_;
 
 			};
 		}

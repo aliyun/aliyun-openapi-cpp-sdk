@@ -38,17 +38,6 @@ void AddTranscodeTemplateGroupRequest::setTranscodeTemplateList(const std::strin
 	setParameter("TranscodeTemplateList", transcodeTemplateList);
 }
 
-long AddTranscodeTemplateGroupRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void AddTranscodeTemplateGroupRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
 std::string AddTranscodeTemplateGroupRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -58,28 +47,6 @@ void AddTranscodeTemplateGroupRequest::setAccessKeyId(const std::string& accessK
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
-}
-
-std::string AddTranscodeTemplateGroupRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void AddTranscodeTemplateGroupRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-long AddTranscodeTemplateGroupRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void AddTranscodeTemplateGroupRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string AddTranscodeTemplateGroupRequest::getTranscodeTemplateGroupId()const

@@ -27,17 +27,6 @@ UpdateVideoInfosRequest::UpdateVideoInfosRequest() :
 UpdateVideoInfosRequest::~UpdateVideoInfosRequest()
 {}
 
-long UpdateVideoInfosRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void UpdateVideoInfosRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
 std::string UpdateVideoInfosRequest::getUpdateContent()const
 {
 	return updateContent_;
@@ -47,27 +36,5 @@ void UpdateVideoInfosRequest::setUpdateContent(const std::string& updateContent)
 {
 	updateContent_ = updateContent;
 	setParameter("UpdateContent", updateContent);
-}
-
-std::string UpdateVideoInfosRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void UpdateVideoInfosRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-long UpdateVideoInfosRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void UpdateVideoInfosRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
 }
 

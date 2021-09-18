@@ -27,15 +27,15 @@ DeleteMessageCallbackRequest::DeleteMessageCallbackRequest() :
 DeleteMessageCallbackRequest::~DeleteMessageCallbackRequest()
 {}
 
-std::string DeleteMessageCallbackRequest::getResourceOwnerId()const
+std::string DeleteMessageCallbackRequest::getOwnerAccount()const
 {
-	return resourceOwnerId_;
+	return ownerAccount_;
 }
 
-void DeleteMessageCallbackRequest::setResourceOwnerId(const std::string& resourceOwnerId)
+void DeleteMessageCallbackRequest::setOwnerAccount(const std::string& ownerAccount)
 {
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", resourceOwnerId);
+	ownerAccount_ = ownerAccount;
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DeleteMessageCallbackRequest::getResourceRealOwnerId()const
@@ -58,39 +58,6 @@ void DeleteMessageCallbackRequest::setAccessKeyId(const std::string& accessKeyId
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
-}
-
-std::string DeleteMessageCallbackRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DeleteMessageCallbackRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string DeleteMessageCallbackRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void DeleteMessageCallbackRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
-}
-
-std::string DeleteMessageCallbackRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DeleteMessageCallbackRequest::setOwnerId(const std::string& ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", ownerId);
 }
 
 std::string DeleteMessageCallbackRequest::getAppId()const

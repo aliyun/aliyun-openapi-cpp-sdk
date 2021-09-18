@@ -110,6 +110,8 @@ void GetPlayInfoResult::parse(const std::string &payload)
 		videoBase_.creationTime = videoBaseNode["CreationTime"].asString();
 	if(!videoBaseNode["TranscodeMode"].isNull())
 		videoBase_.transcodeMode = videoBaseNode["TranscodeMode"].asString();
+	if(!videoBaseNode["DanMuURL"].isNull())
+		videoBase_.danMuURL = videoBaseNode["DanMuURL"].asString();
 	auto allThumbnailListNode = videoBaseNode["ThumbnailList"]["Thumbnail"];
 	for (auto videoBaseNodeThumbnailListThumbnail : allThumbnailListNode)
 	{

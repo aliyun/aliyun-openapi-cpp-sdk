@@ -27,17 +27,6 @@ RegisterMediaRequest::RegisterMediaRequest() :
 RegisterMediaRequest::~RegisterMediaRequest()
 {}
 
-long RegisterMediaRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void RegisterMediaRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
 std::string RegisterMediaRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -60,6 +49,17 @@ void RegisterMediaRequest::setUserData(const std::string& userData)
 	setParameter("UserData", userData);
 }
 
+std::string RegisterMediaRequest::getTemplateGroupId()const
+{
+	return templateGroupId_;
+}
+
+void RegisterMediaRequest::setTemplateGroupId(const std::string& templateGroupId)
+{
+	templateGroupId_ = templateGroupId;
+	setParameter("TemplateGroupId", templateGroupId);
+}
+
 std::string RegisterMediaRequest::getRegisterMetadatas()const
 {
 	return registerMetadatas_;
@@ -80,38 +80,5 @@ void RegisterMediaRequest::setWorkflowId(const std::string& workflowId)
 {
 	workflowId_ = workflowId;
 	setParameter("WorkflowId", workflowId);
-}
-
-std::string RegisterMediaRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void RegisterMediaRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-long RegisterMediaRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void RegisterMediaRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string RegisterMediaRequest::getTemplateGroupId()const
-{
-	return templateGroupId_;
-}
-
-void RegisterMediaRequest::setTemplateGroupId(const std::string& templateGroupId)
-{
-	templateGroupId_ = templateGroupId;
-	setParameter("TemplateGroupId", templateGroupId);
 }
 

@@ -27,17 +27,6 @@ MoveAppResourceRequest::MoveAppResourceRequest() :
 MoveAppResourceRequest::~MoveAppResourceRequest()
 {}
 
-long MoveAppResourceRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void MoveAppResourceRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
 long MoveAppResourceRequest::getResourceRealOwnerId()const
 {
 	return resourceRealOwnerId_;
@@ -47,6 +36,17 @@ void MoveAppResourceRequest::setResourceRealOwnerId(long resourceRealOwnerId)
 {
 	resourceRealOwnerId_ = resourceRealOwnerId;
 	setParameter("ResourceRealOwnerId", std::to_string(resourceRealOwnerId));
+}
+
+std::string MoveAppResourceRequest::getResourceType()const
+{
+	return resourceType_;
+}
+
+void MoveAppResourceRequest::setResourceType(const std::string& resourceType)
+{
+	resourceType_ = resourceType;
+	setParameter("ResourceType", resourceType);
 }
 
 std::string MoveAppResourceRequest::getAccessKeyId()const
@@ -69,39 +69,6 @@ void MoveAppResourceRequest::setTargetAppId(const std::string& targetAppId)
 {
 	targetAppId_ = targetAppId;
 	setParameter("TargetAppId", targetAppId);
-}
-
-std::string MoveAppResourceRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void MoveAppResourceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-long MoveAppResourceRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void MoveAppResourceRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string MoveAppResourceRequest::getResourceType()const
-{
-	return resourceType_;
-}
-
-void MoveAppResourceRequest::setResourceType(const std::string& resourceType)
-{
-	resourceType_ = resourceType;
-	setParameter("ResourceType", resourceType);
 }
 
 std::string MoveAppResourceRequest::getResourceIds()const

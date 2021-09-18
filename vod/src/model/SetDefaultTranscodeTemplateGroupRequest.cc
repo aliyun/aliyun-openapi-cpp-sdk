@@ -27,39 +27,6 @@ SetDefaultTranscodeTemplateGroupRequest::SetDefaultTranscodeTemplateGroupRequest
 SetDefaultTranscodeTemplateGroupRequest::~SetDefaultTranscodeTemplateGroupRequest()
 {}
 
-long SetDefaultTranscodeTemplateGroupRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void SetDefaultTranscodeTemplateGroupRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-std::string SetDefaultTranscodeTemplateGroupRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void SetDefaultTranscodeTemplateGroupRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-long SetDefaultTranscodeTemplateGroupRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void SetDefaultTranscodeTemplateGroupRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
-}
-
 std::string SetDefaultTranscodeTemplateGroupRequest::getAccessKeyId()const
 {
 	return accessKeyId_;

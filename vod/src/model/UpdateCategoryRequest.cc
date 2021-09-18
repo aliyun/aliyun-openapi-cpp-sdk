@@ -27,39 +27,6 @@ UpdateCategoryRequest::UpdateCategoryRequest() :
 UpdateCategoryRequest::~UpdateCategoryRequest()
 {}
 
-std::string UpdateCategoryRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void UpdateCategoryRequest::setResourceOwnerId(const std::string& resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", resourceOwnerId);
-}
-
-std::string UpdateCategoryRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void UpdateCategoryRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string UpdateCategoryRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void UpdateCategoryRequest::setOwnerId(const std::string& ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", ownerId);
-}
-
 long UpdateCategoryRequest::getCateId()const
 {
 	return cateId_;

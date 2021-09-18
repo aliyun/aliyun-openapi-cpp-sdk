@@ -35,25 +35,16 @@ namespace AlibabaCloud
 				UpdateAttachedMediaInfosRequest();
 				~UpdateAttachedMediaInfosRequest();
 
-				long getResourceOwnerId()const;
-				void setResourceOwnerId(long resourceOwnerId);
 				std::string getUpdateContent()const;
 				void setUpdateContent(const std::string& updateContent);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				long getResourceRealOwnerId()const;
 				void setResourceRealOwnerId(long resourceRealOwnerId);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
-				long resourceOwnerId_;
 				std::string updateContent_;
-				std::string resourceOwnerAccount_;
 				long resourceRealOwnerId_;
-				long ownerId_;
 				std::string accessKeyId_;
 
 			};

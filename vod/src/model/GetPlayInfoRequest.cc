@@ -27,17 +27,6 @@ GetPlayInfoRequest::GetPlayInfoRequest() :
 GetPlayInfoRequest::~GetPlayInfoRequest()
 {}
 
-long GetPlayInfoRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void GetPlayInfoRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
 std::string GetPlayInfoRequest::getFormats()const
 {
 	return formats_;
@@ -148,17 +137,6 @@ void GetPlayInfoRequest::setStreamType(const std::string& streamType)
 	setParameter("StreamType", streamType);
 }
 
-std::string GetPlayInfoRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void GetPlayInfoRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string GetPlayInfoRequest::getVideoId()const
 {
 	return videoId_;
@@ -170,17 +148,6 @@ void GetPlayInfoRequest::setVideoId(const std::string& videoId)
 	setParameter("VideoId", videoId);
 }
 
-long GetPlayInfoRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void GetPlayInfoRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
-}
-
 std::string GetPlayInfoRequest::getResultType()const
 {
 	return resultType_;
@@ -190,6 +157,17 @@ void GetPlayInfoRequest::setResultType(const std::string& resultType)
 {
 	resultType_ = resultType;
 	setParameter("ResultType", resultType);
+}
+
+std::string GetPlayInfoRequest::getAdditionType()const
+{
+	return additionType_;
+}
+
+void GetPlayInfoRequest::setAdditionType(const std::string& additionType)
+{
+	additionType_ = additionType;
+	setParameter("AdditionType", additionType);
 }
 
 std::string GetPlayInfoRequest::getAuthInfo()const

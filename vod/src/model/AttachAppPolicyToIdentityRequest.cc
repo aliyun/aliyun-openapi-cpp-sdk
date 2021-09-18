@@ -27,17 +27,6 @@ AttachAppPolicyToIdentityRequest::AttachAppPolicyToIdentityRequest() :
 AttachAppPolicyToIdentityRequest::~AttachAppPolicyToIdentityRequest()
 {}
 
-long AttachAppPolicyToIdentityRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void AttachAppPolicyToIdentityRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
 std::string AttachAppPolicyToIdentityRequest::getPolicyNames()const
 {
 	return policyNames_;
@@ -80,28 +69,6 @@ void AttachAppPolicyToIdentityRequest::setIdentityType(const std::string& identi
 {
 	identityType_ = identityType;
 	setParameter("IdentityType", identityType);
-}
-
-std::string AttachAppPolicyToIdentityRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void AttachAppPolicyToIdentityRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-long AttachAppPolicyToIdentityRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void AttachAppPolicyToIdentityRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string AttachAppPolicyToIdentityRequest::getAppId()const

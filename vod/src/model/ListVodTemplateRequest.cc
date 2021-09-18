@@ -27,39 +27,6 @@ ListVodTemplateRequest::ListVodTemplateRequest() :
 ListVodTemplateRequest::~ListVodTemplateRequest()
 {}
 
-long ListVodTemplateRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void ListVodTemplateRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-std::string ListVodTemplateRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void ListVodTemplateRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-long ListVodTemplateRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void ListVodTemplateRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
-}
-
 std::string ListVodTemplateRequest::getTemplateType()const
 {
 	return templateType_;

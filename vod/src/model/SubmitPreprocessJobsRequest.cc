@@ -27,28 +27,6 @@ SubmitPreprocessJobsRequest::SubmitPreprocessJobsRequest() :
 SubmitPreprocessJobsRequest::~SubmitPreprocessJobsRequest()
 {}
 
-long SubmitPreprocessJobsRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void SubmitPreprocessJobsRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-std::string SubmitPreprocessJobsRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void SubmitPreprocessJobsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string SubmitPreprocessJobsRequest::getVideoId()const
 {
 	return videoId_;
@@ -58,17 +36,6 @@ void SubmitPreprocessJobsRequest::setVideoId(const std::string& videoId)
 {
 	videoId_ = videoId;
 	setParameter("VideoId", videoId);
-}
-
-long SubmitPreprocessJobsRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void SubmitPreprocessJobsRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SubmitPreprocessJobsRequest::getAccessKeyId()const

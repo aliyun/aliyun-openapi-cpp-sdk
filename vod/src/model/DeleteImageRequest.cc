@@ -27,17 +27,6 @@ DeleteImageRequest::DeleteImageRequest() :
 DeleteImageRequest::~DeleteImageRequest()
 {}
 
-long DeleteImageRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void DeleteImageRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
 std::string DeleteImageRequest::getImageURLs()const
 {
 	return imageURLs_;
@@ -71,17 +60,6 @@ void DeleteImageRequest::setImageType(const std::string& imageType)
 	setParameter("ImageType", imageType);
 }
 
-std::string DeleteImageRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DeleteImageRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string DeleteImageRequest::getVideoId()const
 {
 	return videoId_;
@@ -91,17 +69,6 @@ void DeleteImageRequest::setVideoId(const std::string& videoId)
 {
 	videoId_ = videoId;
 	setParameter("VideoId", videoId);
-}
-
-long DeleteImageRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DeleteImageRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteImageRequest::getDeleteImageType()const

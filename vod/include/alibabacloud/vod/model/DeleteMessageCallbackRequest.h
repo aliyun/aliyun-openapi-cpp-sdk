@@ -35,28 +35,19 @@ namespace AlibabaCloud
 				DeleteMessageCallbackRequest();
 				~DeleteMessageCallbackRequest();
 
-				std::string getResourceOwnerId()const;
-				void setResourceOwnerId(const std::string& resourceOwnerId);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
 				long getResourceRealOwnerId()const;
 				void setResourceRealOwnerId(long resourceRealOwnerId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getOwnerId()const;
-				void setOwnerId(const std::string& ownerId);
 				std::string getAppId()const;
 				void setAppId(const std::string& appId);
 
             private:
-				std::string resourceOwnerId_;
+				std::string ownerAccount_;
 				long resourceRealOwnerId_;
 				std::string accessKeyId_;
-				std::string resourceOwnerAccount_;
-				std::string ownerAccount_;
-				std::string ownerId_;
 				std::string appId_;
 
 			};

@@ -27,39 +27,6 @@ DeleteWatermarkRequest::DeleteWatermarkRequest() :
 DeleteWatermarkRequest::~DeleteWatermarkRequest()
 {}
 
-long DeleteWatermarkRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void DeleteWatermarkRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-std::string DeleteWatermarkRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DeleteWatermarkRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-long DeleteWatermarkRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DeleteWatermarkRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
-}
-
 std::string DeleteWatermarkRequest::getAccessKeyId()const
 {
 	return accessKeyId_;

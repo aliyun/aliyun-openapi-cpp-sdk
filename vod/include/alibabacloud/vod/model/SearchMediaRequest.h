@@ -35,8 +35,6 @@ namespace AlibabaCloud
 				SearchMediaRequest();
 				~SearchMediaRequest();
 
-				long getResourceOwnerId()const;
-				void setResourceOwnerId(long resourceOwnerId);
 				std::string getSessionId()const;
 				void setSessionId(const std::string& sessionId);
 				std::string getScrollToken()const;
@@ -47,12 +45,8 @@ namespace AlibabaCloud
 				void setPageSize(int pageSize);
 				std::string getResultTypes()const;
 				void setResultTypes(const std::string& resultTypes);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getMatch()const;
 				void setMatch(const std::string& match);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				int getPageNo()const;
 				void setPageNo(int pageNo);
 				std::string getSortBy()const;
@@ -61,15 +55,12 @@ namespace AlibabaCloud
 				void setFields(const std::string& fields);
 
             private:
-				long resourceOwnerId_;
 				std::string sessionId_;
 				std::string scrollToken_;
 				std::string searchType_;
 				int pageSize_;
 				std::string resultTypes_;
-				std::string resourceOwnerAccount_;
 				std::string match_;
-				long ownerId_;
 				int pageNo_;
 				std::string sortBy_;
 				std::string fields_;

@@ -72,18 +72,18 @@ void GetMediaAuditResultResult::parse(const std::string &payload)
 			imageResultItemObject.type = mediaAuditResultNodeImageResultImageResultItem["Type"].asString();
 		if(!mediaAuditResultNodeImageResultImageResultItem["Url"].isNull())
 			imageResultItemObject.url = mediaAuditResultNodeImageResultImageResultItem["Url"].asString();
-		auto allResultNode = allImageResultNode["Result"]["ResultItem"];
-		for (auto allImageResultNodeResultResultItem : allResultNode)
+		auto allResultNode = mediaAuditResultNodeImageResultImageResultItem["Result"]["ResultItem"];
+		for (auto mediaAuditResultNodeImageResultImageResultItemResultResultItem : allResultNode)
 		{
 			MediaAuditResult::ImageResultItem::ResultItem resultObject;
-			if(!allImageResultNodeResultResultItem["Label"].isNull())
-				resultObject.label = allImageResultNodeResultResultItem["Label"].asString();
-			if(!allImageResultNodeResultResultItem["Scene"].isNull())
-				resultObject.scene = allImageResultNodeResultResultItem["Scene"].asString();
-			if(!allImageResultNodeResultResultItem["Score"].isNull())
-				resultObject.score = allImageResultNodeResultResultItem["Score"].asString();
-			if(!allImageResultNodeResultResultItem["Suggestion"].isNull())
-				resultObject.suggestion = allImageResultNodeResultResultItem["Suggestion"].asString();
+			if(!mediaAuditResultNodeImageResultImageResultItemResultResultItem["Label"].isNull())
+				resultObject.label = mediaAuditResultNodeImageResultImageResultItemResultResultItem["Label"].asString();
+			if(!mediaAuditResultNodeImageResultImageResultItemResultResultItem["Scene"].isNull())
+				resultObject.scene = mediaAuditResultNodeImageResultImageResultItemResultResultItem["Scene"].asString();
+			if(!mediaAuditResultNodeImageResultImageResultItemResultResultItem["Score"].isNull())
+				resultObject.score = mediaAuditResultNodeImageResultImageResultItemResultResultItem["Score"].asString();
+			if(!mediaAuditResultNodeImageResultImageResultItemResultResultItem["Suggestion"].isNull())
+				resultObject.suggestion = mediaAuditResultNodeImageResultImageResultItemResultResultItem["Suggestion"].asString();
 			imageResultItemObject.result.push_back(resultObject);
 		}
 		mediaAuditResult_.imageResult.push_back(imageResultItemObject);

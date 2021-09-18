@@ -35,33 +35,24 @@ namespace AlibabaCloud
 				ListSnapshotsRequest();
 				~ListSnapshotsRequest();
 
-				long getResourceOwnerId()const;
-				void setResourceOwnerId(long resourceOwnerId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getPageSize()const;
 				void setPageSize(const std::string& pageSize);
 				std::string getAuthTimeout()const;
 				void setAuthTimeout(const std::string& authTimeout);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getVideoId()const;
 				void setVideoId(const std::string& videoId);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getSnapshotType()const;
 				void setSnapshotType(const std::string& snapshotType);
 				std::string getPageNo()const;
 				void setPageNo(const std::string& pageNo);
 
             private:
-				long resourceOwnerId_;
 				std::string accessKeyId_;
 				std::string pageSize_;
 				std::string authTimeout_;
-				std::string resourceOwnerAccount_;
 				std::string videoId_;
-				long ownerId_;
 				std::string snapshotType_;
 				std::string pageNo_;
 

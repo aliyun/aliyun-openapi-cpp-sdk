@@ -27,17 +27,6 @@ SearchMediaRequest::SearchMediaRequest() :
 SearchMediaRequest::~SearchMediaRequest()
 {}
 
-long SearchMediaRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void SearchMediaRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
 std::string SearchMediaRequest::getSessionId()const
 {
 	return sessionId_;
@@ -93,17 +82,6 @@ void SearchMediaRequest::setResultTypes(const std::string& resultTypes)
 	setParameter("ResultTypes", resultTypes);
 }
 
-std::string SearchMediaRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void SearchMediaRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string SearchMediaRequest::getMatch()const
 {
 	return match_;
@@ -113,17 +91,6 @@ void SearchMediaRequest::setMatch(const std::string& match)
 {
 	match_ = match;
 	setParameter("Match", match);
-}
-
-long SearchMediaRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void SearchMediaRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 int SearchMediaRequest::getPageNo()const

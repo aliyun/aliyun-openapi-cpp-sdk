@@ -48,8 +48,8 @@ void GetMediaDNAResultResult::parse(const std::string &payload)
 			videoDNAItemObject.primaryKey = dNAResultNodeVideoDNAVideoDNAItem["PrimaryKey"].asString();
 		if(!dNAResultNodeVideoDNAVideoDNAItem["Similarity"].isNull())
 			videoDNAItemObject.similarity = dNAResultNodeVideoDNAVideoDNAItem["Similarity"].asString();
-		auto allDetailNode = allVideoDNANode["Detail"]["DetailItem"];
-		for (auto allVideoDNANodeDetailDetailItem : allDetailNode)
+		auto allDetailNode = dNAResultNodeVideoDNAVideoDNAItem["Detail"]["DetailItem"];
+		for (auto dNAResultNodeVideoDNAVideoDNAItemDetailDetailItem : allDetailNode)
 		{
 			DNAResult::VideoDNAItem::DetailItem detailObject;
 			auto inputNode = value["Input"];

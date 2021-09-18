@@ -27,17 +27,6 @@ UpdateAppInfoRequest::UpdateAppInfoRequest() :
 UpdateAppInfoRequest::~UpdateAppInfoRequest()
 {}
 
-long UpdateAppInfoRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void UpdateAppInfoRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
 std::string UpdateAppInfoRequest::getDescription()const
 {
 	return description_;
@@ -80,28 +69,6 @@ void UpdateAppInfoRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
 	setParameter("AppName", appName);
-}
-
-std::string UpdateAppInfoRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void UpdateAppInfoRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-long UpdateAppInfoRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void UpdateAppInfoRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string UpdateAppInfoRequest::getAppId()const

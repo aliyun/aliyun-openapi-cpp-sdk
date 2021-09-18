@@ -27,17 +27,6 @@ CreateUploadImageRequest::CreateUploadImageRequest() :
 CreateUploadImageRequest::~CreateUploadImageRequest()
 {}
 
-long CreateUploadImageRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void CreateUploadImageRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
 std::string CreateUploadImageRequest::getDescription()const
 {
 	return description_;
@@ -115,17 +104,6 @@ void CreateUploadImageRequest::setImageType(const std::string& imageType)
 	setParameter("ImageType", imageType);
 }
 
-std::string CreateUploadImageRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void CreateUploadImageRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string CreateUploadImageRequest::getImageExt()const
 {
 	return imageExt_;
@@ -135,17 +113,6 @@ void CreateUploadImageRequest::setImageExt(const std::string& imageExt)
 {
 	imageExt_ = imageExt;
 	setParameter("ImageExt", imageExt);
-}
-
-long CreateUploadImageRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void CreateUploadImageRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateUploadImageRequest::getTags()const

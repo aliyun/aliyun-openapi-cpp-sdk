@@ -35,31 +35,22 @@ namespace AlibabaCloud
 				DeleteMultipartUploadRequest();
 				~DeleteMultipartUploadRequest();
 
-				std::string getResourceOwnerId()const;
-				void setResourceOwnerId(const std::string& resourceOwnerId);
-				long getResourceRealOwnerId()const;
-				void setResourceRealOwnerId(long resourceRealOwnerId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getOwnerId()const;
-				void setOwnerId(const std::string& ownerId);
+				long getResourceRealOwnerId()const;
+				void setResourceRealOwnerId(long resourceRealOwnerId);
 				std::string getMediaId()const;
 				void setMediaId(const std::string& mediaId);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getMediaType()const;
 				void setMediaType(const std::string& mediaType);
 
             private:
-				std::string resourceOwnerId_;
-				long resourceRealOwnerId_;
-				std::string accessKeyId_;
-				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
-				std::string ownerId_;
+				long resourceRealOwnerId_;
 				std::string mediaId_;
+				std::string accessKeyId_;
 				std::string mediaType_;
 
 			};

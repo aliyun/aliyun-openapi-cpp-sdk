@@ -27,17 +27,6 @@ ListLiveRecordVideoRequest::ListLiveRecordVideoRequest() :
 ListLiveRecordVideoRequest::~ListLiveRecordVideoRequest()
 {}
 
-long ListLiveRecordVideoRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void ListLiveRecordVideoRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
 std::string ListLiveRecordVideoRequest::getStartTime()const
 {
 	return startTime_;
@@ -93,17 +82,6 @@ void ListLiveRecordVideoRequest::setQueryType(const std::string& queryType)
 	setParameter("QueryType", queryType);
 }
 
-std::string ListLiveRecordVideoRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void ListLiveRecordVideoRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string ListLiveRecordVideoRequest::getDomainName()const
 {
 	return domainName_;
@@ -124,17 +102,6 @@ void ListLiveRecordVideoRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
 	setParameter("EndTime", endTime);
-}
-
-long ListLiveRecordVideoRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void ListLiveRecordVideoRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 int ListLiveRecordVideoRequest::getPageNo()const

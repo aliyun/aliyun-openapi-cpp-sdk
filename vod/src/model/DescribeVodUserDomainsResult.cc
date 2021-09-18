@@ -47,8 +47,6 @@ void DescribeVodUserDomainsResult::parse(const std::string &payload)
 			domainsObject.domainName = valueDomainsPageData["DomainName"].asString();
 		if(!valueDomainsPageData["Cname"].isNull())
 			domainsObject.cname = valueDomainsPageData["Cname"].asString();
-		if(!valueDomainsPageData["CdnType"].isNull())
-			domainsObject.cdnType = valueDomainsPageData["CdnType"].asString();
 		if(!valueDomainsPageData["DomainStatus"].isNull())
 			domainsObject.domainStatus = valueDomainsPageData["DomainStatus"].asString();
 		if(!valueDomainsPageData["GmtCreated"].isNull())
@@ -59,22 +57,20 @@ void DescribeVodUserDomainsResult::parse(const std::string &payload)
 			domainsObject.description = valueDomainsPageData["Description"].asString();
 		if(!valueDomainsPageData["SslProtocol"].isNull())
 			domainsObject.sslProtocol = valueDomainsPageData["SslProtocol"].asString();
-		if(!valueDomainsPageData["Weight"].isNull())
-			domainsObject.weight = valueDomainsPageData["Weight"].asString();
 		if(!valueDomainsPageData["Sandbox"].isNull())
 			domainsObject.sandbox = valueDomainsPageData["Sandbox"].asString();
-		auto allSourcesNode = allDomainsNode["Sources"]["Source"];
-		for (auto allDomainsNodeSourcesSource : allSourcesNode)
+		auto allSourcesNode = valueDomainsPageData["Sources"]["Source"];
+		for (auto valueDomainsPageDataSourcesSource : allSourcesNode)
 		{
 			PageData::Source sourcesObject;
-			if(!allDomainsNodeSourcesSource["Type"].isNull())
-				sourcesObject.type = allDomainsNodeSourcesSource["Type"].asString();
-			if(!allDomainsNodeSourcesSource["Content"].isNull())
-				sourcesObject.content = allDomainsNodeSourcesSource["Content"].asString();
-			if(!allDomainsNodeSourcesSource["Port"].isNull())
-				sourcesObject.port = std::stoi(allDomainsNodeSourcesSource["Port"].asString());
-			if(!allDomainsNodeSourcesSource["Priority"].isNull())
-				sourcesObject.priority = allDomainsNodeSourcesSource["Priority"].asString();
+			if(!valueDomainsPageDataSourcesSource["Type"].isNull())
+				sourcesObject.type = valueDomainsPageDataSourcesSource["Type"].asString();
+			if(!valueDomainsPageDataSourcesSource["Content"].isNull())
+				sourcesObject.content = valueDomainsPageDataSourcesSource["Content"].asString();
+			if(!valueDomainsPageDataSourcesSource["Port"].isNull())
+				sourcesObject.port = std::stoi(valueDomainsPageDataSourcesSource["Port"].asString());
+			if(!valueDomainsPageDataSourcesSource["Priority"].isNull())
+				sourcesObject.priority = valueDomainsPageDataSourcesSource["Priority"].asString();
 			domainsObject.sources.push_back(sourcesObject);
 		}
 		domains_.push_back(domainsObject);

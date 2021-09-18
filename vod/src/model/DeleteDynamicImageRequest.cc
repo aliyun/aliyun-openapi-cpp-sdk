@@ -27,28 +27,6 @@ DeleteDynamicImageRequest::DeleteDynamicImageRequest() :
 DeleteDynamicImageRequest::~DeleteDynamicImageRequest()
 {}
 
-long DeleteDynamicImageRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void DeleteDynamicImageRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-std::string DeleteDynamicImageRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DeleteDynamicImageRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string DeleteDynamicImageRequest::getVideoId()const
 {
 	return videoId_;
@@ -58,17 +36,6 @@ void DeleteDynamicImageRequest::setVideoId(const std::string& videoId)
 {
 	videoId_ = videoId;
 	setParameter("VideoId", videoId);
-}
-
-long DeleteDynamicImageRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DeleteDynamicImageRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteDynamicImageRequest::getAccessKeyId()const

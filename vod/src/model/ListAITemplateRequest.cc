@@ -27,39 +27,6 @@ ListAITemplateRequest::ListAITemplateRequest() :
 ListAITemplateRequest::~ListAITemplateRequest()
 {}
 
-long ListAITemplateRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void ListAITemplateRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-std::string ListAITemplateRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void ListAITemplateRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-long ListAITemplateRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void ListAITemplateRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
-}
-
 std::string ListAITemplateRequest::getTemplateType()const
 {
 	return templateType_;

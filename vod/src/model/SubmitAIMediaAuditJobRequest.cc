@@ -27,17 +27,6 @@ SubmitAIMediaAuditJobRequest::SubmitAIMediaAuditJobRequest() :
 SubmitAIMediaAuditJobRequest::~SubmitAIMediaAuditJobRequest()
 {}
 
-long SubmitAIMediaAuditJobRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void SubmitAIMediaAuditJobRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
 std::string SubmitAIMediaAuditJobRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -58,28 +47,6 @@ void SubmitAIMediaAuditJobRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
 	setParameter("UserData", userData);
-}
-
-std::string SubmitAIMediaAuditJobRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void SubmitAIMediaAuditJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string SubmitAIMediaAuditJobRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void SubmitAIMediaAuditJobRequest::setOwnerId(const std::string& ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", ownerId);
 }
 
 std::string SubmitAIMediaAuditJobRequest::getMediaId()const

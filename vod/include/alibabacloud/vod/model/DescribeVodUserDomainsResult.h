@@ -45,12 +45,10 @@ namespace AlibabaCloud
 					std::string sslProtocol;
 					std::string domainName;
 					std::string gmtModified;
-					std::string cdnType;
 					std::string gmtCreated;
 					std::vector<PageData::Source> sources;
 					std::string cname;
 					std::string domainStatus;
-					std::string weight;
 					std::string sandbox;
 				};
 

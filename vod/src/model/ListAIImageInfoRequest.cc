@@ -27,28 +27,6 @@ ListAIImageInfoRequest::ListAIImageInfoRequest() :
 ListAIImageInfoRequest::~ListAIImageInfoRequest()
 {}
 
-long ListAIImageInfoRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void ListAIImageInfoRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-std::string ListAIImageInfoRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void ListAIImageInfoRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string ListAIImageInfoRequest::getVideoId()const
 {
 	return videoId_;
@@ -58,17 +36,6 @@ void ListAIImageInfoRequest::setVideoId(const std::string& videoId)
 {
 	videoId_ = videoId;
 	setParameter("VideoId", videoId);
-}
-
-long ListAIImageInfoRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void ListAIImageInfoRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ListAIImageInfoRequest::getAccessKeyId()const

@@ -27,17 +27,6 @@ GetImageInfoRequest::GetImageInfoRequest() :
 GetImageInfoRequest::~GetImageInfoRequest()
 {}
 
-long GetImageInfoRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void GetImageInfoRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
 std::string GetImageInfoRequest::getImageId()const
 {
 	return imageId_;
@@ -80,27 +69,5 @@ void GetImageInfoRequest::setAuthTimeout(long authTimeout)
 {
 	authTimeout_ = authTimeout;
 	setParameter("AuthTimeout", std::to_string(authTimeout));
-}
-
-std::string GetImageInfoRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void GetImageInfoRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-long GetImageInfoRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void GetImageInfoRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
 }
 

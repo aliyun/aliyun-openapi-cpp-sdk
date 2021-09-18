@@ -35,8 +35,6 @@ namespace AlibabaCloud
 				UploadMediaByURLRequest();
 				~UploadMediaByURLRequest();
 
-				long getResourceOwnerId()const;
-				void setResourceOwnerId(long resourceOwnerId);
 				std::string getMessageCallback()const;
 				void setMessageCallback(const std::string& messageCallback);
 				std::string getStorageLocation()const;
@@ -45,10 +43,8 @@ namespace AlibabaCloud
 				void setUserData(const std::string& userData);
 				std::string getWorkflowId()const;
 				void setWorkflowId(const std::string& workflowId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
+				std::string getS3UploadInfo()const;
+				void setS3UploadInfo(const std::string& s3UploadInfo);
 				std::string getPriority()const;
 				void setPriority(const std::string& priority);
 				std::string getTemplateGroupId()const;
@@ -61,13 +57,11 @@ namespace AlibabaCloud
 				void setAppId(const std::string& appId);
 
             private:
-				long resourceOwnerId_;
 				std::string messageCallback_;
 				std::string storageLocation_;
 				std::string userData_;
 				std::string workflowId_;
-				std::string resourceOwnerAccount_;
-				long ownerId_;
+				std::string s3UploadInfo_;
 				std::string priority_;
 				std::string templateGroupId_;
 				std::string uploadMetadatas_;

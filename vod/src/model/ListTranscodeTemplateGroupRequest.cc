@@ -27,17 +27,6 @@ ListTranscodeTemplateGroupRequest::ListTranscodeTemplateGroupRequest() :
 ListTranscodeTemplateGroupRequest::~ListTranscodeTemplateGroupRequest()
 {}
 
-long ListTranscodeTemplateGroupRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void ListTranscodeTemplateGroupRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
 std::string ListTranscodeTemplateGroupRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -47,39 +36,6 @@ void ListTranscodeTemplateGroupRequest::setAccessKeyId(const std::string& access
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
-}
-
-int ListTranscodeTemplateGroupRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void ListTranscodeTemplateGroupRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
-}
-
-std::string ListTranscodeTemplateGroupRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void ListTranscodeTemplateGroupRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-long ListTranscodeTemplateGroupRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void ListTranscodeTemplateGroupRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 int ListTranscodeTemplateGroupRequest::getPageNo()const
@@ -102,5 +58,16 @@ void ListTranscodeTemplateGroupRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
 	setParameter("AppId", appId);
+}
+
+int ListTranscodeTemplateGroupRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void ListTranscodeTemplateGroupRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setParameter("PageSize", std::to_string(pageSize));
 }
 

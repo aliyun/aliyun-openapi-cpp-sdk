@@ -47,6 +47,10 @@ namespace AlibabaCloud
 				void setCoverURL(const std::string& coverURL);
 				std::string getDivision()const;
 				void setDivision(const std::string& division);
+				float getDuration()const;
+				void setDuration(float duration);
+				std::string getFEExtend()const;
+				void setFEExtend(const std::string& fEExtend);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
@@ -63,6 +67,8 @@ namespace AlibabaCloud
 				std::string accessKeyId_;
 				std::string coverURL_;
 				std::string division_;
+				float duration_;
+				std::string fEExtend_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				std::string ownerId_;

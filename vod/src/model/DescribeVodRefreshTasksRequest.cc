@@ -60,17 +60,6 @@ void DescribeVodRefreshTasksRequest::setPageNumber(int pageNumber)
 	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
-std::string DescribeVodRefreshTasksRequest::getResourceGroupId()const
-{
-	return resourceGroupId_;
-}
-
-void DescribeVodRefreshTasksRequest::setResourceGroupId(const std::string& resourceGroupId)
-{
-	resourceGroupId_ = resourceGroupId;
-	setParameter("ResourceGroupId", resourceGroupId);
-}
-
 std::string DescribeVodRefreshTasksRequest::getSecurityToken()const
 {
 	return securityToken_;

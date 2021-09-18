@@ -55,42 +55,42 @@ void GetTranscodeSummaryResult::parse(const std::string &payload)
 			transcodeSummaryListObject.trigger = valueTranscodeSummaryListTranscodeSummary["Trigger"].asString();
 		if(!valueTranscodeSummaryListTranscodeSummary["TranscodeTemplateGroupId"].isNull())
 			transcodeSummaryListObject.transcodeTemplateGroupId = valueTranscodeSummaryListTranscodeSummary["TranscodeTemplateGroupId"].asString();
-		auto allTranscodeJobInfoSummaryListNode = allTranscodeSummaryListNode["TranscodeJobInfoSummaryList"]["TranscodeJobInfoSummary"];
-		for (auto allTranscodeSummaryListNodeTranscodeJobInfoSummaryListTranscodeJobInfoSummary : allTranscodeJobInfoSummaryListNode)
+		auto allTranscodeJobInfoSummaryListNode = valueTranscodeSummaryListTranscodeSummary["TranscodeJobInfoSummaryList"]["TranscodeJobInfoSummary"];
+		for (auto valueTranscodeSummaryListTranscodeSummaryTranscodeJobInfoSummaryListTranscodeJobInfoSummary : allTranscodeJobInfoSummaryListNode)
 		{
 			TranscodeSummary::TranscodeJobInfoSummary transcodeJobInfoSummaryListObject;
-			if(!allTranscodeSummaryListNodeTranscodeJobInfoSummaryListTranscodeJobInfoSummary["TranscodeTemplateId"].isNull())
-				transcodeJobInfoSummaryListObject.transcodeTemplateId = allTranscodeSummaryListNodeTranscodeJobInfoSummaryListTranscodeJobInfoSummary["TranscodeTemplateId"].asString();
-			if(!allTranscodeSummaryListNodeTranscodeJobInfoSummaryListTranscodeJobInfoSummary["TranscodeJobStatus"].isNull())
-				transcodeJobInfoSummaryListObject.transcodeJobStatus = allTranscodeSummaryListNodeTranscodeJobInfoSummaryListTranscodeJobInfoSummary["TranscodeJobStatus"].asString();
-			if(!allTranscodeSummaryListNodeTranscodeJobInfoSummaryListTranscodeJobInfoSummary["CreationTime"].isNull())
-				transcodeJobInfoSummaryListObject.creationTime = allTranscodeSummaryListNodeTranscodeJobInfoSummaryListTranscodeJobInfoSummary["CreationTime"].asString();
-			if(!allTranscodeSummaryListNodeTranscodeJobInfoSummaryListTranscodeJobInfoSummary["CompleteTime"].isNull())
-				transcodeJobInfoSummaryListObject.completeTime = allTranscodeSummaryListNodeTranscodeJobInfoSummaryListTranscodeJobInfoSummary["CompleteTime"].asString();
-			if(!allTranscodeSummaryListNodeTranscodeJobInfoSummaryListTranscodeJobInfoSummary["TranscodeProgress"].isNull())
-				transcodeJobInfoSummaryListObject.transcodeProgress = std::stol(allTranscodeSummaryListNodeTranscodeJobInfoSummaryListTranscodeJobInfoSummary["TranscodeProgress"].asString());
-			if(!allTranscodeSummaryListNodeTranscodeJobInfoSummaryListTranscodeJobInfoSummary["ErrorCode"].isNull())
-				transcodeJobInfoSummaryListObject.errorCode = allTranscodeSummaryListNodeTranscodeJobInfoSummaryListTranscodeJobInfoSummary["ErrorCode"].asString();
-			if(!allTranscodeSummaryListNodeTranscodeJobInfoSummaryListTranscodeJobInfoSummary["ErrorMessage"].isNull())
-				transcodeJobInfoSummaryListObject.errorMessage = allTranscodeSummaryListNodeTranscodeJobInfoSummaryListTranscodeJobInfoSummary["ErrorMessage"].asString();
-			if(!allTranscodeSummaryListNodeTranscodeJobInfoSummaryListTranscodeJobInfoSummary["Definition"].isNull())
-				transcodeJobInfoSummaryListObject.definition = allTranscodeSummaryListNodeTranscodeJobInfoSummaryListTranscodeJobInfoSummary["Definition"].asString();
-			if(!allTranscodeSummaryListNodeTranscodeJobInfoSummaryListTranscodeJobInfoSummary["Encryption"].isNull())
-				transcodeJobInfoSummaryListObject.encryption = allTranscodeSummaryListNodeTranscodeJobInfoSummaryListTranscodeJobInfoSummary["Encryption"].asString();
-			if(!allTranscodeSummaryListNodeTranscodeJobInfoSummaryListTranscodeJobInfoSummary["Width"].isNull())
-				transcodeJobInfoSummaryListObject.width = allTranscodeSummaryListNodeTranscodeJobInfoSummaryListTranscodeJobInfoSummary["Width"].asString();
-			if(!allTranscodeSummaryListNodeTranscodeJobInfoSummaryListTranscodeJobInfoSummary["Height"].isNull())
-				transcodeJobInfoSummaryListObject.height = allTranscodeSummaryListNodeTranscodeJobInfoSummaryListTranscodeJobInfoSummary["Height"].asString();
-			if(!allTranscodeSummaryListNodeTranscodeJobInfoSummaryListTranscodeJobInfoSummary["Bitrate"].isNull())
-				transcodeJobInfoSummaryListObject.bitrate = allTranscodeSummaryListNodeTranscodeJobInfoSummaryListTranscodeJobInfoSummary["Bitrate"].asString();
-			if(!allTranscodeSummaryListNodeTranscodeJobInfoSummaryListTranscodeJobInfoSummary["Fps"].isNull())
-				transcodeJobInfoSummaryListObject.fps = allTranscodeSummaryListNodeTranscodeJobInfoSummaryListTranscodeJobInfoSummary["Fps"].asString();
-			if(!allTranscodeSummaryListNodeTranscodeJobInfoSummaryListTranscodeJobInfoSummary["Format"].isNull())
-				transcodeJobInfoSummaryListObject.format = allTranscodeSummaryListNodeTranscodeJobInfoSummaryListTranscodeJobInfoSummary["Format"].asString();
-			if(!allTranscodeSummaryListNodeTranscodeJobInfoSummaryListTranscodeJobInfoSummary["Duration"].isNull())
-				transcodeJobInfoSummaryListObject.duration = allTranscodeSummaryListNodeTranscodeJobInfoSummaryListTranscodeJobInfoSummary["Duration"].asString();
-			if(!allTranscodeSummaryListNodeTranscodeJobInfoSummaryListTranscodeJobInfoSummary["Filesize"].isNull())
-				transcodeJobInfoSummaryListObject.filesize = std::stol(allTranscodeSummaryListNodeTranscodeJobInfoSummaryListTranscodeJobInfoSummary["Filesize"].asString());
+			if(!valueTranscodeSummaryListTranscodeSummaryTranscodeJobInfoSummaryListTranscodeJobInfoSummary["TranscodeTemplateId"].isNull())
+				transcodeJobInfoSummaryListObject.transcodeTemplateId = valueTranscodeSummaryListTranscodeSummaryTranscodeJobInfoSummaryListTranscodeJobInfoSummary["TranscodeTemplateId"].asString();
+			if(!valueTranscodeSummaryListTranscodeSummaryTranscodeJobInfoSummaryListTranscodeJobInfoSummary["TranscodeJobStatus"].isNull())
+				transcodeJobInfoSummaryListObject.transcodeJobStatus = valueTranscodeSummaryListTranscodeSummaryTranscodeJobInfoSummaryListTranscodeJobInfoSummary["TranscodeJobStatus"].asString();
+			if(!valueTranscodeSummaryListTranscodeSummaryTranscodeJobInfoSummaryListTranscodeJobInfoSummary["CreationTime"].isNull())
+				transcodeJobInfoSummaryListObject.creationTime = valueTranscodeSummaryListTranscodeSummaryTranscodeJobInfoSummaryListTranscodeJobInfoSummary["CreationTime"].asString();
+			if(!valueTranscodeSummaryListTranscodeSummaryTranscodeJobInfoSummaryListTranscodeJobInfoSummary["CompleteTime"].isNull())
+				transcodeJobInfoSummaryListObject.completeTime = valueTranscodeSummaryListTranscodeSummaryTranscodeJobInfoSummaryListTranscodeJobInfoSummary["CompleteTime"].asString();
+			if(!valueTranscodeSummaryListTranscodeSummaryTranscodeJobInfoSummaryListTranscodeJobInfoSummary["TranscodeProgress"].isNull())
+				transcodeJobInfoSummaryListObject.transcodeProgress = std::stol(valueTranscodeSummaryListTranscodeSummaryTranscodeJobInfoSummaryListTranscodeJobInfoSummary["TranscodeProgress"].asString());
+			if(!valueTranscodeSummaryListTranscodeSummaryTranscodeJobInfoSummaryListTranscodeJobInfoSummary["ErrorCode"].isNull())
+				transcodeJobInfoSummaryListObject.errorCode = valueTranscodeSummaryListTranscodeSummaryTranscodeJobInfoSummaryListTranscodeJobInfoSummary["ErrorCode"].asString();
+			if(!valueTranscodeSummaryListTranscodeSummaryTranscodeJobInfoSummaryListTranscodeJobInfoSummary["ErrorMessage"].isNull())
+				transcodeJobInfoSummaryListObject.errorMessage = valueTranscodeSummaryListTranscodeSummaryTranscodeJobInfoSummaryListTranscodeJobInfoSummary["ErrorMessage"].asString();
+			if(!valueTranscodeSummaryListTranscodeSummaryTranscodeJobInfoSummaryListTranscodeJobInfoSummary["Definition"].isNull())
+				transcodeJobInfoSummaryListObject.definition = valueTranscodeSummaryListTranscodeSummaryTranscodeJobInfoSummaryListTranscodeJobInfoSummary["Definition"].asString();
+			if(!valueTranscodeSummaryListTranscodeSummaryTranscodeJobInfoSummaryListTranscodeJobInfoSummary["Encryption"].isNull())
+				transcodeJobInfoSummaryListObject.encryption = valueTranscodeSummaryListTranscodeSummaryTranscodeJobInfoSummaryListTranscodeJobInfoSummary["Encryption"].asString();
+			if(!valueTranscodeSummaryListTranscodeSummaryTranscodeJobInfoSummaryListTranscodeJobInfoSummary["Width"].isNull())
+				transcodeJobInfoSummaryListObject.width = valueTranscodeSummaryListTranscodeSummaryTranscodeJobInfoSummaryListTranscodeJobInfoSummary["Width"].asString();
+			if(!valueTranscodeSummaryListTranscodeSummaryTranscodeJobInfoSummaryListTranscodeJobInfoSummary["Height"].isNull())
+				transcodeJobInfoSummaryListObject.height = valueTranscodeSummaryListTranscodeSummaryTranscodeJobInfoSummaryListTranscodeJobInfoSummary["Height"].asString();
+			if(!valueTranscodeSummaryListTranscodeSummaryTranscodeJobInfoSummaryListTranscodeJobInfoSummary["Bitrate"].isNull())
+				transcodeJobInfoSummaryListObject.bitrate = valueTranscodeSummaryListTranscodeSummaryTranscodeJobInfoSummaryListTranscodeJobInfoSummary["Bitrate"].asString();
+			if(!valueTranscodeSummaryListTranscodeSummaryTranscodeJobInfoSummaryListTranscodeJobInfoSummary["Fps"].isNull())
+				transcodeJobInfoSummaryListObject.fps = valueTranscodeSummaryListTranscodeSummaryTranscodeJobInfoSummaryListTranscodeJobInfoSummary["Fps"].asString();
+			if(!valueTranscodeSummaryListTranscodeSummaryTranscodeJobInfoSummaryListTranscodeJobInfoSummary["Format"].isNull())
+				transcodeJobInfoSummaryListObject.format = valueTranscodeSummaryListTranscodeSummaryTranscodeJobInfoSummaryListTranscodeJobInfoSummary["Format"].asString();
+			if(!valueTranscodeSummaryListTranscodeSummaryTranscodeJobInfoSummaryListTranscodeJobInfoSummary["Duration"].isNull())
+				transcodeJobInfoSummaryListObject.duration = valueTranscodeSummaryListTranscodeSummaryTranscodeJobInfoSummaryListTranscodeJobInfoSummary["Duration"].asString();
+			if(!valueTranscodeSummaryListTranscodeSummaryTranscodeJobInfoSummaryListTranscodeJobInfoSummary["Filesize"].isNull())
+				transcodeJobInfoSummaryListObject.filesize = std::stol(valueTranscodeSummaryListTranscodeSummaryTranscodeJobInfoSummaryListTranscodeJobInfoSummary["Filesize"].asString());
 			auto allWatermarkIdList = value["WatermarkIdList"]["WatermarkId"];
 			for (auto value : allWatermarkIdList)
 				transcodeJobInfoSummaryListObject.watermarkIdList.push_back(value.asString());

@@ -35,8 +35,6 @@ namespace AlibabaCloud
 				SubmitSnapshotJobRequest();
 				~SubmitSnapshotJobRequest();
 
-				long getResourceOwnerId()const;
-				void setResourceOwnerId(long resourceOwnerId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getUserData()const;
@@ -49,14 +47,10 @@ namespace AlibabaCloud
 				void setSnapshotTemplateId(const std::string& snapshotTemplateId);
 				std::string getHeight()const;
 				void setHeight(const std::string& height);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				long getCount()const;
 				void setCount(long count);
 				std::string getVideoId()const;
 				void setVideoId(const std::string& videoId);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getWidth()const;
 				void setWidth(const std::string& width);
 				std::string getFileUrl()const;
@@ -65,17 +59,14 @@ namespace AlibabaCloud
 				void setInterval(long interval);
 
             private:
-				long resourceOwnerId_;
 				std::string accessKeyId_;
 				std::string userData_;
 				long specifiedOffsetTime_;
 				std::string spriteSnapshotConfig_;
 				std::string snapshotTemplateId_;
 				std::string height_;
-				std::string resourceOwnerAccount_;
 				long count_;
 				std::string videoId_;
-				long ownerId_;
 				std::string width_;
 				std::string fileUrl_;
 				long interval_;

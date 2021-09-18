@@ -37,8 +37,6 @@ namespace AlibabaCloud
 
 				std::string getAuthKey()const;
 				void setAuthKey(const std::string& authKey);
-				std::string getResourceOwnerId()const;
-				void setResourceOwnerId(const std::string& resourceOwnerId);
 				long getResourceRealOwnerId()const;
 				void setResourceRealOwnerId(long resourceRealOwnerId);
 				std::string getAccessKeyId()const;
@@ -47,16 +45,12 @@ namespace AlibabaCloud
 				void setCallbackType(const std::string& callbackType);
 				std::string getCallbackSwitch()const;
 				void setCallbackSwitch(const std::string& callbackSwitch);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getEventTypeList()const;
 				void setEventTypeList(const std::string& eventTypeList);
 				std::string getMnsQueueName()const;
 				void setMnsQueueName(const std::string& mnsQueueName);
-				std::string getOwnerId()const;
-				void setOwnerId(const std::string& ownerId);
 				std::string getMnsEndpoint()const;
 				void setMnsEndpoint(const std::string& mnsEndpoint);
 				std::string getAppId()const;
@@ -68,16 +62,13 @@ namespace AlibabaCloud
 
             private:
 				std::string authKey_;
-				std::string resourceOwnerId_;
 				long resourceRealOwnerId_;
 				std::string accessKeyId_;
 				std::string callbackType_;
 				std::string callbackSwitch_;
-				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				std::string eventTypeList_;
 				std::string mnsQueueName_;
-				std::string ownerId_;
 				std::string mnsEndpoint_;
 				std::string appId_;
 				std::string authSwitch_;

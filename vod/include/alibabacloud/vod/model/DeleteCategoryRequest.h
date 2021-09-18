@@ -35,19 +35,10 @@ namespace AlibabaCloud
 				DeleteCategoryRequest();
 				~DeleteCategoryRequest();
 
-				std::string getResourceOwnerId()const;
-				void setResourceOwnerId(const std::string& resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getOwnerId()const;
-				void setOwnerId(const std::string& ownerId);
 				long getCateId()const;
 				void setCateId(long cateId);
 
             private:
-				std::string resourceOwnerId_;
-				std::string resourceOwnerAccount_;
-				std::string ownerId_;
 				long cateId_;
 
 			};

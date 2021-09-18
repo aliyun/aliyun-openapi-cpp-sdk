@@ -35,32 +35,23 @@ namespace AlibabaCloud
 				RegisterMediaRequest();
 				~RegisterMediaRequest();
 
-				long getResourceOwnerId()const;
-				void setResourceOwnerId(long resourceOwnerId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getUserData()const;
 				void setUserData(const std::string& userData);
+				std::string getTemplateGroupId()const;
+				void setTemplateGroupId(const std::string& templateGroupId);
 				std::string getRegisterMetadatas()const;
 				void setRegisterMetadatas(const std::string& registerMetadatas);
 				std::string getWorkflowId()const;
 				void setWorkflowId(const std::string& workflowId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
-				std::string getTemplateGroupId()const;
-				void setTemplateGroupId(const std::string& templateGroupId);
 
             private:
-				long resourceOwnerId_;
 				std::string accessKeyId_;
 				std::string userData_;
+				std::string templateGroupId_;
 				std::string registerMetadatas_;
 				std::string workflowId_;
-				std::string resourceOwnerAccount_;
-				long ownerId_;
-				std::string templateGroupId_;
 
 			};
 		}

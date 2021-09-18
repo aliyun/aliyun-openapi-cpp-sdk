@@ -27,17 +27,6 @@ ListTranscodeTaskRequest::ListTranscodeTaskRequest() :
 ListTranscodeTaskRequest::~ListTranscodeTaskRequest()
 {}
 
-long ListTranscodeTaskRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void ListTranscodeTaskRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
 std::string ListTranscodeTaskRequest::getStartTime()const
 {
 	return startTime_;
@@ -71,17 +60,6 @@ void ListTranscodeTaskRequest::setPageSize(int pageSize)
 	setParameter("PageSize", std::to_string(pageSize));
 }
 
-std::string ListTranscodeTaskRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void ListTranscodeTaskRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string ListTranscodeTaskRequest::getEndTime()const
 {
 	return endTime_;
@@ -102,17 +80,6 @@ void ListTranscodeTaskRequest::setVideoId(const std::string& videoId)
 {
 	videoId_ = videoId;
 	setParameter("VideoId", videoId);
-}
-
-long ListTranscodeTaskRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void ListTranscodeTaskRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 int ListTranscodeTaskRequest::getPageNo()const

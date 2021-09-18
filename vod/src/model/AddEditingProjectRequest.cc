@@ -93,6 +93,28 @@ void AddEditingProjectRequest::setDivision(const std::string& division)
 	setParameter("Division", division);
 }
 
+float AddEditingProjectRequest::getDuration()const
+{
+	return duration_;
+}
+
+void AddEditingProjectRequest::setDuration(float duration)
+{
+	duration_ = duration;
+	setParameter("Duration", std::to_string(duration));
+}
+
+std::string AddEditingProjectRequest::getFEExtend()const
+{
+	return fEExtend_;
+}
+
+void AddEditingProjectRequest::setFEExtend(const std::string& fEExtend)
+{
+	fEExtend_ = fEExtend;
+	setParameter("FEExtend", fEExtend);
+}
+
 std::string AddEditingProjectRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;

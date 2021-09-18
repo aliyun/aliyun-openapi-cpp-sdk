@@ -27,17 +27,6 @@ GetCategoriesRequest::GetCategoriesRequest() :
 GetCategoriesRequest::~GetCategoriesRequest()
 {}
 
-std::string GetCategoriesRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void GetCategoriesRequest::setResourceOwnerId(const std::string& resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", resourceOwnerId);
-}
-
 std::string GetCategoriesRequest::getType()const
 {
 	return type_;
@@ -69,28 +58,6 @@ void GetCategoriesRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
 	setParameter("PageSize", std::to_string(pageSize));
-}
-
-std::string GetCategoriesRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void GetCategoriesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string GetCategoriesRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void GetCategoriesRequest::setOwnerId(const std::string& ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", ownerId);
 }
 
 long GetCategoriesRequest::getPageNo()const

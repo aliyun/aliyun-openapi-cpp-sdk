@@ -27,17 +27,6 @@ CreateUploadVideoRequest::CreateUploadVideoRequest() :
 CreateUploadVideoRequest::~CreateUploadVideoRequest()
 {}
 
-long CreateUploadVideoRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void CreateUploadVideoRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
 std::string CreateUploadVideoRequest::getTranscodeMode()const
 {
 	return transcodeMode_;
@@ -148,17 +137,6 @@ void CreateUploadVideoRequest::setCustomMediaInfo(const std::string& customMedia
 	setParameter("CustomMediaInfo", customMediaInfo);
 }
 
-std::string CreateUploadVideoRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void CreateUploadVideoRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string CreateUploadVideoRequest::getIP()const
 {
 	return iP_;
@@ -168,17 +146,6 @@ void CreateUploadVideoRequest::setIP(const std::string& iP)
 {
 	iP_ = iP;
 	setParameter("IP", iP);
-}
-
-long CreateUploadVideoRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void CreateUploadVideoRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateUploadVideoRequest::getTags()const

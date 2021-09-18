@@ -73,18 +73,18 @@ void GetAttachedMediaInfoResult::parse(const std::string &payload)
 			attachedMediaListObject.icon = valueAttachedMediaListAttachedMedia["Icon"].asString();
 		if(!valueAttachedMediaListAttachedMedia["RegionId"].isNull())
 			attachedMediaListObject.regionId = valueAttachedMediaListAttachedMedia["RegionId"].asString();
-		auto allCategoriesNode = allAttachedMediaListNode["Categories"]["Category"];
-		for (auto allAttachedMediaListNodeCategoriesCategory : allCategoriesNode)
+		auto allCategoriesNode = valueAttachedMediaListAttachedMedia["Categories"]["Category"];
+		for (auto valueAttachedMediaListAttachedMediaCategoriesCategory : allCategoriesNode)
 		{
 			AttachedMedia::Category categoriesObject;
-			if(!allAttachedMediaListNodeCategoriesCategory["CateId"].isNull())
-				categoriesObject.cateId = std::stol(allAttachedMediaListNodeCategoriesCategory["CateId"].asString());
-			if(!allAttachedMediaListNodeCategoriesCategory["CateName"].isNull())
-				categoriesObject.cateName = allAttachedMediaListNodeCategoriesCategory["CateName"].asString();
-			if(!allAttachedMediaListNodeCategoriesCategory["Level"].isNull())
-				categoriesObject.level = std::stol(allAttachedMediaListNodeCategoriesCategory["Level"].asString());
-			if(!allAttachedMediaListNodeCategoriesCategory["ParentId"].isNull())
-				categoriesObject.parentId = std::stol(allAttachedMediaListNodeCategoriesCategory["ParentId"].asString());
+			if(!valueAttachedMediaListAttachedMediaCategoriesCategory["CateId"].isNull())
+				categoriesObject.cateId = std::stol(valueAttachedMediaListAttachedMediaCategoriesCategory["CateId"].asString());
+			if(!valueAttachedMediaListAttachedMediaCategoriesCategory["CateName"].isNull())
+				categoriesObject.cateName = valueAttachedMediaListAttachedMediaCategoriesCategory["CateName"].asString();
+			if(!valueAttachedMediaListAttachedMediaCategoriesCategory["Level"].isNull())
+				categoriesObject.level = std::stol(valueAttachedMediaListAttachedMediaCategoriesCategory["Level"].asString());
+			if(!valueAttachedMediaListAttachedMediaCategoriesCategory["ParentId"].isNull())
+				categoriesObject.parentId = std::stol(valueAttachedMediaListAttachedMediaCategoriesCategory["ParentId"].asString());
 			attachedMediaListObject.categories.push_back(categoriesObject);
 		}
 		attachedMediaList_.push_back(attachedMediaListObject);

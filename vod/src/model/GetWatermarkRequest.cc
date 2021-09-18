@@ -27,39 +27,6 @@ GetWatermarkRequest::GetWatermarkRequest() :
 GetWatermarkRequest::~GetWatermarkRequest()
 {}
 
-long GetWatermarkRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void GetWatermarkRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-std::string GetWatermarkRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void GetWatermarkRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-long GetWatermarkRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void GetWatermarkRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
-}
-
 std::string GetWatermarkRequest::getAccessKeyId()const
 {
 	return accessKeyId_;

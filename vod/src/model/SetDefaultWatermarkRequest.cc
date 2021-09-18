@@ -27,39 +27,6 @@ SetDefaultWatermarkRequest::SetDefaultWatermarkRequest() :
 SetDefaultWatermarkRequest::~SetDefaultWatermarkRequest()
 {}
 
-long SetDefaultWatermarkRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void SetDefaultWatermarkRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-std::string SetDefaultWatermarkRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void SetDefaultWatermarkRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-long SetDefaultWatermarkRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void SetDefaultWatermarkRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
-}
-
 std::string SetDefaultWatermarkRequest::getAccessKeyId()const
 {
 	return accessKeyId_;

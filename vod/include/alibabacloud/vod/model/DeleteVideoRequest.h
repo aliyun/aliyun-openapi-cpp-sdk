@@ -35,19 +35,10 @@ namespace AlibabaCloud
 				DeleteVideoRequest();
 				~DeleteVideoRequest();
 
-				long getResourceOwnerId()const;
-				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getVideoIds()const;
 				void setVideoIds(const std::string& videoIds);
 
             private:
-				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
-				long ownerId_;
 				std::string videoIds_;
 
 			};

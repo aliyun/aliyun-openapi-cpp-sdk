@@ -82,6 +82,17 @@ void UpdateEditingProjectRequest::setCoverURL(const std::string& coverURL)
 	setParameter("CoverURL", coverURL);
 }
 
+float UpdateEditingProjectRequest::getDuration()const
+{
+	return duration_;
+}
+
+void UpdateEditingProjectRequest::setDuration(float duration)
+{
+	duration_ = duration;
+	setParameter("Duration", std::to_string(duration));
+}
+
 std::string UpdateEditingProjectRequest::getProjectId()const
 {
 	return projectId_;
@@ -91,6 +102,17 @@ void UpdateEditingProjectRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
 	setParameter("ProjectId", projectId);
+}
+
+std::string UpdateEditingProjectRequest::getFEExtend()const
+{
+	return fEExtend_;
+}
+
+void UpdateEditingProjectRequest::setFEExtend(const std::string& fEExtend)
+{
+	fEExtend_ = fEExtend;
+	setParameter("FEExtend", fEExtend);
 }
 
 std::string UpdateEditingProjectRequest::getResourceOwnerAccount()const

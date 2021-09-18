@@ -38,17 +38,6 @@ void SetMessageCallbackRequest::setAuthKey(const std::string& authKey)
 	setParameter("AuthKey", authKey);
 }
 
-std::string SetMessageCallbackRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void SetMessageCallbackRequest::setResourceOwnerId(const std::string& resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", resourceOwnerId);
-}
-
 long SetMessageCallbackRequest::getResourceRealOwnerId()const
 {
 	return resourceRealOwnerId_;
@@ -93,17 +82,6 @@ void SetMessageCallbackRequest::setCallbackSwitch(const std::string& callbackSwi
 	setParameter("CallbackSwitch", callbackSwitch);
 }
 
-std::string SetMessageCallbackRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void SetMessageCallbackRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string SetMessageCallbackRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -135,17 +113,6 @@ void SetMessageCallbackRequest::setMnsQueueName(const std::string& mnsQueueName)
 {
 	mnsQueueName_ = mnsQueueName;
 	setParameter("MnsQueueName", mnsQueueName);
-}
-
-std::string SetMessageCallbackRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void SetMessageCallbackRequest::setOwnerId(const std::string& ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", ownerId);
 }
 
 std::string SetMessageCallbackRequest::getMnsEndpoint()const

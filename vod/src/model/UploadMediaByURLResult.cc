@@ -43,10 +43,10 @@ void UploadMediaByURLResult::parse(const std::string &payload)
 	for (auto valueUploadJobsUploadJob : allUploadJobsNode)
 	{
 		UploadJob uploadJobsObject;
-		if(!valueUploadJobsUploadJob["JobId"].isNull())
-			uploadJobsObject.jobId = valueUploadJobsUploadJob["JobId"].asString();
 		if(!valueUploadJobsUploadJob["SourceURL"].isNull())
 			uploadJobsObject.sourceURL = valueUploadJobsUploadJob["SourceURL"].asString();
+		if(!valueUploadJobsUploadJob["JobId"].isNull())
+			uploadJobsObject.jobId = valueUploadJobsUploadJob["JobId"].asString();
 		uploadJobs_.push_back(uploadJobsObject);
 	}
 

@@ -71,6 +71,8 @@ void GetEditingProjectMaterialsResult::parse(const std::string &payload)
 			materialListObject.source = valueMaterialListMaterial["Source"].asString();
 		if(!valueMaterialListMaterial["SpriteConfig"].isNull())
 			materialListObject.spriteConfig = valueMaterialListMaterial["SpriteConfig"].asString();
+		if(!valueMaterialListMaterial["MaterialType"].isNull())
+			materialListObject.materialType = valueMaterialListMaterial["MaterialType"].asString();
 		auto allSnapshots = value["Snapshots"]["Snapshot"];
 		for (auto value : allSnapshots)
 			materialListObject.snapshots.push_back(value.asString());

@@ -35,21 +35,12 @@ namespace AlibabaCloud
 				GetTranscodeTemplateGroupRequest();
 				~GetTranscodeTemplateGroupRequest();
 
-				long getResourceOwnerId()const;
-				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getTranscodeTemplateGroupId()const;
 				void setTranscodeTemplateGroupId(const std::string& transcodeTemplateGroupId);
 
             private:
-				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
-				long ownerId_;
 				std::string accessKeyId_;
 				std::string transcodeTemplateGroupId_;
 

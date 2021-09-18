@@ -35,19 +35,10 @@ namespace AlibabaCloud
 				SetDefaultAITemplateRequest();
 				~SetDefaultAITemplateRequest();
 
-				long getResourceOwnerId()const;
-				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getTemplateId()const;
 				void setTemplateId(const std::string& templateId);
 
             private:
-				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
-				long ownerId_;
 				std::string templateId_;
 
 			};

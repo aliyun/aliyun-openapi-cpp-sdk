@@ -27,39 +27,6 @@ DeleteAITemplateRequest::DeleteAITemplateRequest() :
 DeleteAITemplateRequest::~DeleteAITemplateRequest()
 {}
 
-long DeleteAITemplateRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void DeleteAITemplateRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-std::string DeleteAITemplateRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DeleteAITemplateRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-long DeleteAITemplateRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DeleteAITemplateRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
-}
-
 std::string DeleteAITemplateRequest::getTemplateId()const
 {
 	return templateId_;

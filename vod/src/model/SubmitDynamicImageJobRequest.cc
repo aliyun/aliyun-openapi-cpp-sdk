@@ -27,17 +27,6 @@ SubmitDynamicImageJobRequest::SubmitDynamicImageJobRequest() :
 SubmitDynamicImageJobRequest::~SubmitDynamicImageJobRequest()
 {}
 
-long SubmitDynamicImageJobRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void SubmitDynamicImageJobRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
 std::string SubmitDynamicImageJobRequest::getDynamicImageTemplateId()const
 {
 	return dynamicImageTemplateId_;
@@ -47,28 +36,6 @@ void SubmitDynamicImageJobRequest::setDynamicImageTemplateId(const std::string& 
 {
 	dynamicImageTemplateId_ = dynamicImageTemplateId;
 	setParameter("DynamicImageTemplateId", dynamicImageTemplateId);
-}
-
-std::string SubmitDynamicImageJobRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void SubmitDynamicImageJobRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-
-std::string SubmitDynamicImageJobRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void SubmitDynamicImageJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SubmitDynamicImageJobRequest::getVideoId()const
@@ -93,14 +60,14 @@ void SubmitDynamicImageJobRequest::setOverrideParams(const std::string& override
 	setParameter("OverrideParams", overrideParams);
 }
 
-long SubmitDynamicImageJobRequest::getOwnerId()const
+std::string SubmitDynamicImageJobRequest::getAccessKeyId()const
 {
-	return ownerId_;
+	return accessKeyId_;
 }
 
-void SubmitDynamicImageJobRequest::setOwnerId(long ownerId)
+void SubmitDynamicImageJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	accessKeyId_ = accessKeyId;
+	setParameter("AccessKeyId", accessKeyId);
 }
 

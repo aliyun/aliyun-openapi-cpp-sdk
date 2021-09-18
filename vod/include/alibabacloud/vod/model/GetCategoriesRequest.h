@@ -35,30 +35,21 @@ namespace AlibabaCloud
 				GetCategoriesRequest();
 				~GetCategoriesRequest();
 
-				std::string getResourceOwnerId()const;
-				void setResourceOwnerId(const std::string& resourceOwnerId);
 				std::string getType()const;
 				void setType(const std::string& type);
 				long getCateId()const;
 				void setCateId(long cateId);
 				long getPageSize()const;
 				void setPageSize(long pageSize);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getOwnerId()const;
-				void setOwnerId(const std::string& ownerId);
 				long getPageNo()const;
 				void setPageNo(long pageNo);
 				std::string getSortBy()const;
 				void setSortBy(const std::string& sortBy);
 
             private:
-				std::string resourceOwnerId_;
 				std::string type_;
 				long cateId_;
 				long pageSize_;
-				std::string resourceOwnerAccount_;
-				std::string ownerId_;
 				long pageNo_;
 				std::string sortBy_;
 

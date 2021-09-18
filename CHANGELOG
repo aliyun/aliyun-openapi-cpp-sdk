@@ -1,3 +1,6 @@
+2021-09-18 Version: 1.36.879
+- Add copyright invasion detection APIs.
+
 2021-09-17 Version: 1.36.878
 - Supported SendChannels, AndroidMessageHuaweiUrgency, AndroidMessageHuaweiCategory for Push and MassPush.
 

@@ -35,21 +35,12 @@ namespace AlibabaCloud
 				DeleteMezzaninesRequest();
 				~DeleteMezzaninesRequest();
 
-				long getResourceOwnerId()const;
-				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				bool getForce()const;
 				void setForce(bool force);
 				std::string getVideoIds()const;
 				void setVideoIds(const std::string& videoIds);
 
             private:
-				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
-				long ownerId_;
 				bool force_;
 				std::string videoIds_;
 

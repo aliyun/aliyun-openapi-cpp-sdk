@@ -27,17 +27,6 @@ SubmitTranscodeJobsRequest::SubmitTranscodeJobsRequest() :
 SubmitTranscodeJobsRequest::~SubmitTranscodeJobsRequest()
 {}
 
-long SubmitTranscodeJobsRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void SubmitTranscodeJobsRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
 std::string SubmitTranscodeJobsRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -60,17 +49,6 @@ void SubmitTranscodeJobsRequest::setUserData(const std::string& userData)
 	setParameter("UserData", userData);
 }
 
-std::string SubmitTranscodeJobsRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void SubmitTranscodeJobsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string SubmitTranscodeJobsRequest::getVideoId()const
 {
 	return videoId_;
@@ -91,17 +69,6 @@ void SubmitTranscodeJobsRequest::setOverrideParams(const std::string& overridePa
 {
 	overrideParams_ = overrideParams;
 	setParameter("OverrideParams", overrideParams);
-}
-
-long SubmitTranscodeJobsRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void SubmitTranscodeJobsRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SubmitTranscodeJobsRequest::getPriority()const

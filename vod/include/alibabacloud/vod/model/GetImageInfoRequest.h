@@ -35,8 +35,6 @@ namespace AlibabaCloud
 				GetImageInfoRequest();
 				~GetImageInfoRequest();
 
-				long getResourceOwnerId()const;
-				void setResourceOwnerId(long resourceOwnerId);
 				std::string getImageId()const;
 				void setImageId(const std::string& imageId);
 				std::string getAccessKeyId()const;
@@ -45,19 +43,12 @@ namespace AlibabaCloud
 				void setOutputType(const std::string& outputType);
 				long getAuthTimeout()const;
 				void setAuthTimeout(long authTimeout);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 
             private:
-				long resourceOwnerId_;
 				std::string imageId_;
 				std::string accessKeyId_;
 				std::string outputType_;
 				long authTimeout_;
-				std::string resourceOwnerAccount_;
-				long ownerId_;
 
 			};
 		}

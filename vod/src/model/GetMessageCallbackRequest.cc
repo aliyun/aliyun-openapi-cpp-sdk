@@ -27,15 +27,15 @@ GetMessageCallbackRequest::GetMessageCallbackRequest() :
 GetMessageCallbackRequest::~GetMessageCallbackRequest()
 {}
 
-std::string GetMessageCallbackRequest::getResourceOwnerId()const
+std::string GetMessageCallbackRequest::getOwnerAccount()const
 {
-	return resourceOwnerId_;
+	return ownerAccount_;
 }
 
-void GetMessageCallbackRequest::setResourceOwnerId(const std::string& resourceOwnerId)
+void GetMessageCallbackRequest::setOwnerAccount(const std::string& ownerAccount)
 {
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", resourceOwnerId);
+	ownerAccount_ = ownerAccount;
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long GetMessageCallbackRequest::getResourceRealOwnerId()const
@@ -58,39 +58,6 @@ void GetMessageCallbackRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
-}
-
-std::string GetMessageCallbackRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void GetMessageCallbackRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string GetMessageCallbackRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void GetMessageCallbackRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
-}
-
-std::string GetMessageCallbackRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void GetMessageCallbackRequest::setOwnerId(const std::string& ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", ownerId);
 }
 
 std::string GetMessageCallbackRequest::getAppId()const

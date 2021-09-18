@@ -35,16 +35,10 @@ namespace AlibabaCloud
 				SubmitAIMediaAuditJobRequest();
 				~SubmitAIMediaAuditJobRequest();
 
-				long getResourceOwnerId()const;
-				void setResourceOwnerId(long resourceOwnerId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getUserData()const;
 				void setUserData(const std::string& userData);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getOwnerId()const;
-				void setOwnerId(const std::string& ownerId);
 				std::string getMediaId()const;
 				void setMediaId(const std::string& mediaId);
 				std::string getTemplateId()const;
@@ -55,11 +49,8 @@ namespace AlibabaCloud
 				void setMediaType(const std::string& mediaType);
 
             private:
-				long resourceOwnerId_;
 				std::string accessKeyId_;
 				std::string userData_;
-				std::string resourceOwnerAccount_;
-				std::string ownerId_;
 				std::string mediaId_;
 				std::string templateId_;
 				std::string mediaAuditConfiguration_;

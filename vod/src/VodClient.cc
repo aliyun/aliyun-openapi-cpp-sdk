@@ -447,6 +447,42 @@ VodClient::BatchStopVodDomainOutcomeCallable VodClient::batchStopVodDomainCallab
 	return task->get_future();
 }
 
+VodClient::CancelUrlUploadJobsOutcome VodClient::cancelUrlUploadJobs(const CancelUrlUploadJobsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CancelUrlUploadJobsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CancelUrlUploadJobsOutcome(CancelUrlUploadJobsResult(outcome.result()));
+	else
+		return CancelUrlUploadJobsOutcome(outcome.error());
+}
+
+void VodClient::cancelUrlUploadJobsAsync(const CancelUrlUploadJobsRequest& request, const CancelUrlUploadJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, cancelUrlUploadJobs(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::CancelUrlUploadJobsOutcomeCallable VodClient::cancelUrlUploadJobsCallable(const CancelUrlUploadJobsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CancelUrlUploadJobsOutcome()>>(
+			[this, request]()
+			{
+			return this->cancelUrlUploadJobs(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VodClient::CreateAppInfoOutcome VodClient::createAppInfo(const CreateAppInfoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -519,72 +555,36 @@ VodClient::CreateAuditOutcomeCallable VodClient::createAuditCallable(const Creat
 	return task->get_future();
 }
 
-VodClient::CreateDNADBOutcome VodClient::createDNADB(const CreateDNADBRequest &request) const
+VodClient::CreateDetectionTemplateOutcome VodClient::createDetectionTemplate(const CreateDetectionTemplateRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return CreateDNADBOutcome(endpointOutcome.error());
+		return CreateDetectionTemplateOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return CreateDNADBOutcome(CreateDNADBResult(outcome.result()));
+		return CreateDetectionTemplateOutcome(CreateDetectionTemplateResult(outcome.result()));
 	else
-		return CreateDNADBOutcome(outcome.error());
+		return CreateDetectionTemplateOutcome(outcome.error());
 }
 
-void VodClient::createDNADBAsync(const CreateDNADBRequest& request, const CreateDNADBAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void VodClient::createDetectionTemplateAsync(const CreateDetectionTemplateRequest& request, const CreateDetectionTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, createDNADB(request), context);
+		handler(this, request, createDetectionTemplate(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-VodClient::CreateDNADBOutcomeCallable VodClient::createDNADBCallable(const CreateDNADBRequest &request) const
+VodClient::CreateDetectionTemplateOutcomeCallable VodClient::createDetectionTemplateCallable(const CreateDetectionTemplateRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<CreateDNADBOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<CreateDetectionTemplateOutcome()>>(
 			[this, request]()
 			{
-			return this->createDNADB(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-VodClient::CreateMediaDNALibOutcome VodClient::createMediaDNALib(const CreateMediaDNALibRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateMediaDNALibOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateMediaDNALibOutcome(CreateMediaDNALibResult(outcome.result()));
-	else
-		return CreateMediaDNALibOutcome(outcome.error());
-}
-
-void VodClient::createMediaDNALibAsync(const CreateMediaDNALibRequest& request, const CreateMediaDNALibAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createMediaDNALib(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-VodClient::CreateMediaDNALibOutcomeCallable VodClient::createMediaDNALibCallable(const CreateMediaDNALibRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateMediaDNALibOutcome()>>(
-			[this, request]()
-			{
-			return this->createMediaDNALib(request);
+			return this->createDetectionTemplate(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -693,6 +693,42 @@ VodClient::CreateUploadVideoOutcomeCallable VodClient::createUploadVideoCallable
 			[this, request]()
 			{
 			return this->createUploadVideo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VodClient::CreateVodRealTimeLogDeliveryOutcome VodClient::createVodRealTimeLogDelivery(const CreateVodRealTimeLogDeliveryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateVodRealTimeLogDeliveryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateVodRealTimeLogDeliveryOutcome(CreateVodRealTimeLogDeliveryResult(outcome.result()));
+	else
+		return CreateVodRealTimeLogDeliveryOutcome(outcome.error());
+}
+
+void VodClient::createVodRealTimeLogDeliveryAsync(const CreateVodRealTimeLogDeliveryRequest& request, const CreateVodRealTimeLogDeliveryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createVodRealTimeLogDelivery(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::CreateVodRealTimeLogDeliveryOutcomeCallable VodClient::createVodRealTimeLogDeliveryCallable(const CreateVodRealTimeLogDeliveryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateVodRealTimeLogDeliveryOutcome()>>(
+			[this, request]()
+			{
+			return this->createVodRealTimeLogDelivery(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -873,6 +909,42 @@ VodClient::DeleteCategoryOutcomeCallable VodClient::deleteCategoryCallable(const
 			[this, request]()
 			{
 			return this->deleteCategory(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VodClient::DeleteDetectionTemplateOutcome VodClient::deleteDetectionTemplate(const DeleteDetectionTemplateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteDetectionTemplateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteDetectionTemplateOutcome(DeleteDetectionTemplateResult(outcome.result()));
+	else
+		return DeleteDetectionTemplateOutcome(outcome.error());
+}
+
+void VodClient::deleteDetectionTemplateAsync(const DeleteDetectionTemplateRequest& request, const DeleteDetectionTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteDetectionTemplate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::DeleteDetectionTemplateOutcomeCallable VodClient::deleteDetectionTemplateCallable(const DeleteDetectionTemplateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteDetectionTemplateOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteDetectionTemplate(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1233,6 +1305,42 @@ VodClient::DeleteVodDomainOutcomeCallable VodClient::deleteVodDomainCallable(con
 			[this, request]()
 			{
 			return this->deleteVodDomain(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VodClient::DeleteVodRealtimeLogDeliveryOutcome VodClient::deleteVodRealtimeLogDelivery(const DeleteVodRealtimeLogDeliveryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteVodRealtimeLogDeliveryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteVodRealtimeLogDeliveryOutcome(DeleteVodRealtimeLogDeliveryResult(outcome.result()));
+	else
+		return DeleteVodRealtimeLogDeliveryOutcome(outcome.error());
+}
+
+void VodClient::deleteVodRealtimeLogDeliveryAsync(const DeleteVodRealtimeLogDeliveryRequest& request, const DeleteVodRealtimeLogDeliveryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteVodRealtimeLogDelivery(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::DeleteVodRealtimeLogDeliveryOutcomeCallable VodClient::deleteVodRealtimeLogDeliveryCallable(const DeleteVodRealtimeLogDeliveryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteVodRealtimeLogDeliveryOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteVodRealtimeLogDelivery(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1743,6 +1851,42 @@ VodClient::DescribeVodDomainLogOutcomeCallable VodClient::describeVodDomainLogCa
 	return task->get_future();
 }
 
+VodClient::DescribeVodDomainRealtimeLogDeliveryOutcome VodClient::describeVodDomainRealtimeLogDelivery(const DescribeVodDomainRealtimeLogDeliveryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeVodDomainRealtimeLogDeliveryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeVodDomainRealtimeLogDeliveryOutcome(DescribeVodDomainRealtimeLogDeliveryResult(outcome.result()));
+	else
+		return DescribeVodDomainRealtimeLogDeliveryOutcome(outcome.error());
+}
+
+void VodClient::describeVodDomainRealtimeLogDeliveryAsync(const DescribeVodDomainRealtimeLogDeliveryRequest& request, const DescribeVodDomainRealtimeLogDeliveryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeVodDomainRealtimeLogDelivery(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::DescribeVodDomainRealtimeLogDeliveryOutcomeCallable VodClient::describeVodDomainRealtimeLogDeliveryCallable(const DescribeVodDomainRealtimeLogDeliveryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeVodDomainRealtimeLogDeliveryOutcome()>>(
+			[this, request]()
+			{
+			return this->describeVodDomainRealtimeLogDelivery(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VodClient::DescribeVodDomainTrafficDataOutcome VodClient::describeVodDomainTrafficData(const DescribeVodDomainTrafficDataRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2067,6 +2211,42 @@ VodClient::DescribeVodUserTagsOutcomeCallable VodClient::describeVodUserTagsCall
 	return task->get_future();
 }
 
+VodClient::DescribeVodVerifyContentOutcome VodClient::describeVodVerifyContent(const DescribeVodVerifyContentRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeVodVerifyContentOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeVodVerifyContentOutcome(DescribeVodVerifyContentResult(outcome.result()));
+	else
+		return DescribeVodVerifyContentOutcome(outcome.error());
+}
+
+void VodClient::describeVodVerifyContentAsync(const DescribeVodVerifyContentRequest& request, const DescribeVodVerifyContentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeVodVerifyContent(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::DescribeVodVerifyContentOutcomeCallable VodClient::describeVodVerifyContentCallable(const DescribeVodVerifyContentRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeVodVerifyContentOutcome()>>(
+			[this, request]()
+			{
+			return this->describeVodVerifyContent(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VodClient::DetachAppPolicyFromIdentityOutcome VodClient::detachAppPolicyFromIdentity(const DetachAppPolicyFromIdentityRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2097,6 +2277,114 @@ VodClient::DetachAppPolicyFromIdentityOutcomeCallable VodClient::detachAppPolicy
 			[this, request]()
 			{
 			return this->detachAppPolicyFromIdentity(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VodClient::DisableVodRealtimeLogDeliveryOutcome VodClient::disableVodRealtimeLogDelivery(const DisableVodRealtimeLogDeliveryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DisableVodRealtimeLogDeliveryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DisableVodRealtimeLogDeliveryOutcome(DisableVodRealtimeLogDeliveryResult(outcome.result()));
+	else
+		return DisableVodRealtimeLogDeliveryOutcome(outcome.error());
+}
+
+void VodClient::disableVodRealtimeLogDeliveryAsync(const DisableVodRealtimeLogDeliveryRequest& request, const DisableVodRealtimeLogDeliveryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, disableVodRealtimeLogDelivery(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::DisableVodRealtimeLogDeliveryOutcomeCallable VodClient::disableVodRealtimeLogDeliveryCallable(const DisableVodRealtimeLogDeliveryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DisableVodRealtimeLogDeliveryOutcome()>>(
+			[this, request]()
+			{
+			return this->disableVodRealtimeLogDelivery(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VodClient::EnableVodRealtimeLogDeliveryOutcome VodClient::enableVodRealtimeLogDelivery(const EnableVodRealtimeLogDeliveryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return EnableVodRealtimeLogDeliveryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return EnableVodRealtimeLogDeliveryOutcome(EnableVodRealtimeLogDeliveryResult(outcome.result()));
+	else
+		return EnableVodRealtimeLogDeliveryOutcome(outcome.error());
+}
+
+void VodClient::enableVodRealtimeLogDeliveryAsync(const EnableVodRealtimeLogDeliveryRequest& request, const EnableVodRealtimeLogDeliveryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, enableVodRealtimeLogDelivery(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::EnableVodRealtimeLogDeliveryOutcomeCallable VodClient::enableVodRealtimeLogDeliveryCallable(const EnableVodRealtimeLogDeliveryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<EnableVodRealtimeLogDeliveryOutcome()>>(
+			[this, request]()
+			{
+			return this->enableVodRealtimeLogDelivery(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VodClient::GetAICaptionExtractionJobsOutcome VodClient::getAICaptionExtractionJobs(const GetAICaptionExtractionJobsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetAICaptionExtractionJobsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetAICaptionExtractionJobsOutcome(GetAICaptionExtractionJobsResult(outcome.result()));
+	else
+		return GetAICaptionExtractionJobsOutcome(outcome.error());
+}
+
+void VodClient::getAICaptionExtractionJobsAsync(const GetAICaptionExtractionJobsRequest& request, const GetAICaptionExtractionJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getAICaptionExtractionJobs(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::GetAICaptionExtractionJobsOutcomeCallable VodClient::getAICaptionExtractionJobsCallable(const GetAICaptionExtractionJobsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetAICaptionExtractionJobsOutcome()>>(
+			[this, request]()
+			{
+			return this->getAICaptionExtractionJobs(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2391,114 +2679,6 @@ VodClient::GetCategoriesOutcomeCallable VodClient::getCategoriesCallable(const G
 	return task->get_future();
 }
 
-VodClient::GetDNADBOutcome VodClient::getDNADB(const GetDNADBRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetDNADBOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetDNADBOutcome(GetDNADBResult(outcome.result()));
-	else
-		return GetDNADBOutcome(outcome.error());
-}
-
-void VodClient::getDNADBAsync(const GetDNADBRequest& request, const GetDNADBAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getDNADB(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-VodClient::GetDNADBOutcomeCallable VodClient::getDNADBCallable(const GetDNADBRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetDNADBOutcome()>>(
-			[this, request]()
-			{
-			return this->getDNADB(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-VodClient::GetDRMCertInfoOutcome VodClient::getDRMCertInfo(const GetDRMCertInfoRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetDRMCertInfoOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetDRMCertInfoOutcome(GetDRMCertInfoResult(outcome.result()));
-	else
-		return GetDRMCertInfoOutcome(outcome.error());
-}
-
-void VodClient::getDRMCertInfoAsync(const GetDRMCertInfoRequest& request, const GetDRMCertInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getDRMCertInfo(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-VodClient::GetDRMCertInfoOutcomeCallable VodClient::getDRMCertInfoCallable(const GetDRMCertInfoRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetDRMCertInfoOutcome()>>(
-			[this, request]()
-			{
-			return this->getDRMCertInfo(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-VodClient::GetDRMLicenseOutcome VodClient::getDRMLicense(const GetDRMLicenseRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetDRMLicenseOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetDRMLicenseOutcome(GetDRMLicenseResult(outcome.result()));
-	else
-		return GetDRMLicenseOutcome(outcome.error());
-}
-
-void VodClient::getDRMLicenseAsync(const GetDRMLicenseRequest& request, const GetDRMLicenseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getDRMLicense(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-VodClient::GetDRMLicenseOutcomeCallable VodClient::getDRMLicenseCallable(const GetDRMLicenseRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetDRMLicenseOutcome()>>(
-			[this, request]()
-			{
-			return this->getDRMLicense(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 VodClient::GetDefaultAITemplateOutcome VodClient::getDefaultAITemplate(const GetDefaultAITemplateRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2529,6 +2709,114 @@ VodClient::GetDefaultAITemplateOutcomeCallable VodClient::getDefaultAITemplateCa
 			[this, request]()
 			{
 			return this->getDefaultAITemplate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VodClient::GetDetectionJobOutcome VodClient::getDetectionJob(const GetDetectionJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetDetectionJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetDetectionJobOutcome(GetDetectionJobResult(outcome.result()));
+	else
+		return GetDetectionJobOutcome(outcome.error());
+}
+
+void VodClient::getDetectionJobAsync(const GetDetectionJobRequest& request, const GetDetectionJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getDetectionJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::GetDetectionJobOutcomeCallable VodClient::getDetectionJobCallable(const GetDetectionJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetDetectionJobOutcome()>>(
+			[this, request]()
+			{
+			return this->getDetectionJob(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VodClient::GetDetectionResultOutcome VodClient::getDetectionResult(const GetDetectionResultRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetDetectionResultOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetDetectionResultOutcome(GetDetectionResultResult(outcome.result()));
+	else
+		return GetDetectionResultOutcome(outcome.error());
+}
+
+void VodClient::getDetectionResultAsync(const GetDetectionResultRequest& request, const GetDetectionResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getDetectionResult(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::GetDetectionResultOutcomeCallable VodClient::getDetectionResultCallable(const GetDetectionResultRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetDetectionResultOutcome()>>(
+			[this, request]()
+			{
+			return this->getDetectionResult(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VodClient::GetDetectionTemplateOutcome VodClient::getDetectionTemplate(const GetDetectionTemplateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetDetectionTemplateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetDetectionTemplateOutcome(GetDetectionTemplateResult(outcome.result()));
+	else
+		return GetDetectionTemplateOutcome(outcome.error());
+}
+
+void VodClient::getDetectionTemplateAsync(const GetDetectionTemplateRequest& request, const GetDetectionTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getDetectionTemplate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::GetDetectionTemplateOutcomeCallable VodClient::getDetectionTemplateCallable(const GetDetectionTemplateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetDetectionTemplateOutcome()>>(
+			[this, request]()
+			{
+			return this->getDetectionTemplate(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3543,36 +3831,72 @@ VodClient::ListAuditSecurityIpOutcomeCallable VodClient::listAuditSecurityIpCall
 	return task->get_future();
 }
 
-VodClient::ListDNADBOutcome VodClient::listDNADB(const ListDNADBRequest &request) const
+VodClient::ListDetectionJobOutcome VodClient::listDetectionJob(const ListDetectionJobRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ListDNADBOutcome(endpointOutcome.error());
+		return ListDetectionJobOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ListDNADBOutcome(ListDNADBResult(outcome.result()));
+		return ListDetectionJobOutcome(ListDetectionJobResult(outcome.result()));
 	else
-		return ListDNADBOutcome(outcome.error());
+		return ListDetectionJobOutcome(outcome.error());
 }
 
-void VodClient::listDNADBAsync(const ListDNADBRequest& request, const ListDNADBAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void VodClient::listDetectionJobAsync(const ListDetectionJobRequest& request, const ListDetectionJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, listDNADB(request), context);
+		handler(this, request, listDetectionJob(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-VodClient::ListDNADBOutcomeCallable VodClient::listDNADBCallable(const ListDNADBRequest &request) const
+VodClient::ListDetectionJobOutcomeCallable VodClient::listDetectionJobCallable(const ListDetectionJobRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ListDNADBOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ListDetectionJobOutcome()>>(
 			[this, request]()
 			{
-			return this->listDNADB(request);
+			return this->listDetectionJob(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VodClient::ListDetectionTemplateOutcome VodClient::listDetectionTemplate(const ListDetectionTemplateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListDetectionTemplateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListDetectionTemplateOutcome(ListDetectionTemplateResult(outcome.result()));
+	else
+		return ListDetectionTemplateOutcome(outcome.error());
+}
+
+void VodClient::listDetectionTemplateAsync(const ListDetectionTemplateRequest& request, const ListDetectionTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listDetectionTemplate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::ListDetectionTemplateOutcomeCallable VodClient::listDetectionTemplateCallable(const ListDetectionTemplateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListDetectionTemplateOutcome()>>(
+			[this, request]()
+			{
+			return this->listDetectionTemplate(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3609,6 +3933,42 @@ VodClient::ListDynamicImageOutcomeCallable VodClient::listDynamicImageCallable(c
 			[this, request]()
 			{
 			return this->listDynamicImage(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VodClient::ListLetterSendJobOutcome VodClient::listLetterSendJob(const ListLetterSendJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListLetterSendJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListLetterSendJobOutcome(ListLetterSendJobResult(outcome.result()));
+	else
+		return ListLetterSendJobOutcome(outcome.error());
+}
+
+void VodClient::listLetterSendJobAsync(const ListLetterSendJobRequest& request, const ListLetterSendJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listLetterSendJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::ListLetterSendJobOutcomeCallable VodClient::listLetterSendJobCallable(const ListLetterSendJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListLetterSendJobOutcome()>>(
+			[this, request]()
+			{
+			return this->listLetterSendJob(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3681,42 +4041,6 @@ VodClient::ListMediaDNADeleteJobOutcomeCallable VodClient::listMediaDNADeleteJob
 			[this, request]()
 			{
 			return this->listMediaDNADeleteJob(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-VodClient::ListMediaDNALibsOutcome VodClient::listMediaDNALibs(const ListMediaDNALibsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListMediaDNALibsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListMediaDNALibsOutcome(ListMediaDNALibsResult(outcome.result()));
-	else
-		return ListMediaDNALibsOutcome(outcome.error());
-}
-
-void VodClient::listMediaDNALibsAsync(const ListMediaDNALibsRequest& request, const ListMediaDNALibsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listMediaDNALibs(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-VodClient::ListMediaDNALibsOutcomeCallable VodClient::listMediaDNALibsCallable(const ListMediaDNALibsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListMediaDNALibsOutcome()>>(
-			[this, request]()
-			{
-			return this->listMediaDNALibs(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3825,6 +4149,78 @@ VodClient::ListTranscodeTemplateGroupOutcomeCallable VodClient::listTranscodeTem
 			[this, request]()
 			{
 			return this->listTranscodeTemplateGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VodClient::ListVodRealtimeLogDeliveryDomainsOutcome VodClient::listVodRealtimeLogDeliveryDomains(const ListVodRealtimeLogDeliveryDomainsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListVodRealtimeLogDeliveryDomainsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListVodRealtimeLogDeliveryDomainsOutcome(ListVodRealtimeLogDeliveryDomainsResult(outcome.result()));
+	else
+		return ListVodRealtimeLogDeliveryDomainsOutcome(outcome.error());
+}
+
+void VodClient::listVodRealtimeLogDeliveryDomainsAsync(const ListVodRealtimeLogDeliveryDomainsRequest& request, const ListVodRealtimeLogDeliveryDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listVodRealtimeLogDeliveryDomains(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::ListVodRealtimeLogDeliveryDomainsOutcomeCallable VodClient::listVodRealtimeLogDeliveryDomainsCallable(const ListVodRealtimeLogDeliveryDomainsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListVodRealtimeLogDeliveryDomainsOutcome()>>(
+			[this, request]()
+			{
+			return this->listVodRealtimeLogDeliveryDomains(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VodClient::ListVodRealtimeLogDeliveryInfosOutcome VodClient::listVodRealtimeLogDeliveryInfos(const ListVodRealtimeLogDeliveryInfosRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListVodRealtimeLogDeliveryInfosOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListVodRealtimeLogDeliveryInfosOutcome(ListVodRealtimeLogDeliveryInfosResult(outcome.result()));
+	else
+		return ListVodRealtimeLogDeliveryInfosOutcome(outcome.error());
+}
+
+void VodClient::listVodRealtimeLogDeliveryInfosAsync(const ListVodRealtimeLogDeliveryInfosRequest& request, const ListVodRealtimeLogDeliveryInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listVodRealtimeLogDeliveryInfos(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::ListVodRealtimeLogDeliveryInfosOutcomeCallable VodClient::listVodRealtimeLogDeliveryInfosCallable(const ListVodRealtimeLogDeliveryInfosRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListVodRealtimeLogDeliveryInfosOutcome()>>(
+			[this, request]()
+			{
+			return this->listVodRealtimeLogDeliveryInfos(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4227,6 +4623,42 @@ VodClient::SetAuditSecurityIpOutcomeCallable VodClient::setAuditSecurityIpCallab
 	return task->get_future();
 }
 
+VodClient::SetCrossdomainContentOutcome VodClient::setCrossdomainContent(const SetCrossdomainContentRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetCrossdomainContentOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetCrossdomainContentOutcome(SetCrossdomainContentResult(outcome.result()));
+	else
+		return SetCrossdomainContentOutcome(outcome.error());
+}
+
+void VodClient::setCrossdomainContentAsync(const SetCrossdomainContentRequest& request, const SetCrossdomainContentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setCrossdomainContent(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::SetCrossdomainContentOutcomeCallable VodClient::setCrossdomainContentCallable(const SetCrossdomainContentRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetCrossdomainContentOutcome()>>(
+			[this, request]()
+			{
+			return this->setCrossdomainContent(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VodClient::SetDefaultAITemplateOutcome VodClient::setDefaultAITemplate(const SetDefaultAITemplateRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4443,6 +4875,42 @@ VodClient::SetVodDomainCertificateOutcomeCallable VodClient::setVodDomainCertifi
 	return task->get_future();
 }
 
+VodClient::SubmitAICaptionExtractionJobOutcome VodClient::submitAICaptionExtractionJob(const SubmitAICaptionExtractionJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SubmitAICaptionExtractionJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SubmitAICaptionExtractionJobOutcome(SubmitAICaptionExtractionJobResult(outcome.result()));
+	else
+		return SubmitAICaptionExtractionJobOutcome(outcome.error());
+}
+
+void VodClient::submitAICaptionExtractionJobAsync(const SubmitAICaptionExtractionJobRequest& request, const SubmitAICaptionExtractionJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, submitAICaptionExtractionJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::SubmitAICaptionExtractionJobOutcomeCallable VodClient::submitAICaptionExtractionJobCallable(const SubmitAICaptionExtractionJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SubmitAICaptionExtractionJobOutcome()>>(
+			[this, request]()
+			{
+			return this->submitAICaptionExtractionJob(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VodClient::SubmitAIImageAuditJobOutcome VodClient::submitAIImageAuditJob(const SubmitAIImageAuditJobRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4587,6 +5055,42 @@ VodClient::SubmitAIMediaAuditJobOutcomeCallable VodClient::submitAIMediaAuditJob
 	return task->get_future();
 }
 
+VodClient::SubmitDetectionJobOutcome VodClient::submitDetectionJob(const SubmitDetectionJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SubmitDetectionJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SubmitDetectionJobOutcome(SubmitDetectionJobResult(outcome.result()));
+	else
+		return SubmitDetectionJobOutcome(outcome.error());
+}
+
+void VodClient::submitDetectionJobAsync(const SubmitDetectionJobRequest& request, const SubmitDetectionJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, submitDetectionJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::SubmitDetectionJobOutcomeCallable VodClient::submitDetectionJobCallable(const SubmitDetectionJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SubmitDetectionJobOutcome()>>(
+			[this, request]()
+			{
+			return this->submitDetectionJob(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VodClient::SubmitDynamicImageJobOutcome VodClient::submitDynamicImageJob(const SubmitDynamicImageJobRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4617,6 +5121,42 @@ VodClient::SubmitDynamicImageJobOutcomeCallable VodClient::submitDynamicImageJob
 			[this, request]()
 			{
 			return this->submitDynamicImageJob(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VodClient::SubmitLiveEditingOutcome VodClient::submitLiveEditing(const SubmitLiveEditingRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SubmitLiveEditingOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SubmitLiveEditingOutcome(SubmitLiveEditingResult(outcome.result()));
+	else
+		return SubmitLiveEditingOutcome(outcome.error());
+}
+
+void VodClient::submitLiveEditingAsync(const SubmitLiveEditingRequest& request, const SubmitLiveEditingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, submitLiveEditing(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::SubmitLiveEditingOutcomeCallable VodClient::submitLiveEditingCallable(const SubmitLiveEditingRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SubmitLiveEditingOutcome()>>(
+			[this, request]()
+			{
+			return this->submitLiveEditing(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5019,6 +5559,78 @@ VodClient::UpdateCategoryOutcomeCallable VodClient::updateCategoryCallable(const
 	return task->get_future();
 }
 
+VodClient::UpdateDetectionJobOutcome VodClient::updateDetectionJob(const UpdateDetectionJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateDetectionJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateDetectionJobOutcome(UpdateDetectionJobResult(outcome.result()));
+	else
+		return UpdateDetectionJobOutcome(outcome.error());
+}
+
+void VodClient::updateDetectionJobAsync(const UpdateDetectionJobRequest& request, const UpdateDetectionJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateDetectionJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::UpdateDetectionJobOutcomeCallable VodClient::updateDetectionJobCallable(const UpdateDetectionJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateDetectionJobOutcome()>>(
+			[this, request]()
+			{
+			return this->updateDetectionJob(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VodClient::UpdateDetectionTemplateOutcome VodClient::updateDetectionTemplate(const UpdateDetectionTemplateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateDetectionTemplateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateDetectionTemplateOutcome(UpdateDetectionTemplateResult(outcome.result()));
+	else
+		return UpdateDetectionTemplateOutcome(outcome.error());
+}
+
+void VodClient::updateDetectionTemplateAsync(const UpdateDetectionTemplateRequest& request, const UpdateDetectionTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateDetectionTemplate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::UpdateDetectionTemplateOutcomeCallable VodClient::updateDetectionTemplateCallable(const UpdateDetectionTemplateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateDetectionTemplateOutcome()>>(
+			[this, request]()
+			{
+			return this->updateDetectionTemplate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VodClient::UpdateEditingProjectOutcome VodClient::updateEditingProject(const UpdateEditingProjectRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5337,6 +5949,42 @@ VodClient::UploadMediaByURLOutcomeCallable VodClient::uploadMediaByURLCallable(c
 			[this, request]()
 			{
 			return this->uploadMediaByURL(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VodClient::VerifyVodDomainOwnerOutcome VodClient::verifyVodDomainOwner(const VerifyVodDomainOwnerRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return VerifyVodDomainOwnerOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return VerifyVodDomainOwnerOutcome(VerifyVodDomainOwnerResult(outcome.result()));
+	else
+		return VerifyVodDomainOwnerOutcome(outcome.error());
+}
+
+void VodClient::verifyVodDomainOwnerAsync(const VerifyVodDomainOwnerRequest& request, const VerifyVodDomainOwnerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, verifyVodDomainOwner(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::VerifyVodDomainOwnerOutcomeCallable VodClient::verifyVodDomainOwnerCallable(const VerifyVodDomainOwnerRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<VerifyVodDomainOwnerOutcome()>>(
+			[this, request]()
+			{
+			return this->verifyVodDomainOwner(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

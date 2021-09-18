@@ -45,14 +45,14 @@ void DescribeVodTranscodeDataResult::parse(const std::string &payload)
 		TranscodeDataItem transcodeDataObject;
 		if(!valueTranscodeDataTranscodeDataItem["TimeStamp"].isNull())
 			transcodeDataObject.timeStamp = valueTranscodeDataTranscodeDataItem["TimeStamp"].asString();
-		auto allDataNode = allTranscodeDataNode["Data"]["DataItem"];
-		for (auto allTranscodeDataNodeDataDataItem : allDataNode)
+		auto allDataNode = valueTranscodeDataTranscodeDataItem["Data"]["DataItem"];
+		for (auto valueTranscodeDataTranscodeDataItemDataDataItem : allDataNode)
 		{
 			TranscodeDataItem::DataItem dataObject;
-			if(!allTranscodeDataNodeDataDataItem["Name"].isNull())
-				dataObject.name = allTranscodeDataNodeDataDataItem["Name"].asString();
-			if(!allTranscodeDataNodeDataDataItem["Value"].isNull())
-				dataObject.value = allTranscodeDataNodeDataDataItem["Value"].asString();
+			if(!valueTranscodeDataTranscodeDataItemDataDataItem["Name"].isNull())
+				dataObject.name = valueTranscodeDataTranscodeDataItemDataDataItem["Name"].asString();
+			if(!valueTranscodeDataTranscodeDataItemDataDataItem["Value"].isNull())
+				dataObject.value = valueTranscodeDataTranscodeDataItemDataDataItem["Value"].asString();
 			transcodeDataObject.data.push_back(dataObject);
 		}
 		transcodeData_.push_back(transcodeDataObject);

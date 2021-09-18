@@ -27,17 +27,6 @@ SubmitSnapshotJobRequest::SubmitSnapshotJobRequest() :
 SubmitSnapshotJobRequest::~SubmitSnapshotJobRequest()
 {}
 
-long SubmitSnapshotJobRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void SubmitSnapshotJobRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
 std::string SubmitSnapshotJobRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -104,17 +93,6 @@ void SubmitSnapshotJobRequest::setHeight(const std::string& height)
 	setParameter("Height", height);
 }
 
-std::string SubmitSnapshotJobRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void SubmitSnapshotJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 long SubmitSnapshotJobRequest::getCount()const
 {
 	return count_;
@@ -135,17 +113,6 @@ void SubmitSnapshotJobRequest::setVideoId(const std::string& videoId)
 {
 	videoId_ = videoId;
 	setParameter("VideoId", videoId);
-}
-
-long SubmitSnapshotJobRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void SubmitSnapshotJobRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SubmitSnapshotJobRequest::getWidth()const

@@ -38,17 +38,6 @@ void UpdateTranscodeTemplateGroupRequest::setTranscodeTemplateList(const std::st
 	setParameter("TranscodeTemplateList", transcodeTemplateList);
 }
 
-long UpdateTranscodeTemplateGroupRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void UpdateTranscodeTemplateGroupRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
 std::string UpdateTranscodeTemplateGroupRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -58,39 +47,6 @@ void UpdateTranscodeTemplateGroupRequest::setAccessKeyId(const std::string& acce
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
-}
-
-std::string UpdateTranscodeTemplateGroupRequest::getLocked()const
-{
-	return locked_;
-}
-
-void UpdateTranscodeTemplateGroupRequest::setLocked(const std::string& locked)
-{
-	locked_ = locked;
-	setParameter("Locked", locked);
-}
-
-std::string UpdateTranscodeTemplateGroupRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void UpdateTranscodeTemplateGroupRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-long UpdateTranscodeTemplateGroupRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void UpdateTranscodeTemplateGroupRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string UpdateTranscodeTemplateGroupRequest::getTranscodeTemplateGroupId()const
@@ -113,5 +69,16 @@ void UpdateTranscodeTemplateGroupRequest::setName(const std::string& name)
 {
 	name_ = name;
 	setParameter("Name", name);
+}
+
+std::string UpdateTranscodeTemplateGroupRequest::getLocked()const
+{
+	return locked_;
+}
+
+void UpdateTranscodeTemplateGroupRequest::setLocked(const std::string& locked)
+{
+	locked_ = locked;
+	setParameter("Locked", locked);
 }
 

@@ -27,17 +27,6 @@ AddVodTemplateRequest::AddVodTemplateRequest() :
 AddVodTemplateRequest::~AddVodTemplateRequest()
 {}
 
-long AddVodTemplateRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void AddVodTemplateRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
 std::string AddVodTemplateRequest::getSubTemplateType()const
 {
 	return subTemplateType_;
@@ -69,28 +58,6 @@ void AddVodTemplateRequest::setTemplateType(const std::string& templateType)
 {
 	templateType_ = templateType;
 	setParameter("TemplateType", templateType);
-}
-
-std::string AddVodTemplateRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void AddVodTemplateRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-long AddVodTemplateRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void AddVodTemplateRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string AddVodTemplateRequest::getAppId()const

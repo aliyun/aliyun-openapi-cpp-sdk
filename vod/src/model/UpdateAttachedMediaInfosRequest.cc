@@ -27,17 +27,6 @@ UpdateAttachedMediaInfosRequest::UpdateAttachedMediaInfosRequest() :
 UpdateAttachedMediaInfosRequest::~UpdateAttachedMediaInfosRequest()
 {}
 
-long UpdateAttachedMediaInfosRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void UpdateAttachedMediaInfosRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
 std::string UpdateAttachedMediaInfosRequest::getUpdateContent()const
 {
 	return updateContent_;
@@ -49,17 +38,6 @@ void UpdateAttachedMediaInfosRequest::setUpdateContent(const std::string& update
 	setParameter("UpdateContent", updateContent);
 }
 
-std::string UpdateAttachedMediaInfosRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void UpdateAttachedMediaInfosRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 long UpdateAttachedMediaInfosRequest::getResourceRealOwnerId()const
 {
 	return resourceRealOwnerId_;
@@ -69,17 +47,6 @@ void UpdateAttachedMediaInfosRequest::setResourceRealOwnerId(long resourceRealOw
 {
 	resourceRealOwnerId_ = resourceRealOwnerId;
 	setParameter("ResourceRealOwnerId", std::to_string(resourceRealOwnerId));
-}
-
-long UpdateAttachedMediaInfosRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void UpdateAttachedMediaInfosRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string UpdateAttachedMediaInfosRequest::getAccessKeyId()const

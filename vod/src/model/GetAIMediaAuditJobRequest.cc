@@ -27,39 +27,6 @@ GetAIMediaAuditJobRequest::GetAIMediaAuditJobRequest() :
 GetAIMediaAuditJobRequest::~GetAIMediaAuditJobRequest()
 {}
 
-long GetAIMediaAuditJobRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void GetAIMediaAuditJobRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-std::string GetAIMediaAuditJobRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void GetAIMediaAuditJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string GetAIMediaAuditJobRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void GetAIMediaAuditJobRequest::setOwnerId(const std::string& ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", ownerId);
-}
-
 std::string GetAIMediaAuditJobRequest::getAccessKeyId()const
 {
 	return accessKeyId_;

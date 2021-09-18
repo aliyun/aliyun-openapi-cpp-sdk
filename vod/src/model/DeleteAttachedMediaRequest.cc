@@ -27,39 +27,6 @@ DeleteAttachedMediaRequest::DeleteAttachedMediaRequest() :
 DeleteAttachedMediaRequest::~DeleteAttachedMediaRequest()
 {}
 
-long DeleteAttachedMediaRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void DeleteAttachedMediaRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-std::string DeleteAttachedMediaRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DeleteAttachedMediaRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-long DeleteAttachedMediaRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DeleteAttachedMediaRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
-}
-
 std::string DeleteAttachedMediaRequest::getAccessKeyId()const
 {
 	return accessKeyId_;

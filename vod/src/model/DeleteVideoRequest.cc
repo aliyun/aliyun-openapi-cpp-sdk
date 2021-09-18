@@ -27,39 +27,6 @@ DeleteVideoRequest::DeleteVideoRequest() :
 DeleteVideoRequest::~DeleteVideoRequest()
 {}
 
-long DeleteVideoRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void DeleteVideoRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-std::string DeleteVideoRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DeleteVideoRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-long DeleteVideoRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DeleteVideoRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
-}
-
 std::string DeleteVideoRequest::getVideoIds()const
 {
 	return videoIds_;

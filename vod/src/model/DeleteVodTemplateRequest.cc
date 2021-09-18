@@ -27,39 +27,6 @@ DeleteVodTemplateRequest::DeleteVodTemplateRequest() :
 DeleteVodTemplateRequest::~DeleteVodTemplateRequest()
 {}
 
-long DeleteVodTemplateRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void DeleteVodTemplateRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-std::string DeleteVodTemplateRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DeleteVodTemplateRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-long DeleteVodTemplateRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DeleteVodTemplateRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
-}
-
 std::string DeleteVodTemplateRequest::getVodTemplateId()const
 {
 	return vodTemplateId_;

@@ -27,17 +27,6 @@ DeleteTranscodeTemplateGroupRequest::DeleteTranscodeTemplateGroupRequest() :
 DeleteTranscodeTemplateGroupRequest::~DeleteTranscodeTemplateGroupRequest()
 {}
 
-long DeleteTranscodeTemplateGroupRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void DeleteTranscodeTemplateGroupRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
 std::string DeleteTranscodeTemplateGroupRequest::getTranscodeTemplateIds()const
 {
 	return transcodeTemplateIds_;
@@ -60,39 +49,6 @@ void DeleteTranscodeTemplateGroupRequest::setAccessKeyId(const std::string& acce
 	setParameter("AccessKeyId", accessKeyId);
 }
 
-std::string DeleteTranscodeTemplateGroupRequest::getForceDelGroup()const
-{
-	return forceDelGroup_;
-}
-
-void DeleteTranscodeTemplateGroupRequest::setForceDelGroup(const std::string& forceDelGroup)
-{
-	forceDelGroup_ = forceDelGroup;
-	setParameter("ForceDelGroup", forceDelGroup);
-}
-
-std::string DeleteTranscodeTemplateGroupRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DeleteTranscodeTemplateGroupRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-long DeleteTranscodeTemplateGroupRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DeleteTranscodeTemplateGroupRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
-}
-
 std::string DeleteTranscodeTemplateGroupRequest::getTranscodeTemplateGroupId()const
 {
 	return transcodeTemplateGroupId_;
@@ -102,5 +58,16 @@ void DeleteTranscodeTemplateGroupRequest::setTranscodeTemplateGroupId(const std:
 {
 	transcodeTemplateGroupId_ = transcodeTemplateGroupId;
 	setParameter("TranscodeTemplateGroupId", transcodeTemplateGroupId);
+}
+
+std::string DeleteTranscodeTemplateGroupRequest::getForceDelGroup()const
+{
+	return forceDelGroup_;
+}
+
+void DeleteTranscodeTemplateGroupRequest::setForceDelGroup(const std::string& forceDelGroup)
+{
+	forceDelGroup_ = forceDelGroup;
+	setParameter("ForceDelGroup", forceDelGroup);
 }
 

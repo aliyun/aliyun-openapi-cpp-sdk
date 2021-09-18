@@ -27,39 +27,6 @@ GetURLUploadInfosRequest::GetURLUploadInfosRequest() :
 GetURLUploadInfosRequest::~GetURLUploadInfosRequest()
 {}
 
-long GetURLUploadInfosRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void GetURLUploadInfosRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-std::string GetURLUploadInfosRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void GetURLUploadInfosRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-long GetURLUploadInfosRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void GetURLUploadInfosRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
-}
-
 std::string GetURLUploadInfosRequest::getJobIds()const
 {
 	return jobIds_;

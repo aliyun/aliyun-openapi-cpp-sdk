@@ -27,39 +27,6 @@ GetVideoInfoRequest::GetVideoInfoRequest() :
 GetVideoInfoRequest::~GetVideoInfoRequest()
 {}
 
-long GetVideoInfoRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void GetVideoInfoRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-std::string GetVideoInfoRequest::getResultTypes()const
-{
-	return resultTypes_;
-}
-
-void GetVideoInfoRequest::setResultTypes(const std::string& resultTypes)
-{
-	resultTypes_ = resultTypes;
-	setParameter("ResultTypes", resultTypes);
-}
-
-std::string GetVideoInfoRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void GetVideoInfoRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string GetVideoInfoRequest::getVideoId()const
 {
 	return videoId_;
@@ -71,17 +38,6 @@ void GetVideoInfoRequest::setVideoId(const std::string& videoId)
 	setParameter("VideoId", videoId);
 }
 
-long GetVideoInfoRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void GetVideoInfoRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
-}
-
 std::string GetVideoInfoRequest::getAdditionType()const
 {
 	return additionType_;
@@ -91,5 +47,16 @@ void GetVideoInfoRequest::setAdditionType(const std::string& additionType)
 {
 	additionType_ = additionType;
 	setParameter("AdditionType", additionType);
+}
+
+std::string GetVideoInfoRequest::getResultTypes()const
+{
+	return resultTypes_;
+}
+
+void GetVideoInfoRequest::setResultTypes(const std::string& resultTypes)
+{
+	resultTypes_ = resultTypes;
+	setParameter("ResultTypes", resultTypes);
 }
 

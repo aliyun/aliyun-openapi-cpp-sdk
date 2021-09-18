@@ -27,39 +27,6 @@ DeleteAIImageInfosRequest::DeleteAIImageInfosRequest() :
 DeleteAIImageInfosRequest::~DeleteAIImageInfosRequest()
 {}
 
-long DeleteAIImageInfosRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void DeleteAIImageInfosRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-std::string DeleteAIImageInfosRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DeleteAIImageInfosRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-long DeleteAIImageInfosRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DeleteAIImageInfosRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
-}
-
 std::string DeleteAIImageInfosRequest::getAccessKeyId()const
 {
 	return accessKeyId_;

@@ -27,17 +27,6 @@ GetVideoListRequest::GetVideoListRequest() :
 GetVideoListRequest::~GetVideoListRequest()
 {}
 
-long GetVideoListRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void GetVideoListRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
 std::string GetVideoListRequest::getStartTime()const
 {
 	return startTime_;
@@ -82,17 +71,6 @@ void GetVideoListRequest::setPageSize(int pageSize)
 	setParameter("PageSize", std::to_string(pageSize));
 }
 
-std::string GetVideoListRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void GetVideoListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string GetVideoListRequest::getEndTime()const
 {
 	return endTime_;
@@ -102,17 +80,6 @@ void GetVideoListRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
 	setParameter("EndTime", endTime);
-}
-
-long GetVideoListRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void GetVideoListRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 int GetVideoListRequest::getPageNo()const

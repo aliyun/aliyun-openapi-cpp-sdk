@@ -35,21 +35,12 @@ namespace AlibabaCloud
 				GetAIMediaAuditJobRequest();
 				~GetAIMediaAuditJobRequest();
 
-				long getResourceOwnerId()const;
-				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getOwnerId()const;
-				void setOwnerId(const std::string& ownerId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getJobId()const;
 				void setJobId(const std::string& jobId);
 
             private:
-				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
-				std::string ownerId_;
 				std::string accessKeyId_;
 				std::string jobId_;
 

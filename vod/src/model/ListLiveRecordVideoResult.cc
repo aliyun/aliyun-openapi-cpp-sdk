@@ -55,40 +55,40 @@ void ListLiveRecordVideoResult::parse(const std::string &payload)
 			liveRecordVideoListObject.recordStartTime = valueLiveRecordVideoListLiveRecordVideo["RecordStartTime"].asString();
 		if(!valueLiveRecordVideoListLiveRecordVideo["RecordEndTime"].isNull())
 			liveRecordVideoListObject.recordEndTime = valueLiveRecordVideoListLiveRecordVideo["RecordEndTime"].asString();
-		auto allPlayInfoListNode = allLiveRecordVideoListNode["PlayInfoList"]["PlayInfo"];
-		for (auto allLiveRecordVideoListNodePlayInfoListPlayInfo : allPlayInfoListNode)
+		auto allPlayInfoListNode = valueLiveRecordVideoListLiveRecordVideo["PlayInfoList"]["PlayInfo"];
+		for (auto valueLiveRecordVideoListLiveRecordVideoPlayInfoListPlayInfo : allPlayInfoListNode)
 		{
 			LiveRecordVideo::PlayInfo playInfoListObject;
-			if(!allLiveRecordVideoListNodePlayInfoListPlayInfo["Width"].isNull())
-				playInfoListObject.width = std::stol(allLiveRecordVideoListNodePlayInfoListPlayInfo["Width"].asString());
-			if(!allLiveRecordVideoListNodePlayInfoListPlayInfo["Height"].isNull())
-				playInfoListObject.height = std::stol(allLiveRecordVideoListNodePlayInfoListPlayInfo["Height"].asString());
-			if(!allLiveRecordVideoListNodePlayInfoListPlayInfo["Size"].isNull())
-				playInfoListObject.size = std::stol(allLiveRecordVideoListNodePlayInfoListPlayInfo["Size"].asString());
-			if(!allLiveRecordVideoListNodePlayInfoListPlayInfo["PlayURL"].isNull())
-				playInfoListObject.playURL = allLiveRecordVideoListNodePlayInfoListPlayInfo["PlayURL"].asString();
-			if(!allLiveRecordVideoListNodePlayInfoListPlayInfo["Bitrate"].isNull())
-				playInfoListObject.bitrate = allLiveRecordVideoListNodePlayInfoListPlayInfo["Bitrate"].asString();
-			if(!allLiveRecordVideoListNodePlayInfoListPlayInfo["Definition"].isNull())
-				playInfoListObject.definition = allLiveRecordVideoListNodePlayInfoListPlayInfo["Definition"].asString();
-			if(!allLiveRecordVideoListNodePlayInfoListPlayInfo["Duration"].isNull())
-				playInfoListObject.duration = allLiveRecordVideoListNodePlayInfoListPlayInfo["Duration"].asString();
-			if(!allLiveRecordVideoListNodePlayInfoListPlayInfo["Format"].isNull())
-				playInfoListObject.format = allLiveRecordVideoListNodePlayInfoListPlayInfo["Format"].asString();
-			if(!allLiveRecordVideoListNodePlayInfoListPlayInfo["Fps"].isNull())
-				playInfoListObject.fps = allLiveRecordVideoListNodePlayInfoListPlayInfo["Fps"].asString();
-			if(!allLiveRecordVideoListNodePlayInfoListPlayInfo["Encrypt"].isNull())
-				playInfoListObject.encrypt = std::stol(allLiveRecordVideoListNodePlayInfoListPlayInfo["Encrypt"].asString());
-			if(!allLiveRecordVideoListNodePlayInfoListPlayInfo["Plaintext"].isNull())
-				playInfoListObject.plaintext = allLiveRecordVideoListNodePlayInfoListPlayInfo["Plaintext"].asString();
-			if(!allLiveRecordVideoListNodePlayInfoListPlayInfo["Complexity"].isNull())
-				playInfoListObject.complexity = allLiveRecordVideoListNodePlayInfoListPlayInfo["Complexity"].asString();
-			if(!allLiveRecordVideoListNodePlayInfoListPlayInfo["StreamType"].isNull())
-				playInfoListObject.streamType = allLiveRecordVideoListNodePlayInfoListPlayInfo["StreamType"].asString();
-			if(!allLiveRecordVideoListNodePlayInfoListPlayInfo["Rand"].isNull())
-				playInfoListObject.rand = allLiveRecordVideoListNodePlayInfoListPlayInfo["Rand"].asString();
-			if(!allLiveRecordVideoListNodePlayInfoListPlayInfo["JobId"].isNull())
-				playInfoListObject.jobId = allLiveRecordVideoListNodePlayInfoListPlayInfo["JobId"].asString();
+			if(!valueLiveRecordVideoListLiveRecordVideoPlayInfoListPlayInfo["Width"].isNull())
+				playInfoListObject.width = std::stol(valueLiveRecordVideoListLiveRecordVideoPlayInfoListPlayInfo["Width"].asString());
+			if(!valueLiveRecordVideoListLiveRecordVideoPlayInfoListPlayInfo["Height"].isNull())
+				playInfoListObject.height = std::stol(valueLiveRecordVideoListLiveRecordVideoPlayInfoListPlayInfo["Height"].asString());
+			if(!valueLiveRecordVideoListLiveRecordVideoPlayInfoListPlayInfo["Size"].isNull())
+				playInfoListObject.size = std::stol(valueLiveRecordVideoListLiveRecordVideoPlayInfoListPlayInfo["Size"].asString());
+			if(!valueLiveRecordVideoListLiveRecordVideoPlayInfoListPlayInfo["PlayURL"].isNull())
+				playInfoListObject.playURL = valueLiveRecordVideoListLiveRecordVideoPlayInfoListPlayInfo["PlayURL"].asString();
+			if(!valueLiveRecordVideoListLiveRecordVideoPlayInfoListPlayInfo["Bitrate"].isNull())
+				playInfoListObject.bitrate = valueLiveRecordVideoListLiveRecordVideoPlayInfoListPlayInfo["Bitrate"].asString();
+			if(!valueLiveRecordVideoListLiveRecordVideoPlayInfoListPlayInfo["Definition"].isNull())
+				playInfoListObject.definition = valueLiveRecordVideoListLiveRecordVideoPlayInfoListPlayInfo["Definition"].asString();
+			if(!valueLiveRecordVideoListLiveRecordVideoPlayInfoListPlayInfo["Duration"].isNull())
+				playInfoListObject.duration = valueLiveRecordVideoListLiveRecordVideoPlayInfoListPlayInfo["Duration"].asString();
+			if(!valueLiveRecordVideoListLiveRecordVideoPlayInfoListPlayInfo["Format"].isNull())
+				playInfoListObject.format = valueLiveRecordVideoListLiveRecordVideoPlayInfoListPlayInfo["Format"].asString();
+			if(!valueLiveRecordVideoListLiveRecordVideoPlayInfoListPlayInfo["Fps"].isNull())
+				playInfoListObject.fps = valueLiveRecordVideoListLiveRecordVideoPlayInfoListPlayInfo["Fps"].asString();
+			if(!valueLiveRecordVideoListLiveRecordVideoPlayInfoListPlayInfo["Encrypt"].isNull())
+				playInfoListObject.encrypt = std::stol(valueLiveRecordVideoListLiveRecordVideoPlayInfoListPlayInfo["Encrypt"].asString());
+			if(!valueLiveRecordVideoListLiveRecordVideoPlayInfoListPlayInfo["Plaintext"].isNull())
+				playInfoListObject.plaintext = valueLiveRecordVideoListLiveRecordVideoPlayInfoListPlayInfo["Plaintext"].asString();
+			if(!valueLiveRecordVideoListLiveRecordVideoPlayInfoListPlayInfo["Complexity"].isNull())
+				playInfoListObject.complexity = valueLiveRecordVideoListLiveRecordVideoPlayInfoListPlayInfo["Complexity"].asString();
+			if(!valueLiveRecordVideoListLiveRecordVideoPlayInfoListPlayInfo["StreamType"].isNull())
+				playInfoListObject.streamType = valueLiveRecordVideoListLiveRecordVideoPlayInfoListPlayInfo["StreamType"].asString();
+			if(!valueLiveRecordVideoListLiveRecordVideoPlayInfoListPlayInfo["Rand"].isNull())
+				playInfoListObject.rand = valueLiveRecordVideoListLiveRecordVideoPlayInfoListPlayInfo["Rand"].asString();
+			if(!valueLiveRecordVideoListLiveRecordVideoPlayInfoListPlayInfo["JobId"].isNull())
+				playInfoListObject.jobId = valueLiveRecordVideoListLiveRecordVideoPlayInfoListPlayInfo["JobId"].asString();
 			liveRecordVideoListObject.playInfoList.push_back(playInfoListObject);
 		}
 		auto videoNode = value["Video"];

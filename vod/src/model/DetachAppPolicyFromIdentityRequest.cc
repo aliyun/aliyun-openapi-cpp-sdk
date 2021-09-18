@@ -27,15 +27,15 @@ DetachAppPolicyFromIdentityRequest::DetachAppPolicyFromIdentityRequest() :
 DetachAppPolicyFromIdentityRequest::~DetachAppPolicyFromIdentityRequest()
 {}
 
-long DetachAppPolicyFromIdentityRequest::getResourceOwnerId()const
+std::string DetachAppPolicyFromIdentityRequest::getIdentityType()const
 {
-	return resourceOwnerId_;
+	return identityType_;
 }
 
-void DetachAppPolicyFromIdentityRequest::setResourceOwnerId(long resourceOwnerId)
+void DetachAppPolicyFromIdentityRequest::setIdentityType(const std::string& identityType)
 {
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	identityType_ = identityType;
+	setParameter("IdentityType", identityType);
 }
 
 std::string DetachAppPolicyFromIdentityRequest::getPolicyNames()const
@@ -58,39 +58,6 @@ void DetachAppPolicyFromIdentityRequest::setIdentityName(const std::string& iden
 {
 	identityName_ = identityName;
 	setParameter("IdentityName", identityName);
-}
-
-std::string DetachAppPolicyFromIdentityRequest::getIdentityType()const
-{
-	return identityType_;
-}
-
-void DetachAppPolicyFromIdentityRequest::setIdentityType(const std::string& identityType)
-{
-	identityType_ = identityType;
-	setParameter("IdentityType", identityType);
-}
-
-std::string DetachAppPolicyFromIdentityRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DetachAppPolicyFromIdentityRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-long DetachAppPolicyFromIdentityRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DetachAppPolicyFromIdentityRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DetachAppPolicyFromIdentityRequest::getAppId()const

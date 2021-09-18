@@ -27,39 +27,6 @@ DeleteCategoryRequest::DeleteCategoryRequest() :
 DeleteCategoryRequest::~DeleteCategoryRequest()
 {}
 
-std::string DeleteCategoryRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void DeleteCategoryRequest::setResourceOwnerId(const std::string& resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", resourceOwnerId);
-}
-
-std::string DeleteCategoryRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DeleteCategoryRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string DeleteCategoryRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DeleteCategoryRequest::setOwnerId(const std::string& ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", ownerId);
-}
-
 long DeleteCategoryRequest::getCateId()const
 {
 	return cateId_;

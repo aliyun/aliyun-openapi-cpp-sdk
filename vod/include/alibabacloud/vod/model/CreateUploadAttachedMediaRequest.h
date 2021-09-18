@@ -35,8 +35,6 @@ namespace AlibabaCloud
 				CreateUploadAttachedMediaRequest();
 				~CreateUploadAttachedMediaRequest();
 
-				long getResourceOwnerId()const;
-				void setResourceOwnerId(long resourceOwnerId);
 				std::string getIcon()const;
 				void setIcon(const std::string& icon);
 				std::string getDescription()const;
@@ -55,12 +53,8 @@ namespace AlibabaCloud
 				void setUserData(const std::string& userData);
 				long getCateId()const;
 				void setCateId(long cateId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getCateIds()const;
 				void setCateIds(const std::string& cateIds);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getTags()const;
 				void setTags(const std::string& tags);
 				std::string getMediaExt()const;
@@ -71,7 +65,6 @@ namespace AlibabaCloud
 				void setAppId(const std::string& appId);
 
             private:
-				long resourceOwnerId_;
 				std::string icon_;
 				std::string description_;
 				std::string fileSize_;
@@ -81,9 +74,7 @@ namespace AlibabaCloud
 				std::string storageLocation_;
 				std::string userData_;
 				long cateId_;
-				std::string resourceOwnerAccount_;
 				std::string cateIds_;
-				long ownerId_;
 				std::string tags_;
 				std::string mediaExt_;
 				std::string fileName_;

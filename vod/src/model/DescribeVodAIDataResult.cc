@@ -45,14 +45,14 @@ void DescribeVodAIDataResult::parse(const std::string &payload)
 		AIDataItem aIDataObject;
 		if(!valueAIDataAIDataItem["TimeStamp"].isNull())
 			aIDataObject.timeStamp = valueAIDataAIDataItem["TimeStamp"].asString();
-		auto allDataNode = allAIDataNode["Data"]["DataItem"];
-		for (auto allAIDataNodeDataDataItem : allDataNode)
+		auto allDataNode = valueAIDataAIDataItem["Data"]["DataItem"];
+		for (auto valueAIDataAIDataItemDataDataItem : allDataNode)
 		{
 			AIDataItem::DataItem dataObject;
-			if(!allAIDataNodeDataDataItem["Name"].isNull())
-				dataObject.name = allAIDataNodeDataDataItem["Name"].asString();
-			if(!allAIDataNodeDataDataItem["Value"].isNull())
-				dataObject.value = allAIDataNodeDataDataItem["Value"].asString();
+			if(!valueAIDataAIDataItemDataDataItem["Name"].isNull())
+				dataObject.name = valueAIDataAIDataItemDataDataItem["Name"].asString();
+			if(!valueAIDataAIDataItemDataDataItem["Value"].isNull())
+				dataObject.value = valueAIDataAIDataItemDataDataItem["Value"].asString();
 			aIDataObject.data.push_back(dataObject);
 		}
 		aIData_.push_back(aIDataObject);

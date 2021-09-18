@@ -27,39 +27,6 @@ DeleteMezzaninesRequest::DeleteMezzaninesRequest() :
 DeleteMezzaninesRequest::~DeleteMezzaninesRequest()
 {}
 
-long DeleteMezzaninesRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void DeleteMezzaninesRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-std::string DeleteMezzaninesRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DeleteMezzaninesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-long DeleteMezzaninesRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DeleteMezzaninesRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
-}
-
 bool DeleteMezzaninesRequest::getForce()const
 {
 	return force_;

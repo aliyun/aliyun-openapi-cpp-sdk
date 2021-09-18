@@ -35,29 +35,20 @@ namespace AlibabaCloud
 				SubmitDynamicImageJobRequest();
 				~SubmitDynamicImageJobRequest();
 
-				long getResourceOwnerId()const;
-				void setResourceOwnerId(long resourceOwnerId);
 				std::string getDynamicImageTemplateId()const;
 				void setDynamicImageTemplateId(const std::string& dynamicImageTemplateId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getVideoId()const;
 				void setVideoId(const std::string& videoId);
 				std::string getOverrideParams()const;
 				void setOverrideParams(const std::string& overrideParams);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
-				long resourceOwnerId_;
 				std::string dynamicImageTemplateId_;
-				std::string accessKeyId_;
-				std::string resourceOwnerAccount_;
 				std::string videoId_;
 				std::string overrideParams_;
-				long ownerId_;
+				std::string accessKeyId_;
 
 			};
 		}

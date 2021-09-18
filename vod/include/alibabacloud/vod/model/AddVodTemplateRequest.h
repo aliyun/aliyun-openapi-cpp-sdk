@@ -35,30 +35,21 @@ namespace AlibabaCloud
 				AddVodTemplateRequest();
 				~AddVodTemplateRequest();
 
-				long getResourceOwnerId()const;
-				void setResourceOwnerId(long resourceOwnerId);
 				std::string getSubTemplateType()const;
 				void setSubTemplateType(const std::string& subTemplateType);
 				std::string getTemplateConfig()const;
 				void setTemplateConfig(const std::string& templateConfig);
 				std::string getTemplateType()const;
 				void setTemplateType(const std::string& templateType);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getAppId()const;
 				void setAppId(const std::string& appId);
 				std::string getName()const;
 				void setName(const std::string& name);
 
             private:
-				long resourceOwnerId_;
 				std::string subTemplateType_;
 				std::string templateConfig_;
 				std::string templateType_;
-				std::string resourceOwnerAccount_;
-				long ownerId_;
 				std::string appId_;
 				std::string name_;
 

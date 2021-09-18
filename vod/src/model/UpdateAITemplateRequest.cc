@@ -27,15 +27,15 @@ UpdateAITemplateRequest::UpdateAITemplateRequest() :
 UpdateAITemplateRequest::~UpdateAITemplateRequest()
 {}
 
-long UpdateAITemplateRequest::getResourceOwnerId()const
+std::string UpdateAITemplateRequest::getTemplateId()const
 {
-	return resourceOwnerId_;
+	return templateId_;
 }
 
-void UpdateAITemplateRequest::setResourceOwnerId(long resourceOwnerId)
+void UpdateAITemplateRequest::setTemplateId(const std::string& templateId)
 {
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	templateId_ = templateId;
+	setParameter("TemplateId", templateId);
 }
 
 std::string UpdateAITemplateRequest::getTemplateConfig()const
@@ -58,38 +58,5 @@ void UpdateAITemplateRequest::setTemplateName(const std::string& templateName)
 {
 	templateName_ = templateName;
 	setParameter("TemplateName", templateName);
-}
-
-std::string UpdateAITemplateRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void UpdateAITemplateRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-long UpdateAITemplateRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void UpdateAITemplateRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string UpdateAITemplateRequest::getTemplateId()const
-{
-	return templateId_;
-}
-
-void UpdateAITemplateRequest::setTemplateId(const std::string& templateId)
-{
-	templateId_ = templateId;
-	setParameter("TemplateId", templateId);
 }
 

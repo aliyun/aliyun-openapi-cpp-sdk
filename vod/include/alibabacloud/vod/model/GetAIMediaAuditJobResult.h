@@ -175,12 +175,20 @@ namespace AlibabaCloud
 							std::string label;
 							std::string scene;
 						};
+						struct AudioResultItem
+						{
+							std::string suggestion;
+							std::string score;
+							std::string label;
+							std::string scene;
+						};
 						std::vector<TextResultItem> textResult;
 						std::string suggestion;
 						VideoResult videoResult;
 						std::vector<ImageResultItem> imageResult;
 						std::string abnormalModules;
 						std::string label;
+						std::vector<AudioResultItem> audioResult;
 					};
 					std::string status;
 					std::string type;

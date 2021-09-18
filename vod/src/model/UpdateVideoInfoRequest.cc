@@ -27,17 +27,6 @@ UpdateVideoInfoRequest::UpdateVideoInfoRequest() :
 UpdateVideoInfoRequest::~UpdateVideoInfoRequest()
 {}
 
-long UpdateVideoInfoRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void UpdateVideoInfoRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
 std::string UpdateVideoInfoRequest::getDescription()const
 {
 	return description_;
@@ -104,17 +93,6 @@ void UpdateVideoInfoRequest::setCustomMediaInfo(const std::string& customMediaIn
 	setParameter("CustomMediaInfo", customMediaInfo);
 }
 
-std::string UpdateVideoInfoRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void UpdateVideoInfoRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string UpdateVideoInfoRequest::getVideoId()const
 {
 	return videoId_;
@@ -124,17 +102,6 @@ void UpdateVideoInfoRequest::setVideoId(const std::string& videoId)
 {
 	videoId_ = videoId;
 	setParameter("VideoId", videoId);
-}
-
-long UpdateVideoInfoRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void UpdateVideoInfoRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string UpdateVideoInfoRequest::getTags()const

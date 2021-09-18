@@ -27,17 +27,6 @@ UploadMediaByURLRequest::UploadMediaByURLRequest() :
 UploadMediaByURLRequest::~UploadMediaByURLRequest()
 {}
 
-long UploadMediaByURLRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void UploadMediaByURLRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
 std::string UploadMediaByURLRequest::getMessageCallback()const
 {
 	return messageCallback_;
@@ -82,26 +71,15 @@ void UploadMediaByURLRequest::setWorkflowId(const std::string& workflowId)
 	setParameter("WorkflowId", workflowId);
 }
 
-std::string UploadMediaByURLRequest::getResourceOwnerAccount()const
+std::string UploadMediaByURLRequest::getS3UploadInfo()const
 {
-	return resourceOwnerAccount_;
+	return s3UploadInfo_;
 }
 
-void UploadMediaByURLRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+void UploadMediaByURLRequest::setS3UploadInfo(const std::string& s3UploadInfo)
 {
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-long UploadMediaByURLRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void UploadMediaByURLRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	s3UploadInfo_ = s3UploadInfo;
+	setParameter("S3UploadInfo", s3UploadInfo);
 }
 
 std::string UploadMediaByURLRequest::getPriority()const

@@ -27,39 +27,6 @@ GetTranscodeTaskRequest::GetTranscodeTaskRequest() :
 GetTranscodeTaskRequest::~GetTranscodeTaskRequest()
 {}
 
-long GetTranscodeTaskRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void GetTranscodeTaskRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-std::string GetTranscodeTaskRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void GetTranscodeTaskRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-long GetTranscodeTaskRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void GetTranscodeTaskRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
-}
-
 std::string GetTranscodeTaskRequest::getAccessKeyId()const
 {
 	return accessKeyId_;

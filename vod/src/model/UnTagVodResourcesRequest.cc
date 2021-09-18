@@ -27,6 +27,17 @@ UnTagVodResourcesRequest::UnTagVodResourcesRequest() :
 UnTagVodResourcesRequest::~UnTagVodResourcesRequest()
 {}
 
+bool UnTagVodResourcesRequest::getAll()const
+{
+	return all_;
+}
+
+void UnTagVodResourcesRequest::setAll(bool all)
+{
+	all_ = all;
+	setParameter("All", all ? "true" : "false");
+}
+
 std::vector<std::string> UnTagVodResourcesRequest::getResourceId()const
 {
 	return resourceId_;

@@ -27,17 +27,6 @@ AddCategoryRequest::AddCategoryRequest() :
 AddCategoryRequest::~AddCategoryRequest()
 {}
 
-std::string AddCategoryRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void AddCategoryRequest::setResourceOwnerId(const std::string& resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", resourceOwnerId);
-}
-
 std::string AddCategoryRequest::getType()const
 {
 	return type_;
@@ -69,27 +58,5 @@ void AddCategoryRequest::setCateName(const std::string& cateName)
 {
 	cateName_ = cateName;
 	setParameter("CateName", cateName);
-}
-
-std::string AddCategoryRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void AddCategoryRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string AddCategoryRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void AddCategoryRequest::setOwnerId(const std::string& ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", ownerId);
 }
 

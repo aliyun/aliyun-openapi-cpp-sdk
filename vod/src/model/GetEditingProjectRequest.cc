@@ -38,6 +38,39 @@ void GetEditingProjectRequest::setResourceOwnerId(const std::string& resourceOwn
 	setParameter("ResourceOwnerId", resourceOwnerId);
 }
 
+std::string GetEditingProjectRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void GetEditingProjectRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setParameter("AccessKeyId", accessKeyId);
+}
+
+int GetEditingProjectRequest::getFEExtendFlag()const
+{
+	return fEExtendFlag_;
+}
+
+void GetEditingProjectRequest::setFEExtendFlag(int fEExtendFlag)
+{
+	fEExtendFlag_ = fEExtendFlag;
+	setParameter("FEExtendFlag", std::to_string(fEExtendFlag));
+}
+
+std::string GetEditingProjectRequest::getProjectId()const
+{
+	return projectId_;
+}
+
+void GetEditingProjectRequest::setProjectId(const std::string& projectId)
+{
+	projectId_ = projectId;
+	setParameter("ProjectId", projectId);
+}
+
 std::string GetEditingProjectRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -69,27 +102,5 @@ void GetEditingProjectRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", ownerId);
-}
-
-std::string GetEditingProjectRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void GetEditingProjectRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-
-std::string GetEditingProjectRequest::getProjectId()const
-{
-	return projectId_;
-}
-
-void GetEditingProjectRequest::setProjectId(const std::string& projectId)
-{
-	projectId_ = projectId;
-	setParameter("ProjectId", projectId);
 }
 

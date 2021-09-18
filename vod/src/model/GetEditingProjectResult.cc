@@ -60,6 +60,8 @@ void GetEditingProjectResult::parse(const std::string &payload)
 		project_.storageLocation = projectNode["StorageLocation"].asString();
 	if(!projectNode["RegionId"].isNull())
 		project_.regionId = projectNode["RegionId"].asString();
+	if(!projectNode["FEExtend"].isNull())
+		project_.fEExtend = projectNode["FEExtend"].asString();
 
 }
 

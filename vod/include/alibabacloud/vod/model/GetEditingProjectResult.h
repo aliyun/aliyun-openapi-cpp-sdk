@@ -38,6 +38,7 @@ namespace AlibabaCloud
 					std::string timeline;
 					std::string description;
 					std::string modifiedTime;
+					std::string fEExtend;
 					std::string projectId;
 					std::string creationTime;
 					std::string title;

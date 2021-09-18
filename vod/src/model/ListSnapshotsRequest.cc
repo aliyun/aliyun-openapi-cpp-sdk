@@ -27,17 +27,6 @@ ListSnapshotsRequest::ListSnapshotsRequest() :
 ListSnapshotsRequest::~ListSnapshotsRequest()
 {}
 
-long ListSnapshotsRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void ListSnapshotsRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
 std::string ListSnapshotsRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -71,17 +60,6 @@ void ListSnapshotsRequest::setAuthTimeout(const std::string& authTimeout)
 	setParameter("AuthTimeout", authTimeout);
 }
 
-std::string ListSnapshotsRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void ListSnapshotsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string ListSnapshotsRequest::getVideoId()const
 {
 	return videoId_;
@@ -91,17 +69,6 @@ void ListSnapshotsRequest::setVideoId(const std::string& videoId)
 {
 	videoId_ = videoId;
 	setParameter("VideoId", videoId);
-}
-
-long ListSnapshotsRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void ListSnapshotsRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ListSnapshotsRequest::getSnapshotType()const

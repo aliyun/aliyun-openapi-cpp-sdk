@@ -27,50 +27,6 @@ SubmitWorkflowJobRequest::SubmitWorkflowJobRequest() :
 SubmitWorkflowJobRequest::~SubmitWorkflowJobRequest()
 {}
 
-long SubmitWorkflowJobRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void SubmitWorkflowJobRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-std::string SubmitWorkflowJobRequest::getWorkflowId()const
-{
-	return workflowId_;
-}
-
-void SubmitWorkflowJobRequest::setWorkflowId(const std::string& workflowId)
-{
-	workflowId_ = workflowId;
-	setParameter("WorkflowId", workflowId);
-}
-
-std::string SubmitWorkflowJobRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void SubmitWorkflowJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-long SubmitWorkflowJobRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void SubmitWorkflowJobRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
-}
-
 std::string SubmitWorkflowJobRequest::getMediaId()const
 {
 	return mediaId_;
@@ -91,5 +47,16 @@ void SubmitWorkflowJobRequest::setFileUrl(const std::string& fileUrl)
 {
 	fileUrl_ = fileUrl;
 	setParameter("FileUrl", fileUrl);
+}
+
+std::string SubmitWorkflowJobRequest::getWorkflowId()const
+{
+	return workflowId_;
+}
+
+void SubmitWorkflowJobRequest::setWorkflowId(const std::string& workflowId)
+{
+	workflowId_ = workflowId;
+	setParameter("WorkflowId", workflowId);
 }
 

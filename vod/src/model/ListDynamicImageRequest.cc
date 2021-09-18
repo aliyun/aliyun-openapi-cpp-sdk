@@ -27,28 +27,6 @@ ListDynamicImageRequest::ListDynamicImageRequest() :
 ListDynamicImageRequest::~ListDynamicImageRequest()
 {}
 
-long ListDynamicImageRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void ListDynamicImageRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-std::string ListDynamicImageRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void ListDynamicImageRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string ListDynamicImageRequest::getVideoId()const
 {
 	return videoId_;
@@ -58,17 +36,6 @@ void ListDynamicImageRequest::setVideoId(const std::string& videoId)
 {
 	videoId_ = videoId;
 	setParameter("VideoId", videoId);
-}
-
-long ListDynamicImageRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void ListDynamicImageRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ListDynamicImageRequest::getAccessKeyId()const

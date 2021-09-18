@@ -35,30 +35,21 @@ namespace AlibabaCloud
 				GetMezzanineInfoRequest();
 				~GetMezzanineInfoRequest();
 
-				long getResourceOwnerId()const;
-				void setResourceOwnerId(long resourceOwnerId);
 				std::string getOutputType()const;
 				void setOutputType(const std::string& outputType);
 				long getAuthTimeout()const;
 				void setAuthTimeout(long authTimeout);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getVideoId()const;
 				void setVideoId(const std::string& videoId);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				bool getPreviewSegment()const;
 				void setPreviewSegment(bool previewSegment);
 				std::string getAdditionType()const;
 				void setAdditionType(const std::string& additionType);
 
             private:
-				long resourceOwnerId_;
 				std::string outputType_;
 				long authTimeout_;
-				std::string resourceOwnerAccount_;
 				std::string videoId_;
-				long ownerId_;
 				bool previewSegment_;
 				std::string additionType_;
 

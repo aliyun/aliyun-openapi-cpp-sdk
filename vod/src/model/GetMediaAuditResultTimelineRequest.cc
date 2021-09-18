@@ -27,39 +27,6 @@ GetMediaAuditResultTimelineRequest::GetMediaAuditResultTimelineRequest() :
 GetMediaAuditResultTimelineRequest::~GetMediaAuditResultTimelineRequest()
 {}
 
-long GetMediaAuditResultTimelineRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void GetMediaAuditResultTimelineRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-std::string GetMediaAuditResultTimelineRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void GetMediaAuditResultTimelineRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string GetMediaAuditResultTimelineRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void GetMediaAuditResultTimelineRequest::setOwnerId(const std::string& ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", ownerId);
-}
-
 std::string GetMediaAuditResultTimelineRequest::getMediaId()const
 {
 	return mediaId_;

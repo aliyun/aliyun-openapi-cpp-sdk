@@ -27,17 +27,6 @@ GetMezzanineInfoRequest::GetMezzanineInfoRequest() :
 GetMezzanineInfoRequest::~GetMezzanineInfoRequest()
 {}
 
-long GetMezzanineInfoRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void GetMezzanineInfoRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
 std::string GetMezzanineInfoRequest::getOutputType()const
 {
 	return outputType_;
@@ -60,17 +49,6 @@ void GetMezzanineInfoRequest::setAuthTimeout(long authTimeout)
 	setParameter("AuthTimeout", std::to_string(authTimeout));
 }
 
-std::string GetMezzanineInfoRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void GetMezzanineInfoRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string GetMezzanineInfoRequest::getVideoId()const
 {
 	return videoId_;
@@ -80,17 +58,6 @@ void GetMezzanineInfoRequest::setVideoId(const std::string& videoId)
 {
 	videoId_ = videoId;
 	setParameter("VideoId", videoId);
-}
-
-long GetMezzanineInfoRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void GetMezzanineInfoRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 bool GetMezzanineInfoRequest::getPreviewSegment()const

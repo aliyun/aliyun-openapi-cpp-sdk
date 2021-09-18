@@ -75,18 +75,18 @@ void GetAIMediaAuditJobResult::parse(const std::string &payload)
 			imageResultItemObject.type = dataNodeImageResultImageResultItem["Type"].asString();
 		if(!dataNodeImageResultImageResultItem["Url"].isNull())
 			imageResultItemObject.url = dataNodeImageResultImageResultItem["Url"].asString();
-		auto allResultNode = allImageResultNode["Result"]["ResultItem"];
-		for (auto allImageResultNodeResultResultItem : allResultNode)
+		auto allResultNode = dataNodeImageResultImageResultItem["Result"]["ResultItem"];
+		for (auto dataNodeImageResultImageResultItemResultResultItem : allResultNode)
 		{
 			MediaAuditJob::Data::ImageResultItem::ResultItem resultObject;
-			if(!allImageResultNodeResultResultItem["Suggestion"].isNull())
-				resultObject.suggestion = allImageResultNodeResultResultItem["Suggestion"].asString();
-			if(!allImageResultNodeResultResultItem["Label"].isNull())
-				resultObject.label = allImageResultNodeResultResultItem["Label"].asString();
-			if(!allImageResultNodeResultResultItem["Score"].isNull())
-				resultObject.score = allImageResultNodeResultResultItem["Score"].asString();
-			if(!allImageResultNodeResultResultItem["Scene"].isNull())
-				resultObject.scene = allImageResultNodeResultResultItem["Scene"].asString();
+			if(!dataNodeImageResultImageResultItemResultResultItem["Suggestion"].isNull())
+				resultObject.suggestion = dataNodeImageResultImageResultItemResultResultItem["Suggestion"].asString();
+			if(!dataNodeImageResultImageResultItemResultResultItem["Label"].isNull())
+				resultObject.label = dataNodeImageResultImageResultItemResultResultItem["Label"].asString();
+			if(!dataNodeImageResultImageResultItemResultResultItem["Score"].isNull())
+				resultObject.score = dataNodeImageResultImageResultItemResultResultItem["Score"].asString();
+			if(!dataNodeImageResultImageResultItemResultResultItem["Scene"].isNull())
+				resultObject.scene = dataNodeImageResultImageResultItemResultResultItem["Scene"].asString();
 			imageResultItemObject.result.push_back(resultObject);
 		}
 		mediaAuditJob_.data.imageResult.push_back(imageResultItemObject);
@@ -108,6 +108,20 @@ void GetAIMediaAuditJobResult::parse(const std::string &payload)
 		if(!dataNodeTextResultTextResultItem["Content"].isNull())
 			textResultItemObject.content = dataNodeTextResultTextResultItem["Content"].asString();
 		mediaAuditJob_.data.textResult.push_back(textResultItemObject);
+	}
+	auto allAudioResultNode = dataNode["AudioResult"]["AudioResultItem"];
+	for (auto dataNodeAudioResultAudioResultItem : allAudioResultNode)
+	{
+		MediaAuditJob::Data::AudioResultItem audioResultItemObject;
+		if(!dataNodeAudioResultAudioResultItem["Suggestion"].isNull())
+			audioResultItemObject.suggestion = dataNodeAudioResultAudioResultItem["Suggestion"].asString();
+		if(!dataNodeAudioResultAudioResultItem["Label"].isNull())
+			audioResultItemObject.label = dataNodeAudioResultAudioResultItem["Label"].asString();
+		if(!dataNodeAudioResultAudioResultItem["Scene"].isNull())
+			audioResultItemObject.scene = dataNodeAudioResultAudioResultItem["Scene"].asString();
+		if(!dataNodeAudioResultAudioResultItem["Score"].isNull())
+			audioResultItemObject.score = dataNodeAudioResultAudioResultItem["Score"].asString();
+		mediaAuditJob_.data.audioResult.push_back(audioResultItemObject);
 	}
 	auto videoResultNode = dataNode["VideoResult"];
 	if(!videoResultNode["Suggestion"].isNull())

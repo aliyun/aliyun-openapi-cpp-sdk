@@ -35,29 +35,20 @@ namespace AlibabaCloud
 				DeleteTranscodeTemplateGroupRequest();
 				~DeleteTranscodeTemplateGroupRequest();
 
-				long getResourceOwnerId()const;
-				void setResourceOwnerId(long resourceOwnerId);
 				std::string getTranscodeTemplateIds()const;
 				void setTranscodeTemplateIds(const std::string& transcodeTemplateIds);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getForceDelGroup()const;
-				void setForceDelGroup(const std::string& forceDelGroup);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getTranscodeTemplateGroupId()const;
 				void setTranscodeTemplateGroupId(const std::string& transcodeTemplateGroupId);
+				std::string getForceDelGroup()const;
+				void setForceDelGroup(const std::string& forceDelGroup);
 
             private:
-				long resourceOwnerId_;
 				std::string transcodeTemplateIds_;
 				std::string accessKeyId_;
-				std::string forceDelGroup_;
-				std::string resourceOwnerAccount_;
-				long ownerId_;
 				std::string transcodeTemplateGroupId_;
+				std::string forceDelGroup_;
 
 			};
 		}

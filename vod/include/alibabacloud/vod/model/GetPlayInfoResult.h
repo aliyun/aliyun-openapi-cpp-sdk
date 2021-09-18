@@ -39,6 +39,7 @@ namespace AlibabaCloud
 						std::string uRL;
 					};
 					std::string status;
+					std::string danMuURL;
 					std::string videoId;
 					std::string transcodeMode;
 					std::string creationTime;
