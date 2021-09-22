@@ -28,6 +28,17 @@ CreateK8sSecretRequest::CreateK8sSecretRequest() :
 CreateK8sSecretRequest::~CreateK8sSecretRequest()
 {}
 
+bool CreateK8sSecretRequest::getBase64Encoded()const
+{
+	return base64Encoded_;
+}
+
+void CreateK8sSecretRequest::setBase64Encoded(bool base64Encoded)
+{
+	base64Encoded_ = base64Encoded;
+	setBodyParameter("Base64Encoded", base64Encoded ? "true" : "false");
+}
+
 std::string CreateK8sSecretRequest::getData()const
 {
 	return data_;

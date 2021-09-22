@@ -43,46 +43,48 @@ void ListK8sIngressRulesResult::parse(const std::string &payload)
 	for (auto valueDataDataItem : allDataNode)
 	{
 		DataItem dataObject;
-		if(!valueDataDataItem["ClusterId"].isNull())
-			dataObject.clusterId = valueDataDataItem["ClusterId"].asString();
 		if(!valueDataDataItem["ClusterName"].isNull())
 			dataObject.clusterName = valueDataDataItem["ClusterName"].asString();
+		if(!valueDataDataItem["ClusterId"].isNull())
+			dataObject.clusterId = valueDataDataItem["ClusterId"].asString();
 		if(!valueDataDataItem["RegionId"].isNull())
 			dataObject.regionId = valueDataDataItem["RegionId"].asString();
 		auto allIngressConfsNode = valueDataDataItem["IngressConfs"]["IngressConfsItem"];
 		for (auto valueDataDataItemIngressConfsIngressConfsItem : allIngressConfsNode)
 		{
 			DataItem::IngressConfsItem ingressConfsObject;
-			if(!valueDataDataItemIngressConfsIngressConfsItem["Name"].isNull())
-				ingressConfsObject.name = valueDataDataItemIngressConfsIngressConfsItem["Name"].asString();
-			if(!valueDataDataItemIngressConfsIngressConfsItem["Namespace"].isNull())
-				ingressConfsObject._namespace = valueDataDataItemIngressConfsIngressConfsItem["Namespace"].asString();
-			if(!valueDataDataItemIngressConfsIngressConfsItem["Endpoint"].isNull())
-				ingressConfsObject.endpoint = valueDataDataItemIngressConfsIngressConfsItem["Endpoint"].asString();
 			if(!valueDataDataItemIngressConfsIngressConfsItem["CreationTime"].isNull())
 				ingressConfsObject.creationTime = valueDataDataItemIngressConfsIngressConfsItem["CreationTime"].asString();
+			if(!valueDataDataItemIngressConfsIngressConfsItem["SslRedirect"].isNull())
+				ingressConfsObject.sslRedirect = valueDataDataItemIngressConfsIngressConfsItem["SslRedirect"].asString() == "true";
+			if(!valueDataDataItemIngressConfsIngressConfsItem["Endpoint"].isNull())
+				ingressConfsObject.endpoint = valueDataDataItemIngressConfsIngressConfsItem["Endpoint"].asString();
+			if(!valueDataDataItemIngressConfsIngressConfsItem["Namespace"].isNull())
+				ingressConfsObject._namespace = valueDataDataItemIngressConfsIngressConfsItem["Namespace"].asString();
+			if(!valueDataDataItemIngressConfsIngressConfsItem["Name"].isNull())
+				ingressConfsObject.name = valueDataDataItemIngressConfsIngressConfsItem["Name"].asString();
 			if(!valueDataDataItemIngressConfsIngressConfsItem["DashboardUrl"].isNull())
 				ingressConfsObject.dashboardUrl = valueDataDataItemIngressConfsIngressConfsItem["DashboardUrl"].asString();
 			auto allRulesNode = valueDataDataItemIngressConfsIngressConfsItem["Rules"]["RulesItem"];
 			for (auto valueDataDataItemIngressConfsIngressConfsItemRulesRulesItem : allRulesNode)
 			{
 				DataItem::IngressConfsItem::RulesItem rulesObject;
-				if(!valueDataDataItemIngressConfsIngressConfsItemRulesRulesItem["Host"].isNull())
-					rulesObject.host = valueDataDataItemIngressConfsIngressConfsItemRulesRulesItem["Host"].asString();
 				if(!valueDataDataItemIngressConfsIngressConfsItemRulesRulesItem["SecretName"].isNull())
 					rulesObject.secretName = valueDataDataItemIngressConfsIngressConfsItemRulesRulesItem["SecretName"].asString();
+				if(!valueDataDataItemIngressConfsIngressConfsItemRulesRulesItem["Host"].isNull())
+					rulesObject.host = valueDataDataItemIngressConfsIngressConfsItemRulesRulesItem["Host"].asString();
 				auto allPathsNode = valueDataDataItemIngressConfsIngressConfsItemRulesRulesItem["Paths"]["PathsItem"];
 				for (auto valueDataDataItemIngressConfsIngressConfsItemRulesRulesItemPathsPathsItem : allPathsNode)
 				{
 					DataItem::IngressConfsItem::RulesItem::PathsItem pathsObject;
-					if(!valueDataDataItemIngressConfsIngressConfsItemRulesRulesItemPathsPathsItem["Path"].isNull())
-						pathsObject.path = valueDataDataItemIngressConfsIngressConfsItemRulesRulesItemPathsPathsItem["Path"].asString();
-					if(!valueDataDataItemIngressConfsIngressConfsItemRulesRulesItemPathsPathsItem["AppId"].isNull())
-						pathsObject.appId = valueDataDataItemIngressConfsIngressConfsItemRulesRulesItemPathsPathsItem["AppId"].asString();
-					if(!valueDataDataItemIngressConfsIngressConfsItemRulesRulesItemPathsPathsItem["AppName"].isNull())
-						pathsObject.appName = valueDataDataItemIngressConfsIngressConfsItemRulesRulesItemPathsPathsItem["AppName"].asString();
 					if(!valueDataDataItemIngressConfsIngressConfsItemRulesRulesItemPathsPathsItem["Status"].isNull())
 						pathsObject.status = valueDataDataItemIngressConfsIngressConfsItemRulesRulesItemPathsPathsItem["Status"].asString();
+					if(!valueDataDataItemIngressConfsIngressConfsItemRulesRulesItemPathsPathsItem["Path"].isNull())
+						pathsObject.path = valueDataDataItemIngressConfsIngressConfsItemRulesRulesItemPathsPathsItem["Path"].asString();
+					if(!valueDataDataItemIngressConfsIngressConfsItemRulesRulesItemPathsPathsItem["AppName"].isNull())
+						pathsObject.appName = valueDataDataItemIngressConfsIngressConfsItemRulesRulesItemPathsPathsItem["AppName"].asString();
+					if(!valueDataDataItemIngressConfsIngressConfsItemRulesRulesItemPathsPathsItem["AppId"].isNull())
+						pathsObject.appId = valueDataDataItemIngressConfsIngressConfsItemRulesRulesItemPathsPathsItem["AppId"].asString();
 					auto backendNode = value["Backend"];
 					if(!backendNode["ServiceName"].isNull())
 						pathsObject.backend.serviceName = backendNode["ServiceName"].asString();

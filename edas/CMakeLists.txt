@@ -51,6 +51,8 @@ set(edas_public_header_model
 	include/alibabacloud/edas/model/ConvertK8sResourceResult.h
 	include/alibabacloud/edas/model/CreateApplicationScalingRuleRequest.h
 	include/alibabacloud/edas/model/CreateApplicationScalingRuleResult.h
+	include/alibabacloud/edas/model/CreateApplicationTemplateRequest.h
+	include/alibabacloud/edas/model/CreateApplicationTemplateResult.h
 	include/alibabacloud/edas/model/CreateEnvAppGroupRequest.h
 	include/alibabacloud/edas/model/CreateEnvAppGroupResult.h
 	include/alibabacloud/edas/model/CreateEnvHsfTrafficControlRequest.h
@@ -486,6 +488,8 @@ set(edas_src
 	src/model/ConvertK8sResourceResult.cc
 	src/model/CreateApplicationScalingRuleRequest.cc
 	src/model/CreateApplicationScalingRuleResult.cc
+	src/model/CreateApplicationTemplateRequest.cc
+	src/model/CreateApplicationTemplateResult.cc
 	src/model/CreateEnvAppGroupRequest.cc
 	src/model/CreateEnvAppGroupResult.cc
 	src/model/CreateEnvHsfTrafficControlRequest.cc

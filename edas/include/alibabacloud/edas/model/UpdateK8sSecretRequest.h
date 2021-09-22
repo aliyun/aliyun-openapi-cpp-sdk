@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				UpdateK8sSecretRequest();
 				~UpdateK8sSecretRequest();
 
+				bool getBase64Encoded()const;
+				void setBase64Encoded(bool base64Encoded);
 				std::string getData()const;
 				void setData(const std::string& data);
 				std::string getName()const;
@@ -51,6 +53,7 @@ namespace AlibabaCloud
 				void setCertRegionId(const std::string& certRegionId);
 
             private:
+				bool base64Encoded_;
 				std::string data_;
 				std::string name_;
 				std::string _namespace_;

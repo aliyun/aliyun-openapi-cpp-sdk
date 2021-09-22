@@ -28,6 +28,17 @@ UpdateK8sSecretRequest::UpdateK8sSecretRequest() :
 UpdateK8sSecretRequest::~UpdateK8sSecretRequest()
 {}
 
+bool UpdateK8sSecretRequest::getBase64Encoded()const
+{
+	return base64Encoded_;
+}
+
+void UpdateK8sSecretRequest::setBase64Encoded(bool base64Encoded)
+{
+	base64Encoded_ = base64Encoded;
+	setBodyParameter("Base64Encoded", base64Encoded ? "true" : "false");
+}
+
 std::string UpdateK8sSecretRequest::getData()const
 {
 	return data_;

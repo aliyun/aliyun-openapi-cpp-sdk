@@ -52,6 +52,8 @@
 #include "model/ConvertK8sResourceResult.h"
 #include "model/CreateApplicationScalingRuleRequest.h"
 #include "model/CreateApplicationScalingRuleResult.h"
+#include "model/CreateApplicationTemplateRequest.h"
+#include "model/CreateApplicationTemplateResult.h"
 #include "model/CreateEnvAppGroupRequest.h"
 #include "model/CreateEnvAppGroupResult.h"
 #include "model/CreateEnvHsfTrafficControlRequest.h"
@@ -508,6 +510,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateApplicationScalingRuleResult> CreateApplicationScalingRuleOutcome;
 			typedef std::future<CreateApplicationScalingRuleOutcome> CreateApplicationScalingRuleOutcomeCallable;
 			typedef std::function<void(const EdasClient*, const Model::CreateApplicationScalingRuleRequest&, const CreateApplicationScalingRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateApplicationScalingRuleAsyncHandler;
+			typedef Outcome<Error, Model::CreateApplicationTemplateResult> CreateApplicationTemplateOutcome;
+			typedef std::future<CreateApplicationTemplateOutcome> CreateApplicationTemplateOutcomeCallable;
+			typedef std::function<void(const EdasClient*, const Model::CreateApplicationTemplateRequest&, const CreateApplicationTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateApplicationTemplateAsyncHandler;
 			typedef Outcome<Error, Model::CreateEnvAppGroupResult> CreateEnvAppGroupOutcome;
 			typedef std::future<CreateEnvAppGroupOutcome> CreateEnvAppGroupOutcomeCallable;
 			typedef std::function<void(const EdasClient*, const Model::CreateEnvAppGroupRequest&, const CreateEnvAppGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateEnvAppGroupAsyncHandler;
@@ -1161,6 +1166,9 @@ namespace AlibabaCloud
 			CreateApplicationScalingRuleOutcome createApplicationScalingRule(const Model::CreateApplicationScalingRuleRequest &request)const;
 			void createApplicationScalingRuleAsync(const Model::CreateApplicationScalingRuleRequest& request, const CreateApplicationScalingRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateApplicationScalingRuleOutcomeCallable createApplicationScalingRuleCallable(const Model::CreateApplicationScalingRuleRequest& request) const;
+			CreateApplicationTemplateOutcome createApplicationTemplate(const Model::CreateApplicationTemplateRequest &request)const;
+			void createApplicationTemplateAsync(const Model::CreateApplicationTemplateRequest& request, const CreateApplicationTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateApplicationTemplateOutcomeCallable createApplicationTemplateCallable(const Model::CreateApplicationTemplateRequest& request) const;
 			CreateEnvAppGroupOutcome createEnvAppGroup(const Model::CreateEnvAppGroupRequest &request)const;
 			void createEnvAppGroupAsync(const Model::CreateEnvAppGroupRequest& request, const CreateEnvAppGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateEnvAppGroupOutcomeCallable createEnvAppGroupCallable(const Model::CreateEnvAppGroupRequest& request) const;

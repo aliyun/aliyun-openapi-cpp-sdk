@@ -591,6 +591,42 @@ EdasClient::CreateApplicationScalingRuleOutcomeCallable EdasClient::createApplic
 	return task->get_future();
 }
 
+EdasClient::CreateApplicationTemplateOutcome EdasClient::createApplicationTemplate(const CreateApplicationTemplateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateApplicationTemplateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateApplicationTemplateOutcome(CreateApplicationTemplateResult(outcome.result()));
+	else
+		return CreateApplicationTemplateOutcome(outcome.error());
+}
+
+void EdasClient::createApplicationTemplateAsync(const CreateApplicationTemplateRequest& request, const CreateApplicationTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createApplicationTemplate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EdasClient::CreateApplicationTemplateOutcomeCallable EdasClient::createApplicationTemplateCallable(const CreateApplicationTemplateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateApplicationTemplateOutcome()>>(
+			[this, request]()
+			{
+			return this->createApplicationTemplate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EdasClient::CreateEnvAppGroupOutcome EdasClient::createEnvAppGroup(const CreateEnvAppGroupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

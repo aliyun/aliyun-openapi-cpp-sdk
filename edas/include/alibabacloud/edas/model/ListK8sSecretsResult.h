@@ -36,26 +36,48 @@ namespace AlibabaCloud
 				{
 					struct SecretsItem
 					{
+						struct CertDetail
+						{
+							std::string status;
+							std::string endTime;
+							std::string issuer;
+							std::string startTime;
+							std::vector<std::string> domainNames;
+						};
+						struct RelatedIngressRulesItem
+						{
+							struct RelatedAppsItem
+							{
+								std::string appId;
+								std::string appName;
+							};
+							std::vector<RelatedIngressRulesItem::RelatedAppsItem> relatedApps1;
+							std::string _namespace;
+							std::string name;
+						};
 						struct DataItem
 						{
 							std::string value;
 							std::string key;
 						};
-						struct RelatedAppsItem
+						struct RelatedAppsItem2
 						{
 							std::string appId;
 							std::string appName;
 						};
-						std::string type;
-						std::vector<SecretsItem::RelatedAppsItem> relatedApps;
+						std::vector<SecretsItem::RelatedAppsItem2> relatedApps;
 						std::string clusterId;
 						std::string certId;
-						std::string certRegionId;
-						std::string creationTime;
-						std::string clusterName;
 						std::vector<SecretsItem::DataItem> data;
 						std::string _namespace;
 						std::string name;
+						std::string type;
+						std::vector<SecretsItem::RelatedIngressRulesItem> relatedIngressRules;
+						CertDetail certDetail;
+						std::string certRegionId;
+						std::string creationTime;
+						std::string clusterName;
+						bool base64Encoded;
 					};
 					std::vector<ResultItem::SecretsItem> secrets;
 					int total;

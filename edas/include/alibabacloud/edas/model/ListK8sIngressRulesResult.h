@@ -45,8 +45,8 @@ namespace AlibabaCloud
 									std::string servicePort;
 									std::string serviceName;
 								};
-								std::string path;
 								std::string status;
+								std::string path;
 								Backend backend;
 								std::string appId;
 								std::string appName;
@@ -55,6 +55,7 @@ namespace AlibabaCloud
 							std::string host;
 							std::vector<RulesItem::PathsItem> paths;
 						};
+						bool sslRedirect;
 						std::string endpoint;
 						std::string creationTime;
 						std::string _namespace;
