@@ -224,3 +224,14 @@ void UpdateDnsGtmAccessStrategyRequest::setFailoverAddrPool(const std::vector<Fa
 	}
 }
 
+std::string UpdateDnsGtmAccessStrategyRequest::getAccessMode()const
+{
+	return accessMode_;
+}
+
+void UpdateDnsGtmAccessStrategyRequest::setAccessMode(const std::string& accessMode)
+{
+	accessMode_ = accessMode;
+	setParameter("AccessMode", accessMode);
+}
+

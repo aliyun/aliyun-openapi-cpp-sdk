@@ -663,6 +663,78 @@ AlidnsClient::CopyGtmConfigOutcomeCallable AlidnsClient::copyGtmConfigCallable(c
 	return task->get_future();
 }
 
+AlidnsClient::CreatePdnsAppKeyOutcome AlidnsClient::createPdnsAppKey(const CreatePdnsAppKeyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreatePdnsAppKeyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreatePdnsAppKeyOutcome(CreatePdnsAppKeyResult(outcome.result()));
+	else
+		return CreatePdnsAppKeyOutcome(outcome.error());
+}
+
+void AlidnsClient::createPdnsAppKeyAsync(const CreatePdnsAppKeyRequest& request, const CreatePdnsAppKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createPdnsAppKey(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::CreatePdnsAppKeyOutcomeCallable AlidnsClient::createPdnsAppKeyCallable(const CreatePdnsAppKeyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreatePdnsAppKeyOutcome()>>(
+			[this, request]()
+			{
+			return this->createPdnsAppKey(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlidnsClient::CreatePdnsUdpIpSegmentOutcome AlidnsClient::createPdnsUdpIpSegment(const CreatePdnsUdpIpSegmentRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreatePdnsUdpIpSegmentOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreatePdnsUdpIpSegmentOutcome(CreatePdnsUdpIpSegmentResult(outcome.result()));
+	else
+		return CreatePdnsUdpIpSegmentOutcome(outcome.error());
+}
+
+void AlidnsClient::createPdnsUdpIpSegmentAsync(const CreatePdnsUdpIpSegmentRequest& request, const CreatePdnsUdpIpSegmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createPdnsUdpIpSegment(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::CreatePdnsUdpIpSegmentOutcomeCallable AlidnsClient::createPdnsUdpIpSegmentCallable(const CreatePdnsUdpIpSegmentRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreatePdnsUdpIpSegmentOutcome()>>(
+			[this, request]()
+			{
+			return this->createPdnsUdpIpSegment(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AlidnsClient::DeleteCustomLinesOutcome AlidnsClient::deleteCustomLines(const DeleteCustomLinesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3075,6 +3147,402 @@ AlidnsClient::DescribeInstanceDomainsOutcomeCallable AlidnsClient::describeInsta
 	return task->get_future();
 }
 
+AlidnsClient::DescribePdnsAccountSummaryOutcome AlidnsClient::describePdnsAccountSummary(const DescribePdnsAccountSummaryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribePdnsAccountSummaryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribePdnsAccountSummaryOutcome(DescribePdnsAccountSummaryResult(outcome.result()));
+	else
+		return DescribePdnsAccountSummaryOutcome(outcome.error());
+}
+
+void AlidnsClient::describePdnsAccountSummaryAsync(const DescribePdnsAccountSummaryRequest& request, const DescribePdnsAccountSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describePdnsAccountSummary(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::DescribePdnsAccountSummaryOutcomeCallable AlidnsClient::describePdnsAccountSummaryCallable(const DescribePdnsAccountSummaryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribePdnsAccountSummaryOutcome()>>(
+			[this, request]()
+			{
+			return this->describePdnsAccountSummary(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlidnsClient::DescribePdnsAppKeyOutcome AlidnsClient::describePdnsAppKey(const DescribePdnsAppKeyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribePdnsAppKeyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribePdnsAppKeyOutcome(DescribePdnsAppKeyResult(outcome.result()));
+	else
+		return DescribePdnsAppKeyOutcome(outcome.error());
+}
+
+void AlidnsClient::describePdnsAppKeyAsync(const DescribePdnsAppKeyRequest& request, const DescribePdnsAppKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describePdnsAppKey(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::DescribePdnsAppKeyOutcomeCallable AlidnsClient::describePdnsAppKeyCallable(const DescribePdnsAppKeyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribePdnsAppKeyOutcome()>>(
+			[this, request]()
+			{
+			return this->describePdnsAppKey(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlidnsClient::DescribePdnsAppKeysOutcome AlidnsClient::describePdnsAppKeys(const DescribePdnsAppKeysRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribePdnsAppKeysOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribePdnsAppKeysOutcome(DescribePdnsAppKeysResult(outcome.result()));
+	else
+		return DescribePdnsAppKeysOutcome(outcome.error());
+}
+
+void AlidnsClient::describePdnsAppKeysAsync(const DescribePdnsAppKeysRequest& request, const DescribePdnsAppKeysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describePdnsAppKeys(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::DescribePdnsAppKeysOutcomeCallable AlidnsClient::describePdnsAppKeysCallable(const DescribePdnsAppKeysRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribePdnsAppKeysOutcome()>>(
+			[this, request]()
+			{
+			return this->describePdnsAppKeys(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlidnsClient::DescribePdnsOperateLogsOutcome AlidnsClient::describePdnsOperateLogs(const DescribePdnsOperateLogsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribePdnsOperateLogsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribePdnsOperateLogsOutcome(DescribePdnsOperateLogsResult(outcome.result()));
+	else
+		return DescribePdnsOperateLogsOutcome(outcome.error());
+}
+
+void AlidnsClient::describePdnsOperateLogsAsync(const DescribePdnsOperateLogsRequest& request, const DescribePdnsOperateLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describePdnsOperateLogs(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::DescribePdnsOperateLogsOutcomeCallable AlidnsClient::describePdnsOperateLogsCallable(const DescribePdnsOperateLogsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribePdnsOperateLogsOutcome()>>(
+			[this, request]()
+			{
+			return this->describePdnsOperateLogs(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlidnsClient::DescribePdnsRequestStatisticOutcome AlidnsClient::describePdnsRequestStatistic(const DescribePdnsRequestStatisticRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribePdnsRequestStatisticOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribePdnsRequestStatisticOutcome(DescribePdnsRequestStatisticResult(outcome.result()));
+	else
+		return DescribePdnsRequestStatisticOutcome(outcome.error());
+}
+
+void AlidnsClient::describePdnsRequestStatisticAsync(const DescribePdnsRequestStatisticRequest& request, const DescribePdnsRequestStatisticAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describePdnsRequestStatistic(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::DescribePdnsRequestStatisticOutcomeCallable AlidnsClient::describePdnsRequestStatisticCallable(const DescribePdnsRequestStatisticRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribePdnsRequestStatisticOutcome()>>(
+			[this, request]()
+			{
+			return this->describePdnsRequestStatistic(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlidnsClient::DescribePdnsRequestStatisticsOutcome AlidnsClient::describePdnsRequestStatistics(const DescribePdnsRequestStatisticsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribePdnsRequestStatisticsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribePdnsRequestStatisticsOutcome(DescribePdnsRequestStatisticsResult(outcome.result()));
+	else
+		return DescribePdnsRequestStatisticsOutcome(outcome.error());
+}
+
+void AlidnsClient::describePdnsRequestStatisticsAsync(const DescribePdnsRequestStatisticsRequest& request, const DescribePdnsRequestStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describePdnsRequestStatistics(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::DescribePdnsRequestStatisticsOutcomeCallable AlidnsClient::describePdnsRequestStatisticsCallable(const DescribePdnsRequestStatisticsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribePdnsRequestStatisticsOutcome()>>(
+			[this, request]()
+			{
+			return this->describePdnsRequestStatistics(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlidnsClient::DescribePdnsThreatLogsOutcome AlidnsClient::describePdnsThreatLogs(const DescribePdnsThreatLogsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribePdnsThreatLogsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribePdnsThreatLogsOutcome(DescribePdnsThreatLogsResult(outcome.result()));
+	else
+		return DescribePdnsThreatLogsOutcome(outcome.error());
+}
+
+void AlidnsClient::describePdnsThreatLogsAsync(const DescribePdnsThreatLogsRequest& request, const DescribePdnsThreatLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describePdnsThreatLogs(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::DescribePdnsThreatLogsOutcomeCallable AlidnsClient::describePdnsThreatLogsCallable(const DescribePdnsThreatLogsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribePdnsThreatLogsOutcome()>>(
+			[this, request]()
+			{
+			return this->describePdnsThreatLogs(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlidnsClient::DescribePdnsThreatStatisticOutcome AlidnsClient::describePdnsThreatStatistic(const DescribePdnsThreatStatisticRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribePdnsThreatStatisticOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribePdnsThreatStatisticOutcome(DescribePdnsThreatStatisticResult(outcome.result()));
+	else
+		return DescribePdnsThreatStatisticOutcome(outcome.error());
+}
+
+void AlidnsClient::describePdnsThreatStatisticAsync(const DescribePdnsThreatStatisticRequest& request, const DescribePdnsThreatStatisticAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describePdnsThreatStatistic(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::DescribePdnsThreatStatisticOutcomeCallable AlidnsClient::describePdnsThreatStatisticCallable(const DescribePdnsThreatStatisticRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribePdnsThreatStatisticOutcome()>>(
+			[this, request]()
+			{
+			return this->describePdnsThreatStatistic(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlidnsClient::DescribePdnsThreatStatisticsOutcome AlidnsClient::describePdnsThreatStatistics(const DescribePdnsThreatStatisticsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribePdnsThreatStatisticsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribePdnsThreatStatisticsOutcome(DescribePdnsThreatStatisticsResult(outcome.result()));
+	else
+		return DescribePdnsThreatStatisticsOutcome(outcome.error());
+}
+
+void AlidnsClient::describePdnsThreatStatisticsAsync(const DescribePdnsThreatStatisticsRequest& request, const DescribePdnsThreatStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describePdnsThreatStatistics(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::DescribePdnsThreatStatisticsOutcomeCallable AlidnsClient::describePdnsThreatStatisticsCallable(const DescribePdnsThreatStatisticsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribePdnsThreatStatisticsOutcome()>>(
+			[this, request]()
+			{
+			return this->describePdnsThreatStatistics(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlidnsClient::DescribePdnsUdpIpSegmentsOutcome AlidnsClient::describePdnsUdpIpSegments(const DescribePdnsUdpIpSegmentsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribePdnsUdpIpSegmentsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribePdnsUdpIpSegmentsOutcome(DescribePdnsUdpIpSegmentsResult(outcome.result()));
+	else
+		return DescribePdnsUdpIpSegmentsOutcome(outcome.error());
+}
+
+void AlidnsClient::describePdnsUdpIpSegmentsAsync(const DescribePdnsUdpIpSegmentsRequest& request, const DescribePdnsUdpIpSegmentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describePdnsUdpIpSegments(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::DescribePdnsUdpIpSegmentsOutcomeCallable AlidnsClient::describePdnsUdpIpSegmentsCallable(const DescribePdnsUdpIpSegmentsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribePdnsUdpIpSegmentsOutcome()>>(
+			[this, request]()
+			{
+			return this->describePdnsUdpIpSegments(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlidnsClient::DescribePdnsUserInfoOutcome AlidnsClient::describePdnsUserInfo(const DescribePdnsUserInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribePdnsUserInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribePdnsUserInfoOutcome(DescribePdnsUserInfoResult(outcome.result()));
+	else
+		return DescribePdnsUserInfoOutcome(outcome.error());
+}
+
+void AlidnsClient::describePdnsUserInfoAsync(const DescribePdnsUserInfoRequest& request, const DescribePdnsUserInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describePdnsUserInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::DescribePdnsUserInfoOutcomeCallable AlidnsClient::describePdnsUserInfoCallable(const DescribePdnsUserInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribePdnsUserInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->describePdnsUserInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AlidnsClient::DescribeRecordLogsOutcome AlidnsClient::describeRecordLogs(const DescribeRecordLogsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3615,6 +4083,42 @@ AlidnsClient::OperateBatchDomainOutcomeCallable AlidnsClient::operateBatchDomain
 	return task->get_future();
 }
 
+AlidnsClient::PausePdnsServiceOutcome AlidnsClient::pausePdnsService(const PausePdnsServiceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return PausePdnsServiceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return PausePdnsServiceOutcome(PausePdnsServiceResult(outcome.result()));
+	else
+		return PausePdnsServiceOutcome(outcome.error());
+}
+
+void AlidnsClient::pausePdnsServiceAsync(const PausePdnsServiceRequest& request, const PausePdnsServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, pausePdnsService(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::PausePdnsServiceOutcomeCallable AlidnsClient::pausePdnsServiceCallable(const PausePdnsServiceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<PausePdnsServiceOutcome()>>(
+			[this, request]()
+			{
+			return this->pausePdnsService(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AlidnsClient::PreviewGtmRecoveryPlanOutcome AlidnsClient::previewGtmRecoveryPlan(const PreviewGtmRecoveryPlanRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3645,6 +4149,114 @@ AlidnsClient::PreviewGtmRecoveryPlanOutcomeCallable AlidnsClient::previewGtmReco
 			[this, request]()
 			{
 			return this->previewGtmRecoveryPlan(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlidnsClient::RemovePdnsAppKeyOutcome AlidnsClient::removePdnsAppKey(const RemovePdnsAppKeyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RemovePdnsAppKeyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RemovePdnsAppKeyOutcome(RemovePdnsAppKeyResult(outcome.result()));
+	else
+		return RemovePdnsAppKeyOutcome(outcome.error());
+}
+
+void AlidnsClient::removePdnsAppKeyAsync(const RemovePdnsAppKeyRequest& request, const RemovePdnsAppKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, removePdnsAppKey(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::RemovePdnsAppKeyOutcomeCallable AlidnsClient::removePdnsAppKeyCallable(const RemovePdnsAppKeyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RemovePdnsAppKeyOutcome()>>(
+			[this, request]()
+			{
+			return this->removePdnsAppKey(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlidnsClient::RemovePdnsUdpIpSegmentOutcome AlidnsClient::removePdnsUdpIpSegment(const RemovePdnsUdpIpSegmentRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RemovePdnsUdpIpSegmentOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RemovePdnsUdpIpSegmentOutcome(RemovePdnsUdpIpSegmentResult(outcome.result()));
+	else
+		return RemovePdnsUdpIpSegmentOutcome(outcome.error());
+}
+
+void AlidnsClient::removePdnsUdpIpSegmentAsync(const RemovePdnsUdpIpSegmentRequest& request, const RemovePdnsUdpIpSegmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, removePdnsUdpIpSegment(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::RemovePdnsUdpIpSegmentOutcomeCallable AlidnsClient::removePdnsUdpIpSegmentCallable(const RemovePdnsUdpIpSegmentRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RemovePdnsUdpIpSegmentOutcome()>>(
+			[this, request]()
+			{
+			return this->removePdnsUdpIpSegment(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlidnsClient::ResumePdnsServiceOutcome AlidnsClient::resumePdnsService(const ResumePdnsServiceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ResumePdnsServiceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ResumePdnsServiceOutcome(ResumePdnsServiceResult(outcome.result()));
+	else
+		return ResumePdnsServiceOutcome(outcome.error());
+}
+
+void AlidnsClient::resumePdnsServiceAsync(const ResumePdnsServiceRequest& request, const ResumePdnsServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, resumePdnsService(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::ResumePdnsServiceOutcomeCallable AlidnsClient::resumePdnsServiceCallable(const ResumePdnsServiceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ResumePdnsServiceOutcome()>>(
+			[this, request]()
+			{
+			return this->resumePdnsService(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4149,6 +4761,42 @@ AlidnsClient::UntagResourcesOutcomeCallable AlidnsClient::untagResourcesCallable
 			[this, request]()
 			{
 			return this->untagResources(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlidnsClient::UpdateAppKeyStateOutcome AlidnsClient::updateAppKeyState(const UpdateAppKeyStateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateAppKeyStateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateAppKeyStateOutcome(UpdateAppKeyStateResult(outcome.result()));
+	else
+		return UpdateAppKeyStateOutcome(outcome.error());
+}
+
+void AlidnsClient::updateAppKeyStateAsync(const UpdateAppKeyStateRequest& request, const UpdateAppKeyStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateAppKeyState(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::UpdateAppKeyStateOutcomeCallable AlidnsClient::updateAppKeyStateCallable(const UpdateAppKeyStateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateAppKeyStateOutcome()>>(
+			[this, request]()
+			{
+			return this->updateAppKeyState(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4761,6 +5409,78 @@ AlidnsClient::UpdateGtmRecoveryPlanOutcomeCallable AlidnsClient::updateGtmRecove
 			[this, request]()
 			{
 			return this->updateGtmRecoveryPlan(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlidnsClient::ValidateDnsGtmCnameRrCanUseOutcome AlidnsClient::validateDnsGtmCnameRrCanUse(const ValidateDnsGtmCnameRrCanUseRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ValidateDnsGtmCnameRrCanUseOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ValidateDnsGtmCnameRrCanUseOutcome(ValidateDnsGtmCnameRrCanUseResult(outcome.result()));
+	else
+		return ValidateDnsGtmCnameRrCanUseOutcome(outcome.error());
+}
+
+void AlidnsClient::validateDnsGtmCnameRrCanUseAsync(const ValidateDnsGtmCnameRrCanUseRequest& request, const ValidateDnsGtmCnameRrCanUseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, validateDnsGtmCnameRrCanUse(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::ValidateDnsGtmCnameRrCanUseOutcomeCallable AlidnsClient::validateDnsGtmCnameRrCanUseCallable(const ValidateDnsGtmCnameRrCanUseRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ValidateDnsGtmCnameRrCanUseOutcome()>>(
+			[this, request]()
+			{
+			return this->validateDnsGtmCnameRrCanUse(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlidnsClient::ValidatePdnsUdpIpSegmentOutcome AlidnsClient::validatePdnsUdpIpSegment(const ValidatePdnsUdpIpSegmentRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ValidatePdnsUdpIpSegmentOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ValidatePdnsUdpIpSegmentOutcome(ValidatePdnsUdpIpSegmentResult(outcome.result()));
+	else
+		return ValidatePdnsUdpIpSegmentOutcome(outcome.error());
+}
+
+void AlidnsClient::validatePdnsUdpIpSegmentAsync(const ValidatePdnsUdpIpSegmentRequest& request, const ValidatePdnsUdpIpSegmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, validatePdnsUdpIpSegment(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::ValidatePdnsUdpIpSegmentOutcomeCallable AlidnsClient::validatePdnsUdpIpSegmentCallable(const ValidatePdnsUdpIpSegmentRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ValidatePdnsUdpIpSegmentOutcome()>>(
+			[this, request]()
+			{
+			return this->validatePdnsUdpIpSegment(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

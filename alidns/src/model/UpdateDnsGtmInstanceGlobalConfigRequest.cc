@@ -71,6 +71,7 @@ void UpdateDnsGtmInstanceGlobalConfigRequest::setAlertConfig(const std::vector<A
 	for(int dep1 = 0; dep1!= alertConfig.size(); dep1++) {
 		auto alertConfigObj = alertConfig.at(dep1);
 		std::string alertConfigObjStr = "AlertConfig." + std::to_string(dep1 + 1);
+		setParameter(alertConfigObjStr + ".DingtalkNotice", alertConfigObj.dingtalkNotice ? "true" : "false");
 		setParameter(alertConfigObjStr + ".SmsNotice", alertConfigObj.smsNotice ? "true" : "false");
 		setParameter(alertConfigObjStr + ".NoticeType", alertConfigObj.noticeType);
 		setParameter(alertConfigObjStr + ".EmailNotice", alertConfigObj.emailNotice ? "true" : "false");
@@ -110,6 +111,17 @@ void UpdateDnsGtmInstanceGlobalConfigRequest::setTtl(int ttl)
 	setParameter("Ttl", std::to_string(ttl));
 }
 
+bool UpdateDnsGtmInstanceGlobalConfigRequest::getForceUpdate()const
+{
+	return forceUpdate_;
+}
+
+void UpdateDnsGtmInstanceGlobalConfigRequest::setForceUpdate(bool forceUpdate)
+{
+	forceUpdate_ = forceUpdate;
+	setParameter("ForceUpdate", forceUpdate ? "true" : "false");
+}
+
 std::string UpdateDnsGtmInstanceGlobalConfigRequest::getInstanceId()const
 {
 	return instanceId_;
@@ -130,6 +142,17 @@ void UpdateDnsGtmInstanceGlobalConfigRequest::setInstanceName(const std::string&
 {
 	instanceName_ = instanceName;
 	setParameter("InstanceName", instanceName);
+}
+
+std::string UpdateDnsGtmInstanceGlobalConfigRequest::getPublicRr()const
+{
+	return publicRr_;
+}
+
+void UpdateDnsGtmInstanceGlobalConfigRequest::setPublicRr(const std::string& publicRr)
+{
+	publicRr_ = publicRr;
+	setParameter("PublicRr", publicRr);
 }
 
 std::string UpdateDnsGtmInstanceGlobalConfigRequest::getUserClientIp()const

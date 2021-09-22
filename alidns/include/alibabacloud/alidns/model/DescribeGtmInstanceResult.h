@@ -40,11 +40,12 @@ namespace AlibabaCloud
 				long getExpireTimestamp()const;
 				std::string getUserDomainName()const;
 				std::string getLbaStrategy()const;
+				std::string getResourceGroupId()const;
 				std::string getInstanceId()const;
 				std::string getCreateTime()const;
 				std::string getCnameMode()const;
-				std::string getCname()const;
 				int getTtl()const;
+				std::string getCname()const;
 				std::string getInstanceName()const;
 				std::string getVersionCode()const;
 				std::string getAlertGroup()const;
@@ -59,11 +60,12 @@ namespace AlibabaCloud
 				long expireTimestamp_;
 				std::string userDomainName_;
 				std::string lbaStrategy_;
+				std::string resourceGroupId_;
 				std::string instanceId_;
 				std::string createTime_;
 				std::string cnameMode_;
-				std::string cname_;
 				int ttl_;
+				std::string cname_;
 				std::string instanceName_;
 				std::string versionCode_;
 				std::string alertGroup_;

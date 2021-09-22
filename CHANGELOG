@@ -1,3 +1,6 @@
+2021-09-22 Version: 1.36.881
+- Supported API for GTM.
+
 2021-09-22 Version: 1.36.880
 - Modify CreateK8sSecret.
 

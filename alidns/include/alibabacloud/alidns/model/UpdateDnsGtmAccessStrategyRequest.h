@@ -80,6 +80,8 @@ namespace AlibabaCloud
 				void setStrategyId(const std::string& strategyId);
 				std::vector<FailoverAddrPool> getFailoverAddrPool()const;
 				void setFailoverAddrPool(const std::vector<FailoverAddrPool>& failoverAddrPool);
+				std::string getAccessMode()const;
+				void setAccessMode(const std::string& accessMode);
 
             private:
 				std::string defaultLbaStrategy_;
@@ -99,6 +101,7 @@ namespace AlibabaCloud
 				std::string userClientIp_;
 				std::string strategyId_;
 				std::vector<FailoverAddrPool> failoverAddrPool_;
+				std::string accessMode_;
 
 			};
 		}

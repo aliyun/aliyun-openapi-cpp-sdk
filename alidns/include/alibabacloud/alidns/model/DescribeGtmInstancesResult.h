@@ -37,11 +37,12 @@ namespace AlibabaCloud
 					long expireTimestamp;
 					std::string userDomainName;
 					std::string lbaStrategy;
+					std::string resourceGroupId;
 					std::string instanceId;
 					std::string createTime;
 					std::string cnameMode;
-					std::string cname;
 					int ttl;
+					std::string cname;
 					std::string instanceName;
 					std::string versionCode;
 					std::string alertGroup;

@@ -43,46 +43,48 @@ void DescribeGtmInstancesResult::parse(const std::string &payload)
 	for (auto valueGtmInstancesGtmInstance : allGtmInstancesNode)
 	{
 		GtmInstance gtmInstancesObject;
-		if(!valueGtmInstancesGtmInstance["InstanceId"].isNull())
-			gtmInstancesObject.instanceId = valueGtmInstancesGtmInstance["InstanceId"].asString();
-		if(!valueGtmInstancesGtmInstance["InstanceName"].isNull())
-			gtmInstancesObject.instanceName = valueGtmInstancesGtmInstance["InstanceName"].asString();
-		if(!valueGtmInstancesGtmInstance["Cname"].isNull())
-			gtmInstancesObject.cname = valueGtmInstancesGtmInstance["Cname"].asString();
-		if(!valueGtmInstancesGtmInstance["UserDomainName"].isNull())
-			gtmInstancesObject.userDomainName = valueGtmInstancesGtmInstance["UserDomainName"].asString();
-		if(!valueGtmInstancesGtmInstance["VersionCode"].isNull())
-			gtmInstancesObject.versionCode = valueGtmInstancesGtmInstance["VersionCode"].asString();
-		if(!valueGtmInstancesGtmInstance["Ttl"].isNull())
-			gtmInstancesObject.ttl = std::stoi(valueGtmInstancesGtmInstance["Ttl"].asString());
-		if(!valueGtmInstancesGtmInstance["LbaStrategy"].isNull())
-			gtmInstancesObject.lbaStrategy = valueGtmInstancesGtmInstance["LbaStrategy"].asString();
-		if(!valueGtmInstancesGtmInstance["CreateTime"].isNull())
-			gtmInstancesObject.createTime = valueGtmInstancesGtmInstance["CreateTime"].asString();
-		if(!valueGtmInstancesGtmInstance["CreateTimestamp"].isNull())
-			gtmInstancesObject.createTimestamp = std::stol(valueGtmInstancesGtmInstance["CreateTimestamp"].asString());
 		if(!valueGtmInstancesGtmInstance["ExpireTime"].isNull())
 			gtmInstancesObject.expireTime = valueGtmInstancesGtmInstance["ExpireTime"].asString();
-		if(!valueGtmInstancesGtmInstance["ExpireTimestamp"].isNull())
-			gtmInstancesObject.expireTimestamp = std::stol(valueGtmInstancesGtmInstance["ExpireTimestamp"].asString());
-		if(!valueGtmInstancesGtmInstance["AlertGroup"].isNull())
-			gtmInstancesObject.alertGroup = valueGtmInstancesGtmInstance["AlertGroup"].asString();
-		if(!valueGtmInstancesGtmInstance["CnameMode"].isNull())
-			gtmInstancesObject.cnameMode = valueGtmInstancesGtmInstance["CnameMode"].asString();
 		if(!valueGtmInstancesGtmInstance["AccessStrategyNum"].isNull())
 			gtmInstancesObject.accessStrategyNum = std::stoi(valueGtmInstancesGtmInstance["AccessStrategyNum"].asString());
+		if(!valueGtmInstancesGtmInstance["CreateTime"].isNull())
+			gtmInstancesObject.createTime = valueGtmInstancesGtmInstance["CreateTime"].asString();
+		if(!valueGtmInstancesGtmInstance["CnameMode"].isNull())
+			gtmInstancesObject.cnameMode = valueGtmInstancesGtmInstance["CnameMode"].asString();
+		if(!valueGtmInstancesGtmInstance["InstanceId"].isNull())
+			gtmInstancesObject.instanceId = valueGtmInstancesGtmInstance["InstanceId"].asString();
+		if(!valueGtmInstancesGtmInstance["ExpireTimestamp"].isNull())
+			gtmInstancesObject.expireTimestamp = std::stol(valueGtmInstancesGtmInstance["ExpireTimestamp"].asString());
+		if(!valueGtmInstancesGtmInstance["Ttl"].isNull())
+			gtmInstancesObject.ttl = std::stoi(valueGtmInstancesGtmInstance["Ttl"].asString());
+		if(!valueGtmInstancesGtmInstance["AlertGroup"].isNull())
+			gtmInstancesObject.alertGroup = valueGtmInstancesGtmInstance["AlertGroup"].asString();
 		if(!valueGtmInstancesGtmInstance["AddressPoolNum"].isNull())
 			gtmInstancesObject.addressPoolNum = std::stoi(valueGtmInstancesGtmInstance["AddressPoolNum"].asString());
+		if(!valueGtmInstancesGtmInstance["InstanceName"].isNull())
+			gtmInstancesObject.instanceName = valueGtmInstancesGtmInstance["InstanceName"].asString();
+		if(!valueGtmInstancesGtmInstance["LbaStrategy"].isNull())
+			gtmInstancesObject.lbaStrategy = valueGtmInstancesGtmInstance["LbaStrategy"].asString();
+		if(!valueGtmInstancesGtmInstance["Cname"].isNull())
+			gtmInstancesObject.cname = valueGtmInstancesGtmInstance["Cname"].asString();
+		if(!valueGtmInstancesGtmInstance["VersionCode"].isNull())
+			gtmInstancesObject.versionCode = valueGtmInstancesGtmInstance["VersionCode"].asString();
+		if(!valueGtmInstancesGtmInstance["UserDomainName"].isNull())
+			gtmInstancesObject.userDomainName = valueGtmInstancesGtmInstance["UserDomainName"].asString();
+		if(!valueGtmInstancesGtmInstance["CreateTimestamp"].isNull())
+			gtmInstancesObject.createTimestamp = std::stol(valueGtmInstancesGtmInstance["CreateTimestamp"].asString());
+		if(!valueGtmInstancesGtmInstance["ResourceGroupId"].isNull())
+			gtmInstancesObject.resourceGroupId = valueGtmInstancesGtmInstance["ResourceGroupId"].asString();
 		gtmInstances_.push_back(gtmInstancesObject);
 	}
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
-	if(!value["TotalItems"].isNull())
-		totalItems_ = std::stoi(value["TotalItems"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["TotalPages"].isNull())
 		totalPages_ = std::stoi(value["TotalPages"].asString());
+	if(!value["TotalItems"].isNull())
+		totalItems_ = std::stoi(value["TotalItems"].asString());
 
 }
 

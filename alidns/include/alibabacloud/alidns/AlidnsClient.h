@@ -56,6 +56,10 @@
 #include "model/ChangeDomainOfDnsProductResult.h"
 #include "model/CopyGtmConfigRequest.h"
 #include "model/CopyGtmConfigResult.h"
+#include "model/CreatePdnsAppKeyRequest.h"
+#include "model/CreatePdnsAppKeyResult.h"
+#include "model/CreatePdnsUdpIpSegmentRequest.h"
+#include "model/CreatePdnsUdpIpSegmentResult.h"
 #include "model/DeleteCustomLinesRequest.h"
 #include "model/DeleteCustomLinesResult.h"
 #include "model/DeleteDnsCacheDomainRequest.h"
@@ -190,6 +194,28 @@
 #include "model/DescribeGtmRecoveryPlansResult.h"
 #include "model/DescribeInstanceDomainsRequest.h"
 #include "model/DescribeInstanceDomainsResult.h"
+#include "model/DescribePdnsAccountSummaryRequest.h"
+#include "model/DescribePdnsAccountSummaryResult.h"
+#include "model/DescribePdnsAppKeyRequest.h"
+#include "model/DescribePdnsAppKeyResult.h"
+#include "model/DescribePdnsAppKeysRequest.h"
+#include "model/DescribePdnsAppKeysResult.h"
+#include "model/DescribePdnsOperateLogsRequest.h"
+#include "model/DescribePdnsOperateLogsResult.h"
+#include "model/DescribePdnsRequestStatisticRequest.h"
+#include "model/DescribePdnsRequestStatisticResult.h"
+#include "model/DescribePdnsRequestStatisticsRequest.h"
+#include "model/DescribePdnsRequestStatisticsResult.h"
+#include "model/DescribePdnsThreatLogsRequest.h"
+#include "model/DescribePdnsThreatLogsResult.h"
+#include "model/DescribePdnsThreatStatisticRequest.h"
+#include "model/DescribePdnsThreatStatisticResult.h"
+#include "model/DescribePdnsThreatStatisticsRequest.h"
+#include "model/DescribePdnsThreatStatisticsResult.h"
+#include "model/DescribePdnsUdpIpSegmentsRequest.h"
+#include "model/DescribePdnsUdpIpSegmentsResult.h"
+#include "model/DescribePdnsUserInfoRequest.h"
+#include "model/DescribePdnsUserInfoResult.h"
 #include "model/DescribeRecordLogsRequest.h"
 #include "model/DescribeRecordLogsResult.h"
 #include "model/DescribeRecordStatisticsRequest.h"
@@ -220,8 +246,16 @@
 #include "model/MoveGtmResourceGroupResult.h"
 #include "model/OperateBatchDomainRequest.h"
 #include "model/OperateBatchDomainResult.h"
+#include "model/PausePdnsServiceRequest.h"
+#include "model/PausePdnsServiceResult.h"
 #include "model/PreviewGtmRecoveryPlanRequest.h"
 #include "model/PreviewGtmRecoveryPlanResult.h"
+#include "model/RemovePdnsAppKeyRequest.h"
+#include "model/RemovePdnsAppKeyResult.h"
+#include "model/RemovePdnsUdpIpSegmentRequest.h"
+#include "model/RemovePdnsUdpIpSegmentResult.h"
+#include "model/ResumePdnsServiceRequest.h"
+#include "model/ResumePdnsServiceResult.h"
 #include "model/RetrieveDomainRequest.h"
 #include "model/RetrieveDomainResult.h"
 #include "model/RollbackGtmRecoveryPlanRequest.h"
@@ -250,6 +284,8 @@
 #include "model/UnbindInstanceDomainsResult.h"
 #include "model/UntagResourcesRequest.h"
 #include "model/UntagResourcesResult.h"
+#include "model/UpdateAppKeyStateRequest.h"
+#include "model/UpdateAppKeyStateResult.h"
 #include "model/UpdateCustomLineRequest.h"
 #include "model/UpdateCustomLineResult.h"
 #include "model/UpdateDNSSLBWeightRequest.h"
@@ -284,6 +320,10 @@
 #include "model/UpdateGtmMonitorResult.h"
 #include "model/UpdateGtmRecoveryPlanRequest.h"
 #include "model/UpdateGtmRecoveryPlanResult.h"
+#include "model/ValidateDnsGtmCnameRrCanUseRequest.h"
+#include "model/ValidateDnsGtmCnameRrCanUseResult.h"
+#include "model/ValidatePdnsUdpIpSegmentRequest.h"
+#include "model/ValidatePdnsUdpIpSegmentResult.h"
 
 
 namespace AlibabaCloud
@@ -344,6 +384,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CopyGtmConfigResult> CopyGtmConfigOutcome;
 			typedef std::future<CopyGtmConfigOutcome> CopyGtmConfigOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::CopyGtmConfigRequest&, const CopyGtmConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CopyGtmConfigAsyncHandler;
+			typedef Outcome<Error, Model::CreatePdnsAppKeyResult> CreatePdnsAppKeyOutcome;
+			typedef std::future<CreatePdnsAppKeyOutcome> CreatePdnsAppKeyOutcomeCallable;
+			typedef std::function<void(const AlidnsClient*, const Model::CreatePdnsAppKeyRequest&, const CreatePdnsAppKeyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreatePdnsAppKeyAsyncHandler;
+			typedef Outcome<Error, Model::CreatePdnsUdpIpSegmentResult> CreatePdnsUdpIpSegmentOutcome;
+			typedef std::future<CreatePdnsUdpIpSegmentOutcome> CreatePdnsUdpIpSegmentOutcomeCallable;
+			typedef std::function<void(const AlidnsClient*, const Model::CreatePdnsUdpIpSegmentRequest&, const CreatePdnsUdpIpSegmentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreatePdnsUdpIpSegmentAsyncHandler;
 			typedef Outcome<Error, Model::DeleteCustomLinesResult> DeleteCustomLinesOutcome;
 			typedef std::future<DeleteCustomLinesOutcome> DeleteCustomLinesOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::DeleteCustomLinesRequest&, const DeleteCustomLinesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCustomLinesAsyncHandler;
@@ -545,6 +591,39 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeInstanceDomainsResult> DescribeInstanceDomainsOutcome;
 			typedef std::future<DescribeInstanceDomainsOutcome> DescribeInstanceDomainsOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::DescribeInstanceDomainsRequest&, const DescribeInstanceDomainsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceDomainsAsyncHandler;
+			typedef Outcome<Error, Model::DescribePdnsAccountSummaryResult> DescribePdnsAccountSummaryOutcome;
+			typedef std::future<DescribePdnsAccountSummaryOutcome> DescribePdnsAccountSummaryOutcomeCallable;
+			typedef std::function<void(const AlidnsClient*, const Model::DescribePdnsAccountSummaryRequest&, const DescribePdnsAccountSummaryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePdnsAccountSummaryAsyncHandler;
+			typedef Outcome<Error, Model::DescribePdnsAppKeyResult> DescribePdnsAppKeyOutcome;
+			typedef std::future<DescribePdnsAppKeyOutcome> DescribePdnsAppKeyOutcomeCallable;
+			typedef std::function<void(const AlidnsClient*, const Model::DescribePdnsAppKeyRequest&, const DescribePdnsAppKeyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePdnsAppKeyAsyncHandler;
+			typedef Outcome<Error, Model::DescribePdnsAppKeysResult> DescribePdnsAppKeysOutcome;
+			typedef std::future<DescribePdnsAppKeysOutcome> DescribePdnsAppKeysOutcomeCallable;
+			typedef std::function<void(const AlidnsClient*, const Model::DescribePdnsAppKeysRequest&, const DescribePdnsAppKeysOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePdnsAppKeysAsyncHandler;
+			typedef Outcome<Error, Model::DescribePdnsOperateLogsResult> DescribePdnsOperateLogsOutcome;
+			typedef std::future<DescribePdnsOperateLogsOutcome> DescribePdnsOperateLogsOutcomeCallable;
+			typedef std::function<void(const AlidnsClient*, const Model::DescribePdnsOperateLogsRequest&, const DescribePdnsOperateLogsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePdnsOperateLogsAsyncHandler;
+			typedef Outcome<Error, Model::DescribePdnsRequestStatisticResult> DescribePdnsRequestStatisticOutcome;
+			typedef std::future<DescribePdnsRequestStatisticOutcome> DescribePdnsRequestStatisticOutcomeCallable;
+			typedef std::function<void(const AlidnsClient*, const Model::DescribePdnsRequestStatisticRequest&, const DescribePdnsRequestStatisticOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePdnsRequestStatisticAsyncHandler;
+			typedef Outcome<Error, Model::DescribePdnsRequestStatisticsResult> DescribePdnsRequestStatisticsOutcome;
+			typedef std::future<DescribePdnsRequestStatisticsOutcome> DescribePdnsRequestStatisticsOutcomeCallable;
+			typedef std::function<void(const AlidnsClient*, const Model::DescribePdnsRequestStatisticsRequest&, const DescribePdnsRequestStatisticsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePdnsRequestStatisticsAsyncHandler;
+			typedef Outcome<Error, Model::DescribePdnsThreatLogsResult> DescribePdnsThreatLogsOutcome;
+			typedef std::future<DescribePdnsThreatLogsOutcome> DescribePdnsThreatLogsOutcomeCallable;
+			typedef std::function<void(const AlidnsClient*, const Model::DescribePdnsThreatLogsRequest&, const DescribePdnsThreatLogsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePdnsThreatLogsAsyncHandler;
+			typedef Outcome<Error, Model::DescribePdnsThreatStatisticResult> DescribePdnsThreatStatisticOutcome;
+			typedef std::future<DescribePdnsThreatStatisticOutcome> DescribePdnsThreatStatisticOutcomeCallable;
+			typedef std::function<void(const AlidnsClient*, const Model::DescribePdnsThreatStatisticRequest&, const DescribePdnsThreatStatisticOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePdnsThreatStatisticAsyncHandler;
+			typedef Outcome<Error, Model::DescribePdnsThreatStatisticsResult> DescribePdnsThreatStatisticsOutcome;
+			typedef std::future<DescribePdnsThreatStatisticsOutcome> DescribePdnsThreatStatisticsOutcomeCallable;
+			typedef std::function<void(const AlidnsClient*, const Model::DescribePdnsThreatStatisticsRequest&, const DescribePdnsThreatStatisticsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePdnsThreatStatisticsAsyncHandler;
+			typedef Outcome<Error, Model::DescribePdnsUdpIpSegmentsResult> DescribePdnsUdpIpSegmentsOutcome;
+			typedef std::future<DescribePdnsUdpIpSegmentsOutcome> DescribePdnsUdpIpSegmentsOutcomeCallable;
+			typedef std::function<void(const AlidnsClient*, const Model::DescribePdnsUdpIpSegmentsRequest&, const DescribePdnsUdpIpSegmentsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePdnsUdpIpSegmentsAsyncHandler;
+			typedef Outcome<Error, Model::DescribePdnsUserInfoResult> DescribePdnsUserInfoOutcome;
+			typedef std::future<DescribePdnsUserInfoOutcome> DescribePdnsUserInfoOutcomeCallable;
+			typedef std::function<void(const AlidnsClient*, const Model::DescribePdnsUserInfoRequest&, const DescribePdnsUserInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePdnsUserInfoAsyncHandler;
 			typedef Outcome<Error, Model::DescribeRecordLogsResult> DescribeRecordLogsOutcome;
 			typedef std::future<DescribeRecordLogsOutcome> DescribeRecordLogsOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::DescribeRecordLogsRequest&, const DescribeRecordLogsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecordLogsAsyncHandler;
@@ -590,9 +669,21 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::OperateBatchDomainResult> OperateBatchDomainOutcome;
 			typedef std::future<OperateBatchDomainOutcome> OperateBatchDomainOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::OperateBatchDomainRequest&, const OperateBatchDomainOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OperateBatchDomainAsyncHandler;
+			typedef Outcome<Error, Model::PausePdnsServiceResult> PausePdnsServiceOutcome;
+			typedef std::future<PausePdnsServiceOutcome> PausePdnsServiceOutcomeCallable;
+			typedef std::function<void(const AlidnsClient*, const Model::PausePdnsServiceRequest&, const PausePdnsServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PausePdnsServiceAsyncHandler;
 			typedef Outcome<Error, Model::PreviewGtmRecoveryPlanResult> PreviewGtmRecoveryPlanOutcome;
 			typedef std::future<PreviewGtmRecoveryPlanOutcome> PreviewGtmRecoveryPlanOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::PreviewGtmRecoveryPlanRequest&, const PreviewGtmRecoveryPlanOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PreviewGtmRecoveryPlanAsyncHandler;
+			typedef Outcome<Error, Model::RemovePdnsAppKeyResult> RemovePdnsAppKeyOutcome;
+			typedef std::future<RemovePdnsAppKeyOutcome> RemovePdnsAppKeyOutcomeCallable;
+			typedef std::function<void(const AlidnsClient*, const Model::RemovePdnsAppKeyRequest&, const RemovePdnsAppKeyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RemovePdnsAppKeyAsyncHandler;
+			typedef Outcome<Error, Model::RemovePdnsUdpIpSegmentResult> RemovePdnsUdpIpSegmentOutcome;
+			typedef std::future<RemovePdnsUdpIpSegmentOutcome> RemovePdnsUdpIpSegmentOutcomeCallable;
+			typedef std::function<void(const AlidnsClient*, const Model::RemovePdnsUdpIpSegmentRequest&, const RemovePdnsUdpIpSegmentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RemovePdnsUdpIpSegmentAsyncHandler;
+			typedef Outcome<Error, Model::ResumePdnsServiceResult> ResumePdnsServiceOutcome;
+			typedef std::future<ResumePdnsServiceOutcome> ResumePdnsServiceOutcomeCallable;
+			typedef std::function<void(const AlidnsClient*, const Model::ResumePdnsServiceRequest&, const ResumePdnsServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ResumePdnsServiceAsyncHandler;
 			typedef Outcome<Error, Model::RetrieveDomainResult> RetrieveDomainOutcome;
 			typedef std::future<RetrieveDomainOutcome> RetrieveDomainOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::RetrieveDomainRequest&, const RetrieveDomainOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RetrieveDomainAsyncHandler;
@@ -635,6 +726,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UntagResourcesResult> UntagResourcesOutcome;
 			typedef std::future<UntagResourcesOutcome> UntagResourcesOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::UntagResourcesRequest&, const UntagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UntagResourcesAsyncHandler;
+			typedef Outcome<Error, Model::UpdateAppKeyStateResult> UpdateAppKeyStateOutcome;
+			typedef std::future<UpdateAppKeyStateOutcome> UpdateAppKeyStateOutcomeCallable;
+			typedef std::function<void(const AlidnsClient*, const Model::UpdateAppKeyStateRequest&, const UpdateAppKeyStateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAppKeyStateAsyncHandler;
 			typedef Outcome<Error, Model::UpdateCustomLineResult> UpdateCustomLineOutcome;
 			typedef std::future<UpdateCustomLineOutcome> UpdateCustomLineOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::UpdateCustomLineRequest&, const UpdateCustomLineOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateCustomLineAsyncHandler;
@@ -686,6 +780,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateGtmRecoveryPlanResult> UpdateGtmRecoveryPlanOutcome;
 			typedef std::future<UpdateGtmRecoveryPlanOutcome> UpdateGtmRecoveryPlanOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::UpdateGtmRecoveryPlanRequest&, const UpdateGtmRecoveryPlanOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateGtmRecoveryPlanAsyncHandler;
+			typedef Outcome<Error, Model::ValidateDnsGtmCnameRrCanUseResult> ValidateDnsGtmCnameRrCanUseOutcome;
+			typedef std::future<ValidateDnsGtmCnameRrCanUseOutcome> ValidateDnsGtmCnameRrCanUseOutcomeCallable;
+			typedef std::function<void(const AlidnsClient*, const Model::ValidateDnsGtmCnameRrCanUseRequest&, const ValidateDnsGtmCnameRrCanUseOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ValidateDnsGtmCnameRrCanUseAsyncHandler;
+			typedef Outcome<Error, Model::ValidatePdnsUdpIpSegmentResult> ValidatePdnsUdpIpSegmentOutcome;
+			typedef std::future<ValidatePdnsUdpIpSegmentOutcome> ValidatePdnsUdpIpSegmentOutcomeCallable;
+			typedef std::function<void(const AlidnsClient*, const Model::ValidatePdnsUdpIpSegmentRequest&, const ValidatePdnsUdpIpSegmentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ValidatePdnsUdpIpSegmentAsyncHandler;
 
 			AlidnsClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			AlidnsClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
@@ -742,6 +842,12 @@ namespace AlibabaCloud
 			CopyGtmConfigOutcome copyGtmConfig(const Model::CopyGtmConfigRequest &request)const;
 			void copyGtmConfigAsync(const Model::CopyGtmConfigRequest& request, const CopyGtmConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CopyGtmConfigOutcomeCallable copyGtmConfigCallable(const Model::CopyGtmConfigRequest& request) const;
+			CreatePdnsAppKeyOutcome createPdnsAppKey(const Model::CreatePdnsAppKeyRequest &request)const;
+			void createPdnsAppKeyAsync(const Model::CreatePdnsAppKeyRequest& request, const CreatePdnsAppKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreatePdnsAppKeyOutcomeCallable createPdnsAppKeyCallable(const Model::CreatePdnsAppKeyRequest& request) const;
+			CreatePdnsUdpIpSegmentOutcome createPdnsUdpIpSegment(const Model::CreatePdnsUdpIpSegmentRequest &request)const;
+			void createPdnsUdpIpSegmentAsync(const Model::CreatePdnsUdpIpSegmentRequest& request, const CreatePdnsUdpIpSegmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreatePdnsUdpIpSegmentOutcomeCallable createPdnsUdpIpSegmentCallable(const Model::CreatePdnsUdpIpSegmentRequest& request) const;
 			DeleteCustomLinesOutcome deleteCustomLines(const Model::DeleteCustomLinesRequest &request)const;
 			void deleteCustomLinesAsync(const Model::DeleteCustomLinesRequest& request, const DeleteCustomLinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteCustomLinesOutcomeCallable deleteCustomLinesCallable(const Model::DeleteCustomLinesRequest& request) const;
@@ -943,6 +1049,39 @@ namespace AlibabaCloud
 			DescribeInstanceDomainsOutcome describeInstanceDomains(const Model::DescribeInstanceDomainsRequest &request)const;
 			void describeInstanceDomainsAsync(const Model::DescribeInstanceDomainsRequest& request, const DescribeInstanceDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeInstanceDomainsOutcomeCallable describeInstanceDomainsCallable(const Model::DescribeInstanceDomainsRequest& request) const;
+			DescribePdnsAccountSummaryOutcome describePdnsAccountSummary(const Model::DescribePdnsAccountSummaryRequest &request)const;
+			void describePdnsAccountSummaryAsync(const Model::DescribePdnsAccountSummaryRequest& request, const DescribePdnsAccountSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribePdnsAccountSummaryOutcomeCallable describePdnsAccountSummaryCallable(const Model::DescribePdnsAccountSummaryRequest& request) const;
+			DescribePdnsAppKeyOutcome describePdnsAppKey(const Model::DescribePdnsAppKeyRequest &request)const;
+			void describePdnsAppKeyAsync(const Model::DescribePdnsAppKeyRequest& request, const DescribePdnsAppKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribePdnsAppKeyOutcomeCallable describePdnsAppKeyCallable(const Model::DescribePdnsAppKeyRequest& request) const;
+			DescribePdnsAppKeysOutcome describePdnsAppKeys(const Model::DescribePdnsAppKeysRequest &request)const;
+			void describePdnsAppKeysAsync(const Model::DescribePdnsAppKeysRequest& request, const DescribePdnsAppKeysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribePdnsAppKeysOutcomeCallable describePdnsAppKeysCallable(const Model::DescribePdnsAppKeysRequest& request) const;
+			DescribePdnsOperateLogsOutcome describePdnsOperateLogs(const Model::DescribePdnsOperateLogsRequest &request)const;
+			void describePdnsOperateLogsAsync(const Model::DescribePdnsOperateLogsRequest& request, const DescribePdnsOperateLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribePdnsOperateLogsOutcomeCallable describePdnsOperateLogsCallable(const Model::DescribePdnsOperateLogsRequest& request) const;
+			DescribePdnsRequestStatisticOutcome describePdnsRequestStatistic(const Model::DescribePdnsRequestStatisticRequest &request)const;
+			void describePdnsRequestStatisticAsync(const Model::DescribePdnsRequestStatisticRequest& request, const DescribePdnsRequestStatisticAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribePdnsRequestStatisticOutcomeCallable describePdnsRequestStatisticCallable(const Model::DescribePdnsRequestStatisticRequest& request) const;
+			DescribePdnsRequestStatisticsOutcome describePdnsRequestStatistics(const Model::DescribePdnsRequestStatisticsRequest &request)const;
+			void describePdnsRequestStatisticsAsync(const Model::DescribePdnsRequestStatisticsRequest& request, const DescribePdnsRequestStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribePdnsRequestStatisticsOutcomeCallable describePdnsRequestStatisticsCallable(const Model::DescribePdnsRequestStatisticsRequest& request) const;
+			DescribePdnsThreatLogsOutcome describePdnsThreatLogs(const Model::DescribePdnsThreatLogsRequest &request)const;
+			void describePdnsThreatLogsAsync(const Model::DescribePdnsThreatLogsRequest& request, const DescribePdnsThreatLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribePdnsThreatLogsOutcomeCallable describePdnsThreatLogsCallable(const Model::DescribePdnsThreatLogsRequest& request) const;
+			DescribePdnsThreatStatisticOutcome describePdnsThreatStatistic(const Model::DescribePdnsThreatStatisticRequest &request)const;
+			void describePdnsThreatStatisticAsync(const Model::DescribePdnsThreatStatisticRequest& request, const DescribePdnsThreatStatisticAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribePdnsThreatStatisticOutcomeCallable describePdnsThreatStatisticCallable(const Model::DescribePdnsThreatStatisticRequest& request) const;
+			DescribePdnsThreatStatisticsOutcome describePdnsThreatStatistics(const Model::DescribePdnsThreatStatisticsRequest &request)const;
+			void describePdnsThreatStatisticsAsync(const Model::DescribePdnsThreatStatisticsRequest& request, const DescribePdnsThreatStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribePdnsThreatStatisticsOutcomeCallable describePdnsThreatStatisticsCallable(const Model::DescribePdnsThreatStatisticsRequest& request) const;
+			DescribePdnsUdpIpSegmentsOutcome describePdnsUdpIpSegments(const Model::DescribePdnsUdpIpSegmentsRequest &request)const;
+			void describePdnsUdpIpSegmentsAsync(const Model::DescribePdnsUdpIpSegmentsRequest& request, const DescribePdnsUdpIpSegmentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribePdnsUdpIpSegmentsOutcomeCallable describePdnsUdpIpSegmentsCallable(const Model::DescribePdnsUdpIpSegmentsRequest& request) const;
+			DescribePdnsUserInfoOutcome describePdnsUserInfo(const Model::DescribePdnsUserInfoRequest &request)const;
+			void describePdnsUserInfoAsync(const Model::DescribePdnsUserInfoRequest& request, const DescribePdnsUserInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribePdnsUserInfoOutcomeCallable describePdnsUserInfoCallable(const Model::DescribePdnsUserInfoRequest& request) const;
 			DescribeRecordLogsOutcome describeRecordLogs(const Model::DescribeRecordLogsRequest &request)const;
 			void describeRecordLogsAsync(const Model::DescribeRecordLogsRequest& request, const DescribeRecordLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRecordLogsOutcomeCallable describeRecordLogsCallable(const Model::DescribeRecordLogsRequest& request) const;
@@ -988,9 +1127,21 @@ namespace AlibabaCloud
 			OperateBatchDomainOutcome operateBatchDomain(const Model::OperateBatchDomainRequest &request)const;
 			void operateBatchDomainAsync(const Model::OperateBatchDomainRequest& request, const OperateBatchDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			OperateBatchDomainOutcomeCallable operateBatchDomainCallable(const Model::OperateBatchDomainRequest& request) const;
+			PausePdnsServiceOutcome pausePdnsService(const Model::PausePdnsServiceRequest &request)const;
+			void pausePdnsServiceAsync(const Model::PausePdnsServiceRequest& request, const PausePdnsServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			PausePdnsServiceOutcomeCallable pausePdnsServiceCallable(const Model::PausePdnsServiceRequest& request) const;
 			PreviewGtmRecoveryPlanOutcome previewGtmRecoveryPlan(const Model::PreviewGtmRecoveryPlanRequest &request)const;
 			void previewGtmRecoveryPlanAsync(const Model::PreviewGtmRecoveryPlanRequest& request, const PreviewGtmRecoveryPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			PreviewGtmRecoveryPlanOutcomeCallable previewGtmRecoveryPlanCallable(const Model::PreviewGtmRecoveryPlanRequest& request) const;
+			RemovePdnsAppKeyOutcome removePdnsAppKey(const Model::RemovePdnsAppKeyRequest &request)const;
+			void removePdnsAppKeyAsync(const Model::RemovePdnsAppKeyRequest& request, const RemovePdnsAppKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RemovePdnsAppKeyOutcomeCallable removePdnsAppKeyCallable(const Model::RemovePdnsAppKeyRequest& request) const;
+			RemovePdnsUdpIpSegmentOutcome removePdnsUdpIpSegment(const Model::RemovePdnsUdpIpSegmentRequest &request)const;
+			void removePdnsUdpIpSegmentAsync(const Model::RemovePdnsUdpIpSegmentRequest& request, const RemovePdnsUdpIpSegmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RemovePdnsUdpIpSegmentOutcomeCallable removePdnsUdpIpSegmentCallable(const Model::RemovePdnsUdpIpSegmentRequest& request) const;
+			ResumePdnsServiceOutcome resumePdnsService(const Model::ResumePdnsServiceRequest &request)const;
+			void resumePdnsServiceAsync(const Model::ResumePdnsServiceRequest& request, const ResumePdnsServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ResumePdnsServiceOutcomeCallable resumePdnsServiceCallable(const Model::ResumePdnsServiceRequest& request) const;
 			RetrieveDomainOutcome retrieveDomain(const Model::RetrieveDomainRequest &request)const;
 			void retrieveDomainAsync(const Model::RetrieveDomainRequest& request, const RetrieveDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RetrieveDomainOutcomeCallable retrieveDomainCallable(const Model::RetrieveDomainRequest& request) const;
@@ -1033,6 +1184,9 @@ namespace AlibabaCloud
 			UntagResourcesOutcome untagResources(const Model::UntagResourcesRequest &request)const;
 			void untagResourcesAsync(const Model::UntagResourcesRequest& request, const UntagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UntagResourcesOutcomeCallable untagResourcesCallable(const Model::UntagResourcesRequest& request) const;
+			UpdateAppKeyStateOutcome updateAppKeyState(const Model::UpdateAppKeyStateRequest &request)const;
+			void updateAppKeyStateAsync(const Model::UpdateAppKeyStateRequest& request, const UpdateAppKeyStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateAppKeyStateOutcomeCallable updateAppKeyStateCallable(const Model::UpdateAppKeyStateRequest& request) const;
 			UpdateCustomLineOutcome updateCustomLine(const Model::UpdateCustomLineRequest &request)const;
 			void updateCustomLineAsync(const Model::UpdateCustomLineRequest& request, const UpdateCustomLineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateCustomLineOutcomeCallable updateCustomLineCallable(const Model::UpdateCustomLineRequest& request) const;
@@ -1084,6 +1238,12 @@ namespace AlibabaCloud
 			UpdateGtmRecoveryPlanOutcome updateGtmRecoveryPlan(const Model::UpdateGtmRecoveryPlanRequest &request)const;
 			void updateGtmRecoveryPlanAsync(const Model::UpdateGtmRecoveryPlanRequest& request, const UpdateGtmRecoveryPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateGtmRecoveryPlanOutcomeCallable updateGtmRecoveryPlanCallable(const Model::UpdateGtmRecoveryPlanRequest& request) const;
+			ValidateDnsGtmCnameRrCanUseOutcome validateDnsGtmCnameRrCanUse(const Model::ValidateDnsGtmCnameRrCanUseRequest &request)const;
+			void validateDnsGtmCnameRrCanUseAsync(const Model::ValidateDnsGtmCnameRrCanUseRequest& request, const ValidateDnsGtmCnameRrCanUseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ValidateDnsGtmCnameRrCanUseOutcomeCallable validateDnsGtmCnameRrCanUseCallable(const Model::ValidateDnsGtmCnameRrCanUseRequest& request) const;
+			ValidatePdnsUdpIpSegmentOutcome validatePdnsUdpIpSegment(const Model::ValidatePdnsUdpIpSegmentRequest &request)const;
+			void validatePdnsUdpIpSegmentAsync(const Model::ValidatePdnsUdpIpSegmentRequest& request, const ValidatePdnsUdpIpSegmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ValidatePdnsUdpIpSegmentOutcomeCallable validatePdnsUdpIpSegmentCallable(const Model::ValidatePdnsUdpIpSegmentRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

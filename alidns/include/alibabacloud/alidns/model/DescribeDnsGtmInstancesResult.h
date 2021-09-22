@@ -39,8 +39,9 @@ namespace AlibabaCloud
 						struct AlertConfigItem
 						{
 							std::string emailNotice;
-							std::string noticeType;
 							std::string smsNotice;
+							std::string noticeType;
+							std::string dingtalkNotice;
 						};
 						std::string instanceName;
 						std::string alertGroup;
@@ -49,17 +50,19 @@ namespace AlibabaCloud
 						std::string publicUserDomainName;
 						std::string publicZoneName;
 						std::string strategyMode;
+						std::string publicRr;
 						int ttl;
 						std::string publicCnameMode;
 					};
 					struct UsedQuota
 					{
 						int taskUsedCount;
+						int dingtalkUsedCount;
 						int smsUsedCount;
 						int emailUsedCount;
 					};
-					std::string versionCode;
 					long expireTimestamp;
+					std::string versionCode;
 					std::string resourceGroupId;
 					std::string instanceId;
 					Config config;

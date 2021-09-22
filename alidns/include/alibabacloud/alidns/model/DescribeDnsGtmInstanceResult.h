@@ -37,22 +37,25 @@ namespace AlibabaCloud
 					struct AlertConfigItem
 					{
 						bool emailNotice;
-						std::string noticeType;
 						bool smsNotice;
+						std::string noticeType;
+						bool dingtalkNotice;
 					};
 					std::string instanceName;
-					std::string pubicZoneName;
 					std::string alertGroup;
+					std::string pubicZoneName;
 					std::vector<AlertConfigItem> alertConfig;
 					std::string cnameType;
 					std::string publicUserDomainName;
 					std::string strategyMode;
+					std::string publicRr;
 					int ttl;
 					std::string publicCnameMode;
 				};
 				struct UsedQuota
 				{
 					int taskUsedCount;
+					int dingtalkUsedCount;
 					int smsUsedCount;
 					int emailUsedCount;
 				};
@@ -61,8 +64,8 @@ namespace AlibabaCloud
 				DescribeDnsGtmInstanceResult();
 				explicit DescribeDnsGtmInstanceResult(const std::string &payload);
 				~DescribeDnsGtmInstanceResult();
-				std::string getVersionCode()const;
 				long getExpireTimestamp()const;
+				std::string getVersionCode()const;
 				std::string getResourceGroupId()const;
 				std::string getInstanceId()const;
 				Config getConfig()const;
@@ -77,8 +80,8 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string versionCode_;
 				long expireTimestamp_;
+				std::string versionCode_;
 				std::string resourceGroupId_;
 				std::string instanceId_;
 				Config config_;

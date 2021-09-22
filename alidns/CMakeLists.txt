@@ -55,6 +55,10 @@ set(alidns_public_header_model
 	include/alibabacloud/alidns/model/ChangeDomainOfDnsProductResult.h
 	include/alibabacloud/alidns/model/CopyGtmConfigRequest.h
 	include/alibabacloud/alidns/model/CopyGtmConfigResult.h
+	include/alibabacloud/alidns/model/CreatePdnsAppKeyRequest.h
+	include/alibabacloud/alidns/model/CreatePdnsAppKeyResult.h
+	include/alibabacloud/alidns/model/CreatePdnsUdpIpSegmentRequest.h
+	include/alibabacloud/alidns/model/CreatePdnsUdpIpSegmentResult.h
 	include/alibabacloud/alidns/model/DeleteCustomLinesRequest.h
 	include/alibabacloud/alidns/model/DeleteCustomLinesResult.h
 	include/alibabacloud/alidns/model/DeleteDnsCacheDomainRequest.h
@@ -189,6 +193,28 @@ set(alidns_public_header_model
 	include/alibabacloud/alidns/model/DescribeGtmRecoveryPlansResult.h
 	include/alibabacloud/alidns/model/DescribeInstanceDomainsRequest.h
 	include/alibabacloud/alidns/model/DescribeInstanceDomainsResult.h
+	include/alibabacloud/alidns/model/DescribePdnsAccountSummaryRequest.h
+	include/alibabacloud/alidns/model/DescribePdnsAccountSummaryResult.h
+	include/alibabacloud/alidns/model/DescribePdnsAppKeyRequest.h
+	include/alibabacloud/alidns/model/DescribePdnsAppKeyResult.h
+	include/alibabacloud/alidns/model/DescribePdnsAppKeysRequest.h
+	include/alibabacloud/alidns/model/DescribePdnsAppKeysResult.h
+	include/alibabacloud/alidns/model/DescribePdnsOperateLogsRequest.h
+	include/alibabacloud/alidns/model/DescribePdnsOperateLogsResult.h
+	include/alibabacloud/alidns/model/DescribePdnsRequestStatisticRequest.h
+	include/alibabacloud/alidns/model/DescribePdnsRequestStatisticResult.h
+	include/alibabacloud/alidns/model/DescribePdnsRequestStatisticsRequest.h
+	include/alibabacloud/alidns/model/DescribePdnsRequestStatisticsResult.h
+	include/alibabacloud/alidns/model/DescribePdnsThreatLogsRequest.h
+	include/alibabacloud/alidns/model/DescribePdnsThreatLogsResult.h
+	include/alibabacloud/alidns/model/DescribePdnsThreatStatisticRequest.h
+	include/alibabacloud/alidns/model/DescribePdnsThreatStatisticResult.h
+	include/alibabacloud/alidns/model/DescribePdnsThreatStatisticsRequest.h
+	include/alibabacloud/alidns/model/DescribePdnsThreatStatisticsResult.h
+	include/alibabacloud/alidns/model/DescribePdnsUdpIpSegmentsRequest.h
+	include/alibabacloud/alidns/model/DescribePdnsUdpIpSegmentsResult.h
+	include/alibabacloud/alidns/model/DescribePdnsUserInfoRequest.h
+	include/alibabacloud/alidns/model/DescribePdnsUserInfoResult.h
 	include/alibabacloud/alidns/model/DescribeRecordLogsRequest.h
 	include/alibabacloud/alidns/model/DescribeRecordLogsResult.h
 	include/alibabacloud/alidns/model/DescribeRecordStatisticsRequest.h
@@ -219,8 +245,16 @@ set(alidns_public_header_model
 	include/alibabacloud/alidns/model/MoveGtmResourceGroupResult.h
 	include/alibabacloud/alidns/model/OperateBatchDomainRequest.h
 	include/alibabacloud/alidns/model/OperateBatchDomainResult.h
+	include/alibabacloud/alidns/model/PausePdnsServiceRequest.h
+	include/alibabacloud/alidns/model/PausePdnsServiceResult.h
 	include/alibabacloud/alidns/model/PreviewGtmRecoveryPlanRequest.h
 	include/alibabacloud/alidns/model/PreviewGtmRecoveryPlanResult.h
+	include/alibabacloud/alidns/model/RemovePdnsAppKeyRequest.h
+	include/alibabacloud/alidns/model/RemovePdnsAppKeyResult.h
+	include/alibabacloud/alidns/model/RemovePdnsUdpIpSegmentRequest.h
+	include/alibabacloud/alidns/model/RemovePdnsUdpIpSegmentResult.h
+	include/alibabacloud/alidns/model/ResumePdnsServiceRequest.h
+	include/alibabacloud/alidns/model/ResumePdnsServiceResult.h
 	include/alibabacloud/alidns/model/RetrieveDomainRequest.h
 	include/alibabacloud/alidns/model/RetrieveDomainResult.h
 	include/alibabacloud/alidns/model/RollbackGtmRecoveryPlanRequest.h
@@ -249,6 +283,8 @@ set(alidns_public_header_model
 	include/alibabacloud/alidns/model/UnbindInstanceDomainsResult.h
 	include/alibabacloud/alidns/model/UntagResourcesRequest.h
 	include/alibabacloud/alidns/model/UntagResourcesResult.h
+	include/alibabacloud/alidns/model/UpdateAppKeyStateRequest.h
+	include/alibabacloud/alidns/model/UpdateAppKeyStateResult.h
 	include/alibabacloud/alidns/model/UpdateCustomLineRequest.h
 	include/alibabacloud/alidns/model/UpdateCustomLineResult.h
 	include/alibabacloud/alidns/model/UpdateDNSSLBWeightRequest.h
@@ -282,7 +318,11 @@ set(alidns_public_header_model
 	include/alibabacloud/alidns/model/UpdateGtmMonitorRequest.h
 	include/alibabacloud/alidns/model/UpdateGtmMonitorResult.h
 	include/alibabacloud/alidns/model/UpdateGtmRecoveryPlanRequest.h
-	include/alibabacloud/alidns/model/UpdateGtmRecoveryPlanResult.h )
+	include/alibabacloud/alidns/model/UpdateGtmRecoveryPlanResult.h
+	include/alibabacloud/alidns/model/ValidateDnsGtmCnameRrCanUseRequest.h
+	include/alibabacloud/alidns/model/ValidateDnsGtmCnameRrCanUseResult.h
+	include/alibabacloud/alidns/model/ValidatePdnsUdpIpSegmentRequest.h
+	include/alibabacloud/alidns/model/ValidatePdnsUdpIpSegmentResult.h )
 
 set(alidns_src 
 	src/AlidnsClient.cc
@@ -320,6 +360,10 @@ set(alidns_src
 	src/model/ChangeDomainOfDnsProductResult.cc
 	src/model/CopyGtmConfigRequest.cc
 	src/model/CopyGtmConfigResult.cc
+	src/model/CreatePdnsAppKeyRequest.cc
+	src/model/CreatePdnsAppKeyResult.cc
+	src/model/CreatePdnsUdpIpSegmentRequest.cc
+	src/model/CreatePdnsUdpIpSegmentResult.cc
 	src/model/DeleteCustomLinesRequest.cc
 	src/model/DeleteCustomLinesResult.cc
 	src/model/DeleteDnsCacheDomainRequest.cc
@@ -454,6 +498,28 @@ set(alidns_src
 	src/model/DescribeGtmRecoveryPlansResult.cc
 	src/model/DescribeInstanceDomainsRequest.cc
 	src/model/DescribeInstanceDomainsResult.cc
+	src/model/DescribePdnsAccountSummaryRequest.cc
+	src/model/DescribePdnsAccountSummaryResult.cc
+	src/model/DescribePdnsAppKeyRequest.cc
+	src/model/DescribePdnsAppKeyResult.cc
+	src/model/DescribePdnsAppKeysRequest.cc
+	src/model/DescribePdnsAppKeysResult.cc
+	src/model/DescribePdnsOperateLogsRequest.cc
+	src/model/DescribePdnsOperateLogsResult.cc
+	src/model/DescribePdnsRequestStatisticRequest.cc
+	src/model/DescribePdnsRequestStatisticResult.cc
+	src/model/DescribePdnsRequestStatisticsRequest.cc
+	src/model/DescribePdnsRequestStatisticsResult.cc
+	src/model/DescribePdnsThreatLogsRequest.cc
+	src/model/DescribePdnsThreatLogsResult.cc
+	src/model/DescribePdnsThreatStatisticRequest.cc
+	src/model/DescribePdnsThreatStatisticResult.cc
+	src/model/DescribePdnsThreatStatisticsRequest.cc
+	src/model/DescribePdnsThreatStatisticsResult.cc
+	src/model/DescribePdnsUdpIpSegmentsRequest.cc
+	src/model/DescribePdnsUdpIpSegmentsResult.cc
+	src/model/DescribePdnsUserInfoRequest.cc
+	src/model/DescribePdnsUserInfoResult.cc
 	src/model/DescribeRecordLogsRequest.cc
 	src/model/DescribeRecordLogsResult.cc
 	src/model/DescribeRecordStatisticsRequest.cc
@@ -484,8 +550,16 @@ set(alidns_src
 	src/model/MoveGtmResourceGroupResult.cc
 	src/model/OperateBatchDomainRequest.cc
 	src/model/OperateBatchDomainResult.cc
+	src/model/PausePdnsServiceRequest.cc
+	src/model/PausePdnsServiceResult.cc
 	src/model/PreviewGtmRecoveryPlanRequest.cc
 	src/model/PreviewGtmRecoveryPlanResult.cc
+	src/model/RemovePdnsAppKeyRequest.cc
+	src/model/RemovePdnsAppKeyResult.cc
+	src/model/RemovePdnsUdpIpSegmentRequest.cc
+	src/model/RemovePdnsUdpIpSegmentResult.cc
+	src/model/ResumePdnsServiceRequest.cc
+	src/model/ResumePdnsServiceResult.cc
 	src/model/RetrieveDomainRequest.cc
 	src/model/RetrieveDomainResult.cc
 	src/model/RollbackGtmRecoveryPlanRequest.cc
@@ -514,6 +588,8 @@ set(alidns_src
 	src/model/UnbindInstanceDomainsResult.cc
 	src/model/UntagResourcesRequest.cc
 	src/model/UntagResourcesResult.cc
+	src/model/UpdateAppKeyStateRequest.cc
+	src/model/UpdateAppKeyStateResult.cc
 	src/model/UpdateCustomLineRequest.cc
 	src/model/UpdateCustomLineResult.cc
 	src/model/UpdateDNSSLBWeightRequest.cc
@@ -547,7 +623,11 @@ set(alidns_src
 	src/model/UpdateGtmMonitorRequest.cc
 	src/model/UpdateGtmMonitorResult.cc
 	src/model/UpdateGtmRecoveryPlanRequest.cc
-	src/model/UpdateGtmRecoveryPlanResult.cc )
+	src/model/UpdateGtmRecoveryPlanResult.cc
+	src/model/ValidateDnsGtmCnameRrCanUseRequest.cc
+	src/model/ValidateDnsGtmCnameRrCanUseResult.cc
+	src/model/ValidatePdnsUdpIpSegmentRequest.cc
+	src/model/ValidatePdnsUdpIpSegmentResult.cc )
 
 add_library(alidns ${LIB_TYPE}
 	${alidns_public_header}

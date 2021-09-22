@@ -33,6 +33,7 @@ namespace AlibabaCloud
 			public:
 				struct AlertConfig
 				{
+					bool dingtalkNotice;
 					bool smsNotice;
 					std::string noticeType;
 					bool emailNotice;
@@ -56,10 +57,14 @@ namespace AlibabaCloud
 				void setPublicUserDomainName(const std::string& publicUserDomainName);
 				int getTtl()const;
 				void setTtl(int ttl);
+				bool getForceUpdate()const;
+				void setForceUpdate(bool forceUpdate);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				std::string getInstanceName()const;
 				void setInstanceName(const std::string& instanceName);
+				std::string getPublicRr()const;
+				void setPublicRr(const std::string& publicRr);
 				std::string getUserClientIp()const;
 				void setUserClientIp(const std::string& userClientIp);
 				std::string getPublicZoneName()const;
@@ -73,8 +78,10 @@ namespace AlibabaCloud
 				std::string publicCnameMode_;
 				std::string publicUserDomainName_;
 				int ttl_;
+				bool forceUpdate_;
 				std::string instanceId_;
 				std::string instanceName_;
+				std::string publicRr_;
 				std::string userClientIp_;
 				std::string publicZoneName_;
 

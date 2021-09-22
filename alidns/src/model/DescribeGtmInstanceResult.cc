@@ -39,36 +39,38 @@ void DescribeGtmInstanceResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["ExpireTimestamp"].isNull())
+		expireTimestamp_ = std::stol(value["ExpireTimestamp"].asString());
+	if(!value["UserDomainName"].isNull())
+		userDomainName_ = value["UserDomainName"].asString();
+	if(!value["LbaStrategy"].isNull())
+		lbaStrategy_ = value["LbaStrategy"].asString();
 	if(!value["InstanceId"].isNull())
 		instanceId_ = value["InstanceId"].asString();
+	if(!value["CreateTime"].isNull())
+		createTime_ = value["CreateTime"].asString();
+	if(!value["CnameMode"].isNull())
+		cnameMode_ = value["CnameMode"].asString();
+	if(!value["Ttl"].isNull())
+		ttl_ = std::stoi(value["Ttl"].asString());
+	if(!value["Cname"].isNull())
+		cname_ = value["Cname"].asString();
 	if(!value["InstanceName"].isNull())
 		instanceName_ = value["InstanceName"].asString();
 	if(!value["VersionCode"].isNull())
 		versionCode_ = value["VersionCode"].asString();
-	if(!value["ExpireTime"].isNull())
-		expireTime_ = value["ExpireTime"].asString();
-	if(!value["ExpireTimestamp"].isNull())
-		expireTimestamp_ = std::stol(value["ExpireTimestamp"].asString());
-	if(!value["Cname"].isNull())
-		cname_ = value["Cname"].asString();
-	if(!value["UserDomainName"].isNull())
-		userDomainName_ = value["UserDomainName"].asString();
-	if(!value["Ttl"].isNull())
-		ttl_ = std::stoi(value["Ttl"].asString());
-	if(!value["LbaStrategy"].isNull())
-		lbaStrategy_ = value["LbaStrategy"].asString();
-	if(!value["CreateTime"].isNull())
-		createTime_ = value["CreateTime"].asString();
-	if(!value["CreateTimestamp"].isNull())
-		createTimestamp_ = std::stol(value["CreateTimestamp"].asString());
 	if(!value["AlertGroup"].isNull())
 		alertGroup_ = value["AlertGroup"].asString();
-	if(!value["CnameMode"].isNull())
-		cnameMode_ = value["CnameMode"].asString();
-	if(!value["AccessStrategyNum"].isNull())
-		accessStrategyNum_ = std::stoi(value["AccessStrategyNum"].asString());
 	if(!value["AddressPoolNum"].isNull())
 		addressPoolNum_ = std::stoi(value["AddressPoolNum"].asString());
+	if(!value["AccessStrategyNum"].isNull())
+		accessStrategyNum_ = std::stoi(value["AccessStrategyNum"].asString());
+	if(!value["ExpireTime"].isNull())
+		expireTime_ = value["ExpireTime"].asString();
+	if(!value["CreateTimestamp"].isNull())
+		createTimestamp_ = std::stol(value["CreateTimestamp"].asString());
+	if(!value["ResourceGroupId"].isNull())
+		resourceGroupId_ = value["ResourceGroupId"].asString();
 
 }
 
@@ -87,6 +89,11 @@ std::string DescribeGtmInstanceResult::getLbaStrategy()const
 	return lbaStrategy_;
 }
 
+std::string DescribeGtmInstanceResult::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
 std::string DescribeGtmInstanceResult::getInstanceId()const
 {
 	return instanceId_;
@@ -102,14 +109,14 @@ std::string DescribeGtmInstanceResult::getCnameMode()const
 	return cnameMode_;
 }
 
-std::string DescribeGtmInstanceResult::getCname()const
-{
-	return cname_;
-}
-
 int DescribeGtmInstanceResult::getTtl()const
 {
 	return ttl_;
+}
+
+std::string DescribeGtmInstanceResult::getCname()const
+{
+	return cname_;
 }
 
 std::string DescribeGtmInstanceResult::getInstanceName()const

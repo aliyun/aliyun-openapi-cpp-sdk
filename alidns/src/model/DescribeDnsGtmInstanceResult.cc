@@ -40,72 +40,78 @@ void DescribeDnsGtmInstanceResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto configNode = value["Config"];
-	if(!configNode["InstanceName"].isNull())
-		config_.instanceName = configNode["InstanceName"].asString();
-	if(!configNode["CnameType"].isNull())
-		config_.cnameType = configNode["CnameType"].asString();
-	if(!configNode["PublicUserDomainName"].isNull())
-		config_.publicUserDomainName = configNode["PublicUserDomainName"].asString();
-	if(!configNode["PublicCnameMode"].isNull())
-		config_.publicCnameMode = configNode["PublicCnameMode"].asString();
-	if(!configNode["PubicZoneName"].isNull())
-		config_.pubicZoneName = configNode["PubicZoneName"].asString();
 	if(!configNode["Ttl"].isNull())
 		config_.ttl = std::stoi(configNode["Ttl"].asString());
-	if(!configNode["StrategyMode"].isNull())
-		config_.strategyMode = configNode["StrategyMode"].asString();
 	if(!configNode["AlertGroup"].isNull())
 		config_.alertGroup = configNode["AlertGroup"].asString();
+	if(!configNode["CnameType"].isNull())
+		config_.cnameType = configNode["CnameType"].asString();
+	if(!configNode["StrategyMode"].isNull())
+		config_.strategyMode = configNode["StrategyMode"].asString();
+	if(!configNode["InstanceName"].isNull())
+		config_.instanceName = configNode["InstanceName"].asString();
+	if(!configNode["PublicCnameMode"].isNull())
+		config_.publicCnameMode = configNode["PublicCnameMode"].asString();
+	if(!configNode["PublicUserDomainName"].isNull())
+		config_.publicUserDomainName = configNode["PublicUserDomainName"].asString();
+	if(!configNode["PubicZoneName"].isNull())
+		config_.pubicZoneName = configNode["PubicZoneName"].asString();
+	if(!configNode["PublicRr"].isNull())
+		config_.publicRr = configNode["PublicRr"].asString();
 	auto allAlertConfigNode = configNode["AlertConfig"]["AlertConfigItem"];
 	for (auto configNodeAlertConfigAlertConfigItem : allAlertConfigNode)
 	{
 		Config::AlertConfigItem alertConfigItemObject;
-		if(!configNodeAlertConfigAlertConfigItem["NoticeType"].isNull())
-			alertConfigItemObject.noticeType = configNodeAlertConfigAlertConfigItem["NoticeType"].asString();
 		if(!configNodeAlertConfigAlertConfigItem["SmsNotice"].isNull())
 			alertConfigItemObject.smsNotice = configNodeAlertConfigAlertConfigItem["SmsNotice"].asString() == "true";
+		if(!configNodeAlertConfigAlertConfigItem["NoticeType"].isNull())
+			alertConfigItemObject.noticeType = configNodeAlertConfigAlertConfigItem["NoticeType"].asString();
 		if(!configNodeAlertConfigAlertConfigItem["EmailNotice"].isNull())
 			alertConfigItemObject.emailNotice = configNodeAlertConfigAlertConfigItem["EmailNotice"].asString() == "true";
+		if(!configNodeAlertConfigAlertConfigItem["DingtalkNotice"].isNull())
+			alertConfigItemObject.dingtalkNotice = configNodeAlertConfigAlertConfigItem["DingtalkNotice"].asString() == "true";
 		config_.alertConfig.push_back(alertConfigItemObject);
 	}
 	auto usedQuotaNode = value["UsedQuota"];
+	if(!usedQuotaNode["EmailUsedCount"].isNull())
+		usedQuota_.emailUsedCount = std::stoi(usedQuotaNode["EmailUsedCount"].asString());
 	if(!usedQuotaNode["TaskUsedCount"].isNull())
 		usedQuota_.taskUsedCount = std::stoi(usedQuotaNode["TaskUsedCount"].asString());
 	if(!usedQuotaNode["SmsUsedCount"].isNull())
 		usedQuota_.smsUsedCount = std::stoi(usedQuotaNode["SmsUsedCount"].asString());
-	if(!usedQuotaNode["EmailUsedCount"].isNull())
-		usedQuota_.emailUsedCount = std::stoi(usedQuotaNode["EmailUsedCount"].asString());
-	if(!value["InstanceId"].isNull())
-		instanceId_ = value["InstanceId"].asString();
-	if(!value["VersionCode"].isNull())
-		versionCode_ = value["VersionCode"].asString();
-	if(!value["SmsQuota"].isNull())
-		smsQuota_ = std::stoi(value["SmsQuota"].asString());
-	if(!value["TaskQuota"].isNull())
-		taskQuota_ = std::stoi(value["TaskQuota"].asString());
-	if(!value["CreateTime"].isNull())
-		createTime_ = value["CreateTime"].asString();
-	if(!value["CreateTimestamp"].isNull())
-		createTimestamp_ = std::stol(value["CreateTimestamp"].asString());
-	if(!value["ExpireTime"].isNull())
-		expireTime_ = value["ExpireTime"].asString();
+	if(!usedQuotaNode["DingtalkUsedCount"].isNull())
+		usedQuota_.dingtalkUsedCount = std::stoi(usedQuotaNode["DingtalkUsedCount"].asString());
 	if(!value["ExpireTimestamp"].isNull())
 		expireTimestamp_ = std::stol(value["ExpireTimestamp"].asString());
 	if(!value["ResourceGroupId"].isNull())
 		resourceGroupId_ = value["ResourceGroupId"].asString();
+	if(!value["InstanceId"].isNull())
+		instanceId_ = value["InstanceId"].asString();
+	if(!value["TaskQuota"].isNull())
+		taskQuota_ = std::stoi(value["TaskQuota"].asString());
+	if(!value["CreateTime"].isNull())
+		createTime_ = value["CreateTime"].asString();
+	if(!value["SmsQuota"].isNull())
+		smsQuota_ = std::stoi(value["SmsQuota"].asString());
+	if(!value["VersionCode"].isNull())
+		versionCode_ = value["VersionCode"].asString();
 	if(!value["PaymentType"].isNull())
 		paymentType_ = value["PaymentType"].asString();
+	if(!value["ExpireTime"].isNull())
+		expireTime_ = value["ExpireTime"].asString();
+	if(!value["CreateTimestamp"].isNull())
+		createTimestamp_ = std::stol(value["CreateTimestamp"].asString());
 
-}
-
-std::string DescribeDnsGtmInstanceResult::getVersionCode()const
-{
-	return versionCode_;
 }
 
 long DescribeDnsGtmInstanceResult::getExpireTimestamp()const
 {
 	return expireTimestamp_;
+}
+
+std::string DescribeDnsGtmInstanceResult::getVersionCode()const
+{
+	return versionCode_;
 }
 
 std::string DescribeDnsGtmInstanceResult::getResourceGroupId()const
