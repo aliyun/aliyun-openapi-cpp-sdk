@@ -71,6 +71,17 @@ void ModifyBackupPolicyRequest::setDBInstanceId(const std::string& dBInstanceId)
 	setParameter("DBInstanceId", dBInstanceId);
 }
 
+long ModifyBackupPolicyRequest::getEnableBackupLog()const
+{
+	return enableBackupLog_;
+}
+
+void ModifyBackupPolicyRequest::setEnableBackupLog(long enableBackupLog)
+{
+	enableBackupLog_ = enableBackupLog;
+	setParameter("EnableBackupLog", std::to_string(enableBackupLog));
+}
+
 std::string ModifyBackupPolicyRequest::getPreferredBackupPeriod()const
 {
 	return preferredBackupPeriod_;
@@ -124,5 +135,27 @@ void ModifyBackupPolicyRequest::setPreferredBackupTime(const std::string& prefer
 {
 	preferredBackupTime_ = preferredBackupTime;
 	setParameter("PreferredBackupTime", preferredBackupTime);
+}
+
+long ModifyBackupPolicyRequest::getBackupRetentionPeriod()const
+{
+	return backupRetentionPeriod_;
+}
+
+void ModifyBackupPolicyRequest::setBackupRetentionPeriod(long backupRetentionPeriod)
+{
+	backupRetentionPeriod_ = backupRetentionPeriod;
+	setParameter("BackupRetentionPeriod", std::to_string(backupRetentionPeriod));
+}
+
+long ModifyBackupPolicyRequest::getLogBackupRetentionPeriod()const
+{
+	return logBackupRetentionPeriod_;
+}
+
+void ModifyBackupPolicyRequest::setLogBackupRetentionPeriod(long logBackupRetentionPeriod)
+{
+	logBackupRetentionPeriod_ = logBackupRetentionPeriod;
+	setParameter("LogBackupRetentionPeriod", std::to_string(logBackupRetentionPeriod));
 }
 

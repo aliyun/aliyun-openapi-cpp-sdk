@@ -34,59 +34,63 @@ namespace AlibabaCloud
 			public:
 				struct DBInstance
 				{
-					struct MongosAttribute
+					struct ReplicaSet
 					{
-						std::string connectSting;
-						std::string nodeClass;
-						std::string nodeDescription;
-						int maxConnections;
+						std::string replicaSetRole;
+						std::string connectionDomain;
+						std::string vPCCloudInstanceId;
+						std::string connectionPort;
 						std::string vPCId;
-						int port;
+						std::string networkType;
 						std::string vSwitchId;
-						std::string nodeId;
-						std::string vpcCloudInstanceId;
-						int maxIOPS;
-					};
-					struct ShardAttribute
-					{
-						std::string nodeClass;
-						std::string nodeDescription;
-						int readonlyReplicas;
-						int maxConnections;
-						int port;
-						int nodeStorage;
-						std::string nodeId;
-						std::string connectString;
-						int maxIOPS;
-					};
-					struct ConfigserverAttribute
-					{
-						std::string nodeClass;
-						std::string nodeDescription;
-						int maxConnections;
-						int port;
-						int nodeStorage;
-						std::string nodeId;
-						std::string connectString;
-						int maxIOPS;
 					};
 					struct Tag
 					{
 						std::string value;
 						std::string key;
 					};
-					struct ReplicaSet
+					struct MongosAttribute
 					{
-						std::string connectionDomain;
-						std::string replicaSetRole;
-						std::string vPCCloudInstanceId;
+						std::string connectSting;
+						std::string status;
+						std::string nodeClass;
+						std::string nodeDescription;
+						int maxConnections;
 						std::string vPCId;
-						std::string connectionPort;
-						std::string networkType;
 						std::string vSwitchId;
+						int port;
+						std::string nodeId;
+						std::string vpcCloudInstanceId;
+						int maxIOPS;
+					};
+					struct ShardAttribute
+					{
+						std::string status;
+						std::string nodeClass;
+						std::string nodeDescription;
+						int maxConnections;
+						int readonlyReplicas;
+						int port;
+						std::string nodeId;
+						int nodeStorage;
+						std::string connectString;
+						int maxIOPS;
+					};
+					struct ConfigserverAttribute
+					{
+						std::string status;
+						std::string nodeClass;
+						std::string nodeDescription;
+						int maxConnections;
+						int port;
+						std::string nodeId;
+						int nodeStorage;
+						std::string connectString;
+						int maxIOPS;
 					};
 					std::string vPCCloudInstanceIds;
 					std::string resourceGroupId;
+					std::string capacityUnit;
 					std::string dBInstanceType;
 					std::string replicaSetName;
 					std::string storageEngine;
@@ -95,30 +99,30 @@ namespace AlibabaCloud
 					std::vector<DBInstance::MongosAttribute> mongosList;
 					std::string dBInstanceId;
 					std::string networkType;
-					int dBInstanceStorage;
 					std::string lastDowngradeTime;
+					int dBInstanceStorage;
 					std::vector<DBInstance::Tag> tags;
-					std::string engine;
-					std::string maintainStartTime;
 					std::string dBInstanceDescription;
+					std::string maintainStartTime;
+					std::string engine;
 					std::string replacateId;
 					bool dBInstanceReleaseProtection;
 					std::string engineVersion;
-					std::string replicationFactor;
-					std::string readonlyReplicas;
-					int maxConnections;
-					std::string zoneId;
 					std::string dBInstanceStatus;
-					std::string dBInstanceClass;
+					std::string zoneId;
+					int maxConnections;
+					std::string readonlyReplicas;
+					std::string replicationFactor;
 					std::string vPCId;
+					std::string dBInstanceClass;
 					std::string vSwitchId;
 					std::vector<DBInstance::ShardAttribute> shardList;
 					std::string lockMode;
 					int maxIOPS;
-					std::string currentKernelVersion;
-					std::string protocolType;
-					std::string vpcAuthMode;
 					std::string chargeType;
+					std::string vpcAuthMode;
+					std::string protocolType;
+					std::string currentKernelVersion;
 					std::string creationTime;
 					std::vector<DBInstance::ConfigserverAttribute> configserverList;
 					std::string regionId;

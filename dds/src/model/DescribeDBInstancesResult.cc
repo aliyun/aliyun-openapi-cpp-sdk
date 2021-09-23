@@ -71,6 +71,8 @@ void DescribeDBInstancesResult::parse(const std::string &payload)
 			dBInstancesObject.regionId = valueDBInstancesDBInstance["RegionId"].asString();
 		if(!valueDBInstancesDBInstance["DBInstanceStorage"].isNull())
 			dBInstancesObject.dBInstanceStorage = std::stoi(valueDBInstancesDBInstance["DBInstanceStorage"].asString());
+		if(!valueDBInstancesDBInstance["CapacityUnit"].isNull())
+			dBInstancesObject.capacityUnit = valueDBInstancesDBInstance["CapacityUnit"].asString();
 		if(!valueDBInstancesDBInstance["ResourceGroupId"].isNull())
 			dBInstancesObject.resourceGroupId = valueDBInstancesDBInstance["ResourceGroupId"].asString();
 		if(!valueDBInstancesDBInstance["ZoneId"].isNull())

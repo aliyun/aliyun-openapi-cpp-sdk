@@ -38,7 +38,9 @@ namespace AlibabaCloud
 				explicit DescribeBackupPolicyResult(const std::string &payload);
 				~DescribeBackupPolicyResult();
 				std::string getPreferredBackupPeriod()const;
+				int getLogBackupRetentionPeriod()const;
 				std::string getPreferredBackupTime()const;
+				int getEnableBackupLog()const;
 				std::string getBackupRetentionPeriod()const;
 				std::string getPreferredNextBackupTime()const;
 
@@ -46,7 +48,9 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string preferredBackupPeriod_;
+				int logBackupRetentionPeriod_;
 				std::string preferredBackupTime_;
+				int enableBackupLog_;
 				std::string backupRetentionPeriod_;
 				std::string preferredNextBackupTime_;
 

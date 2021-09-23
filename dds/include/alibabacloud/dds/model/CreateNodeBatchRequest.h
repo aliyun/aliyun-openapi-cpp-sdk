@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DDS_MODEL_MODIFYBACKUPPOLICYREQUEST_H_
-#define ALIBABACLOUD_DDS_MODEL_MODIFYBACKUPPOLICYREQUEST_H_
+#ifndef ALIBABACLOUD_DDS_MODEL_CREATENODEBATCHREQUEST_H_
+#define ALIBABACLOUD_DDS_MODEL_CREATENODEBATCHREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,54 +28,57 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DDS_EXPORT ModifyBackupPolicyRequest : public RpcServiceRequest
+			class ALIBABACLOUD_DDS_EXPORT CreateNodeBatchRequest : public RpcServiceRequest
 			{
 
 			public:
-				ModifyBackupPolicyRequest();
-				~ModifyBackupPolicyRequest();
+				CreateNodeBatchRequest();
+				~CreateNodeBatchRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getClientToken()const;
+				void setClientToken(const std::string& clientToken);
+				std::string getNodesInfo()const;
+				void setNodesInfo(const std::string& nodesInfo);
+				std::string getCouponNo()const;
+				void setCouponNo(const std::string& couponNo);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
 				std::string getDBInstanceId()const;
 				void setDBInstanceId(const std::string& dBInstanceId);
-				long getEnableBackupLog()const;
-				void setEnableBackupLog(long enableBackupLog);
-				std::string getPreferredBackupPeriod()const;
-				void setPreferredBackupPeriod(const std::string& preferredBackupPeriod);
+				std::string getBusinessInfo()const;
+				void setBusinessInfo(const std::string& businessInfo);
+				bool getAutoPay()const;
+				void setAutoPay(bool autoPay);
+				std::string getFromApp()const;
+				void setFromApp(const std::string& fromApp);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getPreferredBackupTime()const;
-				void setPreferredBackupTime(const std::string& preferredBackupTime);
-				long getBackupRetentionPeriod()const;
-				void setBackupRetentionPeriod(long backupRetentionPeriod);
-				long getLogBackupRetentionPeriod()const;
-				void setLogBackupRetentionPeriod(long logBackupRetentionPeriod);
 
             private:
 				long resourceOwnerId_;
+				std::string clientToken_;
+				std::string nodesInfo_;
+				std::string couponNo_;
 				std::string accessKeyId_;
 				std::string securityToken_;
 				std::string dBInstanceId_;
-				long enableBackupLog_;
-				std::string preferredBackupPeriod_;
+				std::string businessInfo_;
+				bool autoPay_;
+				std::string fromApp_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
-				std::string preferredBackupTime_;
-				long backupRetentionPeriod_;
-				long logBackupRetentionPeriod_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DDS_MODEL_MODIFYBACKUPPOLICYREQUEST_H_
+#endif // !ALIBABACLOUD_DDS_MODEL_CREATENODEBATCHREQUEST_H_

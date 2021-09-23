@@ -14,44 +14,44 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/dds/model/TransformToPrePaidResult.h>
+#include <alibabacloud/dds/model/CreateNodeBatchResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Dds;
 using namespace AlibabaCloud::Dds::Model;
 
-TransformToPrePaidResult::TransformToPrePaidResult() :
+CreateNodeBatchResult::CreateNodeBatchResult() :
 	ServiceResult()
 {}
 
-TransformToPrePaidResult::TransformToPrePaidResult(const std::string &payload) :
+CreateNodeBatchResult::CreateNodeBatchResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-TransformToPrePaidResult::~TransformToPrePaidResult()
+CreateNodeBatchResult::~CreateNodeBatchResult()
 {}
 
-void TransformToPrePaidResult::parse(const std::string &payload)
+void CreateNodeBatchResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["EndTime"].isNull())
-		endTime_ = value["EndTime"].asString();
 	if(!value["OrderId"].isNull())
 		orderId_ = value["OrderId"].asString();
+	if(!value["NodeId"].isNull())
+		nodeId_ = value["NodeId"].asString();
 
 }
 
-std::string TransformToPrePaidResult::getEndTime()const
+std::string CreateNodeBatchResult::getNodeId()const
 {
-	return endTime_;
+	return nodeId_;
 }
 
-std::string TransformToPrePaidResult::getOrderId()const
+std::string CreateNodeBatchResult::getOrderId()const
 {
 	return orderId_;
 }

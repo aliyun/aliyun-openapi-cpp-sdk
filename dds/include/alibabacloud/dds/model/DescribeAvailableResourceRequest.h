@@ -39,6 +39,8 @@ namespace AlibabaCloud
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
 				std::string getRegionId()const;
@@ -47,22 +49,29 @@ namespace AlibabaCloud
 				void setInstanceChargeType(const std::string& instanceChargeType);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getLevel()const;
+				void setLevel(const std::string& level);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getDbType()const;
+				void setDbType(const std::string& dbType);
 				std::string getZoneId()const;
 				void setZoneId(const std::string& zoneId);
 
             private:
 				long resourceOwnerId_;
 				std::string accessKeyId_;
+				std::string resourceGroupId_;
 				std::string securityToken_;
 				std::string regionId_;
 				std::string instanceChargeType_;
 				std::string resourceOwnerAccount_;
+				std::string level_;
 				std::string ownerAccount_;
 				long ownerId_;
+				std::string dbType_;
 				std::string zoneId_;
 
 			};

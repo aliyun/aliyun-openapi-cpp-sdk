@@ -36,6 +36,8 @@
 #include "model/CreateDBInstanceResult.h"
 #include "model/CreateNodeRequest.h"
 #include "model/CreateNodeResult.h"
+#include "model/CreateNodeBatchRequest.h"
+#include "model/CreateNodeBatchResult.h"
 #include "model/CreateRecommendationTaskRequest.h"
 #include "model/CreateRecommendationTaskResult.h"
 #include "model/CreateServerlessDBInstanceRequest.h"
@@ -232,6 +234,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateNodeResult> CreateNodeOutcome;
 			typedef std::future<CreateNodeOutcome> CreateNodeOutcomeCallable;
 			typedef std::function<void(const DdsClient*, const Model::CreateNodeRequest&, const CreateNodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateNodeAsyncHandler;
+			typedef Outcome<Error, Model::CreateNodeBatchResult> CreateNodeBatchOutcome;
+			typedef std::future<CreateNodeBatchOutcome> CreateNodeBatchOutcomeCallable;
+			typedef std::function<void(const DdsClient*, const Model::CreateNodeBatchRequest&, const CreateNodeBatchOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateNodeBatchAsyncHandler;
 			typedef Outcome<Error, Model::CreateRecommendationTaskResult> CreateRecommendationTaskOutcome;
 			typedef std::future<CreateRecommendationTaskOutcome> CreateRecommendationTaskOutcomeCallable;
 			typedef std::function<void(const DdsClient*, const Model::CreateRecommendationTaskRequest&, const CreateRecommendationTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateRecommendationTaskAsyncHandler;
@@ -507,6 +512,9 @@ namespace AlibabaCloud
 			CreateNodeOutcome createNode(const Model::CreateNodeRequest &request)const;
 			void createNodeAsync(const Model::CreateNodeRequest& request, const CreateNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateNodeOutcomeCallable createNodeCallable(const Model::CreateNodeRequest& request) const;
+			CreateNodeBatchOutcome createNodeBatch(const Model::CreateNodeBatchRequest &request)const;
+			void createNodeBatchAsync(const Model::CreateNodeBatchRequest& request, const CreateNodeBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateNodeBatchOutcomeCallable createNodeBatchCallable(const Model::CreateNodeBatchRequest& request) const;
 			CreateRecommendationTaskOutcome createRecommendationTask(const Model::CreateRecommendationTaskRequest &request)const;
 			void createRecommendationTaskAsync(const Model::CreateRecommendationTaskRequest& request, const CreateRecommendationTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateRecommendationTaskOutcomeCallable createRecommendationTaskCallable(const Model::CreateRecommendationTaskRequest& request) const;

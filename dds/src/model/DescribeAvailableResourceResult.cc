@@ -49,10 +49,10 @@ void DescribeAvailableResourceResult::parse(const std::string &payload)
 		for (auto valueSupportedDBTypesSupportedDBTypeAvailableZonesAvailableZone : allAvailableZonesNode)
 		{
 			SupportedDBType::AvailableZone availableZonesObject;
-			if(!valueSupportedDBTypesSupportedDBTypeAvailableZonesAvailableZone["RegionId"].isNull())
-				availableZonesObject.regionId = valueSupportedDBTypesSupportedDBTypeAvailableZonesAvailableZone["RegionId"].asString();
 			if(!valueSupportedDBTypesSupportedDBTypeAvailableZonesAvailableZone["ZoneId"].isNull())
 				availableZonesObject.zoneId = valueSupportedDBTypesSupportedDBTypeAvailableZonesAvailableZone["ZoneId"].asString();
+			if(!valueSupportedDBTypesSupportedDBTypeAvailableZonesAvailableZone["RegionId"].isNull())
+				availableZonesObject.regionId = valueSupportedDBTypesSupportedDBTypeAvailableZonesAvailableZone["RegionId"].asString();
 			auto allSupportedEngineVersionsNode = valueSupportedDBTypesSupportedDBTypeAvailableZonesAvailableZone["SupportedEngineVersions"]["SupportedEngineVersion"];
 			for (auto valueSupportedDBTypesSupportedDBTypeAvailableZonesAvailableZoneSupportedEngineVersionsSupportedEngineVersion : allSupportedEngineVersionsNode)
 			{
@@ -77,10 +77,10 @@ void DescribeAvailableResourceResult::parse(const std::string &payload)
 						for (auto valueSupportedDBTypesSupportedDBTypeAvailableZonesAvailableZoneSupportedEngineVersionsSupportedEngineVersionSupportedEnginesSupportedEngineSupportedNodeTypesSupportedNodeTypeAvailableResourcesAvailableResource : allAvailableResourcesNode)
 						{
 							SupportedDBType::AvailableZone::SupportedEngineVersion::SupportedEngine::SupportedNodeType::AvailableResource availableResourcesObject;
-							if(!valueSupportedDBTypesSupportedDBTypeAvailableZonesAvailableZoneSupportedEngineVersionsSupportedEngineVersionSupportedEnginesSupportedEngineSupportedNodeTypesSupportedNodeTypeAvailableResourcesAvailableResource["InstanceClass"].isNull())
-								availableResourcesObject.instanceClass = valueSupportedDBTypesSupportedDBTypeAvailableZonesAvailableZoneSupportedEngineVersionsSupportedEngineVersionSupportedEnginesSupportedEngineSupportedNodeTypesSupportedNodeTypeAvailableResourcesAvailableResource["InstanceClass"].asString();
 							if(!valueSupportedDBTypesSupportedDBTypeAvailableZonesAvailableZoneSupportedEngineVersionsSupportedEngineVersionSupportedEnginesSupportedEngineSupportedNodeTypesSupportedNodeTypeAvailableResourcesAvailableResource["InstanceClassRemark"].isNull())
 								availableResourcesObject.instanceClassRemark = valueSupportedDBTypesSupportedDBTypeAvailableZonesAvailableZoneSupportedEngineVersionsSupportedEngineVersionSupportedEnginesSupportedEngineSupportedNodeTypesSupportedNodeTypeAvailableResourcesAvailableResource["InstanceClassRemark"].asString();
+							if(!valueSupportedDBTypesSupportedDBTypeAvailableZonesAvailableZoneSupportedEngineVersionsSupportedEngineVersionSupportedEnginesSupportedEngineSupportedNodeTypesSupportedNodeTypeAvailableResourcesAvailableResource["InstanceClass"].isNull())
+								availableResourcesObject.instanceClass = valueSupportedDBTypesSupportedDBTypeAvailableZonesAvailableZoneSupportedEngineVersionsSupportedEngineVersionSupportedEnginesSupportedEngineSupportedNodeTypesSupportedNodeTypeAvailableResourcesAvailableResource["InstanceClass"].asString();
 							supportedNodeTypesObject.availableResources.push_back(availableResourcesObject);
 						}
 						supportedEnginesObject.supportedNodeTypes.push_back(supportedNodeTypesObject);

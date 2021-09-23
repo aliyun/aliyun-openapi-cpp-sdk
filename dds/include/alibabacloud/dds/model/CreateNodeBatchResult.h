@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DDS_MODEL_DESCRIBEACTIVEOPERATIONTASKTYPERESULT_H_
-#define ALIBABACLOUD_DDS_MODEL_DESCRIBEACTIVEOPERATIONTASKTYPERESULT_H_
+#ifndef ALIBABACLOUD_DDS_MODEL_CREATENODEBATCHRESULT_H_
+#define ALIBABACLOUD_DDS_MODEL_CREATENODEBATCHRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,30 +29,25 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DDS_EXPORT DescribeActiveOperationTaskTypeResult : public ServiceResult
+			class ALIBABACLOUD_DDS_EXPORT CreateNodeBatchResult : public ServiceResult
 			{
 			public:
-				struct Items
-				{
-					std::string taskTypeInfoZh;
-					std::string taskType;
-					int count;
-					std::string taskTypeInfoEn;
-				};
 
 
-				DescribeActiveOperationTaskTypeResult();
-				explicit DescribeActiveOperationTaskTypeResult(const std::string &payload);
-				~DescribeActiveOperationTaskTypeResult();
-				std::vector<Items> getTypeList()const;
+				CreateNodeBatchResult();
+				explicit CreateNodeBatchResult(const std::string &payload);
+				~CreateNodeBatchResult();
+				std::string getNodeId()const;
+				std::string getOrderId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<Items> typeList_;
+				std::string nodeId_;
+				std::string orderId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DDS_MODEL_DESCRIBEACTIVEOPERATIONTASKTYPERESULT_H_
+#endif // !ALIBABACLOUD_DDS_MODEL_CREATENODEBATCHRESULT_H_

@@ -39,14 +39,18 @@ void DescribeBackupPolicyResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["BackupRetentionPeriod"].isNull())
-		backupRetentionPeriod_ = value["BackupRetentionPeriod"].asString();
-	if(!value["PreferredBackupTime"].isNull())
-		preferredBackupTime_ = value["PreferredBackupTime"].asString();
 	if(!value["PreferredBackupPeriod"].isNull())
 		preferredBackupPeriod_ = value["PreferredBackupPeriod"].asString();
+	if(!value["PreferredBackupTime"].isNull())
+		preferredBackupTime_ = value["PreferredBackupTime"].asString();
+	if(!value["BackupRetentionPeriod"].isNull())
+		backupRetentionPeriod_ = value["BackupRetentionPeriod"].asString();
 	if(!value["PreferredNextBackupTime"].isNull())
 		preferredNextBackupTime_ = value["PreferredNextBackupTime"].asString();
+	if(!value["EnableBackupLog"].isNull())
+		enableBackupLog_ = std::stoi(value["EnableBackupLog"].asString());
+	if(!value["LogBackupRetentionPeriod"].isNull())
+		logBackupRetentionPeriod_ = std::stoi(value["LogBackupRetentionPeriod"].asString());
 
 }
 
@@ -55,9 +59,19 @@ std::string DescribeBackupPolicyResult::getPreferredBackupPeriod()const
 	return preferredBackupPeriod_;
 }
 
+int DescribeBackupPolicyResult::getLogBackupRetentionPeriod()const
+{
+	return logBackupRetentionPeriod_;
+}
+
 std::string DescribeBackupPolicyResult::getPreferredBackupTime()const
 {
 	return preferredBackupTime_;
+}
+
+int DescribeBackupPolicyResult::getEnableBackupLog()const
+{
+	return enableBackupLog_;
 }
 
 std::string DescribeBackupPolicyResult::getBackupRetentionPeriod()const

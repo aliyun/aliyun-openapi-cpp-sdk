@@ -49,6 +49,17 @@ void DescribeAvailableResourceRequest::setAccessKeyId(const std::string& accessK
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string DescribeAvailableResourceRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DescribeAvailableResourceRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string DescribeAvailableResourceRequest::getSecurityToken()const
 {
 	return securityToken_;
@@ -93,6 +104,17 @@ void DescribeAvailableResourceRequest::setResourceOwnerAccount(const std::string
 	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
+std::string DescribeAvailableResourceRequest::getLevel()const
+{
+	return level_;
+}
+
+void DescribeAvailableResourceRequest::setLevel(const std::string& level)
+{
+	level_ = level;
+	setParameter("Level", level);
+}
+
 std::string DescribeAvailableResourceRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -113,6 +135,17 @@ void DescribeAvailableResourceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeAvailableResourceRequest::getDbType()const
+{
+	return dbType_;
+}
+
+void DescribeAvailableResourceRequest::setDbType(const std::string& dbType)
+{
+	dbType_ = dbType;
+	setParameter("DbType", dbType);
 }
 
 std::string DescribeAvailableResourceRequest::getZoneId()const

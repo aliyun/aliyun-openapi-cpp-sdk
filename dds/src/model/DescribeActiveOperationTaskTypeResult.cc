@@ -45,6 +45,10 @@ void DescribeActiveOperationTaskTypeResult::parse(const std::string &payload)
 		Items typeListObject;
 		if(!valueTypeListItems["TaskType"].isNull())
 			typeListObject.taskType = valueTypeListItems["TaskType"].asString();
+		if(!valueTypeListItems["TaskTypeInfoEn"].isNull())
+			typeListObject.taskTypeInfoEn = valueTypeListItems["TaskTypeInfoEn"].asString();
+		if(!valueTypeListItems["TaskTypeInfoZh"].isNull())
+			typeListObject.taskTypeInfoZh = valueTypeListItems["TaskTypeInfoZh"].asString();
 		if(!valueTypeListItems["Count"].isNull())
 			typeListObject.count = std::stoi(valueTypeListItems["Count"].asString());
 		typeList_.push_back(typeListObject);
