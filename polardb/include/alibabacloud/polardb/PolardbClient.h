@@ -50,6 +50,8 @@
 #include "model/CreateGlobalDatabaseNetworkResult.h"
 #include "model/CreateParameterGroupRequest.h"
 #include "model/CreateParameterGroupResult.h"
+#include "model/CreateStoragePlanRequest.h"
+#include "model/CreateStoragePlanResult.h"
 #include "model/DeleteAccountRequest.h"
 #include "model/DeleteAccountResult.h"
 #include "model/DeleteBackupRequest.h"
@@ -216,6 +218,8 @@
 #include "model/RevokeAccountPrivilegeResult.h"
 #include "model/TagResourcesRequest.h"
 #include "model/TagResourcesResult.h"
+#include "model/TempModifyDBNodeRequest.h"
+#include "model/TempModifyDBNodeResult.h"
 #include "model/TransformDBClusterPayTypeRequest.h"
 #include "model/TransformDBClusterPayTypeResult.h"
 #include "model/UntagResourcesRequest.h"
@@ -275,6 +279,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateParameterGroupResult> CreateParameterGroupOutcome;
 			typedef std::future<CreateParameterGroupOutcome> CreateParameterGroupOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::CreateParameterGroupRequest&, const CreateParameterGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateParameterGroupAsyncHandler;
+			typedef Outcome<Error, Model::CreateStoragePlanResult> CreateStoragePlanOutcome;
+			typedef std::future<CreateStoragePlanOutcome> CreateStoragePlanOutcomeCallable;
+			typedef std::function<void(const PolardbClient*, const Model::CreateStoragePlanRequest&, const CreateStoragePlanOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateStoragePlanAsyncHandler;
 			typedef Outcome<Error, Model::DeleteAccountResult> DeleteAccountOutcome;
 			typedef std::future<DeleteAccountOutcome> DeleteAccountOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::DeleteAccountRequest&, const DeleteAccountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAccountAsyncHandler;
@@ -524,6 +531,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::TagResourcesResult> TagResourcesOutcome;
 			typedef std::future<TagResourcesOutcome> TagResourcesOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::TagResourcesRequest&, const TagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TagResourcesAsyncHandler;
+			typedef Outcome<Error, Model::TempModifyDBNodeResult> TempModifyDBNodeOutcome;
+			typedef std::future<TempModifyDBNodeOutcome> TempModifyDBNodeOutcomeCallable;
+			typedef std::function<void(const PolardbClient*, const Model::TempModifyDBNodeRequest&, const TempModifyDBNodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TempModifyDBNodeAsyncHandler;
 			typedef Outcome<Error, Model::TransformDBClusterPayTypeResult> TransformDBClusterPayTypeOutcome;
 			typedef std::future<TransformDBClusterPayTypeOutcome> TransformDBClusterPayTypeOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::TransformDBClusterPayTypeRequest&, const TransformDBClusterPayTypeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TransformDBClusterPayTypeAsyncHandler;
@@ -583,6 +593,9 @@ namespace AlibabaCloud
 			CreateParameterGroupOutcome createParameterGroup(const Model::CreateParameterGroupRequest &request)const;
 			void createParameterGroupAsync(const Model::CreateParameterGroupRequest& request, const CreateParameterGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateParameterGroupOutcomeCallable createParameterGroupCallable(const Model::CreateParameterGroupRequest& request) const;
+			CreateStoragePlanOutcome createStoragePlan(const Model::CreateStoragePlanRequest &request)const;
+			void createStoragePlanAsync(const Model::CreateStoragePlanRequest& request, const CreateStoragePlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateStoragePlanOutcomeCallable createStoragePlanCallable(const Model::CreateStoragePlanRequest& request) const;
 			DeleteAccountOutcome deleteAccount(const Model::DeleteAccountRequest &request)const;
 			void deleteAccountAsync(const Model::DeleteAccountRequest& request, const DeleteAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteAccountOutcomeCallable deleteAccountCallable(const Model::DeleteAccountRequest& request) const;
@@ -832,6 +845,9 @@ namespace AlibabaCloud
 			TagResourcesOutcome tagResources(const Model::TagResourcesRequest &request)const;
 			void tagResourcesAsync(const Model::TagResourcesRequest& request, const TagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			TagResourcesOutcomeCallable tagResourcesCallable(const Model::TagResourcesRequest& request) const;
+			TempModifyDBNodeOutcome tempModifyDBNode(const Model::TempModifyDBNodeRequest &request)const;
+			void tempModifyDBNodeAsync(const Model::TempModifyDBNodeRequest& request, const TempModifyDBNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			TempModifyDBNodeOutcomeCallable tempModifyDBNodeCallable(const Model::TempModifyDBNodeRequest& request) const;
 			TransformDBClusterPayTypeOutcome transformDBClusterPayType(const Model::TransformDBClusterPayTypeRequest &request)const;
 			void transformDBClusterPayTypeAsync(const Model::TransformDBClusterPayTypeRequest& request, const TransformDBClusterPayTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			TransformDBClusterPayTypeOutcomeCallable transformDBClusterPayTypeCallable(const Model::TransformDBClusterPayTypeRequest& request) const;

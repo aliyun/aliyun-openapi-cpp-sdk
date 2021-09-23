@@ -38,11 +38,11 @@ namespace AlibabaCloud
 					{
 						std::string status;
 						std::string action;
-						std::string taskId;
 						std::string plannedTime;
+						std::string taskId;
 						std::string dbClusterDescription;
-						std::string plannedStartTime;
 						std::string dBClusterId;
+						std::string plannedStartTime;
 						std::string region;
 						std::string orderId;
 						std::string plannedEndTime;

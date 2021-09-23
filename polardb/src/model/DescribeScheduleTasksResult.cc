@@ -42,10 +42,10 @@ void DescribeScheduleTasksResult::parse(const std::string &payload)
 	auto dataNode = value["Data"];
 	if(!dataNode["TotalRecordCount"].isNull())
 		data_.totalRecordCount = std::stoi(dataNode["TotalRecordCount"].asString());
-	if(!dataNode["PageSize"].isNull())
-		data_.pageSize = std::stoi(dataNode["PageSize"].asString());
 	if(!dataNode["PageNumber"].isNull())
 		data_.pageNumber = std::stoi(dataNode["PageNumber"].asString());
+	if(!dataNode["PageSize"].isNull())
+		data_.pageSize = std::stoi(dataNode["PageSize"].asString());
 	auto allTimerInfosNode = dataNode["TimerInfos"]["timerInfosItem"];
 	for (auto dataNodeTimerInfostimerInfosItem : allTimerInfosNode)
 	{
@@ -54,24 +54,24 @@ void DescribeScheduleTasksResult::parse(const std::string &payload)
 			timerInfosItemObject.status = dataNodeTimerInfostimerInfosItem["Status"].asString();
 		if(!dataNodeTimerInfostimerInfosItem["Action"].isNull())
 			timerInfosItemObject.action = dataNodeTimerInfostimerInfosItem["Action"].asString();
-		if(!dataNodeTimerInfostimerInfosItem["TaskId"].isNull())
-			timerInfosItemObject.taskId = dataNodeTimerInfostimerInfosItem["TaskId"].asString();
+		if(!dataNodeTimerInfostimerInfosItem["PlannedEndTime"].isNull())
+			timerInfosItemObject.plannedEndTime = dataNodeTimerInfostimerInfosItem["PlannedEndTime"].asString();
 		if(!dataNodeTimerInfostimerInfosItem["PlannedTime"].isNull())
 			timerInfosItemObject.plannedTime = dataNodeTimerInfostimerInfosItem["PlannedTime"].asString();
-		if(!dataNodeTimerInfostimerInfosItem["DbClusterDescription"].isNull())
-			timerInfosItemObject.dbClusterDescription = dataNodeTimerInfostimerInfosItem["DbClusterDescription"].asString();
-		if(!dataNodeTimerInfostimerInfosItem["PlannedStartTime"].isNull())
-			timerInfosItemObject.plannedStartTime = dataNodeTimerInfostimerInfosItem["PlannedStartTime"].asString();
 		if(!dataNodeTimerInfostimerInfosItem["DBClusterId"].isNull())
 			timerInfosItemObject.dBClusterId = dataNodeTimerInfostimerInfosItem["DBClusterId"].asString();
 		if(!dataNodeTimerInfostimerInfosItem["Region"].isNull())
 			timerInfosItemObject.region = dataNodeTimerInfostimerInfosItem["Region"].asString();
+		if(!dataNodeTimerInfostimerInfosItem["PlannedStartTime"].isNull())
+			timerInfosItemObject.plannedStartTime = dataNodeTimerInfostimerInfosItem["PlannedStartTime"].asString();
+		if(!dataNodeTimerInfostimerInfosItem["TaskId"].isNull())
+			timerInfosItemObject.taskId = dataNodeTimerInfostimerInfosItem["TaskId"].asString();
 		if(!dataNodeTimerInfostimerInfosItem["OrderId"].isNull())
 			timerInfosItemObject.orderId = dataNodeTimerInfostimerInfosItem["OrderId"].asString();
-		if(!dataNodeTimerInfostimerInfosItem["PlannedEndTime"].isNull())
-			timerInfosItemObject.plannedEndTime = dataNodeTimerInfostimerInfosItem["PlannedEndTime"].asString();
 		if(!dataNodeTimerInfostimerInfosItem["DbClusterStatus"].isNull())
 			timerInfosItemObject.dbClusterStatus = dataNodeTimerInfostimerInfosItem["DbClusterStatus"].asString();
+		if(!dataNodeTimerInfostimerInfosItem["DbClusterDescription"].isNull())
+			timerInfosItemObject.dbClusterDescription = dataNodeTimerInfostimerInfosItem["DbClusterDescription"].asString();
 		data_.timerInfos.push_back(timerInfosItemObject);
 	}
 	if(!value["Message"].isNull())

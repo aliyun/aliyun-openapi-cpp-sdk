@@ -555,6 +555,42 @@ PolardbClient::CreateParameterGroupOutcomeCallable PolardbClient::createParamete
 	return task->get_future();
 }
 
+PolardbClient::CreateStoragePlanOutcome PolardbClient::createStoragePlan(const CreateStoragePlanRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateStoragePlanOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateStoragePlanOutcome(CreateStoragePlanResult(outcome.result()));
+	else
+		return CreateStoragePlanOutcome(outcome.error());
+}
+
+void PolardbClient::createStoragePlanAsync(const CreateStoragePlanRequest& request, const CreateStoragePlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createStoragePlan(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbClient::CreateStoragePlanOutcomeCallable PolardbClient::createStoragePlanCallable(const CreateStoragePlanRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateStoragePlanOutcome()>>(
+			[this, request]()
+			{
+			return this->createStoragePlan(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 PolardbClient::DeleteAccountOutcome PolardbClient::deleteAccount(const DeleteAccountRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3537,6 +3573,42 @@ PolardbClient::TagResourcesOutcomeCallable PolardbClient::tagResourcesCallable(c
 			[this, request]()
 			{
 			return this->tagResources(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+PolardbClient::TempModifyDBNodeOutcome PolardbClient::tempModifyDBNode(const TempModifyDBNodeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return TempModifyDBNodeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return TempModifyDBNodeOutcome(TempModifyDBNodeResult(outcome.result()));
+	else
+		return TempModifyDBNodeOutcome(outcome.error());
+}
+
+void PolardbClient::tempModifyDBNodeAsync(const TempModifyDBNodeRequest& request, const TempModifyDBNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, tempModifyDBNode(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbClient::TempModifyDBNodeOutcomeCallable PolardbClient::tempModifyDBNodeCallable(const TempModifyDBNodeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<TempModifyDBNodeOutcome()>>(
+			[this, request]()
+			{
+			return this->tempModifyDBNode(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

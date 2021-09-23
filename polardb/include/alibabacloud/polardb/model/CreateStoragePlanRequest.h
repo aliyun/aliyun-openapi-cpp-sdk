@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_POLARDB_MODEL_DESCRIBESCHEDULETASKSREQUEST_H_
-#define ALIBABACLOUD_POLARDB_MODEL_DESCRIBESCHEDULETASKSREQUEST_H_
+#ifndef ALIBABACLOUD_POLARDB_MODEL_CREATESTORAGEPLANREQUEST_H_
+#define ALIBABACLOUD_POLARDB_MODEL_CREATESTORAGEPLANREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,57 +28,48 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_POLARDB_EXPORT DescribeScheduleTasksRequest : public RpcServiceRequest
+			class ALIBABACLOUD_POLARDB_EXPORT CreateStoragePlanRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeScheduleTasksRequest();
-				~DescribeScheduleTasksRequest();
+				CreateStoragePlanRequest();
+				~CreateStoragePlanRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getDBClusterDescription()const;
-				void setDBClusterDescription(const std::string& dBClusterDescription);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
+				std::string getClientToken()const;
+				void setClientToken(const std::string& clientToken);
+				std::string getStorageType()const;
+				void setStorageType(const std::string& storageType);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
+				std::string getPeriod()const;
+				void setPeriod(const std::string& period);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getOrderId()const;
-				void setOrderId(const std::string& orderId);
-				std::string getDBClusterId()const;
-				void setDBClusterId(const std::string& dBClusterId);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getTaskAction()const;
-				void setTaskAction(const std::string& taskAction);
-				std::string getStatus()const;
-				void setStatus(const std::string& status);
+				std::string getUsedTime()const;
+				void setUsedTime(const std::string& usedTime);
+				std::string getStorageClass()const;
+				void setStorageClass(const std::string& storageClass);
 
             private:
 				long resourceOwnerId_;
-				std::string dBClusterDescription_;
-				int pageNumber_;
+				std::string clientToken_;
+				std::string storageType_;
 				std::string accessKeyId_;
-				std::string regionId_;
-				int pageSize_;
+				std::string period_;
 				std::string resourceOwnerAccount_;
-				std::string orderId_;
-				std::string dBClusterId_;
 				std::string ownerAccount_;
 				long ownerId_;
-				std::string taskAction_;
-				std::string status_;
+				std::string usedTime_;
+				std::string storageClass_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_POLARDB_MODEL_DESCRIBESCHEDULETASKSREQUEST_H_
+#endif // !ALIBABACLOUD_POLARDB_MODEL_CREATESTORAGEPLANREQUEST_H_

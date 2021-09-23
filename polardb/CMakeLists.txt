@@ -49,6 +49,8 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/CreateGlobalDatabaseNetworkResult.h
 	include/alibabacloud/polardb/model/CreateParameterGroupRequest.h
 	include/alibabacloud/polardb/model/CreateParameterGroupResult.h
+	include/alibabacloud/polardb/model/CreateStoragePlanRequest.h
+	include/alibabacloud/polardb/model/CreateStoragePlanResult.h
 	include/alibabacloud/polardb/model/DeleteAccountRequest.h
 	include/alibabacloud/polardb/model/DeleteAccountResult.h
 	include/alibabacloud/polardb/model/DeleteBackupRequest.h
@@ -215,6 +217,8 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/RevokeAccountPrivilegeResult.h
 	include/alibabacloud/polardb/model/TagResourcesRequest.h
 	include/alibabacloud/polardb/model/TagResourcesResult.h
+	include/alibabacloud/polardb/model/TempModifyDBNodeRequest.h
+	include/alibabacloud/polardb/model/TempModifyDBNodeResult.h
 	include/alibabacloud/polardb/model/TransformDBClusterPayTypeRequest.h
 	include/alibabacloud/polardb/model/TransformDBClusterPayTypeResult.h
 	include/alibabacloud/polardb/model/UntagResourcesRequest.h
@@ -254,6 +258,8 @@ set(polardb_src
 	src/model/CreateGlobalDatabaseNetworkResult.cc
 	src/model/CreateParameterGroupRequest.cc
 	src/model/CreateParameterGroupResult.cc
+	src/model/CreateStoragePlanRequest.cc
+	src/model/CreateStoragePlanResult.cc
 	src/model/DeleteAccountRequest.cc
 	src/model/DeleteAccountResult.cc
 	src/model/DeleteBackupRequest.cc
@@ -420,6 +426,8 @@ set(polardb_src
 	src/model/RevokeAccountPrivilegeResult.cc
 	src/model/TagResourcesRequest.cc
 	src/model/TagResourcesResult.cc
+	src/model/TempModifyDBNodeRequest.cc
+	src/model/TempModifyDBNodeResult.cc
 	src/model/TransformDBClusterPayTypeRequest.cc
 	src/model/TransformDBClusterPayTypeResult.cc
 	src/model/UntagResourcesRequest.cc

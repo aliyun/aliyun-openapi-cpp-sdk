@@ -43,34 +43,34 @@ void DescribeDBClusterAttributeResult::parse(const std::string &payload)
 	for (auto valueDBNodesDBNode : allDBNodesNode)
 	{
 		DBNode dBNodesObject;
-		if(!valueDBNodesDBNode["DBNodeStatus"].isNull())
-			dBNodesObject.dBNodeStatus = valueDBNodesDBNode["DBNodeStatus"].asString();
-		if(!valueDBNodesDBNode["MaxConnections"].isNull())
-			dBNodesObject.maxConnections = std::stoi(valueDBNodesDBNode["MaxConnections"].asString());
-		if(!valueDBNodesDBNode["ZoneId"].isNull())
-			dBNodesObject.zoneId = valueDBNodesDBNode["ZoneId"].asString();
-		if(!valueDBNodesDBNode["DBNodeRole"].isNull())
-			dBNodesObject.dBNodeRole = valueDBNodesDBNode["DBNodeRole"].asString();
 		if(!valueDBNodesDBNode["CreationTime"].isNull())
 			dBNodesObject.creationTime = valueDBNodesDBNode["CreationTime"].asString();
-		if(!valueDBNodesDBNode["DBNodeId"].isNull())
-			dBNodesObject.dBNodeId = valueDBNodesDBNode["DBNodeId"].asString();
 		if(!valueDBNodesDBNode["FailoverPriority"].isNull())
 			dBNodesObject.failoverPriority = std::stoi(valueDBNodesDBNode["FailoverPriority"].asString());
-		if(!valueDBNodesDBNode["DBNodeClass"].isNull())
-			dBNodesObject.dBNodeClass = valueDBNodesDBNode["DBNodeClass"].asString();
 		if(!valueDBNodesDBNode["MaxIOPS"].isNull())
 			dBNodesObject.maxIOPS = std::stoi(valueDBNodesDBNode["MaxIOPS"].asString());
+		if(!valueDBNodesDBNode["DBNodeClass"].isNull())
+			dBNodesObject.dBNodeClass = valueDBNodesDBNode["DBNodeClass"].asString();
+		if(!valueDBNodesDBNode["DBNodeRole"].isNull())
+			dBNodesObject.dBNodeRole = valueDBNodesDBNode["DBNodeRole"].asString();
+		if(!valueDBNodesDBNode["ZoneId"].isNull())
+			dBNodesObject.zoneId = valueDBNodesDBNode["ZoneId"].asString();
+		if(!valueDBNodesDBNode["MaxConnections"].isNull())
+			dBNodesObject.maxConnections = std::stoi(valueDBNodesDBNode["MaxConnections"].asString());
+		if(!valueDBNodesDBNode["DBNodeStatus"].isNull())
+			dBNodesObject.dBNodeStatus = valueDBNodesDBNode["DBNodeStatus"].asString();
+		if(!valueDBNodesDBNode["DBNodeId"].isNull())
+			dBNodesObject.dBNodeId = valueDBNodesDBNode["DBNodeId"].asString();
 		dBNodes_.push_back(dBNodesObject);
 	}
 	auto allTagsNode = value["Tags"]["Tag"];
 	for (auto valueTagsTag : allTagsNode)
 	{
 		Tag tagsObject;
-		if(!valueTagsTag["Value"].isNull())
-			tagsObject.value = valueTagsTag["Value"].asString();
 		if(!valueTagsTag["Key"].isNull())
 			tagsObject.key = valueTagsTag["Key"].asString();
+		if(!valueTagsTag["Value"].isNull())
+			tagsObject.value = valueTagsTag["Value"].asString();
 		tags_.push_back(tagsObject);
 	}
 	if(!value["DeletionLock"].isNull())
@@ -83,16 +83,16 @@ void DescribeDBClusterAttributeResult::parse(const std::string &payload)
 		dataLevel1BackupChainSize_ = std::stol(value["DataLevel1BackupChainSize"].asString());
 	if(!value["DBClusterId"].isNull())
 		dBClusterId_ = value["DBClusterId"].asString();
-	if(!value["DBClusterNetworkType"].isNull())
-		dBClusterNetworkType_ = value["DBClusterNetworkType"].asString();
 	if(!value["DBType"].isNull())
 		dBType_ = value["DBType"].asString();
+	if(!value["DBClusterNetworkType"].isNull())
+		dBClusterNetworkType_ = value["DBClusterNetworkType"].asString();
 	if(!value["IsLatestVersion"].isNull())
 		isLatestVersion_ = value["IsLatestVersion"].asString() == "true";
-	if(!value["DBVersion"].isNull())
-		dBVersion_ = value["DBVersion"].asString();
 	if(!value["StorageMax"].isNull())
 		storageMax_ = std::stol(value["StorageMax"].asString());
+	if(!value["DBVersion"].isNull())
+		dBVersion_ = value["DBVersion"].asString();
 	if(!value["ZoneIds"].isNull())
 		zoneIds_ = value["ZoneIds"].asString();
 	if(!value["MaintainTime"].isNull())
@@ -109,24 +109,26 @@ void DescribeDBClusterAttributeResult::parse(const std::string &payload)
 		dBClusterDescription_ = value["DBClusterDescription"].asString();
 	if(!value["Expired"].isNull())
 		expired_ = value["Expired"].asString();
-	if(!value["LockMode"].isNull())
-		lockMode_ = value["LockMode"].asString();
 	if(!value["PayType"].isNull())
 		payType_ = value["PayType"].asString();
+	if(!value["LockMode"].isNull())
+		lockMode_ = value["LockMode"].asString();
 	if(!value["StorageUsed"].isNull())
 		storageUsed_ = std::stol(value["StorageUsed"].asString());
 	if(!value["DBVersionStatus"].isNull())
 		dBVersionStatus_ = value["DBVersionStatus"].asString();
-	if(!value["SubCategory"].isNull())
-		subCategory_ = value["SubCategory"].asString();
 	if(!value["CreationTime"].isNull())
 		creationTime_ = value["CreationTime"].asString();
-	if(!value["RegionId"].isNull())
-		regionId_ = value["RegionId"].asString();
 	if(!value["SQLSize"].isNull())
 		sQLSize_ = std::stol(value["SQLSize"].asString());
+	if(!value["RegionId"].isNull())
+		regionId_ = value["RegionId"].asString();
 	if(!value["ExpireTime"].isNull())
 		expireTime_ = value["ExpireTime"].asString();
+	if(!value["SubCategory"].isNull())
+		subCategory_ = value["SubCategory"].asString();
+	if(!value["IsProxyLatestVersion"].isNull())
+		isProxyLatestVersion_ = value["IsProxyLatestVersion"].asString() == "true";
 
 }
 
@@ -155,14 +157,14 @@ std::string DescribeDBClusterAttributeResult::getDBClusterId()const
 	return dBClusterId_;
 }
 
-std::string DescribeDBClusterAttributeResult::getDBClusterNetworkType()const
-{
-	return dBClusterNetworkType_;
-}
-
 std::string DescribeDBClusterAttributeResult::getDBType()const
 {
 	return dBType_;
+}
+
+std::string DescribeDBClusterAttributeResult::getDBClusterNetworkType()const
+{
+	return dBClusterNetworkType_;
 }
 
 bool DescribeDBClusterAttributeResult::getIsLatestVersion()const
@@ -170,14 +172,14 @@ bool DescribeDBClusterAttributeResult::getIsLatestVersion()const
 	return isLatestVersion_;
 }
 
-std::string DescribeDBClusterAttributeResult::getDBVersion()const
-{
-	return dBVersion_;
-}
-
 long DescribeDBClusterAttributeResult::getStorageMax()const
 {
 	return storageMax_;
+}
+
+std::string DescribeDBClusterAttributeResult::getDBVersion()const
+{
+	return dBVersion_;
 }
 
 std::vector<DescribeDBClusterAttributeResult::DBNode> DescribeDBClusterAttributeResult::getDBNodes()const
@@ -230,14 +232,14 @@ std::string DescribeDBClusterAttributeResult::getExpired()const
 	return expired_;
 }
 
-std::string DescribeDBClusterAttributeResult::getLockMode()const
-{
-	return lockMode_;
-}
-
 std::string DescribeDBClusterAttributeResult::getPayType()const
 {
 	return payType_;
+}
+
+std::string DescribeDBClusterAttributeResult::getLockMode()const
+{
+	return lockMode_;
 }
 
 long DescribeDBClusterAttributeResult::getStorageUsed()const
@@ -245,14 +247,14 @@ long DescribeDBClusterAttributeResult::getStorageUsed()const
 	return storageUsed_;
 }
 
+bool DescribeDBClusterAttributeResult::getIsProxyLatestVersion()const
+{
+	return isProxyLatestVersion_;
+}
+
 std::string DescribeDBClusterAttributeResult::getDBVersionStatus()const
 {
 	return dBVersionStatus_;
-}
-
-std::string DescribeDBClusterAttributeResult::getSubCategory()const
-{
-	return subCategory_;
 }
 
 std::string DescribeDBClusterAttributeResult::getCreationTime()const
@@ -260,14 +262,19 @@ std::string DescribeDBClusterAttributeResult::getCreationTime()const
 	return creationTime_;
 }
 
-std::string DescribeDBClusterAttributeResult::getRegionId()const
+std::string DescribeDBClusterAttributeResult::getSubCategory()const
 {
-	return regionId_;
+	return subCategory_;
 }
 
 long DescribeDBClusterAttributeResult::getSQLSize()const
 {
 	return sQLSize_;
+}
+
+std::string DescribeDBClusterAttributeResult::getRegionId()const
+{
+	return regionId_;
 }
 
 std::string DescribeDBClusterAttributeResult::getExpireTime()const

@@ -35,14 +35,14 @@ namespace AlibabaCloud
 				struct DBNode
 				{
 					std::string dBNodeStatus;
-					int maxConnections;
 					std::string zoneId;
+					int maxConnections;
 					std::string dBNodeRole;
 					std::string creationTime;
 					std::string dBNodeId;
 					int failoverPriority;
-					std::string dBNodeClass;
 					int maxIOPS;
+					std::string dBNodeClass;
 				};
 				struct Tag
 				{
@@ -59,11 +59,11 @@ namespace AlibabaCloud
 				std::string getResourceGroupId()const;
 				long getDataLevel1BackupChainSize()const;
 				std::string getDBClusterId()const;
-				std::string getDBClusterNetworkType()const;
 				std::string getDBType()const;
+				std::string getDBClusterNetworkType()const;
 				bool getIsLatestVersion()const;
-				std::string getDBVersion()const;
 				long getStorageMax()const;
+				std::string getDBVersion()const;
 				std::vector<DBNode> getDBNodes()const;
 				std::string getZoneIds()const;
 				std::string getMaintainTime()const;
@@ -74,14 +74,15 @@ namespace AlibabaCloud
 				std::string getVSwitchId()const;
 				std::string getDBClusterDescription()const;
 				std::string getExpired()const;
-				std::string getLockMode()const;
 				std::string getPayType()const;
+				std::string getLockMode()const;
 				long getStorageUsed()const;
+				bool getIsProxyLatestVersion()const;
 				std::string getDBVersionStatus()const;
-				std::string getSubCategory()const;
 				std::string getCreationTime()const;
-				std::string getRegionId()const;
+				std::string getSubCategory()const;
 				long getSQLSize()const;
+				std::string getRegionId()const;
 				std::string getExpireTime()const;
 
 			protected:
@@ -92,11 +93,11 @@ namespace AlibabaCloud
 				std::string resourceGroupId_;
 				long dataLevel1BackupChainSize_;
 				std::string dBClusterId_;
-				std::string dBClusterNetworkType_;
 				std::string dBType_;
+				std::string dBClusterNetworkType_;
 				bool isLatestVersion_;
-				std::string dBVersion_;
 				long storageMax_;
+				std::string dBVersion_;
 				std::vector<DBNode> dBNodes_;
 				std::string zoneIds_;
 				std::string maintainTime_;
@@ -107,14 +108,15 @@ namespace AlibabaCloud
 				std::string vSwitchId_;
 				std::string dBClusterDescription_;
 				std::string expired_;
-				std::string lockMode_;
 				std::string payType_;
+				std::string lockMode_;
 				long storageUsed_;
+				bool isProxyLatestVersion_;
 				std::string dBVersionStatus_;
-				std::string subCategory_;
 				std::string creationTime_;
-				std::string regionId_;
+				std::string subCategory_;
 				long sQLSize_;
+				std::string regionId_;
 				std::string expireTime_;
 
 			};

@@ -81,6 +81,30 @@ void DescribeGlobalDatabaseNetworkResult::parse(const std::string &payload)
 			dBClustersObject.dBClusterDescription = valueDBClustersDBCluster["DBClusterDescription"].asString();
 		if(!valueDBClustersDBCluster["Role"].isNull())
 			dBClustersObject.role = valueDBClustersDBCluster["Role"].asString();
+		auto allDBNodesNode = valueDBClustersDBCluster["DBNodes"]["DBNode"];
+		for (auto valueDBClustersDBClusterDBNodesDBNode : allDBNodesNode)
+		{
+			DBCluster::DBNode dBNodesObject;
+			if(!valueDBClustersDBClusterDBNodesDBNode["DBNodeClass"].isNull())
+				dBNodesObject.dBNodeClass = valueDBClustersDBClusterDBNodesDBNode["DBNodeClass"].asString();
+			if(!valueDBClustersDBClusterDBNodesDBNode["ZoneId"].isNull())
+				dBNodesObject.zoneId = valueDBClustersDBClusterDBNodesDBNode["ZoneId"].asString();
+			if(!valueDBClustersDBClusterDBNodesDBNode["CreationTime"].isNull())
+				dBNodesObject.creationTime = valueDBClustersDBClusterDBNodesDBNode["CreationTime"].asString();
+			if(!valueDBClustersDBClusterDBNodesDBNode["DBNodeRole"].isNull())
+				dBNodesObject.dBNodeRole = valueDBClustersDBClusterDBNodesDBNode["DBNodeRole"].asString();
+			if(!valueDBClustersDBClusterDBNodesDBNode["DBNodeStatus"].isNull())
+				dBNodesObject.dBNodeStatus = valueDBClustersDBClusterDBNodesDBNode["DBNodeStatus"].asString();
+			if(!valueDBClustersDBClusterDBNodesDBNode["FailoverPriority"].isNull())
+				dBNodesObject.failoverPriority = std::stoi(valueDBClustersDBClusterDBNodesDBNode["FailoverPriority"].asString());
+			if(!valueDBClustersDBClusterDBNodesDBNode["MaxConnections"].isNull())
+				dBNodesObject.maxConnections = std::stoi(valueDBClustersDBClusterDBNodesDBNode["MaxConnections"].asString());
+			if(!valueDBClustersDBClusterDBNodesDBNode["MaxIOPS"].isNull())
+				dBNodesObject.maxIOPS = std::stoi(valueDBClustersDBClusterDBNodesDBNode["MaxIOPS"].asString());
+			if(!valueDBClustersDBClusterDBNodesDBNode["DBNodeId"].isNull())
+				dBNodesObject.dBNodeId = valueDBClustersDBClusterDBNodesDBNode["DBNodeId"].asString();
+			dBClustersObject.dBNodes.push_back(dBNodesObject);
+		}
 		dBClusters_.push_back(dBClustersObject);
 	}
 	if(!value["GDNStatus"].isNull())

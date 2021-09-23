@@ -38,6 +38,17 @@ void DescribeScheduleTasksRequest::setResourceOwnerId(long resourceOwnerId)
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string DescribeScheduleTasksRequest::getDBClusterDescription()const
+{
+	return dBClusterDescription_;
+}
+
+void DescribeScheduleTasksRequest::setDBClusterDescription(const std::string& dBClusterDescription)
+{
+	dBClusterDescription_ = dBClusterDescription;
+	setParameter("DBClusterDescription", dBClusterDescription);
+}
+
 int DescribeScheduleTasksRequest::getPageNumber()const
 {
 	return pageNumber_;
@@ -91,6 +102,17 @@ void DescribeScheduleTasksRequest::setResourceOwnerAccount(const std::string& re
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string DescribeScheduleTasksRequest::getOrderId()const
+{
+	return orderId_;
+}
+
+void DescribeScheduleTasksRequest::setOrderId(const std::string& orderId)
+{
+	orderId_ = orderId;
+	setParameter("OrderId", orderId);
 }
 
 std::string DescribeScheduleTasksRequest::getDBClusterId()const

@@ -40,6 +40,18 @@ namespace AlibabaCloud
 				};
 				struct DBCluster
 				{
+					struct DBNode
+					{
+						std::string dBNodeStatus;
+						std::string zoneId;
+						int maxConnections;
+						std::string dBNodeRole;
+						std::string creationTime;
+						std::string dBNodeId;
+						int failoverPriority;
+						std::string dBNodeClass;
+						int maxIOPS;
+					};
 					std::string dBClusterStatus;
 					std::string dBClusterId;
 					std::string dBClusterDescription;
@@ -51,6 +63,7 @@ namespace AlibabaCloud
 					std::string storageUsed;
 					std::string role;
 					std::string dBVersion;
+					std::vector<DBCluster::DBNode> dBNodes;
 					std::string regionId;
 					std::string expireTime;
 				};

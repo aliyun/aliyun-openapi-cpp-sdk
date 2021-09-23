@@ -83,6 +83,8 @@ void DescribeDBClustersResult::parse(const std::string &payload)
 			itemsObject.zoneId = valueItemsDBCluster["ZoneId"].asString();
 		if(!valueItemsDBCluster["Engine"].isNull())
 			itemsObject.engine = valueItemsDBCluster["Engine"].asString();
+		if(!valueItemsDBCluster["Category"].isNull())
+			itemsObject.category = valueItemsDBCluster["Category"].asString();
 		auto allTagsNode = valueItemsDBCluster["Tags"]["Tag"];
 		for (auto valueItemsDBClusterTagsTag : allTagsNode)
 		{
