@@ -1599,6 +1599,42 @@ FacebodyClient::HandPostureOutcomeCallable FacebodyClient::handPostureCallable(c
 	return task->get_future();
 }
 
+FacebodyClient::LiquifyFaceOutcome FacebodyClient::liquifyFace(const LiquifyFaceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return LiquifyFaceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return LiquifyFaceOutcome(LiquifyFaceResult(outcome.result()));
+	else
+		return LiquifyFaceOutcome(outcome.error());
+}
+
+void FacebodyClient::liquifyFaceAsync(const LiquifyFaceRequest& request, const LiquifyFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, liquifyFace(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+FacebodyClient::LiquifyFaceOutcomeCallable FacebodyClient::liquifyFaceCallable(const LiquifyFaceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<LiquifyFaceOutcome()>>(
+			[this, request]()
+			{
+			return this->liquifyFace(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 FacebodyClient::ListBodyDbsOutcome FacebodyClient::listBodyDbs(const ListBodyDbsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2097,6 +2133,42 @@ FacebodyClient::RetouchBodyOutcomeCallable FacebodyClient::retouchBodyCallable(c
 			[this, request]()
 			{
 			return this->retouchBody(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+FacebodyClient::RetouchSkinOutcome FacebodyClient::retouchSkin(const RetouchSkinRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RetouchSkinOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RetouchSkinOutcome(RetouchSkinResult(outcome.result()));
+	else
+		return RetouchSkinOutcome(outcome.error());
+}
+
+void FacebodyClient::retouchSkinAsync(const RetouchSkinRequest& request, const RetouchSkinAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, retouchSkin(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+FacebodyClient::RetouchSkinOutcomeCallable FacebodyClient::retouchSkinCallable(const RetouchSkinRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RetouchSkinOutcome()>>(
+			[this, request]()
+			{
+			return this->retouchSkin(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
