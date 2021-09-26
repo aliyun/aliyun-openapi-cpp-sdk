@@ -49,6 +49,17 @@ void ModifyRuleStatusRequest::setSourceIp(const std::string& sourceIp)
 	setParameter("SourceIp", sourceIp);
 }
 
+std::string ModifyRuleStatusRequest::getIds()const
+{
+	return ids_;
+}
+
+void ModifyRuleStatusRequest::setIds(const std::string& ids)
+{
+	ids_ = ids;
+	setParameter("Ids", ids);
+}
+
 long ModifyRuleStatusRequest::getId()const
 {
 	return id_;

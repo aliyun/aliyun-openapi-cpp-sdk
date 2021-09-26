@@ -83,6 +83,14 @@ void DescribeEventsResult::parse(const std::string &payload)
 			itemsObject.departName = valueItemsEvent["DepartName"].asString();
 		if(!valueItemsEvent["Backed"].isNull())
 			itemsObject.backed = valueItemsEvent["Backed"].asString() == "true";
+		if(!valueItemsEvent["InstanceName"].isNull())
+			itemsObject.instanceName = valueItemsEvent["InstanceName"].asString();
+		if(!valueItemsEvent["UserIdValue"].isNull())
+			itemsObject.userIdValue = valueItemsEvent["UserIdValue"].asString();
+		if(!valueItemsEvent["DealUserIdValue"].isNull())
+			itemsObject.dealUserIdValue = valueItemsEvent["DealUserIdValue"].asString();
+		if(!valueItemsEvent["WarnLevel"].isNull())
+			itemsObject.warnLevel = std::stoi(valueItemsEvent["WarnLevel"].asString());
 		items_.push_back(itemsObject);
 	}
 	if(!value["PageSize"].isNull())

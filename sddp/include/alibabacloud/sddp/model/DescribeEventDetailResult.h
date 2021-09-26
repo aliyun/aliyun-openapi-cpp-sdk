@@ -63,11 +63,28 @@ namespace AlibabaCloud
 						std::vector<ContentItem> content;
 						std::vector<ChartItem> chart;
 					};
-					int status;
+					struct HandleInfo
+					{
+						int status;
+						long disableTime;
+						std::string handlerType;
+						int handlerValue;
+						std::string currentValue;
+						long enableTime;
+						long id;
+						std::string handlerName;
+					};
 					std::string loginName;
 					std::string typeName;
 					std::string dataInstance;
 					bool backed;
+					std::string userIdValue;
+					std::vector<HandleInfo> handleInfoList;
+					std::string dealLoginName;
+					std::string subTypeName;
+					std::string dealUserIdValue;
+					std::string displayName;
+					int status;
 					std::string productCode;
 					std::string typeCode;
 					std::string statusName;
@@ -75,13 +92,11 @@ namespace AlibabaCloud
 					long alertTime;
 					std::string departName;
 					std::string dealReason;
-					std::string dealLoginName;
+					std::string logDetail;
 					std::string dealDisplayName;
-					std::string subTypeName;
 					long userId;
 					long eventTime;
 					long dealUserId;
-					std::string displayName;
 					long id;
 					long dealTime;
 					Detail detail;

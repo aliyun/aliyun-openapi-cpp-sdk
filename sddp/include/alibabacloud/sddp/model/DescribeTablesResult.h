@@ -34,21 +34,36 @@ namespace AlibabaCloud
 			public:
 				struct Table
 				{
+					struct Rule
+					{
+						std::string displayName;
+						long count;
+						long riskLevelId;
+						std::string name;
+					};
+					std::vector<Table::Rule> ruleList;
 					std::string owner;
-					std::string productCode;
-					long instanceId;
-					std::string sensitiveRatio;
 					std::string productId;
 					int s2Count;
-					long lastScanTime;
 					long riskLevelId;
-					std::string departName;
 					std::string name;
-					int totalCount;
 					int totalRows;
-					long creationTime;
+					std::string regionName;
+					int s1Count;
 					bool sensitive;
+					std::string productCode;
+					long instanceId;
+					std::string tenantName;
+					std::string sensitiveRatio;
+					std::string countDetails;
+					long lastScanTime;
+					std::string departName;
+					std::string instanceName;
+					int totalCount;
+					std::string sensLevelName;
+					long creationTime;
 					std::string riskLevelName;
+					std::string instanceDescription;
 					long id;
 					int sensitiveCount;
 					int s3Count;

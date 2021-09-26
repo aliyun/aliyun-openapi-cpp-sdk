@@ -37,7 +37,13 @@ namespace AlibabaCloud
 					struct SubType
 					{
 						int status;
+						int eventHitCount;
+						std::string adaptedProduct;
+						std::string configValue;
 						std::string description;
+						std::string configCode;
+						int configContentType;
+						std::string configDescription;
 						long id;
 						std::string code;
 						std::string name;

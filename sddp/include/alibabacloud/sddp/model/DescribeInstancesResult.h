@@ -35,27 +35,34 @@ namespace AlibabaCloud
 				struct Instance
 				{
 					std::string owner;
-					std::string productCode;
 					std::string odpsRiskLevelName;
 					std::string productId;
-					std::string acl;
 					int s2Count;
 					long riskLevelId;
-					std::string departName;
 					std::string name;
+					std::string regionName;
+					int s1Count;
+					bool sensitive;
+					std::string engineType;
+					bool protection;
+					std::string ruleName;
+					std::string productCode;
+					std::string tenantName;
+					std::string countDetails;
+					float riskScore;
+					std::string acl;
+					std::string departName;
+					float lastRiskScore;
 					bool labelsec;
 					int totalCount;
-					std::string regionName;
+					std::string sensLevelName;
 					long lastFinishTime;
 					long creationTime;
-					bool sensitive;
 					std::string riskLevelName;
-					std::string engineType;
+					std::string instanceDescription;
 					long id;
 					std::string regionId;
 					int sensitiveCount;
-					bool protection;
-					std::string ruleName;
 					int s3Count;
 				};
 

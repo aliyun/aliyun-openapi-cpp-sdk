@@ -60,6 +60,17 @@ void DescribeTablesRequest::setRiskLevels(const std::string& riskLevels)
 	setParameter("RiskLevels", riskLevels);
 }
 
+bool DescribeTablesRequest::getNeedRiskCount()const
+{
+	return needRiskCount_;
+}
+
+void DescribeTablesRequest::setNeedRiskCount(bool needRiskCount)
+{
+	needRiskCount_ = needRiskCount;
+	setParameter("NeedRiskCount", needRiskCount ? "true" : "false");
+}
+
 long DescribeTablesRequest::getPackageId()const
 {
 	return packageId_;
@@ -69,6 +80,17 @@ void DescribeTablesRequest::setPackageId(long packageId)
 {
 	packageId_ = packageId;
 	setParameter("PackageId", std::to_string(packageId));
+}
+
+std::string DescribeTablesRequest::getRuleName()const
+{
+	return ruleName_;
+}
+
+void DescribeTablesRequest::setRuleName(const std::string& ruleName)
+{
+	ruleName_ = ruleName;
+	setParameter("RuleName", ruleName);
 }
 
 std::string DescribeTablesRequest::getQueryName()const
@@ -93,6 +115,50 @@ void DescribeTablesRequest::setRiskLevelId(long riskLevelId)
 	setParameter("RiskLevelId", std::to_string(riskLevelId));
 }
 
+long DescribeTablesRequest::getStartTime()const
+{
+	return startTime_;
+}
+
+void DescribeTablesRequest::setStartTime(long startTime)
+{
+	startTime_ = startTime;
+	setParameter("StartTime", std::to_string(startTime));
+}
+
+long DescribeTablesRequest::getLastScanTimeEnd()const
+{
+	return lastScanTimeEnd_;
+}
+
+void DescribeTablesRequest::setLastScanTimeEnd(long lastScanTimeEnd)
+{
+	lastScanTimeEnd_ = lastScanTimeEnd;
+	setParameter("LastScanTimeEnd", std::to_string(lastScanTimeEnd));
+}
+
+long DescribeTablesRequest::getLastScanTimeStart()const
+{
+	return lastScanTimeStart_;
+}
+
+void DescribeTablesRequest::setLastScanTimeStart(long lastScanTimeStart)
+{
+	lastScanTimeStart_ = lastScanTimeStart;
+	setParameter("LastScanTimeStart", std::to_string(lastScanTimeStart));
+}
+
+std::string DescribeTablesRequest::getSensLevelName()const
+{
+	return sensLevelName_;
+}
+
+void DescribeTablesRequest::setSensLevelName(const std::string& sensLevelName)
+{
+	sensLevelName_ = sensLevelName;
+	setParameter("SensLevelName", sensLevelName);
+}
+
 std::string DescribeTablesRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -113,6 +179,17 @@ void DescribeTablesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
 	setParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string DescribeTablesRequest::getInstanceDescription()const
+{
+	return instanceDescription_;
+}
+
+void DescribeTablesRequest::setInstanceDescription(const std::string& instanceDescription)
+{
+	instanceDescription_ = instanceDescription;
+	setParameter("InstanceDescription", instanceDescription);
 }
 
 std::string DescribeTablesRequest::getLang()const
@@ -137,6 +214,17 @@ void DescribeTablesRequest::setQueryType(int queryType)
 	setParameter("QueryType", std::to_string(queryType));
 }
 
+std::string DescribeTablesRequest::getServiceRegionId()const
+{
+	return serviceRegionId_;
+}
+
+void DescribeTablesRequest::setServiceRegionId(const std::string& serviceRegionId)
+{
+	serviceRegionId_ = serviceRegionId;
+	setParameter("ServiceRegionId", serviceRegionId);
+}
+
 int DescribeTablesRequest::getFeatureType()const
 {
 	return featureType_;
@@ -159,6 +247,17 @@ void DescribeTablesRequest::setOrderBy(const std::string& orderBy)
 	setParameter("OrderBy", orderBy);
 }
 
+long DescribeTablesRequest::getEndTime()const
+{
+	return endTime_;
+}
+
+void DescribeTablesRequest::setEndTime(long endTime)
+{
+	endTime_ = endTime;
+	setParameter("EndTime", std::to_string(endTime));
+}
+
 int DescribeTablesRequest::getCurrentPage()const
 {
 	return currentPage_;
@@ -170,6 +269,17 @@ void DescribeTablesRequest::setCurrentPage(int currentPage)
 	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
+std::string DescribeTablesRequest::getRuleIds()const
+{
+	return ruleIds_;
+}
+
+void DescribeTablesRequest::setRuleIds(const std::string& ruleIds)
+{
+	ruleIds_ = ruleIds;
+	setParameter("RuleIds", ruleIds);
+}
+
 long DescribeTablesRequest::getInstanceId()const
 {
 	return instanceId_;
@@ -179,6 +289,17 @@ void DescribeTablesRequest::setInstanceId(long instanceId)
 {
 	instanceId_ = instanceId;
 	setParameter("InstanceId", std::to_string(instanceId));
+}
+
+std::string DescribeTablesRequest::getInstanceName()const
+{
+	return instanceName_;
+}
+
+void DescribeTablesRequest::setInstanceName(const std::string& instanceName)
+{
+	instanceName_ = instanceName;
+	setParameter("InstanceName", instanceName);
 }
 
 std::string DescribeTablesRequest::getName()const

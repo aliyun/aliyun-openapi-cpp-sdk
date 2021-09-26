@@ -37,22 +37,32 @@ namespace AlibabaCloud
 
 				std::string getRiskLevels()const;
 				void setRiskLevels(const std::string& riskLevels);
+				bool getNeedRiskCount()const;
+				void setNeedRiskCount(bool needRiskCount);
 				std::string getQueryName()const;
 				void setQueryName(const std::string& queryName);
 				int getRiskLevelId()const;
 				void setRiskLevelId(int riskLevelId);
+				long getLastScanTimeEnd()const;
+				void setLastScanTimeEnd(long lastScanTimeEnd);
+				long getLastScanTimeStart()const;
+				void setLastScanTimeStart(long lastScanTimeStart);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
+				std::string getServiceRegionId()const;
+				void setServiceRegionId(const std::string& serviceRegionId);
 				int getFeatureType()const;
 				void setFeatureType(int featureType);
 				std::string getOrderBy()const;
 				void setOrderBy(const std::string& orderBy);
 				int getCurrentPage()const;
 				void setCurrentPage(int currentPage);
+				std::string getRuleIds()const;
+				void setRuleIds(const std::string& ruleIds);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				std::string getName()const;
@@ -64,14 +74,19 @@ namespace AlibabaCloud
 
             private:
 				std::string riskLevels_;
+				bool needRiskCount_;
 				std::string queryName_;
 				int riskLevelId_;
+				long lastScanTimeEnd_;
+				long lastScanTimeStart_;
 				std::string sourceIp_;
 				int pageSize_;
 				std::string lang_;
+				std::string serviceRegionId_;
 				int featureType_;
 				std::string orderBy_;
 				int currentPage_;
+				std::string ruleIds_;
 				std::string instanceId_;
 				std::string name_;
 				long ruleId_;

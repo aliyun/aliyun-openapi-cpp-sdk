@@ -43,42 +43,55 @@ void DescribeColumnsResult::parse(const std::string &payload)
 	for (auto valueItemsColumn : allItemsNode)
 	{
 		Column itemsObject;
-		if(!valueItemsColumn["Id"].isNull())
-			itemsObject.id = valueItemsColumn["Id"].asString();
-		if(!valueItemsColumn["Name"].isNull())
-			itemsObject.name = valueItemsColumn["Name"].asString();
-		if(!valueItemsColumn["InstanceId"].isNull())
-			itemsObject.instanceId = std::stol(valueItemsColumn["InstanceId"].asString());
-		if(!valueItemsColumn["TableId"].isNull())
-			itemsObject.tableId = std::stol(valueItemsColumn["TableId"].asString());
 		if(!valueItemsColumn["CreationTime"].isNull())
 			itemsObject.creationTime = std::stol(valueItemsColumn["CreationTime"].asString());
-		if(!valueItemsColumn["Sensitive"].isNull())
-			itemsObject.sensitive = valueItemsColumn["Sensitive"].asString() == "true";
-		if(!valueItemsColumn["ProductCode"].isNull())
-			itemsObject.productCode = valueItemsColumn["ProductCode"].asString();
+		if(!valueItemsColumn["TableName"].isNull())
+			itemsObject.tableName = valueItemsColumn["TableName"].asString();
 		if(!valueItemsColumn["DataType"].isNull())
 			itemsObject.dataType = valueItemsColumn["DataType"].asString();
 		if(!valueItemsColumn["OdpsRiskLevelValue"].isNull())
 			itemsObject.odpsRiskLevelValue = std::stoi(valueItemsColumn["OdpsRiskLevelValue"].asString());
-		if(!valueItemsColumn["OdpsRiskLevelName"].isNull())
-			itemsObject.odpsRiskLevelName = valueItemsColumn["OdpsRiskLevelName"].asString();
-		if(!valueItemsColumn["RiskLevelId"].isNull())
-			itemsObject.riskLevelId = std::stol(valueItemsColumn["RiskLevelId"].asString());
-		if(!valueItemsColumn["RiskLevelName"].isNull())
-			itemsObject.riskLevelName = valueItemsColumn["RiskLevelName"].asString();
-		if(!valueItemsColumn["RuleId"].isNull())
-			itemsObject.ruleId = std::stol(valueItemsColumn["RuleId"].asString());
-		if(!valueItemsColumn["RuleName"].isNull())
-			itemsObject.ruleName = valueItemsColumn["RuleName"].asString();
 		if(!valueItemsColumn["DepartName"].isNull())
 			itemsObject.departName = valueItemsColumn["DepartName"].asString();
+		if(!valueItemsColumn["InstanceId"].isNull())
+			itemsObject.instanceId = std::stol(valueItemsColumn["InstanceId"].asString());
+		if(!valueItemsColumn["RiskLevelId"].isNull())
+			itemsObject.riskLevelId = std::stol(valueItemsColumn["RiskLevelId"].asString());
+		if(!valueItemsColumn["RuleName"].isNull())
+			itemsObject.ruleName = valueItemsColumn["RuleName"].asString();
+		if(!valueItemsColumn["RuleId"].isNull())
+			itemsObject.ruleId = std::stol(valueItemsColumn["RuleId"].asString());
+		if(!valueItemsColumn["Sensitive"].isNull())
+			itemsObject.sensitive = valueItemsColumn["Sensitive"].asString() == "true";
+		if(!valueItemsColumn["SensLevelName"].isNull())
+			itemsObject.sensLevelName = valueItemsColumn["SensLevelName"].asString();
+		if(!valueItemsColumn["InstanceName"].isNull())
+			itemsObject.instanceName = valueItemsColumn["InstanceName"].asString();
+		if(!valueItemsColumn["RiskLevelName"].isNull())
+			itemsObject.riskLevelName = valueItemsColumn["RiskLevelName"].asString();
+		if(!valueItemsColumn["OdpsRiskLevelName"].isNull())
+			itemsObject.odpsRiskLevelName = valueItemsColumn["OdpsRiskLevelName"].asString();
+		if(!valueItemsColumn["Name"].isNull())
+			itemsObject.name = valueItemsColumn["Name"].asString();
+		if(!valueItemsColumn["TableId"].isNull())
+			itemsObject.tableId = std::stol(valueItemsColumn["TableId"].asString());
+		if(!valueItemsColumn["Id"].isNull())
+			itemsObject.id = valueItemsColumn["Id"].asString();
+		if(!valueItemsColumn["ProductCode"].isNull())
+			itemsObject.productCode = valueItemsColumn["ProductCode"].asString();
+		if(!valueItemsColumn["RevisionStatus"].isNull())
+			itemsObject.revisionStatus = std::stol(valueItemsColumn["RevisionStatus"].asString());
+		if(!valueItemsColumn["RevisionId"].isNull())
+			itemsObject.revisionId = std::stol(valueItemsColumn["RevisionId"].asString());
+		auto allSampleList = value["SampleList"]["Sample"];
+		for (auto value : allSampleList)
+			itemsObject.sampleList.push_back(value.asString());
 		items_.push_back(itemsObject);
 	}
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["CurrentPage"].isNull())
 		currentPage_ = std::stoi(value["CurrentPage"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
 

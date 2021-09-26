@@ -42,13 +42,19 @@ namespace AlibabaCloud
 					std::string odpsRiskLevelName;
 					long riskLevelId;
 					std::string departName;
+					long revisionId;
 					std::string name;
+					std::string instanceName;
+					long revisionStatus;
+					std::string tableName;
+					std::string sensLevelName;
 					long creationTime;
-					bool sensitive;
 					std::string dataType;
+					bool sensitive;
 					std::string riskLevelName;
 					std::string id;
 					std::string ruleName;
+					std::vector<std::string> sampleList;
 				};
 
 

@@ -39,6 +39,13 @@ void ModifyRuleStatusResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["FailedIds"].isNull())
+		failedIds_ = value["FailedIds"].asString();
 
+}
+
+std::string ModifyRuleStatusResult::getFailedIds()const
+{
+	return failedIds_;
 }
 

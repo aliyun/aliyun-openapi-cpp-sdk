@@ -38,6 +38,17 @@ void DescribeDataMaskingRunHistoryRequest::setSrcType(int srcType)
 	setParameter("SrcType", std::to_string(srcType));
 }
 
+long DescribeDataMaskingRunHistoryRequest::getMainProcessId()const
+{
+	return mainProcessId_;
+}
+
+void DescribeDataMaskingRunHistoryRequest::setMainProcessId(long mainProcessId)
+{
+	mainProcessId_ = mainProcessId;
+	setParameter("MainProcessId", std::to_string(mainProcessId));
+}
+
 long DescribeDataMaskingRunHistoryRequest::getStartTime()const
 {
 	return startTime_;
@@ -91,6 +102,17 @@ void DescribeDataMaskingRunHistoryRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
 	setParameter("TaskId", taskId);
+}
+
+std::string DescribeDataMaskingRunHistoryRequest::getSrcTableName()const
+{
+	return srcTableName_;
+}
+
+void DescribeDataMaskingRunHistoryRequest::setSrcTableName(const std::string& srcTableName)
+{
+	srcTableName_ = srcTableName;
+	setParameter("SrcTableName", srcTableName);
 }
 
 int DescribeDataMaskingRunHistoryRequest::getFeatureType()const

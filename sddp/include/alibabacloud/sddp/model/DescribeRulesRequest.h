@@ -49,8 +49,14 @@ namespace AlibabaCloud
 				void setPageSize(int pageSize);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
+				bool getKeywordCompatible()const;
+				void setKeywordCompatible(bool keywordCompatible);
 				int getRuleType()const;
 				void setRuleType(int ruleType);
+				std::string getGroupId()const;
+				void setGroupId(const std::string& groupId);
+				int getContentCategory()const;
+				void setContentCategory(int contentCategory);
 				int getCurrentPage()const;
 				void setCurrentPage(int currentPage);
 				int getCustomType()const;
@@ -59,6 +65,8 @@ namespace AlibabaCloud
 				void setName(const std::string& name);
 				int getCategory()const;
 				void setCategory(int category);
+				int getStatus()const;
+				void setStatus(int status);
 
             private:
 				int warnLevel_;
@@ -68,11 +76,15 @@ namespace AlibabaCloud
 				std::string sourceIp_;
 				int pageSize_;
 				std::string lang_;
+				bool keywordCompatible_;
 				int ruleType_;
+				std::string groupId_;
+				int contentCategory_;
 				int currentPage_;
 				int customType_;
 				std::string name_;
 				int category_;
+				int status_;
 
 			};
 		}

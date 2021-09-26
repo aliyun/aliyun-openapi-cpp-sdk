@@ -73,6 +73,8 @@ void DescribeDataMaskingTasksResult::parse(const std::string &payload)
 			itemsObject.srcTypeCode = valueItemsTask["SrcTypeCode"].asString();
 		if(!valueItemsTask["TriggerType"].isNull())
 			itemsObject.triggerType = std::stoi(valueItemsTask["TriggerType"].asString());
+		if(!valueItemsTask["OriginalTable"].isNull())
+			itemsObject.originalTable = valueItemsTask["OriginalTable"].asString() == "true";
 		items_.push_back(itemsObject);
 	}
 	if(!value["PageSize"].isNull())

@@ -27,6 +27,17 @@ CreateDataLimitRequest::CreateDataLimitRequest() :
 CreateDataLimitRequest::~CreateDataLimitRequest()
 {}
 
+int CreateDataLimitRequest::getOcrStatus()const
+{
+	return ocrStatus_;
+}
+
+void CreateDataLimitRequest::setOcrStatus(int ocrStatus)
+{
+	ocrStatus_ = ocrStatus;
+	setParameter("OcrStatus", std::to_string(ocrStatus));
+}
+
 std::string CreateDataLimitRequest::getParentId()const
 {
 	return parentId_;
@@ -179,6 +190,17 @@ void CreateDataLimitRequest::setPort(int port)
 {
 	port_ = port;
 	setParameter("Port", std::to_string(port));
+}
+
+int CreateDataLimitRequest::getEventStatus()const
+{
+	return eventStatus_;
+}
+
+void CreateDataLimitRequest::setEventStatus(int eventStatus)
+{
+	eventStatus_ = eventStatus;
+	setParameter("EventStatus", std::to_string(eventStatus));
 }
 
 std::string CreateDataLimitRequest::getUserName()const

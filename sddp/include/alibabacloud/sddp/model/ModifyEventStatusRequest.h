@@ -39,6 +39,8 @@ namespace AlibabaCloud
 				void setBacked(bool backed);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
+				std::string getHandleInfo()const;
+				void setHandleInfo(const std::string& handleInfo);
 				std::string getDealReason()const;
 				void setDealReason(const std::string& dealReason);
 				long getId()const;
@@ -53,6 +55,7 @@ namespace AlibabaCloud
             private:
 				bool backed_;
 				std::string sourceIp_;
+				std::string handleInfo_;
 				std::string dealReason_;
 				long id_;
 				std::string lang_;

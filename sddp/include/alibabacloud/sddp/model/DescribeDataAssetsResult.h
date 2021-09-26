@@ -44,7 +44,7 @@ namespace AlibabaCloud
 					long riskLevelId;
 					std::string departName;
 					std::string name;
-					int labelsec;
+					bool labelsec;
 					int totalCount;
 					long creationTime;
 					bool sensitive;

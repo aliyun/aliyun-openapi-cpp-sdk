@@ -58,7 +58,7 @@ void DescribeDataAssetsResult::parse(const std::string &payload)
 		if(!valueItemsAsset["Protection"].isNull())
 			itemsObject.protection = valueItemsAsset["Protection"].asString() == "true";
 		if(!valueItemsAsset["Labelsec"].isNull())
-			itemsObject.labelsec = std::stoi(valueItemsAsset["Labelsec"].asString());
+			itemsObject.labelsec = valueItemsAsset["Labelsec"].asString() == "true";
 		if(!valueItemsAsset["OdpsRiskLevelName"].isNull())
 			itemsObject.odpsRiskLevelName = valueItemsAsset["OdpsRiskLevelName"].asString();
 		if(!valueItemsAsset["Sensitive"].isNull())

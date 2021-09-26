@@ -49,6 +49,8 @@ void DescribeDataMaskingRunHistoryResult::parse(const std::string &payload)
 			itemsObject.taskId = valueItemsTask["TaskId"].asString();
 		if(!valueItemsTask["StartTime"].isNull())
 			itemsObject.startTime = std::stol(valueItemsTask["StartTime"].asString());
+		if(!valueItemsTask["EndTime"].isNull())
+			itemsObject.endTime = std::stol(valueItemsTask["EndTime"].asString());
 		if(!valueItemsTask["RunIndex"].isNull())
 			itemsObject.runIndex = std::stoi(valueItemsTask["RunIndex"].asString());
 		if(!valueItemsTask["Type"].isNull())
@@ -71,6 +73,14 @@ void DescribeDataMaskingRunHistoryResult::parse(const std::string &payload)
 			itemsObject.dstTypeCode = valueItemsTask["DstTypeCode"].asString();
 		if(!valueItemsTask["SrcTypeCode"].isNull())
 			itemsObject.srcTypeCode = valueItemsTask["SrcTypeCode"].asString();
+		if(!valueItemsTask["HasSubProcess"].isNull())
+			itemsObject.hasSubProcess = std::stoi(valueItemsTask["HasSubProcess"].asString());
+		if(!valueItemsTask["HasDownloadFile"].isNull())
+			itemsObject.hasDownloadFile = std::stoi(valueItemsTask["HasDownloadFile"].asString());
+		if(!valueItemsTask["SrcTableName"].isNull())
+			itemsObject.srcTableName = valueItemsTask["SrcTableName"].asString();
+		if(!valueItemsTask["FailMsg"].isNull())
+			itemsObject.failMsg = valueItemsTask["FailMsg"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["PageSize"].isNull())

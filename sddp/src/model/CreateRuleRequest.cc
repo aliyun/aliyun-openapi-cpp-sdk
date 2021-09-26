@@ -60,6 +60,17 @@ void CreateRuleRequest::setProductId(long productId)
 	setParameter("ProductId", std::to_string(productId));
 }
 
+std::string CreateRuleRequest::getDescription()const
+{
+	return description_;
+}
+
+void CreateRuleRequest::setDescription(const std::string& description)
+{
+	description_ = description;
+	setParameter("Description", description);
+}
+
 long CreateRuleRequest::getRiskLevelId()const
 {
 	return riskLevelId_;
@@ -137,6 +148,17 @@ void CreateRuleRequest::setStatExpress(const std::string& statExpress)
 	setParameter("StatExpress", statExpress);
 }
 
+int CreateRuleRequest::getContentCategory()const
+{
+	return contentCategory_;
+}
+
+void CreateRuleRequest::setContentCategory(int contentCategory)
+{
+	contentCategory_ = contentCategory;
+	setParameter("ContentCategory", std::to_string(contentCategory));
+}
+
 long CreateRuleRequest::getCustomType()const
 {
 	return customType_;
@@ -146,6 +168,17 @@ void CreateRuleRequest::setCustomType(long customType)
 {
 	customType_ = customType;
 	setParameter("CustomType", std::to_string(customType));
+}
+
+std::string CreateRuleRequest::getTarget()const
+{
+	return target_;
+}
+
+void CreateRuleRequest::setTarget(const std::string& target)
+{
+	target_ = target;
+	setParameter("Target", target);
 }
 
 std::string CreateRuleRequest::getName()const
@@ -168,5 +201,16 @@ void CreateRuleRequest::setCategory(int category)
 {
 	category_ = category;
 	setParameter("Category", std::to_string(category));
+}
+
+int CreateRuleRequest::getStatus()const
+{
+	return status_;
+}
+
+void CreateRuleRequest::setStatus(int status)
+{
+	status_ = status;
+	setParameter("Status", std::to_string(status));
 }
 

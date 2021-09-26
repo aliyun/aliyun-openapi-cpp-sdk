@@ -115,6 +115,17 @@ void DescribeEventsRequest::setPageSize(int pageSize)
 	setParameter("PageSize", std::to_string(pageSize));
 }
 
+long DescribeEventsRequest::getId()const
+{
+	return id_;
+}
+
+void DescribeEventsRequest::setId(long id)
+{
+	id_ = id;
+	setParameter("Id", std::to_string(id));
+}
+
 std::string DescribeEventsRequest::getLang()const
 {
 	return lang_;
@@ -170,6 +181,17 @@ void DescribeEventsRequest::setCurrentPage(int currentPage)
 	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
+std::string DescribeEventsRequest::getInstanceName()const
+{
+	return instanceName_;
+}
+
+void DescribeEventsRequest::setInstanceName(const std::string& instanceName)
+{
+	instanceName_ = instanceName;
+	setParameter("InstanceName", instanceName);
+}
+
 long DescribeEventsRequest::getDepartId()const
 {
 	return departId_;
@@ -190,5 +212,16 @@ void DescribeEventsRequest::setStatus(const std::string& status)
 {
 	status_ = status;
 	setParameter("Status", status);
+}
+
+std::string DescribeEventsRequest::getUserName()const
+{
+	return userName_;
+}
+
+void DescribeEventsRequest::setUserName(const std::string& userName)
+{
+	userName_ = userName;
+	setParameter("UserName", userName);
 }
 

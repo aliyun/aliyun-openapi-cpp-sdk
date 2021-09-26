@@ -69,6 +69,22 @@ void DescribeOssObjectsResult::parse(const std::string &payload)
 			itemsObject.categoryName = valueItemsColumn["CategoryName"].asString();
 		if(!valueItemsColumn["BucketName"].isNull())
 			itemsObject.bucketName = valueItemsColumn["BucketName"].asString();
+		if(!valueItemsColumn["RegionName"].isNull())
+			itemsObject.regionName = valueItemsColumn["RegionName"].asString();
+		if(!valueItemsColumn["LastScanTime"].isNull())
+			itemsObject.lastScanTime = std::stol(valueItemsColumn["LastScanTime"].asString());
+		auto allRuleListNode = valueItemsColumn["RuleList"]["Rule"];
+		for (auto valueItemsColumnRuleListRule : allRuleListNode)
+		{
+			Column::Rule ruleListObject;
+			if(!valueItemsColumnRuleListRule["Name"].isNull())
+				ruleListObject.name = valueItemsColumnRuleListRule["Name"].asString();
+			if(!valueItemsColumnRuleListRule["Count"].isNull())
+				ruleListObject.count = std::stol(valueItemsColumnRuleListRule["Count"].asString());
+			if(!valueItemsColumnRuleListRule["RiskLevelId"].isNull())
+				ruleListObject.riskLevelId = std::stol(valueItemsColumnRuleListRule["RiskLevelId"].asString());
+			itemsObject.ruleList.push_back(ruleListObject);
+		}
 		items_.push_back(itemsObject);
 	}
 	if(!value["PageSize"].isNull())

@@ -37,8 +37,12 @@ namespace AlibabaCloud
 					struct Rule
 					{
 						int category;
+						std::string categoryName;
+						std::string riskLevelName;
 						long count;
+						long riskLevelId;
 						std::string ruleName;
+						std::vector<std::string> sampleList;
 					};
 					std::vector<Rule> ruleList;
 					std::string bucketName;

@@ -34,27 +34,31 @@ namespace AlibabaCloud
 			public:
 				struct Rule
 				{
-					int customType;
-					int status;
 					std::string loginName;
 					std::string description;
 					int category;
-					std::string productCode;
 					long gmtModified;
 					std::string statExpress;
 					long productId;
 					long riskLevelId;
-					std::string departName;
 					std::string name;
-					int hitTotalCount;
-					long gmtCreate;
+					std::string target;
 					int warnLevel;
+					std::string displayName;
+					int customType;
+					int status;
+					std::string productCode;
+					std::string departName;
+					int hitTotalCount;
+					std::string majorKey;
+					std::string groupId;
+					long gmtCreate;
 					long userId;
 					std::string content;
-					std::string displayName;
 					std::string categoryName;
 					std::string riskLevelName;
 					long id;
+					std::string contentCategory;
 				};
 
 

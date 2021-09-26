@@ -60,6 +60,17 @@ void ModifyRuleRequest::setProductId(long productId)
 	setParameter("ProductId", std::to_string(productId));
 }
 
+std::string ModifyRuleRequest::getDescription()const
+{
+	return description_;
+}
+
+void ModifyRuleRequest::setDescription(const std::string& description)
+{
+	description_ = description;
+	setParameter("Description", description);
+}
+
 long ModifyRuleRequest::getRiskLevelId()const
 {
 	return riskLevelId_;
@@ -148,6 +159,17 @@ void ModifyRuleRequest::setStatExpress(const std::string& statExpress)
 	setParameter("StatExpress", statExpress);
 }
 
+int ModifyRuleRequest::getContentCategory()const
+{
+	return contentCategory_;
+}
+
+void ModifyRuleRequest::setContentCategory(int contentCategory)
+{
+	contentCategory_ = contentCategory;
+	setParameter("ContentCategory", std::to_string(contentCategory));
+}
+
 int ModifyRuleRequest::getCustomType()const
 {
 	return customType_;
@@ -157,6 +179,17 @@ void ModifyRuleRequest::setCustomType(int customType)
 {
 	customType_ = customType;
 	setParameter("CustomType", std::to_string(customType));
+}
+
+std::string ModifyRuleRequest::getTarget()const
+{
+	return target_;
+}
+
+void ModifyRuleRequest::setTarget(const std::string& target)
+{
+	target_ = target;
+	setParameter("Target", target);
 }
 
 std::string ModifyRuleRequest::getName()const

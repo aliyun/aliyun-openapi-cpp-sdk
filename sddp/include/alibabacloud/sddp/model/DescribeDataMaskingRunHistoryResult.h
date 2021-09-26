@@ -37,16 +37,21 @@ namespace AlibabaCloud
 					int status;
 					int runIndex;
 					std::string taskId;
+					long endTime;
 					int percentage;
+					int hasDownloadFile;
 					long maskingCount;
 					std::string failCode;
 					long startTime;
+					std::string srcTableName;
 					std::string dstTypeCode;
 					long conflictCount;
 					int dstType;
 					int type;
 					int srcType;
+					std::string failMsg;
 					long id;
+					int hasSubProcess;
 					std::string srcTypeCode;
 				};
 

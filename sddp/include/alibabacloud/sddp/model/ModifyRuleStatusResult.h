@@ -37,10 +37,12 @@ namespace AlibabaCloud
 				ModifyRuleStatusResult();
 				explicit ModifyRuleStatusResult(const std::string &payload);
 				~ModifyRuleStatusResult();
+				std::string getFailedIds()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string failedIds_;
 
 			};
 		}

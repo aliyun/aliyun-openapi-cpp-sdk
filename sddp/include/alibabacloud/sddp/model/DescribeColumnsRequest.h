@@ -39,10 +39,14 @@ namespace AlibabaCloud
 				void setProductCode(const std::string& productCode);
 				std::string getRiskLevels()const;
 				void setRiskLevels(const std::string& riskLevels);
+				std::string getRuleName()const;
+				void setRuleName(const std::string& ruleName);
 				std::string getQueryName()const;
 				void setQueryName(const std::string& queryName);
 				long getRiskLevelId()const;
 				void setRiskLevelId(long riskLevelId);
+				std::string getSensLevelName()const;
+				void setSensLevelName(const std::string& sensLevelName);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				int getPageSize()const;
@@ -51,6 +55,8 @@ namespace AlibabaCloud
 				void setTableId(long tableId);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
+				std::string getTableName()const;
+				void setTableName(const std::string& tableName);
 				int getFeatureType()const;
 				void setFeatureType(int featureType);
 				std::string getOrderBy()const;
@@ -59,6 +65,8 @@ namespace AlibabaCloud
 				void setCurrentPage(int currentPage);
 				long getInstanceId()const;
 				void setInstanceId(long instanceId);
+				std::string getInstanceName()const;
+				void setInstanceName(const std::string& instanceName);
 				std::string getName()const;
 				void setName(const std::string& name);
 				long getRuleId()const;
@@ -67,16 +75,20 @@ namespace AlibabaCloud
             private:
 				std::string productCode_;
 				std::string riskLevels_;
+				std::string ruleName_;
 				std::string queryName_;
 				long riskLevelId_;
+				std::string sensLevelName_;
 				std::string sourceIp_;
 				int pageSize_;
 				long tableId_;
 				std::string lang_;
+				std::string tableName_;
 				int featureType_;
 				std::string orderBy_;
 				int currentPage_;
 				long instanceId_;
+				std::string instanceName_;
 				std::string name_;
 				long ruleId_;
 

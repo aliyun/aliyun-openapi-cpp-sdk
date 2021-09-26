@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				int getSrcType()const;
 				void setSrcType(int srcType);
+				long getMainProcessId()const;
+				void setMainProcessId(long mainProcessId);
 				long getStartTime()const;
 				void setStartTime(long startTime);
 				std::string getSourceIp()const;
@@ -47,6 +49,8 @@ namespace AlibabaCloud
 				void setLang(const std::string& lang);
 				std::string getTaskId()const;
 				void setTaskId(const std::string& taskId);
+				std::string getSrcTableName()const;
+				void setSrcTableName(const std::string& srcTableName);
 				int getFeatureType()const;
 				void setFeatureType(int featureType);
 				long getEndTime()const;
@@ -60,11 +64,13 @@ namespace AlibabaCloud
 
             private:
 				int srcType_;
+				long mainProcessId_;
 				long startTime_;
 				std::string sourceIp_;
 				int pageSize_;
 				std::string lang_;
 				std::string taskId_;
+				std::string srcTableName_;
 				int featureType_;
 				long endTime_;
 				int currentPage_;

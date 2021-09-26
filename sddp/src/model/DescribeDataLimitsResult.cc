@@ -89,6 +89,40 @@ void DescribeDataLimitsResult::parse(const std::string &payload)
 			itemsObject.errorMessage = valueItemsDataLimit["ErrorMessage"].asString();
 		if(!valueItemsDataLimit["Port"].isNull())
 			itemsObject.port = std::stoi(valueItemsDataLimit["Port"].asString());
+		if(!valueItemsDataLimit["DbVersion"].isNull())
+			itemsObject.dbVersion = valueItemsDataLimit["DbVersion"].asString();
+		if(!valueItemsDataLimit["SupportDatamask"].isNull())
+			itemsObject.supportDatamask = valueItemsDataLimit["SupportDatamask"].asString() == "true";
+		if(!valueItemsDataLimit["SupportScan"].isNull())
+			itemsObject.supportScan = valueItemsDataLimit["SupportScan"].asString() == "true";
+		if(!valueItemsDataLimit["SupportAudit"].isNull())
+			itemsObject.supportAudit = valueItemsDataLimit["SupportAudit"].asString() == "true";
+		if(!valueItemsDataLimit["DatamaskStatus"].isNull())
+			itemsObject.datamaskStatus = std::stoi(valueItemsDataLimit["DatamaskStatus"].asString());
+		if(!valueItemsDataLimit["SamplingSize"].isNull())
+			itemsObject.samplingSize = std::stoi(valueItemsDataLimit["SamplingSize"].asString());
+		if(!valueItemsDataLimit["NextStartTime"].isNull())
+			itemsObject.nextStartTime = std::stol(valueItemsDataLimit["NextStartTime"].asString());
+		if(!valueItemsDataLimit["SupportOcr"].isNull())
+			itemsObject.supportOcr = valueItemsDataLimit["SupportOcr"].asString() == "true";
+		if(!valueItemsDataLimit["OcrStatus"].isNull())
+			itemsObject.ocrStatus = std::stoi(valueItemsDataLimit["OcrStatus"].asString());
+		if(!valueItemsDataLimit["AgentId"].isNull())
+			itemsObject.agentId = valueItemsDataLimit["AgentId"].asString();
+		if(!valueItemsDataLimit["AgentState"].isNull())
+			itemsObject.agentState = std::stoi(valueItemsDataLimit["AgentState"].asString());
+		if(!valueItemsDataLimit["SupportAgentInstall"].isNull())
+			itemsObject.supportAgentInstall = valueItemsDataLimit["SupportAgentInstall"].asString() == "true";
+		if(!valueItemsDataLimit["EventStatus"].isNull())
+			itemsObject.eventStatus = std::stoi(valueItemsDataLimit["EventStatus"].asString());
+		if(!valueItemsDataLimit["SupportEvent"].isNull())
+			itemsObject.supportEvent = valueItemsDataLimit["SupportEvent"].asString() == "true";
+		if(!valueItemsDataLimit["InstanceId"].isNull())
+			itemsObject.instanceId = valueItemsDataLimit["InstanceId"].asString();
+		if(!valueItemsDataLimit["InstanceDescription"].isNull())
+			itemsObject.instanceDescription = valueItemsDataLimit["InstanceDescription"].asString();
+		if(!valueItemsDataLimit["TenantName"].isNull())
+			itemsObject.tenantName = valueItemsDataLimit["TenantName"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["PageSize"].isNull())

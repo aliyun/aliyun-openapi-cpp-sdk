@@ -75,10 +75,38 @@ void DescribeTablesResult::parse(const std::string &payload)
 			itemsObject.s2Count = std::stoi(valueItemsTable["S2Count"].asString());
 		if(!valueItemsTable["S3Count"].isNull())
 			itemsObject.s3Count = std::stoi(valueItemsTable["S3Count"].asString());
+		if(!valueItemsTable["S1Count"].isNull())
+			itemsObject.s1Count = std::stoi(valueItemsTable["S1Count"].asString());
+		if(!valueItemsTable["CountDetails"].isNull())
+			itemsObject.countDetails = valueItemsTable["CountDetails"].asString();
 		if(!valueItemsTable["TotalRows"].isNull())
 			itemsObject.totalRows = std::stoi(valueItemsTable["TotalRows"].asString());
 		if(!valueItemsTable["LastScanTime"].isNull())
 			itemsObject.lastScanTime = std::stol(valueItemsTable["LastScanTime"].asString());
+		if(!valueItemsTable["RegionName"].isNull())
+			itemsObject.regionName = valueItemsTable["RegionName"].asString();
+		if(!valueItemsTable["InstanceName"].isNull())
+			itemsObject.instanceName = valueItemsTable["InstanceName"].asString();
+		if(!valueItemsTable["SensLevelName"].isNull())
+			itemsObject.sensLevelName = valueItemsTable["SensLevelName"].asString();
+		if(!valueItemsTable["InstanceDescription"].isNull())
+			itemsObject.instanceDescription = valueItemsTable["InstanceDescription"].asString();
+		if(!valueItemsTable["TenantName"].isNull())
+			itemsObject.tenantName = valueItemsTable["TenantName"].asString();
+		auto allRuleListNode = valueItemsTable["RuleList"]["Rule"];
+		for (auto valueItemsTableRuleListRule : allRuleListNode)
+		{
+			Table::Rule ruleListObject;
+			if(!valueItemsTableRuleListRule["Name"].isNull())
+				ruleListObject.name = valueItemsTableRuleListRule["Name"].asString();
+			if(!valueItemsTableRuleListRule["DisplayName"].isNull())
+				ruleListObject.displayName = valueItemsTableRuleListRule["DisplayName"].asString();
+			if(!valueItemsTableRuleListRule["Count"].isNull())
+				ruleListObject.count = std::stol(valueItemsTableRuleListRule["Count"].asString());
+			if(!valueItemsTableRuleListRule["RiskLevelId"].isNull())
+				ruleListObject.riskLevelId = std::stol(valueItemsTableRuleListRule["RiskLevelId"].asString());
+			itemsObject.ruleList.push_back(ruleListObject);
+		}
 		items_.push_back(itemsObject);
 	}
 	if(!value["PageSize"].isNull())

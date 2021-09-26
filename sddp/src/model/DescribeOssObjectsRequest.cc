@@ -38,6 +38,17 @@ void DescribeOssObjectsRequest::setRiskLevels(const std::string& riskLevels)
 	setParameter("RiskLevels", riskLevels);
 }
 
+bool DescribeOssObjectsRequest::getNeedRiskCount()const
+{
+	return needRiskCount_;
+}
+
+void DescribeOssObjectsRequest::setNeedRiskCount(bool needRiskCount)
+{
+	needRiskCount_ = needRiskCount;
+	setParameter("NeedRiskCount", needRiskCount ? "true" : "false");
+}
+
 std::string DescribeOssObjectsRequest::getQueryName()const
 {
 	return queryName_;
@@ -58,6 +69,28 @@ void DescribeOssObjectsRequest::setRiskLevelId(int riskLevelId)
 {
 	riskLevelId_ = riskLevelId;
 	setParameter("RiskLevelId", std::to_string(riskLevelId));
+}
+
+long DescribeOssObjectsRequest::getLastScanTimeEnd()const
+{
+	return lastScanTimeEnd_;
+}
+
+void DescribeOssObjectsRequest::setLastScanTimeEnd(long lastScanTimeEnd)
+{
+	lastScanTimeEnd_ = lastScanTimeEnd;
+	setParameter("LastScanTimeEnd", std::to_string(lastScanTimeEnd));
+}
+
+long DescribeOssObjectsRequest::getLastScanTimeStart()const
+{
+	return lastScanTimeStart_;
+}
+
+void DescribeOssObjectsRequest::setLastScanTimeStart(long lastScanTimeStart)
+{
+	lastScanTimeStart_ = lastScanTimeStart;
+	setParameter("LastScanTimeStart", std::to_string(lastScanTimeStart));
 }
 
 std::string DescribeOssObjectsRequest::getSourceIp()const
@@ -93,6 +126,17 @@ void DescribeOssObjectsRequest::setLang(const std::string& lang)
 	setParameter("Lang", lang);
 }
 
+std::string DescribeOssObjectsRequest::getServiceRegionId()const
+{
+	return serviceRegionId_;
+}
+
+void DescribeOssObjectsRequest::setServiceRegionId(const std::string& serviceRegionId)
+{
+	serviceRegionId_ = serviceRegionId;
+	setParameter("ServiceRegionId", serviceRegionId);
+}
+
 int DescribeOssObjectsRequest::getFeatureType()const
 {
 	return featureType_;
@@ -124,6 +168,17 @@ void DescribeOssObjectsRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
 	setParameter("CurrentPage", std::to_string(currentPage));
+}
+
+std::string DescribeOssObjectsRequest::getRuleIds()const
+{
+	return ruleIds_;
+}
+
+void DescribeOssObjectsRequest::setRuleIds(const std::string& ruleIds)
+{
+	ruleIds_ = ruleIds;
+	setParameter("RuleIds", ruleIds);
 }
 
 std::string DescribeOssObjectsRequest::getInstanceId()const

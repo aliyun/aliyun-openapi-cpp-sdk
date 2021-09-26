@@ -82,6 +82,61 @@ void DescribeInstancesRequest::setRiskLevelId(long riskLevelId)
 	setParameter("RiskLevelId", std::to_string(riskLevelId));
 }
 
+std::string DescribeInstancesRequest::getSource()const
+{
+	return source_;
+}
+
+void DescribeInstancesRequest::setSource(const std::string& source)
+{
+	source_ = source;
+	setParameter("Source", source);
+}
+
+long DescribeInstancesRequest::getStartTime()const
+{
+	return startTime_;
+}
+
+void DescribeInstancesRequest::setStartTime(long startTime)
+{
+	startTime_ = startTime;
+	setParameter("StartTime", std::to_string(startTime));
+}
+
+long DescribeInstancesRequest::getUserId()const
+{
+	return userId_;
+}
+
+void DescribeInstancesRequest::setUserId(long userId)
+{
+	userId_ = userId;
+	setParameter("UserId", std::to_string(userId));
+}
+
+std::string DescribeInstancesRequest::getNameAccurate()const
+{
+	return nameAccurate_;
+}
+
+void DescribeInstancesRequest::setNameAccurate(const std::string& nameAccurate)
+{
+	nameAccurate_ = nameAccurate;
+	setParameter("NameAccurate", nameAccurate);
+}
+
+std::string DescribeInstancesRequest::getSensLevelName()const
+{
+	return sensLevelName_;
+}
+
+void DescribeInstancesRequest::setSensLevelName(const std::string& sensLevelName)
+{
+	sensLevelName_ = sensLevelName;
+	setParameter("SensLevelName", sensLevelName);
+}
+
 std::string DescribeInstancesRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -93,6 +148,17 @@ void DescribeInstancesRequest::setSourceIp(const std::string& sourceIp)
 	setParameter("SourceIp", sourceIp);
 }
 
+long DescribeInstancesRequest::getLastFinishTimeStart()const
+{
+	return lastFinishTimeStart_;
+}
+
+void DescribeInstancesRequest::setLastFinishTimeStart(long lastFinishTimeStart)
+{
+	lastFinishTimeStart_ = lastFinishTimeStart;
+	setParameter("LastFinishTimeStart", std::to_string(lastFinishTimeStart));
+}
+
 int DescribeInstancesRequest::getPageSize()const
 {
 	return pageSize_;
@@ -102,6 +168,17 @@ void DescribeInstancesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
 	setParameter("PageSize", std::to_string(pageSize));
+}
+
+int DescribeInstancesRequest::getCheckStatus()const
+{
+	return checkStatus_;
+}
+
+void DescribeInstancesRequest::setCheckStatus(int checkStatus)
+{
+	checkStatus_ = checkStatus;
+	setParameter("CheckStatus", std::to_string(checkStatus));
 }
 
 std::string DescribeInstancesRequest::getLang()const
@@ -137,6 +214,17 @@ void DescribeInstancesRequest::setServiceRegionId(const std::string& serviceRegi
 	setParameter("ServiceRegionId", serviceRegionId);
 }
 
+std::string DescribeInstancesRequest::getEngineType()const
+{
+	return engineType_;
+}
+
+void DescribeInstancesRequest::setEngineType(const std::string& engineType)
+{
+	engineType_ = engineType;
+	setParameter("EngineType", engineType);
+}
+
 int DescribeInstancesRequest::getFeatureType()const
 {
 	return featureType_;
@@ -157,6 +245,28 @@ void DescribeInstancesRequest::setOrderBy(const std::string& orderBy)
 {
 	orderBy_ = orderBy;
 	setParameter("OrderBy", orderBy);
+}
+
+int DescribeInstancesRequest::getUserType()const
+{
+	return userType_;
+}
+
+void DescribeInstancesRequest::setUserType(int userType)
+{
+	userType_ = userType;
+	setParameter("UserType", std::to_string(userType));
+}
+
+long DescribeInstancesRequest::getEndTime()const
+{
+	return endTime_;
+}
+
+void DescribeInstancesRequest::setEndTime(long endTime)
+{
+	endTime_ = endTime;
+	setParameter("EndTime", std::to_string(endTime));
 }
 
 int DescribeInstancesRequest::getCurrentPage()const
@@ -190,5 +300,16 @@ void DescribeInstancesRequest::setRuleId(long ruleId)
 {
 	ruleId_ = ruleId;
 	setParameter("RuleId", std::to_string(ruleId));
+}
+
+long DescribeInstancesRequest::getLastFinishTimeEnd()const
+{
+	return lastFinishTimeEnd_;
+}
+
+void DescribeInstancesRequest::setLastFinishTimeEnd(long lastFinishTimeEnd)
+{
+	lastFinishTimeEnd_ = lastFinishTimeEnd;
+	setParameter("LastFinishTimeEnd", std::to_string(lastFinishTimeEnd));
 }
 

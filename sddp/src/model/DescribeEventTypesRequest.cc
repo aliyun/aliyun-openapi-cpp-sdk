@@ -27,6 +27,17 @@ DescribeEventTypesRequest::DescribeEventTypesRequest() :
 DescribeEventTypesRequest::~DescribeEventTypesRequest()
 {}
 
+int DescribeEventTypesRequest::getResourceId()const
+{
+	return resourceId_;
+}
+
+void DescribeEventTypesRequest::setResourceId(int resourceId)
+{
+	resourceId_ = resourceId;
+	setParameter("ResourceId", std::to_string(resourceId));
+}
+
 long DescribeEventTypesRequest::getParentTypeId()const
 {
 	return parentTypeId_;
@@ -58,5 +69,16 @@ void DescribeEventTypesRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setParameter("Lang", lang);
+}
+
+int DescribeEventTypesRequest::getStatus()const
+{
+	return status_;
+}
+
+void DescribeEventTypesRequest::setStatus(int status)
+{
+	status_ = status;
+	setParameter("Status", std::to_string(status));
 }
 

@@ -50,6 +50,8 @@ void DescribeUserStatusResult::parse(const std::string &payload)
 		userStatus_.odpsSet = userStatusNode["OdpsSet"].asString() == "true";
 	if(!userStatusNode["RdsSet"].isNull())
 		userStatus_.rdsSet = userStatusNode["RdsSet"].asString() == "true";
+	if(!userStatusNode["AuthProductList"].isNull())
+		userStatus_.authProductList = userStatusNode["AuthProductList"].asString();
 	if(!userStatusNode["AccessKeyId"].isNull())
 		userStatus_.accessKeyId = userStatusNode["AccessKeyId"].asString();
 	if(!userStatusNode["Trail"].isNull())
@@ -70,6 +72,52 @@ void DescribeUserStatusResult::parse(const std::string &payload)
 		userStatus_.ossSize = std::stol(userStatusNode["OssSize"].asString());
 	if(!userStatusNode["UseOssSize"].isNull())
 		userStatus_.useOssSize = std::stol(userStatusNode["UseOssSize"].asString());
+	if(!userStatusNode["ChargeType"].isNull())
+		userStatus_.chargeType = userStatusNode["ChargeType"].asString();
+	if(!userStatusNode["LabStatus"].isNull())
+		userStatus_.labStatus = std::stoi(userStatusNode["LabStatus"].asString());
+	if(!userStatusNode["Version"].isNull())
+		userStatus_.version = userStatusNode["Version"].asString();
+	if(!userStatusNode["DbAuditStatus"].isNull())
+		userStatus_.dbAuditStatus = std::stoi(userStatusNode["DbAuditStatus"].asString());
+	if(!userStatusNode["AssetScanned"].isNull())
+		userStatus_.assetScanned = userStatusNode["AssetScanned"].asString() == "true";
+	if(!userStatusNode["AuditUpgradeStatus"].isNull())
+		userStatus_.auditUpgradeStatus = userStatusNode["AuditUpgradeStatus"].asString() == "true";
+	if(!userStatusNode["SensitiveTable"].isNull())
+		userStatus_.sensitiveTable = std::stol(userStatusNode["SensitiveTable"].asString());
+	if(!userStatusNode["SensitiveObject"].isNull())
+		userStatus_.sensitiveObject = std::stol(userStatusNode["SensitiveObject"].asString());
+	if(!userStatusNode["DatamaskColumns"].isNull())
+		userStatus_.datamaskColumns = std::stol(userStatusNode["DatamaskColumns"].asString());
+	if(!userStatusNode["AlarmCount"].isNull())
+		userStatus_.alarmCount = std::stol(userStatusNode["AlarmCount"].asString());
+	if(!userStatusNode["DivulgeCount"].isNull())
+		userStatus_.divulgeCount = std::stol(userStatusNode["DivulgeCount"].asString());
+	if(!userStatusNode["DisplayTime"].isNull())
+		userStatus_.displayTime = userStatusNode["DisplayTime"].asString();
+	if(!userStatusNode["TotalDataMaskColumns"].isNull())
+		userStatus_.totalDataMaskColumns = std::stol(userStatusNode["TotalDataMaskColumns"].asString());
+	if(!userStatusNode["DataMaskTasks"].isNull())
+		userStatus_.dataMaskTasks = std::stol(userStatusNode["DataMaskTasks"].asString());
+	if(!userStatusNode["DataMaskColumns"].isNull())
+		userStatus_.dataMaskColumns = std::stol(userStatusNode["DataMaskColumns"].asString());
+	if(!userStatusNode["SensitiveTables"].isNull())
+		userStatus_.sensitiveTables = std::stol(userStatusNode["SensitiveTables"].asString());
+	if(!userStatusNode["SensitiveObjects"].isNull())
+		userStatus_.sensitiveObjects = std::stol(userStatusNode["SensitiveObjects"].asString());
+	if(!userStatusNode["IncSensitiveTables"].isNull())
+		userStatus_.incSensitiveTables = std::stol(userStatusNode["IncSensitiveTables"].asString());
+	if(!userStatusNode["IncSensitiveObjects"].isNull())
+		userStatus_.incSensitiveObjects = std::stol(userStatusNode["IncSensitiveObjects"].asString());
+	if(!userStatusNode["SensitiveTop"].isNull())
+		userStatus_.sensitiveTop = userStatusNode["SensitiveTop"].asString();
+	if(!userStatusNode["DlpTotalCount"].isNull())
+		userStatus_.dlpTotalCount = std::stol(userStatusNode["DlpTotalCount"].asString());
+	if(!userStatusNode["DlpCount"].isNull())
+		userStatus_.dlpCount = std::stol(userStatusNode["DlpCount"].asString());
+	if(!userStatusNode["SensitiveTotalTop"].isNull())
+		userStatus_.sensitiveTotalTop = userStatusNode["SensitiveTotalTop"].asString();
 
 }
 

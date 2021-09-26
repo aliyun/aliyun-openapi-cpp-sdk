@@ -82,6 +82,34 @@ void DescribeEventDetailResult::parse(const std::string &payload)
 		event_.backed = eventNode["Backed"].asString() == "true";
 	if(!eventNode["DealReason"].isNull())
 		event_.dealReason = eventNode["DealReason"].asString();
+	if(!eventNode["UserIdValue"].isNull())
+		event_.userIdValue = eventNode["UserIdValue"].asString();
+	if(!eventNode["dealUserIdValue"].isNull())
+		event_.dealUserIdValue = eventNode["dealUserIdValue"].asString();
+	if(!eventNode["LogDetail"].isNull())
+		event_.logDetail = eventNode["LogDetail"].asString();
+	auto allHandleInfoListNode = eventNode["HandleInfoList"]["HandleInfo"];
+	for (auto eventNodeHandleInfoListHandleInfo : allHandleInfoListNode)
+	{
+		Event::HandleInfo handleInfoObject;
+		if(!eventNodeHandleInfoListHandleInfo["HandlerType"].isNull())
+			handleInfoObject.handlerType = eventNodeHandleInfoListHandleInfo["HandlerType"].asString();
+		if(!eventNodeHandleInfoListHandleInfo["HandlerName"].isNull())
+			handleInfoObject.handlerName = eventNodeHandleInfoListHandleInfo["HandlerName"].asString();
+		if(!eventNodeHandleInfoListHandleInfo["HandlerValue"].isNull())
+			handleInfoObject.handlerValue = std::stoi(eventNodeHandleInfoListHandleInfo["HandlerValue"].asString());
+		if(!eventNodeHandleInfoListHandleInfo["CurrentValue"].isNull())
+			handleInfoObject.currentValue = eventNodeHandleInfoListHandleInfo["CurrentValue"].asString();
+		if(!eventNodeHandleInfoListHandleInfo["DisableTime"].isNull())
+			handleInfoObject.disableTime = std::stol(eventNodeHandleInfoListHandleInfo["DisableTime"].asString());
+		if(!eventNodeHandleInfoListHandleInfo["EnableTime"].isNull())
+			handleInfoObject.enableTime = std::stol(eventNodeHandleInfoListHandleInfo["EnableTime"].asString());
+		if(!eventNodeHandleInfoListHandleInfo["Status"].isNull())
+			handleInfoObject.status = std::stoi(eventNodeHandleInfoListHandleInfo["Status"].asString());
+		if(!eventNodeHandleInfoListHandleInfo["Id"].isNull())
+			handleInfoObject.id = std::stol(eventNodeHandleInfoListHandleInfo["Id"].asString());
+		event_.handleInfoList.push_back(handleInfoObject);
+	}
 	auto detailNode = eventNode["Detail"];
 	auto allContentNode = detailNode["Content"]["ContentItem"];
 	for (auto detailNodeContentContentItem : allContentNode)

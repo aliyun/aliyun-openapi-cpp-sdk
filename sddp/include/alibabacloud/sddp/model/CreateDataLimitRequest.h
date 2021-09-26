@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				CreateDataLimitRequest();
 				~CreateDataLimitRequest();
 
+				int getOcrStatus()const;
+				void setOcrStatus(int ocrStatus);
 				std::string getParentId()const;
 				void setParentId(const std::string& parentId);
 				std::string getPassword()const;
@@ -63,10 +65,13 @@ namespace AlibabaCloud
 				void setConnector(const std::string& connector);
 				int getPort()const;
 				void setPort(int port);
+				int getEventStatus()const;
+				void setEventStatus(int eventStatus);
 				std::string getUserName()const;
 				void setUserName(const std::string& userName);
 
             private:
+				int ocrStatus_;
 				std::string parentId_;
 				std::string password_;
 				bool batchCreate_;
@@ -81,6 +86,7 @@ namespace AlibabaCloud
 				int resourceType_;
 				std::string connector_;
 				int port_;
+				int eventStatus_;
 				std::string userName_;
 
 			};

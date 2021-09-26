@@ -27,17 +27,6 @@ DescribeOssObjectDetailRequest::DescribeOssObjectDetailRequest() :
 DescribeOssObjectDetailRequest::~DescribeOssObjectDetailRequest()
 {}
 
-int DescribeOssObjectDetailRequest::getFeatureType()const
-{
-	return featureType_;
-}
-
-void DescribeOssObjectDetailRequest::setFeatureType(int featureType)
-{
-	featureType_ = featureType;
-	setParameter("FeatureType", std::to_string(featureType));
-}
-
 std::string DescribeOssObjectDetailRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -69,5 +58,16 @@ void DescribeOssObjectDetailRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setParameter("Lang", lang);
+}
+
+int DescribeOssObjectDetailRequest::getFeatureType()const
+{
+	return featureType_;
+}
+
+void DescribeOssObjectDetailRequest::setFeatureType(int featureType)
+{
+	featureType_ = featureType;
+	setParameter("FeatureType", std::to_string(featureType));
 }
 

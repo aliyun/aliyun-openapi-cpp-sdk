@@ -85,6 +85,14 @@ void DescribeRulesResult::parse(const std::string &payload)
 			itemsObject.productCode = valueItemsRule["ProductCode"].asString();
 		if(!valueItemsRule["WarnLevel"].isNull())
 			itemsObject.warnLevel = std::stoi(valueItemsRule["WarnLevel"].asString());
+		if(!valueItemsRule["MajorKey"].isNull())
+			itemsObject.majorKey = valueItemsRule["MajorKey"].asString();
+		if(!valueItemsRule["ContentCategory"].isNull())
+			itemsObject.contentCategory = valueItemsRule["ContentCategory"].asString();
+		if(!valueItemsRule["Target"].isNull())
+			itemsObject.target = valueItemsRule["Target"].asString();
+		if(!valueItemsRule["GroupId"].isNull())
+			itemsObject.groupId = valueItemsRule["GroupId"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["PageSize"].isNull())

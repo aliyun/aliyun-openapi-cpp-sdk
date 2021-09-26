@@ -43,6 +43,7 @@ namespace AlibabaCloud
 					std::string dstTypeCode;
 					std::string srcPath;
 					int dstType;
+					bool originalTable;
 					long gmtCreate;
 					std::string taskName;
 					int srcType;

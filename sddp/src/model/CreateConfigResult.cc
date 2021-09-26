@@ -39,6 +39,13 @@ void CreateConfigResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["Id"].isNull())
+		id_ = std::stol(value["Id"].asString());
 
+}
+
+long CreateConfigResult::getId()const
+{
+	return id_;
 }
 

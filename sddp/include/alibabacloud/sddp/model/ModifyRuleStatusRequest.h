@@ -39,6 +39,8 @@ namespace AlibabaCloud
 				void setFeatureType(int featureType);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
+				std::string getIds()const;
+				void setIds(const std::string& ids);
 				long getId()const;
 				void setId(long id);
 				std::string getLang()const;
@@ -49,6 +51,7 @@ namespace AlibabaCloud
             private:
 				int featureType_;
 				std::string sourceIp_;
+				std::string ids_;
 				long id_;
 				std::string lang_;
 				int status_;

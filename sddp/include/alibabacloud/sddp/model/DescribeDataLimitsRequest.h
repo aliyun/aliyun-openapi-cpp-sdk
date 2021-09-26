@@ -35,16 +35,20 @@ namespace AlibabaCloud
 				DescribeDataLimitsRequest();
 				~DescribeDataLimitsRequest();
 
+				long getStartTime()const;
+				void setStartTime(long startTime);
 				std::string getParentId()const;
 				void setParentId(const std::string& parentId);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
+				int getEnable()const;
+				void setEnable(int enable);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				int getCheckStatus()const;
 				void setCheckStatus(int checkStatus);
+				int getDatamaskStatus()const;
+				void setDatamaskStatus(int datamaskStatus);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 				std::string getServiceRegionId()const;
@@ -53,21 +57,26 @@ namespace AlibabaCloud
 				void setEngineType(const std::string& engineType);
 				int getAuditStatus()const;
 				void setAuditStatus(int auditStatus);
+				long getEndTime()const;
+				void setEndTime(long endTime);
 				int getCurrentPage()const;
 				void setCurrentPage(int currentPage);
 				int getResourceType()const;
 				void setResourceType(int resourceType);
 
             private:
+				long startTime_;
 				std::string parentId_;
 				std::string sourceIp_;
-				std::string regionId_;
+				int enable_;
 				int pageSize_;
 				int checkStatus_;
+				int datamaskStatus_;
 				std::string lang_;
 				std::string serviceRegionId_;
 				std::string engineType_;
 				int auditStatus_;
+				long endTime_;
 				int currentPage_;
 				int resourceType_;
 

@@ -51,20 +51,32 @@ void DescribeEventTypesResult::parse(const std::string &payload)
 			eventTypeListObject.code = valueEventTypeListEventType["Code"].asString();
 		if(!valueEventTypeListEventType["Description"].isNull())
 			eventTypeListObject.description = valueEventTypeListEventType["Description"].asString();
-		auto allSubTypeListNode = allEventTypeListNode["SubTypeList"]["SubType"];
-		for (auto allEventTypeListNodeSubTypeListSubType : allSubTypeListNode)
+		auto allSubTypeListNode = valueEventTypeListEventType["SubTypeList"]["SubType"];
+		for (auto valueEventTypeListEventTypeSubTypeListSubType : allSubTypeListNode)
 		{
 			EventType::SubType subTypeListObject;
-			if(!allEventTypeListNodeSubTypeListSubType["Id"].isNull())
-				subTypeListObject.id = std::stol(allEventTypeListNodeSubTypeListSubType["Id"].asString());
-			if(!allEventTypeListNodeSubTypeListSubType["Name"].isNull())
-				subTypeListObject.name = allEventTypeListNodeSubTypeListSubType["Name"].asString();
-			if(!allEventTypeListNodeSubTypeListSubType["Code"].isNull())
-				subTypeListObject.code = allEventTypeListNodeSubTypeListSubType["Code"].asString();
-			if(!allEventTypeListNodeSubTypeListSubType["Description"].isNull())
-				subTypeListObject.description = allEventTypeListNodeSubTypeListSubType["Description"].asString();
-			if(!allEventTypeListNodeSubTypeListSubType["Status"].isNull())
-				subTypeListObject.status = std::stoi(allEventTypeListNodeSubTypeListSubType["Status"].asString());
+			if(!valueEventTypeListEventTypeSubTypeListSubType["Id"].isNull())
+				subTypeListObject.id = std::stol(valueEventTypeListEventTypeSubTypeListSubType["Id"].asString());
+			if(!valueEventTypeListEventTypeSubTypeListSubType["Name"].isNull())
+				subTypeListObject.name = valueEventTypeListEventTypeSubTypeListSubType["Name"].asString();
+			if(!valueEventTypeListEventTypeSubTypeListSubType["Code"].isNull())
+				subTypeListObject.code = valueEventTypeListEventTypeSubTypeListSubType["Code"].asString();
+			if(!valueEventTypeListEventTypeSubTypeListSubType["Description"].isNull())
+				subTypeListObject.description = valueEventTypeListEventTypeSubTypeListSubType["Description"].asString();
+			if(!valueEventTypeListEventTypeSubTypeListSubType["Status"].isNull())
+				subTypeListObject.status = std::stoi(valueEventTypeListEventTypeSubTypeListSubType["Status"].asString());
+			if(!valueEventTypeListEventTypeSubTypeListSubType["EventHitCount"].isNull())
+				subTypeListObject.eventHitCount = std::stoi(valueEventTypeListEventTypeSubTypeListSubType["EventHitCount"].asString());
+			if(!valueEventTypeListEventTypeSubTypeListSubType["AdaptedProduct"].isNull())
+				subTypeListObject.adaptedProduct = valueEventTypeListEventTypeSubTypeListSubType["AdaptedProduct"].asString();
+			if(!valueEventTypeListEventTypeSubTypeListSubType["ConfigCode"].isNull())
+				subTypeListObject.configCode = valueEventTypeListEventTypeSubTypeListSubType["ConfigCode"].asString();
+			if(!valueEventTypeListEventTypeSubTypeListSubType["ConfigContentType"].isNull())
+				subTypeListObject.configContentType = std::stoi(valueEventTypeListEventTypeSubTypeListSubType["ConfigContentType"].asString());
+			if(!valueEventTypeListEventTypeSubTypeListSubType["ConfigDescription"].isNull())
+				subTypeListObject.configDescription = valueEventTypeListEventTypeSubTypeListSubType["ConfigDescription"].asString();
+			if(!valueEventTypeListEventTypeSubTypeListSubType["ConfigValue"].isNull())
+				subTypeListObject.configValue = valueEventTypeListEventTypeSubTypeListSubType["ConfigValue"].asString();
 			eventTypeListObject.subTypeList.push_back(subTypeListObject);
 		}
 		eventTypeList_.push_back(eventTypeListObject);

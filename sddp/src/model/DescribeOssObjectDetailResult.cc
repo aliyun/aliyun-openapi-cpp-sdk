@@ -60,6 +60,15 @@ void DescribeOssObjectDetailResult::parse(const std::string &payload)
 			ruleObject.count = std::stol(ossObjectDetailNodeRuleListRule["Count"].asString());
 		if(!ossObjectDetailNodeRuleListRule["Category"].isNull())
 			ruleObject.category = std::stoi(ossObjectDetailNodeRuleListRule["Category"].asString());
+		if(!ossObjectDetailNodeRuleListRule["CategoryName"].isNull())
+			ruleObject.categoryName = ossObjectDetailNodeRuleListRule["CategoryName"].asString();
+		if(!ossObjectDetailNodeRuleListRule["RiskLevelName"].isNull())
+			ruleObject.riskLevelName = ossObjectDetailNodeRuleListRule["RiskLevelName"].asString();
+		if(!ossObjectDetailNodeRuleListRule["RiskLevelId"].isNull())
+			ruleObject.riskLevelId = std::stol(ossObjectDetailNodeRuleListRule["RiskLevelId"].asString());
+		auto allSampleList = value["SampleList"]["Sample"];
+		for (auto value : allSampleList)
+			ruleObject.sampleList.push_back(value.asString());
 		ossObjectDetail_.ruleList.push_back(ruleObject);
 	}
 

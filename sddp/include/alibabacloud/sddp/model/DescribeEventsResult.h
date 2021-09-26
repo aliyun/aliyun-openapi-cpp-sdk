@@ -38,12 +38,15 @@ namespace AlibabaCloud
 					std::string loginName;
 					std::string typeName;
 					bool backed;
+					std::string userIdValue;
 					std::string productCode;
 					std::string typeCode;
 					std::string statusName;
 					std::string subTypeCode;
 					long alertTime;
 					std::string departName;
+					std::string instanceName;
+					int warnLevel;
 					std::string dealLoginName;
 					std::string dealDisplayName;
 					std::string subTypeName;
@@ -51,6 +54,7 @@ namespace AlibabaCloud
 					std::string targetProductCode;
 					long eventTime;
 					long dealUserId;
+					std::string dealUserIdValue;
 					std::string displayName;
 					long id;
 					long dealTime;

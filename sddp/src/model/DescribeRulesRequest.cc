@@ -104,6 +104,17 @@ void DescribeRulesRequest::setLang(const std::string& lang)
 	setParameter("Lang", lang);
 }
 
+bool DescribeRulesRequest::getKeywordCompatible()const
+{
+	return keywordCompatible_;
+}
+
+void DescribeRulesRequest::setKeywordCompatible(bool keywordCompatible)
+{
+	keywordCompatible_ = keywordCompatible;
+	setParameter("KeywordCompatible", keywordCompatible ? "true" : "false");
+}
+
 int DescribeRulesRequest::getRuleType()const
 {
 	return ruleType_;
@@ -113,6 +124,28 @@ void DescribeRulesRequest::setRuleType(int ruleType)
 {
 	ruleType_ = ruleType;
 	setParameter("RuleType", std::to_string(ruleType));
+}
+
+std::string DescribeRulesRequest::getGroupId()const
+{
+	return groupId_;
+}
+
+void DescribeRulesRequest::setGroupId(const std::string& groupId)
+{
+	groupId_ = groupId;
+	setParameter("GroupId", groupId);
+}
+
+int DescribeRulesRequest::getContentCategory()const
+{
+	return contentCategory_;
+}
+
+void DescribeRulesRequest::setContentCategory(int contentCategory)
+{
+	contentCategory_ = contentCategory;
+	setParameter("ContentCategory", std::to_string(contentCategory));
 }
 
 int DescribeRulesRequest::getCurrentPage()const
@@ -157,5 +190,16 @@ void DescribeRulesRequest::setCategory(int category)
 {
 	category_ = category;
 	setParameter("Category", std::to_string(category));
+}
+
+int DescribeRulesRequest::getStatus()const
+{
+	return status_;
+}
+
+void DescribeRulesRequest::setStatus(int status)
+{
+	status_ = status;
+	setParameter("Status", std::to_string(status));
 }
 

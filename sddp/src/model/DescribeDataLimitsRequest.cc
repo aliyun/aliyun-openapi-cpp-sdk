@@ -27,6 +27,17 @@ DescribeDataLimitsRequest::DescribeDataLimitsRequest() :
 DescribeDataLimitsRequest::~DescribeDataLimitsRequest()
 {}
 
+long DescribeDataLimitsRequest::getStartTime()const
+{
+	return startTime_;
+}
+
+void DescribeDataLimitsRequest::setStartTime(long startTime)
+{
+	startTime_ = startTime;
+	setParameter("StartTime", std::to_string(startTime));
+}
+
 std::string DescribeDataLimitsRequest::getParentId()const
 {
 	return parentId_;
@@ -49,15 +60,15 @@ void DescribeDataLimitsRequest::setSourceIp(const std::string& sourceIp)
 	setParameter("SourceIp", sourceIp);
 }
 
-std::string DescribeDataLimitsRequest::getRegionId()const
+int DescribeDataLimitsRequest::getEnable()const
 {
-	return regionId_;
+	return enable_;
 }
 
-void DescribeDataLimitsRequest::setRegionId(const std::string& regionId)
+void DescribeDataLimitsRequest::setEnable(int enable)
 {
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	enable_ = enable;
+	setParameter("Enable", std::to_string(enable));
 }
 
 int DescribeDataLimitsRequest::getPageSize()const
@@ -80,6 +91,17 @@ void DescribeDataLimitsRequest::setCheckStatus(int checkStatus)
 {
 	checkStatus_ = checkStatus;
 	setParameter("CheckStatus", std::to_string(checkStatus));
+}
+
+int DescribeDataLimitsRequest::getDatamaskStatus()const
+{
+	return datamaskStatus_;
+}
+
+void DescribeDataLimitsRequest::setDatamaskStatus(int datamaskStatus)
+{
+	datamaskStatus_ = datamaskStatus;
+	setParameter("DatamaskStatus", std::to_string(datamaskStatus));
 }
 
 std::string DescribeDataLimitsRequest::getLang()const
@@ -124,6 +146,17 @@ void DescribeDataLimitsRequest::setAuditStatus(int auditStatus)
 {
 	auditStatus_ = auditStatus;
 	setParameter("AuditStatus", std::to_string(auditStatus));
+}
+
+long DescribeDataLimitsRequest::getEndTime()const
+{
+	return endTime_;
+}
+
+void DescribeDataLimitsRequest::setEndTime(long endTime)
+{
+	endTime_ = endTime;
+	setParameter("EndTime", std::to_string(endTime));
 }
 
 int DescribeDataLimitsRequest::getCurrentPage()const

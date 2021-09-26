@@ -34,26 +34,43 @@ namespace AlibabaCloud
 			public:
 				struct DataLimit
 				{
-					std::string parentId;
+					int agentState;
 					std::string connector;
-					std::string userName;
+					int samplingSize;
 					int processStatus;
 					int logStoreDay;
 					int port;
 					int checkStatus;
+					int eventStatus;
+					bool supportDatamask;
+					std::string dbVersion;
+					bool supportOcr;
+					long lastFinishedTime;
+					int enable;
+					std::string engineType;
+					std::string agentId;
+					bool supportScan;
+					std::string parentId;
+					std::string userName;
+					bool supportAgentInstall;
+					bool supportEvent;
+					std::string instanceId;
+					std::string tenantName;
 					long resourceType;
 					std::string localName;
 					long gmtCreate;
 					int totalCount;
 					int auditStatus;
-					long lastFinishedTime;
+					int datamaskStatus;
 					int autoScan;
 					std::string resourceTypeCode;
-					int enable;
-					std::string engineType;
+					long nextStartTime;
+					bool supportAudit;
+					std::string instanceDescription;
 					std::string regionId;
 					long id;
 					std::string errorCode;
+					int ocrStatus;
 					std::string checkStatusName;
 					std::string errorMessage;
 					int processTotalCount;

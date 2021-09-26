@@ -49,6 +49,17 @@ void ModifyEventStatusRequest::setSourceIp(const std::string& sourceIp)
 	setParameter("SourceIp", sourceIp);
 }
 
+std::string ModifyEventStatusRequest::getHandleInfo()const
+{
+	return handleInfo_;
+}
+
+void ModifyEventStatusRequest::setHandleInfo(const std::string& handleInfo)
+{
+	handleInfo_ = handleInfo;
+	setParameter("HandleInfo", handleInfo);
+}
+
 std::string ModifyEventStatusRequest::getDealReason()const
 {
 	return dealReason_;

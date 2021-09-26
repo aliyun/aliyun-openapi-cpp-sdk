@@ -49,6 +49,17 @@ void DescribeColumnsRequest::setRiskLevels(const std::string& riskLevels)
 	setParameter("RiskLevels", riskLevels);
 }
 
+std::string DescribeColumnsRequest::getRuleName()const
+{
+	return ruleName_;
+}
+
+void DescribeColumnsRequest::setRuleName(const std::string& ruleName)
+{
+	ruleName_ = ruleName;
+	setParameter("RuleName", ruleName);
+}
+
 std::string DescribeColumnsRequest::getQueryName()const
 {
 	return queryName_;
@@ -69,6 +80,17 @@ void DescribeColumnsRequest::setRiskLevelId(long riskLevelId)
 {
 	riskLevelId_ = riskLevelId;
 	setParameter("RiskLevelId", std::to_string(riskLevelId));
+}
+
+std::string DescribeColumnsRequest::getSensLevelName()const
+{
+	return sensLevelName_;
+}
+
+void DescribeColumnsRequest::setSensLevelName(const std::string& sensLevelName)
+{
+	sensLevelName_ = sensLevelName;
+	setParameter("SensLevelName", sensLevelName);
 }
 
 std::string DescribeColumnsRequest::getSourceIp()const
@@ -115,6 +137,17 @@ void DescribeColumnsRequest::setLang(const std::string& lang)
 	setParameter("Lang", lang);
 }
 
+std::string DescribeColumnsRequest::getTableName()const
+{
+	return tableName_;
+}
+
+void DescribeColumnsRequest::setTableName(const std::string& tableName)
+{
+	tableName_ = tableName;
+	setParameter("TableName", tableName);
+}
+
 int DescribeColumnsRequest::getFeatureType()const
 {
 	return featureType_;
@@ -157,6 +190,17 @@ void DescribeColumnsRequest::setInstanceId(long instanceId)
 {
 	instanceId_ = instanceId;
 	setParameter("InstanceId", std::to_string(instanceId));
+}
+
+std::string DescribeColumnsRequest::getInstanceName()const
+{
+	return instanceName_;
+}
+
+void DescribeColumnsRequest::setInstanceName(const std::string& instanceName)
+{
+	instanceName_ = instanceName;
+	setParameter("InstanceName", instanceName);
 }
 
 std::string DescribeColumnsRequest::getName()const
