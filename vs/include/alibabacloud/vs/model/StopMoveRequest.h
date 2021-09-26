@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				bool getTilt()const;
 				void setTilt(bool tilt);
+				std::string getSubProtocol()const;
+				void setSubProtocol(const std::string& subProtocol);
 				std::string getId()const;
 				void setId(const std::string& id);
 				bool getPan()const;
@@ -50,6 +52,7 @@ namespace AlibabaCloud
 
             private:
 				bool tilt_;
+				std::string subProtocol_;
 				std::string id_;
 				bool pan_;
 				std::string showLog_;

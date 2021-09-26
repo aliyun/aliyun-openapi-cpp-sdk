@@ -51,6 +51,78 @@ VsClient::VsClient(const std::string & accessKeyId, const std::string & accessKe
 VsClient::~VsClient()
 {}
 
+VsClient::AddDeviceOutcome VsClient::addDevice(const AddDeviceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddDeviceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddDeviceOutcome(AddDeviceResult(outcome.result()));
+	else
+		return AddDeviceOutcome(outcome.error());
+}
+
+void VsClient::addDeviceAsync(const AddDeviceRequest& request, const AddDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addDevice(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VsClient::AddDeviceOutcomeCallable VsClient::addDeviceCallable(const AddDeviceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddDeviceOutcome()>>(
+			[this, request]()
+			{
+			return this->addDevice(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VsClient::AddRenderingDeviceInternetPortsOutcome VsClient::addRenderingDeviceInternetPorts(const AddRenderingDeviceInternetPortsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddRenderingDeviceInternetPortsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddRenderingDeviceInternetPortsOutcome(AddRenderingDeviceInternetPortsResult(outcome.result()));
+	else
+		return AddRenderingDeviceInternetPortsOutcome(outcome.error());
+}
+
+void VsClient::addRenderingDeviceInternetPortsAsync(const AddRenderingDeviceInternetPortsRequest& request, const AddRenderingDeviceInternetPortsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addRenderingDeviceInternetPorts(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VsClient::AddRenderingDeviceInternetPortsOutcomeCallable VsClient::addRenderingDeviceInternetPortsCallable(const AddRenderingDeviceInternetPortsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddRenderingDeviceInternetPortsOutcome()>>(
+			[this, request]()
+			{
+			return this->addRenderingDeviceInternetPorts(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VsClient::AddVsPullStreamInfoConfigOutcome VsClient::addVsPullStreamInfoConfig(const AddVsPullStreamInfoConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -987,6 +1059,42 @@ VsClient::ContinuousMoveOutcomeCallable VsClient::continuousMoveCallable(const C
 	return task->get_future();
 }
 
+VsClient::CreateClusterOutcome VsClient::createCluster(const CreateClusterRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateClusterOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateClusterOutcome(CreateClusterResult(outcome.result()));
+	else
+		return CreateClusterOutcome(outcome.error());
+}
+
+void VsClient::createClusterAsync(const CreateClusterRequest& request, const CreateClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createCluster(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VsClient::CreateClusterOutcomeCallable VsClient::createClusterCallable(const CreateClusterRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateClusterOutcome()>>(
+			[this, request]()
+			{
+			return this->createCluster(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VsClient::CreateDeviceOutcome VsClient::createDevice(const CreateDeviceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1053,6 +1161,42 @@ VsClient::CreateDeviceAlarmOutcomeCallable VsClient::createDeviceAlarmCallable(c
 			[this, request]()
 			{
 			return this->createDeviceAlarm(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VsClient::CreateDeviceSnapshotOutcome VsClient::createDeviceSnapshot(const CreateDeviceSnapshotRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateDeviceSnapshotOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateDeviceSnapshotOutcome(CreateDeviceSnapshotResult(outcome.result()));
+	else
+		return CreateDeviceSnapshotOutcome(outcome.error());
+}
+
+void VsClient::createDeviceSnapshotAsync(const CreateDeviceSnapshotRequest& request, const CreateDeviceSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createDeviceSnapshot(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VsClient::CreateDeviceSnapshotOutcomeCallable VsClient::createDeviceSnapshotCallable(const CreateDeviceSnapshotRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateDeviceSnapshotOutcome()>>(
+			[this, request]()
+			{
+			return this->createDeviceSnapshot(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1167,6 +1311,42 @@ VsClient::CreateParentPlatformOutcomeCallable VsClient::createParentPlatformCall
 	return task->get_future();
 }
 
+VsClient::CreateRenderingDeviceOutcome VsClient::createRenderingDevice(const CreateRenderingDeviceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateRenderingDeviceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateRenderingDeviceOutcome(CreateRenderingDeviceResult(outcome.result()));
+	else
+		return CreateRenderingDeviceOutcome(outcome.error());
+}
+
+void VsClient::createRenderingDeviceAsync(const CreateRenderingDeviceRequest& request, const CreateRenderingDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createRenderingDevice(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VsClient::CreateRenderingDeviceOutcomeCallable VsClient::createRenderingDeviceCallable(const CreateRenderingDeviceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateRenderingDeviceOutcome()>>(
+			[this, request]()
+			{
+			return this->createRenderingDevice(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VsClient::CreateStreamSnapshotOutcome VsClient::createStreamSnapshot(const CreateStreamSnapshotRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1233,6 +1413,78 @@ VsClient::CreateTemplateOutcomeCallable VsClient::createTemplateCallable(const C
 			[this, request]()
 			{
 			return this->createTemplate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VsClient::DeleteBucketOutcome VsClient::deleteBucket(const DeleteBucketRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteBucketOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteBucketOutcome(DeleteBucketResult(outcome.result()));
+	else
+		return DeleteBucketOutcome(outcome.error());
+}
+
+void VsClient::deleteBucketAsync(const DeleteBucketRequest& request, const DeleteBucketAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteBucket(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VsClient::DeleteBucketOutcomeCallable VsClient::deleteBucketCallable(const DeleteBucketRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteBucketOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteBucket(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VsClient::DeleteClusterOutcome VsClient::deleteCluster(const DeleteClusterRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteClusterOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteClusterOutcome(DeleteClusterResult(outcome.result()));
+	else
+		return DeleteClusterOutcome(outcome.error());
+}
+
+void VsClient::deleteClusterAsync(const DeleteClusterRequest& request, const DeleteClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteCluster(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VsClient::DeleteClusterOutcomeCallable VsClient::deleteClusterCallable(const DeleteClusterRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteClusterOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteCluster(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1419,6 +1671,78 @@ VsClient::DeletePresetOutcomeCallable VsClient::deletePresetCallable(const Delet
 	return task->get_future();
 }
 
+VsClient::DeleteRenderingDeviceInternetPortsOutcome VsClient::deleteRenderingDeviceInternetPorts(const DeleteRenderingDeviceInternetPortsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteRenderingDeviceInternetPortsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteRenderingDeviceInternetPortsOutcome(DeleteRenderingDeviceInternetPortsResult(outcome.result()));
+	else
+		return DeleteRenderingDeviceInternetPortsOutcome(outcome.error());
+}
+
+void VsClient::deleteRenderingDeviceInternetPortsAsync(const DeleteRenderingDeviceInternetPortsRequest& request, const DeleteRenderingDeviceInternetPortsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteRenderingDeviceInternetPorts(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VsClient::DeleteRenderingDeviceInternetPortsOutcomeCallable VsClient::deleteRenderingDeviceInternetPortsCallable(const DeleteRenderingDeviceInternetPortsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteRenderingDeviceInternetPortsOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteRenderingDeviceInternetPorts(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VsClient::DeleteRenderingDevicesOutcome VsClient::deleteRenderingDevices(const DeleteRenderingDevicesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteRenderingDevicesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteRenderingDevicesOutcome(DeleteRenderingDevicesResult(outcome.result()));
+	else
+		return DeleteRenderingDevicesOutcome(outcome.error());
+}
+
+void VsClient::deleteRenderingDevicesAsync(const DeleteRenderingDevicesRequest& request, const DeleteRenderingDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteRenderingDevices(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VsClient::DeleteRenderingDevicesOutcomeCallable VsClient::deleteRenderingDevicesCallable(const DeleteRenderingDevicesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteRenderingDevicesOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteRenderingDevices(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VsClient::DeleteTemplateOutcome VsClient::deleteTemplate(const DeleteTemplateRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1557,6 +1881,114 @@ VsClient::DescribeAccountStatOutcomeCallable VsClient::describeAccountStatCallab
 			[this, request]()
 			{
 			return this->describeAccountStat(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VsClient::DescribeClusterOutcome VsClient::describeCluster(const DescribeClusterRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeClusterOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeClusterOutcome(DescribeClusterResult(outcome.result()));
+	else
+		return DescribeClusterOutcome(outcome.error());
+}
+
+void VsClient::describeClusterAsync(const DescribeClusterRequest& request, const DescribeClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeCluster(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VsClient::DescribeClusterOutcomeCallable VsClient::describeClusterCallable(const DescribeClusterRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeClusterOutcome()>>(
+			[this, request]()
+			{
+			return this->describeCluster(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VsClient::DescribeClusterDevicesOutcome VsClient::describeClusterDevices(const DescribeClusterDevicesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeClusterDevicesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeClusterDevicesOutcome(DescribeClusterDevicesResult(outcome.result()));
+	else
+		return DescribeClusterDevicesOutcome(outcome.error());
+}
+
+void VsClient::describeClusterDevicesAsync(const DescribeClusterDevicesRequest& request, const DescribeClusterDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeClusterDevices(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VsClient::DescribeClusterDevicesOutcomeCallable VsClient::describeClusterDevicesCallable(const DescribeClusterDevicesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeClusterDevicesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeClusterDevices(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VsClient::DescribeClustersOutcome VsClient::describeClusters(const DescribeClustersRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeClustersOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeClustersOutcome(DescribeClustersResult(outcome.result()));
+	else
+		return DescribeClustersOutcome(outcome.error());
+}
+
+void VsClient::describeClustersAsync(const DescribeClustersRequest& request, const DescribeClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeClusters(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VsClient::DescribeClustersOutcomeCallable VsClient::describeClustersCallable(const DescribeClustersRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeClustersOutcome()>>(
+			[this, request]()
+			{
+			return this->describeClusters(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1887,6 +2319,42 @@ VsClient::DescribeGroupsOutcomeCallable VsClient::describeGroupsCallable(const D
 	return task->get_future();
 }
 
+VsClient::DescribeNodeDevicesInfoOutcome VsClient::describeNodeDevicesInfo(const DescribeNodeDevicesInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeNodeDevicesInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeNodeDevicesInfoOutcome(DescribeNodeDevicesInfoResult(outcome.result()));
+	else
+		return DescribeNodeDevicesInfoOutcome(outcome.error());
+}
+
+void VsClient::describeNodeDevicesInfoAsync(const DescribeNodeDevicesInfoRequest& request, const DescribeNodeDevicesInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeNodeDevicesInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VsClient::DescribeNodeDevicesInfoOutcomeCallable VsClient::describeNodeDevicesInfoCallable(const DescribeNodeDevicesInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeNodeDevicesInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->describeNodeDevicesInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VsClient::DescribeParentPlatformOutcome VsClient::describeParentPlatform(const DescribeParentPlatformRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2133,6 +2601,42 @@ VsClient::DescribeRecordsOutcomeCallable VsClient::describeRecordsCallable(const
 			[this, request]()
 			{
 			return this->describeRecords(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VsClient::DescribeRenderingDevicesOutcome VsClient::describeRenderingDevices(const DescribeRenderingDevicesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeRenderingDevicesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeRenderingDevicesOutcome(DescribeRenderingDevicesResult(outcome.result()));
+	else
+		return DescribeRenderingDevicesOutcome(outcome.error());
+}
+
+void VsClient::describeRenderingDevicesAsync(const DescribeRenderingDevicesRequest& request, const DescribeRenderingDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeRenderingDevices(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VsClient::DescribeRenderingDevicesOutcomeCallable VsClient::describeRenderingDevicesCallable(const DescribeRenderingDevicesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeRenderingDevicesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeRenderingDevices(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2967,6 +3471,78 @@ VsClient::DescribeVsPullStreamInfoConfigOutcomeCallable VsClient::describeVsPull
 	return task->get_future();
 }
 
+VsClient::DescribeVsStorageTrafficUsageDataOutcome VsClient::describeVsStorageTrafficUsageData(const DescribeVsStorageTrafficUsageDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeVsStorageTrafficUsageDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeVsStorageTrafficUsageDataOutcome(DescribeVsStorageTrafficUsageDataResult(outcome.result()));
+	else
+		return DescribeVsStorageTrafficUsageDataOutcome(outcome.error());
+}
+
+void VsClient::describeVsStorageTrafficUsageDataAsync(const DescribeVsStorageTrafficUsageDataRequest& request, const DescribeVsStorageTrafficUsageDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeVsStorageTrafficUsageData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VsClient::DescribeVsStorageTrafficUsageDataOutcomeCallable VsClient::describeVsStorageTrafficUsageDataCallable(const DescribeVsStorageTrafficUsageDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeVsStorageTrafficUsageDataOutcome()>>(
+			[this, request]()
+			{
+			return this->describeVsStorageTrafficUsageData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VsClient::DescribeVsStorageUsageDataOutcome VsClient::describeVsStorageUsageData(const DescribeVsStorageUsageDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeVsStorageUsageDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeVsStorageUsageDataOutcome(DescribeVsStorageUsageDataResult(outcome.result()));
+	else
+		return DescribeVsStorageUsageDataOutcome(outcome.error());
+}
+
+void VsClient::describeVsStorageUsageDataAsync(const DescribeVsStorageUsageDataRequest& request, const DescribeVsStorageUsageDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeVsStorageUsageData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VsClient::DescribeVsStorageUsageDataOutcomeCallable VsClient::describeVsStorageUsageDataCallable(const DescribeVsStorageUsageDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeVsStorageUsageDataOutcome()>>(
+			[this, request]()
+			{
+			return this->describeVsStorageUsageData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VsClient::DescribeVsStreamsNotifyUrlConfigOutcome VsClient::describeVsStreamsNotifyUrlConfig(const DescribeVsStreamsNotifyUrlConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3219,6 +3795,42 @@ VsClient::ForbidVsStreamOutcomeCallable VsClient::forbidVsStreamCallable(const F
 	return task->get_future();
 }
 
+VsClient::GetBucketInfoOutcome VsClient::getBucketInfo(const GetBucketInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetBucketInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetBucketInfoOutcome(GetBucketInfoResult(outcome.result()));
+	else
+		return GetBucketInfoOutcome(outcome.error());
+}
+
+void VsClient::getBucketInfoAsync(const GetBucketInfoRequest& request, const GetBucketInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getBucketInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VsClient::GetBucketInfoOutcomeCallable VsClient::getBucketInfoCallable(const GetBucketInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetBucketInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->getBucketInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VsClient::GotoPresetOutcome VsClient::gotoPreset(const GotoPresetRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3249,6 +3861,150 @@ VsClient::GotoPresetOutcomeCallable VsClient::gotoPresetCallable(const GotoPrese
 			[this, request]()
 			{
 			return this->gotoPreset(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VsClient::ListBucketsOutcome VsClient::listBuckets(const ListBucketsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListBucketsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListBucketsOutcome(ListBucketsResult(outcome.result()));
+	else
+		return ListBucketsOutcome(outcome.error());
+}
+
+void VsClient::listBucketsAsync(const ListBucketsRequest& request, const ListBucketsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listBuckets(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VsClient::ListBucketsOutcomeCallable VsClient::listBucketsCallable(const ListBucketsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListBucketsOutcome()>>(
+			[this, request]()
+			{
+			return this->listBuckets(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VsClient::ListDeviceChannelsOutcome VsClient::listDeviceChannels(const ListDeviceChannelsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListDeviceChannelsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListDeviceChannelsOutcome(ListDeviceChannelsResult(outcome.result()));
+	else
+		return ListDeviceChannelsOutcome(outcome.error());
+}
+
+void VsClient::listDeviceChannelsAsync(const ListDeviceChannelsRequest& request, const ListDeviceChannelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listDeviceChannels(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VsClient::ListDeviceChannelsOutcomeCallable VsClient::listDeviceChannelsCallable(const ListDeviceChannelsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListDeviceChannelsOutcome()>>(
+			[this, request]()
+			{
+			return this->listDeviceChannels(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VsClient::ListDeviceRecordsOutcome VsClient::listDeviceRecords(const ListDeviceRecordsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListDeviceRecordsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListDeviceRecordsOutcome(ListDeviceRecordsResult(outcome.result()));
+	else
+		return ListDeviceRecordsOutcome(outcome.error());
+}
+
+void VsClient::listDeviceRecordsAsync(const ListDeviceRecordsRequest& request, const ListDeviceRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listDeviceRecords(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VsClient::ListDeviceRecordsOutcomeCallable VsClient::listDeviceRecordsCallable(const ListDeviceRecordsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListDeviceRecordsOutcome()>>(
+			[this, request]()
+			{
+			return this->listDeviceRecords(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VsClient::ListObjectsOutcome VsClient::listObjects(const ListObjectsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListObjectsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListObjectsOutcome(ListObjectsResult(outcome.result()));
+	else
+		return ListObjectsOutcome(outcome.error());
+}
+
+void VsClient::listObjectsAsync(const ListObjectsRequest& request, const ListObjectsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listObjects(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VsClient::ListObjectsOutcomeCallable VsClient::listObjectsCallable(const ListObjectsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListObjectsOutcome()>>(
+			[this, request]()
+			{
+			return this->listObjects(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3537,6 +4293,186 @@ VsClient::ModifyTemplateOutcomeCallable VsClient::modifyTemplateCallable(const M
 			[this, request]()
 			{
 			return this->modifyTemplate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VsClient::OpenVsServiceOutcome VsClient::openVsService(const OpenVsServiceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return OpenVsServiceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return OpenVsServiceOutcome(OpenVsServiceResult(outcome.result()));
+	else
+		return OpenVsServiceOutcome(outcome.error());
+}
+
+void VsClient::openVsServiceAsync(const OpenVsServiceRequest& request, const OpenVsServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, openVsService(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VsClient::OpenVsServiceOutcomeCallable VsClient::openVsServiceCallable(const OpenVsServiceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<OpenVsServiceOutcome()>>(
+			[this, request]()
+			{
+			return this->openVsService(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VsClient::OperateRenderingDevicesOutcome VsClient::operateRenderingDevices(const OperateRenderingDevicesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return OperateRenderingDevicesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return OperateRenderingDevicesOutcome(OperateRenderingDevicesResult(outcome.result()));
+	else
+		return OperateRenderingDevicesOutcome(outcome.error());
+}
+
+void VsClient::operateRenderingDevicesAsync(const OperateRenderingDevicesRequest& request, const OperateRenderingDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, operateRenderingDevices(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VsClient::OperateRenderingDevicesOutcomeCallable VsClient::operateRenderingDevicesCallable(const OperateRenderingDevicesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<OperateRenderingDevicesOutcome()>>(
+			[this, request]()
+			{
+			return this->operateRenderingDevices(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VsClient::PrepareUploadOutcome VsClient::prepareUpload(const PrepareUploadRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return PrepareUploadOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return PrepareUploadOutcome(PrepareUploadResult(outcome.result()));
+	else
+		return PrepareUploadOutcome(outcome.error());
+}
+
+void VsClient::prepareUploadAsync(const PrepareUploadRequest& request, const PrepareUploadAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, prepareUpload(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VsClient::PrepareUploadOutcomeCallable VsClient::prepareUploadCallable(const PrepareUploadRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<PrepareUploadOutcome()>>(
+			[this, request]()
+			{
+			return this->prepareUpload(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VsClient::PutBucketOutcome VsClient::putBucket(const PutBucketRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return PutBucketOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return PutBucketOutcome(PutBucketResult(outcome.result()));
+	else
+		return PutBucketOutcome(outcome.error());
+}
+
+void VsClient::putBucketAsync(const PutBucketRequest& request, const PutBucketAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, putBucket(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VsClient::PutBucketOutcomeCallable VsClient::putBucketCallable(const PutBucketRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<PutBucketOutcome()>>(
+			[this, request]()
+			{
+			return this->putBucket(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VsClient::ResetRenderingDevicesOutcome VsClient::resetRenderingDevices(const ResetRenderingDevicesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ResetRenderingDevicesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ResetRenderingDevicesOutcome(ResetRenderingDevicesResult(outcome.result()));
+	else
+		return ResetRenderingDevicesOutcome(outcome.error());
+}
+
+void VsClient::resetRenderingDevicesAsync(const ResetRenderingDevicesRequest& request, const ResetRenderingDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, resetRenderingDevices(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VsClient::ResetRenderingDevicesOutcomeCallable VsClient::resetRenderingDevicesCallable(const ResetRenderingDevicesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ResetRenderingDevicesOutcome()>>(
+			[this, request]()
+			{
+			return this->resetRenderingDevices(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4119,6 +5055,42 @@ VsClient::SyncCatalogsOutcomeCallable VsClient::syncCatalogsCallable(const SyncC
 	return task->get_future();
 }
 
+VsClient::SyncDeviceChannelsOutcome VsClient::syncDeviceChannels(const SyncDeviceChannelsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SyncDeviceChannelsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SyncDeviceChannelsOutcome(SyncDeviceChannelsResult(outcome.result()));
+	else
+		return SyncDeviceChannelsOutcome(outcome.error());
+}
+
+void VsClient::syncDeviceChannelsAsync(const SyncDeviceChannelsRequest& request, const SyncDeviceChannelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, syncDeviceChannels(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VsClient::SyncDeviceChannelsOutcomeCallable VsClient::syncDeviceChannelsCallable(const SyncDeviceChannelsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SyncDeviceChannelsOutcome()>>(
+			[this, request]()
+			{
+			return this->syncDeviceChannels(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VsClient::UnbindDirectoryOutcome VsClient::unbindDirectory(const UnbindDirectoryRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4299,6 +5271,114 @@ VsClient::UnlockDeviceOutcomeCallable VsClient::unlockDeviceCallable(const Unloc
 	return task->get_future();
 }
 
+VsClient::UpdateBucketInfoOutcome VsClient::updateBucketInfo(const UpdateBucketInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateBucketInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateBucketInfoOutcome(UpdateBucketInfoResult(outcome.result()));
+	else
+		return UpdateBucketInfoOutcome(outcome.error());
+}
+
+void VsClient::updateBucketInfoAsync(const UpdateBucketInfoRequest& request, const UpdateBucketInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateBucketInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VsClient::UpdateBucketInfoOutcomeCallable VsClient::updateBucketInfoCallable(const UpdateBucketInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateBucketInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->updateBucketInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VsClient::UpdateClusterOutcome VsClient::updateCluster(const UpdateClusterRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateClusterOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateClusterOutcome(UpdateClusterResult(outcome.result()));
+	else
+		return UpdateClusterOutcome(outcome.error());
+}
+
+void VsClient::updateClusterAsync(const UpdateClusterRequest& request, const UpdateClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateCluster(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VsClient::UpdateClusterOutcomeCallable VsClient::updateClusterCallable(const UpdateClusterRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateClusterOutcome()>>(
+			[this, request]()
+			{
+			return this->updateCluster(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VsClient::UpdateRenderingDeviceSpecOutcome VsClient::updateRenderingDeviceSpec(const UpdateRenderingDeviceSpecRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateRenderingDeviceSpecOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateRenderingDeviceSpecOutcome(UpdateRenderingDeviceSpecResult(outcome.result()));
+	else
+		return UpdateRenderingDeviceSpecOutcome(outcome.error());
+}
+
+void VsClient::updateRenderingDeviceSpecAsync(const UpdateRenderingDeviceSpecRequest& request, const UpdateRenderingDeviceSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateRenderingDeviceSpec(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VsClient::UpdateRenderingDeviceSpecOutcomeCallable VsClient::updateRenderingDeviceSpecCallable(const UpdateRenderingDeviceSpecRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateRenderingDeviceSpecOutcome()>>(
+			[this, request]()
+			{
+			return this->updateRenderingDeviceSpec(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VsClient::UpdateVsPullStreamInfoConfigOutcome VsClient::updateVsPullStreamInfoConfig(const UpdateVsPullStreamInfoConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4329,6 +5409,42 @@ VsClient::UpdateVsPullStreamInfoConfigOutcomeCallable VsClient::updateVsPullStre
 			[this, request]()
 			{
 			return this->updateVsPullStreamInfoConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VsClient::UploadDeviceRecordOutcome VsClient::uploadDeviceRecord(const UploadDeviceRecordRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UploadDeviceRecordOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UploadDeviceRecordOutcome(UploadDeviceRecordResult(outcome.result()));
+	else
+		return UploadDeviceRecordOutcome(outcome.error());
+}
+
+void VsClient::uploadDeviceRecordAsync(const UploadDeviceRecordRequest& request, const UploadDeviceRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, uploadDeviceRecord(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VsClient::UploadDeviceRecordOutcomeCallable VsClient::uploadDeviceRecordCallable(const UploadDeviceRecordRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UploadDeviceRecordOutcome()>>(
+			[this, request]()
+			{
+			return this->uploadDeviceRecord(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -53,12 +53,21 @@ void DescribeVsDomainUvDataResult::parse(const std::string &payload)
 		domainName_ = value["DomainName"].asString();
 	if(!value["StartTime"].isNull())
 		startTime_ = value["StartTime"].asString();
+	if(!value["EndTime"].isNull())
+		endTime_ = value["EndTime"].asString();
+	if(!value["DataInterval"].isNull())
+		dataInterval_ = value["DataInterval"].asString();
 
 }
 
 std::vector<DescribeVsDomainUvDataResult::UsageData> DescribeVsDomainUvDataResult::getUvDataInterval()const
 {
 	return uvDataInterval_;
+}
+
+std::string DescribeVsDomainUvDataResult::getEndTime()const
+{
+	return endTime_;
 }
 
 std::string DescribeVsDomainUvDataResult::getDomainName()const
@@ -69,5 +78,10 @@ std::string DescribeVsDomainUvDataResult::getDomainName()const
 std::string DescribeVsDomainUvDataResult::getStartTime()const
 {
 	return startTime_;
+}
+
+std::string DescribeVsDomainUvDataResult::getDataInterval()const
+{
+	return dataInterval_;
 }
 

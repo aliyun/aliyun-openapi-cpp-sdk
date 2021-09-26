@@ -27,6 +27,17 @@ DescribePresetsRequest::DescribePresetsRequest() :
 DescribePresetsRequest::~DescribePresetsRequest()
 {}
 
+std::string DescribePresetsRequest::getSubProtocol()const
+{
+	return subProtocol_;
+}
+
+void DescribePresetsRequest::setSubProtocol(const std::string& subProtocol)
+{
+	subProtocol_ = subProtocol;
+	setParameter("SubProtocol", subProtocol);
+}
+
 std::string DescribePresetsRequest::getId()const
 {
 	return id_;

@@ -45,16 +45,16 @@ void BatchStopDevicesResult::parse(const std::string &payload)
 		Result resultsObject;
 		if(!valueResultsResult["Id"].isNull())
 			resultsObject.id = valueResultsResult["Id"].asString();
-		auto allStreamsNode = allResultsNode["Streams"]["Stream"];
-		for (auto allResultsNodeStreamsStream : allStreamsNode)
+		auto allStreamsNode = valueResultsResult["Streams"]["Stream"];
+		for (auto valueResultsResultStreamsStream : allStreamsNode)
 		{
 			Result::Stream streamsObject;
-			if(!allResultsNodeStreamsStream["Id"].isNull())
-				streamsObject.id = allResultsNodeStreamsStream["Id"].asString();
-			if(!allResultsNodeStreamsStream["Name"].isNull())
-				streamsObject.name = allResultsNodeStreamsStream["Name"].asString();
-			if(!allResultsNodeStreamsStream["Error"].isNull())
-				streamsObject.error = allResultsNodeStreamsStream["Error"].asString();
+			if(!valueResultsResultStreamsStream["Id"].isNull())
+				streamsObject.id = valueResultsResultStreamsStream["Id"].asString();
+			if(!valueResultsResultStreamsStream["Name"].isNull())
+				streamsObject.name = valueResultsResultStreamsStream["Name"].asString();
+			if(!valueResultsResultStreamsStream["Error"].isNull())
+				streamsObject.error = valueResultsResultStreamsStream["Error"].asString();
 			resultsObject.streams.push_back(streamsObject);
 		}
 		results_.push_back(resultsObject);

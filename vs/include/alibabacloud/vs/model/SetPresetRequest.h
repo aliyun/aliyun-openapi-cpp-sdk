@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				SetPresetRequest();
 				~SetPresetRequest();
 
+				std::string getSubProtocol()const;
+				void setSubProtocol(const std::string& subProtocol);
 				std::string getId()const;
 				void setId(const std::string& id);
 				std::string getPresetId()const;
@@ -45,6 +47,7 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 
             private:
+				std::string subProtocol_;
 				std::string id_;
 				std::string presetId_;
 				std::string showLog_;

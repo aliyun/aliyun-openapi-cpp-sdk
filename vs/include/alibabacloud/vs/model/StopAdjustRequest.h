@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				bool getFocus()const;
 				void setFocus(bool focus);
+				std::string getSubProtocol()const;
+				void setSubProtocol(const std::string& subProtocol);
 				std::string getId()const;
 				void setId(const std::string& id);
 				std::string getShowLog()const;
@@ -48,6 +50,7 @@ namespace AlibabaCloud
 
             private:
 				bool focus_;
+				std::string subProtocol_;
 				std::string id_;
 				std::string showLog_;
 				bool iris_;

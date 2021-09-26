@@ -38,6 +38,17 @@ void ContinuousAdjustRequest::setFocus(const std::string& focus)
 	setParameter("Focus", focus);
 }
 
+std::string ContinuousAdjustRequest::getSubProtocol()const
+{
+	return subProtocol_;
+}
+
+void ContinuousAdjustRequest::setSubProtocol(const std::string& subProtocol)
+{
+	subProtocol_ = subProtocol;
+	setParameter("SubProtocol", subProtocol);
+}
+
 std::string ContinuousAdjustRequest::getId()const
 {
 	return id_;

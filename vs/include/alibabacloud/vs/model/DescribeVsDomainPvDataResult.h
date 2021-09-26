@@ -42,15 +42,19 @@ namespace AlibabaCloud
 				DescribeVsDomainPvDataResult();
 				explicit DescribeVsDomainPvDataResult(const std::string &payload);
 				~DescribeVsDomainPvDataResult();
+				std::string getEndTime()const;
 				std::string getDomainName()const;
 				std::string getStartTime()const;
+				std::string getDataInterval()const;
 				std::vector<UsageData> getPvDataInterval()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string endTime_;
 				std::string domainName_;
 				std::string startTime_;
+				std::string dataInterval_;
 				std::vector<UsageData> pvDataInterval_;
 
 			};

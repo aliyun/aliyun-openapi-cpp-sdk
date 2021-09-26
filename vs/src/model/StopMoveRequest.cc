@@ -38,6 +38,17 @@ void StopMoveRequest::setTilt(bool tilt)
 	setParameter("Tilt", tilt ? "true" : "false");
 }
 
+std::string StopMoveRequest::getSubProtocol()const
+{
+	return subProtocol_;
+}
+
+void StopMoveRequest::setSubProtocol(const std::string& subProtocol)
+{
+	subProtocol_ = subProtocol;
+	setParameter("SubProtocol", subProtocol);
+}
+
 std::string StopMoveRequest::getId()const
 {
 	return id_;

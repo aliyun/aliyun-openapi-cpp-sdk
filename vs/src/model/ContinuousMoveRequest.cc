@@ -38,6 +38,17 @@ void ContinuousMoveRequest::setTilt(const std::string& tilt)
 	setParameter("Tilt", tilt);
 }
 
+std::string ContinuousMoveRequest::getSubProtocol()const
+{
+	return subProtocol_;
+}
+
+void ContinuousMoveRequest::setSubProtocol(const std::string& subProtocol)
+{
+	subProtocol_ = subProtocol;
+	setParameter("SubProtocol", subProtocol);
+}
+
 std::string ContinuousMoveRequest::getId()const
 {
 	return id_;

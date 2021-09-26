@@ -21,6 +21,10 @@ set(vs_public_header
 	include/alibabacloud/vs/VsExport.h )
 
 set(vs_public_header_model 
+	include/alibabacloud/vs/model/AddDeviceRequest.h
+	include/alibabacloud/vs/model/AddDeviceResult.h
+	include/alibabacloud/vs/model/AddRenderingDeviceInternetPortsRequest.h
+	include/alibabacloud/vs/model/AddRenderingDeviceInternetPortsResult.h
 	include/alibabacloud/vs/model/AddVsPullStreamInfoConfigRequest.h
 	include/alibabacloud/vs/model/AddVsPullStreamInfoConfigResult.h
 	include/alibabacloud/vs/model/BatchBindDirectoriesRequest.h
@@ -73,20 +77,30 @@ set(vs_public_header_model
 	include/alibabacloud/vs/model/ContinuousAdjustResult.h
 	include/alibabacloud/vs/model/ContinuousMoveRequest.h
 	include/alibabacloud/vs/model/ContinuousMoveResult.h
+	include/alibabacloud/vs/model/CreateClusterRequest.h
+	include/alibabacloud/vs/model/CreateClusterResult.h
 	include/alibabacloud/vs/model/CreateDeviceRequest.h
 	include/alibabacloud/vs/model/CreateDeviceResult.h
 	include/alibabacloud/vs/model/CreateDeviceAlarmRequest.h
 	include/alibabacloud/vs/model/CreateDeviceAlarmResult.h
+	include/alibabacloud/vs/model/CreateDeviceSnapshotRequest.h
+	include/alibabacloud/vs/model/CreateDeviceSnapshotResult.h
 	include/alibabacloud/vs/model/CreateDirectoryRequest.h
 	include/alibabacloud/vs/model/CreateDirectoryResult.h
 	include/alibabacloud/vs/model/CreateGroupRequest.h
 	include/alibabacloud/vs/model/CreateGroupResult.h
 	include/alibabacloud/vs/model/CreateParentPlatformRequest.h
 	include/alibabacloud/vs/model/CreateParentPlatformResult.h
+	include/alibabacloud/vs/model/CreateRenderingDeviceRequest.h
+	include/alibabacloud/vs/model/CreateRenderingDeviceResult.h
 	include/alibabacloud/vs/model/CreateStreamSnapshotRequest.h
 	include/alibabacloud/vs/model/CreateStreamSnapshotResult.h
 	include/alibabacloud/vs/model/CreateTemplateRequest.h
 	include/alibabacloud/vs/model/CreateTemplateResult.h
+	include/alibabacloud/vs/model/DeleteBucketRequest.h
+	include/alibabacloud/vs/model/DeleteBucketResult.h
+	include/alibabacloud/vs/model/DeleteClusterRequest.h
+	include/alibabacloud/vs/model/DeleteClusterResult.h
 	include/alibabacloud/vs/model/DeleteDeviceRequest.h
 	include/alibabacloud/vs/model/DeleteDeviceResult.h
 	include/alibabacloud/vs/model/DeleteDirectoryRequest.h
@@ -97,6 +111,10 @@ set(vs_public_header_model
 	include/alibabacloud/vs/model/DeleteParentPlatformResult.h
 	include/alibabacloud/vs/model/DeletePresetRequest.h
 	include/alibabacloud/vs/model/DeletePresetResult.h
+	include/alibabacloud/vs/model/DeleteRenderingDeviceInternetPortsRequest.h
+	include/alibabacloud/vs/model/DeleteRenderingDeviceInternetPortsResult.h
+	include/alibabacloud/vs/model/DeleteRenderingDevicesRequest.h
+	include/alibabacloud/vs/model/DeleteRenderingDevicesResult.h
 	include/alibabacloud/vs/model/DeleteTemplateRequest.h
 	include/alibabacloud/vs/model/DeleteTemplateResult.h
 	include/alibabacloud/vs/model/DeleteVsPullStreamInfoConfigRequest.h
@@ -105,6 +123,12 @@ set(vs_public_header_model
 	include/alibabacloud/vs/model/DeleteVsStreamsNotifyUrlConfigResult.h
 	include/alibabacloud/vs/model/DescribeAccountStatRequest.h
 	include/alibabacloud/vs/model/DescribeAccountStatResult.h
+	include/alibabacloud/vs/model/DescribeClusterRequest.h
+	include/alibabacloud/vs/model/DescribeClusterResult.h
+	include/alibabacloud/vs/model/DescribeClusterDevicesRequest.h
+	include/alibabacloud/vs/model/DescribeClusterDevicesResult.h
+	include/alibabacloud/vs/model/DescribeClustersRequest.h
+	include/alibabacloud/vs/model/DescribeClustersResult.h
 	include/alibabacloud/vs/model/DescribeDeviceRequest.h
 	include/alibabacloud/vs/model/DescribeDeviceResult.h
 	include/alibabacloud/vs/model/DescribeDeviceChannelsRequest.h
@@ -123,6 +147,8 @@ set(vs_public_header_model
 	include/alibabacloud/vs/model/DescribeGroupResult.h
 	include/alibabacloud/vs/model/DescribeGroupsRequest.h
 	include/alibabacloud/vs/model/DescribeGroupsResult.h
+	include/alibabacloud/vs/model/DescribeNodeDevicesInfoRequest.h
+	include/alibabacloud/vs/model/DescribeNodeDevicesInfoResult.h
 	include/alibabacloud/vs/model/DescribeParentPlatformRequest.h
 	include/alibabacloud/vs/model/DescribeParentPlatformResult.h
 	include/alibabacloud/vs/model/DescribeParentPlatformDevicesRequest.h
@@ -137,6 +163,8 @@ set(vs_public_header_model
 	include/alibabacloud/vs/model/DescribePurchasedDevicesResult.h
 	include/alibabacloud/vs/model/DescribeRecordsRequest.h
 	include/alibabacloud/vs/model/DescribeRecordsResult.h
+	include/alibabacloud/vs/model/DescribeRenderingDevicesRequest.h
+	include/alibabacloud/vs/model/DescribeRenderingDevicesResult.h
 	include/alibabacloud/vs/model/DescribeStreamRequest.h
 	include/alibabacloud/vs/model/DescribeStreamResult.h
 	include/alibabacloud/vs/model/DescribeStreamURLRequest.h
@@ -183,6 +211,10 @@ set(vs_public_header_model
 	include/alibabacloud/vs/model/DescribeVsDomainUvDataResult.h
 	include/alibabacloud/vs/model/DescribeVsPullStreamInfoConfigRequest.h
 	include/alibabacloud/vs/model/DescribeVsPullStreamInfoConfigResult.h
+	include/alibabacloud/vs/model/DescribeVsStorageTrafficUsageDataRequest.h
+	include/alibabacloud/vs/model/DescribeVsStorageTrafficUsageDataResult.h
+	include/alibabacloud/vs/model/DescribeVsStorageUsageDataRequest.h
+	include/alibabacloud/vs/model/DescribeVsStorageUsageDataResult.h
 	include/alibabacloud/vs/model/DescribeVsStreamsNotifyUrlConfigRequest.h
 	include/alibabacloud/vs/model/DescribeVsStreamsNotifyUrlConfigResult.h
 	include/alibabacloud/vs/model/DescribeVsStreamsOnlineListRequest.h
@@ -197,8 +229,18 @@ set(vs_public_header_model
 	include/alibabacloud/vs/model/DescribeVsUserResourcePackageResult.h
 	include/alibabacloud/vs/model/ForbidVsStreamRequest.h
 	include/alibabacloud/vs/model/ForbidVsStreamResult.h
+	include/alibabacloud/vs/model/GetBucketInfoRequest.h
+	include/alibabacloud/vs/model/GetBucketInfoResult.h
 	include/alibabacloud/vs/model/GotoPresetRequest.h
 	include/alibabacloud/vs/model/GotoPresetResult.h
+	include/alibabacloud/vs/model/ListBucketsRequest.h
+	include/alibabacloud/vs/model/ListBucketsResult.h
+	include/alibabacloud/vs/model/ListDeviceChannelsRequest.h
+	include/alibabacloud/vs/model/ListDeviceChannelsResult.h
+	include/alibabacloud/vs/model/ListDeviceRecordsRequest.h
+	include/alibabacloud/vs/model/ListDeviceRecordsResult.h
+	include/alibabacloud/vs/model/ListObjectsRequest.h
+	include/alibabacloud/vs/model/ListObjectsResult.h
 	include/alibabacloud/vs/model/ModifyDeviceRequest.h
 	include/alibabacloud/vs/model/ModifyDeviceResult.h
 	include/alibabacloud/vs/model/ModifyDeviceAlarmRequest.h
@@ -215,6 +257,16 @@ set(vs_public_header_model
 	include/alibabacloud/vs/model/ModifyParentPlatformResult.h
 	include/alibabacloud/vs/model/ModifyTemplateRequest.h
 	include/alibabacloud/vs/model/ModifyTemplateResult.h
+	include/alibabacloud/vs/model/OpenVsServiceRequest.h
+	include/alibabacloud/vs/model/OpenVsServiceResult.h
+	include/alibabacloud/vs/model/OperateRenderingDevicesRequest.h
+	include/alibabacloud/vs/model/OperateRenderingDevicesResult.h
+	include/alibabacloud/vs/model/PrepareUploadRequest.h
+	include/alibabacloud/vs/model/PrepareUploadResult.h
+	include/alibabacloud/vs/model/PutBucketRequest.h
+	include/alibabacloud/vs/model/PutBucketResult.h
+	include/alibabacloud/vs/model/ResetRenderingDevicesRequest.h
+	include/alibabacloud/vs/model/ResetRenderingDevicesResult.h
 	include/alibabacloud/vs/model/ResumeVsStreamRequest.h
 	include/alibabacloud/vs/model/ResumeVsStreamResult.h
 	include/alibabacloud/vs/model/SetPresetRequest.h
@@ -247,6 +299,8 @@ set(vs_public_header_model
 	include/alibabacloud/vs/model/StopTransferStreamResult.h
 	include/alibabacloud/vs/model/SyncCatalogsRequest.h
 	include/alibabacloud/vs/model/SyncCatalogsResult.h
+	include/alibabacloud/vs/model/SyncDeviceChannelsRequest.h
+	include/alibabacloud/vs/model/SyncDeviceChannelsResult.h
 	include/alibabacloud/vs/model/UnbindDirectoryRequest.h
 	include/alibabacloud/vs/model/UnbindDirectoryResult.h
 	include/alibabacloud/vs/model/UnbindParentPlatformDeviceRequest.h
@@ -257,11 +311,23 @@ set(vs_public_header_model
 	include/alibabacloud/vs/model/UnbindTemplateResult.h
 	include/alibabacloud/vs/model/UnlockDeviceRequest.h
 	include/alibabacloud/vs/model/UnlockDeviceResult.h
+	include/alibabacloud/vs/model/UpdateBucketInfoRequest.h
+	include/alibabacloud/vs/model/UpdateBucketInfoResult.h
+	include/alibabacloud/vs/model/UpdateClusterRequest.h
+	include/alibabacloud/vs/model/UpdateClusterResult.h
+	include/alibabacloud/vs/model/UpdateRenderingDeviceSpecRequest.h
+	include/alibabacloud/vs/model/UpdateRenderingDeviceSpecResult.h
 	include/alibabacloud/vs/model/UpdateVsPullStreamInfoConfigRequest.h
-	include/alibabacloud/vs/model/UpdateVsPullStreamInfoConfigResult.h )
+	include/alibabacloud/vs/model/UpdateVsPullStreamInfoConfigResult.h
+	include/alibabacloud/vs/model/UploadDeviceRecordRequest.h
+	include/alibabacloud/vs/model/UploadDeviceRecordResult.h )
 
 set(vs_src 
 	src/VsClient.cc
+	src/model/AddDeviceRequest.cc
+	src/model/AddDeviceResult.cc
+	src/model/AddRenderingDeviceInternetPortsRequest.cc
+	src/model/AddRenderingDeviceInternetPortsResult.cc
 	src/model/AddVsPullStreamInfoConfigRequest.cc
 	src/model/AddVsPullStreamInfoConfigResult.cc
 	src/model/BatchBindDirectoriesRequest.cc
@@ -314,20 +380,30 @@ set(vs_src
 	src/model/ContinuousAdjustResult.cc
 	src/model/ContinuousMoveRequest.cc
 	src/model/ContinuousMoveResult.cc
+	src/model/CreateClusterRequest.cc
+	src/model/CreateClusterResult.cc
 	src/model/CreateDeviceRequest.cc
 	src/model/CreateDeviceResult.cc
 	src/model/CreateDeviceAlarmRequest.cc
 	src/model/CreateDeviceAlarmResult.cc
+	src/model/CreateDeviceSnapshotRequest.cc
+	src/model/CreateDeviceSnapshotResult.cc
 	src/model/CreateDirectoryRequest.cc
 	src/model/CreateDirectoryResult.cc
 	src/model/CreateGroupRequest.cc
 	src/model/CreateGroupResult.cc
 	src/model/CreateParentPlatformRequest.cc
 	src/model/CreateParentPlatformResult.cc
+	src/model/CreateRenderingDeviceRequest.cc
+	src/model/CreateRenderingDeviceResult.cc
 	src/model/CreateStreamSnapshotRequest.cc
 	src/model/CreateStreamSnapshotResult.cc
 	src/model/CreateTemplateRequest.cc
 	src/model/CreateTemplateResult.cc
+	src/model/DeleteBucketRequest.cc
+	src/model/DeleteBucketResult.cc
+	src/model/DeleteClusterRequest.cc
+	src/model/DeleteClusterResult.cc
 	src/model/DeleteDeviceRequest.cc
 	src/model/DeleteDeviceResult.cc
 	src/model/DeleteDirectoryRequest.cc
@@ -338,6 +414,10 @@ set(vs_src
 	src/model/DeleteParentPlatformResult.cc
 	src/model/DeletePresetRequest.cc
 	src/model/DeletePresetResult.cc
+	src/model/DeleteRenderingDeviceInternetPortsRequest.cc
+	src/model/DeleteRenderingDeviceInternetPortsResult.cc
+	src/model/DeleteRenderingDevicesRequest.cc
+	src/model/DeleteRenderingDevicesResult.cc
 	src/model/DeleteTemplateRequest.cc
 	src/model/DeleteTemplateResult.cc
 	src/model/DeleteVsPullStreamInfoConfigRequest.cc
@@ -346,6 +426,12 @@ set(vs_src
 	src/model/DeleteVsStreamsNotifyUrlConfigResult.cc
 	src/model/DescribeAccountStatRequest.cc
 	src/model/DescribeAccountStatResult.cc
+	src/model/DescribeClusterRequest.cc
+	src/model/DescribeClusterResult.cc
+	src/model/DescribeClusterDevicesRequest.cc
+	src/model/DescribeClusterDevicesResult.cc
+	src/model/DescribeClustersRequest.cc
+	src/model/DescribeClustersResult.cc
 	src/model/DescribeDeviceRequest.cc
 	src/model/DescribeDeviceResult.cc
 	src/model/DescribeDeviceChannelsRequest.cc
@@ -364,6 +450,8 @@ set(vs_src
 	src/model/DescribeGroupResult.cc
 	src/model/DescribeGroupsRequest.cc
 	src/model/DescribeGroupsResult.cc
+	src/model/DescribeNodeDevicesInfoRequest.cc
+	src/model/DescribeNodeDevicesInfoResult.cc
 	src/model/DescribeParentPlatformRequest.cc
 	src/model/DescribeParentPlatformResult.cc
 	src/model/DescribeParentPlatformDevicesRequest.cc
@@ -378,6 +466,8 @@ set(vs_src
 	src/model/DescribePurchasedDevicesResult.cc
 	src/model/DescribeRecordsRequest.cc
 	src/model/DescribeRecordsResult.cc
+	src/model/DescribeRenderingDevicesRequest.cc
+	src/model/DescribeRenderingDevicesResult.cc
 	src/model/DescribeStreamRequest.cc
 	src/model/DescribeStreamResult.cc
 	src/model/DescribeStreamURLRequest.cc
@@ -424,6 +514,10 @@ set(vs_src
 	src/model/DescribeVsDomainUvDataResult.cc
 	src/model/DescribeVsPullStreamInfoConfigRequest.cc
 	src/model/DescribeVsPullStreamInfoConfigResult.cc
+	src/model/DescribeVsStorageTrafficUsageDataRequest.cc
+	src/model/DescribeVsStorageTrafficUsageDataResult.cc
+	src/model/DescribeVsStorageUsageDataRequest.cc
+	src/model/DescribeVsStorageUsageDataResult.cc
 	src/model/DescribeVsStreamsNotifyUrlConfigRequest.cc
 	src/model/DescribeVsStreamsNotifyUrlConfigResult.cc
 	src/model/DescribeVsStreamsOnlineListRequest.cc
@@ -438,8 +532,18 @@ set(vs_src
 	src/model/DescribeVsUserResourcePackageResult.cc
 	src/model/ForbidVsStreamRequest.cc
 	src/model/ForbidVsStreamResult.cc
+	src/model/GetBucketInfoRequest.cc
+	src/model/GetBucketInfoResult.cc
 	src/model/GotoPresetRequest.cc
 	src/model/GotoPresetResult.cc
+	src/model/ListBucketsRequest.cc
+	src/model/ListBucketsResult.cc
+	src/model/ListDeviceChannelsRequest.cc
+	src/model/ListDeviceChannelsResult.cc
+	src/model/ListDeviceRecordsRequest.cc
+	src/model/ListDeviceRecordsResult.cc
+	src/model/ListObjectsRequest.cc
+	src/model/ListObjectsResult.cc
 	src/model/ModifyDeviceRequest.cc
 	src/model/ModifyDeviceResult.cc
 	src/model/ModifyDeviceAlarmRequest.cc
@@ -456,6 +560,16 @@ set(vs_src
 	src/model/ModifyParentPlatformResult.cc
 	src/model/ModifyTemplateRequest.cc
 	src/model/ModifyTemplateResult.cc
+	src/model/OpenVsServiceRequest.cc
+	src/model/OpenVsServiceResult.cc
+	src/model/OperateRenderingDevicesRequest.cc
+	src/model/OperateRenderingDevicesResult.cc
+	src/model/PrepareUploadRequest.cc
+	src/model/PrepareUploadResult.cc
+	src/model/PutBucketRequest.cc
+	src/model/PutBucketResult.cc
+	src/model/ResetRenderingDevicesRequest.cc
+	src/model/ResetRenderingDevicesResult.cc
 	src/model/ResumeVsStreamRequest.cc
 	src/model/ResumeVsStreamResult.cc
 	src/model/SetPresetRequest.cc
@@ -488,6 +602,8 @@ set(vs_src
 	src/model/StopTransferStreamResult.cc
 	src/model/SyncCatalogsRequest.cc
 	src/model/SyncCatalogsResult.cc
+	src/model/SyncDeviceChannelsRequest.cc
+	src/model/SyncDeviceChannelsResult.cc
 	src/model/UnbindDirectoryRequest.cc
 	src/model/UnbindDirectoryResult.cc
 	src/model/UnbindParentPlatformDeviceRequest.cc
@@ -498,8 +614,16 @@ set(vs_src
 	src/model/UnbindTemplateResult.cc
 	src/model/UnlockDeviceRequest.cc
 	src/model/UnlockDeviceResult.cc
+	src/model/UpdateBucketInfoRequest.cc
+	src/model/UpdateBucketInfoResult.cc
+	src/model/UpdateClusterRequest.cc
+	src/model/UpdateClusterResult.cc
+	src/model/UpdateRenderingDeviceSpecRequest.cc
+	src/model/UpdateRenderingDeviceSpecResult.cc
 	src/model/UpdateVsPullStreamInfoConfigRequest.cc
-	src/model/UpdateVsPullStreamInfoConfigResult.cc )
+	src/model/UpdateVsPullStreamInfoConfigResult.cc
+	src/model/UploadDeviceRecordRequest.cc
+	src/model/UploadDeviceRecordResult.cc )
 
 add_library(vs ${LIB_TYPE}
 	${vs_public_header}

@@ -38,6 +38,17 @@ void StopAdjustRequest::setFocus(bool focus)
 	setParameter("Focus", focus ? "true" : "false");
 }
 
+std::string StopAdjustRequest::getSubProtocol()const
+{
+	return subProtocol_;
+}
+
+void StopAdjustRequest::setSubProtocol(const std::string& subProtocol)
+{
+	subProtocol_ = subProtocol;
+	setParameter("SubProtocol", subProtocol);
+}
+
 std::string StopAdjustRequest::getId()const
 {
 	return id_;

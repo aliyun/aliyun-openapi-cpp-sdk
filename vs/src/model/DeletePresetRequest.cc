@@ -27,6 +27,17 @@ DeletePresetRequest::DeletePresetRequest() :
 DeletePresetRequest::~DeletePresetRequest()
 {}
 
+std::string DeletePresetRequest::getSubProtocol()const
+{
+	return subProtocol_;
+}
+
+void DeletePresetRequest::setSubProtocol(const std::string& subProtocol)
+{
+	subProtocol_ = subProtocol;
+	setParameter("SubProtocol", subProtocol);
+}
+
 std::string DeletePresetRequest::getId()const
 {
 	return id_;

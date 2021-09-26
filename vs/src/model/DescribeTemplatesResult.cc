@@ -89,26 +89,26 @@ void DescribeTemplatesResult::parse(const std::string &payload)
 			templatesObject.callback = valueTemplatesTemplate["Callback"].asString();
 		if(!valueTemplatesTemplate["CreatedTime"].isNull())
 			templatesObject.createdTime = valueTemplatesTemplate["CreatedTime"].asString();
-		auto allTransConfigsNode = allTemplatesNode["TransConfigs"]["TransConfig"];
-		for (auto allTemplatesNodeTransConfigsTransConfig : allTransConfigsNode)
+		auto allTransConfigsNode = valueTemplatesTemplate["TransConfigs"]["TransConfig"];
+		for (auto valueTemplatesTemplateTransConfigsTransConfig : allTransConfigsNode)
 		{
 			_Template::TransConfig transConfigsObject;
-			if(!allTemplatesNodeTransConfigsTransConfig["id"].isNull())
-				transConfigsObject.id = allTemplatesNodeTransConfigsTransConfig["id"].asString();
-			if(!allTemplatesNodeTransConfigsTransConfig["Name"].isNull())
-				transConfigsObject.name = allTemplatesNodeTransConfigsTransConfig["Name"].asString();
-			if(!allTemplatesNodeTransConfigsTransConfig["VideoCodec"].isNull())
-				transConfigsObject.videoCodec = allTemplatesNodeTransConfigsTransConfig["VideoCodec"].asString();
-			if(!allTemplatesNodeTransConfigsTransConfig["VideoBitrate"].isNull())
-				transConfigsObject.videoBitrate = std::stol(allTemplatesNodeTransConfigsTransConfig["VideoBitrate"].asString());
-			if(!allTemplatesNodeTransConfigsTransConfig["Fps"].isNull())
-				transConfigsObject.fps = std::stol(allTemplatesNodeTransConfigsTransConfig["Fps"].asString());
-			if(!allTemplatesNodeTransConfigsTransConfig["Gop"].isNull())
-				transConfigsObject.gop = std::stol(allTemplatesNodeTransConfigsTransConfig["Gop"].asString());
-			if(!allTemplatesNodeTransConfigsTransConfig["Height"].isNull())
-				transConfigsObject.height = std::stol(allTemplatesNodeTransConfigsTransConfig["Height"].asString());
-			if(!allTemplatesNodeTransConfigsTransConfig["Width"].isNull())
-				transConfigsObject.width = std::stol(allTemplatesNodeTransConfigsTransConfig["Width"].asString());
+			if(!valueTemplatesTemplateTransConfigsTransConfig["id"].isNull())
+				transConfigsObject.id = valueTemplatesTemplateTransConfigsTransConfig["id"].asString();
+			if(!valueTemplatesTemplateTransConfigsTransConfig["Name"].isNull())
+				transConfigsObject.name = valueTemplatesTemplateTransConfigsTransConfig["Name"].asString();
+			if(!valueTemplatesTemplateTransConfigsTransConfig["VideoCodec"].isNull())
+				transConfigsObject.videoCodec = valueTemplatesTemplateTransConfigsTransConfig["VideoCodec"].asString();
+			if(!valueTemplatesTemplateTransConfigsTransConfig["VideoBitrate"].isNull())
+				transConfigsObject.videoBitrate = std::stol(valueTemplatesTemplateTransConfigsTransConfig["VideoBitrate"].asString());
+			if(!valueTemplatesTemplateTransConfigsTransConfig["Fps"].isNull())
+				transConfigsObject.fps = std::stol(valueTemplatesTemplateTransConfigsTransConfig["Fps"].asString());
+			if(!valueTemplatesTemplateTransConfigsTransConfig["Gop"].isNull())
+				transConfigsObject.gop = std::stol(valueTemplatesTemplateTransConfigsTransConfig["Gop"].asString());
+			if(!valueTemplatesTemplateTransConfigsTransConfig["Height"].isNull())
+				transConfigsObject.height = std::stol(valueTemplatesTemplateTransConfigsTransConfig["Height"].asString());
+			if(!valueTemplatesTemplateTransConfigsTransConfig["Width"].isNull())
+				transConfigsObject.width = std::stol(valueTemplatesTemplateTransConfigsTransConfig["Width"].asString());
 			templatesObject.transConfigs.push_back(transConfigsObject);
 		}
 		templates_.push_back(templatesObject);

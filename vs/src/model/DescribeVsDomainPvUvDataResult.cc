@@ -55,7 +55,16 @@ void DescribeVsDomainPvUvDataResult::parse(const std::string &payload)
 		domainName_ = value["DomainName"].asString();
 	if(!value["StartTime"].isNull())
 		startTime_ = value["StartTime"].asString();
+	if(!value["EndTime"].isNull())
+		endTime_ = value["EndTime"].asString();
+	if(!value["DataInterval"].isNull())
+		dataInterval_ = value["DataInterval"].asString();
 
+}
+
+std::string DescribeVsDomainPvUvDataResult::getEndTime()const
+{
+	return endTime_;
 }
 
 std::string DescribeVsDomainPvUvDataResult::getDomainName()const
@@ -66,6 +75,11 @@ std::string DescribeVsDomainPvUvDataResult::getDomainName()const
 std::string DescribeVsDomainPvUvDataResult::getStartTime()const
 {
 	return startTime_;
+}
+
+std::string DescribeVsDomainPvUvDataResult::getDataInterval()const
+{
+	return dataInterval_;
 }
 
 std::vector<DescribeVsDomainPvUvDataResult::PvUvDataInfo> DescribeVsDomainPvUvDataResult::getPvUvDataInfos()const

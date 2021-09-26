@@ -27,6 +27,17 @@ GotoPresetRequest::GotoPresetRequest() :
 GotoPresetRequest::~GotoPresetRequest()
 {}
 
+std::string GotoPresetRequest::getSubProtocol()const
+{
+	return subProtocol_;
+}
+
+void GotoPresetRequest::setSubProtocol(const std::string& subProtocol)
+{
+	subProtocol_ = subProtocol;
+	setParameter("SubProtocol", subProtocol);
+}
+
 std::string GotoPresetRequest::getId()const
 {
 	return id_;

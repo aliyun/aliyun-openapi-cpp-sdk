@@ -22,6 +22,10 @@
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RpcServiceClient.h>
 #include "VsExport.h"
+#include "model/AddDeviceRequest.h"
+#include "model/AddDeviceResult.h"
+#include "model/AddRenderingDeviceInternetPortsRequest.h"
+#include "model/AddRenderingDeviceInternetPortsResult.h"
 #include "model/AddVsPullStreamInfoConfigRequest.h"
 #include "model/AddVsPullStreamInfoConfigResult.h"
 #include "model/BatchBindDirectoriesRequest.h"
@@ -74,20 +78,30 @@
 #include "model/ContinuousAdjustResult.h"
 #include "model/ContinuousMoveRequest.h"
 #include "model/ContinuousMoveResult.h"
+#include "model/CreateClusterRequest.h"
+#include "model/CreateClusterResult.h"
 #include "model/CreateDeviceRequest.h"
 #include "model/CreateDeviceResult.h"
 #include "model/CreateDeviceAlarmRequest.h"
 #include "model/CreateDeviceAlarmResult.h"
+#include "model/CreateDeviceSnapshotRequest.h"
+#include "model/CreateDeviceSnapshotResult.h"
 #include "model/CreateDirectoryRequest.h"
 #include "model/CreateDirectoryResult.h"
 #include "model/CreateGroupRequest.h"
 #include "model/CreateGroupResult.h"
 #include "model/CreateParentPlatformRequest.h"
 #include "model/CreateParentPlatformResult.h"
+#include "model/CreateRenderingDeviceRequest.h"
+#include "model/CreateRenderingDeviceResult.h"
 #include "model/CreateStreamSnapshotRequest.h"
 #include "model/CreateStreamSnapshotResult.h"
 #include "model/CreateTemplateRequest.h"
 #include "model/CreateTemplateResult.h"
+#include "model/DeleteBucketRequest.h"
+#include "model/DeleteBucketResult.h"
+#include "model/DeleteClusterRequest.h"
+#include "model/DeleteClusterResult.h"
 #include "model/DeleteDeviceRequest.h"
 #include "model/DeleteDeviceResult.h"
 #include "model/DeleteDirectoryRequest.h"
@@ -98,6 +112,10 @@
 #include "model/DeleteParentPlatformResult.h"
 #include "model/DeletePresetRequest.h"
 #include "model/DeletePresetResult.h"
+#include "model/DeleteRenderingDeviceInternetPortsRequest.h"
+#include "model/DeleteRenderingDeviceInternetPortsResult.h"
+#include "model/DeleteRenderingDevicesRequest.h"
+#include "model/DeleteRenderingDevicesResult.h"
 #include "model/DeleteTemplateRequest.h"
 #include "model/DeleteTemplateResult.h"
 #include "model/DeleteVsPullStreamInfoConfigRequest.h"
@@ -106,6 +124,12 @@
 #include "model/DeleteVsStreamsNotifyUrlConfigResult.h"
 #include "model/DescribeAccountStatRequest.h"
 #include "model/DescribeAccountStatResult.h"
+#include "model/DescribeClusterRequest.h"
+#include "model/DescribeClusterResult.h"
+#include "model/DescribeClusterDevicesRequest.h"
+#include "model/DescribeClusterDevicesResult.h"
+#include "model/DescribeClustersRequest.h"
+#include "model/DescribeClustersResult.h"
 #include "model/DescribeDeviceRequest.h"
 #include "model/DescribeDeviceResult.h"
 #include "model/DescribeDeviceChannelsRequest.h"
@@ -124,6 +148,8 @@
 #include "model/DescribeGroupResult.h"
 #include "model/DescribeGroupsRequest.h"
 #include "model/DescribeGroupsResult.h"
+#include "model/DescribeNodeDevicesInfoRequest.h"
+#include "model/DescribeNodeDevicesInfoResult.h"
 #include "model/DescribeParentPlatformRequest.h"
 #include "model/DescribeParentPlatformResult.h"
 #include "model/DescribeParentPlatformDevicesRequest.h"
@@ -138,6 +164,8 @@
 #include "model/DescribePurchasedDevicesResult.h"
 #include "model/DescribeRecordsRequest.h"
 #include "model/DescribeRecordsResult.h"
+#include "model/DescribeRenderingDevicesRequest.h"
+#include "model/DescribeRenderingDevicesResult.h"
 #include "model/DescribeStreamRequest.h"
 #include "model/DescribeStreamResult.h"
 #include "model/DescribeStreamURLRequest.h"
@@ -184,6 +212,10 @@
 #include "model/DescribeVsDomainUvDataResult.h"
 #include "model/DescribeVsPullStreamInfoConfigRequest.h"
 #include "model/DescribeVsPullStreamInfoConfigResult.h"
+#include "model/DescribeVsStorageTrafficUsageDataRequest.h"
+#include "model/DescribeVsStorageTrafficUsageDataResult.h"
+#include "model/DescribeVsStorageUsageDataRequest.h"
+#include "model/DescribeVsStorageUsageDataResult.h"
 #include "model/DescribeVsStreamsNotifyUrlConfigRequest.h"
 #include "model/DescribeVsStreamsNotifyUrlConfigResult.h"
 #include "model/DescribeVsStreamsOnlineListRequest.h"
@@ -198,8 +230,18 @@
 #include "model/DescribeVsUserResourcePackageResult.h"
 #include "model/ForbidVsStreamRequest.h"
 #include "model/ForbidVsStreamResult.h"
+#include "model/GetBucketInfoRequest.h"
+#include "model/GetBucketInfoResult.h"
 #include "model/GotoPresetRequest.h"
 #include "model/GotoPresetResult.h"
+#include "model/ListBucketsRequest.h"
+#include "model/ListBucketsResult.h"
+#include "model/ListDeviceChannelsRequest.h"
+#include "model/ListDeviceChannelsResult.h"
+#include "model/ListDeviceRecordsRequest.h"
+#include "model/ListDeviceRecordsResult.h"
+#include "model/ListObjectsRequest.h"
+#include "model/ListObjectsResult.h"
 #include "model/ModifyDeviceRequest.h"
 #include "model/ModifyDeviceResult.h"
 #include "model/ModifyDeviceAlarmRequest.h"
@@ -216,6 +258,16 @@
 #include "model/ModifyParentPlatformResult.h"
 #include "model/ModifyTemplateRequest.h"
 #include "model/ModifyTemplateResult.h"
+#include "model/OpenVsServiceRequest.h"
+#include "model/OpenVsServiceResult.h"
+#include "model/OperateRenderingDevicesRequest.h"
+#include "model/OperateRenderingDevicesResult.h"
+#include "model/PrepareUploadRequest.h"
+#include "model/PrepareUploadResult.h"
+#include "model/PutBucketRequest.h"
+#include "model/PutBucketResult.h"
+#include "model/ResetRenderingDevicesRequest.h"
+#include "model/ResetRenderingDevicesResult.h"
 #include "model/ResumeVsStreamRequest.h"
 #include "model/ResumeVsStreamResult.h"
 #include "model/SetPresetRequest.h"
@@ -248,6 +300,8 @@
 #include "model/StopTransferStreamResult.h"
 #include "model/SyncCatalogsRequest.h"
 #include "model/SyncCatalogsResult.h"
+#include "model/SyncDeviceChannelsRequest.h"
+#include "model/SyncDeviceChannelsResult.h"
 #include "model/UnbindDirectoryRequest.h"
 #include "model/UnbindDirectoryResult.h"
 #include "model/UnbindParentPlatformDeviceRequest.h"
@@ -258,8 +312,16 @@
 #include "model/UnbindTemplateResult.h"
 #include "model/UnlockDeviceRequest.h"
 #include "model/UnlockDeviceResult.h"
+#include "model/UpdateBucketInfoRequest.h"
+#include "model/UpdateBucketInfoResult.h"
+#include "model/UpdateClusterRequest.h"
+#include "model/UpdateClusterResult.h"
+#include "model/UpdateRenderingDeviceSpecRequest.h"
+#include "model/UpdateRenderingDeviceSpecResult.h"
 #include "model/UpdateVsPullStreamInfoConfigRequest.h"
 #include "model/UpdateVsPullStreamInfoConfigResult.h"
+#include "model/UploadDeviceRecordRequest.h"
+#include "model/UploadDeviceRecordResult.h"
 
 
 namespace AlibabaCloud
@@ -269,6 +331,12 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_VS_EXPORT VsClient : public RpcServiceClient
 		{
 		public:
+			typedef Outcome<Error, Model::AddDeviceResult> AddDeviceOutcome;
+			typedef std::future<AddDeviceOutcome> AddDeviceOutcomeCallable;
+			typedef std::function<void(const VsClient*, const Model::AddDeviceRequest&, const AddDeviceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddDeviceAsyncHandler;
+			typedef Outcome<Error, Model::AddRenderingDeviceInternetPortsResult> AddRenderingDeviceInternetPortsOutcome;
+			typedef std::future<AddRenderingDeviceInternetPortsOutcome> AddRenderingDeviceInternetPortsOutcomeCallable;
+			typedef std::function<void(const VsClient*, const Model::AddRenderingDeviceInternetPortsRequest&, const AddRenderingDeviceInternetPortsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddRenderingDeviceInternetPortsAsyncHandler;
 			typedef Outcome<Error, Model::AddVsPullStreamInfoConfigResult> AddVsPullStreamInfoConfigOutcome;
 			typedef std::future<AddVsPullStreamInfoConfigOutcome> AddVsPullStreamInfoConfigOutcomeCallable;
 			typedef std::function<void(const VsClient*, const Model::AddVsPullStreamInfoConfigRequest&, const AddVsPullStreamInfoConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddVsPullStreamInfoConfigAsyncHandler;
@@ -347,12 +415,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ContinuousMoveResult> ContinuousMoveOutcome;
 			typedef std::future<ContinuousMoveOutcome> ContinuousMoveOutcomeCallable;
 			typedef std::function<void(const VsClient*, const Model::ContinuousMoveRequest&, const ContinuousMoveOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ContinuousMoveAsyncHandler;
+			typedef Outcome<Error, Model::CreateClusterResult> CreateClusterOutcome;
+			typedef std::future<CreateClusterOutcome> CreateClusterOutcomeCallable;
+			typedef std::function<void(const VsClient*, const Model::CreateClusterRequest&, const CreateClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateClusterAsyncHandler;
 			typedef Outcome<Error, Model::CreateDeviceResult> CreateDeviceOutcome;
 			typedef std::future<CreateDeviceOutcome> CreateDeviceOutcomeCallable;
 			typedef std::function<void(const VsClient*, const Model::CreateDeviceRequest&, const CreateDeviceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDeviceAsyncHandler;
 			typedef Outcome<Error, Model::CreateDeviceAlarmResult> CreateDeviceAlarmOutcome;
 			typedef std::future<CreateDeviceAlarmOutcome> CreateDeviceAlarmOutcomeCallable;
 			typedef std::function<void(const VsClient*, const Model::CreateDeviceAlarmRequest&, const CreateDeviceAlarmOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDeviceAlarmAsyncHandler;
+			typedef Outcome<Error, Model::CreateDeviceSnapshotResult> CreateDeviceSnapshotOutcome;
+			typedef std::future<CreateDeviceSnapshotOutcome> CreateDeviceSnapshotOutcomeCallable;
+			typedef std::function<void(const VsClient*, const Model::CreateDeviceSnapshotRequest&, const CreateDeviceSnapshotOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDeviceSnapshotAsyncHandler;
 			typedef Outcome<Error, Model::CreateDirectoryResult> CreateDirectoryOutcome;
 			typedef std::future<CreateDirectoryOutcome> CreateDirectoryOutcomeCallable;
 			typedef std::function<void(const VsClient*, const Model::CreateDirectoryRequest&, const CreateDirectoryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDirectoryAsyncHandler;
@@ -362,12 +436,21 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateParentPlatformResult> CreateParentPlatformOutcome;
 			typedef std::future<CreateParentPlatformOutcome> CreateParentPlatformOutcomeCallable;
 			typedef std::function<void(const VsClient*, const Model::CreateParentPlatformRequest&, const CreateParentPlatformOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateParentPlatformAsyncHandler;
+			typedef Outcome<Error, Model::CreateRenderingDeviceResult> CreateRenderingDeviceOutcome;
+			typedef std::future<CreateRenderingDeviceOutcome> CreateRenderingDeviceOutcomeCallable;
+			typedef std::function<void(const VsClient*, const Model::CreateRenderingDeviceRequest&, const CreateRenderingDeviceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateRenderingDeviceAsyncHandler;
 			typedef Outcome<Error, Model::CreateStreamSnapshotResult> CreateStreamSnapshotOutcome;
 			typedef std::future<CreateStreamSnapshotOutcome> CreateStreamSnapshotOutcomeCallable;
 			typedef std::function<void(const VsClient*, const Model::CreateStreamSnapshotRequest&, const CreateStreamSnapshotOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateStreamSnapshotAsyncHandler;
 			typedef Outcome<Error, Model::CreateTemplateResult> CreateTemplateOutcome;
 			typedef std::future<CreateTemplateOutcome> CreateTemplateOutcomeCallable;
 			typedef std::function<void(const VsClient*, const Model::CreateTemplateRequest&, const CreateTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateTemplateAsyncHandler;
+			typedef Outcome<Error, Model::DeleteBucketResult> DeleteBucketOutcome;
+			typedef std::future<DeleteBucketOutcome> DeleteBucketOutcomeCallable;
+			typedef std::function<void(const VsClient*, const Model::DeleteBucketRequest&, const DeleteBucketOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteBucketAsyncHandler;
+			typedef Outcome<Error, Model::DeleteClusterResult> DeleteClusterOutcome;
+			typedef std::future<DeleteClusterOutcome> DeleteClusterOutcomeCallable;
+			typedef std::function<void(const VsClient*, const Model::DeleteClusterRequest&, const DeleteClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteClusterAsyncHandler;
 			typedef Outcome<Error, Model::DeleteDeviceResult> DeleteDeviceOutcome;
 			typedef std::future<DeleteDeviceOutcome> DeleteDeviceOutcomeCallable;
 			typedef std::function<void(const VsClient*, const Model::DeleteDeviceRequest&, const DeleteDeviceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDeviceAsyncHandler;
@@ -383,6 +466,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeletePresetResult> DeletePresetOutcome;
 			typedef std::future<DeletePresetOutcome> DeletePresetOutcomeCallable;
 			typedef std::function<void(const VsClient*, const Model::DeletePresetRequest&, const DeletePresetOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeletePresetAsyncHandler;
+			typedef Outcome<Error, Model::DeleteRenderingDeviceInternetPortsResult> DeleteRenderingDeviceInternetPortsOutcome;
+			typedef std::future<DeleteRenderingDeviceInternetPortsOutcome> DeleteRenderingDeviceInternetPortsOutcomeCallable;
+			typedef std::function<void(const VsClient*, const Model::DeleteRenderingDeviceInternetPortsRequest&, const DeleteRenderingDeviceInternetPortsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRenderingDeviceInternetPortsAsyncHandler;
+			typedef Outcome<Error, Model::DeleteRenderingDevicesResult> DeleteRenderingDevicesOutcome;
+			typedef std::future<DeleteRenderingDevicesOutcome> DeleteRenderingDevicesOutcomeCallable;
+			typedef std::function<void(const VsClient*, const Model::DeleteRenderingDevicesRequest&, const DeleteRenderingDevicesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRenderingDevicesAsyncHandler;
 			typedef Outcome<Error, Model::DeleteTemplateResult> DeleteTemplateOutcome;
 			typedef std::future<DeleteTemplateOutcome> DeleteTemplateOutcomeCallable;
 			typedef std::function<void(const VsClient*, const Model::DeleteTemplateRequest&, const DeleteTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTemplateAsyncHandler;
@@ -395,6 +484,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeAccountStatResult> DescribeAccountStatOutcome;
 			typedef std::future<DescribeAccountStatOutcome> DescribeAccountStatOutcomeCallable;
 			typedef std::function<void(const VsClient*, const Model::DescribeAccountStatRequest&, const DescribeAccountStatOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccountStatAsyncHandler;
+			typedef Outcome<Error, Model::DescribeClusterResult> DescribeClusterOutcome;
+			typedef std::future<DescribeClusterOutcome> DescribeClusterOutcomeCallable;
+			typedef std::function<void(const VsClient*, const Model::DescribeClusterRequest&, const DescribeClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterAsyncHandler;
+			typedef Outcome<Error, Model::DescribeClusterDevicesResult> DescribeClusterDevicesOutcome;
+			typedef std::future<DescribeClusterDevicesOutcome> DescribeClusterDevicesOutcomeCallable;
+			typedef std::function<void(const VsClient*, const Model::DescribeClusterDevicesRequest&, const DescribeClusterDevicesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterDevicesAsyncHandler;
+			typedef Outcome<Error, Model::DescribeClustersResult> DescribeClustersOutcome;
+			typedef std::future<DescribeClustersOutcome> DescribeClustersOutcomeCallable;
+			typedef std::function<void(const VsClient*, const Model::DescribeClustersRequest&, const DescribeClustersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClustersAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDeviceResult> DescribeDeviceOutcome;
 			typedef std::future<DescribeDeviceOutcome> DescribeDeviceOutcomeCallable;
 			typedef std::function<void(const VsClient*, const Model::DescribeDeviceRequest&, const DescribeDeviceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceAsyncHandler;
@@ -422,6 +520,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeGroupsResult> DescribeGroupsOutcome;
 			typedef std::future<DescribeGroupsOutcome> DescribeGroupsOutcomeCallable;
 			typedef std::function<void(const VsClient*, const Model::DescribeGroupsRequest&, const DescribeGroupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGroupsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeNodeDevicesInfoResult> DescribeNodeDevicesInfoOutcome;
+			typedef std::future<DescribeNodeDevicesInfoOutcome> DescribeNodeDevicesInfoOutcomeCallable;
+			typedef std::function<void(const VsClient*, const Model::DescribeNodeDevicesInfoRequest&, const DescribeNodeDevicesInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNodeDevicesInfoAsyncHandler;
 			typedef Outcome<Error, Model::DescribeParentPlatformResult> DescribeParentPlatformOutcome;
 			typedef std::future<DescribeParentPlatformOutcome> DescribeParentPlatformOutcomeCallable;
 			typedef std::function<void(const VsClient*, const Model::DescribeParentPlatformRequest&, const DescribeParentPlatformOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeParentPlatformAsyncHandler;
@@ -443,6 +544,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeRecordsResult> DescribeRecordsOutcome;
 			typedef std::future<DescribeRecordsOutcome> DescribeRecordsOutcomeCallable;
 			typedef std::function<void(const VsClient*, const Model::DescribeRecordsRequest&, const DescribeRecordsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecordsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeRenderingDevicesResult> DescribeRenderingDevicesOutcome;
+			typedef std::future<DescribeRenderingDevicesOutcome> DescribeRenderingDevicesOutcomeCallable;
+			typedef std::function<void(const VsClient*, const Model::DescribeRenderingDevicesRequest&, const DescribeRenderingDevicesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRenderingDevicesAsyncHandler;
 			typedef Outcome<Error, Model::DescribeStreamResult> DescribeStreamOutcome;
 			typedef std::future<DescribeStreamOutcome> DescribeStreamOutcomeCallable;
 			typedef std::function<void(const VsClient*, const Model::DescribeStreamRequest&, const DescribeStreamOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStreamAsyncHandler;
@@ -512,6 +616,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeVsPullStreamInfoConfigResult> DescribeVsPullStreamInfoConfigOutcome;
 			typedef std::future<DescribeVsPullStreamInfoConfigOutcome> DescribeVsPullStreamInfoConfigOutcomeCallable;
 			typedef std::function<void(const VsClient*, const Model::DescribeVsPullStreamInfoConfigRequest&, const DescribeVsPullStreamInfoConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVsPullStreamInfoConfigAsyncHandler;
+			typedef Outcome<Error, Model::DescribeVsStorageTrafficUsageDataResult> DescribeVsStorageTrafficUsageDataOutcome;
+			typedef std::future<DescribeVsStorageTrafficUsageDataOutcome> DescribeVsStorageTrafficUsageDataOutcomeCallable;
+			typedef std::function<void(const VsClient*, const Model::DescribeVsStorageTrafficUsageDataRequest&, const DescribeVsStorageTrafficUsageDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVsStorageTrafficUsageDataAsyncHandler;
+			typedef Outcome<Error, Model::DescribeVsStorageUsageDataResult> DescribeVsStorageUsageDataOutcome;
+			typedef std::future<DescribeVsStorageUsageDataOutcome> DescribeVsStorageUsageDataOutcomeCallable;
+			typedef std::function<void(const VsClient*, const Model::DescribeVsStorageUsageDataRequest&, const DescribeVsStorageUsageDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVsStorageUsageDataAsyncHandler;
 			typedef Outcome<Error, Model::DescribeVsStreamsNotifyUrlConfigResult> DescribeVsStreamsNotifyUrlConfigOutcome;
 			typedef std::future<DescribeVsStreamsNotifyUrlConfigOutcome> DescribeVsStreamsNotifyUrlConfigOutcomeCallable;
 			typedef std::function<void(const VsClient*, const Model::DescribeVsStreamsNotifyUrlConfigRequest&, const DescribeVsStreamsNotifyUrlConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVsStreamsNotifyUrlConfigAsyncHandler;
@@ -533,9 +643,24 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ForbidVsStreamResult> ForbidVsStreamOutcome;
 			typedef std::future<ForbidVsStreamOutcome> ForbidVsStreamOutcomeCallable;
 			typedef std::function<void(const VsClient*, const Model::ForbidVsStreamRequest&, const ForbidVsStreamOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ForbidVsStreamAsyncHandler;
+			typedef Outcome<Error, Model::GetBucketInfoResult> GetBucketInfoOutcome;
+			typedef std::future<GetBucketInfoOutcome> GetBucketInfoOutcomeCallable;
+			typedef std::function<void(const VsClient*, const Model::GetBucketInfoRequest&, const GetBucketInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetBucketInfoAsyncHandler;
 			typedef Outcome<Error, Model::GotoPresetResult> GotoPresetOutcome;
 			typedef std::future<GotoPresetOutcome> GotoPresetOutcomeCallable;
 			typedef std::function<void(const VsClient*, const Model::GotoPresetRequest&, const GotoPresetOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GotoPresetAsyncHandler;
+			typedef Outcome<Error, Model::ListBucketsResult> ListBucketsOutcome;
+			typedef std::future<ListBucketsOutcome> ListBucketsOutcomeCallable;
+			typedef std::function<void(const VsClient*, const Model::ListBucketsRequest&, const ListBucketsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListBucketsAsyncHandler;
+			typedef Outcome<Error, Model::ListDeviceChannelsResult> ListDeviceChannelsOutcome;
+			typedef std::future<ListDeviceChannelsOutcome> ListDeviceChannelsOutcomeCallable;
+			typedef std::function<void(const VsClient*, const Model::ListDeviceChannelsRequest&, const ListDeviceChannelsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDeviceChannelsAsyncHandler;
+			typedef Outcome<Error, Model::ListDeviceRecordsResult> ListDeviceRecordsOutcome;
+			typedef std::future<ListDeviceRecordsOutcome> ListDeviceRecordsOutcomeCallable;
+			typedef std::function<void(const VsClient*, const Model::ListDeviceRecordsRequest&, const ListDeviceRecordsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDeviceRecordsAsyncHandler;
+			typedef Outcome<Error, Model::ListObjectsResult> ListObjectsOutcome;
+			typedef std::future<ListObjectsOutcome> ListObjectsOutcomeCallable;
+			typedef std::function<void(const VsClient*, const Model::ListObjectsRequest&, const ListObjectsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListObjectsAsyncHandler;
 			typedef Outcome<Error, Model::ModifyDeviceResult> ModifyDeviceOutcome;
 			typedef std::future<ModifyDeviceOutcome> ModifyDeviceOutcomeCallable;
 			typedef std::function<void(const VsClient*, const Model::ModifyDeviceRequest&, const ModifyDeviceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDeviceAsyncHandler;
@@ -560,6 +685,21 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyTemplateResult> ModifyTemplateOutcome;
 			typedef std::future<ModifyTemplateOutcome> ModifyTemplateOutcomeCallable;
 			typedef std::function<void(const VsClient*, const Model::ModifyTemplateRequest&, const ModifyTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTemplateAsyncHandler;
+			typedef Outcome<Error, Model::OpenVsServiceResult> OpenVsServiceOutcome;
+			typedef std::future<OpenVsServiceOutcome> OpenVsServiceOutcomeCallable;
+			typedef std::function<void(const VsClient*, const Model::OpenVsServiceRequest&, const OpenVsServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OpenVsServiceAsyncHandler;
+			typedef Outcome<Error, Model::OperateRenderingDevicesResult> OperateRenderingDevicesOutcome;
+			typedef std::future<OperateRenderingDevicesOutcome> OperateRenderingDevicesOutcomeCallable;
+			typedef std::function<void(const VsClient*, const Model::OperateRenderingDevicesRequest&, const OperateRenderingDevicesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OperateRenderingDevicesAsyncHandler;
+			typedef Outcome<Error, Model::PrepareUploadResult> PrepareUploadOutcome;
+			typedef std::future<PrepareUploadOutcome> PrepareUploadOutcomeCallable;
+			typedef std::function<void(const VsClient*, const Model::PrepareUploadRequest&, const PrepareUploadOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PrepareUploadAsyncHandler;
+			typedef Outcome<Error, Model::PutBucketResult> PutBucketOutcome;
+			typedef std::future<PutBucketOutcome> PutBucketOutcomeCallable;
+			typedef std::function<void(const VsClient*, const Model::PutBucketRequest&, const PutBucketOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PutBucketAsyncHandler;
+			typedef Outcome<Error, Model::ResetRenderingDevicesResult> ResetRenderingDevicesOutcome;
+			typedef std::future<ResetRenderingDevicesOutcome> ResetRenderingDevicesOutcomeCallable;
+			typedef std::function<void(const VsClient*, const Model::ResetRenderingDevicesRequest&, const ResetRenderingDevicesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ResetRenderingDevicesAsyncHandler;
 			typedef Outcome<Error, Model::ResumeVsStreamResult> ResumeVsStreamOutcome;
 			typedef std::future<ResumeVsStreamOutcome> ResumeVsStreamOutcomeCallable;
 			typedef std::function<void(const VsClient*, const Model::ResumeVsStreamRequest&, const ResumeVsStreamOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ResumeVsStreamAsyncHandler;
@@ -608,6 +748,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SyncCatalogsResult> SyncCatalogsOutcome;
 			typedef std::future<SyncCatalogsOutcome> SyncCatalogsOutcomeCallable;
 			typedef std::function<void(const VsClient*, const Model::SyncCatalogsRequest&, const SyncCatalogsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SyncCatalogsAsyncHandler;
+			typedef Outcome<Error, Model::SyncDeviceChannelsResult> SyncDeviceChannelsOutcome;
+			typedef std::future<SyncDeviceChannelsOutcome> SyncDeviceChannelsOutcomeCallable;
+			typedef std::function<void(const VsClient*, const Model::SyncDeviceChannelsRequest&, const SyncDeviceChannelsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SyncDeviceChannelsAsyncHandler;
 			typedef Outcome<Error, Model::UnbindDirectoryResult> UnbindDirectoryOutcome;
 			typedef std::future<UnbindDirectoryOutcome> UnbindDirectoryOutcomeCallable;
 			typedef std::function<void(const VsClient*, const Model::UnbindDirectoryRequest&, const UnbindDirectoryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnbindDirectoryAsyncHandler;
@@ -623,14 +766,32 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UnlockDeviceResult> UnlockDeviceOutcome;
 			typedef std::future<UnlockDeviceOutcome> UnlockDeviceOutcomeCallable;
 			typedef std::function<void(const VsClient*, const Model::UnlockDeviceRequest&, const UnlockDeviceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnlockDeviceAsyncHandler;
+			typedef Outcome<Error, Model::UpdateBucketInfoResult> UpdateBucketInfoOutcome;
+			typedef std::future<UpdateBucketInfoOutcome> UpdateBucketInfoOutcomeCallable;
+			typedef std::function<void(const VsClient*, const Model::UpdateBucketInfoRequest&, const UpdateBucketInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateBucketInfoAsyncHandler;
+			typedef Outcome<Error, Model::UpdateClusterResult> UpdateClusterOutcome;
+			typedef std::future<UpdateClusterOutcome> UpdateClusterOutcomeCallable;
+			typedef std::function<void(const VsClient*, const Model::UpdateClusterRequest&, const UpdateClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateClusterAsyncHandler;
+			typedef Outcome<Error, Model::UpdateRenderingDeviceSpecResult> UpdateRenderingDeviceSpecOutcome;
+			typedef std::future<UpdateRenderingDeviceSpecOutcome> UpdateRenderingDeviceSpecOutcomeCallable;
+			typedef std::function<void(const VsClient*, const Model::UpdateRenderingDeviceSpecRequest&, const UpdateRenderingDeviceSpecOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateRenderingDeviceSpecAsyncHandler;
 			typedef Outcome<Error, Model::UpdateVsPullStreamInfoConfigResult> UpdateVsPullStreamInfoConfigOutcome;
 			typedef std::future<UpdateVsPullStreamInfoConfigOutcome> UpdateVsPullStreamInfoConfigOutcomeCallable;
 			typedef std::function<void(const VsClient*, const Model::UpdateVsPullStreamInfoConfigRequest&, const UpdateVsPullStreamInfoConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateVsPullStreamInfoConfigAsyncHandler;
+			typedef Outcome<Error, Model::UploadDeviceRecordResult> UploadDeviceRecordOutcome;
+			typedef std::future<UploadDeviceRecordOutcome> UploadDeviceRecordOutcomeCallable;
+			typedef std::function<void(const VsClient*, const Model::UploadDeviceRecordRequest&, const UploadDeviceRecordOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UploadDeviceRecordAsyncHandler;
 
 			VsClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			VsClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			VsClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~VsClient();
+			AddDeviceOutcome addDevice(const Model::AddDeviceRequest &request)const;
+			void addDeviceAsync(const Model::AddDeviceRequest& request, const AddDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddDeviceOutcomeCallable addDeviceCallable(const Model::AddDeviceRequest& request) const;
+			AddRenderingDeviceInternetPortsOutcome addRenderingDeviceInternetPorts(const Model::AddRenderingDeviceInternetPortsRequest &request)const;
+			void addRenderingDeviceInternetPortsAsync(const Model::AddRenderingDeviceInternetPortsRequest& request, const AddRenderingDeviceInternetPortsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddRenderingDeviceInternetPortsOutcomeCallable addRenderingDeviceInternetPortsCallable(const Model::AddRenderingDeviceInternetPortsRequest& request) const;
 			AddVsPullStreamInfoConfigOutcome addVsPullStreamInfoConfig(const Model::AddVsPullStreamInfoConfigRequest &request)const;
 			void addVsPullStreamInfoConfigAsync(const Model::AddVsPullStreamInfoConfigRequest& request, const AddVsPullStreamInfoConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddVsPullStreamInfoConfigOutcomeCallable addVsPullStreamInfoConfigCallable(const Model::AddVsPullStreamInfoConfigRequest& request) const;
@@ -709,12 +870,18 @@ namespace AlibabaCloud
 			ContinuousMoveOutcome continuousMove(const Model::ContinuousMoveRequest &request)const;
 			void continuousMoveAsync(const Model::ContinuousMoveRequest& request, const ContinuousMoveAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ContinuousMoveOutcomeCallable continuousMoveCallable(const Model::ContinuousMoveRequest& request) const;
+			CreateClusterOutcome createCluster(const Model::CreateClusterRequest &request)const;
+			void createClusterAsync(const Model::CreateClusterRequest& request, const CreateClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateClusterOutcomeCallable createClusterCallable(const Model::CreateClusterRequest& request) const;
 			CreateDeviceOutcome createDevice(const Model::CreateDeviceRequest &request)const;
 			void createDeviceAsync(const Model::CreateDeviceRequest& request, const CreateDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateDeviceOutcomeCallable createDeviceCallable(const Model::CreateDeviceRequest& request) const;
 			CreateDeviceAlarmOutcome createDeviceAlarm(const Model::CreateDeviceAlarmRequest &request)const;
 			void createDeviceAlarmAsync(const Model::CreateDeviceAlarmRequest& request, const CreateDeviceAlarmAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateDeviceAlarmOutcomeCallable createDeviceAlarmCallable(const Model::CreateDeviceAlarmRequest& request) const;
+			CreateDeviceSnapshotOutcome createDeviceSnapshot(const Model::CreateDeviceSnapshotRequest &request)const;
+			void createDeviceSnapshotAsync(const Model::CreateDeviceSnapshotRequest& request, const CreateDeviceSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateDeviceSnapshotOutcomeCallable createDeviceSnapshotCallable(const Model::CreateDeviceSnapshotRequest& request) const;
 			CreateDirectoryOutcome createDirectory(const Model::CreateDirectoryRequest &request)const;
 			void createDirectoryAsync(const Model::CreateDirectoryRequest& request, const CreateDirectoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateDirectoryOutcomeCallable createDirectoryCallable(const Model::CreateDirectoryRequest& request) const;
@@ -724,12 +891,21 @@ namespace AlibabaCloud
 			CreateParentPlatformOutcome createParentPlatform(const Model::CreateParentPlatformRequest &request)const;
 			void createParentPlatformAsync(const Model::CreateParentPlatformRequest& request, const CreateParentPlatformAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateParentPlatformOutcomeCallable createParentPlatformCallable(const Model::CreateParentPlatformRequest& request) const;
+			CreateRenderingDeviceOutcome createRenderingDevice(const Model::CreateRenderingDeviceRequest &request)const;
+			void createRenderingDeviceAsync(const Model::CreateRenderingDeviceRequest& request, const CreateRenderingDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateRenderingDeviceOutcomeCallable createRenderingDeviceCallable(const Model::CreateRenderingDeviceRequest& request) const;
 			CreateStreamSnapshotOutcome createStreamSnapshot(const Model::CreateStreamSnapshotRequest &request)const;
 			void createStreamSnapshotAsync(const Model::CreateStreamSnapshotRequest& request, const CreateStreamSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateStreamSnapshotOutcomeCallable createStreamSnapshotCallable(const Model::CreateStreamSnapshotRequest& request) const;
 			CreateTemplateOutcome createTemplate(const Model::CreateTemplateRequest &request)const;
 			void createTemplateAsync(const Model::CreateTemplateRequest& request, const CreateTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateTemplateOutcomeCallable createTemplateCallable(const Model::CreateTemplateRequest& request) const;
+			DeleteBucketOutcome deleteBucket(const Model::DeleteBucketRequest &request)const;
+			void deleteBucketAsync(const Model::DeleteBucketRequest& request, const DeleteBucketAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteBucketOutcomeCallable deleteBucketCallable(const Model::DeleteBucketRequest& request) const;
+			DeleteClusterOutcome deleteCluster(const Model::DeleteClusterRequest &request)const;
+			void deleteClusterAsync(const Model::DeleteClusterRequest& request, const DeleteClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteClusterOutcomeCallable deleteClusterCallable(const Model::DeleteClusterRequest& request) const;
 			DeleteDeviceOutcome deleteDevice(const Model::DeleteDeviceRequest &request)const;
 			void deleteDeviceAsync(const Model::DeleteDeviceRequest& request, const DeleteDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteDeviceOutcomeCallable deleteDeviceCallable(const Model::DeleteDeviceRequest& request) const;
@@ -745,6 +921,12 @@ namespace AlibabaCloud
 			DeletePresetOutcome deletePreset(const Model::DeletePresetRequest &request)const;
 			void deletePresetAsync(const Model::DeletePresetRequest& request, const DeletePresetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeletePresetOutcomeCallable deletePresetCallable(const Model::DeletePresetRequest& request) const;
+			DeleteRenderingDeviceInternetPortsOutcome deleteRenderingDeviceInternetPorts(const Model::DeleteRenderingDeviceInternetPortsRequest &request)const;
+			void deleteRenderingDeviceInternetPortsAsync(const Model::DeleteRenderingDeviceInternetPortsRequest& request, const DeleteRenderingDeviceInternetPortsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteRenderingDeviceInternetPortsOutcomeCallable deleteRenderingDeviceInternetPortsCallable(const Model::DeleteRenderingDeviceInternetPortsRequest& request) const;
+			DeleteRenderingDevicesOutcome deleteRenderingDevices(const Model::DeleteRenderingDevicesRequest &request)const;
+			void deleteRenderingDevicesAsync(const Model::DeleteRenderingDevicesRequest& request, const DeleteRenderingDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteRenderingDevicesOutcomeCallable deleteRenderingDevicesCallable(const Model::DeleteRenderingDevicesRequest& request) const;
 			DeleteTemplateOutcome deleteTemplate(const Model::DeleteTemplateRequest &request)const;
 			void deleteTemplateAsync(const Model::DeleteTemplateRequest& request, const DeleteTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteTemplateOutcomeCallable deleteTemplateCallable(const Model::DeleteTemplateRequest& request) const;
@@ -757,6 +939,15 @@ namespace AlibabaCloud
 			DescribeAccountStatOutcome describeAccountStat(const Model::DescribeAccountStatRequest &request)const;
 			void describeAccountStatAsync(const Model::DescribeAccountStatRequest& request, const DescribeAccountStatAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAccountStatOutcomeCallable describeAccountStatCallable(const Model::DescribeAccountStatRequest& request) const;
+			DescribeClusterOutcome describeCluster(const Model::DescribeClusterRequest &request)const;
+			void describeClusterAsync(const Model::DescribeClusterRequest& request, const DescribeClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeClusterOutcomeCallable describeClusterCallable(const Model::DescribeClusterRequest& request) const;
+			DescribeClusterDevicesOutcome describeClusterDevices(const Model::DescribeClusterDevicesRequest &request)const;
+			void describeClusterDevicesAsync(const Model::DescribeClusterDevicesRequest& request, const DescribeClusterDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeClusterDevicesOutcomeCallable describeClusterDevicesCallable(const Model::DescribeClusterDevicesRequest& request) const;
+			DescribeClustersOutcome describeClusters(const Model::DescribeClustersRequest &request)const;
+			void describeClustersAsync(const Model::DescribeClustersRequest& request, const DescribeClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeClustersOutcomeCallable describeClustersCallable(const Model::DescribeClustersRequest& request) const;
 			DescribeDeviceOutcome describeDevice(const Model::DescribeDeviceRequest &request)const;
 			void describeDeviceAsync(const Model::DescribeDeviceRequest& request, const DescribeDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDeviceOutcomeCallable describeDeviceCallable(const Model::DescribeDeviceRequest& request) const;
@@ -784,6 +975,9 @@ namespace AlibabaCloud
 			DescribeGroupsOutcome describeGroups(const Model::DescribeGroupsRequest &request)const;
 			void describeGroupsAsync(const Model::DescribeGroupsRequest& request, const DescribeGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeGroupsOutcomeCallable describeGroupsCallable(const Model::DescribeGroupsRequest& request) const;
+			DescribeNodeDevicesInfoOutcome describeNodeDevicesInfo(const Model::DescribeNodeDevicesInfoRequest &request)const;
+			void describeNodeDevicesInfoAsync(const Model::DescribeNodeDevicesInfoRequest& request, const DescribeNodeDevicesInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeNodeDevicesInfoOutcomeCallable describeNodeDevicesInfoCallable(const Model::DescribeNodeDevicesInfoRequest& request) const;
 			DescribeParentPlatformOutcome describeParentPlatform(const Model::DescribeParentPlatformRequest &request)const;
 			void describeParentPlatformAsync(const Model::DescribeParentPlatformRequest& request, const DescribeParentPlatformAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeParentPlatformOutcomeCallable describeParentPlatformCallable(const Model::DescribeParentPlatformRequest& request) const;
@@ -805,6 +999,9 @@ namespace AlibabaCloud
 			DescribeRecordsOutcome describeRecords(const Model::DescribeRecordsRequest &request)const;
 			void describeRecordsAsync(const Model::DescribeRecordsRequest& request, const DescribeRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRecordsOutcomeCallable describeRecordsCallable(const Model::DescribeRecordsRequest& request) const;
+			DescribeRenderingDevicesOutcome describeRenderingDevices(const Model::DescribeRenderingDevicesRequest &request)const;
+			void describeRenderingDevicesAsync(const Model::DescribeRenderingDevicesRequest& request, const DescribeRenderingDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeRenderingDevicesOutcomeCallable describeRenderingDevicesCallable(const Model::DescribeRenderingDevicesRequest& request) const;
 			DescribeStreamOutcome describeStream(const Model::DescribeStreamRequest &request)const;
 			void describeStreamAsync(const Model::DescribeStreamRequest& request, const DescribeStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeStreamOutcomeCallable describeStreamCallable(const Model::DescribeStreamRequest& request) const;
@@ -874,6 +1071,12 @@ namespace AlibabaCloud
 			DescribeVsPullStreamInfoConfigOutcome describeVsPullStreamInfoConfig(const Model::DescribeVsPullStreamInfoConfigRequest &request)const;
 			void describeVsPullStreamInfoConfigAsync(const Model::DescribeVsPullStreamInfoConfigRequest& request, const DescribeVsPullStreamInfoConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeVsPullStreamInfoConfigOutcomeCallable describeVsPullStreamInfoConfigCallable(const Model::DescribeVsPullStreamInfoConfigRequest& request) const;
+			DescribeVsStorageTrafficUsageDataOutcome describeVsStorageTrafficUsageData(const Model::DescribeVsStorageTrafficUsageDataRequest &request)const;
+			void describeVsStorageTrafficUsageDataAsync(const Model::DescribeVsStorageTrafficUsageDataRequest& request, const DescribeVsStorageTrafficUsageDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeVsStorageTrafficUsageDataOutcomeCallable describeVsStorageTrafficUsageDataCallable(const Model::DescribeVsStorageTrafficUsageDataRequest& request) const;
+			DescribeVsStorageUsageDataOutcome describeVsStorageUsageData(const Model::DescribeVsStorageUsageDataRequest &request)const;
+			void describeVsStorageUsageDataAsync(const Model::DescribeVsStorageUsageDataRequest& request, const DescribeVsStorageUsageDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeVsStorageUsageDataOutcomeCallable describeVsStorageUsageDataCallable(const Model::DescribeVsStorageUsageDataRequest& request) const;
 			DescribeVsStreamsNotifyUrlConfigOutcome describeVsStreamsNotifyUrlConfig(const Model::DescribeVsStreamsNotifyUrlConfigRequest &request)const;
 			void describeVsStreamsNotifyUrlConfigAsync(const Model::DescribeVsStreamsNotifyUrlConfigRequest& request, const DescribeVsStreamsNotifyUrlConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeVsStreamsNotifyUrlConfigOutcomeCallable describeVsStreamsNotifyUrlConfigCallable(const Model::DescribeVsStreamsNotifyUrlConfigRequest& request) const;
@@ -895,9 +1098,24 @@ namespace AlibabaCloud
 			ForbidVsStreamOutcome forbidVsStream(const Model::ForbidVsStreamRequest &request)const;
 			void forbidVsStreamAsync(const Model::ForbidVsStreamRequest& request, const ForbidVsStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ForbidVsStreamOutcomeCallable forbidVsStreamCallable(const Model::ForbidVsStreamRequest& request) const;
+			GetBucketInfoOutcome getBucketInfo(const Model::GetBucketInfoRequest &request)const;
+			void getBucketInfoAsync(const Model::GetBucketInfoRequest& request, const GetBucketInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetBucketInfoOutcomeCallable getBucketInfoCallable(const Model::GetBucketInfoRequest& request) const;
 			GotoPresetOutcome gotoPreset(const Model::GotoPresetRequest &request)const;
 			void gotoPresetAsync(const Model::GotoPresetRequest& request, const GotoPresetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GotoPresetOutcomeCallable gotoPresetCallable(const Model::GotoPresetRequest& request) const;
+			ListBucketsOutcome listBuckets(const Model::ListBucketsRequest &request)const;
+			void listBucketsAsync(const Model::ListBucketsRequest& request, const ListBucketsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListBucketsOutcomeCallable listBucketsCallable(const Model::ListBucketsRequest& request) const;
+			ListDeviceChannelsOutcome listDeviceChannels(const Model::ListDeviceChannelsRequest &request)const;
+			void listDeviceChannelsAsync(const Model::ListDeviceChannelsRequest& request, const ListDeviceChannelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListDeviceChannelsOutcomeCallable listDeviceChannelsCallable(const Model::ListDeviceChannelsRequest& request) const;
+			ListDeviceRecordsOutcome listDeviceRecords(const Model::ListDeviceRecordsRequest &request)const;
+			void listDeviceRecordsAsync(const Model::ListDeviceRecordsRequest& request, const ListDeviceRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListDeviceRecordsOutcomeCallable listDeviceRecordsCallable(const Model::ListDeviceRecordsRequest& request) const;
+			ListObjectsOutcome listObjects(const Model::ListObjectsRequest &request)const;
+			void listObjectsAsync(const Model::ListObjectsRequest& request, const ListObjectsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListObjectsOutcomeCallable listObjectsCallable(const Model::ListObjectsRequest& request) const;
 			ModifyDeviceOutcome modifyDevice(const Model::ModifyDeviceRequest &request)const;
 			void modifyDeviceAsync(const Model::ModifyDeviceRequest& request, const ModifyDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyDeviceOutcomeCallable modifyDeviceCallable(const Model::ModifyDeviceRequest& request) const;
@@ -922,6 +1140,21 @@ namespace AlibabaCloud
 			ModifyTemplateOutcome modifyTemplate(const Model::ModifyTemplateRequest &request)const;
 			void modifyTemplateAsync(const Model::ModifyTemplateRequest& request, const ModifyTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyTemplateOutcomeCallable modifyTemplateCallable(const Model::ModifyTemplateRequest& request) const;
+			OpenVsServiceOutcome openVsService(const Model::OpenVsServiceRequest &request)const;
+			void openVsServiceAsync(const Model::OpenVsServiceRequest& request, const OpenVsServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			OpenVsServiceOutcomeCallable openVsServiceCallable(const Model::OpenVsServiceRequest& request) const;
+			OperateRenderingDevicesOutcome operateRenderingDevices(const Model::OperateRenderingDevicesRequest &request)const;
+			void operateRenderingDevicesAsync(const Model::OperateRenderingDevicesRequest& request, const OperateRenderingDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			OperateRenderingDevicesOutcomeCallable operateRenderingDevicesCallable(const Model::OperateRenderingDevicesRequest& request) const;
+			PrepareUploadOutcome prepareUpload(const Model::PrepareUploadRequest &request)const;
+			void prepareUploadAsync(const Model::PrepareUploadRequest& request, const PrepareUploadAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			PrepareUploadOutcomeCallable prepareUploadCallable(const Model::PrepareUploadRequest& request) const;
+			PutBucketOutcome putBucket(const Model::PutBucketRequest &request)const;
+			void putBucketAsync(const Model::PutBucketRequest& request, const PutBucketAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			PutBucketOutcomeCallable putBucketCallable(const Model::PutBucketRequest& request) const;
+			ResetRenderingDevicesOutcome resetRenderingDevices(const Model::ResetRenderingDevicesRequest &request)const;
+			void resetRenderingDevicesAsync(const Model::ResetRenderingDevicesRequest& request, const ResetRenderingDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ResetRenderingDevicesOutcomeCallable resetRenderingDevicesCallable(const Model::ResetRenderingDevicesRequest& request) const;
 			ResumeVsStreamOutcome resumeVsStream(const Model::ResumeVsStreamRequest &request)const;
 			void resumeVsStreamAsync(const Model::ResumeVsStreamRequest& request, const ResumeVsStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ResumeVsStreamOutcomeCallable resumeVsStreamCallable(const Model::ResumeVsStreamRequest& request) const;
@@ -970,6 +1203,9 @@ namespace AlibabaCloud
 			SyncCatalogsOutcome syncCatalogs(const Model::SyncCatalogsRequest &request)const;
 			void syncCatalogsAsync(const Model::SyncCatalogsRequest& request, const SyncCatalogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SyncCatalogsOutcomeCallable syncCatalogsCallable(const Model::SyncCatalogsRequest& request) const;
+			SyncDeviceChannelsOutcome syncDeviceChannels(const Model::SyncDeviceChannelsRequest &request)const;
+			void syncDeviceChannelsAsync(const Model::SyncDeviceChannelsRequest& request, const SyncDeviceChannelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SyncDeviceChannelsOutcomeCallable syncDeviceChannelsCallable(const Model::SyncDeviceChannelsRequest& request) const;
 			UnbindDirectoryOutcome unbindDirectory(const Model::UnbindDirectoryRequest &request)const;
 			void unbindDirectoryAsync(const Model::UnbindDirectoryRequest& request, const UnbindDirectoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UnbindDirectoryOutcomeCallable unbindDirectoryCallable(const Model::UnbindDirectoryRequest& request) const;
@@ -985,9 +1221,21 @@ namespace AlibabaCloud
 			UnlockDeviceOutcome unlockDevice(const Model::UnlockDeviceRequest &request)const;
 			void unlockDeviceAsync(const Model::UnlockDeviceRequest& request, const UnlockDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UnlockDeviceOutcomeCallable unlockDeviceCallable(const Model::UnlockDeviceRequest& request) const;
+			UpdateBucketInfoOutcome updateBucketInfo(const Model::UpdateBucketInfoRequest &request)const;
+			void updateBucketInfoAsync(const Model::UpdateBucketInfoRequest& request, const UpdateBucketInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateBucketInfoOutcomeCallable updateBucketInfoCallable(const Model::UpdateBucketInfoRequest& request) const;
+			UpdateClusterOutcome updateCluster(const Model::UpdateClusterRequest &request)const;
+			void updateClusterAsync(const Model::UpdateClusterRequest& request, const UpdateClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateClusterOutcomeCallable updateClusterCallable(const Model::UpdateClusterRequest& request) const;
+			UpdateRenderingDeviceSpecOutcome updateRenderingDeviceSpec(const Model::UpdateRenderingDeviceSpecRequest &request)const;
+			void updateRenderingDeviceSpecAsync(const Model::UpdateRenderingDeviceSpecRequest& request, const UpdateRenderingDeviceSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateRenderingDeviceSpecOutcomeCallable updateRenderingDeviceSpecCallable(const Model::UpdateRenderingDeviceSpecRequest& request) const;
 			UpdateVsPullStreamInfoConfigOutcome updateVsPullStreamInfoConfig(const Model::UpdateVsPullStreamInfoConfigRequest &request)const;
 			void updateVsPullStreamInfoConfigAsync(const Model::UpdateVsPullStreamInfoConfigRequest& request, const UpdateVsPullStreamInfoConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateVsPullStreamInfoConfigOutcomeCallable updateVsPullStreamInfoConfigCallable(const Model::UpdateVsPullStreamInfoConfigRequest& request) const;
+			UploadDeviceRecordOutcome uploadDeviceRecord(const Model::UploadDeviceRecordRequest &request)const;
+			void uploadDeviceRecordAsync(const Model::UploadDeviceRecordRequest& request, const UploadDeviceRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UploadDeviceRecordOutcomeCallable uploadDeviceRecordCallable(const Model::UploadDeviceRecordRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;
