@@ -32,71 +32,31 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_CCC_EXPORT StartBack2BackCallResult : public ServiceResult
 			{
 			public:
-				struct Data
-				{
-					struct CallContext
-					{
-						struct ChannelContext
-						{
-							std::string destination;
-							std::string channelState;
-							std::string releaseInitiator;
-							std::string callType;
-							std::string associatedData;
-							std::string channelId;
-							long timestamp;
-							std::string releaseReason;
-							std::string channelFlags;
-							std::string originator;
-							std::string userId;
-							std::string userExtension;
-							std::string jobId;
-						};
-						std::string instanceId;
-						std::string callType;
-						std::string jobId;
-						std::vector<ChannelContext> channelContexts;
-					};
-					struct UserContext
-					{
-						std::string userState;
-						std::string instanceId;
-						std::string breakCode;
-						std::string deviceId;
-						bool outboundScenario;
-						std::string mobile;
-						std::string uri;
-						std::vector<std::string> signedSkillGroupIdList;
-						std::string extension;
-						std::string deviceState;
-						std::string userId;
-						long heartbeat;
-						std::string jobId;
-						std::string workMode;
-						long reserved;
-					};
-					UserContext userContext;
-					CallContext callContext;
-				};
 
 
 				StartBack2BackCallResult();
 				explicit StartBack2BackCallResult(const std::string &payload);
 				~StartBack2BackCallResult();
+				std::string getStatusDesc()const;
+				std::string getTaskId()const;
 				std::string getMessage()const;
 				int getHttpStatusCode()const;
-				std::vector<std::string> getParams()const;
-				Data getData()const;
 				std::string getCode()const;
+				std::string getStatusCode()const;
+				bool getSuccess()const;
+				std::string getTimeStamp()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string statusDesc_;
+				std::string taskId_;
 				std::string message_;
 				int httpStatusCode_;
-				std::vector<std::string> params_;
-				Data data_;
 				std::string code_;
+				std::string statusCode_;
+				bool success_;
+				std::string timeStamp_;
 
 			};
 		}

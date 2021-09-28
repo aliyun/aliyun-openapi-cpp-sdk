@@ -19,7 +19,7 @@
 using AlibabaCloud::CCC::Model::PickOutboundNumbersRequest;
 
 PickOutboundNumbersRequest::PickOutboundNumbersRequest() :
-	RpcServiceRequest("ccc", "2020-07-01", "PickOutboundNumbers")
+	RpcServiceRequest("ccc", "2017-07-05", "PickOutboundNumbers")
 {
 	setMethod(HttpRequest::Method::Post);
 }
@@ -38,6 +38,17 @@ void PickOutboundNumbersRequest::setCount(int count)
 	setParameter("Count", std::to_string(count));
 }
 
+std::string PickOutboundNumbersRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void PickOutboundNumbersRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setParameter("AccessKeyId", accessKeyId);
+}
+
 std::string PickOutboundNumbersRequest::getInstanceId()const
 {
 	return instanceId_;
@@ -49,25 +60,27 @@ void PickOutboundNumbersRequest::setInstanceId(const std::string& instanceId)
 	setParameter("InstanceId", instanceId);
 }
 
-std::string PickOutboundNumbersRequest::getSkillGroupIdList()const
+std::vector<std::string> PickOutboundNumbersRequest::getCandidateNumber()const
 {
-	return skillGroupIdList_;
+	return candidateNumber_;
 }
 
-void PickOutboundNumbersRequest::setSkillGroupIdList(const std::string& skillGroupIdList)
+void PickOutboundNumbersRequest::setCandidateNumber(const std::vector<std::string>& candidateNumber)
 {
-	skillGroupIdList_ = skillGroupIdList;
-	setParameter("SkillGroupIdList", skillGroupIdList);
+	candidateNumber_ = candidateNumber;
+	for(int dep1 = 0; dep1!= candidateNumber.size(); dep1++) {
+		setParameter("CandidateNumber."+ std::to_string(dep1), candidateNumber.at(dep1));
+	}
 }
 
-std::string PickOutboundNumbersRequest::getCalledNumber()const
+std::string PickOutboundNumbersRequest::getCalleeNumber()const
 {
-	return calledNumber_;
+	return calleeNumber_;
 }
 
-void PickOutboundNumbersRequest::setCalledNumber(const std::string& calledNumber)
+void PickOutboundNumbersRequest::setCalleeNumber(const std::string& calleeNumber)
 {
-	calledNumber_ = calledNumber;
-	setParameter("CalledNumber", calledNumber);
+	calleeNumber_ = calleeNumber;
+	setParameter("CalleeNumber", calleeNumber);
 }
 

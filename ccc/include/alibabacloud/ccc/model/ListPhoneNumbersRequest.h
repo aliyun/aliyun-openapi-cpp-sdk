@@ -35,26 +35,17 @@ namespace AlibabaCloud
 				ListPhoneNumbersRequest();
 				~ListPhoneNumbersRequest();
 
-				std::string getUsage()const;
-				void setUsage(const std::string& usage);
-				bool getActive()const;
-				void setActive(bool active);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
-				std::string getSearchPattern()const;
-				void setSearchPattern(const std::string& searchPattern);
+				bool getOutboundOnly()const;
+				void setOutboundOnly(bool outboundOnly);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
-				std::string usage_;
-				bool active_;
-				int pageNumber_;
-				std::string searchPattern_;
+				bool outboundOnly_;
 				std::string instanceId_;
-				int pageSize_;
+				std::string accessKeyId_;
 
 			};
 		}

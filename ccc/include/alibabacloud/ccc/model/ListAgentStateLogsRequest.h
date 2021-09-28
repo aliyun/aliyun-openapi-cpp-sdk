@@ -35,20 +35,29 @@ namespace AlibabaCloud
 				ListAgentStateLogsRequest();
 				~ListAgentStateLogsRequest();
 
-				std::string getAgentId()const;
-				void setAgentId(const std::string& agentId);
 				long getEndTime()const;
 				void setEndTime(long endTime);
 				long getStartTime()const;
 				void setStartTime(long startTime);
+				long getRamId()const;
+				void setRamId(long ramId);
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 
             private:
-				std::string agentId_;
 				long endTime_;
 				long startTime_;
+				long ramId_;
+				int pageNumber_;
+				std::string accessKeyId_;
 				std::string instanceId_;
+				int pageSize_;
 
 			};
 		}

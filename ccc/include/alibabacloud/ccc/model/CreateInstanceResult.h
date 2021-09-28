@@ -32,25 +32,75 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_CCC_EXPORT CreateInstanceResult : public ServiceResult
 			{
 			public:
+				struct Instance
+				{
+					struct User
+					{
+						struct Detail
+						{
+							std::string loginName;
+							std::string department;
+							std::string email;
+							std::string phone;
+							std::string displayName;
+						};
+						std::string instanceId;
+						std::string userId;
+						std::string ramId;
+						Detail detail;
+					};
+					struct PhoneNumber
+					{
+						std::string usage;
+						bool testOnly;
+						bool allowOutbound;
+						std::string number;
+						std::string instanceId;
+						int remainingTime;
+						int trunks;
+						std::string phoneNumberId;
+						std::string phoneNumberDescription;
+					};
+					std::string status;
+					std::vector<PhoneNumber> phoneNumbers;
+					std::string owner;
+					long createdTime;
+					std::vector<std::string> successLoginNames;
+					std::string instanceId;
+					std::string domainName;
+					std::string consoleUrl;
+					int storageMaxSize;
+					std::vector<User> admin;
+					std::vector<std::string> failLoginNames;
+					std::vector<std::string> successPhoneNumbers;
+					std::string instanceName;
+					int maxOnlineAgents;
+					std::string tenantId;
+					std::string directoryId;
+					std::string storageBucket;
+					std::vector<std::string> failPhoneNumbers;
+					std::string instanceDescription;
+					int storageMaxDays;
+				};
 
 
 				CreateInstanceResult();
 				explicit CreateInstanceResult(const std::string &payload);
 				~CreateInstanceResult();
 				std::string getMessage()const;
+				Instance getInstance()const;
 				int getHttpStatusCode()const;
-				std::vector<std::string> getParams()const;
-				std::string getData()const;
 				std::string getCode()const;
+				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
+				Instance instance_;
 				int httpStatusCode_;
-				std::vector<std::string> params_;
-				std::string data_;
 				std::string code_;
+				bool success_;
 
 			};
 		}

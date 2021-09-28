@@ -19,7 +19,7 @@
 using AlibabaCloud::CCC::Model::ListPhoneNumbersRequest;
 
 ListPhoneNumbersRequest::ListPhoneNumbersRequest() :
-	RpcServiceRequest("ccc", "2020-07-01", "ListPhoneNumbers")
+	RpcServiceRequest("ccc", "2017-07-05", "ListPhoneNumbers")
 {
 	setMethod(HttpRequest::Method::Post);
 }
@@ -27,48 +27,15 @@ ListPhoneNumbersRequest::ListPhoneNumbersRequest() :
 ListPhoneNumbersRequest::~ListPhoneNumbersRequest()
 {}
 
-std::string ListPhoneNumbersRequest::getUsage()const
+bool ListPhoneNumbersRequest::getOutboundOnly()const
 {
-	return usage_;
+	return outboundOnly_;
 }
 
-void ListPhoneNumbersRequest::setUsage(const std::string& usage)
+void ListPhoneNumbersRequest::setOutboundOnly(bool outboundOnly)
 {
-	usage_ = usage;
-	setParameter("Usage", usage);
-}
-
-bool ListPhoneNumbersRequest::getActive()const
-{
-	return active_;
-}
-
-void ListPhoneNumbersRequest::setActive(bool active)
-{
-	active_ = active;
-	setParameter("Active", active ? "true" : "false");
-}
-
-int ListPhoneNumbersRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void ListPhoneNumbersRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
-}
-
-std::string ListPhoneNumbersRequest::getSearchPattern()const
-{
-	return searchPattern_;
-}
-
-void ListPhoneNumbersRequest::setSearchPattern(const std::string& searchPattern)
-{
-	searchPattern_ = searchPattern;
-	setParameter("SearchPattern", searchPattern);
+	outboundOnly_ = outboundOnly;
+	setParameter("OutboundOnly", outboundOnly ? "true" : "false");
 }
 
 std::string ListPhoneNumbersRequest::getInstanceId()const
@@ -82,14 +49,14 @@ void ListPhoneNumbersRequest::setInstanceId(const std::string& instanceId)
 	setParameter("InstanceId", instanceId);
 }
 
-int ListPhoneNumbersRequest::getPageSize()const
+std::string ListPhoneNumbersRequest::getAccessKeyId()const
 {
-	return pageSize_;
+	return accessKeyId_;
 }
 
-void ListPhoneNumbersRequest::setPageSize(int pageSize)
+void ListPhoneNumbersRequest::setAccessKeyId(const std::string& accessKeyId)
 {
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	accessKeyId_ = accessKeyId;
+	setParameter("AccessKeyId", accessKeyId);
 }
 

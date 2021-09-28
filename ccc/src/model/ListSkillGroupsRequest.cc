@@ -19,35 +19,13 @@
 using AlibabaCloud::CCC::Model::ListSkillGroupsRequest;
 
 ListSkillGroupsRequest::ListSkillGroupsRequest() :
-	RpcServiceRequest("ccc", "2020-07-01", "ListSkillGroups")
+	RpcServiceRequest("ccc", "2017-07-05", "ListSkillGroups")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
 ListSkillGroupsRequest::~ListSkillGroupsRequest()
 {}
-
-int ListSkillGroupsRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void ListSkillGroupsRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
-}
-
-std::string ListSkillGroupsRequest::getSearchPattern()const
-{
-	return searchPattern_;
-}
-
-void ListSkillGroupsRequest::setSearchPattern(const std::string& searchPattern)
-{
-	searchPattern_ = searchPattern;
-	setParameter("SearchPattern", searchPattern);
-}
 
 std::string ListSkillGroupsRequest::getInstanceId()const
 {
@@ -60,14 +38,14 @@ void ListSkillGroupsRequest::setInstanceId(const std::string& instanceId)
 	setParameter("InstanceId", instanceId);
 }
 
-int ListSkillGroupsRequest::getPageSize()const
+std::string ListSkillGroupsRequest::getAccessKeyId()const
 {
-	return pageSize_;
+	return accessKeyId_;
 }
 
-void ListSkillGroupsRequest::setPageSize(int pageSize)
+void ListSkillGroupsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	accessKeyId_ = accessKeyId;
+	setParameter("AccessKeyId", accessKeyId);
 }
 

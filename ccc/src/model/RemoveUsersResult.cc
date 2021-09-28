@@ -39,15 +39,14 @@ void RemoveUsersResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allParams = value["Params"]["Param"];
-	for (const auto &item : allParams)
-		params_.push_back(item.asString());
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
-	if(!value["HttpStatusCode"].isNull())
-		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["HttpStatusCode"].isNull())
+		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 
 }
 
@@ -61,13 +60,13 @@ int RemoveUsersResult::getHttpStatusCode()const
 	return httpStatusCode_;
 }
 
-std::vector<std::string> RemoveUsersResult::getParams()const
-{
-	return params_;
-}
-
 std::string RemoveUsersResult::getCode()const
 {
 	return code_;
+}
+
+bool RemoveUsersResult::getSuccess()const
+{
+	return success_;
 }
 

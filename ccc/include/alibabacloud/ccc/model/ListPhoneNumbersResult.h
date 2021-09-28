@@ -32,57 +32,70 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_CCC_EXPORT ListPhoneNumbersResult : public ServiceResult
 			{
 			public:
-				struct Data
+				struct PhoneNumber
 				{
-					struct PhoneNumber
+					struct ContactFlow
 					{
-						struct SkillGroup
-						{
-							std::string instanceId;
-							std::string displayName;
-							std::string skillGroupId;
-							std::string name;
-						};
-						std::string usage;
+						std::string type;
 						std::string contactFlowId;
 						std::string instanceId;
-						std::string createTime;
-						std::vector<PhoneNumber::SkillGroup> skillGroups;
-						std::string city;
-						std::string province;
-						std::string provider;
-						bool active;
-						std::string number;
-						std::string userId;
 						std::string contactFlowName;
-						std::string tags;
+						std::string contactFlowDescription;
 					};
-					int totalCount;
-					int pageSize;
-					int pageNumber;
-					std::vector<PhoneNumber> list;
+					struct PrivacyNumber
+					{
+						std::string regionNameCity;
+						std::string type;
+						std::string subId;
+						std::string poolId;
+						std::string extra;
+						std::string poolName;
+						std::string phoneNumber;
+						std::string telX;
+						std::string bizId;
+					};
+					struct SkillGroup
+					{
+						std::string skillGroupName;
+						std::string skillGroupId;
+					};
+					std::string assignee;
+					std::string usage;
+					bool testOnly;
+					bool allowOutbound;
+					std::string instanceId;
+					int remainingTime;
+					std::vector<PhoneNumber::SkillGroup> skillGroups;
+					int trunks;
+					std::string city;
+					std::string phoneNumberId;
+					std::string province;
+					std::string phoneNumberDescription;
+					std::string sipTelX;
+					std::string number;
+					PrivacyNumber privacyNumber;
+					int numberCommodityStatus;
+					ContactFlow contactFlow;
 				};
 
 
 				ListPhoneNumbersResult();
 				explicit ListPhoneNumbersResult(const std::string &payload);
 				~ListPhoneNumbersResult();
+				std::vector<PhoneNumber> getPhoneNumbers()const;
 				std::string getMessage()const;
-				int getPageSize()const;
-				int getPageNumber()const;
 				int getHttpStatusCode()const;
-				Data getData()const;
 				std::string getCode()const;
+				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::vector<PhoneNumber> phoneNumbers_;
 				std::string message_;
-				int pageSize_;
-				int pageNumber_;
 				int httpStatusCode_;
-				Data data_;
 				std::string code_;
+				bool success_;
 
 			};
 		}

@@ -39,20 +39,16 @@ namespace AlibabaCloud
 				~AssignUsersResult();
 				std::string getMessage()const;
 				int getHttpStatusCode()const;
-				std::string getData()const;
-				std::string getSync()const;
-				std::string getWorkflowId()const;
 				std::string getCode()const;
+				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
 				int httpStatusCode_;
-				std::string data_;
-				std::string sync_;
-				std::string workflowId_;
 				std::string code_;
+				bool success_;
 
 			};
 		}

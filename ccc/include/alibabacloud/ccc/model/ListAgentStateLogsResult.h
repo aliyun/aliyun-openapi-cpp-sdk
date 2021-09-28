@@ -32,12 +32,24 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_CCC_EXPORT ListAgentStateLogsResult : public ServiceResult
 			{
 			public:
-				struct DataItem
+				struct AgentStateLogPage
 				{
-					std::string state;
-					long startTime;
-					std::string stateCode;
-					long duration;
+					struct AgentStateLog
+					{
+						std::string skillGroupIds;
+						std::string counterParty;
+						long stateTime;
+						std::string instanceId;
+						std::string state;
+						long ramId;
+						std::string stateCode;
+						std::string connectId;
+						std::string contactId;
+					};
+					int totalCount;
+					int pageSize;
+					int pageNumber;
+					std::vector<AgentStateLog> list;
 				};
 
 
@@ -46,16 +58,18 @@ namespace AlibabaCloud
 				~ListAgentStateLogsResult();
 				std::string getMessage()const;
 				int getHttpStatusCode()const;
-				std::vector<DataItem> getData()const;
 				std::string getCode()const;
+				AgentStateLogPage getAgentStateLogPage()const;
+				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
 				int httpStatusCode_;
-				std::vector<DataItem> data_;
 				std::string code_;
+				AgentStateLogPage agentStateLogPage_;
+				bool success_;
 
 			};
 		}
