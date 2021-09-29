@@ -1,3 +1,6 @@
+2021-09-29 Version: 1.36.890
+- Supported AssumeRoleWithOIDC.
+
 2021-09-28 Version: 1.36.889
 - Add new internal API.
 

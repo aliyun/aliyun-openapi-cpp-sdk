@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_STS_MODEL_GENERATESESSIONACCESSKEYREQUEST_H_
-#define ALIBABACLOUD_STS_MODEL_GENERATESESSIONACCESSKEYREQUEST_H_
+#ifndef ALIBABACLOUD_STS_MODEL_ASSUMEROLEWITHOIDCREQUEST_H_
+#define ALIBABACLOUD_STS_MODEL_ASSUMEROLEWITHOIDCREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,21 +28,36 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_STS_EXPORT GenerateSessionAccessKeyRequest : public RpcServiceRequest
+			class ALIBABACLOUD_STS_EXPORT AssumeRoleWithOIDCRequest : public RpcServiceRequest
 			{
 
 			public:
-				GenerateSessionAccessKeyRequest();
-				~GenerateSessionAccessKeyRequest();
+				AssumeRoleWithOIDCRequest();
+				~AssumeRoleWithOIDCRequest();
 
+				std::string getRoleArn()const;
+				void setRoleArn(const std::string& roleArn);
+				std::string getRoleSessionName()const;
+				void setRoleSessionName(const std::string& roleSessionName);
+				std::string getOIDCToken()const;
+				void setOIDCToken(const std::string& oIDCToken);
 				long getDurationSeconds()const;
 				void setDurationSeconds(long durationSeconds);
+				std::string getOIDCProviderArn()const;
+				void setOIDCProviderArn(const std::string& oIDCProviderArn);
+				std::string getPolicy()const;
+				void setPolicy(const std::string& policy);
 
             private:
+				std::string roleArn_;
+				std::string roleSessionName_;
+				std::string oIDCToken_;
 				long durationSeconds_;
+				std::string oIDCProviderArn_;
+				std::string policy_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_STS_MODEL_GENERATESESSIONACCESSKEYREQUEST_H_
+#endif // !ALIBABACLOUD_STS_MODEL_ASSUMEROLEWITHOIDCREQUEST_H_

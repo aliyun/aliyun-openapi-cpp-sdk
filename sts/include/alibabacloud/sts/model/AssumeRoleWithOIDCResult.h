@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_STS_MODEL_GENERATESESSIONACCESSKEYRESULT_H_
-#define ALIBABACLOUD_STS_MODEL_GENERATESESSIONACCESSKEYRESULT_H_
+#ifndef ALIBABACLOUD_STS_MODEL_ASSUMEROLEWITHOIDCRESULT_H_
+#define ALIBABACLOUD_STS_MODEL_ASSUMEROLEWITHOIDCRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,29 +29,45 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_STS_EXPORT GenerateSessionAccessKeyResult : public ServiceResult
+			class ALIBABACLOUD_STS_EXPORT AssumeRoleWithOIDCResult : public ServiceResult
 			{
 			public:
-				struct SessionAccessKey
+				struct OIDCTokenInfo
 				{
-					std::string sessionAccessKeyId;
+					std::string issuer;
+					std::string subject;
+					std::string clientIds;
+				};
+				struct AssumedRoleUser
+				{
+					std::string arn;
+					std::string assumedRoleId;
+				};
+				struct Credentials
+				{
+					std::string securityToken;
+					std::string accessKeyId;
+					std::string accessKeySecret;
 					std::string expiration;
-					std::string sessionAccessKeySecret;
 				};
 
 
-				GenerateSessionAccessKeyResult();
-				explicit GenerateSessionAccessKeyResult(const std::string &payload);
-				~GenerateSessionAccessKeyResult();
-				SessionAccessKey getSessionAccessKey()const;
+				AssumeRoleWithOIDCResult();
+				explicit AssumeRoleWithOIDCResult(const std::string &payload);
+				~AssumeRoleWithOIDCResult();
+				OIDCTokenInfo getOIDCTokenInfo()const;
+				AssumedRoleUser getAssumedRoleUser()const;
+				Credentials getCredentials()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				SessionAccessKey sessionAccessKey_;
+				OIDCTokenInfo oIDCTokenInfo_;
+				AssumedRoleUser assumedRoleUser_;
+				Credentials credentials_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_STS_MODEL_GENERATESESSIONACCESSKEYRESULT_H_
+#endif // !ALIBABACLOUD_STS_MODEL_ASSUMEROLEWITHOIDCRESULT_H_

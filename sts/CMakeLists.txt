@@ -23,10 +23,10 @@ set(sts_public_header
 set(sts_public_header_model 
 	include/alibabacloud/sts/model/AssumeRoleRequest.h
 	include/alibabacloud/sts/model/AssumeRoleResult.h
+	include/alibabacloud/sts/model/AssumeRoleWithOIDCRequest.h
+	include/alibabacloud/sts/model/AssumeRoleWithOIDCResult.h
 	include/alibabacloud/sts/model/AssumeRoleWithSAMLRequest.h
 	include/alibabacloud/sts/model/AssumeRoleWithSAMLResult.h
-	include/alibabacloud/sts/model/GenerateSessionAccessKeyRequest.h
-	include/alibabacloud/sts/model/GenerateSessionAccessKeyResult.h
 	include/alibabacloud/sts/model/GetCallerIdentityRequest.h
 	include/alibabacloud/sts/model/GetCallerIdentityResult.h )
 
@@ -34,10 +34,10 @@ set(sts_src
 	src/StsClient.cc
 	src/model/AssumeRoleRequest.cc
 	src/model/AssumeRoleResult.cc
+	src/model/AssumeRoleWithOIDCRequest.cc
+	src/model/AssumeRoleWithOIDCResult.cc
 	src/model/AssumeRoleWithSAMLRequest.cc
 	src/model/AssumeRoleWithSAMLResult.cc
-	src/model/GenerateSessionAccessKeyRequest.cc
-	src/model/GenerateSessionAccessKeyResult.cc
 	src/model/GetCallerIdentityRequest.cc
 	src/model/GetCallerIdentityResult.cc )
 

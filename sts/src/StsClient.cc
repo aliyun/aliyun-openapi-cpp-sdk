@@ -31,21 +31,21 @@ StsClient::StsClient(const Credentials &credentials, const ClientConfiguration &
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "sts");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 StsClient::StsClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "sts");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 StsClient::StsClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "sts");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 StsClient::~StsClient()
@@ -87,6 +87,42 @@ StsClient::AssumeRoleOutcomeCallable StsClient::assumeRoleCallable(const AssumeR
 	return task->get_future();
 }
 
+StsClient::AssumeRoleWithOIDCOutcome StsClient::assumeRoleWithOIDC(const AssumeRoleWithOIDCRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AssumeRoleWithOIDCOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AssumeRoleWithOIDCOutcome(AssumeRoleWithOIDCResult(outcome.result()));
+	else
+		return AssumeRoleWithOIDCOutcome(outcome.error());
+}
+
+void StsClient::assumeRoleWithOIDCAsync(const AssumeRoleWithOIDCRequest& request, const AssumeRoleWithOIDCAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, assumeRoleWithOIDC(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+StsClient::AssumeRoleWithOIDCOutcomeCallable StsClient::assumeRoleWithOIDCCallable(const AssumeRoleWithOIDCRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AssumeRoleWithOIDCOutcome()>>(
+			[this, request]()
+			{
+			return this->assumeRoleWithOIDC(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 StsClient::AssumeRoleWithSAMLOutcome StsClient::assumeRoleWithSAML(const AssumeRoleWithSAMLRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -117,42 +153,6 @@ StsClient::AssumeRoleWithSAMLOutcomeCallable StsClient::assumeRoleWithSAMLCallab
 			[this, request]()
 			{
 			return this->assumeRoleWithSAML(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-StsClient::GenerateSessionAccessKeyOutcome StsClient::generateSessionAccessKey(const GenerateSessionAccessKeyRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GenerateSessionAccessKeyOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GenerateSessionAccessKeyOutcome(GenerateSessionAccessKeyResult(outcome.result()));
-	else
-		return GenerateSessionAccessKeyOutcome(outcome.error());
-}
-
-void StsClient::generateSessionAccessKeyAsync(const GenerateSessionAccessKeyRequest& request, const GenerateSessionAccessKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, generateSessionAccessKey(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-StsClient::GenerateSessionAccessKeyOutcomeCallable StsClient::generateSessionAccessKeyCallable(const GenerateSessionAccessKeyRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GenerateSessionAccessKeyOutcome()>>(
-			[this, request]()
-			{
-			return this->generateSessionAccessKey(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

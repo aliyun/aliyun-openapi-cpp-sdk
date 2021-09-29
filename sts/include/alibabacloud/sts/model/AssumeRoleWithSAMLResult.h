@@ -32,24 +32,24 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_STS_EXPORT AssumeRoleWithSAMLResult : public ServiceResult
 			{
 			public:
-				struct Credentials
-				{
-					std::string securityToken;
-					std::string accessKeyId;
-					std::string accessKeySecret;
-					std::string expiration;
-				};
-				struct AssumedRoleUser
-				{
-					std::string arn;
-					std::string assumedRoleId;
-				};
 				struct SAMLAssertionInfo
 				{
 					std::string subjectType;
 					std::string issuer;
 					std::string recipient;
 					std::string subject;
+				};
+				struct AssumedRoleUser
+				{
+					std::string arn;
+					std::string assumedRoleId;
+				};
+				struct Credentials
+				{
+					std::string securityToken;
+					std::string accessKeyId;
+					std::string accessKeySecret;
+					std::string expiration;
 				};
 
 

@@ -39,18 +39,18 @@ void GetCallerIdentityResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["AccountId"].isNull())
-		accountId_ = value["AccountId"].asString();
-	if(!value["UserId"].isNull())
-		userId_ = value["UserId"].asString();
-	if(!value["RoleId"].isNull())
-		roleId_ = value["RoleId"].asString();
-	if(!value["Arn"].isNull())
-		arn_ = value["Arn"].asString();
 	if(!value["IdentityType"].isNull())
 		identityType_ = value["IdentityType"].asString();
+	if(!value["AccountId"].isNull())
+		accountId_ = value["AccountId"].asString();
 	if(!value["PrincipalId"].isNull())
 		principalId_ = value["PrincipalId"].asString();
+	if(!value["UserId"].isNull())
+		userId_ = value["UserId"].asString();
+	if(!value["Arn"].isNull())
+		arn_ = value["Arn"].asString();
+	if(!value["RoleId"].isNull())
+		roleId_ = value["RoleId"].asString();
 
 }
 

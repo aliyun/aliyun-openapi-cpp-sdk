@@ -14,31 +14,38 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/sts/model/AssumeRoleResult.h>
+#include <alibabacloud/sts/model/AssumeRoleWithOIDCResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Sts;
 using namespace AlibabaCloud::Sts::Model;
 
-AssumeRoleResult::AssumeRoleResult() :
+AssumeRoleWithOIDCResult::AssumeRoleWithOIDCResult() :
 	ServiceResult()
 {}
 
-AssumeRoleResult::AssumeRoleResult(const std::string &payload) :
+AssumeRoleWithOIDCResult::AssumeRoleWithOIDCResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-AssumeRoleResult::~AssumeRoleResult()
+AssumeRoleWithOIDCResult::~AssumeRoleWithOIDCResult()
 {}
 
-void AssumeRoleResult::parse(const std::string &payload)
+void AssumeRoleWithOIDCResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto oIDCTokenInfoNode = value["OIDCTokenInfo"];
+	if(!oIDCTokenInfoNode["Subject"].isNull())
+		oIDCTokenInfo_.subject = oIDCTokenInfoNode["Subject"].asString();
+	if(!oIDCTokenInfoNode["Issuer"].isNull())
+		oIDCTokenInfo_.issuer = oIDCTokenInfoNode["Issuer"].asString();
+	if(!oIDCTokenInfoNode["ClientIds"].isNull())
+		oIDCTokenInfo_.clientIds = oIDCTokenInfoNode["ClientIds"].asString();
 	auto assumedRoleUserNode = value["AssumedRoleUser"];
 	if(!assumedRoleUserNode["AssumedRoleId"].isNull())
 		assumedRoleUser_.assumedRoleId = assumedRoleUserNode["AssumedRoleId"].asString();
@@ -56,12 +63,17 @@ void AssumeRoleResult::parse(const std::string &payload)
 
 }
 
-AssumeRoleResult::AssumedRoleUser AssumeRoleResult::getAssumedRoleUser()const
+AssumeRoleWithOIDCResult::OIDCTokenInfo AssumeRoleWithOIDCResult::getOIDCTokenInfo()const
+{
+	return oIDCTokenInfo_;
+}
+
+AssumeRoleWithOIDCResult::AssumedRoleUser AssumeRoleWithOIDCResult::getAssumedRoleUser()const
 {
 	return assumedRoleUser_;
 }
 
-AssumeRoleResult::Credentials AssumeRoleResult::getCredentials()const
+AssumeRoleWithOIDCResult::Credentials AssumeRoleWithOIDCResult::getCredentials()const
 {
 	return credentials_;
 }
