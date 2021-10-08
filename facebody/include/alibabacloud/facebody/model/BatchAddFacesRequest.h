@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_FACEBODY_MODEL_SEARCHFACEREQUEST_H_
-#define ALIBABACLOUD_FACEBODY_MODEL_SEARCHFACEREQUEST_H_
+#ifndef ALIBABACLOUD_FACEBODY_MODEL_BATCHADDFACESREQUEST_H_
+#define ALIBABACLOUD_FACEBODY_MODEL_BATCHADDFACESREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,36 +28,36 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_FACEBODY_EXPORT SearchFaceRequest : public RpcServiceRequest
+			class ALIBABACLOUD_FACEBODY_EXPORT BatchAddFacesRequest : public RpcServiceRequest
 			{
 
 			public:
-				SearchFaceRequest();
-				~SearchFaceRequest();
+				BatchAddFacesRequest();
+				~BatchAddFacesRequest();
 
-				long getMaxFaceNum()const;
-				void setMaxFaceNum(long maxFaceNum);
+				std::string getEntityId()const;
+				void setEntityId(const std::string& entityId);
 				float getQualityScoreThreshold()const;
 				void setQualityScoreThreshold(float qualityScoreThreshold);
-				int getLimit()const;
-				void setLimit(int limit);
-				std::string getDbNames()const;
-				void setDbNames(const std::string& dbNames);
+				float getSimilarityScoreThresholdBetweenEntity()const;
+				void setSimilarityScoreThresholdBetweenEntity(float similarityScoreThresholdBetweenEntity);
+				float getSimilarityScoreThresholdInEntity()const;
+				void setSimilarityScoreThresholdInEntity(float similarityScoreThresholdInEntity);
 				std::string getDbName()const;
 				void setDbName(const std::string& dbName);
-				std::string getImageUrl()const;
-				void setImageUrl(const std::string& imageUrl);
+				Array getFaces()const;
+				void setFaces(const Array& faces);
 
             private:
-				long maxFaceNum_;
+				std::string entityId_;
 				float qualityScoreThreshold_;
-				int limit_;
-				std::string dbNames_;
+				float similarityScoreThresholdBetweenEntity_;
+				float similarityScoreThresholdInEntity_;
 				std::string dbName_;
-				std::string imageUrl_;
+				Array faces_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_FACEBODY_MODEL_SEARCHFACEREQUEST_H_
+#endif // !ALIBABACLOUD_FACEBODY_MODEL_BATCHADDFACESREQUEST_H_

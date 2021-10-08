@@ -1,3 +1,6 @@
+2021-10-08 Version: 1.36.891
+- Release SearchFace BatchAddFaces.
+
 2021-09-29 Version: 1.36.890
 - Supported AssumeRoleWithOIDC.
 

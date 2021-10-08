@@ -27,6 +27,17 @@ SearchFaceRequest::SearchFaceRequest() :
 SearchFaceRequest::~SearchFaceRequest()
 {}
 
+long SearchFaceRequest::getMaxFaceNum()const
+{
+	return maxFaceNum_;
+}
+
+void SearchFaceRequest::setMaxFaceNum(long maxFaceNum)
+{
+	maxFaceNum_ = maxFaceNum;
+	setBodyParameter("MaxFaceNum", std::to_string(maxFaceNum));
+}
+
 float SearchFaceRequest::getQualityScoreThreshold()const
 {
 	return qualityScoreThreshold_;

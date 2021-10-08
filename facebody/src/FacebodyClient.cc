@@ -195,6 +195,42 @@ FacebodyClient::AddFaceImageTemplateOutcomeCallable FacebodyClient::addFaceImage
 	return task->get_future();
 }
 
+FacebodyClient::BatchAddFacesOutcome FacebodyClient::batchAddFaces(const BatchAddFacesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return BatchAddFacesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return BatchAddFacesOutcome(BatchAddFacesResult(outcome.result()));
+	else
+		return BatchAddFacesOutcome(outcome.error());
+}
+
+void FacebodyClient::batchAddFacesAsync(const BatchAddFacesRequest& request, const BatchAddFacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, batchAddFaces(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+FacebodyClient::BatchAddFacesOutcomeCallable FacebodyClient::batchAddFacesCallable(const BatchAddFacesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<BatchAddFacesOutcome()>>(
+			[this, request]()
+			{
+			return this->batchAddFaces(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 FacebodyClient::BeautifyBodyOutcome FacebodyClient::beautifyBody(const BeautifyBodyRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

@@ -35,13 +35,25 @@ namespace AlibabaCloud
 				DetectFaceRequest();
 				~DetectFaceRequest();
 
+				long getMaxFaceNumber()const;
+				void setMaxFaceNumber(long maxFaceNumber);
+				bool getLandmark()const;
+				void setLandmark(bool landmark);
 				int getImageType()const;
 				void setImageType(int imageType);
+				bool getPose()const;
+				void setPose(bool pose);
+				bool getQuality()const;
+				void setQuality(bool quality);
 				std::string getImageURL()const;
 				void setImageURL(const std::string& imageURL);
 
             private:
+				long maxFaceNumber_;
+				bool landmark_;
 				int imageType_;
+				bool pose_;
+				bool quality_;
 				std::string imageURL_;
 
 			};

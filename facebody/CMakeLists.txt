@@ -29,6 +29,8 @@ set(facebody_public_header_model
 	include/alibabacloud/facebody/model/AddFaceEntityResult.h
 	include/alibabacloud/facebody/model/AddFaceImageTemplateRequest.h
 	include/alibabacloud/facebody/model/AddFaceImageTemplateResult.h
+	include/alibabacloud/facebody/model/BatchAddFacesRequest.h
+	include/alibabacloud/facebody/model/BatchAddFacesResult.h
 	include/alibabacloud/facebody/model/BeautifyBodyRequest.h
 	include/alibabacloud/facebody/model/BeautifyBodyResult.h
 	include/alibabacloud/facebody/model/BlurFaceRequest.h
@@ -160,6 +162,8 @@ set(facebody_src
 	src/model/AddFaceEntityResult.cc
 	src/model/AddFaceImageTemplateRequest.cc
 	src/model/AddFaceImageTemplateResult.cc
+	src/model/BatchAddFacesRequest.cc
+	src/model/BatchAddFacesResult.cc
 	src/model/BeautifyBodyRequest.cc
 	src/model/BeautifyBodyResult.cc
 	src/model/BlurFaceRequest.cc

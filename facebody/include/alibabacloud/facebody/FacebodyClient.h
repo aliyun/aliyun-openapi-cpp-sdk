@@ -30,6 +30,8 @@
 #include "model/AddFaceEntityResult.h"
 #include "model/AddFaceImageTemplateRequest.h"
 #include "model/AddFaceImageTemplateResult.h"
+#include "model/BatchAddFacesRequest.h"
+#include "model/BatchAddFacesResult.h"
 #include "model/BeautifyBodyRequest.h"
 #include "model/BeautifyBodyResult.h"
 #include "model/BlurFaceRequest.h"
@@ -171,6 +173,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AddFaceImageTemplateResult> AddFaceImageTemplateOutcome;
 			typedef std::future<AddFaceImageTemplateOutcome> AddFaceImageTemplateOutcomeCallable;
 			typedef std::function<void(const FacebodyClient*, const Model::AddFaceImageTemplateRequest&, const AddFaceImageTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddFaceImageTemplateAsyncHandler;
+			typedef Outcome<Error, Model::BatchAddFacesResult> BatchAddFacesOutcome;
+			typedef std::future<BatchAddFacesOutcome> BatchAddFacesOutcomeCallable;
+			typedef std::function<void(const FacebodyClient*, const Model::BatchAddFacesRequest&, const BatchAddFacesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchAddFacesAsyncHandler;
 			typedef Outcome<Error, Model::BeautifyBodyResult> BeautifyBodyOutcome;
 			typedef std::future<BeautifyBodyOutcome> BeautifyBodyOutcomeCallable;
 			typedef std::function<void(const FacebodyClient*, const Model::BeautifyBodyRequest&, const BeautifyBodyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BeautifyBodyAsyncHandler;
@@ -368,6 +373,9 @@ namespace AlibabaCloud
 			AddFaceImageTemplateOutcome addFaceImageTemplate(const Model::AddFaceImageTemplateRequest &request)const;
 			void addFaceImageTemplateAsync(const Model::AddFaceImageTemplateRequest& request, const AddFaceImageTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddFaceImageTemplateOutcomeCallable addFaceImageTemplateCallable(const Model::AddFaceImageTemplateRequest& request) const;
+			BatchAddFacesOutcome batchAddFaces(const Model::BatchAddFacesRequest &request)const;
+			void batchAddFacesAsync(const Model::BatchAddFacesRequest& request, const BatchAddFacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			BatchAddFacesOutcomeCallable batchAddFacesCallable(const Model::BatchAddFacesRequest& request) const;
 			BeautifyBodyOutcome beautifyBody(const Model::BeautifyBodyRequest &request)const;
 			void beautifyBodyAsync(const Model::BeautifyBodyRequest& request, const BeautifyBodyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			BeautifyBodyOutcomeCallable beautifyBodyCallable(const Model::BeautifyBodyRequest& request) const;

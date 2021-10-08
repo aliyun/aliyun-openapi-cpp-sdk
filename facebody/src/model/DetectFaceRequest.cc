@@ -27,6 +27,28 @@ DetectFaceRequest::DetectFaceRequest() :
 DetectFaceRequest::~DetectFaceRequest()
 {}
 
+long DetectFaceRequest::getMaxFaceNumber()const
+{
+	return maxFaceNumber_;
+}
+
+void DetectFaceRequest::setMaxFaceNumber(long maxFaceNumber)
+{
+	maxFaceNumber_ = maxFaceNumber;
+	setBodyParameter("MaxFaceNumber", std::to_string(maxFaceNumber));
+}
+
+bool DetectFaceRequest::getLandmark()const
+{
+	return landmark_;
+}
+
+void DetectFaceRequest::setLandmark(bool landmark)
+{
+	landmark_ = landmark;
+	setBodyParameter("Landmark", landmark ? "true" : "false");
+}
+
 int DetectFaceRequest::getImageType()const
 {
 	return imageType_;
@@ -36,6 +58,28 @@ void DetectFaceRequest::setImageType(int imageType)
 {
 	imageType_ = imageType;
 	setBodyParameter("ImageType", std::to_string(imageType));
+}
+
+bool DetectFaceRequest::getPose()const
+{
+	return pose_;
+}
+
+void DetectFaceRequest::setPose(bool pose)
+{
+	pose_ = pose;
+	setBodyParameter("Pose", pose ? "true" : "false");
+}
+
+bool DetectFaceRequest::getQuality()const
+{
+	return quality_;
+}
+
+void DetectFaceRequest::setQuality(bool quality)
+{
+	quality_ = quality;
+	setBodyParameter("Quality", quality ? "true" : "false");
 }
 
 std::string DetectFaceRequest::getImageURL()const
