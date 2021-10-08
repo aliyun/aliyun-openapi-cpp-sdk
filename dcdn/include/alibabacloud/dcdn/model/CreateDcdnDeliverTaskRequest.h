@@ -47,8 +47,6 @@ namespace AlibabaCloud
 				void setSchedule(const std::string& schedule);
 				std::string getName()const;
 				void setName(const std::string& name);
-				std::string getStatus()const;
-				void setStatus(const std::string& status);
 
             private:
 				std::string reports_;
@@ -57,7 +55,6 @@ namespace AlibabaCloud
 				long ownerId_;
 				std::string schedule_;
 				std::string name_;
-				std::string status_;
 
 			};
 		}

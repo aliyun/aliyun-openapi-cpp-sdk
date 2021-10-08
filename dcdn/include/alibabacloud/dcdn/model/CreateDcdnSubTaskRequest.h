@@ -35,26 +35,17 @@ namespace AlibabaCloud
 				CreateDcdnSubTaskRequest();
 				~CreateDcdnSubTaskRequest();
 
-				std::string getStartTime()const;
-				void setStartTime(const std::string& startTime);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
-				std::string getEndTime()const;
-				void setEndTime(const std::string& endTime);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getReportIds()const;
 				void setReportIds(const std::string& reportIds);
-				std::string getStatus()const;
-				void setStatus(const std::string& status);
 
             private:
-				std::string startTime_;
 				std::string domainName_;
-				std::string endTime_;
 				long ownerId_;
 				std::string reportIds_;
-				std::string status_;
 
 			};
 		}

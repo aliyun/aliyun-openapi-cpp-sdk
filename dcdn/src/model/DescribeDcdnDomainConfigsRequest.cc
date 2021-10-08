@@ -71,3 +71,14 @@ void DescribeDcdnDomainConfigsRequest::setSecurityToken(const std::string& secur
 	setParameter("SecurityToken", securityToken);
 }
 
+std::string DescribeDcdnDomainConfigsRequest::getConfigId()const
+{
+	return configId_;
+}
+
+void DescribeDcdnDomainConfigsRequest::setConfigId(const std::string& configId)
+{
+	configId_ = configId;
+	setParameter("ConfigId", configId);
+}
+

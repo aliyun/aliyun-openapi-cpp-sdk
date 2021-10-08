@@ -47,7 +47,6 @@ namespace AlibabaCloud
 					std::string resourceGroupId;
 					std::string domainName;
 					std::string gmtModified;
-					std::string cdnType;
 					std::string gmtCreated;
 					std::vector<PageData::Source> sources;
 					std::string cname;

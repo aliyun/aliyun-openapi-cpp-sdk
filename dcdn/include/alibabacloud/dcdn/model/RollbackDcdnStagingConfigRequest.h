@@ -35,15 +35,12 @@ namespace AlibabaCloud
 				RollbackDcdnStagingConfigRequest();
 				~RollbackDcdnStagingConfigRequest();
 
-				std::string getFunctionName()const;
-				void setFunctionName(const std::string& functionName);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 
             private:
-				std::string functionName_;
 				std::string domainName_;
 				long ownerId_;
 

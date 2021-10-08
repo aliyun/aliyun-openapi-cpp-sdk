@@ -60,6 +60,28 @@ void DescribeDcdnUserDomainsByFuncRequest::setPageSize(int pageSize)
 	setParameter("PageSize", std::to_string(pageSize));
 }
 
+std::string DescribeDcdnUserDomainsByFuncRequest::getFuncFilter()const
+{
+	return funcFilter_;
+}
+
+void DescribeDcdnUserDomainsByFuncRequest::setFuncFilter(const std::string& funcFilter)
+{
+	funcFilter_ = funcFilter;
+	setParameter("FuncFilter", funcFilter);
+}
+
+std::string DescribeDcdnUserDomainsByFuncRequest::getDomainName()const
+{
+	return domainName_;
+}
+
+void DescribeDcdnUserDomainsByFuncRequest::setDomainName(const std::string& domainName)
+{
+	domainName_ = domainName;
+	setParameter("DomainName", domainName);
+}
+
 long DescribeDcdnUserDomainsByFuncRequest::getOwnerId()const
 {
 	return ownerId_;

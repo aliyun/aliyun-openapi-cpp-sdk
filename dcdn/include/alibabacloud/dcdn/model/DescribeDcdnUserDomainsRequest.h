@@ -57,6 +57,8 @@ namespace AlibabaCloud
 				void setTag(const std::vector<Tag>& tag);
 				std::string getFuncFilter()const;
 				void setFuncFilter(const std::string& funcFilter);
+				std::string getCoverage()const;
+				void setCoverage(const std::string& coverage);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
 				long getOwnerId()const;
@@ -79,6 +81,7 @@ namespace AlibabaCloud
 				int pageSize_;
 				std::vector<Tag> tag_;
 				std::string funcFilter_;
+				std::string coverage_;
 				std::string domainName_;
 				long ownerId_;
 				std::string funcId_;

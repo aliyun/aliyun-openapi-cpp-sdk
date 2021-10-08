@@ -47,8 +47,6 @@ void DescribeDcdnUserDomainsByFuncResult::parse(const std::string &payload)
 			domainsObject.domainName = valueDomainsPageData["DomainName"].asString();
 		if(!valueDomainsPageData["Cname"].isNull())
 			domainsObject.cname = valueDomainsPageData["Cname"].asString();
-		if(!valueDomainsPageData["CdnType"].isNull())
-			domainsObject.cdnType = valueDomainsPageData["CdnType"].asString();
 		if(!valueDomainsPageData["DomainStatus"].isNull())
 			domainsObject.domainStatus = valueDomainsPageData["DomainStatus"].asString();
 		if(!valueDomainsPageData["GmtCreated"].isNull())

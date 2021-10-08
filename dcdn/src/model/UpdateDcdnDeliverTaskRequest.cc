@@ -104,14 +104,3 @@ void UpdateDcdnDeliverTaskRequest::setName(const std::string& name)
 	setBodyParameter("Name", name);
 }
 
-std::string UpdateDcdnDeliverTaskRequest::getStatus()const
-{
-	return status_;
-}
-
-void UpdateDcdnDeliverTaskRequest::setStatus(const std::string& status)
-{
-	status_ = status;
-	setBodyParameter("Status", status);
-}
-

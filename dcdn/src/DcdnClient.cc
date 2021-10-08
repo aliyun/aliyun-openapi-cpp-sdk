@@ -375,6 +375,42 @@ DcdnClient::BatchStopDcdnDomainOutcomeCallable DcdnClient::batchStopDcdnDomainCa
 	return task->get_future();
 }
 
+DcdnClient::CommitStagingRoutineCodeOutcome DcdnClient::commitStagingRoutineCode(const CommitStagingRoutineCodeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CommitStagingRoutineCodeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CommitStagingRoutineCodeOutcome(CommitStagingRoutineCodeResult(outcome.result()));
+	else
+		return CommitStagingRoutineCodeOutcome(outcome.error());
+}
+
+void DcdnClient::commitStagingRoutineCodeAsync(const CommitStagingRoutineCodeRequest& request, const CommitStagingRoutineCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, commitStagingRoutineCode(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::CommitStagingRoutineCodeOutcomeCallable DcdnClient::commitStagingRoutineCodeCallable(const CommitStagingRoutineCodeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CommitStagingRoutineCodeOutcome()>>(
+			[this, request]()
+			{
+			return this->commitStagingRoutineCode(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DcdnClient::CreateDcdnCertificateSigningRequestOutcome DcdnClient::createDcdnCertificateSigningRequest(const CreateDcdnCertificateSigningRequestRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -513,6 +549,42 @@ DcdnClient::CreateDcdnSubTaskOutcomeCallable DcdnClient::createDcdnSubTaskCallab
 			[this, request]()
 			{
 			return this->createDcdnSubTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::CreateRoutineOutcome DcdnClient::createRoutine(const CreateRoutineRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateRoutineOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateRoutineOutcome(CreateRoutineResult(outcome.result()));
+	else
+		return CreateRoutineOutcome(outcome.error());
+}
+
+void DcdnClient::createRoutineAsync(const CreateRoutineRequest& request, const CreateRoutineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createRoutine(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::CreateRoutineOutcomeCallable DcdnClient::createRoutineCallable(const CreateRoutineRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateRoutineOutcome()>>(
+			[this, request]()
+			{
+			return this->createRoutine(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -771,6 +843,114 @@ DcdnClient::DeleteDcdnSubTaskOutcomeCallable DcdnClient::deleteDcdnSubTaskCallab
 	return task->get_future();
 }
 
+DcdnClient::DeleteRoutineOutcome DcdnClient::deleteRoutine(const DeleteRoutineRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteRoutineOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteRoutineOutcome(DeleteRoutineResult(outcome.result()));
+	else
+		return DeleteRoutineOutcome(outcome.error());
+}
+
+void DcdnClient::deleteRoutineAsync(const DeleteRoutineRequest& request, const DeleteRoutineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteRoutine(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DeleteRoutineOutcomeCallable DcdnClient::deleteRoutineCallable(const DeleteRoutineRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteRoutineOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteRoutine(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::DeleteRoutineCodeRevisionOutcome DcdnClient::deleteRoutineCodeRevision(const DeleteRoutineCodeRevisionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteRoutineCodeRevisionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteRoutineCodeRevisionOutcome(DeleteRoutineCodeRevisionResult(outcome.result()));
+	else
+		return DeleteRoutineCodeRevisionOutcome(outcome.error());
+}
+
+void DcdnClient::deleteRoutineCodeRevisionAsync(const DeleteRoutineCodeRevisionRequest& request, const DeleteRoutineCodeRevisionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteRoutineCodeRevision(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DeleteRoutineCodeRevisionOutcomeCallable DcdnClient::deleteRoutineCodeRevisionCallable(const DeleteRoutineCodeRevisionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteRoutineCodeRevisionOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteRoutineCodeRevision(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::DeleteRoutineConfEnvsOutcome DcdnClient::deleteRoutineConfEnvs(const DeleteRoutineConfEnvsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteRoutineConfEnvsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteRoutineConfEnvsOutcome(DeleteRoutineConfEnvsResult(outcome.result()));
+	else
+		return DeleteRoutineConfEnvsOutcome(outcome.error());
+}
+
+void DcdnClient::deleteRoutineConfEnvsAsync(const DeleteRoutineConfEnvsRequest& request, const DeleteRoutineConfEnvsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteRoutineConfEnvs(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DeleteRoutineConfEnvsOutcomeCallable DcdnClient::deleteRoutineConfEnvsCallable(const DeleteRoutineConfEnvsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteRoutineConfEnvsOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteRoutineConfEnvs(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DcdnClient::DescribeDcdnBgpBpsDataOutcome DcdnClient::describeDcdnBgpBpsData(const DescribeDcdnBgpBpsDataRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -987,6 +1167,42 @@ DcdnClient::DescribeDcdnConfigOfVersionOutcomeCallable DcdnClient::describeDcdnC
 	return task->get_future();
 }
 
+DcdnClient::DescribeDcdnDeletedDomainsOutcome DcdnClient::describeDcdnDeletedDomains(const DescribeDcdnDeletedDomainsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDcdnDeletedDomainsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDcdnDeletedDomainsOutcome(DescribeDcdnDeletedDomainsResult(outcome.result()));
+	else
+		return DescribeDcdnDeletedDomainsOutcome(outcome.error());
+}
+
+void DcdnClient::describeDcdnDeletedDomainsAsync(const DescribeDcdnDeletedDomainsRequest& request, const DescribeDcdnDeletedDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDcdnDeletedDomains(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DescribeDcdnDeletedDomainsOutcomeCallable DcdnClient::describeDcdnDeletedDomainsCallable(const DescribeDcdnDeletedDomainsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDcdnDeletedDomainsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDcdnDeletedDomains(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DcdnClient::DescribeDcdnDeliverListOutcome DcdnClient::describeDcdnDeliverList(const DescribeDcdnDeliverListRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1089,6 +1305,42 @@ DcdnClient::DescribeDcdnDomainByCertificateOutcomeCallable DcdnClient::describeD
 			[this, request]()
 			{
 			return this->describeDcdnDomainByCertificate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::DescribeDcdnDomainCcActivityLogOutcome DcdnClient::describeDcdnDomainCcActivityLog(const DescribeDcdnDomainCcActivityLogRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDcdnDomainCcActivityLogOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDcdnDomainCcActivityLogOutcome(DescribeDcdnDomainCcActivityLogResult(outcome.result()));
+	else
+		return DescribeDcdnDomainCcActivityLogOutcome(outcome.error());
+}
+
+void DcdnClient::describeDcdnDomainCcActivityLogAsync(const DescribeDcdnDomainCcActivityLogRequest& request, const DescribeDcdnDomainCcActivityLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDcdnDomainCcActivityLog(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DescribeDcdnDomainCcActivityLogOutcomeCallable DcdnClient::describeDcdnDomainCcActivityLogCallable(const DescribeDcdnDomainCcActivityLogRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDcdnDomainCcActivityLogOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDcdnDomainCcActivityLog(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2205,6 +2457,42 @@ DcdnClient::DescribeDcdnDomainTrafficDataOutcomeCallable DcdnClient::describeDcd
 			[this, request]()
 			{
 			return this->describeDcdnDomainTrafficData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::DescribeDcdnDomainUsageDataOutcome DcdnClient::describeDcdnDomainUsageData(const DescribeDcdnDomainUsageDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDcdnDomainUsageDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDcdnDomainUsageDataOutcome(DescribeDcdnDomainUsageDataResult(outcome.result()));
+	else
+		return DescribeDcdnDomainUsageDataOutcome(outcome.error());
+}
+
+void DcdnClient::describeDcdnDomainUsageDataAsync(const DescribeDcdnDomainUsageDataRequest& request, const DescribeDcdnDomainUsageDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDcdnDomainUsageData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DescribeDcdnDomainUsageDataOutcomeCallable DcdnClient::describeDcdnDomainUsageDataCallable(const DescribeDcdnDomainUsageDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDcdnDomainUsageDataOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDcdnDomainUsageData(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3543,6 +3831,222 @@ DcdnClient::DescribeDcdnWafDomainOutcomeCallable DcdnClient::describeDcdnWafDoma
 	return task->get_future();
 }
 
+DcdnClient::DescribeDcdnsecServiceOutcome DcdnClient::describeDcdnsecService(const DescribeDcdnsecServiceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDcdnsecServiceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDcdnsecServiceOutcome(DescribeDcdnsecServiceResult(outcome.result()));
+	else
+		return DescribeDcdnsecServiceOutcome(outcome.error());
+}
+
+void DcdnClient::describeDcdnsecServiceAsync(const DescribeDcdnsecServiceRequest& request, const DescribeDcdnsecServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDcdnsecService(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DescribeDcdnsecServiceOutcomeCallable DcdnClient::describeDcdnsecServiceCallable(const DescribeDcdnsecServiceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDcdnsecServiceOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDcdnsecService(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::DescribeRoutineOutcome DcdnClient::describeRoutine(const DescribeRoutineRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeRoutineOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeRoutineOutcome(DescribeRoutineResult(outcome.result()));
+	else
+		return DescribeRoutineOutcome(outcome.error());
+}
+
+void DcdnClient::describeRoutineAsync(const DescribeRoutineRequest& request, const DescribeRoutineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeRoutine(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DescribeRoutineOutcomeCallable DcdnClient::describeRoutineCallable(const DescribeRoutineRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeRoutineOutcome()>>(
+			[this, request]()
+			{
+			return this->describeRoutine(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::DescribeRoutineCanaryEnvsOutcome DcdnClient::describeRoutineCanaryEnvs(const DescribeRoutineCanaryEnvsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeRoutineCanaryEnvsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeRoutineCanaryEnvsOutcome(DescribeRoutineCanaryEnvsResult(outcome.result()));
+	else
+		return DescribeRoutineCanaryEnvsOutcome(outcome.error());
+}
+
+void DcdnClient::describeRoutineCanaryEnvsAsync(const DescribeRoutineCanaryEnvsRequest& request, const DescribeRoutineCanaryEnvsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeRoutineCanaryEnvs(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DescribeRoutineCanaryEnvsOutcomeCallable DcdnClient::describeRoutineCanaryEnvsCallable(const DescribeRoutineCanaryEnvsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeRoutineCanaryEnvsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeRoutineCanaryEnvs(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::DescribeRoutineCodeRevisionOutcome DcdnClient::describeRoutineCodeRevision(const DescribeRoutineCodeRevisionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeRoutineCodeRevisionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeRoutineCodeRevisionOutcome(DescribeRoutineCodeRevisionResult(outcome.result()));
+	else
+		return DescribeRoutineCodeRevisionOutcome(outcome.error());
+}
+
+void DcdnClient::describeRoutineCodeRevisionAsync(const DescribeRoutineCodeRevisionRequest& request, const DescribeRoutineCodeRevisionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeRoutineCodeRevision(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DescribeRoutineCodeRevisionOutcomeCallable DcdnClient::describeRoutineCodeRevisionCallable(const DescribeRoutineCodeRevisionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeRoutineCodeRevisionOutcome()>>(
+			[this, request]()
+			{
+			return this->describeRoutineCodeRevision(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::DescribeRoutineSpecOutcome DcdnClient::describeRoutineSpec(const DescribeRoutineSpecRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeRoutineSpecOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeRoutineSpecOutcome(DescribeRoutineSpecResult(outcome.result()));
+	else
+		return DescribeRoutineSpecOutcome(outcome.error());
+}
+
+void DcdnClient::describeRoutineSpecAsync(const DescribeRoutineSpecRequest& request, const DescribeRoutineSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeRoutineSpec(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DescribeRoutineSpecOutcomeCallable DcdnClient::describeRoutineSpecCallable(const DescribeRoutineSpecRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeRoutineSpecOutcome()>>(
+			[this, request]()
+			{
+			return this->describeRoutineSpec(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::DescribeRoutineUserInfoOutcome DcdnClient::describeRoutineUserInfo(const DescribeRoutineUserInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeRoutineUserInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeRoutineUserInfoOutcome(DescribeRoutineUserInfoResult(outcome.result()));
+	else
+		return DescribeRoutineUserInfoOutcome(outcome.error());
+}
+
+void DcdnClient::describeRoutineUserInfoAsync(const DescribeRoutineUserInfoRequest& request, const DescribeRoutineUserInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeRoutineUserInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DescribeRoutineUserInfoOutcomeCallable DcdnClient::describeRoutineUserInfoCallable(const DescribeRoutineUserInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeRoutineUserInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->describeRoutineUserInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DcdnClient::DescribeUserDcdnIpaStatusOutcome DcdnClient::describeUserDcdnIpaStatus(const DescribeUserDcdnIpaStatusRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3759,6 +4263,42 @@ DcdnClient::DisableDcdnOfflineLogDeliveryOutcomeCallable DcdnClient::disableDcdn
 	return task->get_future();
 }
 
+DcdnClient::EditRoutineConfOutcome DcdnClient::editRoutineConf(const EditRoutineConfRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return EditRoutineConfOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return EditRoutineConfOutcome(EditRoutineConfResult(outcome.result()));
+	else
+		return EditRoutineConfOutcome(outcome.error());
+}
+
+void DcdnClient::editRoutineConfAsync(const EditRoutineConfRequest& request, const EditRoutineConfAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, editRoutineConf(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::EditRoutineConfOutcomeCallable DcdnClient::editRoutineConfCallable(const EditRoutineConfRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<EditRoutineConfOutcome()>>(
+			[this, request]()
+			{
+			return this->editRoutineConf(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DcdnClient::EnableDcdnDomainOfflineLogDeliveryOutcome DcdnClient::enableDcdnDomainOfflineLogDelivery(const EnableDcdnDomainOfflineLogDeliveryRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3933,6 +4473,42 @@ DcdnClient::PublishDcdnStagingConfigToProductionOutcomeCallable DcdnClient::publ
 			[this, request]()
 			{
 			return this->publishDcdnStagingConfigToProduction(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::PublishRoutineCodeRevisionOutcome DcdnClient::publishRoutineCodeRevision(const PublishRoutineCodeRevisionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return PublishRoutineCodeRevisionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return PublishRoutineCodeRevisionOutcome(PublishRoutineCodeRevisionResult(outcome.result()));
+	else
+		return PublishRoutineCodeRevisionOutcome(outcome.error());
+}
+
+void DcdnClient::publishRoutineCodeRevisionAsync(const PublishRoutineCodeRevisionRequest& request, const PublishRoutineCodeRevisionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, publishRoutineCodeRevision(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::PublishRoutineCodeRevisionOutcomeCallable DcdnClient::publishRoutineCodeRevisionCallable(const PublishRoutineCodeRevisionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<PublishRoutineCodeRevisionOutcome()>>(
+			[this, request]()
+			{
+			return this->publishRoutineCodeRevision(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4149,6 +4725,78 @@ DcdnClient::SetDcdnDomainStagingConfigOutcomeCallable DcdnClient::setDcdnDomainS
 			[this, request]()
 			{
 			return this->setDcdnDomainStagingConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::SetDcdnUserConfigOutcome DcdnClient::setDcdnUserConfig(const SetDcdnUserConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetDcdnUserConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetDcdnUserConfigOutcome(SetDcdnUserConfigResult(outcome.result()));
+	else
+		return SetDcdnUserConfigOutcome(outcome.error());
+}
+
+void DcdnClient::setDcdnUserConfigAsync(const SetDcdnUserConfigRequest& request, const SetDcdnUserConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setDcdnUserConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::SetDcdnUserConfigOutcomeCallable DcdnClient::setDcdnUserConfigCallable(const SetDcdnUserConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetDcdnUserConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->setDcdnUserConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::SetRoutineSubdomainOutcome DcdnClient::setRoutineSubdomain(const SetRoutineSubdomainRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetRoutineSubdomainOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetRoutineSubdomainOutcome(SetRoutineSubdomainResult(outcome.result()));
+	else
+		return SetRoutineSubdomainOutcome(outcome.error());
+}
+
+void DcdnClient::setRoutineSubdomainAsync(const SetRoutineSubdomainRequest& request, const SetRoutineSubdomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setRoutineSubdomain(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::SetRoutineSubdomainOutcomeCallable DcdnClient::setRoutineSubdomainCallable(const SetRoutineSubdomainRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetRoutineSubdomainOutcome()>>(
+			[this, request]()
+			{
+			return this->setRoutineSubdomain(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4509,6 +5157,78 @@ DcdnClient::UpdateDcdnSubTaskOutcomeCallable DcdnClient::updateDcdnSubTaskCallab
 			[this, request]()
 			{
 			return this->updateDcdnSubTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::UploadRoutineCodeOutcome DcdnClient::uploadRoutineCode(const UploadRoutineCodeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UploadRoutineCodeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UploadRoutineCodeOutcome(UploadRoutineCodeResult(outcome.result()));
+	else
+		return UploadRoutineCodeOutcome(outcome.error());
+}
+
+void DcdnClient::uploadRoutineCodeAsync(const UploadRoutineCodeRequest& request, const UploadRoutineCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, uploadRoutineCode(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::UploadRoutineCodeOutcomeCallable DcdnClient::uploadRoutineCodeCallable(const UploadRoutineCodeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UploadRoutineCodeOutcome()>>(
+			[this, request]()
+			{
+			return this->uploadRoutineCode(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::UploadStagingRoutineCodeOutcome DcdnClient::uploadStagingRoutineCode(const UploadStagingRoutineCodeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UploadStagingRoutineCodeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UploadStagingRoutineCodeOutcome(UploadStagingRoutineCodeResult(outcome.result()));
+	else
+		return UploadStagingRoutineCodeOutcome(outcome.error());
+}
+
+void DcdnClient::uploadStagingRoutineCodeAsync(const UploadStagingRoutineCodeRequest& request, const UploadStagingRoutineCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, uploadStagingRoutineCode(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::UploadStagingRoutineCodeOutcomeCallable DcdnClient::uploadStagingRoutineCodeCallable(const UploadStagingRoutineCodeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UploadStagingRoutineCodeOutcome()>>(
+			[this, request]()
+			{
+			return this->uploadStagingRoutineCode(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

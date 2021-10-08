@@ -41,6 +41,10 @@ namespace AlibabaCloud
 				void setResourceGroupId(const std::string& resourceGroupId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
+				std::string getFuncFilter()const;
+				void setFuncFilter(const std::string& funcFilter);
+				std::string getDomainName()const;
+				void setDomainName(const std::string& domainName);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				int getFuncId()const;
@@ -50,6 +54,8 @@ namespace AlibabaCloud
 				int pageNumber_;
 				std::string resourceGroupId_;
 				int pageSize_;
+				std::string funcFilter_;
+				std::string domainName_;
 				long ownerId_;
 				int funcId_;
 

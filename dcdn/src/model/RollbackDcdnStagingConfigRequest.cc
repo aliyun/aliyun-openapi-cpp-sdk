@@ -27,17 +27,6 @@ RollbackDcdnStagingConfigRequest::RollbackDcdnStagingConfigRequest() :
 RollbackDcdnStagingConfigRequest::~RollbackDcdnStagingConfigRequest()
 {}
 
-std::string RollbackDcdnStagingConfigRequest::getFunctionName()const
-{
-	return functionName_;
-}
-
-void RollbackDcdnStagingConfigRequest::setFunctionName(const std::string& functionName)
-{
-	functionName_ = functionName;
-	setParameter("FunctionName", functionName);
-}
-
 std::string RollbackDcdnStagingConfigRequest::getDomainName()const
 {
 	return domainName_;

@@ -45,8 +45,6 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getReportIds()const;
 				void setReportIds(const std::string& reportIds);
-				std::string getStatus()const;
-				void setStatus(const std::string& status);
 
             private:
 				std::string startTime_;
@@ -54,7 +52,6 @@ namespace AlibabaCloud
 				std::string endTime_;
 				long ownerId_;
 				std::string reportIds_;
-				std::string status_;
 
 			};
 		}

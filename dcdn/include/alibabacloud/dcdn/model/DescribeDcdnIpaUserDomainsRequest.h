@@ -30,6 +30,12 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_DCDN_EXPORT DescribeDcdnIpaUserDomainsRequest : public RpcServiceRequest
 			{
+			public:
+				struct Tag
+				{
+					std::string value;
+					std::string key;
+				};
 
 			public:
 				DescribeDcdnIpaUserDomainsRequest();
@@ -45,6 +51,8 @@ namespace AlibabaCloud
 				void setSecurityToken(const std::string& securityToken);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
+				std::vector<Tag> getTag()const;
+				void setTag(const std::vector<Tag>& tag);
 				std::string getFuncFilter()const;
 				void setFuncFilter(const std::string& funcFilter);
 				std::string getDomainName()const;
@@ -64,6 +72,7 @@ namespace AlibabaCloud
 				std::string resourceGroupId_;
 				std::string securityToken_;
 				int pageSize_;
+				std::vector<Tag> tag_;
 				std::string funcFilter_;
 				std::string domainName_;
 				long ownerId_;

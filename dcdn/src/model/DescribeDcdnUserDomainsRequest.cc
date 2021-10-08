@@ -120,6 +120,17 @@ void DescribeDcdnUserDomainsRequest::setFuncFilter(const std::string& funcFilter
 	setParameter("FuncFilter", funcFilter);
 }
 
+std::string DescribeDcdnUserDomainsRequest::getCoverage()const
+{
+	return coverage_;
+}
+
+void DescribeDcdnUserDomainsRequest::setCoverage(const std::string& coverage)
+{
+	coverage_ = coverage;
+	setParameter("Coverage", coverage);
+}
+
 std::string DescribeDcdnUserDomainsRequest::getDomainName()const
 {
 	return domainName_;

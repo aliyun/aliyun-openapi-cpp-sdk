@@ -27,17 +27,6 @@ CreateDcdnSubTaskRequest::CreateDcdnSubTaskRequest() :
 CreateDcdnSubTaskRequest::~CreateDcdnSubTaskRequest()
 {}
 
-std::string CreateDcdnSubTaskRequest::getStartTime()const
-{
-	return startTime_;
-}
-
-void CreateDcdnSubTaskRequest::setStartTime(const std::string& startTime)
-{
-	startTime_ = startTime;
-	setBodyParameter("StartTime", startTime);
-}
-
 std::string CreateDcdnSubTaskRequest::getDomainName()const
 {
 	return domainName_;
@@ -47,17 +36,6 @@ void CreateDcdnSubTaskRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
 	setBodyParameter("DomainName", domainName);
-}
-
-std::string CreateDcdnSubTaskRequest::getEndTime()const
-{
-	return endTime_;
-}
-
-void CreateDcdnSubTaskRequest::setEndTime(const std::string& endTime)
-{
-	endTime_ = endTime;
-	setBodyParameter("EndTime", endTime);
 }
 
 long CreateDcdnSubTaskRequest::getOwnerId()const
@@ -80,16 +58,5 @@ void CreateDcdnSubTaskRequest::setReportIds(const std::string& reportIds)
 {
 	reportIds_ = reportIds;
 	setBodyParameter("ReportIds", reportIds);
-}
-
-std::string CreateDcdnSubTaskRequest::getStatus()const
-{
-	return status_;
-}
-
-void CreateDcdnSubTaskRequest::setStatus(const std::string& status)
-{
-	status_ = status;
-	setBodyParameter("Status", status);
 }
 

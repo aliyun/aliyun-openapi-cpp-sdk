@@ -93,14 +93,3 @@ void CreateDcdnDeliverTaskRequest::setName(const std::string& name)
 	setBodyParameter("Name", name);
 }
 
-std::string CreateDcdnDeliverTaskRequest::getStatus()const
-{
-	return status_;
-}
-
-void CreateDcdnDeliverTaskRequest::setStatus(const std::string& status)
-{
-	status_ = status;
-	setBodyParameter("Status", status);
-}
-

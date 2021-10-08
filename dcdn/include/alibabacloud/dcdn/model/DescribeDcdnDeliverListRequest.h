@@ -39,13 +39,10 @@ namespace AlibabaCloud
 				void setDeliverId(long deliverId);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getStatus()const;
-				void setStatus(const std::string& status);
 
             private:
 				long deliverId_;
 				long ownerId_;
-				std::string status_;
 
 			};
 		}
