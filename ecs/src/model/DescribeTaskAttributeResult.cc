@@ -43,12 +43,12 @@ void DescribeTaskAttributeResult::parse(const std::string &payload)
 	for (auto valueOperationProgressSetOperationProgress : allOperationProgressSetNode)
 	{
 		OperationProgress operationProgressSetObject;
-		if(!valueOperationProgressSetOperationProgress["OperationStatus"].isNull())
-			operationProgressSetObject.operationStatus = valueOperationProgressSetOperationProgress["OperationStatus"].asString();
-		if(!valueOperationProgressSetOperationProgress["ErrorCode"].isNull())
-			operationProgressSetObject.errorCode = valueOperationProgressSetOperationProgress["ErrorCode"].asString();
 		if(!valueOperationProgressSetOperationProgress["ErrorMsg"].isNull())
 			operationProgressSetObject.errorMsg = valueOperationProgressSetOperationProgress["ErrorMsg"].asString();
+		if(!valueOperationProgressSetOperationProgress["ErrorCode"].isNull())
+			operationProgressSetObject.errorCode = valueOperationProgressSetOperationProgress["ErrorCode"].asString();
+		if(!valueOperationProgressSetOperationProgress["OperationStatus"].isNull())
+			operationProgressSetObject.operationStatus = valueOperationProgressSetOperationProgress["OperationStatus"].asString();
 		auto allRelatedItemSetNode = valueOperationProgressSetOperationProgress["RelatedItemSet"]["RelatedItem"];
 		for (auto valueOperationProgressSetOperationProgressRelatedItemSetRelatedItem : allRelatedItemSetNode)
 		{
@@ -61,28 +61,28 @@ void DescribeTaskAttributeResult::parse(const std::string &payload)
 		}
 		operationProgressSet_.push_back(operationProgressSetObject);
 	}
-	if(!value["TaskId"].isNull())
-		taskId_ = value["TaskId"].asString();
-	if(!value["RegionId"].isNull())
-		regionId_ = value["RegionId"].asString();
-	if(!value["TaskAction"].isNull())
-		taskAction_ = value["TaskAction"].asString();
-	if(!value["TaskStatus"].isNull())
-		taskStatus_ = value["TaskStatus"].asString();
-	if(!value["TaskProcess"].isNull())
-		taskProcess_ = value["TaskProcess"].asString();
+	if(!value["CreationTime"].isNull())
+		creationTime_ = value["CreationTime"].asString();
 	if(!value["SupportCancel"].isNull())
 		supportCancel_ = value["SupportCancel"].asString();
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
 	if(!value["SuccessCount"].isNull())
 		successCount_ = std::stoi(value["SuccessCount"].asString());
+	if(!value["RegionId"].isNull())
+		regionId_ = value["RegionId"].asString();
+	if(!value["TaskAction"].isNull())
+		taskAction_ = value["TaskAction"].asString();
 	if(!value["FailedCount"].isNull())
 		failedCount_ = std::stoi(value["FailedCount"].asString());
-	if(!value["CreationTime"].isNull())
-		creationTime_ = value["CreationTime"].asString();
+	if(!value["TaskStatus"].isNull())
+		taskStatus_ = value["TaskStatus"].asString();
+	if(!value["TaskProcess"].isNull())
+		taskProcess_ = value["TaskProcess"].asString();
 	if(!value["FinishedTime"].isNull())
 		finishedTime_ = value["FinishedTime"].asString();
+	if(!value["TaskId"].isNull())
+		taskId_ = value["TaskId"].asString();
 
 }
 
@@ -106,14 +106,14 @@ std::vector<DescribeTaskAttributeResult::OperationProgress> DescribeTaskAttribut
 	return operationProgressSet_;
 }
 
-std::string DescribeTaskAttributeResult::getTaskAction()const
-{
-	return taskAction_;
-}
-
 std::string DescribeTaskAttributeResult::getSupportCancel()const
 {
 	return supportCancel_;
+}
+
+std::string DescribeTaskAttributeResult::getTaskAction()const
+{
+	return taskAction_;
 }
 
 std::string DescribeTaskAttributeResult::getCreationTime()const
@@ -131,14 +131,14 @@ std::string DescribeTaskAttributeResult::getRegionId()const
 	return regionId_;
 }
 
-std::string DescribeTaskAttributeResult::getTaskStatus()const
-{
-	return taskStatus_;
-}
-
 int DescribeTaskAttributeResult::getSuccessCount()const
 {
 	return successCount_;
+}
+
+std::string DescribeTaskAttributeResult::getTaskStatus()const
+{
+	return taskStatus_;
 }
 
 std::string DescribeTaskAttributeResult::getFinishedTime()const

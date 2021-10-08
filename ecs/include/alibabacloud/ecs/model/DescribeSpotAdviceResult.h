@@ -38,8 +38,8 @@ namespace AlibabaCloud
 					{
 						std::string interruptRateDesc;
 						std::string instanceType;
-						float interruptionRate;
 						int averageSpotDiscount;
+						float interruptionRate;
 					};
 					std::string zoneId;
 					std::vector<AvailableSpotZone::AvailableSpotResource> availableSpotResources;

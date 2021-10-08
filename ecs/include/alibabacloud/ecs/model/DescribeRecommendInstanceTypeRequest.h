@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,89 +17,83 @@
 #ifndef ALIBABACLOUD_ECS_MODEL_DESCRIBERECOMMENDINSTANCETYPEREQUEST_H_
 #define ALIBABACLOUD_ECS_MODEL_DESCRIBERECOMMENDINSTANCETYPEREQUEST_H_
 
+#include <alibabacloud/ecs/EcsExport.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
-#include <alibabacloud/ecs/EcsExport.h>
+#include <map>
 
-namespace AlibabaCloud
-{
-	namespace Ecs
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_ECS_EXPORT DescribeRecommendInstanceTypeRequest : public RpcServiceRequest
-			{
+namespace AlibabaCloud {
+namespace Ecs {
+namespace Model {
+class ALIBABACLOUD_ECS_EXPORT DescribeRecommendInstanceTypeRequest : public RpcServiceRequest {
+public:
+	DescribeRecommendInstanceTypeRequest();
+	~DescribeRecommendInstanceTypeRequest();
+	long getResourceOwnerId() const;
+	void setResourceOwnerId(long resourceOwnerId);
+	float getMemory() const;
+	void setMemory(float memory);
+	std::string getIoOptimized() const;
+	void setIoOptimized(const std::string &ioOptimized);
+	std::string getNetworkType() const;
+	void setNetworkType(const std::string &networkType);
+	std::string getScene() const;
+	void setScene(const std::string &scene);
+	int getCores() const;
+	void setCores(int cores);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
+	std::string getSystemDiskCategory() const;
+	void setSystemDiskCategory(const std::string &systemDiskCategory);
+	std::string getInstanceType() const;
+	void setInstanceType(const std::string &instanceType);
+	std::string getInstanceChargeType() const;
+	void setInstanceChargeType(const std::string &instanceChargeType);
+	float getMaxPrice() const;
+	void setMaxPrice(float maxPrice);
+	std::string getResourceOwnerAccount() const;
+	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
+	std::string getZoneMatchMode() const;
+	void setZoneMatchMode(const std::string &zoneMatchMode);
+	std::string getOwnerAccount() const;
+	void setOwnerAccount(const std::string &ownerAccount);
+	std::vector<std::string> getInstanceTypeFamily() const;
+	void setInstanceTypeFamily(const std::vector<std::string> &instanceTypeFamily);
+	long getOwnerId() const;
+	void setOwnerId(long ownerId);
+	std::string getSpotStrategy() const;
+	void setSpotStrategy(const std::string &spotStrategy);
+	std::string getPriorityStrategy() const;
+	void setPriorityStrategy(const std::string &priorityStrategy);
+	std::string getInstanceFamilyLevel() const;
+	void setInstanceFamilyLevel(const std::string &instanceFamilyLevel);
+	std::string getZoneId() const;
+	void setZoneId(const std::string &zoneId);
 
-			public:
-				DescribeRecommendInstanceTypeRequest();
-				~DescribeRecommendInstanceTypeRequest();
-
-				long getResourceOwnerId()const;
-				void setResourceOwnerId(long resourceOwnerId);
-				float getMemory()const;
-				void setMemory(float memory);
-				std::string getIoOptimized()const;
-				void setIoOptimized(const std::string& ioOptimized);
-				std::string getNetworkType()const;
-				void setNetworkType(const std::string& networkType);
-				std::string getScene()const;
-				void setScene(const std::string& scene);
-				int getCores()const;
-				void setCores(int cores);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getSystemDiskCategory()const;
-				void setSystemDiskCategory(const std::string& systemDiskCategory);
-				std::string getInstanceType()const;
-				void setInstanceType(const std::string& instanceType);
-				std::string getInstanceChargeType()const;
-				void setInstanceChargeType(const std::string& instanceChargeType);
-				float getMaxPrice()const;
-				void setMaxPrice(float maxPrice);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getZoneMatchMode()const;
-				void setZoneMatchMode(const std::string& zoneMatchMode);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
-				std::vector<std::string> getInstanceTypeFamily()const;
-				void setInstanceTypeFamily(const std::vector<std::string>& instanceTypeFamily);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
-				std::string getSpotStrategy()const;
-				void setSpotStrategy(const std::string& spotStrategy);
-				std::string getPriorityStrategy()const;
-				void setPriorityStrategy(const std::string& priorityStrategy);
-				std::string getInstanceFamilyLevel()const;
-				void setInstanceFamilyLevel(const std::string& instanceFamilyLevel);
-				std::string getZoneId()const;
-				void setZoneId(const std::string& zoneId);
-
-            private:
-				long resourceOwnerId_;
-				float memory_;
-				std::string ioOptimized_;
-				std::string networkType_;
-				std::string scene_;
-				int cores_;
-				std::string regionId_;
-				std::string systemDiskCategory_;
-				std::string instanceType_;
-				std::string instanceChargeType_;
-				float maxPrice_;
-				std::string resourceOwnerAccount_;
-				std::string zoneMatchMode_;
-				std::string ownerAccount_;
-				std::vector<std::string> instanceTypeFamily_;
-				long ownerId_;
-				std::string spotStrategy_;
-				std::string priorityStrategy_;
-				std::string instanceFamilyLevel_;
-				std::string zoneId_;
-
-			};
-		}
-	}
-}
+private:
+	long resourceOwnerId_;
+	float memory_;
+	std::string ioOptimized_;
+	std::string networkType_;
+	std::string scene_;
+	int cores_;
+	std::string regionId_;
+	std::string systemDiskCategory_;
+	std::string instanceType_;
+	std::string instanceChargeType_;
+	float maxPrice_;
+	std::string resourceOwnerAccount_;
+	std::string zoneMatchMode_;
+	std::string ownerAccount_;
+	std::vector<std::string> instanceTypeFamily_;
+	long ownerId_;
+	std::string spotStrategy_;
+	std::string priorityStrategy_;
+	std::string instanceFamilyLevel_;
+	std::string zoneId_;
+};
+} // namespace Model
+} // namespace Ecs
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_ECS_MODEL_DESCRIBERECOMMENDINSTANCETYPEREQUEST_H_

@@ -43,30 +43,30 @@ void DescribeForwardTableEntriesResult::parse(const std::string &payload)
 	for (auto valueForwardTableEntriesForwardTableEntry : allForwardTableEntriesNode)
 	{
 		ForwardTableEntry forwardTableEntriesObject;
-		if(!valueForwardTableEntriesForwardTableEntry["ForwardTableId"].isNull())
-			forwardTableEntriesObject.forwardTableId = valueForwardTableEntriesForwardTableEntry["ForwardTableId"].asString();
+		if(!valueForwardTableEntriesForwardTableEntry["Status"].isNull())
+			forwardTableEntriesObject.status = valueForwardTableEntriesForwardTableEntry["Status"].asString();
 		if(!valueForwardTableEntriesForwardTableEntry["ForwardEntryId"].isNull())
 			forwardTableEntriesObject.forwardEntryId = valueForwardTableEntriesForwardTableEntry["ForwardEntryId"].asString();
-		if(!valueForwardTableEntriesForwardTableEntry["ExternalIp"].isNull())
-			forwardTableEntriesObject.externalIp = valueForwardTableEntriesForwardTableEntry["ExternalIp"].asString();
-		if(!valueForwardTableEntriesForwardTableEntry["ExternalPort"].isNull())
-			forwardTableEntriesObject.externalPort = valueForwardTableEntriesForwardTableEntry["ExternalPort"].asString();
-		if(!valueForwardTableEntriesForwardTableEntry["IpProtocol"].isNull())
-			forwardTableEntriesObject.ipProtocol = valueForwardTableEntriesForwardTableEntry["IpProtocol"].asString();
 		if(!valueForwardTableEntriesForwardTableEntry["InternalIp"].isNull())
 			forwardTableEntriesObject.internalIp = valueForwardTableEntriesForwardTableEntry["InternalIp"].asString();
 		if(!valueForwardTableEntriesForwardTableEntry["InternalPort"].isNull())
 			forwardTableEntriesObject.internalPort = valueForwardTableEntriesForwardTableEntry["InternalPort"].asString();
-		if(!valueForwardTableEntriesForwardTableEntry["Status"].isNull())
-			forwardTableEntriesObject.status = valueForwardTableEntriesForwardTableEntry["Status"].asString();
+		if(!valueForwardTableEntriesForwardTableEntry["ForwardTableId"].isNull())
+			forwardTableEntriesObject.forwardTableId = valueForwardTableEntriesForwardTableEntry["ForwardTableId"].asString();
+		if(!valueForwardTableEntriesForwardTableEntry["ExternalPort"].isNull())
+			forwardTableEntriesObject.externalPort = valueForwardTableEntriesForwardTableEntry["ExternalPort"].asString();
+		if(!valueForwardTableEntriesForwardTableEntry["IpProtocol"].isNull())
+			forwardTableEntriesObject.ipProtocol = valueForwardTableEntriesForwardTableEntry["IpProtocol"].asString();
+		if(!valueForwardTableEntriesForwardTableEntry["ExternalIp"].isNull())
+			forwardTableEntriesObject.externalIp = valueForwardTableEntriesForwardTableEntry["ExternalIp"].asString();
 		forwardTableEntries_.push_back(forwardTableEntriesObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 

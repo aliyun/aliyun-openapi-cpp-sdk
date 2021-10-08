@@ -43,19 +43,19 @@ namespace AlibabaCloud
 					std::string destPrefixListName;
 					std::string ipv6SourceCidrIp;
 					std::string nicType;
-					std::string destGroupId;
 					std::string direction;
+					std::string destGroupId;
 					std::string sourceGroupName;
-					std::string portRange;
 					std::string destGroupOwnerAccount;
+					std::string portRange;
 					std::string destPrefixListId;
 					std::string sourceCidrIp;
 					std::string sourcePrefixListName;
 					std::string ipProtocol;
-					std::string destGroupName;
 					std::string destCidrIp;
-					std::string sourceGroupOwnerAccount;
+					std::string destGroupName;
 					std::string ipv6DestCidrIp;
+					std::string sourceGroupOwnerAccount;
 					std::string sourcePrefixListId;
 				};
 
@@ -64,23 +64,23 @@ namespace AlibabaCloud
 				explicit DescribeSecurityGroupAttributeResult(const std::string &payload);
 				~DescribeSecurityGroupAttributeResult();
 				std::string getDescription()const;
-				std::string getSecurityGroupName()const;
 				std::string getVpcId()const;
+				std::string getSecurityGroupName()const;
 				std::string getSecurityGroupId()const;
 				std::vector<Permission> getPermissions()const;
-				std::string getRegionId()const;
 				std::string getInnerAccessPolicy()const;
+				std::string getRegionId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string description_;
-				std::string securityGroupName_;
 				std::string vpcId_;
+				std::string securityGroupName_;
 				std::string securityGroupId_;
 				std::vector<Permission> permissions_;
-				std::string regionId_;
 				std::string innerAccessPolicy_;
+				std::string regionId_;
 
 			};
 		}

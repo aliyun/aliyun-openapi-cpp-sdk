@@ -43,10 +43,10 @@ void DescribeInstanceTopologyResult::parse(const std::string &payload)
 	for (auto valueTopologysTopology : allTopologysNode)
 	{
 		Topology topologysObject;
-		if(!valueTopologysTopology["InstanceId"].isNull())
-			topologysObject.instanceId = valueTopologysTopology["InstanceId"].asString();
 		if(!valueTopologysTopology["HostId"].isNull())
 			topologysObject.hostId = valueTopologysTopology["HostId"].asString();
+		if(!valueTopologysTopology["InstanceId"].isNull())
+			topologysObject.instanceId = valueTopologysTopology["InstanceId"].asString();
 		topologys_.push_back(topologysObject);
 	}
 

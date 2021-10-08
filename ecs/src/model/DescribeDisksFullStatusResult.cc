@@ -55,37 +55,37 @@ void DescribeDisksFullStatusResult::parse(const std::string &payload)
 			DiskFullStatusType::DiskEventType diskEventSetObject;
 			if(!valueDiskFullStatusSetDiskFullStatusTypeDiskEventSetDiskEventType["EventId"].isNull())
 				diskEventSetObject.eventId = valueDiskFullStatusSetDiskFullStatusTypeDiskEventSetDiskEventType["EventId"].asString();
-			if(!valueDiskFullStatusSetDiskFullStatusTypeDiskEventSetDiskEventType["EventTime"].isNull())
-				diskEventSetObject.eventTime = valueDiskFullStatusSetDiskFullStatusTypeDiskEventSetDiskEventType["EventTime"].asString();
 			if(!valueDiskFullStatusSetDiskFullStatusTypeDiskEventSetDiskEventType["EventEndTime"].isNull())
 				diskEventSetObject.eventEndTime = valueDiskFullStatusSetDiskFullStatusTypeDiskEventSetDiskEventType["EventEndTime"].asString();
+			if(!valueDiskFullStatusSetDiskFullStatusTypeDiskEventSetDiskEventType["EventTime"].isNull())
+				diskEventSetObject.eventTime = valueDiskFullStatusSetDiskFullStatusTypeDiskEventSetDiskEventType["EventTime"].asString();
 			if(!valueDiskFullStatusSetDiskFullStatusTypeDiskEventSetDiskEventType["ImpactLevel"].isNull())
 				diskEventSetObject.impactLevel = valueDiskFullStatusSetDiskFullStatusTypeDiskEventSetDiskEventType["ImpactLevel"].asString();
 			auto eventTypeNode = value["EventType"];
-			if(!eventTypeNode["Code"].isNull())
-				diskEventSetObject.eventType.code = std::stoi(eventTypeNode["Code"].asString());
 			if(!eventTypeNode["Name"].isNull())
 				diskEventSetObject.eventType.name = eventTypeNode["Name"].asString();
+			if(!eventTypeNode["Code"].isNull())
+				diskEventSetObject.eventType.code = std::stoi(eventTypeNode["Code"].asString());
 			diskFullStatusSetObject.diskEventSet.push_back(diskEventSetObject);
 		}
 		auto statusNode = value["Status"];
-		if(!statusNode["Code"].isNull())
-			diskFullStatusSetObject.status.code = std::stoi(statusNode["Code"].asString());
 		if(!statusNode["Name"].isNull())
 			diskFullStatusSetObject.status.name = statusNode["Name"].asString();
+		if(!statusNode["Code"].isNull())
+			diskFullStatusSetObject.status.code = std::stoi(statusNode["Code"].asString());
 		auto healthStatusNode = value["HealthStatus"];
-		if(!healthStatusNode["Code"].isNull())
-			diskFullStatusSetObject.healthStatus.code = std::stoi(healthStatusNode["Code"].asString());
 		if(!healthStatusNode["Name"].isNull())
 			diskFullStatusSetObject.healthStatus.name = healthStatusNode["Name"].asString();
+		if(!healthStatusNode["Code"].isNull())
+			diskFullStatusSetObject.healthStatus.code = std::stoi(healthStatusNode["Code"].asString());
 		diskFullStatusSet_.push_back(diskFullStatusSetObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 

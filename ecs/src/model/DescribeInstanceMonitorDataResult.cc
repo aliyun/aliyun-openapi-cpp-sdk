@@ -43,40 +43,40 @@ void DescribeInstanceMonitorDataResult::parse(const std::string &payload)
 	for (auto valueMonitorDataInstanceMonitorData : allMonitorDataNode)
 	{
 		InstanceMonitorData monitorDataObject;
-		if(!valueMonitorDataInstanceMonitorData["InstanceId"].isNull())
-			monitorDataObject.instanceId = valueMonitorDataInstanceMonitorData["InstanceId"].asString();
-		if(!valueMonitorDataInstanceMonitorData["CPU"].isNull())
-			monitorDataObject.cPU = std::stoi(valueMonitorDataInstanceMonitorData["CPU"].asString());
-		if(!valueMonitorDataInstanceMonitorData["IntranetRX"].isNull())
-			monitorDataObject.intranetRX = std::stoi(valueMonitorDataInstanceMonitorData["IntranetRX"].asString());
-		if(!valueMonitorDataInstanceMonitorData["IntranetTX"].isNull())
-			monitorDataObject.intranetTX = std::stoi(valueMonitorDataInstanceMonitorData["IntranetTX"].asString());
-		if(!valueMonitorDataInstanceMonitorData["IntranetBandwidth"].isNull())
-			monitorDataObject.intranetBandwidth = std::stoi(valueMonitorDataInstanceMonitorData["IntranetBandwidth"].asString());
-		if(!valueMonitorDataInstanceMonitorData["InternetRX"].isNull())
-			monitorDataObject.internetRX = std::stoi(valueMonitorDataInstanceMonitorData["InternetRX"].asString());
-		if(!valueMonitorDataInstanceMonitorData["InternetTX"].isNull())
-			monitorDataObject.internetTX = std::stoi(valueMonitorDataInstanceMonitorData["InternetTX"].asString());
-		if(!valueMonitorDataInstanceMonitorData["InternetBandwidth"].isNull())
-			monitorDataObject.internetBandwidth = std::stoi(valueMonitorDataInstanceMonitorData["InternetBandwidth"].asString());
-		if(!valueMonitorDataInstanceMonitorData["IOPSRead"].isNull())
-			monitorDataObject.iOPSRead = std::stoi(valueMonitorDataInstanceMonitorData["IOPSRead"].asString());
-		if(!valueMonitorDataInstanceMonitorData["IOPSWrite"].isNull())
-			monitorDataObject.iOPSWrite = std::stoi(valueMonitorDataInstanceMonitorData["IOPSWrite"].asString());
-		if(!valueMonitorDataInstanceMonitorData["BPSRead"].isNull())
-			monitorDataObject.bPSRead = std::stoi(valueMonitorDataInstanceMonitorData["BPSRead"].asString());
-		if(!valueMonitorDataInstanceMonitorData["BPSWrite"].isNull())
-			monitorDataObject.bPSWrite = std::stoi(valueMonitorDataInstanceMonitorData["BPSWrite"].asString());
-		if(!valueMonitorDataInstanceMonitorData["CPUCreditUsage"].isNull())
-			monitorDataObject.cPUCreditUsage = std::stof(valueMonitorDataInstanceMonitorData["CPUCreditUsage"].asString());
 		if(!valueMonitorDataInstanceMonitorData["CPUCreditBalance"].isNull())
 			monitorDataObject.cPUCreditBalance = std::stof(valueMonitorDataInstanceMonitorData["CPUCreditBalance"].asString());
-		if(!valueMonitorDataInstanceMonitorData["CPUAdvanceCreditBalance"].isNull())
-			monitorDataObject.cPUAdvanceCreditBalance = std::stof(valueMonitorDataInstanceMonitorData["CPUAdvanceCreditBalance"].asString());
+		if(!valueMonitorDataInstanceMonitorData["BPSRead"].isNull())
+			monitorDataObject.bPSRead = std::stoi(valueMonitorDataInstanceMonitorData["BPSRead"].asString());
+		if(!valueMonitorDataInstanceMonitorData["InternetTX"].isNull())
+			monitorDataObject.internetTX = std::stoi(valueMonitorDataInstanceMonitorData["InternetTX"].asString());
+		if(!valueMonitorDataInstanceMonitorData["CPU"].isNull())
+			monitorDataObject.cPU = std::stoi(valueMonitorDataInstanceMonitorData["CPU"].asString());
+		if(!valueMonitorDataInstanceMonitorData["CPUCreditUsage"].isNull())
+			monitorDataObject.cPUCreditUsage = std::stof(valueMonitorDataInstanceMonitorData["CPUCreditUsage"].asString());
+		if(!valueMonitorDataInstanceMonitorData["IOPSWrite"].isNull())
+			monitorDataObject.iOPSWrite = std::stoi(valueMonitorDataInstanceMonitorData["IOPSWrite"].asString());
+		if(!valueMonitorDataInstanceMonitorData["IntranetTX"].isNull())
+			monitorDataObject.intranetTX = std::stoi(valueMonitorDataInstanceMonitorData["IntranetTX"].asString());
+		if(!valueMonitorDataInstanceMonitorData["InstanceId"].isNull())
+			monitorDataObject.instanceId = valueMonitorDataInstanceMonitorData["InstanceId"].asString();
+		if(!valueMonitorDataInstanceMonitorData["BPSWrite"].isNull())
+			monitorDataObject.bPSWrite = std::stoi(valueMonitorDataInstanceMonitorData["BPSWrite"].asString());
 		if(!valueMonitorDataInstanceMonitorData["CPUNotpaidSurplusCreditUsage"].isNull())
 			monitorDataObject.cPUNotpaidSurplusCreditUsage = std::stof(valueMonitorDataInstanceMonitorData["CPUNotpaidSurplusCreditUsage"].asString());
+		if(!valueMonitorDataInstanceMonitorData["CPUAdvanceCreditBalance"].isNull())
+			monitorDataObject.cPUAdvanceCreditBalance = std::stof(valueMonitorDataInstanceMonitorData["CPUAdvanceCreditBalance"].asString());
+		if(!valueMonitorDataInstanceMonitorData["IOPSRead"].isNull())
+			monitorDataObject.iOPSRead = std::stoi(valueMonitorDataInstanceMonitorData["IOPSRead"].asString());
+		if(!valueMonitorDataInstanceMonitorData["InternetBandwidth"].isNull())
+			monitorDataObject.internetBandwidth = std::stoi(valueMonitorDataInstanceMonitorData["InternetBandwidth"].asString());
+		if(!valueMonitorDataInstanceMonitorData["InternetRX"].isNull())
+			monitorDataObject.internetRX = std::stoi(valueMonitorDataInstanceMonitorData["InternetRX"].asString());
 		if(!valueMonitorDataInstanceMonitorData["TimeStamp"].isNull())
 			monitorDataObject.timeStamp = valueMonitorDataInstanceMonitorData["TimeStamp"].asString();
+		if(!valueMonitorDataInstanceMonitorData["IntranetRX"].isNull())
+			monitorDataObject.intranetRX = std::stoi(valueMonitorDataInstanceMonitorData["IntranetRX"].asString());
+		if(!valueMonitorDataInstanceMonitorData["IntranetBandwidth"].isNull())
+			monitorDataObject.intranetBandwidth = std::stoi(valueMonitorDataInstanceMonitorData["IntranetBandwidth"].asString());
 		monitorData_.push_back(monitorDataObject);
 	}
 

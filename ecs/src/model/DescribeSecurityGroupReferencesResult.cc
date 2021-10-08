@@ -49,10 +49,10 @@ void DescribeSecurityGroupReferencesResult::parse(const std::string &payload)
 		for (auto valueSecurityGroupReferencesSecurityGroupReferenceReferencingSecurityGroupsReferencingSecurityGroup : allReferencingSecurityGroupsNode)
 		{
 			SecurityGroupReference::ReferencingSecurityGroup referencingSecurityGroupsObject;
-			if(!valueSecurityGroupReferencesSecurityGroupReferenceReferencingSecurityGroupsReferencingSecurityGroup["AliUid"].isNull())
-				referencingSecurityGroupsObject.aliUid = valueSecurityGroupReferencesSecurityGroupReferenceReferencingSecurityGroupsReferencingSecurityGroup["AliUid"].asString();
 			if(!valueSecurityGroupReferencesSecurityGroupReferenceReferencingSecurityGroupsReferencingSecurityGroup["SecurityGroupId"].isNull())
 				referencingSecurityGroupsObject.securityGroupId = valueSecurityGroupReferencesSecurityGroupReferenceReferencingSecurityGroupsReferencingSecurityGroup["SecurityGroupId"].asString();
+			if(!valueSecurityGroupReferencesSecurityGroupReferenceReferencingSecurityGroupsReferencingSecurityGroup["AliUid"].isNull())
+				referencingSecurityGroupsObject.aliUid = valueSecurityGroupReferencesSecurityGroupReferenceReferencingSecurityGroupsReferencingSecurityGroup["AliUid"].asString();
 			securityGroupReferencesObject.referencingSecurityGroups.push_back(referencingSecurityGroupsObject);
 		}
 		securityGroupReferences_.push_back(securityGroupReferencesObject);

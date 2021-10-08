@@ -66,10 +66,10 @@ void DescribeNetworkInterfaceAttributeResult::parse(const std::string &payload)
 	for (auto valueTagsTag : allTagsNode)
 	{
 		Tag tagsObject;
-		if(!valueTagsTag["TagKey"].isNull())
-			tagsObject.tagKey = valueTagsTag["TagKey"].asString();
 		if(!valueTagsTag["TagValue"].isNull())
 			tagsObject.tagValue = valueTagsTag["TagValue"].asString();
+		if(!valueTagsTag["TagKey"].isNull())
+			tagsObject.tagKey = valueTagsTag["TagKey"].asString();
 		tags_.push_back(tagsObject);
 	}
 	auto associatedPublicIpNode = value["AssociatedPublicIp"];
@@ -78,62 +78,57 @@ void DescribeNetworkInterfaceAttributeResult::parse(const std::string &payload)
 	if(!associatedPublicIpNode["AllocationId"].isNull())
 		associatedPublicIp_.allocationId = associatedPublicIpNode["AllocationId"].asString();
 	auto attachmentNode = value["Attachment"];
+	if(!attachmentNode["DeviceIndex"].isNull())
+		attachment_.deviceIndex = std::stoi(attachmentNode["DeviceIndex"].asString());
 	if(!attachmentNode["InstanceId"].isNull())
 		attachment_.instanceId = attachmentNode["InstanceId"].asString();
 	if(!attachmentNode["TrunkNetworkInterfaceId"].isNull())
 		attachment_.trunkNetworkInterfaceId = attachmentNode["TrunkNetworkInterfaceId"].asString();
-	if(!attachmentNode["DeviceIndex"].isNull())
-		attachment_.deviceIndex = std::stoi(attachmentNode["DeviceIndex"].asString());
 		auto allMemberNetworkInterfaceIds = attachmentNode["MemberNetworkInterfaceIds"]["MemberNetworkInterfaceId"];
 		for (auto value : allMemberNetworkInterfaceIds)
 			attachment_.memberNetworkInterfaceIds.push_back(value.asString());
 	auto allSecurityGroupIds = value["SecurityGroupIds"]["SecurityGroupId"];
 	for (const auto &item : allSecurityGroupIds)
 		securityGroupIds_.push_back(item.asString());
-	if(!value["NetworkInterfaceId"].isNull())
-		networkInterfaceId_ = value["NetworkInterfaceId"].asString();
-	if(!value["Status"].isNull())
-		status_ = value["Status"].asString();
-	if(!value["Type"].isNull())
-		type_ = value["Type"].asString();
+	if(!value["CreationTime"].isNull())
+		creationTime_ = value["CreationTime"].asString();
 	if(!value["VpcId"].isNull())
 		vpcId_ = value["VpcId"].asString();
+	if(!value["Type"].isNull())
+		type_ = value["Type"].asString();
+	if(!value["Status"].isNull())
+		status_ = value["Status"].asString();
+	if(!value["NetworkInterfaceTrafficMode"].isNull())
+		networkInterfaceTrafficMode_ = value["NetworkInterfaceTrafficMode"].asString();
+	if(!value["NetworkInterfaceName"].isNull())
+		networkInterfaceName_ = value["NetworkInterfaceName"].asString();
+	if(!value["MacAddress"].isNull())
+		macAddress_ = value["MacAddress"].asString();
+	if(!value["QueuePairNumber"].isNull())
+		queuePairNumber_ = std::stoi(value["QueuePairNumber"].asString());
+	if(!value["NetworkInterfaceId"].isNull())
+		networkInterfaceId_ = value["NetworkInterfaceId"].asString();
+	if(!value["ServiceID"].isNull())
+		serviceID_ = std::stol(value["ServiceID"].asString());
+	if(!value["InstanceId"].isNull())
+		instanceId_ = value["InstanceId"].asString();
+	if(!value["OwnerId"].isNull())
+		ownerId_ = value["OwnerId"].asString();
+	if(!value["ServiceManaged"].isNull())
+		serviceManaged_ = value["ServiceManaged"].asString() == "true";
 	if(!value["VSwitchId"].isNull())
 		vSwitchId_ = value["VSwitchId"].asString();
+	if(!value["Description"].isNull())
+		description_ = value["Description"].asString();
+	if(!value["ResourceGroupId"].isNull())
+		resourceGroupId_ = value["ResourceGroupId"].asString();
 	if(!value["ZoneId"].isNull())
 		zoneId_ = value["ZoneId"].asString();
 	if(!value["PrivateIpAddress"].isNull())
 		privateIpAddress_ = value["PrivateIpAddress"].asString();
-	if(!value["MacAddress"].isNull())
-		macAddress_ = value["MacAddress"].asString();
-	if(!value["NetworkInterfaceName"].isNull())
-		networkInterfaceName_ = value["NetworkInterfaceName"].asString();
-	if(!value["Description"].isNull())
-		description_ = value["Description"].asString();
-	if(!value["InstanceId"].isNull())
-		instanceId_ = value["InstanceId"].asString();
-	if(!value["CreationTime"].isNull())
-		creationTime_ = value["CreationTime"].asString();
-	if(!value["ResourceGroupId"].isNull())
-		resourceGroupId_ = value["ResourceGroupId"].asString();
-	if(!value["ServiceID"].isNull())
-		serviceID_ = std::stol(value["ServiceID"].asString());
-	if(!value["ServiceManaged"].isNull())
-		serviceManaged_ = value["ServiceManaged"].asString() == "true";
 	if(!value["QueueNumber"].isNull())
 		queueNumber_ = std::stoi(value["QueueNumber"].asString());
-	if(!value["OwnerId"].isNull())
-		ownerId_ = value["OwnerId"].asString();
-	if(!value["NetworkInterfaceTrafficMode"].isNull())
-		networkInterfaceTrafficMode_ = value["NetworkInterfaceTrafficMode"].asString();
-	if(!value["QueuePairNumber"].isNull())
-		queuePairNumber_ = std::stoi(value["QueuePairNumber"].asString());
 
-}
-
-std::string DescribeNetworkInterfaceAttributeResult::getPrivateIpAddress()const
-{
-	return privateIpAddress_;
 }
 
 std::string DescribeNetworkInterfaceAttributeResult::getDescription()const
@@ -141,14 +136,19 @@ std::string DescribeNetworkInterfaceAttributeResult::getDescription()const
 	return description_;
 }
 
-std::string DescribeNetworkInterfaceAttributeResult::getResourceGroupId()const
+std::string DescribeNetworkInterfaceAttributeResult::getPrivateIpAddress()const
 {
-	return resourceGroupId_;
+	return privateIpAddress_;
 }
 
 bool DescribeNetworkInterfaceAttributeResult::getServiceManaged()const
 {
 	return serviceManaged_;
+}
+
+std::string DescribeNetworkInterfaceAttributeResult::getResourceGroupId()const
+{
+	return resourceGroupId_;
 }
 
 DescribeNetworkInterfaceAttributeResult::Attachment DescribeNetworkInterfaceAttributeResult::getAttachment()const
@@ -231,14 +231,14 @@ std::string DescribeNetworkInterfaceAttributeResult::getType()const
 	return type_;
 }
 
-int DescribeNetworkInterfaceAttributeResult::getQueueNumber()const
-{
-	return queueNumber_;
-}
-
 int DescribeNetworkInterfaceAttributeResult::getQueuePairNumber()const
 {
 	return queuePairNumber_;
+}
+
+int DescribeNetworkInterfaceAttributeResult::getQueueNumber()const
+{
+	return queueNumber_;
 }
 
 std::string DescribeNetworkInterfaceAttributeResult::getVpcId()const

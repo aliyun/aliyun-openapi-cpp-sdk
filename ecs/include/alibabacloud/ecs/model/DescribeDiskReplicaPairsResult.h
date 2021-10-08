@@ -35,8 +35,8 @@ namespace AlibabaCloud
 				struct DiskReplicaPair
 				{
 					std::string status;
-					std::string destinationDiskId;
 					std::string description;
+					std::string destinationDiskId;
 					std::string pairName;
 					std::string destinationRegion;
 					std::string replicaPairId;

@@ -39,10 +39,10 @@ void CreateActivationResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["ActivationId"].isNull())
-		activationId_ = value["ActivationId"].asString();
 	if(!value["ActivationCode"].isNull())
 		activationCode_ = value["ActivationCode"].asString();
+	if(!value["ActivationId"].isNull())
+		activationId_ = value["ActivationId"].asString();
 
 }
 

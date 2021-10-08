@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,113 +18,90 @@
 
 using AlibabaCloud::Ecs::Model::DescribeCloudAssistantStatusRequest;
 
-DescribeCloudAssistantStatusRequest::DescribeCloudAssistantStatusRequest() :
-	RpcServiceRequest("ecs", "2014-05-26", "DescribeCloudAssistantStatus")
-{
-	setMethod(HttpRequest::Method::Post);
+DescribeCloudAssistantStatusRequest::DescribeCloudAssistantStatusRequest()
+    : RpcServiceRequest("ecs", "2014-05-26", "DescribeCloudAssistantStatus") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DescribeCloudAssistantStatusRequest::~DescribeCloudAssistantStatusRequest()
-{}
+DescribeCloudAssistantStatusRequest::~DescribeCloudAssistantStatusRequest() {}
 
-long DescribeCloudAssistantStatusRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long DescribeCloudAssistantStatusRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void DescribeCloudAssistantStatusRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void DescribeCloudAssistantStatusRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-long DescribeCloudAssistantStatusRequest::getPageNumber()const
-{
-	return pageNumber_;
+long DescribeCloudAssistantStatusRequest::getPageNumber() const {
+  return pageNumber_;
 }
 
-void DescribeCloudAssistantStatusRequest::setPageNumber(long pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+void DescribeCloudAssistantStatusRequest::setPageNumber(long pageNumber) {
+  pageNumber_ = pageNumber;
+  setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
-std::string DescribeCloudAssistantStatusRequest::getRegionId()const
-{
-	return regionId_;
+std::string DescribeCloudAssistantStatusRequest::getRegionId() const {
+  return regionId_;
 }
 
-void DescribeCloudAssistantStatusRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void DescribeCloudAssistantStatusRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
-long DescribeCloudAssistantStatusRequest::getPageSize()const
-{
-	return pageSize_;
+long DescribeCloudAssistantStatusRequest::getPageSize() const {
+  return pageSize_;
 }
 
-void DescribeCloudAssistantStatusRequest::setPageSize(long pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+void DescribeCloudAssistantStatusRequest::setPageSize(long pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
-std::string DescribeCloudAssistantStatusRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string DescribeCloudAssistantStatusRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void DescribeCloudAssistantStatusRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void DescribeCloudAssistantStatusRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string DescribeCloudAssistantStatusRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string DescribeCloudAssistantStatusRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void DescribeCloudAssistantStatusRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void DescribeCloudAssistantStatusRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-std::string DescribeCloudAssistantStatusRequest::getOSType()const
-{
-	return oSType_;
+std::string DescribeCloudAssistantStatusRequest::getOSType() const {
+  return oSType_;
 }
 
-void DescribeCloudAssistantStatusRequest::setOSType(const std::string& oSType)
-{
-	oSType_ = oSType;
-	setParameter("OSType", oSType);
+void DescribeCloudAssistantStatusRequest::setOSType(const std::string &oSType) {
+  oSType_ = oSType;
+  setParameter(std::string("OSType"), oSType);
 }
 
-long DescribeCloudAssistantStatusRequest::getOwnerId()const
-{
-	return ownerId_;
+long DescribeCloudAssistantStatusRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void DescribeCloudAssistantStatusRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void DescribeCloudAssistantStatusRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::vector<std::string> DescribeCloudAssistantStatusRequest::getInstanceId()const
-{
-	return instanceId_;
+std::vector<std::string> DescribeCloudAssistantStatusRequest::getInstanceId() const {
+  return instanceId_;
 }
 
-void DescribeCloudAssistantStatusRequest::setInstanceId(const std::vector<std::string>& instanceId)
-{
-	instanceId_ = instanceId;
-	for(int dep1 = 0; dep1!= instanceId.size(); dep1++) {
-		setParameter("InstanceId."+ std::to_string(dep1), instanceId.at(dep1));
-	}
+void DescribeCloudAssistantStatusRequest::setInstanceId(const std::vector<std::string> &instanceId) {
+  instanceId_ = instanceId;
 }
 

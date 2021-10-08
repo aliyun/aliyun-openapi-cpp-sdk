@@ -43,22 +43,22 @@ void DescribeDiskReplicaPairsResult::parse(const std::string &payload)
 	for (auto valueDiskReplicaPairsDiskReplicaPair : allDiskReplicaPairsNode)
 	{
 		DiskReplicaPair diskReplicaPairsObject;
-		if(!valueDiskReplicaPairsDiskReplicaPair["ReplicaPairId"].isNull())
-			diskReplicaPairsObject.replicaPairId = valueDiskReplicaPairsDiskReplicaPair["ReplicaPairId"].asString();
-		if(!valueDiskReplicaPairsDiskReplicaPair["SourceRegion"].isNull())
-			diskReplicaPairsObject.sourceRegion = valueDiskReplicaPairsDiskReplicaPair["SourceRegion"].asString();
-		if(!valueDiskReplicaPairsDiskReplicaPair["SourceDiskId"].isNull())
-			diskReplicaPairsObject.sourceDiskId = valueDiskReplicaPairsDiskReplicaPair["SourceDiskId"].asString();
-		if(!valueDiskReplicaPairsDiskReplicaPair["DestinationRegion"].isNull())
-			diskReplicaPairsObject.destinationRegion = valueDiskReplicaPairsDiskReplicaPair["DestinationRegion"].asString();
-		if(!valueDiskReplicaPairsDiskReplicaPair["DestinationDiskId"].isNull())
-			diskReplicaPairsObject.destinationDiskId = valueDiskReplicaPairsDiskReplicaPair["DestinationDiskId"].asString();
-		if(!valueDiskReplicaPairsDiskReplicaPair["PairName"].isNull())
-			diskReplicaPairsObject.pairName = valueDiskReplicaPairsDiskReplicaPair["PairName"].asString();
-		if(!valueDiskReplicaPairsDiskReplicaPair["Description"].isNull())
-			diskReplicaPairsObject.description = valueDiskReplicaPairsDiskReplicaPair["Description"].asString();
 		if(!valueDiskReplicaPairsDiskReplicaPair["Status"].isNull())
 			diskReplicaPairsObject.status = valueDiskReplicaPairsDiskReplicaPair["Status"].asString();
+		if(!valueDiskReplicaPairsDiskReplicaPair["SourceDiskId"].isNull())
+			diskReplicaPairsObject.sourceDiskId = valueDiskReplicaPairsDiskReplicaPair["SourceDiskId"].asString();
+		if(!valueDiskReplicaPairsDiskReplicaPair["ReplicaPairId"].isNull())
+			diskReplicaPairsObject.replicaPairId = valueDiskReplicaPairsDiskReplicaPair["ReplicaPairId"].asString();
+		if(!valueDiskReplicaPairsDiskReplicaPair["Description"].isNull())
+			diskReplicaPairsObject.description = valueDiskReplicaPairsDiskReplicaPair["Description"].asString();
+		if(!valueDiskReplicaPairsDiskReplicaPair["DestinationRegion"].isNull())
+			diskReplicaPairsObject.destinationRegion = valueDiskReplicaPairsDiskReplicaPair["DestinationRegion"].asString();
+		if(!valueDiskReplicaPairsDiskReplicaPair["PairName"].isNull())
+			diskReplicaPairsObject.pairName = valueDiskReplicaPairsDiskReplicaPair["PairName"].asString();
+		if(!valueDiskReplicaPairsDiskReplicaPair["SourceRegion"].isNull())
+			diskReplicaPairsObject.sourceRegion = valueDiskReplicaPairsDiskReplicaPair["SourceRegion"].asString();
+		if(!valueDiskReplicaPairsDiskReplicaPair["DestinationDiskId"].isNull())
+			diskReplicaPairsObject.destinationDiskId = valueDiskReplicaPairsDiskReplicaPair["DestinationDiskId"].asString();
 		diskReplicaPairs_.push_back(diskReplicaPairsObject);
 	}
 	if(!value["NextToken"].isNull())

@@ -43,16 +43,16 @@ void DescribeInstanceAutoRenewAttributeResult::parse(const std::string &payload)
 	for (auto valueInstanceRenewAttributesInstanceRenewAttribute : allInstanceRenewAttributesNode)
 	{
 		InstanceRenewAttribute instanceRenewAttributesObject;
+		if(!valueInstanceRenewAttributesInstanceRenewAttribute["PeriodUnit"].isNull())
+			instanceRenewAttributesObject.periodUnit = valueInstanceRenewAttributesInstanceRenewAttribute["PeriodUnit"].asString();
+		if(!valueInstanceRenewAttributesInstanceRenewAttribute["Duration"].isNull())
+			instanceRenewAttributesObject.duration = std::stoi(valueInstanceRenewAttributesInstanceRenewAttribute["Duration"].asString());
+		if(!valueInstanceRenewAttributesInstanceRenewAttribute["RenewalStatus"].isNull())
+			instanceRenewAttributesObject.renewalStatus = valueInstanceRenewAttributesInstanceRenewAttribute["RenewalStatus"].asString();
 		if(!valueInstanceRenewAttributesInstanceRenewAttribute["InstanceId"].isNull())
 			instanceRenewAttributesObject.instanceId = valueInstanceRenewAttributesInstanceRenewAttribute["InstanceId"].asString();
 		if(!valueInstanceRenewAttributesInstanceRenewAttribute["AutoRenewEnabled"].isNull())
 			instanceRenewAttributesObject.autoRenewEnabled = valueInstanceRenewAttributesInstanceRenewAttribute["AutoRenewEnabled"].asString() == "true";
-		if(!valueInstanceRenewAttributesInstanceRenewAttribute["Duration"].isNull())
-			instanceRenewAttributesObject.duration = std::stoi(valueInstanceRenewAttributesInstanceRenewAttribute["Duration"].asString());
-		if(!valueInstanceRenewAttributesInstanceRenewAttribute["PeriodUnit"].isNull())
-			instanceRenewAttributesObject.periodUnit = valueInstanceRenewAttributesInstanceRenewAttribute["PeriodUnit"].asString();
-		if(!valueInstanceRenewAttributesInstanceRenewAttribute["RenewalStatus"].isNull())
-			instanceRenewAttributesObject.renewalStatus = valueInstanceRenewAttributesInstanceRenewAttribute["RenewalStatus"].asString();
 		instanceRenewAttributes_.push_back(instanceRenewAttributesObject);
 	}
 	if(!value["PageNumber"].isNull())

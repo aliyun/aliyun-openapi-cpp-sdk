@@ -43,26 +43,26 @@ void DescribeSpotPriceHistoryResult::parse(const std::string &payload)
 	for (auto valueSpotPricesSpotPriceType : allSpotPricesNode)
 	{
 		SpotPriceType spotPricesObject;
-		if(!valueSpotPricesSpotPriceType["ZoneId"].isNull())
-			spotPricesObject.zoneId = valueSpotPricesSpotPriceType["ZoneId"].asString();
-		if(!valueSpotPricesSpotPriceType["InstanceType"].isNull())
-			spotPricesObject.instanceType = valueSpotPricesSpotPriceType["InstanceType"].asString();
 		if(!valueSpotPricesSpotPriceType["IoOptimized"].isNull())
 			spotPricesObject.ioOptimized = valueSpotPricesSpotPriceType["IoOptimized"].asString();
+		if(!valueSpotPricesSpotPriceType["ZoneId"].isNull())
+			spotPricesObject.zoneId = valueSpotPricesSpotPriceType["ZoneId"].asString();
+		if(!valueSpotPricesSpotPriceType["SpotPrice"].isNull())
+			spotPricesObject.spotPrice = std::stof(valueSpotPricesSpotPriceType["SpotPrice"].asString());
 		if(!valueSpotPricesSpotPriceType["Timestamp"].isNull())
 			spotPricesObject.timestamp = valueSpotPricesSpotPriceType["Timestamp"].asString();
 		if(!valueSpotPricesSpotPriceType["NetworkType"].isNull())
 			spotPricesObject.networkType = valueSpotPricesSpotPriceType["NetworkType"].asString();
-		if(!valueSpotPricesSpotPriceType["SpotPrice"].isNull())
-			spotPricesObject.spotPrice = std::stof(valueSpotPricesSpotPriceType["SpotPrice"].asString());
+		if(!valueSpotPricesSpotPriceType["InstanceType"].isNull())
+			spotPricesObject.instanceType = valueSpotPricesSpotPriceType["InstanceType"].asString();
 		if(!valueSpotPricesSpotPriceType["OriginPrice"].isNull())
 			spotPricesObject.originPrice = std::stof(valueSpotPricesSpotPriceType["OriginPrice"].asString());
 		spotPrices_.push_back(spotPricesObject);
 	}
-	if(!value["NextOffset"].isNull())
-		nextOffset_ = std::stoi(value["NextOffset"].asString());
 	if(!value["Currency"].isNull())
 		currency_ = value["Currency"].asString();
+	if(!value["NextOffset"].isNull())
+		nextOffset_ = std::stoi(value["NextOffset"].asString());
 
 }
 

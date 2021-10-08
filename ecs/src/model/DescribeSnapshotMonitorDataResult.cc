@@ -43,10 +43,10 @@ void DescribeSnapshotMonitorDataResult::parse(const std::string &payload)
 	for (auto valueMonitorDataDataPoint : allMonitorDataNode)
 	{
 		DataPoint monitorDataObject;
-		if(!valueMonitorDataDataPoint["TimeStamp"].isNull())
-			monitorDataObject.timeStamp = valueMonitorDataDataPoint["TimeStamp"].asString();
 		if(!valueMonitorDataDataPoint["Size"].isNull())
 			monitorDataObject.size = std::stol(valueMonitorDataDataPoint["Size"].asString());
+		if(!valueMonitorDataDataPoint["TimeStamp"].isNull())
+			monitorDataObject.timeStamp = valueMonitorDataDataPoint["TimeStamp"].asString();
 		monitorData_.push_back(monitorDataObject);
 	}
 

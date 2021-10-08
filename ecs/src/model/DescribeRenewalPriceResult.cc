@@ -44,10 +44,10 @@ void DescribeRenewalPriceResult::parse(const std::string &payload)
 	for (auto priceInfoNodeRulesRule : allRulesNode)
 	{
 		PriceInfo::Rule ruleObject;
-		if(!priceInfoNodeRulesRule["RuleId"].isNull())
-			ruleObject.ruleId = std::stol(priceInfoNodeRulesRule["RuleId"].asString());
 		if(!priceInfoNodeRulesRule["Description"].isNull())
 			ruleObject.description = priceInfoNodeRulesRule["Description"].asString();
+		if(!priceInfoNodeRulesRule["RuleId"].isNull())
+			ruleObject.ruleId = std::stol(priceInfoNodeRulesRule["RuleId"].asString());
 		priceInfo_.rules.push_back(ruleObject);
 	}
 	auto priceNode = priceInfoNode["Price"];
@@ -55,10 +55,10 @@ void DescribeRenewalPriceResult::parse(const std::string &payload)
 		priceInfo_.price.originalPrice = std::stof(priceNode["OriginalPrice"].asString());
 	if(!priceNode["DiscountPrice"].isNull())
 		priceInfo_.price.discountPrice = std::stof(priceNode["DiscountPrice"].asString());
-	if(!priceNode["TradePrice"].isNull())
-		priceInfo_.price.tradePrice = std::stof(priceNode["TradePrice"].asString());
 	if(!priceNode["Currency"].isNull())
 		priceInfo_.price.currency = priceNode["Currency"].asString();
+	if(!priceNode["TradePrice"].isNull())
+		priceInfo_.price.tradePrice = std::stof(priceNode["TradePrice"].asString());
 	auto allDetailInfosNode = priceNode["DetailInfos"]["ResourcePriceModel"];
 	for (auto priceNodeDetailInfosResourcePriceModel : allDetailInfosNode)
 	{
@@ -75,10 +75,10 @@ void DescribeRenewalPriceResult::parse(const std::string &payload)
 		for (auto priceNodeDetailInfosResourcePriceModelSubRulesRule : allSubRulesNode)
 		{
 			PriceInfo::Price::ResourcePriceModel::Rule1 subRulesObject;
-			if(!priceNodeDetailInfosResourcePriceModelSubRulesRule["RuleId"].isNull())
-				subRulesObject.ruleId = std::stol(priceNodeDetailInfosResourcePriceModelSubRulesRule["RuleId"].asString());
 			if(!priceNodeDetailInfosResourcePriceModelSubRulesRule["Description"].isNull())
 				subRulesObject.description = priceNodeDetailInfosResourcePriceModelSubRulesRule["Description"].asString();
+			if(!priceNodeDetailInfosResourcePriceModelSubRulesRule["RuleId"].isNull())
+				subRulesObject.ruleId = std::stol(priceNodeDetailInfosResourcePriceModelSubRulesRule["RuleId"].asString());
 			resourcePriceModelObject.subRules.push_back(subRulesObject);
 		}
 		priceInfo_.price.detailInfos.push_back(resourcePriceModelObject);

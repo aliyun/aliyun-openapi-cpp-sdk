@@ -49,20 +49,20 @@ void DescribeAccountAttributesResult::parse(const std::string &payload)
 		for (auto valueAccountAttributeItemsAccountAttributeItemAttributeValuesValueItem : allAttributeValuesNode)
 		{
 			AccountAttributeItem::ValueItem attributeValuesObject;
+			if(!valueAccountAttributeItemsAccountAttributeItemAttributeValuesValueItem["DiskCategory"].isNull())
+				attributeValuesObject.diskCategory = valueAccountAttributeItemsAccountAttributeItemAttributeValuesValueItem["DiskCategory"].asString();
 			if(!valueAccountAttributeItemsAccountAttributeItemAttributeValuesValueItem["Value"].isNull())
 				attributeValuesObject.value = valueAccountAttributeItemsAccountAttributeItemAttributeValuesValueItem["Value"].asString();
 			if(!valueAccountAttributeItemsAccountAttributeItemAttributeValuesValueItem["ExpiredTime"].isNull())
 				attributeValuesObject.expiredTime = valueAccountAttributeItemsAccountAttributeItemAttributeValuesValueItem["ExpiredTime"].asString();
 			if(!valueAccountAttributeItemsAccountAttributeItemAttributeValuesValueItem["ZoneId"].isNull())
 				attributeValuesObject.zoneId = valueAccountAttributeItemsAccountAttributeItemAttributeValuesValueItem["ZoneId"].asString();
-			if(!valueAccountAttributeItemsAccountAttributeItemAttributeValuesValueItem["InstanceChargeType"].isNull())
-				attributeValuesObject.instanceChargeType = valueAccountAttributeItemsAccountAttributeItemAttributeValuesValueItem["InstanceChargeType"].asString();
 			if(!valueAccountAttributeItemsAccountAttributeItemAttributeValuesValueItem["InstanceType"].isNull())
 				attributeValuesObject.instanceType = valueAccountAttributeItemsAccountAttributeItemAttributeValuesValueItem["InstanceType"].asString();
 			if(!valueAccountAttributeItemsAccountAttributeItemAttributeValuesValueItem["Count"].isNull())
 				attributeValuesObject.count = std::stoi(valueAccountAttributeItemsAccountAttributeItemAttributeValuesValueItem["Count"].asString());
-			if(!valueAccountAttributeItemsAccountAttributeItemAttributeValuesValueItem["DiskCategory"].isNull())
-				attributeValuesObject.diskCategory = valueAccountAttributeItemsAccountAttributeItemAttributeValuesValueItem["DiskCategory"].asString();
+			if(!valueAccountAttributeItemsAccountAttributeItemAttributeValuesValueItem["InstanceChargeType"].isNull())
+				attributeValuesObject.instanceChargeType = valueAccountAttributeItemsAccountAttributeItemAttributeValuesValueItem["InstanceChargeType"].asString();
 			accountAttributeItemsObject.attributeValues.push_back(attributeValuesObject);
 		}
 		accountAttributeItems_.push_back(accountAttributeItemsObject);

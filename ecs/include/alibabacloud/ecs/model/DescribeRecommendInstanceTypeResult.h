@@ -39,8 +39,8 @@ namespace AlibabaCloud
 						std::string supportIoOptimized;
 						int cores;
 						std::string generation;
-						std::string instanceTypeFamily;
 						int memory;
+						std::string instanceTypeFamily;
 						std::string instanceType;
 					};
 					struct Zone
@@ -49,9 +49,9 @@ namespace AlibabaCloud
 						std::string zoneNo;
 					};
 					std::string zoneId;
-					std::string instanceChargeType;
 					int priority;
 					std::string networkType;
+					std::string instanceChargeType;
 					std::string commodityCode;
 					std::string regionId;
 					InstanceType instanceType;

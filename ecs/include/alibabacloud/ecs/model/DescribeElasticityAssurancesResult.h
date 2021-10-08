@@ -51,8 +51,8 @@ namespace AlibabaCloud
 					std::string description;
 					std::string endTime;
 					std::string resourceGroupId;
-					std::string privatePoolOptionsName;
 					std::string latestStartTime;
+					std::string privatePoolOptionsName;
 					std::string startTime;
 					std::string privatePoolOptionsMatchCriteria;
 					std::vector<ElasticityAssuranceItem::AllocatedResource> allocatedResources;

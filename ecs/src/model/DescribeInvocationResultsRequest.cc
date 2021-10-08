@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,155 +18,127 @@
 
 using AlibabaCloud::Ecs::Model::DescribeInvocationResultsRequest;
 
-DescribeInvocationResultsRequest::DescribeInvocationResultsRequest() :
-	RpcServiceRequest("ecs", "2014-05-26", "DescribeInvocationResults")
-{
-	setMethod(HttpRequest::Method::Post);
+DescribeInvocationResultsRequest::DescribeInvocationResultsRequest()
+    : RpcServiceRequest("ecs", "2014-05-26", "DescribeInvocationResults") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DescribeInvocationResultsRequest::~DescribeInvocationResultsRequest()
-{}
+DescribeInvocationResultsRequest::~DescribeInvocationResultsRequest() {}
 
-long DescribeInvocationResultsRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long DescribeInvocationResultsRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void DescribeInvocationResultsRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void DescribeInvocationResultsRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string DescribeInvocationResultsRequest::getCommandId()const
-{
-	return commandId_;
+std::string DescribeInvocationResultsRequest::getCommandId() const {
+  return commandId_;
 }
 
-void DescribeInvocationResultsRequest::setCommandId(const std::string& commandId)
-{
-	commandId_ = commandId;
-	setParameter("CommandId", commandId);
+void DescribeInvocationResultsRequest::setCommandId(const std::string &commandId) {
+  commandId_ = commandId;
+  setParameter(std::string("CommandId"), commandId);
 }
 
-long DescribeInvocationResultsRequest::getPageNumber()const
-{
-	return pageNumber_;
+long DescribeInvocationResultsRequest::getPageNumber() const {
+  return pageNumber_;
 }
 
-void DescribeInvocationResultsRequest::setPageNumber(long pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+void DescribeInvocationResultsRequest::setPageNumber(long pageNumber) {
+  pageNumber_ = pageNumber;
+  setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
-std::string DescribeInvocationResultsRequest::getRegionId()const
-{
-	return regionId_;
+std::string DescribeInvocationResultsRequest::getRegionId() const {
+  return regionId_;
 }
 
-void DescribeInvocationResultsRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void DescribeInvocationResultsRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
-std::string DescribeInvocationResultsRequest::getContentEncoding()const
-{
-	return contentEncoding_;
+std::string DescribeInvocationResultsRequest::getContentEncoding() const {
+  return contentEncoding_;
 }
 
-void DescribeInvocationResultsRequest::setContentEncoding(const std::string& contentEncoding)
-{
-	contentEncoding_ = contentEncoding;
-	setParameter("ContentEncoding", contentEncoding);
+void DescribeInvocationResultsRequest::setContentEncoding(const std::string &contentEncoding) {
+  contentEncoding_ = contentEncoding;
+  setParameter(std::string("ContentEncoding"), contentEncoding);
 }
 
-long DescribeInvocationResultsRequest::getPageSize()const
-{
-	return pageSize_;
+long DescribeInvocationResultsRequest::getPageSize() const {
+  return pageSize_;
 }
 
-void DescribeInvocationResultsRequest::setPageSize(long pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+void DescribeInvocationResultsRequest::setPageSize(long pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
-std::string DescribeInvocationResultsRequest::getInvokeId()const
-{
-	return invokeId_;
+std::string DescribeInvocationResultsRequest::getInvokeId() const {
+  return invokeId_;
 }
 
-void DescribeInvocationResultsRequest::setInvokeId(const std::string& invokeId)
-{
-	invokeId_ = invokeId;
-	setParameter("InvokeId", invokeId);
+void DescribeInvocationResultsRequest::setInvokeId(const std::string &invokeId) {
+  invokeId_ = invokeId;
+  setParameter(std::string("InvokeId"), invokeId);
 }
 
-std::string DescribeInvocationResultsRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string DescribeInvocationResultsRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void DescribeInvocationResultsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void DescribeInvocationResultsRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string DescribeInvocationResultsRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string DescribeInvocationResultsRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void DescribeInvocationResultsRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void DescribeInvocationResultsRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-long DescribeInvocationResultsRequest::getOwnerId()const
-{
-	return ownerId_;
+long DescribeInvocationResultsRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void DescribeInvocationResultsRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void DescribeInvocationResultsRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string DescribeInvocationResultsRequest::getInstanceId()const
-{
-	return instanceId_;
+std::string DescribeInvocationResultsRequest::getInstanceId() const {
+  return instanceId_;
 }
 
-void DescribeInvocationResultsRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+void DescribeInvocationResultsRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-std::string DescribeInvocationResultsRequest::getInvokeRecordStatus()const
-{
-	return invokeRecordStatus_;
+std::string DescribeInvocationResultsRequest::getInvokeRecordStatus() const {
+  return invokeRecordStatus_;
 }
 
-void DescribeInvocationResultsRequest::setInvokeRecordStatus(const std::string& invokeRecordStatus)
-{
-	invokeRecordStatus_ = invokeRecordStatus;
-	setParameter("InvokeRecordStatus", invokeRecordStatus);
+void DescribeInvocationResultsRequest::setInvokeRecordStatus(const std::string &invokeRecordStatus) {
+  invokeRecordStatus_ = invokeRecordStatus;
+  setParameter(std::string("InvokeRecordStatus"), invokeRecordStatus);
 }
 
-bool DescribeInvocationResultsRequest::getIncludeHistory()const
-{
-	return includeHistory_;
+bool DescribeInvocationResultsRequest::getIncludeHistory() const {
+  return includeHistory_;
 }
 
-void DescribeInvocationResultsRequest::setIncludeHistory(bool includeHistory)
-{
-	includeHistory_ = includeHistory;
-	setParameter("IncludeHistory", includeHistory ? "true" : "false");
+void DescribeInvocationResultsRequest::setIncludeHistory(bool includeHistory) {
+  includeHistory_ = includeHistory;
+  setParameter(std::string("IncludeHistory"), includeHistory ? "true" : "false");
 }
 

@@ -43,22 +43,22 @@ void DetachKeyPairResult::parse(const std::string &payload)
 	for (auto valueResultsResult : allResultsNode)
 	{
 		Result resultsObject;
-		if(!valueResultsResult["InstanceId"].isNull())
-			resultsObject.instanceId = valueResultsResult["InstanceId"].asString();
-		if(!valueResultsResult["Success"].isNull())
-			resultsObject.success = valueResultsResult["Success"].asString();
 		if(!valueResultsResult["Code"].isNull())
 			resultsObject.code = valueResultsResult["Code"].asString();
 		if(!valueResultsResult["Message"].isNull())
 			resultsObject.message = valueResultsResult["Message"].asString();
+		if(!valueResultsResult["InstanceId"].isNull())
+			resultsObject.instanceId = valueResultsResult["InstanceId"].asString();
+		if(!valueResultsResult["Success"].isNull())
+			resultsObject.success = valueResultsResult["Success"].asString();
 		results_.push_back(resultsObject);
 	}
+	if(!value["KeyPairName"].isNull())
+		keyPairName_ = value["KeyPairName"].asString();
 	if(!value["TotalCount"].isNull())
 		totalCount_ = value["TotalCount"].asString();
 	if(!value["FailCount"].isNull())
 		failCount_ = value["FailCount"].asString();
-	if(!value["KeyPairName"].isNull())
-		keyPairName_ = value["KeyPairName"].asString();
 
 }
 

@@ -35,14 +35,14 @@ namespace AlibabaCloud
 				struct DiskMonitorData
 				{
 					int iOPSRead;
-					int iOPSWrite;
 					int iOPSTotal;
+					int iOPSWrite;
 					int bPSTotal;
-					int bPSWrite;
 					int latencyRead;
+					int bPSWrite;
 					int bPSRead;
-					int latencyWrite;
 					std::string timeStamp;
+					int latencyWrite;
 					std::string diskId;
 				};
 

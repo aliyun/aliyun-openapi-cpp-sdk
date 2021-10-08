@@ -43,34 +43,34 @@ void DescribeActivationsResult::parse(const std::string &payload)
 	for (auto valueActivationListActivation : allActivationListNode)
 	{
 		Activation activationListObject;
-		if(!valueActivationListActivation["ActivationId"].isNull())
-			activationListObject.activationId = valueActivationListActivation["ActivationId"].asString();
-		if(!valueActivationListActivation["InstanceName"].isNull())
-			activationListObject.instanceName = valueActivationListActivation["InstanceName"].asString();
-		if(!valueActivationListActivation["Description"].isNull())
-			activationListObject.description = valueActivationListActivation["Description"].asString();
-		if(!valueActivationListActivation["InstanceCount"].isNull())
-			activationListObject.instanceCount = std::stoi(valueActivationListActivation["InstanceCount"].asString());
-		if(!valueActivationListActivation["TimeToLiveInHours"].isNull())
-			activationListObject.timeToLiveInHours = std::stol(valueActivationListActivation["TimeToLiveInHours"].asString());
-		if(!valueActivationListActivation["IpAddressRange"].isNull())
-			activationListObject.ipAddressRange = valueActivationListActivation["IpAddressRange"].asString();
-		if(!valueActivationListActivation["RegisteredCount"].isNull())
-			activationListObject.registeredCount = std::stoi(valueActivationListActivation["RegisteredCount"].asString());
-		if(!valueActivationListActivation["DeregisteredCount"].isNull())
-			activationListObject.deregisteredCount = std::stoi(valueActivationListActivation["DeregisteredCount"].asString());
-		if(!valueActivationListActivation["Disabled"].isNull())
-			activationListObject.disabled = valueActivationListActivation["Disabled"].asString() == "true";
 		if(!valueActivationListActivation["CreationTime"].isNull())
 			activationListObject.creationTime = valueActivationListActivation["CreationTime"].asString();
+		if(!valueActivationListActivation["DeregisteredCount"].isNull())
+			activationListObject.deregisteredCount = std::stoi(valueActivationListActivation["DeregisteredCount"].asString());
+		if(!valueActivationListActivation["InstanceCount"].isNull())
+			activationListObject.instanceCount = std::stoi(valueActivationListActivation["InstanceCount"].asString());
+		if(!valueActivationListActivation["Description"].isNull())
+			activationListObject.description = valueActivationListActivation["Description"].asString();
+		if(!valueActivationListActivation["RegisteredCount"].isNull())
+			activationListObject.registeredCount = std::stoi(valueActivationListActivation["RegisteredCount"].asString());
+		if(!valueActivationListActivation["InstanceName"].isNull())
+			activationListObject.instanceName = valueActivationListActivation["InstanceName"].asString();
+		if(!valueActivationListActivation["Disabled"].isNull())
+			activationListObject.disabled = valueActivationListActivation["Disabled"].asString() == "true";
+		if(!valueActivationListActivation["IpAddressRange"].isNull())
+			activationListObject.ipAddressRange = valueActivationListActivation["IpAddressRange"].asString();
+		if(!valueActivationListActivation["TimeToLiveInHours"].isNull())
+			activationListObject.timeToLiveInHours = std::stol(valueActivationListActivation["TimeToLiveInHours"].asString());
+		if(!valueActivationListActivation["ActivationId"].isNull())
+			activationListObject.activationId = valueActivationListActivation["ActivationId"].asString();
 		activationList_.push_back(activationListObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stol(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stol(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stol(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stol(value["PageNumber"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stol(value["TotalCount"].asString());
 
 }
 

@@ -43,30 +43,30 @@ void DescribeStorageSetDetailsResult::parse(const std::string &payload)
 	for (auto valueDisksDisk : allDisksNode)
 	{
 		Disk disksObject;
-		if(!valueDisksDisk["DiskId"].isNull())
-			disksObject.diskId = valueDisksDisk["DiskId"].asString();
-		if(!valueDisksDisk["DiskName"].isNull())
-			disksObject.diskName = valueDisksDisk["DiskName"].asString();
-		if(!valueDisksDisk["Category"].isNull())
-			disksObject.category = valueDisksDisk["Category"].asString();
-		if(!valueDisksDisk["StorageSetId"].isNull())
-			disksObject.storageSetId = valueDisksDisk["StorageSetId"].asString();
 		if(!valueDisksDisk["CreationTime"].isNull())
 			disksObject.creationTime = valueDisksDisk["CreationTime"].asString();
+		if(!valueDisksDisk["DiskName"].isNull())
+			disksObject.diskName = valueDisksDisk["DiskName"].asString();
+		if(!valueDisksDisk["ZoneId"].isNull())
+			disksObject.zoneId = valueDisksDisk["ZoneId"].asString();
+		if(!valueDisksDisk["StorageSetId"].isNull())
+			disksObject.storageSetId = valueDisksDisk["StorageSetId"].asString();
+		if(!valueDisksDisk["DiskId"].isNull())
+			disksObject.diskId = valueDisksDisk["DiskId"].asString();
+		if(!valueDisksDisk["Category"].isNull())
+			disksObject.category = valueDisksDisk["Category"].asString();
 		if(!valueDisksDisk["StorageSetPartitionNumber"].isNull())
 			disksObject.storageSetPartitionNumber = std::stoi(valueDisksDisk["StorageSetPartitionNumber"].asString());
 		if(!valueDisksDisk["RegionId"].isNull())
 			disksObject.regionId = valueDisksDisk["RegionId"].asString();
-		if(!valueDisksDisk["ZoneId"].isNull())
-			disksObject.zoneId = valueDisksDisk["ZoneId"].asString();
 		disks_.push_back(disksObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 

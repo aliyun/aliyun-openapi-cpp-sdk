@@ -48,8 +48,8 @@ namespace AlibabaCloud
 					std::string oppositeInterfaceOwnerId;
 					std::string oppositeRegionId;
 					std::string healthCheckSourceIp;
-					std::string role;
 					std::string oppositeInterfaceSpec;
+					std::string role;
 					std::string routerType;
 					std::string chargeType;
 					std::string creationTime;
@@ -57,8 +57,8 @@ namespace AlibabaCloud
 					std::string oppositeInterfaceBusinessStatus;
 					std::string oppositeAccessPointId;
 					std::string spec;
-					std::string routerInterfaceId;
 					std::string healthCheckTargetIp;
+					std::string routerInterfaceId;
 				};
 
 

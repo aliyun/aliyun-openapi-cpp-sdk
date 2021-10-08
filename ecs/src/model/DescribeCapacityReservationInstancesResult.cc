@@ -49,10 +49,10 @@ void DescribeCapacityReservationInstancesResult::parse(const std::string &payloa
 	}
 	if(!value["NextToken"].isNull())
 		nextToken_ = value["NextToken"].asString();
-	if(!value["MaxResults"].isNull())
-		maxResults_ = std::stoi(value["MaxResults"].asString());
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["MaxResults"].isNull())
+		maxResults_ = std::stoi(value["MaxResults"].asString());
 
 }
 

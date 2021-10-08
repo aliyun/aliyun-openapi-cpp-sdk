@@ -49,67 +49,67 @@ void DescribeInstancesFullStatusResult::parse(const std::string &payload)
 		for (auto valueInstanceFullStatusSetInstanceFullStatusTypeScheduledSystemEventSetScheduledSystemEventType : allScheduledSystemEventSetNode)
 		{
 			InstanceFullStatusType::ScheduledSystemEventType scheduledSystemEventSetObject;
-			if(!valueInstanceFullStatusSetInstanceFullStatusTypeScheduledSystemEventSetScheduledSystemEventType["EventId"].isNull())
-				scheduledSystemEventSetObject.eventId = valueInstanceFullStatusSetInstanceFullStatusTypeScheduledSystemEventSetScheduledSystemEventType["EventId"].asString();
 			if(!valueInstanceFullStatusSetInstanceFullStatusTypeScheduledSystemEventSetScheduledSystemEventType["EventPublishTime"].isNull())
 				scheduledSystemEventSetObject.eventPublishTime = valueInstanceFullStatusSetInstanceFullStatusTypeScheduledSystemEventSetScheduledSystemEventType["EventPublishTime"].asString();
+			if(!valueInstanceFullStatusSetInstanceFullStatusTypeScheduledSystemEventSetScheduledSystemEventType["EventId"].isNull())
+				scheduledSystemEventSetObject.eventId = valueInstanceFullStatusSetInstanceFullStatusTypeScheduledSystemEventSetScheduledSystemEventType["EventId"].asString();
 			if(!valueInstanceFullStatusSetInstanceFullStatusTypeScheduledSystemEventSetScheduledSystemEventType["NotBefore"].isNull())
 				scheduledSystemEventSetObject.notBefore = valueInstanceFullStatusSetInstanceFullStatusTypeScheduledSystemEventSetScheduledSystemEventType["NotBefore"].asString();
-			if(!valueInstanceFullStatusSetInstanceFullStatusTypeScheduledSystemEventSetScheduledSystemEventType["Reason"].isNull())
-				scheduledSystemEventSetObject.reason = valueInstanceFullStatusSetInstanceFullStatusTypeScheduledSystemEventSetScheduledSystemEventType["Reason"].asString();
 			if(!valueInstanceFullStatusSetInstanceFullStatusTypeScheduledSystemEventSetScheduledSystemEventType["ImpactLevel"].isNull())
 				scheduledSystemEventSetObject.impactLevel = valueInstanceFullStatusSetInstanceFullStatusTypeScheduledSystemEventSetScheduledSystemEventType["ImpactLevel"].asString();
+			if(!valueInstanceFullStatusSetInstanceFullStatusTypeScheduledSystemEventSetScheduledSystemEventType["Reason"].isNull())
+				scheduledSystemEventSetObject.reason = valueInstanceFullStatusSetInstanceFullStatusTypeScheduledSystemEventSetScheduledSystemEventType["Reason"].asString();
 			auto eventCycleStatusNode = value["EventCycleStatus"];
-			if(!eventCycleStatusNode["Code"].isNull())
-				scheduledSystemEventSetObject.eventCycleStatus.code = std::stoi(eventCycleStatusNode["Code"].asString());
 			if(!eventCycleStatusNode["Name"].isNull())
 				scheduledSystemEventSetObject.eventCycleStatus.name = eventCycleStatusNode["Name"].asString();
+			if(!eventCycleStatusNode["Code"].isNull())
+				scheduledSystemEventSetObject.eventCycleStatus.code = std::stoi(eventCycleStatusNode["Code"].asString());
 			auto eventTypeNode = value["EventType"];
-			if(!eventTypeNode["Code"].isNull())
-				scheduledSystemEventSetObject.eventType.code = std::stoi(eventTypeNode["Code"].asString());
 			if(!eventTypeNode["Name"].isNull())
 				scheduledSystemEventSetObject.eventType.name = eventTypeNode["Name"].asString();
+			if(!eventTypeNode["Code"].isNull())
+				scheduledSystemEventSetObject.eventType.code = std::stoi(eventTypeNode["Code"].asString());
 			auto extendedAttributeNode = value["ExtendedAttribute"];
-			if(!extendedAttributeNode["DiskId"].isNull())
-				scheduledSystemEventSetObject.extendedAttribute.diskId = extendedAttributeNode["DiskId"].asString();
 			if(!extendedAttributeNode["Device"].isNull())
 				scheduledSystemEventSetObject.extendedAttribute.device = extendedAttributeNode["Device"].asString();
+			if(!extendedAttributeNode["DiskId"].isNull())
+				scheduledSystemEventSetObject.extendedAttribute.diskId = extendedAttributeNode["DiskId"].asString();
 			auto allInactiveDisksNode = extendedAttributeNode["InactiveDisks"]["InactiveDisk"];
 			for (auto extendedAttributeNodeInactiveDisksInactiveDisk : allInactiveDisksNode)
 			{
 				InstanceFullStatusType::ScheduledSystemEventType::ExtendedAttribute::InactiveDisk inactiveDiskObject;
 				if(!extendedAttributeNodeInactiveDisksInactiveDisk["CreationTime"].isNull())
 					inactiveDiskObject.creationTime = extendedAttributeNodeInactiveDisksInactiveDisk["CreationTime"].asString();
-				if(!extendedAttributeNodeInactiveDisksInactiveDisk["ReleaseTime"].isNull())
-					inactiveDiskObject.releaseTime = extendedAttributeNodeInactiveDisksInactiveDisk["ReleaseTime"].asString();
-				if(!extendedAttributeNodeInactiveDisksInactiveDisk["DeviceType"].isNull())
-					inactiveDiskObject.deviceType = extendedAttributeNodeInactiveDisksInactiveDisk["DeviceType"].asString();
-				if(!extendedAttributeNodeInactiveDisksInactiveDisk["DeviceCategory"].isNull())
-					inactiveDiskObject.deviceCategory = extendedAttributeNodeInactiveDisksInactiveDisk["DeviceCategory"].asString();
 				if(!extendedAttributeNodeInactiveDisksInactiveDisk["DeviceSize"].isNull())
 					inactiveDiskObject.deviceSize = extendedAttributeNodeInactiveDisksInactiveDisk["DeviceSize"].asString();
+				if(!extendedAttributeNodeInactiveDisksInactiveDisk["DeviceCategory"].isNull())
+					inactiveDiskObject.deviceCategory = extendedAttributeNodeInactiveDisksInactiveDisk["DeviceCategory"].asString();
+				if(!extendedAttributeNodeInactiveDisksInactiveDisk["DeviceType"].isNull())
+					inactiveDiskObject.deviceType = extendedAttributeNodeInactiveDisksInactiveDisk["DeviceType"].asString();
+				if(!extendedAttributeNodeInactiveDisksInactiveDisk["ReleaseTime"].isNull())
+					inactiveDiskObject.releaseTime = extendedAttributeNodeInactiveDisksInactiveDisk["ReleaseTime"].asString();
 				scheduledSystemEventSetObject.extendedAttribute.inactiveDisks.push_back(inactiveDiskObject);
 			}
 			instanceFullStatusSetObject.scheduledSystemEventSet.push_back(scheduledSystemEventSetObject);
 		}
 		auto statusNode = value["Status"];
-		if(!statusNode["Code"].isNull())
-			instanceFullStatusSetObject.status.code = std::stoi(statusNode["Code"].asString());
 		if(!statusNode["Name"].isNull())
 			instanceFullStatusSetObject.status.name = statusNode["Name"].asString();
+		if(!statusNode["Code"].isNull())
+			instanceFullStatusSetObject.status.code = std::stoi(statusNode["Code"].asString());
 		auto healthStatusNode = value["HealthStatus"];
-		if(!healthStatusNode["Code"].isNull())
-			instanceFullStatusSetObject.healthStatus.code = std::stoi(healthStatusNode["Code"].asString());
 		if(!healthStatusNode["Name"].isNull())
 			instanceFullStatusSetObject.healthStatus.name = healthStatusNode["Name"].asString();
+		if(!healthStatusNode["Code"].isNull())
+			instanceFullStatusSetObject.healthStatus.code = std::stoi(healthStatusNode["Code"].asString());
 		instanceFullStatusSet_.push_back(instanceFullStatusSetObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 

@@ -43,26 +43,26 @@ void DescribeNatGatewaysResult::parse(const std::string &payload)
 	for (auto valueNatGatewaysNatGateway : allNatGatewaysNode)
 	{
 		NatGateway natGatewaysObject;
-		if(!valueNatGatewaysNatGateway["NatGatewayId"].isNull())
-			natGatewaysObject.natGatewayId = valueNatGatewaysNatGateway["NatGatewayId"].asString();
-		if(!valueNatGatewaysNatGateway["RegionId"].isNull())
-			natGatewaysObject.regionId = valueNatGatewaysNatGateway["RegionId"].asString();
-		if(!valueNatGatewaysNatGateway["Name"].isNull())
-			natGatewaysObject.name = valueNatGatewaysNatGateway["Name"].asString();
-		if(!valueNatGatewaysNatGateway["Description"].isNull())
-			natGatewaysObject.description = valueNatGatewaysNatGateway["Description"].asString();
+		if(!valueNatGatewaysNatGateway["Status"].isNull())
+			natGatewaysObject.status = valueNatGatewaysNatGateway["Status"].asString();
+		if(!valueNatGatewaysNatGateway["CreationTime"].isNull())
+			natGatewaysObject.creationTime = valueNatGatewaysNatGateway["CreationTime"].asString();
 		if(!valueNatGatewaysNatGateway["VpcId"].isNull())
 			natGatewaysObject.vpcId = valueNatGatewaysNatGateway["VpcId"].asString();
 		if(!valueNatGatewaysNatGateway["Spec"].isNull())
 			natGatewaysObject.spec = valueNatGatewaysNatGateway["Spec"].asString();
-		if(!valueNatGatewaysNatGateway["InstanceChargeType"].isNull())
-			natGatewaysObject.instanceChargeType = valueNatGatewaysNatGateway["InstanceChargeType"].asString();
+		if(!valueNatGatewaysNatGateway["Description"].isNull())
+			natGatewaysObject.description = valueNatGatewaysNatGateway["Description"].asString();
+		if(!valueNatGatewaysNatGateway["NatGatewayId"].isNull())
+			natGatewaysObject.natGatewayId = valueNatGatewaysNatGateway["NatGatewayId"].asString();
 		if(!valueNatGatewaysNatGateway["BusinessStatus"].isNull())
 			natGatewaysObject.businessStatus = valueNatGatewaysNatGateway["BusinessStatus"].asString();
-		if(!valueNatGatewaysNatGateway["CreationTime"].isNull())
-			natGatewaysObject.creationTime = valueNatGatewaysNatGateway["CreationTime"].asString();
-		if(!valueNatGatewaysNatGateway["Status"].isNull())
-			natGatewaysObject.status = valueNatGatewaysNatGateway["Status"].asString();
+		if(!valueNatGatewaysNatGateway["Name"].isNull())
+			natGatewaysObject.name = valueNatGatewaysNatGateway["Name"].asString();
+		if(!valueNatGatewaysNatGateway["InstanceChargeType"].isNull())
+			natGatewaysObject.instanceChargeType = valueNatGatewaysNatGateway["InstanceChargeType"].asString();
+		if(!valueNatGatewaysNatGateway["RegionId"].isNull())
+			natGatewaysObject.regionId = valueNatGatewaysNatGateway["RegionId"].asString();
 		auto allForwardTableIds = value["ForwardTableIds"]["ForwardTableId"];
 		for (auto value : allForwardTableIds)
 			natGatewaysObject.forwardTableIds.push_back(value.asString());
@@ -71,12 +71,12 @@ void DescribeNatGatewaysResult::parse(const std::string &payload)
 			natGatewaysObject.bandwidthPackageIds.push_back(value.asString());
 		natGateways_.push_back(natGatewaysObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 

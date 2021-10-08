@@ -43,26 +43,26 @@ void DescribeNetworkInterfacePermissionsResult::parse(const std::string &payload
 	for (auto valueNetworkInterfacePermissionsNetworkInterfacePermission : allNetworkInterfacePermissionsNode)
 	{
 		NetworkInterfacePermission networkInterfacePermissionsObject;
-		if(!valueNetworkInterfacePermissionsNetworkInterfacePermission["AccountId"].isNull())
-			networkInterfacePermissionsObject.accountId = std::stol(valueNetworkInterfacePermissionsNetworkInterfacePermission["AccountId"].asString());
-		if(!valueNetworkInterfacePermissionsNetworkInterfacePermission["ServiceName"].isNull())
-			networkInterfacePermissionsObject.serviceName = valueNetworkInterfacePermissionsNetworkInterfacePermission["ServiceName"].asString();
-		if(!valueNetworkInterfacePermissionsNetworkInterfacePermission["NetworkInterfaceId"].isNull())
-			networkInterfacePermissionsObject.networkInterfaceId = valueNetworkInterfacePermissionsNetworkInterfacePermission["NetworkInterfaceId"].asString();
-		if(!valueNetworkInterfacePermissionsNetworkInterfacePermission["NetworkInterfacePermissionId"].isNull())
-			networkInterfacePermissionsObject.networkInterfacePermissionId = valueNetworkInterfacePermissionsNetworkInterfacePermission["NetworkInterfacePermissionId"].asString();
 		if(!valueNetworkInterfacePermissionsNetworkInterfacePermission["Permission"].isNull())
 			networkInterfacePermissionsObject.permission = valueNetworkInterfacePermissionsNetworkInterfacePermission["Permission"].asString();
+		if(!valueNetworkInterfacePermissionsNetworkInterfacePermission["NetworkInterfaceId"].isNull())
+			networkInterfacePermissionsObject.networkInterfaceId = valueNetworkInterfacePermissionsNetworkInterfacePermission["NetworkInterfaceId"].asString();
+		if(!valueNetworkInterfacePermissionsNetworkInterfacePermission["AccountId"].isNull())
+			networkInterfacePermissionsObject.accountId = std::stol(valueNetworkInterfacePermissionsNetworkInterfacePermission["AccountId"].asString());
+		if(!valueNetworkInterfacePermissionsNetworkInterfacePermission["NetworkInterfacePermissionId"].isNull())
+			networkInterfacePermissionsObject.networkInterfacePermissionId = valueNetworkInterfacePermissionsNetworkInterfacePermission["NetworkInterfacePermissionId"].asString();
+		if(!valueNetworkInterfacePermissionsNetworkInterfacePermission["ServiceName"].isNull())
+			networkInterfacePermissionsObject.serviceName = valueNetworkInterfacePermissionsNetworkInterfacePermission["ServiceName"].asString();
 		if(!valueNetworkInterfacePermissionsNetworkInterfacePermission["PermissionState"].isNull())
 			networkInterfacePermissionsObject.permissionState = valueNetworkInterfacePermissionsNetworkInterfacePermission["PermissionState"].asString();
 		networkInterfacePermissions_.push_back(networkInterfacePermissionsObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 

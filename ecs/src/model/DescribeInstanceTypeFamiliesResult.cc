@@ -43,10 +43,10 @@ void DescribeInstanceTypeFamiliesResult::parse(const std::string &payload)
 	for (auto valueInstanceTypeFamiliesInstanceTypeFamily : allInstanceTypeFamiliesNode)
 	{
 		InstanceTypeFamily instanceTypeFamiliesObject;
-		if(!valueInstanceTypeFamiliesInstanceTypeFamily["InstanceTypeFamilyId"].isNull())
-			instanceTypeFamiliesObject.instanceTypeFamilyId = valueInstanceTypeFamiliesInstanceTypeFamily["InstanceTypeFamilyId"].asString();
 		if(!valueInstanceTypeFamiliesInstanceTypeFamily["Generation"].isNull())
 			instanceTypeFamiliesObject.generation = valueInstanceTypeFamiliesInstanceTypeFamily["Generation"].asString();
+		if(!valueInstanceTypeFamiliesInstanceTypeFamily["InstanceTypeFamilyId"].isNull())
+			instanceTypeFamiliesObject.instanceTypeFamilyId = valueInstanceTypeFamiliesInstanceTypeFamily["InstanceTypeFamilyId"].asString();
 		instanceTypeFamilies_.push_back(instanceTypeFamiliesObject);
 	}
 

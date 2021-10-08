@@ -39,10 +39,10 @@ void DescribeSnapshotsUsageResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["SnapshotCount"].isNull())
-		snapshotCount_ = std::stoi(value["SnapshotCount"].asString());
 	if(!value["SnapshotSize"].isNull())
 		snapshotSize_ = std::stol(value["SnapshotSize"].asString());
+	if(!value["SnapshotCount"].isNull())
+		snapshotCount_ = std::stoi(value["SnapshotCount"].asString());
 
 }
 
