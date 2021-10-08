@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SCDN_MODEL_BATCHSETSCDNDOMAINCONFIGSRESULT_H_
-#define ALIBABACLOUD_SCDN_MODEL_BATCHSETSCDNDOMAINCONFIGSRESULT_H_
+#ifndef ALIBABACLOUD_SCDN_MODEL_BATCHSTOPSCDNDOMAINRESULT_H_
+#define ALIBABACLOUD_SCDN_MODEL_BATCHSTOPSCDNDOMAINRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,29 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SCDN_EXPORT BatchSetScdnDomainConfigsResult : public ServiceResult
+			class ALIBABACLOUD_SCDN_EXPORT BatchStopScdnDomainResult : public ServiceResult
 			{
 			public:
-				struct DomainConfigModel
-				{
-					std::string functionName;
-					std::string domainName;
-					long configId;
-				};
 
 
-				BatchSetScdnDomainConfigsResult();
-				explicit BatchSetScdnDomainConfigsResult(const std::string &payload);
-				~BatchSetScdnDomainConfigsResult();
-				std::vector<DomainConfigModel> getDomainConfigList()const;
+				BatchStopScdnDomainResult();
+				explicit BatchStopScdnDomainResult(const std::string &payload);
+				~BatchStopScdnDomainResult();
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<DomainConfigModel> domainConfigList_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SCDN_MODEL_BATCHSETSCDNDOMAINCONFIGSRESULT_H_
+#endif // !ALIBABACLOUD_SCDN_MODEL_BATCHSTOPSCDNDOMAINRESULT_H_

@@ -159,6 +159,78 @@ ScdnClient::BatchSetScdnDomainConfigsOutcomeCallable ScdnClient::batchSetScdnDom
 	return task->get_future();
 }
 
+ScdnClient::BatchStartScdnDomainOutcome ScdnClient::batchStartScdnDomain(const BatchStartScdnDomainRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return BatchStartScdnDomainOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return BatchStartScdnDomainOutcome(BatchStartScdnDomainResult(outcome.result()));
+	else
+		return BatchStartScdnDomainOutcome(outcome.error());
+}
+
+void ScdnClient::batchStartScdnDomainAsync(const BatchStartScdnDomainRequest& request, const BatchStartScdnDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, batchStartScdnDomain(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ScdnClient::BatchStartScdnDomainOutcomeCallable ScdnClient::batchStartScdnDomainCallable(const BatchStartScdnDomainRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<BatchStartScdnDomainOutcome()>>(
+			[this, request]()
+			{
+			return this->batchStartScdnDomain(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ScdnClient::BatchStopScdnDomainOutcome ScdnClient::batchStopScdnDomain(const BatchStopScdnDomainRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return BatchStopScdnDomainOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return BatchStopScdnDomainOutcome(BatchStopScdnDomainResult(outcome.result()));
+	else
+		return BatchStopScdnDomainOutcome(outcome.error());
+}
+
+void ScdnClient::batchStopScdnDomainAsync(const BatchStopScdnDomainRequest& request, const BatchStopScdnDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, batchStopScdnDomain(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ScdnClient::BatchStopScdnDomainOutcomeCallable ScdnClient::batchStopScdnDomainCallable(const BatchStopScdnDomainRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<BatchStopScdnDomainOutcome()>>(
+			[this, request]()
+			{
+			return this->batchStopScdnDomain(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ScdnClient::BatchUpdateScdnDomainOutcome ScdnClient::batchUpdateScdnDomain(const BatchUpdateScdnDomainRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

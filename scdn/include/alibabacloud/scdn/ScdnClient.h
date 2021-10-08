@@ -28,6 +28,10 @@
 #include "model/BatchDeleteScdnDomainConfigsResult.h"
 #include "model/BatchSetScdnDomainConfigsRequest.h"
 #include "model/BatchSetScdnDomainConfigsResult.h"
+#include "model/BatchStartScdnDomainRequest.h"
+#include "model/BatchStartScdnDomainResult.h"
+#include "model/BatchStopScdnDomainRequest.h"
+#include "model/BatchStopScdnDomainResult.h"
 #include "model/BatchUpdateScdnDomainRequest.h"
 #include "model/BatchUpdateScdnDomainResult.h"
 #include "model/CheckScdnServiceRequest.h"
@@ -156,6 +160,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::BatchSetScdnDomainConfigsResult> BatchSetScdnDomainConfigsOutcome;
 			typedef std::future<BatchSetScdnDomainConfigsOutcome> BatchSetScdnDomainConfigsOutcomeCallable;
 			typedef std::function<void(const ScdnClient*, const Model::BatchSetScdnDomainConfigsRequest&, const BatchSetScdnDomainConfigsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchSetScdnDomainConfigsAsyncHandler;
+			typedef Outcome<Error, Model::BatchStartScdnDomainResult> BatchStartScdnDomainOutcome;
+			typedef std::future<BatchStartScdnDomainOutcome> BatchStartScdnDomainOutcomeCallable;
+			typedef std::function<void(const ScdnClient*, const Model::BatchStartScdnDomainRequest&, const BatchStartScdnDomainOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchStartScdnDomainAsyncHandler;
+			typedef Outcome<Error, Model::BatchStopScdnDomainResult> BatchStopScdnDomainOutcome;
+			typedef std::future<BatchStopScdnDomainOutcome> BatchStopScdnDomainOutcomeCallable;
+			typedef std::function<void(const ScdnClient*, const Model::BatchStopScdnDomainRequest&, const BatchStopScdnDomainOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchStopScdnDomainAsyncHandler;
 			typedef Outcome<Error, Model::BatchUpdateScdnDomainResult> BatchUpdateScdnDomainOutcome;
 			typedef std::future<BatchUpdateScdnDomainOutcome> BatchUpdateScdnDomainOutcomeCallable;
 			typedef std::function<void(const ScdnClient*, const Model::BatchUpdateScdnDomainRequest&, const BatchUpdateScdnDomainOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchUpdateScdnDomainAsyncHandler;
@@ -335,6 +345,12 @@ namespace AlibabaCloud
 			BatchSetScdnDomainConfigsOutcome batchSetScdnDomainConfigs(const Model::BatchSetScdnDomainConfigsRequest &request)const;
 			void batchSetScdnDomainConfigsAsync(const Model::BatchSetScdnDomainConfigsRequest& request, const BatchSetScdnDomainConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			BatchSetScdnDomainConfigsOutcomeCallable batchSetScdnDomainConfigsCallable(const Model::BatchSetScdnDomainConfigsRequest& request) const;
+			BatchStartScdnDomainOutcome batchStartScdnDomain(const Model::BatchStartScdnDomainRequest &request)const;
+			void batchStartScdnDomainAsync(const Model::BatchStartScdnDomainRequest& request, const BatchStartScdnDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			BatchStartScdnDomainOutcomeCallable batchStartScdnDomainCallable(const Model::BatchStartScdnDomainRequest& request) const;
+			BatchStopScdnDomainOutcome batchStopScdnDomain(const Model::BatchStopScdnDomainRequest &request)const;
+			void batchStopScdnDomainAsync(const Model::BatchStopScdnDomainRequest& request, const BatchStopScdnDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			BatchStopScdnDomainOutcomeCallable batchStopScdnDomainCallable(const Model::BatchStopScdnDomainRequest& request) const;
 			BatchUpdateScdnDomainOutcome batchUpdateScdnDomain(const Model::BatchUpdateScdnDomainRequest &request)const;
 			void batchUpdateScdnDomainAsync(const Model::BatchUpdateScdnDomainRequest& request, const BatchUpdateScdnDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			BatchUpdateScdnDomainOutcomeCallable batchUpdateScdnDomainCallable(const Model::BatchUpdateScdnDomainRequest& request) const;

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SCDN_MODEL_DESCRIBESCDNDOMAINCONFIGSREQUEST_H_
-#define ALIBABACLOUD_SCDN_MODEL_DESCRIBESCDNDOMAINCONFIGSREQUEST_H_
+#ifndef ALIBABACLOUD_SCDN_MODEL_BATCHSTOPSCDNDOMAINREQUEST_H_
+#define ALIBABACLOUD_SCDN_MODEL_BATCHSTOPSCDNDOMAINREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,33 +28,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SCDN_EXPORT DescribeScdnDomainConfigsRequest : public RpcServiceRequest
+			class ALIBABACLOUD_SCDN_EXPORT BatchStopScdnDomainRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeScdnDomainConfigsRequest();
-				~DescribeScdnDomainConfigsRequest();
+				BatchStopScdnDomainRequest();
+				~BatchStopScdnDomainRequest();
 
-				std::string getFunctionNames()const;
-				void setFunctionNames(const std::string& functionNames);
-				std::string getDomainName()const;
-				void setDomainName(const std::string& domainName);
+				std::string getDomainNames()const;
+				void setDomainNames(const std::string& domainNames);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
-				std::string getConfigId()const;
-				void setConfigId(const std::string& configId);
 
             private:
-				std::string functionNames_;
-				std::string domainName_;
+				std::string domainNames_;
 				long ownerId_;
 				std::string securityToken_;
-				std::string configId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SCDN_MODEL_DESCRIBESCDNDOMAINCONFIGSREQUEST_H_
+#endif // !ALIBABACLOUD_SCDN_MODEL_BATCHSTOPSCDNDOMAINREQUEST_H_

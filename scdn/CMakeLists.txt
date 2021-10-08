@@ -27,6 +27,10 @@ set(scdn_public_header_model
 	include/alibabacloud/scdn/model/BatchDeleteScdnDomainConfigsResult.h
 	include/alibabacloud/scdn/model/BatchSetScdnDomainConfigsRequest.h
 	include/alibabacloud/scdn/model/BatchSetScdnDomainConfigsResult.h
+	include/alibabacloud/scdn/model/BatchStartScdnDomainRequest.h
+	include/alibabacloud/scdn/model/BatchStartScdnDomainResult.h
+	include/alibabacloud/scdn/model/BatchStopScdnDomainRequest.h
+	include/alibabacloud/scdn/model/BatchStopScdnDomainResult.h
 	include/alibabacloud/scdn/model/BatchUpdateScdnDomainRequest.h
 	include/alibabacloud/scdn/model/BatchUpdateScdnDomainResult.h
 	include/alibabacloud/scdn/model/CheckScdnServiceRequest.h
@@ -146,6 +150,10 @@ set(scdn_src
 	src/model/BatchDeleteScdnDomainConfigsResult.cc
 	src/model/BatchSetScdnDomainConfigsRequest.cc
 	src/model/BatchSetScdnDomainConfigsResult.cc
+	src/model/BatchStartScdnDomainRequest.cc
+	src/model/BatchStartScdnDomainResult.cc
+	src/model/BatchStopScdnDomainRequest.cc
+	src/model/BatchStopScdnDomainResult.cc
 	src/model/BatchUpdateScdnDomainRequest.cc
 	src/model/BatchUpdateScdnDomainResult.cc
 	src/model/CheckScdnServiceRequest.cc
