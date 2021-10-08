@@ -159,6 +159,42 @@ CdnClient::BatchAddCdnDomainOutcomeCallable CdnClient::batchAddCdnDomainCallable
 	return task->get_future();
 }
 
+CdnClient::BatchDeleteCdnDomainConfigOutcome CdnClient::batchDeleteCdnDomainConfig(const BatchDeleteCdnDomainConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return BatchDeleteCdnDomainConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return BatchDeleteCdnDomainConfigOutcome(BatchDeleteCdnDomainConfigResult(outcome.result()));
+	else
+		return BatchDeleteCdnDomainConfigOutcome(outcome.error());
+}
+
+void CdnClient::batchDeleteCdnDomainConfigAsync(const BatchDeleteCdnDomainConfigRequest& request, const BatchDeleteCdnDomainConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, batchDeleteCdnDomainConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CdnClient::BatchDeleteCdnDomainConfigOutcomeCallable CdnClient::batchDeleteCdnDomainConfigCallable(const BatchDeleteCdnDomainConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<BatchDeleteCdnDomainConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->batchDeleteCdnDomainConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CdnClient::BatchSetCdnDomainConfigOutcome CdnClient::batchSetCdnDomainConfig(const BatchSetCdnDomainConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1089,6 +1125,42 @@ CdnClient::DescribeCdnCertificateListOutcomeCallable CdnClient::describeCdnCerti
 			[this, request]()
 			{
 			return this->describeCdnCertificateList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CdnClient::DescribeCdnDeletedDomainsOutcome CdnClient::describeCdnDeletedDomains(const DescribeCdnDeletedDomainsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeCdnDeletedDomainsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeCdnDeletedDomainsOutcome(DescribeCdnDeletedDomainsResult(outcome.result()));
+	else
+		return DescribeCdnDeletedDomainsOutcome(outcome.error());
+}
+
+void CdnClient::describeCdnDeletedDomainsAsync(const DescribeCdnDeletedDomainsRequest& request, const DescribeCdnDeletedDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeCdnDeletedDomains(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CdnClient::DescribeCdnDeletedDomainsOutcomeCallable CdnClient::describeCdnDeletedDomainsCallable(const DescribeCdnDeletedDomainsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeCdnDeletedDomainsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeCdnDeletedDomains(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2565,6 +2637,42 @@ CdnClient::DescribeDomainMax95BpsDataOutcomeCallable CdnClient::describeDomainMa
 			[this, request]()
 			{
 			return this->describeDomainMax95BpsData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CdnClient::DescribeDomainMultiUsageDataOutcome CdnClient::describeDomainMultiUsageData(const DescribeDomainMultiUsageDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDomainMultiUsageDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDomainMultiUsageDataOutcome(DescribeDomainMultiUsageDataResult(outcome.result()));
+	else
+		return DescribeDomainMultiUsageDataOutcome(outcome.error());
+}
+
+void CdnClient::describeDomainMultiUsageDataAsync(const DescribeDomainMultiUsageDataRequest& request, const DescribeDomainMultiUsageDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDomainMultiUsageData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CdnClient::DescribeDomainMultiUsageDataOutcomeCallable CdnClient::describeDomainMultiUsageDataCallable(const DescribeDomainMultiUsageDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDomainMultiUsageDataOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDomainMultiUsageData(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4695,42 +4803,6 @@ CdnClient::DescribeUserConfigsOutcomeCallable CdnClient::describeUserConfigsCall
 	return task->get_future();
 }
 
-CdnClient::DescribeUserCustomerLabelsOutcome CdnClient::describeUserCustomerLabels(const DescribeUserCustomerLabelsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeUserCustomerLabelsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeUserCustomerLabelsOutcome(DescribeUserCustomerLabelsResult(outcome.result()));
-	else
-		return DescribeUserCustomerLabelsOutcome(outcome.error());
-}
-
-void CdnClient::describeUserCustomerLabelsAsync(const DescribeUserCustomerLabelsRequest& request, const DescribeUserCustomerLabelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeUserCustomerLabels(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CdnClient::DescribeUserCustomerLabelsOutcomeCallable CdnClient::describeUserCustomerLabelsCallable(const DescribeUserCustomerLabelsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeUserCustomerLabelsOutcome()>>(
-			[this, request]()
-			{
-			return this->describeUserCustomerLabels(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CdnClient::DescribeUserDomainsOutcome CdnClient::describeUserDomains(const DescribeUserDomainsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5739,42 +5811,6 @@ CdnClient::SetConfigOfVersionOutcomeCallable CdnClient::setConfigOfVersionCallab
 	return task->get_future();
 }
 
-CdnClient::SetDomainGreenManagerConfigOutcome CdnClient::setDomainGreenManagerConfig(const SetDomainGreenManagerConfigRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SetDomainGreenManagerConfigOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SetDomainGreenManagerConfigOutcome(SetDomainGreenManagerConfigResult(outcome.result()));
-	else
-		return SetDomainGreenManagerConfigOutcome(outcome.error());
-}
-
-void CdnClient::setDomainGreenManagerConfigAsync(const SetDomainGreenManagerConfigRequest& request, const SetDomainGreenManagerConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, setDomainGreenManagerConfig(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CdnClient::SetDomainGreenManagerConfigOutcomeCallable CdnClient::setDomainGreenManagerConfigCallable(const SetDomainGreenManagerConfigRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SetDomainGreenManagerConfigOutcome()>>(
-			[this, request]()
-			{
-			return this->setDomainGreenManagerConfig(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CdnClient::SetDomainServerCertificateOutcome CdnClient::setDomainServerCertificate(const SetDomainServerCertificateRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -6417,6 +6453,42 @@ CdnClient::SetSourceHostConfigOutcomeCallable CdnClient::setSourceHostConfigCall
 			[this, request]()
 			{
 			return this->setSourceHostConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CdnClient::SetUserGreenManagerConfigOutcome CdnClient::setUserGreenManagerConfig(const SetUserGreenManagerConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetUserGreenManagerConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetUserGreenManagerConfigOutcome(SetUserGreenManagerConfigResult(outcome.result()));
+	else
+		return SetUserGreenManagerConfigOutcome(outcome.error());
+}
+
+void CdnClient::setUserGreenManagerConfigAsync(const SetUserGreenManagerConfigRequest& request, const SetUserGreenManagerConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setUserGreenManagerConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CdnClient::SetUserGreenManagerConfigOutcomeCallable CdnClient::setUserGreenManagerConfigCallable(const SetUserGreenManagerConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetUserGreenManagerConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->setUserGreenManagerConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

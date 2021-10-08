@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CDN_MODEL_DESCRIBEUSERCUSTOMERLABELSRESULT_H_
-#define ALIBABACLOUD_CDN_MODEL_DESCRIBEUSERCUSTOMERLABELSRESULT_H_
+#ifndef ALIBABACLOUD_CDN_MODEL_DESCRIBECDNDELETEDDOMAINSRESULT_H_
+#define ALIBABACLOUD_CDN_MODEL_DESCRIBECDNDELETEDDOMAINSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,23 +29,34 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CDN_EXPORT DescribeUserCustomerLabelsResult : public ServiceResult
+			class ALIBABACLOUD_CDN_EXPORT DescribeCdnDeletedDomainsResult : public ServiceResult
 			{
 			public:
+				struct PageData
+				{
+					std::string domainName;
+					std::string gmtModified;
+				};
 
 
-				DescribeUserCustomerLabelsResult();
-				explicit DescribeUserCustomerLabelsResult(const std::string &payload);
-				~DescribeUserCustomerLabelsResult();
-				bool getIsInnerUser()const;
+				DescribeCdnDeletedDomainsResult();
+				explicit DescribeCdnDeletedDomainsResult(const std::string &payload);
+				~DescribeCdnDeletedDomainsResult();
+				std::vector<PageData> getDomains()const;
+				long getTotalCount()const;
+				long getPageSize()const;
+				long getPageNumber()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				bool isInnerUser_;
+				std::vector<PageData> domains_;
+				long totalCount_;
+				long pageSize_;
+				long pageNumber_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CDN_MODEL_DESCRIBEUSERCUSTOMERLABELSRESULT_H_
+#endif // !ALIBABACLOUD_CDN_MODEL_DESCRIBECDNDELETEDDOMAINSRESULT_H_

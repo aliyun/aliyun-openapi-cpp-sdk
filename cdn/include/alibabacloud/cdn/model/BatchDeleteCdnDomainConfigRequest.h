@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CDN_MODEL_CREATECDNSUBTASKREQUEST_H_
-#define ALIBABACLOUD_CDN_MODEL_CREATECDNSUBTASKREQUEST_H_
+#ifndef ALIBABACLOUD_CDN_MODEL_BATCHDELETECDNDOMAINCONFIGREQUEST_H_
+#define ALIBABACLOUD_CDN_MODEL_BATCHDELETECDNDOMAINCONFIGREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,27 +28,33 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CDN_EXPORT CreateCdnSubTaskRequest : public RpcServiceRequest
+			class ALIBABACLOUD_CDN_EXPORT BatchDeleteCdnDomainConfigRequest : public RpcServiceRequest
 			{
 
 			public:
-				CreateCdnSubTaskRequest();
-				~CreateCdnSubTaskRequest();
+				BatchDeleteCdnDomainConfigRequest();
+				~BatchDeleteCdnDomainConfigRequest();
 
-				std::string getDomainName()const;
-				void setDomainName(const std::string& domainName);
+				std::string getFunctionNames()const;
+				void setFunctionNames(const std::string& functionNames);
+				std::string getDomainNames()const;
+				void setDomainNames(const std::string& domainNames);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getReportIds()const;
-				void setReportIds(const std::string& reportIds);
+				std::string getSecurityToken()const;
+				void setSecurityToken(const std::string& securityToken);
 
             private:
-				std::string domainName_;
+				std::string functionNames_;
+				std::string domainNames_;
+				std::string ownerAccount_;
 				long ownerId_;
-				std::string reportIds_;
+				std::string securityToken_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CDN_MODEL_CREATECDNSUBTASKREQUEST_H_
+#endif // !ALIBABACLOUD_CDN_MODEL_BATCHDELETECDNDOMAINCONFIGREQUEST_H_

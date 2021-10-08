@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				DescribeUserDomainsRequest();
 				~DescribeUserDomainsRequest();
 
+				std::string getSource()const;
+				void setSource(const std::string& source);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
 				bool getCheckDomainShow()const;
@@ -75,6 +77,7 @@ namespace AlibabaCloud
 				void setChangeStartTime(const std::string& changeStartTime);
 
             private:
+				std::string source_;
 				int pageNumber_;
 				bool checkDomainShow_;
 				std::string resourceGroupId_;

@@ -14,38 +14,31 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/cdn/model/DescribeUserCustomerLabelsResult.h>
+#include <alibabacloud/cdn/model/BatchDeleteCdnDomainConfigResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Cdn;
 using namespace AlibabaCloud::Cdn::Model;
 
-DescribeUserCustomerLabelsResult::DescribeUserCustomerLabelsResult() :
+BatchDeleteCdnDomainConfigResult::BatchDeleteCdnDomainConfigResult() :
 	ServiceResult()
 {}
 
-DescribeUserCustomerLabelsResult::DescribeUserCustomerLabelsResult(const std::string &payload) :
+BatchDeleteCdnDomainConfigResult::BatchDeleteCdnDomainConfigResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-DescribeUserCustomerLabelsResult::~DescribeUserCustomerLabelsResult()
+BatchDeleteCdnDomainConfigResult::~BatchDeleteCdnDomainConfigResult()
 {}
 
-void DescribeUserCustomerLabelsResult::parse(const std::string &payload)
+void BatchDeleteCdnDomainConfigResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["IsInnerUser"].isNull())
-		isInnerUser_ = value["IsInnerUser"].asString() == "true";
 
-}
-
-bool DescribeUserCustomerLabelsResult::getIsInnerUser()const
-{
-	return isInnerUser_;
 }
 

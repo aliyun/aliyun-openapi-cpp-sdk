@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/cdn/model/SetDomainGreenManagerConfigResult.h>
+#include <alibabacloud/cdn/model/SetUserGreenManagerConfigResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Cdn;
 using namespace AlibabaCloud::Cdn::Model;
 
-SetDomainGreenManagerConfigResult::SetDomainGreenManagerConfigResult() :
+SetUserGreenManagerConfigResult::SetUserGreenManagerConfigResult() :
 	ServiceResult()
 {}
 
-SetDomainGreenManagerConfigResult::SetDomainGreenManagerConfigResult(const std::string &payload) :
+SetUserGreenManagerConfigResult::SetUserGreenManagerConfigResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-SetDomainGreenManagerConfigResult::~SetDomainGreenManagerConfigResult()
+SetUserGreenManagerConfigResult::~SetUserGreenManagerConfigResult()
 {}
 
-void SetDomainGreenManagerConfigResult::parse(const std::string &payload)
+void SetUserGreenManagerConfigResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;

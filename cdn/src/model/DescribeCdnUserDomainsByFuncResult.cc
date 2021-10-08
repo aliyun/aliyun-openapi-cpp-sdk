@@ -61,8 +61,6 @@ void DescribeCdnUserDomainsByFuncResult::parse(const std::string &payload)
 			domainsObject.sslProtocol = valueDomainsPageData["SslProtocol"].asString();
 		if(!valueDomainsPageData["ResourceGroupId"].isNull())
 			domainsObject.resourceGroupId = valueDomainsPageData["ResourceGroupId"].asString();
-		if(!valueDomainsPageData["Sandbox"].isNull())
-			domainsObject.sandbox = valueDomainsPageData["Sandbox"].asString();
 		auto allSourcesNode = valueDomainsPageData["Sources"]["Source"];
 		for (auto valueDomainsPageDataSourcesSource : allSourcesNode)
 		{

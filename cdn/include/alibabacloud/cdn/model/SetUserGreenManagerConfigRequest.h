@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CDN_MODEL_CREATECDNSUBTASKREQUEST_H_
-#define ALIBABACLOUD_CDN_MODEL_CREATECDNSUBTASKREQUEST_H_
+#ifndef ALIBABACLOUD_CDN_MODEL_SETUSERGREENMANAGERCONFIGREQUEST_H_
+#define ALIBABACLOUD_CDN_MODEL_SETUSERGREENMANAGERCONFIGREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,27 +28,30 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CDN_EXPORT CreateCdnSubTaskRequest : public RpcServiceRequest
+			class ALIBABACLOUD_CDN_EXPORT SetUserGreenManagerConfigRequest : public RpcServiceRequest
 			{
 
 			public:
-				CreateCdnSubTaskRequest();
-				~CreateCdnSubTaskRequest();
+				SetUserGreenManagerConfigRequest();
+				~SetUserGreenManagerConfigRequest();
 
-				std::string getDomainName()const;
-				void setDomainName(const std::string& domainName);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getReportIds()const;
-				void setReportIds(const std::string& reportIds);
+				std::string getSecurityToken()const;
+				void setSecurityToken(const std::string& securityToken);
+				std::string getQuota()const;
+				void setQuota(const std::string& quota);
+				std::string getRatio()const;
+				void setRatio(const std::string& ratio);
 
             private:
-				std::string domainName_;
 				long ownerId_;
-				std::string reportIds_;
+				std::string securityToken_;
+				std::string quota_;
+				std::string ratio_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CDN_MODEL_CREATECDNSUBTASKREQUEST_H_
+#endif // !ALIBABACLOUD_CDN_MODEL_SETUSERGREENMANAGERCONFIGREQUEST_H_

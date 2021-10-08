@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CDN_MODEL_CREATECDNSUBTASKREQUEST_H_
-#define ALIBABACLOUD_CDN_MODEL_CREATECDNSUBTASKREQUEST_H_
+#ifndef ALIBABACLOUD_CDN_MODEL_BATCHDELETECDNDOMAINCONFIGRESULT_H_
+#define ALIBABACLOUD_CDN_MODEL_BATCHDELETECDNDOMAINCONFIGRESULT_H_
 
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
+#include <utility>
+#include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/cdn/CdnExport.h>
 
 namespace AlibabaCloud
@@ -28,27 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CDN_EXPORT CreateCdnSubTaskRequest : public RpcServiceRequest
+			class ALIBABACLOUD_CDN_EXPORT BatchDeleteCdnDomainConfigResult : public ServiceResult
 			{
-
 			public:
-				CreateCdnSubTaskRequest();
-				~CreateCdnSubTaskRequest();
 
-				std::string getDomainName()const;
-				void setDomainName(const std::string& domainName);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
-				std::string getReportIds()const;
-				void setReportIds(const std::string& reportIds);
 
-            private:
-				std::string domainName_;
-				long ownerId_;
-				std::string reportIds_;
+				BatchDeleteCdnDomainConfigResult();
+				explicit BatchDeleteCdnDomainConfigResult(const std::string &payload);
+				~BatchDeleteCdnDomainConfigResult();
+
+			protected:
+				void parse(const std::string &payload);
+			private:
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CDN_MODEL_CREATECDNSUBTASKREQUEST_H_
+#endif // !ALIBABACLOUD_CDN_MODEL_BATCHDELETECDNDOMAINCONFIGRESULT_H_

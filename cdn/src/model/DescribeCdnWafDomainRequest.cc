@@ -27,6 +27,17 @@ DescribeCdnWafDomainRequest::DescribeCdnWafDomainRequest() :
 DescribeCdnWafDomainRequest::~DescribeCdnWafDomainRequest()
 {}
 
+std::string DescribeCdnWafDomainRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DescribeCdnWafDomainRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string DescribeCdnWafDomainRequest::getRegionId()const
 {
 	return regionId_;

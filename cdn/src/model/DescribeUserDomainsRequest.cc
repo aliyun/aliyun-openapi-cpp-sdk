@@ -27,6 +27,17 @@ DescribeUserDomainsRequest::DescribeUserDomainsRequest() :
 DescribeUserDomainsRequest::~DescribeUserDomainsRequest()
 {}
 
+std::string DescribeUserDomainsRequest::getSource()const
+{
+	return source_;
+}
+
+void DescribeUserDomainsRequest::setSource(const std::string& source)
+{
+	source_ = source;
+	setParameter("Source", source);
+}
+
 int DescribeUserDomainsRequest::getPageNumber()const
 {
 	return pageNumber_;

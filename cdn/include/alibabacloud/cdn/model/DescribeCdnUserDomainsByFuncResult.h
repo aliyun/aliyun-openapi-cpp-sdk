@@ -52,7 +52,6 @@ namespace AlibabaCloud
 					std::vector<PageData::Source> sources;
 					std::string cname;
 					std::string domainStatus;
-					std::string sandbox;
 				};
 
 

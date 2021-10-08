@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				std::string getStartTime()const;
 				void setStartTime(const std::string& startTime);
+				std::string getType()const;
+				void setType(const std::string& type);
 				std::string getDataProtocol()const;
 				void setDataProtocol(const std::string& dataProtocol);
 				std::string getArea()const;
@@ -54,6 +56,7 @@ namespace AlibabaCloud
 
             private:
 				std::string startTime_;
+				std::string type_;
 				std::string dataProtocol_;
 				std::string area_;
 				std::string domainName_;

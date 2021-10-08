@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CDN_MODEL_DESCRIBEUSERCUSTOMERLABELSREQUEST_H_
-#define ALIBABACLOUD_CDN_MODEL_DESCRIBEUSERCUSTOMERLABELSREQUEST_H_
+#ifndef ALIBABACLOUD_CDN_MODEL_DESCRIBEDOMAINMULTIUSAGEDATAREQUEST_H_
+#define ALIBABACLOUD_CDN_MODEL_DESCRIBEDOMAINMULTIUSAGEDATAREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,30 +28,30 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CDN_EXPORT DescribeUserCustomerLabelsRequest : public RpcServiceRequest
+			class ALIBABACLOUD_CDN_EXPORT DescribeDomainMultiUsageDataRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeUserCustomerLabelsRequest();
-				~DescribeUserCustomerLabelsRequest();
+				DescribeDomainMultiUsageDataRequest();
+				~DescribeDomainMultiUsageDataRequest();
 
+				std::string getStartTime()const;
+				void setStartTime(const std::string& startTime);
+				std::string getDomainName()const;
+				void setDomainName(const std::string& domainName);
+				std::string getEndTime()const;
+				void setEndTime(const std::string& endTime);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
-				long getUid()const;
-				void setUid(long uid);
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
 
             private:
+				std::string startTime_;
+				std::string domainName_;
+				std::string endTime_;
 				long ownerId_;
-				std::string accessKeyId_;
-				long uid_;
-				std::string securityToken_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CDN_MODEL_DESCRIBEUSERCUSTOMERLABELSREQUEST_H_
+#endif // !ALIBABACLOUD_CDN_MODEL_DESCRIBEDOMAINMULTIUSAGEDATAREQUEST_H_

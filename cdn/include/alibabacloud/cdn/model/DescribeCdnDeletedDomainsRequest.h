@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CDN_MODEL_SETDOMAINGREENMANAGERCONFIGREQUEST_H_
-#define ALIBABACLOUD_CDN_MODEL_SETDOMAINGREENMANAGERCONFIGREQUEST_H_
+#ifndef ALIBABACLOUD_CDN_MODEL_DESCRIBECDNDELETEDDOMAINSREQUEST_H_
+#define ALIBABACLOUD_CDN_MODEL_DESCRIBECDNDELETEDDOMAINSREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,27 +28,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CDN_EXPORT SetDomainGreenManagerConfigRequest : public RpcServiceRequest
+			class ALIBABACLOUD_CDN_EXPORT DescribeCdnDeletedDomainsRequest : public RpcServiceRequest
 			{
 
 			public:
-				SetDomainGreenManagerConfigRequest();
-				~SetDomainGreenManagerConfigRequest();
+				DescribeCdnDeletedDomainsRequest();
+				~DescribeCdnDeletedDomainsRequest();
 
-				std::string getEnable()const;
-				void setEnable(const std::string& enable);
-				std::string getDomainName()const;
-				void setDomainName(const std::string& domainName);
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 
             private:
-				std::string enable_;
-				std::string domainName_;
+				int pageNumber_;
+				int pageSize_;
 				long ownerId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CDN_MODEL_SETDOMAINGREENMANAGERCONFIGREQUEST_H_
+#endif // !ALIBABACLOUD_CDN_MODEL_DESCRIBECDNDELETEDDOMAINSREQUEST_H_

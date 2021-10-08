@@ -38,6 +38,17 @@ void DescribeDomainUsageDataRequest::setStartTime(const std::string& startTime)
 	setParameter("StartTime", startTime);
 }
 
+std::string DescribeDomainUsageDataRequest::getType()const
+{
+	return type_;
+}
+
+void DescribeDomainUsageDataRequest::setType(const std::string& type)
+{
+	type_ = type;
+	setParameter("Type", type);
+}
+
 std::string DescribeDomainUsageDataRequest::getDataProtocol()const
 {
 	return dataProtocol_;

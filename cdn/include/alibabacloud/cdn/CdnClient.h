@@ -28,6 +28,8 @@
 #include "model/AddFCTriggerResult.h"
 #include "model/BatchAddCdnDomainRequest.h"
 #include "model/BatchAddCdnDomainResult.h"
+#include "model/BatchDeleteCdnDomainConfigRequest.h"
+#include "model/BatchDeleteCdnDomainConfigResult.h"
 #include "model/BatchSetCdnDomainConfigRequest.h"
 #include "model/BatchSetCdnDomainConfigResult.h"
 #include "model/BatchSetCdnDomainServerCertificateRequest.h"
@@ -80,6 +82,8 @@
 #include "model/DescribeCdnCertificateDetailResult.h"
 #include "model/DescribeCdnCertificateListRequest.h"
 #include "model/DescribeCdnCertificateListResult.h"
+#include "model/DescribeCdnDeletedDomainsRequest.h"
+#include "model/DescribeCdnDeletedDomainsResult.h"
 #include "model/DescribeCdnDeliverListRequest.h"
 #include "model/DescribeCdnDeliverListResult.h"
 #include "model/DescribeCdnDomainByCertificateRequest.h"
@@ -162,6 +166,8 @@
 #include "model/DescribeDomainISPDataResult.h"
 #include "model/DescribeDomainMax95BpsDataRequest.h"
 #include "model/DescribeDomainMax95BpsDataResult.h"
+#include "model/DescribeDomainMultiUsageDataRequest.h"
+#include "model/DescribeDomainMultiUsageDataResult.h"
 #include "model/DescribeDomainNamesOfVersionRequest.h"
 #include "model/DescribeDomainNamesOfVersionResult.h"
 #include "model/DescribeDomainPathDataRequest.h"
@@ -280,8 +286,6 @@
 #include "model/DescribeUserCertificateExpireCountResult.h"
 #include "model/DescribeUserConfigsRequest.h"
 #include "model/DescribeUserConfigsResult.h"
-#include "model/DescribeUserCustomerLabelsRequest.h"
-#include "model/DescribeUserCustomerLabelsResult.h"
 #include "model/DescribeUserDomainsRequest.h"
 #include "model/DescribeUserDomainsResult.h"
 #include "model/DescribeUserTagsRequest.h"
@@ -338,8 +342,6 @@
 #include "model/SetCdnDomainStagingConfigResult.h"
 #include "model/SetConfigOfVersionRequest.h"
 #include "model/SetConfigOfVersionResult.h"
-#include "model/SetDomainGreenManagerConfigRequest.h"
-#include "model/SetDomainGreenManagerConfigResult.h"
 #include "model/SetDomainServerCertificateRequest.h"
 #include "model/SetDomainServerCertificateResult.h"
 #include "model/SetFileCacheExpiredConfigRequest.h"
@@ -376,6 +378,8 @@
 #include "model/SetReqHeaderConfigResult.h"
 #include "model/SetSourceHostConfigRequest.h"
 #include "model/SetSourceHostConfigResult.h"
+#include "model/SetUserGreenManagerConfigRequest.h"
+#include "model/SetUserGreenManagerConfigResult.h"
 #include "model/SetWaitingRoomConfigRequest.h"
 #include "model/SetWaitingRoomConfigResult.h"
 #include "model/StartCdnDomainRequest.h"
@@ -412,6 +416,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::BatchAddCdnDomainResult> BatchAddCdnDomainOutcome;
 			typedef std::future<BatchAddCdnDomainOutcome> BatchAddCdnDomainOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::BatchAddCdnDomainRequest&, const BatchAddCdnDomainOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchAddCdnDomainAsyncHandler;
+			typedef Outcome<Error, Model::BatchDeleteCdnDomainConfigResult> BatchDeleteCdnDomainConfigOutcome;
+			typedef std::future<BatchDeleteCdnDomainConfigOutcome> BatchDeleteCdnDomainConfigOutcomeCallable;
+			typedef std::function<void(const CdnClient*, const Model::BatchDeleteCdnDomainConfigRequest&, const BatchDeleteCdnDomainConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchDeleteCdnDomainConfigAsyncHandler;
 			typedef Outcome<Error, Model::BatchSetCdnDomainConfigResult> BatchSetCdnDomainConfigOutcome;
 			typedef std::future<BatchSetCdnDomainConfigOutcome> BatchSetCdnDomainConfigOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::BatchSetCdnDomainConfigRequest&, const BatchSetCdnDomainConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchSetCdnDomainConfigAsyncHandler;
@@ -490,6 +497,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeCdnCertificateListResult> DescribeCdnCertificateListOutcome;
 			typedef std::future<DescribeCdnCertificateListOutcome> DescribeCdnCertificateListOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::DescribeCdnCertificateListRequest&, const DescribeCdnCertificateListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCdnCertificateListAsyncHandler;
+			typedef Outcome<Error, Model::DescribeCdnDeletedDomainsResult> DescribeCdnDeletedDomainsOutcome;
+			typedef std::future<DescribeCdnDeletedDomainsOutcome> DescribeCdnDeletedDomainsOutcomeCallable;
+			typedef std::function<void(const CdnClient*, const Model::DescribeCdnDeletedDomainsRequest&, const DescribeCdnDeletedDomainsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCdnDeletedDomainsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeCdnDeliverListResult> DescribeCdnDeliverListOutcome;
 			typedef std::future<DescribeCdnDeliverListOutcome> DescribeCdnDeliverListOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::DescribeCdnDeliverListRequest&, const DescribeCdnDeliverListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCdnDeliverListAsyncHandler;
@@ -613,6 +623,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeDomainMax95BpsDataResult> DescribeDomainMax95BpsDataOutcome;
 			typedef std::future<DescribeDomainMax95BpsDataOutcome> DescribeDomainMax95BpsDataOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::DescribeDomainMax95BpsDataRequest&, const DescribeDomainMax95BpsDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainMax95BpsDataAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDomainMultiUsageDataResult> DescribeDomainMultiUsageDataOutcome;
+			typedef std::future<DescribeDomainMultiUsageDataOutcome> DescribeDomainMultiUsageDataOutcomeCallable;
+			typedef std::function<void(const CdnClient*, const Model::DescribeDomainMultiUsageDataRequest&, const DescribeDomainMultiUsageDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainMultiUsageDataAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDomainNamesOfVersionResult> DescribeDomainNamesOfVersionOutcome;
 			typedef std::future<DescribeDomainNamesOfVersionOutcome> DescribeDomainNamesOfVersionOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::DescribeDomainNamesOfVersionRequest&, const DescribeDomainNamesOfVersionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainNamesOfVersionAsyncHandler;
@@ -790,9 +803,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeUserConfigsResult> DescribeUserConfigsOutcome;
 			typedef std::future<DescribeUserConfigsOutcome> DescribeUserConfigsOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::DescribeUserConfigsRequest&, const DescribeUserConfigsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserConfigsAsyncHandler;
-			typedef Outcome<Error, Model::DescribeUserCustomerLabelsResult> DescribeUserCustomerLabelsOutcome;
-			typedef std::future<DescribeUserCustomerLabelsOutcome> DescribeUserCustomerLabelsOutcomeCallable;
-			typedef std::function<void(const CdnClient*, const Model::DescribeUserCustomerLabelsRequest&, const DescribeUserCustomerLabelsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserCustomerLabelsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeUserDomainsResult> DescribeUserDomainsOutcome;
 			typedef std::future<DescribeUserDomainsOutcome> DescribeUserDomainsOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::DescribeUserDomainsRequest&, const DescribeUserDomainsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserDomainsAsyncHandler;
@@ -877,9 +887,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SetConfigOfVersionResult> SetConfigOfVersionOutcome;
 			typedef std::future<SetConfigOfVersionOutcome> SetConfigOfVersionOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::SetConfigOfVersionRequest&, const SetConfigOfVersionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetConfigOfVersionAsyncHandler;
-			typedef Outcome<Error, Model::SetDomainGreenManagerConfigResult> SetDomainGreenManagerConfigOutcome;
-			typedef std::future<SetDomainGreenManagerConfigOutcome> SetDomainGreenManagerConfigOutcomeCallable;
-			typedef std::function<void(const CdnClient*, const Model::SetDomainGreenManagerConfigRequest&, const SetDomainGreenManagerConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetDomainGreenManagerConfigAsyncHandler;
 			typedef Outcome<Error, Model::SetDomainServerCertificateResult> SetDomainServerCertificateOutcome;
 			typedef std::future<SetDomainServerCertificateOutcome> SetDomainServerCertificateOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::SetDomainServerCertificateRequest&, const SetDomainServerCertificateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetDomainServerCertificateAsyncHandler;
@@ -934,6 +941,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SetSourceHostConfigResult> SetSourceHostConfigOutcome;
 			typedef std::future<SetSourceHostConfigOutcome> SetSourceHostConfigOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::SetSourceHostConfigRequest&, const SetSourceHostConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetSourceHostConfigAsyncHandler;
+			typedef Outcome<Error, Model::SetUserGreenManagerConfigResult> SetUserGreenManagerConfigOutcome;
+			typedef std::future<SetUserGreenManagerConfigOutcome> SetUserGreenManagerConfigOutcomeCallable;
+			typedef std::function<void(const CdnClient*, const Model::SetUserGreenManagerConfigRequest&, const SetUserGreenManagerConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetUserGreenManagerConfigAsyncHandler;
 			typedef Outcome<Error, Model::SetWaitingRoomConfigResult> SetWaitingRoomConfigOutcome;
 			typedef std::future<SetWaitingRoomConfigOutcome> SetWaitingRoomConfigOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::SetWaitingRoomConfigRequest&, const SetWaitingRoomConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetWaitingRoomConfigAsyncHandler;
@@ -975,6 +985,9 @@ namespace AlibabaCloud
 			BatchAddCdnDomainOutcome batchAddCdnDomain(const Model::BatchAddCdnDomainRequest &request)const;
 			void batchAddCdnDomainAsync(const Model::BatchAddCdnDomainRequest& request, const BatchAddCdnDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			BatchAddCdnDomainOutcomeCallable batchAddCdnDomainCallable(const Model::BatchAddCdnDomainRequest& request) const;
+			BatchDeleteCdnDomainConfigOutcome batchDeleteCdnDomainConfig(const Model::BatchDeleteCdnDomainConfigRequest &request)const;
+			void batchDeleteCdnDomainConfigAsync(const Model::BatchDeleteCdnDomainConfigRequest& request, const BatchDeleteCdnDomainConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			BatchDeleteCdnDomainConfigOutcomeCallable batchDeleteCdnDomainConfigCallable(const Model::BatchDeleteCdnDomainConfigRequest& request) const;
 			BatchSetCdnDomainConfigOutcome batchSetCdnDomainConfig(const Model::BatchSetCdnDomainConfigRequest &request)const;
 			void batchSetCdnDomainConfigAsync(const Model::BatchSetCdnDomainConfigRequest& request, const BatchSetCdnDomainConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			BatchSetCdnDomainConfigOutcomeCallable batchSetCdnDomainConfigCallable(const Model::BatchSetCdnDomainConfigRequest& request) const;
@@ -1053,6 +1066,9 @@ namespace AlibabaCloud
 			DescribeCdnCertificateListOutcome describeCdnCertificateList(const Model::DescribeCdnCertificateListRequest &request)const;
 			void describeCdnCertificateListAsync(const Model::DescribeCdnCertificateListRequest& request, const DescribeCdnCertificateListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeCdnCertificateListOutcomeCallable describeCdnCertificateListCallable(const Model::DescribeCdnCertificateListRequest& request) const;
+			DescribeCdnDeletedDomainsOutcome describeCdnDeletedDomains(const Model::DescribeCdnDeletedDomainsRequest &request)const;
+			void describeCdnDeletedDomainsAsync(const Model::DescribeCdnDeletedDomainsRequest& request, const DescribeCdnDeletedDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeCdnDeletedDomainsOutcomeCallable describeCdnDeletedDomainsCallable(const Model::DescribeCdnDeletedDomainsRequest& request) const;
 			DescribeCdnDeliverListOutcome describeCdnDeliverList(const Model::DescribeCdnDeliverListRequest &request)const;
 			void describeCdnDeliverListAsync(const Model::DescribeCdnDeliverListRequest& request, const DescribeCdnDeliverListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeCdnDeliverListOutcomeCallable describeCdnDeliverListCallable(const Model::DescribeCdnDeliverListRequest& request) const;
@@ -1176,6 +1192,9 @@ namespace AlibabaCloud
 			DescribeDomainMax95BpsDataOutcome describeDomainMax95BpsData(const Model::DescribeDomainMax95BpsDataRequest &request)const;
 			void describeDomainMax95BpsDataAsync(const Model::DescribeDomainMax95BpsDataRequest& request, const DescribeDomainMax95BpsDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDomainMax95BpsDataOutcomeCallable describeDomainMax95BpsDataCallable(const Model::DescribeDomainMax95BpsDataRequest& request) const;
+			DescribeDomainMultiUsageDataOutcome describeDomainMultiUsageData(const Model::DescribeDomainMultiUsageDataRequest &request)const;
+			void describeDomainMultiUsageDataAsync(const Model::DescribeDomainMultiUsageDataRequest& request, const DescribeDomainMultiUsageDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDomainMultiUsageDataOutcomeCallable describeDomainMultiUsageDataCallable(const Model::DescribeDomainMultiUsageDataRequest& request) const;
 			DescribeDomainNamesOfVersionOutcome describeDomainNamesOfVersion(const Model::DescribeDomainNamesOfVersionRequest &request)const;
 			void describeDomainNamesOfVersionAsync(const Model::DescribeDomainNamesOfVersionRequest& request, const DescribeDomainNamesOfVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDomainNamesOfVersionOutcomeCallable describeDomainNamesOfVersionCallable(const Model::DescribeDomainNamesOfVersionRequest& request) const;
@@ -1353,9 +1372,6 @@ namespace AlibabaCloud
 			DescribeUserConfigsOutcome describeUserConfigs(const Model::DescribeUserConfigsRequest &request)const;
 			void describeUserConfigsAsync(const Model::DescribeUserConfigsRequest& request, const DescribeUserConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeUserConfigsOutcomeCallable describeUserConfigsCallable(const Model::DescribeUserConfigsRequest& request) const;
-			DescribeUserCustomerLabelsOutcome describeUserCustomerLabels(const Model::DescribeUserCustomerLabelsRequest &request)const;
-			void describeUserCustomerLabelsAsync(const Model::DescribeUserCustomerLabelsRequest& request, const DescribeUserCustomerLabelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeUserCustomerLabelsOutcomeCallable describeUserCustomerLabelsCallable(const Model::DescribeUserCustomerLabelsRequest& request) const;
 			DescribeUserDomainsOutcome describeUserDomains(const Model::DescribeUserDomainsRequest &request)const;
 			void describeUserDomainsAsync(const Model::DescribeUserDomainsRequest& request, const DescribeUserDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeUserDomainsOutcomeCallable describeUserDomainsCallable(const Model::DescribeUserDomainsRequest& request) const;
@@ -1440,9 +1456,6 @@ namespace AlibabaCloud
 			SetConfigOfVersionOutcome setConfigOfVersion(const Model::SetConfigOfVersionRequest &request)const;
 			void setConfigOfVersionAsync(const Model::SetConfigOfVersionRequest& request, const SetConfigOfVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetConfigOfVersionOutcomeCallable setConfigOfVersionCallable(const Model::SetConfigOfVersionRequest& request) const;
-			SetDomainGreenManagerConfigOutcome setDomainGreenManagerConfig(const Model::SetDomainGreenManagerConfigRequest &request)const;
-			void setDomainGreenManagerConfigAsync(const Model::SetDomainGreenManagerConfigRequest& request, const SetDomainGreenManagerConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			SetDomainGreenManagerConfigOutcomeCallable setDomainGreenManagerConfigCallable(const Model::SetDomainGreenManagerConfigRequest& request) const;
 			SetDomainServerCertificateOutcome setDomainServerCertificate(const Model::SetDomainServerCertificateRequest &request)const;
 			void setDomainServerCertificateAsync(const Model::SetDomainServerCertificateRequest& request, const SetDomainServerCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetDomainServerCertificateOutcomeCallable setDomainServerCertificateCallable(const Model::SetDomainServerCertificateRequest& request) const;
@@ -1497,6 +1510,9 @@ namespace AlibabaCloud
 			SetSourceHostConfigOutcome setSourceHostConfig(const Model::SetSourceHostConfigRequest &request)const;
 			void setSourceHostConfigAsync(const Model::SetSourceHostConfigRequest& request, const SetSourceHostConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetSourceHostConfigOutcomeCallable setSourceHostConfigCallable(const Model::SetSourceHostConfigRequest& request) const;
+			SetUserGreenManagerConfigOutcome setUserGreenManagerConfig(const Model::SetUserGreenManagerConfigRequest &request)const;
+			void setUserGreenManagerConfigAsync(const Model::SetUserGreenManagerConfigRequest& request, const SetUserGreenManagerConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SetUserGreenManagerConfigOutcomeCallable setUserGreenManagerConfigCallable(const Model::SetUserGreenManagerConfigRequest& request) const;
 			SetWaitingRoomConfigOutcome setWaitingRoomConfig(const Model::SetWaitingRoomConfigRequest &request)const;
 			void setWaitingRoomConfigAsync(const Model::SetWaitingRoomConfigRequest& request, const SetWaitingRoomConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetWaitingRoomConfigOutcomeCallable setWaitingRoomConfigCallable(const Model::SetWaitingRoomConfigRequest& request) const;

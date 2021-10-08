@@ -38,17 +38,6 @@ void DescribeCdnReportListRequest::setReportId(long reportId)
 	setParameter("ReportId", std::to_string(reportId));
 }
 
-std::string DescribeCdnReportListRequest::getPermission()const
-{
-	return permission_;
-}
-
-void DescribeCdnReportListRequest::setPermission(const std::string& permission)
-{
-	permission_ = permission;
-	setParameter("Permission", permission);
-}
-
 long DescribeCdnReportListRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -58,16 +47,5 @@ void DescribeCdnReportListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DescribeCdnReportListRequest::getStatus()const
-{
-	return status_;
-}
-
-void DescribeCdnReportListRequest::setStatus(const std::string& status)
-{
-	status_ = status;
-	setParameter("Status", status);
 }
 

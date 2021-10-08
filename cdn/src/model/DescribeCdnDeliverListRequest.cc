@@ -49,14 +49,3 @@ void DescribeCdnDeliverListRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string DescribeCdnDeliverListRequest::getStatus()const
-{
-	return status_;
-}
-
-void DescribeCdnDeliverListRequest::setStatus(const std::string& status)
-{
-	status_ = status;
-	setParameter("Status", status);
-}
-

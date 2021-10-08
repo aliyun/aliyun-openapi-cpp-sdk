@@ -27,6 +27,8 @@ set(cdn_public_header_model
 	include/alibabacloud/cdn/model/AddFCTriggerResult.h
 	include/alibabacloud/cdn/model/BatchAddCdnDomainRequest.h
 	include/alibabacloud/cdn/model/BatchAddCdnDomainResult.h
+	include/alibabacloud/cdn/model/BatchDeleteCdnDomainConfigRequest.h
+	include/alibabacloud/cdn/model/BatchDeleteCdnDomainConfigResult.h
 	include/alibabacloud/cdn/model/BatchSetCdnDomainConfigRequest.h
 	include/alibabacloud/cdn/model/BatchSetCdnDomainConfigResult.h
 	include/alibabacloud/cdn/model/BatchSetCdnDomainServerCertificateRequest.h
@@ -79,6 +81,8 @@ set(cdn_public_header_model
 	include/alibabacloud/cdn/model/DescribeCdnCertificateDetailResult.h
 	include/alibabacloud/cdn/model/DescribeCdnCertificateListRequest.h
 	include/alibabacloud/cdn/model/DescribeCdnCertificateListResult.h
+	include/alibabacloud/cdn/model/DescribeCdnDeletedDomainsRequest.h
+	include/alibabacloud/cdn/model/DescribeCdnDeletedDomainsResult.h
 	include/alibabacloud/cdn/model/DescribeCdnDeliverListRequest.h
 	include/alibabacloud/cdn/model/DescribeCdnDeliverListResult.h
 	include/alibabacloud/cdn/model/DescribeCdnDomainByCertificateRequest.h
@@ -161,6 +165,8 @@ set(cdn_public_header_model
 	include/alibabacloud/cdn/model/DescribeDomainISPDataResult.h
 	include/alibabacloud/cdn/model/DescribeDomainMax95BpsDataRequest.h
 	include/alibabacloud/cdn/model/DescribeDomainMax95BpsDataResult.h
+	include/alibabacloud/cdn/model/DescribeDomainMultiUsageDataRequest.h
+	include/alibabacloud/cdn/model/DescribeDomainMultiUsageDataResult.h
 	include/alibabacloud/cdn/model/DescribeDomainNamesOfVersionRequest.h
 	include/alibabacloud/cdn/model/DescribeDomainNamesOfVersionResult.h
 	include/alibabacloud/cdn/model/DescribeDomainPathDataRequest.h
@@ -279,8 +285,6 @@ set(cdn_public_header_model
 	include/alibabacloud/cdn/model/DescribeUserCertificateExpireCountResult.h
 	include/alibabacloud/cdn/model/DescribeUserConfigsRequest.h
 	include/alibabacloud/cdn/model/DescribeUserConfigsResult.h
-	include/alibabacloud/cdn/model/DescribeUserCustomerLabelsRequest.h
-	include/alibabacloud/cdn/model/DescribeUserCustomerLabelsResult.h
 	include/alibabacloud/cdn/model/DescribeUserDomainsRequest.h
 	include/alibabacloud/cdn/model/DescribeUserDomainsResult.h
 	include/alibabacloud/cdn/model/DescribeUserTagsRequest.h
@@ -337,8 +341,6 @@ set(cdn_public_header_model
 	include/alibabacloud/cdn/model/SetCdnDomainStagingConfigResult.h
 	include/alibabacloud/cdn/model/SetConfigOfVersionRequest.h
 	include/alibabacloud/cdn/model/SetConfigOfVersionResult.h
-	include/alibabacloud/cdn/model/SetDomainGreenManagerConfigRequest.h
-	include/alibabacloud/cdn/model/SetDomainGreenManagerConfigResult.h
 	include/alibabacloud/cdn/model/SetDomainServerCertificateRequest.h
 	include/alibabacloud/cdn/model/SetDomainServerCertificateResult.h
 	include/alibabacloud/cdn/model/SetFileCacheExpiredConfigRequest.h
@@ -375,6 +377,8 @@ set(cdn_public_header_model
 	include/alibabacloud/cdn/model/SetReqHeaderConfigResult.h
 	include/alibabacloud/cdn/model/SetSourceHostConfigRequest.h
 	include/alibabacloud/cdn/model/SetSourceHostConfigResult.h
+	include/alibabacloud/cdn/model/SetUserGreenManagerConfigRequest.h
+	include/alibabacloud/cdn/model/SetUserGreenManagerConfigResult.h
 	include/alibabacloud/cdn/model/SetWaitingRoomConfigRequest.h
 	include/alibabacloud/cdn/model/SetWaitingRoomConfigResult.h
 	include/alibabacloud/cdn/model/StartCdnDomainRequest.h
@@ -402,6 +406,8 @@ set(cdn_src
 	src/model/AddFCTriggerResult.cc
 	src/model/BatchAddCdnDomainRequest.cc
 	src/model/BatchAddCdnDomainResult.cc
+	src/model/BatchDeleteCdnDomainConfigRequest.cc
+	src/model/BatchDeleteCdnDomainConfigResult.cc
 	src/model/BatchSetCdnDomainConfigRequest.cc
 	src/model/BatchSetCdnDomainConfigResult.cc
 	src/model/BatchSetCdnDomainServerCertificateRequest.cc
@@ -454,6 +460,8 @@ set(cdn_src
 	src/model/DescribeCdnCertificateDetailResult.cc
 	src/model/DescribeCdnCertificateListRequest.cc
 	src/model/DescribeCdnCertificateListResult.cc
+	src/model/DescribeCdnDeletedDomainsRequest.cc
+	src/model/DescribeCdnDeletedDomainsResult.cc
 	src/model/DescribeCdnDeliverListRequest.cc
 	src/model/DescribeCdnDeliverListResult.cc
 	src/model/DescribeCdnDomainByCertificateRequest.cc
@@ -536,6 +544,8 @@ set(cdn_src
 	src/model/DescribeDomainISPDataResult.cc
 	src/model/DescribeDomainMax95BpsDataRequest.cc
 	src/model/DescribeDomainMax95BpsDataResult.cc
+	src/model/DescribeDomainMultiUsageDataRequest.cc
+	src/model/DescribeDomainMultiUsageDataResult.cc
 	src/model/DescribeDomainNamesOfVersionRequest.cc
 	src/model/DescribeDomainNamesOfVersionResult.cc
 	src/model/DescribeDomainPathDataRequest.cc
@@ -654,8 +664,6 @@ set(cdn_src
 	src/model/DescribeUserCertificateExpireCountResult.cc
 	src/model/DescribeUserConfigsRequest.cc
 	src/model/DescribeUserConfigsResult.cc
-	src/model/DescribeUserCustomerLabelsRequest.cc
-	src/model/DescribeUserCustomerLabelsResult.cc
 	src/model/DescribeUserDomainsRequest.cc
 	src/model/DescribeUserDomainsResult.cc
 	src/model/DescribeUserTagsRequest.cc
@@ -712,8 +720,6 @@ set(cdn_src
 	src/model/SetCdnDomainStagingConfigResult.cc
 	src/model/SetConfigOfVersionRequest.cc
 	src/model/SetConfigOfVersionResult.cc
-	src/model/SetDomainGreenManagerConfigRequest.cc
-	src/model/SetDomainGreenManagerConfigResult.cc
 	src/model/SetDomainServerCertificateRequest.cc
 	src/model/SetDomainServerCertificateResult.cc
 	src/model/SetFileCacheExpiredConfigRequest.cc
@@ -750,6 +756,8 @@ set(cdn_src
 	src/model/SetReqHeaderConfigResult.cc
 	src/model/SetSourceHostConfigRequest.cc
 	src/model/SetSourceHostConfigResult.cc
+	src/model/SetUserGreenManagerConfigRequest.cc
+	src/model/SetUserGreenManagerConfigResult.cc
 	src/model/SetWaitingRoomConfigRequest.cc
 	src/model/SetWaitingRoomConfigResult.cc
 	src/model/StartCdnDomainRequest.cc

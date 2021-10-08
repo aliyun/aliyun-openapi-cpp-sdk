@@ -27,6 +27,17 @@ DescribeDomainRealTimeTrafficDataRequest::DescribeDomainRealTimeTrafficDataReque
 DescribeDomainRealTimeTrafficDataRequest::~DescribeDomainRealTimeTrafficDataRequest()
 {}
 
+std::string DescribeDomainRealTimeTrafficDataRequest::getLocationNameEn()const
+{
+	return locationNameEn_;
+}
+
+void DescribeDomainRealTimeTrafficDataRequest::setLocationNameEn(const std::string& locationNameEn)
+{
+	locationNameEn_ = locationNameEn;
+	setParameter("LocationNameEn", locationNameEn);
+}
+
 std::string DescribeDomainRealTimeTrafficDataRequest::getStartTime()const
 {
 	return startTime_;
@@ -36,6 +47,17 @@ void DescribeDomainRealTimeTrafficDataRequest::setStartTime(const std::string& s
 {
 	startTime_ = startTime;
 	setParameter("StartTime", startTime);
+}
+
+std::string DescribeDomainRealTimeTrafficDataRequest::getIspNameEn()const
+{
+	return ispNameEn_;
+}
+
+void DescribeDomainRealTimeTrafficDataRequest::setIspNameEn(const std::string& ispNameEn)
+{
+	ispNameEn_ = ispNameEn;
+	setParameter("IspNameEn", ispNameEn);
 }
 
 std::string DescribeDomainRealTimeTrafficDataRequest::getDomainName()const

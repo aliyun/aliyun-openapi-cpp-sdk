@@ -82,14 +82,3 @@ void UpdateCdnSubTaskRequest::setReportIds(const std::string& reportIds)
 	setBodyParameter("ReportIds", reportIds);
 }
 
-std::string UpdateCdnSubTaskRequest::getStatus()const
-{
-	return status_;
-}
-
-void UpdateCdnSubTaskRequest::setStatus(const std::string& status)
-{
-	status_ = status;
-	setBodyParameter("Status", status);
-}
-

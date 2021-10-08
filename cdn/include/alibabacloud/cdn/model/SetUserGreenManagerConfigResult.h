@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CDN_MODEL_SETDOMAINGREENMANAGERCONFIGRESULT_H_
-#define ALIBABACLOUD_CDN_MODEL_SETDOMAINGREENMANAGERCONFIGRESULT_H_
+#ifndef ALIBABACLOUD_CDN_MODEL_SETUSERGREENMANAGERCONFIGRESULT_H_
+#define ALIBABACLOUD_CDN_MODEL_SETUSERGREENMANAGERCONFIGRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,14 +29,14 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CDN_EXPORT SetDomainGreenManagerConfigResult : public ServiceResult
+			class ALIBABACLOUD_CDN_EXPORT SetUserGreenManagerConfigResult : public ServiceResult
 			{
 			public:
 
 
-				SetDomainGreenManagerConfigResult();
-				explicit SetDomainGreenManagerConfigResult(const std::string &payload);
-				~SetDomainGreenManagerConfigResult();
+				SetUserGreenManagerConfigResult();
+				explicit SetUserGreenManagerConfigResult(const std::string &payload);
+				~SetUserGreenManagerConfigResult();
 
 			protected:
 				void parse(const std::string &payload);
@@ -46,4 +46,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CDN_MODEL_SETDOMAINGREENMANAGERCONFIGRESULT_H_
+#endif // !ALIBABACLOUD_CDN_MODEL_SETUSERGREENMANAGERCONFIGRESULT_H_

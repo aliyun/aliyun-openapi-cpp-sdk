@@ -32,15 +32,23 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_CDN_EXPORT BatchSetCdnDomainConfigResult : public ServiceResult
 			{
 			public:
+				struct DomainConfigModel
+				{
+					std::string functionName;
+					std::string domainName;
+					long configId;
+				};
 
 
 				BatchSetCdnDomainConfigResult();
 				explicit BatchSetCdnDomainConfigResult(const std::string &payload);
 				~BatchSetCdnDomainConfigResult();
+				std::vector<DomainConfigModel> getDomainConfigList()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::vector<DomainConfigModel> domainConfigList_;
 
 			};
 		}
