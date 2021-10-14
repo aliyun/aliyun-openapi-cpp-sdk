@@ -39,45 +39,26 @@ void ListAgentStateLogsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto agentStateLogPageNode = value["AgentStateLogPage"];
-	if(!agentStateLogPageNode["TotalCount"].isNull())
-		agentStateLogPage_.totalCount = std::stoi(agentStateLogPageNode["TotalCount"].asString());
-	if(!agentStateLogPageNode["PageNumber"].isNull())
-		agentStateLogPage_.pageNumber = std::stoi(agentStateLogPageNode["PageNumber"].asString());
-	if(!agentStateLogPageNode["PageSize"].isNull())
-		agentStateLogPage_.pageSize = std::stoi(agentStateLogPageNode["PageSize"].asString());
-	auto allListNode = agentStateLogPageNode["List"]["AgentStateLog"];
-	for (auto agentStateLogPageNodeListAgentStateLog : allListNode)
+	auto allDataNode = value["Data"]["DataItem"];
+	for (auto valueDataDataItem : allDataNode)
 	{
-		AgentStateLogPage::AgentStateLog agentStateLogObject;
-		if(!agentStateLogPageNodeListAgentStateLog["InstanceId"].isNull())
-			agentStateLogObject.instanceId = agentStateLogPageNodeListAgentStateLog["InstanceId"].asString();
-		if(!agentStateLogPageNodeListAgentStateLog["RamId"].isNull())
-			agentStateLogObject.ramId = std::stol(agentStateLogPageNodeListAgentStateLog["RamId"].asString());
-		if(!agentStateLogPageNodeListAgentStateLog["State"].isNull())
-			agentStateLogObject.state = agentStateLogPageNodeListAgentStateLog["State"].asString();
-		if(!agentStateLogPageNodeListAgentStateLog["StateCode"].isNull())
-			agentStateLogObject.stateCode = agentStateLogPageNodeListAgentStateLog["StateCode"].asString();
-		if(!agentStateLogPageNodeListAgentStateLog["StateTime"].isNull())
-			agentStateLogObject.stateTime = std::stol(agentStateLogPageNodeListAgentStateLog["StateTime"].asString());
-		if(!agentStateLogPageNodeListAgentStateLog["ContactId"].isNull())
-			agentStateLogObject.contactId = agentStateLogPageNodeListAgentStateLog["ContactId"].asString();
-		if(!agentStateLogPageNodeListAgentStateLog["ConnectId"].isNull())
-			agentStateLogObject.connectId = agentStateLogPageNodeListAgentStateLog["ConnectId"].asString();
-		if(!agentStateLogPageNodeListAgentStateLog["SkillGroupIds"].isNull())
-			agentStateLogObject.skillGroupIds = agentStateLogPageNodeListAgentStateLog["SkillGroupIds"].asString();
-		if(!agentStateLogPageNodeListAgentStateLog["CounterParty"].isNull())
-			agentStateLogObject.counterParty = agentStateLogPageNodeListAgentStateLog["CounterParty"].asString();
-		agentStateLogPage_.list.push_back(agentStateLogObject);
+		DataItem dataObject;
+		if(!valueDataDataItem["Duration"].isNull())
+			dataObject.duration = std::stol(valueDataDataItem["Duration"].asString());
+		if(!valueDataDataItem["StartTime"].isNull())
+			dataObject.startTime = std::stol(valueDataDataItem["StartTime"].asString());
+		if(!valueDataDataItem["State"].isNull())
+			dataObject.state = valueDataDataItem["State"].asString();
+		if(!valueDataDataItem["StateCode"].isNull())
+			dataObject.stateCode = valueDataDataItem["StateCode"].asString();
+		data_.push_back(dataObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 
 }
 
@@ -91,18 +72,13 @@ int ListAgentStateLogsResult::getHttpStatusCode()const
 	return httpStatusCode_;
 }
 
+std::vector<ListAgentStateLogsResult::DataItem> ListAgentStateLogsResult::getData()const
+{
+	return data_;
+}
+
 std::string ListAgentStateLogsResult::getCode()const
 {
 	return code_;
-}
-
-ListAgentStateLogsResult::AgentStateLogPage ListAgentStateLogsResult::getAgentStateLogPage()const
-{
-	return agentStateLogPage_;
-}
-
-bool ListAgentStateLogsResult::getSuccess()const
-{
-	return success_;
 }
 

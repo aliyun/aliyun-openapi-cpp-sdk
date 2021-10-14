@@ -35,14 +35,20 @@ namespace AlibabaCloud
 				ListContactFlowsRequest();
 				~ListContactFlowsRequest();
 
+				std::string getType()const;
+				void setType(const std::string& type);
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 
             private:
+				std::string type_;
+				int pageNumber_;
 				std::string instanceId_;
-				std::string accessKeyId_;
+				int pageSize_;
 
 			};
 		}

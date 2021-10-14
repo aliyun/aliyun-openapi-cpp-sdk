@@ -19,7 +19,7 @@
 using AlibabaCloud::CCC::Model::SaveWebRTCStatsRequest;
 
 SaveWebRTCStatsRequest::SaveWebRTCStatsRequest() :
-	RpcServiceRequest("ccc", "2017-07-05", "SaveWebRTCStats")
+	RpcServiceRequest("ccc", "2020-07-01", "SaveWebRTCStats")
 {
 	setMethod(HttpRequest::Method::Post);
 }
@@ -38,48 +38,15 @@ void SaveWebRTCStatsRequest::setCallId(const std::string& callId)
 	setParameter("CallId", callId);
 }
 
-long SaveWebRTCStatsRequest::getRecordTime()const
+std::string SaveWebRTCStatsRequest::getSenderReport()const
 {
-	return recordTime_;
+	return senderReport_;
 }
 
-void SaveWebRTCStatsRequest::setRecordTime(long recordTime)
+void SaveWebRTCStatsRequest::setSenderReport(const std::string& senderReport)
 {
-	recordTime_ = recordTime;
-	setParameter("RecordTime", std::to_string(recordTime));
-}
-
-long SaveWebRTCStatsRequest::getCallStartTime()const
-{
-	return callStartTime_;
-}
-
-void SaveWebRTCStatsRequest::setCallStartTime(long callStartTime)
-{
-	callStartTime_ = callStartTime;
-	setParameter("CallStartTime", std::to_string(callStartTime));
-}
-
-std::string SaveWebRTCStatsRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void SaveWebRTCStatsRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-
-std::string SaveWebRTCStatsRequest::getUid()const
-{
-	return uid_;
-}
-
-void SaveWebRTCStatsRequest::setUid(const std::string& uid)
-{
-	uid_ = uid;
-	setParameter("Uid", uid);
+	senderReport_ = senderReport;
+	setParameter("SenderReport", senderReport);
 }
 
 std::string SaveWebRTCStatsRequest::getInstanceId()const
@@ -93,47 +60,36 @@ void SaveWebRTCStatsRequest::setInstanceId(const std::string& instanceId)
 	setParameter("InstanceId", instanceId);
 }
 
-std::string SaveWebRTCStatsRequest::getStats()const
+std::string SaveWebRTCStatsRequest::getReceiverReport()const
 {
-	return stats_;
+	return receiverReport_;
 }
 
-void SaveWebRTCStatsRequest::setStats(const std::string& stats)
+void SaveWebRTCStatsRequest::setReceiverReport(const std::string& receiverReport)
 {
-	stats_ = stats;
-	setParameter("Stats", stats);
+	receiverReport_ = receiverReport;
+	setParameter("ReceiverReport", receiverReport);
 }
 
-std::string SaveWebRTCStatsRequest::getTenantId()const
+std::string SaveWebRTCStatsRequest::getGoogAddress()const
 {
-	return tenantId_;
+	return googAddress_;
 }
 
-void SaveWebRTCStatsRequest::setTenantId(const std::string& tenantId)
+void SaveWebRTCStatsRequest::setGoogAddress(const std::string& googAddress)
 {
-	tenantId_ = tenantId;
-	setParameter("TenantId", tenantId);
+	googAddress_ = googAddress;
+	setParameter("GoogAddress", googAddress);
 }
 
-std::string SaveWebRTCStatsRequest::getCalleeNumber()const
+std::string SaveWebRTCStatsRequest::getGeneralInfo()const
 {
-	return calleeNumber_;
+	return generalInfo_;
 }
 
-void SaveWebRTCStatsRequest::setCalleeNumber(const std::string& calleeNumber)
+void SaveWebRTCStatsRequest::setGeneralInfo(const std::string& generalInfo)
 {
-	calleeNumber_ = calleeNumber;
-	setParameter("CalleeNumber", calleeNumber);
-}
-
-std::string SaveWebRTCStatsRequest::getCallerNumber()const
-{
-	return callerNumber_;
-}
-
-void SaveWebRTCStatsRequest::setCallerNumber(const std::string& callerNumber)
-{
-	callerNumber_ = callerNumber;
-	setParameter("CallerNumber", callerNumber);
+	generalInfo_ = generalInfo;
+	setParameter("GeneralInfo", generalInfo);
 }
 

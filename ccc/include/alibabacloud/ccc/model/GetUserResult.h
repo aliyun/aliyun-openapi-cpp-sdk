@@ -32,62 +32,38 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_CCC_EXPORT GetUserResult : public ServiceResult
 			{
 			public:
-				struct User
+				struct Data
 				{
-					struct Detail
-					{
-						std::string loginName;
-						std::string department;
-						std::string email;
-						std::string phone;
-						std::string displayName;
-					};
-					struct Role
-					{
-						std::string roleName;
-						std::string instanceId;
-						std::string roleDescription;
-						std::string roleId;
-					};
-					struct SkillLevel
-					{
-						struct Skill
-						{
-							std::string skillGroupName;
-							std::string instanceId;
-							std::string skillGroupId;
-							std::string skillGroupDescription;
-						};
-						Skill skill;
-						std::string skillLevelId;
-						int level;
-					};
-					std::vector<SkillLevel> skillLevels;
+					std::string extension;
+					std::string loginName;
+					std::string roleName;
+					std::string email;
 					std::string instanceId;
 					std::string userId;
-					std::string ramId;
-					std::vector<Role> roles;
-					Detail detail;
+					std::string displayName;
+					std::string mobile;
+					std::string roleId;
+					std::string workMode;
 				};
 
 
 				GetUserResult();
 				explicit GetUserResult(const std::string &payload);
 				~GetUserResult();
-				User getUser()const;
 				std::string getMessage()const;
 				int getHttpStatusCode()const;
+				std::vector<std::string> getParams()const;
+				Data getData()const;
 				std::string getCode()const;
-				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				User user_;
 				std::string message_;
 				int httpStatusCode_;
+				std::vector<std::string> params_;
+				Data data_;
 				std::string code_;
-				bool success_;
 
 			};
 		}

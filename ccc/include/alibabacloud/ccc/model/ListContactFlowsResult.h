@@ -32,38 +32,27 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_CCC_EXPORT ListContactFlowsResult : public ServiceResult
 			{
 			public:
-				struct ContactFlow
+				struct Data
 				{
-					struct ContactFlowVersion
+					struct ContactFlow
 					{
-						std::string lastModified;
-						std::string status;
-						std::string lastModifiedBy;
-						std::string lockedBy;
-						std::string contactFlowVersionId;
-						std::string version;
-						std::string contactFlowVersionDescription;
-					};
-					struct PhoneNumber
-					{
-						std::string usage;
-						bool testOnly;
-						bool allowOutbound;
-						std::string number;
+						std::string type;
+						std::string createdTime;
+						std::string description;
+						std::string contactFlowId;
 						std::string instanceId;
-						int remainingTime;
-						int trunks;
-						std::string phoneNumberId;
-						std::string phoneNumberDescription;
+						std::string definition;
+						bool published;
+						std::vector<std::string> numberList;
+						std::string draftId;
+						std::string updatedTime;
+						std::string editor;
+						std::string name;
 					};
-					std::vector<ContactFlow::PhoneNumber> phoneNumbers;
-					std::string type;
-					std::string appliedVersion;
-					std::vector<ContactFlow::ContactFlowVersion> versions;
-					std::string contactFlowId;
-					std::string instanceId;
-					std::string contactFlowName;
-					std::string contactFlowDescription;
+					int totalCount;
+					int pageSize;
+					int pageNumber;
+					std::vector<ContactFlow> list;
 				};
 
 
@@ -71,19 +60,17 @@ namespace AlibabaCloud
 				explicit ListContactFlowsResult(const std::string &payload);
 				~ListContactFlowsResult();
 				std::string getMessage()const;
-				std::vector<ContactFlow> getContactFlows()const;
 				int getHttpStatusCode()const;
+				Data getData()const;
 				std::string getCode()const;
-				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
-				std::vector<ContactFlow> contactFlows_;
 				int httpStatusCode_;
+				Data data_;
 				std::string code_;
-				bool success_;
 
 			};
 		}

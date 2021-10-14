@@ -19,24 +19,13 @@
 using AlibabaCloud::CCC::Model::StartBack2BackCallRequest;
 
 StartBack2BackCallRequest::StartBack2BackCallRequest() :
-	RpcServiceRequest("ccc", "2017-07-05", "StartBack2BackCall")
+	RpcServiceRequest("ccc", "2020-07-01", "StartBack2BackCall")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
 StartBack2BackCallRequest::~StartBack2BackCallRequest()
 {}
-
-std::string StartBack2BackCallRequest::getCallCenterNumber()const
-{
-	return callCenterNumber_;
-}
-
-void StartBack2BackCallRequest::setCallCenterNumber(const std::string& callCenterNumber)
-{
-	callCenterNumber_ = callCenterNumber;
-	setParameter("CallCenterNumber", callCenterNumber);
-}
 
 std::string StartBack2BackCallRequest::getCallee()const
 {
@@ -49,15 +38,48 @@ void StartBack2BackCallRequest::setCallee(const std::string& callee)
 	setParameter("Callee", callee);
 }
 
-std::string StartBack2BackCallRequest::getAccessKeyId()const
+std::string StartBack2BackCallRequest::getBroker()const
 {
-	return accessKeyId_;
+	return broker_;
 }
 
-void StartBack2BackCallRequest::setAccessKeyId(const std::string& accessKeyId)
+void StartBack2BackCallRequest::setBroker(const std::string& broker)
 {
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	broker_ = broker;
+	setParameter("Broker", broker);
+}
+
+std::string StartBack2BackCallRequest::getAdditionalBroker()const
+{
+	return additionalBroker_;
+}
+
+void StartBack2BackCallRequest::setAdditionalBroker(const std::string& additionalBroker)
+{
+	additionalBroker_ = additionalBroker;
+	setParameter("AdditionalBroker", additionalBroker);
+}
+
+std::string StartBack2BackCallRequest::getTags()const
+{
+	return tags_;
+}
+
+void StartBack2BackCallRequest::setTags(const std::string& tags)
+{
+	tags_ = tags;
+	setParameter("Tags", tags);
+}
+
+int StartBack2BackCallRequest::getTimeoutSeconds()const
+{
+	return timeoutSeconds_;
+}
+
+void StartBack2BackCallRequest::setTimeoutSeconds(int timeoutSeconds)
+{
+	timeoutSeconds_ = timeoutSeconds;
+	setParameter("TimeoutSeconds", std::to_string(timeoutSeconds));
 }
 
 std::string StartBack2BackCallRequest::getCaller()const
@@ -80,16 +102,5 @@ void StartBack2BackCallRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
 	setParameter("InstanceId", instanceId);
-}
-
-std::string StartBack2BackCallRequest::getWorkflowId()const
-{
-	return workflowId_;
-}
-
-void StartBack2BackCallRequest::setWorkflowId(const std::string& workflowId)
-{
-	workflowId_ = workflowId;
-	setParameter("WorkflowId", workflowId);
 }
 
