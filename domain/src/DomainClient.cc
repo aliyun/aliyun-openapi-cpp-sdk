@@ -31,21 +31,21 @@ DomainClient::DomainClient(const Credentials &credentials, const ClientConfigura
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "domain");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 DomainClient::DomainClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "domain");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 DomainClient::DomainClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "domain");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 DomainClient::~DomainClient()
@@ -411,6 +411,42 @@ DomainClient::CheckDomainOutcomeCallable DomainClient::checkDomainCallable(const
 	return task->get_future();
 }
 
+DomainClient::CheckDomainStatusOutcome DomainClient::checkDomainStatus(const CheckDomainStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CheckDomainStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CheckDomainStatusOutcome(CheckDomainStatusResult(outcome.result()));
+	else
+		return CheckDomainStatusOutcome(outcome.error());
+}
+
+void DomainClient::checkDomainStatusAsync(const CheckDomainStatusRequest& request, const CheckDomainStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, checkDomainStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DomainClient::CheckDomainStatusOutcomeCallable DomainClient::checkDomainStatusCallable(const CheckDomainStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CheckDomainStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->checkDomainStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DomainClient::CheckDomainSunriseClaimOutcome DomainClient::checkDomainSunriseClaim(const CheckDomainSunriseClaimRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -585,6 +621,42 @@ DomainClient::ConfirmTransferInEmailOutcomeCallable DomainClient::confirmTransfe
 			[this, request]()
 			{
 			return this->confirmTransferInEmail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DomainClient::CreateFixedPriceDemandOrderOutcome DomainClient::createFixedPriceDemandOrder(const CreateFixedPriceDemandOrderRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateFixedPriceDemandOrderOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateFixedPriceDemandOrderOutcome(CreateFixedPriceDemandOrderResult(outcome.result()));
+	else
+		return CreateFixedPriceDemandOrderOutcome(outcome.error());
+}
+
+void DomainClient::createFixedPriceDemandOrderAsync(const CreateFixedPriceDemandOrderRequest& request, const CreateFixedPriceDemandOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createFixedPriceDemandOrder(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DomainClient::CreateFixedPriceDemandOrderOutcomeCallable DomainClient::createFixedPriceDemandOrderCallable(const CreateFixedPriceDemandOrderRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateFixedPriceDemandOrderOutcome()>>(
+			[this, request]()
+			{
+			return this->createFixedPriceDemandOrder(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

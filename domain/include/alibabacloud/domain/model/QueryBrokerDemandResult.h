@@ -40,10 +40,11 @@ namespace AlibabaCloud
 					std::string demandDomain;
 					std::string mobile;
 					float payPrice;
-					float bargainSellerPrice;
 					float servicePayPrice;
-					std::string payDomain;
+					float bargainSellerPrice;
 					int orderType;
+					std::string payDomain;
+					int auditStatus;
 					int produceType;
 					std::string bargainSellerMobile;
 					long publishTime;

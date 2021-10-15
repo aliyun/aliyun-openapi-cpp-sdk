@@ -41,6 +41,8 @@ set(domain_public_header_model
 	include/alibabacloud/domain/model/ChangeAuctionResult.h
 	include/alibabacloud/domain/model/CheckDomainRequest.h
 	include/alibabacloud/domain/model/CheckDomainResult.h
+	include/alibabacloud/domain/model/CheckDomainStatusRequest.h
+	include/alibabacloud/domain/model/CheckDomainStatusResult.h
 	include/alibabacloud/domain/model/CheckDomainSunriseClaimRequest.h
 	include/alibabacloud/domain/model/CheckDomainSunriseClaimResult.h
 	include/alibabacloud/domain/model/CheckMaxYearOfServerLockRequest.h
@@ -51,6 +53,8 @@ set(domain_public_header_model
 	include/alibabacloud/domain/model/CheckTransferInFeasibilityResult.h
 	include/alibabacloud/domain/model/ConfirmTransferInEmailRequest.h
 	include/alibabacloud/domain/model/ConfirmTransferInEmailResult.h
+	include/alibabacloud/domain/model/CreateFixedPriceDemandOrderRequest.h
+	include/alibabacloud/domain/model/CreateFixedPriceDemandOrderResult.h
 	include/alibabacloud/domain/model/DeleteContactTemplatesRequest.h
 	include/alibabacloud/domain/model/DeleteContactTemplatesResult.h
 	include/alibabacloud/domain/model/DeleteDomainGroupRequest.h
@@ -306,6 +310,8 @@ set(domain_src
 	src/model/ChangeAuctionResult.cc
 	src/model/CheckDomainRequest.cc
 	src/model/CheckDomainResult.cc
+	src/model/CheckDomainStatusRequest.cc
+	src/model/CheckDomainStatusResult.cc
 	src/model/CheckDomainSunriseClaimRequest.cc
 	src/model/CheckDomainSunriseClaimResult.cc
 	src/model/CheckMaxYearOfServerLockRequest.cc
@@ -316,6 +322,8 @@ set(domain_src
 	src/model/CheckTransferInFeasibilityResult.cc
 	src/model/ConfirmTransferInEmailRequest.cc
 	src/model/ConfirmTransferInEmailResult.cc
+	src/model/CreateFixedPriceDemandOrderRequest.cc
+	src/model/CreateFixedPriceDemandOrderResult.cc
 	src/model/DeleteContactTemplatesRequest.cc
 	src/model/DeleteContactTemplatesResult.cc
 	src/model/DeleteDomainGroupRequest.cc

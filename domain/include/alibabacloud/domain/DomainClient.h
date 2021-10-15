@@ -42,6 +42,8 @@
 #include "model/ChangeAuctionResult.h"
 #include "model/CheckDomainRequest.h"
 #include "model/CheckDomainResult.h"
+#include "model/CheckDomainStatusRequest.h"
+#include "model/CheckDomainStatusResult.h"
 #include "model/CheckDomainSunriseClaimRequest.h"
 #include "model/CheckDomainSunriseClaimResult.h"
 #include "model/CheckMaxYearOfServerLockRequest.h"
@@ -52,6 +54,8 @@
 #include "model/CheckTransferInFeasibilityResult.h"
 #include "model/ConfirmTransferInEmailRequest.h"
 #include "model/ConfirmTransferInEmailResult.h"
+#include "model/CreateFixedPriceDemandOrderRequest.h"
+#include "model/CreateFixedPriceDemandOrderResult.h"
 #include "model/DeleteContactTemplatesRequest.h"
 #include "model/DeleteContactTemplatesResult.h"
 #include "model/DeleteDomainGroupRequest.h"
@@ -323,6 +327,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CheckDomainResult> CheckDomainOutcome;
 			typedef std::future<CheckDomainOutcome> CheckDomainOutcomeCallable;
 			typedef std::function<void(const DomainClient*, const Model::CheckDomainRequest&, const CheckDomainOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckDomainAsyncHandler;
+			typedef Outcome<Error, Model::CheckDomainStatusResult> CheckDomainStatusOutcome;
+			typedef std::future<CheckDomainStatusOutcome> CheckDomainStatusOutcomeCallable;
+			typedef std::function<void(const DomainClient*, const Model::CheckDomainStatusRequest&, const CheckDomainStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckDomainStatusAsyncHandler;
 			typedef Outcome<Error, Model::CheckDomainSunriseClaimResult> CheckDomainSunriseClaimOutcome;
 			typedef std::future<CheckDomainSunriseClaimOutcome> CheckDomainSunriseClaimOutcomeCallable;
 			typedef std::function<void(const DomainClient*, const Model::CheckDomainSunriseClaimRequest&, const CheckDomainSunriseClaimOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckDomainSunriseClaimAsyncHandler;
@@ -338,6 +345,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ConfirmTransferInEmailResult> ConfirmTransferInEmailOutcome;
 			typedef std::future<ConfirmTransferInEmailOutcome> ConfirmTransferInEmailOutcomeCallable;
 			typedef std::function<void(const DomainClient*, const Model::ConfirmTransferInEmailRequest&, const ConfirmTransferInEmailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ConfirmTransferInEmailAsyncHandler;
+			typedef Outcome<Error, Model::CreateFixedPriceDemandOrderResult> CreateFixedPriceDemandOrderOutcome;
+			typedef std::future<CreateFixedPriceDemandOrderOutcome> CreateFixedPriceDemandOrderOutcomeCallable;
+			typedef std::function<void(const DomainClient*, const Model::CreateFixedPriceDemandOrderRequest&, const CreateFixedPriceDemandOrderOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateFixedPriceDemandOrderAsyncHandler;
 			typedef Outcome<Error, Model::DeleteContactTemplatesResult> DeleteContactTemplatesOutcome;
 			typedef std::future<DeleteContactTemplatesOutcome> DeleteContactTemplatesOutcomeCallable;
 			typedef std::function<void(const DomainClient*, const Model::DeleteContactTemplatesRequest&, const DeleteContactTemplatesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteContactTemplatesAsyncHandler;
@@ -721,6 +731,9 @@ namespace AlibabaCloud
 			CheckDomainOutcome checkDomain(const Model::CheckDomainRequest &request)const;
 			void checkDomainAsync(const Model::CheckDomainRequest& request, const CheckDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CheckDomainOutcomeCallable checkDomainCallable(const Model::CheckDomainRequest& request) const;
+			CheckDomainStatusOutcome checkDomainStatus(const Model::CheckDomainStatusRequest &request)const;
+			void checkDomainStatusAsync(const Model::CheckDomainStatusRequest& request, const CheckDomainStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CheckDomainStatusOutcomeCallable checkDomainStatusCallable(const Model::CheckDomainStatusRequest& request) const;
 			CheckDomainSunriseClaimOutcome checkDomainSunriseClaim(const Model::CheckDomainSunriseClaimRequest &request)const;
 			void checkDomainSunriseClaimAsync(const Model::CheckDomainSunriseClaimRequest& request, const CheckDomainSunriseClaimAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CheckDomainSunriseClaimOutcomeCallable checkDomainSunriseClaimCallable(const Model::CheckDomainSunriseClaimRequest& request) const;
@@ -736,6 +749,9 @@ namespace AlibabaCloud
 			ConfirmTransferInEmailOutcome confirmTransferInEmail(const Model::ConfirmTransferInEmailRequest &request)const;
 			void confirmTransferInEmailAsync(const Model::ConfirmTransferInEmailRequest& request, const ConfirmTransferInEmailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ConfirmTransferInEmailOutcomeCallable confirmTransferInEmailCallable(const Model::ConfirmTransferInEmailRequest& request) const;
+			CreateFixedPriceDemandOrderOutcome createFixedPriceDemandOrder(const Model::CreateFixedPriceDemandOrderRequest &request)const;
+			void createFixedPriceDemandOrderAsync(const Model::CreateFixedPriceDemandOrderRequest& request, const CreateFixedPriceDemandOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateFixedPriceDemandOrderOutcomeCallable createFixedPriceDemandOrderCallable(const Model::CreateFixedPriceDemandOrderRequest& request) const;
 			DeleteContactTemplatesOutcome deleteContactTemplates(const Model::DeleteContactTemplatesRequest &request)const;
 			void deleteContactTemplatesAsync(const Model::DeleteContactTemplatesRequest& request, const DeleteContactTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteContactTemplatesOutcomeCallable deleteContactTemplatesCallable(const Model::DeleteContactTemplatesRequest& request) const;
