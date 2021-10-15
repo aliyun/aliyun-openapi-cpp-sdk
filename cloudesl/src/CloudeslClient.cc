@@ -267,6 +267,42 @@ CloudeslClient::BindEslDeviceOutcomeCallable CloudeslClient::bindEslDeviceCallab
 	return task->get_future();
 }
 
+CloudeslClient::ConfirmServerLocationOutcome CloudeslClient::confirmServerLocation(const ConfirmServerLocationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ConfirmServerLocationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ConfirmServerLocationOutcome(ConfirmServerLocationResult(outcome.result()));
+	else
+		return ConfirmServerLocationOutcome(outcome.error());
+}
+
+void CloudeslClient::confirmServerLocationAsync(const ConfirmServerLocationRequest& request, const ConfirmServerLocationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, confirmServerLocation(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudeslClient::ConfirmServerLocationOutcomeCallable CloudeslClient::confirmServerLocationCallable(const ConfirmServerLocationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ConfirmServerLocationOutcome()>>(
+			[this, request]()
+			{
+			return this->confirmServerLocation(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CloudeslClient::CreateStoreOutcome CloudeslClient::createStore(const CreateStoreRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -549,6 +585,42 @@ CloudeslClient::DescribeClientPackageOutcomeCallable CloudeslClient::describeCli
 			[this, request]()
 			{
 			return this->describeClientPackage(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudeslClient::DescribeEslDeviceOutcome CloudeslClient::describeEslDevice(const DescribeEslDeviceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeEslDeviceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeEslDeviceOutcome(DescribeEslDeviceResult(outcome.result()));
+	else
+		return DescribeEslDeviceOutcome(outcome.error());
+}
+
+void CloudeslClient::describeEslDeviceAsync(const DescribeEslDeviceRequest& request, const DescribeEslDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeEslDevice(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudeslClient::DescribeEslDeviceOutcomeCallable CloudeslClient::describeEslDeviceCallable(const DescribeEslDeviceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeEslDeviceOutcome()>>(
+			[this, request]()
+			{
+			return this->describeEslDevice(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

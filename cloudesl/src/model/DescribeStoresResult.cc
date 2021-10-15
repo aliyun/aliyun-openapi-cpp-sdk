@@ -61,6 +61,8 @@ void DescribeStoresResult::parse(const std::string &payload)
 			storesObject.level = valueStoresStoreInfo["Level"].asString();
 		if(!valueStoresStoreInfo["TemplateVersion"].isNull())
 			storesObject.templateVersion = valueStoresStoreInfo["TemplateVersion"].asString();
+		if(!valueStoresStoreInfo["TimeZone"].isNull())
+			storesObject.timeZone = valueStoresStoreInfo["TimeZone"].asString();
 		stores_.push_back(storesObject);
 	}
 	if(!value["ErrorMessage"].isNull())

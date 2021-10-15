@@ -34,6 +34,8 @@
 #include "model/BatchInsertItemsResult.h"
 #include "model/BindEslDeviceRequest.h"
 #include "model/BindEslDeviceResult.h"
+#include "model/ConfirmServerLocationRequest.h"
+#include "model/ConfirmServerLocationResult.h"
 #include "model/CreateStoreRequest.h"
 #include "model/CreateStoreResult.h"
 #include "model/DeleteApDeviceRequest.h"
@@ -50,6 +52,8 @@
 #include "model/DescribeBindersResult.h"
 #include "model/DescribeClientPackageRequest.h"
 #include "model/DescribeClientPackageResult.h"
+#include "model/DescribeEslDeviceRequest.h"
+#include "model/DescribeEslDeviceResult.h"
 #include "model/DescribeEslDevicesRequest.h"
 #include "model/DescribeEslDevicesResult.h"
 #include "model/DescribeItemsRequest.h"
@@ -101,6 +105,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::BindEslDeviceResult> BindEslDeviceOutcome;
 			typedef std::future<BindEslDeviceOutcome> BindEslDeviceOutcomeCallable;
 			typedef std::function<void(const CloudeslClient*, const Model::BindEslDeviceRequest&, const BindEslDeviceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BindEslDeviceAsyncHandler;
+			typedef Outcome<Error, Model::ConfirmServerLocationResult> ConfirmServerLocationOutcome;
+			typedef std::future<ConfirmServerLocationOutcome> ConfirmServerLocationOutcomeCallable;
+			typedef std::function<void(const CloudeslClient*, const Model::ConfirmServerLocationRequest&, const ConfirmServerLocationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ConfirmServerLocationAsyncHandler;
 			typedef Outcome<Error, Model::CreateStoreResult> CreateStoreOutcome;
 			typedef std::future<CreateStoreOutcome> CreateStoreOutcomeCallable;
 			typedef std::function<void(const CloudeslClient*, const Model::CreateStoreRequest&, const CreateStoreOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateStoreAsyncHandler;
@@ -125,6 +132,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeClientPackageResult> DescribeClientPackageOutcome;
 			typedef std::future<DescribeClientPackageOutcome> DescribeClientPackageOutcomeCallable;
 			typedef std::function<void(const CloudeslClient*, const Model::DescribeClientPackageRequest&, const DescribeClientPackageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClientPackageAsyncHandler;
+			typedef Outcome<Error, Model::DescribeEslDeviceResult> DescribeEslDeviceOutcome;
+			typedef std::future<DescribeEslDeviceOutcome> DescribeEslDeviceOutcomeCallable;
+			typedef std::function<void(const CloudeslClient*, const Model::DescribeEslDeviceRequest&, const DescribeEslDeviceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEslDeviceAsyncHandler;
 			typedef Outcome<Error, Model::DescribeEslDevicesResult> DescribeEslDevicesOutcome;
 			typedef std::future<DescribeEslDevicesOutcome> DescribeEslDevicesOutcomeCallable;
 			typedef std::function<void(const CloudeslClient*, const Model::DescribeEslDevicesRequest&, const DescribeEslDevicesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEslDevicesAsyncHandler;
@@ -184,6 +194,9 @@ namespace AlibabaCloud
 			BindEslDeviceOutcome bindEslDevice(const Model::BindEslDeviceRequest &request)const;
 			void bindEslDeviceAsync(const Model::BindEslDeviceRequest& request, const BindEslDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			BindEslDeviceOutcomeCallable bindEslDeviceCallable(const Model::BindEslDeviceRequest& request) const;
+			ConfirmServerLocationOutcome confirmServerLocation(const Model::ConfirmServerLocationRequest &request)const;
+			void confirmServerLocationAsync(const Model::ConfirmServerLocationRequest& request, const ConfirmServerLocationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ConfirmServerLocationOutcomeCallable confirmServerLocationCallable(const Model::ConfirmServerLocationRequest& request) const;
 			CreateStoreOutcome createStore(const Model::CreateStoreRequest &request)const;
 			void createStoreAsync(const Model::CreateStoreRequest& request, const CreateStoreAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateStoreOutcomeCallable createStoreCallable(const Model::CreateStoreRequest& request) const;
@@ -208,6 +221,9 @@ namespace AlibabaCloud
 			DescribeClientPackageOutcome describeClientPackage(const Model::DescribeClientPackageRequest &request)const;
 			void describeClientPackageAsync(const Model::DescribeClientPackageRequest& request, const DescribeClientPackageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeClientPackageOutcomeCallable describeClientPackageCallable(const Model::DescribeClientPackageRequest& request) const;
+			DescribeEslDeviceOutcome describeEslDevice(const Model::DescribeEslDeviceRequest &request)const;
+			void describeEslDeviceAsync(const Model::DescribeEslDeviceRequest& request, const DescribeEslDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeEslDeviceOutcomeCallable describeEslDeviceCallable(const Model::DescribeEslDeviceRequest& request) const;
 			DescribeEslDevicesOutcome describeEslDevices(const Model::DescribeEslDevicesRequest &request)const;
 			void describeEslDevicesAsync(const Model::DescribeEslDevicesRequest& request, const DescribeEslDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeEslDevicesOutcomeCallable describeEslDevicesCallable(const Model::DescribeEslDevicesRequest& request) const;

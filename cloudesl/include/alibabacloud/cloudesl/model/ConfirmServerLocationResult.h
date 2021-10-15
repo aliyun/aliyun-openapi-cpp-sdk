@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CLOUDESL_MODEL_DESCRIBESTORESRESULT_H_
-#define ALIBABACLOUD_CLOUDESL_MODEL_DESCRIBESTORESRESULT_H_
+#ifndef ALIBABACLOUD_CLOUDESL_MODEL_CONFIRMSERVERLOCATIONRESULT_H_
+#define ALIBABACLOUD_CLOUDESL_MODEL_CONFIRMSERVERLOCATIONRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,56 +29,29 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CLOUDESL_EXPORT DescribeStoresResult : public ServiceResult
+			class ALIBABACLOUD_CLOUDESL_EXPORT ConfirmServerLocationResult : public ServiceResult
 			{
 			public:
-				struct StoreInfo
-				{
-					std::string parentId;
-					std::string gmtCreate;
-					std::string userStoreCode;
-					std::string timeZone;
-					std::string storeName;
-					std::string storeId;
-					std::string phone;
-					std::string gmtModified;
-					std::string templateVersion;
-					std::string level;
-				};
 
 
-				DescribeStoresResult();
-				explicit DescribeStoresResult(const std::string &payload);
-				~DescribeStoresResult();
-				int getTotalCount()const;
+				ConfirmServerLocationResult();
+				explicit ConfirmServerLocationResult(const std::string &payload);
+				~ConfirmServerLocationResult();
 				std::string getMessage()const;
-				int getPageSize()const;
-				int getPageNumber()const;
-				std::string getDynamicCode()const;
-				std::vector<StoreInfo> getStores()const;
 				std::string getErrorCode()const;
-				std::string getDynamicMessage()const;
 				std::string getErrorMessage()const;
-				std::string getCode()const;
 				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int totalCount_;
 				std::string message_;
-				int pageSize_;
-				int pageNumber_;
-				std::string dynamicCode_;
-				std::vector<StoreInfo> stores_;
 				std::string errorCode_;
-				std::string dynamicMessage_;
 				std::string errorMessage_;
-				std::string code_;
 				bool success_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CLOUDESL_MODEL_DESCRIBESTORESRESULT_H_
+#endif // !ALIBABACLOUD_CLOUDESL_MODEL_CONFIRMSERVERLOCATIONRESULT_H_

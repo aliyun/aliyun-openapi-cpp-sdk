@@ -49,6 +49,17 @@ void CreateStoreRequest::setClientToken(const std::string& clientToken)
 	setBodyParameter("ClientToken", clientToken);
 }
 
+std::string CreateStoreRequest::getTimeZone()const
+{
+	return timeZone_;
+}
+
+void CreateStoreRequest::setTimeZone(const std::string& timeZone)
+{
+	timeZone_ = timeZone;
+	setBodyParameter("TimeZone", timeZone);
+}
+
 std::string CreateStoreRequest::getStoreName()const
 {
 	return storeName_;

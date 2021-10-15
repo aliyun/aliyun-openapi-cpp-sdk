@@ -33,6 +33,8 @@ set(cloudesl_public_header_model
 	include/alibabacloud/cloudesl/model/BatchInsertItemsResult.h
 	include/alibabacloud/cloudesl/model/BindEslDeviceRequest.h
 	include/alibabacloud/cloudesl/model/BindEslDeviceResult.h
+	include/alibabacloud/cloudesl/model/ConfirmServerLocationRequest.h
+	include/alibabacloud/cloudesl/model/ConfirmServerLocationResult.h
 	include/alibabacloud/cloudesl/model/CreateStoreRequest.h
 	include/alibabacloud/cloudesl/model/CreateStoreResult.h
 	include/alibabacloud/cloudesl/model/DeleteApDeviceRequest.h
@@ -49,6 +51,8 @@ set(cloudesl_public_header_model
 	include/alibabacloud/cloudesl/model/DescribeBindersResult.h
 	include/alibabacloud/cloudesl/model/DescribeClientPackageRequest.h
 	include/alibabacloud/cloudesl/model/DescribeClientPackageResult.h
+	include/alibabacloud/cloudesl/model/DescribeEslDeviceRequest.h
+	include/alibabacloud/cloudesl/model/DescribeEslDeviceResult.h
 	include/alibabacloud/cloudesl/model/DescribeEslDevicesRequest.h
 	include/alibabacloud/cloudesl/model/DescribeEslDevicesResult.h
 	include/alibabacloud/cloudesl/model/DescribeItemsRequest.h
@@ -88,6 +92,8 @@ set(cloudesl_src
 	src/model/BatchInsertItemsResult.cc
 	src/model/BindEslDeviceRequest.cc
 	src/model/BindEslDeviceResult.cc
+	src/model/ConfirmServerLocationRequest.cc
+	src/model/ConfirmServerLocationResult.cc
 	src/model/CreateStoreRequest.cc
 	src/model/CreateStoreResult.cc
 	src/model/DeleteApDeviceRequest.cc
@@ -104,6 +110,8 @@ set(cloudesl_src
 	src/model/DescribeBindersResult.cc
 	src/model/DescribeClientPackageRequest.cc
 	src/model/DescribeClientPackageResult.cc
+	src/model/DescribeEslDeviceRequest.cc
+	src/model/DescribeEslDeviceResult.cc
 	src/model/DescribeEslDevicesRequest.cc
 	src/model/DescribeEslDevicesResult.cc
 	src/model/DescribeItemsRequest.cc

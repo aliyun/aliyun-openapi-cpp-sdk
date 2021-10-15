@@ -38,6 +38,17 @@ void UpdateStoreRequest::setExtraParams(const std::string& extraParams)
 	setBodyParameter("ExtraParams", extraParams);
 }
 
+std::string UpdateStoreRequest::getTimezone()const
+{
+	return timezone_;
+}
+
+void UpdateStoreRequest::setTimezone(const std::string& timezone)
+{
+	timezone_ = timezone;
+	setBodyParameter("Timezone", timezone);
+}
+
 std::string UpdateStoreRequest::getStoreName()const
 {
 	return storeName_;

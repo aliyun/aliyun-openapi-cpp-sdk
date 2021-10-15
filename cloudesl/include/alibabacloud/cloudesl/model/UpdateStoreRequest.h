@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				std::string getExtraParams()const;
 				void setExtraParams(const std::string& extraParams);
+				std::string getTimezone()const;
+				void setTimezone(const std::string& timezone);
 				std::string getStoreName()const;
 				void setStoreName(const std::string& storeName);
 				std::string getStoreId()const;
@@ -50,6 +52,7 @@ namespace AlibabaCloud
 
             private:
 				std::string extraParams_;
+				std::string timezone_;
 				std::string storeName_;
 				std::string storeId_;
 				std::string templateVersion_;
