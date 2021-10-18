@@ -41,14 +41,7 @@ void DescribeWafSourceIpSegmentResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["Ips"].isNull())
 		ips_ = value["Ips"].asString();
-	if(!value["IpV6s"].isNull())
-		ipV6s_ = value["IpV6s"].asString();
 
-}
-
-std::string DescribeWafSourceIpSegmentResult::getIpV6s()const
-{
-	return ipV6s_;
 }
 
 std::string DescribeWafSourceIpSegmentResult::getIps()const

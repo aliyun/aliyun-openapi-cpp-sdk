@@ -38,6 +38,17 @@ void CreateDomainRequest::setIpFollowStatus(int ipFollowStatus)
 	setParameter("IpFollowStatus", std::to_string(ipFollowStatus));
 }
 
+std::string CreateDomainRequest::getSniHost()const
+{
+	return sniHost_;
+}
+
+void CreateDomainRequest::setSniHost(const std::string& sniHost)
+{
+	sniHost_ = sniHost;
+	setParameter("SniHost", sniHost);
+}
+
 std::string CreateDomainRequest::getResourceGroupId()const
 {
 	return resourceGroupId_;
@@ -91,6 +102,17 @@ void CreateDomainRequest::setWriteTime(int writeTime)
 {
 	writeTime_ = writeTime;
 	setParameter("WriteTime", std::to_string(writeTime));
+}
+
+int CreateDomainRequest::getSniStatus()const
+{
+	return sniStatus_;
+}
+
+void CreateDomainRequest::setSniStatus(int sniStatus)
+{
+	sniStatus_ = sniStatus;
+	setParameter("SniStatus", std::to_string(sniStatus));
 }
 
 std::string CreateDomainRequest::getLang()const

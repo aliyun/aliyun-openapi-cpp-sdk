@@ -39,14 +39,14 @@ void DescribeDomainNamesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDomainNames = value["DomainNames"]["DomainName"];
-	for (const auto &item : allDomainNames)
-		domainNames_.push_back(item.asString());
+	auto allResult = value["Result"]["DomainNames"];
+	for (const auto &item : allResult)
+		result_.push_back(item.asString());
 
 }
 
-std::vector<std::string> DescribeDomainNamesResult::getDomainNames()const
+std::vector<std::string> DescribeDomainNamesResult::getResult()const
 {
-	return domainNames_;
+	return result_;
 }
 

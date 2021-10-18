@@ -21,20 +21,34 @@ set(waf-openapi_public_header
 	include/alibabacloud/waf-openapi/Waf_openapiExport.h )
 
 set(waf-openapi_public_header_model 
+	include/alibabacloud/waf-openapi/model/CreateAclRuleRequest.h
+	include/alibabacloud/waf-openapi/model/CreateAclRuleResult.h
+	include/alibabacloud/waf-openapi/model/CreateCertAndKeyRequest.h
+	include/alibabacloud/waf-openapi/model/CreateCertAndKeyResult.h
 	include/alibabacloud/waf-openapi/model/CreateCertificateRequest.h
 	include/alibabacloud/waf-openapi/model/CreateCertificateResult.h
 	include/alibabacloud/waf-openapi/model/CreateCertificateByCertificateIdRequest.h
 	include/alibabacloud/waf-openapi/model/CreateCertificateByCertificateIdResult.h
 	include/alibabacloud/waf-openapi/model/CreateDomainRequest.h
 	include/alibabacloud/waf-openapi/model/CreateDomainResult.h
+	include/alibabacloud/waf-openapi/model/CreateDomainConfigRequest.h
+	include/alibabacloud/waf-openapi/model/CreateDomainConfigResult.h
 	include/alibabacloud/waf-openapi/model/CreateProtectionModuleRuleRequest.h
 	include/alibabacloud/waf-openapi/model/CreateProtectionModuleRuleResult.h
+	include/alibabacloud/waf-openapi/model/DeleteAclRuleRequest.h
+	include/alibabacloud/waf-openapi/model/DeleteAclRuleResult.h
 	include/alibabacloud/waf-openapi/model/DeleteDomainRequest.h
 	include/alibabacloud/waf-openapi/model/DeleteDomainResult.h
+	include/alibabacloud/waf-openapi/model/DeleteDomainConfigRequest.h
+	include/alibabacloud/waf-openapi/model/DeleteDomainConfigResult.h
 	include/alibabacloud/waf-openapi/model/DeleteInstanceRequest.h
 	include/alibabacloud/waf-openapi/model/DeleteInstanceResult.h
 	include/alibabacloud/waf-openapi/model/DeleteProtectionModuleRuleRequest.h
 	include/alibabacloud/waf-openapi/model/DeleteProtectionModuleRuleResult.h
+	include/alibabacloud/waf-openapi/model/DescribeAclRulesRequest.h
+	include/alibabacloud/waf-openapi/model/DescribeAclRulesResult.h
+	include/alibabacloud/waf-openapi/model/DescribeAsyncTaskStatusRequest.h
+	include/alibabacloud/waf-openapi/model/DescribeAsyncTaskStatusResult.h
 	include/alibabacloud/waf-openapi/model/DescribeCertMatchStatusRequest.h
 	include/alibabacloud/waf-openapi/model/DescribeCertMatchStatusResult.h
 	include/alibabacloud/waf-openapi/model/DescribeCertificatesRequest.h
@@ -45,6 +59,10 @@ set(waf-openapi_public_header_model
 	include/alibabacloud/waf-openapi/model/DescribeDomainAdvanceConfigsResult.h
 	include/alibabacloud/waf-openapi/model/DescribeDomainBasicConfigsRequest.h
 	include/alibabacloud/waf-openapi/model/DescribeDomainBasicConfigsResult.h
+	include/alibabacloud/waf-openapi/model/DescribeDomainConfigRequest.h
+	include/alibabacloud/waf-openapi/model/DescribeDomainConfigResult.h
+	include/alibabacloud/waf-openapi/model/DescribeDomainConfigStatusRequest.h
+	include/alibabacloud/waf-openapi/model/DescribeDomainConfigStatusResult.h
 	include/alibabacloud/waf-openapi/model/DescribeDomainListRequest.h
 	include/alibabacloud/waf-openapi/model/DescribeDomainListResult.h
 	include/alibabacloud/waf-openapi/model/DescribeDomainNamesRequest.h
@@ -59,6 +77,8 @@ set(waf-openapi_public_header_model
 	include/alibabacloud/waf-openapi/model/DescribeInstanceSpecInfoResult.h
 	include/alibabacloud/waf-openapi/model/DescribeLogServiceStatusRequest.h
 	include/alibabacloud/waf-openapi/model/DescribeLogServiceStatusResult.h
+	include/alibabacloud/waf-openapi/model/DescribePayInfoRequest.h
+	include/alibabacloud/waf-openapi/model/DescribePayInfoResult.h
 	include/alibabacloud/waf-openapi/model/DescribeProtectionModuleCodeConfigRequest.h
 	include/alibabacloud/waf-openapi/model/DescribeProtectionModuleCodeConfigResult.h
 	include/alibabacloud/waf-openapi/model/DescribeProtectionModuleModeRequest.h
@@ -67,10 +87,16 @@ set(waf-openapi_public_header_model
 	include/alibabacloud/waf-openapi/model/DescribeProtectionModuleRulesResult.h
 	include/alibabacloud/waf-openapi/model/DescribeProtectionModuleStatusRequest.h
 	include/alibabacloud/waf-openapi/model/DescribeProtectionModuleStatusResult.h
+	include/alibabacloud/waf-openapi/model/DescribeRegionsRequest.h
+	include/alibabacloud/waf-openapi/model/DescribeRegionsResult.h
 	include/alibabacloud/waf-openapi/model/DescribeWafSourceIpSegmentRequest.h
 	include/alibabacloud/waf-openapi/model/DescribeWafSourceIpSegmentResult.h
+	include/alibabacloud/waf-openapi/model/ModifyAclRuleRequest.h
+	include/alibabacloud/waf-openapi/model/ModifyAclRuleResult.h
 	include/alibabacloud/waf-openapi/model/ModifyDomainRequest.h
 	include/alibabacloud/waf-openapi/model/ModifyDomainResult.h
+	include/alibabacloud/waf-openapi/model/ModifyDomainConfigRequest.h
+	include/alibabacloud/waf-openapi/model/ModifyDomainConfigResult.h
 	include/alibabacloud/waf-openapi/model/ModifyDomainIpv6StatusRequest.h
 	include/alibabacloud/waf-openapi/model/ModifyDomainIpv6StatusResult.h
 	include/alibabacloud/waf-openapi/model/ModifyLogRetrievalStatusRequest.h
@@ -87,25 +113,43 @@ set(waf-openapi_public_header_model
 	include/alibabacloud/waf-openapi/model/ModifyProtectionRuleCacheStatusResult.h
 	include/alibabacloud/waf-openapi/model/ModifyProtectionRuleStatusRequest.h
 	include/alibabacloud/waf-openapi/model/ModifyProtectionRuleStatusResult.h
+	include/alibabacloud/waf-openapi/model/ModifyWafSwitchRequest.h
+	include/alibabacloud/waf-openapi/model/ModifyWafSwitchResult.h
+	include/alibabacloud/waf-openapi/model/MoveResourceGroupRequest.h
+	include/alibabacloud/waf-openapi/model/MoveResourceGroupResult.h
 	include/alibabacloud/waf-openapi/model/SetDomainRuleGroupRequest.h
 	include/alibabacloud/waf-openapi/model/SetDomainRuleGroupResult.h )
 
 set(waf-openapi_src 
 	src/Waf-openapiClient.cc
+	src/model/CreateAclRuleRequest.cc
+	src/model/CreateAclRuleResult.cc
+	src/model/CreateCertAndKeyRequest.cc
+	src/model/CreateCertAndKeyResult.cc
 	src/model/CreateCertificateRequest.cc
 	src/model/CreateCertificateResult.cc
 	src/model/CreateCertificateByCertificateIdRequest.cc
 	src/model/CreateCertificateByCertificateIdResult.cc
 	src/model/CreateDomainRequest.cc
 	src/model/CreateDomainResult.cc
+	src/model/CreateDomainConfigRequest.cc
+	src/model/CreateDomainConfigResult.cc
 	src/model/CreateProtectionModuleRuleRequest.cc
 	src/model/CreateProtectionModuleRuleResult.cc
+	src/model/DeleteAclRuleRequest.cc
+	src/model/DeleteAclRuleResult.cc
 	src/model/DeleteDomainRequest.cc
 	src/model/DeleteDomainResult.cc
+	src/model/DeleteDomainConfigRequest.cc
+	src/model/DeleteDomainConfigResult.cc
 	src/model/DeleteInstanceRequest.cc
 	src/model/DeleteInstanceResult.cc
 	src/model/DeleteProtectionModuleRuleRequest.cc
 	src/model/DeleteProtectionModuleRuleResult.cc
+	src/model/DescribeAclRulesRequest.cc
+	src/model/DescribeAclRulesResult.cc
+	src/model/DescribeAsyncTaskStatusRequest.cc
+	src/model/DescribeAsyncTaskStatusResult.cc
 	src/model/DescribeCertMatchStatusRequest.cc
 	src/model/DescribeCertMatchStatusResult.cc
 	src/model/DescribeCertificatesRequest.cc
@@ -116,6 +160,10 @@ set(waf-openapi_src
 	src/model/DescribeDomainAdvanceConfigsResult.cc
 	src/model/DescribeDomainBasicConfigsRequest.cc
 	src/model/DescribeDomainBasicConfigsResult.cc
+	src/model/DescribeDomainConfigRequest.cc
+	src/model/DescribeDomainConfigResult.cc
+	src/model/DescribeDomainConfigStatusRequest.cc
+	src/model/DescribeDomainConfigStatusResult.cc
 	src/model/DescribeDomainListRequest.cc
 	src/model/DescribeDomainListResult.cc
 	src/model/DescribeDomainNamesRequest.cc
@@ -130,6 +178,8 @@ set(waf-openapi_src
 	src/model/DescribeInstanceSpecInfoResult.cc
 	src/model/DescribeLogServiceStatusRequest.cc
 	src/model/DescribeLogServiceStatusResult.cc
+	src/model/DescribePayInfoRequest.cc
+	src/model/DescribePayInfoResult.cc
 	src/model/DescribeProtectionModuleCodeConfigRequest.cc
 	src/model/DescribeProtectionModuleCodeConfigResult.cc
 	src/model/DescribeProtectionModuleModeRequest.cc
@@ -138,10 +188,16 @@ set(waf-openapi_src
 	src/model/DescribeProtectionModuleRulesResult.cc
 	src/model/DescribeProtectionModuleStatusRequest.cc
 	src/model/DescribeProtectionModuleStatusResult.cc
+	src/model/DescribeRegionsRequest.cc
+	src/model/DescribeRegionsResult.cc
 	src/model/DescribeWafSourceIpSegmentRequest.cc
 	src/model/DescribeWafSourceIpSegmentResult.cc
+	src/model/ModifyAclRuleRequest.cc
+	src/model/ModifyAclRuleResult.cc
 	src/model/ModifyDomainRequest.cc
 	src/model/ModifyDomainResult.cc
+	src/model/ModifyDomainConfigRequest.cc
+	src/model/ModifyDomainConfigResult.cc
 	src/model/ModifyDomainIpv6StatusRequest.cc
 	src/model/ModifyDomainIpv6StatusResult.cc
 	src/model/ModifyLogRetrievalStatusRequest.cc
@@ -158,6 +214,10 @@ set(waf-openapi_src
 	src/model/ModifyProtectionRuleCacheStatusResult.cc
 	src/model/ModifyProtectionRuleStatusRequest.cc
 	src/model/ModifyProtectionRuleStatusResult.cc
+	src/model/ModifyWafSwitchRequest.cc
+	src/model/ModifyWafSwitchResult.cc
+	src/model/MoveResourceGroupRequest.cc
+	src/model/MoveResourceGroupResult.cc
 	src/model/SetDomainRuleGroupRequest.cc
 	src/model/SetDomainRuleGroupResult.cc )
 

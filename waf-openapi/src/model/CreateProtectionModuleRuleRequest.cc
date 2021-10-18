@@ -19,24 +19,13 @@
 using AlibabaCloud::Waf_openapi::Model::CreateProtectionModuleRuleRequest;
 
 CreateProtectionModuleRuleRequest::CreateProtectionModuleRuleRequest() :
-	RpcServiceRequest("waf-openapi", "2019-09-10", "CreateProtectionModuleRule")
+	RpcServiceRequest("waf-openapi", "2018-01-17", "CreateProtectionModuleRule")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
 CreateProtectionModuleRuleRequest::~CreateProtectionModuleRuleRequest()
 {}
-
-std::string CreateProtectionModuleRuleRequest::getDefenseType()const
-{
-	return defenseType_;
-}
-
-void CreateProtectionModuleRuleRequest::setDefenseType(const std::string& defenseType)
-{
-	defenseType_ = defenseType;
-	setParameter("DefenseType", defenseType);
-}
 
 std::string CreateProtectionModuleRuleRequest::getRule()const
 {
@@ -47,17 +36,6 @@ void CreateProtectionModuleRuleRequest::setRule(const std::string& rule)
 {
 	rule_ = rule;
 	setParameter("Rule", rule);
-}
-
-std::string CreateProtectionModuleRuleRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void CreateProtectionModuleRuleRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
 }
 
 std::string CreateProtectionModuleRuleRequest::getSourceIp()const
@@ -71,15 +49,15 @@ void CreateProtectionModuleRuleRequest::setSourceIp(const std::string& sourceIp)
 	setParameter("SourceIp", sourceIp);
 }
 
-std::string CreateProtectionModuleRuleRequest::getDomain()const
+std::string CreateProtectionModuleRuleRequest::getDefense()const
 {
-	return domain_;
+	return defense_;
 }
 
-void CreateProtectionModuleRuleRequest::setDomain(const std::string& domain)
+void CreateProtectionModuleRuleRequest::setDefense(const std::string& defense)
 {
-	domain_ = domain;
-	setParameter("Domain", domain);
+	defense_ = defense;
+	setParameter("Defense", defense);
 }
 
 std::string CreateProtectionModuleRuleRequest::getLang()const
@@ -91,5 +69,38 @@ void CreateProtectionModuleRuleRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setParameter("Lang", lang);
+}
+
+std::string CreateProtectionModuleRuleRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void CreateProtectionModuleRuleRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setParameter("InstanceId", instanceId);
+}
+
+std::string CreateProtectionModuleRuleRequest::getDomain()const
+{
+	return domain_;
+}
+
+void CreateProtectionModuleRuleRequest::setDomain(const std::string& domain)
+{
+	domain_ = domain;
+	setParameter("Domain", domain);
+}
+
+std::string CreateProtectionModuleRuleRequest::getRegion()const
+{
+	return region_;
+}
+
+void CreateProtectionModuleRuleRequest::setRegion(const std::string& region)
+{
+	region_ = region;
+	setParameter("Region", region);
 }
 

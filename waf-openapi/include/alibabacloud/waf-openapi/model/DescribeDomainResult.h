@@ -65,6 +65,8 @@ namespace AlibabaCloud
 					int loadBalancing;
 					std::string cname;
 					std::vector<LogHeader> logHeaders;
+					int sniStatus;
+					std::string sniHost;
 					int writeTime;
 					std::vector<std::string> http2Port;
 					long version;

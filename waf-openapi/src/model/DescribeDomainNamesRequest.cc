@@ -19,7 +19,7 @@
 using AlibabaCloud::Waf_openapi::Model::DescribeDomainNamesRequest;
 
 DescribeDomainNamesRequest::DescribeDomainNamesRequest() :
-	RpcServiceRequest("waf-openapi", "2019-09-10", "DescribeDomainNames")
+	RpcServiceRequest("waf-openapi", "2018-01-17", "DescribeDomainNames")
 {
 	setMethod(HttpRequest::Method::Post);
 }
@@ -71,14 +71,14 @@ void DescribeDomainNamesRequest::setLang(const std::string& lang)
 	setParameter("Lang", lang);
 }
 
-std::string DescribeDomainNamesRequest::getCallSource()const
+std::string DescribeDomainNamesRequest::getRegion()const
 {
-	return callSource_;
+	return region_;
 }
 
-void DescribeDomainNamesRequest::setCallSource(const std::string& callSource)
+void DescribeDomainNamesRequest::setRegion(const std::string& region)
 {
-	callSource_ = callSource;
-	setParameter("CallSource", callSource);
+	region_ = region;
+	setParameter("Region", region);
 }
 

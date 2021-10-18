@@ -32,27 +32,28 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_WAF_OPENAPI_EXPORT DescribeProtectionModuleRulesResult : public ServiceResult
 			{
 			public:
-				struct Rule
+				struct ModuleRulesItem
 				{
-					long status;
 					long version;
 					std::string content;
-					long ruleId;
 					long time;
+					long id;
 				};
 
 
 				DescribeProtectionModuleRulesResult();
 				explicit DescribeProtectionModuleRulesResult(const std::string &payload);
 				~DescribeProtectionModuleRulesResult();
-				int getTotalCount()const;
-				std::vector<Rule> getRules()const;
+				std::vector<ModuleRulesItem> getModuleRules()const;
+				int getTotal()const;
+				int getTaskStatus()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int totalCount_;
-				std::vector<Rule> rules_;
+				std::vector<ModuleRulesItem> moduleRules_;
+				int total_;
+				int taskStatus_;
 
 			};
 		}

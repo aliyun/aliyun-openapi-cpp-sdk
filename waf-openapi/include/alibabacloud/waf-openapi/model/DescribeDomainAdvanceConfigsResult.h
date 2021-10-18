@@ -36,18 +36,18 @@ namespace AlibabaCloud
 				{
 					struct Profile
 					{
-						std::string httpPort;
-						std::string rs;
+						std::vector<std::string> httpPort;
 						std::string gSLBStatus;
+						std::vector<std::string> rs;
 						int vipServiceStatus;
-						std::string http2Port;
+						std::vector<std::string> http2Port;
 						int certStatus;
 						int ipv6Status;
-						int exclusiveVipStatus;
 						int clusterType;
+						int exclusiveVipStatus;
 						std::string cname;
 						int resolvedType;
-						std::string httpsPort;
+						std::vector<std::string> httpsPort;
 					};
 					std::string domain;
 					Profile profile;

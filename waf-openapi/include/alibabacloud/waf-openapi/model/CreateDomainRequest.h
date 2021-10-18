@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				int getIpFollowStatus()const;
 				void setIpFollowStatus(int ipFollowStatus);
+				std::string getSniHost()const;
+				void setSniHost(const std::string& sniHost);
 				std::string getResourceGroupId()const;
 				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getSourceIp()const;
@@ -47,6 +49,8 @@ namespace AlibabaCloud
 				void setHttp2Port(const std::string& http2Port);
 				int getWriteTime()const;
 				void setWriteTime(int writeTime);
+				int getSniStatus()const;
+				void setSniStatus(int sniStatus);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 				int getAccessHeaderMode()const;
@@ -84,11 +88,13 @@ namespace AlibabaCloud
 
             private:
 				int ipFollowStatus_;
+				std::string sniHost_;
 				std::string resourceGroupId_;
 				std::string sourceIp_;
 				std::string httpPort_;
 				std::string http2Port_;
 				int writeTime_;
+				int sniStatus_;
 				std::string lang_;
 				int accessHeaderMode_;
 				std::string accessType_;

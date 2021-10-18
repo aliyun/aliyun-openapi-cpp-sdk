@@ -19,7 +19,7 @@
 using AlibabaCloud::Waf_openapi::Model::DescribeWafSourceIpSegmentRequest;
 
 DescribeWafSourceIpSegmentRequest::DescribeWafSourceIpSegmentRequest() :
-	RpcServiceRequest("waf-openapi", "2019-09-10", "DescribeWafSourceIpSegment")
+	RpcServiceRequest("waf-openapi", "2018-01-17", "DescribeWafSourceIpSegment")
 {
 	setMethod(HttpRequest::Method::Post);
 }
@@ -69,5 +69,16 @@ void DescribeWafSourceIpSegmentRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setParameter("Lang", lang);
+}
+
+std::string DescribeWafSourceIpSegmentRequest::getRegion()const
+{
+	return region_;
+}
+
+void DescribeWafSourceIpSegmentRequest::setRegion(const std::string& region)
+{
+	region_ = region;
+	setParameter("Region", region);
 }
 

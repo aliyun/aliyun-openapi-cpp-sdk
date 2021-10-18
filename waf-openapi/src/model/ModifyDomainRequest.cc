@@ -38,6 +38,17 @@ void ModifyDomainRequest::setIpFollowStatus(int ipFollowStatus)
 	setParameter("IpFollowStatus", std::to_string(ipFollowStatus));
 }
 
+std::string ModifyDomainRequest::getSniHost()const
+{
+	return sniHost_;
+}
+
+void ModifyDomainRequest::setSniHost(const std::string& sniHost)
+{
+	sniHost_ = sniHost;
+	setParameter("SniHost", sniHost);
+}
+
 int ModifyDomainRequest::getHybridCloudType()const
 {
 	return hybridCloudType_;
@@ -91,6 +102,17 @@ void ModifyDomainRequest::setWriteTime(int writeTime)
 {
 	writeTime_ = writeTime;
 	setParameter("WriteTime", std::to_string(writeTime));
+}
+
+int ModifyDomainRequest::getSniStatus()const
+{
+	return sniStatus_;
+}
+
+void ModifyDomainRequest::setSniStatus(int sniStatus)
+{
+	sniStatus_ = sniStatus;
+	setParameter("SniStatus", std::to_string(sniStatus));
 }
 
 std::string ModifyDomainRequest::getLang()const

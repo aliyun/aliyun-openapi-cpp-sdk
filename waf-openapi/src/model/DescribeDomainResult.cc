@@ -68,6 +68,10 @@ void DescribeDomainResult::parse(const std::string &payload)
 		domain_.resourceGroupId = domainNode["ResourceGroupId"].asString();
 	if(!domainNode["AccessType"].isNull())
 		domain_.accessType = domainNode["AccessType"].asString();
+	if(!domainNode["SniStatus"].isNull())
+		domain_.sniStatus = std::stoi(domainNode["SniStatus"].asString());
+	if(!domainNode["SniHost"].isNull())
+		domain_.sniHost = domainNode["SniHost"].asString();
 	auto allLogHeadersNode = domainNode["LogHeaders"]["LogHeader"];
 	for (auto domainNodeLogHeadersLogHeader : allLogHeadersNode)
 	{

@@ -46,30 +46,34 @@ void DescribeDomainAdvanceConfigsResult::parse(const std::string &payload)
 		if(!valueDomainConfigsDomainConfig["Domain"].isNull())
 			domainConfigsObject.domain = valueDomainConfigsDomainConfig["Domain"].asString();
 		auto profileNode = value["Profile"];
-		if(!profileNode["Cname"].isNull())
-			domainConfigsObject.profile.cname = profileNode["Cname"].asString();
-		if(!profileNode["ResolvedType"].isNull())
-			domainConfigsObject.profile.resolvedType = std::stoi(profileNode["ResolvedType"].asString());
-		if(!profileNode["VipServiceStatus"].isNull())
-			domainConfigsObject.profile.vipServiceStatus = std::stoi(profileNode["VipServiceStatus"].asString());
-		if(!profileNode["CertStatus"].isNull())
-			domainConfigsObject.profile.certStatus = std::stoi(profileNode["CertStatus"].asString());
-		if(!profileNode["ExclusiveVipStatus"].isNull())
-			domainConfigsObject.profile.exclusiveVipStatus = std::stoi(profileNode["ExclusiveVipStatus"].asString());
 		if(!profileNode["Ipv6Status"].isNull())
 			domainConfigsObject.profile.ipv6Status = std::stoi(profileNode["Ipv6Status"].asString());
-		if(!profileNode["HttpPort"].isNull())
-			domainConfigsObject.profile.httpPort = profileNode["HttpPort"].asString();
-		if(!profileNode["HttpsPort"].isNull())
-			domainConfigsObject.profile.httpsPort = profileNode["HttpsPort"].asString();
-		if(!profileNode["Http2Port"].isNull())
-			domainConfigsObject.profile.http2Port = profileNode["Http2Port"].asString();
-		if(!profileNode["Rs"].isNull())
-			domainConfigsObject.profile.rs = profileNode["Rs"].asString();
-		if(!profileNode["ClusterType"].isNull())
-			domainConfigsObject.profile.clusterType = std::stoi(profileNode["ClusterType"].asString());
 		if(!profileNode["GSLBStatus"].isNull())
 			domainConfigsObject.profile.gSLBStatus = profileNode["GSLBStatus"].asString();
+		if(!profileNode["VipServiceStatus"].isNull())
+			domainConfigsObject.profile.vipServiceStatus = std::stoi(profileNode["VipServiceStatus"].asString());
+		if(!profileNode["ClusterType"].isNull())
+			domainConfigsObject.profile.clusterType = std::stoi(profileNode["ClusterType"].asString());
+		if(!profileNode["ExclusiveVipStatus"].isNull())
+			domainConfigsObject.profile.exclusiveVipStatus = std::stoi(profileNode["ExclusiveVipStatus"].asString());
+		if(!profileNode["Cname"].isNull())
+			domainConfigsObject.profile.cname = profileNode["Cname"].asString();
+		if(!profileNode["CertStatus"].isNull())
+			domainConfigsObject.profile.certStatus = std::stoi(profileNode["CertStatus"].asString());
+		if(!profileNode["ResolvedType"].isNull())
+			domainConfigsObject.profile.resolvedType = std::stoi(profileNode["ResolvedType"].asString());
+			auto allHttp2Port = profileNode["Http2Port"]["Http2Port"];
+			for (auto value : allHttp2Port)
+				domainConfigsObject.profile.http2Port.push_back(value.asString());
+			auto allHttpPort = profileNode["HttpPort"]["HttpPort"];
+			for (auto value : allHttpPort)
+				domainConfigsObject.profile.httpPort.push_back(value.asString());
+			auto allRs = profileNode["Rs"]["Rs"];
+			for (auto value : allRs)
+				domainConfigsObject.profile.rs.push_back(value.asString());
+			auto allHttpsPort = profileNode["HttpsPort"]["HttpsPort"];
+			for (auto value : allHttpsPort)
+				domainConfigsObject.profile.httpsPort.push_back(value.asString());
 		domainConfigs_.push_back(domainConfigsObject);
 	}
 
