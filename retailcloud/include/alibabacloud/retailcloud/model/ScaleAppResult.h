@@ -34,8 +34,8 @@ namespace AlibabaCloud
 			public:
 				struct Result
 				{
-					bool admitted;
 					std::string businessCode;
+					bool admitted;
 					long deployOrderId;
 				};
 

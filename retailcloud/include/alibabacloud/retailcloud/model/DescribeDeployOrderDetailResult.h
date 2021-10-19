@@ -44,9 +44,9 @@ namespace AlibabaCloud
 					std::string deployTypeName;
 					std::string envType;
 					std::string failureRate;
-					long deployOrderId;
 					std::string name;
 					int result;
+					long deployOrderId;
 					int totalAppInstanceCt;
 					std::string resultName;
 					int currentPartitionNum;

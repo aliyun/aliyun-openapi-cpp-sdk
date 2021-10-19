@@ -40,12 +40,12 @@ void ScaleAppResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto resultNode = value["Result"];
-	if(!resultNode["Admitted"].isNull())
-		result_.admitted = resultNode["Admitted"].asString() == "true";
 	if(!resultNode["BusinessCode"].isNull())
 		result_.businessCode = resultNode["BusinessCode"].asString();
 	if(!resultNode["DeployOrderId"].isNull())
 		result_.deployOrderId = std::stol(resultNode["DeployOrderId"].asString());
+	if(!resultNode["Admitted"].isNull())
+		result_.admitted = resultNode["Admitted"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = std::stoi(value["Code"].asString());
 	if(!value["ErrMsg"].isNull())

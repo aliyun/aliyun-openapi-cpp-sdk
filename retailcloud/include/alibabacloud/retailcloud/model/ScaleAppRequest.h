@@ -35,12 +35,15 @@ namespace AlibabaCloud
 				ScaleAppRequest();
 				~ScaleAppRequest();
 
+				int getTotalPartitions()const;
+				void setTotalPartitions(int totalPartitions);
 				int getReplicas()const;
 				void setReplicas(int replicas);
 				long getEnvId()const;
 				void setEnvId(long envId);
 
             private:
+				int totalPartitions_;
 				int replicas_;
 				long envId_;
 

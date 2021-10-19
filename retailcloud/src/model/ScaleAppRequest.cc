@@ -27,6 +27,17 @@ ScaleAppRequest::ScaleAppRequest() :
 ScaleAppRequest::~ScaleAppRequest()
 {}
 
+int ScaleAppRequest::getTotalPartitions()const
+{
+	return totalPartitions_;
+}
+
+void ScaleAppRequest::setTotalPartitions(int totalPartitions)
+{
+	totalPartitions_ = totalPartitions;
+	setParameter("TotalPartitions", std::to_string(totalPartitions));
+}
+
 int ScaleAppRequest::getReplicas()const
 {
 	return replicas_;
