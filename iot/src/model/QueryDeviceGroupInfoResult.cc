@@ -54,6 +54,8 @@ void QueryDeviceGroupInfoResult::parse(const std::string &payload)
 		data_.deviceActive = std::stoi(dataNode["DeviceActive"].asString());
 	if(!dataNode["DeviceOnline"].isNull())
 		data_.deviceOnline = std::stoi(dataNode["DeviceOnline"].asString());
+	if(!dataNode["DynamicGroupExpression"].isNull())
+		data_.dynamicGroupExpression = dataNode["DynamicGroupExpression"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())

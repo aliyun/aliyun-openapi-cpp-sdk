@@ -27,6 +27,19 @@ QueryDeviceGroupListRequest::QueryDeviceGroupListRequest() :
 QueryDeviceGroupListRequest::~QueryDeviceGroupListRequest()
 {}
 
+std::vector<std::string> QueryDeviceGroupListRequest::getGroupTypes()const
+{
+	return groupTypes_;
+}
+
+void QueryDeviceGroupListRequest::setGroupTypes(const std::vector<std::string>& groupTypes)
+{
+	groupTypes_ = groupTypes;
+	for(int dep1 = 0; dep1!= groupTypes.size(); dep1++) {
+		setParameter("GroupTypes."+ std::to_string(dep1), groupTypes.at(dep1));
+	}
+}
+
 std::string QueryDeviceGroupListRequest::getSuperGroupId()const
 {
 	return superGroupId_;

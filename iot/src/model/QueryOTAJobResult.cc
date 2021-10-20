@@ -90,6 +90,12 @@ void QueryOTAJobResult::parse(const std::string &payload)
 		data_.needPush = dataNode["NeedPush"].asString() == "true";
 	if(!dataNode["NeedConfirm"].isNull())
 		data_.needConfirm = dataNode["NeedConfirm"].asString() == "true";
+	if(!dataNode["GroupId"].isNull())
+		data_.groupId = dataNode["GroupId"].asString();
+	if(!dataNode["GroupName"].isNull())
+		data_.groupName = dataNode["GroupName"].asString();
+	if(!dataNode["DownloadProtocol"].isNull())
+		data_.downloadProtocol = dataNode["DownloadProtocol"].asString();
 	auto allTagsNode = dataNode["Tags"]["OtaTagDTO"];
 	for (auto dataNodeTagsOtaTagDTO : allTagsNode)
 	{

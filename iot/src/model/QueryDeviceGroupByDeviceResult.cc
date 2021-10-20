@@ -51,6 +51,8 @@ void QueryDeviceGroupByDeviceResult::parse(const std::string &payload)
 			groupInfosObject.utcCreate = valueGroupInfosGroupInfo["UtcCreate"].asString();
 		if(!valueGroupInfosGroupInfo["GroupDesc"].isNull())
 			groupInfosObject.groupDesc = valueGroupInfosGroupInfo["GroupDesc"].asString();
+		if(!valueGroupInfosGroupInfo["GroupType"].isNull())
+			groupInfosObject.groupType = valueGroupInfosGroupInfo["GroupType"].asString();
 		groupInfos_.push_back(groupInfosObject);
 	}
 	if(!value["Success"].isNull())

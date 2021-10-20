@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					std::string groupName;
 					std::string utcCreate;
+					std::string groupType;
 					std::string groupDesc;
 					std::string groupId;
 				};

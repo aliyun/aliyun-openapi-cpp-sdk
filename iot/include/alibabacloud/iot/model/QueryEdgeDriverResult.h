@@ -44,6 +44,7 @@ namespace AlibabaCloud
 						std::string driverName;
 						bool isApply;
 						long gmtModifiedTimestamp;
+						int useOfficialConfig;
 						std::string cpuArch;
 						bool isBuiltIn;
 					};

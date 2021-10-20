@@ -37,6 +37,7 @@ namespace AlibabaCloud
 				SubscribeTopicResult();
 				explicit SubscribeTopicResult(const std::string &payload);
 				~SubscribeTopicResult();
+				std::vector<std::string> getFailureTopics()const;
 				std::string getErrorMessage()const;
 				std::string getCode()const;
 				bool getSuccess()const;
@@ -44,6 +45,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::vector<std::string> failureTopics_;
 				std::string errorMessage_;
 				std::string code_;
 				bool success_;

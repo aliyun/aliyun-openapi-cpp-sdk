@@ -41,6 +41,7 @@ namespace AlibabaCloud
 					long gmtCreateTimestamp;
 					std::string driverName;
 					long gmtModifiedTimestamp;
+					int useOfficialConfig;
 					std::string cpuArch;
 					bool isBuiltIn;
 				};

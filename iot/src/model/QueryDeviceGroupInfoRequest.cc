@@ -60,6 +60,17 @@ void QueryDeviceGroupInfoRequest::setRealTripartiteKey(const std::string& realTr
 	setParameter("RealTripartiteKey", realTripartiteKey);
 }
 
+std::string QueryDeviceGroupInfoRequest::getGroupType()const
+{
+	return groupType_;
+}
+
+void QueryDeviceGroupInfoRequest::setGroupType(const std::string& groupType)
+{
+	groupType_ = groupType;
+	setParameter("GroupType", groupType);
+}
+
 std::string QueryDeviceGroupInfoRequest::getIotInstanceId()const
 {
 	return iotInstanceId_;

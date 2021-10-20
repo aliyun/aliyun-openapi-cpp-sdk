@@ -38,6 +38,17 @@ void QueryDeviceGroupTagListRequest::setAccessKeyId(const std::string& accessKey
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string QueryDeviceGroupTagListRequest::getGroupType()const
+{
+	return groupType_;
+}
+
+void QueryDeviceGroupTagListRequest::setGroupType(const std::string& groupType)
+{
+	groupType_ = groupType;
+	setParameter("GroupType", groupType);
+}
+
 std::string QueryDeviceGroupTagListRequest::getIotInstanceId()const
 {
 	return iotInstanceId_;

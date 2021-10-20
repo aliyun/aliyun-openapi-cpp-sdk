@@ -39,6 +39,7 @@ namespace AlibabaCloud
 						std::string value;
 						std::string key;
 					};
+					std::string groupName;
 					std::string utcEndTime;
 					bool needPush;
 					int overwriteMode;
@@ -57,10 +58,12 @@ namespace AlibabaCloud
 					std::string utcScheduleFinishTime;
 					std::vector<std::string> srcVersions;
 					bool needConfirm;
+					std::string groupId;
 					std::string jobDesc;
 					std::string jobType;
 					std::string utcCreate;
 					int maximumPerMinute;
+					std::string downloadProtocol;
 					std::string utcModified;
 					int retryInterval;
 					std::string utcScheduleTime;

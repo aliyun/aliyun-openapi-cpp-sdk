@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				QueryDeviceGroupListRequest();
 				~QueryDeviceGroupListRequest();
 
+				std::vector<std::string> getGroupTypes()const;
+				void setGroupTypes(const std::vector<std::string>& groupTypes);
 				std::string getSuperGroupId()const;
 				void setSuperGroupId(const std::string& superGroupId);
 				std::string getAccessKeyId()const;
@@ -53,6 +55,7 @@ namespace AlibabaCloud
 				void setApiRevision(const std::string& apiRevision);
 
             private:
+				std::vector<std::string> groupTypes_;
 				std::string superGroupId_;
 				std::string accessKeyId_;
 				std::string iotInstanceId_;

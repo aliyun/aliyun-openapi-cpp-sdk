@@ -93,6 +93,17 @@ void CreateEdgeDriverRequest::setRuntime(const std::string& runtime)
 	setParameter("Runtime", runtime);
 }
 
+int CreateEdgeDriverRequest::getUseOfficialConfig()const
+{
+	return useOfficialConfig_;
+}
+
+void CreateEdgeDriverRequest::setUseOfficialConfig(int useOfficialConfig)
+{
+	useOfficialConfig_ = useOfficialConfig;
+	setParameter("UseOfficialConfig", std::to_string(useOfficialConfig));
+}
+
 std::string CreateEdgeDriverRequest::getApiProduct()const
 {
 	return apiProduct_;

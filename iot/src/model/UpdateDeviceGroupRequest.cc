@@ -38,6 +38,17 @@ void UpdateDeviceGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string UpdateDeviceGroupRequest::getGroupType()const
+{
+	return groupType_;
+}
+
+void UpdateDeviceGroupRequest::setGroupType(const std::string& groupType)
+{
+	groupType_ = groupType;
+	setParameter("GroupType", groupType);
+}
+
 std::string UpdateDeviceGroupRequest::getIotInstanceId()const
 {
 	return iotInstanceId_;

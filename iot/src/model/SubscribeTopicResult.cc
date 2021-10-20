@@ -39,6 +39,9 @@ void SubscribeTopicResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto allFailureTopics = value["FailureTopics"]["topic"];
+	for (const auto &item : allFailureTopics)
+		failureTopics_.push_back(item.asString());
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
@@ -46,6 +49,11 @@ void SubscribeTopicResult::parse(const std::string &payload)
 	if(!value["ErrorMessage"].isNull())
 		errorMessage_ = value["ErrorMessage"].asString();
 
+}
+
+std::vector<std::string> SubscribeTopicResult::getFailureTopics()const
+{
+	return failureTopics_;
 }
 
 std::string SubscribeTopicResult::getErrorMessage()const

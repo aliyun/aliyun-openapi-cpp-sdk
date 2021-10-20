@@ -71,6 +71,17 @@ void CreateOTAStaticUpgradeJobRequest::setAccessKeyId(const std::string& accessK
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string CreateOTAStaticUpgradeJobRequest::getGroupType()const
+{
+	return groupType_;
+}
+
+void CreateOTAStaticUpgradeJobRequest::setGroupType(const std::string& groupType)
+{
+	groupType_ = groupType;
+	setParameter("GroupType", groupType);
+}
+
 bool CreateOTAStaticUpgradeJobRequest::getNeedPush()const
 {
 	return needPush_;
@@ -91,6 +102,17 @@ void CreateOTAStaticUpgradeJobRequest::setIotInstanceId(const std::string& iotIn
 {
 	iotInstanceId_ = iotInstanceId;
 	setParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string CreateOTAStaticUpgradeJobRequest::getDownloadProtocol()const
+{
+	return downloadProtocol_;
+}
+
+void CreateOTAStaticUpgradeJobRequest::setDownloadProtocol(const std::string& downloadProtocol)
+{
+	downloadProtocol_ = downloadProtocol;
+	setParameter("DownloadProtocol", downloadProtocol);
 }
 
 std::string CreateOTAStaticUpgradeJobRequest::getTargetSelection()const
@@ -151,6 +173,17 @@ void CreateOTAStaticUpgradeJobRequest::setDnListFileUrl(const std::string& dnLis
 {
 	dnListFileUrl_ = dnListFileUrl;
 	setParameter("DnListFileUrl", dnListFileUrl);
+}
+
+std::string CreateOTAStaticUpgradeJobRequest::getGroupId()const
+{
+	return groupId_;
+}
+
+void CreateOTAStaticUpgradeJobRequest::setGroupId(const std::string& groupId)
+{
+	groupId_ = groupId;
+	setParameter("GroupId", groupId);
 }
 
 std::string CreateOTAStaticUpgradeJobRequest::getFirmwareId()const

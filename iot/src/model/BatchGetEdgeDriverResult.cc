@@ -61,6 +61,8 @@ void BatchGetEdgeDriverResult::parse(const std::string &payload)
 			driverListObject.gmtCreateTimestamp = std::stol(valueDriverListDriver["GmtCreateTimestamp"].asString());
 		if(!valueDriverListDriver["GmtModifiedTimestamp"].isNull())
 			driverListObject.gmtModifiedTimestamp = std::stol(valueDriverListDriver["GmtModifiedTimestamp"].asString());
+		if(!valueDriverListDriver["UseOfficialConfig"].isNull())
+			driverListObject.useOfficialConfig = std::stoi(valueDriverListDriver["UseOfficialConfig"].asString());
 		driverList_.push_back(driverListObject);
 	}
 	if(!value["Success"].isNull())

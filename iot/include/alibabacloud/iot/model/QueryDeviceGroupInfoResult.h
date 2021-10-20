@@ -41,6 +41,7 @@ namespace AlibabaCloud
 					int deviceActive;
 					std::string groupId;
 					int deviceCount;
+					std::string dynamicGroupExpression;
 				};
 
 

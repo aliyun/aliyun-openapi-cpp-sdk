@@ -51,6 +51,8 @@ void QueryDeviceGroupListResult::parse(const std::string &payload)
 			dataObject.groupName = valueDataGroupInfo["GroupName"].asString();
 		if(!valueDataGroupInfo["GroupDesc"].isNull())
 			dataObject.groupDesc = valueDataGroupInfo["GroupDesc"].asString();
+		if(!valueDataGroupInfo["GroupType"].isNull())
+			dataObject.groupType = valueDataGroupInfo["GroupType"].asString();
 		data_.push_back(dataObject);
 	}
 	if(!value["Success"].isNull())
