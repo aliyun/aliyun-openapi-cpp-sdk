@@ -126,6 +126,17 @@ void DescribeTagsRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
+std::string DescribeTagsRequest::getResourceType()const
+{
+	return resourceType_;
+}
+
+void DescribeTagsRequest::setResourceType(const std::string& resourceType)
+{
+	resourceType_ = resourceType;
+	setParameter("ResourceType", resourceType);
+}
+
 std::string DescribeTagsRequest::getTags()const
 {
 	return tags_;

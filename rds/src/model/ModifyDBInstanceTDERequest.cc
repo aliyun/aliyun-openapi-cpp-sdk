@@ -38,6 +38,17 @@ void ModifyDBInstanceTDERequest::setResourceOwnerId(long resourceOwnerId)
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string ModifyDBInstanceTDERequest::getCertificate()const
+{
+	return certificate_;
+}
+
+void ModifyDBInstanceTDERequest::setCertificate(const std::string& certificate)
+{
+	certificate_ = certificate;
+	setParameter("Certificate", certificate);
+}
+
 std::string ModifyDBInstanceTDERequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -47,6 +58,28 @@ void ModifyDBInstanceTDERequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ModifyDBInstanceTDERequest::getPrivateKey()const
+{
+	return privateKey_;
+}
+
+void ModifyDBInstanceTDERequest::setPrivateKey(const std::string& privateKey)
+{
+	privateKey_ = privateKey;
+	setParameter("PrivateKey", privateKey);
+}
+
+std::string ModifyDBInstanceTDERequest::getPassWord()const
+{
+	return passWord_;
+}
+
+void ModifyDBInstanceTDERequest::setPassWord(const std::string& passWord)
+{
+	passWord_ = passWord;
+	setParameter("PassWord", passWord);
 }
 
 std::string ModifyDBInstanceTDERequest::getDBInstanceId()const

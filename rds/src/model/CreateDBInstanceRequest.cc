@@ -115,6 +115,22 @@ void CreateDBInstanceRequest::setDBInstanceDescription(const std::string& dBInst
 	setParameter("DBInstanceDescription", dBInstanceDescription);
 }
 
+std::vector<CreateDBInstanceRequest::Tag> CreateDBInstanceRequest::getTag()const
+{
+	return tag_;
+}
+
+void CreateDBInstanceRequest::setTag(const std::vector<Tag>& tag)
+{
+	tag_ = tag;
+	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
+		auto tagObj = tag.at(dep1);
+		std::string tagObjStr = "Tag." + std::to_string(dep1 + 1);
+		setParameter(tagObjStr + ".Value", tagObj.value);
+		setParameter(tagObjStr + ".Key", tagObj.key);
+	}
+}
+
 std::string CreateDBInstanceRequest::getBusinessInfo()const
 {
 	return businessInfo_;
@@ -135,6 +151,28 @@ void CreateDBInstanceRequest::setPeriod(const std::string& period)
 {
 	period_ = period;
 	setParameter("Period", period);
+}
+
+bool CreateDBInstanceRequest::getDryRun()const
+{
+	return dryRun_;
+}
+
+void CreateDBInstanceRequest::setDryRun(bool dryRun)
+{
+	dryRun_ = dryRun;
+	setParameter("DryRun", dryRun ? "true" : "false");
+}
+
+std::string CreateDBInstanceRequest::getBackupId()const
+{
+	return backupId_;
+}
+
+void CreateDBInstanceRequest::setBackupId(const std::string& backupId)
+{
+	backupId_ = backupId;
+	setParameter("BackupId", backupId);
 }
 
 std::string CreateDBInstanceRequest::getEncryptionKey()const
@@ -412,6 +450,17 @@ void CreateDBInstanceRequest::setDedicatedHostGroupId(const std::string& dedicat
 	setParameter("DedicatedHostGroupId", dedicatedHostGroupId);
 }
 
+std::string CreateDBInstanceRequest::getCreateStrategy()const
+{
+	return createStrategy_;
+}
+
+void CreateDBInstanceRequest::setCreateStrategy(const std::string& createStrategy)
+{
+	createStrategy_ = createStrategy;
+	setParameter("CreateStrategy", createStrategy);
+}
+
 std::string CreateDBInstanceRequest::getDBInstanceNetType()const
 {
 	return dBInstanceNetType_;
@@ -421,6 +470,17 @@ void CreateDBInstanceRequest::setDBInstanceNetType(const std::string& dBInstance
 {
 	dBInstanceNetType_ = dBInstanceNetType;
 	setParameter("DBInstanceNetType", dBInstanceNetType);
+}
+
+int CreateDBInstanceRequest::getAmount()const
+{
+	return amount_;
+}
+
+void CreateDBInstanceRequest::setAmount(int amount)
+{
+	amount_ = amount;
+	setParameter("Amount", std::to_string(amount));
 }
 
 std::string CreateDBInstanceRequest::getResourceOwnerAccount()const
@@ -465,6 +525,17 @@ void CreateDBInstanceRequest::setTargetMinorVersion(const std::string& targetMin
 {
 	targetMinorVersion_ = targetMinorVersion;
 	setParameter("TargetMinorVersion", targetMinorVersion);
+}
+
+std::string CreateDBInstanceRequest::getUserBackupId()const
+{
+	return userBackupId_;
+}
+
+void CreateDBInstanceRequest::setUserBackupId(const std::string& userBackupId)
+{
+	userBackupId_ = userBackupId;
+	setParameter("UserBackupId", userBackupId);
 }
 
 int CreateDBInstanceRequest::getStorageUpperBound()const

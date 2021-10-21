@@ -61,6 +61,8 @@ namespace AlibabaCloud
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getFreshWhiteListReadins()const;
+				void setFreshWhiteListReadins(const std::string& freshWhiteListReadins);
 				std::string getDBInstanceIPArrayAttribute()const;
 				void setDBInstanceIPArrayAttribute(const std::string& dBInstanceIPArrayAttribute);
 
@@ -78,6 +80,7 @@ namespace AlibabaCloud
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
+				std::string freshWhiteListReadins_;
 				std::string dBInstanceIPArrayAttribute_;
 
 			};

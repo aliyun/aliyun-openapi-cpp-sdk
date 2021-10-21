@@ -37,18 +37,46 @@ namespace AlibabaCloud
 				DescribeDBInstanceSSLResult();
 				explicit DescribeDBInstanceSSLResult(const std::string &payload);
 				~DescribeDBInstanceSSLResult();
-				std::string getSSLExpireTime()const;
-				std::string getRequireUpdateReason()const;
-				std::string getConnectionString()const;
+				std::string getClientCertRevocationList()const;
+				std::string getCAType()const;
+				std::string getRequireUpdateItem()const;
+				std::string getACL()const;
+				std::string getLastModifyStatus()const;
 				std::string getRequireUpdate()const;
+				std::string getModifyStatusReason()const;
+				std::string getClientCACertExpireTime()const;
+				std::string getSSLExpireTime()const;
+				std::string getServerKey()const;
+				std::string getSSLCreateTime()const;
+				std::string getServerCert()const;
+				std::string getSSLEnabled()const;
+				std::string getClientCACert()const;
+				std::string getRequireUpdateReason()const;
+				std::string getReplicationACL()const;
+				std::string getConnectionString()const;
+				std::string getServerCAUrl()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string sSLExpireTime_;
-				std::string requireUpdateReason_;
-				std::string connectionString_;
+				std::string clientCertRevocationList_;
+				std::string cAType_;
+				std::string requireUpdateItem_;
+				std::string aCL_;
+				std::string lastModifyStatus_;
 				std::string requireUpdate_;
+				std::string modifyStatusReason_;
+				std::string clientCACertExpireTime_;
+				std::string sSLExpireTime_;
+				std::string serverKey_;
+				std::string sSLCreateTime_;
+				std::string serverCert_;
+				std::string sSLEnabled_;
+				std::string clientCACert_;
+				std::string requireUpdateReason_;
+				std::string replicationACL_;
+				std::string connectionString_;
+				std::string serverCAUrl_;
 
 			};
 		}

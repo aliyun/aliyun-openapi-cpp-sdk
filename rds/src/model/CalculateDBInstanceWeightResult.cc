@@ -53,6 +53,8 @@ void CalculateDBInstanceWeightResult::parse(const std::string &payload)
 			itemsObject.availability = valueItemsDBInstanceWeight["Availability"].asString();
 		if(!valueItemsDBInstanceWeight["Weight"].isNull())
 			itemsObject.weight = valueItemsDBInstanceWeight["Weight"].asString();
+		if(!valueItemsDBInstanceWeight["Role"].isNull())
+			itemsObject.role = valueItemsDBInstanceWeight["Role"].asString();
 		items_.push_back(itemsObject);
 	}
 

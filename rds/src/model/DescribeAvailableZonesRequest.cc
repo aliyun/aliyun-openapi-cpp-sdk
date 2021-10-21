@@ -170,3 +170,14 @@ void DescribeAvailableZonesRequest::setZoneId(const std::string& zoneId)
 	setParameter("ZoneId", zoneId);
 }
 
+std::string DescribeAvailableZonesRequest::getCategory()const
+{
+	return category_;
+}
+
+void DescribeAvailableZonesRequest::setCategory(const std::string& category)
+{
+	category_ = category;
+	setParameter("Category", category);
+}
+

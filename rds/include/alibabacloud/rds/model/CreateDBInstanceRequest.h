@@ -30,6 +30,12 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_RDS_EXPORT CreateDBInstanceRequest : public RpcServiceRequest
 			{
+			public:
+				struct Tag
+				{
+					std::string value;
+					std::string key;
+				};
 
 			public:
 				CreateDBInstanceRequest();
@@ -51,10 +57,16 @@ namespace AlibabaCloud
 				void setTargetDedicatedHostIdForMaster(const std::string& targetDedicatedHostIdForMaster);
 				std::string getDBInstanceDescription()const;
 				void setDBInstanceDescription(const std::string& dBInstanceDescription);
+				std::vector<Tag> getTag()const;
+				void setTag(const std::vector<Tag>& tag);
 				std::string getBusinessInfo()const;
 				void setBusinessInfo(const std::string& businessInfo);
 				std::string getPeriod()const;
 				void setPeriod(const std::string& period);
+				bool getDryRun()const;
+				void setDryRun(bool dryRun);
+				std::string getBackupId()const;
+				void setBackupId(const std::string& backupId);
 				std::string getEncryptionKey()const;
 				void setEncryptionKey(const std::string& encryptionKey);
 				long getOwnerId()const;
@@ -105,8 +117,12 @@ namespace AlibabaCloud
 				void setDBInstanceStorageType(const std::string& dBInstanceStorageType);
 				std::string getDedicatedHostGroupId()const;
 				void setDedicatedHostGroupId(const std::string& dedicatedHostGroupId);
+				std::string getCreateStrategy()const;
+				void setCreateStrategy(const std::string& createStrategy);
 				std::string getDBInstanceNetType()const;
 				void setDBInstanceNetType(const std::string& dBInstanceNetType);
+				int getAmount()const;
+				void setAmount(int amount);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
@@ -115,6 +131,8 @@ namespace AlibabaCloud
 				void setUsedTime(const std::string& usedTime);
 				std::string getTargetMinorVersion()const;
 				void setTargetMinorVersion(const std::string& targetMinorVersion);
+				std::string getUserBackupId()const;
+				void setUserBackupId(const std::string& userBackupId);
 				int getStorageUpperBound()const;
 				void setStorageUpperBound(int storageUpperBound);
 				int getStorageThreshold()const;
@@ -135,8 +153,11 @@ namespace AlibabaCloud
 				std::string resourceGroupId_;
 				std::string targetDedicatedHostIdForMaster_;
 				std::string dBInstanceDescription_;
+				std::vector<Tag> tag_;
 				std::string businessInfo_;
 				std::string period_;
+				bool dryRun_;
+				std::string backupId_;
 				std::string encryptionKey_;
 				long ownerId_;
 				std::string dBInstanceClass_;
@@ -162,11 +183,14 @@ namespace AlibabaCloud
 				std::string dBTimeZone_;
 				std::string dBInstanceStorageType_;
 				std::string dedicatedHostGroupId_;
+				std::string createStrategy_;
 				std::string dBInstanceNetType_;
+				int amount_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				std::string usedTime_;
 				std::string targetMinorVersion_;
+				std::string userBackupId_;
 				int storageUpperBound_;
 				int storageThreshold_;
 				std::string vPCId_;

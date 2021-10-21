@@ -45,6 +45,7 @@ namespace AlibabaCloud
 					std::string regionId;
 					std::string eventRecordTime;
 					std::string eventPayload;
+					long callerUid;
 				};
 
 

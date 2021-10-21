@@ -225,6 +225,17 @@ void DescribeDBInstancesRequest::setTag4key(const std::string& tag4key)
 	setParameter("Tag4key", tag4key);
 }
 
+int DescribeDBInstancesRequest::getMaxResults()const
+{
+	return maxResults_;
+}
+
+void DescribeDBInstancesRequest::setMaxResults(int maxResults)
+{
+	maxResults_ = maxResults;
+	setParameter("MaxResults", std::to_string(maxResults));
+}
+
 std::string DescribeDBInstancesRequest::getInstanceNetworkType()const
 {
 	return instanceNetworkType_;
@@ -333,6 +344,17 @@ void DescribeDBInstancesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setParameter("RegionId", regionId);
+}
+
+std::string DescribeDBInstancesRequest::getNextToken()const
+{
+	return nextToken_;
+}
+
+void DescribeDBInstancesRequest::setNextToken(const std::string& nextToken)
+{
+	nextToken_ = nextToken;
+	setParameter("NextToken", nextToken);
 }
 
 int DescribeDBInstancesRequest::getPageSize()const

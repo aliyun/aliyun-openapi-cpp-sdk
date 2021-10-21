@@ -35,6 +35,7 @@ namespace AlibabaCloud
 				struct DBInstanceWeight
 				{
 					std::string availability;
+					std::string role;
 					std::string dBInstanceId;
 					std::string dBInstanceType;
 					std::string readonlyInstanceSQLDelayedTime;

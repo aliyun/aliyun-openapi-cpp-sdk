@@ -191,6 +191,12 @@ void DescribeDBInstanceAttributeResult::parse(const std::string &payload)
 			itemsObject.dedicatedHostGroupId = valueItemsDBInstanceAttribute["DedicatedHostGroupId"].asString();
 		if(!valueItemsDBInstanceAttribute["SuperPermissionMode"].isNull())
 			itemsObject.superPermissionMode = valueItemsDBInstanceAttribute["SuperPermissionMode"].asString();
+		if(!valueItemsDBInstanceAttribute["GeneralGroupName"].isNull())
+			itemsObject.generalGroupName = valueItemsDBInstanceAttribute["GeneralGroupName"].asString();
+		if(!valueItemsDBInstanceAttribute["TipsLevel"].isNull())
+			itemsObject.tipsLevel = std::stoi(valueItemsDBInstanceAttribute["TipsLevel"].asString());
+		if(!valueItemsDBInstanceAttribute["Tips"].isNull())
+			itemsObject.tips = valueItemsDBInstanceAttribute["Tips"].asString();
 		auto allSlaveZonesNode = valueItemsDBInstanceAttribute["SlaveZones"]["SlaveZone"];
 		for (auto valueItemsDBInstanceAttributeSlaveZonesSlaveZone : allSlaveZonesNode)
 		{

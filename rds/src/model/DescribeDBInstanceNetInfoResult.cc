@@ -87,6 +87,8 @@ void DescribeDBInstanceNetInfoResult::parse(const std::string &payload)
 				dBInstanceWeightsObject.availability = valueDBInstanceNetInfosDBInstanceNetInfoDBInstanceWeightsDBInstanceWeight["Availability"].asString();
 			if(!valueDBInstanceNetInfosDBInstanceNetInfoDBInstanceWeightsDBInstanceWeight["Weight"].isNull())
 				dBInstanceWeightsObject.weight = valueDBInstanceNetInfosDBInstanceNetInfoDBInstanceWeightsDBInstanceWeight["Weight"].asString();
+			if(!valueDBInstanceNetInfosDBInstanceNetInfoDBInstanceWeightsDBInstanceWeight["Role"].isNull())
+				dBInstanceWeightsObject.role = valueDBInstanceNetInfosDBInstanceNetInfoDBInstanceWeightsDBInstanceWeight["Role"].asString();
 			dBInstanceNetInfosObject.dBInstanceWeights.push_back(dBInstanceWeightsObject);
 		}
 		dBInstanceNetInfos_.push_back(dBInstanceNetInfosObject);

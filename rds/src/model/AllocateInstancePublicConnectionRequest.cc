@@ -49,6 +49,17 @@ void AllocateInstancePublicConnectionRequest::setConnectionStringPrefix(const st
 	setParameter("ConnectionStringPrefix", connectionStringPrefix);
 }
 
+std::string AllocateInstancePublicConnectionRequest::getGeneralGroupName()const
+{
+	return generalGroupName_;
+}
+
+void AllocateInstancePublicConnectionRequest::setGeneralGroupName(const std::string& generalGroupName)
+{
+	generalGroupName_ = generalGroupName;
+	setParameter("GeneralGroupName", generalGroupName);
+}
+
 std::string AllocateInstancePublicConnectionRequest::getAccessKeyId()const
 {
 	return accessKeyId_;

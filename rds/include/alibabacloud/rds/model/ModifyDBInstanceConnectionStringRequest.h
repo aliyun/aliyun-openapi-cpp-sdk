@@ -39,6 +39,8 @@ namespace AlibabaCloud
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getConnectionStringPrefix()const;
 				void setConnectionStringPrefix(const std::string& connectionStringPrefix);
+				std::string getGeneralGroupName()const;
+				void setGeneralGroupName(const std::string& generalGroupName);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getDBInstanceId()const;
@@ -57,6 +59,7 @@ namespace AlibabaCloud
             private:
 				long resourceOwnerId_;
 				std::string connectionStringPrefix_;
+				std::string generalGroupName_;
 				std::string accessKeyId_;
 				std::string dBInstanceId_;
 				std::string resourceOwnerAccount_;

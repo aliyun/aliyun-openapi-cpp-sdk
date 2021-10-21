@@ -34,8 +34,11 @@ namespace AlibabaCloud
 			public:
 				struct RDSRegion
 				{
+					std::string zoneName;
 					std::string zoneId;
 					std::string regionId;
+					std::string regionEndpoint;
+					std::string localName;
 				};
 
 

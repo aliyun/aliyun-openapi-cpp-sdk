@@ -45,10 +45,14 @@ namespace AlibabaCloud
 				void setEngineVersion(const std::string& engineVersion);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getEffectiveTime()const;
 				void setEffectiveTime(const std::string& effectiveTime);
 				std::string getDBInstanceId()const;
 				void setDBInstanceId(const std::string& dBInstanceId);
+				std::string getSwitchTime()const;
+				void setSwitchTime(const std::string& switchTime);
 				std::string getDBInstanceStorageType()const;
 				void setDBInstanceStorageType(const std::string& dBInstanceStorageType);
 				std::string getSourceBiz()const;
@@ -63,6 +67,8 @@ namespace AlibabaCloud
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				long getUsedTime()const;
+				void setUsedTime(long usedTime);
 				std::string getDBInstanceClass()const;
 				void setDBInstanceClass(const std::string& dBInstanceClass);
 				std::string getZoneId()const;
@@ -76,8 +82,10 @@ namespace AlibabaCloud
 				std::string clientToken_;
 				std::string engineVersion_;
 				std::string accessKeyId_;
+				std::string resourceGroupId_;
 				std::string effectiveTime_;
 				std::string dBInstanceId_;
+				std::string switchTime_;
 				std::string dBInstanceStorageType_;
 				std::string sourceBiz_;
 				std::string dedicatedHostGroupId_;
@@ -85,6 +93,7 @@ namespace AlibabaCloud
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
+				long usedTime_;
 				std::string dBInstanceClass_;
 				std::string zoneId_;
 				std::string payType_;

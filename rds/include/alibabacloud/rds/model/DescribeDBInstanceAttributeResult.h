@@ -58,6 +58,7 @@ namespace AlibabaCloud
 					std::string dBInstanceType;
 					std::string consoleVersion;
 					std::string instanceNetworkType;
+					std::string generalGroupName;
 					std::string dBInstanceClassType;
 					std::string tempUpgradeRecoveryMaxIOPS;
 					std::string replicateId;
@@ -77,6 +78,7 @@ namespace AlibabaCloud
 					std::string dBInstanceClass;
 					int accountMaxQuantity;
 					std::string vSwitchId;
+					int tipsLevel;
 					std::string payType;
 					std::string lockMode;
 					std::string guardDBInstanceId;
@@ -126,6 +128,7 @@ namespace AlibabaCloud
 					bool multipleTempUpgrade;
 					bool canTempUpgrade;
 					std::string regionId;
+					std::string tips;
 				};
 
 

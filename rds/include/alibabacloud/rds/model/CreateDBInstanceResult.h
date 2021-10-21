@@ -37,18 +37,28 @@ namespace AlibabaCloud
 				CreateDBInstanceResult();
 				explicit CreateDBInstanceResult(const std::string &payload);
 				~CreateDBInstanceResult();
+				std::string getTaskId()const;
+				std::string getMessage()const;
 				std::string getDBInstanceId()const;
 				std::string getPort()const;
-				std::string getOrderId()const;
+				bool getDryRun()const;
 				std::string getConnectionString()const;
+				std::string getOrderId()const;
+				bool getTagResult()const;
+				bool getDryRunResult()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string taskId_;
+				std::string message_;
 				std::string dBInstanceId_;
 				std::string port_;
-				std::string orderId_;
+				bool dryRun_;
 				std::string connectionString_;
+				std::string orderId_;
+				bool tagResult_;
+				bool dryRunResult_;
 
 			};
 		}

@@ -38,38 +38,31 @@ namespace AlibabaCloud
 					{
 						std::string dBInstanceId;
 					};
-					std::string dedicatedHostNameForLog;
-					std::string category;
 					std::string resourceGroupId;
-					std::string dBInstanceNetType;
-					std::string dedicatedHostGroupId;
 					std::string destroyTime;
 					std::string dedicatedHostNameForMaster;
 					std::string dBInstanceType;
-					std::string tempDBInstanceId;
 					std::string dedicatedHostZoneIdForMaster;
 					bool mutriORsignle;
 					std::string instanceNetworkType;
+					std::string generalGroupName;
 					std::string replicateId;
 					std::string dedicatedHostIdForLog;
-					std::string dBInstanceId;
 					std::string autoUpgradeMinorVersion;
-					std::vector<DBInstance::ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
-					std::string dedicatedHostNameForSlave;
+					std::string dBInstanceId;
 					std::string lockReason;
 					std::string dBInstanceDescription;
 					std::string engine;
 					std::string engineVersion;
 					std::string dBInstanceStatus;
-					std::string zoneId;
 					std::string dBInstanceClass;
-					std::string createTime;
 					std::string vSwitchId;
 					std::string dedicatedHostGroupName;
+					int tipsLevel;
 					std::string payType;
-					std::string lockMode;
 					std::string guardDBInstanceId;
-					std::string dBInstanceStorageType;
+					std::string lockMode;
+					int switchWeight;
 					int insId;
 					std::string dedicatedHostIdForSlave;
 					std::string vpcId;
@@ -77,12 +70,23 @@ namespace AlibabaCloud
 					std::string connectionMode;
 					std::string dedicatedHostZoneIdForLog;
 					std::string vpcCloudInstanceId;
-					std::string vpcName;
-					std::string regionId;
-					std::string expireTime;
 					std::string connectionString;
+					std::string expireTime;
 					std::string dedicatedHostIdForMaster;
 					std::string dedicatedHostZoneIdForSlave;
+					std::string dedicatedHostNameForLog;
+					std::string category;
+					std::string dBInstanceNetType;
+					std::string dedicatedHostGroupId;
+					std::string tempDBInstanceId;
+					std::vector<DBInstance::ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
+					std::string dedicatedHostNameForSlave;
+					std::string zoneId;
+					std::string createTime;
+					std::string dBInstanceStorageType;
+					std::string vpcName;
+					std::string regionId;
+					std::string tips;
 				};
 
 
@@ -91,6 +95,7 @@ namespace AlibabaCloud
 				~DescribeDBInstancesResult();
 				int getTotalRecordCount()const;
 				int getPageRecordCount()const;
+				std::string getNextToken()const;
 				int getPageNumber()const;
 				std::vector<DBInstance> getItems()const;
 
@@ -99,6 +104,7 @@ namespace AlibabaCloud
 			private:
 				int totalRecordCount_;
 				int pageRecordCount_;
+				std::string nextToken_;
 				int pageNumber_;
 				std::vector<DBInstance> items_;
 

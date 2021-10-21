@@ -170,6 +170,17 @@ void ModifySecurityIpsRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
+std::string ModifySecurityIpsRequest::getFreshWhiteListReadins()const
+{
+	return freshWhiteListReadins_;
+}
+
+void ModifySecurityIpsRequest::setFreshWhiteListReadins(const std::string& freshWhiteListReadins)
+{
+	freshWhiteListReadins_ = freshWhiteListReadins;
+	setParameter("FreshWhiteListReadins", freshWhiteListReadins);
+}
+
 std::string ModifySecurityIpsRequest::getDBInstanceIPArrayAttribute()const
 {
 	return dBInstanceIPArrayAttribute_;

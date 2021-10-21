@@ -39,15 +39,35 @@ void CreateDBInstanceResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["DBInstanceId"].isNull())
-		dBInstanceId_ = value["DBInstanceId"].asString();
-	if(!value["OrderId"].isNull())
-		orderId_ = value["OrderId"].asString();
+	if(!value["DryRunResult"].isNull())
+		dryRunResult_ = value["DryRunResult"].asString() == "true";
+	if(!value["TagResult"].isNull())
+		tagResult_ = value["TagResult"].asString() == "true";
 	if(!value["ConnectionString"].isNull())
 		connectionString_ = value["ConnectionString"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["DBInstanceId"].isNull())
+		dBInstanceId_ = value["DBInstanceId"].asString();
 	if(!value["Port"].isNull())
 		port_ = value["Port"].asString();
+	if(!value["TaskId"].isNull())
+		taskId_ = value["TaskId"].asString();
+	if(!value["DryRun"].isNull())
+		dryRun_ = value["DryRun"].asString() == "true";
+	if(!value["OrderId"].isNull())
+		orderId_ = value["OrderId"].asString();
 
+}
+
+std::string CreateDBInstanceResult::getTaskId()const
+{
+	return taskId_;
+}
+
+std::string CreateDBInstanceResult::getMessage()const
+{
+	return message_;
 }
 
 std::string CreateDBInstanceResult::getDBInstanceId()const
@@ -60,13 +80,28 @@ std::string CreateDBInstanceResult::getPort()const
 	return port_;
 }
 
-std::string CreateDBInstanceResult::getOrderId()const
+bool CreateDBInstanceResult::getDryRun()const
 {
-	return orderId_;
+	return dryRun_;
 }
 
 std::string CreateDBInstanceResult::getConnectionString()const
 {
 	return connectionString_;
+}
+
+std::string CreateDBInstanceResult::getOrderId()const
+{
+	return orderId_;
+}
+
+bool CreateDBInstanceResult::getTagResult()const
+{
+	return tagResult_;
+}
+
+bool CreateDBInstanceResult::getDryRunResult()const
+{
+	return dryRunResult_;
 }
 

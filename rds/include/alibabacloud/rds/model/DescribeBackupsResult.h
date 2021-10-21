@@ -34,28 +34,36 @@ namespace AlibabaCloud
 			public:
 				struct Backup
 				{
+					struct BackupDownloadLinkByDBItem
+					{
+						std::string downloadLink;
+						std::string intranetDownloadLink;
+						std::string dataBase;
+					};
 					std::string backupMode;
 					std::string backupId;
 					std::string encryption;
 					std::string backupDBNames;
 					std::string dBInstanceId;
+					std::string checksum;
 					std::string backupType;
 					long totalBackupSize;
 					std::string backupMethod;
 					std::string backupExtractionStatus;
 					std::string backupInitiator;
-					std::string backupIntranetDownloadURL;
 					std::string storageClass;
+					std::string backupIntranetDownloadURL;
 					long backupSize;
 					int isAvail;
 					std::string slaveStatus;
 					std::string hostInstanceID;
+					std::vector<Backup::BackupDownloadLinkByDBItem> backupDownloadLinkByDB;
 					std::string storeStatus;
 					std::string backupDownloadURL;
-					std::string backupEndTime;
 					std::string copyOnlyBackup;
-					std::string backupStartTime;
+					std::string backupEndTime;
 					long consistentTime;
+					std::string backupStartTime;
 					std::string metaStatus;
 					std::string backupScale;
 					std::string backupStatus;
@@ -67,8 +75,8 @@ namespace AlibabaCloud
 				explicit DescribeBackupsResult(const std::string &payload);
 				~DescribeBackupsResult();
 				std::string getTotalRecordCount()const;
-				std::string getPageRecordCount()const;
 				long getTotalEcsSnapshotSize()const;
+				std::string getPageRecordCount()const;
 				std::string getPageNumber()const;
 				std::vector<Backup> getItems()const;
 				long getTotalBackupSize()const;
@@ -77,8 +85,8 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string totalRecordCount_;
-				std::string pageRecordCount_;
 				long totalEcsSnapshotSize_;
+				std::string pageRecordCount_;
 				std::string pageNumber_;
 				std::vector<Backup> items_;
 				long totalBackupSize_;

@@ -38,28 +38,6 @@ void ModifyDBInstanceMonitorRequest::setResourceOwnerId(long resourceOwnerId)
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string ModifyDBInstanceMonitorRequest::getPeriod()const
-{
-	return period_;
-}
-
-void ModifyDBInstanceMonitorRequest::setPeriod(const std::string& period)
-{
-	period_ = period;
-	setParameter("Period", period);
-}
-
-std::string ModifyDBInstanceMonitorRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void ModifyDBInstanceMonitorRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string ModifyDBInstanceMonitorRequest::getClientToken()const
 {
 	return clientToken_;
@@ -69,28 +47,6 @@ void ModifyDBInstanceMonitorRequest::setClientToken(const std::string& clientTok
 {
 	clientToken_ = clientToken;
 	setParameter("ClientToken", clientToken);
-}
-
-std::string ModifyDBInstanceMonitorRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void ModifyDBInstanceMonitorRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
-}
-
-long ModifyDBInstanceMonitorRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void ModifyDBInstanceMonitorRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyDBInstanceMonitorRequest::getAccessKeyId()const
@@ -113,5 +69,49 @@ void ModifyDBInstanceMonitorRequest::setDBInstanceId(const std::string& dBInstan
 {
 	dBInstanceId_ = dBInstanceId;
 	setParameter("DBInstanceId", dBInstanceId);
+}
+
+std::string ModifyDBInstanceMonitorRequest::getPeriod()const
+{
+	return period_;
+}
+
+void ModifyDBInstanceMonitorRequest::setPeriod(const std::string& period)
+{
+	period_ = period;
+	setParameter("Period", period);
+}
+
+std::string ModifyDBInstanceMonitorRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void ModifyDBInstanceMonitorRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string ModifyDBInstanceMonitorRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void ModifyDBInstanceMonitorRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setParameter("OwnerAccount", ownerAccount);
+}
+
+long ModifyDBInstanceMonitorRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void ModifyDBInstanceMonitorRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

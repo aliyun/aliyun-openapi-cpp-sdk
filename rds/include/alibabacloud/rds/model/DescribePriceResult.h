@@ -49,8 +49,8 @@ namespace AlibabaCloud
 					};
 					ActivityInfo activityInfo;
 					float originalPrice;
-					std::string currency;
 					float discountPrice;
+					std::string currency;
 					std::vector<std::string> ruleIds;
 					float tradePrice;
 					std::vector<Coupon> coupons;

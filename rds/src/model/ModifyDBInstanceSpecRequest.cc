@@ -82,6 +82,17 @@ void ModifyDBInstanceSpecRequest::setAccessKeyId(const std::string& accessKeyId)
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string ModifyDBInstanceSpecRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void ModifyDBInstanceSpecRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string ModifyDBInstanceSpecRequest::getEffectiveTime()const
 {
 	return effectiveTime_;
@@ -102,6 +113,17 @@ void ModifyDBInstanceSpecRequest::setDBInstanceId(const std::string& dBInstanceI
 {
 	dBInstanceId_ = dBInstanceId;
 	setParameter("DBInstanceId", dBInstanceId);
+}
+
+std::string ModifyDBInstanceSpecRequest::getSwitchTime()const
+{
+	return switchTime_;
+}
+
+void ModifyDBInstanceSpecRequest::setSwitchTime(const std::string& switchTime)
+{
+	switchTime_ = switchTime;
+	setParameter("SwitchTime", switchTime);
 }
 
 std::string ModifyDBInstanceSpecRequest::getDBInstanceStorageType()const
@@ -179,6 +201,17 @@ void ModifyDBInstanceSpecRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
+}
+
+long ModifyDBInstanceSpecRequest::getUsedTime()const
+{
+	return usedTime_;
+}
+
+void ModifyDBInstanceSpecRequest::setUsedTime(long usedTime)
+{
+	usedTime_ = usedTime;
+	setParameter("UsedTime", std::to_string(usedTime));
 }
 
 std::string ModifyDBInstanceSpecRequest::getDBInstanceClass()const

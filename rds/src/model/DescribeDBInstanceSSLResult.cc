@@ -43,11 +43,79 @@ void DescribeDBInstanceSSLResult::parse(const std::string &payload)
 		connectionString_ = value["ConnectionString"].asString();
 	if(!value["SSLExpireTime"].isNull())
 		sSLExpireTime_ = value["SSLExpireTime"].asString();
-	if(!value["RequireUpdate"].isNull())
-		requireUpdate_ = value["RequireUpdate"].asString();
+	if(!value["SSLEnabled"].isNull())
+		sSLEnabled_ = value["SSLEnabled"].asString();
 	if(!value["RequireUpdateReason"].isNull())
 		requireUpdateReason_ = value["RequireUpdateReason"].asString();
+	if(!value["CAType"].isNull())
+		cAType_ = value["CAType"].asString();
+	if(!value["ServerCert"].isNull())
+		serverCert_ = value["ServerCert"].asString();
+	if(!value["ServerKey"].isNull())
+		serverKey_ = value["ServerKey"].asString();
+	if(!value["SSLCreateTime"].isNull())
+		sSLCreateTime_ = value["SSLCreateTime"].asString();
+	if(!value["ClientCACert"].isNull())
+		clientCACert_ = value["ClientCACert"].asString();
+	if(!value["ClientCACertExpireTime"].isNull())
+		clientCACertExpireTime_ = value["ClientCACertExpireTime"].asString();
+	if(!value["ClientCertRevocationList"].isNull())
+		clientCertRevocationList_ = value["ClientCertRevocationList"].asString();
+	if(!value["ACL"].isNull())
+		aCL_ = value["ACL"].asString();
+	if(!value["ReplicationACL"].isNull())
+		replicationACL_ = value["ReplicationACL"].asString();
+	if(!value["ServerCAUrl"].isNull())
+		serverCAUrl_ = value["ServerCAUrl"].asString();
+	if(!value["RequireUpdate"].isNull())
+		requireUpdate_ = value["RequireUpdate"].asString();
+	if(!value["RequireUpdateItem"].isNull())
+		requireUpdateItem_ = value["RequireUpdateItem"].asString();
+	if(!value["LastModifyStatus"].isNull())
+		lastModifyStatus_ = value["LastModifyStatus"].asString();
+	if(!value["ModifyStatusReason"].isNull())
+		modifyStatusReason_ = value["ModifyStatusReason"].asString();
 
+}
+
+std::string DescribeDBInstanceSSLResult::getClientCertRevocationList()const
+{
+	return clientCertRevocationList_;
+}
+
+std::string DescribeDBInstanceSSLResult::getCAType()const
+{
+	return cAType_;
+}
+
+std::string DescribeDBInstanceSSLResult::getRequireUpdateItem()const
+{
+	return requireUpdateItem_;
+}
+
+std::string DescribeDBInstanceSSLResult::getACL()const
+{
+	return aCL_;
+}
+
+std::string DescribeDBInstanceSSLResult::getLastModifyStatus()const
+{
+	return lastModifyStatus_;
+}
+
+std::string DescribeDBInstanceSSLResult::getRequireUpdate()const
+{
+	return requireUpdate_;
+}
+
+std::string DescribeDBInstanceSSLResult::getModifyStatusReason()const
+{
+	return modifyStatusReason_;
+}
+
+std::string DescribeDBInstanceSSLResult::getClientCACertExpireTime()const
+{
+	return clientCACertExpireTime_;
 }
 
 std::string DescribeDBInstanceSSLResult::getSSLExpireTime()const
@@ -55,9 +123,39 @@ std::string DescribeDBInstanceSSLResult::getSSLExpireTime()const
 	return sSLExpireTime_;
 }
 
+std::string DescribeDBInstanceSSLResult::getServerKey()const
+{
+	return serverKey_;
+}
+
+std::string DescribeDBInstanceSSLResult::getSSLCreateTime()const
+{
+	return sSLCreateTime_;
+}
+
+std::string DescribeDBInstanceSSLResult::getServerCert()const
+{
+	return serverCert_;
+}
+
+std::string DescribeDBInstanceSSLResult::getSSLEnabled()const
+{
+	return sSLEnabled_;
+}
+
+std::string DescribeDBInstanceSSLResult::getClientCACert()const
+{
+	return clientCACert_;
+}
+
 std::string DescribeDBInstanceSSLResult::getRequireUpdateReason()const
 {
 	return requireUpdateReason_;
+}
+
+std::string DescribeDBInstanceSSLResult::getReplicationACL()const
+{
+	return replicationACL_;
 }
 
 std::string DescribeDBInstanceSSLResult::getConnectionString()const
@@ -65,8 +163,8 @@ std::string DescribeDBInstanceSSLResult::getConnectionString()const
 	return connectionString_;
 }
 
-std::string DescribeDBInstanceSSLResult::getRequireUpdate()const
+std::string DescribeDBInstanceSSLResult::getServerCAUrl()const
 {
-	return requireUpdate_;
+	return serverCAUrl_;
 }
 

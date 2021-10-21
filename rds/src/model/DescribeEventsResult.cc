@@ -65,6 +65,8 @@ void DescribeEventsResult::parse(const std::string &payload)
 			eventItemsObject.eventPayload = valueEventItemsEventItemsItem["EventPayload"].asString();
 		if(!valueEventItemsEventItemsItem["EventRecordTime"].isNull())
 			eventItemsObject.eventRecordTime = valueEventItemsEventItemsItem["EventRecordTime"].asString();
+		if(!valueEventItemsEventItemsItem["CallerUid"].isNull())
+			eventItemsObject.callerUid = std::stol(valueEventItemsEventItemsItem["CallerUid"].asString());
 		eventItems_.push_back(eventItemsObject);
 	}
 	if(!value["TotalRecordCount"].isNull())

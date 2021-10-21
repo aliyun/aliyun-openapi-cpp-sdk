@@ -61,6 +61,8 @@ namespace AlibabaCloud
 				void setEvaluateResource(bool evaluateResource);
 				std::string getZoneId()const;
 				void setZoneId(const std::string& zoneId);
+				std::string getCategory()const;
+				void setCategory(const std::string& category);
 
             private:
 				std::string dBInstanceName_;
@@ -76,6 +78,7 @@ namespace AlibabaCloud
 				long ownerId_;
 				bool evaluateResource_;
 				std::string zoneId_;
+				std::string category_;
 
 			};
 		}

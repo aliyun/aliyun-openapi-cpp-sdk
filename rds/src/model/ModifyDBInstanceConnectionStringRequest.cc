@@ -49,6 +49,17 @@ void ModifyDBInstanceConnectionStringRequest::setConnectionStringPrefix(const st
 	setParameter("ConnectionStringPrefix", connectionStringPrefix);
 }
 
+std::string ModifyDBInstanceConnectionStringRequest::getGeneralGroupName()const
+{
+	return generalGroupName_;
+}
+
+void ModifyDBInstanceConnectionStringRequest::setGeneralGroupName(const std::string& generalGroupName)
+{
+	generalGroupName_ = generalGroupName;
+	setParameter("GeneralGroupName", generalGroupName);
+}
+
 std::string ModifyDBInstanceConnectionStringRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
