@@ -53,6 +53,7 @@ namespace AlibabaCloud
 						std::string dqcDescription;
 						long nodeId;
 						std::string programType;
+						long businessId;
 						long repeatInterval;
 					};
 					int totalCount;

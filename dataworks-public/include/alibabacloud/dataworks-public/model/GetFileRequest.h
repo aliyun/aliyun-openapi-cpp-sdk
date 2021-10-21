@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				long getProjectId()const;
 				void setProjectId(long projectId);
+				long getNodeId()const;
+				void setNodeId(long nodeId);
 				std::string getProjectIdentifier()const;
 				void setProjectIdentifier(const std::string& projectIdentifier);
 				long getFileId()const;
@@ -44,6 +46,7 @@ namespace AlibabaCloud
 
             private:
 				long projectId_;
+				long nodeId_;
 				std::string projectIdentifier_;
 				long fileId_;
 

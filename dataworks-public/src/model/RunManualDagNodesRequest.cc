@@ -49,6 +49,28 @@ void RunManualDagNodesRequest::setProjectName(const std::string& projectName)
 	setBodyParameter("ProjectName", projectName);
 }
 
+std::string RunManualDagNodesRequest::getDagParameters()const
+{
+	return dagParameters_;
+}
+
+void RunManualDagNodesRequest::setDagParameters(const std::string& dagParameters)
+{
+	dagParameters_ = dagParameters;
+	setBodyParameter("DagParameters", dagParameters);
+}
+
+std::string RunManualDagNodesRequest::getIncludeNodeIds()const
+{
+	return includeNodeIds_;
+}
+
+void RunManualDagNodesRequest::setIncludeNodeIds(const std::string& includeNodeIds)
+{
+	includeNodeIds_ = includeNodeIds;
+	setBodyParameter("IncludeNodeIds", includeNodeIds);
+}
+
 std::string RunManualDagNodesRequest::getBizDate()const
 {
 	return bizDate_;
@@ -58,6 +80,17 @@ void RunManualDagNodesRequest::setBizDate(const std::string& bizDate)
 {
 	bizDate_ = bizDate;
 	setBodyParameter("BizDate", bizDate);
+}
+
+std::string RunManualDagNodesRequest::getExcludeNodeIds()const
+{
+	return excludeNodeIds_;
+}
+
+void RunManualDagNodesRequest::setExcludeNodeIds(const std::string& excludeNodeIds)
+{
+	excludeNodeIds_ = excludeNodeIds;
+	setBodyParameter("ExcludeNodeIds", excludeNodeIds);
 }
 
 std::string RunManualDagNodesRequest::getFlowName()const
@@ -71,15 +104,15 @@ void RunManualDagNodesRequest::setFlowName(const std::string& flowName)
 	setBodyParameter("FlowName", flowName);
 }
 
-std::string RunManualDagNodesRequest::getDagParameters()const
+long RunManualDagNodesRequest::getProjectId()const
 {
-	return dagParameters_;
+	return projectId_;
 }
 
-void RunManualDagNodesRequest::setDagParameters(const std::string& dagParameters)
+void RunManualDagNodesRequest::setProjectId(long projectId)
 {
-	dagParameters_ = dagParameters;
-	setBodyParameter("DagParameters", dagParameters);
+	projectId_ = projectId;
+	setBodyParameter("ProjectId", std::to_string(projectId));
 }
 
 std::string RunManualDagNodesRequest::getNodeParameters()const

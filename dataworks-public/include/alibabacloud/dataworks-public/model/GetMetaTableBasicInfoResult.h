@@ -45,6 +45,7 @@ namespace AlibabaCloud
 					long dataSize;
 					std::string partitionKeys;
 					std::string comment;
+					int columnCount;
 					std::string clusterId;
 					long lastDdlTime;
 					long createTime;

@@ -43,6 +43,7 @@ namespace AlibabaCloud
 						long createTime;
 						int toEnvironment;
 						int fromEnvironment;
+						int checkingStatus;
 						std::string errorMessage;
 						std::string name;
 					};

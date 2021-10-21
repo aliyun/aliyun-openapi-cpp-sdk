@@ -27,17 +27,6 @@ TopTenElapsedTimeInstanceRequest::TopTenElapsedTimeInstanceRequest() :
 TopTenElapsedTimeInstanceRequest::~TopTenElapsedTimeInstanceRequest()
 {}
 
-std::string TopTenElapsedTimeInstanceRequest::getBusinessDate()const
-{
-	return businessDate_;
-}
-
-void TopTenElapsedTimeInstanceRequest::setBusinessDate(const std::string& businessDate)
-{
-	businessDate_ = businessDate;
-	setBodyParameter("BusinessDate", businessDate);
-}
-
 long TopTenElapsedTimeInstanceRequest::getProjectId()const
 {
 	return projectId_;

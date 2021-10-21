@@ -76,6 +76,8 @@ void GetNodeResult::parse(const std::string &payload)
 		data_.dqcDescription = dataNode["DqcDescription"].asString();
 	if(!dataNode["RelatedFlowId"].isNull())
 		data_.relatedFlowId = std::stol(dataNode["RelatedFlowId"].asString());
+	if(!dataNode["BusinessId"].isNull())
+		data_.businessId = std::stol(dataNode["BusinessId"].asString());
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["ErrorCode"].isNull())

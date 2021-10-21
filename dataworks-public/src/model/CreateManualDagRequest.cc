@@ -49,6 +49,28 @@ void CreateManualDagRequest::setProjectName(const std::string& projectName)
 	setBodyParameter("ProjectName", projectName);
 }
 
+std::string CreateManualDagRequest::getDagParameters()const
+{
+	return dagParameters_;
+}
+
+void CreateManualDagRequest::setDagParameters(const std::string& dagParameters)
+{
+	dagParameters_ = dagParameters;
+	setBodyParameter("DagParameters", dagParameters);
+}
+
+std::string CreateManualDagRequest::getIncludeNodeIds()const
+{
+	return includeNodeIds_;
+}
+
+void CreateManualDagRequest::setIncludeNodeIds(const std::string& includeNodeIds)
+{
+	includeNodeIds_ = includeNodeIds;
+	setBodyParameter("IncludeNodeIds", includeNodeIds);
+}
+
 std::string CreateManualDagRequest::getBizDate()const
 {
 	return bizDate_;
@@ -60,6 +82,17 @@ void CreateManualDagRequest::setBizDate(const std::string& bizDate)
 	setBodyParameter("BizDate", bizDate);
 }
 
+std::string CreateManualDagRequest::getExcludeNodeIds()const
+{
+	return excludeNodeIds_;
+}
+
+void CreateManualDagRequest::setExcludeNodeIds(const std::string& excludeNodeIds)
+{
+	excludeNodeIds_ = excludeNodeIds;
+	setBodyParameter("ExcludeNodeIds", excludeNodeIds);
+}
+
 std::string CreateManualDagRequest::getFlowName()const
 {
 	return flowName_;
@@ -69,17 +102,6 @@ void CreateManualDagRequest::setFlowName(const std::string& flowName)
 {
 	flowName_ = flowName;
 	setBodyParameter("FlowName", flowName);
-}
-
-std::string CreateManualDagRequest::getDagParameters()const
-{
-	return dagParameters_;
-}
-
-void CreateManualDagRequest::setDagParameters(const std::string& dagParameters)
-{
-	dagParameters_ = dagParameters;
-	setBodyParameter("DagParameters", dagParameters);
 }
 
 std::string CreateManualDagRequest::getNodeParameters()const

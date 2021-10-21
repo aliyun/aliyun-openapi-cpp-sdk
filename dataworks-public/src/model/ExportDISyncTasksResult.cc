@@ -39,17 +39,24 @@ void ExportDISyncTasksResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto taskDetailNode = value["TaskDetail"];
-	if(!taskDetailNode["RealTimeSolution"].isNull())
-		taskDetail_.realTimeSolution = taskDetailNode["RealTimeSolution"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
+	auto dataNode = value["data"];
+	if(!dataNode["realTimeSolution"].isNull())
+		data_.realTimeSolution = dataNode["realTimeSolution"].asString();
+	if(!value["success"].isNull())
+		success_ = value["success"].asString() == "true";
+	if(!value["requestId"].isNull())
+		requestId_ = value["requestId"].asString();
 
 }
 
-ExportDISyncTasksResult::TaskDetail ExportDISyncTasksResult::getTaskDetail()const
+std::string ExportDISyncTasksResult::getRequestId()const
 {
-	return taskDetail_;
+	return requestId_;
+}
+
+ExportDISyncTasksResult::Data ExportDISyncTasksResult::getData()const
+{
+	return data_;
 }
 
 bool ExportDISyncTasksResult::getSuccess()const

@@ -51,6 +51,7 @@ namespace AlibabaCloud
 						std::string name;
 						std::string gmtCreate;
 						long tenantId;
+						std::string content;
 						std::string dataSourceType;
 						int id;
 					};

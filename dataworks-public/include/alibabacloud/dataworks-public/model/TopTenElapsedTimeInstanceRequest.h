@@ -35,13 +35,10 @@ namespace AlibabaCloud
 				TopTenElapsedTimeInstanceRequest();
 				~TopTenElapsedTimeInstanceRequest();
 
-				std::string getBusinessDate()const;
-				void setBusinessDate(const std::string& businessDate);
 				long getProjectId()const;
 				void setProjectId(long projectId);
 
             private:
-				std::string businessDate_;
 				long projectId_;
 
 			};

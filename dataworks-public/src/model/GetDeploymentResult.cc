@@ -59,6 +59,8 @@ void GetDeploymentResult::parse(const std::string &payload)
 		data_.deployment.toEnvironment = std::stoi(deploymentNode["ToEnvironment"].asString());
 	if(!deploymentNode["ErrorMessage"].isNull())
 		data_.deployment.errorMessage = deploymentNode["ErrorMessage"].asString();
+	if(!deploymentNode["CheckingStatus"].isNull())
+		data_.deployment.checkingStatus = std::stoi(deploymentNode["CheckingStatus"].asString());
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["ErrorCode"].isNull())

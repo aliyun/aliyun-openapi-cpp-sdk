@@ -86,6 +86,8 @@ void ListNodesResult::parse(const std::string &payload)
 			nodesItemObject.dqcDescription = dataNodeNodesNodesItem["DqcDescription"].asString();
 		if(!dataNodeNodesNodesItem["RelatedFlowId"].isNull())
 			nodesItemObject.relatedFlowId = std::stol(dataNodeNodesNodesItem["RelatedFlowId"].asString());
+		if(!dataNodeNodesNodesItem["BusinessId"].isNull())
+			nodesItemObject.businessId = std::stol(dataNodeNodesNodesItem["BusinessId"].asString());
 		data_.nodes.push_back(nodesItemObject);
 	}
 	if(!value["Success"].isNull())

@@ -37,6 +37,7 @@ namespace AlibabaCloud
 				DeleteFileResult();
 				explicit DeleteFileResult(const std::string &payload);
 				~DeleteFileResult();
+				long getDeploymentId()const;
 				int getHttpStatusCode()const;
 				std::string getErrorCode()const;
 				std::string getErrorMessage()const;
@@ -45,6 +46,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
+				long deploymentId_;
 				int httpStatusCode_;
 				std::string errorCode_;
 				std::string errorMessage_;

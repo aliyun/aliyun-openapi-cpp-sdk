@@ -92,6 +92,8 @@ void GetInstanceResult::parse(const std::string &payload)
 		data_.taskType = dataNode["TaskType"].asString();
 	if(!dataNode["TaskRerunTime"].isNull())
 		data_.taskRerunTime = std::stoi(dataNode["TaskRerunTime"].asString());
+	if(!dataNode["BusinessId"].isNull())
+		data_.businessId = std::stol(dataNode["BusinessId"].asString());
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = value["ErrorCode"].asString();
 	if(!value["ErrorMessage"].isNull())

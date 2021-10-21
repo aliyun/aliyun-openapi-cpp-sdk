@@ -126,3 +126,14 @@ void ListFilesRequest::setUseType(const std::string& useType)
 	setBodyParameter("UseType", useType);
 }
 
+long ListFilesRequest::getNodeId()const
+{
+	return nodeId_;
+}
+
+void ListFilesRequest::setNodeId(long nodeId)
+{
+	nodeId_ = nodeId;
+	setBodyParameter("NodeId", std::to_string(nodeId));
+}
+

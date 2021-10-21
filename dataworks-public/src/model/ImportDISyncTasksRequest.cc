@@ -38,17 +38,6 @@ void ImportDISyncTasksRequest::setTaskType(const std::string& taskType)
 	setParameter("TaskType", taskType);
 }
 
-std::string ImportDISyncTasksRequest::getTaskContent()const
-{
-	return taskContent_;
-}
-
-void ImportDISyncTasksRequest::setTaskContent(const std::string& taskContent)
-{
-	taskContent_ = taskContent;
-	setParameter("TaskContent", taskContent);
-}
-
 std::string ImportDISyncTasksRequest::getTaskParam()const
 {
 	return taskParam_;
@@ -58,6 +47,17 @@ void ImportDISyncTasksRequest::setTaskParam(const std::string& taskParam)
 {
 	taskParam_ = taskParam;
 	setParameter("TaskParam", taskParam);
+}
+
+std::string ImportDISyncTasksRequest::getBody()const
+{
+	return body_;
+}
+
+void ImportDISyncTasksRequest::setBody(const std::string& body)
+{
+	body_ = body;
+	setBodyParameter("Body", body);
 }
 
 long ImportDISyncTasksRequest::getProjectId()const

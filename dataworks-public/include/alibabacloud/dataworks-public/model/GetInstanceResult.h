@@ -45,6 +45,7 @@ namespace AlibabaCloud
 					long finishTime;
 					std::string dqcDescription;
 					std::string taskType;
+					long businessId;
 					std::string status;
 					int taskRerunTime;
 					long instanceId;

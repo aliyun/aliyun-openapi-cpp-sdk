@@ -29,16 +29,24 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/AddToMetaCategoryResult.h
 	include/alibabacloud/dataworks-public/model/ApprovePermissionApplyOrderRequest.h
 	include/alibabacloud/dataworks-public/model/ApprovePermissionApplyOrderResult.h
+	include/alibabacloud/dataworks-public/model/CheckEngineMetaPartitionRequest.h
+	include/alibabacloud/dataworks-public/model/CheckEngineMetaPartitionResult.h
+	include/alibabacloud/dataworks-public/model/CheckEngineMetaTableRequest.h
+	include/alibabacloud/dataworks-public/model/CheckEngineMetaTableResult.h
 	include/alibabacloud/dataworks-public/model/CheckFileDeploymentRequest.h
 	include/alibabacloud/dataworks-public/model/CheckFileDeploymentResult.h
 	include/alibabacloud/dataworks-public/model/CheckMetaPartitionRequest.h
 	include/alibabacloud/dataworks-public/model/CheckMetaPartitionResult.h
 	include/alibabacloud/dataworks-public/model/CheckMetaTableRequest.h
 	include/alibabacloud/dataworks-public/model/CheckMetaTableResult.h
+	include/alibabacloud/dataworks-public/model/CheckMetaTableTaskRequest.h
+	include/alibabacloud/dataworks-public/model/CheckMetaTableTaskResult.h
 	include/alibabacloud/dataworks-public/model/CreateBusinessRequest.h
 	include/alibabacloud/dataworks-public/model/CreateBusinessResult.h
 	include/alibabacloud/dataworks-public/model/CreateConnectionRequest.h
 	include/alibabacloud/dataworks-public/model/CreateConnectionResult.h
+	include/alibabacloud/dataworks-public/model/CreateDISyncTaskRequest.h
+	include/alibabacloud/dataworks-public/model/CreateDISyncTaskResult.h
 	include/alibabacloud/dataworks-public/model/CreateDagComplementRequest.h
 	include/alibabacloud/dataworks-public/model/CreateDagComplementResult.h
 	include/alibabacloud/dataworks-public/model/CreateDagTestRequest.h
@@ -91,6 +99,8 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/DeleteBusinessResult.h
 	include/alibabacloud/dataworks-public/model/DeleteConnectionRequest.h
 	include/alibabacloud/dataworks-public/model/DeleteConnectionResult.h
+	include/alibabacloud/dataworks-public/model/DeleteDISyncTaskRequest.h
+	include/alibabacloud/dataworks-public/model/DeleteDISyncTaskResult.h
 	include/alibabacloud/dataworks-public/model/DeleteDataServiceApiRequest.h
 	include/alibabacloud/dataworks-public/model/DeleteDataServiceApiResult.h
 	include/alibabacloud/dataworks-public/model/DeleteDataServiceApiAuthorityRequest.h
@@ -125,14 +135,24 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/DeleteTableThemeResult.h
 	include/alibabacloud/dataworks-public/model/DeleteViewRequest.h
 	include/alibabacloud/dataworks-public/model/DeleteViewResult.h
+	include/alibabacloud/dataworks-public/model/DeployDISyncTaskRequest.h
+	include/alibabacloud/dataworks-public/model/DeployDISyncTaskResult.h
 	include/alibabacloud/dataworks-public/model/DeployFileRequest.h
 	include/alibabacloud/dataworks-public/model/DeployFileResult.h
 	include/alibabacloud/dataworks-public/model/DesensitizeDataRequest.h
 	include/alibabacloud/dataworks-public/model/DesensitizeDataResult.h
 	include/alibabacloud/dataworks-public/model/EstablishRelationTableToBusinessRequest.h
 	include/alibabacloud/dataworks-public/model/EstablishRelationTableToBusinessResult.h
+	include/alibabacloud/dataworks-public/model/ExportConnectionsRequest.h
+	include/alibabacloud/dataworks-public/model/ExportConnectionsResult.h
 	include/alibabacloud/dataworks-public/model/ExportDISyncTasksRequest.h
 	include/alibabacloud/dataworks-public/model/ExportDISyncTasksResult.h
+	include/alibabacloud/dataworks-public/model/ExportDataSourcesRequest.h
+	include/alibabacloud/dataworks-public/model/ExportDataSourcesResult.h
+	include/alibabacloud/dataworks-public/model/GenerateDISyncTaskConfigForCreatingRequest.h
+	include/alibabacloud/dataworks-public/model/GenerateDISyncTaskConfigForCreatingResult.h
+	include/alibabacloud/dataworks-public/model/GenerateDISyncTaskConfigForUpdatingRequest.h
+	include/alibabacloud/dataworks-public/model/GenerateDISyncTaskConfigForUpdatingResult.h
 	include/alibabacloud/dataworks-public/model/GetBaselineConfigRequest.h
 	include/alibabacloud/dataworks-public/model/GetBaselineConfigResult.h
 	include/alibabacloud/dataworks-public/model/GetBaselineKeyPathRequest.h
@@ -141,8 +161,16 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/GetBaselineStatusResult.h
 	include/alibabacloud/dataworks-public/model/GetBusinessRequest.h
 	include/alibabacloud/dataworks-public/model/GetBusinessResult.h
+	include/alibabacloud/dataworks-public/model/GetConnectionMetaRequest.h
+	include/alibabacloud/dataworks-public/model/GetConnectionMetaResult.h
 	include/alibabacloud/dataworks-public/model/GetDDLJobStatusRequest.h
 	include/alibabacloud/dataworks-public/model/GetDDLJobStatusResult.h
+	include/alibabacloud/dataworks-public/model/GetDISyncInstanceInfoRequest.h
+	include/alibabacloud/dataworks-public/model/GetDISyncInstanceInfoResult.h
+	include/alibabacloud/dataworks-public/model/GetDISyncTaskRequest.h
+	include/alibabacloud/dataworks-public/model/GetDISyncTaskResult.h
+	include/alibabacloud/dataworks-public/model/GetDISyncTaskMetricInfoRequest.h
+	include/alibabacloud/dataworks-public/model/GetDISyncTaskMetricInfoResult.h
 	include/alibabacloud/dataworks-public/model/GetDagRequest.h
 	include/alibabacloud/dataworks-public/model/GetDagResult.h
 	include/alibabacloud/dataworks-public/model/GetDataServiceApiRequest.h
@@ -155,6 +183,8 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/GetDataServiceGroupResult.h
 	include/alibabacloud/dataworks-public/model/GetDataServicePublishedApiRequest.h
 	include/alibabacloud/dataworks-public/model/GetDataServicePublishedApiResult.h
+	include/alibabacloud/dataworks-public/model/GetDataSourceMetaRequest.h
+	include/alibabacloud/dataworks-public/model/GetDataSourceMetaResult.h
 	include/alibabacloud/dataworks-public/model/GetDeploymentRequest.h
 	include/alibabacloud/dataworks-public/model/GetDeploymentResult.h
 	include/alibabacloud/dataworks-public/model/GetFileRequest.h
@@ -249,8 +279,12 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/GetTopicResult.h
 	include/alibabacloud/dataworks-public/model/GetTopicInfluenceRequest.h
 	include/alibabacloud/dataworks-public/model/GetTopicInfluenceResult.h
+	include/alibabacloud/dataworks-public/model/ImportConnectionsRequest.h
+	include/alibabacloud/dataworks-public/model/ImportConnectionsResult.h
 	include/alibabacloud/dataworks-public/model/ImportDISyncTasksRequest.h
 	include/alibabacloud/dataworks-public/model/ImportDISyncTasksResult.h
+	include/alibabacloud/dataworks-public/model/ImportDataSourcesRequest.h
+	include/alibabacloud/dataworks-public/model/ImportDataSourcesResult.h
 	include/alibabacloud/dataworks-public/model/ListAlertMessagesRequest.h
 	include/alibabacloud/dataworks-public/model/ListAlertMessagesResult.h
 	include/alibabacloud/dataworks-public/model/ListBaselineConfigsRequest.h
@@ -263,6 +297,8 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/ListCalcEnginesResult.h
 	include/alibabacloud/dataworks-public/model/ListConnectionsRequest.h
 	include/alibabacloud/dataworks-public/model/ListConnectionsResult.h
+	include/alibabacloud/dataworks-public/model/ListDIProjectConfigRequest.h
+	include/alibabacloud/dataworks-public/model/ListDIProjectConfigResult.h
 	include/alibabacloud/dataworks-public/model/ListDISyncTasksRequest.h
 	include/alibabacloud/dataworks-public/model/ListDISyncTasksResult.h
 	include/alibabacloud/dataworks-public/model/ListDataServiceApiAuthoritiesRequest.h
@@ -311,6 +347,8 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/ListPermissionApplyOrdersResult.h
 	include/alibabacloud/dataworks-public/model/ListProgramTypeCountRequest.h
 	include/alibabacloud/dataworks-public/model/ListProgramTypeCountResult.h
+	include/alibabacloud/dataworks-public/model/ListProjectIdsRequest.h
+	include/alibabacloud/dataworks-public/model/ListProjectIdsResult.h
 	include/alibabacloud/dataworks-public/model/ListProjectMembersRequest.h
 	include/alibabacloud/dataworks-public/model/ListProjectMembersResult.h
 	include/alibabacloud/dataworks-public/model/ListProjectRolesRequest.h
@@ -323,6 +361,8 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/ListQualityResultsByRuleResult.h
 	include/alibabacloud/dataworks-public/model/ListQualityRulesRequest.h
 	include/alibabacloud/dataworks-public/model/ListQualityRulesResult.h
+	include/alibabacloud/dataworks-public/model/ListRefDISyncTasksRequest.h
+	include/alibabacloud/dataworks-public/model/ListRefDISyncTasksResult.h
 	include/alibabacloud/dataworks-public/model/ListRemindsRequest.h
 	include/alibabacloud/dataworks-public/model/ListRemindsResult.h
 	include/alibabacloud/dataworks-public/model/ListResourceGroupsRequest.h
@@ -337,6 +377,8 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/ListTopicsResult.h
 	include/alibabacloud/dataworks-public/model/PublishDataServiceApiRequest.h
 	include/alibabacloud/dataworks-public/model/PublishDataServiceApiResult.h
+	include/alibabacloud/dataworks-public/model/QueryDISyncTaskConfigProcessResultRequest.h
+	include/alibabacloud/dataworks-public/model/QueryDISyncTaskConfigProcessResultResult.h
 	include/alibabacloud/dataworks-public/model/QueryPublicModelEngineRequest.h
 	include/alibabacloud/dataworks-public/model/QueryPublicModelEngineResult.h
 	include/alibabacloud/dataworks-public/model/RemoveProjectMemberFromRoleRequest.h
@@ -363,16 +405,28 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/SearchMetaTablesResult.h
 	include/alibabacloud/dataworks-public/model/SearchNodesByOutputRequest.h
 	include/alibabacloud/dataworks-public/model/SearchNodesByOutputResult.h
+	include/alibabacloud/dataworks-public/model/SetConnectionShareRequest.h
+	include/alibabacloud/dataworks-public/model/SetConnectionShareResult.h
+	include/alibabacloud/dataworks-public/model/SetDataSourceShareRequest.h
+	include/alibabacloud/dataworks-public/model/SetDataSourceShareResult.h
 	include/alibabacloud/dataworks-public/model/SetSuccessInstanceRequest.h
 	include/alibabacloud/dataworks-public/model/SetSuccessInstanceResult.h
+	include/alibabacloud/dataworks-public/model/StartDISyncInstanceRequest.h
+	include/alibabacloud/dataworks-public/model/StartDISyncInstanceResult.h
 	include/alibabacloud/dataworks-public/model/StartMigrationRequest.h
 	include/alibabacloud/dataworks-public/model/StartMigrationResult.h
+	include/alibabacloud/dataworks-public/model/StopDISyncInstanceRequest.h
+	include/alibabacloud/dataworks-public/model/StopDISyncInstanceResult.h
 	include/alibabacloud/dataworks-public/model/StopInstanceRequest.h
 	include/alibabacloud/dataworks-public/model/StopInstanceResult.h
 	include/alibabacloud/dataworks-public/model/SubmitFileRequest.h
 	include/alibabacloud/dataworks-public/model/SubmitFileResult.h
 	include/alibabacloud/dataworks-public/model/SuspendInstanceRequest.h
 	include/alibabacloud/dataworks-public/model/SuspendInstanceResult.h
+	include/alibabacloud/dataworks-public/model/TerminateDISyncInstanceRequest.h
+	include/alibabacloud/dataworks-public/model/TerminateDISyncInstanceResult.h
+	include/alibabacloud/dataworks-public/model/TestNetworkConnectionRequest.h
+	include/alibabacloud/dataworks-public/model/TestNetworkConnectionResult.h
 	include/alibabacloud/dataworks-public/model/TopTenElapsedTimeInstanceRequest.h
 	include/alibabacloud/dataworks-public/model/TopTenElapsedTimeInstanceResult.h
 	include/alibabacloud/dataworks-public/model/TopTenErrorTimesInstanceRequest.h
@@ -381,6 +435,10 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/UpdateBusinessResult.h
 	include/alibabacloud/dataworks-public/model/UpdateConnectionRequest.h
 	include/alibabacloud/dataworks-public/model/UpdateConnectionResult.h
+	include/alibabacloud/dataworks-public/model/UpdateDIProjectConfigRequest.h
+	include/alibabacloud/dataworks-public/model/UpdateDIProjectConfigResult.h
+	include/alibabacloud/dataworks-public/model/UpdateDISyncTaskRequest.h
+	include/alibabacloud/dataworks-public/model/UpdateDISyncTaskResult.h
 	include/alibabacloud/dataworks-public/model/UpdateDataServiceApiRequest.h
 	include/alibabacloud/dataworks-public/model/UpdateDataServiceApiResult.h
 	include/alibabacloud/dataworks-public/model/UpdateDataSourceRequest.h
@@ -428,16 +486,24 @@ set(dataworks-public_src
 	src/model/AddToMetaCategoryResult.cc
 	src/model/ApprovePermissionApplyOrderRequest.cc
 	src/model/ApprovePermissionApplyOrderResult.cc
+	src/model/CheckEngineMetaPartitionRequest.cc
+	src/model/CheckEngineMetaPartitionResult.cc
+	src/model/CheckEngineMetaTableRequest.cc
+	src/model/CheckEngineMetaTableResult.cc
 	src/model/CheckFileDeploymentRequest.cc
 	src/model/CheckFileDeploymentResult.cc
 	src/model/CheckMetaPartitionRequest.cc
 	src/model/CheckMetaPartitionResult.cc
 	src/model/CheckMetaTableRequest.cc
 	src/model/CheckMetaTableResult.cc
+	src/model/CheckMetaTableTaskRequest.cc
+	src/model/CheckMetaTableTaskResult.cc
 	src/model/CreateBusinessRequest.cc
 	src/model/CreateBusinessResult.cc
 	src/model/CreateConnectionRequest.cc
 	src/model/CreateConnectionResult.cc
+	src/model/CreateDISyncTaskRequest.cc
+	src/model/CreateDISyncTaskResult.cc
 	src/model/CreateDagComplementRequest.cc
 	src/model/CreateDagComplementResult.cc
 	src/model/CreateDagTestRequest.cc
@@ -490,6 +556,8 @@ set(dataworks-public_src
 	src/model/DeleteBusinessResult.cc
 	src/model/DeleteConnectionRequest.cc
 	src/model/DeleteConnectionResult.cc
+	src/model/DeleteDISyncTaskRequest.cc
+	src/model/DeleteDISyncTaskResult.cc
 	src/model/DeleteDataServiceApiRequest.cc
 	src/model/DeleteDataServiceApiResult.cc
 	src/model/DeleteDataServiceApiAuthorityRequest.cc
@@ -524,14 +592,24 @@ set(dataworks-public_src
 	src/model/DeleteTableThemeResult.cc
 	src/model/DeleteViewRequest.cc
 	src/model/DeleteViewResult.cc
+	src/model/DeployDISyncTaskRequest.cc
+	src/model/DeployDISyncTaskResult.cc
 	src/model/DeployFileRequest.cc
 	src/model/DeployFileResult.cc
 	src/model/DesensitizeDataRequest.cc
 	src/model/DesensitizeDataResult.cc
 	src/model/EstablishRelationTableToBusinessRequest.cc
 	src/model/EstablishRelationTableToBusinessResult.cc
+	src/model/ExportConnectionsRequest.cc
+	src/model/ExportConnectionsResult.cc
 	src/model/ExportDISyncTasksRequest.cc
 	src/model/ExportDISyncTasksResult.cc
+	src/model/ExportDataSourcesRequest.cc
+	src/model/ExportDataSourcesResult.cc
+	src/model/GenerateDISyncTaskConfigForCreatingRequest.cc
+	src/model/GenerateDISyncTaskConfigForCreatingResult.cc
+	src/model/GenerateDISyncTaskConfigForUpdatingRequest.cc
+	src/model/GenerateDISyncTaskConfigForUpdatingResult.cc
 	src/model/GetBaselineConfigRequest.cc
 	src/model/GetBaselineConfigResult.cc
 	src/model/GetBaselineKeyPathRequest.cc
@@ -540,8 +618,16 @@ set(dataworks-public_src
 	src/model/GetBaselineStatusResult.cc
 	src/model/GetBusinessRequest.cc
 	src/model/GetBusinessResult.cc
+	src/model/GetConnectionMetaRequest.cc
+	src/model/GetConnectionMetaResult.cc
 	src/model/GetDDLJobStatusRequest.cc
 	src/model/GetDDLJobStatusResult.cc
+	src/model/GetDISyncInstanceInfoRequest.cc
+	src/model/GetDISyncInstanceInfoResult.cc
+	src/model/GetDISyncTaskRequest.cc
+	src/model/GetDISyncTaskResult.cc
+	src/model/GetDISyncTaskMetricInfoRequest.cc
+	src/model/GetDISyncTaskMetricInfoResult.cc
 	src/model/GetDagRequest.cc
 	src/model/GetDagResult.cc
 	src/model/GetDataServiceApiRequest.cc
@@ -554,6 +640,8 @@ set(dataworks-public_src
 	src/model/GetDataServiceGroupResult.cc
 	src/model/GetDataServicePublishedApiRequest.cc
 	src/model/GetDataServicePublishedApiResult.cc
+	src/model/GetDataSourceMetaRequest.cc
+	src/model/GetDataSourceMetaResult.cc
 	src/model/GetDeploymentRequest.cc
 	src/model/GetDeploymentResult.cc
 	src/model/GetFileRequest.cc
@@ -648,8 +736,12 @@ set(dataworks-public_src
 	src/model/GetTopicResult.cc
 	src/model/GetTopicInfluenceRequest.cc
 	src/model/GetTopicInfluenceResult.cc
+	src/model/ImportConnectionsRequest.cc
+	src/model/ImportConnectionsResult.cc
 	src/model/ImportDISyncTasksRequest.cc
 	src/model/ImportDISyncTasksResult.cc
+	src/model/ImportDataSourcesRequest.cc
+	src/model/ImportDataSourcesResult.cc
 	src/model/ListAlertMessagesRequest.cc
 	src/model/ListAlertMessagesResult.cc
 	src/model/ListBaselineConfigsRequest.cc
@@ -662,6 +754,8 @@ set(dataworks-public_src
 	src/model/ListCalcEnginesResult.cc
 	src/model/ListConnectionsRequest.cc
 	src/model/ListConnectionsResult.cc
+	src/model/ListDIProjectConfigRequest.cc
+	src/model/ListDIProjectConfigResult.cc
 	src/model/ListDISyncTasksRequest.cc
 	src/model/ListDISyncTasksResult.cc
 	src/model/ListDataServiceApiAuthoritiesRequest.cc
@@ -710,6 +804,8 @@ set(dataworks-public_src
 	src/model/ListPermissionApplyOrdersResult.cc
 	src/model/ListProgramTypeCountRequest.cc
 	src/model/ListProgramTypeCountResult.cc
+	src/model/ListProjectIdsRequest.cc
+	src/model/ListProjectIdsResult.cc
 	src/model/ListProjectMembersRequest.cc
 	src/model/ListProjectMembersResult.cc
 	src/model/ListProjectRolesRequest.cc
@@ -722,6 +818,8 @@ set(dataworks-public_src
 	src/model/ListQualityResultsByRuleResult.cc
 	src/model/ListQualityRulesRequest.cc
 	src/model/ListQualityRulesResult.cc
+	src/model/ListRefDISyncTasksRequest.cc
+	src/model/ListRefDISyncTasksResult.cc
 	src/model/ListRemindsRequest.cc
 	src/model/ListRemindsResult.cc
 	src/model/ListResourceGroupsRequest.cc
@@ -736,6 +834,8 @@ set(dataworks-public_src
 	src/model/ListTopicsResult.cc
 	src/model/PublishDataServiceApiRequest.cc
 	src/model/PublishDataServiceApiResult.cc
+	src/model/QueryDISyncTaskConfigProcessResultRequest.cc
+	src/model/QueryDISyncTaskConfigProcessResultResult.cc
 	src/model/QueryPublicModelEngineRequest.cc
 	src/model/QueryPublicModelEngineResult.cc
 	src/model/RemoveProjectMemberFromRoleRequest.cc
@@ -762,16 +862,28 @@ set(dataworks-public_src
 	src/model/SearchMetaTablesResult.cc
 	src/model/SearchNodesByOutputRequest.cc
 	src/model/SearchNodesByOutputResult.cc
+	src/model/SetConnectionShareRequest.cc
+	src/model/SetConnectionShareResult.cc
+	src/model/SetDataSourceShareRequest.cc
+	src/model/SetDataSourceShareResult.cc
 	src/model/SetSuccessInstanceRequest.cc
 	src/model/SetSuccessInstanceResult.cc
+	src/model/StartDISyncInstanceRequest.cc
+	src/model/StartDISyncInstanceResult.cc
 	src/model/StartMigrationRequest.cc
 	src/model/StartMigrationResult.cc
+	src/model/StopDISyncInstanceRequest.cc
+	src/model/StopDISyncInstanceResult.cc
 	src/model/StopInstanceRequest.cc
 	src/model/StopInstanceResult.cc
 	src/model/SubmitFileRequest.cc
 	src/model/SubmitFileResult.cc
 	src/model/SuspendInstanceRequest.cc
 	src/model/SuspendInstanceResult.cc
+	src/model/TerminateDISyncInstanceRequest.cc
+	src/model/TerminateDISyncInstanceResult.cc
+	src/model/TestNetworkConnectionRequest.cc
+	src/model/TestNetworkConnectionResult.cc
 	src/model/TopTenElapsedTimeInstanceRequest.cc
 	src/model/TopTenElapsedTimeInstanceResult.cc
 	src/model/TopTenErrorTimesInstanceRequest.cc
@@ -780,6 +892,10 @@ set(dataworks-public_src
 	src/model/UpdateBusinessResult.cc
 	src/model/UpdateConnectionRequest.cc
 	src/model/UpdateConnectionResult.cc
+	src/model/UpdateDIProjectConfigRequest.cc
+	src/model/UpdateDIProjectConfigResult.cc
+	src/model/UpdateDISyncTaskRequest.cc
+	src/model/UpdateDISyncTaskResult.cc
 	src/model/UpdateDataServiceApiRequest.cc
 	src/model/UpdateDataServiceApiResult.cc
 	src/model/UpdateDataSourceRequest.cc

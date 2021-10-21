@@ -50,28 +50,28 @@ void GetMetaTableChangeLogResult::parse(const std::string &payload)
 	for (auto dataNodeDataEntityListDataEntityListItem : allDataEntityListNode)
 	{
 		Data::DataEntityListItem dataEntityListItemObject;
-		if(!dataNodeDataEntityListDataEntityListItem["CreateTime"].isNull())
-			dataEntityListItemObject.createTime = std::stol(dataNodeDataEntityListDataEntityListItem["CreateTime"].asString());
-		if(!dataNodeDataEntityListDataEntityListItem["ModifiedTime"].isNull())
-			dataEntityListItemObject.modifiedTime = std::stol(dataNodeDataEntityListDataEntityListItem["ModifiedTime"].asString());
-		if(!dataNodeDataEntityListDataEntityListItem["ChangeType"].isNull())
-			dataEntityListItemObject.changeType = dataNodeDataEntityListDataEntityListItem["ChangeType"].asString();
-		if(!dataNodeDataEntityListDataEntityListItem["Operator"].isNull())
-			dataEntityListItemObject._operator = dataNodeDataEntityListDataEntityListItem["Operator"].asString();
 		if(!dataNodeDataEntityListDataEntityListItem["ObjectType"].isNull())
 			dataEntityListItemObject.objectType = dataNodeDataEntityListDataEntityListItem["ObjectType"].asString();
+		if(!dataNodeDataEntityListDataEntityListItem["ModifiedTime"].isNull())
+			dataEntityListItemObject.modifiedTime = std::stol(dataNodeDataEntityListDataEntityListItem["ModifiedTime"].asString());
+		if(!dataNodeDataEntityListDataEntityListItem["CreateTime"].isNull())
+			dataEntityListItemObject.createTime = std::stol(dataNodeDataEntityListDataEntityListItem["CreateTime"].asString());
 		if(!dataNodeDataEntityListDataEntityListItem["ChangeContent"].isNull())
 			dataEntityListItemObject.changeContent = dataNodeDataEntityListDataEntityListItem["ChangeContent"].asString();
+		if(!dataNodeDataEntityListDataEntityListItem["Operator"].isNull())
+			dataEntityListItemObject._operator = dataNodeDataEntityListDataEntityListItem["Operator"].asString();
+		if(!dataNodeDataEntityListDataEntityListItem["ChangeType"].isNull())
+			dataEntityListItemObject.changeType = dataNodeDataEntityListDataEntityListItem["ChangeType"].asString();
 		data_.dataEntityList.push_back(dataEntityListItemObject);
 	}
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
 
 }
 

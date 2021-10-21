@@ -195,6 +195,78 @@ Dataworks_publicClient::ApprovePermissionApplyOrderOutcomeCallable Dataworks_pub
 	return task->get_future();
 }
 
+Dataworks_publicClient::CheckEngineMetaPartitionOutcome Dataworks_publicClient::checkEngineMetaPartition(const CheckEngineMetaPartitionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CheckEngineMetaPartitionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CheckEngineMetaPartitionOutcome(CheckEngineMetaPartitionResult(outcome.result()));
+	else
+		return CheckEngineMetaPartitionOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::checkEngineMetaPartitionAsync(const CheckEngineMetaPartitionRequest& request, const CheckEngineMetaPartitionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, checkEngineMetaPartition(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::CheckEngineMetaPartitionOutcomeCallable Dataworks_publicClient::checkEngineMetaPartitionCallable(const CheckEngineMetaPartitionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CheckEngineMetaPartitionOutcome()>>(
+			[this, request]()
+			{
+			return this->checkEngineMetaPartition(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dataworks_publicClient::CheckEngineMetaTableOutcome Dataworks_publicClient::checkEngineMetaTable(const CheckEngineMetaTableRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CheckEngineMetaTableOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CheckEngineMetaTableOutcome(CheckEngineMetaTableResult(outcome.result()));
+	else
+		return CheckEngineMetaTableOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::checkEngineMetaTableAsync(const CheckEngineMetaTableRequest& request, const CheckEngineMetaTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, checkEngineMetaTable(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::CheckEngineMetaTableOutcomeCallable Dataworks_publicClient::checkEngineMetaTableCallable(const CheckEngineMetaTableRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CheckEngineMetaTableOutcome()>>(
+			[this, request]()
+			{
+			return this->checkEngineMetaTable(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dataworks_publicClient::CheckFileDeploymentOutcome Dataworks_publicClient::checkFileDeployment(const CheckFileDeploymentRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -303,6 +375,42 @@ Dataworks_publicClient::CheckMetaTableOutcomeCallable Dataworks_publicClient::ch
 	return task->get_future();
 }
 
+Dataworks_publicClient::CheckMetaTableTaskOutcome Dataworks_publicClient::checkMetaTableTask(const CheckMetaTableTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CheckMetaTableTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CheckMetaTableTaskOutcome(CheckMetaTableTaskResult(outcome.result()));
+	else
+		return CheckMetaTableTaskOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::checkMetaTableTaskAsync(const CheckMetaTableTaskRequest& request, const CheckMetaTableTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, checkMetaTableTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::CheckMetaTableTaskOutcomeCallable Dataworks_publicClient::checkMetaTableTaskCallable(const CheckMetaTableTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CheckMetaTableTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->checkMetaTableTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dataworks_publicClient::CreateBusinessOutcome Dataworks_publicClient::createBusiness(const CreateBusinessRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -369,6 +477,42 @@ Dataworks_publicClient::CreateConnectionOutcomeCallable Dataworks_publicClient::
 			[this, request]()
 			{
 			return this->createConnection(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dataworks_publicClient::CreateDISyncTaskOutcome Dataworks_publicClient::createDISyncTask(const CreateDISyncTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateDISyncTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateDISyncTaskOutcome(CreateDISyncTaskResult(outcome.result()));
+	else
+		return CreateDISyncTaskOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::createDISyncTaskAsync(const CreateDISyncTaskRequest& request, const CreateDISyncTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createDISyncTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::CreateDISyncTaskOutcomeCallable Dataworks_publicClient::createDISyncTaskCallable(const CreateDISyncTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateDISyncTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->createDISyncTask(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1311,6 +1455,42 @@ Dataworks_publicClient::DeleteConnectionOutcomeCallable Dataworks_publicClient::
 	return task->get_future();
 }
 
+Dataworks_publicClient::DeleteDISyncTaskOutcome Dataworks_publicClient::deleteDISyncTask(const DeleteDISyncTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteDISyncTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteDISyncTaskOutcome(DeleteDISyncTaskResult(outcome.result()));
+	else
+		return DeleteDISyncTaskOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::deleteDISyncTaskAsync(const DeleteDISyncTaskRequest& request, const DeleteDISyncTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteDISyncTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::DeleteDISyncTaskOutcomeCallable Dataworks_publicClient::deleteDISyncTaskCallable(const DeleteDISyncTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteDISyncTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteDISyncTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dataworks_publicClient::DeleteDataServiceApiOutcome Dataworks_publicClient::deleteDataServiceApi(const DeleteDataServiceApiRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1923,6 +2103,42 @@ Dataworks_publicClient::DeleteViewOutcomeCallable Dataworks_publicClient::delete
 	return task->get_future();
 }
 
+Dataworks_publicClient::DeployDISyncTaskOutcome Dataworks_publicClient::deployDISyncTask(const DeployDISyncTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeployDISyncTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeployDISyncTaskOutcome(DeployDISyncTaskResult(outcome.result()));
+	else
+		return DeployDISyncTaskOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::deployDISyncTaskAsync(const DeployDISyncTaskRequest& request, const DeployDISyncTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deployDISyncTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::DeployDISyncTaskOutcomeCallable Dataworks_publicClient::deployDISyncTaskCallable(const DeployDISyncTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeployDISyncTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->deployDISyncTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dataworks_publicClient::DeployFileOutcome Dataworks_publicClient::deployFile(const DeployFileRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2031,6 +2247,42 @@ Dataworks_publicClient::EstablishRelationTableToBusinessOutcomeCallable Datawork
 	return task->get_future();
 }
 
+Dataworks_publicClient::ExportConnectionsOutcome Dataworks_publicClient::exportConnections(const ExportConnectionsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ExportConnectionsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ExportConnectionsOutcome(ExportConnectionsResult(outcome.result()));
+	else
+		return ExportConnectionsOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::exportConnectionsAsync(const ExportConnectionsRequest& request, const ExportConnectionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, exportConnections(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::ExportConnectionsOutcomeCallable Dataworks_publicClient::exportConnectionsCallable(const ExportConnectionsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ExportConnectionsOutcome()>>(
+			[this, request]()
+			{
+			return this->exportConnections(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dataworks_publicClient::ExportDISyncTasksOutcome Dataworks_publicClient::exportDISyncTasks(const ExportDISyncTasksRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2061,6 +2313,114 @@ Dataworks_publicClient::ExportDISyncTasksOutcomeCallable Dataworks_publicClient:
 			[this, request]()
 			{
 			return this->exportDISyncTasks(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dataworks_publicClient::ExportDataSourcesOutcome Dataworks_publicClient::exportDataSources(const ExportDataSourcesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ExportDataSourcesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ExportDataSourcesOutcome(ExportDataSourcesResult(outcome.result()));
+	else
+		return ExportDataSourcesOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::exportDataSourcesAsync(const ExportDataSourcesRequest& request, const ExportDataSourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, exportDataSources(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::ExportDataSourcesOutcomeCallable Dataworks_publicClient::exportDataSourcesCallable(const ExportDataSourcesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ExportDataSourcesOutcome()>>(
+			[this, request]()
+			{
+			return this->exportDataSources(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dataworks_publicClient::GenerateDISyncTaskConfigForCreatingOutcome Dataworks_publicClient::generateDISyncTaskConfigForCreating(const GenerateDISyncTaskConfigForCreatingRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GenerateDISyncTaskConfigForCreatingOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GenerateDISyncTaskConfigForCreatingOutcome(GenerateDISyncTaskConfigForCreatingResult(outcome.result()));
+	else
+		return GenerateDISyncTaskConfigForCreatingOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::generateDISyncTaskConfigForCreatingAsync(const GenerateDISyncTaskConfigForCreatingRequest& request, const GenerateDISyncTaskConfigForCreatingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, generateDISyncTaskConfigForCreating(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::GenerateDISyncTaskConfigForCreatingOutcomeCallable Dataworks_publicClient::generateDISyncTaskConfigForCreatingCallable(const GenerateDISyncTaskConfigForCreatingRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GenerateDISyncTaskConfigForCreatingOutcome()>>(
+			[this, request]()
+			{
+			return this->generateDISyncTaskConfigForCreating(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dataworks_publicClient::GenerateDISyncTaskConfigForUpdatingOutcome Dataworks_publicClient::generateDISyncTaskConfigForUpdating(const GenerateDISyncTaskConfigForUpdatingRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GenerateDISyncTaskConfigForUpdatingOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GenerateDISyncTaskConfigForUpdatingOutcome(GenerateDISyncTaskConfigForUpdatingResult(outcome.result()));
+	else
+		return GenerateDISyncTaskConfigForUpdatingOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::generateDISyncTaskConfigForUpdatingAsync(const GenerateDISyncTaskConfigForUpdatingRequest& request, const GenerateDISyncTaskConfigForUpdatingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, generateDISyncTaskConfigForUpdating(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::GenerateDISyncTaskConfigForUpdatingOutcomeCallable Dataworks_publicClient::generateDISyncTaskConfigForUpdatingCallable(const GenerateDISyncTaskConfigForUpdatingRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GenerateDISyncTaskConfigForUpdatingOutcome()>>(
+			[this, request]()
+			{
+			return this->generateDISyncTaskConfigForUpdating(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2211,6 +2571,42 @@ Dataworks_publicClient::GetBusinessOutcomeCallable Dataworks_publicClient::getBu
 	return task->get_future();
 }
 
+Dataworks_publicClient::GetConnectionMetaOutcome Dataworks_publicClient::getConnectionMeta(const GetConnectionMetaRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetConnectionMetaOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetConnectionMetaOutcome(GetConnectionMetaResult(outcome.result()));
+	else
+		return GetConnectionMetaOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::getConnectionMetaAsync(const GetConnectionMetaRequest& request, const GetConnectionMetaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getConnectionMeta(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::GetConnectionMetaOutcomeCallable Dataworks_publicClient::getConnectionMetaCallable(const GetConnectionMetaRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetConnectionMetaOutcome()>>(
+			[this, request]()
+			{
+			return this->getConnectionMeta(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dataworks_publicClient::GetDDLJobStatusOutcome Dataworks_publicClient::getDDLJobStatus(const GetDDLJobStatusRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2241,6 +2637,114 @@ Dataworks_publicClient::GetDDLJobStatusOutcomeCallable Dataworks_publicClient::g
 			[this, request]()
 			{
 			return this->getDDLJobStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dataworks_publicClient::GetDISyncInstanceInfoOutcome Dataworks_publicClient::getDISyncInstanceInfo(const GetDISyncInstanceInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetDISyncInstanceInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetDISyncInstanceInfoOutcome(GetDISyncInstanceInfoResult(outcome.result()));
+	else
+		return GetDISyncInstanceInfoOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::getDISyncInstanceInfoAsync(const GetDISyncInstanceInfoRequest& request, const GetDISyncInstanceInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getDISyncInstanceInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::GetDISyncInstanceInfoOutcomeCallable Dataworks_publicClient::getDISyncInstanceInfoCallable(const GetDISyncInstanceInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetDISyncInstanceInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->getDISyncInstanceInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dataworks_publicClient::GetDISyncTaskOutcome Dataworks_publicClient::getDISyncTask(const GetDISyncTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetDISyncTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetDISyncTaskOutcome(GetDISyncTaskResult(outcome.result()));
+	else
+		return GetDISyncTaskOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::getDISyncTaskAsync(const GetDISyncTaskRequest& request, const GetDISyncTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getDISyncTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::GetDISyncTaskOutcomeCallable Dataworks_publicClient::getDISyncTaskCallable(const GetDISyncTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetDISyncTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->getDISyncTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dataworks_publicClient::GetDISyncTaskMetricInfoOutcome Dataworks_publicClient::getDISyncTaskMetricInfo(const GetDISyncTaskMetricInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetDISyncTaskMetricInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetDISyncTaskMetricInfoOutcome(GetDISyncTaskMetricInfoResult(outcome.result()));
+	else
+		return GetDISyncTaskMetricInfoOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::getDISyncTaskMetricInfoAsync(const GetDISyncTaskMetricInfoRequest& request, const GetDISyncTaskMetricInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getDISyncTaskMetricInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::GetDISyncTaskMetricInfoOutcomeCallable Dataworks_publicClient::getDISyncTaskMetricInfoCallable(const GetDISyncTaskMetricInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetDISyncTaskMetricInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->getDISyncTaskMetricInfo(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2457,6 +2961,42 @@ Dataworks_publicClient::GetDataServicePublishedApiOutcomeCallable Dataworks_publ
 			[this, request]()
 			{
 			return this->getDataServicePublishedApi(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dataworks_publicClient::GetDataSourceMetaOutcome Dataworks_publicClient::getDataSourceMeta(const GetDataSourceMetaRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetDataSourceMetaOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetDataSourceMetaOutcome(GetDataSourceMetaResult(outcome.result()));
+	else
+		return GetDataSourceMetaOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::getDataSourceMetaAsync(const GetDataSourceMetaRequest& request, const GetDataSourceMetaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getDataSourceMeta(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::GetDataSourceMetaOutcomeCallable Dataworks_publicClient::getDataSourceMetaCallable(const GetDataSourceMetaRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetDataSourceMetaOutcome()>>(
+			[this, request]()
+			{
+			return this->getDataSourceMeta(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4155,6 +4695,42 @@ Dataworks_publicClient::GetTopicInfluenceOutcomeCallable Dataworks_publicClient:
 	return task->get_future();
 }
 
+Dataworks_publicClient::ImportConnectionsOutcome Dataworks_publicClient::importConnections(const ImportConnectionsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ImportConnectionsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ImportConnectionsOutcome(ImportConnectionsResult(outcome.result()));
+	else
+		return ImportConnectionsOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::importConnectionsAsync(const ImportConnectionsRequest& request, const ImportConnectionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, importConnections(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::ImportConnectionsOutcomeCallable Dataworks_publicClient::importConnectionsCallable(const ImportConnectionsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ImportConnectionsOutcome()>>(
+			[this, request]()
+			{
+			return this->importConnections(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dataworks_publicClient::ImportDISyncTasksOutcome Dataworks_publicClient::importDISyncTasks(const ImportDISyncTasksRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4185,6 +4761,42 @@ Dataworks_publicClient::ImportDISyncTasksOutcomeCallable Dataworks_publicClient:
 			[this, request]()
 			{
 			return this->importDISyncTasks(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dataworks_publicClient::ImportDataSourcesOutcome Dataworks_publicClient::importDataSources(const ImportDataSourcesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ImportDataSourcesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ImportDataSourcesOutcome(ImportDataSourcesResult(outcome.result()));
+	else
+		return ImportDataSourcesOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::importDataSourcesAsync(const ImportDataSourcesRequest& request, const ImportDataSourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, importDataSources(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::ImportDataSourcesOutcomeCallable Dataworks_publicClient::importDataSourcesCallable(const ImportDataSourcesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ImportDataSourcesOutcome()>>(
+			[this, request]()
+			{
+			return this->importDataSources(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4401,6 +5013,42 @@ Dataworks_publicClient::ListConnectionsOutcomeCallable Dataworks_publicClient::l
 			[this, request]()
 			{
 			return this->listConnections(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dataworks_publicClient::ListDIProjectConfigOutcome Dataworks_publicClient::listDIProjectConfig(const ListDIProjectConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListDIProjectConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListDIProjectConfigOutcome(ListDIProjectConfigResult(outcome.result()));
+	else
+		return ListDIProjectConfigOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::listDIProjectConfigAsync(const ListDIProjectConfigRequest& request, const ListDIProjectConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listDIProjectConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::ListDIProjectConfigOutcomeCallable Dataworks_publicClient::listDIProjectConfigCallable(const ListDIProjectConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListDIProjectConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->listDIProjectConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5271,6 +5919,42 @@ Dataworks_publicClient::ListProgramTypeCountOutcomeCallable Dataworks_publicClie
 	return task->get_future();
 }
 
+Dataworks_publicClient::ListProjectIdsOutcome Dataworks_publicClient::listProjectIds(const ListProjectIdsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListProjectIdsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListProjectIdsOutcome(ListProjectIdsResult(outcome.result()));
+	else
+		return ListProjectIdsOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::listProjectIdsAsync(const ListProjectIdsRequest& request, const ListProjectIdsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listProjectIds(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::ListProjectIdsOutcomeCallable Dataworks_publicClient::listProjectIdsCallable(const ListProjectIdsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListProjectIdsOutcome()>>(
+			[this, request]()
+			{
+			return this->listProjectIds(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dataworks_publicClient::ListProjectMembersOutcome Dataworks_publicClient::listProjectMembers(const ListProjectMembersRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5481,6 +6165,42 @@ Dataworks_publicClient::ListQualityRulesOutcomeCallable Dataworks_publicClient::
 			[this, request]()
 			{
 			return this->listQualityRules(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dataworks_publicClient::ListRefDISyncTasksOutcome Dataworks_publicClient::listRefDISyncTasks(const ListRefDISyncTasksRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListRefDISyncTasksOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListRefDISyncTasksOutcome(ListRefDISyncTasksResult(outcome.result()));
+	else
+		return ListRefDISyncTasksOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::listRefDISyncTasksAsync(const ListRefDISyncTasksRequest& request, const ListRefDISyncTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listRefDISyncTasks(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::ListRefDISyncTasksOutcomeCallable Dataworks_publicClient::listRefDISyncTasksCallable(const ListRefDISyncTasksRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListRefDISyncTasksOutcome()>>(
+			[this, request]()
+			{
+			return this->listRefDISyncTasks(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5733,6 +6453,42 @@ Dataworks_publicClient::PublishDataServiceApiOutcomeCallable Dataworks_publicCli
 			[this, request]()
 			{
 			return this->publishDataServiceApi(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dataworks_publicClient::QueryDISyncTaskConfigProcessResultOutcome Dataworks_publicClient::queryDISyncTaskConfigProcessResult(const QueryDISyncTaskConfigProcessResultRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryDISyncTaskConfigProcessResultOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryDISyncTaskConfigProcessResultOutcome(QueryDISyncTaskConfigProcessResultResult(outcome.result()));
+	else
+		return QueryDISyncTaskConfigProcessResultOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::queryDISyncTaskConfigProcessResultAsync(const QueryDISyncTaskConfigProcessResultRequest& request, const QueryDISyncTaskConfigProcessResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryDISyncTaskConfigProcessResult(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::QueryDISyncTaskConfigProcessResultOutcomeCallable Dataworks_publicClient::queryDISyncTaskConfigProcessResultCallable(const QueryDISyncTaskConfigProcessResultRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryDISyncTaskConfigProcessResultOutcome()>>(
+			[this, request]()
+			{
+			return this->queryDISyncTaskConfigProcessResult(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -6207,6 +6963,78 @@ Dataworks_publicClient::SearchNodesByOutputOutcomeCallable Dataworks_publicClien
 	return task->get_future();
 }
 
+Dataworks_publicClient::SetConnectionShareOutcome Dataworks_publicClient::setConnectionShare(const SetConnectionShareRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetConnectionShareOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetConnectionShareOutcome(SetConnectionShareResult(outcome.result()));
+	else
+		return SetConnectionShareOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::setConnectionShareAsync(const SetConnectionShareRequest& request, const SetConnectionShareAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setConnectionShare(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::SetConnectionShareOutcomeCallable Dataworks_publicClient::setConnectionShareCallable(const SetConnectionShareRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetConnectionShareOutcome()>>(
+			[this, request]()
+			{
+			return this->setConnectionShare(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dataworks_publicClient::SetDataSourceShareOutcome Dataworks_publicClient::setDataSourceShare(const SetDataSourceShareRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetDataSourceShareOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetDataSourceShareOutcome(SetDataSourceShareResult(outcome.result()));
+	else
+		return SetDataSourceShareOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::setDataSourceShareAsync(const SetDataSourceShareRequest& request, const SetDataSourceShareAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setDataSourceShare(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::SetDataSourceShareOutcomeCallable Dataworks_publicClient::setDataSourceShareCallable(const SetDataSourceShareRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetDataSourceShareOutcome()>>(
+			[this, request]()
+			{
+			return this->setDataSourceShare(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dataworks_publicClient::SetSuccessInstanceOutcome Dataworks_publicClient::setSuccessInstance(const SetSuccessInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -6243,6 +7071,42 @@ Dataworks_publicClient::SetSuccessInstanceOutcomeCallable Dataworks_publicClient
 	return task->get_future();
 }
 
+Dataworks_publicClient::StartDISyncInstanceOutcome Dataworks_publicClient::startDISyncInstance(const StartDISyncInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return StartDISyncInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return StartDISyncInstanceOutcome(StartDISyncInstanceResult(outcome.result()));
+	else
+		return StartDISyncInstanceOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::startDISyncInstanceAsync(const StartDISyncInstanceRequest& request, const StartDISyncInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, startDISyncInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::StartDISyncInstanceOutcomeCallable Dataworks_publicClient::startDISyncInstanceCallable(const StartDISyncInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<StartDISyncInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->startDISyncInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dataworks_publicClient::StartMigrationOutcome Dataworks_publicClient::startMigration(const StartMigrationRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -6273,6 +7137,42 @@ Dataworks_publicClient::StartMigrationOutcomeCallable Dataworks_publicClient::st
 			[this, request]()
 			{
 			return this->startMigration(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dataworks_publicClient::StopDISyncInstanceOutcome Dataworks_publicClient::stopDISyncInstance(const StopDISyncInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return StopDISyncInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return StopDISyncInstanceOutcome(StopDISyncInstanceResult(outcome.result()));
+	else
+		return StopDISyncInstanceOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::stopDISyncInstanceAsync(const StopDISyncInstanceRequest& request, const StopDISyncInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, stopDISyncInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::StopDISyncInstanceOutcomeCallable Dataworks_publicClient::stopDISyncInstanceCallable(const StopDISyncInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<StopDISyncInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->stopDISyncInstance(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -6381,6 +7281,78 @@ Dataworks_publicClient::SuspendInstanceOutcomeCallable Dataworks_publicClient::s
 			[this, request]()
 			{
 			return this->suspendInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dataworks_publicClient::TerminateDISyncInstanceOutcome Dataworks_publicClient::terminateDISyncInstance(const TerminateDISyncInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return TerminateDISyncInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return TerminateDISyncInstanceOutcome(TerminateDISyncInstanceResult(outcome.result()));
+	else
+		return TerminateDISyncInstanceOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::terminateDISyncInstanceAsync(const TerminateDISyncInstanceRequest& request, const TerminateDISyncInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, terminateDISyncInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::TerminateDISyncInstanceOutcomeCallable Dataworks_publicClient::terminateDISyncInstanceCallable(const TerminateDISyncInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<TerminateDISyncInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->terminateDISyncInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dataworks_publicClient::TestNetworkConnectionOutcome Dataworks_publicClient::testNetworkConnection(const TestNetworkConnectionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return TestNetworkConnectionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return TestNetworkConnectionOutcome(TestNetworkConnectionResult(outcome.result()));
+	else
+		return TestNetworkConnectionOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::testNetworkConnectionAsync(const TestNetworkConnectionRequest& request, const TestNetworkConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, testNetworkConnection(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::TestNetworkConnectionOutcomeCallable Dataworks_publicClient::testNetworkConnectionCallable(const TestNetworkConnectionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<TestNetworkConnectionOutcome()>>(
+			[this, request]()
+			{
+			return this->testNetworkConnection(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -6525,6 +7497,78 @@ Dataworks_publicClient::UpdateConnectionOutcomeCallable Dataworks_publicClient::
 			[this, request]()
 			{
 			return this->updateConnection(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dataworks_publicClient::UpdateDIProjectConfigOutcome Dataworks_publicClient::updateDIProjectConfig(const UpdateDIProjectConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateDIProjectConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateDIProjectConfigOutcome(UpdateDIProjectConfigResult(outcome.result()));
+	else
+		return UpdateDIProjectConfigOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::updateDIProjectConfigAsync(const UpdateDIProjectConfigRequest& request, const UpdateDIProjectConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateDIProjectConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::UpdateDIProjectConfigOutcomeCallable Dataworks_publicClient::updateDIProjectConfigCallable(const UpdateDIProjectConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateDIProjectConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->updateDIProjectConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dataworks_publicClient::UpdateDISyncTaskOutcome Dataworks_publicClient::updateDISyncTask(const UpdateDISyncTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateDISyncTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateDISyncTaskOutcome(UpdateDISyncTaskResult(outcome.result()));
+	else
+		return UpdateDISyncTaskOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::updateDISyncTaskAsync(const UpdateDISyncTaskRequest& request, const UpdateDISyncTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateDISyncTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::UpdateDISyncTaskOutcomeCallable Dataworks_publicClient::updateDISyncTaskCallable(const UpdateDISyncTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateDISyncTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->updateDISyncTask(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

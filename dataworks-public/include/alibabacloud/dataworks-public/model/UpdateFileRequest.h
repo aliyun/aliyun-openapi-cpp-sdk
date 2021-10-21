@@ -83,6 +83,8 @@ namespace AlibabaCloud
 				void setFileDescription(const std::string& fileDescription);
 				bool getAutoParsing()const;
 				void setAutoParsing(bool autoParsing);
+				std::string getSchedulerType()const;
+				void setSchedulerType(const std::string& schedulerType);
 
             private:
 				std::string outputList_;
@@ -109,6 +111,7 @@ namespace AlibabaCloud
 				std::string fileFolderPath_;
 				std::string fileDescription_;
 				bool autoParsing_;
+				std::string schedulerType_;
 
 			};
 		}

@@ -37,17 +37,17 @@ namespace AlibabaCloud
 
 				std::string getTaskType()const;
 				void setTaskType(const std::string& taskType);
-				std::string getTaskContent()const;
-				void setTaskContent(const std::string& taskContent);
 				std::string getTaskParam()const;
 				void setTaskParam(const std::string& taskParam);
+				std::string getBody()const;
+				void setBody(const std::string& body);
 				long getProjectId()const;
 				void setProjectId(long projectId);
 
             private:
 				std::string taskType_;
-				std::string taskContent_;
 				std::string taskParam_;
+				std::string body_;
 				long projectId_;
 
 			};

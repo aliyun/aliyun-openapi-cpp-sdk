@@ -291,3 +291,14 @@ void UpdateFileRequest::setAutoParsing(bool autoParsing)
 	setBodyParameter("AutoParsing", autoParsing ? "true" : "false");
 }
 
+std::string UpdateFileRequest::getSchedulerType()const
+{
+	return schedulerType_;
+}
+
+void UpdateFileRequest::setSchedulerType(const std::string& schedulerType)
+{
+	schedulerType_ = schedulerType;
+	setBodyParameter("SchedulerType", schedulerType);
+}
+

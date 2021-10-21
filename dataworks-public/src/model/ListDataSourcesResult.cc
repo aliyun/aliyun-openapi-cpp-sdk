@@ -84,6 +84,8 @@ void ListDataSourcesResult::parse(const std::string &payload)
 			dataSourcesItemObject.projectId = std::stoi(dataNodeDataSourcesDataSourcesItem["ProjectId"].asString());
 		if(!dataNodeDataSourcesDataSourcesItem["Status"].isNull())
 			dataSourcesItemObject.status = std::stoi(dataNodeDataSourcesDataSourcesItem["Status"].asString());
+		if(!dataNodeDataSourcesDataSourcesItem["Content"].isNull())
+			dataSourcesItemObject.content = dataNodeDataSourcesDataSourcesItem["Content"].asString();
 		data_.dataSources.push_back(dataSourcesItemObject);
 	}
 	if(!value["HttpStatusCode"].isNull())

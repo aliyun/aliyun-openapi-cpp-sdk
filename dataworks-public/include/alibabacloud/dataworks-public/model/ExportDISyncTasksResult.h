@@ -32,7 +32,7 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT ExportDISyncTasksResult : public ServiceResult
 			{
 			public:
-				struct TaskDetail
+				struct Data
 				{
 					std::string realTimeSolution;
 				};
@@ -41,13 +41,15 @@ namespace AlibabaCloud
 				ExportDISyncTasksResult();
 				explicit ExportDISyncTasksResult(const std::string &payload);
 				~ExportDISyncTasksResult();
-				TaskDetail getTaskDetail()const;
+				std::string getRequestId()const;
+				Data getData()const;
 				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				TaskDetail taskDetail_;
+				std::string requestId_;
+				Data data_;
 				bool success_;
 
 			};

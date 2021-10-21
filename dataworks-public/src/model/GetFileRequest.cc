@@ -38,6 +38,17 @@ void GetFileRequest::setProjectId(long projectId)
 	setBodyParameter("ProjectId", std::to_string(projectId));
 }
 
+long GetFileRequest::getNodeId()const
+{
+	return nodeId_;
+}
+
+void GetFileRequest::setNodeId(long nodeId)
+{
+	nodeId_ = nodeId;
+	setBodyParameter("NodeId", std::to_string(nodeId));
+}
+
 std::string GetFileRequest::getProjectIdentifier()const
 {
 	return projectIdentifier_;

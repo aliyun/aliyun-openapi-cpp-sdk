@@ -35,15 +35,12 @@ namespace AlibabaCloud
 				QueryPublicModelEngineRequest();
 				~QueryPublicModelEngineRequest();
 
-				std::string getTenantId()const;
-				void setTenantId(const std::string& tenantId);
 				std::string getText()const;
 				void setText(const std::string& text);
 				std::string getProjectId()const;
 				void setProjectId(const std::string& projectId);
 
             private:
-				std::string tenantId_;
 				std::string text_;
 				std::string projectId_;
 

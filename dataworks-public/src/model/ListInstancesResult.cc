@@ -102,6 +102,8 @@ void ListInstancesResult::parse(const std::string &payload)
 			instanceObject.taskType = dataNodeInstancesInstance["TaskType"].asString();
 		if(!dataNodeInstancesInstance["TaskRerunTime"].isNull())
 			instanceObject.taskRerunTime = std::stoi(dataNodeInstancesInstance["TaskRerunTime"].asString());
+		if(!dataNodeInstancesInstance["BusinessId"].isNull())
+			instanceObject.businessId = std::stol(dataNodeInstancesInstance["BusinessId"].asString());
 		data_.instances.push_back(instanceObject);
 	}
 	if(!value["Success"].isNull())

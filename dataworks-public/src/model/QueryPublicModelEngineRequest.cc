@@ -27,17 +27,6 @@ QueryPublicModelEngineRequest::QueryPublicModelEngineRequest() :
 QueryPublicModelEngineRequest::~QueryPublicModelEngineRequest()
 {}
 
-std::string QueryPublicModelEngineRequest::getTenantId()const
-{
-	return tenantId_;
-}
-
-void QueryPublicModelEngineRequest::setTenantId(const std::string& tenantId)
-{
-	tenantId_ = tenantId;
-	setBodyParameter("TenantId", tenantId);
-}
-
 std::string QueryPublicModelEngineRequest::getText()const
 {
 	return text_;

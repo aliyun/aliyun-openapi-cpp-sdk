@@ -53,6 +53,8 @@ namespace AlibabaCloud
 				void setProjectId(long projectId);
 				std::string getUseType()const;
 				void setUseType(const std::string& useType);
+				long getNodeId()const;
+				void setNodeId(long nodeId);
 
             private:
 				std::string owner_;
@@ -64,6 +66,7 @@ namespace AlibabaCloud
 				std::string keyword_;
 				long projectId_;
 				std::string useType_;
+				long nodeId_;
 
 			};
 		}
