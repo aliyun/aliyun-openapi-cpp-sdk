@@ -37,6 +37,7 @@ namespace AlibabaCloud
 					struct InsertedFacesItem
 					{
 						std::string faceId;
+						float qualitieScore;
 						std::string imageURL;
 					};
 					struct FailedFacesItem

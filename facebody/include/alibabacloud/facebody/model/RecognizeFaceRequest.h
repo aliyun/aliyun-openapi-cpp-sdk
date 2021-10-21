@@ -35,14 +35,41 @@ namespace AlibabaCloud
 				RecognizeFaceRequest();
 				~RecognizeFaceRequest();
 
+				bool getGender()const;
+				void setGender(bool gender);
+				bool getBeauty()const;
+				void setBeauty(bool beauty);
+				long getMaxFaceNumber()const;
+				void setMaxFaceNumber(long maxFaceNumber);
+				bool getHat()const;
+				void setHat(bool hat);
+				bool getMask()const;
+				void setMask(bool mask);
 				int getImageType()const;
 				void setImageType(int imageType);
+				bool getGlass()const;
+				void setGlass(bool glass);
+				bool getExpression()const;
+				void setExpression(bool expression);
+				bool getQuality()const;
+				void setQuality(bool quality);
 				std::string getImageURL()const;
 				void setImageURL(const std::string& imageURL);
+				bool getAge()const;
+				void setAge(bool age);
 
             private:
+				bool gender_;
+				bool beauty_;
+				long maxFaceNumber_;
+				bool hat_;
+				bool mask_;
 				int imageType_;
+				bool glass_;
+				bool expression_;
+				bool quality_;
 				std::string imageURL_;
+				bool age_;
 
 			};
 		}

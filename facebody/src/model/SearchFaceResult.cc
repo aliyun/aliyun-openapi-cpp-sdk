@@ -44,6 +44,8 @@ void SearchFaceResult::parse(const std::string &payload)
 	for (auto dataNodeMatchListMatchListItem : allMatchListNode)
 	{
 		Data::MatchListItem matchListItemObject;
+		if(!dataNodeMatchListMatchListItem["QualitieScore"].isNull())
+			matchListItemObject.qualitieScore = std::stof(dataNodeMatchListMatchListItem["QualitieScore"].asString());
 		auto allFaceItemsNode = dataNodeMatchListMatchListItem["FaceItems"]["FaceItemsItem"];
 		for (auto dataNodeMatchListMatchListItemFaceItemsFaceItemsItem : allFaceItemsNode)
 		{
@@ -73,11 +75,25 @@ void SearchFaceResult::parse(const std::string &payload)
 			matchListItemObject.location.x = std::stoi(locationNode["X"].asString());
 		data_.matchList.push_back(matchListItemObject);
 	}
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 
+}
+
+std::string SearchFaceResult::getMessage()const
+{
+	return message_;
 }
 
 SearchFaceResult::Data SearchFaceResult::getData()const
 {
 	return data_;
+}
+
+std::string SearchFaceResult::getCode()const
+{
+	return code_;
 }
 

@@ -110,11 +110,25 @@ void RecognizeFaceResult::parse(const std::string &payload)
 		auto allMasks = dataNode["Masks"]["Mask"];
 		for (auto value : allMasks)
 			data_.masks.push_back(value.asString());
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 
+}
+
+std::string RecognizeFaceResult::getMessage()const
+{
+	return message_;
 }
 
 RecognizeFaceResult::Data RecognizeFaceResult::getData()const
 {
 	return data_;
+}
+
+std::string RecognizeFaceResult::getCode()const
+{
+	return code_;
 }
 

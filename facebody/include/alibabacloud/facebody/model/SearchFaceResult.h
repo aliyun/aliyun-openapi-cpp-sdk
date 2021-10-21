@@ -53,6 +53,7 @@ namespace AlibabaCloud
 							std::string extraData;
 						};
 						std::vector<MatchListItem::FaceItemsItem> faceItems;
+						float qualitieScore;
 						Location location;
 					};
 					std::vector<MatchListItem> matchList;
@@ -62,12 +63,16 @@ namespace AlibabaCloud
 				SearchFaceResult();
 				explicit SearchFaceResult(const std::string &payload);
 				~SearchFaceResult();
+				std::string getMessage()const;
 				Data getData()const;
+				std::string getCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string message_;
 				Data data_;
+				std::string code_;
 
 			};
 		}

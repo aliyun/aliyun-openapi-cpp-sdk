@@ -42,11 +42,27 @@ void AddFaceResult::parse(const std::string &payload)
 	auto dataNode = value["Data"];
 	if(!dataNode["FaceId"].isNull())
 		data_.faceId = dataNode["FaceId"].asString();
+	if(!dataNode["QualitieScore"].isNull())
+		data_.qualitieScore = std::stof(dataNode["QualitieScore"].asString());
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 
+}
+
+std::string AddFaceResult::getMessage()const
+{
+	return message_;
 }
 
 AddFaceResult::Data AddFaceResult::getData()const
 {
 	return data_;
+}
+
+std::string AddFaceResult::getCode()const
+{
+	return code_;
 }
 

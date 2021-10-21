@@ -35,18 +35,23 @@ namespace AlibabaCloud
 				struct Data
 				{
 					std::string faceId;
+					float qualitieScore;
 				};
 
 
 				AddFaceResult();
 				explicit AddFaceResult(const std::string &payload);
 				~AddFaceResult();
+				std::string getMessage()const;
 				Data getData()const;
+				std::string getCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string message_;
 				Data data_;
+				std::string code_;
 
 			};
 		}

@@ -48,6 +48,8 @@ void BatchAddFacesResult::parse(const std::string &payload)
 			insertedFacesItemObject.imageURL = dataNodeInsertedFacesinsertedFacesItem["ImageURL"].asString();
 		if(!dataNodeInsertedFacesinsertedFacesItem["FaceId"].isNull())
 			insertedFacesItemObject.faceId = dataNodeInsertedFacesinsertedFacesItem["FaceId"].asString();
+		if(!dataNodeInsertedFacesinsertedFacesItem["QualitieScore"].isNull())
+			insertedFacesItemObject.qualitieScore = std::stof(dataNodeInsertedFacesinsertedFacesItem["QualitieScore"].asString());
 		data_.insertedFaces.push_back(insertedFacesItemObject);
 	}
 	auto allFailedFacesNode = dataNode["FailedFaces"]["failedFacesItem"];
