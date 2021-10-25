@@ -258,6 +258,8 @@
 #include "model/DescribeLiveDomainFrameRateAndBitRateDataResult.h"
 #include "model/DescribeLiveDomainLimitRequest.h"
 #include "model/DescribeLiveDomainLimitResult.h"
+#include "model/DescribeLiveDomainLogRequest.h"
+#include "model/DescribeLiveDomainLogResult.h"
 #include "model/DescribeLiveDomainMappingRequest.h"
 #include "model/DescribeLiveDomainMappingResult.h"
 #include "model/DescribeLiveDomainOnlineUserNumRequest.h"
@@ -406,6 +408,8 @@
 #include "model/ForbidLiveStreamResult.h"
 #include "model/ForbidPushStreamRequest.h"
 #include "model/ForbidPushStreamResult.h"
+#include "model/GetAllCustomTemplatesRequest.h"
+#include "model/GetAllCustomTemplatesResult.h"
 #include "model/GetCustomTemplateRequest.h"
 #include "model/GetCustomTemplateResult.h"
 #include "model/GetMultiRateConfigRequest.h"
@@ -899,6 +903,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeLiveDomainLimitResult> DescribeLiveDomainLimitOutcome;
 			typedef std::future<DescribeLiveDomainLimitOutcome> DescribeLiveDomainLimitOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DescribeLiveDomainLimitRequest&, const DescribeLiveDomainLimitOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveDomainLimitAsyncHandler;
+			typedef Outcome<Error, Model::DescribeLiveDomainLogResult> DescribeLiveDomainLogOutcome;
+			typedef std::future<DescribeLiveDomainLogOutcome> DescribeLiveDomainLogOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DescribeLiveDomainLogRequest&, const DescribeLiveDomainLogOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveDomainLogAsyncHandler;
 			typedef Outcome<Error, Model::DescribeLiveDomainMappingResult> DescribeLiveDomainMappingOutcome;
 			typedef std::future<DescribeLiveDomainMappingOutcome> DescribeLiveDomainMappingOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DescribeLiveDomainMappingRequest&, const DescribeLiveDomainMappingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveDomainMappingAsyncHandler;
@@ -1121,6 +1128,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ForbidPushStreamResult> ForbidPushStreamOutcome;
 			typedef std::future<ForbidPushStreamOutcome> ForbidPushStreamOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::ForbidPushStreamRequest&, const ForbidPushStreamOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ForbidPushStreamAsyncHandler;
+			typedef Outcome<Error, Model::GetAllCustomTemplatesResult> GetAllCustomTemplatesOutcome;
+			typedef std::future<GetAllCustomTemplatesOutcome> GetAllCustomTemplatesOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::GetAllCustomTemplatesRequest&, const GetAllCustomTemplatesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAllCustomTemplatesAsyncHandler;
 			typedef Outcome<Error, Model::GetCustomTemplateResult> GetCustomTemplateOutcome;
 			typedef std::future<GetCustomTemplateOutcome> GetCustomTemplateOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::GetCustomTemplateRequest&, const GetCustomTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetCustomTemplateAsyncHandler;
@@ -1675,6 +1685,9 @@ namespace AlibabaCloud
 			DescribeLiveDomainLimitOutcome describeLiveDomainLimit(const Model::DescribeLiveDomainLimitRequest &request)const;
 			void describeLiveDomainLimitAsync(const Model::DescribeLiveDomainLimitRequest& request, const DescribeLiveDomainLimitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLiveDomainLimitOutcomeCallable describeLiveDomainLimitCallable(const Model::DescribeLiveDomainLimitRequest& request) const;
+			DescribeLiveDomainLogOutcome describeLiveDomainLog(const Model::DescribeLiveDomainLogRequest &request)const;
+			void describeLiveDomainLogAsync(const Model::DescribeLiveDomainLogRequest& request, const DescribeLiveDomainLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeLiveDomainLogOutcomeCallable describeLiveDomainLogCallable(const Model::DescribeLiveDomainLogRequest& request) const;
 			DescribeLiveDomainMappingOutcome describeLiveDomainMapping(const Model::DescribeLiveDomainMappingRequest &request)const;
 			void describeLiveDomainMappingAsync(const Model::DescribeLiveDomainMappingRequest& request, const DescribeLiveDomainMappingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLiveDomainMappingOutcomeCallable describeLiveDomainMappingCallable(const Model::DescribeLiveDomainMappingRequest& request) const;
@@ -1897,6 +1910,9 @@ namespace AlibabaCloud
 			ForbidPushStreamOutcome forbidPushStream(const Model::ForbidPushStreamRequest &request)const;
 			void forbidPushStreamAsync(const Model::ForbidPushStreamRequest& request, const ForbidPushStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ForbidPushStreamOutcomeCallable forbidPushStreamCallable(const Model::ForbidPushStreamRequest& request) const;
+			GetAllCustomTemplatesOutcome getAllCustomTemplates(const Model::GetAllCustomTemplatesRequest &request)const;
+			void getAllCustomTemplatesAsync(const Model::GetAllCustomTemplatesRequest& request, const GetAllCustomTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetAllCustomTemplatesOutcomeCallable getAllCustomTemplatesCallable(const Model::GetAllCustomTemplatesRequest& request) const;
 			GetCustomTemplateOutcome getCustomTemplate(const Model::GetCustomTemplateRequest &request)const;
 			void getCustomTemplateAsync(const Model::GetCustomTemplateRequest& request, const GetCustomTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetCustomTemplateOutcomeCallable getCustomTemplateCallable(const Model::GetCustomTemplateRequest& request) const;

@@ -50,39 +50,47 @@ namespace AlibabaCloud
 					std::vector<RecordFormatItem> recordFormat;
 					std::string ossBucket;
 				};
+				struct SyncGroup
+				{
+					std::vector<std::string> resourceIds;
+					int mode;
+					std::string hostResourceId;
+				};
 
 
 				DescribeCasterConfigResult();
 				explicit DescribeCasterConfigResult(const std::string &payload);
 				~DescribeCasterConfigResult();
+				int getChannelEnable()const;
+				std::string getDomainName()const;
+				std::string getUrgentMaterialId()const;
+				TranscodeConfig getTranscodeConfig()const;
+				std::string getProgramName()const;
+				float getDelay()const;
 				std::string getSideOutputUrl()const;
 				std::string getCallbackUrl()const;
 				std::string getCasterName()const;
-				int getChannelEnable()const;
-				std::string getDomainName()const;
 				int getProgramEffect()const;
-				std::string getUrgentMaterialId()const;
-				TranscodeConfig getTranscodeConfig()const;
+				std::vector<SyncGroup> getSyncGroupsConfig()const;
 				std::string getCasterId()const;
-				std::string getProgramName()const;
 				RecordConfig getRecordConfig()const;
-				float getDelay()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				int channelEnable_;
+				std::string domainName_;
+				std::string urgentMaterialId_;
+				TranscodeConfig transcodeConfig_;
+				std::string programName_;
+				float delay_;
 				std::string sideOutputUrl_;
 				std::string callbackUrl_;
 				std::string casterName_;
-				int channelEnable_;
-				std::string domainName_;
 				int programEffect_;
-				std::string urgentMaterialId_;
-				TranscodeConfig transcodeConfig_;
+				std::vector<SyncGroup> syncGroupsConfig_;
 				std::string casterId_;
-				std::string programName_;
 				RecordConfig recordConfig_;
-				float delay_;
 
 			};
 		}

@@ -4299,6 +4299,42 @@ LiveClient::DescribeLiveDomainLimitOutcomeCallable LiveClient::describeLiveDomai
 	return task->get_future();
 }
 
+LiveClient::DescribeLiveDomainLogOutcome LiveClient::describeLiveDomainLog(const DescribeLiveDomainLogRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeLiveDomainLogOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeLiveDomainLogOutcome(DescribeLiveDomainLogResult(outcome.result()));
+	else
+		return DescribeLiveDomainLogOutcome(outcome.error());
+}
+
+void LiveClient::describeLiveDomainLogAsync(const DescribeLiveDomainLogRequest& request, const DescribeLiveDomainLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeLiveDomainLog(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DescribeLiveDomainLogOutcomeCallable LiveClient::describeLiveDomainLogCallable(const DescribeLiveDomainLogRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeLiveDomainLogOutcome()>>(
+			[this, request]()
+			{
+			return this->describeLiveDomainLog(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::DescribeLiveDomainMappingOutcome LiveClient::describeLiveDomainMapping(const DescribeLiveDomainMappingRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -6957,6 +6993,42 @@ LiveClient::ForbidPushStreamOutcomeCallable LiveClient::forbidPushStreamCallable
 			[this, request]()
 			{
 			return this->forbidPushStream(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::GetAllCustomTemplatesOutcome LiveClient::getAllCustomTemplates(const GetAllCustomTemplatesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetAllCustomTemplatesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetAllCustomTemplatesOutcome(GetAllCustomTemplatesResult(outcome.result()));
+	else
+		return GetAllCustomTemplatesOutcome(outcome.error());
+}
+
+void LiveClient::getAllCustomTemplatesAsync(const GetAllCustomTemplatesRequest& request, const GetAllCustomTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getAllCustomTemplates(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::GetAllCustomTemplatesOutcomeCallable LiveClient::getAllCustomTemplatesCallable(const GetAllCustomTemplatesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetAllCustomTemplatesOutcome()>>(
+			[this, request]()
+			{
+			return this->getAllCustomTemplates(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

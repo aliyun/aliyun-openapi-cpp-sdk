@@ -51,6 +51,8 @@ namespace AlibabaCloud
 				void setCasterName(const std::string& casterName);
 				std::string getSideOutputUrl()const;
 				void setSideOutputUrl(const std::string& sideOutputUrl);
+				std::string getSyncGroupsConfig()const;
+				void setSyncGroupsConfig(const std::string& syncGroupsConfig);
 				std::string getCasterId()const;
 				void setCasterId(const std::string& casterId);
 				std::string getDomainName()const;
@@ -71,6 +73,7 @@ namespace AlibabaCloud
 				std::string transcodeConfig_;
 				std::string casterName_;
 				std::string sideOutputUrl_;
+				std::string syncGroupsConfig_;
 				std::string casterId_;
 				std::string domainName_;
 				long ownerId_;

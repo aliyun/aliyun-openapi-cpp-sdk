@@ -257,6 +257,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DescribeLiveDomainFrameRateAndBitRateDataResult.h
 	include/alibabacloud/live/model/DescribeLiveDomainLimitRequest.h
 	include/alibabacloud/live/model/DescribeLiveDomainLimitResult.h
+	include/alibabacloud/live/model/DescribeLiveDomainLogRequest.h
+	include/alibabacloud/live/model/DescribeLiveDomainLogResult.h
 	include/alibabacloud/live/model/DescribeLiveDomainMappingRequest.h
 	include/alibabacloud/live/model/DescribeLiveDomainMappingResult.h
 	include/alibabacloud/live/model/DescribeLiveDomainOnlineUserNumRequest.h
@@ -405,6 +407,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/ForbidLiveStreamResult.h
 	include/alibabacloud/live/model/ForbidPushStreamRequest.h
 	include/alibabacloud/live/model/ForbidPushStreamResult.h
+	include/alibabacloud/live/model/GetAllCustomTemplatesRequest.h
+	include/alibabacloud/live/model/GetAllCustomTemplatesResult.h
 	include/alibabacloud/live/model/GetCustomTemplateRequest.h
 	include/alibabacloud/live/model/GetCustomTemplateResult.h
 	include/alibabacloud/live/model/GetMultiRateConfigRequest.h
@@ -774,6 +778,8 @@ set(live_src
 	src/model/DescribeLiveDomainFrameRateAndBitRateDataResult.cc
 	src/model/DescribeLiveDomainLimitRequest.cc
 	src/model/DescribeLiveDomainLimitResult.cc
+	src/model/DescribeLiveDomainLogRequest.cc
+	src/model/DescribeLiveDomainLogResult.cc
 	src/model/DescribeLiveDomainMappingRequest.cc
 	src/model/DescribeLiveDomainMappingResult.cc
 	src/model/DescribeLiveDomainOnlineUserNumRequest.cc
@@ -922,6 +928,8 @@ set(live_src
 	src/model/ForbidLiveStreamResult.cc
 	src/model/ForbidPushStreamRequest.cc
 	src/model/ForbidPushStreamResult.cc
+	src/model/GetAllCustomTemplatesRequest.cc
+	src/model/GetAllCustomTemplatesResult.cc
 	src/model/GetCustomTemplateRequest.cc
 	src/model/GetCustomTemplateResult.cc
 	src/model/GetMultiRateConfigRequest.cc

@@ -115,6 +115,17 @@ void SetCasterConfigRequest::setSideOutputUrl(const std::string& sideOutputUrl)
 	setParameter("SideOutputUrl", sideOutputUrl);
 }
 
+std::string SetCasterConfigRequest::getSyncGroupsConfig()const
+{
+	return syncGroupsConfig_;
+}
+
+void SetCasterConfigRequest::setSyncGroupsConfig(const std::string& syncGroupsConfig)
+{
+	syncGroupsConfig_ = syncGroupsConfig;
+	setParameter("SyncGroupsConfig", syncGroupsConfig);
+}
+
 std::string SetCasterConfigRequest::getCasterId()const
 {
 	return casterId_;

@@ -39,6 +39,19 @@ void DescribeCasterConfigResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto allSyncGroupsConfigNode = value["SyncGroupsConfig"]["SyncGroup"];
+	for (auto valueSyncGroupsConfigSyncGroup : allSyncGroupsConfigNode)
+	{
+		SyncGroup syncGroupsConfigObject;
+		if(!valueSyncGroupsConfigSyncGroup["Mode"].isNull())
+			syncGroupsConfigObject.mode = std::stoi(valueSyncGroupsConfigSyncGroup["Mode"].asString());
+		if(!valueSyncGroupsConfigSyncGroup["HostResourceId"].isNull())
+			syncGroupsConfigObject.hostResourceId = valueSyncGroupsConfigSyncGroup["HostResourceId"].asString();
+		auto allResourceIds = value["ResourceIds"]["ResourceId"];
+		for (auto value : allResourceIds)
+			syncGroupsConfigObject.resourceIds.push_back(value.asString());
+		syncGroupsConfig_.push_back(syncGroupsConfigObject);
+	}
 	auto transcodeConfigNode = value["TranscodeConfig"];
 	if(!transcodeConfigNode["CasterTemplate"].isNull())
 		transcodeConfig_.casterTemplate = transcodeConfigNode["CasterTemplate"].asString();
@@ -87,6 +100,36 @@ void DescribeCasterConfigResult::parse(const std::string &payload)
 
 }
 
+int DescribeCasterConfigResult::getChannelEnable()const
+{
+	return channelEnable_;
+}
+
+std::string DescribeCasterConfigResult::getDomainName()const
+{
+	return domainName_;
+}
+
+std::string DescribeCasterConfigResult::getUrgentMaterialId()const
+{
+	return urgentMaterialId_;
+}
+
+DescribeCasterConfigResult::TranscodeConfig DescribeCasterConfigResult::getTranscodeConfig()const
+{
+	return transcodeConfig_;
+}
+
+std::string DescribeCasterConfigResult::getProgramName()const
+{
+	return programName_;
+}
+
+float DescribeCasterConfigResult::getDelay()const
+{
+	return delay_;
+}
+
 std::string DescribeCasterConfigResult::getSideOutputUrl()const
 {
 	return sideOutputUrl_;
@@ -102,29 +145,14 @@ std::string DescribeCasterConfigResult::getCasterName()const
 	return casterName_;
 }
 
-int DescribeCasterConfigResult::getChannelEnable()const
-{
-	return channelEnable_;
-}
-
-std::string DescribeCasterConfigResult::getDomainName()const
-{
-	return domainName_;
-}
-
 int DescribeCasterConfigResult::getProgramEffect()const
 {
 	return programEffect_;
 }
 
-std::string DescribeCasterConfigResult::getUrgentMaterialId()const
+std::vector<DescribeCasterConfigResult::SyncGroup> DescribeCasterConfigResult::getSyncGroupsConfig()const
 {
-	return urgentMaterialId_;
-}
-
-DescribeCasterConfigResult::TranscodeConfig DescribeCasterConfigResult::getTranscodeConfig()const
-{
-	return transcodeConfig_;
+	return syncGroupsConfig_;
 }
 
 std::string DescribeCasterConfigResult::getCasterId()const
@@ -132,18 +160,8 @@ std::string DescribeCasterConfigResult::getCasterId()const
 	return casterId_;
 }
 
-std::string DescribeCasterConfigResult::getProgramName()const
-{
-	return programName_;
-}
-
 DescribeCasterConfigResult::RecordConfig DescribeCasterConfigResult::getRecordConfig()const
 {
 	return recordConfig_;
-}
-
-float DescribeCasterConfigResult::getDelay()const
-{
-	return delay_;
 }
 
