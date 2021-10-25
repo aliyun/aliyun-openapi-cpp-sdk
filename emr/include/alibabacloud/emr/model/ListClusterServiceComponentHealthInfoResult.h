@@ -49,16 +49,24 @@ namespace AlibabaCloud
 						HealthRuleParam healthRuleParam;
 						std::string code;
 					};
+					long createdTime;
+					int goodHealthNum;
+					std::string healthStatus;
+					std::string healthLevel;
+					int agentHeartBeatLostNum;
+					int warningHealthNum;
+					int unknownHealthNum;
+					int disabledHealthNum;
+					int badHealthNum;
+					int noneHealthNum;
 					int stoppedNum;
 					std::vector<HealthInfo::HealthDetail> healthDetailList;
 					int normalNum;
 					int totalNum;
-					long createdTime;
 					std::string serviceName;
+					int stoppedHealthNum;
 					int manualStoppedNum;
 					std::string componentName;
-					std::string healthLevel;
-					int agentHeartBeatLostNum;
 				};
 
 

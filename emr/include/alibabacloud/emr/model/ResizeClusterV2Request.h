@@ -42,6 +42,7 @@ namespace AlibabaCloud
 					int period;
 					int sysDiskCapacity;
 					std::string hostKeyPairName;
+					std::string privatePoolOptionsId;
 					int diskCapacity;
 					std::string sysDiskType;
 					std::string clusterId;
@@ -58,6 +59,7 @@ namespace AlibabaCloud
 					std::string createType;
 					std::string hostPassword;
 					std::string hostGroupType;
+					std::string privatePoolOptionsMatchCriteria;
 				};
 				struct PromotionInfo
 				{
@@ -82,6 +84,8 @@ namespace AlibabaCloud
 				void setVswitchId(const std::string& vswitchId);
 				std::vector<HostComponentInfo> getHostComponentInfo()const;
 				void setHostComponentInfo(const std::vector<HostComponentInfo>& hostComponentInfo);
+				std::string getClickhouseConf()const;
+				void setClickhouseConf(const std::string& clickhouseConf);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				std::vector<HostGroup> getHostGroup()const;
@@ -96,6 +100,7 @@ namespace AlibabaCloud
 				std::string accessKeyId_;
 				std::string vswitchId_;
 				std::vector<HostComponentInfo> hostComponentInfo_;
+				std::string clickhouseConf_;
 				std::string regionId_;
 				std::vector<HostGroup> hostGroup_;
 				std::vector<PromotionInfo> promotionInfo_;

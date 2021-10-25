@@ -79,6 +79,12 @@ void ListClusterHostComponentResult::parse(const std::string &payload)
 			componentListObject.serialNumber = valueComponentListComponent["SerialNumber"].asString();
 		if(!valueComponentListComponent["CommissionStatus"].isNull())
 			componentListObject.commissionStatus = valueComponentListComponent["CommissionStatus"].asString();
+		if(!valueComponentListComponent["State"].isNull())
+			componentListObject.state = valueComponentListComponent["State"].asString();
+		if(!valueComponentListComponent["HealthStatus"].isNull())
+			componentListObject.healthStatus = valueComponentListComponent["HealthStatus"].asString();
+		if(!valueComponentListComponent["HealthReportTime"].isNull())
+			componentListObject.healthReportTime = std::stol(valueComponentListComponent["HealthReportTime"].asString());
 		componentList_.push_back(componentListObject);
 	}
 	if(!value["PageNumber"].isNull())

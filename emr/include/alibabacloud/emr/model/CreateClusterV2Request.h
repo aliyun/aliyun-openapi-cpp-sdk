@@ -67,6 +67,7 @@ namespace AlibabaCloud
 				{
 					int period;
 					int sysDiskCapacity;
+					std::string privatePoolOptionsId;
 					int diskCapacity;
 					std::string sysDiskType;
 					std::string clusterId;
@@ -83,6 +84,7 @@ namespace AlibabaCloud
 					std::string chargeType;
 					std::string createType;
 					std::string hostGroupType;
+					std::string privatePoolOptionsMatchCriteria;
 				};
 				struct ServiceInfo
 				{
@@ -165,6 +167,8 @@ namespace AlibabaCloud
 				void setUseCustomHiveMetaDB(bool useCustomHiveMetaDB);
 				bool getInitCustomHiveMetaDB()const;
 				void setInitCustomHiveMetaDB(bool initCustomHiveMetaDB);
+				std::string getClientToken()const;
+				void setClientToken(const std::string& clientToken);
 				bool getIoOptimized()const;
 				void setIoOptimized(bool ioOptimized);
 				std::string getSecurityGroupId()const;
@@ -234,6 +238,7 @@ namespace AlibabaCloud
 				std::string zoneId_;
 				bool useCustomHiveMetaDB_;
 				bool initCustomHiveMetaDB_;
+				std::string clientToken_;
 				bool ioOptimized_;
 				std::string securityGroupId_;
 				bool easEnable_;

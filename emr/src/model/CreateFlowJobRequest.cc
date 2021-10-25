@@ -46,7 +46,7 @@ std::string CreateFlowJobRequest::getRunConf()const
 void CreateFlowJobRequest::setRunConf(const std::string& runConf)
 {
 	runConf_ = runConf;
-	setParameter("RunConf", runConf);
+	setBodyParameter("RunConf", runConf);
 }
 
 std::string CreateFlowJobRequest::getDescription()const
@@ -57,7 +57,7 @@ std::string CreateFlowJobRequest::getDescription()const
 void CreateFlowJobRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setParameter("Description", description);
+	setBodyParameter("Description", description);
 }
 
 std::string CreateFlowJobRequest::getType()const
@@ -79,7 +79,7 @@ std::string CreateFlowJobRequest::getParamConf()const
 void CreateFlowJobRequest::setParamConf(const std::string& paramConf)
 {
 	paramConf_ = paramConf;
-	setParameter("ParamConf", paramConf);
+	setBodyParameter("ParamConf", paramConf);
 }
 
 std::vector<CreateFlowJobRequest::ResourceList> CreateFlowJobRequest::getResourceList()const
@@ -128,7 +128,7 @@ std::string CreateFlowJobRequest::getMonitorConf()const
 void CreateFlowJobRequest::setMonitorConf(const std::string& monitorConf)
 {
 	monitorConf_ = monitorConf;
-	setParameter("MonitorConf", monitorConf);
+	setBodyParameter("MonitorConf", monitorConf);
 }
 
 std::string CreateFlowJobRequest::getRegionId()const
@@ -183,7 +183,7 @@ std::string CreateFlowJobRequest::getEnvConf()const
 void CreateFlowJobRequest::setEnvConf(const std::string& envConf)
 {
 	envConf_ = envConf;
-	setParameter("EnvConf", envConf);
+	setBodyParameter("EnvConf", envConf);
 }
 
 long CreateFlowJobRequest::getMaxRunningTimeSec()const
@@ -216,7 +216,7 @@ std::string CreateFlowJobRequest::getParams()const
 void CreateFlowJobRequest::setParams(const std::string& params)
 {
 	params_ = params;
-	setParameter("Params", params);
+	setBodyParameter("Params", params);
 }
 
 std::string CreateFlowJobRequest::getCustomVariables()const
@@ -227,7 +227,7 @@ std::string CreateFlowJobRequest::getCustomVariables()const
 void CreateFlowJobRequest::setCustomVariables(const std::string& customVariables)
 {
 	customVariables_ = customVariables;
-	setParameter("CustomVariables", customVariables);
+	setBodyParameter("CustomVariables", customVariables);
 }
 
 long CreateFlowJobRequest::getRetryInterval()const

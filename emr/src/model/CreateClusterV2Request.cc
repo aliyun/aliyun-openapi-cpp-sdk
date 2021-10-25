@@ -392,6 +392,17 @@ void CreateClusterV2Request::setInitCustomHiveMetaDB(bool initCustomHiveMetaDB)
 	setParameter("InitCustomHiveMetaDB", initCustomHiveMetaDB ? "true" : "false");
 }
 
+std::string CreateClusterV2Request::getClientToken()const
+{
+	return clientToken_;
+}
+
+void CreateClusterV2Request::setClientToken(const std::string& clientToken)
+{
+	clientToken_ = clientToken;
+	setParameter("ClientToken", clientToken);
+}
+
 bool CreateClusterV2Request::getIoOptimized()const
 {
 	return ioOptimized_;
@@ -560,6 +571,7 @@ void CreateClusterV2Request::setHostGroup(const std::vector<HostGroup>& hostGrou
 		std::string hostGroupObjStr = "HostGroup." + std::to_string(dep1 + 1);
 		setParameter(hostGroupObjStr + ".Period", std::to_string(hostGroupObj.period));
 		setParameter(hostGroupObjStr + ".SysDiskCapacity", std::to_string(hostGroupObj.sysDiskCapacity));
+		setParameter(hostGroupObjStr + ".PrivatePoolOptionsId", hostGroupObj.privatePoolOptionsId);
 		setParameter(hostGroupObjStr + ".DiskCapacity", std::to_string(hostGroupObj.diskCapacity));
 		setParameter(hostGroupObjStr + ".SysDiskType", hostGroupObj.sysDiskType);
 		setParameter(hostGroupObjStr + ".ClusterId", hostGroupObj.clusterId);
@@ -576,6 +588,7 @@ void CreateClusterV2Request::setHostGroup(const std::vector<HostGroup>& hostGrou
 		setParameter(hostGroupObjStr + ".ChargeType", hostGroupObj.chargeType);
 		setParameter(hostGroupObjStr + ".CreateType", hostGroupObj.createType);
 		setParameter(hostGroupObjStr + ".HostGroupType", hostGroupObj.hostGroupType);
+		setParameter(hostGroupObjStr + ".PrivatePoolOptionsMatchCriteria", hostGroupObj.privatePoolOptionsMatchCriteria);
 	}
 }
 

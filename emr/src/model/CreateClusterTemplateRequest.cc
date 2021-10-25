@@ -318,6 +318,17 @@ void CreateClusterTemplateRequest::setInitCustomHiveMetaDb(bool initCustomHiveMe
 	setParameter("InitCustomHiveMetaDb", initCustomHiveMetaDb ? "true" : "false");
 }
 
+std::string CreateClusterTemplateRequest::getClientToken()const
+{
+	return clientToken_;
+}
+
+void CreateClusterTemplateRequest::setClientToken(const std::string& clientToken)
+{
+	clientToken_ = clientToken;
+	setParameter("ClientToken", clientToken);
+}
+
 bool CreateClusterTemplateRequest::getIoOptimized()const
 {
 	return ioOptimized_;
@@ -441,6 +452,7 @@ void CreateClusterTemplateRequest::setHostGroup(const std::vector<HostGroup>& ho
 		std::string hostGroupObjStr = "HostGroup." + std::to_string(dep1 + 1);
 		setParameter(hostGroupObjStr + ".Period", std::to_string(hostGroupObj.period));
 		setParameter(hostGroupObjStr + ".SysDiskCapacity", std::to_string(hostGroupObj.sysDiskCapacity));
+		setParameter(hostGroupObjStr + ".PrivatePoolOptionsId", hostGroupObj.privatePoolOptionsId);
 		setParameter(hostGroupObjStr + ".DiskCapacity", std::to_string(hostGroupObj.diskCapacity));
 		setParameter(hostGroupObjStr + ".SysDiskType", hostGroupObj.sysDiskType);
 		setParameter(hostGroupObjStr + ".ClusterId", hostGroupObj.clusterId);
@@ -457,6 +469,7 @@ void CreateClusterTemplateRequest::setHostGroup(const std::vector<HostGroup>& ho
 		setParameter(hostGroupObjStr + ".MultiInstanceTypes", hostGroupObj.multiInstanceTypes);
 		setParameter(hostGroupObjStr + ".CreateType", hostGroupObj.createType);
 		setParameter(hostGroupObjStr + ".HostGroupType", hostGroupObj.hostGroupType);
+		setParameter(hostGroupObjStr + ".PrivatePoolOptionsMatchCriteria", hostGroupObj.privatePoolOptionsMatchCriteria);
 	}
 }
 

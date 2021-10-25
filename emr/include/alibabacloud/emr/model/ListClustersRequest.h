@@ -69,6 +69,8 @@ namespace AlibabaCloud
 				void setExpiredTagList(const std::vector<std::string>& expiredTagList);
 				bool getDefaultStatus()const;
 				void setDefaultStatus(bool defaultStatus);
+				std::string getVpcId()const;
+				void setVpcId(const std::string& vpcId);
 				std::string getName()const;
 				void setName(const std::string& name);
 				std::vector<std::string> getClusterTypeList()const;
@@ -89,6 +91,7 @@ namespace AlibabaCloud
 				std::string createType_;
 				std::vector<std::string> expiredTagList_;
 				bool defaultStatus_;
+				std::string vpcId_;
 				std::string name_;
 				std::vector<std::string> clusterTypeList_;
 

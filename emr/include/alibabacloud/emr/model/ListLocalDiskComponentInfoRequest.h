@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_EMR_MODEL_LISTCLUSTEROPERATIONREQUEST_H_
-#define ALIBABACLOUD_EMR_MODEL_LISTCLUSTEROPERATIONREQUEST_H_
+#ifndef ALIBABACLOUD_EMR_MODEL_LISTLOCALDISKCOMPONENTINFOREQUEST_H_
+#define ALIBABACLOUD_EMR_MODEL_LISTLOCALDISKCOMPONENTINFOREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,45 +28,33 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_EMR_EXPORT ListClusterOperationRequest : public RpcServiceRequest
+			class ALIBABACLOUD_EMR_EXPORT ListLocalDiskComponentInfoRequest : public RpcServiceRequest
 			{
 
 			public:
-				ListClusterOperationRequest();
-				~ListClusterOperationRequest();
+				ListLocalDiskComponentInfoRequest();
+				~ListLocalDiskComponentInfoRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getClusterId()const;
 				void setClusterId(const std::string& clusterId);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
-				std::string getOperationId()const;
-				void setOperationId(const std::string& operationId);
-				std::string getServiceName()const;
-				void setServiceName(const std::string& serviceName);
-				std::string getStatus()const;
-				void setStatus(const std::string& status);
 
             private:
 				long resourceOwnerId_;
 				std::string clusterId_;
-				int pageNumber_;
 				std::string accessKeyId_;
+				std::string instanceId_;
 				std::string regionId_;
-				int pageSize_;
-				std::string operationId_;
-				std::string serviceName_;
-				std::string status_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_EMR_MODEL_LISTCLUSTEROPERATIONREQUEST_H_
+#endif // !ALIBABACLOUD_EMR_MODEL_LISTLOCALDISKCOMPONENTINFOREQUEST_H_

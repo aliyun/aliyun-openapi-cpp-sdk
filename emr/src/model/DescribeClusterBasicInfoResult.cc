@@ -138,12 +138,16 @@ void DescribeClusterBasicInfoResult::parse(const std::string &payload)
 		clusterInfo_.autoScalingWithGraceAllowed = clusterInfoNode["AutoScalingWithGraceAllowed"].asString() == "true";
 	if(!clusterInfoNode["ResizeDiskEnable"].isNull())
 		clusterInfo_.resizeDiskEnable = clusterInfoNode["ResizeDiskEnable"].asString() == "true";
+	if(!clusterInfoNode["ResizeClusterEnable"].isNull())
+		clusterInfo_.resizeClusterEnable = clusterInfoNode["ResizeClusterEnable"].asString() == "true";
 	if(!clusterInfoNode["MetaStoreType"].isNull())
 		clusterInfo_.metaStoreType = clusterInfoNode["MetaStoreType"].asString();
 	if(!clusterInfoNode["K8sClusterId"].isNull())
 		clusterInfo_.k8sClusterId = clusterInfoNode["K8sClusterId"].asString();
 	if(!clusterInfoNode["OperationId"].isNull())
 		clusterInfo_.operationId = clusterInfoNode["OperationId"].asString();
+	if(!clusterInfoNode["ClickhouseConf"].isNull())
+		clusterInfo_.clickhouseConf = clusterInfoNode["ClickhouseConf"].asString();
 	auto allGatewayClusterInfoListNode = clusterInfoNode["GatewayClusterInfoList"]["GatewayClusterInfo"];
 	for (auto clusterInfoNodeGatewayClusterInfoListGatewayClusterInfo : allGatewayClusterInfoListNode)
 	{
@@ -175,6 +179,8 @@ void DescribeClusterBasicInfoResult::parse(const std::string &payload)
 		clusterInfo_.relateClusterInfo.clusterName = relateClusterInfoNode["ClusterName"].asString();
 	if(!relateClusterInfoNode["Status"].isNull())
 		clusterInfo_.relateClusterInfo.status = relateClusterInfoNode["Status"].asString();
+	if(!relateClusterInfoNode["ClusterType"].isNull())
+		clusterInfo_.relateClusterInfo.clusterType = relateClusterInfoNode["ClusterType"].asString();
 	auto hostPoolInfoNode = clusterInfoNode["HostPoolInfo"];
 	if(!hostPoolInfoNode["HpBizId"].isNull())
 		clusterInfo_.hostPoolInfo.hpBizId = hostPoolInfoNode["HpBizId"].asString();

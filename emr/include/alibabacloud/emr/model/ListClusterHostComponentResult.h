@@ -36,8 +36,10 @@ namespace AlibabaCloud
 				{
 					std::string status;
 					std::string componentDisplayName;
+					long healthReportTime;
 					std::string publicIp;
 					int memory;
+					std::string healthStatus;
 					int cpu;
 					std::string hostId;
 					std::string hostInstanceId;
@@ -47,6 +49,7 @@ namespace AlibabaCloud
 					std::string serialNumber;
 					std::string serviceName;
 					std::string privateIp;
+					std::string state;
 					std::string serverStatus;
 					bool needRestart;
 					std::string componentName;

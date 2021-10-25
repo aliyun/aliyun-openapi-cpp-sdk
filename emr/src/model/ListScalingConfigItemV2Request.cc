@@ -27,6 +27,17 @@ ListScalingConfigItemV2Request::ListScalingConfigItemV2Request() :
 ListScalingConfigItemV2Request::~ListScalingConfigItemV2Request()
 {}
 
+std::string ListScalingConfigItemV2Request::getConfigItemType()const
+{
+	return configItemType_;
+}
+
+void ListScalingConfigItemV2Request::setConfigItemType(const std::string& configItemType)
+{
+	configItemType_ = configItemType;
+	setParameter("ConfigItemType", configItemType);
+}
+
 long ListScalingConfigItemV2Request::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -36,28 +47,6 @@ void ListScalingConfigItemV2Request::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-int ListScalingConfigItemV2Request::getPageCount()const
-{
-	return pageCount_;
-}
-
-void ListScalingConfigItemV2Request::setPageCount(int pageCount)
-{
-	pageCount_ = pageCount;
-	setParameter("PageCount", std::to_string(pageCount));
-}
-
-std::string ListScalingConfigItemV2Request::getOrderMode()const
-{
-	return orderMode_;
-}
-
-void ListScalingConfigItemV2Request::setOrderMode(const std::string& orderMode)
-{
-	orderMode_ = orderMode;
-	setParameter("OrderMode", orderMode);
 }
 
 int ListScalingConfigItemV2Request::getPageNumber()const
@@ -115,17 +104,6 @@ void ListScalingConfigItemV2Request::setRegionId(const std::string& regionId)
 	setParameter("RegionId", regionId);
 }
 
-int ListScalingConfigItemV2Request::getLimit()const
-{
-	return limit_;
-}
-
-void ListScalingConfigItemV2Request::setLimit(int limit)
-{
-	limit_ = limit;
-	setParameter("Limit", std::to_string(limit));
-}
-
 int ListScalingConfigItemV2Request::getPageSize()const
 {
 	return pageSize_;
@@ -135,38 +113,5 @@ void ListScalingConfigItemV2Request::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
 	setParameter("PageSize", std::to_string(pageSize));
-}
-
-int ListScalingConfigItemV2Request::getCurrentSize()const
-{
-	return currentSize_;
-}
-
-void ListScalingConfigItemV2Request::setCurrentSize(int currentSize)
-{
-	currentSize_ = currentSize;
-	setParameter("CurrentSize", std::to_string(currentSize));
-}
-
-std::string ListScalingConfigItemV2Request::getOrderField()const
-{
-	return orderField_;
-}
-
-void ListScalingConfigItemV2Request::setOrderField(const std::string& orderField)
-{
-	orderField_ = orderField;
-	setParameter("OrderField", orderField);
-}
-
-std::string ListScalingConfigItemV2Request::getConfigItemType()const
-{
-	return configItemType_;
-}
-
-void ListScalingConfigItemV2Request::setConfigItemType(const std::string& configItemType)
-{
-	configItemType_ = configItemType;
-	setParameter("ConfigItemType", configItemType);
 }
 

@@ -104,6 +104,17 @@ void ListEmrAvailableResourceRequest::setInstanceType(const std::string& instanc
 	setParameter("InstanceType", instanceType);
 }
 
+std::string ListEmrAvailableResourceRequest::getEmrVersion()const
+{
+	return emrVersion_;
+}
+
+void ListEmrAvailableResourceRequest::setEmrVersion(const std::string& emrVersion)
+{
+	emrVersion_ = emrVersion;
+	setParameter("EmrVersion", emrVersion);
+}
+
 std::string ListEmrAvailableResourceRequest::getInstanceChargeType()const
 {
 	return instanceChargeType_;

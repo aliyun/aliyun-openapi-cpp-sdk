@@ -63,6 +63,8 @@ void ListClusterInstalledServiceResult::parse(const std::string &payload)
 			clusterInstalledServiceListObject.abnormalNum = std::stoi(valueClusterInstalledServiceListClusterInstalledService["abnormalNum"].asString());
 		if(!valueClusterInstalledServiceListClusterInstalledService["comment"].isNull())
 			clusterInstalledServiceListObject.comment = valueClusterInstalledServiceListClusterInstalledService["comment"].asString();
+		if(!valueClusterInstalledServiceListClusterInstalledService["State"].isNull())
+			clusterInstalledServiceListObject.state = valueClusterInstalledServiceListClusterInstalledService["State"].asString();
 		auto allServiceActionListNode = valueClusterInstalledServiceListClusterInstalledService["ServiceActionList"]["ServiceAction"];
 		for (auto valueClusterInstalledServiceListClusterInstalledServiceServiceActionListServiceAction : allServiceActionListNode)
 		{

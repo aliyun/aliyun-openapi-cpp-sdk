@@ -35,12 +35,10 @@ namespace AlibabaCloud
 				ListScalingConfigItemV2Request();
 				~ListScalingConfigItemV2Request();
 
+				std::string getConfigItemType()const;
+				void setConfigItemType(const std::string& configItemType);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				int getPageCount()const;
-				void setPageCount(int pageCount);
-				std::string getOrderMode()const;
-				void setOrderMode(const std::string& orderMode);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
 				std::string getAccessKeyId()const;
@@ -51,31 +49,18 @@ namespace AlibabaCloud
 				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				int getLimit()const;
-				void setLimit(int limit);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
-				int getCurrentSize()const;
-				void setCurrentSize(int currentSize);
-				std::string getOrderField()const;
-				void setOrderField(const std::string& orderField);
-				std::string getConfigItemType()const;
-				void setConfigItemType(const std::string& configItemType);
 
             private:
+				std::string configItemType_;
 				long resourceOwnerId_;
-				int pageCount_;
-				std::string orderMode_;
 				int pageNumber_;
 				std::string accessKeyId_;
 				std::string scalingGroupBizId_;
 				std::string resourceGroupId_;
 				std::string regionId_;
-				int limit_;
 				int pageSize_;
-				int currentSize_;
-				std::string orderField_;
-				std::string configItemType_;
 
 			};
 		}

@@ -49,6 +49,8 @@ namespace AlibabaCloud
 				void setRegionId(const std::string& regionId);
 				std::string getInstanceType()const;
 				void setInstanceType(const std::string& instanceType);
+				std::string getEmrVersion()const;
+				void setEmrVersion(const std::string& emrVersion);
 				std::string getInstanceChargeType()const;
 				void setInstanceChargeType(const std::string& instanceChargeType);
 				std::string getClusterId()const;
@@ -74,6 +76,7 @@ namespace AlibabaCloud
 				std::string resourceGroupId_;
 				std::string regionId_;
 				std::string instanceType_;
+				std::string emrVersion_;
 				std::string instanceChargeType_;
 				std::string clusterId_;
 				std::string destinationResource_;

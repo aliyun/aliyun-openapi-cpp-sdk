@@ -67,6 +67,8 @@ void ListClusterServiceResult::parse(const std::string &payload)
 			clusterServiceListObject.stoppedNum = std::stoi(valueClusterServiceListClusterService["StoppedNum"].asString());
 		if(!valueClusterServiceListClusterService["NeedRestartNum"].isNull())
 			clusterServiceListObject.needRestartNum = std::stoi(valueClusterServiceListClusterService["NeedRestartNum"].asString());
+		if(!valueClusterServiceListClusterService["State"].isNull())
+			clusterServiceListObject.state = valueClusterServiceListClusterService["State"].asString();
 		auto allServiceActionListNode = valueClusterServiceListClusterService["ServiceActionList"]["ServiceAction"];
 		for (auto valueClusterServiceListClusterServiceServiceActionListServiceAction : allServiceActionListNode)
 		{

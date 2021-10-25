@@ -263,6 +263,8 @@ void DescribeClusterV2Result::parse(const std::string &payload)
 		clusterInfo_.relateClusterInfo.clusterName = relateClusterInfoNode["ClusterName"].asString();
 	if(!relateClusterInfoNode["Status"].isNull())
 		clusterInfo_.relateClusterInfo.status = relateClusterInfoNode["Status"].asString();
+	if(!relateClusterInfoNode["ClusterType"].isNull())
+		clusterInfo_.relateClusterInfo.clusterType = relateClusterInfoNode["ClusterType"].asString();
 	auto hostPoolInfoNode = clusterInfoNode["HostPoolInfo"];
 	if(!hostPoolInfoNode["HpBizId"].isNull())
 		clusterInfo_.hostPoolInfo.hpBizId = hostPoolInfoNode["HpBizId"].asString();

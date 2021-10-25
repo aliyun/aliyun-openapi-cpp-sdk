@@ -101,6 +101,17 @@ void ResizeClusterV2Request::setHostComponentInfo(const std::vector<HostComponen
 	}
 }
 
+std::string ResizeClusterV2Request::getClickhouseConf()const
+{
+	return clickhouseConf_;
+}
+
+void ResizeClusterV2Request::setClickhouseConf(const std::string& clickhouseConf)
+{
+	clickhouseConf_ = clickhouseConf;
+	setParameter("ClickhouseConf", clickhouseConf);
+}
+
 std::string ResizeClusterV2Request::getRegionId()const
 {
 	return regionId_;
@@ -126,6 +137,7 @@ void ResizeClusterV2Request::setHostGroup(const std::vector<HostGroup>& hostGrou
 		setParameter(hostGroupObjStr + ".Period", std::to_string(hostGroupObj.period));
 		setParameter(hostGroupObjStr + ".SysDiskCapacity", std::to_string(hostGroupObj.sysDiskCapacity));
 		setParameter(hostGroupObjStr + ".HostKeyPairName", hostGroupObj.hostKeyPairName);
+		setParameter(hostGroupObjStr + ".PrivatePoolOptionsId", hostGroupObj.privatePoolOptionsId);
 		setParameter(hostGroupObjStr + ".DiskCapacity", std::to_string(hostGroupObj.diskCapacity));
 		setParameter(hostGroupObjStr + ".SysDiskType", hostGroupObj.sysDiskType);
 		setParameter(hostGroupObjStr + ".ClusterId", hostGroupObj.clusterId);
@@ -142,6 +154,7 @@ void ResizeClusterV2Request::setHostGroup(const std::vector<HostGroup>& hostGrou
 		setParameter(hostGroupObjStr + ".CreateType", hostGroupObj.createType);
 		setParameter(hostGroupObjStr + ".HostPassword", hostGroupObj.hostPassword);
 		setParameter(hostGroupObjStr + ".HostGroupType", hostGroupObj.hostGroupType);
+		setParameter(hostGroupObjStr + ".PrivatePoolOptionsMatchCriteria", hostGroupObj.privatePoolOptionsMatchCriteria);
 	}
 }
 

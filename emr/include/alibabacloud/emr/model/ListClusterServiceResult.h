@@ -51,6 +51,7 @@ namespace AlibabaCloud
 					std::string serviceName;
 					std::string serviceStatus;
 					int abnormalNum;
+					std::string state;
 					std::string serviceVersion;
 					bool installStatus;
 					std::string needRestartInfo;

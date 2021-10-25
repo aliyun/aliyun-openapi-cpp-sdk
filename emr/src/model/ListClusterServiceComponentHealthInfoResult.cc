@@ -61,6 +61,22 @@ void ListClusterServiceComponentHealthInfoResult::parse(const std::string &paylo
 			healthInfoListObject.agentHeartBeatLostNum = std::stoi(valueHealthInfoListHealthInfo["AgentHeartBeatLostNum"].asString());
 		if(!valueHealthInfoListHealthInfo["CreatedTime"].isNull())
 			healthInfoListObject.createdTime = std::stol(valueHealthInfoListHealthInfo["CreatedTime"].asString());
+		if(!valueHealthInfoListHealthInfo["HealthStatus"].isNull())
+			healthInfoListObject.healthStatus = valueHealthInfoListHealthInfo["HealthStatus"].asString();
+		if(!valueHealthInfoListHealthInfo["StoppedHealthNum"].isNull())
+			healthInfoListObject.stoppedHealthNum = std::stoi(valueHealthInfoListHealthInfo["StoppedHealthNum"].asString());
+		if(!valueHealthInfoListHealthInfo["GoodHealthNum"].isNull())
+			healthInfoListObject.goodHealthNum = std::stoi(valueHealthInfoListHealthInfo["GoodHealthNum"].asString());
+		if(!valueHealthInfoListHealthInfo["WarningHealthNum"].isNull())
+			healthInfoListObject.warningHealthNum = std::stoi(valueHealthInfoListHealthInfo["WarningHealthNum"].asString());
+		if(!valueHealthInfoListHealthInfo["BadHealthNum"].isNull())
+			healthInfoListObject.badHealthNum = std::stoi(valueHealthInfoListHealthInfo["BadHealthNum"].asString());
+		if(!valueHealthInfoListHealthInfo["UnknownHealthNum"].isNull())
+			healthInfoListObject.unknownHealthNum = std::stoi(valueHealthInfoListHealthInfo["UnknownHealthNum"].asString());
+		if(!valueHealthInfoListHealthInfo["DisabledHealthNum"].isNull())
+			healthInfoListObject.disabledHealthNum = std::stoi(valueHealthInfoListHealthInfo["DisabledHealthNum"].asString());
+		if(!valueHealthInfoListHealthInfo["NoneHealthNum"].isNull())
+			healthInfoListObject.noneHealthNum = std::stoi(valueHealthInfoListHealthInfo["NoneHealthNum"].asString());
 		auto allHealthDetailListNode = valueHealthInfoListHealthInfo["HealthDetailList"]["HealthDetail"];
 		for (auto valueHealthInfoListHealthInfoHealthDetailListHealthDetail : allHealthDetailListNode)
 		{

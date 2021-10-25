@@ -38,6 +38,17 @@ void ListClusterServiceComponentHealthInfoRequest::setResourceOwnerId(long resou
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string ListClusterServiceComponentHealthInfoRequest::getComponentName()const
+{
+	return componentName_;
+}
+
+void ListClusterServiceComponentHealthInfoRequest::setComponentName(const std::string& componentName)
+{
+	componentName_ = componentName;
+	setParameter("ComponentName", componentName);
+}
+
 std::string ListClusterServiceComponentHealthInfoRequest::getClusterId()const
 {
 	return clusterId_;

@@ -93,6 +93,17 @@ void ListClusterOperationRequest::setPageSize(int pageSize)
 	setParameter("PageSize", std::to_string(pageSize));
 }
 
+std::string ListClusterOperationRequest::getOperationId()const
+{
+	return operationId_;
+}
+
+void ListClusterOperationRequest::setOperationId(const std::string& operationId)
+{
+	operationId_ = operationId;
+	setParameter("OperationId", operationId);
+}
+
 std::string ListClusterOperationRequest::getServiceName()const
 {
 	return serviceName_;

@@ -39,6 +39,7 @@ namespace AlibabaCloud
 						std::string status;
 						std::string clusterId;
 						std::string clusterName;
+						std::string clusterType;
 					};
 					struct HostPoolInfo
 					{
@@ -96,6 +97,7 @@ namespace AlibabaCloud
 					std::string k8sClusterId;
 					std::string name;
 					bool highAvailabilityEnable;
+					std::string clickhouseConf;
 					std::string autoScalingVersion;
 					long expiredTime;
 					std::string createType;
@@ -117,6 +119,7 @@ namespace AlibabaCloud
 					std::string vpcId;
 					SoftwareInfo softwareInfo;
 					std::string securityGroupName;
+					bool resizeClusterEnable;
 					bool logEnable;
 					int masterNodeInService;
 					RelateClusterInfo relateClusterInfo;

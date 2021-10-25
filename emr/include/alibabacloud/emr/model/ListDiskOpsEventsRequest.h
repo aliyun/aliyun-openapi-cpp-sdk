@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_EMR_MODEL_LISTCLUSTEROPERATIONREQUEST_H_
-#define ALIBABACLOUD_EMR_MODEL_LISTCLUSTEROPERATIONREQUEST_H_
+#ifndef ALIBABACLOUD_EMR_MODEL_LISTDISKOPSEVENTSREQUEST_H_
+#define ALIBABACLOUD_EMR_MODEL_LISTDISKOPSEVENTSREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,17 +28,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_EMR_EXPORT ListClusterOperationRequest : public RpcServiceRequest
+			class ALIBABACLOUD_EMR_EXPORT ListDiskOpsEventsRequest : public RpcServiceRequest
 			{
 
 			public:
-				ListClusterOperationRequest();
-				~ListClusterOperationRequest();
+				ListDiskOpsEventsRequest();
+				~ListDiskOpsEventsRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				long getEndTime()const;
+				void setEndTime(long endTime);
 				std::string getClusterId()const;
 				void setClusterId(const std::string& clusterId);
+				long getStartTime()const;
+				void setStartTime(long startTime);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
 				std::string getAccessKeyId()const;
@@ -47,26 +51,19 @@ namespace AlibabaCloud
 				void setRegionId(const std::string& regionId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
-				std::string getOperationId()const;
-				void setOperationId(const std::string& operationId);
-				std::string getServiceName()const;
-				void setServiceName(const std::string& serviceName);
-				std::string getStatus()const;
-				void setStatus(const std::string& status);
 
             private:
 				long resourceOwnerId_;
+				long endTime_;
 				std::string clusterId_;
+				long startTime_;
 				int pageNumber_;
 				std::string accessKeyId_;
 				std::string regionId_;
 				int pageSize_;
-				std::string operationId_;
-				std::string serviceName_;
-				std::string status_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_EMR_MODEL_LISTCLUSTEROPERATIONREQUEST_H_
+#endif // !ALIBABACLOUD_EMR_MODEL_LISTDISKOPSEVENTSREQUEST_H_

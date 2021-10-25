@@ -39,6 +39,7 @@ namespace AlibabaCloud
 						std::string status;
 						std::string clusterId;
 						std::string clusterName;
+						std::string clusterType;
 					};
 					struct HostPoolInfo
 					{

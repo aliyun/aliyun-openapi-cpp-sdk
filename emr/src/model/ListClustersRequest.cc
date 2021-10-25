@@ -190,6 +190,17 @@ void ListClustersRequest::setDefaultStatus(bool defaultStatus)
 	setParameter("DefaultStatus", defaultStatus ? "true" : "false");
 }
 
+std::string ListClustersRequest::getVpcId()const
+{
+	return vpcId_;
+}
+
+void ListClustersRequest::setVpcId(const std::string& vpcId)
+{
+	vpcId_ = vpcId;
+	setParameter("VpcId", vpcId);
+}
+
 std::string ListClustersRequest::getName()const
 {
 	return name_;
