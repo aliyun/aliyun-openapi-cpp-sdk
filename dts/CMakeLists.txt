@@ -39,6 +39,8 @@ set(dts_public_header_model
 	include/alibabacloud/dts/model/ConfigureSynchronizationJobAlertResult.h
 	include/alibabacloud/dts/model/ConfigureSynchronizationJobReplicatorCompareRequest.h
 	include/alibabacloud/dts/model/ConfigureSynchronizationJobReplicatorCompareResult.h
+	include/alibabacloud/dts/model/CountJobByConditionRequest.h
+	include/alibabacloud/dts/model/CountJobByConditionResult.h
 	include/alibabacloud/dts/model/CreateConsumerChannelRequest.h
 	include/alibabacloud/dts/model/CreateConsumerChannelResult.h
 	include/alibabacloud/dts/model/CreateConsumerGroupRequest.h
@@ -113,8 +115,8 @@ set(dts_public_header_model
 	include/alibabacloud/dts/model/DescribeSynchronizationJobsResult.h
 	include/alibabacloud/dts/model/DescribeSynchronizationObjectModifyStatusRequest.h
 	include/alibabacloud/dts/model/DescribeSynchronizationObjectModifyStatusResult.h
-	include/alibabacloud/dts/model/IgnoreJobDetailRequest.h
-	include/alibabacloud/dts/model/IgnoreJobDetailResult.h
+	include/alibabacloud/dts/model/InitDtsRdsInstanceRequest.h
+	include/alibabacloud/dts/model/InitDtsRdsInstanceResult.h
 	include/alibabacloud/dts/model/ListTagResourcesRequest.h
 	include/alibabacloud/dts/model/ListTagResourcesResult.h
 	include/alibabacloud/dts/model/ModifyConsumerChannelRequest.h
@@ -157,8 +159,6 @@ set(dts_public_header_model
 	include/alibabacloud/dts/model/StopDtsJobResult.h
 	include/alibabacloud/dts/model/StopMigrationJobRequest.h
 	include/alibabacloud/dts/model/StopMigrationJobResult.h
-	include/alibabacloud/dts/model/SummaryJobDetailRequest.h
-	include/alibabacloud/dts/model/SummaryJobDetailResult.h
 	include/alibabacloud/dts/model/SuspendDtsJobRequest.h
 	include/alibabacloud/dts/model/SuspendDtsJobResult.h
 	include/alibabacloud/dts/model/SuspendMigrationJobRequest.h
@@ -200,6 +200,8 @@ set(dts_src
 	src/model/ConfigureSynchronizationJobAlertResult.cc
 	src/model/ConfigureSynchronizationJobReplicatorCompareRequest.cc
 	src/model/ConfigureSynchronizationJobReplicatorCompareResult.cc
+	src/model/CountJobByConditionRequest.cc
+	src/model/CountJobByConditionResult.cc
 	src/model/CreateConsumerChannelRequest.cc
 	src/model/CreateConsumerChannelResult.cc
 	src/model/CreateConsumerGroupRequest.cc
@@ -274,8 +276,8 @@ set(dts_src
 	src/model/DescribeSynchronizationJobsResult.cc
 	src/model/DescribeSynchronizationObjectModifyStatusRequest.cc
 	src/model/DescribeSynchronizationObjectModifyStatusResult.cc
-	src/model/IgnoreJobDetailRequest.cc
-	src/model/IgnoreJobDetailResult.cc
+	src/model/InitDtsRdsInstanceRequest.cc
+	src/model/InitDtsRdsInstanceResult.cc
 	src/model/ListTagResourcesRequest.cc
 	src/model/ListTagResourcesResult.cc
 	src/model/ModifyConsumerChannelRequest.cc
@@ -318,8 +320,6 @@ set(dts_src
 	src/model/StopDtsJobResult.cc
 	src/model/StopMigrationJobRequest.cc
 	src/model/StopMigrationJobResult.cc
-	src/model/SummaryJobDetailRequest.cc
-	src/model/SummaryJobDetailResult.cc
 	src/model/SuspendDtsJobRequest.cc
 	src/model/SuspendDtsJobResult.cc
 	src/model/SuspendMigrationJobRequest.cc

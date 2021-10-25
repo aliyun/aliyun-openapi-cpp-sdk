@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DTS_MODEL_IGNOREJOBDETAILRESULT_H_
-#define ALIBABACLOUD_DTS_MODEL_IGNOREJOBDETAILRESULT_H_
+#ifndef ALIBABACLOUD_DTS_MODEL_INITDTSRDSINSTANCERESULT_H_
+#define ALIBABACLOUD_DTS_MODEL_INITDTSRDSINSTANCERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,27 +29,33 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DTS_EXPORT IgnoreJobDetailResult : public ServiceResult
+			class ALIBABACLOUD_DTS_EXPORT InitDtsRdsInstanceResult : public ServiceResult
 			{
 			public:
 
 
-				IgnoreJobDetailResult();
-				explicit IgnoreJobDetailResult(const std::string &payload);
-				~IgnoreJobDetailResult();
-				int getHttpStatusCode()const;
-				std::string getCode()const;
-				bool getSuccess()const;
+				InitDtsRdsInstanceResult();
+				explicit InitDtsRdsInstanceResult(const std::string &payload);
+				~InitDtsRdsInstanceResult();
+				std::string getHttpStatusCode()const;
+				std::string getAdminAccount()const;
+				std::string getErrMessage()const;
+				std::string getSuccess()const;
+				std::string getAdminPassword()const;
+				std::string getErrCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int httpStatusCode_;
-				std::string code_;
-				bool success_;
+				std::string httpStatusCode_;
+				std::string adminAccount_;
+				std::string errMessage_;
+				std::string success_;
+				std::string adminPassword_;
+				std::string errCode_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DTS_MODEL_IGNOREJOBDETAILRESULT_H_
+#endif // !ALIBABACLOUD_DTS_MODEL_INITDTSRDSINSTANCERESULT_H_

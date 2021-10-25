@@ -46,6 +46,7 @@ namespace AlibabaCloud
 						std::string status;
 						std::string progress;
 						std::string percent;
+						bool needUpgrade;
 						std::string errorMessage;
 					};
 					struct DataEtlStatus
@@ -108,6 +109,7 @@ namespace AlibabaCloud
 							std::string status;
 							std::string progress;
 							std::string percent;
+							bool needUpgrade;
 							std::string errorMessage;
 						};
 						struct DestinationEndpoint3
@@ -180,12 +182,12 @@ namespace AlibabaCloud
 						StructureInitializationStatus8 structureInitializationStatus8;
 						std::string dtsInstanceID;
 						DestinationEndpoint3 destinationEndpoint3;
-						int delay;
+						long delay;
 						Performance5 performance5;
-						std::string checkpoint;
 						std::string dtsJobClass;
-						std::string dtsJobDirection;
+						std::string checkpoint;
 						std::string dtsJobId;
+						std::string dtsJobDirection;
 						DataInitializationStatus1 dataInitializationStatus1;
 						std::string errorMessage;
 						std::string expireTime;
@@ -212,6 +214,14 @@ namespace AlibabaCloud
 						std::string percent;
 						std::string errorMessage;
 					};
+					struct RetryState
+					{
+						int maxRetryTime;
+						std::string retryTarget;
+						int retryCount;
+						int retryTime;
+						std::string errMessage;
+					};
 					struct DtsTag
 					{
 						std::string tagKey;
@@ -222,7 +232,7 @@ namespace AlibabaCloud
 					std::string endTimestamp;
 					std::string dtsInstanceID;
 					MigrationMode migrationMode;
-					int delay;
+					long delay;
 					std::string appName;
 					std::string dtsJobClass;
 					std::string dtsJobId;
@@ -235,8 +245,8 @@ namespace AlibabaCloud
 					ReverseJob reverseJob;
 					std::string payType;
 					PrecheckStatus precheckStatus;
-					std::string checkpoint;
 					std::string consumptionCheckpoint;
+					std::string checkpoint;
 					std::string dtsJobDirection;
 					DestinationEndpoint destinationEndpoint;
 					std::string consumptionClient;
@@ -246,6 +256,7 @@ namespace AlibabaCloud
 					std::string expireTime;
 					std::string beginTimestamp;
 					StructureInitializationStatus structureInitializationStatus;
+					RetryState retryState;
 					std::string reserved;
 				};
 

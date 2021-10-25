@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DTS_MODEL_SUMMARYJOBDETAILREQUEST_H_
-#define ALIBABACLOUD_DTS_MODEL_SUMMARYJOBDETAILREQUEST_H_
+#ifndef ALIBABACLOUD_DTS_MODEL_INITDTSRDSINSTANCEREQUEST_H_
+#define ALIBABACLOUD_DTS_MODEL_INITDTSRDSINSTANCEREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,33 +28,39 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DTS_EXPORT SummaryJobDetailRequest : public RpcServiceRequest
+			class ALIBABACLOUD_DTS_EXPORT InitDtsRdsInstanceRequest : public RpcServiceRequest
 			{
 
 			public:
-				SummaryJobDetailRequest();
-				~SummaryJobDetailRequest();
+				InitDtsRdsInstanceRequest();
+				~InitDtsRdsInstanceRequest();
 
+				std::string getEndpointInstanceId()const;
+				void setEndpointInstanceId(const std::string& endpointInstanceId);
+				std::string getEndpointRegion()const;
+				void setEndpointRegion(const std::string& endpointRegion);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				std::string getJobCode()const;
-				void setJobCode(const std::string& jobCode);
-				std::string getDtsJobId()const;
-				void setDtsJobId(const std::string& dtsJobId);
+				std::string getEndpointCenId()const;
+				void setEndpointCenId(const std::string& endpointCenId);
+				std::string getEndpointInstanceType()const;
+				void setEndpointInstanceType(const std::string& endpointInstanceType);
 				std::string getDtsInstanceId()const;
 				void setDtsInstanceId(const std::string& dtsInstanceId);
-				std::string getSynchronizationDirection()const;
-				void setSynchronizationDirection(const std::string& synchronizationDirection);
 
             private:
+				std::string endpointInstanceId_;
+				std::string endpointRegion_;
+				std::string accessKeyId_;
 				std::string regionId_;
-				std::string jobCode_;
-				std::string dtsJobId_;
+				std::string endpointCenId_;
+				std::string endpointInstanceType_;
 				std::string dtsInstanceId_;
-				std::string synchronizationDirection_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DTS_MODEL_SUMMARYJOBDETAILREQUEST_H_
+#endif // !ALIBABACLOUD_DTS_MODEL_INITDTSRDSINSTANCEREQUEST_H_

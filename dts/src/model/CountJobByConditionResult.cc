@@ -14,100 +14,79 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/dts/model/TransferInstanceClassResult.h>
+#include <alibabacloud/dts/model/CountJobByConditionResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Dts;
 using namespace AlibabaCloud::Dts::Model;
 
-TransferInstanceClassResult::TransferInstanceClassResult() :
+CountJobByConditionResult::CountJobByConditionResult() :
 	ServiceResult()
 {}
 
-TransferInstanceClassResult::TransferInstanceClassResult(const std::string &payload) :
+CountJobByConditionResult::CountJobByConditionResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-TransferInstanceClassResult::~TransferInstanceClassResult()
+CountJobByConditionResult::~CountJobByConditionResult()
 {}
 
-void TransferInstanceClassResult::parse(const std::string &payload)
+void CountJobByConditionResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["EndTime"].isNull())
-		endTime_ = value["EndTime"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
-	if(!value["DtsJobId"].isNull())
-		dtsJobId_ = value["DtsJobId"].asString();
 	if(!value["ErrCode"].isNull())
 		errCode_ = value["ErrCode"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
-	if(!value["ChargeType"].isNull())
-		chargeType_ = value["ChargeType"].asString();
 	if(!value["ErrMessage"].isNull())
 		errMessage_ = value["ErrMessage"].asString();
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
 	if(!value["DynamicMessage"].isNull())
 		dynamicMessage_ = value["DynamicMessage"].asString();
-	if(!value["InstanceId"].isNull())
-		instanceId_ = value["InstanceId"].asString();
+	if(!value["DynamicCode"].isNull())
+		dynamicCode_ = value["DynamicCode"].asString();
+	if(!value["TotalRecordCount"].isNull())
+		totalRecordCount_ = std::stol(value["TotalRecordCount"].asString());
 
 }
 
-std::string TransferInstanceClassResult::getDtsJobId()const
+long CountJobByConditionResult::getTotalRecordCount()const
 {
-	return dtsJobId_;
+	return totalRecordCount_;
 }
 
-std::string TransferInstanceClassResult::getEndTime()const
-{
-	return endTime_;
-}
-
-std::string TransferInstanceClassResult::getInstanceId()const
-{
-	return instanceId_;
-}
-
-std::string TransferInstanceClassResult::getChargeType()const
-{
-	return chargeType_;
-}
-
-int TransferInstanceClassResult::getHttpStatusCode()const
+int CountJobByConditionResult::getHttpStatusCode()const
 {
 	return httpStatusCode_;
 }
 
-std::string TransferInstanceClassResult::getDynamicMessage()const
+std::string CountJobByConditionResult::getDynamicCode()const
+{
+	return dynamicCode_;
+}
+
+std::string CountJobByConditionResult::getDynamicMessage()const
 {
 	return dynamicMessage_;
 }
 
-std::string TransferInstanceClassResult::getErrMessage()const
+std::string CountJobByConditionResult::getErrMessage()const
 {
 	return errMessage_;
 }
 
-std::string TransferInstanceClassResult::getCode()const
-{
-	return code_;
-}
-
-bool TransferInstanceClassResult::getSuccess()const
+bool CountJobByConditionResult::getSuccess()const
 {
 	return success_;
 }
 
-std::string TransferInstanceClassResult::getErrCode()const
+std::string CountJobByConditionResult::getErrCode()const
 {
 	return errCode_;
 }

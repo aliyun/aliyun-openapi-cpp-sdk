@@ -89,8 +89,8 @@ namespace AlibabaCloud
 				std::string getDynamicMessage()const;
 				std::string getDtsInstanceID()const;
 				MigrationMode getMigrationMode()const;
+				long getDelay()const;
 				bool getSuccess()const;
-				int getDelay()const;
 				std::string getAppName()const;
 				SubscriptionDataType getSubscriptionDataType()const;
 				std::string getDtsJobClass()const;
@@ -107,7 +107,7 @@ namespace AlibabaCloud
 				int getCode()const;
 				std::string getErrCode()const;
 				std::string getGroupId()const;
-				int getCheckpoint()const;
+				long getCheckpoint()const;
 				std::string getConsumptionCheckpoint()const;
 				std::string getDtsJobDirection()const;
 				int getDatabaseCount()const;
@@ -115,8 +115,8 @@ namespace AlibabaCloud
 				std::string getSubscribeTopic()const;
 				std::string getConsumptionClient()const;
 				SourceEndpoint getSourceEndpoint()const;
-				std::string getExpireTime()const;
 				std::string getErrorMessage()const;
+				std::string getExpireTime()const;
 				std::string getBeginTimestamp()const;
 				std::string getSynchronizationDirection()const;
 				std::string getReserved()const;
@@ -130,8 +130,8 @@ namespace AlibabaCloud
 				std::string dynamicMessage_;
 				std::string dtsInstanceID_;
 				MigrationMode migrationMode_;
+				long delay_;
 				bool success_;
-				int delay_;
 				std::string appName_;
 				SubscriptionDataType subscriptionDataType_;
 				std::string dtsJobClass_;
@@ -148,7 +148,7 @@ namespace AlibabaCloud
 				int code_;
 				std::string errCode_;
 				std::string groupId_;
-				int checkpoint_;
+				long checkpoint_;
 				std::string consumptionCheckpoint_;
 				std::string dtsJobDirection_;
 				int databaseCount_;
@@ -156,8 +156,8 @@ namespace AlibabaCloud
 				std::string subscribeTopic_;
 				std::string consumptionClient_;
 				SourceEndpoint sourceEndpoint_;
-				std::string expireTime_;
 				std::string errorMessage_;
+				std::string expireTime_;
 				std::string beginTimestamp_;
 				std::string synchronizationDirection_;
 				std::string reserved_;
