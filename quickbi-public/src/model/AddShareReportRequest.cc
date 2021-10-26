@@ -1,0 +1,117 @@
+/*
+ * Copyright 2009-2017 Alibaba Cloud All rights reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <alibabacloud/quickbi-public/model/AddShareReportRequest.h>
+
+using AlibabaCloud::Quickbi_public::Model::AddShareReportRequest;
+
+AddShareReportRequest::AddShareReportRequest() :
+	RpcServiceRequest("quickbi-public", "2020-08-04", "AddShareReport")
+{
+	setMethod(HttpRequest::Method::Post);
+}
+
+AddShareReportRequest::~AddShareReportRequest()
+{}
+
+int AddShareReportRequest::getShareToType()const
+{
+	return shareToType_;
+}
+
+void AddShareReportRequest::setShareToType(int shareToType)
+{
+	shareToType_ = shareToType;
+	setParameter("ShareToType", std::to_string(shareToType));
+}
+
+std::string AddShareReportRequest::getWorksId()const
+{
+	return worksId_;
+}
+
+void AddShareReportRequest::setWorksId(const std::string& worksId)
+{
+	worksId_ = worksId;
+	setParameter("WorksId", worksId);
+}
+
+std::string AddShareReportRequest::getClientToken()const
+{
+	return clientToken_;
+}
+
+void AddShareReportRequest::setClientToken(const std::string& clientToken)
+{
+	clientToken_ = clientToken;
+	setParameter("ClientToken", clientToken);
+}
+
+std::string AddShareReportRequest::getShareToId()const
+{
+	return shareToId_;
+}
+
+void AddShareReportRequest::setShareToId(const std::string& shareToId)
+{
+	shareToId_ = shareToId;
+	setParameter("ShareToId", shareToId);
+}
+
+std::string AddShareReportRequest::getAccessPoint()const
+{
+	return accessPoint_;
+}
+
+void AddShareReportRequest::setAccessPoint(const std::string& accessPoint)
+{
+	accessPoint_ = accessPoint;
+	setParameter("AccessPoint", accessPoint);
+}
+
+int AddShareReportRequest::getAuthPoint()const
+{
+	return authPoint_;
+}
+
+void AddShareReportRequest::setAuthPoint(int authPoint)
+{
+	authPoint_ = authPoint;
+	setParameter("AuthPoint", std::to_string(authPoint));
+}
+
+std::string AddShareReportRequest::getSignType()const
+{
+	return signType_;
+}
+
+void AddShareReportRequest::setSignType(const std::string& signType)
+{
+	signType_ = signType;
+	setParameter("SignType", signType);
+}
+
+long AddShareReportRequest::getExpireDate()const
+{
+	return expireDate_;
+}
+
+void AddShareReportRequest::setExpireDate(long expireDate)
+{
+	expireDate_ = expireDate;
+	setParameter("ExpireDate", std::to_string(expireDate));
+}
+
