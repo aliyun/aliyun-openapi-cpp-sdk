@@ -41,6 +41,10 @@ namespace AlibabaCloud
 				void setVoiceCodeParam(const std::string& voiceCodeParam);
 				bool getEarlyMediaAsr()const;
 				void setEarlyMediaAsr(bool earlyMediaAsr);
+				int getBackgroundSpeed()const;
+				void setBackgroundSpeed(int backgroundSpeed);
+				int getBackgroundVolume()const;
+				void setBackgroundVolume(int backgroundVolume);
 				int getSpeed()const;
 				void setSpeed(int speed);
 				std::string getAccessKeyId()const;
@@ -59,6 +63,8 @@ namespace AlibabaCloud
 				void setVoiceCode(const std::string& voiceCode);
 				std::string getCalledShowNumber()const;
 				void setCalledShowNumber(const std::string& calledShowNumber);
+				bool getEnableITN()const;
+				void setEnableITN(bool enableITN);
 				int getActionCodeTimeBreak()const;
 				void setActionCodeTimeBreak(int actionCodeTimeBreak);
 				bool getTtsConf()const;
@@ -79,6 +85,8 @@ namespace AlibabaCloud
 				void setVolume(int volume);
 				int getMuteTime()const;
 				void setMuteTime(int muteTime);
+				std::string getBackgroundFileCode()const;
+				void setBackgroundFileCode(const std::string& backgroundFileCode);
 				std::string getOutId()const;
 				void setOutId(const std::string& outId);
 				std::string getAsrModelId()const;
@@ -92,6 +100,8 @@ namespace AlibabaCloud
 				long resourceOwnerId_;
 				std::string voiceCodeParam_;
 				bool earlyMediaAsr_;
+				int backgroundSpeed_;
+				int backgroundVolume_;
 				int speed_;
 				std::string accessKeyId_;
 				std::string asrBaseId_;
@@ -101,6 +111,7 @@ namespace AlibabaCloud
 				int ttsSpeed_;
 				std::string voiceCode_;
 				std::string calledShowNumber_;
+				bool enableITN_;
 				int actionCodeTimeBreak_;
 				bool ttsConf_;
 				bool actionCodeBreak_;
@@ -111,6 +122,7 @@ namespace AlibabaCloud
 				int streamAsr_;
 				int volume_;
 				int muteTime_;
+				std::string backgroundFileCode_;
 				std::string outId_;
 				std::string asrModelId_;
 				int pauseTime_;

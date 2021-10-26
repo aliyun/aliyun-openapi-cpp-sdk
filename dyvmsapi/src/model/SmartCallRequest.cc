@@ -60,6 +60,28 @@ void SmartCallRequest::setEarlyMediaAsr(bool earlyMediaAsr)
 	setParameter("EarlyMediaAsr", earlyMediaAsr ? "true" : "false");
 }
 
+int SmartCallRequest::getBackgroundSpeed()const
+{
+	return backgroundSpeed_;
+}
+
+void SmartCallRequest::setBackgroundSpeed(int backgroundSpeed)
+{
+	backgroundSpeed_ = backgroundSpeed;
+	setParameter("BackgroundSpeed", std::to_string(backgroundSpeed));
+}
+
+int SmartCallRequest::getBackgroundVolume()const
+{
+	return backgroundVolume_;
+}
+
+void SmartCallRequest::setBackgroundVolume(int backgroundVolume)
+{
+	backgroundVolume_ = backgroundVolume;
+	setParameter("BackgroundVolume", std::to_string(backgroundVolume));
+}
+
 int SmartCallRequest::getSpeed()const
 {
 	return speed_;
@@ -157,6 +179,17 @@ void SmartCallRequest::setCalledShowNumber(const std::string& calledShowNumber)
 {
 	calledShowNumber_ = calledShowNumber;
 	setParameter("CalledShowNumber", calledShowNumber);
+}
+
+bool SmartCallRequest::getEnableITN()const
+{
+	return enableITN_;
+}
+
+void SmartCallRequest::setEnableITN(bool enableITN)
+{
+	enableITN_ = enableITN;
+	setParameter("EnableITN", enableITN ? "true" : "false");
 }
 
 int SmartCallRequest::getActionCodeTimeBreak()const
@@ -267,6 +300,17 @@ void SmartCallRequest::setMuteTime(int muteTime)
 {
 	muteTime_ = muteTime;
 	setParameter("MuteTime", std::to_string(muteTime));
+}
+
+std::string SmartCallRequest::getBackgroundFileCode()const
+{
+	return backgroundFileCode_;
+}
+
+void SmartCallRequest::setBackgroundFileCode(const std::string& backgroundFileCode)
+{
+	backgroundFileCode_ = backgroundFileCode;
+	setParameter("BackgroundFileCode", backgroundFileCode);
 }
 
 std::string SmartCallRequest::getOutId()const
