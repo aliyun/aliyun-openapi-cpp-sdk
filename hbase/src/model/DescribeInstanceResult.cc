@@ -49,6 +49,9 @@ void DescribeInstanceResult::parse(const std::string &payload)
 			tagsObject.value = valueTagsTag["Value"].asString();
 		tags_.push_back(tagsObject);
 	}
+	auto allNeedUpgradeComps = value["NeedUpgradeComps"]["Comps"];
+	for (const auto &item : allNeedUpgradeComps)
+		needUpgradeComps_.push_back(item.asString());
 	if(!value["InstanceId"].isNull())
 		instanceId_ = value["InstanceId"].asString();
 	if(!value["InstanceName"].isNull())
@@ -139,6 +142,8 @@ void DescribeInstanceResult::parse(const std::string &payload)
 		encryptionType_ = value["EncryptionType"].asString();
 	if(!value["EncryptionKey"].isNull())
 		encryptionKey_ = value["EncryptionKey"].asString();
+	if(!value["NeedUpgrade"].isNull())
+		needUpgrade_ = value["NeedUpgrade"].asString() == "true";
 
 }
 
@@ -160,6 +165,11 @@ std::string DescribeInstanceResult::getCreatedTime()const
 std::string DescribeInstanceResult::getResourceGroupId()const
 {
 	return resourceGroupId_;
+}
+
+bool DescribeInstanceResult::getNeedUpgrade()const
+{
+	return needUpgrade_;
 }
 
 std::string DescribeInstanceResult::getEncryptionKey()const
@@ -215,6 +225,11 @@ std::string DescribeInstanceResult::getMasterDiskType()const
 std::vector<DescribeInstanceResult::Tag> DescribeInstanceResult::getTags()const
 {
 	return tags_;
+}
+
+std::vector<std::string> DescribeInstanceResult::getNeedUpgradeComps()const
+{
+	return needUpgradeComps_;
 }
 
 std::string DescribeInstanceResult::getEngine()const

@@ -46,6 +46,7 @@ namespace AlibabaCloud
 				bool getIsHa()const;
 				std::string getCreatedTime()const;
 				std::string getResourceGroupId()const;
+				bool getNeedUpgrade()const;
 				std::string getEncryptionKey()const;
 				std::string getMasterInstanceType()const;
 				bool getIsDeletionProtection()const;
@@ -57,6 +58,7 @@ namespace AlibabaCloud
 				std::string getClusterName()const;
 				std::string getMasterDiskType()const;
 				std::vector<Tag> getTags()const;
+				std::vector<std::string> getNeedUpgradeComps()const;
 				std::string getEngine()const;
 				std::string getMaintainStartTime()const;
 				std::string getStatus()const;
@@ -96,6 +98,7 @@ namespace AlibabaCloud
 				bool isHa_;
 				std::string createdTime_;
 				std::string resourceGroupId_;
+				bool needUpgrade_;
 				std::string encryptionKey_;
 				std::string masterInstanceType_;
 				bool isDeletionProtection_;
@@ -107,6 +110,7 @@ namespace AlibabaCloud
 				std::string clusterName_;
 				std::string masterDiskType_;
 				std::vector<Tag> tags_;
+				std::vector<std::string> needUpgradeComps_;
 				std::string engine_;
 				std::string maintainStartTime_;
 				std::string status_;
