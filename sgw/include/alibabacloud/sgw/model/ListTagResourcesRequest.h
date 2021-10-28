@@ -55,6 +55,8 @@ namespace AlibabaCloud
 				void setNextToken(const std::string& nextToken);
 				std::vector<Tag> getTag()const;
 				void setTag(const std::vector<Tag>& tag);
+				std::string getResourceRegionId()const;
+				void setResourceRegionId(const std::string& resourceRegionId);
 
             private:
 				std::vector<std::string> resourceId_;
@@ -64,6 +66,7 @@ namespace AlibabaCloud
 				std::string regionId_;
 				std::string nextToken_;
 				std::vector<Tag> tag_;
+				std::string resourceRegionId_;
 
 			};
 		}

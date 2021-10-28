@@ -111,3 +111,14 @@ void ListTagResourcesRequest::setTag(const std::vector<Tag>& tag)
 	}
 }
 
+std::string ListTagResourcesRequest::getResourceRegionId()const
+{
+	return resourceRegionId_;
+}
+
+void ListTagResourcesRequest::setResourceRegionId(const std::string& resourceRegionId)
+{
+	resourceRegionId_ = resourceRegionId;
+	setParameter("ResourceRegionId", resourceRegionId);
+}
+

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SGW_MODEL_UNTAGRESOURCESREQUEST_H_
-#define ALIBABACLOUD_SGW_MODEL_UNTAGRESOURCESREQUEST_H_
+#ifndef ALIBABACLOUD_SGW_MODEL_DEPLOYCSGCLIENTSREQUEST_H_
+#define ALIBABACLOUD_SGW_MODEL_DEPLOYCSGCLIENTSREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,42 +28,33 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SGW_EXPORT UntagResourcesRequest : public RpcServiceRequest
+			class ALIBABACLOUD_SGW_EXPORT DeployCSGClientsRequest : public RpcServiceRequest
 			{
 
 			public:
-				UntagResourcesRequest();
-				~UntagResourcesRequest();
+				DeployCSGClientsRequest();
+				~DeployCSGClientsRequest();
 
-				bool getAll()const;
-				void setAll(bool all);
-				std::vector<std::string> getResourceId()const;
-				void setResourceId(const std::vector<std::string>& resourceId);
-				std::string getResourceType()const;
-				void setResourceType(const std::string& resourceType);
+				Array getEcsInstanceIds()const;
+				void setEcsInstanceIds(const Array& ecsInstanceIds);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getClientRegionId()const;
+				void setClientRegionId(const std::string& clientRegionId);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::vector<std::string> getTagKey()const;
-				void setTagKey(const std::vector<std::string>& tagKey);
-				std::string getResourceRegionId()const;
-				void setResourceRegionId(const std::string& resourceRegionId);
+				std::string getVpcId()const;
+				void setVpcId(const std::string& vpcId);
 
             private:
-				bool all_;
-				std::vector<std::string> resourceId_;
-				std::string resourceType_;
+				Array ecsInstanceIds_;
 				std::string accessKeyId_;
+				std::string clientRegionId_;
 				std::string securityToken_;
-				std::string regionId_;
-				std::vector<std::string> tagKey_;
-				std::string resourceRegionId_;
+				std::string vpcId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SGW_MODEL_UNTAGRESOURCESREQUEST_H_
+#endif // !ALIBABACLOUD_SGW_MODEL_DEPLOYCSGCLIENTSREQUEST_H_

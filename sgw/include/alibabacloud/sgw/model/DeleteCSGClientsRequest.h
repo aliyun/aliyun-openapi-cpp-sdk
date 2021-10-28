@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SGW_MODEL_UNTAGRESOURCESREQUEST_H_
-#define ALIBABACLOUD_SGW_MODEL_UNTAGRESOURCESREQUEST_H_
+#ifndef ALIBABACLOUD_SGW_MODEL_DELETECSGCLIENTSREQUEST_H_
+#define ALIBABACLOUD_SGW_MODEL_DELETECSGCLIENTSREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,42 +28,30 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SGW_EXPORT UntagResourcesRequest : public RpcServiceRequest
+			class ALIBABACLOUD_SGW_EXPORT DeleteCSGClientsRequest : public RpcServiceRequest
 			{
 
 			public:
-				UntagResourcesRequest();
-				~UntagResourcesRequest();
+				DeleteCSGClientsRequest();
+				~DeleteCSGClientsRequest();
 
-				bool getAll()const;
-				void setAll(bool all);
-				std::vector<std::string> getResourceId()const;
-				void setResourceId(const std::vector<std::string>& resourceId);
-				std::string getResourceType()const;
-				void setResourceType(const std::string& resourceType);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				Array getClientIds()const;
+				void setClientIds(const Array& clientIds);
+				std::string getClientRegionId()const;
+				void setClientRegionId(const std::string& clientRegionId);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::vector<std::string> getTagKey()const;
-				void setTagKey(const std::vector<std::string>& tagKey);
-				std::string getResourceRegionId()const;
-				void setResourceRegionId(const std::string& resourceRegionId);
 
             private:
-				bool all_;
-				std::vector<std::string> resourceId_;
-				std::string resourceType_;
 				std::string accessKeyId_;
+				Array clientIds_;
+				std::string clientRegionId_;
 				std::string securityToken_;
-				std::string regionId_;
-				std::vector<std::string> tagKey_;
-				std::string resourceRegionId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SGW_MODEL_UNTAGRESOURCESREQUEST_H_
+#endif // !ALIBABACLOUD_SGW_MODEL_DELETECSGCLIENTSREQUEST_H_

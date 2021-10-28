@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SGW_MODEL_DESCRIBETASKSRESULT_H_
-#define ALIBABACLOUD_SGW_MODEL_DESCRIBETASKSRESULT_H_
+#ifndef ALIBABACLOUD_SGW_MODEL_DESCRIBECSGCLIENTSRESULT_H_
+#define ALIBABACLOUD_SGW_MODEL_DESCRIBECSGCLIENTSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,32 +29,31 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SGW_EXPORT DescribeTasksResult : public ServiceResult
+			class ALIBABACLOUD_SGW_EXPORT DescribeCSGClientsResult : public ServiceResult
 			{
 			public:
-				struct SimpleTask
+				struct Client
 				{
-					int progress;
-					std::string messageKey;
-					long createdTime;
-					std::string taskId;
-					std::string relatedResourceId;
-					std::string stateCode;
-					std::string messageParams;
-					long updatedTime;
-					std::string stageCode;
-					std::string name;
+					std::string status;
+					std::string ecsInstanceId;
+					std::string vpcId;
+					std::string clientDeletionCommand;
+					std::string workDirectory;
+					long lastHeartbeatTime;
+					std::string clientId;
+					std::string clientVersion;
+					std::string clientInstallationCommand;
 				};
 
 
-				DescribeTasksResult();
-				explicit DescribeTasksResult(const std::string &payload);
-				~DescribeTasksResult();
+				DescribeCSGClientsResult();
+				explicit DescribeCSGClientsResult(const std::string &payload);
+				~DescribeCSGClientsResult();
 				int getTotalCount()const;
-				std::vector<SimpleTask> getTasks()const;
 				std::string getMessage()const;
 				int getPageSize()const;
 				int getPageNumber()const;
+				std::vector<Client> getClients()const;
 				std::string getCode()const;
 				bool getSuccess()const;
 
@@ -62,10 +61,10 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				int totalCount_;
-				std::vector<SimpleTask> tasks_;
 				std::string message_;
 				int pageSize_;
 				int pageNumber_;
+				std::vector<Client> clients_;
 				std::string code_;
 				bool success_;
 
@@ -73,4 +72,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SGW_MODEL_DESCRIBETASKSRESULT_H_
+#endif // !ALIBABACLOUD_SGW_MODEL_DESCRIBECSGCLIENTSRESULT_H_

@@ -63,6 +63,8 @@ set(sgw_public_header_model
 	include/alibabacloud/sgw/model/CreateGatewaySMBUserResult.h
 	include/alibabacloud/sgw/model/CreateStorageBundleRequest.h
 	include/alibabacloud/sgw/model/CreateStorageBundleResult.h
+	include/alibabacloud/sgw/model/DeleteCSGClientsRequest.h
+	include/alibabacloud/sgw/model/DeleteCSGClientsResult.h
 	include/alibabacloud/sgw/model/DeleteElasticGatewayPrivateZoneRequest.h
 	include/alibabacloud/sgw/model/DeleteElasticGatewayPrivateZoneResult.h
 	include/alibabacloud/sgw/model/DeleteExpressSyncRequest.h
@@ -81,6 +83,8 @@ set(sgw_public_header_model
 	include/alibabacloud/sgw/model/DeleteGatewaySMBUserResult.h
 	include/alibabacloud/sgw/model/DeleteStorageBundleRequest.h
 	include/alibabacloud/sgw/model/DeleteStorageBundleResult.h
+	include/alibabacloud/sgw/model/DeployCSGClientsRequest.h
+	include/alibabacloud/sgw/model/DeployCSGClientsResult.h
 	include/alibabacloud/sgw/model/DeployCacheDiskRequest.h
 	include/alibabacloud/sgw/model/DeployCacheDiskResult.h
 	include/alibabacloud/sgw/model/DeployGatewayRequest.h
@@ -89,6 +93,10 @@ set(sgw_public_header_model
 	include/alibabacloud/sgw/model/DescribeAccountConfigResult.h
 	include/alibabacloud/sgw/model/DescribeBlockVolumeSnapshotsRequest.h
 	include/alibabacloud/sgw/model/DescribeBlockVolumeSnapshotsResult.h
+	include/alibabacloud/sgw/model/DescribeCSGClientTasksRequest.h
+	include/alibabacloud/sgw/model/DescribeCSGClientTasksResult.h
+	include/alibabacloud/sgw/model/DescribeCSGClientsRequest.h
+	include/alibabacloud/sgw/model/DescribeCSGClientsResult.h
 	include/alibabacloud/sgw/model/DescribeDashboardRequest.h
 	include/alibabacloud/sgw/model/DescribeDashboardResult.h
 	include/alibabacloud/sgw/model/DescribeExpireCachesRequest.h
@@ -245,6 +253,8 @@ set(sgw_public_header_model
 	include/alibabacloud/sgw/model/SetGatewayDNSResult.h
 	include/alibabacloud/sgw/model/SetGatewayLDAPInfoRequest.h
 	include/alibabacloud/sgw/model/SetGatewayLDAPInfoResult.h
+	include/alibabacloud/sgw/model/SwitchCSGClientsReverseSyncConfigurationRequest.h
+	include/alibabacloud/sgw/model/SwitchCSGClientsReverseSyncConfigurationResult.h
 	include/alibabacloud/sgw/model/SwitchGatewayExpirationPolicyRequest.h
 	include/alibabacloud/sgw/model/SwitchGatewayExpirationPolicyResult.h
 	include/alibabacloud/sgw/model/SwitchToSubscriptionRequest.h
@@ -261,6 +271,8 @@ set(sgw_public_header_model
 	include/alibabacloud/sgw/model/UpdateGatewayFileShareResult.h
 	include/alibabacloud/sgw/model/UpgradeGatewayRequest.h
 	include/alibabacloud/sgw/model/UpgradeGatewayResult.h
+	include/alibabacloud/sgw/model/UploadCSGClientLogRequest.h
+	include/alibabacloud/sgw/model/UploadCSGClientLogResult.h
 	include/alibabacloud/sgw/model/UploadGatewayLogRequest.h
 	include/alibabacloud/sgw/model/UploadGatewayLogResult.h
 	include/alibabacloud/sgw/model/ValidateExpressSyncConfigRequest.h
@@ -312,6 +324,8 @@ set(sgw_src
 	src/model/CreateGatewaySMBUserResult.cc
 	src/model/CreateStorageBundleRequest.cc
 	src/model/CreateStorageBundleResult.cc
+	src/model/DeleteCSGClientsRequest.cc
+	src/model/DeleteCSGClientsResult.cc
 	src/model/DeleteElasticGatewayPrivateZoneRequest.cc
 	src/model/DeleteElasticGatewayPrivateZoneResult.cc
 	src/model/DeleteExpressSyncRequest.cc
@@ -330,6 +344,8 @@ set(sgw_src
 	src/model/DeleteGatewaySMBUserResult.cc
 	src/model/DeleteStorageBundleRequest.cc
 	src/model/DeleteStorageBundleResult.cc
+	src/model/DeployCSGClientsRequest.cc
+	src/model/DeployCSGClientsResult.cc
 	src/model/DeployCacheDiskRequest.cc
 	src/model/DeployCacheDiskResult.cc
 	src/model/DeployGatewayRequest.cc
@@ -338,6 +354,10 @@ set(sgw_src
 	src/model/DescribeAccountConfigResult.cc
 	src/model/DescribeBlockVolumeSnapshotsRequest.cc
 	src/model/DescribeBlockVolumeSnapshotsResult.cc
+	src/model/DescribeCSGClientTasksRequest.cc
+	src/model/DescribeCSGClientTasksResult.cc
+	src/model/DescribeCSGClientsRequest.cc
+	src/model/DescribeCSGClientsResult.cc
 	src/model/DescribeDashboardRequest.cc
 	src/model/DescribeDashboardResult.cc
 	src/model/DescribeExpireCachesRequest.cc
@@ -494,6 +514,8 @@ set(sgw_src
 	src/model/SetGatewayDNSResult.cc
 	src/model/SetGatewayLDAPInfoRequest.cc
 	src/model/SetGatewayLDAPInfoResult.cc
+	src/model/SwitchCSGClientsReverseSyncConfigurationRequest.cc
+	src/model/SwitchCSGClientsReverseSyncConfigurationResult.cc
 	src/model/SwitchGatewayExpirationPolicyRequest.cc
 	src/model/SwitchGatewayExpirationPolicyResult.cc
 	src/model/SwitchToSubscriptionRequest.cc
@@ -510,6 +532,8 @@ set(sgw_src
 	src/model/UpdateGatewayFileShareResult.cc
 	src/model/UpgradeGatewayRequest.cc
 	src/model/UpgradeGatewayResult.cc
+	src/model/UploadCSGClientLogRequest.cc
+	src/model/UploadCSGClientLogResult.cc
 	src/model/UploadGatewayLogRequest.cc
 	src/model/UploadGatewayLogResult.cc
 	src/model/ValidateExpressSyncConfigRequest.cc

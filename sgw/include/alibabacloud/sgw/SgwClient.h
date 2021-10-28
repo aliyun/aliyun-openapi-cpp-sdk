@@ -64,6 +64,8 @@
 #include "model/CreateGatewaySMBUserResult.h"
 #include "model/CreateStorageBundleRequest.h"
 #include "model/CreateStorageBundleResult.h"
+#include "model/DeleteCSGClientsRequest.h"
+#include "model/DeleteCSGClientsResult.h"
 #include "model/DeleteElasticGatewayPrivateZoneRequest.h"
 #include "model/DeleteElasticGatewayPrivateZoneResult.h"
 #include "model/DeleteExpressSyncRequest.h"
@@ -82,6 +84,8 @@
 #include "model/DeleteGatewaySMBUserResult.h"
 #include "model/DeleteStorageBundleRequest.h"
 #include "model/DeleteStorageBundleResult.h"
+#include "model/DeployCSGClientsRequest.h"
+#include "model/DeployCSGClientsResult.h"
 #include "model/DeployCacheDiskRequest.h"
 #include "model/DeployCacheDiskResult.h"
 #include "model/DeployGatewayRequest.h"
@@ -90,6 +94,10 @@
 #include "model/DescribeAccountConfigResult.h"
 #include "model/DescribeBlockVolumeSnapshotsRequest.h"
 #include "model/DescribeBlockVolumeSnapshotsResult.h"
+#include "model/DescribeCSGClientTasksRequest.h"
+#include "model/DescribeCSGClientTasksResult.h"
+#include "model/DescribeCSGClientsRequest.h"
+#include "model/DescribeCSGClientsResult.h"
 #include "model/DescribeDashboardRequest.h"
 #include "model/DescribeDashboardResult.h"
 #include "model/DescribeExpireCachesRequest.h"
@@ -246,6 +254,8 @@
 #include "model/SetGatewayDNSResult.h"
 #include "model/SetGatewayLDAPInfoRequest.h"
 #include "model/SetGatewayLDAPInfoResult.h"
+#include "model/SwitchCSGClientsReverseSyncConfigurationRequest.h"
+#include "model/SwitchCSGClientsReverseSyncConfigurationResult.h"
 #include "model/SwitchGatewayExpirationPolicyRequest.h"
 #include "model/SwitchGatewayExpirationPolicyResult.h"
 #include "model/SwitchToSubscriptionRequest.h"
@@ -262,6 +272,8 @@
 #include "model/UpdateGatewayFileShareResult.h"
 #include "model/UpgradeGatewayRequest.h"
 #include "model/UpgradeGatewayResult.h"
+#include "model/UploadCSGClientLogRequest.h"
+#include "model/UploadCSGClientLogResult.h"
 #include "model/UploadGatewayLogRequest.h"
 #include "model/UploadGatewayLogResult.h"
 #include "model/ValidateExpressSyncConfigRequest.h"
@@ -340,6 +352,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateStorageBundleResult> CreateStorageBundleOutcome;
 			typedef std::future<CreateStorageBundleOutcome> CreateStorageBundleOutcomeCallable;
 			typedef std::function<void(const SgwClient*, const Model::CreateStorageBundleRequest&, const CreateStorageBundleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateStorageBundleAsyncHandler;
+			typedef Outcome<Error, Model::DeleteCSGClientsResult> DeleteCSGClientsOutcome;
+			typedef std::future<DeleteCSGClientsOutcome> DeleteCSGClientsOutcomeCallable;
+			typedef std::function<void(const SgwClient*, const Model::DeleteCSGClientsRequest&, const DeleteCSGClientsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCSGClientsAsyncHandler;
 			typedef Outcome<Error, Model::DeleteElasticGatewayPrivateZoneResult> DeleteElasticGatewayPrivateZoneOutcome;
 			typedef std::future<DeleteElasticGatewayPrivateZoneOutcome> DeleteElasticGatewayPrivateZoneOutcomeCallable;
 			typedef std::function<void(const SgwClient*, const Model::DeleteElasticGatewayPrivateZoneRequest&, const DeleteElasticGatewayPrivateZoneOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteElasticGatewayPrivateZoneAsyncHandler;
@@ -367,6 +382,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteStorageBundleResult> DeleteStorageBundleOutcome;
 			typedef std::future<DeleteStorageBundleOutcome> DeleteStorageBundleOutcomeCallable;
 			typedef std::function<void(const SgwClient*, const Model::DeleteStorageBundleRequest&, const DeleteStorageBundleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteStorageBundleAsyncHandler;
+			typedef Outcome<Error, Model::DeployCSGClientsResult> DeployCSGClientsOutcome;
+			typedef std::future<DeployCSGClientsOutcome> DeployCSGClientsOutcomeCallable;
+			typedef std::function<void(const SgwClient*, const Model::DeployCSGClientsRequest&, const DeployCSGClientsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeployCSGClientsAsyncHandler;
 			typedef Outcome<Error, Model::DeployCacheDiskResult> DeployCacheDiskOutcome;
 			typedef std::future<DeployCacheDiskOutcome> DeployCacheDiskOutcomeCallable;
 			typedef std::function<void(const SgwClient*, const Model::DeployCacheDiskRequest&, const DeployCacheDiskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeployCacheDiskAsyncHandler;
@@ -379,6 +397,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeBlockVolumeSnapshotsResult> DescribeBlockVolumeSnapshotsOutcome;
 			typedef std::future<DescribeBlockVolumeSnapshotsOutcome> DescribeBlockVolumeSnapshotsOutcomeCallable;
 			typedef std::function<void(const SgwClient*, const Model::DescribeBlockVolumeSnapshotsRequest&, const DescribeBlockVolumeSnapshotsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBlockVolumeSnapshotsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeCSGClientTasksResult> DescribeCSGClientTasksOutcome;
+			typedef std::future<DescribeCSGClientTasksOutcome> DescribeCSGClientTasksOutcomeCallable;
+			typedef std::function<void(const SgwClient*, const Model::DescribeCSGClientTasksRequest&, const DescribeCSGClientTasksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCSGClientTasksAsyncHandler;
+			typedef Outcome<Error, Model::DescribeCSGClientsResult> DescribeCSGClientsOutcome;
+			typedef std::future<DescribeCSGClientsOutcome> DescribeCSGClientsOutcomeCallable;
+			typedef std::function<void(const SgwClient*, const Model::DescribeCSGClientsRequest&, const DescribeCSGClientsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCSGClientsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDashboardResult> DescribeDashboardOutcome;
 			typedef std::future<DescribeDashboardOutcome> DescribeDashboardOutcomeCallable;
 			typedef std::function<void(const SgwClient*, const Model::DescribeDashboardRequest&, const DescribeDashboardOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDashboardAsyncHandler;
@@ -613,6 +637,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SetGatewayLDAPInfoResult> SetGatewayLDAPInfoOutcome;
 			typedef std::future<SetGatewayLDAPInfoOutcome> SetGatewayLDAPInfoOutcomeCallable;
 			typedef std::function<void(const SgwClient*, const Model::SetGatewayLDAPInfoRequest&, const SetGatewayLDAPInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetGatewayLDAPInfoAsyncHandler;
+			typedef Outcome<Error, Model::SwitchCSGClientsReverseSyncConfigurationResult> SwitchCSGClientsReverseSyncConfigurationOutcome;
+			typedef std::future<SwitchCSGClientsReverseSyncConfigurationOutcome> SwitchCSGClientsReverseSyncConfigurationOutcomeCallable;
+			typedef std::function<void(const SgwClient*, const Model::SwitchCSGClientsReverseSyncConfigurationRequest&, const SwitchCSGClientsReverseSyncConfigurationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SwitchCSGClientsReverseSyncConfigurationAsyncHandler;
 			typedef Outcome<Error, Model::SwitchGatewayExpirationPolicyResult> SwitchGatewayExpirationPolicyOutcome;
 			typedef std::future<SwitchGatewayExpirationPolicyOutcome> SwitchGatewayExpirationPolicyOutcomeCallable;
 			typedef std::function<void(const SgwClient*, const Model::SwitchGatewayExpirationPolicyRequest&, const SwitchGatewayExpirationPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SwitchGatewayExpirationPolicyAsyncHandler;
@@ -637,6 +664,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpgradeGatewayResult> UpgradeGatewayOutcome;
 			typedef std::future<UpgradeGatewayOutcome> UpgradeGatewayOutcomeCallable;
 			typedef std::function<void(const SgwClient*, const Model::UpgradeGatewayRequest&, const UpgradeGatewayOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeGatewayAsyncHandler;
+			typedef Outcome<Error, Model::UploadCSGClientLogResult> UploadCSGClientLogOutcome;
+			typedef std::future<UploadCSGClientLogOutcome> UploadCSGClientLogOutcomeCallable;
+			typedef std::function<void(const SgwClient*, const Model::UploadCSGClientLogRequest&, const UploadCSGClientLogOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UploadCSGClientLogAsyncHandler;
 			typedef Outcome<Error, Model::UploadGatewayLogResult> UploadGatewayLogOutcome;
 			typedef std::future<UploadGatewayLogOutcome> UploadGatewayLogOutcomeCallable;
 			typedef std::function<void(const SgwClient*, const Model::UploadGatewayLogRequest&, const UploadGatewayLogOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UploadGatewayLogAsyncHandler;
@@ -714,6 +744,9 @@ namespace AlibabaCloud
 			CreateStorageBundleOutcome createStorageBundle(const Model::CreateStorageBundleRequest &request)const;
 			void createStorageBundleAsync(const Model::CreateStorageBundleRequest& request, const CreateStorageBundleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateStorageBundleOutcomeCallable createStorageBundleCallable(const Model::CreateStorageBundleRequest& request) const;
+			DeleteCSGClientsOutcome deleteCSGClients(const Model::DeleteCSGClientsRequest &request)const;
+			void deleteCSGClientsAsync(const Model::DeleteCSGClientsRequest& request, const DeleteCSGClientsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteCSGClientsOutcomeCallable deleteCSGClientsCallable(const Model::DeleteCSGClientsRequest& request) const;
 			DeleteElasticGatewayPrivateZoneOutcome deleteElasticGatewayPrivateZone(const Model::DeleteElasticGatewayPrivateZoneRequest &request)const;
 			void deleteElasticGatewayPrivateZoneAsync(const Model::DeleteElasticGatewayPrivateZoneRequest& request, const DeleteElasticGatewayPrivateZoneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteElasticGatewayPrivateZoneOutcomeCallable deleteElasticGatewayPrivateZoneCallable(const Model::DeleteElasticGatewayPrivateZoneRequest& request) const;
@@ -741,6 +774,9 @@ namespace AlibabaCloud
 			DeleteStorageBundleOutcome deleteStorageBundle(const Model::DeleteStorageBundleRequest &request)const;
 			void deleteStorageBundleAsync(const Model::DeleteStorageBundleRequest& request, const DeleteStorageBundleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteStorageBundleOutcomeCallable deleteStorageBundleCallable(const Model::DeleteStorageBundleRequest& request) const;
+			DeployCSGClientsOutcome deployCSGClients(const Model::DeployCSGClientsRequest &request)const;
+			void deployCSGClientsAsync(const Model::DeployCSGClientsRequest& request, const DeployCSGClientsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeployCSGClientsOutcomeCallable deployCSGClientsCallable(const Model::DeployCSGClientsRequest& request) const;
 			DeployCacheDiskOutcome deployCacheDisk(const Model::DeployCacheDiskRequest &request)const;
 			void deployCacheDiskAsync(const Model::DeployCacheDiskRequest& request, const DeployCacheDiskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeployCacheDiskOutcomeCallable deployCacheDiskCallable(const Model::DeployCacheDiskRequest& request) const;
@@ -753,6 +789,12 @@ namespace AlibabaCloud
 			DescribeBlockVolumeSnapshotsOutcome describeBlockVolumeSnapshots(const Model::DescribeBlockVolumeSnapshotsRequest &request)const;
 			void describeBlockVolumeSnapshotsAsync(const Model::DescribeBlockVolumeSnapshotsRequest& request, const DescribeBlockVolumeSnapshotsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeBlockVolumeSnapshotsOutcomeCallable describeBlockVolumeSnapshotsCallable(const Model::DescribeBlockVolumeSnapshotsRequest& request) const;
+			DescribeCSGClientTasksOutcome describeCSGClientTasks(const Model::DescribeCSGClientTasksRequest &request)const;
+			void describeCSGClientTasksAsync(const Model::DescribeCSGClientTasksRequest& request, const DescribeCSGClientTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeCSGClientTasksOutcomeCallable describeCSGClientTasksCallable(const Model::DescribeCSGClientTasksRequest& request) const;
+			DescribeCSGClientsOutcome describeCSGClients(const Model::DescribeCSGClientsRequest &request)const;
+			void describeCSGClientsAsync(const Model::DescribeCSGClientsRequest& request, const DescribeCSGClientsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeCSGClientsOutcomeCallable describeCSGClientsCallable(const Model::DescribeCSGClientsRequest& request) const;
 			DescribeDashboardOutcome describeDashboard(const Model::DescribeDashboardRequest &request)const;
 			void describeDashboardAsync(const Model::DescribeDashboardRequest& request, const DescribeDashboardAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDashboardOutcomeCallable describeDashboardCallable(const Model::DescribeDashboardRequest& request) const;
@@ -987,6 +1029,9 @@ namespace AlibabaCloud
 			SetGatewayLDAPInfoOutcome setGatewayLDAPInfo(const Model::SetGatewayLDAPInfoRequest &request)const;
 			void setGatewayLDAPInfoAsync(const Model::SetGatewayLDAPInfoRequest& request, const SetGatewayLDAPInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetGatewayLDAPInfoOutcomeCallable setGatewayLDAPInfoCallable(const Model::SetGatewayLDAPInfoRequest& request) const;
+			SwitchCSGClientsReverseSyncConfigurationOutcome switchCSGClientsReverseSyncConfiguration(const Model::SwitchCSGClientsReverseSyncConfigurationRequest &request)const;
+			void switchCSGClientsReverseSyncConfigurationAsync(const Model::SwitchCSGClientsReverseSyncConfigurationRequest& request, const SwitchCSGClientsReverseSyncConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SwitchCSGClientsReverseSyncConfigurationOutcomeCallable switchCSGClientsReverseSyncConfigurationCallable(const Model::SwitchCSGClientsReverseSyncConfigurationRequest& request) const;
 			SwitchGatewayExpirationPolicyOutcome switchGatewayExpirationPolicy(const Model::SwitchGatewayExpirationPolicyRequest &request)const;
 			void switchGatewayExpirationPolicyAsync(const Model::SwitchGatewayExpirationPolicyRequest& request, const SwitchGatewayExpirationPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SwitchGatewayExpirationPolicyOutcomeCallable switchGatewayExpirationPolicyCallable(const Model::SwitchGatewayExpirationPolicyRequest& request) const;
@@ -1011,6 +1056,9 @@ namespace AlibabaCloud
 			UpgradeGatewayOutcome upgradeGateway(const Model::UpgradeGatewayRequest &request)const;
 			void upgradeGatewayAsync(const Model::UpgradeGatewayRequest& request, const UpgradeGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpgradeGatewayOutcomeCallable upgradeGatewayCallable(const Model::UpgradeGatewayRequest& request) const;
+			UploadCSGClientLogOutcome uploadCSGClientLog(const Model::UploadCSGClientLogRequest &request)const;
+			void uploadCSGClientLogAsync(const Model::UploadCSGClientLogRequest& request, const UploadCSGClientLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UploadCSGClientLogOutcomeCallable uploadCSGClientLogCallable(const Model::UploadCSGClientLogRequest& request) const;
 			UploadGatewayLogOutcome uploadGatewayLog(const Model::UploadGatewayLogRequest &request)const;
 			void uploadGatewayLogAsync(const Model::UploadGatewayLogRequest& request, const UploadGatewayLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UploadGatewayLogOutcomeCallable uploadGatewayLogCallable(const Model::UploadGatewayLogRequest& request) const;

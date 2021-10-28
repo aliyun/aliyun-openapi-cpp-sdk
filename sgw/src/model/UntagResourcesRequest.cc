@@ -108,3 +108,14 @@ void UntagResourcesRequest::setTagKey(const std::vector<std::string>& tagKey)
 	}
 }
 
+std::string UntagResourcesRequest::getResourceRegionId()const
+{
+	return resourceRegionId_;
+}
+
+void UntagResourcesRequest::setResourceRegionId(const std::string& resourceRegionId)
+{
+	resourceRegionId_ = resourceRegionId;
+	setParameter("ResourceRegionId", resourceRegionId);
+}
+

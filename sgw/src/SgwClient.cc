@@ -807,6 +807,42 @@ SgwClient::CreateStorageBundleOutcomeCallable SgwClient::createStorageBundleCall
 	return task->get_future();
 }
 
+SgwClient::DeleteCSGClientsOutcome SgwClient::deleteCSGClients(const DeleteCSGClientsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteCSGClientsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteCSGClientsOutcome(DeleteCSGClientsResult(outcome.result()));
+	else
+		return DeleteCSGClientsOutcome(outcome.error());
+}
+
+void SgwClient::deleteCSGClientsAsync(const DeleteCSGClientsRequest& request, const DeleteCSGClientsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteCSGClients(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SgwClient::DeleteCSGClientsOutcomeCallable SgwClient::deleteCSGClientsCallable(const DeleteCSGClientsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteCSGClientsOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteCSGClients(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SgwClient::DeleteElasticGatewayPrivateZoneOutcome SgwClient::deleteElasticGatewayPrivateZone(const DeleteElasticGatewayPrivateZoneRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1131,6 +1167,42 @@ SgwClient::DeleteStorageBundleOutcomeCallable SgwClient::deleteStorageBundleCall
 	return task->get_future();
 }
 
+SgwClient::DeployCSGClientsOutcome SgwClient::deployCSGClients(const DeployCSGClientsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeployCSGClientsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeployCSGClientsOutcome(DeployCSGClientsResult(outcome.result()));
+	else
+		return DeployCSGClientsOutcome(outcome.error());
+}
+
+void SgwClient::deployCSGClientsAsync(const DeployCSGClientsRequest& request, const DeployCSGClientsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deployCSGClients(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SgwClient::DeployCSGClientsOutcomeCallable SgwClient::deployCSGClientsCallable(const DeployCSGClientsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeployCSGClientsOutcome()>>(
+			[this, request]()
+			{
+			return this->deployCSGClients(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SgwClient::DeployCacheDiskOutcome SgwClient::deployCacheDisk(const DeployCacheDiskRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1269,6 +1341,78 @@ SgwClient::DescribeBlockVolumeSnapshotsOutcomeCallable SgwClient::describeBlockV
 			[this, request]()
 			{
 			return this->describeBlockVolumeSnapshots(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SgwClient::DescribeCSGClientTasksOutcome SgwClient::describeCSGClientTasks(const DescribeCSGClientTasksRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeCSGClientTasksOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeCSGClientTasksOutcome(DescribeCSGClientTasksResult(outcome.result()));
+	else
+		return DescribeCSGClientTasksOutcome(outcome.error());
+}
+
+void SgwClient::describeCSGClientTasksAsync(const DescribeCSGClientTasksRequest& request, const DescribeCSGClientTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeCSGClientTasks(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SgwClient::DescribeCSGClientTasksOutcomeCallable SgwClient::describeCSGClientTasksCallable(const DescribeCSGClientTasksRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeCSGClientTasksOutcome()>>(
+			[this, request]()
+			{
+			return this->describeCSGClientTasks(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SgwClient::DescribeCSGClientsOutcome SgwClient::describeCSGClients(const DescribeCSGClientsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeCSGClientsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeCSGClientsOutcome(DescribeCSGClientsResult(outcome.result()));
+	else
+		return DescribeCSGClientsOutcome(outcome.error());
+}
+
+void SgwClient::describeCSGClientsAsync(const DescribeCSGClientsRequest& request, const DescribeCSGClientsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeCSGClients(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SgwClient::DescribeCSGClientsOutcomeCallable SgwClient::describeCSGClientsCallable(const DescribeCSGClientsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeCSGClientsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeCSGClients(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4083,6 +4227,42 @@ SgwClient::SetGatewayLDAPInfoOutcomeCallable SgwClient::setGatewayLDAPInfoCallab
 	return task->get_future();
 }
 
+SgwClient::SwitchCSGClientsReverseSyncConfigurationOutcome SgwClient::switchCSGClientsReverseSyncConfiguration(const SwitchCSGClientsReverseSyncConfigurationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SwitchCSGClientsReverseSyncConfigurationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SwitchCSGClientsReverseSyncConfigurationOutcome(SwitchCSGClientsReverseSyncConfigurationResult(outcome.result()));
+	else
+		return SwitchCSGClientsReverseSyncConfigurationOutcome(outcome.error());
+}
+
+void SgwClient::switchCSGClientsReverseSyncConfigurationAsync(const SwitchCSGClientsReverseSyncConfigurationRequest& request, const SwitchCSGClientsReverseSyncConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, switchCSGClientsReverseSyncConfiguration(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SgwClient::SwitchCSGClientsReverseSyncConfigurationOutcomeCallable SgwClient::switchCSGClientsReverseSyncConfigurationCallable(const SwitchCSGClientsReverseSyncConfigurationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SwitchCSGClientsReverseSyncConfigurationOutcome()>>(
+			[this, request]()
+			{
+			return this->switchCSGClientsReverseSyncConfiguration(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SgwClient::SwitchGatewayExpirationPolicyOutcome SgwClient::switchGatewayExpirationPolicy(const SwitchGatewayExpirationPolicyRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4365,6 +4545,42 @@ SgwClient::UpgradeGatewayOutcomeCallable SgwClient::upgradeGatewayCallable(const
 			[this, request]()
 			{
 			return this->upgradeGateway(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SgwClient::UploadCSGClientLogOutcome SgwClient::uploadCSGClientLog(const UploadCSGClientLogRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UploadCSGClientLogOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UploadCSGClientLogOutcome(UploadCSGClientLogResult(outcome.result()));
+	else
+		return UploadCSGClientLogOutcome(outcome.error());
+}
+
+void SgwClient::uploadCSGClientLogAsync(const UploadCSGClientLogRequest& request, const UploadCSGClientLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, uploadCSGClientLog(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SgwClient::UploadCSGClientLogOutcomeCallable SgwClient::uploadCSGClientLogCallable(const UploadCSGClientLogRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UploadCSGClientLogOutcome()>>(
+			[this, request]()
+			{
+			return this->uploadCSGClientLog(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

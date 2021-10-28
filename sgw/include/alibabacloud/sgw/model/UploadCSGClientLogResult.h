@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SGW_MODEL_DESCRIBETASKSRESULT_H_
-#define ALIBABACLOUD_SGW_MODEL_DESCRIBETASKSRESULT_H_
+#ifndef ALIBABACLOUD_SGW_MODEL_UPLOADCSGCLIENTLOGRESULT_H_
+#define ALIBABACLOUD_SGW_MODEL_UPLOADCSGCLIENTLOGRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,43 +29,24 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SGW_EXPORT DescribeTasksResult : public ServiceResult
+			class ALIBABACLOUD_SGW_EXPORT UploadCSGClientLogResult : public ServiceResult
 			{
 			public:
-				struct SimpleTask
-				{
-					int progress;
-					std::string messageKey;
-					long createdTime;
-					std::string taskId;
-					std::string relatedResourceId;
-					std::string stateCode;
-					std::string messageParams;
-					long updatedTime;
-					std::string stageCode;
-					std::string name;
-				};
 
 
-				DescribeTasksResult();
-				explicit DescribeTasksResult(const std::string &payload);
-				~DescribeTasksResult();
-				int getTotalCount()const;
-				std::vector<SimpleTask> getTasks()const;
+				UploadCSGClientLogResult();
+				explicit UploadCSGClientLogResult(const std::string &payload);
+				~UploadCSGClientLogResult();
+				std::string getTaskId()const;
 				std::string getMessage()const;
-				int getPageSize()const;
-				int getPageNumber()const;
 				std::string getCode()const;
 				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int totalCount_;
-				std::vector<SimpleTask> tasks_;
+				std::string taskId_;
 				std::string message_;
-				int pageSize_;
-				int pageNumber_;
 				std::string code_;
 				bool success_;
 
@@ -73,4 +54,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SGW_MODEL_DESCRIBETASKSRESULT_H_
+#endif // !ALIBABACLOUD_SGW_MODEL_UPLOADCSGCLIENTLOGRESULT_H_

@@ -100,3 +100,14 @@ void TagResourcesRequest::setTag(const std::vector<Tag>& tag)
 	}
 }
 
+std::string TagResourcesRequest::getResourceRegionId()const
+{
+	return resourceRegionId_;
+}
+
+void TagResourcesRequest::setResourceRegionId(const std::string& resourceRegionId)
+{
+	resourceRegionId_ = resourceRegionId;
+	setParameter("ResourceRegionId", resourceRegionId);
+}
+
