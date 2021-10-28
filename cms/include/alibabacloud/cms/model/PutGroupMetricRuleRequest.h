@@ -47,6 +47,8 @@ namespace AlibabaCloud
 				void setEffectiveInterval(const std::string& effectiveInterval);
 				std::string getEscalationsInfoComparisonOperator()const;
 				void setEscalationsInfoComparisonOperator(const std::string& escalationsInfoComparisonOperator);
+				std::string getNoDataPolicy()const;
+				void setNoDataPolicy(const std::string& noDataPolicy);
 				std::string getNoEffectiveInterval()const;
 				void setNoEffectiveInterval(const std::string& noEffectiveInterval);
 				std::string getEmailSubject()const;
@@ -57,6 +59,8 @@ namespace AlibabaCloud
 				void setMetricName(const std::string& metricName);
 				int getEscalationsWarnTimes()const;
 				void setEscalationsWarnTimes(int escalationsWarnTimes);
+				Struct getCompositeExpression()const;
+				void setCompositeExpression(const Struct& compositeExpression);
 				std::string getPeriod()const;
 				void setPeriod(const std::string& period);
 				std::string getEscalationsWarnThreshold()const;
@@ -99,11 +103,13 @@ namespace AlibabaCloud
 				std::string escalationsInfoStatistics_;
 				std::string effectiveInterval_;
 				std::string escalationsInfoComparisonOperator_;
+				std::string noDataPolicy_;
 				std::string noEffectiveInterval_;
 				std::string emailSubject_;
 				int silenceTime_;
 				std::string metricName_;
 				int escalationsWarnTimes_;
+				Struct compositeExpression_;
 				std::string period_;
 				std::string escalationsWarnThreshold_;
 				std::string contactGroups_;

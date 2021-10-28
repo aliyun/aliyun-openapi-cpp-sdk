@@ -34,6 +34,24 @@ namespace AlibabaCloud
 			public:
 				struct Alarm
 				{
+					struct SendDetail
+					{
+						struct ChannelResult
+						{
+							struct Result
+							{
+								std::string requestId;
+								std::vector<std::string> notifyTargetList;
+								std::string code;
+								std::string detail;
+								bool success;
+							};
+							std::vector<ChannelResult::Result> resultList;
+							std::string channel;
+						};
+						std::vector<ChannelResult> channelResultList;
+						std::string resultCode;
+					};
 					struct Escalation
 					{
 						std::string expression;
@@ -65,6 +83,7 @@ namespace AlibabaCloud
 					std::string product;
 					std::string metricName;
 					std::vector<std::string> contactSMSList;
+					SendDetail sendDetail;
 					std::string ruleName;
 					std::vector<std::string> contactGroups;
 					std::vector<std::string> dingdingWebhookList;

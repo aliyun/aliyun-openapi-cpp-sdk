@@ -43,24 +43,24 @@ void CreateGroupMetricRulesResult::parse(const std::string &payload)
 	for (auto valueResourcesAlertResult : allResourcesNode)
 	{
 		AlertResult resourcesObject;
-		if(!valueResourcesAlertResult["RuleId"].isNull())
-			resourcesObject.ruleId = valueResourcesAlertResult["RuleId"].asString();
-		if(!valueResourcesAlertResult["RuleName"].isNull())
-			resourcesObject.ruleName = valueResourcesAlertResult["RuleName"].asString();
-		if(!valueResourcesAlertResult["Message"].isNull())
-			resourcesObject.message = valueResourcesAlertResult["Message"].asString();
 		if(!valueResourcesAlertResult["Code"].isNull())
 			resourcesObject.code = std::stoi(valueResourcesAlertResult["Code"].asString());
+		if(!valueResourcesAlertResult["Message"].isNull())
+			resourcesObject.message = valueResourcesAlertResult["Message"].asString();
 		if(!valueResourcesAlertResult["Success"].isNull())
 			resourcesObject.success = valueResourcesAlertResult["Success"].asString() == "true";
+		if(!valueResourcesAlertResult["RuleName"].isNull())
+			resourcesObject.ruleName = valueResourcesAlertResult["RuleName"].asString();
+		if(!valueResourcesAlertResult["RuleId"].isNull())
+			resourcesObject.ruleId = valueResourcesAlertResult["RuleId"].asString();
 		resources_.push_back(resourcesObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = std::stoi(value["Code"].asString());
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

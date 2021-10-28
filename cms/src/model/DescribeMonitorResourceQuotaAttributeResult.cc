@@ -40,14 +40,14 @@ void DescribeMonitorResourceQuotaAttributeResult::parse(const std::string &paylo
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto resourceQuotaNode = value["ResourceQuota"];
-	if(!resourceQuotaNode["ExpireTime"].isNull())
-		resourceQuota_.expireTime = resourceQuotaNode["ExpireTime"].asString();
 	if(!resourceQuotaNode["SuitInfo"].isNull())
 		resourceQuota_.suitInfo = resourceQuotaNode["SuitInfo"].asString();
-	if(!resourceQuotaNode["CRMType"].isNull())
-		resourceQuota_.cRMType = resourceQuotaNode["CRMType"].asString();
 	if(!resourceQuotaNode["InstanceId"].isNull())
 		resourceQuota_.instanceId = resourceQuotaNode["InstanceId"].asString();
+	if(!resourceQuotaNode["ExpireTime"].isNull())
+		resourceQuota_.expireTime = resourceQuotaNode["ExpireTime"].asString();
+	if(!resourceQuotaNode["CRMType"].isNull())
+		resourceQuota_.cRMType = resourceQuotaNode["CRMType"].asString();
 	auto siteMonitorEcsProbeNode = resourceQuotaNode["SiteMonitorEcsProbe"];
 	if(!siteMonitorEcsProbeNode["QuotaLimit"].isNull())
 		resourceQuota_.siteMonitorEcsProbe.quotaLimit = std::stoi(siteMonitorEcsProbeNode["QuotaLimit"].asString());
@@ -116,6 +116,13 @@ void DescribeMonitorResourceQuotaAttributeResult::parse(const std::string &paylo
 		resourceQuota_.enterpriseQuota.suitInfo = enterpriseQuotaNode["SuitInfo"].asString();
 	if(!enterpriseQuotaNode["InstanceId"].isNull())
 		resourceQuota_.enterpriseQuota.instanceId = enterpriseQuotaNode["InstanceId"].asString();
+	auto nAAMNode = resourceQuotaNode["NAAM"];
+	if(!nAAMNode["EffectTime"].isNull())
+		resourceQuota_.nAAM.effectTime = nAAMNode["EffectTime"].asString();
+	if(!nAAMNode["InstanceId"].isNull())
+		resourceQuota_.nAAM.instanceId = nAAMNode["InstanceId"].asString();
+	if(!nAAMNode["SuitInfo"].isNull())
+		resourceQuota_.nAAM.suitInfo = nAAMNode["SuitInfo"].asString();
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())

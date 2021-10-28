@@ -55,8 +55,8 @@ namespace AlibabaCloud
 							std::string _operator;
 							std::string aggregate;
 						};
-						int notifyType;
 						int silenceTime;
+						int notifyType;
 						int endTime;
 						int startTime;
 						std::string webHook;

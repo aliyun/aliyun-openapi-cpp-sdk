@@ -43,88 +43,117 @@ void DescribeMetricRuleListResult::parse(const std::string &payload)
 	for (auto valueAlarmsAlarm : allAlarmsNode)
 	{
 		Alarm alarmsObject;
-		if(!valueAlarmsAlarm["RuleId"].isNull())
-			alarmsObject.ruleId = valueAlarmsAlarm["RuleId"].asString();
-		if(!valueAlarmsAlarm["Namespace"].isNull())
-			alarmsObject._namespace = valueAlarmsAlarm["Namespace"].asString();
-		if(!valueAlarmsAlarm["MetricName"].isNull())
-			alarmsObject.metricName = valueAlarmsAlarm["MetricName"].asString();
-		if(!valueAlarmsAlarm["Period"].isNull())
-			alarmsObject.period = valueAlarmsAlarm["Period"].asString();
-		if(!valueAlarmsAlarm["EffectiveInterval"].isNull())
-			alarmsObject.effectiveInterval = valueAlarmsAlarm["EffectiveInterval"].asString();
-		if(!valueAlarmsAlarm["NoEffectiveInterval"].isNull())
-			alarmsObject.noEffectiveInterval = valueAlarmsAlarm["NoEffectiveInterval"].asString();
 		if(!valueAlarmsAlarm["SilenceTime"].isNull())
 			alarmsObject.silenceTime = std::stoi(valueAlarmsAlarm["SilenceTime"].asString());
-		if(!valueAlarmsAlarm["EnableState"].isNull())
-			alarmsObject.enableState = valueAlarmsAlarm["EnableState"].asString() == "true";
-		if(!valueAlarmsAlarm["AlertState"].isNull())
-			alarmsObject.alertState = valueAlarmsAlarm["AlertState"].asString();
-		if(!valueAlarmsAlarm["ContactGroups"].isNull())
-			alarmsObject.contactGroups = valueAlarmsAlarm["ContactGroups"].asString();
+		if(!valueAlarmsAlarm["MetricName"].isNull())
+			alarmsObject.metricName = valueAlarmsAlarm["MetricName"].asString();
 		if(!valueAlarmsAlarm["Webhook"].isNull())
 			alarmsObject.webhook = valueAlarmsAlarm["Webhook"].asString();
-		if(!valueAlarmsAlarm["MailSubject"].isNull())
-			alarmsObject.mailSubject = valueAlarmsAlarm["MailSubject"].asString();
-		if(!valueAlarmsAlarm["RuleName"].isNull())
-			alarmsObject.ruleName = valueAlarmsAlarm["RuleName"].asString();
-		if(!valueAlarmsAlarm["Resources"].isNull())
-			alarmsObject.resources = valueAlarmsAlarm["Resources"].asString();
-		if(!valueAlarmsAlarm["GroupId"].isNull())
-			alarmsObject.groupId = valueAlarmsAlarm["GroupId"].asString();
-		if(!valueAlarmsAlarm["GroupName"].isNull())
-			alarmsObject.groupName = valueAlarmsAlarm["GroupName"].asString();
-		if(!valueAlarmsAlarm["Dimensions"].isNull())
-			alarmsObject.dimensions = valueAlarmsAlarm["Dimensions"].asString();
+		if(!valueAlarmsAlarm["ContactGroups"].isNull())
+			alarmsObject.contactGroups = valueAlarmsAlarm["ContactGroups"].asString();
 		if(!valueAlarmsAlarm["SourceType"].isNull())
 			alarmsObject.sourceType = valueAlarmsAlarm["SourceType"].asString();
+		if(!valueAlarmsAlarm["Namespace"].isNull())
+			alarmsObject._namespace = valueAlarmsAlarm["Namespace"].asString();
+		if(!valueAlarmsAlarm["MailSubject"].isNull())
+			alarmsObject.mailSubject = valueAlarmsAlarm["MailSubject"].asString();
+		if(!valueAlarmsAlarm["NoEffectiveInterval"].isNull())
+			alarmsObject.noEffectiveInterval = valueAlarmsAlarm["NoEffectiveInterval"].asString();
+		if(!valueAlarmsAlarm["EffectiveInterval"].isNull())
+			alarmsObject.effectiveInterval = valueAlarmsAlarm["EffectiveInterval"].asString();
+		if(!valueAlarmsAlarm["RuleName"].isNull())
+			alarmsObject.ruleName = valueAlarmsAlarm["RuleName"].asString();
+		if(!valueAlarmsAlarm["AlertState"].isNull())
+			alarmsObject.alertState = valueAlarmsAlarm["AlertState"].asString();
+		if(!valueAlarmsAlarm["Period"].isNull())
+			alarmsObject.period = valueAlarmsAlarm["Period"].asString();
+		if(!valueAlarmsAlarm["RuleId"].isNull())
+			alarmsObject.ruleId = valueAlarmsAlarm["RuleId"].asString();
+		if(!valueAlarmsAlarm["GroupName"].isNull())
+			alarmsObject.groupName = valueAlarmsAlarm["GroupName"].asString();
+		if(!valueAlarmsAlarm["GroupId"].isNull())
+			alarmsObject.groupId = valueAlarmsAlarm["GroupId"].asString();
+		if(!valueAlarmsAlarm["Dimensions"].isNull())
+			alarmsObject.dimensions = valueAlarmsAlarm["Dimensions"].asString();
+		if(!valueAlarmsAlarm["EnableState"].isNull())
+			alarmsObject.enableState = valueAlarmsAlarm["EnableState"].asString() == "true";
 		if(!valueAlarmsAlarm["GroupBy"].isNull())
 			alarmsObject.groupBy = valueAlarmsAlarm["GroupBy"].asString();
+		if(!valueAlarmsAlarm["Resources"].isNull())
+			alarmsObject.resources = valueAlarmsAlarm["Resources"].asString();
+		if(!valueAlarmsAlarm["NoDataPolicy"].isNull())
+			alarmsObject.noDataPolicy = valueAlarmsAlarm["NoDataPolicy"].asString();
 		auto escalationsNode = value["Escalations"];
 		auto infoNode = escalationsNode["Info"];
 		if(!infoNode["ComparisonOperator"].isNull())
 			alarmsObject.escalations.info.comparisonOperator = infoNode["ComparisonOperator"].asString();
-		if(!infoNode["Statistics"].isNull())
-			alarmsObject.escalations.info.statistics = infoNode["Statistics"].asString();
-		if(!infoNode["Threshold"].isNull())
-			alarmsObject.escalations.info.threshold = infoNode["Threshold"].asString();
-		if(!infoNode["Times"].isNull())
-			alarmsObject.escalations.info.times = std::stoi(infoNode["Times"].asString());
 		if(!infoNode["PreCondition"].isNull())
 			alarmsObject.escalations.info.preCondition = infoNode["PreCondition"].asString();
+		if(!infoNode["Times"].isNull())
+			alarmsObject.escalations.info.times = std::stoi(infoNode["Times"].asString());
+		if(!infoNode["Threshold"].isNull())
+			alarmsObject.escalations.info.threshold = infoNode["Threshold"].asString();
+		if(!infoNode["Statistics"].isNull())
+			alarmsObject.escalations.info.statistics = infoNode["Statistics"].asString();
 		auto warnNode = escalationsNode["Warn"];
 		if(!warnNode["ComparisonOperator"].isNull())
 			alarmsObject.escalations.warn.comparisonOperator = warnNode["ComparisonOperator"].asString();
-		if(!warnNode["Statistics"].isNull())
-			alarmsObject.escalations.warn.statistics = warnNode["Statistics"].asString();
-		if(!warnNode["Threshold"].isNull())
-			alarmsObject.escalations.warn.threshold = warnNode["Threshold"].asString();
-		if(!warnNode["Times"].isNull())
-			alarmsObject.escalations.warn.times = std::stoi(warnNode["Times"].asString());
 		if(!warnNode["PreCondition"].isNull())
 			alarmsObject.escalations.warn.preCondition = warnNode["PreCondition"].asString();
+		if(!warnNode["Times"].isNull())
+			alarmsObject.escalations.warn.times = std::stoi(warnNode["Times"].asString());
+		if(!warnNode["Threshold"].isNull())
+			alarmsObject.escalations.warn.threshold = warnNode["Threshold"].asString();
+		if(!warnNode["Statistics"].isNull())
+			alarmsObject.escalations.warn.statistics = warnNode["Statistics"].asString();
 		auto criticalNode = escalationsNode["Critical"];
 		if(!criticalNode["ComparisonOperator"].isNull())
 			alarmsObject.escalations.critical.comparisonOperator = criticalNode["ComparisonOperator"].asString();
-		if(!criticalNode["Statistics"].isNull())
-			alarmsObject.escalations.critical.statistics = criticalNode["Statistics"].asString();
-		if(!criticalNode["Threshold"].isNull())
-			alarmsObject.escalations.critical.threshold = criticalNode["Threshold"].asString();
-		if(!criticalNode["Times"].isNull())
-			alarmsObject.escalations.critical.times = std::stoi(criticalNode["Times"].asString());
 		if(!criticalNode["PreCondition"].isNull())
 			alarmsObject.escalations.critical.preCondition = criticalNode["PreCondition"].asString();
+		if(!criticalNode["Times"].isNull())
+			alarmsObject.escalations.critical.times = std::stoi(criticalNode["Times"].asString());
+		if(!criticalNode["Threshold"].isNull())
+			alarmsObject.escalations.critical.threshold = criticalNode["Threshold"].asString();
+		if(!criticalNode["Statistics"].isNull())
+			alarmsObject.escalations.critical.statistics = criticalNode["Statistics"].asString();
+		auto compositeExpressionNode = value["CompositeExpression"];
+		if(!compositeExpressionNode["Level"].isNull())
+			alarmsObject.compositeExpression.level = compositeExpressionNode["Level"].asString();
+		if(!compositeExpressionNode["ExpressionListJoin"].isNull())
+			alarmsObject.compositeExpression.expressionListJoin = compositeExpressionNode["ExpressionListJoin"].asString();
+		if(!compositeExpressionNode["ExpressionRaw"].isNull())
+			alarmsObject.compositeExpression.expressionRaw = compositeExpressionNode["ExpressionRaw"].asString();
+		if(!compositeExpressionNode["Times"].isNull())
+			alarmsObject.compositeExpression.times = std::stoi(compositeExpressionNode["Times"].asString());
+		auto allExpressionListNode = compositeExpressionNode["ExpressionList"]["ExpressionListItem"];
+		for (auto compositeExpressionNodeExpressionListExpressionListItem : allExpressionListNode)
+		{
+			Alarm::CompositeExpression::ExpressionListItem expressionListItemObject;
+			if(!compositeExpressionNodeExpressionListExpressionListItem["MetricName"].isNull())
+				expressionListItemObject.metricName = compositeExpressionNodeExpressionListExpressionListItem["MetricName"].asString();
+			if(!compositeExpressionNodeExpressionListExpressionListItem["ComparisonOperator"].isNull())
+				expressionListItemObject.comparisonOperator = compositeExpressionNodeExpressionListExpressionListItem["ComparisonOperator"].asString();
+			if(!compositeExpressionNodeExpressionListExpressionListItem["Statistics"].isNull())
+				expressionListItemObject.statistics = compositeExpressionNodeExpressionListExpressionListItem["Statistics"].asString();
+			if(!compositeExpressionNodeExpressionListExpressionListItem["Threshold"].isNull())
+				expressionListItemObject.threshold = compositeExpressionNodeExpressionListExpressionListItem["Threshold"].asString();
+			if(!compositeExpressionNodeExpressionListExpressionListItem["Period"].isNull())
+				expressionListItemObject.period = std::stoi(compositeExpressionNodeExpressionListExpressionListItem["Period"].asString());
+			if(!compositeExpressionNodeExpressionListExpressionListItem["Id"].isNull())
+				expressionListItemObject.id = compositeExpressionNodeExpressionListExpressionListItem["Id"].asString();
+			alarmsObject.compositeExpression.expressionList.push_back(expressionListItemObject);
+		}
 		alarms_.push_back(alarmsObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = std::stoi(value["Code"].asString());
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
 	if(!value["Total"].isNull())
 		total_ = value["Total"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

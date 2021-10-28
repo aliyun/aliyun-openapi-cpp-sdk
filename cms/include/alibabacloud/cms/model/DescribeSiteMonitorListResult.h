@@ -38,6 +38,7 @@ namespace AlibabaCloud
 					{
 						std::string cookie;
 						int ping_num;
+						bool enable_operator_dns;
 						long traceroute;
 						float failure_rate;
 						int port;
@@ -50,16 +51,18 @@ namespace AlibabaCloud
 						std::string header;
 						std::string response_content;
 						std::string username;
+						long attempts;
 						int authentication;
 						std::string request_content;
 						std::string dns_server;
 						std::string dns_type;
 						std::string request_format;
+						std::string protocol;
 						std::string password;
 					};
 					std::string taskId;
-					std::string address;
 					std::string endTime;
+					std::string address;
 					OptionsJson optionsJson;
 					std::string taskName;
 					std::string taskType;

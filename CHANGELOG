@@ -1,3 +1,6 @@
+2021-10-28 Version: 1.36.914
+- Add no data alarm processing.
+
 2021-10-28 Version: 1.36.913
 - Updated tag api.
 - Updated DescribeTask api to get relatedResourceId info.

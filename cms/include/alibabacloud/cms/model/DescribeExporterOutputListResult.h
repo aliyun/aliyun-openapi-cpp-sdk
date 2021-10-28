@@ -37,7 +37,6 @@ namespace AlibabaCloud
 					struct ConfigJson
 					{
 						std::string project;
-						std::string as;
 						std::string endpoint;
 						std::string logstore;
 						std::string ak;

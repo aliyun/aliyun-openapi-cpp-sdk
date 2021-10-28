@@ -64,23 +64,42 @@ namespace AlibabaCloud
 						Info info;
 						Warn warn;
 					};
+					struct CompositeExpression
+					{
+						struct ExpressionListItem
+						{
+							std::string metricName;
+							std::string comparisonOperator;
+							int period;
+							std::string id;
+							std::string statistics;
+							std::string threshold;
+						};
+						int times;
+						std::string expressionRaw;
+						std::string level;
+						std::string expressionListJoin;
+						std::vector<ExpressionListItem> expressionList;
+					};
 					std::string groupName;
-					std::string noEffectiveInterval;
 					int silenceTime;
 					std::string contactGroups;
+					std::string noEffectiveInterval;
 					std::string groupBy;
 					std::string mailSubject;
-					std::string ruleId;
 					std::string sourceType;
+					std::string ruleId;
 					std::string period;
 					std::string dimensions;
 					std::string _namespace;
 					std::string effectiveInterval;
+					std::string noDataPolicy;
 					std::string alertState;
 					std::string groupId;
 					std::string metricName;
 					Escalations escalations;
 					bool enableState;
+					CompositeExpression compositeExpression;
 					std::string webhook;
 					std::string resources;
 					std::string ruleName;

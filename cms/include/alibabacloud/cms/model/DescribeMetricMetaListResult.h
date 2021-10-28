@@ -38,8 +38,8 @@ namespace AlibabaCloud
 					std::string periods;
 					std::string description;
 					std::string dimensions;
-					std::string _namespace;
 					std::string labels;
+					std::string _namespace;
 					std::string unit;
 					std::string statistics;
 				};

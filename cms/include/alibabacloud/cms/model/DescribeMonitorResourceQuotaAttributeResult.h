@@ -93,6 +93,12 @@ namespace AlibabaCloud
 						std::string instanceId;
 						std::string suitInfo;
 					};
+					struct NAAM
+					{
+						std::string instanceId;
+						std::string suitInfo;
+						std::string effectTime;
+					};
 					SiteMonitorOperatorProbe siteMonitorOperatorProbe;
 					std::string instanceId;
 					LogMonitor logMonitor;
@@ -103,6 +109,7 @@ namespace AlibabaCloud
 					SiteMonitorTask siteMonitorTask;
 					SMS sMS;
 					Api api;
+					NAAM nAAM;
 					SiteMonitorEcsProbe siteMonitorEcsProbe;
 					std::string expireTime;
 					CustomMonitor customMonitor;

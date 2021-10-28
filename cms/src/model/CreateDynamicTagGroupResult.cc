@@ -45,12 +45,19 @@ void CreateDynamicTagGroupResult::parse(const std::string &payload)
 		message_ = value["Message"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["Id"].isNull())
+		id_ = value["Id"].asString();
 
 }
 
 std::string CreateDynamicTagGroupResult::getMessage()const
 {
 	return message_;
+}
+
+std::string CreateDynamicTagGroupResult::getId()const
+{
+	return id_;
 }
 
 std::string CreateDynamicTagGroupResult::getCode()const

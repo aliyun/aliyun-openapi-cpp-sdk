@@ -111,6 +111,34 @@ void DescribeAlertLogListResult::parse(const std::string &payload)
 				webhookListObject.message = valueAlertLogListAlarmWebhookListWebhookListItem["message"].asString();
 			alertLogListObject.webhookList.push_back(webhookListObject);
 		}
+		auto sendDetailNode = value["SendDetail"];
+		if(!sendDetailNode["ResultCode"].isNull())
+			alertLogListObject.sendDetail.resultCode = sendDetailNode["ResultCode"].asString();
+		auto allChannelResultListNode = sendDetailNode["ChannelResultList"]["ChannelResult"];
+		for (auto sendDetailNodeChannelResultListChannelResult : allChannelResultListNode)
+		{
+			Alarm::SendDetail::ChannelResult channelResultObject;
+			if(!sendDetailNodeChannelResultListChannelResult["Channel"].isNull())
+				channelResultObject.channel = sendDetailNodeChannelResultListChannelResult["Channel"].asString();
+			auto allResultListNode = sendDetailNodeChannelResultListChannelResult["ResultList"]["Result"];
+			for (auto sendDetailNodeChannelResultListChannelResultResultListResult : allResultListNode)
+			{
+				Alarm::SendDetail::ChannelResult::Result resultListObject;
+				if(!sendDetailNodeChannelResultListChannelResultResultListResult["Code"].isNull())
+					resultListObject.code = sendDetailNodeChannelResultListChannelResultResultListResult["Code"].asString();
+				if(!sendDetailNodeChannelResultListChannelResultResultListResult["Detail"].isNull())
+					resultListObject.detail = sendDetailNodeChannelResultListChannelResultResultListResult["Detail"].asString();
+				if(!sendDetailNodeChannelResultListChannelResultResultListResult["Success"].isNull())
+					resultListObject.success = sendDetailNodeChannelResultListChannelResultResultListResult["Success"].asString() == "true";
+				if(!sendDetailNodeChannelResultListChannelResultResultListResult["RequestId"].isNull())
+					resultListObject.requestId = sendDetailNodeChannelResultListChannelResultResultListResult["RequestId"].asString();
+				auto allNotifyTargetList = value["notifyTargetList"]["NotifyTarget"];
+				for (auto value : allNotifyTargetList)
+					resultListObject.notifyTargetList.push_back(value.asString());
+				channelResultObject.resultList.push_back(resultListObject);
+			}
+			alertLogListObject.sendDetail.channelResultList.push_back(channelResultObject);
+		}
 		auto escalationNode = value["Escalation"];
 		if(!escalationNode["Times"].isNull())
 			alertLogListObject.escalation.times = std::stoi(escalationNode["Times"].asString());

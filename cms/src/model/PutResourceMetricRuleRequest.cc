@@ -93,6 +93,17 @@ void PutResourceMetricRuleRequest::setEscalationsInfoComparisonOperator(const st
 	setParameter("EscalationsInfoComparisonOperator", escalationsInfoComparisonOperator);
 }
 
+std::string PutResourceMetricRuleRequest::getNoDataPolicy()const
+{
+	return noDataPolicy_;
+}
+
+void PutResourceMetricRuleRequest::setNoDataPolicy(const std::string& noDataPolicy)
+{
+	noDataPolicy_ = noDataPolicy;
+	setParameter("NoDataPolicy", noDataPolicy);
+}
+
 std::string PutResourceMetricRuleRequest::getNoEffectiveInterval()const
 {
 	return noEffectiveInterval_;
@@ -148,6 +159,17 @@ void PutResourceMetricRuleRequest::setEscalationsWarnTimes(int escalationsWarnTi
 	setParameter("EscalationsWarnTimes", std::to_string(escalationsWarnTimes));
 }
 
+Struct PutResourceMetricRuleRequest::getCompositeExpression()const
+{
+	return compositeExpression_;
+}
+
+void PutResourceMetricRuleRequest::setCompositeExpression(const Struct& compositeExpression)
+{
+	compositeExpression_ = compositeExpression;
+	setParameter("CompositeExpression", std::to_string(compositeExpression));
+}
+
 std::string PutResourceMetricRuleRequest::getPeriod()const
 {
 	return period_;
@@ -192,6 +214,17 @@ void PutResourceMetricRuleRequest::setEscalationsCriticalStatistics(const std::s
 	setParameter("EscalationsCriticalStatistics", escalationsCriticalStatistics);
 }
 
+std::string PutResourceMetricRuleRequest::getGroupId()const
+{
+	return groupId_;
+}
+
+void PutResourceMetricRuleRequest::setGroupId(const std::string& groupId)
+{
+	groupId_ = groupId;
+	setParameter("GroupId", groupId);
+}
+
 std::string PutResourceMetricRuleRequest::getResources()const
 {
 	return resources_;
@@ -223,6 +256,17 @@ void PutResourceMetricRuleRequest::setGroupBy(const std::string& groupBy)
 {
 	groupBy_ = groupBy;
 	setParameter("GroupBy", groupBy);
+}
+
+std::string PutResourceMetricRuleRequest::getGroupName()const
+{
+	return groupName_;
+}
+
+void PutResourceMetricRuleRequest::setGroupName(const std::string& groupName)
+{
+	groupName_ = groupName;
+	setParameter("GroupName", groupName);
 }
 
 int PutResourceMetricRuleRequest::getEscalationsCriticalTimes()const

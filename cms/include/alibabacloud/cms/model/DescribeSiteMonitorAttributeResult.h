@@ -36,42 +36,45 @@ namespace AlibabaCloud
 				{
 					struct OptionJson
 					{
-						std::string cookie;
-						int ping_num;
 						std::string ipv6_task;
-						bool proxy_protocol;
+						int ping_num;
 						bool unfollow_redirect;
 						long traceroute;
-						float failure_rate;
 						int port;
+						std::string expect_value;
+						std::string http_method;
+						std::string response_content;
+						long attempts;
+						std::string dns_type;
+						std::string protocol;
+						std::string password;
+						std::string cookie;
+						bool enable_operator_dns;
+						bool proxy_protocol;
+						float failure_rate;
 						int match_rule;
 						std::string acceptable_response_code;
 						std::string response_format;
-						std::string expect_value;
-						std::string http_method;
 						long time_out;
 						bool cert_verify;
 						std::string header;
-						std::string response_content;
 						std::string username;
 						int authentication;
 						std::string request_content;
 						std::string dns_server;
-						std::string dns_type;
 						std::string request_format;
-						std::string password;
 					};
 					struct IspCity
 					{
 						std::string ispName;
 						std::string isp;
-						std::string cityName;
 						std::string city;
+						std::string cityName;
 					};
 					OptionJson optionJson;
 					std::string taskId;
-					std::string address;
 					std::string endTime;
+					std::string address;
 					std::string taskName;
 					std::string taskType;
 					std::vector<IspCity> ispCities;
@@ -82,8 +85,8 @@ namespace AlibabaCloud
 				{
 					std::string comparisonOperator;
 					std::string ruleId;
-					std::string period;
 					std::string evaluationCount;
+					std::string period;
 					std::string dimensions;
 					std::string _namespace;
 					std::string statistics;

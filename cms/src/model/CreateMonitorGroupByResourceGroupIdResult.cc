@@ -45,12 +45,19 @@ void CreateMonitorGroupByResourceGroupIdResult::parse(const std::string &payload
 		message_ = value["Message"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["Id"].isNull())
+		id_ = std::stol(value["Id"].asString());
 
 }
 
 std::string CreateMonitorGroupByResourceGroupIdResult::getMessage()const
 {
 	return message_;
+}
+
+long CreateMonitorGroupByResourceGroupIdResult::getId()const
+{
+	return id_;
 }
 
 std::string CreateMonitorGroupByResourceGroupIdResult::getCode()const

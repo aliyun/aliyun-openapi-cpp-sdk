@@ -93,6 +93,17 @@ void PutGroupMetricRuleRequest::setEscalationsInfoComparisonOperator(const std::
 	setParameter("EscalationsInfoComparisonOperator", escalationsInfoComparisonOperator);
 }
 
+std::string PutGroupMetricRuleRequest::getNoDataPolicy()const
+{
+	return noDataPolicy_;
+}
+
+void PutGroupMetricRuleRequest::setNoDataPolicy(const std::string& noDataPolicy)
+{
+	noDataPolicy_ = noDataPolicy;
+	setParameter("NoDataPolicy", noDataPolicy);
+}
+
 std::string PutGroupMetricRuleRequest::getNoEffectiveInterval()const
 {
 	return noEffectiveInterval_;
@@ -146,6 +157,17 @@ void PutGroupMetricRuleRequest::setEscalationsWarnTimes(int escalationsWarnTimes
 {
 	escalationsWarnTimes_ = escalationsWarnTimes;
 	setParameter("EscalationsWarnTimes", std::to_string(escalationsWarnTimes));
+}
+
+Struct PutGroupMetricRuleRequest::getCompositeExpression()const
+{
+	return compositeExpression_;
+}
+
+void PutGroupMetricRuleRequest::setCompositeExpression(const Struct& compositeExpression)
+{
+	compositeExpression_ = compositeExpression;
+	setParameter("CompositeExpression", std::to_string(compositeExpression));
 }
 
 std::string PutGroupMetricRuleRequest::getPeriod()const

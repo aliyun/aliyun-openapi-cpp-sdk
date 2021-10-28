@@ -38,6 +38,7 @@ namespace AlibabaCloud
 				explicit CreateDynamicTagGroupResult(const std::string &payload);
 				~CreateDynamicTagGroupResult();
 				std::string getMessage()const;
+				std::string getId()const;
 				std::string getCode()const;
 				bool getSuccess()const;
 
@@ -45,6 +46,7 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
+				std::string id_;
 				std::string code_;
 				bool success_;
 

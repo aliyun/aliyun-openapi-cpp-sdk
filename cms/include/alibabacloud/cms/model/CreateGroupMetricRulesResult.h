@@ -37,8 +37,8 @@ namespace AlibabaCloud
 					std::string message;
 					std::string ruleId;
 					int code;
-					std::string ruleName;
 					bool success;
+					std::string ruleName;
 				};
 
 

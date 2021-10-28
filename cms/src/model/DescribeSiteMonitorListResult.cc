@@ -43,73 +43,79 @@ void DescribeSiteMonitorListResult::parse(const std::string &payload)
 	for (auto valueSiteMonitorsSiteMonitor : allSiteMonitorsNode)
 	{
 		SiteMonitor siteMonitorsObject;
-		if(!valueSiteMonitorsSiteMonitor["TaskId"].isNull())
-			siteMonitorsObject.taskId = valueSiteMonitorsSiteMonitor["TaskId"].asString();
+		if(!valueSiteMonitorsSiteMonitor["EndTime"].isNull())
+			siteMonitorsObject.endTime = valueSiteMonitorsSiteMonitor["EndTime"].asString();
 		if(!valueSiteMonitorsSiteMonitor["TaskType"].isNull())
 			siteMonitorsObject.taskType = valueSiteMonitorsSiteMonitor["TaskType"].asString();
-		if(!valueSiteMonitorsSiteMonitor["Address"].isNull())
-			siteMonitorsObject.address = valueSiteMonitorsSiteMonitor["Address"].asString();
+		if(!valueSiteMonitorsSiteMonitor["UpdateTime"].isNull())
+			siteMonitorsObject.updateTime = valueSiteMonitorsSiteMonitor["UpdateTime"].asString();
+		if(!valueSiteMonitorsSiteMonitor["Interval"].isNull())
+			siteMonitorsObject.interval = valueSiteMonitorsSiteMonitor["Interval"].asString();
 		if(!valueSiteMonitorsSiteMonitor["TaskState"].isNull())
 			siteMonitorsObject.taskState = valueSiteMonitorsSiteMonitor["TaskState"].asString();
 		if(!valueSiteMonitorsSiteMonitor["CreateTime"].isNull())
 			siteMonitorsObject.createTime = valueSiteMonitorsSiteMonitor["CreateTime"].asString();
 		if(!valueSiteMonitorsSiteMonitor["TaskName"].isNull())
 			siteMonitorsObject.taskName = valueSiteMonitorsSiteMonitor["TaskName"].asString();
-		if(!valueSiteMonitorsSiteMonitor["Interval"].isNull())
-			siteMonitorsObject.interval = valueSiteMonitorsSiteMonitor["Interval"].asString();
-		if(!valueSiteMonitorsSiteMonitor["UpdateTime"].isNull())
-			siteMonitorsObject.updateTime = valueSiteMonitorsSiteMonitor["UpdateTime"].asString();
-		if(!valueSiteMonitorsSiteMonitor["EndTime"].isNull())
-			siteMonitorsObject.endTime = valueSiteMonitorsSiteMonitor["EndTime"].asString();
+		if(!valueSiteMonitorsSiteMonitor["Address"].isNull())
+			siteMonitorsObject.address = valueSiteMonitorsSiteMonitor["Address"].asString();
+		if(!valueSiteMonitorsSiteMonitor["TaskId"].isNull())
+			siteMonitorsObject.taskId = valueSiteMonitorsSiteMonitor["TaskId"].asString();
 		auto optionsJsonNode = value["OptionsJson"];
-		if(!optionsJsonNode["dns_type"].isNull())
-			siteMonitorsObject.optionsJson.dns_type = optionsJsonNode["dns_type"].asString();
-		if(!optionsJsonNode["dns_server"].isNull())
-			siteMonitorsObject.optionsJson.dns_server = optionsJsonNode["dns_server"].asString();
-		if(!optionsJsonNode["group_id"].isNull())
-			siteMonitorsObject.optionsJson.group_id = optionsJsonNode["group_id"].asString();
+		if(!optionsJsonNode["password"].isNull())
+			siteMonitorsObject.optionsJson.password = optionsJsonNode["password"].asString();
+		if(!optionsJsonNode["request_format"].isNull())
+			siteMonitorsObject.optionsJson.request_format = optionsJsonNode["request_format"].asString();
 		if(!optionsJsonNode["expect_value"].isNull())
 			siteMonitorsObject.optionsJson.expect_value = optionsJsonNode["expect_value"].asString();
-		if(!optionsJsonNode["http_method"].isNull())
-			siteMonitorsObject.optionsJson.http_method = optionsJsonNode["http_method"].asString();
 		if(!optionsJsonNode["response_content"].isNull())
 			siteMonitorsObject.optionsJson.response_content = optionsJsonNode["response_content"].asString();
+		if(!optionsJsonNode["failure_rate"].isNull())
+			siteMonitorsObject.optionsJson.failure_rate = std::stof(optionsJsonNode["failure_rate"].asString());
+		if(!optionsJsonNode["time_out"].isNull())
+			siteMonitorsObject.optionsJson.time_out = std::stol(optionsJsonNode["time_out"].asString());
+		if(!optionsJsonNode["header"].isNull())
+			siteMonitorsObject.optionsJson.header = optionsJsonNode["header"].asString();
+		if(!optionsJsonNode["cookie"].isNull())
+			siteMonitorsObject.optionsJson.cookie = optionsJsonNode["cookie"].asString();
+		if(!optionsJsonNode["port"].isNull())
+			siteMonitorsObject.optionsJson.port = std::stoi(optionsJsonNode["port"].asString());
+		if(!optionsJsonNode["ping_num"].isNull())
+			siteMonitorsObject.optionsJson.ping_num = std::stoi(optionsJsonNode["ping_num"].asString());
+		if(!optionsJsonNode["authentication"].isNull())
+			siteMonitorsObject.optionsJson.authentication = std::stoi(optionsJsonNode["authentication"].asString());
+		if(!optionsJsonNode["http_method"].isNull())
+			siteMonitorsObject.optionsJson.http_method = optionsJsonNode["http_method"].asString();
 		if(!optionsJsonNode["match_rule"].isNull())
 			siteMonitorsObject.optionsJson.match_rule = std::stoi(optionsJsonNode["match_rule"].asString());
 		if(!optionsJsonNode["request_content"].isNull())
 			siteMonitorsObject.optionsJson.request_content = optionsJsonNode["request_content"].asString();
-		if(!optionsJsonNode["cookie"].isNull())
-			siteMonitorsObject.optionsJson.cookie = optionsJsonNode["cookie"].asString();
-		if(!optionsJsonNode["header"].isNull())
-			siteMonitorsObject.optionsJson.header = optionsJsonNode["header"].asString();
 		if(!optionsJsonNode["username"].isNull())
 			siteMonitorsObject.optionsJson.username = optionsJsonNode["username"].asString();
-		if(!optionsJsonNode["password"].isNull())
-			siteMonitorsObject.optionsJson.password = optionsJsonNode["password"].asString();
-		if(!optionsJsonNode["time_out"].isNull())
-			siteMonitorsObject.optionsJson.time_out = std::stol(optionsJsonNode["time_out"].asString());
-		if(!optionsJsonNode["ping_num"].isNull())
-			siteMonitorsObject.optionsJson.ping_num = std::stoi(optionsJsonNode["ping_num"].asString());
-		if(!optionsJsonNode["failure_rate"].isNull())
-			siteMonitorsObject.optionsJson.failure_rate = std::stof(optionsJsonNode["failure_rate"].asString());
-		if(!optionsJsonNode["request_format"].isNull())
-			siteMonitorsObject.optionsJson.request_format = optionsJsonNode["request_format"].asString();
-		if(!optionsJsonNode["response_format"].isNull())
-			siteMonitorsObject.optionsJson.response_format = optionsJsonNode["response_format"].asString();
-		if(!optionsJsonNode["port"].isNull())
-			siteMonitorsObject.optionsJson.port = std::stoi(optionsJsonNode["port"].asString());
-		if(!optionsJsonNode["authentication"].isNull())
-			siteMonitorsObject.optionsJson.authentication = std::stoi(optionsJsonNode["authentication"].asString());
 		if(!optionsJsonNode["traceroute"].isNull())
 			siteMonitorsObject.optionsJson.traceroute = std::stol(optionsJsonNode["traceroute"].asString());
+		if(!optionsJsonNode["response_format"].isNull())
+			siteMonitorsObject.optionsJson.response_format = optionsJsonNode["response_format"].asString();
+		if(!optionsJsonNode["dns_type"].isNull())
+			siteMonitorsObject.optionsJson.dns_type = optionsJsonNode["dns_type"].asString();
+		if(!optionsJsonNode["group_id"].isNull())
+			siteMonitorsObject.optionsJson.group_id = optionsJsonNode["group_id"].asString();
+		if(!optionsJsonNode["dns_server"].isNull())
+			siteMonitorsObject.optionsJson.dns_server = optionsJsonNode["dns_server"].asString();
+		if(!optionsJsonNode["enable_operator_dns"].isNull())
+			siteMonitorsObject.optionsJson.enable_operator_dns = optionsJsonNode["enable_operator_dns"].asString() == "true";
+		if(!optionsJsonNode["attempts"].isNull())
+			siteMonitorsObject.optionsJson.attempts = std::stol(optionsJsonNode["attempts"].asString());
+		if(!optionsJsonNode["protocol"].isNull())
+			siteMonitorsObject.optionsJson.protocol = optionsJsonNode["protocol"].asString();
 		siteMonitors_.push_back(siteMonitorsObject);
 	}
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString();
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString();
 	if(!value["PageNumber"].isNull())
 		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())

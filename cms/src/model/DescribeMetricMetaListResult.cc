@@ -43,32 +43,32 @@ void DescribeMetricMetaListResult::parse(const std::string &payload)
 	for (auto valueResourcesResource : allResourcesNode)
 	{
 		Resource resourcesObject;
-		if(!valueResourcesResource["Namespace"].isNull())
-			resourcesObject._namespace = valueResourcesResource["Namespace"].asString();
 		if(!valueResourcesResource["MetricName"].isNull())
 			resourcesObject.metricName = valueResourcesResource["MetricName"].asString();
-		if(!valueResourcesResource["Statistics"].isNull())
-			resourcesObject.statistics = valueResourcesResource["Statistics"].asString();
-		if(!valueResourcesResource["Unit"].isNull())
-			resourcesObject.unit = valueResourcesResource["Unit"].asString();
 		if(!valueResourcesResource["Description"].isNull())
 			resourcesObject.description = valueResourcesResource["Description"].asString();
-		if(!valueResourcesResource["Dimensions"].isNull())
-			resourcesObject.dimensions = valueResourcesResource["Dimensions"].asString();
-		if(!valueResourcesResource["Periods"].isNull())
-			resourcesObject.periods = valueResourcesResource["Periods"].asString();
 		if(!valueResourcesResource["Labels"].isNull())
 			resourcesObject.labels = valueResourcesResource["Labels"].asString();
+		if(!valueResourcesResource["Unit"].isNull())
+			resourcesObject.unit = valueResourcesResource["Unit"].asString();
+		if(!valueResourcesResource["Dimensions"].isNull())
+			resourcesObject.dimensions = valueResourcesResource["Dimensions"].asString();
+		if(!valueResourcesResource["Namespace"].isNull())
+			resourcesObject._namespace = valueResourcesResource["Namespace"].asString();
+		if(!valueResourcesResource["Periods"].isNull())
+			resourcesObject.periods = valueResourcesResource["Periods"].asString();
+		if(!valueResourcesResource["Statistics"].isNull())
+			resourcesObject.statistics = valueResourcesResource["Statistics"].asString();
 		resources_.push_back(resourcesObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
 	if(!value["TotalCount"].isNull())
 		totalCount_ = value["TotalCount"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

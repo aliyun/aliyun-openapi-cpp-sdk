@@ -56,8 +56,6 @@ void DescribeExporterOutputListResult::parse(const std::string &payload)
 			datapointsObject.configJson.project = configJsonNode["project"].asString();
 		if(!configJsonNode["endpoint"].isNull())
 			datapointsObject.configJson.endpoint = configJsonNode["endpoint"].asString();
-		if(!configJsonNode["as"].isNull())
-			datapointsObject.configJson.as = configJsonNode["as"].asString();
 		if(!configJsonNode["ak"].isNull())
 			datapointsObject.configJson.ak = configJsonNode["ak"].asString();
 		datapoints_.push_back(datapointsObject);

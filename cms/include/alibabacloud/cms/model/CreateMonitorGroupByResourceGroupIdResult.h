@@ -38,6 +38,7 @@ namespace AlibabaCloud
 				explicit CreateMonitorGroupByResourceGroupIdResult(const std::string &payload);
 				~CreateMonitorGroupByResourceGroupIdResult();
 				std::string getMessage()const;
+				long getId()const;
 				std::string getCode()const;
 				bool getSuccess()const;
 
@@ -45,6 +46,7 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
+				long id_;
 				std::string code_;
 				bool success_;
 
