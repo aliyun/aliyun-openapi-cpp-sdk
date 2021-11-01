@@ -14,46 +14,53 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/objectdet/model/DetectMainBodyResult.h>
+#include <alibabacloud/objectdet/model/DetectVideoFrameResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Objectdet;
 using namespace AlibabaCloud::Objectdet::Model;
 
-DetectMainBodyResult::DetectMainBodyResult() :
+DetectVideoFrameResult::DetectVideoFrameResult() :
 	ServiceResult()
 {}
 
-DetectMainBodyResult::DetectMainBodyResult(const std::string &payload) :
+DetectVideoFrameResult::DetectVideoFrameResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-DetectMainBodyResult::~DetectMainBodyResult()
+DetectVideoFrameResult::~DetectVideoFrameResult()
 {}
 
-void DetectMainBodyResult::parse(const std::string &payload)
+void DetectVideoFrameResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	auto locationNode = dataNode["Location"];
-	if(!locationNode["X"].isNull())
-		data_.location.x = std::stoi(locationNode["X"].asString());
-	if(!locationNode["Y"].isNull())
-		data_.location.y = std::stoi(locationNode["Y"].asString());
-	if(!locationNode["Width"].isNull())
-		data_.location.width = std::stoi(locationNode["Width"].asString());
-	if(!locationNode["Height"].isNull())
-		data_.location.height = std::stoi(locationNode["Height"].asString());
+	if(!dataNode["RequestId"].isNull())
+		data_.requestId = dataNode["RequestId"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 
 }
 
-DetectMainBodyResult::Data DetectMainBodyResult::getData()const
+std::string DetectVideoFrameResult::getMessage()const
+{
+	return message_;
+}
+
+DetectVideoFrameResult::Data DetectVideoFrameResult::getData()const
 {
 	return data_;
+}
+
+std::string DetectVideoFrameResult::getCode()const
+{
+	return code_;
 }
 

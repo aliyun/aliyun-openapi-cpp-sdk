@@ -37,11 +37,17 @@ namespace AlibabaCloud
 
 				Array getRoadRegions()const;
 				void setRoadRegions(const Array& roadRegions);
+				std::string getOriginRequestId()const;
+				void setOriginRequestId(const std::string& originRequestId);
+				std::string getStreamArn()const;
+				void setStreamArn(const std::string& streamArn);
 				std::string getImageURL()const;
 				void setImageURL(const std::string& imageURL);
 
             private:
 				Array roadRegions_;
+				std::string originRequestId_;
+				std::string streamArn_;
 				std::string imageURL_;
 
 			};

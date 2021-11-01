@@ -40,23 +40,14 @@ void DetectVehicleIllegalParkingResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	auto allRegionIntersectsNode = dataNode["RegionIntersects"]["RegionIntersect"];
-	for (auto dataNodeRegionIntersectsRegionIntersect : allRegionIntersectsNode)
-	{
-		Data::RegionIntersect regionIntersectObject;
-		auto allIds = value["Ids"]["Ids"];
-		for (auto value : allIds)
-			regionIntersectObject.ids.push_back(value.asString());
-		data_.regionIntersects.push_back(regionIntersectObject);
-	}
 	auto allElementsNode = dataNode["Elements"]["Element"];
 	for (auto dataNodeElementsElement : allElementsNode)
 	{
 		Data::Element elementObject;
-		if(!dataNodeElementsElement["TypeName"].isNull())
-			elementObject.typeName = dataNodeElementsElement["TypeName"].asString();
 		if(!dataNodeElementsElement["Score"].isNull())
 			elementObject.score = std::stof(dataNodeElementsElement["Score"].asString());
+		if(!dataNodeElementsElement["TypeName"].isNull())
+			elementObject.typeName = dataNodeElementsElement["TypeName"].asString();
 		auto allBoxesNode = dataNodeElementsElement["Boxes"]["BoxesItem"];
 		for (auto dataNodeElementsElementBoxesBoxesItem : allBoxesNode)
 		{
@@ -73,10 +64,19 @@ void DetectVehicleIllegalParkingResult::parse(const std::string &payload)
 		}
 		data_.elements.push_back(elementObject);
 	}
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
+	auto allRegionIntersectsNode = dataNode["RegionIntersects"]["RegionIntersect"];
+	for (auto dataNodeRegionIntersectsRegionIntersect : allRegionIntersectsNode)
+	{
+		Data::RegionIntersect regionIntersectObject;
+		auto allIds = value["Ids"]["Ids"];
+		for (auto value : allIds)
+			regionIntersectObject.ids.push_back(value.asString());
+		data_.regionIntersects.push_back(regionIntersectObject);
+	}
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 
 }
 

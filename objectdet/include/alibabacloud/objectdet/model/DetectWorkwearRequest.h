@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_OBJECTDET_MODEL_DETECTVIDEOIPCOBJECTREQUEST_H_
-#define ALIBABACLOUD_OBJECTDET_MODEL_DETECTVIDEOIPCOBJECTREQUEST_H_
+#ifndef ALIBABACLOUD_OBJECTDET_MODEL_DETECTWORKWEARREQUEST_H_
+#define ALIBABACLOUD_OBJECTDET_MODEL_DETECTWORKWEARREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,36 +28,36 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_OBJECTDET_EXPORT DetectVideoIPCObjectRequest : public RpcServiceRequest
+			class ALIBABACLOUD_OBJECTDET_EXPORT DetectWorkwearRequest : public RpcServiceRequest
 			{
 
 			public:
-				DetectVideoIPCObjectRequest();
-				~DetectVideoIPCObjectRequest();
+				DetectWorkwearRequest();
+				~DetectWorkwearRequest();
 
-				long getStartTimestamp()const;
-				void setStartTimestamp(long startTimestamp);
+				bool getFormatResultToJson()const;
+				void setFormatResultToJson(bool formatResultToJson);
 				std::string getOssFile()const;
 				void setOssFile(const std::string& ossFile);
-				bool getCallbackOnlyHasObject()const;
-				void setCallbackOnlyHasObject(bool callbackOnlyHasObject);
 				std::string getRequestProxyBy()const;
 				void setRequestProxyBy(const std::string& requestProxyBy);
-				bool getAsync()const;
-				void setAsync(bool async);
-				std::string getVideoURL()const;
-				void setVideoURL(const std::string& videoURL);
+				Struct getClothes()const;
+				void setClothes(const Struct& clothes);
+				std::vector<std::string> getLabels()const;
+				void setLabels(const std::vector<std::string>& labels);
+				std::string getImageUrl()const;
+				void setImageUrl(const std::string& imageUrl);
 
             private:
-				long startTimestamp_;
+				bool formatResultToJson_;
 				std::string ossFile_;
-				bool callbackOnlyHasObject_;
 				std::string requestProxyBy_;
-				bool async_;
-				std::string videoURL_;
+				Struct clothes_;
+				std::vector<std::string> labels_;
+				std::string imageUrl_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_OBJECTDET_MODEL_DETECTVIDEOIPCOBJECTREQUEST_H_
+#endif // !ALIBABACLOUD_OBJECTDET_MODEL_DETECTWORKWEARREQUEST_H_

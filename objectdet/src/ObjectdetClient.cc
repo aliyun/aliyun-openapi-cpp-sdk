@@ -31,21 +31,21 @@ ObjectdetClient::ObjectdetClient(const Credentials &credentials, const ClientCon
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "objectdet");
 }
 
 ObjectdetClient::ObjectdetClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "objectdet");
 }
 
 ObjectdetClient::ObjectdetClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "objectdet");
 }
 
 ObjectdetClient::~ObjectdetClient()
@@ -117,6 +117,42 @@ ObjectdetClient::DetectIPCObjectOutcomeCallable ObjectdetClient::detectIPCObject
 			[this, request]()
 			{
 			return this->detectIPCObject(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ObjectdetClient::DetectKitchenAnimalsOutcome ObjectdetClient::detectKitchenAnimals(const DetectKitchenAnimalsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DetectKitchenAnimalsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DetectKitchenAnimalsOutcome(DetectKitchenAnimalsResult(outcome.result()));
+	else
+		return DetectKitchenAnimalsOutcome(outcome.error());
+}
+
+void ObjectdetClient::detectKitchenAnimalsAsync(const DetectKitchenAnimalsRequest& request, const DetectKitchenAnimalsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, detectKitchenAnimals(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ObjectdetClient::DetectKitchenAnimalsOutcomeCallable ObjectdetClient::detectKitchenAnimalsCallable(const DetectKitchenAnimalsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DetectKitchenAnimalsOutcome()>>(
+			[this, request]()
+			{
+			return this->detectKitchenAnimals(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -339,6 +375,42 @@ ObjectdetClient::DetectVehicleIllegalParkingOutcomeCallable ObjectdetClient::det
 	return task->get_future();
 }
 
+ObjectdetClient::DetectVideoFrameOutcome ObjectdetClient::detectVideoFrame(const DetectVideoFrameRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DetectVideoFrameOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DetectVideoFrameOutcome(DetectVideoFrameResult(outcome.result()));
+	else
+		return DetectVideoFrameOutcome(outcome.error());
+}
+
+void ObjectdetClient::detectVideoFrameAsync(const DetectVideoFrameRequest& request, const DetectVideoFrameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, detectVideoFrame(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ObjectdetClient::DetectVideoFrameOutcomeCallable ObjectdetClient::detectVideoFrameCallable(const DetectVideoFrameRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DetectVideoFrameOutcome()>>(
+			[this, request]()
+			{
+			return this->detectVideoFrame(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ObjectdetClient::DetectVideoIPCObjectOutcome ObjectdetClient::detectVideoIPCObject(const DetectVideoIPCObjectRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -405,6 +477,42 @@ ObjectdetClient::DetectWhiteBaseImageOutcomeCallable ObjectdetClient::detectWhit
 			[this, request]()
 			{
 			return this->detectWhiteBaseImage(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ObjectdetClient::DetectWorkwearOutcome ObjectdetClient::detectWorkwear(const DetectWorkwearRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DetectWorkwearOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DetectWorkwearOutcome(DetectWorkwearResult(outcome.result()));
+	else
+		return DetectWorkwearOutcome(outcome.error());
+}
+
+void ObjectdetClient::detectWorkwearAsync(const DetectWorkwearRequest& request, const DetectWorkwearAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, detectWorkwear(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ObjectdetClient::DetectWorkwearOutcomeCallable ObjectdetClient::detectWorkwearCallable(const DetectWorkwearRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DetectWorkwearOutcome()>>(
+			[this, request]()
+			{
+			return this->detectWorkwear(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

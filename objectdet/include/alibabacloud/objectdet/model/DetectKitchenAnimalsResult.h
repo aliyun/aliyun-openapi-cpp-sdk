@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_OBJECTDET_MODEL_DETECTVEHICLEILLEGALPARKINGRESULT_H_
-#define ALIBABACLOUD_OBJECTDET_MODEL_DETECTVEHICLEILLEGALPARKINGRESULT_H_
+#ifndef ALIBABACLOUD_OBJECTDET_MODEL_DETECTKITCHENANIMALSRESULT_H_
+#define ALIBABACLOUD_OBJECTDET_MODEL_DETECTKITCHENANIMALSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,36 +29,31 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_OBJECTDET_EXPORT DetectVehicleIllegalParkingResult : public ServiceResult
+			class ALIBABACLOUD_OBJECTDET_EXPORT DetectKitchenAnimalsResult : public ServiceResult
 			{
 			public:
 				struct Data
 				{
-					struct Element
+					struct ElementsItem
 					{
-						struct BoxesItem
+						struct Rectangles
 						{
 							long left;
 							long top;
-							long right;
-							long bottom;
+							long height;
+							long width;
 						};
+						std::string type;
 						float score;
-						std::string typeName;
-						std::vector<Element::BoxesItem> boxes;
+						Rectangles rectangles;
 					};
-					struct RegionIntersect
-					{
-						std::vector<std::string> ids;
-					};
-					std::vector<RegionIntersect> regionIntersects;
-					std::vector<Element> elements;
+					std::vector<ElementsItem> elements;
 				};
 
 
-				DetectVehicleIllegalParkingResult();
-				explicit DetectVehicleIllegalParkingResult(const std::string &payload);
-				~DetectVehicleIllegalParkingResult();
+				DetectKitchenAnimalsResult();
+				explicit DetectKitchenAnimalsResult(const std::string &payload);
+				~DetectKitchenAnimalsResult();
 				std::string getMessage()const;
 				Data getData()const;
 				std::string getCode()const;
@@ -74,4 +69,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_OBJECTDET_MODEL_DETECTVEHICLEILLEGALPARKINGRESULT_H_
+#endif // !ALIBABACLOUD_OBJECTDET_MODEL_DETECTKITCHENANIMALSRESULT_H_

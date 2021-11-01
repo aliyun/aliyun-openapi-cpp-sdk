@@ -40,10 +40,10 @@ void DetectVideoIPCObjectResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["Height"].isNull())
-		data_.height = std::stol(dataNode["Height"].asString());
 	if(!dataNode["Width"].isNull())
 		data_.width = std::stol(dataNode["Width"].asString());
+	if(!dataNode["Height"].isNull())
+		data_.height = std::stol(dataNode["Height"].asString());
 	if(!dataNode["InputFile"].isNull())
 		data_.inputFile = dataNode["InputFile"].asString();
 	auto allFramesNode = dataNode["Frames"]["Frame"];
@@ -56,26 +56,26 @@ void DetectVideoIPCObjectResult::parse(const std::string &payload)
 		for (auto dataNodeFramesFrameElementselementsItem : allElementsNode)
 		{
 			Data::Frame::ElementsItem elementsObject;
-			if(!dataNodeFramesFrameElementselementsItem["Score"].isNull())
-				elementsObject.score = std::stof(dataNodeFramesFrameElementselementsItem["Score"].asString());
 			if(!dataNodeFramesFrameElementselementsItem["Type"].isNull())
 				elementsObject.type = dataNodeFramesFrameElementselementsItem["Type"].asString();
 			if(!dataNodeFramesFrameElementselementsItem["X"].isNull())
 				elementsObject.x = std::stol(dataNodeFramesFrameElementselementsItem["X"].asString());
 			if(!dataNodeFramesFrameElementselementsItem["Y"].isNull())
 				elementsObject.y = std::stol(dataNodeFramesFrameElementselementsItem["Y"].asString());
-			if(!dataNodeFramesFrameElementselementsItem["Height"].isNull())
-				elementsObject.height = std::stol(dataNodeFramesFrameElementselementsItem["Height"].asString());
 			if(!dataNodeFramesFrameElementselementsItem["Width"].isNull())
 				elementsObject.width = std::stol(dataNodeFramesFrameElementselementsItem["Width"].asString());
+			if(!dataNodeFramesFrameElementselementsItem["Height"].isNull())
+				elementsObject.height = std::stol(dataNodeFramesFrameElementselementsItem["Height"].asString());
+			if(!dataNodeFramesFrameElementselementsItem["Score"].isNull())
+				elementsObject.score = std::stof(dataNodeFramesFrameElementselementsItem["Score"].asString());
 			frameObject.elements.push_back(elementsObject);
 		}
 		data_.frames.push_back(frameObject);
 	}
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 
 }
 

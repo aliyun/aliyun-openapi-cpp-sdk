@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_OBJECTDET_MODEL_DETECTVIDEOIPCOBJECTREQUEST_H_
-#define ALIBABACLOUD_OBJECTDET_MODEL_DETECTVIDEOIPCOBJECTREQUEST_H_
+#ifndef ALIBABACLOUD_OBJECTDET_MODEL_DETECTKITCHENANIMALSREQUEST_H_
+#define ALIBABACLOUD_OBJECTDET_MODEL_DETECTKITCHENANIMALSREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,36 +28,33 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_OBJECTDET_EXPORT DetectVideoIPCObjectRequest : public RpcServiceRequest
+			class ALIBABACLOUD_OBJECTDET_EXPORT DetectKitchenAnimalsRequest : public RpcServiceRequest
 			{
 
 			public:
-				DetectVideoIPCObjectRequest();
-				~DetectVideoIPCObjectRequest();
+				DetectKitchenAnimalsRequest();
+				~DetectKitchenAnimalsRequest();
 
-				long getStartTimestamp()const;
-				void setStartTimestamp(long startTimestamp);
+				bool getFormatResultToJson()const;
+				void setFormatResultToJson(bool formatResultToJson);
+				std::string getImageURLB()const;
+				void setImageURLB(const std::string& imageURLB);
+				std::string getImageURLA()const;
+				void setImageURLA(const std::string& imageURLA);
 				std::string getOssFile()const;
 				void setOssFile(const std::string& ossFile);
-				bool getCallbackOnlyHasObject()const;
-				void setCallbackOnlyHasObject(bool callbackOnlyHasObject);
 				std::string getRequestProxyBy()const;
 				void setRequestProxyBy(const std::string& requestProxyBy);
-				bool getAsync()const;
-				void setAsync(bool async);
-				std::string getVideoURL()const;
-				void setVideoURL(const std::string& videoURL);
 
             private:
-				long startTimestamp_;
+				bool formatResultToJson_;
+				std::string imageURLB_;
+				std::string imageURLA_;
 				std::string ossFile_;
-				bool callbackOnlyHasObject_;
 				std::string requestProxyBy_;
-				bool async_;
-				std::string videoURL_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_OBJECTDET_MODEL_DETECTVIDEOIPCOBJECTREQUEST_H_
+#endif // !ALIBABACLOUD_OBJECTDET_MODEL_DETECTKITCHENANIMALSREQUEST_H_

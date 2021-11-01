@@ -27,6 +27,50 @@ DetectVideoIPCObjectRequest::DetectVideoIPCObjectRequest() :
 DetectVideoIPCObjectRequest::~DetectVideoIPCObjectRequest()
 {}
 
+long DetectVideoIPCObjectRequest::getStartTimestamp()const
+{
+	return startTimestamp_;
+}
+
+void DetectVideoIPCObjectRequest::setStartTimestamp(long startTimestamp)
+{
+	startTimestamp_ = startTimestamp;
+	setBodyParameter("StartTimestamp", std::to_string(startTimestamp));
+}
+
+std::string DetectVideoIPCObjectRequest::getOssFile()const
+{
+	return ossFile_;
+}
+
+void DetectVideoIPCObjectRequest::setOssFile(const std::string& ossFile)
+{
+	ossFile_ = ossFile;
+	setParameter("OssFile", ossFile);
+}
+
+bool DetectVideoIPCObjectRequest::getCallbackOnlyHasObject()const
+{
+	return callbackOnlyHasObject_;
+}
+
+void DetectVideoIPCObjectRequest::setCallbackOnlyHasObject(bool callbackOnlyHasObject)
+{
+	callbackOnlyHasObject_ = callbackOnlyHasObject;
+	setBodyParameter("CallbackOnlyHasObject", callbackOnlyHasObject ? "true" : "false");
+}
+
+std::string DetectVideoIPCObjectRequest::getRequestProxyBy()const
+{
+	return requestProxyBy_;
+}
+
+void DetectVideoIPCObjectRequest::setRequestProxyBy(const std::string& requestProxyBy)
+{
+	requestProxyBy_ = requestProxyBy;
+	setParameter("RequestProxyBy", requestProxyBy);
+}
+
 bool DetectVideoIPCObjectRequest::getAsync()const
 {
 	return async_;

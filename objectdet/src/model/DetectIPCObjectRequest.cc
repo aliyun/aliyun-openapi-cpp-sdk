@@ -27,6 +27,28 @@ DetectIPCObjectRequest::DetectIPCObjectRequest() :
 DetectIPCObjectRequest::~DetectIPCObjectRequest()
 {}
 
+std::string DetectIPCObjectRequest::getOssFile()const
+{
+	return ossFile_;
+}
+
+void DetectIPCObjectRequest::setOssFile(const std::string& ossFile)
+{
+	ossFile_ = ossFile;
+	setParameter("OssFile", ossFile);
+}
+
+std::string DetectIPCObjectRequest::getRequestProxyBy()const
+{
+	return requestProxyBy_;
+}
+
+void DetectIPCObjectRequest::setRequestProxyBy(const std::string& requestProxyBy)
+{
+	requestProxyBy_ = requestProxyBy;
+	setParameter("RequestProxyBy", requestProxyBy);
+}
+
 std::string DetectIPCObjectRequest::getImageURL()const
 {
 	return imageURL_;

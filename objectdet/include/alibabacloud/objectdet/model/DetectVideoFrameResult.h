@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_OBJECTDET_MODEL_DETECTVEHICLEILLEGALPARKINGRESULT_H_
-#define ALIBABACLOUD_OBJECTDET_MODEL_DETECTVEHICLEILLEGALPARKINGRESULT_H_
+#ifndef ALIBABACLOUD_OBJECTDET_MODEL_DETECTVIDEOFRAMERESULT_H_
+#define ALIBABACLOUD_OBJECTDET_MODEL_DETECTVIDEOFRAMERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,36 +29,18 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_OBJECTDET_EXPORT DetectVehicleIllegalParkingResult : public ServiceResult
+			class ALIBABACLOUD_OBJECTDET_EXPORT DetectVideoFrameResult : public ServiceResult
 			{
 			public:
 				struct Data
 				{
-					struct Element
-					{
-						struct BoxesItem
-						{
-							long left;
-							long top;
-							long right;
-							long bottom;
-						};
-						float score;
-						std::string typeName;
-						std::vector<Element::BoxesItem> boxes;
-					};
-					struct RegionIntersect
-					{
-						std::vector<std::string> ids;
-					};
-					std::vector<RegionIntersect> regionIntersects;
-					std::vector<Element> elements;
+					std::string requestId;
 				};
 
 
-				DetectVehicleIllegalParkingResult();
-				explicit DetectVehicleIllegalParkingResult(const std::string &payload);
-				~DetectVehicleIllegalParkingResult();
+				DetectVideoFrameResult();
+				explicit DetectVideoFrameResult(const std::string &payload);
+				~DetectVideoFrameResult();
 				std::string getMessage()const;
 				Data getData()const;
 				std::string getCode()const;
@@ -74,4 +56,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_OBJECTDET_MODEL_DETECTVEHICLEILLEGALPARKINGRESULT_H_
+#endif // !ALIBABACLOUD_OBJECTDET_MODEL_DETECTVIDEOFRAMERESULT_H_

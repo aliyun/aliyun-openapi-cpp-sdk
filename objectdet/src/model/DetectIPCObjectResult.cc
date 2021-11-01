@@ -40,29 +40,29 @@ void DetectIPCObjectResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["Height"].isNull())
-		data_.height = std::stol(dataNode["Height"].asString());
 	if(!dataNode["Width"].isNull())
 		data_.width = std::stol(dataNode["Width"].asString());
+	if(!dataNode["Height"].isNull())
+		data_.height = std::stol(dataNode["Height"].asString());
 	auto allElementsNode = dataNode["Elements"]["Element"];
 	for (auto dataNodeElementsElement : allElementsNode)
 	{
 		Data::Element elementObject;
-		if(!dataNodeElementsElement["TargetRate"].isNull())
-			elementObject.targetRate = std::stof(dataNodeElementsElement["TargetRate"].asString());
-		if(!dataNodeElementsElement["Score"].isNull())
-			elementObject.score = std::stof(dataNodeElementsElement["Score"].asString());
 		if(!dataNodeElementsElement["Type"].isNull())
 			elementObject.type = dataNodeElementsElement["Type"].asString();
+		if(!dataNodeElementsElement["Score"].isNull())
+			elementObject.score = std::stof(dataNodeElementsElement["Score"].asString());
+		if(!dataNodeElementsElement["TargetRate"].isNull())
+			elementObject.targetRate = std::stof(dataNodeElementsElement["TargetRate"].asString());
 		auto allBox = value["Box"]["Box"];
 		for (auto value : allBox)
 			elementObject.box.push_back(value.asString());
 		data_.elements.push_back(elementObject);
 	}
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 
 }
 

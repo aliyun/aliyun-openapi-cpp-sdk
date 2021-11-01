@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_OBJECTDET_MODEL_DETECTVEHICLEILLEGALPARKINGRESULT_H_
-#define ALIBABACLOUD_OBJECTDET_MODEL_DETECTVEHICLEILLEGALPARKINGRESULT_H_
+#ifndef ALIBABACLOUD_OBJECTDET_MODEL_DETECTWORKWEARRESULT_H_
+#define ALIBABACLOUD_OBJECTDET_MODEL_DETECTWORKWEARRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,36 +29,44 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_OBJECTDET_EXPORT DetectVehicleIllegalParkingResult : public ServiceResult
+			class ALIBABACLOUD_OBJECTDET_EXPORT DetectWorkwearResult : public ServiceResult
 			{
 			public:
 				struct Data
 				{
-					struct Element
+					struct 识别内容
 					{
-						struct BoxesItem
+						struct Rectangles
 						{
 							long left;
 							long top;
-							long right;
-							long bottom;
+							long height;
+							long width;
 						};
-						float score;
-						std::string typeName;
-						std::vector<Element::BoxesItem> boxes;
+						struct 识别属性
+						{
+							struct Probability
+							{
+								double no;
+								double unknown;
+								double yes;
+								long threshold;
+							};
+							Probability probability;
+							std::string label;
+						};
+						double score;
+						std::string type;
+						Rectangles rectangles;
+						std::vector<识别内容::识别属性> property;
 					};
-					struct RegionIntersect
-					{
-						std::vector<std::string> ids;
-					};
-					std::vector<RegionIntersect> regionIntersects;
-					std::vector<Element> elements;
+					std::vector<识别内容> elements;
 				};
 
 
-				DetectVehicleIllegalParkingResult();
-				explicit DetectVehicleIllegalParkingResult(const std::string &payload);
-				~DetectVehicleIllegalParkingResult();
+				DetectWorkwearResult();
+				explicit DetectWorkwearResult(const std::string &payload);
+				~DetectWorkwearResult();
 				std::string getMessage()const;
 				Data getData()const;
 				std::string getCode()const;
@@ -74,4 +82,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_OBJECTDET_MODEL_DETECTVEHICLEILLEGALPARKINGRESULT_H_
+#endif // !ALIBABACLOUD_OBJECTDET_MODEL_DETECTWORKWEARRESULT_H_

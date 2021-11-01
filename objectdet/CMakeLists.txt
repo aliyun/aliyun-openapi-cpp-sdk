@@ -25,6 +25,8 @@ set(objectdet_public_header_model
 	include/alibabacloud/objectdet/model/ClassifyVehicleInsuranceResult.h
 	include/alibabacloud/objectdet/model/DetectIPCObjectRequest.h
 	include/alibabacloud/objectdet/model/DetectIPCObjectResult.h
+	include/alibabacloud/objectdet/model/DetectKitchenAnimalsRequest.h
+	include/alibabacloud/objectdet/model/DetectKitchenAnimalsResult.h
 	include/alibabacloud/objectdet/model/DetectMainBodyRequest.h
 	include/alibabacloud/objectdet/model/DetectMainBodyResult.h
 	include/alibabacloud/objectdet/model/DetectObjectRequest.h
@@ -37,10 +39,14 @@ set(objectdet_public_header_model
 	include/alibabacloud/objectdet/model/DetectVehicleICongestionResult.h
 	include/alibabacloud/objectdet/model/DetectVehicleIllegalParkingRequest.h
 	include/alibabacloud/objectdet/model/DetectVehicleIllegalParkingResult.h
+	include/alibabacloud/objectdet/model/DetectVideoFrameRequest.h
+	include/alibabacloud/objectdet/model/DetectVideoFrameResult.h
 	include/alibabacloud/objectdet/model/DetectVideoIPCObjectRequest.h
 	include/alibabacloud/objectdet/model/DetectVideoIPCObjectResult.h
 	include/alibabacloud/objectdet/model/DetectWhiteBaseImageRequest.h
 	include/alibabacloud/objectdet/model/DetectWhiteBaseImageResult.h
+	include/alibabacloud/objectdet/model/DetectWorkwearRequest.h
+	include/alibabacloud/objectdet/model/DetectWorkwearResult.h
 	include/alibabacloud/objectdet/model/GenerateVehicleRepairPlanRequest.h
 	include/alibabacloud/objectdet/model/GenerateVehicleRepairPlanResult.h
 	include/alibabacloud/objectdet/model/GetAsyncJobResultRequest.h
@@ -60,6 +66,8 @@ set(objectdet_src
 	src/model/ClassifyVehicleInsuranceResult.cc
 	src/model/DetectIPCObjectRequest.cc
 	src/model/DetectIPCObjectResult.cc
+	src/model/DetectKitchenAnimalsRequest.cc
+	src/model/DetectKitchenAnimalsResult.cc
 	src/model/DetectMainBodyRequest.cc
 	src/model/DetectMainBodyResult.cc
 	src/model/DetectObjectRequest.cc
@@ -72,10 +80,14 @@ set(objectdet_src
 	src/model/DetectVehicleICongestionResult.cc
 	src/model/DetectVehicleIllegalParkingRequest.cc
 	src/model/DetectVehicleIllegalParkingResult.cc
+	src/model/DetectVideoFrameRequest.cc
+	src/model/DetectVideoFrameResult.cc
 	src/model/DetectVideoIPCObjectRequest.cc
 	src/model/DetectVideoIPCObjectResult.cc
 	src/model/DetectWhiteBaseImageRequest.cc
 	src/model/DetectWhiteBaseImageResult.cc
+	src/model/DetectWorkwearRequest.cc
+	src/model/DetectWorkwearResult.cc
 	src/model/GenerateVehicleRepairPlanRequest.cc
 	src/model/GenerateVehicleRepairPlanResult.cc
 	src/model/GetAsyncJobResultRequest.cc

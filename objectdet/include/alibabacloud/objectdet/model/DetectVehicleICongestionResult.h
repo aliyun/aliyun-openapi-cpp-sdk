@@ -34,18 +34,6 @@ namespace AlibabaCloud
 			public:
 				struct Data
 				{
-					struct RegionIntersectFeaturesItem
-					{
-						std::vector<std::string> features;
-					};
-					struct RegionIntersectsItem
-					{
-						std::vector<std::string> ids;
-					};
-					struct RegionIntersectMatchedItem
-					{
-						std::vector<std::string> ids1;
-					};
 					struct Element
 					{
 						struct BoxesItem
@@ -55,14 +43,26 @@ namespace AlibabaCloud
 							long right;
 							long bottom;
 						};
-						std::string typeName;
 						float score;
+						std::string typeName;
 						std::vector<Element::BoxesItem> boxes;
+					};
+					struct RegionIntersectFeaturesItem
+					{
+						std::vector<std::string> features;
+					};
+					struct RegionIntersectMatchedItem
+					{
+						std::vector<std::string> ids;
+					};
+					struct RegionIntersectsItem
+					{
+						std::vector<std::string> ids1;
 					};
 					std::vector<RegionIntersectFeaturesItem> regionIntersectFeatures;
 					std::vector<RegionIntersectsItem> regionIntersects;
-					std::vector<RegionIntersectMatchedItem> regionIntersectMatched;
 					std::vector<Element> elements;
+					std::vector<RegionIntersectMatchedItem> regionIntersectMatched;
 				};
 
 

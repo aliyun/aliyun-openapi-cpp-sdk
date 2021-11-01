@@ -38,8 +38,8 @@ namespace AlibabaCloud
 					{
 						struct ElementsItem
 						{
-							float score;
 							std::string type;
+							float score;
 							long x;
 							long y;
 							long height;

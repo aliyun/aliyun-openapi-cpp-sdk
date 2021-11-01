@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_OBJECTDET_MODEL_DETECTVEHICLEICONGESTIONREQUEST_H_
-#define ALIBABACLOUD_OBJECTDET_MODEL_DETECTVEHICLEICONGESTIONREQUEST_H_
+#ifndef ALIBABACLOUD_OBJECTDET_MODEL_DETECTVIDEOFRAMEREQUEST_H_
+#define ALIBABACLOUD_OBJECTDET_MODEL_DETECTVIDEOFRAMEREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,33 +28,42 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_OBJECTDET_EXPORT DetectVehicleICongestionRequest : public RpcServiceRequest
+			class ALIBABACLOUD_OBJECTDET_EXPORT DetectVideoFrameRequest : public RpcServiceRequest
 			{
 
 			public:
-				DetectVehicleICongestionRequest();
-				~DetectVehicleICongestionRequest();
+				DetectVideoFrameRequest();
+				~DetectVideoFrameRequest();
 
-				Array getRoadRegions()const;
-				void setRoadRegions(const Array& roadRegions);
-				std::string getOriginRequestId()const;
-				void setOriginRequestId(const std::string& originRequestId);
-				Array getPreRegionIntersectFeatures()const;
-				void setPreRegionIntersectFeatures(const Array& preRegionIntersectFeatures);
+				Array getFeatures()const;
+				void setFeatures(const Array& features);
+				long getHeight()const;
+				void setHeight(long height);
+				long getCreateTime()const;
+				void setCreateTime(long createTime);
+				std::string getFeatureConfig()const;
+				void setFeatureConfig(const std::string& featureConfig);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				std::string getStreamArn()const;
 				void setStreamArn(const std::string& streamArn);
 				std::string getImageURL()const;
 				void setImageURL(const std::string& imageURL);
+				long getWidth()const;
+				void setWidth(long width);
 
             private:
-				Array roadRegions_;
-				std::string originRequestId_;
-				Array preRegionIntersectFeatures_;
+				Array features_;
+				long height_;
+				long createTime_;
+				std::string featureConfig_;
+				long ownerId_;
 				std::string streamArn_;
 				std::string imageURL_;
+				long width_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_OBJECTDET_MODEL_DETECTVEHICLEICONGESTIONREQUEST_H_
+#endif // !ALIBABACLOUD_OBJECTDET_MODEL_DETECTVIDEOFRAMEREQUEST_H_
