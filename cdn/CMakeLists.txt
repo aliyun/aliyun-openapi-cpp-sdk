@@ -77,6 +77,8 @@ set(cdn_public_header_model
 	include/alibabacloud/cdn/model/DeleteUserUsageDataExportTaskResult.h
 	include/alibabacloud/cdn/model/DescribeActiveVersionOfConfigGroupRequest.h
 	include/alibabacloud/cdn/model/DescribeActiveVersionOfConfigGroupResult.h
+	include/alibabacloud/cdn/model/DescribeBlockedRegionsRequest.h
+	include/alibabacloud/cdn/model/DescribeBlockedRegionsResult.h
 	include/alibabacloud/cdn/model/DescribeCdnCertificateDetailRequest.h
 	include/alibabacloud/cdn/model/DescribeCdnCertificateDetailResult.h
 	include/alibabacloud/cdn/model/DescribeCdnCertificateListRequest.h
@@ -129,6 +131,8 @@ set(cdn_public_header_model
 	include/alibabacloud/cdn/model/DescribeCdnWafDomainResult.h
 	include/alibabacloud/cdn/model/DescribeCertificateInfoByIDRequest.h
 	include/alibabacloud/cdn/model/DescribeCertificateInfoByIDResult.h
+	include/alibabacloud/cdn/model/DescribeConfigGroupDetailRequest.h
+	include/alibabacloud/cdn/model/DescribeConfigGroupDetailResult.h
 	include/alibabacloud/cdn/model/DescribeConfigOfVersionRequest.h
 	include/alibabacloud/cdn/model/DescribeConfigOfVersionResult.h
 	include/alibabacloud/cdn/model/DescribeCustomLogConfigRequest.h
@@ -456,6 +460,8 @@ set(cdn_src
 	src/model/DeleteUserUsageDataExportTaskResult.cc
 	src/model/DescribeActiveVersionOfConfigGroupRequest.cc
 	src/model/DescribeActiveVersionOfConfigGroupResult.cc
+	src/model/DescribeBlockedRegionsRequest.cc
+	src/model/DescribeBlockedRegionsResult.cc
 	src/model/DescribeCdnCertificateDetailRequest.cc
 	src/model/DescribeCdnCertificateDetailResult.cc
 	src/model/DescribeCdnCertificateListRequest.cc
@@ -508,6 +514,8 @@ set(cdn_src
 	src/model/DescribeCdnWafDomainResult.cc
 	src/model/DescribeCertificateInfoByIDRequest.cc
 	src/model/DescribeCertificateInfoByIDResult.cc
+	src/model/DescribeConfigGroupDetailRequest.cc
+	src/model/DescribeConfigGroupDetailResult.cc
 	src/model/DescribeConfigOfVersionRequest.cc
 	src/model/DescribeConfigOfVersionResult.cc
 	src/model/DescribeCustomLogConfigRequest.cc

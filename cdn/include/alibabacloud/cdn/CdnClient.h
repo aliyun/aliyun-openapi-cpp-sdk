@@ -78,6 +78,8 @@
 #include "model/DeleteUserUsageDataExportTaskResult.h"
 #include "model/DescribeActiveVersionOfConfigGroupRequest.h"
 #include "model/DescribeActiveVersionOfConfigGroupResult.h"
+#include "model/DescribeBlockedRegionsRequest.h"
+#include "model/DescribeBlockedRegionsResult.h"
 #include "model/DescribeCdnCertificateDetailRequest.h"
 #include "model/DescribeCdnCertificateDetailResult.h"
 #include "model/DescribeCdnCertificateListRequest.h"
@@ -130,6 +132,8 @@
 #include "model/DescribeCdnWafDomainResult.h"
 #include "model/DescribeCertificateInfoByIDRequest.h"
 #include "model/DescribeCertificateInfoByIDResult.h"
+#include "model/DescribeConfigGroupDetailRequest.h"
+#include "model/DescribeConfigGroupDetailResult.h"
 #include "model/DescribeConfigOfVersionRequest.h"
 #include "model/DescribeConfigOfVersionResult.h"
 #include "model/DescribeCustomLogConfigRequest.h"
@@ -491,6 +495,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeActiveVersionOfConfigGroupResult> DescribeActiveVersionOfConfigGroupOutcome;
 			typedef std::future<DescribeActiveVersionOfConfigGroupOutcome> DescribeActiveVersionOfConfigGroupOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::DescribeActiveVersionOfConfigGroupRequest&, const DescribeActiveVersionOfConfigGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeActiveVersionOfConfigGroupAsyncHandler;
+			typedef Outcome<Error, Model::DescribeBlockedRegionsResult> DescribeBlockedRegionsOutcome;
+			typedef std::future<DescribeBlockedRegionsOutcome> DescribeBlockedRegionsOutcomeCallable;
+			typedef std::function<void(const CdnClient*, const Model::DescribeBlockedRegionsRequest&, const DescribeBlockedRegionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBlockedRegionsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeCdnCertificateDetailResult> DescribeCdnCertificateDetailOutcome;
 			typedef std::future<DescribeCdnCertificateDetailOutcome> DescribeCdnCertificateDetailOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::DescribeCdnCertificateDetailRequest&, const DescribeCdnCertificateDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCdnCertificateDetailAsyncHandler;
@@ -569,6 +576,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeCertificateInfoByIDResult> DescribeCertificateInfoByIDOutcome;
 			typedef std::future<DescribeCertificateInfoByIDOutcome> DescribeCertificateInfoByIDOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::DescribeCertificateInfoByIDRequest&, const DescribeCertificateInfoByIDOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCertificateInfoByIDAsyncHandler;
+			typedef Outcome<Error, Model::DescribeConfigGroupDetailResult> DescribeConfigGroupDetailOutcome;
+			typedef std::future<DescribeConfigGroupDetailOutcome> DescribeConfigGroupDetailOutcomeCallable;
+			typedef std::function<void(const CdnClient*, const Model::DescribeConfigGroupDetailRequest&, const DescribeConfigGroupDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConfigGroupDetailAsyncHandler;
 			typedef Outcome<Error, Model::DescribeConfigOfVersionResult> DescribeConfigOfVersionOutcome;
 			typedef std::future<DescribeConfigOfVersionOutcome> DescribeConfigOfVersionOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::DescribeConfigOfVersionRequest&, const DescribeConfigOfVersionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConfigOfVersionAsyncHandler;
@@ -1060,6 +1070,9 @@ namespace AlibabaCloud
 			DescribeActiveVersionOfConfigGroupOutcome describeActiveVersionOfConfigGroup(const Model::DescribeActiveVersionOfConfigGroupRequest &request)const;
 			void describeActiveVersionOfConfigGroupAsync(const Model::DescribeActiveVersionOfConfigGroupRequest& request, const DescribeActiveVersionOfConfigGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeActiveVersionOfConfigGroupOutcomeCallable describeActiveVersionOfConfigGroupCallable(const Model::DescribeActiveVersionOfConfigGroupRequest& request) const;
+			DescribeBlockedRegionsOutcome describeBlockedRegions(const Model::DescribeBlockedRegionsRequest &request)const;
+			void describeBlockedRegionsAsync(const Model::DescribeBlockedRegionsRequest& request, const DescribeBlockedRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeBlockedRegionsOutcomeCallable describeBlockedRegionsCallable(const Model::DescribeBlockedRegionsRequest& request) const;
 			DescribeCdnCertificateDetailOutcome describeCdnCertificateDetail(const Model::DescribeCdnCertificateDetailRequest &request)const;
 			void describeCdnCertificateDetailAsync(const Model::DescribeCdnCertificateDetailRequest& request, const DescribeCdnCertificateDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeCdnCertificateDetailOutcomeCallable describeCdnCertificateDetailCallable(const Model::DescribeCdnCertificateDetailRequest& request) const;
@@ -1138,6 +1151,9 @@ namespace AlibabaCloud
 			DescribeCertificateInfoByIDOutcome describeCertificateInfoByID(const Model::DescribeCertificateInfoByIDRequest &request)const;
 			void describeCertificateInfoByIDAsync(const Model::DescribeCertificateInfoByIDRequest& request, const DescribeCertificateInfoByIDAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeCertificateInfoByIDOutcomeCallable describeCertificateInfoByIDCallable(const Model::DescribeCertificateInfoByIDRequest& request) const;
+			DescribeConfigGroupDetailOutcome describeConfigGroupDetail(const Model::DescribeConfigGroupDetailRequest &request)const;
+			void describeConfigGroupDetailAsync(const Model::DescribeConfigGroupDetailRequest& request, const DescribeConfigGroupDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeConfigGroupDetailOutcomeCallable describeConfigGroupDetailCallable(const Model::DescribeConfigGroupDetailRequest& request) const;
 			DescribeConfigOfVersionOutcome describeConfigOfVersion(const Model::DescribeConfigOfVersionRequest &request)const;
 			void describeConfigOfVersionAsync(const Model::DescribeConfigOfVersionRequest& request, const DescribeConfigOfVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeConfigOfVersionOutcomeCallable describeConfigOfVersionCallable(const Model::DescribeConfigOfVersionRequest& request) const;

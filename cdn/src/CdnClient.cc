@@ -1059,6 +1059,42 @@ CdnClient::DescribeActiveVersionOfConfigGroupOutcomeCallable CdnClient::describe
 	return task->get_future();
 }
 
+CdnClient::DescribeBlockedRegionsOutcome CdnClient::describeBlockedRegions(const DescribeBlockedRegionsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeBlockedRegionsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeBlockedRegionsOutcome(DescribeBlockedRegionsResult(outcome.result()));
+	else
+		return DescribeBlockedRegionsOutcome(outcome.error());
+}
+
+void CdnClient::describeBlockedRegionsAsync(const DescribeBlockedRegionsRequest& request, const DescribeBlockedRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeBlockedRegions(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CdnClient::DescribeBlockedRegionsOutcomeCallable CdnClient::describeBlockedRegionsCallable(const DescribeBlockedRegionsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeBlockedRegionsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeBlockedRegions(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CdnClient::DescribeCdnCertificateDetailOutcome CdnClient::describeCdnCertificateDetail(const DescribeCdnCertificateDetailRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1989,6 +2025,42 @@ CdnClient::DescribeCertificateInfoByIDOutcomeCallable CdnClient::describeCertifi
 			[this, request]()
 			{
 			return this->describeCertificateInfoByID(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CdnClient::DescribeConfigGroupDetailOutcome CdnClient::describeConfigGroupDetail(const DescribeConfigGroupDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeConfigGroupDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeConfigGroupDetailOutcome(DescribeConfigGroupDetailResult(outcome.result()));
+	else
+		return DescribeConfigGroupDetailOutcome(outcome.error());
+}
+
+void CdnClient::describeConfigGroupDetailAsync(const DescribeConfigGroupDetailRequest& request, const DescribeConfigGroupDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeConfigGroupDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CdnClient::DescribeConfigGroupDetailOutcomeCallable CdnClient::describeConfigGroupDetailCallable(const DescribeConfigGroupDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeConfigGroupDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->describeConfigGroupDetail(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
