@@ -40,16 +40,16 @@ void GetVideoPlayAuthResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto videoMetaNode = value["VideoMeta"];
-	if(!videoMetaNode["CoverURL"].isNull())
-		videoMeta_.coverURL = videoMetaNode["CoverURL"].asString();
-	if(!videoMetaNode["Duration"].isNull())
-		videoMeta_.duration = std::stof(videoMetaNode["Duration"].asString());
 	if(!videoMetaNode["Status"].isNull())
 		videoMeta_.status = videoMetaNode["Status"].asString();
+	if(!videoMetaNode["Duration"].isNull())
+		videoMeta_.duration = std::stof(videoMetaNode["Duration"].asString());
 	if(!videoMetaNode["Title"].isNull())
 		videoMeta_.title = videoMetaNode["Title"].asString();
 	if(!videoMetaNode["VideoId"].isNull())
 		videoMeta_.videoId = videoMetaNode["VideoId"].asString();
+	if(!videoMetaNode["CoverURL"].isNull())
+		videoMeta_.coverURL = videoMetaNode["CoverURL"].asString();
 	if(!value["PlayAuth"].isNull())
 		playAuth_ = value["PlayAuth"].asString();
 

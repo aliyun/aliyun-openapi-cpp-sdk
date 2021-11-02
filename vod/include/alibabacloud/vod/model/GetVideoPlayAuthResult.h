@@ -37,8 +37,8 @@ namespace AlibabaCloud
 					std::string status;
 					std::string videoId;
 					std::string title;
-					std::string coverURL;
 					float duration;
+					std::string coverURL;
 				};
 
 

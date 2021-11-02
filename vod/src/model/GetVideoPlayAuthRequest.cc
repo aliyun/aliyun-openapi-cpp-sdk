@@ -27,17 +27,6 @@ GetVideoPlayAuthRequest::GetVideoPlayAuthRequest() :
 GetVideoPlayAuthRequest::~GetVideoPlayAuthRequest()
 {}
 
-std::string GetVideoPlayAuthRequest::getVideoId()const
-{
-	return videoId_;
-}
-
-void GetVideoPlayAuthRequest::setVideoId(const std::string& videoId)
-{
-	videoId_ = videoId;
-	setParameter("VideoId", videoId);
-}
-
 std::string GetVideoPlayAuthRequest::getReAuthInfo()const
 {
 	return reAuthInfo_;
@@ -58,6 +47,28 @@ void GetVideoPlayAuthRequest::setPlayConfig(const std::string& playConfig)
 {
 	playConfig_ = playConfig;
 	setParameter("PlayConfig", playConfig);
+}
+
+std::string GetVideoPlayAuthRequest::getVideoId()const
+{
+	return videoId_;
+}
+
+void GetVideoPlayAuthRequest::setVideoId(const std::string& videoId)
+{
+	videoId_ = videoId;
+	setParameter("VideoId", videoId);
+}
+
+std::string GetVideoPlayAuthRequest::getApiVersion()const
+{
+	return apiVersion_;
+}
+
+void GetVideoPlayAuthRequest::setApiVersion(const std::string& apiVersion)
+{
+	apiVersion_ = apiVersion;
+	setParameter("ApiVersion", apiVersion);
 }
 
 long GetVideoPlayAuthRequest::getAuthInfoTimeout()const

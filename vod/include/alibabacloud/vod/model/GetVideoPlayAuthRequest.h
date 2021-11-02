@@ -35,19 +35,22 @@ namespace AlibabaCloud
 				GetVideoPlayAuthRequest();
 				~GetVideoPlayAuthRequest();
 
-				std::string getVideoId()const;
-				void setVideoId(const std::string& videoId);
 				std::string getReAuthInfo()const;
 				void setReAuthInfo(const std::string& reAuthInfo);
 				std::string getPlayConfig()const;
 				void setPlayConfig(const std::string& playConfig);
+				std::string getVideoId()const;
+				void setVideoId(const std::string& videoId);
+				std::string getApiVersion()const;
+				void setApiVersion(const std::string& apiVersion);
 				long getAuthInfoTimeout()const;
 				void setAuthInfoTimeout(long authInfoTimeout);
 
             private:
-				std::string videoId_;
 				std::string reAuthInfo_;
 				std::string playConfig_;
+				std::string videoId_;
+				std::string apiVersion_;
 				long authInfoTimeout_;
 
 			};
