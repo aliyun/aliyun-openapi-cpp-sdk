@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_FOAS_MODEL_GETPROJECTRESULT_H_
-#define ALIBABACLOUD_FOAS_MODEL_GETPROJECTRESULT_H_
+#ifndef ALIBABACLOUD_FOAS_MODEL_UPDATEPROJECTCONFIGRESULT_H_
+#define ALIBABACLOUD_FOAS_MODEL_UPDATEPROJECTCONFIGRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,39 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_FOAS_EXPORT GetProjectResult : public ServiceResult
+			class ALIBABACLOUD_FOAS_EXPORT UpdateProjectConfigResult : public ServiceResult
 			{
 			public:
-				struct Project
-				{
-					std::string deployType;
-					long modifyTime;
-					std::string managerIds;
-					std::string description;
-					std::string clusterId;
-					long createTime;
-					std::string creator;
-					std::string globalJobConfig;
-					std::string name;
-					std::string state;
-					std::string region;
-					std::string id;
-					std::string modifier;
-				};
 
 
-				GetProjectResult();
-				explicit GetProjectResult(const std::string &payload);
-				~GetProjectResult();
-				Project getProject()const;
+				UpdateProjectConfigResult();
+				explicit UpdateProjectConfigResult(const std::string &payload);
+				~UpdateProjectConfigResult();
+				bool getData()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				Project project_;
+				bool data_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_FOAS_MODEL_GETPROJECTRESULT_H_
+#endif // !ALIBABACLOUD_FOAS_MODEL_UPDATEPROJECTCONFIGRESULT_H_

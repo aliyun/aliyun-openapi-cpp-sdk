@@ -1347,42 +1347,6 @@ FoasClient::GetInstanceRunSummaryOutcomeCallable FoasClient::getInstanceRunSumma
 	return task->get_future();
 }
 
-FoasClient::GetInstanceVertexTaskManagersOutcome FoasClient::getInstanceVertexTaskManagers(const GetInstanceVertexTaskManagersRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetInstanceVertexTaskManagersOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetInstanceVertexTaskManagersOutcome(GetInstanceVertexTaskManagersResult(outcome.result()));
-	else
-		return GetInstanceVertexTaskManagersOutcome(outcome.error());
-}
-
-void FoasClient::getInstanceVertexTaskManagersAsync(const GetInstanceVertexTaskManagersRequest& request, const GetInstanceVertexTaskManagersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getInstanceVertexTaskManagers(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-FoasClient::GetInstanceVertexTaskManagersOutcomeCallable FoasClient::getInstanceVertexTaskManagersCallable(const GetInstanceVertexTaskManagersRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetInstanceVertexTaskManagersOutcome()>>(
-			[this, request]()
-			{
-			return this->getInstanceVertexTaskManagers(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 FoasClient::GetJobOutcome FoasClient::getJob(const GetJobRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1887,6 +1851,42 @@ FoasClient::ListProjectBindQueueResourceOutcomeCallable FoasClient::listProjectB
 	return task->get_future();
 }
 
+FoasClient::ListTagResourcesOutcome FoasClient::listTagResources(const ListTagResourcesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListTagResourcesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListTagResourcesOutcome(ListTagResourcesResult(outcome.result()));
+	else
+		return ListTagResourcesOutcome(outcome.error());
+}
+
+void FoasClient::listTagResourcesAsync(const ListTagResourcesRequest& request, const ListTagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listTagResources(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+FoasClient::ListTagResourcesOutcomeCallable FoasClient::listTagResourcesCallable(const ListTagResourcesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListTagResourcesOutcome()>>(
+			[this, request]()
+			{
+			return this->listTagResources(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 FoasClient::MVFolderOutcome FoasClient::mVFolder(const MVFolderRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2103,6 +2103,42 @@ FoasClient::StartJobOutcomeCallable FoasClient::startJobCallable(const StartJobR
 	return task->get_future();
 }
 
+FoasClient::TagResourcesOutcome FoasClient::tagResources(const TagResourcesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return TagResourcesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return TagResourcesOutcome(TagResourcesResult(outcome.result()));
+	else
+		return TagResourcesOutcome(outcome.error());
+}
+
+void FoasClient::tagResourcesAsync(const TagResourcesRequest& request, const TagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, tagResources(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+FoasClient::TagResourcesOutcomeCallable FoasClient::tagResourcesCallable(const TagResourcesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<TagResourcesOutcome()>>(
+			[this, request]()
+			{
+			return this->tagResources(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 FoasClient::UnbindQueueOutcome FoasClient::unbindQueue(const UnbindQueueRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2133,6 +2169,42 @@ FoasClient::UnbindQueueOutcomeCallable FoasClient::unbindQueueCallable(const Unb
 			[this, request]()
 			{
 			return this->unbindQueue(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+FoasClient::UntagResourcesOutcome FoasClient::untagResources(const UntagResourcesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UntagResourcesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UntagResourcesOutcome(UntagResourcesResult(outcome.result()));
+	else
+		return UntagResourcesOutcome(outcome.error());
+}
+
+void FoasClient::untagResourcesAsync(const UntagResourcesRequest& request, const UntagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, untagResources(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+FoasClient::UntagResourcesOutcomeCallable FoasClient::untagResourcesCallable(const UntagResourcesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UntagResourcesOutcome()>>(
+			[this, request]()
+			{
+			return this->untagResources(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2241,6 +2313,78 @@ FoasClient::UpdatePackageOutcomeCallable FoasClient::updatePackageCallable(const
 			[this, request]()
 			{
 			return this->updatePackage(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+FoasClient::UpdateProjectOutcome FoasClient::updateProject(const UpdateProjectRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateProjectOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateProjectOutcome(UpdateProjectResult(outcome.result()));
+	else
+		return UpdateProjectOutcome(outcome.error());
+}
+
+void FoasClient::updateProjectAsync(const UpdateProjectRequest& request, const UpdateProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateProject(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+FoasClient::UpdateProjectOutcomeCallable FoasClient::updateProjectCallable(const UpdateProjectRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateProjectOutcome()>>(
+			[this, request]()
+			{
+			return this->updateProject(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+FoasClient::UpdateProjectConfigOutcome FoasClient::updateProjectConfig(const UpdateProjectConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateProjectConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateProjectConfigOutcome(UpdateProjectConfigResult(outcome.result()));
+	else
+		return UpdateProjectConfigOutcome(outcome.error());
+}
+
+void FoasClient::updateProjectConfigAsync(const UpdateProjectConfigRequest& request, const UpdateProjectConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateProjectConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+FoasClient::UpdateProjectConfigOutcomeCallable FoasClient::updateProjectConfigCallable(const UpdateProjectConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateProjectConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->updateProjectConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

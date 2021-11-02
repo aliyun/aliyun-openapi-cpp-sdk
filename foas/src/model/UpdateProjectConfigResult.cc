@@ -14,38 +14,38 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/foas/model/GetInstanceVertexTaskManagersResult.h>
+#include <alibabacloud/foas/model/UpdateProjectConfigResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Foas;
 using namespace AlibabaCloud::Foas::Model;
 
-GetInstanceVertexTaskManagersResult::GetInstanceVertexTaskManagersResult() :
+UpdateProjectConfigResult::UpdateProjectConfigResult() :
 	ServiceResult()
 {}
 
-GetInstanceVertexTaskManagersResult::GetInstanceVertexTaskManagersResult(const std::string &payload) :
+UpdateProjectConfigResult::UpdateProjectConfigResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-GetInstanceVertexTaskManagersResult::~GetInstanceVertexTaskManagersResult()
+UpdateProjectConfigResult::~UpdateProjectConfigResult()
 {}
 
-void GetInstanceVertexTaskManagersResult::parse(const std::string &payload)
+void UpdateProjectConfigResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["TaskManagers"].isNull())
-		taskManagers_ = value["TaskManagers"].asString();
+	if(!value["Data"].isNull())
+		data_ = value["Data"].asString() == "true";
 
 }
 
-std::string GetInstanceVertexTaskManagersResult::getTaskManagers()const
+bool UpdateProjectConfigResult::getData()const
 {
-	return taskManagers_;
+	return data_;
 }
 

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_FOAS_MODEL_GETRAWPLANJSONREQUEST_H_
-#define ALIBABACLOUD_FOAS_MODEL_GETRAWPLANJSONREQUEST_H_
+#ifndef ALIBABACLOUD_FOAS_MODEL_UPDATEPROJECTCONFIGREQUEST_H_
+#define ALIBABACLOUD_FOAS_MODEL_UPDATEPROJECTCONFIGREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,39 +28,24 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_FOAS_EXPORT GetRawPlanJsonRequest : public RoaServiceRequest
+			class ALIBABACLOUD_FOAS_EXPORT UpdateProjectConfigRequest : public RoaServiceRequest
 			{
 
 			public:
-				GetRawPlanJsonRequest();
-				~GetRawPlanJsonRequest();
+				UpdateProjectConfigRequest();
+				~UpdateProjectConfigRequest();
 
 				std::string getProjectName()const;
 				void setProjectName(const std::string& projectName);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				float getExpectedGB()const;
-				void setExpectedGB(float expectedGB);
-				float getExpectedCore()const;
-				void setExpectedCore(float expectedCore);
-				std::string getAdvisorAction()const;
-				void setAdvisorAction(const std::string& advisorAction);
-				std::string getJobName()const;
-				void setJobName(const std::string& jobName);
-				bool getAutoconfEnable()const;
-				void setAutoconfEnable(bool autoconfEnable);
+				bool getIsOpenBatchSQL()const;
+				void setIsOpenBatchSQL(bool isOpenBatchSQL);
 
             private:
 				std::string projectName_;
-				std::string regionId_;
-				float expectedGB_;
-				float expectedCore_;
-				std::string advisorAction_;
-				std::string jobName_;
-				bool autoconfEnable_;
+				bool isOpenBatchSQL_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_FOAS_MODEL_GETRAWPLANJSONREQUEST_H_
+#endif // !ALIBABACLOUD_FOAS_MODEL_UPDATEPROJECTCONFIGREQUEST_H_

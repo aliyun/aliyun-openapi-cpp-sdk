@@ -35,17 +35,21 @@ namespace AlibabaCloud
 				struct Package
 				{
 					long modifyTime;
+					std::string scanErrorMessage;
 					std::string description;
 					std::string projectName;
 					std::string packageName;
 					long createTime;
 					std::string ossBucket;
+					std::string scanState;
 					std::string creator;
 					std::string originName;
 					std::string type;
 					std::string ossOwner;
 					std::string ossEndpoint;
+					std::string scanLink;
 					std::string ossPath;
+					std::string scanExtBizNo;
 					std::string tag;
 					std::string modifier;
 					std::string md5;

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_FOAS_MODEL_GETINSTANCEVERTEXTASKMANAGERSREQUEST_H_
-#define ALIBABACLOUD_FOAS_MODEL_GETINSTANCEVERTEXTASKMANAGERSREQUEST_H_
+#ifndef ALIBABACLOUD_FOAS_MODEL_UPDATEPROJECTREQUEST_H_
+#define ALIBABACLOUD_FOAS_MODEL_UPDATEPROJECTREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,33 +28,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_FOAS_EXPORT GetInstanceVertexTaskManagersRequest : public RoaServiceRequest
+			class ALIBABACLOUD_FOAS_EXPORT UpdateProjectRequest : public RoaServiceRequest
 			{
 
 			public:
-				GetInstanceVertexTaskManagersRequest();
-				~GetInstanceVertexTaskManagersRequest();
+				UpdateProjectRequest();
+				~UpdateProjectRequest();
 
 				std::string getProjectName()const;
 				void setProjectName(const std::string& projectName);
-				long getInstanceId()const;
-				void setInstanceId(long instanceId);
+				std::string getGlobalJobConfig()const;
+				void setGlobalJobConfig(const std::string& globalJobConfig);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				std::string getVertexId()const;
-				void setVertexId(const std::string& vertexId);
-				std::string getJobName()const;
-				void setJobName(const std::string& jobName);
 
             private:
 				std::string projectName_;
-				long instanceId_;
+				std::string globalJobConfig_;
 				std::string regionId_;
-				std::string vertexId_;
-				std::string jobName_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_FOAS_MODEL_GETINSTANCEVERTEXTASKMANAGERSREQUEST_H_
+#endif // !ALIBABACLOUD_FOAS_MODEL_UPDATEPROJECTREQUEST_H_

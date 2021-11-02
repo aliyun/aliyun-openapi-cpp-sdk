@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_FOAS_MODEL_GETPROJECTRESULT_H_
-#define ALIBABACLOUD_FOAS_MODEL_GETPROJECTRESULT_H_
+#ifndef ALIBABACLOUD_FOAS_MODEL_LISTTAGRESOURCESRESULT_H_
+#define ALIBABACLOUD_FOAS_MODEL_LISTTAGRESOURCESRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,39 +29,43 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_FOAS_EXPORT GetProjectResult : public ServiceResult
+			class ALIBABACLOUD_FOAS_EXPORT ListTagResourcesResult : public ServiceResult
 			{
 			public:
-				struct Project
+				struct Data
 				{
-					std::string deployType;
-					long modifyTime;
-					std::string managerIds;
-					std::string description;
-					std::string clusterId;
-					long createTime;
-					std::string creator;
-					std::string globalJobConfig;
-					std::string name;
-					std::string state;
-					std::string region;
-					std::string id;
-					std::string modifier;
+					struct TagResource
+					{
+						std::string resourceId;
+						std::string tagKey;
+						std::string resourceType;
+						std::string tagValue;
+					};
+					std::string nextToken;
+					std::vector<TagResource> tagResources;
 				};
 
 
-				GetProjectResult();
-				explicit GetProjectResult(const std::string &payload);
-				~GetProjectResult();
-				Project getProject()const;
+				ListTagResourcesResult();
+				explicit ListTagResourcesResult(const std::string &payload);
+				~ListTagResourcesResult();
+				std::string getMessage()const;
+				int getHttpStatusCode()const;
+				Data getData()const;
+				std::string getCode()const;
+				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				Project project_;
+				std::string message_;
+				int httpStatusCode_;
+				Data data_;
+				std::string code_;
+				bool success_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_FOAS_MODEL_GETPROJECTRESULT_H_
+#endif // !ALIBABACLOUD_FOAS_MODEL_LISTTAGRESOURCESRESULT_H_

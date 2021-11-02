@@ -36,27 +36,29 @@ namespace AlibabaCloud
 				{
 					std::string lastErrorMessage;
 					std::string expectState;
-					std::string engineVersion;
 					long endTime;
 					std::string projectName;
-					std::string clusterId;
-					std::string planJson;
 					std::string jobName;
-					long startTime;
 					std::string properties;
 					std::string starter;
 					long inputDelay;
-					std::string code;
-					std::string actualState;
 					long lastErrorTime;
-					std::string engineJobHandler;
-					std::string jobType;
 					std::string lastOperator;
 					std::string packages;
 					std::string apiType;
+					std::string queueName;
+					std::string engineVersion;
+					std::string clusterId;
+					int priority;
+					std::string planJson;
+					long startTime;
+					std::string code;
+					std::string actualState;
+					std::string engineJobHandler;
+					std::string jobType;
+					std::string autoScaleParams;
 					long id;
 					long lastOperateTime;
-					std::string queueName;
 				};
 
 

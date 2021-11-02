@@ -65,6 +65,8 @@ void GetClusterQueueInfoResult::parse(const std::string &payload)
 			queuesObject.maxVCore = std::stoi(valueQueuesQueue["MaxVCore"].asString());
 		if(!valueQueuesQueue["MaxMem"].isNull())
 			queuesObject.maxMem = std::stoi(valueQueuesQueue["MaxMem"].asString());
+		if(!valueQueuesQueue["ExternalInfo"].isNull())
+			queuesObject.externalInfo = valueQueuesQueue["ExternalInfo"].asString();
 		queues_.push_back(queuesObject);
 	}
 

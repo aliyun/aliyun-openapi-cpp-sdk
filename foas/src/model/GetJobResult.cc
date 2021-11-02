@@ -78,6 +78,8 @@ void GetJobResult::parse(const std::string &payload)
 		job_.folderId = std::stol(jobNode["FolderId"].asString());
 	if(!jobNode["JobId"].isNull())
 		job_.jobId = jobNode["JobId"].asString();
+	if(!jobNode["FileId"].isNull())
+		job_.fileId = jobNode["FileId"].asString();
 
 }
 

@@ -70,6 +70,14 @@ void GetPackageResult::parse(const std::string &payload)
 		package_.ossPath = packageNode["OssPath"].asString();
 	if(!packageNode["Tag"].isNull())
 		package_.tag = packageNode["Tag"].asString();
+	if(!packageNode["ScanLink"].isNull())
+		package_.scanLink = packageNode["ScanLink"].asString();
+	if(!packageNode["ScanState"].isNull())
+		package_.scanState = packageNode["ScanState"].asString();
+	if(!packageNode["ScanErrorMessage"].isNull())
+		package_.scanErrorMessage = packageNode["ScanErrorMessage"].asString();
+	if(!packageNode["ScanExtBizNo"].isNull())
+		package_.scanExtBizNo = packageNode["ScanExtBizNo"].asString();
 
 }
 

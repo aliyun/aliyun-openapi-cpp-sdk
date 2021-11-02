@@ -40,6 +40,7 @@ namespace AlibabaCloud
 					long endTime;
 					std::string projectName;
 					std::string clusterId;
+					int priority;
 					std::string planJson;
 					std::string jobName;
 					long startTime;

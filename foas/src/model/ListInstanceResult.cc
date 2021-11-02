@@ -89,6 +89,8 @@ void ListInstanceResult::parse(const std::string &payload)
 			instancesObject.queueName = valueInstancesInstance["QueueName"].asString();
 		if(!valueInstancesInstance["EndTime"].isNull())
 			instancesObject.endTime = std::stol(valueInstancesInstance["EndTime"].asString());
+		if(!valueInstancesInstance["Priority"].isNull())
+			instancesObject.priority = std::stoi(valueInstancesInstance["Priority"].asString());
 		instances_.push_back(instancesObject);
 	}
 	if(!value["PageIndex"].isNull())

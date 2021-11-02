@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					int maxMem;
 					int usedGpu;
+					std::string externalInfo;
 					int usedMem;
 					std::string clusterId;
 					int minGpu;

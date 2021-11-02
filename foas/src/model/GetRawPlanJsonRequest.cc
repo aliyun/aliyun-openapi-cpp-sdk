@@ -72,6 +72,17 @@ void GetRawPlanJsonRequest::setExpectedCore(float expectedCore)
 	setParameter("ExpectedCore", std::to_string(expectedCore));
 }
 
+std::string GetRawPlanJsonRequest::getAdvisorAction()const
+{
+	return advisorAction_;
+}
+
+void GetRawPlanJsonRequest::setAdvisorAction(const std::string& advisorAction)
+{
+	advisorAction_ = advisorAction;
+	setParameter("AdvisorAction", advisorAction);
+}
+
 std::string GetRawPlanJsonRequest::getJobName()const
 {
 	return jobName_;

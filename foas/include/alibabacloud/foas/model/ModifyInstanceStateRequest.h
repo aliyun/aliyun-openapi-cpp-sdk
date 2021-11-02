@@ -43,6 +43,8 @@ namespace AlibabaCloud
 				void setInstanceId(long instanceId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
+				bool getTriggerCheckpoint()const;
+				void setTriggerCheckpoint(bool triggerCheckpoint);
 				std::string getExpectState()const;
 				void setExpectState(const std::string& expectState);
 				std::string getJobName()const;
@@ -53,6 +55,7 @@ namespace AlibabaCloud
 				std::string projectName_;
 				long instanceId_;
 				std::string regionId_;
+				bool triggerCheckpoint_;
 				std::string expectState_;
 				std::string jobName_;
 

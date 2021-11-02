@@ -73,6 +73,14 @@ void ListPackageResult::parse(const std::string &payload)
 			packagesObject.ossPath = valuePackagesPackage["OssPath"].asString();
 		if(!valuePackagesPackage["Tag"].isNull())
 			packagesObject.tag = valuePackagesPackage["Tag"].asString();
+		if(!valuePackagesPackage["ScanState"].isNull())
+			packagesObject.scanState = valuePackagesPackage["ScanState"].asString();
+		if(!valuePackagesPackage["ScanLink"].isNull())
+			packagesObject.scanLink = valuePackagesPackage["ScanLink"].asString();
+		if(!valuePackagesPackage["ScanExtBizNo"].isNull())
+			packagesObject.scanExtBizNo = valuePackagesPackage["ScanExtBizNo"].asString();
+		if(!valuePackagesPackage["ScanErrorMessage"].isNull())
+			packagesObject.scanErrorMessage = valuePackagesPackage["ScanErrorMessage"].asString();
 		packages_.push_back(packagesObject);
 	}
 	if(!value["PageIndex"].isNull())

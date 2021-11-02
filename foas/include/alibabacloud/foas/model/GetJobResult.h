@@ -50,6 +50,7 @@ namespace AlibabaCloud
 					std::string packages;
 					std::string apiType;
 					bool isCommitted;
+					std::string fileId;
 					std::string modifier;
 					std::string queueName;
 					std::string jobId;

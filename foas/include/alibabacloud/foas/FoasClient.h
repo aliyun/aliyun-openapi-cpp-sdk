@@ -94,8 +94,6 @@
 #include "model/GetInstanceResourceResult.h"
 #include "model/GetInstanceRunSummaryRequest.h"
 #include "model/GetInstanceRunSummaryResult.h"
-#include "model/GetInstanceVertexTaskManagersRequest.h"
-#include "model/GetInstanceVertexTaskManagersResult.h"
 #include "model/GetJobRequest.h"
 #include "model/GetJobResult.h"
 #include "model/GetJobLatestAutoScalePlanRequest.h"
@@ -124,6 +122,8 @@
 #include "model/ListProjectBindQueueResult.h"
 #include "model/ListProjectBindQueueResourceRequest.h"
 #include "model/ListProjectBindQueueResourceResult.h"
+#include "model/ListTagResourcesRequest.h"
+#include "model/ListTagResourcesResult.h"
 #include "model/MVFolderRequest.h"
 #include "model/MVFolderResult.h"
 #include "model/ModifyInstanceStateRequest.h"
@@ -136,14 +136,22 @@
 #include "model/ShrinkClusterResult.h"
 #include "model/StartJobRequest.h"
 #include "model/StartJobResult.h"
+#include "model/TagResourcesRequest.h"
+#include "model/TagResourcesResult.h"
 #include "model/UnbindQueueRequest.h"
 #include "model/UnbindQueueResult.h"
+#include "model/UntagResourcesRequest.h"
+#include "model/UntagResourcesResult.h"
 #include "model/UpdateAutoScaleConfigRequest.h"
 #include "model/UpdateAutoScaleConfigResult.h"
 #include "model/UpdateJobRequest.h"
 #include "model/UpdateJobResult.h"
 #include "model/UpdatePackageRequest.h"
 #include "model/UpdatePackageResult.h"
+#include "model/UpdateProjectRequest.h"
+#include "model/UpdateProjectResult.h"
+#include "model/UpdateProjectConfigRequest.h"
+#include "model/UpdateProjectConfigResult.h"
 #include "model/UpdateQueueRequest.h"
 #include "model/UpdateQueueResult.h"
 #include "model/ValidateJobRequest.h"
@@ -265,9 +273,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetInstanceRunSummaryResult> GetInstanceRunSummaryOutcome;
 			typedef std::future<GetInstanceRunSummaryOutcome> GetInstanceRunSummaryOutcomeCallable;
 			typedef std::function<void(const FoasClient*, const Model::GetInstanceRunSummaryRequest&, const GetInstanceRunSummaryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetInstanceRunSummaryAsyncHandler;
-			typedef Outcome<Error, Model::GetInstanceVertexTaskManagersResult> GetInstanceVertexTaskManagersOutcome;
-			typedef std::future<GetInstanceVertexTaskManagersOutcome> GetInstanceVertexTaskManagersOutcomeCallable;
-			typedef std::function<void(const FoasClient*, const Model::GetInstanceVertexTaskManagersRequest&, const GetInstanceVertexTaskManagersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetInstanceVertexTaskManagersAsyncHandler;
 			typedef Outcome<Error, Model::GetJobResult> GetJobOutcome;
 			typedef std::future<GetJobOutcome> GetJobOutcomeCallable;
 			typedef std::function<void(const FoasClient*, const Model::GetJobRequest&, const GetJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetJobAsyncHandler;
@@ -310,6 +315,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListProjectBindQueueResourceResult> ListProjectBindQueueResourceOutcome;
 			typedef std::future<ListProjectBindQueueResourceOutcome> ListProjectBindQueueResourceOutcomeCallable;
 			typedef std::function<void(const FoasClient*, const Model::ListProjectBindQueueResourceRequest&, const ListProjectBindQueueResourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListProjectBindQueueResourceAsyncHandler;
+			typedef Outcome<Error, Model::ListTagResourcesResult> ListTagResourcesOutcome;
+			typedef std::future<ListTagResourcesOutcome> ListTagResourcesOutcomeCallable;
+			typedef std::function<void(const FoasClient*, const Model::ListTagResourcesRequest&, const ListTagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTagResourcesAsyncHandler;
 			typedef Outcome<Error, Model::MVFolderResult> MVFolderOutcome;
 			typedef std::future<MVFolderOutcome> MVFolderOutcomeCallable;
 			typedef std::function<void(const FoasClient*, const Model::MVFolderRequest&, const MVFolderOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> MVFolderAsyncHandler;
@@ -328,9 +336,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::StartJobResult> StartJobOutcome;
 			typedef std::future<StartJobOutcome> StartJobOutcomeCallable;
 			typedef std::function<void(const FoasClient*, const Model::StartJobRequest&, const StartJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartJobAsyncHandler;
+			typedef Outcome<Error, Model::TagResourcesResult> TagResourcesOutcome;
+			typedef std::future<TagResourcesOutcome> TagResourcesOutcomeCallable;
+			typedef std::function<void(const FoasClient*, const Model::TagResourcesRequest&, const TagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TagResourcesAsyncHandler;
 			typedef Outcome<Error, Model::UnbindQueueResult> UnbindQueueOutcome;
 			typedef std::future<UnbindQueueOutcome> UnbindQueueOutcomeCallable;
 			typedef std::function<void(const FoasClient*, const Model::UnbindQueueRequest&, const UnbindQueueOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnbindQueueAsyncHandler;
+			typedef Outcome<Error, Model::UntagResourcesResult> UntagResourcesOutcome;
+			typedef std::future<UntagResourcesOutcome> UntagResourcesOutcomeCallable;
+			typedef std::function<void(const FoasClient*, const Model::UntagResourcesRequest&, const UntagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UntagResourcesAsyncHandler;
 			typedef Outcome<Error, Model::UpdateAutoScaleConfigResult> UpdateAutoScaleConfigOutcome;
 			typedef std::future<UpdateAutoScaleConfigOutcome> UpdateAutoScaleConfigOutcomeCallable;
 			typedef std::function<void(const FoasClient*, const Model::UpdateAutoScaleConfigRequest&, const UpdateAutoScaleConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAutoScaleConfigAsyncHandler;
@@ -340,6 +354,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdatePackageResult> UpdatePackageOutcome;
 			typedef std::future<UpdatePackageOutcome> UpdatePackageOutcomeCallable;
 			typedef std::function<void(const FoasClient*, const Model::UpdatePackageRequest&, const UpdatePackageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdatePackageAsyncHandler;
+			typedef Outcome<Error, Model::UpdateProjectResult> UpdateProjectOutcome;
+			typedef std::future<UpdateProjectOutcome> UpdateProjectOutcomeCallable;
+			typedef std::function<void(const FoasClient*, const Model::UpdateProjectRequest&, const UpdateProjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateProjectAsyncHandler;
+			typedef Outcome<Error, Model::UpdateProjectConfigResult> UpdateProjectConfigOutcome;
+			typedef std::future<UpdateProjectConfigOutcome> UpdateProjectConfigOutcomeCallable;
+			typedef std::function<void(const FoasClient*, const Model::UpdateProjectConfigRequest&, const UpdateProjectConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateProjectConfigAsyncHandler;
 			typedef Outcome<Error, Model::UpdateQueueResult> UpdateQueueOutcome;
 			typedef std::future<UpdateQueueOutcome> UpdateQueueOutcomeCallable;
 			typedef std::function<void(const FoasClient*, const Model::UpdateQueueRequest&, const UpdateQueueOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateQueueAsyncHandler;
@@ -459,9 +479,6 @@ namespace AlibabaCloud
 			GetInstanceRunSummaryOutcome getInstanceRunSummary(const Model::GetInstanceRunSummaryRequest &request)const;
 			void getInstanceRunSummaryAsync(const Model::GetInstanceRunSummaryRequest& request, const GetInstanceRunSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetInstanceRunSummaryOutcomeCallable getInstanceRunSummaryCallable(const Model::GetInstanceRunSummaryRequest& request) const;
-			GetInstanceVertexTaskManagersOutcome getInstanceVertexTaskManagers(const Model::GetInstanceVertexTaskManagersRequest &request)const;
-			void getInstanceVertexTaskManagersAsync(const Model::GetInstanceVertexTaskManagersRequest& request, const GetInstanceVertexTaskManagersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetInstanceVertexTaskManagersOutcomeCallable getInstanceVertexTaskManagersCallable(const Model::GetInstanceVertexTaskManagersRequest& request) const;
 			GetJobOutcome getJob(const Model::GetJobRequest &request)const;
 			void getJobAsync(const Model::GetJobRequest& request, const GetJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetJobOutcomeCallable getJobCallable(const Model::GetJobRequest& request) const;
@@ -504,6 +521,9 @@ namespace AlibabaCloud
 			ListProjectBindQueueResourceOutcome listProjectBindQueueResource(const Model::ListProjectBindQueueResourceRequest &request)const;
 			void listProjectBindQueueResourceAsync(const Model::ListProjectBindQueueResourceRequest& request, const ListProjectBindQueueResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListProjectBindQueueResourceOutcomeCallable listProjectBindQueueResourceCallable(const Model::ListProjectBindQueueResourceRequest& request) const;
+			ListTagResourcesOutcome listTagResources(const Model::ListTagResourcesRequest &request)const;
+			void listTagResourcesAsync(const Model::ListTagResourcesRequest& request, const ListTagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListTagResourcesOutcomeCallable listTagResourcesCallable(const Model::ListTagResourcesRequest& request) const;
 			MVFolderOutcome mVFolder(const Model::MVFolderRequest &request)const;
 			void mVFolderAsync(const Model::MVFolderRequest& request, const MVFolderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			MVFolderOutcomeCallable mVFolderCallable(const Model::MVFolderRequest& request) const;
@@ -522,9 +542,15 @@ namespace AlibabaCloud
 			StartJobOutcome startJob(const Model::StartJobRequest &request)const;
 			void startJobAsync(const Model::StartJobRequest& request, const StartJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StartJobOutcomeCallable startJobCallable(const Model::StartJobRequest& request) const;
+			TagResourcesOutcome tagResources(const Model::TagResourcesRequest &request)const;
+			void tagResourcesAsync(const Model::TagResourcesRequest& request, const TagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			TagResourcesOutcomeCallable tagResourcesCallable(const Model::TagResourcesRequest& request) const;
 			UnbindQueueOutcome unbindQueue(const Model::UnbindQueueRequest &request)const;
 			void unbindQueueAsync(const Model::UnbindQueueRequest& request, const UnbindQueueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UnbindQueueOutcomeCallable unbindQueueCallable(const Model::UnbindQueueRequest& request) const;
+			UntagResourcesOutcome untagResources(const Model::UntagResourcesRequest &request)const;
+			void untagResourcesAsync(const Model::UntagResourcesRequest& request, const UntagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UntagResourcesOutcomeCallable untagResourcesCallable(const Model::UntagResourcesRequest& request) const;
 			UpdateAutoScaleConfigOutcome updateAutoScaleConfig(const Model::UpdateAutoScaleConfigRequest &request)const;
 			void updateAutoScaleConfigAsync(const Model::UpdateAutoScaleConfigRequest& request, const UpdateAutoScaleConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateAutoScaleConfigOutcomeCallable updateAutoScaleConfigCallable(const Model::UpdateAutoScaleConfigRequest& request) const;
@@ -534,6 +560,12 @@ namespace AlibabaCloud
 			UpdatePackageOutcome updatePackage(const Model::UpdatePackageRequest &request)const;
 			void updatePackageAsync(const Model::UpdatePackageRequest& request, const UpdatePackageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdatePackageOutcomeCallable updatePackageCallable(const Model::UpdatePackageRequest& request) const;
+			UpdateProjectOutcome updateProject(const Model::UpdateProjectRequest &request)const;
+			void updateProjectAsync(const Model::UpdateProjectRequest& request, const UpdateProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateProjectOutcomeCallable updateProjectCallable(const Model::UpdateProjectRequest& request) const;
+			UpdateProjectConfigOutcome updateProjectConfig(const Model::UpdateProjectConfigRequest &request)const;
+			void updateProjectConfigAsync(const Model::UpdateProjectConfigRequest& request, const UpdateProjectConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateProjectConfigOutcomeCallable updateProjectConfigCallable(const Model::UpdateProjectConfigRequest& request) const;
 			UpdateQueueOutcome updateQueue(const Model::UpdateQueueRequest &request)const;
 			void updateQueueAsync(const Model::UpdateQueueRequest& request, const UpdateQueueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateQueueOutcomeCallable updateQueueCallable(const Model::UpdateQueueRequest& request) const;

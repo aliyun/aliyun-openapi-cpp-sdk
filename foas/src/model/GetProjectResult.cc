@@ -64,6 +64,8 @@ void GetProjectResult::parse(const std::string &payload)
 		project_.region = projectNode["Region"].asString();
 	if(!projectNode["Id"].isNull())
 		project_.id = projectNode["Id"].asString();
+	if(!projectNode["GlobalJobConfig"].isNull())
+		project_.globalJobConfig = projectNode["GlobalJobConfig"].asString();
 
 }
 

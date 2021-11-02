@@ -72,6 +72,17 @@ void ModifyInstanceStateRequest::setRegionId(const std::string& regionId)
 	setHeader("RegionId", regionId);
 }
 
+bool ModifyInstanceStateRequest::getTriggerCheckpoint()const
+{
+	return triggerCheckpoint_;
+}
+
+void ModifyInstanceStateRequest::setTriggerCheckpoint(bool triggerCheckpoint)
+{
+	triggerCheckpoint_ = triggerCheckpoint;
+	setBodyParameter("TriggerCheckpoint", triggerCheckpoint ? "true" : "false");
+}
+
 std::string ModifyInstanceStateRequest::getExpectState()const
 {
 	return expectState_;

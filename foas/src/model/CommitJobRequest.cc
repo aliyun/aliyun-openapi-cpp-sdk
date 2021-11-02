@@ -39,6 +39,17 @@ void CommitJobRequest::setProjectName(const std::string& projectName)
 	setParameter("ProjectName", projectName);
 }
 
+bool CommitJobRequest::getRecommendOnly()const
+{
+	return recommendOnly_;
+}
+
+void CommitJobRequest::setRecommendOnly(bool recommendOnly)
+{
+	recommendOnly_ = recommendOnly;
+	setBodyParameter("RecommendOnly", recommendOnly ? "true" : "false");
+}
+
 std::string CommitJobRequest::getRegionId()const
 {
 	return regionId_;
@@ -48,6 +59,17 @@ void CommitJobRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setHeader("RegionId", regionId);
+}
+
+std::string CommitJobRequest::getSuspendPeriods()const
+{
+	return suspendPeriods_;
+}
+
+void CommitJobRequest::setSuspendPeriods(const std::string& suspendPeriods)
+{
+	suspendPeriods_ = suspendPeriods;
+	setBodyParameter("SuspendPeriods", suspendPeriods);
 }
 
 float CommitJobRequest::getMaxCU()const
@@ -92,5 +114,23 @@ void CommitJobRequest::setJobName(const std::string& jobName)
 {
 	jobName_ = jobName;
 	setParameter("JobName", jobName);
+}
+
+std::vector<CommitJobRequest::suspendPeriodParam> CommitJobRequest::getSuspendPeriodParam()const
+{
+	return suspendPeriodParam_;
+}
+
+void CommitJobRequest::setSuspendPeriodParam(const std::vector<suspendPeriodParam>& suspendPeriodParam)
+{
+	suspendPeriodParam_ = suspendPeriodParam;
+	for(int dep1 = 0; dep1!= suspendPeriodParam.size(); dep1++) {
+		auto suspendPeriodParamObj = suspendPeriodParam.at(dep1);
+		std::string suspendPeriodParamObjStr = "suspendPeriodParam." + std::to_string(dep1 + 1);
+		setParameter(suspendPeriodParamObjStr + ".EndTime", suspendPeriodParamObj.endTime);
+		setParameter(suspendPeriodParamObjStr + ".StartTime", suspendPeriodParamObj.startTime);
+		setParameter(suspendPeriodParamObjStr + ".Plan", suspendPeriodParamObj.plan);
+		setParameter(suspendPeriodParamObjStr + ".Policy", suspendPeriodParamObj.policy);
+	}
 }
 

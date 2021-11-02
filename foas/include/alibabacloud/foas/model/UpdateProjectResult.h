@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_FOAS_MODEL_GETINSTANCEVERTEXTASKMANAGERSRESULT_H_
-#define ALIBABACLOUD_FOAS_MODEL_GETINSTANCEVERTEXTASKMANAGERSRESULT_H_
+#ifndef ALIBABACLOUD_FOAS_MODEL_UPDATEPROJECTRESULT_H_
+#define ALIBABACLOUD_FOAS_MODEL_UPDATEPROJECTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,23 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_FOAS_EXPORT GetInstanceVertexTaskManagersResult : public ServiceResult
+			class ALIBABACLOUD_FOAS_EXPORT UpdateProjectResult : public ServiceResult
 			{
 			public:
 
 
-				GetInstanceVertexTaskManagersResult();
-				explicit GetInstanceVertexTaskManagersResult(const std::string &payload);
-				~GetInstanceVertexTaskManagersResult();
-				std::string getTaskManagers()const;
+				UpdateProjectResult();
+				explicit UpdateProjectResult(const std::string &payload);
+				~UpdateProjectResult();
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string taskManagers_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_FOAS_MODEL_GETINSTANCEVERTEXTASKMANAGERSRESULT_H_
+#endif // !ALIBABACLOUD_FOAS_MODEL_UPDATEPROJECTRESULT_H_

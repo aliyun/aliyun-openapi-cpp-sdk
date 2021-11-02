@@ -86,6 +86,10 @@ void GetInstanceResult::parse(const std::string &payload)
 		instance_.queueName = instanceNode["QueueName"].asString();
 	if(!instanceNode["EndTime"].isNull())
 		instance_.endTime = std::stol(instanceNode["EndTime"].asString());
+	if(!instanceNode["AutoScaleParams"].isNull())
+		instance_.autoScaleParams = instanceNode["AutoScaleParams"].asString();
+	if(!instanceNode["Priority"].isNull())
+		instance_.priority = std::stoi(instanceNode["Priority"].asString());
 
 }
 

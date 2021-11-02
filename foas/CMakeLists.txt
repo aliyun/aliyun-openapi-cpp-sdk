@@ -93,8 +93,6 @@ set(foas_public_header_model
 	include/alibabacloud/foas/model/GetInstanceResourceResult.h
 	include/alibabacloud/foas/model/GetInstanceRunSummaryRequest.h
 	include/alibabacloud/foas/model/GetInstanceRunSummaryResult.h
-	include/alibabacloud/foas/model/GetInstanceVertexTaskManagersRequest.h
-	include/alibabacloud/foas/model/GetInstanceVertexTaskManagersResult.h
 	include/alibabacloud/foas/model/GetJobRequest.h
 	include/alibabacloud/foas/model/GetJobResult.h
 	include/alibabacloud/foas/model/GetJobLatestAutoScalePlanRequest.h
@@ -123,6 +121,8 @@ set(foas_public_header_model
 	include/alibabacloud/foas/model/ListProjectBindQueueResult.h
 	include/alibabacloud/foas/model/ListProjectBindQueueResourceRequest.h
 	include/alibabacloud/foas/model/ListProjectBindQueueResourceResult.h
+	include/alibabacloud/foas/model/ListTagResourcesRequest.h
+	include/alibabacloud/foas/model/ListTagResourcesResult.h
 	include/alibabacloud/foas/model/MVFolderRequest.h
 	include/alibabacloud/foas/model/MVFolderResult.h
 	include/alibabacloud/foas/model/ModifyInstanceStateRequest.h
@@ -135,14 +135,22 @@ set(foas_public_header_model
 	include/alibabacloud/foas/model/ShrinkClusterResult.h
 	include/alibabacloud/foas/model/StartJobRequest.h
 	include/alibabacloud/foas/model/StartJobResult.h
+	include/alibabacloud/foas/model/TagResourcesRequest.h
+	include/alibabacloud/foas/model/TagResourcesResult.h
 	include/alibabacloud/foas/model/UnbindQueueRequest.h
 	include/alibabacloud/foas/model/UnbindQueueResult.h
+	include/alibabacloud/foas/model/UntagResourcesRequest.h
+	include/alibabacloud/foas/model/UntagResourcesResult.h
 	include/alibabacloud/foas/model/UpdateAutoScaleConfigRequest.h
 	include/alibabacloud/foas/model/UpdateAutoScaleConfigResult.h
 	include/alibabacloud/foas/model/UpdateJobRequest.h
 	include/alibabacloud/foas/model/UpdateJobResult.h
 	include/alibabacloud/foas/model/UpdatePackageRequest.h
 	include/alibabacloud/foas/model/UpdatePackageResult.h
+	include/alibabacloud/foas/model/UpdateProjectRequest.h
+	include/alibabacloud/foas/model/UpdateProjectResult.h
+	include/alibabacloud/foas/model/UpdateProjectConfigRequest.h
+	include/alibabacloud/foas/model/UpdateProjectConfigResult.h
 	include/alibabacloud/foas/model/UpdateQueueRequest.h
 	include/alibabacloud/foas/model/UpdateQueueResult.h
 	include/alibabacloud/foas/model/ValidateJobRequest.h
@@ -222,8 +230,6 @@ set(foas_src
 	src/model/GetInstanceResourceResult.cc
 	src/model/GetInstanceRunSummaryRequest.cc
 	src/model/GetInstanceRunSummaryResult.cc
-	src/model/GetInstanceVertexTaskManagersRequest.cc
-	src/model/GetInstanceVertexTaskManagersResult.cc
 	src/model/GetJobRequest.cc
 	src/model/GetJobResult.cc
 	src/model/GetJobLatestAutoScalePlanRequest.cc
@@ -252,6 +258,8 @@ set(foas_src
 	src/model/ListProjectBindQueueResult.cc
 	src/model/ListProjectBindQueueResourceRequest.cc
 	src/model/ListProjectBindQueueResourceResult.cc
+	src/model/ListTagResourcesRequest.cc
+	src/model/ListTagResourcesResult.cc
 	src/model/MVFolderRequest.cc
 	src/model/MVFolderResult.cc
 	src/model/ModifyInstanceStateRequest.cc
@@ -264,14 +272,22 @@ set(foas_src
 	src/model/ShrinkClusterResult.cc
 	src/model/StartJobRequest.cc
 	src/model/StartJobResult.cc
+	src/model/TagResourcesRequest.cc
+	src/model/TagResourcesResult.cc
 	src/model/UnbindQueueRequest.cc
 	src/model/UnbindQueueResult.cc
+	src/model/UntagResourcesRequest.cc
+	src/model/UntagResourcesResult.cc
 	src/model/UpdateAutoScaleConfigRequest.cc
 	src/model/UpdateAutoScaleConfigResult.cc
 	src/model/UpdateJobRequest.cc
 	src/model/UpdateJobResult.cc
 	src/model/UpdatePackageRequest.cc
 	src/model/UpdatePackageResult.cc
+	src/model/UpdateProjectRequest.cc
+	src/model/UpdateProjectResult.cc
+	src/model/UpdateProjectConfigRequest.cc
+	src/model/UpdateProjectConfigResult.cc
 	src/model/UpdateQueueRequest.cc
 	src/model/UpdateQueueResult.cc
 	src/model/ValidateJobRequest.cc
