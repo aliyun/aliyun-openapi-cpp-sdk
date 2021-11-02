@@ -5955,6 +5955,42 @@ VodClient::UploadMediaByURLOutcomeCallable VodClient::uploadMediaByURLCallable(c
 	return task->get_future();
 }
 
+VodClient::UploadStreamByURLOutcome VodClient::uploadStreamByURL(const UploadStreamByURLRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UploadStreamByURLOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UploadStreamByURLOutcome(UploadStreamByURLResult(outcome.result()));
+	else
+		return UploadStreamByURLOutcome(outcome.error());
+}
+
+void VodClient::uploadStreamByURLAsync(const UploadStreamByURLRequest& request, const UploadStreamByURLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, uploadStreamByURL(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::UploadStreamByURLOutcomeCallable VodClient::uploadStreamByURLCallable(const UploadStreamByURLRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UploadStreamByURLOutcome()>>(
+			[this, request]()
+			{
+			return this->uploadStreamByURL(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VodClient::VerifyVodDomainOwnerOutcome VodClient::verifyVodDomainOwner(const VerifyVodDomainOwnerRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

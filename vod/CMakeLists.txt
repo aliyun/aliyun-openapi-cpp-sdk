@@ -349,6 +349,8 @@ set(vod_public_header_model
 	include/alibabacloud/vod/model/UpdateWatermarkResult.h
 	include/alibabacloud/vod/model/UploadMediaByURLRequest.h
 	include/alibabacloud/vod/model/UploadMediaByURLResult.h
+	include/alibabacloud/vod/model/UploadStreamByURLRequest.h
+	include/alibabacloud/vod/model/UploadStreamByURLResult.h
 	include/alibabacloud/vod/model/VerifyVodDomainOwnerRequest.h
 	include/alibabacloud/vod/model/VerifyVodDomainOwnerResult.h )
 
@@ -682,6 +684,8 @@ set(vod_src
 	src/model/UpdateWatermarkResult.cc
 	src/model/UploadMediaByURLRequest.cc
 	src/model/UploadMediaByURLResult.cc
+	src/model/UploadStreamByURLRequest.cc
+	src/model/UploadStreamByURLResult.cc
 	src/model/VerifyVodDomainOwnerRequest.cc
 	src/model/VerifyVodDomainOwnerResult.cc )
 

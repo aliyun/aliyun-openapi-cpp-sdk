@@ -350,6 +350,8 @@
 #include "model/UpdateWatermarkResult.h"
 #include "model/UploadMediaByURLRequest.h"
 #include "model/UploadMediaByURLResult.h"
+#include "model/UploadStreamByURLRequest.h"
+#include "model/UploadStreamByURLResult.h"
 #include "model/VerifyVodDomainOwnerRequest.h"
 #include "model/VerifyVodDomainOwnerResult.h"
 
@@ -853,6 +855,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UploadMediaByURLResult> UploadMediaByURLOutcome;
 			typedef std::future<UploadMediaByURLOutcome> UploadMediaByURLOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::UploadMediaByURLRequest&, const UploadMediaByURLOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UploadMediaByURLAsyncHandler;
+			typedef Outcome<Error, Model::UploadStreamByURLResult> UploadStreamByURLOutcome;
+			typedef std::future<UploadStreamByURLOutcome> UploadStreamByURLOutcomeCallable;
+			typedef std::function<void(const VodClient*, const Model::UploadStreamByURLRequest&, const UploadStreamByURLOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UploadStreamByURLAsyncHandler;
 			typedef Outcome<Error, Model::VerifyVodDomainOwnerResult> VerifyVodDomainOwnerOutcome;
 			typedef std::future<VerifyVodDomainOwnerOutcome> VerifyVodDomainOwnerOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::VerifyVodDomainOwnerRequest&, const VerifyVodDomainOwnerOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> VerifyVodDomainOwnerAsyncHandler;
@@ -1353,6 +1358,9 @@ namespace AlibabaCloud
 			UploadMediaByURLOutcome uploadMediaByURL(const Model::UploadMediaByURLRequest &request)const;
 			void uploadMediaByURLAsync(const Model::UploadMediaByURLRequest& request, const UploadMediaByURLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UploadMediaByURLOutcomeCallable uploadMediaByURLCallable(const Model::UploadMediaByURLRequest& request) const;
+			UploadStreamByURLOutcome uploadStreamByURL(const Model::UploadStreamByURLRequest &request)const;
+			void uploadStreamByURLAsync(const Model::UploadStreamByURLRequest& request, const UploadStreamByURLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UploadStreamByURLOutcomeCallable uploadStreamByURLCallable(const Model::UploadStreamByURLRequest& request) const;
 			VerifyVodDomainOwnerOutcome verifyVodDomainOwner(const Model::VerifyVodDomainOwnerRequest &request)const;
 			void verifyVodDomainOwnerAsync(const Model::VerifyVodDomainOwnerRequest& request, const VerifyVodDomainOwnerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			VerifyVodDomainOwnerOutcomeCallable verifyVodDomainOwnerCallable(const Model::VerifyVodDomainOwnerRequest& request) const;
