@@ -47,10 +47,10 @@ void ListVpcEndpointSecurityGroupsResult::parse(const std::string &payload)
 			securityGroupsObject.securityGroupId = valueSecurityGroupsSecurityGroup["SecurityGroupId"].asString();
 		securityGroups_.push_back(securityGroupsObject);
 	}
-	if(!value["MaxResults"].isNull())
-		maxResults_ = value["MaxResults"].asString();
 	if(!value["NextToken"].isNull())
 		nextToken_ = value["NextToken"].asString();
+	if(!value["MaxResults"].isNull())
+		maxResults_ = value["MaxResults"].asString();
 
 }
 

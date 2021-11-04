@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,111 +18,100 @@
 
 using AlibabaCloud::Privatelink::Model::ListVpcEndpointsRequest;
 
-ListVpcEndpointsRequest::ListVpcEndpointsRequest() :
-	RpcServiceRequest("privatelink", "2020-04-15", "ListVpcEndpoints")
-{
-	setMethod(HttpRequest::Method::Post);
+ListVpcEndpointsRequest::ListVpcEndpointsRequest()
+    : RpcServiceRequest("privatelink", "2020-04-15", "ListVpcEndpoints") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-ListVpcEndpointsRequest::~ListVpcEndpointsRequest()
-{}
+ListVpcEndpointsRequest::~ListVpcEndpointsRequest() {}
 
-std::string ListVpcEndpointsRequest::getEndpointId()const
-{
-	return endpointId_;
+std::string ListVpcEndpointsRequest::getEndpointId() const {
+  return endpointId_;
 }
 
-void ListVpcEndpointsRequest::setEndpointId(const std::string& endpointId)
-{
-	endpointId_ = endpointId;
-	setParameter("EndpointId", endpointId);
+void ListVpcEndpointsRequest::setEndpointId(const std::string &endpointId) {
+  endpointId_ = endpointId;
+  setParameter(std::string("EndpointId"), endpointId);
 }
 
-std::string ListVpcEndpointsRequest::getEndpointStatus()const
-{
-	return endpointStatus_;
+std::string ListVpcEndpointsRequest::getEndpointStatus() const {
+  return endpointStatus_;
 }
 
-void ListVpcEndpointsRequest::setEndpointStatus(const std::string& endpointStatus)
-{
-	endpointStatus_ = endpointStatus;
-	setParameter("EndpointStatus", endpointStatus);
+void ListVpcEndpointsRequest::setEndpointStatus(const std::string &endpointStatus) {
+  endpointStatus_ = endpointStatus;
+  setParameter(std::string("EndpointStatus"), endpointStatus);
 }
 
-std::string ListVpcEndpointsRequest::getRegionId()const
-{
-	return regionId_;
+std::string ListVpcEndpointsRequest::getRegionId() const {
+  return regionId_;
 }
 
-void ListVpcEndpointsRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void ListVpcEndpointsRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
-std::string ListVpcEndpointsRequest::getNextToken()const
-{
-	return nextToken_;
+std::string ListVpcEndpointsRequest::getNextToken() const {
+  return nextToken_;
 }
 
-void ListVpcEndpointsRequest::setNextToken(const std::string& nextToken)
-{
-	nextToken_ = nextToken;
-	setParameter("NextToken", nextToken);
+void ListVpcEndpointsRequest::setNextToken(const std::string &nextToken) {
+  nextToken_ = nextToken;
+  setParameter(std::string("NextToken"), nextToken);
 }
 
-std::string ListVpcEndpointsRequest::getServiceName()const
-{
-	return serviceName_;
+std::string ListVpcEndpointsRequest::getEndpointType() const {
+  return endpointType_;
 }
 
-void ListVpcEndpointsRequest::setServiceName(const std::string& serviceName)
-{
-	serviceName_ = serviceName;
-	setParameter("ServiceName", serviceName);
+void ListVpcEndpointsRequest::setEndpointType(const std::string &endpointType) {
+  endpointType_ = endpointType;
+  setParameter(std::string("EndpointType"), endpointType);
 }
 
-std::string ListVpcEndpointsRequest::getConnectionStatus()const
-{
-	return connectionStatus_;
+std::string ListVpcEndpointsRequest::getServiceName() const {
+  return serviceName_;
 }
 
-void ListVpcEndpointsRequest::setConnectionStatus(const std::string& connectionStatus)
-{
-	connectionStatus_ = connectionStatus;
-	setParameter("ConnectionStatus", connectionStatus);
+void ListVpcEndpointsRequest::setServiceName(const std::string &serviceName) {
+  serviceName_ = serviceName;
+  setParameter(std::string("ServiceName"), serviceName);
 }
 
-std::string ListVpcEndpointsRequest::getVpcId()const
-{
-	return vpcId_;
+std::string ListVpcEndpointsRequest::getConnectionStatus() const {
+  return connectionStatus_;
 }
 
-void ListVpcEndpointsRequest::setVpcId(const std::string& vpcId)
-{
-	vpcId_ = vpcId;
-	setParameter("VpcId", vpcId);
+void ListVpcEndpointsRequest::setConnectionStatus(const std::string &connectionStatus) {
+  connectionStatus_ = connectionStatus;
+  setParameter(std::string("ConnectionStatus"), connectionStatus);
 }
 
-std::string ListVpcEndpointsRequest::getEndpointName()const
-{
-	return endpointName_;
+std::string ListVpcEndpointsRequest::getVpcId() const {
+  return vpcId_;
 }
 
-void ListVpcEndpointsRequest::setEndpointName(const std::string& endpointName)
-{
-	endpointName_ = endpointName;
-	setParameter("EndpointName", endpointName);
+void ListVpcEndpointsRequest::setVpcId(const std::string &vpcId) {
+  vpcId_ = vpcId;
+  setParameter(std::string("VpcId"), vpcId);
 }
 
-int ListVpcEndpointsRequest::getMaxResults()const
-{
-	return maxResults_;
+std::string ListVpcEndpointsRequest::getEndpointName() const {
+  return endpointName_;
 }
 
-void ListVpcEndpointsRequest::setMaxResults(int maxResults)
-{
-	maxResults_ = maxResults;
-	setParameter("MaxResults", std::to_string(maxResults));
+void ListVpcEndpointsRequest::setEndpointName(const std::string &endpointName) {
+  endpointName_ = endpointName;
+  setParameter(std::string("EndpointName"), endpointName);
+}
+
+int ListVpcEndpointsRequest::getMaxResults() const {
+  return maxResults_;
+}
+
+void ListVpcEndpointsRequest::setMaxResults(int maxResults) {
+  maxResults_ = maxResults;
+  setParameter(std::string("MaxResults"), std::to_string(maxResults));
 }
 

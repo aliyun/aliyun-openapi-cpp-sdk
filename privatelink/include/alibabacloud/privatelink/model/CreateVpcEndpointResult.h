@@ -38,13 +38,13 @@ namespace AlibabaCloud
 				explicit CreateVpcEndpointResult(const std::string &payload);
 				~CreateVpcEndpointResult();
 				std::string getEndpointStatus()const;
-				std::string getEndpointName()const;
-				std::string getVpcId()const;
 				std::string getEndpointDomain()const;
+				std::string getVpcId()const;
+				std::string getEndpointName()const;
 				std::string getServiceName()const;
-				std::string getEndpointId()const;
-				long getBandwidth()const;
 				std::string getCreateTime()const;
+				long getBandwidth()const;
+				std::string getEndpointId()const;
 				std::string getEndpointBusinessStatus()const;
 				std::string getEndpointDescription()const;
 				std::string getConnectionStatus()const;
@@ -54,13 +54,13 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string endpointStatus_;
-				std::string endpointName_;
-				std::string vpcId_;
 				std::string endpointDomain_;
+				std::string vpcId_;
+				std::string endpointName_;
 				std::string serviceName_;
-				std::string endpointId_;
-				long bandwidth_;
 				std::string createTime_;
+				long bandwidth_;
+				std::string endpointId_;
 				std::string endpointBusinessStatus_;
 				std::string endpointDescription_;
 				std::string connectionStatus_;

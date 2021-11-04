@@ -43,23 +43,25 @@ void ListVpcEndpointServicesByEndUserResult::parse(const std::string &payload)
 	for (auto valueServicesService : allServicesNode)
 	{
 		Service servicesObject;
+		if(!valueServicesService["Payer"].isNull())
+			servicesObject.payer = valueServicesService["Payer"].asString();
 		if(!valueServicesService["ServiceDomain"].isNull())
 			servicesObject.serviceDomain = valueServicesService["ServiceDomain"].asString();
 		if(!valueServicesService["ServiceId"].isNull())
 			servicesObject.serviceId = valueServicesService["ServiceId"].asString();
 		if(!valueServicesService["ServiceName"].isNull())
 			servicesObject.serviceName = valueServicesService["ServiceName"].asString();
-		if(!valueServicesService["Payer"].isNull())
-			servicesObject.payer = valueServicesService["Payer"].asString();
+		if(!valueServicesService["ServiceType"].isNull())
+			servicesObject.serviceType = valueServicesService["ServiceType"].asString();
 		auto allZones = value["Zones"]["Zone"];
 		for (auto value : allZones)
 			servicesObject.zones.push_back(value.asString());
 		services_.push_back(servicesObject);
 	}
-	if(!value["MaxResults"].isNull())
-		maxResults_ = value["MaxResults"].asString();
 	if(!value["NextToken"].isNull())
 		nextToken_ = value["NextToken"].asString();
+	if(!value["MaxResults"].isNull())
+		maxResults_ = value["MaxResults"].asString();
 
 }
 

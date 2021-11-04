@@ -38,39 +38,57 @@ namespace AlibabaCloud
 				explicit GetVpcEndpointServiceAttributeResult(const std::string &payload);
 				~GetVpcEndpointServiceAttributeResult();
 				std::string getPayer()const;
+				std::string getPrivateServiceDomainBusinessStatus()const;
 				std::string getServiceDescription()const;
-				int getMaxBandwidth()const;
 				std::string getCreateTime()const;
-				std::string getServiceDomain()const;
+				int getMaxBandwidth()const;
+				std::string getPrivateServiceDomain()const;
+				bool getPrivateServiceDomainEnabled()const;
 				int getMinBandwidth()const;
+				std::string getServiceDomain()const;
 				std::vector<std::string> getZones()const;
-				std::string getServiceId()const;
 				bool getAutoAcceptEnabled()const;
+				std::string getServiceId()const;
+				std::string getPrivateServiceDomainVerifyStatus()const;
 				std::string getServiceBusinessStatus()const;
+				std::string getPrivateServiceDomainVerifyName()const;
 				std::string getServiceName()const;
 				std::string getServiceStatus()const;
+				std::string getServiceType()const;
 				int getConnectBandwidth()const;
+				std::string getServiceResourceType()const;
+				std::string getPrivateServiceName()const;
 				std::string getRegionId()const;
 				bool getZoneAffinityEnabled()const;
+				std::string getPrivateServiceDomainVerifyValue()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string payer_;
+				std::string privateServiceDomainBusinessStatus_;
 				std::string serviceDescription_;
-				int maxBandwidth_;
 				std::string createTime_;
-				std::string serviceDomain_;
+				int maxBandwidth_;
+				std::string privateServiceDomain_;
+				bool privateServiceDomainEnabled_;
 				int minBandwidth_;
+				std::string serviceDomain_;
 				std::vector<std::string> zones_;
-				std::string serviceId_;
 				bool autoAcceptEnabled_;
+				std::string serviceId_;
+				std::string privateServiceDomainVerifyStatus_;
 				std::string serviceBusinessStatus_;
+				std::string privateServiceDomainVerifyName_;
 				std::string serviceName_;
 				std::string serviceStatus_;
+				std::string serviceType_;
 				int connectBandwidth_;
+				std::string serviceResourceType_;
+				std::string privateServiceName_;
 				std::string regionId_;
 				bool zoneAffinityEnabled_;
+				std::string privateServiceDomainVerifyValue_;
 
 			};
 		}

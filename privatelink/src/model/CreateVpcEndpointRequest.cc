@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,130 +18,132 @@
 
 using AlibabaCloud::Privatelink::Model::CreateVpcEndpointRequest;
 
-CreateVpcEndpointRequest::CreateVpcEndpointRequest() :
-	RpcServiceRequest("privatelink", "2020-04-15", "CreateVpcEndpoint")
-{
-	setMethod(HttpRequest::Method::Post);
+CreateVpcEndpointRequest::CreateVpcEndpointRequest()
+    : RpcServiceRequest("privatelink", "2020-04-15", "CreateVpcEndpoint") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-CreateVpcEndpointRequest::~CreateVpcEndpointRequest()
-{}
+CreateVpcEndpointRequest::~CreateVpcEndpointRequest() {}
 
-std::string CreateVpcEndpointRequest::getClientToken()const
-{
-	return clientToken_;
+std::string CreateVpcEndpointRequest::getClientToken() const {
+  return clientToken_;
 }
 
-void CreateVpcEndpointRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+void CreateVpcEndpointRequest::setClientToken(const std::string &clientToken) {
+  clientToken_ = clientToken;
+  setParameter(std::string("ClientToken"), clientToken);
 }
 
-std::vector<std::string> CreateVpcEndpointRequest::getSecurityGroupId()const
-{
-	return securityGroupId_;
+std::vector<std::string> CreateVpcEndpointRequest::getSecurityGroupId() const {
+  return securityGroupId_;
 }
 
-void CreateVpcEndpointRequest::setSecurityGroupId(const std::vector<std::string>& securityGroupId)
-{
-	securityGroupId_ = securityGroupId;
-	for(int dep1 = 0; dep1!= securityGroupId.size(); dep1++) {
-		setParameter("SecurityGroupId."+ std::to_string(dep1), securityGroupId.at(dep1));
-	}
+void CreateVpcEndpointRequest::setSecurityGroupId(const std::vector<std::string> &securityGroupId) {
+  securityGroupId_ = securityGroupId;
 }
 
-std::string CreateVpcEndpointRequest::getRegionId()const
-{
-	return regionId_;
+std::string CreateVpcEndpointRequest::getRegionId() const {
+  return regionId_;
 }
 
-void CreateVpcEndpointRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void CreateVpcEndpointRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
-std::vector<CreateVpcEndpointRequest::Zone> CreateVpcEndpointRequest::getZone()const
-{
-	return zone_;
+std::string CreateVpcEndpointRequest::getEndpointType() const {
+  return endpointType_;
 }
 
-void CreateVpcEndpointRequest::setZone(const std::vector<Zone>& zone)
-{
-	zone_ = zone;
-	for(int dep1 = 0; dep1!= zone.size(); dep1++) {
-		auto zoneObj = zone.at(dep1);
-		std::string zoneObjStr = "Zone." + std::to_string(dep1 + 1);
-		setParameter(zoneObjStr + ".VSwitchId", zoneObj.vSwitchId);
-		setParameter(zoneObjStr + ".ZoneId", zoneObj.zoneId);
-		setParameter(zoneObjStr + ".Ip", zoneObj.ip);
-	}
+void CreateVpcEndpointRequest::setEndpointType(const std::string &endpointType) {
+  endpointType_ = endpointType;
+  setParameter(std::string("EndpointType"), endpointType);
 }
 
-std::string CreateVpcEndpointRequest::getServiceName()const
-{
-	return serviceName_;
+std::vector<CreateVpcEndpointRequest::Zone> CreateVpcEndpointRequest::getZone() const {
+  return zone_;
 }
 
-void CreateVpcEndpointRequest::setServiceName(const std::string& serviceName)
-{
-	serviceName_ = serviceName;
-	setParameter("ServiceName", serviceName);
+void CreateVpcEndpointRequest::setZone(const std::vector<CreateVpcEndpointRequest::Zone> &zone) {
+  zone_ = zone;
+  for(int dep1 = 0; dep1 != zone.size(); dep1++) {
+  auto zoneObj = zone.at(dep1);
+  std::string zoneObjStr = std::string("Zone") + "." + std::to_string(dep1 + 1);
+    setParameter(zoneObjStr + ".VSwitchId", zoneObj.vSwitchId);
+    setParameter(zoneObjStr + ".ZoneId", zoneObj.zoneId);
+    setParameter(zoneObjStr + ".ip", zoneObj.ip);
+  }
 }
 
-bool CreateVpcEndpointRequest::getDryRun()const
-{
-	return dryRun_;
+std::string CreateVpcEndpointRequest::getServiceName() const {
+  return serviceName_;
 }
 
-void CreateVpcEndpointRequest::setDryRun(bool dryRun)
-{
-	dryRun_ = dryRun;
-	setParameter("DryRun", dryRun ? "true" : "false");
+void CreateVpcEndpointRequest::setServiceName(const std::string &serviceName) {
+  serviceName_ = serviceName;
+  setParameter(std::string("ServiceName"), serviceName);
 }
 
-std::string CreateVpcEndpointRequest::getEndpointDescription()const
-{
-	return endpointDescription_;
+bool CreateVpcEndpointRequest::getDryRun() const {
+  return dryRun_;
 }
 
-void CreateVpcEndpointRequest::setEndpointDescription(const std::string& endpointDescription)
-{
-	endpointDescription_ = endpointDescription;
-	setParameter("EndpointDescription", endpointDescription);
+void CreateVpcEndpointRequest::setDryRun(bool dryRun) {
+  dryRun_ = dryRun;
+  setParameter(std::string("DryRun"), dryRun ? "true" : "false");
 }
 
-std::string CreateVpcEndpointRequest::getEndpointName()const
-{
-	return endpointName_;
+std::string CreateVpcEndpointRequest::getEndpointDescription() const {
+  return endpointDescription_;
 }
 
-void CreateVpcEndpointRequest::setEndpointName(const std::string& endpointName)
-{
-	endpointName_ = endpointName;
-	setParameter("EndpointName", endpointName);
+void CreateVpcEndpointRequest::setEndpointDescription(const std::string &endpointDescription) {
+  endpointDescription_ = endpointDescription;
+  setParameter(std::string("EndpointDescription"), endpointDescription);
 }
 
-std::string CreateVpcEndpointRequest::getVpcId()const
-{
-	return vpcId_;
+long CreateVpcEndpointRequest::getZonePrivateIpAddressCount() const {
+  return zonePrivateIpAddressCount_;
 }
 
-void CreateVpcEndpointRequest::setVpcId(const std::string& vpcId)
-{
-	vpcId_ = vpcId;
-	setParameter("VpcId", vpcId);
+void CreateVpcEndpointRequest::setZonePrivateIpAddressCount(long zonePrivateIpAddressCount) {
+  zonePrivateIpAddressCount_ = zonePrivateIpAddressCount;
+  setParameter(std::string("ZonePrivateIpAddressCount"), std::to_string(zonePrivateIpAddressCount));
 }
 
-std::string CreateVpcEndpointRequest::getServiceId()const
-{
-	return serviceId_;
+bool CreateVpcEndpointRequest::getProtectedEnabled() const {
+  return protectedEnabled_;
 }
 
-void CreateVpcEndpointRequest::setServiceId(const std::string& serviceId)
-{
-	serviceId_ = serviceId;
-	setParameter("ServiceId", serviceId);
+void CreateVpcEndpointRequest::setProtectedEnabled(bool protectedEnabled) {
+  protectedEnabled_ = protectedEnabled;
+  setParameter(std::string("ProtectedEnabled"), protectedEnabled ? "true" : "false");
+}
+
+std::string CreateVpcEndpointRequest::getEndpointName() const {
+  return endpointName_;
+}
+
+void CreateVpcEndpointRequest::setEndpointName(const std::string &endpointName) {
+  endpointName_ = endpointName;
+  setParameter(std::string("EndpointName"), endpointName);
+}
+
+std::string CreateVpcEndpointRequest::getVpcId() const {
+  return vpcId_;
+}
+
+void CreateVpcEndpointRequest::setVpcId(const std::string &vpcId) {
+  vpcId_ = vpcId;
+  setParameter(std::string("VpcId"), vpcId);
+}
+
+std::string CreateVpcEndpointRequest::getServiceId() const {
+  return serviceId_;
+}
+
+void CreateVpcEndpointRequest::setServiceId(const std::string &serviceId) {
+  serviceId_ = serviceId;
+  setParameter(std::string("ServiceId"), serviceId);
 }
 

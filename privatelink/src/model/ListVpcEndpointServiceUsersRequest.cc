@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,67 +18,55 @@
 
 using AlibabaCloud::Privatelink::Model::ListVpcEndpointServiceUsersRequest;
 
-ListVpcEndpointServiceUsersRequest::ListVpcEndpointServiceUsersRequest() :
-	RpcServiceRequest("privatelink", "2020-04-15", "ListVpcEndpointServiceUsers")
-{
-	setMethod(HttpRequest::Method::Post);
+ListVpcEndpointServiceUsersRequest::ListVpcEndpointServiceUsersRequest()
+    : RpcServiceRequest("privatelink", "2020-04-15", "ListVpcEndpointServiceUsers") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-ListVpcEndpointServiceUsersRequest::~ListVpcEndpointServiceUsersRequest()
-{}
+ListVpcEndpointServiceUsersRequest::~ListVpcEndpointServiceUsersRequest() {}
 
-long ListVpcEndpointServiceUsersRequest::getUserId()const
-{
-	return userId_;
+long ListVpcEndpointServiceUsersRequest::getUserId() const {
+  return userId_;
 }
 
-void ListVpcEndpointServiceUsersRequest::setUserId(long userId)
-{
-	userId_ = userId;
-	setParameter("UserId", std::to_string(userId));
+void ListVpcEndpointServiceUsersRequest::setUserId(long userId) {
+  userId_ = userId;
+  setParameter(std::string("UserId"), std::to_string(userId));
 }
 
-std::string ListVpcEndpointServiceUsersRequest::getRegionId()const
-{
-	return regionId_;
+std::string ListVpcEndpointServiceUsersRequest::getRegionId() const {
+  return regionId_;
 }
 
-void ListVpcEndpointServiceUsersRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void ListVpcEndpointServiceUsersRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
-std::string ListVpcEndpointServiceUsersRequest::getNextToken()const
-{
-	return nextToken_;
+std::string ListVpcEndpointServiceUsersRequest::getNextToken() const {
+  return nextToken_;
 }
 
-void ListVpcEndpointServiceUsersRequest::setNextToken(const std::string& nextToken)
-{
-	nextToken_ = nextToken;
-	setParameter("NextToken", nextToken);
+void ListVpcEndpointServiceUsersRequest::setNextToken(const std::string &nextToken) {
+  nextToken_ = nextToken;
+  setParameter(std::string("NextToken"), nextToken);
 }
 
-int ListVpcEndpointServiceUsersRequest::getMaxResults()const
-{
-	return maxResults_;
+int ListVpcEndpointServiceUsersRequest::getMaxResults() const {
+  return maxResults_;
 }
 
-void ListVpcEndpointServiceUsersRequest::setMaxResults(int maxResults)
-{
-	maxResults_ = maxResults;
-	setParameter("MaxResults", std::to_string(maxResults));
+void ListVpcEndpointServiceUsersRequest::setMaxResults(int maxResults) {
+  maxResults_ = maxResults;
+  setParameter(std::string("MaxResults"), std::to_string(maxResults));
 }
 
-std::string ListVpcEndpointServiceUsersRequest::getServiceId()const
-{
-	return serviceId_;
+std::string ListVpcEndpointServiceUsersRequest::getServiceId() const {
+  return serviceId_;
 }
 
-void ListVpcEndpointServiceUsersRequest::setServiceId(const std::string& serviceId)
-{
-	serviceId_ = serviceId;
-	setParameter("ServiceId", serviceId);
+void ListVpcEndpointServiceUsersRequest::setServiceId(const std::string &serviceId) {
+  serviceId_ = serviceId;
+  setParameter(std::string("ServiceId"), serviceId);
 }
 

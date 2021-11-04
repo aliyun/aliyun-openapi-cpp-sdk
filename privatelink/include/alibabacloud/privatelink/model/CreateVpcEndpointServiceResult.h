@@ -39,26 +39,26 @@ namespace AlibabaCloud
 				~CreateVpcEndpointServiceResult();
 				std::string getServiceBusinessStatus()const;
 				std::string getServiceName()const;
-				std::string getServiceDescription()const;
 				std::string getServiceStatus()const;
+				std::string getServiceDescription()const;
 				std::string getCreateTime()const;
-				bool getZoneAffinityEnabled()const;
 				std::string getServiceDomain()const;
-				std::string getServiceId()const;
+				bool getZoneAffinityEnabled()const;
 				bool getAutoAcceptEnabled()const;
+				std::string getServiceId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string serviceBusinessStatus_;
 				std::string serviceName_;
-				std::string serviceDescription_;
 				std::string serviceStatus_;
+				std::string serviceDescription_;
 				std::string createTime_;
-				bool zoneAffinityEnabled_;
 				std::string serviceDomain_;
-				std::string serviceId_;
+				bool zoneAffinityEnabled_;
 				bool autoAcceptEnabled_;
+				std::string serviceId_;
 
 			};
 		}

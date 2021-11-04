@@ -34,8 +34,8 @@ namespace AlibabaCloud
 			public:
 				struct Zone
 				{
-					std::string eniId;
 					std::string zoneId;
+					std::string eniId;
 					std::string serviceStatus;
 					std::string vSwitchId;
 					std::string eniIp;

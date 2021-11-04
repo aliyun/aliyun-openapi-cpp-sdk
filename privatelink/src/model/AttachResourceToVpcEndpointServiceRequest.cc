@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,78 +18,64 @@
 
 using AlibabaCloud::Privatelink::Model::AttachResourceToVpcEndpointServiceRequest;
 
-AttachResourceToVpcEndpointServiceRequest::AttachResourceToVpcEndpointServiceRequest() :
-	RpcServiceRequest("privatelink", "2020-04-15", "AttachResourceToVpcEndpointService")
-{
-	setMethod(HttpRequest::Method::Post);
+AttachResourceToVpcEndpointServiceRequest::AttachResourceToVpcEndpointServiceRequest()
+    : RpcServiceRequest("privatelink", "2020-04-15", "AttachResourceToVpcEndpointService") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-AttachResourceToVpcEndpointServiceRequest::~AttachResourceToVpcEndpointServiceRequest()
-{}
+AttachResourceToVpcEndpointServiceRequest::~AttachResourceToVpcEndpointServiceRequest() {}
 
-std::string AttachResourceToVpcEndpointServiceRequest::getClientToken()const
-{
-	return clientToken_;
+std::string AttachResourceToVpcEndpointServiceRequest::getClientToken() const {
+  return clientToken_;
 }
 
-void AttachResourceToVpcEndpointServiceRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+void AttachResourceToVpcEndpointServiceRequest::setClientToken(const std::string &clientToken) {
+  clientToken_ = clientToken;
+  setParameter(std::string("ClientToken"), clientToken);
 }
 
-std::string AttachResourceToVpcEndpointServiceRequest::getRegionId()const
-{
-	return regionId_;
+std::string AttachResourceToVpcEndpointServiceRequest::getRegionId() const {
+  return regionId_;
 }
 
-void AttachResourceToVpcEndpointServiceRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void AttachResourceToVpcEndpointServiceRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
-std::string AttachResourceToVpcEndpointServiceRequest::getResourceId()const
-{
-	return resourceId_;
+std::string AttachResourceToVpcEndpointServiceRequest::getResourceId() const {
+  return resourceId_;
 }
 
-void AttachResourceToVpcEndpointServiceRequest::setResourceId(const std::string& resourceId)
-{
-	resourceId_ = resourceId;
-	setParameter("ResourceId", resourceId);
+void AttachResourceToVpcEndpointServiceRequest::setResourceId(const std::string &resourceId) {
+  resourceId_ = resourceId;
+  setParameter(std::string("ResourceId"), resourceId);
 }
 
-bool AttachResourceToVpcEndpointServiceRequest::getDryRun()const
-{
-	return dryRun_;
+bool AttachResourceToVpcEndpointServiceRequest::getDryRun() const {
+  return dryRun_;
 }
 
-void AttachResourceToVpcEndpointServiceRequest::setDryRun(bool dryRun)
-{
-	dryRun_ = dryRun;
-	setParameter("DryRun", dryRun ? "true" : "false");
+void AttachResourceToVpcEndpointServiceRequest::setDryRun(bool dryRun) {
+  dryRun_ = dryRun;
+  setParameter(std::string("DryRun"), dryRun ? "true" : "false");
 }
 
-std::string AttachResourceToVpcEndpointServiceRequest::getResourceType()const
-{
-	return resourceType_;
+std::string AttachResourceToVpcEndpointServiceRequest::getResourceType() const {
+  return resourceType_;
 }
 
-void AttachResourceToVpcEndpointServiceRequest::setResourceType(const std::string& resourceType)
-{
-	resourceType_ = resourceType;
-	setParameter("ResourceType", resourceType);
+void AttachResourceToVpcEndpointServiceRequest::setResourceType(const std::string &resourceType) {
+  resourceType_ = resourceType;
+  setParameter(std::string("ResourceType"), resourceType);
 }
 
-std::string AttachResourceToVpcEndpointServiceRequest::getServiceId()const
-{
-	return serviceId_;
+std::string AttachResourceToVpcEndpointServiceRequest::getServiceId() const {
+  return serviceId_;
 }
 
-void AttachResourceToVpcEndpointServiceRequest::setServiceId(const std::string& serviceId)
-{
-	serviceId_ = serviceId;
-	setParameter("ServiceId", serviceId);
+void AttachResourceToVpcEndpointServiceRequest::setServiceId(const std::string &serviceId) {
+  serviceId_ = serviceId;
+  setParameter(std::string("ServiceId"), serviceId);
 }
 

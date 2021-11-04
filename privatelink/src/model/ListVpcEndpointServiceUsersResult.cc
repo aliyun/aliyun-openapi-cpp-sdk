@@ -47,10 +47,10 @@ void ListVpcEndpointServiceUsersResult::parse(const std::string &payload)
 			usersObject.userId = std::stol(valueUsersUser["UserId"].asString());
 		users_.push_back(usersObject);
 	}
-	if(!value["MaxResults"].isNull())
-		maxResults_ = value["MaxResults"].asString();
 	if(!value["NextToken"].isNull())
 		nextToken_ = value["NextToken"].asString();
+	if(!value["MaxResults"].isNull())
+		maxResults_ = value["MaxResults"].asString();
 
 }
 

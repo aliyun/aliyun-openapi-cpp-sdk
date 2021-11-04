@@ -36,16 +36,18 @@ namespace AlibabaCloud
 				{
 					std::string payer;
 					std::string serviceDescription;
-					int maxBandwidth;
 					std::string createTime;
-					std::string serviceDomain;
+					int maxBandwidth;
 					int minBandwidth;
-					std::string serviceId;
+					std::string serviceDomain;
 					bool autoAcceptEnabled;
+					std::string serviceId;
 					std::string serviceBusinessStatus;
 					std::string serviceName;
 					std::string serviceStatus;
+					std::string serviceType;
 					int connectBandwidth;
+					std::string serviceResourceType;
 					std::string regionId;
 					bool zoneAffinityEnabled;
 				};

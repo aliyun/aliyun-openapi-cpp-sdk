@@ -43,10 +43,10 @@ void DescribeZonesResult::parse(const std::string &payload)
 	for (auto valueZonesZone : allZonesNode)
 	{
 		Zone zonesObject;
-		if(!valueZonesZone["ZoneId"].isNull())
-			zonesObject.zoneId = valueZonesZone["ZoneId"].asString();
 		if(!valueZonesZone["LocalName"].isNull())
 			zonesObject.localName = valueZonesZone["LocalName"].asString();
+		if(!valueZonesZone["ZoneId"].isNull())
+			zonesObject.zoneId = valueZonesZone["ZoneId"].asString();
 		zones_.push_back(zonesObject);
 	}
 

@@ -43,10 +43,10 @@ void GetVpcEndpointAttributeResult::parse(const std::string &payload)
 		payer_ = value["Payer"].asString();
 	if(!value["EndpointDomain"].isNull())
 		endpointDomain_ = value["EndpointDomain"].asString();
-	if(!value["ResourceOwner"].isNull())
-		resourceOwner_ = value["ResourceOwner"].asString() == "true";
 	if(!value["CreateTime"].isNull())
 		createTime_ = value["CreateTime"].asString();
+	if(!value["ResourceOwner"].isNull())
+		resourceOwner_ = value["ResourceOwner"].asString() == "true";
 	if(!value["EndpointBusinessStatus"].isNull())
 		endpointBusinessStatus_ = value["EndpointBusinessStatus"].asString();
 	if(!value["EndpointDescription"].isNull())
@@ -55,16 +55,20 @@ void GetVpcEndpointAttributeResult::parse(const std::string &payload)
 		serviceId_ = value["ServiceId"].asString();
 	if(!value["EndpointStatus"].isNull())
 		endpointStatus_ = value["EndpointStatus"].asString();
-	if(!value["EndpointName"].isNull())
-		endpointName_ = value["EndpointName"].asString();
 	if(!value["VpcId"].isNull())
 		vpcId_ = value["VpcId"].asString();
+	if(!value["EndpointName"].isNull())
+		endpointName_ = value["EndpointName"].asString();
+	if(!value["ZonePrivateIpAddressCount"].isNull())
+		zonePrivateIpAddressCount_ = std::stol(value["ZonePrivateIpAddressCount"].asString());
+	if(!value["EndpointType"].isNull())
+		endpointType_ = value["EndpointType"].asString();
 	if(!value["ServiceName"].isNull())
 		serviceName_ = value["ServiceName"].asString();
-	if(!value["EndpointId"].isNull())
-		endpointId_ = value["EndpointId"].asString();
 	if(!value["Bandwidth"].isNull())
 		bandwidth_ = std::stoi(value["Bandwidth"].asString());
+	if(!value["EndpointId"].isNull())
+		endpointId_ = value["EndpointId"].asString();
 	if(!value["RegionId"].isNull())
 		regionId_ = value["RegionId"].asString();
 	if(!value["ConnectionStatus"].isNull())
@@ -84,14 +88,19 @@ std::string GetVpcEndpointAttributeResult::getEndpointDomain()const
 	return endpointDomain_;
 }
 
+std::string GetVpcEndpointAttributeResult::getCreateTime()const
+{
+	return createTime_;
+}
+
 bool GetVpcEndpointAttributeResult::getResourceOwner()const
 {
 	return resourceOwner_;
 }
 
-std::string GetVpcEndpointAttributeResult::getCreateTime()const
+long GetVpcEndpointAttributeResult::getZonePrivateIpAddressCount()const
 {
-	return createTime_;
+	return zonePrivateIpAddressCount_;
 }
 
 std::string GetVpcEndpointAttributeResult::getEndpointBusinessStatus()const
@@ -114,14 +123,14 @@ std::string GetVpcEndpointAttributeResult::getEndpointStatus()const
 	return endpointStatus_;
 }
 
-std::string GetVpcEndpointAttributeResult::getEndpointName()const
-{
-	return endpointName_;
-}
-
 std::string GetVpcEndpointAttributeResult::getVpcId()const
 {
 	return vpcId_;
+}
+
+std::string GetVpcEndpointAttributeResult::getEndpointName()const
+{
+	return endpointName_;
 }
 
 std::string GetVpcEndpointAttributeResult::getServiceName()const
@@ -129,14 +138,19 @@ std::string GetVpcEndpointAttributeResult::getServiceName()const
 	return serviceName_;
 }
 
+int GetVpcEndpointAttributeResult::getBandwidth()const
+{
+	return bandwidth_;
+}
+
 std::string GetVpcEndpointAttributeResult::getEndpointId()const
 {
 	return endpointId_;
 }
 
-int GetVpcEndpointAttributeResult::getBandwidth()const
+std::string GetVpcEndpointAttributeResult::getEndpointType()const
 {
-	return bandwidth_;
+	return endpointType_;
 }
 
 std::string GetVpcEndpointAttributeResult::getRegionId()const

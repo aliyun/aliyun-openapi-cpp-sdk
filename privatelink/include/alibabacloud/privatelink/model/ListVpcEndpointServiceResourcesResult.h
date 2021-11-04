@@ -34,13 +34,16 @@ namespace AlibabaCloud
 			public:
 				struct Resource
 				{
-					std::string zoneId;
+					long relatedEndpointCount;
 					std::string vpcId;
+					std::string zoneId;
 					std::string resourceId;
-					std::string ip;
+					std::string statusInfo;
 					std::string vSwitchId;
+					std::string ip;
 					std::string resourceType;
 					std::string regionId;
+					bool autoAllocatedEnabled;
 				};
 
 

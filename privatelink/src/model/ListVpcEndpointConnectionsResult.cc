@@ -43,44 +43,52 @@ void ListVpcEndpointConnectionsResult::parse(const std::string &payload)
 	for (auto valueConnectionsConnection : allConnectionsNode)
 	{
 		Connection connectionsObject;
-		if(!valueConnectionsConnection["ServiceId"].isNull())
-			connectionsObject.serviceId = valueConnectionsConnection["ServiceId"].asString();
-		if(!valueConnectionsConnection["EndpointId"].isNull())
-			connectionsObject.endpointId = valueConnectionsConnection["EndpointId"].asString();
-		if(!valueConnectionsConnection["EndpointOwnerId"].isNull())
-			connectionsObject.endpointOwnerId = std::stol(valueConnectionsConnection["EndpointOwnerId"].asString());
-		if(!valueConnectionsConnection["ConnectionStatus"].isNull())
-			connectionsObject.connectionStatus = valueConnectionsConnection["ConnectionStatus"].asString();
-		if(!valueConnectionsConnection["EndpointVpcId"].isNull())
-			connectionsObject.endpointVpcId = valueConnectionsConnection["EndpointVpcId"].asString();
-		if(!valueConnectionsConnection["Bandwidth"].isNull())
-			connectionsObject.bandwidth = std::stoi(valueConnectionsConnection["Bandwidth"].asString());
-		if(!valueConnectionsConnection["ModifiedTime"].isNull())
-			connectionsObject.modifiedTime = valueConnectionsConnection["ModifiedTime"].asString();
 		if(!valueConnectionsConnection["ResourceOwner"].isNull())
 			connectionsObject.resourceOwner = valueConnectionsConnection["ResourceOwner"].asString() == "true";
+		if(!valueConnectionsConnection["ModifiedTime"].isNull())
+			connectionsObject.modifiedTime = valueConnectionsConnection["ModifiedTime"].asString();
+		if(!valueConnectionsConnection["Bandwidth"].isNull())
+			connectionsObject.bandwidth = std::stoi(valueConnectionsConnection["Bandwidth"].asString());
+		if(!valueConnectionsConnection["EndpointOwnerId"].isNull())
+			connectionsObject.endpointOwnerId = std::stol(valueConnectionsConnection["EndpointOwnerId"].asString());
+		if(!valueConnectionsConnection["ServiceId"].isNull())
+			connectionsObject.serviceId = valueConnectionsConnection["ServiceId"].asString();
+		if(!valueConnectionsConnection["ConnectionStatus"].isNull())
+			connectionsObject.connectionStatus = valueConnectionsConnection["ConnectionStatus"].asString();
+		if(!valueConnectionsConnection["EndpointId"].isNull())
+			connectionsObject.endpointId = valueConnectionsConnection["EndpointId"].asString();
+		if(!valueConnectionsConnection["EndpointVpcId"].isNull())
+			connectionsObject.endpointVpcId = valueConnectionsConnection["EndpointVpcId"].asString();
 		auto allZonesNode = valueConnectionsConnection["Zones"]["Zone"];
 		for (auto valueConnectionsConnectionZonesZone : allZonesNode)
 		{
 			Connection::Zone zonesObject;
+			if(!valueConnectionsConnectionZonesZone["VSwitchId"].isNull())
+				zonesObject.vSwitchId = valueConnectionsConnectionZonesZone["VSwitchId"].asString();
 			if(!valueConnectionsConnectionZonesZone["ZoneId"].isNull())
 				zonesObject.zoneId = valueConnectionsConnectionZonesZone["ZoneId"].asString();
+			if(!valueConnectionsConnectionZonesZone["ResourceId"].isNull())
+				zonesObject.resourceId = valueConnectionsConnectionZonesZone["ResourceId"].asString();
 			if(!valueConnectionsConnectionZonesZone["EniId"].isNull())
 				zonesObject.eniId = valueConnectionsConnectionZonesZone["EniId"].asString();
 			if(!valueConnectionsConnectionZonesZone["ZoneDomain"].isNull())
 				zonesObject.zoneDomain = valueConnectionsConnectionZonesZone["ZoneDomain"].asString();
-			if(!valueConnectionsConnectionZonesZone["VSwitchId"].isNull())
-				zonesObject.vSwitchId = valueConnectionsConnectionZonesZone["VSwitchId"].asString();
-			if(!valueConnectionsConnectionZonesZone["ResourceId"].isNull())
-				zonesObject.resourceId = valueConnectionsConnectionZonesZone["ResourceId"].asString();
+			if(!valueConnectionsConnectionZonesZone["ZoneStatus"].isNull())
+				zonesObject.zoneStatus = valueConnectionsConnectionZonesZone["ZoneStatus"].asString();
+			if(!valueConnectionsConnectionZonesZone["ReplacedResourceId"].isNull())
+				zonesObject.replacedResourceId = valueConnectionsConnectionZonesZone["ReplacedResourceId"].asString();
+			if(!valueConnectionsConnectionZonesZone["ReplacedEniId"].isNull())
+				zonesObject.replacedEniId = valueConnectionsConnectionZonesZone["ReplacedEniId"].asString();
+			if(!valueConnectionsConnectionZonesZone["StatusInfo"].isNull())
+				zonesObject.statusInfo = valueConnectionsConnectionZonesZone["StatusInfo"].asString();
 			connectionsObject.zones.push_back(zonesObject);
 		}
 		connections_.push_back(connectionsObject);
 	}
-	if(!value["MaxResults"].isNull())
-		maxResults_ = value["MaxResults"].asString();
 	if(!value["NextToken"].isNull())
 		nextToken_ = value["NextToken"].asString();
+	if(!value["MaxResults"].isNull())
+		maxResults_ = value["MaxResults"].asString();
 
 }
 

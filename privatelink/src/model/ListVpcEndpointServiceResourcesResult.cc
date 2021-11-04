@@ -43,26 +43,32 @@ void ListVpcEndpointServiceResourcesResult::parse(const std::string &payload)
 	for (auto valueResourcesResource : allResourcesNode)
 	{
 		Resource resourcesObject;
-		if(!valueResourcesResource["ZoneId"].isNull())
-			resourcesObject.zoneId = valueResourcesResource["ZoneId"].asString();
-		if(!valueResourcesResource["ResourceId"].isNull())
-			resourcesObject.resourceId = valueResourcesResource["ResourceId"].asString();
-		if(!valueResourcesResource["ResourceType"].isNull())
-			resourcesObject.resourceType = valueResourcesResource["ResourceType"].asString();
-		if(!valueResourcesResource["Ip"].isNull())
-			resourcesObject.ip = valueResourcesResource["Ip"].asString();
 		if(!valueResourcesResource["VpcId"].isNull())
 			resourcesObject.vpcId = valueResourcesResource["VpcId"].asString();
 		if(!valueResourcesResource["VSwitchId"].isNull())
 			resourcesObject.vSwitchId = valueResourcesResource["VSwitchId"].asString();
+		if(!valueResourcesResource["ResourceType"].isNull())
+			resourcesObject.resourceType = valueResourcesResource["ResourceType"].asString();
+		if(!valueResourcesResource["ZoneId"].isNull())
+			resourcesObject.zoneId = valueResourcesResource["ZoneId"].asString();
+		if(!valueResourcesResource["Ip"].isNull())
+			resourcesObject.ip = valueResourcesResource["Ip"].asString();
+		if(!valueResourcesResource["ResourceId"].isNull())
+			resourcesObject.resourceId = valueResourcesResource["ResourceId"].asString();
 		if(!valueResourcesResource["RegionId"].isNull())
 			resourcesObject.regionId = valueResourcesResource["RegionId"].asString();
+		if(!valueResourcesResource["RelatedEndpointCount"].isNull())
+			resourcesObject.relatedEndpointCount = std::stol(valueResourcesResource["RelatedEndpointCount"].asString());
+		if(!valueResourcesResource["AutoAllocatedEnabled"].isNull())
+			resourcesObject.autoAllocatedEnabled = valueResourcesResource["AutoAllocatedEnabled"].asString() == "true";
+		if(!valueResourcesResource["StatusInfo"].isNull())
+			resourcesObject.statusInfo = valueResourcesResource["StatusInfo"].asString();
 		resources_.push_back(resourcesObject);
 	}
-	if(!value["MaxResults"].isNull())
-		maxResults_ = value["MaxResults"].asString();
 	if(!value["NextToken"].isNull())
 		nextToken_ = value["NextToken"].asString();
+	if(!value["MaxResults"].isNull())
+		maxResults_ = value["MaxResults"].asString();
 
 }
 

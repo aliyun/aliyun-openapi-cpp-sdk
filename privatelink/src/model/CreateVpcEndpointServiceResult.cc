@@ -43,20 +43,20 @@ void CreateVpcEndpointServiceResult::parse(const std::string &payload)
 		serviceBusinessStatus_ = value["ServiceBusinessStatus"].asString();
 	if(!value["ServiceName"].isNull())
 		serviceName_ = value["ServiceName"].asString();
-	if(!value["ServiceDescription"].isNull())
-		serviceDescription_ = value["ServiceDescription"].asString();
 	if(!value["ServiceStatus"].isNull())
 		serviceStatus_ = value["ServiceStatus"].asString();
+	if(!value["ServiceDescription"].isNull())
+		serviceDescription_ = value["ServiceDescription"].asString();
 	if(!value["CreateTime"].isNull())
 		createTime_ = value["CreateTime"].asString();
-	if(!value["ZoneAffinityEnabled"].isNull())
-		zoneAffinityEnabled_ = value["ZoneAffinityEnabled"].asString() == "true";
 	if(!value["ServiceDomain"].isNull())
 		serviceDomain_ = value["ServiceDomain"].asString();
-	if(!value["ServiceId"].isNull())
-		serviceId_ = value["ServiceId"].asString();
+	if(!value["ZoneAffinityEnabled"].isNull())
+		zoneAffinityEnabled_ = value["ZoneAffinityEnabled"].asString() == "true";
 	if(!value["AutoAcceptEnabled"].isNull())
 		autoAcceptEnabled_ = value["AutoAcceptEnabled"].asString() == "true";
+	if(!value["ServiceId"].isNull())
+		serviceId_ = value["ServiceId"].asString();
 
 }
 
@@ -70,14 +70,14 @@ std::string CreateVpcEndpointServiceResult::getServiceName()const
 	return serviceName_;
 }
 
-std::string CreateVpcEndpointServiceResult::getServiceDescription()const
-{
-	return serviceDescription_;
-}
-
 std::string CreateVpcEndpointServiceResult::getServiceStatus()const
 {
 	return serviceStatus_;
+}
+
+std::string CreateVpcEndpointServiceResult::getServiceDescription()const
+{
+	return serviceDescription_;
 }
 
 std::string CreateVpcEndpointServiceResult::getCreateTime()const
@@ -85,23 +85,23 @@ std::string CreateVpcEndpointServiceResult::getCreateTime()const
 	return createTime_;
 }
 
-bool CreateVpcEndpointServiceResult::getZoneAffinityEnabled()const
-{
-	return zoneAffinityEnabled_;
-}
-
 std::string CreateVpcEndpointServiceResult::getServiceDomain()const
 {
 	return serviceDomain_;
 }
 
-std::string CreateVpcEndpointServiceResult::getServiceId()const
+bool CreateVpcEndpointServiceResult::getZoneAffinityEnabled()const
 {
-	return serviceId_;
+	return zoneAffinityEnabled_;
 }
 
 bool CreateVpcEndpointServiceResult::getAutoAcceptEnabled()const
 {
 	return autoAcceptEnabled_;
+}
+
+std::string CreateVpcEndpointServiceResult::getServiceId()const
+{
+	return serviceId_;
 }
 
