@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNUSERRESOURCEPACKAGEREQUEST_H_
-#define ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNUSERRESOURCEPACKAGEREQUEST_H_
+#ifndef ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNSECSPECINFOREQUEST_H_
+#define ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNSECSPECINFOREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,27 +28,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DCDN_EXPORT DescribeDcdnUserResourcePackageRequest : public RpcServiceRequest
+			class ALIBABACLOUD_DCDN_EXPORT DescribeDcdnSecSpecInfoRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeDcdnUserResourcePackageRequest();
-				~DescribeDcdnUserResourcePackageRequest();
+				DescribeDcdnSecSpecInfoRequest();
+				~DescribeDcdnSecSpecInfoRequest();
 
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
-				std::string getStatus()const;
-				void setStatus(const std::string& status);
 
             private:
 				long ownerId_;
-				std::string securityToken_;
-				std::string status_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNUSERRESOURCEPACKAGEREQUEST_H_
+#endif // !ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNSECSPECINFOREQUEST_H_

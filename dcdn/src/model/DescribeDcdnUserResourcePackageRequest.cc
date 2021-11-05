@@ -49,3 +49,14 @@ void DescribeDcdnUserResourcePackageRequest::setSecurityToken(const std::string&
 	setParameter("SecurityToken", securityToken);
 }
 
+std::string DescribeDcdnUserResourcePackageRequest::getStatus()const
+{
+	return status_;
+}
+
+void DescribeDcdnUserResourcePackageRequest::setStatus(const std::string& status)
+{
+	status_ = status;
+	setParameter("Status", status);
+}
+

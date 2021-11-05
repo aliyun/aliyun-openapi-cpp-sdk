@@ -72,6 +72,8 @@
 #include "model/DeleteRoutineCodeRevisionResult.h"
 #include "model/DeleteRoutineConfEnvsRequest.h"
 #include "model/DeleteRoutineConfEnvsResult.h"
+#include "model/DescribeDcdnAclFieldsRequest.h"
+#include "model/DescribeDcdnAclFieldsResult.h"
 #include "model/DescribeDcdnBgpBpsDataRequest.h"
 #include "model/DescribeDcdnBgpBpsDataResult.h"
 #include "model/DescribeDcdnBgpTrafficDataRequest.h"
@@ -82,6 +84,8 @@
 #include "model/DescribeDcdnCertificateDetailResult.h"
 #include "model/DescribeDcdnCertificateListRequest.h"
 #include "model/DescribeDcdnCertificateListResult.h"
+#include "model/DescribeDcdnConfigGroupDetailRequest.h"
+#include "model/DescribeDcdnConfigGroupDetailResult.h"
 #include "model/DescribeDcdnConfigOfVersionRequest.h"
 #include "model/DescribeDcdnConfigOfVersionResult.h"
 #include "model/DescribeDcdnDeletedDomainsRequest.h"
@@ -198,8 +202,14 @@
 #include "model/DescribeDcdnReportResult.h"
 #include "model/DescribeDcdnReportListRequest.h"
 #include "model/DescribeDcdnReportListResult.h"
+#include "model/DescribeDcdnSMCertificateDetailRequest.h"
+#include "model/DescribeDcdnSMCertificateDetailResult.h"
+#include "model/DescribeDcdnSMCertificateListRequest.h"
+#include "model/DescribeDcdnSMCertificateListResult.h"
 #include "model/DescribeDcdnSecFuncInfoRequest.h"
 #include "model/DescribeDcdnSecFuncInfoResult.h"
+#include "model/DescribeDcdnSecSpecInfoRequest.h"
+#include "model/DescribeDcdnSecSpecInfoResult.h"
 #include "model/DescribeDcdnServiceRequest.h"
 #include "model/DescribeDcdnServiceResult.h"
 #include "model/DescribeDcdnStagingIpRequest.h"
@@ -280,6 +290,8 @@
 #include "model/SetDcdnDomainCSRCertificateResult.h"
 #include "model/SetDcdnDomainCertificateRequest.h"
 #include "model/SetDcdnDomainCertificateResult.h"
+#include "model/SetDcdnDomainSMCertificateRequest.h"
+#include "model/SetDcdnDomainSMCertificateResult.h"
 #include "model/SetDcdnDomainStagingConfigRequest.h"
 #include "model/SetDcdnDomainStagingConfigResult.h"
 #include "model/SetDcdnUserConfigRequest.h"
@@ -396,6 +408,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteRoutineConfEnvsResult> DeleteRoutineConfEnvsOutcome;
 			typedef std::future<DeleteRoutineConfEnvsOutcome> DeleteRoutineConfEnvsOutcomeCallable;
 			typedef std::function<void(const DcdnClient*, const Model::DeleteRoutineConfEnvsRequest&, const DeleteRoutineConfEnvsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRoutineConfEnvsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDcdnAclFieldsResult> DescribeDcdnAclFieldsOutcome;
+			typedef std::future<DescribeDcdnAclFieldsOutcome> DescribeDcdnAclFieldsOutcomeCallable;
+			typedef std::function<void(const DcdnClient*, const Model::DescribeDcdnAclFieldsRequest&, const DescribeDcdnAclFieldsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDcdnAclFieldsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDcdnBgpBpsDataResult> DescribeDcdnBgpBpsDataOutcome;
 			typedef std::future<DescribeDcdnBgpBpsDataOutcome> DescribeDcdnBgpBpsDataOutcomeCallable;
 			typedef std::function<void(const DcdnClient*, const Model::DescribeDcdnBgpBpsDataRequest&, const DescribeDcdnBgpBpsDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDcdnBgpBpsDataAsyncHandler;
@@ -411,6 +426,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeDcdnCertificateListResult> DescribeDcdnCertificateListOutcome;
 			typedef std::future<DescribeDcdnCertificateListOutcome> DescribeDcdnCertificateListOutcomeCallable;
 			typedef std::function<void(const DcdnClient*, const Model::DescribeDcdnCertificateListRequest&, const DescribeDcdnCertificateListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDcdnCertificateListAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDcdnConfigGroupDetailResult> DescribeDcdnConfigGroupDetailOutcome;
+			typedef std::future<DescribeDcdnConfigGroupDetailOutcome> DescribeDcdnConfigGroupDetailOutcomeCallable;
+			typedef std::function<void(const DcdnClient*, const Model::DescribeDcdnConfigGroupDetailRequest&, const DescribeDcdnConfigGroupDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDcdnConfigGroupDetailAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDcdnConfigOfVersionResult> DescribeDcdnConfigOfVersionOutcome;
 			typedef std::future<DescribeDcdnConfigOfVersionOutcome> DescribeDcdnConfigOfVersionOutcomeCallable;
 			typedef std::function<void(const DcdnClient*, const Model::DescribeDcdnConfigOfVersionRequest&, const DescribeDcdnConfigOfVersionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDcdnConfigOfVersionAsyncHandler;
@@ -585,9 +603,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeDcdnReportListResult> DescribeDcdnReportListOutcome;
 			typedef std::future<DescribeDcdnReportListOutcome> DescribeDcdnReportListOutcomeCallable;
 			typedef std::function<void(const DcdnClient*, const Model::DescribeDcdnReportListRequest&, const DescribeDcdnReportListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDcdnReportListAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDcdnSMCertificateDetailResult> DescribeDcdnSMCertificateDetailOutcome;
+			typedef std::future<DescribeDcdnSMCertificateDetailOutcome> DescribeDcdnSMCertificateDetailOutcomeCallable;
+			typedef std::function<void(const DcdnClient*, const Model::DescribeDcdnSMCertificateDetailRequest&, const DescribeDcdnSMCertificateDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDcdnSMCertificateDetailAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDcdnSMCertificateListResult> DescribeDcdnSMCertificateListOutcome;
+			typedef std::future<DescribeDcdnSMCertificateListOutcome> DescribeDcdnSMCertificateListOutcomeCallable;
+			typedef std::function<void(const DcdnClient*, const Model::DescribeDcdnSMCertificateListRequest&, const DescribeDcdnSMCertificateListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDcdnSMCertificateListAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDcdnSecFuncInfoResult> DescribeDcdnSecFuncInfoOutcome;
 			typedef std::future<DescribeDcdnSecFuncInfoOutcome> DescribeDcdnSecFuncInfoOutcomeCallable;
 			typedef std::function<void(const DcdnClient*, const Model::DescribeDcdnSecFuncInfoRequest&, const DescribeDcdnSecFuncInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDcdnSecFuncInfoAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDcdnSecSpecInfoResult> DescribeDcdnSecSpecInfoOutcome;
+			typedef std::future<DescribeDcdnSecSpecInfoOutcome> DescribeDcdnSecSpecInfoOutcomeCallable;
+			typedef std::function<void(const DcdnClient*, const Model::DescribeDcdnSecSpecInfoRequest&, const DescribeDcdnSecSpecInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDcdnSecSpecInfoAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDcdnServiceResult> DescribeDcdnServiceOutcome;
 			typedef std::future<DescribeDcdnServiceOutcome> DescribeDcdnServiceOutcomeCallable;
 			typedef std::function<void(const DcdnClient*, const Model::DescribeDcdnServiceRequest&, const DescribeDcdnServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDcdnServiceAsyncHandler;
@@ -708,6 +735,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SetDcdnDomainCertificateResult> SetDcdnDomainCertificateOutcome;
 			typedef std::future<SetDcdnDomainCertificateOutcome> SetDcdnDomainCertificateOutcomeCallable;
 			typedef std::function<void(const DcdnClient*, const Model::SetDcdnDomainCertificateRequest&, const SetDcdnDomainCertificateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetDcdnDomainCertificateAsyncHandler;
+			typedef Outcome<Error, Model::SetDcdnDomainSMCertificateResult> SetDcdnDomainSMCertificateOutcome;
+			typedef std::future<SetDcdnDomainSMCertificateOutcome> SetDcdnDomainSMCertificateOutcomeCallable;
+			typedef std::function<void(const DcdnClient*, const Model::SetDcdnDomainSMCertificateRequest&, const SetDcdnDomainSMCertificateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetDcdnDomainSMCertificateAsyncHandler;
 			typedef Outcome<Error, Model::SetDcdnDomainStagingConfigResult> SetDcdnDomainStagingConfigOutcome;
 			typedef std::future<SetDcdnDomainStagingConfigOutcome> SetDcdnDomainStagingConfigOutcomeCallable;
 			typedef std::function<void(const DcdnClient*, const Model::SetDcdnDomainStagingConfigRequest&, const SetDcdnDomainStagingConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetDcdnDomainStagingConfigAsyncHandler;
@@ -836,6 +866,9 @@ namespace AlibabaCloud
 			DeleteRoutineConfEnvsOutcome deleteRoutineConfEnvs(const Model::DeleteRoutineConfEnvsRequest &request)const;
 			void deleteRoutineConfEnvsAsync(const Model::DeleteRoutineConfEnvsRequest& request, const DeleteRoutineConfEnvsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteRoutineConfEnvsOutcomeCallable deleteRoutineConfEnvsCallable(const Model::DeleteRoutineConfEnvsRequest& request) const;
+			DescribeDcdnAclFieldsOutcome describeDcdnAclFields(const Model::DescribeDcdnAclFieldsRequest &request)const;
+			void describeDcdnAclFieldsAsync(const Model::DescribeDcdnAclFieldsRequest& request, const DescribeDcdnAclFieldsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDcdnAclFieldsOutcomeCallable describeDcdnAclFieldsCallable(const Model::DescribeDcdnAclFieldsRequest& request) const;
 			DescribeDcdnBgpBpsDataOutcome describeDcdnBgpBpsData(const Model::DescribeDcdnBgpBpsDataRequest &request)const;
 			void describeDcdnBgpBpsDataAsync(const Model::DescribeDcdnBgpBpsDataRequest& request, const DescribeDcdnBgpBpsDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDcdnBgpBpsDataOutcomeCallable describeDcdnBgpBpsDataCallable(const Model::DescribeDcdnBgpBpsDataRequest& request) const;
@@ -851,6 +884,9 @@ namespace AlibabaCloud
 			DescribeDcdnCertificateListOutcome describeDcdnCertificateList(const Model::DescribeDcdnCertificateListRequest &request)const;
 			void describeDcdnCertificateListAsync(const Model::DescribeDcdnCertificateListRequest& request, const DescribeDcdnCertificateListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDcdnCertificateListOutcomeCallable describeDcdnCertificateListCallable(const Model::DescribeDcdnCertificateListRequest& request) const;
+			DescribeDcdnConfigGroupDetailOutcome describeDcdnConfigGroupDetail(const Model::DescribeDcdnConfigGroupDetailRequest &request)const;
+			void describeDcdnConfigGroupDetailAsync(const Model::DescribeDcdnConfigGroupDetailRequest& request, const DescribeDcdnConfigGroupDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDcdnConfigGroupDetailOutcomeCallable describeDcdnConfigGroupDetailCallable(const Model::DescribeDcdnConfigGroupDetailRequest& request) const;
 			DescribeDcdnConfigOfVersionOutcome describeDcdnConfigOfVersion(const Model::DescribeDcdnConfigOfVersionRequest &request)const;
 			void describeDcdnConfigOfVersionAsync(const Model::DescribeDcdnConfigOfVersionRequest& request, const DescribeDcdnConfigOfVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDcdnConfigOfVersionOutcomeCallable describeDcdnConfigOfVersionCallable(const Model::DescribeDcdnConfigOfVersionRequest& request) const;
@@ -1025,9 +1061,18 @@ namespace AlibabaCloud
 			DescribeDcdnReportListOutcome describeDcdnReportList(const Model::DescribeDcdnReportListRequest &request)const;
 			void describeDcdnReportListAsync(const Model::DescribeDcdnReportListRequest& request, const DescribeDcdnReportListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDcdnReportListOutcomeCallable describeDcdnReportListCallable(const Model::DescribeDcdnReportListRequest& request) const;
+			DescribeDcdnSMCertificateDetailOutcome describeDcdnSMCertificateDetail(const Model::DescribeDcdnSMCertificateDetailRequest &request)const;
+			void describeDcdnSMCertificateDetailAsync(const Model::DescribeDcdnSMCertificateDetailRequest& request, const DescribeDcdnSMCertificateDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDcdnSMCertificateDetailOutcomeCallable describeDcdnSMCertificateDetailCallable(const Model::DescribeDcdnSMCertificateDetailRequest& request) const;
+			DescribeDcdnSMCertificateListOutcome describeDcdnSMCertificateList(const Model::DescribeDcdnSMCertificateListRequest &request)const;
+			void describeDcdnSMCertificateListAsync(const Model::DescribeDcdnSMCertificateListRequest& request, const DescribeDcdnSMCertificateListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDcdnSMCertificateListOutcomeCallable describeDcdnSMCertificateListCallable(const Model::DescribeDcdnSMCertificateListRequest& request) const;
 			DescribeDcdnSecFuncInfoOutcome describeDcdnSecFuncInfo(const Model::DescribeDcdnSecFuncInfoRequest &request)const;
 			void describeDcdnSecFuncInfoAsync(const Model::DescribeDcdnSecFuncInfoRequest& request, const DescribeDcdnSecFuncInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDcdnSecFuncInfoOutcomeCallable describeDcdnSecFuncInfoCallable(const Model::DescribeDcdnSecFuncInfoRequest& request) const;
+			DescribeDcdnSecSpecInfoOutcome describeDcdnSecSpecInfo(const Model::DescribeDcdnSecSpecInfoRequest &request)const;
+			void describeDcdnSecSpecInfoAsync(const Model::DescribeDcdnSecSpecInfoRequest& request, const DescribeDcdnSecSpecInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDcdnSecSpecInfoOutcomeCallable describeDcdnSecSpecInfoCallable(const Model::DescribeDcdnSecSpecInfoRequest& request) const;
 			DescribeDcdnServiceOutcome describeDcdnService(const Model::DescribeDcdnServiceRequest &request)const;
 			void describeDcdnServiceAsync(const Model::DescribeDcdnServiceRequest& request, const DescribeDcdnServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDcdnServiceOutcomeCallable describeDcdnServiceCallable(const Model::DescribeDcdnServiceRequest& request) const;
@@ -1148,6 +1193,9 @@ namespace AlibabaCloud
 			SetDcdnDomainCertificateOutcome setDcdnDomainCertificate(const Model::SetDcdnDomainCertificateRequest &request)const;
 			void setDcdnDomainCertificateAsync(const Model::SetDcdnDomainCertificateRequest& request, const SetDcdnDomainCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetDcdnDomainCertificateOutcomeCallable setDcdnDomainCertificateCallable(const Model::SetDcdnDomainCertificateRequest& request) const;
+			SetDcdnDomainSMCertificateOutcome setDcdnDomainSMCertificate(const Model::SetDcdnDomainSMCertificateRequest &request)const;
+			void setDcdnDomainSMCertificateAsync(const Model::SetDcdnDomainSMCertificateRequest& request, const SetDcdnDomainSMCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SetDcdnDomainSMCertificateOutcomeCallable setDcdnDomainSMCertificateCallable(const Model::SetDcdnDomainSMCertificateRequest& request) const;
 			SetDcdnDomainStagingConfigOutcome setDcdnDomainStagingConfig(const Model::SetDcdnDomainStagingConfigRequest &request)const;
 			void setDcdnDomainStagingConfigAsync(const Model::SetDcdnDomainStagingConfigRequest& request, const SetDcdnDomainStagingConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetDcdnDomainStagingConfigOutcomeCallable setDcdnDomainStagingConfigCallable(const Model::SetDcdnDomainStagingConfigRequest& request) const;

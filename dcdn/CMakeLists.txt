@@ -71,6 +71,8 @@ set(dcdn_public_header_model
 	include/alibabacloud/dcdn/model/DeleteRoutineCodeRevisionResult.h
 	include/alibabacloud/dcdn/model/DeleteRoutineConfEnvsRequest.h
 	include/alibabacloud/dcdn/model/DeleteRoutineConfEnvsResult.h
+	include/alibabacloud/dcdn/model/DescribeDcdnAclFieldsRequest.h
+	include/alibabacloud/dcdn/model/DescribeDcdnAclFieldsResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnBgpBpsDataRequest.h
 	include/alibabacloud/dcdn/model/DescribeDcdnBgpBpsDataResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnBgpTrafficDataRequest.h
@@ -81,6 +83,8 @@ set(dcdn_public_header_model
 	include/alibabacloud/dcdn/model/DescribeDcdnCertificateDetailResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnCertificateListRequest.h
 	include/alibabacloud/dcdn/model/DescribeDcdnCertificateListResult.h
+	include/alibabacloud/dcdn/model/DescribeDcdnConfigGroupDetailRequest.h
+	include/alibabacloud/dcdn/model/DescribeDcdnConfigGroupDetailResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnConfigOfVersionRequest.h
 	include/alibabacloud/dcdn/model/DescribeDcdnConfigOfVersionResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnDeletedDomainsRequest.h
@@ -197,8 +201,14 @@ set(dcdn_public_header_model
 	include/alibabacloud/dcdn/model/DescribeDcdnReportResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnReportListRequest.h
 	include/alibabacloud/dcdn/model/DescribeDcdnReportListResult.h
+	include/alibabacloud/dcdn/model/DescribeDcdnSMCertificateDetailRequest.h
+	include/alibabacloud/dcdn/model/DescribeDcdnSMCertificateDetailResult.h
+	include/alibabacloud/dcdn/model/DescribeDcdnSMCertificateListRequest.h
+	include/alibabacloud/dcdn/model/DescribeDcdnSMCertificateListResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnSecFuncInfoRequest.h
 	include/alibabacloud/dcdn/model/DescribeDcdnSecFuncInfoResult.h
+	include/alibabacloud/dcdn/model/DescribeDcdnSecSpecInfoRequest.h
+	include/alibabacloud/dcdn/model/DescribeDcdnSecSpecInfoResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnServiceRequest.h
 	include/alibabacloud/dcdn/model/DescribeDcdnServiceResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnStagingIpRequest.h
@@ -279,6 +289,8 @@ set(dcdn_public_header_model
 	include/alibabacloud/dcdn/model/SetDcdnDomainCSRCertificateResult.h
 	include/alibabacloud/dcdn/model/SetDcdnDomainCertificateRequest.h
 	include/alibabacloud/dcdn/model/SetDcdnDomainCertificateResult.h
+	include/alibabacloud/dcdn/model/SetDcdnDomainSMCertificateRequest.h
+	include/alibabacloud/dcdn/model/SetDcdnDomainSMCertificateResult.h
 	include/alibabacloud/dcdn/model/SetDcdnDomainStagingConfigRequest.h
 	include/alibabacloud/dcdn/model/SetDcdnDomainStagingConfigResult.h
 	include/alibabacloud/dcdn/model/SetDcdnUserConfigRequest.h
@@ -364,6 +376,8 @@ set(dcdn_src
 	src/model/DeleteRoutineCodeRevisionResult.cc
 	src/model/DeleteRoutineConfEnvsRequest.cc
 	src/model/DeleteRoutineConfEnvsResult.cc
+	src/model/DescribeDcdnAclFieldsRequest.cc
+	src/model/DescribeDcdnAclFieldsResult.cc
 	src/model/DescribeDcdnBgpBpsDataRequest.cc
 	src/model/DescribeDcdnBgpBpsDataResult.cc
 	src/model/DescribeDcdnBgpTrafficDataRequest.cc
@@ -374,6 +388,8 @@ set(dcdn_src
 	src/model/DescribeDcdnCertificateDetailResult.cc
 	src/model/DescribeDcdnCertificateListRequest.cc
 	src/model/DescribeDcdnCertificateListResult.cc
+	src/model/DescribeDcdnConfigGroupDetailRequest.cc
+	src/model/DescribeDcdnConfigGroupDetailResult.cc
 	src/model/DescribeDcdnConfigOfVersionRequest.cc
 	src/model/DescribeDcdnConfigOfVersionResult.cc
 	src/model/DescribeDcdnDeletedDomainsRequest.cc
@@ -490,8 +506,14 @@ set(dcdn_src
 	src/model/DescribeDcdnReportResult.cc
 	src/model/DescribeDcdnReportListRequest.cc
 	src/model/DescribeDcdnReportListResult.cc
+	src/model/DescribeDcdnSMCertificateDetailRequest.cc
+	src/model/DescribeDcdnSMCertificateDetailResult.cc
+	src/model/DescribeDcdnSMCertificateListRequest.cc
+	src/model/DescribeDcdnSMCertificateListResult.cc
 	src/model/DescribeDcdnSecFuncInfoRequest.cc
 	src/model/DescribeDcdnSecFuncInfoResult.cc
+	src/model/DescribeDcdnSecSpecInfoRequest.cc
+	src/model/DescribeDcdnSecSpecInfoResult.cc
 	src/model/DescribeDcdnServiceRequest.cc
 	src/model/DescribeDcdnServiceResult.cc
 	src/model/DescribeDcdnStagingIpRequest.cc
@@ -572,6 +594,8 @@ set(dcdn_src
 	src/model/SetDcdnDomainCSRCertificateResult.cc
 	src/model/SetDcdnDomainCertificateRequest.cc
 	src/model/SetDcdnDomainCertificateResult.cc
+	src/model/SetDcdnDomainSMCertificateRequest.cc
+	src/model/SetDcdnDomainSMCertificateResult.cc
 	src/model/SetDcdnDomainStagingConfigRequest.cc
 	src/model/SetDcdnDomainStagingConfigResult.cc
 	src/model/SetDcdnUserConfigRequest.cc

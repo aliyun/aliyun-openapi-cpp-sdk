@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNUSERRESOURCEPACKAGEREQUEST_H_
-#define ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNUSERRESOURCEPACKAGEREQUEST_H_
+#ifndef ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNCONFIGGROUPDETAILREQUEST_H_
+#define ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNCONFIGGROUPDETAILREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,27 +28,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DCDN_EXPORT DescribeDcdnUserResourcePackageRequest : public RpcServiceRequest
+			class ALIBABACLOUD_DCDN_EXPORT DescribeDcdnConfigGroupDetailRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeDcdnUserResourcePackageRequest();
-				~DescribeDcdnUserResourcePackageRequest();
+				DescribeDcdnConfigGroupDetailRequest();
+				~DescribeDcdnConfigGroupDetailRequest();
 
+				std::string getConfigGroupName()const;
+				void setConfigGroupName(const std::string& configGroupName);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
-				std::string getStatus()const;
-				void setStatus(const std::string& status);
+				std::string getConfigGroupId()const;
+				void setConfigGroupId(const std::string& configGroupId);
 
             private:
+				std::string configGroupName_;
 				long ownerId_;
-				std::string securityToken_;
-				std::string status_;
+				std::string configGroupId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNUSERRESOURCEPACKAGEREQUEST_H_
+#endif // !ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNCONFIGGROUPDETAILREQUEST_H_
