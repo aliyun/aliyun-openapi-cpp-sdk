@@ -107,6 +107,10 @@ set(cdn_public_header_model
 	include/alibabacloud/cdn/model/DescribeCdnReportResult.h
 	include/alibabacloud/cdn/model/DescribeCdnReportListRequest.h
 	include/alibabacloud/cdn/model/DescribeCdnReportListResult.h
+	include/alibabacloud/cdn/model/DescribeCdnSMCertificateDetailRequest.h
+	include/alibabacloud/cdn/model/DescribeCdnSMCertificateDetailResult.h
+	include/alibabacloud/cdn/model/DescribeCdnSMCertificateListRequest.h
+	include/alibabacloud/cdn/model/DescribeCdnSMCertificateListResult.h
 	include/alibabacloud/cdn/model/DescribeCdnServiceRequest.h
 	include/alibabacloud/cdn/model/DescribeCdnServiceResult.h
 	include/alibabacloud/cdn/model/DescribeCdnSubListRequest.h
@@ -341,6 +345,8 @@ set(cdn_public_header_model
 	include/alibabacloud/cdn/model/SetCcConfigResult.h
 	include/alibabacloud/cdn/model/SetCdnDomainCSRCertificateRequest.h
 	include/alibabacloud/cdn/model/SetCdnDomainCSRCertificateResult.h
+	include/alibabacloud/cdn/model/SetCdnDomainSMCertificateRequest.h
+	include/alibabacloud/cdn/model/SetCdnDomainSMCertificateResult.h
 	include/alibabacloud/cdn/model/SetCdnDomainStagingConfigRequest.h
 	include/alibabacloud/cdn/model/SetCdnDomainStagingConfigResult.h
 	include/alibabacloud/cdn/model/SetConfigOfVersionRequest.h
@@ -490,6 +496,10 @@ set(cdn_src
 	src/model/DescribeCdnReportResult.cc
 	src/model/DescribeCdnReportListRequest.cc
 	src/model/DescribeCdnReportListResult.cc
+	src/model/DescribeCdnSMCertificateDetailRequest.cc
+	src/model/DescribeCdnSMCertificateDetailResult.cc
+	src/model/DescribeCdnSMCertificateListRequest.cc
+	src/model/DescribeCdnSMCertificateListResult.cc
 	src/model/DescribeCdnServiceRequest.cc
 	src/model/DescribeCdnServiceResult.cc
 	src/model/DescribeCdnSubListRequest.cc
@@ -724,6 +734,8 @@ set(cdn_src
 	src/model/SetCcConfigResult.cc
 	src/model/SetCdnDomainCSRCertificateRequest.cc
 	src/model/SetCdnDomainCSRCertificateResult.cc
+	src/model/SetCdnDomainSMCertificateRequest.cc
+	src/model/SetCdnDomainSMCertificateResult.cc
 	src/model/SetCdnDomainStagingConfigRequest.cc
 	src/model/SetCdnDomainStagingConfigResult.cc
 	src/model/SetConfigOfVersionRequest.cc

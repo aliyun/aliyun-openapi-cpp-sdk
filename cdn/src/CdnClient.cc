@@ -1599,6 +1599,78 @@ CdnClient::DescribeCdnReportListOutcomeCallable CdnClient::describeCdnReportList
 	return task->get_future();
 }
 
+CdnClient::DescribeCdnSMCertificateDetailOutcome CdnClient::describeCdnSMCertificateDetail(const DescribeCdnSMCertificateDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeCdnSMCertificateDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeCdnSMCertificateDetailOutcome(DescribeCdnSMCertificateDetailResult(outcome.result()));
+	else
+		return DescribeCdnSMCertificateDetailOutcome(outcome.error());
+}
+
+void CdnClient::describeCdnSMCertificateDetailAsync(const DescribeCdnSMCertificateDetailRequest& request, const DescribeCdnSMCertificateDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeCdnSMCertificateDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CdnClient::DescribeCdnSMCertificateDetailOutcomeCallable CdnClient::describeCdnSMCertificateDetailCallable(const DescribeCdnSMCertificateDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeCdnSMCertificateDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->describeCdnSMCertificateDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CdnClient::DescribeCdnSMCertificateListOutcome CdnClient::describeCdnSMCertificateList(const DescribeCdnSMCertificateListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeCdnSMCertificateListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeCdnSMCertificateListOutcome(DescribeCdnSMCertificateListResult(outcome.result()));
+	else
+		return DescribeCdnSMCertificateListOutcome(outcome.error());
+}
+
+void CdnClient::describeCdnSMCertificateListAsync(const DescribeCdnSMCertificateListRequest& request, const DescribeCdnSMCertificateListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeCdnSMCertificateList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CdnClient::DescribeCdnSMCertificateListOutcomeCallable CdnClient::describeCdnSMCertificateListCallable(const DescribeCdnSMCertificateListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeCdnSMCertificateListOutcome()>>(
+			[this, request]()
+			{
+			return this->describeCdnSMCertificateList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CdnClient::DescribeCdnServiceOutcome CdnClient::describeCdnService(const DescribeCdnServiceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5805,6 +5877,42 @@ CdnClient::SetCdnDomainCSRCertificateOutcomeCallable CdnClient::setCdnDomainCSRC
 			[this, request]()
 			{
 			return this->setCdnDomainCSRCertificate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CdnClient::SetCdnDomainSMCertificateOutcome CdnClient::setCdnDomainSMCertificate(const SetCdnDomainSMCertificateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetCdnDomainSMCertificateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetCdnDomainSMCertificateOutcome(SetCdnDomainSMCertificateResult(outcome.result()));
+	else
+		return SetCdnDomainSMCertificateOutcome(outcome.error());
+}
+
+void CdnClient::setCdnDomainSMCertificateAsync(const SetCdnDomainSMCertificateRequest& request, const SetCdnDomainSMCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setCdnDomainSMCertificate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CdnClient::SetCdnDomainSMCertificateOutcomeCallable CdnClient::setCdnDomainSMCertificateCallable(const SetCdnDomainSMCertificateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetCdnDomainSMCertificateOutcome()>>(
+			[this, request]()
+			{
+			return this->setCdnDomainSMCertificate(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

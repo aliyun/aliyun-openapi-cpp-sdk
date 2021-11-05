@@ -108,6 +108,10 @@
 #include "model/DescribeCdnReportResult.h"
 #include "model/DescribeCdnReportListRequest.h"
 #include "model/DescribeCdnReportListResult.h"
+#include "model/DescribeCdnSMCertificateDetailRequest.h"
+#include "model/DescribeCdnSMCertificateDetailResult.h"
+#include "model/DescribeCdnSMCertificateListRequest.h"
+#include "model/DescribeCdnSMCertificateListResult.h"
 #include "model/DescribeCdnServiceRequest.h"
 #include "model/DescribeCdnServiceResult.h"
 #include "model/DescribeCdnSubListRequest.h"
@@ -342,6 +346,8 @@
 #include "model/SetCcConfigResult.h"
 #include "model/SetCdnDomainCSRCertificateRequest.h"
 #include "model/SetCdnDomainCSRCertificateResult.h"
+#include "model/SetCdnDomainSMCertificateRequest.h"
+#include "model/SetCdnDomainSMCertificateResult.h"
 #include "model/SetCdnDomainStagingConfigRequest.h"
 #include "model/SetCdnDomainStagingConfigResult.h"
 #include "model/SetConfigOfVersionRequest.h"
@@ -540,6 +546,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeCdnReportListResult> DescribeCdnReportListOutcome;
 			typedef std::future<DescribeCdnReportListOutcome> DescribeCdnReportListOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::DescribeCdnReportListRequest&, const DescribeCdnReportListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCdnReportListAsyncHandler;
+			typedef Outcome<Error, Model::DescribeCdnSMCertificateDetailResult> DescribeCdnSMCertificateDetailOutcome;
+			typedef std::future<DescribeCdnSMCertificateDetailOutcome> DescribeCdnSMCertificateDetailOutcomeCallable;
+			typedef std::function<void(const CdnClient*, const Model::DescribeCdnSMCertificateDetailRequest&, const DescribeCdnSMCertificateDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCdnSMCertificateDetailAsyncHandler;
+			typedef Outcome<Error, Model::DescribeCdnSMCertificateListResult> DescribeCdnSMCertificateListOutcome;
+			typedef std::future<DescribeCdnSMCertificateListOutcome> DescribeCdnSMCertificateListOutcomeCallable;
+			typedef std::function<void(const CdnClient*, const Model::DescribeCdnSMCertificateListRequest&, const DescribeCdnSMCertificateListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCdnSMCertificateListAsyncHandler;
 			typedef Outcome<Error, Model::DescribeCdnServiceResult> DescribeCdnServiceOutcome;
 			typedef std::future<DescribeCdnServiceOutcome> DescribeCdnServiceOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::DescribeCdnServiceRequest&, const DescribeCdnServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCdnServiceAsyncHandler;
@@ -891,6 +903,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SetCdnDomainCSRCertificateResult> SetCdnDomainCSRCertificateOutcome;
 			typedef std::future<SetCdnDomainCSRCertificateOutcome> SetCdnDomainCSRCertificateOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::SetCdnDomainCSRCertificateRequest&, const SetCdnDomainCSRCertificateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetCdnDomainCSRCertificateAsyncHandler;
+			typedef Outcome<Error, Model::SetCdnDomainSMCertificateResult> SetCdnDomainSMCertificateOutcome;
+			typedef std::future<SetCdnDomainSMCertificateOutcome> SetCdnDomainSMCertificateOutcomeCallable;
+			typedef std::function<void(const CdnClient*, const Model::SetCdnDomainSMCertificateRequest&, const SetCdnDomainSMCertificateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetCdnDomainSMCertificateAsyncHandler;
 			typedef Outcome<Error, Model::SetCdnDomainStagingConfigResult> SetCdnDomainStagingConfigOutcome;
 			typedef std::future<SetCdnDomainStagingConfigOutcome> SetCdnDomainStagingConfigOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::SetCdnDomainStagingConfigRequest&, const SetCdnDomainStagingConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetCdnDomainStagingConfigAsyncHandler;
@@ -1115,6 +1130,12 @@ namespace AlibabaCloud
 			DescribeCdnReportListOutcome describeCdnReportList(const Model::DescribeCdnReportListRequest &request)const;
 			void describeCdnReportListAsync(const Model::DescribeCdnReportListRequest& request, const DescribeCdnReportListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeCdnReportListOutcomeCallable describeCdnReportListCallable(const Model::DescribeCdnReportListRequest& request) const;
+			DescribeCdnSMCertificateDetailOutcome describeCdnSMCertificateDetail(const Model::DescribeCdnSMCertificateDetailRequest &request)const;
+			void describeCdnSMCertificateDetailAsync(const Model::DescribeCdnSMCertificateDetailRequest& request, const DescribeCdnSMCertificateDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeCdnSMCertificateDetailOutcomeCallable describeCdnSMCertificateDetailCallable(const Model::DescribeCdnSMCertificateDetailRequest& request) const;
+			DescribeCdnSMCertificateListOutcome describeCdnSMCertificateList(const Model::DescribeCdnSMCertificateListRequest &request)const;
+			void describeCdnSMCertificateListAsync(const Model::DescribeCdnSMCertificateListRequest& request, const DescribeCdnSMCertificateListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeCdnSMCertificateListOutcomeCallable describeCdnSMCertificateListCallable(const Model::DescribeCdnSMCertificateListRequest& request) const;
 			DescribeCdnServiceOutcome describeCdnService(const Model::DescribeCdnServiceRequest &request)const;
 			void describeCdnServiceAsync(const Model::DescribeCdnServiceRequest& request, const DescribeCdnServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeCdnServiceOutcomeCallable describeCdnServiceCallable(const Model::DescribeCdnServiceRequest& request) const;
@@ -1466,6 +1487,9 @@ namespace AlibabaCloud
 			SetCdnDomainCSRCertificateOutcome setCdnDomainCSRCertificate(const Model::SetCdnDomainCSRCertificateRequest &request)const;
 			void setCdnDomainCSRCertificateAsync(const Model::SetCdnDomainCSRCertificateRequest& request, const SetCdnDomainCSRCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetCdnDomainCSRCertificateOutcomeCallable setCdnDomainCSRCertificateCallable(const Model::SetCdnDomainCSRCertificateRequest& request) const;
+			SetCdnDomainSMCertificateOutcome setCdnDomainSMCertificate(const Model::SetCdnDomainSMCertificateRequest &request)const;
+			void setCdnDomainSMCertificateAsync(const Model::SetCdnDomainSMCertificateRequest& request, const SetCdnDomainSMCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SetCdnDomainSMCertificateOutcomeCallable setCdnDomainSMCertificateCallable(const Model::SetCdnDomainSMCertificateRequest& request) const;
 			SetCdnDomainStagingConfigOutcome setCdnDomainStagingConfig(const Model::SetCdnDomainStagingConfigRequest &request)const;
 			void setCdnDomainStagingConfigAsync(const Model::SetCdnDomainStagingConfigRequest& request, const SetCdnDomainStagingConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetCdnDomainStagingConfigOutcomeCallable setCdnDomainStagingConfigCallable(const Model::SetCdnDomainStagingConfigRequest& request) const;

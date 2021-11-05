@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CDN_MODEL_DESCRIBECDNUSERRESOURCEPACKAGEREQUEST_H_
-#define ALIBABACLOUD_CDN_MODEL_DESCRIBECDNUSERRESOURCEPACKAGEREQUEST_H_
+#ifndef ALIBABACLOUD_CDN_MODEL_SETCDNDOMAINSMCERTIFICATEREQUEST_H_
+#define ALIBABACLOUD_CDN_MODEL_SETCDNDOMAINSMCERTIFICATEREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,27 +28,30 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CDN_EXPORT DescribeCdnUserResourcePackageRequest : public RpcServiceRequest
+			class ALIBABACLOUD_CDN_EXPORT SetCdnDomainSMCertificateRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeCdnUserResourcePackageRequest();
-				~DescribeCdnUserResourcePackageRequest();
+				SetCdnDomainSMCertificateRequest();
+				~SetCdnDomainSMCertificateRequest();
 
+				std::string getDomainName()const;
+				void setDomainName(const std::string& domainName);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
-				std::string getStatus()const;
-				void setStatus(const std::string& status);
+				std::string getCertIdentifier()const;
+				void setCertIdentifier(const std::string& certIdentifier);
 
             private:
+				std::string domainName_;
 				long ownerId_;
 				std::string securityToken_;
-				std::string status_;
+				std::string certIdentifier_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CDN_MODEL_DESCRIBECDNUSERRESOURCEPACKAGEREQUEST_H_
+#endif // !ALIBABACLOUD_CDN_MODEL_SETCDNDOMAINSMCERTIFICATEREQUEST_H_
