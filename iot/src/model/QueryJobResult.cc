@@ -61,6 +61,8 @@ void QueryJobResult::parse(const std::string &payload)
 	auto rolloutConfigNode = dataNode["RolloutConfig"];
 	if(!rolloutConfigNode["MaximumPerMinute"].isNull())
 		data_.rolloutConfig.maximumPerMinute = std::stoi(rolloutConfigNode["MaximumPerMinute"].asString());
+	if(!rolloutConfigNode["MessageQoS"].isNull())
+		data_.rolloutConfig.messageQoS = rolloutConfigNode["MessageQoS"].asString();
 	auto timeoutConfigNode = dataNode["TimeoutConfig"];
 	if(!timeoutConfigNode["InProgressTimeoutInMinutes"].isNull())
 		data_.timeoutConfig.inProgressTimeoutInMinutes = std::stoi(timeoutConfigNode["InProgressTimeoutInMinutes"].asString());

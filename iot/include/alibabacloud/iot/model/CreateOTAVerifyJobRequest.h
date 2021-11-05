@@ -51,6 +51,8 @@ namespace AlibabaCloud
 				void setNeedPush(bool needPush);
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
+				std::string getDownloadProtocol()const;
+				void setDownloadProtocol(const std::string& downloadProtocol);
 				std::vector<Tag> getTag()const;
 				void setTag(const std::vector<Tag>& tag);
 				std::string getFirmwareId()const;
@@ -70,6 +72,7 @@ namespace AlibabaCloud
 				std::string accessKeyId_;
 				bool needPush_;
 				std::string iotInstanceId_;
+				std::string downloadProtocol_;
 				std::vector<Tag> tag_;
 				std::string firmwareId_;
 				std::string productKey_;

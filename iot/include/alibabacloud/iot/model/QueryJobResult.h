@@ -37,6 +37,7 @@ namespace AlibabaCloud
 					struct RolloutConfig
 					{
 						int maximumPerMinute;
+						std::string messageQoS;
 					};
 					struct TimeoutConfig
 					{

@@ -82,6 +82,17 @@ void CreateOTAVerifyJobRequest::setIotInstanceId(const std::string& iotInstanceI
 	setParameter("IotInstanceId", iotInstanceId);
 }
 
+std::string CreateOTAVerifyJobRequest::getDownloadProtocol()const
+{
+	return downloadProtocol_;
+}
+
+void CreateOTAVerifyJobRequest::setDownloadProtocol(const std::string& downloadProtocol)
+{
+	downloadProtocol_ = downloadProtocol;
+	setParameter("DownloadProtocol", downloadProtocol);
+}
+
 std::vector<CreateOTAVerifyJobRequest::Tag> CreateOTAVerifyJobRequest::getTag()const
 {
 	return tag_;
