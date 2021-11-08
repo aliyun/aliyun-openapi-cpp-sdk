@@ -50,14 +50,14 @@ void UpdateDescriptionRequest::setClientToken(const std::string& clientToken)
 	setParameter("ClientToken", clientToken);
 }
 
-std::string UpdateDescriptionRequest::getDescription()const
+std::string UpdateDescriptionRequest::getBody()const
 {
-	return description_;
+	return body_;
 }
 
-void UpdateDescriptionRequest::setDescription(const std::string& description)
+void UpdateDescriptionRequest::setBody(const std::string& body)
 {
-	description_ = description;
-	setBodyParameter("Description", description);
+	body_ = body;
+	setBodyParameter("Body", body);
 }
 

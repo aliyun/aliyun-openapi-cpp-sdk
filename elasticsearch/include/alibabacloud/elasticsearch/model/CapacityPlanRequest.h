@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ELASTICSEARCH_MODEL_UPDATEDESCRIPTIONREQUEST_H_
-#define ALIBABACLOUD_ELASTICSEARCH_MODEL_UPDATEDESCRIPTIONREQUEST_H_
+#ifndef ALIBABACLOUD_ELASTICSEARCH_MODEL_CAPACITYPLANREQUEST_H_
+#define ALIBABACLOUD_ELASTICSEARCH_MODEL_CAPACITYPLANREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,27 +28,18 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ELASTICSEARCH_EXPORT UpdateDescriptionRequest : public RoaServiceRequest
+			class ALIBABACLOUD_ELASTICSEARCH_EXPORT CapacityPlanRequest : public RoaServiceRequest
 			{
 
 			public:
-				UpdateDescriptionRequest();
-				~UpdateDescriptionRequest();
+				CapacityPlanRequest();
+				~CapacityPlanRequest();
 
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
-				std::string getClientToken()const;
-				void setClientToken(const std::string& clientToken);
-				std::string getBody()const;
-				void setBody(const std::string& body);
 
             private:
-				std::string instanceId_;
-				std::string clientToken_;
-				std::string body_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ELASTICSEARCH_MODEL_UPDATEDESCRIPTIONREQUEST_H_
+#endif // !ALIBABACLOUD_ELASTICSEARCH_MODEL_CAPACITYPLANREQUEST_H_

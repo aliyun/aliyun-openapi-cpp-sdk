@@ -43,25 +43,33 @@ void ListInstanceIndicesResult::parse(const std::string &payload)
 	for (auto valueResultResultItem : allResultNode)
 	{
 		ResultItem resultObject;
+		if(!valueResultResultItem["isManaged"].isNull())
+			resultObject.isManaged = valueResultResultItem["isManaged"].asString();
+		if(!valueResultResultItem["createTime"].isNull())
+			resultObject.createTime = valueResultResultItem["createTime"].asString();
+		if(!valueResultResultItem["size"].isNull())
+			resultObject.size = std::stol(valueResultResultItem["size"].asString());
+		if(!valueResultResultItem["managedStatus"].isNull())
+			resultObject.managedStatus = valueResultResultItem["managedStatus"].asString();
 		if(!valueResultResultItem["name"].isNull())
 			resultObject.name = valueResultResultItem["name"].asString();
 		if(!valueResultResultItem["health"].isNull())
 			resultObject.health = valueResultResultItem["health"].asString();
-		if(!valueResultResultItem["size"].isNull())
-			resultObject.size = std::stol(valueResultResultItem["size"].asString());
-		if(!valueResultResultItem["createTime"].isNull())
-			resultObject.createTime = valueResultResultItem["createTime"].asString();
-		if(!valueResultResultItem["isManaged"].isNull())
-			resultObject.isManaged = valueResultResultItem["isManaged"].asString();
-		if(!valueResultResultItem["managedStatus"].isNull())
-			resultObject.managedStatus = valueResultResultItem["managedStatus"].asString();
+		if(!valueResultResultItem["phase"].isNull())
+			resultObject.phase = valueResultResultItem["phase"].asString();
+		if(!valueResultResultItem["ilmExplain"].isNull())
+			resultObject.ilmExplain = valueResultResultItem["ilmExplain"].asString();
 		result_.push_back(resultObject);
 	}
 	auto headersNode = value["Headers"];
-	if(!headersNode["X-Managed-Count"].isNull())
-		headers_.xManagedCount = std::stoi(headersNode["X-Managed-Count"].asString());
 	if(!headersNode["X-Managed-StorageSize"].isNull())
 		headers_.xManagedStorageSize = std::stol(headersNode["X-Managed-StorageSize"].asString());
+	if(!headersNode["X-Managed-Count"].isNull())
+		headers_.xManagedCount = std::stoi(headersNode["X-Managed-Count"].asString());
+	if(!headersNode["X-OSS-StorageSize"].isNull())
+		headers_.xOSSStorageSize = std::stol(headersNode["X-OSS-StorageSize"].asString());
+	if(!headersNode["X-OSS-Count"].isNull())
+		headers_.xOSSCount = std::stoi(headersNode["X-OSS-Count"].asString());
 
 }
 

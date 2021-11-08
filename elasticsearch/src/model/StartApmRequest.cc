@@ -14,39 +14,28 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/elasticsearch/model/ListAllNodeRequest.h>
+#include <alibabacloud/elasticsearch/model/StartApmRequest.h>
 
-using AlibabaCloud::Elasticsearch::Model::ListAllNodeRequest;
+using AlibabaCloud::Elasticsearch::Model::StartApmRequest;
 
-ListAllNodeRequest::ListAllNodeRequest() :
+StartApmRequest::StartApmRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
 {
-	setResourcePath("/openapi/instances/[InstanceId]/nodes");
-	setMethod(HttpRequest::Method::Get);
+	setResourcePath("/openapi/apm/[instanceId]/actions/start");
+	setMethod(HttpRequest::Method::Post);
 }
 
-ListAllNodeRequest::~ListAllNodeRequest()
+StartApmRequest::~StartApmRequest()
 {}
 
-std::string ListAllNodeRequest::getInstanceId()const
+std::string StartApmRequest::getInstanceId()const
 {
 	return instanceId_;
 }
 
-void ListAllNodeRequest::setInstanceId(const std::string& instanceId)
+void StartApmRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
 	setParameter("InstanceId", instanceId);
-}
-
-bool ListAllNodeRequest::getExtended()const
-{
-	return extended_;
-}
-
-void ListAllNodeRequest::setExtended(bool extended)
-{
-	extended_ = extended;
-	setParameter("Extended", extended ? "true" : "false");
 }
 

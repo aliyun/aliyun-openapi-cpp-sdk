@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ELASTICSEARCH_MODEL_LISTALLNODERESULT_H_
-#define ALIBABACLOUD_ELASTICSEARCH_MODEL_LISTALLNODERESULT_H_
+#ifndef ALIBABACLOUD_ELASTICSEARCH_MODEL_DESCRIBEAPMRESULT_H_
+#define ALIBABACLOUD_ELASTICSEARCH_MODEL_DESCRIBEAPMRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,36 +29,45 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ELASTICSEARCH_EXPORT ListAllNodeResult : public ServiceResult
+			class ALIBABACLOUD_ELASTICSEARCH_EXPORT DescribeApmResult : public ServiceResult
 			{
 			public:
-				struct ResultItem
+				struct Result
 				{
-					std::string zoneId;
-					std::string diskUsedPercent;
-					std::string loadOneM;
-					std::string health;
-					std::string heapPercent;
-					std::string nodeType;
-					int port;
-					std::string host;
-					std::string hostName;
-					std::string cpuPercent;
+					std::string status;
+					std::string description;
+					std::string outputEsDescription;
+					long endTime;
+					std::string instanceId;
+					std::string outputES;
+					std::string createdAt;
+					std::string resourceSpec;
+					long deployedReplica;
+					long nodeAmount;
+					long replica;
+					std::string vswitchId;
+					std::string ownerId;
+					std::string vpcId;
+					std::string version;
+					std::string paymentType;
+					std::string region;
+					std::string outputESUserName;
+					std::string vsArea;
 				};
 
 
-				ListAllNodeResult();
-				explicit ListAllNodeResult(const std::string &payload);
-				~ListAllNodeResult();
-				std::vector<ResultItem> getResult()const;
+				DescribeApmResult();
+				explicit DescribeApmResult(const std::string &payload);
+				~DescribeApmResult();
+				Result getResult()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<ResultItem> result_;
+				Result result_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ELASTICSEARCH_MODEL_LISTALLNODERESULT_H_
+#endif // !ALIBABACLOUD_ELASTICSEARCH_MODEL_DESCRIBEAPMRESULT_H_

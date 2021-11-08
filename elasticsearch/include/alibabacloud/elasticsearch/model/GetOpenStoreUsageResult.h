@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ELASTICSEARCH_MODEL_LISTALLNODERESULT_H_
-#define ALIBABACLOUD_ELASTICSEARCH_MODEL_LISTALLNODERESULT_H_
+#ifndef ALIBABACLOUD_ELASTICSEARCH_MODEL_GETOPENSTOREUSAGERESULT_H_
+#define ALIBABACLOUD_ELASTICSEARCH_MODEL_GETOPENSTOREUSAGERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,36 +29,28 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ELASTICSEARCH_EXPORT ListAllNodeResult : public ServiceResult
+			class ALIBABACLOUD_ELASTICSEARCH_EXPORT GetOpenStoreUsageResult : public ServiceResult
 			{
 			public:
-				struct ResultItem
+				struct Result
 				{
-					std::string zoneId;
-					std::string diskUsedPercent;
-					std::string loadOneM;
-					std::string health;
-					std::string heapPercent;
-					std::string nodeType;
-					int port;
-					std::string host;
-					std::string hostName;
-					std::string cpuPercent;
+					long currentUsage;
+					long lastDayUsage;
 				};
 
 
-				ListAllNodeResult();
-				explicit ListAllNodeResult(const std::string &payload);
-				~ListAllNodeResult();
-				std::vector<ResultItem> getResult()const;
+				GetOpenStoreUsageResult();
+				explicit GetOpenStoreUsageResult(const std::string &payload);
+				~GetOpenStoreUsageResult();
+				Result getResult()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<ResultItem> result_;
+				Result result_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ELASTICSEARCH_MODEL_LISTALLNODERESULT_H_
+#endif // !ALIBABACLOUD_ELASTICSEARCH_MODEL_GETOPENSTOREUSAGERESULT_H_

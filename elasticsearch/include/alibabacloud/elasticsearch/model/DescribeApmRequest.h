@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ELASTICSEARCH_MODEL_LISTINSTANCEINDICESREQUEST_H_
-#define ALIBABACLOUD_ELASTICSEARCH_MODEL_LISTINSTANCEINDICESREQUEST_H_
+#ifndef ALIBABACLOUD_ELASTICSEARCH_MODEL_DESCRIBEAPMREQUEST_H_
+#define ALIBABACLOUD_ELASTICSEARCH_MODEL_DESCRIBEAPMREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,39 +28,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ELASTICSEARCH_EXPORT ListInstanceIndicesRequest : public RoaServiceRequest
+			class ALIBABACLOUD_ELASTICSEARCH_EXPORT DescribeApmRequest : public RoaServiceRequest
 			{
 
 			public:
-				ListInstanceIndicesRequest();
-				~ListInstanceIndicesRequest();
+				DescribeApmRequest();
+				~DescribeApmRequest();
 
-				bool getAll()const;
-				void setAll(bool all);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
-				bool getIsManaged()const;
-				void setIsManaged(bool isManaged);
-				int getSize()const;
-				void setSize(int size);
-				std::string getName()const;
-				void setName(const std::string& name);
-				int getPage()const;
-				void setPage(int page);
-				bool getIsOpenstore()const;
-				void setIsOpenstore(bool isOpenstore);
 
             private:
-				bool all_;
 				std::string instanceId_;
-				bool isManaged_;
-				int size_;
-				std::string name_;
-				int page_;
-				bool isOpenstore_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ELASTICSEARCH_MODEL_LISTINSTANCEINDICESREQUEST_H_
+#endif // !ALIBABACLOUD_ELASTICSEARCH_MODEL_DESCRIBEAPMREQUEST_H_

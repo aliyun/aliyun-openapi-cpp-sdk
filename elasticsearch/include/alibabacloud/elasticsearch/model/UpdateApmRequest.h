@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ELASTICSEARCH_MODEL_LISTINSTANCEINDICESREQUEST_H_
-#define ALIBABACLOUD_ELASTICSEARCH_MODEL_LISTINSTANCEINDICESREQUEST_H_
+#ifndef ALIBABACLOUD_ELASTICSEARCH_MODEL_UPDATEAPMREQUEST_H_
+#define ALIBABACLOUD_ELASTICSEARCH_MODEL_UPDATEAPMREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,39 +28,36 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ELASTICSEARCH_EXPORT ListInstanceIndicesRequest : public RoaServiceRequest
+			class ALIBABACLOUD_ELASTICSEARCH_EXPORT UpdateApmRequest : public RoaServiceRequest
 			{
 
 			public:
-				ListInstanceIndicesRequest();
-				~ListInstanceIndicesRequest();
+				UpdateApmRequest();
+				~UpdateApmRequest();
 
-				bool getAll()const;
-				void setAll(bool all);
+				std::string getOutputES()const;
+				void setOutputES(const std::string& outputES);
+				std::string getOutputESPassword()const;
+				void setOutputESPassword(const std::string& outputESPassword);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
-				bool getIsManaged()const;
-				void setIsManaged(bool isManaged);
-				int getSize()const;
-				void setSize(int size);
-				std::string getName()const;
-				void setName(const std::string& name);
-				int getPage()const;
-				void setPage(int page);
-				bool getIsOpenstore()const;
-				void setIsOpenstore(bool isOpenstore);
+				std::string getYml()const;
+				void setYml(const std::string& yml);
+				std::string getOutputESUserName()const;
+				void setOutputESUserName(const std::string& outputESUserName);
+				std::string getToken()const;
+				void setToken(const std::string& token);
 
             private:
-				bool all_;
+				std::string outputES_;
+				std::string outputESPassword_;
 				std::string instanceId_;
-				bool isManaged_;
-				int size_;
-				std::string name_;
-				int page_;
-				bool isOpenstore_;
+				std::string yml_;
+				std::string outputESUserName_;
+				std::string token_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ELASTICSEARCH_MODEL_LISTINSTANCEINDICESREQUEST_H_
+#endif // !ALIBABACLOUD_ELASTICSEARCH_MODEL_UPDATEAPMREQUEST_H_

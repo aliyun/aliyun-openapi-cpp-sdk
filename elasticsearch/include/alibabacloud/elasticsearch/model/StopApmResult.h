@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ELASTICSEARCH_MODEL_LISTALLNODERESULT_H_
-#define ALIBABACLOUD_ELASTICSEARCH_MODEL_LISTALLNODERESULT_H_
+#ifndef ALIBABACLOUD_ELASTICSEARCH_MODEL_STOPAPMRESULT_H_
+#define ALIBABACLOUD_ELASTICSEARCH_MODEL_STOPAPMRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,36 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ELASTICSEARCH_EXPORT ListAllNodeResult : public ServiceResult
+			class ALIBABACLOUD_ELASTICSEARCH_EXPORT StopApmResult : public ServiceResult
 			{
 			public:
-				struct ResultItem
-				{
-					std::string zoneId;
-					std::string diskUsedPercent;
-					std::string loadOneM;
-					std::string health;
-					std::string heapPercent;
-					std::string nodeType;
-					int port;
-					std::string host;
-					std::string hostName;
-					std::string cpuPercent;
-				};
 
 
-				ListAllNodeResult();
-				explicit ListAllNodeResult(const std::string &payload);
-				~ListAllNodeResult();
-				std::vector<ResultItem> getResult()const;
+				StopApmResult();
+				explicit StopApmResult(const std::string &payload);
+				~StopApmResult();
+				std::string getRequestId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<ResultItem> result_;
+				std::string requestId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ELASTICSEARCH_MODEL_LISTALLNODERESULT_H_
+#endif // !ALIBABACLOUD_ELASTICSEARCH_MODEL_STOPAPMRESULT_H_

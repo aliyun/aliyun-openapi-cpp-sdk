@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ELASTICSEARCH_MODEL_LISTALLNODERESULT_H_
-#define ALIBABACLOUD_ELASTICSEARCH_MODEL_LISTALLNODERESULT_H_
+#ifndef ALIBABACLOUD_ELASTICSEARCH_MODEL_CAPACITYPLANRESULT_H_
+#define ALIBABACLOUD_ELASTICSEARCH_MODEL_CAPACITYPLANRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,36 +29,45 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ELASTICSEARCH_EXPORT ListAllNodeResult : public ServiceResult
+			class ALIBABACLOUD_ELASTICSEARCH_EXPORT CapacityPlanResult : public ServiceResult
 			{
 			public:
-				struct ResultItem
+				struct Result
 				{
-					std::string zoneId;
-					std::string diskUsedPercent;
-					std::string loadOneM;
-					std::string health;
-					std::string heapPercent;
-					std::string nodeType;
-					int port;
-					std::string host;
-					std::string hostName;
-					std::string cpuPercent;
+					struct ExtendConfigsItem
+					{
+						std::string diskType;
+						std::string configType;
+						long disk;
+					};
+					struct NodeConfigurationsItem
+					{
+						std::string diskType;
+						long memory;
+						long amount;
+						std::string nodeType;
+						long cpu;
+						long disk;
+					};
+					std::vector<ExtendConfigsItem> extendConfigs;
+					std::vector<NodeConfigurationsItem> nodeConfigurations;
+					bool oversizedCluster;
+					std::string instanceCategory;
 				};
 
 
-				ListAllNodeResult();
-				explicit ListAllNodeResult(const std::string &payload);
-				~ListAllNodeResult();
-				std::vector<ResultItem> getResult()const;
+				CapacityPlanResult();
+				explicit CapacityPlanResult(const std::string &payload);
+				~CapacityPlanResult();
+				Result getResult()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<ResultItem> result_;
+				Result result_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ELASTICSEARCH_MODEL_LISTALLNODERESULT_H_
+#endif // !ALIBABACLOUD_ELASTICSEARCH_MODEL_CAPACITYPLANRESULT_H_

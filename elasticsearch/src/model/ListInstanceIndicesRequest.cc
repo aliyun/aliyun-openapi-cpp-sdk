@@ -61,6 +61,17 @@ void ListInstanceIndicesRequest::setIsManaged(bool isManaged)
 	setParameter("IsManaged", isManaged ? "true" : "false");
 }
 
+int ListInstanceIndicesRequest::getSize()const
+{
+	return size_;
+}
+
+void ListInstanceIndicesRequest::setSize(int size)
+{
+	size_ = size;
+	setParameter("Size", std::to_string(size));
+}
+
 std::string ListInstanceIndicesRequest::getName()const
 {
 	return name_;
@@ -70,5 +81,27 @@ void ListInstanceIndicesRequest::setName(const std::string& name)
 {
 	name_ = name;
 	setParameter("Name", name);
+}
+
+int ListInstanceIndicesRequest::getPage()const
+{
+	return page_;
+}
+
+void ListInstanceIndicesRequest::setPage(int page)
+{
+	page_ = page;
+	setParameter("Page", std::to_string(page));
+}
+
+bool ListInstanceIndicesRequest::getIsOpenstore()const
+{
+	return isOpenstore_;
+}
+
+void ListInstanceIndicesRequest::setIsOpenstore(bool isOpenstore)
+{
+	isOpenstore_ = isOpenstore;
+	setParameter("IsOpenstore", isOpenstore ? "true" : "false");
 }
 

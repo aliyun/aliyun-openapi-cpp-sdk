@@ -34,16 +34,20 @@ namespace AlibabaCloud
 			public:
 				struct Headers
 				{
+					long xOSSStorageSize;
+					int xOSSCount;
 					int xManagedCount;
 					long xManagedStorageSize;
 				};
 				struct ResultItem
 				{
 					std::string managedStatus;
+					std::string phase;
 					std::string health;
 					long size;
 					std::string createTime;
 					std::string isManaged;
+					std::string ilmExplain;
 					std::string name;
 				};
 

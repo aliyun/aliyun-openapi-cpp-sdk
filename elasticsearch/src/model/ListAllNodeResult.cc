@@ -43,24 +43,26 @@ void ListAllNodeResult::parse(const std::string &payload)
 	for (auto valueResultResultItem : allResultNode)
 	{
 		ResultItem resultObject;
-		if(!valueResultResultItem["host"].isNull())
-			resultObject.host = valueResultResultItem["host"].asString();
-		if(!valueResultResultItem["port"].isNull())
-			resultObject.port = std::stoi(valueResultResultItem["port"].asString());
-		if(!valueResultResultItem["zoneId"].isNull())
-			resultObject.zoneId = valueResultResultItem["zoneId"].asString();
-		if(!valueResultResultItem["nodeType"].isNull())
-			resultObject.nodeType = valueResultResultItem["nodeType"].asString();
-		if(!valueResultResultItem["cpuPercent"].isNull())
-			resultObject.cpuPercent = valueResultResultItem["cpuPercent"].asString();
-		if(!valueResultResultItem["loadOneM"].isNull())
-			resultObject.loadOneM = valueResultResultItem["loadOneM"].asString();
 		if(!valueResultResultItem["heapPercent"].isNull())
 			resultObject.heapPercent = valueResultResultItem["heapPercent"].asString();
-		if(!valueResultResultItem["health"].isNull())
-			resultObject.health = valueResultResultItem["health"].asString();
+		if(!valueResultResultItem["zoneId"].isNull())
+			resultObject.zoneId = valueResultResultItem["zoneId"].asString();
+		if(!valueResultResultItem["hostName"].isNull())
+			resultObject.hostName = valueResultResultItem["hostName"].asString();
+		if(!valueResultResultItem["cpuPercent"].isNull())
+			resultObject.cpuPercent = valueResultResultItem["cpuPercent"].asString();
+		if(!valueResultResultItem["host"].isNull())
+			resultObject.host = valueResultResultItem["host"].asString();
+		if(!valueResultResultItem["nodeType"].isNull())
+			resultObject.nodeType = valueResultResultItem["nodeType"].asString();
 		if(!valueResultResultItem["diskUsedPercent"].isNull())
 			resultObject.diskUsedPercent = valueResultResultItem["diskUsedPercent"].asString();
+		if(!valueResultResultItem["port"].isNull())
+			resultObject.port = std::stoi(valueResultResultItem["port"].asString());
+		if(!valueResultResultItem["loadOneM"].isNull())
+			resultObject.loadOneM = valueResultResultItem["loadOneM"].asString();
+		if(!valueResultResultItem["health"].isNull())
+			resultObject.health = valueResultResultItem["health"].asString();
 		result_.push_back(resultObject);
 	}
 

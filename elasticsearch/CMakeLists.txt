@@ -33,6 +33,8 @@ set(elasticsearch_public_header_model
 	include/alibabacloud/elasticsearch/model/CancelLogstashDeletionResult.h
 	include/alibabacloud/elasticsearch/model/CancelTaskRequest.h
 	include/alibabacloud/elasticsearch/model/CancelTaskResult.h
+	include/alibabacloud/elasticsearch/model/CapacityPlanRequest.h
+	include/alibabacloud/elasticsearch/model/CapacityPlanResult.h
 	include/alibabacloud/elasticsearch/model/CloseDiagnosisRequest.h
 	include/alibabacloud/elasticsearch/model/CloseDiagnosisResult.h
 	include/alibabacloud/elasticsearch/model/CloseHttpsRequest.h
@@ -85,6 +87,8 @@ set(elasticsearch_public_header_model
 	include/alibabacloud/elasticsearch/model/DeleteVpcEndpointResult.h
 	include/alibabacloud/elasticsearch/model/DescribeAckOperatorRequest.h
 	include/alibabacloud/elasticsearch/model/DescribeAckOperatorResult.h
+	include/alibabacloud/elasticsearch/model/DescribeApmRequest.h
+	include/alibabacloud/elasticsearch/model/DescribeApmResult.h
 	include/alibabacloud/elasticsearch/model/DescribeCollectorRequest.h
 	include/alibabacloud/elasticsearch/model/DescribeCollectorResult.h
 	include/alibabacloud/elasticsearch/model/DescribeConnectableClustersRequest.h
@@ -133,6 +137,8 @@ set(elasticsearch_public_header_model
 	include/alibabacloud/elasticsearch/model/GetEmonGrafanaDashboardsResult.h
 	include/alibabacloud/elasticsearch/model/GetEmonMonitorDataRequest.h
 	include/alibabacloud/elasticsearch/model/GetEmonMonitorDataResult.h
+	include/alibabacloud/elasticsearch/model/GetOpenStoreUsageRequest.h
+	include/alibabacloud/elasticsearch/model/GetOpenStoreUsageResult.h
 	include/alibabacloud/elasticsearch/model/GetRegionConfigurationRequest.h
 	include/alibabacloud/elasticsearch/model/GetRegionConfigurationResult.h
 	include/alibabacloud/elasticsearch/model/GetSuggestShrinkableNodesRequest.h
@@ -247,6 +253,8 @@ set(elasticsearch_public_header_model
 	include/alibabacloud/elasticsearch/model/RecommendTemplatesResult.h
 	include/alibabacloud/elasticsearch/model/ReinstallCollectorRequest.h
 	include/alibabacloud/elasticsearch/model/ReinstallCollectorResult.h
+	include/alibabacloud/elasticsearch/model/RemoveApmRequest.h
+	include/alibabacloud/elasticsearch/model/RemoveApmResult.h
 	include/alibabacloud/elasticsearch/model/RenewInstanceRequest.h
 	include/alibabacloud/elasticsearch/model/RenewInstanceResult.h
 	include/alibabacloud/elasticsearch/model/RenewLogstashRequest.h
@@ -267,8 +275,12 @@ set(elasticsearch_public_header_model
 	include/alibabacloud/elasticsearch/model/RunPipelinesResult.h
 	include/alibabacloud/elasticsearch/model/ShrinkNodeRequest.h
 	include/alibabacloud/elasticsearch/model/ShrinkNodeResult.h
+	include/alibabacloud/elasticsearch/model/StartApmRequest.h
+	include/alibabacloud/elasticsearch/model/StartApmResult.h
 	include/alibabacloud/elasticsearch/model/StartCollectorRequest.h
 	include/alibabacloud/elasticsearch/model/StartCollectorResult.h
+	include/alibabacloud/elasticsearch/model/StopApmRequest.h
+	include/alibabacloud/elasticsearch/model/StopApmResult.h
 	include/alibabacloud/elasticsearch/model/StopCollectorRequest.h
 	include/alibabacloud/elasticsearch/model/StopCollectorResult.h
 	include/alibabacloud/elasticsearch/model/StopPipelinesRequest.h
@@ -293,6 +305,8 @@ set(elasticsearch_public_header_model
 	include/alibabacloud/elasticsearch/model/UpdateAdvancedSettingResult.h
 	include/alibabacloud/elasticsearch/model/UpdateAliwsDictRequest.h
 	include/alibabacloud/elasticsearch/model/UpdateAliwsDictResult.h
+	include/alibabacloud/elasticsearch/model/UpdateApmRequest.h
+	include/alibabacloud/elasticsearch/model/UpdateApmResult.h
 	include/alibabacloud/elasticsearch/model/UpdateBlackIpsRequest.h
 	include/alibabacloud/elasticsearch/model/UpdateBlackIpsResult.h
 	include/alibabacloud/elasticsearch/model/UpdateCollectorRequest.h
@@ -380,6 +394,8 @@ set(elasticsearch_src
 	src/model/CancelLogstashDeletionResult.cc
 	src/model/CancelTaskRequest.cc
 	src/model/CancelTaskResult.cc
+	src/model/CapacityPlanRequest.cc
+	src/model/CapacityPlanResult.cc
 	src/model/CloseDiagnosisRequest.cc
 	src/model/CloseDiagnosisResult.cc
 	src/model/CloseHttpsRequest.cc
@@ -432,6 +448,8 @@ set(elasticsearch_src
 	src/model/DeleteVpcEndpointResult.cc
 	src/model/DescribeAckOperatorRequest.cc
 	src/model/DescribeAckOperatorResult.cc
+	src/model/DescribeApmRequest.cc
+	src/model/DescribeApmResult.cc
 	src/model/DescribeCollectorRequest.cc
 	src/model/DescribeCollectorResult.cc
 	src/model/DescribeConnectableClustersRequest.cc
@@ -480,6 +498,8 @@ set(elasticsearch_src
 	src/model/GetEmonGrafanaDashboardsResult.cc
 	src/model/GetEmonMonitorDataRequest.cc
 	src/model/GetEmonMonitorDataResult.cc
+	src/model/GetOpenStoreUsageRequest.cc
+	src/model/GetOpenStoreUsageResult.cc
 	src/model/GetRegionConfigurationRequest.cc
 	src/model/GetRegionConfigurationResult.cc
 	src/model/GetSuggestShrinkableNodesRequest.cc
@@ -594,6 +614,8 @@ set(elasticsearch_src
 	src/model/RecommendTemplatesResult.cc
 	src/model/ReinstallCollectorRequest.cc
 	src/model/ReinstallCollectorResult.cc
+	src/model/RemoveApmRequest.cc
+	src/model/RemoveApmResult.cc
 	src/model/RenewInstanceRequest.cc
 	src/model/RenewInstanceResult.cc
 	src/model/RenewLogstashRequest.cc
@@ -614,8 +636,12 @@ set(elasticsearch_src
 	src/model/RunPipelinesResult.cc
 	src/model/ShrinkNodeRequest.cc
 	src/model/ShrinkNodeResult.cc
+	src/model/StartApmRequest.cc
+	src/model/StartApmResult.cc
 	src/model/StartCollectorRequest.cc
 	src/model/StartCollectorResult.cc
+	src/model/StopApmRequest.cc
+	src/model/StopApmResult.cc
 	src/model/StopCollectorRequest.cc
 	src/model/StopCollectorResult.cc
 	src/model/StopPipelinesRequest.cc
@@ -640,6 +666,8 @@ set(elasticsearch_src
 	src/model/UpdateAdvancedSettingResult.cc
 	src/model/UpdateAliwsDictRequest.cc
 	src/model/UpdateAliwsDictResult.cc
+	src/model/UpdateApmRequest.cc
+	src/model/UpdateApmResult.cc
 	src/model/UpdateBlackIpsRequest.cc
 	src/model/UpdateBlackIpsResult.cc
 	src/model/UpdateCollectorRequest.cc

@@ -267,6 +267,42 @@ ElasticsearchClient::CancelTaskOutcomeCallable ElasticsearchClient::cancelTaskCa
 	return task->get_future();
 }
 
+ElasticsearchClient::CapacityPlanOutcome ElasticsearchClient::capacityPlan(const CapacityPlanRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CapacityPlanOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CapacityPlanOutcome(CapacityPlanResult(outcome.result()));
+	else
+		return CapacityPlanOutcome(outcome.error());
+}
+
+void ElasticsearchClient::capacityPlanAsync(const CapacityPlanRequest& request, const CapacityPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, capacityPlan(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::CapacityPlanOutcomeCallable ElasticsearchClient::capacityPlanCallable(const CapacityPlanRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CapacityPlanOutcome()>>(
+			[this, request]()
+			{
+			return this->capacityPlan(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ElasticsearchClient::CloseDiagnosisOutcome ElasticsearchClient::closeDiagnosis(const CloseDiagnosisRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1203,6 +1239,42 @@ ElasticsearchClient::DescribeAckOperatorOutcomeCallable ElasticsearchClient::des
 	return task->get_future();
 }
 
+ElasticsearchClient::DescribeApmOutcome ElasticsearchClient::describeApm(const DescribeApmRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeApmOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeApmOutcome(DescribeApmResult(outcome.result()));
+	else
+		return DescribeApmOutcome(outcome.error());
+}
+
+void ElasticsearchClient::describeApmAsync(const DescribeApmRequest& request, const DescribeApmAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeApm(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::DescribeApmOutcomeCallable ElasticsearchClient::describeApmCallable(const DescribeApmRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeApmOutcome()>>(
+			[this, request]()
+			{
+			return this->describeApm(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ElasticsearchClient::DescribeCollectorOutcome ElasticsearchClient::describeCollector(const DescribeCollectorRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2061,6 +2133,42 @@ ElasticsearchClient::GetEmonMonitorDataOutcomeCallable ElasticsearchClient::getE
 			[this, request]()
 			{
 			return this->getEmonMonitorData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ElasticsearchClient::GetOpenStoreUsageOutcome ElasticsearchClient::getOpenStoreUsage(const GetOpenStoreUsageRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetOpenStoreUsageOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetOpenStoreUsageOutcome(GetOpenStoreUsageResult(outcome.result()));
+	else
+		return GetOpenStoreUsageOutcome(outcome.error());
+}
+
+void ElasticsearchClient::getOpenStoreUsageAsync(const GetOpenStoreUsageRequest& request, const GetOpenStoreUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getOpenStoreUsage(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::GetOpenStoreUsageOutcomeCallable ElasticsearchClient::getOpenStoreUsageCallable(const GetOpenStoreUsageRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetOpenStoreUsageOutcome()>>(
+			[this, request]()
+			{
+			return this->getOpenStoreUsage(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4119,6 +4227,42 @@ ElasticsearchClient::ReinstallCollectorOutcomeCallable ElasticsearchClient::rein
 	return task->get_future();
 }
 
+ElasticsearchClient::RemoveApmOutcome ElasticsearchClient::removeApm(const RemoveApmRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RemoveApmOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RemoveApmOutcome(RemoveApmResult(outcome.result()));
+	else
+		return RemoveApmOutcome(outcome.error());
+}
+
+void ElasticsearchClient::removeApmAsync(const RemoveApmRequest& request, const RemoveApmAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, removeApm(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::RemoveApmOutcomeCallable ElasticsearchClient::removeApmCallable(const RemoveApmRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RemoveApmOutcome()>>(
+			[this, request]()
+			{
+			return this->removeApm(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ElasticsearchClient::RenewInstanceOutcome ElasticsearchClient::renewInstance(const RenewInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4479,6 +4623,42 @@ ElasticsearchClient::ShrinkNodeOutcomeCallable ElasticsearchClient::shrinkNodeCa
 	return task->get_future();
 }
 
+ElasticsearchClient::StartApmOutcome ElasticsearchClient::startApm(const StartApmRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return StartApmOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return StartApmOutcome(StartApmResult(outcome.result()));
+	else
+		return StartApmOutcome(outcome.error());
+}
+
+void ElasticsearchClient::startApmAsync(const StartApmRequest& request, const StartApmAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, startApm(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::StartApmOutcomeCallable ElasticsearchClient::startApmCallable(const StartApmRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<StartApmOutcome()>>(
+			[this, request]()
+			{
+			return this->startApm(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ElasticsearchClient::StartCollectorOutcome ElasticsearchClient::startCollector(const StartCollectorRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4509,6 +4689,42 @@ ElasticsearchClient::StartCollectorOutcomeCallable ElasticsearchClient::startCol
 			[this, request]()
 			{
 			return this->startCollector(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ElasticsearchClient::StopApmOutcome ElasticsearchClient::stopApm(const StopApmRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return StopApmOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return StopApmOutcome(StopApmResult(outcome.result()));
+	else
+		return StopApmOutcome(outcome.error());
+}
+
+void ElasticsearchClient::stopApmAsync(const StopApmRequest& request, const StopApmAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, stopApm(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::StopApmOutcomeCallable ElasticsearchClient::stopApmCallable(const StopApmRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<StopApmOutcome()>>(
+			[this, request]()
+			{
+			return this->stopApm(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4941,6 +5157,42 @@ ElasticsearchClient::UpdateAliwsDictOutcomeCallable ElasticsearchClient::updateA
 			[this, request]()
 			{
 			return this->updateAliwsDict(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ElasticsearchClient::UpdateApmOutcome ElasticsearchClient::updateApm(const UpdateApmRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateApmOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateApmOutcome(UpdateApmResult(outcome.result()));
+	else
+		return UpdateApmOutcome(outcome.error());
+}
+
+void ElasticsearchClient::updateApmAsync(const UpdateApmRequest& request, const UpdateApmAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateApm(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::UpdateApmOutcomeCallable ElasticsearchClient::updateApmCallable(const UpdateApmRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateApmOutcome()>>(
+			[this, request]()
+			{
+			return this->updateApm(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
