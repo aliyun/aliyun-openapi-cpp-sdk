@@ -154,6 +154,8 @@
 #include "model/DescribeScheduleTasksResult.h"
 #include "model/DescribeSlowLogRecordsRequest.h"
 #include "model/DescribeSlowLogRecordsResult.h"
+#include "model/DescribeStoragePlanRequest.h"
+#include "model/DescribeStoragePlanResult.h"
 #include "model/DescribeTasksRequest.h"
 #include "model/DescribeTasksResult.h"
 #include "model/FailoverDBClusterRequest.h"
@@ -435,6 +437,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeSlowLogRecordsResult> DescribeSlowLogRecordsOutcome;
 			typedef std::future<DescribeSlowLogRecordsOutcome> DescribeSlowLogRecordsOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::DescribeSlowLogRecordsRequest&, const DescribeSlowLogRecordsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSlowLogRecordsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeStoragePlanResult> DescribeStoragePlanOutcome;
+			typedef std::future<DescribeStoragePlanOutcome> DescribeStoragePlanOutcomeCallable;
+			typedef std::function<void(const PolardbClient*, const Model::DescribeStoragePlanRequest&, const DescribeStoragePlanOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStoragePlanAsyncHandler;
 			typedef Outcome<Error, Model::DescribeTasksResult> DescribeTasksOutcome;
 			typedef std::future<DescribeTasksOutcome> DescribeTasksOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::DescribeTasksRequest&, const DescribeTasksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTasksAsyncHandler;
@@ -749,6 +754,9 @@ namespace AlibabaCloud
 			DescribeSlowLogRecordsOutcome describeSlowLogRecords(const Model::DescribeSlowLogRecordsRequest &request)const;
 			void describeSlowLogRecordsAsync(const Model::DescribeSlowLogRecordsRequest& request, const DescribeSlowLogRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSlowLogRecordsOutcomeCallable describeSlowLogRecordsCallable(const Model::DescribeSlowLogRecordsRequest& request) const;
+			DescribeStoragePlanOutcome describeStoragePlan(const Model::DescribeStoragePlanRequest &request)const;
+			void describeStoragePlanAsync(const Model::DescribeStoragePlanRequest& request, const DescribeStoragePlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeStoragePlanOutcomeCallable describeStoragePlanCallable(const Model::DescribeStoragePlanRequest& request) const;
 			DescribeTasksOutcome describeTasks(const Model::DescribeTasksRequest &request)const;
 			void describeTasksAsync(const Model::DescribeTasksRequest& request, const DescribeTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeTasksOutcomeCallable describeTasksCallable(const Model::DescribeTasksRequest& request) const;

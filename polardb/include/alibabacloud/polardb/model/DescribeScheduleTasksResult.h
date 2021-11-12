@@ -41,6 +41,7 @@ namespace AlibabaCloud
 						std::string plannedTime;
 						std::string taskId;
 						std::string dbClusterDescription;
+						bool taskCancel;
 						std::string dBClusterId;
 						std::string plannedStartTime;
 						std::string region;

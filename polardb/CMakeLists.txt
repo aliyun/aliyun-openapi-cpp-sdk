@@ -153,6 +153,8 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/DescribeScheduleTasksResult.h
 	include/alibabacloud/polardb/model/DescribeSlowLogRecordsRequest.h
 	include/alibabacloud/polardb/model/DescribeSlowLogRecordsResult.h
+	include/alibabacloud/polardb/model/DescribeStoragePlanRequest.h
+	include/alibabacloud/polardb/model/DescribeStoragePlanResult.h
 	include/alibabacloud/polardb/model/DescribeTasksRequest.h
 	include/alibabacloud/polardb/model/DescribeTasksResult.h
 	include/alibabacloud/polardb/model/FailoverDBClusterRequest.h
@@ -362,6 +364,8 @@ set(polardb_src
 	src/model/DescribeScheduleTasksResult.cc
 	src/model/DescribeSlowLogRecordsRequest.cc
 	src/model/DescribeSlowLogRecordsResult.cc
+	src/model/DescribeStoragePlanRequest.cc
+	src/model/DescribeStoragePlanResult.cc
 	src/model/DescribeTasksRequest.cc
 	src/model/DescribeTasksResult.cc
 	src/model/FailoverDBClusterRequest.cc

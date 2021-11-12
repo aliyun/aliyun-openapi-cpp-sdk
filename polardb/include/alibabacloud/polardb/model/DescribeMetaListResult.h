@@ -42,8 +42,8 @@ namespace AlibabaCloud
 				DescribeMetaListResult();
 				explicit DescribeMetaListResult(const std::string &payload);
 				~DescribeMetaListResult();
-				std::string getTotalRecordCount()const;
 				std::string getTotalPageCount()const;
+				std::string getTotalRecordCount()const;
 				std::string getPageSize()const;
 				std::string getPageNumber()const;
 				std::vector<MetaItem> getItems()const;
@@ -51,8 +51,8 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string totalRecordCount_;
 				std::string totalPageCount_;
+				std::string totalRecordCount_;
 				std::string pageSize_;
 				std::string pageNumber_;
 				std::vector<MetaItem> items_;

@@ -50,10 +50,10 @@ void DescribeMetaListResult::parse(const std::string &payload)
 			itemsObject.tables.push_back(value.asString());
 		items_.push_back(itemsObject);
 	}
-	if(!value["TotalRecordCount"].isNull())
-		totalRecordCount_ = value["TotalRecordCount"].asString();
 	if(!value["TotalPageCount"].isNull())
 		totalPageCount_ = value["TotalPageCount"].asString();
+	if(!value["TotalRecordCount"].isNull())
+		totalRecordCount_ = value["TotalRecordCount"].asString();
 	if(!value["PageSize"].isNull())
 		pageSize_ = value["PageSize"].asString();
 	if(!value["PageNumber"].isNull())
@@ -61,14 +61,14 @@ void DescribeMetaListResult::parse(const std::string &payload)
 
 }
 
-std::string DescribeMetaListResult::getTotalRecordCount()const
-{
-	return totalRecordCount_;
-}
-
 std::string DescribeMetaListResult::getTotalPageCount()const
 {
 	return totalPageCount_;
+}
+
+std::string DescribeMetaListResult::getTotalRecordCount()const
+{
+	return totalRecordCount_;
 }
 
 std::string DescribeMetaListResult::getPageSize()const

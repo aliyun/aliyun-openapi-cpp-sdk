@@ -72,6 +72,8 @@ void DescribeScheduleTasksResult::parse(const std::string &payload)
 			timerInfosItemObject.dbClusterStatus = dataNodeTimerInfostimerInfosItem["DbClusterStatus"].asString();
 		if(!dataNodeTimerInfostimerInfosItem["DbClusterDescription"].isNull())
 			timerInfosItemObject.dbClusterDescription = dataNodeTimerInfostimerInfosItem["DbClusterDescription"].asString();
+		if(!dataNodeTimerInfostimerInfosItem["TaskCancel"].isNull())
+			timerInfosItemObject.taskCancel = dataNodeTimerInfostimerInfosItem["TaskCancel"].asString() == "true";
 		data_.timerInfos.push_back(timerInfosItemObject);
 	}
 	if(!value["Message"].isNull())

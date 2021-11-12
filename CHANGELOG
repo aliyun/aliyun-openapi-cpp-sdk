@@ -1,3 +1,6 @@
+2021-11-12 Version: 1.36.926
+- Optimize the API for querying storage package information.
+
 2021-11-08 Version: 1.36.925
 - Supported apm restful api.
 
