@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DDOSCOO_MODEL_DESCRIBEDDOSALLEVENTLISTREQUEST_H_
-#define ALIBABACLOUD_DDOSCOO_MODEL_DESCRIBEDDOSALLEVENTLISTREQUEST_H_
+#ifndef ALIBABACLOUD_DDOSCOO_MODEL_DESCRIBESYSTEMLOGREQUEST_H_
+#define ALIBABACLOUD_DDOSCOO_MODEL_DESCRIBESYSTEMLOGREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,12 +28,12 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DDOSCOO_EXPORT DescribeDDosAllEventListRequest : public RpcServiceRequest
+			class ALIBABACLOUD_DDOSCOO_EXPORT DescribeSystemLogRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeDDosAllEventListRequest();
-				~DescribeDDosAllEventListRequest();
+				DescribeSystemLogRequest();
+				~DescribeSystemLogRequest();
 
 				long getStartTime()const;
 				void setStartTime(long startTime);
@@ -45,8 +45,10 @@ namespace AlibabaCloud
 				void setPageSize(int pageSize);
 				long getEndTime()const;
 				void setEndTime(long endTime);
-				std::string getEventType()const;
-				void setEventType(const std::string& eventType);
+				std::string getEntityObject()const;
+				void setEntityObject(const std::string& entityObject);
+				int getEntityType()const;
+				void setEntityType(int entityType);
 
             private:
 				long startTime_;
@@ -54,10 +56,11 @@ namespace AlibabaCloud
 				std::string sourceIp_;
 				int pageSize_;
 				long endTime_;
-				std::string eventType_;
+				std::string entityObject_;
+				int entityType_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DDOSCOO_MODEL_DESCRIBEDDOSALLEVENTLISTREQUEST_H_
+#endif // !ALIBABACLOUD_DDOSCOO_MODEL_DESCRIBESYSTEMLOGREQUEST_H_

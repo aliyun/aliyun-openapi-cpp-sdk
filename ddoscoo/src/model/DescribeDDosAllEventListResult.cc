@@ -57,6 +57,10 @@ void DescribeDDosAllEventListResult::parse(const std::string &payload)
 			attackEventsObject.endTime = std::stol(valueAttackEventsAttackEvent["EndTime"].asString());
 		if(!valueAttackEventsAttackEvent["Mbps"].isNull())
 			attackEventsObject.mbps = std::stol(valueAttackEventsAttackEvent["Mbps"].asString());
+		if(!valueAttackEventsAttackEvent["Region"].isNull())
+			attackEventsObject.region = valueAttackEventsAttackEvent["Region"].asString();
+		if(!valueAttackEventsAttackEvent["Area"].isNull())
+			attackEventsObject.area = valueAttackEventsAttackEvent["Area"].asString();
 		attackEvents_.push_back(attackEventsObject);
 	}
 	if(!value["Total"].isNull())

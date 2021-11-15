@@ -32,6 +32,12 @@
 #include "model/AttachSceneDefenseObjectResult.h"
 #include "model/ConfigL7RsPolicyRequest.h"
 #include "model/ConfigL7RsPolicyResult.h"
+#include "model/ConfigLayer4RemarkRequest.h"
+#include "model/ConfigLayer4RemarkResult.h"
+#include "model/ConfigLayer4RuleBakModeRequest.h"
+#include "model/ConfigLayer4RuleBakModeResult.h"
+#include "model/ConfigLayer4RulePolicyRequest.h"
+#include "model/ConfigLayer4RulePolicyResult.h"
 #include "model/ConfigNetworkRegionBlockRequest.h"
 #include "model/ConfigNetworkRegionBlockResult.h"
 #include "model/ConfigNetworkRulesRequest.h"
@@ -170,6 +176,8 @@
 #include "model/DescribeInstancesResult.h"
 #include "model/DescribeL7RsPolicyRequest.h"
 #include "model/DescribeL7RsPolicyResult.h"
+#include "model/DescribeLayer4RulePolicyRequest.h"
+#include "model/DescribeLayer4RulePolicyResult.h"
 #include "model/DescribeLogStoreExistStatusRequest.h"
 #include "model/DescribeLogStoreExistStatusResult.h"
 #include "model/DescribeNetworkRegionBlockRequest.h"
@@ -214,6 +222,8 @@
 #include "model/DescribeSlsOpenStatusResult.h"
 #include "model/DescribeStsGrantStatusRequest.h"
 #include "model/DescribeStsGrantStatusResult.h"
+#include "model/DescribeSystemLogRequest.h"
+#include "model/DescribeSystemLogResult.h"
 #include "model/DescribeTagKeysRequest.h"
 #include "model/DescribeTagKeysResult.h"
 #include "model/DescribeTagResourcesRequest.h"
@@ -356,6 +366,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ConfigL7RsPolicyResult> ConfigL7RsPolicyOutcome;
 			typedef std::future<ConfigL7RsPolicyOutcome> ConfigL7RsPolicyOutcomeCallable;
 			typedef std::function<void(const DdoscooClient*, const Model::ConfigL7RsPolicyRequest&, const ConfigL7RsPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ConfigL7RsPolicyAsyncHandler;
+			typedef Outcome<Error, Model::ConfigLayer4RemarkResult> ConfigLayer4RemarkOutcome;
+			typedef std::future<ConfigLayer4RemarkOutcome> ConfigLayer4RemarkOutcomeCallable;
+			typedef std::function<void(const DdoscooClient*, const Model::ConfigLayer4RemarkRequest&, const ConfigLayer4RemarkOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ConfigLayer4RemarkAsyncHandler;
+			typedef Outcome<Error, Model::ConfigLayer4RuleBakModeResult> ConfigLayer4RuleBakModeOutcome;
+			typedef std::future<ConfigLayer4RuleBakModeOutcome> ConfigLayer4RuleBakModeOutcomeCallable;
+			typedef std::function<void(const DdoscooClient*, const Model::ConfigLayer4RuleBakModeRequest&, const ConfigLayer4RuleBakModeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ConfigLayer4RuleBakModeAsyncHandler;
+			typedef Outcome<Error, Model::ConfigLayer4RulePolicyResult> ConfigLayer4RulePolicyOutcome;
+			typedef std::future<ConfigLayer4RulePolicyOutcome> ConfigLayer4RulePolicyOutcomeCallable;
+			typedef std::function<void(const DdoscooClient*, const Model::ConfigLayer4RulePolicyRequest&, const ConfigLayer4RulePolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ConfigLayer4RulePolicyAsyncHandler;
 			typedef Outcome<Error, Model::ConfigNetworkRegionBlockResult> ConfigNetworkRegionBlockOutcome;
 			typedef std::future<ConfigNetworkRegionBlockOutcome> ConfigNetworkRegionBlockOutcomeCallable;
 			typedef std::function<void(const DdoscooClient*, const Model::ConfigNetworkRegionBlockRequest&, const ConfigNetworkRegionBlockOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ConfigNetworkRegionBlockAsyncHandler;
@@ -563,6 +582,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeL7RsPolicyResult> DescribeL7RsPolicyOutcome;
 			typedef std::future<DescribeL7RsPolicyOutcome> DescribeL7RsPolicyOutcomeCallable;
 			typedef std::function<void(const DdoscooClient*, const Model::DescribeL7RsPolicyRequest&, const DescribeL7RsPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeL7RsPolicyAsyncHandler;
+			typedef Outcome<Error, Model::DescribeLayer4RulePolicyResult> DescribeLayer4RulePolicyOutcome;
+			typedef std::future<DescribeLayer4RulePolicyOutcome> DescribeLayer4RulePolicyOutcomeCallable;
+			typedef std::function<void(const DdoscooClient*, const Model::DescribeLayer4RulePolicyRequest&, const DescribeLayer4RulePolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLayer4RulePolicyAsyncHandler;
 			typedef Outcome<Error, Model::DescribeLogStoreExistStatusResult> DescribeLogStoreExistStatusOutcome;
 			typedef std::future<DescribeLogStoreExistStatusOutcome> DescribeLogStoreExistStatusOutcomeCallable;
 			typedef std::function<void(const DdoscooClient*, const Model::DescribeLogStoreExistStatusRequest&, const DescribeLogStoreExistStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogStoreExistStatusAsyncHandler;
@@ -629,6 +651,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeStsGrantStatusResult> DescribeStsGrantStatusOutcome;
 			typedef std::future<DescribeStsGrantStatusOutcome> DescribeStsGrantStatusOutcomeCallable;
 			typedef std::function<void(const DdoscooClient*, const Model::DescribeStsGrantStatusRequest&, const DescribeStsGrantStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStsGrantStatusAsyncHandler;
+			typedef Outcome<Error, Model::DescribeSystemLogResult> DescribeSystemLogOutcome;
+			typedef std::future<DescribeSystemLogOutcome> DescribeSystemLogOutcomeCallable;
+			typedef std::function<void(const DdoscooClient*, const Model::DescribeSystemLogRequest&, const DescribeSystemLogOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSystemLogAsyncHandler;
 			typedef Outcome<Error, Model::DescribeTagKeysResult> DescribeTagKeysOutcome;
 			typedef std::future<DescribeTagKeysOutcome> DescribeTagKeysOutcomeCallable;
 			typedef std::function<void(const DdoscooClient*, const Model::DescribeTagKeysRequest&, const DescribeTagKeysOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTagKeysAsyncHandler;
@@ -826,6 +851,15 @@ namespace AlibabaCloud
 			ConfigL7RsPolicyOutcome configL7RsPolicy(const Model::ConfigL7RsPolicyRequest &request)const;
 			void configL7RsPolicyAsync(const Model::ConfigL7RsPolicyRequest& request, const ConfigL7RsPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ConfigL7RsPolicyOutcomeCallable configL7RsPolicyCallable(const Model::ConfigL7RsPolicyRequest& request) const;
+			ConfigLayer4RemarkOutcome configLayer4Remark(const Model::ConfigLayer4RemarkRequest &request)const;
+			void configLayer4RemarkAsync(const Model::ConfigLayer4RemarkRequest& request, const ConfigLayer4RemarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ConfigLayer4RemarkOutcomeCallable configLayer4RemarkCallable(const Model::ConfigLayer4RemarkRequest& request) const;
+			ConfigLayer4RuleBakModeOutcome configLayer4RuleBakMode(const Model::ConfigLayer4RuleBakModeRequest &request)const;
+			void configLayer4RuleBakModeAsync(const Model::ConfigLayer4RuleBakModeRequest& request, const ConfigLayer4RuleBakModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ConfigLayer4RuleBakModeOutcomeCallable configLayer4RuleBakModeCallable(const Model::ConfigLayer4RuleBakModeRequest& request) const;
+			ConfigLayer4RulePolicyOutcome configLayer4RulePolicy(const Model::ConfigLayer4RulePolicyRequest &request)const;
+			void configLayer4RulePolicyAsync(const Model::ConfigLayer4RulePolicyRequest& request, const ConfigLayer4RulePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ConfigLayer4RulePolicyOutcomeCallable configLayer4RulePolicyCallable(const Model::ConfigLayer4RulePolicyRequest& request) const;
 			ConfigNetworkRegionBlockOutcome configNetworkRegionBlock(const Model::ConfigNetworkRegionBlockRequest &request)const;
 			void configNetworkRegionBlockAsync(const Model::ConfigNetworkRegionBlockRequest& request, const ConfigNetworkRegionBlockAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ConfigNetworkRegionBlockOutcomeCallable configNetworkRegionBlockCallable(const Model::ConfigNetworkRegionBlockRequest& request) const;
@@ -1033,6 +1067,9 @@ namespace AlibabaCloud
 			DescribeL7RsPolicyOutcome describeL7RsPolicy(const Model::DescribeL7RsPolicyRequest &request)const;
 			void describeL7RsPolicyAsync(const Model::DescribeL7RsPolicyRequest& request, const DescribeL7RsPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeL7RsPolicyOutcomeCallable describeL7RsPolicyCallable(const Model::DescribeL7RsPolicyRequest& request) const;
+			DescribeLayer4RulePolicyOutcome describeLayer4RulePolicy(const Model::DescribeLayer4RulePolicyRequest &request)const;
+			void describeLayer4RulePolicyAsync(const Model::DescribeLayer4RulePolicyRequest& request, const DescribeLayer4RulePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeLayer4RulePolicyOutcomeCallable describeLayer4RulePolicyCallable(const Model::DescribeLayer4RulePolicyRequest& request) const;
 			DescribeLogStoreExistStatusOutcome describeLogStoreExistStatus(const Model::DescribeLogStoreExistStatusRequest &request)const;
 			void describeLogStoreExistStatusAsync(const Model::DescribeLogStoreExistStatusRequest& request, const DescribeLogStoreExistStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLogStoreExistStatusOutcomeCallable describeLogStoreExistStatusCallable(const Model::DescribeLogStoreExistStatusRequest& request) const;
@@ -1099,6 +1136,9 @@ namespace AlibabaCloud
 			DescribeStsGrantStatusOutcome describeStsGrantStatus(const Model::DescribeStsGrantStatusRequest &request)const;
 			void describeStsGrantStatusAsync(const Model::DescribeStsGrantStatusRequest& request, const DescribeStsGrantStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeStsGrantStatusOutcomeCallable describeStsGrantStatusCallable(const Model::DescribeStsGrantStatusRequest& request) const;
+			DescribeSystemLogOutcome describeSystemLog(const Model::DescribeSystemLogRequest &request)const;
+			void describeSystemLogAsync(const Model::DescribeSystemLogRequest& request, const DescribeSystemLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeSystemLogOutcomeCallable describeSystemLogCallable(const Model::DescribeSystemLogRequest& request) const;
 			DescribeTagKeysOutcome describeTagKeys(const Model::DescribeTagKeysRequest &request)const;
 			void describeTagKeysAsync(const Model::DescribeTagKeysRequest& request, const DescribeTagKeysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeTagKeysOutcomeCallable describeTagKeysCallable(const Model::DescribeTagKeysRequest& request) const;

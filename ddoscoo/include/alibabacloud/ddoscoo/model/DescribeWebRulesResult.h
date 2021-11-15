@@ -56,6 +56,7 @@ namespace AlibabaCloud
 					std::string cname;
 					bool proxyEnabled;
 					bool https2HttpEnable;
+					bool ocspEnabled;
 					std::vector<WebRule::RealServer> realServers;
 					bool http2HttpsEnable;
 					int punishReason;

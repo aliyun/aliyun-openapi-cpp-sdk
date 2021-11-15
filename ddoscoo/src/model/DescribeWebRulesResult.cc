@@ -57,6 +57,8 @@ void DescribeWebRulesResult::parse(const std::string &payload)
 			webRulesObject.sslCiphers = valueWebRulesWebRule["SslCiphers"].asString();
 		if(!valueWebRulesWebRule["Http2Enable"].isNull())
 			webRulesObject.http2Enable = valueWebRulesWebRule["Http2Enable"].asString() == "true";
+		if(!valueWebRulesWebRule["OcspEnabled"].isNull())
+			webRulesObject.ocspEnabled = valueWebRulesWebRule["OcspEnabled"].asString() == "true";
 		if(!valueWebRulesWebRule["Http2HttpsEnable"].isNull())
 			webRulesObject.http2HttpsEnable = valueWebRulesWebRule["Http2HttpsEnable"].asString() == "true";
 		if(!valueWebRulesWebRule["Https2HttpEnable"].isNull())

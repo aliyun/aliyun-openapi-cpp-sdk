@@ -31,6 +31,12 @@ set(ddoscoo_public_header_model
 	include/alibabacloud/ddoscoo/model/AttachSceneDefenseObjectResult.h
 	include/alibabacloud/ddoscoo/model/ConfigL7RsPolicyRequest.h
 	include/alibabacloud/ddoscoo/model/ConfigL7RsPolicyResult.h
+	include/alibabacloud/ddoscoo/model/ConfigLayer4RemarkRequest.h
+	include/alibabacloud/ddoscoo/model/ConfigLayer4RemarkResult.h
+	include/alibabacloud/ddoscoo/model/ConfigLayer4RuleBakModeRequest.h
+	include/alibabacloud/ddoscoo/model/ConfigLayer4RuleBakModeResult.h
+	include/alibabacloud/ddoscoo/model/ConfigLayer4RulePolicyRequest.h
+	include/alibabacloud/ddoscoo/model/ConfigLayer4RulePolicyResult.h
 	include/alibabacloud/ddoscoo/model/ConfigNetworkRegionBlockRequest.h
 	include/alibabacloud/ddoscoo/model/ConfigNetworkRegionBlockResult.h
 	include/alibabacloud/ddoscoo/model/ConfigNetworkRulesRequest.h
@@ -169,6 +175,8 @@ set(ddoscoo_public_header_model
 	include/alibabacloud/ddoscoo/model/DescribeInstancesResult.h
 	include/alibabacloud/ddoscoo/model/DescribeL7RsPolicyRequest.h
 	include/alibabacloud/ddoscoo/model/DescribeL7RsPolicyResult.h
+	include/alibabacloud/ddoscoo/model/DescribeLayer4RulePolicyRequest.h
+	include/alibabacloud/ddoscoo/model/DescribeLayer4RulePolicyResult.h
 	include/alibabacloud/ddoscoo/model/DescribeLogStoreExistStatusRequest.h
 	include/alibabacloud/ddoscoo/model/DescribeLogStoreExistStatusResult.h
 	include/alibabacloud/ddoscoo/model/DescribeNetworkRegionBlockRequest.h
@@ -213,6 +221,8 @@ set(ddoscoo_public_header_model
 	include/alibabacloud/ddoscoo/model/DescribeSlsOpenStatusResult.h
 	include/alibabacloud/ddoscoo/model/DescribeStsGrantStatusRequest.h
 	include/alibabacloud/ddoscoo/model/DescribeStsGrantStatusResult.h
+	include/alibabacloud/ddoscoo/model/DescribeSystemLogRequest.h
+	include/alibabacloud/ddoscoo/model/DescribeSystemLogResult.h
 	include/alibabacloud/ddoscoo/model/DescribeTagKeysRequest.h
 	include/alibabacloud/ddoscoo/model/DescribeTagKeysResult.h
 	include/alibabacloud/ddoscoo/model/DescribeTagResourcesRequest.h
@@ -344,6 +354,12 @@ set(ddoscoo_src
 	src/model/AttachSceneDefenseObjectResult.cc
 	src/model/ConfigL7RsPolicyRequest.cc
 	src/model/ConfigL7RsPolicyResult.cc
+	src/model/ConfigLayer4RemarkRequest.cc
+	src/model/ConfigLayer4RemarkResult.cc
+	src/model/ConfigLayer4RuleBakModeRequest.cc
+	src/model/ConfigLayer4RuleBakModeResult.cc
+	src/model/ConfigLayer4RulePolicyRequest.cc
+	src/model/ConfigLayer4RulePolicyResult.cc
 	src/model/ConfigNetworkRegionBlockRequest.cc
 	src/model/ConfigNetworkRegionBlockResult.cc
 	src/model/ConfigNetworkRulesRequest.cc
@@ -482,6 +498,8 @@ set(ddoscoo_src
 	src/model/DescribeInstancesResult.cc
 	src/model/DescribeL7RsPolicyRequest.cc
 	src/model/DescribeL7RsPolicyResult.cc
+	src/model/DescribeLayer4RulePolicyRequest.cc
+	src/model/DescribeLayer4RulePolicyResult.cc
 	src/model/DescribeLogStoreExistStatusRequest.cc
 	src/model/DescribeLogStoreExistStatusResult.cc
 	src/model/DescribeNetworkRegionBlockRequest.cc
@@ -526,6 +544,8 @@ set(ddoscoo_src
 	src/model/DescribeSlsOpenStatusResult.cc
 	src/model/DescribeStsGrantStatusRequest.cc
 	src/model/DescribeStsGrantStatusResult.cc
+	src/model/DescribeSystemLogRequest.cc
+	src/model/DescribeSystemLogResult.cc
 	src/model/DescribeTagKeysRequest.cc
 	src/model/DescribeTagKeysResult.cc
 	src/model/DescribeTagResourcesRequest.cc

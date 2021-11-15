@@ -38,17 +38,6 @@ void ModifyInstanceRemarkRequest::setRemark(const std::string& remark)
 	setParameter("Remark", remark);
 }
 
-std::string ModifyInstanceRemarkRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void ModifyInstanceRemarkRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
-}
-
 std::string ModifyInstanceRemarkRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -58,5 +47,16 @@ void ModifyInstanceRemarkRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
 	setParameter("SourceIp", sourceIp);
+}
+
+std::string ModifyInstanceRemarkRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void ModifyInstanceRemarkRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setParameter("InstanceId", instanceId);
 }
 

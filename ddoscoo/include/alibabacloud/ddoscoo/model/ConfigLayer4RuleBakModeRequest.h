@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DDOSCOO_MODEL_DESCRIBEDDOSALLEVENTLISTREQUEST_H_
-#define ALIBABACLOUD_DDOSCOO_MODEL_DESCRIBEDDOSALLEVENTLISTREQUEST_H_
+#ifndef ALIBABACLOUD_DDOSCOO_MODEL_CONFIGLAYER4RULEBAKMODEREQUEST_H_
+#define ALIBABACLOUD_DDOSCOO_MODEL_CONFIGLAYER4RULEBAKMODEREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,36 +28,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DDOSCOO_EXPORT DescribeDDosAllEventListRequest : public RpcServiceRequest
+			class ALIBABACLOUD_DDOSCOO_EXPORT ConfigLayer4RuleBakModeRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeDDosAllEventListRequest();
-				~DescribeDDosAllEventListRequest();
+				ConfigLayer4RuleBakModeRequest();
+				~ConfigLayer4RuleBakModeRequest();
 
-				long getStartTime()const;
-				void setStartTime(long startTime);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
+				std::string getBakMode()const;
+				void setBakMode(const std::string& bakMode);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
-				long getEndTime()const;
-				void setEndTime(long endTime);
-				std::string getEventType()const;
-				void setEventType(const std::string& eventType);
+				std::string getListeners()const;
+				void setListeners(const std::string& listeners);
 
             private:
-				long startTime_;
-				int pageNumber_;
+				std::string bakMode_;
 				std::string sourceIp_;
-				int pageSize_;
-				long endTime_;
-				std::string eventType_;
+				std::string listeners_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DDOSCOO_MODEL_DESCRIBEDDOSALLEVENTLISTREQUEST_H_
+#endif // !ALIBABACLOUD_DDOSCOO_MODEL_CONFIGLAYER4RULEBAKMODEREQUEST_H_

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DDOSCOO_MODEL_DESCRIBEDDOSALLEVENTLISTRESULT_H_
-#define ALIBABACLOUD_DDOSCOO_MODEL_DESCRIBEDDOSALLEVENTLISTRESULT_H_
+#ifndef ALIBABACLOUD_DDOSCOO_MODEL_DESCRIBESYSTEMLOGRESULT_H_
+#define ALIBABACLOUD_DDOSCOO_MODEL_DESCRIBESYSTEMLOGRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,37 +29,36 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DDOSCOO_EXPORT DescribeDDosAllEventListResult : public ServiceResult
+			class ALIBABACLOUD_DDOSCOO_EXPORT DescribeSystemLogResult : public ServiceResult
 			{
 			public:
-				struct AttackEvent
+				struct SystemLogItem
 				{
-					long pps;
-					std::string area;
-					long endTime;
-					std::string eventType;
-					std::string port;
-					std::string ip;
-					long startTime;
-					std::string region;
-					long mbps;
+					int entityType;
+					int status;
+					long gmtCreate;
+					std::string opAccount;
+					long gmtModified;
+					std::string opDesc;
+					int opAction;
+					std::string entityObject;
 				};
 
 
-				DescribeDDosAllEventListResult();
-				explicit DescribeDDosAllEventListResult(const std::string &payload);
-				~DescribeDDosAllEventListResult();
+				DescribeSystemLogResult();
+				explicit DescribeSystemLogResult(const std::string &payload);
+				~DescribeSystemLogResult();
 				long getTotal()const;
-				std::vector<AttackEvent> getAttackEvents()const;
+				std::vector<SystemLogItem> getSystemLog()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				long total_;
-				std::vector<AttackEvent> attackEvents_;
+				std::vector<SystemLogItem> systemLog_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DDOSCOO_MODEL_DESCRIBEDDOSALLEVENTLISTRESULT_H_
+#endif // !ALIBABACLOUD_DDOSCOO_MODEL_DESCRIBESYSTEMLOGRESULT_H_

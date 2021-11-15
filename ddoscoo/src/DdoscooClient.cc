@@ -231,6 +231,114 @@ DdoscooClient::ConfigL7RsPolicyOutcomeCallable DdoscooClient::configL7RsPolicyCa
 	return task->get_future();
 }
 
+DdoscooClient::ConfigLayer4RemarkOutcome DdoscooClient::configLayer4Remark(const ConfigLayer4RemarkRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ConfigLayer4RemarkOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ConfigLayer4RemarkOutcome(ConfigLayer4RemarkResult(outcome.result()));
+	else
+		return ConfigLayer4RemarkOutcome(outcome.error());
+}
+
+void DdoscooClient::configLayer4RemarkAsync(const ConfigLayer4RemarkRequest& request, const ConfigLayer4RemarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, configLayer4Remark(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DdoscooClient::ConfigLayer4RemarkOutcomeCallable DdoscooClient::configLayer4RemarkCallable(const ConfigLayer4RemarkRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ConfigLayer4RemarkOutcome()>>(
+			[this, request]()
+			{
+			return this->configLayer4Remark(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DdoscooClient::ConfigLayer4RuleBakModeOutcome DdoscooClient::configLayer4RuleBakMode(const ConfigLayer4RuleBakModeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ConfigLayer4RuleBakModeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ConfigLayer4RuleBakModeOutcome(ConfigLayer4RuleBakModeResult(outcome.result()));
+	else
+		return ConfigLayer4RuleBakModeOutcome(outcome.error());
+}
+
+void DdoscooClient::configLayer4RuleBakModeAsync(const ConfigLayer4RuleBakModeRequest& request, const ConfigLayer4RuleBakModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, configLayer4RuleBakMode(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DdoscooClient::ConfigLayer4RuleBakModeOutcomeCallable DdoscooClient::configLayer4RuleBakModeCallable(const ConfigLayer4RuleBakModeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ConfigLayer4RuleBakModeOutcome()>>(
+			[this, request]()
+			{
+			return this->configLayer4RuleBakMode(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DdoscooClient::ConfigLayer4RulePolicyOutcome DdoscooClient::configLayer4RulePolicy(const ConfigLayer4RulePolicyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ConfigLayer4RulePolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ConfigLayer4RulePolicyOutcome(ConfigLayer4RulePolicyResult(outcome.result()));
+	else
+		return ConfigLayer4RulePolicyOutcome(outcome.error());
+}
+
+void DdoscooClient::configLayer4RulePolicyAsync(const ConfigLayer4RulePolicyRequest& request, const ConfigLayer4RulePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, configLayer4RulePolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DdoscooClient::ConfigLayer4RulePolicyOutcomeCallable DdoscooClient::configLayer4RulePolicyCallable(const ConfigLayer4RulePolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ConfigLayer4RulePolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->configLayer4RulePolicy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DdoscooClient::ConfigNetworkRegionBlockOutcome DdoscooClient::configNetworkRegionBlock(const ConfigNetworkRegionBlockRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2715,6 +2823,42 @@ DdoscooClient::DescribeL7RsPolicyOutcomeCallable DdoscooClient::describeL7RsPoli
 	return task->get_future();
 }
 
+DdoscooClient::DescribeLayer4RulePolicyOutcome DdoscooClient::describeLayer4RulePolicy(const DescribeLayer4RulePolicyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeLayer4RulePolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeLayer4RulePolicyOutcome(DescribeLayer4RulePolicyResult(outcome.result()));
+	else
+		return DescribeLayer4RulePolicyOutcome(outcome.error());
+}
+
+void DdoscooClient::describeLayer4RulePolicyAsync(const DescribeLayer4RulePolicyRequest& request, const DescribeLayer4RulePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeLayer4RulePolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DdoscooClient::DescribeLayer4RulePolicyOutcomeCallable DdoscooClient::describeLayer4RulePolicyCallable(const DescribeLayer4RulePolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeLayer4RulePolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->describeLayer4RulePolicy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DdoscooClient::DescribeLogStoreExistStatusOutcome DdoscooClient::describeLogStoreExistStatus(const DescribeLogStoreExistStatusRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3501,6 +3645,42 @@ DdoscooClient::DescribeStsGrantStatusOutcomeCallable DdoscooClient::describeStsG
 			[this, request]()
 			{
 			return this->describeStsGrantStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DdoscooClient::DescribeSystemLogOutcome DdoscooClient::describeSystemLog(const DescribeSystemLogRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeSystemLogOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeSystemLogOutcome(DescribeSystemLogResult(outcome.result()));
+	else
+		return DescribeSystemLogOutcome(outcome.error());
+}
+
+void DdoscooClient::describeSystemLogAsync(const DescribeSystemLogRequest& request, const DescribeSystemLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeSystemLog(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DdoscooClient::DescribeSystemLogOutcomeCallable DdoscooClient::describeSystemLogCallable(const DescribeSystemLogRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeSystemLogOutcome()>>(
+			[this, request]()
+			{
+			return this->describeSystemLog(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

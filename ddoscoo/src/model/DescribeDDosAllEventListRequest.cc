@@ -27,17 +27,6 @@ DescribeDDosAllEventListRequest::DescribeDDosAllEventListRequest() :
 DescribeDDosAllEventListRequest::~DescribeDDosAllEventListRequest()
 {}
 
-long DescribeDDosAllEventListRequest::getEndTime()const
-{
-	return endTime_;
-}
-
-void DescribeDDosAllEventListRequest::setEndTime(long endTime)
-{
-	endTime_ = endTime;
-	setParameter("EndTime", std::to_string(endTime));
-}
-
 long DescribeDDosAllEventListRequest::getStartTime()const
 {
 	return startTime_;
@@ -80,6 +69,17 @@ void DescribeDDosAllEventListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
 	setParameter("PageSize", std::to_string(pageSize));
+}
+
+long DescribeDDosAllEventListRequest::getEndTime()const
+{
+	return endTime_;
+}
+
+void DescribeDDosAllEventListRequest::setEndTime(long endTime)
+{
+	endTime_ = endTime;
+	setParameter("EndTime", std::to_string(endTime));
 }
 
 std::string DescribeDDosAllEventListRequest::getEventType()const

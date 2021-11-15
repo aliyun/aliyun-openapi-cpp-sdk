@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DDOSCOO_MODEL_DESCRIBEDDOSALLEVENTLISTRESULT_H_
-#define ALIBABACLOUD_DDOSCOO_MODEL_DESCRIBEDDOSALLEVENTLISTRESULT_H_
+#ifndef ALIBABACLOUD_DDOSCOO_MODEL_CONFIGLAYER4RULEPOLICYRESULT_H_
+#define ALIBABACLOUD_DDOSCOO_MODEL_CONFIGLAYER4RULEPOLICYRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,37 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DDOSCOO_EXPORT DescribeDDosAllEventListResult : public ServiceResult
+			class ALIBABACLOUD_DDOSCOO_EXPORT ConfigLayer4RulePolicyResult : public ServiceResult
 			{
 			public:
-				struct AttackEvent
-				{
-					long pps;
-					std::string area;
-					long endTime;
-					std::string eventType;
-					std::string port;
-					std::string ip;
-					long startTime;
-					std::string region;
-					long mbps;
-				};
 
 
-				DescribeDDosAllEventListResult();
-				explicit DescribeDDosAllEventListResult(const std::string &payload);
-				~DescribeDDosAllEventListResult();
-				long getTotal()const;
-				std::vector<AttackEvent> getAttackEvents()const;
+				ConfigLayer4RulePolicyResult();
+				explicit ConfigLayer4RulePolicyResult(const std::string &payload);
+				~ConfigLayer4RulePolicyResult();
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				long total_;
-				std::vector<AttackEvent> attackEvents_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DDOSCOO_MODEL_DESCRIBEDDOSALLEVENTLISTRESULT_H_
+#endif // !ALIBABACLOUD_DDOSCOO_MODEL_CONFIGLAYER4RULEPOLICYRESULT_H_
