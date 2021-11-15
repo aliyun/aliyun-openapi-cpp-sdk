@@ -40,26 +40,26 @@ void GetTitleDiagnoseResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["ContainCoreClasses"].isNull())
-		data_.containCoreClasses = dataNode["ContainCoreClasses"].asString();
-	if(!dataNode["OverLengthLimit"].isNull())
-		data_.overLengthLimit = dataNode["OverLengthLimit"].asString();
-	if(!dataNode["WordSpelledCorrectError"].isNull())
-		data_.wordSpelledCorrectError = dataNode["WordSpelledCorrectError"].asString();
-	if(!dataNode["AllUppercaseWords"].isNull())
-		data_.allUppercaseWords = dataNode["AllUppercaseWords"].asString();
-	if(!dataNode["NoFirstUppercaseList"].isNull())
-		data_.noFirstUppercaseList = dataNode["NoFirstUppercaseList"].asString();
 	if(!dataNode["DuplicateWords"].isNull())
 		data_.duplicateWords = dataNode["DuplicateWords"].asString();
-	if(!dataNode["DisableWords"].isNull())
-		data_.disableWords = dataNode["DisableWords"].asString();
+	if(!dataNode["ContainCoreClasses"].isNull())
+		data_.containCoreClasses = dataNode["ContainCoreClasses"].asString();
 	if(!dataNode["WordCount"].isNull())
 		data_.wordCount = dataNode["WordCount"].asString();
-	if(!dataNode["TotalScore"].isNull())
-		data_.totalScore = dataNode["TotalScore"].asString();
 	if(!dataNode["LanguageQualityScore"].isNull())
 		data_.languageQualityScore = dataNode["LanguageQualityScore"].asString();
+	if(!dataNode["AllUppercaseWords"].isNull())
+		data_.allUppercaseWords = dataNode["AllUppercaseWords"].asString();
+	if(!dataNode["OverLengthLimit"].isNull())
+		data_.overLengthLimit = dataNode["OverLengthLimit"].asString();
+	if(!dataNode["DisableWords"].isNull())
+		data_.disableWords = dataNode["DisableWords"].asString();
+	if(!dataNode["NoFirstUppercaseList"].isNull())
+		data_.noFirstUppercaseList = dataNode["NoFirstUppercaseList"].asString();
+	if(!dataNode["TotalScore"].isNull())
+		data_.totalScore = dataNode["TotalScore"].asString();
+	if(!dataNode["WordSpelledCorrectError"].isNull())
+		data_.wordSpelledCorrectError = dataNode["WordSpelledCorrectError"].asString();
 	if(!value["Code"].isNull())
 		code_ = std::stoi(value["Code"].asString());
 	if(!value["Message"].isNull())

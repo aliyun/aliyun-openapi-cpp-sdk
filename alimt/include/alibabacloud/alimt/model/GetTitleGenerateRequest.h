@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,50 +17,44 @@
 #ifndef ALIBABACLOUD_ALIMT_MODEL_GETTITLEGENERATEREQUEST_H_
 #define ALIBABACLOUD_ALIMT_MODEL_GETTITLEGENERATEREQUEST_H_
 
+#include <alibabacloud/alimt/AlimtExport.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
-#include <alibabacloud/alimt/AlimtExport.h>
+#include <map>
 
-namespace AlibabaCloud
-{
-	namespace Alimt
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_ALIMT_EXPORT GetTitleGenerateRequest : public RpcServiceRequest
-			{
+namespace AlibabaCloud {
+namespace Alimt {
+namespace Model {
+class ALIBABACLOUD_ALIMT_EXPORT GetTitleGenerateRequest : public RpcServiceRequest {
+public:
+	GetTitleGenerateRequest();
+	~GetTitleGenerateRequest();
+	std::string getLanguage() const;
+	void setLanguage(const std::string &language);
+	std::string getTitle() const;
+	void setTitle(const std::string &title);
+	std::string getPlatform() const;
+	void setPlatform(const std::string &platform);
+	std::string getExtra() const;
+	void setExtra(const std::string &extra);
+	std::string getAttributes() const;
+	void setAttributes(const std::string &attributes);
+	std::string getHotWords() const;
+	void setHotWords(const std::string &hotWords);
+	std::string getCategoryId() const;
+	void setCategoryId(const std::string &categoryId);
 
-			public:
-				GetTitleGenerateRequest();
-				~GetTitleGenerateRequest();
-
-				std::string getLanguage()const;
-				void setLanguage(const std::string& language);
-				std::string getTitle()const;
-				void setTitle(const std::string& title);
-				std::string getPlatform()const;
-				void setPlatform(const std::string& platform);
-				std::string getExtra()const;
-				void setExtra(const std::string& extra);
-				std::string getAttributes()const;
-				void setAttributes(const std::string& attributes);
-				std::string getHotWords()const;
-				void setHotWords(const std::string& hotWords);
-				std::string getCategoryId()const;
-				void setCategoryId(const std::string& categoryId);
-
-            private:
-				std::string language_;
-				std::string title_;
-				std::string platform_;
-				std::string extra_;
-				std::string attributes_;
-				std::string hotWords_;
-				std::string categoryId_;
-
-			};
-		}
-	}
-}
+private:
+	std::string language_;
+	std::string title_;
+	std::string platform_;
+	std::string extra_;
+	std::string attributes_;
+	std::string hotWords_;
+	std::string categoryId_;
+};
+} // namespace Model
+} // namespace Alimt
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_ALIMT_MODEL_GETTITLEGENERATEREQUEST_H_

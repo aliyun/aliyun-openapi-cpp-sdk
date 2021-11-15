@@ -44,14 +44,14 @@ void TranslateCertificateResult::parse(const std::string &payload)
 	for (auto dataNodeTranslatedValuesCertificateTranslateItemDTO : allTranslatedValuesNode)
 	{
 		Data::CertificateTranslateItemDTO certificateTranslateItemDTOObject;
+		if(!dataNodeTranslatedValuesCertificateTranslateItemDTO["KeyTranslation"].isNull())
+			certificateTranslateItemDTOObject.keyTranslation = dataNodeTranslatedValuesCertificateTranslateItemDTO["KeyTranslation"].asString();
 		if(!dataNodeTranslatedValuesCertificateTranslateItemDTO["Key"].isNull())
 			certificateTranslateItemDTOObject.key = dataNodeTranslatedValuesCertificateTranslateItemDTO["Key"].asString();
 		if(!dataNodeTranslatedValuesCertificateTranslateItemDTO["Value"].isNull())
 			certificateTranslateItemDTOObject.value = dataNodeTranslatedValuesCertificateTranslateItemDTO["Value"].asString();
 		if(!dataNodeTranslatedValuesCertificateTranslateItemDTO["ValueTranslation"].isNull())
 			certificateTranslateItemDTOObject.valueTranslation = dataNodeTranslatedValuesCertificateTranslateItemDTO["ValueTranslation"].asString();
-		if(!dataNodeTranslatedValuesCertificateTranslateItemDTO["KeyTranslation"].isNull())
-			certificateTranslateItemDTOObject.keyTranslation = dataNodeTranslatedValuesCertificateTranslateItemDTO["KeyTranslation"].asString();
 		data_.translatedValues.push_back(certificateTranslateItemDTOObject);
 	}
 

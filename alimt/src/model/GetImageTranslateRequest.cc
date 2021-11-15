@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,56 +18,46 @@
 
 using AlibabaCloud::Alimt::Model::GetImageTranslateRequest;
 
-GetImageTranslateRequest::GetImageTranslateRequest() :
-	RpcServiceRequest("alimt", "2018-10-12", "GetImageTranslate")
-{
-	setMethod(HttpRequest::Method::Post);
+GetImageTranslateRequest::GetImageTranslateRequest()
+    : RpcServiceRequest("alimt", "2018-10-12", "GetImageTranslate") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-GetImageTranslateRequest::~GetImageTranslateRequest()
-{}
+GetImageTranslateRequest::~GetImageTranslateRequest() {}
 
-std::string GetImageTranslateRequest::getSourceLanguage()const
-{
-	return sourceLanguage_;
+std::string GetImageTranslateRequest::getSourceLanguage() const {
+  return sourceLanguage_;
 }
 
-void GetImageTranslateRequest::setSourceLanguage(const std::string& sourceLanguage)
-{
-	sourceLanguage_ = sourceLanguage;
-	setBodyParameter("SourceLanguage", sourceLanguage);
+void GetImageTranslateRequest::setSourceLanguage(const std::string &sourceLanguage) {
+  sourceLanguage_ = sourceLanguage;
+  setBodyParameter(std::string("SourceLanguage"), sourceLanguage);
 }
 
-std::string GetImageTranslateRequest::getUrl()const
-{
-	return url_;
+std::string GetImageTranslateRequest::getUrl() const {
+  return url_;
 }
 
-void GetImageTranslateRequest::setUrl(const std::string& url)
-{
-	url_ = url;
-	setBodyParameter("Url", url);
+void GetImageTranslateRequest::setUrl(const std::string &url) {
+  url_ = url;
+  setBodyParameter(std::string("Url"), url);
 }
 
-std::string GetImageTranslateRequest::getExtra()const
-{
-	return extra_;
+std::string GetImageTranslateRequest::getExtra() const {
+  return extra_;
 }
 
-void GetImageTranslateRequest::setExtra(const std::string& extra)
-{
-	extra_ = extra;
-	setBodyParameter("Extra", extra);
+void GetImageTranslateRequest::setExtra(const std::string &extra) {
+  extra_ = extra;
+  setBodyParameter(std::string("Extra"), extra);
 }
 
-std::string GetImageTranslateRequest::getTargetLanguage()const
-{
-	return targetLanguage_;
+std::string GetImageTranslateRequest::getTargetLanguage() const {
+  return targetLanguage_;
 }
 
-void GetImageTranslateRequest::setTargetLanguage(const std::string& targetLanguage)
-{
-	targetLanguage_ = targetLanguage;
-	setBodyParameter("TargetLanguage", targetLanguage);
+void GetImageTranslateRequest::setTargetLanguage(const std::string &targetLanguage) {
+  targetLanguage_ = targetLanguage;
+  setBodyParameter(std::string("TargetLanguage"), targetLanguage);
 }
 

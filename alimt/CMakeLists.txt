@@ -43,6 +43,10 @@ set(alimt_public_header_model
 	include/alibabacloud/alimt/model/GetTitleGenerateResult.h
 	include/alibabacloud/alimt/model/GetTitleIntelligenceRequest.h
 	include/alibabacloud/alimt/model/GetTitleIntelligenceResult.h
+	include/alibabacloud/alimt/model/GetTranslateReportRequest.h
+	include/alibabacloud/alimt/model/GetTranslateReportResult.h
+	include/alibabacloud/alimt/model/GetUserRequest.h
+	include/alibabacloud/alimt/model/GetUserResult.h
 	include/alibabacloud/alimt/model/OpenAlimtServiceRequest.h
 	include/alibabacloud/alimt/model/OpenAlimtServiceResult.h
 	include/alibabacloud/alimt/model/TranslateRequest.h
@@ -52,7 +56,9 @@ set(alimt_public_header_model
 	include/alibabacloud/alimt/model/TranslateECommerceRequest.h
 	include/alibabacloud/alimt/model/TranslateECommerceResult.h
 	include/alibabacloud/alimt/model/TranslateGeneralRequest.h
-	include/alibabacloud/alimt/model/TranslateGeneralResult.h )
+	include/alibabacloud/alimt/model/TranslateGeneralResult.h
+	include/alibabacloud/alimt/model/TranslateImageRequest.h
+	include/alibabacloud/alimt/model/TranslateImageResult.h )
 
 set(alimt_src 
 	src/AlimtClient.cc
@@ -78,6 +84,10 @@ set(alimt_src
 	src/model/GetTitleGenerateResult.cc
 	src/model/GetTitleIntelligenceRequest.cc
 	src/model/GetTitleIntelligenceResult.cc
+	src/model/GetTranslateReportRequest.cc
+	src/model/GetTranslateReportResult.cc
+	src/model/GetUserRequest.cc
+	src/model/GetUserResult.cc
 	src/model/OpenAlimtServiceRequest.cc
 	src/model/OpenAlimtServiceResult.cc
 	src/model/TranslateRequest.cc
@@ -87,7 +97,9 @@ set(alimt_src
 	src/model/TranslateECommerceRequest.cc
 	src/model/TranslateECommerceResult.cc
 	src/model/TranslateGeneralRequest.cc
-	src/model/TranslateGeneralResult.cc )
+	src/model/TranslateGeneralResult.cc
+	src/model/TranslateImageRequest.cc
+	src/model/TranslateImageResult.cc )
 
 add_library(alimt ${LIB_TYPE}
 	${alimt_public_header}

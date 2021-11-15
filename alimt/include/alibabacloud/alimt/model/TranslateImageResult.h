@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ALIMT_MODEL_GETTITLEDIAGNOSERESULT_H_
-#define ALIBABACLOUD_ALIMT_MODEL_GETTITLEDIAGNOSERESULT_H_
+#ifndef ALIBABACLOUD_ALIMT_MODEL_TRANSLATEIMAGERESULT_H_
+#define ALIBABACLOUD_ALIMT_MODEL_TRANSLATEIMAGERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,27 +29,20 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ALIMT_EXPORT GetTitleDiagnoseResult : public ServiceResult
+			class ALIBABACLOUD_ALIMT_EXPORT TranslateImageResult : public ServiceResult
 			{
 			public:
 				struct Data
 				{
-					std::string noFirstUppercaseList;
-					std::string containCoreClasses;
-					std::string disableWords;
-					std::string wordCount;
-					std::string overLengthLimit;
-					std::string totalScore;
-					std::string duplicateWords;
-					std::string languageQualityScore;
-					std::string allUppercaseWords;
-					std::string wordSpelledCorrectError;
+					std::string inPaintingUrl;
+					std::string templateJson;
+					std::string finalImageUrl;
 				};
 
 
-				GetTitleDiagnoseResult();
-				explicit GetTitleDiagnoseResult(const std::string &payload);
-				~GetTitleDiagnoseResult();
+				TranslateImageResult();
+				explicit TranslateImageResult(const std::string &payload);
+				~TranslateImageResult();
 				std::string getMessage()const;
 				Data getData()const;
 				int getCode()const;
@@ -65,4 +58,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ALIMT_MODEL_GETTITLEDIAGNOSERESULT_H_
+#endif // !ALIBABACLOUD_ALIMT_MODEL_TRANSLATEIMAGERESULT_H_

@@ -14,23 +14,14 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/alimt/model/GetDetectLanguageRequest.h>
+#include <alibabacloud/alimt/model/GetUserRequest.h>
 
-using AlibabaCloud::Alimt::Model::GetDetectLanguageRequest;
+using AlibabaCloud::Alimt::Model::GetUserRequest;
 
-GetDetectLanguageRequest::GetDetectLanguageRequest()
-    : RpcServiceRequest("alimt", "2018-10-12", "GetDetectLanguage") {
+GetUserRequest::GetUserRequest()
+    : RpcServiceRequest("alimt", "2018-10-12", "GetUser") {
   setMethod(HttpRequest::Method::Post);
 }
 
-GetDetectLanguageRequest::~GetDetectLanguageRequest() {}
-
-std::string GetDetectLanguageRequest::getSourceText() const {
-  return sourceText_;
-}
-
-void GetDetectLanguageRequest::setSourceText(const std::string &sourceText) {
-  sourceText_ = sourceText;
-  setBodyParameter(std::string("SourceText"), sourceText);
-}
+GetUserRequest::~GetUserRequest() {}
 

@@ -14,45 +14,52 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/alimt/model/CreateDocTranslateTaskResult.h>
+#include <alibabacloud/alimt/model/GetUserResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Alimt;
 using namespace AlibabaCloud::Alimt::Model;
 
-CreateDocTranslateTaskResult::CreateDocTranslateTaskResult() :
+GetUserResult::GetUserResult() :
 	ServiceResult()
 {}
 
-CreateDocTranslateTaskResult::CreateDocTranslateTaskResult(const std::string &payload) :
+GetUserResult::GetUserResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-CreateDocTranslateTaskResult::~CreateDocTranslateTaskResult()
+GetUserResult::~GetUserResult()
 {}
 
-void CreateDocTranslateTaskResult::parse(const std::string &payload)
+void GetUserResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Status"].isNull())
-		status_ = value["Status"].asString();
-	if(!value["TaskId"].isNull())
-		taskId_ = value["TaskId"].asString();
+	if(!value["Code"].isNull())
+		code_ = std::stoi(value["Code"].asString());
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["Data"].isNull())
+		data_ = value["Data"].asString();
 
 }
 
-std::string CreateDocTranslateTaskResult::getStatus()const
+std::string GetUserResult::getMessage()const
 {
-	return status_;
+	return message_;
 }
 
-std::string CreateDocTranslateTaskResult::getTaskId()const
+std::string GetUserResult::getData()const
 {
-	return taskId_;
+	return data_;
+}
+
+int GetUserResult::getCode()const
+{
+	return code_;
 }
 

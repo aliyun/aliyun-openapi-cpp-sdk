@@ -39,18 +39,18 @@ void GetDocTranslateTaskResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["TaskId"].isNull())
-		taskId_ = value["TaskId"].asString();
 	if(!value["Status"].isNull())
 		status_ = value["Status"].asString();
 	if(!value["TranslateFileUrl"].isNull())
 		translateFileUrl_ = value["TranslateFileUrl"].asString();
 	if(!value["TranslateErrorCode"].isNull())
 		translateErrorCode_ = value["TranslateErrorCode"].asString();
-	if(!value["TranslateErrorMessage"].isNull())
-		translateErrorMessage_ = value["TranslateErrorMessage"].asString();
 	if(!value["PageCount"].isNull())
 		pageCount_ = std::stoi(value["PageCount"].asString());
+	if(!value["TaskId"].isNull())
+		taskId_ = value["TaskId"].asString();
+	if(!value["TranslateErrorMessage"].isNull())
+		translateErrorMessage_ = value["TranslateErrorMessage"].asString();
 
 }
 

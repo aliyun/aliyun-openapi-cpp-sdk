@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ALIMT_MODEL_GETBATCHTRANSLATEREQUEST_H_
-#define ALIBABACLOUD_ALIMT_MODEL_GETBATCHTRANSLATEREQUEST_H_
+#ifndef ALIBABACLOUD_ALIMT_MODEL_TRANSLATEIMAGEREQUEST_H_
+#define ALIBABACLOUD_ALIMT_MODEL_TRANSLATEIMAGEREQUEST_H_
 
 #include <alibabacloud/alimt/AlimtExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,32 +26,32 @@
 namespace AlibabaCloud {
 namespace Alimt {
 namespace Model {
-class ALIBABACLOUD_ALIMT_EXPORT GetBatchTranslateRequest : public RpcServiceRequest {
+class ALIBABACLOUD_ALIMT_EXPORT TranslateImageRequest : public RpcServiceRequest {
 public:
-	GetBatchTranslateRequest();
-	~GetBatchTranslateRequest();
+	TranslateImageRequest();
+	~TranslateImageRequest();
+	std::string getExt() const;
+	void setExt(const std::string &ext);
 	std::string getSourceLanguage() const;
 	void setSourceLanguage(const std::string &sourceLanguage);
-	std::string getSourceText() const;
-	void setSourceText(const std::string &sourceText);
-	std::string getFormatType() const;
-	void setFormatType(const std::string &formatType);
-	std::string getApiType() const;
-	void setApiType(const std::string &apiType);
-	std::string getScene() const;
-	void setScene(const std::string &scene);
+	std::string getField() const;
+	void setField(const std::string &field);
+	std::string getImageUrl() const;
+	void setImageUrl(const std::string &imageUrl);
 	std::string getTargetLanguage() const;
 	void setTargetLanguage(const std::string &targetLanguage);
+	std::string getImageBase64() const;
+	void setImageBase64(const std::string &imageBase64);
 
 private:
+	std::string ext_;
 	std::string sourceLanguage_;
-	std::string sourceText_;
-	std::string formatType_;
-	std::string apiType_;
-	std::string scene_;
+	std::string field_;
+	std::string imageUrl_;
 	std::string targetLanguage_;
+	std::string imageBase64_;
 };
 } // namespace Model
 } // namespace Alimt
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_ALIMT_MODEL_GETBATCHTRANSLATEREQUEST_H_
+#endif // !ALIBABACLOUD_ALIMT_MODEL_TRANSLATEIMAGEREQUEST_H_

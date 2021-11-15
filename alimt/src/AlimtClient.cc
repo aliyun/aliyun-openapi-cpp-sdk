@@ -31,21 +31,21 @@ AlimtClient::AlimtClient(const Credentials &credentials, const ClientConfigurati
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "alimt");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 AlimtClient::AlimtClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "alimt");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 AlimtClient::AlimtClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "alimt");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 AlimtClient::~AlimtClient()
@@ -447,6 +447,78 @@ AlimtClient::GetTitleIntelligenceOutcomeCallable AlimtClient::getTitleIntelligen
 	return task->get_future();
 }
 
+AlimtClient::GetTranslateReportOutcome AlimtClient::getTranslateReport(const GetTranslateReportRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetTranslateReportOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetTranslateReportOutcome(GetTranslateReportResult(outcome.result()));
+	else
+		return GetTranslateReportOutcome(outcome.error());
+}
+
+void AlimtClient::getTranslateReportAsync(const GetTranslateReportRequest& request, const GetTranslateReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getTranslateReport(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlimtClient::GetTranslateReportOutcomeCallable AlimtClient::getTranslateReportCallable(const GetTranslateReportRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetTranslateReportOutcome()>>(
+			[this, request]()
+			{
+			return this->getTranslateReport(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlimtClient::GetUserOutcome AlimtClient::getUser(const GetUserRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetUserOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetUserOutcome(GetUserResult(outcome.result()));
+	else
+		return GetUserOutcome(outcome.error());
+}
+
+void AlimtClient::getUserAsync(const GetUserRequest& request, const GetUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getUser(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlimtClient::GetUserOutcomeCallable AlimtClient::getUserCallable(const GetUserRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetUserOutcome()>>(
+			[this, request]()
+			{
+			return this->getUser(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AlimtClient::OpenAlimtServiceOutcome AlimtClient::openAlimtService(const OpenAlimtServiceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -621,6 +693,42 @@ AlimtClient::TranslateGeneralOutcomeCallable AlimtClient::translateGeneralCallab
 			[this, request]()
 			{
 			return this->translateGeneral(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlimtClient::TranslateImageOutcome AlimtClient::translateImage(const TranslateImageRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return TranslateImageOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return TranslateImageOutcome(TranslateImageResult(outcome.result()));
+	else
+		return TranslateImageOutcome(outcome.error());
+}
+
+void AlimtClient::translateImageAsync(const TranslateImageRequest& request, const TranslateImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, translateImage(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlimtClient::TranslateImageOutcomeCallable AlimtClient::translateImageCallable(const TranslateImageRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<TranslateImageOutcome()>>(
+			[this, request]()
+			{
+			return this->translateImage(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

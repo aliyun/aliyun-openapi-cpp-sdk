@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ALIMT_MODEL_GETDETECTLANGUAGEREQUEST_H_
-#define ALIBABACLOUD_ALIMT_MODEL_GETDETECTLANGUAGEREQUEST_H_
+#ifndef ALIBABACLOUD_ALIMT_MODEL_GETTRANSLATEREPORTREQUEST_H_
+#define ALIBABACLOUD_ALIMT_MODEL_GETTRANSLATEREPORTREQUEST_H_
 
 #include <alibabacloud/alimt/AlimtExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,17 +26,26 @@
 namespace AlibabaCloud {
 namespace Alimt {
 namespace Model {
-class ALIBABACLOUD_ALIMT_EXPORT GetDetectLanguageRequest : public RpcServiceRequest {
+class ALIBABACLOUD_ALIMT_EXPORT GetTranslateReportRequest : public RpcServiceRequest {
 public:
-	GetDetectLanguageRequest();
-	~GetDetectLanguageRequest();
-	std::string getSourceText() const;
-	void setSourceText(const std::string &sourceText);
+	GetTranslateReportRequest();
+	~GetTranslateReportRequest();
+	std::string getEndTime() const;
+	void setEndTime(const std::string &endTime);
+	std::string getBeginTime() const;
+	void setBeginTime(const std::string &beginTime);
+	std::string getApiName() const;
+	void setApiName(const std::string &apiName);
+	std::string getGroup() const;
+	void setGroup(const std::string &group);
 
 private:
-	std::string sourceText_;
+	std::string endTime_;
+	std::string beginTime_;
+	std::string apiName_;
+	std::string group_;
 };
 } // namespace Model
 } // namespace Alimt
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_ALIMT_MODEL_GETDETECTLANGUAGEREQUEST_H_
+#endif // !ALIBABACLOUD_ALIMT_MODEL_GETTRANSLATEREPORTREQUEST_H_

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ALIMT_MODEL_GETTITLEDIAGNOSERESULT_H_
-#define ALIBABACLOUD_ALIMT_MODEL_GETTITLEDIAGNOSERESULT_H_
+#ifndef ALIBABACLOUD_ALIMT_MODEL_GETTRANSLATEREPORTRESULT_H_
+#define ALIBABACLOUD_ALIMT_MODEL_GETTRANSLATEREPORTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,40 +29,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ALIMT_EXPORT GetTitleDiagnoseResult : public ServiceResult
+			class ALIBABACLOUD_ALIMT_EXPORT GetTranslateReportResult : public ServiceResult
 			{
 			public:
-				struct Data
-				{
-					std::string noFirstUppercaseList;
-					std::string containCoreClasses;
-					std::string disableWords;
-					std::string wordCount;
-					std::string overLengthLimit;
-					std::string totalScore;
-					std::string duplicateWords;
-					std::string languageQualityScore;
-					std::string allUppercaseWords;
-					std::string wordSpelledCorrectError;
-				};
 
 
-				GetTitleDiagnoseResult();
-				explicit GetTitleDiagnoseResult(const std::string &payload);
-				~GetTitleDiagnoseResult();
+				GetTranslateReportResult();
+				explicit GetTranslateReportResult(const std::string &payload);
+				~GetTranslateReportResult();
 				std::string getMessage()const;
-				Data getData()const;
+				std::string getData()const;
 				int getCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
-				Data data_;
+				std::string data_;
 				int code_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ALIMT_MODEL_GETTITLEDIAGNOSERESULT_H_
+#endif // !ALIBABACLOUD_ALIMT_MODEL_GETTRANSLATEREPORTRESULT_H_
