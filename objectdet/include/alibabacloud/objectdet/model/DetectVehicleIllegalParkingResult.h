@@ -45,6 +45,7 @@ namespace AlibabaCloud
 						};
 						float score;
 						std::string typeName;
+						long id;
 						std::vector<Element::BoxesItem> boxes;
 					};
 					struct RegionIntersect

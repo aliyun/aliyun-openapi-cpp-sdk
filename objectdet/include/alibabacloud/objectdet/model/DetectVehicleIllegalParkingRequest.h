@@ -35,18 +35,27 @@ namespace AlibabaCloud
 				DetectVehicleIllegalParkingRequest();
 				~DetectVehicleIllegalParkingRequest();
 
+				bool getFormatResultToJson()const;
+				void setFormatResultToJson(bool formatResultToJson);
 				Array getRoadRegions()const;
 				void setRoadRegions(const Array& roadRegions);
 				std::string getOriginRequestId()const;
 				void setOriginRequestId(const std::string& originRequestId);
+				std::string getOssFile()const;
+				void setOssFile(const std::string& ossFile);
+				std::string getRequestProxyBy()const;
+				void setRequestProxyBy(const std::string& requestProxyBy);
 				std::string getStreamArn()const;
 				void setStreamArn(const std::string& streamArn);
 				std::string getImageURL()const;
 				void setImageURL(const std::string& imageURL);
 
             private:
+				bool formatResultToJson_;
 				Array roadRegions_;
 				std::string originRequestId_;
+				std::string ossFile_;
+				std::string requestProxyBy_;
 				std::string streamArn_;
 				std::string imageURL_;
 

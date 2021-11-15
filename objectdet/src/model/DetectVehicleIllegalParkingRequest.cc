@@ -27,6 +27,17 @@ DetectVehicleIllegalParkingRequest::DetectVehicleIllegalParkingRequest() :
 DetectVehicleIllegalParkingRequest::~DetectVehicleIllegalParkingRequest()
 {}
 
+bool DetectVehicleIllegalParkingRequest::getFormatResultToJson()const
+{
+	return formatResultToJson_;
+}
+
+void DetectVehicleIllegalParkingRequest::setFormatResultToJson(bool formatResultToJson)
+{
+	formatResultToJson_ = formatResultToJson;
+	setParameter("FormatResultToJson", formatResultToJson ? "true" : "false");
+}
+
 Array DetectVehicleIllegalParkingRequest::getRoadRegions()const
 {
 	return roadRegions_;
@@ -47,6 +58,28 @@ void DetectVehicleIllegalParkingRequest::setOriginRequestId(const std::string& o
 {
 	originRequestId_ = originRequestId;
 	setParameter("OriginRequestId", originRequestId);
+}
+
+std::string DetectVehicleIllegalParkingRequest::getOssFile()const
+{
+	return ossFile_;
+}
+
+void DetectVehicleIllegalParkingRequest::setOssFile(const std::string& ossFile)
+{
+	ossFile_ = ossFile;
+	setParameter("OssFile", ossFile);
+}
+
+std::string DetectVehicleIllegalParkingRequest::getRequestProxyBy()const
+{
+	return requestProxyBy_;
+}
+
+void DetectVehicleIllegalParkingRequest::setRequestProxyBy(const std::string& requestProxyBy)
+{
+	requestProxyBy_ = requestProxyBy;
+	setParameter("RequestProxyBy", requestProxyBy);
 }
 
 std::string DetectVehicleIllegalParkingRequest::getStreamArn()const

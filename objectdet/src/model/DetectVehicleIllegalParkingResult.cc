@@ -48,6 +48,8 @@ void DetectVehicleIllegalParkingResult::parse(const std::string &payload)
 			elementObject.score = std::stof(dataNodeElementsElement["Score"].asString());
 		if(!dataNodeElementsElement["TypeName"].isNull())
 			elementObject.typeName = dataNodeElementsElement["TypeName"].asString();
+		if(!dataNodeElementsElement["Id"].isNull())
+			elementObject.id = std::stol(dataNodeElementsElement["Id"].asString());
 		auto allBoxesNode = dataNodeElementsElement["Boxes"]["BoxesItem"];
 		for (auto dataNodeElementsElementBoxesBoxesItem : allBoxesNode)
 		{

@@ -27,6 +27,17 @@ DetectVehicleICongestionRequest::DetectVehicleICongestionRequest() :
 DetectVehicleICongestionRequest::~DetectVehicleICongestionRequest()
 {}
 
+bool DetectVehicleICongestionRequest::getFormatResultToJson()const
+{
+	return formatResultToJson_;
+}
+
+void DetectVehicleICongestionRequest::setFormatResultToJson(bool formatResultToJson)
+{
+	formatResultToJson_ = formatResultToJson;
+	setParameter("FormatResultToJson", formatResultToJson ? "true" : "false");
+}
+
 Array DetectVehicleICongestionRequest::getRoadRegions()const
 {
 	return roadRegions_;
@@ -49,6 +60,17 @@ void DetectVehicleICongestionRequest::setOriginRequestId(const std::string& orig
 	setParameter("OriginRequestId", originRequestId);
 }
 
+std::string DetectVehicleICongestionRequest::getOssFile()const
+{
+	return ossFile_;
+}
+
+void DetectVehicleICongestionRequest::setOssFile(const std::string& ossFile)
+{
+	ossFile_ = ossFile;
+	setParameter("OssFile", ossFile);
+}
+
 Array DetectVehicleICongestionRequest::getPreRegionIntersectFeatures()const
 {
 	return preRegionIntersectFeatures_;
@@ -58,6 +80,17 @@ void DetectVehicleICongestionRequest::setPreRegionIntersectFeatures(const Array&
 {
 	preRegionIntersectFeatures_ = preRegionIntersectFeatures;
 	setBodyParameter("PreRegionIntersectFeatures", std::to_string(preRegionIntersectFeatures));
+}
+
+std::string DetectVehicleICongestionRequest::getRequestProxyBy()const
+{
+	return requestProxyBy_;
+}
+
+void DetectVehicleICongestionRequest::setRequestProxyBy(const std::string& requestProxyBy)
+{
+	requestProxyBy_ = requestProxyBy;
+	setParameter("RequestProxyBy", requestProxyBy);
 }
 
 std::string DetectVehicleICongestionRequest::getStreamArn()const
