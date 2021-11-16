@@ -39,13 +39,13 @@ void StartApmResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["requestId"].isNull())
-		requestId_ = value["requestId"].asString();
+	if(!value["Result"].isNull())
+		result_ = value["Result"].asString() == "true";
 
 }
 
-std::string StartApmResult::getRequestId()const
+bool StartApmResult::getResult()const
 {
-	return requestId_;
+	return result_;
 }
 

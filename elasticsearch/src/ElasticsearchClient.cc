@@ -2715,6 +2715,42 @@ ElasticsearchClient::ListAlternativeSnapshotReposOutcomeCallable ElasticsearchCl
 	return task->get_future();
 }
 
+ElasticsearchClient::ListApmOutcome ElasticsearchClient::listApm(const ListApmRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListApmOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListApmOutcome(ListApmResult(outcome.result()));
+	else
+		return ListApmOutcome(outcome.error());
+}
+
+void ElasticsearchClient::listApmAsync(const ListApmRequest& request, const ListApmAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listApm(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::ListApmOutcomeCallable ElasticsearchClient::listApmCallable(const ListApmRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListApmOutcome()>>(
+			[this, request]()
+			{
+			return this->listApm(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ElasticsearchClient::ListAvailableEsInstanceIdsOutcome ElasticsearchClient::listAvailableEsInstanceIds(const ListAvailableEsInstanceIdsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

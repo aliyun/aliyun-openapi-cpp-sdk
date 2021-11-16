@@ -169,6 +169,8 @@ set(elasticsearch_public_header_model
 	include/alibabacloud/elasticsearch/model/ListAllNodeResult.h
 	include/alibabacloud/elasticsearch/model/ListAlternativeSnapshotReposRequest.h
 	include/alibabacloud/elasticsearch/model/ListAlternativeSnapshotReposResult.h
+	include/alibabacloud/elasticsearch/model/ListApmRequest.h
+	include/alibabacloud/elasticsearch/model/ListApmResult.h
 	include/alibabacloud/elasticsearch/model/ListAvailableEsInstanceIdsRequest.h
 	include/alibabacloud/elasticsearch/model/ListAvailableEsInstanceIdsResult.h
 	include/alibabacloud/elasticsearch/model/ListCollectorsRequest.h
@@ -530,6 +532,8 @@ set(elasticsearch_src
 	src/model/ListAllNodeResult.cc
 	src/model/ListAlternativeSnapshotReposRequest.cc
 	src/model/ListAlternativeSnapshotReposResult.cc
+	src/model/ListApmRequest.cc
+	src/model/ListApmResult.cc
 	src/model/ListAvailableEsInstanceIdsRequest.cc
 	src/model/ListAvailableEsInstanceIdsResult.cc
 	src/model/ListCollectorsRequest.cc

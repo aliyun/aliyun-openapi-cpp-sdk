@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ELASTICSEARCH_MODEL_DESCRIBEAPMRESULT_H_
-#define ALIBABACLOUD_ELASTICSEARCH_MODEL_DESCRIBEAPMRESULT_H_
+#ifndef ALIBABACLOUD_ELASTICSEARCH_MODEL_LISTAPMRESULT_H_
+#define ALIBABACLOUD_ELASTICSEARCH_MODEL_LISTAPMRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,26 +29,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ELASTICSEARCH_EXPORT DescribeApmResult : public ServiceResult
+			class ALIBABACLOUD_ELASTICSEARCH_EXPORT ListApmResult : public ServiceResult
 			{
 			public:
-				struct Result
+				struct Headers
+				{
+					long xTotalCount;
+				};
+				struct 返回结果
 				{
 					std::string status;
 					std::string description;
-					std::string outputEsDescription;
-					long endTime;
 					std::string instanceId;
 					std::string outputES;
 					std::string createdAt;
 					std::string resourceSpec;
 					long deployedReplica;
 					long nodeAmount;
-					int replica;
+					long replica;
 					std::string vswitchId;
 					std::string ownerId;
 					std::string vpcId;
-					std::string apmServerDomain;
 					std::string version;
 					std::string paymentType;
 					std::string region;
@@ -57,18 +58,20 @@ namespace AlibabaCloud
 				};
 
 
-				DescribeApmResult();
-				explicit DescribeApmResult(const std::string &payload);
-				~DescribeApmResult();
-				Result getResult()const;
+				ListApmResult();
+				explicit ListApmResult(const std::string &payload);
+				~ListApmResult();
+				Headers getHeaders()const;
+				std::vector<返回结果> getResult()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				Result result_;
+				Headers headers_;
+				std::vector<返回结果> result_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ELASTICSEARCH_MODEL_DESCRIBEAPMRESULT_H_
+#endif // !ALIBABACLOUD_ELASTICSEARCH_MODEL_LISTAPMRESULT_H_

@@ -37,12 +37,12 @@ namespace AlibabaCloud
 				StartApmResult();
 				explicit StartApmResult(const std::string &payload);
 				~StartApmResult();
-				std::string getRequestId()const;
+				bool getResult()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string requestId_;
+				bool result_;
 
 			};
 		}

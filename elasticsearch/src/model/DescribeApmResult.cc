@@ -40,44 +40,46 @@ void DescribeApmResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto resultNode = value["Result"];
-	if(!resultNode["CreatedAt"].isNull())
-		result_.createdAt = resultNode["CreatedAt"].asString();
-	if(!resultNode["DeployedReplica"].isNull())
-		result_.deployedReplica = std::stol(resultNode["DeployedReplica"].asString());
-	if(!resultNode["Description"].isNull())
-		result_.description = resultNode["Description"].asString();
-	if(!resultNode["EndTime"].isNull())
-		result_.endTime = std::stol(resultNode["EndTime"].asString());
-	if(!resultNode["InstanceId"].isNull())
-		result_.instanceId = resultNode["InstanceId"].asString();
-	if(!resultNode["NodeAmount"].isNull())
-		result_.nodeAmount = std::stol(resultNode["NodeAmount"].asString());
-	if(!resultNode["OutputES"].isNull())
-		result_.outputES = resultNode["OutputES"].asString();
-	if(!resultNode["OutputESUserName"].isNull())
-		result_.outputESUserName = resultNode["OutputESUserName"].asString();
-	if(!resultNode["OutputEsDescription"].isNull())
-		result_.outputEsDescription = resultNode["OutputEsDescription"].asString();
-	if(!resultNode["OwnerId"].isNull())
-		result_.ownerId = resultNode["OwnerId"].asString();
-	if(!resultNode["PaymentType"].isNull())
-		result_.paymentType = resultNode["PaymentType"].asString();
-	if(!resultNode["Region"].isNull())
-		result_.region = resultNode["Region"].asString();
-	if(!resultNode["Replica"].isNull())
-		result_.replica = std::stol(resultNode["Replica"].asString());
-	if(!resultNode["ResourceSpec"].isNull())
-		result_.resourceSpec = resultNode["ResourceSpec"].asString();
-	if(!resultNode["Status"].isNull())
-		result_.status = resultNode["Status"].asString();
-	if(!resultNode["Version"].isNull())
-		result_.version = resultNode["Version"].asString();
-	if(!resultNode["VpcId"].isNull())
-		result_.vpcId = resultNode["VpcId"].asString();
-	if(!resultNode["VsArea"].isNull())
-		result_.vsArea = resultNode["VsArea"].asString();
-	if(!resultNode["VswitchId"].isNull())
-		result_.vswitchId = resultNode["VswitchId"].asString();
+	if(!resultNode["apmServerDomain"].isNull())
+		result_.apmServerDomain = resultNode["apmServerDomain"].asString();
+	if(!resultNode["createdAt"].isNull())
+		result_.createdAt = resultNode["createdAt"].asString();
+	if(!resultNode["deployedReplica"].isNull())
+		result_.deployedReplica = std::stol(resultNode["deployedReplica"].asString());
+	if(!resultNode["description"].isNull())
+		result_.description = resultNode["description"].asString();
+	if(!resultNode["endTime"].isNull())
+		result_.endTime = std::stol(resultNode["endTime"].asString());
+	if(!resultNode["instanceId"].isNull())
+		result_.instanceId = resultNode["instanceId"].asString();
+	if(!resultNode["nodeAmount"].isNull())
+		result_.nodeAmount = std::stol(resultNode["nodeAmount"].asString());
+	if(!resultNode["outputES"].isNull())
+		result_.outputES = resultNode["outputES"].asString();
+	if(!resultNode["outputESUserName"].isNull())
+		result_.outputESUserName = resultNode["outputESUserName"].asString();
+	if(!resultNode["outputEsDescription"].isNull())
+		result_.outputEsDescription = resultNode["outputEsDescription"].asString();
+	if(!resultNode["ownerId"].isNull())
+		result_.ownerId = resultNode["ownerId"].asString();
+	if(!resultNode["paymentType"].isNull())
+		result_.paymentType = resultNode["paymentType"].asString();
+	if(!resultNode["region"].isNull())
+		result_.region = resultNode["region"].asString();
+	if(!resultNode["replica"].isNull())
+		result_.replica = std::stoi(resultNode["replica"].asString());
+	if(!resultNode["resourceSpec"].isNull())
+		result_.resourceSpec = resultNode["resourceSpec"].asString();
+	if(!resultNode["status"].isNull())
+		result_.status = resultNode["status"].asString();
+	if(!resultNode["version"].isNull())
+		result_.version = resultNode["version"].asString();
+	if(!resultNode["vpcId"].isNull())
+		result_.vpcId = resultNode["vpcId"].asString();
+	if(!resultNode["vsArea"].isNull())
+		result_.vsArea = resultNode["vsArea"].asString();
+	if(!resultNode["vswitchId"].isNull())
+		result_.vswitchId = resultNode["vswitchId"].asString();
 
 }
 

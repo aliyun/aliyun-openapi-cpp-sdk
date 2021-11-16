@@ -170,6 +170,8 @@
 #include "model/ListAllNodeResult.h"
 #include "model/ListAlternativeSnapshotReposRequest.h"
 #include "model/ListAlternativeSnapshotReposResult.h"
+#include "model/ListApmRequest.h"
+#include "model/ListApmResult.h"
 #include "model/ListAvailableEsInstanceIdsRequest.h"
 #include "model/ListAvailableEsInstanceIdsResult.h"
 #include "model/ListCollectorsRequest.h"
@@ -611,6 +613,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListAlternativeSnapshotReposResult> ListAlternativeSnapshotReposOutcome;
 			typedef std::future<ListAlternativeSnapshotReposOutcome> ListAlternativeSnapshotReposOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::ListAlternativeSnapshotReposRequest&, const ListAlternativeSnapshotReposOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAlternativeSnapshotReposAsyncHandler;
+			typedef Outcome<Error, Model::ListApmResult> ListApmOutcome;
+			typedef std::future<ListApmOutcome> ListApmOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::ListApmRequest&, const ListApmOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListApmAsyncHandler;
 			typedef Outcome<Error, Model::ListAvailableEsInstanceIdsResult> ListAvailableEsInstanceIdsOutcome;
 			typedef std::future<ListAvailableEsInstanceIdsOutcome> ListAvailableEsInstanceIdsOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::ListAvailableEsInstanceIdsRequest&, const ListAvailableEsInstanceIdsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAvailableEsInstanceIdsAsyncHandler;
@@ -1153,6 +1158,9 @@ namespace AlibabaCloud
 			ListAlternativeSnapshotReposOutcome listAlternativeSnapshotRepos(const Model::ListAlternativeSnapshotReposRequest &request)const;
 			void listAlternativeSnapshotReposAsync(const Model::ListAlternativeSnapshotReposRequest& request, const ListAlternativeSnapshotReposAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListAlternativeSnapshotReposOutcomeCallable listAlternativeSnapshotReposCallable(const Model::ListAlternativeSnapshotReposRequest& request) const;
+			ListApmOutcome listApm(const Model::ListApmRequest &request)const;
+			void listApmAsync(const Model::ListApmRequest& request, const ListApmAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListApmOutcomeCallable listApmCallable(const Model::ListApmRequest& request) const;
 			ListAvailableEsInstanceIdsOutcome listAvailableEsInstanceIds(const Model::ListAvailableEsInstanceIdsRequest &request)const;
 			void listAvailableEsInstanceIdsAsync(const Model::ListAvailableEsInstanceIdsRequest& request, const ListAvailableEsInstanceIdsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListAvailableEsInstanceIdsOutcomeCallable listAvailableEsInstanceIdsCallable(const Model::ListAvailableEsInstanceIdsRequest& request) const;
