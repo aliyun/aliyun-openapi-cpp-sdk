@@ -28,28 +28,6 @@ UpdateApmRequest::UpdateApmRequest() :
 UpdateApmRequest::~UpdateApmRequest()
 {}
 
-std::string UpdateApmRequest::getOutputES()const
-{
-	return outputES_;
-}
-
-void UpdateApmRequest::setOutputES(const std::string& outputES)
-{
-	outputES_ = outputES;
-	setParameter("OutputES", outputES);
-}
-
-std::string UpdateApmRequest::getOutputESPassword()const
-{
-	return outputESPassword_;
-}
-
-void UpdateApmRequest::setOutputESPassword(const std::string& outputESPassword)
-{
-	outputESPassword_ = outputESPassword;
-	setParameter("OutputESPassword", outputESPassword);
-}
-
 std::string UpdateApmRequest::getInstanceId()const
 {
 	return instanceId_;
@@ -61,36 +39,14 @@ void UpdateApmRequest::setInstanceId(const std::string& instanceId)
 	setParameter("InstanceId", instanceId);
 }
 
-std::string UpdateApmRequest::getYml()const
+std::string UpdateApmRequest::getBody()const
 {
-	return yml_;
+	return body_;
 }
 
-void UpdateApmRequest::setYml(const std::string& yml)
+void UpdateApmRequest::setBody(const std::string& body)
 {
-	yml_ = yml;
-	setParameter("Yml", yml);
-}
-
-std::string UpdateApmRequest::getOutputESUserName()const
-{
-	return outputESUserName_;
-}
-
-void UpdateApmRequest::setOutputESUserName(const std::string& outputESUserName)
-{
-	outputESUserName_ = outputESUserName;
-	setParameter("OutputESUserName", outputESUserName);
-}
-
-std::string UpdateApmRequest::getToken()const
-{
-	return token_;
-}
-
-void UpdateApmRequest::setToken(const std::string& token)
-{
-	token_ = token;
-	setParameter("Token", token);
+	body_ = body;
+	setBodyParameter("Body", body);
 }
 

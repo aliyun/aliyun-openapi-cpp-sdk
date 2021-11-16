@@ -35,26 +35,14 @@ namespace AlibabaCloud
 				UpdateApmRequest();
 				~UpdateApmRequest();
 
-				std::string getOutputES()const;
-				void setOutputES(const std::string& outputES);
-				std::string getOutputESPassword()const;
-				void setOutputESPassword(const std::string& outputESPassword);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
-				std::string getYml()const;
-				void setYml(const std::string& yml);
-				std::string getOutputESUserName()const;
-				void setOutputESUserName(const std::string& outputESUserName);
-				std::string getToken()const;
-				void setToken(const std::string& token);
+				std::string getBody()const;
+				void setBody(const std::string& body);
 
             private:
-				std::string outputES_;
-				std::string outputESPassword_;
 				std::string instanceId_;
-				std::string yml_;
-				std::string outputESUserName_;
-				std::string token_;
+				std::string body_;
 
 			};
 		}
