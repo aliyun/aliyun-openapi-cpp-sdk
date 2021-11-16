@@ -335,6 +335,8 @@ set(vod_public_header_model
 	include/alibabacloud/vod/model/UpdateEditingProjectResult.h
 	include/alibabacloud/vod/model/UpdateImageInfosRequest.h
 	include/alibabacloud/vod/model/UpdateImageInfosResult.h
+	include/alibabacloud/vod/model/UpdateStreamInfoRequest.h
+	include/alibabacloud/vod/model/UpdateStreamInfoResult.h
 	include/alibabacloud/vod/model/UpdateTranscodeTemplateGroupRequest.h
 	include/alibabacloud/vod/model/UpdateTranscodeTemplateGroupResult.h
 	include/alibabacloud/vod/model/UpdateVideoInfoRequest.h
@@ -670,6 +672,8 @@ set(vod_src
 	src/model/UpdateEditingProjectResult.cc
 	src/model/UpdateImageInfosRequest.cc
 	src/model/UpdateImageInfosResult.cc
+	src/model/UpdateStreamInfoRequest.cc
+	src/model/UpdateStreamInfoResult.cc
 	src/model/UpdateTranscodeTemplateGroupRequest.cc
 	src/model/UpdateTranscodeTemplateGroupResult.cc
 	src/model/UpdateVideoInfoRequest.cc

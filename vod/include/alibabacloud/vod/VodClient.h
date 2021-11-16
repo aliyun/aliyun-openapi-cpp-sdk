@@ -336,6 +336,8 @@
 #include "model/UpdateEditingProjectResult.h"
 #include "model/UpdateImageInfosRequest.h"
 #include "model/UpdateImageInfosResult.h"
+#include "model/UpdateStreamInfoRequest.h"
+#include "model/UpdateStreamInfoResult.h"
 #include "model/UpdateTranscodeTemplateGroupRequest.h"
 #include "model/UpdateTranscodeTemplateGroupResult.h"
 #include "model/UpdateVideoInfoRequest.h"
@@ -834,6 +836,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateImageInfosResult> UpdateImageInfosOutcome;
 			typedef std::future<UpdateImageInfosOutcome> UpdateImageInfosOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::UpdateImageInfosRequest&, const UpdateImageInfosOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateImageInfosAsyncHandler;
+			typedef Outcome<Error, Model::UpdateStreamInfoResult> UpdateStreamInfoOutcome;
+			typedef std::future<UpdateStreamInfoOutcome> UpdateStreamInfoOutcomeCallable;
+			typedef std::function<void(const VodClient*, const Model::UpdateStreamInfoRequest&, const UpdateStreamInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateStreamInfoAsyncHandler;
 			typedef Outcome<Error, Model::UpdateTranscodeTemplateGroupResult> UpdateTranscodeTemplateGroupOutcome;
 			typedef std::future<UpdateTranscodeTemplateGroupOutcome> UpdateTranscodeTemplateGroupOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::UpdateTranscodeTemplateGroupRequest&, const UpdateTranscodeTemplateGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateTranscodeTemplateGroupAsyncHandler;
@@ -1337,6 +1342,9 @@ namespace AlibabaCloud
 			UpdateImageInfosOutcome updateImageInfos(const Model::UpdateImageInfosRequest &request)const;
 			void updateImageInfosAsync(const Model::UpdateImageInfosRequest& request, const UpdateImageInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateImageInfosOutcomeCallable updateImageInfosCallable(const Model::UpdateImageInfosRequest& request) const;
+			UpdateStreamInfoOutcome updateStreamInfo(const Model::UpdateStreamInfoRequest &request)const;
+			void updateStreamInfoAsync(const Model::UpdateStreamInfoRequest& request, const UpdateStreamInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateStreamInfoOutcomeCallable updateStreamInfoCallable(const Model::UpdateStreamInfoRequest& request) const;
 			UpdateTranscodeTemplateGroupOutcome updateTranscodeTemplateGroup(const Model::UpdateTranscodeTemplateGroupRequest &request)const;
 			void updateTranscodeTemplateGroupAsync(const Model::UpdateTranscodeTemplateGroupRequest& request, const UpdateTranscodeTemplateGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateTranscodeTemplateGroupOutcomeCallable updateTranscodeTemplateGroupCallable(const Model::UpdateTranscodeTemplateGroupRequest& request) const;

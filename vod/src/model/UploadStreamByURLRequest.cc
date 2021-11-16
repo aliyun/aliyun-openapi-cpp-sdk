@@ -38,17 +38,6 @@ void UploadStreamByURLRequest::setFileExtension(const std::string& fileExtension
 	setParameter("FileExtension", fileExtension);
 }
 
-std::string UploadStreamByURLRequest::getMediaId()const
-{
-	return mediaId_;
-}
-
-void UploadStreamByURLRequest::setMediaId(const std::string& mediaId)
-{
-	mediaId_ = mediaId;
-	setParameter("MediaId", mediaId);
-}
-
 std::string UploadStreamByURLRequest::getUserData()const
 {
 	return userData_;
@@ -58,6 +47,17 @@ void UploadStreamByURLRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
 	setParameter("UserData", userData);
+}
+
+std::string UploadStreamByURLRequest::getHDRType()const
+{
+	return hDRType_;
+}
+
+void UploadStreamByURLRequest::setHDRType(const std::string& hDRType)
+{
+	hDRType_ = hDRType;
+	setParameter("HDRType", hDRType);
 }
 
 std::string UploadStreamByURLRequest::getDefinition()const
@@ -80,5 +80,16 @@ void UploadStreamByURLRequest::setStreamURL(const std::string& streamURL)
 {
 	streamURL_ = streamURL;
 	setParameter("StreamURL", streamURL);
+}
+
+std::string UploadStreamByURLRequest::getMediaId()const
+{
+	return mediaId_;
+}
+
+void UploadStreamByURLRequest::setMediaId(const std::string& mediaId)
+{
+	mediaId_ = mediaId;
+	setParameter("MediaId", mediaId);
 }
 

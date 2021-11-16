@@ -43,73 +43,75 @@ void GetPlayInfoResult::parse(const std::string &payload)
 	for (auto valuePlayInfoListPlayInfo : allPlayInfoListNode)
 	{
 		PlayInfo playInfoListObject;
-		if(!valuePlayInfoListPlayInfo["Width"].isNull())
-			playInfoListObject.width = std::stol(valuePlayInfoListPlayInfo["Width"].asString());
-		if(!valuePlayInfoListPlayInfo["Height"].isNull())
-			playInfoListObject.height = std::stol(valuePlayInfoListPlayInfo["Height"].asString());
-		if(!valuePlayInfoListPlayInfo["Size"].isNull())
-			playInfoListObject.size = std::stol(valuePlayInfoListPlayInfo["Size"].asString());
-		if(!valuePlayInfoListPlayInfo["PlayURL"].isNull())
-			playInfoListObject.playURL = valuePlayInfoListPlayInfo["PlayURL"].asString();
-		if(!valuePlayInfoListPlayInfo["Bitrate"].isNull())
-			playInfoListObject.bitrate = valuePlayInfoListPlayInfo["Bitrate"].asString();
-		if(!valuePlayInfoListPlayInfo["Definition"].isNull())
-			playInfoListObject.definition = valuePlayInfoListPlayInfo["Definition"].asString();
-		if(!valuePlayInfoListPlayInfo["Duration"].isNull())
-			playInfoListObject.duration = valuePlayInfoListPlayInfo["Duration"].asString();
-		if(!valuePlayInfoListPlayInfo["Format"].isNull())
-			playInfoListObject.format = valuePlayInfoListPlayInfo["Format"].asString();
-		if(!valuePlayInfoListPlayInfo["Fps"].isNull())
-			playInfoListObject.fps = valuePlayInfoListPlayInfo["Fps"].asString();
-		if(!valuePlayInfoListPlayInfo["Encrypt"].isNull())
-			playInfoListObject.encrypt = std::stol(valuePlayInfoListPlayInfo["Encrypt"].asString());
-		if(!valuePlayInfoListPlayInfo["Plaintext"].isNull())
-			playInfoListObject.plaintext = valuePlayInfoListPlayInfo["Plaintext"].asString();
-		if(!valuePlayInfoListPlayInfo["Complexity"].isNull())
-			playInfoListObject.complexity = valuePlayInfoListPlayInfo["Complexity"].asString();
-		if(!valuePlayInfoListPlayInfo["StreamType"].isNull())
-			playInfoListObject.streamType = valuePlayInfoListPlayInfo["StreamType"].asString();
-		if(!valuePlayInfoListPlayInfo["Rand"].isNull())
-			playInfoListObject.rand = valuePlayInfoListPlayInfo["Rand"].asString();
-		if(!valuePlayInfoListPlayInfo["JobId"].isNull())
-			playInfoListObject.jobId = valuePlayInfoListPlayInfo["JobId"].asString();
-		if(!valuePlayInfoListPlayInfo["PreprocessStatus"].isNull())
-			playInfoListObject.preprocessStatus = valuePlayInfoListPlayInfo["PreprocessStatus"].asString();
-		if(!valuePlayInfoListPlayInfo["WatermarkId"].isNull())
-			playInfoListObject.watermarkId = valuePlayInfoListPlayInfo["WatermarkId"].asString();
-		if(!valuePlayInfoListPlayInfo["Status"].isNull())
-			playInfoListObject.status = valuePlayInfoListPlayInfo["Status"].asString();
 		if(!valuePlayInfoListPlayInfo["CreationTime"].isNull())
 			playInfoListObject.creationTime = valuePlayInfoListPlayInfo["CreationTime"].asString();
-		if(!valuePlayInfoListPlayInfo["ModificationTime"].isNull())
-			playInfoListObject.modificationTime = valuePlayInfoListPlayInfo["ModificationTime"].asString();
-		if(!valuePlayInfoListPlayInfo["EncryptType"].isNull())
-			playInfoListObject.encryptType = valuePlayInfoListPlayInfo["EncryptType"].asString();
-		if(!valuePlayInfoListPlayInfo["NarrowBandType"].isNull())
-			playInfoListObject.narrowBandType = valuePlayInfoListPlayInfo["NarrowBandType"].asString();
+		if(!valuePlayInfoListPlayInfo["Status"].isNull())
+			playInfoListObject.status = valuePlayInfoListPlayInfo["Status"].asString();
 		if(!valuePlayInfoListPlayInfo["Specification"].isNull())
 			playInfoListObject.specification = valuePlayInfoListPlayInfo["Specification"].asString();
+		if(!valuePlayInfoListPlayInfo["Complexity"].isNull())
+			playInfoListObject.complexity = valuePlayInfoListPlayInfo["Complexity"].asString();
+		if(!valuePlayInfoListPlayInfo["NarrowBandType"].isNull())
+			playInfoListObject.narrowBandType = valuePlayInfoListPlayInfo["NarrowBandType"].asString();
+		if(!valuePlayInfoListPlayInfo["Height"].isNull())
+			playInfoListObject.height = std::stol(valuePlayInfoListPlayInfo["Height"].asString());
+		if(!valuePlayInfoListPlayInfo["Bitrate"].isNull())
+			playInfoListObject.bitrate = valuePlayInfoListPlayInfo["Bitrate"].asString();
+		if(!valuePlayInfoListPlayInfo["ModificationTime"].isNull())
+			playInfoListObject.modificationTime = valuePlayInfoListPlayInfo["ModificationTime"].asString();
+		if(!valuePlayInfoListPlayInfo["WatermarkId"].isNull())
+			playInfoListObject.watermarkId = valuePlayInfoListPlayInfo["WatermarkId"].asString();
+		if(!valuePlayInfoListPlayInfo["Encrypt"].isNull())
+			playInfoListObject.encrypt = std::stol(valuePlayInfoListPlayInfo["Encrypt"].asString());
+		if(!valuePlayInfoListPlayInfo["Definition"].isNull())
+			playInfoListObject.definition = valuePlayInfoListPlayInfo["Definition"].asString();
+		if(!valuePlayInfoListPlayInfo["Rand"].isNull())
+			playInfoListObject.rand = valuePlayInfoListPlayInfo["Rand"].asString();
+		if(!valuePlayInfoListPlayInfo["EncryptType"].isNull())
+			playInfoListObject.encryptType = valuePlayInfoListPlayInfo["EncryptType"].asString();
+		if(!valuePlayInfoListPlayInfo["PreprocessStatus"].isNull())
+			playInfoListObject.preprocessStatus = valuePlayInfoListPlayInfo["PreprocessStatus"].asString();
+		if(!valuePlayInfoListPlayInfo["StreamType"].isNull())
+			playInfoListObject.streamType = valuePlayInfoListPlayInfo["StreamType"].asString();
+		if(!valuePlayInfoListPlayInfo["JobId"].isNull())
+			playInfoListObject.jobId = valuePlayInfoListPlayInfo["JobId"].asString();
+		if(!valuePlayInfoListPlayInfo["Plaintext"].isNull())
+			playInfoListObject.plaintext = valuePlayInfoListPlayInfo["Plaintext"].asString();
+		if(!valuePlayInfoListPlayInfo["Size"].isNull())
+			playInfoListObject.size = std::stol(valuePlayInfoListPlayInfo["Size"].asString());
+		if(!valuePlayInfoListPlayInfo["Width"].isNull())
+			playInfoListObject.width = std::stol(valuePlayInfoListPlayInfo["Width"].asString());
+		if(!valuePlayInfoListPlayInfo["Fps"].isNull())
+			playInfoListObject.fps = valuePlayInfoListPlayInfo["Fps"].asString();
+		if(!valuePlayInfoListPlayInfo["Duration"].isNull())
+			playInfoListObject.duration = valuePlayInfoListPlayInfo["Duration"].asString();
+		if(!valuePlayInfoListPlayInfo["PlayURL"].isNull())
+			playInfoListObject.playURL = valuePlayInfoListPlayInfo["PlayURL"].asString();
+		if(!valuePlayInfoListPlayInfo["Format"].isNull())
+			playInfoListObject.format = valuePlayInfoListPlayInfo["Format"].asString();
+		if(!valuePlayInfoListPlayInfo["HDRType"].isNull())
+			playInfoListObject.hDRType = valuePlayInfoListPlayInfo["HDRType"].asString();
 		playInfoList_.push_back(playInfoListObject);
 	}
 	auto videoBaseNode = value["VideoBase"];
+	if(!videoBaseNode["CreationTime"].isNull())
+		videoBase_.creationTime = videoBaseNode["CreationTime"].asString();
+	if(!videoBaseNode["Status"].isNull())
+		videoBase_.status = videoBaseNode["Status"].asString();
+	if(!videoBaseNode["TranscodeMode"].isNull())
+		videoBase_.transcodeMode = videoBaseNode["TranscodeMode"].asString();
 	if(!videoBaseNode["OutputType"].isNull())
 		videoBase_.outputType = videoBaseNode["OutputType"].asString();
+	if(!videoBaseNode["VideoId"].isNull())
+		videoBase_.videoId = videoBaseNode["VideoId"].asString();
 	if(!videoBaseNode["CoverURL"].isNull())
 		videoBase_.coverURL = videoBaseNode["CoverURL"].asString();
 	if(!videoBaseNode["Duration"].isNull())
 		videoBase_.duration = videoBaseNode["Duration"].asString();
-	if(!videoBaseNode["Status"].isNull())
-		videoBase_.status = videoBaseNode["Status"].asString();
 	if(!videoBaseNode["Title"].isNull())
 		videoBase_.title = videoBaseNode["Title"].asString();
-	if(!videoBaseNode["VideoId"].isNull())
-		videoBase_.videoId = videoBaseNode["VideoId"].asString();
 	if(!videoBaseNode["MediaType"].isNull())
 		videoBase_.mediaType = videoBaseNode["MediaType"].asString();
-	if(!videoBaseNode["CreationTime"].isNull())
-		videoBase_.creationTime = videoBaseNode["CreationTime"].asString();
-	if(!videoBaseNode["TranscodeMode"].isNull())
-		videoBase_.transcodeMode = videoBaseNode["TranscodeMode"].asString();
 	if(!videoBaseNode["DanMuURL"].isNull())
 		videoBase_.danMuURL = videoBaseNode["DanMuURL"].asString();
 	auto allThumbnailListNode = videoBaseNode["ThumbnailList"]["Thumbnail"];

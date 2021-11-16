@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VOD_MODEL_UPLOADSTREAMBYURLREQUEST_H_
-#define ALIBABACLOUD_VOD_MODEL_UPLOADSTREAMBYURLREQUEST_H_
+#ifndef ALIBABACLOUD_VOD_MODEL_UPDATESTREAMINFOREQUEST_H_
+#define ALIBABACLOUD_VOD_MODEL_UPDATESTREAMINFOREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,36 +28,30 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VOD_EXPORT UploadStreamByURLRequest : public RpcServiceRequest
+			class ALIBABACLOUD_VOD_EXPORT UpdateStreamInfoRequest : public RpcServiceRequest
 			{
 
 			public:
-				UploadStreamByURLRequest();
-				~UploadStreamByURLRequest();
+				UpdateStreamInfoRequest();
+				~UpdateStreamInfoRequest();
 
-				std::string getFileExtension()const;
-				void setFileExtension(const std::string& fileExtension);
-				std::string getUserData()const;
-				void setUserData(const std::string& userData);
+				std::string getJobId()const;
+				void setJobId(const std::string& jobId);
 				std::string getHDRType()const;
 				void setHDRType(const std::string& hDRType);
 				std::string getDefinition()const;
 				void setDefinition(const std::string& definition);
-				std::string getStreamURL()const;
-				void setStreamURL(const std::string& streamURL);
 				std::string getMediaId()const;
 				void setMediaId(const std::string& mediaId);
 
             private:
-				std::string fileExtension_;
-				std::string userData_;
+				std::string jobId_;
 				std::string hDRType_;
 				std::string definition_;
-				std::string streamURL_;
 				std::string mediaId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VOD_MODEL_UPLOADSTREAMBYURLREQUEST_H_
+#endif // !ALIBABACLOUD_VOD_MODEL_UPDATESTREAMINFOREQUEST_H_
