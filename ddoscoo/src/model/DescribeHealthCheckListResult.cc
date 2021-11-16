@@ -39,40 +39,40 @@ void DescribeHealthCheckListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allHealthCheckListNode = value["HealthCheckList"]["HealthCheckItem"];
-	for (auto valueHealthCheckListHealthCheckItem : allHealthCheckListNode)
+	auto allListenersNode = value["Listeners"]["Listener"];
+	for (auto valueListenersListener : allListenersNode)
 	{
-		HealthCheckItem healthCheckListObject;
-		if(!valueHealthCheckListHealthCheckItem["InstanceId"].isNull())
-			healthCheckListObject.instanceId = valueHealthCheckListHealthCheckItem["InstanceId"].asString();
-		if(!valueHealthCheckListHealthCheckItem["Protocol"].isNull())
-			healthCheckListObject.protocol = valueHealthCheckListHealthCheckItem["Protocol"].asString();
-		if(!valueHealthCheckListHealthCheckItem["FrontendPort"].isNull())
-			healthCheckListObject.frontendPort = std::stoi(valueHealthCheckListHealthCheckItem["FrontendPort"].asString());
+		Listener listenersObject;
+		if(!valueListenersListener["InstanceId"].isNull())
+			listenersObject.instanceId = valueListenersListener["InstanceId"].asString();
+		if(!valueListenersListener["Protocol"].isNull())
+			listenersObject.protocol = valueListenersListener["Protocol"].asString();
+		if(!valueListenersListener["FrontendPort"].isNull())
+			listenersObject.frontendPort = std::stoi(valueListenersListener["FrontendPort"].asString());
 		auto healthCheckNode = value["HealthCheck"];
 		if(!healthCheckNode["Type"].isNull())
-			healthCheckListObject.healthCheck.type = healthCheckNode["Type"].asString();
+			listenersObject.healthCheck.type = healthCheckNode["Type"].asString();
 		if(!healthCheckNode["Domain"].isNull())
-			healthCheckListObject.healthCheck.domain = healthCheckNode["Domain"].asString();
+			listenersObject.healthCheck.domain = healthCheckNode["Domain"].asString();
 		if(!healthCheckNode["Uri"].isNull())
-			healthCheckListObject.healthCheck.uri = healthCheckNode["Uri"].asString();
+			listenersObject.healthCheck.uri = healthCheckNode["Uri"].asString();
 		if(!healthCheckNode["Down"].isNull())
-			healthCheckListObject.healthCheck.down = std::stoi(healthCheckNode["Down"].asString());
+			listenersObject.healthCheck.down = std::stoi(healthCheckNode["Down"].asString());
 		if(!healthCheckNode["Interval"].isNull())
-			healthCheckListObject.healthCheck.interval = std::stoi(healthCheckNode["Interval"].asString());
+			listenersObject.healthCheck.interval = std::stoi(healthCheckNode["Interval"].asString());
 		if(!healthCheckNode["Port"].isNull())
-			healthCheckListObject.healthCheck.port = std::stoi(healthCheckNode["Port"].asString());
+			listenersObject.healthCheck.port = std::stoi(healthCheckNode["Port"].asString());
 		if(!healthCheckNode["Timeout"].isNull())
-			healthCheckListObject.healthCheck.timeout = std::stoi(healthCheckNode["Timeout"].asString());
+			listenersObject.healthCheck.timeout = std::stoi(healthCheckNode["Timeout"].asString());
 		if(!healthCheckNode["Up"].isNull())
-			healthCheckListObject.healthCheck.up = std::stoi(healthCheckNode["Up"].asString());
-		healthCheckList_.push_back(healthCheckListObject);
+			listenersObject.healthCheck.up = std::stoi(healthCheckNode["Up"].asString());
+		listeners_.push_back(listenersObject);
 	}
 
 }
 
-std::vector<DescribeHealthCheckListResult::HealthCheckItem> DescribeHealthCheckListResult::getHealthCheckList()const
+std::vector<DescribeHealthCheckListResult::Listener> DescribeHealthCheckListResult::getListeners()const
 {
-	return healthCheckList_;
+	return listeners_;
 }
 

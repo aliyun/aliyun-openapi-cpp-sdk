@@ -37,14 +37,14 @@ namespace AlibabaCloud
 
 				long getStartTime()const;
 				void setStartTime(long startTime);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 				std::string getResourceGroupId()const;
 				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
+				std::string getPageSize()const;
+				void setPageSize(const std::string& pageSize);
+				int getOffset()const;
+				void setOffset(int offset);
 				long getEndTime()const;
 				void setEndTime(long endTime);
 				std::string getDomain()const;
@@ -52,10 +52,10 @@ namespace AlibabaCloud
 
             private:
 				long startTime_;
-				int pageNumber_;
 				std::string resourceGroupId_;
 				std::string sourceIp_;
-				int pageSize_;
+				std::string pageSize_;
+				int offset_;
 				long endTime_;
 				std::string domain_;
 

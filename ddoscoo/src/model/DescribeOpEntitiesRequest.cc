@@ -19,7 +19,7 @@
 using AlibabaCloud::Ddoscoo::Model::DescribeOpEntitiesRequest;
 
 DescribeOpEntitiesRequest::DescribeOpEntitiesRequest() :
-	RpcServiceRequest("ddoscoo", "2020-01-01", "DescribeOpEntities")
+	RpcServiceRequest("ddoscoo", "2017-12-28", "DescribeOpEntities")
 {
 	setMethod(HttpRequest::Method::Post);
 }
@@ -36,17 +36,6 @@ void DescribeOpEntitiesRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
 	setParameter("StartTime", std::to_string(startTime));
-}
-
-int DescribeOpEntitiesRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void DescribeOpEntitiesRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeOpEntitiesRequest::getResourceGroupId()const
@@ -113,5 +102,16 @@ void DescribeOpEntitiesRequest::setEntityType(int entityType)
 {
 	entityType_ = entityType;
 	setParameter("EntityType", std::to_string(entityType));
+}
+
+int DescribeOpEntitiesRequest::getPageNo()const
+{
+	return pageNo_;
+}
+
+void DescribeOpEntitiesRequest::setPageNo(int pageNo)
+{
+	pageNo_ = pageNo;
+	setParameter("PageNo", std::to_string(pageNo));
 }
 

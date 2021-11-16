@@ -19,7 +19,7 @@
 using AlibabaCloud::Ddoscoo::Model::DescribeDefenseCountStatisticsRequest;
 
 DescribeDefenseCountStatisticsRequest::DescribeDefenseCountStatisticsRequest() :
-	RpcServiceRequest("ddoscoo", "2020-01-01", "DescribeDefenseCountStatistics")
+	RpcServiceRequest("ddoscoo", "2017-12-28", "DescribeDefenseCountStatistics")
 {
 	setMethod(HttpRequest::Method::Post);
 }

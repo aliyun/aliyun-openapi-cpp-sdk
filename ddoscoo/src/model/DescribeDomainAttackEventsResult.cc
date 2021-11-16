@@ -39,32 +39,36 @@ void DescribeDomainAttackEventsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDomainAttackEventsNode = value["DomainAttackEvents"]["Data"];
-	for (auto valueDomainAttackEventsData : allDomainAttackEventsNode)
+	auto allEventsNode = value["Events"]["DomainAttackEvent"];
+	for (auto valueEventsDomainAttackEvent : allEventsNode)
 	{
-		Data domainAttackEventsObject;
-		if(!valueDomainAttackEventsData["Domain"].isNull())
-			domainAttackEventsObject.domain = valueDomainAttackEventsData["Domain"].asString();
-		if(!valueDomainAttackEventsData["StartTime"].isNull())
-			domainAttackEventsObject.startTime = std::stol(valueDomainAttackEventsData["StartTime"].asString());
-		if(!valueDomainAttackEventsData["EndTime"].isNull())
-			domainAttackEventsObject.endTime = std::stol(valueDomainAttackEventsData["EndTime"].asString());
-		if(!valueDomainAttackEventsData["MaxQps"].isNull())
-			domainAttackEventsObject.maxQps = std::stol(valueDomainAttackEventsData["MaxQps"].asString());
-		domainAttackEvents_.push_back(domainAttackEventsObject);
+		DomainAttackEvent eventsObject;
+		if(!valueEventsDomainAttackEvent["StartTime"].isNull())
+			eventsObject.startTime = std::stol(valueEventsDomainAttackEvent["StartTime"].asString());
+		if(!valueEventsDomainAttackEvent["EndTime"].isNull())
+			eventsObject.endTime = std::stol(valueEventsDomainAttackEvent["EndTime"].asString());
+		if(!valueEventsDomainAttackEvent["Duration"].isNull())
+			eventsObject.duration = std::stoi(valueEventsDomainAttackEvent["Duration"].asString());
+		if(!valueEventsDomainAttackEvent["Finished"].isNull())
+			eventsObject.finished = valueEventsDomainAttackEvent["Finished"].asString() == "true";
+		if(!valueEventsDomainAttackEvent["MaxQps"].isNull())
+			eventsObject.maxQps = std::stoi(valueEventsDomainAttackEvent["MaxQps"].asString());
+		if(!valueEventsDomainAttackEvent["BlockCount"].isNull())
+			eventsObject.blockCount = std::stol(valueEventsDomainAttackEvent["BlockCount"].asString());
+		events_.push_back(eventsObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stol(value["TotalCount"].asString());
+	if(!value["Total"].isNull())
+		total_ = std::stol(value["Total"].asString());
 
 }
 
-std::vector<DescribeDomainAttackEventsResult::Data> DescribeDomainAttackEventsResult::getDomainAttackEvents()const
+std::vector<DescribeDomainAttackEventsResult::DomainAttackEvent> DescribeDomainAttackEventsResult::getEvents()const
 {
-	return domainAttackEvents_;
+	return events_;
 }
 
-long DescribeDomainAttackEventsResult::getTotalCount()const
+long DescribeDomainAttackEventsResult::getTotal()const
 {
-	return totalCount_;
+	return total_;
 }
 

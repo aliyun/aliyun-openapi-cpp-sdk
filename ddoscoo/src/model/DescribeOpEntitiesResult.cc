@@ -57,14 +57,14 @@ void DescribeOpEntitiesResult::parse(const std::string &payload)
 			opEntitiesObject.opDesc = valueOpEntitiesOpEntity["OpDesc"].asString();
 		opEntities_.push_back(opEntitiesObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stol(value["TotalCount"].asString());
+	if(!value["Total"].isNull())
+		total_ = std::stol(value["Total"].asString());
 
 }
 
-long DescribeOpEntitiesResult::getTotalCount()const
+long DescribeOpEntitiesResult::getTotal()const
 {
-	return totalCount_;
+	return total_;
 }
 
 std::vector<DescribeOpEntitiesResult::OpEntity> DescribeOpEntitiesResult::getOpEntities()const

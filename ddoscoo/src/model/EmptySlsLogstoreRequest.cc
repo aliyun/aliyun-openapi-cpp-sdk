@@ -19,7 +19,7 @@
 using AlibabaCloud::Ddoscoo::Model::EmptySlsLogstoreRequest;
 
 EmptySlsLogstoreRequest::EmptySlsLogstoreRequest() :
-	RpcServiceRequest("ddoscoo", "2020-01-01", "EmptySlsLogstore")
+	RpcServiceRequest("ddoscoo", "2017-12-28", "EmptySlsLogstore")
 {
 	setMethod(HttpRequest::Method::Post);
 }

@@ -19,7 +19,7 @@
 using AlibabaCloud::Ddoscoo::Model::DescribeBackSourceCidrRequest;
 
 DescribeBackSourceCidrRequest::DescribeBackSourceCidrRequest() :
-	RpcServiceRequest("ddoscoo", "2020-01-01", "DescribeBackSourceCidr")
+	RpcServiceRequest("ddoscoo", "2017-12-28", "DescribeBackSourceCidr")
 {
 	setMethod(HttpRequest::Method::Post);
 }

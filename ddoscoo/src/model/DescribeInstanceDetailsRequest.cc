@@ -19,7 +19,7 @@
 using AlibabaCloud::Ddoscoo::Model::DescribeInstanceDetailsRequest;
 
 DescribeInstanceDetailsRequest::DescribeInstanceDetailsRequest() :
-	RpcServiceRequest("ddoscoo", "2020-01-01", "DescribeInstanceDetails")
+	RpcServiceRequest("ddoscoo", "2017-12-28", "DescribeInstanceDetails")
 {
 	setMethod(HttpRequest::Method::Post);
 }
@@ -38,16 +38,14 @@ void DescribeInstanceDetailsRequest::setSourceIp(const std::string& sourceIp)
 	setParameter("SourceIp", sourceIp);
 }
 
-std::vector<std::string> DescribeInstanceDetailsRequest::getInstanceIds()const
+std::string DescribeInstanceDetailsRequest::getInstanceIds()const
 {
 	return instanceIds_;
 }
 
-void DescribeInstanceDetailsRequest::setInstanceIds(const std::vector<std::string>& instanceIds)
+void DescribeInstanceDetailsRequest::setInstanceIds(const std::string& instanceIds)
 {
 	instanceIds_ = instanceIds;
-	for(int dep1 = 0; dep1!= instanceIds.size(); dep1++) {
-		setParameter("InstanceIds."+ std::to_string(dep1), instanceIds.at(dep1));
-	}
+	setParameter("InstanceIds", instanceIds);
 }
 

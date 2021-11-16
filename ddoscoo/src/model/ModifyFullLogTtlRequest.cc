@@ -19,7 +19,7 @@
 using AlibabaCloud::Ddoscoo::Model::ModifyFullLogTtlRequest;
 
 ModifyFullLogTtlRequest::ModifyFullLogTtlRequest() :
-	RpcServiceRequest("ddoscoo", "2020-01-01", "ModifyFullLogTtl")
+	RpcServiceRequest("ddoscoo", "2017-12-28", "ModifyFullLogTtl")
 {
 	setMethod(HttpRequest::Method::Post);
 }

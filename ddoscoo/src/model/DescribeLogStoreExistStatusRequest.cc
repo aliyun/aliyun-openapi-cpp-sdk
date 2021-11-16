@@ -19,7 +19,7 @@
 using AlibabaCloud::Ddoscoo::Model::DescribeLogStoreExistStatusRequest;
 
 DescribeLogStoreExistStatusRequest::DescribeLogStoreExistStatusRequest() :
-	RpcServiceRequest("ddoscoo", "2020-01-01", "DescribeLogStoreExistStatus")
+	RpcServiceRequest("ddoscoo", "2017-12-28", "DescribeLogStoreExistStatus")
 {
 	setMethod(HttpRequest::Method::Post);
 }

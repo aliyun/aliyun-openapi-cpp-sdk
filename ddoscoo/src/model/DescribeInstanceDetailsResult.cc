@@ -47,19 +47,15 @@ void DescribeInstanceDetailsResult::parse(const std::string &payload)
 			instanceDetailsObject.instanceId = valueInstanceDetailsInstanceDetail["InstanceId"].asString();
 		if(!valueInstanceDetailsInstanceDetail["Line"].isNull())
 			instanceDetailsObject.line = valueInstanceDetailsInstanceDetail["Line"].asString();
-		auto allEipInfosNode = valueInstanceDetailsInstanceDetail["EipInfos"]["EipInfo"];
-		for (auto valueInstanceDetailsInstanceDetailEipInfosEipInfo : allEipInfosNode)
+		auto allEipInfoListNode = valueInstanceDetailsInstanceDetail["EipInfoList"]["EipInfo"];
+		for (auto valueInstanceDetailsInstanceDetailEipInfoListEipInfo : allEipInfoListNode)
 		{
-			InstanceDetail::EipInfo eipInfosObject;
-			if(!valueInstanceDetailsInstanceDetailEipInfosEipInfo["Eip"].isNull())
-				eipInfosObject.eip = valueInstanceDetailsInstanceDetailEipInfosEipInfo["Eip"].asString();
-			if(!valueInstanceDetailsInstanceDetailEipInfosEipInfo["Status"].isNull())
-				eipInfosObject.status = valueInstanceDetailsInstanceDetailEipInfosEipInfo["Status"].asString();
-			if(!valueInstanceDetailsInstanceDetailEipInfosEipInfo["IpVersion"].isNull())
-				eipInfosObject.ipVersion = valueInstanceDetailsInstanceDetailEipInfosEipInfo["IpVersion"].asString();
-			if(!valueInstanceDetailsInstanceDetailEipInfosEipInfo["IpMode"].isNull())
-				eipInfosObject.ipMode = valueInstanceDetailsInstanceDetailEipInfosEipInfo["IpMode"].asString();
-			instanceDetailsObject.eipInfos.push_back(eipInfosObject);
+			InstanceDetail::EipInfo eipInfoListObject;
+			if(!valueInstanceDetailsInstanceDetailEipInfoListEipInfo["Eip"].isNull())
+				eipInfoListObject.eip = valueInstanceDetailsInstanceDetailEipInfoListEipInfo["Eip"].asString();
+			if(!valueInstanceDetailsInstanceDetailEipInfoListEipInfo["Status"].isNull())
+				eipInfoListObject.status = valueInstanceDetailsInstanceDetailEipInfoListEipInfo["Status"].asString();
+			instanceDetailsObject.eipInfoList.push_back(eipInfoListObject);
 		}
 		instanceDetails_.push_back(instanceDetailsObject);
 	}

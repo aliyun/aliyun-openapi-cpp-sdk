@@ -19,7 +19,7 @@
 using AlibabaCloud::Ddoscoo::Model::DescribeDomainsRequest;
 
 DescribeDomainsRequest::DescribeDomainsRequest() :
-	RpcServiceRequest("ddoscoo", "2020-01-01", "DescribeDomains")
+	RpcServiceRequest("ddoscoo", "2017-12-28", "DescribeDomains")
 {
 	setMethod(HttpRequest::Method::Post);
 }
@@ -49,6 +49,28 @@ void DescribeDomainsRequest::setSourceIp(const std::string& sourceIp)
 	setParameter("SourceIp", sourceIp);
 }
 
+std::string DescribeDomainsRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeDomainsRequest::setPageSize(const std::string& pageSize)
+{
+	pageSize_ = pageSize;
+	setParameter("PageSize", pageSize);
+}
+
+int DescribeDomainsRequest::getOffset()const
+{
+	return offset_;
+}
+
+void DescribeDomainsRequest::setOffset(int offset)
+{
+	offset_ = offset;
+	setParameter("Offset", std::to_string(offset));
+}
+
 std::vector<std::string> DescribeDomainsRequest::getInstanceIds()const
 {
 	return instanceIds_;
@@ -62,14 +84,25 @@ void DescribeDomainsRequest::setInstanceIds(const std::vector<std::string>& inst
 	}
 }
 
-std::string DescribeDomainsRequest::getLang()const
+std::string DescribeDomainsRequest::getQueryDomainPattern()const
 {
-	return lang_;
+	return queryDomainPattern_;
 }
 
-void DescribeDomainsRequest::setLang(const std::string& lang)
+void DescribeDomainsRequest::setQueryDomainPattern(const std::string& queryDomainPattern)
 {
-	lang_ = lang;
-	setParameter("Lang", lang);
+	queryDomainPattern_ = queryDomainPattern;
+	setParameter("QueryDomainPattern", queryDomainPattern);
+}
+
+std::string DescribeDomainsRequest::getDomain()const
+{
+	return domain_;
+}
+
+void DescribeDomainsRequest::setDomain(const std::string& domain)
+{
+	domain_ = domain;
+	setParameter("Domain", domain);
 }
 

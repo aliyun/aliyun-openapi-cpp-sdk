@@ -19,7 +19,7 @@
 using AlibabaCloud::Ddoscoo::Model::ReleaseInstanceRequest;
 
 ReleaseInstanceRequest::ReleaseInstanceRequest() :
-	RpcServiceRequest("ddoscoo", "2020-01-01", "ReleaseInstance")
+	RpcServiceRequest("ddoscoo", "2017-12-28", "ReleaseInstance")
 {
 	setMethod(HttpRequest::Method::Post);
 }

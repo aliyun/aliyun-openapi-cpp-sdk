@@ -19,7 +19,7 @@
 using AlibabaCloud::Ddoscoo::Model::ModifyElasticBandWidthRequest;
 
 ModifyElasticBandWidthRequest::ModifyElasticBandWidthRequest() :
-	RpcServiceRequest("ddoscoo", "2020-01-01", "ModifyElasticBandWidth")
+	RpcServiceRequest("ddoscoo", "2017-12-28", "ModifyElasticBandWidth")
 {
 	setMethod(HttpRequest::Method::Post);
 }

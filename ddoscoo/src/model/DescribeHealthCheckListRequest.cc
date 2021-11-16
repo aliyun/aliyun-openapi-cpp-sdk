@@ -19,7 +19,7 @@
 using AlibabaCloud::Ddoscoo::Model::DescribeHealthCheckListRequest;
 
 DescribeHealthCheckListRequest::DescribeHealthCheckListRequest() :
-	RpcServiceRequest("ddoscoo", "2020-01-01", "DescribeHealthCheckList")
+	RpcServiceRequest("ddoscoo", "2017-12-28", "DescribeHealthCheckList")
 {
 	setMethod(HttpRequest::Method::Post);
 }
@@ -27,15 +27,15 @@ DescribeHealthCheckListRequest::DescribeHealthCheckListRequest() :
 DescribeHealthCheckListRequest::~DescribeHealthCheckListRequest()
 {}
 
-std::string DescribeHealthCheckListRequest::getNetworkRules()const
+std::string DescribeHealthCheckListRequest::getListeners()const
 {
-	return networkRules_;
+	return listeners_;
 }
 
-void DescribeHealthCheckListRequest::setNetworkRules(const std::string& networkRules)
+void DescribeHealthCheckListRequest::setListeners(const std::string& listeners)
 {
-	networkRules_ = networkRules;
-	setParameter("NetworkRules", networkRules);
+	listeners_ = listeners;
+	setParameter("Listeners", listeners);
 }
 
 std::string DescribeHealthCheckListRequest::getSourceIp()const

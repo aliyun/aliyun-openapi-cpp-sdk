@@ -19,7 +19,7 @@
 using AlibabaCloud::Ddoscoo::Model::DescribeSlsAuthStatusRequest;
 
 DescribeSlsAuthStatusRequest::DescribeSlsAuthStatusRequest() :
-	RpcServiceRequest("ddoscoo", "2020-01-01", "DescribeSlsAuthStatus")
+	RpcServiceRequest("ddoscoo", "2017-12-28", "DescribeSlsAuthStatus")
 {
 	setMethod(HttpRequest::Method::Post);
 }

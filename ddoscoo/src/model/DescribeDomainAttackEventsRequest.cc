@@ -19,7 +19,7 @@
 using AlibabaCloud::Ddoscoo::Model::DescribeDomainAttackEventsRequest;
 
 DescribeDomainAttackEventsRequest::DescribeDomainAttackEventsRequest() :
-	RpcServiceRequest("ddoscoo", "2020-01-01", "DescribeDomainAttackEvents")
+	RpcServiceRequest("ddoscoo", "2017-12-28", "DescribeDomainAttackEvents")
 {
 	setMethod(HttpRequest::Method::Post);
 }
@@ -36,17 +36,6 @@ void DescribeDomainAttackEventsRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
 	setParameter("StartTime", std::to_string(startTime));
-}
-
-int DescribeDomainAttackEventsRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void DescribeDomainAttackEventsRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeDomainAttackEventsRequest::getResourceGroupId()const
@@ -71,15 +60,26 @@ void DescribeDomainAttackEventsRequest::setSourceIp(const std::string& sourceIp)
 	setParameter("SourceIp", sourceIp);
 }
 
-int DescribeDomainAttackEventsRequest::getPageSize()const
+std::string DescribeDomainAttackEventsRequest::getPageSize()const
 {
 	return pageSize_;
 }
 
-void DescribeDomainAttackEventsRequest::setPageSize(int pageSize)
+void DescribeDomainAttackEventsRequest::setPageSize(const std::string& pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", pageSize);
+}
+
+int DescribeDomainAttackEventsRequest::getOffset()const
+{
+	return offset_;
+}
+
+void DescribeDomainAttackEventsRequest::setOffset(int offset)
+{
+	offset_ = offset;
+	setParameter("Offset", std::to_string(offset));
 }
 
 long DescribeDomainAttackEventsRequest::getEndTime()const

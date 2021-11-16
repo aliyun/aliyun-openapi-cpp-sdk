@@ -63,8 +63,6 @@ void DescribeInstanceSpecsResult::parse(const std::string &payload)
 			instanceSpecsObject.functionVersion = valueInstanceSpecsInstanceSpec["FunctionVersion"].asString();
 		if(!valueInstanceSpecsInstanceSpec["QpsLimit"].isNull())
 			instanceSpecsObject.qpsLimit = std::stoi(valueInstanceSpecsInstanceSpec["QpsLimit"].asString());
-		if(!valueInstanceSpecsInstanceSpec["ElasticBw"].isNull())
-			instanceSpecsObject.elasticBw = std::stoi(valueInstanceSpecsInstanceSpec["ElasticBw"].asString());
 		instanceSpecs_.push_back(instanceSpecsObject);
 	}
 

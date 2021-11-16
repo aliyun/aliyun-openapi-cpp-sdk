@@ -19,7 +19,7 @@
 using AlibabaCloud::Ddoscoo::Model::DescribeSlsOpenStatusRequest;
 
 DescribeSlsOpenStatusRequest::DescribeSlsOpenStatusRequest() :
-	RpcServiceRequest("ddoscoo", "2020-01-01", "DescribeSlsOpenStatus")
+	RpcServiceRequest("ddoscoo", "2017-12-28", "DescribeSlsOpenStatus")
 {
 	setMethod(HttpRequest::Method::Post);
 }

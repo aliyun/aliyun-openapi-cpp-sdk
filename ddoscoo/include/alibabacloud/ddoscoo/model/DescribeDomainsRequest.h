@@ -39,16 +39,25 @@ namespace AlibabaCloud
 				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
+				std::string getPageSize()const;
+				void setPageSize(const std::string& pageSize);
+				int getOffset()const;
+				void setOffset(int offset);
 				std::vector<std::string> getInstanceIds()const;
 				void setInstanceIds(const std::vector<std::string>& instanceIds);
-				std::string getLang()const;
-				void setLang(const std::string& lang);
+				std::string getQueryDomainPattern()const;
+				void setQueryDomainPattern(const std::string& queryDomainPattern);
+				std::string getDomain()const;
+				void setDomain(const std::string& domain);
 
             private:
 				std::string resourceGroupId_;
 				std::string sourceIp_;
+				std::string pageSize_;
+				int offset_;
 				std::vector<std::string> instanceIds_;
-				std::string lang_;
+				std::string queryDomainPattern_;
+				std::string domain_;
 
 			};
 		}

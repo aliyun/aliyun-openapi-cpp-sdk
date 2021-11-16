@@ -19,7 +19,7 @@
 using AlibabaCloud::Ddoscoo::Model::DescribeElasticBandwidthSpecRequest;
 
 DescribeElasticBandwidthSpecRequest::DescribeElasticBandwidthSpecRequest() :
-	RpcServiceRequest("ddoscoo", "2020-01-01", "DescribeElasticBandwidthSpec")
+	RpcServiceRequest("ddoscoo", "2017-12-28", "DescribeElasticBandwidthSpec")
 {
 	setMethod(HttpRequest::Method::Post);
 }

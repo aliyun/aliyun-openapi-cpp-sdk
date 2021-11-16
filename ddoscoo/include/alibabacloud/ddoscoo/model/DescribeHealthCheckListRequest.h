@@ -35,13 +35,13 @@ namespace AlibabaCloud
 				DescribeHealthCheckListRequest();
 				~DescribeHealthCheckListRequest();
 
-				std::string getNetworkRules()const;
-				void setNetworkRules(const std::string& networkRules);
+				std::string getListeners()const;
+				void setListeners(const std::string& listeners);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 
             private:
-				std::string networkRules_;
+				std::string listeners_;
 				std::string sourceIp_;
 
 			};

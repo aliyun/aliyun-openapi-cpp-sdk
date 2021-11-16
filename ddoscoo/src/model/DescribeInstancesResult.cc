@@ -53,22 +53,16 @@ void DescribeInstancesResult::parse(const std::string &payload)
 			instancesObject.debtStatus = std::stoi(valueInstancesInstance["DebtStatus"].asString());
 		if(!valueInstancesInstance["ExpireTime"].isNull())
 			instancesObject.expireTime = std::stol(valueInstancesInstance["ExpireTime"].asString());
-		if(!valueInstancesInstance["CreateTime"].isNull())
-			instancesObject.createTime = std::stol(valueInstancesInstance["CreateTime"].asString());
+		if(!valueInstancesInstance["GmtCreate"].isNull())
+			instancesObject.gmtCreate = std::stol(valueInstancesInstance["GmtCreate"].asString());
 		if(!valueInstancesInstance["Edition"].isNull())
 			instancesObject.edition = std::stoi(valueInstancesInstance["Edition"].asString());
 		if(!valueInstancesInstance["Enabled"].isNull())
 			instancesObject.enabled = std::stoi(valueInstancesInstance["Enabled"].asString());
-		if(!valueInstancesInstance["ConnInstanceId"].isNull())
-			instancesObject.connInstanceId = valueInstancesInstance["ConnInstanceId"].asString();
-		if(!valueInstancesInstance["IpVersion"].isNull())
-			instancesObject.ipVersion = valueInstancesInstance["IpVersion"].asString();
-		if(!valueInstancesInstance["IpMode"].isNull())
-			instancesObject.ipMode = valueInstancesInstance["IpMode"].asString();
 		instances_.push_back(instancesObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stol(value["TotalCount"].asString());
+	if(!value["Total"].isNull())
+		total_ = std::stol(value["Total"].asString());
 
 }
 
@@ -77,8 +71,8 @@ std::vector<DescribeInstancesResult::Instance> DescribeInstancesResult::getInsta
 	return instances_;
 }
 
-long DescribeInstancesResult::getTotalCount()const
+long DescribeInstancesResult::getTotal()const
 {
-	return totalCount_;
+	return total_;
 }
 

@@ -45,8 +45,6 @@ namespace AlibabaCloud
 				void setEdition(int edition);
 				std::string getRemark()const;
 				void setRemark(const std::string& remark);
-				std::string getPageNumber()const;
-				void setPageNumber(const std::string& pageNumber);
 				int getEnabled()const;
 				void setEnabled(int enabled);
 				std::string getResourceGroupId()const;
@@ -63,15 +61,16 @@ namespace AlibabaCloud
 				void setExpireEndTime(long expireEndTime);
 				std::string getIp()const;
 				void setIp(const std::string& ip);
-				std::vector<std::string> getInstanceIds()const;
-				void setInstanceIds(const std::vector<std::string>& instanceIds);
+				std::string getInstanceIds()const;
+				void setInstanceIds(const std::string& instanceIds);
+				std::string getPageNo()const;
+				void setPageNo(const std::string& pageNo);
 				std::vector<int> getStatus()const;
 				void setStatus(const std::vector<int>& status);
 
             private:
 				int edition_;
 				std::string remark_;
-				std::string pageNumber_;
 				int enabled_;
 				std::string resourceGroupId_;
 				std::string sourceIp_;
@@ -80,7 +79,8 @@ namespace AlibabaCloud
 				long expireStartTime_;
 				long expireEndTime_;
 				std::string ip_;
-				std::vector<std::string> instanceIds_;
+				std::string instanceIds_;
+				std::string pageNo_;
 				std::vector<int> status_;
 
 			};

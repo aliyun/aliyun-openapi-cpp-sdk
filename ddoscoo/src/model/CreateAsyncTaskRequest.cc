@@ -19,7 +19,7 @@
 using AlibabaCloud::Ddoscoo::Model::CreateAsyncTaskRequest;
 
 CreateAsyncTaskRequest::CreateAsyncTaskRequest() :
-	RpcServiceRequest("ddoscoo", "2020-01-01", "CreateAsyncTask")
+	RpcServiceRequest("ddoscoo", "2017-12-28", "CreateAsyncTask")
 {
 	setMethod(HttpRequest::Method::Post);
 }

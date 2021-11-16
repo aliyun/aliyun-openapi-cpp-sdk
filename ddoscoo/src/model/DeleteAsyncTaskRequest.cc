@@ -19,7 +19,7 @@
 using AlibabaCloud::Ddoscoo::Model::DeleteAsyncTaskRequest;
 
 DeleteAsyncTaskRequest::DeleteAsyncTaskRequest() :
-	RpcServiceRequest("ddoscoo", "2020-01-01", "DeleteAsyncTask")
+	RpcServiceRequest("ddoscoo", "2017-12-28", "DeleteAsyncTask")
 {
 	setMethod(HttpRequest::Method::Post);
 }

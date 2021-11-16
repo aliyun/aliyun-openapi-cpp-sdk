@@ -19,7 +19,7 @@
 using AlibabaCloud::Ddoscoo::Model::DescribeDDoSEventsRequest;
 
 DescribeDDoSEventsRequest::DescribeDDoSEventsRequest() :
-	RpcServiceRequest("ddoscoo", "2020-01-01", "DescribeDDoSEvents")
+	RpcServiceRequest("ddoscoo", "2017-12-28", "DescribeDDoSEvents")
 {
 	setMethod(HttpRequest::Method::Post);
 }
@@ -38,15 +38,15 @@ void DescribeDDoSEventsRequest::setStartTime(long startTime)
 	setParameter("StartTime", std::to_string(startTime));
 }
 
-int DescribeDDoSEventsRequest::getPageNumber()const
+std::string DescribeDDoSEventsRequest::getEip()const
 {
-	return pageNumber_;
+	return eip_;
 }
 
-void DescribeDDoSEventsRequest::setPageNumber(int pageNumber)
+void DescribeDDoSEventsRequest::setEip(const std::string& eip)
 {
-	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+	eip_ = eip;
+	setParameter("Eip", eip);
 }
 
 std::string DescribeDDoSEventsRequest::getResourceGroupId()const
@@ -71,15 +71,26 @@ void DescribeDDoSEventsRequest::setSourceIp(const std::string& sourceIp)
 	setParameter("SourceIp", sourceIp);
 }
 
-int DescribeDDoSEventsRequest::getPageSize()const
+std::string DescribeDDoSEventsRequest::getPageSize()const
 {
 	return pageSize_;
 }
 
-void DescribeDDoSEventsRequest::setPageSize(int pageSize)
+void DescribeDDoSEventsRequest::setPageSize(const std::string& pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", pageSize);
+}
+
+int DescribeDDoSEventsRequest::getOffset()const
+{
+	return offset_;
+}
+
+void DescribeDDoSEventsRequest::setOffset(int offset)
+{
+	offset_ = offset;
+	setParameter("Offset", std::to_string(offset));
 }
 
 long DescribeDDoSEventsRequest::getEndTime()const
@@ -91,18 +102,5 @@ void DescribeDDoSEventsRequest::setEndTime(long endTime)
 {
 	endTime_ = endTime;
 	setParameter("EndTime", std::to_string(endTime));
-}
-
-std::vector<std::string> DescribeDDoSEventsRequest::getInstanceIds()const
-{
-	return instanceIds_;
-}
-
-void DescribeDDoSEventsRequest::setInstanceIds(const std::vector<std::string>& instanceIds)
-{
-	instanceIds_ = instanceIds;
-	for(int dep1 = 0; dep1!= instanceIds.size(); dep1++) {
-		setParameter("InstanceIds."+ std::to_string(dep1), instanceIds.at(dep1));
-	}
 }
 

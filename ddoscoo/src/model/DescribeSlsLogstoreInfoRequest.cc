@@ -19,7 +19,7 @@
 using AlibabaCloud::Ddoscoo::Model::DescribeSlsLogstoreInfoRequest;
 
 DescribeSlsLogstoreInfoRequest::DescribeSlsLogstoreInfoRequest() :
-	RpcServiceRequest("ddoscoo", "2020-01-01", "DescribeSlsLogstoreInfo")
+	RpcServiceRequest("ddoscoo", "2017-12-28", "DescribeSlsLogstoreInfo")
 {
 	setMethod(HttpRequest::Method::Post);
 }

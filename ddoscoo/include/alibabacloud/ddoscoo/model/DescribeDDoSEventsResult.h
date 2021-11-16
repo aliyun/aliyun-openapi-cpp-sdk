@@ -32,30 +32,26 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_DDOSCOO_EXPORT DescribeDDoSEventsResult : public ServiceResult
 			{
 			public:
-				struct Data
+				struct Event
 				{
-					long pps;
-					long bps;
+					std::string status;
 					long endTime;
-					std::string eventType;
-					std::string ip;
-					std::string port;
 					long startTime;
-					std::string region;
+					int interval;
 				};
 
 
 				DescribeDDoSEventsResult();
 				explicit DescribeDDoSEventsResult(const std::string &payload);
 				~DescribeDDoSEventsResult();
+				std::vector<Event> getEvents()const;
 				long getTotal()const;
-				std::vector<Data> getDDoSEvents()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::vector<Event> events_;
 				long total_;
-				std::vector<Data> dDoSEvents_;
 
 			};
 		}

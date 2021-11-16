@@ -37,12 +37,12 @@ namespace AlibabaCloud
 
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
-				std::vector<std::string> getInstanceIds()const;
-				void setInstanceIds(const std::vector<std::string>& instanceIds);
+				std::string getInstanceIds()const;
+				void setInstanceIds(const std::string& instanceIds);
 
             private:
 				std::string sourceIp_;
-				std::vector<std::string> instanceIds_;
+				std::string instanceIds_;
 
 			};
 		}
