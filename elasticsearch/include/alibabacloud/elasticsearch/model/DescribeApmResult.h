@@ -36,7 +36,6 @@ namespace AlibabaCloud
 				{
 					std::string status;
 					std::string description;
-					std::string outputEsDescription;
 					long endTime;
 					std::string instanceId;
 					std::string outputES;

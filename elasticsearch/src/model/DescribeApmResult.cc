@@ -58,8 +58,6 @@ void DescribeApmResult::parse(const std::string &payload)
 		result_.outputES = resultNode["outputES"].asString();
 	if(!resultNode["outputESUserName"].isNull())
 		result_.outputESUserName = resultNode["outputESUserName"].asString();
-	if(!resultNode["outputEsDescription"].isNull())
-		result_.outputEsDescription = resultNode["outputEsDescription"].asString();
 	if(!resultNode["ownerId"].isNull())
 		result_.ownerId = resultNode["ownerId"].asString();
 	if(!resultNode["paymentType"].isNull())
