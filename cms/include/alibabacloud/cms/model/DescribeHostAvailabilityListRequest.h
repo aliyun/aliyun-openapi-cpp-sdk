@@ -43,6 +43,8 @@ namespace AlibabaCloud
 				void setPageNumber(int pageNumber);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
+				std::string getIds()const;
+				void setIds(const std::string& ids);
 				long getId()const;
 				void setId(long id);
 
@@ -51,6 +53,7 @@ namespace AlibabaCloud
 				std::string taskName_;
 				int pageNumber_;
 				int pageSize_;
+				std::string ids_;
 				long id_;
 
 			};

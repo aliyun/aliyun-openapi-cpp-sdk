@@ -47,6 +47,8 @@ namespace AlibabaCloud
 				void setEventName(const std::string& eventName);
 				std::string getEmailSubject()const;
 				void setEmailSubject(const std::string& emailSubject);
+				std::string getMetricName()const;
+				void setMetricName(const std::string& metricName);
 				std::string getPeriod()const;
 				void setPeriod(const std::string& period);
 				std::string getContactGroups()const;
@@ -65,6 +67,7 @@ namespace AlibabaCloud
 				std::string effectiveInterval_;
 				std::string eventName_;
 				std::string emailSubject_;
+				std::string metricName_;
 				std::string period_;
 				std::string contactGroups_;
 				std::string level_;

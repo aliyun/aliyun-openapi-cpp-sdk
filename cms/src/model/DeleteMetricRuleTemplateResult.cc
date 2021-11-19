@@ -42,12 +42,12 @@ void DeleteMetricRuleTemplateResult::parse(const std::string &payload)
 	auto resourceNode = value["Resource"];
 	if(!resourceNode["TemplateId"].isNull())
 		resource_.templateId = resourceNode["TemplateId"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = std::stoi(value["Code"].asString());
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

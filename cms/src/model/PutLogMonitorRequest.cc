@@ -121,6 +121,17 @@ void PutLogMonitorRequest::setTumblingwindows(const std::string& tumblingwindows
 	setParameter("Tumblingwindows", tumblingwindows);
 }
 
+std::string PutLogMonitorRequest::getGroupBy()const
+{
+	return groupBy_;
+}
+
+void PutLogMonitorRequest::setGroupBy(const std::string& groupBy)
+{
+	groupBy_ = groupBy;
+	setParameter("GroupBy", groupBy);
+}
+
 std::string PutLogMonitorRequest::getValueFilterRelation()const
 {
 	return valueFilterRelation_;

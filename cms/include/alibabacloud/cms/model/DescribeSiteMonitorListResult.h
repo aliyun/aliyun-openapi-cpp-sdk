@@ -39,6 +39,7 @@ namespace AlibabaCloud
 						std::string cookie;
 						int ping_num;
 						bool enable_operator_dns;
+						std::string dns_match_rule;
 						long traceroute;
 						float failure_rate;
 						int port;

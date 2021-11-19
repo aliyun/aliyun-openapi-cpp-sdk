@@ -51,6 +51,7 @@ namespace AlibabaCloud
 						std::string cookie;
 						bool enable_operator_dns;
 						bool proxy_protocol;
+						std::string dns_match_rule;
 						float failure_rate;
 						int match_rule;
 						std::string acceptable_response_code;

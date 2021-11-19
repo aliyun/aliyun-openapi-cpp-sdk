@@ -119,6 +119,8 @@ void DescribeSiteMonitorAttributeResult::parse(const std::string &payload)
 		siteMonitors_.optionJson.authentication = std::stoi(optionJsonNode["authentication"].asString());
 	if(!optionJsonNode["match_rule"].isNull())
 		siteMonitors_.optionJson.match_rule = std::stoi(optionJsonNode["match_rule"].asString());
+	if(!optionJsonNode["dns_match_rule"].isNull())
+		siteMonitors_.optionJson.dns_match_rule = optionJsonNode["dns_match_rule"].asString();
 	if(!optionJsonNode["ipv6_task"].isNull())
 		siteMonitors_.optionJson.ipv6_task = optionJsonNode["ipv6_task"].asString();
 	if(!optionJsonNode["request_content"].isNull())

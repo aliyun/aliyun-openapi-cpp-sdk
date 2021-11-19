@@ -40,6 +40,7 @@ namespace AlibabaCloud
 						std::string tagValueMatchFunction;
 					};
 					std::string status;
+					std::vector<std::string> contactGroupList;
 					std::string matchExpressFilterRelation;
 					std::string dynamicTagRuleId;
 					std::vector<std::string> templateIdList;

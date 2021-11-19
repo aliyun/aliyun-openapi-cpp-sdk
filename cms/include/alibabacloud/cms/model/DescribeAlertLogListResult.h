@@ -43,8 +43,8 @@ namespace AlibabaCloud
 								std::string requestId;
 								std::vector<std::string> notifyTargetList;
 								std::string code;
-								std::string detail;
 								bool success;
+								std::string detail;
 							};
 							std::vector<ChannelResult::Result> resultList;
 							std::string channel;
@@ -74,6 +74,11 @@ namespace AlibabaCloud
 						std::string code;
 						std::string url;
 					};
+					struct SendResult
+					{
+						std::vector<std::string> value;
+						std::string key;
+					};
 					std::string groupName;
 					std::vector<std::string> contactALIIWWList;
 					std::string message;
@@ -84,14 +89,15 @@ namespace AlibabaCloud
 					std::string metricName;
 					std::vector<std::string> contactSMSList;
 					SendDetail sendDetail;
+					std::vector<Alarm::SendResult> sendResultList;
 					std::string ruleName;
 					std::vector<std::string> contactGroups;
 					std::vector<std::string> dingdingWebhookList;
 					std::string instanceId;
 					std::string blackListName;
 					std::vector<Alarm::DimensionsItem> dimensions;
-					std::string levelChange;
 					std::string blackListUUID;
+					std::string levelChange;
 					std::vector<std::string> contactOnCallList;
 					std::string _namespace;
 					std::vector<std::string> contactDingList;
@@ -114,7 +120,6 @@ namespace AlibabaCloud
 				std::string getMessage()const;
 				int getPageSize()const;
 				int getPageNumber()const;
-				int getTotal()const;
 				std::string getCode()const;
 				bool getSuccess()const;
 
@@ -125,7 +130,6 @@ namespace AlibabaCloud
 				std::string message_;
 				int pageSize_;
 				int pageNumber_;
-				int total_;
 				std::string code_;
 				bool success_;
 

@@ -51,3 +51,14 @@ void InstallMonitoringAgentRequest::setForce(bool force)
 	setParameter("Force", force ? "true" : "false");
 }
 
+std::string InstallMonitoringAgentRequest::getInstallCommand()const
+{
+	return installCommand_;
+}
+
+void InstallMonitoringAgentRequest::setInstallCommand(const std::string& installCommand)
+{
+	installCommand_ = installCommand;
+	setParameter("InstallCommand", installCommand);
+}
+

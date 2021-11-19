@@ -43,10 +43,10 @@ void CreateSiteMonitorResult::parse(const std::string &payload)
 	for (auto valueCreateResultListCreateResultListItem : allCreateResultListNode)
 	{
 		CreateResultListItem createResultListObject;
-		if(!valueCreateResultListCreateResultListItem["TaskName"].isNull())
-			createResultListObject.taskName = valueCreateResultListCreateResultListItem["TaskName"].asString();
 		if(!valueCreateResultListCreateResultListItem["TaskId"].isNull())
 			createResultListObject.taskId = valueCreateResultListCreateResultListItem["TaskId"].asString();
+		if(!valueCreateResultListCreateResultListItem["TaskName"].isNull())
+			createResultListObject.taskName = valueCreateResultListCreateResultListItem["TaskName"].asString();
 		createResultList_.push_back(createResultListObject);
 	}
 	auto dataNode = value["Data"];
@@ -54,12 +54,12 @@ void CreateSiteMonitorResult::parse(const std::string &payload)
 	for (auto dataNodeAttachAlertResultContact : allAttachAlertResultNode)
 	{
 		Data::Contact contactObject;
+		if(!dataNodeAttachAlertResultContact["Code"].isNull())
+			contactObject.code = dataNodeAttachAlertResultContact["Code"].asString();
 		if(!dataNodeAttachAlertResultContact["Message"].isNull())
 			contactObject.message = dataNodeAttachAlertResultContact["Message"].asString();
 		if(!dataNodeAttachAlertResultContact["RequestId"].isNull())
 			contactObject.requestId = dataNodeAttachAlertResultContact["RequestId"].asString();
-		if(!dataNodeAttachAlertResultContact["Code"].isNull())
-			contactObject.code = dataNodeAttachAlertResultContact["Code"].asString();
 		if(!dataNodeAttachAlertResultContact["Success"].isNull())
 			contactObject.success = dataNodeAttachAlertResultContact["Success"].asString();
 		if(!dataNodeAttachAlertResultContact["RuleId"].isNull())

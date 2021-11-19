@@ -36,6 +36,23 @@ namespace AlibabaCloud
 				{
 					struct AlertTemplate
 					{
+						struct CompositeExpression
+						{
+							struct ExpressionListItem
+							{
+								std::string metricName;
+								std::string comparisonOperator;
+								int period;
+								std::string id;
+								std::string statistics;
+								std::string threshold;
+							};
+							int times;
+							std::string expressionRaw;
+							std::string level;
+							std::string expressionListJoin;
+							std::vector<ExpressionListItem> expressionList;
+						};
 						struct Escalations
 						{
 							struct Info
@@ -66,8 +83,10 @@ namespace AlibabaCloud
 						std::string metricName;
 						std::string category;
 						Escalations escalations;
-						std::string _namespace;
+						CompositeExpression compositeExpression;
 						std::string webhook;
+						std::string _namespace;
+						std::string noDataPolicy;
 						std::string ruleName;
 						std::string selector;
 					};
@@ -76,8 +95,8 @@ namespace AlibabaCloud
 					std::string description;
 					std::string systemEventTemplates;
 					std::string restVersion;
-					std::string templateId;
 					std::string processMonitorTemplates;
+					std::string templateId;
 					std::string name;
 				};
 

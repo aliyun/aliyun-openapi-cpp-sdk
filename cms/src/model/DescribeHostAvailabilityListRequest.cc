@@ -71,6 +71,17 @@ void DescribeHostAvailabilityListRequest::setPageSize(int pageSize)
 	setParameter("PageSize", std::to_string(pageSize));
 }
 
+std::string DescribeHostAvailabilityListRequest::getIds()const
+{
+	return ids_;
+}
+
+void DescribeHostAvailabilityListRequest::setIds(const std::string& ids)
+{
+	ids_ = ids;
+	setParameter("Ids", ids);
+}
+
 long DescribeHostAvailabilityListRequest::getId()const
 {
 	return id_;

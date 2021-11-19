@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				CreateSiteMonitorRequest();
 				~CreateSiteMonitorRequest();
 
+				std::string getReportProject()const;
+				void setReportProject(const std::string& reportProject);
 				std::string getTaskName()const;
 				void setTaskName(const std::string& taskName);
 				std::string getAlertIds()const;
@@ -55,6 +57,7 @@ namespace AlibabaCloud
 				void setInterval(const std::string& interval);
 
             private:
+				std::string reportProject_;
 				std::string taskName_;
 				std::string alertIds_;
 				std::string address_;

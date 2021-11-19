@@ -88,6 +88,8 @@ void DescribeSiteMonitorListResult::parse(const std::string &payload)
 			siteMonitorsObject.optionsJson.http_method = optionsJsonNode["http_method"].asString();
 		if(!optionsJsonNode["match_rule"].isNull())
 			siteMonitorsObject.optionsJson.match_rule = std::stoi(optionsJsonNode["match_rule"].asString());
+		if(!optionsJsonNode["dns_match_rule"].isNull())
+			siteMonitorsObject.optionsJson.dns_match_rule = optionsJsonNode["dns_match_rule"].asString();
 		if(!optionsJsonNode["request_content"].isNull())
 			siteMonitorsObject.optionsJson.request_content = optionsJsonNode["request_content"].asString();
 		if(!optionsJsonNode["username"].isNull())

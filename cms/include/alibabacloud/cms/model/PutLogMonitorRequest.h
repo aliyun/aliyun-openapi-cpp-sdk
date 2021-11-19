@@ -69,6 +69,8 @@ namespace AlibabaCloud
 				void setGroupId(const std::string& groupId);
 				std::string getTumblingwindows()const;
 				void setTumblingwindows(const std::string& tumblingwindows);
+				std::string getGroupBy()const;
+				void setGroupBy(const std::string& groupBy);
 				std::string getValueFilterRelation()const;
 				void setValueFilterRelation(const std::string& valueFilterRelation);
 				std::string getUnit()const;
@@ -89,6 +91,7 @@ namespace AlibabaCloud
 				std::string metricName_;
 				std::string groupId_;
 				std::string tumblingwindows_;
+				std::string groupBy_;
 				std::string valueFilterRelation_;
 				std::string unit_;
 				std::vector<Groupbys> groupbys_;

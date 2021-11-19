@@ -39,10 +39,13 @@ namespace AlibabaCloud
 				void setInstanceIds(const std::vector<std::string>& instanceIds);
 				bool getForce()const;
 				void setForce(bool force);
+				std::string getInstallCommand()const;
+				void setInstallCommand(const std::string& installCommand);
 
             private:
 				std::vector<std::string> instanceIds_;
 				bool force_;
+				std::string installCommand_;
 
 			};
 		}

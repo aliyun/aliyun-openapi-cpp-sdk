@@ -43,42 +43,42 @@ void DescribeAlertLogListResult::parse(const std::string &payload)
 	for (auto valueAlertLogListAlarm : allAlertLogListNode)
 	{
 		Alarm alertLogListObject;
-		if(!valueAlertLogListAlarm["RuleId"].isNull())
-			alertLogListObject.ruleId = valueAlertLogListAlarm["RuleId"].asString();
-		if(!valueAlertLogListAlarm["RuleName"].isNull())
-			alertLogListObject.ruleName = valueAlertLogListAlarm["RuleName"].asString();
-		if(!valueAlertLogListAlarm["Namespace"].isNull())
-			alertLogListObject._namespace = valueAlertLogListAlarm["Namespace"].asString();
-		if(!valueAlertLogListAlarm["Product"].isNull())
-			alertLogListObject.product = valueAlertLogListAlarm["Product"].asString();
-		if(!valueAlertLogListAlarm["EventName"].isNull())
-			alertLogListObject.eventName = valueAlertLogListAlarm["EventName"].asString();
-		if(!valueAlertLogListAlarm["GroupId"].isNull())
-			alertLogListObject.groupId = valueAlertLogListAlarm["GroupId"].asString();
-		if(!valueAlertLogListAlarm["GroupName"].isNull())
-			alertLogListObject.groupName = valueAlertLogListAlarm["GroupName"].asString();
 		if(!valueAlertLogListAlarm["MetricName"].isNull())
 			alertLogListObject.metricName = valueAlertLogListAlarm["MetricName"].asString();
-		if(!valueAlertLogListAlarm["InstanceId"].isNull())
-			alertLogListObject.instanceId = valueAlertLogListAlarm["InstanceId"].asString();
-		if(!valueAlertLogListAlarm["InstanceName"].isNull())
-			alertLogListObject.instanceName = valueAlertLogListAlarm["InstanceName"].asString();
-		if(!valueAlertLogListAlarm["Level"].isNull())
-			alertLogListObject.level = valueAlertLogListAlarm["Level"].asString();
-		if(!valueAlertLogListAlarm["LevelChange"].isNull())
-			alertLogListObject.levelChange = valueAlertLogListAlarm["LevelChange"].asString();
-		if(!valueAlertLogListAlarm["SendStatus"].isNull())
-			alertLogListObject.sendStatus = valueAlertLogListAlarm["SendStatus"].asString();
-		if(!valueAlertLogListAlarm["AlertTime"].isNull())
-			alertLogListObject.alertTime = valueAlertLogListAlarm["AlertTime"].asString();
-		if(!valueAlertLogListAlarm["Message"].isNull())
-			alertLogListObject.message = valueAlertLogListAlarm["Message"].asString();
+		if(!valueAlertLogListAlarm["EventName"].isNull())
+			alertLogListObject.eventName = valueAlertLogListAlarm["EventName"].asString();
+		if(!valueAlertLogListAlarm["Product"].isNull())
+			alertLogListObject.product = valueAlertLogListAlarm["Product"].asString();
 		if(!valueAlertLogListAlarm["BlackListUUID"].isNull())
 			alertLogListObject.blackListUUID = valueAlertLogListAlarm["BlackListUUID"].asString();
+		if(!valueAlertLogListAlarm["Message"].isNull())
+			alertLogListObject.message = valueAlertLogListAlarm["Message"].asString();
+		if(!valueAlertLogListAlarm["Namespace"].isNull())
+			alertLogListObject._namespace = valueAlertLogListAlarm["Namespace"].asString();
+		if(!valueAlertLogListAlarm["LevelChange"].isNull())
+			alertLogListObject.levelChange = valueAlertLogListAlarm["LevelChange"].asString();
+		if(!valueAlertLogListAlarm["InstanceId"].isNull())
+			alertLogListObject.instanceId = valueAlertLogListAlarm["InstanceId"].asString();
+		if(!valueAlertLogListAlarm["RuleName"].isNull())
+			alertLogListObject.ruleName = valueAlertLogListAlarm["RuleName"].asString();
+		if(!valueAlertLogListAlarm["RuleId"].isNull())
+			alertLogListObject.ruleId = valueAlertLogListAlarm["RuleId"].asString();
 		if(!valueAlertLogListAlarm["BlackListName"].isNull())
 			alertLogListObject.blackListName = valueAlertLogListAlarm["BlackListName"].asString();
+		if(!valueAlertLogListAlarm["GroupName"].isNull())
+			alertLogListObject.groupName = valueAlertLogListAlarm["GroupName"].asString();
+		if(!valueAlertLogListAlarm["GroupId"].isNull())
+			alertLogListObject.groupId = valueAlertLogListAlarm["GroupId"].asString();
+		if(!valueAlertLogListAlarm["AlertTime"].isNull())
+			alertLogListObject.alertTime = valueAlertLogListAlarm["AlertTime"].asString();
+		if(!valueAlertLogListAlarm["InstanceName"].isNull())
+			alertLogListObject.instanceName = valueAlertLogListAlarm["InstanceName"].asString();
 		if(!valueAlertLogListAlarm["BlackListDetail"].isNull())
 			alertLogListObject.blackListDetail = valueAlertLogListAlarm["BlackListDetail"].asString();
+		if(!valueAlertLogListAlarm["Level"].isNull())
+			alertLogListObject.level = valueAlertLogListAlarm["Level"].asString();
+		if(!valueAlertLogListAlarm["SendStatus"].isNull())
+			alertLogListObject.sendStatus = valueAlertLogListAlarm["SendStatus"].asString();
 		auto allExtendedInfoNode = valueAlertLogListAlarm["ExtendedInfo"]["ExtInfo"];
 		for (auto valueAlertLogListAlarmExtendedInfoExtInfo : allExtendedInfoNode)
 		{
@@ -103,13 +103,24 @@ void DescribeAlertLogListResult::parse(const std::string &payload)
 		for (auto valueAlertLogListAlarmWebhookListWebhookListItem : allWebhookListNode)
 		{
 			Alarm::WebhookListItem webhookListObject;
-			if(!valueAlertLogListAlarmWebhookListWebhookListItem["url"].isNull())
-				webhookListObject.url = valueAlertLogListAlarmWebhookListWebhookListItem["url"].asString();
 			if(!valueAlertLogListAlarmWebhookListWebhookListItem["code"].isNull())
 				webhookListObject.code = valueAlertLogListAlarmWebhookListWebhookListItem["code"].asString();
+			if(!valueAlertLogListAlarmWebhookListWebhookListItem["url"].isNull())
+				webhookListObject.url = valueAlertLogListAlarmWebhookListWebhookListItem["url"].asString();
 			if(!valueAlertLogListAlarmWebhookListWebhookListItem["message"].isNull())
 				webhookListObject.message = valueAlertLogListAlarmWebhookListWebhookListItem["message"].asString();
 			alertLogListObject.webhookList.push_back(webhookListObject);
+		}
+		auto allSendResultListNode = valueAlertLogListAlarm["SendResultList"]["SendResult"];
+		for (auto valueAlertLogListAlarmSendResultListSendResult : allSendResultListNode)
+		{
+			Alarm::SendResult sendResultListObject;
+			if(!valueAlertLogListAlarmSendResultListSendResult["Key"].isNull())
+				sendResultListObject.key = valueAlertLogListAlarmSendResultListSendResult["Key"].asString();
+			auto allValue = value["Value"]["Value"];
+			for (auto value : allValue)
+				sendResultListObject.value.push_back(value.asString());
+			alertLogListObject.sendResultList.push_back(sendResultListObject);
 		}
 		auto sendDetailNode = value["SendDetail"];
 		if(!sendDetailNode["ResultCode"].isNull())
@@ -126,12 +137,12 @@ void DescribeAlertLogListResult::parse(const std::string &payload)
 				Alarm::SendDetail::ChannelResult::Result resultListObject;
 				if(!sendDetailNodeChannelResultListChannelResultResultListResult["Code"].isNull())
 					resultListObject.code = sendDetailNodeChannelResultListChannelResultResultListResult["Code"].asString();
-				if(!sendDetailNodeChannelResultListChannelResultResultListResult["Detail"].isNull())
-					resultListObject.detail = sendDetailNodeChannelResultListChannelResultResultListResult["Detail"].asString();
-				if(!sendDetailNodeChannelResultListChannelResultResultListResult["Success"].isNull())
-					resultListObject.success = sendDetailNodeChannelResultListChannelResultResultListResult["Success"].asString() == "true";
 				if(!sendDetailNodeChannelResultListChannelResultResultListResult["RequestId"].isNull())
 					resultListObject.requestId = sendDetailNodeChannelResultListChannelResultResultListResult["RequestId"].asString();
+				if(!sendDetailNodeChannelResultListChannelResultResultListResult["Success"].isNull())
+					resultListObject.success = sendDetailNodeChannelResultListChannelResultResultListResult["Success"].asString() == "true";
+				if(!sendDetailNodeChannelResultListChannelResultResultListResult["Detail"].isNull())
+					resultListObject.detail = sendDetailNodeChannelResultListChannelResultResultListResult["Detail"].asString();
 				auto allNotifyTargetList = value["notifyTargetList"]["NotifyTarget"];
 				for (auto value : allNotifyTargetList)
 					resultListObject.notifyTargetList.push_back(value.asString());
@@ -140,12 +151,21 @@ void DescribeAlertLogListResult::parse(const std::string &payload)
 			alertLogListObject.sendDetail.channelResultList.push_back(channelResultObject);
 		}
 		auto escalationNode = value["Escalation"];
-		if(!escalationNode["Times"].isNull())
-			alertLogListObject.escalation.times = std::stoi(escalationNode["Times"].asString());
 		if(!escalationNode["Expression"].isNull())
 			alertLogListObject.escalation.expression = escalationNode["Expression"].asString();
+		if(!escalationNode["Times"].isNull())
+			alertLogListObject.escalation.times = std::stoi(escalationNode["Times"].asString());
 		if(!escalationNode["Level"].isNull())
 			alertLogListObject.escalation.level = escalationNode["Level"].asString();
+		auto allDingdingWebhookList = value["DingdingWebhookList"]["ContactDingList"];
+		for (auto value : allDingdingWebhookList)
+			alertLogListObject.dingdingWebhookList.push_back(value.asString());
+		auto allContactOnCallList = value["ContactOnCallList"]["ContactOnCallList"];
+		for (auto value : allContactOnCallList)
+			alertLogListObject.contactOnCallList.push_back(value.asString());
+		auto allContactMailList = value["ContactMailList"]["ContactMailList"];
+		for (auto value : allContactMailList)
+			alertLogListObject.contactMailList.push_back(value.asString());
 		auto allContactGroups = value["ContactGroups"]["ContactGroup"];
 		for (auto value : allContactGroups)
 			alertLogListObject.contactGroups.push_back(value.asString());
@@ -155,32 +175,21 @@ void DescribeAlertLogListResult::parse(const std::string &payload)
 		auto allContactSMSList = value["ContactSMSList"]["ContactSMSList"];
 		for (auto value : allContactSMSList)
 			alertLogListObject.contactSMSList.push_back(value.asString());
-		auto allContactOnCallList = value["ContactOnCallList"]["ContactOnCallList"];
-		for (auto value : allContactOnCallList)
-			alertLogListObject.contactOnCallList.push_back(value.asString());
-		auto allContactMailList = value["ContactMailList"]["ContactMailList"];
-		for (auto value : allContactMailList)
-			alertLogListObject.contactMailList.push_back(value.asString());
 		auto allContactDingList = value["ContactDingList"]["ContactDingList"];
 		for (auto value : allContactDingList)
 			alertLogListObject.contactDingList.push_back(value.asString());
-		auto allDingdingWebhookList = value["DingdingWebhookList"]["ContactDingList"];
-		for (auto value : allDingdingWebhookList)
-			alertLogListObject.dingdingWebhookList.push_back(value.asString());
 		alertLogList_.push_back(alertLogListObject);
 	}
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["Total"].isNull())
-		total_ = std::stoi(value["Total"].asString());
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["PageNumber"].isNull())
 		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 
 }
 
@@ -202,11 +211,6 @@ int DescribeAlertLogListResult::getPageSize()const
 int DescribeAlertLogListResult::getPageNumber()const
 {
 	return pageNumber_;
-}
-
-int DescribeAlertLogListResult::getTotal()const
-{
-	return total_;
 }
 
 std::string DescribeAlertLogListResult::getCode()const

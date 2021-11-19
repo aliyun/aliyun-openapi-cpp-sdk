@@ -40,8 +40,8 @@ namespace AlibabaCloud
 					std::string endTime;
 					std::string ruleId;
 					std::string startTime;
-					std::string period;
 					std::string evaluationCount;
+					std::string period;
 					std::string _namespace;
 					std::string statistics;
 					std::string metricName;
@@ -80,9 +80,9 @@ namespace AlibabaCloud
 						Info info;
 						Warn warn;
 					};
-					std::string noEffectiveInterval;
 					std::string silenceTime;
 					std::string contactGroups;
+					std::string noEffectiveInterval;
 					std::string mailSubject;
 					std::string ruleId;
 					std::string period;

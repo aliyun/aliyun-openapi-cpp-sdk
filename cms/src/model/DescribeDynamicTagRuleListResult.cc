@@ -43,29 +43,32 @@ void DescribeDynamicTagRuleListResult::parse(const std::string &payload)
 	for (auto valueTagGroupListTagGroup : allTagGroupListNode)
 	{
 		TagGroup tagGroupListObject;
-		if(!valueTagGroupListTagGroup["DynamicTagRuleId"].isNull())
-			tagGroupListObject.dynamicTagRuleId = valueTagGroupListTagGroup["DynamicTagRuleId"].asString();
-		if(!valueTagGroupListTagGroup["TagKey"].isNull())
-			tagGroupListObject.tagKey = valueTagGroupListTagGroup["TagKey"].asString();
-		if(!valueTagGroupListTagGroup["RegionId"].isNull())
-			tagGroupListObject.regionId = valueTagGroupListTagGroup["RegionId"].asString();
-		if(!valueTagGroupListTagGroup["MatchExpressFilterRelation"].isNull())
-			tagGroupListObject.matchExpressFilterRelation = valueTagGroupListTagGroup["MatchExpressFilterRelation"].asString();
 		if(!valueTagGroupListTagGroup["Status"].isNull())
 			tagGroupListObject.status = valueTagGroupListTagGroup["Status"].asString();
+		if(!valueTagGroupListTagGroup["MatchExpressFilterRelation"].isNull())
+			tagGroupListObject.matchExpressFilterRelation = valueTagGroupListTagGroup["MatchExpressFilterRelation"].asString();
+		if(!valueTagGroupListTagGroup["RegionId"].isNull())
+			tagGroupListObject.regionId = valueTagGroupListTagGroup["RegionId"].asString();
+		if(!valueTagGroupListTagGroup["TagKey"].isNull())
+			tagGroupListObject.tagKey = valueTagGroupListTagGroup["TagKey"].asString();
+		if(!valueTagGroupListTagGroup["DynamicTagRuleId"].isNull())
+			tagGroupListObject.dynamicTagRuleId = valueTagGroupListTagGroup["DynamicTagRuleId"].asString();
 		auto allMatchExpressNode = valueTagGroupListTagGroup["MatchExpress"]["MatchExpressItem"];
 		for (auto valueTagGroupListTagGroupMatchExpressMatchExpressItem : allMatchExpressNode)
 		{
 			TagGroup::MatchExpressItem matchExpressObject;
-			if(!valueTagGroupListTagGroupMatchExpressMatchExpressItem["TagValueMatchFunction"].isNull())
-				matchExpressObject.tagValueMatchFunction = valueTagGroupListTagGroupMatchExpressMatchExpressItem["TagValueMatchFunction"].asString();
 			if(!valueTagGroupListTagGroupMatchExpressMatchExpressItem["TagValue"].isNull())
 				matchExpressObject.tagValue = valueTagGroupListTagGroupMatchExpressMatchExpressItem["TagValue"].asString();
+			if(!valueTagGroupListTagGroupMatchExpressMatchExpressItem["TagValueMatchFunction"].isNull())
+				matchExpressObject.tagValueMatchFunction = valueTagGroupListTagGroupMatchExpressMatchExpressItem["TagValueMatchFunction"].asString();
 			tagGroupListObject.matchExpress.push_back(matchExpressObject);
 		}
 		auto allTemplateIdList = value["TemplateIdList"]["TemplateIdList"];
 		for (auto value : allTemplateIdList)
 			tagGroupListObject.templateIdList.push_back(value.asString());
+		auto allContactGroupList = value["ContactGroupList"]["ContactGroupList"];
+		for (auto value : allContactGroupList)
+			tagGroupListObject.contactGroupList.push_back(value.asString());
 		tagGroupList_.push_back(tagGroupListObject);
 	}
 	if(!value["Success"].isNull())
@@ -74,12 +77,12 @@ void DescribeDynamicTagRuleListResult::parse(const std::string &payload)
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
-	if(!value["Total"].isNull())
-		total_ = std::stoi(value["Total"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = value["PageNumber"].asString();
 	if(!value["PageSize"].isNull())
 		pageSize_ = value["PageSize"].asString();
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = value["PageNumber"].asString();
+	if(!value["Total"].isNull())
+		total_ = std::stoi(value["Total"].asString());
 
 }
 

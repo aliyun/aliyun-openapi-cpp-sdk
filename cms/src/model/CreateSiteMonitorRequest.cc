@@ -27,6 +27,17 @@ CreateSiteMonitorRequest::CreateSiteMonitorRequest() :
 CreateSiteMonitorRequest::~CreateSiteMonitorRequest()
 {}
 
+std::string CreateSiteMonitorRequest::getReportProject()const
+{
+	return reportProject_;
+}
+
+void CreateSiteMonitorRequest::setReportProject(const std::string& reportProject)
+{
+	reportProject_ = reportProject;
+	setParameter("ReportProject", reportProject);
+}
+
 std::string CreateSiteMonitorRequest::getTaskName()const
 {
 	return taskName_;

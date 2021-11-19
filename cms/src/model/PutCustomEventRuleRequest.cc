@@ -93,6 +93,17 @@ void PutCustomEventRuleRequest::setEmailSubject(const std::string& emailSubject)
 	setParameter("EmailSubject", emailSubject);
 }
 
+std::string PutCustomEventRuleRequest::getMetricName()const
+{
+	return metricName_;
+}
+
+void PutCustomEventRuleRequest::setMetricName(const std::string& metricName)
+{
+	metricName_ = metricName;
+	setParameter("MetricName", metricName);
+}
+
 std::string PutCustomEventRuleRequest::getPeriod()const
 {
 	return period_;

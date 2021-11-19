@@ -32,6 +32,10 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_CMS_EXPORT PutGroupMetricRuleResult : public ServiceResult
 			{
 			public:
+				struct Result
+				{
+					std::string ruleId;
+				};
 
 
 				PutGroupMetricRuleResult();
@@ -40,6 +44,7 @@ namespace AlibabaCloud
 				std::string getMessage()const;
 				std::string getCode()const;
 				bool getSuccess()const;
+				Result getResult()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -47,6 +52,7 @@ namespace AlibabaCloud
 				std::string message_;
 				std::string code_;
 				bool success_;
+				Result result_;
 
 			};
 		}

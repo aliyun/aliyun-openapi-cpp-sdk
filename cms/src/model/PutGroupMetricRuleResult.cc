@@ -39,6 +39,9 @@ void PutGroupMetricRuleResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto resultNode = value["Result"];
+	if(!resultNode["RuleId"].isNull())
+		result_.ruleId = resultNode["RuleId"].asString();
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
@@ -61,5 +64,10 @@ std::string PutGroupMetricRuleResult::getCode()const
 bool PutGroupMetricRuleResult::getSuccess()const
 {
 	return success_;
+}
+
+PutGroupMetricRuleResult::Result PutGroupMetricRuleResult::getResult()const
+{
+	return result_;
 }
 
