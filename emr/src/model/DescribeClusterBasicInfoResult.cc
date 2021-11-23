@@ -148,6 +148,10 @@ void DescribeClusterBasicInfoResult::parse(const std::string &payload)
 		clusterInfo_.operationId = clusterInfoNode["OperationId"].asString();
 	if(!clusterInfoNode["ClickhouseConf"].isNull())
 		clusterInfo_.clickhouseConf = clusterInfoNode["ClickhouseConf"].asString();
+	if(!clusterInfoNode["DataDiskEncrypted"].isNull())
+		clusterInfo_.dataDiskEncrypted = clusterInfoNode["DataDiskEncrypted"].asString() == "true";
+	if(!clusterInfoNode["DataDiskKMSKeyId"].isNull())
+		clusterInfo_.dataDiskKMSKeyId = clusterInfoNode["DataDiskKMSKeyId"].asString();
 	auto allGatewayClusterInfoListNode = clusterInfoNode["GatewayClusterInfoList"]["GatewayClusterInfo"];
 	for (auto clusterInfoNodeGatewayClusterInfoListGatewayClusterInfo : allGatewayClusterInfoListNode)
 	{

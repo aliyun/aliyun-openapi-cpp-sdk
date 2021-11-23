@@ -138,11 +138,13 @@ namespace AlibabaCloud
 					std::string securityGroupId;
 					std::string machineType;
 					int taskNodeTotal;
+					bool dataDiskEncrypted;
 					AccessInfo accessInfo;
 					std::string extraInfo;
 					int masterNodeTotal;
 					std::string userId;
 					std::string chargeType;
+					std::string dataDiskKMSKeyId;
 					bool autoScalingEnable;
 					std::string instanceGeneration;
 					std::string regionId;

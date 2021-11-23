@@ -110,6 +110,10 @@ void DescribeClusterTemplateResult::parse(const std::string &payload)
 		templateInfo_.metaStoreType = templateInfoNode["MetaStoreType"].asString();
 	if(!templateInfoNode["MetaStoreConf"].isNull())
 		templateInfo_.metaStoreConf = templateInfoNode["MetaStoreConf"].asString();
+	if(!templateInfoNode["DataDiskEncrypted"].isNull())
+		templateInfo_.dataDiskEncrypted = templateInfoNode["DataDiskEncrypted"].asString() == "true";
+	if(!templateInfoNode["DataDiskKMSKeyId"].isNull())
+		templateInfo_.dataDiskKMSKeyId = templateInfoNode["DataDiskKMSKeyId"].asString();
 	auto allBootstrapActionListNode = templateInfoNode["BootstrapActionList"]["BootstrapAction"];
 	for (auto templateInfoNodeBootstrapActionListBootstrapAction : allBootstrapActionListNode)
 	{

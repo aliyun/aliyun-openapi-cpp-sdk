@@ -458,6 +458,17 @@ void CreateClusterV2Request::setAccessKeyId(const std::string& accessKeyId)
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string CreateClusterV2Request::getDataDiskKMSKeyId()const
+{
+	return dataDiskKMSKeyId_;
+}
+
+void CreateClusterV2Request::setDataDiskKMSKeyId(const std::string& dataDiskKMSKeyId)
+{
+	dataDiskKMSKeyId_ = dataDiskKMSKeyId;
+	setParameter("DataDiskKMSKeyId", dataDiskKMSKeyId);
+}
+
 std::string CreateClusterV2Request::getRegionId()const
 {
 	return regionId_;
@@ -506,6 +517,17 @@ void CreateClusterV2Request::setUserDefinedEmrEcsRole(const std::string& userDef
 {
 	userDefinedEmrEcsRole_ = userDefinedEmrEcsRole;
 	setParameter("UserDefinedEmrEcsRole", userDefinedEmrEcsRole);
+}
+
+bool CreateClusterV2Request::getDataDiskEncrypted()const
+{
+	return dataDiskEncrypted_;
+}
+
+void CreateClusterV2Request::setDataDiskEncrypted(bool dataDiskEncrypted)
+{
+	dataDiskEncrypted_ = dataDiskEncrypted;
+	setParameter("DataDiskEncrypted", dataDiskEncrypted ? "true" : "false");
 }
 
 std::string CreateClusterV2Request::getWhiteListType()const

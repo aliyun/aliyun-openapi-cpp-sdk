@@ -95,6 +95,7 @@ namespace AlibabaCloud
 					std::string securityGroupId;
 					std::string depositType;
 					std::string machineType;
+					bool dataDiskEncrypted;
 					std::string metaStoreType;
 					std::string emrVer;
 					int masterNodeTotal;
@@ -105,6 +106,7 @@ namespace AlibabaCloud
 					bool useCustomHiveMetaDb;
 					std::string userId;
 					std::string metaStoreConf;
+					std::string dataDiskKMSKeyId;
 					std::vector<HostGroup> hostGroupList;
 					std::string instanceGeneration;
 					std::string id;

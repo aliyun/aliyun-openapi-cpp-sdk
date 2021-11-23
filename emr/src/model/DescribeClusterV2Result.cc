@@ -142,6 +142,10 @@ void DescribeClusterV2Result::parse(const std::string &payload)
 		clusterInfo_.metaStoreType = clusterInfoNode["MetaStoreType"].asString();
 	if(!clusterInfoNode["K8sClusterId"].isNull())
 		clusterInfo_.k8sClusterId = clusterInfoNode["K8sClusterId"].asString();
+	if(!clusterInfoNode["DataDiskEncrypted"].isNull())
+		clusterInfo_.dataDiskEncrypted = clusterInfoNode["DataDiskEncrypted"].asString() == "true";
+	if(!clusterInfoNode["DataDiskKMSKeyId"].isNull())
+		clusterInfo_.dataDiskKMSKeyId = clusterInfoNode["DataDiskKMSKeyId"].asString();
 	auto allGatewayClusterInfoListNode = clusterInfoNode["GatewayClusterInfoList"]["GatewayClusterInfo"];
 	for (auto clusterInfoNodeGatewayClusterInfoListGatewayClusterInfo : allGatewayClusterInfoListNode)
 	{
