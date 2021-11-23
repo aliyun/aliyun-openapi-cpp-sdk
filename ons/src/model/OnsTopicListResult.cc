@@ -43,24 +43,24 @@ void OnsTopicListResult::parse(const std::string &payload)
 	for (auto valueDataPublishInfoDo : allDataNode)
 	{
 		PublishInfoDo dataObject;
-		if(!valueDataPublishInfoDo["Topic"].isNull())
-			dataObject.topic = valueDataPublishInfoDo["Topic"].asString();
-		if(!valueDataPublishInfoDo["Owner"].isNull())
-			dataObject.owner = valueDataPublishInfoDo["Owner"].asString();
-		if(!valueDataPublishInfoDo["Relation"].isNull())
-			dataObject.relation = std::stoi(valueDataPublishInfoDo["Relation"].asString());
-		if(!valueDataPublishInfoDo["RelationName"].isNull())
-			dataObject.relationName = valueDataPublishInfoDo["RelationName"].asString();
-		if(!valueDataPublishInfoDo["CreateTime"].isNull())
-			dataObject.createTime = std::stol(valueDataPublishInfoDo["CreateTime"].asString());
-		if(!valueDataPublishInfoDo["Remark"].isNull())
-			dataObject.remark = valueDataPublishInfoDo["Remark"].asString();
 		if(!valueDataPublishInfoDo["MessageType"].isNull())
 			dataObject.messageType = std::stoi(valueDataPublishInfoDo["MessageType"].asString());
-		if(!valueDataPublishInfoDo["InstanceId"].isNull())
-			dataObject.instanceId = valueDataPublishInfoDo["InstanceId"].asString();
+		if(!valueDataPublishInfoDo["RelationName"].isNull())
+			dataObject.relationName = valueDataPublishInfoDo["RelationName"].asString();
+		if(!valueDataPublishInfoDo["Owner"].isNull())
+			dataObject.owner = valueDataPublishInfoDo["Owner"].asString();
 		if(!valueDataPublishInfoDo["IndependentNaming"].isNull())
 			dataObject.independentNaming = valueDataPublishInfoDo["IndependentNaming"].asString() == "true";
+		if(!valueDataPublishInfoDo["Remark"].isNull())
+			dataObject.remark = valueDataPublishInfoDo["Remark"].asString();
+		if(!valueDataPublishInfoDo["Relation"].isNull())
+			dataObject.relation = std::stoi(valueDataPublishInfoDo["Relation"].asString());
+		if(!valueDataPublishInfoDo["CreateTime"].isNull())
+			dataObject.createTime = std::stol(valueDataPublishInfoDo["CreateTime"].asString());
+		if(!valueDataPublishInfoDo["Topic"].isNull())
+			dataObject.topic = valueDataPublishInfoDo["Topic"].asString();
+		if(!valueDataPublishInfoDo["InstanceId"].isNull())
+			dataObject.instanceId = valueDataPublishInfoDo["InstanceId"].asString();
 		auto allTagsNode = valueDataPublishInfoDo["Tags"]["Tag"];
 		for (auto valueDataPublishInfoDoTagsTag : allTagsNode)
 		{

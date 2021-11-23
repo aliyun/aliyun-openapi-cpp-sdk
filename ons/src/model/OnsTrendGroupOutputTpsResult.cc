@@ -40,20 +40,20 @@ void OnsTrendGroupOutputTpsResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["Title"].isNull())
-		data_.title = dataNode["Title"].asString();
 	if(!dataNode["XUnit"].isNull())
 		data_.xUnit = dataNode["XUnit"].asString();
 	if(!dataNode["YUnit"].isNull())
 		data_.yUnit = dataNode["YUnit"].asString();
+	if(!dataNode["Title"].isNull())
+		data_.title = dataNode["Title"].asString();
 	auto allRecordsNode = dataNode["Records"]["StatsDataDo"];
 	for (auto dataNodeRecordsStatsDataDo : allRecordsNode)
 	{
 		Data::StatsDataDo statsDataDoObject;
-		if(!dataNodeRecordsStatsDataDo["X"].isNull())
-			statsDataDoObject.x = std::stol(dataNodeRecordsStatsDataDo["X"].asString());
 		if(!dataNodeRecordsStatsDataDo["Y"].isNull())
 			statsDataDoObject.y = std::stof(dataNodeRecordsStatsDataDo["Y"].asString());
+		if(!dataNodeRecordsStatsDataDo["X"].isNull())
+			statsDataDoObject.x = std::stol(dataNodeRecordsStatsDataDo["X"].asString());
 		data_.records.push_back(statsDataDoObject);
 	}
 	if(!value["HelpUrl"].isNull())

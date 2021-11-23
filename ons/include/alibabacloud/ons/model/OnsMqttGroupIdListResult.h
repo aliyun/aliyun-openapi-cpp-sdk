@@ -39,10 +39,10 @@ namespace AlibabaCloud
 					std::string instanceId;
 					long createTime;
 					long updateTime;
-					long id;
 					bool independentNaming;
-					int channelId;
+					long id;
 					std::string topic;
+					int channelId;
 					std::string groupId;
 				};
 

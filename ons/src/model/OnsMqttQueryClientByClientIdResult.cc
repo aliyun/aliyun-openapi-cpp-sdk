@@ -42,20 +42,20 @@ void OnsMqttQueryClientByClientIdResult::parse(const std::string &payload)
 	auto mqttClientInfoDoNode = value["MqttClientInfoDo"];
 	if(!mqttClientInfoDoNode["Online"].isNull())
 		mqttClientInfoDo_.online = mqttClientInfoDoNode["Online"].asString() == "true";
-	if(!mqttClientInfoDoNode["ClientId"].isNull())
-		mqttClientInfoDo_.clientId = mqttClientInfoDoNode["ClientId"].asString();
-	if(!mqttClientInfoDoNode["SocketChannel"].isNull())
-		mqttClientInfoDo_.socketChannel = mqttClientInfoDoNode["SocketChannel"].asString();
 	if(!mqttClientInfoDoNode["LastTouch"].isNull())
 		mqttClientInfoDo_.lastTouch = std::stol(mqttClientInfoDoNode["LastTouch"].asString());
+	if(!mqttClientInfoDoNode["SocketChannel"].isNull())
+		mqttClientInfoDo_.socketChannel = mqttClientInfoDoNode["SocketChannel"].asString();
+	if(!mqttClientInfoDoNode["ClientId"].isNull())
+		mqttClientInfoDo_.clientId = mqttClientInfoDoNode["ClientId"].asString();
 	auto allSubScriptonDataNode = mqttClientInfoDoNode["SubScriptonData"]["SubscriptionDo"];
 	for (auto mqttClientInfoDoNodeSubScriptonDataSubscriptionDo : allSubScriptonDataNode)
 	{
 		MqttClientInfoDo::SubscriptionDo subscriptionDoObject;
-		if(!mqttClientInfoDoNodeSubScriptonDataSubscriptionDo["ParentTopic"].isNull())
-			subscriptionDoObject.parentTopic = mqttClientInfoDoNodeSubScriptonDataSubscriptionDo["ParentTopic"].asString();
 		if(!mqttClientInfoDoNodeSubScriptonDataSubscriptionDo["SubTopic"].isNull())
 			subscriptionDoObject.subTopic = mqttClientInfoDoNodeSubScriptonDataSubscriptionDo["SubTopic"].asString();
+		if(!mqttClientInfoDoNodeSubScriptonDataSubscriptionDo["ParentTopic"].isNull())
+			subscriptionDoObject.parentTopic = mqttClientInfoDoNodeSubScriptonDataSubscriptionDo["ParentTopic"].asString();
 		if(!mqttClientInfoDoNodeSubScriptonDataSubscriptionDo["Qos"].isNull())
 			subscriptionDoObject.qos = std::stoi(mqttClientInfoDoNodeSubScriptonDataSubscriptionDo["Qos"].asString());
 		mqttClientInfoDo_.subScriptonData.push_back(subscriptionDoObject);

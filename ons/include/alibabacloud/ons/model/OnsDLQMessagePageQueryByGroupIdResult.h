@@ -53,8 +53,8 @@ namespace AlibabaCloud
 						std::string storeHost;
 						std::vector<OnsRestMessageDo::MessageProperty> propertyList;
 						std::string topic;
-						std::string body;
 						int reconsumeTimes;
+						std::string body;
 					};
 					std::string taskId;
 					long currentPage;

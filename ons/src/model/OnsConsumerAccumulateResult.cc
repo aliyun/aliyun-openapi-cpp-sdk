@@ -40,28 +40,28 @@ void OnsConsumerAccumulateResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["Online"].isNull())
-		data_.online = dataNode["Online"].asString() == "true";
-	if(!dataNode["TotalDiff"].isNull())
-		data_.totalDiff = std::stol(dataNode["TotalDiff"].asString());
 	if(!dataNode["ConsumeTps"].isNull())
 		data_.consumeTps = std::stof(dataNode["ConsumeTps"].asString());
-	if(!dataNode["LastTimestamp"].isNull())
-		data_.lastTimestamp = std::stol(dataNode["LastTimestamp"].asString());
 	if(!dataNode["DelayTime"].isNull())
 		data_.delayTime = std::stol(dataNode["DelayTime"].asString());
+	if(!dataNode["LastTimestamp"].isNull())
+		data_.lastTimestamp = std::stol(dataNode["LastTimestamp"].asString());
+	if(!dataNode["TotalDiff"].isNull())
+		data_.totalDiff = std::stol(dataNode["TotalDiff"].asString());
+	if(!dataNode["Online"].isNull())
+		data_.online = dataNode["Online"].asString() == "true";
 	auto allDetailInTopicListNode = dataNode["DetailInTopicList"]["DetailInTopicDo"];
 	for (auto dataNodeDetailInTopicListDetailInTopicDo : allDetailInTopicListNode)
 	{
 		Data::DetailInTopicDo detailInTopicDoObject;
-		if(!dataNodeDetailInTopicListDetailInTopicDo["Topic"].isNull())
-			detailInTopicDoObject.topic = dataNodeDetailInTopicListDetailInTopicDo["Topic"].asString();
+		if(!dataNodeDetailInTopicListDetailInTopicDo["DelayTime"].isNull())
+			detailInTopicDoObject.delayTime = std::stol(dataNodeDetailInTopicListDetailInTopicDo["DelayTime"].asString());
 		if(!dataNodeDetailInTopicListDetailInTopicDo["TotalDiff"].isNull())
 			detailInTopicDoObject.totalDiff = std::stol(dataNodeDetailInTopicListDetailInTopicDo["TotalDiff"].asString());
 		if(!dataNodeDetailInTopicListDetailInTopicDo["LastTimestamp"].isNull())
 			detailInTopicDoObject.lastTimestamp = std::stol(dataNodeDetailInTopicListDetailInTopicDo["LastTimestamp"].asString());
-		if(!dataNodeDetailInTopicListDetailInTopicDo["DelayTime"].isNull())
-			detailInTopicDoObject.delayTime = std::stol(dataNodeDetailInTopicListDetailInTopicDo["DelayTime"].asString());
+		if(!dataNodeDetailInTopicListDetailInTopicDo["Topic"].isNull())
+			detailInTopicDoObject.topic = dataNodeDetailInTopicListDetailInTopicDo["Topic"].asString();
 		data_.detailInTopicList.push_back(detailInTopicDoObject);
 	}
 	if(!value["HelpUrl"].isNull())

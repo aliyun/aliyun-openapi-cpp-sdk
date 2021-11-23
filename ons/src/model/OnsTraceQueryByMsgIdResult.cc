@@ -39,10 +39,10 @@ void OnsTraceQueryByMsgIdResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["HelpUrl"].isNull())
-		helpUrl_ = value["HelpUrl"].asString();
 	if(!value["QueryId"].isNull())
 		queryId_ = value["QueryId"].asString();
+	if(!value["HelpUrl"].isNull())
+		helpUrl_ = value["HelpUrl"].asString();
 
 }
 

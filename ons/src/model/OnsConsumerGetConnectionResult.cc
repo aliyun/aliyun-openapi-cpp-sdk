@@ -44,14 +44,14 @@ void OnsConsumerGetConnectionResult::parse(const std::string &payload)
 	for (auto dataNodeConnectionListConnectionDo : allConnectionListNode)
 	{
 		Data::ConnectionDo connectionDoObject;
-		if(!dataNodeConnectionListConnectionDo["ClientId"].isNull())
-			connectionDoObject.clientId = dataNodeConnectionListConnectionDo["ClientId"].asString();
+		if(!dataNodeConnectionListConnectionDo["Version"].isNull())
+			connectionDoObject.version = dataNodeConnectionListConnectionDo["Version"].asString();
 		if(!dataNodeConnectionListConnectionDo["ClientAddr"].isNull())
 			connectionDoObject.clientAddr = dataNodeConnectionListConnectionDo["ClientAddr"].asString();
 		if(!dataNodeConnectionListConnectionDo["Language"].isNull())
 			connectionDoObject.language = dataNodeConnectionListConnectionDo["Language"].asString();
-		if(!dataNodeConnectionListConnectionDo["Version"].isNull())
-			connectionDoObject.version = dataNodeConnectionListConnectionDo["Version"].asString();
+		if(!dataNodeConnectionListConnectionDo["ClientId"].isNull())
+			connectionDoObject.clientId = dataNodeConnectionListConnectionDo["ClientId"].asString();
 		data_.connectionList.push_back(connectionDoObject);
 	}
 	if(!value["HelpUrl"].isNull())

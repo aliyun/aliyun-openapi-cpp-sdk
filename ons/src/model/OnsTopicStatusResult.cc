@@ -40,12 +40,12 @@ void OnsTopicStatusResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["TotalCount"].isNull())
-		data_.totalCount = std::stol(dataNode["TotalCount"].asString());
-	if(!dataNode["LastTimeStamp"].isNull())
-		data_.lastTimeStamp = std::stol(dataNode["LastTimeStamp"].asString());
 	if(!dataNode["Perm"].isNull())
 		data_.perm = std::stoi(dataNode["Perm"].asString());
+	if(!dataNode["LastTimeStamp"].isNull())
+		data_.lastTimeStamp = std::stol(dataNode["LastTimeStamp"].asString());
+	if(!dataNode["TotalCount"].isNull())
+		data_.totalCount = std::stol(dataNode["TotalCount"].asString());
 	if(!value["HelpUrl"].isNull())
 		helpUrl_ = value["HelpUrl"].asString();
 

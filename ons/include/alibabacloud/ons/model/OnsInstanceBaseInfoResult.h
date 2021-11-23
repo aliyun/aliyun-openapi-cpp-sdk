@@ -42,11 +42,11 @@ namespace AlibabaCloud
 						std::string httpInternetSecureEndpoint;
 					};
 					Endpoints endpoints;
-					std::string instanceName;
 					long maxTps;
+					std::string instanceName;
 					int topicCapacity;
-					std::string instanceId;
 					long releaseTime;
+					std::string instanceId;
 					int instanceStatus;
 					bool independentNaming;
 					int instanceType;

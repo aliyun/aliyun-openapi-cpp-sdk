@@ -38,14 +38,14 @@ namespace AlibabaCloud
 					{
 						long lastTimestamp;
 						long totalDiff;
-						std::string topic;
 						long delayTime;
+						std::string topic;
 					};
 					float consumeTps;
 					long lastTimestamp;
 					long totalDiff;
-					bool online;
 					long delayTime;
+					bool online;
 					std::vector<DetailInTopicDo> detailInTopicList;
 				};
 

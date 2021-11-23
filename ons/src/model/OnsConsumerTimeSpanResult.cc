@@ -40,14 +40,14 @@ void OnsConsumerTimeSpanResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["Topic"].isNull())
-		data_.topic = dataNode["Topic"].asString();
-	if(!dataNode["MinTimeStamp"].isNull())
-		data_.minTimeStamp = std::stol(dataNode["MinTimeStamp"].asString());
 	if(!dataNode["MaxTimeStamp"].isNull())
 		data_.maxTimeStamp = std::stol(dataNode["MaxTimeStamp"].asString());
 	if(!dataNode["ConsumeTimeStamp"].isNull())
 		data_.consumeTimeStamp = std::stol(dataNode["ConsumeTimeStamp"].asString());
+	if(!dataNode["Topic"].isNull())
+		data_.topic = dataNode["Topic"].asString();
+	if(!dataNode["MinTimeStamp"].isNull())
+		data_.minTimeStamp = std::stol(dataNode["MinTimeStamp"].asString());
 	if(!dataNode["InstanceId"].isNull())
 		data_.instanceId = dataNode["InstanceId"].asString();
 	if(!value["HelpUrl"].isNull())

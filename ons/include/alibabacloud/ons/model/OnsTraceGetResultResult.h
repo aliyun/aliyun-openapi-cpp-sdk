@@ -40,8 +40,8 @@ namespace AlibabaCloud
 						{
 							struct SubClientInfoDo
 							{
-								int costTime;
 								std::string status;
+								int costTime;
 								std::string clientHost;
 								long subTime;
 								std::string subGroupName;
@@ -52,8 +52,8 @@ namespace AlibabaCloud
 							int successCount;
 							std::vector<SubMapDo::SubClientInfoDo> clientList;
 						};
-						int costTime;
 						std::string status;
+						int costTime;
 						std::string msgKey;
 						std::vector<TraceMapDo::SubMapDo> subList;
 						std::string tag;
@@ -66,9 +66,9 @@ namespace AlibabaCloud
 					std::string status;
 					std::string instanceId;
 					std::string userId;
-					std::string queryId;
 					std::string msgKey;
 					long createTime;
+					std::string queryId;
 					long updateTime;
 					std::vector<TraceMapDo> traceList;
 					std::string topic;

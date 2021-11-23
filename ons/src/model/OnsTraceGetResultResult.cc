@@ -40,72 +40,72 @@ void OnsTraceGetResultResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto traceDataNode = value["TraceData"];
-	if(!traceDataNode["QueryId"].isNull())
-		traceData_.queryId = traceDataNode["QueryId"].asString();
-	if(!traceDataNode["UserId"].isNull())
-		traceData_.userId = traceDataNode["UserId"].asString();
-	if(!traceDataNode["Topic"].isNull())
-		traceData_.topic = traceDataNode["Topic"].asString();
-	if(!traceDataNode["MsgId"].isNull())
-		traceData_.msgId = traceDataNode["MsgId"].asString();
-	if(!traceDataNode["MsgKey"].isNull())
-		traceData_.msgKey = traceDataNode["MsgKey"].asString();
 	if(!traceDataNode["Status"].isNull())
 		traceData_.status = traceDataNode["Status"].asString();
-	if(!traceDataNode["CreateTime"].isNull())
-		traceData_.createTime = std::stol(traceDataNode["CreateTime"].asString());
+	if(!traceDataNode["MsgKey"].isNull())
+		traceData_.msgKey = traceDataNode["MsgKey"].asString();
 	if(!traceDataNode["UpdateTime"].isNull())
 		traceData_.updateTime = std::stol(traceDataNode["UpdateTime"].asString());
+	if(!traceDataNode["CreateTime"].isNull())
+		traceData_.createTime = std::stol(traceDataNode["CreateTime"].asString());
+	if(!traceDataNode["Topic"].isNull())
+		traceData_.topic = traceDataNode["Topic"].asString();
+	if(!traceDataNode["UserId"].isNull())
+		traceData_.userId = traceDataNode["UserId"].asString();
 	if(!traceDataNode["InstanceId"].isNull())
 		traceData_.instanceId = traceDataNode["InstanceId"].asString();
+	if(!traceDataNode["MsgId"].isNull())
+		traceData_.msgId = traceDataNode["MsgId"].asString();
+	if(!traceDataNode["QueryId"].isNull())
+		traceData_.queryId = traceDataNode["QueryId"].asString();
 	auto allTraceListNode = traceDataNode["TraceList"]["TraceMapDo"];
 	for (auto traceDataNodeTraceListTraceMapDo : allTraceListNode)
 	{
 		TraceData::TraceMapDo traceMapDoObject;
+		if(!traceDataNodeTraceListTraceMapDo["Status"].isNull())
+			traceMapDoObject.status = traceDataNodeTraceListTraceMapDo["Status"].asString();
+		if(!traceDataNodeTraceListTraceMapDo["MsgKey"].isNull())
+			traceMapDoObject.msgKey = traceDataNodeTraceListTraceMapDo["MsgKey"].asString();
 		if(!traceDataNodeTraceListTraceMapDo["PubTime"].isNull())
 			traceMapDoObject.pubTime = std::stol(traceDataNodeTraceListTraceMapDo["PubTime"].asString());
 		if(!traceDataNodeTraceListTraceMapDo["Topic"].isNull())
 			traceMapDoObject.topic = traceDataNodeTraceListTraceMapDo["Topic"].asString();
-		if(!traceDataNodeTraceListTraceMapDo["PubGroupName"].isNull())
-			traceMapDoObject.pubGroupName = traceDataNodeTraceListTraceMapDo["PubGroupName"].asString();
-		if(!traceDataNodeTraceListTraceMapDo["MsgId"].isNull())
-			traceMapDoObject.msgId = traceDataNodeTraceListTraceMapDo["MsgId"].asString();
-		if(!traceDataNodeTraceListTraceMapDo["Tag"].isNull())
-			traceMapDoObject.tag = traceDataNodeTraceListTraceMapDo["Tag"].asString();
-		if(!traceDataNodeTraceListTraceMapDo["MsgKey"].isNull())
-			traceMapDoObject.msgKey = traceDataNodeTraceListTraceMapDo["MsgKey"].asString();
-		if(!traceDataNodeTraceListTraceMapDo["BornHost"].isNull())
-			traceMapDoObject.bornHost = traceDataNodeTraceListTraceMapDo["BornHost"].asString();
 		if(!traceDataNodeTraceListTraceMapDo["CostTime"].isNull())
 			traceMapDoObject.costTime = std::stoi(traceDataNodeTraceListTraceMapDo["CostTime"].asString());
-		if(!traceDataNodeTraceListTraceMapDo["Status"].isNull())
-			traceMapDoObject.status = traceDataNodeTraceListTraceMapDo["Status"].asString();
+		if(!traceDataNodeTraceListTraceMapDo["Tag"].isNull())
+			traceMapDoObject.tag = traceDataNodeTraceListTraceMapDo["Tag"].asString();
+		if(!traceDataNodeTraceListTraceMapDo["MsgId"].isNull())
+			traceMapDoObject.msgId = traceDataNodeTraceListTraceMapDo["MsgId"].asString();
+		if(!traceDataNodeTraceListTraceMapDo["PubGroupName"].isNull())
+			traceMapDoObject.pubGroupName = traceDataNodeTraceListTraceMapDo["PubGroupName"].asString();
+		if(!traceDataNodeTraceListTraceMapDo["BornHost"].isNull())
+			traceMapDoObject.bornHost = traceDataNodeTraceListTraceMapDo["BornHost"].asString();
 		auto allSubListNode = traceDataNodeTraceListTraceMapDo["SubList"]["SubMapDo"];
 		for (auto traceDataNodeTraceListTraceMapDoSubListSubMapDo : allSubListNode)
 		{
 			TraceData::TraceMapDo::SubMapDo subListObject;
+			if(!traceDataNodeTraceListTraceMapDoSubListSubMapDo["FailCount"].isNull())
+				subListObject.failCount = std::stoi(traceDataNodeTraceListTraceMapDoSubListSubMapDo["FailCount"].asString());
 			if(!traceDataNodeTraceListTraceMapDoSubListSubMapDo["SubGroupName"].isNull())
 				subListObject.subGroupName = traceDataNodeTraceListTraceMapDoSubListSubMapDo["SubGroupName"].asString();
 			if(!traceDataNodeTraceListTraceMapDoSubListSubMapDo["SuccessCount"].isNull())
 				subListObject.successCount = std::stoi(traceDataNodeTraceListTraceMapDoSubListSubMapDo["SuccessCount"].asString());
-			if(!traceDataNodeTraceListTraceMapDoSubListSubMapDo["FailCount"].isNull())
-				subListObject.failCount = std::stoi(traceDataNodeTraceListTraceMapDoSubListSubMapDo["FailCount"].asString());
 			auto allClientListNode = traceDataNodeTraceListTraceMapDoSubListSubMapDo["ClientList"]["SubClientInfoDo"];
 			for (auto traceDataNodeTraceListTraceMapDoSubListSubMapDoClientListSubClientInfoDo : allClientListNode)
 			{
 				TraceData::TraceMapDo::SubMapDo::SubClientInfoDo clientListObject;
-				if(!traceDataNodeTraceListTraceMapDoSubListSubMapDoClientListSubClientInfoDo["SubGroupName"].isNull())
-					clientListObject.subGroupName = traceDataNodeTraceListTraceMapDoSubListSubMapDoClientListSubClientInfoDo["SubGroupName"].asString();
-				if(!traceDataNodeTraceListTraceMapDoSubListSubMapDoClientListSubClientInfoDo["SubTime"].isNull())
-					clientListObject.subTime = std::stol(traceDataNodeTraceListTraceMapDoSubListSubMapDoClientListSubClientInfoDo["SubTime"].asString());
-				if(!traceDataNodeTraceListTraceMapDoSubListSubMapDoClientListSubClientInfoDo["ClientHost"].isNull())
-					clientListObject.clientHost = traceDataNodeTraceListTraceMapDoSubListSubMapDoClientListSubClientInfoDo["ClientHost"].asString();
-				if(!traceDataNodeTraceListTraceMapDoSubListSubMapDoClientListSubClientInfoDo["ReconsumeTimes"].isNull())
-					clientListObject.reconsumeTimes = std::stoi(traceDataNodeTraceListTraceMapDoSubListSubMapDoClientListSubClientInfoDo["ReconsumeTimes"].asString());
-				if(!traceDataNodeTraceListTraceMapDoSubListSubMapDoClientListSubClientInfoDo["CostTime"].isNull())
-					clientListObject.costTime = std::stoi(traceDataNodeTraceListTraceMapDoSubListSubMapDoClientListSubClientInfoDo["CostTime"].asString());
 				if(!traceDataNodeTraceListTraceMapDoSubListSubMapDoClientListSubClientInfoDo["Status"].isNull())
 					clientListObject.status = traceDataNodeTraceListTraceMapDoSubListSubMapDoClientListSubClientInfoDo["Status"].asString();
+				if(!traceDataNodeTraceListTraceMapDoSubListSubMapDoClientListSubClientInfoDo["SubTime"].isNull())
+					clientListObject.subTime = std::stol(traceDataNodeTraceListTraceMapDoSubListSubMapDoClientListSubClientInfoDo["SubTime"].asString());
+				if(!traceDataNodeTraceListTraceMapDoSubListSubMapDoClientListSubClientInfoDo["ReconsumeTimes"].isNull())
+					clientListObject.reconsumeTimes = std::stoi(traceDataNodeTraceListTraceMapDoSubListSubMapDoClientListSubClientInfoDo["ReconsumeTimes"].asString());
+				if(!traceDataNodeTraceListTraceMapDoSubListSubMapDoClientListSubClientInfoDo["SubGroupName"].isNull())
+					clientListObject.subGroupName = traceDataNodeTraceListTraceMapDoSubListSubMapDoClientListSubClientInfoDo["SubGroupName"].asString();
+				if(!traceDataNodeTraceListTraceMapDoSubListSubMapDoClientListSubClientInfoDo["ClientHost"].isNull())
+					clientListObject.clientHost = traceDataNodeTraceListTraceMapDoSubListSubMapDoClientListSubClientInfoDo["ClientHost"].asString();
+				if(!traceDataNodeTraceListTraceMapDoSubListSubMapDoClientListSubClientInfoDo["CostTime"].isNull())
+					clientListObject.costTime = std::stoi(traceDataNodeTraceListTraceMapDoSubListSubMapDoClientListSubClientInfoDo["CostTime"].asString());
 				subListObject.clientList.push_back(clientListObject);
 			}
 			traceMapDoObject.subList.push_back(subListObject);

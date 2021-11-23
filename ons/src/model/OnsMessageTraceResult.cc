@@ -43,12 +43,12 @@ void OnsMessageTraceResult::parse(const std::string &payload)
 	for (auto valueDataMessageTrack : allDataNode)
 	{
 		MessageTrack dataObject;
-		if(!valueDataMessageTrack["ConsumerGroup"].isNull())
-			dataObject.consumerGroup = valueDataMessageTrack["ConsumerGroup"].asString();
-		if(!valueDataMessageTrack["TrackType"].isNull())
-			dataObject.trackType = valueDataMessageTrack["TrackType"].asString();
 		if(!valueDataMessageTrack["ExceptionDesc"].isNull())
 			dataObject.exceptionDesc = valueDataMessageTrack["ExceptionDesc"].asString();
+		if(!valueDataMessageTrack["TrackType"].isNull())
+			dataObject.trackType = valueDataMessageTrack["TrackType"].asString();
+		if(!valueDataMessageTrack["ConsumerGroup"].isNull())
+			dataObject.consumerGroup = valueDataMessageTrack["ConsumerGroup"].asString();
 		if(!valueDataMessageTrack["InstanceId"].isNull())
 			dataObject.instanceId = valueDataMessageTrack["InstanceId"].asString();
 		data_.push_back(dataObject);

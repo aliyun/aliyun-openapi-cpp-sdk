@@ -39,10 +39,10 @@ void OnsMessageSendResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["HelpUrl"].isNull())
-		helpUrl_ = value["HelpUrl"].asString();
 	if(!value["Data"].isNull())
 		data_ = value["Data"].asString();
+	if(!value["HelpUrl"].isNull())
+		helpUrl_ = value["HelpUrl"].asString();
 
 }
 

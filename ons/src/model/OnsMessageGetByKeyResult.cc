@@ -43,40 +43,40 @@ void OnsMessageGetByKeyResult::parse(const std::string &payload)
 	for (auto valueDataOnsRestMessageDo : allDataNode)
 	{
 		OnsRestMessageDo dataObject;
-		if(!valueDataOnsRestMessageDo["Topic"].isNull())
-			dataObject.topic = valueDataOnsRestMessageDo["Topic"].asString();
-		if(!valueDataOnsRestMessageDo["Flag"].isNull())
-			dataObject.flag = std::stoi(valueDataOnsRestMessageDo["Flag"].asString());
-		if(!valueDataOnsRestMessageDo["Body"].isNull())
-			dataObject.body = valueDataOnsRestMessageDo["Body"].asString();
-		if(!valueDataOnsRestMessageDo["StoreSize"].isNull())
-			dataObject.storeSize = std::stoi(valueDataOnsRestMessageDo["StoreSize"].asString());
-		if(!valueDataOnsRestMessageDo["BornTimestamp"].isNull())
-			dataObject.bornTimestamp = std::stol(valueDataOnsRestMessageDo["BornTimestamp"].asString());
-		if(!valueDataOnsRestMessageDo["BornHost"].isNull())
-			dataObject.bornHost = valueDataOnsRestMessageDo["BornHost"].asString();
-		if(!valueDataOnsRestMessageDo["StoreTimestamp"].isNull())
-			dataObject.storeTimestamp = std::stol(valueDataOnsRestMessageDo["StoreTimestamp"].asString());
-		if(!valueDataOnsRestMessageDo["StoreHost"].isNull())
-			dataObject.storeHost = valueDataOnsRestMessageDo["StoreHost"].asString();
-		if(!valueDataOnsRestMessageDo["MsgId"].isNull())
-			dataObject.msgId = valueDataOnsRestMessageDo["MsgId"].asString();
 		if(!valueDataOnsRestMessageDo["OffsetId"].isNull())
 			dataObject.offsetId = valueDataOnsRestMessageDo["OffsetId"].asString();
-		if(!valueDataOnsRestMessageDo["BodyCRC"].isNull())
-			dataObject.bodyCRC = std::stoi(valueDataOnsRestMessageDo["BodyCRC"].asString());
+		if(!valueDataOnsRestMessageDo["StoreSize"].isNull())
+			dataObject.storeSize = std::stoi(valueDataOnsRestMessageDo["StoreSize"].asString());
 		if(!valueDataOnsRestMessageDo["ReconsumeTimes"].isNull())
 			dataObject.reconsumeTimes = std::stoi(valueDataOnsRestMessageDo["ReconsumeTimes"].asString());
+		if(!valueDataOnsRestMessageDo["StoreTimestamp"].isNull())
+			dataObject.storeTimestamp = std::stol(valueDataOnsRestMessageDo["StoreTimestamp"].asString());
+		if(!valueDataOnsRestMessageDo["Body"].isNull())
+			dataObject.body = valueDataOnsRestMessageDo["Body"].asString();
 		if(!valueDataOnsRestMessageDo["InstanceId"].isNull())
 			dataObject.instanceId = valueDataOnsRestMessageDo["InstanceId"].asString();
+		if(!valueDataOnsRestMessageDo["MsgId"].isNull())
+			dataObject.msgId = valueDataOnsRestMessageDo["MsgId"].asString();
+		if(!valueDataOnsRestMessageDo["Flag"].isNull())
+			dataObject.flag = std::stoi(valueDataOnsRestMessageDo["Flag"].asString());
+		if(!valueDataOnsRestMessageDo["StoreHost"].isNull())
+			dataObject.storeHost = valueDataOnsRestMessageDo["StoreHost"].asString();
+		if(!valueDataOnsRestMessageDo["Topic"].isNull())
+			dataObject.topic = valueDataOnsRestMessageDo["Topic"].asString();
+		if(!valueDataOnsRestMessageDo["BornTimestamp"].isNull())
+			dataObject.bornTimestamp = std::stol(valueDataOnsRestMessageDo["BornTimestamp"].asString());
+		if(!valueDataOnsRestMessageDo["BodyCRC"].isNull())
+			dataObject.bodyCRC = std::stoi(valueDataOnsRestMessageDo["BodyCRC"].asString());
+		if(!valueDataOnsRestMessageDo["BornHost"].isNull())
+			dataObject.bornHost = valueDataOnsRestMessageDo["BornHost"].asString();
 		auto allPropertyListNode = valueDataOnsRestMessageDo["PropertyList"]["MessageProperty"];
 		for (auto valueDataOnsRestMessageDoPropertyListMessageProperty : allPropertyListNode)
 		{
 			OnsRestMessageDo::MessageProperty propertyListObject;
-			if(!valueDataOnsRestMessageDoPropertyListMessageProperty["Name"].isNull())
-				propertyListObject.name = valueDataOnsRestMessageDoPropertyListMessageProperty["Name"].asString();
 			if(!valueDataOnsRestMessageDoPropertyListMessageProperty["Value"].isNull())
 				propertyListObject.value = valueDataOnsRestMessageDoPropertyListMessageProperty["Value"].asString();
+			if(!valueDataOnsRestMessageDoPropertyListMessageProperty["Name"].isNull())
+				propertyListObject.name = valueDataOnsRestMessageDoPropertyListMessageProperty["Name"].asString();
 			dataObject.propertyList.push_back(propertyListObject);
 		}
 		data_.push_back(dataObject);

@@ -40,10 +40,10 @@ void OnsMqttQueryClientByGroupIdResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto mqttClientSetDoNode = value["MqttClientSetDo"];
-	if(!mqttClientSetDoNode["OnlineCount"].isNull())
-		mqttClientSetDo_.onlineCount = std::stol(mqttClientSetDoNode["OnlineCount"].asString());
 	if(!mqttClientSetDoNode["PersistCount"].isNull())
 		mqttClientSetDo_.persistCount = std::stol(mqttClientSetDoNode["PersistCount"].asString());
+	if(!mqttClientSetDoNode["OnlineCount"].isNull())
+		mqttClientSetDo_.onlineCount = std::stol(mqttClientSetDoNode["OnlineCount"].asString());
 	if(!value["HelpUrl"].isNull())
 		helpUrl_ = value["HelpUrl"].asString();
 

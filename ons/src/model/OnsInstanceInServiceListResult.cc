@@ -43,18 +43,18 @@ void OnsInstanceInServiceListResult::parse(const std::string &payload)
 	for (auto valueDataInstanceVO : allDataNode)
 	{
 		InstanceVO dataObject;
-		if(!valueDataInstanceVO["InstanceId"].isNull())
-			dataObject.instanceId = valueDataInstanceVO["InstanceId"].asString();
-		if(!valueDataInstanceVO["InstanceStatus"].isNull())
-			dataObject.instanceStatus = std::stoi(valueDataInstanceVO["InstanceStatus"].asString());
-		if(!valueDataInstanceVO["ReleaseTime"].isNull())
-			dataObject.releaseTime = std::stol(valueDataInstanceVO["ReleaseTime"].asString());
-		if(!valueDataInstanceVO["InstanceType"].isNull())
-			dataObject.instanceType = std::stoi(valueDataInstanceVO["InstanceType"].asString());
-		if(!valueDataInstanceVO["InstanceName"].isNull())
-			dataObject.instanceName = valueDataInstanceVO["InstanceName"].asString();
 		if(!valueDataInstanceVO["IndependentNaming"].isNull())
 			dataObject.independentNaming = valueDataInstanceVO["IndependentNaming"].asString() == "true";
+		if(!valueDataInstanceVO["InstanceName"].isNull())
+			dataObject.instanceName = valueDataInstanceVO["InstanceName"].asString();
+		if(!valueDataInstanceVO["ReleaseTime"].isNull())
+			dataObject.releaseTime = std::stol(valueDataInstanceVO["ReleaseTime"].asString());
+		if(!valueDataInstanceVO["InstanceStatus"].isNull())
+			dataObject.instanceStatus = std::stoi(valueDataInstanceVO["InstanceStatus"].asString());
+		if(!valueDataInstanceVO["InstanceId"].isNull())
+			dataObject.instanceId = valueDataInstanceVO["InstanceId"].asString();
+		if(!valueDataInstanceVO["InstanceType"].isNull())
+			dataObject.instanceType = std::stoi(valueDataInstanceVO["InstanceType"].asString());
 		auto allTagsNode = valueDataInstanceVO["Tags"]["Tag"];
 		for (auto valueDataInstanceVOTagsTag : allTagsNode)
 		{

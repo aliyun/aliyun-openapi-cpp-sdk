@@ -1,3 +1,6 @@
+2021-11-23 Version: 1.36.939
+- Support the IP restrictions in ram policy.
+
 2021-11-19 Version: 1.36.938
 - Add site monitoring dial DNS_ match_ rule.
 

@@ -40,40 +40,40 @@ void OnsMessageGetByMsgIdResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["Topic"].isNull())
-		data_.topic = dataNode["Topic"].asString();
-	if(!dataNode["Flag"].isNull())
-		data_.flag = std::stoi(dataNode["Flag"].asString());
-	if(!dataNode["Body"].isNull())
-		data_.body = dataNode["Body"].asString();
-	if(!dataNode["StoreSize"].isNull())
-		data_.storeSize = std::stoi(dataNode["StoreSize"].asString());
-	if(!dataNode["BornTimestamp"].isNull())
-		data_.bornTimestamp = std::stol(dataNode["BornTimestamp"].asString());
-	if(!dataNode["BornHost"].isNull())
-		data_.bornHost = dataNode["BornHost"].asString();
-	if(!dataNode["StoreTimestamp"].isNull())
-		data_.storeTimestamp = std::stol(dataNode["StoreTimestamp"].asString());
-	if(!dataNode["StoreHost"].isNull())
-		data_.storeHost = dataNode["StoreHost"].asString();
-	if(!dataNode["MsgId"].isNull())
-		data_.msgId = dataNode["MsgId"].asString();
 	if(!dataNode["OffsetId"].isNull())
 		data_.offsetId = dataNode["OffsetId"].asString();
-	if(!dataNode["BodyCRC"].isNull())
-		data_.bodyCRC = std::stoi(dataNode["BodyCRC"].asString());
+	if(!dataNode["StoreSize"].isNull())
+		data_.storeSize = std::stoi(dataNode["StoreSize"].asString());
 	if(!dataNode["ReconsumeTimes"].isNull())
 		data_.reconsumeTimes = std::stoi(dataNode["ReconsumeTimes"].asString());
+	if(!dataNode["StoreTimestamp"].isNull())
+		data_.storeTimestamp = std::stol(dataNode["StoreTimestamp"].asString());
+	if(!dataNode["Body"].isNull())
+		data_.body = dataNode["Body"].asString();
 	if(!dataNode["InstanceId"].isNull())
 		data_.instanceId = dataNode["InstanceId"].asString();
+	if(!dataNode["MsgId"].isNull())
+		data_.msgId = dataNode["MsgId"].asString();
+	if(!dataNode["Flag"].isNull())
+		data_.flag = std::stoi(dataNode["Flag"].asString());
+	if(!dataNode["StoreHost"].isNull())
+		data_.storeHost = dataNode["StoreHost"].asString();
+	if(!dataNode["Topic"].isNull())
+		data_.topic = dataNode["Topic"].asString();
+	if(!dataNode["BornTimestamp"].isNull())
+		data_.bornTimestamp = std::stol(dataNode["BornTimestamp"].asString());
+	if(!dataNode["BodyCRC"].isNull())
+		data_.bodyCRC = std::stoi(dataNode["BodyCRC"].asString());
+	if(!dataNode["BornHost"].isNull())
+		data_.bornHost = dataNode["BornHost"].asString();
 	auto allPropertyListNode = dataNode["PropertyList"]["MessageProperty"];
 	for (auto dataNodePropertyListMessageProperty : allPropertyListNode)
 	{
 		Data::MessageProperty messagePropertyObject;
-		if(!dataNodePropertyListMessageProperty["Name"].isNull())
-			messagePropertyObject.name = dataNodePropertyListMessageProperty["Name"].asString();
 		if(!dataNodePropertyListMessageProperty["Value"].isNull())
 			messagePropertyObject.value = dataNodePropertyListMessageProperty["Value"].asString();
+		if(!dataNodePropertyListMessageProperty["Name"].isNull())
+			messagePropertyObject.name = dataNodePropertyListMessageProperty["Name"].asString();
 		data_.propertyList.push_back(messagePropertyObject);
 	}
 	if(!value["HelpUrl"].isNull())

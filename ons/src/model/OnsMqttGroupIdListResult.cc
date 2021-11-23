@@ -43,26 +43,26 @@ void OnsMqttGroupIdListResult::parse(const std::string &payload)
 	for (auto valueDataMqttGroupIdDo : allDataNode)
 	{
 		MqttGroupIdDo dataObject;
-		if(!valueDataMqttGroupIdDo["Id"].isNull())
-			dataObject.id = std::stol(valueDataMqttGroupIdDo["Id"].asString());
-		if(!valueDataMqttGroupIdDo["ChannelId"].isNull())
-			dataObject.channelId = std::stoi(valueDataMqttGroupIdDo["ChannelId"].asString());
-		if(!valueDataMqttGroupIdDo["Owner"].isNull())
-			dataObject.owner = valueDataMqttGroupIdDo["Owner"].asString();
-		if(!valueDataMqttGroupIdDo["GroupId"].isNull())
-			dataObject.groupId = valueDataMqttGroupIdDo["GroupId"].asString();
-		if(!valueDataMqttGroupIdDo["Topic"].isNull())
-			dataObject.topic = valueDataMqttGroupIdDo["Topic"].asString();
 		if(!valueDataMqttGroupIdDo["Status"].isNull())
 			dataObject.status = std::stoi(valueDataMqttGroupIdDo["Status"].asString());
-		if(!valueDataMqttGroupIdDo["CreateTime"].isNull())
-			dataObject.createTime = std::stol(valueDataMqttGroupIdDo["CreateTime"].asString());
 		if(!valueDataMqttGroupIdDo["UpdateTime"].isNull())
 			dataObject.updateTime = std::stol(valueDataMqttGroupIdDo["UpdateTime"].asString());
-		if(!valueDataMqttGroupIdDo["InstanceId"].isNull())
-			dataObject.instanceId = valueDataMqttGroupIdDo["InstanceId"].asString();
+		if(!valueDataMqttGroupIdDo["Owner"].isNull())
+			dataObject.owner = valueDataMqttGroupIdDo["Owner"].asString();
 		if(!valueDataMqttGroupIdDo["IndependentNaming"].isNull())
 			dataObject.independentNaming = valueDataMqttGroupIdDo["IndependentNaming"].asString() == "true";
+		if(!valueDataMqttGroupIdDo["GroupId"].isNull())
+			dataObject.groupId = valueDataMqttGroupIdDo["GroupId"].asString();
+		if(!valueDataMqttGroupIdDo["CreateTime"].isNull())
+			dataObject.createTime = std::stol(valueDataMqttGroupIdDo["CreateTime"].asString());
+		if(!valueDataMqttGroupIdDo["Topic"].isNull())
+			dataObject.topic = valueDataMqttGroupIdDo["Topic"].asString();
+		if(!valueDataMqttGroupIdDo["ChannelId"].isNull())
+			dataObject.channelId = std::stoi(valueDataMqttGroupIdDo["ChannelId"].asString());
+		if(!valueDataMqttGroupIdDo["InstanceId"].isNull())
+			dataObject.instanceId = valueDataMqttGroupIdDo["InstanceId"].asString();
+		if(!valueDataMqttGroupIdDo["Id"].isNull())
+			dataObject.id = std::stol(valueDataMqttGroupIdDo["Id"].asString());
 		data_.push_back(dataObject);
 	}
 	if(!value["HelpUrl"].isNull())

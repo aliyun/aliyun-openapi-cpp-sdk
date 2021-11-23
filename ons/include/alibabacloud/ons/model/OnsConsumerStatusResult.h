@@ -38,26 +38,12 @@ namespace AlibabaCloud
 					{
 						std::string clientAddr;
 						std::string language;
-						std::string version;
 						std::string remoteIP;
+						std::string version;
 						std::string clientId;
-					};
-					struct DetailInTopicDo
-					{
-						long lastTimestamp;
-						long totalDiff;
-						std::string topic;
-						long delayTime;
 					};
 					struct ConsumerConnectionInfoDo
 					{
-						struct SubscriptionData
-						{
-							std::string subString;
-							std::vector<std::string> tagsSet;
-							std::string topic;
-							long subVersion;
-						};
 						struct ConsumerRunningDataDo
 						{
 							float okTps;
@@ -66,6 +52,13 @@ namespace AlibabaCloud
 							std::string topic;
 							long failedCountPerHour;
 							std::string groupId;
+						};
+						struct SubscriptionData
+						{
+							std::string subString;
+							std::vector<std::string> tagsSet;
+							std::string topic;
+							long subVersion;
 						};
 						struct ThreadTrackDo
 						{
@@ -85,6 +78,13 @@ namespace AlibabaCloud
 						long startTimeStamp;
 						std::vector<ConsumerConnectionInfoDo::ThreadTrackDo> jstack;
 					};
+					struct DetailInTopicDo
+					{
+						long lastTimestamp;
+						long totalDiff;
+						long delayTime;
+						std::string topic;
+					};
 					std::vector<ConsumerConnectionInfoDo> consumerConnectionInfoList;
 					std::string consumeModel;
 					float consumeTps;
@@ -94,8 +94,8 @@ namespace AlibabaCloud
 					bool rebalanceOK;
 					long totalDiff;
 					std::vector<ConnectionDo> connectionSet;
-					bool online;
 					long delayTime;
+					bool online;
 					std::vector<DetailInTopicDo> detailInTopicList;
 				};
 

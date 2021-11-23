@@ -45,18 +45,18 @@ void OnsGroupListResult::parse(const std::string &payload)
 		SubscribeInfoDo dataObject;
 		if(!valueDataSubscribeInfoDo["Owner"].isNull())
 			dataObject.owner = valueDataSubscribeInfoDo["Owner"].asString();
-		if(!valueDataSubscribeInfoDo["GroupId"].isNull())
-			dataObject.groupId = valueDataSubscribeInfoDo["GroupId"].asString();
 		if(!valueDataSubscribeInfoDo["UpdateTime"].isNull())
 			dataObject.updateTime = std::stol(valueDataSubscribeInfoDo["UpdateTime"].asString());
-		if(!valueDataSubscribeInfoDo["Remark"].isNull())
-			dataObject.remark = valueDataSubscribeInfoDo["Remark"].asString();
-		if(!valueDataSubscribeInfoDo["InstanceId"].isNull())
-			dataObject.instanceId = valueDataSubscribeInfoDo["InstanceId"].asString();
 		if(!valueDataSubscribeInfoDo["IndependentNaming"].isNull())
 			dataObject.independentNaming = valueDataSubscribeInfoDo["IndependentNaming"].asString() == "true";
+		if(!valueDataSubscribeInfoDo["GroupId"].isNull())
+			dataObject.groupId = valueDataSubscribeInfoDo["GroupId"].asString();
+		if(!valueDataSubscribeInfoDo["Remark"].isNull())
+			dataObject.remark = valueDataSubscribeInfoDo["Remark"].asString();
 		if(!valueDataSubscribeInfoDo["CreateTime"].isNull())
 			dataObject.createTime = std::stol(valueDataSubscribeInfoDo["CreateTime"].asString());
+		if(!valueDataSubscribeInfoDo["InstanceId"].isNull())
+			dataObject.instanceId = valueDataSubscribeInfoDo["InstanceId"].asString();
 		if(!valueDataSubscribeInfoDo["GroupType"].isNull())
 			dataObject.groupType = valueDataSubscribeInfoDo["GroupType"].asString();
 		auto allTagsNode = valueDataSubscribeInfoDo["Tags"]["Tag"];

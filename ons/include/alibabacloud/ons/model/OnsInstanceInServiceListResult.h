@@ -40,8 +40,8 @@ namespace AlibabaCloud
 						std::string key;
 					};
 					std::string instanceName;
-					std::string instanceId;
 					long releaseTime;
+					std::string instanceId;
 					int instanceStatus;
 					bool independentNaming;
 					int instanceType;

@@ -48,10 +48,10 @@ void OnsTopicSubDetailResult::parse(const std::string &payload)
 		Data::SubscriptionDataListItem subscriptionDataListItemObject;
 		if(!dataNodeSubscriptionDataListSubscriptionDataListItem["GroupId"].isNull())
 			subscriptionDataListItemObject.groupId = dataNodeSubscriptionDataListSubscriptionDataListItem["GroupId"].asString();
-		if(!dataNodeSubscriptionDataListSubscriptionDataListItem["SubString"].isNull())
-			subscriptionDataListItemObject.subString = dataNodeSubscriptionDataListSubscriptionDataListItem["SubString"].asString();
 		if(!dataNodeSubscriptionDataListSubscriptionDataListItem["MessageModel"].isNull())
 			subscriptionDataListItemObject.messageModel = dataNodeSubscriptionDataListSubscriptionDataListItem["MessageModel"].asString();
+		if(!dataNodeSubscriptionDataListSubscriptionDataListItem["SubString"].isNull())
+			subscriptionDataListItemObject.subString = dataNodeSubscriptionDataListSubscriptionDataListItem["SubString"].asString();
 		data_.subscriptionDataList.push_back(subscriptionDataListItemObject);
 	}
 

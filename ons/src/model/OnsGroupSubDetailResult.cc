@@ -42,18 +42,18 @@ void OnsGroupSubDetailResult::parse(const std::string &payload)
 	auto dataNode = value["Data"];
 	if(!dataNode["GroupId"].isNull())
 		data_.groupId = dataNode["GroupId"].asString();
-	if(!dataNode["Online"].isNull())
-		data_.online = dataNode["Online"].asString() == "true";
 	if(!dataNode["MessageModel"].isNull())
 		data_.messageModel = dataNode["MessageModel"].asString();
+	if(!dataNode["Online"].isNull())
+		data_.online = dataNode["Online"].asString() == "true";
 	auto allSubscriptionDataListNode = dataNode["SubscriptionDataList"]["SubscriptionDataListItem"];
 	for (auto dataNodeSubscriptionDataListSubscriptionDataListItem : allSubscriptionDataListNode)
 	{
 		Data::SubscriptionDataListItem subscriptionDataListItemObject;
-		if(!dataNodeSubscriptionDataListSubscriptionDataListItem["Topic"].isNull())
-			subscriptionDataListItemObject.topic = dataNodeSubscriptionDataListSubscriptionDataListItem["Topic"].asString();
 		if(!dataNodeSubscriptionDataListSubscriptionDataListItem["SubString"].isNull())
 			subscriptionDataListItemObject.subString = dataNodeSubscriptionDataListSubscriptionDataListItem["SubString"].asString();
+		if(!dataNodeSubscriptionDataListSubscriptionDataListItem["Topic"].isNull())
+			subscriptionDataListItemObject.topic = dataNodeSubscriptionDataListSubscriptionDataListItem["Topic"].asString();
 		data_.subscriptionDataList.push_back(subscriptionDataListItemObject);
 	}
 
