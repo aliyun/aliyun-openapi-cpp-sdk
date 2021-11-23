@@ -37,18 +37,22 @@ namespace AlibabaCloud
 				DescribeColdStorageResult();
 				explicit DescribeColdStorageResult(const std::string &payload);
 				~DescribeColdStorageResult();
-				std::string getColdStorageSize()const;
 				std::string getColdStorageUsePercent()const;
+				std::string getColdStorageSize()const;
+				std::string getColdStorageUseAmount()const;
 				std::string getClusterId()const;
+				std::string getColdStorageType()const;
 				std::string getPayType()const;
 				std::string getOpenStatus()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string coldStorageSize_;
 				std::string coldStorageUsePercent_;
+				std::string coldStorageSize_;
+				std::string coldStorageUseAmount_;
 				std::string clusterId_;
+				std::string coldStorageType_;
 				std::string payType_;
 				std::string openStatus_;
 
