@@ -987,6 +987,42 @@ OcrClient::RecognizeVerificationcodeOutcomeCallable OcrClient::recognizeVerifica
 	return task->get_future();
 }
 
+OcrClient::RecognizeVideoCharacterOutcome OcrClient::recognizeVideoCharacter(const RecognizeVideoCharacterRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RecognizeVideoCharacterOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RecognizeVideoCharacterOutcome(RecognizeVideoCharacterResult(outcome.result()));
+	else
+		return RecognizeVideoCharacterOutcome(outcome.error());
+}
+
+void OcrClient::recognizeVideoCharacterAsync(const RecognizeVideoCharacterRequest& request, const RecognizeVideoCharacterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, recognizeVideoCharacter(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OcrClient::RecognizeVideoCharacterOutcomeCallable OcrClient::recognizeVideoCharacterCallable(const RecognizeVideoCharacterRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RecognizeVideoCharacterOutcome()>>(
+			[this, request]()
+			{
+			return this->recognizeVideoCharacter(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 OcrClient::TrimDocumentOutcome OcrClient::trimDocument(const TrimDocumentRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

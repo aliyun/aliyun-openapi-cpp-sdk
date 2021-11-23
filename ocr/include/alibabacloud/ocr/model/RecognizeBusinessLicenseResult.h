@@ -34,7 +34,7 @@ namespace AlibabaCloud
 			public:
 				struct Data
 				{
-					struct Emblem
+					struct Stamp
 					{
 						int left;
 						int top;
@@ -48,7 +48,7 @@ namespace AlibabaCloud
 						int height;
 						int width;
 					};
-					struct Stamp
+					struct Emblem
 					{
 						int left;
 						int top;

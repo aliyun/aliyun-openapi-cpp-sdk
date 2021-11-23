@@ -27,6 +27,39 @@ RecognizeCharacterRequest::RecognizeCharacterRequest() :
 RecognizeCharacterRequest::~RecognizeCharacterRequest()
 {}
 
+bool RecognizeCharacterRequest::getFormatResultToJson()const
+{
+	return formatResultToJson_;
+}
+
+void RecognizeCharacterRequest::setFormatResultToJson(bool formatResultToJson)
+{
+	formatResultToJson_ = formatResultToJson;
+	setParameter("FormatResultToJson", formatResultToJson ? "true" : "false");
+}
+
+int RecognizeCharacterRequest::getMinHeight()const
+{
+	return minHeight_;
+}
+
+void RecognizeCharacterRequest::setMinHeight(int minHeight)
+{
+	minHeight_ = minHeight;
+	setBodyParameter("MinHeight", std::to_string(minHeight));
+}
+
+std::string RecognizeCharacterRequest::getOssFile()const
+{
+	return ossFile_;
+}
+
+void RecognizeCharacterRequest::setOssFile(const std::string& ossFile)
+{
+	ossFile_ = ossFile;
+	setParameter("OssFile", ossFile);
+}
+
 int RecognizeCharacterRequest::getImageType()const
 {
 	return imageType_;
@@ -36,6 +69,17 @@ void RecognizeCharacterRequest::setImageType(int imageType)
 {
 	imageType_ = imageType;
 	setBodyParameter("ImageType", std::to_string(imageType));
+}
+
+std::string RecognizeCharacterRequest::getRequestProxyBy()const
+{
+	return requestProxyBy_;
+}
+
+void RecognizeCharacterRequest::setRequestProxyBy(const std::string& requestProxyBy)
+{
+	requestProxyBy_ = requestProxyBy;
+	setParameter("RequestProxyBy", requestProxyBy);
 }
 
 bool RecognizeCharacterRequest::getOutputProbability()const
@@ -58,16 +102,5 @@ void RecognizeCharacterRequest::setImageURL(const std::string& imageURL)
 {
 	imageURL_ = imageURL;
 	setBodyParameter("ImageURL", imageURL);
-}
-
-int RecognizeCharacterRequest::getMinHeight()const
-{
-	return minHeight_;
-}
-
-void RecognizeCharacterRequest::setMinHeight(int minHeight)
-{
-	minHeight_ = minHeight;
-	setBodyParameter("MinHeight", std::to_string(minHeight));
 }
 

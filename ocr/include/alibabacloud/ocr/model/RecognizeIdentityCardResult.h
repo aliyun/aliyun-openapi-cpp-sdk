@@ -34,30 +34,36 @@ namespace AlibabaCloud
 			public:
 				struct Data
 				{
+					struct BackResult
+					{
+						std::string startDate;
+						std::string issue;
+						std::string endDate;
+					};
 					struct FrontResult
 					{
 						struct FaceRectangle
 						{
-							struct Center
-							{
-								float x;
-								float y;
-							};
 							struct Size
 							{
 								float height;
 								float width;
 							};
+							struct Center
+							{
+								float x;
+								float y;
+							};
 							Center center;
 							float angle;
 							Size size;
 						};
-						struct CardArea
+						struct FaceRectVertice
 						{
 							float x;
 							float y;
 						};
-						struct FaceRectVertice
+						struct CardArea
 						{
 							float x;
 							float y;
@@ -68,15 +74,9 @@ namespace AlibabaCloud
 						std::vector<CardArea> cardAreas;
 						std::string gender;
 						std::string nationality;
+						std::string birthDate;
 						std::string name;
 						std::string iDNumber;
-						std::string birthDate;
-					};
-					struct BackResult
-					{
-						std::string startDate;
-						std::string issue;
-						std::string endDate;
 					};
 					FrontResult frontResult;
 					BackResult backResult;

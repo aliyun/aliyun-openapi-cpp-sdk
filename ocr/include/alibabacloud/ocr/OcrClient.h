@@ -74,6 +74,8 @@
 #include "model/RecognizeVINCodeResult.h"
 #include "model/RecognizeVerificationcodeRequest.h"
 #include "model/RecognizeVerificationcodeResult.h"
+#include "model/RecognizeVideoCharacterRequest.h"
+#include "model/RecognizeVideoCharacterResult.h"
 #include "model/TrimDocumentRequest.h"
 #include "model/TrimDocumentResult.h"
 
@@ -163,6 +165,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RecognizeVerificationcodeResult> RecognizeVerificationcodeOutcome;
 			typedef std::future<RecognizeVerificationcodeOutcome> RecognizeVerificationcodeOutcomeCallable;
 			typedef std::function<void(const OcrClient*, const Model::RecognizeVerificationcodeRequest&, const RecognizeVerificationcodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeVerificationcodeAsyncHandler;
+			typedef Outcome<Error, Model::RecognizeVideoCharacterResult> RecognizeVideoCharacterOutcome;
+			typedef std::future<RecognizeVideoCharacterOutcome> RecognizeVideoCharacterOutcomeCallable;
+			typedef std::function<void(const OcrClient*, const Model::RecognizeVideoCharacterRequest&, const RecognizeVideoCharacterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeVideoCharacterAsyncHandler;
 			typedef Outcome<Error, Model::TrimDocumentResult> TrimDocumentOutcome;
 			typedef std::future<TrimDocumentOutcome> TrimDocumentOutcomeCallable;
 			typedef std::function<void(const OcrClient*, const Model::TrimDocumentRequest&, const TrimDocumentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TrimDocumentAsyncHandler;
@@ -249,6 +254,9 @@ namespace AlibabaCloud
 			RecognizeVerificationcodeOutcome recognizeVerificationcode(const Model::RecognizeVerificationcodeRequest &request)const;
 			void recognizeVerificationcodeAsync(const Model::RecognizeVerificationcodeRequest& request, const RecognizeVerificationcodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RecognizeVerificationcodeOutcomeCallable recognizeVerificationcodeCallable(const Model::RecognizeVerificationcodeRequest& request) const;
+			RecognizeVideoCharacterOutcome recognizeVideoCharacter(const Model::RecognizeVideoCharacterRequest &request)const;
+			void recognizeVideoCharacterAsync(const Model::RecognizeVideoCharacterRequest& request, const RecognizeVideoCharacterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RecognizeVideoCharacterOutcomeCallable recognizeVideoCharacterCallable(const Model::RecognizeVideoCharacterRequest& request) const;
 			TrimDocumentOutcome trimDocument(const Model::TrimDocumentRequest &request)const;
 			void trimDocumentAsync(const Model::TrimDocumentRequest& request, const TrimDocumentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			TrimDocumentOutcomeCallable trimDocumentCallable(const Model::TrimDocumentRequest& request) const;

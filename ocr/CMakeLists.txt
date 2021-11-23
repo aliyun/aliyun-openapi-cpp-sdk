@@ -73,6 +73,8 @@ set(ocr_public_header_model
 	include/alibabacloud/ocr/model/RecognizeVINCodeResult.h
 	include/alibabacloud/ocr/model/RecognizeVerificationcodeRequest.h
 	include/alibabacloud/ocr/model/RecognizeVerificationcodeResult.h
+	include/alibabacloud/ocr/model/RecognizeVideoCharacterRequest.h
+	include/alibabacloud/ocr/model/RecognizeVideoCharacterResult.h
 	include/alibabacloud/ocr/model/TrimDocumentRequest.h
 	include/alibabacloud/ocr/model/TrimDocumentResult.h )
 
@@ -130,6 +132,8 @@ set(ocr_src
 	src/model/RecognizeVINCodeResult.cc
 	src/model/RecognizeVerificationcodeRequest.cc
 	src/model/RecognizeVerificationcodeResult.cc
+	src/model/RecognizeVideoCharacterRequest.cc
+	src/model/RecognizeVideoCharacterResult.cc
 	src/model/TrimDocumentRequest.cc
 	src/model/TrimDocumentResult.cc )
 

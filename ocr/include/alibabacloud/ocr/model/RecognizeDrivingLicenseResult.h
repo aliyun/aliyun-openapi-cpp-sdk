@@ -34,19 +34,6 @@ namespace AlibabaCloud
 			public:
 				struct Data
 				{
-					struct FaceResult
-					{
-						std::string plateNumber;
-						std::string owner;
-						std::string engineNumber;
-						std::string address;
-						std::string vehicleType;
-						std::string model;
-						std::string registerDate;
-						std::string issueDate;
-						std::string vin;
-						std::string useCharacter;
-					};
 					struct BackResult
 					{
 						std::string approvedPassengerCapacity;
@@ -57,8 +44,21 @@ namespace AlibabaCloud
 						std::string approvedLoad;
 						std::string inspectionRecord;
 						std::string unladenMass;
-						std::string fileNumber;
 						std::string overallDimension;
+						std::string fileNumber;
+					};
+					struct FaceResult
+					{
+						std::string owner;
+						std::string plateNumber;
+						std::string engineNumber;
+						std::string address;
+						std::string vehicleType;
+						std::string model;
+						std::string registerDate;
+						std::string issueDate;
+						std::string vin;
+						std::string useCharacter;
 					};
 					FaceResult faceResult;
 					BackResult backResult;

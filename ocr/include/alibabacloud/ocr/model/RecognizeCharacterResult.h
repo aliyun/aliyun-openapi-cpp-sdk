@@ -39,8 +39,8 @@ namespace AlibabaCloud
 						struct TextRectangles
 						{
 							int left;
-							int angle;
 							int top;
+							int angle;
 							int height;
 							int width;
 						};

@@ -40,12 +40,12 @@ void RecognizeBankCardResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["BankName"].isNull())
-		data_.bankName = dataNode["BankName"].asString();
 	if(!dataNode["CardNumber"].isNull())
 		data_.cardNumber = dataNode["CardNumber"].asString();
 	if(!dataNode["ValidDate"].isNull())
 		data_.validDate = dataNode["ValidDate"].asString();
+	if(!dataNode["BankName"].isNull())
+		data_.bankName = dataNode["BankName"].asString();
 
 }
 

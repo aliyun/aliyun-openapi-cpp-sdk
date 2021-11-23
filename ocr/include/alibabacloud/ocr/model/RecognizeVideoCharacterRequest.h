@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_OCR_MODEL_RECOGNIZECHARACTERREQUEST_H_
-#define ALIBABACLOUD_OCR_MODEL_RECOGNIZECHARACTERREQUEST_H_
+#ifndef ALIBABACLOUD_OCR_MODEL_RECOGNIZEVIDEOCHARACTERREQUEST_H_
+#define ALIBABACLOUD_OCR_MODEL_RECOGNIZEVIDEOCHARACTERREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,39 +28,33 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_OCR_EXPORT RecognizeCharacterRequest : public RpcServiceRequest
+			class ALIBABACLOUD_OCR_EXPORT RecognizeVideoCharacterRequest : public RpcServiceRequest
 			{
 
 			public:
-				RecognizeCharacterRequest();
-				~RecognizeCharacterRequest();
+				RecognizeVideoCharacterRequest();
+				~RecognizeVideoCharacterRequest();
 
 				bool getFormatResultToJson()const;
 				void setFormatResultToJson(bool formatResultToJson);
-				int getMinHeight()const;
-				void setMinHeight(int minHeight);
 				std::string getOssFile()const;
 				void setOssFile(const std::string& ossFile);
-				int getImageType()const;
-				void setImageType(int imageType);
 				std::string getRequestProxyBy()const;
 				void setRequestProxyBy(const std::string& requestProxyBy);
-				bool getOutputProbability()const;
-				void setOutputProbability(bool outputProbability);
-				std::string getImageURL()const;
-				void setImageURL(const std::string& imageURL);
+				bool getAsync()const;
+				void setAsync(bool async);
+				std::string getVideoURL()const;
+				void setVideoURL(const std::string& videoURL);
 
             private:
 				bool formatResultToJson_;
-				int minHeight_;
 				std::string ossFile_;
-				int imageType_;
 				std::string requestProxyBy_;
-				bool outputProbability_;
-				std::string imageURL_;
+				bool async_;
+				std::string videoURL_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_OCR_MODEL_RECOGNIZECHARACTERREQUEST_H_
+#endif // !ALIBABACLOUD_OCR_MODEL_RECOGNIZEVIDEOCHARACTERREQUEST_H_

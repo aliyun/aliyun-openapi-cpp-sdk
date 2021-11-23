@@ -40,62 +40,62 @@ void RecognizeBusinessLicenseResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["Angle"].isNull())
-		data_.angle = std::stof(dataNode["Angle"].asString());
-	if(!dataNode["RegisterNumber"].isNull())
-		data_.registerNumber = dataNode["RegisterNumber"].asString();
-	if(!dataNode["Name"].isNull())
-		data_.name = dataNode["Name"].asString();
 	if(!dataNode["Type"].isNull())
 		data_.type = dataNode["Type"].asString();
-	if(!dataNode["LegalPerson"].isNull())
-		data_.legalPerson = dataNode["LegalPerson"].asString();
 	if(!dataNode["EstablishDate"].isNull())
 		data_.establishDate = dataNode["EstablishDate"].asString();
 	if(!dataNode["ValidPeriod"].isNull())
 		data_.validPeriod = dataNode["ValidPeriod"].asString();
+	if(!dataNode["Business"].isNull())
+		data_.business = dataNode["Business"].asString();
+	if(!dataNode["Angle"].isNull())
+		data_.angle = std::stof(dataNode["Angle"].asString());
+	if(!dataNode["RegisterNumber"].isNull())
+		data_.registerNumber = dataNode["RegisterNumber"].asString();
 	if(!dataNode["Address"].isNull())
 		data_.address = dataNode["Address"].asString();
 	if(!dataNode["Capital"].isNull())
 		data_.capital = dataNode["Capital"].asString();
-	if(!dataNode["Business"].isNull())
-		data_.business = dataNode["Business"].asString();
-	auto emblemNode = dataNode["Emblem"];
-	if(!emblemNode["Top"].isNull())
-		data_.emblem.top = std::stoi(emblemNode["Top"].asString());
-	if(!emblemNode["Left"].isNull())
-		data_.emblem.left = std::stoi(emblemNode["Left"].asString());
-	if(!emblemNode["Height"].isNull())
-		data_.emblem.height = std::stoi(emblemNode["Height"].asString());
-	if(!emblemNode["Width"].isNull())
-		data_.emblem.width = std::stoi(emblemNode["Width"].asString());
-	auto titleNode = dataNode["Title"];
-	if(!titleNode["Top"].isNull())
-		data_.title.top = std::stoi(titleNode["Top"].asString());
-	if(!titleNode["Left"].isNull())
-		data_.title.left = std::stoi(titleNode["Left"].asString());
-	if(!titleNode["Height"].isNull())
-		data_.title.height = std::stoi(titleNode["Height"].asString());
-	if(!titleNode["Width"].isNull())
-		data_.title.width = std::stoi(titleNode["Width"].asString());
+	if(!dataNode["Name"].isNull())
+		data_.name = dataNode["Name"].asString();
+	if(!dataNode["LegalPerson"].isNull())
+		data_.legalPerson = dataNode["LegalPerson"].asString();
 	auto stampNode = dataNode["Stamp"];
 	if(!stampNode["Top"].isNull())
 		data_.stamp.top = std::stoi(stampNode["Top"].asString());
-	if(!stampNode["Left"].isNull())
-		data_.stamp.left = std::stoi(stampNode["Left"].asString());
-	if(!stampNode["Height"].isNull())
-		data_.stamp.height = std::stoi(stampNode["Height"].asString());
 	if(!stampNode["Width"].isNull())
 		data_.stamp.width = std::stoi(stampNode["Width"].asString());
+	if(!stampNode["Height"].isNull())
+		data_.stamp.height = std::stoi(stampNode["Height"].asString());
+	if(!stampNode["Left"].isNull())
+		data_.stamp.left = std::stoi(stampNode["Left"].asString());
+	auto titleNode = dataNode["Title"];
+	if(!titleNode["Top"].isNull())
+		data_.title.top = std::stoi(titleNode["Top"].asString());
+	if(!titleNode["Width"].isNull())
+		data_.title.width = std::stoi(titleNode["Width"].asString());
+	if(!titleNode["Height"].isNull())
+		data_.title.height = std::stoi(titleNode["Height"].asString());
+	if(!titleNode["Left"].isNull())
+		data_.title.left = std::stoi(titleNode["Left"].asString());
+	auto emblemNode = dataNode["Emblem"];
+	if(!emblemNode["Top"].isNull())
+		data_.emblem.top = std::stoi(emblemNode["Top"].asString());
+	if(!emblemNode["Width"].isNull())
+		data_.emblem.width = std::stoi(emblemNode["Width"].asString());
+	if(!emblemNode["Height"].isNull())
+		data_.emblem.height = std::stoi(emblemNode["Height"].asString());
+	if(!emblemNode["Left"].isNull())
+		data_.emblem.left = std::stoi(emblemNode["Left"].asString());
 	auto qRCodeNode = dataNode["QRCode"];
 	if(!qRCodeNode["Top"].isNull())
 		data_.qRCode.top = std::stoi(qRCodeNode["Top"].asString());
-	if(!qRCodeNode["Left"].isNull())
-		data_.qRCode.left = std::stoi(qRCodeNode["Left"].asString());
-	if(!qRCodeNode["Height"].isNull())
-		data_.qRCode.height = std::stoi(qRCodeNode["Height"].asString());
 	if(!qRCodeNode["Width"].isNull())
 		data_.qRCode.width = std::stoi(qRCodeNode["Width"].asString());
+	if(!qRCodeNode["Height"].isNull())
+		data_.qRCode.height = std::stoi(qRCodeNode["Height"].asString());
+	if(!qRCodeNode["Left"].isNull())
+		data_.qRCode.left = std::stoi(qRCodeNode["Left"].asString());
 
 }
 

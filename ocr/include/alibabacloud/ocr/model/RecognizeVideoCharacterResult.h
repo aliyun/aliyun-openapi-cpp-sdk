@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_OCR_MODEL_RECOGNIZEBANKCARDRESULT_H_
-#define ALIBABACLOUD_OCR_MODEL_RECOGNIZEBANKCARDRESULT_H_
+#ifndef ALIBABACLOUD_OCR_MODEL_RECOGNIZEVIDEOCHARACTERRESULT_H_
+#define ALIBABACLOUD_OCR_MODEL_RECOGNIZEVIDEOCHARACTERRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,20 +29,39 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_OCR_EXPORT RecognizeBankCardResult : public ServiceResult
+			class ALIBABACLOUD_OCR_EXPORT RecognizeVideoCharacterResult : public ServiceResult
 			{
 			public:
 				struct Data
 				{
-					std::string cardNumber;
-					std::string bankName;
-					std::string validDate;
+					struct Frame
+					{
+						struct Element
+						{
+							struct TextRectangle
+							{
+								long left;
+								long angle;
+								long top;
+								long height;
+								long width;
+							};
+							std::vector<Element::TextRectangle> textRectangles;
+							float score;
+							std::string text;
+						};
+						std::vector<Frame::Element> elements;
+						long timestamp;
+					};
+					std::vector<Frame> frames;
+					long height;
+					long width;
 				};
 
 
-				RecognizeBankCardResult();
-				explicit RecognizeBankCardResult(const std::string &payload);
-				~RecognizeBankCardResult();
+				RecognizeVideoCharacterResult();
+				explicit RecognizeVideoCharacterResult(const std::string &payload);
+				~RecognizeVideoCharacterResult();
 				Data getData()const;
 
 			protected:
@@ -54,4 +73,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_OCR_MODEL_RECOGNIZEBANKCARDRESULT_H_
+#endif // !ALIBABACLOUD_OCR_MODEL_RECOGNIZEVIDEOCHARACTERRESULT_H_

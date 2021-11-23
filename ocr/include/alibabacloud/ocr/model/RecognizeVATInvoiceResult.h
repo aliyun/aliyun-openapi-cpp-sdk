@@ -34,28 +34,6 @@ namespace AlibabaCloud
 			public:
 				struct Data
 				{
-					struct Content
-					{
-						std::string checker;
-						std::string payeeAddress;
-						std::string payeeName;
-						std::string payerAddress;
-						std::string antiFakeCode;
-						std::string payerBankName;
-						std::string invoiceNo;
-						std::string payerRegisterNo;
-						std::string payerName;
-						std::string withoutTaxAmount;
-						std::string invoiceAmount;
-						std::string taxAmount;
-						std::string payeeBankName;
-						std::string clerk;
-						std::string invoiceCode;
-						std::string payeeRegisterNo;
-						std::string invoiceDate;
-						std::string sumAmount;
-						std::string payee;
-					};
 					struct Box
 					{
 						std::vector<std::string> payerRegisterNoes;
@@ -66,17 +44,39 @@ namespace AlibabaCloud
 						std::vector<std::string> clerks;
 						std::vector<std::string> withoutTaxAmounts;
 						std::vector<std::string> checkers;
-						std::vector<std::string> invoiceCodes;
 						std::vector<std::string> taxAmounts;
+						std::vector<std::string> invoiceCodes;
 						std::vector<std::string> sumAmounts;
 						std::vector<std::string> payerNames;
 						std::vector<std::string> invoiceFakeCodes;
-						std::vector<std::string> payeeNames;
 						std::vector<std::string> payeeBankNames;
+						std::vector<std::string> payeeNames;
 						std::vector<std::string> payees;
 						std::vector<std::string> invoiceNoes;
 						std::vector<std::string> payerBankNames;
 						std::vector<std::string> payeeRegisterNoes;
+					};
+					struct Content
+					{
+						std::string checker;
+						std::string payeeAddress;
+						std::string payeeName;
+						std::string payerAddress;
+						std::string antiFakeCode;
+						std::string payerBankName;
+						std::string invoiceNo;
+						std::string payerRegisterNo;
+						std::string withoutTaxAmount;
+						std::string invoiceAmount;
+						std::string payerName;
+						std::string taxAmount;
+						std::string payeeBankName;
+						std::string clerk;
+						std::string payeeRegisterNo;
+						std::string invoiceCode;
+						std::string invoiceDate;
+						std::string sumAmount;
+						std::string payee;
 					};
 					Content content;
 					Box box;
