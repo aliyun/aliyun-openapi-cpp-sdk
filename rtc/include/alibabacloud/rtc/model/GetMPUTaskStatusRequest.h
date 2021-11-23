@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,41 +17,35 @@
 #ifndef ALIBABACLOUD_RTC_MODEL_GETMPUTASKSTATUSREQUEST_H_
 #define ALIBABACLOUD_RTC_MODEL_GETMPUTASKSTATUSREQUEST_H_
 
+#include <alibabacloud/rtc/RtcExport.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
-#include <alibabacloud/rtc/RtcExport.h>
+#include <map>
 
-namespace AlibabaCloud
-{
-	namespace Rtc
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_RTC_EXPORT GetMPUTaskStatusRequest : public RpcServiceRequest
-			{
+namespace AlibabaCloud {
+namespace Rtc {
+namespace Model {
+class ALIBABACLOUD_RTC_EXPORT GetMPUTaskStatusRequest : public RpcServiceRequest {
+public:
+	GetMPUTaskStatusRequest();
+	~GetMPUTaskStatusRequest();
+	std::string getTaskId() const;
+	void setTaskId(const std::string &taskId);
+	std::string getShowLog() const;
+	void setShowLog(const std::string &showLog);
+	long getOwnerId() const;
+	void setOwnerId(long ownerId);
+	std::string getAppId() const;
+	void setAppId(const std::string &appId);
 
-			public:
-				GetMPUTaskStatusRequest();
-				~GetMPUTaskStatusRequest();
-
-				std::string getTaskId()const;
-				void setTaskId(const std::string& taskId);
-				std::string getShowLog()const;
-				void setShowLog(const std::string& showLog);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
-				std::string getAppId()const;
-				void setAppId(const std::string& appId);
-
-            private:
-				std::string taskId_;
-				std::string showLog_;
-				long ownerId_;
-				std::string appId_;
-
-			};
-		}
-	}
-}
+private:
+	std::string taskId_;
+	std::string showLog_;
+	long ownerId_;
+	std::string appId_;
+};
+} // namespace Model
+} // namespace Rtc
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_RTC_MODEL_GETMPUTASKSTATUSREQUEST_H_

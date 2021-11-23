@@ -43,12 +43,12 @@ void RemoveTerminalsResult::parse(const std::string &payload)
 	for (auto valueTerminalsTerminal : allTerminalsNode)
 	{
 		Terminal terminalsObject;
-		if(!valueTerminalsTerminal["Id"].isNull())
-			terminalsObject.id = valueTerminalsTerminal["Id"].asString();
 		if(!valueTerminalsTerminal["Code"].isNull())
 			terminalsObject.code = std::stoi(valueTerminalsTerminal["Code"].asString());
 		if(!valueTerminalsTerminal["Message"].isNull())
 			terminalsObject.message = valueTerminalsTerminal["Message"].asString();
+		if(!valueTerminalsTerminal["Id"].isNull())
+			terminalsObject.id = valueTerminalsTerminal["Id"].asString();
 		terminals_.push_back(terminalsObject);
 	}
 

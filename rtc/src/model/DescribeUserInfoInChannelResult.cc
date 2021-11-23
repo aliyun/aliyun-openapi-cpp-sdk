@@ -45,18 +45,18 @@ void DescribeUserInfoInChannelResult::parse(const std::string &payload)
 		PropertyItem propertyObject;
 		if(!valuePropertyPropertyItem["Session"].isNull())
 			propertyObject.session = valuePropertyPropertyItem["Session"].asString();
-		if(!valuePropertyPropertyItem["Join"].isNull())
-			propertyObject.join = std::stoi(valuePropertyPropertyItem["Join"].asString());
 		if(!valuePropertyPropertyItem["Role"].isNull())
 			propertyObject.role = std::stoi(valuePropertyPropertyItem["Role"].asString());
+		if(!valuePropertyPropertyItem["Join"].isNull())
+			propertyObject.join = std::stoi(valuePropertyPropertyItem["Join"].asString());
 		property_.push_back(propertyObject);
 	}
 	if(!value["Timestamp"].isNull())
 		timestamp_ = std::stoi(value["Timestamp"].asString());
-	if(!value["IsChannelExist"].isNull())
-		isChannelExist_ = value["IsChannelExist"].asString() == "true";
 	if(!value["IsInChannel"].isNull())
 		isInChannel_ = value["IsInChannel"].asString() == "true";
+	if(!value["IsChannelExist"].isNull())
+		isChannelExist_ = value["IsChannelExist"].asString() == "true";
 
 }
 

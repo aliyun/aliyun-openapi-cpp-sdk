@@ -34,17 +34,53 @@ namespace AlibabaCloud
 			public:
 				struct _Template
 				{
+					struct Background
+					{
+						int zOrder;
+						float x;
+						float y;
+						float height;
+						float width;
+						std::string url;
+						int display;
+					};
+					struct Watermark
+					{
+						int zOrder;
+						float alpha;
+						float x;
+						float y;
+						float height;
+						float width;
+						std::string url;
+						int display;
+					};
+					struct Watermark1
+					{
+						int fontSize;
+						int zOrder;
+						int fontColor;
+						float x;
+						float y;
+						int fontType;
+					};
 					int fileSplitInterval;
-					std::string ossFilePrefix;
+					std::vector<_Template::Watermark1> clockWidgets;
+					std::string httpCallbackUrl;
 					std::string taskProfile;
 					std::string createTime;
 					std::string ossBucket;
 					int mediaEncode;
 					std::vector<std::string> layoutIds;
 					std::vector<std::string> formats;
-					std::string templateId;
 					std::string mnsQueue;
+					int delayStopTime;
 					std::string name;
+					std::string ossFilePrefix;
+					bool enableM3u8DateTime;
+					std::vector<_Template::Watermark> watermarks;
+					std::vector<_Template::Background> backgrounds;
+					std::string templateId;
 					int backgroundColor;
 				};
 

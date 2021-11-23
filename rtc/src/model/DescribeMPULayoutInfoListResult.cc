@@ -53,28 +53,28 @@ void DescribeMPULayoutInfoListResult::parse(const std::string &payload)
 		for (auto valueLayoutsLayoutPanesPanesItem : allPanesNode)
 		{
 			Layout::PanesItem panesObject;
-			if(!valueLayoutsLayoutPanesPanesItem["PaneId"].isNull())
-				panesObject.paneId = std::stoi(valueLayoutsLayoutPanesPanesItem["PaneId"].asString());
 			if(!valueLayoutsLayoutPanesPanesItem["MajorPane"].isNull())
 				panesObject.majorPane = std::stoi(valueLayoutsLayoutPanesPanesItem["MajorPane"].asString());
-			if(!valueLayoutsLayoutPanesPanesItem["X"].isNull())
-				panesObject.x = std::stof(valueLayoutsLayoutPanesPanesItem["X"].asString());
-			if(!valueLayoutsLayoutPanesPanesItem["Y"].isNull())
-				panesObject.y = std::stof(valueLayoutsLayoutPanesPanesItem["Y"].asString());
 			if(!valueLayoutsLayoutPanesPanesItem["Width"].isNull())
 				panesObject.width = std::stof(valueLayoutsLayoutPanesPanesItem["Width"].asString());
 			if(!valueLayoutsLayoutPanesPanesItem["Height"].isNull())
 				panesObject.height = std::stof(valueLayoutsLayoutPanesPanesItem["Height"].asString());
+			if(!valueLayoutsLayoutPanesPanesItem["Y"].isNull())
+				panesObject.y = std::stof(valueLayoutsLayoutPanesPanesItem["Y"].asString());
+			if(!valueLayoutsLayoutPanesPanesItem["PaneId"].isNull())
+				panesObject.paneId = std::stoi(valueLayoutsLayoutPanesPanesItem["PaneId"].asString());
 			if(!valueLayoutsLayoutPanesPanesItem["ZOrder"].isNull())
 				panesObject.zOrder = std::stoi(valueLayoutsLayoutPanesPanesItem["ZOrder"].asString());
+			if(!valueLayoutsLayoutPanesPanesItem["X"].isNull())
+				panesObject.x = std::stof(valueLayoutsLayoutPanesPanesItem["X"].asString());
 			layoutsObject.panes.push_back(panesObject);
 		}
 		layouts_.push_back(layoutsObject);
 	}
-	if(!value["TotalNum"].isNull())
-		totalNum_ = std::stol(value["TotalNum"].asString());
 	if(!value["TotalPage"].isNull())
 		totalPage_ = std::stol(value["TotalPage"].asString());
+	if(!value["TotalNum"].isNull())
+		totalNum_ = std::stol(value["TotalNum"].asString());
 
 }
 

@@ -43,6 +43,8 @@ void DescribeRecordTasksResult::parse(const std::string &payload)
 	for (auto valueRecordTasksRecordTask : allRecordTasksNode)
 	{
 		RecordTask recordTasksObject;
+		if(!valueRecordTasksRecordTask["Status"].isNull())
+			recordTasksObject.status = std::stoi(valueRecordTasksRecordTask["Status"].asString());
 		if(!valueRecordTasksRecordTask["CreateTime"].isNull())
 			recordTasksObject.createTime = valueRecordTasksRecordTask["CreateTime"].asString();
 		if(!valueRecordTasksRecordTask["AppId"].isNull())
@@ -53,18 +55,16 @@ void DescribeRecordTasksResult::parse(const std::string &payload)
 			recordTasksObject.taskId = valueRecordTasksRecordTask["TaskId"].asString();
 		if(!valueRecordTasksRecordTask["TemplateId"].isNull())
 			recordTasksObject.templateId = valueRecordTasksRecordTask["TemplateId"].asString();
-		if(!valueRecordTasksRecordTask["Status"].isNull())
-			recordTasksObject.status = std::stoi(valueRecordTasksRecordTask["Status"].asString());
 		auto allUserPanesNode = valueRecordTasksRecordTask["UserPanes"]["UserPanesItem"];
 		for (auto valueRecordTasksRecordTaskUserPanesUserPanesItem : allUserPanesNode)
 		{
 			RecordTask::UserPanesItem userPanesObject;
 			if(!valueRecordTasksRecordTaskUserPanesUserPanesItem["PaneId"].isNull())
 				userPanesObject.paneId = std::stoi(valueRecordTasksRecordTaskUserPanesUserPanesItem["PaneId"].asString());
-			if(!valueRecordTasksRecordTaskUserPanesUserPanesItem["UserId"].isNull())
-				userPanesObject.userId = valueRecordTasksRecordTaskUserPanesUserPanesItem["UserId"].asString();
 			if(!valueRecordTasksRecordTaskUserPanesUserPanesItem["Source"].isNull())
 				userPanesObject.source = valueRecordTasksRecordTaskUserPanesUserPanesItem["Source"].asString();
+			if(!valueRecordTasksRecordTaskUserPanesUserPanesItem["UserId"].isNull())
+				userPanesObject.userId = valueRecordTasksRecordTaskUserPanesUserPanesItem["UserId"].asString();
 			recordTasksObject.userPanes.push_back(userPanesObject);
 		}
 		auto allSubSpecUsers = value["SubSpecUsers"]["SubSpecUser"];
@@ -72,10 +72,10 @@ void DescribeRecordTasksResult::parse(const std::string &payload)
 			recordTasksObject.subSpecUsers.push_back(value.asString());
 		recordTasks_.push_back(recordTasksObject);
 	}
-	if(!value["TotalNum"].isNull())
-		totalNum_ = std::stol(value["TotalNum"].asString());
 	if(!value["TotalPage"].isNull())
 		totalPage_ = std::stol(value["TotalPage"].asString());
+	if(!value["TotalNum"].isNull())
+		totalNum_ = std::stol(value["TotalNum"].asString());
 
 }
 

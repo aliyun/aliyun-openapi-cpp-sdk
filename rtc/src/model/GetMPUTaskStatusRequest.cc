@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,56 +18,46 @@
 
 using AlibabaCloud::Rtc::Model::GetMPUTaskStatusRequest;
 
-GetMPUTaskStatusRequest::GetMPUTaskStatusRequest() :
-	RpcServiceRequest("rtc", "2018-01-11", "GetMPUTaskStatus")
-{
-	setMethod(HttpRequest::Method::Post);
+GetMPUTaskStatusRequest::GetMPUTaskStatusRequest()
+    : RpcServiceRequest("rtc", "2018-01-11", "GetMPUTaskStatus") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-GetMPUTaskStatusRequest::~GetMPUTaskStatusRequest()
-{}
+GetMPUTaskStatusRequest::~GetMPUTaskStatusRequest() {}
 
-std::string GetMPUTaskStatusRequest::getTaskId()const
-{
-	return taskId_;
+std::string GetMPUTaskStatusRequest::getTaskId() const {
+  return taskId_;
 }
 
-void GetMPUTaskStatusRequest::setTaskId(const std::string& taskId)
-{
-	taskId_ = taskId;
-	setParameter("TaskId", taskId);
+void GetMPUTaskStatusRequest::setTaskId(const std::string &taskId) {
+  taskId_ = taskId;
+  setParameter(std::string("TaskId"), taskId);
 }
 
-std::string GetMPUTaskStatusRequest::getShowLog()const
-{
-	return showLog_;
+std::string GetMPUTaskStatusRequest::getShowLog() const {
+  return showLog_;
 }
 
-void GetMPUTaskStatusRequest::setShowLog(const std::string& showLog)
-{
-	showLog_ = showLog;
-	setParameter("ShowLog", showLog);
+void GetMPUTaskStatusRequest::setShowLog(const std::string &showLog) {
+  showLog_ = showLog;
+  setParameter(std::string("ShowLog"), showLog);
 }
 
-long GetMPUTaskStatusRequest::getOwnerId()const
-{
-	return ownerId_;
+long GetMPUTaskStatusRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void GetMPUTaskStatusRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void GetMPUTaskStatusRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string GetMPUTaskStatusRequest::getAppId()const
-{
-	return appId_;
+std::string GetMPUTaskStatusRequest::getAppId() const {
+  return appId_;
 }
 
-void GetMPUTaskStatusRequest::setAppId(const std::string& appId)
-{
-	appId_ = appId;
-	setParameter("AppId", appId);
+void GetMPUTaskStatusRequest::setAppId(const std::string &appId) {
+  appId_ = appId;
+  setParameter(std::string("AppId"), appId);
 }
 

@@ -48,18 +48,18 @@ void DescribeChannelUsersResult::parse(const std::string &payload)
 	auto allLiveUserList = value["LiveUserList"]["LiveUser"];
 	for (const auto &item : allLiveUserList)
 		liveUserList_.push_back(item.asString());
-	if(!value["Timestamp"].isNull())
-		timestamp_ = std::stoi(value["Timestamp"].asString());
-	if(!value["IsChannelExist"].isNull())
-		isChannelExist_ = value["IsChannelExist"].asString() == "true";
-	if(!value["ChannelProfile"].isNull())
-		channelProfile_ = std::stoi(value["ChannelProfile"].asString());
 	if(!value["CommTotalNum"].isNull())
 		commTotalNum_ = std::stoi(value["CommTotalNum"].asString());
-	if(!value["InteractiveUserNum"].isNull())
-		interactiveUserNum_ = std::stoi(value["InteractiveUserNum"].asString());
+	if(!value["IsChannelExist"].isNull())
+		isChannelExist_ = value["IsChannelExist"].asString() == "true";
 	if(!value["LiveUserNum"].isNull())
 		liveUserNum_ = std::stoi(value["LiveUserNum"].asString());
+	if(!value["Timestamp"].isNull())
+		timestamp_ = std::stoi(value["Timestamp"].asString());
+	if(!value["ChannelProfile"].isNull())
+		channelProfile_ = std::stoi(value["ChannelProfile"].asString());
+	if(!value["InteractiveUserNum"].isNull())
+		interactiveUserNum_ = std::stoi(value["InteractiveUserNum"].asString());
 
 }
 
@@ -93,14 +93,14 @@ std::vector<std::string> DescribeChannelUsersResult::getLiveUserList()const
 	return liveUserList_;
 }
 
-int DescribeChannelUsersResult::getTimestamp()const
-{
-	return timestamp_;
-}
-
 bool DescribeChannelUsersResult::getIsChannelExist()const
 {
 	return isChannelExist_;
+}
+
+int DescribeChannelUsersResult::getTimestamp()const
+{
+	return timestamp_;
 }
 
 int DescribeChannelUsersResult::getCommTotalNum()const

@@ -41,8 +41,8 @@ namespace AlibabaCloud
 						float x;
 						float y;
 						float height;
-						int paneId;
 						float width;
+						int paneId;
 					};
 					int audioMixCount;
 					long layoutId;

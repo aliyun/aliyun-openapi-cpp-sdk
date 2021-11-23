@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,67 +18,55 @@
 
 using AlibabaCloud::Rtc::Model::StopChannelUserPublishRequest;
 
-StopChannelUserPublishRequest::StopChannelUserPublishRequest() :
-	RpcServiceRequest("rtc", "2018-01-11", "StopChannelUserPublish")
-{
-	setMethod(HttpRequest::Method::Post);
+StopChannelUserPublishRequest::StopChannelUserPublishRequest()
+    : RpcServiceRequest("rtc", "2018-01-11", "StopChannelUserPublish") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-StopChannelUserPublishRequest::~StopChannelUserPublishRequest()
-{}
+StopChannelUserPublishRequest::~StopChannelUserPublishRequest() {}
 
-std::string StopChannelUserPublishRequest::getUserId()const
-{
-	return userId_;
+std::string StopChannelUserPublishRequest::getUserId() const {
+  return userId_;
 }
 
-void StopChannelUserPublishRequest::setUserId(const std::string& userId)
-{
-	userId_ = userId;
-	setParameter("UserId", userId);
+void StopChannelUserPublishRequest::setUserId(const std::string &userId) {
+  userId_ = userId;
+  setParameter(std::string("UserId"), userId);
 }
 
-std::string StopChannelUserPublishRequest::getShowLog()const
-{
-	return showLog_;
+std::string StopChannelUserPublishRequest::getShowLog() const {
+  return showLog_;
 }
 
-void StopChannelUserPublishRequest::setShowLog(const std::string& showLog)
-{
-	showLog_ = showLog;
-	setParameter("ShowLog", showLog);
+void StopChannelUserPublishRequest::setShowLog(const std::string &showLog) {
+  showLog_ = showLog;
+  setParameter(std::string("ShowLog"), showLog);
 }
 
-long StopChannelUserPublishRequest::getOwnerId()const
-{
-	return ownerId_;
+long StopChannelUserPublishRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void StopChannelUserPublishRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void StopChannelUserPublishRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string StopChannelUserPublishRequest::getAppId()const
-{
-	return appId_;
+std::string StopChannelUserPublishRequest::getAppId() const {
+  return appId_;
 }
 
-void StopChannelUserPublishRequest::setAppId(const std::string& appId)
-{
-	appId_ = appId;
-	setParameter("AppId", appId);
+void StopChannelUserPublishRequest::setAppId(const std::string &appId) {
+  appId_ = appId;
+  setParameter(std::string("AppId"), appId);
 }
 
-std::string StopChannelUserPublishRequest::getChannelId()const
-{
-	return channelId_;
+std::string StopChannelUserPublishRequest::getChannelId() const {
+  return channelId_;
 }
 
-void StopChannelUserPublishRequest::setChannelId(const std::string& channelId)
-{
-	channelId_ = channelId;
-	setParameter("ChannelId", channelId);
+void StopChannelUserPublishRequest::setChannelId(const std::string &channelId) {
+  channelId_ = channelId;
+  setParameter(std::string("ChannelId"), channelId);
 }
 

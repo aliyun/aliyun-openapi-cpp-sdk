@@ -43,28 +43,28 @@ void DescribeRecordFilesResult::parse(const std::string &payload)
 	for (auto valueRecordFilesRecordFile : allRecordFilesNode)
 	{
 		RecordFile recordFilesObject;
+		if(!valueRecordFilesRecordFile["StartTime"].isNull())
+			recordFilesObject.startTime = valueRecordFilesRecordFile["StartTime"].asString();
 		if(!valueRecordFilesRecordFile["CreateTime"].isNull())
 			recordFilesObject.createTime = valueRecordFilesRecordFile["CreateTime"].asString();
 		if(!valueRecordFilesRecordFile["AppId"].isNull())
 			recordFilesObject.appId = valueRecordFilesRecordFile["AppId"].asString();
 		if(!valueRecordFilesRecordFile["ChannelId"].isNull())
 			recordFilesObject.channelId = valueRecordFilesRecordFile["ChannelId"].asString();
-		if(!valueRecordFilesRecordFile["TaskId"].isNull())
-			recordFilesObject.taskId = valueRecordFilesRecordFile["TaskId"].asString();
-		if(!valueRecordFilesRecordFile["StartTime"].isNull())
-			recordFilesObject.startTime = valueRecordFilesRecordFile["StartTime"].asString();
-		if(!valueRecordFilesRecordFile["StopTime"].isNull())
-			recordFilesObject.stopTime = valueRecordFilesRecordFile["StopTime"].asString();
 		if(!valueRecordFilesRecordFile["Url"].isNull())
 			recordFilesObject.url = valueRecordFilesRecordFile["Url"].asString();
 		if(!valueRecordFilesRecordFile["Duration"].isNull())
 			recordFilesObject.duration = std::stof(valueRecordFilesRecordFile["Duration"].asString());
+		if(!valueRecordFilesRecordFile["TaskId"].isNull())
+			recordFilesObject.taskId = valueRecordFilesRecordFile["TaskId"].asString();
+		if(!valueRecordFilesRecordFile["StopTime"].isNull())
+			recordFilesObject.stopTime = valueRecordFilesRecordFile["StopTime"].asString();
 		recordFiles_.push_back(recordFilesObject);
 	}
-	if(!value["TotalNum"].isNull())
-		totalNum_ = std::stol(value["TotalNum"].asString());
 	if(!value["TotalPage"].isNull())
 		totalPage_ = std::stol(value["TotalPage"].asString());
+	if(!value["TotalNum"].isNull())
+		totalNum_ = std::stol(value["TotalNum"].asString());
 
 }
 

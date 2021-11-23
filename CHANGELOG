@@ -1,3 +1,8 @@
+2021-11-23 Version: 1.36.943
+- Delete some abandoned interface in SDK.
+- Add AutoLiveStream series interfaces.
+- Add UpdateMPUTask, CreateRecordIndexFile interfaces.
+
 2021-11-23 Version: 1.36.942
 - Update RecognizeCharacter.
 

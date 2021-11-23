@@ -43,8 +43,8 @@ namespace AlibabaCloud
 				int getInteractiveUserNum()const;
 				std::vector<std::string> getUserList()const;
 				std::vector<std::string> getLiveUserList()const;
-				int getTimestamp()const;
 				bool getIsChannelExist()const;
+				int getTimestamp()const;
 				int getCommTotalNum()const;
 
 			protected:
@@ -56,8 +56,8 @@ namespace AlibabaCloud
 				int interactiveUserNum_;
 				std::vector<std::string> userList_;
 				std::vector<std::string> liveUserList_;
-				int timestamp_;
 				bool isChannelExist_;
+				int timestamp_;
 				int commTotalNum_;
 
 			};
