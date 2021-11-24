@@ -29,8 +29,6 @@ set(rtc_public_header_model
 	include/alibabacloud/rtc/model/CreateEventSubscribeResult.h
 	include/alibabacloud/rtc/model/CreateMPULayoutRequest.h
 	include/alibabacloud/rtc/model/CreateMPULayoutResult.h
-	include/alibabacloud/rtc/model/CreateRecordIndexFileRequest.h
-	include/alibabacloud/rtc/model/CreateRecordIndexFileResult.h
 	include/alibabacloud/rtc/model/DeleteAutoLiveStreamRuleRequest.h
 	include/alibabacloud/rtc/model/DeleteAutoLiveStreamRuleResult.h
 	include/alibabacloud/rtc/model/DeleteEventSubscribeRequest.h
@@ -49,8 +47,6 @@ set(rtc_public_header_model
 	include/alibabacloud/rtc/model/DescribeMPULayoutInfoListResult.h
 	include/alibabacloud/rtc/model/DescribeRecordFilesRequest.h
 	include/alibabacloud/rtc/model/DescribeRecordFilesResult.h
-	include/alibabacloud/rtc/model/DescribeRecordTasksRequest.h
-	include/alibabacloud/rtc/model/DescribeRecordTasksResult.h
 	include/alibabacloud/rtc/model/DescribeRecordTemplatesRequest.h
 	include/alibabacloud/rtc/model/DescribeRecordTemplatesResult.h
 	include/alibabacloud/rtc/model/DescribeUserInfoInChannelRequest.h
@@ -94,8 +90,6 @@ set(rtc_src
 	src/model/CreateEventSubscribeResult.cc
 	src/model/CreateMPULayoutRequest.cc
 	src/model/CreateMPULayoutResult.cc
-	src/model/CreateRecordIndexFileRequest.cc
-	src/model/CreateRecordIndexFileResult.cc
 	src/model/DeleteAutoLiveStreamRuleRequest.cc
 	src/model/DeleteAutoLiveStreamRuleResult.cc
 	src/model/DeleteEventSubscribeRequest.cc
@@ -114,8 +108,6 @@ set(rtc_src
 	src/model/DescribeMPULayoutInfoListResult.cc
 	src/model/DescribeRecordFilesRequest.cc
 	src/model/DescribeRecordFilesResult.cc
-	src/model/DescribeRecordTasksRequest.cc
-	src/model/DescribeRecordTasksResult.cc
 	src/model/DescribeRecordTemplatesRequest.cc
 	src/model/DescribeRecordTemplatesResult.cc
 	src/model/DescribeUserInfoInChannelRequest.cc

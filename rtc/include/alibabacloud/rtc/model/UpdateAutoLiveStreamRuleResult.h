@@ -37,12 +37,10 @@ namespace AlibabaCloud
 				UpdateAutoLiveStreamRuleResult();
 				explicit UpdateAutoLiveStreamRuleResult(const std::string &payload);
 				~UpdateAutoLiveStreamRuleResult();
-				long getRuleId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				long ruleId_;
 
 			};
 		}

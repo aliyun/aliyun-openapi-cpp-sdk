@@ -30,8 +30,6 @@
 #include "model/CreateEventSubscribeResult.h"
 #include "model/CreateMPULayoutRequest.h"
 #include "model/CreateMPULayoutResult.h"
-#include "model/CreateRecordIndexFileRequest.h"
-#include "model/CreateRecordIndexFileResult.h"
 #include "model/DeleteAutoLiveStreamRuleRequest.h"
 #include "model/DeleteAutoLiveStreamRuleResult.h"
 #include "model/DeleteEventSubscribeRequest.h"
@@ -50,8 +48,6 @@
 #include "model/DescribeMPULayoutInfoListResult.h"
 #include "model/DescribeRecordFilesRequest.h"
 #include "model/DescribeRecordFilesResult.h"
-#include "model/DescribeRecordTasksRequest.h"
-#include "model/DescribeRecordTasksResult.h"
 #include "model/DescribeRecordTemplatesRequest.h"
 #include "model/DescribeRecordTemplatesResult.h"
 #include "model/DescribeUserInfoInChannelRequest.h"
@@ -105,9 +101,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateMPULayoutResult> CreateMPULayoutOutcome;
 			typedef std::future<CreateMPULayoutOutcome> CreateMPULayoutOutcomeCallable;
 			typedef std::function<void(const RtcClient*, const Model::CreateMPULayoutRequest&, const CreateMPULayoutOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateMPULayoutAsyncHandler;
-			typedef Outcome<Error, Model::CreateRecordIndexFileResult> CreateRecordIndexFileOutcome;
-			typedef std::future<CreateRecordIndexFileOutcome> CreateRecordIndexFileOutcomeCallable;
-			typedef std::function<void(const RtcClient*, const Model::CreateRecordIndexFileRequest&, const CreateRecordIndexFileOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateRecordIndexFileAsyncHandler;
 			typedef Outcome<Error, Model::DeleteAutoLiveStreamRuleResult> DeleteAutoLiveStreamRuleOutcome;
 			typedef std::future<DeleteAutoLiveStreamRuleOutcome> DeleteAutoLiveStreamRuleOutcomeCallable;
 			typedef std::function<void(const RtcClient*, const Model::DeleteAutoLiveStreamRuleRequest&, const DeleteAutoLiveStreamRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAutoLiveStreamRuleAsyncHandler;
@@ -135,9 +128,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeRecordFilesResult> DescribeRecordFilesOutcome;
 			typedef std::future<DescribeRecordFilesOutcome> DescribeRecordFilesOutcomeCallable;
 			typedef std::function<void(const RtcClient*, const Model::DescribeRecordFilesRequest&, const DescribeRecordFilesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecordFilesAsyncHandler;
-			typedef Outcome<Error, Model::DescribeRecordTasksResult> DescribeRecordTasksOutcome;
-			typedef std::future<DescribeRecordTasksOutcome> DescribeRecordTasksOutcomeCallable;
-			typedef std::function<void(const RtcClient*, const Model::DescribeRecordTasksRequest&, const DescribeRecordTasksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecordTasksAsyncHandler;
 			typedef Outcome<Error, Model::DescribeRecordTemplatesResult> DescribeRecordTemplatesOutcome;
 			typedef std::future<DescribeRecordTemplatesOutcome> DescribeRecordTemplatesOutcomeCallable;
 			typedef std::function<void(const RtcClient*, const Model::DescribeRecordTemplatesRequest&, const DescribeRecordTemplatesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecordTemplatesAsyncHandler;
@@ -203,9 +193,6 @@ namespace AlibabaCloud
 			CreateMPULayoutOutcome createMPULayout(const Model::CreateMPULayoutRequest &request)const;
 			void createMPULayoutAsync(const Model::CreateMPULayoutRequest& request, const CreateMPULayoutAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateMPULayoutOutcomeCallable createMPULayoutCallable(const Model::CreateMPULayoutRequest& request) const;
-			CreateRecordIndexFileOutcome createRecordIndexFile(const Model::CreateRecordIndexFileRequest &request)const;
-			void createRecordIndexFileAsync(const Model::CreateRecordIndexFileRequest& request, const CreateRecordIndexFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CreateRecordIndexFileOutcomeCallable createRecordIndexFileCallable(const Model::CreateRecordIndexFileRequest& request) const;
 			DeleteAutoLiveStreamRuleOutcome deleteAutoLiveStreamRule(const Model::DeleteAutoLiveStreamRuleRequest &request)const;
 			void deleteAutoLiveStreamRuleAsync(const Model::DeleteAutoLiveStreamRuleRequest& request, const DeleteAutoLiveStreamRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteAutoLiveStreamRuleOutcomeCallable deleteAutoLiveStreamRuleCallable(const Model::DeleteAutoLiveStreamRuleRequest& request) const;
@@ -233,9 +220,6 @@ namespace AlibabaCloud
 			DescribeRecordFilesOutcome describeRecordFiles(const Model::DescribeRecordFilesRequest &request)const;
 			void describeRecordFilesAsync(const Model::DescribeRecordFilesRequest& request, const DescribeRecordFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRecordFilesOutcomeCallable describeRecordFilesCallable(const Model::DescribeRecordFilesRequest& request) const;
-			DescribeRecordTasksOutcome describeRecordTasks(const Model::DescribeRecordTasksRequest &request)const;
-			void describeRecordTasksAsync(const Model::DescribeRecordTasksRequest& request, const DescribeRecordTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeRecordTasksOutcomeCallable describeRecordTasksCallable(const Model::DescribeRecordTasksRequest& request) const;
 			DescribeRecordTemplatesOutcome describeRecordTemplates(const Model::DescribeRecordTemplatesRequest &request)const;
 			void describeRecordTemplatesAsync(const Model::DescribeRecordTemplatesRequest& request, const DescribeRecordTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRecordTemplatesOutcomeCallable describeRecordTemplatesCallable(const Model::DescribeRecordTemplatesRequest& request) const;

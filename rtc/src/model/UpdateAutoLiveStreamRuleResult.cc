@@ -39,13 +39,6 @@ void UpdateAutoLiveStreamRuleResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["RuleId"].isNull())
-		ruleId_ = std::stol(value["RuleId"].asString());
 
-}
-
-long UpdateAutoLiveStreamRuleResult::getRuleId()const
-{
-	return ruleId_;
 }
 

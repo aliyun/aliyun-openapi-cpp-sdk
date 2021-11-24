@@ -1,3 +1,6 @@
+2021-11-24 Version: 1.36.945
+- Delete some abandoned interface in SDK.
+
 2021-11-24 Version: 1.36.944
 - Set API DescribeVodDomainSrcBpsData to public.
 

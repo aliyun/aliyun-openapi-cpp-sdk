@@ -195,42 +195,6 @@ RtcClient::CreateMPULayoutOutcomeCallable RtcClient::createMPULayoutCallable(con
 	return task->get_future();
 }
 
-RtcClient::CreateRecordIndexFileOutcome RtcClient::createRecordIndexFile(const CreateRecordIndexFileRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateRecordIndexFileOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateRecordIndexFileOutcome(CreateRecordIndexFileResult(outcome.result()));
-	else
-		return CreateRecordIndexFileOutcome(outcome.error());
-}
-
-void RtcClient::createRecordIndexFileAsync(const CreateRecordIndexFileRequest& request, const CreateRecordIndexFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createRecordIndexFile(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-RtcClient::CreateRecordIndexFileOutcomeCallable RtcClient::createRecordIndexFileCallable(const CreateRecordIndexFileRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateRecordIndexFileOutcome()>>(
-			[this, request]()
-			{
-			return this->createRecordIndexFile(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 RtcClient::DeleteAutoLiveStreamRuleOutcome RtcClient::deleteAutoLiveStreamRule(const DeleteAutoLiveStreamRuleRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -549,42 +513,6 @@ RtcClient::DescribeRecordFilesOutcomeCallable RtcClient::describeRecordFilesCall
 			[this, request]()
 			{
 			return this->describeRecordFiles(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-RtcClient::DescribeRecordTasksOutcome RtcClient::describeRecordTasks(const DescribeRecordTasksRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeRecordTasksOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeRecordTasksOutcome(DescribeRecordTasksResult(outcome.result()));
-	else
-		return DescribeRecordTasksOutcome(outcome.error());
-}
-
-void RtcClient::describeRecordTasksAsync(const DescribeRecordTasksRequest& request, const DescribeRecordTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeRecordTasks(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-RtcClient::DescribeRecordTasksOutcomeCallable RtcClient::describeRecordTasksCallable(const DescribeRecordTasksRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeRecordTasksOutcome()>>(
-			[this, request]()
-			{
-			return this->describeRecordTasks(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
