@@ -1,3 +1,6 @@
+2021-11-24 Version: 1.36.944
+- Set API DescribeVodDomainSrcBpsData to public.
+
 2021-11-23 Version: 1.36.943
 - Delete some abandoned interface in SDK.
 - Add AutoLiveStream series interfaces.

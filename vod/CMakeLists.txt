@@ -49,8 +49,6 @@ set(vod_public_header_model
 	include/alibabacloud/vod/model/CreateAppInfoResult.h
 	include/alibabacloud/vod/model/CreateAuditRequest.h
 	include/alibabacloud/vod/model/CreateAuditResult.h
-	include/alibabacloud/vod/model/CreateDetectionTemplateRequest.h
-	include/alibabacloud/vod/model/CreateDetectionTemplateResult.h
 	include/alibabacloud/vod/model/CreateUploadAttachedMediaRequest.h
 	include/alibabacloud/vod/model/CreateUploadAttachedMediaResult.h
 	include/alibabacloud/vod/model/CreateUploadImageRequest.h
@@ -69,8 +67,6 @@ set(vod_public_header_model
 	include/alibabacloud/vod/model/DeleteAttachedMediaResult.h
 	include/alibabacloud/vod/model/DeleteCategoryRequest.h
 	include/alibabacloud/vod/model/DeleteCategoryResult.h
-	include/alibabacloud/vod/model/DeleteDetectionTemplateRequest.h
-	include/alibabacloud/vod/model/DeleteDetectionTemplateResult.h
 	include/alibabacloud/vod/model/DeleteDynamicImageRequest.h
 	include/alibabacloud/vod/model/DeleteDynamicImageResult.h
 	include/alibabacloud/vod/model/DeleteEditingProjectRequest.h
@@ -123,6 +119,8 @@ set(vod_public_header_model
 	include/alibabacloud/vod/model/DescribeVodDomainLogResult.h
 	include/alibabacloud/vod/model/DescribeVodDomainRealtimeLogDeliveryRequest.h
 	include/alibabacloud/vod/model/DescribeVodDomainRealtimeLogDeliveryResult.h
+	include/alibabacloud/vod/model/DescribeVodDomainSrcBpsDataRequest.h
+	include/alibabacloud/vod/model/DescribeVodDomainSrcBpsDataResult.h
 	include/alibabacloud/vod/model/DescribeVodDomainTrafficDataRequest.h
 	include/alibabacloud/vod/model/DescribeVodDomainTrafficDataResult.h
 	include/alibabacloud/vod/model/DescribeVodDomainUsageDataRequest.h
@@ -149,8 +147,6 @@ set(vod_public_header_model
 	include/alibabacloud/vod/model/DisableVodRealtimeLogDeliveryResult.h
 	include/alibabacloud/vod/model/EnableVodRealtimeLogDeliveryRequest.h
 	include/alibabacloud/vod/model/EnableVodRealtimeLogDeliveryResult.h
-	include/alibabacloud/vod/model/GetAICaptionExtractionJobsRequest.h
-	include/alibabacloud/vod/model/GetAICaptionExtractionJobsResult.h
 	include/alibabacloud/vod/model/GetAIImageJobsRequest.h
 	include/alibabacloud/vod/model/GetAIImageJobsResult.h
 	include/alibabacloud/vod/model/GetAIMediaAuditJobRequest.h
@@ -169,12 +165,6 @@ set(vod_public_header_model
 	include/alibabacloud/vod/model/GetCategoriesResult.h
 	include/alibabacloud/vod/model/GetDefaultAITemplateRequest.h
 	include/alibabacloud/vod/model/GetDefaultAITemplateResult.h
-	include/alibabacloud/vod/model/GetDetectionJobRequest.h
-	include/alibabacloud/vod/model/GetDetectionJobResult.h
-	include/alibabacloud/vod/model/GetDetectionResultRequest.h
-	include/alibabacloud/vod/model/GetDetectionResultResult.h
-	include/alibabacloud/vod/model/GetDetectionTemplateRequest.h
-	include/alibabacloud/vod/model/GetDetectionTemplateResult.h
 	include/alibabacloud/vod/model/GetEditingProjectRequest.h
 	include/alibabacloud/vod/model/GetEditingProjectResult.h
 	include/alibabacloud/vod/model/GetEditingProjectMaterialsRequest.h
@@ -231,14 +221,8 @@ set(vod_public_header_model
 	include/alibabacloud/vod/model/ListAppPoliciesForIdentityResult.h
 	include/alibabacloud/vod/model/ListAuditSecurityIpRequest.h
 	include/alibabacloud/vod/model/ListAuditSecurityIpResult.h
-	include/alibabacloud/vod/model/ListDetectionJobRequest.h
-	include/alibabacloud/vod/model/ListDetectionJobResult.h
-	include/alibabacloud/vod/model/ListDetectionTemplateRequest.h
-	include/alibabacloud/vod/model/ListDetectionTemplateResult.h
 	include/alibabacloud/vod/model/ListDynamicImageRequest.h
 	include/alibabacloud/vod/model/ListDynamicImageResult.h
-	include/alibabacloud/vod/model/ListLetterSendJobRequest.h
-	include/alibabacloud/vod/model/ListLetterSendJobResult.h
 	include/alibabacloud/vod/model/ListLiveRecordVideoRequest.h
 	include/alibabacloud/vod/model/ListLiveRecordVideoResult.h
 	include/alibabacloud/vod/model/ListMediaDNADeleteJobRequest.h
@@ -289,8 +273,6 @@ set(vod_public_header_model
 	include/alibabacloud/vod/model/SetMessageCallbackResult.h
 	include/alibabacloud/vod/model/SetVodDomainCertificateRequest.h
 	include/alibabacloud/vod/model/SetVodDomainCertificateResult.h
-	include/alibabacloud/vod/model/SubmitAICaptionExtractionJobRequest.h
-	include/alibabacloud/vod/model/SubmitAICaptionExtractionJobResult.h
 	include/alibabacloud/vod/model/SubmitAIImageAuditJobRequest.h
 	include/alibabacloud/vod/model/SubmitAIImageAuditJobResult.h
 	include/alibabacloud/vod/model/SubmitAIImageJobRequest.h
@@ -299,8 +281,6 @@ set(vod_public_header_model
 	include/alibabacloud/vod/model/SubmitAIJobResult.h
 	include/alibabacloud/vod/model/SubmitAIMediaAuditJobRequest.h
 	include/alibabacloud/vod/model/SubmitAIMediaAuditJobResult.h
-	include/alibabacloud/vod/model/SubmitDetectionJobRequest.h
-	include/alibabacloud/vod/model/SubmitDetectionJobResult.h
 	include/alibabacloud/vod/model/SubmitDynamicImageJobRequest.h
 	include/alibabacloud/vod/model/SubmitDynamicImageJobResult.h
 	include/alibabacloud/vod/model/SubmitLiveEditingRequest.h
@@ -327,10 +307,6 @@ set(vod_public_header_model
 	include/alibabacloud/vod/model/UpdateAttachedMediaInfosResult.h
 	include/alibabacloud/vod/model/UpdateCategoryRequest.h
 	include/alibabacloud/vod/model/UpdateCategoryResult.h
-	include/alibabacloud/vod/model/UpdateDetectionJobRequest.h
-	include/alibabacloud/vod/model/UpdateDetectionJobResult.h
-	include/alibabacloud/vod/model/UpdateDetectionTemplateRequest.h
-	include/alibabacloud/vod/model/UpdateDetectionTemplateResult.h
 	include/alibabacloud/vod/model/UpdateEditingProjectRequest.h
 	include/alibabacloud/vod/model/UpdateEditingProjectResult.h
 	include/alibabacloud/vod/model/UpdateImageInfosRequest.h
@@ -386,8 +362,6 @@ set(vod_src
 	src/model/CreateAppInfoResult.cc
 	src/model/CreateAuditRequest.cc
 	src/model/CreateAuditResult.cc
-	src/model/CreateDetectionTemplateRequest.cc
-	src/model/CreateDetectionTemplateResult.cc
 	src/model/CreateUploadAttachedMediaRequest.cc
 	src/model/CreateUploadAttachedMediaResult.cc
 	src/model/CreateUploadImageRequest.cc
@@ -406,8 +380,6 @@ set(vod_src
 	src/model/DeleteAttachedMediaResult.cc
 	src/model/DeleteCategoryRequest.cc
 	src/model/DeleteCategoryResult.cc
-	src/model/DeleteDetectionTemplateRequest.cc
-	src/model/DeleteDetectionTemplateResult.cc
 	src/model/DeleteDynamicImageRequest.cc
 	src/model/DeleteDynamicImageResult.cc
 	src/model/DeleteEditingProjectRequest.cc
@@ -460,6 +432,8 @@ set(vod_src
 	src/model/DescribeVodDomainLogResult.cc
 	src/model/DescribeVodDomainRealtimeLogDeliveryRequest.cc
 	src/model/DescribeVodDomainRealtimeLogDeliveryResult.cc
+	src/model/DescribeVodDomainSrcBpsDataRequest.cc
+	src/model/DescribeVodDomainSrcBpsDataResult.cc
 	src/model/DescribeVodDomainTrafficDataRequest.cc
 	src/model/DescribeVodDomainTrafficDataResult.cc
 	src/model/DescribeVodDomainUsageDataRequest.cc
@@ -486,8 +460,6 @@ set(vod_src
 	src/model/DisableVodRealtimeLogDeliveryResult.cc
 	src/model/EnableVodRealtimeLogDeliveryRequest.cc
 	src/model/EnableVodRealtimeLogDeliveryResult.cc
-	src/model/GetAICaptionExtractionJobsRequest.cc
-	src/model/GetAICaptionExtractionJobsResult.cc
 	src/model/GetAIImageJobsRequest.cc
 	src/model/GetAIImageJobsResult.cc
 	src/model/GetAIMediaAuditJobRequest.cc
@@ -506,12 +478,6 @@ set(vod_src
 	src/model/GetCategoriesResult.cc
 	src/model/GetDefaultAITemplateRequest.cc
 	src/model/GetDefaultAITemplateResult.cc
-	src/model/GetDetectionJobRequest.cc
-	src/model/GetDetectionJobResult.cc
-	src/model/GetDetectionResultRequest.cc
-	src/model/GetDetectionResultResult.cc
-	src/model/GetDetectionTemplateRequest.cc
-	src/model/GetDetectionTemplateResult.cc
 	src/model/GetEditingProjectRequest.cc
 	src/model/GetEditingProjectResult.cc
 	src/model/GetEditingProjectMaterialsRequest.cc
@@ -568,14 +534,8 @@ set(vod_src
 	src/model/ListAppPoliciesForIdentityResult.cc
 	src/model/ListAuditSecurityIpRequest.cc
 	src/model/ListAuditSecurityIpResult.cc
-	src/model/ListDetectionJobRequest.cc
-	src/model/ListDetectionJobResult.cc
-	src/model/ListDetectionTemplateRequest.cc
-	src/model/ListDetectionTemplateResult.cc
 	src/model/ListDynamicImageRequest.cc
 	src/model/ListDynamicImageResult.cc
-	src/model/ListLetterSendJobRequest.cc
-	src/model/ListLetterSendJobResult.cc
 	src/model/ListLiveRecordVideoRequest.cc
 	src/model/ListLiveRecordVideoResult.cc
 	src/model/ListMediaDNADeleteJobRequest.cc
@@ -626,8 +586,6 @@ set(vod_src
 	src/model/SetMessageCallbackResult.cc
 	src/model/SetVodDomainCertificateRequest.cc
 	src/model/SetVodDomainCertificateResult.cc
-	src/model/SubmitAICaptionExtractionJobRequest.cc
-	src/model/SubmitAICaptionExtractionJobResult.cc
 	src/model/SubmitAIImageAuditJobRequest.cc
 	src/model/SubmitAIImageAuditJobResult.cc
 	src/model/SubmitAIImageJobRequest.cc
@@ -636,8 +594,6 @@ set(vod_src
 	src/model/SubmitAIJobResult.cc
 	src/model/SubmitAIMediaAuditJobRequest.cc
 	src/model/SubmitAIMediaAuditJobResult.cc
-	src/model/SubmitDetectionJobRequest.cc
-	src/model/SubmitDetectionJobResult.cc
 	src/model/SubmitDynamicImageJobRequest.cc
 	src/model/SubmitDynamicImageJobResult.cc
 	src/model/SubmitLiveEditingRequest.cc
@@ -664,10 +620,6 @@ set(vod_src
 	src/model/UpdateAttachedMediaInfosResult.cc
 	src/model/UpdateCategoryRequest.cc
 	src/model/UpdateCategoryResult.cc
-	src/model/UpdateDetectionJobRequest.cc
-	src/model/UpdateDetectionJobResult.cc
-	src/model/UpdateDetectionTemplateRequest.cc
-	src/model/UpdateDetectionTemplateResult.cc
 	src/model/UpdateEditingProjectRequest.cc
 	src/model/UpdateEditingProjectResult.cc
 	src/model/UpdateImageInfosRequest.cc

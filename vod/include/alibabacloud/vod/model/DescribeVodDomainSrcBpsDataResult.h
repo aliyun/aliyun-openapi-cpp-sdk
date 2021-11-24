@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VOD_MODEL_LISTLETTERSENDJOBRESULT_H_
-#define ALIBABACLOUD_VOD_MODEL_LISTLETTERSENDJOBRESULT_H_
+#ifndef ALIBABACLOUD_VOD_MODEL_DESCRIBEVODDOMAINSRCBPSDATARESULT_H_
+#define ALIBABACLOUD_VOD_MODEL_DESCRIBEVODDOMAINSRCBPSDATARESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,38 +29,37 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VOD_EXPORT ListLetterSendJobResult : public ServiceResult
+			class ALIBABACLOUD_VOD_EXPORT DescribeVodDomainSrcBpsDataResult : public ServiceResult
 			{
 			public:
-				struct LetterJob
+				struct DataModule
 				{
-					std::string sendTime;
-					std::string modifyTime;
-					long userId;
-					std::string createTime;
-					std::string detectionId;
-					std::string bccAddress;
-					std::string ccAddress;
-					std::string title;
-					std::string body;
-					std::string toAddress;
-					std::string jobId;
-					std::string templateId;
+					std::string httpsValue;
+					std::string value;
+					std::string timeStamp;
 				};
 
 
-				ListLetterSendJobResult();
-				explicit ListLetterSendJobResult(const std::string &payload);
-				~ListLetterSendJobResult();
-				std::vector<LetterJob> getLetterJobList()const;
+				DescribeVodDomainSrcBpsDataResult();
+				explicit DescribeVodDomainSrcBpsDataResult(const std::string &payload);
+				~DescribeVodDomainSrcBpsDataResult();
+				std::vector<DataModule> getSrcBpsDataPerInterval()const;
+				std::string getEndTime()const;
+				std::string getDomainName()const;
+				std::string getStartTime()const;
+				std::string getDataInterval()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<LetterJob> letterJobList_;
+				std::vector<DataModule> srcBpsDataPerInterval_;
+				std::string endTime_;
+				std::string domainName_;
+				std::string startTime_;
+				std::string dataInterval_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VOD_MODEL_LISTLETTERSENDJOBRESULT_H_
+#endif // !ALIBABACLOUD_VOD_MODEL_DESCRIBEVODDOMAINSRCBPSDATARESULT_H_
