@@ -60,3 +60,14 @@ void SilenceTimeoutRequest::setInstanceId(const std::string& instanceId)
 	setParameter("InstanceId", instanceId);
 }
 
+long SilenceTimeoutRequest::getInstanceOwnerId()const
+{
+	return instanceOwnerId_;
+}
+
+void SilenceTimeoutRequest::setInstanceOwnerId(long instanceOwnerId)
+{
+	instanceOwnerId_ = instanceOwnerId;
+	setParameter("InstanceOwnerId", std::to_string(instanceOwnerId));
+}
+

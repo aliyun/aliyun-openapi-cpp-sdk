@@ -104,3 +104,14 @@ void SaveRecordingRequest::setFilePath(const std::string& filePath)
 	setParameter("FilePath", filePath);
 }
 
+long SaveRecordingRequest::getInstanceOwnerId()const
+{
+	return instanceOwnerId_;
+}
+
+void SaveRecordingRequest::setInstanceOwnerId(long instanceOwnerId)
+{
+	instanceOwnerId_ = instanceOwnerId;
+	setParameter("InstanceOwnerId", std::to_string(instanceOwnerId));
+}
+

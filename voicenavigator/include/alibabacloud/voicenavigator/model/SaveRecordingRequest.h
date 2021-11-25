@@ -49,6 +49,8 @@ namespace AlibabaCloud
 				void setFileName(const std::string& fileName);
 				std::string getFilePath()const;
 				void setFilePath(const std::string& filePath);
+				long getInstanceOwnerId()const;
+				void setInstanceOwnerId(long instanceOwnerId);
 
             private:
 				std::string conversationId_;
@@ -58,6 +60,7 @@ namespace AlibabaCloud
 				std::string instanceId_;
 				std::string fileName_;
 				std::string filePath_;
+				long instanceOwnerId_;
 
 			};
 		}

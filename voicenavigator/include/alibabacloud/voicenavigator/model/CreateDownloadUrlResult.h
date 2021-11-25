@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VOICENAVIGATOR_MODEL_BEGINDIALOGUERESULT_H_
-#define ALIBABACLOUD_VOICENAVIGATOR_MODEL_BEGINDIALOGUERESULT_H_
+#ifndef ALIBABACLOUD_VOICENAVIGATOR_MODEL_CREATEDOWNLOADURLRESULT_H_
+#define ALIBABACLOUD_VOICENAVIGATOR_MODEL_CREATEDOWNLOADURLRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,29 +29,31 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VOICENAVIGATOR_EXPORT BeginDialogueResult : public ServiceResult
+			class ALIBABACLOUD_VOICENAVIGATOR_EXPORT CreateDownloadUrlResult : public ServiceResult
 			{
 			public:
 
 
-				BeginDialogueResult();
-				explicit BeginDialogueResult(const std::string &payload);
-				~BeginDialogueResult();
-				std::string getAction()const;
-				bool getInterruptible()const;
-				std::string getActionParams()const;
-				std::string getTextResponse()const;
+				CreateDownloadUrlResult();
+				explicit CreateDownloadUrlResult(const std::string &payload);
+				~CreateDownloadUrlResult();
+				std::string getMessage()const;
+				int getHttpStatusCode()const;
+				std::string getFileHttpUrl()const;
+				std::string getCode()const;
+				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string action_;
-				bool interruptible_;
-				std::string actionParams_;
-				std::string textResponse_;
+				std::string message_;
+				int httpStatusCode_;
+				std::string fileHttpUrl_;
+				std::string code_;
+				bool success_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VOICENAVIGATOR_MODEL_BEGINDIALOGUERESULT_H_
+#endif // !ALIBABACLOUD_VOICENAVIGATOR_MODEL_CREATEDOWNLOADURLRESULT_H_

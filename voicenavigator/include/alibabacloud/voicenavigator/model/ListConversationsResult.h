@@ -34,14 +34,14 @@ namespace AlibabaCloud
 			public:
 				struct Conversation
 				{
-					int effectiveAnswerCount;
+					std::string skillGroup;
 					std::string conversationId;
-					bool transferredToAgent;
+					int endReason;
 					long endTime;
-					long beginTime;
-					std::string skillGroupId;
+					int rounds;
+					bool hasToAgent;
+					long startTime;
 					std::string callingNumber;
-					int userUtteranceCount;
 				};
 
 

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VOICENAVIGATOR_MODEL_DESCRIBETTSCONFIGREQUEST_H_
-#define ALIBABACLOUD_VOICENAVIGATOR_MODEL_DESCRIBETTSCONFIGREQUEST_H_
+#ifndef ALIBABACLOUD_VOICENAVIGATOR_MODEL_DESCRIBEVOICECONFIGREQUEST_H_
+#define ALIBABACLOUD_VOICENAVIGATOR_MODEL_DESCRIBEVOICECONFIGREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,12 +28,12 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VOICENAVIGATOR_EXPORT DescribeTTSConfigRequest : public RpcServiceRequest
+			class ALIBABACLOUD_VOICENAVIGATOR_EXPORT DescribeVoiceConfigRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeTTSConfigRequest();
-				~DescribeTTSConfigRequest();
+				DescribeVoiceConfigRequest();
+				~DescribeVoiceConfigRequest();
 
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
@@ -48,4 +48,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VOICENAVIGATOR_MODEL_DESCRIBETTSCONFIGREQUEST_H_
+#endif // !ALIBABACLOUD_VOICENAVIGATOR_MODEL_DESCRIBEVOICECONFIGREQUEST_H_

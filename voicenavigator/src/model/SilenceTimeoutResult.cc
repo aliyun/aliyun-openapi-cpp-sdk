@@ -41,10 +41,10 @@ void SilenceTimeoutResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["Action"].isNull())
 		action_ = value["Action"].asString();
-	if(!value["ActionParams"].isNull())
-		actionParams_ = value["ActionParams"].asString();
 	if(!value["Interruptible"].isNull())
 		interruptible_ = value["Interruptible"].asString() == "true";
+	if(!value["ActionParams"].isNull())
+		actionParams_ = value["ActionParams"].asString();
 	if(!value["TextResponse"].isNull())
 		textResponse_ = value["TextResponse"].asString();
 

@@ -45,6 +45,8 @@ namespace AlibabaCloud
 				void setInstanceId(const std::string& instanceId);
 				std::string getCalledNumber()const;
 				void setCalledNumber(const std::string& calledNumber);
+				long getInstanceOwnerId()const;
+				void setInstanceOwnerId(long instanceOwnerId);
 
             private:
 				std::string conversationId_;
@@ -52,6 +54,7 @@ namespace AlibabaCloud
 				std::string callingNumber_;
 				std::string instanceId_;
 				std::string calledNumber_;
+				long instanceOwnerId_;
 
 			};
 		}

@@ -60,3 +60,14 @@ void CollectedNumberRequest::setInstanceId(const std::string& instanceId)
 	setParameter("InstanceId", instanceId);
 }
 
+long CollectedNumberRequest::getInstanceOwnerId()const
+{
+	return instanceOwnerId_;
+}
+
+void CollectedNumberRequest::setInstanceOwnerId(long instanceOwnerId)
+{
+	instanceOwnerId_ = instanceOwnerId;
+	setParameter("InstanceOwnerId", std::to_string(instanceOwnerId));
+}
+

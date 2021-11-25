@@ -41,11 +41,14 @@ namespace AlibabaCloud
 				void setNumber(const std::string& number);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
+				long getInstanceOwnerId()const;
+				void setInstanceOwnerId(long instanceOwnerId);
 
             private:
 				std::string conversationId_;
 				std::string number_;
 				std::string instanceId_;
+				long instanceOwnerId_;
 
 			};
 		}

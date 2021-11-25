@@ -45,6 +45,8 @@ namespace AlibabaCloud
 				void setCalledNumber(const std::string& calledNumber);
 				std::string getAdditionalContext()const;
 				void setAdditionalContext(const std::string& additionalContext);
+				long getInstanceOwnerId()const;
+				void setInstanceOwnerId(long instanceOwnerId);
 				std::string getUtterance()const;
 				void setUtterance(const std::string& utterance);
 
@@ -54,6 +56,7 @@ namespace AlibabaCloud
 				std::string instanceId_;
 				std::string calledNumber_;
 				std::string additionalContext_;
+				long instanceOwnerId_;
 				std::string utterance_;
 
 			};

@@ -14,52 +14,38 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/voicenavigator/model/DescribeTTSConfigResult.h>
+#include <alibabacloud/voicenavigator/model/DescribeAsrVadConfigResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::VoiceNavigator;
 using namespace AlibabaCloud::VoiceNavigator::Model;
 
-DescribeTTSConfigResult::DescribeTTSConfigResult() :
+DescribeAsrVadConfigResult::DescribeAsrVadConfigResult() :
 	ServiceResult()
 {}
 
-DescribeTTSConfigResult::DescribeTTSConfigResult(const std::string &payload) :
+DescribeAsrVadConfigResult::DescribeAsrVadConfigResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-DescribeTTSConfigResult::~DescribeTTSConfigResult()
+DescribeAsrVadConfigResult::~DescribeAsrVadConfigResult()
 {}
 
-void DescribeTTSConfigResult::parse(const std::string &payload)
+void DescribeAsrVadConfigResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Volume"].isNull())
-		volume_ = std::stoi(value["Volume"].asString());
-	if(!value["Voice"].isNull())
-		voice_ = value["Voice"].asString();
-	if(!value["SpeechRate"].isNull())
-		speechRate_ = std::stoi(value["SpeechRate"].asString());
+	if(!value["SpeechNoiseThreshold"].isNull())
+		speechNoiseThreshold_ = value["SpeechNoiseThreshold"].asString();
 
 }
 
-int DescribeTTSConfigResult::getVolume()const
+std::string DescribeAsrVadConfigResult::getSpeechNoiseThreshold()const
 {
-	return volume_;
-}
-
-std::string DescribeTTSConfigResult::getVoice()const
-{
-	return voice_;
-}
-
-int DescribeTTSConfigResult::getSpeechRate()const
-{
-	return speechRate_;
+	return speechNoiseThreshold_;
 }
 

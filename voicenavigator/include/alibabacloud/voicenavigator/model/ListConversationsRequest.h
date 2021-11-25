@@ -35,16 +35,31 @@ namespace AlibabaCloud
 				ListConversationsRequest();
 				~ListConversationsRequest();
 
+				long getBeginTimeLeftRange()const;
+				void setBeginTimeLeftRange(long beginTimeLeftRange);
+				std::string getQuery()const;
+				void setQuery(const std::string& query);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
+				long getResult()const;
+				void setResult(long result);
+				std::string getCallingNumber()const;
+				void setCallingNumber(const std::string& callingNumber);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
+				long getBeginTimeRightRange()const;
+				void setBeginTimeRightRange(long beginTimeRightRange);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 
             private:
+				long beginTimeLeftRange_;
+				std::string query_;
 				int pageNumber_;
+				long result_;
+				std::string callingNumber_;
 				std::string instanceId_;
+				long beginTimeRightRange_;
 				int pageSize_;
 
 			};

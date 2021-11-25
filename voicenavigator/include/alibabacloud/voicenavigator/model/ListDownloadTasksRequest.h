@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VOICENAVIGATOR_MODEL_DESCRIBETTSCONFIGREQUEST_H_
-#define ALIBABACLOUD_VOICENAVIGATOR_MODEL_DESCRIBETTSCONFIGREQUEST_H_
+#ifndef ALIBABACLOUD_VOICENAVIGATOR_MODEL_LISTDOWNLOADTASKSREQUEST_H_
+#define ALIBABACLOUD_VOICENAVIGATOR_MODEL_LISTDOWNLOADTASKSREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,24 +28,24 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VOICENAVIGATOR_EXPORT DescribeTTSConfigRequest : public RpcServiceRequest
+			class ALIBABACLOUD_VOICENAVIGATOR_EXPORT ListDownloadTasksRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeTTSConfigRequest();
-				~DescribeTTSConfigRequest();
+				ListDownloadTasksRequest();
+				~ListDownloadTasksRequest();
 
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
-				long getInstanceOwnerId()const;
-				void setInstanceOwnerId(long instanceOwnerId);
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 
             private:
-				std::string instanceId_;
-				long instanceOwnerId_;
+				int pageNumber_;
+				int pageSize_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VOICENAVIGATOR_MODEL_DESCRIBETTSCONFIGREQUEST_H_
+#endif // !ALIBABACLOUD_VOICENAVIGATOR_MODEL_LISTDOWNLOADTASKSREQUEST_H_

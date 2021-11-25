@@ -195,6 +195,42 @@ VoiceNavigatorClient::CollectedNumberOutcomeCallable VoiceNavigatorClient::colle
 	return task->get_future();
 }
 
+VoiceNavigatorClient::CreateDownloadUrlOutcome VoiceNavigatorClient::createDownloadUrl(const CreateDownloadUrlRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateDownloadUrlOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateDownloadUrlOutcome(CreateDownloadUrlResult(outcome.result()));
+	else
+		return CreateDownloadUrlOutcome(outcome.error());
+}
+
+void VoiceNavigatorClient::createDownloadUrlAsync(const CreateDownloadUrlRequest& request, const CreateDownloadUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createDownloadUrl(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VoiceNavigatorClient::CreateDownloadUrlOutcomeCallable VoiceNavigatorClient::createDownloadUrlCallable(const CreateDownloadUrlRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateDownloadUrlOutcome()>>(
+			[this, request]()
+			{
+			return this->createDownloadUrl(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VoiceNavigatorClient::CreateInstanceOutcome VoiceNavigatorClient::createInstance(const CreateInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -369,6 +405,42 @@ VoiceNavigatorClient::DeleteInstanceOutcomeCallable VoiceNavigatorClient::delete
 			[this, request]()
 			{
 			return this->deleteInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VoiceNavigatorClient::DescribeAsrVadConfigOutcome VoiceNavigatorClient::describeAsrVadConfig(const DescribeAsrVadConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeAsrVadConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeAsrVadConfigOutcome(DescribeAsrVadConfigResult(outcome.result()));
+	else
+		return DescribeAsrVadConfigOutcome(outcome.error());
+}
+
+void VoiceNavigatorClient::describeAsrVadConfigAsync(const DescribeAsrVadConfigRequest& request, const DescribeAsrVadConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeAsrVadConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VoiceNavigatorClient::DescribeAsrVadConfigOutcomeCallable VoiceNavigatorClient::describeAsrVadConfigCallable(const DescribeAsrVadConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeAsrVadConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->describeAsrVadConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -657,6 +729,42 @@ VoiceNavigatorClient::DescribeTTSConfigOutcomeCallable VoiceNavigatorClient::des
 			[this, request]()
 			{
 			return this->describeTTSConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VoiceNavigatorClient::DescribeVoiceConfigOutcome VoiceNavigatorClient::describeVoiceConfig(const DescribeVoiceConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeVoiceConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeVoiceConfigOutcome(DescribeVoiceConfigResult(outcome.result()));
+	else
+		return DescribeVoiceConfigOutcome(outcome.error());
+}
+
+void VoiceNavigatorClient::describeVoiceConfigAsync(const DescribeVoiceConfigRequest& request, const DescribeVoiceConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeVoiceConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VoiceNavigatorClient::DescribeVoiceConfigOutcomeCallable VoiceNavigatorClient::describeVoiceConfigCallable(const DescribeVoiceConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeVoiceConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->describeVoiceConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -987,6 +1095,42 @@ VoiceNavigatorClient::ListConversationsOutcomeCallable VoiceNavigatorClient::lis
 	return task->get_future();
 }
 
+VoiceNavigatorClient::ListDownloadTasksOutcome VoiceNavigatorClient::listDownloadTasks(const ListDownloadTasksRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListDownloadTasksOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListDownloadTasksOutcome(ListDownloadTasksResult(outcome.result()));
+	else
+		return ListDownloadTasksOutcome(outcome.error());
+}
+
+void VoiceNavigatorClient::listDownloadTasksAsync(const ListDownloadTasksRequest& request, const ListDownloadTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listDownloadTasks(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VoiceNavigatorClient::ListDownloadTasksOutcomeCallable VoiceNavigatorClient::listDownloadTasksCallable(const ListDownloadTasksRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListDownloadTasksOutcome()>>(
+			[this, request]()
+			{
+			return this->listDownloadTasks(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VoiceNavigatorClient::ListInstancesOutcome VoiceNavigatorClient::listInstances(const ListInstancesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1017,6 +1161,42 @@ VoiceNavigatorClient::ListInstancesOutcomeCallable VoiceNavigatorClient::listIns
 			[this, request]()
 			{
 			return this->listInstances(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VoiceNavigatorClient::ModifyAsrVadConfigOutcome VoiceNavigatorClient::modifyAsrVadConfig(const ModifyAsrVadConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyAsrVadConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyAsrVadConfigOutcome(ModifyAsrVadConfigResult(outcome.result()));
+	else
+		return ModifyAsrVadConfigOutcome(outcome.error());
+}
+
+void VoiceNavigatorClient::modifyAsrVadConfigAsync(const ModifyAsrVadConfigRequest& request, const ModifyAsrVadConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyAsrVadConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VoiceNavigatorClient::ModifyAsrVadConfigOutcomeCallable VoiceNavigatorClient::modifyAsrVadConfigCallable(const ModifyAsrVadConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyAsrVadConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyAsrVadConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

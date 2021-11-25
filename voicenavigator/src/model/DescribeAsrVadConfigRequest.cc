@@ -14,38 +14,27 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/voicenavigator/model/DescribeTTSConfigRequest.h>
+#include <alibabacloud/voicenavigator/model/DescribeAsrVadConfigRequest.h>
 
-using AlibabaCloud::VoiceNavigator::Model::DescribeTTSConfigRequest;
+using AlibabaCloud::VoiceNavigator::Model::DescribeAsrVadConfigRequest;
 
-DescribeTTSConfigRequest::DescribeTTSConfigRequest() :
-	RpcServiceRequest("voicenavigator", "2018-06-12", "DescribeTTSConfig")
+DescribeAsrVadConfigRequest::DescribeAsrVadConfigRequest() :
+	RpcServiceRequest("voicenavigator", "2018-06-12", "DescribeAsrVadConfig")
 {
 	setMethod(HttpRequest::Method::Get);
 }
 
-DescribeTTSConfigRequest::~DescribeTTSConfigRequest()
+DescribeAsrVadConfigRequest::~DescribeAsrVadConfigRequest()
 {}
 
-std::string DescribeTTSConfigRequest::getInstanceId()const
+std::string DescribeAsrVadConfigRequest::getInstanceId()const
 {
 	return instanceId_;
 }
 
-void DescribeTTSConfigRequest::setInstanceId(const std::string& instanceId)
+void DescribeAsrVadConfigRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
 	setParameter("InstanceId", instanceId);
-}
-
-long DescribeTTSConfigRequest::getInstanceOwnerId()const
-{
-	return instanceOwnerId_;
-}
-
-void DescribeTTSConfigRequest::setInstanceOwnerId(long instanceOwnerId)
-{
-	instanceOwnerId_ = instanceOwnerId;
-	setParameter("InstanceOwnerId", std::to_string(instanceOwnerId));
 }
 

@@ -14,47 +14,36 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/voicenavigator/model/EndDialogueRequest.h>
+#include <alibabacloud/voicenavigator/model/DescribeVoiceConfigRequest.h>
 
-using AlibabaCloud::VoiceNavigator::Model::EndDialogueRequest;
+using AlibabaCloud::VoiceNavigator::Model::DescribeVoiceConfigRequest;
 
-EndDialogueRequest::EndDialogueRequest() :
-	RpcServiceRequest("voicenavigator", "2018-06-12", "EndDialogue")
+DescribeVoiceConfigRequest::DescribeVoiceConfigRequest() :
+	RpcServiceRequest("voicenavigator", "2018-06-12", "DescribeVoiceConfig")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::Get);
 }
 
-EndDialogueRequest::~EndDialogueRequest()
+DescribeVoiceConfigRequest::~DescribeVoiceConfigRequest()
 {}
 
-std::string EndDialogueRequest::getConversationId()const
-{
-	return conversationId_;
-}
-
-void EndDialogueRequest::setConversationId(const std::string& conversationId)
-{
-	conversationId_ = conversationId;
-	setParameter("ConversationId", conversationId);
-}
-
-std::string EndDialogueRequest::getInstanceId()const
+std::string DescribeVoiceConfigRequest::getInstanceId()const
 {
 	return instanceId_;
 }
 
-void EndDialogueRequest::setInstanceId(const std::string& instanceId)
+void DescribeVoiceConfigRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
 	setParameter("InstanceId", instanceId);
 }
 
-long EndDialogueRequest::getInstanceOwnerId()const
+long DescribeVoiceConfigRequest::getInstanceOwnerId()const
 {
 	return instanceOwnerId_;
 }
 
-void EndDialogueRequest::setInstanceOwnerId(long instanceOwnerId)
+void DescribeVoiceConfigRequest::setInstanceOwnerId(long instanceOwnerId)
 {
 	instanceOwnerId_ = instanceOwnerId;
 	setParameter("InstanceOwnerId", std::to_string(instanceOwnerId));

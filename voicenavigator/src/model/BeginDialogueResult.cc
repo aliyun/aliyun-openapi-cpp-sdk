@@ -39,25 +39,25 @@ void BeginDialogueResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["TextResponse"].isNull())
-		textResponse_ = value["TextResponse"].asString();
-	if(!value["Interruptible"].isNull())
-		interruptible_ = value["Interruptible"].asString() == "true";
 	if(!value["Action"].isNull())
 		action_ = value["Action"].asString();
+	if(!value["Interruptible"].isNull())
+		interruptible_ = value["Interruptible"].asString() == "true";
 	if(!value["ActionParams"].isNull())
 		actionParams_ = value["ActionParams"].asString();
+	if(!value["TextResponse"].isNull())
+		textResponse_ = value["TextResponse"].asString();
 
-}
-
-bool BeginDialogueResult::getInterruptible()const
-{
-	return interruptible_;
 }
 
 std::string BeginDialogueResult::getAction()const
 {
 	return action_;
+}
+
+bool BeginDialogueResult::getInterruptible()const
+{
+	return interruptible_;
 }
 
 std::string BeginDialogueResult::getActionParams()const

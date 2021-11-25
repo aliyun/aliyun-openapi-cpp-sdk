@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VOICENAVIGATOR_MODEL_DESCRIBETTSCONFIGREQUEST_H_
-#define ALIBABACLOUD_VOICENAVIGATOR_MODEL_DESCRIBETTSCONFIGREQUEST_H_
+#ifndef ALIBABACLOUD_VOICENAVIGATOR_MODEL_MODIFYASRVADCONFIGRESULT_H_
+#define ALIBABACLOUD_VOICENAVIGATOR_MODEL_MODIFYASRVADCONFIGRESULT_H_
 
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
+#include <utility>
+#include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/voicenavigator/VoiceNavigatorExport.h>
 
 namespace AlibabaCloud
@@ -28,24 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VOICENAVIGATOR_EXPORT DescribeTTSConfigRequest : public RpcServiceRequest
+			class ALIBABACLOUD_VOICENAVIGATOR_EXPORT ModifyAsrVadConfigResult : public ServiceResult
 			{
-
 			public:
-				DescribeTTSConfigRequest();
-				~DescribeTTSConfigRequest();
 
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
-				long getInstanceOwnerId()const;
-				void setInstanceOwnerId(long instanceOwnerId);
 
-            private:
-				std::string instanceId_;
-				long instanceOwnerId_;
+				ModifyAsrVadConfigResult();
+				explicit ModifyAsrVadConfigResult(const std::string &payload);
+				~ModifyAsrVadConfigResult();
+
+			protected:
+				void parse(const std::string &payload);
+			private:
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VOICENAVIGATOR_MODEL_DESCRIBETTSCONFIGREQUEST_H_
+#endif // !ALIBABACLOUD_VOICENAVIGATOR_MODEL_MODIFYASRVADCONFIGRESULT_H_

@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VOICENAVIGATOR_MODEL_DESCRIBETTSCONFIGREQUEST_H_
-#define ALIBABACLOUD_VOICENAVIGATOR_MODEL_DESCRIBETTSCONFIGREQUEST_H_
+#ifndef ALIBABACLOUD_VOICENAVIGATOR_MODEL_DESCRIBEASRVADCONFIGRESULT_H_
+#define ALIBABACLOUD_VOICENAVIGATOR_MODEL_DESCRIBEASRVADCONFIGRESULT_H_
 
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
+#include <utility>
+#include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/voicenavigator/VoiceNavigatorExport.h>
 
 namespace AlibabaCloud
@@ -28,24 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VOICENAVIGATOR_EXPORT DescribeTTSConfigRequest : public RpcServiceRequest
+			class ALIBABACLOUD_VOICENAVIGATOR_EXPORT DescribeAsrVadConfigResult : public ServiceResult
 			{
-
 			public:
-				DescribeTTSConfigRequest();
-				~DescribeTTSConfigRequest();
 
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
-				long getInstanceOwnerId()const;
-				void setInstanceOwnerId(long instanceOwnerId);
 
-            private:
-				std::string instanceId_;
-				long instanceOwnerId_;
+				DescribeAsrVadConfigResult();
+				explicit DescribeAsrVadConfigResult(const std::string &payload);
+				~DescribeAsrVadConfigResult();
+				std::string getSpeechNoiseThreshold()const;
+
+			protected:
+				void parse(const std::string &payload);
+			private:
+				std::string speechNoiseThreshold_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VOICENAVIGATOR_MODEL_DESCRIBETTSCONFIGREQUEST_H_
+#endif // !ALIBABACLOUD_VOICENAVIGATOR_MODEL_DESCRIBEASRVADCONFIGRESULT_H_

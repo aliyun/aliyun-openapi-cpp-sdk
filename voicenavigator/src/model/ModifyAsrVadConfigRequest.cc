@@ -14,38 +14,38 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/voicenavigator/model/DescribeTTSConfigRequest.h>
+#include <alibabacloud/voicenavigator/model/ModifyAsrVadConfigRequest.h>
 
-using AlibabaCloud::VoiceNavigator::Model::DescribeTTSConfigRequest;
+using AlibabaCloud::VoiceNavigator::Model::ModifyAsrVadConfigRequest;
 
-DescribeTTSConfigRequest::DescribeTTSConfigRequest() :
-	RpcServiceRequest("voicenavigator", "2018-06-12", "DescribeTTSConfig")
+ModifyAsrVadConfigRequest::ModifyAsrVadConfigRequest() :
+	RpcServiceRequest("voicenavigator", "2018-06-12", "ModifyAsrVadConfig")
 {
 	setMethod(HttpRequest::Method::Get);
 }
 
-DescribeTTSConfigRequest::~DescribeTTSConfigRequest()
+ModifyAsrVadConfigRequest::~ModifyAsrVadConfigRequest()
 {}
 
-std::string DescribeTTSConfigRequest::getInstanceId()const
+std::string ModifyAsrVadConfigRequest::getInstanceId()const
 {
 	return instanceId_;
 }
 
-void DescribeTTSConfigRequest::setInstanceId(const std::string& instanceId)
+void ModifyAsrVadConfigRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
 	setParameter("InstanceId", instanceId);
 }
 
-long DescribeTTSConfigRequest::getInstanceOwnerId()const
+std::string ModifyAsrVadConfigRequest::getSpeechNoiseThreshold()const
 {
-	return instanceOwnerId_;
+	return speechNoiseThreshold_;
 }
 
-void DescribeTTSConfigRequest::setInstanceOwnerId(long instanceOwnerId)
+void ModifyAsrVadConfigRequest::setSpeechNoiseThreshold(const std::string& speechNoiseThreshold)
 {
-	instanceOwnerId_ = instanceOwnerId;
-	setParameter("InstanceOwnerId", std::to_string(instanceOwnerId));
+	speechNoiseThreshold_ = speechNoiseThreshold;
+	setParameter("SpeechNoiseThreshold", speechNoiseThreshold);
 }
 

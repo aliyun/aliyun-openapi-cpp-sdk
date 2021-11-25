@@ -82,3 +82,14 @@ void BeginDialogueRequest::setCalledNumber(const std::string& calledNumber)
 	setParameter("CalledNumber", calledNumber);
 }
 
+long BeginDialogueRequest::getInstanceOwnerId()const
+{
+	return instanceOwnerId_;
+}
+
+void BeginDialogueRequest::setInstanceOwnerId(long instanceOwnerId)
+{
+	instanceOwnerId_ = instanceOwnerId;
+	setParameter("InstanceOwnerId", std::to_string(instanceOwnerId));
+}
+

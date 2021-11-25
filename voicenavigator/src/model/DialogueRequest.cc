@@ -82,6 +82,17 @@ void DialogueRequest::setAdditionalContext(const std::string& additionalContext)
 	setParameter("AdditionalContext", additionalContext);
 }
 
+long DialogueRequest::getInstanceOwnerId()const
+{
+	return instanceOwnerId_;
+}
+
+void DialogueRequest::setInstanceOwnerId(long instanceOwnerId)
+{
+	instanceOwnerId_ = instanceOwnerId;
+	setParameter("InstanceOwnerId", std::to_string(instanceOwnerId));
+}
+
 std::string DialogueRequest::getUtterance()const
 {
 	return utterance_;

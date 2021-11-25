@@ -29,6 +29,8 @@ set(voicenavigator_public_header_model
 	include/alibabacloud/voicenavigator/model/BeginDialogueResult.h
 	include/alibabacloud/voicenavigator/model/CollectedNumberRequest.h
 	include/alibabacloud/voicenavigator/model/CollectedNumberResult.h
+	include/alibabacloud/voicenavigator/model/CreateDownloadUrlRequest.h
+	include/alibabacloud/voicenavigator/model/CreateDownloadUrlResult.h
 	include/alibabacloud/voicenavigator/model/CreateInstanceRequest.h
 	include/alibabacloud/voicenavigator/model/CreateInstanceResult.h
 	include/alibabacloud/voicenavigator/model/DebugBeginDialogueRequest.h
@@ -39,6 +41,8 @@ set(voicenavigator_public_header_model
 	include/alibabacloud/voicenavigator/model/DebugDialogueResult.h
 	include/alibabacloud/voicenavigator/model/DeleteInstanceRequest.h
 	include/alibabacloud/voicenavigator/model/DeleteInstanceResult.h
+	include/alibabacloud/voicenavigator/model/DescribeAsrVadConfigRequest.h
+	include/alibabacloud/voicenavigator/model/DescribeAsrVadConfigResult.h
 	include/alibabacloud/voicenavigator/model/DescribeConversationRequest.h
 	include/alibabacloud/voicenavigator/model/DescribeConversationResult.h
 	include/alibabacloud/voicenavigator/model/DescribeConversationContextRequest.h
@@ -55,6 +59,8 @@ set(voicenavigator_public_header_model
 	include/alibabacloud/voicenavigator/model/DescribeStatisticalDataResult.h
 	include/alibabacloud/voicenavigator/model/DescribeTTSConfigRequest.h
 	include/alibabacloud/voicenavigator/model/DescribeTTSConfigResult.h
+	include/alibabacloud/voicenavigator/model/DescribeVoiceConfigRequest.h
+	include/alibabacloud/voicenavigator/model/DescribeVoiceConfigResult.h
 	include/alibabacloud/voicenavigator/model/DialogueRequest.h
 	include/alibabacloud/voicenavigator/model/DialogueResult.h
 	include/alibabacloud/voicenavigator/model/DisableInstanceRequest.h
@@ -73,8 +79,12 @@ set(voicenavigator_public_header_model
 	include/alibabacloud/voicenavigator/model/ListConversationDetailsResult.h
 	include/alibabacloud/voicenavigator/model/ListConversationsRequest.h
 	include/alibabacloud/voicenavigator/model/ListConversationsResult.h
+	include/alibabacloud/voicenavigator/model/ListDownloadTasksRequest.h
+	include/alibabacloud/voicenavigator/model/ListDownloadTasksResult.h
 	include/alibabacloud/voicenavigator/model/ListInstancesRequest.h
 	include/alibabacloud/voicenavigator/model/ListInstancesResult.h
+	include/alibabacloud/voicenavigator/model/ModifyAsrVadConfigRequest.h
+	include/alibabacloud/voicenavigator/model/ModifyAsrVadConfigResult.h
 	include/alibabacloud/voicenavigator/model/ModifyGreetingConfigRequest.h
 	include/alibabacloud/voicenavigator/model/ModifyGreetingConfigResult.h
 	include/alibabacloud/voicenavigator/model/ModifyInstanceRequest.h
@@ -102,6 +112,8 @@ set(voicenavigator_src
 	src/model/BeginDialogueResult.cc
 	src/model/CollectedNumberRequest.cc
 	src/model/CollectedNumberResult.cc
+	src/model/CreateDownloadUrlRequest.cc
+	src/model/CreateDownloadUrlResult.cc
 	src/model/CreateInstanceRequest.cc
 	src/model/CreateInstanceResult.cc
 	src/model/DebugBeginDialogueRequest.cc
@@ -112,6 +124,8 @@ set(voicenavigator_src
 	src/model/DebugDialogueResult.cc
 	src/model/DeleteInstanceRequest.cc
 	src/model/DeleteInstanceResult.cc
+	src/model/DescribeAsrVadConfigRequest.cc
+	src/model/DescribeAsrVadConfigResult.cc
 	src/model/DescribeConversationRequest.cc
 	src/model/DescribeConversationResult.cc
 	src/model/DescribeConversationContextRequest.cc
@@ -128,6 +142,8 @@ set(voicenavigator_src
 	src/model/DescribeStatisticalDataResult.cc
 	src/model/DescribeTTSConfigRequest.cc
 	src/model/DescribeTTSConfigResult.cc
+	src/model/DescribeVoiceConfigRequest.cc
+	src/model/DescribeVoiceConfigResult.cc
 	src/model/DialogueRequest.cc
 	src/model/DialogueResult.cc
 	src/model/DisableInstanceRequest.cc
@@ -146,8 +162,12 @@ set(voicenavigator_src
 	src/model/ListConversationDetailsResult.cc
 	src/model/ListConversationsRequest.cc
 	src/model/ListConversationsResult.cc
+	src/model/ListDownloadTasksRequest.cc
+	src/model/ListDownloadTasksResult.cc
 	src/model/ListInstancesRequest.cc
 	src/model/ListInstancesResult.cc
+	src/model/ModifyAsrVadConfigRequest.cc
+	src/model/ModifyAsrVadConfigResult.cc
 	src/model/ModifyGreetingConfigRequest.cc
 	src/model/ModifyGreetingConfigResult.cc
 	src/model/ModifyInstanceRequest.cc

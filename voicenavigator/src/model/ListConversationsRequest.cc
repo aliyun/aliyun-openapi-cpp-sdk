@@ -27,6 +27,28 @@ ListConversationsRequest::ListConversationsRequest() :
 ListConversationsRequest::~ListConversationsRequest()
 {}
 
+long ListConversationsRequest::getBeginTimeLeftRange()const
+{
+	return beginTimeLeftRange_;
+}
+
+void ListConversationsRequest::setBeginTimeLeftRange(long beginTimeLeftRange)
+{
+	beginTimeLeftRange_ = beginTimeLeftRange;
+	setParameter("BeginTimeLeftRange", std::to_string(beginTimeLeftRange));
+}
+
+std::string ListConversationsRequest::getQuery()const
+{
+	return query_;
+}
+
+void ListConversationsRequest::setQuery(const std::string& query)
+{
+	query_ = query;
+	setParameter("Query", query);
+}
+
 int ListConversationsRequest::getPageNumber()const
 {
 	return pageNumber_;
@@ -38,6 +60,28 @@ void ListConversationsRequest::setPageNumber(int pageNumber)
 	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
+long ListConversationsRequest::getResult()const
+{
+	return result_;
+}
+
+void ListConversationsRequest::setResult(long result)
+{
+	result_ = result;
+	setParameter("Result", std::to_string(result));
+}
+
+std::string ListConversationsRequest::getCallingNumber()const
+{
+	return callingNumber_;
+}
+
+void ListConversationsRequest::setCallingNumber(const std::string& callingNumber)
+{
+	callingNumber_ = callingNumber;
+	setParameter("CallingNumber", callingNumber);
+}
+
 std::string ListConversationsRequest::getInstanceId()const
 {
 	return instanceId_;
@@ -47,6 +91,17 @@ void ListConversationsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
 	setParameter("InstanceId", instanceId);
+}
+
+long ListConversationsRequest::getBeginTimeRightRange()const
+{
+	return beginTimeRightRange_;
+}
+
+void ListConversationsRequest::setBeginTimeRightRange(long beginTimeRightRange)
+{
+	beginTimeRightRange_ = beginTimeRightRange;
+	setParameter("BeginTimeRightRange", std::to_string(beginTimeRightRange));
 }
 
 int ListConversationsRequest::getPageSize()const
