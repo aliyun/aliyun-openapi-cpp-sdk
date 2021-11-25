@@ -31,12 +31,16 @@ set(rtc_public_header_model
 	include/alibabacloud/rtc/model/CreateMPULayoutResult.h
 	include/alibabacloud/rtc/model/DeleteAutoLiveStreamRuleRequest.h
 	include/alibabacloud/rtc/model/DeleteAutoLiveStreamRuleResult.h
+	include/alibabacloud/rtc/model/DeleteChannelRequest.h
+	include/alibabacloud/rtc/model/DeleteChannelResult.h
 	include/alibabacloud/rtc/model/DeleteEventSubscribeRequest.h
 	include/alibabacloud/rtc/model/DeleteEventSubscribeResult.h
 	include/alibabacloud/rtc/model/DeleteMPULayoutRequest.h
 	include/alibabacloud/rtc/model/DeleteMPULayoutResult.h
 	include/alibabacloud/rtc/model/DeleteRecordTemplateRequest.h
 	include/alibabacloud/rtc/model/DeleteRecordTemplateResult.h
+	include/alibabacloud/rtc/model/DescribeAppsRequest.h
+	include/alibabacloud/rtc/model/DescribeAppsResult.h
 	include/alibabacloud/rtc/model/DescribeAutoLiveStreamRuleRequest.h
 	include/alibabacloud/rtc/model/DescribeAutoLiveStreamRuleResult.h
 	include/alibabacloud/rtc/model/DescribeChannelParticipantsRequest.h
@@ -57,6 +61,8 @@ set(rtc_public_header_model
 	include/alibabacloud/rtc/model/EnableAutoLiveStreamRuleResult.h
 	include/alibabacloud/rtc/model/GetMPUTaskStatusRequest.h
 	include/alibabacloud/rtc/model/GetMPUTaskStatusResult.h
+	include/alibabacloud/rtc/model/ModifyAppRequest.h
+	include/alibabacloud/rtc/model/ModifyAppResult.h
 	include/alibabacloud/rtc/model/ModifyMPULayoutRequest.h
 	include/alibabacloud/rtc/model/ModifyMPULayoutResult.h
 	include/alibabacloud/rtc/model/RemoveTerminalsRequest.h
@@ -65,8 +71,6 @@ set(rtc_public_header_model
 	include/alibabacloud/rtc/model/StartMPUTaskResult.h
 	include/alibabacloud/rtc/model/StartRecordTaskRequest.h
 	include/alibabacloud/rtc/model/StartRecordTaskResult.h
-	include/alibabacloud/rtc/model/StopChannelUserPublishRequest.h
-	include/alibabacloud/rtc/model/StopChannelUserPublishResult.h
 	include/alibabacloud/rtc/model/StopMPUTaskRequest.h
 	include/alibabacloud/rtc/model/StopMPUTaskResult.h
 	include/alibabacloud/rtc/model/StopRecordTaskRequest.h
@@ -92,12 +96,16 @@ set(rtc_src
 	src/model/CreateMPULayoutResult.cc
 	src/model/DeleteAutoLiveStreamRuleRequest.cc
 	src/model/DeleteAutoLiveStreamRuleResult.cc
+	src/model/DeleteChannelRequest.cc
+	src/model/DeleteChannelResult.cc
 	src/model/DeleteEventSubscribeRequest.cc
 	src/model/DeleteEventSubscribeResult.cc
 	src/model/DeleteMPULayoutRequest.cc
 	src/model/DeleteMPULayoutResult.cc
 	src/model/DeleteRecordTemplateRequest.cc
 	src/model/DeleteRecordTemplateResult.cc
+	src/model/DescribeAppsRequest.cc
+	src/model/DescribeAppsResult.cc
 	src/model/DescribeAutoLiveStreamRuleRequest.cc
 	src/model/DescribeAutoLiveStreamRuleResult.cc
 	src/model/DescribeChannelParticipantsRequest.cc
@@ -118,6 +126,8 @@ set(rtc_src
 	src/model/EnableAutoLiveStreamRuleResult.cc
 	src/model/GetMPUTaskStatusRequest.cc
 	src/model/GetMPUTaskStatusResult.cc
+	src/model/ModifyAppRequest.cc
+	src/model/ModifyAppResult.cc
 	src/model/ModifyMPULayoutRequest.cc
 	src/model/ModifyMPULayoutResult.cc
 	src/model/RemoveTerminalsRequest.cc
@@ -126,8 +136,6 @@ set(rtc_src
 	src/model/StartMPUTaskResult.cc
 	src/model/StartRecordTaskRequest.cc
 	src/model/StartRecordTaskResult.cc
-	src/model/StopChannelUserPublishRequest.cc
-	src/model/StopChannelUserPublishResult.cc
 	src/model/StopMPUTaskRequest.cc
 	src/model/StopMPUTaskResult.cc
 	src/model/StopRecordTaskRequest.cc

@@ -32,12 +32,16 @@
 #include "model/CreateMPULayoutResult.h"
 #include "model/DeleteAutoLiveStreamRuleRequest.h"
 #include "model/DeleteAutoLiveStreamRuleResult.h"
+#include "model/DeleteChannelRequest.h"
+#include "model/DeleteChannelResult.h"
 #include "model/DeleteEventSubscribeRequest.h"
 #include "model/DeleteEventSubscribeResult.h"
 #include "model/DeleteMPULayoutRequest.h"
 #include "model/DeleteMPULayoutResult.h"
 #include "model/DeleteRecordTemplateRequest.h"
 #include "model/DeleteRecordTemplateResult.h"
+#include "model/DescribeAppsRequest.h"
+#include "model/DescribeAppsResult.h"
 #include "model/DescribeAutoLiveStreamRuleRequest.h"
 #include "model/DescribeAutoLiveStreamRuleResult.h"
 #include "model/DescribeChannelParticipantsRequest.h"
@@ -58,6 +62,8 @@
 #include "model/EnableAutoLiveStreamRuleResult.h"
 #include "model/GetMPUTaskStatusRequest.h"
 #include "model/GetMPUTaskStatusResult.h"
+#include "model/ModifyAppRequest.h"
+#include "model/ModifyAppResult.h"
 #include "model/ModifyMPULayoutRequest.h"
 #include "model/ModifyMPULayoutResult.h"
 #include "model/RemoveTerminalsRequest.h"
@@ -66,8 +72,6 @@
 #include "model/StartMPUTaskResult.h"
 #include "model/StartRecordTaskRequest.h"
 #include "model/StartRecordTaskResult.h"
-#include "model/StopChannelUserPublishRequest.h"
-#include "model/StopChannelUserPublishResult.h"
 #include "model/StopMPUTaskRequest.h"
 #include "model/StopMPUTaskResult.h"
 #include "model/StopRecordTaskRequest.h"
@@ -104,6 +108,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteAutoLiveStreamRuleResult> DeleteAutoLiveStreamRuleOutcome;
 			typedef std::future<DeleteAutoLiveStreamRuleOutcome> DeleteAutoLiveStreamRuleOutcomeCallable;
 			typedef std::function<void(const RtcClient*, const Model::DeleteAutoLiveStreamRuleRequest&, const DeleteAutoLiveStreamRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAutoLiveStreamRuleAsyncHandler;
+			typedef Outcome<Error, Model::DeleteChannelResult> DeleteChannelOutcome;
+			typedef std::future<DeleteChannelOutcome> DeleteChannelOutcomeCallable;
+			typedef std::function<void(const RtcClient*, const Model::DeleteChannelRequest&, const DeleteChannelOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteChannelAsyncHandler;
 			typedef Outcome<Error, Model::DeleteEventSubscribeResult> DeleteEventSubscribeOutcome;
 			typedef std::future<DeleteEventSubscribeOutcome> DeleteEventSubscribeOutcomeCallable;
 			typedef std::function<void(const RtcClient*, const Model::DeleteEventSubscribeRequest&, const DeleteEventSubscribeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteEventSubscribeAsyncHandler;
@@ -113,6 +120,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteRecordTemplateResult> DeleteRecordTemplateOutcome;
 			typedef std::future<DeleteRecordTemplateOutcome> DeleteRecordTemplateOutcomeCallable;
 			typedef std::function<void(const RtcClient*, const Model::DeleteRecordTemplateRequest&, const DeleteRecordTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRecordTemplateAsyncHandler;
+			typedef Outcome<Error, Model::DescribeAppsResult> DescribeAppsOutcome;
+			typedef std::future<DescribeAppsOutcome> DescribeAppsOutcomeCallable;
+			typedef std::function<void(const RtcClient*, const Model::DescribeAppsRequest&, const DescribeAppsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAppsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeAutoLiveStreamRuleResult> DescribeAutoLiveStreamRuleOutcome;
 			typedef std::future<DescribeAutoLiveStreamRuleOutcome> DescribeAutoLiveStreamRuleOutcomeCallable;
 			typedef std::function<void(const RtcClient*, const Model::DescribeAutoLiveStreamRuleRequest&, const DescribeAutoLiveStreamRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAutoLiveStreamRuleAsyncHandler;
@@ -143,6 +153,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetMPUTaskStatusResult> GetMPUTaskStatusOutcome;
 			typedef std::future<GetMPUTaskStatusOutcome> GetMPUTaskStatusOutcomeCallable;
 			typedef std::function<void(const RtcClient*, const Model::GetMPUTaskStatusRequest&, const GetMPUTaskStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetMPUTaskStatusAsyncHandler;
+			typedef Outcome<Error, Model::ModifyAppResult> ModifyAppOutcome;
+			typedef std::future<ModifyAppOutcome> ModifyAppOutcomeCallable;
+			typedef std::function<void(const RtcClient*, const Model::ModifyAppRequest&, const ModifyAppOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAppAsyncHandler;
 			typedef Outcome<Error, Model::ModifyMPULayoutResult> ModifyMPULayoutOutcome;
 			typedef std::future<ModifyMPULayoutOutcome> ModifyMPULayoutOutcomeCallable;
 			typedef std::function<void(const RtcClient*, const Model::ModifyMPULayoutRequest&, const ModifyMPULayoutOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMPULayoutAsyncHandler;
@@ -155,9 +168,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::StartRecordTaskResult> StartRecordTaskOutcome;
 			typedef std::future<StartRecordTaskOutcome> StartRecordTaskOutcomeCallable;
 			typedef std::function<void(const RtcClient*, const Model::StartRecordTaskRequest&, const StartRecordTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartRecordTaskAsyncHandler;
-			typedef Outcome<Error, Model::StopChannelUserPublishResult> StopChannelUserPublishOutcome;
-			typedef std::future<StopChannelUserPublishOutcome> StopChannelUserPublishOutcomeCallable;
-			typedef std::function<void(const RtcClient*, const Model::StopChannelUserPublishRequest&, const StopChannelUserPublishOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopChannelUserPublishAsyncHandler;
 			typedef Outcome<Error, Model::StopMPUTaskResult> StopMPUTaskOutcome;
 			typedef std::future<StopMPUTaskOutcome> StopMPUTaskOutcomeCallable;
 			typedef std::function<void(const RtcClient*, const Model::StopMPUTaskRequest&, const StopMPUTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopMPUTaskAsyncHandler;
@@ -196,6 +206,9 @@ namespace AlibabaCloud
 			DeleteAutoLiveStreamRuleOutcome deleteAutoLiveStreamRule(const Model::DeleteAutoLiveStreamRuleRequest &request)const;
 			void deleteAutoLiveStreamRuleAsync(const Model::DeleteAutoLiveStreamRuleRequest& request, const DeleteAutoLiveStreamRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteAutoLiveStreamRuleOutcomeCallable deleteAutoLiveStreamRuleCallable(const Model::DeleteAutoLiveStreamRuleRequest& request) const;
+			DeleteChannelOutcome deleteChannel(const Model::DeleteChannelRequest &request)const;
+			void deleteChannelAsync(const Model::DeleteChannelRequest& request, const DeleteChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteChannelOutcomeCallable deleteChannelCallable(const Model::DeleteChannelRequest& request) const;
 			DeleteEventSubscribeOutcome deleteEventSubscribe(const Model::DeleteEventSubscribeRequest &request)const;
 			void deleteEventSubscribeAsync(const Model::DeleteEventSubscribeRequest& request, const DeleteEventSubscribeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteEventSubscribeOutcomeCallable deleteEventSubscribeCallable(const Model::DeleteEventSubscribeRequest& request) const;
@@ -205,6 +218,9 @@ namespace AlibabaCloud
 			DeleteRecordTemplateOutcome deleteRecordTemplate(const Model::DeleteRecordTemplateRequest &request)const;
 			void deleteRecordTemplateAsync(const Model::DeleteRecordTemplateRequest& request, const DeleteRecordTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteRecordTemplateOutcomeCallable deleteRecordTemplateCallable(const Model::DeleteRecordTemplateRequest& request) const;
+			DescribeAppsOutcome describeApps(const Model::DescribeAppsRequest &request)const;
+			void describeAppsAsync(const Model::DescribeAppsRequest& request, const DescribeAppsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeAppsOutcomeCallable describeAppsCallable(const Model::DescribeAppsRequest& request) const;
 			DescribeAutoLiveStreamRuleOutcome describeAutoLiveStreamRule(const Model::DescribeAutoLiveStreamRuleRequest &request)const;
 			void describeAutoLiveStreamRuleAsync(const Model::DescribeAutoLiveStreamRuleRequest& request, const DescribeAutoLiveStreamRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAutoLiveStreamRuleOutcomeCallable describeAutoLiveStreamRuleCallable(const Model::DescribeAutoLiveStreamRuleRequest& request) const;
@@ -235,6 +251,9 @@ namespace AlibabaCloud
 			GetMPUTaskStatusOutcome getMPUTaskStatus(const Model::GetMPUTaskStatusRequest &request)const;
 			void getMPUTaskStatusAsync(const Model::GetMPUTaskStatusRequest& request, const GetMPUTaskStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetMPUTaskStatusOutcomeCallable getMPUTaskStatusCallable(const Model::GetMPUTaskStatusRequest& request) const;
+			ModifyAppOutcome modifyApp(const Model::ModifyAppRequest &request)const;
+			void modifyAppAsync(const Model::ModifyAppRequest& request, const ModifyAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyAppOutcomeCallable modifyAppCallable(const Model::ModifyAppRequest& request) const;
 			ModifyMPULayoutOutcome modifyMPULayout(const Model::ModifyMPULayoutRequest &request)const;
 			void modifyMPULayoutAsync(const Model::ModifyMPULayoutRequest& request, const ModifyMPULayoutAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyMPULayoutOutcomeCallable modifyMPULayoutCallable(const Model::ModifyMPULayoutRequest& request) const;
@@ -247,9 +266,6 @@ namespace AlibabaCloud
 			StartRecordTaskOutcome startRecordTask(const Model::StartRecordTaskRequest &request)const;
 			void startRecordTaskAsync(const Model::StartRecordTaskRequest& request, const StartRecordTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StartRecordTaskOutcomeCallable startRecordTaskCallable(const Model::StartRecordTaskRequest& request) const;
-			StopChannelUserPublishOutcome stopChannelUserPublish(const Model::StopChannelUserPublishRequest &request)const;
-			void stopChannelUserPublishAsync(const Model::StopChannelUserPublishRequest& request, const StopChannelUserPublishAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			StopChannelUserPublishOutcomeCallable stopChannelUserPublishCallable(const Model::StopChannelUserPublishRequest& request) const;
 			StopMPUTaskOutcome stopMPUTask(const Model::StopMPUTaskRequest &request)const;
 			void stopMPUTaskAsync(const Model::StopMPUTaskRequest& request, const StopMPUTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StopMPUTaskOutcomeCallable stopMPUTaskCallable(const Model::StopMPUTaskRequest& request) const;

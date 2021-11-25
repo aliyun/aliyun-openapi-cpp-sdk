@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RTC_MODEL_STOPCHANNELUSERPUBLISHREQUEST_H_
-#define ALIBABACLOUD_RTC_MODEL_STOPCHANNELUSERPUBLISHREQUEST_H_
+#ifndef ALIBABACLOUD_RTC_MODEL_MODIFYAPPREQUEST_H_
+#define ALIBABACLOUD_RTC_MODEL_MODIFYAPPREQUEST_H_
 
 #include <alibabacloud/rtc/RtcExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,29 +26,26 @@
 namespace AlibabaCloud {
 namespace Rtc {
 namespace Model {
-class ALIBABACLOUD_RTC_EXPORT StopChannelUserPublishRequest : public RpcServiceRequest {
+class ALIBABACLOUD_RTC_EXPORT ModifyAppRequest : public RpcServiceRequest {
 public:
-	StopChannelUserPublishRequest();
-	~StopChannelUserPublishRequest();
-	std::string getUserId() const;
-	void setUserId(const std::string &userId);
+	ModifyAppRequest();
+	~ModifyAppRequest();
+	std::string getAppName() const;
+	void setAppName(const std::string &appName);
 	std::string getShowLog() const;
 	void setShowLog(const std::string &showLog);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
 	std::string getAppId() const;
 	void setAppId(const std::string &appId);
-	std::string getChannelId() const;
-	void setChannelId(const std::string &channelId);
 
 private:
-	std::string userId_;
+	std::string appName_;
 	std::string showLog_;
 	long ownerId_;
 	std::string appId_;
-	std::string channelId_;
 };
 } // namespace Model
 } // namespace Rtc
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_RTC_MODEL_STOPCHANNELUSERPUBLISHREQUEST_H_
+#endif // !ALIBABACLOUD_RTC_MODEL_MODIFYAPPREQUEST_H_

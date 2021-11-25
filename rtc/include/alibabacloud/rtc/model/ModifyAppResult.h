@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RTC_MODEL_STOPCHANNELUSERPUBLISHRESULT_H_
-#define ALIBABACLOUD_RTC_MODEL_STOPCHANNELUSERPUBLISHRESULT_H_
+#ifndef ALIBABACLOUD_RTC_MODEL_MODIFYAPPRESULT_H_
+#define ALIBABACLOUD_RTC_MODEL_MODIFYAPPRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,14 +29,14 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_RTC_EXPORT StopChannelUserPublishResult : public ServiceResult
+			class ALIBABACLOUD_RTC_EXPORT ModifyAppResult : public ServiceResult
 			{
 			public:
 
 
-				StopChannelUserPublishResult();
-				explicit StopChannelUserPublishResult(const std::string &payload);
-				~StopChannelUserPublishResult();
+				ModifyAppResult();
+				explicit ModifyAppResult(const std::string &payload);
+				~ModifyAppResult();
 
 			protected:
 				void parse(const std::string &payload);
@@ -46,4 +46,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_RTC_MODEL_STOPCHANNELUSERPUBLISHRESULT_H_
+#endif // !ALIBABACLOUD_RTC_MODEL_MODIFYAPPRESULT_H_

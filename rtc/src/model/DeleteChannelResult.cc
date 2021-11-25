@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/rtc/model/StopChannelUserPublishResult.h>
+#include <alibabacloud/rtc/model/DeleteChannelResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Rtc;
 using namespace AlibabaCloud::Rtc::Model;
 
-StopChannelUserPublishResult::StopChannelUserPublishResult() :
+DeleteChannelResult::DeleteChannelResult() :
 	ServiceResult()
 {}
 
-StopChannelUserPublishResult::StopChannelUserPublishResult(const std::string &payload) :
+DeleteChannelResult::DeleteChannelResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-StopChannelUserPublishResult::~StopChannelUserPublishResult()
+DeleteChannelResult::~DeleteChannelResult()
 {}
 
-void StopChannelUserPublishResult::parse(const std::string &payload)
+void DeleteChannelResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
