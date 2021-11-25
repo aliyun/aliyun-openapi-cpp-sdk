@@ -115,3 +115,14 @@ void RecordFailureRequest::setTaskId(const std::string& taskId)
 	setParameter("TaskId", taskId);
 }
 
+std::string RecordFailureRequest::getExceptionCodes()const
+{
+	return exceptionCodes_;
+}
+
+void RecordFailureRequest::setExceptionCodes(const std::string& exceptionCodes)
+{
+	exceptionCodes_ = exceptionCodes;
+	setParameter("ExceptionCodes", exceptionCodes);
+}
+

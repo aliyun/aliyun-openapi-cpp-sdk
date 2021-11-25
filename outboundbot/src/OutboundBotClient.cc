@@ -267,6 +267,42 @@ OutboundBotClient::CreateDialogueFlowOutcomeCallable OutboundBotClient::createDi
 	return task->get_future();
 }
 
+OutboundBotClient::CreateDownloadUrlOutcome OutboundBotClient::createDownloadUrl(const CreateDownloadUrlRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateDownloadUrlOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateDownloadUrlOutcome(CreateDownloadUrlResult(outcome.result()));
+	else
+		return CreateDownloadUrlOutcome(outcome.error());
+}
+
+void OutboundBotClient::createDownloadUrlAsync(const CreateDownloadUrlRequest& request, const CreateDownloadUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createDownloadUrl(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OutboundBotClient::CreateDownloadUrlOutcomeCallable OutboundBotClient::createDownloadUrlCallable(const CreateDownloadUrlRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateDownloadUrlOutcome()>>(
+			[this, request]()
+			{
+			return this->createDownloadUrl(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 OutboundBotClient::CreateGlobalQuestionOutcome OutboundBotClient::createGlobalQuestion(const CreateGlobalQuestionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2031,6 +2067,42 @@ OutboundBotClient::GetEmptyNumberNoMoreCallsInfoOutcomeCallable OutboundBotClien
 	return task->get_future();
 }
 
+OutboundBotClient::GetInstanceConfigOutcome OutboundBotClient::getInstanceConfig(const GetInstanceConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetInstanceConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetInstanceConfigOutcome(GetInstanceConfigResult(outcome.result()));
+	else
+		return GetInstanceConfigOutcome(outcome.error());
+}
+
+void OutboundBotClient::getInstanceConfigAsync(const GetInstanceConfigRequest& request, const GetInstanceConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getInstanceConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OutboundBotClient::GetInstanceConfigOutcomeCallable OutboundBotClient::getInstanceConfigCallable(const GetInstanceConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetInstanceConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->getInstanceConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 OutboundBotClient::GetMaxAttemptsPerDayOutcome OutboundBotClient::getMaxAttemptsPerDay(const GetMaxAttemptsPerDayRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2277,6 +2349,42 @@ OutboundBotClient::ListDialogueFlowsOutcomeCallable OutboundBotClient::listDialo
 			[this, request]()
 			{
 			return this->listDialogueFlows(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OutboundBotClient::ListDownloadTasksOutcome OutboundBotClient::listDownloadTasks(const ListDownloadTasksRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListDownloadTasksOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListDownloadTasksOutcome(ListDownloadTasksResult(outcome.result()));
+	else
+		return ListDownloadTasksOutcome(outcome.error());
+}
+
+void OutboundBotClient::listDownloadTasksAsync(const ListDownloadTasksRequest& request, const ListDownloadTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listDownloadTasks(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OutboundBotClient::ListDownloadTasksOutcomeCallable OutboundBotClient::listDownloadTasksCallable(const ListDownloadTasksRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListDownloadTasksOutcome()>>(
+			[this, request]()
+			{
+			return this->listDownloadTasks(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3789,6 +3897,42 @@ OutboundBotClient::SaveMaxAttemptsPerDayOutcomeCallable OutboundBotClient::saveM
 			[this, request]()
 			{
 			return this->saveMaxAttemptsPerDay(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OutboundBotClient::SearchTaskOutcome OutboundBotClient::searchTask(const SearchTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SearchTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SearchTaskOutcome(SearchTaskResult(outcome.result()));
+	else
+		return SearchTaskOutcome(outcome.error());
+}
+
+void OutboundBotClient::searchTaskAsync(const SearchTaskRequest& request, const SearchTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, searchTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OutboundBotClient::SearchTaskOutcomeCallable OutboundBotClient::searchTaskCallable(const SearchTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SearchTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->searchTask(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

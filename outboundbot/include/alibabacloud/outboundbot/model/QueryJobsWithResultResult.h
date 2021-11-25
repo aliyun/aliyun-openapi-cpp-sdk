@@ -44,8 +44,8 @@ namespace AlibabaCloud
 								std::string honorific;
 								std::string referenceId;
 								std::string state;
-								std::string phoneNumber;
 								int round;
+								std::string phoneNumber;
 								std::string id;
 								std::string jobUuid;
 								std::string preferredPhoneNumber;
@@ -61,18 +61,24 @@ namespace AlibabaCloud
 								std::string tagName;
 								std::string tagGroup;
 							};
-							bool hasAnswered;
+							struct ExceptionCode
+							{
+								std::string hint;
+								std::string code;
+							};
 							std::string status;
+							bool hasAnswered;
 							bool hasHangUpByRejection;
-							std::string taskEndReason;
 							std::vector<TagHit> tagHits;
-							std::string callDurationDisplay;
+							std::vector<ExceptionCode> dialExceptionCodes;
 							std::string statusName;
-							long callTime;
 							std::vector<Extra> extras;
 							int callDuration;
 							bool hasReachedEndOfFlow;
 							Contact contact;
+							std::string taskEndReason;
+							std::string callDurationDisplay;
+							long callTime;
 						};
 						std::string status;
 						std::string statusName;
@@ -80,8 +86,8 @@ namespace AlibabaCloud
 						LatestTask latestTask;
 						std::string jobFailureReason;
 					};
-					int pageCount;
 					int pageSize;
+					int pageCount;
 					int pageNumber;
 					std::vector<Job> list;
 					int rowCount;

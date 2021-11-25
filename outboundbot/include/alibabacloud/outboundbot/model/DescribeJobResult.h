@@ -85,8 +85,8 @@ namespace AlibabaCloud
 							std::string speaker;
 						};
 						std::string status;
-						std::string chatbotId;
 						long planedTime;
+						std::string chatbotId;
 						std::string calledNumber;
 						std::string scenarioId;
 						std::string taskId;
@@ -99,6 +99,7 @@ namespace AlibabaCloud
 						std::string callingNumber;
 						std::string endReason;
 						Contact3 contact3;
+						std::string hangUpDirection;
 						std::string jobId;
 					};
 					std::string status;
@@ -106,8 +107,8 @@ namespace AlibabaCloud
 					std::vector<Task> tasks;
 					std::string scenarioId;
 					std::string instanceId;
-					int priority;
 					long actualTime;
+					int priority;
 					std::string strategyId;
 					std::vector<KeyValuePair> extras;
 					std::string dsReport;

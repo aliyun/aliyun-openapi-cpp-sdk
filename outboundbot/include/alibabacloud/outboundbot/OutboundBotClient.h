@@ -34,6 +34,8 @@
 #include "model/CreateBatchRepeatJobResult.h"
 #include "model/CreateDialogueFlowRequest.h"
 #include "model/CreateDialogueFlowResult.h"
+#include "model/CreateDownloadUrlRequest.h"
+#include "model/CreateDownloadUrlResult.h"
 #include "model/CreateGlobalQuestionRequest.h"
 #include "model/CreateGlobalQuestionResult.h"
 #include "model/CreateInstanceRequest.h"
@@ -132,6 +134,8 @@
 #include "model/GetEffectiveDaysResult.h"
 #include "model/GetEmptyNumberNoMoreCallsInfoRequest.h"
 #include "model/GetEmptyNumberNoMoreCallsInfoResult.h"
+#include "model/GetInstanceConfigRequest.h"
+#include "model/GetInstanceConfigResult.h"
 #include "model/GetMaxAttemptsPerDayRequest.h"
 #include "model/GetMaxAttemptsPerDayResult.h"
 #include "model/GetSummaryInfoRequest.h"
@@ -146,6 +150,8 @@
 #include "model/InflightTaskTimeoutResult.h"
 #include "model/ListDialogueFlowsRequest.h"
 #include "model/ListDialogueFlowsResult.h"
+#include "model/ListDownloadTasksRequest.h"
+#include "model/ListDownloadTasksResult.h"
 #include "model/ListGlobalQuestionsRequest.h"
 #include "model/ListGlobalQuestionsResult.h"
 #include "model/ListInstancesRequest.h"
@@ -230,6 +236,8 @@
 #include "model/SaveEffectiveDaysResult.h"
 #include "model/SaveMaxAttemptsPerDayRequest.h"
 #include "model/SaveMaxAttemptsPerDayResult.h"
+#include "model/SearchTaskRequest.h"
+#include "model/SearchTaskResult.h"
 #include "model/StartJobRequest.h"
 #include "model/StartJobResult.h"
 #include "model/SubmitBatchJobsRequest.h"
@@ -281,6 +289,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateDialogueFlowResult> CreateDialogueFlowOutcome;
 			typedef std::future<CreateDialogueFlowOutcome> CreateDialogueFlowOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::CreateDialogueFlowRequest&, const CreateDialogueFlowOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDialogueFlowAsyncHandler;
+			typedef Outcome<Error, Model::CreateDownloadUrlResult> CreateDownloadUrlOutcome;
+			typedef std::future<CreateDownloadUrlOutcome> CreateDownloadUrlOutcomeCallable;
+			typedef std::function<void(const OutboundBotClient*, const Model::CreateDownloadUrlRequest&, const CreateDownloadUrlOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDownloadUrlAsyncHandler;
 			typedef Outcome<Error, Model::CreateGlobalQuestionResult> CreateGlobalQuestionOutcome;
 			typedef std::future<CreateGlobalQuestionOutcome> CreateGlobalQuestionOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::CreateGlobalQuestionRequest&, const CreateGlobalQuestionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateGlobalQuestionAsyncHandler;
@@ -428,6 +439,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetEmptyNumberNoMoreCallsInfoResult> GetEmptyNumberNoMoreCallsInfoOutcome;
 			typedef std::future<GetEmptyNumberNoMoreCallsInfoOutcome> GetEmptyNumberNoMoreCallsInfoOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::GetEmptyNumberNoMoreCallsInfoRequest&, const GetEmptyNumberNoMoreCallsInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetEmptyNumberNoMoreCallsInfoAsyncHandler;
+			typedef Outcome<Error, Model::GetInstanceConfigResult> GetInstanceConfigOutcome;
+			typedef std::future<GetInstanceConfigOutcome> GetInstanceConfigOutcomeCallable;
+			typedef std::function<void(const OutboundBotClient*, const Model::GetInstanceConfigRequest&, const GetInstanceConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetInstanceConfigAsyncHandler;
 			typedef Outcome<Error, Model::GetMaxAttemptsPerDayResult> GetMaxAttemptsPerDayOutcome;
 			typedef std::future<GetMaxAttemptsPerDayOutcome> GetMaxAttemptsPerDayOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::GetMaxAttemptsPerDayRequest&, const GetMaxAttemptsPerDayOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetMaxAttemptsPerDayAsyncHandler;
@@ -449,6 +463,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListDialogueFlowsResult> ListDialogueFlowsOutcome;
 			typedef std::future<ListDialogueFlowsOutcome> ListDialogueFlowsOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::ListDialogueFlowsRequest&, const ListDialogueFlowsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDialogueFlowsAsyncHandler;
+			typedef Outcome<Error, Model::ListDownloadTasksResult> ListDownloadTasksOutcome;
+			typedef std::future<ListDownloadTasksOutcome> ListDownloadTasksOutcomeCallable;
+			typedef std::function<void(const OutboundBotClient*, const Model::ListDownloadTasksRequest&, const ListDownloadTasksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDownloadTasksAsyncHandler;
 			typedef Outcome<Error, Model::ListGlobalQuestionsResult> ListGlobalQuestionsOutcome;
 			typedef std::future<ListGlobalQuestionsOutcome> ListGlobalQuestionsOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::ListGlobalQuestionsRequest&, const ListGlobalQuestionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListGlobalQuestionsAsyncHandler;
@@ -575,6 +592,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SaveMaxAttemptsPerDayResult> SaveMaxAttemptsPerDayOutcome;
 			typedef std::future<SaveMaxAttemptsPerDayOutcome> SaveMaxAttemptsPerDayOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::SaveMaxAttemptsPerDayRequest&, const SaveMaxAttemptsPerDayOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SaveMaxAttemptsPerDayAsyncHandler;
+			typedef Outcome<Error, Model::SearchTaskResult> SearchTaskOutcome;
+			typedef std::future<SearchTaskOutcome> SearchTaskOutcomeCallable;
+			typedef std::function<void(const OutboundBotClient*, const Model::SearchTaskRequest&, const SearchTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SearchTaskAsyncHandler;
 			typedef Outcome<Error, Model::StartJobResult> StartJobOutcome;
 			typedef std::future<StartJobOutcome> StartJobOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::StartJobRequest&, const StartJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartJobAsyncHandler;
@@ -634,6 +654,9 @@ namespace AlibabaCloud
 			CreateDialogueFlowOutcome createDialogueFlow(const Model::CreateDialogueFlowRequest &request)const;
 			void createDialogueFlowAsync(const Model::CreateDialogueFlowRequest& request, const CreateDialogueFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateDialogueFlowOutcomeCallable createDialogueFlowCallable(const Model::CreateDialogueFlowRequest& request) const;
+			CreateDownloadUrlOutcome createDownloadUrl(const Model::CreateDownloadUrlRequest &request)const;
+			void createDownloadUrlAsync(const Model::CreateDownloadUrlRequest& request, const CreateDownloadUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateDownloadUrlOutcomeCallable createDownloadUrlCallable(const Model::CreateDownloadUrlRequest& request) const;
 			CreateGlobalQuestionOutcome createGlobalQuestion(const Model::CreateGlobalQuestionRequest &request)const;
 			void createGlobalQuestionAsync(const Model::CreateGlobalQuestionRequest& request, const CreateGlobalQuestionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateGlobalQuestionOutcomeCallable createGlobalQuestionCallable(const Model::CreateGlobalQuestionRequest& request) const;
@@ -781,6 +804,9 @@ namespace AlibabaCloud
 			GetEmptyNumberNoMoreCallsInfoOutcome getEmptyNumberNoMoreCallsInfo(const Model::GetEmptyNumberNoMoreCallsInfoRequest &request)const;
 			void getEmptyNumberNoMoreCallsInfoAsync(const Model::GetEmptyNumberNoMoreCallsInfoRequest& request, const GetEmptyNumberNoMoreCallsInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetEmptyNumberNoMoreCallsInfoOutcomeCallable getEmptyNumberNoMoreCallsInfoCallable(const Model::GetEmptyNumberNoMoreCallsInfoRequest& request) const;
+			GetInstanceConfigOutcome getInstanceConfig(const Model::GetInstanceConfigRequest &request)const;
+			void getInstanceConfigAsync(const Model::GetInstanceConfigRequest& request, const GetInstanceConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetInstanceConfigOutcomeCallable getInstanceConfigCallable(const Model::GetInstanceConfigRequest& request) const;
 			GetMaxAttemptsPerDayOutcome getMaxAttemptsPerDay(const Model::GetMaxAttemptsPerDayRequest &request)const;
 			void getMaxAttemptsPerDayAsync(const Model::GetMaxAttemptsPerDayRequest& request, const GetMaxAttemptsPerDayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetMaxAttemptsPerDayOutcomeCallable getMaxAttemptsPerDayCallable(const Model::GetMaxAttemptsPerDayRequest& request) const;
@@ -802,6 +828,9 @@ namespace AlibabaCloud
 			ListDialogueFlowsOutcome listDialogueFlows(const Model::ListDialogueFlowsRequest &request)const;
 			void listDialogueFlowsAsync(const Model::ListDialogueFlowsRequest& request, const ListDialogueFlowsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListDialogueFlowsOutcomeCallable listDialogueFlowsCallable(const Model::ListDialogueFlowsRequest& request) const;
+			ListDownloadTasksOutcome listDownloadTasks(const Model::ListDownloadTasksRequest &request)const;
+			void listDownloadTasksAsync(const Model::ListDownloadTasksRequest& request, const ListDownloadTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListDownloadTasksOutcomeCallable listDownloadTasksCallable(const Model::ListDownloadTasksRequest& request) const;
 			ListGlobalQuestionsOutcome listGlobalQuestions(const Model::ListGlobalQuestionsRequest &request)const;
 			void listGlobalQuestionsAsync(const Model::ListGlobalQuestionsRequest& request, const ListGlobalQuestionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListGlobalQuestionsOutcomeCallable listGlobalQuestionsCallable(const Model::ListGlobalQuestionsRequest& request) const;
@@ -928,6 +957,9 @@ namespace AlibabaCloud
 			SaveMaxAttemptsPerDayOutcome saveMaxAttemptsPerDay(const Model::SaveMaxAttemptsPerDayRequest &request)const;
 			void saveMaxAttemptsPerDayAsync(const Model::SaveMaxAttemptsPerDayRequest& request, const SaveMaxAttemptsPerDayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SaveMaxAttemptsPerDayOutcomeCallable saveMaxAttemptsPerDayCallable(const Model::SaveMaxAttemptsPerDayRequest& request) const;
+			SearchTaskOutcome searchTask(const Model::SearchTaskRequest &request)const;
+			void searchTaskAsync(const Model::SearchTaskRequest& request, const SearchTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SearchTaskOutcomeCallable searchTaskCallable(const Model::SearchTaskRequest& request) const;
 			StartJobOutcome startJob(const Model::StartJobRequest &request)const;
 			void startJobAsync(const Model::StartJobRequest& request, const StartJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StartJobOutcomeCallable startJobCallable(const Model::StartJobRequest& request) const;

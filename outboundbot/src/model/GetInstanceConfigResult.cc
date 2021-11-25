@@ -14,31 +14,39 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/outboundbot/model/RecordFailureResult.h>
+#include <alibabacloud/outboundbot/model/GetInstanceConfigResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::OutboundBot;
 using namespace AlibabaCloud::OutboundBot::Model;
 
-RecordFailureResult::RecordFailureResult() :
+GetInstanceConfigResult::GetInstanceConfigResult() :
 	ServiceResult()
 {}
 
-RecordFailureResult::RecordFailureResult(const std::string &payload) :
+GetInstanceConfigResult::GetInstanceConfigResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-RecordFailureResult::~RecordFailureResult()
+GetInstanceConfigResult::~GetInstanceConfigResult()
 {}
 
-void RecordFailureResult::parse(const std::string &payload)
+void GetInstanceConfigResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto dataNode = value["Data"];
+	auto instanceConfigNode = dataNode["InstanceConfig"];
+	if(!instanceConfigNode["MiniPlaybackSystemSwitch"].isNull())
+		data_.instanceConfig.miniPlaybackSystemSwitch = instanceConfigNode["MiniPlaybackSystemSwitch"].asString() == "true";
+	if(!instanceConfigNode["NewBargeInSystemSwitch"].isNull())
+		data_.instanceConfig.newBargeInSystemSwitch = instanceConfigNode["NewBargeInSystemSwitch"].asString() == "true";
+	if(!instanceConfigNode["SearchTaskFunctionSwitch"].isNull())
+		data_.instanceConfig.searchTaskFunctionSwitch = instanceConfigNode["SearchTaskFunctionSwitch"].asString() == "true";
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 	if(!value["Code"].isNull())
@@ -50,22 +58,27 @@ void RecordFailureResult::parse(const std::string &payload)
 
 }
 
-std::string RecordFailureResult::getMessage()const
+std::string GetInstanceConfigResult::getMessage()const
 {
 	return message_;
 }
 
-int RecordFailureResult::getHttpStatusCode()const
+int GetInstanceConfigResult::getHttpStatusCode()const
 {
 	return httpStatusCode_;
 }
 
-std::string RecordFailureResult::getCode()const
+GetInstanceConfigResult::Data GetInstanceConfigResult::getData()const
+{
+	return data_;
+}
+
+std::string GetInstanceConfigResult::getCode()const
 {
 	return code_;
 }
 
-bool RecordFailureResult::getSuccess()const
+bool GetInstanceConfigResult::getSuccess()const
 {
 	return success_;
 }

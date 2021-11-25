@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/outboundbot/model/RecordFailureResult.h>
+#include <alibabacloud/outboundbot/model/CreateDownloadUrlResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::OutboundBot;
 using namespace AlibabaCloud::OutboundBot::Model;
 
-RecordFailureResult::RecordFailureResult() :
+CreateDownloadUrlResult::CreateDownloadUrlResult() :
 	ServiceResult()
 {}
 
-RecordFailureResult::RecordFailureResult(const std::string &payload) :
+CreateDownloadUrlResult::CreateDownloadUrlResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-RecordFailureResult::~RecordFailureResult()
+CreateDownloadUrlResult::~CreateDownloadUrlResult()
 {}
 
-void RecordFailureResult::parse(const std::string &payload)
+void CreateDownloadUrlResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -41,31 +41,38 @@ void RecordFailureResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["FileHttpUrl"].isNull())
+		fileHttpUrl_ = value["FileHttpUrl"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 
 }
 
-std::string RecordFailureResult::getMessage()const
+std::string CreateDownloadUrlResult::getMessage()const
 {
 	return message_;
 }
 
-int RecordFailureResult::getHttpStatusCode()const
+int CreateDownloadUrlResult::getHttpStatusCode()const
 {
 	return httpStatusCode_;
 }
 
-std::string RecordFailureResult::getCode()const
+std::string CreateDownloadUrlResult::getFileHttpUrl()const
+{
+	return fileHttpUrl_;
+}
+
+std::string CreateDownloadUrlResult::getCode()const
 {
 	return code_;
 }
 
-bool RecordFailureResult::getSuccess()const
+bool CreateDownloadUrlResult::getSuccess()const
 {
 	return success_;
 }

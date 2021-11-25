@@ -33,6 +33,8 @@ set(outboundbot_public_header_model
 	include/alibabacloud/outboundbot/model/CreateBatchRepeatJobResult.h
 	include/alibabacloud/outboundbot/model/CreateDialogueFlowRequest.h
 	include/alibabacloud/outboundbot/model/CreateDialogueFlowResult.h
+	include/alibabacloud/outboundbot/model/CreateDownloadUrlRequest.h
+	include/alibabacloud/outboundbot/model/CreateDownloadUrlResult.h
 	include/alibabacloud/outboundbot/model/CreateGlobalQuestionRequest.h
 	include/alibabacloud/outboundbot/model/CreateGlobalQuestionResult.h
 	include/alibabacloud/outboundbot/model/CreateInstanceRequest.h
@@ -131,6 +133,8 @@ set(outboundbot_public_header_model
 	include/alibabacloud/outboundbot/model/GetEffectiveDaysResult.h
 	include/alibabacloud/outboundbot/model/GetEmptyNumberNoMoreCallsInfoRequest.h
 	include/alibabacloud/outboundbot/model/GetEmptyNumberNoMoreCallsInfoResult.h
+	include/alibabacloud/outboundbot/model/GetInstanceConfigRequest.h
+	include/alibabacloud/outboundbot/model/GetInstanceConfigResult.h
 	include/alibabacloud/outboundbot/model/GetMaxAttemptsPerDayRequest.h
 	include/alibabacloud/outboundbot/model/GetMaxAttemptsPerDayResult.h
 	include/alibabacloud/outboundbot/model/GetSummaryInfoRequest.h
@@ -145,6 +149,8 @@ set(outboundbot_public_header_model
 	include/alibabacloud/outboundbot/model/InflightTaskTimeoutResult.h
 	include/alibabacloud/outboundbot/model/ListDialogueFlowsRequest.h
 	include/alibabacloud/outboundbot/model/ListDialogueFlowsResult.h
+	include/alibabacloud/outboundbot/model/ListDownloadTasksRequest.h
+	include/alibabacloud/outboundbot/model/ListDownloadTasksResult.h
 	include/alibabacloud/outboundbot/model/ListGlobalQuestionsRequest.h
 	include/alibabacloud/outboundbot/model/ListGlobalQuestionsResult.h
 	include/alibabacloud/outboundbot/model/ListInstancesRequest.h
@@ -229,6 +235,8 @@ set(outboundbot_public_header_model
 	include/alibabacloud/outboundbot/model/SaveEffectiveDaysResult.h
 	include/alibabacloud/outboundbot/model/SaveMaxAttemptsPerDayRequest.h
 	include/alibabacloud/outboundbot/model/SaveMaxAttemptsPerDayResult.h
+	include/alibabacloud/outboundbot/model/SearchTaskRequest.h
+	include/alibabacloud/outboundbot/model/SearchTaskResult.h
 	include/alibabacloud/outboundbot/model/StartJobRequest.h
 	include/alibabacloud/outboundbot/model/StartJobResult.h
 	include/alibabacloud/outboundbot/model/SubmitBatchJobsRequest.h
@@ -268,6 +276,8 @@ set(outboundbot_src
 	src/model/CreateBatchRepeatJobResult.cc
 	src/model/CreateDialogueFlowRequest.cc
 	src/model/CreateDialogueFlowResult.cc
+	src/model/CreateDownloadUrlRequest.cc
+	src/model/CreateDownloadUrlResult.cc
 	src/model/CreateGlobalQuestionRequest.cc
 	src/model/CreateGlobalQuestionResult.cc
 	src/model/CreateInstanceRequest.cc
@@ -366,6 +376,8 @@ set(outboundbot_src
 	src/model/GetEffectiveDaysResult.cc
 	src/model/GetEmptyNumberNoMoreCallsInfoRequest.cc
 	src/model/GetEmptyNumberNoMoreCallsInfoResult.cc
+	src/model/GetInstanceConfigRequest.cc
+	src/model/GetInstanceConfigResult.cc
 	src/model/GetMaxAttemptsPerDayRequest.cc
 	src/model/GetMaxAttemptsPerDayResult.cc
 	src/model/GetSummaryInfoRequest.cc
@@ -380,6 +392,8 @@ set(outboundbot_src
 	src/model/InflightTaskTimeoutResult.cc
 	src/model/ListDialogueFlowsRequest.cc
 	src/model/ListDialogueFlowsResult.cc
+	src/model/ListDownloadTasksRequest.cc
+	src/model/ListDownloadTasksResult.cc
 	src/model/ListGlobalQuestionsRequest.cc
 	src/model/ListGlobalQuestionsResult.cc
 	src/model/ListInstancesRequest.cc
@@ -464,6 +478,8 @@ set(outboundbot_src
 	src/model/SaveEffectiveDaysResult.cc
 	src/model/SaveMaxAttemptsPerDayRequest.cc
 	src/model/SaveMaxAttemptsPerDayResult.cc
+	src/model/SearchTaskRequest.cc
+	src/model/SearchTaskResult.cc
 	src/model/StartJobRequest.cc
 	src/model/StartJobResult.cc
 	src/model/SubmitBatchJobsRequest.cc
