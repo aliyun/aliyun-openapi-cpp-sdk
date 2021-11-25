@@ -52,8 +52,8 @@ namespace AlibabaCloud
 						std::string personId;
 						float genderConfidence;
 						std::string gender;
-						int age;
 						float ageConfidence;
+						int age;
 					};
 					std::string modifyTime;
 					std::string processStatus;
@@ -90,15 +90,15 @@ namespace AlibabaCloud
 				ListVideosResult();
 				explicit ListVideosResult(const std::string &payload);
 				~ListVideosResult();
-				std::string getSetId()const;
 				std::string getNextMarker()const;
+				std::string getSetId()const;
 				std::vector<VideosItem> getVideos()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string setId_;
 				std::string nextMarker_;
+				std::string setId_;
 				std::vector<VideosItem> videos_;
 
 			};

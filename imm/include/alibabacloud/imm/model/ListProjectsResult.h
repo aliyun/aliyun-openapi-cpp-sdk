@@ -36,8 +36,8 @@ namespace AlibabaCloud
 				{
 					std::string project;
 					std::string modifyTime;
-					int cU;
 					std::string type;
+					int cU;
 					std::string serviceRole;
 					std::string endpoint;
 					std::string createTime;

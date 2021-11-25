@@ -48,12 +48,12 @@ void DetectImageQRCodesResult::parse(const std::string &payload)
 		auto qRCodeBoundaryNode = value["QRCodeBoundary"];
 		if(!qRCodeBoundaryNode["Top"].isNull())
 			qRCodesObject.qRCodeBoundary.top = std::stoi(qRCodeBoundaryNode["Top"].asString());
-		if(!qRCodeBoundaryNode["Left"].isNull())
-			qRCodesObject.qRCodeBoundary.left = std::stoi(qRCodeBoundaryNode["Left"].asString());
 		if(!qRCodeBoundaryNode["Width"].isNull())
 			qRCodesObject.qRCodeBoundary.width = std::stoi(qRCodeBoundaryNode["Width"].asString());
 		if(!qRCodeBoundaryNode["Height"].isNull())
 			qRCodesObject.qRCodeBoundary.height = std::stoi(qRCodeBoundaryNode["Height"].asString());
+		if(!qRCodeBoundaryNode["Left"].isNull())
+			qRCodesObject.qRCodeBoundary.left = std::stoi(qRCodeBoundaryNode["Left"].asString());
 		qRCodes_.push_back(qRCodesObject);
 	}
 	if(!value["ImageUri"].isNull())

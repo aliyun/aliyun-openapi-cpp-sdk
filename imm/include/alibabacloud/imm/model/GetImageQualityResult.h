@@ -36,14 +36,14 @@ namespace AlibabaCloud
 				{
 					float clarityScore;
 					float compositionScore;
-					float contrastScore;
 					float color;
+					float contrastScore;
 					float exposure;
 					float overallScore;
-					float clarity;
 					float contrast;
-					float exposureScore;
+					float clarity;
 					float colorScore;
+					float exposureScore;
 				};
 
 

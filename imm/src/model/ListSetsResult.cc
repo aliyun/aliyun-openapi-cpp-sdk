@@ -43,22 +43,22 @@ void ListSetsResult::parse(const std::string &payload)
 	for (auto valueSetsSetsItem : allSetsNode)
 	{
 		SetsItem setsObject;
-		if(!valueSetsSetsItem["SetId"].isNull())
-			setsObject.setId = valueSetsSetsItem["SetId"].asString();
-		if(!valueSetsSetsItem["SetName"].isNull())
-			setsObject.setName = valueSetsSetsItem["SetName"].asString();
-		if(!valueSetsSetsItem["CreateTime"].isNull())
-			setsObject.createTime = valueSetsSetsItem["CreateTime"].asString();
-		if(!valueSetsSetsItem["ModifyTime"].isNull())
-			setsObject.modifyTime = valueSetsSetsItem["ModifyTime"].asString();
-		if(!valueSetsSetsItem["FaceCount"].isNull())
-			setsObject.faceCount = std::stoi(valueSetsSetsItem["FaceCount"].asString());
-		if(!valueSetsSetsItem["ImageCount"].isNull())
-			setsObject.imageCount = std::stoi(valueSetsSetsItem["ImageCount"].asString());
 		if(!valueSetsSetsItem["VideoCount"].isNull())
 			setsObject.videoCount = std::stoi(valueSetsSetsItem["VideoCount"].asString());
+		if(!valueSetsSetsItem["CreateTime"].isNull())
+			setsObject.createTime = valueSetsSetsItem["CreateTime"].asString();
 		if(!valueSetsSetsItem["VideoLength"].isNull())
 			setsObject.videoLength = std::stoi(valueSetsSetsItem["VideoLength"].asString());
+		if(!valueSetsSetsItem["SetId"].isNull())
+			setsObject.setId = valueSetsSetsItem["SetId"].asString();
+		if(!valueSetsSetsItem["ImageCount"].isNull())
+			setsObject.imageCount = std::stoi(valueSetsSetsItem["ImageCount"].asString());
+		if(!valueSetsSetsItem["FaceCount"].isNull())
+			setsObject.faceCount = std::stoi(valueSetsSetsItem["FaceCount"].asString());
+		if(!valueSetsSetsItem["SetName"].isNull())
+			setsObject.setName = valueSetsSetsItem["SetName"].asString();
+		if(!valueSetsSetsItem["ModifyTime"].isNull())
+			setsObject.modifyTime = valueSetsSetsItem["ModifyTime"].asString();
 		sets_.push_back(setsObject);
 	}
 	if(!value["NextMarker"].isNull())

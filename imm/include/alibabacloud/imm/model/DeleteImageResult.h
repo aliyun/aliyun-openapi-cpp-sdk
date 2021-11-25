@@ -37,14 +37,14 @@ namespace AlibabaCloud
 				DeleteImageResult();
 				explicit DeleteImageResult(const std::string &payload);
 				~DeleteImageResult();
-				std::string getImageUri()const;
 				std::string getSetId()const;
+				std::string getImageUri()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string imageUri_;
 				std::string setId_;
+				std::string imageUri_;
 
 			};
 		}

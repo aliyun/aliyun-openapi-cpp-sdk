@@ -41,22 +41,22 @@ void PutProjectResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["Project"].isNull())
 		project_ = value["Project"].asString();
-	if(!value["CreateTime"].isNull())
-		createTime_ = value["CreateTime"].asString();
 	if(!value["ModifyTime"].isNull())
 		modifyTime_ = value["ModifyTime"].asString();
-	if(!value["ServiceRole"].isNull())
-		serviceRole_ = value["ServiceRole"].asString();
-	if(!value["CU"].isNull())
-		cU_ = std::stoi(value["CU"].asString());
 	if(!value["Type"].isNull())
 		type_ = value["Type"].asString();
+	if(!value["CU"].isNull())
+		cU_ = std::stoi(value["CU"].asString());
+	if(!value["ServiceRole"].isNull())
+		serviceRole_ = value["ServiceRole"].asString();
 	if(!value["Endpoint"].isNull())
 		endpoint_ = value["Endpoint"].asString();
-	if(!value["BillingType"].isNull())
-		billingType_ = value["BillingType"].asString();
+	if(!value["CreateTime"].isNull())
+		createTime_ = value["CreateTime"].asString();
 	if(!value["RegionId"].isNull())
 		regionId_ = value["RegionId"].asString();
+	if(!value["BillingType"].isNull())
+		billingType_ = value["BillingType"].asString();
 
 }
 
@@ -70,14 +70,14 @@ std::string PutProjectResult::getModifyTime()const
 	return modifyTime_;
 }
 
-int PutProjectResult::getCU()const
-{
-	return cU_;
-}
-
 std::string PutProjectResult::getType()const
 {
 	return type_;
+}
+
+int PutProjectResult::getCU()const
+{
+	return cU_;
 }
 
 std::string PutProjectResult::getServiceRole()const

@@ -39,10 +39,10 @@ void DeleteVideoResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["SetId"].isNull())
-		setId_ = value["SetId"].asString();
 	if(!value["VideoUri"].isNull())
 		videoUri_ = value["VideoUri"].asString();
+	if(!value["SetId"].isNull())
+		setId_ = value["SetId"].asString();
 
 }
 

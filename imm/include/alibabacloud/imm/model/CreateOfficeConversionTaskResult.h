@@ -40,8 +40,8 @@ namespace AlibabaCloud
 				std::string getStatus()const;
 				std::string getTaskId()const;
 				int getPercent()const;
-				std::string getTgtLoc()const;
 				std::string getCreateTime()const;
+				std::string getTgtLoc()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -49,8 +49,8 @@ namespace AlibabaCloud
 				std::string status_;
 				std::string taskId_;
 				int percent_;
-				std::string tgtLoc_;
 				std::string createTime_;
+				std::string tgtLoc_;
 
 			};
 		}

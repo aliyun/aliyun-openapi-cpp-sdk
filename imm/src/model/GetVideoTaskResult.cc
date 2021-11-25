@@ -41,14 +41,14 @@ void GetVideoTaskResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["Status"].isNull())
 		status_ = value["Status"].asString();
-	if(!value["NotifyEndpoint"].isNull())
-		notifyEndpoint_ = value["NotifyEndpoint"].asString();
 	if(!value["Progress"].isNull())
 		progress_ = std::stoi(value["Progress"].asString());
-	if(!value["TaskId"].isNull())
-		taskId_ = value["TaskId"].asString();
+	if(!value["NotifyEndpoint"].isNull())
+		notifyEndpoint_ = value["NotifyEndpoint"].asString();
 	if(!value["Parameters"].isNull())
 		parameters_ = value["Parameters"].asString();
+	if(!value["TaskId"].isNull())
+		taskId_ = value["TaskId"].asString();
 	if(!value["EndTime"].isNull())
 		endTime_ = value["EndTime"].asString();
 	if(!value["TaskType"].isNull())
@@ -69,24 +69,24 @@ std::string GetVideoTaskResult::getStatus()const
 	return status_;
 }
 
-std::string GetVideoTaskResult::getNotifyEndpoint()const
-{
-	return notifyEndpoint_;
-}
-
 int GetVideoTaskResult::getProgress()const
 {
 	return progress_;
 }
 
-std::string GetVideoTaskResult::getTaskId()const
+std::string GetVideoTaskResult::getNotifyEndpoint()const
 {
-	return taskId_;
+	return notifyEndpoint_;
 }
 
 std::string GetVideoTaskResult::getParameters()const
 {
 	return parameters_;
+}
+
+std::string GetVideoTaskResult::getTaskId()const
+{
+	return taskId_;
 }
 
 std::string GetVideoTaskResult::getEndTime()const

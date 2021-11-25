@@ -45,26 +45,26 @@ void IndexVideoResult::parse(const std::string &payload)
 		endTime_ = value["EndTime"].asString();
 	if(!value["SaveType"].isNull())
 		saveType_ = value["SaveType"].asString() == "true";
-	if(!value["ExternalId"].isNull())
-		externalId_ = value["ExternalId"].asString();
 	if(!value["CreateTime"].isNull())
 		createTime_ = value["CreateTime"].asString();
+	if(!value["ExternalId"].isNull())
+		externalId_ = value["ExternalId"].asString();
 	if(!value["StartTime"].isNull())
 		startTime_ = value["StartTime"].asString();
-	if(!value["VideoUri"].isNull())
-		videoUri_ = value["VideoUri"].asString();
 	if(!value["GrabType"].isNull())
 		grabType_ = value["GrabType"].asString();
+	if(!value["VideoUri"].isNull())
+		videoUri_ = value["VideoUri"].asString();
 	if(!value["RemarksA"].isNull())
 		remarksA_ = value["RemarksA"].asString();
 	if(!value["RemarksB"].isNull())
 		remarksB_ = value["RemarksB"].asString();
 	if(!value["RemarksC"].isNull())
 		remarksC_ = value["RemarksC"].asString();
-	if(!value["TgtUri"].isNull())
-		tgtUri_ = value["TgtUri"].asString();
 	if(!value["RemarksD"].isNull())
 		remarksD_ = value["RemarksD"].asString();
+	if(!value["TgtUri"].isNull())
+		tgtUri_ = value["TgtUri"].asString();
 	if(!value["SetId"].isNull())
 		setId_ = value["SetId"].asString();
 	if(!value["Interval"].isNull())
@@ -87,14 +87,14 @@ bool IndexVideoResult::getSaveType()const
 	return saveType_;
 }
 
-std::string IndexVideoResult::getExternalId()const
-{
-	return externalId_;
-}
-
 std::string IndexVideoResult::getCreateTime()const
 {
 	return createTime_;
+}
+
+std::string IndexVideoResult::getExternalId()const
+{
+	return externalId_;
 }
 
 std::string IndexVideoResult::getStartTime()const
@@ -102,14 +102,14 @@ std::string IndexVideoResult::getStartTime()const
 	return startTime_;
 }
 
-std::string IndexVideoResult::getVideoUri()const
-{
-	return videoUri_;
-}
-
 std::string IndexVideoResult::getGrabType()const
 {
 	return grabType_;
+}
+
+std::string IndexVideoResult::getVideoUri()const
+{
+	return videoUri_;
 }
 
 std::string IndexVideoResult::getRemarksA()const
@@ -127,14 +127,14 @@ std::string IndexVideoResult::getRemarksC()const
 	return remarksC_;
 }
 
-std::string IndexVideoResult::getTgtUri()const
-{
-	return tgtUri_;
-}
-
 std::string IndexVideoResult::getRemarksD()const
 {
 	return remarksD_;
+}
+
+std::string IndexVideoResult::getTgtUri()const
+{
+	return tgtUri_;
 }
 
 std::string IndexVideoResult::getSetId()const

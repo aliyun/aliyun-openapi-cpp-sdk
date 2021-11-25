@@ -41,156 +41,156 @@ void GetMediaMetaResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	auto mediaMetaNode = value["MediaMeta"];
 	auto mediaFormatNode = mediaMetaNode["MediaFormat"];
-	if(!mediaFormatNode["Size"].isNull())
-		mediaMeta_.mediaFormat.size = mediaFormatNode["Size"].asString();
-	if(!mediaFormatNode["NumberStreams"].isNull())
-		mediaMeta_.mediaFormat.numberStreams = std::stoi(mediaFormatNode["NumberStreams"].asString());
-	if(!mediaFormatNode["FormatLongName"].isNull())
-		mediaMeta_.mediaFormat.formatLongName = mediaFormatNode["FormatLongName"].asString();
-	if(!mediaFormatNode["StartTime"].isNull())
-		mediaMeta_.mediaFormat.startTime = mediaFormatNode["StartTime"].asString();
 	if(!mediaFormatNode["CreationTime"].isNull())
 		mediaMeta_.mediaFormat.creationTime = mediaFormatNode["CreationTime"].asString();
-	if(!mediaFormatNode["FormatName"].isNull())
-		mediaMeta_.mediaFormat.formatName = mediaFormatNode["FormatName"].asString();
-	if(!mediaFormatNode["Duration"].isNull())
-		mediaMeta_.mediaFormat.duration = mediaFormatNode["Duration"].asString();
-	if(!mediaFormatNode["Bitrate"].isNull())
-		mediaMeta_.mediaFormat.bitrate = mediaFormatNode["Bitrate"].asString();
-	if(!mediaFormatNode["Location"].isNull())
-		mediaMeta_.mediaFormat.location = mediaFormatNode["Location"].asString();
 	if(!mediaFormatNode["NumberPrograms"].isNull())
 		mediaMeta_.mediaFormat.numberPrograms = std::stoi(mediaFormatNode["NumberPrograms"].asString());
+	if(!mediaFormatNode["NumberStreams"].isNull())
+		mediaMeta_.mediaFormat.numberStreams = std::stoi(mediaFormatNode["NumberStreams"].asString());
+	if(!mediaFormatNode["Bitrate"].isNull())
+		mediaMeta_.mediaFormat.bitrate = mediaFormatNode["Bitrate"].asString();
+	if(!mediaFormatNode["StartTime"].isNull())
+		mediaMeta_.mediaFormat.startTime = mediaFormatNode["StartTime"].asString();
+	if(!mediaFormatNode["Size"].isNull())
+		mediaMeta_.mediaFormat.size = mediaFormatNode["Size"].asString();
+	if(!mediaFormatNode["FormatLongName"].isNull())
+		mediaMeta_.mediaFormat.formatLongName = mediaFormatNode["FormatLongName"].asString();
+	if(!mediaFormatNode["Duration"].isNull())
+		mediaMeta_.mediaFormat.duration = mediaFormatNode["Duration"].asString();
+	if(!mediaFormatNode["FormatName"].isNull())
+		mediaMeta_.mediaFormat.formatName = mediaFormatNode["FormatName"].asString();
+	if(!mediaFormatNode["Location"].isNull())
+		mediaMeta_.mediaFormat.location = mediaFormatNode["Location"].asString();
+	auto tagNode = mediaFormatNode["Tag"];
+	if(!tagNode["CreationTime"].isNull())
+		mediaMeta_.mediaFormat.tag.creationTime = tagNode["CreationTime"].asString();
+	if(!tagNode["Album"].isNull())
+		mediaMeta_.mediaFormat.tag.album = tagNode["Album"].asString();
+	if(!tagNode["AlbumArtist"].isNull())
+		mediaMeta_.mediaFormat.tag.albumArtist = tagNode["AlbumArtist"].asString();
+	if(!tagNode["Performer"].isNull())
+		mediaMeta_.mediaFormat.tag.performer = tagNode["Performer"].asString();
+	if(!tagNode["Composer"].isNull())
+		mediaMeta_.mediaFormat.tag.composer = tagNode["Composer"].asString();
+	if(!tagNode["Artist"].isNull())
+		mediaMeta_.mediaFormat.tag.artist = tagNode["Artist"].asString();
+	if(!tagNode["Title"].isNull())
+		mediaMeta_.mediaFormat.tag.title = tagNode["Title"].asString();
+	if(!tagNode["Language"].isNull())
+		mediaMeta_.mediaFormat.tag.language = tagNode["Language"].asString();
 	auto addressNode = mediaFormatNode["Address"];
 	if(!addressNode["Township"].isNull())
 		mediaMeta_.mediaFormat.address.township = addressNode["Township"].asString();
+	if(!addressNode["District"].isNull())
+		mediaMeta_.mediaFormat.address.district = addressNode["District"].asString();
 	if(!addressNode["AddressLine"].isNull())
 		mediaMeta_.mediaFormat.address.addressLine = addressNode["AddressLine"].asString();
 	if(!addressNode["Country"].isNull())
 		mediaMeta_.mediaFormat.address.country = addressNode["Country"].asString();
 	if(!addressNode["City"].isNull())
 		mediaMeta_.mediaFormat.address.city = addressNode["City"].asString();
-	if(!addressNode["District"].isNull())
-		mediaMeta_.mediaFormat.address.district = addressNode["District"].asString();
 	if(!addressNode["Province"].isNull())
 		mediaMeta_.mediaFormat.address.province = addressNode["Province"].asString();
-	auto tagNode = mediaFormatNode["Tag"];
-	if(!tagNode["Artist"].isNull())
-		mediaMeta_.mediaFormat.tag.artist = tagNode["Artist"].asString();
-	if(!tagNode["Composer"].isNull())
-		mediaMeta_.mediaFormat.tag.composer = tagNode["Composer"].asString();
-	if(!tagNode["Performer"].isNull())
-		mediaMeta_.mediaFormat.tag.performer = tagNode["Performer"].asString();
-	if(!tagNode["Language"].isNull())
-		mediaMeta_.mediaFormat.tag.language = tagNode["Language"].asString();
-	if(!tagNode["CreationTime"].isNull())
-		mediaMeta_.mediaFormat.tag.creationTime = tagNode["CreationTime"].asString();
-	if(!tagNode["Title"].isNull())
-		mediaMeta_.mediaFormat.tag.title = tagNode["Title"].asString();
-	if(!tagNode["Album"].isNull())
-		mediaMeta_.mediaFormat.tag.album = tagNode["Album"].asString();
-	if(!tagNode["AlbumArtist"].isNull())
-		mediaMeta_.mediaFormat.tag.albumArtist = tagNode["AlbumArtist"].asString();
 	auto mediaStreamsNode = mediaMetaNode["MediaStreams"];
 	auto allVideoStreamsNode = mediaStreamsNode["VideoStreams"]["VideoStream"];
 	for (auto mediaStreamsNodeVideoStreamsVideoStream : allVideoStreamsNode)
 	{
 		MediaMeta::MediaStreams::VideoStream videoStreamObject;
-		if(!mediaStreamsNodeVideoStreamsVideoStream["CodecTag"].isNull())
-			videoStreamObject.codecTag = mediaStreamsNodeVideoStreamsVideoStream["CodecTag"].asString();
-		if(!mediaStreamsNodeVideoStreamsVideoStream["Frames"].isNull())
-			videoStreamObject.frames = mediaStreamsNodeVideoStreamsVideoStream["Frames"].asString();
-		if(!mediaStreamsNodeVideoStreamsVideoStream["CodecTimeBase"].isNull())
-			videoStreamObject.codecTimeBase = mediaStreamsNodeVideoStreamsVideoStream["CodecTimeBase"].asString();
-		if(!mediaStreamsNodeVideoStreamsVideoStream["Rotate"].isNull())
-			videoStreamObject.rotate = mediaStreamsNodeVideoStreamsVideoStream["Rotate"].asString();
-		if(!mediaStreamsNodeVideoStreamsVideoStream["SampleAspectRatio"].isNull())
-			videoStreamObject.sampleAspectRatio = mediaStreamsNodeVideoStreamsVideoStream["SampleAspectRatio"].asString();
-		if(!mediaStreamsNodeVideoStreamsVideoStream["StartTime"].isNull())
-			videoStreamObject.startTime = mediaStreamsNodeVideoStreamsVideoStream["StartTime"].asString();
-		if(!mediaStreamsNodeVideoStreamsVideoStream["Duration"].isNull())
-			videoStreamObject.duration = mediaStreamsNodeVideoStreamsVideoStream["Duration"].asString();
 		if(!mediaStreamsNodeVideoStreamsVideoStream["Index"].isNull())
 			videoStreamObject.index = std::stoi(mediaStreamsNodeVideoStreamsVideoStream["Index"].asString());
-		if(!mediaStreamsNodeVideoStreamsVideoStream["CodecName"].isNull())
-			videoStreamObject.codecName = mediaStreamsNodeVideoStreamsVideoStream["CodecName"].asString();
-		if(!mediaStreamsNodeVideoStreamsVideoStream["Bitrate"].isNull())
-			videoStreamObject.bitrate = mediaStreamsNodeVideoStreamsVideoStream["Bitrate"].asString();
-		if(!mediaStreamsNodeVideoStreamsVideoStream["Profile"].isNull())
-			videoStreamObject.profile = mediaStreamsNodeVideoStreamsVideoStream["Profile"].asString();
-		if(!mediaStreamsNodeVideoStreamsVideoStream["DisplayAspectRatio"].isNull())
-			videoStreamObject.displayAspectRatio = mediaStreamsNodeVideoStreamsVideoStream["DisplayAspectRatio"].asString();
-		if(!mediaStreamsNodeVideoStreamsVideoStream["HasBFrames"].isNull())
-			videoStreamObject.hasBFrames = std::stoi(mediaStreamsNodeVideoStreamsVideoStream["HasBFrames"].asString());
-		if(!mediaStreamsNodeVideoStreamsVideoStream["CodecTagString"].isNull())
-			videoStreamObject.codecTagString = mediaStreamsNodeVideoStreamsVideoStream["CodecTagString"].asString();
-		if(!mediaStreamsNodeVideoStreamsVideoStream["AverageFrameRate"].isNull())
-			videoStreamObject.averageFrameRate = mediaStreamsNodeVideoStreamsVideoStream["AverageFrameRate"].asString();
-		if(!mediaStreamsNodeVideoStreamsVideoStream["Language"].isNull())
-			videoStreamObject.language = mediaStreamsNodeVideoStreamsVideoStream["Language"].asString();
 		if(!mediaStreamsNodeVideoStreamsVideoStream["CodecLongName"].isNull())
 			videoStreamObject.codecLongName = mediaStreamsNodeVideoStreamsVideoStream["CodecLongName"].asString();
-		if(!mediaStreamsNodeVideoStreamsVideoStream["PixelFormat"].isNull())
-			videoStreamObject.pixelFormat = mediaStreamsNodeVideoStreamsVideoStream["PixelFormat"].asString();
-		if(!mediaStreamsNodeVideoStreamsVideoStream["Level"].isNull())
-			videoStreamObject.level = std::stoi(mediaStreamsNodeVideoStreamsVideoStream["Level"].asString());
 		if(!mediaStreamsNodeVideoStreamsVideoStream["Height"].isNull())
 			videoStreamObject.height = std::stoi(mediaStreamsNodeVideoStreamsVideoStream["Height"].asString());
+		if(!mediaStreamsNodeVideoStreamsVideoStream["SampleAspectRatio"].isNull())
+			videoStreamObject.sampleAspectRatio = mediaStreamsNodeVideoStreamsVideoStream["SampleAspectRatio"].asString();
+		if(!mediaStreamsNodeVideoStreamsVideoStream["AverageFrameRate"].isNull())
+			videoStreamObject.averageFrameRate = mediaStreamsNodeVideoStreamsVideoStream["AverageFrameRate"].asString();
+		if(!mediaStreamsNodeVideoStreamsVideoStream["Bitrate"].isNull())
+			videoStreamObject.bitrate = mediaStreamsNodeVideoStreamsVideoStream["Bitrate"].asString();
+		if(!mediaStreamsNodeVideoStreamsVideoStream["Rotate"].isNull())
+			videoStreamObject.rotate = mediaStreamsNodeVideoStreamsVideoStream["Rotate"].asString();
+		if(!mediaStreamsNodeVideoStreamsVideoStream["CodecTagString"].isNull())
+			videoStreamObject.codecTagString = mediaStreamsNodeVideoStreamsVideoStream["CodecTagString"].asString();
+		if(!mediaStreamsNodeVideoStreamsVideoStream["Language"].isNull())
+			videoStreamObject.language = mediaStreamsNodeVideoStreamsVideoStream["Language"].asString();
+		if(!mediaStreamsNodeVideoStreamsVideoStream["HasBFrames"].isNull())
+			videoStreamObject.hasBFrames = std::stoi(mediaStreamsNodeVideoStreamsVideoStream["HasBFrames"].asString());
 		if(!mediaStreamsNodeVideoStreamsVideoStream["FrameRrate"].isNull())
 			videoStreamObject.frameRrate = mediaStreamsNodeVideoStreamsVideoStream["FrameRrate"].asString();
+		if(!mediaStreamsNodeVideoStreamsVideoStream["Profile"].isNull())
+			videoStreamObject.profile = mediaStreamsNodeVideoStreamsVideoStream["Profile"].asString();
+		if(!mediaStreamsNodeVideoStreamsVideoStream["StartTime"].isNull())
+			videoStreamObject.startTime = mediaStreamsNodeVideoStreamsVideoStream["StartTime"].asString();
+		if(!mediaStreamsNodeVideoStreamsVideoStream["Frames"].isNull())
+			videoStreamObject.frames = mediaStreamsNodeVideoStreamsVideoStream["Frames"].asString();
+		if(!mediaStreamsNodeVideoStreamsVideoStream["CodecName"].isNull())
+			videoStreamObject.codecName = mediaStreamsNodeVideoStreamsVideoStream["CodecName"].asString();
 		if(!mediaStreamsNodeVideoStreamsVideoStream["Width"].isNull())
 			videoStreamObject.width = std::stoi(mediaStreamsNodeVideoStreamsVideoStream["Width"].asString());
+		if(!mediaStreamsNodeVideoStreamsVideoStream["Duration"].isNull())
+			videoStreamObject.duration = mediaStreamsNodeVideoStreamsVideoStream["Duration"].asString();
+		if(!mediaStreamsNodeVideoStreamsVideoStream["DisplayAspectRatio"].isNull())
+			videoStreamObject.displayAspectRatio = mediaStreamsNodeVideoStreamsVideoStream["DisplayAspectRatio"].asString();
+		if(!mediaStreamsNodeVideoStreamsVideoStream["CodecTag"].isNull())
+			videoStreamObject.codecTag = mediaStreamsNodeVideoStreamsVideoStream["CodecTag"].asString();
+		if(!mediaStreamsNodeVideoStreamsVideoStream["CodecTimeBase"].isNull())
+			videoStreamObject.codecTimeBase = mediaStreamsNodeVideoStreamsVideoStream["CodecTimeBase"].asString();
 		if(!mediaStreamsNodeVideoStreamsVideoStream["TimeBase"].isNull())
 			videoStreamObject.timeBase = mediaStreamsNodeVideoStreamsVideoStream["TimeBase"].asString();
+		if(!mediaStreamsNodeVideoStreamsVideoStream["Level"].isNull())
+			videoStreamObject.level = std::stoi(mediaStreamsNodeVideoStreamsVideoStream["Level"].asString());
+		if(!mediaStreamsNodeVideoStreamsVideoStream["PixelFormat"].isNull())
+			videoStreamObject.pixelFormat = mediaStreamsNodeVideoStreamsVideoStream["PixelFormat"].asString();
 		mediaMeta_.mediaStreams.videoStreams.push_back(videoStreamObject);
-	}
-	auto allSubtitleStreamsNode = mediaStreamsNode["SubtitleStreams"]["SubtitleStream"];
-	for (auto mediaStreamsNodeSubtitleStreamsSubtitleStream : allSubtitleStreamsNode)
-	{
-		MediaMeta::MediaStreams::SubtitleStream subtitleStreamObject;
-		if(!mediaStreamsNodeSubtitleStreamsSubtitleStream["Language"].isNull())
-			subtitleStreamObject.language = mediaStreamsNodeSubtitleStreamsSubtitleStream["Language"].asString();
-		if(!mediaStreamsNodeSubtitleStreamsSubtitleStream["Index"].isNull())
-			subtitleStreamObject.index = std::stoi(mediaStreamsNodeSubtitleStreamsSubtitleStream["Index"].asString());
-		mediaMeta_.mediaStreams.subtitleStreams.push_back(subtitleStreamObject);
 	}
 	auto allAudioStreamsNode = mediaStreamsNode["AudioStreams"]["AudioStream"];
 	for (auto mediaStreamsNodeAudioStreamsAudioStream : allAudioStreamsNode)
 	{
 		MediaMeta::MediaStreams::AudioStream audioStreamObject;
-		if(!mediaStreamsNodeAudioStreamsAudioStream["CodecTag"].isNull())
-			audioStreamObject.codecTag = mediaStreamsNodeAudioStreamsAudioStream["CodecTag"].asString();
-		if(!mediaStreamsNodeAudioStreamsAudioStream["Frames"].isNull())
-			audioStreamObject.frames = mediaStreamsNodeAudioStreamsAudioStream["Frames"].asString();
-		if(!mediaStreamsNodeAudioStreamsAudioStream["CodecTimeBase"].isNull())
-			audioStreamObject.codecTimeBase = mediaStreamsNodeAudioStreamsAudioStream["CodecTimeBase"].asString();
-		if(!mediaStreamsNodeAudioStreamsAudioStream["ChannelLayout"].isNull())
-			audioStreamObject.channelLayout = mediaStreamsNodeAudioStreamsAudioStream["ChannelLayout"].asString();
-		if(!mediaStreamsNodeAudioStreamsAudioStream["StartTime"].isNull())
-			audioStreamObject.startTime = mediaStreamsNodeAudioStreamsAudioStream["StartTime"].asString();
-		if(!mediaStreamsNodeAudioStreamsAudioStream["Duration"].isNull())
-			audioStreamObject.duration = mediaStreamsNodeAudioStreamsAudioStream["Duration"].asString();
 		if(!mediaStreamsNodeAudioStreamsAudioStream["Index"].isNull())
 			audioStreamObject.index = std::stoi(mediaStreamsNodeAudioStreamsAudioStream["Index"].asString());
-		if(!mediaStreamsNodeAudioStreamsAudioStream["CodecName"].isNull())
-			audioStreamObject.codecName = mediaStreamsNodeAudioStreamsAudioStream["CodecName"].asString();
-		if(!mediaStreamsNodeAudioStreamsAudioStream["Bitrate"].isNull())
-			audioStreamObject.bitrate = mediaStreamsNodeAudioStreamsAudioStream["Bitrate"].asString();
-		if(!mediaStreamsNodeAudioStreamsAudioStream["SampleFormat"].isNull())
-			audioStreamObject.sampleFormat = mediaStreamsNodeAudioStreamsAudioStream["SampleFormat"].asString();
-		if(!mediaStreamsNodeAudioStreamsAudioStream["Channels"].isNull())
-			audioStreamObject.channels = std::stoi(mediaStreamsNodeAudioStreamsAudioStream["Channels"].asString());
-		if(!mediaStreamsNodeAudioStreamsAudioStream["CodecTagString"].isNull())
-			audioStreamObject.codecTagString = mediaStreamsNodeAudioStreamsAudioStream["CodecTagString"].asString();
 		if(!mediaStreamsNodeAudioStreamsAudioStream["SampleRate"].isNull())
 			audioStreamObject.sampleRate = mediaStreamsNodeAudioStreamsAudioStream["SampleRate"].asString();
-		if(!mediaStreamsNodeAudioStreamsAudioStream["Language"].isNull())
-			audioStreamObject.language = mediaStreamsNodeAudioStreamsAudioStream["Language"].asString();
+		if(!mediaStreamsNodeAudioStreamsAudioStream["ChannelLayout"].isNull())
+			audioStreamObject.channelLayout = mediaStreamsNodeAudioStreamsAudioStream["ChannelLayout"].asString();
 		if(!mediaStreamsNodeAudioStreamsAudioStream["CodecLongName"].isNull())
 			audioStreamObject.codecLongName = mediaStreamsNodeAudioStreamsAudioStream["CodecLongName"].asString();
+		if(!mediaStreamsNodeAudioStreamsAudioStream["Channels"].isNull())
+			audioStreamObject.channels = std::stoi(mediaStreamsNodeAudioStreamsAudioStream["Channels"].asString());
+		if(!mediaStreamsNodeAudioStreamsAudioStream["Bitrate"].isNull())
+			audioStreamObject.bitrate = mediaStreamsNodeAudioStreamsAudioStream["Bitrate"].asString();
+		if(!mediaStreamsNodeAudioStreamsAudioStream["CodecTagString"].isNull())
+			audioStreamObject.codecTagString = mediaStreamsNodeAudioStreamsAudioStream["CodecTagString"].asString();
+		if(!mediaStreamsNodeAudioStreamsAudioStream["Language"].isNull())
+			audioStreamObject.language = mediaStreamsNodeAudioStreamsAudioStream["Language"].asString();
+		if(!mediaStreamsNodeAudioStreamsAudioStream["StartTime"].isNull())
+			audioStreamObject.startTime = mediaStreamsNodeAudioStreamsAudioStream["StartTime"].asString();
+		if(!mediaStreamsNodeAudioStreamsAudioStream["SampleFormat"].isNull())
+			audioStreamObject.sampleFormat = mediaStreamsNodeAudioStreamsAudioStream["SampleFormat"].asString();
+		if(!mediaStreamsNodeAudioStreamsAudioStream["Frames"].isNull())
+			audioStreamObject.frames = mediaStreamsNodeAudioStreamsAudioStream["Frames"].asString();
+		if(!mediaStreamsNodeAudioStreamsAudioStream["CodecName"].isNull())
+			audioStreamObject.codecName = mediaStreamsNodeAudioStreamsAudioStream["CodecName"].asString();
+		if(!mediaStreamsNodeAudioStreamsAudioStream["Duration"].isNull())
+			audioStreamObject.duration = mediaStreamsNodeAudioStreamsAudioStream["Duration"].asString();
+		if(!mediaStreamsNodeAudioStreamsAudioStream["CodecTag"].isNull())
+			audioStreamObject.codecTag = mediaStreamsNodeAudioStreamsAudioStream["CodecTag"].asString();
+		if(!mediaStreamsNodeAudioStreamsAudioStream["CodecTimeBase"].isNull())
+			audioStreamObject.codecTimeBase = mediaStreamsNodeAudioStreamsAudioStream["CodecTimeBase"].asString();
 		if(!mediaStreamsNodeAudioStreamsAudioStream["TimeBase"].isNull())
 			audioStreamObject.timeBase = mediaStreamsNodeAudioStreamsAudioStream["TimeBase"].asString();
 		mediaMeta_.mediaStreams.audioStreams.push_back(audioStreamObject);
+	}
+	auto allSubtitleStreamsNode = mediaStreamsNode["SubtitleStreams"]["SubtitleStream"];
+	for (auto mediaStreamsNodeSubtitleStreamsSubtitleStream : allSubtitleStreamsNode)
+	{
+		MediaMeta::MediaStreams::SubtitleStream subtitleStreamObject;
+		if(!mediaStreamsNodeSubtitleStreamsSubtitleStream["Index"].isNull())
+			subtitleStreamObject.index = std::stoi(mediaStreamsNodeSubtitleStreamsSubtitleStream["Index"].asString());
+		if(!mediaStreamsNodeSubtitleStreamsSubtitleStream["Language"].isNull())
+			subtitleStreamObject.language = mediaStreamsNodeSubtitleStreamsSubtitleStream["Language"].asString();
+		mediaMeta_.mediaStreams.subtitleStreams.push_back(subtitleStreamObject);
 	}
 	if(!value["MediaUri"].isNull())
 		mediaUri_ = value["MediaUri"].asString();

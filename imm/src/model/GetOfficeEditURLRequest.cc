@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,133 +18,109 @@
 
 using AlibabaCloud::Imm::Model::GetOfficeEditURLRequest;
 
-GetOfficeEditURLRequest::GetOfficeEditURLRequest() :
-	RpcServiceRequest("imm", "2017-09-06", "GetOfficeEditURL")
-{
-	setMethod(HttpRequest::Method::Post);
+GetOfficeEditURLRequest::GetOfficeEditURLRequest()
+    : RpcServiceRequest("imm", "2017-09-06", "GetOfficeEditURL") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-GetOfficeEditURLRequest::~GetOfficeEditURLRequest()
-{}
+GetOfficeEditURLRequest::~GetOfficeEditURLRequest() {}
 
-std::string GetOfficeEditURLRequest::getSrcType()const
-{
-	return srcType_;
+std::string GetOfficeEditURLRequest::getSrcType() const {
+  return srcType_;
 }
 
-void GetOfficeEditURLRequest::setSrcType(const std::string& srcType)
-{
-	srcType_ = srcType;
-	setParameter("SrcType", srcType);
+void GetOfficeEditURLRequest::setSrcType(const std::string &srcType) {
+  srcType_ = srcType;
+  setParameter(std::string("SrcType"), srcType);
 }
 
-std::string GetOfficeEditURLRequest::getProject()const
-{
-	return project_;
+std::string GetOfficeEditURLRequest::getProject() const {
+  return project_;
 }
 
-void GetOfficeEditURLRequest::setProject(const std::string& project)
-{
-	project_ = project;
-	setParameter("Project", project);
+void GetOfficeEditURLRequest::setProject(const std::string &project) {
+  project_ = project;
+  setParameter(std::string("Project"), project);
 }
 
-std::string GetOfficeEditURLRequest::getUserID()const
-{
-	return userID_;
+std::string GetOfficeEditURLRequest::getUserID() const {
+  return userID_;
 }
 
-void GetOfficeEditURLRequest::setUserID(const std::string& userID)
-{
-	userID_ = userID;
-	setParameter("UserID", userID);
+void GetOfficeEditURLRequest::setUserID(const std::string &userID) {
+  userID_ = userID;
+  setParameter(std::string("UserID"), userID);
 }
 
-std::string GetOfficeEditURLRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string GetOfficeEditURLRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void GetOfficeEditURLRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void GetOfficeEditURLRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string GetOfficeEditURLRequest::getNotifyEndpoint()const
-{
-	return notifyEndpoint_;
+std::string GetOfficeEditURLRequest::getNotifyEndpoint() const {
+  return notifyEndpoint_;
 }
 
-void GetOfficeEditURLRequest::setNotifyEndpoint(const std::string& notifyEndpoint)
-{
-	notifyEndpoint_ = notifyEndpoint;
-	setParameter("NotifyEndpoint", notifyEndpoint);
+void GetOfficeEditURLRequest::setNotifyEndpoint(const std::string &notifyEndpoint) {
+  notifyEndpoint_ = notifyEndpoint;
+  setParameter(std::string("NotifyEndpoint"), notifyEndpoint);
 }
 
-std::string GetOfficeEditURLRequest::getFileID()const
-{
-	return fileID_;
+std::string GetOfficeEditURLRequest::getFileID() const {
+  return fileID_;
 }
 
-void GetOfficeEditURLRequest::setFileID(const std::string& fileID)
-{
-	fileID_ = fileID;
-	setParameter("FileID", fileID);
+void GetOfficeEditURLRequest::setFileID(const std::string &fileID) {
+  fileID_ = fileID;
+  setParameter(std::string("FileID"), fileID);
 }
 
-std::string GetOfficeEditURLRequest::getNotifyTopicName()const
-{
-	return notifyTopicName_;
+std::string GetOfficeEditURLRequest::getNotifyTopicName() const {
+  return notifyTopicName_;
 }
 
-void GetOfficeEditURLRequest::setNotifyTopicName(const std::string& notifyTopicName)
-{
-	notifyTopicName_ = notifyTopicName;
-	setParameter("NotifyTopicName", notifyTopicName);
+void GetOfficeEditURLRequest::setNotifyTopicName(const std::string &notifyTopicName) {
+  notifyTopicName_ = notifyTopicName;
+  setParameter(std::string("NotifyTopicName"), notifyTopicName);
 }
 
-std::string GetOfficeEditURLRequest::getFileName()const
-{
-	return fileName_;
+std::string GetOfficeEditURLRequest::getFileName() const {
+  return fileName_;
 }
 
-void GetOfficeEditURLRequest::setFileName(const std::string& fileName)
-{
-	fileName_ = fileName;
-	setParameter("FileName", fileName);
+void GetOfficeEditURLRequest::setFileName(const std::string &fileName) {
+  fileName_ = fileName;
+  setParameter(std::string("FileName"), fileName);
 }
 
-std::string GetOfficeEditURLRequest::getSrcUri()const
-{
-	return srcUri_;
+std::string GetOfficeEditURLRequest::getSrcUri() const {
+  return srcUri_;
 }
 
-void GetOfficeEditURLRequest::setSrcUri(const std::string& srcUri)
-{
-	srcUri_ = srcUri;
-	setParameter("SrcUri", srcUri);
+void GetOfficeEditURLRequest::setSrcUri(const std::string &srcUri) {
+  srcUri_ = srcUri;
+  setParameter(std::string("SrcUri"), srcUri);
 }
 
-std::string GetOfficeEditURLRequest::getTgtUri()const
-{
-	return tgtUri_;
+std::string GetOfficeEditURLRequest::getTgtUri() const {
+  return tgtUri_;
 }
 
-void GetOfficeEditURLRequest::setTgtUri(const std::string& tgtUri)
-{
-	tgtUri_ = tgtUri;
-	setParameter("TgtUri", tgtUri);
+void GetOfficeEditURLRequest::setTgtUri(const std::string &tgtUri) {
+  tgtUri_ = tgtUri;
+  setParameter(std::string("TgtUri"), tgtUri);
 }
 
-std::string GetOfficeEditURLRequest::getUserName()const
-{
-	return userName_;
+std::string GetOfficeEditURLRequest::getUserName() const {
+  return userName_;
 }
 
-void GetOfficeEditURLRequest::setUserName(const std::string& userName)
-{
-	userName_ = userName;
-	setParameter("UserName", userName);
+void GetOfficeEditURLRequest::setUserName(const std::string &userName) {
+  userName_ = userName;
+  setParameter(std::string("UserName"), userName);
 }
 

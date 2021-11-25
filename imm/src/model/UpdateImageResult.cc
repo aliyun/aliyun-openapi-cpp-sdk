@@ -39,28 +39,28 @@ void UpdateImageResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["SetId"].isNull())
-		setId_ = value["SetId"].asString();
-	if(!value["ImageUri"].isNull())
-		imageUri_ = value["ImageUri"].asString();
-	if(!value["RemarksA"].isNull())
-		remarksA_ = value["RemarksA"].asString();
-	if(!value["RemarksB"].isNull())
-		remarksB_ = value["RemarksB"].asString();
-	if(!value["CreateTime"].isNull())
-		createTime_ = value["CreateTime"].asString();
+	if(!value["RemarksArrayB"].isNull())
+		remarksArrayB_ = value["RemarksArrayB"].asString();
 	if(!value["ModifyTime"].isNull())
 		modifyTime_ = value["ModifyTime"].asString();
 	if(!value["RemarksC"].isNull())
 		remarksC_ = value["RemarksC"].asString();
 	if(!value["RemarksD"].isNull())
 		remarksD_ = value["RemarksD"].asString();
+	if(!value["CreateTime"].isNull())
+		createTime_ = value["CreateTime"].asString();
 	if(!value["ExternalId"].isNull())
 		externalId_ = value["ExternalId"].asString();
 	if(!value["RemarksArrayA"].isNull())
 		remarksArrayA_ = value["RemarksArrayA"].asString();
-	if(!value["RemarksArrayB"].isNull())
-		remarksArrayB_ = value["RemarksArrayB"].asString();
+	if(!value["RemarksA"].isNull())
+		remarksA_ = value["RemarksA"].asString();
+	if(!value["ImageUri"].isNull())
+		imageUri_ = value["ImageUri"].asString();
+	if(!value["SetId"].isNull())
+		setId_ = value["SetId"].asString();
+	if(!value["RemarksB"].isNull())
+		remarksB_ = value["RemarksB"].asString();
 
 }
 
@@ -99,9 +99,9 @@ std::string UpdateImageResult::getRemarksArrayA()const
 	return remarksArrayA_;
 }
 
-std::string UpdateImageResult::getSetId()const
+std::string UpdateImageResult::getRemarksA()const
 {
-	return setId_;
+	return remarksA_;
 }
 
 std::string UpdateImageResult::getImageUri()const
@@ -109,9 +109,9 @@ std::string UpdateImageResult::getImageUri()const
 	return imageUri_;
 }
 
-std::string UpdateImageResult::getRemarksA()const
+std::string UpdateImageResult::getSetId()const
 {
-	return remarksA_;
+	return setId_;
 }
 
 std::string UpdateImageResult::getRemarksB()const

@@ -70,8 +70,6 @@
 #include "model/DetectImageBodiesResult.h"
 #include "model/DetectImageFacesRequest.h"
 #include "model/DetectImageFacesResult.h"
-#include "model/DetectImageLogosRequest.h"
-#include "model/DetectImageLogosResult.h"
 #include "model/DetectImageQRCodesRequest.h"
 #include "model/DetectImageQRCodesResult.h"
 #include "model/DetectImageTagsRequest.h"
@@ -237,9 +235,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DetectImageFacesResult> DetectImageFacesOutcome;
 			typedef std::future<DetectImageFacesOutcome> DetectImageFacesOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::DetectImageFacesRequest&, const DetectImageFacesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetectImageFacesAsyncHandler;
-			typedef Outcome<Error, Model::DetectImageLogosResult> DetectImageLogosOutcome;
-			typedef std::future<DetectImageLogosOutcome> DetectImageLogosOutcomeCallable;
-			typedef std::function<void(const ImmClient*, const Model::DetectImageLogosRequest&, const DetectImageLogosOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetectImageLogosAsyncHandler;
 			typedef Outcome<Error, Model::DetectImageQRCodesResult> DetectImageQRCodesOutcome;
 			typedef std::future<DetectImageQRCodesOutcome> DetectImageQRCodesOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::DetectImageQRCodesRequest&, const DetectImageQRCodesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetectImageQRCodesAsyncHandler;
@@ -443,9 +438,6 @@ namespace AlibabaCloud
 			DetectImageFacesOutcome detectImageFaces(const Model::DetectImageFacesRequest &request)const;
 			void detectImageFacesAsync(const Model::DetectImageFacesRequest& request, const DetectImageFacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DetectImageFacesOutcomeCallable detectImageFacesCallable(const Model::DetectImageFacesRequest& request) const;
-			DetectImageLogosOutcome detectImageLogos(const Model::DetectImageLogosRequest &request)const;
-			void detectImageLogosAsync(const Model::DetectImageLogosRequest& request, const DetectImageLogosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DetectImageLogosOutcomeCallable detectImageLogosCallable(const Model::DetectImageLogosRequest& request) const;
 			DetectImageQRCodesOutcome detectImageQRCodes(const Model::DetectImageQRCodesRequest &request)const;
 			void detectImageQRCodesAsync(const Model::DetectImageQRCodesRequest& request, const DetectImageQRCodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DetectImageQRCodesOutcomeCallable detectImageQRCodesCallable(const Model::DetectImageQRCodesRequest& request) const;

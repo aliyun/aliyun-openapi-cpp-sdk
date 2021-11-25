@@ -41,16 +41,16 @@ void UpdateProjectResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["Project"].isNull())
 		project_ = value["Project"].asString();
-	if(!value["CreateTime"].isNull())
-		createTime_ = value["CreateTime"].asString();
 	if(!value["ModifyTime"].isNull())
 		modifyTime_ = value["ModifyTime"].asString();
-	if(!value["ServiceRole"].isNull())
-		serviceRole_ = value["ServiceRole"].asString();
-	if(!value["CU"].isNull())
-		cU_ = std::stoi(value["CU"].asString());
 	if(!value["Type"].isNull())
 		type_ = value["Type"].asString();
+	if(!value["CU"].isNull())
+		cU_ = std::stoi(value["CU"].asString());
+	if(!value["ServiceRole"].isNull())
+		serviceRole_ = value["ServiceRole"].asString();
+	if(!value["CreateTime"].isNull())
+		createTime_ = value["CreateTime"].asString();
 	if(!value["RegionId"].isNull())
 		regionId_ = value["RegionId"].asString();
 
@@ -66,14 +66,14 @@ std::string UpdateProjectResult::getModifyTime()const
 	return modifyTime_;
 }
 
-int UpdateProjectResult::getCU()const
-{
-	return cU_;
-}
-
 std::string UpdateProjectResult::getType()const
 {
 	return type_;
+}
+
+int UpdateProjectResult::getCU()const
+{
+	return cU_;
 }
 
 std::string UpdateProjectResult::getServiceRole()const

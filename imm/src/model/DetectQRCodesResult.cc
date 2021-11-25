@@ -52,14 +52,14 @@ void DetectQRCodesResult::parse(const std::string &payload)
 			if(!valueSuccessDetailsSuccessDetailsItemQRCodesQRCodesItem["Content"].isNull())
 				qRCodesObject.content = valueSuccessDetailsSuccessDetailsItemQRCodesQRCodesItem["Content"].asString();
 			auto qRCodesRectangleNode = value["QRCodesRectangle"];
-			if(!qRCodesRectangleNode["Left"].isNull())
-				qRCodesObject.qRCodesRectangle.left = qRCodesRectangleNode["Left"].asString();
 			if(!qRCodesRectangleNode["Top"].isNull())
 				qRCodesObject.qRCodesRectangle.top = qRCodesRectangleNode["Top"].asString();
 			if(!qRCodesRectangleNode["Width"].isNull())
 				qRCodesObject.qRCodesRectangle.width = qRCodesRectangleNode["Width"].asString();
 			if(!qRCodesRectangleNode["Height"].isNull())
 				qRCodesObject.qRCodesRectangle.height = qRCodesRectangleNode["Height"].asString();
+			if(!qRCodesRectangleNode["Left"].isNull())
+				qRCodesObject.qRCodesRectangle.left = qRCodesRectangleNode["Left"].asString();
 			successDetailsObject.qRCodes.push_back(qRCodesObject);
 		}
 		successDetails_.push_back(successDetailsObject);
@@ -68,12 +68,12 @@ void DetectQRCodesResult::parse(const std::string &payload)
 	for (auto valueFailDetailsFailDetailsItem : allFailDetailsNode)
 	{
 		FailDetailsItem failDetailsObject;
+		if(!valueFailDetailsFailDetailsItem["ErrorMessage"].isNull())
+			failDetailsObject.errorMessage = valueFailDetailsFailDetailsItem["ErrorMessage"].asString();
 		if(!valueFailDetailsFailDetailsItem["SrcUri"].isNull())
 			failDetailsObject.srcUri = valueFailDetailsFailDetailsItem["SrcUri"].asString();
 		if(!valueFailDetailsFailDetailsItem["ErrorCode"].isNull())
 			failDetailsObject.errorCode = valueFailDetailsFailDetailsItem["ErrorCode"].asString();
-		if(!valueFailDetailsFailDetailsItem["ErrorMessage"].isNull())
-			failDetailsObject.errorMessage = valueFailDetailsFailDetailsItem["ErrorMessage"].asString();
 		failDetails_.push_back(failDetailsObject);
 	}
 

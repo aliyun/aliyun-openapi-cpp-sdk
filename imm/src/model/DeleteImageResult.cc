@@ -39,20 +39,20 @@ void DeleteImageResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["ImageUri"].isNull())
-		imageUri_ = value["ImageUri"].asString();
 	if(!value["SetId"].isNull())
 		setId_ = value["SetId"].asString();
+	if(!value["ImageUri"].isNull())
+		imageUri_ = value["ImageUri"].asString();
 
-}
-
-std::string DeleteImageResult::getImageUri()const
-{
-	return imageUri_;
 }
 
 std::string DeleteImageResult::getSetId()const
 {
 	return setId_;
+}
+
+std::string DeleteImageResult::getImageUri()const
+{
+	return imageUri_;
 }
 

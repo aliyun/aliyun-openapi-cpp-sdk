@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,133 +18,109 @@
 
 using AlibabaCloud::Imm::Model::GetWebofficeURLRequest;
 
-GetWebofficeURLRequest::GetWebofficeURLRequest() :
-	RpcServiceRequest("imm", "2017-09-06", "GetWebofficeURL")
-{
-	setMethod(HttpRequest::Method::Post);
+GetWebofficeURLRequest::GetWebofficeURLRequest()
+    : RpcServiceRequest("imm", "2017-09-06", "GetWebofficeURL") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-GetWebofficeURLRequest::~GetWebofficeURLRequest()
-{}
+GetWebofficeURLRequest::~GetWebofficeURLRequest() {}
 
-std::string GetWebofficeURLRequest::getSrcType()const
-{
-	return srcType_;
+std::string GetWebofficeURLRequest::getSrcType() const {
+  return srcType_;
 }
 
-void GetWebofficeURLRequest::setSrcType(const std::string& srcType)
-{
-	srcType_ = srcType;
-	setParameter("SrcType", srcType);
+void GetWebofficeURLRequest::setSrcType(const std::string &srcType) {
+  srcType_ = srcType;
+  setParameter(std::string("SrcType"), srcType);
 }
 
-std::string GetWebofficeURLRequest::getProject()const
-{
-	return project_;
+std::string GetWebofficeURLRequest::getProject() const {
+  return project_;
 }
 
-void GetWebofficeURLRequest::setProject(const std::string& project)
-{
-	project_ = project;
-	setParameter("Project", project);
+void GetWebofficeURLRequest::setProject(const std::string &project) {
+  project_ = project;
+  setParameter(std::string("Project"), project);
 }
 
-std::string GetWebofficeURLRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string GetWebofficeURLRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void GetWebofficeURLRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void GetWebofficeURLRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string GetWebofficeURLRequest::getFile()const
-{
-	return file_;
+std::string GetWebofficeURLRequest::getFile() const {
+  return file_;
 }
 
-void GetWebofficeURLRequest::setFile(const std::string& file)
-{
-	file_ = file;
-	setParameter("File", file);
+void GetWebofficeURLRequest::setFile(const std::string &file) {
+  file_ = file;
+  setParameter(std::string("File"), file);
 }
 
-bool GetWebofficeURLRequest::getHidecmb()const
-{
-	return hidecmb_;
+bool GetWebofficeURLRequest::getHidecmb() const {
+  return hidecmb_;
 }
 
-void GetWebofficeURLRequest::setHidecmb(bool hidecmb)
-{
-	hidecmb_ = hidecmb;
-	setParameter("Hidecmb", hidecmb ? "true" : "false");
+void GetWebofficeURLRequest::setHidecmb(bool hidecmb) {
+  hidecmb_ = hidecmb;
+  setParameter(std::string("Hidecmb"), hidecmb ? "true" : "false");
 }
 
-std::string GetWebofficeURLRequest::getNotifyEndpoint()const
-{
-	return notifyEndpoint_;
+std::string GetWebofficeURLRequest::getNotifyEndpoint() const {
+  return notifyEndpoint_;
 }
 
-void GetWebofficeURLRequest::setNotifyEndpoint(const std::string& notifyEndpoint)
-{
-	notifyEndpoint_ = notifyEndpoint;
-	setParameter("NotifyEndpoint", notifyEndpoint);
+void GetWebofficeURLRequest::setNotifyEndpoint(const std::string &notifyEndpoint) {
+  notifyEndpoint_ = notifyEndpoint;
+  setParameter(std::string("NotifyEndpoint"), notifyEndpoint);
 }
 
-std::string GetWebofficeURLRequest::getFileID()const
-{
-	return fileID_;
+std::string GetWebofficeURLRequest::getFileID() const {
+  return fileID_;
 }
 
-void GetWebofficeURLRequest::setFileID(const std::string& fileID)
-{
-	fileID_ = fileID;
-	setParameter("FileID", fileID);
+void GetWebofficeURLRequest::setFileID(const std::string &fileID) {
+  fileID_ = fileID;
+  setParameter(std::string("FileID"), fileID);
 }
 
-std::string GetWebofficeURLRequest::getWatermark()const
-{
-	return watermark_;
+std::string GetWebofficeURLRequest::getWatermark() const {
+  return watermark_;
 }
 
-void GetWebofficeURLRequest::setWatermark(const std::string& watermark)
-{
-	watermark_ = watermark;
-	setParameter("Watermark", watermark);
+void GetWebofficeURLRequest::setWatermark(const std::string &watermark) {
+  watermark_ = watermark;
+  setParameter(std::string("Watermark"), watermark);
 }
 
-std::string GetWebofficeURLRequest::getNotifyTopicName()const
-{
-	return notifyTopicName_;
+std::string GetWebofficeURLRequest::getNotifyTopicName() const {
+  return notifyTopicName_;
 }
 
-void GetWebofficeURLRequest::setNotifyTopicName(const std::string& notifyTopicName)
-{
-	notifyTopicName_ = notifyTopicName;
-	setParameter("NotifyTopicName", notifyTopicName);
+void GetWebofficeURLRequest::setNotifyTopicName(const std::string &notifyTopicName) {
+  notifyTopicName_ = notifyTopicName;
+  setParameter(std::string("NotifyTopicName"), notifyTopicName);
 }
 
-std::string GetWebofficeURLRequest::getPermission()const
-{
-	return permission_;
+std::string GetWebofficeURLRequest::getPermission() const {
+  return permission_;
 }
 
-void GetWebofficeURLRequest::setPermission(const std::string& permission)
-{
-	permission_ = permission;
-	setParameter("Permission", permission);
+void GetWebofficeURLRequest::setPermission(const std::string &permission) {
+  permission_ = permission;
+  setParameter(std::string("Permission"), permission);
 }
 
-std::string GetWebofficeURLRequest::getUser()const
-{
-	return user_;
+std::string GetWebofficeURLRequest::getUser() const {
+  return user_;
 }
 
-void GetWebofficeURLRequest::setUser(const std::string& user)
-{
-	user_ = user;
-	setParameter("User", user);
+void GetWebofficeURLRequest::setUser(const std::string &user) {
+  user_ = user;
+  setParameter(std::string("User"), user);
 }
 

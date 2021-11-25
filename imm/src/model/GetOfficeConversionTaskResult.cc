@@ -42,30 +42,30 @@ void GetOfficeConversionTaskResult::parse(const std::string &payload)
 	auto failDetailNode = value["FailDetail"];
 	if(!failDetailNode["Code"].isNull())
 		failDetail_.code = failDetailNode["Code"].asString();
-	if(!value["TgtType"].isNull())
-		tgtType_ = value["TgtType"].asString();
 	if(!value["Status"].isNull())
 		status_ = value["Status"].asString();
-	if(!value["Percent"].isNull())
-		percent_ = std::stoi(value["Percent"].asString());
-	if(!value["PageCount"].isNull())
-		pageCount_ = std::stoi(value["PageCount"].asString());
+	if(!value["TgtType"].isNull())
+		tgtType_ = value["TgtType"].asString();
 	if(!value["TaskId"].isNull())
 		taskId_ = value["TaskId"].asString();
-	if(!value["TgtUri"].isNull())
-		tgtUri_ = value["TgtUri"].asString();
-	if(!value["ImageSpec"].isNull())
-		imageSpec_ = value["ImageSpec"].asString();
-	if(!value["NotifyTopicName"].isNull())
-		notifyTopicName_ = value["NotifyTopicName"].asString();
-	if(!value["NotifyEndpoint"].isNull())
-		notifyEndpoint_ = value["NotifyEndpoint"].asString();
-	if(!value["ExternalID"].isNull())
-		externalID_ = value["ExternalID"].asString();
+	if(!value["Percent"].isNull())
+		percent_ = std::stoi(value["Percent"].asString());
 	if(!value["CreateTime"].isNull())
 		createTime_ = value["CreateTime"].asString();
+	if(!value["ExternalID"].isNull())
+		externalID_ = value["ExternalID"].asString();
+	if(!value["ImageSpec"].isNull())
+		imageSpec_ = value["ImageSpec"].asString();
+	if(!value["NotifyEndpoint"].isNull())
+		notifyEndpoint_ = value["NotifyEndpoint"].asString();
+	if(!value["TgtUri"].isNull())
+		tgtUri_ = value["TgtUri"].asString();
 	if(!value["FinishTime"].isNull())
 		finishTime_ = value["FinishTime"].asString();
+	if(!value["PageCount"].isNull())
+		pageCount_ = std::stoi(value["PageCount"].asString());
+	if(!value["NotifyTopicName"].isNull())
+		notifyTopicName_ = value["NotifyTopicName"].asString();
 	if(!value["SrcUri"].isNull())
 		srcUri_ = value["SrcUri"].asString();
 
@@ -96,14 +96,14 @@ int GetOfficeConversionTaskResult::getPercent()const
 	return percent_;
 }
 
-std::string GetOfficeConversionTaskResult::getExternalID()const
-{
-	return externalID_;
-}
-
 std::string GetOfficeConversionTaskResult::getCreateTime()const
 {
 	return createTime_;
+}
+
+std::string GetOfficeConversionTaskResult::getExternalID()const
+{
+	return externalID_;
 }
 
 std::string GetOfficeConversionTaskResult::getImageSpec()const
@@ -121,14 +121,14 @@ std::string GetOfficeConversionTaskResult::getTgtUri()const
 	return tgtUri_;
 }
 
-int GetOfficeConversionTaskResult::getPageCount()const
-{
-	return pageCount_;
-}
-
 std::string GetOfficeConversionTaskResult::getFinishTime()const
 {
 	return finishTime_;
+}
+
+int GetOfficeConversionTaskResult::getPageCount()const
+{
+	return pageCount_;
 }
 
 std::string GetOfficeConversionTaskResult::getNotifyTopicName()const

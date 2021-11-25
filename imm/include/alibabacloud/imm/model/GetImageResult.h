@@ -36,14 +36,14 @@ namespace AlibabaCloud
 				{
 					float clarityScore;
 					float compositionScore;
-					float contrastScore;
 					float color;
+					float contrastScore;
 					float exposure;
 					float overallScore;
-					float clarity;
 					float contrast;
-					float exposureScore;
+					float clarity;
 					float colorScore;
+					float exposureScore;
 				};
 				struct Address
 				{
@@ -54,31 +54,16 @@ namespace AlibabaCloud
 					std::string district;
 					std::string province;
 				};
-				struct CroppingSuggestionItem
+				struct TagsItem
 				{
-					struct CroppingBoundary
-					{
-						int left;
-						int top;
-						int height;
-						int width;
-					};
-					std::string aspectRatio;
-					float score;
-					CroppingBoundary croppingBoundary;
+					float centricScore;
+					std::string tagName;
+					float tagConfidence;
+					int tagLevel;
+					std::string parentTagName;
 				};
 				struct FacesItem
 				{
-					struct EmotionDetails
-					{
-						float cALM;
-						float sCARED;
-						float hAPPY;
-						float sAD;
-						float sURPRISED;
-						float aNGRY;
-						float dISGUSTED;
-					};
 					struct FaceAttributes
 					{
 						struct FaceBoundary
@@ -98,30 +83,46 @@ namespace AlibabaCloud
 						std::string beard;
 						float beardConfidence;
 						HeadPose headPose;
-						float maskConfidence;
-						std::string mask;
 						std::string glasses;
+						std::string mask;
+						float maskConfidence;
 						float glassesConfidence;
 					};
+					struct EmotionDetails
+					{
+						float cALM;
+						float sCARED;
+						float hAPPY;
+						float sURPRISED;
+						float sAD;
+						float dISGUSTED;
+						float aNGRY;
+					};
 					EmotionDetails emotionDetails;
-					float faceConfidence;
 					std::string faceId;
-					float attractive;
+					float faceConfidence;
 					float faceQuality;
+					float attractive;
 					FaceAttributes faceAttributes;
 					float genderConfidence;
 					float emotionConfidence;
-					std::string emotion;
 					std::string gender;
+					std::string emotion;
 					std::string age;
 					std::string groupId;
 				};
-				struct TagsItem
+				struct CroppingSuggestionItem
 				{
-					float tagConfidence;
-					std::string tagName;
-					int tagLevel;
-					std::string parentTagName;
+					struct CroppingBoundary
+					{
+						int left;
+						int top;
+						int height;
+						int width;
+					};
+					std::string aspectRatio;
+					float score;
+					CroppingBoundary croppingBoundary;
 				};
 				struct OCRItem
 				{
@@ -144,49 +145,49 @@ namespace AlibabaCloud
 				ImageQuality getImageQuality()const;
 				std::string getModifyTime()const;
 				Address getAddress()const;
-				std::string getSourceUri()const;
 				std::string getSourceType()const;
+				std::string getSourceUri()const;
 				std::string getFacesFailReason()const;
 				std::string getCroppingSuggestionStatus()const;
 				std::string getCroppingSuggestionFailReason()const;
-				std::string getRemarksA()const;
 				std::string getAddressFailReason()const;
-				std::string getRemarksB()const;
+				std::string getRemarksA()const;
 				std::string getAddressModifyTime()const;
+				std::string getRemarksB()const;
 				std::string getImageFormat()const;
-				std::string getRemarksArrayB()const;
 				std::string getTagsFailReason()const;
-				std::string getExif()const;
+				std::string getRemarksArrayB()const;
 				std::string getFacesModifyTime()const;
+				std::string getExif()const;
 				std::string getRemarksC()const;
 				std::string getRemarksD()const;
 				int getImageWidth()const;
-				std::string getSourcePosition()const;
 				std::string getRemarksArrayA()const;
-				std::vector<FacesItem> getFaces()const;
+				std::string getSourcePosition()const;
 				std::vector<TagsItem> getTags()const;
+				std::vector<FacesItem> getFaces()const;
 				std::string getAddressStatus()const;
 				std::string getFacesStatus()const;
 				std::string getImageQualityModifyTime()const;
 				std::vector<CroppingSuggestionItem> getCroppingSuggestion()const;
-				std::string getTagsModifyTime()const;
-				std::string getExternalId()const;
 				std::string getCreateTime()const;
+				std::string getExternalId()const;
+				std::string getTagsModifyTime()const;
 				std::string getImageQualityFailReason()const;
-				std::string getImageUri()const;
 				std::string getOrientation()const;
+				std::string getImageUri()const;
 				std::string getOCRStatus()const;
 				std::string getOCRModifyTime()const;
-				std::string getCroppingSuggestionModifyTime()const;
 				std::string getImageTime()const;
-				std::string getTagsStatus()const;
-				std::string getImageQualityStatus()const;
+				std::string getCroppingSuggestionModifyTime()const;
 				int getImageHeight()const;
+				std::string getImageQualityStatus()const;
+				std::string getTagsStatus()const;
 				std::string getOCRFailReason()const;
 				std::string getSetId()const;
 				std::vector<OCRItem> getOCR()const;
-				std::string getLocation()const;
 				int getFileSize()const;
+				std::string getLocation()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -194,49 +195,49 @@ namespace AlibabaCloud
 				ImageQuality imageQuality_;
 				std::string modifyTime_;
 				Address address_;
-				std::string sourceUri_;
 				std::string sourceType_;
+				std::string sourceUri_;
 				std::string facesFailReason_;
 				std::string croppingSuggestionStatus_;
 				std::string croppingSuggestionFailReason_;
-				std::string remarksA_;
 				std::string addressFailReason_;
-				std::string remarksB_;
+				std::string remarksA_;
 				std::string addressModifyTime_;
+				std::string remarksB_;
 				std::string imageFormat_;
-				std::string remarksArrayB_;
 				std::string tagsFailReason_;
-				std::string exif_;
+				std::string remarksArrayB_;
 				std::string facesModifyTime_;
+				std::string exif_;
 				std::string remarksC_;
 				std::string remarksD_;
 				int imageWidth_;
-				std::string sourcePosition_;
 				std::string remarksArrayA_;
-				std::vector<FacesItem> faces_;
+				std::string sourcePosition_;
 				std::vector<TagsItem> tags_;
+				std::vector<FacesItem> faces_;
 				std::string addressStatus_;
 				std::string facesStatus_;
 				std::string imageQualityModifyTime_;
 				std::vector<CroppingSuggestionItem> croppingSuggestion_;
-				std::string tagsModifyTime_;
-				std::string externalId_;
 				std::string createTime_;
+				std::string externalId_;
+				std::string tagsModifyTime_;
 				std::string imageQualityFailReason_;
-				std::string imageUri_;
 				std::string orientation_;
+				std::string imageUri_;
 				std::string oCRStatus_;
 				std::string oCRModifyTime_;
-				std::string croppingSuggestionModifyTime_;
 				std::string imageTime_;
-				std::string tagsStatus_;
-				std::string imageQualityStatus_;
+				std::string croppingSuggestionModifyTime_;
 				int imageHeight_;
+				std::string imageQualityStatus_;
+				std::string tagsStatus_;
 				std::string oCRFailReason_;
 				std::string setId_;
 				std::vector<OCRItem> oCR_;
-				std::string location_;
 				int fileSize_;
+				std::string location_;
 
 			};
 		}

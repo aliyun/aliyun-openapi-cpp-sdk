@@ -45,10 +45,10 @@ void CreateOfficeConversionTaskResult::parse(const std::string &payload)
 		taskId_ = value["TaskId"].asString();
 	if(!value["Percent"].isNull())
 		percent_ = std::stoi(value["Percent"].asString());
-	if(!value["TgtLoc"].isNull())
-		tgtLoc_ = value["TgtLoc"].asString();
 	if(!value["CreateTime"].isNull())
 		createTime_ = value["CreateTime"].asString();
+	if(!value["TgtLoc"].isNull())
+		tgtLoc_ = value["TgtLoc"].asString();
 
 }
 
@@ -67,13 +67,13 @@ int CreateOfficeConversionTaskResult::getPercent()const
 	return percent_;
 }
 
-std::string CreateOfficeConversionTaskResult::getTgtLoc()const
-{
-	return tgtLoc_;
-}
-
 std::string CreateOfficeConversionTaskResult::getCreateTime()const
 {
 	return createTime_;
+}
+
+std::string CreateOfficeConversionTaskResult::getTgtLoc()const
+{
+	return tgtLoc_;
 }
 

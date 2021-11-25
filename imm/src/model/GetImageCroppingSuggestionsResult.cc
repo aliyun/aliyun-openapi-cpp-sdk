@@ -48,14 +48,14 @@ void GetImageCroppingSuggestionsResult::parse(const std::string &payload)
 		if(!valueCroppingSuggestionsCroppingSuggestionsItem["AspectRatio"].isNull())
 			croppingSuggestionsObject.aspectRatio = valueCroppingSuggestionsCroppingSuggestionsItem["AspectRatio"].asString();
 		auto croppingBoundaryNode = value["CroppingBoundary"];
-		if(!croppingBoundaryNode["Left"].isNull())
-			croppingSuggestionsObject.croppingBoundary.left = std::stoi(croppingBoundaryNode["Left"].asString());
 		if(!croppingBoundaryNode["Top"].isNull())
 			croppingSuggestionsObject.croppingBoundary.top = std::stoi(croppingBoundaryNode["Top"].asString());
 		if(!croppingBoundaryNode["Width"].isNull())
 			croppingSuggestionsObject.croppingBoundary.width = std::stoi(croppingBoundaryNode["Width"].asString());
 		if(!croppingBoundaryNode["Height"].isNull())
 			croppingSuggestionsObject.croppingBoundary.height = std::stoi(croppingBoundaryNode["Height"].asString());
+		if(!croppingBoundaryNode["Left"].isNull())
+			croppingSuggestionsObject.croppingBoundary.left = std::stoi(croppingBoundaryNode["Left"].asString());
 		croppingSuggestions_.push_back(croppingSuggestionsObject);
 	}
 	if(!value["ImageUri"].isNull())

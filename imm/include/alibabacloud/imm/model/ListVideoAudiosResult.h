@@ -51,15 +51,15 @@ namespace AlibabaCloud
 					std::string processModifyTime;
 					std::string processStatus;
 					std::string processFailReason;
-					std::string sourceType;
-					std::string sourceUri;
 					std::string createTime;
+					std::string sourceType;
 					std::string externalId;
+					std::string sourceUri;
 					std::string remarksA;
 					std::string remarksB;
 					std::string remarksC;
-					std::string audioUri;
 					std::string remarksD;
+					std::string audioUri;
 					std::string sourcePosition;
 					std::vector<AudiosItem::AudioTextsItem> audioTexts;
 					std::string audioTextsStatus;
@@ -67,8 +67,8 @@ namespace AlibabaCloud
 					int audioRate;
 					std::string audioTextsModifyTime;
 					float audioDuration;
-					int fileSize;
 					std::string audioTextsFailReason;
+					int fileSize;
 				};
 
 
@@ -77,16 +77,16 @@ namespace AlibabaCloud
 				~ListVideoAudiosResult();
 				std::vector<AudiosItem> getAudios()const;
 				std::string getVideoUri()const;
-				std::string getSetId()const;
 				std::string getNextMarker()const;
+				std::string getSetId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::vector<AudiosItem> audios_;
 				std::string videoUri_;
-				std::string setId_;
 				std::string nextMarker_;
+				std::string setId_;
 
 			};
 		}

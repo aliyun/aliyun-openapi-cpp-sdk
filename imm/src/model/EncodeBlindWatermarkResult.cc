@@ -39,10 +39,10 @@ void EncodeBlindWatermarkResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["TargetUri"].isNull())
-		targetUri_ = value["TargetUri"].asString();
 	if(!value["Content"].isNull())
 		content_ = value["Content"].asString();
+	if(!value["TargetUri"].isNull())
+		targetUri_ = value["TargetUri"].asString();
 
 }
 

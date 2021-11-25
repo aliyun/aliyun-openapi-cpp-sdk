@@ -46,14 +46,14 @@ void DetectImageBodiesResult::parse(const std::string &payload)
 		if(!valueBodiesBodiesItem["BodyConfidence"].isNull())
 			bodiesObject.bodyConfidence = std::stof(valueBodiesBodiesItem["BodyConfidence"].asString());
 		auto bodyBoundaryNode = value["BodyBoundary"];
-		if(!bodyBoundaryNode["Left"].isNull())
-			bodiesObject.bodyBoundary.left = std::stoi(bodyBoundaryNode["Left"].asString());
 		if(!bodyBoundaryNode["Top"].isNull())
 			bodiesObject.bodyBoundary.top = std::stoi(bodyBoundaryNode["Top"].asString());
 		if(!bodyBoundaryNode["Width"].isNull())
 			bodiesObject.bodyBoundary.width = std::stoi(bodyBoundaryNode["Width"].asString());
 		if(!bodyBoundaryNode["Height"].isNull())
 			bodiesObject.bodyBoundary.height = std::stoi(bodyBoundaryNode["Height"].asString());
+		if(!bodyBoundaryNode["Left"].isNull())
+			bodiesObject.bodyBoundary.left = std::stoi(bodyBoundaryNode["Left"].asString());
 		bodies_.push_back(bodiesObject);
 	}
 	if(!value["ImageUri"].isNull())

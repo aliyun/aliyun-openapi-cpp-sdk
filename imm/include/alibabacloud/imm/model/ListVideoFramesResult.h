@@ -34,55 +34,6 @@ namespace AlibabaCloud
 			public:
 				struct FramesItem
 				{
-					struct FacesItem
-					{
-						struct EmotionDetails
-						{
-							float cALM;
-							float sCARED;
-							float hAPPY;
-							float sAD;
-							float sURPRISED;
-							float aNGRY;
-							float dISGUSTED;
-						};
-						struct FaceAttributes
-						{
-							struct FaceBoundary
-							{
-								int left;
-								int top;
-								int height;
-								int width;
-							};
-							struct HeadPose
-							{
-								float pitch;
-								float roll;
-								float yaw;
-							};
-							FaceBoundary faceBoundary;
-							std::string beard;
-							float beardConfidence;
-							HeadPose headPose;
-							std::string glasses;
-							float maskConfidence;
-							std::string mask;
-							float glassesConfidence;
-						};
-						EmotionDetails emotionDetails;
-						float faceConfidence;
-						std::string faceId;
-						float attractive;
-						float faceQuality;
-						FaceAttributes faceAttributes;
-						float genderConfidence;
-						float emotionConfidence;
-						std::string gender;
-						std::string emotion;
-						int age;
-						std::string groupId;
-					};
 					struct TagsItem
 					{
 						float tagConfidence;
@@ -103,6 +54,55 @@ namespace AlibabaCloud
 						float oCRConfidence;
 						std::string oCRContents;
 					};
+					struct FacesItem
+					{
+						struct FaceAttributes
+						{
+							struct FaceBoundary
+							{
+								int left;
+								int top;
+								int height;
+								int width;
+							};
+							struct HeadPose
+							{
+								float pitch;
+								float roll;
+								float yaw;
+							};
+							FaceBoundary faceBoundary;
+							std::string beard;
+							float beardConfidence;
+							HeadPose headPose;
+							std::string glasses;
+							std::string mask;
+							float maskConfidence;
+							float glassesConfidence;
+						};
+						struct EmotionDetails
+						{
+							float cALM;
+							float sCARED;
+							float hAPPY;
+							float sURPRISED;
+							float sAD;
+							float dISGUSTED;
+							float aNGRY;
+						};
+						EmotionDetails emotionDetails;
+						std::string faceId;
+						float faceConfidence;
+						float faceQuality;
+						float attractive;
+						FaceAttributes faceAttributes;
+						float genderConfidence;
+						float emotionConfidence;
+						std::string gender;
+						std::string emotion;
+						int age;
+						std::string groupId;
+					};
 					std::string modifyTime;
 					std::string sourceType;
 					std::string sourceUri;
@@ -117,14 +117,14 @@ namespace AlibabaCloud
 					std::string remarksD;
 					int imageWidth;
 					std::string sourcePosition;
-					std::vector<FramesItem::FacesItem> faces;
 					std::vector<FramesItem::TagsItem> tags;
+					std::vector<FramesItem::FacesItem> faces;
 					std::string facesStatus;
 					std::string createTime;
-					std::string tagsModifyTime;
 					std::string externalId;
-					std::string imageUri;
+					std::string tagsModifyTime;
 					std::string orientation;
+					std::string imageUri;
 					std::string oCRStatus;
 					std::string oCRModifyTime;
 					std::string imageTime;
@@ -142,16 +142,16 @@ namespace AlibabaCloud
 				~ListVideoFramesResult();
 				std::vector<FramesItem> getFrames()const;
 				std::string getVideoUri()const;
-				std::string getSetId()const;
 				std::string getNextMarker()const;
+				std::string getSetId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::vector<FramesItem> frames_;
 				std::string videoUri_;
-				std::string setId_;
 				std::string nextMarker_;
+				std::string setId_;
 
 			};
 		}

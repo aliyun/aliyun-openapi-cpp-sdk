@@ -43,28 +43,28 @@ void ListVideoTasksResult::parse(const std::string &payload)
 	for (auto valueTasksTasksItem : allTasksNode)
 	{
 		TasksItem tasksObject;
+		if(!valueTasksTasksItem["EndTime"].isNull())
+			tasksObject.endTime = valueTasksTasksItem["EndTime"].asString();
 		if(!valueTasksTasksItem["Status"].isNull())
 			tasksObject.status = valueTasksTasksItem["Status"].asString();
-		if(!valueTasksTasksItem["TaskId"].isNull())
-			tasksObject.taskId = valueTasksTasksItem["TaskId"].asString();
+		if(!valueTasksTasksItem["StartTime"].isNull())
+			tasksObject.startTime = valueTasksTasksItem["StartTime"].asString();
 		if(!valueTasksTasksItem["TaskType"].isNull())
 			tasksObject.taskType = valueTasksTasksItem["TaskType"].asString();
+		if(!valueTasksTasksItem["Progress"].isNull())
+			tasksObject.progress = std::stoi(valueTasksTasksItem["Progress"].asString());
+		if(!valueTasksTasksItem["NotifyEndpoint"].isNull())
+			tasksObject.notifyEndpoint = valueTasksTasksItem["NotifyEndpoint"].asString();
+		if(!valueTasksTasksItem["ErrorMessage"].isNull())
+			tasksObject.errorMessage = valueTasksTasksItem["ErrorMessage"].asString();
 		if(!valueTasksTasksItem["Parameters"].isNull())
 			tasksObject.parameters = valueTasksTasksItem["Parameters"].asString();
 		if(!valueTasksTasksItem["Result"].isNull())
 			tasksObject.result = valueTasksTasksItem["Result"].asString();
-		if(!valueTasksTasksItem["StartTime"].isNull())
-			tasksObject.startTime = valueTasksTasksItem["StartTime"].asString();
-		if(!valueTasksTasksItem["EndTime"].isNull())
-			tasksObject.endTime = valueTasksTasksItem["EndTime"].asString();
-		if(!valueTasksTasksItem["ErrorMessage"].isNull())
-			tasksObject.errorMessage = valueTasksTasksItem["ErrorMessage"].asString();
-		if(!valueTasksTasksItem["NotifyEndpoint"].isNull())
-			tasksObject.notifyEndpoint = valueTasksTasksItem["NotifyEndpoint"].asString();
+		if(!valueTasksTasksItem["TaskId"].isNull())
+			tasksObject.taskId = valueTasksTasksItem["TaskId"].asString();
 		if(!valueTasksTasksItem["NotifyTopicName"].isNull())
 			tasksObject.notifyTopicName = valueTasksTasksItem["NotifyTopicName"].asString();
-		if(!valueTasksTasksItem["Progress"].isNull())
-			tasksObject.progress = std::stoi(valueTasksTasksItem["Progress"].asString());
 		tasks_.push_back(tasksObject);
 	}
 	if(!value["NextMarker"].isNull())

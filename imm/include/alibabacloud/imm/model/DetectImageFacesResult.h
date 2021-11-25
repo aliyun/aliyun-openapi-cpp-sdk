@@ -63,10 +63,10 @@ namespace AlibabaCloud
 						float cALM;
 						float sCARED;
 						float hAPPY;
-						float sAD;
 						float sURPRISED;
-						float aNGRY;
+						float sAD;
 						float dISGUSTED;
+						float aNGRY;
 					};
 					std::string faceId;
 					float attractiveConfidence;
@@ -76,8 +76,8 @@ namespace AlibabaCloud
 					std::string gender;
 					EmotionDetails emotionDetails;
 					float faceConfidence;
-					float attractive;
 					float faceQuality;
+					float attractive;
 					std::string emotion;
 					int age;
 					float ageConfidence;

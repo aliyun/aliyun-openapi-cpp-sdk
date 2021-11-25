@@ -43,18 +43,20 @@ void DetectImageTagsResult::parse(const std::string &payload)
 	for (auto valueTagsTagsItem : allTagsNode)
 	{
 		TagsItem tagsObject;
+		if(!valueTagsTagsItem["ParentTagEnName"].isNull())
+			tagsObject.parentTagEnName = valueTagsTagsItem["ParentTagEnName"].asString();
 		if(!valueTagsTagsItem["TagName"].isNull())
 			tagsObject.tagName = valueTagsTagsItem["TagName"].asString();
 		if(!valueTagsTagsItem["TagConfidence"].isNull())
 			tagsObject.tagConfidence = std::stof(valueTagsTagsItem["TagConfidence"].asString());
+		if(!valueTagsTagsItem["CentricScore"].isNull())
+			tagsObject.centricScore = std::stof(valueTagsTagsItem["CentricScore"].asString());
+		if(!valueTagsTagsItem["TagEnName"].isNull())
+			tagsObject.tagEnName = valueTagsTagsItem["TagEnName"].asString();
 		if(!valueTagsTagsItem["TagLevel"].isNull())
 			tagsObject.tagLevel = std::stoi(valueTagsTagsItem["TagLevel"].asString());
 		if(!valueTagsTagsItem["ParentTagName"].isNull())
 			tagsObject.parentTagName = valueTagsTagsItem["ParentTagName"].asString();
-		if(!valueTagsTagsItem["ParentTagEnName"].isNull())
-			tagsObject.parentTagEnName = valueTagsTagsItem["ParentTagEnName"].asString();
-		if(!valueTagsTagsItem["TagEnName"].isNull())
-			tagsObject.tagEnName = valueTagsTagsItem["TagEnName"].asString();
 		tags_.push_back(tagsObject);
 	}
 	if(!value["ImageUri"].isNull())

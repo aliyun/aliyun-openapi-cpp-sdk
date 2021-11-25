@@ -38,25 +38,25 @@ namespace AlibabaCloud
 				explicit GetSetResult(const std::string &payload);
 				~GetSetResult();
 				std::string getModifyTime()const;
-				int getImageCount()const;
 				int getVideoCount()const;
+				int getImageCount()const;
 				std::string getCreateTime()const;
 				std::string getSetName()const;
 				std::string getSetId()const;
-				int getFaceCount()const;
 				int getVideoLength()const;
+				int getFaceCount()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string modifyTime_;
-				int imageCount_;
 				int videoCount_;
+				int imageCount_;
 				std::string createTime_;
 				std::string setName_;
 				std::string setId_;
-				int faceCount_;
 				int videoLength_;
+				int faceCount_;
 
 			};
 		}

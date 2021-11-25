@@ -36,6 +36,17 @@ namespace AlibabaCloud
 				{
 					struct MediaFormat
 					{
+						struct Tag
+						{
+							std::string artist;
+							std::string performer;
+							std::string composer;
+							std::string language;
+							std::string creationTime;
+							std::string album;
+							std::string title;
+							std::string albumArtist;
+						};
 						struct Address
 						{
 							std::string township;
@@ -45,29 +56,18 @@ namespace AlibabaCloud
 							std::string district;
 							std::string province;
 						};
-						struct Tag
-						{
-							std::string artist;
-							std::string composer;
-							std::string performer;
-							std::string language;
-							std::string creationTime;
-							std::string title;
-							std::string album;
-							std::string albumArtist;
-						};
 						Address address;
-						std::string size;
 						int numberStreams;
+						std::string size;
 						std::string formatLongName;
-						std::string startTime;
 						std::string creationTime;
+						std::string startTime;
 						std::string formatName;
 						std::string duration;
 						Tag tag;
 						std::string bitrate;
-						std::string location;
 						int numberPrograms;
+						std::string location;
 					};
 					struct MediaStreams
 					{
@@ -79,28 +79,23 @@ namespace AlibabaCloud
 							std::string rotate;
 							std::string sampleAspectRatio;
 							std::string startTime;
-							std::string duration;
 							int index;
-							std::string codecName;
+							std::string duration;
 							std::string bitrate;
+							std::string codecName;
 							std::string profile;
 							std::string displayAspectRatio;
-							int hasBFrames;
 							std::string codecTagString;
+							int hasBFrames;
 							std::string averageFrameRate;
 							std::string language;
 							std::string codecLongName;
-							std::string pixelFormat;
-							int level;
 							int height;
+							int level;
+							std::string pixelFormat;
 							std::string frameRrate;
 							int width;
 							std::string timeBase;
-						};
-						struct SubtitleStream
-						{
-							std::string language;
-							int index;
 						};
 						struct AudioStream
 						{
@@ -109,17 +104,22 @@ namespace AlibabaCloud
 							std::string codecTimeBase;
 							std::string channelLayout;
 							std::string startTime;
-							std::string duration;
 							int index;
-							std::string codecName;
+							std::string duration;
 							std::string bitrate;
-							std::string sampleFormat;
+							std::string codecName;
 							int channels;
+							std::string sampleFormat;
 							std::string codecTagString;
 							std::string sampleRate;
 							std::string language;
 							std::string codecLongName;
 							std::string timeBase;
+						};
+						struct SubtitleStream
+						{
+							std::string language;
+							int index;
 						};
 						std::vector<VideoStream> videoStreams;
 						std::vector<SubtitleStream> subtitleStreams;

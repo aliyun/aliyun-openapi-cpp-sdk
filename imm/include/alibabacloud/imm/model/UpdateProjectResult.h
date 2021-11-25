@@ -39,8 +39,8 @@ namespace AlibabaCloud
 				~UpdateProjectResult();
 				std::string getProject()const;
 				std::string getModifyTime()const;
-				int getCU()const;
 				std::string getType()const;
+				int getCU()const;
 				std::string getServiceRole()const;
 				std::string getCreateTime()const;
 				std::string getRegionId()const;
@@ -50,8 +50,8 @@ namespace AlibabaCloud
 			private:
 				std::string project_;
 				std::string modifyTime_;
-				int cU_;
 				std::string type_;
+				int cU_;
 				std::string serviceRole_;
 				std::string createTime_;
 				std::string regionId_;

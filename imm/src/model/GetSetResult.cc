@@ -39,22 +39,22 @@ void GetSetResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["SetId"].isNull())
-		setId_ = value["SetId"].asString();
-	if(!value["SetName"].isNull())
-		setName_ = value["SetName"].asString();
-	if(!value["CreateTime"].isNull())
-		createTime_ = value["CreateTime"].asString();
 	if(!value["ModifyTime"].isNull())
 		modifyTime_ = value["ModifyTime"].asString();
-	if(!value["FaceCount"].isNull())
-		faceCount_ = std::stoi(value["FaceCount"].asString());
-	if(!value["ImageCount"].isNull())
-		imageCount_ = std::stoi(value["ImageCount"].asString());
 	if(!value["VideoCount"].isNull())
 		videoCount_ = std::stoi(value["VideoCount"].asString());
+	if(!value["ImageCount"].isNull())
+		imageCount_ = std::stoi(value["ImageCount"].asString());
+	if(!value["CreateTime"].isNull())
+		createTime_ = value["CreateTime"].asString();
+	if(!value["SetName"].isNull())
+		setName_ = value["SetName"].asString();
+	if(!value["SetId"].isNull())
+		setId_ = value["SetId"].asString();
 	if(!value["VideoLength"].isNull())
 		videoLength_ = std::stoi(value["VideoLength"].asString());
+	if(!value["FaceCount"].isNull())
+		faceCount_ = std::stoi(value["FaceCount"].asString());
 
 }
 
@@ -63,14 +63,14 @@ std::string GetSetResult::getModifyTime()const
 	return modifyTime_;
 }
 
-int GetSetResult::getImageCount()const
-{
-	return imageCount_;
-}
-
 int GetSetResult::getVideoCount()const
 {
 	return videoCount_;
+}
+
+int GetSetResult::getImageCount()const
+{
+	return imageCount_;
 }
 
 std::string GetSetResult::getCreateTime()const
@@ -88,13 +88,13 @@ std::string GetSetResult::getSetId()const
 	return setId_;
 }
 
-int GetSetResult::getFaceCount()const
-{
-	return faceCount_;
-}
-
 int GetSetResult::getVideoLength()const
 {
 	return videoLength_;
+}
+
+int GetSetResult::getFaceCount()const
+{
+	return faceCount_;
 }
 

@@ -38,10 +38,10 @@ namespace AlibabaCloud
 				explicit GetVideoTaskResult(const std::string &payload);
 				~GetVideoTaskResult();
 				std::string getStatus()const;
-				std::string getNotifyEndpoint()const;
 				int getProgress()const;
-				std::string getTaskId()const;
+				std::string getNotifyEndpoint()const;
 				std::string getParameters()const;
+				std::string getTaskId()const;
 				std::string getEndTime()const;
 				std::string getTaskType()const;
 				std::string getStartTime()const;
@@ -53,10 +53,10 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string status_;
-				std::string notifyEndpoint_;
 				int progress_;
-				std::string taskId_;
+				std::string notifyEndpoint_;
 				std::string parameters_;
+				std::string taskId_;
 				std::string endTime_;
 				std::string taskType_;
 				std::string startTime_;

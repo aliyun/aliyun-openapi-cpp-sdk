@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,78 +18,64 @@
 
 using AlibabaCloud::Imm::Model::CreateImageProcessTaskRequest;
 
-CreateImageProcessTaskRequest::CreateImageProcessTaskRequest() :
-	RpcServiceRequest("imm", "2017-09-06", "CreateImageProcessTask")
-{
-	setMethod(HttpRequest::Method::Post);
+CreateImageProcessTaskRequest::CreateImageProcessTaskRequest()
+    : RpcServiceRequest("imm", "2017-09-06", "CreateImageProcessTask") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-CreateImageProcessTaskRequest::~CreateImageProcessTaskRequest()
-{}
+CreateImageProcessTaskRequest::~CreateImageProcessTaskRequest() {}
 
-std::string CreateImageProcessTaskRequest::getProject()const
-{
-	return project_;
+std::string CreateImageProcessTaskRequest::getProject() const {
+  return project_;
 }
 
-void CreateImageProcessTaskRequest::setProject(const std::string& project)
-{
-	project_ = project;
-	setParameter("Project", project);
+void CreateImageProcessTaskRequest::setProject(const std::string &project) {
+  project_ = project;
+  setParameter(std::string("Project"), project);
 }
 
-std::string CreateImageProcessTaskRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string CreateImageProcessTaskRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void CreateImageProcessTaskRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void CreateImageProcessTaskRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string CreateImageProcessTaskRequest::getNotifyEndpoint()const
-{
-	return notifyEndpoint_;
+std::string CreateImageProcessTaskRequest::getNotifyEndpoint() const {
+  return notifyEndpoint_;
 }
 
-void CreateImageProcessTaskRequest::setNotifyEndpoint(const std::string& notifyEndpoint)
-{
-	notifyEndpoint_ = notifyEndpoint;
-	setParameter("NotifyEndpoint", notifyEndpoint);
+void CreateImageProcessTaskRequest::setNotifyEndpoint(const std::string &notifyEndpoint) {
+  notifyEndpoint_ = notifyEndpoint;
+  setParameter(std::string("NotifyEndpoint"), notifyEndpoint);
 }
 
-std::string CreateImageProcessTaskRequest::getNotifyTopicName()const
-{
-	return notifyTopicName_;
+std::string CreateImageProcessTaskRequest::getNotifyTopicName() const {
+  return notifyTopicName_;
 }
 
-void CreateImageProcessTaskRequest::setNotifyTopicName(const std::string& notifyTopicName)
-{
-	notifyTopicName_ = notifyTopicName;
-	setParameter("NotifyTopicName", notifyTopicName);
+void CreateImageProcessTaskRequest::setNotifyTopicName(const std::string &notifyTopicName) {
+  notifyTopicName_ = notifyTopicName;
+  setParameter(std::string("NotifyTopicName"), notifyTopicName);
 }
 
-std::string CreateImageProcessTaskRequest::getTargetList()const
-{
-	return targetList_;
+std::string CreateImageProcessTaskRequest::getTargetList() const {
+  return targetList_;
 }
 
-void CreateImageProcessTaskRequest::setTargetList(const std::string& targetList)
-{
-	targetList_ = targetList;
-	setParameter("TargetList", targetList);
+void CreateImageProcessTaskRequest::setTargetList(const std::string &targetList) {
+  targetList_ = targetList;
+  setParameter(std::string("TargetList"), targetList);
 }
 
-std::string CreateImageProcessTaskRequest::getImageUri()const
-{
-	return imageUri_;
+std::string CreateImageProcessTaskRequest::getImageUri() const {
+  return imageUri_;
 }
 
-void CreateImageProcessTaskRequest::setImageUri(const std::string& imageUri)
-{
-	imageUri_ = imageUri;
-	setParameter("ImageUri", imageUri);
+void CreateImageProcessTaskRequest::setImageUri(const std::string &imageUri) {
+  imageUri_ = imageUri;
+  setParameter(std::string("ImageUri"), imageUri);
 }
 

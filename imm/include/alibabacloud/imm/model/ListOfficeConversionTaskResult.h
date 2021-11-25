@@ -38,13 +38,13 @@ namespace AlibabaCloud
 					std::string tgtType;
 					std::string taskId;
 					int percent;
-					std::string externalID;
 					std::string createTime;
+					std::string externalID;
 					std::string imageSpec;
 					std::string notifyEndpoint;
 					std::string tgtUri;
-					int pageCount;
 					std::string finishTime;
+					int pageCount;
 					std::string notifyTopicName;
 					std::string srcUri;
 				};

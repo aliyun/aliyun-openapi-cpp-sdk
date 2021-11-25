@@ -47,18 +47,18 @@ void IndexImageResult::parse(const std::string &payload)
 		remarksC_ = value["RemarksC"].asString();
 	if(!value["RemarksD"].isNull())
 		remarksD_ = value["RemarksD"].asString();
-	if(!value["RemarksArrayA"].isNull())
-		remarksArrayA_ = value["RemarksArrayA"].asString();
-	if(!value["ExternalId"].isNull())
-		externalId_ = value["ExternalId"].asString();
 	if(!value["CreateTime"].isNull())
 		createTime_ = value["CreateTime"].asString();
-	if(!value["SetId"].isNull())
-		setId_ = value["SetId"].asString();
-	if(!value["ImageUri"].isNull())
-		imageUri_ = value["ImageUri"].asString();
+	if(!value["ExternalId"].isNull())
+		externalId_ = value["ExternalId"].asString();
+	if(!value["RemarksArrayA"].isNull())
+		remarksArrayA_ = value["RemarksArrayA"].asString();
 	if(!value["RemarksA"].isNull())
 		remarksA_ = value["RemarksA"].asString();
+	if(!value["ImageUri"].isNull())
+		imageUri_ = value["ImageUri"].asString();
+	if(!value["SetId"].isNull())
+		setId_ = value["SetId"].asString();
 	if(!value["RemarksB"].isNull())
 		remarksB_ = value["RemarksB"].asString();
 
@@ -84,9 +84,9 @@ std::string IndexImageResult::getRemarksD()const
 	return remarksD_;
 }
 
-std::string IndexImageResult::getRemarksArrayA()const
+std::string IndexImageResult::getCreateTime()const
 {
-	return remarksArrayA_;
+	return createTime_;
 }
 
 std::string IndexImageResult::getExternalId()const
@@ -94,14 +94,14 @@ std::string IndexImageResult::getExternalId()const
 	return externalId_;
 }
 
-std::string IndexImageResult::getCreateTime()const
+std::string IndexImageResult::getRemarksArrayA()const
 {
-	return createTime_;
+	return remarksArrayA_;
 }
 
-std::string IndexImageResult::getSetId()const
+std::string IndexImageResult::getRemarksA()const
 {
-	return setId_;
+	return remarksA_;
 }
 
 std::string IndexImageResult::getImageUri()const
@@ -109,9 +109,9 @@ std::string IndexImageResult::getImageUri()const
 	return imageUri_;
 }
 
-std::string IndexImageResult::getRemarksA()const
+std::string IndexImageResult::getSetId()const
 {
-	return remarksA_;
+	return setId_;
 }
 
 std::string IndexImageResult::getRemarksB()const

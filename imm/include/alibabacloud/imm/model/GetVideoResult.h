@@ -32,26 +32,26 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_IMM_EXPORT GetVideoResult : public ServiceResult
 			{
 			public:
-				struct VideoTagsItem
-				{
-					float tagConfidence;
-					std::string tagName;
-					int tagLevel;
-					std::string parentTagName;
-				};
 				struct PersonsItem
 				{
 					std::string personId;
 					float genderConfidence;
 					std::string gender;
-					int age;
 					float ageConfidence;
+					int age;
 				};
 				struct CelebrityItem
 				{
 					std::string celebrityName;
 					int celebrityNum;
 					std::string celebrityLibraryName;
+				};
+				struct VideoTagsItem
+				{
+					std::string tagName;
+					float tagConfidence;
+					int tagLevel;
+					std::string parentTagName;
 				};
 
 
@@ -61,16 +61,16 @@ namespace AlibabaCloud
 				std::string getModifyTime()const;
 				std::string getProcessStatus()const;
 				int getVideoWidth()const;
-				std::string getSourceUri()const;
 				std::string getSourceType()const;
+				std::string getSourceUri()const;
 				std::string getVideoInfo()const;
-				std::string getRemarksA()const;
 				std::string getVideoFrameTagsModifyTime()const;
-				std::string getRemarksB()const;
+				std::string getRemarksA()const;
 				std::string getVideoFacesFailReason()const;
+				std::string getRemarksB()const;
 				std::string getVideoFacesStatus()const;
-				std::string getVideoOCRModifyTime()const;
 				std::string getRemarksC()const;
+				std::string getVideoOCRModifyTime()const;
 				std::string getRemarksD()const;
 				int getVideoHeight()const;
 				std::vector<PersonsItem> getPersons()const;
@@ -82,23 +82,23 @@ namespace AlibabaCloud
 				std::string getVideoTagsModifyTime()const;
 				std::string getVideoOCRStatus()const;
 				int getVideoFrames()const;
-				std::string getVideoSTTModifyTime()const;
 				std::string getProcessModifyTime()const;
+				std::string getVideoSTTModifyTime()const;
 				std::string getProcessFailReason()const;
-				std::string getVideoSTTFailReason()const;
-				std::string getExternalId()const;
 				std::string getCreateTime()const;
+				std::string getExternalId()const;
+				std::string getVideoSTTFailReason()const;
 				std::string getVideoUri()const;
-				std::string getVideoFormat()const;
 				std::string getVideoFrameTagsFailReason()const;
+				std::string getVideoFormat()const;
 				std::string getVideoSTTStatus()const;
 				std::string getVideoFacesModifyTime()const;
 				std::vector<VideoTagsItem> getVideoTags()const;
 				std::string getCelebrityModifyTime()const;
 				float getVideoDuration()const;
 				std::string getCelebrityFailReason()const;
-				std::string getCelebrityStatus()const;
 				std::string getSetId()const;
+				std::string getCelebrityStatus()const;
 				std::string getVideoTagsStatus()const;
 				int getFileSize()const;
 
@@ -108,16 +108,16 @@ namespace AlibabaCloud
 				std::string modifyTime_;
 				std::string processStatus_;
 				int videoWidth_;
-				std::string sourceUri_;
 				std::string sourceType_;
+				std::string sourceUri_;
 				std::string videoInfo_;
-				std::string remarksA_;
 				std::string videoFrameTagsModifyTime_;
-				std::string remarksB_;
+				std::string remarksA_;
 				std::string videoFacesFailReason_;
+				std::string remarksB_;
 				std::string videoFacesStatus_;
-				std::string videoOCRModifyTime_;
 				std::string remarksC_;
+				std::string videoOCRModifyTime_;
 				std::string remarksD_;
 				int videoHeight_;
 				std::vector<PersonsItem> persons_;
@@ -129,23 +129,23 @@ namespace AlibabaCloud
 				std::string videoTagsModifyTime_;
 				std::string videoOCRStatus_;
 				int videoFrames_;
-				std::string videoSTTModifyTime_;
 				std::string processModifyTime_;
+				std::string videoSTTModifyTime_;
 				std::string processFailReason_;
-				std::string videoSTTFailReason_;
-				std::string externalId_;
 				std::string createTime_;
+				std::string externalId_;
+				std::string videoSTTFailReason_;
 				std::string videoUri_;
-				std::string videoFormat_;
 				std::string videoFrameTagsFailReason_;
+				std::string videoFormat_;
 				std::string videoSTTStatus_;
 				std::string videoFacesModifyTime_;
 				std::vector<VideoTagsItem> videoTags_;
 				std::string celebrityModifyTime_;
 				float videoDuration_;
 				std::string celebrityFailReason_;
-				std::string celebrityStatus_;
 				std::string setId_;
+				std::string celebrityStatus_;
 				std::string videoTagsStatus_;
 				int fileSize_;
 

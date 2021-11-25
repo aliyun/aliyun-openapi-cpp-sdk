@@ -39,14 +39,14 @@ void UpdateSetResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["SetId"].isNull())
-		setId_ = value["SetId"].asString();
-	if(!value["SetName"].isNull())
-		setName_ = value["SetName"].asString();
-	if(!value["CreateTime"].isNull())
-		createTime_ = value["CreateTime"].asString();
 	if(!value["ModifyTime"].isNull())
 		modifyTime_ = value["ModifyTime"].asString();
+	if(!value["CreateTime"].isNull())
+		createTime_ = value["CreateTime"].asString();
+	if(!value["SetName"].isNull())
+		setName_ = value["SetName"].asString();
+	if(!value["SetId"].isNull())
+		setId_ = value["SetId"].asString();
 
 }
 

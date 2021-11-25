@@ -43,24 +43,24 @@ void ListProjectsResult::parse(const std::string &payload)
 	for (auto valueProjectsProjectsItem : allProjectsNode)
 	{
 		ProjectsItem projectsObject;
-		if(!valueProjectsProjectsItem["Project"].isNull())
-			projectsObject.project = valueProjectsProjectsItem["Project"].asString();
-		if(!valueProjectsProjectsItem["Endpoint"].isNull())
-			projectsObject.endpoint = valueProjectsProjectsItem["Endpoint"].asString();
-		if(!valueProjectsProjectsItem["ServiceRole"].isNull())
-			projectsObject.serviceRole = valueProjectsProjectsItem["ServiceRole"].asString();
-		if(!valueProjectsProjectsItem["CreateTime"].isNull())
-			projectsObject.createTime = valueProjectsProjectsItem["CreateTime"].asString();
-		if(!valueProjectsProjectsItem["ModifyTime"].isNull())
-			projectsObject.modifyTime = valueProjectsProjectsItem["ModifyTime"].asString();
-		if(!valueProjectsProjectsItem["CU"].isNull())
-			projectsObject.cU = std::stoi(valueProjectsProjectsItem["CU"].asString());
 		if(!valueProjectsProjectsItem["Type"].isNull())
 			projectsObject.type = valueProjectsProjectsItem["Type"].asString();
-		if(!valueProjectsProjectsItem["BillingType"].isNull())
-			projectsObject.billingType = valueProjectsProjectsItem["BillingType"].asString();
+		if(!valueProjectsProjectsItem["CU"].isNull())
+			projectsObject.cU = std::stoi(valueProjectsProjectsItem["CU"].asString());
+		if(!valueProjectsProjectsItem["CreateTime"].isNull())
+			projectsObject.createTime = valueProjectsProjectsItem["CreateTime"].asString();
+		if(!valueProjectsProjectsItem["ServiceRole"].isNull())
+			projectsObject.serviceRole = valueProjectsProjectsItem["ServiceRole"].asString();
+		if(!valueProjectsProjectsItem["Endpoint"].isNull())
+			projectsObject.endpoint = valueProjectsProjectsItem["Endpoint"].asString();
+		if(!valueProjectsProjectsItem["Project"].isNull())
+			projectsObject.project = valueProjectsProjectsItem["Project"].asString();
 		if(!valueProjectsProjectsItem["RegionId"].isNull())
 			projectsObject.regionId = valueProjectsProjectsItem["RegionId"].asString();
+		if(!valueProjectsProjectsItem["BillingType"].isNull())
+			projectsObject.billingType = valueProjectsProjectsItem["BillingType"].asString();
+		if(!valueProjectsProjectsItem["ModifyTime"].isNull())
+			projectsObject.modifyTime = valueProjectsProjectsItem["ModifyTime"].asString();
 		projects_.push_back(projectsObject);
 	}
 	if(!value["NextMarker"].isNull())

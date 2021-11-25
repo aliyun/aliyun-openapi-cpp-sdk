@@ -43,50 +43,50 @@ void DetectImageFacesResult::parse(const std::string &payload)
 	for (auto valueFacesFacesItem : allFacesNode)
 	{
 		FacesItem facesObject;
-		if(!valueFacesFacesItem["FaceId"].isNull())
-			facesObject.faceId = valueFacesFacesItem["FaceId"].asString();
-		if(!valueFacesFacesItem["FaceConfidence"].isNull())
-			facesObject.faceConfidence = std::stof(valueFacesFacesItem["FaceConfidence"].asString());
-		if(!valueFacesFacesItem["Age"].isNull())
-			facesObject.age = std::stoi(valueFacesFacesItem["Age"].asString());
-		if(!valueFacesFacesItem["Gender"].isNull())
-			facesObject.gender = valueFacesFacesItem["Gender"].asString();
-		if(!valueFacesFacesItem["Emotion"].isNull())
-			facesObject.emotion = valueFacesFacesItem["Emotion"].asString();
-		if(!valueFacesFacesItem["Attractive"].isNull())
-			facesObject.attractive = std::stof(valueFacesFacesItem["Attractive"].asString());
-		if(!valueFacesFacesItem["GenderConfidence"].isNull())
-			facesObject.genderConfidence = std::stof(valueFacesFacesItem["GenderConfidence"].asString());
-		if(!valueFacesFacesItem["AgeConfidence"].isNull())
-			facesObject.ageConfidence = std::stof(valueFacesFacesItem["AgeConfidence"].asString());
 		if(!valueFacesFacesItem["AttractiveConfidence"].isNull())
 			facesObject.attractiveConfidence = std::stof(valueFacesFacesItem["AttractiveConfidence"].asString());
-		if(!valueFacesFacesItem["EmotionConfidence"].isNull())
-			facesObject.emotionConfidence = std::stof(valueFacesFacesItem["EmotionConfidence"].asString());
+		if(!valueFacesFacesItem["Gender"].isNull())
+			facesObject.gender = valueFacesFacesItem["Gender"].asString();
+		if(!valueFacesFacesItem["GenderConfidence"].isNull())
+			facesObject.genderConfidence = std::stof(valueFacesFacesItem["GenderConfidence"].asString());
+		if(!valueFacesFacesItem["FaceId"].isNull())
+			facesObject.faceId = valueFacesFacesItem["FaceId"].asString();
 		if(!valueFacesFacesItem["FaceQuality"].isNull())
 			facesObject.faceQuality = std::stof(valueFacesFacesItem["FaceQuality"].asString());
+		if(!valueFacesFacesItem["Emotion"].isNull())
+			facesObject.emotion = valueFacesFacesItem["Emotion"].asString();
+		if(!valueFacesFacesItem["Age"].isNull())
+			facesObject.age = std::stoi(valueFacesFacesItem["Age"].asString());
+		if(!valueFacesFacesItem["FaceConfidence"].isNull())
+			facesObject.faceConfidence = std::stof(valueFacesFacesItem["FaceConfidence"].asString());
+		if(!valueFacesFacesItem["EmotionConfidence"].isNull())
+			facesObject.emotionConfidence = std::stof(valueFacesFacesItem["EmotionConfidence"].asString());
+		if(!valueFacesFacesItem["Attractive"].isNull())
+			facesObject.attractive = std::stof(valueFacesFacesItem["Attractive"].asString());
+		if(!valueFacesFacesItem["AgeConfidence"].isNull())
+			facesObject.ageConfidence = std::stof(valueFacesFacesItem["AgeConfidence"].asString());
 		auto faceAttributesNode = value["FaceAttributes"];
-		if(!faceAttributesNode["Glasses"].isNull())
-			facesObject.faceAttributes.glasses = faceAttributesNode["Glasses"].asString();
-		if(!faceAttributesNode["Beard"].isNull())
-			facesObject.faceAttributes.beard = faceAttributesNode["Beard"].asString();
-		if(!faceAttributesNode["Mask"].isNull())
-			facesObject.faceAttributes.mask = faceAttributesNode["Mask"].asString();
 		if(!faceAttributesNode["GlassesConfidence"].isNull())
 			facesObject.faceAttributes.glassesConfidence = std::stof(faceAttributesNode["GlassesConfidence"].asString());
+		if(!faceAttributesNode["Glasses"].isNull())
+			facesObject.faceAttributes.glasses = faceAttributesNode["Glasses"].asString();
+		if(!faceAttributesNode["Mask"].isNull())
+			facesObject.faceAttributes.mask = faceAttributesNode["Mask"].asString();
 		if(!faceAttributesNode["BeardConfidence"].isNull())
 			facesObject.faceAttributes.beardConfidence = std::stof(faceAttributesNode["BeardConfidence"].asString());
 		if(!faceAttributesNode["MaskConfidence"].isNull())
 			facesObject.faceAttributes.maskConfidence = std::stof(faceAttributesNode["MaskConfidence"].asString());
+		if(!faceAttributesNode["Beard"].isNull())
+			facesObject.faceAttributes.beard = faceAttributesNode["Beard"].asString();
 		auto faceBoundaryNode = faceAttributesNode["FaceBoundary"];
-		if(!faceBoundaryNode["Left"].isNull())
-			facesObject.faceAttributes.faceBoundary.left = std::stoi(faceBoundaryNode["Left"].asString());
 		if(!faceBoundaryNode["Top"].isNull())
 			facesObject.faceAttributes.faceBoundary.top = std::stoi(faceBoundaryNode["Top"].asString());
 		if(!faceBoundaryNode["Width"].isNull())
 			facesObject.faceAttributes.faceBoundary.width = std::stoi(faceBoundaryNode["Width"].asString());
 		if(!faceBoundaryNode["Height"].isNull())
 			facesObject.faceAttributes.faceBoundary.height = std::stoi(faceBoundaryNode["Height"].asString());
+		if(!faceBoundaryNode["Left"].isNull())
+			facesObject.faceAttributes.faceBoundary.left = std::stoi(faceBoundaryNode["Left"].asString());
 		auto headPoseNode = faceAttributesNode["HeadPose"];
 		if(!headPoseNode["Pitch"].isNull())
 			facesObject.faceAttributes.headPose.pitch = std::stof(headPoseNode["Pitch"].asString());
@@ -97,18 +97,18 @@ void DetectImageFacesResult::parse(const std::string &payload)
 		auto emotionDetailsNode = value["EmotionDetails"];
 		if(!emotionDetailsNode["HAPPY"].isNull())
 			facesObject.emotionDetails.hAPPY = std::stof(emotionDetailsNode["HAPPY"].asString());
-		if(!emotionDetailsNode["SAD"].isNull())
-			facesObject.emotionDetails.sAD = std::stof(emotionDetailsNode["SAD"].asString());
-		if(!emotionDetailsNode["ANGRY"].isNull())
-			facesObject.emotionDetails.aNGRY = std::stof(emotionDetailsNode["ANGRY"].asString());
-		if(!emotionDetailsNode["SURPRISED"].isNull())
-			facesObject.emotionDetails.sURPRISED = std::stof(emotionDetailsNode["SURPRISED"].asString());
-		if(!emotionDetailsNode["SCARED"].isNull())
-			facesObject.emotionDetails.sCARED = std::stof(emotionDetailsNode["SCARED"].asString());
-		if(!emotionDetailsNode["DISGUSTED"].isNull())
-			facesObject.emotionDetails.dISGUSTED = std::stof(emotionDetailsNode["DISGUSTED"].asString());
 		if(!emotionDetailsNode["CALM"].isNull())
 			facesObject.emotionDetails.cALM = std::stof(emotionDetailsNode["CALM"].asString());
+		if(!emotionDetailsNode["SURPRISED"].isNull())
+			facesObject.emotionDetails.sURPRISED = std::stof(emotionDetailsNode["SURPRISED"].asString());
+		if(!emotionDetailsNode["DISGUSTED"].isNull())
+			facesObject.emotionDetails.dISGUSTED = std::stof(emotionDetailsNode["DISGUSTED"].asString());
+		if(!emotionDetailsNode["ANGRY"].isNull())
+			facesObject.emotionDetails.aNGRY = std::stof(emotionDetailsNode["ANGRY"].asString());
+		if(!emotionDetailsNode["SAD"].isNull())
+			facesObject.emotionDetails.sAD = std::stof(emotionDetailsNode["SAD"].asString());
+		if(!emotionDetailsNode["SCARED"].isNull())
+			facesObject.emotionDetails.sCARED = std::stof(emotionDetailsNode["SCARED"].asString());
 		faces_.push_back(facesObject);
 	}
 	if(!value["ImageUri"].isNull())

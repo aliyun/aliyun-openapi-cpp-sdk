@@ -35,13 +35,13 @@ namespace AlibabaCloud
 				struct SetsItem
 				{
 					std::string modifyTime;
-					int imageCount;
 					int videoCount;
+					int imageCount;
 					std::string createTime;
 					std::string setName;
 					std::string setId;
-					int faceCount;
 					int videoLength;
+					int faceCount;
 				};
 
 

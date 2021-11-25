@@ -46,13 +46,13 @@ namespace AlibabaCloud
 				std::string getTgtType()const;
 				std::string getTaskId()const;
 				int getPercent()const;
-				std::string getExternalID()const;
 				std::string getCreateTime()const;
+				std::string getExternalID()const;
 				std::string getImageSpec()const;
 				std::string getNotifyEndpoint()const;
 				std::string getTgtUri()const;
-				int getPageCount()const;
 				std::string getFinishTime()const;
+				int getPageCount()const;
 				std::string getNotifyTopicName()const;
 				std::string getSrcUri()const;
 
@@ -64,13 +64,13 @@ namespace AlibabaCloud
 				std::string tgtType_;
 				std::string taskId_;
 				int percent_;
-				std::string externalID_;
 				std::string createTime_;
+				std::string externalID_;
 				std::string imageSpec_;
 				std::string notifyEndpoint_;
 				std::string tgtUri_;
-				int pageCount_;
 				std::string finishTime_;
+				int pageCount_;
 				std::string notifyTopicName_;
 				std::string srcUri_;
 

@@ -41,14 +41,14 @@ void GetOfficePreviewURLResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["PreviewURL"].isNull())
 		previewURL_ = value["PreviewURL"].asString();
-	if(!value["AccessToken"].isNull())
-		accessToken_ = value["AccessToken"].asString();
 	if(!value["RefreshToken"].isNull())
 		refreshToken_ = value["RefreshToken"].asString();
-	if(!value["AccessTokenExpiredTime"].isNull())
-		accessTokenExpiredTime_ = value["AccessTokenExpiredTime"].asString();
+	if(!value["AccessToken"].isNull())
+		accessToken_ = value["AccessToken"].asString();
 	if(!value["RefreshTokenExpiredTime"].isNull())
 		refreshTokenExpiredTime_ = value["RefreshTokenExpiredTime"].asString();
+	if(!value["AccessTokenExpiredTime"].isNull())
+		accessTokenExpiredTime_ = value["AccessTokenExpiredTime"].asString();
 
 }
 

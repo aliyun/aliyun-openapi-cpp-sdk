@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,56 +18,46 @@
 
 using AlibabaCloud::Imm::Model::RefreshOfficeEditTokenRequest;
 
-RefreshOfficeEditTokenRequest::RefreshOfficeEditTokenRequest() :
-	RpcServiceRequest("imm", "2017-09-06", "RefreshOfficeEditToken")
-{
-	setMethod(HttpRequest::Method::Post);
+RefreshOfficeEditTokenRequest::RefreshOfficeEditTokenRequest()
+    : RpcServiceRequest("imm", "2017-09-06", "RefreshOfficeEditToken") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-RefreshOfficeEditTokenRequest::~RefreshOfficeEditTokenRequest()
-{}
+RefreshOfficeEditTokenRequest::~RefreshOfficeEditTokenRequest() {}
 
-std::string RefreshOfficeEditTokenRequest::getProject()const
-{
-	return project_;
+std::string RefreshOfficeEditTokenRequest::getProject() const {
+  return project_;
 }
 
-void RefreshOfficeEditTokenRequest::setProject(const std::string& project)
-{
-	project_ = project;
-	setParameter("Project", project);
+void RefreshOfficeEditTokenRequest::setProject(const std::string &project) {
+  project_ = project;
+  setParameter(std::string("Project"), project);
 }
 
-std::string RefreshOfficeEditTokenRequest::getAccessToken()const
-{
-	return accessToken_;
+std::string RefreshOfficeEditTokenRequest::getAccessToken() const {
+  return accessToken_;
 }
 
-void RefreshOfficeEditTokenRequest::setAccessToken(const std::string& accessToken)
-{
-	accessToken_ = accessToken;
-	setParameter("AccessToken", accessToken);
+void RefreshOfficeEditTokenRequest::setAccessToken(const std::string &accessToken) {
+  accessToken_ = accessToken;
+  setParameter(std::string("AccessToken"), accessToken);
 }
 
-std::string RefreshOfficeEditTokenRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string RefreshOfficeEditTokenRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void RefreshOfficeEditTokenRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void RefreshOfficeEditTokenRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string RefreshOfficeEditTokenRequest::getRefreshToken()const
-{
-	return refreshToken_;
+std::string RefreshOfficeEditTokenRequest::getRefreshToken() const {
+  return refreshToken_;
 }
 
-void RefreshOfficeEditTokenRequest::setRefreshToken(const std::string& refreshToken)
-{
-	refreshToken_ = refreshToken;
-	setParameter("RefreshToken", refreshToken);
+void RefreshOfficeEditTokenRequest::setRefreshToken(const std::string &refreshToken) {
+  refreshToken_ = refreshToken;
+  setParameter(std::string("RefreshToken"), refreshToken);
 }
 

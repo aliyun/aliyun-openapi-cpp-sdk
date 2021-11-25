@@ -34,11 +34,12 @@ namespace AlibabaCloud
 			public:
 				struct TagsItem
 				{
+					float centricScore;
 					std::string tagName;
 					float tagConfidence;
 					std::string tagEnName;
-					int tagLevel;
 					std::string parentTagEnName;
+					int tagLevel;
 					std::string parentTagName;
 				};
 

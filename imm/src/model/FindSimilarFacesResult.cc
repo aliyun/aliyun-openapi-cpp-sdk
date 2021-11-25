@@ -47,10 +47,10 @@ void FindSimilarFacesResult::parse(const std::string &payload)
 			facesObject.faceId = valueFacesFacesItem["FaceId"].asString();
 		if(!valueFacesFacesItem["ImageUri"].isNull())
 			facesObject.imageUri = valueFacesFacesItem["ImageUri"].asString();
-		if(!valueFacesFacesItem["Similarity"].isNull())
-			facesObject.similarity = std::stof(valueFacesFacesItem["Similarity"].asString());
 		if(!valueFacesFacesItem["ExternalId"].isNull())
 			facesObject.externalId = valueFacesFacesItem["ExternalId"].asString();
+		if(!valueFacesFacesItem["Similarity"].isNull())
+			facesObject.similarity = std::stof(valueFacesFacesItem["Similarity"].asString());
 		auto allSimilarFacesNode = valueFacesFacesItem["SimilarFaces"]["SimilarFacesItem"];
 		for (auto valueFacesFacesItemSimilarFacesSimilarFacesItem : allSimilarFacesNode)
 		{
@@ -59,32 +59,32 @@ void FindSimilarFacesResult::parse(const std::string &payload)
 				similarFacesObject.faceId = valueFacesFacesItemSimilarFacesSimilarFacesItem["FaceId"].asString();
 			if(!valueFacesFacesItemSimilarFacesSimilarFacesItem["ImageUri"].isNull())
 				similarFacesObject.imageUri = valueFacesFacesItemSimilarFacesSimilarFacesItem["ImageUri"].asString();
-			if(!valueFacesFacesItemSimilarFacesSimilarFacesItem["Similarity"].isNull())
-				similarFacesObject.similarity = std::stof(valueFacesFacesItemSimilarFacesSimilarFacesItem["Similarity"].asString());
 			if(!valueFacesFacesItemSimilarFacesSimilarFacesItem["ExternalId"].isNull())
 				similarFacesObject.externalId = valueFacesFacesItemSimilarFacesSimilarFacesItem["ExternalId"].asString();
+			if(!valueFacesFacesItemSimilarFacesSimilarFacesItem["Similarity"].isNull())
+				similarFacesObject.similarity = std::stof(valueFacesFacesItemSimilarFacesSimilarFacesItem["Similarity"].asString());
 			auto faceAttributes1Node = value["FaceAttributes"];
 			auto faceBoundaryNode = faceAttributes1Node["FaceBoundary"];
-			if(!faceBoundaryNode["Left"].isNull())
-				similarFacesObject.faceAttributes1.faceBoundary.left = std::stoi(faceBoundaryNode["Left"].asString());
 			if(!faceBoundaryNode["Top"].isNull())
 				similarFacesObject.faceAttributes1.faceBoundary.top = std::stoi(faceBoundaryNode["Top"].asString());
 			if(!faceBoundaryNode["Width"].isNull())
 				similarFacesObject.faceAttributes1.faceBoundary.width = std::stoi(faceBoundaryNode["Width"].asString());
 			if(!faceBoundaryNode["Height"].isNull())
 				similarFacesObject.faceAttributes1.faceBoundary.height = std::stoi(faceBoundaryNode["Height"].asString());
+			if(!faceBoundaryNode["Left"].isNull())
+				similarFacesObject.faceAttributes1.faceBoundary.left = std::stoi(faceBoundaryNode["Left"].asString());
 			facesObject.similarFaces.push_back(similarFacesObject);
 		}
 		auto faceAttributesNode = value["FaceAttributes"];
 		auto faceBoundary2Node = faceAttributesNode["FaceBoundary"];
-		if(!faceBoundary2Node["Left"].isNull())
-			facesObject.faceAttributes.faceBoundary2.left = std::stoi(faceBoundary2Node["Left"].asString());
 		if(!faceBoundary2Node["Top"].isNull())
 			facesObject.faceAttributes.faceBoundary2.top = std::stoi(faceBoundary2Node["Top"].asString());
 		if(!faceBoundary2Node["Width"].isNull())
 			facesObject.faceAttributes.faceBoundary2.width = std::stoi(faceBoundary2Node["Width"].asString());
 		if(!faceBoundary2Node["Height"].isNull())
 			facesObject.faceAttributes.faceBoundary2.height = std::stoi(faceBoundary2Node["Height"].asString());
+		if(!faceBoundary2Node["Left"].isNull())
+			facesObject.faceAttributes.faceBoundary2.left = std::stoi(faceBoundary2Node["Left"].asString());
 		faces_.push_back(facesObject);
 	}
 

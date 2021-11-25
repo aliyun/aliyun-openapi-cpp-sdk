@@ -39,47 +39,47 @@ void GetVideoResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allVideoTagsNode = value["VideoTags"]["VideoTagsItem"];
-	for (auto valueVideoTagsVideoTagsItem : allVideoTagsNode)
-	{
-		VideoTagsItem videoTagsObject;
-		if(!valueVideoTagsVideoTagsItem["TagConfidence"].isNull())
-			videoTagsObject.tagConfidence = std::stof(valueVideoTagsVideoTagsItem["TagConfidence"].asString());
-		if(!valueVideoTagsVideoTagsItem["TagName"].isNull())
-			videoTagsObject.tagName = valueVideoTagsVideoTagsItem["TagName"].asString();
-		if(!valueVideoTagsVideoTagsItem["TagLevel"].isNull())
-			videoTagsObject.tagLevel = std::stoi(valueVideoTagsVideoTagsItem["TagLevel"].asString());
-		if(!valueVideoTagsVideoTagsItem["ParentTagName"].isNull())
-			videoTagsObject.parentTagName = valueVideoTagsVideoTagsItem["ParentTagName"].asString();
-		videoTags_.push_back(videoTagsObject);
-	}
 	auto allPersonsNode = value["Persons"]["PersonsItem"];
 	for (auto valuePersonsPersonsItem : allPersonsNode)
 	{
 		PersonsItem personsObject;
-		if(!valuePersonsPersonsItem["PersonId"].isNull())
-			personsObject.personId = valuePersonsPersonsItem["PersonId"].asString();
-		if(!valuePersonsPersonsItem["GenderConfidence"].isNull())
-			personsObject.genderConfidence = std::stof(valuePersonsPersonsItem["GenderConfidence"].asString());
 		if(!valuePersonsPersonsItem["Gender"].isNull())
 			personsObject.gender = valuePersonsPersonsItem["Gender"].asString();
-		if(!valuePersonsPersonsItem["Age"].isNull())
-			personsObject.age = std::stoi(valuePersonsPersonsItem["Age"].asString());
 		if(!valuePersonsPersonsItem["AgeConfidence"].isNull())
 			personsObject.ageConfidence = std::stof(valuePersonsPersonsItem["AgeConfidence"].asString());
+		if(!valuePersonsPersonsItem["GenderConfidence"].isNull())
+			personsObject.genderConfidence = std::stof(valuePersonsPersonsItem["GenderConfidence"].asString());
+		if(!valuePersonsPersonsItem["Age"].isNull())
+			personsObject.age = std::stoi(valuePersonsPersonsItem["Age"].asString());
+		if(!valuePersonsPersonsItem["PersonId"].isNull())
+			personsObject.personId = valuePersonsPersonsItem["PersonId"].asString();
 		persons_.push_back(personsObject);
 	}
 	auto allCelebrityNode = value["Celebrity"]["CelebrityItem"];
 	for (auto valueCelebrityCelebrityItem : allCelebrityNode)
 	{
 		CelebrityItem celebrityObject;
-		if(!valueCelebrityCelebrityItem["CelebrityName"].isNull())
-			celebrityObject.celebrityName = valueCelebrityCelebrityItem["CelebrityName"].asString();
 		if(!valueCelebrityCelebrityItem["CelebrityNum"].isNull())
 			celebrityObject.celebrityNum = std::stoi(valueCelebrityCelebrityItem["CelebrityNum"].asString());
+		if(!valueCelebrityCelebrityItem["CelebrityName"].isNull())
+			celebrityObject.celebrityName = valueCelebrityCelebrityItem["CelebrityName"].asString();
 		if(!valueCelebrityCelebrityItem["CelebrityLibraryName"].isNull())
 			celebrityObject.celebrityLibraryName = valueCelebrityCelebrityItem["CelebrityLibraryName"].asString();
 		celebrity_.push_back(celebrityObject);
+	}
+	auto allVideoTagsNode = value["VideoTags"]["VideoTagsItem"];
+	for (auto valueVideoTagsVideoTagsItem : allVideoTagsNode)
+	{
+		VideoTagsItem videoTagsObject;
+		if(!valueVideoTagsVideoTagsItem["TagName"].isNull())
+			videoTagsObject.tagName = valueVideoTagsVideoTagsItem["TagName"].asString();
+		if(!valueVideoTagsVideoTagsItem["TagConfidence"].isNull())
+			videoTagsObject.tagConfidence = std::stof(valueVideoTagsVideoTagsItem["TagConfidence"].asString());
+		if(!valueVideoTagsVideoTagsItem["TagLevel"].isNull())
+			videoTagsObject.tagLevel = std::stoi(valueVideoTagsVideoTagsItem["TagLevel"].asString());
+		if(!valueVideoTagsVideoTagsItem["ParentTagName"].isNull())
+			videoTagsObject.parentTagName = valueVideoTagsVideoTagsItem["ParentTagName"].asString();
+		videoTags_.push_back(videoTagsObject);
 	}
 	if(!value["ModifyTime"].isNull())
 		modifyTime_ = value["ModifyTime"].asString();
@@ -87,26 +87,26 @@ void GetVideoResult::parse(const std::string &payload)
 		processStatus_ = value["ProcessStatus"].asString();
 	if(!value["VideoWidth"].isNull())
 		videoWidth_ = std::stoi(value["VideoWidth"].asString());
-	if(!value["SourceUri"].isNull())
-		sourceUri_ = value["SourceUri"].asString();
 	if(!value["SourceType"].isNull())
 		sourceType_ = value["SourceType"].asString();
+	if(!value["SourceUri"].isNull())
+		sourceUri_ = value["SourceUri"].asString();
 	if(!value["VideoInfo"].isNull())
 		videoInfo_ = value["VideoInfo"].asString();
-	if(!value["RemarksA"].isNull())
-		remarksA_ = value["RemarksA"].asString();
 	if(!value["VideoFrameTagsModifyTime"].isNull())
 		videoFrameTagsModifyTime_ = value["VideoFrameTagsModifyTime"].asString();
-	if(!value["RemarksB"].isNull())
-		remarksB_ = value["RemarksB"].asString();
+	if(!value["RemarksA"].isNull())
+		remarksA_ = value["RemarksA"].asString();
 	if(!value["VideoFacesFailReason"].isNull())
 		videoFacesFailReason_ = value["VideoFacesFailReason"].asString();
+	if(!value["RemarksB"].isNull())
+		remarksB_ = value["RemarksB"].asString();
 	if(!value["VideoFacesStatus"].isNull())
 		videoFacesStatus_ = value["VideoFacesStatus"].asString();
-	if(!value["VideoOCRModifyTime"].isNull())
-		videoOCRModifyTime_ = value["VideoOCRModifyTime"].asString();
 	if(!value["RemarksC"].isNull())
 		remarksC_ = value["RemarksC"].asString();
+	if(!value["VideoOCRModifyTime"].isNull())
+		videoOCRModifyTime_ = value["VideoOCRModifyTime"].asString();
 	if(!value["RemarksD"].isNull())
 		remarksD_ = value["RemarksD"].asString();
 	if(!value["VideoHeight"].isNull())
@@ -125,24 +125,24 @@ void GetVideoResult::parse(const std::string &payload)
 		videoOCRStatus_ = value["VideoOCRStatus"].asString();
 	if(!value["VideoFrames"].isNull())
 		videoFrames_ = std::stoi(value["VideoFrames"].asString());
-	if(!value["VideoSTTModifyTime"].isNull())
-		videoSTTModifyTime_ = value["VideoSTTModifyTime"].asString();
 	if(!value["ProcessModifyTime"].isNull())
 		processModifyTime_ = value["ProcessModifyTime"].asString();
+	if(!value["VideoSTTModifyTime"].isNull())
+		videoSTTModifyTime_ = value["VideoSTTModifyTime"].asString();
 	if(!value["ProcessFailReason"].isNull())
 		processFailReason_ = value["ProcessFailReason"].asString();
-	if(!value["VideoSTTFailReason"].isNull())
-		videoSTTFailReason_ = value["VideoSTTFailReason"].asString();
-	if(!value["ExternalId"].isNull())
-		externalId_ = value["ExternalId"].asString();
 	if(!value["CreateTime"].isNull())
 		createTime_ = value["CreateTime"].asString();
+	if(!value["ExternalId"].isNull())
+		externalId_ = value["ExternalId"].asString();
+	if(!value["VideoSTTFailReason"].isNull())
+		videoSTTFailReason_ = value["VideoSTTFailReason"].asString();
 	if(!value["VideoUri"].isNull())
 		videoUri_ = value["VideoUri"].asString();
-	if(!value["VideoFormat"].isNull())
-		videoFormat_ = value["VideoFormat"].asString();
 	if(!value["VideoFrameTagsFailReason"].isNull())
 		videoFrameTagsFailReason_ = value["VideoFrameTagsFailReason"].asString();
+	if(!value["VideoFormat"].isNull())
+		videoFormat_ = value["VideoFormat"].asString();
 	if(!value["VideoSTTStatus"].isNull())
 		videoSTTStatus_ = value["VideoSTTStatus"].asString();
 	if(!value["VideoFacesModifyTime"].isNull())
@@ -153,10 +153,10 @@ void GetVideoResult::parse(const std::string &payload)
 		videoDuration_ = std::stof(value["VideoDuration"].asString());
 	if(!value["CelebrityFailReason"].isNull())
 		celebrityFailReason_ = value["CelebrityFailReason"].asString();
-	if(!value["CelebrityStatus"].isNull())
-		celebrityStatus_ = value["CelebrityStatus"].asString();
 	if(!value["SetId"].isNull())
 		setId_ = value["SetId"].asString();
+	if(!value["CelebrityStatus"].isNull())
+		celebrityStatus_ = value["CelebrityStatus"].asString();
 	if(!value["VideoTagsStatus"].isNull())
 		videoTagsStatus_ = value["VideoTagsStatus"].asString();
 	if(!value["FileSize"].isNull())
@@ -179,14 +179,14 @@ int GetVideoResult::getVideoWidth()const
 	return videoWidth_;
 }
 
-std::string GetVideoResult::getSourceUri()const
-{
-	return sourceUri_;
-}
-
 std::string GetVideoResult::getSourceType()const
 {
 	return sourceType_;
+}
+
+std::string GetVideoResult::getSourceUri()const
+{
+	return sourceUri_;
 }
 
 std::string GetVideoResult::getVideoInfo()const
@@ -194,19 +194,14 @@ std::string GetVideoResult::getVideoInfo()const
 	return videoInfo_;
 }
 
-std::string GetVideoResult::getRemarksA()const
-{
-	return remarksA_;
-}
-
 std::string GetVideoResult::getVideoFrameTagsModifyTime()const
 {
 	return videoFrameTagsModifyTime_;
 }
 
-std::string GetVideoResult::getRemarksB()const
+std::string GetVideoResult::getRemarksA()const
 {
-	return remarksB_;
+	return remarksA_;
 }
 
 std::string GetVideoResult::getVideoFacesFailReason()const
@@ -214,19 +209,24 @@ std::string GetVideoResult::getVideoFacesFailReason()const
 	return videoFacesFailReason_;
 }
 
+std::string GetVideoResult::getRemarksB()const
+{
+	return remarksB_;
+}
+
 std::string GetVideoResult::getVideoFacesStatus()const
 {
 	return videoFacesStatus_;
 }
 
-std::string GetVideoResult::getVideoOCRModifyTime()const
-{
-	return videoOCRModifyTime_;
-}
-
 std::string GetVideoResult::getRemarksC()const
 {
 	return remarksC_;
+}
+
+std::string GetVideoResult::getVideoOCRModifyTime()const
+{
+	return videoOCRModifyTime_;
 }
 
 std::string GetVideoResult::getRemarksD()const
@@ -284,14 +284,14 @@ int GetVideoResult::getVideoFrames()const
 	return videoFrames_;
 }
 
-std::string GetVideoResult::getVideoSTTModifyTime()const
-{
-	return videoSTTModifyTime_;
-}
-
 std::string GetVideoResult::getProcessModifyTime()const
 {
 	return processModifyTime_;
+}
+
+std::string GetVideoResult::getVideoSTTModifyTime()const
+{
+	return videoSTTModifyTime_;
 }
 
 std::string GetVideoResult::getProcessFailReason()const
@@ -299,9 +299,9 @@ std::string GetVideoResult::getProcessFailReason()const
 	return processFailReason_;
 }
 
-std::string GetVideoResult::getVideoSTTFailReason()const
+std::string GetVideoResult::getCreateTime()const
 {
-	return videoSTTFailReason_;
+	return createTime_;
 }
 
 std::string GetVideoResult::getExternalId()const
@@ -309,9 +309,9 @@ std::string GetVideoResult::getExternalId()const
 	return externalId_;
 }
 
-std::string GetVideoResult::getCreateTime()const
+std::string GetVideoResult::getVideoSTTFailReason()const
 {
-	return createTime_;
+	return videoSTTFailReason_;
 }
 
 std::string GetVideoResult::getVideoUri()const
@@ -319,14 +319,14 @@ std::string GetVideoResult::getVideoUri()const
 	return videoUri_;
 }
 
-std::string GetVideoResult::getVideoFormat()const
-{
-	return videoFormat_;
-}
-
 std::string GetVideoResult::getVideoFrameTagsFailReason()const
 {
 	return videoFrameTagsFailReason_;
+}
+
+std::string GetVideoResult::getVideoFormat()const
+{
+	return videoFormat_;
 }
 
 std::string GetVideoResult::getVideoSTTStatus()const
@@ -359,14 +359,14 @@ std::string GetVideoResult::getCelebrityFailReason()const
 	return celebrityFailReason_;
 }
 
-std::string GetVideoResult::getCelebrityStatus()const
-{
-	return celebrityStatus_;
-}
-
 std::string GetVideoResult::getSetId()const
 {
 	return setId_;
+}
+
+std::string GetVideoResult::getCelebrityStatus()const
+{
+	return celebrityStatus_;
 }
 
 std::string GetVideoResult::getVideoTagsStatus()const

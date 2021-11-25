@@ -43,32 +43,32 @@ void ListOfficeConversionTaskResult::parse(const std::string &payload)
 	for (auto valueTasksTasksItem : allTasksNode)
 	{
 		TasksItem tasksObject;
-		if(!valueTasksTasksItem["TaskId"].isNull())
-			tasksObject.taskId = valueTasksTasksItem["TaskId"].asString();
 		if(!valueTasksTasksItem["Status"].isNull())
 			tasksObject.status = valueTasksTasksItem["Status"].asString();
 		if(!valueTasksTasksItem["Percent"].isNull())
 			tasksObject.percent = std::stoi(valueTasksTasksItem["Percent"].asString());
+		if(!valueTasksTasksItem["FinishTime"].isNull())
+			tasksObject.finishTime = valueTasksTasksItem["FinishTime"].asString();
+		if(!valueTasksTasksItem["CreateTime"].isNull())
+			tasksObject.createTime = valueTasksTasksItem["CreateTime"].asString();
 		if(!valueTasksTasksItem["PageCount"].isNull())
 			tasksObject.pageCount = std::stoi(valueTasksTasksItem["PageCount"].asString());
-		if(!valueTasksTasksItem["SrcUri"].isNull())
-			tasksObject.srcUri = valueTasksTasksItem["SrcUri"].asString();
-		if(!valueTasksTasksItem["TgtType"].isNull())
-			tasksObject.tgtType = valueTasksTasksItem["TgtType"].asString();
-		if(!valueTasksTasksItem["TgtUri"].isNull())
-			tasksObject.tgtUri = valueTasksTasksItem["TgtUri"].asString();
-		if(!valueTasksTasksItem["ImageSpec"].isNull())
-			tasksObject.imageSpec = valueTasksTasksItem["ImageSpec"].asString();
 		if(!valueTasksTasksItem["NotifyTopicName"].isNull())
 			tasksObject.notifyTopicName = valueTasksTasksItem["NotifyTopicName"].asString();
 		if(!valueTasksTasksItem["NotifyEndpoint"].isNull())
 			tasksObject.notifyEndpoint = valueTasksTasksItem["NotifyEndpoint"].asString();
+		if(!valueTasksTasksItem["TgtUri"].isNull())
+			tasksObject.tgtUri = valueTasksTasksItem["TgtUri"].asString();
+		if(!valueTasksTasksItem["TgtType"].isNull())
+			tasksObject.tgtType = valueTasksTasksItem["TgtType"].asString();
+		if(!valueTasksTasksItem["SrcUri"].isNull())
+			tasksObject.srcUri = valueTasksTasksItem["SrcUri"].asString();
+		if(!valueTasksTasksItem["ImageSpec"].isNull())
+			tasksObject.imageSpec = valueTasksTasksItem["ImageSpec"].asString();
 		if(!valueTasksTasksItem["ExternalID"].isNull())
 			tasksObject.externalID = valueTasksTasksItem["ExternalID"].asString();
-		if(!valueTasksTasksItem["CreateTime"].isNull())
-			tasksObject.createTime = valueTasksTasksItem["CreateTime"].asString();
-		if(!valueTasksTasksItem["FinishTime"].isNull())
-			tasksObject.finishTime = valueTasksTasksItem["FinishTime"].asString();
+		if(!valueTasksTasksItem["TaskId"].isNull())
+			tasksObject.taskId = valueTasksTasksItem["TaskId"].asString();
 		tasks_.push_back(tasksObject);
 	}
 	if(!value["NextMarker"].isNull())

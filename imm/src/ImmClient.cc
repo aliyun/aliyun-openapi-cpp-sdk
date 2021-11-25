@@ -915,42 +915,6 @@ ImmClient::DetectImageFacesOutcomeCallable ImmClient::detectImageFacesCallable(c
 	return task->get_future();
 }
 
-ImmClient::DetectImageLogosOutcome ImmClient::detectImageLogos(const DetectImageLogosRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DetectImageLogosOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DetectImageLogosOutcome(DetectImageLogosResult(outcome.result()));
-	else
-		return DetectImageLogosOutcome(outcome.error());
-}
-
-void ImmClient::detectImageLogosAsync(const DetectImageLogosRequest& request, const DetectImageLogosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, detectImageLogos(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-ImmClient::DetectImageLogosOutcomeCallable ImmClient::detectImageLogosCallable(const DetectImageLogosRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DetectImageLogosOutcome()>>(
-			[this, request]()
-			{
-			return this->detectImageLogos(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 ImmClient::DetectImageQRCodesOutcome ImmClient::detectImageQRCodes(const DetectImageQRCodesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

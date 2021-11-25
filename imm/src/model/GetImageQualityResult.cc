@@ -42,22 +42,22 @@ void GetImageQualityResult::parse(const std::string &payload)
 	auto imageQualityNode = value["ImageQuality"];
 	if(!imageQualityNode["OverallScore"].isNull())
 		imageQuality_.overallScore = std::stof(imageQualityNode["OverallScore"].asString());
-	if(!imageQualityNode["ClarityScore"].isNull())
-		imageQuality_.clarityScore = std::stof(imageQualityNode["ClarityScore"].asString());
-	if(!imageQualityNode["Clarity"].isNull())
-		imageQuality_.clarity = std::stof(imageQualityNode["Clarity"].asString());
-	if(!imageQualityNode["ExposureScore"].isNull())
-		imageQuality_.exposureScore = std::stof(imageQualityNode["ExposureScore"].asString());
-	if(!imageQualityNode["Exposure"].isNull())
-		imageQuality_.exposure = std::stof(imageQualityNode["Exposure"].asString());
+	if(!imageQualityNode["Color"].isNull())
+		imageQuality_.color = std::stof(imageQualityNode["Color"].asString());
+	if(!imageQualityNode["ColorScore"].isNull())
+		imageQuality_.colorScore = std::stof(imageQualityNode["ColorScore"].asString());
 	if(!imageQualityNode["ContrastScore"].isNull())
 		imageQuality_.contrastScore = std::stof(imageQualityNode["ContrastScore"].asString());
 	if(!imageQualityNode["Contrast"].isNull())
 		imageQuality_.contrast = std::stof(imageQualityNode["Contrast"].asString());
-	if(!imageQualityNode["ColorScore"].isNull())
-		imageQuality_.colorScore = std::stof(imageQualityNode["ColorScore"].asString());
-	if(!imageQualityNode["Color"].isNull())
-		imageQuality_.color = std::stof(imageQualityNode["Color"].asString());
+	if(!imageQualityNode["ExposureScore"].isNull())
+		imageQuality_.exposureScore = std::stof(imageQualityNode["ExposureScore"].asString());
+	if(!imageQualityNode["ClarityScore"].isNull())
+		imageQuality_.clarityScore = std::stof(imageQualityNode["ClarityScore"].asString());
+	if(!imageQualityNode["Clarity"].isNull())
+		imageQuality_.clarity = std::stof(imageQualityNode["Clarity"].asString());
+	if(!imageQualityNode["Exposure"].isNull())
+		imageQuality_.exposure = std::stof(imageQualityNode["Exposure"].asString());
 	if(!imageQualityNode["CompositionScore"].isNull())
 		imageQuality_.compositionScore = std::stof(imageQualityNode["CompositionScore"].asString());
 	if(!value["ImageUri"].isNull())

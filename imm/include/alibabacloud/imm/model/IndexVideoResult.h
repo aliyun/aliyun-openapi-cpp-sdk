@@ -40,16 +40,16 @@ namespace AlibabaCloud
 				std::string getModifyTime()const;
 				std::string getEndTime()const;
 				bool getSaveType()const;
-				std::string getExternalId()const;
 				std::string getCreateTime()const;
+				std::string getExternalId()const;
 				std::string getStartTime()const;
-				std::string getVideoUri()const;
 				std::string getGrabType()const;
+				std::string getVideoUri()const;
 				std::string getRemarksA()const;
 				std::string getRemarksB()const;
 				std::string getRemarksC()const;
-				std::string getTgtUri()const;
 				std::string getRemarksD()const;
+				std::string getTgtUri()const;
 				std::string getSetId()const;
 				float getInterval()const;
 
@@ -59,16 +59,16 @@ namespace AlibabaCloud
 				std::string modifyTime_;
 				std::string endTime_;
 				bool saveType_;
-				std::string externalId_;
 				std::string createTime_;
+				std::string externalId_;
 				std::string startTime_;
-				std::string videoUri_;
 				std::string grabType_;
+				std::string videoUri_;
 				std::string remarksA_;
 				std::string remarksB_;
 				std::string remarksC_;
-				std::string tgtUri_;
 				std::string remarksD_;
+				std::string tgtUri_;
 				std::string setId_;
 				float interval_;
 
