@@ -57,8 +57,8 @@ namespace AlibabaCloud
 					std::string modelName;
 					long vocabId;
 					int qualityCheckType;
-					std::string instanceId;
 					int allContentQualityCheck;
+					std::string instanceId;
 					std::string createTime;
 					std::string skillGroupId;
 					std::string rid;
@@ -69,8 +69,8 @@ namespace AlibabaCloud
 					std::string skillGroupName;
 					std::string updateTime;
 					long id;
-					long modelId;
 					std::string allRids;
+					long modelId;
 					std::vector<SkillGroupConfig::RuleNameInfo> allRuleList;
 					int skillGroupFrom;
 				};

@@ -40,36 +40,40 @@ void GetResultToReviewResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["Audio"].isNull())
-		data_.audio = dataNode["Audio"].asString() == "true";
+	if(!dataNode["Status"].isNull())
+		data_.status = std::stoi(dataNode["Status"].asString());
 	if(!dataNode["AudioScheme"].isNull())
 		data_.audioScheme = dataNode["AudioScheme"].asString();
 	if(!dataNode["AudioURL"].isNull())
 		data_.audioURL = dataNode["AudioURL"].asString();
-	if(!dataNode["BusinessType"].isNull())
-		data_.businessType = std::stoi(dataNode["BusinessType"].asString());
-	if(!dataNode["Deleted"].isNull())
-		data_.deleted = dataNode["Deleted"].asString() == "true";
-	if(!dataNode["FileMergeName"].isNull())
-		data_.fileMergeName = dataNode["FileMergeName"].asString();
 	if(!dataNode["HitNumber"].isNull())
 		data_.hitNumber = std::stoi(dataNode["HitNumber"].asString());
-	if(!dataNode["ReviewNumber"].isNull())
-		data_.reviewNumber = std::stoi(dataNode["ReviewNumber"].asString());
+	if(!dataNode["Audio"].isNull())
+		data_.audio = dataNode["Audio"].asString() == "true";
 	if(!dataNode["TotalScore"].isNull())
 		data_.totalScore = std::stoi(dataNode["TotalScore"].asString());
-	if(!dataNode["Vid"].isNull())
-		data_.vid = dataNode["Vid"].asString();
-	if(!dataNode["Comments"].isNull())
-		data_.comments = dataNode["Comments"].asString();
+	if(!dataNode["BusinessType"].isNull())
+		data_.businessType = std::stoi(dataNode["BusinessType"].asString());
 	if(!dataNode["FileId"].isNull())
 		data_.fileId = dataNode["FileId"].asString();
-	if(!dataNode["Status"].isNull())
-		data_.status = std::stoi(dataNode["Status"].asString());
+	if(!dataNode["FileMergeName"].isNull())
+		data_.fileMergeName = dataNode["FileMergeName"].asString();
+	if(!dataNode["Comments"].isNull())
+		data_.comments = dataNode["Comments"].asString();
+	if(!dataNode["Deleted"].isNull())
+		data_.deleted = dataNode["Deleted"].asString() == "true";
+	if(!dataNode["Vid"].isNull())
+		data_.vid = dataNode["Vid"].asString();
+	if(!dataNode["ReviewNumber"].isNull())
+		data_.reviewNumber = std::stoi(dataNode["ReviewNumber"].asString());
 	auto allDialoguesNode = dataNode["Dialogues"]["Dialogue"];
 	for (auto dataNodeDialoguesDialogue : allDialoguesNode)
 	{
 		Data::Dialogue dialogueObject;
+		if(!dataNodeDialoguesDialogue["Words"].isNull())
+			dialogueObject.words = dataNodeDialoguesDialogue["Words"].asString();
+		if(!dataNodeDialoguesDialogue["Identity"].isNull())
+			dialogueObject.identity = dataNodeDialoguesDialogue["Identity"].asString();
 		if(!dataNodeDialoguesDialogue["Begin"].isNull())
 			dialogueObject.begin = std::stol(dataNodeDialoguesDialogue["Begin"].asString());
 		if(!dataNodeDialoguesDialogue["BeginTime"].isNull())
@@ -78,18 +82,14 @@ void GetResultToReviewResult::parse(const std::string &payload)
 			dialogueObject.emotionValue = std::stoi(dataNodeDialoguesDialogue["EmotionValue"].asString());
 		if(!dataNodeDialoguesDialogue["End"].isNull())
 			dialogueObject.end = std::stol(dataNodeDialoguesDialogue["End"].asString());
-		if(!dataNodeDialoguesDialogue["HourMinSec"].isNull())
-			dialogueObject.hourMinSec = dataNodeDialoguesDialogue["HourMinSec"].asString();
-		if(!dataNodeDialoguesDialogue["Identity"].isNull())
-			dialogueObject.identity = dataNodeDialoguesDialogue["Identity"].asString();
+		if(!dataNodeDialoguesDialogue["SpeechRate"].isNull())
+			dialogueObject.speechRate = std::stoi(dataNodeDialoguesDialogue["SpeechRate"].asString());
 		if(!dataNodeDialoguesDialogue["Role"].isNull())
 			dialogueObject.role = dataNodeDialoguesDialogue["Role"].asString();
 		if(!dataNodeDialoguesDialogue["SilenceDuration"].isNull())
 			dialogueObject.silenceDuration = std::stoi(dataNodeDialoguesDialogue["SilenceDuration"].asString());
-		if(!dataNodeDialoguesDialogue["SpeechRate"].isNull())
-			dialogueObject.speechRate = std::stoi(dataNodeDialoguesDialogue["SpeechRate"].asString());
-		if(!dataNodeDialoguesDialogue["Words"].isNull())
-			dialogueObject.words = dataNodeDialoguesDialogue["Words"].asString();
+		if(!dataNodeDialoguesDialogue["HourMinSec"].isNull())
+			dialogueObject.hourMinSec = dataNodeDialoguesDialogue["HourMinSec"].asString();
 		data_.dialogues.push_back(dialogueObject);
 	}
 	auto allHandScoreInfoListNode = dataNode["HandScoreInfoList"]["ScorePo"];
@@ -104,14 +104,14 @@ void GetResultToReviewResult::parse(const std::string &payload)
 		for (auto dataNodeHandScoreInfoListScorePoScoreInfosScoreParam : allScoreInfosNode)
 		{
 			Data::ScorePo::ScoreParam scoreInfosObject;
-			if(!dataNodeHandScoreInfoListScorePoScoreInfosScoreParam["Hit"].isNull())
-				scoreInfosObject.hit = std::stoi(dataNodeHandScoreInfoListScorePoScoreInfosScoreParam["Hit"].asString());
-			if(!dataNodeHandScoreInfoListScorePoScoreInfosScoreParam["ScoreNum"].isNull())
-				scoreInfosObject.scoreNum = std::stoi(dataNodeHandScoreInfoListScorePoScoreInfosScoreParam["ScoreNum"].asString());
-			if(!dataNodeHandScoreInfoListScorePoScoreInfosScoreParam["ScoreSubId"].isNull())
-				scoreInfosObject.scoreSubId = std::stol(dataNodeHandScoreInfoListScorePoScoreInfosScoreParam["ScoreSubId"].asString());
 			if(!dataNodeHandScoreInfoListScorePoScoreInfosScoreParam["ScoreSubName"].isNull())
 				scoreInfosObject.scoreSubName = dataNodeHandScoreInfoListScorePoScoreInfosScoreParam["ScoreSubName"].asString();
+			if(!dataNodeHandScoreInfoListScorePoScoreInfosScoreParam["ScoreNum"].isNull())
+				scoreInfosObject.scoreNum = std::stoi(dataNodeHandScoreInfoListScorePoScoreInfosScoreParam["ScoreNum"].asString());
+			if(!dataNodeHandScoreInfoListScorePoScoreInfosScoreParam["Hit"].isNull())
+				scoreInfosObject.hit = std::stoi(dataNodeHandScoreInfoListScorePoScoreInfosScoreParam["Hit"].asString());
+			if(!dataNodeHandScoreInfoListScorePoScoreInfosScoreParam["ScoreSubId"].isNull())
+				scoreInfosObject.scoreSubId = std::stol(dataNodeHandScoreInfoListScorePoScoreInfosScoreParam["ScoreSubId"].asString());
 			if(!dataNodeHandScoreInfoListScorePoScoreInfosScoreParam["ScoreType"].isNull())
 				scoreInfosObject.scoreType = std::stoi(dataNodeHandScoreInfoListScorePoScoreInfosScoreParam["ScoreType"].asString());
 			scorePoObject.scoreInfos.push_back(scoreInfosObject);
@@ -122,28 +122,28 @@ void GetResultToReviewResult::parse(const std::string &payload)
 	for (auto dataNodeHitRuleReviewInfoListHitRuleReviewInfo : allHitRuleReviewInfoListNode)
 	{
 		Data::HitRuleReviewInfo hitRuleReviewInfoObject;
-		if(!dataNodeHitRuleReviewInfoListHitRuleReviewInfo["AutoReview"].isNull())
-			hitRuleReviewInfoObject.autoReview = std::stoi(dataNodeHitRuleReviewInfoListHitRuleReviewInfo["AutoReview"].asString());
-		if(!dataNodeHitRuleReviewInfoListHitRuleReviewInfo["Rid"].isNull())
-			hitRuleReviewInfoObject.rid = std::stol(dataNodeHitRuleReviewInfoListHitRuleReviewInfo["Rid"].asString());
-		if(!dataNodeHitRuleReviewInfoListHitRuleReviewInfo["RuleName"].isNull())
-			hitRuleReviewInfoObject.ruleName = dataNodeHitRuleReviewInfoListHitRuleReviewInfo["RuleName"].asString();
 		if(!dataNodeHitRuleReviewInfoListHitRuleReviewInfo["RuleScoreType"].isNull())
 			hitRuleReviewInfoObject.ruleScoreType = std::stoi(dataNodeHitRuleReviewInfoListHitRuleReviewInfo["RuleScoreType"].asString());
 		if(!dataNodeHitRuleReviewInfoListHitRuleReviewInfo["RuleType"].isNull())
 			hitRuleReviewInfoObject.ruleType = std::stoi(dataNodeHitRuleReviewInfoListHitRuleReviewInfo["RuleType"].asString());
-		if(!dataNodeHitRuleReviewInfoListHitRuleReviewInfo["ScoreId"].isNull())
-			hitRuleReviewInfoObject.scoreId = std::stol(dataNodeHitRuleReviewInfoListHitRuleReviewInfo["ScoreId"].asString());
-		if(!dataNodeHitRuleReviewInfoListHitRuleReviewInfo["ScoreSubId"].isNull())
-			hitRuleReviewInfoObject.scoreSubId = std::stol(dataNodeHitRuleReviewInfoListHitRuleReviewInfo["ScoreSubId"].asString());
-		if(!dataNodeHitRuleReviewInfoListHitRuleReviewInfo["TotalNumber"].isNull())
-			hitRuleReviewInfoObject.totalNumber = std::stoi(dataNodeHitRuleReviewInfoListHitRuleReviewInfo["TotalNumber"].asString());
 		if(!dataNodeHitRuleReviewInfoListHitRuleReviewInfo["ScoreSubName"].isNull())
 			hitRuleReviewInfoObject.scoreSubName = dataNodeHitRuleReviewInfoListHitRuleReviewInfo["ScoreSubName"].asString();
 		if(!dataNodeHitRuleReviewInfoListHitRuleReviewInfo["ScoreNum"].isNull())
 			hitRuleReviewInfoObject.scoreNum = std::stoi(dataNodeHitRuleReviewInfoListHitRuleReviewInfo["ScoreNum"].asString());
+		if(!dataNodeHitRuleReviewInfoListHitRuleReviewInfo["AutoReview"].isNull())
+			hitRuleReviewInfoObject.autoReview = std::stoi(dataNodeHitRuleReviewInfoListHitRuleReviewInfo["AutoReview"].asString());
+		if(!dataNodeHitRuleReviewInfoListHitRuleReviewInfo["ScoreSubId"].isNull())
+			hitRuleReviewInfoObject.scoreSubId = std::stol(dataNodeHitRuleReviewInfoListHitRuleReviewInfo["ScoreSubId"].asString());
 		if(!dataNodeHitRuleReviewInfoListHitRuleReviewInfo["Complainable"].isNull())
 			hitRuleReviewInfoObject.complainable = dataNodeHitRuleReviewInfoListHitRuleReviewInfo["Complainable"].asString() == "true";
+		if(!dataNodeHitRuleReviewInfoListHitRuleReviewInfo["TotalNumber"].isNull())
+			hitRuleReviewInfoObject.totalNumber = std::stoi(dataNodeHitRuleReviewInfoListHitRuleReviewInfo["TotalNumber"].asString());
+		if(!dataNodeHitRuleReviewInfoListHitRuleReviewInfo["ScoreId"].isNull())
+			hitRuleReviewInfoObject.scoreId = std::stol(dataNodeHitRuleReviewInfoListHitRuleReviewInfo["ScoreId"].asString());
+		if(!dataNodeHitRuleReviewInfoListHitRuleReviewInfo["RuleName"].isNull())
+			hitRuleReviewInfoObject.ruleName = dataNodeHitRuleReviewInfoListHitRuleReviewInfo["RuleName"].asString();
+		if(!dataNodeHitRuleReviewInfoListHitRuleReviewInfo["Rid"].isNull())
+			hitRuleReviewInfoObject.rid = std::stol(dataNodeHitRuleReviewInfoListHitRuleReviewInfo["Rid"].asString());
 		auto allConditionHitInfoListNode = dataNodeHitRuleReviewInfoListHitRuleReviewInfo["ConditionHitInfoList"]["ConditionHitInfo"];
 		for (auto dataNodeHitRuleReviewInfoListHitRuleReviewInfoConditionHitInfoListConditionHitInfo : allConditionHitInfoListNode)
 		{
@@ -152,35 +152,35 @@ void GetResultToReviewResult::parse(const std::string &payload)
 			for (auto dataNodeHitRuleReviewInfoListHitRuleReviewInfoConditionHitInfoListConditionHitInfoKeyWordsKeyWord : allKeyWordsNode)
 			{
 				Data::HitRuleReviewInfo::ConditionHitInfo::KeyWord keyWordsObject;
+				if(!dataNodeHitRuleReviewInfoListHitRuleReviewInfoConditionHitInfoListConditionHitInfoKeyWordsKeyWord["From"].isNull())
+					keyWordsObject.from = std::stoi(dataNodeHitRuleReviewInfoListHitRuleReviewInfoConditionHitInfoListConditionHitInfoKeyWordsKeyWord["From"].asString());
 				if(!dataNodeHitRuleReviewInfoListHitRuleReviewInfoConditionHitInfoListConditionHitInfoKeyWordsKeyWord["Val"].isNull())
 					keyWordsObject.val = dataNodeHitRuleReviewInfoListHitRuleReviewInfoConditionHitInfoListConditionHitInfoKeyWordsKeyWord["Val"].asString();
 				if(!dataNodeHitRuleReviewInfoListHitRuleReviewInfoConditionHitInfoListConditionHitInfoKeyWordsKeyWord["Pid"].isNull())
 					keyWordsObject.pid = std::stoi(dataNodeHitRuleReviewInfoListHitRuleReviewInfoConditionHitInfoListConditionHitInfoKeyWordsKeyWord["Pid"].asString());
-				if(!dataNodeHitRuleReviewInfoListHitRuleReviewInfoConditionHitInfoListConditionHitInfoKeyWordsKeyWord["From"].isNull())
-					keyWordsObject.from = std::stoi(dataNodeHitRuleReviewInfoListHitRuleReviewInfoConditionHitInfoListConditionHitInfoKeyWordsKeyWord["From"].asString());
-				if(!dataNodeHitRuleReviewInfoListHitRuleReviewInfoConditionHitInfoListConditionHitInfoKeyWordsKeyWord["To"].isNull())
-					keyWordsObject.to = std::stoi(dataNodeHitRuleReviewInfoListHitRuleReviewInfoConditionHitInfoListConditionHitInfoKeyWordsKeyWord["To"].asString());
 				if(!dataNodeHitRuleReviewInfoListHitRuleReviewInfoConditionHitInfoListConditionHitInfoKeyWordsKeyWord["Tid"].isNull())
 					keyWordsObject.tid = dataNodeHitRuleReviewInfoListHitRuleReviewInfoConditionHitInfoListConditionHitInfoKeyWordsKeyWord["Tid"].asString();
 				if(!dataNodeHitRuleReviewInfoListHitRuleReviewInfoConditionHitInfoListConditionHitInfoKeyWordsKeyWord["Cid"].isNull())
 					keyWordsObject.cid = dataNodeHitRuleReviewInfoListHitRuleReviewInfoConditionHitInfoListConditionHitInfoKeyWordsKeyWord["Cid"].asString();
+				if(!dataNodeHitRuleReviewInfoListHitRuleReviewInfoConditionHitInfoListConditionHitInfoKeyWordsKeyWord["To"].isNull())
+					keyWordsObject.to = std::stoi(dataNodeHitRuleReviewInfoListHitRuleReviewInfoConditionHitInfoListConditionHitInfoKeyWordsKeyWord["To"].asString());
 				conditionHitInfoListObject.keyWords.push_back(keyWordsObject);
 			}
 			auto phraseNode = value["Phrase"];
-			if(!phraseNode["Role"].isNull())
-				conditionHitInfoListObject.phrase.role = phraseNode["Role"].asString();
-			if(!phraseNode["Identity"].isNull())
-				conditionHitInfoListObject.phrase.identity = phraseNode["Identity"].asString();
-			if(!phraseNode["EmotionValue"].isNull())
-				conditionHitInfoListObject.phrase.emotionValue = std::stoi(phraseNode["EmotionValue"].asString());
 			if(!phraseNode["Words"].isNull())
 				conditionHitInfoListObject.phrase.words = phraseNode["Words"].asString();
-			if(!phraseNode["End"].isNull())
-				conditionHitInfoListObject.phrase.end = std::stol(phraseNode["End"].asString());
-			if(!phraseNode["Pid"].isNull())
-				conditionHitInfoListObject.phrase.pid = std::stoi(phraseNode["Pid"].asString());
 			if(!phraseNode["Begin"].isNull())
 				conditionHitInfoListObject.phrase.begin = std::stol(phraseNode["Begin"].asString());
+			if(!phraseNode["Identity"].isNull())
+				conditionHitInfoListObject.phrase.identity = phraseNode["Identity"].asString();
+			if(!phraseNode["Pid"].isNull())
+				conditionHitInfoListObject.phrase.pid = std::stoi(phraseNode["Pid"].asString());
+			if(!phraseNode["EmotionValue"].isNull())
+				conditionHitInfoListObject.phrase.emotionValue = std::stoi(phraseNode["EmotionValue"].asString());
+			if(!phraseNode["End"].isNull())
+				conditionHitInfoListObject.phrase.end = std::stol(phraseNode["End"].asString());
+			if(!phraseNode["Role"].isNull())
+				conditionHitInfoListObject.phrase.role = phraseNode["Role"].asString();
 			auto allCid = value["Cid"]["Cid"];
 			for (auto value : allCid)
 				conditionHitInfoListObject.cid.push_back(value.asString());
@@ -192,57 +192,57 @@ void GetResultToReviewResult::parse(const std::string &payload)
 			Data::HitRuleReviewInfo::ComplainHistoriesItem complainHistoriesObject;
 			if(!dataNodeHitRuleReviewInfoListHitRuleReviewInfoComplainHistoriesComplainHistoriesItem["Comments"].isNull())
 				complainHistoriesObject.comments = dataNodeHitRuleReviewInfoListHitRuleReviewInfoComplainHistoriesComplainHistoriesItem["Comments"].asString();
-			if(!dataNodeHitRuleReviewInfoListHitRuleReviewInfoComplainHistoriesComplainHistoriesItem["OperatorName"].isNull())
-				complainHistoriesObject.operatorName = dataNodeHitRuleReviewInfoListHitRuleReviewInfoComplainHistoriesComplainHistoriesItem["OperatorName"].asString();
 			if(!dataNodeHitRuleReviewInfoListHitRuleReviewInfoComplainHistoriesComplainHistoriesItem["Operator"].isNull())
 				complainHistoriesObject._operator = std::stol(dataNodeHitRuleReviewInfoListHitRuleReviewInfoComplainHistoriesComplainHistoriesItem["Operator"].asString());
-			if(!dataNodeHitRuleReviewInfoListHitRuleReviewInfoComplainHistoriesComplainHistoriesItem["OperationType"].isNull())
-				complainHistoriesObject.operationType = std::stoi(dataNodeHitRuleReviewInfoListHitRuleReviewInfoComplainHistoriesComplainHistoriesItem["OperationType"].asString());
 			if(!dataNodeHitRuleReviewInfoListHitRuleReviewInfoComplainHistoriesComplainHistoriesItem["OperationTime"].isNull())
 				complainHistoriesObject.operationTime = dataNodeHitRuleReviewInfoListHitRuleReviewInfoComplainHistoriesComplainHistoriesItem["OperationTime"].asString();
+			if(!dataNodeHitRuleReviewInfoListHitRuleReviewInfoComplainHistoriesComplainHistoriesItem["OperationType"].isNull())
+				complainHistoriesObject.operationType = std::stoi(dataNodeHitRuleReviewInfoListHitRuleReviewInfoComplainHistoriesComplainHistoriesItem["OperationType"].asString());
+			if(!dataNodeHitRuleReviewInfoListHitRuleReviewInfoComplainHistoriesComplainHistoriesItem["OperatorName"].isNull())
+				complainHistoriesObject.operatorName = dataNodeHitRuleReviewInfoListHitRuleReviewInfoComplainHistoriesComplainHistoriesItem["OperatorName"].asString();
 			hitRuleReviewInfoObject.complainHistories.push_back(complainHistoriesObject);
 		}
 		auto reviewInfoNode = value["ReviewInfo"];
-		if(!reviewInfoNode["HitId"].isNull())
-			hitRuleReviewInfoObject.reviewInfo.hitId = reviewInfoNode["HitId"].asString();
-		if(!reviewInfoNode["Rid"].isNull())
-			hitRuleReviewInfoObject.reviewInfo.rid = std::stol(reviewInfoNode["Rid"].asString());
 		if(!reviewInfoNode["ReviewResult"].isNull())
 			hitRuleReviewInfoObject.reviewInfo.reviewResult = std::stoi(reviewInfoNode["ReviewResult"].asString());
-		if(!reviewInfoNode["Reviewer"].isNull())
-			hitRuleReviewInfoObject.reviewInfo.reviewer = reviewInfoNode["Reviewer"].asString();
 		if(!reviewInfoNode["ReviewTime"].isNull())
 			hitRuleReviewInfoObject.reviewInfo.reviewTime = reviewInfoNode["ReviewTime"].asString();
+		if(!reviewInfoNode["HitId"].isNull())
+			hitRuleReviewInfoObject.reviewInfo.hitId = reviewInfoNode["HitId"].asString();
+		if(!reviewInfoNode["Reviewer"].isNull())
+			hitRuleReviewInfoObject.reviewInfo.reviewer = reviewInfoNode["Reviewer"].asString();
+		if(!reviewInfoNode["Rid"].isNull())
+			hitRuleReviewInfoObject.reviewInfo.rid = std::stol(reviewInfoNode["Rid"].asString());
 		data_.hitRuleReviewInfoList.push_back(hitRuleReviewInfoObject);
 	}
 	auto allManualScoreInfoListNode = dataNode["ManualScoreInfoList"]["ManualScoreInfo"];
 	for (auto dataNodeManualScoreInfoListManualScoreInfo : allManualScoreInfoListNode)
 	{
 		Data::ManualScoreInfo manualScoreInfoObject;
-		if(!dataNodeManualScoreInfoListManualScoreInfo["ScoreId"].isNull())
-			manualScoreInfoObject.scoreId = std::stol(dataNodeManualScoreInfoListManualScoreInfo["ScoreId"].asString());
-		if(!dataNodeManualScoreInfoListManualScoreInfo["ScoreSubId"].isNull())
-			manualScoreInfoObject.scoreSubId = std::stol(dataNodeManualScoreInfoListManualScoreInfo["ScoreSubId"].asString());
 		if(!dataNodeManualScoreInfoListManualScoreInfo["ScoreSubName"].isNull())
 			manualScoreInfoObject.scoreSubName = dataNodeManualScoreInfoListManualScoreInfo["ScoreSubName"].asString();
-		if(!dataNodeManualScoreInfoListManualScoreInfo["ScoreNum"].isNull())
-			manualScoreInfoObject.scoreNum = std::stoi(dataNodeManualScoreInfoListManualScoreInfo["ScoreNum"].asString());
 		if(!dataNodeManualScoreInfoListManualScoreInfo["Complainable"].isNull())
 			manualScoreInfoObject.complainable = dataNodeManualScoreInfoListManualScoreInfo["Complainable"].asString() == "true";
+		if(!dataNodeManualScoreInfoListManualScoreInfo["ScoreNum"].isNull())
+			manualScoreInfoObject.scoreNum = std::stoi(dataNodeManualScoreInfoListManualScoreInfo["ScoreNum"].asString());
+		if(!dataNodeManualScoreInfoListManualScoreInfo["ScoreSubId"].isNull())
+			manualScoreInfoObject.scoreSubId = std::stol(dataNodeManualScoreInfoListManualScoreInfo["ScoreSubId"].asString());
+		if(!dataNodeManualScoreInfoListManualScoreInfo["ScoreId"].isNull())
+			manualScoreInfoObject.scoreId = std::stol(dataNodeManualScoreInfoListManualScoreInfo["ScoreId"].asString());
 		auto allComplainHistories1Node = dataNodeManualScoreInfoListManualScoreInfo["ComplainHistories"]["ComplainHistoriesItem"];
 		for (auto dataNodeManualScoreInfoListManualScoreInfoComplainHistoriesComplainHistoriesItem : allComplainHistories1Node)
 		{
 			Data::ManualScoreInfo::ComplainHistoriesItem2 complainHistories1Object;
 			if(!dataNodeManualScoreInfoListManualScoreInfoComplainHistoriesComplainHistoriesItem["Comments"].isNull())
 				complainHistories1Object.comments = dataNodeManualScoreInfoListManualScoreInfoComplainHistoriesComplainHistoriesItem["Comments"].asString();
-			if(!dataNodeManualScoreInfoListManualScoreInfoComplainHistoriesComplainHistoriesItem["OperatorName"].isNull())
-				complainHistories1Object.operatorName = dataNodeManualScoreInfoListManualScoreInfoComplainHistoriesComplainHistoriesItem["OperatorName"].asString();
 			if(!dataNodeManualScoreInfoListManualScoreInfoComplainHistoriesComplainHistoriesItem["Operator"].isNull())
 				complainHistories1Object._operator = std::stol(dataNodeManualScoreInfoListManualScoreInfoComplainHistoriesComplainHistoriesItem["Operator"].asString());
-			if(!dataNodeManualScoreInfoListManualScoreInfoComplainHistoriesComplainHistoriesItem["OperationType"].isNull())
-				complainHistories1Object.operationType = std::stoi(dataNodeManualScoreInfoListManualScoreInfoComplainHistoriesComplainHistoriesItem["OperationType"].asString());
 			if(!dataNodeManualScoreInfoListManualScoreInfoComplainHistoriesComplainHistoriesItem["OperationTime"].isNull())
 				complainHistories1Object.operationTime = dataNodeManualScoreInfoListManualScoreInfoComplainHistoriesComplainHistoriesItem["OperationTime"].asString();
+			if(!dataNodeManualScoreInfoListManualScoreInfoComplainHistoriesComplainHistoriesItem["OperationType"].isNull())
+				complainHistories1Object.operationType = std::stoi(dataNodeManualScoreInfoListManualScoreInfoComplainHistoriesComplainHistoriesItem["OperationType"].asString());
+			if(!dataNodeManualScoreInfoListManualScoreInfoComplainHistoriesComplainHistoriesItem["OperatorName"].isNull())
+				complainHistories1Object.operatorName = dataNodeManualScoreInfoListManualScoreInfoComplainHistoriesComplainHistoriesItem["OperatorName"].asString();
 			manualScoreInfoObject.complainHistories1.push_back(complainHistories1Object);
 		}
 		data_.manualScoreInfoList.push_back(manualScoreInfoObject);
@@ -251,28 +251,28 @@ void GetResultToReviewResult::parse(const std::string &payload)
 	for (auto dataNodeReviewHistoryListReviewHistory : allReviewHistoryListNode)
 	{
 		Data::ReviewHistory reviewHistoryObject;
-		if(!dataNodeReviewHistoryListReviewHistory["TimeStr"].isNull())
-			reviewHistoryObject.timeStr = dataNodeReviewHistoryListReviewHistory["TimeStr"].asString();
-		if(!dataNodeReviewHistoryListReviewHistory["OperatorName"].isNull())
-			reviewHistoryObject.operatorName = dataNodeReviewHistoryListReviewHistory["OperatorName"].asString();
 		if(!dataNodeReviewHistoryListReviewHistory["Type"].isNull())
 			reviewHistoryObject.type = std::stoi(dataNodeReviewHistoryListReviewHistory["Type"].asString());
+		if(!dataNodeReviewHistoryListReviewHistory["OperatorName"].isNull())
+			reviewHistoryObject.operatorName = dataNodeReviewHistoryListReviewHistory["OperatorName"].asString();
+		if(!dataNodeReviewHistoryListReviewHistory["TimeStr"].isNull())
+			reviewHistoryObject.timeStr = dataNodeReviewHistoryListReviewHistory["TimeStr"].asString();
+		if(!dataNodeReviewHistoryListReviewHistory["Score"].isNull())
+			reviewHistoryObject.score = std::stoi(dataNodeReviewHistoryListReviewHistory["Score"].asString());
 		if(!dataNodeReviewHistoryListReviewHistory["ReviewResult"].isNull())
 			reviewHistoryObject.reviewResult = std::stoi(dataNodeReviewHistoryListReviewHistory["ReviewResult"].asString());
 		if(!dataNodeReviewHistoryListReviewHistory["ComplainResult"].isNull())
 			reviewHistoryObject.complainResult = std::stoi(dataNodeReviewHistoryListReviewHistory["ComplainResult"].asString());
 		if(!dataNodeReviewHistoryListReviewHistory["OldScore"].isNull())
 			reviewHistoryObject.oldScore = std::stoi(dataNodeReviewHistoryListReviewHistory["OldScore"].asString());
-		if(!dataNodeReviewHistoryListReviewHistory["Score"].isNull())
-			reviewHistoryObject.score = std::stoi(dataNodeReviewHistoryListReviewHistory["Score"].asString());
 		data_.reviewHistoryList.push_back(reviewHistoryObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

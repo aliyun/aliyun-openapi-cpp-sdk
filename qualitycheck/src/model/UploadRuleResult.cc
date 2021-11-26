@@ -42,12 +42,12 @@ void UploadRuleResult::parse(const std::string &payload)
 	auto allData = value["Data"]["RidInfo"];
 	for (const auto &item : allData)
 		data_.push_back(item.asString());
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

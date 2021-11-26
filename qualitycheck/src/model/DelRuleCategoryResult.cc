@@ -42,12 +42,12 @@ void DelRuleCategoryResult::parse(const std::string &payload)
 	auto dataNode = value["Data"];
 	if(!dataNode["Select"].isNull())
 		data_.select = dataNode["Select"].asString() == "true";
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

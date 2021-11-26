@@ -43,52 +43,52 @@ void ListTaskAssignRulesResult::parse(const std::string &payload)
 	for (auto valueDataTaskAssignRuleInfo : allDataNode)
 	{
 		TaskAssignRuleInfo dataObject;
-		if(!valueDataTaskAssignRuleInfo["RuleId"].isNull())
-			dataObject.ruleId = std::stol(valueDataTaskAssignRuleInfo["RuleId"].asString());
-		if(!valueDataTaskAssignRuleInfo["Enabled"].isNull())
-			dataObject.enabled = std::stoi(valueDataTaskAssignRuleInfo["Enabled"].asString());
-		if(!valueDataTaskAssignRuleInfo["CallType"].isNull())
-			dataObject.callType = std::stoi(valueDataTaskAssignRuleInfo["CallType"].asString());
-		if(!valueDataTaskAssignRuleInfo["Priority"].isNull())
-			dataObject.priority = std::stoi(valueDataTaskAssignRuleInfo["Priority"].asString());
-		if(!valueDataTaskAssignRuleInfo["DurationMin"].isNull())
-			dataObject.durationMin = std::stoi(valueDataTaskAssignRuleInfo["DurationMin"].asString());
+		if(!valueDataTaskAssignRuleInfo["UpdateTime"].isNull())
+			dataObject.updateTime = valueDataTaskAssignRuleInfo["UpdateTime"].asString();
+		if(!valueDataTaskAssignRuleInfo["SkillGroupsStr"].isNull())
+			dataObject.skillGroupsStr = valueDataTaskAssignRuleInfo["SkillGroupsStr"].asString();
+		if(!valueDataTaskAssignRuleInfo["CallTimeEnd"].isNull())
+			dataObject.callTimeEnd = std::stol(valueDataTaskAssignRuleInfo["CallTimeEnd"].asString());
 		if(!valueDataTaskAssignRuleInfo["DurationMax"].isNull())
 			dataObject.durationMax = std::stoi(valueDataTaskAssignRuleInfo["DurationMax"].asString());
 		if(!valueDataTaskAssignRuleInfo["CreateTime"].isNull())
 			dataObject.createTime = valueDataTaskAssignRuleInfo["CreateTime"].asString();
-		if(!valueDataTaskAssignRuleInfo["UpdateTime"].isNull())
-			dataObject.updateTime = valueDataTaskAssignRuleInfo["UpdateTime"].asString();
+		if(!valueDataTaskAssignRuleInfo["Priority"].isNull())
+			dataObject.priority = std::stoi(valueDataTaskAssignRuleInfo["Priority"].asString());
+		if(!valueDataTaskAssignRuleInfo["DurationMin"].isNull())
+			dataObject.durationMin = std::stoi(valueDataTaskAssignRuleInfo["DurationMin"].asString());
 		if(!valueDataTaskAssignRuleInfo["AgentsStr"].isNull())
 			dataObject.agentsStr = valueDataTaskAssignRuleInfo["AgentsStr"].asString();
-		if(!valueDataTaskAssignRuleInfo["SkillGroupsStr"].isNull())
-			dataObject.skillGroupsStr = valueDataTaskAssignRuleInfo["SkillGroupsStr"].asString();
-		if(!valueDataTaskAssignRuleInfo["CallTimeStart"].isNull())
-			dataObject.callTimeStart = std::stol(valueDataTaskAssignRuleInfo["CallTimeStart"].asString());
-		if(!valueDataTaskAssignRuleInfo["CallTimeEnd"].isNull())
-			dataObject.callTimeEnd = std::stol(valueDataTaskAssignRuleInfo["CallTimeEnd"].asString());
-		if(!valueDataTaskAssignRuleInfo["AssignmentType"].isNull())
-			dataObject.assignmentType = std::stoi(valueDataTaskAssignRuleInfo["AssignmentType"].asString());
 		if(!valueDataTaskAssignRuleInfo["RuleName"].isNull())
 			dataObject.ruleName = valueDataTaskAssignRuleInfo["RuleName"].asString();
+		if(!valueDataTaskAssignRuleInfo["RuleId"].isNull())
+			dataObject.ruleId = std::stol(valueDataTaskAssignRuleInfo["RuleId"].asString());
+		if(!valueDataTaskAssignRuleInfo["AssignmentType"].isNull())
+			dataObject.assignmentType = std::stoi(valueDataTaskAssignRuleInfo["AssignmentType"].asString());
+		if(!valueDataTaskAssignRuleInfo["CallType"].isNull())
+			dataObject.callType = std::stoi(valueDataTaskAssignRuleInfo["CallType"].asString());
+		if(!valueDataTaskAssignRuleInfo["Enabled"].isNull())
+			dataObject.enabled = std::stoi(valueDataTaskAssignRuleInfo["Enabled"].asString());
+		if(!valueDataTaskAssignRuleInfo["CallTimeStart"].isNull())
+			dataObject.callTimeStart = std::stol(valueDataTaskAssignRuleInfo["CallTimeStart"].asString());
 		auto allAgentsNode = valueDataTaskAssignRuleInfo["Agents"]["Agent"];
 		for (auto valueDataTaskAssignRuleInfoAgentsAgent : allAgentsNode)
 		{
 			TaskAssignRuleInfo::Agent agentsObject;
-			if(!valueDataTaskAssignRuleInfoAgentsAgent["AgentId"].isNull())
-				agentsObject.agentId = valueDataTaskAssignRuleInfoAgentsAgent["AgentId"].asString();
 			if(!valueDataTaskAssignRuleInfoAgentsAgent["AgentName"].isNull())
 				agentsObject.agentName = valueDataTaskAssignRuleInfoAgentsAgent["AgentName"].asString();
+			if(!valueDataTaskAssignRuleInfoAgentsAgent["AgentId"].isNull())
+				agentsObject.agentId = valueDataTaskAssignRuleInfoAgentsAgent["AgentId"].asString();
 			dataObject.agents.push_back(agentsObject);
 		}
 		auto allSkillGroupsNode = valueDataTaskAssignRuleInfo["SkillGroups"]["SkillGroup"];
 		for (auto valueDataTaskAssignRuleInfoSkillGroupsSkillGroup : allSkillGroupsNode)
 		{
 			TaskAssignRuleInfo::SkillGroup skillGroupsObject;
-			if(!valueDataTaskAssignRuleInfoSkillGroupsSkillGroup["SkillId"].isNull())
-				skillGroupsObject.skillId = valueDataTaskAssignRuleInfoSkillGroupsSkillGroup["SkillId"].asString();
 			if(!valueDataTaskAssignRuleInfoSkillGroupsSkillGroup["SkillName"].isNull())
 				skillGroupsObject.skillName = valueDataTaskAssignRuleInfoSkillGroupsSkillGroup["SkillName"].asString();
+			if(!valueDataTaskAssignRuleInfoSkillGroupsSkillGroup["SkillId"].isNull())
+				skillGroupsObject.skillId = valueDataTaskAssignRuleInfoSkillGroupsSkillGroup["SkillId"].asString();
 			dataObject.skillGroups.push_back(skillGroupsObject);
 		}
 		auto allReviewersNode = valueDataTaskAssignRuleInfo["Reviewers"]["Reviewer"];
@@ -105,23 +105,23 @@ void ListTaskAssignRulesResult::parse(const std::string &payload)
 		for (auto valueDataTaskAssignRuleInfoRulesRuleBasicInfo : allRulesNode)
 		{
 			TaskAssignRuleInfo::RuleBasicInfo rulesObject;
-			if(!valueDataTaskAssignRuleInfoRulesRuleBasicInfo["Rid"].isNull())
-				rulesObject.rid = valueDataTaskAssignRuleInfoRulesRuleBasicInfo["Rid"].asString();
 			if(!valueDataTaskAssignRuleInfoRulesRuleBasicInfo["Name"].isNull())
 				rulesObject.name = valueDataTaskAssignRuleInfoRulesRuleBasicInfo["Name"].asString();
+			if(!valueDataTaskAssignRuleInfoRulesRuleBasicInfo["Rid"].isNull())
+				rulesObject.rid = valueDataTaskAssignRuleInfoRulesRuleBasicInfo["Rid"].asString();
 			dataObject.rules.push_back(rulesObject);
 		}
 		auto samplingModeNode = value["SamplingMode"];
-		if(!samplingModeNode["Dimension"].isNull())
-			dataObject.samplingMode.dimension = std::stoi(samplingModeNode["Dimension"].asString());
-		if(!samplingModeNode["Proportion"].isNull())
-			dataObject.samplingMode.proportion = std::stof(samplingModeNode["Proportion"].asString());
-		if(!samplingModeNode["Limit"].isNull())
-			dataObject.samplingMode.limit = std::stoi(samplingModeNode["Limit"].asString());
 		if(!samplingModeNode["NumberOfDraws"].isNull())
 			dataObject.samplingMode.numberOfDraws = std::stoi(samplingModeNode["NumberOfDraws"].asString());
 		if(!samplingModeNode["AnyNumberOfDraws"].isNull())
 			dataObject.samplingMode.anyNumberOfDraws = std::stoi(samplingModeNode["AnyNumberOfDraws"].asString());
+		if(!samplingModeNode["Limit"].isNull())
+			dataObject.samplingMode.limit = std::stoi(samplingModeNode["Limit"].asString());
+		if(!samplingModeNode["Proportion"].isNull())
+			dataObject.samplingMode.proportion = std::stof(samplingModeNode["Proportion"].asString());
+		if(!samplingModeNode["Dimension"].isNull())
+			dataObject.samplingMode.dimension = std::stoi(samplingModeNode["Dimension"].asString());
 		if(!samplingModeNode["Designated"].isNull())
 			dataObject.samplingMode.designated = samplingModeNode["Designated"].asString() == "true";
 		if(!samplingModeNode["RandomInspectionNumber"].isNull())
@@ -130,10 +130,10 @@ void ListTaskAssignRulesResult::parse(const std::string &payload)
 		for (auto samplingModeNodeSamplingModeAgentsSamplingModeAgent : allSamplingModeAgentsNode)
 		{
 			TaskAssignRuleInfo::SamplingMode::SamplingModeAgent samplingModeAgentObject;
-			if(!samplingModeNodeSamplingModeAgentsSamplingModeAgent["AgentId"].isNull())
-				samplingModeAgentObject.agentId = samplingModeNodeSamplingModeAgentsSamplingModeAgent["AgentId"].asString();
 			if(!samplingModeNodeSamplingModeAgentsSamplingModeAgent["AgentName"].isNull())
 				samplingModeAgentObject.agentName = samplingModeNodeSamplingModeAgentsSamplingModeAgent["AgentName"].asString();
+			if(!samplingModeNodeSamplingModeAgentsSamplingModeAgent["AgentId"].isNull())
+				samplingModeAgentObject.agentId = samplingModeNodeSamplingModeAgentsSamplingModeAgent["AgentId"].asString();
 			dataObject.samplingMode.samplingModeAgents.push_back(samplingModeAgentObject);
 		}
 		data_.push_back(dataObject);

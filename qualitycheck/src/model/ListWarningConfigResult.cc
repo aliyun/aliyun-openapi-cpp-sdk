@@ -43,24 +43,24 @@ void ListWarningConfigResult::parse(const std::string &payload)
 	for (auto valueDataWarningConfigInfo : allDataNode)
 	{
 		WarningConfigInfo dataObject;
-		if(!valueDataWarningConfigInfo["ConfigId"].isNull())
-			dataObject.configId = std::stol(valueDataWarningConfigInfo["ConfigId"].asString());
-		if(!valueDataWarningConfigInfo["ConfigName"].isNull())
-			dataObject.configName = valueDataWarningConfigInfo["ConfigName"].asString();
 		if(!valueDataWarningConfigInfo["Status"].isNull())
 			dataObject.status = std::stoi(valueDataWarningConfigInfo["Status"].asString());
-		if(!valueDataWarningConfigInfo["CreateTime"].isNull())
-			dataObject.createTime = valueDataWarningConfigInfo["CreateTime"].asString();
+		if(!valueDataWarningConfigInfo["ConfigName"].isNull())
+			dataObject.configName = valueDataWarningConfigInfo["ConfigName"].asString();
 		if(!valueDataWarningConfigInfo["UpdateTime"].isNull())
 			dataObject.updateTime = valueDataWarningConfigInfo["UpdateTime"].asString();
+		if(!valueDataWarningConfigInfo["ConfigId"].isNull())
+			dataObject.configId = std::stol(valueDataWarningConfigInfo["ConfigId"].asString());
+		if(!valueDataWarningConfigInfo["CreateTime"].isNull())
+			dataObject.createTime = valueDataWarningConfigInfo["CreateTime"].asString();
 		auto allRuleListNode = valueDataWarningConfigInfo["RuleList"]["WarningRule"];
 		for (auto valueDataWarningConfigInfoRuleListWarningRule : allRuleListNode)
 		{
 			WarningConfigInfo::WarningRule ruleListObject;
-			if(!valueDataWarningConfigInfoRuleListWarningRule["Rid"].isNull())
-				ruleListObject.rid = std::stol(valueDataWarningConfigInfoRuleListWarningRule["Rid"].asString());
 			if(!valueDataWarningConfigInfoRuleListWarningRule["RuleName"].isNull())
 				ruleListObject.ruleName = valueDataWarningConfigInfoRuleListWarningRule["RuleName"].asString();
+			if(!valueDataWarningConfigInfoRuleListWarningRule["Rid"].isNull())
+				ruleListObject.rid = std::stol(valueDataWarningConfigInfoRuleListWarningRule["Rid"].asString());
 			dataObject.ruleList.push_back(ruleListObject);
 		}
 		auto allChannelsNode = valueDataWarningConfigInfo["Channels"]["Channel"];
@@ -78,12 +78,12 @@ void ListWarningConfigResult::parse(const std::string &payload)
 			dataObject.ridList.push_back(value.asString());
 		data_.push_back(dataObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

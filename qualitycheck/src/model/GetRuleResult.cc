@@ -44,59 +44,59 @@ void GetRuleResult::parse(const std::string &payload)
 	for (auto dataNodeRulesRuleInfo : allRulesNode)
 	{
 		Data::RuleInfo ruleInfoObject;
-		if(!dataNodeRulesRuleInfo["Rid"].isNull())
-			ruleInfoObject.rid = dataNodeRulesRuleInfo["Rid"].asString();
-		if(!dataNodeRulesRuleInfo["RuleLambda"].isNull())
-			ruleInfoObject.ruleLambda = dataNodeRulesRuleInfo["RuleLambda"].asString();
-		if(!dataNodeRulesRuleInfo["Name"].isNull())
-			ruleInfoObject.name = dataNodeRulesRuleInfo["Name"].asString();
-		if(!dataNodeRulesRuleInfo["Type"].isNull())
-			ruleInfoObject.type = std::stoi(dataNodeRulesRuleInfo["Type"].asString());
 		if(!dataNodeRulesRuleInfo["Status"].isNull())
 			ruleInfoObject.status = std::stoi(dataNodeRulesRuleInfo["Status"].asString());
+		if(!dataNodeRulesRuleInfo["Type"].isNull())
+			ruleInfoObject.type = std::stoi(dataNodeRulesRuleInfo["Type"].asString());
+		if(!dataNodeRulesRuleInfo["ScoreSubId"].isNull())
+			ruleInfoObject.scoreSubId = std::stoi(dataNodeRulesRuleInfo["ScoreSubId"].asString());
+		if(!dataNodeRulesRuleInfo["IsOnline"].isNull())
+			ruleInfoObject.isOnline = std::stoi(dataNodeRulesRuleInfo["IsOnline"].asString());
+		if(!dataNodeRulesRuleInfo["CreateTime"].isNull())
+			ruleInfoObject.createTime = dataNodeRulesRuleInfo["CreateTime"].asString();
+		if(!dataNodeRulesRuleInfo["CreateEmpid"].isNull())
+			ruleInfoObject.createEmpid = dataNodeRulesRuleInfo["CreateEmpid"].asString();
+		if(!dataNodeRulesRuleInfo["LastUpdateEmpid"].isNull())
+			ruleInfoObject.lastUpdateEmpid = dataNodeRulesRuleInfo["LastUpdateEmpid"].asString();
 		if(!dataNodeRulesRuleInfo["IsDelete"].isNull())
 			ruleInfoObject.isDelete = std::stoi(dataNodeRulesRuleInfo["IsDelete"].asString());
-		if(!dataNodeRulesRuleInfo["StartTime"].isNull())
-			ruleInfoObject.startTime = dataNodeRulesRuleInfo["StartTime"].asString();
+		if(!dataNodeRulesRuleInfo["Rid"].isNull())
+			ruleInfoObject.rid = dataNodeRulesRuleInfo["Rid"].asString();
+		if(!dataNodeRulesRuleInfo["RuleScoreType"].isNull())
+			ruleInfoObject.ruleScoreType = std::stoi(dataNodeRulesRuleInfo["RuleScoreType"].asString());
 		if(!dataNodeRulesRuleInfo["EndTime"].isNull())
 			ruleInfoObject.endTime = dataNodeRulesRuleInfo["EndTime"].asString();
 		if(!dataNodeRulesRuleInfo["Weight"].isNull())
 			ruleInfoObject.weight = dataNodeRulesRuleInfo["Weight"].asString();
-		if(!dataNodeRulesRuleInfo["IsOnline"].isNull())
-			ruleInfoObject.isOnline = std::stoi(dataNodeRulesRuleInfo["IsOnline"].asString());
-		if(!dataNodeRulesRuleInfo["CreateEmpid"].isNull())
-			ruleInfoObject.createEmpid = dataNodeRulesRuleInfo["CreateEmpid"].asString();
-		if(!dataNodeRulesRuleInfo["CreateTime"].isNull())
-			ruleInfoObject.createTime = dataNodeRulesRuleInfo["CreateTime"].asString();
-		if(!dataNodeRulesRuleInfo["LastUpdateTime"].isNull())
-			ruleInfoObject.lastUpdateTime = dataNodeRulesRuleInfo["LastUpdateTime"].asString();
-		if(!dataNodeRulesRuleInfo["LastUpdateEmpid"].isNull())
-			ruleInfoObject.lastUpdateEmpid = dataNodeRulesRuleInfo["LastUpdateEmpid"].asString();
-		if(!dataNodeRulesRuleInfo["Comments"].isNull())
-			ruleInfoObject.comments = dataNodeRulesRuleInfo["Comments"].asString();
-		if(!dataNodeRulesRuleInfo["AutoReview"].isNull())
-			ruleInfoObject.autoReview = std::stoi(dataNodeRulesRuleInfo["AutoReview"].asString());
-		if(!dataNodeRulesRuleInfo["RuleScoreType"].isNull())
-			ruleInfoObject.ruleScoreType = std::stoi(dataNodeRulesRuleInfo["RuleScoreType"].asString());
-		if(!dataNodeRulesRuleInfo["ScoreName"].isNull())
-			ruleInfoObject.scoreName = dataNodeRulesRuleInfo["ScoreName"].asString();
+		if(!dataNodeRulesRuleInfo["StartTime"].isNull())
+			ruleInfoObject.startTime = dataNodeRulesRuleInfo["StartTime"].asString();
+		if(!dataNodeRulesRuleInfo["RuleLambda"].isNull())
+			ruleInfoObject.ruleLambda = dataNodeRulesRuleInfo["RuleLambda"].asString();
 		if(!dataNodeRulesRuleInfo["ScoreSubName"].isNull())
 			ruleInfoObject.scoreSubName = dataNodeRulesRuleInfo["ScoreSubName"].asString();
+		if(!dataNodeRulesRuleInfo["AutoReview"].isNull())
+			ruleInfoObject.autoReview = std::stoi(dataNodeRulesRuleInfo["AutoReview"].asString());
+		if(!dataNodeRulesRuleInfo["Comments"].isNull())
+			ruleInfoObject.comments = dataNodeRulesRuleInfo["Comments"].asString();
+		if(!dataNodeRulesRuleInfo["LastUpdateTime"].isNull())
+			ruleInfoObject.lastUpdateTime = dataNodeRulesRuleInfo["LastUpdateTime"].asString();
+		if(!dataNodeRulesRuleInfo["ScoreName"].isNull())
+			ruleInfoObject.scoreName = dataNodeRulesRuleInfo["ScoreName"].asString();
+		if(!dataNodeRulesRuleInfo["Name"].isNull())
+			ruleInfoObject.name = dataNodeRulesRuleInfo["Name"].asString();
 		if(!dataNodeRulesRuleInfo["ScoreId"].isNull())
 			ruleInfoObject.scoreId = std::stoi(dataNodeRulesRuleInfo["ScoreId"].asString());
-		if(!dataNodeRulesRuleInfo["ScoreSubId"].isNull())
-			ruleInfoObject.scoreSubId = std::stoi(dataNodeRulesRuleInfo["ScoreSubId"].asString());
 		auto allBusinessCategoryNameList = value["BusinessCategoryNameList"]["BusinessCategoryNameList"];
 		for (auto value : allBusinessCategoryNameList)
 			ruleInfoObject.businessCategoryNameList.push_back(value.asString());
 		data_.rules.push_back(ruleInfoObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

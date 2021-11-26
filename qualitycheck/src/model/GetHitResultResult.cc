@@ -43,10 +43,10 @@ void GetHitResultResult::parse(const std::string &payload)
 	for (auto valueDataResultInfo : allDataNode)
 	{
 		ResultInfo dataObject;
-		if(!valueDataResultInfo["Rid"].isNull())
-			dataObject.rid = std::stol(valueDataResultInfo["Rid"].asString());
 		if(!valueDataResultInfo["RuleName"].isNull())
 			dataObject.ruleName = valueDataResultInfo["RuleName"].asString();
+		if(!valueDataResultInfo["Rid"].isNull())
+			dataObject.rid = std::stol(valueDataResultInfo["Rid"].asString());
 		data_.push_back(dataObject);
 	}
 	if(!value["Success"].isNull())
@@ -55,12 +55,12 @@ void GetHitResultResult::parse(const std::string &payload)
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
-	if(!value["Count"].isNull())
-		count_ = std::stoi(value["Count"].asString());
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["PageNumber"].isNull())
 		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["Count"].isNull())
+		count_ = std::stoi(value["Count"].asString());
 
 }
 

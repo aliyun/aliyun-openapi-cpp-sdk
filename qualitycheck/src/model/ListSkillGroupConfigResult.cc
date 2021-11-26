@@ -43,86 +43,86 @@ void ListSkillGroupConfigResult::parse(const std::string &payload)
 	for (auto valueDataSkillGroupConfig : allDataNode)
 	{
 		SkillGroupConfig dataObject;
-		if(!valueDataSkillGroupConfig["Id"].isNull())
-			dataObject.id = std::stol(valueDataSkillGroupConfig["Id"].asString());
-		if(!valueDataSkillGroupConfig["InstanceId"].isNull())
-			dataObject.instanceId = valueDataSkillGroupConfig["InstanceId"].asString();
-		if(!valueDataSkillGroupConfig["ModelId"].isNull())
-			dataObject.modelId = std::stol(valueDataSkillGroupConfig["ModelId"].asString());
-		if(!valueDataSkillGroupConfig["ModelName"].isNull())
-			dataObject.modelName = valueDataSkillGroupConfig["ModelName"].asString();
-		if(!valueDataSkillGroupConfig["Name"].isNull())
-			dataObject.name = valueDataSkillGroupConfig["Name"].asString();
-		if(!valueDataSkillGroupConfig["Rid"].isNull())
-			dataObject.rid = valueDataSkillGroupConfig["Rid"].asString();
-		if(!valueDataSkillGroupConfig["SkillGroupId"].isNull())
-			dataObject.skillGroupId = valueDataSkillGroupConfig["SkillGroupId"].asString();
-		if(!valueDataSkillGroupConfig["SkillGroupName"].isNull())
-			dataObject.skillGroupName = valueDataSkillGroupConfig["SkillGroupName"].asString();
-		if(!valueDataSkillGroupConfig["Status"].isNull())
-			dataObject.status = std::stoi(valueDataSkillGroupConfig["Status"].asString());
 		if(!valueDataSkillGroupConfig["Type"].isNull())
 			dataObject.type = std::stoi(valueDataSkillGroupConfig["Type"].asString());
-		if(!valueDataSkillGroupConfig["VocabId"].isNull())
-			dataObject.vocabId = std::stol(valueDataSkillGroupConfig["VocabId"].asString());
-		if(!valueDataSkillGroupConfig["VocabName"].isNull())
-			dataObject.vocabName = valueDataSkillGroupConfig["VocabName"].asString();
-		if(!valueDataSkillGroupConfig["CreateTime"].isNull())
-			dataObject.createTime = valueDataSkillGroupConfig["CreateTime"].asString();
+		if(!valueDataSkillGroupConfig["Status"].isNull())
+			dataObject.status = std::stoi(valueDataSkillGroupConfig["Status"].asString());
 		if(!valueDataSkillGroupConfig["UpdateTime"].isNull())
 			dataObject.updateTime = valueDataSkillGroupConfig["UpdateTime"].asString();
-		if(!valueDataSkillGroupConfig["QualityCheckType"].isNull())
-			dataObject.qualityCheckType = std::stoi(valueDataSkillGroupConfig["QualityCheckType"].asString());
 		if(!valueDataSkillGroupConfig["AllContentQualityCheck"].isNull())
 			dataObject.allContentQualityCheck = std::stoi(valueDataSkillGroupConfig["AllContentQualityCheck"].asString());
-		if(!valueDataSkillGroupConfig["AllRids"].isNull())
-			dataObject.allRids = valueDataSkillGroupConfig["AllRids"].asString();
-		if(!valueDataSkillGroupConfig["SkillGroupFrom"].isNull())
-			dataObject.skillGroupFrom = std::stoi(valueDataSkillGroupConfig["SkillGroupFrom"].asString());
+		if(!valueDataSkillGroupConfig["CreateTime"].isNull())
+			dataObject.createTime = valueDataSkillGroupConfig["CreateTime"].asString();
+		if(!valueDataSkillGroupConfig["SkillGroupId"].isNull())
+			dataObject.skillGroupId = valueDataSkillGroupConfig["SkillGroupId"].asString();
 		if(!valueDataSkillGroupConfig["ScreenSwitch"].isNull())
 			dataObject.screenSwitch = valueDataSkillGroupConfig["ScreenSwitch"].asString() == "true";
+		if(!valueDataSkillGroupConfig["InstanceId"].isNull())
+			dataObject.instanceId = valueDataSkillGroupConfig["InstanceId"].asString();
+		if(!valueDataSkillGroupConfig["VocabId"].isNull())
+			dataObject.vocabId = std::stol(valueDataSkillGroupConfig["VocabId"].asString());
+		if(!valueDataSkillGroupConfig["SkillGroupFrom"].isNull())
+			dataObject.skillGroupFrom = std::stoi(valueDataSkillGroupConfig["SkillGroupFrom"].asString());
+		if(!valueDataSkillGroupConfig["Rid"].isNull())
+			dataObject.rid = valueDataSkillGroupConfig["Rid"].asString();
+		if(!valueDataSkillGroupConfig["SkillGroupName"].isNull())
+			dataObject.skillGroupName = valueDataSkillGroupConfig["SkillGroupName"].asString();
+		if(!valueDataSkillGroupConfig["ModelName"].isNull())
+			dataObject.modelName = valueDataSkillGroupConfig["ModelName"].asString();
+		if(!valueDataSkillGroupConfig["AllRids"].isNull())
+			dataObject.allRids = valueDataSkillGroupConfig["AllRids"].asString();
+		if(!valueDataSkillGroupConfig["Name"].isNull())
+			dataObject.name = valueDataSkillGroupConfig["Name"].asString();
+		if(!valueDataSkillGroupConfig["ModelId"].isNull())
+			dataObject.modelId = std::stol(valueDataSkillGroupConfig["ModelId"].asString());
+		if(!valueDataSkillGroupConfig["Id"].isNull())
+			dataObject.id = std::stol(valueDataSkillGroupConfig["Id"].asString());
+		if(!valueDataSkillGroupConfig["QualityCheckType"].isNull())
+			dataObject.qualityCheckType = std::stoi(valueDataSkillGroupConfig["QualityCheckType"].asString());
+		if(!valueDataSkillGroupConfig["VocabName"].isNull())
+			dataObject.vocabName = valueDataSkillGroupConfig["VocabName"].asString();
 		auto allRuleListNode = valueDataSkillGroupConfig["RuleList"]["RuleNameInfo"];
 		for (auto valueDataSkillGroupConfigRuleListRuleNameInfo : allRuleListNode)
 		{
 			SkillGroupConfig::RuleNameInfo ruleListObject;
-			if(!valueDataSkillGroupConfigRuleListRuleNameInfo["Rid"].isNull())
-				ruleListObject.rid = std::stol(valueDataSkillGroupConfigRuleListRuleNameInfo["Rid"].asString());
 			if(!valueDataSkillGroupConfigRuleListRuleNameInfo["RuleName"].isNull())
 				ruleListObject.ruleName = valueDataSkillGroupConfigRuleListRuleNameInfo["RuleName"].asString();
+			if(!valueDataSkillGroupConfigRuleListRuleNameInfo["Rid"].isNull())
+				ruleListObject.rid = std::stol(valueDataSkillGroupConfigRuleListRuleNameInfo["Rid"].asString());
 			dataObject.ruleList.push_back(ruleListObject);
 		}
 		auto allAllRuleListNode = valueDataSkillGroupConfig["AllRuleList"]["RuleNameInfo"];
 		for (auto valueDataSkillGroupConfigAllRuleListRuleNameInfo : allAllRuleListNode)
 		{
 			SkillGroupConfig::RuleNameInfo allRuleListObject;
-			if(!valueDataSkillGroupConfigAllRuleListRuleNameInfo["Rid"].isNull())
-				allRuleListObject.rid = std::stol(valueDataSkillGroupConfigAllRuleListRuleNameInfo["Rid"].asString());
 			if(!valueDataSkillGroupConfigAllRuleListRuleNameInfo["RuleName"].isNull())
 				allRuleListObject.ruleName = valueDataSkillGroupConfigAllRuleListRuleNameInfo["RuleName"].asString();
+			if(!valueDataSkillGroupConfigAllRuleListRuleNameInfo["Rid"].isNull())
+				allRuleListObject.rid = std::stol(valueDataSkillGroupConfigAllRuleListRuleNameInfo["Rid"].asString());
 			dataObject.allRuleList.push_back(allRuleListObject);
 		}
 		auto allSkillGroupScreensNode = valueDataSkillGroupConfig["SkillGroupScreens"]["SkillGroupScreen"];
 		for (auto valueDataSkillGroupConfigSkillGroupScreensSkillGroupScreen : allSkillGroupScreensNode)
 		{
 			SkillGroupConfig::SkillGroupScreen skillGroupScreensObject;
-			if(!valueDataSkillGroupConfigSkillGroupScreensSkillGroupScreen["Name"].isNull())
-				skillGroupScreensObject.name = valueDataSkillGroupConfigSkillGroupScreensSkillGroupScreen["Name"].asString();
+			if(!valueDataSkillGroupConfigSkillGroupScreensSkillGroupScreen["Value"].isNull())
+				skillGroupScreensObject.value = valueDataSkillGroupConfigSkillGroupScreensSkillGroupScreen["Value"].asString();
 			if(!valueDataSkillGroupConfigSkillGroupScreensSkillGroupScreen["DataType"].isNull())
 				skillGroupScreensObject.dataType = std::stoi(valueDataSkillGroupConfigSkillGroupScreensSkillGroupScreen["DataType"].asString());
 			if(!valueDataSkillGroupConfigSkillGroupScreensSkillGroupScreen["Symbol"].isNull())
 				skillGroupScreensObject.symbol = std::stoi(valueDataSkillGroupConfigSkillGroupScreensSkillGroupScreen["Symbol"].asString());
-			if(!valueDataSkillGroupConfigSkillGroupScreensSkillGroupScreen["Value"].isNull())
-				skillGroupScreensObject.value = valueDataSkillGroupConfigSkillGroupScreensSkillGroupScreen["Value"].asString();
+			if(!valueDataSkillGroupConfigSkillGroupScreensSkillGroupScreen["Name"].isNull())
+				skillGroupScreensObject.name = valueDataSkillGroupConfigSkillGroupScreensSkillGroupScreen["Name"].asString();
 			dataObject.skillGroupScreens.push_back(skillGroupScreensObject);
 		}
 		data_.push_back(dataObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,45 +18,37 @@
 
 using AlibabaCloud::Qualitycheck::Model::GetHitResultRequest;
 
-GetHitResultRequest::GetHitResultRequest() :
-	RpcServiceRequest("qualitycheck", "2019-01-15", "GetHitResult")
-{
-	setMethod(HttpRequest::Method::Post);
+GetHitResultRequest::GetHitResultRequest()
+    : RpcServiceRequest("qualitycheck", "2019-01-15", "GetHitResult") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-GetHitResultRequest::~GetHitResultRequest()
-{}
+GetHitResultRequest::~GetHitResultRequest() {}
 
-long GetHitResultRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long GetHitResultRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void GetHitResultRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void GetHitResultRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string GetHitResultRequest::getJsonStr()const
-{
-	return jsonStr_;
+std::string GetHitResultRequest::getJsonStr() const {
+  return jsonStr_;
 }
 
-void GetHitResultRequest::setJsonStr(const std::string& jsonStr)
-{
-	jsonStr_ = jsonStr;
-	setParameter("JsonStr", jsonStr);
+void GetHitResultRequest::setJsonStr(const std::string &jsonStr) {
+  jsonStr_ = jsonStr;
+  setParameter(std::string("JsonStr"), jsonStr);
 }
 
-std::string GetHitResultRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string GetHitResultRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void GetHitResultRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void GetHitResultRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 

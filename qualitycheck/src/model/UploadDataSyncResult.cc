@@ -49,10 +49,10 @@ void UploadDataSyncResult::parse(const std::string &payload)
 		for (auto valueDataResultInfoRulesRuleHitInfo : allRulesNode)
 		{
 			ResultInfo::RuleHitInfo rulesObject;
-			if(!valueDataResultInfoRulesRuleHitInfo["Rid"].isNull())
-				rulesObject.rid = valueDataResultInfoRulesRuleHitInfo["Rid"].asString();
 			if(!valueDataResultInfoRulesRuleHitInfo["Tid"].isNull())
 				rulesObject.tid = valueDataResultInfoRulesRuleHitInfo["Tid"].asString();
+			if(!valueDataResultInfoRulesRuleHitInfo["Rid"].isNull())
+				rulesObject.rid = valueDataResultInfoRulesRuleHitInfo["Rid"].asString();
 			auto allHitNode = valueDataResultInfoRulesRuleHitInfo["Hit"]["ConditionHitInfo"];
 			for (auto valueDataResultInfoRulesRuleHitInfoHitConditionHitInfo : allHitNode)
 			{
@@ -61,31 +61,31 @@ void UploadDataSyncResult::parse(const std::string &payload)
 				for (auto valueDataResultInfoRulesRuleHitInfoHitConditionHitInfoHitKeyWordsHitKeyWord : allHitKeyWordsNode)
 				{
 					ResultInfo::RuleHitInfo::ConditionHitInfo::HitKeyWord hitKeyWordsObject;
-					if(!valueDataResultInfoRulesRuleHitInfoHitConditionHitInfoHitKeyWordsHitKeyWord["Val"].isNull())
-						hitKeyWordsObject.val = valueDataResultInfoRulesRuleHitInfoHitConditionHitInfoHitKeyWordsHitKeyWord["Val"].asString();
-					if(!valueDataResultInfoRulesRuleHitInfoHitConditionHitInfoHitKeyWordsHitKeyWord["Pid"].isNull())
-						hitKeyWordsObject.pid = std::stoi(valueDataResultInfoRulesRuleHitInfoHitConditionHitInfoHitKeyWordsHitKeyWord["Pid"].asString());
-					if(!valueDataResultInfoRulesRuleHitInfoHitConditionHitInfoHitKeyWordsHitKeyWord["From"].isNull())
-						hitKeyWordsObject.from = std::stoi(valueDataResultInfoRulesRuleHitInfoHitConditionHitInfoHitKeyWordsHitKeyWord["From"].asString());
 					if(!valueDataResultInfoRulesRuleHitInfoHitConditionHitInfoHitKeyWordsHitKeyWord["To"].isNull())
 						hitKeyWordsObject.to = std::stoi(valueDataResultInfoRulesRuleHitInfoHitConditionHitInfoHitKeyWordsHitKeyWord["To"].asString());
+					if(!valueDataResultInfoRulesRuleHitInfoHitConditionHitInfoHitKeyWordsHitKeyWord["From"].isNull())
+						hitKeyWordsObject.from = std::stoi(valueDataResultInfoRulesRuleHitInfoHitConditionHitInfoHitKeyWordsHitKeyWord["From"].asString());
+					if(!valueDataResultInfoRulesRuleHitInfoHitConditionHitInfoHitKeyWordsHitKeyWord["Val"].isNull())
+						hitKeyWordsObject.val = valueDataResultInfoRulesRuleHitInfoHitConditionHitInfoHitKeyWordsHitKeyWord["Val"].asString();
 					if(!valueDataResultInfoRulesRuleHitInfoHitConditionHitInfoHitKeyWordsHitKeyWord["Tid"].isNull())
 						hitKeyWordsObject.tid = valueDataResultInfoRulesRuleHitInfoHitConditionHitInfoHitKeyWordsHitKeyWord["Tid"].asString();
+					if(!valueDataResultInfoRulesRuleHitInfoHitConditionHitInfoHitKeyWordsHitKeyWord["Pid"].isNull())
+						hitKeyWordsObject.pid = std::stoi(valueDataResultInfoRulesRuleHitInfoHitConditionHitInfoHitKeyWordsHitKeyWord["Pid"].asString());
 					hitObject.hitKeyWords.push_back(hitKeyWordsObject);
 				}
 				auto phraseNode = value["Phrase"];
-				if(!phraseNode["Role"].isNull())
-					hitObject.phrase.role = phraseNode["Role"].asString();
-				if(!phraseNode["Identity"].isNull())
-					hitObject.phrase.identity = phraseNode["Identity"].asString();
 				if(!phraseNode["Words"].isNull())
 					hitObject.phrase.words = phraseNode["Words"].asString();
+				if(!phraseNode["Identity"].isNull())
+					hitObject.phrase.identity = phraseNode["Identity"].asString();
 				if(!phraseNode["Begin"].isNull())
 					hitObject.phrase.begin = std::stol(phraseNode["Begin"].asString());
-				if(!phraseNode["End"].isNull())
-					hitObject.phrase.end = std::stol(phraseNode["End"].asString());
 				if(!phraseNode["BeginTime"].isNull())
 					hitObject.phrase.beginTime = phraseNode["BeginTime"].asString();
+				if(!phraseNode["End"].isNull())
+					hitObject.phrase.end = std::stol(phraseNode["End"].asString());
+				if(!phraseNode["Role"].isNull())
+					hitObject.phrase.role = phraseNode["Role"].asString();
 				auto allHitCids = value["HitCids"]["CidItem"];
 				for (auto value : allHitCids)
 					hitObject.hitCids.push_back(value.asString());
@@ -106,12 +106,12 @@ void UploadDataSyncResult::parse(const std::string &payload)
 			dataObject.handScoreIdList.push_back(value.asString());
 		data_.push_back(dataObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

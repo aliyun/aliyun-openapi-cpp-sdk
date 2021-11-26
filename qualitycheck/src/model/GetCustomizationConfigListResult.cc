@@ -43,26 +43,26 @@ void GetCustomizationConfigListResult::parse(const std::string &payload)
 	for (auto valueDataModelCustomizationDataSetPo : allDataNode)
 	{
 		ModelCustomizationDataSetPo dataObject;
-		if(!valueDataModelCustomizationDataSetPo["ModelId"].isNull())
-			dataObject.modelId = std::stol(valueDataModelCustomizationDataSetPo["ModelId"].asString());
-		if(!valueDataModelCustomizationDataSetPo["ModeCustomizationId"].isNull())
-			dataObject.modeCustomizationId = valueDataModelCustomizationDataSetPo["ModeCustomizationId"].asString();
-		if(!valueDataModelCustomizationDataSetPo["ModelName"].isNull())
-			dataObject.modelName = valueDataModelCustomizationDataSetPo["ModelName"].asString();
-		if(!valueDataModelCustomizationDataSetPo["ModelStatus"].isNull())
-			dataObject.modelStatus = std::stoi(valueDataModelCustomizationDataSetPo["ModelStatus"].asString());
 		if(!valueDataModelCustomizationDataSetPo["TaskType"].isNull())
 			dataObject.taskType = std::stoi(valueDataModelCustomizationDataSetPo["TaskType"].asString());
 		if(!valueDataModelCustomizationDataSetPo["CreateTime"].isNull())
 			dataObject.createTime = valueDataModelCustomizationDataSetPo["CreateTime"].asString();
+		if(!valueDataModelCustomizationDataSetPo["ModelStatus"].isNull())
+			dataObject.modelStatus = std::stoi(valueDataModelCustomizationDataSetPo["ModelStatus"].asString());
+		if(!valueDataModelCustomizationDataSetPo["ModelName"].isNull())
+			dataObject.modelName = valueDataModelCustomizationDataSetPo["ModelName"].asString();
+		if(!valueDataModelCustomizationDataSetPo["ModelId"].isNull())
+			dataObject.modelId = std::stol(valueDataModelCustomizationDataSetPo["ModelId"].asString());
+		if(!valueDataModelCustomizationDataSetPo["ModeCustomizationId"].isNull())
+			dataObject.modeCustomizationId = valueDataModelCustomizationDataSetPo["ModeCustomizationId"].asString();
 		data_.push_back(dataObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

@@ -43,24 +43,24 @@ void ListUsersResult::parse(const std::string &payload)
 	for (auto valueDataUser : allDataNode)
 	{
 		User dataObject;
-		if(!valueDataUser["Id"].isNull())
-			dataObject.id = std::stol(valueDataUser["Id"].asString());
-		if(!valueDataUser["UserName"].isNull())
-			dataObject.userName = valueDataUser["UserName"].asString();
 		if(!valueDataUser["DisplayName"].isNull())
 			dataObject.displayName = valueDataUser["DisplayName"].asString();
-		if(!valueDataUser["CreateTime"].isNull())
-			dataObject.createTime = valueDataUser["CreateTime"].asString();
 		if(!valueDataUser["UpdateTime"].isNull())
 			dataObject.updateTime = valueDataUser["UpdateTime"].asString();
 		if(!valueDataUser["Description"].isNull())
 			dataObject.description = valueDataUser["Description"].asString();
+		if(!valueDataUser["CreateTime"].isNull())
+			dataObject.createTime = valueDataUser["CreateTime"].asString();
+		if(!valueDataUser["LoginUserType"].isNull())
+			dataObject.loginUserType = std::stoi(valueDataUser["LoginUserType"].asString());
 		if(!valueDataUser["AliUid"].isNull())
 			dataObject.aliUid = valueDataUser["AliUid"].asString();
 		if(!valueDataUser["RoleName"].isNull())
 			dataObject.roleName = valueDataUser["RoleName"].asString();
-		if(!valueDataUser["LoginUserType"].isNull())
-			dataObject.loginUserType = std::stoi(valueDataUser["LoginUserType"].asString());
+		if(!valueDataUser["UserName"].isNull())
+			dataObject.userName = valueDataUser["UserName"].asString();
+		if(!valueDataUser["Id"].isNull())
+			dataObject.id = std::stol(valueDataUser["Id"].asString());
 		data_.push_back(dataObject);
 	}
 	if(!value["Success"].isNull())

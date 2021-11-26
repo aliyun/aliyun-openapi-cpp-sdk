@@ -43,26 +43,26 @@ void ListRolesResult::parse(const std::string &payload)
 	for (auto valueDataRole : allDataNode)
 	{
 		Role dataObject;
-		if(!valueDataRole["Id"].isNull())
-			dataObject.id = std::stol(valueDataRole["Id"].asString());
-		if(!valueDataRole["Name"].isNull())
-			dataObject.name = valueDataRole["Name"].asString();
 		if(!valueDataRole["DisplayName"].isNull())
 			dataObject.displayName = valueDataRole["DisplayName"].asString();
-		if(!valueDataRole["Level"].isNull())
-			dataObject.level = std::stoi(valueDataRole["Level"].asString());
-		if(!valueDataRole["CreateTime"].isNull())
-			dataObject.createTime = valueDataRole["CreateTime"].asString();
 		if(!valueDataRole["UpdateTime"].isNull())
 			dataObject.updateTime = valueDataRole["UpdateTime"].asString();
+		if(!valueDataRole["CreateTime"].isNull())
+			dataObject.createTime = valueDataRole["CreateTime"].asString();
+		if(!valueDataRole["Name"].isNull())
+			dataObject.name = valueDataRole["Name"].asString();
+		if(!valueDataRole["Id"].isNull())
+			dataObject.id = std::stol(valueDataRole["Id"].asString());
+		if(!valueDataRole["Level"].isNull())
+			dataObject.level = std::stoi(valueDataRole["Level"].asString());
 		data_.push_back(dataObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

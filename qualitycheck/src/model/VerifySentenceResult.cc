@@ -61,16 +61,16 @@ void VerifySentenceResult::parse(const std::string &payload)
 	}
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["IncorrectWords"].isNull())
+		incorrectWords_ = std::stoi(value["IncorrectWords"].asString());
+	if(!value["TargetRole"].isNull())
+		targetRole_ = std::stoi(value["TargetRole"].asString());
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
 	if(!value["SourceRole"].isNull())
 		sourceRole_ = std::stoi(value["SourceRole"].asString());
-	if(!value["TargetRole"].isNull())
-		targetRole_ = std::stoi(value["TargetRole"].asString());
-	if(!value["IncorrectWords"].isNull())
-		incorrectWords_ = std::stoi(value["IncorrectWords"].asString());
 
 }
 

@@ -40,50 +40,50 @@ void GetPrecisionTaskResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["Name"].isNull())
-		data_.name = dataNode["Name"].asString();
-	if(!dataNode["Source"].isNull())
-		data_.source = std::stoi(dataNode["Source"].asString());
-	if(!dataNode["DataSetId"].isNull())
-		data_.dataSetId = std::stol(dataNode["DataSetId"].asString());
-	if(!dataNode["DataSetName"].isNull())
-		data_.dataSetName = dataNode["DataSetName"].asString();
-	if(!dataNode["TaskId"].isNull())
-		data_.taskId = dataNode["TaskId"].asString();
-	if(!dataNode["Duration"].isNull())
-		data_.duration = std::stoi(dataNode["Duration"].asString());
-	if(!dataNode["UpdateTime"].isNull())
-		data_.updateTime = dataNode["UpdateTime"].asString();
 	if(!dataNode["Status"].isNull())
 		data_.status = std::stoi(dataNode["Status"].asString());
-	if(!dataNode["TotalCount"].isNull())
-		data_.totalCount = std::stoi(dataNode["TotalCount"].asString());
-	if(!dataNode["VerifiedCount"].isNull())
-		data_.verifiedCount = std::stoi(dataNode["VerifiedCount"].asString());
+	if(!dataNode["UpdateTime"].isNull())
+		data_.updateTime = dataNode["UpdateTime"].asString();
 	if(!dataNode["IncorrectWords"].isNull())
 		data_.incorrectWords = std::stoi(dataNode["IncorrectWords"].asString());
+	if(!dataNode["DataSetId"].isNull())
+		data_.dataSetId = std::stol(dataNode["DataSetId"].asString());
+	if(!dataNode["VerifiedCount"].isNull())
+		data_.verifiedCount = std::stoi(dataNode["VerifiedCount"].asString());
+	if(!dataNode["Duration"].isNull())
+		data_.duration = std::stoi(dataNode["Duration"].asString());
+	if(!dataNode["DataSetName"].isNull())
+		data_.dataSetName = dataNode["DataSetName"].asString();
+	if(!dataNode["TotalCount"].isNull())
+		data_.totalCount = std::stoi(dataNode["TotalCount"].asString());
+	if(!dataNode["Source"].isNull())
+		data_.source = std::stoi(dataNode["Source"].asString());
+	if(!dataNode["Name"].isNull())
+		data_.name = dataNode["Name"].asString();
+	if(!dataNode["TaskId"].isNull())
+		data_.taskId = dataNode["TaskId"].asString();
 	auto allPrecisionsNode = dataNode["Precisions"]["Precision"];
 	for (auto dataNodePrecisionsPrecision : allPrecisionsNode)
 	{
 		Data::Precision precisionObject;
-		if(!dataNodePrecisionsPrecision["ModelName"].isNull())
-			precisionObject.modelName = dataNodePrecisionsPrecision["ModelName"].asString();
-		if(!dataNodePrecisionsPrecision["ModelId"].isNull())
-			precisionObject.modelId = std::stol(dataNodePrecisionsPrecision["ModelId"].asString());
-		if(!dataNodePrecisionsPrecision["Precision"].isNull())
-			precisionObject.precision = std::stof(dataNodePrecisionsPrecision["Precision"].asString());
 		if(!dataNodePrecisionsPrecision["Status"].isNull())
 			precisionObject.status = std::stoi(dataNodePrecisionsPrecision["Status"].asString());
+		if(!dataNodePrecisionsPrecision["ModelName"].isNull())
+			precisionObject.modelName = dataNodePrecisionsPrecision["ModelName"].asString();
 		if(!dataNodePrecisionsPrecision["TaskId"].isNull())
 			precisionObject.taskId = dataNodePrecisionsPrecision["TaskId"].asString();
+		if(!dataNodePrecisionsPrecision["Precision"].isNull())
+			precisionObject.precision = std::stof(dataNodePrecisionsPrecision["Precision"].asString());
+		if(!dataNodePrecisionsPrecision["ModelId"].isNull())
+			precisionObject.modelId = std::stol(dataNodePrecisionsPrecision["ModelId"].asString());
 		data_.precisions.push_back(precisionObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

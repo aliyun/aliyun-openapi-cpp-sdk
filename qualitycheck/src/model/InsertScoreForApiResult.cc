@@ -44,12 +44,12 @@ void InsertScoreForApiResult::parse(const std::string &payload)
 		data_.scoreId = std::stol(dataNode["ScoreId"].asString());
 	if(!dataNode["ScoreName"].isNull())
 		data_.scoreName = dataNode["ScoreName"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

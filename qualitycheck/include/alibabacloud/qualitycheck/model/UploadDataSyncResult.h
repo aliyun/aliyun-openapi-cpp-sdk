@@ -51,8 +51,8 @@ namespace AlibabaCloud
 							{
 								std::string val;
 								int pid;
-								int from;
 								int to;
+								int from;
 								std::string tid;
 							};
 							std::vector<ConditionHitInfo::HitKeyWord> hitKeyWords;

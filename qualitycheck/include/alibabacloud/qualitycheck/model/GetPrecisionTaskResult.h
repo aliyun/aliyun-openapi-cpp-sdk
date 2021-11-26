@@ -51,8 +51,8 @@ namespace AlibabaCloud
 					std::vector<Precision> precisions;
 					long dataSetId;
 					int duration;
-					int source;
 					std::string dataSetName;
+					int source;
 					std::string name;
 				};
 

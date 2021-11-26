@@ -43,18 +43,18 @@ void ListRulesResult::parse(const std::string &payload)
 	for (auto valueDataRule : allDataNode)
 	{
 		Rule dataObject;
-		if(!valueDataRule["Name"].isNull())
-			dataObject.name = valueDataRule["Name"].asString();
 		if(!valueDataRule["Type"].isNull())
 			dataObject.type = std::stoi(valueDataRule["Type"].asString());
-		if(!valueDataRule["Comments"].isNull())
-			dataObject.comments = valueDataRule["Comments"].asString();
-		if(!valueDataRule["CreateTime"].isNull())
-			dataObject.createTime = valueDataRule["CreateTime"].asString();
-		if(!valueDataRule["TypeName"].isNull())
-			dataObject.typeName = valueDataRule["TypeName"].asString();
 		if(!valueDataRule["RuleType"].isNull())
 			dataObject.ruleType = std::stoi(valueDataRule["RuleType"].asString());
+		if(!valueDataRule["CreateTime"].isNull())
+			dataObject.createTime = valueDataRule["CreateTime"].asString();
+		if(!valueDataRule["Comments"].isNull())
+			dataObject.comments = valueDataRule["Comments"].asString();
+		if(!valueDataRule["TypeName"].isNull())
+			dataObject.typeName = valueDataRule["TypeName"].asString();
+		if(!valueDataRule["Name"].isNull())
+			dataObject.name = valueDataRule["Name"].asString();
 		if(!valueDataRule["Rid"].isNull())
 			dataObject.rid = std::stol(valueDataRule["Rid"].asString());
 		auto allBusinessCategoryNameList = value["BusinessCategoryNameList"]["BusinessCategoryNameList"];
@@ -68,12 +68,12 @@ void ListRulesResult::parse(const std::string &payload)
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
-	if(!value["Count"].isNull())
-		count_ = std::stoi(value["Count"].asString());
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["PageNumber"].isNull())
 		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["Count"].isNull())
+		count_ = std::stoi(value["Count"].asString());
 
 }
 

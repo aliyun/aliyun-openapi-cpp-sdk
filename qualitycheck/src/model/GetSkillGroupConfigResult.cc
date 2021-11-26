@@ -40,68 +40,68 @@ void GetSkillGroupConfigResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["Id"].isNull())
-		data_.id = std::stol(dataNode["Id"].asString());
-	if(!dataNode["InstanceId"].isNull())
-		data_.instanceId = dataNode["InstanceId"].asString();
-	if(!dataNode["ModelId"].isNull())
-		data_.modelId = std::stol(dataNode["ModelId"].asString());
-	if(!dataNode["ModelName"].isNull())
-		data_.modelName = dataNode["ModelName"].asString();
-	if(!dataNode["Name"].isNull())
-		data_.name = dataNode["Name"].asString();
-	if(!dataNode["Rid"].isNull())
-		data_.rid = dataNode["Rid"].asString();
-	if(!dataNode["SkillGroupId"].isNull())
-		data_.skillGroupId = dataNode["SkillGroupId"].asString();
-	if(!dataNode["SkillGroupName"].isNull())
-		data_.skillGroupName = dataNode["SkillGroupName"].asString();
-	if(!dataNode["Status"].isNull())
-		data_.status = std::stoi(dataNode["Status"].asString());
 	if(!dataNode["Type"].isNull())
 		data_.type = std::stoi(dataNode["Type"].asString());
-	if(!dataNode["VocabId"].isNull())
-		data_.vocabId = std::stol(dataNode["VocabId"].asString());
-	if(!dataNode["VocabName"].isNull())
-		data_.vocabName = dataNode["VocabName"].asString();
-	if(!dataNode["CreateTime"].isNull())
-		data_.createTime = dataNode["CreateTime"].asString();
+	if(!dataNode["Status"].isNull())
+		data_.status = std::stoi(dataNode["Status"].asString());
 	if(!dataNode["UpdateTime"].isNull())
 		data_.updateTime = dataNode["UpdateTime"].asString();
-	if(!dataNode["QualityCheckType"].isNull())
-		data_.qualityCheckType = std::stoi(dataNode["QualityCheckType"].asString());
 	if(!dataNode["AllContentQualityCheck"].isNull())
 		data_.allContentQualityCheck = std::stoi(dataNode["AllContentQualityCheck"].asString());
-	if(!dataNode["AllRids"].isNull())
-		data_.allRids = dataNode["AllRids"].asString();
+	if(!dataNode["CreateTime"].isNull())
+		data_.createTime = dataNode["CreateTime"].asString();
+	if(!dataNode["SkillGroupId"].isNull())
+		data_.skillGroupId = dataNode["SkillGroupId"].asString();
+	if(!dataNode["InstanceId"].isNull())
+		data_.instanceId = dataNode["InstanceId"].asString();
+	if(!dataNode["VocabId"].isNull())
+		data_.vocabId = std::stol(dataNode["VocabId"].asString());
 	if(!dataNode["SkillGroupFrom"].isNull())
 		data_.skillGroupFrom = std::stoi(dataNode["SkillGroupFrom"].asString());
+	if(!dataNode["Rid"].isNull())
+		data_.rid = dataNode["Rid"].asString();
+	if(!dataNode["SkillGroupName"].isNull())
+		data_.skillGroupName = dataNode["SkillGroupName"].asString();
+	if(!dataNode["ModelName"].isNull())
+		data_.modelName = dataNode["ModelName"].asString();
+	if(!dataNode["AllRids"].isNull())
+		data_.allRids = dataNode["AllRids"].asString();
+	if(!dataNode["Name"].isNull())
+		data_.name = dataNode["Name"].asString();
+	if(!dataNode["ModelId"].isNull())
+		data_.modelId = std::stol(dataNode["ModelId"].asString());
+	if(!dataNode["Id"].isNull())
+		data_.id = std::stol(dataNode["Id"].asString());
+	if(!dataNode["QualityCheckType"].isNull())
+		data_.qualityCheckType = std::stoi(dataNode["QualityCheckType"].asString());
+	if(!dataNode["VocabName"].isNull())
+		data_.vocabName = dataNode["VocabName"].asString();
 	auto allRuleListNode = dataNode["RuleList"]["RuleNameInfo"];
 	for (auto dataNodeRuleListRuleNameInfo : allRuleListNode)
 	{
 		Data::RuleNameInfo ruleNameInfoObject;
-		if(!dataNodeRuleListRuleNameInfo["Rid"].isNull())
-			ruleNameInfoObject.rid = std::stol(dataNodeRuleListRuleNameInfo["Rid"].asString());
 		if(!dataNodeRuleListRuleNameInfo["RuleName"].isNull())
 			ruleNameInfoObject.ruleName = dataNodeRuleListRuleNameInfo["RuleName"].asString();
+		if(!dataNodeRuleListRuleNameInfo["Rid"].isNull())
+			ruleNameInfoObject.rid = std::stol(dataNodeRuleListRuleNameInfo["Rid"].asString());
 		data_.ruleList.push_back(ruleNameInfoObject);
 	}
 	auto allAllRuleListNode = dataNode["AllRuleList"]["RuleNameInfo"];
 	for (auto dataNodeAllRuleListRuleNameInfo : allAllRuleListNode)
 	{
 		Data::RuleNameInfo ruleNameInfoObject;
-		if(!dataNodeAllRuleListRuleNameInfo["Rid"].isNull())
-			ruleNameInfoObject.rid = std::stol(dataNodeAllRuleListRuleNameInfo["Rid"].asString());
 		if(!dataNodeAllRuleListRuleNameInfo["RuleName"].isNull())
 			ruleNameInfoObject.ruleName = dataNodeAllRuleListRuleNameInfo["RuleName"].asString();
+		if(!dataNodeAllRuleListRuleNameInfo["Rid"].isNull())
+			ruleNameInfoObject.rid = std::stol(dataNodeAllRuleListRuleNameInfo["Rid"].asString());
 		data_.allRuleList.push_back(ruleNameInfoObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

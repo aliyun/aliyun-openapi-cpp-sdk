@@ -44,9 +44,10 @@ namespace AlibabaCloud
 						std::string dataSetName;
 						std::string name;
 						std::string remark2;
-						std::string caller;
 						std::string remark3;
+						std::string caller;
 						std::string remark1;
+						long durationAudio;
 						std::string id;
 						std::string callTime;
 						std::string primaryId;

@@ -51,24 +51,24 @@ void GetScoreInfoResult::parse(const std::string &payload)
 		for (auto valueDataScorePoScoreInfosScoreParam : allScoreInfosNode)
 		{
 			ScorePo::ScoreParam scoreInfosObject;
+			if(!valueDataScorePoScoreInfosScoreParam["ScoreSubName"].isNull())
+				scoreInfosObject.scoreSubName = valueDataScorePoScoreInfosScoreParam["ScoreSubName"].asString();
 			if(!valueDataScorePoScoreInfosScoreParam["ScoreNum"].isNull())
 				scoreInfosObject.scoreNum = std::stoi(valueDataScorePoScoreInfosScoreParam["ScoreNum"].asString());
 			if(!valueDataScorePoScoreInfosScoreParam["ScoreSubId"].isNull())
 				scoreInfosObject.scoreSubId = std::stoi(valueDataScorePoScoreInfosScoreParam["ScoreSubId"].asString());
-			if(!valueDataScorePoScoreInfosScoreParam["ScoreSubName"].isNull())
-				scoreInfosObject.scoreSubName = valueDataScorePoScoreInfosScoreParam["ScoreSubName"].asString();
 			if(!valueDataScorePoScoreInfosScoreParam["ScoreType"].isNull())
 				scoreInfosObject.scoreType = std::stoi(valueDataScorePoScoreInfosScoreParam["ScoreType"].asString());
 			dataObject.scoreInfos.push_back(scoreInfosObject);
 		}
 		data_.push_back(dataObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

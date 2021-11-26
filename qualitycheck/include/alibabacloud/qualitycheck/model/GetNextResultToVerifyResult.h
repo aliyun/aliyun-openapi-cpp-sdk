@@ -59,8 +59,8 @@ namespace AlibabaCloud
 						std::string beginTime;
 						std::vector<Dialogue::Delta> deltas;
 						std::string role;
-						int silenceDuration;
 						std::string words;
+						int silenceDuration;
 						long begin;
 						long end;
 						std::string identity;
@@ -73,8 +73,8 @@ namespace AlibabaCloud
 					std::string fileName;
 					int verifiedCount;
 					std::string audioScheme;
-					int duration;
 					int index;
+					int duration;
 					bool verified;
 					int totalCount;
 					float precision;

@@ -43,21 +43,21 @@ void GetThesaurusBySynonymForApiResult::parse(const std::string &payload)
 	for (auto valueDataThesaurusPo : allDataNode)
 	{
 		ThesaurusPo dataObject;
-		if(!valueDataThesaurusPo["Id"].isNull())
-			dataObject.id = std::stol(valueDataThesaurusPo["Id"].asString());
 		if(!valueDataThesaurusPo["Business"].isNull())
 			dataObject.business = valueDataThesaurusPo["Business"].asString();
+		if(!valueDataThesaurusPo["Id"].isNull())
+			dataObject.id = std::stol(valueDataThesaurusPo["Id"].asString());
 		auto allSynonymList = value["SynonymList"]["SynonymList"];
 		for (auto value : allSynonymList)
 			dataObject.synonymList.push_back(value.asString());
 		data_.push_back(dataObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

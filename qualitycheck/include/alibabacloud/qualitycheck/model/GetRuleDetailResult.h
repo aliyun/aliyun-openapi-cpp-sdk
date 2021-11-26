@@ -46,8 +46,8 @@ namespace AlibabaCloud
 							};
 							struct Range
 							{
-								int from;
 								int to;
+								int from;
 							};
 							std::string role;
 							Anchor anchor;
@@ -76,10 +76,9 @@ namespace AlibabaCloud
 								int minWordSize;
 								bool average;
 								std::vector<std::string> pvalues;
-								std::string phrase;
 								int from;
+								std::string phrase;
 								int delayTime;
-								int maxEmotionChangeValue2;
 								bool keywordExtension;
 								std::string compareOperator;
 								int score;
@@ -87,10 +86,9 @@ namespace AlibabaCloud
 								std::vector<std::string> references;
 								bool contextChatMatch;
 								bool fromEnd;
-								int checkType1;
-								int interval;
-								bool inSentence;
 								int keywordMatchSize;
+								bool inSentence;
+								int interval;
 							};
 							std::string type;
 							std::string operName;
@@ -115,6 +113,9 @@ namespace AlibabaCloud
 						std::vector<std::string> triggers;
 						std::string rid;
 					};
+					int pageSize;
+					int pageNumber;
+					int count;
 					std::vector<RuleBasicInfo> rules;
 					std::vector<ConditionBasicInfo> conditions;
 				};

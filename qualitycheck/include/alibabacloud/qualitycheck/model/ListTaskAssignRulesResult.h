@@ -38,8 +38,8 @@ namespace AlibabaCloud
 					{
 						struct SamplingModeAgent
 						{
-							std::string agentId;
 							std::string agentName;
+							std::string agentId;
 						};
 						int anyNumberOfDraws;
 						int numberOfDraws;
@@ -47,13 +47,13 @@ namespace AlibabaCloud
 						bool designated;
 						std::vector<SamplingModeAgent> samplingModeAgents;
 						int randomInspectionNumber;
-						int dimension;
 						int limit;
+						int dimension;
 					};
 					struct Agent
 					{
-						std::string agentId;
 						std::string agentName;
+						std::string agentId;
 					};
 					struct SkillGroup
 					{
@@ -73,8 +73,8 @@ namespace AlibabaCloud
 					SamplingMode samplingMode;
 					long callTimeEnd;
 					int priority;
-					long ruleId;
 					std::string createTime;
+					long ruleId;
 					std::vector<TaskAssignRuleInfo::Agent> agents;
 					int callType;
 					std::vector<TaskAssignRuleInfo::SkillGroup> skillGroups;
@@ -87,8 +87,8 @@ namespace AlibabaCloud
 					std::string agentsStr;
 					int durationMax;
 					std::vector<TaskAssignRuleInfo::Reviewer> reviewers;
-					long callTimeStart;
 					std::string ruleName;
+					long callTimeStart;
 				};
 
 

@@ -51,12 +51,12 @@ void GetRuleCategoryResult::parse(const std::string &payload)
 			dataObject.select = valueDataRuleCountInfo["Select"].asString() == "true";
 		data_.push_back(dataObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

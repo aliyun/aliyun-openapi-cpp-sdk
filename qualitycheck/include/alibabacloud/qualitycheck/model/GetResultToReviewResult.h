@@ -36,10 +36,10 @@ namespace AlibabaCloud
 				{
 					struct Dialogue
 					{
-						std::string hourMinSec;
 						std::string role;
-						int silenceDuration;
+						std::string hourMinSec;
 						std::string words;
+						int silenceDuration;
 						long begin;
 						std::string beginTime;
 						long end;
@@ -78,8 +78,8 @@ namespace AlibabaCloud
 								std::string role;
 								std::string words;
 								long begin;
-								long end;
 								int pid;
+								long end;
 								std::string identity;
 								int emotionValue;
 							};
@@ -138,8 +138,8 @@ namespace AlibabaCloud
 					};
 					struct ReviewHistory
 					{
-						std::string operatorName;
 						int type;
+						std::string operatorName;
 						int score;
 						std::string timeStr;
 						int complainResult;
@@ -148,8 +148,8 @@ namespace AlibabaCloud
 					};
 					int status;
 					std::vector<Dialogue> dialogues;
-					int reviewNumber;
 					std::string comments;
+					int reviewNumber;
 					std::vector<ManualScoreInfo> manualScoreInfoList;
 					int businessType;
 					std::string fileMergeName;
@@ -159,11 +159,11 @@ namespace AlibabaCloud
 					std::string vid;
 					int hitNumber;
 					std::string fileId;
-					bool deleted;
 					int totalScore;
+					bool deleted;
 					std::vector<ScorePo> handScoreInfoList;
-					bool audio;
 					std::string audioURL;
+					bool audio;
 				};
 
 

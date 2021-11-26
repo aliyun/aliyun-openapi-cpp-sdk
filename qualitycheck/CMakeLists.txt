@@ -27,10 +27,16 @@ set(qualitycheck_public_header_model
 	include/alibabacloud/qualitycheck/model/AddRuleCategoryResult.h
 	include/alibabacloud/qualitycheck/model/AddThesaurusForApiRequest.h
 	include/alibabacloud/qualitycheck/model/AddThesaurusForApiResult.h
+	include/alibabacloud/qualitycheck/model/AddUploadDataSetRequest.h
+	include/alibabacloud/qualitycheck/model/AddUploadDataSetResult.h
 	include/alibabacloud/qualitycheck/model/AssignReviewerRequest.h
 	include/alibabacloud/qualitycheck/model/AssignReviewerResult.h
+	include/alibabacloud/qualitycheck/model/ConfigDataSetRequest.h
+	include/alibabacloud/qualitycheck/model/ConfigDataSetResult.h
 	include/alibabacloud/qualitycheck/model/CreateAsrVocabRequest.h
 	include/alibabacloud/qualitycheck/model/CreateAsrVocabResult.h
+	include/alibabacloud/qualitycheck/model/CreateRuleRequest.h
+	include/alibabacloud/qualitycheck/model/CreateRuleResult.h
 	include/alibabacloud/qualitycheck/model/CreateSkillGroupConfigRequest.h
 	include/alibabacloud/qualitycheck/model/CreateSkillGroupConfigResult.h
 	include/alibabacloud/qualitycheck/model/CreateTaskAssignRuleRequest.h
@@ -85,18 +91,26 @@ set(qualitycheck_public_header_model
 	include/alibabacloud/qualitycheck/model/GetResultCallbackResult.h
 	include/alibabacloud/qualitycheck/model/GetResultToReviewRequest.h
 	include/alibabacloud/qualitycheck/model/GetResultToReviewResult.h
+	include/alibabacloud/qualitycheck/model/GetReviewInfoRequest.h
+	include/alibabacloud/qualitycheck/model/GetReviewInfoResult.h
 	include/alibabacloud/qualitycheck/model/GetRuleRequest.h
 	include/alibabacloud/qualitycheck/model/GetRuleResult.h
 	include/alibabacloud/qualitycheck/model/GetRuleCategoryRequest.h
 	include/alibabacloud/qualitycheck/model/GetRuleCategoryResult.h
 	include/alibabacloud/qualitycheck/model/GetRuleDetailRequest.h
 	include/alibabacloud/qualitycheck/model/GetRuleDetailResult.h
+	include/alibabacloud/qualitycheck/model/GetRuleDimensionRequest.h
+	include/alibabacloud/qualitycheck/model/GetRuleDimensionResult.h
 	include/alibabacloud/qualitycheck/model/GetScoreInfoRequest.h
 	include/alibabacloud/qualitycheck/model/GetScoreInfoResult.h
 	include/alibabacloud/qualitycheck/model/GetSkillGroupConfigRequest.h
 	include/alibabacloud/qualitycheck/model/GetSkillGroupConfigResult.h
 	include/alibabacloud/qualitycheck/model/GetSyncResultRequest.h
 	include/alibabacloud/qualitycheck/model/GetSyncResultResult.h
+	include/alibabacloud/qualitycheck/model/GetTaskFileResultListRequest.h
+	include/alibabacloud/qualitycheck/model/GetTaskFileResultListResult.h
+	include/alibabacloud/qualitycheck/model/GetTaskRuleListRequest.h
+	include/alibabacloud/qualitycheck/model/GetTaskRuleListResult.h
 	include/alibabacloud/qualitycheck/model/GetThesaurusBySynonymForApiRequest.h
 	include/alibabacloud/qualitycheck/model/GetThesaurusBySynonymForApiResult.h
 	include/alibabacloud/qualitycheck/model/HandleComplaintRequest.h
@@ -109,6 +123,8 @@ set(qualitycheck_public_header_model
 	include/alibabacloud/qualitycheck/model/InvalidRuleResult.h
 	include/alibabacloud/qualitycheck/model/ListAsrVocabRequest.h
 	include/alibabacloud/qualitycheck/model/ListAsrVocabResult.h
+	include/alibabacloud/qualitycheck/model/ListDataSetTaskRequest.h
+	include/alibabacloud/qualitycheck/model/ListDataSetTaskResult.h
 	include/alibabacloud/qualitycheck/model/ListHotWordsTasksRequest.h
 	include/alibabacloud/qualitycheck/model/ListHotWordsTasksResult.h
 	include/alibabacloud/qualitycheck/model/ListPrecisionTaskRequest.h
@@ -125,12 +141,18 @@ set(qualitycheck_public_header_model
 	include/alibabacloud/qualitycheck/model/ListUsersResult.h
 	include/alibabacloud/qualitycheck/model/ListWarningConfigRequest.h
 	include/alibabacloud/qualitycheck/model/ListWarningConfigResult.h
+	include/alibabacloud/qualitycheck/model/RemoveAndGetTaskRulesRequest.h
+	include/alibabacloud/qualitycheck/model/RemoveAndGetTaskRulesResult.h
 	include/alibabacloud/qualitycheck/model/RestartAsrTaskRequest.h
 	include/alibabacloud/qualitycheck/model/RestartAsrTaskResult.h
+	include/alibabacloud/qualitycheck/model/ReviewSingleResultByIdRequest.h
+	include/alibabacloud/qualitycheck/model/ReviewSingleResultByIdResult.h
 	include/alibabacloud/qualitycheck/model/SaveConfigDataSetRequest.h
 	include/alibabacloud/qualitycheck/model/SaveConfigDataSetResult.h
 	include/alibabacloud/qualitycheck/model/SubmitComplaintRequest.h
 	include/alibabacloud/qualitycheck/model/SubmitComplaintResult.h
+	include/alibabacloud/qualitycheck/model/SubmitCustomizationConfigRequest.h
+	include/alibabacloud/qualitycheck/model/SubmitCustomizationConfigResult.h
 	include/alibabacloud/qualitycheck/model/SubmitPrecisionTaskRequest.h
 	include/alibabacloud/qualitycheck/model/SubmitPrecisionTaskResult.h
 	include/alibabacloud/qualitycheck/model/SubmitQualityCheckTaskRequest.h
@@ -139,8 +161,12 @@ set(qualitycheck_public_header_model
 	include/alibabacloud/qualitycheck/model/SubmitReviewInfoResult.h
 	include/alibabacloud/qualitycheck/model/SyncQualityCheckRequest.h
 	include/alibabacloud/qualitycheck/model/SyncQualityCheckResult.h
+	include/alibabacloud/qualitycheck/model/TestRuleRequest.h
+	include/alibabacloud/qualitycheck/model/TestRuleResult.h
 	include/alibabacloud/qualitycheck/model/UpdateAsrVocabRequest.h
 	include/alibabacloud/qualitycheck/model/UpdateAsrVocabResult.h
+	include/alibabacloud/qualitycheck/model/UpdateOnPurchaseSuccessRequest.h
+	include/alibabacloud/qualitycheck/model/UpdateOnPurchaseSuccessResult.h
 	include/alibabacloud/qualitycheck/model/UpdateRuleRequest.h
 	include/alibabacloud/qualitycheck/model/UpdateRuleResult.h
 	include/alibabacloud/qualitycheck/model/UpdateScoreForApiRequest.h
@@ -180,10 +206,16 @@ set(qualitycheck_src
 	src/model/AddRuleCategoryResult.cc
 	src/model/AddThesaurusForApiRequest.cc
 	src/model/AddThesaurusForApiResult.cc
+	src/model/AddUploadDataSetRequest.cc
+	src/model/AddUploadDataSetResult.cc
 	src/model/AssignReviewerRequest.cc
 	src/model/AssignReviewerResult.cc
+	src/model/ConfigDataSetRequest.cc
+	src/model/ConfigDataSetResult.cc
 	src/model/CreateAsrVocabRequest.cc
 	src/model/CreateAsrVocabResult.cc
+	src/model/CreateRuleRequest.cc
+	src/model/CreateRuleResult.cc
 	src/model/CreateSkillGroupConfigRequest.cc
 	src/model/CreateSkillGroupConfigResult.cc
 	src/model/CreateTaskAssignRuleRequest.cc
@@ -238,18 +270,26 @@ set(qualitycheck_src
 	src/model/GetResultCallbackResult.cc
 	src/model/GetResultToReviewRequest.cc
 	src/model/GetResultToReviewResult.cc
+	src/model/GetReviewInfoRequest.cc
+	src/model/GetReviewInfoResult.cc
 	src/model/GetRuleRequest.cc
 	src/model/GetRuleResult.cc
 	src/model/GetRuleCategoryRequest.cc
 	src/model/GetRuleCategoryResult.cc
 	src/model/GetRuleDetailRequest.cc
 	src/model/GetRuleDetailResult.cc
+	src/model/GetRuleDimensionRequest.cc
+	src/model/GetRuleDimensionResult.cc
 	src/model/GetScoreInfoRequest.cc
 	src/model/GetScoreInfoResult.cc
 	src/model/GetSkillGroupConfigRequest.cc
 	src/model/GetSkillGroupConfigResult.cc
 	src/model/GetSyncResultRequest.cc
 	src/model/GetSyncResultResult.cc
+	src/model/GetTaskFileResultListRequest.cc
+	src/model/GetTaskFileResultListResult.cc
+	src/model/GetTaskRuleListRequest.cc
+	src/model/GetTaskRuleListResult.cc
 	src/model/GetThesaurusBySynonymForApiRequest.cc
 	src/model/GetThesaurusBySynonymForApiResult.cc
 	src/model/HandleComplaintRequest.cc
@@ -262,6 +302,8 @@ set(qualitycheck_src
 	src/model/InvalidRuleResult.cc
 	src/model/ListAsrVocabRequest.cc
 	src/model/ListAsrVocabResult.cc
+	src/model/ListDataSetTaskRequest.cc
+	src/model/ListDataSetTaskResult.cc
 	src/model/ListHotWordsTasksRequest.cc
 	src/model/ListHotWordsTasksResult.cc
 	src/model/ListPrecisionTaskRequest.cc
@@ -278,12 +320,18 @@ set(qualitycheck_src
 	src/model/ListUsersResult.cc
 	src/model/ListWarningConfigRequest.cc
 	src/model/ListWarningConfigResult.cc
+	src/model/RemoveAndGetTaskRulesRequest.cc
+	src/model/RemoveAndGetTaskRulesResult.cc
 	src/model/RestartAsrTaskRequest.cc
 	src/model/RestartAsrTaskResult.cc
+	src/model/ReviewSingleResultByIdRequest.cc
+	src/model/ReviewSingleResultByIdResult.cc
 	src/model/SaveConfigDataSetRequest.cc
 	src/model/SaveConfigDataSetResult.cc
 	src/model/SubmitComplaintRequest.cc
 	src/model/SubmitComplaintResult.cc
+	src/model/SubmitCustomizationConfigRequest.cc
+	src/model/SubmitCustomizationConfigResult.cc
 	src/model/SubmitPrecisionTaskRequest.cc
 	src/model/SubmitPrecisionTaskResult.cc
 	src/model/SubmitQualityCheckTaskRequest.cc
@@ -292,8 +340,12 @@ set(qualitycheck_src
 	src/model/SubmitReviewInfoResult.cc
 	src/model/SyncQualityCheckRequest.cc
 	src/model/SyncQualityCheckResult.cc
+	src/model/TestRuleRequest.cc
+	src/model/TestRuleResult.cc
 	src/model/UpdateAsrVocabRequest.cc
 	src/model/UpdateAsrVocabResult.cc
+	src/model/UpdateOnPurchaseSuccessRequest.cc
+	src/model/UpdateOnPurchaseSuccessResult.cc
 	src/model/UpdateRuleRequest.cc
 	src/model/UpdateRuleResult.cc
 	src/model/UpdateScoreForApiRequest.cc

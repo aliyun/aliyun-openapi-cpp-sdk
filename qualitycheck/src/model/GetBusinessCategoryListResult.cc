@@ -43,20 +43,20 @@ void GetBusinessCategoryListResult::parse(const std::string &payload)
 	for (auto valueDataBusinessCategoryBasicInfo : allDataNode)
 	{
 		BusinessCategoryBasicInfo dataObject;
-		if(!valueDataBusinessCategoryBasicInfo["Bid"].isNull())
-			dataObject.bid = std::stoi(valueDataBusinessCategoryBasicInfo["Bid"].asString());
-		if(!valueDataBusinessCategoryBasicInfo["ServiceType"].isNull())
-			dataObject.serviceType = std::stoi(valueDataBusinessCategoryBasicInfo["ServiceType"].asString());
 		if(!valueDataBusinessCategoryBasicInfo["BusinessName"].isNull())
 			dataObject.businessName = valueDataBusinessCategoryBasicInfo["BusinessName"].asString();
+		if(!valueDataBusinessCategoryBasicInfo["ServiceType"].isNull())
+			dataObject.serviceType = std::stoi(valueDataBusinessCategoryBasicInfo["ServiceType"].asString());
+		if(!valueDataBusinessCategoryBasicInfo["Bid"].isNull())
+			dataObject.bid = std::stoi(valueDataBusinessCategoryBasicInfo["Bid"].asString());
 		data_.push_back(dataObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

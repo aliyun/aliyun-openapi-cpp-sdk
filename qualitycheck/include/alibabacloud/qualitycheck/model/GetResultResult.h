@@ -36,12 +36,12 @@ namespace AlibabaCloud
 				{
 					struct Recording
 					{
-						std::string callee;
 						std::string remark13;
+						std::string callee;
 						std::string remark11;
 						std::string remark12;
-						int callType;
 						int dialogueSize;
+						int callType;
 						std::string url;
 						std::string dataSetName;
 						std::string name;
@@ -53,8 +53,8 @@ namespace AlibabaCloud
 						std::string remark3;
 						std::string remark1;
 						std::string remark8;
-						std::string business;
 						std::string remark9;
+						std::string business;
 						std::string callId;
 						long duration;
 						std::string caller;
@@ -127,8 +127,8 @@ namespace AlibabaCloud
 					std::string reviewer;
 					std::vector<ResultInfo::HitResultItem> hitResult;
 					int score;
-					std::string taskName;
 					std::string assignmentTime;
+					std::string taskName;
 					int reviewStatus;
 					std::string lastDataId;
 					std::string reviewTimeLong;

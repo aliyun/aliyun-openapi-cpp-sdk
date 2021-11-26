@@ -43,20 +43,20 @@ void RestartAsrTaskResult::parse(const std::string &payload)
 	for (auto valueDataRestartResult : allDataNode)
 	{
 		RestartResult dataObject;
-		if(!valueDataRestartResult["Success"].isNull())
-			dataObject.success = valueDataRestartResult["Success"].asString() == "true";
-		if(!valueDataRestartResult["Data"].isNull())
-			dataObject.data = valueDataRestartResult["Data"].asString();
 		if(!valueDataRestartResult["Message"].isNull())
 			dataObject.message = valueDataRestartResult["Message"].asString();
+		if(!valueDataRestartResult["Data"].isNull())
+			dataObject.data = valueDataRestartResult["Data"].asString();
+		if(!valueDataRestartResult["Success"].isNull())
+			dataObject.success = valueDataRestartResult["Success"].asString() == "true";
 		data_.push_back(dataObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

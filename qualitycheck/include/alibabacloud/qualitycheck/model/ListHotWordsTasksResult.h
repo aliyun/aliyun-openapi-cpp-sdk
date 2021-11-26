@@ -38,8 +38,8 @@ namespace AlibabaCloud
 					{
 						int role;
 						long dialogueId;
-						int startIndex;
 						std::string endTime;
+						int startIndex;
 						int sourceType;
 						std::string startTime;
 						int endIndex;
@@ -52,15 +52,15 @@ namespace AlibabaCloud
 						std::string excludes;
 					};
 					int status;
-					int timeInterval;
 					std::string endTime;
+					int timeInterval;
 					std::string message;
 					std::string startTime;
 					WordsParam wordsParam;
 					DialogueParam dialogueParam;
 					std::string name;
-					long taskConfigId;
 					int type;
+					long taskConfigId;
 					int instanceStatus;
 					std::string lastExecutionTime;
 					int timeUnit;

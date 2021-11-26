@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,45 +18,37 @@
 
 using AlibabaCloud::Qualitycheck::Model::DeleteAsrVocabRequest;
 
-DeleteAsrVocabRequest::DeleteAsrVocabRequest() :
-	RpcServiceRequest("qualitycheck", "2019-01-15", "DeleteAsrVocab")
-{
-	setMethod(HttpRequest::Method::Post);
+DeleteAsrVocabRequest::DeleteAsrVocabRequest()
+    : RpcServiceRequest("qualitycheck", "2019-01-15", "DeleteAsrVocab") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DeleteAsrVocabRequest::~DeleteAsrVocabRequest()
-{}
+DeleteAsrVocabRequest::~DeleteAsrVocabRequest() {}
 
-long DeleteAsrVocabRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long DeleteAsrVocabRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void DeleteAsrVocabRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void DeleteAsrVocabRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string DeleteAsrVocabRequest::getJsonStr()const
-{
-	return jsonStr_;
+std::string DeleteAsrVocabRequest::getJsonStr() const {
+  return jsonStr_;
 }
 
-void DeleteAsrVocabRequest::setJsonStr(const std::string& jsonStr)
-{
-	jsonStr_ = jsonStr;
-	setParameter("JsonStr", jsonStr);
+void DeleteAsrVocabRequest::setJsonStr(const std::string &jsonStr) {
+  jsonStr_ = jsonStr;
+  setParameter(std::string("JsonStr"), jsonStr);
 }
 
-std::string DeleteAsrVocabRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string DeleteAsrVocabRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void DeleteAsrVocabRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void DeleteAsrVocabRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 

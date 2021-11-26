@@ -42,20 +42,20 @@ void SyncQualityCheckResult::parse(const std::string &payload)
 	auto dataNode = value["Data"];
 	if(!dataNode["Score"].isNull())
 		data_.score = std::stoi(dataNode["Score"].asString());
+	if(!dataNode["TaskId"].isNull())
+		data_.taskId = dataNode["TaskId"].asString();
 	if(!dataNode["Tid"].isNull())
 		data_.tid = dataNode["Tid"].asString();
 	if(!dataNode["BeginTime"].isNull())
 		data_.beginTime = std::stol(dataNode["BeginTime"].asString());
-	if(!dataNode["TaskId"].isNull())
-		data_.taskId = dataNode["TaskId"].asString();
 	auto allRulesNode = dataNode["Rules"]["RuleHitInfo"];
 	for (auto dataNodeRulesRuleHitInfo : allRulesNode)
 	{
 		Data::RuleHitInfo ruleHitInfoObject;
-		if(!dataNodeRulesRuleHitInfo["Rid"].isNull())
-			ruleHitInfoObject.rid = dataNodeRulesRuleHitInfo["Rid"].asString();
 		if(!dataNodeRulesRuleHitInfo["RuleName"].isNull())
 			ruleHitInfoObject.ruleName = dataNodeRulesRuleHitInfo["RuleName"].asString();
+		if(!dataNodeRulesRuleHitInfo["Rid"].isNull())
+			ruleHitInfoObject.rid = dataNodeRulesRuleHitInfo["Rid"].asString();
 		auto allHitNode = dataNodeRulesRuleHitInfo["Hit"]["ConditionHitInfo"];
 		for (auto dataNodeRulesRuleHitInfoHitConditionHitInfo : allHitNode)
 		{
@@ -64,45 +64,45 @@ void SyncQualityCheckResult::parse(const std::string &payload)
 			for (auto dataNodeRulesRuleHitInfoHitConditionHitInfoHitKeyWordsHitKeyWord : allHitKeyWordsNode)
 			{
 				Data::RuleHitInfo::ConditionHitInfo::HitKeyWord hitKeyWordsObject;
-				if(!dataNodeRulesRuleHitInfoHitConditionHitInfoHitKeyWordsHitKeyWord["Val"].isNull())
-					hitKeyWordsObject.val = dataNodeRulesRuleHitInfoHitConditionHitInfoHitKeyWordsHitKeyWord["Val"].asString();
-				if(!dataNodeRulesRuleHitInfoHitConditionHitInfoHitKeyWordsHitKeyWord["Pid"].isNull())
-					hitKeyWordsObject.pid = std::stoi(dataNodeRulesRuleHitInfoHitConditionHitInfoHitKeyWordsHitKeyWord["Pid"].asString());
-				if(!dataNodeRulesRuleHitInfoHitConditionHitInfoHitKeyWordsHitKeyWord["From"].isNull())
-					hitKeyWordsObject.from = std::stoi(dataNodeRulesRuleHitInfoHitConditionHitInfoHitKeyWordsHitKeyWord["From"].asString());
 				if(!dataNodeRulesRuleHitInfoHitConditionHitInfoHitKeyWordsHitKeyWord["To"].isNull())
 					hitKeyWordsObject.to = std::stoi(dataNodeRulesRuleHitInfoHitConditionHitInfoHitKeyWordsHitKeyWord["To"].asString());
+				if(!dataNodeRulesRuleHitInfoHitConditionHitInfoHitKeyWordsHitKeyWord["From"].isNull())
+					hitKeyWordsObject.from = std::stoi(dataNodeRulesRuleHitInfoHitConditionHitInfoHitKeyWordsHitKeyWord["From"].asString());
+				if(!dataNodeRulesRuleHitInfoHitConditionHitInfoHitKeyWordsHitKeyWord["Val"].isNull())
+					hitKeyWordsObject.val = dataNodeRulesRuleHitInfoHitConditionHitInfoHitKeyWordsHitKeyWord["Val"].asString();
 				if(!dataNodeRulesRuleHitInfoHitConditionHitInfoHitKeyWordsHitKeyWord["Cid"].isNull())
 					hitKeyWordsObject.cid = std::stoi(dataNodeRulesRuleHitInfoHitConditionHitInfoHitKeyWordsHitKeyWord["Cid"].asString());
+				if(!dataNodeRulesRuleHitInfoHitConditionHitInfoHitKeyWordsHitKeyWord["Pid"].isNull())
+					hitKeyWordsObject.pid = std::stoi(dataNodeRulesRuleHitInfoHitConditionHitInfoHitKeyWordsHitKeyWord["Pid"].asString());
 				hitObject.hitKeyWords.push_back(hitKeyWordsObject);
 			}
 			auto phraseNode = value["Phrase"];
-			if(!phraseNode["Role"].isNull())
-				hitObject.phrase.role = phraseNode["Role"].asString();
-			if(!phraseNode["Identity"].isNull())
-				hitObject.phrase.identity = phraseNode["Identity"].asString();
 			if(!phraseNode["Words"].isNull())
 				hitObject.phrase.words = phraseNode["Words"].asString();
+			if(!phraseNode["Identity"].isNull())
+				hitObject.phrase.identity = phraseNode["Identity"].asString();
 			if(!phraseNode["Begin"].isNull())
 				hitObject.phrase.begin = std::stol(phraseNode["Begin"].asString());
-			if(!phraseNode["End"].isNull())
-				hitObject.phrase.end = std::stol(phraseNode["End"].asString());
 			if(!phraseNode["EmotionValue"].isNull())
 				hitObject.phrase.emotionValue = std::stoi(phraseNode["EmotionValue"].asString());
+			if(!phraseNode["End"].isNull())
+				hitObject.phrase.end = std::stol(phraseNode["End"].asString());
 			if(!phraseNode["SpeechRate"].isNull())
 				hitObject.phrase.speechRate = std::stoi(phraseNode["SpeechRate"].asString());
+			if(!phraseNode["Role"].isNull())
+				hitObject.phrase.role = phraseNode["Role"].asString();
 			if(!phraseNode["SilenceDuration"].isNull())
 				hitObject.phrase.silenceDuration = std::stoi(phraseNode["SilenceDuration"].asString());
 			ruleHitInfoObject.hit.push_back(hitObject);
 		}
 		data_.rules.push_back(ruleHitInfoObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

@@ -46,18 +46,18 @@ void GetAsrVocabResult::parse(const std::string &payload)
 	for (auto dataNodeWordsWord : allWordsNode)
 	{
 		Data::Word wordObject;
-		if(!dataNodeWordsWord["Word"].isNull())
-			wordObject.word = dataNodeWordsWord["Word"].asString();
 		if(!dataNodeWordsWord["Weight"].isNull())
 			wordObject.weight = std::stoi(dataNodeWordsWord["Weight"].asString());
+		if(!dataNodeWordsWord["Word"].isNull())
+			wordObject.word = dataNodeWordsWord["Word"].asString();
 		data_.words.push_back(wordObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

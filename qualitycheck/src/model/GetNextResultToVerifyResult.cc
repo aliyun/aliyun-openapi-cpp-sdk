@@ -40,62 +40,62 @@ void GetNextResultToVerifyResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["Status"].isNull())
-		data_.status = std::stoi(dataNode["Status"].asString());
-	if(!dataNode["AudioURL"].isNull())
-		data_.audioURL = dataNode["AudioURL"].asString();
-	if(!dataNode["AudioScheme"].isNull())
-		data_.audioScheme = dataNode["AudioScheme"].asString();
-	if(!dataNode["FileName"].isNull())
-		data_.fileName = dataNode["FileName"].asString();
-	if(!dataNode["FileId"].isNull())
-		data_.fileId = dataNode["FileId"].asString();
-	if(!dataNode["Verified"].isNull())
-		data_.verified = dataNode["Verified"].asString() == "true";
-	if(!dataNode["TotalCount"].isNull())
-		data_.totalCount = std::stoi(dataNode["TotalCount"].asString());
-	if(!dataNode["VerifiedCount"].isNull())
-		data_.verifiedCount = std::stoi(dataNode["VerifiedCount"].asString());
-	if(!dataNode["IncorrectWords"].isNull())
-		data_.incorrectWords = std::stoi(dataNode["IncorrectWords"].asString());
-	if(!dataNode["Precision"].isNull())
-		data_.precision = std::stof(dataNode["Precision"].asString());
-	if(!dataNode["UpdateTime"].isNull())
-		data_.updateTime = dataNode["UpdateTime"].asString();
-	if(!dataNode["Duration"].isNull())
-		data_.duration = std::stoi(dataNode["Duration"].asString());
 	if(!dataNode["Index"].isNull())
 		data_.index = std::stoi(dataNode["Index"].asString());
+	if(!dataNode["Status"].isNull())
+		data_.status = std::stoi(dataNode["Status"].asString());
+	if(!dataNode["AudioScheme"].isNull())
+		data_.audioScheme = dataNode["AudioScheme"].asString();
+	if(!dataNode["AudioURL"].isNull())
+		data_.audioURL = dataNode["AudioURL"].asString();
+	if(!dataNode["UpdateTime"].isNull())
+		data_.updateTime = dataNode["UpdateTime"].asString();
+	if(!dataNode["IncorrectWords"].isNull())
+		data_.incorrectWords = std::stoi(dataNode["IncorrectWords"].asString());
+	if(!dataNode["VerifiedCount"].isNull())
+		data_.verifiedCount = std::stoi(dataNode["VerifiedCount"].asString());
+	if(!dataNode["Verified"].isNull())
+		data_.verified = dataNode["Verified"].asString() == "true";
+	if(!dataNode["FileName"].isNull())
+		data_.fileName = dataNode["FileName"].asString();
+	if(!dataNode["TotalCount"].isNull())
+		data_.totalCount = std::stoi(dataNode["TotalCount"].asString());
+	if(!dataNode["Precision"].isNull())
+		data_.precision = std::stof(dataNode["Precision"].asString());
+	if(!dataNode["FileId"].isNull())
+		data_.fileId = dataNode["FileId"].asString();
+	if(!dataNode["Duration"].isNull())
+		data_.duration = std::stoi(dataNode["Duration"].asString());
 	auto allDialoguesNode = dataNode["Dialogues"]["Dialogue"];
 	for (auto dataNodeDialoguesDialogue : allDialoguesNode)
 	{
 		Data::Dialogue dialogueObject;
-		if(!dataNodeDialoguesDialogue["Begin"].isNull())
-			dialogueObject.begin = std::stol(dataNodeDialoguesDialogue["Begin"].asString());
-		if(!dataNodeDialoguesDialogue["BeginTime"].isNull())
-			dialogueObject.beginTime = dataNodeDialoguesDialogue["BeginTime"].asString();
-		if(!dataNodeDialoguesDialogue["EmotionValue"].isNull())
-			dialogueObject.emotionValue = std::stoi(dataNodeDialoguesDialogue["EmotionValue"].asString());
-		if(!dataNodeDialoguesDialogue["End"].isNull())
-			dialogueObject.end = std::stol(dataNodeDialoguesDialogue["End"].asString());
-		if(!dataNodeDialoguesDialogue["HourMinSec"].isNull())
-			dialogueObject.hourMinSec = dataNodeDialoguesDialogue["HourMinSec"].asString();
-		if(!dataNodeDialoguesDialogue["Identity"].isNull())
-			dialogueObject.identity = dataNodeDialoguesDialogue["Identity"].asString();
-		if(!dataNodeDialoguesDialogue["Role"].isNull())
-			dialogueObject.role = dataNodeDialoguesDialogue["Role"].asString();
-		if(!dataNodeDialoguesDialogue["SourceRole"].isNull())
-			dialogueObject.sourceRole = dataNodeDialoguesDialogue["SourceRole"].asString();
-		if(!dataNodeDialoguesDialogue["SilenceDuration"].isNull())
-			dialogueObject.silenceDuration = std::stoi(dataNodeDialoguesDialogue["SilenceDuration"].asString());
-		if(!dataNodeDialoguesDialogue["SpeechRate"].isNull())
-			dialogueObject.speechRate = std::stoi(dataNodeDialoguesDialogue["SpeechRate"].asString());
 		if(!dataNodeDialoguesDialogue["Words"].isNull())
 			dialogueObject.words = dataNodeDialoguesDialogue["Words"].asString();
-		if(!dataNodeDialoguesDialogue["SourceWords"].isNull())
-			dialogueObject.sourceWords = dataNodeDialoguesDialogue["SourceWords"].asString();
+		if(!dataNodeDialoguesDialogue["Identity"].isNull())
+			dialogueObject.identity = dataNodeDialoguesDialogue["Identity"].asString();
 		if(!dataNodeDialoguesDialogue["IncorrectWords"].isNull())
 			dialogueObject.incorrectWords = std::stoi(dataNodeDialoguesDialogue["IncorrectWords"].asString());
+		if(!dataNodeDialoguesDialogue["BeginTime"].isNull())
+			dialogueObject.beginTime = dataNodeDialoguesDialogue["BeginTime"].asString();
+		if(!dataNodeDialoguesDialogue["SourceWords"].isNull())
+			dialogueObject.sourceWords = dataNodeDialoguesDialogue["SourceWords"].asString();
+		if(!dataNodeDialoguesDialogue["End"].isNull())
+			dialogueObject.end = std::stol(dataNodeDialoguesDialogue["End"].asString());
+		if(!dataNodeDialoguesDialogue["SpeechRate"].isNull())
+			dialogueObject.speechRate = std::stoi(dataNodeDialoguesDialogue["SpeechRate"].asString());
+		if(!dataNodeDialoguesDialogue["HourMinSec"].isNull())
+			dialogueObject.hourMinSec = dataNodeDialoguesDialogue["HourMinSec"].asString();
+		if(!dataNodeDialoguesDialogue["SourceRole"].isNull())
+			dialogueObject.sourceRole = dataNodeDialoguesDialogue["SourceRole"].asString();
+		if(!dataNodeDialoguesDialogue["Begin"].isNull())
+			dialogueObject.begin = std::stol(dataNodeDialoguesDialogue["Begin"].asString());
+		if(!dataNodeDialoguesDialogue["EmotionValue"].isNull())
+			dialogueObject.emotionValue = std::stoi(dataNodeDialoguesDialogue["EmotionValue"].asString());
+		if(!dataNodeDialoguesDialogue["Role"].isNull())
+			dialogueObject.role = dataNodeDialoguesDialogue["Role"].asString();
+		if(!dataNodeDialoguesDialogue["SilenceDuration"].isNull())
+			dialogueObject.silenceDuration = std::stoi(dataNodeDialoguesDialogue["SilenceDuration"].asString());
 		auto allDeltasNode = dataNodeDialoguesDialogue["Deltas"]["Delta"];
 		for (auto dataNodeDialoguesDialogueDeltasDelta : allDeltasNode)
 		{
@@ -118,12 +118,12 @@ void GetNextResultToVerifyResult::parse(const std::string &payload)
 		}
 		data_.dialogues.push_back(dialogueObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

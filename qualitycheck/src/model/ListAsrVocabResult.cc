@@ -43,24 +43,24 @@ void ListAsrVocabResult::parse(const std::string &payload)
 	for (auto valueDataAsrVocab : allDataNode)
 	{
 		AsrVocab dataObject;
-		if(!valueDataAsrVocab["Id"].isNull())
-			dataObject.id = valueDataAsrVocab["Id"].asString();
+		if(!valueDataAsrVocab["VocabularyId"].isNull())
+			dataObject.vocabularyId = valueDataAsrVocab["VocabularyId"].asString();
+		if(!valueDataAsrVocab["UpdateTime"].isNull())
+			dataObject.updateTime = valueDataAsrVocab["UpdateTime"].asString();
 		if(!valueDataAsrVocab["Name"].isNull())
 			dataObject.name = valueDataAsrVocab["Name"].asString();
 		if(!valueDataAsrVocab["CreateTime"].isNull())
 			dataObject.createTime = valueDataAsrVocab["CreateTime"].asString();
-		if(!valueDataAsrVocab["UpdateTime"].isNull())
-			dataObject.updateTime = valueDataAsrVocab["UpdateTime"].asString();
-		if(!valueDataAsrVocab["VocabularyId"].isNull())
-			dataObject.vocabularyId = valueDataAsrVocab["VocabularyId"].asString();
+		if(!valueDataAsrVocab["Id"].isNull())
+			dataObject.id = valueDataAsrVocab["Id"].asString();
 		data_.push_back(dataObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 
