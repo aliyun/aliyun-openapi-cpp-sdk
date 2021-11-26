@@ -41,6 +41,7 @@ namespace AlibabaCloud
 					std::string transitRouterAttachmentName;
 					std::string resourceType;
 					bool autoPublishRouteEnabled;
+					std::string bandwidthType;
 					int bandwidth;
 					std::string creationTime;
 					std::string bandwidthPackageId;

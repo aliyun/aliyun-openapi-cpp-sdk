@@ -43,33 +43,33 @@ void DescribeRouteServicesInCenResult::parse(const std::string &payload)
 	for (auto valueRouteServiceEntriesRouteServiceEntry : allRouteServiceEntriesNode)
 	{
 		RouteServiceEntry routeServiceEntriesObject;
-		if(!valueRouteServiceEntriesRouteServiceEntry["CenId"].isNull())
-			routeServiceEntriesObject.cenId = valueRouteServiceEntriesRouteServiceEntry["CenId"].asString();
-		if(!valueRouteServiceEntriesRouteServiceEntry["Host"].isNull())
-			routeServiceEntriesObject.host = valueRouteServiceEntriesRouteServiceEntry["Host"].asString();
-		if(!valueRouteServiceEntriesRouteServiceEntry["HostRegionId"].isNull())
-			routeServiceEntriesObject.hostRegionId = valueRouteServiceEntriesRouteServiceEntry["HostRegionId"].asString();
-		if(!valueRouteServiceEntriesRouteServiceEntry["AccessRegionId"].isNull())
-			routeServiceEntriesObject.accessRegionId = valueRouteServiceEntriesRouteServiceEntry["AccessRegionId"].asString();
-		if(!valueRouteServiceEntriesRouteServiceEntry["UpdateInterval"].isNull())
-			routeServiceEntriesObject.updateInterval = valueRouteServiceEntriesRouteServiceEntry["UpdateInterval"].asString();
 		if(!valueRouteServiceEntriesRouteServiceEntry["Status"].isNull())
 			routeServiceEntriesObject.status = valueRouteServiceEntriesRouteServiceEntry["Status"].asString();
-		if(!valueRouteServiceEntriesRouteServiceEntry["HostVpcId"].isNull())
-			routeServiceEntriesObject.hostVpcId = valueRouteServiceEntriesRouteServiceEntry["HostVpcId"].asString();
+		if(!valueRouteServiceEntriesRouteServiceEntry["Host"].isNull())
+			routeServiceEntriesObject.host = valueRouteServiceEntriesRouteServiceEntry["Host"].asString();
 		if(!valueRouteServiceEntriesRouteServiceEntry["Description"].isNull())
 			routeServiceEntriesObject.description = valueRouteServiceEntriesRouteServiceEntry["Description"].asString();
+		if(!valueRouteServiceEntriesRouteServiceEntry["HostVpcId"].isNull())
+			routeServiceEntriesObject.hostVpcId = valueRouteServiceEntriesRouteServiceEntry["HostVpcId"].asString();
+		if(!valueRouteServiceEntriesRouteServiceEntry["CenId"].isNull())
+			routeServiceEntriesObject.cenId = valueRouteServiceEntriesRouteServiceEntry["CenId"].asString();
+		if(!valueRouteServiceEntriesRouteServiceEntry["AccessRegionId"].isNull())
+			routeServiceEntriesObject.accessRegionId = valueRouteServiceEntriesRouteServiceEntry["AccessRegionId"].asString();
+		if(!valueRouteServiceEntriesRouteServiceEntry["HostRegionId"].isNull())
+			routeServiceEntriesObject.hostRegionId = valueRouteServiceEntriesRouteServiceEntry["HostRegionId"].asString();
+		if(!valueRouteServiceEntriesRouteServiceEntry["UpdateInterval"].isNull())
+			routeServiceEntriesObject.updateInterval = valueRouteServiceEntriesRouteServiceEntry["UpdateInterval"].asString();
 		auto allCidrs = value["Cidrs"]["Cidr"];
 		for (auto value : allCidrs)
 			routeServiceEntriesObject.cidrs.push_back(value.asString());
 		routeServiceEntries_.push_back(routeServiceEntriesObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 

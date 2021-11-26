@@ -38,6 +38,17 @@ void UpdateTransitRouterPeerAttachmentAttributeRequest::setResourceOwnerId(long 
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string UpdateTransitRouterPeerAttachmentAttributeRequest::getBandwidthType()const
+{
+	return bandwidthType_;
+}
+
+void UpdateTransitRouterPeerAttachmentAttributeRequest::setBandwidthType(const std::string& bandwidthType)
+{
+	bandwidthType_ = bandwidthType;
+	setParameter("BandwidthType", bandwidthType);
+}
+
 std::string UpdateTransitRouterPeerAttachmentAttributeRequest::getClientToken()const
 {
 	return clientToken_;

@@ -43,34 +43,40 @@ void DescribeFlowlogsResult::parse(const std::string &payload)
 	for (auto valueFlowLogsFlowLog : allFlowLogsNode)
 	{
 		FlowLog flowLogsObject;
-		if(!valueFlowLogsFlowLog["FlowLogId"].isNull())
-			flowLogsObject.flowLogId = valueFlowLogsFlowLog["FlowLogId"].asString();
+		if(!valueFlowLogsFlowLog["Status"].isNull())
+			flowLogsObject.status = valueFlowLogsFlowLog["Status"].asString();
+		if(!valueFlowLogsFlowLog["CreationTime"].isNull())
+			flowLogsObject.creationTime = valueFlowLogsFlowLog["CreationTime"].asString();
 		if(!valueFlowLogsFlowLog["FlowLogName"].isNull())
 			flowLogsObject.flowLogName = valueFlowLogsFlowLog["FlowLogName"].asString();
 		if(!valueFlowLogsFlowLog["Description"].isNull())
 			flowLogsObject.description = valueFlowLogsFlowLog["Description"].asString();
-		if(!valueFlowLogsFlowLog["CreationTime"].isNull())
-			flowLogsObject.creationTime = valueFlowLogsFlowLog["CreationTime"].asString();
-		if(!valueFlowLogsFlowLog["CenId"].isNull())
-			flowLogsObject.cenId = valueFlowLogsFlowLog["CenId"].asString();
 		if(!valueFlowLogsFlowLog["ProjectName"].isNull())
 			flowLogsObject.projectName = valueFlowLogsFlowLog["ProjectName"].asString();
+		if(!valueFlowLogsFlowLog["CenId"].isNull())
+			flowLogsObject.cenId = valueFlowLogsFlowLog["CenId"].asString();
 		if(!valueFlowLogsFlowLog["LogStoreName"].isNull())
 			flowLogsObject.logStoreName = valueFlowLogsFlowLog["LogStoreName"].asString();
-		if(!valueFlowLogsFlowLog["Status"].isNull())
-			flowLogsObject.status = valueFlowLogsFlowLog["Status"].asString();
 		if(!valueFlowLogsFlowLog["RegionId"].isNull())
 			flowLogsObject.regionId = valueFlowLogsFlowLog["RegionId"].asString();
+		if(!valueFlowLogsFlowLog["FlowLogId"].isNull())
+			flowLogsObject.flowLogId = valueFlowLogsFlowLog["FlowLogId"].asString();
+		if(!valueFlowLogsFlowLog["PeerRegionId"].isNull())
+			flowLogsObject.peerRegionId = valueFlowLogsFlowLog["PeerRegionId"].asString();
+		if(!valueFlowLogsFlowLog["TransitRouterAttachmentId"].isNull())
+			flowLogsObject.transitRouterAttachmentId = valueFlowLogsFlowLog["TransitRouterAttachmentId"].asString();
+		if(!valueFlowLogsFlowLog["Interval"].isNull())
+			flowLogsObject.interval = std::stol(valueFlowLogsFlowLog["Interval"].asString());
 		flowLogs_.push_back(flowLogsObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString();
-	if(!value["TotalCount"].isNull())
-		totalCount_ = value["TotalCount"].asString();
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = value["PageNumber"].asString();
 	if(!value["PageSize"].isNull())
 		pageSize_ = value["PageSize"].asString();
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = value["PageNumber"].asString();
+	if(!value["TotalCount"].isNull())
+		totalCount_ = value["TotalCount"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString();
 
 }
 

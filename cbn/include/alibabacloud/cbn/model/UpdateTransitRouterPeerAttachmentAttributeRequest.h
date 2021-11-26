@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getBandwidthType()const;
+				void setBandwidthType(const std::string& bandwidthType);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
 				std::string getTransitRouterAttachmentName()const;
@@ -64,6 +66,7 @@ namespace AlibabaCloud
 
             private:
 				long resourceOwnerId_;
+				std::string bandwidthType_;
 				std::string clientToken_;
 				std::string transitRouterAttachmentName_;
 				bool autoPublishRouteEnabled_;

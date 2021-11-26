@@ -75,6 +75,8 @@ void ListTransitRouterPeerAttachmentsResult::parse(const std::string &payload)
 			transitRouterAttachmentsObject.geographicSpanId = valueTransitRouterAttachmentsTransitRouterAttachment["GeographicSpanId"].asString();
 		if(!valueTransitRouterAttachmentsTransitRouterAttachment["CenBandwidthPackageId"].isNull())
 			transitRouterAttachmentsObject.cenBandwidthPackageId = valueTransitRouterAttachmentsTransitRouterAttachment["CenBandwidthPackageId"].asString();
+		if(!valueTransitRouterAttachmentsTransitRouterAttachment["BandwidthType"].isNull())
+			transitRouterAttachmentsObject.bandwidthType = valueTransitRouterAttachmentsTransitRouterAttachment["BandwidthType"].asString();
 		transitRouterAttachments_.push_back(transitRouterAttachmentsObject);
 	}
 	if(!value["TotalCount"].isNull())

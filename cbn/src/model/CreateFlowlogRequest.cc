@@ -137,6 +137,28 @@ void CreateFlowlogRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
+std::string CreateFlowlogRequest::getTransitRouterAttachmentId()const
+{
+	return transitRouterAttachmentId_;
+}
+
+void CreateFlowlogRequest::setTransitRouterAttachmentId(const std::string& transitRouterAttachmentId)
+{
+	transitRouterAttachmentId_ = transitRouterAttachmentId;
+	setParameter("TransitRouterAttachmentId", transitRouterAttachmentId);
+}
+
+long CreateFlowlogRequest::getInterval()const
+{
+	return interval_;
+}
+
+void CreateFlowlogRequest::setInterval(long interval)
+{
+	interval_ = interval;
+	setParameter("Interval", std::to_string(interval));
+}
+
 std::string CreateFlowlogRequest::getFlowLogName()const
 {
 	return flowLogName_;

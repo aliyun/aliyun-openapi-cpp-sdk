@@ -55,6 +55,10 @@ namespace AlibabaCloud
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getTransitRouterAttachmentId()const;
+				void setTransitRouterAttachmentId(const std::string& transitRouterAttachmentId);
+				long getInterval()const;
+				void setInterval(long interval);
 				std::string getFlowLogName()const;
 				void setFlowLogName(const std::string& flowLogName);
 
@@ -69,6 +73,8 @@ namespace AlibabaCloud
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
+				std::string transitRouterAttachmentId_;
+				long interval_;
 				std::string flowLogName_;
 
 			};

@@ -35,8 +35,8 @@ namespace AlibabaCloud
 				struct RouteServiceEntry
 				{
 					std::string status;
-					std::string hostRegionId;
 					std::string description;
+					std::string hostRegionId;
 					std::string cenId;
 					std::string host;
 					std::string accessRegionId;

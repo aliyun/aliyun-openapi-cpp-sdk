@@ -1,0 +1,101 @@
+/*
+ * Copyright 2009-2017 Alibaba Cloud All rights reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <alibabacloud/cbn/model/ListCenInterRegionTrafficQosPoliciesResult.h>
+#include <json/json.h>
+
+using namespace AlibabaCloud::Cbn;
+using namespace AlibabaCloud::Cbn::Model;
+
+ListCenInterRegionTrafficQosPoliciesResult::ListCenInterRegionTrafficQosPoliciesResult() :
+	ServiceResult()
+{}
+
+ListCenInterRegionTrafficQosPoliciesResult::ListCenInterRegionTrafficQosPoliciesResult(const std::string &payload) :
+	ServiceResult()
+{
+	parse(payload);
+}
+
+ListCenInterRegionTrafficQosPoliciesResult::~ListCenInterRegionTrafficQosPoliciesResult()
+{}
+
+void ListCenInterRegionTrafficQosPoliciesResult::parse(const std::string &payload)
+{
+	Json::Reader reader;
+	Json::Value value;
+	reader.parse(payload, value);
+	setRequestId(value["RequestId"].asString());
+	auto allTrafficQosPoliciesNode = value["TrafficQosPolicies"]["TrafficQosPolicy"];
+	for (auto valueTrafficQosPoliciesTrafficQosPolicy : allTrafficQosPoliciesNode)
+	{
+		TrafficQosPolicy trafficQosPoliciesObject;
+		if(!valueTrafficQosPoliciesTrafficQosPolicy["TrafficQosPolicyName"].isNull())
+			trafficQosPoliciesObject.trafficQosPolicyName = valueTrafficQosPoliciesTrafficQosPolicy["TrafficQosPolicyName"].asString();
+		if(!valueTrafficQosPoliciesTrafficQosPolicy["TrafficQosPolicyStatus"].isNull())
+			trafficQosPoliciesObject.trafficQosPolicyStatus = valueTrafficQosPoliciesTrafficQosPolicy["TrafficQosPolicyStatus"].asString();
+		if(!valueTrafficQosPoliciesTrafficQosPolicy["TrafficQosPolicyId"].isNull())
+			trafficQosPoliciesObject.trafficQosPolicyId = valueTrafficQosPoliciesTrafficQosPolicy["TrafficQosPolicyId"].asString();
+		if(!valueTrafficQosPoliciesTrafficQosPolicy["TrafficQosPolicyDescription"].isNull())
+			trafficQosPoliciesObject.trafficQosPolicyDescription = valueTrafficQosPoliciesTrafficQosPolicy["TrafficQosPolicyDescription"].asString();
+		auto allTrafficQosQueuesNode = valueTrafficQosPoliciesTrafficQosPolicy["TrafficQosQueues"]["TrafficQosQueue"];
+		for (auto valueTrafficQosPoliciesTrafficQosPolicyTrafficQosQueuesTrafficQosQueue : allTrafficQosQueuesNode)
+		{
+			TrafficQosPolicy::TrafficQosQueue trafficQosQueuesObject;
+			if(!valueTrafficQosPoliciesTrafficQosPolicyTrafficQosQueuesTrafficQosQueue["QosQueueName"].isNull())
+				trafficQosQueuesObject.qosQueueName = valueTrafficQosPoliciesTrafficQosPolicyTrafficQosQueuesTrafficQosQueue["QosQueueName"].asString();
+			if(!valueTrafficQosPoliciesTrafficQosPolicyTrafficQosQueuesTrafficQosQueue["RemainBandwidthPercent"].isNull())
+				trafficQosQueuesObject.remainBandwidthPercent = std::stoi(valueTrafficQosPoliciesTrafficQosPolicyTrafficQosQueuesTrafficQosQueue["RemainBandwidthPercent"].asString());
+			if(!valueTrafficQosPoliciesTrafficQosPolicyTrafficQosQueuesTrafficQosQueue["QosQueueId"].isNull())
+				trafficQosQueuesObject.qosQueueId = valueTrafficQosPoliciesTrafficQosPolicyTrafficQosQueuesTrafficQosQueue["QosQueueId"].asString();
+			if(!valueTrafficQosPoliciesTrafficQosPolicyTrafficQosQueuesTrafficQosQueue["QosQueueDescription"].isNull())
+				trafficQosQueuesObject.qosQueueDescription = valueTrafficQosPoliciesTrafficQosPolicyTrafficQosQueuesTrafficQosQueue["QosQueueDescription"].asString();
+			auto allDscps = value["Dscps"]["Dscp"];
+			for (auto value : allDscps)
+				trafficQosQueuesObject.dscps.push_back(value.asString());
+			trafficQosPoliciesObject.trafficQosQueues.push_back(trafficQosQueuesObject);
+		}
+		trafficQosPolicies_.push_back(trafficQosPoliciesObject);
+	}
+	if(!value["NextToken"].isNull())
+		nextToken_ = value["NextToken"].asString();
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["MaxResults"].isNull())
+		maxResults_ = std::stoi(value["MaxResults"].asString());
+
+}
+
+std::vector<ListCenInterRegionTrafficQosPoliciesResult::TrafficQosPolicy> ListCenInterRegionTrafficQosPoliciesResult::getTrafficQosPolicies()const
+{
+	return trafficQosPolicies_;
+}
+
+int ListCenInterRegionTrafficQosPoliciesResult::getTotalCount()const
+{
+	return totalCount_;
+}
+
+std::string ListCenInterRegionTrafficQosPoliciesResult::getNextToken()const
+{
+	return nextToken_;
+}
+
+int ListCenInterRegionTrafficQosPoliciesResult::getMaxResults()const
+{
+	return maxResults_;
+}
+

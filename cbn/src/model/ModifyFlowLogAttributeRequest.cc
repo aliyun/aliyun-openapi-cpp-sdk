@@ -115,6 +115,17 @@ void ModifyFlowLogAttributeRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
+long ModifyFlowLogAttributeRequest::getInterval()const
+{
+	return interval_;
+}
+
+void ModifyFlowLogAttributeRequest::setInterval(long interval)
+{
+	interval_ = interval;
+	setParameter("Interval", std::to_string(interval));
+}
+
 std::string ModifyFlowLogAttributeRequest::getFlowLogId()const
 {
 	return flowLogId_;

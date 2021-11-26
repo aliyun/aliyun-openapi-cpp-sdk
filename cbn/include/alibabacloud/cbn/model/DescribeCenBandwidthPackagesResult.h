@@ -55,9 +55,9 @@ namespace AlibabaCloud
 					bool isCrossBorder;
 					std::string hasReservationData;
 					std::string businessStatus;
-					std::string name;
-					std::string typeFor95;
 					std::string reservationInternetChargeType;
+					std::string typeFor95;
+					std::string name;
 					std::string reservationOrderType;
 					std::string bandwidthPackageChargeType;
 					long bandwidth;
