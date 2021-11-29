@@ -53,6 +53,8 @@ namespace AlibabaCloud
 				void setStreamMonitor(int streamMonitor);
 				int getBeginOffset()const;
 				void setBeginOffset(int beginOffset);
+				int getFixedDelayDuration()const;
+				void setFixedDelayDuration(int fixedDelayDuration);
 				std::string getLiveStreamUrl()const;
 				void setLiveStreamUrl(const std::string& liveStreamUrl);
 				std::string getLocationId()const;
@@ -74,6 +76,7 @@ namespace AlibabaCloud
 				long ownerId_;
 				int streamMonitor_;
 				int beginOffset_;
+				int fixedDelayDuration_;
 				std::string liveStreamUrl_;
 				std::string locationId_;
 				int ptsCallbackInterval_;

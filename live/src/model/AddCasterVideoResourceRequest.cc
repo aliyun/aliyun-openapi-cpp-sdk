@@ -126,6 +126,17 @@ void AddCasterVideoResourceRequest::setBeginOffset(int beginOffset)
 	setParameter("BeginOffset", std::to_string(beginOffset));
 }
 
+int AddCasterVideoResourceRequest::getFixedDelayDuration()const
+{
+	return fixedDelayDuration_;
+}
+
+void AddCasterVideoResourceRequest::setFixedDelayDuration(int fixedDelayDuration)
+{
+	fixedDelayDuration_ = fixedDelayDuration;
+	setParameter("FixedDelayDuration", std::to_string(fixedDelayDuration));
+}
+
 std::string AddCasterVideoResourceRequest::getLiveStreamUrl()const
 {
 	return liveStreamUrl_;

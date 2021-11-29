@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_DELETELIVEPULLSTREAMINFOCONFIGREQUEST_H_
-#define ALIBABACLOUD_LIVE_MODEL_DELETELIVEPULLSTREAMINFOCONFIGREQUEST_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_STOPLIVESTREAMMONITORREQUEST_H_
+#define ALIBABACLOUD_LIVE_MODEL_STOPLIVESTREAMMONITORREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,30 +28,24 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_LIVE_EXPORT DeleteLivePullStreamInfoConfigRequest : public RpcServiceRequest
+			class ALIBABACLOUD_LIVE_EXPORT StopLiveStreamMonitorRequest : public RpcServiceRequest
 			{
 
 			public:
-				DeleteLivePullStreamInfoConfigRequest();
-				~DeleteLivePullStreamInfoConfigRequest();
+				StopLiveStreamMonitorRequest();
+				~StopLiveStreamMonitorRequest();
 
-				std::string getAppName()const;
-				void setAppName(const std::string& appName);
-				std::string getStreamName()const;
-				void setStreamName(const std::string& streamName);
-				std::string getDomainName()const;
-				void setDomainName(const std::string& domainName);
+				std::string getMonitorId()const;
+				void setMonitorId(const std::string& monitorId);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 
             private:
-				std::string appName_;
-				std::string streamName_;
-				std::string domainName_;
+				std::string monitorId_;
 				long ownerId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_LIVE_MODEL_DELETELIVEPULLSTREAMINFOCONFIGREQUEST_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_STOPLIVESTREAMMONITORREQUEST_H_

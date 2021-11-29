@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_DELETELIVEPULLSTREAMINFOCONFIGREQUEST_H_
-#define ALIBABACLOUD_LIVE_MODEL_DELETELIVEPULLSTREAMINFOCONFIGREQUEST_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVESTREAMMONITORLISTREQUEST_H_
+#define ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVESTREAMMONITORLISTREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,30 +28,36 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_LIVE_EXPORT DeleteLivePullStreamInfoConfigRequest : public RpcServiceRequest
+			class ALIBABACLOUD_LIVE_EXPORT DescribeLiveStreamMonitorListRequest : public RpcServiceRequest
 			{
 
 			public:
-				DeleteLivePullStreamInfoConfigRequest();
-				~DeleteLivePullStreamInfoConfigRequest();
+				DescribeLiveStreamMonitorListRequest();
+				~DescribeLiveStreamMonitorListRequest();
 
-				std::string getAppName()const;
-				void setAppName(const std::string& appName);
-				std::string getStreamName()const;
-				void setStreamName(const std::string& streamName);
-				std::string getDomainName()const;
-				void setDomainName(const std::string& domainName);
+				std::string getMonitorId()const;
+				void setMonitorId(const std::string& monitorId);
+				int getPageNum()const;
+				void setPageNum(int pageNum);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				int getOrderRule()const;
+				void setOrderRule(int orderRule);
+				int getStatus()const;
+				void setStatus(int status);
 
             private:
-				std::string appName_;
-				std::string streamName_;
-				std::string domainName_;
+				std::string monitorId_;
+				int pageNum_;
+				int pageSize_;
 				long ownerId_;
+				int orderRule_;
+				int status_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_LIVE_MODEL_DELETELIVEPULLSTREAMINFOCONFIGREQUEST_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVESTREAMMONITORLISTREQUEST_H_

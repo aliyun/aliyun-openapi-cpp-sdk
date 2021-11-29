@@ -1635,6 +1635,42 @@ LiveClient::CreateLiveRealTimeLogDeliveryOutcomeCallable LiveClient::createLiveR
 	return task->get_future();
 }
 
+LiveClient::CreateLiveStreamMonitorOutcome LiveClient::createLiveStreamMonitor(const CreateLiveStreamMonitorRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateLiveStreamMonitorOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateLiveStreamMonitorOutcome(CreateLiveStreamMonitorResult(outcome.result()));
+	else
+		return CreateLiveStreamMonitorOutcome(outcome.error());
+}
+
+void LiveClient::createLiveStreamMonitorAsync(const CreateLiveStreamMonitorRequest& request, const CreateLiveStreamMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createLiveStreamMonitor(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::CreateLiveStreamMonitorOutcomeCallable LiveClient::createLiveStreamMonitorCallable(const CreateLiveStreamMonitorRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateLiveStreamMonitorOutcome()>>(
+			[this, request]()
+			{
+			return this->createLiveStreamMonitor(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::CreateLiveStreamRecordIndexFilesOutcome LiveClient::createLiveStreamRecordIndexFiles(const CreateLiveStreamRecordIndexFilesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2787,6 +2823,42 @@ LiveClient::DeleteLiveSpecificStagingConfigOutcomeCallable LiveClient::deleteLiv
 	return task->get_future();
 }
 
+LiveClient::DeleteLiveStreamMonitorOutcome LiveClient::deleteLiveStreamMonitor(const DeleteLiveStreamMonitorRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteLiveStreamMonitorOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteLiveStreamMonitorOutcome(DeleteLiveStreamMonitorResult(outcome.result()));
+	else
+		return DeleteLiveStreamMonitorOutcome(outcome.error());
+}
+
+void LiveClient::deleteLiveStreamMonitorAsync(const DeleteLiveStreamMonitorRequest& request, const DeleteLiveStreamMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteLiveStreamMonitor(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DeleteLiveStreamMonitorOutcomeCallable LiveClient::deleteLiveStreamMonitorCallable(const DeleteLiveStreamMonitorRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteLiveStreamMonitorOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteLiveStreamMonitor(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::DeleteLiveStreamTranscodeOutcome LiveClient::deleteLiveStreamTranscode(const DeleteLiveStreamTranscodeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3681,6 +3753,42 @@ LiveClient::DescribeDomainUsageDataOutcomeCallable LiveClient::describeDomainUsa
 			[this, request]()
 			{
 			return this->describeDomainUsageData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::DescribeDomainWithIntegrityOutcome LiveClient::describeDomainWithIntegrity(const DescribeDomainWithIntegrityRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDomainWithIntegrityOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDomainWithIntegrityOutcome(DescribeDomainWithIntegrityResult(outcome.result()));
+	else
+		return DescribeDomainWithIntegrityOutcome(outcome.error());
+}
+
+void LiveClient::describeDomainWithIntegrityAsync(const DescribeDomainWithIntegrityRequest& request, const DescribeDomainWithIntegrityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDomainWithIntegrity(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DescribeDomainWithIntegrityOutcomeCallable LiveClient::describeDomainWithIntegrityCallable(const DescribeDomainWithIntegrityRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDomainWithIntegrityOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDomainWithIntegrity(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5589,6 +5697,42 @@ LiveClient::DescribeLiveStreamHistoryUserNumOutcomeCallable LiveClient::describe
 			[this, request]()
 			{
 			return this->describeLiveStreamHistoryUserNum(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::DescribeLiveStreamMonitorListOutcome LiveClient::describeLiveStreamMonitorList(const DescribeLiveStreamMonitorListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeLiveStreamMonitorListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeLiveStreamMonitorListOutcome(DescribeLiveStreamMonitorListResult(outcome.result()));
+	else
+		return DescribeLiveStreamMonitorListOutcome(outcome.error());
+}
+
+void LiveClient::describeLiveStreamMonitorListAsync(const DescribeLiveStreamMonitorListRequest& request, const DescribeLiveStreamMonitorListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeLiveStreamMonitorList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DescribeLiveStreamMonitorListOutcomeCallable LiveClient::describeLiveStreamMonitorListCallable(const DescribeLiveStreamMonitorListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeLiveStreamMonitorListOutcome()>>(
+			[this, request]()
+			{
+			return this->describeLiveStreamMonitorList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -8547,6 +8691,42 @@ LiveClient::StartLiveIndexOutcomeCallable LiveClient::startLiveIndexCallable(con
 	return task->get_future();
 }
 
+LiveClient::StartLiveStreamMonitorOutcome LiveClient::startLiveStreamMonitor(const StartLiveStreamMonitorRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return StartLiveStreamMonitorOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return StartLiveStreamMonitorOutcome(StartLiveStreamMonitorResult(outcome.result()));
+	else
+		return StartLiveStreamMonitorOutcome(outcome.error());
+}
+
+void LiveClient::startLiveStreamMonitorAsync(const StartLiveStreamMonitorRequest& request, const StartLiveStreamMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, startLiveStreamMonitor(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::StartLiveStreamMonitorOutcomeCallable LiveClient::startLiveStreamMonitorCallable(const StartLiveStreamMonitorRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<StartLiveStreamMonitorOutcome()>>(
+			[this, request]()
+			{
+			return this->startLiveStreamMonitor(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::StartPlaylistOutcome LiveClient::startPlaylist(const StartPlaylistRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -8721,6 +8901,42 @@ LiveClient::StopLiveIndexOutcomeCallable LiveClient::stopLiveIndexCallable(const
 			[this, request]()
 			{
 			return this->stopLiveIndex(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::StopLiveStreamMonitorOutcome LiveClient::stopLiveStreamMonitor(const StopLiveStreamMonitorRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return StopLiveStreamMonitorOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return StopLiveStreamMonitorOutcome(StopLiveStreamMonitorResult(outcome.result()));
+	else
+		return StopLiveStreamMonitorOutcome(outcome.error());
+}
+
+void LiveClient::stopLiveStreamMonitorAsync(const StopLiveStreamMonitorRequest& request, const StopLiveStreamMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, stopLiveStreamMonitor(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::StopLiveStreamMonitorOutcomeCallable LiveClient::stopLiveStreamMonitorCallable(const StopLiveStreamMonitorRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<StopLiveStreamMonitorOutcome()>>(
+			[this, request]()
+			{
+			return this->stopLiveStreamMonitor(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -9261,6 +9477,42 @@ LiveClient::UpdateLiveSnapshotDetectPornConfigOutcomeCallable LiveClient::update
 			[this, request]()
 			{
 			return this->updateLiveSnapshotDetectPornConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::UpdateLiveStreamMonitorOutcome LiveClient::updateLiveStreamMonitor(const UpdateLiveStreamMonitorRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateLiveStreamMonitorOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateLiveStreamMonitorOutcome(UpdateLiveStreamMonitorResult(outcome.result()));
+	else
+		return UpdateLiveStreamMonitorOutcome(outcome.error());
+}
+
+void LiveClient::updateLiveStreamMonitorAsync(const UpdateLiveStreamMonitorRequest& request, const UpdateLiveStreamMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateLiveStreamMonitor(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::UpdateLiveStreamMonitorOutcomeCallable LiveClient::updateLiveStreamMonitorCallable(const UpdateLiveStreamMonitorRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateLiveStreamMonitorOutcome()>>(
+			[this, request]()
+			{
+			return this->updateLiveStreamMonitor(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

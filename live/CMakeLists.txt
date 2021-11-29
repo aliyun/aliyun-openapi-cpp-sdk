@@ -109,6 +109,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/CreateCustomTemplateResult.h
 	include/alibabacloud/live/model/CreateLiveRealTimeLogDeliveryRequest.h
 	include/alibabacloud/live/model/CreateLiveRealTimeLogDeliveryResult.h
+	include/alibabacloud/live/model/CreateLiveStreamMonitorRequest.h
+	include/alibabacloud/live/model/CreateLiveStreamMonitorResult.h
 	include/alibabacloud/live/model/CreateLiveStreamRecordIndexFilesRequest.h
 	include/alibabacloud/live/model/CreateLiveStreamRecordIndexFilesResult.h
 	include/alibabacloud/live/model/CreateMixStreamRequest.h
@@ -173,6 +175,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DeleteLiveSnapshotDetectPornConfigResult.h
 	include/alibabacloud/live/model/DeleteLiveSpecificStagingConfigRequest.h
 	include/alibabacloud/live/model/DeleteLiveSpecificStagingConfigResult.h
+	include/alibabacloud/live/model/DeleteLiveStreamMonitorRequest.h
+	include/alibabacloud/live/model/DeleteLiveStreamMonitorResult.h
 	include/alibabacloud/live/model/DeleteLiveStreamTranscodeRequest.h
 	include/alibabacloud/live/model/DeleteLiveStreamTranscodeResult.h
 	include/alibabacloud/live/model/DeleteLiveStreamsNotifyUrlConfigRequest.h
@@ -223,6 +227,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DescribeDRMCertListResult.h
 	include/alibabacloud/live/model/DescribeDomainUsageDataRequest.h
 	include/alibabacloud/live/model/DescribeDomainUsageDataResult.h
+	include/alibabacloud/live/model/DescribeDomainWithIntegrityRequest.h
+	include/alibabacloud/live/model/DescribeDomainWithIntegrityResult.h
 	include/alibabacloud/live/model/DescribeForbidPushStreamRoomListRequest.h
 	include/alibabacloud/live/model/DescribeForbidPushStreamRoomListResult.h
 	include/alibabacloud/live/model/DescribeHlsLiveStreamRealTimeBpsDataRequest.h
@@ -329,6 +335,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DescribeLiveStreamDelayConfigResult.h
 	include/alibabacloud/live/model/DescribeLiveStreamHistoryUserNumRequest.h
 	include/alibabacloud/live/model/DescribeLiveStreamHistoryUserNumResult.h
+	include/alibabacloud/live/model/DescribeLiveStreamMonitorListRequest.h
+	include/alibabacloud/live/model/DescribeLiveStreamMonitorListResult.h
 	include/alibabacloud/live/model/DescribeLiveStreamOptimizedFeatureConfigRequest.h
 	include/alibabacloud/live/model/DescribeLiveStreamOptimizedFeatureConfigResult.h
 	include/alibabacloud/live/model/DescribeLiveStreamRecordContentRequest.h
@@ -493,6 +501,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/StartLiveDomainResult.h
 	include/alibabacloud/live/model/StartLiveIndexRequest.h
 	include/alibabacloud/live/model/StartLiveIndexResult.h
+	include/alibabacloud/live/model/StartLiveStreamMonitorRequest.h
+	include/alibabacloud/live/model/StartLiveStreamMonitorResult.h
 	include/alibabacloud/live/model/StartPlaylistRequest.h
 	include/alibabacloud/live/model/StartPlaylistResult.h
 	include/alibabacloud/live/model/StopCasterRequest.h
@@ -503,6 +513,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/StopLiveDomainResult.h
 	include/alibabacloud/live/model/StopLiveIndexRequest.h
 	include/alibabacloud/live/model/StopLiveIndexResult.h
+	include/alibabacloud/live/model/StopLiveStreamMonitorRequest.h
+	include/alibabacloud/live/model/StopLiveStreamMonitorResult.h
 	include/alibabacloud/live/model/StopPlaylistRequest.h
 	include/alibabacloud/live/model/StopPlaylistResult.h
 	include/alibabacloud/live/model/TagLiveResourcesRequest.h
@@ -533,6 +545,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/UpdateLiveRecordNotifyConfigResult.h
 	include/alibabacloud/live/model/UpdateLiveSnapshotDetectPornConfigRequest.h
 	include/alibabacloud/live/model/UpdateLiveSnapshotDetectPornConfigResult.h
+	include/alibabacloud/live/model/UpdateLiveStreamMonitorRequest.h
+	include/alibabacloud/live/model/UpdateLiveStreamMonitorResult.h
 	include/alibabacloud/live/model/UpdateLiveTopLevelDomainRequest.h
 	include/alibabacloud/live/model/UpdateLiveTopLevelDomainResult.h
 	include/alibabacloud/live/model/UpdateMixStreamRequest.h
@@ -630,6 +644,8 @@ set(live_src
 	src/model/CreateCustomTemplateResult.cc
 	src/model/CreateLiveRealTimeLogDeliveryRequest.cc
 	src/model/CreateLiveRealTimeLogDeliveryResult.cc
+	src/model/CreateLiveStreamMonitorRequest.cc
+	src/model/CreateLiveStreamMonitorResult.cc
 	src/model/CreateLiveStreamRecordIndexFilesRequest.cc
 	src/model/CreateLiveStreamRecordIndexFilesResult.cc
 	src/model/CreateMixStreamRequest.cc
@@ -694,6 +710,8 @@ set(live_src
 	src/model/DeleteLiveSnapshotDetectPornConfigResult.cc
 	src/model/DeleteLiveSpecificStagingConfigRequest.cc
 	src/model/DeleteLiveSpecificStagingConfigResult.cc
+	src/model/DeleteLiveStreamMonitorRequest.cc
+	src/model/DeleteLiveStreamMonitorResult.cc
 	src/model/DeleteLiveStreamTranscodeRequest.cc
 	src/model/DeleteLiveStreamTranscodeResult.cc
 	src/model/DeleteLiveStreamsNotifyUrlConfigRequest.cc
@@ -744,6 +762,8 @@ set(live_src
 	src/model/DescribeDRMCertListResult.cc
 	src/model/DescribeDomainUsageDataRequest.cc
 	src/model/DescribeDomainUsageDataResult.cc
+	src/model/DescribeDomainWithIntegrityRequest.cc
+	src/model/DescribeDomainWithIntegrityResult.cc
 	src/model/DescribeForbidPushStreamRoomListRequest.cc
 	src/model/DescribeForbidPushStreamRoomListResult.cc
 	src/model/DescribeHlsLiveStreamRealTimeBpsDataRequest.cc
@@ -850,6 +870,8 @@ set(live_src
 	src/model/DescribeLiveStreamDelayConfigResult.cc
 	src/model/DescribeLiveStreamHistoryUserNumRequest.cc
 	src/model/DescribeLiveStreamHistoryUserNumResult.cc
+	src/model/DescribeLiveStreamMonitorListRequest.cc
+	src/model/DescribeLiveStreamMonitorListResult.cc
 	src/model/DescribeLiveStreamOptimizedFeatureConfigRequest.cc
 	src/model/DescribeLiveStreamOptimizedFeatureConfigResult.cc
 	src/model/DescribeLiveStreamRecordContentRequest.cc
@@ -1014,6 +1036,8 @@ set(live_src
 	src/model/StartLiveDomainResult.cc
 	src/model/StartLiveIndexRequest.cc
 	src/model/StartLiveIndexResult.cc
+	src/model/StartLiveStreamMonitorRequest.cc
+	src/model/StartLiveStreamMonitorResult.cc
 	src/model/StartPlaylistRequest.cc
 	src/model/StartPlaylistResult.cc
 	src/model/StopCasterRequest.cc
@@ -1024,6 +1048,8 @@ set(live_src
 	src/model/StopLiveDomainResult.cc
 	src/model/StopLiveIndexRequest.cc
 	src/model/StopLiveIndexResult.cc
+	src/model/StopLiveStreamMonitorRequest.cc
+	src/model/StopLiveStreamMonitorResult.cc
 	src/model/StopPlaylistRequest.cc
 	src/model/StopPlaylistResult.cc
 	src/model/TagLiveResourcesRequest.cc
@@ -1054,6 +1080,8 @@ set(live_src
 	src/model/UpdateLiveRecordNotifyConfigResult.cc
 	src/model/UpdateLiveSnapshotDetectPornConfigRequest.cc
 	src/model/UpdateLiveSnapshotDetectPornConfigResult.cc
+	src/model/UpdateLiveStreamMonitorRequest.cc
+	src/model/UpdateLiveStreamMonitorResult.cc
 	src/model/UpdateLiveTopLevelDomainRequest.cc
 	src/model/UpdateLiveTopLevelDomainResult.cc
 	src/model/UpdateMixStreamRequest.cc

@@ -38,17 +38,6 @@ void DeleteLivePullStreamInfoConfigRequest::setAppName(const std::string& appNam
 	setParameter("AppName", appName);
 }
 
-std::string DeleteLivePullStreamInfoConfigRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DeleteLivePullStreamInfoConfigRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
-}
-
 std::string DeleteLivePullStreamInfoConfigRequest::getStreamName()const
 {
 	return streamName_;

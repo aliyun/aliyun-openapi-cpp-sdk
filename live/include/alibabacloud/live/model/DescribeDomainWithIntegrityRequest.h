@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_DELETELIVEPULLSTREAMINFOCONFIGREQUEST_H_
-#define ALIBABACLOUD_LIVE_MODEL_DELETELIVEPULLSTREAMINFOCONFIGREQUEST_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBEDOMAINWITHINTEGRITYREQUEST_H_
+#define ALIBABACLOUD_LIVE_MODEL_DESCRIBEDOMAINWITHINTEGRITYREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,30 +28,30 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_LIVE_EXPORT DeleteLivePullStreamInfoConfigRequest : public RpcServiceRequest
+			class ALIBABACLOUD_LIVE_EXPORT DescribeDomainWithIntegrityRequest : public RpcServiceRequest
 			{
 
 			public:
-				DeleteLivePullStreamInfoConfigRequest();
-				~DeleteLivePullStreamInfoConfigRequest();
+				DescribeDomainWithIntegrityRequest();
+				~DescribeDomainWithIntegrityRequest();
 
-				std::string getAppName()const;
-				void setAppName(const std::string& appName);
-				std::string getStreamName()const;
-				void setStreamName(const std::string& streamName);
-				std::string getDomainName()const;
-				void setDomainName(const std::string& domainName);
+				std::string getStartTime()const;
+				void setStartTime(const std::string& startTime);
+				float getIntegrity()const;
+				void setIntegrity(float integrity);
+				std::string getEndTime()const;
+				void setEndTime(const std::string& endTime);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 
             private:
-				std::string appName_;
-				std::string streamName_;
-				std::string domainName_;
+				std::string startTime_;
+				float integrity_;
+				std::string endTime_;
 				long ownerId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_LIVE_MODEL_DELETELIVEPULLSTREAMINFOCONFIGREQUEST_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBEDOMAINWITHINTEGRITYREQUEST_H_
