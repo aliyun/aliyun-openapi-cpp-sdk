@@ -39,6 +39,8 @@ namespace AlibabaCloud
 				void setContactFlowId(const std::string& contactFlowId);
 				std::string getCallee()const;
 				void setCallee(const std::string& callee);
+				std::string getMaskedCallee()const;
+				void setMaskedCallee(const std::string& maskedCallee);
 				std::string getContactFlowVariables()const;
 				void setContactFlowVariables(const std::string& contactFlowVariables);
 				std::string getTags()const;
@@ -53,6 +55,7 @@ namespace AlibabaCloud
             private:
 				std::string contactFlowId_;
 				std::string callee_;
+				std::string maskedCallee_;
 				std::string contactFlowVariables_;
 				std::string tags_;
 				int timeoutSeconds_;

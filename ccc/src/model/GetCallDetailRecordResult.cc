@@ -146,6 +146,24 @@ void GetCallDetailRecordResult::parse(const std::string &payload)
 		}
 		data_.queueEvents.push_back(queueEventsItemObject);
 	}
+	auto allCustomerEventsNode = dataNode["CustomerEvents"]["CustomerEventsItem"];
+	for (auto dataNodeCustomerEventsCustomerEventsItem : allCustomerEventsNode)
+	{
+		Data::CustomerEventsItem customerEventsItemObject;
+		if(!dataNodeCustomerEventsCustomerEventsItem["CustomerId"].isNull())
+			customerEventsItemObject.customerId = dataNodeCustomerEventsCustomerEventsItem["CustomerId"].asString();
+		auto allEventSequence5Node = dataNodeCustomerEventsCustomerEventsItem["EventSequence"]["EventSequenceItem"];
+		for (auto dataNodeCustomerEventsCustomerEventsItemEventSequenceEventSequenceItem : allEventSequence5Node)
+		{
+			Data::CustomerEventsItem::EventSequenceItem6 eventSequence5Object;
+			if(!dataNodeCustomerEventsCustomerEventsItemEventSequenceEventSequenceItem["Event"].isNull())
+				eventSequence5Object.event = dataNodeCustomerEventsCustomerEventsItemEventSequenceEventSequenceItem["Event"].asString();
+			if(!dataNodeCustomerEventsCustomerEventsItemEventSequenceEventSequenceItem["EventTime"].isNull())
+				eventSequence5Object.eventTime = std::stol(dataNodeCustomerEventsCustomerEventsItemEventSequenceEventSequenceItem["EventTime"].asString());
+			customerEventsItemObject.eventSequence5.push_back(eventSequence5Object);
+		}
+		data_.customerEvents.push_back(customerEventsItemObject);
+	}
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["HttpStatusCode"].isNull())

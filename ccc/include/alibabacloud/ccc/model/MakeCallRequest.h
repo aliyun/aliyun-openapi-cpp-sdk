@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				std::string getCallee()const;
 				void setCallee(const std::string& callee);
+				std::string getMaskedCallee()const;
+				void setMaskedCallee(const std::string& maskedCallee);
 				std::string getUserId()const;
 				void setUserId(const std::string& userId);
 				std::string getDeviceId()const;
@@ -52,6 +54,7 @@ namespace AlibabaCloud
 
             private:
 				std::string callee_;
+				std::string maskedCallee_;
 				std::string userId_;
 				std::string deviceId_;
 				std::string tags_;

@@ -40,10 +40,10 @@ void GetMonoRecordingResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["FileName"].isNull())
-		data_.fileName = dataNode["FileName"].asString();
 	if(!dataNode["FileUrl"].isNull())
 		data_.fileUrl = dataNode["FileUrl"].asString();
+	if(!dataNode["FileName"].isNull())
+		data_.fileName = dataNode["FileName"].asString();
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["HttpStatusCode"].isNull())

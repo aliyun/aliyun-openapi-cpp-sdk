@@ -50,8 +50,6 @@ void GetCampaignResult::parse(const std::string &payload)
 		data_.casesUncompleted = std::stol(dataNode["CasesUncompleted"].asString());
 	if(!dataNode["CasesConnected"].isNull())
 		data_.casesConnected = std::stol(dataNode["CasesConnected"].asString());
-	if(!dataNode["CompletedRate"].isNull())
-		data_.completedRate = std::stol(dataNode["CompletedRate"].asString());
 	if(!dataNode["MaxAttemptCount"].isNull())
 		data_.maxAttemptCount = std::stol(dataNode["MaxAttemptCount"].asString());
 	if(!dataNode["MinAttemptInterval"].isNull())

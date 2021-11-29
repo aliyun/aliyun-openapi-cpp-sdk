@@ -50,12 +50,10 @@ void ListSkillGroupsResult::parse(const std::string &payload)
 	for (auto dataNodeListSkillGroup : allListNode)
 	{
 		Data::SkillGroup skillGroupObject;
-		if(!dataNodeListSkillGroup["Description"].isNull())
-			skillGroupObject.description = dataNodeListSkillGroup["Description"].asString();
 		if(!dataNodeListSkillGroup["DisplayName"].isNull())
 			skillGroupObject.displayName = dataNodeListSkillGroup["DisplayName"].asString();
-		if(!dataNodeListSkillGroup["InstanceId"].isNull())
-			skillGroupObject.instanceId = dataNodeListSkillGroup["InstanceId"].asString();
+		if(!dataNodeListSkillGroup["Description"].isNull())
+			skillGroupObject.description = dataNodeListSkillGroup["Description"].asString();
 		if(!dataNodeListSkillGroup["PhoneNumberCount"].isNull())
 			skillGroupObject.phoneNumberCount = std::stoi(dataNodeListSkillGroup["PhoneNumberCount"].asString());
 		if(!dataNodeListSkillGroup["SkillGroupId"].isNull())
@@ -64,6 +62,8 @@ void ListSkillGroupsResult::parse(const std::string &payload)
 			skillGroupObject.skillGroupName = dataNodeListSkillGroup["SkillGroupName"].asString();
 		if(!dataNodeListSkillGroup["UserCount"].isNull())
 			skillGroupObject.userCount = std::stoi(dataNodeListSkillGroup["UserCount"].asString());
+		if(!dataNodeListSkillGroup["InstanceId"].isNull())
+			skillGroupObject.instanceId = dataNodeListSkillGroup["InstanceId"].asString();
 		data_.list.push_back(skillGroupObject);
 	}
 	if(!value["Code"].isNull())

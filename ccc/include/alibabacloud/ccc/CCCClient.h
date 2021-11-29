@@ -156,6 +156,10 @@
 #include "model/ListRecentCallDetailRecordsResult.h"
 #include "model/ListRolesRequest.h"
 #include "model/ListRolesResult.h"
+#include "model/ListSipCallRecordsRequest.h"
+#include "model/ListSipCallRecordsResult.h"
+#include "model/ListSipTracesRequest.h"
+#include "model/ListSipTracesResult.h"
 #include "model/ListSkillGroupsRequest.h"
 #include "model/ListSkillGroupsResult.h"
 #include "model/ListSkillLevelsOfUserRequest.h"
@@ -454,6 +458,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListRolesResult> ListRolesOutcome;
 			typedef std::future<ListRolesOutcome> ListRolesOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::ListRolesRequest&, const ListRolesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListRolesAsyncHandler;
+			typedef Outcome<Error, Model::ListSipCallRecordsResult> ListSipCallRecordsOutcome;
+			typedef std::future<ListSipCallRecordsOutcome> ListSipCallRecordsOutcomeCallable;
+			typedef std::function<void(const CCCClient*, const Model::ListSipCallRecordsRequest&, const ListSipCallRecordsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListSipCallRecordsAsyncHandler;
+			typedef Outcome<Error, Model::ListSipTracesResult> ListSipTracesOutcome;
+			typedef std::future<ListSipTracesOutcome> ListSipTracesOutcomeCallable;
+			typedef std::function<void(const CCCClient*, const Model::ListSipTracesRequest&, const ListSipTracesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListSipTracesAsyncHandler;
 			typedef Outcome<Error, Model::ListSkillGroupsResult> ListSkillGroupsOutcome;
 			typedef std::future<ListSkillGroupsOutcome> ListSkillGroupsOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::ListSkillGroupsRequest&, const ListSkillGroupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListSkillGroupsAsyncHandler;
@@ -792,6 +802,12 @@ namespace AlibabaCloud
 			ListRolesOutcome listRoles(const Model::ListRolesRequest &request)const;
 			void listRolesAsync(const Model::ListRolesRequest& request, const ListRolesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListRolesOutcomeCallable listRolesCallable(const Model::ListRolesRequest& request) const;
+			ListSipCallRecordsOutcome listSipCallRecords(const Model::ListSipCallRecordsRequest &request)const;
+			void listSipCallRecordsAsync(const Model::ListSipCallRecordsRequest& request, const ListSipCallRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListSipCallRecordsOutcomeCallable listSipCallRecordsCallable(const Model::ListSipCallRecordsRequest& request) const;
+			ListSipTracesOutcome listSipTraces(const Model::ListSipTracesRequest &request)const;
+			void listSipTracesAsync(const Model::ListSipTracesRequest& request, const ListSipTracesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListSipTracesOutcomeCallable listSipTracesCallable(const Model::ListSipTracesRequest& request) const;
 			ListSkillGroupsOutcome listSkillGroups(const Model::ListSkillGroupsRequest &request)const;
 			void listSkillGroupsAsync(const Model::ListSkillGroupsRequest& request, const ListSkillGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListSkillGroupsOutcomeCallable listSkillGroupsCallable(const Model::ListSkillGroupsRequest& request) const;

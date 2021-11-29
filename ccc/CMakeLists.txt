@@ -155,6 +155,10 @@ set(ccc_public_header_model
 	include/alibabacloud/ccc/model/ListRecentCallDetailRecordsResult.h
 	include/alibabacloud/ccc/model/ListRolesRequest.h
 	include/alibabacloud/ccc/model/ListRolesResult.h
+	include/alibabacloud/ccc/model/ListSipCallRecordsRequest.h
+	include/alibabacloud/ccc/model/ListSipCallRecordsResult.h
+	include/alibabacloud/ccc/model/ListSipTracesRequest.h
+	include/alibabacloud/ccc/model/ListSipTracesResult.h
 	include/alibabacloud/ccc/model/ListSkillGroupsRequest.h
 	include/alibabacloud/ccc/model/ListSkillGroupsResult.h
 	include/alibabacloud/ccc/model/ListSkillLevelsOfUserRequest.h
@@ -380,6 +384,10 @@ set(ccc_src
 	src/model/ListRecentCallDetailRecordsResult.cc
 	src/model/ListRolesRequest.cc
 	src/model/ListRolesResult.cc
+	src/model/ListSipCallRecordsRequest.cc
+	src/model/ListSipCallRecordsResult.cc
+	src/model/ListSipTracesRequest.cc
+	src/model/ListSipTracesResult.cc
 	src/model/ListSkillGroupsRequest.cc
 	src/model/ListSkillGroupsResult.cc
 	src/model/ListSkillLevelsOfUserRequest.cc

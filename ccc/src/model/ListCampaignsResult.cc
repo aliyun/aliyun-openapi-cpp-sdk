@@ -60,8 +60,6 @@ void ListCampaignsResult::parse(const std::string &payload)
 			listItemObject.casesUncompleted = std::stol(dataNodeListlistItem["CasesUncompleted"].asString());
 		if(!dataNodeListlistItem["CasesConnected"].isNull())
 			listItemObject.casesConnected = std::stol(dataNodeListlistItem["CasesConnected"].asString());
-		if(!dataNodeListlistItem["CompletedRate"].isNull())
-			listItemObject.completedRate = std::stol(dataNodeListlistItem["CompletedRate"].asString());
 		if(!dataNodeListlistItem["MaxAttemptCount"].isNull())
 			listItemObject.maxAttemptCount = std::stol(dataNodeListlistItem["MaxAttemptCount"].asString());
 		if(!dataNodeListlistItem["MinAttemptInterval"].isNull())

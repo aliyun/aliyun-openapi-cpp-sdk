@@ -14,13 +14,12 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CCC_MODEL_CREATECAMPAIGNRESULT_H_
-#define ALIBABACLOUD_CCC_MODEL_CREATECAMPAIGNRESULT_H_
+#ifndef ALIBABACLOUD_CCC_MODEL_LISTSIPCALLRECORDSREQUEST_H_
+#define ALIBABACLOUD_CCC_MODEL_LISTSIPCALLRECORDSREQUEST_H_
 
 #include <string>
 #include <vector>
-#include <utility>
-#include <alibabacloud/core/ServiceResult.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
 #include <alibabacloud/ccc/CCCExport.h>
 
 namespace AlibabaCloud
@@ -29,29 +28,24 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CCC_EXPORT CreateCampaignResult : public ServiceResult
+			class ALIBABACLOUD_CCC_EXPORT ListSipCallRecordsRequest : public RpcServiceRequest
 			{
+
 			public:
+				ListSipCallRecordsRequest();
+				~ListSipCallRecordsRequest();
 
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
+				std::string getContactIdList()const;
+				void setContactIdList(const std::string& contactIdList);
 
-				CreateCampaignResult();
-				explicit CreateCampaignResult(const std::string &payload);
-				~CreateCampaignResult();
-				std::string getMessage()const;
-				long getHttpStatusCode()const;
-				std::string getData()const;
-				std::string getCode()const;
-
-			protected:
-				void parse(const std::string &payload);
-			private:
-				std::string message_;
-				long httpStatusCode_;
-				std::string data_;
-				std::string code_;
+            private:
+				std::string instanceId_;
+				std::string contactIdList_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CCC_MODEL_CREATECAMPAIGNRESULT_H_
+#endif // !ALIBABACLOUD_CCC_MODEL_LISTSIPCALLRECORDSREQUEST_H_

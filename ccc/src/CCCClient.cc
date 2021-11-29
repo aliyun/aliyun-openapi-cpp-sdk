@@ -2463,6 +2463,78 @@ CCCClient::ListRolesOutcomeCallable CCCClient::listRolesCallable(const ListRoles
 	return task->get_future();
 }
 
+CCCClient::ListSipCallRecordsOutcome CCCClient::listSipCallRecords(const ListSipCallRecordsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListSipCallRecordsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListSipCallRecordsOutcome(ListSipCallRecordsResult(outcome.result()));
+	else
+		return ListSipCallRecordsOutcome(outcome.error());
+}
+
+void CCCClient::listSipCallRecordsAsync(const ListSipCallRecordsRequest& request, const ListSipCallRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listSipCallRecords(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CCCClient::ListSipCallRecordsOutcomeCallable CCCClient::listSipCallRecordsCallable(const ListSipCallRecordsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListSipCallRecordsOutcome()>>(
+			[this, request]()
+			{
+			return this->listSipCallRecords(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CCCClient::ListSipTracesOutcome CCCClient::listSipTraces(const ListSipTracesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListSipTracesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListSipTracesOutcome(ListSipTracesResult(outcome.result()));
+	else
+		return ListSipTracesOutcome(outcome.error());
+}
+
+void CCCClient::listSipTracesAsync(const ListSipTracesRequest& request, const ListSipTracesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listSipTraces(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CCCClient::ListSipTracesOutcomeCallable CCCClient::listSipTracesCallable(const ListSipTracesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListSipTracesOutcome()>>(
+			[this, request]()
+			{
+			return this->listSipTraces(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CCCClient::ListSkillGroupsOutcome CCCClient::listSkillGroups(const ListSkillGroupsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

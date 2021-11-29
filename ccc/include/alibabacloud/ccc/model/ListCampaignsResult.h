@@ -51,7 +51,6 @@ namespace AlibabaCloud
 						bool simulation;
 						std::string campaignId;
 						std::string state;
-						long completedRate;
 						long actualEndTime;
 						long planedEndTime;
 						std::string queueName;

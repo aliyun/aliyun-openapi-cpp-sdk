@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CCC_MODEL_LISTSKILLGROUPSRESULT_H_
-#define ALIBABACLOUD_CCC_MODEL_LISTSKILLGROUPSRESULT_H_
+#ifndef ALIBABACLOUD_CCC_MODEL_LISTSIPCALLRECORDSRESULT_H_
+#define ALIBABACLOUD_CCC_MODEL_LISTSIPCALLRECORDSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,34 +29,36 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CCC_EXPORT ListSkillGroupsResult : public ServiceResult
+			class ALIBABACLOUD_CCC_EXPORT ListSipCallRecordsResult : public ServiceResult
 			{
 			public:
-				struct Data
+				struct SipCallRecords
 				{
-					struct SkillGroup
-					{
-						std::string description;
-						std::string skillGroupName;
-						int phoneNumberCount;
-						std::string instanceId;
-						int userCount;
-						std::string displayName;
-						std::string skillGroupId;
-					};
-					int totalCount;
-					int pageSize;
-					int pageNumber;
-					std::vector<SkillGroup> list;
+					std::string callee;
+					std::string lastResponseText;
+					std::string callerClusterId;
+					std::string calleeClusterId;
+					std::string instanceId;
+					std::string callId;
+					int releaseReasonCode;
+					std::string contactId;
+					long ringTime;
+					long inviteTime;
+					std::string earlyMediaText;
+					long releasedTime;
+					std::string caller;
+					int lastResponseCode;
+					long establishedTime;
+					std::string earlyMediaUrl;
 				};
 
 
-				ListSkillGroupsResult();
-				explicit ListSkillGroupsResult(const std::string &payload);
-				~ListSkillGroupsResult();
+				ListSipCallRecordsResult();
+				explicit ListSipCallRecordsResult(const std::string &payload);
+				~ListSipCallRecordsResult();
 				std::string getMessage()const;
 				int getHttpStatusCode()const;
-				Data getData()const;
+				std::vector<SipCallRecords> getData()const;
 				std::string getCode()const;
 
 			protected:
@@ -64,11 +66,11 @@ namespace AlibabaCloud
 			private:
 				std::string message_;
 				int httpStatusCode_;
-				Data data_;
+				std::vector<SipCallRecords> data_;
 				std::string code_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CCC_MODEL_LISTSKILLGROUPSRESULT_H_
+#endif // !ALIBABACLOUD_CCC_MODEL_LISTSIPCALLRECORDSRESULT_H_

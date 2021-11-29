@@ -39,8 +39,8 @@ void CreateCampaignResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["CampaignId"].isNull())
-		campaignId_ = value["CampaignId"].asString();
+	if(!value["Data"].isNull())
+		data_ = value["Data"].asString();
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
@@ -55,14 +55,14 @@ std::string CreateCampaignResult::getMessage()const
 	return message_;
 }
 
-std::string CreateCampaignResult::getCampaignId()const
-{
-	return campaignId_;
-}
-
 long CreateCampaignResult::getHttpStatusCode()const
 {
 	return httpStatusCode_;
+}
+
+std::string CreateCampaignResult::getData()const
+{
+	return data_;
 }
 
 std::string CreateCampaignResult::getCode()const

@@ -69,27 +69,38 @@ namespace AlibabaCloud
 						std::string queueName;
 						int queueType;
 					};
+					struct CustomerEventsItem
+					{
+						struct EventSequenceItem6
+						{
+							long eventTime;
+							std::string event;
+						};
+						std::vector<CustomerEventsItem::EventSequenceItem6> eventSequence5;
+						std::string customerId;
+					};
 					std::vector<AgentEventsItem> agentEvents;
-					std::string skillGroupIds;
 					std::string calledNumber;
 					std::string contactType;
-					std::string releaseInitiator;
 					std::string contactDisposition;
-					std::string instanceId;
 					int satisfaction;
-					long startTime;
 					std::string contactId;
-					long callDuration;
 					std::string callingNumber;
-					std::vector<QueueEventsItem> queueEvents;
-					std::string calleeLocation;
 					bool recordingReady;
-					long releaseTime;
+					std::vector<CustomerEventsItem> customerEvents;
 					std::string skillGroupNames;
-					std::string satisfactionSurveyChannel;
-					std::string agentIds;
 					bool satisfactionSurveyOffered;
 					long establishedTime;
+					std::string skillGroupIds;
+					std::string releaseInitiator;
+					std::string instanceId;
+					long startTime;
+					long callDuration;
+					std::vector<QueueEventsItem> queueEvents;
+					std::string calleeLocation;
+					long releaseTime;
+					std::string satisfactionSurveyChannel;
+					std::string agentIds;
 					std::string callerLocation;
 					std::string agentNames;
 					std::vector<IvrEventsItem> ivrEvents;

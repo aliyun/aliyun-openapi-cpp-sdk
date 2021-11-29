@@ -49,6 +49,17 @@ void StartPredictiveCallRequest::setCallee(const std::string& callee)
 	setParameter("Callee", callee);
 }
 
+std::string StartPredictiveCallRequest::getMaskedCallee()const
+{
+	return maskedCallee_;
+}
+
+void StartPredictiveCallRequest::setMaskedCallee(const std::string& maskedCallee)
+{
+	maskedCallee_ = maskedCallee;
+	setParameter("MaskedCallee", maskedCallee);
+}
+
 std::string StartPredictiveCallRequest::getContactFlowVariables()const
 {
 	return contactFlowVariables_;

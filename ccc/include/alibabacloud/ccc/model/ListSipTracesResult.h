@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CCC_MODEL_LISTSKILLGROUPSRESULT_H_
-#define ALIBABACLOUD_CCC_MODEL_LISTSKILLGROUPSRESULT_H_
+#ifndef ALIBABACLOUD_CCC_MODEL_LISTSIPTRACESRESULT_H_
+#define ALIBABACLOUD_CCC_MODEL_LISTSIPTRACESRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,34 +29,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CCC_EXPORT ListSkillGroupsResult : public ServiceResult
+			class ALIBABACLOUD_CCC_EXPORT ListSipTracesResult : public ServiceResult
 			{
 			public:
-				struct Data
+				struct CallTraces
 				{
-					struct SkillGroup
-					{
-						std::string description;
-						std::string skillGroupName;
-						int phoneNumberCount;
-						std::string instanceId;
-						int userCount;
-						std::string displayName;
-						std::string skillGroupId;
-					};
-					int totalCount;
-					int pageSize;
-					int pageNumber;
-					std::vector<SkillGroup> list;
+					std::string destinationNodeIp;
+					std::string callId;
+					std::string firstLine;
+					std::string payload;
+					std::string contactId;
+					long timestamp;
+					std::string sourceNodeIp;
 				};
 
 
-				ListSkillGroupsResult();
-				explicit ListSkillGroupsResult(const std::string &payload);
-				~ListSkillGroupsResult();
+				ListSipTracesResult();
+				explicit ListSipTracesResult(const std::string &payload);
+				~ListSipTracesResult();
 				std::string getMessage()const;
 				int getHttpStatusCode()const;
-				Data getData()const;
+				std::vector<CallTraces> getData()const;
 				std::string getCode()const;
 
 			protected:
@@ -64,11 +57,11 @@ namespace AlibabaCloud
 			private:
 				std::string message_;
 				int httpStatusCode_;
-				Data data_;
+				std::vector<CallTraces> data_;
 				std::string code_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CCC_MODEL_LISTSKILLGROUPSRESULT_H_
+#endif // !ALIBABACLOUD_CCC_MODEL_LISTSIPTRACESRESULT_H_

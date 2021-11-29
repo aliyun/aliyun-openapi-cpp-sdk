@@ -38,6 +38,17 @@ void MakeCallRequest::setCallee(const std::string& callee)
 	setParameter("Callee", callee);
 }
 
+std::string MakeCallRequest::getMaskedCallee()const
+{
+	return maskedCallee_;
+}
+
+void MakeCallRequest::setMaskedCallee(const std::string& maskedCallee)
+{
+	maskedCallee_ = maskedCallee;
+	setParameter("MaskedCallee", maskedCallee);
+}
+
 std::string MakeCallRequest::getUserId()const
 {
 	return userId_;
