@@ -41,6 +41,7 @@ namespace AlibabaCloud
 						std::string createTime;
 						std::string updateTime;
 						std::string domainCname;
+						std::string cdnType;
 					};
 					std::vector<std::string> domains;
 					std::vector<DomainsData::DomainInfo> domainInfos;

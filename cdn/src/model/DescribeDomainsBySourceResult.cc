@@ -59,6 +59,8 @@ void DescribeDomainsBySourceResult::parse(const std::string &payload)
 				domainInfosObject.updateTime = valueDomainsListDomainsDataDomainInfosdomainInfo["UpdateTime"].asString();
 			if(!valueDomainsListDomainsDataDomainInfosdomainInfo["Status"].isNull())
 				domainInfosObject.status = valueDomainsListDomainsDataDomainInfosdomainInfo["Status"].asString();
+			if(!valueDomainsListDomainsDataDomainInfosdomainInfo["CdnType"].isNull())
+				domainInfosObject.cdnType = valueDomainsListDomainsDataDomainInfosdomainInfo["CdnType"].asString();
 			domainsListObject.domainInfos.push_back(domainInfosObject);
 		}
 		auto allDomains = value["Domains"]["domainNames"];

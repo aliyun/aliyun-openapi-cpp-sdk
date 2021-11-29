@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				SetCdnDomainSMCertificateRequest();
 				~SetCdnDomainSMCertificateRequest();
 
+				std::string getSSLProtocol()const;
+				void setSSLProtocol(const std::string& sSLProtocol);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
 				long getOwnerId()const;
@@ -45,6 +47,7 @@ namespace AlibabaCloud
 				void setCertIdentifier(const std::string& certIdentifier);
 
             private:
+				std::string sSLProtocol_;
 				std::string domainName_;
 				long ownerId_;
 				std::string securityToken_;

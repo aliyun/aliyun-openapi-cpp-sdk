@@ -38,17 +38,6 @@ void BatchStopCdnDomainRequest::setDomainNames(const std::string& domainNames)
 	setParameter("DomainNames", domainNames);
 }
 
-long BatchStopCdnDomainRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void BatchStopCdnDomainRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
-}
-
 std::string BatchStopCdnDomainRequest::getSecurityToken()const
 {
 	return securityToken_;
@@ -58,5 +47,16 @@ void BatchStopCdnDomainRequest::setSecurityToken(const std::string& securityToke
 {
 	securityToken_ = securityToken;
 	setParameter("SecurityToken", securityToken);
+}
+
+long BatchStopCdnDomainRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void BatchStopCdnDomainRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

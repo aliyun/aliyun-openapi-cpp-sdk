@@ -47,7 +47,25 @@ void DescribeCdnSMCertificateDetailResult::parse(const std::string &payload)
 		certIdentifier_ = value["CertIdentifier"].asString();
 	if(!value["CertName"].isNull())
 		certName_ = value["CertName"].asString();
+	if(!value["CommonName"].isNull())
+		commonName_ = value["CommonName"].asString();
+	if(!value["Sans"].isNull())
+		sans_ = value["Sans"].asString();
+	if(!value["CertOrg"].isNull())
+		certOrg_ = value["CertOrg"].asString();
+	if(!value["CertExpireTime"].isNull())
+		certExpireTime_ = value["CertExpireTime"].asString();
 
+}
+
+std::string DescribeCdnSMCertificateDetailResult::getSans()const
+{
+	return sans_;
+}
+
+std::string DescribeCdnSMCertificateDetailResult::getCertOrg()const
+{
+	return certOrg_;
 }
 
 std::string DescribeCdnSMCertificateDetailResult::getCertIdentifier()const
@@ -60,6 +78,11 @@ std::string DescribeCdnSMCertificateDetailResult::getSignCertificate()const
 	return signCertificate_;
 }
 
+std::string DescribeCdnSMCertificateDetailResult::getCertExpireTime()const
+{
+	return certExpireTime_;
+}
+
 std::string DescribeCdnSMCertificateDetailResult::getCertName()const
 {
 	return certName_;
@@ -68,5 +91,10 @@ std::string DescribeCdnSMCertificateDetailResult::getCertName()const
 std::string DescribeCdnSMCertificateDetailResult::getEncryptCertificate()const
 {
 	return encryptCertificate_;
+}
+
+std::string DescribeCdnSMCertificateDetailResult::getCommonName()const
+{
+	return commonName_;
 }
 
