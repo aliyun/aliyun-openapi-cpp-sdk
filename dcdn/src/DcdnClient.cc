@@ -375,6 +375,42 @@ DcdnClient::BatchStopDcdnDomainOutcomeCallable DcdnClient::batchStopDcdnDomainCa
 	return task->get_future();
 }
 
+DcdnClient::CheckDcdnProjectExistOutcome DcdnClient::checkDcdnProjectExist(const CheckDcdnProjectExistRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CheckDcdnProjectExistOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CheckDcdnProjectExistOutcome(CheckDcdnProjectExistResult(outcome.result()));
+	else
+		return CheckDcdnProjectExistOutcome(outcome.error());
+}
+
+void DcdnClient::checkDcdnProjectExistAsync(const CheckDcdnProjectExistRequest& request, const CheckDcdnProjectExistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, checkDcdnProjectExist(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::CheckDcdnProjectExistOutcomeCallable DcdnClient::checkDcdnProjectExistCallable(const CheckDcdnProjectExistRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CheckDcdnProjectExistOutcome()>>(
+			[this, request]()
+			{
+			return this->checkDcdnProjectExist(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DcdnClient::CommitStagingRoutineCodeOutcome DcdnClient::commitStagingRoutineCode(const CommitStagingRoutineCodeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -519,6 +555,42 @@ DcdnClient::CreateDcdnDomainOfflineLogDeliveryOutcomeCallable DcdnClient::create
 	return task->get_future();
 }
 
+DcdnClient::CreateDcdnSLSRealTimeLogDeliveryOutcome DcdnClient::createDcdnSLSRealTimeLogDelivery(const CreateDcdnSLSRealTimeLogDeliveryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateDcdnSLSRealTimeLogDeliveryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateDcdnSLSRealTimeLogDeliveryOutcome(CreateDcdnSLSRealTimeLogDeliveryResult(outcome.result()));
+	else
+		return CreateDcdnSLSRealTimeLogDeliveryOutcome(outcome.error());
+}
+
+void DcdnClient::createDcdnSLSRealTimeLogDeliveryAsync(const CreateDcdnSLSRealTimeLogDeliveryRequest& request, const CreateDcdnSLSRealTimeLogDeliveryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createDcdnSLSRealTimeLogDelivery(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::CreateDcdnSLSRealTimeLogDeliveryOutcomeCallable DcdnClient::createDcdnSLSRealTimeLogDeliveryCallable(const CreateDcdnSLSRealTimeLogDeliveryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateDcdnSLSRealTimeLogDeliveryOutcome()>>(
+			[this, request]()
+			{
+			return this->createDcdnSLSRealTimeLogDelivery(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DcdnClient::CreateDcdnSubTaskOutcome DcdnClient::createDcdnSubTask(const CreateDcdnSubTaskRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -585,6 +657,42 @@ DcdnClient::CreateRoutineOutcomeCallable DcdnClient::createRoutineCallable(const
 			[this, request]()
 			{
 			return this->createRoutine(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::CreateSlrAndSlsProjectOutcome DcdnClient::createSlrAndSlsProject(const CreateSlrAndSlsProjectRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateSlrAndSlsProjectOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateSlrAndSlsProjectOutcome(CreateSlrAndSlsProjectResult(outcome.result()));
+	else
+		return CreateSlrAndSlsProjectOutcome(outcome.error());
+}
+
+void DcdnClient::createSlrAndSlsProjectAsync(const CreateSlrAndSlsProjectRequest& request, const CreateSlrAndSlsProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createSlrAndSlsProject(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::CreateSlrAndSlsProjectOutcomeCallable DcdnClient::createSlrAndSlsProjectCallable(const CreateSlrAndSlsProjectRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateSlrAndSlsProjectOutcome()>>(
+			[this, request]()
+			{
+			return this->createSlrAndSlsProject(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -729,6 +837,42 @@ DcdnClient::DeleteDcdnIpaSpecificConfigOutcomeCallable DcdnClient::deleteDcdnIpa
 			[this, request]()
 			{
 			return this->deleteDcdnIpaSpecificConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::DeleteDcdnRealTimeLogProjectOutcome DcdnClient::deleteDcdnRealTimeLogProject(const DeleteDcdnRealTimeLogProjectRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteDcdnRealTimeLogProjectOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteDcdnRealTimeLogProjectOutcome(DeleteDcdnRealTimeLogProjectResult(outcome.result()));
+	else
+		return DeleteDcdnRealTimeLogProjectOutcome(outcome.error());
+}
+
+void DcdnClient::deleteDcdnRealTimeLogProjectAsync(const DeleteDcdnRealTimeLogProjectRequest& request, const DeleteDcdnRealTimeLogProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteDcdnRealTimeLogProject(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DeleteDcdnRealTimeLogProjectOutcomeCallable DcdnClient::deleteDcdnRealTimeLogProjectCallable(const DeleteDcdnRealTimeLogProjectRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteDcdnRealTimeLogProjectOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteDcdnRealTimeLogProject(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3075,6 +3219,42 @@ DcdnClient::DescribeDcdnOfflineLogDeliveryStatusOutcomeCallable DcdnClient::desc
 	return task->get_future();
 }
 
+DcdnClient::DescribeDcdnRealTimeDeliveryFieldOutcome DcdnClient::describeDcdnRealTimeDeliveryField(const DescribeDcdnRealTimeDeliveryFieldRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDcdnRealTimeDeliveryFieldOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDcdnRealTimeDeliveryFieldOutcome(DescribeDcdnRealTimeDeliveryFieldResult(outcome.result()));
+	else
+		return DescribeDcdnRealTimeDeliveryFieldOutcome(outcome.error());
+}
+
+void DcdnClient::describeDcdnRealTimeDeliveryFieldAsync(const DescribeDcdnRealTimeDeliveryFieldRequest& request, const DescribeDcdnRealTimeDeliveryFieldAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDcdnRealTimeDeliveryField(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DescribeDcdnRealTimeDeliveryFieldOutcomeCallable DcdnClient::describeDcdnRealTimeDeliveryFieldCallable(const DescribeDcdnRealTimeDeliveryFieldRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDcdnRealTimeDeliveryFieldOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDcdnRealTimeDeliveryField(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DcdnClient::DescribeDcdnRefreshQuotaOutcome DcdnClient::describeDcdnRefreshQuota(const DescribeDcdnRefreshQuotaRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3285,6 +3465,42 @@ DcdnClient::DescribeDcdnReportListOutcomeCallable DcdnClient::describeDcdnReport
 			[this, request]()
 			{
 			return this->describeDcdnReportList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::DescribeDcdnSLSRealtimeLogDeliveryOutcome DcdnClient::describeDcdnSLSRealtimeLogDelivery(const DescribeDcdnSLSRealtimeLogDeliveryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDcdnSLSRealtimeLogDeliveryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDcdnSLSRealtimeLogDeliveryOutcome(DescribeDcdnSLSRealtimeLogDeliveryResult(outcome.result()));
+	else
+		return DescribeDcdnSLSRealtimeLogDeliveryOutcome(outcome.error());
+}
+
+void DcdnClient::describeDcdnSLSRealtimeLogDeliveryAsync(const DescribeDcdnSLSRealtimeLogDeliveryRequest& request, const DescribeDcdnSLSRealtimeLogDeliveryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDcdnSLSRealtimeLogDelivery(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DescribeDcdnSLSRealtimeLogDeliveryOutcomeCallable DcdnClient::describeDcdnSLSRealtimeLogDeliveryCallable(const DescribeDcdnSLSRealtimeLogDeliveryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDcdnSLSRealtimeLogDeliveryOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDcdnSLSRealtimeLogDelivery(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3789,6 +4005,42 @@ DcdnClient::DescribeDcdnUserQuotaOutcomeCallable DcdnClient::describeDcdnUserQuo
 			[this, request]()
 			{
 			return this->describeDcdnUserQuota(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::DescribeDcdnUserRealTimeDeliveryFieldOutcome DcdnClient::describeDcdnUserRealTimeDeliveryField(const DescribeDcdnUserRealTimeDeliveryFieldRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDcdnUserRealTimeDeliveryFieldOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDcdnUserRealTimeDeliveryFieldOutcome(DescribeDcdnUserRealTimeDeliveryFieldResult(outcome.result()));
+	else
+		return DescribeDcdnUserRealTimeDeliveryFieldOutcome(outcome.error());
+}
+
+void DcdnClient::describeDcdnUserRealTimeDeliveryFieldAsync(const DescribeDcdnUserRealTimeDeliveryFieldRequest& request, const DescribeDcdnUserRealTimeDeliveryFieldAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDcdnUserRealTimeDeliveryField(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DescribeDcdnUserRealTimeDeliveryFieldOutcomeCallable DcdnClient::describeDcdnUserRealTimeDeliveryFieldCallable(const DescribeDcdnUserRealTimeDeliveryFieldRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDcdnUserRealTimeDeliveryFieldOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDcdnUserRealTimeDeliveryField(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4515,6 +4767,42 @@ DcdnClient::EnableDcdnDomainOfflineLogDeliveryOutcomeCallable DcdnClient::enable
 	return task->get_future();
 }
 
+DcdnClient::ListDcdnRealTimeDeliveryProjectOutcome DcdnClient::listDcdnRealTimeDeliveryProject(const ListDcdnRealTimeDeliveryProjectRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListDcdnRealTimeDeliveryProjectOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListDcdnRealTimeDeliveryProjectOutcome(ListDcdnRealTimeDeliveryProjectResult(outcome.result()));
+	else
+		return ListDcdnRealTimeDeliveryProjectOutcome(outcome.error());
+}
+
+void DcdnClient::listDcdnRealTimeDeliveryProjectAsync(const ListDcdnRealTimeDeliveryProjectRequest& request, const ListDcdnRealTimeDeliveryProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listDcdnRealTimeDeliveryProject(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::ListDcdnRealTimeDeliveryProjectOutcomeCallable DcdnClient::listDcdnRealTimeDeliveryProjectCallable(const ListDcdnRealTimeDeliveryProjectRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListDcdnRealTimeDeliveryProjectOutcome()>>(
+			[this, request]()
+			{
+			return this->listDcdnRealTimeDeliveryProject(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DcdnClient::ModifyDCdnDomainSchdmByPropertyOutcome DcdnClient::modifyDCdnDomainSchdmByProperty(const ModifyDCdnDomainSchdmByPropertyRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4947,6 +5235,42 @@ DcdnClient::SetDcdnDomainStagingConfigOutcomeCallable DcdnClient::setDcdnDomainS
 	return task->get_future();
 }
 
+DcdnClient::SetDcdnFullDomainsBlockIPOutcome DcdnClient::setDcdnFullDomainsBlockIP(const SetDcdnFullDomainsBlockIPRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetDcdnFullDomainsBlockIPOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetDcdnFullDomainsBlockIPOutcome(SetDcdnFullDomainsBlockIPResult(outcome.result()));
+	else
+		return SetDcdnFullDomainsBlockIPOutcome(outcome.error());
+}
+
+void DcdnClient::setDcdnFullDomainsBlockIPAsync(const SetDcdnFullDomainsBlockIPRequest& request, const SetDcdnFullDomainsBlockIPAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setDcdnFullDomainsBlockIP(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::SetDcdnFullDomainsBlockIPOutcomeCallable DcdnClient::setDcdnFullDomainsBlockIPCallable(const SetDcdnFullDomainsBlockIPRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetDcdnFullDomainsBlockIPOutcome()>>(
+			[this, request]()
+			{
+			return this->setDcdnFullDomainsBlockIP(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DcdnClient::SetDcdnUserConfigOutcome DcdnClient::setDcdnUserConfig(const SetDcdnUserConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5343,6 +5667,42 @@ DcdnClient::UpdateDcdnIpaDomainOutcomeCallable DcdnClient::updateDcdnIpaDomainCa
 	return task->get_future();
 }
 
+DcdnClient::UpdateDcdnSLSRealtimeLogDeliveryOutcome DcdnClient::updateDcdnSLSRealtimeLogDelivery(const UpdateDcdnSLSRealtimeLogDeliveryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateDcdnSLSRealtimeLogDeliveryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateDcdnSLSRealtimeLogDeliveryOutcome(UpdateDcdnSLSRealtimeLogDeliveryResult(outcome.result()));
+	else
+		return UpdateDcdnSLSRealtimeLogDeliveryOutcome(outcome.error());
+}
+
+void DcdnClient::updateDcdnSLSRealtimeLogDeliveryAsync(const UpdateDcdnSLSRealtimeLogDeliveryRequest& request, const UpdateDcdnSLSRealtimeLogDeliveryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateDcdnSLSRealtimeLogDelivery(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::UpdateDcdnSLSRealtimeLogDeliveryOutcomeCallable DcdnClient::updateDcdnSLSRealtimeLogDeliveryCallable(const UpdateDcdnSLSRealtimeLogDeliveryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateDcdnSLSRealtimeLogDeliveryOutcome()>>(
+			[this, request]()
+			{
+			return this->updateDcdnSLSRealtimeLogDelivery(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DcdnClient::UpdateDcdnSubTaskOutcome DcdnClient::updateDcdnSubTask(const UpdateDcdnSubTaskRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5373,6 +5733,42 @@ DcdnClient::UpdateDcdnSubTaskOutcomeCallable DcdnClient::updateDcdnSubTaskCallab
 			[this, request]()
 			{
 			return this->updateDcdnSubTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::UpdateDcdnUserRealTimeDeliveryFieldOutcome DcdnClient::updateDcdnUserRealTimeDeliveryField(const UpdateDcdnUserRealTimeDeliveryFieldRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateDcdnUserRealTimeDeliveryFieldOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateDcdnUserRealTimeDeliveryFieldOutcome(UpdateDcdnUserRealTimeDeliveryFieldResult(outcome.result()));
+	else
+		return UpdateDcdnUserRealTimeDeliveryFieldOutcome(outcome.error());
+}
+
+void DcdnClient::updateDcdnUserRealTimeDeliveryFieldAsync(const UpdateDcdnUserRealTimeDeliveryFieldRequest& request, const UpdateDcdnUserRealTimeDeliveryFieldAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateDcdnUserRealTimeDeliveryField(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::UpdateDcdnUserRealTimeDeliveryFieldOutcomeCallable DcdnClient::updateDcdnUserRealTimeDeliveryFieldCallable(const UpdateDcdnUserRealTimeDeliveryFieldRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateDcdnUserRealTimeDeliveryFieldOutcome()>>(
+			[this, request]()
+			{
+			return this->updateDcdnUserRealTimeDeliveryField(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

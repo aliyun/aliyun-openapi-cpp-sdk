@@ -37,18 +37,26 @@ namespace AlibabaCloud
 				DescribeDcdnSMCertificateDetailResult();
 				explicit DescribeDcdnSMCertificateDetailResult(const std::string &payload);
 				~DescribeDcdnSMCertificateDetailResult();
+				std::string getSans()const;
+				std::string getCertOrg()const;
 				std::string getCertIdentifier()const;
 				std::string getSignCertificate()const;
+				std::string getCertExpireTime()const;
 				std::string getCertName()const;
 				std::string getEncryptCertificate()const;
+				std::string getCommonName()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string sans_;
+				std::string certOrg_;
 				std::string certIdentifier_;
 				std::string signCertificate_;
+				std::string certExpireTime_;
 				std::string certName_;
 				std::string encryptCertificate_;
+				std::string commonName_;
 
 			};
 		}

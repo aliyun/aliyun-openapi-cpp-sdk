@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DCDN_MODEL_STOPDCDNIPADOMAINREQUEST_H_
-#define ALIBABACLOUD_DCDN_MODEL_STOPDCDNIPADOMAINREQUEST_H_
+#ifndef ALIBABACLOUD_DCDN_MODEL_CHECKDCDNPROJECTEXISTRESULT_H_
+#define ALIBABACLOUD_DCDN_MODEL_CHECKDCDNPROJECTEXISTRESULT_H_
 
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
+#include <utility>
+#include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/dcdn/DcdnExport.h>
 
 namespace AlibabaCloud
@@ -28,27 +29,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DCDN_EXPORT StopDcdnIpaDomainRequest : public RpcServiceRequest
+			class ALIBABACLOUD_DCDN_EXPORT CheckDcdnProjectExistResult : public ServiceResult
 			{
-
 			public:
-				StopDcdnIpaDomainRequest();
-				~StopDcdnIpaDomainRequest();
+				struct Content
+				{
+					std::string exist;
+				};
 
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
-				std::string getDomainName()const;
-				void setDomainName(const std::string& domainName);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 
-            private:
-				std::string securityToken_;
-				std::string domainName_;
-				long ownerId_;
+				CheckDcdnProjectExistResult();
+				explicit CheckDcdnProjectExistResult(const std::string &payload);
+				~CheckDcdnProjectExistResult();
+				Content getContent()const;
+
+			protected:
+				void parse(const std::string &payload);
+			private:
+				Content content_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DCDN_MODEL_STOPDCDNIPADOMAINREQUEST_H_
+#endif // !ALIBABACLOUD_DCDN_MODEL_CHECKDCDNPROJECTEXISTRESULT_H_

@@ -27,6 +27,17 @@ SetDcdnDomainSMCertificateRequest::SetDcdnDomainSMCertificateRequest() :
 SetDcdnDomainSMCertificateRequest::~SetDcdnDomainSMCertificateRequest()
 {}
 
+std::string SetDcdnDomainSMCertificateRequest::getSSLProtocol()const
+{
+	return sSLProtocol_;
+}
+
+void SetDcdnDomainSMCertificateRequest::setSSLProtocol(const std::string& sSLProtocol)
+{
+	sSLProtocol_ = sSLProtocol;
+	setParameter("SSLProtocol", sSLProtocol);
+}
+
 std::string SetDcdnDomainSMCertificateRequest::getDomainName()const
 {
 	return domainName_;

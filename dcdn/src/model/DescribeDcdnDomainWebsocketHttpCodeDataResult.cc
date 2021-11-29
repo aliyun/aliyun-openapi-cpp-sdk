@@ -39,25 +39,25 @@ void DescribeDcdnDomainWebsocketHttpCodeDataResult::parse(const std::string &pay
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDataPerIntervalNode = value["DataPerInterval"]["DataModule"];
-	for (auto valueDataPerIntervalDataModule : allDataPerIntervalNode)
+	auto allHttpCodeDataPerIntervalNode = value["HttpCodeDataPerInterval"]["DataModule"];
+	for (auto valueHttpCodeDataPerIntervalDataModule : allHttpCodeDataPerIntervalNode)
 	{
-		DataModule dataPerIntervalObject;
-		if(!valueDataPerIntervalDataModule["TimeStamp"].isNull())
-			dataPerIntervalObject.timeStamp = valueDataPerIntervalDataModule["TimeStamp"].asString();
-		auto allWebsocketHttpCodeDataPerIntervalNode = valueDataPerIntervalDataModule["WebsocketHttpCodeDataPerInterval"]["HttpCodeDataModule"];
-		for (auto valueDataPerIntervalDataModuleWebsocketHttpCodeDataPerIntervalHttpCodeDataModule : allWebsocketHttpCodeDataPerIntervalNode)
+		DataModule httpCodeDataPerIntervalObject;
+		if(!valueHttpCodeDataPerIntervalDataModule["TimeStamp"].isNull())
+			httpCodeDataPerIntervalObject.timeStamp = valueHttpCodeDataPerIntervalDataModule["TimeStamp"].asString();
+		auto allWebsocketHttpCodeNode = valueHttpCodeDataPerIntervalDataModule["WebsocketHttpCode"]["HttpCodeDataModule"];
+		for (auto valueHttpCodeDataPerIntervalDataModuleWebsocketHttpCodeHttpCodeDataModule : allWebsocketHttpCodeNode)
 		{
-			DataModule::HttpCodeDataModule websocketHttpCodeDataPerIntervalObject;
-			if(!valueDataPerIntervalDataModuleWebsocketHttpCodeDataPerIntervalHttpCodeDataModule["Code"].isNull())
-				websocketHttpCodeDataPerIntervalObject.code = std::stoi(valueDataPerIntervalDataModuleWebsocketHttpCodeDataPerIntervalHttpCodeDataModule["Code"].asString());
-			if(!valueDataPerIntervalDataModuleWebsocketHttpCodeDataPerIntervalHttpCodeDataModule["Proportion"].isNull())
-				websocketHttpCodeDataPerIntervalObject.proportion = std::stof(valueDataPerIntervalDataModuleWebsocketHttpCodeDataPerIntervalHttpCodeDataModule["Proportion"].asString());
-			if(!valueDataPerIntervalDataModuleWebsocketHttpCodeDataPerIntervalHttpCodeDataModule["Count"].isNull())
-				websocketHttpCodeDataPerIntervalObject.count = std::stof(valueDataPerIntervalDataModuleWebsocketHttpCodeDataPerIntervalHttpCodeDataModule["Count"].asString());
-			dataPerIntervalObject.websocketHttpCodeDataPerInterval.push_back(websocketHttpCodeDataPerIntervalObject);
+			DataModule::HttpCodeDataModule websocketHttpCodeObject;
+			if(!valueHttpCodeDataPerIntervalDataModuleWebsocketHttpCodeHttpCodeDataModule["Code"].isNull())
+				websocketHttpCodeObject.code = std::stoi(valueHttpCodeDataPerIntervalDataModuleWebsocketHttpCodeHttpCodeDataModule["Code"].asString());
+			if(!valueHttpCodeDataPerIntervalDataModuleWebsocketHttpCodeHttpCodeDataModule["Proportion"].isNull())
+				websocketHttpCodeObject.proportion = std::stof(valueHttpCodeDataPerIntervalDataModuleWebsocketHttpCodeHttpCodeDataModule["Proportion"].asString());
+			if(!valueHttpCodeDataPerIntervalDataModuleWebsocketHttpCodeHttpCodeDataModule["Count"].isNull())
+				websocketHttpCodeObject.count = std::stof(valueHttpCodeDataPerIntervalDataModuleWebsocketHttpCodeHttpCodeDataModule["Count"].asString());
+			httpCodeDataPerIntervalObject.websocketHttpCode.push_back(websocketHttpCodeObject);
 		}
-		dataPerInterval_.push_back(dataPerIntervalObject);
+		httpCodeDataPerInterval_.push_back(httpCodeDataPerIntervalObject);
 	}
 	if(!value["DomainName"].isNull())
 		domainName_ = value["DomainName"].asString();
@@ -90,8 +90,8 @@ std::string DescribeDcdnDomainWebsocketHttpCodeDataResult::getDataInterval()cons
 	return dataInterval_;
 }
 
-std::vector<DescribeDcdnDomainWebsocketHttpCodeDataResult::DataModule> DescribeDcdnDomainWebsocketHttpCodeDataResult::getDataPerInterval()const
+std::vector<DescribeDcdnDomainWebsocketHttpCodeDataResult::DataModule> DescribeDcdnDomainWebsocketHttpCodeDataResult::getHttpCodeDataPerInterval()const
 {
-	return dataPerInterval_;
+	return httpCodeDataPerInterval_;
 }
 

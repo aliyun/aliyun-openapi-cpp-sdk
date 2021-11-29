@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DCDN_MODEL_STOPDCDNIPADOMAINREQUEST_H_
-#define ALIBABACLOUD_DCDN_MODEL_STOPDCDNIPADOMAINREQUEST_H_
+#ifndef ALIBABACLOUD_DCDN_MODEL_CREATESLRANDSLSPROJECTRESULT_H_
+#define ALIBABACLOUD_DCDN_MODEL_CREATESLRANDSLSPROJECTRESULT_H_
 
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
+#include <utility>
+#include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/dcdn/DcdnExport.h>
 
 namespace AlibabaCloud
@@ -28,27 +29,30 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DCDN_EXPORT StopDcdnIpaDomainRequest : public RpcServiceRequest
+			class ALIBABACLOUD_DCDN_EXPORT CreateSlrAndSlsProjectResult : public ServiceResult
 			{
-
 			public:
-				StopDcdnIpaDomainRequest();
-				~StopDcdnIpaDomainRequest();
+				struct SlsInfo
+				{
+					std::string project;
+					std::string logStore;
+					std::string region;
+					std::string endPoint;
+				};
 
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
-				std::string getDomainName()const;
-				void setDomainName(const std::string& domainName);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 
-            private:
-				std::string securityToken_;
-				std::string domainName_;
-				long ownerId_;
+				CreateSlrAndSlsProjectResult();
+				explicit CreateSlrAndSlsProjectResult(const std::string &payload);
+				~CreateSlrAndSlsProjectResult();
+				SlsInfo getSlsInfo()const;
+
+			protected:
+				void parse(const std::string &payload);
+			private:
+				SlsInfo slsInfo_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DCDN_MODEL_STOPDCDNIPADOMAINREQUEST_H_
+#endif // !ALIBABACLOUD_DCDN_MODEL_CREATESLRANDSLSPROJECTRESULT_H_

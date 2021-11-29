@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DCDN_MODEL_SETDCDNDOMAINSMCERTIFICATEREQUEST_H_
-#define ALIBABACLOUD_DCDN_MODEL_SETDCDNDOMAINSMCERTIFICATEREQUEST_H_
+#ifndef ALIBABACLOUD_DCDN_MODEL_LISTDCDNREALTIMEDELIVERYPROJECTREQUEST_H_
+#define ALIBABACLOUD_DCDN_MODEL_LISTDCDNREALTIMEDELIVERYPROJECTREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,33 +28,33 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DCDN_EXPORT SetDcdnDomainSMCertificateRequest : public RpcServiceRequest
+			class ALIBABACLOUD_DCDN_EXPORT ListDcdnRealTimeDeliveryProjectRequest : public RpcServiceRequest
 			{
 
 			public:
-				SetDcdnDomainSMCertificateRequest();
-				~SetDcdnDomainSMCertificateRequest();
+				ListDcdnRealTimeDeliveryProjectRequest();
+				~ListDcdnRealTimeDeliveryProjectRequest();
 
-				std::string getSSLProtocol()const;
-				void setSSLProtocol(const std::string& sSLProtocol);
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
+				std::string getBusinessType()const;
+				void setBusinessType(const std::string& businessType);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
-				std::string getCertIdentifier()const;
-				void setCertIdentifier(const std::string& certIdentifier);
 
             private:
-				std::string sSLProtocol_;
+				int pageNumber_;
+				std::string businessType_;
+				int pageSize_;
 				std::string domainName_;
 				long ownerId_;
-				std::string securityToken_;
-				std::string certIdentifier_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DCDN_MODEL_SETDCDNDOMAINSMCERTIFICATEREQUEST_H_
+#endif // !ALIBABACLOUD_DCDN_MODEL_LISTDCDNREALTIMEDELIVERYPROJECTREQUEST_H_

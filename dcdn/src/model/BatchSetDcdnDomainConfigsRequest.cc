@@ -49,6 +49,17 @@ void BatchSetDcdnDomainConfigsRequest::setDomainNames(const std::string& domainN
 	setParameter("DomainNames", domainNames);
 }
 
+std::string BatchSetDcdnDomainConfigsRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void BatchSetDcdnDomainConfigsRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setParameter("SecurityToken", securityToken);
+}
+
 std::string BatchSetDcdnDomainConfigsRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -69,16 +80,5 @@ void BatchSetDcdnDomainConfigsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string BatchSetDcdnDomainConfigsRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void BatchSetDcdnDomainConfigsRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
 }
 

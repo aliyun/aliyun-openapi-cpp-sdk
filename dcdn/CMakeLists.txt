@@ -39,6 +39,8 @@ set(dcdn_public_header_model
 	include/alibabacloud/dcdn/model/BatchStartDcdnDomainResult.h
 	include/alibabacloud/dcdn/model/BatchStopDcdnDomainRequest.h
 	include/alibabacloud/dcdn/model/BatchStopDcdnDomainResult.h
+	include/alibabacloud/dcdn/model/CheckDcdnProjectExistRequest.h
+	include/alibabacloud/dcdn/model/CheckDcdnProjectExistResult.h
 	include/alibabacloud/dcdn/model/CommitStagingRoutineCodeRequest.h
 	include/alibabacloud/dcdn/model/CommitStagingRoutineCodeResult.h
 	include/alibabacloud/dcdn/model/CreateDcdnCertificateSigningRequestRequest.h
@@ -47,10 +49,14 @@ set(dcdn_public_header_model
 	include/alibabacloud/dcdn/model/CreateDcdnDeliverTaskResult.h
 	include/alibabacloud/dcdn/model/CreateDcdnDomainOfflineLogDeliveryRequest.h
 	include/alibabacloud/dcdn/model/CreateDcdnDomainOfflineLogDeliveryResult.h
+	include/alibabacloud/dcdn/model/CreateDcdnSLSRealTimeLogDeliveryRequest.h
+	include/alibabacloud/dcdn/model/CreateDcdnSLSRealTimeLogDeliveryResult.h
 	include/alibabacloud/dcdn/model/CreateDcdnSubTaskRequest.h
 	include/alibabacloud/dcdn/model/CreateDcdnSubTaskResult.h
 	include/alibabacloud/dcdn/model/CreateRoutineRequest.h
 	include/alibabacloud/dcdn/model/CreateRoutineResult.h
+	include/alibabacloud/dcdn/model/CreateSlrAndSlsProjectRequest.h
+	include/alibabacloud/dcdn/model/CreateSlrAndSlsProjectResult.h
 	include/alibabacloud/dcdn/model/DeleteDcdnDeliverTaskRequest.h
 	include/alibabacloud/dcdn/model/DeleteDcdnDeliverTaskResult.h
 	include/alibabacloud/dcdn/model/DeleteDcdnDomainRequest.h
@@ -59,6 +65,8 @@ set(dcdn_public_header_model
 	include/alibabacloud/dcdn/model/DeleteDcdnIpaDomainResult.h
 	include/alibabacloud/dcdn/model/DeleteDcdnIpaSpecificConfigRequest.h
 	include/alibabacloud/dcdn/model/DeleteDcdnIpaSpecificConfigResult.h
+	include/alibabacloud/dcdn/model/DeleteDcdnRealTimeLogProjectRequest.h
+	include/alibabacloud/dcdn/model/DeleteDcdnRealTimeLogProjectResult.h
 	include/alibabacloud/dcdn/model/DeleteDcdnSpecificConfigRequest.h
 	include/alibabacloud/dcdn/model/DeleteDcdnSpecificConfigResult.h
 	include/alibabacloud/dcdn/model/DeleteDcdnSpecificStagingConfigRequest.h
@@ -189,6 +197,8 @@ set(dcdn_public_header_model
 	include/alibabacloud/dcdn/model/DescribeDcdnOfflineLogDeliveryRegionsResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnOfflineLogDeliveryStatusRequest.h
 	include/alibabacloud/dcdn/model/DescribeDcdnOfflineLogDeliveryStatusResult.h
+	include/alibabacloud/dcdn/model/DescribeDcdnRealTimeDeliveryFieldRequest.h
+	include/alibabacloud/dcdn/model/DescribeDcdnRealTimeDeliveryFieldResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnRefreshQuotaRequest.h
 	include/alibabacloud/dcdn/model/DescribeDcdnRefreshQuotaResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnRefreshTaskByIdRequest.h
@@ -201,6 +211,8 @@ set(dcdn_public_header_model
 	include/alibabacloud/dcdn/model/DescribeDcdnReportResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnReportListRequest.h
 	include/alibabacloud/dcdn/model/DescribeDcdnReportListResult.h
+	include/alibabacloud/dcdn/model/DescribeDcdnSLSRealtimeLogDeliveryRequest.h
+	include/alibabacloud/dcdn/model/DescribeDcdnSLSRealtimeLogDeliveryResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnSMCertificateDetailRequest.h
 	include/alibabacloud/dcdn/model/DescribeDcdnSMCertificateDetailResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnSMCertificateListRequest.h
@@ -229,6 +241,8 @@ set(dcdn_public_header_model
 	include/alibabacloud/dcdn/model/DescribeDcdnUserDomainsByFuncResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnUserQuotaRequest.h
 	include/alibabacloud/dcdn/model/DescribeDcdnUserQuotaResult.h
+	include/alibabacloud/dcdn/model/DescribeDcdnUserRealTimeDeliveryFieldRequest.h
+	include/alibabacloud/dcdn/model/DescribeDcdnUserRealTimeDeliveryFieldResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnUserResourcePackageRequest.h
 	include/alibabacloud/dcdn/model/DescribeDcdnUserResourcePackageResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnUserSecDropRequest.h
@@ -269,6 +283,8 @@ set(dcdn_public_header_model
 	include/alibabacloud/dcdn/model/EditRoutineConfResult.h
 	include/alibabacloud/dcdn/model/EnableDcdnDomainOfflineLogDeliveryRequest.h
 	include/alibabacloud/dcdn/model/EnableDcdnDomainOfflineLogDeliveryResult.h
+	include/alibabacloud/dcdn/model/ListDcdnRealTimeDeliveryProjectRequest.h
+	include/alibabacloud/dcdn/model/ListDcdnRealTimeDeliveryProjectResult.h
 	include/alibabacloud/dcdn/model/ModifyDCdnDomainSchdmByPropertyRequest.h
 	include/alibabacloud/dcdn/model/ModifyDCdnDomainSchdmByPropertyResult.h
 	include/alibabacloud/dcdn/model/OpenDcdnServiceRequest.h
@@ -293,6 +309,8 @@ set(dcdn_public_header_model
 	include/alibabacloud/dcdn/model/SetDcdnDomainSMCertificateResult.h
 	include/alibabacloud/dcdn/model/SetDcdnDomainStagingConfigRequest.h
 	include/alibabacloud/dcdn/model/SetDcdnDomainStagingConfigResult.h
+	include/alibabacloud/dcdn/model/SetDcdnFullDomainsBlockIPRequest.h
+	include/alibabacloud/dcdn/model/SetDcdnFullDomainsBlockIPResult.h
 	include/alibabacloud/dcdn/model/SetDcdnUserConfigRequest.h
 	include/alibabacloud/dcdn/model/SetDcdnUserConfigResult.h
 	include/alibabacloud/dcdn/model/SetRoutineSubdomainRequest.h
@@ -315,8 +333,12 @@ set(dcdn_public_header_model
 	include/alibabacloud/dcdn/model/UpdateDcdnDomainResult.h
 	include/alibabacloud/dcdn/model/UpdateDcdnIpaDomainRequest.h
 	include/alibabacloud/dcdn/model/UpdateDcdnIpaDomainResult.h
+	include/alibabacloud/dcdn/model/UpdateDcdnSLSRealtimeLogDeliveryRequest.h
+	include/alibabacloud/dcdn/model/UpdateDcdnSLSRealtimeLogDeliveryResult.h
 	include/alibabacloud/dcdn/model/UpdateDcdnSubTaskRequest.h
 	include/alibabacloud/dcdn/model/UpdateDcdnSubTaskResult.h
+	include/alibabacloud/dcdn/model/UpdateDcdnUserRealTimeDeliveryFieldRequest.h
+	include/alibabacloud/dcdn/model/UpdateDcdnUserRealTimeDeliveryFieldResult.h
 	include/alibabacloud/dcdn/model/UploadRoutineCodeRequest.h
 	include/alibabacloud/dcdn/model/UploadRoutineCodeResult.h
 	include/alibabacloud/dcdn/model/UploadStagingRoutineCodeRequest.h
@@ -344,6 +366,8 @@ set(dcdn_src
 	src/model/BatchStartDcdnDomainResult.cc
 	src/model/BatchStopDcdnDomainRequest.cc
 	src/model/BatchStopDcdnDomainResult.cc
+	src/model/CheckDcdnProjectExistRequest.cc
+	src/model/CheckDcdnProjectExistResult.cc
 	src/model/CommitStagingRoutineCodeRequest.cc
 	src/model/CommitStagingRoutineCodeResult.cc
 	src/model/CreateDcdnCertificateSigningRequestRequest.cc
@@ -352,10 +376,14 @@ set(dcdn_src
 	src/model/CreateDcdnDeliverTaskResult.cc
 	src/model/CreateDcdnDomainOfflineLogDeliveryRequest.cc
 	src/model/CreateDcdnDomainOfflineLogDeliveryResult.cc
+	src/model/CreateDcdnSLSRealTimeLogDeliveryRequest.cc
+	src/model/CreateDcdnSLSRealTimeLogDeliveryResult.cc
 	src/model/CreateDcdnSubTaskRequest.cc
 	src/model/CreateDcdnSubTaskResult.cc
 	src/model/CreateRoutineRequest.cc
 	src/model/CreateRoutineResult.cc
+	src/model/CreateSlrAndSlsProjectRequest.cc
+	src/model/CreateSlrAndSlsProjectResult.cc
 	src/model/DeleteDcdnDeliverTaskRequest.cc
 	src/model/DeleteDcdnDeliverTaskResult.cc
 	src/model/DeleteDcdnDomainRequest.cc
@@ -364,6 +392,8 @@ set(dcdn_src
 	src/model/DeleteDcdnIpaDomainResult.cc
 	src/model/DeleteDcdnIpaSpecificConfigRequest.cc
 	src/model/DeleteDcdnIpaSpecificConfigResult.cc
+	src/model/DeleteDcdnRealTimeLogProjectRequest.cc
+	src/model/DeleteDcdnRealTimeLogProjectResult.cc
 	src/model/DeleteDcdnSpecificConfigRequest.cc
 	src/model/DeleteDcdnSpecificConfigResult.cc
 	src/model/DeleteDcdnSpecificStagingConfigRequest.cc
@@ -494,6 +524,8 @@ set(dcdn_src
 	src/model/DescribeDcdnOfflineLogDeliveryRegionsResult.cc
 	src/model/DescribeDcdnOfflineLogDeliveryStatusRequest.cc
 	src/model/DescribeDcdnOfflineLogDeliveryStatusResult.cc
+	src/model/DescribeDcdnRealTimeDeliveryFieldRequest.cc
+	src/model/DescribeDcdnRealTimeDeliveryFieldResult.cc
 	src/model/DescribeDcdnRefreshQuotaRequest.cc
 	src/model/DescribeDcdnRefreshQuotaResult.cc
 	src/model/DescribeDcdnRefreshTaskByIdRequest.cc
@@ -506,6 +538,8 @@ set(dcdn_src
 	src/model/DescribeDcdnReportResult.cc
 	src/model/DescribeDcdnReportListRequest.cc
 	src/model/DescribeDcdnReportListResult.cc
+	src/model/DescribeDcdnSLSRealtimeLogDeliveryRequest.cc
+	src/model/DescribeDcdnSLSRealtimeLogDeliveryResult.cc
 	src/model/DescribeDcdnSMCertificateDetailRequest.cc
 	src/model/DescribeDcdnSMCertificateDetailResult.cc
 	src/model/DescribeDcdnSMCertificateListRequest.cc
@@ -534,6 +568,8 @@ set(dcdn_src
 	src/model/DescribeDcdnUserDomainsByFuncResult.cc
 	src/model/DescribeDcdnUserQuotaRequest.cc
 	src/model/DescribeDcdnUserQuotaResult.cc
+	src/model/DescribeDcdnUserRealTimeDeliveryFieldRequest.cc
+	src/model/DescribeDcdnUserRealTimeDeliveryFieldResult.cc
 	src/model/DescribeDcdnUserResourcePackageRequest.cc
 	src/model/DescribeDcdnUserResourcePackageResult.cc
 	src/model/DescribeDcdnUserSecDropRequest.cc
@@ -574,6 +610,8 @@ set(dcdn_src
 	src/model/EditRoutineConfResult.cc
 	src/model/EnableDcdnDomainOfflineLogDeliveryRequest.cc
 	src/model/EnableDcdnDomainOfflineLogDeliveryResult.cc
+	src/model/ListDcdnRealTimeDeliveryProjectRequest.cc
+	src/model/ListDcdnRealTimeDeliveryProjectResult.cc
 	src/model/ModifyDCdnDomainSchdmByPropertyRequest.cc
 	src/model/ModifyDCdnDomainSchdmByPropertyResult.cc
 	src/model/OpenDcdnServiceRequest.cc
@@ -598,6 +636,8 @@ set(dcdn_src
 	src/model/SetDcdnDomainSMCertificateResult.cc
 	src/model/SetDcdnDomainStagingConfigRequest.cc
 	src/model/SetDcdnDomainStagingConfigResult.cc
+	src/model/SetDcdnFullDomainsBlockIPRequest.cc
+	src/model/SetDcdnFullDomainsBlockIPResult.cc
 	src/model/SetDcdnUserConfigRequest.cc
 	src/model/SetDcdnUserConfigResult.cc
 	src/model/SetRoutineSubdomainRequest.cc
@@ -620,8 +660,12 @@ set(dcdn_src
 	src/model/UpdateDcdnDomainResult.cc
 	src/model/UpdateDcdnIpaDomainRequest.cc
 	src/model/UpdateDcdnIpaDomainResult.cc
+	src/model/UpdateDcdnSLSRealtimeLogDeliveryRequest.cc
+	src/model/UpdateDcdnSLSRealtimeLogDeliveryResult.cc
 	src/model/UpdateDcdnSubTaskRequest.cc
 	src/model/UpdateDcdnSubTaskResult.cc
+	src/model/UpdateDcdnUserRealTimeDeliveryFieldRequest.cc
+	src/model/UpdateDcdnUserRealTimeDeliveryFieldResult.cc
 	src/model/UploadRoutineCodeRequest.cc
 	src/model/UploadRoutineCodeResult.cc
 	src/model/UploadStagingRoutineCodeRequest.cc

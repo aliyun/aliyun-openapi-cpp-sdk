@@ -40,7 +40,7 @@ namespace AlibabaCloud
 						float count;
 						int code;
 					};
-					std::vector<DataModule::HttpCodeDataModule> websocketHttpCodeDataPerInterval;
+					std::vector<DataModule::HttpCodeDataModule> websocketHttpCode;
 					std::string timeStamp;
 				};
 
@@ -52,7 +52,7 @@ namespace AlibabaCloud
 				std::string getDomainName()const;
 				std::string getStartTime()const;
 				std::string getDataInterval()const;
-				std::vector<DataModule> getDataPerInterval()const;
+				std::vector<DataModule> getHttpCodeDataPerInterval()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -61,7 +61,7 @@ namespace AlibabaCloud
 				std::string domainName_;
 				std::string startTime_;
 				std::string dataInterval_;
-				std::vector<DataModule> dataPerInterval_;
+				std::vector<DataModule> httpCodeDataPerInterval_;
 
 			};
 		}

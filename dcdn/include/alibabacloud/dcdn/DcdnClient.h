@@ -40,6 +40,8 @@
 #include "model/BatchStartDcdnDomainResult.h"
 #include "model/BatchStopDcdnDomainRequest.h"
 #include "model/BatchStopDcdnDomainResult.h"
+#include "model/CheckDcdnProjectExistRequest.h"
+#include "model/CheckDcdnProjectExistResult.h"
 #include "model/CommitStagingRoutineCodeRequest.h"
 #include "model/CommitStagingRoutineCodeResult.h"
 #include "model/CreateDcdnCertificateSigningRequestRequest.h"
@@ -48,10 +50,14 @@
 #include "model/CreateDcdnDeliverTaskResult.h"
 #include "model/CreateDcdnDomainOfflineLogDeliveryRequest.h"
 #include "model/CreateDcdnDomainOfflineLogDeliveryResult.h"
+#include "model/CreateDcdnSLSRealTimeLogDeliveryRequest.h"
+#include "model/CreateDcdnSLSRealTimeLogDeliveryResult.h"
 #include "model/CreateDcdnSubTaskRequest.h"
 #include "model/CreateDcdnSubTaskResult.h"
 #include "model/CreateRoutineRequest.h"
 #include "model/CreateRoutineResult.h"
+#include "model/CreateSlrAndSlsProjectRequest.h"
+#include "model/CreateSlrAndSlsProjectResult.h"
 #include "model/DeleteDcdnDeliverTaskRequest.h"
 #include "model/DeleteDcdnDeliverTaskResult.h"
 #include "model/DeleteDcdnDomainRequest.h"
@@ -60,6 +66,8 @@
 #include "model/DeleteDcdnIpaDomainResult.h"
 #include "model/DeleteDcdnIpaSpecificConfigRequest.h"
 #include "model/DeleteDcdnIpaSpecificConfigResult.h"
+#include "model/DeleteDcdnRealTimeLogProjectRequest.h"
+#include "model/DeleteDcdnRealTimeLogProjectResult.h"
 #include "model/DeleteDcdnSpecificConfigRequest.h"
 #include "model/DeleteDcdnSpecificConfigResult.h"
 #include "model/DeleteDcdnSpecificStagingConfigRequest.h"
@@ -190,6 +198,8 @@
 #include "model/DescribeDcdnOfflineLogDeliveryRegionsResult.h"
 #include "model/DescribeDcdnOfflineLogDeliveryStatusRequest.h"
 #include "model/DescribeDcdnOfflineLogDeliveryStatusResult.h"
+#include "model/DescribeDcdnRealTimeDeliveryFieldRequest.h"
+#include "model/DescribeDcdnRealTimeDeliveryFieldResult.h"
 #include "model/DescribeDcdnRefreshQuotaRequest.h"
 #include "model/DescribeDcdnRefreshQuotaResult.h"
 #include "model/DescribeDcdnRefreshTaskByIdRequest.h"
@@ -202,6 +212,8 @@
 #include "model/DescribeDcdnReportResult.h"
 #include "model/DescribeDcdnReportListRequest.h"
 #include "model/DescribeDcdnReportListResult.h"
+#include "model/DescribeDcdnSLSRealtimeLogDeliveryRequest.h"
+#include "model/DescribeDcdnSLSRealtimeLogDeliveryResult.h"
 #include "model/DescribeDcdnSMCertificateDetailRequest.h"
 #include "model/DescribeDcdnSMCertificateDetailResult.h"
 #include "model/DescribeDcdnSMCertificateListRequest.h"
@@ -230,6 +242,8 @@
 #include "model/DescribeDcdnUserDomainsByFuncResult.h"
 #include "model/DescribeDcdnUserQuotaRequest.h"
 #include "model/DescribeDcdnUserQuotaResult.h"
+#include "model/DescribeDcdnUserRealTimeDeliveryFieldRequest.h"
+#include "model/DescribeDcdnUserRealTimeDeliveryFieldResult.h"
 #include "model/DescribeDcdnUserResourcePackageRequest.h"
 #include "model/DescribeDcdnUserResourcePackageResult.h"
 #include "model/DescribeDcdnUserSecDropRequest.h"
@@ -270,6 +284,8 @@
 #include "model/EditRoutineConfResult.h"
 #include "model/EnableDcdnDomainOfflineLogDeliveryRequest.h"
 #include "model/EnableDcdnDomainOfflineLogDeliveryResult.h"
+#include "model/ListDcdnRealTimeDeliveryProjectRequest.h"
+#include "model/ListDcdnRealTimeDeliveryProjectResult.h"
 #include "model/ModifyDCdnDomainSchdmByPropertyRequest.h"
 #include "model/ModifyDCdnDomainSchdmByPropertyResult.h"
 #include "model/OpenDcdnServiceRequest.h"
@@ -294,6 +310,8 @@
 #include "model/SetDcdnDomainSMCertificateResult.h"
 #include "model/SetDcdnDomainStagingConfigRequest.h"
 #include "model/SetDcdnDomainStagingConfigResult.h"
+#include "model/SetDcdnFullDomainsBlockIPRequest.h"
+#include "model/SetDcdnFullDomainsBlockIPResult.h"
 #include "model/SetDcdnUserConfigRequest.h"
 #include "model/SetDcdnUserConfigResult.h"
 #include "model/SetRoutineSubdomainRequest.h"
@@ -316,8 +334,12 @@
 #include "model/UpdateDcdnDomainResult.h"
 #include "model/UpdateDcdnIpaDomainRequest.h"
 #include "model/UpdateDcdnIpaDomainResult.h"
+#include "model/UpdateDcdnSLSRealtimeLogDeliveryRequest.h"
+#include "model/UpdateDcdnSLSRealtimeLogDeliveryResult.h"
 #include "model/UpdateDcdnSubTaskRequest.h"
 #include "model/UpdateDcdnSubTaskResult.h"
+#include "model/UpdateDcdnUserRealTimeDeliveryFieldRequest.h"
+#include "model/UpdateDcdnUserRealTimeDeliveryFieldResult.h"
 #include "model/UploadRoutineCodeRequest.h"
 #include "model/UploadRoutineCodeResult.h"
 #include "model/UploadStagingRoutineCodeRequest.h"
@@ -360,6 +382,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::BatchStopDcdnDomainResult> BatchStopDcdnDomainOutcome;
 			typedef std::future<BatchStopDcdnDomainOutcome> BatchStopDcdnDomainOutcomeCallable;
 			typedef std::function<void(const DcdnClient*, const Model::BatchStopDcdnDomainRequest&, const BatchStopDcdnDomainOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchStopDcdnDomainAsyncHandler;
+			typedef Outcome<Error, Model::CheckDcdnProjectExistResult> CheckDcdnProjectExistOutcome;
+			typedef std::future<CheckDcdnProjectExistOutcome> CheckDcdnProjectExistOutcomeCallable;
+			typedef std::function<void(const DcdnClient*, const Model::CheckDcdnProjectExistRequest&, const CheckDcdnProjectExistOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckDcdnProjectExistAsyncHandler;
 			typedef Outcome<Error, Model::CommitStagingRoutineCodeResult> CommitStagingRoutineCodeOutcome;
 			typedef std::future<CommitStagingRoutineCodeOutcome> CommitStagingRoutineCodeOutcomeCallable;
 			typedef std::function<void(const DcdnClient*, const Model::CommitStagingRoutineCodeRequest&, const CommitStagingRoutineCodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CommitStagingRoutineCodeAsyncHandler;
@@ -372,12 +397,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateDcdnDomainOfflineLogDeliveryResult> CreateDcdnDomainOfflineLogDeliveryOutcome;
 			typedef std::future<CreateDcdnDomainOfflineLogDeliveryOutcome> CreateDcdnDomainOfflineLogDeliveryOutcomeCallable;
 			typedef std::function<void(const DcdnClient*, const Model::CreateDcdnDomainOfflineLogDeliveryRequest&, const CreateDcdnDomainOfflineLogDeliveryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDcdnDomainOfflineLogDeliveryAsyncHandler;
+			typedef Outcome<Error, Model::CreateDcdnSLSRealTimeLogDeliveryResult> CreateDcdnSLSRealTimeLogDeliveryOutcome;
+			typedef std::future<CreateDcdnSLSRealTimeLogDeliveryOutcome> CreateDcdnSLSRealTimeLogDeliveryOutcomeCallable;
+			typedef std::function<void(const DcdnClient*, const Model::CreateDcdnSLSRealTimeLogDeliveryRequest&, const CreateDcdnSLSRealTimeLogDeliveryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDcdnSLSRealTimeLogDeliveryAsyncHandler;
 			typedef Outcome<Error, Model::CreateDcdnSubTaskResult> CreateDcdnSubTaskOutcome;
 			typedef std::future<CreateDcdnSubTaskOutcome> CreateDcdnSubTaskOutcomeCallable;
 			typedef std::function<void(const DcdnClient*, const Model::CreateDcdnSubTaskRequest&, const CreateDcdnSubTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDcdnSubTaskAsyncHandler;
 			typedef Outcome<Error, Model::CreateRoutineResult> CreateRoutineOutcome;
 			typedef std::future<CreateRoutineOutcome> CreateRoutineOutcomeCallable;
 			typedef std::function<void(const DcdnClient*, const Model::CreateRoutineRequest&, const CreateRoutineOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateRoutineAsyncHandler;
+			typedef Outcome<Error, Model::CreateSlrAndSlsProjectResult> CreateSlrAndSlsProjectOutcome;
+			typedef std::future<CreateSlrAndSlsProjectOutcome> CreateSlrAndSlsProjectOutcomeCallable;
+			typedef std::function<void(const DcdnClient*, const Model::CreateSlrAndSlsProjectRequest&, const CreateSlrAndSlsProjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateSlrAndSlsProjectAsyncHandler;
 			typedef Outcome<Error, Model::DeleteDcdnDeliverTaskResult> DeleteDcdnDeliverTaskOutcome;
 			typedef std::future<DeleteDcdnDeliverTaskOutcome> DeleteDcdnDeliverTaskOutcomeCallable;
 			typedef std::function<void(const DcdnClient*, const Model::DeleteDcdnDeliverTaskRequest&, const DeleteDcdnDeliverTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDcdnDeliverTaskAsyncHandler;
@@ -390,6 +421,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteDcdnIpaSpecificConfigResult> DeleteDcdnIpaSpecificConfigOutcome;
 			typedef std::future<DeleteDcdnIpaSpecificConfigOutcome> DeleteDcdnIpaSpecificConfigOutcomeCallable;
 			typedef std::function<void(const DcdnClient*, const Model::DeleteDcdnIpaSpecificConfigRequest&, const DeleteDcdnIpaSpecificConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDcdnIpaSpecificConfigAsyncHandler;
+			typedef Outcome<Error, Model::DeleteDcdnRealTimeLogProjectResult> DeleteDcdnRealTimeLogProjectOutcome;
+			typedef std::future<DeleteDcdnRealTimeLogProjectOutcome> DeleteDcdnRealTimeLogProjectOutcomeCallable;
+			typedef std::function<void(const DcdnClient*, const Model::DeleteDcdnRealTimeLogProjectRequest&, const DeleteDcdnRealTimeLogProjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDcdnRealTimeLogProjectAsyncHandler;
 			typedef Outcome<Error, Model::DeleteDcdnSpecificConfigResult> DeleteDcdnSpecificConfigOutcome;
 			typedef std::future<DeleteDcdnSpecificConfigOutcome> DeleteDcdnSpecificConfigOutcomeCallable;
 			typedef std::function<void(const DcdnClient*, const Model::DeleteDcdnSpecificConfigRequest&, const DeleteDcdnSpecificConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDcdnSpecificConfigAsyncHandler;
@@ -585,6 +619,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeDcdnOfflineLogDeliveryStatusResult> DescribeDcdnOfflineLogDeliveryStatusOutcome;
 			typedef std::future<DescribeDcdnOfflineLogDeliveryStatusOutcome> DescribeDcdnOfflineLogDeliveryStatusOutcomeCallable;
 			typedef std::function<void(const DcdnClient*, const Model::DescribeDcdnOfflineLogDeliveryStatusRequest&, const DescribeDcdnOfflineLogDeliveryStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDcdnOfflineLogDeliveryStatusAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDcdnRealTimeDeliveryFieldResult> DescribeDcdnRealTimeDeliveryFieldOutcome;
+			typedef std::future<DescribeDcdnRealTimeDeliveryFieldOutcome> DescribeDcdnRealTimeDeliveryFieldOutcomeCallable;
+			typedef std::function<void(const DcdnClient*, const Model::DescribeDcdnRealTimeDeliveryFieldRequest&, const DescribeDcdnRealTimeDeliveryFieldOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDcdnRealTimeDeliveryFieldAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDcdnRefreshQuotaResult> DescribeDcdnRefreshQuotaOutcome;
 			typedef std::future<DescribeDcdnRefreshQuotaOutcome> DescribeDcdnRefreshQuotaOutcomeCallable;
 			typedef std::function<void(const DcdnClient*, const Model::DescribeDcdnRefreshQuotaRequest&, const DescribeDcdnRefreshQuotaOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDcdnRefreshQuotaAsyncHandler;
@@ -603,6 +640,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeDcdnReportListResult> DescribeDcdnReportListOutcome;
 			typedef std::future<DescribeDcdnReportListOutcome> DescribeDcdnReportListOutcomeCallable;
 			typedef std::function<void(const DcdnClient*, const Model::DescribeDcdnReportListRequest&, const DescribeDcdnReportListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDcdnReportListAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDcdnSLSRealtimeLogDeliveryResult> DescribeDcdnSLSRealtimeLogDeliveryOutcome;
+			typedef std::future<DescribeDcdnSLSRealtimeLogDeliveryOutcome> DescribeDcdnSLSRealtimeLogDeliveryOutcomeCallable;
+			typedef std::function<void(const DcdnClient*, const Model::DescribeDcdnSLSRealtimeLogDeliveryRequest&, const DescribeDcdnSLSRealtimeLogDeliveryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDcdnSLSRealtimeLogDeliveryAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDcdnSMCertificateDetailResult> DescribeDcdnSMCertificateDetailOutcome;
 			typedef std::future<DescribeDcdnSMCertificateDetailOutcome> DescribeDcdnSMCertificateDetailOutcomeCallable;
 			typedef std::function<void(const DcdnClient*, const Model::DescribeDcdnSMCertificateDetailRequest&, const DescribeDcdnSMCertificateDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDcdnSMCertificateDetailAsyncHandler;
@@ -645,6 +685,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeDcdnUserQuotaResult> DescribeDcdnUserQuotaOutcome;
 			typedef std::future<DescribeDcdnUserQuotaOutcome> DescribeDcdnUserQuotaOutcomeCallable;
 			typedef std::function<void(const DcdnClient*, const Model::DescribeDcdnUserQuotaRequest&, const DescribeDcdnUserQuotaOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDcdnUserQuotaAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDcdnUserRealTimeDeliveryFieldResult> DescribeDcdnUserRealTimeDeliveryFieldOutcome;
+			typedef std::future<DescribeDcdnUserRealTimeDeliveryFieldOutcome> DescribeDcdnUserRealTimeDeliveryFieldOutcomeCallable;
+			typedef std::function<void(const DcdnClient*, const Model::DescribeDcdnUserRealTimeDeliveryFieldRequest&, const DescribeDcdnUserRealTimeDeliveryFieldOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDcdnUserRealTimeDeliveryFieldAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDcdnUserResourcePackageResult> DescribeDcdnUserResourcePackageOutcome;
 			typedef std::future<DescribeDcdnUserResourcePackageOutcome> DescribeDcdnUserResourcePackageOutcomeCallable;
 			typedef std::function<void(const DcdnClient*, const Model::DescribeDcdnUserResourcePackageRequest&, const DescribeDcdnUserResourcePackageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDcdnUserResourcePackageAsyncHandler;
@@ -705,6 +748,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::EnableDcdnDomainOfflineLogDeliveryResult> EnableDcdnDomainOfflineLogDeliveryOutcome;
 			typedef std::future<EnableDcdnDomainOfflineLogDeliveryOutcome> EnableDcdnDomainOfflineLogDeliveryOutcomeCallable;
 			typedef std::function<void(const DcdnClient*, const Model::EnableDcdnDomainOfflineLogDeliveryRequest&, const EnableDcdnDomainOfflineLogDeliveryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnableDcdnDomainOfflineLogDeliveryAsyncHandler;
+			typedef Outcome<Error, Model::ListDcdnRealTimeDeliveryProjectResult> ListDcdnRealTimeDeliveryProjectOutcome;
+			typedef std::future<ListDcdnRealTimeDeliveryProjectOutcome> ListDcdnRealTimeDeliveryProjectOutcomeCallable;
+			typedef std::function<void(const DcdnClient*, const Model::ListDcdnRealTimeDeliveryProjectRequest&, const ListDcdnRealTimeDeliveryProjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDcdnRealTimeDeliveryProjectAsyncHandler;
 			typedef Outcome<Error, Model::ModifyDCdnDomainSchdmByPropertyResult> ModifyDCdnDomainSchdmByPropertyOutcome;
 			typedef std::future<ModifyDCdnDomainSchdmByPropertyOutcome> ModifyDCdnDomainSchdmByPropertyOutcomeCallable;
 			typedef std::function<void(const DcdnClient*, const Model::ModifyDCdnDomainSchdmByPropertyRequest&, const ModifyDCdnDomainSchdmByPropertyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDCdnDomainSchdmByPropertyAsyncHandler;
@@ -741,6 +787,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SetDcdnDomainStagingConfigResult> SetDcdnDomainStagingConfigOutcome;
 			typedef std::future<SetDcdnDomainStagingConfigOutcome> SetDcdnDomainStagingConfigOutcomeCallable;
 			typedef std::function<void(const DcdnClient*, const Model::SetDcdnDomainStagingConfigRequest&, const SetDcdnDomainStagingConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetDcdnDomainStagingConfigAsyncHandler;
+			typedef Outcome<Error, Model::SetDcdnFullDomainsBlockIPResult> SetDcdnFullDomainsBlockIPOutcome;
+			typedef std::future<SetDcdnFullDomainsBlockIPOutcome> SetDcdnFullDomainsBlockIPOutcomeCallable;
+			typedef std::function<void(const DcdnClient*, const Model::SetDcdnFullDomainsBlockIPRequest&, const SetDcdnFullDomainsBlockIPOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetDcdnFullDomainsBlockIPAsyncHandler;
 			typedef Outcome<Error, Model::SetDcdnUserConfigResult> SetDcdnUserConfigOutcome;
 			typedef std::future<SetDcdnUserConfigOutcome> SetDcdnUserConfigOutcomeCallable;
 			typedef std::function<void(const DcdnClient*, const Model::SetDcdnUserConfigRequest&, const SetDcdnUserConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetDcdnUserConfigAsyncHandler;
@@ -774,9 +823,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateDcdnIpaDomainResult> UpdateDcdnIpaDomainOutcome;
 			typedef std::future<UpdateDcdnIpaDomainOutcome> UpdateDcdnIpaDomainOutcomeCallable;
 			typedef std::function<void(const DcdnClient*, const Model::UpdateDcdnIpaDomainRequest&, const UpdateDcdnIpaDomainOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDcdnIpaDomainAsyncHandler;
+			typedef Outcome<Error, Model::UpdateDcdnSLSRealtimeLogDeliveryResult> UpdateDcdnSLSRealtimeLogDeliveryOutcome;
+			typedef std::future<UpdateDcdnSLSRealtimeLogDeliveryOutcome> UpdateDcdnSLSRealtimeLogDeliveryOutcomeCallable;
+			typedef std::function<void(const DcdnClient*, const Model::UpdateDcdnSLSRealtimeLogDeliveryRequest&, const UpdateDcdnSLSRealtimeLogDeliveryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDcdnSLSRealtimeLogDeliveryAsyncHandler;
 			typedef Outcome<Error, Model::UpdateDcdnSubTaskResult> UpdateDcdnSubTaskOutcome;
 			typedef std::future<UpdateDcdnSubTaskOutcome> UpdateDcdnSubTaskOutcomeCallable;
 			typedef std::function<void(const DcdnClient*, const Model::UpdateDcdnSubTaskRequest&, const UpdateDcdnSubTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDcdnSubTaskAsyncHandler;
+			typedef Outcome<Error, Model::UpdateDcdnUserRealTimeDeliveryFieldResult> UpdateDcdnUserRealTimeDeliveryFieldOutcome;
+			typedef std::future<UpdateDcdnUserRealTimeDeliveryFieldOutcome> UpdateDcdnUserRealTimeDeliveryFieldOutcomeCallable;
+			typedef std::function<void(const DcdnClient*, const Model::UpdateDcdnUserRealTimeDeliveryFieldRequest&, const UpdateDcdnUserRealTimeDeliveryFieldOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDcdnUserRealTimeDeliveryFieldAsyncHandler;
 			typedef Outcome<Error, Model::UploadRoutineCodeResult> UploadRoutineCodeOutcome;
 			typedef std::future<UploadRoutineCodeOutcome> UploadRoutineCodeOutcomeCallable;
 			typedef std::function<void(const DcdnClient*, const Model::UploadRoutineCodeRequest&, const UploadRoutineCodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UploadRoutineCodeAsyncHandler;
@@ -818,6 +873,9 @@ namespace AlibabaCloud
 			BatchStopDcdnDomainOutcome batchStopDcdnDomain(const Model::BatchStopDcdnDomainRequest &request)const;
 			void batchStopDcdnDomainAsync(const Model::BatchStopDcdnDomainRequest& request, const BatchStopDcdnDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			BatchStopDcdnDomainOutcomeCallable batchStopDcdnDomainCallable(const Model::BatchStopDcdnDomainRequest& request) const;
+			CheckDcdnProjectExistOutcome checkDcdnProjectExist(const Model::CheckDcdnProjectExistRequest &request)const;
+			void checkDcdnProjectExistAsync(const Model::CheckDcdnProjectExistRequest& request, const CheckDcdnProjectExistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CheckDcdnProjectExistOutcomeCallable checkDcdnProjectExistCallable(const Model::CheckDcdnProjectExistRequest& request) const;
 			CommitStagingRoutineCodeOutcome commitStagingRoutineCode(const Model::CommitStagingRoutineCodeRequest &request)const;
 			void commitStagingRoutineCodeAsync(const Model::CommitStagingRoutineCodeRequest& request, const CommitStagingRoutineCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CommitStagingRoutineCodeOutcomeCallable commitStagingRoutineCodeCallable(const Model::CommitStagingRoutineCodeRequest& request) const;
@@ -830,12 +888,18 @@ namespace AlibabaCloud
 			CreateDcdnDomainOfflineLogDeliveryOutcome createDcdnDomainOfflineLogDelivery(const Model::CreateDcdnDomainOfflineLogDeliveryRequest &request)const;
 			void createDcdnDomainOfflineLogDeliveryAsync(const Model::CreateDcdnDomainOfflineLogDeliveryRequest& request, const CreateDcdnDomainOfflineLogDeliveryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateDcdnDomainOfflineLogDeliveryOutcomeCallable createDcdnDomainOfflineLogDeliveryCallable(const Model::CreateDcdnDomainOfflineLogDeliveryRequest& request) const;
+			CreateDcdnSLSRealTimeLogDeliveryOutcome createDcdnSLSRealTimeLogDelivery(const Model::CreateDcdnSLSRealTimeLogDeliveryRequest &request)const;
+			void createDcdnSLSRealTimeLogDeliveryAsync(const Model::CreateDcdnSLSRealTimeLogDeliveryRequest& request, const CreateDcdnSLSRealTimeLogDeliveryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateDcdnSLSRealTimeLogDeliveryOutcomeCallable createDcdnSLSRealTimeLogDeliveryCallable(const Model::CreateDcdnSLSRealTimeLogDeliveryRequest& request) const;
 			CreateDcdnSubTaskOutcome createDcdnSubTask(const Model::CreateDcdnSubTaskRequest &request)const;
 			void createDcdnSubTaskAsync(const Model::CreateDcdnSubTaskRequest& request, const CreateDcdnSubTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateDcdnSubTaskOutcomeCallable createDcdnSubTaskCallable(const Model::CreateDcdnSubTaskRequest& request) const;
 			CreateRoutineOutcome createRoutine(const Model::CreateRoutineRequest &request)const;
 			void createRoutineAsync(const Model::CreateRoutineRequest& request, const CreateRoutineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateRoutineOutcomeCallable createRoutineCallable(const Model::CreateRoutineRequest& request) const;
+			CreateSlrAndSlsProjectOutcome createSlrAndSlsProject(const Model::CreateSlrAndSlsProjectRequest &request)const;
+			void createSlrAndSlsProjectAsync(const Model::CreateSlrAndSlsProjectRequest& request, const CreateSlrAndSlsProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateSlrAndSlsProjectOutcomeCallable createSlrAndSlsProjectCallable(const Model::CreateSlrAndSlsProjectRequest& request) const;
 			DeleteDcdnDeliverTaskOutcome deleteDcdnDeliverTask(const Model::DeleteDcdnDeliverTaskRequest &request)const;
 			void deleteDcdnDeliverTaskAsync(const Model::DeleteDcdnDeliverTaskRequest& request, const DeleteDcdnDeliverTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteDcdnDeliverTaskOutcomeCallable deleteDcdnDeliverTaskCallable(const Model::DeleteDcdnDeliverTaskRequest& request) const;
@@ -848,6 +912,9 @@ namespace AlibabaCloud
 			DeleteDcdnIpaSpecificConfigOutcome deleteDcdnIpaSpecificConfig(const Model::DeleteDcdnIpaSpecificConfigRequest &request)const;
 			void deleteDcdnIpaSpecificConfigAsync(const Model::DeleteDcdnIpaSpecificConfigRequest& request, const DeleteDcdnIpaSpecificConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteDcdnIpaSpecificConfigOutcomeCallable deleteDcdnIpaSpecificConfigCallable(const Model::DeleteDcdnIpaSpecificConfigRequest& request) const;
+			DeleteDcdnRealTimeLogProjectOutcome deleteDcdnRealTimeLogProject(const Model::DeleteDcdnRealTimeLogProjectRequest &request)const;
+			void deleteDcdnRealTimeLogProjectAsync(const Model::DeleteDcdnRealTimeLogProjectRequest& request, const DeleteDcdnRealTimeLogProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteDcdnRealTimeLogProjectOutcomeCallable deleteDcdnRealTimeLogProjectCallable(const Model::DeleteDcdnRealTimeLogProjectRequest& request) const;
 			DeleteDcdnSpecificConfigOutcome deleteDcdnSpecificConfig(const Model::DeleteDcdnSpecificConfigRequest &request)const;
 			void deleteDcdnSpecificConfigAsync(const Model::DeleteDcdnSpecificConfigRequest& request, const DeleteDcdnSpecificConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteDcdnSpecificConfigOutcomeCallable deleteDcdnSpecificConfigCallable(const Model::DeleteDcdnSpecificConfigRequest& request) const;
@@ -1043,6 +1110,9 @@ namespace AlibabaCloud
 			DescribeDcdnOfflineLogDeliveryStatusOutcome describeDcdnOfflineLogDeliveryStatus(const Model::DescribeDcdnOfflineLogDeliveryStatusRequest &request)const;
 			void describeDcdnOfflineLogDeliveryStatusAsync(const Model::DescribeDcdnOfflineLogDeliveryStatusRequest& request, const DescribeDcdnOfflineLogDeliveryStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDcdnOfflineLogDeliveryStatusOutcomeCallable describeDcdnOfflineLogDeliveryStatusCallable(const Model::DescribeDcdnOfflineLogDeliveryStatusRequest& request) const;
+			DescribeDcdnRealTimeDeliveryFieldOutcome describeDcdnRealTimeDeliveryField(const Model::DescribeDcdnRealTimeDeliveryFieldRequest &request)const;
+			void describeDcdnRealTimeDeliveryFieldAsync(const Model::DescribeDcdnRealTimeDeliveryFieldRequest& request, const DescribeDcdnRealTimeDeliveryFieldAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDcdnRealTimeDeliveryFieldOutcomeCallable describeDcdnRealTimeDeliveryFieldCallable(const Model::DescribeDcdnRealTimeDeliveryFieldRequest& request) const;
 			DescribeDcdnRefreshQuotaOutcome describeDcdnRefreshQuota(const Model::DescribeDcdnRefreshQuotaRequest &request)const;
 			void describeDcdnRefreshQuotaAsync(const Model::DescribeDcdnRefreshQuotaRequest& request, const DescribeDcdnRefreshQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDcdnRefreshQuotaOutcomeCallable describeDcdnRefreshQuotaCallable(const Model::DescribeDcdnRefreshQuotaRequest& request) const;
@@ -1061,6 +1131,9 @@ namespace AlibabaCloud
 			DescribeDcdnReportListOutcome describeDcdnReportList(const Model::DescribeDcdnReportListRequest &request)const;
 			void describeDcdnReportListAsync(const Model::DescribeDcdnReportListRequest& request, const DescribeDcdnReportListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDcdnReportListOutcomeCallable describeDcdnReportListCallable(const Model::DescribeDcdnReportListRequest& request) const;
+			DescribeDcdnSLSRealtimeLogDeliveryOutcome describeDcdnSLSRealtimeLogDelivery(const Model::DescribeDcdnSLSRealtimeLogDeliveryRequest &request)const;
+			void describeDcdnSLSRealtimeLogDeliveryAsync(const Model::DescribeDcdnSLSRealtimeLogDeliveryRequest& request, const DescribeDcdnSLSRealtimeLogDeliveryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDcdnSLSRealtimeLogDeliveryOutcomeCallable describeDcdnSLSRealtimeLogDeliveryCallable(const Model::DescribeDcdnSLSRealtimeLogDeliveryRequest& request) const;
 			DescribeDcdnSMCertificateDetailOutcome describeDcdnSMCertificateDetail(const Model::DescribeDcdnSMCertificateDetailRequest &request)const;
 			void describeDcdnSMCertificateDetailAsync(const Model::DescribeDcdnSMCertificateDetailRequest& request, const DescribeDcdnSMCertificateDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDcdnSMCertificateDetailOutcomeCallable describeDcdnSMCertificateDetailCallable(const Model::DescribeDcdnSMCertificateDetailRequest& request) const;
@@ -1103,6 +1176,9 @@ namespace AlibabaCloud
 			DescribeDcdnUserQuotaOutcome describeDcdnUserQuota(const Model::DescribeDcdnUserQuotaRequest &request)const;
 			void describeDcdnUserQuotaAsync(const Model::DescribeDcdnUserQuotaRequest& request, const DescribeDcdnUserQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDcdnUserQuotaOutcomeCallable describeDcdnUserQuotaCallable(const Model::DescribeDcdnUserQuotaRequest& request) const;
+			DescribeDcdnUserRealTimeDeliveryFieldOutcome describeDcdnUserRealTimeDeliveryField(const Model::DescribeDcdnUserRealTimeDeliveryFieldRequest &request)const;
+			void describeDcdnUserRealTimeDeliveryFieldAsync(const Model::DescribeDcdnUserRealTimeDeliveryFieldRequest& request, const DescribeDcdnUserRealTimeDeliveryFieldAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDcdnUserRealTimeDeliveryFieldOutcomeCallable describeDcdnUserRealTimeDeliveryFieldCallable(const Model::DescribeDcdnUserRealTimeDeliveryFieldRequest& request) const;
 			DescribeDcdnUserResourcePackageOutcome describeDcdnUserResourcePackage(const Model::DescribeDcdnUserResourcePackageRequest &request)const;
 			void describeDcdnUserResourcePackageAsync(const Model::DescribeDcdnUserResourcePackageRequest& request, const DescribeDcdnUserResourcePackageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDcdnUserResourcePackageOutcomeCallable describeDcdnUserResourcePackageCallable(const Model::DescribeDcdnUserResourcePackageRequest& request) const;
@@ -1163,6 +1239,9 @@ namespace AlibabaCloud
 			EnableDcdnDomainOfflineLogDeliveryOutcome enableDcdnDomainOfflineLogDelivery(const Model::EnableDcdnDomainOfflineLogDeliveryRequest &request)const;
 			void enableDcdnDomainOfflineLogDeliveryAsync(const Model::EnableDcdnDomainOfflineLogDeliveryRequest& request, const EnableDcdnDomainOfflineLogDeliveryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			EnableDcdnDomainOfflineLogDeliveryOutcomeCallable enableDcdnDomainOfflineLogDeliveryCallable(const Model::EnableDcdnDomainOfflineLogDeliveryRequest& request) const;
+			ListDcdnRealTimeDeliveryProjectOutcome listDcdnRealTimeDeliveryProject(const Model::ListDcdnRealTimeDeliveryProjectRequest &request)const;
+			void listDcdnRealTimeDeliveryProjectAsync(const Model::ListDcdnRealTimeDeliveryProjectRequest& request, const ListDcdnRealTimeDeliveryProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListDcdnRealTimeDeliveryProjectOutcomeCallable listDcdnRealTimeDeliveryProjectCallable(const Model::ListDcdnRealTimeDeliveryProjectRequest& request) const;
 			ModifyDCdnDomainSchdmByPropertyOutcome modifyDCdnDomainSchdmByProperty(const Model::ModifyDCdnDomainSchdmByPropertyRequest &request)const;
 			void modifyDCdnDomainSchdmByPropertyAsync(const Model::ModifyDCdnDomainSchdmByPropertyRequest& request, const ModifyDCdnDomainSchdmByPropertyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyDCdnDomainSchdmByPropertyOutcomeCallable modifyDCdnDomainSchdmByPropertyCallable(const Model::ModifyDCdnDomainSchdmByPropertyRequest& request) const;
@@ -1199,6 +1278,9 @@ namespace AlibabaCloud
 			SetDcdnDomainStagingConfigOutcome setDcdnDomainStagingConfig(const Model::SetDcdnDomainStagingConfigRequest &request)const;
 			void setDcdnDomainStagingConfigAsync(const Model::SetDcdnDomainStagingConfigRequest& request, const SetDcdnDomainStagingConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetDcdnDomainStagingConfigOutcomeCallable setDcdnDomainStagingConfigCallable(const Model::SetDcdnDomainStagingConfigRequest& request) const;
+			SetDcdnFullDomainsBlockIPOutcome setDcdnFullDomainsBlockIP(const Model::SetDcdnFullDomainsBlockIPRequest &request)const;
+			void setDcdnFullDomainsBlockIPAsync(const Model::SetDcdnFullDomainsBlockIPRequest& request, const SetDcdnFullDomainsBlockIPAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SetDcdnFullDomainsBlockIPOutcomeCallable setDcdnFullDomainsBlockIPCallable(const Model::SetDcdnFullDomainsBlockIPRequest& request) const;
 			SetDcdnUserConfigOutcome setDcdnUserConfig(const Model::SetDcdnUserConfigRequest &request)const;
 			void setDcdnUserConfigAsync(const Model::SetDcdnUserConfigRequest& request, const SetDcdnUserConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetDcdnUserConfigOutcomeCallable setDcdnUserConfigCallable(const Model::SetDcdnUserConfigRequest& request) const;
@@ -1232,9 +1314,15 @@ namespace AlibabaCloud
 			UpdateDcdnIpaDomainOutcome updateDcdnIpaDomain(const Model::UpdateDcdnIpaDomainRequest &request)const;
 			void updateDcdnIpaDomainAsync(const Model::UpdateDcdnIpaDomainRequest& request, const UpdateDcdnIpaDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateDcdnIpaDomainOutcomeCallable updateDcdnIpaDomainCallable(const Model::UpdateDcdnIpaDomainRequest& request) const;
+			UpdateDcdnSLSRealtimeLogDeliveryOutcome updateDcdnSLSRealtimeLogDelivery(const Model::UpdateDcdnSLSRealtimeLogDeliveryRequest &request)const;
+			void updateDcdnSLSRealtimeLogDeliveryAsync(const Model::UpdateDcdnSLSRealtimeLogDeliveryRequest& request, const UpdateDcdnSLSRealtimeLogDeliveryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateDcdnSLSRealtimeLogDeliveryOutcomeCallable updateDcdnSLSRealtimeLogDeliveryCallable(const Model::UpdateDcdnSLSRealtimeLogDeliveryRequest& request) const;
 			UpdateDcdnSubTaskOutcome updateDcdnSubTask(const Model::UpdateDcdnSubTaskRequest &request)const;
 			void updateDcdnSubTaskAsync(const Model::UpdateDcdnSubTaskRequest& request, const UpdateDcdnSubTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateDcdnSubTaskOutcomeCallable updateDcdnSubTaskCallable(const Model::UpdateDcdnSubTaskRequest& request) const;
+			UpdateDcdnUserRealTimeDeliveryFieldOutcome updateDcdnUserRealTimeDeliveryField(const Model::UpdateDcdnUserRealTimeDeliveryFieldRequest &request)const;
+			void updateDcdnUserRealTimeDeliveryFieldAsync(const Model::UpdateDcdnUserRealTimeDeliveryFieldRequest& request, const UpdateDcdnUserRealTimeDeliveryFieldAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateDcdnUserRealTimeDeliveryFieldOutcomeCallable updateDcdnUserRealTimeDeliveryFieldCallable(const Model::UpdateDcdnUserRealTimeDeliveryFieldRequest& request) const;
 			UploadRoutineCodeOutcome uploadRoutineCode(const Model::UploadRoutineCodeRequest &request)const;
 			void uploadRoutineCodeAsync(const Model::UploadRoutineCodeRequest& request, const UploadRoutineCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UploadRoutineCodeOutcomeCallable uploadRoutineCodeCallable(const Model::UploadRoutineCodeRequest& request) const;

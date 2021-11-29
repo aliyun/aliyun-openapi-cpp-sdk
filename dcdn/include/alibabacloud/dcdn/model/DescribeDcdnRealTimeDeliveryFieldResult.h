@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DCDN_MODEL_STOPDCDNIPADOMAINREQUEST_H_
-#define ALIBABACLOUD_DCDN_MODEL_STOPDCDNIPADOMAINREQUEST_H_
+#ifndef ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNREALTIMEDELIVERYFIELDRESULT_H_
+#define ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNREALTIMEDELIVERYFIELDRESULT_H_
 
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
+#include <utility>
+#include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/dcdn/DcdnExport.h>
 
 namespace AlibabaCloud
@@ -28,27 +29,28 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DCDN_EXPORT StopDcdnIpaDomainRequest : public RpcServiceRequest
+			class ALIBABACLOUD_DCDN_EXPORT DescribeDcdnRealTimeDeliveryFieldResult : public ServiceResult
 			{
-
 			public:
-				StopDcdnIpaDomainRequest();
-				~StopDcdnIpaDomainRequest();
+				struct Fields
+				{
+					std::string description;
+					std::string fieldName;
+				};
 
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
-				std::string getDomainName()const;
-				void setDomainName(const std::string& domainName);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 
-            private:
-				std::string securityToken_;
-				std::string domainName_;
-				long ownerId_;
+				DescribeDcdnRealTimeDeliveryFieldResult();
+				explicit DescribeDcdnRealTimeDeliveryFieldResult(const std::string &payload);
+				~DescribeDcdnRealTimeDeliveryFieldResult();
+				std::vector<Fields> getContent()const;
+
+			protected:
+				void parse(const std::string &payload);
+			private:
+				std::vector<Fields> content_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DCDN_MODEL_STOPDCDNIPADOMAINREQUEST_H_
+#endif // !ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNREALTIMEDELIVERYFIELDRESULT_H_

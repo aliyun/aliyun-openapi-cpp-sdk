@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DCDN_MODEL_SETDCDNDOMAINSMCERTIFICATEREQUEST_H_
-#define ALIBABACLOUD_DCDN_MODEL_SETDCDNDOMAINSMCERTIFICATEREQUEST_H_
+#ifndef ALIBABACLOUD_DCDN_MODEL_UPDATEDCDNUSERREALTIMEDELIVERYFIELDREQUEST_H_
+#define ALIBABACLOUD_DCDN_MODEL_UPDATEDCDNUSERREALTIMEDELIVERYFIELDREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,33 +28,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DCDN_EXPORT SetDcdnDomainSMCertificateRequest : public RpcServiceRequest
+			class ALIBABACLOUD_DCDN_EXPORT UpdateDcdnUserRealTimeDeliveryFieldRequest : public RpcServiceRequest
 			{
 
 			public:
-				SetDcdnDomainSMCertificateRequest();
-				~SetDcdnDomainSMCertificateRequest();
+				UpdateDcdnUserRealTimeDeliveryFieldRequest();
+				~UpdateDcdnUserRealTimeDeliveryFieldRequest();
 
-				std::string getSSLProtocol()const;
-				void setSSLProtocol(const std::string& sSLProtocol);
-				std::string getDomainName()const;
-				void setDomainName(const std::string& domainName);
+				std::string getBusinessType()const;
+				void setBusinessType(const std::string& businessType);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
-				std::string getCertIdentifier()const;
-				void setCertIdentifier(const std::string& certIdentifier);
+				std::string getFields()const;
+				void setFields(const std::string& fields);
 
             private:
-				std::string sSLProtocol_;
-				std::string domainName_;
+				std::string businessType_;
 				long ownerId_;
-				std::string securityToken_;
-				std::string certIdentifier_;
+				std::string fields_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DCDN_MODEL_SETDCDNDOMAINSMCERTIFICATEREQUEST_H_
+#endif // !ALIBABACLOUD_DCDN_MODEL_UPDATEDCDNUSERREALTIMEDELIVERYFIELDREQUEST_H_
