@@ -50,6 +50,7 @@ std::vector<ReplaceServersInServerGroupRequest::AddedServers> ReplaceServersInSe
 void ReplaceServersInServerGroupRequest::setAddedServers(const std::vector<ReplaceServersInServerGroupRequest::AddedServers> &addedServers) {
   addedServers_ = addedServers;
   for(int dep1 = 0; dep1 != addedServers.size(); dep1++) {
+    setParameter(std::string("AddedServers") + "." + std::to_string(dep1 + 1) + ".RemoteIpEnabled", addedServers[dep1].remoteIpEnabled ? "true" : "false");
     setParameter(std::string("AddedServers") + "." + std::to_string(dep1 + 1) + ".ServerType", addedServers[dep1].serverType);
     setParameter(std::string("AddedServers") + "." + std::to_string(dep1 + 1) + ".Port", std::to_string(addedServers[dep1].port));
     setParameter(std::string("AddedServers") + "." + std::to_string(dep1 + 1) + ".Description", addedServers[dep1].description);

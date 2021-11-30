@@ -96,6 +96,15 @@ void CreateServerGroupRequest::setProtocol(const std::string &protocol) {
   setParameter(std::string("Protocol"), protocol);
 }
 
+bool CreateServerGroupRequest::getUpstreamKeepaliveEnabled() const {
+  return upstreamKeepaliveEnabled_;
+}
+
+void CreateServerGroupRequest::setUpstreamKeepaliveEnabled(bool upstreamKeepaliveEnabled) {
+  upstreamKeepaliveEnabled_ = upstreamKeepaliveEnabled;
+  setParameter(std::string("UpstreamKeepaliveEnabled"), upstreamKeepaliveEnabled ? "true" : "false");
+}
+
 CreateServerGroupRequest::StickySessionConfig CreateServerGroupRequest::getStickySessionConfig() const {
   return stickySessionConfig_;
 }
@@ -115,6 +124,15 @@ bool CreateServerGroupRequest::getDryRun() const {
 void CreateServerGroupRequest::setDryRun(bool dryRun) {
   dryRun_ = dryRun;
   setParameter(std::string("DryRun"), dryRun ? "true" : "false");
+}
+
+bool CreateServerGroupRequest::getIpv6Enabled() const {
+  return ipv6Enabled_;
+}
+
+void CreateServerGroupRequest::setIpv6Enabled(bool ipv6Enabled) {
+  ipv6Enabled_ = ipv6Enabled;
+  setParameter(std::string("Ipv6Enabled"), ipv6Enabled ? "true" : "false");
 }
 
 std::string CreateServerGroupRequest::getServerGroupType() const {

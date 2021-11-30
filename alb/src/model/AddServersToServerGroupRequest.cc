@@ -50,6 +50,7 @@ std::vector<AddServersToServerGroupRequest::Servers> AddServersToServerGroupRequ
 void AddServersToServerGroupRequest::setServers(const std::vector<AddServersToServerGroupRequest::Servers> &servers) {
   servers_ = servers;
   for(int dep1 = 0; dep1 != servers.size(); dep1++) {
+    setParameter(std::string("Servers") + "." + std::to_string(dep1 + 1) + ".RemoteIpEnabled", servers[dep1].remoteIpEnabled ? "true" : "false");
     setParameter(std::string("Servers") + "." + std::to_string(dep1 + 1) + ".ServerType", servers[dep1].serverType);
     setParameter(std::string("Servers") + "." + std::to_string(dep1 + 1) + ".Port", std::to_string(servers[dep1].port));
     setParameter(std::string("Servers") + "." + std::to_string(dep1 + 1) + ".Description", servers[dep1].description);

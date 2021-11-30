@@ -47,6 +47,15 @@ void ListLoadBalancersRequest::setLoadBalancerIds(const std::vector<ListLoadBala
   }
 }
 
+std::string ListLoadBalancersRequest::getAddressIpVersion() const {
+  return addressIpVersion_;
+}
+
+void ListLoadBalancersRequest::setAddressIpVersion(const std::string &addressIpVersion) {
+  addressIpVersion_ = addressIpVersion;
+  setParameter(std::string("AddressIpVersion"), addressIpVersion);
+}
+
 std::string ListLoadBalancersRequest::getResourceGroupId() const {
   return resourceGroupId_;
 }
@@ -149,6 +158,15 @@ std::string ListLoadBalancersRequest::getZoneId() const {
 void ListLoadBalancersRequest::setZoneId(const std::string &zoneId) {
   zoneId_ = zoneId;
   setParameter(std::string("ZoneId"), zoneId);
+}
+
+std::string ListLoadBalancersRequest::getIpv6AddressType() const {
+  return ipv6AddressType_;
+}
+
+void ListLoadBalancersRequest::setIpv6AddressType(const std::string &ipv6AddressType) {
+  ipv6AddressType_ = ipv6AddressType;
+  setParameter(std::string("Ipv6AddressType"), ipv6AddressType);
 }
 
 std::string ListLoadBalancersRequest::getPayType() const {

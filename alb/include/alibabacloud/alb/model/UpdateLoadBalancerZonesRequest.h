@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ALB_MODEL_ADDSERVERSTOSERVERGROUPREQUEST_H_
-#define ALIBABACLOUD_ALB_MODEL_ADDSERVERSTOSERVERGROUPREQUEST_H_
+#ifndef ALIBABACLOUD_ALB_MODEL_UPDATELOADBALANCERZONESREQUEST_H_
+#define ALIBABACLOUD_ALB_MODEL_UPDATELOADBALANCERZONESREQUEST_H_
 
 #include <alibabacloud/alb/AlbExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,35 +26,31 @@
 namespace AlibabaCloud {
 namespace Alb {
 namespace Model {
-class ALIBABACLOUD_ALB_EXPORT AddServersToServerGroupRequest : public RpcServiceRequest {
+class ALIBABACLOUD_ALB_EXPORT UpdateLoadBalancerZonesRequest : public RpcServiceRequest {
 public:
-	struct Servers {
-		bool remoteIpEnabled;
-		std::string serverType;
-		int port;
-		std::string description;
-		std::string serverIp;
-		int weight;
-		std::string serverId;
+	struct ZoneMappings {
+		std::string vSwitchId;
+		std::string zoneId;
+		std::string allocationId;
 	};
-	AddServersToServerGroupRequest();
-	~AddServersToServerGroupRequest();
+	UpdateLoadBalancerZonesRequest();
+	~UpdateLoadBalancerZonesRequest();
 	std::string getClientToken() const;
 	void setClientToken(const std::string &clientToken);
-	std::string getServerGroupId() const;
-	void setServerGroupId(const std::string &serverGroupId);
-	std::vector<Servers> getServers() const;
-	void setServers(const std::vector<Servers> &servers);
 	bool getDryRun() const;
 	void setDryRun(bool dryRun);
+	std::vector<ZoneMappings> getZoneMappings() const;
+	void setZoneMappings(const std::vector<ZoneMappings> &zoneMappings);
+	std::string getLoadBalancerId() const;
+	void setLoadBalancerId(const std::string &loadBalancerId);
 
 private:
 	std::string clientToken_;
-	std::string serverGroupId_;
-	std::vector<Servers> servers_;
 	bool dryRun_;
+	std::vector<ZoneMappings> zoneMappings_;
+	std::string loadBalancerId_;
 };
 } // namespace Model
 } // namespace Alb
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_ALB_MODEL_ADDSERVERSTOSERVERGROUPREQUEST_H_
+#endif // !ALIBABACLOUD_ALB_MODEL_UPDATELOADBALANCERZONESREQUEST_H_

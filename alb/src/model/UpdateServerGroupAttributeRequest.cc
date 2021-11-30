@@ -87,6 +87,15 @@ void UpdateServerGroupAttributeRequest::setServerGroupId(const std::string &serv
   setParameter(std::string("ServerGroupId"), serverGroupId);
 }
 
+bool UpdateServerGroupAttributeRequest::getUpstreamKeepaliveEnabled() const {
+  return upstreamKeepaliveEnabled_;
+}
+
+void UpdateServerGroupAttributeRequest::setUpstreamKeepaliveEnabled(bool upstreamKeepaliveEnabled) {
+  upstreamKeepaliveEnabled_ = upstreamKeepaliveEnabled;
+  setParameter(std::string("UpstreamKeepaliveEnabled"), upstreamKeepaliveEnabled ? "true" : "false");
+}
+
 UpdateServerGroupAttributeRequest::StickySessionConfig UpdateServerGroupAttributeRequest::getStickySessionConfig() const {
   return stickySessionConfig_;
 }

@@ -73,6 +73,8 @@ void GetLoadBalancerAttributeResult::parse(const std::string &payload)
 			ZoneMapping::LoadBalancerAddress loadBalancerAddressesObject;
 			if(!valueZoneMappingsZoneMappingLoadBalancerAddressesLoadBalancerAddress["Address"].isNull())
 				loadBalancerAddressesObject.address = valueZoneMappingsZoneMappingLoadBalancerAddressesLoadBalancerAddress["Address"].asString();
+			if(!valueZoneMappingsZoneMappingLoadBalancerAddressesLoadBalancerAddress["Ipv6Address"].isNull())
+				loadBalancerAddressesObject.ipv6Address = valueZoneMappingsZoneMappingLoadBalancerAddressesLoadBalancerAddress["Ipv6Address"].asString();
 			zoneMappingsObject.loadBalancerAddresses.push_back(loadBalancerAddressesObject);
 		}
 		zoneMappings_.push_back(zoneMappingsObject);
@@ -134,6 +136,12 @@ void GetLoadBalancerAttributeResult::parse(const std::string &payload)
 		resourceGroupId_ = value["ResourceGroupId"].asString();
 	if(!value["VpcId"].isNull())
 		vpcId_ = value["VpcId"].asString();
+	if(!value["ConfigManagedEnabled"].isNull())
+		configManagedEnabled_ = value["ConfigManagedEnabled"].asString() == "true";
+	if(!value["AddressIpVersion"].isNull())
+		addressIpVersion_ = value["AddressIpVersion"].asString();
+	if(!value["Ipv6AddressType"].isNull())
+		ipv6AddressType_ = value["Ipv6AddressType"].asString();
 
 }
 
@@ -142,9 +150,9 @@ bool GetLoadBalancerAttributeResult::getServiceManagedEnabled()const
 	return serviceManagedEnabled_;
 }
 
-std::string GetLoadBalancerAttributeResult::getLoadBalancerEdition()const
+std::string GetLoadBalancerAttributeResult::getAddressIpVersion()const
 {
-	return loadBalancerEdition_;
+	return addressIpVersion_;
 }
 
 std::string GetLoadBalancerAttributeResult::getResourceGroupId()const
@@ -152,19 +160,9 @@ std::string GetLoadBalancerAttributeResult::getResourceGroupId()const
 	return resourceGroupId_;
 }
 
-GetLoadBalancerAttributeResult::LoadBalancerBillingConfig GetLoadBalancerAttributeResult::getLoadBalancerBillingConfig()const
-{
-	return loadBalancerBillingConfig_;
-}
-
 std::vector<std::string> GetLoadBalancerAttributeResult::getFeatureLabels()const
 {
 	return featureLabels_;
-}
-
-std::string GetLoadBalancerAttributeResult::getCreateTime()const
-{
-	return createTime_;
 }
 
 std::string GetLoadBalancerAttributeResult::getLoadBalancerId()const
@@ -182,6 +180,51 @@ std::string GetLoadBalancerAttributeResult::getDNSName()const
 	return dNSName_;
 }
 
+std::string GetLoadBalancerAttributeResult::getIpv6AddressType()const
+{
+	return ipv6AddressType_;
+}
+
+int GetLoadBalancerAttributeResult::getBandwidthCapacity()const
+{
+	return bandwidthCapacity_;
+}
+
+GetLoadBalancerAttributeResult::DeletionProtectionConfig GetLoadBalancerAttributeResult::getDeletionProtectionConfig()const
+{
+	return deletionProtectionConfig_;
+}
+
+std::string GetLoadBalancerAttributeResult::getServiceManagedMode()const
+{
+	return serviceManagedMode_;
+}
+
+std::string GetLoadBalancerAttributeResult::getBandwidthPackageId()const
+{
+	return bandwidthPackageId_;
+}
+
+std::vector<GetLoadBalancerAttributeResult::Tag> GetLoadBalancerAttributeResult::getTags()const
+{
+	return tags_;
+}
+
+std::string GetLoadBalancerAttributeResult::getLoadBalancerEdition()const
+{
+	return loadBalancerEdition_;
+}
+
+GetLoadBalancerAttributeResult::LoadBalancerBillingConfig GetLoadBalancerAttributeResult::getLoadBalancerBillingConfig()const
+{
+	return loadBalancerBillingConfig_;
+}
+
+std::string GetLoadBalancerAttributeResult::getCreateTime()const
+{
+	return createTime_;
+}
+
 GetLoadBalancerAttributeResult::ModificationProtectionConfig GetLoadBalancerAttributeResult::getModificationProtectionConfig()const
 {
 	return modificationProtectionConfig_;
@@ -197,14 +240,9 @@ GetLoadBalancerAttributeResult::AccessLogConfig GetLoadBalancerAttributeResult::
 	return accessLogConfig_;
 }
 
-int GetLoadBalancerAttributeResult::getBandwidthCapacity()const
+bool GetLoadBalancerAttributeResult::getConfigManagedEnabled()const
 {
-	return bandwidthCapacity_;
-}
-
-GetLoadBalancerAttributeResult::DeletionProtectionConfig GetLoadBalancerAttributeResult::getDeletionProtectionConfig()const
-{
-	return deletionProtectionConfig_;
+	return configManagedEnabled_;
 }
 
 std::string GetLoadBalancerAttributeResult::getLoadBalancerBussinessStatus()const
@@ -215,16 +253,6 @@ std::string GetLoadBalancerAttributeResult::getLoadBalancerBussinessStatus()cons
 std::string GetLoadBalancerAttributeResult::getVpcId()const
 {
 	return vpcId_;
-}
-
-std::string GetLoadBalancerAttributeResult::getServiceManagedMode()const
-{
-	return serviceManagedMode_;
-}
-
-std::string GetLoadBalancerAttributeResult::getBandwidthPackageId()const
-{
-	return bandwidthPackageId_;
 }
 
 std::string GetLoadBalancerAttributeResult::getRegionId()const
@@ -245,11 +273,6 @@ std::string GetLoadBalancerAttributeResult::getAddressType()const
 std::string GetLoadBalancerAttributeResult::getLoadBalancerStatus()const
 {
 	return loadBalancerStatus_;
-}
-
-std::vector<GetLoadBalancerAttributeResult::Tag> GetLoadBalancerAttributeResult::getTags()const
-{
-	return tags_;
 }
 
 std::vector<GetLoadBalancerAttributeResult::LoadBalancerOperationLock> GetLoadBalancerAttributeResult::getLoadBalancerOperationLocks()const

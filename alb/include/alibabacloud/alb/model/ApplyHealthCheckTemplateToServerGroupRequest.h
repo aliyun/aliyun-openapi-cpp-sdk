@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ALB_MODEL_REPLACESERVERSINSERVERGROUPREQUEST_H_
-#define ALIBABACLOUD_ALB_MODEL_REPLACESERVERSINSERVERGROUPREQUEST_H_
+#ifndef ALIBABACLOUD_ALB_MODEL_APPLYHEALTHCHECKTEMPLATETOSERVERGROUPREQUEST_H_
+#define ALIBABACLOUD_ALB_MODEL_APPLYHEALTHCHECKTEMPLATETOSERVERGROUPREQUEST_H_
 
 #include <alibabacloud/alb/AlbExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,44 +26,26 @@
 namespace AlibabaCloud {
 namespace Alb {
 namespace Model {
-class ALIBABACLOUD_ALB_EXPORT ReplaceServersInServerGroupRequest : public RpcServiceRequest {
+class ALIBABACLOUD_ALB_EXPORT ApplyHealthCheckTemplateToServerGroupRequest : public RpcServiceRequest {
 public:
-	struct AddedServers {
-		bool remoteIpEnabled;
-		std::string serverType;
-		int port;
-		std::string description;
-		std::string serverIp;
-		int weight;
-		std::string serverId;
-	};
-	struct RemovedServers {
-		std::string serverType;
-		int port;
-		std::string serverIp;
-		std::string serverId;
-	};
-	ReplaceServersInServerGroupRequest();
-	~ReplaceServersInServerGroupRequest();
+	ApplyHealthCheckTemplateToServerGroupRequest();
+	~ApplyHealthCheckTemplateToServerGroupRequest();
 	std::string getClientToken() const;
 	void setClientToken(const std::string &clientToken);
 	std::string getServerGroupId() const;
 	void setServerGroupId(const std::string &serverGroupId);
-	std::vector<AddedServers> getAddedServers() const;
-	void setAddedServers(const std::vector<AddedServers> &addedServers);
 	bool getDryRun() const;
 	void setDryRun(bool dryRun);
-	std::vector<RemovedServers> getRemovedServers() const;
-	void setRemovedServers(const std::vector<RemovedServers> &removedServers);
+	std::string getHealthCheckTemplateId() const;
+	void setHealthCheckTemplateId(const std::string &healthCheckTemplateId);
 
 private:
 	std::string clientToken_;
 	std::string serverGroupId_;
-	std::vector<AddedServers> addedServers_;
 	bool dryRun_;
-	std::vector<RemovedServers> removedServers_;
+	std::string healthCheckTemplateId_;
 };
 } // namespace Model
 } // namespace Alb
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_ALB_MODEL_REPLACESERVERSINSERVERGROUPREQUEST_H_
+#endif // !ALIBABACLOUD_ALB_MODEL_APPLYHEALTHCHECKTEMPLATETOSERVERGROUPREQUEST_H_

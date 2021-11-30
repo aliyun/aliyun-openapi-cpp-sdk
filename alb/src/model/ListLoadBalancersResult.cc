@@ -73,6 +73,12 @@ void ListLoadBalancersResult::parse(const std::string &payload)
 			loadBalancersObject.resourceGroupId = valueLoadBalancersloadBalancer["ResourceGroupId"].asString();
 		if(!valueLoadBalancersloadBalancer["VpcId"].isNull())
 			loadBalancersObject.vpcId = valueLoadBalancersloadBalancer["VpcId"].asString();
+		if(!valueLoadBalancersloadBalancer["ConfigManagedEnabled"].isNull())
+			loadBalancersObject.configManagedEnabled = valueLoadBalancersloadBalancer["ConfigManagedEnabled"].asString() == "true";
+		if(!valueLoadBalancersloadBalancer["AddressIpVersion"].isNull())
+			loadBalancersObject.addressIpVersion = valueLoadBalancersloadBalancer["AddressIpVersion"].asString();
+		if(!valueLoadBalancersloadBalancer["Ipv6AddressType"].isNull())
+			loadBalancersObject.ipv6AddressType = valueLoadBalancersloadBalancer["Ipv6AddressType"].asString();
 		auto allLoadBalancerOperationLocksNode = valueLoadBalancersloadBalancer["LoadBalancerOperationLocks"]["LoadBalancerOperationLock"];
 		for (auto valueLoadBalancersloadBalancerLoadBalancerOperationLocksLoadBalancerOperationLock : allLoadBalancerOperationLocksNode)
 		{

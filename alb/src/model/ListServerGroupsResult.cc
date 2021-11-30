@@ -63,6 +63,14 @@ void ListServerGroupsResult::parse(const std::string &payload)
 			serverGroupsObject.serviceManagedEnabled = valueServerGroupsServerGroup["ServiceManagedEnabled"].asString() == "true";
 		if(!valueServerGroupsServerGroup["ServiceManagedMode"].isNull())
 			serverGroupsObject.serviceManagedMode = valueServerGroupsServerGroup["ServiceManagedMode"].asString();
+		if(!valueServerGroupsServerGroup["ConfigManagedEnabled"].isNull())
+			serverGroupsObject.configManagedEnabled = valueServerGroupsServerGroup["ConfigManagedEnabled"].asString() == "true";
+		if(!valueServerGroupsServerGroup["UpstreamKeepaliveEnabled"].isNull())
+			serverGroupsObject.upstreamKeepaliveEnabled = valueServerGroupsServerGroup["UpstreamKeepaliveEnabled"].asString() == "true";
+		if(!valueServerGroupsServerGroup["Ipv6Enabled"].isNull())
+			serverGroupsObject.ipv6Enabled = valueServerGroupsServerGroup["Ipv6Enabled"].asString() == "true";
+		if(!valueServerGroupsServerGroup["ServerCount"].isNull())
+			serverGroupsObject.serverCount = std::stoi(valueServerGroupsServerGroup["ServerCount"].asString());
 		auto allTagsNode = valueServerGroupsServerGroup["Tags"]["Tag"];
 		for (auto valueServerGroupsServerGroupTagsTag : allTagsNode)
 		{

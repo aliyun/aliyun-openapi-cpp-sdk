@@ -66,10 +66,14 @@ public:
 	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getProtocol() const;
 	void setProtocol(const std::string &protocol);
+	bool getUpstreamKeepaliveEnabled() const;
+	void setUpstreamKeepaliveEnabled(bool upstreamKeepaliveEnabled);
 	StickySessionConfig getStickySessionConfig() const;
 	void setStickySessionConfig(const StickySessionConfig &stickySessionConfig);
 	bool getDryRun() const;
 	void setDryRun(bool dryRun);
+	bool getIpv6Enabled() const;
+	void setIpv6Enabled(bool ipv6Enabled);
 	std::string getServerGroupType() const;
 	void setServerGroupType(const std::string &serverGroupType);
 	std::string getVpcId() const;
@@ -82,8 +86,10 @@ private:
 	std::string scheduler_;
 	std::string resourceGroupId_;
 	std::string protocol_;
+	bool upstreamKeepaliveEnabled_;
 	StickySessionConfig stickySessionConfig_;
 	bool dryRun_;
+	bool ipv6Enabled_;
 	std::string serverGroupType_;
 	std::string vpcId_;
 };

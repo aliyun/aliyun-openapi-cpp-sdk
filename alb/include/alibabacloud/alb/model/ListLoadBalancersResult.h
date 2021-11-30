@@ -67,15 +67,18 @@ namespace AlibabaCloud
 					};
 					bool serviceManagedEnabled;
 					std::string loadBalancerEdition;
+					std::string addressIpVersion;
 					std::string resourceGroupId;
 					LoadBalancerBillingConfig loadBalancerBillingConfig;
 					std::string createTime;
 					std::string loadBalancerId;
 					std::string dNSName;
 					ModificationProtectionConfig modificationProtectionConfig;
+					std::string ipv6AddressType;
 					std::string loadBalancerName;
 					AccessLogConfig accessLogConfig;
 					int bandwidthCapacity;
+					bool configManagedEnabled;
 					DeletionProtectionConfig deletionProtectionConfig;
 					std::string loadBalancerBussinessStatus;
 					std::string vpcId;

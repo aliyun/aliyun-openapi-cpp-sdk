@@ -26,10 +26,14 @@
 #include "model/AddEntriesToAclResult.h"
 #include "model/AddServersToServerGroupRequest.h"
 #include "model/AddServersToServerGroupResult.h"
+#include "model/ApplyHealthCheckTemplateToServerGroupRequest.h"
+#include "model/ApplyHealthCheckTemplateToServerGroupResult.h"
 #include "model/AssociateAclsWithListenerRequest.h"
 #include "model/AssociateAclsWithListenerResult.h"
 #include "model/AssociateAdditionalCertificatesWithListenerRequest.h"
 #include "model/AssociateAdditionalCertificatesWithListenerResult.h"
+#include "model/AttachCommonBandwidthPackageToLoadBalancerRequest.h"
+#include "model/AttachCommonBandwidthPackageToLoadBalancerResult.h"
 #include "model/CreateAclRequest.h"
 #include "model/CreateAclResult.h"
 #include "model/CreateHealthCheckTemplateRequest.h"
@@ -66,6 +70,8 @@
 #include "model/DescribeRegionsResult.h"
 #include "model/DescribeZonesRequest.h"
 #include "model/DescribeZonesResult.h"
+#include "model/DetachCommonBandwidthPackageFromLoadBalancerRequest.h"
+#include "model/DetachCommonBandwidthPackageFromLoadBalancerResult.h"
 #include "model/DisableDeletionProtectionRequest.h"
 #include "model/DisableDeletionProtectionResult.h"
 #include "model/DisableLoadBalancerAccessLogRequest.h"
@@ -82,6 +88,8 @@
 #include "model/GetHealthCheckTemplateAttributeResult.h"
 #include "model/GetListenerAttributeRequest.h"
 #include "model/GetListenerAttributeResult.h"
+#include "model/GetListenerHealthStatusRequest.h"
+#include "model/GetListenerHealthStatusResult.h"
 #include "model/GetLoadBalancerAttributeRequest.h"
 #include "model/GetLoadBalancerAttributeResult.h"
 #include "model/ListAclEntriesRequest.h"
@@ -146,6 +154,8 @@
 #include "model/UpdateLoadBalancerAttributeResult.h"
 #include "model/UpdateLoadBalancerEditionRequest.h"
 #include "model/UpdateLoadBalancerEditionResult.h"
+#include "model/UpdateLoadBalancerZonesRequest.h"
+#include "model/UpdateLoadBalancerZonesResult.h"
 #include "model/UpdateRuleAttributeRequest.h"
 #include "model/UpdateRuleAttributeResult.h"
 #include "model/UpdateRulesAttributeRequest.h"
@@ -171,12 +181,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AddServersToServerGroupResult> AddServersToServerGroupOutcome;
 			typedef std::future<AddServersToServerGroupOutcome> AddServersToServerGroupOutcomeCallable;
 			typedef std::function<void(const AlbClient*, const Model::AddServersToServerGroupRequest&, const AddServersToServerGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddServersToServerGroupAsyncHandler;
+			typedef Outcome<Error, Model::ApplyHealthCheckTemplateToServerGroupResult> ApplyHealthCheckTemplateToServerGroupOutcome;
+			typedef std::future<ApplyHealthCheckTemplateToServerGroupOutcome> ApplyHealthCheckTemplateToServerGroupOutcomeCallable;
+			typedef std::function<void(const AlbClient*, const Model::ApplyHealthCheckTemplateToServerGroupRequest&, const ApplyHealthCheckTemplateToServerGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ApplyHealthCheckTemplateToServerGroupAsyncHandler;
 			typedef Outcome<Error, Model::AssociateAclsWithListenerResult> AssociateAclsWithListenerOutcome;
 			typedef std::future<AssociateAclsWithListenerOutcome> AssociateAclsWithListenerOutcomeCallable;
 			typedef std::function<void(const AlbClient*, const Model::AssociateAclsWithListenerRequest&, const AssociateAclsWithListenerOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AssociateAclsWithListenerAsyncHandler;
 			typedef Outcome<Error, Model::AssociateAdditionalCertificatesWithListenerResult> AssociateAdditionalCertificatesWithListenerOutcome;
 			typedef std::future<AssociateAdditionalCertificatesWithListenerOutcome> AssociateAdditionalCertificatesWithListenerOutcomeCallable;
 			typedef std::function<void(const AlbClient*, const Model::AssociateAdditionalCertificatesWithListenerRequest&, const AssociateAdditionalCertificatesWithListenerOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AssociateAdditionalCertificatesWithListenerAsyncHandler;
+			typedef Outcome<Error, Model::AttachCommonBandwidthPackageToLoadBalancerResult> AttachCommonBandwidthPackageToLoadBalancerOutcome;
+			typedef std::future<AttachCommonBandwidthPackageToLoadBalancerOutcome> AttachCommonBandwidthPackageToLoadBalancerOutcomeCallable;
+			typedef std::function<void(const AlbClient*, const Model::AttachCommonBandwidthPackageToLoadBalancerRequest&, const AttachCommonBandwidthPackageToLoadBalancerOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AttachCommonBandwidthPackageToLoadBalancerAsyncHandler;
 			typedef Outcome<Error, Model::CreateAclResult> CreateAclOutcome;
 			typedef std::future<CreateAclOutcome> CreateAclOutcomeCallable;
 			typedef std::function<void(const AlbClient*, const Model::CreateAclRequest&, const CreateAclOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateAclAsyncHandler;
@@ -231,6 +247,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeZonesResult> DescribeZonesOutcome;
 			typedef std::future<DescribeZonesOutcome> DescribeZonesOutcomeCallable;
 			typedef std::function<void(const AlbClient*, const Model::DescribeZonesRequest&, const DescribeZonesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeZonesAsyncHandler;
+			typedef Outcome<Error, Model::DetachCommonBandwidthPackageFromLoadBalancerResult> DetachCommonBandwidthPackageFromLoadBalancerOutcome;
+			typedef std::future<DetachCommonBandwidthPackageFromLoadBalancerOutcome> DetachCommonBandwidthPackageFromLoadBalancerOutcomeCallable;
+			typedef std::function<void(const AlbClient*, const Model::DetachCommonBandwidthPackageFromLoadBalancerRequest&, const DetachCommonBandwidthPackageFromLoadBalancerOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetachCommonBandwidthPackageFromLoadBalancerAsyncHandler;
 			typedef Outcome<Error, Model::DisableDeletionProtectionResult> DisableDeletionProtectionOutcome;
 			typedef std::future<DisableDeletionProtectionOutcome> DisableDeletionProtectionOutcomeCallable;
 			typedef std::function<void(const AlbClient*, const Model::DisableDeletionProtectionRequest&, const DisableDeletionProtectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DisableDeletionProtectionAsyncHandler;
@@ -255,6 +274,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetListenerAttributeResult> GetListenerAttributeOutcome;
 			typedef std::future<GetListenerAttributeOutcome> GetListenerAttributeOutcomeCallable;
 			typedef std::function<void(const AlbClient*, const Model::GetListenerAttributeRequest&, const GetListenerAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetListenerAttributeAsyncHandler;
+			typedef Outcome<Error, Model::GetListenerHealthStatusResult> GetListenerHealthStatusOutcome;
+			typedef std::future<GetListenerHealthStatusOutcome> GetListenerHealthStatusOutcomeCallable;
+			typedef std::function<void(const AlbClient*, const Model::GetListenerHealthStatusRequest&, const GetListenerHealthStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetListenerHealthStatusAsyncHandler;
 			typedef Outcome<Error, Model::GetLoadBalancerAttributeResult> GetLoadBalancerAttributeOutcome;
 			typedef std::future<GetLoadBalancerAttributeOutcome> GetLoadBalancerAttributeOutcomeCallable;
 			typedef std::function<void(const AlbClient*, const Model::GetLoadBalancerAttributeRequest&, const GetLoadBalancerAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetLoadBalancerAttributeAsyncHandler;
@@ -351,6 +373,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateLoadBalancerEditionResult> UpdateLoadBalancerEditionOutcome;
 			typedef std::future<UpdateLoadBalancerEditionOutcome> UpdateLoadBalancerEditionOutcomeCallable;
 			typedef std::function<void(const AlbClient*, const Model::UpdateLoadBalancerEditionRequest&, const UpdateLoadBalancerEditionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateLoadBalancerEditionAsyncHandler;
+			typedef Outcome<Error, Model::UpdateLoadBalancerZonesResult> UpdateLoadBalancerZonesOutcome;
+			typedef std::future<UpdateLoadBalancerZonesOutcome> UpdateLoadBalancerZonesOutcomeCallable;
+			typedef std::function<void(const AlbClient*, const Model::UpdateLoadBalancerZonesRequest&, const UpdateLoadBalancerZonesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateLoadBalancerZonesAsyncHandler;
 			typedef Outcome<Error, Model::UpdateRuleAttributeResult> UpdateRuleAttributeOutcome;
 			typedef std::future<UpdateRuleAttributeOutcome> UpdateRuleAttributeOutcomeCallable;
 			typedef std::function<void(const AlbClient*, const Model::UpdateRuleAttributeRequest&, const UpdateRuleAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateRuleAttributeAsyncHandler;
@@ -377,12 +402,18 @@ namespace AlibabaCloud
 			AddServersToServerGroupOutcome addServersToServerGroup(const Model::AddServersToServerGroupRequest &request)const;
 			void addServersToServerGroupAsync(const Model::AddServersToServerGroupRequest& request, const AddServersToServerGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddServersToServerGroupOutcomeCallable addServersToServerGroupCallable(const Model::AddServersToServerGroupRequest& request) const;
+			ApplyHealthCheckTemplateToServerGroupOutcome applyHealthCheckTemplateToServerGroup(const Model::ApplyHealthCheckTemplateToServerGroupRequest &request)const;
+			void applyHealthCheckTemplateToServerGroupAsync(const Model::ApplyHealthCheckTemplateToServerGroupRequest& request, const ApplyHealthCheckTemplateToServerGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ApplyHealthCheckTemplateToServerGroupOutcomeCallable applyHealthCheckTemplateToServerGroupCallable(const Model::ApplyHealthCheckTemplateToServerGroupRequest& request) const;
 			AssociateAclsWithListenerOutcome associateAclsWithListener(const Model::AssociateAclsWithListenerRequest &request)const;
 			void associateAclsWithListenerAsync(const Model::AssociateAclsWithListenerRequest& request, const AssociateAclsWithListenerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AssociateAclsWithListenerOutcomeCallable associateAclsWithListenerCallable(const Model::AssociateAclsWithListenerRequest& request) const;
 			AssociateAdditionalCertificatesWithListenerOutcome associateAdditionalCertificatesWithListener(const Model::AssociateAdditionalCertificatesWithListenerRequest &request)const;
 			void associateAdditionalCertificatesWithListenerAsync(const Model::AssociateAdditionalCertificatesWithListenerRequest& request, const AssociateAdditionalCertificatesWithListenerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AssociateAdditionalCertificatesWithListenerOutcomeCallable associateAdditionalCertificatesWithListenerCallable(const Model::AssociateAdditionalCertificatesWithListenerRequest& request) const;
+			AttachCommonBandwidthPackageToLoadBalancerOutcome attachCommonBandwidthPackageToLoadBalancer(const Model::AttachCommonBandwidthPackageToLoadBalancerRequest &request)const;
+			void attachCommonBandwidthPackageToLoadBalancerAsync(const Model::AttachCommonBandwidthPackageToLoadBalancerRequest& request, const AttachCommonBandwidthPackageToLoadBalancerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AttachCommonBandwidthPackageToLoadBalancerOutcomeCallable attachCommonBandwidthPackageToLoadBalancerCallable(const Model::AttachCommonBandwidthPackageToLoadBalancerRequest& request) const;
 			CreateAclOutcome createAcl(const Model::CreateAclRequest &request)const;
 			void createAclAsync(const Model::CreateAclRequest& request, const CreateAclAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateAclOutcomeCallable createAclCallable(const Model::CreateAclRequest& request) const;
@@ -437,6 +468,9 @@ namespace AlibabaCloud
 			DescribeZonesOutcome describeZones(const Model::DescribeZonesRequest &request)const;
 			void describeZonesAsync(const Model::DescribeZonesRequest& request, const DescribeZonesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeZonesOutcomeCallable describeZonesCallable(const Model::DescribeZonesRequest& request) const;
+			DetachCommonBandwidthPackageFromLoadBalancerOutcome detachCommonBandwidthPackageFromLoadBalancer(const Model::DetachCommonBandwidthPackageFromLoadBalancerRequest &request)const;
+			void detachCommonBandwidthPackageFromLoadBalancerAsync(const Model::DetachCommonBandwidthPackageFromLoadBalancerRequest& request, const DetachCommonBandwidthPackageFromLoadBalancerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DetachCommonBandwidthPackageFromLoadBalancerOutcomeCallable detachCommonBandwidthPackageFromLoadBalancerCallable(const Model::DetachCommonBandwidthPackageFromLoadBalancerRequest& request) const;
 			DisableDeletionProtectionOutcome disableDeletionProtection(const Model::DisableDeletionProtectionRequest &request)const;
 			void disableDeletionProtectionAsync(const Model::DisableDeletionProtectionRequest& request, const DisableDeletionProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DisableDeletionProtectionOutcomeCallable disableDeletionProtectionCallable(const Model::DisableDeletionProtectionRequest& request) const;
@@ -461,6 +495,9 @@ namespace AlibabaCloud
 			GetListenerAttributeOutcome getListenerAttribute(const Model::GetListenerAttributeRequest &request)const;
 			void getListenerAttributeAsync(const Model::GetListenerAttributeRequest& request, const GetListenerAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetListenerAttributeOutcomeCallable getListenerAttributeCallable(const Model::GetListenerAttributeRequest& request) const;
+			GetListenerHealthStatusOutcome getListenerHealthStatus(const Model::GetListenerHealthStatusRequest &request)const;
+			void getListenerHealthStatusAsync(const Model::GetListenerHealthStatusRequest& request, const GetListenerHealthStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetListenerHealthStatusOutcomeCallable getListenerHealthStatusCallable(const Model::GetListenerHealthStatusRequest& request) const;
 			GetLoadBalancerAttributeOutcome getLoadBalancerAttribute(const Model::GetLoadBalancerAttributeRequest &request)const;
 			void getLoadBalancerAttributeAsync(const Model::GetLoadBalancerAttributeRequest& request, const GetLoadBalancerAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetLoadBalancerAttributeOutcomeCallable getLoadBalancerAttributeCallable(const Model::GetLoadBalancerAttributeRequest& request) const;
@@ -557,6 +594,9 @@ namespace AlibabaCloud
 			UpdateLoadBalancerEditionOutcome updateLoadBalancerEdition(const Model::UpdateLoadBalancerEditionRequest &request)const;
 			void updateLoadBalancerEditionAsync(const Model::UpdateLoadBalancerEditionRequest& request, const UpdateLoadBalancerEditionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateLoadBalancerEditionOutcomeCallable updateLoadBalancerEditionCallable(const Model::UpdateLoadBalancerEditionRequest& request) const;
+			UpdateLoadBalancerZonesOutcome updateLoadBalancerZones(const Model::UpdateLoadBalancerZonesRequest &request)const;
+			void updateLoadBalancerZonesAsync(const Model::UpdateLoadBalancerZonesRequest& request, const UpdateLoadBalancerZonesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateLoadBalancerZonesOutcomeCallable updateLoadBalancerZonesCallable(const Model::UpdateLoadBalancerZonesRequest& request) const;
 			UpdateRuleAttributeOutcome updateRuleAttribute(const Model::UpdateRuleAttributeRequest &request)const;
 			void updateRuleAttributeAsync(const Model::UpdateRuleAttributeRequest& request, const UpdateRuleAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateRuleAttributeOutcomeCallable updateRuleAttributeCallable(const Model::UpdateRuleAttributeRequest& request) const;

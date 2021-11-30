@@ -38,6 +38,8 @@ public:
 	void setLoadBalancerNames(const std::vector<std::string> &loadBalancerNames);
 	std::vector<std::string> getLoadBalancerIds() const;
 	void setLoadBalancerIds(const std::vector<std::string> &loadBalancerIds);
+	std::string getAddressIpVersion() const;
+	void setAddressIpVersion(const std::string &addressIpVersion);
 	std::string getResourceGroupId() const;
 	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getNextToken() const;
@@ -60,12 +62,15 @@ public:
 	void setMaxResults(int maxResults);
 	std::string getZoneId() const;
 	void setZoneId(const std::string &zoneId);
+	std::string getIpv6AddressType() const;
+	void setIpv6AddressType(const std::string &ipv6AddressType);
 	std::string getPayType() const;
 	void setPayType(const std::string &payType);
 
 private:
 	std::vector<std::string> loadBalancerNames_;
 	std::vector<std::string> loadBalancerIds_;
+	std::string addressIpVersion_;
 	std::string resourceGroupId_;
 	std::string nextToken_;
 	std::string loadBalancerBussinessStatus_;
@@ -77,6 +82,7 @@ private:
 	std::string internetChargeType_;
 	int maxResults_;
 	std::string zoneId_;
+	std::string ipv6AddressType_;
 	std::string payType_;
 };
 } // namespace Model

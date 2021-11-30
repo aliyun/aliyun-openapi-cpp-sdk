@@ -64,6 +64,8 @@ public:
 	void setScheduler(const std::string &scheduler);
 	std::string getServerGroupId() const;
 	void setServerGroupId(const std::string &serverGroupId);
+	bool getUpstreamKeepaliveEnabled() const;
+	void setUpstreamKeepaliveEnabled(bool upstreamKeepaliveEnabled);
 	StickySessionConfig getStickySessionConfig() const;
 	void setStickySessionConfig(const StickySessionConfig &stickySessionConfig);
 	bool getDryRun() const;
@@ -75,6 +77,7 @@ private:
 	HealthCheckConfig healthCheckConfig_;
 	std::string scheduler_;
 	std::string serverGroupId_;
+	bool upstreamKeepaliveEnabled_;
 	StickySessionConfig stickySessionConfig_;
 	bool dryRun_;
 };

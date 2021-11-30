@@ -68,6 +68,7 @@ namespace AlibabaCloud
 					struct LoadBalancerAddress
 					{
 						std::string address;
+						std::string ipv6Address;
 					};
 					std::string zoneId;
 					std::string vSwitchId;
@@ -79,56 +80,62 @@ namespace AlibabaCloud
 				explicit GetLoadBalancerAttributeResult(const std::string &payload);
 				~GetLoadBalancerAttributeResult();
 				bool getServiceManagedEnabled()const;
-				std::string getLoadBalancerEdition()const;
+				std::string getAddressIpVersion()const;
 				std::string getResourceGroupId()const;
-				LoadBalancerBillingConfig getLoadBalancerBillingConfig()const;
 				std::vector<std::string> getFeatureLabels()const;
-				std::string getCreateTime()const;
 				std::string getLoadBalancerId()const;
 				std::vector<ZoneMapping> getZoneMappings()const;
 				std::string getDNSName()const;
+				std::string getIpv6AddressType()const;
+				int getBandwidthCapacity()const;
+				DeletionProtectionConfig getDeletionProtectionConfig()const;
+				std::string getServiceManagedMode()const;
+				std::string getBandwidthPackageId()const;
+				std::vector<Tag> getTags()const;
+				std::string getLoadBalancerEdition()const;
+				LoadBalancerBillingConfig getLoadBalancerBillingConfig()const;
+				std::string getCreateTime()const;
 				ModificationProtectionConfig getModificationProtectionConfig()const;
 				std::string getLoadBalancerName()const;
 				AccessLogConfig getAccessLogConfig()const;
-				int getBandwidthCapacity()const;
-				DeletionProtectionConfig getDeletionProtectionConfig()const;
+				bool getConfigManagedEnabled()const;
 				std::string getLoadBalancerBussinessStatus()const;
 				std::string getVpcId()const;
-				std::string getServiceManagedMode()const;
-				std::string getBandwidthPackageId()const;
 				std::string getRegionId()const;
 				std::string getAddressAllocatedMode()const;
 				std::string getAddressType()const;
 				std::string getLoadBalancerStatus()const;
-				std::vector<Tag> getTags()const;
 				std::vector<LoadBalancerOperationLock> getLoadBalancerOperationLocks()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				bool serviceManagedEnabled_;
-				std::string loadBalancerEdition_;
+				std::string addressIpVersion_;
 				std::string resourceGroupId_;
-				LoadBalancerBillingConfig loadBalancerBillingConfig_;
 				std::vector<std::string> featureLabels_;
-				std::string createTime_;
 				std::string loadBalancerId_;
 				std::vector<ZoneMapping> zoneMappings_;
 				std::string dNSName_;
+				std::string ipv6AddressType_;
+				int bandwidthCapacity_;
+				DeletionProtectionConfig deletionProtectionConfig_;
+				std::string serviceManagedMode_;
+				std::string bandwidthPackageId_;
+				std::vector<Tag> tags_;
+				std::string loadBalancerEdition_;
+				LoadBalancerBillingConfig loadBalancerBillingConfig_;
+				std::string createTime_;
 				ModificationProtectionConfig modificationProtectionConfig_;
 				std::string loadBalancerName_;
 				AccessLogConfig accessLogConfig_;
-				int bandwidthCapacity_;
-				DeletionProtectionConfig deletionProtectionConfig_;
+				bool configManagedEnabled_;
 				std::string loadBalancerBussinessStatus_;
 				std::string vpcId_;
-				std::string serviceManagedMode_;
-				std::string bandwidthPackageId_;
 				std::string regionId_;
 				std::string addressAllocatedMode_;
 				std::string addressType_;
 				std::string loadBalancerStatus_;
-				std::vector<Tag> tags_;
 				std::vector<LoadBalancerOperationLock> loadBalancerOperationLocks_;
 
 			};

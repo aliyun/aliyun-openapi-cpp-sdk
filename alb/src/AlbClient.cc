@@ -123,6 +123,42 @@ AlbClient::AddServersToServerGroupOutcomeCallable AlbClient::addServersToServerG
 	return task->get_future();
 }
 
+AlbClient::ApplyHealthCheckTemplateToServerGroupOutcome AlbClient::applyHealthCheckTemplateToServerGroup(const ApplyHealthCheckTemplateToServerGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ApplyHealthCheckTemplateToServerGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ApplyHealthCheckTemplateToServerGroupOutcome(ApplyHealthCheckTemplateToServerGroupResult(outcome.result()));
+	else
+		return ApplyHealthCheckTemplateToServerGroupOutcome(outcome.error());
+}
+
+void AlbClient::applyHealthCheckTemplateToServerGroupAsync(const ApplyHealthCheckTemplateToServerGroupRequest& request, const ApplyHealthCheckTemplateToServerGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, applyHealthCheckTemplateToServerGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlbClient::ApplyHealthCheckTemplateToServerGroupOutcomeCallable AlbClient::applyHealthCheckTemplateToServerGroupCallable(const ApplyHealthCheckTemplateToServerGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ApplyHealthCheckTemplateToServerGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->applyHealthCheckTemplateToServerGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AlbClient::AssociateAclsWithListenerOutcome AlbClient::associateAclsWithListener(const AssociateAclsWithListenerRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -189,6 +225,42 @@ AlbClient::AssociateAdditionalCertificatesWithListenerOutcomeCallable AlbClient:
 			[this, request]()
 			{
 			return this->associateAdditionalCertificatesWithListener(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlbClient::AttachCommonBandwidthPackageToLoadBalancerOutcome AlbClient::attachCommonBandwidthPackageToLoadBalancer(const AttachCommonBandwidthPackageToLoadBalancerRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AttachCommonBandwidthPackageToLoadBalancerOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AttachCommonBandwidthPackageToLoadBalancerOutcome(AttachCommonBandwidthPackageToLoadBalancerResult(outcome.result()));
+	else
+		return AttachCommonBandwidthPackageToLoadBalancerOutcome(outcome.error());
+}
+
+void AlbClient::attachCommonBandwidthPackageToLoadBalancerAsync(const AttachCommonBandwidthPackageToLoadBalancerRequest& request, const AttachCommonBandwidthPackageToLoadBalancerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, attachCommonBandwidthPackageToLoadBalancer(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlbClient::AttachCommonBandwidthPackageToLoadBalancerOutcomeCallable AlbClient::attachCommonBandwidthPackageToLoadBalancerCallable(const AttachCommonBandwidthPackageToLoadBalancerRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AttachCommonBandwidthPackageToLoadBalancerOutcome()>>(
+			[this, request]()
+			{
+			return this->attachCommonBandwidthPackageToLoadBalancer(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -843,6 +915,42 @@ AlbClient::DescribeZonesOutcomeCallable AlbClient::describeZonesCallable(const D
 	return task->get_future();
 }
 
+AlbClient::DetachCommonBandwidthPackageFromLoadBalancerOutcome AlbClient::detachCommonBandwidthPackageFromLoadBalancer(const DetachCommonBandwidthPackageFromLoadBalancerRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DetachCommonBandwidthPackageFromLoadBalancerOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DetachCommonBandwidthPackageFromLoadBalancerOutcome(DetachCommonBandwidthPackageFromLoadBalancerResult(outcome.result()));
+	else
+		return DetachCommonBandwidthPackageFromLoadBalancerOutcome(outcome.error());
+}
+
+void AlbClient::detachCommonBandwidthPackageFromLoadBalancerAsync(const DetachCommonBandwidthPackageFromLoadBalancerRequest& request, const DetachCommonBandwidthPackageFromLoadBalancerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, detachCommonBandwidthPackageFromLoadBalancer(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlbClient::DetachCommonBandwidthPackageFromLoadBalancerOutcomeCallable AlbClient::detachCommonBandwidthPackageFromLoadBalancerCallable(const DetachCommonBandwidthPackageFromLoadBalancerRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DetachCommonBandwidthPackageFromLoadBalancerOutcome()>>(
+			[this, request]()
+			{
+			return this->detachCommonBandwidthPackageFromLoadBalancer(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AlbClient::DisableDeletionProtectionOutcome AlbClient::disableDeletionProtection(const DisableDeletionProtectionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1125,6 +1233,42 @@ AlbClient::GetListenerAttributeOutcomeCallable AlbClient::getListenerAttributeCa
 			[this, request]()
 			{
 			return this->getListenerAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlbClient::GetListenerHealthStatusOutcome AlbClient::getListenerHealthStatus(const GetListenerHealthStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetListenerHealthStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetListenerHealthStatusOutcome(GetListenerHealthStatusResult(outcome.result()));
+	else
+		return GetListenerHealthStatusOutcome(outcome.error());
+}
+
+void AlbClient::getListenerHealthStatusAsync(const GetListenerHealthStatusRequest& request, const GetListenerHealthStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getListenerHealthStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlbClient::GetListenerHealthStatusOutcomeCallable AlbClient::getListenerHealthStatusCallable(const GetListenerHealthStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetListenerHealthStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->getListenerHealthStatus(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2277,6 +2421,42 @@ AlbClient::UpdateLoadBalancerEditionOutcomeCallable AlbClient::updateLoadBalance
 			[this, request]()
 			{
 			return this->updateLoadBalancerEdition(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlbClient::UpdateLoadBalancerZonesOutcome AlbClient::updateLoadBalancerZones(const UpdateLoadBalancerZonesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateLoadBalancerZonesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateLoadBalancerZonesOutcome(UpdateLoadBalancerZonesResult(outcome.result()));
+	else
+		return UpdateLoadBalancerZonesOutcome(outcome.error());
+}
+
+void AlbClient::updateLoadBalancerZonesAsync(const UpdateLoadBalancerZonesRequest& request, const UpdateLoadBalancerZonesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateLoadBalancerZones(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlbClient::UpdateLoadBalancerZonesOutcomeCallable AlbClient::updateLoadBalancerZonesCallable(const UpdateLoadBalancerZonesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateLoadBalancerZonesOutcome()>>(
+			[this, request]()
+			{
+			return this->updateLoadBalancerZones(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

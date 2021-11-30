@@ -59,6 +59,8 @@ void ListServerGroupServersResult::parse(const std::string &payload)
 			serversObject.weight = std::stoi(valueServersBackendServer["Weight"].asString());
 		if(!valueServersBackendServer["ServerGroupId"].isNull())
 			serversObject.serverGroupId = valueServersBackendServer["ServerGroupId"].asString();
+		if(!valueServersBackendServer["RemoteIpEnabled"].isNull())
+			serversObject.remoteIpEnabled = valueServersBackendServer["RemoteIpEnabled"].asString() == "true";
 		servers_.push_back(serversObject);
 	}
 	if(!value["MaxResults"].isNull())

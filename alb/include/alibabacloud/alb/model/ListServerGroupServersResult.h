@@ -40,6 +40,7 @@ namespace AlibabaCloud
 					std::string serverId;
 					int port;
 					std::string serverIp;
+					bool remoteIpEnabled;
 					std::string serverGroupId;
 					int weight;
 				};

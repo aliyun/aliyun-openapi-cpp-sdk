@@ -33,6 +33,7 @@ public:
 		std::string status;
 	};
 	struct LoadBalancerBillingConfig {
+		std::string bandwidthPackageId;
 		std::string internetChargeType;
 		int internetBandwidth;
 		std::string payType;
@@ -40,6 +41,7 @@ public:
 	struct ZoneMappings {
 		std::string vSwitchId;
 		std::string zoneId;
+		std::string allocationId;
 	};
 	CreateLoadBalancerRequest();
 	~CreateLoadBalancerRequest();
@@ -51,6 +53,8 @@ public:
 	void setModificationProtectionConfig(const ModificationProtectionConfig &modificationProtectionConfig);
 	LoadBalancerBillingConfig getLoadBalancerBillingConfig() const;
 	void setLoadBalancerBillingConfig(const LoadBalancerBillingConfig &loadBalancerBillingConfig);
+	std::string getAddressIpVersion() const;
+	void setAddressIpVersion(const std::string &addressIpVersion);
 	bool getDeletionProtectionEnabled() const;
 	void setDeletionProtectionEnabled(bool deletionProtectionEnabled);
 	std::string getResourceGroupId() const;
@@ -73,6 +77,7 @@ private:
 	std::string clientToken_;
 	ModificationProtectionConfig modificationProtectionConfig_;
 	LoadBalancerBillingConfig loadBalancerBillingConfig_;
+	std::string addressIpVersion_;
 	bool deletionProtectionEnabled_;
 	std::string resourceGroupId_;
 	std::string loadBalancerName_;

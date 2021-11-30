@@ -25,10 +25,14 @@ set(alb_public_header_model
 	include/alibabacloud/alb/model/AddEntriesToAclResult.h
 	include/alibabacloud/alb/model/AddServersToServerGroupRequest.h
 	include/alibabacloud/alb/model/AddServersToServerGroupResult.h
+	include/alibabacloud/alb/model/ApplyHealthCheckTemplateToServerGroupRequest.h
+	include/alibabacloud/alb/model/ApplyHealthCheckTemplateToServerGroupResult.h
 	include/alibabacloud/alb/model/AssociateAclsWithListenerRequest.h
 	include/alibabacloud/alb/model/AssociateAclsWithListenerResult.h
 	include/alibabacloud/alb/model/AssociateAdditionalCertificatesWithListenerRequest.h
 	include/alibabacloud/alb/model/AssociateAdditionalCertificatesWithListenerResult.h
+	include/alibabacloud/alb/model/AttachCommonBandwidthPackageToLoadBalancerRequest.h
+	include/alibabacloud/alb/model/AttachCommonBandwidthPackageToLoadBalancerResult.h
 	include/alibabacloud/alb/model/CreateAclRequest.h
 	include/alibabacloud/alb/model/CreateAclResult.h
 	include/alibabacloud/alb/model/CreateHealthCheckTemplateRequest.h
@@ -65,6 +69,8 @@ set(alb_public_header_model
 	include/alibabacloud/alb/model/DescribeRegionsResult.h
 	include/alibabacloud/alb/model/DescribeZonesRequest.h
 	include/alibabacloud/alb/model/DescribeZonesResult.h
+	include/alibabacloud/alb/model/DetachCommonBandwidthPackageFromLoadBalancerRequest.h
+	include/alibabacloud/alb/model/DetachCommonBandwidthPackageFromLoadBalancerResult.h
 	include/alibabacloud/alb/model/DisableDeletionProtectionRequest.h
 	include/alibabacloud/alb/model/DisableDeletionProtectionResult.h
 	include/alibabacloud/alb/model/DisableLoadBalancerAccessLogRequest.h
@@ -81,6 +87,8 @@ set(alb_public_header_model
 	include/alibabacloud/alb/model/GetHealthCheckTemplateAttributeResult.h
 	include/alibabacloud/alb/model/GetListenerAttributeRequest.h
 	include/alibabacloud/alb/model/GetListenerAttributeResult.h
+	include/alibabacloud/alb/model/GetListenerHealthStatusRequest.h
+	include/alibabacloud/alb/model/GetListenerHealthStatusResult.h
 	include/alibabacloud/alb/model/GetLoadBalancerAttributeRequest.h
 	include/alibabacloud/alb/model/GetLoadBalancerAttributeResult.h
 	include/alibabacloud/alb/model/ListAclEntriesRequest.h
@@ -145,6 +153,8 @@ set(alb_public_header_model
 	include/alibabacloud/alb/model/UpdateLoadBalancerAttributeResult.h
 	include/alibabacloud/alb/model/UpdateLoadBalancerEditionRequest.h
 	include/alibabacloud/alb/model/UpdateLoadBalancerEditionResult.h
+	include/alibabacloud/alb/model/UpdateLoadBalancerZonesRequest.h
+	include/alibabacloud/alb/model/UpdateLoadBalancerZonesResult.h
 	include/alibabacloud/alb/model/UpdateRuleAttributeRequest.h
 	include/alibabacloud/alb/model/UpdateRuleAttributeResult.h
 	include/alibabacloud/alb/model/UpdateRulesAttributeRequest.h
@@ -162,10 +172,14 @@ set(alb_src
 	src/model/AddEntriesToAclResult.cc
 	src/model/AddServersToServerGroupRequest.cc
 	src/model/AddServersToServerGroupResult.cc
+	src/model/ApplyHealthCheckTemplateToServerGroupRequest.cc
+	src/model/ApplyHealthCheckTemplateToServerGroupResult.cc
 	src/model/AssociateAclsWithListenerRequest.cc
 	src/model/AssociateAclsWithListenerResult.cc
 	src/model/AssociateAdditionalCertificatesWithListenerRequest.cc
 	src/model/AssociateAdditionalCertificatesWithListenerResult.cc
+	src/model/AttachCommonBandwidthPackageToLoadBalancerRequest.cc
+	src/model/AttachCommonBandwidthPackageToLoadBalancerResult.cc
 	src/model/CreateAclRequest.cc
 	src/model/CreateAclResult.cc
 	src/model/CreateHealthCheckTemplateRequest.cc
@@ -202,6 +216,8 @@ set(alb_src
 	src/model/DescribeRegionsResult.cc
 	src/model/DescribeZonesRequest.cc
 	src/model/DescribeZonesResult.cc
+	src/model/DetachCommonBandwidthPackageFromLoadBalancerRequest.cc
+	src/model/DetachCommonBandwidthPackageFromLoadBalancerResult.cc
 	src/model/DisableDeletionProtectionRequest.cc
 	src/model/DisableDeletionProtectionResult.cc
 	src/model/DisableLoadBalancerAccessLogRequest.cc
@@ -218,6 +234,8 @@ set(alb_src
 	src/model/GetHealthCheckTemplateAttributeResult.cc
 	src/model/GetListenerAttributeRequest.cc
 	src/model/GetListenerAttributeResult.cc
+	src/model/GetListenerHealthStatusRequest.cc
+	src/model/GetListenerHealthStatusResult.cc
 	src/model/GetLoadBalancerAttributeRequest.cc
 	src/model/GetLoadBalancerAttributeResult.cc
 	src/model/ListAclEntriesRequest.cc
@@ -282,6 +300,8 @@ set(alb_src
 	src/model/UpdateLoadBalancerAttributeResult.cc
 	src/model/UpdateLoadBalancerEditionRequest.cc
 	src/model/UpdateLoadBalancerEditionResult.cc
+	src/model/UpdateLoadBalancerZonesRequest.cc
+	src/model/UpdateLoadBalancerZonesResult.cc
 	src/model/UpdateRuleAttributeRequest.cc
 	src/model/UpdateRuleAttributeResult.cc
 	src/model/UpdateRulesAttributeRequest.cc

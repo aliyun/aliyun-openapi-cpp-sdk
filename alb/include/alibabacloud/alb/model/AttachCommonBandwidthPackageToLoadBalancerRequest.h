@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ALB_MODEL_ADDSERVERSTOSERVERGROUPREQUEST_H_
-#define ALIBABACLOUD_ALB_MODEL_ADDSERVERSTOSERVERGROUPREQUEST_H_
+#ifndef ALIBABACLOUD_ALB_MODEL_ATTACHCOMMONBANDWIDTHPACKAGETOLOADBALANCERREQUEST_H_
+#define ALIBABACLOUD_ALB_MODEL_ATTACHCOMMONBANDWIDTHPACKAGETOLOADBALANCERREQUEST_H_
 
 #include <alibabacloud/alb/AlbExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,35 +26,29 @@
 namespace AlibabaCloud {
 namespace Alb {
 namespace Model {
-class ALIBABACLOUD_ALB_EXPORT AddServersToServerGroupRequest : public RpcServiceRequest {
+class ALIBABACLOUD_ALB_EXPORT AttachCommonBandwidthPackageToLoadBalancerRequest : public RpcServiceRequest {
 public:
-	struct Servers {
-		bool remoteIpEnabled;
-		std::string serverType;
-		int port;
-		std::string description;
-		std::string serverIp;
-		int weight;
-		std::string serverId;
-	};
-	AddServersToServerGroupRequest();
-	~AddServersToServerGroupRequest();
+	AttachCommonBandwidthPackageToLoadBalancerRequest();
+	~AttachCommonBandwidthPackageToLoadBalancerRequest();
 	std::string getClientToken() const;
 	void setClientToken(const std::string &clientToken);
-	std::string getServerGroupId() const;
-	void setServerGroupId(const std::string &serverGroupId);
-	std::vector<Servers> getServers() const;
-	void setServers(const std::vector<Servers> &servers);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
+	std::string getBandwidthPackageId() const;
+	void setBandwidthPackageId(const std::string &bandwidthPackageId);
 	bool getDryRun() const;
 	void setDryRun(bool dryRun);
+	std::string getLoadBalancerId() const;
+	void setLoadBalancerId(const std::string &loadBalancerId);
 
 private:
 	std::string clientToken_;
-	std::string serverGroupId_;
-	std::vector<Servers> servers_;
+	std::string regionId_;
+	std::string bandwidthPackageId_;
 	bool dryRun_;
+	std::string loadBalancerId_;
 };
 } // namespace Model
 } // namespace Alb
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_ALB_MODEL_ADDSERVERSTOSERVERGROUPREQUEST_H_
+#endif // !ALIBABACLOUD_ALB_MODEL_ATTACHCOMMONBANDWIDTHPACKAGETOLOADBALANCERREQUEST_H_

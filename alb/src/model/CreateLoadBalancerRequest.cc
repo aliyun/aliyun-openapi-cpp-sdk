@@ -59,9 +59,19 @@ CreateLoadBalancerRequest::LoadBalancerBillingConfig CreateLoadBalancerRequest::
 
 void CreateLoadBalancerRequest::setLoadBalancerBillingConfig(const CreateLoadBalancerRequest::LoadBalancerBillingConfig &loadBalancerBillingConfig) {
   loadBalancerBillingConfig_ = loadBalancerBillingConfig;
+  setParameter(std::string("LoadBalancerBillingConfig") + ".BandwidthPackageId", loadBalancerBillingConfig.bandwidthPackageId);
   setParameter(std::string("LoadBalancerBillingConfig") + ".InternetChargeType", loadBalancerBillingConfig.internetChargeType);
   setParameter(std::string("LoadBalancerBillingConfig") + ".InternetBandwidth", std::to_string(loadBalancerBillingConfig.internetBandwidth));
   setParameter(std::string("LoadBalancerBillingConfig") + ".PayType", loadBalancerBillingConfig.payType);
+}
+
+std::string CreateLoadBalancerRequest::getAddressIpVersion() const {
+  return addressIpVersion_;
+}
+
+void CreateLoadBalancerRequest::setAddressIpVersion(const std::string &addressIpVersion) {
+  addressIpVersion_ = addressIpVersion;
+  setParameter(std::string("AddressIpVersion"), addressIpVersion);
 }
 
 bool CreateLoadBalancerRequest::getDeletionProtectionEnabled() const {
@@ -127,6 +137,7 @@ void CreateLoadBalancerRequest::setZoneMappings(const std::vector<CreateLoadBala
   for(int dep1 = 0; dep1 != zoneMappings.size(); dep1++) {
     setParameter(std::string("ZoneMappings") + "." + std::to_string(dep1 + 1) + ".VSwitchId", zoneMappings[dep1].vSwitchId);
     setParameter(std::string("ZoneMappings") + "." + std::to_string(dep1 + 1) + ".ZoneId", zoneMappings[dep1].zoneId);
+    setParameter(std::string("ZoneMappings") + "." + std::to_string(dep1 + 1) + ".AllocationId", zoneMappings[dep1].allocationId);
   }
 }
 
