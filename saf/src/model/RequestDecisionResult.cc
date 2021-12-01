@@ -14,67 +14,52 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/saf/model/ExecuteExtendServiceResult.h>
+#include <alibabacloud/saf/model/RequestDecisionResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Saf;
 using namespace AlibabaCloud::Saf::Model;
 
-ExecuteExtendServiceResult::ExecuteExtendServiceResult() :
+RequestDecisionResult::RequestDecisionResult() :
 	ServiceResult()
 {}
 
-ExecuteExtendServiceResult::ExecuteExtendServiceResult(const std::string &payload) :
+RequestDecisionResult::RequestDecisionResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-ExecuteExtendServiceResult::~ExecuteExtendServiceResult()
+RequestDecisionResult::~RequestDecisionResult()
 {}
 
-void ExecuteExtendServiceResult::parse(const std::string &payload)
+void RequestDecisionResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto dataNode = value["Data"];
-	if(!dataNode["InvokeResult"].isNull())
-		data_.invokeResult = dataNode["InvokeResult"].asString();
-	if(!value["HttpStatusCode"].isNull())
-		httpStatusCode_ = value["HttpStatusCode"].asString();
 	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
+		code_ = std::stol(value["Code"].asString());
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
+	if(!value["Data"].isNull())
+		data_ = value["Data"].asString();
 
 }
 
-std::string ExecuteExtendServiceResult::getMessage()const
+std::string RequestDecisionResult::getMessage()const
 {
 	return message_;
 }
 
-std::string ExecuteExtendServiceResult::getHttpStatusCode()const
-{
-	return httpStatusCode_;
-}
-
-ExecuteExtendServiceResult::Data ExecuteExtendServiceResult::getData()const
+std::string RequestDecisionResult::getData()const
 {
 	return data_;
 }
 
-std::string ExecuteExtendServiceResult::getCode()const
+long RequestDecisionResult::getCode()const
 {
 	return code_;
-}
-
-bool ExecuteExtendServiceResult::getSuccess()const
-{
-	return success_;
 }
 

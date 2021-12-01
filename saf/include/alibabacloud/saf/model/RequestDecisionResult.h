@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SAF_MODEL_EXECUTEREQUESTMLREQUEST_H_
-#define ALIBABACLOUD_SAF_MODEL_EXECUTEREQUESTMLREQUEST_H_
+#ifndef ALIBABACLOUD_SAF_MODEL_REQUESTDECISIONRESULT_H_
+#define ALIBABACLOUD_SAF_MODEL_REQUESTDECISIONRESULT_H_
 
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
+#include <utility>
+#include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/saf/SafExport.h>
 
 namespace AlibabaCloud
@@ -28,27 +29,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SAF_EXPORT ExecuteRequestMLRequest : public RpcServiceRequest
+			class ALIBABACLOUD_SAF_EXPORT RequestDecisionResult : public ServiceResult
 			{
-
 			public:
-				ExecuteRequestMLRequest();
-				~ExecuteRequestMLRequest();
 
-				std::string getServiceParameters()const;
-				void setServiceParameters(const std::string& serviceParameters);
-				std::string getService()const;
-				void setService(const std::string& service);
-				std::string getLang()const;
-				void setLang(const std::string& lang);
 
-            private:
-				std::string serviceParameters_;
-				std::string service_;
-				std::string lang_;
+				RequestDecisionResult();
+				explicit RequestDecisionResult(const std::string &payload);
+				~RequestDecisionResult();
+				std::string getMessage()const;
+				std::string getData()const;
+				long getCode()const;
+
+			protected:
+				void parse(const std::string &payload);
+			private:
+				std::string message_;
+				std::string data_;
+				long code_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SAF_MODEL_EXECUTEREQUESTMLREQUEST_H_
+#endif // !ALIBABACLOUD_SAF_MODEL_REQUESTDECISIONRESULT_H_

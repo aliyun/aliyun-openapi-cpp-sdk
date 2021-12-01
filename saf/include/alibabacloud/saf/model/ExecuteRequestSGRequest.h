@@ -39,10 +39,13 @@ namespace AlibabaCloud
 				void setServiceParameters(const std::string& serviceParameters);
 				std::string getService()const;
 				void setService(const std::string& service);
+				std::string getLang()const;
+				void setLang(const std::string& lang);
 
             private:
 				std::string serviceParameters_;
 				std::string service_;
+				std::string lang_;
 
 			};
 		}

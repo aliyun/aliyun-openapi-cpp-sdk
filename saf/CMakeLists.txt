@@ -28,7 +28,9 @@ set(saf_public_header_model
 	include/alibabacloud/saf/model/ExecuteRequestMLRequest.h
 	include/alibabacloud/saf/model/ExecuteRequestMLResult.h
 	include/alibabacloud/saf/model/ExecuteRequestSGRequest.h
-	include/alibabacloud/saf/model/ExecuteRequestSGResult.h )
+	include/alibabacloud/saf/model/ExecuteRequestSGResult.h
+	include/alibabacloud/saf/model/RequestDecisionRequest.h
+	include/alibabacloud/saf/model/RequestDecisionResult.h )
 
 set(saf_src 
 	src/SafClient.cc
@@ -39,7 +41,9 @@ set(saf_src
 	src/model/ExecuteRequestMLRequest.cc
 	src/model/ExecuteRequestMLResult.cc
 	src/model/ExecuteRequestSGRequest.cc
-	src/model/ExecuteRequestSGResult.cc )
+	src/model/ExecuteRequestSGResult.cc
+	src/model/RequestDecisionRequest.cc
+	src/model/RequestDecisionResult.cc )
 
 add_library(saf ${LIB_TYPE}
 	${saf_public_header}

@@ -49,3 +49,14 @@ void ExecuteRequestMLRequest::setService(const std::string& service)
 	setParameter("Service", service);
 }
 
+std::string ExecuteRequestMLRequest::getLang()const
+{
+	return lang_;
+}
+
+void ExecuteRequestMLRequest::setLang(const std::string& lang)
+{
+	lang_ = lang;
+	setParameter("Lang", lang);
+}
+

@@ -31,21 +31,21 @@ SafClient::SafClient(const Credentials &credentials, const ClientConfiguration &
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "saf");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 SafClient::SafClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "saf");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 SafClient::SafClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "saf");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 SafClient::~SafClient()
@@ -189,6 +189,42 @@ SafClient::ExecuteRequestSGOutcomeCallable SafClient::executeRequestSGCallable(c
 			[this, request]()
 			{
 			return this->executeRequestSG(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SafClient::RequestDecisionOutcome SafClient::requestDecision(const RequestDecisionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RequestDecisionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RequestDecisionOutcome(RequestDecisionResult(outcome.result()));
+	else
+		return RequestDecisionOutcome(outcome.error());
+}
+
+void SafClient::requestDecisionAsync(const RequestDecisionRequest& request, const RequestDecisionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, requestDecision(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SafClient::RequestDecisionOutcomeCallable SafClient::requestDecisionCallable(const RequestDecisionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RequestDecisionOutcome()>>(
+			[this, request]()
+			{
+			return this->requestDecision(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

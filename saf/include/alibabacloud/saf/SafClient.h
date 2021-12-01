@@ -30,6 +30,8 @@
 #include "model/ExecuteRequestMLResult.h"
 #include "model/ExecuteRequestSGRequest.h"
 #include "model/ExecuteRequestSGResult.h"
+#include "model/RequestDecisionRequest.h"
+#include "model/RequestDecisionResult.h"
 
 
 namespace AlibabaCloud
@@ -51,6 +53,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ExecuteRequestSGResult> ExecuteRequestSGOutcome;
 			typedef std::future<ExecuteRequestSGOutcome> ExecuteRequestSGOutcomeCallable;
 			typedef std::function<void(const SafClient*, const Model::ExecuteRequestSGRequest&, const ExecuteRequestSGOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ExecuteRequestSGAsyncHandler;
+			typedef Outcome<Error, Model::RequestDecisionResult> RequestDecisionOutcome;
+			typedef std::future<RequestDecisionOutcome> RequestDecisionOutcomeCallable;
+			typedef std::function<void(const SafClient*, const Model::RequestDecisionRequest&, const RequestDecisionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RequestDecisionAsyncHandler;
 
 			SafClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			SafClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
@@ -68,6 +73,9 @@ namespace AlibabaCloud
 			ExecuteRequestSGOutcome executeRequestSG(const Model::ExecuteRequestSGRequest &request)const;
 			void executeRequestSGAsync(const Model::ExecuteRequestSGRequest& request, const ExecuteRequestSGAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ExecuteRequestSGOutcomeCallable executeRequestSGCallable(const Model::ExecuteRequestSGRequest& request) const;
+			RequestDecisionOutcome requestDecision(const Model::RequestDecisionRequest &request)const;
+			void requestDecisionAsync(const Model::RequestDecisionRequest& request, const RequestDecisionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RequestDecisionOutcomeCallable requestDecisionCallable(const Model::RequestDecisionRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

@@ -14,49 +14,38 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/saf/model/ExecuteRequestSGRequest.h>
+#include <alibabacloud/saf/model/RequestDecisionRequest.h>
 
-using AlibabaCloud::Saf::Model::ExecuteRequestSGRequest;
+using AlibabaCloud::Saf::Model::RequestDecisionRequest;
 
-ExecuteRequestSGRequest::ExecuteRequestSGRequest() :
-	RpcServiceRequest("saf", "2019-05-21", "ExecuteRequestSG")
+RequestDecisionRequest::RequestDecisionRequest() :
+	RpcServiceRequest("saf", "2019-05-21", "RequestDecision")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
-ExecuteRequestSGRequest::~ExecuteRequestSGRequest()
+RequestDecisionRequest::~RequestDecisionRequest()
 {}
 
-std::string ExecuteRequestSGRequest::getServiceParameters()const
+std::string RequestDecisionRequest::getServiceParameters()const
 {
 	return serviceParameters_;
 }
 
-void ExecuteRequestSGRequest::setServiceParameters(const std::string& serviceParameters)
+void RequestDecisionRequest::setServiceParameters(const std::string& serviceParameters)
 {
 	serviceParameters_ = serviceParameters;
 	setParameter("ServiceParameters", serviceParameters);
 }
 
-std::string ExecuteRequestSGRequest::getService()const
+std::string RequestDecisionRequest::getEventCode()const
 {
-	return service_;
+	return eventCode_;
 }
 
-void ExecuteRequestSGRequest::setService(const std::string& service)
+void RequestDecisionRequest::setEventCode(const std::string& eventCode)
 {
-	service_ = service;
-	setParameter("Service", service);
-}
-
-std::string ExecuteRequestSGRequest::getLang()const
-{
-	return lang_;
-}
-
-void ExecuteRequestSGRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setParameter("Lang", lang);
+	eventCode_ = eventCode;
+	setParameter("EventCode", eventCode);
 }
 

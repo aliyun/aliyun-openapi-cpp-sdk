@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SAF_MODEL_EXECUTEREQUESTMLREQUEST_H_
-#define ALIBABACLOUD_SAF_MODEL_EXECUTEREQUESTMLREQUEST_H_
+#ifndef ALIBABACLOUD_SAF_MODEL_REQUESTDECISIONREQUEST_H_
+#define ALIBABACLOUD_SAF_MODEL_REQUESTDECISIONREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,27 +28,24 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SAF_EXPORT ExecuteRequestMLRequest : public RpcServiceRequest
+			class ALIBABACLOUD_SAF_EXPORT RequestDecisionRequest : public RpcServiceRequest
 			{
 
 			public:
-				ExecuteRequestMLRequest();
-				~ExecuteRequestMLRequest();
+				RequestDecisionRequest();
+				~RequestDecisionRequest();
 
 				std::string getServiceParameters()const;
 				void setServiceParameters(const std::string& serviceParameters);
-				std::string getService()const;
-				void setService(const std::string& service);
-				std::string getLang()const;
-				void setLang(const std::string& lang);
+				std::string getEventCode()const;
+				void setEventCode(const std::string& eventCode);
 
             private:
 				std::string serviceParameters_;
-				std::string service_;
-				std::string lang_;
+				std::string eventCode_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SAF_MODEL_EXECUTEREQUESTMLREQUEST_H_
+#endif // !ALIBABACLOUD_SAF_MODEL_REQUESTDECISIONREQUEST_H_
