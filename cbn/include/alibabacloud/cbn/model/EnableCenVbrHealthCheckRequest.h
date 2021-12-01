@@ -45,6 +45,8 @@ namespace AlibabaCloud
 				void setHealthyThreshold(int healthyThreshold);
 				long getVbrInstanceOwnerId()const;
 				void setVbrInstanceOwnerId(long vbrInstanceOwnerId);
+				bool getHealthCheckOnly()const;
+				void setHealthCheckOnly(bool healthCheckOnly);
 				std::string getVbrInstanceRegionId()const;
 				void setVbrInstanceRegionId(const std::string& vbrInstanceRegionId);
 				std::string getResourceOwnerAccount()const;
@@ -66,6 +68,7 @@ namespace AlibabaCloud
 				std::string healthCheckTargetIp_;
 				int healthyThreshold_;
 				long vbrInstanceOwnerId_;
+				bool healthCheckOnly_;
 				std::string vbrInstanceRegionId_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;

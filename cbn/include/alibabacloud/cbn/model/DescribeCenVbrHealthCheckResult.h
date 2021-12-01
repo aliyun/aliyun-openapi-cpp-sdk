@@ -38,12 +38,13 @@ namespace AlibabaCloud
 					std::string linkStatus;
 					int healthCheckInterval;
 					std::string vbrInstanceId;
-					std::string healthCheckSourceIp;
 					int healthyThreshold;
+					std::string healthCheckSourceIp;
 					std::string cenId;
 					long packetLoss;
 					std::string healthCheckTargetIp;
 					long delay;
+					bool healthCheckOnly;
 				};
 
 

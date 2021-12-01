@@ -43,34 +43,36 @@ void DescribeCenVbrHealthCheckResult::parse(const std::string &payload)
 	for (auto valueVbrHealthChecksVbrHealthCheck : allVbrHealthChecksNode)
 	{
 		VbrHealthCheck vbrHealthChecksObject;
-		if(!valueVbrHealthChecksVbrHealthCheck["CenId"].isNull())
-			vbrHealthChecksObject.cenId = valueVbrHealthChecksVbrHealthCheck["CenId"].asString();
-		if(!valueVbrHealthChecksVbrHealthCheck["VbrInstanceId"].isNull())
-			vbrHealthChecksObject.vbrInstanceId = valueVbrHealthChecksVbrHealthCheck["VbrInstanceId"].asString();
-		if(!valueVbrHealthChecksVbrHealthCheck["LinkStatus"].isNull())
-			vbrHealthChecksObject.linkStatus = valueVbrHealthChecksVbrHealthCheck["LinkStatus"].asString();
-		if(!valueVbrHealthChecksVbrHealthCheck["PacketLoss"].isNull())
-			vbrHealthChecksObject.packetLoss = std::stol(valueVbrHealthChecksVbrHealthCheck["PacketLoss"].asString());
-		if(!valueVbrHealthChecksVbrHealthCheck["HealthCheckSourceIp"].isNull())
-			vbrHealthChecksObject.healthCheckSourceIp = valueVbrHealthChecksVbrHealthCheck["HealthCheckSourceIp"].asString();
 		if(!valueVbrHealthChecksVbrHealthCheck["HealthCheckTargetIp"].isNull())
 			vbrHealthChecksObject.healthCheckTargetIp = valueVbrHealthChecksVbrHealthCheck["HealthCheckTargetIp"].asString();
-		if(!valueVbrHealthChecksVbrHealthCheck["Delay"].isNull())
-			vbrHealthChecksObject.delay = std::stol(valueVbrHealthChecksVbrHealthCheck["Delay"].asString());
-		if(!valueVbrHealthChecksVbrHealthCheck["HealthCheckInterval"].isNull())
-			vbrHealthChecksObject.healthCheckInterval = std::stoi(valueVbrHealthChecksVbrHealthCheck["HealthCheckInterval"].asString());
-		if(!valueVbrHealthChecksVbrHealthCheck["HealthyThreshold"].isNull())
-			vbrHealthChecksObject.healthyThreshold = std::stoi(valueVbrHealthChecksVbrHealthCheck["HealthyThreshold"].asString());
+		if(!valueVbrHealthChecksVbrHealthCheck["VbrInstanceId"].isNull())
+			vbrHealthChecksObject.vbrInstanceId = valueVbrHealthChecksVbrHealthCheck["VbrInstanceId"].asString();
 		if(!valueVbrHealthChecksVbrHealthCheck["VbrInstanceRegionId"].isNull())
 			vbrHealthChecksObject.vbrInstanceRegionId = valueVbrHealthChecksVbrHealthCheck["VbrInstanceRegionId"].asString();
+		if(!valueVbrHealthChecksVbrHealthCheck["Delay"].isNull())
+			vbrHealthChecksObject.delay = std::stol(valueVbrHealthChecksVbrHealthCheck["Delay"].asString());
+		if(!valueVbrHealthChecksVbrHealthCheck["LinkStatus"].isNull())
+			vbrHealthChecksObject.linkStatus = valueVbrHealthChecksVbrHealthCheck["LinkStatus"].asString();
+		if(!valueVbrHealthChecksVbrHealthCheck["CenId"].isNull())
+			vbrHealthChecksObject.cenId = valueVbrHealthChecksVbrHealthCheck["CenId"].asString();
+		if(!valueVbrHealthChecksVbrHealthCheck["HealthyThreshold"].isNull())
+			vbrHealthChecksObject.healthyThreshold = std::stoi(valueVbrHealthChecksVbrHealthCheck["HealthyThreshold"].asString());
+		if(!valueVbrHealthChecksVbrHealthCheck["HealthCheckInterval"].isNull())
+			vbrHealthChecksObject.healthCheckInterval = std::stoi(valueVbrHealthChecksVbrHealthCheck["HealthCheckInterval"].asString());
+		if(!valueVbrHealthChecksVbrHealthCheck["HealthCheckSourceIp"].isNull())
+			vbrHealthChecksObject.healthCheckSourceIp = valueVbrHealthChecksVbrHealthCheck["HealthCheckSourceIp"].asString();
+		if(!valueVbrHealthChecksVbrHealthCheck["PacketLoss"].isNull())
+			vbrHealthChecksObject.packetLoss = std::stol(valueVbrHealthChecksVbrHealthCheck["PacketLoss"].asString());
+		if(!valueVbrHealthChecksVbrHealthCheck["HealthCheckOnly"].isNull())
+			vbrHealthChecksObject.healthCheckOnly = valueVbrHealthChecksVbrHealthCheck["HealthCheckOnly"].asString() == "true";
 		vbrHealthChecks_.push_back(vbrHealthChecksObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 

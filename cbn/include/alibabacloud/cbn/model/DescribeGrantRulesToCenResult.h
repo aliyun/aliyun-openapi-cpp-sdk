@@ -35,6 +35,7 @@ namespace AlibabaCloud
 				struct GrantRule
 				{
 					std::string childInstanceType;
+					std::string orderType;
 					std::string cenId;
 					long childInstanceOwnerId;
 					std::string childInstanceId;

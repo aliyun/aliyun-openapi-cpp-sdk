@@ -82,6 +82,17 @@ void EnableCenVbrHealthCheckRequest::setVbrInstanceOwnerId(long vbrInstanceOwner
 	setParameter("VbrInstanceOwnerId", std::to_string(vbrInstanceOwnerId));
 }
 
+bool EnableCenVbrHealthCheckRequest::getHealthCheckOnly()const
+{
+	return healthCheckOnly_;
+}
+
+void EnableCenVbrHealthCheckRequest::setHealthCheckOnly(bool healthCheckOnly)
+{
+	healthCheckOnly_ = healthCheckOnly;
+	setParameter("HealthCheckOnly", healthCheckOnly ? "true" : "false");
+}
+
 std::string EnableCenVbrHealthCheckRequest::getVbrInstanceRegionId()const
 {
 	return vbrInstanceRegionId_;
