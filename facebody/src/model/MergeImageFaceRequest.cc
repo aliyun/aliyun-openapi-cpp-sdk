@@ -27,6 +27,17 @@ MergeImageFaceRequest::MergeImageFaceRequest() :
 MergeImageFaceRequest::~MergeImageFaceRequest()
 {}
 
+bool MergeImageFaceRequest::getFormatResultToJson()const
+{
+	return formatResultToJson_;
+}
+
+void MergeImageFaceRequest::setFormatResultToJson(bool formatResultToJson)
+{
+	formatResultToJson_ = formatResultToJson;
+	setParameter("FormatResultToJson", formatResultToJson ? "true" : "false");
+}
+
 std::string MergeImageFaceRequest::getUserId()const
 {
 	return userId_;
@@ -38,6 +49,17 @@ void MergeImageFaceRequest::setUserId(const std::string& userId)
 	setBodyParameter("UserId", userId);
 }
 
+std::string MergeImageFaceRequest::getOssFile()const
+{
+	return ossFile_;
+}
+
+void MergeImageFaceRequest::setOssFile(const std::string& ossFile)
+{
+	ossFile_ = ossFile;
+	setParameter("OssFile", ossFile);
+}
+
 std::string MergeImageFaceRequest::getTemplateId()const
 {
 	return templateId_;
@@ -47,6 +69,17 @@ void MergeImageFaceRequest::setTemplateId(const std::string& templateId)
 {
 	templateId_ = templateId;
 	setBodyParameter("TemplateId", templateId);
+}
+
+std::string MergeImageFaceRequest::getRequestProxyBy()const
+{
+	return requestProxyBy_;
+}
+
+void MergeImageFaceRequest::setRequestProxyBy(const std::string& requestProxyBy)
+{
+	requestProxyBy_ = requestProxyBy;
+	setParameter("RequestProxyBy", requestProxyBy);
 }
 
 std::string MergeImageFaceRequest::getImageURL()const

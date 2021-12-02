@@ -27,6 +27,17 @@ AddFaceImageTemplateRequest::AddFaceImageTemplateRequest() :
 AddFaceImageTemplateRequest::~AddFaceImageTemplateRequest()
 {}
 
+bool AddFaceImageTemplateRequest::getFormatResultToJson()const
+{
+	return formatResultToJson_;
+}
+
+void AddFaceImageTemplateRequest::setFormatResultToJson(bool formatResultToJson)
+{
+	formatResultToJson_ = formatResultToJson;
+	setParameter("FormatResultToJson", formatResultToJson ? "true" : "false");
+}
+
 std::string AddFaceImageTemplateRequest::getUserId()const
 {
 	return userId_;
@@ -36,6 +47,28 @@ void AddFaceImageTemplateRequest::setUserId(const std::string& userId)
 {
 	userId_ = userId;
 	setBodyParameter("UserId", userId);
+}
+
+std::string AddFaceImageTemplateRequest::getOssFile()const
+{
+	return ossFile_;
+}
+
+void AddFaceImageTemplateRequest::setOssFile(const std::string& ossFile)
+{
+	ossFile_ = ossFile;
+	setParameter("OssFile", ossFile);
+}
+
+std::string AddFaceImageTemplateRequest::getRequestProxyBy()const
+{
+	return requestProxyBy_;
+}
+
+void AddFaceImageTemplateRequest::setRequestProxyBy(const std::string& requestProxyBy)
+{
+	requestProxyBy_ = requestProxyBy;
+	setParameter("RequestProxyBy", requestProxyBy);
 }
 
 std::string AddFaceImageTemplateRequest::getImageURL()const

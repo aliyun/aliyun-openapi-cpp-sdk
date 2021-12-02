@@ -1,3 +1,6 @@
+2021-12-02 Version: 1.36.961
+- Update MergeImageFace QueryFaceImageTemplate AddFaceImageTemplate DeleteFaceImageTemplate.
+
 2021-12-01 Version: 1.36.960
 - Support not switching routes when VBR health check fails.
 - Support order type when cross-account authorization and display.

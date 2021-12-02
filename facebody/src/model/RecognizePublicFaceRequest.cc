@@ -27,6 +27,39 @@ RecognizePublicFaceRequest::RecognizePublicFaceRequest() :
 RecognizePublicFaceRequest::~RecognizePublicFaceRequest()
 {}
 
+bool RecognizePublicFaceRequest::getFormatResultToJson()const
+{
+	return formatResultToJson_;
+}
+
+void RecognizePublicFaceRequest::setFormatResultToJson(bool formatResultToJson)
+{
+	formatResultToJson_ = formatResultToJson;
+	setParameter("FormatResultToJson", formatResultToJson ? "true" : "false");
+}
+
+std::string RecognizePublicFaceRequest::getOssFile()const
+{
+	return ossFile_;
+}
+
+void RecognizePublicFaceRequest::setOssFile(const std::string& ossFile)
+{
+	ossFile_ = ossFile;
+	setParameter("OssFile", ossFile);
+}
+
+std::string RecognizePublicFaceRequest::getRequestProxyBy()const
+{
+	return requestProxyBy_;
+}
+
+void RecognizePublicFaceRequest::setRequestProxyBy(const std::string& requestProxyBy)
+{
+	requestProxyBy_ = requestProxyBy;
+	setParameter("RequestProxyBy", requestProxyBy);
+}
+
 std::vector<RecognizePublicFaceRequest::Task> RecognizePublicFaceRequest::getTask()const
 {
 	return task_;

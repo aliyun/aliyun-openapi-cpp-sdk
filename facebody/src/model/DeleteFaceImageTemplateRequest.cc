@@ -27,6 +27,17 @@ DeleteFaceImageTemplateRequest::DeleteFaceImageTemplateRequest() :
 DeleteFaceImageTemplateRequest::~DeleteFaceImageTemplateRequest()
 {}
 
+bool DeleteFaceImageTemplateRequest::getFormatResultToJson()const
+{
+	return formatResultToJson_;
+}
+
+void DeleteFaceImageTemplateRequest::setFormatResultToJson(bool formatResultToJson)
+{
+	formatResultToJson_ = formatResultToJson;
+	setParameter("FormatResultToJson", formatResultToJson ? "true" : "false");
+}
+
 std::string DeleteFaceImageTemplateRequest::getUserId()const
 {
 	return userId_;
@@ -38,6 +49,17 @@ void DeleteFaceImageTemplateRequest::setUserId(const std::string& userId)
 	setBodyParameter("UserId", userId);
 }
 
+std::string DeleteFaceImageTemplateRequest::getOssFile()const
+{
+	return ossFile_;
+}
+
+void DeleteFaceImageTemplateRequest::setOssFile(const std::string& ossFile)
+{
+	ossFile_ = ossFile;
+	setParameter("OssFile", ossFile);
+}
+
 std::string DeleteFaceImageTemplateRequest::getTemplateId()const
 {
 	return templateId_;
@@ -47,5 +69,16 @@ void DeleteFaceImageTemplateRequest::setTemplateId(const std::string& templateId
 {
 	templateId_ = templateId;
 	setBodyParameter("TemplateId", templateId);
+}
+
+std::string DeleteFaceImageTemplateRequest::getRequestProxyBy()const
+{
+	return requestProxyBy_;
+}
+
+void DeleteFaceImageTemplateRequest::setRequestProxyBy(const std::string& requestProxyBy)
+{
+	requestProxyBy_ = requestProxyBy;
+	setParameter("RequestProxyBy", requestProxyBy);
 }
 

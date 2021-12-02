@@ -27,6 +27,17 @@ QueryFaceImageTemplateRequest::QueryFaceImageTemplateRequest() :
 QueryFaceImageTemplateRequest::~QueryFaceImageTemplateRequest()
 {}
 
+bool QueryFaceImageTemplateRequest::getFormatResultToJson()const
+{
+	return formatResultToJson_;
+}
+
+void QueryFaceImageTemplateRequest::setFormatResultToJson(bool formatResultToJson)
+{
+	formatResultToJson_ = formatResultToJson;
+	setParameter("FormatResultToJson", formatResultToJson ? "true" : "false");
+}
+
 std::string QueryFaceImageTemplateRequest::getUserId()const
 {
 	return userId_;
@@ -38,6 +49,17 @@ void QueryFaceImageTemplateRequest::setUserId(const std::string& userId)
 	setParameter("UserId", userId);
 }
 
+std::string QueryFaceImageTemplateRequest::getOssFile()const
+{
+	return ossFile_;
+}
+
+void QueryFaceImageTemplateRequest::setOssFile(const std::string& ossFile)
+{
+	ossFile_ = ossFile;
+	setParameter("OssFile", ossFile);
+}
+
 std::string QueryFaceImageTemplateRequest::getTemplateId()const
 {
 	return templateId_;
@@ -47,5 +69,16 @@ void QueryFaceImageTemplateRequest::setTemplateId(const std::string& templateId)
 {
 	templateId_ = templateId;
 	setParameter("TemplateId", templateId);
+}
+
+std::string QueryFaceImageTemplateRequest::getRequestProxyBy()const
+{
+	return requestProxyBy_;
+}
+
+void QueryFaceImageTemplateRequest::setRequestProxyBy(const std::string& requestProxyBy)
+{
+	requestProxyBy_ = requestProxyBy;
+	setParameter("RequestProxyBy", requestProxyBy);
 }
 

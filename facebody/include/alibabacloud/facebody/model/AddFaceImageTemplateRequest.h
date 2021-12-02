@@ -35,13 +35,22 @@ namespace AlibabaCloud
 				AddFaceImageTemplateRequest();
 				~AddFaceImageTemplateRequest();
 
+				bool getFormatResultToJson()const;
+				void setFormatResultToJson(bool formatResultToJson);
 				std::string getUserId()const;
 				void setUserId(const std::string& userId);
+				std::string getOssFile()const;
+				void setOssFile(const std::string& ossFile);
+				std::string getRequestProxyBy()const;
+				void setRequestProxyBy(const std::string& requestProxyBy);
 				std::string getImageURL()const;
 				void setImageURL(const std::string& imageURL);
 
             private:
+				bool formatResultToJson_;
 				std::string userId_;
+				std::string ossFile_;
+				std::string requestProxyBy_;
 				std::string imageURL_;
 
 			};
