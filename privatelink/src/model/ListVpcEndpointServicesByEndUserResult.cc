@@ -53,6 +53,10 @@ void ListVpcEndpointServicesByEndUserResult::parse(const std::string &payload)
 			servicesObject.serviceName = valueServicesService["ServiceName"].asString();
 		if(!valueServicesService["ServiceType"].isNull())
 			servicesObject.serviceType = valueServicesService["ServiceType"].asString();
+		if(!valueServicesService["ServiceDescription"].isNull())
+			servicesObject.serviceDescription = valueServicesService["ServiceDescription"].asString();
+		if(!valueServicesService["PrivateServiceName"].isNull())
+			servicesObject.privateServiceName = valueServicesService["PrivateServiceName"].asString();
 		auto allZones = value["Zones"]["Zone"];
 		for (auto value : allZones)
 			servicesObject.zones.push_back(value.asString());

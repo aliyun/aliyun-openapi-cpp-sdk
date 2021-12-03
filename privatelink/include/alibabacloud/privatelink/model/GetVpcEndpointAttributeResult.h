@@ -52,6 +52,7 @@ namespace AlibabaCloud
 				int getBandwidth()const;
 				std::string getEndpointId()const;
 				std::string getEndpointType()const;
+				std::string getPrivateServiceName()const;
 				std::string getRegionId()const;
 				std::string getConnectionStatus()const;
 				bool getZoneAffinityEnabled()const;
@@ -74,6 +75,7 @@ namespace AlibabaCloud
 				int bandwidth_;
 				std::string endpointId_;
 				std::string endpointType_;
+				std::string privateServiceName_;
 				std::string regionId_;
 				std::string connectionStatus_;
 				bool zoneAffinityEnabled_;

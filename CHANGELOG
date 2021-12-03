@@ -1,3 +1,6 @@
+2021-12-03 Version: 1.36.962
+- Support EndpointType and ServiceType.
+
 2021-12-02 Version: 1.36.961
 - Update MergeImageFace QueryFaceImageTemplate AddFaceImageTemplate DeleteFaceImageTemplate.
 

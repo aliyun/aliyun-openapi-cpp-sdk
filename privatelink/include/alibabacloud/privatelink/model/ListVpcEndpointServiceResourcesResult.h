@@ -35,6 +35,7 @@ namespace AlibabaCloud
 				struct Resource
 				{
 					long relatedEndpointCount;
+					long relatedDeprecatedEndpointCount;
 					std::string vpcId;
 					std::string zoneId;
 					std::string resourceId;

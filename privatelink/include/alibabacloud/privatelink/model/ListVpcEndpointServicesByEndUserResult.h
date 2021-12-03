@@ -37,6 +37,8 @@ namespace AlibabaCloud
 					std::string payer;
 					std::string serviceName;
 					std::string serviceType;
+					std::string serviceDescription;
+					std::string privateServiceName;
 					std::string serviceDomain;
 					std::string serviceId;
 					std::vector<std::string> zones;

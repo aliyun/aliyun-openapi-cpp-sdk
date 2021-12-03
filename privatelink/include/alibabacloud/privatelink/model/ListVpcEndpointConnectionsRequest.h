@@ -34,6 +34,8 @@ public:
 	void setEndpointId(const std::string &endpointId);
 	long getEndpointOwnerId() const;
 	void setEndpointOwnerId(long endpointOwnerId);
+	std::string getReplacedResourceId() const;
+	void setReplacedResourceId(const std::string &replacedResourceId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getNextToken() const;
@@ -52,6 +54,7 @@ public:
 private:
 	std::string endpointId_;
 	long endpointOwnerId_;
+	std::string replacedResourceId_;
 	std::string regionId_;
 	std::string nextToken_;
 	std::string resourceId_;

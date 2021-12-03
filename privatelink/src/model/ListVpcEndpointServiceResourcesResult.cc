@@ -59,6 +59,8 @@ void ListVpcEndpointServiceResourcesResult::parse(const std::string &payload)
 			resourcesObject.regionId = valueResourcesResource["RegionId"].asString();
 		if(!valueResourcesResource["RelatedEndpointCount"].isNull())
 			resourcesObject.relatedEndpointCount = std::stol(valueResourcesResource["RelatedEndpointCount"].asString());
+		if(!valueResourcesResource["RelatedDeprecatedEndpointCount"].isNull())
+			resourcesObject.relatedDeprecatedEndpointCount = std::stol(valueResourcesResource["RelatedDeprecatedEndpointCount"].asString());
 		if(!valueResourcesResource["AutoAllocatedEnabled"].isNull())
 			resourcesObject.autoAllocatedEnabled = valueResourcesResource["AutoAllocatedEnabled"].asString() == "true";
 		if(!valueResourcesResource["StatusInfo"].isNull())

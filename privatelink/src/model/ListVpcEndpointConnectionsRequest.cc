@@ -43,6 +43,15 @@ void ListVpcEndpointConnectionsRequest::setEndpointOwnerId(long endpointOwnerId)
   setParameter(std::string("EndpointOwnerId"), std::to_string(endpointOwnerId));
 }
 
+std::string ListVpcEndpointConnectionsRequest::getReplacedResourceId() const {
+  return replacedResourceId_;
+}
+
+void ListVpcEndpointConnectionsRequest::setReplacedResourceId(const std::string &replacedResourceId) {
+  replacedResourceId_ = replacedResourceId;
+  setParameter(std::string("ReplacedResourceId"), replacedResourceId);
+}
+
 std::string ListVpcEndpointConnectionsRequest::getRegionId() const {
   return regionId_;
 }

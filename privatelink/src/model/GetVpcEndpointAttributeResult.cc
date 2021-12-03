@@ -75,6 +75,8 @@ void GetVpcEndpointAttributeResult::parse(const std::string &payload)
 		connectionStatus_ = value["ConnectionStatus"].asString();
 	if(!value["ZoneAffinityEnabled"].isNull())
 		zoneAffinityEnabled_ = value["ZoneAffinityEnabled"].asString() == "true";
+	if(!value["PrivateServiceName"].isNull())
+		privateServiceName_ = value["PrivateServiceName"].asString();
 
 }
 
@@ -151,6 +153,11 @@ std::string GetVpcEndpointAttributeResult::getEndpointId()const
 std::string GetVpcEndpointAttributeResult::getEndpointType()const
 {
 	return endpointType_;
+}
+
+std::string GetVpcEndpointAttributeResult::getPrivateServiceName()const
+{
+	return privateServiceName_;
 }
 
 std::string GetVpcEndpointAttributeResult::getRegionId()const
