@@ -375,6 +375,42 @@ CmsClient::CreateHostAvailabilityOutcomeCallable CmsClient::createHostAvailabili
 	return task->get_future();
 }
 
+CmsClient::CreateInstantSiteMonitorOutcome CmsClient::createInstantSiteMonitor(const CreateInstantSiteMonitorRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateInstantSiteMonitorOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateInstantSiteMonitorOutcome(CreateInstantSiteMonitorResult(outcome.result()));
+	else
+		return CreateInstantSiteMonitorOutcome(outcome.error());
+}
+
+void CmsClient::createInstantSiteMonitorAsync(const CreateInstantSiteMonitorRequest& request, const CreateInstantSiteMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createInstantSiteMonitor(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CmsClient::CreateInstantSiteMonitorOutcomeCallable CmsClient::createInstantSiteMonitorCallable(const CreateInstantSiteMonitorRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateInstantSiteMonitorOutcome()>>(
+			[this, request]()
+			{
+			return this->createInstantSiteMonitor(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CmsClient::CreateMetricRuleResourcesOutcome CmsClient::createMetricRuleResources(const CreateMetricRuleResourcesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3357,6 +3393,42 @@ CmsClient::DescribeSiteMonitorListOutcomeCallable CmsClient::describeSiteMonitor
 			[this, request]()
 			{
 			return this->describeSiteMonitorList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CmsClient::DescribeSiteMonitorLogOutcome CmsClient::describeSiteMonitorLog(const DescribeSiteMonitorLogRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeSiteMonitorLogOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeSiteMonitorLogOutcome(DescribeSiteMonitorLogResult(outcome.result()));
+	else
+		return DescribeSiteMonitorLogOutcome(outcome.error());
+}
+
+void CmsClient::describeSiteMonitorLogAsync(const DescribeSiteMonitorLogRequest& request, const DescribeSiteMonitorLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeSiteMonitorLog(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CmsClient::DescribeSiteMonitorLogOutcomeCallable CmsClient::describeSiteMonitorLogCallable(const DescribeSiteMonitorLogRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeSiteMonitorLogOutcome()>>(
+			[this, request]()
+			{
+			return this->describeSiteMonitorLog(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

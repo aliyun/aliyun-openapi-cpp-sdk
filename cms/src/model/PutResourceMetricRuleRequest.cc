@@ -60,17 +60,6 @@ void PutResourceMetricRuleRequest::setRuleName(const std::string& ruleName)
 	setParameter("RuleName", ruleName);
 }
 
-std::string PutResourceMetricRuleRequest::getEscalationsInfoStatistics()const
-{
-	return escalationsInfoStatistics_;
-}
-
-void PutResourceMetricRuleRequest::setEscalationsInfoStatistics(const std::string& escalationsInfoStatistics)
-{
-	escalationsInfoStatistics_ = escalationsInfoStatistics;
-	setParameter("EscalationsInfoStatistics", escalationsInfoStatistics);
-}
-
 std::string PutResourceMetricRuleRequest::getEffectiveInterval()const
 {
 	return effectiveInterval_;
@@ -80,17 +69,6 @@ void PutResourceMetricRuleRequest::setEffectiveInterval(const std::string& effec
 {
 	effectiveInterval_ = effectiveInterval;
 	setParameter("EffectiveInterval", effectiveInterval);
-}
-
-std::string PutResourceMetricRuleRequest::getEscalationsInfoComparisonOperator()const
-{
-	return escalationsInfoComparisonOperator_;
-}
-
-void PutResourceMetricRuleRequest::setEscalationsInfoComparisonOperator(const std::string& escalationsInfoComparisonOperator)
-{
-	escalationsInfoComparisonOperator_ = escalationsInfoComparisonOperator;
-	setParameter("EscalationsInfoComparisonOperator", escalationsInfoComparisonOperator);
 }
 
 std::string PutResourceMetricRuleRequest::getNoDataPolicy()const
@@ -126,15 +104,15 @@ void PutResourceMetricRuleRequest::setEmailSubject(const std::string& emailSubje
 	setParameter("EmailSubject", emailSubject);
 }
 
-int PutResourceMetricRuleRequest::getSilenceTime()const
+std::string PutResourceMetricRuleRequest::getOptions()const
 {
-	return silenceTime_;
+	return options_;
 }
 
-void PutResourceMetricRuleRequest::setSilenceTime(int silenceTime)
+void PutResourceMetricRuleRequest::setOptions(const std::string& options)
 {
-	silenceTime_ = silenceTime;
-	setParameter("SilenceTime", std::to_string(silenceTime));
+	options_ = options;
+	setParameter("Options", options);
 }
 
 std::string PutResourceMetricRuleRequest::getMetricName()const
@@ -157,17 +135,6 @@ void PutResourceMetricRuleRequest::setEscalationsWarnTimes(int escalationsWarnTi
 {
 	escalationsWarnTimes_ = escalationsWarnTimes;
 	setParameter("EscalationsWarnTimes", std::to_string(escalationsWarnTimes));
-}
-
-Struct PutResourceMetricRuleRequest::getCompositeExpression()const
-{
-	return compositeExpression_;
-}
-
-void PutResourceMetricRuleRequest::setCompositeExpression(const Struct& compositeExpression)
-{
-	compositeExpression_ = compositeExpression;
-	setParameter("CompositeExpression", std::to_string(compositeExpression));
 }
 
 std::string PutResourceMetricRuleRequest::getPeriod()const
@@ -225,6 +192,116 @@ void PutResourceMetricRuleRequest::setGroupId(const std::string& groupId)
 	setParameter("GroupId", groupId);
 }
 
+std::string PutResourceMetricRuleRequest::getGroupName()const
+{
+	return groupName_;
+}
+
+void PutResourceMetricRuleRequest::setGroupName(const std::string& groupName)
+{
+	groupName_ = groupName;
+	setParameter("GroupName", groupName);
+}
+
+Array PutResourceMetricRuleRequest::getLabels()const
+{
+	return labels_;
+}
+
+void PutResourceMetricRuleRequest::setLabels(const Array& labels)
+{
+	labels_ = labels;
+	setParameter("Labels", std::to_string(labels));
+}
+
+std::string PutResourceMetricRuleRequest::getInterval()const
+{
+	return interval_;
+}
+
+void PutResourceMetricRuleRequest::setInterval(const std::string& interval)
+{
+	interval_ = interval;
+	setParameter("Interval", interval);
+}
+
+std::string PutResourceMetricRuleRequest::getRuleId()const
+{
+	return ruleId_;
+}
+
+void PutResourceMetricRuleRequest::setRuleId(const std::string& ruleId)
+{
+	ruleId_ = ruleId;
+	setParameter("RuleId", ruleId);
+}
+
+std::string PutResourceMetricRuleRequest::getEscalationsCriticalThreshold()const
+{
+	return escalationsCriticalThreshold_;
+}
+
+void PutResourceMetricRuleRequest::setEscalationsCriticalThreshold(const std::string& escalationsCriticalThreshold)
+{
+	escalationsCriticalThreshold_ = escalationsCriticalThreshold;
+	setParameter("EscalationsCriticalThreshold", escalationsCriticalThreshold);
+}
+
+std::string PutResourceMetricRuleRequest::getEscalationsInfoStatistics()const
+{
+	return escalationsInfoStatistics_;
+}
+
+void PutResourceMetricRuleRequest::setEscalationsInfoStatistics(const std::string& escalationsInfoStatistics)
+{
+	escalationsInfoStatistics_ = escalationsInfoStatistics;
+	setParameter("EscalationsInfoStatistics", escalationsInfoStatistics);
+}
+
+std::string PutResourceMetricRuleRequest::getEscalationsInfoComparisonOperator()const
+{
+	return escalationsInfoComparisonOperator_;
+}
+
+void PutResourceMetricRuleRequest::setEscalationsInfoComparisonOperator(const std::string& escalationsInfoComparisonOperator)
+{
+	escalationsInfoComparisonOperator_ = escalationsInfoComparisonOperator;
+	setParameter("EscalationsInfoComparisonOperator", escalationsInfoComparisonOperator);
+}
+
+int PutResourceMetricRuleRequest::getSilenceTime()const
+{
+	return silenceTime_;
+}
+
+void PutResourceMetricRuleRequest::setSilenceTime(int silenceTime)
+{
+	silenceTime_ = silenceTime;
+	setParameter("SilenceTime", std::to_string(silenceTime));
+}
+
+Struct PutResourceMetricRuleRequest::getPrometheus()const
+{
+	return prometheus_;
+}
+
+void PutResourceMetricRuleRequest::setPrometheus(const Struct& prometheus)
+{
+	prometheus_ = prometheus;
+	setParameter("Prometheus", std::to_string(prometheus));
+}
+
+Struct PutResourceMetricRuleRequest::getCompositeExpression()const
+{
+	return compositeExpression_;
+}
+
+void PutResourceMetricRuleRequest::setCompositeExpression(const Struct& compositeExpression)
+{
+	compositeExpression_ = compositeExpression;
+	setParameter("CompositeExpression", std::to_string(compositeExpression));
+}
+
 std::string PutResourceMetricRuleRequest::getResources()const
 {
 	return resources_;
@@ -256,17 +333,6 @@ void PutResourceMetricRuleRequest::setGroupBy(const std::string& groupBy)
 {
 	groupBy_ = groupBy;
 	setParameter("GroupBy", groupBy);
-}
-
-std::string PutResourceMetricRuleRequest::getGroupName()const
-{
-	return groupName_;
-}
-
-void PutResourceMetricRuleRequest::setGroupName(const std::string& groupName)
-{
-	groupName_ = groupName;
-	setParameter("GroupName", groupName);
 }
 
 int PutResourceMetricRuleRequest::getEscalationsCriticalTimes()const
@@ -313,28 +379,6 @@ void PutResourceMetricRuleRequest::set_Namespace(const std::string& _namespace)
 	setParameter("_Namespace", _namespace);
 }
 
-std::string PutResourceMetricRuleRequest::getInterval()const
-{
-	return interval_;
-}
-
-void PutResourceMetricRuleRequest::setInterval(const std::string& interval)
-{
-	interval_ = interval;
-	setParameter("Interval", interval);
-}
-
-std::string PutResourceMetricRuleRequest::getRuleId()const
-{
-	return ruleId_;
-}
-
-void PutResourceMetricRuleRequest::setRuleId(const std::string& ruleId)
-{
-	ruleId_ = ruleId;
-	setParameter("RuleId", ruleId);
-}
-
 std::string PutResourceMetricRuleRequest::getEscalationsCriticalComparisonOperator()const
 {
 	return escalationsCriticalComparisonOperator_;
@@ -344,16 +388,5 @@ void PutResourceMetricRuleRequest::setEscalationsCriticalComparisonOperator(cons
 {
 	escalationsCriticalComparisonOperator_ = escalationsCriticalComparisonOperator;
 	setParameter("EscalationsCriticalComparisonOperator", escalationsCriticalComparisonOperator);
-}
-
-std::string PutResourceMetricRuleRequest::getEscalationsCriticalThreshold()const
-{
-	return escalationsCriticalThreshold_;
-}
-
-void PutResourceMetricRuleRequest::setEscalationsCriticalThreshold(const std::string& escalationsCriticalThreshold)
-{
-	escalationsCriticalThreshold_ = escalationsCriticalThreshold;
-	setParameter("EscalationsCriticalThreshold", escalationsCriticalThreshold);
 }
 

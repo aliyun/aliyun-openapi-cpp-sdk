@@ -34,6 +34,7 @@ namespace AlibabaCloud
 				struct EventPattern
 				{
 					std::vector<std::string> levelList;
+					Struct keywordFilter;
 					std::string product;
 					std::vector<std::string> statusList;
 					std::vector<std::string> nameList;

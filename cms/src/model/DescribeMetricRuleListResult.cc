@@ -83,6 +83,18 @@ void DescribeMetricRuleListResult::parse(const std::string &payload)
 			alarmsObject.resources = valueAlarmsAlarm["Resources"].asString();
 		if(!valueAlarmsAlarm["NoDataPolicy"].isNull())
 			alarmsObject.noDataPolicy = valueAlarmsAlarm["NoDataPolicy"].asString();
+		if(!valueAlarmsAlarm["Options"].isNull())
+			alarmsObject.options = valueAlarmsAlarm["Options"].asString();
+		auto allLabelsNode = valueAlarmsAlarm["Labels"]["LabelsItem"];
+		for (auto valueAlarmsAlarmLabelsLabelsItem : allLabelsNode)
+		{
+			Alarm::LabelsItem labelsObject;
+			if(!valueAlarmsAlarmLabelsLabelsItem["Key"].isNull())
+				labelsObject.key = valueAlarmsAlarmLabelsLabelsItem["Key"].asString();
+			if(!valueAlarmsAlarmLabelsLabelsItem["Value"].isNull())
+				labelsObject.value = valueAlarmsAlarmLabelsLabelsItem["Value"].asString();
+			alarmsObject.labels.push_back(labelsObject);
+		}
 		auto escalationsNode = value["Escalations"];
 		auto infoNode = escalationsNode["Info"];
 		if(!infoNode["ComparisonOperator"].isNull())
@@ -143,6 +155,23 @@ void DescribeMetricRuleListResult::parse(const std::string &payload)
 			if(!compositeExpressionNodeExpressionListExpressionListItem["Id"].isNull())
 				expressionListItemObject.id = compositeExpressionNodeExpressionListExpressionListItem["Id"].asString();
 			alarmsObject.compositeExpression.expressionList.push_back(expressionListItemObject);
+		}
+		auto prometheusNode = value["Prometheus"];
+		if(!prometheusNode["PromQL"].isNull())
+			alarmsObject.prometheus.promQL = prometheusNode["PromQL"].asString();
+		if(!prometheusNode["Level"].isNull())
+			alarmsObject.prometheus.level = prometheusNode["Level"].asString();
+		if(!prometheusNode["Times"].isNull())
+			alarmsObject.prometheus.times = std::stol(prometheusNode["Times"].asString());
+		auto allAnnotationsNode = prometheusNode["Annotations"]["AnnotationsItem"];
+		for (auto prometheusNodeAnnotationsAnnotationsItem : allAnnotationsNode)
+		{
+			Alarm::Prometheus::AnnotationsItem annotationsItemObject;
+			if(!prometheusNodeAnnotationsAnnotationsItem["Key"].isNull())
+				annotationsItemObject.key = prometheusNodeAnnotationsAnnotationsItem["Key"].asString();
+			if(!prometheusNodeAnnotationsAnnotationsItem["Value"].isNull())
+				annotationsItemObject.value = prometheusNodeAnnotationsAnnotationsItem["Value"].asString();
+			alarmsObject.prometheus.annotations.push_back(annotationsItemObject);
 		}
 		alarms_.push_back(alarmsObject);
 	}

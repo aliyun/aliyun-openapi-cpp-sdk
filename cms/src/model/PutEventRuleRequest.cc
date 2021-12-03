@@ -74,6 +74,7 @@ void PutEventRuleRequest::setEventPattern(const std::vector<EventPattern>& event
 		for(int dep2 = 0; dep2!= eventPatternObj.levelList.size(); dep2++) {
 			setParameter(eventPatternObjStr + ".LevelList."+ std::to_string(dep2), eventPatternObj.levelList.at(dep2));
 		}
+		setParameter(eventPatternObjStr + ".KeywordFilter", std::to_string(eventPatternObj.keywordFilter));
 		setParameter(eventPatternObjStr + ".Product", eventPatternObj.product);
 		for(int dep2 = 0; dep2!= eventPatternObj.statusList.size(); dep2++) {
 			setParameter(eventPatternObjStr + ".StatusList."+ std::to_string(dep2), eventPatternObj.statusList.at(dep2));

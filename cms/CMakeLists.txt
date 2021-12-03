@@ -39,6 +39,8 @@ set(cms_public_header_model
 	include/alibabacloud/cms/model/CreateGroupMonitoringAgentProcessResult.h
 	include/alibabacloud/cms/model/CreateHostAvailabilityRequest.h
 	include/alibabacloud/cms/model/CreateHostAvailabilityResult.h
+	include/alibabacloud/cms/model/CreateInstantSiteMonitorRequest.h
+	include/alibabacloud/cms/model/CreateInstantSiteMonitorResult.h
 	include/alibabacloud/cms/model/CreateMetricRuleResourcesRequest.h
 	include/alibabacloud/cms/model/CreateMetricRuleResourcesResult.h
 	include/alibabacloud/cms/model/CreateMetricRuleTemplateRequest.h
@@ -205,6 +207,8 @@ set(cms_public_header_model
 	include/alibabacloud/cms/model/DescribeSiteMonitorISPCityListResult.h
 	include/alibabacloud/cms/model/DescribeSiteMonitorListRequest.h
 	include/alibabacloud/cms/model/DescribeSiteMonitorListResult.h
+	include/alibabacloud/cms/model/DescribeSiteMonitorLogRequest.h
+	include/alibabacloud/cms/model/DescribeSiteMonitorLogResult.h
 	include/alibabacloud/cms/model/DescribeSiteMonitorQuotaRequest.h
 	include/alibabacloud/cms/model/DescribeSiteMonitorQuotaResult.h
 	include/alibabacloud/cms/model/DescribeSiteMonitorStatisticsRequest.h
@@ -322,6 +326,8 @@ set(cms_src
 	src/model/CreateGroupMonitoringAgentProcessResult.cc
 	src/model/CreateHostAvailabilityRequest.cc
 	src/model/CreateHostAvailabilityResult.cc
+	src/model/CreateInstantSiteMonitorRequest.cc
+	src/model/CreateInstantSiteMonitorResult.cc
 	src/model/CreateMetricRuleResourcesRequest.cc
 	src/model/CreateMetricRuleResourcesResult.cc
 	src/model/CreateMetricRuleTemplateRequest.cc
@@ -488,6 +494,8 @@ set(cms_src
 	src/model/DescribeSiteMonitorISPCityListResult.cc
 	src/model/DescribeSiteMonitorListRequest.cc
 	src/model/DescribeSiteMonitorListResult.cc
+	src/model/DescribeSiteMonitorLogRequest.cc
+	src/model/DescribeSiteMonitorLogResult.cc
 	src/model/DescribeSiteMonitorQuotaRequest.cc
 	src/model/DescribeSiteMonitorQuotaResult.cc
 	src/model/DescribeSiteMonitorStatisticsRequest.cc

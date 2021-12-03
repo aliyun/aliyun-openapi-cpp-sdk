@@ -81,28 +81,48 @@ namespace AlibabaCloud
 						std::string expressionListJoin;
 						std::vector<ExpressionListItem> expressionList;
 					};
+					struct Prometheus
+					{
+						struct AnnotationsItem
+						{
+							std::string value;
+							std::string key;
+						};
+						std::vector<AnnotationsItem> annotations;
+						std::string promQL;
+						long times;
+						std::string level;
+					};
+					struct LabelsItem
+					{
+						std::string value;
+						std::string key;
+					};
 					std::string groupName;
-					int silenceTime;
-					std::string contactGroups;
 					std::string noEffectiveInterval;
-					std::string groupBy;
+					std::string options;
 					std::string mailSubject;
 					std::string sourceType;
 					std::string ruleId;
+					Prometheus prometheus;
+					std::string metricName;
+					CompositeExpression compositeExpression;
+					std::string ruleName;
+					int silenceTime;
+					std::string contactGroups;
+					std::string groupBy;
 					std::string period;
 					std::string dimensions;
+					std::vector<Alarm::LabelsItem> labels;
 					std::string _namespace;
 					std::string effectiveInterval;
 					std::string noDataPolicy;
 					std::string alertState;
 					std::string groupId;
-					std::string metricName;
 					Escalations escalations;
 					bool enableState;
-					CompositeExpression compositeExpression;
 					std::string webhook;
 					std::string resources;
-					std::string ruleName;
 				};
 
 

@@ -40,6 +40,8 @@
 #include "model/CreateGroupMonitoringAgentProcessResult.h"
 #include "model/CreateHostAvailabilityRequest.h"
 #include "model/CreateHostAvailabilityResult.h"
+#include "model/CreateInstantSiteMonitorRequest.h"
+#include "model/CreateInstantSiteMonitorResult.h"
 #include "model/CreateMetricRuleResourcesRequest.h"
 #include "model/CreateMetricRuleResourcesResult.h"
 #include "model/CreateMetricRuleTemplateRequest.h"
@@ -206,6 +208,8 @@
 #include "model/DescribeSiteMonitorISPCityListResult.h"
 #include "model/DescribeSiteMonitorListRequest.h"
 #include "model/DescribeSiteMonitorListResult.h"
+#include "model/DescribeSiteMonitorLogRequest.h"
+#include "model/DescribeSiteMonitorLogResult.h"
 #include "model/DescribeSiteMonitorQuotaRequest.h"
 #include "model/DescribeSiteMonitorQuotaResult.h"
 #include "model/DescribeSiteMonitorStatisticsRequest.h"
@@ -338,6 +342,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateHostAvailabilityResult> CreateHostAvailabilityOutcome;
 			typedef std::future<CreateHostAvailabilityOutcome> CreateHostAvailabilityOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::CreateHostAvailabilityRequest&, const CreateHostAvailabilityOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateHostAvailabilityAsyncHandler;
+			typedef Outcome<Error, Model::CreateInstantSiteMonitorResult> CreateInstantSiteMonitorOutcome;
+			typedef std::future<CreateInstantSiteMonitorOutcome> CreateInstantSiteMonitorOutcomeCallable;
+			typedef std::function<void(const CmsClient*, const Model::CreateInstantSiteMonitorRequest&, const CreateInstantSiteMonitorOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstantSiteMonitorAsyncHandler;
 			typedef Outcome<Error, Model::CreateMetricRuleResourcesResult> CreateMetricRuleResourcesOutcome;
 			typedef std::future<CreateMetricRuleResourcesOutcome> CreateMetricRuleResourcesOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::CreateMetricRuleResourcesRequest&, const CreateMetricRuleResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateMetricRuleResourcesAsyncHandler;
@@ -587,6 +594,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeSiteMonitorListResult> DescribeSiteMonitorListOutcome;
 			typedef std::future<DescribeSiteMonitorListOutcome> DescribeSiteMonitorListOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::DescribeSiteMonitorListRequest&, const DescribeSiteMonitorListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSiteMonitorListAsyncHandler;
+			typedef Outcome<Error, Model::DescribeSiteMonitorLogResult> DescribeSiteMonitorLogOutcome;
+			typedef std::future<DescribeSiteMonitorLogOutcome> DescribeSiteMonitorLogOutcomeCallable;
+			typedef std::function<void(const CmsClient*, const Model::DescribeSiteMonitorLogRequest&, const DescribeSiteMonitorLogOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSiteMonitorLogAsyncHandler;
 			typedef Outcome<Error, Model::DescribeSiteMonitorQuotaResult> DescribeSiteMonitorQuotaOutcome;
 			typedef std::future<DescribeSiteMonitorQuotaOutcome> DescribeSiteMonitorQuotaOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::DescribeSiteMonitorQuotaRequest&, const DescribeSiteMonitorQuotaOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSiteMonitorQuotaAsyncHandler;
@@ -763,6 +773,9 @@ namespace AlibabaCloud
 			CreateHostAvailabilityOutcome createHostAvailability(const Model::CreateHostAvailabilityRequest &request)const;
 			void createHostAvailabilityAsync(const Model::CreateHostAvailabilityRequest& request, const CreateHostAvailabilityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateHostAvailabilityOutcomeCallable createHostAvailabilityCallable(const Model::CreateHostAvailabilityRequest& request) const;
+			CreateInstantSiteMonitorOutcome createInstantSiteMonitor(const Model::CreateInstantSiteMonitorRequest &request)const;
+			void createInstantSiteMonitorAsync(const Model::CreateInstantSiteMonitorRequest& request, const CreateInstantSiteMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateInstantSiteMonitorOutcomeCallable createInstantSiteMonitorCallable(const Model::CreateInstantSiteMonitorRequest& request) const;
 			CreateMetricRuleResourcesOutcome createMetricRuleResources(const Model::CreateMetricRuleResourcesRequest &request)const;
 			void createMetricRuleResourcesAsync(const Model::CreateMetricRuleResourcesRequest& request, const CreateMetricRuleResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateMetricRuleResourcesOutcomeCallable createMetricRuleResourcesCallable(const Model::CreateMetricRuleResourcesRequest& request) const;
@@ -1012,6 +1025,9 @@ namespace AlibabaCloud
 			DescribeSiteMonitorListOutcome describeSiteMonitorList(const Model::DescribeSiteMonitorListRequest &request)const;
 			void describeSiteMonitorListAsync(const Model::DescribeSiteMonitorListRequest& request, const DescribeSiteMonitorListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSiteMonitorListOutcomeCallable describeSiteMonitorListCallable(const Model::DescribeSiteMonitorListRequest& request) const;
+			DescribeSiteMonitorLogOutcome describeSiteMonitorLog(const Model::DescribeSiteMonitorLogRequest &request)const;
+			void describeSiteMonitorLogAsync(const Model::DescribeSiteMonitorLogRequest& request, const DescribeSiteMonitorLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeSiteMonitorLogOutcomeCallable describeSiteMonitorLogCallable(const Model::DescribeSiteMonitorLogRequest& request) const;
 			DescribeSiteMonitorQuotaOutcome describeSiteMonitorQuota(const Model::DescribeSiteMonitorQuotaRequest &request)const;
 			void describeSiteMonitorQuotaAsync(const Model::DescribeSiteMonitorQuotaRequest& request, const DescribeSiteMonitorQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSiteMonitorQuotaOutcomeCallable describeSiteMonitorQuotaCallable(const Model::DescribeSiteMonitorQuotaRequest& request) const;

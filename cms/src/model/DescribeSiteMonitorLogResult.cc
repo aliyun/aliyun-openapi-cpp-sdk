@@ -14,58 +14,65 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/cms/model/PutEventRuleResult.h>
+#include <alibabacloud/cms/model/DescribeSiteMonitorLogResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Cms;
 using namespace AlibabaCloud::Cms::Model;
 
-PutEventRuleResult::PutEventRuleResult() :
+DescribeSiteMonitorLogResult::DescribeSiteMonitorLogResult() :
 	ServiceResult()
 {}
 
-PutEventRuleResult::PutEventRuleResult(const std::string &payload) :
+DescribeSiteMonitorLogResult::DescribeSiteMonitorLogResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-PutEventRuleResult::~PutEventRuleResult()
+DescribeSiteMonitorLogResult::~DescribeSiteMonitorLogResult()
 {}
 
-void PutEventRuleResult::parse(const std::string &payload)
+void DescribeSiteMonitorLogResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["NextToken"].isNull())
+		nextToken_ = value["NextToken"].asString();
+	if(!value["Data"].isNull())
+		data_ = value["Data"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString();
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
-	if(!value["Data"].isNull())
-		data_ = value["Data"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 
 }
 
-std::string PutEventRuleResult::getMessage()const
+std::string DescribeSiteMonitorLogResult::getNextToken()const
+{
+	return nextToken_;
+}
+
+std::string DescribeSiteMonitorLogResult::getMessage()const
 {
 	return message_;
 }
 
-std::string PutEventRuleResult::getData()const
+std::string DescribeSiteMonitorLogResult::getData()const
 {
 	return data_;
 }
 
-std::string PutEventRuleResult::getCode()const
+std::string DescribeSiteMonitorLogResult::getCode()const
 {
 	return code_;
 }
 
-bool PutEventRuleResult::getSuccess()const
+std::string DescribeSiteMonitorLogResult::getSuccess()const
 {
 	return success_;
 }
