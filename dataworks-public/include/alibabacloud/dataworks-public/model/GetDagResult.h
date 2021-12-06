@@ -35,17 +35,18 @@ namespace AlibabaCloud
 				struct Data
 				{
 					std::string status;
-					long gmtdate;
 					long modifyTime;
-					std::string type;
-					long finishTime;
 					long createTime;
 					long projectId;
 					long startTime;
 					std::string createUser;
 					long dagId;
-					std::string name;
 					long bizdate;
+					std::string name;
+					long gmtdate;
+					std::string type;
+					long opSeq;
+					long finishTime;
 				};
 
 

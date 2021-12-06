@@ -40,14 +40,14 @@ void CreateTableResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto taskInfoNode = value["TaskInfo"];
-	if(!taskInfoNode["TaskId"].isNull())
-		taskInfo_.taskId = taskInfoNode["TaskId"].asString();
-	if(!taskInfoNode["Content"].isNull())
-		taskInfo_.content = taskInfoNode["Content"].asString();
 	if(!taskInfoNode["Status"].isNull())
 		taskInfo_.status = taskInfoNode["Status"].asString();
 	if(!taskInfoNode["NextTaskId"].isNull())
 		taskInfo_.nextTaskId = taskInfoNode["NextTaskId"].asString();
+	if(!taskInfoNode["TaskId"].isNull())
+		taskInfo_.taskId = taskInfoNode["TaskId"].asString();
+	if(!taskInfoNode["Content"].isNull())
+		taskInfo_.content = taskInfoNode["Content"].asString();
 
 }
 

@@ -41,6 +41,7 @@ namespace AlibabaCloud
 					std::string nodeName;
 					long createTime;
 					std::string paramValues;
+					std::string createUser;
 					long cycTime;
 					long beginWaitTimeTime;
 					long dagId;

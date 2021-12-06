@@ -43,6 +43,7 @@ namespace AlibabaCloud
 						bool isPartitionColumn;
 						int position;
 						bool isForeignKey;
+						long relationCount;
 						std::string caption;
 						bool isPrimaryKey;
 					};

@@ -37,14 +37,20 @@ namespace AlibabaCloud
 
 				std::string getProjectEnv()const;
 				void setProjectEnv(const std::string& projectEnv);
+				std::string getDagType()const;
+				void setDagType(const std::string& dagType);
 				std::string getBizDate()const;
 				void setBizDate(const std::string& bizDate);
+				std::string getSchedulerType()const;
+				void setSchedulerType(const std::string& schedulerType);
 				long getProjectId()const;
 				void setProjectId(long projectId);
 
             private:
 				std::string projectEnv_;
+				std::string dagType_;
 				std::string bizDate_;
+				std::string schedulerType_;
 				long projectId_;
 
 			};

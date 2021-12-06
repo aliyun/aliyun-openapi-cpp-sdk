@@ -49,6 +49,7 @@ namespace AlibabaCloud
 						std::string methodName;
 						std::string property;
 						int templateId;
+						std::string ruleName;
 						std::string comment;
 						std::string criticalThreshold;
 						std::string trend;

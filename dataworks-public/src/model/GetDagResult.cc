@@ -40,38 +40,40 @@ void GetDagResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["ProjectId"].isNull())
-		data_.projectId = std::stol(dataNode["ProjectId"].asString());
-	if(!dataNode["DagId"].isNull())
-		data_.dagId = std::stol(dataNode["DagId"].asString());
-	if(!dataNode["Name"].isNull())
-		data_.name = dataNode["Name"].asString();
 	if(!dataNode["Type"].isNull())
 		data_.type = dataNode["Type"].asString();
 	if(!dataNode["Status"].isNull())
 		data_.status = dataNode["Status"].asString();
-	if(!dataNode["Bizdate"].isNull())
-		data_.bizdate = std::stol(dataNode["Bizdate"].asString());
-	if(!dataNode["Gmtdate"].isNull())
-		data_.gmtdate = std::stol(dataNode["Gmtdate"].asString());
-	if(!dataNode["StartTime"].isNull())
-		data_.startTime = std::stol(dataNode["StartTime"].asString());
 	if(!dataNode["FinishTime"].isNull())
 		data_.finishTime = std::stol(dataNode["FinishTime"].asString());
 	if(!dataNode["CreateTime"].isNull())
 		data_.createTime = std::stol(dataNode["CreateTime"].asString());
+	if(!dataNode["ProjectId"].isNull())
+		data_.projectId = std::stol(dataNode["ProjectId"].asString());
+	if(!dataNode["DagId"].isNull())
+		data_.dagId = std::stol(dataNode["DagId"].asString());
+	if(!dataNode["Gmtdate"].isNull())
+		data_.gmtdate = std::stol(dataNode["Gmtdate"].asString());
+	if(!dataNode["StartTime"].isNull())
+		data_.startTime = std::stol(dataNode["StartTime"].asString());
 	if(!dataNode["CreateUser"].isNull())
 		data_.createUser = dataNode["CreateUser"].asString();
+	if(!dataNode["Bizdate"].isNull())
+		data_.bizdate = std::stol(dataNode["Bizdate"].asString());
+	if(!dataNode["Name"].isNull())
+		data_.name = dataNode["Name"].asString();
 	if(!dataNode["ModifyTime"].isNull())
 		data_.modifyTime = std::stol(dataNode["ModifyTime"].asString());
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
+	if(!dataNode["OpSeq"].isNull())
+		data_.opSeq = std::stol(dataNode["OpSeq"].asString());
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
 	if(!value["ErrorMessage"].isNull())
 		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

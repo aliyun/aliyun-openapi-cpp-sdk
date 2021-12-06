@@ -40,44 +40,46 @@ void GetMetaTableColumnResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["TotalCount"].isNull())
-		data_.totalCount = std::stol(dataNode["TotalCount"].asString());
 	if(!dataNode["PageNum"].isNull())
 		data_.pageNum = std::stoi(dataNode["PageNum"].asString());
 	if(!dataNode["PageSize"].isNull())
 		data_.pageSize = std::stoi(dataNode["PageSize"].asString());
+	if(!dataNode["TotalCount"].isNull())
+		data_.totalCount = std::stol(dataNode["TotalCount"].asString());
 	auto allColumnListNode = dataNode["ColumnList"]["ColumnListItem"];
 	for (auto dataNodeColumnListColumnListItem : allColumnListNode)
 	{
 		Data::ColumnListItem columnListItemObject;
-		if(!dataNodeColumnListColumnListItem["ColumnName"].isNull())
-			columnListItemObject.columnName = dataNodeColumnListColumnListItem["ColumnName"].asString();
 		if(!dataNodeColumnListColumnListItem["ColumnGuid"].isNull())
 			columnListItemObject.columnGuid = dataNodeColumnListColumnListItem["ColumnGuid"].asString();
-		if(!dataNodeColumnListColumnListItem["Comment"].isNull())
-			columnListItemObject.comment = dataNodeColumnListColumnListItem["Comment"].asString();
-		if(!dataNodeColumnListColumnListItem["IsPrimaryKey"].isNull())
-			columnListItemObject.isPrimaryKey = dataNodeColumnListColumnListItem["IsPrimaryKey"].asString() == "true";
-		if(!dataNodeColumnListColumnListItem["ColumnType"].isNull())
-			columnListItemObject.columnType = dataNodeColumnListColumnListItem["ColumnType"].asString();
+		if(!dataNodeColumnListColumnListItem["ColumnName"].isNull())
+			columnListItemObject.columnName = dataNodeColumnListColumnListItem["ColumnName"].asString();
 		if(!dataNodeColumnListColumnListItem["IsPartitionColumn"].isNull())
 			columnListItemObject.isPartitionColumn = dataNodeColumnListColumnListItem["IsPartitionColumn"].asString() == "true";
-		if(!dataNodeColumnListColumnListItem["IsForeignKey"].isNull())
-			columnListItemObject.isForeignKey = dataNodeColumnListColumnListItem["IsForeignKey"].asString() == "true";
-		if(!dataNodeColumnListColumnListItem["Caption"].isNull())
-			columnListItemObject.caption = dataNodeColumnListColumnListItem["Caption"].asString();
+		if(!dataNodeColumnListColumnListItem["Comment"].isNull())
+			columnListItemObject.comment = dataNodeColumnListColumnListItem["Comment"].asString();
+		if(!dataNodeColumnListColumnListItem["ColumnType"].isNull())
+			columnListItemObject.columnType = dataNodeColumnListColumnListItem["ColumnType"].asString();
+		if(!dataNodeColumnListColumnListItem["IsPrimaryKey"].isNull())
+			columnListItemObject.isPrimaryKey = dataNodeColumnListColumnListItem["IsPrimaryKey"].asString() == "true";
 		if(!dataNodeColumnListColumnListItem["Position"].isNull())
 			columnListItemObject.position = std::stoi(dataNodeColumnListColumnListItem["Position"].asString());
+		if(!dataNodeColumnListColumnListItem["Caption"].isNull())
+			columnListItemObject.caption = dataNodeColumnListColumnListItem["Caption"].asString();
+		if(!dataNodeColumnListColumnListItem["IsForeignKey"].isNull())
+			columnListItemObject.isForeignKey = dataNodeColumnListColumnListItem["IsForeignKey"].asString() == "true";
+		if(!dataNodeColumnListColumnListItem["RelationCount"].isNull())
+			columnListItemObject.relationCount = std::stol(dataNodeColumnListColumnListItem["RelationCount"].asString());
 		data_.columnList.push_back(columnListItemObject);
 	}
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
 
 }
 

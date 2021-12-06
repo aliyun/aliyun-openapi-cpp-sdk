@@ -44,36 +44,36 @@ void GetNodeChildrenResult::parse(const std::string &payload)
 	for (auto dataNodeNodesNodesItem : allNodesNode)
 	{
 		Data::NodesItem nodesItemObject;
-		if(!dataNodeNodesNodesItem["NodeId"].isNull())
-			nodesItemObject.nodeId = std::stol(dataNodeNodesNodesItem["NodeId"].asString());
-		if(!dataNodeNodesNodesItem["NodeName"].isNull())
-			nodesItemObject.nodeName = dataNodeNodesNodesItem["NodeName"].asString();
-		if(!dataNodeNodesNodesItem["CronExpress"].isNull())
-			nodesItemObject.cronExpress = dataNodeNodesNodesItem["CronExpress"].asString();
 		if(!dataNodeNodesNodesItem["SchedulerType"].isNull())
 			nodesItemObject.schedulerType = dataNodeNodesNodesItem["SchedulerType"].asString();
-		if(!dataNodeNodesNodesItem["ProgramType"].isNull())
-			nodesItemObject.programType = dataNodeNodesNodesItem["ProgramType"].asString();
-		if(!dataNodeNodesNodesItem["OwnerId"].isNull())
-			nodesItemObject.ownerId = dataNodeNodesNodesItem["OwnerId"].asString();
-		if(!dataNodeNodesNodesItem["ProjectId"].isNull())
-			nodesItemObject.projectId = std::stol(dataNodeNodesNodesItem["ProjectId"].asString());
-		if(!dataNodeNodesNodesItem["Repeatability"].isNull())
-			nodesItemObject.repeatability = dataNodeNodesNodesItem["Repeatability"].asString() == "true";
-		if(!dataNodeNodesNodesItem["Priority"].isNull())
-			nodesItemObject.priority = std::stoi(dataNodeNodesNodesItem["Priority"].asString());
 		if(!dataNodeNodesNodesItem["BaselineId"].isNull())
 			nodesItemObject.baselineId = std::stol(dataNodeNodesNodesItem["BaselineId"].asString());
+		if(!dataNodeNodesNodesItem["Repeatability"].isNull())
+			nodesItemObject.repeatability = dataNodeNodesNodesItem["Repeatability"].asString() == "true";
+		if(!dataNodeNodesNodesItem["NodeName"].isNull())
+			nodesItemObject.nodeName = dataNodeNodesNodesItem["NodeName"].asString();
+		if(!dataNodeNodesNodesItem["ProjectId"].isNull())
+			nodesItemObject.projectId = std::stol(dataNodeNodesNodesItem["ProjectId"].asString());
+		if(!dataNodeNodesNodesItem["ProgramType"].isNull())
+			nodesItemObject.programType = dataNodeNodesNodesItem["ProgramType"].asString();
+		if(!dataNodeNodesNodesItem["Priority"].isNull())
+			nodesItemObject.priority = std::stoi(dataNodeNodesNodesItem["Priority"].asString());
+		if(!dataNodeNodesNodesItem["OwnerId"].isNull())
+			nodesItemObject.ownerId = dataNodeNodesNodesItem["OwnerId"].asString();
+		if(!dataNodeNodesNodesItem["CronExpress"].isNull())
+			nodesItemObject.cronExpress = dataNodeNodesNodesItem["CronExpress"].asString();
+		if(!dataNodeNodesNodesItem["NodeId"].isNull())
+			nodesItemObject.nodeId = std::stol(dataNodeNodesNodesItem["NodeId"].asString());
 		data_.nodes.push_back(nodesItemObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
 	if(!value["ErrorMessage"].isNull())
 		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

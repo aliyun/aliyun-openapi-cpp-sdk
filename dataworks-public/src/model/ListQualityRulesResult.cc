@@ -40,76 +40,78 @@ void ListQualityRulesResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["TotalCount"].isNull())
-		data_.totalCount = std::stol(dataNode["TotalCount"].asString());
 	if(!dataNode["PageNumber"].isNull())
 		data_.pageNumber = std::stoi(dataNode["PageNumber"].asString());
 	if(!dataNode["PageSize"].isNull())
 		data_.pageSize = std::stoi(dataNode["PageSize"].asString());
+	if(!dataNode["TotalCount"].isNull())
+		data_.totalCount = std::stol(dataNode["TotalCount"].asString());
 	auto allRulesNode = dataNode["Rules"]["RulesItem"];
 	for (auto dataNodeRulesRulesItem : allRulesNode)
 	{
 		Data::RulesItem rulesItemObject;
-		if(!dataNodeRulesRulesItem["ProjectName"].isNull())
-			rulesItemObject.projectName = dataNodeRulesRulesItem["ProjectName"].asString();
-		if(!dataNodeRulesRulesItem["TableName"].isNull())
-			rulesItemObject.tableName = dataNodeRulesRulesItem["TableName"].asString();
-		if(!dataNodeRulesRulesItem["Id"].isNull())
-			rulesItemObject.id = std::stoi(dataNodeRulesRulesItem["Id"].asString());
-		if(!dataNodeRulesRulesItem["EntityId"].isNull())
-			rulesItemObject.entityId = std::stoi(dataNodeRulesRulesItem["EntityId"].asString());
-		if(!dataNodeRulesRulesItem["Property"].isNull())
-			rulesItemObject.property = dataNodeRulesRulesItem["Property"].asString();
-		if(!dataNodeRulesRulesItem["MethodId"].isNull())
-			rulesItemObject.methodId = std::stoi(dataNodeRulesRulesItem["MethodId"].asString());
-		if(!dataNodeRulesRulesItem["MethodName"].isNull())
-			rulesItemObject.methodName = dataNodeRulesRulesItem["MethodName"].asString();
-		if(!dataNodeRulesRulesItem["OnDuty"].isNull())
-			rulesItemObject.onDuty = dataNodeRulesRulesItem["OnDuty"].asString();
-		if(!dataNodeRulesRulesItem["RuleType"].isNull())
-			rulesItemObject.ruleType = std::stoi(dataNodeRulesRulesItem["RuleType"].asString());
 		if(!dataNodeRulesRulesItem["BlockType"].isNull())
 			rulesItemObject.blockType = std::stoi(dataNodeRulesRulesItem["BlockType"].asString());
-		if(!dataNodeRulesRulesItem["TemplateId"].isNull())
-			rulesItemObject.templateId = std::stoi(dataNodeRulesRulesItem["TemplateId"].asString());
-		if(!dataNodeRulesRulesItem["TemplateName"].isNull())
-			rulesItemObject.templateName = dataNodeRulesRulesItem["TemplateName"].asString();
-		if(!dataNodeRulesRulesItem["RuleCheckerRelationId"].isNull())
-			rulesItemObject.ruleCheckerRelationId = std::stoi(dataNodeRulesRulesItem["RuleCheckerRelationId"].asString());
-		if(!dataNodeRulesRulesItem["CheckerId"].isNull())
-			rulesItemObject.checkerId = std::stoi(dataNodeRulesRulesItem["CheckerId"].asString());
-		if(!dataNodeRulesRulesItem["FixCheck"].isNull())
-			rulesItemObject.fixCheck = dataNodeRulesRulesItem["FixCheck"].asString() == "true";
-		if(!dataNodeRulesRulesItem["Trend"].isNull())
-			rulesItemObject.trend = dataNodeRulesRulesItem["Trend"].asString();
-		if(!dataNodeRulesRulesItem["WarningThreshold"].isNull())
-			rulesItemObject.warningThreshold = dataNodeRulesRulesItem["WarningThreshold"].asString();
-		if(!dataNodeRulesRulesItem["CriticalThreshold"].isNull())
-			rulesItemObject.criticalThreshold = dataNodeRulesRulesItem["CriticalThreshold"].asString();
-		if(!dataNodeRulesRulesItem["HistoryWarningThreshold"].isNull())
-			rulesItemObject.historyWarningThreshold = dataNodeRulesRulesItem["HistoryWarningThreshold"].asString();
-		if(!dataNodeRulesRulesItem["HistoryCriticalThreshold"].isNull())
-			rulesItemObject.historyCriticalThreshold = dataNodeRulesRulesItem["HistoryCriticalThreshold"].asString();
-		if(!dataNodeRulesRulesItem["PropertyKey"].isNull())
-			rulesItemObject.propertyKey = dataNodeRulesRulesItem["PropertyKey"].asString();
-		if(!dataNodeRulesRulesItem["MatchExpression"].isNull())
-			rulesItemObject.matchExpression = dataNodeRulesRulesItem["MatchExpression"].asString();
-		if(!dataNodeRulesRulesItem["Comment"].isNull())
-			rulesItemObject.comment = dataNodeRulesRulesItem["Comment"].asString();
-		if(!dataNodeRulesRulesItem["ExpectValue"].isNull())
-			rulesItemObject.expectValue = dataNodeRulesRulesItem["ExpectValue"].asString();
 		if(!dataNodeRulesRulesItem["OnDutyAccountName"].isNull())
 			rulesItemObject.onDutyAccountName = dataNodeRulesRulesItem["OnDutyAccountName"].asString();
+		if(!dataNodeRulesRulesItem["Property"].isNull())
+			rulesItemObject.property = dataNodeRulesRulesItem["Property"].asString();
+		if(!dataNodeRulesRulesItem["WarningThreshold"].isNull())
+			rulesItemObject.warningThreshold = dataNodeRulesRulesItem["WarningThreshold"].asString();
+		if(!dataNodeRulesRulesItem["TableName"].isNull())
+			rulesItemObject.tableName = dataNodeRulesRulesItem["TableName"].asString();
+		if(!dataNodeRulesRulesItem["OnDuty"].isNull())
+			rulesItemObject.onDuty = dataNodeRulesRulesItem["OnDuty"].asString();
+		if(!dataNodeRulesRulesItem["Comment"].isNull())
+			rulesItemObject.comment = dataNodeRulesRulesItem["Comment"].asString();
+		if(!dataNodeRulesRulesItem["RuleCheckerRelationId"].isNull())
+			rulesItemObject.ruleCheckerRelationId = std::stoi(dataNodeRulesRulesItem["RuleCheckerRelationId"].asString());
+		if(!dataNodeRulesRulesItem["FixCheck"].isNull())
+			rulesItemObject.fixCheck = dataNodeRulesRulesItem["FixCheck"].asString() == "true";
+		if(!dataNodeRulesRulesItem["MethodId"].isNull())
+			rulesItemObject.methodId = std::stoi(dataNodeRulesRulesItem["MethodId"].asString());
+		if(!dataNodeRulesRulesItem["TemplateName"].isNull())
+			rulesItemObject.templateName = dataNodeRulesRulesItem["TemplateName"].asString();
+		if(!dataNodeRulesRulesItem["Trend"].isNull())
+			rulesItemObject.trend = dataNodeRulesRulesItem["Trend"].asString();
+		if(!dataNodeRulesRulesItem["HistoryWarningThreshold"].isNull())
+			rulesItemObject.historyWarningThreshold = dataNodeRulesRulesItem["HistoryWarningThreshold"].asString();
+		if(!dataNodeRulesRulesItem["RuleType"].isNull())
+			rulesItemObject.ruleType = std::stoi(dataNodeRulesRulesItem["RuleType"].asString());
+		if(!dataNodeRulesRulesItem["MatchExpression"].isNull())
+			rulesItemObject.matchExpression = dataNodeRulesRulesItem["MatchExpression"].asString();
+		if(!dataNodeRulesRulesItem["ProjectName"].isNull())
+			rulesItemObject.projectName = dataNodeRulesRulesItem["ProjectName"].asString();
+		if(!dataNodeRulesRulesItem["PropertyKey"].isNull())
+			rulesItemObject.propertyKey = dataNodeRulesRulesItem["PropertyKey"].asString();
+		if(!dataNodeRulesRulesItem["CriticalThreshold"].isNull())
+			rulesItemObject.criticalThreshold = dataNodeRulesRulesItem["CriticalThreshold"].asString();
+		if(!dataNodeRulesRulesItem["HistoryCriticalThreshold"].isNull())
+			rulesItemObject.historyCriticalThreshold = dataNodeRulesRulesItem["HistoryCriticalThreshold"].asString();
+		if(!dataNodeRulesRulesItem["MethodName"].isNull())
+			rulesItemObject.methodName = dataNodeRulesRulesItem["MethodName"].asString();
+		if(!dataNodeRulesRulesItem["CheckerId"].isNull())
+			rulesItemObject.checkerId = std::stoi(dataNodeRulesRulesItem["CheckerId"].asString());
+		if(!dataNodeRulesRulesItem["EntityId"].isNull())
+			rulesItemObject.entityId = std::stoi(dataNodeRulesRulesItem["EntityId"].asString());
+		if(!dataNodeRulesRulesItem["ExpectValue"].isNull())
+			rulesItemObject.expectValue = dataNodeRulesRulesItem["ExpectValue"].asString();
+		if(!dataNodeRulesRulesItem["TemplateId"].isNull())
+			rulesItemObject.templateId = std::stoi(dataNodeRulesRulesItem["TemplateId"].asString());
+		if(!dataNodeRulesRulesItem["Id"].isNull())
+			rulesItemObject.id = std::stoi(dataNodeRulesRulesItem["Id"].asString());
+		if(!dataNodeRulesRulesItem["RuleName"].isNull())
+			rulesItemObject.ruleName = dataNodeRulesRulesItem["RuleName"].asString();
 		data_.rules.push_back(rulesItemObject);
 	}
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
 
 }
 

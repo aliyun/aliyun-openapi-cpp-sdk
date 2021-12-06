@@ -771,6 +771,42 @@ Dataworks_publicClient::CreateDataSourceOutcomeCallable Dataworks_publicClient::
 	return task->get_future();
 }
 
+Dataworks_publicClient::CreateExportMigrationOutcome Dataworks_publicClient::createExportMigration(const CreateExportMigrationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateExportMigrationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateExportMigrationOutcome(CreateExportMigrationResult(outcome.result()));
+	else
+		return CreateExportMigrationOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::createExportMigrationAsync(const CreateExportMigrationRequest& request, const CreateExportMigrationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createExportMigration(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::CreateExportMigrationOutcomeCallable Dataworks_publicClient::createExportMigrationCallable(const CreateExportMigrationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateExportMigrationOutcome()>>(
+			[this, request]()
+			{
+			return this->createExportMigration(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dataworks_publicClient::CreateFileOutcome Dataworks_publicClient::createFile(const CreateFileRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3183,6 +3219,42 @@ Dataworks_publicClient::GetFolderOutcomeCallable Dataworks_publicClient::getFold
 	return task->get_future();
 }
 
+Dataworks_publicClient::GetIDEEventDetailOutcome Dataworks_publicClient::getIDEEventDetail(const GetIDEEventDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetIDEEventDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetIDEEventDetailOutcome(GetIDEEventDetailResult(outcome.result()));
+	else
+		return GetIDEEventDetailOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::getIDEEventDetailAsync(const GetIDEEventDetailRequest& request, const GetIDEEventDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getIDEEventDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::GetIDEEventDetailOutcomeCallable Dataworks_publicClient::getIDEEventDetailCallable(const GetIDEEventDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetIDEEventDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->getIDEEventDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dataworks_publicClient::GetInstanceOutcome Dataworks_publicClient::getInstance(const GetInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4005,6 +4077,42 @@ Dataworks_publicClient::GetMigrationProcessOutcomeCallable Dataworks_publicClien
 			[this, request]()
 			{
 			return this->getMigrationProcess(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dataworks_publicClient::GetMigrationSummaryOutcome Dataworks_publicClient::getMigrationSummary(const GetMigrationSummaryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetMigrationSummaryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetMigrationSummaryOutcome(GetMigrationSummaryResult(outcome.result()));
+	else
+		return GetMigrationSummaryOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::getMigrationSummaryAsync(const GetMigrationSummaryRequest& request, const GetMigrationSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getMigrationSummary(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::GetMigrationSummaryOutcomeCallable Dataworks_publicClient::getMigrationSummaryCallable(const GetMigrationSummaryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetMigrationSummaryOutcome()>>(
+			[this, request]()
+			{
+			return this->getMigrationSummary(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5091,6 +5199,42 @@ Dataworks_publicClient::ListDISyncTasksOutcomeCallable Dataworks_publicClient::l
 	return task->get_future();
 }
 
+Dataworks_publicClient::ListDagsOutcome Dataworks_publicClient::listDags(const ListDagsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListDagsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListDagsOutcome(ListDagsResult(outcome.result()));
+	else
+		return ListDagsOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::listDagsAsync(const ListDagsRequest& request, const ListDagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listDags(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::ListDagsOutcomeCallable Dataworks_publicClient::listDagsCallable(const ListDagsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListDagsOutcome()>>(
+			[this, request]()
+			{
+			return this->listDags(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dataworks_publicClient::ListDataServiceApiAuthoritiesOutcome Dataworks_publicClient::listDataServiceApiAuthorities(const ListDataServiceApiAuthoritiesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5373,6 +5517,42 @@ Dataworks_publicClient::ListDataSourcesOutcomeCallable Dataworks_publicClient::l
 			[this, request]()
 			{
 			return this->listDataSources(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dataworks_publicClient::ListDeploymentsOutcome Dataworks_publicClient::listDeployments(const ListDeploymentsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListDeploymentsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListDeploymentsOutcome(ListDeploymentsResult(outcome.result()));
+	else
+		return ListDeploymentsOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::listDeploymentsAsync(const ListDeploymentsRequest& request, const ListDeploymentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listDeployments(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::ListDeploymentsOutcomeCallable Dataworks_publicClient::listDeploymentsCallable(const ListDeploymentsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListDeploymentsOutcome()>>(
+			[this, request]()
+			{
+			return this->listDeployments(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -7713,6 +7893,42 @@ Dataworks_publicClient::UpdateFolderOutcomeCallable Dataworks_publicClient::upda
 			[this, request]()
 			{
 			return this->updateFolder(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dataworks_publicClient::UpdateIDEEventResultOutcome Dataworks_publicClient::updateIDEEventResult(const UpdateIDEEventResultRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateIDEEventResultOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateIDEEventResultOutcome(UpdateIDEEventResultResult(outcome.result()));
+	else
+		return UpdateIDEEventResultOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::updateIDEEventResultAsync(const UpdateIDEEventResultRequest& request, const UpdateIDEEventResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateIDEEventResult(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::UpdateIDEEventResultOutcomeCallable Dataworks_publicClient::updateIDEEventResultCallable(const UpdateIDEEventResultRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateIDEEventResultOutcome()>>(
+			[this, request]()
+			{
+			return this->updateIDEEventResult(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

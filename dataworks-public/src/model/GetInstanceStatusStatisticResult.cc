@@ -40,20 +40,20 @@ void GetInstanceStatusStatisticResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto statusCountNode = value["StatusCount"];
+	if(!statusCountNode["FailureCount"].isNull())
+		statusCount_.failureCount = std::stoi(statusCountNode["FailureCount"].asString());
+	if(!statusCountNode["WaitTimeCount"].isNull())
+		statusCount_.waitTimeCount = std::stoi(statusCountNode["WaitTimeCount"].asString());
+	if(!statusCountNode["RunningCount"].isNull())
+		statusCount_.runningCount = std::stoi(statusCountNode["RunningCount"].asString());
+	if(!statusCountNode["SuccessCount"].isNull())
+		statusCount_.successCount = std::stoi(statusCountNode["SuccessCount"].asString());
 	if(!statusCountNode["TotalCount"].isNull())
 		statusCount_.totalCount = std::stoi(statusCountNode["TotalCount"].asString());
 	if(!statusCountNode["NotRunCount"].isNull())
 		statusCount_.notRunCount = std::stoi(statusCountNode["NotRunCount"].asString());
-	if(!statusCountNode["WaitTimeCount"].isNull())
-		statusCount_.waitTimeCount = std::stoi(statusCountNode["WaitTimeCount"].asString());
 	if(!statusCountNode["WaitResCount"].isNull())
 		statusCount_.waitResCount = std::stoi(statusCountNode["WaitResCount"].asString());
-	if(!statusCountNode["RunningCount"].isNull())
-		statusCount_.runningCount = std::stoi(statusCountNode["RunningCount"].asString());
-	if(!statusCountNode["FailureCount"].isNull())
-		statusCount_.failureCount = std::stoi(statusCountNode["FailureCount"].asString());
-	if(!statusCountNode["SuccessCount"].isNull())
-		statusCount_.successCount = std::stoi(statusCountNode["SuccessCount"].asString());
 
 }
 

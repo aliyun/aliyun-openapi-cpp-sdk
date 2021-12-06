@@ -40,10 +40,10 @@ void GetMetaTableLineageResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["HasNext"].isNull())
-		data_.hasNext = dataNode["HasNext"].asString() == "true";
 	if(!dataNode["NextPrimaryKey"].isNull())
 		data_.nextPrimaryKey = dataNode["NextPrimaryKey"].asString();
+	if(!dataNode["HasNext"].isNull())
+		data_.hasNext = dataNode["HasNext"].asString() == "true";
 	auto allDataEntityListNode = dataNode["DataEntityList"]["DataEntityListItem"];
 	for (auto dataNodeDataEntityListDataEntityListItem : allDataEntityListNode)
 	{
@@ -52,16 +52,18 @@ void GetMetaTableLineageResult::parse(const std::string &payload)
 			dataEntityListItemObject.tableName = dataNodeDataEntityListDataEntityListItem["TableName"].asString();
 		if(!dataNodeDataEntityListDataEntityListItem["TableGuid"].isNull())
 			dataEntityListItemObject.tableGuid = dataNodeDataEntityListDataEntityListItem["TableGuid"].asString();
+		if(!dataNodeDataEntityListDataEntityListItem["CreateTimestamp"].isNull())
+			dataEntityListItemObject.createTimestamp = std::stol(dataNodeDataEntityListDataEntityListItem["CreateTimestamp"].asString());
 		data_.dataEntityList.push_back(dataEntityListItemObject);
 	}
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
 
 }
 

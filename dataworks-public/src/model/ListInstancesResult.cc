@@ -50,70 +50,72 @@ void ListInstancesResult::parse(const std::string &payload)
 	for (auto dataNodeInstancesInstance : allInstancesNode)
 	{
 		Data::Instance instanceObject;
-		if(!dataNodeInstancesInstance["NodeId"].isNull())
-			instanceObject.nodeId = std::stol(dataNodeInstancesInstance["NodeId"].asString());
-		if(!dataNodeInstancesInstance["InstanceId"].isNull())
-			instanceObject.instanceId = std::stol(dataNodeInstancesInstance["InstanceId"].asString());
-		if(!dataNodeInstancesInstance["DagId"].isNull())
-			instanceObject.dagId = std::stol(dataNodeInstancesInstance["DagId"].asString());
-		if(!dataNodeInstancesInstance["DagType"].isNull())
-			instanceObject.dagType = dataNodeInstancesInstance["DagType"].asString();
 		if(!dataNodeInstancesInstance["Status"].isNull())
 			instanceObject.status = dataNodeInstancesInstance["Status"].asString();
-		if(!dataNodeInstancesInstance["Bizdate"].isNull())
-			instanceObject.bizdate = std::stol(dataNodeInstancesInstance["Bizdate"].asString());
 		if(!dataNodeInstancesInstance["CycTime"].isNull())
 			instanceObject.cycTime = std::stol(dataNodeInstancesInstance["CycTime"].asString());
-		if(!dataNodeInstancesInstance["CreateTime"].isNull())
-			instanceObject.createTime = std::stol(dataNodeInstancesInstance["CreateTime"].asString());
-		if(!dataNodeInstancesInstance["ModifyTime"].isNull())
-			instanceObject.modifyTime = std::stol(dataNodeInstancesInstance["ModifyTime"].asString());
-		if(!dataNodeInstancesInstance["NodeName"].isNull())
-			instanceObject.nodeName = dataNodeInstancesInstance["NodeName"].asString();
-		if(!dataNodeInstancesInstance["BeginWaitTimeTime"].isNull())
-			instanceObject.beginWaitTimeTime = std::stol(dataNodeInstancesInstance["BeginWaitTimeTime"].asString());
-		if(!dataNodeInstancesInstance["BeginWaitResTime"].isNull())
-			instanceObject.beginWaitResTime = std::stol(dataNodeInstancesInstance["BeginWaitResTime"].asString());
 		if(!dataNodeInstancesInstance["BeginRunningTime"].isNull())
 			instanceObject.beginRunningTime = std::stol(dataNodeInstancesInstance["BeginRunningTime"].asString());
-		if(!dataNodeInstancesInstance["ParamValues"].isNull())
-			instanceObject.paramValues = dataNodeInstancesInstance["ParamValues"].asString();
 		if(!dataNodeInstancesInstance["FinishTime"].isNull())
 			instanceObject.finishTime = std::stol(dataNodeInstancesInstance["FinishTime"].asString());
+		if(!dataNodeInstancesInstance["ErrorMessage"].isNull())
+			instanceObject.errorMessage = dataNodeInstancesInstance["ErrorMessage"].asString();
+		if(!dataNodeInstancesInstance["CreateTime"].isNull())
+			instanceObject.createTime = std::stol(dataNodeInstancesInstance["CreateTime"].asString());
+		if(!dataNodeInstancesInstance["DagId"].isNull())
+			instanceObject.dagId = std::stol(dataNodeInstancesInstance["DagId"].asString());
 		if(!dataNodeInstancesInstance["Priority"].isNull())
 			instanceObject.priority = std::stoi(dataNodeInstancesInstance["Priority"].asString());
+		if(!dataNodeInstancesInstance["TaskType"].isNull())
+			instanceObject.taskType = dataNodeInstancesInstance["TaskType"].asString();
+		if(!dataNodeInstancesInstance["ParamValues"].isNull())
+			instanceObject.paramValues = dataNodeInstancesInstance["ParamValues"].asString();
+		if(!dataNodeInstancesInstance["Connection"].isNull())
+			instanceObject.connection = dataNodeInstancesInstance["Connection"].asString();
 		if(!dataNodeInstancesInstance["BaselineId"].isNull())
 			instanceObject.baselineId = std::stol(dataNodeInstancesInstance["BaselineId"].asString());
+		if(!dataNodeInstancesInstance["DqcType"].isNull())
+			instanceObject.dqcType = std::stoi(dataNodeInstancesInstance["DqcType"].asString());
+		if(!dataNodeInstancesInstance["DagType"].isNull())
+			instanceObject.dagType = dataNodeInstancesInstance["DagType"].asString();
+		if(!dataNodeInstancesInstance["BusinessId"].isNull())
+			instanceObject.businessId = std::stol(dataNodeInstancesInstance["BusinessId"].asString());
+		if(!dataNodeInstancesInstance["TaskRerunTime"].isNull())
+			instanceObject.taskRerunTime = std::stoi(dataNodeInstancesInstance["TaskRerunTime"].asString());
+		if(!dataNodeInstancesInstance["ModifyTime"].isNull())
+			instanceObject.modifyTime = std::stol(dataNodeInstancesInstance["ModifyTime"].asString());
 		if(!dataNodeInstancesInstance["Repeatability"].isNull())
 			instanceObject.repeatability = dataNodeInstancesInstance["Repeatability"].asString() == "true";
 		if(!dataNodeInstancesInstance["RepeatInterval"].isNull())
 			instanceObject.repeatInterval = std::stol(dataNodeInstancesInstance["RepeatInterval"].asString());
-		if(!dataNodeInstancesInstance["Connection"].isNull())
-			instanceObject.connection = dataNodeInstancesInstance["Connection"].asString();
-		if(!dataNodeInstancesInstance["DqcType"].isNull())
-			instanceObject.dqcType = std::stoi(dataNodeInstancesInstance["DqcType"].asString());
-		if(!dataNodeInstancesInstance["DqcDescription"].isNull())
-			instanceObject.dqcDescription = dataNodeInstancesInstance["DqcDescription"].asString();
-		if(!dataNodeInstancesInstance["ErrorMessage"].isNull())
-			instanceObject.errorMessage = dataNodeInstancesInstance["ErrorMessage"].asString();
+		if(!dataNodeInstancesInstance["InstanceId"].isNull())
+			instanceObject.instanceId = std::stol(dataNodeInstancesInstance["InstanceId"].asString());
+		if(!dataNodeInstancesInstance["BeginWaitResTime"].isNull())
+			instanceObject.beginWaitResTime = std::stol(dataNodeInstancesInstance["BeginWaitResTime"].asString());
 		if(!dataNodeInstancesInstance["RelatedFlowId"].isNull())
 			instanceObject.relatedFlowId = std::stol(dataNodeInstancesInstance["RelatedFlowId"].asString());
-		if(!dataNodeInstancesInstance["TaskType"].isNull())
-			instanceObject.taskType = dataNodeInstancesInstance["TaskType"].asString();
-		if(!dataNodeInstancesInstance["TaskRerunTime"].isNull())
-			instanceObject.taskRerunTime = std::stoi(dataNodeInstancesInstance["TaskRerunTime"].asString());
-		if(!dataNodeInstancesInstance["BusinessId"].isNull())
-			instanceObject.businessId = std::stol(dataNodeInstancesInstance["BusinessId"].asString());
+		if(!dataNodeInstancesInstance["Bizdate"].isNull())
+			instanceObject.bizdate = std::stol(dataNodeInstancesInstance["Bizdate"].asString());
+		if(!dataNodeInstancesInstance["NodeName"].isNull())
+			instanceObject.nodeName = dataNodeInstancesInstance["NodeName"].asString();
+		if(!dataNodeInstancesInstance["BeginWaitTimeTime"].isNull())
+			instanceObject.beginWaitTimeTime = std::stol(dataNodeInstancesInstance["BeginWaitTimeTime"].asString());
+		if(!dataNodeInstancesInstance["DqcDescription"].isNull())
+			instanceObject.dqcDescription = dataNodeInstancesInstance["DqcDescription"].asString();
+		if(!dataNodeInstancesInstance["NodeId"].isNull())
+			instanceObject.nodeId = std::stol(dataNodeInstancesInstance["NodeId"].asString());
+		if(!dataNodeInstancesInstance["CreateUser"].isNull())
+			instanceObject.createUser = dataNodeInstancesInstance["CreateUser"].asString();
 		data_.instances.push_back(instanceObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
 	if(!value["ErrorMessage"].isNull())
 		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

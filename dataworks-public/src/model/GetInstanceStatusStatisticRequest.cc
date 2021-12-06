@@ -38,6 +38,17 @@ void GetInstanceStatusStatisticRequest::setProjectEnv(const std::string& project
 	setBodyParameter("ProjectEnv", projectEnv);
 }
 
+std::string GetInstanceStatusStatisticRequest::getDagType()const
+{
+	return dagType_;
+}
+
+void GetInstanceStatusStatisticRequest::setDagType(const std::string& dagType)
+{
+	dagType_ = dagType;
+	setBodyParameter("DagType", dagType);
+}
+
 std::string GetInstanceStatusStatisticRequest::getBizDate()const
 {
 	return bizDate_;
@@ -47,6 +58,17 @@ void GetInstanceStatusStatisticRequest::setBizDate(const std::string& bizDate)
 {
 	bizDate_ = bizDate;
 	setBodyParameter("BizDate", bizDate);
+}
+
+std::string GetInstanceStatusStatisticRequest::getSchedulerType()const
+{
+	return schedulerType_;
+}
+
+void GetInstanceStatusStatisticRequest::setSchedulerType(const std::string& schedulerType)
+{
+	schedulerType_ = schedulerType;
+	setBodyParameter("SchedulerType", schedulerType);
 }
 
 long GetInstanceStatusStatisticRequest::getProjectId()const

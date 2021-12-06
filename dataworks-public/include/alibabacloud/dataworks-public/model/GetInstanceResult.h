@@ -40,11 +40,11 @@ namespace AlibabaCloud
 					std::string nodeName;
 					std::string paramValues;
 					long dagId;
-					long bizdate;
 					long beginRunningTime;
+					long bizdate;
 					long finishTime;
-					std::string dqcDescription;
 					std::string taskType;
+					std::string dqcDescription;
 					long businessId;
 					std::string status;
 					int taskRerunTime;
@@ -53,6 +53,7 @@ namespace AlibabaCloud
 					int dqcType;
 					long createTime;
 					std::string connection;
+					std::string createUser;
 					long relatedFlowId;
 					long cycTime;
 					long beginWaitTimeTime;

@@ -50,13 +50,13 @@ namespace AlibabaCloud
 					bool fixCheck;
 					int blockType;
 					std::string onDutyAccountName;
-					std::string templateName;
 					int predictType;
-					long id;
+					std::string templateName;
 					std::string methodName;
+					long id;
 					std::string property;
-					int templateId;
 					std::string ruleName;
+					int templateId;
 				};
 
 

@@ -43,48 +43,48 @@ void GetQualityEntityResult::parse(const std::string &payload)
 	for (auto valueDataEntityDto : allDataNode)
 	{
 		EntityDto dataObject;
-		if(!valueDataEntityDto["Id"].isNull())
-			dataObject.id = std::stol(valueDataEntityDto["Id"].asString());
-		if(!valueDataEntityDto["ProjectName"].isNull())
-			dataObject.projectName = valueDataEntityDto["ProjectName"].asString();
-		if(!valueDataEntityDto["TableName"].isNull())
-			dataObject.tableName = valueDataEntityDto["TableName"].asString();
-		if(!valueDataEntityDto["EnvType"].isNull())
-			dataObject.envType = valueDataEntityDto["EnvType"].asString();
-		if(!valueDataEntityDto["MatchExpression"].isNull())
-			dataObject.matchExpression = valueDataEntityDto["MatchExpression"].asString();
-		if(!valueDataEntityDto["EntityLevel"].isNull())
-			dataObject.entityLevel = std::stoi(valueDataEntityDto["EntityLevel"].asString());
-		if(!valueDataEntityDto["OnDuty"].isNull())
-			dataObject.onDuty = valueDataEntityDto["OnDuty"].asString();
-		if(!valueDataEntityDto["ModifyUser"].isNull())
-			dataObject.modifyUser = valueDataEntityDto["ModifyUser"].asString();
-		if(!valueDataEntityDto["CreateTime"].isNull())
-			dataObject.createTime = std::stol(valueDataEntityDto["CreateTime"].asString());
-		if(!valueDataEntityDto["ModifyTime"].isNull())
-			dataObject.modifyTime = std::stol(valueDataEntityDto["ModifyTime"].asString());
-		if(!valueDataEntityDto["Sql"].isNull())
-			dataObject.sql = std::stoi(valueDataEntityDto["Sql"].asString());
-		if(!valueDataEntityDto["Task"].isNull())
-			dataObject.task = std::stoi(valueDataEntityDto["Task"].asString());
-		if(!valueDataEntityDto["Followers"].isNull())
-			dataObject.followers = valueDataEntityDto["Followers"].asString();
-		if(!valueDataEntityDto["HasRelativeNode"].isNull())
-			dataObject.hasRelativeNode = valueDataEntityDto["HasRelativeNode"].asString() == "true";
 		if(!valueDataEntityDto["RelativeNode"].isNull())
 			dataObject.relativeNode = valueDataEntityDto["RelativeNode"].asString();
 		if(!valueDataEntityDto["OnDutyAccountName"].isNull())
 			dataObject.onDutyAccountName = valueDataEntityDto["OnDutyAccountName"].asString();
+		if(!valueDataEntityDto["Task"].isNull())
+			dataObject.task = std::stoi(valueDataEntityDto["Task"].asString());
+		if(!valueDataEntityDto["TableName"].isNull())
+			dataObject.tableName = valueDataEntityDto["TableName"].asString();
+		if(!valueDataEntityDto["Followers"].isNull())
+			dataObject.followers = valueDataEntityDto["Followers"].asString();
+		if(!valueDataEntityDto["OnDuty"].isNull())
+			dataObject.onDuty = valueDataEntityDto["OnDuty"].asString();
+		if(!valueDataEntityDto["MatchExpression"].isNull())
+			dataObject.matchExpression = valueDataEntityDto["MatchExpression"].asString();
+		if(!valueDataEntityDto["CreateTime"].isNull())
+			dataObject.createTime = std::stol(valueDataEntityDto["CreateTime"].asString());
+		if(!valueDataEntityDto["ProjectName"].isNull())
+			dataObject.projectName = valueDataEntityDto["ProjectName"].asString();
+		if(!valueDataEntityDto["HasRelativeNode"].isNull())
+			dataObject.hasRelativeNode = valueDataEntityDto["HasRelativeNode"].asString() == "true";
+		if(!valueDataEntityDto["EnvType"].isNull())
+			dataObject.envType = valueDataEntityDto["EnvType"].asString();
+		if(!valueDataEntityDto["EntityLevel"].isNull())
+			dataObject.entityLevel = std::stoi(valueDataEntityDto["EntityLevel"].asString());
+		if(!valueDataEntityDto["ModifyUser"].isNull())
+			dataObject.modifyUser = valueDataEntityDto["ModifyUser"].asString();
+		if(!valueDataEntityDto["Sql"].isNull())
+			dataObject.sql = std::stoi(valueDataEntityDto["Sql"].asString());
+		if(!valueDataEntityDto["Id"].isNull())
+			dataObject.id = std::stol(valueDataEntityDto["Id"].asString());
+		if(!valueDataEntityDto["ModifyTime"].isNull())
+			dataObject.modifyTime = std::stol(valueDataEntityDto["ModifyTime"].asString());
 		data_.push_back(dataObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

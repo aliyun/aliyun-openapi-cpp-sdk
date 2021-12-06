@@ -41,8 +41,8 @@ namespace AlibabaCloud
 						std::string ownerId;
 						std::string nodeName;
 						int priority;
-						long nodeId;
 						long projectId;
+						long nodeId;
 						std::string schedulerType;
 						std::string programType;
 						std::string cronExpress;
