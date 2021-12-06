@@ -43,47 +43,47 @@ void DescribeDedicatedHostClustersResult::parse(const std::string &payload)
 	for (auto valueDedicatedHostClustersDedicatedHostCluster : allDedicatedHostClustersNode)
 	{
 		DedicatedHostCluster dedicatedHostClustersObject;
-		if(!valueDedicatedHostClustersDedicatedHostCluster["DedicatedHostClusterId"].isNull())
-			dedicatedHostClustersObject.dedicatedHostClusterId = valueDedicatedHostClustersDedicatedHostCluster["DedicatedHostClusterId"].asString();
-		if(!valueDedicatedHostClustersDedicatedHostCluster["RegionId"].isNull())
-			dedicatedHostClustersObject.regionId = valueDedicatedHostClustersDedicatedHostCluster["RegionId"].asString();
-		if(!valueDedicatedHostClustersDedicatedHostCluster["ZoneId"].isNull())
-			dedicatedHostClustersObject.zoneId = valueDedicatedHostClustersDedicatedHostCluster["ZoneId"].asString();
-		if(!valueDedicatedHostClustersDedicatedHostCluster["DedicatedHostClusterName"].isNull())
-			dedicatedHostClustersObject.dedicatedHostClusterName = valueDedicatedHostClustersDedicatedHostCluster["DedicatedHostClusterName"].asString();
 		if(!valueDedicatedHostClustersDedicatedHostCluster["Description"].isNull())
 			dedicatedHostClustersObject.description = valueDedicatedHostClustersDedicatedHostCluster["Description"].asString();
+		if(!valueDedicatedHostClustersDedicatedHostCluster["DedicatedHostClusterId"].isNull())
+			dedicatedHostClustersObject.dedicatedHostClusterId = valueDedicatedHostClustersDedicatedHostCluster["DedicatedHostClusterId"].asString();
 		if(!valueDedicatedHostClustersDedicatedHostCluster["ResourceGroupId"].isNull())
 			dedicatedHostClustersObject.resourceGroupId = valueDedicatedHostClustersDedicatedHostCluster["ResourceGroupId"].asString();
+		if(!valueDedicatedHostClustersDedicatedHostCluster["ZoneId"].isNull())
+			dedicatedHostClustersObject.zoneId = valueDedicatedHostClustersDedicatedHostCluster["ZoneId"].asString();
+		if(!valueDedicatedHostClustersDedicatedHostCluster["RegionId"].isNull())
+			dedicatedHostClustersObject.regionId = valueDedicatedHostClustersDedicatedHostCluster["RegionId"].asString();
+		if(!valueDedicatedHostClustersDedicatedHostCluster["DedicatedHostClusterName"].isNull())
+			dedicatedHostClustersObject.dedicatedHostClusterName = valueDedicatedHostClustersDedicatedHostCluster["DedicatedHostClusterName"].asString();
 		auto allTagsNode = valueDedicatedHostClustersDedicatedHostCluster["Tags"]["Tag"];
 		for (auto valueDedicatedHostClustersDedicatedHostClusterTagsTag : allTagsNode)
 		{
 			DedicatedHostCluster::Tag tagsObject;
-			if(!valueDedicatedHostClustersDedicatedHostClusterTagsTag["TagKey"].isNull())
-				tagsObject.tagKey = valueDedicatedHostClustersDedicatedHostClusterTagsTag["TagKey"].asString();
 			if(!valueDedicatedHostClustersDedicatedHostClusterTagsTag["TagValue"].isNull())
 				tagsObject.tagValue = valueDedicatedHostClustersDedicatedHostClusterTagsTag["TagValue"].asString();
+			if(!valueDedicatedHostClustersDedicatedHostClusterTagsTag["TagKey"].isNull())
+				tagsObject.tagKey = valueDedicatedHostClustersDedicatedHostClusterTagsTag["TagKey"].asString();
 			dedicatedHostClustersObject.tags.push_back(tagsObject);
 		}
 		auto dedicatedHostClusterCapacityNode = value["DedicatedHostClusterCapacity"];
-		if(!dedicatedHostClusterCapacityNode["TotalVcpus"].isNull())
-			dedicatedHostClustersObject.dedicatedHostClusterCapacity.totalVcpus = std::stoi(dedicatedHostClusterCapacityNode["TotalVcpus"].asString());
 		if(!dedicatedHostClusterCapacityNode["AvailableVcpus"].isNull())
 			dedicatedHostClustersObject.dedicatedHostClusterCapacity.availableVcpus = std::stoi(dedicatedHostClusterCapacityNode["AvailableVcpus"].asString());
-		if(!dedicatedHostClusterCapacityNode["TotalMemory"].isNull())
-			dedicatedHostClustersObject.dedicatedHostClusterCapacity.totalMemory = std::stoi(dedicatedHostClusterCapacityNode["TotalMemory"].asString());
 		if(!dedicatedHostClusterCapacityNode["AvailableMemory"].isNull())
 			dedicatedHostClustersObject.dedicatedHostClusterCapacity.availableMemory = std::stoi(dedicatedHostClusterCapacityNode["AvailableMemory"].asString());
+		if(!dedicatedHostClusterCapacityNode["TotalMemory"].isNull())
+			dedicatedHostClustersObject.dedicatedHostClusterCapacity.totalMemory = std::stoi(dedicatedHostClusterCapacityNode["TotalMemory"].asString());
+		if(!dedicatedHostClusterCapacityNode["TotalVcpus"].isNull())
+			dedicatedHostClustersObject.dedicatedHostClusterCapacity.totalVcpus = std::stoi(dedicatedHostClusterCapacityNode["TotalVcpus"].asString());
 		auto allLocalStorageCapacitiesNode = dedicatedHostClusterCapacityNode["LocalStorageCapacities"]["LocalStorageCapacity"];
 		for (auto dedicatedHostClusterCapacityNodeLocalStorageCapacitiesLocalStorageCapacity : allLocalStorageCapacitiesNode)
 		{
 			DedicatedHostCluster::DedicatedHostClusterCapacity::LocalStorageCapacity localStorageCapacityObject;
-			if(!dedicatedHostClusterCapacityNodeLocalStorageCapacitiesLocalStorageCapacity["TotalDisk"].isNull())
-				localStorageCapacityObject.totalDisk = std::stoi(dedicatedHostClusterCapacityNodeLocalStorageCapacitiesLocalStorageCapacity["TotalDisk"].asString());
-			if(!dedicatedHostClusterCapacityNodeLocalStorageCapacitiesLocalStorageCapacity["AvailableDisk"].isNull())
-				localStorageCapacityObject.availableDisk = std::stoi(dedicatedHostClusterCapacityNodeLocalStorageCapacitiesLocalStorageCapacity["AvailableDisk"].asString());
 			if(!dedicatedHostClusterCapacityNodeLocalStorageCapacitiesLocalStorageCapacity["DataDiskCategory"].isNull())
 				localStorageCapacityObject.dataDiskCategory = dedicatedHostClusterCapacityNodeLocalStorageCapacitiesLocalStorageCapacity["DataDiskCategory"].asString();
+			if(!dedicatedHostClusterCapacityNodeLocalStorageCapacitiesLocalStorageCapacity["AvailableDisk"].isNull())
+				localStorageCapacityObject.availableDisk = std::stoi(dedicatedHostClusterCapacityNodeLocalStorageCapacitiesLocalStorageCapacity["AvailableDisk"].asString());
+			if(!dedicatedHostClusterCapacityNodeLocalStorageCapacitiesLocalStorageCapacity["TotalDisk"].isNull())
+				localStorageCapacityObject.totalDisk = std::stoi(dedicatedHostClusterCapacityNodeLocalStorageCapacitiesLocalStorageCapacity["TotalDisk"].asString());
 			dedicatedHostClustersObject.dedicatedHostClusterCapacity.localStorageCapacities.push_back(localStorageCapacityObject);
 		}
 		auto allAvailableInstanceTypesNode = dedicatedHostClusterCapacityNode["AvailableInstanceTypes"]["AvailableInstanceType"];
@@ -101,12 +101,12 @@ void DescribeDedicatedHostClustersResult::parse(const std::string &payload)
 			dedicatedHostClustersObject.dedicatedHostIds.push_back(value.asString());
 		dedicatedHostClusters_.push_back(dedicatedHostClustersObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 

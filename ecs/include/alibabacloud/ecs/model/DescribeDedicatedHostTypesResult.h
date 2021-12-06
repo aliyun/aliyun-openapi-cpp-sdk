@@ -41,8 +41,8 @@ namespace AlibabaCloud
 					int localStorageAmount;
 					int cores;
 					std::string localStorageCategory;
-					int sockets;
 					std::string gPUSpec;
+					int sockets;
 					std::vector<std::string> supportedInstanceTypeFamilies;
 					int totalVgpus;
 					std::string cpuOverCommitRatioRange;

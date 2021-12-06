@@ -43,22 +43,22 @@ void DescribeVirtualBorderRoutersForPhysicalConnectionResult::parse(const std::s
 	for (auto valueVirtualBorderRouterForPhysicalConnectionSetVirtualBorderRouterForPhysicalConnectionType : allVirtualBorderRouterForPhysicalConnectionSetNode)
 	{
 		VirtualBorderRouterForPhysicalConnectionType virtualBorderRouterForPhysicalConnectionSetObject;
-		if(!valueVirtualBorderRouterForPhysicalConnectionSetVirtualBorderRouterForPhysicalConnectionType["VbrId"].isNull())
-			virtualBorderRouterForPhysicalConnectionSetObject.vbrId = valueVirtualBorderRouterForPhysicalConnectionSetVirtualBorderRouterForPhysicalConnectionType["VbrId"].asString();
-		if(!valueVirtualBorderRouterForPhysicalConnectionSetVirtualBorderRouterForPhysicalConnectionType["VbrOwnerUid"].isNull())
-			virtualBorderRouterForPhysicalConnectionSetObject.vbrOwnerUid = std::stol(valueVirtualBorderRouterForPhysicalConnectionSetVirtualBorderRouterForPhysicalConnectionType["VbrOwnerUid"].asString());
 		if(!valueVirtualBorderRouterForPhysicalConnectionSetVirtualBorderRouterForPhysicalConnectionType["CreationTime"].isNull())
 			virtualBorderRouterForPhysicalConnectionSetObject.creationTime = valueVirtualBorderRouterForPhysicalConnectionSetVirtualBorderRouterForPhysicalConnectionType["CreationTime"].asString();
-		if(!valueVirtualBorderRouterForPhysicalConnectionSetVirtualBorderRouterForPhysicalConnectionType["ActivationTime"].isNull())
-			virtualBorderRouterForPhysicalConnectionSetObject.activationTime = valueVirtualBorderRouterForPhysicalConnectionSetVirtualBorderRouterForPhysicalConnectionType["ActivationTime"].asString();
-		if(!valueVirtualBorderRouterForPhysicalConnectionSetVirtualBorderRouterForPhysicalConnectionType["TerminationTime"].isNull())
-			virtualBorderRouterForPhysicalConnectionSetObject.terminationTime = valueVirtualBorderRouterForPhysicalConnectionSetVirtualBorderRouterForPhysicalConnectionType["TerminationTime"].asString();
-		if(!valueVirtualBorderRouterForPhysicalConnectionSetVirtualBorderRouterForPhysicalConnectionType["RecoveryTime"].isNull())
-			virtualBorderRouterForPhysicalConnectionSetObject.recoveryTime = valueVirtualBorderRouterForPhysicalConnectionSetVirtualBorderRouterForPhysicalConnectionType["RecoveryTime"].asString();
-		if(!valueVirtualBorderRouterForPhysicalConnectionSetVirtualBorderRouterForPhysicalConnectionType["VlanId"].isNull())
-			virtualBorderRouterForPhysicalConnectionSetObject.vlanId = std::stoi(valueVirtualBorderRouterForPhysicalConnectionSetVirtualBorderRouterForPhysicalConnectionType["VlanId"].asString());
 		if(!valueVirtualBorderRouterForPhysicalConnectionSetVirtualBorderRouterForPhysicalConnectionType["CircuitCode"].isNull())
 			virtualBorderRouterForPhysicalConnectionSetObject.circuitCode = valueVirtualBorderRouterForPhysicalConnectionSetVirtualBorderRouterForPhysicalConnectionType["CircuitCode"].asString();
+		if(!valueVirtualBorderRouterForPhysicalConnectionSetVirtualBorderRouterForPhysicalConnectionType["RecoveryTime"].isNull())
+			virtualBorderRouterForPhysicalConnectionSetObject.recoveryTime = valueVirtualBorderRouterForPhysicalConnectionSetVirtualBorderRouterForPhysicalConnectionType["RecoveryTime"].asString();
+		if(!valueVirtualBorderRouterForPhysicalConnectionSetVirtualBorderRouterForPhysicalConnectionType["TerminationTime"].isNull())
+			virtualBorderRouterForPhysicalConnectionSetObject.terminationTime = valueVirtualBorderRouterForPhysicalConnectionSetVirtualBorderRouterForPhysicalConnectionType["TerminationTime"].asString();
+		if(!valueVirtualBorderRouterForPhysicalConnectionSetVirtualBorderRouterForPhysicalConnectionType["ActivationTime"].isNull())
+			virtualBorderRouterForPhysicalConnectionSetObject.activationTime = valueVirtualBorderRouterForPhysicalConnectionSetVirtualBorderRouterForPhysicalConnectionType["ActivationTime"].asString();
+		if(!valueVirtualBorderRouterForPhysicalConnectionSetVirtualBorderRouterForPhysicalConnectionType["VbrOwnerUid"].isNull())
+			virtualBorderRouterForPhysicalConnectionSetObject.vbrOwnerUid = std::stol(valueVirtualBorderRouterForPhysicalConnectionSetVirtualBorderRouterForPhysicalConnectionType["VbrOwnerUid"].asString());
+		if(!valueVirtualBorderRouterForPhysicalConnectionSetVirtualBorderRouterForPhysicalConnectionType["VbrId"].isNull())
+			virtualBorderRouterForPhysicalConnectionSetObject.vbrId = valueVirtualBorderRouterForPhysicalConnectionSetVirtualBorderRouterForPhysicalConnectionType["VbrId"].asString();
+		if(!valueVirtualBorderRouterForPhysicalConnectionSetVirtualBorderRouterForPhysicalConnectionType["VlanId"].isNull())
+			virtualBorderRouterForPhysicalConnectionSetObject.vlanId = std::stoi(valueVirtualBorderRouterForPhysicalConnectionSetVirtualBorderRouterForPhysicalConnectionType["VlanId"].asString());
 		virtualBorderRouterForPhysicalConnectionSet_.push_back(virtualBorderRouterForPhysicalConnectionSetObject);
 	}
 	if(!value["PageNumber"].isNull())

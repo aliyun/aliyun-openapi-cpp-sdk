@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,664 +18,547 @@
 
 using AlibabaCloud::Ecs::Model::CreateAutoProvisioningGroupRequest;
 
-CreateAutoProvisioningGroupRequest::CreateAutoProvisioningGroupRequest() :
-	RpcServiceRequest("ecs", "2014-05-26", "CreateAutoProvisioningGroup")
-{
-	setMethod(HttpRequest::Method::Post);
+CreateAutoProvisioningGroupRequest::CreateAutoProvisioningGroupRequest()
+    : RpcServiceRequest("ecs", "2014-05-26", "CreateAutoProvisioningGroup") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-CreateAutoProvisioningGroupRequest::~CreateAutoProvisioningGroupRequest()
-{}
+CreateAutoProvisioningGroupRequest::~CreateAutoProvisioningGroupRequest() {}
 
-std::vector<CreateAutoProvisioningGroupRequest::LaunchConfigurationDataDisk> CreateAutoProvisioningGroupRequest::getLaunchConfigurationDataDisk()const
-{
-	return launchConfigurationDataDisk_;
+std::vector<CreateAutoProvisioningGroupRequest::LaunchConfigurationDataDisk> CreateAutoProvisioningGroupRequest::getLaunchConfigurationDataDisk() const {
+  return launchConfigurationDataDisk_;
 }
 
-void CreateAutoProvisioningGroupRequest::setLaunchConfigurationDataDisk(const std::vector<LaunchConfigurationDataDisk>& launchConfigurationDataDisk)
-{
-	launchConfigurationDataDisk_ = launchConfigurationDataDisk;
-	for(int dep1 = 0; dep1!= launchConfigurationDataDisk.size(); dep1++) {
-		auto launchConfigurationDataDiskObj = launchConfigurationDataDisk.at(dep1);
-		std::string launchConfigurationDataDiskObjStr = "LaunchConfiguration.DataDisk." + std::to_string(dep1 + 1);
-		setParameter(launchConfigurationDataDiskObjStr + ".PerformanceLevel", launchConfigurationDataDiskObj.performanceLevel);
-		setParameter(launchConfigurationDataDiskObjStr + ".KmsKeyId", launchConfigurationDataDiskObj.kmsKeyId);
-		setParameter(launchConfigurationDataDiskObjStr + ".Description", launchConfigurationDataDiskObj.description);
-		setParameter(launchConfigurationDataDiskObjStr + ".SnapshotId", launchConfigurationDataDiskObj.snapshotId);
-		setParameter(launchConfigurationDataDiskObjStr + ".Size", std::to_string(launchConfigurationDataDiskObj.size));
-		setParameter(launchConfigurationDataDiskObjStr + ".Device", launchConfigurationDataDiskObj.device);
-		setParameter(launchConfigurationDataDiskObjStr + ".DiskName", launchConfigurationDataDiskObj.diskName);
-		setParameter(launchConfigurationDataDiskObjStr + ".Category", launchConfigurationDataDiskObj.category);
-		setParameter(launchConfigurationDataDiskObjStr + ".DeleteWithInstance", launchConfigurationDataDiskObj.deleteWithInstance ? "true" : "false");
-		setParameter(launchConfigurationDataDiskObjStr + ".Encrypted", launchConfigurationDataDiskObj.encrypted ? "true" : "false");
-	}
+void CreateAutoProvisioningGroupRequest::setLaunchConfigurationDataDisk(const std::vector<CreateAutoProvisioningGroupRequest::LaunchConfigurationDataDisk> &launchConfigurationDataDisk) {
+  launchConfigurationDataDisk_ = launchConfigurationDataDisk;
+  for(int dep1 = 0; dep1 != launchConfigurationDataDisk.size(); dep1++) {
+  auto launchConfigurationDataDiskObj = launchConfigurationDataDisk.at(dep1);
+  std::string launchConfigurationDataDiskObjStr = std::string("LaunchConfiguration.DataDisk") + "." + std::to_string(dep1 + 1);
+    setParameter(launchConfigurationDataDiskObjStr + ".PerformanceLevel", launchConfigurationDataDiskObj.performanceLevel);
+    setParameter(launchConfigurationDataDiskObjStr + ".KmsKeyId", launchConfigurationDataDiskObj.kmsKeyId);
+    setParameter(launchConfigurationDataDiskObjStr + ".Description", launchConfigurationDataDiskObj.description);
+    setParameter(launchConfigurationDataDiskObjStr + ".SnapshotId", launchConfigurationDataDiskObj.snapshotId);
+    setParameter(launchConfigurationDataDiskObjStr + ".Size", std::to_string(launchConfigurationDataDiskObj.size));
+    setParameter(launchConfigurationDataDiskObjStr + ".Device", launchConfigurationDataDiskObj.device);
+    setParameter(launchConfigurationDataDiskObjStr + ".DiskName", launchConfigurationDataDiskObj.diskName);
+    setParameter(launchConfigurationDataDiskObjStr + ".Category", launchConfigurationDataDiskObj.category);
+    setParameter(launchConfigurationDataDiskObjStr + ".DeleteWithInstance", launchConfigurationDataDiskObj.deleteWithInstance ? "true" : "false");
+    setParameter(launchConfigurationDataDiskObjStr + ".Encrypted", launchConfigurationDataDiskObj.encrypted ? "true" : "false");
+  }
 }
 
-long CreateAutoProvisioningGroupRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long CreateAutoProvisioningGroupRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void CreateAutoProvisioningGroupRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void CreateAutoProvisioningGroupRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string CreateAutoProvisioningGroupRequest::getLaunchConfigurationSystemDiskCategory()const
-{
-	return launchConfigurationSystemDiskCategory_;
+std::string CreateAutoProvisioningGroupRequest::getLaunchConfigurationSystemDiskCategory() const {
+  return launchConfigurationSystemDiskCategory_;
 }
 
-void CreateAutoProvisioningGroupRequest::setLaunchConfigurationSystemDiskCategory(const std::string& launchConfigurationSystemDiskCategory)
-{
-	launchConfigurationSystemDiskCategory_ = launchConfigurationSystemDiskCategory;
-	setParameter("LaunchConfigurationSystemDiskCategory", launchConfigurationSystemDiskCategory);
+void CreateAutoProvisioningGroupRequest::setLaunchConfigurationSystemDiskCategory(const std::string &launchConfigurationSystemDiskCategory) {
+  launchConfigurationSystemDiskCategory_ = launchConfigurationSystemDiskCategory;
+  setParameter(std::string("LaunchConfiguration.SystemDiskCategory"), launchConfigurationSystemDiskCategory);
 }
 
-std::string CreateAutoProvisioningGroupRequest::getAutoProvisioningGroupType()const
-{
-	return autoProvisioningGroupType_;
+std::string CreateAutoProvisioningGroupRequest::getAutoProvisioningGroupType() const {
+  return autoProvisioningGroupType_;
 }
 
-void CreateAutoProvisioningGroupRequest::setAutoProvisioningGroupType(const std::string& autoProvisioningGroupType)
-{
-	autoProvisioningGroupType_ = autoProvisioningGroupType;
-	setParameter("AutoProvisioningGroupType", autoProvisioningGroupType);
+void CreateAutoProvisioningGroupRequest::setAutoProvisioningGroupType(const std::string &autoProvisioningGroupType) {
+  autoProvisioningGroupType_ = autoProvisioningGroupType;
+  setParameter(std::string("AutoProvisioningGroupType"), autoProvisioningGroupType);
 }
 
-std::string CreateAutoProvisioningGroupRequest::getLaunchConfigurationSystemDiskPerformanceLevel()const
-{
-	return launchConfigurationSystemDiskPerformanceLevel_;
+std::string CreateAutoProvisioningGroupRequest::getLaunchConfigurationSystemDiskPerformanceLevel() const {
+  return launchConfigurationSystemDiskPerformanceLevel_;
 }
 
-void CreateAutoProvisioningGroupRequest::setLaunchConfigurationSystemDiskPerformanceLevel(const std::string& launchConfigurationSystemDiskPerformanceLevel)
-{
-	launchConfigurationSystemDiskPerformanceLevel_ = launchConfigurationSystemDiskPerformanceLevel;
-	setParameter("LaunchConfigurationSystemDiskPerformanceLevel", launchConfigurationSystemDiskPerformanceLevel);
+void CreateAutoProvisioningGroupRequest::setLaunchConfigurationSystemDiskPerformanceLevel(const std::string &launchConfigurationSystemDiskPerformanceLevel) {
+  launchConfigurationSystemDiskPerformanceLevel_ = launchConfigurationSystemDiskPerformanceLevel;
+  setParameter(std::string("LaunchConfiguration.SystemDiskPerformanceLevel"), launchConfigurationSystemDiskPerformanceLevel);
 }
 
-std::vector<std::string> CreateAutoProvisioningGroupRequest::getLaunchConfigurationHostNames()const
-{
-	return launchConfigurationHostNames_;
+std::vector<std::string> CreateAutoProvisioningGroupRequest::getLaunchConfigurationHostNames() const {
+  return launchConfigurationHostNames_;
 }
 
-void CreateAutoProvisioningGroupRequest::setLaunchConfigurationHostNames(const std::vector<std::string>& launchConfigurationHostNames)
-{
-	launchConfigurationHostNames_ = launchConfigurationHostNames;
-	for(int dep1 = 0; dep1!= launchConfigurationHostNames.size(); dep1++) {
-		setParameter("LaunchConfigurationHostNames."+ std::to_string(dep1), launchConfigurationHostNames.at(dep1));
-	}
+void CreateAutoProvisioningGroupRequest::setLaunchConfigurationHostNames(const std::vector<std::string> &launchConfigurationHostNames) {
+  launchConfigurationHostNames_ = launchConfigurationHostNames;
 }
 
-std::string CreateAutoProvisioningGroupRequest::getResourceGroupId()const
-{
-	return resourceGroupId_;
+std::string CreateAutoProvisioningGroupRequest::getResourceGroupId() const {
+  return resourceGroupId_;
 }
 
-void CreateAutoProvisioningGroupRequest::setResourceGroupId(const std::string& resourceGroupId)
-{
-	resourceGroupId_ = resourceGroupId;
-	setParameter("ResourceGroupId", resourceGroupId);
+void CreateAutoProvisioningGroupRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
-std::string CreateAutoProvisioningGroupRequest::getLaunchConfigurationImageId()const
-{
-	return launchConfigurationImageId_;
+std::string CreateAutoProvisioningGroupRequest::getLaunchConfigurationImageId() const {
+  return launchConfigurationImageId_;
 }
 
-void CreateAutoProvisioningGroupRequest::setLaunchConfigurationImageId(const std::string& launchConfigurationImageId)
-{
-	launchConfigurationImageId_ = launchConfigurationImageId;
-	setParameter("LaunchConfigurationImageId", launchConfigurationImageId);
+void CreateAutoProvisioningGroupRequest::setLaunchConfigurationImageId(const std::string &launchConfigurationImageId) {
+  launchConfigurationImageId_ = launchConfigurationImageId;
+  setParameter(std::string("LaunchConfiguration.ImageId"), launchConfigurationImageId);
 }
 
-std::string CreateAutoProvisioningGroupRequest::getLaunchConfigurationResourceGroupId()const
-{
-	return launchConfigurationResourceGroupId_;
+std::string CreateAutoProvisioningGroupRequest::getLaunchConfigurationResourceGroupId() const {
+  return launchConfigurationResourceGroupId_;
 }
 
-void CreateAutoProvisioningGroupRequest::setLaunchConfigurationResourceGroupId(const std::string& launchConfigurationResourceGroupId)
-{
-	launchConfigurationResourceGroupId_ = launchConfigurationResourceGroupId;
-	setParameter("LaunchConfigurationResourceGroupId", launchConfigurationResourceGroupId);
+void CreateAutoProvisioningGroupRequest::setLaunchConfigurationResourceGroupId(const std::string &launchConfigurationResourceGroupId) {
+  launchConfigurationResourceGroupId_ = launchConfigurationResourceGroupId;
+  setParameter(std::string("LaunchConfiguration.ResourceGroupId"), launchConfigurationResourceGroupId);
 }
 
-std::string CreateAutoProvisioningGroupRequest::getLaunchConfigurationPassword()const
-{
-	return launchConfigurationPassword_;
+std::string CreateAutoProvisioningGroupRequest::getLaunchConfigurationPassword() const {
+  return launchConfigurationPassword_;
 }
 
-void CreateAutoProvisioningGroupRequest::setLaunchConfigurationPassword(const std::string& launchConfigurationPassword)
-{
-	launchConfigurationPassword_ = launchConfigurationPassword;
-	setParameter("LaunchConfigurationPassword", launchConfigurationPassword);
+void CreateAutoProvisioningGroupRequest::setLaunchConfigurationPassword(const std::string &launchConfigurationPassword) {
+  launchConfigurationPassword_ = launchConfigurationPassword;
+  setParameter(std::string("LaunchConfiguration.Password"), launchConfigurationPassword);
 }
 
-std::string CreateAutoProvisioningGroupRequest::getPayAsYouGoAllocationStrategy()const
-{
-	return payAsYouGoAllocationStrategy_;
+std::string CreateAutoProvisioningGroupRequest::getPayAsYouGoAllocationStrategy() const {
+  return payAsYouGoAllocationStrategy_;
 }
 
-void CreateAutoProvisioningGroupRequest::setPayAsYouGoAllocationStrategy(const std::string& payAsYouGoAllocationStrategy)
-{
-	payAsYouGoAllocationStrategy_ = payAsYouGoAllocationStrategy;
-	setParameter("PayAsYouGoAllocationStrategy", payAsYouGoAllocationStrategy);
+void CreateAutoProvisioningGroupRequest::setPayAsYouGoAllocationStrategy(const std::string &payAsYouGoAllocationStrategy) {
+  payAsYouGoAllocationStrategy_ = payAsYouGoAllocationStrategy;
+  setParameter(std::string("PayAsYouGoAllocationStrategy"), payAsYouGoAllocationStrategy);
 }
 
-std::string CreateAutoProvisioningGroupRequest::getDefaultTargetCapacityType()const
-{
-	return defaultTargetCapacityType_;
+std::string CreateAutoProvisioningGroupRequest::getDefaultTargetCapacityType() const {
+  return defaultTargetCapacityType_;
 }
 
-void CreateAutoProvisioningGroupRequest::setDefaultTargetCapacityType(const std::string& defaultTargetCapacityType)
-{
-	defaultTargetCapacityType_ = defaultTargetCapacityType;
-	setParameter("DefaultTargetCapacityType", defaultTargetCapacityType);
+void CreateAutoProvisioningGroupRequest::setDefaultTargetCapacityType(const std::string &defaultTargetCapacityType) {
+  defaultTargetCapacityType_ = defaultTargetCapacityType;
+  setParameter(std::string("DefaultTargetCapacityType"), defaultTargetCapacityType);
 }
 
-std::string CreateAutoProvisioningGroupRequest::getLaunchConfigurationKeyPairName()const
-{
-	return launchConfigurationKeyPairName_;
+std::string CreateAutoProvisioningGroupRequest::getLaunchConfigurationKeyPairName() const {
+  return launchConfigurationKeyPairName_;
 }
 
-void CreateAutoProvisioningGroupRequest::setLaunchConfigurationKeyPairName(const std::string& launchConfigurationKeyPairName)
-{
-	launchConfigurationKeyPairName_ = launchConfigurationKeyPairName;
-	setParameter("LaunchConfigurationKeyPairName", launchConfigurationKeyPairName);
+void CreateAutoProvisioningGroupRequest::setLaunchConfigurationKeyPairName(const std::string &launchConfigurationKeyPairName) {
+  launchConfigurationKeyPairName_ = launchConfigurationKeyPairName;
+  setParameter(std::string("LaunchConfiguration.KeyPairName"), launchConfigurationKeyPairName);
 }
 
-std::vector<CreateAutoProvisioningGroupRequest::SystemDiskConfig> CreateAutoProvisioningGroupRequest::getSystemDiskConfig()const
-{
-	return systemDiskConfig_;
+std::vector<CreateAutoProvisioningGroupRequest::SystemDiskConfig> CreateAutoProvisioningGroupRequest::getSystemDiskConfig() const {
+  return systemDiskConfig_;
 }
 
-void CreateAutoProvisioningGroupRequest::setSystemDiskConfig(const std::vector<SystemDiskConfig>& systemDiskConfig)
-{
-	systemDiskConfig_ = systemDiskConfig;
-	for(int dep1 = 0; dep1!= systemDiskConfig.size(); dep1++) {
-		auto systemDiskConfigObj = systemDiskConfig.at(dep1);
-		std::string systemDiskConfigObjStr = "SystemDiskConfig." + std::to_string(dep1 + 1);
-		setParameter(systemDiskConfigObjStr + ".DiskCategory", systemDiskConfigObj.diskCategory);
-	}
+void CreateAutoProvisioningGroupRequest::setSystemDiskConfig(const std::vector<CreateAutoProvisioningGroupRequest::SystemDiskConfig> &systemDiskConfig) {
+  systemDiskConfig_ = systemDiskConfig;
+  for(int dep1 = 0; dep1 != systemDiskConfig.size(); dep1++) {
+  auto systemDiskConfigObj = systemDiskConfig.at(dep1);
+  std::string systemDiskConfigObjStr = std::string("SystemDiskConfig") + "." + std::to_string(dep1 + 1);
+    setParameter(systemDiskConfigObjStr + ".DiskCategory", systemDiskConfigObj.diskCategory);
+  }
 }
 
-std::vector<CreateAutoProvisioningGroupRequest::DataDiskConfig> CreateAutoProvisioningGroupRequest::getDataDiskConfig()const
-{
-	return dataDiskConfig_;
+std::vector<CreateAutoProvisioningGroupRequest::DataDiskConfig> CreateAutoProvisioningGroupRequest::getDataDiskConfig() const {
+  return dataDiskConfig_;
 }
 
-void CreateAutoProvisioningGroupRequest::setDataDiskConfig(const std::vector<DataDiskConfig>& dataDiskConfig)
-{
-	dataDiskConfig_ = dataDiskConfig;
-	for(int dep1 = 0; dep1!= dataDiskConfig.size(); dep1++) {
-		auto dataDiskConfigObj = dataDiskConfig.at(dep1);
-		std::string dataDiskConfigObjStr = "DataDiskConfig." + std::to_string(dep1 + 1);
-		setParameter(dataDiskConfigObjStr + ".DiskCategory", dataDiskConfigObj.diskCategory);
-	}
+void CreateAutoProvisioningGroupRequest::setDataDiskConfig(const std::vector<CreateAutoProvisioningGroupRequest::DataDiskConfig> &dataDiskConfig) {
+  dataDiskConfig_ = dataDiskConfig;
+  for(int dep1 = 0; dep1 != dataDiskConfig.size(); dep1++) {
+  auto dataDiskConfigObj = dataDiskConfig.at(dep1);
+  std::string dataDiskConfigObjStr = std::string("DataDiskConfig") + "." + std::to_string(dep1 + 1);
+    setParameter(dataDiskConfigObjStr + ".DiskCategory", dataDiskConfigObj.diskCategory);
+  }
 }
 
-std::string CreateAutoProvisioningGroupRequest::getValidUntil()const
-{
-	return validUntil_;
+std::string CreateAutoProvisioningGroupRequest::getValidUntil() const {
+  return validUntil_;
 }
 
-void CreateAutoProvisioningGroupRequest::setValidUntil(const std::string& validUntil)
-{
-	validUntil_ = validUntil;
-	setParameter("ValidUntil", validUntil);
+void CreateAutoProvisioningGroupRequest::setValidUntil(const std::string &validUntil) {
+  validUntil_ = validUntil;
+  setParameter(std::string("ValidUntil"), validUntil);
 }
 
-std::string CreateAutoProvisioningGroupRequest::getLaunchTemplateId()const
-{
-	return launchTemplateId_;
+std::string CreateAutoProvisioningGroupRequest::getLaunchTemplateId() const {
+  return launchTemplateId_;
 }
 
-void CreateAutoProvisioningGroupRequest::setLaunchTemplateId(const std::string& launchTemplateId)
-{
-	launchTemplateId_ = launchTemplateId;
-	setParameter("LaunchTemplateId", launchTemplateId);
+void CreateAutoProvisioningGroupRequest::setLaunchTemplateId(const std::string &launchTemplateId) {
+  launchTemplateId_ = launchTemplateId;
+  setParameter(std::string("LaunchTemplateId"), launchTemplateId);
 }
 
-long CreateAutoProvisioningGroupRequest::getOwnerId()const
-{
-	return ownerId_;
+long CreateAutoProvisioningGroupRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void CreateAutoProvisioningGroupRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void CreateAutoProvisioningGroupRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-int CreateAutoProvisioningGroupRequest::getLaunchConfigurationSystemDiskSize()const
-{
-	return launchConfigurationSystemDiskSize_;
+int CreateAutoProvisioningGroupRequest::getLaunchConfigurationSystemDiskSize() const {
+  return launchConfigurationSystemDiskSize_;
 }
 
-void CreateAutoProvisioningGroupRequest::setLaunchConfigurationSystemDiskSize(int launchConfigurationSystemDiskSize)
-{
-	launchConfigurationSystemDiskSize_ = launchConfigurationSystemDiskSize;
-	setParameter("LaunchConfigurationSystemDiskSize", std::to_string(launchConfigurationSystemDiskSize));
+void CreateAutoProvisioningGroupRequest::setLaunchConfigurationSystemDiskSize(int launchConfigurationSystemDiskSize) {
+  launchConfigurationSystemDiskSize_ = launchConfigurationSystemDiskSize;
+  setParameter(std::string("LaunchConfiguration.SystemDiskSize"), std::to_string(launchConfigurationSystemDiskSize));
 }
 
-int CreateAutoProvisioningGroupRequest::getLaunchConfigurationInternetMaxBandwidthOut()const
-{
-	return launchConfigurationInternetMaxBandwidthOut_;
+int CreateAutoProvisioningGroupRequest::getLaunchConfigurationInternetMaxBandwidthOut() const {
+  return launchConfigurationInternetMaxBandwidthOut_;
 }
 
-void CreateAutoProvisioningGroupRequest::setLaunchConfigurationInternetMaxBandwidthOut(int launchConfigurationInternetMaxBandwidthOut)
-{
-	launchConfigurationInternetMaxBandwidthOut_ = launchConfigurationInternetMaxBandwidthOut;
-	setParameter("LaunchConfigurationInternetMaxBandwidthOut", std::to_string(launchConfigurationInternetMaxBandwidthOut));
+void CreateAutoProvisioningGroupRequest::setLaunchConfigurationInternetMaxBandwidthOut(int launchConfigurationInternetMaxBandwidthOut) {
+  launchConfigurationInternetMaxBandwidthOut_ = launchConfigurationInternetMaxBandwidthOut;
+  setParameter(std::string("LaunchConfiguration.InternetMaxBandwidthOut"), std::to_string(launchConfigurationInternetMaxBandwidthOut));
 }
 
-std::string CreateAutoProvisioningGroupRequest::getLaunchConfigurationHostName()const
-{
-	return launchConfigurationHostName_;
+std::string CreateAutoProvisioningGroupRequest::getLaunchConfigurationHostName() const {
+  return launchConfigurationHostName_;
 }
 
-void CreateAutoProvisioningGroupRequest::setLaunchConfigurationHostName(const std::string& launchConfigurationHostName)
-{
-	launchConfigurationHostName_ = launchConfigurationHostName;
-	setParameter("LaunchConfigurationHostName", launchConfigurationHostName);
+void CreateAutoProvisioningGroupRequest::setLaunchConfigurationHostName(const std::string &launchConfigurationHostName) {
+  launchConfigurationHostName_ = launchConfigurationHostName;
+  setParameter(std::string("LaunchConfiguration.HostName"), launchConfigurationHostName);
 }
 
-std::string CreateAutoProvisioningGroupRequest::getMinTargetCapacity()const
-{
-	return minTargetCapacity_;
+std::string CreateAutoProvisioningGroupRequest::getMinTargetCapacity() const {
+  return minTargetCapacity_;
 }
 
-void CreateAutoProvisioningGroupRequest::setMinTargetCapacity(const std::string& minTargetCapacity)
-{
-	minTargetCapacity_ = minTargetCapacity;
-	setParameter("MinTargetCapacity", minTargetCapacity);
+void CreateAutoProvisioningGroupRequest::setMinTargetCapacity(const std::string &minTargetCapacity) {
+  minTargetCapacity_ = minTargetCapacity;
+  setParameter(std::string("MinTargetCapacity"), minTargetCapacity);
 }
 
-float CreateAutoProvisioningGroupRequest::getMaxSpotPrice()const
-{
-	return maxSpotPrice_;
+float CreateAutoProvisioningGroupRequest::getMaxSpotPrice() const {
+  return maxSpotPrice_;
 }
 
-void CreateAutoProvisioningGroupRequest::setMaxSpotPrice(float maxSpotPrice)
-{
-	maxSpotPrice_ = maxSpotPrice;
-	setParameter("MaxSpotPrice", std::to_string(maxSpotPrice));
+void CreateAutoProvisioningGroupRequest::setMaxSpotPrice(float maxSpotPrice) {
+  maxSpotPrice_ = maxSpotPrice;
+  setParameter(std::string("MaxSpotPrice"), std::to_string(maxSpotPrice));
 }
 
-bool CreateAutoProvisioningGroupRequest::getLaunchConfigurationPasswordInherit()const
-{
-	return launchConfigurationPasswordInherit_;
+bool CreateAutoProvisioningGroupRequest::getLaunchConfigurationPasswordInherit() const {
+  return launchConfigurationPasswordInherit_;
 }
 
-void CreateAutoProvisioningGroupRequest::setLaunchConfigurationPasswordInherit(bool launchConfigurationPasswordInherit)
-{
-	launchConfigurationPasswordInherit_ = launchConfigurationPasswordInherit;
-	setParameter("LaunchConfigurationPasswordInherit", launchConfigurationPasswordInherit ? "true" : "false");
+void CreateAutoProvisioningGroupRequest::setLaunchConfigurationPasswordInherit(bool launchConfigurationPasswordInherit) {
+  launchConfigurationPasswordInherit_ = launchConfigurationPasswordInherit;
+  setParameter(std::string("LaunchConfiguration.PasswordInherit"), launchConfigurationPasswordInherit ? "true" : "false");
 }
 
-std::string CreateAutoProvisioningGroupRequest::getClientToken()const
-{
-	return clientToken_;
+std::string CreateAutoProvisioningGroupRequest::getClientToken() const {
+  return clientToken_;
 }
 
-void CreateAutoProvisioningGroupRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+void CreateAutoProvisioningGroupRequest::setClientToken(const std::string &clientToken) {
+  clientToken_ = clientToken;
+  setParameter(std::string("ClientToken"), clientToken);
 }
 
-std::string CreateAutoProvisioningGroupRequest::getLaunchConfigurationSecurityGroupId()const
-{
-	return launchConfigurationSecurityGroupId_;
+std::string CreateAutoProvisioningGroupRequest::getLaunchConfigurationSecurityGroupId() const {
+  return launchConfigurationSecurityGroupId_;
 }
 
-void CreateAutoProvisioningGroupRequest::setLaunchConfigurationSecurityGroupId(const std::string& launchConfigurationSecurityGroupId)
-{
-	launchConfigurationSecurityGroupId_ = launchConfigurationSecurityGroupId;
-	setParameter("LaunchConfigurationSecurityGroupId", launchConfigurationSecurityGroupId);
+void CreateAutoProvisioningGroupRequest::setLaunchConfigurationSecurityGroupId(const std::string &launchConfigurationSecurityGroupId) {
+  launchConfigurationSecurityGroupId_ = launchConfigurationSecurityGroupId;
+  setParameter(std::string("LaunchConfiguration.SecurityGroupId"), launchConfigurationSecurityGroupId);
 }
 
-std::string CreateAutoProvisioningGroupRequest::getDescription()const
-{
-	return description_;
+std::string CreateAutoProvisioningGroupRequest::getDescription() const {
+  return description_;
 }
 
-void CreateAutoProvisioningGroupRequest::setDescription(const std::string& description)
-{
-	description_ = description;
-	setParameter("Description", description);
+void CreateAutoProvisioningGroupRequest::setDescription(const std::string &description) {
+  description_ = description;
+  setParameter(std::string("Description"), description);
 }
 
-bool CreateAutoProvisioningGroupRequest::getTerminateInstancesWithExpiration()const
-{
-	return terminateInstancesWithExpiration_;
+bool CreateAutoProvisioningGroupRequest::getTerminateInstancesWithExpiration() const {
+  return terminateInstancesWithExpiration_;
 }
 
-void CreateAutoProvisioningGroupRequest::setTerminateInstancesWithExpiration(bool terminateInstancesWithExpiration)
-{
-	terminateInstancesWithExpiration_ = terminateInstancesWithExpiration;
-	setParameter("TerminateInstancesWithExpiration", terminateInstancesWithExpiration ? "true" : "false");
+void CreateAutoProvisioningGroupRequest::setTerminateInstancesWithExpiration(bool terminateInstancesWithExpiration) {
+  terminateInstancesWithExpiration_ = terminateInstancesWithExpiration;
+  setParameter(std::string("TerminateInstancesWithExpiration"), terminateInstancesWithExpiration ? "true" : "false");
 }
 
-std::string CreateAutoProvisioningGroupRequest::getLaunchConfigurationUserData()const
-{
-	return launchConfigurationUserData_;
+std::string CreateAutoProvisioningGroupRequest::getLaunchConfigurationUserData() const {
+  return launchConfigurationUserData_;
 }
 
-void CreateAutoProvisioningGroupRequest::setLaunchConfigurationUserData(const std::string& launchConfigurationUserData)
-{
-	launchConfigurationUserData_ = launchConfigurationUserData;
-	setParameter("LaunchConfigurationUserData", launchConfigurationUserData);
+void CreateAutoProvisioningGroupRequest::setLaunchConfigurationUserData(const std::string &launchConfigurationUserData) {
+  launchConfigurationUserData_ = launchConfigurationUserData;
+  setParameter(std::string("LaunchConfiguration.UserData"), launchConfigurationUserData);
 }
 
-std::string CreateAutoProvisioningGroupRequest::getLaunchConfigurationCreditSpecification()const
-{
-	return launchConfigurationCreditSpecification_;
+std::string CreateAutoProvisioningGroupRequest::getLaunchConfigurationCreditSpecification() const {
+  return launchConfigurationCreditSpecification_;
 }
 
-void CreateAutoProvisioningGroupRequest::setLaunchConfigurationCreditSpecification(const std::string& launchConfigurationCreditSpecification)
-{
-	launchConfigurationCreditSpecification_ = launchConfigurationCreditSpecification;
-	setParameter("LaunchConfigurationCreditSpecification", launchConfigurationCreditSpecification);
+void CreateAutoProvisioningGroupRequest::setLaunchConfigurationCreditSpecification(const std::string &launchConfigurationCreditSpecification) {
+  launchConfigurationCreditSpecification_ = launchConfigurationCreditSpecification;
+  setParameter(std::string("LaunchConfiguration.CreditSpecification"), launchConfigurationCreditSpecification);
 }
 
-std::string CreateAutoProvisioningGroupRequest::getLaunchConfigurationInstanceName()const
-{
-	return launchConfigurationInstanceName_;
+std::string CreateAutoProvisioningGroupRequest::getLaunchConfigurationInstanceName() const {
+  return launchConfigurationInstanceName_;
 }
 
-void CreateAutoProvisioningGroupRequest::setLaunchConfigurationInstanceName(const std::string& launchConfigurationInstanceName)
-{
-	launchConfigurationInstanceName_ = launchConfigurationInstanceName;
-	setParameter("LaunchConfigurationInstanceName", launchConfigurationInstanceName);
+void CreateAutoProvisioningGroupRequest::setLaunchConfigurationInstanceName(const std::string &launchConfigurationInstanceName) {
+  launchConfigurationInstanceName_ = launchConfigurationInstanceName;
+  setParameter(std::string("LaunchConfiguration.InstanceName"), launchConfigurationInstanceName);
 }
 
-std::string CreateAutoProvisioningGroupRequest::getLaunchConfigurationInstanceDescription()const
-{
-	return launchConfigurationInstanceDescription_;
+std::string CreateAutoProvisioningGroupRequest::getLaunchConfigurationInstanceDescription() const {
+  return launchConfigurationInstanceDescription_;
 }
 
-void CreateAutoProvisioningGroupRequest::setLaunchConfigurationInstanceDescription(const std::string& launchConfigurationInstanceDescription)
-{
-	launchConfigurationInstanceDescription_ = launchConfigurationInstanceDescription;
-	setParameter("LaunchConfigurationInstanceDescription", launchConfigurationInstanceDescription);
+void CreateAutoProvisioningGroupRequest::setLaunchConfigurationInstanceDescription(const std::string &launchConfigurationInstanceDescription) {
+  launchConfigurationInstanceDescription_ = launchConfigurationInstanceDescription;
+  setParameter(std::string("LaunchConfiguration.InstanceDescription"), launchConfigurationInstanceDescription);
 }
 
-std::string CreateAutoProvisioningGroupRequest::getSpotAllocationStrategy()const
-{
-	return spotAllocationStrategy_;
+std::string CreateAutoProvisioningGroupRequest::getSpotAllocationStrategy() const {
+  return spotAllocationStrategy_;
 }
 
-void CreateAutoProvisioningGroupRequest::setSpotAllocationStrategy(const std::string& spotAllocationStrategy)
-{
-	spotAllocationStrategy_ = spotAllocationStrategy;
-	setParameter("SpotAllocationStrategy", spotAllocationStrategy);
+void CreateAutoProvisioningGroupRequest::setSpotAllocationStrategy(const std::string &spotAllocationStrategy) {
+  spotAllocationStrategy_ = spotAllocationStrategy;
+  setParameter(std::string("SpotAllocationStrategy"), spotAllocationStrategy);
 }
 
-std::string CreateAutoProvisioningGroupRequest::getRegionId()const
-{
-	return regionId_;
+std::string CreateAutoProvisioningGroupRequest::getRegionId() const {
+  return regionId_;
 }
 
-void CreateAutoProvisioningGroupRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void CreateAutoProvisioningGroupRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
-bool CreateAutoProvisioningGroupRequest::getTerminateInstances()const
-{
-	return terminateInstances_;
+bool CreateAutoProvisioningGroupRequest::getTerminateInstances() const {
+  return terminateInstances_;
 }
 
-void CreateAutoProvisioningGroupRequest::setTerminateInstances(bool terminateInstances)
-{
-	terminateInstances_ = terminateInstances;
-	setParameter("TerminateInstances", terminateInstances ? "true" : "false");
+void CreateAutoProvisioningGroupRequest::setTerminateInstances(bool terminateInstances) {
+  terminateInstances_ = terminateInstances;
+  setParameter(std::string("TerminateInstances"), terminateInstances ? "true" : "false");
 }
 
-std::string CreateAutoProvisioningGroupRequest::getLaunchConfigurationSystemDiskName()const
-{
-	return launchConfigurationSystemDiskName_;
+std::string CreateAutoProvisioningGroupRequest::getLaunchConfigurationSystemDiskName() const {
+  return launchConfigurationSystemDiskName_;
 }
 
-void CreateAutoProvisioningGroupRequest::setLaunchConfigurationSystemDiskName(const std::string& launchConfigurationSystemDiskName)
-{
-	launchConfigurationSystemDiskName_ = launchConfigurationSystemDiskName;
-	setParameter("LaunchConfigurationSystemDiskName", launchConfigurationSystemDiskName);
+void CreateAutoProvisioningGroupRequest::setLaunchConfigurationSystemDiskName(const std::string &launchConfigurationSystemDiskName) {
+  launchConfigurationSystemDiskName_ = launchConfigurationSystemDiskName;
+  setParameter(std::string("LaunchConfiguration.SystemDiskName"), launchConfigurationSystemDiskName);
 }
 
-std::string CreateAutoProvisioningGroupRequest::getLaunchConfigurationSystemDiskDescription()const
-{
-	return launchConfigurationSystemDiskDescription_;
+std::string CreateAutoProvisioningGroupRequest::getLaunchConfigurationSystemDiskDescription() const {
+  return launchConfigurationSystemDiskDescription_;
 }
 
-void CreateAutoProvisioningGroupRequest::setLaunchConfigurationSystemDiskDescription(const std::string& launchConfigurationSystemDiskDescription)
-{
-	launchConfigurationSystemDiskDescription_ = launchConfigurationSystemDiskDescription;
-	setParameter("LaunchConfigurationSystemDiskDescription", launchConfigurationSystemDiskDescription);
+void CreateAutoProvisioningGroupRequest::setLaunchConfigurationSystemDiskDescription(const std::string &launchConfigurationSystemDiskDescription) {
+  launchConfigurationSystemDiskDescription_ = launchConfigurationSystemDiskDescription;
+  setParameter(std::string("LaunchConfiguration.SystemDiskDescription"), launchConfigurationSystemDiskDescription);
 }
 
-std::string CreateAutoProvisioningGroupRequest::getExcessCapacityTerminationPolicy()const
-{
-	return excessCapacityTerminationPolicy_;
+std::string CreateAutoProvisioningGroupRequest::getExcessCapacityTerminationPolicy() const {
+  return excessCapacityTerminationPolicy_;
 }
 
-void CreateAutoProvisioningGroupRequest::setExcessCapacityTerminationPolicy(const std::string& excessCapacityTerminationPolicy)
-{
-	excessCapacityTerminationPolicy_ = excessCapacityTerminationPolicy;
-	setParameter("ExcessCapacityTerminationPolicy", excessCapacityTerminationPolicy);
+void CreateAutoProvisioningGroupRequest::setExcessCapacityTerminationPolicy(const std::string &excessCapacityTerminationPolicy) {
+  excessCapacityTerminationPolicy_ = excessCapacityTerminationPolicy;
+  setParameter(std::string("ExcessCapacityTerminationPolicy"), excessCapacityTerminationPolicy);
 }
 
-std::vector<CreateAutoProvisioningGroupRequest::LaunchTemplateConfig> CreateAutoProvisioningGroupRequest::getLaunchTemplateConfig()const
-{
-	return launchTemplateConfig_;
+std::vector<CreateAutoProvisioningGroupRequest::LaunchTemplateConfig> CreateAutoProvisioningGroupRequest::getLaunchTemplateConfig() const {
+  return launchTemplateConfig_;
 }
 
-void CreateAutoProvisioningGroupRequest::setLaunchTemplateConfig(const std::vector<LaunchTemplateConfig>& launchTemplateConfig)
-{
-	launchTemplateConfig_ = launchTemplateConfig;
-	for(int dep1 = 0; dep1!= launchTemplateConfig.size(); dep1++) {
-		auto launchTemplateConfigObj = launchTemplateConfig.at(dep1);
-		std::string launchTemplateConfigObjStr = "LaunchTemplateConfig." + std::to_string(dep1 + 1);
-		setParameter(launchTemplateConfigObjStr + ".VSwitchId", launchTemplateConfigObj.vSwitchId);
-		setParameter(launchTemplateConfigObjStr + ".MaxPrice", std::to_string(launchTemplateConfigObj.maxPrice));
-		setParameter(launchTemplateConfigObjStr + ".Priority", std::to_string(launchTemplateConfigObj.priority));
-		setParameter(launchTemplateConfigObjStr + ".InstanceType", launchTemplateConfigObj.instanceType);
-		setParameter(launchTemplateConfigObjStr + ".WeightedCapacity", std::to_string(launchTemplateConfigObj.weightedCapacity));
-	}
+void CreateAutoProvisioningGroupRequest::setLaunchTemplateConfig(const std::vector<CreateAutoProvisioningGroupRequest::LaunchTemplateConfig> &launchTemplateConfig) {
+  launchTemplateConfig_ = launchTemplateConfig;
+  for(int dep1 = 0; dep1 != launchTemplateConfig.size(); dep1++) {
+  auto launchTemplateConfigObj = launchTemplateConfig.at(dep1);
+  std::string launchTemplateConfigObjStr = std::string("LaunchTemplateConfig") + "." + std::to_string(dep1 + 1);
+    setParameter(launchTemplateConfigObjStr + ".VSwitchId", launchTemplateConfigObj.vSwitchId);
+    setParameter(launchTemplateConfigObjStr + ".MaxPrice", std::to_string(launchTemplateConfigObj.maxPrice));
+    setParameter(launchTemplateConfigObjStr + ".Priority", std::to_string(launchTemplateConfigObj.priority));
+    setParameter(launchTemplateConfigObjStr + ".InstanceType", launchTemplateConfigObj.instanceType);
+    setParameter(launchTemplateConfigObjStr + ".WeightedCapacity", std::to_string(launchTemplateConfigObj.weightedCapacity));
+  }
 }
 
-std::string CreateAutoProvisioningGroupRequest::getLaunchConfigurationRamRoleName()const
-{
-	return launchConfigurationRamRoleName_;
+std::string CreateAutoProvisioningGroupRequest::getLaunchConfigurationRamRoleName() const {
+  return launchConfigurationRamRoleName_;
 }
 
-void CreateAutoProvisioningGroupRequest::setLaunchConfigurationRamRoleName(const std::string& launchConfigurationRamRoleName)
-{
-	launchConfigurationRamRoleName_ = launchConfigurationRamRoleName;
-	setParameter("LaunchConfigurationRamRoleName", launchConfigurationRamRoleName);
+void CreateAutoProvisioningGroupRequest::setLaunchConfigurationRamRoleName(const std::string &launchConfigurationRamRoleName) {
+  launchConfigurationRamRoleName_ = launchConfigurationRamRoleName;
+  setParameter(std::string("LaunchConfiguration.RamRoleName"), launchConfigurationRamRoleName);
 }
 
-int CreateAutoProvisioningGroupRequest::getLaunchConfigurationInternetMaxBandwidthIn()const
-{
-	return launchConfigurationInternetMaxBandwidthIn_;
+int CreateAutoProvisioningGroupRequest::getLaunchConfigurationInternetMaxBandwidthIn() const {
+  return launchConfigurationInternetMaxBandwidthIn_;
 }
 
-void CreateAutoProvisioningGroupRequest::setLaunchConfigurationInternetMaxBandwidthIn(int launchConfigurationInternetMaxBandwidthIn)
-{
-	launchConfigurationInternetMaxBandwidthIn_ = launchConfigurationInternetMaxBandwidthIn;
-	setParameter("LaunchConfigurationInternetMaxBandwidthIn", std::to_string(launchConfigurationInternetMaxBandwidthIn));
+void CreateAutoProvisioningGroupRequest::setLaunchConfigurationInternetMaxBandwidthIn(int launchConfigurationInternetMaxBandwidthIn) {
+  launchConfigurationInternetMaxBandwidthIn_ = launchConfigurationInternetMaxBandwidthIn;
+  setParameter(std::string("LaunchConfiguration.InternetMaxBandwidthIn"), std::to_string(launchConfigurationInternetMaxBandwidthIn));
 }
 
-std::string CreateAutoProvisioningGroupRequest::getSpotInstanceInterruptionBehavior()const
-{
-	return spotInstanceInterruptionBehavior_;
+std::string CreateAutoProvisioningGroupRequest::getSpotInstanceInterruptionBehavior() const {
+  return spotInstanceInterruptionBehavior_;
 }
 
-void CreateAutoProvisioningGroupRequest::setSpotInstanceInterruptionBehavior(const std::string& spotInstanceInterruptionBehavior)
-{
-	spotInstanceInterruptionBehavior_ = spotInstanceInterruptionBehavior;
-	setParameter("SpotInstanceInterruptionBehavior", spotInstanceInterruptionBehavior);
+void CreateAutoProvisioningGroupRequest::setSpotInstanceInterruptionBehavior(const std::string &spotInstanceInterruptionBehavior) {
+  spotInstanceInterruptionBehavior_ = spotInstanceInterruptionBehavior;
+  setParameter(std::string("SpotInstanceInterruptionBehavior"), spotInstanceInterruptionBehavior);
 }
 
-std::string CreateAutoProvisioningGroupRequest::getLaunchConfigurationSecurityEnhancementStrategy()const
-{
-	return launchConfigurationSecurityEnhancementStrategy_;
+std::string CreateAutoProvisioningGroupRequest::getLaunchConfigurationSecurityEnhancementStrategy() const {
+  return launchConfigurationSecurityEnhancementStrategy_;
 }
 
-void CreateAutoProvisioningGroupRequest::setLaunchConfigurationSecurityEnhancementStrategy(const std::string& launchConfigurationSecurityEnhancementStrategy)
-{
-	launchConfigurationSecurityEnhancementStrategy_ = launchConfigurationSecurityEnhancementStrategy;
-	setParameter("LaunchConfigurationSecurityEnhancementStrategy", launchConfigurationSecurityEnhancementStrategy);
+void CreateAutoProvisioningGroupRequest::setLaunchConfigurationSecurityEnhancementStrategy(const std::string &launchConfigurationSecurityEnhancementStrategy) {
+  launchConfigurationSecurityEnhancementStrategy_ = launchConfigurationSecurityEnhancementStrategy;
+  setParameter(std::string("LaunchConfiguration.SecurityEnhancementStrategy"), launchConfigurationSecurityEnhancementStrategy);
 }
 
-std::vector<CreateAutoProvisioningGroupRequest::LaunchConfigurationTag> CreateAutoProvisioningGroupRequest::getLaunchConfigurationTag()const
-{
-	return launchConfigurationTag_;
+std::vector<CreateAutoProvisioningGroupRequest::LaunchConfigurationTag> CreateAutoProvisioningGroupRequest::getLaunchConfigurationTag() const {
+  return launchConfigurationTag_;
 }
 
-void CreateAutoProvisioningGroupRequest::setLaunchConfigurationTag(const std::vector<LaunchConfigurationTag>& launchConfigurationTag)
-{
-	launchConfigurationTag_ = launchConfigurationTag;
-	for(int dep1 = 0; dep1!= launchConfigurationTag.size(); dep1++) {
-		auto launchConfigurationTagObj = launchConfigurationTag.at(dep1);
-		std::string launchConfigurationTagObjStr = "LaunchConfiguration.Tag." + std::to_string(dep1 + 1);
-		setParameter(launchConfigurationTagObjStr + ".Key", launchConfigurationTagObj.key);
-		setParameter(launchConfigurationTagObjStr + ".Value", launchConfigurationTagObj.value);
-	}
+void CreateAutoProvisioningGroupRequest::setLaunchConfigurationTag(const std::vector<CreateAutoProvisioningGroupRequest::LaunchConfigurationTag> &launchConfigurationTag) {
+  launchConfigurationTag_ = launchConfigurationTag;
+  for(int dep1 = 0; dep1 != launchConfigurationTag.size(); dep1++) {
+  auto launchConfigurationTagObj = launchConfigurationTag.at(dep1);
+  std::string launchConfigurationTagObjStr = std::string("LaunchConfiguration.Tag") + "." + std::to_string(dep1 + 1);
+    setParameter(launchConfigurationTagObjStr + ".Key", launchConfigurationTagObj.key);
+    setParameter(launchConfigurationTagObjStr + ".Value", launchConfigurationTagObj.value);
+  }
 }
 
-std::string CreateAutoProvisioningGroupRequest::getLaunchConfigurationDeploymentSetId()const
-{
-	return launchConfigurationDeploymentSetId_;
+std::string CreateAutoProvisioningGroupRequest::getLaunchConfigurationDeploymentSetId() const {
+  return launchConfigurationDeploymentSetId_;
 }
 
-void CreateAutoProvisioningGroupRequest::setLaunchConfigurationDeploymentSetId(const std::string& launchConfigurationDeploymentSetId)
-{
-	launchConfigurationDeploymentSetId_ = launchConfigurationDeploymentSetId;
-	setParameter("LaunchConfigurationDeploymentSetId", launchConfigurationDeploymentSetId);
+void CreateAutoProvisioningGroupRequest::setLaunchConfigurationDeploymentSetId(const std::string &launchConfigurationDeploymentSetId) {
+  launchConfigurationDeploymentSetId_ = launchConfigurationDeploymentSetId;
+  setParameter(std::string("LaunchConfiguration.DeploymentSetId"), launchConfigurationDeploymentSetId);
 }
 
-std::string CreateAutoProvisioningGroupRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string CreateAutoProvisioningGroupRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void CreateAutoProvisioningGroupRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void CreateAutoProvisioningGroupRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string CreateAutoProvisioningGroupRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string CreateAutoProvisioningGroupRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void CreateAutoProvisioningGroupRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void CreateAutoProvisioningGroupRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-int CreateAutoProvisioningGroupRequest::getSpotInstancePoolsToUseCount()const
-{
-	return spotInstancePoolsToUseCount_;
+int CreateAutoProvisioningGroupRequest::getSpotInstancePoolsToUseCount() const {
+  return spotInstancePoolsToUseCount_;
 }
 
-void CreateAutoProvisioningGroupRequest::setSpotInstancePoolsToUseCount(int spotInstancePoolsToUseCount)
-{
-	spotInstancePoolsToUseCount_ = spotInstancePoolsToUseCount;
-	setParameter("SpotInstancePoolsToUseCount", std::to_string(spotInstancePoolsToUseCount));
+void CreateAutoProvisioningGroupRequest::setSpotInstancePoolsToUseCount(int spotInstancePoolsToUseCount) {
+  spotInstancePoolsToUseCount_ = spotInstancePoolsToUseCount;
+  setParameter(std::string("SpotInstancePoolsToUseCount"), std::to_string(spotInstancePoolsToUseCount));
 }
 
-std::string CreateAutoProvisioningGroupRequest::getLaunchConfigurationInternetChargeType()const
-{
-	return launchConfigurationInternetChargeType_;
+std::string CreateAutoProvisioningGroupRequest::getLaunchConfigurationInternetChargeType() const {
+  return launchConfigurationInternetChargeType_;
 }
 
-void CreateAutoProvisioningGroupRequest::setLaunchConfigurationInternetChargeType(const std::string& launchConfigurationInternetChargeType)
-{
-	launchConfigurationInternetChargeType_ = launchConfigurationInternetChargeType;
-	setParameter("LaunchConfigurationInternetChargeType", launchConfigurationInternetChargeType);
+void CreateAutoProvisioningGroupRequest::setLaunchConfigurationInternetChargeType(const std::string &launchConfigurationInternetChargeType) {
+  launchConfigurationInternetChargeType_ = launchConfigurationInternetChargeType;
+  setParameter(std::string("LaunchConfiguration.InternetChargeType"), launchConfigurationInternetChargeType);
 }
 
-std::string CreateAutoProvisioningGroupRequest::getLaunchTemplateVersion()const
-{
-	return launchTemplateVersion_;
+std::string CreateAutoProvisioningGroupRequest::getLaunchTemplateVersion() const {
+  return launchTemplateVersion_;
 }
 
-void CreateAutoProvisioningGroupRequest::setLaunchTemplateVersion(const std::string& launchTemplateVersion)
-{
-	launchTemplateVersion_ = launchTemplateVersion;
-	setParameter("LaunchTemplateVersion", launchTemplateVersion);
+void CreateAutoProvisioningGroupRequest::setLaunchTemplateVersion(const std::string &launchTemplateVersion) {
+  launchTemplateVersion_ = launchTemplateVersion;
+  setParameter(std::string("LaunchTemplateVersion"), launchTemplateVersion);
 }
 
-std::string CreateAutoProvisioningGroupRequest::getLaunchConfigurationIoOptimized()const
-{
-	return launchConfigurationIoOptimized_;
+std::string CreateAutoProvisioningGroupRequest::getLaunchConfigurationIoOptimized() const {
+  return launchConfigurationIoOptimized_;
 }
 
-void CreateAutoProvisioningGroupRequest::setLaunchConfigurationIoOptimized(const std::string& launchConfigurationIoOptimized)
-{
-	launchConfigurationIoOptimized_ = launchConfigurationIoOptimized;
-	setParameter("LaunchConfigurationIoOptimized", launchConfigurationIoOptimized);
+void CreateAutoProvisioningGroupRequest::setLaunchConfigurationIoOptimized(const std::string &launchConfigurationIoOptimized) {
+  launchConfigurationIoOptimized_ = launchConfigurationIoOptimized;
+  setParameter(std::string("LaunchConfiguration.IoOptimized"), launchConfigurationIoOptimized);
 }
 
-std::string CreateAutoProvisioningGroupRequest::getPayAsYouGoTargetCapacity()const
-{
-	return payAsYouGoTargetCapacity_;
+std::string CreateAutoProvisioningGroupRequest::getPayAsYouGoTargetCapacity() const {
+  return payAsYouGoTargetCapacity_;
 }
 
-void CreateAutoProvisioningGroupRequest::setPayAsYouGoTargetCapacity(const std::string& payAsYouGoTargetCapacity)
-{
-	payAsYouGoTargetCapacity_ = payAsYouGoTargetCapacity;
-	setParameter("PayAsYouGoTargetCapacity", payAsYouGoTargetCapacity);
+void CreateAutoProvisioningGroupRequest::setPayAsYouGoTargetCapacity(const std::string &payAsYouGoTargetCapacity) {
+  payAsYouGoTargetCapacity_ = payAsYouGoTargetCapacity;
+  setParameter(std::string("PayAsYouGoTargetCapacity"), payAsYouGoTargetCapacity);
 }
 
-std::string CreateAutoProvisioningGroupRequest::getTotalTargetCapacity()const
-{
-	return totalTargetCapacity_;
+std::string CreateAutoProvisioningGroupRequest::getTotalTargetCapacity() const {
+  return totalTargetCapacity_;
 }
 
-void CreateAutoProvisioningGroupRequest::setTotalTargetCapacity(const std::string& totalTargetCapacity)
-{
-	totalTargetCapacity_ = totalTargetCapacity;
-	setParameter("TotalTargetCapacity", totalTargetCapacity);
+void CreateAutoProvisioningGroupRequest::setTotalTargetCapacity(const std::string &totalTargetCapacity) {
+  totalTargetCapacity_ = totalTargetCapacity;
+  setParameter(std::string("TotalTargetCapacity"), totalTargetCapacity);
 }
 
-std::string CreateAutoProvisioningGroupRequest::getSpotTargetCapacity()const
-{
-	return spotTargetCapacity_;
+std::string CreateAutoProvisioningGroupRequest::getSpotTargetCapacity() const {
+  return spotTargetCapacity_;
 }
 
-void CreateAutoProvisioningGroupRequest::setSpotTargetCapacity(const std::string& spotTargetCapacity)
-{
-	spotTargetCapacity_ = spotTargetCapacity;
-	setParameter("SpotTargetCapacity", spotTargetCapacity);
+void CreateAutoProvisioningGroupRequest::setSpotTargetCapacity(const std::string &spotTargetCapacity) {
+  spotTargetCapacity_ = spotTargetCapacity;
+  setParameter(std::string("SpotTargetCapacity"), spotTargetCapacity);
 }
 
-std::string CreateAutoProvisioningGroupRequest::getValidFrom()const
-{
-	return validFrom_;
+std::string CreateAutoProvisioningGroupRequest::getValidFrom() const {
+  return validFrom_;
 }
 
-void CreateAutoProvisioningGroupRequest::setValidFrom(const std::string& validFrom)
-{
-	validFrom_ = validFrom;
-	setParameter("ValidFrom", validFrom);
+void CreateAutoProvisioningGroupRequest::setValidFrom(const std::string &validFrom) {
+  validFrom_ = validFrom;
+  setParameter(std::string("ValidFrom"), validFrom);
 }
 
-std::string CreateAutoProvisioningGroupRequest::getAutoProvisioningGroupName()const
-{
-	return autoProvisioningGroupName_;
+std::string CreateAutoProvisioningGroupRequest::getAutoProvisioningGroupName() const {
+  return autoProvisioningGroupName_;
 }
 
-void CreateAutoProvisioningGroupRequest::setAutoProvisioningGroupName(const std::string& autoProvisioningGroupName)
-{
-	autoProvisioningGroupName_ = autoProvisioningGroupName;
-	setParameter("AutoProvisioningGroupName", autoProvisioningGroupName);
+void CreateAutoProvisioningGroupRequest::setAutoProvisioningGroupName(const std::string &autoProvisioningGroupName) {
+  autoProvisioningGroupName_ = autoProvisioningGroupName;
+  setParameter(std::string("AutoProvisioningGroupName"), autoProvisioningGroupName);
 }
 

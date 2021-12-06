@@ -35,13 +35,13 @@ namespace AlibabaCloud
 				struct Activation
 				{
 					std::string instanceName;
-					int instanceCount;
 					int deregisteredCount;
+					int instanceCount;
 					std::string description;
-					std::string activationId;
 					std::string creationTime;
-					long timeToLiveInHours;
+					std::string activationId;
 					int registeredCount;
+					long timeToLiveInHours;
 					bool disabled;
 					std::string ipAddressRange;
 				};

@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,94 +18,78 @@
 
 using AlibabaCloud::Ecs::Model::DeleteImagePipelineRequest;
 
-DeleteImagePipelineRequest::DeleteImagePipelineRequest() :
-	RpcServiceRequest("ecs", "2014-05-26", "DeleteImagePipeline")
-{
-	setMethod(HttpRequest::Method::Post);
+DeleteImagePipelineRequest::DeleteImagePipelineRequest()
+    : RpcServiceRequest("ecs", "2014-05-26", "DeleteImagePipeline") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DeleteImagePipelineRequest::~DeleteImagePipelineRequest()
-{}
+DeleteImagePipelineRequest::~DeleteImagePipelineRequest() {}
 
-std::string DeleteImagePipelineRequest::getImagePipelineId()const
-{
-	return imagePipelineId_;
+std::string DeleteImagePipelineRequest::getImagePipelineId() const {
+  return imagePipelineId_;
 }
 
-void DeleteImagePipelineRequest::setImagePipelineId(const std::string& imagePipelineId)
-{
-	imagePipelineId_ = imagePipelineId;
-	setParameter("ImagePipelineId", imagePipelineId);
+void DeleteImagePipelineRequest::setImagePipelineId(const std::string &imagePipelineId) {
+  imagePipelineId_ = imagePipelineId;
+  setParameter(std::string("ImagePipelineId"), imagePipelineId);
 }
 
-long DeleteImagePipelineRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long DeleteImagePipelineRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void DeleteImagePipelineRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void DeleteImagePipelineRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string DeleteImagePipelineRequest::getRegionId()const
-{
-	return regionId_;
+std::string DeleteImagePipelineRequest::getRegionId() const {
+  return regionId_;
 }
 
-void DeleteImagePipelineRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void DeleteImagePipelineRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
-std::vector<DeleteImagePipelineRequest::TemplateTag> DeleteImagePipelineRequest::getTemplateTag()const
-{
-	return templateTag_;
+std::vector<DeleteImagePipelineRequest::TemplateTag> DeleteImagePipelineRequest::getTemplateTag() const {
+  return templateTag_;
 }
 
-void DeleteImagePipelineRequest::setTemplateTag(const std::vector<TemplateTag>& templateTag)
-{
-	templateTag_ = templateTag;
-	for(int dep1 = 0; dep1!= templateTag.size(); dep1++) {
-		auto templateTagObj = templateTag.at(dep1);
-		std::string templateTagObjStr = "TemplateTag." + std::to_string(dep1 + 1);
-		setParameter(templateTagObjStr + ".Key", templateTagObj.key);
-		setParameter(templateTagObjStr + ".Value", templateTagObj.value);
-	}
+void DeleteImagePipelineRequest::setTemplateTag(const std::vector<DeleteImagePipelineRequest::TemplateTag> &templateTag) {
+  templateTag_ = templateTag;
+  for(int dep1 = 0; dep1 != templateTag.size(); dep1++) {
+  auto templateTagObj = templateTag.at(dep1);
+  std::string templateTagObjStr = std::string("TemplateTag") + "." + std::to_string(dep1 + 1);
+    setParameter(templateTagObjStr + ".Key", templateTagObj.key);
+    setParameter(templateTagObjStr + ".Value", templateTagObj.value);
+  }
 }
 
-std::string DeleteImagePipelineRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string DeleteImagePipelineRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void DeleteImagePipelineRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void DeleteImagePipelineRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string DeleteImagePipelineRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string DeleteImagePipelineRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void DeleteImagePipelineRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void DeleteImagePipelineRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-long DeleteImagePipelineRequest::getOwnerId()const
-{
-	return ownerId_;
+long DeleteImagePipelineRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void DeleteImagePipelineRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void DeleteImagePipelineRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 

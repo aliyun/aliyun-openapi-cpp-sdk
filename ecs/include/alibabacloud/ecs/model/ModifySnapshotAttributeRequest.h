@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,53 +17,47 @@
 #ifndef ALIBABACLOUD_ECS_MODEL_MODIFYSNAPSHOTATTRIBUTEREQUEST_H_
 #define ALIBABACLOUD_ECS_MODEL_MODIFYSNAPSHOTATTRIBUTEREQUEST_H_
 
+#include <alibabacloud/ecs/EcsExport.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
-#include <alibabacloud/ecs/EcsExport.h>
+#include <map>
 
-namespace AlibabaCloud
-{
-	namespace Ecs
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_ECS_EXPORT ModifySnapshotAttributeRequest : public RpcServiceRequest
-			{
+namespace AlibabaCloud {
+namespace Ecs {
+namespace Model {
+class ALIBABACLOUD_ECS_EXPORT ModifySnapshotAttributeRequest : public RpcServiceRequest {
+public:
+	ModifySnapshotAttributeRequest();
+	~ModifySnapshotAttributeRequest();
+	long getResourceOwnerId() const;
+	void setResourceOwnerId(long resourceOwnerId);
+	std::string getSnapshotId() const;
+	void setSnapshotId(const std::string &snapshotId);
+	std::string getDescription() const;
+	void setDescription(const std::string &description);
+	std::string getSnapshotName() const;
+	void setSnapshotName(const std::string &snapshotName);
+	std::string getResourceOwnerAccount() const;
+	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
+	std::string getOwnerAccount() const;
+	void setOwnerAccount(const std::string &ownerAccount);
+	long getOwnerId() const;
+	void setOwnerId(long ownerId);
+	bool getDisableInstantAccess() const;
+	void setDisableInstantAccess(bool disableInstantAccess);
 
-			public:
-				ModifySnapshotAttributeRequest();
-				~ModifySnapshotAttributeRequest();
-
-				long getResourceOwnerId()const;
-				void setResourceOwnerId(long resourceOwnerId);
-				std::string getSnapshotId()const;
-				void setSnapshotId(const std::string& snapshotId);
-				std::string getDescription()const;
-				void setDescription(const std::string& description);
-				std::string getSnapshotName()const;
-				void setSnapshotName(const std::string& snapshotName);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
-				bool getDisableInstantAccess()const;
-				void setDisableInstantAccess(bool disableInstantAccess);
-
-            private:
-				long resourceOwnerId_;
-				std::string snapshotId_;
-				std::string description_;
-				std::string snapshotName_;
-				std::string resourceOwnerAccount_;
-				std::string ownerAccount_;
-				long ownerId_;
-				bool disableInstantAccess_;
-
-			};
-		}
-	}
-}
+private:
+	long resourceOwnerId_;
+	std::string snapshotId_;
+	std::string description_;
+	std::string snapshotName_;
+	std::string resourceOwnerAccount_;
+	std::string ownerAccount_;
+	long ownerId_;
+	bool disableInstantAccess_;
+};
+} // namespace Model
+} // namespace Ecs
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_ECS_MODEL_MODIFYSNAPSHOTATTRIBUTEREQUEST_H_

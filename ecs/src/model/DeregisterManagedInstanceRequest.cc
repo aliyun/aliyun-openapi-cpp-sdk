@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,78 +18,64 @@
 
 using AlibabaCloud::Ecs::Model::DeregisterManagedInstanceRequest;
 
-DeregisterManagedInstanceRequest::DeregisterManagedInstanceRequest() :
-	RpcServiceRequest("ecs", "2014-05-26", "DeregisterManagedInstance")
-{
-	setMethod(HttpRequest::Method::Post);
+DeregisterManagedInstanceRequest::DeregisterManagedInstanceRequest()
+    : RpcServiceRequest("ecs", "2014-05-26", "DeregisterManagedInstance") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DeregisterManagedInstanceRequest::~DeregisterManagedInstanceRequest()
-{}
+DeregisterManagedInstanceRequest::~DeregisterManagedInstanceRequest() {}
 
-long DeregisterManagedInstanceRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long DeregisterManagedInstanceRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void DeregisterManagedInstanceRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void DeregisterManagedInstanceRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string DeregisterManagedInstanceRequest::getRegionId()const
-{
-	return regionId_;
+std::string DeregisterManagedInstanceRequest::getRegionId() const {
+  return regionId_;
 }
 
-void DeregisterManagedInstanceRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void DeregisterManagedInstanceRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
-std::string DeregisterManagedInstanceRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string DeregisterManagedInstanceRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void DeregisterManagedInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void DeregisterManagedInstanceRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string DeregisterManagedInstanceRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string DeregisterManagedInstanceRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void DeregisterManagedInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void DeregisterManagedInstanceRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-long DeregisterManagedInstanceRequest::getOwnerId()const
-{
-	return ownerId_;
+long DeregisterManagedInstanceRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void DeregisterManagedInstanceRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void DeregisterManagedInstanceRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string DeregisterManagedInstanceRequest::getInstanceId()const
-{
-	return instanceId_;
+std::string DeregisterManagedInstanceRequest::getInstanceId() const {
+  return instanceId_;
 }
 
-void DeregisterManagedInstanceRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+void DeregisterManagedInstanceRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
 }
 

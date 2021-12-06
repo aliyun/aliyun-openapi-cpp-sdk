@@ -34,14 +34,14 @@ namespace AlibabaCloud
 			public:
 				struct Command
 				{
-					std::string category;
 					std::string description;
+					std::string category;
 					std::vector<std::string> parameterNames;
 					long timeout;
-					std::string name;
 					std::string provider;
-					std::string commandContent;
+					std::string name;
 					std::string workingDir;
+					std::string commandContent;
 					std::string type;
 					int version;
 					int invokeTimes;

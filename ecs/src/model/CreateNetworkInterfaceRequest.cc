@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,287 +18,228 @@
 
 using AlibabaCloud::Ecs::Model::CreateNetworkInterfaceRequest;
 
-CreateNetworkInterfaceRequest::CreateNetworkInterfaceRequest() :
-	RpcServiceRequest("ecs", "2014-05-26", "CreateNetworkInterface")
-{
-	setMethod(HttpRequest::Method::Post);
+CreateNetworkInterfaceRequest::CreateNetworkInterfaceRequest()
+    : RpcServiceRequest("ecs", "2014-05-26", "CreateNetworkInterface") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-CreateNetworkInterfaceRequest::~CreateNetworkInterfaceRequest()
-{}
+CreateNetworkInterfaceRequest::~CreateNetworkInterfaceRequest() {}
 
-int CreateNetworkInterfaceRequest::getQueueNumber()const
-{
-	return queueNumber_;
+int CreateNetworkInterfaceRequest::getQueueNumber() const {
+  return queueNumber_;
 }
 
-void CreateNetworkInterfaceRequest::setQueueNumber(int queueNumber)
-{
-	queueNumber_ = queueNumber;
-	setParameter("QueueNumber", std::to_string(queueNumber));
+void CreateNetworkInterfaceRequest::setQueueNumber(int queueNumber) {
+  queueNumber_ = queueNumber;
+  setParameter(std::string("QueueNumber"), std::to_string(queueNumber));
 }
 
-long CreateNetworkInterfaceRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long CreateNetworkInterfaceRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void CreateNetworkInterfaceRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void CreateNetworkInterfaceRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string CreateNetworkInterfaceRequest::getClientToken()const
-{
-	return clientToken_;
+std::string CreateNetworkInterfaceRequest::getClientToken() const {
+  return clientToken_;
 }
 
-void CreateNetworkInterfaceRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+void CreateNetworkInterfaceRequest::setClientToken(const std::string &clientToken) {
+  clientToken_ = clientToken;
+  setParameter(std::string("ClientToken"), clientToken);
 }
 
-std::string CreateNetworkInterfaceRequest::getSecurityGroupId()const
-{
-	return securityGroupId_;
+std::string CreateNetworkInterfaceRequest::getSecurityGroupId() const {
+  return securityGroupId_;
 }
 
-void CreateNetworkInterfaceRequest::setSecurityGroupId(const std::string& securityGroupId)
-{
-	securityGroupId_ = securityGroupId;
-	setParameter("SecurityGroupId", securityGroupId);
+void CreateNetworkInterfaceRequest::setSecurityGroupId(const std::string &securityGroupId) {
+  securityGroupId_ = securityGroupId;
+  setParameter(std::string("SecurityGroupId"), securityGroupId);
 }
 
-std::string CreateNetworkInterfaceRequest::getDescription()const
-{
-	return description_;
+std::string CreateNetworkInterfaceRequest::getDescription() const {
+  return description_;
 }
 
-void CreateNetworkInterfaceRequest::setDescription(const std::string& description)
-{
-	description_ = description;
-	setParameter("Description", description);
+void CreateNetworkInterfaceRequest::setDescription(const std::string &description) {
+  description_ = description;
+  setParameter(std::string("Description"), description);
 }
 
-int CreateNetworkInterfaceRequest::getSecondaryPrivateIpAddressCount()const
-{
-	return secondaryPrivateIpAddressCount_;
+int CreateNetworkInterfaceRequest::getSecondaryPrivateIpAddressCount() const {
+  return secondaryPrivateIpAddressCount_;
 }
 
-void CreateNetworkInterfaceRequest::setSecondaryPrivateIpAddressCount(int secondaryPrivateIpAddressCount)
-{
-	secondaryPrivateIpAddressCount_ = secondaryPrivateIpAddressCount;
-	setParameter("SecondaryPrivateIpAddressCount", std::to_string(secondaryPrivateIpAddressCount));
+void CreateNetworkInterfaceRequest::setSecondaryPrivateIpAddressCount(int secondaryPrivateIpAddressCount) {
+  secondaryPrivateIpAddressCount_ = secondaryPrivateIpAddressCount;
+  setParameter(std::string("SecondaryPrivateIpAddressCount"), std::to_string(secondaryPrivateIpAddressCount));
 }
 
-std::string CreateNetworkInterfaceRequest::getBusinessType()const
-{
-	return businessType_;
+std::string CreateNetworkInterfaceRequest::getBusinessType() const {
+  return businessType_;
 }
 
-void CreateNetworkInterfaceRequest::setBusinessType(const std::string& businessType)
-{
-	businessType_ = businessType;
-	setParameter("BusinessType", businessType);
+void CreateNetworkInterfaceRequest::setBusinessType(const std::string &businessType) {
+  businessType_ = businessType;
+  setParameter(std::string("BusinessType"), businessType);
 }
 
-std::string CreateNetworkInterfaceRequest::getResourceGroupId()const
-{
-	return resourceGroupId_;
+std::string CreateNetworkInterfaceRequest::getResourceGroupId() const {
+  return resourceGroupId_;
 }
 
-void CreateNetworkInterfaceRequest::setResourceGroupId(const std::string& resourceGroupId)
-{
-	resourceGroupId_ = resourceGroupId;
-	setParameter("ResourceGroupId", resourceGroupId);
+void CreateNetworkInterfaceRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
-std::string CreateNetworkInterfaceRequest::getRegionId()const
-{
-	return regionId_;
+std::string CreateNetworkInterfaceRequest::getRegionId() const {
+  return regionId_;
 }
 
-void CreateNetworkInterfaceRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void CreateNetworkInterfaceRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
-std::string CreateNetworkInterfaceRequest::getInstanceType()const
-{
-	return instanceType_;
+std::string CreateNetworkInterfaceRequest::getInstanceType() const {
+  return instanceType_;
 }
 
-void CreateNetworkInterfaceRequest::setInstanceType(const std::string& instanceType)
-{
-	instanceType_ = instanceType;
-	setParameter("InstanceType", instanceType);
+void CreateNetworkInterfaceRequest::setInstanceType(const std::string &instanceType) {
+  instanceType_ = instanceType;
+  setParameter(std::string("InstanceType"), instanceType);
 }
 
-std::vector<CreateNetworkInterfaceRequest::Tag> CreateNetworkInterfaceRequest::getTag()const
-{
-	return tag_;
+std::vector<CreateNetworkInterfaceRequest::Tag> CreateNetworkInterfaceRequest::getTag() const {
+  return tag_;
 }
 
-void CreateNetworkInterfaceRequest::setTag(const std::vector<Tag>& tag)
-{
-	tag_ = tag;
-	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
-		auto tagObj = tag.at(dep1);
-		std::string tagObjStr = "Tag." + std::to_string(dep1 + 1);
-		setParameter(tagObjStr + ".Key", tagObj.key);
-		setParameter(tagObjStr + ".Value", tagObj.value);
-	}
+void CreateNetworkInterfaceRequest::setTag(const std::vector<CreateNetworkInterfaceRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setParameter(tagObjStr + ".Key", tagObj.key);
+    setParameter(tagObjStr + ".Value", tagObj.value);
+  }
 }
 
-std::string CreateNetworkInterfaceRequest::getNetworkInterfaceName()const
-{
-	return networkInterfaceName_;
+std::string CreateNetworkInterfaceRequest::getNetworkInterfaceName() const {
+  return networkInterfaceName_;
 }
 
-void CreateNetworkInterfaceRequest::setNetworkInterfaceName(const std::string& networkInterfaceName)
-{
-	networkInterfaceName_ = networkInterfaceName;
-	setParameter("NetworkInterfaceName", networkInterfaceName);
+void CreateNetworkInterfaceRequest::setNetworkInterfaceName(const std::string &networkInterfaceName) {
+  networkInterfaceName_ = networkInterfaceName;
+  setParameter(std::string("NetworkInterfaceName"), networkInterfaceName);
 }
 
-bool CreateNetworkInterfaceRequest::getVisible()const
-{
-	return visible_;
+bool CreateNetworkInterfaceRequest::getVisible() const {
+  return visible_;
 }
 
-void CreateNetworkInterfaceRequest::setVisible(bool visible)
-{
-	visible_ = visible;
-	setParameter("Visible", visible ? "true" : "false");
+void CreateNetworkInterfaceRequest::setVisible(bool visible) {
+  visible_ = visible;
+  setParameter(std::string("Visible"), visible ? "true" : "false");
 }
 
-std::string CreateNetworkInterfaceRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string CreateNetworkInterfaceRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void CreateNetworkInterfaceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void CreateNetworkInterfaceRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-int CreateNetworkInterfaceRequest::getIpv6AddressCount()const
-{
-	return ipv6AddressCount_;
+int CreateNetworkInterfaceRequest::getIpv6AddressCount() const {
+  return ipv6AddressCount_;
 }
 
-void CreateNetworkInterfaceRequest::setIpv6AddressCount(int ipv6AddressCount)
-{
-	ipv6AddressCount_ = ipv6AddressCount;
-	setParameter("Ipv6AddressCount", std::to_string(ipv6AddressCount));
+void CreateNetworkInterfaceRequest::setIpv6AddressCount(int ipv6AddressCount) {
+  ipv6AddressCount_ = ipv6AddressCount;
+  setParameter(std::string("Ipv6AddressCount"), std::to_string(ipv6AddressCount));
 }
 
-std::string CreateNetworkInterfaceRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string CreateNetworkInterfaceRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void CreateNetworkInterfaceRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void CreateNetworkInterfaceRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-int CreateNetworkInterfaceRequest::getQueuePairNumber()const
-{
-	return queuePairNumber_;
+int CreateNetworkInterfaceRequest::getQueuePairNumber() const {
+  return queuePairNumber_;
 }
 
-void CreateNetworkInterfaceRequest::setQueuePairNumber(int queuePairNumber)
-{
-	queuePairNumber_ = queuePairNumber;
-	setParameter("QueuePairNumber", std::to_string(queuePairNumber));
+void CreateNetworkInterfaceRequest::setQueuePairNumber(int queuePairNumber) {
+  queuePairNumber_ = queuePairNumber;
+  setParameter(std::string("QueuePairNumber"), std::to_string(queuePairNumber));
 }
 
-long CreateNetworkInterfaceRequest::getOwnerId()const
-{
-	return ownerId_;
+long CreateNetworkInterfaceRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void CreateNetworkInterfaceRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void CreateNetworkInterfaceRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::vector<std::string> CreateNetworkInterfaceRequest::getSecurityGroupIds()const
-{
-	return securityGroupIds_;
+std::vector<std::string> CreateNetworkInterfaceRequest::getSecurityGroupIds() const {
+  return securityGroupIds_;
 }
 
-void CreateNetworkInterfaceRequest::setSecurityGroupIds(const std::vector<std::string>& securityGroupIds)
-{
-	securityGroupIds_ = securityGroupIds;
-	for(int dep1 = 0; dep1!= securityGroupIds.size(); dep1++) {
-		setParameter("SecurityGroupIds."+ std::to_string(dep1), securityGroupIds.at(dep1));
-	}
+void CreateNetworkInterfaceRequest::setSecurityGroupIds(const std::vector<std::string> &securityGroupIds) {
+  securityGroupIds_ = securityGroupIds;
 }
 
-std::string CreateNetworkInterfaceRequest::getNetworkInterfaceTrafficMode()const
-{
-	return networkInterfaceTrafficMode_;
+std::string CreateNetworkInterfaceRequest::getNetworkInterfaceTrafficMode() const {
+  return networkInterfaceTrafficMode_;
 }
 
-void CreateNetworkInterfaceRequest::setNetworkInterfaceTrafficMode(const std::string& networkInterfaceTrafficMode)
-{
-	networkInterfaceTrafficMode_ = networkInterfaceTrafficMode;
-	setParameter("NetworkInterfaceTrafficMode", networkInterfaceTrafficMode);
+void CreateNetworkInterfaceRequest::setNetworkInterfaceTrafficMode(const std::string &networkInterfaceTrafficMode) {
+  networkInterfaceTrafficMode_ = networkInterfaceTrafficMode;
+  setParameter(std::string("NetworkInterfaceTrafficMode"), networkInterfaceTrafficMode);
 }
 
-std::string CreateNetworkInterfaceRequest::getVSwitchId()const
-{
-	return vSwitchId_;
+std::string CreateNetworkInterfaceRequest::getVSwitchId() const {
+  return vSwitchId_;
 }
 
-void CreateNetworkInterfaceRequest::setVSwitchId(const std::string& vSwitchId)
-{
-	vSwitchId_ = vSwitchId;
-	setParameter("VSwitchId", vSwitchId);
+void CreateNetworkInterfaceRequest::setVSwitchId(const std::string &vSwitchId) {
+  vSwitchId_ = vSwitchId;
+  setParameter(std::string("VSwitchId"), vSwitchId);
 }
 
-std::vector<std::string> CreateNetworkInterfaceRequest::getPrivateIpAddress()const
-{
-	return privateIpAddress_;
+std::vector<std::string> CreateNetworkInterfaceRequest::getPrivateIpAddress() const {
+  return privateIpAddress_;
 }
 
-void CreateNetworkInterfaceRequest::setPrivateIpAddress(const std::vector<std::string>& privateIpAddress)
-{
-	privateIpAddress_ = privateIpAddress;
-	for(int dep1 = 0; dep1!= privateIpAddress.size(); dep1++) {
-		setParameter("PrivateIpAddress."+ std::to_string(dep1), privateIpAddress.at(dep1));
-	}
+void CreateNetworkInterfaceRequest::setPrivateIpAddress(const std::vector<std::string> &privateIpAddress) {
+  privateIpAddress_ = privateIpAddress;
 }
 
-std::string CreateNetworkInterfaceRequest::getPrimaryIpAddress()const
-{
-	return primaryIpAddress_;
+std::string CreateNetworkInterfaceRequest::getPrimaryIpAddress() const {
+  return primaryIpAddress_;
 }
 
-void CreateNetworkInterfaceRequest::setPrimaryIpAddress(const std::string& primaryIpAddress)
-{
-	primaryIpAddress_ = primaryIpAddress;
-	setParameter("PrimaryIpAddress", primaryIpAddress);
+void CreateNetworkInterfaceRequest::setPrimaryIpAddress(const std::string &primaryIpAddress) {
+  primaryIpAddress_ = primaryIpAddress;
+  setParameter(std::string("PrimaryIpAddress"), primaryIpAddress);
 }
 
-std::vector<std::string> CreateNetworkInterfaceRequest::getIpv6Address()const
-{
-	return ipv6Address_;
+std::vector<std::string> CreateNetworkInterfaceRequest::getIpv6Address() const {
+  return ipv6Address_;
 }
 
-void CreateNetworkInterfaceRequest::setIpv6Address(const std::vector<std::string>& ipv6Address)
-{
-	ipv6Address_ = ipv6Address;
-	for(int dep1 = 0; dep1!= ipv6Address.size(); dep1++) {
-		setParameter("Ipv6Address."+ std::to_string(dep1), ipv6Address.at(dep1));
-	}
+void CreateNetworkInterfaceRequest::setIpv6Address(const std::vector<std::string> &ipv6Address) {
+  ipv6Address_ = ipv6Address;
 }
 

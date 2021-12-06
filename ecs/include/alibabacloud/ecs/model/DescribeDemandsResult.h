@@ -43,11 +43,11 @@ namespace AlibabaCloud
 					};
 					std::string demandDescription;
 					std::string comment;
-					std::string zoneId;
 					std::string demandTime;
 					std::string endTime;
-					std::string instanceTypeFamily;
+					std::string zoneId;
 					std::string instanceChargeType;
+					std::string instanceTypeFamily;
 					std::vector<Demand::SupplyInfo> supplyInfos;
 					std::string startTime;
 					std::string demandId;

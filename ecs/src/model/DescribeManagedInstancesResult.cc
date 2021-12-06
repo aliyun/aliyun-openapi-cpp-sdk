@@ -43,42 +43,42 @@ void DescribeManagedInstancesResult::parse(const std::string &payload)
 	for (auto valueInstancesInstance : allInstancesNode)
 	{
 		Instance instancesObject;
-		if(!valueInstancesInstance["InstanceId"].isNull())
-			instancesObject.instanceId = valueInstancesInstance["InstanceId"].asString();
-		if(!valueInstancesInstance["InstanceName"].isNull())
-			instancesObject.instanceName = valueInstancesInstance["InstanceName"].asString();
-		if(!valueInstancesInstance["ActivationId"].isNull())
-			instancesObject.activationId = valueInstancesInstance["ActivationId"].asString();
-		if(!valueInstancesInstance["Hostname"].isNull())
-			instancesObject.hostname = valueInstancesInstance["Hostname"].asString();
-		if(!valueInstancesInstance["MachineId"].isNull())
-			instancesObject.machineId = valueInstancesInstance["MachineId"].asString();
-		if(!valueInstancesInstance["OsType"].isNull())
-			instancesObject.osType = valueInstancesInstance["OsType"].asString();
-		if(!valueInstancesInstance["OsVersion"].isNull())
-			instancesObject.osVersion = valueInstancesInstance["OsVersion"].asString();
-		if(!valueInstancesInstance["IntranetIp"].isNull())
-			instancesObject.intranetIp = valueInstancesInstance["IntranetIp"].asString();
-		if(!valueInstancesInstance["InternetIp"].isNull())
-			instancesObject.internetIp = valueInstancesInstance["InternetIp"].asString();
-		if(!valueInstancesInstance["AgentVersion"].isNull())
-			instancesObject.agentVersion = valueInstancesInstance["AgentVersion"].asString();
-		if(!valueInstancesInstance["RegistrationTime"].isNull())
-			instancesObject.registrationTime = valueInstancesInstance["RegistrationTime"].asString();
-		if(!valueInstancesInstance["InvocationCount"].isNull())
-			instancesObject.invocationCount = std::stol(valueInstancesInstance["InvocationCount"].asString());
 		if(!valueInstancesInstance["LastInvokedTime"].isNull())
 			instancesObject.lastInvokedTime = valueInstancesInstance["LastInvokedTime"].asString();
 		if(!valueInstancesInstance["Connected"].isNull())
 			instancesObject.connected = valueInstancesInstance["Connected"].asString() == "true";
+		if(!valueInstancesInstance["InternetIp"].isNull())
+			instancesObject.internetIp = valueInstancesInstance["InternetIp"].asString();
+		if(!valueInstancesInstance["Hostname"].isNull())
+			instancesObject.hostname = valueInstancesInstance["Hostname"].asString();
+		if(!valueInstancesInstance["InstanceId"].isNull())
+			instancesObject.instanceId = valueInstancesInstance["InstanceId"].asString();
+		if(!valueInstancesInstance["ActivationId"].isNull())
+			instancesObject.activationId = valueInstancesInstance["ActivationId"].asString();
+		if(!valueInstancesInstance["IntranetIp"].isNull())
+			instancesObject.intranetIp = valueInstancesInstance["IntranetIp"].asString();
+		if(!valueInstancesInstance["AgentVersion"].isNull())
+			instancesObject.agentVersion = valueInstancesInstance["AgentVersion"].asString();
+		if(!valueInstancesInstance["RegistrationTime"].isNull())
+			instancesObject.registrationTime = valueInstancesInstance["RegistrationTime"].asString();
+		if(!valueInstancesInstance["InstanceName"].isNull())
+			instancesObject.instanceName = valueInstancesInstance["InstanceName"].asString();
+		if(!valueInstancesInstance["OsType"].isNull())
+			instancesObject.osType = valueInstancesInstance["OsType"].asString();
+		if(!valueInstancesInstance["OsVersion"].isNull())
+			instancesObject.osVersion = valueInstancesInstance["OsVersion"].asString();
+		if(!valueInstancesInstance["InvocationCount"].isNull())
+			instancesObject.invocationCount = std::stol(valueInstancesInstance["InvocationCount"].asString());
+		if(!valueInstancesInstance["MachineId"].isNull())
+			instancesObject.machineId = valueInstancesInstance["MachineId"].asString();
 		instances_.push_back(instancesObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stol(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stol(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stol(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stol(value["PageNumber"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stol(value["TotalCount"].asString());
 
 }
 

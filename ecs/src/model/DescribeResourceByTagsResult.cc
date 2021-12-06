@@ -43,10 +43,10 @@ void DescribeResourceByTagsResult::parse(const std::string &payload)
 	for (auto valueResourcesResource : allResourcesNode)
 	{
 		Resource resourcesObject;
-		if(!valueResourcesResource["ResourceId"].isNull())
-			resourcesObject.resourceId = valueResourcesResource["ResourceId"].asString();
 		if(!valueResourcesResource["ResourceType"].isNull())
 			resourcesObject.resourceType = valueResourcesResource["ResourceType"].asString();
+		if(!valueResourcesResource["ResourceId"].isNull())
+			resourcesObject.resourceId = valueResourcesResource["ResourceId"].asString();
 		if(!valueResourcesResource["RegionId"].isNull())
 			resourcesObject.regionId = valueResourcesResource["RegionId"].asString();
 		resources_.push_back(resourcesObject);

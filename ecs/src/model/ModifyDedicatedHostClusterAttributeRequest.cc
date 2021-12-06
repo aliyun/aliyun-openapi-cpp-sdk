@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,100 +18,82 @@
 
 using AlibabaCloud::Ecs::Model::ModifyDedicatedHostClusterAttributeRequest;
 
-ModifyDedicatedHostClusterAttributeRequest::ModifyDedicatedHostClusterAttributeRequest() :
-	RpcServiceRequest("ecs", "2014-05-26", "ModifyDedicatedHostClusterAttribute")
-{
-	setMethod(HttpRequest::Method::Post);
+ModifyDedicatedHostClusterAttributeRequest::ModifyDedicatedHostClusterAttributeRequest()
+    : RpcServiceRequest("ecs", "2014-05-26", "ModifyDedicatedHostClusterAttribute") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-ModifyDedicatedHostClusterAttributeRequest::~ModifyDedicatedHostClusterAttributeRequest()
-{}
+ModifyDedicatedHostClusterAttributeRequest::~ModifyDedicatedHostClusterAttributeRequest() {}
 
-std::string ModifyDedicatedHostClusterAttributeRequest::getDedicatedHostClusterName()const
-{
-	return dedicatedHostClusterName_;
+std::string ModifyDedicatedHostClusterAttributeRequest::getDedicatedHostClusterName() const {
+  return dedicatedHostClusterName_;
 }
 
-void ModifyDedicatedHostClusterAttributeRequest::setDedicatedHostClusterName(const std::string& dedicatedHostClusterName)
-{
-	dedicatedHostClusterName_ = dedicatedHostClusterName;
-	setParameter("DedicatedHostClusterName", dedicatedHostClusterName);
+void ModifyDedicatedHostClusterAttributeRequest::setDedicatedHostClusterName(const std::string &dedicatedHostClusterName) {
+  dedicatedHostClusterName_ = dedicatedHostClusterName;
+  setParameter(std::string("DedicatedHostClusterName"), dedicatedHostClusterName);
 }
 
-long ModifyDedicatedHostClusterAttributeRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long ModifyDedicatedHostClusterAttributeRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void ModifyDedicatedHostClusterAttributeRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void ModifyDedicatedHostClusterAttributeRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string ModifyDedicatedHostClusterAttributeRequest::getDescription()const
-{
-	return description_;
+std::string ModifyDedicatedHostClusterAttributeRequest::getDescription() const {
+  return description_;
 }
 
-void ModifyDedicatedHostClusterAttributeRequest::setDescription(const std::string& description)
-{
-	description_ = description;
-	setParameter("Description", description);
+void ModifyDedicatedHostClusterAttributeRequest::setDescription(const std::string &description) {
+  description_ = description;
+  setParameter(std::string("Description"), description);
 }
 
-std::string ModifyDedicatedHostClusterAttributeRequest::getRegionId()const
-{
-	return regionId_;
+std::string ModifyDedicatedHostClusterAttributeRequest::getRegionId() const {
+  return regionId_;
 }
 
-void ModifyDedicatedHostClusterAttributeRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void ModifyDedicatedHostClusterAttributeRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
-std::string ModifyDedicatedHostClusterAttributeRequest::getDedicatedHostClusterId()const
-{
-	return dedicatedHostClusterId_;
+std::string ModifyDedicatedHostClusterAttributeRequest::getDedicatedHostClusterId() const {
+  return dedicatedHostClusterId_;
 }
 
-void ModifyDedicatedHostClusterAttributeRequest::setDedicatedHostClusterId(const std::string& dedicatedHostClusterId)
-{
-	dedicatedHostClusterId_ = dedicatedHostClusterId;
-	setParameter("DedicatedHostClusterId", dedicatedHostClusterId);
+void ModifyDedicatedHostClusterAttributeRequest::setDedicatedHostClusterId(const std::string &dedicatedHostClusterId) {
+  dedicatedHostClusterId_ = dedicatedHostClusterId;
+  setParameter(std::string("DedicatedHostClusterId"), dedicatedHostClusterId);
 }
 
-std::string ModifyDedicatedHostClusterAttributeRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string ModifyDedicatedHostClusterAttributeRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void ModifyDedicatedHostClusterAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void ModifyDedicatedHostClusterAttributeRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string ModifyDedicatedHostClusterAttributeRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string ModifyDedicatedHostClusterAttributeRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void ModifyDedicatedHostClusterAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void ModifyDedicatedHostClusterAttributeRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-long ModifyDedicatedHostClusterAttributeRequest::getOwnerId()const
-{
-	return ownerId_;
+long ModifyDedicatedHostClusterAttributeRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void ModifyDedicatedHostClusterAttributeRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void ModifyDedicatedHostClusterAttributeRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 

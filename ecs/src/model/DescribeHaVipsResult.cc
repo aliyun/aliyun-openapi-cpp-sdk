@@ -43,38 +43,38 @@ void DescribeHaVipsResult::parse(const std::string &payload)
 	for (auto valueHaVipsHaVip : allHaVipsNode)
 	{
 		HaVip haVipsObject;
-		if(!valueHaVipsHaVip["HaVipId"].isNull())
-			haVipsObject.haVipId = valueHaVipsHaVip["HaVipId"].asString();
-		if(!valueHaVipsHaVip["RegionId"].isNull())
-			haVipsObject.regionId = valueHaVipsHaVip["RegionId"].asString();
+		if(!valueHaVipsHaVip["Status"].isNull())
+			haVipsObject.status = valueHaVipsHaVip["Status"].asString();
 		if(!valueHaVipsHaVip["VpcId"].isNull())
 			haVipsObject.vpcId = valueHaVipsHaVip["VpcId"].asString();
 		if(!valueHaVipsHaVip["VSwitchId"].isNull())
 			haVipsObject.vSwitchId = valueHaVipsHaVip["VSwitchId"].asString();
 		if(!valueHaVipsHaVip["IpAddress"].isNull())
 			haVipsObject.ipAddress = valueHaVipsHaVip["IpAddress"].asString();
-		if(!valueHaVipsHaVip["Status"].isNull())
-			haVipsObject.status = valueHaVipsHaVip["Status"].asString();
-		if(!valueHaVipsHaVip["MasterInstanceId"].isNull())
-			haVipsObject.masterInstanceId = valueHaVipsHaVip["MasterInstanceId"].asString();
 		if(!valueHaVipsHaVip["Description"].isNull())
 			haVipsObject.description = valueHaVipsHaVip["Description"].asString();
+		if(!valueHaVipsHaVip["HaVipId"].isNull())
+			haVipsObject.haVipId = valueHaVipsHaVip["HaVipId"].asString();
 		if(!valueHaVipsHaVip["CreateTime"].isNull())
 			haVipsObject.createTime = valueHaVipsHaVip["CreateTime"].asString();
-		auto allAssociatedInstances = value["AssociatedInstances"]["associatedInstance"];
-		for (auto value : allAssociatedInstances)
-			haVipsObject.associatedInstances.push_back(value.asString());
+		if(!valueHaVipsHaVip["MasterInstanceId"].isNull())
+			haVipsObject.masterInstanceId = valueHaVipsHaVip["MasterInstanceId"].asString();
+		if(!valueHaVipsHaVip["RegionId"].isNull())
+			haVipsObject.regionId = valueHaVipsHaVip["RegionId"].asString();
 		auto allAssociatedEipAddresses = value["AssociatedEipAddresses"]["associatedEipAddresse"];
 		for (auto value : allAssociatedEipAddresses)
 			haVipsObject.associatedEipAddresses.push_back(value.asString());
+		auto allAssociatedInstances = value["AssociatedInstances"]["associatedInstance"];
+		for (auto value : allAssociatedInstances)
+			haVipsObject.associatedInstances.push_back(value.asString());
 		haVips_.push_back(haVipsObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 

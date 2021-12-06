@@ -38,15 +38,15 @@ namespace AlibabaCloud
 				explicit GetInstanceConsoleOutputResult(const std::string &payload);
 				~GetInstanceConsoleOutputResult();
 				std::string getConsoleOutput()const;
-				std::string getInstanceId()const;
 				std::string getLastUpdateTime()const;
+				std::string getInstanceId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string consoleOutput_;
-				std::string instanceId_;
 				std::string lastUpdateTime_;
+				std::string instanceId_;
 
 			};
 		}

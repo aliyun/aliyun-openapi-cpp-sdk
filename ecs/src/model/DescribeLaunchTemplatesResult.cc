@@ -43,40 +43,40 @@ void DescribeLaunchTemplatesResult::parse(const std::string &payload)
 	for (auto valueLaunchTemplateSetsLaunchTemplateSet : allLaunchTemplateSetsNode)
 	{
 		LaunchTemplateSet launchTemplateSetsObject;
-		if(!valueLaunchTemplateSetsLaunchTemplateSet["CreateTime"].isNull())
-			launchTemplateSetsObject.createTime = valueLaunchTemplateSetsLaunchTemplateSet["CreateTime"].asString();
-		if(!valueLaunchTemplateSetsLaunchTemplateSet["ModifiedTime"].isNull())
-			launchTemplateSetsObject.modifiedTime = valueLaunchTemplateSetsLaunchTemplateSet["ModifiedTime"].asString();
-		if(!valueLaunchTemplateSetsLaunchTemplateSet["LaunchTemplateId"].isNull())
-			launchTemplateSetsObject.launchTemplateId = valueLaunchTemplateSetsLaunchTemplateSet["LaunchTemplateId"].asString();
 		if(!valueLaunchTemplateSetsLaunchTemplateSet["LaunchTemplateName"].isNull())
 			launchTemplateSetsObject.launchTemplateName = valueLaunchTemplateSetsLaunchTemplateSet["LaunchTemplateName"].asString();
 		if(!valueLaunchTemplateSetsLaunchTemplateSet["DefaultVersionNumber"].isNull())
 			launchTemplateSetsObject.defaultVersionNumber = std::stol(valueLaunchTemplateSetsLaunchTemplateSet["DefaultVersionNumber"].asString());
-		if(!valueLaunchTemplateSetsLaunchTemplateSet["LatestVersionNumber"].isNull())
-			launchTemplateSetsObject.latestVersionNumber = std::stol(valueLaunchTemplateSetsLaunchTemplateSet["LatestVersionNumber"].asString());
-		if(!valueLaunchTemplateSetsLaunchTemplateSet["CreatedBy"].isNull())
-			launchTemplateSetsObject.createdBy = valueLaunchTemplateSetsLaunchTemplateSet["CreatedBy"].asString();
+		if(!valueLaunchTemplateSetsLaunchTemplateSet["ModifiedTime"].isNull())
+			launchTemplateSetsObject.modifiedTime = valueLaunchTemplateSetsLaunchTemplateSet["ModifiedTime"].asString();
+		if(!valueLaunchTemplateSetsLaunchTemplateSet["LaunchTemplateId"].isNull())
+			launchTemplateSetsObject.launchTemplateId = valueLaunchTemplateSetsLaunchTemplateSet["LaunchTemplateId"].asString();
+		if(!valueLaunchTemplateSetsLaunchTemplateSet["CreateTime"].isNull())
+			launchTemplateSetsObject.createTime = valueLaunchTemplateSetsLaunchTemplateSet["CreateTime"].asString();
 		if(!valueLaunchTemplateSetsLaunchTemplateSet["ResourceGroupId"].isNull())
 			launchTemplateSetsObject.resourceGroupId = valueLaunchTemplateSetsLaunchTemplateSet["ResourceGroupId"].asString();
+		if(!valueLaunchTemplateSetsLaunchTemplateSet["CreatedBy"].isNull())
+			launchTemplateSetsObject.createdBy = valueLaunchTemplateSetsLaunchTemplateSet["CreatedBy"].asString();
+		if(!valueLaunchTemplateSetsLaunchTemplateSet["LatestVersionNumber"].isNull())
+			launchTemplateSetsObject.latestVersionNumber = std::stol(valueLaunchTemplateSetsLaunchTemplateSet["LatestVersionNumber"].asString());
 		auto allTagsNode = valueLaunchTemplateSetsLaunchTemplateSet["Tags"]["Tag"];
 		for (auto valueLaunchTemplateSetsLaunchTemplateSetTagsTag : allTagsNode)
 		{
 			LaunchTemplateSet::Tag tagsObject;
-			if(!valueLaunchTemplateSetsLaunchTemplateSetTagsTag["TagKey"].isNull())
-				tagsObject.tagKey = valueLaunchTemplateSetsLaunchTemplateSetTagsTag["TagKey"].asString();
 			if(!valueLaunchTemplateSetsLaunchTemplateSetTagsTag["TagValue"].isNull())
 				tagsObject.tagValue = valueLaunchTemplateSetsLaunchTemplateSetTagsTag["TagValue"].asString();
+			if(!valueLaunchTemplateSetsLaunchTemplateSetTagsTag["TagKey"].isNull())
+				tagsObject.tagKey = valueLaunchTemplateSetsLaunchTemplateSetTagsTag["TagKey"].asString();
 			launchTemplateSetsObject.tags.push_back(tagsObject);
 		}
 		launchTemplateSets_.push_back(launchTemplateSetsObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 

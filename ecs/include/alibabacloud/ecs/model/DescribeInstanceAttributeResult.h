@@ -41,8 +41,8 @@ namespace AlibabaCloud
 				};
 				struct EipAddress
 				{
-					std::string allocationId;
 					int bandwidth;
+					std::string allocationId;
 					std::string ipAddress;
 					std::string internetChargeType;
 				};
@@ -71,13 +71,13 @@ namespace AlibabaCloud
 				EipAddress getEipAddress()const;
 				std::string getImageId()const;
 				std::string getInstanceType()const;
-				std::string getHostName()const;
 				std::string getVlanId()const;
+				std::string getHostName()const;
 				std::string getStatus()const;
 				std::string getIoOptimized()const;
 				std::string getZoneId()const;
-				std::string getInstanceId()const;
 				std::string getClusterId()const;
+				std::string getInstanceId()const;
 				std::string getStoppedMode()const;
 				DedicatedHostAttribute getDedicatedHostAttribute()const;
 				VpcAttributes getVpcAttributes()const;
@@ -86,8 +86,8 @@ namespace AlibabaCloud
 				std::string getInternetChargeType()const;
 				std::string getInstanceName()const;
 				int getInternetMaxBandwidthOut()const;
-				int getInternetMaxBandwidthIn()const;
 				std::string getSerialNumber()const;
+				int getInternetMaxBandwidthIn()const;
 				std::string getCreationTime()const;
 				std::string getRegionId()const;
 				std::string getCreditSpecification()const;
@@ -106,13 +106,13 @@ namespace AlibabaCloud
 				EipAddress eipAddress_;
 				std::string imageId_;
 				std::string instanceType_;
-				std::string hostName_;
 				std::string vlanId_;
+				std::string hostName_;
 				std::string status_;
 				std::string ioOptimized_;
 				std::string zoneId_;
-				std::string instanceId_;
 				std::string clusterId_;
+				std::string instanceId_;
 				std::string stoppedMode_;
 				DedicatedHostAttribute dedicatedHostAttribute_;
 				VpcAttributes vpcAttributes_;
@@ -121,8 +121,8 @@ namespace AlibabaCloud
 				std::string internetChargeType_;
 				std::string instanceName_;
 				int internetMaxBandwidthOut_;
-				int internetMaxBandwidthIn_;
 				std::string serialNumber_;
+				int internetMaxBandwidthIn_;
 				std::string creationTime_;
 				std::string regionId_;
 				std::string creditSpecification_;

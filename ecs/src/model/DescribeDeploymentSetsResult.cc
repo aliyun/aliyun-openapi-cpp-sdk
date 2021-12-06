@@ -43,39 +43,39 @@ void DescribeDeploymentSetsResult::parse(const std::string &payload)
 	for (auto valueDeploymentSetsDeploymentSet : allDeploymentSetsNode)
 	{
 		DeploymentSet deploymentSetsObject;
-		if(!valueDeploymentSetsDeploymentSet["DeploymentSetId"].isNull())
-			deploymentSetsObject.deploymentSetId = valueDeploymentSetsDeploymentSet["DeploymentSetId"].asString();
-		if(!valueDeploymentSetsDeploymentSet["DeploymentSetDescription"].isNull())
-			deploymentSetsObject.deploymentSetDescription = valueDeploymentSetsDeploymentSet["DeploymentSetDescription"].asString();
-		if(!valueDeploymentSetsDeploymentSet["DeploymentSetName"].isNull())
-			deploymentSetsObject.deploymentSetName = valueDeploymentSetsDeploymentSet["DeploymentSetName"].asString();
-		if(!valueDeploymentSetsDeploymentSet["Strategy"].isNull())
-			deploymentSetsObject.strategy = valueDeploymentSetsDeploymentSet["Strategy"].asString();
-		if(!valueDeploymentSetsDeploymentSet["DeploymentStrategy"].isNull())
-			deploymentSetsObject.deploymentStrategy = valueDeploymentSetsDeploymentSet["DeploymentStrategy"].asString();
-		if(!valueDeploymentSetsDeploymentSet["Domain"].isNull())
-			deploymentSetsObject.domain = valueDeploymentSetsDeploymentSet["Domain"].asString();
-		if(!valueDeploymentSetsDeploymentSet["Granularity"].isNull())
-			deploymentSetsObject.granularity = valueDeploymentSetsDeploymentSet["Granularity"].asString();
-		if(!valueDeploymentSetsDeploymentSet["GroupCount"].isNull())
-			deploymentSetsObject.groupCount = std::stoi(valueDeploymentSetsDeploymentSet["GroupCount"].asString());
-		if(!valueDeploymentSetsDeploymentSet["InstanceAmount"].isNull())
-			deploymentSetsObject.instanceAmount = std::stoi(valueDeploymentSetsDeploymentSet["InstanceAmount"].asString());
 		if(!valueDeploymentSetsDeploymentSet["CreationTime"].isNull())
 			deploymentSetsObject.creationTime = valueDeploymentSetsDeploymentSet["CreationTime"].asString();
+		if(!valueDeploymentSetsDeploymentSet["Strategy"].isNull())
+			deploymentSetsObject.strategy = valueDeploymentSetsDeploymentSet["Strategy"].asString();
+		if(!valueDeploymentSetsDeploymentSet["DeploymentSetId"].isNull())
+			deploymentSetsObject.deploymentSetId = valueDeploymentSetsDeploymentSet["DeploymentSetId"].asString();
+		if(!valueDeploymentSetsDeploymentSet["DeploymentStrategy"].isNull())
+			deploymentSetsObject.deploymentStrategy = valueDeploymentSetsDeploymentSet["DeploymentStrategy"].asString();
+		if(!valueDeploymentSetsDeploymentSet["DeploymentSetDescription"].isNull())
+			deploymentSetsObject.deploymentSetDescription = valueDeploymentSetsDeploymentSet["DeploymentSetDescription"].asString();
+		if(!valueDeploymentSetsDeploymentSet["Domain"].isNull())
+			deploymentSetsObject.domain = valueDeploymentSetsDeploymentSet["Domain"].asString();
+		if(!valueDeploymentSetsDeploymentSet["GroupCount"].isNull())
+			deploymentSetsObject.groupCount = std::stoi(valueDeploymentSetsDeploymentSet["GroupCount"].asString());
+		if(!valueDeploymentSetsDeploymentSet["Granularity"].isNull())
+			deploymentSetsObject.granularity = valueDeploymentSetsDeploymentSet["Granularity"].asString();
+		if(!valueDeploymentSetsDeploymentSet["DeploymentSetName"].isNull())
+			deploymentSetsObject.deploymentSetName = valueDeploymentSetsDeploymentSet["DeploymentSetName"].asString();
+		if(!valueDeploymentSetsDeploymentSet["InstanceAmount"].isNull())
+			deploymentSetsObject.instanceAmount = std::stoi(valueDeploymentSetsDeploymentSet["InstanceAmount"].asString());
 		auto allInstanceIds = value["InstanceIds"]["InstanceId"];
 		for (auto value : allInstanceIds)
 			deploymentSetsObject.instanceIds.push_back(value.asString());
 		deploymentSets_.push_back(deploymentSetsObject);
 	}
-	if(!value["RegionId"].isNull())
-		regionId_ = value["RegionId"].asString();
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["RegionId"].isNull())
+		regionId_ = value["RegionId"].asString();
 
 }
 

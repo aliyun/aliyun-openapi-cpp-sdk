@@ -43,22 +43,22 @@ void DescribeAccessPointsResult::parse(const std::string &payload)
 	for (auto valueAccessPointSetAccessPointType : allAccessPointSetNode)
 	{
 		AccessPointType accessPointSetObject;
-		if(!valueAccessPointSetAccessPointType["AccessPointId"].isNull())
-			accessPointSetObject.accessPointId = valueAccessPointSetAccessPointType["AccessPointId"].asString();
 		if(!valueAccessPointSetAccessPointType["Status"].isNull())
 			accessPointSetObject.status = valueAccessPointSetAccessPointType["Status"].asString();
 		if(!valueAccessPointSetAccessPointType["Type"].isNull())
 			accessPointSetObject.type = valueAccessPointSetAccessPointType["Type"].asString();
-		if(!valueAccessPointSetAccessPointType["AttachedRegionNo"].isNull())
-			accessPointSetObject.attachedRegionNo = valueAccessPointSetAccessPointType["AttachedRegionNo"].asString();
-		if(!valueAccessPointSetAccessPointType["Location"].isNull())
-			accessPointSetObject.location = valueAccessPointSetAccessPointType["Location"].asString();
 		if(!valueAccessPointSetAccessPointType["HostOperator"].isNull())
 			accessPointSetObject.hostOperator = valueAccessPointSetAccessPointType["HostOperator"].asString();
-		if(!valueAccessPointSetAccessPointType["Name"].isNull())
-			accessPointSetObject.name = valueAccessPointSetAccessPointType["Name"].asString();
 		if(!valueAccessPointSetAccessPointType["Description"].isNull())
 			accessPointSetObject.description = valueAccessPointSetAccessPointType["Description"].asString();
+		if(!valueAccessPointSetAccessPointType["AttachedRegionNo"].isNull())
+			accessPointSetObject.attachedRegionNo = valueAccessPointSetAccessPointType["AttachedRegionNo"].asString();
+		if(!valueAccessPointSetAccessPointType["Name"].isNull())
+			accessPointSetObject.name = valueAccessPointSetAccessPointType["Name"].asString();
+		if(!valueAccessPointSetAccessPointType["AccessPointId"].isNull())
+			accessPointSetObject.accessPointId = valueAccessPointSetAccessPointType["AccessPointId"].asString();
+		if(!valueAccessPointSetAccessPointType["Location"].isNull())
+			accessPointSetObject.location = valueAccessPointSetAccessPointType["Location"].asString();
 		accessPointSet_.push_back(accessPointSetObject);
 	}
 	if(!value["PageNumber"].isNull())

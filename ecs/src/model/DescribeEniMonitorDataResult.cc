@@ -43,22 +43,22 @@ void DescribeEniMonitorDataResult::parse(const std::string &payload)
 	for (auto valueMonitorDataEniMonitorData : allMonitorDataNode)
 	{
 		EniMonitorData monitorDataObject;
-		if(!valueMonitorDataEniMonitorData["EniId"].isNull())
-			monitorDataObject.eniId = valueMonitorDataEniMonitorData["EniId"].asString();
-		if(!valueMonitorDataEniMonitorData["TimeStamp"].isNull())
-			monitorDataObject.timeStamp = valueMonitorDataEniMonitorData["TimeStamp"].asString();
-		if(!valueMonitorDataEniMonitorData["PacketTx"].isNull())
-			monitorDataObject.packetTx = valueMonitorDataEniMonitorData["PacketTx"].asString();
 		if(!valueMonitorDataEniMonitorData["PacketRx"].isNull())
 			monitorDataObject.packetRx = valueMonitorDataEniMonitorData["PacketRx"].asString();
+		if(!valueMonitorDataEniMonitorData["TimeStamp"].isNull())
+			monitorDataObject.timeStamp = valueMonitorDataEniMonitorData["TimeStamp"].asString();
+		if(!valueMonitorDataEniMonitorData["DropPacketRx"].isNull())
+			monitorDataObject.dropPacketRx = valueMonitorDataEniMonitorData["DropPacketRx"].asString();
+		if(!valueMonitorDataEniMonitorData["EniId"].isNull())
+			monitorDataObject.eniId = valueMonitorDataEniMonitorData["EniId"].asString();
+		if(!valueMonitorDataEniMonitorData["DropPacketTx"].isNull())
+			monitorDataObject.dropPacketTx = valueMonitorDataEniMonitorData["DropPacketTx"].asString();
+		if(!valueMonitorDataEniMonitorData["PacketTx"].isNull())
+			monitorDataObject.packetTx = valueMonitorDataEniMonitorData["PacketTx"].asString();
 		if(!valueMonitorDataEniMonitorData["IntranetTx"].isNull())
 			monitorDataObject.intranetTx = valueMonitorDataEniMonitorData["IntranetTx"].asString();
 		if(!valueMonitorDataEniMonitorData["IntranetRx"].isNull())
 			monitorDataObject.intranetRx = valueMonitorDataEniMonitorData["IntranetRx"].asString();
-		if(!valueMonitorDataEniMonitorData["DropPacketTx"].isNull())
-			monitorDataObject.dropPacketTx = valueMonitorDataEniMonitorData["DropPacketTx"].asString();
-		if(!valueMonitorDataEniMonitorData["DropPacketRx"].isNull())
-			monitorDataObject.dropPacketRx = valueMonitorDataEniMonitorData["DropPacketRx"].asString();
 		monitorData_.push_back(monitorDataObject);
 	}
 	if(!value["TotalCount"].isNull())

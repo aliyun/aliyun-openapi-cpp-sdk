@@ -39,12 +39,12 @@ void DescribeUserDataResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["RegionId"].isNull())
-		regionId_ = value["RegionId"].asString();
 	if(!value["InstanceId"].isNull())
 		instanceId_ = value["InstanceId"].asString();
 	if(!value["UserData"].isNull())
 		userData_ = value["UserData"].asString();
+	if(!value["RegionId"].isNull())
+		regionId_ = value["RegionId"].asString();
 
 }
 

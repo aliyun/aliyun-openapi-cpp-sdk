@@ -43,42 +43,42 @@ void DescribePhysicalConnectionsResult::parse(const std::string &payload)
 	for (auto valuePhysicalConnectionSetPhysicalConnectionType : allPhysicalConnectionSetNode)
 	{
 		PhysicalConnectionType physicalConnectionSetObject;
-		if(!valuePhysicalConnectionSetPhysicalConnectionType["PhysicalConnectionId"].isNull())
-			physicalConnectionSetObject.physicalConnectionId = valuePhysicalConnectionSetPhysicalConnectionType["PhysicalConnectionId"].asString();
-		if(!valuePhysicalConnectionSetPhysicalConnectionType["AccessPointId"].isNull())
-			physicalConnectionSetObject.accessPointId = valuePhysicalConnectionSetPhysicalConnectionType["AccessPointId"].asString();
-		if(!valuePhysicalConnectionSetPhysicalConnectionType["Type"].isNull())
-			physicalConnectionSetObject.type = valuePhysicalConnectionSetPhysicalConnectionType["Type"].asString();
-		if(!valuePhysicalConnectionSetPhysicalConnectionType["Status"].isNull())
-			physicalConnectionSetObject.status = valuePhysicalConnectionSetPhysicalConnectionType["Status"].asString();
-		if(!valuePhysicalConnectionSetPhysicalConnectionType["BusinessStatus"].isNull())
-			physicalConnectionSetObject.businessStatus = valuePhysicalConnectionSetPhysicalConnectionType["BusinessStatus"].asString();
-		if(!valuePhysicalConnectionSetPhysicalConnectionType["CreationTime"].isNull())
-			physicalConnectionSetObject.creationTime = valuePhysicalConnectionSetPhysicalConnectionType["CreationTime"].asString();
-		if(!valuePhysicalConnectionSetPhysicalConnectionType["EnabledTime"].isNull())
-			physicalConnectionSetObject.enabledTime = valuePhysicalConnectionSetPhysicalConnectionType["EnabledTime"].asString();
-		if(!valuePhysicalConnectionSetPhysicalConnectionType["LineOperator"].isNull())
-			physicalConnectionSetObject.lineOperator = valuePhysicalConnectionSetPhysicalConnectionType["LineOperator"].asString();
-		if(!valuePhysicalConnectionSetPhysicalConnectionType["Spec"].isNull())
-			physicalConnectionSetObject.spec = valuePhysicalConnectionSetPhysicalConnectionType["Spec"].asString();
-		if(!valuePhysicalConnectionSetPhysicalConnectionType["PeerLocation"].isNull())
-			physicalConnectionSetObject.peerLocation = valuePhysicalConnectionSetPhysicalConnectionType["PeerLocation"].asString();
-		if(!valuePhysicalConnectionSetPhysicalConnectionType["PortType"].isNull())
-			physicalConnectionSetObject.portType = valuePhysicalConnectionSetPhysicalConnectionType["PortType"].asString();
-		if(!valuePhysicalConnectionSetPhysicalConnectionType["RedundantPhysicalConnectionId"].isNull())
-			physicalConnectionSetObject.redundantPhysicalConnectionId = valuePhysicalConnectionSetPhysicalConnectionType["RedundantPhysicalConnectionId"].asString();
-		if(!valuePhysicalConnectionSetPhysicalConnectionType["Name"].isNull())
-			physicalConnectionSetObject.name = valuePhysicalConnectionSetPhysicalConnectionType["Name"].asString();
-		if(!valuePhysicalConnectionSetPhysicalConnectionType["Description"].isNull())
-			physicalConnectionSetObject.description = valuePhysicalConnectionSetPhysicalConnectionType["Description"].asString();
 		if(!valuePhysicalConnectionSetPhysicalConnectionType["AdLocation"].isNull())
 			physicalConnectionSetObject.adLocation = valuePhysicalConnectionSetPhysicalConnectionType["AdLocation"].asString();
+		if(!valuePhysicalConnectionSetPhysicalConnectionType["CreationTime"].isNull())
+			physicalConnectionSetObject.creationTime = valuePhysicalConnectionSetPhysicalConnectionType["CreationTime"].asString();
+		if(!valuePhysicalConnectionSetPhysicalConnectionType["Status"].isNull())
+			physicalConnectionSetObject.status = valuePhysicalConnectionSetPhysicalConnectionType["Status"].asString();
+		if(!valuePhysicalConnectionSetPhysicalConnectionType["Type"].isNull())
+			physicalConnectionSetObject.type = valuePhysicalConnectionSetPhysicalConnectionType["Type"].asString();
 		if(!valuePhysicalConnectionSetPhysicalConnectionType["PortNumber"].isNull())
 			physicalConnectionSetObject.portNumber = valuePhysicalConnectionSetPhysicalConnectionType["PortNumber"].asString();
 		if(!valuePhysicalConnectionSetPhysicalConnectionType["CircuitCode"].isNull())
 			physicalConnectionSetObject.circuitCode = valuePhysicalConnectionSetPhysicalConnectionType["CircuitCode"].asString();
+		if(!valuePhysicalConnectionSetPhysicalConnectionType["Spec"].isNull())
+			physicalConnectionSetObject.spec = valuePhysicalConnectionSetPhysicalConnectionType["Spec"].asString();
 		if(!valuePhysicalConnectionSetPhysicalConnectionType["Bandwidth"].isNull())
 			physicalConnectionSetObject.bandwidth = std::stol(valuePhysicalConnectionSetPhysicalConnectionType["Bandwidth"].asString());
+		if(!valuePhysicalConnectionSetPhysicalConnectionType["Description"].isNull())
+			physicalConnectionSetObject.description = valuePhysicalConnectionSetPhysicalConnectionType["Description"].asString();
+		if(!valuePhysicalConnectionSetPhysicalConnectionType["PortType"].isNull())
+			physicalConnectionSetObject.portType = valuePhysicalConnectionSetPhysicalConnectionType["PortType"].asString();
+		if(!valuePhysicalConnectionSetPhysicalConnectionType["EnabledTime"].isNull())
+			physicalConnectionSetObject.enabledTime = valuePhysicalConnectionSetPhysicalConnectionType["EnabledTime"].asString();
+		if(!valuePhysicalConnectionSetPhysicalConnectionType["BusinessStatus"].isNull())
+			physicalConnectionSetObject.businessStatus = valuePhysicalConnectionSetPhysicalConnectionType["BusinessStatus"].asString();
+		if(!valuePhysicalConnectionSetPhysicalConnectionType["LineOperator"].isNull())
+			physicalConnectionSetObject.lineOperator = valuePhysicalConnectionSetPhysicalConnectionType["LineOperator"].asString();
+		if(!valuePhysicalConnectionSetPhysicalConnectionType["Name"].isNull())
+			physicalConnectionSetObject.name = valuePhysicalConnectionSetPhysicalConnectionType["Name"].asString();
+		if(!valuePhysicalConnectionSetPhysicalConnectionType["RedundantPhysicalConnectionId"].isNull())
+			physicalConnectionSetObject.redundantPhysicalConnectionId = valuePhysicalConnectionSetPhysicalConnectionType["RedundantPhysicalConnectionId"].asString();
+		if(!valuePhysicalConnectionSetPhysicalConnectionType["PeerLocation"].isNull())
+			physicalConnectionSetObject.peerLocation = valuePhysicalConnectionSetPhysicalConnectionType["PeerLocation"].asString();
+		if(!valuePhysicalConnectionSetPhysicalConnectionType["AccessPointId"].isNull())
+			physicalConnectionSetObject.accessPointId = valuePhysicalConnectionSetPhysicalConnectionType["AccessPointId"].asString();
+		if(!valuePhysicalConnectionSetPhysicalConnectionType["PhysicalConnectionId"].isNull())
+			physicalConnectionSetObject.physicalConnectionId = valuePhysicalConnectionSetPhysicalConnectionType["PhysicalConnectionId"].asString();
 		physicalConnectionSet_.push_back(physicalConnectionSetObject);
 	}
 	if(!value["PageNumber"].isNull())

@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,68 +17,60 @@
 #ifndef ALIBABACLOUD_ECS_MODEL_DESCRIBEIMAGEPIPELINEEXECUTIONSREQUEST_H_
 #define ALIBABACLOUD_ECS_MODEL_DESCRIBEIMAGEPIPELINEEXECUTIONSREQUEST_H_
 
+#include <alibabacloud/ecs/EcsExport.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
-#include <alibabacloud/ecs/EcsExport.h>
+#include <map>
 
-namespace AlibabaCloud
-{
-	namespace Ecs
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_ECS_EXPORT DescribeImagePipelineExecutionsRequest : public RpcServiceRequest
-			{
-			public:
-				struct Tag
-				{
-					std::string key;
-					std::string value;
-				};
+namespace AlibabaCloud {
+namespace Ecs {
+namespace Model {
+class ALIBABACLOUD_ECS_EXPORT DescribeImagePipelineExecutionsRequest : public RpcServiceRequest {
+public:
+	struct Tag {
+		std::string key;
+		std::string value;
+	};
+	DescribeImagePipelineExecutionsRequest();
+	~DescribeImagePipelineExecutionsRequest();
+	std::string getImagePipelineId() const;
+	void setImagePipelineId(const std::string &imagePipelineId);
+	long getResourceOwnerId() const;
+	void setResourceOwnerId(long resourceOwnerId);
+	std::string getExecutionId() const;
+	void setExecutionId(const std::string &executionId);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
+	std::string getNextToken() const;
+	void setNextToken(const std::string &nextToken);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
+	std::string getResourceOwnerAccount() const;
+	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
+	std::string getOwnerAccount() const;
+	void setOwnerAccount(const std::string &ownerAccount);
+	long getOwnerId() const;
+	void setOwnerId(long ownerId);
+	int getMaxResults() const;
+	void setMaxResults(int maxResults);
+	std::string getStatus() const;
+	void setStatus(const std::string &status);
 
-			public:
-				DescribeImagePipelineExecutionsRequest();
-				~DescribeImagePipelineExecutionsRequest();
-
-				std::string getImagePipelineId()const;
-				void setImagePipelineId(const std::string& imagePipelineId);
-				long getResourceOwnerId()const;
-				void setResourceOwnerId(long resourceOwnerId);
-				std::string getExecutionId()const;
-				void setExecutionId(const std::string& executionId);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getNextToken()const;
-				void setNextToken(const std::string& nextToken);
-				std::vector<Tag> getTag()const;
-				void setTag(const std::vector<Tag>& tag);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
-				int getMaxResults()const;
-				void setMaxResults(int maxResults);
-				std::string getStatus()const;
-				void setStatus(const std::string& status);
-
-            private:
-				std::string imagePipelineId_;
-				long resourceOwnerId_;
-				std::string executionId_;
-				std::string regionId_;
-				std::string nextToken_;
-				std::vector<Tag> tag_;
-				std::string resourceOwnerAccount_;
-				std::string ownerAccount_;
-				long ownerId_;
-				int maxResults_;
-				std::string status_;
-
-			};
-		}
-	}
-}
+private:
+	std::string imagePipelineId_;
+	long resourceOwnerId_;
+	std::string executionId_;
+	std::string regionId_;
+	std::string nextToken_;
+	std::vector<Tag> tag_;
+	std::string resourceOwnerAccount_;
+	std::string ownerAccount_;
+	long ownerId_;
+	int maxResults_;
+	std::string status_;
+};
+} // namespace Model
+} // namespace Ecs
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_ECS_MODEL_DESCRIBEIMAGEPIPELINEEXECUTIONSREQUEST_H_

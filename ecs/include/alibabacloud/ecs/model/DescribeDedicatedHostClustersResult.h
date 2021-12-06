@@ -48,8 +48,8 @@ namespace AlibabaCloud
 							std::string instanceType;
 						};
 						std::vector<AvailableInstanceType> availableInstanceTypes;
-						int totalMemory;
 						int availableMemory;
+						int totalMemory;
 						int availableVcpus;
 						int totalVcpus;
 						std::vector<LocalStorageCapacity> localStorageCapacities;
@@ -60,9 +60,9 @@ namespace AlibabaCloud
 						std::string tagValue;
 					};
 					std::string description;
+					std::string resourceGroupId;
 					std::string zoneId;
 					std::string dedicatedHostClusterName;
-					std::string resourceGroupId;
 					DedicatedHostClusterCapacity dedicatedHostClusterCapacity;
 					std::string regionId;
 					std::vector<std::string> dedicatedHostIds;

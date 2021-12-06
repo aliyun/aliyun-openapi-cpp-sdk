@@ -44,8 +44,8 @@ namespace AlibabaCloud
 						int instance;
 						int volume;
 						int launchTemplate;
-						int securitygroup;
 						int ddh;
+						int securitygroup;
 						int image;
 						int disk;
 					};

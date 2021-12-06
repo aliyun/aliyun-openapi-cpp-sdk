@@ -43,26 +43,26 @@ void DescribeDiskMonitorDataResult::parse(const std::string &payload)
 	for (auto valueMonitorDataDiskMonitorData : allMonitorDataNode)
 	{
 		DiskMonitorData monitorDataObject;
-		if(!valueMonitorDataDiskMonitorData["DiskId"].isNull())
-			monitorDataObject.diskId = valueMonitorDataDiskMonitorData["DiskId"].asString();
-		if(!valueMonitorDataDiskMonitorData["IOPSRead"].isNull())
-			monitorDataObject.iOPSRead = std::stoi(valueMonitorDataDiskMonitorData["IOPSRead"].asString());
-		if(!valueMonitorDataDiskMonitorData["IOPSWrite"].isNull())
-			monitorDataObject.iOPSWrite = std::stoi(valueMonitorDataDiskMonitorData["IOPSWrite"].asString());
-		if(!valueMonitorDataDiskMonitorData["IOPSTotal"].isNull())
-			monitorDataObject.iOPSTotal = std::stoi(valueMonitorDataDiskMonitorData["IOPSTotal"].asString());
 		if(!valueMonitorDataDiskMonitorData["BPSRead"].isNull())
 			monitorDataObject.bPSRead = std::stoi(valueMonitorDataDiskMonitorData["BPSRead"].asString());
-		if(!valueMonitorDataDiskMonitorData["BPSWrite"].isNull())
-			monitorDataObject.bPSWrite = std::stoi(valueMonitorDataDiskMonitorData["BPSWrite"].asString());
-		if(!valueMonitorDataDiskMonitorData["BPSTotal"].isNull())
-			monitorDataObject.bPSTotal = std::stoi(valueMonitorDataDiskMonitorData["BPSTotal"].asString());
+		if(!valueMonitorDataDiskMonitorData["IOPSRead"].isNull())
+			monitorDataObject.iOPSRead = std::stoi(valueMonitorDataDiskMonitorData["IOPSRead"].asString());
 		if(!valueMonitorDataDiskMonitorData["LatencyRead"].isNull())
 			monitorDataObject.latencyRead = std::stoi(valueMonitorDataDiskMonitorData["LatencyRead"].asString());
-		if(!valueMonitorDataDiskMonitorData["LatencyWrite"].isNull())
-			monitorDataObject.latencyWrite = std::stoi(valueMonitorDataDiskMonitorData["LatencyWrite"].asString());
+		if(!valueMonitorDataDiskMonitorData["BPSTotal"].isNull())
+			monitorDataObject.bPSTotal = std::stoi(valueMonitorDataDiskMonitorData["BPSTotal"].asString());
+		if(!valueMonitorDataDiskMonitorData["IOPSTotal"].isNull())
+			monitorDataObject.iOPSTotal = std::stoi(valueMonitorDataDiskMonitorData["IOPSTotal"].asString());
 		if(!valueMonitorDataDiskMonitorData["TimeStamp"].isNull())
 			monitorDataObject.timeStamp = valueMonitorDataDiskMonitorData["TimeStamp"].asString();
+		if(!valueMonitorDataDiskMonitorData["LatencyWrite"].isNull())
+			monitorDataObject.latencyWrite = std::stoi(valueMonitorDataDiskMonitorData["LatencyWrite"].asString());
+		if(!valueMonitorDataDiskMonitorData["IOPSWrite"].isNull())
+			monitorDataObject.iOPSWrite = std::stoi(valueMonitorDataDiskMonitorData["IOPSWrite"].asString());
+		if(!valueMonitorDataDiskMonitorData["DiskId"].isNull())
+			monitorDataObject.diskId = valueMonitorDataDiskMonitorData["DiskId"].asString();
+		if(!valueMonitorDataDiskMonitorData["BPSWrite"].isNull())
+			monitorDataObject.bPSWrite = std::stoi(valueMonitorDataDiskMonitorData["BPSWrite"].asString());
 		monitorData_.push_back(monitorDataObject);
 	}
 	if(!value["TotalCount"].isNull())

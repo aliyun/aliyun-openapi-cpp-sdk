@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,100 +18,82 @@
 
 using AlibabaCloud::Ecs::Model::ModifyInstanceMetadataOptionsRequest;
 
-ModifyInstanceMetadataOptionsRequest::ModifyInstanceMetadataOptionsRequest() :
-	RpcServiceRequest("ecs", "2014-05-26", "ModifyInstanceMetadataOptions")
-{
-	setMethod(HttpRequest::Method::Post);
+ModifyInstanceMetadataOptionsRequest::ModifyInstanceMetadataOptionsRequest()
+    : RpcServiceRequest("ecs", "2014-05-26", "ModifyInstanceMetadataOptions") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-ModifyInstanceMetadataOptionsRequest::~ModifyInstanceMetadataOptionsRequest()
-{}
+ModifyInstanceMetadataOptionsRequest::~ModifyInstanceMetadataOptionsRequest() {}
 
-long ModifyInstanceMetadataOptionsRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long ModifyInstanceMetadataOptionsRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void ModifyInstanceMetadataOptionsRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void ModifyInstanceMetadataOptionsRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-int ModifyInstanceMetadataOptionsRequest::getHttpPutResponseHopLimit()const
-{
-	return httpPutResponseHopLimit_;
+int ModifyInstanceMetadataOptionsRequest::getHttpPutResponseHopLimit() const {
+  return httpPutResponseHopLimit_;
 }
 
-void ModifyInstanceMetadataOptionsRequest::setHttpPutResponseHopLimit(int httpPutResponseHopLimit)
-{
-	httpPutResponseHopLimit_ = httpPutResponseHopLimit;
-	setParameter("HttpPutResponseHopLimit", std::to_string(httpPutResponseHopLimit));
+void ModifyInstanceMetadataOptionsRequest::setHttpPutResponseHopLimit(int httpPutResponseHopLimit) {
+  httpPutResponseHopLimit_ = httpPutResponseHopLimit;
+  setParameter(std::string("HttpPutResponseHopLimit"), std::to_string(httpPutResponseHopLimit));
 }
 
-std::string ModifyInstanceMetadataOptionsRequest::getRegionId()const
-{
-	return regionId_;
+std::string ModifyInstanceMetadataOptionsRequest::getRegionId() const {
+  return regionId_;
 }
 
-void ModifyInstanceMetadataOptionsRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void ModifyInstanceMetadataOptionsRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
-std::string ModifyInstanceMetadataOptionsRequest::getHttpEndpoint()const
-{
-	return httpEndpoint_;
+std::string ModifyInstanceMetadataOptionsRequest::getHttpEndpoint() const {
+  return httpEndpoint_;
 }
 
-void ModifyInstanceMetadataOptionsRequest::setHttpEndpoint(const std::string& httpEndpoint)
-{
-	httpEndpoint_ = httpEndpoint;
-	setParameter("HttpEndpoint", httpEndpoint);
+void ModifyInstanceMetadataOptionsRequest::setHttpEndpoint(const std::string &httpEndpoint) {
+  httpEndpoint_ = httpEndpoint;
+  setParameter(std::string("HttpEndpoint"), httpEndpoint);
 }
 
-std::string ModifyInstanceMetadataOptionsRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string ModifyInstanceMetadataOptionsRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void ModifyInstanceMetadataOptionsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void ModifyInstanceMetadataOptionsRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-long ModifyInstanceMetadataOptionsRequest::getOwnerId()const
-{
-	return ownerId_;
+long ModifyInstanceMetadataOptionsRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void ModifyInstanceMetadataOptionsRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void ModifyInstanceMetadataOptionsRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string ModifyInstanceMetadataOptionsRequest::getInstanceId()const
-{
-	return instanceId_;
+std::string ModifyInstanceMetadataOptionsRequest::getInstanceId() const {
+  return instanceId_;
 }
 
-void ModifyInstanceMetadataOptionsRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+void ModifyInstanceMetadataOptionsRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-std::string ModifyInstanceMetadataOptionsRequest::getHttpTokens()const
-{
-	return httpTokens_;
+std::string ModifyInstanceMetadataOptionsRequest::getHttpTokens() const {
+  return httpTokens_;
 }
 
-void ModifyInstanceMetadataOptionsRequest::setHttpTokens(const std::string& httpTokens)
-{
-	httpTokens_ = httpTokens;
-	setParameter("HttpTokens", httpTokens);
+void ModifyInstanceMetadataOptionsRequest::setHttpTokens(const std::string &httpTokens) {
+  httpTokens_ = httpTokens;
+  setParameter(std::string("HttpTokens"), httpTokens);
 }
 
