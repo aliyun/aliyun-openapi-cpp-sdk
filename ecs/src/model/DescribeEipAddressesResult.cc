@@ -43,30 +43,30 @@ void DescribeEipAddressesResult::parse(const std::string &payload)
 	for (auto valueEipAddressesEipAddress : allEipAddressesNode)
 	{
 		EipAddress eipAddressesObject;
-		if(!valueEipAddressesEipAddress["Status"].isNull())
-			eipAddressesObject.status = valueEipAddressesEipAddress["Status"].asString();
-		if(!valueEipAddressesEipAddress["AllocationTime"].isNull())
-			eipAddressesObject.allocationTime = valueEipAddressesEipAddress["AllocationTime"].asString();
-		if(!valueEipAddressesEipAddress["ChargeType"].isNull())
-			eipAddressesObject.chargeType = valueEipAddressesEipAddress["ChargeType"].asString();
-		if(!valueEipAddressesEipAddress["InstanceId"].isNull())
-			eipAddressesObject.instanceId = valueEipAddressesEipAddress["InstanceId"].asString();
-		if(!valueEipAddressesEipAddress["InstanceType"].isNull())
-			eipAddressesObject.instanceType = valueEipAddressesEipAddress["InstanceType"].asString();
 		if(!valueEipAddressesEipAddress["RegionId"].isNull())
 			eipAddressesObject.regionId = valueEipAddressesEipAddress["RegionId"].asString();
 		if(!valueEipAddressesEipAddress["IpAddress"].isNull())
 			eipAddressesObject.ipAddress = valueEipAddressesEipAddress["IpAddress"].asString();
-		if(!valueEipAddressesEipAddress["Bandwidth"].isNull())
-			eipAddressesObject.bandwidth = valueEipAddressesEipAddress["Bandwidth"].asString();
-		if(!valueEipAddressesEipAddress["ExpiredTime"].isNull())
-			eipAddressesObject.expiredTime = valueEipAddressesEipAddress["ExpiredTime"].asString();
 		if(!valueEipAddressesEipAddress["AllocationId"].isNull())
 			eipAddressesObject.allocationId = valueEipAddressesEipAddress["AllocationId"].asString();
-		if(!valueEipAddressesEipAddress["InternetChargeType"].isNull())
-			eipAddressesObject.internetChargeType = valueEipAddressesEipAddress["InternetChargeType"].asString();
+		if(!valueEipAddressesEipAddress["Status"].isNull())
+			eipAddressesObject.status = valueEipAddressesEipAddress["Status"].asString();
+		if(!valueEipAddressesEipAddress["InstanceId"].isNull())
+			eipAddressesObject.instanceId = valueEipAddressesEipAddress["InstanceId"].asString();
+		if(!valueEipAddressesEipAddress["Bandwidth"].isNull())
+			eipAddressesObject.bandwidth = valueEipAddressesEipAddress["Bandwidth"].asString();
 		if(!valueEipAddressesEipAddress["EipBandwidth"].isNull())
 			eipAddressesObject.eipBandwidth = valueEipAddressesEipAddress["EipBandwidth"].asString();
+		if(!valueEipAddressesEipAddress["InternetChargeType"].isNull())
+			eipAddressesObject.internetChargeType = valueEipAddressesEipAddress["InternetChargeType"].asString();
+		if(!valueEipAddressesEipAddress["AllocationTime"].isNull())
+			eipAddressesObject.allocationTime = valueEipAddressesEipAddress["AllocationTime"].asString();
+		if(!valueEipAddressesEipAddress["InstanceType"].isNull())
+			eipAddressesObject.instanceType = valueEipAddressesEipAddress["InstanceType"].asString();
+		if(!valueEipAddressesEipAddress["ChargeType"].isNull())
+			eipAddressesObject.chargeType = valueEipAddressesEipAddress["ChargeType"].asString();
+		if(!valueEipAddressesEipAddress["ExpiredTime"].isNull())
+			eipAddressesObject.expiredTime = valueEipAddressesEipAddress["ExpiredTime"].asString();
 		auto allOperationLocksNode = valueEipAddressesEipAddress["OperationLocks"]["LockReason"];
 		for (auto valueEipAddressesEipAddressOperationLocksLockReason : allOperationLocksNode)
 		{
@@ -77,12 +77,12 @@ void DescribeEipAddressesResult::parse(const std::string &payload)
 		}
 		eipAddresses_.push_back(eipAddressesObject);
 	}
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 
 }
 

@@ -40,16 +40,16 @@ void CreateNetworkInterfacePermissionResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto networkInterfacePermissionNode = value["NetworkInterfacePermission"];
-	if(!networkInterfacePermissionNode["Permission"].isNull())
-		networkInterfacePermission_.permission = networkInterfacePermissionNode["Permission"].asString();
-	if(!networkInterfacePermissionNode["NetworkInterfaceId"].isNull())
-		networkInterfacePermission_.networkInterfaceId = networkInterfacePermissionNode["NetworkInterfaceId"].asString();
 	if(!networkInterfacePermissionNode["AccountId"].isNull())
 		networkInterfacePermission_.accountId = std::stol(networkInterfacePermissionNode["AccountId"].asString());
-	if(!networkInterfacePermissionNode["NetworkInterfacePermissionId"].isNull())
-		networkInterfacePermission_.networkInterfacePermissionId = networkInterfacePermissionNode["NetworkInterfacePermissionId"].asString();
 	if(!networkInterfacePermissionNode["ServiceName"].isNull())
 		networkInterfacePermission_.serviceName = networkInterfacePermissionNode["ServiceName"].asString();
+	if(!networkInterfacePermissionNode["NetworkInterfaceId"].isNull())
+		networkInterfacePermission_.networkInterfaceId = networkInterfacePermissionNode["NetworkInterfaceId"].asString();
+	if(!networkInterfacePermissionNode["NetworkInterfacePermissionId"].isNull())
+		networkInterfacePermission_.networkInterfacePermissionId = networkInterfacePermissionNode["NetworkInterfacePermissionId"].asString();
+	if(!networkInterfacePermissionNode["Permission"].isNull())
+		networkInterfacePermission_.permission = networkInterfacePermissionNode["Permission"].asString();
 	if(!networkInterfacePermissionNode["PermissionState"].isNull())
 		networkInterfacePermission_.permissionState = networkInterfacePermissionNode["PermissionState"].asString();
 

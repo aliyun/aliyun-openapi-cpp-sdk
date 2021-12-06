@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,82 +18,100 @@
 
 using AlibabaCloud::Ecs::Model::UnassociateEipAddressRequest;
 
-UnassociateEipAddressRequest::UnassociateEipAddressRequest()
-    : RpcServiceRequest("ecs", "2014-05-26", "UnassociateEipAddress") {
-  setMethod(HttpRequest::Method::Post);
+UnassociateEipAddressRequest::UnassociateEipAddressRequest() :
+	RpcServiceRequest("ecs", "2014-05-26", "UnassociateEipAddress")
+{
+	setMethod(HttpRequest::Method::Post);
 }
 
-UnassociateEipAddressRequest::~UnassociateEipAddressRequest() {}
+UnassociateEipAddressRequest::~UnassociateEipAddressRequest()
+{}
 
-long UnassociateEipAddressRequest::getResourceOwnerId() const {
-  return resourceOwnerId_;
+long UnassociateEipAddressRequest::getResourceOwnerId()const
+{
+	return resourceOwnerId_;
 }
 
-void UnassociateEipAddressRequest::setResourceOwnerId(long resourceOwnerId) {
-  resourceOwnerId_ = resourceOwnerId;
-  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
+void UnassociateEipAddressRequest::setResourceOwnerId(long resourceOwnerId)
+{
+	resourceOwnerId_ = resourceOwnerId;
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string UnassociateEipAddressRequest::getAllocationId() const {
-  return allocationId_;
+std::string UnassociateEipAddressRequest::getAllocationId()const
+{
+	return allocationId_;
 }
 
-void UnassociateEipAddressRequest::setAllocationId(const std::string &allocationId) {
-  allocationId_ = allocationId;
-  setParameter(std::string("AllocationId"), allocationId);
+void UnassociateEipAddressRequest::setAllocationId(const std::string& allocationId)
+{
+	allocationId_ = allocationId;
+	setParameter("AllocationId", allocationId);
 }
 
-std::string UnassociateEipAddressRequest::getRegionId() const {
-  return regionId_;
+std::string UnassociateEipAddressRequest::getRegionId()const
+{
+	return regionId_;
 }
 
-void UnassociateEipAddressRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
+void UnassociateEipAddressRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
 }
 
-std::string UnassociateEipAddressRequest::getInstanceType() const {
-  return instanceType_;
+std::string UnassociateEipAddressRequest::getInstanceType()const
+{
+	return instanceType_;
 }
 
-void UnassociateEipAddressRequest::setInstanceType(const std::string &instanceType) {
-  instanceType_ = instanceType;
-  setParameter(std::string("InstanceType"), instanceType);
+void UnassociateEipAddressRequest::setInstanceType(const std::string& instanceType)
+{
+	instanceType_ = instanceType;
+	setParameter("InstanceType", instanceType);
 }
 
-std::string UnassociateEipAddressRequest::getResourceOwnerAccount() const {
-  return resourceOwnerAccount_;
+std::string UnassociateEipAddressRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
 }
 
-void UnassociateEipAddressRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
-  resourceOwnerAccount_ = resourceOwnerAccount;
-  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+void UnassociateEipAddressRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string UnassociateEipAddressRequest::getOwnerAccount() const {
-  return ownerAccount_;
+std::string UnassociateEipAddressRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
 }
 
-void UnassociateEipAddressRequest::setOwnerAccount(const std::string &ownerAccount) {
-  ownerAccount_ = ownerAccount;
-  setParameter(std::string("OwnerAccount"), ownerAccount);
+void UnassociateEipAddressRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setParameter("OwnerAccount", ownerAccount);
 }
 
-long UnassociateEipAddressRequest::getOwnerId() const {
-  return ownerId_;
+long UnassociateEipAddressRequest::getOwnerId()const
+{
+	return ownerId_;
 }
 
-void UnassociateEipAddressRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
+void UnassociateEipAddressRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string UnassociateEipAddressRequest::getInstanceId() const {
-  return instanceId_;
+std::string UnassociateEipAddressRequest::getInstanceId()const
+{
+	return instanceId_;
 }
 
-void UnassociateEipAddressRequest::setInstanceId(const std::string &instanceId) {
-  instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), instanceId);
+void UnassociateEipAddressRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setParameter("InstanceId", instanceId);
 }
 

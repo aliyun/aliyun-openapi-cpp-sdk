@@ -43,16 +43,16 @@ void DescribeInstanceRamRoleResult::parse(const std::string &payload)
 	for (auto valueInstanceRamRoleSetsInstanceRamRoleSet : allInstanceRamRoleSetsNode)
 	{
 		InstanceRamRoleSet instanceRamRoleSetsObject;
-		if(!valueInstanceRamRoleSetsInstanceRamRoleSet["RamRoleName"].isNull())
-			instanceRamRoleSetsObject.ramRoleName = valueInstanceRamRoleSetsInstanceRamRoleSet["RamRoleName"].asString();
 		if(!valueInstanceRamRoleSetsInstanceRamRoleSet["InstanceId"].isNull())
 			instanceRamRoleSetsObject.instanceId = valueInstanceRamRoleSetsInstanceRamRoleSet["InstanceId"].asString();
+		if(!valueInstanceRamRoleSetsInstanceRamRoleSet["RamRoleName"].isNull())
+			instanceRamRoleSetsObject.ramRoleName = valueInstanceRamRoleSetsInstanceRamRoleSet["RamRoleName"].asString();
 		instanceRamRoleSets_.push_back(instanceRamRoleSetsObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
 	if(!value["RegionId"].isNull())
 		regionId_ = value["RegionId"].asString();
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 

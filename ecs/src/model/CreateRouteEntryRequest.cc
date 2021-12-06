@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,114 +18,138 @@
 
 using AlibabaCloud::Ecs::Model::CreateRouteEntryRequest;
 
-CreateRouteEntryRequest::CreateRouteEntryRequest()
-    : RpcServiceRequest("ecs", "2014-05-26", "CreateRouteEntry") {
-  setMethod(HttpRequest::Method::Post);
+CreateRouteEntryRequest::CreateRouteEntryRequest() :
+	RpcServiceRequest("ecs", "2014-05-26", "CreateRouteEntry")
+{
+	setMethod(HttpRequest::Method::Post);
 }
 
-CreateRouteEntryRequest::~CreateRouteEntryRequest() {}
+CreateRouteEntryRequest::~CreateRouteEntryRequest()
+{}
 
-long CreateRouteEntryRequest::getResourceOwnerId() const {
-  return resourceOwnerId_;
+long CreateRouteEntryRequest::getResourceOwnerId()const
+{
+	return resourceOwnerId_;
 }
 
-void CreateRouteEntryRequest::setResourceOwnerId(long resourceOwnerId) {
-  resourceOwnerId_ = resourceOwnerId;
-  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
+void CreateRouteEntryRequest::setResourceOwnerId(long resourceOwnerId)
+{
+	resourceOwnerId_ = resourceOwnerId;
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string CreateRouteEntryRequest::getClientToken() const {
-  return clientToken_;
+std::string CreateRouteEntryRequest::getClientToken()const
+{
+	return clientToken_;
 }
 
-void CreateRouteEntryRequest::setClientToken(const std::string &clientToken) {
-  clientToken_ = clientToken;
-  setParameter(std::string("ClientToken"), clientToken);
+void CreateRouteEntryRequest::setClientToken(const std::string& clientToken)
+{
+	clientToken_ = clientToken;
+	setParameter("ClientToken", clientToken);
 }
 
-std::string CreateRouteEntryRequest::getRegionId() const {
-  return regionId_;
+std::string CreateRouteEntryRequest::getRegionId()const
+{
+	return regionId_;
 }
 
-void CreateRouteEntryRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
+void CreateRouteEntryRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
 }
 
-std::string CreateRouteEntryRequest::getNextHopId() const {
-  return nextHopId_;
+std::string CreateRouteEntryRequest::getNextHopId()const
+{
+	return nextHopId_;
 }
 
-void CreateRouteEntryRequest::setNextHopId(const std::string &nextHopId) {
-  nextHopId_ = nextHopId;
-  setParameter(std::string("NextHopId"), nextHopId);
+void CreateRouteEntryRequest::setNextHopId(const std::string& nextHopId)
+{
+	nextHopId_ = nextHopId;
+	setParameter("NextHopId", nextHopId);
 }
 
-std::string CreateRouteEntryRequest::getNextHopType() const {
-  return nextHopType_;
+std::string CreateRouteEntryRequest::getNextHopType()const
+{
+	return nextHopType_;
 }
 
-void CreateRouteEntryRequest::setNextHopType(const std::string &nextHopType) {
-  nextHopType_ = nextHopType;
-  setParameter(std::string("NextHopType"), nextHopType);
+void CreateRouteEntryRequest::setNextHopType(const std::string& nextHopType)
+{
+	nextHopType_ = nextHopType;
+	setParameter("NextHopType", nextHopType);
 }
 
-std::string CreateRouteEntryRequest::getRouteTableId() const {
-  return routeTableId_;
+std::string CreateRouteEntryRequest::getRouteTableId()const
+{
+	return routeTableId_;
 }
 
-void CreateRouteEntryRequest::setRouteTableId(const std::string &routeTableId) {
-  routeTableId_ = routeTableId;
-  setParameter(std::string("RouteTableId"), routeTableId);
+void CreateRouteEntryRequest::setRouteTableId(const std::string& routeTableId)
+{
+	routeTableId_ = routeTableId;
+	setParameter("RouteTableId", routeTableId);
 }
 
-std::string CreateRouteEntryRequest::getResourceOwnerAccount() const {
-  return resourceOwnerAccount_;
+std::string CreateRouteEntryRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
 }
 
-void CreateRouteEntryRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
-  resourceOwnerAccount_ = resourceOwnerAccount;
-  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+void CreateRouteEntryRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string CreateRouteEntryRequest::getDestinationCidrBlock() const {
-  return destinationCidrBlock_;
+std::string CreateRouteEntryRequest::getDestinationCidrBlock()const
+{
+	return destinationCidrBlock_;
 }
 
-void CreateRouteEntryRequest::setDestinationCidrBlock(const std::string &destinationCidrBlock) {
-  destinationCidrBlock_ = destinationCidrBlock;
-  setParameter(std::string("DestinationCidrBlock"), destinationCidrBlock);
+void CreateRouteEntryRequest::setDestinationCidrBlock(const std::string& destinationCidrBlock)
+{
+	destinationCidrBlock_ = destinationCidrBlock;
+	setParameter("DestinationCidrBlock", destinationCidrBlock);
 }
 
-std::string CreateRouteEntryRequest::getOwnerAccount() const {
-  return ownerAccount_;
+std::string CreateRouteEntryRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
 }
 
-void CreateRouteEntryRequest::setOwnerAccount(const std::string &ownerAccount) {
-  ownerAccount_ = ownerAccount;
-  setParameter(std::string("OwnerAccount"), ownerAccount);
+void CreateRouteEntryRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setParameter("OwnerAccount", ownerAccount);
 }
 
-long CreateRouteEntryRequest::getOwnerId() const {
-  return ownerId_;
+long CreateRouteEntryRequest::getOwnerId()const
+{
+	return ownerId_;
 }
 
-void CreateRouteEntryRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
+void CreateRouteEntryRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::vector<CreateRouteEntryRequest::NextHopList> CreateRouteEntryRequest::getNextHopList() const {
-  return nextHopList_;
+std::vector<CreateRouteEntryRequest::NextHopList> CreateRouteEntryRequest::getNextHopList()const
+{
+	return nextHopList_;
 }
 
-void CreateRouteEntryRequest::setNextHopList(const std::vector<CreateRouteEntryRequest::NextHopList> &nextHopList) {
-  nextHopList_ = nextHopList;
-  for(int dep1 = 0; dep1 != nextHopList.size(); dep1++) {
-  auto nextHopListObj = nextHopList.at(dep1);
-  std::string nextHopListObjStr = std::string("NextHopList") + "." + std::to_string(dep1 + 1);
-    setParameter(nextHopListObjStr + ".NextHopId", nextHopListObj.nextHopId);
-    setParameter(nextHopListObjStr + ".NextHopType", nextHopListObj.nextHopType);
-  }
+void CreateRouteEntryRequest::setNextHopList(const std::vector<NextHopList>& nextHopList)
+{
+	nextHopList_ = nextHopList;
+	for(int dep1 = 0; dep1!= nextHopList.size(); dep1++) {
+		auto nextHopListObj = nextHopList.at(dep1);
+		std::string nextHopListObjStr = "NextHopList." + std::to_string(dep1 + 1);
+		setParameter(nextHopListObjStr + ".NextHopId", nextHopListObj.nextHopId);
+		setParameter(nextHopListObjStr + ".NextHopType", nextHopListObj.nextHopType);
+	}
 }
 

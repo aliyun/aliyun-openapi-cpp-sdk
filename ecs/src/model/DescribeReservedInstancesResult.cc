@@ -43,38 +43,38 @@ void DescribeReservedInstancesResult::parse(const std::string &payload)
 	for (auto valueReservedInstancesReservedInstance : allReservedInstancesNode)
 	{
 		ReservedInstance reservedInstancesObject;
+		if(!valueReservedInstancesReservedInstance["ReservedInstanceId"].isNull())
+			reservedInstancesObject.reservedInstanceId = valueReservedInstancesReservedInstance["ReservedInstanceId"].asString();
+		if(!valueReservedInstancesReservedInstance["RegionId"].isNull())
+			reservedInstancesObject.regionId = valueReservedInstancesReservedInstance["RegionId"].asString();
+		if(!valueReservedInstancesReservedInstance["ZoneId"].isNull())
+			reservedInstancesObject.zoneId = valueReservedInstancesReservedInstance["ZoneId"].asString();
+		if(!valueReservedInstancesReservedInstance["ReservedInstanceName"].isNull())
+			reservedInstancesObject.reservedInstanceName = valueReservedInstancesReservedInstance["ReservedInstanceName"].asString();
+		if(!valueReservedInstancesReservedInstance["Description"].isNull())
+			reservedInstancesObject.description = valueReservedInstancesReservedInstance["Description"].asString();
+		if(!valueReservedInstancesReservedInstance["InstanceType"].isNull())
+			reservedInstancesObject.instanceType = valueReservedInstancesReservedInstance["InstanceType"].asString();
+		if(!valueReservedInstancesReservedInstance["Scope"].isNull())
+			reservedInstancesObject.scope = valueReservedInstancesReservedInstance["Scope"].asString();
+		if(!valueReservedInstancesReservedInstance["OfferingType"].isNull())
+			reservedInstancesObject.offeringType = valueReservedInstancesReservedInstance["OfferingType"].asString();
+		if(!valueReservedInstancesReservedInstance["Platform"].isNull())
+			reservedInstancesObject.platform = valueReservedInstancesReservedInstance["Platform"].asString();
+		if(!valueReservedInstancesReservedInstance["InstanceAmount"].isNull())
+			reservedInstancesObject.instanceAmount = std::stoi(valueReservedInstancesReservedInstance["InstanceAmount"].asString());
 		if(!valueReservedInstancesReservedInstance["Status"].isNull())
 			reservedInstancesObject.status = valueReservedInstancesReservedInstance["Status"].asString();
 		if(!valueReservedInstancesReservedInstance["CreationTime"].isNull())
 			reservedInstancesObject.creationTime = valueReservedInstancesReservedInstance["CreationTime"].asString();
-		if(!valueReservedInstancesReservedInstance["ReservedInstanceName"].isNull())
-			reservedInstancesObject.reservedInstanceName = valueReservedInstancesReservedInstance["ReservedInstanceName"].asString();
-		if(!valueReservedInstancesReservedInstance["ReservedInstanceId"].isNull())
-			reservedInstancesObject.reservedInstanceId = valueReservedInstancesReservedInstance["ReservedInstanceId"].asString();
-		if(!valueReservedInstancesReservedInstance["InstanceType"].isNull())
-			reservedInstancesObject.instanceType = valueReservedInstancesReservedInstance["InstanceType"].asString();
-		if(!valueReservedInstancesReservedInstance["InstanceAmount"].isNull())
-			reservedInstancesObject.instanceAmount = std::stoi(valueReservedInstancesReservedInstance["InstanceAmount"].asString());
-		if(!valueReservedInstancesReservedInstance["RegionId"].isNull())
-			reservedInstancesObject.regionId = valueReservedInstancesReservedInstance["RegionId"].asString();
-		if(!valueReservedInstancesReservedInstance["OfferingType"].isNull())
-			reservedInstancesObject.offeringType = valueReservedInstancesReservedInstance["OfferingType"].asString();
-		if(!valueReservedInstancesReservedInstance["StartTime"].isNull())
-			reservedInstancesObject.startTime = valueReservedInstancesReservedInstance["StartTime"].asString();
-		if(!valueReservedInstancesReservedInstance["Description"].isNull())
-			reservedInstancesObject.description = valueReservedInstancesReservedInstance["Description"].asString();
-		if(!valueReservedInstancesReservedInstance["AllocationStatus"].isNull())
-			reservedInstancesObject.allocationStatus = valueReservedInstancesReservedInstance["AllocationStatus"].asString();
 		if(!valueReservedInstancesReservedInstance["ExpiredTime"].isNull())
 			reservedInstancesObject.expiredTime = valueReservedInstancesReservedInstance["ExpiredTime"].asString();
+		if(!valueReservedInstancesReservedInstance["StartTime"].isNull())
+			reservedInstancesObject.startTime = valueReservedInstancesReservedInstance["StartTime"].asString();
 		if(!valueReservedInstancesReservedInstance["ResourceGroupId"].isNull())
 			reservedInstancesObject.resourceGroupId = valueReservedInstancesReservedInstance["ResourceGroupId"].asString();
-		if(!valueReservedInstancesReservedInstance["ZoneId"].isNull())
-			reservedInstancesObject.zoneId = valueReservedInstancesReservedInstance["ZoneId"].asString();
-		if(!valueReservedInstancesReservedInstance["Platform"].isNull())
-			reservedInstancesObject.platform = valueReservedInstancesReservedInstance["Platform"].asString();
-		if(!valueReservedInstancesReservedInstance["Scope"].isNull())
-			reservedInstancesObject.scope = valueReservedInstancesReservedInstance["Scope"].asString();
+		if(!valueReservedInstancesReservedInstance["AllocationStatus"].isNull())
+			reservedInstancesObject.allocationStatus = valueReservedInstancesReservedInstance["AllocationStatus"].asString();
 		auto allOperationLocksNode = valueReservedInstancesReservedInstance["OperationLocks"]["OperationLock"];
 		for (auto valueReservedInstancesReservedInstanceOperationLocksOperationLock : allOperationLocksNode)
 		{
@@ -87,20 +87,20 @@ void DescribeReservedInstancesResult::parse(const std::string &payload)
 		for (auto valueReservedInstancesReservedInstanceTagsTag : allTagsNode)
 		{
 			ReservedInstance::Tag tagsObject;
-			if(!valueReservedInstancesReservedInstanceTagsTag["TagValue"].isNull())
-				tagsObject.tagValue = valueReservedInstancesReservedInstanceTagsTag["TagValue"].asString();
 			if(!valueReservedInstancesReservedInstanceTagsTag["TagKey"].isNull())
 				tagsObject.tagKey = valueReservedInstancesReservedInstanceTagsTag["TagKey"].asString();
+			if(!valueReservedInstancesReservedInstanceTagsTag["TagValue"].isNull())
+				tagsObject.tagValue = valueReservedInstancesReservedInstanceTagsTag["TagValue"].asString();
 			reservedInstancesObject.tags.push_back(tagsObject);
 		}
 		reservedInstances_.push_back(reservedInstancesObject);
 	}
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 
 }
 

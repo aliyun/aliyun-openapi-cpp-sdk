@@ -43,24 +43,24 @@ void DescribePrefixListAttributesResult::parse(const std::string &payload)
 	for (auto valueEntriesEntry : allEntriesNode)
 	{
 		Entry entriesObject;
-		if(!valueEntriesEntry["Description"].isNull())
-			entriesObject.description = valueEntriesEntry["Description"].asString();
 		if(!valueEntriesEntry["Cidr"].isNull())
 			entriesObject.cidr = valueEntriesEntry["Cidr"].asString();
+		if(!valueEntriesEntry["Description"].isNull())
+			entriesObject.description = valueEntriesEntry["Description"].asString();
 		entries_.push_back(entriesObject);
 	}
-	if(!value["CreationTime"].isNull())
-		creationTime_ = value["CreationTime"].asString();
+	if(!value["PrefixListId"].isNull())
+		prefixListId_ = value["PrefixListId"].asString();
+	if(!value["PrefixListName"].isNull())
+		prefixListName_ = value["PrefixListName"].asString();
+	if(!value["AddressFamily"].isNull())
+		addressFamily_ = value["AddressFamily"].asString();
 	if(!value["MaxEntries"].isNull())
 		maxEntries_ = std::stoi(value["MaxEntries"].asString());
 	if(!value["Description"].isNull())
 		description_ = value["Description"].asString();
-	if(!value["AddressFamily"].isNull())
-		addressFamily_ = value["AddressFamily"].asString();
-	if(!value["PrefixListName"].isNull())
-		prefixListName_ = value["PrefixListName"].asString();
-	if(!value["PrefixListId"].isNull())
-		prefixListId_ = value["PrefixListId"].asString();
+	if(!value["CreationTime"].isNull())
+		creationTime_ = value["CreationTime"].asString();
 
 }
 

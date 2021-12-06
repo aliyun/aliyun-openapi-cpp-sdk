@@ -44,9 +44,9 @@ namespace AlibabaCloud
 					std::string vlanInterfaceId;
 					std::string physicalConnectionStatus;
 					std::string vbrId;
-					std::string physicalConnectionOwnerUid;
-					std::string peeringSubnetMask;
 					std::string terminationTime;
+					std::string peeringSubnetMask;
+					std::string physicalConnectionOwnerUid;
 					std::string recoveryTime;
 					std::string name;
 					std::string localGatewayIp;

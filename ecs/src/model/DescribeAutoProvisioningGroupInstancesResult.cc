@@ -43,38 +43,38 @@ void DescribeAutoProvisioningGroupInstancesResult::parse(const std::string &payl
 	for (auto valueInstancesInstance : allInstancesNode)
 	{
 		Instance instancesObject;
-		if(!valueInstancesInstance["Status"].isNull())
-			instancesObject.status = valueInstancesInstance["Status"].asString();
-		if(!valueInstancesInstance["CreationTime"].isNull())
-			instancesObject.creationTime = valueInstancesInstance["CreationTime"].asString();
-		if(!valueInstancesInstance["IsSpot"].isNull())
-			instancesObject.isSpot = valueInstancesInstance["IsSpot"].asString() == "true";
-		if(!valueInstancesInstance["CPU"].isNull())
-			instancesObject.cPU = std::stoi(valueInstancesInstance["CPU"].asString());
 		if(!valueInstancesInstance["InstanceId"].isNull())
 			instancesObject.instanceId = valueInstancesInstance["InstanceId"].asString();
-		if(!valueInstancesInstance["NetworkType"].isNull())
-			instancesObject.networkType = valueInstancesInstance["NetworkType"].asString();
-		if(!valueInstancesInstance["InstanceType"].isNull())
-			instancesObject.instanceType = valueInstancesInstance["InstanceType"].asString();
+		if(!valueInstancesInstance["Status"].isNull())
+			instancesObject.status = valueInstancesInstance["Status"].asString();
 		if(!valueInstancesInstance["RegionId"].isNull())
 			instancesObject.regionId = valueInstancesInstance["RegionId"].asString();
-		if(!valueInstancesInstance["IoOptimized"].isNull())
-			instancesObject.ioOptimized = valueInstancesInstance["IoOptimized"].asString() == "true";
-		if(!valueInstancesInstance["OsType"].isNull())
-			instancesObject.osType = valueInstancesInstance["OsType"].asString();
 		if(!valueInstancesInstance["ZoneId"].isNull())
 			instancesObject.zoneId = valueInstancesInstance["ZoneId"].asString();
+		if(!valueInstancesInstance["CPU"].isNull())
+			instancesObject.cPU = std::stoi(valueInstancesInstance["CPU"].asString());
 		if(!valueInstancesInstance["Memory"].isNull())
 			instancesObject.memory = std::stoi(valueInstancesInstance["Memory"].asString());
+		if(!valueInstancesInstance["InstanceType"].isNull())
+			instancesObject.instanceType = valueInstancesInstance["InstanceType"].asString();
+		if(!valueInstancesInstance["IsSpot"].isNull())
+			instancesObject.isSpot = valueInstancesInstance["IsSpot"].asString() == "true";
+		if(!valueInstancesInstance["IoOptimized"].isNull())
+			instancesObject.ioOptimized = valueInstancesInstance["IoOptimized"].asString() == "true";
+		if(!valueInstancesInstance["NetworkType"].isNull())
+			instancesObject.networkType = valueInstancesInstance["NetworkType"].asString();
+		if(!valueInstancesInstance["OsType"].isNull())
+			instancesObject.osType = valueInstancesInstance["OsType"].asString();
+		if(!valueInstancesInstance["CreationTime"].isNull())
+			instancesObject.creationTime = valueInstancesInstance["CreationTime"].asString();
 		instances_.push_back(instancesObject);
 	}
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 
 }
 

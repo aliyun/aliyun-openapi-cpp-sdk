@@ -99,8 +99,6 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/CreateDeploymentSetResult.h
 	include/alibabacloud/ecs/model/CreateDiskRequest.h
 	include/alibabacloud/ecs/model/CreateDiskResult.h
-	include/alibabacloud/ecs/model/CreateDiskReplicaPairRequest.h
-	include/alibabacloud/ecs/model/CreateDiskReplicaPairResult.h
 	include/alibabacloud/ecs/model/CreateElasticityAssuranceRequest.h
 	include/alibabacloud/ecs/model/CreateElasticityAssuranceResult.h
 	include/alibabacloud/ecs/model/CreateForwardEntryRequest.h
@@ -173,8 +171,6 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/DeleteDeploymentSetResult.h
 	include/alibabacloud/ecs/model/DeleteDiskRequest.h
 	include/alibabacloud/ecs/model/DeleteDiskResult.h
-	include/alibabacloud/ecs/model/DeleteDiskReplicaPairRequest.h
-	include/alibabacloud/ecs/model/DeleteDiskReplicaPairResult.h
 	include/alibabacloud/ecs/model/DeleteForwardEntryRequest.h
 	include/alibabacloud/ecs/model/DeleteForwardEntryResult.h
 	include/alibabacloud/ecs/model/DeleteHaVipRequest.h
@@ -277,8 +273,6 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/DescribeDeploymentSetsResult.h
 	include/alibabacloud/ecs/model/DescribeDiskMonitorDataRequest.h
 	include/alibabacloud/ecs/model/DescribeDiskMonitorDataResult.h
-	include/alibabacloud/ecs/model/DescribeDiskReplicaPairsRequest.h
-	include/alibabacloud/ecs/model/DescribeDiskReplicaPairsResult.h
 	include/alibabacloud/ecs/model/DescribeDisksRequest.h
 	include/alibabacloud/ecs/model/DescribeDisksResult.h
 	include/alibabacloud/ecs/model/DescribeDisksFullStatusRequest.h
@@ -665,8 +659,6 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/RunInstancesResult.h
 	include/alibabacloud/ecs/model/SendFileRequest.h
 	include/alibabacloud/ecs/model/SendFileResult.h
-	include/alibabacloud/ecs/model/StartDiskReplicaPairRequest.h
-	include/alibabacloud/ecs/model/StartDiskReplicaPairResult.h
 	include/alibabacloud/ecs/model/StartElasticityAssuranceRequest.h
 	include/alibabacloud/ecs/model/StartElasticityAssuranceResult.h
 	include/alibabacloud/ecs/model/StartImagePipelineExecutionRequest.h
@@ -677,8 +669,6 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/StartInstancesResult.h
 	include/alibabacloud/ecs/model/StartTerminalSessionRequest.h
 	include/alibabacloud/ecs/model/StartTerminalSessionResult.h
-	include/alibabacloud/ecs/model/StopDiskReplicaPairRequest.h
-	include/alibabacloud/ecs/model/StopDiskReplicaPairResult.h
 	include/alibabacloud/ecs/model/StopInstanceRequest.h
 	include/alibabacloud/ecs/model/StopInstanceResult.h
 	include/alibabacloud/ecs/model/StopInstancesRequest.h
@@ -782,8 +772,6 @@ set(ecs_src
 	src/model/CreateDeploymentSetResult.cc
 	src/model/CreateDiskRequest.cc
 	src/model/CreateDiskResult.cc
-	src/model/CreateDiskReplicaPairRequest.cc
-	src/model/CreateDiskReplicaPairResult.cc
 	src/model/CreateElasticityAssuranceRequest.cc
 	src/model/CreateElasticityAssuranceResult.cc
 	src/model/CreateForwardEntryRequest.cc
@@ -856,8 +844,6 @@ set(ecs_src
 	src/model/DeleteDeploymentSetResult.cc
 	src/model/DeleteDiskRequest.cc
 	src/model/DeleteDiskResult.cc
-	src/model/DeleteDiskReplicaPairRequest.cc
-	src/model/DeleteDiskReplicaPairResult.cc
 	src/model/DeleteForwardEntryRequest.cc
 	src/model/DeleteForwardEntryResult.cc
 	src/model/DeleteHaVipRequest.cc
@@ -960,8 +946,6 @@ set(ecs_src
 	src/model/DescribeDeploymentSetsResult.cc
 	src/model/DescribeDiskMonitorDataRequest.cc
 	src/model/DescribeDiskMonitorDataResult.cc
-	src/model/DescribeDiskReplicaPairsRequest.cc
-	src/model/DescribeDiskReplicaPairsResult.cc
 	src/model/DescribeDisksRequest.cc
 	src/model/DescribeDisksResult.cc
 	src/model/DescribeDisksFullStatusRequest.cc
@@ -1348,8 +1332,6 @@ set(ecs_src
 	src/model/RunInstancesResult.cc
 	src/model/SendFileRequest.cc
 	src/model/SendFileResult.cc
-	src/model/StartDiskReplicaPairRequest.cc
-	src/model/StartDiskReplicaPairResult.cc
 	src/model/StartElasticityAssuranceRequest.cc
 	src/model/StartElasticityAssuranceResult.cc
 	src/model/StartImagePipelineExecutionRequest.cc
@@ -1360,8 +1342,6 @@ set(ecs_src
 	src/model/StartInstancesResult.cc
 	src/model/StartTerminalSessionRequest.cc
 	src/model/StartTerminalSessionResult.cc
-	src/model/StopDiskReplicaPairRequest.cc
-	src/model/StopDiskReplicaPairResult.cc
 	src/model/StopInstanceRequest.cc
 	src/model/StopInstanceResult.cc
 	src/model/StopInstancesRequest.cc

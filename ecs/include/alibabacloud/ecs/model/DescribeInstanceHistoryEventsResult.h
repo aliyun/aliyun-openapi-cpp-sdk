@@ -59,6 +59,7 @@ namespace AlibabaCloud
 						std::string hostId;
 						std::vector<InactiveDisk> inactiveDisks;
 						std::string diskId;
+						std::vector<std::string> migrationOptions;
 					};
 					std::string eventFinishTime;
 					EventCycleStatus eventCycleStatus;

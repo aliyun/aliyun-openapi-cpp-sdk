@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,109 +18,131 @@
 
 using AlibabaCloud::Ecs::Model::ModifyPrefixListRequest;
 
-ModifyPrefixListRequest::ModifyPrefixListRequest()
-    : RpcServiceRequest("ecs", "2014-05-26", "ModifyPrefixList") {
-  setMethod(HttpRequest::Method::Post);
+ModifyPrefixListRequest::ModifyPrefixListRequest() :
+	RpcServiceRequest("ecs", "2014-05-26", "ModifyPrefixList")
+{
+	setMethod(HttpRequest::Method::Post);
 }
 
-ModifyPrefixListRequest::~ModifyPrefixListRequest() {}
+ModifyPrefixListRequest::~ModifyPrefixListRequest()
+{}
 
-long ModifyPrefixListRequest::getResourceOwnerId() const {
-  return resourceOwnerId_;
+long ModifyPrefixListRequest::getResourceOwnerId()const
+{
+	return resourceOwnerId_;
 }
 
-void ModifyPrefixListRequest::setResourceOwnerId(long resourceOwnerId) {
-  resourceOwnerId_ = resourceOwnerId;
-  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
+void ModifyPrefixListRequest::setResourceOwnerId(long resourceOwnerId)
+{
+	resourceOwnerId_ = resourceOwnerId;
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string ModifyPrefixListRequest::getDescription() const {
-  return description_;
+std::string ModifyPrefixListRequest::getDescription()const
+{
+	return description_;
 }
 
-void ModifyPrefixListRequest::setDescription(const std::string &description) {
-  description_ = description;
-  setParameter(std::string("Description"), description);
+void ModifyPrefixListRequest::setDescription(const std::string& description)
+{
+	description_ = description;
+	setParameter("Description", description);
 }
 
-std::string ModifyPrefixListRequest::getRegionId() const {
-  return regionId_;
+std::string ModifyPrefixListRequest::getRegionId()const
+{
+	return regionId_;
 }
 
-void ModifyPrefixListRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
+void ModifyPrefixListRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
 }
 
-std::string ModifyPrefixListRequest::getPrefixListId() const {
-  return prefixListId_;
+std::string ModifyPrefixListRequest::getPrefixListId()const
+{
+	return prefixListId_;
 }
 
-void ModifyPrefixListRequest::setPrefixListId(const std::string &prefixListId) {
-  prefixListId_ = prefixListId;
-  setParameter(std::string("PrefixListId"), prefixListId);
+void ModifyPrefixListRequest::setPrefixListId(const std::string& prefixListId)
+{
+	prefixListId_ = prefixListId;
+	setParameter("PrefixListId", prefixListId);
 }
 
-std::vector<ModifyPrefixListRequest::AddEntry> ModifyPrefixListRequest::getAddEntry() const {
-  return addEntry_;
+std::vector<ModifyPrefixListRequest::AddEntry> ModifyPrefixListRequest::getAddEntry()const
+{
+	return addEntry_;
 }
 
-void ModifyPrefixListRequest::setAddEntry(const std::vector<ModifyPrefixListRequest::AddEntry> &addEntry) {
-  addEntry_ = addEntry;
-  for(int dep1 = 0; dep1 != addEntry.size(); dep1++) {
-  auto addEntryObj = addEntry.at(dep1);
-  std::string addEntryObjStr = std::string("AddEntry") + "." + std::to_string(dep1 + 1);
-    setParameter(addEntryObjStr + ".Description", addEntryObj.description);
-    setParameter(addEntryObjStr + ".Cidr", addEntryObj.cidr);
-  }
+void ModifyPrefixListRequest::setAddEntry(const std::vector<AddEntry>& addEntry)
+{
+	addEntry_ = addEntry;
+	for(int dep1 = 0; dep1!= addEntry.size(); dep1++) {
+		auto addEntryObj = addEntry.at(dep1);
+		std::string addEntryObjStr = "AddEntry." + std::to_string(dep1 + 1);
+		setParameter(addEntryObjStr + ".Cidr", addEntryObj.cidr);
+		setParameter(addEntryObjStr + ".Description", addEntryObj.description);
+	}
 }
 
-std::string ModifyPrefixListRequest::getResourceOwnerAccount() const {
-  return resourceOwnerAccount_;
+std::string ModifyPrefixListRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
 }
 
-void ModifyPrefixListRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
-  resourceOwnerAccount_ = resourceOwnerAccount;
-  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+void ModifyPrefixListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string ModifyPrefixListRequest::getOwnerAccount() const {
-  return ownerAccount_;
+std::string ModifyPrefixListRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
 }
 
-void ModifyPrefixListRequest::setOwnerAccount(const std::string &ownerAccount) {
-  ownerAccount_ = ownerAccount;
-  setParameter(std::string("OwnerAccount"), ownerAccount);
+void ModifyPrefixListRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setParameter("OwnerAccount", ownerAccount);
 }
 
-long ModifyPrefixListRequest::getOwnerId() const {
-  return ownerId_;
+long ModifyPrefixListRequest::getOwnerId()const
+{
+	return ownerId_;
 }
 
-void ModifyPrefixListRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
+void ModifyPrefixListRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string ModifyPrefixListRequest::getPrefixListName() const {
-  return prefixListName_;
+std::string ModifyPrefixListRequest::getPrefixListName()const
+{
+	return prefixListName_;
 }
 
-void ModifyPrefixListRequest::setPrefixListName(const std::string &prefixListName) {
-  prefixListName_ = prefixListName;
-  setParameter(std::string("PrefixListName"), prefixListName);
+void ModifyPrefixListRequest::setPrefixListName(const std::string& prefixListName)
+{
+	prefixListName_ = prefixListName;
+	setParameter("PrefixListName", prefixListName);
 }
 
-std::vector<ModifyPrefixListRequest::RemoveEntry> ModifyPrefixListRequest::getRemoveEntry() const {
-  return removeEntry_;
+std::vector<ModifyPrefixListRequest::RemoveEntry> ModifyPrefixListRequest::getRemoveEntry()const
+{
+	return removeEntry_;
 }
 
-void ModifyPrefixListRequest::setRemoveEntry(const std::vector<ModifyPrefixListRequest::RemoveEntry> &removeEntry) {
-  removeEntry_ = removeEntry;
-  for(int dep1 = 0; dep1 != removeEntry.size(); dep1++) {
-  auto removeEntryObj = removeEntry.at(dep1);
-  std::string removeEntryObjStr = std::string("RemoveEntry") + "." + std::to_string(dep1 + 1);
-    setParameter(removeEntryObjStr + ".Cidr", removeEntryObj.cidr);
-  }
+void ModifyPrefixListRequest::setRemoveEntry(const std::vector<RemoveEntry>& removeEntry)
+{
+	removeEntry_ = removeEntry;
+	for(int dep1 = 0; dep1!= removeEntry.size(); dep1++) {
+		auto removeEntryObj = removeEntry.at(dep1);
+		std::string removeEntryObjStr = "RemoveEntry." + std::to_string(dep1 + 1);
+		setParameter(removeEntryObjStr + ".Cidr", removeEntryObj.cidr);
+	}
 }
 

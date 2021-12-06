@@ -56,8 +56,8 @@ namespace AlibabaCloud
 						float weightedCapacity;
 						float priority;
 						std::string vSwitchId;
-						float maxPrice;
 						std::string instanceType;
+						float maxPrice;
 					};
 					std::string status;
 					TargetCapacitySpecification targetCapacitySpecification;
@@ -68,12 +68,12 @@ namespace AlibabaCloud
 					std::string launchTemplateId;
 					std::vector<AutoProvisioningGroup::LaunchTemplateConfig> launchTemplateConfigs;
 					std::string autoProvisioningGroupType;
-					bool terminateInstancesWithExpiration;
 					std::string validUntil;
+					bool terminateInstancesWithExpiration;
 					std::string state;
 					std::string autoProvisioningGroupId;
-					std::string creationTime;
 					std::string launchTemplateVersion;
+					std::string creationTime;
 					std::string validFrom;
 					float maxSpotPrice;
 					std::string regionId;

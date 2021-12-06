@@ -40,24 +40,24 @@ void DeleteActivationResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto activationNode = value["Activation"];
-	if(!activationNode["CreationTime"].isNull())
-		activation_.creationTime = activationNode["CreationTime"].asString();
-	if(!activationNode["DeregisteredCount"].isNull())
-		activation_.deregisteredCount = std::stoi(activationNode["DeregisteredCount"].asString());
-	if(!activationNode["InstanceCount"].isNull())
-		activation_.instanceCount = std::stoi(activationNode["InstanceCount"].asString());
-	if(!activationNode["Description"].isNull())
-		activation_.description = activationNode["Description"].asString();
-	if(!activationNode["RegisteredCount"].isNull())
-		activation_.registeredCount = std::stoi(activationNode["RegisteredCount"].asString());
-	if(!activationNode["InstanceName"].isNull())
-		activation_.instanceName = activationNode["InstanceName"].asString();
-	if(!activationNode["IpAddressRange"].isNull())
-		activation_.ipAddressRange = activationNode["IpAddressRange"].asString();
-	if(!activationNode["TimeToLiveInHours"].isNull())
-		activation_.timeToLiveInHours = std::stol(activationNode["TimeToLiveInHours"].asString());
 	if(!activationNode["ActivationId"].isNull())
 		activation_.activationId = activationNode["ActivationId"].asString();
+	if(!activationNode["InstanceName"].isNull())
+		activation_.instanceName = activationNode["InstanceName"].asString();
+	if(!activationNode["Description"].isNull())
+		activation_.description = activationNode["Description"].asString();
+	if(!activationNode["InstanceCount"].isNull())
+		activation_.instanceCount = std::stoi(activationNode["InstanceCount"].asString());
+	if(!activationNode["TimeToLiveInHours"].isNull())
+		activation_.timeToLiveInHours = std::stol(activationNode["TimeToLiveInHours"].asString());
+	if(!activationNode["IpAddressRange"].isNull())
+		activation_.ipAddressRange = activationNode["IpAddressRange"].asString();
+	if(!activationNode["RegisteredCount"].isNull())
+		activation_.registeredCount = std::stoi(activationNode["RegisteredCount"].asString());
+	if(!activationNode["DeregisteredCount"].isNull())
+		activation_.deregisteredCount = std::stoi(activationNode["DeregisteredCount"].asString());
+	if(!activationNode["CreationTime"].isNull())
+		activation_.creationTime = activationNode["CreationTime"].asString();
 
 }
 

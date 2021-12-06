@@ -40,32 +40,32 @@ void DeregisterManagedInstanceResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto instanceNode = value["Instance"];
-	if(!instanceNode["LastInvokedTime"].isNull())
-		instance_.lastInvokedTime = instanceNode["LastInvokedTime"].asString();
-	if(!instanceNode["InternetIp"].isNull())
-		instance_.internetIp = instanceNode["InternetIp"].asString();
-	if(!instanceNode["Hostname"].isNull())
-		instance_.hostname = instanceNode["Hostname"].asString();
 	if(!instanceNode["InstanceId"].isNull())
 		instance_.instanceId = instanceNode["InstanceId"].asString();
-	if(!instanceNode["ActivationId"].isNull())
-		instance_.activationId = instanceNode["ActivationId"].asString();
-	if(!instanceNode["IntranetIp"].isNull())
-		instance_.intranetIp = instanceNode["IntranetIp"].asString();
-	if(!instanceNode["AgentVersion"].isNull())
-		instance_.agentVersion = instanceNode["AgentVersion"].asString();
-	if(!instanceNode["RegistrationTime"].isNull())
-		instance_.registrationTime = instanceNode["RegistrationTime"].asString();
 	if(!instanceNode["InstanceName"].isNull())
 		instance_.instanceName = instanceNode["InstanceName"].asString();
+	if(!instanceNode["ActivationId"].isNull())
+		instance_.activationId = instanceNode["ActivationId"].asString();
+	if(!instanceNode["Hostname"].isNull())
+		instance_.hostname = instanceNode["Hostname"].asString();
+	if(!instanceNode["MachineId"].isNull())
+		instance_.machineId = instanceNode["MachineId"].asString();
 	if(!instanceNode["OsType"].isNull())
 		instance_.osType = instanceNode["OsType"].asString();
 	if(!instanceNode["OsVersion"].isNull())
 		instance_.osVersion = instanceNode["OsVersion"].asString();
+	if(!instanceNode["IntranetIp"].isNull())
+		instance_.intranetIp = instanceNode["IntranetIp"].asString();
+	if(!instanceNode["InternetIp"].isNull())
+		instance_.internetIp = instanceNode["InternetIp"].asString();
+	if(!instanceNode["AgentVersion"].isNull())
+		instance_.agentVersion = instanceNode["AgentVersion"].asString();
+	if(!instanceNode["RegistrationTime"].isNull())
+		instance_.registrationTime = instanceNode["RegistrationTime"].asString();
 	if(!instanceNode["InvocationCount"].isNull())
 		instance_.invocationCount = std::stol(instanceNode["InvocationCount"].asString());
-	if(!instanceNode["MachineId"].isNull())
-		instance_.machineId = instanceNode["MachineId"].asString();
+	if(!instanceNode["LastInvokedTime"].isNull())
+		instance_.lastInvokedTime = instanceNode["LastInvokedTime"].asString();
 
 }
 

@@ -39,14 +39,14 @@ void CreateKeyPairResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["PrivateKeyBody"].isNull())
-		privateKeyBody_ = value["PrivateKeyBody"].asString();
-	if(!value["KeyPairName"].isNull())
-		keyPairName_ = value["KeyPairName"].asString();
 	if(!value["KeyPairId"].isNull())
 		keyPairId_ = value["KeyPairId"].asString();
+	if(!value["KeyPairName"].isNull())
+		keyPairName_ = value["KeyPairName"].asString();
 	if(!value["KeyPairFingerPrint"].isNull())
 		keyPairFingerPrint_ = value["KeyPairFingerPrint"].asString();
+	if(!value["PrivateKeyBody"].isNull())
+		privateKeyBody_ = value["PrivateKeyBody"].asString();
 
 }
 

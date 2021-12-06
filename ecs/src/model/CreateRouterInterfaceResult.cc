@@ -39,10 +39,10 @@ void CreateRouterInterfaceResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["OrderId"].isNull())
-		orderId_ = std::stol(value["OrderId"].asString());
 	if(!value["RouterInterfaceId"].isNull())
 		routerInterfaceId_ = value["RouterInterfaceId"].asString();
+	if(!value["OrderId"].isNull())
+		orderId_ = std::stol(value["OrderId"].asString());
 
 }
 

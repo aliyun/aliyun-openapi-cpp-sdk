@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,100 +18,122 @@
 
 using AlibabaCloud::Ecs::Model::DescribeEniMonitorDataRequest;
 
-DescribeEniMonitorDataRequest::DescribeEniMonitorDataRequest()
-    : RpcServiceRequest("ecs", "2014-05-26", "DescribeEniMonitorData") {
-  setMethod(HttpRequest::Method::Post);
+DescribeEniMonitorDataRequest::DescribeEniMonitorDataRequest() :
+	RpcServiceRequest("ecs", "2014-05-26", "DescribeEniMonitorData")
+{
+	setMethod(HttpRequest::Method::Post);
 }
 
-DescribeEniMonitorDataRequest::~DescribeEniMonitorDataRequest() {}
+DescribeEniMonitorDataRequest::~DescribeEniMonitorDataRequest()
+{}
 
-long DescribeEniMonitorDataRequest::getResourceOwnerId() const {
-  return resourceOwnerId_;
+long DescribeEniMonitorDataRequest::getResourceOwnerId()const
+{
+	return resourceOwnerId_;
 }
 
-void DescribeEniMonitorDataRequest::setResourceOwnerId(long resourceOwnerId) {
-  resourceOwnerId_ = resourceOwnerId;
-  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
+void DescribeEniMonitorDataRequest::setResourceOwnerId(long resourceOwnerId)
+{
+	resourceOwnerId_ = resourceOwnerId;
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeEniMonitorDataRequest::getStartTime() const {
-  return startTime_;
+std::string DescribeEniMonitorDataRequest::getStartTime()const
+{
+	return startTime_;
 }
 
-void DescribeEniMonitorDataRequest::setStartTime(const std::string &startTime) {
-  startTime_ = startTime;
-  setParameter(std::string("StartTime"), startTime);
+void DescribeEniMonitorDataRequest::setStartTime(const std::string& startTime)
+{
+	startTime_ = startTime;
+	setParameter("StartTime", startTime);
 }
 
-std::string DescribeEniMonitorDataRequest::getRegionId() const {
-  return regionId_;
+std::string DescribeEniMonitorDataRequest::getRegionId()const
+{
+	return regionId_;
 }
 
-void DescribeEniMonitorDataRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
+void DescribeEniMonitorDataRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
 }
 
-int DescribeEniMonitorDataRequest::getPeriod() const {
-  return period_;
+int DescribeEniMonitorDataRequest::getPeriod()const
+{
+	return period_;
 }
 
-void DescribeEniMonitorDataRequest::setPeriod(int period) {
-  period_ = period;
-  setParameter(std::string("Period"), std::to_string(period));
+void DescribeEniMonitorDataRequest::setPeriod(int period)
+{
+	period_ = period;
+	setParameter("Period", std::to_string(period));
 }
 
-std::string DescribeEniMonitorDataRequest::getResourceOwnerAccount() const {
-  return resourceOwnerAccount_;
+std::string DescribeEniMonitorDataRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
 }
 
-void DescribeEniMonitorDataRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
-  resourceOwnerAccount_ = resourceOwnerAccount;
-  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+void DescribeEniMonitorDataRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string DescribeEniMonitorDataRequest::getOwnerAccount() const {
-  return ownerAccount_;
+std::string DescribeEniMonitorDataRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
 }
 
-void DescribeEniMonitorDataRequest::setOwnerAccount(const std::string &ownerAccount) {
-  ownerAccount_ = ownerAccount;
-  setParameter(std::string("OwnerAccount"), ownerAccount);
+void DescribeEniMonitorDataRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setParameter("OwnerAccount", ownerAccount);
 }
 
-std::string DescribeEniMonitorDataRequest::getEndTime() const {
-  return endTime_;
+std::string DescribeEniMonitorDataRequest::getEndTime()const
+{
+	return endTime_;
 }
 
-void DescribeEniMonitorDataRequest::setEndTime(const std::string &endTime) {
-  endTime_ = endTime;
-  setParameter(std::string("EndTime"), endTime);
+void DescribeEniMonitorDataRequest::setEndTime(const std::string& endTime)
+{
+	endTime_ = endTime;
+	setParameter("EndTime", endTime);
 }
 
-long DescribeEniMonitorDataRequest::getOwnerId() const {
-  return ownerId_;
+long DescribeEniMonitorDataRequest::getOwnerId()const
+{
+	return ownerId_;
 }
 
-void DescribeEniMonitorDataRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
+void DescribeEniMonitorDataRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string DescribeEniMonitorDataRequest::getInstanceId() const {
-  return instanceId_;
+std::string DescribeEniMonitorDataRequest::getInstanceId()const
+{
+	return instanceId_;
 }
 
-void DescribeEniMonitorDataRequest::setInstanceId(const std::string &instanceId) {
-  instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), instanceId);
+void DescribeEniMonitorDataRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setParameter("InstanceId", instanceId);
 }
 
-std::string DescribeEniMonitorDataRequest::getEniId() const {
-  return eniId_;
+std::string DescribeEniMonitorDataRequest::getEniId()const
+{
+	return eniId_;
 }
 
-void DescribeEniMonitorDataRequest::setEniId(const std::string &eniId) {
-  eniId_ = eniId;
-  setParameter(std::string("EniId"), eniId);
+void DescribeEniMonitorDataRequest::setEniId(const std::string& eniId)
+{
+	eniId_ = eniId;
+	setParameter("EniId", eniId);
 }
 

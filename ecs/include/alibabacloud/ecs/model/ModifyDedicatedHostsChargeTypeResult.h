@@ -35,8 +35,8 @@ namespace AlibabaCloud
 				struct FeeOfInstance
 				{
 					std::string instanceId;
-					std::string currency;
 					std::string fee;
+					std::string currency;
 				};
 
 

@@ -94,6 +94,9 @@ void DescribeInstanceHistoryEventsResult::parse(const std::string &payload)
 				inactiveDiskObject.releaseTime = extendedAttributeNodeInactiveDisksInactiveDisk["ReleaseTime"].asString();
 			instanceSystemEventSetObject.extendedAttribute.inactiveDisks.push_back(inactiveDiskObject);
 		}
+			auto allMigrationOptions = extendedAttributeNode["MigrationOptions"]["MigrationOption"];
+			for (auto value : allMigrationOptions)
+				instanceSystemEventSetObject.extendedAttribute.migrationOptions.push_back(value.asString());
 		instanceSystemEventSet_.push_back(instanceSystemEventSetObject);
 	}
 	if(!value["PageSize"].isNull())

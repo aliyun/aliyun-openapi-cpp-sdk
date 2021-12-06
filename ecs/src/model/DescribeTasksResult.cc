@@ -43,28 +43,28 @@ void DescribeTasksResult::parse(const std::string &payload)
 	for (auto valueTaskSetTask : allTaskSetNode)
 	{
 		Task taskSetObject;
-		if(!valueTaskSetTask["CreationTime"].isNull())
-			taskSetObject.creationTime = valueTaskSetTask["CreationTime"].asString();
-		if(!valueTaskSetTask["TaskStatus"].isNull())
-			taskSetObject.taskStatus = valueTaskSetTask["TaskStatus"].asString();
-		if(!valueTaskSetTask["FinishedTime"].isNull())
-			taskSetObject.finishedTime = valueTaskSetTask["FinishedTime"].asString();
-		if(!valueTaskSetTask["SupportCancel"].isNull())
-			taskSetObject.supportCancel = valueTaskSetTask["SupportCancel"].asString();
 		if(!valueTaskSetTask["TaskId"].isNull())
 			taskSetObject.taskId = valueTaskSetTask["TaskId"].asString();
 		if(!valueTaskSetTask["TaskAction"].isNull())
 			taskSetObject.taskAction = valueTaskSetTask["TaskAction"].asString();
+		if(!valueTaskSetTask["TaskStatus"].isNull())
+			taskSetObject.taskStatus = valueTaskSetTask["TaskStatus"].asString();
+		if(!valueTaskSetTask["SupportCancel"].isNull())
+			taskSetObject.supportCancel = valueTaskSetTask["SupportCancel"].asString();
+		if(!valueTaskSetTask["CreationTime"].isNull())
+			taskSetObject.creationTime = valueTaskSetTask["CreationTime"].asString();
+		if(!valueTaskSetTask["FinishedTime"].isNull())
+			taskSetObject.finishedTime = valueTaskSetTask["FinishedTime"].asString();
 		taskSet_.push_back(taskSetObject);
 	}
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
 	if(!value["RegionId"].isNull())
 		regionId_ = value["RegionId"].asString();
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 
 }
 

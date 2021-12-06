@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,81 +18,102 @@
 
 using AlibabaCloud::Ecs::Model::DescribeInstanceTypesRequest;
 
-DescribeInstanceTypesRequest::DescribeInstanceTypesRequest()
-    : RpcServiceRequest("ecs", "2014-05-26", "DescribeInstanceTypes") {
-  setMethod(HttpRequest::Method::Post);
+DescribeInstanceTypesRequest::DescribeInstanceTypesRequest() :
+	RpcServiceRequest("ecs", "2014-05-26", "DescribeInstanceTypes")
+{
+	setMethod(HttpRequest::Method::Post);
 }
 
-DescribeInstanceTypesRequest::~DescribeInstanceTypesRequest() {}
+DescribeInstanceTypesRequest::~DescribeInstanceTypesRequest()
+{}
 
-long DescribeInstanceTypesRequest::getResourceOwnerId() const {
-  return resourceOwnerId_;
+long DescribeInstanceTypesRequest::getResourceOwnerId()const
+{
+	return resourceOwnerId_;
 }
 
-void DescribeInstanceTypesRequest::setResourceOwnerId(long resourceOwnerId) {
-  resourceOwnerId_ = resourceOwnerId;
-  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
+void DescribeInstanceTypesRequest::setResourceOwnerId(long resourceOwnerId)
+{
+	resourceOwnerId_ = resourceOwnerId;
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::vector<std::string> DescribeInstanceTypesRequest::getInstanceTypes() const {
-  return instanceTypes_;
+std::vector<std::string> DescribeInstanceTypesRequest::getInstanceTypes()const
+{
+	return instanceTypes_;
 }
 
-void DescribeInstanceTypesRequest::setInstanceTypes(const std::vector<std::string> &instanceTypes) {
-  instanceTypes_ = instanceTypes;
+void DescribeInstanceTypesRequest::setInstanceTypes(const std::vector<std::string>& instanceTypes)
+{
+	instanceTypes_ = instanceTypes;
+	for(int dep1 = 0; dep1!= instanceTypes.size(); dep1++) {
+		setParameter("InstanceTypes."+ std::to_string(dep1), instanceTypes.at(dep1));
+	}
 }
 
-std::string DescribeInstanceTypesRequest::getNextToken() const {
-  return nextToken_;
+std::string DescribeInstanceTypesRequest::getNextToken()const
+{
+	return nextToken_;
 }
 
-void DescribeInstanceTypesRequest::setNextToken(const std::string &nextToken) {
-  nextToken_ = nextToken;
-  setParameter(std::string("NextToken"), nextToken);
+void DescribeInstanceTypesRequest::setNextToken(const std::string& nextToken)
+{
+	nextToken_ = nextToken;
+	setParameter("NextToken", nextToken);
 }
 
-std::string DescribeInstanceTypesRequest::getResourceOwnerAccount() const {
-  return resourceOwnerAccount_;
+std::string DescribeInstanceTypesRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
 }
 
-void DescribeInstanceTypesRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
-  resourceOwnerAccount_ = resourceOwnerAccount;
-  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+void DescribeInstanceTypesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string DescribeInstanceTypesRequest::getOwnerAccount() const {
-  return ownerAccount_;
+std::string DescribeInstanceTypesRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
 }
 
-void DescribeInstanceTypesRequest::setOwnerAccount(const std::string &ownerAccount) {
-  ownerAccount_ = ownerAccount;
-  setParameter(std::string("OwnerAccount"), ownerAccount);
+void DescribeInstanceTypesRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setParameter("OwnerAccount", ownerAccount);
 }
 
-std::string DescribeInstanceTypesRequest::getInstanceTypeFamily() const {
-  return instanceTypeFamily_;
+std::string DescribeInstanceTypesRequest::getInstanceTypeFamily()const
+{
+	return instanceTypeFamily_;
 }
 
-void DescribeInstanceTypesRequest::setInstanceTypeFamily(const std::string &instanceTypeFamily) {
-  instanceTypeFamily_ = instanceTypeFamily;
-  setParameter(std::string("InstanceTypeFamily"), instanceTypeFamily);
+void DescribeInstanceTypesRequest::setInstanceTypeFamily(const std::string& instanceTypeFamily)
+{
+	instanceTypeFamily_ = instanceTypeFamily;
+	setParameter("InstanceTypeFamily", instanceTypeFamily);
 }
 
-long DescribeInstanceTypesRequest::getOwnerId() const {
-  return ownerId_;
+long DescribeInstanceTypesRequest::getOwnerId()const
+{
+	return ownerId_;
 }
 
-void DescribeInstanceTypesRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
+void DescribeInstanceTypesRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-long DescribeInstanceTypesRequest::getMaxResults() const {
-  return maxResults_;
+long DescribeInstanceTypesRequest::getMaxResults()const
+{
+	return maxResults_;
 }
 
-void DescribeInstanceTypesRequest::setMaxResults(long maxResults) {
-  maxResults_ = maxResults;
-  setParameter(std::string("MaxResults"), std::to_string(maxResults));
+void DescribeInstanceTypesRequest::setMaxResults(long maxResults)
+{
+	maxResults_ = maxResults;
+	setParameter("MaxResults", std::to_string(maxResults));
 }
 

@@ -43,56 +43,56 @@ void DescribeRouterInterfacesResult::parse(const std::string &payload)
 	for (auto valueRouterInterfaceSetRouterInterfaceType : allRouterInterfaceSetNode)
 	{
 		RouterInterfaceType routerInterfaceSetObject;
-		if(!valueRouterInterfaceSetRouterInterfaceType["HealthCheckTargetIp"].isNull())
-			routerInterfaceSetObject.healthCheckTargetIp = valueRouterInterfaceSetRouterInterfaceType["HealthCheckTargetIp"].asString();
-		if(!valueRouterInterfaceSetRouterInterfaceType["CreationTime"].isNull())
-			routerInterfaceSetObject.creationTime = valueRouterInterfaceSetRouterInterfaceType["CreationTime"].asString();
-		if(!valueRouterInterfaceSetRouterInterfaceType["Status"].isNull())
-			routerInterfaceSetObject.status = valueRouterInterfaceSetRouterInterfaceType["Status"].asString();
-		if(!valueRouterInterfaceSetRouterInterfaceType["Spec"].isNull())
-			routerInterfaceSetObject.spec = valueRouterInterfaceSetRouterInterfaceType["Spec"].asString();
-		if(!valueRouterInterfaceSetRouterInterfaceType["OppositeInterfaceId"].isNull())
-			routerInterfaceSetObject.oppositeInterfaceId = valueRouterInterfaceSetRouterInterfaceType["OppositeInterfaceId"].asString();
 		if(!valueRouterInterfaceSetRouterInterfaceType["RouterInterfaceId"].isNull())
 			routerInterfaceSetObject.routerInterfaceId = valueRouterInterfaceSetRouterInterfaceType["RouterInterfaceId"].asString();
+		if(!valueRouterInterfaceSetRouterInterfaceType["OppositeRegionId"].isNull())
+			routerInterfaceSetObject.oppositeRegionId = valueRouterInterfaceSetRouterInterfaceType["OppositeRegionId"].asString();
+		if(!valueRouterInterfaceSetRouterInterfaceType["Role"].isNull())
+			routerInterfaceSetObject.role = valueRouterInterfaceSetRouterInterfaceType["Role"].asString();
+		if(!valueRouterInterfaceSetRouterInterfaceType["Spec"].isNull())
+			routerInterfaceSetObject.spec = valueRouterInterfaceSetRouterInterfaceType["Spec"].asString();
+		if(!valueRouterInterfaceSetRouterInterfaceType["Name"].isNull())
+			routerInterfaceSetObject.name = valueRouterInterfaceSetRouterInterfaceType["Name"].asString();
+		if(!valueRouterInterfaceSetRouterInterfaceType["Description"].isNull())
+			routerInterfaceSetObject.description = valueRouterInterfaceSetRouterInterfaceType["Description"].asString();
+		if(!valueRouterInterfaceSetRouterInterfaceType["RouterId"].isNull())
+			routerInterfaceSetObject.routerId = valueRouterInterfaceSetRouterInterfaceType["RouterId"].asString();
+		if(!valueRouterInterfaceSetRouterInterfaceType["RouterType"].isNull())
+			routerInterfaceSetObject.routerType = valueRouterInterfaceSetRouterInterfaceType["RouterType"].asString();
+		if(!valueRouterInterfaceSetRouterInterfaceType["CreationTime"].isNull())
+			routerInterfaceSetObject.creationTime = valueRouterInterfaceSetRouterInterfaceType["CreationTime"].asString();
+		if(!valueRouterInterfaceSetRouterInterfaceType["EndTime"].isNull())
+			routerInterfaceSetObject.endTime = valueRouterInterfaceSetRouterInterfaceType["EndTime"].asString();
 		if(!valueRouterInterfaceSetRouterInterfaceType["ChargeType"].isNull())
 			routerInterfaceSetObject.chargeType = valueRouterInterfaceSetRouterInterfaceType["ChargeType"].asString();
+		if(!valueRouterInterfaceSetRouterInterfaceType["Status"].isNull())
+			routerInterfaceSetObject.status = valueRouterInterfaceSetRouterInterfaceType["Status"].asString();
+		if(!valueRouterInterfaceSetRouterInterfaceType["BusinessStatus"].isNull())
+			routerInterfaceSetObject.businessStatus = valueRouterInterfaceSetRouterInterfaceType["BusinessStatus"].asString();
+		if(!valueRouterInterfaceSetRouterInterfaceType["ConnectedTime"].isNull())
+			routerInterfaceSetObject.connectedTime = valueRouterInterfaceSetRouterInterfaceType["ConnectedTime"].asString();
+		if(!valueRouterInterfaceSetRouterInterfaceType["OppositeInterfaceId"].isNull())
+			routerInterfaceSetObject.oppositeInterfaceId = valueRouterInterfaceSetRouterInterfaceType["OppositeInterfaceId"].asString();
+		if(!valueRouterInterfaceSetRouterInterfaceType["OppositeInterfaceSpec"].isNull())
+			routerInterfaceSetObject.oppositeInterfaceSpec = valueRouterInterfaceSetRouterInterfaceType["OppositeInterfaceSpec"].asString();
+		if(!valueRouterInterfaceSetRouterInterfaceType["OppositeInterfaceStatus"].isNull())
+			routerInterfaceSetObject.oppositeInterfaceStatus = valueRouterInterfaceSetRouterInterfaceType["OppositeInterfaceStatus"].asString();
+		if(!valueRouterInterfaceSetRouterInterfaceType["OppositeInterfaceBusinessStatus"].isNull())
+			routerInterfaceSetObject.oppositeInterfaceBusinessStatus = valueRouterInterfaceSetRouterInterfaceType["OppositeInterfaceBusinessStatus"].asString();
+		if(!valueRouterInterfaceSetRouterInterfaceType["OppositeRouterId"].isNull())
+			routerInterfaceSetObject.oppositeRouterId = valueRouterInterfaceSetRouterInterfaceType["OppositeRouterId"].asString();
 		if(!valueRouterInterfaceSetRouterInterfaceType["OppositeRouterType"].isNull())
 			routerInterfaceSetObject.oppositeRouterType = valueRouterInterfaceSetRouterInterfaceType["OppositeRouterType"].asString();
 		if(!valueRouterInterfaceSetRouterInterfaceType["OppositeInterfaceOwnerId"].isNull())
 			routerInterfaceSetObject.oppositeInterfaceOwnerId = valueRouterInterfaceSetRouterInterfaceType["OppositeInterfaceOwnerId"].asString();
-		if(!valueRouterInterfaceSetRouterInterfaceType["Description"].isNull())
-			routerInterfaceSetObject.description = valueRouterInterfaceSetRouterInterfaceType["Description"].asString();
-		if(!valueRouterInterfaceSetRouterInterfaceType["Name"].isNull())
-			routerInterfaceSetObject.name = valueRouterInterfaceSetRouterInterfaceType["Name"].asString();
-		if(!valueRouterInterfaceSetRouterInterfaceType["OppositeRouterId"].isNull())
-			routerInterfaceSetObject.oppositeRouterId = valueRouterInterfaceSetRouterInterfaceType["OppositeRouterId"].asString();
-		if(!valueRouterInterfaceSetRouterInterfaceType["OppositeInterfaceSpec"].isNull())
-			routerInterfaceSetObject.oppositeInterfaceSpec = valueRouterInterfaceSetRouterInterfaceType["OppositeInterfaceSpec"].asString();
-		if(!valueRouterInterfaceSetRouterInterfaceType["RouterId"].isNull())
-			routerInterfaceSetObject.routerId = valueRouterInterfaceSetRouterInterfaceType["RouterId"].asString();
-		if(!valueRouterInterfaceSetRouterInterfaceType["OppositeInterfaceBusinessStatus"].isNull())
-			routerInterfaceSetObject.oppositeInterfaceBusinessStatus = valueRouterInterfaceSetRouterInterfaceType["OppositeInterfaceBusinessStatus"].asString();
-		if(!valueRouterInterfaceSetRouterInterfaceType["ConnectedTime"].isNull())
-			routerInterfaceSetObject.connectedTime = valueRouterInterfaceSetRouterInterfaceType["ConnectedTime"].asString();
-		if(!valueRouterInterfaceSetRouterInterfaceType["OppositeInterfaceStatus"].isNull())
-			routerInterfaceSetObject.oppositeInterfaceStatus = valueRouterInterfaceSetRouterInterfaceType["OppositeInterfaceStatus"].asString();
-		if(!valueRouterInterfaceSetRouterInterfaceType["HealthCheckSourceIp"].isNull())
-			routerInterfaceSetObject.healthCheckSourceIp = valueRouterInterfaceSetRouterInterfaceType["HealthCheckSourceIp"].asString();
-		if(!valueRouterInterfaceSetRouterInterfaceType["EndTime"].isNull())
-			routerInterfaceSetObject.endTime = valueRouterInterfaceSetRouterInterfaceType["EndTime"].asString();
-		if(!valueRouterInterfaceSetRouterInterfaceType["OppositeRegionId"].isNull())
-			routerInterfaceSetObject.oppositeRegionId = valueRouterInterfaceSetRouterInterfaceType["OppositeRegionId"].asString();
-		if(!valueRouterInterfaceSetRouterInterfaceType["OppositeAccessPointId"].isNull())
-			routerInterfaceSetObject.oppositeAccessPointId = valueRouterInterfaceSetRouterInterfaceType["OppositeAccessPointId"].asString();
-		if(!valueRouterInterfaceSetRouterInterfaceType["BusinessStatus"].isNull())
-			routerInterfaceSetObject.businessStatus = valueRouterInterfaceSetRouterInterfaceType["BusinessStatus"].asString();
-		if(!valueRouterInterfaceSetRouterInterfaceType["Role"].isNull())
-			routerInterfaceSetObject.role = valueRouterInterfaceSetRouterInterfaceType["Role"].asString();
-		if(!valueRouterInterfaceSetRouterInterfaceType["RouterType"].isNull())
-			routerInterfaceSetObject.routerType = valueRouterInterfaceSetRouterInterfaceType["RouterType"].asString();
 		if(!valueRouterInterfaceSetRouterInterfaceType["AccessPointId"].isNull())
 			routerInterfaceSetObject.accessPointId = valueRouterInterfaceSetRouterInterfaceType["AccessPointId"].asString();
+		if(!valueRouterInterfaceSetRouterInterfaceType["OppositeAccessPointId"].isNull())
+			routerInterfaceSetObject.oppositeAccessPointId = valueRouterInterfaceSetRouterInterfaceType["OppositeAccessPointId"].asString();
+		if(!valueRouterInterfaceSetRouterInterfaceType["HealthCheckSourceIp"].isNull())
+			routerInterfaceSetObject.healthCheckSourceIp = valueRouterInterfaceSetRouterInterfaceType["HealthCheckSourceIp"].asString();
+		if(!valueRouterInterfaceSetRouterInterfaceType["HealthCheckTargetIp"].isNull())
+			routerInterfaceSetObject.healthCheckTargetIp = valueRouterInterfaceSetRouterInterfaceType["HealthCheckTargetIp"].asString();
 		routerInterfaceSet_.push_back(routerInterfaceSetObject);
 	}
 	if(!value["PageNumber"].isNull())

@@ -35,22 +35,22 @@ namespace AlibabaCloud
 				struct InstanceMonitorData
 				{
 					int iOPSRead;
-					float cPUCreditUsage;
-					int iOPSWrite;
 					int intranetBandwidth;
+					int iOPSWrite;
+					float cPUCreditUsage;
 					std::string instanceId;
 					int intranetTX;
 					int cPU;
 					float cPUAdvanceCreditBalance;
 					int bPSRead;
-					std::string timeStamp;
 					int intranetRX;
+					std::string timeStamp;
 					int internetBandwidth;
 					float cPUNotpaidSurplusCreditUsage;
 					float cPUCreditBalance;
 					int internetTX;
-					int bPSWrite;
 					int internetRX;
+					int bPSWrite;
 				};
 
 

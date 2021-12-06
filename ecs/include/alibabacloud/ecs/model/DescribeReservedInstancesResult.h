@@ -46,9 +46,9 @@ namespace AlibabaCloud
 					std::string status;
 					std::string description;
 					std::string allocationStatus;
-					std::string resourceGroupId;
 					std::string zoneId;
 					std::string platform;
+					std::string resourceGroupId;
 					std::string startTime;
 					std::vector<ReservedInstance::OperationLock> operationLocks;
 					std::string offeringType;
@@ -57,8 +57,8 @@ namespace AlibabaCloud
 					std::string expiredTime;
 					std::string creationTime;
 					std::string reservedInstanceId;
-					std::string reservedInstanceName;
 					std::string regionId;
+					std::string reservedInstanceName;
 					std::string instanceType;
 					std::vector<ReservedInstance::Tag> tags;
 				};

@@ -49,14 +49,14 @@ namespace AlibabaCloud
 						std::string tagKey;
 						std::string tagValue;
 					};
-					std::string status;
 					std::string imageOwnerAlias;
+					std::string status;
 					std::string progress;
 					std::string usage;
-					std::string isSelfShared;
 					std::string description;
-					std::string platform;
+					std::string isSelfShared;
 					std::string architecture;
+					std::string platform;
 					std::string productCode;
 					int size;
 					bool isSubscribed;
@@ -69,8 +69,8 @@ namespace AlibabaCloud
 					std::vector<DiskDeviceMapping> diskDeviceMappings;
 					std::string imageVersion;
 					std::string oSType;
-					std::string creationTime;
 					std::string imageId;
+					std::string creationTime;
 					std::vector<Tag> tags;
 				};
 

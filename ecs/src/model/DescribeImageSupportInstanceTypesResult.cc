@@ -45,18 +45,18 @@ void DescribeImageSupportInstanceTypesResult::parse(const std::string &payload)
 		InstanceType instanceTypesObject;
 		if(!valueInstanceTypesInstanceType["InstanceTypeId"].isNull())
 			instanceTypesObject.instanceTypeId = valueInstanceTypesInstanceType["InstanceTypeId"].asString();
-		if(!valueInstanceTypesInstanceType["InstanceTypeFamily"].isNull())
-			instanceTypesObject.instanceTypeFamily = valueInstanceTypesInstanceType["InstanceTypeFamily"].asString();
 		if(!valueInstanceTypesInstanceType["CpuCoreCount"].isNull())
 			instanceTypesObject.cpuCoreCount = std::stoi(valueInstanceTypesInstanceType["CpuCoreCount"].asString());
 		if(!valueInstanceTypesInstanceType["MemorySize"].isNull())
 			instanceTypesObject.memorySize = std::stof(valueInstanceTypesInstanceType["MemorySize"].asString());
+		if(!valueInstanceTypesInstanceType["InstanceTypeFamily"].isNull())
+			instanceTypesObject.instanceTypeFamily = valueInstanceTypesInstanceType["InstanceTypeFamily"].asString();
 		instanceTypes_.push_back(instanceTypesObject);
 	}
-	if(!value["ImageId"].isNull())
-		imageId_ = value["ImageId"].asString();
 	if(!value["RegionId"].isNull())
 		regionId_ = value["RegionId"].asString();
+	if(!value["ImageId"].isNull())
+		imageId_ = value["ImageId"].asString();
 
 }
 

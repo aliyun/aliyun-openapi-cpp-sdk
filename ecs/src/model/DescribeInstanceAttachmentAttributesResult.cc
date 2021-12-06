@@ -45,18 +45,18 @@ void DescribeInstanceAttachmentAttributesResult::parse(const std::string &payloa
 		Instance instancesObject;
 		if(!valueInstancesInstance["InstanceId"].isNull())
 			instancesObject.instanceId = valueInstancesInstance["InstanceId"].asString();
-		if(!valueInstancesInstance["PrivatePoolOptionsMatchCriteria"].isNull())
-			instancesObject.privatePoolOptionsMatchCriteria = valueInstancesInstance["PrivatePoolOptionsMatchCriteria"].asString();
 		if(!valueInstancesInstance["PrivatePoolOptionsId"].isNull())
 			instancesObject.privatePoolOptionsId = valueInstancesInstance["PrivatePoolOptionsId"].asString();
+		if(!valueInstancesInstance["PrivatePoolOptionsMatchCriteria"].isNull())
+			instancesObject.privatePoolOptionsMatchCriteria = valueInstancesInstance["PrivatePoolOptionsMatchCriteria"].asString();
 		instances_.push_back(instancesObject);
 	}
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 
 }
 

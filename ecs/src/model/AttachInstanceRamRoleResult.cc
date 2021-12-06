@@ -43,22 +43,22 @@ void AttachInstanceRamRoleResult::parse(const std::string &payload)
 	for (auto valueAttachInstanceRamRoleResultsAttachInstanceRamRoleResult : allAttachInstanceRamRoleResultsNode)
 	{
 		Result attachInstanceRamRoleResultsObject;
-		if(!valueAttachInstanceRamRoleResultsAttachInstanceRamRoleResult["Code"].isNull())
-			attachInstanceRamRoleResultsObject.code = valueAttachInstanceRamRoleResultsAttachInstanceRamRoleResult["Code"].asString();
-		if(!valueAttachInstanceRamRoleResultsAttachInstanceRamRoleResult["Message"].isNull())
-			attachInstanceRamRoleResultsObject.message = valueAttachInstanceRamRoleResultsAttachInstanceRamRoleResult["Message"].asString();
 		if(!valueAttachInstanceRamRoleResultsAttachInstanceRamRoleResult["InstanceId"].isNull())
 			attachInstanceRamRoleResultsObject.instanceId = valueAttachInstanceRamRoleResultsAttachInstanceRamRoleResult["InstanceId"].asString();
 		if(!valueAttachInstanceRamRoleResultsAttachInstanceRamRoleResult["Success"].isNull())
 			attachInstanceRamRoleResultsObject.success = valueAttachInstanceRamRoleResultsAttachInstanceRamRoleResult["Success"].asString() == "true";
+		if(!valueAttachInstanceRamRoleResultsAttachInstanceRamRoleResult["Code"].isNull())
+			attachInstanceRamRoleResultsObject.code = valueAttachInstanceRamRoleResultsAttachInstanceRamRoleResult["Code"].asString();
+		if(!valueAttachInstanceRamRoleResultsAttachInstanceRamRoleResult["Message"].isNull())
+			attachInstanceRamRoleResultsObject.message = valueAttachInstanceRamRoleResultsAttachInstanceRamRoleResult["Message"].asString();
 		attachInstanceRamRoleResults_.push_back(attachInstanceRamRoleResultsObject);
 	}
-	if(!value["RamRoleName"].isNull())
-		ramRoleName_ = value["RamRoleName"].asString();
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
 	if(!value["FailCount"].isNull())
 		failCount_ = std::stoi(value["FailCount"].asString());
+	if(!value["RamRoleName"].isNull())
+		ramRoleName_ = value["RamRoleName"].asString();
 
 }
 

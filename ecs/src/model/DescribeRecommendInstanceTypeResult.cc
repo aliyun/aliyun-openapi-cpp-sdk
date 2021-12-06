@@ -43,22 +43,22 @@ void DescribeRecommendInstanceTypeResult::parse(const std::string &payload)
 	for (auto valueDataRecommendInstanceType : allDataNode)
 	{
 		RecommendInstanceType dataObject;
-		if(!valueDataRecommendInstanceType["CommodityCode"].isNull())
-			dataObject.commodityCode = valueDataRecommendInstanceType["CommodityCode"].asString();
-		if(!valueDataRecommendInstanceType["ZoneId"].isNull())
-			dataObject.zoneId = valueDataRecommendInstanceType["ZoneId"].asString();
-		if(!valueDataRecommendInstanceType["Priority"].isNull())
-			dataObject.priority = std::stoi(valueDataRecommendInstanceType["Priority"].asString());
-		if(!valueDataRecommendInstanceType["NetworkType"].isNull())
-			dataObject.networkType = valueDataRecommendInstanceType["NetworkType"].asString();
-		if(!valueDataRecommendInstanceType["Scene"].isNull())
-			dataObject.scene = valueDataRecommendInstanceType["Scene"].asString();
-		if(!valueDataRecommendInstanceType["SpotStrategy"].isNull())
-			dataObject.spotStrategy = valueDataRecommendInstanceType["SpotStrategy"].asString();
 		if(!valueDataRecommendInstanceType["RegionId"].isNull())
 			dataObject.regionId = valueDataRecommendInstanceType["RegionId"].asString();
+		if(!valueDataRecommendInstanceType["CommodityCode"].isNull())
+			dataObject.commodityCode = valueDataRecommendInstanceType["CommodityCode"].asString();
+		if(!valueDataRecommendInstanceType["Scene"].isNull())
+			dataObject.scene = valueDataRecommendInstanceType["Scene"].asString();
 		if(!valueDataRecommendInstanceType["InstanceChargeType"].isNull())
 			dataObject.instanceChargeType = valueDataRecommendInstanceType["InstanceChargeType"].asString();
+		if(!valueDataRecommendInstanceType["SpotStrategy"].isNull())
+			dataObject.spotStrategy = valueDataRecommendInstanceType["SpotStrategy"].asString();
+		if(!valueDataRecommendInstanceType["Priority"].isNull())
+			dataObject.priority = std::stoi(valueDataRecommendInstanceType["Priority"].asString());
+		if(!valueDataRecommendInstanceType["ZoneId"].isNull())
+			dataObject.zoneId = valueDataRecommendInstanceType["ZoneId"].asString();
+		if(!valueDataRecommendInstanceType["NetworkType"].isNull())
+			dataObject.networkType = valueDataRecommendInstanceType["NetworkType"].asString();
 		auto allZonesNode = valueDataRecommendInstanceType["Zones"]["zone"];
 		for (auto valueDataRecommendInstanceTypeZoneszone : allZonesNode)
 		{
@@ -71,18 +71,18 @@ void DescribeRecommendInstanceTypeResult::parse(const std::string &payload)
 			dataObject.zones.push_back(zonesObject);
 		}
 		auto instanceTypeNode = value["InstanceType"];
+		if(!instanceTypeNode["Generation"].isNull())
+			dataObject.instanceType.generation = instanceTypeNode["Generation"].asString();
+		if(!instanceTypeNode["InstanceTypeFamily"].isNull())
+			dataObject.instanceType.instanceTypeFamily = instanceTypeNode["InstanceTypeFamily"].asString();
+		if(!instanceTypeNode["InstanceType"].isNull())
+			dataObject.instanceType.instanceType = instanceTypeNode["InstanceType"].asString();
 		if(!instanceTypeNode["SupportIoOptimized"].isNull())
 			dataObject.instanceType.supportIoOptimized = instanceTypeNode["SupportIoOptimized"].asString();
 		if(!instanceTypeNode["Cores"].isNull())
 			dataObject.instanceType.cores = std::stoi(instanceTypeNode["Cores"].asString());
 		if(!instanceTypeNode["Memory"].isNull())
 			dataObject.instanceType.memory = std::stoi(instanceTypeNode["Memory"].asString());
-		if(!instanceTypeNode["InstanceType"].isNull())
-			dataObject.instanceType.instanceType = instanceTypeNode["InstanceType"].asString();
-		if(!instanceTypeNode["InstanceTypeFamily"].isNull())
-			dataObject.instanceType.instanceTypeFamily = instanceTypeNode["InstanceTypeFamily"].asString();
-		if(!instanceTypeNode["Generation"].isNull())
-			dataObject.instanceType.generation = instanceTypeNode["Generation"].asString();
 		data_.push_back(dataObject);
 	}
 

@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,60 +17,70 @@
 #ifndef ALIBABACLOUD_ECS_MODEL_LISTTAGRESOURCESREQUEST_H_
 #define ALIBABACLOUD_ECS_MODEL_LISTTAGRESOURCESREQUEST_H_
 
-#include <alibabacloud/ecs/EcsExport.h>
-#include <alibabacloud/core/RpcServiceRequest.h>
 #include <string>
 #include <vector>
-#include <map>
+#include <alibabacloud/core/RpcServiceRequest.h>
+#include <alibabacloud/ecs/EcsExport.h>
 
-namespace AlibabaCloud {
-namespace Ecs {
-namespace Model {
-class ALIBABACLOUD_ECS_EXPORT ListTagResourcesRequest : public RpcServiceRequest {
-public:
-	struct Tag {
-		std::string key;
-		std::string value;
-	};
-	struct TagFilter {
-		std::string tagKey;
-	};
-	ListTagResourcesRequest();
-	~ListTagResourcesRequest();
-	long getResourceOwnerId() const;
-	void setResourceOwnerId(long resourceOwnerId);
-	std::string getRegionId() const;
-	void setRegionId(const std::string &regionId);
-	std::string getNextToken() const;
-	void setNextToken(const std::string &nextToken);
-	std::vector<Tag> getTag() const;
-	void setTag(const std::vector<Tag> &tag);
-	std::vector<std::string> getResourceId() const;
-	void setResourceId(const std::vector<std::string> &resourceId);
-	std::string getResourceOwnerAccount() const;
-	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
-	std::string getOwnerAccount() const;
-	void setOwnerAccount(const std::string &ownerAccount);
-	long getOwnerId() const;
-	void setOwnerId(long ownerId);
-	std::vector<TagFilter> getTagFilter() const;
-	void setTagFilter(const std::vector<TagFilter> &tagFilter);
-	std::string getResourceType() const;
-	void setResourceType(const std::string &resourceType);
+namespace AlibabaCloud
+{
+	namespace Ecs
+	{
+		namespace Model
+		{
+			class ALIBABACLOUD_ECS_EXPORT ListTagResourcesRequest : public RpcServiceRequest
+			{
+			public:
+				struct Tag
+				{
+					std::string key;
+					std::string value;
+				};
+				struct TagFilter
+				{
+					std::vector<std::string> tagValues;
+					std::string tagKey;
+				};
 
-private:
-	long resourceOwnerId_;
-	std::string regionId_;
-	std::string nextToken_;
-	std::vector<Tag> tag_;
-	std::vector<std::string> resourceId_;
-	std::string resourceOwnerAccount_;
-	std::string ownerAccount_;
-	long ownerId_;
-	std::vector<TagFilter> tagFilter_;
-	std::string resourceType_;
-};
-} // namespace Model
-} // namespace Ecs
-} // namespace AlibabaCloud
+			public:
+				ListTagResourcesRequest();
+				~ListTagResourcesRequest();
+
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::string getNextToken()const;
+				void setNextToken(const std::string& nextToken);
+				std::vector<Tag> getTag()const;
+				void setTag(const std::vector<Tag>& tag);
+				std::vector<std::string> getResourceId()const;
+				void setResourceId(const std::vector<std::string>& resourceId);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				std::vector<TagFilter> getTagFilter()const;
+				void setTagFilter(const std::vector<TagFilter>& tagFilter);
+				std::string getResourceType()const;
+				void setResourceType(const std::string& resourceType);
+
+            private:
+				long resourceOwnerId_;
+				std::string regionId_;
+				std::string nextToken_;
+				std::vector<Tag> tag_;
+				std::vector<std::string> resourceId_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
+				long ownerId_;
+				std::vector<TagFilter> tagFilter_;
+				std::string resourceType_;
+
+			};
+		}
+	}
+}
 #endif // !ALIBABACLOUD_ECS_MODEL_LISTTAGRESOURCESREQUEST_H_

@@ -38,10 +38,10 @@ namespace AlibabaCloud
 					std::string type;
 					std::string description;
 					std::string attachedRegionNo;
-					std::string hostOperator;
 					std::string accessPointId;
-					std::string name;
+					std::string hostOperator;
 					std::string location;
+					std::string name;
 				};
 
 

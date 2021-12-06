@@ -55,16 +55,16 @@ void DescribeImageSharePermissionResult::parse(const std::string &payload)
 			accountsObject.aliyunId = valueAccountsAccount["AliyunId"].asString();
 		accounts_.push_back(accountsObject);
 	}
+	if(!value["RegionId"].isNull())
+		regionId_ = value["RegionId"].asString();
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 	if(!value["PageNumber"].isNull())
 		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
 	if(!value["ImageId"].isNull())
 		imageId_ = value["ImageId"].asString();
-	if(!value["RegionId"].isNull())
-		regionId_ = value["RegionId"].asString();
 
 }
 

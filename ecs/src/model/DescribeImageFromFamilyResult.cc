@@ -40,76 +40,76 @@ void DescribeImageFromFamilyResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto imageNode = value["Image"];
-	if(!imageNode["CreationTime"].isNull())
-		image_.creationTime = imageNode["CreationTime"].asString();
-	if(!imageNode["Status"].isNull())
-		image_.status = imageNode["Status"].asString();
-	if(!imageNode["ImageFamily"].isNull())
-		image_.imageFamily = imageNode["ImageFamily"].asString();
 	if(!imageNode["Progress"].isNull())
 		image_.progress = imageNode["Progress"].asString();
-	if(!imageNode["IsCopied"].isNull())
-		image_.isCopied = imageNode["IsCopied"].asString() == "true";
-	if(!imageNode["IsSupportIoOptimized"].isNull())
-		image_.isSupportIoOptimized = imageNode["IsSupportIoOptimized"].asString() == "true";
-	if(!imageNode["ImageOwnerAlias"].isNull())
-		image_.imageOwnerAlias = imageNode["ImageOwnerAlias"].asString();
-	if(!imageNode["IsSupportCloudinit"].isNull())
-		image_.isSupportCloudinit = imageNode["IsSupportCloudinit"].asString() == "true";
+	if(!imageNode["ImageId"].isNull())
+		image_.imageId = imageNode["ImageId"].asString();
+	if(!imageNode["ImageName"].isNull())
+		image_.imageName = imageNode["ImageName"].asString();
+	if(!imageNode["ImageFamily"].isNull())
+		image_.imageFamily = imageNode["ImageFamily"].asString();
 	if(!imageNode["ImageVersion"].isNull())
 		image_.imageVersion = imageNode["ImageVersion"].asString();
-	if(!imageNode["Usage"].isNull())
-		image_.usage = imageNode["Usage"].asString();
-	if(!imageNode["IsSelfShared"].isNull())
-		image_.isSelfShared = imageNode["IsSelfShared"].asString();
 	if(!imageNode["Description"].isNull())
 		image_.description = imageNode["Description"].asString();
 	if(!imageNode["Size"].isNull())
 		image_.size = std::stoi(imageNode["Size"].asString());
-	if(!imageNode["Platform"].isNull())
-		image_.platform = imageNode["Platform"].asString();
-	if(!imageNode["ImageName"].isNull())
-		image_.imageName = imageNode["ImageName"].asString();
+	if(!imageNode["ImageOwnerAlias"].isNull())
+		image_.imageOwnerAlias = imageNode["ImageOwnerAlias"].asString();
+	if(!imageNode["IsSupportIoOptimized"].isNull())
+		image_.isSupportIoOptimized = imageNode["IsSupportIoOptimized"].asString() == "true";
+	if(!imageNode["IsSupportCloudinit"].isNull())
+		image_.isSupportCloudinit = imageNode["IsSupportCloudinit"].asString() == "true";
 	if(!imageNode["OSName"].isNull())
 		image_.oSName = imageNode["OSName"].asString();
-	if(!imageNode["ImageId"].isNull())
-		image_.imageId = imageNode["ImageId"].asString();
-	if(!imageNode["OSType"].isNull())
-		image_.oSType = imageNode["OSType"].asString();
-	if(!imageNode["IsSubscribed"].isNull())
-		image_.isSubscribed = imageNode["IsSubscribed"].asString() == "true";
-	if(!imageNode["ProductCode"].isNull())
-		image_.productCode = imageNode["ProductCode"].asString();
 	if(!imageNode["Architecture"].isNull())
 		image_.architecture = imageNode["Architecture"].asString();
+	if(!imageNode["Status"].isNull())
+		image_.status = imageNode["Status"].asString();
+	if(!imageNode["ProductCode"].isNull())
+		image_.productCode = imageNode["ProductCode"].asString();
+	if(!imageNode["IsSubscribed"].isNull())
+		image_.isSubscribed = imageNode["IsSubscribed"].asString() == "true";
+	if(!imageNode["CreationTime"].isNull())
+		image_.creationTime = imageNode["CreationTime"].asString();
+	if(!imageNode["IsSelfShared"].isNull())
+		image_.isSelfShared = imageNode["IsSelfShared"].asString();
+	if(!imageNode["OSType"].isNull())
+		image_.oSType = imageNode["OSType"].asString();
+	if(!imageNode["Platform"].isNull())
+		image_.platform = imageNode["Platform"].asString();
+	if(!imageNode["Usage"].isNull())
+		image_.usage = imageNode["Usage"].asString();
+	if(!imageNode["IsCopied"].isNull())
+		image_.isCopied = imageNode["IsCopied"].asString() == "true";
 	auto allDiskDeviceMappingsNode = imageNode["DiskDeviceMappings"]["DiskDeviceMapping"];
 	for (auto imageNodeDiskDeviceMappingsDiskDeviceMapping : allDiskDeviceMappingsNode)
 	{
 		Image::DiskDeviceMapping diskDeviceMappingObject;
-		if(!imageNodeDiskDeviceMappingsDiskDeviceMapping["Type"].isNull())
-			diskDeviceMappingObject.type = imageNodeDiskDeviceMappingsDiskDeviceMapping["Type"].asString();
-		if(!imageNodeDiskDeviceMappingsDiskDeviceMapping["ImportOSSBucket"].isNull())
-			diskDeviceMappingObject.importOSSBucket = imageNodeDiskDeviceMappingsDiskDeviceMapping["ImportOSSBucket"].asString();
 		if(!imageNodeDiskDeviceMappingsDiskDeviceMapping["SnapshotId"].isNull())
 			diskDeviceMappingObject.snapshotId = imageNodeDiskDeviceMappingsDiskDeviceMapping["SnapshotId"].asString();
-		if(!imageNodeDiskDeviceMappingsDiskDeviceMapping["ImportOSSObject"].isNull())
-			diskDeviceMappingObject.importOSSObject = imageNodeDiskDeviceMappingsDiskDeviceMapping["ImportOSSObject"].asString();
 		if(!imageNodeDiskDeviceMappingsDiskDeviceMapping["Size"].isNull())
 			diskDeviceMappingObject.size = imageNodeDiskDeviceMappingsDiskDeviceMapping["Size"].asString();
 		if(!imageNodeDiskDeviceMappingsDiskDeviceMapping["Device"].isNull())
 			diskDeviceMappingObject.device = imageNodeDiskDeviceMappingsDiskDeviceMapping["Device"].asString();
+		if(!imageNodeDiskDeviceMappingsDiskDeviceMapping["Type"].isNull())
+			diskDeviceMappingObject.type = imageNodeDiskDeviceMappingsDiskDeviceMapping["Type"].asString();
 		if(!imageNodeDiskDeviceMappingsDiskDeviceMapping["Format"].isNull())
 			diskDeviceMappingObject.format = imageNodeDiskDeviceMappingsDiskDeviceMapping["Format"].asString();
+		if(!imageNodeDiskDeviceMappingsDiskDeviceMapping["ImportOSSBucket"].isNull())
+			diskDeviceMappingObject.importOSSBucket = imageNodeDiskDeviceMappingsDiskDeviceMapping["ImportOSSBucket"].asString();
+		if(!imageNodeDiskDeviceMappingsDiskDeviceMapping["ImportOSSObject"].isNull())
+			diskDeviceMappingObject.importOSSObject = imageNodeDiskDeviceMappingsDiskDeviceMapping["ImportOSSObject"].asString();
 		image_.diskDeviceMappings.push_back(diskDeviceMappingObject);
 	}
 	auto allTagsNode = imageNode["Tags"]["Tag"];
 	for (auto imageNodeTagsTag : allTagsNode)
 	{
 		Image::Tag tagObject;
-		if(!imageNodeTagsTag["TagValue"].isNull())
-			tagObject.tagValue = imageNodeTagsTag["TagValue"].asString();
 		if(!imageNodeTagsTag["TagKey"].isNull())
 			tagObject.tagKey = imageNodeTagsTag["TagKey"].asString();
+		if(!imageNodeTagsTag["TagValue"].isNull())
+			tagObject.tagValue = imageNodeTagsTag["TagValue"].asString();
 		image_.tags.push_back(tagObject);
 	}
 

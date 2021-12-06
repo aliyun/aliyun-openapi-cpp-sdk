@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,82 +18,100 @@
 
 using AlibabaCloud::Ecs::Model::DescribeSecurityGroupAttributeRequest;
 
-DescribeSecurityGroupAttributeRequest::DescribeSecurityGroupAttributeRequest()
-    : RpcServiceRequest("ecs", "2014-05-26", "DescribeSecurityGroupAttribute") {
-  setMethod(HttpRequest::Method::Post);
+DescribeSecurityGroupAttributeRequest::DescribeSecurityGroupAttributeRequest() :
+	RpcServiceRequest("ecs", "2014-05-26", "DescribeSecurityGroupAttribute")
+{
+	setMethod(HttpRequest::Method::Post);
 }
 
-DescribeSecurityGroupAttributeRequest::~DescribeSecurityGroupAttributeRequest() {}
+DescribeSecurityGroupAttributeRequest::~DescribeSecurityGroupAttributeRequest()
+{}
 
-std::string DescribeSecurityGroupAttributeRequest::getNicType() const {
-  return nicType_;
+std::string DescribeSecurityGroupAttributeRequest::getNicType()const
+{
+	return nicType_;
 }
 
-void DescribeSecurityGroupAttributeRequest::setNicType(const std::string &nicType) {
-  nicType_ = nicType;
-  setParameter(std::string("NicType"), nicType);
+void DescribeSecurityGroupAttributeRequest::setNicType(const std::string& nicType)
+{
+	nicType_ = nicType;
+	setParameter("NicType", nicType);
 }
 
-long DescribeSecurityGroupAttributeRequest::getResourceOwnerId() const {
-  return resourceOwnerId_;
+long DescribeSecurityGroupAttributeRequest::getResourceOwnerId()const
+{
+	return resourceOwnerId_;
 }
 
-void DescribeSecurityGroupAttributeRequest::setResourceOwnerId(long resourceOwnerId) {
-  resourceOwnerId_ = resourceOwnerId;
-  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
+void DescribeSecurityGroupAttributeRequest::setResourceOwnerId(long resourceOwnerId)
+{
+	resourceOwnerId_ = resourceOwnerId;
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeSecurityGroupAttributeRequest::getSecurityGroupId() const {
-  return securityGroupId_;
+std::string DescribeSecurityGroupAttributeRequest::getSecurityGroupId()const
+{
+	return securityGroupId_;
 }
 
-void DescribeSecurityGroupAttributeRequest::setSecurityGroupId(const std::string &securityGroupId) {
-  securityGroupId_ = securityGroupId;
-  setParameter(std::string("SecurityGroupId"), securityGroupId);
+void DescribeSecurityGroupAttributeRequest::setSecurityGroupId(const std::string& securityGroupId)
+{
+	securityGroupId_ = securityGroupId;
+	setParameter("SecurityGroupId", securityGroupId);
 }
 
-std::string DescribeSecurityGroupAttributeRequest::getRegionId() const {
-  return regionId_;
+std::string DescribeSecurityGroupAttributeRequest::getRegionId()const
+{
+	return regionId_;
 }
 
-void DescribeSecurityGroupAttributeRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
+void DescribeSecurityGroupAttributeRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
 }
 
-std::string DescribeSecurityGroupAttributeRequest::getDirection() const {
-  return direction_;
+std::string DescribeSecurityGroupAttributeRequest::getDirection()const
+{
+	return direction_;
 }
 
-void DescribeSecurityGroupAttributeRequest::setDirection(const std::string &direction) {
-  direction_ = direction;
-  setParameter(std::string("Direction"), direction);
+void DescribeSecurityGroupAttributeRequest::setDirection(const std::string& direction)
+{
+	direction_ = direction;
+	setParameter("Direction", direction);
 }
 
-std::string DescribeSecurityGroupAttributeRequest::getResourceOwnerAccount() const {
-  return resourceOwnerAccount_;
+std::string DescribeSecurityGroupAttributeRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
 }
 
-void DescribeSecurityGroupAttributeRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
-  resourceOwnerAccount_ = resourceOwnerAccount;
-  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+void DescribeSecurityGroupAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string DescribeSecurityGroupAttributeRequest::getOwnerAccount() const {
-  return ownerAccount_;
+std::string DescribeSecurityGroupAttributeRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
 }
 
-void DescribeSecurityGroupAttributeRequest::setOwnerAccount(const std::string &ownerAccount) {
-  ownerAccount_ = ownerAccount;
-  setParameter(std::string("OwnerAccount"), ownerAccount);
+void DescribeSecurityGroupAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setParameter("OwnerAccount", ownerAccount);
 }
 
-long DescribeSecurityGroupAttributeRequest::getOwnerId() const {
-  return ownerId_;
+long DescribeSecurityGroupAttributeRequest::getOwnerId()const
+{
+	return ownerId_;
 }
 
-void DescribeSecurityGroupAttributeRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
+void DescribeSecurityGroupAttributeRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

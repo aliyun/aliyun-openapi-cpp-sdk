@@ -39,18 +39,18 @@ namespace AlibabaCloud
 					std::string lineOperator;
 					std::string circuitCode;
 					std::string physicalConnectionId;
-					std::string redundantPhysicalConnectionId;
 					std::string peerLocation;
+					std::string redundantPhysicalConnectionId;
 					std::string businessStatus;
 					std::string name;
 					std::string type;
 					std::string adLocation;
 					long bandwidth;
-					std::string creationTime;
 					std::string accessPointId;
+					std::string creationTime;
 					std::string enabledTime;
-					std::string portNumber;
 					std::string spec;
+					std::string portNumber;
 					std::string portType;
 				};
 

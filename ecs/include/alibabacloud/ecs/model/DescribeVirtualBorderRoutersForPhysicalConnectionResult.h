@@ -34,8 +34,8 @@ namespace AlibabaCloud
 			public:
 				struct VirtualBorderRouterForPhysicalConnectionType
 				{
-					std::string activationTime;
 					long vbrOwnerUid;
+					std::string activationTime;
 					std::string circuitCode;
 					std::string creationTime;
 					std::string vbrId;

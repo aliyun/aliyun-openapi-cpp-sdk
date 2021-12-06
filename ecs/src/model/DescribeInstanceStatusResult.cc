@@ -43,18 +43,18 @@ void DescribeInstanceStatusResult::parse(const std::string &payload)
 	for (auto valueInstanceStatusesInstanceStatus : allInstanceStatusesNode)
 	{
 		InstanceStatus instanceStatusesObject;
-		if(!valueInstanceStatusesInstanceStatus["Status"].isNull())
-			instanceStatusesObject.status = valueInstanceStatusesInstanceStatus["Status"].asString();
 		if(!valueInstanceStatusesInstanceStatus["InstanceId"].isNull())
 			instanceStatusesObject.instanceId = valueInstanceStatusesInstanceStatus["InstanceId"].asString();
+		if(!valueInstanceStatusesInstanceStatus["Status"].isNull())
+			instanceStatusesObject.status = valueInstanceStatusesInstanceStatus["Status"].asString();
 		instanceStatuses_.push_back(instanceStatusesObject);
 	}
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 
 }
 

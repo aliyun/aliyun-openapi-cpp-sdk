@@ -40,8 +40,8 @@ namespace AlibabaCloud
 					std::string zoneId;
 					std::string instanceId;
 					std::string osType;
-					std::string networkType;
 					int memory;
+					std::string networkType;
 					std::string creationTime;
 					int cPU;
 					std::string regionId;

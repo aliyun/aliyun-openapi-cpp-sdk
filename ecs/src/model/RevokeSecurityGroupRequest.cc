@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,208 +18,254 @@
 
 using AlibabaCloud::Ecs::Model::RevokeSecurityGroupRequest;
 
-RevokeSecurityGroupRequest::RevokeSecurityGroupRequest()
-    : RpcServiceRequest("ecs", "2014-05-26", "RevokeSecurityGroup") {
-  setMethod(HttpRequest::Method::Post);
+RevokeSecurityGroupRequest::RevokeSecurityGroupRequest() :
+	RpcServiceRequest("ecs", "2014-05-26", "RevokeSecurityGroup")
+{
+	setMethod(HttpRequest::Method::Post);
 }
 
-RevokeSecurityGroupRequest::~RevokeSecurityGroupRequest() {}
+RevokeSecurityGroupRequest::~RevokeSecurityGroupRequest()
+{}
 
-std::string RevokeSecurityGroupRequest::getNicType() const {
-  return nicType_;
+std::string RevokeSecurityGroupRequest::getNicType()const
+{
+	return nicType_;
 }
 
-void RevokeSecurityGroupRequest::setNicType(const std::string &nicType) {
-  nicType_ = nicType;
-  setParameter(std::string("NicType"), nicType);
+void RevokeSecurityGroupRequest::setNicType(const std::string& nicType)
+{
+	nicType_ = nicType;
+	setParameter("NicType", nicType);
 }
 
-long RevokeSecurityGroupRequest::getResourceOwnerId() const {
-  return resourceOwnerId_;
+long RevokeSecurityGroupRequest::getResourceOwnerId()const
+{
+	return resourceOwnerId_;
 }
 
-void RevokeSecurityGroupRequest::setResourceOwnerId(long resourceOwnerId) {
-  resourceOwnerId_ = resourceOwnerId;
-  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
+void RevokeSecurityGroupRequest::setResourceOwnerId(long resourceOwnerId)
+{
+	resourceOwnerId_ = resourceOwnerId;
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string RevokeSecurityGroupRequest::getSourcePrefixListId() const {
-  return sourcePrefixListId_;
+std::string RevokeSecurityGroupRequest::getSourcePrefixListId()const
+{
+	return sourcePrefixListId_;
 }
 
-void RevokeSecurityGroupRequest::setSourcePrefixListId(const std::string &sourcePrefixListId) {
-  sourcePrefixListId_ = sourcePrefixListId;
-  setParameter(std::string("SourcePrefixListId"), sourcePrefixListId);
+void RevokeSecurityGroupRequest::setSourcePrefixListId(const std::string& sourcePrefixListId)
+{
+	sourcePrefixListId_ = sourcePrefixListId;
+	setParameter("SourcePrefixListId", sourcePrefixListId);
 }
 
-std::string RevokeSecurityGroupRequest::getSourcePortRange() const {
-  return sourcePortRange_;
+std::string RevokeSecurityGroupRequest::getSourcePortRange()const
+{
+	return sourcePortRange_;
 }
 
-void RevokeSecurityGroupRequest::setSourcePortRange(const std::string &sourcePortRange) {
-  sourcePortRange_ = sourcePortRange;
-  setParameter(std::string("SourcePortRange"), sourcePortRange);
+void RevokeSecurityGroupRequest::setSourcePortRange(const std::string& sourcePortRange)
+{
+	sourcePortRange_ = sourcePortRange;
+	setParameter("SourcePortRange", sourcePortRange);
 }
 
-std::string RevokeSecurityGroupRequest::getClientToken() const {
-  return clientToken_;
+std::string RevokeSecurityGroupRequest::getClientToken()const
+{
+	return clientToken_;
 }
 
-void RevokeSecurityGroupRequest::setClientToken(const std::string &clientToken) {
-  clientToken_ = clientToken;
-  setParameter(std::string("ClientToken"), clientToken);
+void RevokeSecurityGroupRequest::setClientToken(const std::string& clientToken)
+{
+	clientToken_ = clientToken;
+	setParameter("ClientToken", clientToken);
 }
 
-std::string RevokeSecurityGroupRequest::getSecurityGroupId() const {
-  return securityGroupId_;
+std::string RevokeSecurityGroupRequest::getSecurityGroupId()const
+{
+	return securityGroupId_;
 }
 
-void RevokeSecurityGroupRequest::setSecurityGroupId(const std::string &securityGroupId) {
-  securityGroupId_ = securityGroupId;
-  setParameter(std::string("SecurityGroupId"), securityGroupId);
+void RevokeSecurityGroupRequest::setSecurityGroupId(const std::string& securityGroupId)
+{
+	securityGroupId_ = securityGroupId;
+	setParameter("SecurityGroupId", securityGroupId);
 }
 
-std::string RevokeSecurityGroupRequest::getDescription() const {
-  return description_;
+std::string RevokeSecurityGroupRequest::getDescription()const
+{
+	return description_;
 }
 
-void RevokeSecurityGroupRequest::setDescription(const std::string &description) {
-  description_ = description;
-  setParameter(std::string("Description"), description);
+void RevokeSecurityGroupRequest::setDescription(const std::string& description)
+{
+	description_ = description;
+	setParameter("Description", description);
 }
 
-long RevokeSecurityGroupRequest::getSourceGroupOwnerId() const {
-  return sourceGroupOwnerId_;
+long RevokeSecurityGroupRequest::getSourceGroupOwnerId()const
+{
+	return sourceGroupOwnerId_;
 }
 
-void RevokeSecurityGroupRequest::setSourceGroupOwnerId(long sourceGroupOwnerId) {
-  sourceGroupOwnerId_ = sourceGroupOwnerId;
-  setParameter(std::string("SourceGroupOwnerId"), std::to_string(sourceGroupOwnerId));
+void RevokeSecurityGroupRequest::setSourceGroupOwnerId(long sourceGroupOwnerId)
+{
+	sourceGroupOwnerId_ = sourceGroupOwnerId;
+	setParameter("SourceGroupOwnerId", std::to_string(sourceGroupOwnerId));
 }
 
-std::string RevokeSecurityGroupRequest::getSourceGroupOwnerAccount() const {
-  return sourceGroupOwnerAccount_;
+std::string RevokeSecurityGroupRequest::getSourceGroupOwnerAccount()const
+{
+	return sourceGroupOwnerAccount_;
 }
 
-void RevokeSecurityGroupRequest::setSourceGroupOwnerAccount(const std::string &sourceGroupOwnerAccount) {
-  sourceGroupOwnerAccount_ = sourceGroupOwnerAccount;
-  setParameter(std::string("SourceGroupOwnerAccount"), sourceGroupOwnerAccount);
+void RevokeSecurityGroupRequest::setSourceGroupOwnerAccount(const std::string& sourceGroupOwnerAccount)
+{
+	sourceGroupOwnerAccount_ = sourceGroupOwnerAccount;
+	setParameter("SourceGroupOwnerAccount", sourceGroupOwnerAccount);
 }
 
-std::string RevokeSecurityGroupRequest::getRegionId() const {
-  return regionId_;
+std::string RevokeSecurityGroupRequest::getRegionId()const
+{
+	return regionId_;
 }
 
-void RevokeSecurityGroupRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
+void RevokeSecurityGroupRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
 }
 
-std::string RevokeSecurityGroupRequest::getIpv6DestCidrIp() const {
-  return ipv6DestCidrIp_;
+std::string RevokeSecurityGroupRequest::getIpv6DestCidrIp()const
+{
+	return ipv6DestCidrIp_;
 }
 
-void RevokeSecurityGroupRequest::setIpv6DestCidrIp(const std::string &ipv6DestCidrIp) {
-  ipv6DestCidrIp_ = ipv6DestCidrIp;
-  setParameter(std::string("Ipv6DestCidrIp"), ipv6DestCidrIp);
+void RevokeSecurityGroupRequest::setIpv6DestCidrIp(const std::string& ipv6DestCidrIp)
+{
+	ipv6DestCidrIp_ = ipv6DestCidrIp;
+	setParameter("Ipv6DestCidrIp", ipv6DestCidrIp);
 }
 
-std::string RevokeSecurityGroupRequest::getIpv6SourceCidrIp() const {
-  return ipv6SourceCidrIp_;
+std::string RevokeSecurityGroupRequest::getIpv6SourceCidrIp()const
+{
+	return ipv6SourceCidrIp_;
 }
 
-void RevokeSecurityGroupRequest::setIpv6SourceCidrIp(const std::string &ipv6SourceCidrIp) {
-  ipv6SourceCidrIp_ = ipv6SourceCidrIp;
-  setParameter(std::string("Ipv6SourceCidrIp"), ipv6SourceCidrIp);
+void RevokeSecurityGroupRequest::setIpv6SourceCidrIp(const std::string& ipv6SourceCidrIp)
+{
+	ipv6SourceCidrIp_ = ipv6SourceCidrIp;
+	setParameter("Ipv6SourceCidrIp", ipv6SourceCidrIp);
 }
 
-std::string RevokeSecurityGroupRequest::getPolicy() const {
-  return policy_;
+std::string RevokeSecurityGroupRequest::getPolicy()const
+{
+	return policy_;
 }
 
-void RevokeSecurityGroupRequest::setPolicy(const std::string &policy) {
-  policy_ = policy;
-  setParameter(std::string("Policy"), policy);
+void RevokeSecurityGroupRequest::setPolicy(const std::string& policy)
+{
+	policy_ = policy;
+	setParameter("Policy", policy);
 }
 
-std::string RevokeSecurityGroupRequest::getPortRange() const {
-  return portRange_;
+std::string RevokeSecurityGroupRequest::getPortRange()const
+{
+	return portRange_;
 }
 
-void RevokeSecurityGroupRequest::setPortRange(const std::string &portRange) {
-  portRange_ = portRange;
-  setParameter(std::string("PortRange"), portRange);
+void RevokeSecurityGroupRequest::setPortRange(const std::string& portRange)
+{
+	portRange_ = portRange;
+	setParameter("PortRange", portRange);
 }
 
-std::string RevokeSecurityGroupRequest::getResourceOwnerAccount() const {
-  return resourceOwnerAccount_;
+std::string RevokeSecurityGroupRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
 }
 
-void RevokeSecurityGroupRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
-  resourceOwnerAccount_ = resourceOwnerAccount;
-  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+void RevokeSecurityGroupRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string RevokeSecurityGroupRequest::getIpProtocol() const {
-  return ipProtocol_;
+std::string RevokeSecurityGroupRequest::getIpProtocol()const
+{
+	return ipProtocol_;
 }
 
-void RevokeSecurityGroupRequest::setIpProtocol(const std::string &ipProtocol) {
-  ipProtocol_ = ipProtocol;
-  setParameter(std::string("IpProtocol"), ipProtocol);
+void RevokeSecurityGroupRequest::setIpProtocol(const std::string& ipProtocol)
+{
+	ipProtocol_ = ipProtocol;
+	setParameter("IpProtocol", ipProtocol);
 }
 
-std::string RevokeSecurityGroupRequest::getOwnerAccount() const {
-  return ownerAccount_;
+std::string RevokeSecurityGroupRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
 }
 
-void RevokeSecurityGroupRequest::setOwnerAccount(const std::string &ownerAccount) {
-  ownerAccount_ = ownerAccount;
-  setParameter(std::string("OwnerAccount"), ownerAccount);
+void RevokeSecurityGroupRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setParameter("OwnerAccount", ownerAccount);
 }
 
-std::string RevokeSecurityGroupRequest::getSourceCidrIp() const {
-  return sourceCidrIp_;
+std::string RevokeSecurityGroupRequest::getSourceCidrIp()const
+{
+	return sourceCidrIp_;
 }
 
-void RevokeSecurityGroupRequest::setSourceCidrIp(const std::string &sourceCidrIp) {
-  sourceCidrIp_ = sourceCidrIp;
-  setParameter(std::string("SourceCidrIp"), sourceCidrIp);
+void RevokeSecurityGroupRequest::setSourceCidrIp(const std::string& sourceCidrIp)
+{
+	sourceCidrIp_ = sourceCidrIp;
+	setParameter("SourceCidrIp", sourceCidrIp);
 }
 
-long RevokeSecurityGroupRequest::getOwnerId() const {
-  return ownerId_;
+long RevokeSecurityGroupRequest::getOwnerId()const
+{
+	return ownerId_;
 }
 
-void RevokeSecurityGroupRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
+void RevokeSecurityGroupRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string RevokeSecurityGroupRequest::getPriority() const {
-  return priority_;
+std::string RevokeSecurityGroupRequest::getPriority()const
+{
+	return priority_;
 }
 
-void RevokeSecurityGroupRequest::setPriority(const std::string &priority) {
-  priority_ = priority;
-  setParameter(std::string("Priority"), priority);
+void RevokeSecurityGroupRequest::setPriority(const std::string& priority)
+{
+	priority_ = priority;
+	setParameter("Priority", priority);
 }
 
-std::string RevokeSecurityGroupRequest::getDestCidrIp() const {
-  return destCidrIp_;
+std::string RevokeSecurityGroupRequest::getDestCidrIp()const
+{
+	return destCidrIp_;
 }
 
-void RevokeSecurityGroupRequest::setDestCidrIp(const std::string &destCidrIp) {
-  destCidrIp_ = destCidrIp;
-  setParameter(std::string("DestCidrIp"), destCidrIp);
+void RevokeSecurityGroupRequest::setDestCidrIp(const std::string& destCidrIp)
+{
+	destCidrIp_ = destCidrIp;
+	setParameter("DestCidrIp", destCidrIp);
 }
 
-std::string RevokeSecurityGroupRequest::getSourceGroupId() const {
-  return sourceGroupId_;
+std::string RevokeSecurityGroupRequest::getSourceGroupId()const
+{
+	return sourceGroupId_;
 }
 
-void RevokeSecurityGroupRequest::setSourceGroupId(const std::string &sourceGroupId) {
-  sourceGroupId_ = sourceGroupId;
-  setParameter(std::string("SourceGroupId"), sourceGroupId);
+void RevokeSecurityGroupRequest::setSourceGroupId(const std::string& sourceGroupId)
+{
+	sourceGroupId_ = sourceGroupId;
+	setParameter("SourceGroupId", sourceGroupId);
 }
 

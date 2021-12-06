@@ -36,8 +36,8 @@ namespace AlibabaCloud
 				{
 					std::string endTime;
 					long initCapacity;
-					std::string displayName;
 					std::string startTime;
+					std::string displayName;
 				};
 
 

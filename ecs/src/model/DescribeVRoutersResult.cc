@@ -43,29 +43,29 @@ void DescribeVRoutersResult::parse(const std::string &payload)
 	for (auto valueVRoutersVRouter : allVRoutersNode)
 	{
 		VRouter vRoutersObject;
-		if(!valueVRoutersVRouter["VpcId"].isNull())
-			vRoutersObject.vpcId = valueVRoutersVRouter["VpcId"].asString();
-		if(!valueVRoutersVRouter["CreationTime"].isNull())
-			vRoutersObject.creationTime = valueVRoutersVRouter["CreationTime"].asString();
-		if(!valueVRoutersVRouter["VRouterId"].isNull())
-			vRoutersObject.vRouterId = valueVRoutersVRouter["VRouterId"].asString();
-		if(!valueVRoutersVRouter["Description"].isNull())
-			vRoutersObject.description = valueVRoutersVRouter["Description"].asString();
-		if(!valueVRoutersVRouter["VRouterName"].isNull())
-			vRoutersObject.vRouterName = valueVRoutersVRouter["VRouterName"].asString();
 		if(!valueVRoutersVRouter["RegionId"].isNull())
 			vRoutersObject.regionId = valueVRoutersVRouter["RegionId"].asString();
+		if(!valueVRoutersVRouter["VpcId"].isNull())
+			vRoutersObject.vpcId = valueVRoutersVRouter["VpcId"].asString();
+		if(!valueVRoutersVRouter["VRouterName"].isNull())
+			vRoutersObject.vRouterName = valueVRoutersVRouter["VRouterName"].asString();
+		if(!valueVRoutersVRouter["Description"].isNull())
+			vRoutersObject.description = valueVRoutersVRouter["Description"].asString();
+		if(!valueVRoutersVRouter["VRouterId"].isNull())
+			vRoutersObject.vRouterId = valueVRoutersVRouter["VRouterId"].asString();
+		if(!valueVRoutersVRouter["CreationTime"].isNull())
+			vRoutersObject.creationTime = valueVRoutersVRouter["CreationTime"].asString();
 		auto allRouteTableIds = value["RouteTableIds"]["RouteTableId"];
 		for (auto value : allRouteTableIds)
 			vRoutersObject.routeTableIds.push_back(value.asString());
 		vRouters_.push_back(vRoutersObject);
 	}
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 
 }
 

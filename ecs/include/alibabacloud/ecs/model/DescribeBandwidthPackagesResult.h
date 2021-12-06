@@ -46,8 +46,8 @@ namespace AlibabaCloud
 					std::string instanceChargeType;
 					std::string iSP;
 					std::string businessStatus;
-					std::string internetChargeType;
 					std::string name;
+					std::string internetChargeType;
 					std::string bandwidth;
 					std::string creationTime;
 					std::vector<BandwidthPackage::PublicIpAddresse> publicIpAddresses;

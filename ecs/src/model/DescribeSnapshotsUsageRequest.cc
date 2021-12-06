@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,55 +18,67 @@
 
 using AlibabaCloud::Ecs::Model::DescribeSnapshotsUsageRequest;
 
-DescribeSnapshotsUsageRequest::DescribeSnapshotsUsageRequest()
-    : RpcServiceRequest("ecs", "2014-05-26", "DescribeSnapshotsUsage") {
-  setMethod(HttpRequest::Method::Post);
+DescribeSnapshotsUsageRequest::DescribeSnapshotsUsageRequest() :
+	RpcServiceRequest("ecs", "2014-05-26", "DescribeSnapshotsUsage")
+{
+	setMethod(HttpRequest::Method::Post);
 }
 
-DescribeSnapshotsUsageRequest::~DescribeSnapshotsUsageRequest() {}
+DescribeSnapshotsUsageRequest::~DescribeSnapshotsUsageRequest()
+{}
 
-long DescribeSnapshotsUsageRequest::getResourceOwnerId() const {
-  return resourceOwnerId_;
+long DescribeSnapshotsUsageRequest::getResourceOwnerId()const
+{
+	return resourceOwnerId_;
 }
 
-void DescribeSnapshotsUsageRequest::setResourceOwnerId(long resourceOwnerId) {
-  resourceOwnerId_ = resourceOwnerId;
-  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
+void DescribeSnapshotsUsageRequest::setResourceOwnerId(long resourceOwnerId)
+{
+	resourceOwnerId_ = resourceOwnerId;
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeSnapshotsUsageRequest::getRegionId() const {
-  return regionId_;
+std::string DescribeSnapshotsUsageRequest::getRegionId()const
+{
+	return regionId_;
 }
 
-void DescribeSnapshotsUsageRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
+void DescribeSnapshotsUsageRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
 }
 
-std::string DescribeSnapshotsUsageRequest::getResourceOwnerAccount() const {
-  return resourceOwnerAccount_;
+std::string DescribeSnapshotsUsageRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
 }
 
-void DescribeSnapshotsUsageRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
-  resourceOwnerAccount_ = resourceOwnerAccount;
-  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+void DescribeSnapshotsUsageRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string DescribeSnapshotsUsageRequest::getOwnerAccount() const {
-  return ownerAccount_;
+std::string DescribeSnapshotsUsageRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
 }
 
-void DescribeSnapshotsUsageRequest::setOwnerAccount(const std::string &ownerAccount) {
-  ownerAccount_ = ownerAccount;
-  setParameter(std::string("OwnerAccount"), ownerAccount);
+void DescribeSnapshotsUsageRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setParameter("OwnerAccount", ownerAccount);
 }
 
-long DescribeSnapshotsUsageRequest::getOwnerId() const {
-  return ownerId_;
+long DescribeSnapshotsUsageRequest::getOwnerId()const
+{
+	return ownerId_;
 }
 
-void DescribeSnapshotsUsageRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
+void DescribeSnapshotsUsageRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

@@ -43,14 +43,14 @@ void DescribeResourcesModificationResult::parse(const std::string &payload)
 	for (auto valueAvailableZonesAvailableZone : allAvailableZonesNode)
 	{
 		AvailableZone availableZonesObject;
+		if(!valueAvailableZonesAvailableZone["RegionId"].isNull())
+			availableZonesObject.regionId = valueAvailableZonesAvailableZone["RegionId"].asString();
 		if(!valueAvailableZonesAvailableZone["ZoneId"].isNull())
 			availableZonesObject.zoneId = valueAvailableZonesAvailableZone["ZoneId"].asString();
 		if(!valueAvailableZonesAvailableZone["Status"].isNull())
 			availableZonesObject.status = valueAvailableZonesAvailableZone["Status"].asString();
 		if(!valueAvailableZonesAvailableZone["StatusCategory"].isNull())
 			availableZonesObject.statusCategory = valueAvailableZonesAvailableZone["StatusCategory"].asString();
-		if(!valueAvailableZonesAvailableZone["RegionId"].isNull())
-			availableZonesObject.regionId = valueAvailableZonesAvailableZone["RegionId"].asString();
 		auto allAvailableResourcesNode = valueAvailableZonesAvailableZone["AvailableResources"]["AvailableResource"];
 		for (auto valueAvailableZonesAvailableZoneAvailableResourcesAvailableResource : allAvailableResourcesNode)
 		{
@@ -61,18 +61,18 @@ void DescribeResourcesModificationResult::parse(const std::string &payload)
 			for (auto valueAvailableZonesAvailableZoneAvailableResourcesAvailableResourceSupportedResourcesSupportedResource : allSupportedResourcesNode)
 			{
 				AvailableZone::AvailableResource::SupportedResource supportedResourcesObject;
-				if(!valueAvailableZonesAvailableZoneAvailableResourcesAvailableResourceSupportedResourcesSupportedResource["Status"].isNull())
-					supportedResourcesObject.status = valueAvailableZonesAvailableZoneAvailableResourcesAvailableResourceSupportedResourcesSupportedResource["Status"].asString();
 				if(!valueAvailableZonesAvailableZoneAvailableResourcesAvailableResourceSupportedResourcesSupportedResource["Value"].isNull())
 					supportedResourcesObject.value = valueAvailableZonesAvailableZoneAvailableResourcesAvailableResourceSupportedResourcesSupportedResource["Value"].asString();
-				if(!valueAvailableZonesAvailableZoneAvailableResourcesAvailableResourceSupportedResourcesSupportedResource["Max"].isNull())
-					supportedResourcesObject.max = std::stoi(valueAvailableZonesAvailableZoneAvailableResourcesAvailableResourceSupportedResourcesSupportedResource["Max"].asString());
-				if(!valueAvailableZonesAvailableZoneAvailableResourcesAvailableResourceSupportedResourcesSupportedResource["Unit"].isNull())
-					supportedResourcesObject.unit = valueAvailableZonesAvailableZoneAvailableResourcesAvailableResourceSupportedResourcesSupportedResource["Unit"].asString();
+				if(!valueAvailableZonesAvailableZoneAvailableResourcesAvailableResourceSupportedResourcesSupportedResource["Status"].isNull())
+					supportedResourcesObject.status = valueAvailableZonesAvailableZoneAvailableResourcesAvailableResourceSupportedResourcesSupportedResource["Status"].asString();
 				if(!valueAvailableZonesAvailableZoneAvailableResourcesAvailableResourceSupportedResourcesSupportedResource["StatusCategory"].isNull())
 					supportedResourcesObject.statusCategory = valueAvailableZonesAvailableZoneAvailableResourcesAvailableResourceSupportedResourcesSupportedResource["StatusCategory"].asString();
 				if(!valueAvailableZonesAvailableZoneAvailableResourcesAvailableResourceSupportedResourcesSupportedResource["Min"].isNull())
 					supportedResourcesObject.min = std::stoi(valueAvailableZonesAvailableZoneAvailableResourcesAvailableResourceSupportedResourcesSupportedResource["Min"].asString());
+				if(!valueAvailableZonesAvailableZoneAvailableResourcesAvailableResourceSupportedResourcesSupportedResource["Max"].isNull())
+					supportedResourcesObject.max = std::stoi(valueAvailableZonesAvailableZoneAvailableResourcesAvailableResourceSupportedResourcesSupportedResource["Max"].asString());
+				if(!valueAvailableZonesAvailableZoneAvailableResourcesAvailableResourceSupportedResourcesSupportedResource["Unit"].isNull())
+					supportedResourcesObject.unit = valueAvailableZonesAvailableZoneAvailableResourcesAvailableResourceSupportedResourcesSupportedResource["Unit"].asString();
 				availableResourcesObject.supportedResources.push_back(supportedResourcesObject);
 			}
 			availableZonesObject.availableResources.push_back(availableResourcesObject);

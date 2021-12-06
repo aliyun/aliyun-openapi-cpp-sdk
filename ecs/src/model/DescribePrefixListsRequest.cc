@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,99 +18,124 @@
 
 using AlibabaCloud::Ecs::Model::DescribePrefixListsRequest;
 
-DescribePrefixListsRequest::DescribePrefixListsRequest()
-    : RpcServiceRequest("ecs", "2014-05-26", "DescribePrefixLists") {
-  setMethod(HttpRequest::Method::Post);
+DescribePrefixListsRequest::DescribePrefixListsRequest() :
+	RpcServiceRequest("ecs", "2014-05-26", "DescribePrefixLists")
+{
+	setMethod(HttpRequest::Method::Post);
 }
 
-DescribePrefixListsRequest::~DescribePrefixListsRequest() {}
+DescribePrefixListsRequest::~DescribePrefixListsRequest()
+{}
 
-long DescribePrefixListsRequest::getResourceOwnerId() const {
-  return resourceOwnerId_;
+long DescribePrefixListsRequest::getResourceOwnerId()const
+{
+	return resourceOwnerId_;
 }
 
-void DescribePrefixListsRequest::setResourceOwnerId(long resourceOwnerId) {
-  resourceOwnerId_ = resourceOwnerId;
-  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
+void DescribePrefixListsRequest::setResourceOwnerId(long resourceOwnerId)
+{
+	resourceOwnerId_ = resourceOwnerId;
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribePrefixListsRequest::getRegionId() const {
-  return regionId_;
+std::string DescribePrefixListsRequest::getRegionId()const
+{
+	return regionId_;
 }
 
-void DescribePrefixListsRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
+void DescribePrefixListsRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
 }
 
-std::string DescribePrefixListsRequest::getNextToken() const {
-  return nextToken_;
+std::vector<std::string> DescribePrefixListsRequest::getPrefixListId()const
+{
+	return prefixListId_;
 }
 
-void DescribePrefixListsRequest::setNextToken(const std::string &nextToken) {
-  nextToken_ = nextToken;
-  setParameter(std::string("NextToken"), nextToken);
+void DescribePrefixListsRequest::setPrefixListId(const std::vector<std::string>& prefixListId)
+{
+	prefixListId_ = prefixListId;
+	for(int dep1 = 0; dep1!= prefixListId.size(); dep1++) {
+		setParameter("PrefixListId."+ std::to_string(dep1), prefixListId.at(dep1));
+	}
 }
 
-std::vector<std::string> DescribePrefixListsRequest::getPrefixListId() const {
-  return prefixListId_;
+std::string DescribePrefixListsRequest::getNextToken()const
+{
+	return nextToken_;
 }
 
-void DescribePrefixListsRequest::setPrefixListId(const std::vector<std::string> &prefixListId) {
-  prefixListId_ = prefixListId;
+void DescribePrefixListsRequest::setNextToken(const std::string& nextToken)
+{
+	nextToken_ = nextToken;
+	setParameter("NextToken", nextToken);
 }
 
-std::string DescribePrefixListsRequest::getAddressFamily() const {
-  return addressFamily_;
+std::string DescribePrefixListsRequest::getAddressFamily()const
+{
+	return addressFamily_;
 }
 
-void DescribePrefixListsRequest::setAddressFamily(const std::string &addressFamily) {
-  addressFamily_ = addressFamily;
-  setParameter(std::string("AddressFamily"), addressFamily);
+void DescribePrefixListsRequest::setAddressFamily(const std::string& addressFamily)
+{
+	addressFamily_ = addressFamily;
+	setParameter("AddressFamily", addressFamily);
 }
 
-std::string DescribePrefixListsRequest::getResourceOwnerAccount() const {
-  return resourceOwnerAccount_;
+std::string DescribePrefixListsRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
 }
 
-void DescribePrefixListsRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
-  resourceOwnerAccount_ = resourceOwnerAccount;
-  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+void DescribePrefixListsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string DescribePrefixListsRequest::getOwnerAccount() const {
-  return ownerAccount_;
+std::string DescribePrefixListsRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
 }
 
-void DescribePrefixListsRequest::setOwnerAccount(const std::string &ownerAccount) {
-  ownerAccount_ = ownerAccount;
-  setParameter(std::string("OwnerAccount"), ownerAccount);
+void DescribePrefixListsRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setParameter("OwnerAccount", ownerAccount);
 }
 
-long DescribePrefixListsRequest::getOwnerId() const {
-  return ownerId_;
+long DescribePrefixListsRequest::getOwnerId()const
+{
+	return ownerId_;
 }
 
-void DescribePrefixListsRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
+void DescribePrefixListsRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string DescribePrefixListsRequest::getPrefixListName() const {
-  return prefixListName_;
+std::string DescribePrefixListsRequest::getPrefixListName()const
+{
+	return prefixListName_;
 }
 
-void DescribePrefixListsRequest::setPrefixListName(const std::string &prefixListName) {
-  prefixListName_ = prefixListName;
-  setParameter(std::string("PrefixListName"), prefixListName);
+void DescribePrefixListsRequest::setPrefixListName(const std::string& prefixListName)
+{
+	prefixListName_ = prefixListName;
+	setParameter("PrefixListName", prefixListName);
 }
 
-int DescribePrefixListsRequest::getMaxResults() const {
-  return maxResults_;
+int DescribePrefixListsRequest::getMaxResults()const
+{
+	return maxResults_;
 }
 
-void DescribePrefixListsRequest::setMaxResults(int maxResults) {
-  maxResults_ = maxResults;
-  setParameter(std::string("MaxResults"), std::to_string(maxResults));
+void DescribePrefixListsRequest::setMaxResults(int maxResults)
+{
+	maxResults_ = maxResults;
+	setParameter("MaxResults", std::to_string(maxResults));
 }
 

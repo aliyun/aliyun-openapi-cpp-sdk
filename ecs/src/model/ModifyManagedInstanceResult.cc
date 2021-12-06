@@ -40,10 +40,10 @@ void ModifyManagedInstanceResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto instanceNode = value["Instance"];
-	if(!instanceNode["InstanceName"].isNull())
-		instance_.instanceName = instanceNode["InstanceName"].asString();
 	if(!instanceNode["InstanceId"].isNull())
 		instance_.instanceId = instanceNode["InstanceId"].asString();
+	if(!instanceNode["InstanceName"].isNull())
+		instance_.instanceName = instanceNode["InstanceName"].asString();
 
 }
 

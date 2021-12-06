@@ -87,6 +87,28 @@ void DescribeNetworkInterfaceAttributeResult::parse(const std::string &payload)
 		auto allMemberNetworkInterfaceIds = attachmentNode["MemberNetworkInterfaceIds"]["MemberNetworkInterfaceId"];
 		for (auto value : allMemberNetworkInterfaceIds)
 			attachment_.memberNetworkInterfaceIds.push_back(value.asString());
+	auto bondInterfaceSpecificationNode = value["BondInterfaceSpecification"];
+	if(!bondInterfaceSpecificationNode["BondMode"].isNull())
+		bondInterfaceSpecification_.bondMode = bondInterfaceSpecificationNode["BondMode"].asString();
+	auto allSlaveInterfaceSpecification2Node = bondInterfaceSpecificationNode["SlaveInterfaceSpecification"]["SlaveInterfaceSpecificationSet"];
+	for (auto bondInterfaceSpecificationNodeSlaveInterfaceSpecificationSlaveInterfaceSpecificationSet : allSlaveInterfaceSpecification2Node)
+	{
+		BondInterfaceSpecification::SlaveInterfaceSpecificationSet slaveInterfaceSpecificationSetObject;
+		if(!bondInterfaceSpecificationNodeSlaveInterfaceSpecificationSlaveInterfaceSpecificationSet["SlaveNetworkInterfaceId"].isNull())
+			slaveInterfaceSpecificationSetObject.slaveNetworkInterfaceId = bondInterfaceSpecificationNodeSlaveInterfaceSpecificationSlaveInterfaceSpecificationSet["SlaveNetworkInterfaceId"].asString();
+		if(!bondInterfaceSpecificationNodeSlaveInterfaceSpecificationSlaveInterfaceSpecificationSet["WorkState"].isNull())
+			slaveInterfaceSpecificationSetObject.workState = bondInterfaceSpecificationNodeSlaveInterfaceSpecificationSlaveInterfaceSpecificationSet["WorkState"].asString();
+		if(!bondInterfaceSpecificationNodeSlaveInterfaceSpecificationSlaveInterfaceSpecificationSet["BondNetworkInterfaceId"].isNull())
+			slaveInterfaceSpecificationSetObject.bondNetworkInterfaceId = bondInterfaceSpecificationNodeSlaveInterfaceSpecificationSlaveInterfaceSpecificationSet["BondNetworkInterfaceId"].asString();
+		bondInterfaceSpecification_.slaveInterfaceSpecification2.push_back(slaveInterfaceSpecificationSetObject);
+	}
+	auto slaveInterfaceSpecificationNode = value["SlaveInterfaceSpecification"];
+	if(!slaveInterfaceSpecificationNode["SlaveNetworkInterfaceId"].isNull())
+		slaveInterfaceSpecification_.slaveNetworkInterfaceId = slaveInterfaceSpecificationNode["SlaveNetworkInterfaceId"].asString();
+	if(!slaveInterfaceSpecificationNode["WorkState"].isNull())
+		slaveInterfaceSpecification_.workState = slaveInterfaceSpecificationNode["WorkState"].asString();
+	if(!slaveInterfaceSpecificationNode["BondNetworkInterfaceId"].isNull())
+		slaveInterfaceSpecification_.bondNetworkInterfaceId = slaveInterfaceSpecificationNode["BondNetworkInterfaceId"].asString();
 	auto allSecurityGroupIds = value["SecurityGroupIds"]["SecurityGroupId"];
 	for (const auto &item : allSecurityGroupIds)
 		securityGroupIds_.push_back(item.asString());
@@ -191,6 +213,11 @@ std::string DescribeNetworkInterfaceAttributeResult::getNetworkInterfaceTrafficM
 	return networkInterfaceTrafficMode_;
 }
 
+DescribeNetworkInterfaceAttributeResult::SlaveInterfaceSpecification DescribeNetworkInterfaceAttributeResult::getSlaveInterfaceSpecification()const
+{
+	return slaveInterfaceSpecification_;
+}
+
 std::string DescribeNetworkInterfaceAttributeResult::getZoneId()const
 {
 	return zoneId_;
@@ -244,6 +271,11 @@ int DescribeNetworkInterfaceAttributeResult::getQueueNumber()const
 std::string DescribeNetworkInterfaceAttributeResult::getVpcId()const
 {
 	return vpcId_;
+}
+
+DescribeNetworkInterfaceAttributeResult::BondInterfaceSpecification DescribeNetworkInterfaceAttributeResult::getBondInterfaceSpecification()const
+{
+	return bondInterfaceSpecification_;
 }
 
 std::string DescribeNetworkInterfaceAttributeResult::getCreationTime()const

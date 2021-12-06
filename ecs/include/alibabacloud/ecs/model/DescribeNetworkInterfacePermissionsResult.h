@@ -36,8 +36,8 @@ namespace AlibabaCloud
 				{
 					std::string permissionState;
 					long accountId;
-					std::string networkInterfacePermissionId;
 					std::string serviceName;
+					std::string networkInterfacePermissionId;
 					std::string permission;
 					std::string networkInterfaceId;
 				};

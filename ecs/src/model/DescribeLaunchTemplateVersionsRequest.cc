@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,135 +18,168 @@
 
 using AlibabaCloud::Ecs::Model::DescribeLaunchTemplateVersionsRequest;
 
-DescribeLaunchTemplateVersionsRequest::DescribeLaunchTemplateVersionsRequest()
-    : RpcServiceRequest("ecs", "2014-05-26", "DescribeLaunchTemplateVersions") {
-  setMethod(HttpRequest::Method::Post);
+DescribeLaunchTemplateVersionsRequest::DescribeLaunchTemplateVersionsRequest() :
+	RpcServiceRequest("ecs", "2014-05-26", "DescribeLaunchTemplateVersions")
+{
+	setMethod(HttpRequest::Method::Post);
 }
 
-DescribeLaunchTemplateVersionsRequest::~DescribeLaunchTemplateVersionsRequest() {}
+DescribeLaunchTemplateVersionsRequest::~DescribeLaunchTemplateVersionsRequest()
+{}
 
-std::string DescribeLaunchTemplateVersionsRequest::getLaunchTemplateName() const {
-  return launchTemplateName_;
+std::string DescribeLaunchTemplateVersionsRequest::getLaunchTemplateName()const
+{
+	return launchTemplateName_;
 }
 
-void DescribeLaunchTemplateVersionsRequest::setLaunchTemplateName(const std::string &launchTemplateName) {
-  launchTemplateName_ = launchTemplateName;
-  setParameter(std::string("LaunchTemplateName"), launchTemplateName);
+void DescribeLaunchTemplateVersionsRequest::setLaunchTemplateName(const std::string& launchTemplateName)
+{
+	launchTemplateName_ = launchTemplateName;
+	setParameter("LaunchTemplateName", launchTemplateName);
 }
 
-long DescribeLaunchTemplateVersionsRequest::getMaxVersion() const {
-  return maxVersion_;
+long DescribeLaunchTemplateVersionsRequest::getMaxVersion()const
+{
+	return maxVersion_;
 }
 
-void DescribeLaunchTemplateVersionsRequest::setMaxVersion(long maxVersion) {
-  maxVersion_ = maxVersion;
-  setParameter(std::string("MaxVersion"), std::to_string(maxVersion));
+void DescribeLaunchTemplateVersionsRequest::setMaxVersion(long maxVersion)
+{
+	maxVersion_ = maxVersion;
+	setParameter("MaxVersion", std::to_string(maxVersion));
 }
 
-long DescribeLaunchTemplateVersionsRequest::getResourceOwnerId() const {
-  return resourceOwnerId_;
+long DescribeLaunchTemplateVersionsRequest::getResourceOwnerId()const
+{
+	return resourceOwnerId_;
 }
 
-void DescribeLaunchTemplateVersionsRequest::setResourceOwnerId(long resourceOwnerId) {
-  resourceOwnerId_ = resourceOwnerId;
-  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
+void DescribeLaunchTemplateVersionsRequest::setResourceOwnerId(long resourceOwnerId)
+{
+	resourceOwnerId_ = resourceOwnerId;
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-bool DescribeLaunchTemplateVersionsRequest::getDefaultVersion() const {
-  return defaultVersion_;
+bool DescribeLaunchTemplateVersionsRequest::getDefaultVersion()const
+{
+	return defaultVersion_;
 }
 
-void DescribeLaunchTemplateVersionsRequest::setDefaultVersion(bool defaultVersion) {
-  defaultVersion_ = defaultVersion;
-  setParameter(std::string("DefaultVersion"), defaultVersion ? "true" : "false");
+void DescribeLaunchTemplateVersionsRequest::setDefaultVersion(bool defaultVersion)
+{
+	defaultVersion_ = defaultVersion;
+	setParameter("DefaultVersion", defaultVersion ? "true" : "false");
 }
 
-long DescribeLaunchTemplateVersionsRequest::getMinVersion() const {
-  return minVersion_;
+long DescribeLaunchTemplateVersionsRequest::getMinVersion()const
+{
+	return minVersion_;
 }
 
-void DescribeLaunchTemplateVersionsRequest::setMinVersion(long minVersion) {
-  minVersion_ = minVersion;
-  setParameter(std::string("MinVersion"), std::to_string(minVersion));
+void DescribeLaunchTemplateVersionsRequest::setMinVersion(long minVersion)
+{
+	minVersion_ = minVersion;
+	setParameter("MinVersion", std::to_string(minVersion));
 }
 
-int DescribeLaunchTemplateVersionsRequest::getPageNumber() const {
-  return pageNumber_;
+int DescribeLaunchTemplateVersionsRequest::getPageNumber()const
+{
+	return pageNumber_;
 }
 
-void DescribeLaunchTemplateVersionsRequest::setPageNumber(int pageNumber) {
-  pageNumber_ = pageNumber;
-  setParameter(std::string("PageNumber"), std::to_string(pageNumber));
+void DescribeLaunchTemplateVersionsRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
-std::string DescribeLaunchTemplateVersionsRequest::getRegionId() const {
-  return regionId_;
+std::string DescribeLaunchTemplateVersionsRequest::getRegionId()const
+{
+	return regionId_;
 }
 
-void DescribeLaunchTemplateVersionsRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
+void DescribeLaunchTemplateVersionsRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
 }
 
-int DescribeLaunchTemplateVersionsRequest::getPageSize() const {
-  return pageSize_;
+int DescribeLaunchTemplateVersionsRequest::getPageSize()const
+{
+	return pageSize_;
 }
 
-void DescribeLaunchTemplateVersionsRequest::setPageSize(int pageSize) {
-  pageSize_ = pageSize;
-  setParameter(std::string("PageSize"), std::to_string(pageSize));
+void DescribeLaunchTemplateVersionsRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
-std::string DescribeLaunchTemplateVersionsRequest::getLaunchTemplateId() const {
-  return launchTemplateId_;
+std::string DescribeLaunchTemplateVersionsRequest::getLaunchTemplateId()const
+{
+	return launchTemplateId_;
 }
 
-void DescribeLaunchTemplateVersionsRequest::setLaunchTemplateId(const std::string &launchTemplateId) {
-  launchTemplateId_ = launchTemplateId;
-  setParameter(std::string("LaunchTemplateId"), launchTemplateId);
+void DescribeLaunchTemplateVersionsRequest::setLaunchTemplateId(const std::string& launchTemplateId)
+{
+	launchTemplateId_ = launchTemplateId;
+	setParameter("LaunchTemplateId", launchTemplateId);
 }
 
-std::string DescribeLaunchTemplateVersionsRequest::getResourceOwnerAccount() const {
-  return resourceOwnerAccount_;
+std::string DescribeLaunchTemplateVersionsRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
 }
 
-void DescribeLaunchTemplateVersionsRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
-  resourceOwnerAccount_ = resourceOwnerAccount;
-  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+void DescribeLaunchTemplateVersionsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string DescribeLaunchTemplateVersionsRequest::getOwnerAccount() const {
-  return ownerAccount_;
+std::string DescribeLaunchTemplateVersionsRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
 }
 
-void DescribeLaunchTemplateVersionsRequest::setOwnerAccount(const std::string &ownerAccount) {
-  ownerAccount_ = ownerAccount;
-  setParameter(std::string("OwnerAccount"), ownerAccount);
+void DescribeLaunchTemplateVersionsRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setParameter("OwnerAccount", ownerAccount);
 }
 
-long DescribeLaunchTemplateVersionsRequest::getOwnerId() const {
-  return ownerId_;
+long DescribeLaunchTemplateVersionsRequest::getOwnerId()const
+{
+	return ownerId_;
 }
 
-void DescribeLaunchTemplateVersionsRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
+void DescribeLaunchTemplateVersionsRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::vector<long> DescribeLaunchTemplateVersionsRequest::getLaunchTemplateVersion() const {
-  return launchTemplateVersion_;
+std::vector<long> DescribeLaunchTemplateVersionsRequest::getLaunchTemplateVersion()const
+{
+	return launchTemplateVersion_;
 }
 
-void DescribeLaunchTemplateVersionsRequest::setLaunchTemplateVersion(const std::vector<long> &launchTemplateVersion) {
-  launchTemplateVersion_ = launchTemplateVersion;
+void DescribeLaunchTemplateVersionsRequest::setLaunchTemplateVersion(const std::vector<long>& launchTemplateVersion)
+{
+	launchTemplateVersion_ = launchTemplateVersion;
+	for(int dep1 = 0; dep1!= launchTemplateVersion.size(); dep1++) {
+		setParameter("LaunchTemplateVersion."+ std::to_string(dep1), std::to_string(launchTemplateVersion.at(dep1)));
+	}
 }
 
-bool DescribeLaunchTemplateVersionsRequest::getDetailFlag() const {
-  return detailFlag_;
+bool DescribeLaunchTemplateVersionsRequest::getDetailFlag()const
+{
+	return detailFlag_;
 }
 
-void DescribeLaunchTemplateVersionsRequest::setDetailFlag(bool detailFlag) {
-  detailFlag_ = detailFlag;
-  setParameter(std::string("DetailFlag"), detailFlag ? "true" : "false");
+void DescribeLaunchTemplateVersionsRequest::setDetailFlag(bool detailFlag)
+{
+	detailFlag_ = detailFlag;
+	setParameter("DetailFlag", detailFlag ? "true" : "false");
 }
 

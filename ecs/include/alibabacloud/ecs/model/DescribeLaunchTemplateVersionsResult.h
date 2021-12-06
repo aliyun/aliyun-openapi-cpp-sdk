@@ -39,12 +39,12 @@ namespace AlibabaCloud
 						struct DataDisk
 						{
 							std::string snapshotId;
-							std::string description;
 							std::string category;
-							std::string performanceLevel;
-							std::string device;
+							std::string description;
 							int size;
 							std::string encrypted;
+							std::string device;
+							std::string performanceLevel;
 							bool deleteWithInstance;
 							std::string diskName;
 						};
@@ -67,9 +67,9 @@ namespace AlibabaCloud
 						std::string privateIpAddress;
 						std::vector<DataDisk> dataDisks;
 						std::string resourceGroupId;
-						std::string userData;
 						int systemDiskSize;
 						std::string systemDiskDescription;
+						std::string userData;
 						std::string instanceChargeType;
 						int spotDuration;
 						std::string ramRoleName;
@@ -81,8 +81,8 @@ namespace AlibabaCloud
 						float spotPriceLimit;
 						std::string instanceType;
 						std::vector<InstanceTag> tags;
-						std::string spotStrategy;
 						std::string hostName;
+						std::string spotStrategy;
 						bool passwordInherit;
 						std::string keyPairName;
 						std::string ioOptimized;
@@ -93,11 +93,11 @@ namespace AlibabaCloud
 						std::vector<std::string> securityGroupIds;
 						std::string systemDiskCategory;
 						std::string internetChargeType;
-						std::string deploymentSetId;
 						std::string instanceName;
+						std::string deploymentSetId;
 						bool systemDiskDeleteWithInstance;
-						bool enableVmOsConfig;
 						int internetMaxBandwidthOut;
+						bool enableVmOsConfig;
 						std::string vpcId;
 						int internetMaxBandwidthIn;
 						int systemDiskIops;
@@ -106,11 +106,11 @@ namespace AlibabaCloud
 					};
 					LaunchTemplateData launchTemplateData;
 					std::string launchTemplateName;
-					std::string createdBy;
 					std::string versionDescription;
+					std::string createdBy;
 					std::string modifiedTime;
-					bool defaultVersion;
 					std::string createTime;
+					bool defaultVersion;
 					std::string launchTemplateId;
 					long versionNumber;
 				};

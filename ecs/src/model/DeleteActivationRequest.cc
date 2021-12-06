@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,64 +18,78 @@
 
 using AlibabaCloud::Ecs::Model::DeleteActivationRequest;
 
-DeleteActivationRequest::DeleteActivationRequest()
-    : RpcServiceRequest("ecs", "2014-05-26", "DeleteActivation") {
-  setMethod(HttpRequest::Method::Post);
+DeleteActivationRequest::DeleteActivationRequest() :
+	RpcServiceRequest("ecs", "2014-05-26", "DeleteActivation")
+{
+	setMethod(HttpRequest::Method::Post);
 }
 
-DeleteActivationRequest::~DeleteActivationRequest() {}
+DeleteActivationRequest::~DeleteActivationRequest()
+{}
 
-long DeleteActivationRequest::getResourceOwnerId() const {
-  return resourceOwnerId_;
+long DeleteActivationRequest::getResourceOwnerId()const
+{
+	return resourceOwnerId_;
 }
 
-void DeleteActivationRequest::setResourceOwnerId(long resourceOwnerId) {
-  resourceOwnerId_ = resourceOwnerId;
-  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
+void DeleteActivationRequest::setResourceOwnerId(long resourceOwnerId)
+{
+	resourceOwnerId_ = resourceOwnerId;
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DeleteActivationRequest::getRegionId() const {
-  return regionId_;
+std::string DeleteActivationRequest::getRegionId()const
+{
+	return regionId_;
 }
 
-void DeleteActivationRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
+void DeleteActivationRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
 }
 
-std::string DeleteActivationRequest::getResourceOwnerAccount() const {
-  return resourceOwnerAccount_;
+std::string DeleteActivationRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
 }
 
-void DeleteActivationRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
-  resourceOwnerAccount_ = resourceOwnerAccount;
-  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+void DeleteActivationRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string DeleteActivationRequest::getOwnerAccount() const {
-  return ownerAccount_;
+std::string DeleteActivationRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
 }
 
-void DeleteActivationRequest::setOwnerAccount(const std::string &ownerAccount) {
-  ownerAccount_ = ownerAccount;
-  setParameter(std::string("OwnerAccount"), ownerAccount);
+void DeleteActivationRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setParameter("OwnerAccount", ownerAccount);
 }
 
-long DeleteActivationRequest::getOwnerId() const {
-  return ownerId_;
+long DeleteActivationRequest::getOwnerId()const
+{
+	return ownerId_;
 }
 
-void DeleteActivationRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
+void DeleteActivationRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string DeleteActivationRequest::getActivationId() const {
-  return activationId_;
+std::string DeleteActivationRequest::getActivationId()const
+{
+	return activationId_;
 }
 
-void DeleteActivationRequest::setActivationId(const std::string &activationId) {
-  activationId_ = activationId;
-  setParameter(std::string("ActivationId"), activationId);
+void DeleteActivationRequest::setActivationId(const std::string& activationId)
+{
+	activationId_ = activationId;
+	setParameter("ActivationId", activationId);
 }
 

@@ -39,12 +39,12 @@ void GetInstanceConsoleOutputResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["LastUpdateTime"].isNull())
-		lastUpdateTime_ = value["LastUpdateTime"].asString();
 	if(!value["InstanceId"].isNull())
 		instanceId_ = value["InstanceId"].asString();
 	if(!value["ConsoleOutput"].isNull())
 		consoleOutput_ = value["ConsoleOutput"].asString();
+	if(!value["LastUpdateTime"].isNull())
+		lastUpdateTime_ = value["LastUpdateTime"].asString();
 
 }
 
@@ -53,13 +53,13 @@ std::string GetInstanceConsoleOutputResult::getConsoleOutput()const
 	return consoleOutput_;
 }
 
-std::string GetInstanceConsoleOutputResult::getLastUpdateTime()const
-{
-	return lastUpdateTime_;
-}
-
 std::string GetInstanceConsoleOutputResult::getInstanceId()const
 {
 	return instanceId_;
+}
+
+std::string GetInstanceConsoleOutputResult::getLastUpdateTime()const
+{
+	return lastUpdateTime_;
 }
 

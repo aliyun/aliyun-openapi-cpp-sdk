@@ -46,8 +46,8 @@ namespace AlibabaCloud
 						std::string errorCode;
 					};
 					std::string fileMode;
-					std::string invocationStatus;
 					std::string overwrite;
+					std::string invocationStatus;
 					std::string description;
 					std::string contentType;
 					int vmCount;

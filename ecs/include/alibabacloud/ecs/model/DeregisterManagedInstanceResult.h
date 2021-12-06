@@ -39,8 +39,8 @@ namespace AlibabaCloud
 					std::string agentVersion;
 					long invocationCount;
 					std::string osVersion;
-					std::string hostname;
 					std::string activationId;
+					std::string hostname;
 					std::string registrationTime;
 					std::string intranetIp;
 					std::string instanceName;

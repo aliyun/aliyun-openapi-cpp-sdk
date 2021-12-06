@@ -43,20 +43,20 @@ void DescribePrefixListsResult::parse(const std::string &payload)
 	for (auto valuePrefixListsPrefixList : allPrefixListsNode)
 	{
 		PrefixList prefixListsObject;
-		if(!valuePrefixListsPrefixList["CreationTime"].isNull())
-			prefixListsObject.creationTime = valuePrefixListsPrefixList["CreationTime"].asString();
-		if(!valuePrefixListsPrefixList["AssociationCount"].isNull())
-			prefixListsObject.associationCount = std::stoi(valuePrefixListsPrefixList["AssociationCount"].asString());
+		if(!valuePrefixListsPrefixList["PrefixListId"].isNull())
+			prefixListsObject.prefixListId = valuePrefixListsPrefixList["PrefixListId"].asString();
+		if(!valuePrefixListsPrefixList["PrefixListName"].isNull())
+			prefixListsObject.prefixListName = valuePrefixListsPrefixList["PrefixListName"].asString();
+		if(!valuePrefixListsPrefixList["AddressFamily"].isNull())
+			prefixListsObject.addressFamily = valuePrefixListsPrefixList["AddressFamily"].asString();
 		if(!valuePrefixListsPrefixList["MaxEntries"].isNull())
 			prefixListsObject.maxEntries = std::stoi(valuePrefixListsPrefixList["MaxEntries"].asString());
 		if(!valuePrefixListsPrefixList["Description"].isNull())
 			prefixListsObject.description = valuePrefixListsPrefixList["Description"].asString();
-		if(!valuePrefixListsPrefixList["AddressFamily"].isNull())
-			prefixListsObject.addressFamily = valuePrefixListsPrefixList["AddressFamily"].asString();
-		if(!valuePrefixListsPrefixList["PrefixListName"].isNull())
-			prefixListsObject.prefixListName = valuePrefixListsPrefixList["PrefixListName"].asString();
-		if(!valuePrefixListsPrefixList["PrefixListId"].isNull())
-			prefixListsObject.prefixListId = valuePrefixListsPrefixList["PrefixListId"].asString();
+		if(!valuePrefixListsPrefixList["CreationTime"].isNull())
+			prefixListsObject.creationTime = valuePrefixListsPrefixList["CreationTime"].asString();
+		if(!valuePrefixListsPrefixList["AssociationCount"].isNull())
+			prefixListsObject.associationCount = std::stoi(valuePrefixListsPrefixList["AssociationCount"].asString());
 		prefixLists_.push_back(prefixListsObject);
 	}
 	if(!value["NextToken"].isNull())

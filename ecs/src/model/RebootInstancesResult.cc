@@ -43,16 +43,16 @@ void RebootInstancesResult::parse(const std::string &payload)
 	for (auto valueInstanceResponsesInstanceResponse : allInstanceResponsesNode)
 	{
 		InstanceResponse instanceResponsesObject;
+		if(!valueInstanceResponsesInstanceResponse["InstanceId"].isNull())
+			instanceResponsesObject.instanceId = valueInstanceResponsesInstanceResponse["InstanceId"].asString();
+		if(!valueInstanceResponsesInstanceResponse["PreviousStatus"].isNull())
+			instanceResponsesObject.previousStatus = valueInstanceResponsesInstanceResponse["PreviousStatus"].asString();
+		if(!valueInstanceResponsesInstanceResponse["CurrentStatus"].isNull())
+			instanceResponsesObject.currentStatus = valueInstanceResponsesInstanceResponse["CurrentStatus"].asString();
 		if(!valueInstanceResponsesInstanceResponse["Code"].isNull())
 			instanceResponsesObject.code = valueInstanceResponsesInstanceResponse["Code"].asString();
 		if(!valueInstanceResponsesInstanceResponse["Message"].isNull())
 			instanceResponsesObject.message = valueInstanceResponsesInstanceResponse["Message"].asString();
-		if(!valueInstanceResponsesInstanceResponse["InstanceId"].isNull())
-			instanceResponsesObject.instanceId = valueInstanceResponsesInstanceResponse["InstanceId"].asString();
-		if(!valueInstanceResponsesInstanceResponse["CurrentStatus"].isNull())
-			instanceResponsesObject.currentStatus = valueInstanceResponsesInstanceResponse["CurrentStatus"].asString();
-		if(!valueInstanceResponsesInstanceResponse["PreviousStatus"].isNull())
-			instanceResponsesObject.previousStatus = valueInstanceResponsesInstanceResponse["PreviousStatus"].asString();
 		instanceResponses_.push_back(instanceResponsesObject);
 	}
 

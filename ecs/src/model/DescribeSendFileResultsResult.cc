@@ -43,62 +43,62 @@ void DescribeSendFileResultsResult::parse(const std::string &payload)
 	for (auto valueInvocationsInvocation : allInvocationsNode)
 	{
 		Invocation invocationsObject;
-		if(!valueInvocationsInvocation["CreationTime"].isNull())
-			invocationsObject.creationTime = valueInvocationsInvocation["CreationTime"].asString();
-		if(!valueInvocationsInvocation["InvocationStatus"].isNull())
-			invocationsObject.invocationStatus = valueInvocationsInvocation["InvocationStatus"].asString();
-		if(!valueInvocationsInvocation["ContentType"].isNull())
-			invocationsObject.contentType = valueInvocationsInvocation["ContentType"].asString();
-		if(!valueInvocationsInvocation["TargetDir"].isNull())
-			invocationsObject.targetDir = valueInvocationsInvocation["TargetDir"].asString();
-		if(!valueInvocationsInvocation["FileOwner"].isNull())
-			invocationsObject.fileOwner = valueInvocationsInvocation["FileOwner"].asString();
-		if(!valueInvocationsInvocation["Description"].isNull())
-			invocationsObject.description = valueInvocationsInvocation["Description"].asString();
-		if(!valueInvocationsInvocation["VmCount"].isNull())
-			invocationsObject.vmCount = std::stoi(valueInvocationsInvocation["VmCount"].asString());
-		if(!valueInvocationsInvocation["FileMode"].isNull())
-			invocationsObject.fileMode = valueInvocationsInvocation["FileMode"].asString();
-		if(!valueInvocationsInvocation["FileGroup"].isNull())
-			invocationsObject.fileGroup = valueInvocationsInvocation["FileGroup"].asString();
 		if(!valueInvocationsInvocation["InvokeId"].isNull())
 			invocationsObject.invokeId = valueInvocationsInvocation["InvokeId"].asString();
 		if(!valueInvocationsInvocation["Name"].isNull())
 			invocationsObject.name = valueInvocationsInvocation["Name"].asString();
+		if(!valueInvocationsInvocation["Description"].isNull())
+			invocationsObject.description = valueInvocationsInvocation["Description"].asString();
+		if(!valueInvocationsInvocation["TargetDir"].isNull())
+			invocationsObject.targetDir = valueInvocationsInvocation["TargetDir"].asString();
+		if(!valueInvocationsInvocation["ContentType"].isNull())
+			invocationsObject.contentType = valueInvocationsInvocation["ContentType"].asString();
 		if(!valueInvocationsInvocation["Content"].isNull())
 			invocationsObject.content = valueInvocationsInvocation["Content"].asString();
+		if(!valueInvocationsInvocation["FileOwner"].isNull())
+			invocationsObject.fileOwner = valueInvocationsInvocation["FileOwner"].asString();
+		if(!valueInvocationsInvocation["FileGroup"].isNull())
+			invocationsObject.fileGroup = valueInvocationsInvocation["FileGroup"].asString();
+		if(!valueInvocationsInvocation["FileMode"].isNull())
+			invocationsObject.fileMode = valueInvocationsInvocation["FileMode"].asString();
 		if(!valueInvocationsInvocation["Overwrite"].isNull())
 			invocationsObject.overwrite = valueInvocationsInvocation["Overwrite"].asString();
+		if(!valueInvocationsInvocation["VmCount"].isNull())
+			invocationsObject.vmCount = std::stoi(valueInvocationsInvocation["VmCount"].asString());
+		if(!valueInvocationsInvocation["CreationTime"].isNull())
+			invocationsObject.creationTime = valueInvocationsInvocation["CreationTime"].asString();
+		if(!valueInvocationsInvocation["InvocationStatus"].isNull())
+			invocationsObject.invocationStatus = valueInvocationsInvocation["InvocationStatus"].asString();
 		auto allInvokeInstancesNode = valueInvocationsInvocation["InvokeInstances"]["InvokeInstance"];
 		for (auto valueInvocationsInvocationInvokeInstancesInvokeInstance : allInvokeInstancesNode)
 		{
 			Invocation::InvokeInstance invokeInstancesObject;
+			if(!valueInvocationsInvocationInvokeInstancesInvokeInstance["InstanceId"].isNull())
+				invokeInstancesObject.instanceId = valueInvocationsInvocationInvokeInstancesInvokeInstance["InstanceId"].asString();
+			if(!valueInvocationsInvocationInvokeInstancesInvokeInstance["InvocationStatus"].isNull())
+				invokeInstancesObject.invocationStatus = valueInvocationsInvocationInvokeInstancesInvokeInstance["InvocationStatus"].asString();
 			if(!valueInvocationsInvocationInvokeInstancesInvokeInstance["CreationTime"].isNull())
 				invokeInstancesObject.creationTime = valueInvocationsInvocationInvokeInstancesInvokeInstance["CreationTime"].asString();
 			if(!valueInvocationsInvocationInvokeInstancesInvokeInstance["StartTime"].isNull())
 				invokeInstancesObject.startTime = valueInvocationsInvocationInvokeInstancesInvokeInstance["StartTime"].asString();
-			if(!valueInvocationsInvocationInvokeInstancesInvokeInstance["InvocationStatus"].isNull())
-				invokeInstancesObject.invocationStatus = valueInvocationsInvocationInvokeInstancesInvokeInstance["InvocationStatus"].asString();
 			if(!valueInvocationsInvocationInvokeInstancesInvokeInstance["FinishTime"].isNull())
 				invokeInstancesObject.finishTime = valueInvocationsInvocationInvokeInstancesInvokeInstance["FinishTime"].asString();
 			if(!valueInvocationsInvocationInvokeInstancesInvokeInstance["UpdateTime"].isNull())
 				invokeInstancesObject.updateTime = valueInvocationsInvocationInvokeInstancesInvokeInstance["UpdateTime"].asString();
-			if(!valueInvocationsInvocationInvokeInstancesInvokeInstance["ErrorInfo"].isNull())
-				invokeInstancesObject.errorInfo = valueInvocationsInvocationInvokeInstancesInvokeInstance["ErrorInfo"].asString();
 			if(!valueInvocationsInvocationInvokeInstancesInvokeInstance["ErrorCode"].isNull())
 				invokeInstancesObject.errorCode = valueInvocationsInvocationInvokeInstancesInvokeInstance["ErrorCode"].asString();
-			if(!valueInvocationsInvocationInvokeInstancesInvokeInstance["InstanceId"].isNull())
-				invokeInstancesObject.instanceId = valueInvocationsInvocationInvokeInstancesInvokeInstance["InstanceId"].asString();
+			if(!valueInvocationsInvocationInvokeInstancesInvokeInstance["ErrorInfo"].isNull())
+				invokeInstancesObject.errorInfo = valueInvocationsInvocationInvokeInstancesInvokeInstance["ErrorInfo"].asString();
 			invocationsObject.invokeInstances.push_back(invokeInstancesObject);
 		}
 		invocations_.push_back(invocationsObject);
 	}
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stol(value["PageSize"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stol(value["PageNumber"].asString());
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stol(value["TotalCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stol(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stol(value["PageSize"].asString());
 
 }
 

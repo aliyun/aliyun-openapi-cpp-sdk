@@ -43,32 +43,32 @@ void DescribeAutoProvisioningGroupHistoryResult::parse(const std::string &payloa
 	for (auto valueAutoProvisioningGroupHistoriesAutoProvisioningGroupHistory : allAutoProvisioningGroupHistoriesNode)
 	{
 		AutoProvisioningGroupHistory autoProvisioningGroupHistoriesObject;
-		if(!valueAutoProvisioningGroupHistoriesAutoProvisioningGroupHistory["Status"].isNull())
-			autoProvisioningGroupHistoriesObject.status = valueAutoProvisioningGroupHistoriesAutoProvisioningGroupHistory["Status"].asString();
-		if(!valueAutoProvisioningGroupHistoriesAutoProvisioningGroupHistory["StartTime"].isNull())
-			autoProvisioningGroupHistoriesObject.startTime = valueAutoProvisioningGroupHistoriesAutoProvisioningGroupHistory["StartTime"].asString();
 		if(!valueAutoProvisioningGroupHistoriesAutoProvisioningGroupHistory["TaskId"].isNull())
 			autoProvisioningGroupHistoriesObject.taskId = valueAutoProvisioningGroupHistoriesAutoProvisioningGroupHistory["TaskId"].asString();
+		if(!valueAutoProvisioningGroupHistoriesAutoProvisioningGroupHistory["Status"].isNull())
+			autoProvisioningGroupHistoriesObject.status = valueAutoProvisioningGroupHistoriesAutoProvisioningGroupHistory["Status"].asString();
 		if(!valueAutoProvisioningGroupHistoriesAutoProvisioningGroupHistory["LastEventTime"].isNull())
 			autoProvisioningGroupHistoriesObject.lastEventTime = valueAutoProvisioningGroupHistoriesAutoProvisioningGroupHistory["LastEventTime"].asString();
+		if(!valueAutoProvisioningGroupHistoriesAutoProvisioningGroupHistory["StartTime"].isNull())
+			autoProvisioningGroupHistoriesObject.startTime = valueAutoProvisioningGroupHistoriesAutoProvisioningGroupHistory["StartTime"].asString();
 		auto allActivityDetailsNode = valueAutoProvisioningGroupHistoriesAutoProvisioningGroupHistory["ActivityDetails"]["ActivityDetail"];
 		for (auto valueAutoProvisioningGroupHistoriesAutoProvisioningGroupHistoryActivityDetailsActivityDetail : allActivityDetailsNode)
 		{
 			AutoProvisioningGroupHistory::ActivityDetail activityDetailsObject;
-			if(!valueAutoProvisioningGroupHistoriesAutoProvisioningGroupHistoryActivityDetailsActivityDetail["Status"].isNull())
-				activityDetailsObject.status = valueAutoProvisioningGroupHistoriesAutoProvisioningGroupHistoryActivityDetailsActivityDetail["Status"].asString();
 			if(!valueAutoProvisioningGroupHistoriesAutoProvisioningGroupHistoryActivityDetailsActivityDetail["Detail"].isNull())
 				activityDetailsObject.detail = valueAutoProvisioningGroupHistoriesAutoProvisioningGroupHistoryActivityDetailsActivityDetail["Detail"].asString();
+			if(!valueAutoProvisioningGroupHistoriesAutoProvisioningGroupHistoryActivityDetailsActivityDetail["Status"].isNull())
+				activityDetailsObject.status = valueAutoProvisioningGroupHistoriesAutoProvisioningGroupHistoryActivityDetailsActivityDetail["Status"].asString();
 			autoProvisioningGroupHistoriesObject.activityDetails.push_back(activityDetailsObject);
 		}
 		autoProvisioningGroupHistories_.push_back(autoProvisioningGroupHistoriesObject);
 	}
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 
 }
 

@@ -67,6 +67,10 @@ void DescribeElasticityAssurancesResult::parse(const std::string &payload)
 			elasticityAssuranceSetObject.resourceGroupId = valueElasticityAssuranceSetElasticityAssuranceItem["ResourceGroupId"].asString();
 		if(!valueElasticityAssuranceSetElasticityAssuranceItem["TotalAssuranceTimes"].isNull())
 			elasticityAssuranceSetObject.totalAssuranceTimes = valueElasticityAssuranceSetElasticityAssuranceItem["TotalAssuranceTimes"].asString();
+		if(!valueElasticityAssuranceSetElasticityAssuranceItem["InstanceChargeType"].isNull())
+			elasticityAssuranceSetObject.instanceChargeType = valueElasticityAssuranceSetElasticityAssuranceItem["InstanceChargeType"].asString();
+		if(!valueElasticityAssuranceSetElasticityAssuranceItem["StartTimeType"].isNull())
+			elasticityAssuranceSetObject.startTimeType = valueElasticityAssuranceSetElasticityAssuranceItem["StartTimeType"].asString();
 		auto allAllocatedResourcesNode = valueElasticityAssuranceSetElasticityAssuranceItem["AllocatedResources"]["AllocatedResource"];
 		for (auto valueElasticityAssuranceSetElasticityAssuranceItemAllocatedResourcesAllocatedResource : allAllocatedResourcesNode)
 		{

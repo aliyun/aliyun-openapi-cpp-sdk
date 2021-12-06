@@ -43,32 +43,32 @@ void DescribeKeyPairsResult::parse(const std::string &payload)
 	for (auto valueKeyPairsKeyPair : allKeyPairsNode)
 	{
 		KeyPair keyPairsObject;
-		if(!valueKeyPairsKeyPair["CreationTime"].isNull())
-			keyPairsObject.creationTime = valueKeyPairsKeyPair["CreationTime"].asString();
 		if(!valueKeyPairsKeyPair["KeyPairName"].isNull())
 			keyPairsObject.keyPairName = valueKeyPairsKeyPair["KeyPairName"].asString();
 		if(!valueKeyPairsKeyPair["KeyPairFingerPrint"].isNull())
 			keyPairsObject.keyPairFingerPrint = valueKeyPairsKeyPair["KeyPairFingerPrint"].asString();
+		if(!valueKeyPairsKeyPair["CreationTime"].isNull())
+			keyPairsObject.creationTime = valueKeyPairsKeyPair["CreationTime"].asString();
 		if(!valueKeyPairsKeyPair["ResourceGroupId"].isNull())
 			keyPairsObject.resourceGroupId = valueKeyPairsKeyPair["ResourceGroupId"].asString();
 		auto allTagsNode = valueKeyPairsKeyPair["Tags"]["Tag"];
 		for (auto valueKeyPairsKeyPairTagsTag : allTagsNode)
 		{
 			KeyPair::Tag tagsObject;
-			if(!valueKeyPairsKeyPairTagsTag["TagValue"].isNull())
-				tagsObject.tagValue = valueKeyPairsKeyPairTagsTag["TagValue"].asString();
 			if(!valueKeyPairsKeyPairTagsTag["TagKey"].isNull())
 				tagsObject.tagKey = valueKeyPairsKeyPairTagsTag["TagKey"].asString();
+			if(!valueKeyPairsKeyPairTagsTag["TagValue"].isNull())
+				tagsObject.tagValue = valueKeyPairsKeyPairTagsTag["TagValue"].asString();
 			keyPairsObject.tags.push_back(tagsObject);
 		}
 		keyPairs_.push_back(keyPairsObject);
 	}
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 
 }
 

@@ -53,13 +53,13 @@ namespace AlibabaCloud
 				std::string getTaskId()const;
 				std::string getTaskProcess()const;
 				std::vector<OperationProgress> getOperationProgressSet()const;
-				std::string getSupportCancel()const;
 				std::string getTaskAction()const;
+				std::string getSupportCancel()const;
 				std::string getCreationTime()const;
 				int getFailedCount()const;
 				std::string getRegionId()const;
-				int getSuccessCount()const;
 				std::string getTaskStatus()const;
+				int getSuccessCount()const;
 				std::string getFinishedTime()const;
 
 			protected:
@@ -69,13 +69,13 @@ namespace AlibabaCloud
 				std::string taskId_;
 				std::string taskProcess_;
 				std::vector<OperationProgress> operationProgressSet_;
-				std::string supportCancel_;
 				std::string taskAction_;
+				std::string supportCancel_;
 				std::string creationTime_;
 				int failedCount_;
 				std::string regionId_;
-				int successCount_;
 				std::string taskStatus_;
+				int successCount_;
 				std::string finishedTime_;
 
 			};

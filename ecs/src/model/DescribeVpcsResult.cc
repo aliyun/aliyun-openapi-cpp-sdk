@@ -43,24 +43,24 @@ void DescribeVpcsResult::parse(const std::string &payload)
 	for (auto valueVpcsVpc : allVpcsNode)
 	{
 		Vpc vpcsObject;
-		if(!valueVpcsVpc["CreationTime"].isNull())
-			vpcsObject.creationTime = valueVpcsVpc["CreationTime"].asString();
-		if(!valueVpcsVpc["VpcName"].isNull())
-			vpcsObject.vpcName = valueVpcsVpc["VpcName"].asString();
-		if(!valueVpcsVpc["Status"].isNull())
-			vpcsObject.status = valueVpcsVpc["Status"].asString();
 		if(!valueVpcsVpc["VpcId"].isNull())
 			vpcsObject.vpcId = valueVpcsVpc["VpcId"].asString();
-		if(!valueVpcsVpc["VRouterId"].isNull())
-			vpcsObject.vRouterId = valueVpcsVpc["VRouterId"].asString();
-		if(!valueVpcsVpc["IsDefault"].isNull())
-			vpcsObject.isDefault = valueVpcsVpc["IsDefault"].asString() == "true";
-		if(!valueVpcsVpc["CidrBlock"].isNull())
-			vpcsObject.cidrBlock = valueVpcsVpc["CidrBlock"].asString();
-		if(!valueVpcsVpc["Description"].isNull())
-			vpcsObject.description = valueVpcsVpc["Description"].asString();
 		if(!valueVpcsVpc["RegionId"].isNull())
 			vpcsObject.regionId = valueVpcsVpc["RegionId"].asString();
+		if(!valueVpcsVpc["Status"].isNull())
+			vpcsObject.status = valueVpcsVpc["Status"].asString();
+		if(!valueVpcsVpc["VpcName"].isNull())
+			vpcsObject.vpcName = valueVpcsVpc["VpcName"].asString();
+		if(!valueVpcsVpc["CreationTime"].isNull())
+			vpcsObject.creationTime = valueVpcsVpc["CreationTime"].asString();
+		if(!valueVpcsVpc["CidrBlock"].isNull())
+			vpcsObject.cidrBlock = valueVpcsVpc["CidrBlock"].asString();
+		if(!valueVpcsVpc["VRouterId"].isNull())
+			vpcsObject.vRouterId = valueVpcsVpc["VRouterId"].asString();
+		if(!valueVpcsVpc["Description"].isNull())
+			vpcsObject.description = valueVpcsVpc["Description"].asString();
+		if(!valueVpcsVpc["IsDefault"].isNull())
+			vpcsObject.isDefault = valueVpcsVpc["IsDefault"].asString() == "true";
 		auto allVSwitchIds = value["VSwitchIds"]["VSwitchId"];
 		for (auto value : allVSwitchIds)
 			vpcsObject.vSwitchIds.push_back(value.asString());
@@ -69,12 +69,12 @@ void DescribeVpcsResult::parse(const std::string &payload)
 			vpcsObject.userCidrs.push_back(value.asString());
 		vpcs_.push_back(vpcsObject);
 	}
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 
 }
 

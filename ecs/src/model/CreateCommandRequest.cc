@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,118 +18,144 @@
 
 using AlibabaCloud::Ecs::Model::CreateCommandRequest;
 
-CreateCommandRequest::CreateCommandRequest()
-    : RpcServiceRequest("ecs", "2014-05-26", "CreateCommand") {
-  setMethod(HttpRequest::Method::Post);
+CreateCommandRequest::CreateCommandRequest() :
+	RpcServiceRequest("ecs", "2014-05-26", "CreateCommand")
+{
+	setMethod(HttpRequest::Method::Post);
 }
 
-CreateCommandRequest::~CreateCommandRequest() {}
+CreateCommandRequest::~CreateCommandRequest()
+{}
 
-long CreateCommandRequest::getResourceOwnerId() const {
-  return resourceOwnerId_;
+long CreateCommandRequest::getResourceOwnerId()const
+{
+	return resourceOwnerId_;
 }
 
-void CreateCommandRequest::setResourceOwnerId(long resourceOwnerId) {
-  resourceOwnerId_ = resourceOwnerId;
-  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
+void CreateCommandRequest::setResourceOwnerId(long resourceOwnerId)
+{
+	resourceOwnerId_ = resourceOwnerId;
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string CreateCommandRequest::getWorkingDir() const {
-  return workingDir_;
+std::string CreateCommandRequest::getWorkingDir()const
+{
+	return workingDir_;
 }
 
-void CreateCommandRequest::setWorkingDir(const std::string &workingDir) {
-  workingDir_ = workingDir;
-  setParameter(std::string("WorkingDir"), workingDir);
+void CreateCommandRequest::setWorkingDir(const std::string& workingDir)
+{
+	workingDir_ = workingDir;
+	setParameter("WorkingDir", workingDir);
 }
 
-std::string CreateCommandRequest::getDescription() const {
-  return description_;
+std::string CreateCommandRequest::getDescription()const
+{
+	return description_;
 }
 
-void CreateCommandRequest::setDescription(const std::string &description) {
-  description_ = description;
-  setParameter(std::string("Description"), description);
+void CreateCommandRequest::setDescription(const std::string& description)
+{
+	description_ = description;
+	setParameter("Description", description);
 }
 
-std::string CreateCommandRequest::getType() const {
-  return type_;
+std::string CreateCommandRequest::getType()const
+{
+	return type_;
 }
 
-void CreateCommandRequest::setType(const std::string &type) {
-  type_ = type;
-  setParameter(std::string("Type"), type);
+void CreateCommandRequest::setType(const std::string& type)
+{
+	type_ = type;
+	setParameter("Type", type);
 }
 
-std::string CreateCommandRequest::getCommandContent() const {
-  return commandContent_;
+std::string CreateCommandRequest::getCommandContent()const
+{
+	return commandContent_;
 }
 
-void CreateCommandRequest::setCommandContent(const std::string &commandContent) {
-  commandContent_ = commandContent;
-  setParameter(std::string("CommandContent"), commandContent);
+void CreateCommandRequest::setCommandContent(const std::string& commandContent)
+{
+	commandContent_ = commandContent;
+	setParameter("CommandContent", commandContent);
 }
 
-long CreateCommandRequest::getTimeout() const {
-  return timeout_;
+long CreateCommandRequest::getTimeout()const
+{
+	return timeout_;
 }
 
-void CreateCommandRequest::setTimeout(long timeout) {
-  timeout_ = timeout;
-  setParameter(std::string("Timeout"), std::to_string(timeout));
+void CreateCommandRequest::setTimeout(long timeout)
+{
+	timeout_ = timeout;
+	setParameter("Timeout", std::to_string(timeout));
 }
 
-std::string CreateCommandRequest::getRegionId() const {
-  return regionId_;
+std::string CreateCommandRequest::getRegionId()const
+{
+	return regionId_;
 }
 
-void CreateCommandRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
+void CreateCommandRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
 }
 
-std::string CreateCommandRequest::getResourceOwnerAccount() const {
-  return resourceOwnerAccount_;
+std::string CreateCommandRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
 }
 
-void CreateCommandRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
-  resourceOwnerAccount_ = resourceOwnerAccount;
-  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+void CreateCommandRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string CreateCommandRequest::getOwnerAccount() const {
-  return ownerAccount_;
+std::string CreateCommandRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
 }
 
-void CreateCommandRequest::setOwnerAccount(const std::string &ownerAccount) {
-  ownerAccount_ = ownerAccount;
-  setParameter(std::string("OwnerAccount"), ownerAccount);
+void CreateCommandRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setParameter("OwnerAccount", ownerAccount);
 }
 
-long CreateCommandRequest::getOwnerId() const {
-  return ownerId_;
+long CreateCommandRequest::getOwnerId()const
+{
+	return ownerId_;
 }
 
-void CreateCommandRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
+void CreateCommandRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string CreateCommandRequest::getName() const {
-  return name_;
+std::string CreateCommandRequest::getName()const
+{
+	return name_;
 }
 
-void CreateCommandRequest::setName(const std::string &name) {
-  name_ = name;
-  setParameter(std::string("Name"), name);
+void CreateCommandRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setParameter("Name", name);
 }
 
-bool CreateCommandRequest::getEnableParameter() const {
-  return enableParameter_;
+bool CreateCommandRequest::getEnableParameter()const
+{
+	return enableParameter_;
 }
 
-void CreateCommandRequest::setEnableParameter(bool enableParameter) {
-  enableParameter_ = enableParameter;
-  setParameter(std::string("EnableParameter"), enableParameter ? "true" : "false");
+void CreateCommandRequest::setEnableParameter(bool enableParameter)
+{
+	enableParameter_ = enableParameter;
+	setParameter("EnableParameter", enableParameter ? "true" : "false");
 }
 

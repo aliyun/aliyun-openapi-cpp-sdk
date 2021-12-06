@@ -49,14 +49,14 @@ void DescribeSpotAdviceResult::parse(const std::string &payload)
 		for (auto valueAvailableSpotZonesAvailableSpotZoneAvailableSpotResourcesAvailableSpotResource : allAvailableSpotResourcesNode)
 		{
 			AvailableSpotZone::AvailableSpotResource availableSpotResourcesObject;
-			if(!valueAvailableSpotZonesAvailableSpotZoneAvailableSpotResourcesAvailableSpotResource["InterruptRateDesc"].isNull())
-				availableSpotResourcesObject.interruptRateDesc = valueAvailableSpotZonesAvailableSpotZoneAvailableSpotResourcesAvailableSpotResource["InterruptRateDesc"].asString();
-			if(!valueAvailableSpotZonesAvailableSpotZoneAvailableSpotResourcesAvailableSpotResource["AverageSpotDiscount"].isNull())
-				availableSpotResourcesObject.averageSpotDiscount = std::stoi(valueAvailableSpotZonesAvailableSpotZoneAvailableSpotResourcesAvailableSpotResource["AverageSpotDiscount"].asString());
 			if(!valueAvailableSpotZonesAvailableSpotZoneAvailableSpotResourcesAvailableSpotResource["InstanceType"].isNull())
 				availableSpotResourcesObject.instanceType = valueAvailableSpotZonesAvailableSpotZoneAvailableSpotResourcesAvailableSpotResource["InstanceType"].asString();
 			if(!valueAvailableSpotZonesAvailableSpotZoneAvailableSpotResourcesAvailableSpotResource["InterruptionRate"].isNull())
 				availableSpotResourcesObject.interruptionRate = std::stof(valueAvailableSpotZonesAvailableSpotZoneAvailableSpotResourcesAvailableSpotResource["InterruptionRate"].asString());
+			if(!valueAvailableSpotZonesAvailableSpotZoneAvailableSpotResourcesAvailableSpotResource["InterruptRateDesc"].isNull())
+				availableSpotResourcesObject.interruptRateDesc = valueAvailableSpotZonesAvailableSpotZoneAvailableSpotResourcesAvailableSpotResource["InterruptRateDesc"].asString();
+			if(!valueAvailableSpotZonesAvailableSpotZoneAvailableSpotResourcesAvailableSpotResource["AverageSpotDiscount"].isNull())
+				availableSpotResourcesObject.averageSpotDiscount = std::stoi(valueAvailableSpotZonesAvailableSpotZoneAvailableSpotResourcesAvailableSpotResource["AverageSpotDiscount"].asString());
 			availableSpotZonesObject.availableSpotResources.push_back(availableSpotResourcesObject);
 		}
 		availableSpotZones_.push_back(availableSpotZonesObject);

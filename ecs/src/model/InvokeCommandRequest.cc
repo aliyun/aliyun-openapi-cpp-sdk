@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,126 +18,157 @@
 
 using AlibabaCloud::Ecs::Model::InvokeCommandRequest;
 
-InvokeCommandRequest::InvokeCommandRequest()
-    : RpcServiceRequest("ecs", "2014-05-26", "InvokeCommand") {
-  setMethod(HttpRequest::Method::Post);
+InvokeCommandRequest::InvokeCommandRequest() :
+	RpcServiceRequest("ecs", "2014-05-26", "InvokeCommand")
+{
+	setMethod(HttpRequest::Method::Post);
 }
 
-InvokeCommandRequest::~InvokeCommandRequest() {}
+InvokeCommandRequest::~InvokeCommandRequest()
+{}
 
-long InvokeCommandRequest::getResourceOwnerId() const {
-  return resourceOwnerId_;
+long InvokeCommandRequest::getResourceOwnerId()const
+{
+	return resourceOwnerId_;
 }
 
-void InvokeCommandRequest::setResourceOwnerId(long resourceOwnerId) {
-  resourceOwnerId_ = resourceOwnerId;
-  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
+void InvokeCommandRequest::setResourceOwnerId(long resourceOwnerId)
+{
+	resourceOwnerId_ = resourceOwnerId;
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string InvokeCommandRequest::getCommandId() const {
-  return commandId_;
+std::string InvokeCommandRequest::getCommandId()const
+{
+	return commandId_;
 }
 
-void InvokeCommandRequest::setCommandId(const std::string &commandId) {
-  commandId_ = commandId;
-  setParameter(std::string("CommandId"), commandId);
+void InvokeCommandRequest::setCommandId(const std::string& commandId)
+{
+	commandId_ = commandId;
+	setParameter("CommandId", commandId);
 }
 
-std::string InvokeCommandRequest::getFrequency() const {
-  return frequency_;
+std::string InvokeCommandRequest::getFrequency()const
+{
+	return frequency_;
 }
 
-void InvokeCommandRequest::setFrequency(const std::string &frequency) {
-  frequency_ = frequency;
-  setParameter(std::string("Frequency"), frequency);
+void InvokeCommandRequest::setFrequency(const std::string& frequency)
+{
+	frequency_ = frequency;
+	setParameter("Frequency", frequency);
 }
 
-std::string InvokeCommandRequest::getRegionId() const {
-  return regionId_;
+std::string InvokeCommandRequest::getRegionId()const
+{
+	return regionId_;
 }
 
-void InvokeCommandRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
+void InvokeCommandRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
 }
 
-std::string InvokeCommandRequest::getRepeatMode() const {
-  return repeatMode_;
+std::string InvokeCommandRequest::getRepeatMode()const
+{
+	return repeatMode_;
 }
 
-void InvokeCommandRequest::setRepeatMode(const std::string &repeatMode) {
-  repeatMode_ = repeatMode;
-  setParameter(std::string("RepeatMode"), repeatMode);
+void InvokeCommandRequest::setRepeatMode(const std::string& repeatMode)
+{
+	repeatMode_ = repeatMode;
+	setParameter("RepeatMode", repeatMode);
 }
 
-std::string InvokeCommandRequest::getWindowsPasswordName() const {
-  return windowsPasswordName_;
+std::string InvokeCommandRequest::getWindowsPasswordName()const
+{
+	return windowsPasswordName_;
 }
 
-void InvokeCommandRequest::setWindowsPasswordName(const std::string &windowsPasswordName) {
-  windowsPasswordName_ = windowsPasswordName;
-  setParameter(std::string("WindowsPasswordName"), windowsPasswordName);
+void InvokeCommandRequest::setWindowsPasswordName(const std::string& windowsPasswordName)
+{
+	windowsPasswordName_ = windowsPasswordName;
+	setParameter("WindowsPasswordName", windowsPasswordName);
 }
 
-bool InvokeCommandRequest::getTimed() const {
-  return timed_;
+bool InvokeCommandRequest::getTimed()const
+{
+	return timed_;
 }
 
-void InvokeCommandRequest::setTimed(bool timed) {
-  timed_ = timed;
-  setParameter(std::string("Timed"), timed ? "true" : "false");
+void InvokeCommandRequest::setTimed(bool timed)
+{
+	timed_ = timed;
+	setParameter("Timed", timed ? "true" : "false");
 }
 
-std::string InvokeCommandRequest::getResourceOwnerAccount() const {
-  return resourceOwnerAccount_;
+std::string InvokeCommandRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
 }
 
-void InvokeCommandRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
-  resourceOwnerAccount_ = resourceOwnerAccount;
-  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+void InvokeCommandRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string InvokeCommandRequest::getOwnerAccount() const {
-  return ownerAccount_;
+std::string InvokeCommandRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
 }
 
-void InvokeCommandRequest::setOwnerAccount(const std::string &ownerAccount) {
-  ownerAccount_ = ownerAccount;
-  setParameter(std::string("OwnerAccount"), ownerAccount);
+void InvokeCommandRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setParameter("OwnerAccount", ownerAccount);
 }
 
-long InvokeCommandRequest::getOwnerId() const {
-  return ownerId_;
+long InvokeCommandRequest::getOwnerId()const
+{
+	return ownerId_;
 }
 
-void InvokeCommandRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
+void InvokeCommandRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::vector<std::string> InvokeCommandRequest::getInstanceId() const {
-  return instanceId_;
+std::vector<std::string> InvokeCommandRequest::getInstanceId()const
+{
+	return instanceId_;
 }
 
-void InvokeCommandRequest::setInstanceId(const std::vector<std::string> &instanceId) {
-  instanceId_ = instanceId;
+void InvokeCommandRequest::setInstanceId(const std::vector<std::string>& instanceId)
+{
+	instanceId_ = instanceId;
+	for(int dep1 = 0; dep1!= instanceId.size(); dep1++) {
+		setParameter("InstanceId."+ std::to_string(dep1), instanceId.at(dep1));
+	}
 }
 
-std::map<std::string, std::string> InvokeCommandRequest::getParameters() const {
-  return parameters_;
+std::map<std::string, std::string> InvokeCommandRequest::getParameters()const
+{
+	return parameters_;
 }
 
-void InvokeCommandRequest::setParameters(std::map<std::string, std::string> parameters) {
-  parameters_ = parameters;
-  setParameter(std::string("Parameters"), parameters);
+void InvokeCommandRequest::setParameters(const std::map<std::string, std::string>& parameters)
+{
+	parameters_ = parameters;
+	setJsonParameters("Parameters", parameters);
 }
 
-std::string InvokeCommandRequest::getUsername() const {
-  return username_;
+std::string InvokeCommandRequest::getUsername()const
+{
+	return username_;
 }
 
-void InvokeCommandRequest::setUsername(const std::string &username) {
-  username_ = username;
-  setParameter(std::string("Username"), username);
+void InvokeCommandRequest::setUsername(const std::string& username)
+{
+	username_ = username;
+	setParameter("Username", username);
 }
 

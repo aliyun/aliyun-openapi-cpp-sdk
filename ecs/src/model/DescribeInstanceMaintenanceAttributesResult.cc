@@ -43,36 +43,36 @@ void DescribeInstanceMaintenanceAttributesResult::parse(const std::string &paylo
 	for (auto valueMaintenanceAttributesMaintenanceAttribute : allMaintenanceAttributesNode)
 	{
 		MaintenanceAttribute maintenanceAttributesObject;
-		if(!valueMaintenanceAttributesMaintenanceAttribute["NotifyOnMaintenance"].isNull())
-			maintenanceAttributesObject.notifyOnMaintenance = valueMaintenanceAttributesMaintenanceAttribute["NotifyOnMaintenance"].asString() == "true";
 		if(!valueMaintenanceAttributesMaintenanceAttribute["InstanceId"].isNull())
 			maintenanceAttributesObject.instanceId = valueMaintenanceAttributesMaintenanceAttribute["InstanceId"].asString();
+		if(!valueMaintenanceAttributesMaintenanceAttribute["NotifyOnMaintenance"].isNull())
+			maintenanceAttributesObject.notifyOnMaintenance = valueMaintenanceAttributesMaintenanceAttribute["NotifyOnMaintenance"].asString() == "true";
 		auto allMaintenanceWindowsNode = valueMaintenanceAttributesMaintenanceAttribute["MaintenanceWindows"]["MaintenanceWindow"];
 		for (auto valueMaintenanceAttributesMaintenanceAttributeMaintenanceWindowsMaintenanceWindow : allMaintenanceWindowsNode)
 		{
 			MaintenanceAttribute::MaintenanceWindow maintenanceWindowsObject;
-			if(!valueMaintenanceAttributesMaintenanceAttributeMaintenanceWindowsMaintenanceWindow["EndTime"].isNull())
-				maintenanceWindowsObject.endTime = valueMaintenanceAttributesMaintenanceAttributeMaintenanceWindowsMaintenanceWindow["EndTime"].asString();
 			if(!valueMaintenanceAttributesMaintenanceAttributeMaintenanceWindowsMaintenanceWindow["StartTime"].isNull())
 				maintenanceWindowsObject.startTime = valueMaintenanceAttributesMaintenanceAttributeMaintenanceWindowsMaintenanceWindow["StartTime"].asString();
+			if(!valueMaintenanceAttributesMaintenanceAttributeMaintenanceWindowsMaintenanceWindow["EndTime"].isNull())
+				maintenanceWindowsObject.endTime = valueMaintenanceAttributesMaintenanceAttributeMaintenanceWindowsMaintenanceWindow["EndTime"].asString();
 			maintenanceAttributesObject.maintenanceWindows.push_back(maintenanceWindowsObject);
 		}
 		auto actionOnMaintenanceNode = value["ActionOnMaintenance"];
-		if(!actionOnMaintenanceNode["DefaultValue"].isNull())
-			maintenanceAttributesObject.actionOnMaintenance.defaultValue = actionOnMaintenanceNode["DefaultValue"].asString();
 		if(!actionOnMaintenanceNode["Value"].isNull())
 			maintenanceAttributesObject.actionOnMaintenance.value = actionOnMaintenanceNode["Value"].asString();
+		if(!actionOnMaintenanceNode["DefaultValue"].isNull())
+			maintenanceAttributesObject.actionOnMaintenance.defaultValue = actionOnMaintenanceNode["DefaultValue"].asString();
 			auto allSupportedValues = actionOnMaintenanceNode["SupportedValues"]["SupportedValue"];
 			for (auto value : allSupportedValues)
 				maintenanceAttributesObject.actionOnMaintenance.supportedValues.push_back(value.asString());
 		maintenanceAttributes_.push_back(maintenanceAttributesObject);
 	}
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 
 }
 

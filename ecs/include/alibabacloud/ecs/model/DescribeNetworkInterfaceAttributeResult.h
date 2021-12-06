@@ -44,6 +44,23 @@ namespace AlibabaCloud
 					std::vector<std::string> memberNetworkInterfaceIds;
 					std::string trunkNetworkInterfaceId;
 				};
+				struct BondInterfaceSpecification
+				{
+					struct SlaveInterfaceSpecificationSet
+					{
+						std::string bondNetworkInterfaceId;
+						std::string workState;
+						std::string slaveNetworkInterfaceId;
+					};
+					std::vector<SlaveInterfaceSpecificationSet> slaveInterfaceSpecification2;
+					std::string bondMode;
+				};
+				struct SlaveInterfaceSpecification
+				{
+					std::string bondNetworkInterfaceId;
+					std::string workState;
+					std::string slaveNetworkInterfaceId;
+				};
 				struct PrivateIpSet
 				{
 					struct AssociatedPublicIp1
@@ -81,6 +98,7 @@ namespace AlibabaCloud
 				std::vector<Tag> getTags()const;
 				std::string getStatus()const;
 				std::string getNetworkInterfaceTrafficMode()const;
+				SlaveInterfaceSpecification getSlaveInterfaceSpecification()const;
 				std::string getZoneId()const;
 				std::string getInstanceId()const;
 				std::string getVSwitchId()const;
@@ -92,6 +110,7 @@ namespace AlibabaCloud
 				int getQueuePairNumber()const;
 				int getQueueNumber()const;
 				std::string getVpcId()const;
+				BondInterfaceSpecification getBondInterfaceSpecification()const;
 				std::string getCreationTime()const;
 				std::vector<PrivateIpSet> getPrivateIpSets()const;
 
@@ -110,6 +129,7 @@ namespace AlibabaCloud
 				std::vector<Tag> tags_;
 				std::string status_;
 				std::string networkInterfaceTrafficMode_;
+				SlaveInterfaceSpecification slaveInterfaceSpecification_;
 				std::string zoneId_;
 				std::string instanceId_;
 				std::string vSwitchId_;
@@ -121,6 +141,7 @@ namespace AlibabaCloud
 				int queuePairNumber_;
 				int queueNumber_;
 				std::string vpcId_;
+				BondInterfaceSpecification bondInterfaceSpecification_;
 				std::string creationTime_;
 				std::vector<PrivateIpSet> privateIpSets_;
 

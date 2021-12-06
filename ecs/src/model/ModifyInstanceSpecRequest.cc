@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,145 +18,177 @@
 
 using AlibabaCloud::Ecs::Model::ModifyInstanceSpecRequest;
 
-ModifyInstanceSpecRequest::ModifyInstanceSpecRequest()
-    : RpcServiceRequest("ecs", "2014-05-26", "ModifyInstanceSpec") {
-  setMethod(HttpRequest::Method::Post);
+ModifyInstanceSpecRequest::ModifyInstanceSpecRequest() :
+	RpcServiceRequest("ecs", "2014-05-26", "ModifyInstanceSpec")
+{
+	setMethod(HttpRequest::Method::Post);
 }
 
-ModifyInstanceSpecRequest::~ModifyInstanceSpecRequest() {}
+ModifyInstanceSpecRequest::~ModifyInstanceSpecRequest()
+{}
 
-long ModifyInstanceSpecRequest::getResourceOwnerId() const {
-  return resourceOwnerId_;
+long ModifyInstanceSpecRequest::getResourceOwnerId()const
+{
+	return resourceOwnerId_;
 }
 
-void ModifyInstanceSpecRequest::setResourceOwnerId(long resourceOwnerId) {
-  resourceOwnerId_ = resourceOwnerId;
-  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
+void ModifyInstanceSpecRequest::setResourceOwnerId(long resourceOwnerId)
+{
+	resourceOwnerId_ = resourceOwnerId;
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string ModifyInstanceSpecRequest::getClientToken() const {
-  return clientToken_;
+std::string ModifyInstanceSpecRequest::getClientToken()const
+{
+	return clientToken_;
 }
 
-void ModifyInstanceSpecRequest::setClientToken(const std::string &clientToken) {
-  clientToken_ = clientToken;
-  setParameter(std::string("ClientToken"), clientToken);
+void ModifyInstanceSpecRequest::setClientToken(const std::string& clientToken)
+{
+	clientToken_ = clientToken;
+	setParameter("ClientToken", clientToken);
 }
 
-bool ModifyInstanceSpecRequest::getAllowMigrateAcrossZone() const {
-  return allowMigrateAcrossZone_;
+bool ModifyInstanceSpecRequest::getAllowMigrateAcrossZone()const
+{
+	return allowMigrateAcrossZone_;
 }
 
-void ModifyInstanceSpecRequest::setAllowMigrateAcrossZone(bool allowMigrateAcrossZone) {
-  allowMigrateAcrossZone_ = allowMigrateAcrossZone;
-  setParameter(std::string("AllowMigrateAcrossZone"), allowMigrateAcrossZone ? "true" : "false");
+void ModifyInstanceSpecRequest::setAllowMigrateAcrossZone(bool allowMigrateAcrossZone)
+{
+	allowMigrateAcrossZone_ = allowMigrateAcrossZone;
+	setParameter("AllowMigrateAcrossZone", allowMigrateAcrossZone ? "true" : "false");
 }
 
-int ModifyInstanceSpecRequest::getInternetMaxBandwidthOut() const {
-  return internetMaxBandwidthOut_;
+int ModifyInstanceSpecRequest::getInternetMaxBandwidthOut()const
+{
+	return internetMaxBandwidthOut_;
 }
 
-void ModifyInstanceSpecRequest::setInternetMaxBandwidthOut(int internetMaxBandwidthOut) {
-  internetMaxBandwidthOut_ = internetMaxBandwidthOut;
-  setParameter(std::string("InternetMaxBandwidthOut"), std::to_string(internetMaxBandwidthOut));
+void ModifyInstanceSpecRequest::setInternetMaxBandwidthOut(int internetMaxBandwidthOut)
+{
+	internetMaxBandwidthOut_ = internetMaxBandwidthOut;
+	setParameter("InternetMaxBandwidthOut", std::to_string(internetMaxBandwidthOut));
 }
 
-std::string ModifyInstanceSpecRequest::getSystemDiskCategory() const {
-  return systemDiskCategory_;
+std::string ModifyInstanceSpecRequest::getSystemDiskCategory()const
+{
+	return systemDiskCategory_;
 }
 
-void ModifyInstanceSpecRequest::setSystemDiskCategory(const std::string &systemDiskCategory) {
-  systemDiskCategory_ = systemDiskCategory;
-  setParameter(std::string("SystemDisk.Category"), systemDiskCategory);
+void ModifyInstanceSpecRequest::setSystemDiskCategory(const std::string& systemDiskCategory)
+{
+	systemDiskCategory_ = systemDiskCategory;
+	setParameter("SystemDiskCategory", systemDiskCategory);
 }
 
-std::string ModifyInstanceSpecRequest::getInstanceType() const {
-  return instanceType_;
+std::string ModifyInstanceSpecRequest::getInstanceType()const
+{
+	return instanceType_;
 }
 
-void ModifyInstanceSpecRequest::setInstanceType(const std::string &instanceType) {
-  instanceType_ = instanceType;
-  setParameter(std::string("InstanceType"), instanceType);
+void ModifyInstanceSpecRequest::setInstanceType(const std::string& instanceType)
+{
+	instanceType_ = instanceType;
+	setParameter("InstanceType", instanceType);
 }
 
-std::string ModifyInstanceSpecRequest::getTemporaryEndTime() const {
-  return temporaryEndTime_;
+std::string ModifyInstanceSpecRequest::getTemporaryEndTime()const
+{
+	return temporaryEndTime_;
 }
 
-void ModifyInstanceSpecRequest::setTemporaryEndTime(const std::string &temporaryEndTime) {
-  temporaryEndTime_ = temporaryEndTime;
-  setParameter(std::string("Temporary.EndTime"), temporaryEndTime);
+void ModifyInstanceSpecRequest::setTemporaryEndTime(const std::string& temporaryEndTime)
+{
+	temporaryEndTime_ = temporaryEndTime;
+	setParameter("TemporaryEndTime", temporaryEndTime);
 }
 
-std::string ModifyInstanceSpecRequest::getResourceOwnerAccount() const {
-  return resourceOwnerAccount_;
+std::string ModifyInstanceSpecRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
 }
 
-void ModifyInstanceSpecRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
-  resourceOwnerAccount_ = resourceOwnerAccount;
-  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+void ModifyInstanceSpecRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string ModifyInstanceSpecRequest::getOwnerAccount() const {
-  return ownerAccount_;
+std::string ModifyInstanceSpecRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
 }
 
-void ModifyInstanceSpecRequest::setOwnerAccount(const std::string &ownerAccount) {
-  ownerAccount_ = ownerAccount;
-  setParameter(std::string("OwnerAccount"), ownerAccount);
+void ModifyInstanceSpecRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setParameter("OwnerAccount", ownerAccount);
 }
 
-long ModifyInstanceSpecRequest::getOwnerId() const {
-  return ownerId_;
+long ModifyInstanceSpecRequest::getOwnerId()const
+{
+	return ownerId_;
 }
 
-void ModifyInstanceSpecRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
+void ModifyInstanceSpecRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-int ModifyInstanceSpecRequest::getTemporaryInternetMaxBandwidthOut() const {
-  return temporaryInternetMaxBandwidthOut_;
+int ModifyInstanceSpecRequest::getTemporaryInternetMaxBandwidthOut()const
+{
+	return temporaryInternetMaxBandwidthOut_;
 }
 
-void ModifyInstanceSpecRequest::setTemporaryInternetMaxBandwidthOut(int temporaryInternetMaxBandwidthOut) {
-  temporaryInternetMaxBandwidthOut_ = temporaryInternetMaxBandwidthOut;
-  setParameter(std::string("Temporary.InternetMaxBandwidthOut"), std::to_string(temporaryInternetMaxBandwidthOut));
+void ModifyInstanceSpecRequest::setTemporaryInternetMaxBandwidthOut(int temporaryInternetMaxBandwidthOut)
+{
+	temporaryInternetMaxBandwidthOut_ = temporaryInternetMaxBandwidthOut;
+	setParameter("TemporaryInternetMaxBandwidthOut", std::to_string(temporaryInternetMaxBandwidthOut));
 }
 
-std::string ModifyInstanceSpecRequest::getTemporaryStartTime() const {
-  return temporaryStartTime_;
+std::string ModifyInstanceSpecRequest::getTemporaryStartTime()const
+{
+	return temporaryStartTime_;
 }
 
-void ModifyInstanceSpecRequest::setTemporaryStartTime(const std::string &temporaryStartTime) {
-  temporaryStartTime_ = temporaryStartTime;
-  setParameter(std::string("Temporary.StartTime"), temporaryStartTime);
+void ModifyInstanceSpecRequest::setTemporaryStartTime(const std::string& temporaryStartTime)
+{
+	temporaryStartTime_ = temporaryStartTime;
+	setParameter("TemporaryStartTime", temporaryStartTime);
 }
 
-bool ModifyInstanceSpecRequest::getAsync() const {
-  return async_;
+bool ModifyInstanceSpecRequest::getAsync()const
+{
+	return async_;
 }
 
-void ModifyInstanceSpecRequest::setAsync(bool async) {
-  async_ = async;
-  setParameter(std::string("Async"), async ? "true" : "false");
+void ModifyInstanceSpecRequest::setAsync(bool async)
+{
+	async_ = async;
+	setParameter("Async", async ? "true" : "false");
 }
 
-std::string ModifyInstanceSpecRequest::getInstanceId() const {
-  return instanceId_;
+std::string ModifyInstanceSpecRequest::getInstanceId()const
+{
+	return instanceId_;
 }
 
-void ModifyInstanceSpecRequest::setInstanceId(const std::string &instanceId) {
-  instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), instanceId);
+void ModifyInstanceSpecRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setParameter("InstanceId", instanceId);
 }
 
-int ModifyInstanceSpecRequest::getInternetMaxBandwidthIn() const {
-  return internetMaxBandwidthIn_;
+int ModifyInstanceSpecRequest::getInternetMaxBandwidthIn()const
+{
+	return internetMaxBandwidthIn_;
 }
 
-void ModifyInstanceSpecRequest::setInternetMaxBandwidthIn(int internetMaxBandwidthIn) {
-  internetMaxBandwidthIn_ = internetMaxBandwidthIn;
-  setParameter(std::string("InternetMaxBandwidthIn"), std::to_string(internetMaxBandwidthIn));
+void ModifyInstanceSpecRequest::setInternetMaxBandwidthIn(int internetMaxBandwidthIn)
+{
+	internetMaxBandwidthIn_ = internetMaxBandwidthIn;
+	setParameter("InternetMaxBandwidthIn", std::to_string(internetMaxBandwidthIn));
 }
 

@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,73 +18,89 @@
 
 using AlibabaCloud::Ecs::Model::DescribeSnapshotPackageRequest;
 
-DescribeSnapshotPackageRequest::DescribeSnapshotPackageRequest()
-    : RpcServiceRequest("ecs", "2014-05-26", "DescribeSnapshotPackage") {
-  setMethod(HttpRequest::Method::Post);
+DescribeSnapshotPackageRequest::DescribeSnapshotPackageRequest() :
+	RpcServiceRequest("ecs", "2014-05-26", "DescribeSnapshotPackage")
+{
+	setMethod(HttpRequest::Method::Post);
 }
 
-DescribeSnapshotPackageRequest::~DescribeSnapshotPackageRequest() {}
+DescribeSnapshotPackageRequest::~DescribeSnapshotPackageRequest()
+{}
 
-long DescribeSnapshotPackageRequest::getResourceOwnerId() const {
-  return resourceOwnerId_;
+long DescribeSnapshotPackageRequest::getResourceOwnerId()const
+{
+	return resourceOwnerId_;
 }
 
-void DescribeSnapshotPackageRequest::setResourceOwnerId(long resourceOwnerId) {
-  resourceOwnerId_ = resourceOwnerId;
-  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
+void DescribeSnapshotPackageRequest::setResourceOwnerId(long resourceOwnerId)
+{
+	resourceOwnerId_ = resourceOwnerId;
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-int DescribeSnapshotPackageRequest::getPageNumber() const {
-  return pageNumber_;
+int DescribeSnapshotPackageRequest::getPageNumber()const
+{
+	return pageNumber_;
 }
 
-void DescribeSnapshotPackageRequest::setPageNumber(int pageNumber) {
-  pageNumber_ = pageNumber;
-  setParameter(std::string("PageNumber"), std::to_string(pageNumber));
+void DescribeSnapshotPackageRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
-std::string DescribeSnapshotPackageRequest::getRegionId() const {
-  return regionId_;
+std::string DescribeSnapshotPackageRequest::getRegionId()const
+{
+	return regionId_;
 }
 
-void DescribeSnapshotPackageRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
+void DescribeSnapshotPackageRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
 }
 
-int DescribeSnapshotPackageRequest::getPageSize() const {
-  return pageSize_;
+int DescribeSnapshotPackageRequest::getPageSize()const
+{
+	return pageSize_;
 }
 
-void DescribeSnapshotPackageRequest::setPageSize(int pageSize) {
-  pageSize_ = pageSize;
-  setParameter(std::string("PageSize"), std::to_string(pageSize));
+void DescribeSnapshotPackageRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
-std::string DescribeSnapshotPackageRequest::getResourceOwnerAccount() const {
-  return resourceOwnerAccount_;
+std::string DescribeSnapshotPackageRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
 }
 
-void DescribeSnapshotPackageRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
-  resourceOwnerAccount_ = resourceOwnerAccount;
-  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+void DescribeSnapshotPackageRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string DescribeSnapshotPackageRequest::getOwnerAccount() const {
-  return ownerAccount_;
+std::string DescribeSnapshotPackageRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
 }
 
-void DescribeSnapshotPackageRequest::setOwnerAccount(const std::string &ownerAccount) {
-  ownerAccount_ = ownerAccount;
-  setParameter(std::string("OwnerAccount"), ownerAccount);
+void DescribeSnapshotPackageRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setParameter("OwnerAccount", ownerAccount);
 }
 
-long DescribeSnapshotPackageRequest::getOwnerId() const {
-  return ownerId_;
+long DescribeSnapshotPackageRequest::getOwnerId()const
+{
+	return ownerId_;
 }
 
-void DescribeSnapshotPackageRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
+void DescribeSnapshotPackageRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

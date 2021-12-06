@@ -43,22 +43,22 @@ void DescribeSnapshotPackageResult::parse(const std::string &payload)
 	for (auto valueSnapshotPackagesSnapshotPackage : allSnapshotPackagesNode)
 	{
 		SnapshotPackage snapshotPackagesObject;
-		if(!valueSnapshotPackagesSnapshotPackage["DisplayName"].isNull())
-			snapshotPackagesObject.displayName = valueSnapshotPackagesSnapshotPackage["DisplayName"].asString();
-		if(!valueSnapshotPackagesSnapshotPackage["EndTime"].isNull())
-			snapshotPackagesObject.endTime = valueSnapshotPackagesSnapshotPackage["EndTime"].asString();
 		if(!valueSnapshotPackagesSnapshotPackage["StartTime"].isNull())
 			snapshotPackagesObject.startTime = valueSnapshotPackagesSnapshotPackage["StartTime"].asString();
+		if(!valueSnapshotPackagesSnapshotPackage["EndTime"].isNull())
+			snapshotPackagesObject.endTime = valueSnapshotPackagesSnapshotPackage["EndTime"].asString();
 		if(!valueSnapshotPackagesSnapshotPackage["InitCapacity"].isNull())
 			snapshotPackagesObject.initCapacity = std::stol(valueSnapshotPackagesSnapshotPackage["InitCapacity"].asString());
+		if(!valueSnapshotPackagesSnapshotPackage["DisplayName"].isNull())
+			snapshotPackagesObject.displayName = valueSnapshotPackagesSnapshotPackage["DisplayName"].asString();
 		snapshotPackages_.push_back(snapshotPackagesObject);
 	}
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 
 }
 

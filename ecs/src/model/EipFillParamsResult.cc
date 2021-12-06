@@ -39,27 +39,27 @@ void EipFillParamsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["requestId"].isNull())
+		requestId_ = value["requestId"].asString();
+	if(!value["data"].isNull())
+		data_ = value["data"].asString();
 	if(!value["code"].isNull())
 		code_ = value["code"].asString();
 	if(!value["success"].isNull())
 		success_ = value["success"].asString() == "true";
 	if(!value["message"].isNull())
 		message_ = value["message"].asString();
-	if(!value["data"].isNull())
-		data_ = value["data"].asString();
-	if(!value["requestId"].isNull())
-		requestId_ = value["requestId"].asString();
 
-}
-
-std::string EipFillParamsResult::getMessage()const
-{
-	return message_;
 }
 
 std::string EipFillParamsResult::getRequestId()const
 {
 	return requestId_;
+}
+
+std::string EipFillParamsResult::getMessage()const
+{
+	return message_;
 }
 
 std::string EipFillParamsResult::getData()const

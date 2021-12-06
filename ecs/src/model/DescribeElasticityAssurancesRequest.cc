@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,159 +18,193 @@
 
 using AlibabaCloud::Ecs::Model::DescribeElasticityAssurancesRequest;
 
-DescribeElasticityAssurancesRequest::DescribeElasticityAssurancesRequest()
-    : RpcServiceRequest("ecs", "2014-05-26", "DescribeElasticityAssurances") {
-  setMethod(HttpRequest::Method::Post);
+DescribeElasticityAssurancesRequest::DescribeElasticityAssurancesRequest() :
+	RpcServiceRequest("ecs", "2014-05-26", "DescribeElasticityAssurances")
+{
+	setMethod(HttpRequest::Method::Post);
 }
 
-DescribeElasticityAssurancesRequest::~DescribeElasticityAssurancesRequest() {}
+DescribeElasticityAssurancesRequest::~DescribeElasticityAssurancesRequest()
+{}
 
-long DescribeElasticityAssurancesRequest::getResourceOwnerId() const {
-  return resourceOwnerId_;
+long DescribeElasticityAssurancesRequest::getResourceOwnerId()const
+{
+	return resourceOwnerId_;
 }
 
-void DescribeElasticityAssurancesRequest::setResourceOwnerId(long resourceOwnerId) {
-  resourceOwnerId_ = resourceOwnerId;
-  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
+void DescribeElasticityAssurancesRequest::setResourceOwnerId(long resourceOwnerId)
+{
+	resourceOwnerId_ = resourceOwnerId;
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeElasticityAssurancesRequest::getPlatform() const {
-  return platform_;
+std::string DescribeElasticityAssurancesRequest::getPlatform()const
+{
+	return platform_;
 }
 
-void DescribeElasticityAssurancesRequest::setPlatform(const std::string &platform) {
-  platform_ = platform;
-  setParameter(std::string("Platform"), platform);
+void DescribeElasticityAssurancesRequest::setPlatform(const std::string& platform)
+{
+	platform_ = platform;
+	setParameter("Platform", platform);
 }
 
-std::string DescribeElasticityAssurancesRequest::getResourceGroupId() const {
-  return resourceGroupId_;
+std::string DescribeElasticityAssurancesRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
 }
 
-void DescribeElasticityAssurancesRequest::setResourceGroupId(const std::string &resourceGroupId) {
-  resourceGroupId_ = resourceGroupId;
-  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+void DescribeElasticityAssurancesRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
-std::string DescribeElasticityAssurancesRequest::getRegionId() const {
-  return regionId_;
+std::string DescribeElasticityAssurancesRequest::getRegionId()const
+{
+	return regionId_;
 }
 
-void DescribeElasticityAssurancesRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
+void DescribeElasticityAssurancesRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
 }
 
-std::string DescribeElasticityAssurancesRequest::getNextToken() const {
-  return nextToken_;
+std::string DescribeElasticityAssurancesRequest::getNextToken()const
+{
+	return nextToken_;
 }
 
-void DescribeElasticityAssurancesRequest::setNextToken(const std::string &nextToken) {
-  nextToken_ = nextToken;
-  setParameter(std::string("NextToken"), nextToken);
+void DescribeElasticityAssurancesRequest::setNextToken(const std::string& nextToken)
+{
+	nextToken_ = nextToken;
+	setParameter("NextToken", nextToken);
 }
 
-std::string DescribeElasticityAssurancesRequest::getInstanceType() const {
-  return instanceType_;
+std::string DescribeElasticityAssurancesRequest::getInstanceType()const
+{
+	return instanceType_;
 }
 
-void DescribeElasticityAssurancesRequest::setInstanceType(const std::string &instanceType) {
-  instanceType_ = instanceType;
-  setParameter(std::string("InstanceType"), instanceType);
+void DescribeElasticityAssurancesRequest::setInstanceType(const std::string& instanceType)
+{
+	instanceType_ = instanceType;
+	setParameter("InstanceType", instanceType);
 }
 
-std::vector<DescribeElasticityAssurancesRequest::Tag> DescribeElasticityAssurancesRequest::getTag() const {
-  return tag_;
+std::vector<DescribeElasticityAssurancesRequest::Tag> DescribeElasticityAssurancesRequest::getTag()const
+{
+	return tag_;
 }
 
-void DescribeElasticityAssurancesRequest::setTag(const std::vector<DescribeElasticityAssurancesRequest::Tag> &tag) {
-  tag_ = tag;
-  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
-  auto tagObj = tag.at(dep1);
-  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
-    setParameter(tagObjStr + ".Key", tagObj.key);
-    setParameter(tagObjStr + ".Value", tagObj.value);
-  }
+void DescribeElasticityAssurancesRequest::setTag(const std::vector<Tag>& tag)
+{
+	tag_ = tag;
+	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
+		auto tagObj = tag.at(dep1);
+		std::string tagObjStr = "Tag." + std::to_string(dep1 + 1);
+		setParameter(tagObjStr + ".Key", tagObj.key);
+		setParameter(tagObjStr + ".Value", tagObj.value);
+	}
 }
 
-std::string DescribeElasticityAssurancesRequest::getInstanceChargeType() const {
-  return instanceChargeType_;
+std::string DescribeElasticityAssurancesRequest::getInstanceChargeType()const
+{
+	return instanceChargeType_;
 }
 
-void DescribeElasticityAssurancesRequest::setInstanceChargeType(const std::string &instanceChargeType) {
-  instanceChargeType_ = instanceChargeType;
-  setParameter(std::string("InstanceChargeType"), instanceChargeType);
+void DescribeElasticityAssurancesRequest::setInstanceChargeType(const std::string& instanceChargeType)
+{
+	instanceChargeType_ = instanceChargeType;
+	setParameter("InstanceChargeType", instanceChargeType);
 }
 
-std::string DescribeElasticityAssurancesRequest::getResourceOwnerAccount() const {
-  return resourceOwnerAccount_;
+std::string DescribeElasticityAssurancesRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
 }
 
-void DescribeElasticityAssurancesRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
-  resourceOwnerAccount_ = resourceOwnerAccount;
-  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+void DescribeElasticityAssurancesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string DescribeElasticityAssurancesRequest::getOwnerAccount() const {
-  return ownerAccount_;
+std::string DescribeElasticityAssurancesRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
 }
 
-void DescribeElasticityAssurancesRequest::setOwnerAccount(const std::string &ownerAccount) {
-  ownerAccount_ = ownerAccount;
-  setParameter(std::string("OwnerAccount"), ownerAccount);
+void DescribeElasticityAssurancesRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setParameter("OwnerAccount", ownerAccount);
 }
 
-long DescribeElasticityAssurancesRequest::getOwnerId() const {
-  return ownerId_;
+long DescribeElasticityAssurancesRequest::getOwnerId()const
+{
+	return ownerId_;
 }
 
-void DescribeElasticityAssurancesRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
+void DescribeElasticityAssurancesRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string DescribeElasticityAssurancesRequest::getPrivatePoolOptionsIds() const {
-  return privatePoolOptionsIds_;
+std::string DescribeElasticityAssurancesRequest::getPrivatePoolOptionsIds()const
+{
+	return privatePoolOptionsIds_;
 }
 
-void DescribeElasticityAssurancesRequest::setPrivatePoolOptionsIds(const std::string &privatePoolOptionsIds) {
-  privatePoolOptionsIds_ = privatePoolOptionsIds;
-  setParameter(std::string("PrivatePoolOptions.Ids"), privatePoolOptionsIds);
+void DescribeElasticityAssurancesRequest::setPrivatePoolOptionsIds(const std::string& privatePoolOptionsIds)
+{
+	privatePoolOptionsIds_ = privatePoolOptionsIds;
+	setParameter("PrivatePoolOptionsIds", privatePoolOptionsIds);
 }
 
-int DescribeElasticityAssurancesRequest::getMaxResults() const {
-  return maxResults_;
+int DescribeElasticityAssurancesRequest::getMaxResults()const
+{
+	return maxResults_;
 }
 
-void DescribeElasticityAssurancesRequest::setMaxResults(int maxResults) {
-  maxResults_ = maxResults;
-  setParameter(std::string("MaxResults"), std::to_string(maxResults));
+void DescribeElasticityAssurancesRequest::setMaxResults(int maxResults)
+{
+	maxResults_ = maxResults;
+	setParameter("MaxResults", std::to_string(maxResults));
 }
 
-std::string DescribeElasticityAssurancesRequest::getZoneId() const {
-  return zoneId_;
+std::string DescribeElasticityAssurancesRequest::getZoneId()const
+{
+	return zoneId_;
 }
 
-void DescribeElasticityAssurancesRequest::setZoneId(const std::string &zoneId) {
-  zoneId_ = zoneId;
-  setParameter(std::string("ZoneId"), zoneId);
+void DescribeElasticityAssurancesRequest::setZoneId(const std::string& zoneId)
+{
+	zoneId_ = zoneId;
+	setParameter("ZoneId", zoneId);
 }
 
-std::string DescribeElasticityAssurancesRequest::getPackageType() const {
-  return packageType_;
+std::string DescribeElasticityAssurancesRequest::getPackageType()const
+{
+	return packageType_;
 }
 
-void DescribeElasticityAssurancesRequest::setPackageType(const std::string &packageType) {
-  packageType_ = packageType;
-  setParameter(std::string("PackageType"), packageType);
+void DescribeElasticityAssurancesRequest::setPackageType(const std::string& packageType)
+{
+	packageType_ = packageType;
+	setParameter("PackageType", packageType);
 }
 
-std::string DescribeElasticityAssurancesRequest::getStatus() const {
-  return status_;
+std::string DescribeElasticityAssurancesRequest::getStatus()const
+{
+	return status_;
 }
 
-void DescribeElasticityAssurancesRequest::setStatus(const std::string &status) {
-  status_ = status;
-  setParameter(std::string("Status"), status);
+void DescribeElasticityAssurancesRequest::setStatus(const std::string& status)
+{
+	status_ = status;
+	setParameter("Status", status);
 }
 

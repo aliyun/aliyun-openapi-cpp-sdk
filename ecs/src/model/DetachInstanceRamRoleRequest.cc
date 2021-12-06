@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,64 +18,78 @@
 
 using AlibabaCloud::Ecs::Model::DetachInstanceRamRoleRequest;
 
-DetachInstanceRamRoleRequest::DetachInstanceRamRoleRequest()
-    : RpcServiceRequest("ecs", "2014-05-26", "DetachInstanceRamRole") {
-  setMethod(HttpRequest::Method::Post);
+DetachInstanceRamRoleRequest::DetachInstanceRamRoleRequest() :
+	RpcServiceRequest("ecs", "2014-05-26", "DetachInstanceRamRole")
+{
+	setMethod(HttpRequest::Method::Post);
 }
 
-DetachInstanceRamRoleRequest::~DetachInstanceRamRoleRequest() {}
+DetachInstanceRamRoleRequest::~DetachInstanceRamRoleRequest()
+{}
 
-long DetachInstanceRamRoleRequest::getResourceOwnerId() const {
-  return resourceOwnerId_;
+long DetachInstanceRamRoleRequest::getResourceOwnerId()const
+{
+	return resourceOwnerId_;
 }
 
-void DetachInstanceRamRoleRequest::setResourceOwnerId(long resourceOwnerId) {
-  resourceOwnerId_ = resourceOwnerId;
-  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
+void DetachInstanceRamRoleRequest::setResourceOwnerId(long resourceOwnerId)
+{
+	resourceOwnerId_ = resourceOwnerId;
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DetachInstanceRamRoleRequest::getRegionId() const {
-  return regionId_;
+std::string DetachInstanceRamRoleRequest::getRegionId()const
+{
+	return regionId_;
 }
 
-void DetachInstanceRamRoleRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
+void DetachInstanceRamRoleRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
 }
 
-std::string DetachInstanceRamRoleRequest::getResourceOwnerAccount() const {
-  return resourceOwnerAccount_;
+std::string DetachInstanceRamRoleRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
 }
 
-void DetachInstanceRamRoleRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
-  resourceOwnerAccount_ = resourceOwnerAccount;
-  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+void DetachInstanceRamRoleRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string DetachInstanceRamRoleRequest::getRamRoleName() const {
-  return ramRoleName_;
+std::string DetachInstanceRamRoleRequest::getRamRoleName()const
+{
+	return ramRoleName_;
 }
 
-void DetachInstanceRamRoleRequest::setRamRoleName(const std::string &ramRoleName) {
-  ramRoleName_ = ramRoleName;
-  setParameter(std::string("RamRoleName"), ramRoleName);
+void DetachInstanceRamRoleRequest::setRamRoleName(const std::string& ramRoleName)
+{
+	ramRoleName_ = ramRoleName;
+	setParameter("RamRoleName", ramRoleName);
 }
 
-long DetachInstanceRamRoleRequest::getOwnerId() const {
-  return ownerId_;
+long DetachInstanceRamRoleRequest::getOwnerId()const
+{
+	return ownerId_;
 }
 
-void DetachInstanceRamRoleRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
+void DetachInstanceRamRoleRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string DetachInstanceRamRoleRequest::getInstanceIds() const {
-  return instanceIds_;
+std::string DetachInstanceRamRoleRequest::getInstanceIds()const
+{
+	return instanceIds_;
 }
 
-void DetachInstanceRamRoleRequest::setInstanceIds(const std::string &instanceIds) {
-  instanceIds_ = instanceIds;
-  setParameter(std::string("InstanceIds"), instanceIds);
+void DetachInstanceRamRoleRequest::setInstanceIds(const std::string& instanceIds)
+{
+	instanceIds_ = instanceIds;
+	setParameter("InstanceIds", instanceIds);
 }
 

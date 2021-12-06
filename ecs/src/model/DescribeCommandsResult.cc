@@ -43,32 +43,32 @@ void DescribeCommandsResult::parse(const std::string &payload)
 	for (auto valueCommandsCommand : allCommandsNode)
 	{
 		Command commandsObject;
-		if(!valueCommandsCommand["CreationTime"].isNull())
-			commandsObject.creationTime = valueCommandsCommand["CreationTime"].asString();
+		if(!valueCommandsCommand["CommandId"].isNull())
+			commandsObject.commandId = valueCommandsCommand["CommandId"].asString();
+		if(!valueCommandsCommand["Name"].isNull())
+			commandsObject.name = valueCommandsCommand["Name"].asString();
 		if(!valueCommandsCommand["Type"].isNull())
 			commandsObject.type = valueCommandsCommand["Type"].asString();
+		if(!valueCommandsCommand["Version"].isNull())
+			commandsObject.version = std::stoi(valueCommandsCommand["Version"].asString());
+		if(!valueCommandsCommand["Latest"].isNull())
+			commandsObject.latest = valueCommandsCommand["Latest"].asString() == "true";
+		if(!valueCommandsCommand["Provider"].isNull())
+			commandsObject.provider = valueCommandsCommand["Provider"].asString();
+		if(!valueCommandsCommand["Category"].isNull())
+			commandsObject.category = valueCommandsCommand["Category"].asString();
+		if(!valueCommandsCommand["Description"].isNull())
+			commandsObject.description = valueCommandsCommand["Description"].asString();
+		if(!valueCommandsCommand["CommandContent"].isNull())
+			commandsObject.commandContent = valueCommandsCommand["CommandContent"].asString();
+		if(!valueCommandsCommand["WorkingDir"].isNull())
+			commandsObject.workingDir = valueCommandsCommand["WorkingDir"].asString();
 		if(!valueCommandsCommand["Timeout"].isNull())
 			commandsObject.timeout = std::stol(valueCommandsCommand["Timeout"].asString());
 		if(!valueCommandsCommand["InvokeTimes"].isNull())
 			commandsObject.invokeTimes = std::stoi(valueCommandsCommand["InvokeTimes"].asString());
-		if(!valueCommandsCommand["CommandId"].isNull())
-			commandsObject.commandId = valueCommandsCommand["CommandId"].asString();
-		if(!valueCommandsCommand["WorkingDir"].isNull())
-			commandsObject.workingDir = valueCommandsCommand["WorkingDir"].asString();
-		if(!valueCommandsCommand["Description"].isNull())
-			commandsObject.description = valueCommandsCommand["Description"].asString();
-		if(!valueCommandsCommand["Version"].isNull())
-			commandsObject.version = std::stoi(valueCommandsCommand["Version"].asString());
-		if(!valueCommandsCommand["Provider"].isNull())
-			commandsObject.provider = valueCommandsCommand["Provider"].asString();
-		if(!valueCommandsCommand["CommandContent"].isNull())
-			commandsObject.commandContent = valueCommandsCommand["CommandContent"].asString();
-		if(!valueCommandsCommand["Category"].isNull())
-			commandsObject.category = valueCommandsCommand["Category"].asString();
-		if(!valueCommandsCommand["Latest"].isNull())
-			commandsObject.latest = valueCommandsCommand["Latest"].asString() == "true";
-		if(!valueCommandsCommand["Name"].isNull())
-			commandsObject.name = valueCommandsCommand["Name"].asString();
+		if(!valueCommandsCommand["CreationTime"].isNull())
+			commandsObject.creationTime = valueCommandsCommand["CreationTime"].asString();
 		if(!valueCommandsCommand["EnableParameter"].isNull())
 			commandsObject.enableParameter = valueCommandsCommand["EnableParameter"].asString() == "true";
 		auto allParameterNames = value["ParameterNames"]["ParameterName"];
@@ -76,12 +76,12 @@ void DescribeCommandsResult::parse(const std::string &payload)
 			commandsObject.parameterNames.push_back(value.asString());
 		commands_.push_back(commandsObject);
 	}
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stol(value["PageSize"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stol(value["PageNumber"].asString());
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stol(value["TotalCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stol(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stol(value["PageSize"].asString());
 
 }
 

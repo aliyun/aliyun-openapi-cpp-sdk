@@ -69,6 +69,8 @@ void DescribeCapacityReservationsResult::parse(const std::string &payload)
 			capacityReservationSetObject.resourceGroupId = valueCapacityReservationSetCapacityReservationItem["ResourceGroupId"].asString();
 		if(!valueCapacityReservationSetCapacityReservationItem["Platform"].isNull())
 			capacityReservationSetObject.platform = valueCapacityReservationSetCapacityReservationItem["Platform"].asString();
+		if(!valueCapacityReservationSetCapacityReservationItem["StartTimeType"].isNull())
+			capacityReservationSetObject.startTimeType = valueCapacityReservationSetCapacityReservationItem["StartTimeType"].asString();
 		auto allAllocatedResourcesNode = valueCapacityReservationSetCapacityReservationItem["AllocatedResources"]["AllocatedResource"];
 		for (auto valueCapacityReservationSetCapacityReservationItemAllocatedResourcesAllocatedResource : allAllocatedResourcesNode)
 		{

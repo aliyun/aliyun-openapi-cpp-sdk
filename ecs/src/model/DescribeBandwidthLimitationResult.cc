@@ -45,10 +45,10 @@ void DescribeBandwidthLimitationResult::parse(const std::string &payload)
 		Bandwidth bandwidthsObject;
 		if(!valueBandwidthsBandwidth["InternetChargeType"].isNull())
 			bandwidthsObject.internetChargeType = valueBandwidthsBandwidth["InternetChargeType"].asString();
-		if(!valueBandwidthsBandwidth["Max"].isNull())
-			bandwidthsObject.max = std::stoi(valueBandwidthsBandwidth["Max"].asString());
 		if(!valueBandwidthsBandwidth["Min"].isNull())
 			bandwidthsObject.min = std::stoi(valueBandwidthsBandwidth["Min"].asString());
+		if(!valueBandwidthsBandwidth["Max"].isNull())
+			bandwidthsObject.max = std::stoi(valueBandwidthsBandwidth["Max"].asString());
 		if(!valueBandwidthsBandwidth["Unit"].isNull())
 			bandwidthsObject.unit = valueBandwidthsBandwidth["Unit"].asString();
 		bandwidths_.push_back(bandwidthsObject);
