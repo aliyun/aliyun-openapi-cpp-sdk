@@ -1,3 +1,6 @@
+2021-12-06 Version: 1.36.964
+- Modify the input parameter Action of DescribeCenInterRegionBandwidthLimits to be required.
+
 2021-12-03 Version: 1.36.963
 - Add EventRule Content Filter.
 - Add MetricRule Labels.

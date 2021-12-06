@@ -43,30 +43,30 @@ void DescribeCenInterRegionBandwidthLimitsResult::parse(const std::string &paylo
 	for (auto valueCenInterRegionBandwidthLimitsCenInterRegionBandwidthLimit : allCenInterRegionBandwidthLimitsNode)
 	{
 		CenInterRegionBandwidthLimit cenInterRegionBandwidthLimitsObject;
-		if(!valueCenInterRegionBandwidthLimitsCenInterRegionBandwidthLimit["CenId"].isNull())
-			cenInterRegionBandwidthLimitsObject.cenId = valueCenInterRegionBandwidthLimitsCenInterRegionBandwidthLimit["CenId"].asString();
-		if(!valueCenInterRegionBandwidthLimitsCenInterRegionBandwidthLimit["LocalRegionId"].isNull())
-			cenInterRegionBandwidthLimitsObject.localRegionId = valueCenInterRegionBandwidthLimitsCenInterRegionBandwidthLimit["LocalRegionId"].asString();
+		if(!valueCenInterRegionBandwidthLimitsCenInterRegionBandwidthLimit["TransitRouterAttachmentId"].isNull())
+			cenInterRegionBandwidthLimitsObject.transitRouterAttachmentId = valueCenInterRegionBandwidthLimitsCenInterRegionBandwidthLimit["TransitRouterAttachmentId"].asString();
+		if(!valueCenInterRegionBandwidthLimitsCenInterRegionBandwidthLimit["Status"].isNull())
+			cenInterRegionBandwidthLimitsObject.status = valueCenInterRegionBandwidthLimitsCenInterRegionBandwidthLimit["Status"].asString();
+		if(!valueCenInterRegionBandwidthLimitsCenInterRegionBandwidthLimit["BandwidthPackageId"].isNull())
+			cenInterRegionBandwidthLimitsObject.bandwidthPackageId = valueCenInterRegionBandwidthLimitsCenInterRegionBandwidthLimit["BandwidthPackageId"].asString();
 		if(!valueCenInterRegionBandwidthLimitsCenInterRegionBandwidthLimit["OppositeRegionId"].isNull())
 			cenInterRegionBandwidthLimitsObject.oppositeRegionId = valueCenInterRegionBandwidthLimitsCenInterRegionBandwidthLimit["OppositeRegionId"].asString();
 		if(!valueCenInterRegionBandwidthLimitsCenInterRegionBandwidthLimit["GeographicSpanId"].isNull())
 			cenInterRegionBandwidthLimitsObject.geographicSpanId = valueCenInterRegionBandwidthLimitsCenInterRegionBandwidthLimit["GeographicSpanId"].asString();
+		if(!valueCenInterRegionBandwidthLimitsCenInterRegionBandwidthLimit["CenId"].isNull())
+			cenInterRegionBandwidthLimitsObject.cenId = valueCenInterRegionBandwidthLimitsCenInterRegionBandwidthLimit["CenId"].asString();
+		if(!valueCenInterRegionBandwidthLimitsCenInterRegionBandwidthLimit["LocalRegionId"].isNull())
+			cenInterRegionBandwidthLimitsObject.localRegionId = valueCenInterRegionBandwidthLimitsCenInterRegionBandwidthLimit["LocalRegionId"].asString();
 		if(!valueCenInterRegionBandwidthLimitsCenInterRegionBandwidthLimit["BandwidthLimit"].isNull())
 			cenInterRegionBandwidthLimitsObject.bandwidthLimit = std::stol(valueCenInterRegionBandwidthLimitsCenInterRegionBandwidthLimit["BandwidthLimit"].asString());
-		if(!valueCenInterRegionBandwidthLimitsCenInterRegionBandwidthLimit["Status"].isNull())
-			cenInterRegionBandwidthLimitsObject.status = valueCenInterRegionBandwidthLimitsCenInterRegionBandwidthLimit["Status"].asString();
-		if(!valueCenInterRegionBandwidthLimitsCenInterRegionBandwidthLimit["TransitRouterAttachmentId"].isNull())
-			cenInterRegionBandwidthLimitsObject.transitRouterAttachmentId = valueCenInterRegionBandwidthLimitsCenInterRegionBandwidthLimit["TransitRouterAttachmentId"].asString();
-		if(!valueCenInterRegionBandwidthLimitsCenInterRegionBandwidthLimit["BandwidthPackageId"].isNull())
-			cenInterRegionBandwidthLimitsObject.bandwidthPackageId = valueCenInterRegionBandwidthLimitsCenInterRegionBandwidthLimit["BandwidthPackageId"].asString();
 		cenInterRegionBandwidthLimits_.push_back(cenInterRegionBandwidthLimitsObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 

@@ -34,8 +34,8 @@ namespace AlibabaCloud
 			public:
 				struct CenInterRegionBandwidthLimit
 				{
-					std::string status;
 					std::string transitRouterAttachmentId;
+					std::string status;
 					std::string geographicSpanId;
 					std::string oppositeRegionId;
 					std::string cenId;
