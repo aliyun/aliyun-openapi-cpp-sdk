@@ -51,6 +51,150 @@ TagClient::TagClient(const std::string & accessKeyId, const std::string & access
 TagClient::~TagClient()
 {}
 
+TagClient::CreateTagsOutcome TagClient::createTags(const CreateTagsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateTagsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateTagsOutcome(CreateTagsResult(outcome.result()));
+	else
+		return CreateTagsOutcome(outcome.error());
+}
+
+void TagClient::createTagsAsync(const CreateTagsRequest& request, const CreateTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createTags(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+TagClient::CreateTagsOutcomeCallable TagClient::createTagsCallable(const CreateTagsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateTagsOutcome()>>(
+			[this, request]()
+			{
+			return this->createTags(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+TagClient::DeleteTagOutcome TagClient::deleteTag(const DeleteTagRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteTagOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteTagOutcome(DeleteTagResult(outcome.result()));
+	else
+		return DeleteTagOutcome(outcome.error());
+}
+
+void TagClient::deleteTagAsync(const DeleteTagRequest& request, const DeleteTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteTag(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+TagClient::DeleteTagOutcomeCallable TagClient::deleteTagCallable(const DeleteTagRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteTagOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteTag(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+TagClient::DescribeRegionsOutcome TagClient::describeRegions(const DescribeRegionsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeRegionsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeRegionsOutcome(DescribeRegionsResult(outcome.result()));
+	else
+		return DescribeRegionsOutcome(outcome.error());
+}
+
+void TagClient::describeRegionsAsync(const DescribeRegionsRequest& request, const DescribeRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeRegions(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+TagClient::DescribeRegionsOutcomeCallable TagClient::describeRegionsCallable(const DescribeRegionsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeRegionsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeRegions(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+TagClient::ListResourcesByTagOutcome TagClient::listResourcesByTag(const ListResourcesByTagRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListResourcesByTagOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListResourcesByTagOutcome(ListResourcesByTagResult(outcome.result()));
+	else
+		return ListResourcesByTagOutcome(outcome.error());
+}
+
+void TagClient::listResourcesByTagAsync(const ListResourcesByTagRequest& request, const ListResourcesByTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listResourcesByTag(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+TagClient::ListResourcesByTagOutcomeCallable TagClient::listResourcesByTagCallable(const ListResourcesByTagRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListResourcesByTagOutcome()>>(
+			[this, request]()
+			{
+			return this->listResourcesByTag(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 TagClient::ListTagKeysOutcome TagClient::listTagKeys(const ListTagKeysRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

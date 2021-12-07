@@ -43,10 +43,12 @@ void ListTagKeysResult::parse(const std::string &payload)
 	for (auto valueKeysKey : allKeysNode)
 	{
 		Key keysObject;
-		if(!valueKeysKey["Category"].isNull())
-			keysObject.category = valueKeysKey["Category"].asString();
 		if(!valueKeysKey["Key"].isNull())
 			keysObject.key = valueKeysKey["Key"].asString();
+		if(!valueKeysKey["Category"].isNull())
+			keysObject.category = valueKeysKey["Category"].asString();
+		if(!valueKeysKey["Description"].isNull())
+			keysObject.description = valueKeysKey["Description"].asString();
 		keys_.push_back(keysObject);
 	}
 	if(!value["NextToken"].isNull())

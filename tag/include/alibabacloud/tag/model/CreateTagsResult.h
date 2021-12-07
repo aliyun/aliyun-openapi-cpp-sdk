@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_TAG_MODEL_LISTTAGKEYSRESULT_H_
-#define ALIBABACLOUD_TAG_MODEL_LISTTAGKEYSRESULT_H_
+#ifndef ALIBABACLOUD_TAG_MODEL_CREATETAGSRESULT_H_
+#define ALIBABACLOUD_TAG_MODEL_CREATETAGSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,31 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_TAG_EXPORT ListTagKeysResult : public ServiceResult
+			class ALIBABACLOUD_TAG_EXPORT CreateTagsResult : public ServiceResult
 			{
 			public:
-				struct Key
-				{
-					std::string category;
-					std::string description;
-					std::string key;
-				};
 
 
-				ListTagKeysResult();
-				explicit ListTagKeysResult(const std::string &payload);
-				~ListTagKeysResult();
-				std::string getNextToken()const;
-				std::vector<Key> getKeys()const;
+				CreateTagsResult();
+				explicit CreateTagsResult(const std::string &payload);
+				~CreateTagsResult();
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string nextToken_;
-				std::vector<Key> keys_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_TAG_MODEL_LISTTAGKEYSRESULT_H_
+#endif // !ALIBABACLOUD_TAG_MODEL_CREATETAGSRESULT_H_

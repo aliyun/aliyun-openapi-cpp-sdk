@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_TAG_MODEL_UNTAGRESOURCESREQUEST_H_
-#define ALIBABACLOUD_TAG_MODEL_UNTAGRESOURCESREQUEST_H_
+#ifndef ALIBABACLOUD_TAG_MODEL_LISTRESOURCESBYTAGREQUEST_H_
+#define ALIBABACLOUD_TAG_MODEL_LISTRESOURCESBYTAGREQUEST_H_
 
 #include <alibabacloud/tag/TagExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,32 +26,47 @@
 namespace AlibabaCloud {
 namespace Tag {
 namespace Model {
-class ALIBABACLOUD_TAG_EXPORT UntagResourcesRequest : public RpcServiceRequest {
+class ALIBABACLOUD_TAG_EXPORT ListResourcesByTagRequest : public RpcServiceRequest {
 public:
-	UntagResourcesRequest();
-	~UntagResourcesRequest();
+	ListResourcesByTagRequest();
+	~ListResourcesByTagRequest();
+	std::string getTagFilterKey() const;
+	void setTagFilterKey(const std::string &tagFilterKey);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
-	std::vector<std::string> getResourceARN() const;
-	void setResourceARN(const std::vector<std::string> &resourceARN);
+	std::string getNextToken() const;
+	void setNextToken(const std::string &nextToken);
+	bool getIncludeAllTags() const;
+	void setIncludeAllTags(bool includeAllTags);
+	std::string getTagFilterValue() const;
+	void setTagFilterValue(const std::string &tagFilterValue);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
-	std::vector<std::string> getTagKey() const;
-	void setTagKey(const std::vector<std::string> &tagKey);
+	std::string getResourceType() const;
+	void setResourceType(const std::string &resourceType);
+	int getMaxResult() const;
+	void setMaxResult(int maxResult);
+	std::string getFuzzyType() const;
+	void setFuzzyType(const std::string &fuzzyType);
 
 private:
+	std::string tagFilterKey_;
 	std::string regionId_;
-	std::vector<std::string> resourceARN_;
+	std::string nextToken_;
+	bool includeAllTags_;
+	std::string tagFilterValue_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
-	std::vector<std::string> tagKey_;
+	std::string resourceType_;
+	int maxResult_;
+	std::string fuzzyType_;
 };
 } // namespace Model
 } // namespace Tag
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_TAG_MODEL_UNTAGRESOURCESREQUEST_H_
+#endif // !ALIBABACLOUD_TAG_MODEL_LISTRESOURCESBYTAGREQUEST_H_

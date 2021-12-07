@@ -45,16 +45,16 @@ void ListTagResourcesResult::parse(const std::string &payload)
 		TagResource tagResourcesObject;
 		if(!valueTagResourcesTagResource["ResourceARN"].isNull())
 			tagResourcesObject.resourceARN = valueTagResourcesTagResource["ResourceARN"].asString();
-		auto allTagsNode = allTagResourcesNode["Tags"]["Tag"];
-		for (auto allTagResourcesNodeTagsTag : allTagsNode)
+		auto allTagsNode = valueTagResourcesTagResource["Tags"]["Tag"];
+		for (auto valueTagResourcesTagResourceTagsTag : allTagsNode)
 		{
 			TagResource::Tag tagsObject;
-			if(!allTagResourcesNodeTagsTag["Key"].isNull())
-				tagsObject.key = allTagResourcesNodeTagsTag["Key"].asString();
-			if(!allTagResourcesNodeTagsTag["Value"].isNull())
-				tagsObject.value = allTagResourcesNodeTagsTag["Value"].asString();
-			if(!allTagResourcesNodeTagsTag["Category"].isNull())
-				tagsObject.category = allTagResourcesNodeTagsTag["Category"].asString();
+			if(!valueTagResourcesTagResourceTagsTag["Key"].isNull())
+				tagsObject.key = valueTagResourcesTagResourceTagsTag["Key"].asString();
+			if(!valueTagResourcesTagResourceTagsTag["Value"].isNull())
+				tagsObject.value = valueTagResourcesTagResourceTagsTag["Value"].asString();
+			if(!valueTagResourcesTagResourceTagsTag["Category"].isNull())
+				tagsObject.category = valueTagResourcesTagResourceTagsTag["Category"].asString();
 			tagResourcesObject.tags.push_back(tagsObject);
 		}
 		tagResources_.push_back(tagResourcesObject);

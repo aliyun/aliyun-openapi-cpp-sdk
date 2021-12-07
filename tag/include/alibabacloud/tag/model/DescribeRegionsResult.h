@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_TAG_MODEL_LISTTAGKEYSRESULT_H_
-#define ALIBABACLOUD_TAG_MODEL_LISTTAGKEYSRESULT_H_
+#ifndef ALIBABACLOUD_TAG_MODEL_DESCRIBEREGIONSRESULT_H_
+#define ALIBABACLOUD_TAG_MODEL_DESCRIBEREGIONSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,31 +29,29 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_TAG_EXPORT ListTagKeysResult : public ServiceResult
+			class ALIBABACLOUD_TAG_EXPORT DescribeRegionsResult : public ServiceResult
 			{
 			public:
-				struct Key
+				struct Region
 				{
-					std::string category;
-					std::string description;
-					std::string key;
+					std::string regionId;
+					std::string regionEndpoint;
+					std::string localName;
 				};
 
 
-				ListTagKeysResult();
-				explicit ListTagKeysResult(const std::string &payload);
-				~ListTagKeysResult();
-				std::string getNextToken()const;
-				std::vector<Key> getKeys()const;
+				DescribeRegionsResult();
+				explicit DescribeRegionsResult(const std::string &payload);
+				~DescribeRegionsResult();
+				std::vector<Region> getRegions()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string nextToken_;
-				std::vector<Key> keys_;
+				std::vector<Region> regions_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_TAG_MODEL_LISTTAGKEYSRESULT_H_
+#endif // !ALIBABACLOUD_TAG_MODEL_DESCRIBEREGIONSRESULT_H_

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_TAG_MODEL_UNTAGRESOURCESREQUEST_H_
-#define ALIBABACLOUD_TAG_MODEL_UNTAGRESOURCESREQUEST_H_
+#ifndef ALIBABACLOUD_TAG_MODEL_CREATETAGSREQUEST_H_
+#define ALIBABACLOUD_TAG_MODEL_CREATETAGSREQUEST_H_
 
 #include <alibabacloud/tag/TagExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,32 +26,38 @@
 namespace AlibabaCloud {
 namespace Tag {
 namespace Model {
-class ALIBABACLOUD_TAG_EXPORT UntagResourcesRequest : public RpcServiceRequest {
+class ALIBABACLOUD_TAG_EXPORT CreateTagsRequest : public RpcServiceRequest {
 public:
-	UntagResourcesRequest();
-	~UntagResourcesRequest();
+	struct TagKeyValueParamList {
+		std::string key;
+		struct TagValueParamList {
+			std::string value;
+			std::string description;
+		};
+		std::vector<TagValueParamList> tagValueParamList;
+		std::string description;
+	};
+	CreateTagsRequest();
+	~CreateTagsRequest();
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
-	std::vector<std::string> getResourceARN() const;
-	void setResourceARN(const std::vector<std::string> &resourceARN);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
-	std::vector<std::string> getTagKey() const;
-	void setTagKey(const std::vector<std::string> &tagKey);
+	std::vector<TagKeyValueParamList> getTagKeyValueParamList() const;
+	void setTagKeyValueParamList(const std::vector<TagKeyValueParamList> &tagKeyValueParamList);
 
 private:
 	std::string regionId_;
-	std::vector<std::string> resourceARN_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
-	std::vector<std::string> tagKey_;
+	std::vector<TagKeyValueParamList> tagKeyValueParamList_;
 };
 } // namespace Model
 } // namespace Tag
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_TAG_MODEL_UNTAGRESOURCESREQUEST_H_
+#endif // !ALIBABACLOUD_TAG_MODEL_CREATETAGSREQUEST_H_

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_TAG_MODEL_UNTAGRESOURCESREQUEST_H_
-#define ALIBABACLOUD_TAG_MODEL_UNTAGRESOURCESREQUEST_H_
+#ifndef ALIBABACLOUD_TAG_MODEL_DESCRIBEREGIONSREQUEST_H_
+#define ALIBABACLOUD_TAG_MODEL_DESCRIBEREGIONSREQUEST_H_
 
 #include <alibabacloud/tag/TagExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,32 +26,32 @@
 namespace AlibabaCloud {
 namespace Tag {
 namespace Model {
-class ALIBABACLOUD_TAG_EXPORT UntagResourcesRequest : public RpcServiceRequest {
+class ALIBABACLOUD_TAG_EXPORT DescribeRegionsRequest : public RpcServiceRequest {
 public:
-	UntagResourcesRequest();
-	~UntagResourcesRequest();
+	DescribeRegionsRequest();
+	~DescribeRegionsRequest();
+	long getResourceOwnerId() const;
+	void setResourceOwnerId(long resourceOwnerId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
-	std::vector<std::string> getResourceARN() const;
-	void setResourceARN(const std::vector<std::string> &resourceARN);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
-	std::vector<std::string> getTagKey() const;
-	void setTagKey(const std::vector<std::string> &tagKey);
+	std::string getAcceptLanguage() const;
+	void setAcceptLanguage(const std::string &acceptLanguage);
 
 private:
+	long resourceOwnerId_;
 	std::string regionId_;
-	std::vector<std::string> resourceARN_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
-	std::vector<std::string> tagKey_;
+	std::string acceptLanguage_;
 };
 } // namespace Model
 } // namespace Tag
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_TAG_MODEL_UNTAGRESOURCESREQUEST_H_
+#endif // !ALIBABACLOUD_TAG_MODEL_DESCRIBEREGIONSREQUEST_H_
