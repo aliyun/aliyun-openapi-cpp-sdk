@@ -53,6 +53,8 @@ namespace AlibabaCloud
 				void setPageSize(int pageSize);
 				std::vector<Tag> getTag()const;
 				void setTag(const std::vector<Tag>& tag);
+				std::string getClusterId()const;
+				void setClusterId(const std::string& clusterId);
 				std::string getDbType()const;
 				void setDbType(const std::string& dbType);
 
@@ -63,6 +65,7 @@ namespace AlibabaCloud
 				std::string regionId_;
 				int pageSize_;
 				std::vector<Tag> tag_;
+				std::string clusterId_;
 				std::string dbType_;
 
 			};

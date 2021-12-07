@@ -53,30 +53,30 @@ namespace AlibabaCloud
 					std::vector<Instance::Tag> tags;
 					std::string engine;
 					std::string status;
-					std::string majorVersion;
 					std::string parentId;
+					std::string majorVersion;
 					std::string coreDiskCount;
-					int masterDiskSize;
 					std::string expireTimeUTC;
+					int masterDiskSize;
 					std::string zoneId;
+					std::string clusterId;
 					std::string instanceId;
 					int coreNodeCount;
-					std::string clusterId;
 					std::string coldStorageStatus;
 					std::string createdTimeUTC;
 					int duration;
 					std::string payType;
 					std::string clusterType;
 					std::string vswitchId;
-					std::string instanceName;
 					int masterNodeCount;
+					std::string instanceName;
 					std::string vpcId;
 					bool autoRenewal;
 					std::string coreDiskType;
 					std::string regionId;
 					std::string expireTime;
-					int coreDiskSize;
 					std::string backupStatus;
+					int coreDiskSize;
 				};
 
 

@@ -98,6 +98,17 @@ void DescribeInstancesRequest::setTag(const std::vector<Tag>& tag)
 	}
 }
 
+std::string DescribeInstancesRequest::getClusterId()const
+{
+	return clusterId_;
+}
+
+void DescribeInstancesRequest::setClusterId(const std::string& clusterId)
+{
+	clusterId_ = clusterId;
+	setParameter("ClusterId", clusterId);
+}
+
 std::string DescribeInstancesRequest::getDbType()const
 {
 	return dbType_;
