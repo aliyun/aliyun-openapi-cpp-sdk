@@ -40,10 +40,12 @@ void QueryCallStatusResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto secretCallStatusDTONode = value["SecretCallStatusDTO"];
-	if(!secretCallStatusDTONode["Status"].isNull())
-		secretCallStatusDTO_.status = std::stoi(secretCallStatusDTONode["Status"].asString());
 	if(!secretCallStatusDTONode["CalledNo"].isNull())
 		secretCallStatusDTO_.calledNo = secretCallStatusDTONode["CalledNo"].asString();
+	if(!secretCallStatusDTONode["Status"].isNull())
+		secretCallStatusDTO_.status = std::stoi(secretCallStatusDTONode["Status"].asString());
+	if(!secretCallStatusDTONode["Extension"].isNull())
+		secretCallStatusDTO_.extension = secretCallStatusDTONode["Extension"].asString();
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())

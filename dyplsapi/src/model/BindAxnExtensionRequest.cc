@@ -225,3 +225,14 @@ void BindAxnExtensionRequest::setASRModelId(const std::string& aSRModelId)
 	setParameter("ASRModelId", aSRModelId);
 }
 
+std::string BindAxnExtensionRequest::getCallRestrict()const
+{
+	return callRestrict_;
+}
+
+void BindAxnExtensionRequest::setCallRestrict(const std::string& callRestrict)
+{
+	callRestrict_ = callRestrict;
+	setParameter("CallRestrict", callRestrict);
+}
+

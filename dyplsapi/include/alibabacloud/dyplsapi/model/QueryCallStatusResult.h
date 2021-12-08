@@ -35,6 +35,7 @@ namespace AlibabaCloud
 				struct SecretCallStatusDTO
 				{
 					int status;
+					std::string extension;
 					std::string calledNo;
 				};
 

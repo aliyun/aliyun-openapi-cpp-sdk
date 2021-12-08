@@ -31,21 +31,21 @@ DyplsapiClient::DyplsapiClient(const Credentials &credentials, const ClientConfi
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "dypls");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 DyplsapiClient::DyplsapiClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "dypls");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 DyplsapiClient::DyplsapiClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "dypls");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 DyplsapiClient::~DyplsapiClient()
@@ -303,6 +303,78 @@ DyplsapiClient::BuySecretNoOutcomeCallable DyplsapiClient::buySecretNoCallable(c
 	return task->get_future();
 }
 
+DyplsapiClient::CancelPickUpWaybillOutcome DyplsapiClient::cancelPickUpWaybill(const CancelPickUpWaybillRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CancelPickUpWaybillOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CancelPickUpWaybillOutcome(CancelPickUpWaybillResult(outcome.result()));
+	else
+		return CancelPickUpWaybillOutcome(outcome.error());
+}
+
+void DyplsapiClient::cancelPickUpWaybillAsync(const CancelPickUpWaybillRequest& request, const CancelPickUpWaybillAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, cancelPickUpWaybill(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DyplsapiClient::CancelPickUpWaybillOutcomeCallable DyplsapiClient::cancelPickUpWaybillCallable(const CancelPickUpWaybillRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CancelPickUpWaybillOutcome()>>(
+			[this, request]()
+			{
+			return this->cancelPickUpWaybill(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DyplsapiClient::ConfirmSendSmsOutcome DyplsapiClient::confirmSendSms(const ConfirmSendSmsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ConfirmSendSmsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ConfirmSendSmsOutcome(ConfirmSendSmsResult(outcome.result()));
+	else
+		return ConfirmSendSmsOutcome(outcome.error());
+}
+
+void DyplsapiClient::confirmSendSmsAsync(const ConfirmSendSmsRequest& request, const ConfirmSendSmsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, confirmSendSms(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DyplsapiClient::ConfirmSendSmsOutcomeCallable DyplsapiClient::confirmSendSmsCallable(const ConfirmSendSmsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ConfirmSendSmsOutcome()>>(
+			[this, request]()
+			{
+			return this->confirmSendSms(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DyplsapiClient::CreateAxgGroupOutcome DyplsapiClient::createAxgGroup(const CreateAxgGroupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -333,6 +405,78 @@ DyplsapiClient::CreateAxgGroupOutcomeCallable DyplsapiClient::createAxgGroupCall
 			[this, request]()
 			{
 			return this->createAxgGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DyplsapiClient::CreatePickUpWaybillOutcome DyplsapiClient::createPickUpWaybill(const CreatePickUpWaybillRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreatePickUpWaybillOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreatePickUpWaybillOutcome(CreatePickUpWaybillResult(outcome.result()));
+	else
+		return CreatePickUpWaybillOutcome(outcome.error());
+}
+
+void DyplsapiClient::createPickUpWaybillAsync(const CreatePickUpWaybillRequest& request, const CreatePickUpWaybillAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createPickUpWaybill(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DyplsapiClient::CreatePickUpWaybillOutcomeCallable DyplsapiClient::createPickUpWaybillCallable(const CreatePickUpWaybillRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreatePickUpWaybillOutcome()>>(
+			[this, request]()
+			{
+			return this->createPickUpWaybill(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DyplsapiClient::CreateSubscriptionOutcome DyplsapiClient::createSubscription(const CreateSubscriptionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateSubscriptionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateSubscriptionOutcome(CreateSubscriptionResult(outcome.result()));
+	else
+		return CreateSubscriptionOutcome(outcome.error());
+}
+
+void DyplsapiClient::createSubscriptionAsync(const CreateSubscriptionRequest& request, const CreateSubscriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createSubscription(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DyplsapiClient::CreateSubscriptionOutcomeCallable DyplsapiClient::createSubscriptionCallable(const CreateSubscriptionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateSubscriptionOutcome()>>(
+			[this, request]()
+			{
+			return this->createSubscription(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -375,6 +519,42 @@ DyplsapiClient::DeleteSecretBlacklistOutcomeCallable DyplsapiClient::deleteSecre
 	return task->get_future();
 }
 
+DyplsapiClient::GetFaceVerifyOutcome DyplsapiClient::getFaceVerify(const GetFaceVerifyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetFaceVerifyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetFaceVerifyOutcome(GetFaceVerifyResult(outcome.result()));
+	else
+		return GetFaceVerifyOutcome(outcome.error());
+}
+
+void DyplsapiClient::getFaceVerifyAsync(const GetFaceVerifyRequest& request, const GetFaceVerifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getFaceVerify(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DyplsapiClient::GetFaceVerifyOutcomeCallable DyplsapiClient::getFaceVerifyCallable(const GetFaceVerifyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetFaceVerifyOutcome()>>(
+			[this, request]()
+			{
+			return this->getFaceVerify(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DyplsapiClient::GetSecretAsrDetailOutcome DyplsapiClient::getSecretAsrDetail(const GetSecretAsrDetailRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -405,6 +585,114 @@ DyplsapiClient::GetSecretAsrDetailOutcomeCallable DyplsapiClient::getSecretAsrDe
 			[this, request]()
 			{
 			return this->getSecretAsrDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DyplsapiClient::GetSubscriptionDetailOutcome DyplsapiClient::getSubscriptionDetail(const GetSubscriptionDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetSubscriptionDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetSubscriptionDetailOutcome(GetSubscriptionDetailResult(outcome.result()));
+	else
+		return GetSubscriptionDetailOutcome(outcome.error());
+}
+
+void DyplsapiClient::getSubscriptionDetailAsync(const GetSubscriptionDetailRequest& request, const GetSubscriptionDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getSubscriptionDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DyplsapiClient::GetSubscriptionDetailOutcomeCallable DyplsapiClient::getSubscriptionDetailCallable(const GetSubscriptionDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetSubscriptionDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->getSubscriptionDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DyplsapiClient::GetTotalPublicUrlOutcome DyplsapiClient::getTotalPublicUrl(const GetTotalPublicUrlRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetTotalPublicUrlOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetTotalPublicUrlOutcome(GetTotalPublicUrlResult(outcome.result()));
+	else
+		return GetTotalPublicUrlOutcome(outcome.error());
+}
+
+void DyplsapiClient::getTotalPublicUrlAsync(const GetTotalPublicUrlRequest& request, const GetTotalPublicUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getTotalPublicUrl(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DyplsapiClient::GetTotalPublicUrlOutcomeCallable DyplsapiClient::getTotalPublicUrlCallable(const GetTotalPublicUrlRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetTotalPublicUrlOutcome()>>(
+			[this, request]()
+			{
+			return this->getTotalPublicUrl(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DyplsapiClient::InitFaceVerifyOutcome DyplsapiClient::initFaceVerify(const InitFaceVerifyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return InitFaceVerifyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return InitFaceVerifyOutcome(InitFaceVerifyResult(outcome.result()));
+	else
+		return InitFaceVerifyOutcome(outcome.error());
+}
+
+void DyplsapiClient::initFaceVerifyAsync(const InitFaceVerifyRequest& request, const InitFaceVerifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, initFaceVerify(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DyplsapiClient::InitFaceVerifyOutcomeCallable DyplsapiClient::initFaceVerifyCallable(const InitFaceVerifyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<InitFaceVerifyOutcome()>>(
+			[this, request]()
+			{
+			return this->initFaceVerify(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -627,6 +915,42 @@ DyplsapiClient::QueryRecordFileDownloadUrlOutcomeCallable DyplsapiClient::queryR
 	return task->get_future();
 }
 
+DyplsapiClient::QuerySecretNoDetailOutcome DyplsapiClient::querySecretNoDetail(const QuerySecretNoDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QuerySecretNoDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QuerySecretNoDetailOutcome(QuerySecretNoDetailResult(outcome.result()));
+	else
+		return QuerySecretNoDetailOutcome(outcome.error());
+}
+
+void DyplsapiClient::querySecretNoDetailAsync(const QuerySecretNoDetailRequest& request, const QuerySecretNoDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, querySecretNoDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DyplsapiClient::QuerySecretNoDetailOutcomeCallable DyplsapiClient::querySecretNoDetailCallable(const QuerySecretNoDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QuerySecretNoDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->querySecretNoDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DyplsapiClient::QuerySecretNoRemainOutcome DyplsapiClient::querySecretNoRemain(const QuerySecretNoRemainRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -837,6 +1161,114 @@ DyplsapiClient::UnlockSecretNoOutcomeCallable DyplsapiClient::unlockSecretNoCall
 			[this, request]()
 			{
 			return this->unlockSecretNo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DyplsapiClient::UpdateDefaultBOutcome DyplsapiClient::updateDefaultB(const UpdateDefaultBRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateDefaultBOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateDefaultBOutcome(UpdateDefaultBResult(outcome.result()));
+	else
+		return UpdateDefaultBOutcome(outcome.error());
+}
+
+void DyplsapiClient::updateDefaultBAsync(const UpdateDefaultBRequest& request, const UpdateDefaultBAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateDefaultB(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DyplsapiClient::UpdateDefaultBOutcomeCallable DyplsapiClient::updateDefaultBCallable(const UpdateDefaultBRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateDefaultBOutcome()>>(
+			[this, request]()
+			{
+			return this->updateDefaultB(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DyplsapiClient::UpdatePhoneNumberOutcome DyplsapiClient::updatePhoneNumber(const UpdatePhoneNumberRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdatePhoneNumberOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdatePhoneNumberOutcome(UpdatePhoneNumberResult(outcome.result()));
+	else
+		return UpdatePhoneNumberOutcome(outcome.error());
+}
+
+void DyplsapiClient::updatePhoneNumberAsync(const UpdatePhoneNumberRequest& request, const UpdatePhoneNumberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updatePhoneNumber(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DyplsapiClient::UpdatePhoneNumberOutcomeCallable DyplsapiClient::updatePhoneNumberCallable(const UpdatePhoneNumberRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdatePhoneNumberOutcome()>>(
+			[this, request]()
+			{
+			return this->updatePhoneNumber(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DyplsapiClient::UpdatePhoneSwitchOutcome DyplsapiClient::updatePhoneSwitch(const UpdatePhoneSwitchRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdatePhoneSwitchOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdatePhoneSwitchOutcome(UpdatePhoneSwitchResult(outcome.result()));
+	else
+		return UpdatePhoneSwitchOutcome(outcome.error());
+}
+
+void DyplsapiClient::updatePhoneSwitchAsync(const UpdatePhoneSwitchRequest& request, const UpdatePhoneSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updatePhoneSwitch(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DyplsapiClient::UpdatePhoneSwitchOutcomeCallable DyplsapiClient::updatePhoneSwitchCallable(const UpdatePhoneSwitchRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdatePhoneSwitchOutcome()>>(
+			[this, request]()
+			{
+			return this->updatePhoneSwitch(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

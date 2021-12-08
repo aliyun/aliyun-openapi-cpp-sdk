@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setCallDisplayType(int callDisplayType);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				int getCallTimeout()const;
+				void setCallTimeout(int callTimeout);
 				std::string getPhoneNoX()const;
 				void setPhoneNoX(const std::string& phoneNoX);
 				std::string getRingConfig()const;
@@ -76,6 +78,7 @@ namespace AlibabaCloud
 				long resourceOwnerId_;
 				int callDisplayType_;
 				std::string accessKeyId_;
+				int callTimeout_;
 				std::string phoneNoX_;
 				std::string ringConfig_;
 				bool aSRStatus_;

@@ -71,6 +71,8 @@ namespace AlibabaCloud
 				void setOutId(const std::string& outId);
 				std::string getASRModelId()const;
 				void setASRModelId(const std::string& aSRModelId);
+				std::string getCallRestrict()const;
+				void setCallRestrict(const std::string& callRestrict);
 
             private:
 				long resourceOwnerId_;
@@ -91,6 +93,7 @@ namespace AlibabaCloud
 				bool isRecordingEnabled_;
 				std::string outId_;
 				std::string aSRModelId_;
+				std::string callRestrict_;
 
 			};
 		}

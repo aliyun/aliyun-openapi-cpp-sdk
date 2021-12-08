@@ -60,6 +60,17 @@ void BindAxbRequest::setAccessKeyId(const std::string& accessKeyId)
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+int BindAxbRequest::getCallTimeout()const
+{
+	return callTimeout_;
+}
+
+void BindAxbRequest::setCallTimeout(int callTimeout)
+{
+	callTimeout_ = callTimeout;
+	setParameter("CallTimeout", std::to_string(callTimeout));
+}
+
 std::string BindAxbRequest::getPhoneNoX()const
 {
 	return phoneNoX_;

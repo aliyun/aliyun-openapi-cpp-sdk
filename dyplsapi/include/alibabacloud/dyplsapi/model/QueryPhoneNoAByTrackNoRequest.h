@@ -37,24 +37,27 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getCabinetNo()const;
+				void setCabinetNo(const std::string& cabinetNo);
+				std::string getPhoneNoX()const;
+				void setPhoneNoX(const std::string& phoneNoX);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getTrackNo()const;
 				void setTrackNo(const std::string& trackNo);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getPhoneNoX()const;
-				void setPhoneNoX(const std::string& phoneNoX);
 
             private:
 				long resourceOwnerId_;
+				std::string accessKeyId_;
+				std::string cabinetNo_;
+				std::string phoneNoX_;
 				std::string resourceOwnerAccount_;
 				long ownerId_;
 				std::string trackNo_;
-				std::string accessKeyId_;
-				std::string phoneNoX_;
 
 			};
 		}

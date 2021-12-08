@@ -225,3 +225,14 @@ void BindAxgRequest::setASRModelId(const std::string& aSRModelId)
 	setParameter("ASRModelId", aSRModelId);
 }
 
+std::string BindAxgRequest::getCallRestrict()const
+{
+	return callRestrict_;
+}
+
+void BindAxgRequest::setCallRestrict(const std::string& callRestrict)
+{
+	callRestrict_ = callRestrict;
+	setParameter("CallRestrict", callRestrict);
+}
+

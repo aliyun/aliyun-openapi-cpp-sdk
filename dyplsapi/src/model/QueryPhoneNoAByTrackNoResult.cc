@@ -47,6 +47,8 @@ void QueryPhoneNoAByTrackNoResult::parse(const std::string &payload)
 			moduleObject.phoneNoA = valueModulephoneNoAInfo["PhoneNoA"].asString();
 		if(!valueModulephoneNoAInfo["PhoneNoX"].isNull())
 			moduleObject.phoneNoX = valueModulephoneNoAInfo["PhoneNoX"].asString();
+		if(!valueModulephoneNoAInfo["Extension"].isNull())
+			moduleObject.extension = valueModulephoneNoAInfo["Extension"].asString();
 		module_.push_back(moduleObject);
 	}
 	if(!value["Code"].isNull())

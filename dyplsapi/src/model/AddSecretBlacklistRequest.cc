@@ -115,3 +115,14 @@ void AddSecretBlacklistRequest::setBlackNo(const std::string& blackNo)
 	setParameter("BlackNo", blackNo);
 }
 
+std::string AddSecretBlacklistRequest::getWayControl()const
+{
+	return wayControl_;
+}
+
+void AddSecretBlacklistRequest::setWayControl(const std::string& wayControl)
+{
+	wayControl_ = wayControl;
+	setParameter("WayControl", wayControl);
+}
+

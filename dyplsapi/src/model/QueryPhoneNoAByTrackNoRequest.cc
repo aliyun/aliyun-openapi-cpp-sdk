@@ -38,6 +38,39 @@ void QueryPhoneNoAByTrackNoRequest::setResourceOwnerId(long resourceOwnerId)
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string QueryPhoneNoAByTrackNoRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void QueryPhoneNoAByTrackNoRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string QueryPhoneNoAByTrackNoRequest::getCabinetNo()const
+{
+	return cabinetNo_;
+}
+
+void QueryPhoneNoAByTrackNoRequest::setCabinetNo(const std::string& cabinetNo)
+{
+	cabinetNo_ = cabinetNo;
+	setParameter("CabinetNo", cabinetNo);
+}
+
+std::string QueryPhoneNoAByTrackNoRequest::getPhoneNoX()const
+{
+	return phoneNoX_;
+}
+
+void QueryPhoneNoAByTrackNoRequest::setPhoneNoX(const std::string& phoneNoX)
+{
+	phoneNoX_ = phoneNoX;
+	setParameter("PhoneNoX", phoneNoX);
+}
+
 std::string QueryPhoneNoAByTrackNoRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -69,27 +102,5 @@ void QueryPhoneNoAByTrackNoRequest::setTrackNo(const std::string& trackNo)
 {
 	trackNo_ = trackNo;
 	setParameter("TrackNo", trackNo);
-}
-
-std::string QueryPhoneNoAByTrackNoRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void QueryPhoneNoAByTrackNoRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-
-std::string QueryPhoneNoAByTrackNoRequest::getPhoneNoX()const
-{
-	return phoneNoX_;
-}
-
-void QueryPhoneNoAByTrackNoRequest::setPhoneNoX(const std::string& phoneNoX)
-{
-	phoneNoX_ = phoneNoX;
-	setParameter("PhoneNoX", phoneNoX);
 }
 

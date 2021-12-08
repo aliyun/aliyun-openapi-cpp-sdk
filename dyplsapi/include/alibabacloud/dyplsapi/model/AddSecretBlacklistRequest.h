@@ -51,6 +51,8 @@ namespace AlibabaCloud
 				void setPoolKey(const std::string& poolKey);
 				std::string getBlackNo()const;
 				void setBlackNo(const std::string& blackNo);
+				std::string getWayControl()const;
+				void setWayControl(const std::string& wayControl);
 
             private:
 				std::string blackType_;
@@ -61,6 +63,7 @@ namespace AlibabaCloud
 				long ownerId_;
 				std::string poolKey_;
 				std::string blackNo_;
+				std::string wayControl_;
 
 			};
 		}

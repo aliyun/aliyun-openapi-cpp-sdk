@@ -34,6 +34,7 @@ namespace AlibabaCloud
 			public:
 				struct PhoneNoAInfo
 				{
+					std::string extension;
 					std::string phoneNoX;
 					std::string phoneNoA;
 				};

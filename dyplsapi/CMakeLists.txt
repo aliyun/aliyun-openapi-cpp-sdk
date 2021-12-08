@@ -35,12 +35,28 @@ set(dyplsapi_public_header_model
 	include/alibabacloud/dyplsapi/model/BindAxnExtensionResult.h
 	include/alibabacloud/dyplsapi/model/BuySecretNoRequest.h
 	include/alibabacloud/dyplsapi/model/BuySecretNoResult.h
+	include/alibabacloud/dyplsapi/model/CancelPickUpWaybillRequest.h
+	include/alibabacloud/dyplsapi/model/CancelPickUpWaybillResult.h
+	include/alibabacloud/dyplsapi/model/ConfirmSendSmsRequest.h
+	include/alibabacloud/dyplsapi/model/ConfirmSendSmsResult.h
 	include/alibabacloud/dyplsapi/model/CreateAxgGroupRequest.h
 	include/alibabacloud/dyplsapi/model/CreateAxgGroupResult.h
+	include/alibabacloud/dyplsapi/model/CreatePickUpWaybillRequest.h
+	include/alibabacloud/dyplsapi/model/CreatePickUpWaybillResult.h
+	include/alibabacloud/dyplsapi/model/CreateSubscriptionRequest.h
+	include/alibabacloud/dyplsapi/model/CreateSubscriptionResult.h
 	include/alibabacloud/dyplsapi/model/DeleteSecretBlacklistRequest.h
 	include/alibabacloud/dyplsapi/model/DeleteSecretBlacklistResult.h
+	include/alibabacloud/dyplsapi/model/GetFaceVerifyRequest.h
+	include/alibabacloud/dyplsapi/model/GetFaceVerifyResult.h
 	include/alibabacloud/dyplsapi/model/GetSecretAsrDetailRequest.h
 	include/alibabacloud/dyplsapi/model/GetSecretAsrDetailResult.h
+	include/alibabacloud/dyplsapi/model/GetSubscriptionDetailRequest.h
+	include/alibabacloud/dyplsapi/model/GetSubscriptionDetailResult.h
+	include/alibabacloud/dyplsapi/model/GetTotalPublicUrlRequest.h
+	include/alibabacloud/dyplsapi/model/GetTotalPublicUrlResult.h
+	include/alibabacloud/dyplsapi/model/InitFaceVerifyRequest.h
+	include/alibabacloud/dyplsapi/model/InitFaceVerifyResult.h
 	include/alibabacloud/dyplsapi/model/LockSecretNoRequest.h
 	include/alibabacloud/dyplsapi/model/LockSecretNoResult.h
 	include/alibabacloud/dyplsapi/model/OperateAxgGroupRequest.h
@@ -53,6 +69,8 @@ set(dyplsapi_public_header_model
 	include/alibabacloud/dyplsapi/model/QueryPhoneNoAByTrackNoResult.h
 	include/alibabacloud/dyplsapi/model/QueryRecordFileDownloadUrlRequest.h
 	include/alibabacloud/dyplsapi/model/QueryRecordFileDownloadUrlResult.h
+	include/alibabacloud/dyplsapi/model/QuerySecretNoDetailRequest.h
+	include/alibabacloud/dyplsapi/model/QuerySecretNoDetailResult.h
 	include/alibabacloud/dyplsapi/model/QuerySecretNoRemainRequest.h
 	include/alibabacloud/dyplsapi/model/QuerySecretNoRemainResult.h
 	include/alibabacloud/dyplsapi/model/QuerySubsIdRequest.h
@@ -65,6 +83,12 @@ set(dyplsapi_public_header_model
 	include/alibabacloud/dyplsapi/model/UnbindSubscriptionResult.h
 	include/alibabacloud/dyplsapi/model/UnlockSecretNoRequest.h
 	include/alibabacloud/dyplsapi/model/UnlockSecretNoResult.h
+	include/alibabacloud/dyplsapi/model/UpdateDefaultBRequest.h
+	include/alibabacloud/dyplsapi/model/UpdateDefaultBResult.h
+	include/alibabacloud/dyplsapi/model/UpdatePhoneNumberRequest.h
+	include/alibabacloud/dyplsapi/model/UpdatePhoneNumberResult.h
+	include/alibabacloud/dyplsapi/model/UpdatePhoneSwitchRequest.h
+	include/alibabacloud/dyplsapi/model/UpdatePhoneSwitchResult.h
 	include/alibabacloud/dyplsapi/model/UpdateSubscriptionRequest.h
 	include/alibabacloud/dyplsapi/model/UpdateSubscriptionResult.h )
 
@@ -84,12 +108,28 @@ set(dyplsapi_src
 	src/model/BindAxnExtensionResult.cc
 	src/model/BuySecretNoRequest.cc
 	src/model/BuySecretNoResult.cc
+	src/model/CancelPickUpWaybillRequest.cc
+	src/model/CancelPickUpWaybillResult.cc
+	src/model/ConfirmSendSmsRequest.cc
+	src/model/ConfirmSendSmsResult.cc
 	src/model/CreateAxgGroupRequest.cc
 	src/model/CreateAxgGroupResult.cc
+	src/model/CreatePickUpWaybillRequest.cc
+	src/model/CreatePickUpWaybillResult.cc
+	src/model/CreateSubscriptionRequest.cc
+	src/model/CreateSubscriptionResult.cc
 	src/model/DeleteSecretBlacklistRequest.cc
 	src/model/DeleteSecretBlacklistResult.cc
+	src/model/GetFaceVerifyRequest.cc
+	src/model/GetFaceVerifyResult.cc
 	src/model/GetSecretAsrDetailRequest.cc
 	src/model/GetSecretAsrDetailResult.cc
+	src/model/GetSubscriptionDetailRequest.cc
+	src/model/GetSubscriptionDetailResult.cc
+	src/model/GetTotalPublicUrlRequest.cc
+	src/model/GetTotalPublicUrlResult.cc
+	src/model/InitFaceVerifyRequest.cc
+	src/model/InitFaceVerifyResult.cc
 	src/model/LockSecretNoRequest.cc
 	src/model/LockSecretNoResult.cc
 	src/model/OperateAxgGroupRequest.cc
@@ -102,6 +142,8 @@ set(dyplsapi_src
 	src/model/QueryPhoneNoAByTrackNoResult.cc
 	src/model/QueryRecordFileDownloadUrlRequest.cc
 	src/model/QueryRecordFileDownloadUrlResult.cc
+	src/model/QuerySecretNoDetailRequest.cc
+	src/model/QuerySecretNoDetailResult.cc
 	src/model/QuerySecretNoRemainRequest.cc
 	src/model/QuerySecretNoRemainResult.cc
 	src/model/QuerySubsIdRequest.cc
@@ -114,6 +156,12 @@ set(dyplsapi_src
 	src/model/UnbindSubscriptionResult.cc
 	src/model/UnlockSecretNoRequest.cc
 	src/model/UnlockSecretNoResult.cc
+	src/model/UpdateDefaultBRequest.cc
+	src/model/UpdateDefaultBResult.cc
+	src/model/UpdatePhoneNumberRequest.cc
+	src/model/UpdatePhoneNumberResult.cc
+	src/model/UpdatePhoneSwitchRequest.cc
+	src/model/UpdatePhoneSwitchResult.cc
 	src/model/UpdateSubscriptionRequest.cc
 	src/model/UpdateSubscriptionResult.cc )
 

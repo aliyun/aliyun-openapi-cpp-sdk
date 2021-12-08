@@ -32,20 +32,41 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_DYPLSAPI_EXPORT GetSecretAsrDetailResult : public ServiceResult
 			{
 			public:
+				struct Data
+				{
+					struct SecretAsrSentenceDTO
+					{
+						long endTime;
+						long silenceDuration;
+						long beginTime;
+						std::string text;
+						int channelId;
+						int speechRate;
+						std::string emotionValue;
+					};
+					std::string msg;
+					std::string type;
+					std::string requestId;
+					long bizDuration;
+					std::vector<SecretAsrSentenceDTO> sentences;
+					std::string code;
+					std::string businessId;
+					std::string businessKey;
+				};
 
 
 				GetSecretAsrDetailResult();
 				explicit GetSecretAsrDetailResult(const std::string &payload);
 				~GetSecretAsrDetailResult();
 				std::string getMessage()const;
-				std::string getData()const;
+				Data getData()const;
 				std::string getCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
-				std::string data_;
+				Data data_;
 				std::string code_;
 
 			};

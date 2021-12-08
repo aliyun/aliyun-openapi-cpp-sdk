@@ -60,6 +60,17 @@ void BindAxnRequest::setAccessKeyId(const std::string& accessKeyId)
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+int BindAxnRequest::getCallTimeout()const
+{
+	return callTimeout_;
+}
+
+void BindAxnRequest::setCallTimeout(int callTimeout)
+{
+	callTimeout_ = callTimeout;
+	setParameter("CallTimeout", std::to_string(callTimeout));
+}
+
 std::string BindAxnRequest::getPhoneNoX()const
 {
 	return phoneNoX_;
@@ -223,5 +234,16 @@ void BindAxnRequest::setASRModelId(const std::string& aSRModelId)
 {
 	aSRModelId_ = aSRModelId;
 	setParameter("ASRModelId", aSRModelId);
+}
+
+std::string BindAxnRequest::getCallRestrict()const
+{
+	return callRestrict_;
+}
+
+void BindAxnRequest::setCallRestrict(const std::string& callRestrict)
+{
+	callRestrict_ = callRestrict;
+	setParameter("CallRestrict", callRestrict);
 }
 
