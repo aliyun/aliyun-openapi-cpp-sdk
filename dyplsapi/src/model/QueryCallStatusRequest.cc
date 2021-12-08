@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,89 +18,73 @@
 
 using AlibabaCloud::Dyplsapi::Model::QueryCallStatusRequest;
 
-QueryCallStatusRequest::QueryCallStatusRequest() :
-	RpcServiceRequest("dyplsapi", "2017-05-25", "QueryCallStatus")
-{
-	setMethod(HttpRequest::Method::Post);
+QueryCallStatusRequest::QueryCallStatusRequest()
+    : RpcServiceRequest("dyplsapi", "2017-05-25", "QueryCallStatus") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-QueryCallStatusRequest::~QueryCallStatusRequest()
-{}
+QueryCallStatusRequest::~QueryCallStatusRequest() {}
 
-long QueryCallStatusRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long QueryCallStatusRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void QueryCallStatusRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void QueryCallStatusRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string QueryCallStatusRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string QueryCallStatusRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void QueryCallStatusRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void QueryCallStatusRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string QueryCallStatusRequest::getSubsId()const
-{
-	return subsId_;
+std::string QueryCallStatusRequest::getSubsId() const {
+  return subsId_;
 }
 
-void QueryCallStatusRequest::setSubsId(const std::string& subsId)
-{
-	subsId_ = subsId;
-	setParameter("SubsId", subsId);
+void QueryCallStatusRequest::setSubsId(const std::string &subsId) {
+  subsId_ = subsId;
+  setParameter(std::string("SubsId"), subsId);
 }
 
-std::string QueryCallStatusRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string QueryCallStatusRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void QueryCallStatusRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void QueryCallStatusRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string QueryCallStatusRequest::getCallNo()const
-{
-	return callNo_;
+std::string QueryCallStatusRequest::getCallNo() const {
+  return callNo_;
 }
 
-void QueryCallStatusRequest::setCallNo(const std::string& callNo)
-{
-	callNo_ = callNo;
-	setParameter("CallNo", callNo);
+void QueryCallStatusRequest::setCallNo(const std::string &callNo) {
+  callNo_ = callNo;
+  setParameter(std::string("CallNo"), callNo);
 }
 
-long QueryCallStatusRequest::getOwnerId()const
-{
-	return ownerId_;
+long QueryCallStatusRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void QueryCallStatusRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void QueryCallStatusRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string QueryCallStatusRequest::getPoolKey()const
-{
-	return poolKey_;
+std::string QueryCallStatusRequest::getPoolKey() const {
+  return poolKey_;
 }
 
-void QueryCallStatusRequest::setPoolKey(const std::string& poolKey)
-{
-	poolKey_ = poolKey;
-	setParameter("PoolKey", poolKey);
+void QueryCallStatusRequest::setPoolKey(const std::string &poolKey) {
+  poolKey_ = poolKey;
+  setParameter(std::string("PoolKey"), poolKey);
 }
 

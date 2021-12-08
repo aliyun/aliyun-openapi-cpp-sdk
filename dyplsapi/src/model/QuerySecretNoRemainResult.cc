@@ -40,18 +40,18 @@ void QuerySecretNoRemainResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto secretRemainDTONode = value["SecretRemainDTO"];
-	if(!secretRemainDTONode["City"].isNull())
-		secretRemainDTO_.city = secretRemainDTONode["City"].asString();
 	if(!secretRemainDTONode["Amount"].isNull())
 		secretRemainDTO_.amount = std::stol(secretRemainDTONode["Amount"].asString());
+	if(!secretRemainDTONode["City"].isNull())
+		secretRemainDTO_.city = secretRemainDTONode["City"].asString();
 	auto allRemainDTOListNode = secretRemainDTONode["RemainDTOList"]["remainDTO"];
 	for (auto secretRemainDTONodeRemainDTOListremainDTO : allRemainDTOListNode)
 	{
 		SecretRemainDTO::RemainDTO remainDTOObject;
-		if(!secretRemainDTONodeRemainDTOListremainDTO["City"].isNull())
-			remainDTOObject.city = secretRemainDTONodeRemainDTOListremainDTO["City"].asString();
 		if(!secretRemainDTONodeRemainDTOListremainDTO["Amount"].isNull())
 			remainDTOObject.amount = std::stol(secretRemainDTONodeRemainDTOListremainDTO["Amount"].asString());
+		if(!secretRemainDTONodeRemainDTOListremainDTO["City"].isNull())
+			remainDTOObject.city = secretRemainDTONodeRemainDTOListremainDTO["City"].asString();
 		secretRemainDTO_.remainDTOList.push_back(remainDTOObject);
 	}
 	if(!value["Code"].isNull())

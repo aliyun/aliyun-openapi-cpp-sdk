@@ -40,10 +40,10 @@ void GetTotalPublicUrlResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["PhonePublicUrl"].isNull())
-		data_.phonePublicUrl = dataNode["PhonePublicUrl"].asString();
 	if(!dataNode["RingPublicUrl"].isNull())
 		data_.ringPublicUrl = dataNode["RingPublicUrl"].asString();
+	if(!dataNode["PhonePublicUrl"].isNull())
+		data_.phonePublicUrl = dataNode["PhonePublicUrl"].asString();
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())

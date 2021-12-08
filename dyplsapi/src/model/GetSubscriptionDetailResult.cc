@@ -40,20 +40,20 @@ void GetSubscriptionDetailResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
+	if(!dataNode["PhoneNo"].isNull())
+		data_.phoneNo = dataNode["PhoneNo"].asString();
+	if(!dataNode["City"].isNull())
+		data_.city = dataNode["City"].asString();
+	if(!dataNode["SwitchStatus"].isNull())
+		data_.switchStatus = std::stoi(dataNode["SwitchStatus"].asString());
 	if(!dataNode["SubsId"].isNull())
 		data_.subsId = std::stol(dataNode["SubsId"].asString());
 	if(!dataNode["SecretNo"].isNull())
 		data_.secretNo = dataNode["SecretNo"].asString();
-	if(!dataNode["PhoneNo"].isNull())
-		data_.phoneNo = dataNode["PhoneNo"].asString();
-	if(!dataNode["SwitchStatus"].isNull())
-		data_.switchStatus = std::stoi(dataNode["SwitchStatus"].asString());
-	if(!dataNode["Province"].isNull())
-		data_.province = dataNode["Province"].asString();
-	if(!dataNode["City"].isNull())
-		data_.city = dataNode["City"].asString();
 	if(!dataNode["Vendor"].isNull())
 		data_.vendor = dataNode["Vendor"].asString();
+	if(!dataNode["Province"].isNull())
+		data_.province = dataNode["Province"].asString();
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())

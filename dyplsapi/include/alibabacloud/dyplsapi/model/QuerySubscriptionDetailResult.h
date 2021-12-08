@@ -36,10 +36,10 @@ namespace AlibabaCloud
 				{
 					long status;
 					bool aSRStatus;
-					std::string phoneNoX;
 					std::string expireDate;
-					std::string subsId;
+					std::string phoneNoX;
 					long groupId;
+					std::string subsId;
 					std::string extension;
 					std::string callRestrict;
 					std::string gmtCreate;

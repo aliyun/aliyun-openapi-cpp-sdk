@@ -40,12 +40,12 @@ void BindAxnResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto secretBindDTONode = value["SecretBindDTO"];
+	if(!secretBindDTONode["Extension"].isNull())
+		secretBindDTO_.extension = secretBindDTONode["Extension"].asString();
 	if(!secretBindDTONode["SubsId"].isNull())
 		secretBindDTO_.subsId = secretBindDTONode["SubsId"].asString();
 	if(!secretBindDTONode["SecretNo"].isNull())
 		secretBindDTO_.secretNo = secretBindDTONode["SecretNo"].asString();
-	if(!secretBindDTONode["Extension"].isNull())
-		secretBindDTO_.extension = secretBindDTONode["Extension"].asString();
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
