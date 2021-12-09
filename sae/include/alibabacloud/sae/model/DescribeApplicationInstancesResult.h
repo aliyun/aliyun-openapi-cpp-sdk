@@ -36,14 +36,15 @@ namespace AlibabaCloud
 				{
 					struct Instance
 					{
-						std::string instanceContainerIp;
 						std::string instanceHealthStatus;
+						std::string instanceContainerIp;
 						std::string instanceId;
 						std::string vSwitchId;
 						std::string imageUrl;
 						long instanceContainerRestarts;
-						std::string packageVersion;
 						std::string instanceContainerStatus;
+						std::string packageVersion;
+						std::string eip;
 						long createTimeStamp;
 						std::string groupId;
 					};

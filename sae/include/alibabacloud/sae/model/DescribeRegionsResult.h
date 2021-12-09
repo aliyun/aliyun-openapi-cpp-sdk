@@ -34,6 +34,7 @@ namespace AlibabaCloud
 			public:
 				struct Region
 				{
+					std::vector<std::string> recommendZones;
 					std::string regionId;
 					std::string regionEndpoint;
 					std::string localName;

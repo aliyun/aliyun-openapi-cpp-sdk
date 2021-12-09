@@ -50,6 +50,17 @@ void CreateApplicationScalingRuleRequest::setMinReadyInstances(const std::string
 	setParameter("MinReadyInstances", minReadyInstances);
 }
 
+bool CreateApplicationScalingRuleRequest::getScalingRuleEnable()const
+{
+	return scalingRuleEnable_;
+}
+
+void CreateApplicationScalingRuleRequest::setScalingRuleEnable(bool scalingRuleEnable)
+{
+	scalingRuleEnable_ = scalingRuleEnable;
+	setParameter("ScalingRuleEnable", scalingRuleEnable ? "true" : "false");
+}
+
 std::string CreateApplicationScalingRuleRequest::getScalingRuleTimer()const
 {
 	return scalingRuleTimer_;

@@ -59,8 +59,8 @@ namespace AlibabaCloud
 					};
 					bool scaleRuleEnabled;
 					Timer timer;
-					long lastDisableTime;
 					std::string appId;
+					long lastDisableTime;
 					long createTime;
 					long updateTime;
 					Metric metric;

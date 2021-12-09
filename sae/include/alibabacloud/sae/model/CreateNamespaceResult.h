@@ -35,8 +35,8 @@ namespace AlibabaCloud
 				struct Data
 				{
 					std::string namespaceName;
-					std::string regionId;
 					std::string namespaceId;
+					std::string regionId;
 					std::string namespaceDescription;
 				};
 

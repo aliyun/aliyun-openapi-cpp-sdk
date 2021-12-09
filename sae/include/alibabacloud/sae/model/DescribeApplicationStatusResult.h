@@ -34,6 +34,7 @@ namespace AlibabaCloud
 			public:
 				struct Data
 				{
+					bool enableAgent;
 					std::string armsAdvancedEnabled;
 					std::string armsApmInfo;
 					std::string appId;
@@ -42,7 +43,9 @@ namespace AlibabaCloud
 					std::string lastChangeOrderId;
 					std::string createTime;
 					int runningInstances;
+					std::string subStatus;
 					std::string lastChangeOrderStatus;
+					long fileSizeLimit;
 				};
 
 

@@ -41,8 +41,16 @@ namespace AlibabaCloud
 				void setNamespaceId(const std::string& namespaceId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
+				std::string getOrderBy()const;
+				void setOrderBy(const std::string& orderBy);
 				int getCurrentPage()const;
 				void setCurrentPage(int currentPage);
+				std::string getFieldValue()const;
+				void setFieldValue(const std::string& fieldValue);
+				bool getReverse()const;
+				void setReverse(bool reverse);
+				std::string getFieldType()const;
+				void setFieldType(const std::string& fieldType);
 				std::string getTags()const;
 				void setTags(const std::string& tags);
 
@@ -50,7 +58,11 @@ namespace AlibabaCloud
 				std::string appName_;
 				std::string namespaceId_;
 				int pageSize_;
+				std::string orderBy_;
 				int currentPage_;
+				std::string fieldValue_;
+				bool reverse_;
+				std::string fieldType_;
 				std::string tags_;
 
 			};

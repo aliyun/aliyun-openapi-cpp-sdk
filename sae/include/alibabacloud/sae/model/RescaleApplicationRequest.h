@@ -41,11 +41,14 @@ namespace AlibabaCloud
 				void setReplicas(int replicas);
 				std::string getAppId()const;
 				void setAppId(const std::string& appId);
+				bool getAutoEnableApplicationScalingRule()const;
+				void setAutoEnableApplicationScalingRule(bool autoEnableApplicationScalingRule);
 
             private:
 				int minReadyInstances_;
 				int replicas_;
 				std::string appId_;
+				bool autoEnableApplicationScalingRule_;
 
 			};
 		}

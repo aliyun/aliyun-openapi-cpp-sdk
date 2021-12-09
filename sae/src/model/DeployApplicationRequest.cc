@@ -83,6 +83,17 @@ void DeployApplicationRequest::setSlsConfigs(const std::string& slsConfigs)
 	setParameter("SlsConfigs", slsConfigs);
 }
 
+std::string DeployApplicationRequest::getOssAkSecret()const
+{
+	return ossAkSecret_;
+}
+
+void DeployApplicationRequest::setOssAkSecret(const std::string& ossAkSecret)
+{
+	ossAkSecret_ = ossAkSecret;
+	setBodyParameter("OssAkSecret", ossAkSecret);
+}
+
 std::string DeployApplicationRequest::getCommandArgs()const
 {
 	return commandArgs_;
@@ -149,6 +160,17 @@ void DeployApplicationRequest::setBatchWaitTime(int batchWaitTime)
 	setParameter("BatchWaitTime", std::to_string(batchWaitTime));
 }
 
+std::string DeployApplicationRequest::getOssAkId()const
+{
+	return ossAkId_;
+}
+
+void DeployApplicationRequest::setOssAkId(const std::string& ossAkId)
+{
+	ossAkId_ = ossAkId;
+	setBodyParameter("OssAkId", ossAkId);
+}
+
 std::string DeployApplicationRequest::getLiveness()const
 {
 	return liveness_;
@@ -169,6 +191,17 @@ void DeployApplicationRequest::setEnvs(const std::string& envs)
 {
 	envs_ = envs;
 	setParameter("Envs", envs);
+}
+
+std::string DeployApplicationRequest::getPhpPECLExtensions()const
+{
+	return phpPECLExtensions_;
+}
+
+void DeployApplicationRequest::setPhpPECLExtensions(const std::string& phpPECLExtensions)
+{
+	phpPECLExtensions_ = phpPECLExtensions;
+	setBodyParameter("PhpPECLExtensions", phpPECLExtensions);
 }
 
 std::string DeployApplicationRequest::getPhpArmsConfigLocation()const
@@ -281,6 +314,17 @@ void DeployApplicationRequest::setConfigMapMountDesc(const std::string& configMa
 	setBodyParameter("ConfigMapMountDesc", configMapMountDesc);
 }
 
+std::string DeployApplicationRequest::getOssMountDescs()const
+{
+	return ossMountDescs_;
+}
+
+void DeployApplicationRequest::setOssMountDescs(const std::string& ossMountDescs)
+{
+	ossMountDescs_ = ossMountDescs;
+	setBodyParameter("OssMountDescs", ossMountDescs);
+}
+
 std::string DeployApplicationRequest::getPhpConfig()const
 {
 	return phpConfig_;
@@ -301,6 +345,17 @@ void DeployApplicationRequest::setPreStop(const std::string& preStop)
 {
 	preStop_ = preStop;
 	setParameter("PreStop", preStop);
+}
+
+bool DeployApplicationRequest::getEnableGreyTagRoute()const
+{
+	return enableGreyTagRoute_;
+}
+
+void DeployApplicationRequest::setEnableGreyTagRoute(bool enableGreyTagRoute)
+{
+	enableGreyTagRoute_ = enableGreyTagRoute;
+	setParameter("EnableGreyTagRoute", enableGreyTagRoute ? "true" : "false");
 }
 
 std::string DeployApplicationRequest::getCommand()const
@@ -369,6 +424,17 @@ void DeployApplicationRequest::setChangeOrderDesc(const std::string& changeOrder
 	setParameter("ChangeOrderDesc", changeOrderDesc);
 }
 
+std::string DeployApplicationRequest::getAcrInstanceId()const
+{
+	return acrInstanceId_;
+}
+
+void DeployApplicationRequest::setAcrInstanceId(const std::string& acrInstanceId)
+{
+	acrInstanceId_ = acrInstanceId;
+	setBodyParameter("AcrInstanceId", acrInstanceId);
+}
+
 std::string DeployApplicationRequest::getAppId()const
 {
 	return appId_;
@@ -389,6 +455,17 @@ void DeployApplicationRequest::setImageUrl(const std::string& imageUrl)
 {
 	imageUrl_ = imageUrl;
 	setParameter("ImageUrl", imageUrl);
+}
+
+std::string DeployApplicationRequest::getPhp()const
+{
+	return php_;
+}
+
+void DeployApplicationRequest::setPhp(const std::string& php)
+{
+	php_ = php;
+	setBodyParameter("Php", php);
 }
 
 bool DeployApplicationRequest::getAutoEnableApplicationScalingRule()const
@@ -422,5 +499,27 @@ void DeployApplicationRequest::setPostStart(const std::string& postStart)
 {
 	postStart_ = postStart;
 	setParameter("PostStart", postStart);
+}
+
+std::string DeployApplicationRequest::getPhpExtensions()const
+{
+	return phpExtensions_;
+}
+
+void DeployApplicationRequest::setPhpExtensions(const std::string& phpExtensions)
+{
+	phpExtensions_ = phpExtensions;
+	setBodyParameter("PhpExtensions", phpExtensions);
+}
+
+bool DeployApplicationRequest::getAssociateEip()const
+{
+	return associateEip_;
+}
+
+void DeployApplicationRequest::setAssociateEip(bool associateEip)
+{
+	associateEip_ = associateEip;
+	setBodyParameter("AssociateEip", associateEip ? "true" : "false");
 }
 

@@ -40,56 +40,56 @@ void DescribePipelineResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["PipelineStatus"].isNull())
-		data_.pipelineStatus = std::stoi(dataNode["PipelineStatus"].asString());
 	if(!dataNode["ShowBatch"].isNull())
 		data_.showBatch = dataNode["ShowBatch"].asString() == "true";
+	if(!dataNode["PipelineStatus"].isNull())
+		data_.pipelineStatus = std::stoi(dataNode["PipelineStatus"].asString());
 	if(!dataNode["CurrentPoint"].isNull())
 		data_.currentPoint = std::stoi(dataNode["CurrentPoint"].asString());
-	if(!dataNode["PipelineName"].isNull())
-		data_.pipelineName = dataNode["PipelineName"].asString();
-	if(!dataNode["PipelineId"].isNull())
-		data_.pipelineId = dataNode["PipelineId"].asString();
 	if(!dataNode["CurrentStageId"].isNull())
 		data_.currentStageId = dataNode["CurrentStageId"].asString();
-	if(!dataNode["CoStatus"].isNull())
-		data_.coStatus = dataNode["CoStatus"].asString();
+	if(!dataNode["PipelineName"].isNull())
+		data_.pipelineName = dataNode["PipelineName"].asString();
 	if(!dataNode["NextPipelineId"].isNull())
 		data_.nextPipelineId = dataNode["NextPipelineId"].asString();
+	if(!dataNode["PipelineId"].isNull())
+		data_.pipelineId = dataNode["PipelineId"].asString();
+	if(!dataNode["CoStatus"].isNull())
+		data_.coStatus = dataNode["CoStatus"].asString();
 	auto allStageListNode = dataNode["StageList"]["Stage"];
 	for (auto dataNodeStageListStage : allStageListNode)
 	{
 		Data::Stage stageObject;
 		if(!dataNodeStageListStage["Status"].isNull())
 			stageObject.status = std::stoi(dataNodeStageListStage["Status"].asString());
-		if(!dataNodeStageListStage["StageName"].isNull())
-			stageObject.stageName = dataNodeStageListStage["StageName"].asString();
-		if(!dataNodeStageListStage["ExecutorType"].isNull())
-			stageObject.executorType = std::stoi(dataNodeStageListStage["ExecutorType"].asString());
 		if(!dataNodeStageListStage["StageId"].isNull())
 			stageObject.stageId = dataNodeStageListStage["StageId"].asString();
+		if(!dataNodeStageListStage["ExecutorType"].isNull())
+			stageObject.executorType = std::stoi(dataNodeStageListStage["ExecutorType"].asString());
+		if(!dataNodeStageListStage["StageName"].isNull())
+			stageObject.stageName = dataNodeStageListStage["StageName"].asString();
 		auto allTaskListNode = dataNodeStageListStage["TaskList"]["Task"];
 		for (auto dataNodeStageListStageTaskListTask : allTaskListNode)
 		{
 			Data::Stage::Task taskListObject;
 			if(!dataNodeStageListStageTaskListTask["Status"].isNull())
 				taskListObject.status = std::stoi(dataNodeStageListStageTaskListTask["Status"].asString());
+			if(!dataNodeStageListStageTaskListTask["StageId"].isNull())
+				taskListObject.stageId = dataNodeStageListStageTaskListTask["StageId"].asString();
+			if(!dataNodeStageListStageTaskListTask["ErrorMessage"].isNull())
+				taskListObject.errorMessage = dataNodeStageListStageTaskListTask["ErrorMessage"].asString();
+			if(!dataNodeStageListStageTaskListTask["ErrorCode"].isNull())
+				taskListObject.errorCode = dataNodeStageListStageTaskListTask["ErrorCode"].asString();
+			if(!dataNodeStageListStageTaskListTask["TaskName"].isNull())
+				taskListObject.taskName = dataNodeStageListStageTaskListTask["TaskName"].asString();
 			if(!dataNodeStageListStageTaskListTask["ErrorIgnore"].isNull())
 				taskListObject.errorIgnore = std::stoi(dataNodeStageListStageTaskListTask["ErrorIgnore"].asString());
-			if(!dataNodeStageListStageTaskListTask["TaskId"].isNull())
-				taskListObject.taskId = dataNodeStageListStageTaskListTask["TaskId"].asString();
 			if(!dataNodeStageListStageTaskListTask["Message"].isNull())
 				taskListObject.message = dataNodeStageListStageTaskListTask["Message"].asString();
 			if(!dataNodeStageListStageTaskListTask["ShowManualIgnore"].isNull())
 				taskListObject.showManualIgnore = dataNodeStageListStageTaskListTask["ShowManualIgnore"].asString() == "true";
-			if(!dataNodeStageListStageTaskListTask["TaskName"].isNull())
-				taskListObject.taskName = dataNodeStageListStageTaskListTask["TaskName"].asString();
-			if(!dataNodeStageListStageTaskListTask["StageId"].isNull())
-				taskListObject.stageId = dataNodeStageListStageTaskListTask["StageId"].asString();
-			if(!dataNodeStageListStageTaskListTask["ErrorCode"].isNull())
-				taskListObject.errorCode = dataNodeStageListStageTaskListTask["ErrorCode"].asString();
-			if(!dataNodeStageListStageTaskListTask["ErrorMessage"].isNull())
-				taskListObject.errorMessage = dataNodeStageListStageTaskListTask["ErrorMessage"].asString();
+			if(!dataNodeStageListStageTaskListTask["TaskId"].isNull())
+				taskListObject.taskId = dataNodeStageListStageTaskListTask["TaskId"].asString();
 			stageObject.taskList.push_back(taskListObject);
 		}
 		data_.stageList.push_back(stageObject);

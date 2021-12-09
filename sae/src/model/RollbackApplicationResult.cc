@@ -42,6 +42,8 @@ void RollbackApplicationResult::parse(const std::string &payload)
 	auto dataNode = value["Data"];
 	if(!dataNode["ChangeOrderId"].isNull())
 		data_.changeOrderId = dataNode["ChangeOrderId"].asString();
+	if(!dataNode["IsNeedApproval"].isNull())
+		data_.isNeedApproval = dataNode["IsNeedApproval"].asString() == "true";
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
 	if(!value["TraceId"].isNull())

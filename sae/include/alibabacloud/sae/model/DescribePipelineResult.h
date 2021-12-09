@@ -42,8 +42,8 @@ namespace AlibabaCloud
 							int errorIgnore;
 							std::string taskId;
 							std::string message;
-							bool showManualIgnore;
 							std::string taskName;
+							bool showManualIgnore;
 							std::string stageId;
 							std::string errorCode;
 							std::string errorMessage;
@@ -51,16 +51,16 @@ namespace AlibabaCloud
 						int status;
 						std::string stageName;
 						std::vector<Stage::Task> taskList;
-						int executorType;
 						std::string stageId;
+						int executorType;
 					};
 					int pipelineStatus;
 					bool showBatch;
 					int currentPoint;
 					std::string pipelineName;
 					std::vector<Stage> stageList;
-					std::string pipelineId;
 					std::string currentStageId;
+					std::string pipelineId;
 					std::string coStatus;
 					std::string nextPipelineId;
 				};

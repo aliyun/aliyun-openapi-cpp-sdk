@@ -40,6 +40,8 @@
 #include "model/CreateApplicationScalingRuleResult.h"
 #include "model/CreateConfigMapRequest.h"
 #include "model/CreateConfigMapResult.h"
+#include "model/CreateGreyTagRouteRequest.h"
+#include "model/CreateGreyTagRouteResult.h"
 #include "model/CreateIngressRequest.h"
 #include "model/CreateIngressResult.h"
 #include "model/CreateNamespaceRequest.h"
@@ -50,12 +52,16 @@
 #include "model/DeleteApplicationScalingRuleResult.h"
 #include "model/DeleteConfigMapRequest.h"
 #include "model/DeleteConfigMapResult.h"
+#include "model/DeleteGreyTagRouteRequest.h"
+#include "model/DeleteGreyTagRouteResult.h"
 #include "model/DeleteIngressRequest.h"
 #include "model/DeleteIngressResult.h"
 #include "model/DeleteNamespaceRequest.h"
 #include "model/DeleteNamespaceResult.h"
 #include "model/DeployApplicationRequest.h"
 #include "model/DeployApplicationResult.h"
+#include "model/DescribeAppServiceDetailRequest.h"
+#include "model/DescribeAppServiceDetailResult.h"
 #include "model/DescribeApplicationConfigRequest.h"
 #include "model/DescribeApplicationConfigResult.h"
 #include "model/DescribeApplicationGroupsRequest.h"
@@ -78,6 +84,8 @@
 #include "model/DescribeConfigMapResult.h"
 #include "model/DescribeEdasContainersRequest.h"
 #include "model/DescribeEdasContainersResult.h"
+#include "model/DescribeGreyTagRouteRequest.h"
+#include "model/DescribeGreyTagRouteResult.h"
 #include "model/DescribeIngressRequest.h"
 #include "model/DescribeIngressResult.h"
 #include "model/DescribeInstanceLogRequest.h"
@@ -98,10 +106,14 @@
 #include "model/DescribeRegionsResult.h"
 #include "model/DisableApplicationScalingRuleRequest.h"
 #include "model/DisableApplicationScalingRuleResult.h"
+#include "model/DownloadFilesRequest.h"
+#include "model/DownloadFilesResult.h"
 #include "model/EnableApplicationScalingRuleRequest.h"
 #include "model/EnableApplicationScalingRuleResult.h"
 #include "model/ListAppEventsRequest.h"
 #include "model/ListAppEventsResult.h"
+#include "model/ListAppServicesPageRequest.h"
+#include "model/ListAppServicesPageResult.h"
 #include "model/ListAppVersionsRequest.h"
 #include "model/ListAppVersionsResult.h"
 #include "model/ListApplicationsRequest.h"
@@ -110,6 +122,8 @@
 #include "model/ListChangeOrdersResult.h"
 #include "model/ListConsumedServicesRequest.h"
 #include "model/ListConsumedServicesResult.h"
+#include "model/ListGreyTagRouteRequest.h"
+#include "model/ListGreyTagRouteResult.h"
 #include "model/ListIngressesRequest.h"
 #include "model/ListIngressesResult.h"
 #include "model/ListLogConfigsRequest.h"
@@ -126,6 +140,8 @@
 #include "model/OpenSaeServiceResult.h"
 #include "model/QueryResourceStaticsRequest.h"
 #include "model/QueryResourceStaticsResult.h"
+#include "model/ReduceApplicationCapacityByInstanceIdsRequest.h"
+#include "model/ReduceApplicationCapacityByInstanceIdsResult.h"
 #include "model/RescaleApplicationRequest.h"
 #include "model/RescaleApplicationResult.h"
 #include "model/RescaleApplicationVerticallyRequest.h"
@@ -152,12 +168,16 @@
 #include "model/UpdateApplicationScalingRuleResult.h"
 #include "model/UpdateConfigMapRequest.h"
 #include "model/UpdateConfigMapResult.h"
+#include "model/UpdateGreyTagRouteRequest.h"
+#include "model/UpdateGreyTagRouteResult.h"
 #include "model/UpdateIngressRequest.h"
 #include "model/UpdateIngressResult.h"
 #include "model/UpdateNamespaceRequest.h"
 #include "model/UpdateNamespaceResult.h"
 #include "model/UpdateNamespaceVpcRequest.h"
 #include "model/UpdateNamespaceVpcResult.h"
+#include "model/UploadFilesRequest.h"
+#include "model/UploadFilesResult.h"
 
 
 namespace AlibabaCloud
@@ -194,6 +214,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateConfigMapResult> CreateConfigMapOutcome;
 			typedef std::future<CreateConfigMapOutcome> CreateConfigMapOutcomeCallable;
 			typedef std::function<void(const SaeClient*, const Model::CreateConfigMapRequest&, const CreateConfigMapOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateConfigMapAsyncHandler;
+			typedef Outcome<Error, Model::CreateGreyTagRouteResult> CreateGreyTagRouteOutcome;
+			typedef std::future<CreateGreyTagRouteOutcome> CreateGreyTagRouteOutcomeCallable;
+			typedef std::function<void(const SaeClient*, const Model::CreateGreyTagRouteRequest&, const CreateGreyTagRouteOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateGreyTagRouteAsyncHandler;
 			typedef Outcome<Error, Model::CreateIngressResult> CreateIngressOutcome;
 			typedef std::future<CreateIngressOutcome> CreateIngressOutcomeCallable;
 			typedef std::function<void(const SaeClient*, const Model::CreateIngressRequest&, const CreateIngressOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateIngressAsyncHandler;
@@ -209,6 +232,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteConfigMapResult> DeleteConfigMapOutcome;
 			typedef std::future<DeleteConfigMapOutcome> DeleteConfigMapOutcomeCallable;
 			typedef std::function<void(const SaeClient*, const Model::DeleteConfigMapRequest&, const DeleteConfigMapOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteConfigMapAsyncHandler;
+			typedef Outcome<Error, Model::DeleteGreyTagRouteResult> DeleteGreyTagRouteOutcome;
+			typedef std::future<DeleteGreyTagRouteOutcome> DeleteGreyTagRouteOutcomeCallable;
+			typedef std::function<void(const SaeClient*, const Model::DeleteGreyTagRouteRequest&, const DeleteGreyTagRouteOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteGreyTagRouteAsyncHandler;
 			typedef Outcome<Error, Model::DeleteIngressResult> DeleteIngressOutcome;
 			typedef std::future<DeleteIngressOutcome> DeleteIngressOutcomeCallable;
 			typedef std::function<void(const SaeClient*, const Model::DeleteIngressRequest&, const DeleteIngressOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteIngressAsyncHandler;
@@ -218,6 +244,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeployApplicationResult> DeployApplicationOutcome;
 			typedef std::future<DeployApplicationOutcome> DeployApplicationOutcomeCallable;
 			typedef std::function<void(const SaeClient*, const Model::DeployApplicationRequest&, const DeployApplicationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeployApplicationAsyncHandler;
+			typedef Outcome<Error, Model::DescribeAppServiceDetailResult> DescribeAppServiceDetailOutcome;
+			typedef std::future<DescribeAppServiceDetailOutcome> DescribeAppServiceDetailOutcomeCallable;
+			typedef std::function<void(const SaeClient*, const Model::DescribeAppServiceDetailRequest&, const DescribeAppServiceDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAppServiceDetailAsyncHandler;
 			typedef Outcome<Error, Model::DescribeApplicationConfigResult> DescribeApplicationConfigOutcome;
 			typedef std::future<DescribeApplicationConfigOutcome> DescribeApplicationConfigOutcomeCallable;
 			typedef std::function<void(const SaeClient*, const Model::DescribeApplicationConfigRequest&, const DescribeApplicationConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApplicationConfigAsyncHandler;
@@ -251,6 +280,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeEdasContainersResult> DescribeEdasContainersOutcome;
 			typedef std::future<DescribeEdasContainersOutcome> DescribeEdasContainersOutcomeCallable;
 			typedef std::function<void(const SaeClient*, const Model::DescribeEdasContainersRequest&, const DescribeEdasContainersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEdasContainersAsyncHandler;
+			typedef Outcome<Error, Model::DescribeGreyTagRouteResult> DescribeGreyTagRouteOutcome;
+			typedef std::future<DescribeGreyTagRouteOutcome> DescribeGreyTagRouteOutcomeCallable;
+			typedef std::function<void(const SaeClient*, const Model::DescribeGreyTagRouteRequest&, const DescribeGreyTagRouteOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGreyTagRouteAsyncHandler;
 			typedef Outcome<Error, Model::DescribeIngressResult> DescribeIngressOutcome;
 			typedef std::future<DescribeIngressOutcome> DescribeIngressOutcomeCallable;
 			typedef std::function<void(const SaeClient*, const Model::DescribeIngressRequest&, const DescribeIngressOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIngressAsyncHandler;
@@ -281,12 +313,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DisableApplicationScalingRuleResult> DisableApplicationScalingRuleOutcome;
 			typedef std::future<DisableApplicationScalingRuleOutcome> DisableApplicationScalingRuleOutcomeCallable;
 			typedef std::function<void(const SaeClient*, const Model::DisableApplicationScalingRuleRequest&, const DisableApplicationScalingRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DisableApplicationScalingRuleAsyncHandler;
+			typedef Outcome<Error, Model::DownloadFilesResult> DownloadFilesOutcome;
+			typedef std::future<DownloadFilesOutcome> DownloadFilesOutcomeCallable;
+			typedef std::function<void(const SaeClient*, const Model::DownloadFilesRequest&, const DownloadFilesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DownloadFilesAsyncHandler;
 			typedef Outcome<Error, Model::EnableApplicationScalingRuleResult> EnableApplicationScalingRuleOutcome;
 			typedef std::future<EnableApplicationScalingRuleOutcome> EnableApplicationScalingRuleOutcomeCallable;
 			typedef std::function<void(const SaeClient*, const Model::EnableApplicationScalingRuleRequest&, const EnableApplicationScalingRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnableApplicationScalingRuleAsyncHandler;
 			typedef Outcome<Error, Model::ListAppEventsResult> ListAppEventsOutcome;
 			typedef std::future<ListAppEventsOutcome> ListAppEventsOutcomeCallable;
 			typedef std::function<void(const SaeClient*, const Model::ListAppEventsRequest&, const ListAppEventsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAppEventsAsyncHandler;
+			typedef Outcome<Error, Model::ListAppServicesPageResult> ListAppServicesPageOutcome;
+			typedef std::future<ListAppServicesPageOutcome> ListAppServicesPageOutcomeCallable;
+			typedef std::function<void(const SaeClient*, const Model::ListAppServicesPageRequest&, const ListAppServicesPageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAppServicesPageAsyncHandler;
 			typedef Outcome<Error, Model::ListAppVersionsResult> ListAppVersionsOutcome;
 			typedef std::future<ListAppVersionsOutcome> ListAppVersionsOutcomeCallable;
 			typedef std::function<void(const SaeClient*, const Model::ListAppVersionsRequest&, const ListAppVersionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAppVersionsAsyncHandler;
@@ -299,6 +337,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListConsumedServicesResult> ListConsumedServicesOutcome;
 			typedef std::future<ListConsumedServicesOutcome> ListConsumedServicesOutcomeCallable;
 			typedef std::function<void(const SaeClient*, const Model::ListConsumedServicesRequest&, const ListConsumedServicesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListConsumedServicesAsyncHandler;
+			typedef Outcome<Error, Model::ListGreyTagRouteResult> ListGreyTagRouteOutcome;
+			typedef std::future<ListGreyTagRouteOutcome> ListGreyTagRouteOutcomeCallable;
+			typedef std::function<void(const SaeClient*, const Model::ListGreyTagRouteRequest&, const ListGreyTagRouteOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListGreyTagRouteAsyncHandler;
 			typedef Outcome<Error, Model::ListIngressesResult> ListIngressesOutcome;
 			typedef std::future<ListIngressesOutcome> ListIngressesOutcomeCallable;
 			typedef std::function<void(const SaeClient*, const Model::ListIngressesRequest&, const ListIngressesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListIngressesAsyncHandler;
@@ -323,6 +364,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryResourceStaticsResult> QueryResourceStaticsOutcome;
 			typedef std::future<QueryResourceStaticsOutcome> QueryResourceStaticsOutcomeCallable;
 			typedef std::function<void(const SaeClient*, const Model::QueryResourceStaticsRequest&, const QueryResourceStaticsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryResourceStaticsAsyncHandler;
+			typedef Outcome<Error, Model::ReduceApplicationCapacityByInstanceIdsResult> ReduceApplicationCapacityByInstanceIdsOutcome;
+			typedef std::future<ReduceApplicationCapacityByInstanceIdsOutcome> ReduceApplicationCapacityByInstanceIdsOutcomeCallable;
+			typedef std::function<void(const SaeClient*, const Model::ReduceApplicationCapacityByInstanceIdsRequest&, const ReduceApplicationCapacityByInstanceIdsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ReduceApplicationCapacityByInstanceIdsAsyncHandler;
 			typedef Outcome<Error, Model::RescaleApplicationResult> RescaleApplicationOutcome;
 			typedef std::future<RescaleApplicationOutcome> RescaleApplicationOutcomeCallable;
 			typedef std::function<void(const SaeClient*, const Model::RescaleApplicationRequest&, const RescaleApplicationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RescaleApplicationAsyncHandler;
@@ -362,6 +406,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateConfigMapResult> UpdateConfigMapOutcome;
 			typedef std::future<UpdateConfigMapOutcome> UpdateConfigMapOutcomeCallable;
 			typedef std::function<void(const SaeClient*, const Model::UpdateConfigMapRequest&, const UpdateConfigMapOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateConfigMapAsyncHandler;
+			typedef Outcome<Error, Model::UpdateGreyTagRouteResult> UpdateGreyTagRouteOutcome;
+			typedef std::future<UpdateGreyTagRouteOutcome> UpdateGreyTagRouteOutcomeCallable;
+			typedef std::function<void(const SaeClient*, const Model::UpdateGreyTagRouteRequest&, const UpdateGreyTagRouteOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateGreyTagRouteAsyncHandler;
 			typedef Outcome<Error, Model::UpdateIngressResult> UpdateIngressOutcome;
 			typedef std::future<UpdateIngressOutcome> UpdateIngressOutcomeCallable;
 			typedef std::function<void(const SaeClient*, const Model::UpdateIngressRequest&, const UpdateIngressOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateIngressAsyncHandler;
@@ -371,6 +418,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateNamespaceVpcResult> UpdateNamespaceVpcOutcome;
 			typedef std::future<UpdateNamespaceVpcOutcome> UpdateNamespaceVpcOutcomeCallable;
 			typedef std::function<void(const SaeClient*, const Model::UpdateNamespaceVpcRequest&, const UpdateNamespaceVpcOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateNamespaceVpcAsyncHandler;
+			typedef Outcome<Error, Model::UploadFilesResult> UploadFilesOutcome;
+			typedef std::future<UploadFilesOutcome> UploadFilesOutcomeCallable;
+			typedef std::function<void(const SaeClient*, const Model::UploadFilesRequest&, const UploadFilesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UploadFilesAsyncHandler;
 
 			SaeClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			SaeClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
@@ -403,6 +453,9 @@ namespace AlibabaCloud
 			CreateConfigMapOutcome createConfigMap(const Model::CreateConfigMapRequest &request)const;
 			void createConfigMapAsync(const Model::CreateConfigMapRequest& request, const CreateConfigMapAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateConfigMapOutcomeCallable createConfigMapCallable(const Model::CreateConfigMapRequest& request) const;
+			CreateGreyTagRouteOutcome createGreyTagRoute(const Model::CreateGreyTagRouteRequest &request)const;
+			void createGreyTagRouteAsync(const Model::CreateGreyTagRouteRequest& request, const CreateGreyTagRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateGreyTagRouteOutcomeCallable createGreyTagRouteCallable(const Model::CreateGreyTagRouteRequest& request) const;
 			CreateIngressOutcome createIngress(const Model::CreateIngressRequest &request)const;
 			void createIngressAsync(const Model::CreateIngressRequest& request, const CreateIngressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateIngressOutcomeCallable createIngressCallable(const Model::CreateIngressRequest& request) const;
@@ -418,6 +471,9 @@ namespace AlibabaCloud
 			DeleteConfigMapOutcome deleteConfigMap(const Model::DeleteConfigMapRequest &request)const;
 			void deleteConfigMapAsync(const Model::DeleteConfigMapRequest& request, const DeleteConfigMapAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteConfigMapOutcomeCallable deleteConfigMapCallable(const Model::DeleteConfigMapRequest& request) const;
+			DeleteGreyTagRouteOutcome deleteGreyTagRoute(const Model::DeleteGreyTagRouteRequest &request)const;
+			void deleteGreyTagRouteAsync(const Model::DeleteGreyTagRouteRequest& request, const DeleteGreyTagRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteGreyTagRouteOutcomeCallable deleteGreyTagRouteCallable(const Model::DeleteGreyTagRouteRequest& request) const;
 			DeleteIngressOutcome deleteIngress(const Model::DeleteIngressRequest &request)const;
 			void deleteIngressAsync(const Model::DeleteIngressRequest& request, const DeleteIngressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteIngressOutcomeCallable deleteIngressCallable(const Model::DeleteIngressRequest& request) const;
@@ -427,6 +483,9 @@ namespace AlibabaCloud
 			DeployApplicationOutcome deployApplication(const Model::DeployApplicationRequest &request)const;
 			void deployApplicationAsync(const Model::DeployApplicationRequest& request, const DeployApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeployApplicationOutcomeCallable deployApplicationCallable(const Model::DeployApplicationRequest& request) const;
+			DescribeAppServiceDetailOutcome describeAppServiceDetail(const Model::DescribeAppServiceDetailRequest &request)const;
+			void describeAppServiceDetailAsync(const Model::DescribeAppServiceDetailRequest& request, const DescribeAppServiceDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeAppServiceDetailOutcomeCallable describeAppServiceDetailCallable(const Model::DescribeAppServiceDetailRequest& request) const;
 			DescribeApplicationConfigOutcome describeApplicationConfig(const Model::DescribeApplicationConfigRequest &request)const;
 			void describeApplicationConfigAsync(const Model::DescribeApplicationConfigRequest& request, const DescribeApplicationConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeApplicationConfigOutcomeCallable describeApplicationConfigCallable(const Model::DescribeApplicationConfigRequest& request) const;
@@ -460,6 +519,9 @@ namespace AlibabaCloud
 			DescribeEdasContainersOutcome describeEdasContainers(const Model::DescribeEdasContainersRequest &request)const;
 			void describeEdasContainersAsync(const Model::DescribeEdasContainersRequest& request, const DescribeEdasContainersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeEdasContainersOutcomeCallable describeEdasContainersCallable(const Model::DescribeEdasContainersRequest& request) const;
+			DescribeGreyTagRouteOutcome describeGreyTagRoute(const Model::DescribeGreyTagRouteRequest &request)const;
+			void describeGreyTagRouteAsync(const Model::DescribeGreyTagRouteRequest& request, const DescribeGreyTagRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeGreyTagRouteOutcomeCallable describeGreyTagRouteCallable(const Model::DescribeGreyTagRouteRequest& request) const;
 			DescribeIngressOutcome describeIngress(const Model::DescribeIngressRequest &request)const;
 			void describeIngressAsync(const Model::DescribeIngressRequest& request, const DescribeIngressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeIngressOutcomeCallable describeIngressCallable(const Model::DescribeIngressRequest& request) const;
@@ -490,12 +552,18 @@ namespace AlibabaCloud
 			DisableApplicationScalingRuleOutcome disableApplicationScalingRule(const Model::DisableApplicationScalingRuleRequest &request)const;
 			void disableApplicationScalingRuleAsync(const Model::DisableApplicationScalingRuleRequest& request, const DisableApplicationScalingRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DisableApplicationScalingRuleOutcomeCallable disableApplicationScalingRuleCallable(const Model::DisableApplicationScalingRuleRequest& request) const;
+			DownloadFilesOutcome downloadFiles(const Model::DownloadFilesRequest &request)const;
+			void downloadFilesAsync(const Model::DownloadFilesRequest& request, const DownloadFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DownloadFilesOutcomeCallable downloadFilesCallable(const Model::DownloadFilesRequest& request) const;
 			EnableApplicationScalingRuleOutcome enableApplicationScalingRule(const Model::EnableApplicationScalingRuleRequest &request)const;
 			void enableApplicationScalingRuleAsync(const Model::EnableApplicationScalingRuleRequest& request, const EnableApplicationScalingRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			EnableApplicationScalingRuleOutcomeCallable enableApplicationScalingRuleCallable(const Model::EnableApplicationScalingRuleRequest& request) const;
 			ListAppEventsOutcome listAppEvents(const Model::ListAppEventsRequest &request)const;
 			void listAppEventsAsync(const Model::ListAppEventsRequest& request, const ListAppEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListAppEventsOutcomeCallable listAppEventsCallable(const Model::ListAppEventsRequest& request) const;
+			ListAppServicesPageOutcome listAppServicesPage(const Model::ListAppServicesPageRequest &request)const;
+			void listAppServicesPageAsync(const Model::ListAppServicesPageRequest& request, const ListAppServicesPageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListAppServicesPageOutcomeCallable listAppServicesPageCallable(const Model::ListAppServicesPageRequest& request) const;
 			ListAppVersionsOutcome listAppVersions(const Model::ListAppVersionsRequest &request)const;
 			void listAppVersionsAsync(const Model::ListAppVersionsRequest& request, const ListAppVersionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListAppVersionsOutcomeCallable listAppVersionsCallable(const Model::ListAppVersionsRequest& request) const;
@@ -508,6 +576,9 @@ namespace AlibabaCloud
 			ListConsumedServicesOutcome listConsumedServices(const Model::ListConsumedServicesRequest &request)const;
 			void listConsumedServicesAsync(const Model::ListConsumedServicesRequest& request, const ListConsumedServicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListConsumedServicesOutcomeCallable listConsumedServicesCallable(const Model::ListConsumedServicesRequest& request) const;
+			ListGreyTagRouteOutcome listGreyTagRoute(const Model::ListGreyTagRouteRequest &request)const;
+			void listGreyTagRouteAsync(const Model::ListGreyTagRouteRequest& request, const ListGreyTagRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListGreyTagRouteOutcomeCallable listGreyTagRouteCallable(const Model::ListGreyTagRouteRequest& request) const;
 			ListIngressesOutcome listIngresses(const Model::ListIngressesRequest &request)const;
 			void listIngressesAsync(const Model::ListIngressesRequest& request, const ListIngressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListIngressesOutcomeCallable listIngressesCallable(const Model::ListIngressesRequest& request) const;
@@ -532,6 +603,9 @@ namespace AlibabaCloud
 			QueryResourceStaticsOutcome queryResourceStatics(const Model::QueryResourceStaticsRequest &request)const;
 			void queryResourceStaticsAsync(const Model::QueryResourceStaticsRequest& request, const QueryResourceStaticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryResourceStaticsOutcomeCallable queryResourceStaticsCallable(const Model::QueryResourceStaticsRequest& request) const;
+			ReduceApplicationCapacityByInstanceIdsOutcome reduceApplicationCapacityByInstanceIds(const Model::ReduceApplicationCapacityByInstanceIdsRequest &request)const;
+			void reduceApplicationCapacityByInstanceIdsAsync(const Model::ReduceApplicationCapacityByInstanceIdsRequest& request, const ReduceApplicationCapacityByInstanceIdsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ReduceApplicationCapacityByInstanceIdsOutcomeCallable reduceApplicationCapacityByInstanceIdsCallable(const Model::ReduceApplicationCapacityByInstanceIdsRequest& request) const;
 			RescaleApplicationOutcome rescaleApplication(const Model::RescaleApplicationRequest &request)const;
 			void rescaleApplicationAsync(const Model::RescaleApplicationRequest& request, const RescaleApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RescaleApplicationOutcomeCallable rescaleApplicationCallable(const Model::RescaleApplicationRequest& request) const;
@@ -571,6 +645,9 @@ namespace AlibabaCloud
 			UpdateConfigMapOutcome updateConfigMap(const Model::UpdateConfigMapRequest &request)const;
 			void updateConfigMapAsync(const Model::UpdateConfigMapRequest& request, const UpdateConfigMapAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateConfigMapOutcomeCallable updateConfigMapCallable(const Model::UpdateConfigMapRequest& request) const;
+			UpdateGreyTagRouteOutcome updateGreyTagRoute(const Model::UpdateGreyTagRouteRequest &request)const;
+			void updateGreyTagRouteAsync(const Model::UpdateGreyTagRouteRequest& request, const UpdateGreyTagRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateGreyTagRouteOutcomeCallable updateGreyTagRouteCallable(const Model::UpdateGreyTagRouteRequest& request) const;
 			UpdateIngressOutcome updateIngress(const Model::UpdateIngressRequest &request)const;
 			void updateIngressAsync(const Model::UpdateIngressRequest& request, const UpdateIngressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateIngressOutcomeCallable updateIngressCallable(const Model::UpdateIngressRequest& request) const;
@@ -580,6 +657,9 @@ namespace AlibabaCloud
 			UpdateNamespaceVpcOutcome updateNamespaceVpc(const Model::UpdateNamespaceVpcRequest &request)const;
 			void updateNamespaceVpcAsync(const Model::UpdateNamespaceVpcRequest& request, const UpdateNamespaceVpcAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateNamespaceVpcOutcomeCallable updateNamespaceVpcCallable(const Model::UpdateNamespaceVpcRequest& request) const;
+			UploadFilesOutcome uploadFiles(const Model::UploadFilesRequest &request)const;
+			void uploadFilesAsync(const Model::UploadFilesRequest& request, const UploadFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UploadFilesOutcomeCallable uploadFilesCallable(const Model::UploadFilesRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

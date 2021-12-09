@@ -42,6 +42,8 @@ namespace AlibabaCloud
 							{
 								int targetReplicas;
 								std::string atTime;
+								long minReplicas;
+								long maxReplicas;
 							};
 							std::vector<Schedule> schedules;
 							std::string period;
@@ -52,24 +54,38 @@ namespace AlibabaCloud
 						{
 							struct MetricsStatus
 							{
-								struct NextScaleMetric
-								{
-									int nextScaleInAverageUtilization;
-									std::string name;
-									int nextScaleOutAverageUtilization;
-								};
 								struct CurrentMetric
 								{
 									std::string type;
 									long currentValue;
 									std::string name;
 								};
+								struct NextScaleMetric
+								{
+									int nextScaleInAverageUtilization;
+									int nextScaleOutAverageUtilization;
+									std::string name;
+								};
 								std::vector<NextScaleMetric> nextScaleMetrics;
 								long desiredReplicas;
 								std::vector<CurrentMetric> currentMetrics;
 								long currentReplicas;
+								long minReplicas;
 								int nextScaleTimePeriod;
+								long maxReplicas;
 								std::string lastScaleTime;
+							};
+							struct ScaleUpRules
+							{
+								long step;
+								long stabilizationWindowSeconds;
+								bool disabled;
+							};
+							struct ScaleDownRules
+							{
+								long step;
+								long stabilizationWindowSeconds;
+								bool disabled;
 							};
 							struct Metric1
 							{
@@ -78,13 +94,15 @@ namespace AlibabaCloud
 							};
 							std::vector<Metric1> metrics;
 							int minReplicas;
+							ScaleDownRules scaleDownRules;
 							int maxReplicas;
 							MetricsStatus metricsStatus;
+							ScaleUpRules scaleUpRules;
 						};
 						bool scaleRuleEnabled;
 						Timer timer;
-						long lastDisableTime;
 						std::string appId;
+						long lastDisableTime;
 						long createTime;
 						long updateTime;
 						Metric metric;

@@ -43,12 +43,15 @@ namespace AlibabaCloud
 				void setPageSize(int pageSize);
 				int getCurrentPage()const;
 				void setCurrentPage(int currentPage);
+				bool getReverse()const;
+				void setReverse(bool reverse);
 
             private:
 				std::string appId_;
 				std::string groupId_;
 				int pageSize_;
 				int currentPage_;
+				bool reverse_;
 
 			};
 		}

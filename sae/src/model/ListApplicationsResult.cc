@@ -40,44 +40,44 @@ void ListApplicationsResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["PageSize"].isNull())
-		data_.pageSize = std::stoi(dataNode["PageSize"].asString());
 	if(!dataNode["CurrentPage"].isNull())
 		data_.currentPage = std::stoi(dataNode["CurrentPage"].asString());
 	if(!dataNode["TotalSize"].isNull())
 		data_.totalSize = std::stoi(dataNode["TotalSize"].asString());
+	if(!dataNode["PageSize"].isNull())
+		data_.pageSize = std::stoi(dataNode["PageSize"].asString());
 	auto allApplicationsNode = dataNode["Applications"]["Application"];
 	for (auto dataNodeApplicationsApplication : allApplicationsNode)
 	{
 		Data::Application applicationObject;
-		if(!dataNodeApplicationsApplication["Instances"].isNull())
-			applicationObject.instances = std::stoi(dataNodeApplicationsApplication["Instances"].asString());
-		if(!dataNodeApplicationsApplication["ScaleRuleEnabled"].isNull())
-			applicationObject.scaleRuleEnabled = dataNodeApplicationsApplication["ScaleRuleEnabled"].asString() == "true";
-		if(!dataNodeApplicationsApplication["AppDescription"].isNull())
-			applicationObject.appDescription = dataNodeApplicationsApplication["AppDescription"].asString();
-		if(!dataNodeApplicationsApplication["AppId"].isNull())
-			applicationObject.appId = dataNodeApplicationsApplication["AppId"].asString();
-		if(!dataNodeApplicationsApplication["RunningInstances"].isNull())
-			applicationObject.runningInstances = std::stoi(dataNodeApplicationsApplication["RunningInstances"].asString());
-		if(!dataNodeApplicationsApplication["RegionId"].isNull())
-			applicationObject.regionId = dataNodeApplicationsApplication["RegionId"].asString();
-		if(!dataNodeApplicationsApplication["NamespaceId"].isNull())
-			applicationObject.namespaceId = dataNodeApplicationsApplication["NamespaceId"].asString();
-		if(!dataNodeApplicationsApplication["ScaleRuleType"].isNull())
-			applicationObject.scaleRuleType = dataNodeApplicationsApplication["ScaleRuleType"].asString();
-		if(!dataNodeApplicationsApplication["AppDeletingStatus"].isNull())
-			applicationObject.appDeletingStatus = dataNodeApplicationsApplication["AppDeletingStatus"].asString() == "true";
 		if(!dataNodeApplicationsApplication["AppName"].isNull())
 			applicationObject.appName = dataNodeApplicationsApplication["AppName"].asString();
+		if(!dataNodeApplicationsApplication["NamespaceId"].isNull())
+			applicationObject.namespaceId = dataNodeApplicationsApplication["NamespaceId"].asString();
+		if(!dataNodeApplicationsApplication["AppDeletingStatus"].isNull())
+			applicationObject.appDeletingStatus = dataNodeApplicationsApplication["AppDeletingStatus"].asString() == "true";
+		if(!dataNodeApplicationsApplication["AppId"].isNull())
+			applicationObject.appId = dataNodeApplicationsApplication["AppId"].asString();
+		if(!dataNodeApplicationsApplication["ScaleRuleEnabled"].isNull())
+			applicationObject.scaleRuleEnabled = dataNodeApplicationsApplication["ScaleRuleEnabled"].asString() == "true";
+		if(!dataNodeApplicationsApplication["ScaleRuleType"].isNull())
+			applicationObject.scaleRuleType = dataNodeApplicationsApplication["ScaleRuleType"].asString();
+		if(!dataNodeApplicationsApplication["RunningInstances"].isNull())
+			applicationObject.runningInstances = std::stoi(dataNodeApplicationsApplication["RunningInstances"].asString());
+		if(!dataNodeApplicationsApplication["Instances"].isNull())
+			applicationObject.instances = std::stoi(dataNodeApplicationsApplication["Instances"].asString());
+		if(!dataNodeApplicationsApplication["RegionId"].isNull())
+			applicationObject.regionId = dataNodeApplicationsApplication["RegionId"].asString();
+		if(!dataNodeApplicationsApplication["AppDescription"].isNull())
+			applicationObject.appDescription = dataNodeApplicationsApplication["AppDescription"].asString();
 		auto allTagsNode = dataNodeApplicationsApplication["Tags"]["TagsItem"];
 		for (auto dataNodeApplicationsApplicationTagsTagsItem : allTagsNode)
 		{
 			Data::Application::TagsItem tagsObject;
-			if(!dataNodeApplicationsApplicationTagsTagsItem["Value"].isNull())
-				tagsObject.value = dataNodeApplicationsApplicationTagsTagsItem["Value"].asString();
 			if(!dataNodeApplicationsApplicationTagsTagsItem["Key"].isNull())
 				tagsObject.key = dataNodeApplicationsApplicationTagsTagsItem["Key"].asString();
+			if(!dataNodeApplicationsApplicationTagsTagsItem["Value"].isNull())
+				tagsObject.value = dataNodeApplicationsApplicationTagsTagsItem["Value"].asString();
 			applicationObject.tags.push_back(tagsObject);
 		}
 		data_.applications.push_back(applicationObject);
@@ -90,12 +90,28 @@ void ListApplicationsResult::parse(const std::string &payload)
 		code_ = value["Code"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["CurrentPage"].isNull())
+		currentPage_ = std::stoi(value["CurrentPage"].asString());
+	if(!value["TotalSize"].isNull())
+		totalSize_ = std::stoi(value["TotalSize"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 
 }
 
 std::string ListApplicationsResult::getMessage()const
 {
 	return message_;
+}
+
+int ListApplicationsResult::getPageSize()const
+{
+	return pageSize_;
+}
+
+int ListApplicationsResult::getCurrentPage()const
+{
+	return currentPage_;
 }
 
 ListApplicationsResult::Data ListApplicationsResult::getData()const
@@ -106,6 +122,11 @@ ListApplicationsResult::Data ListApplicationsResult::getData()const
 std::string ListApplicationsResult::getErrorCode()const
 {
 	return errorCode_;
+}
+
+int ListApplicationsResult::getTotalSize()const
+{
+	return totalSize_;
 }
 
 std::string ListApplicationsResult::getCode()const

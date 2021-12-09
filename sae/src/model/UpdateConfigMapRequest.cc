@@ -47,7 +47,7 @@ std::string UpdateConfigMapRequest::getDescription()const
 void UpdateConfigMapRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setBodyParameter("Description", description);
+	setParameter("Description", description);
 }
 
 long UpdateConfigMapRequest::getConfigMapId()const

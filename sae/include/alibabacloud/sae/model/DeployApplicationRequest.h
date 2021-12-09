@@ -45,6 +45,8 @@ namespace AlibabaCloud
 				void setEnableAhas(const std::string& enableAhas);
 				std::string getSlsConfigs()const;
 				void setSlsConfigs(const std::string& slsConfigs);
+				std::string getOssAkSecret()const;
+				void setOssAkSecret(const std::string& ossAkSecret);
 				std::string getCommandArgs()const;
 				void setCommandArgs(const std::string& commandArgs);
 				std::string getAcrAssumeRoleArn()const;
@@ -57,10 +59,14 @@ namespace AlibabaCloud
 				void setMountHost(const std::string& mountHost);
 				int getBatchWaitTime()const;
 				void setBatchWaitTime(int batchWaitTime);
+				std::string getOssAkId()const;
+				void setOssAkId(const std::string& ossAkId);
 				std::string getLiveness()const;
 				void setLiveness(const std::string& liveness);
 				std::string getEnvs()const;
 				void setEnvs(const std::string& envs);
+				std::string getPhpPECLExtensions()const;
+				void setPhpPECLExtensions(const std::string& phpPECLExtensions);
 				std::string getPhpArmsConfigLocation()const;
 				void setPhpArmsConfigLocation(const std::string& phpArmsConfigLocation);
 				std::string getPackageVersion()const;
@@ -81,10 +87,14 @@ namespace AlibabaCloud
 				void setTerminationGracePeriodSeconds(int terminationGracePeriodSeconds);
 				std::string getConfigMapMountDesc()const;
 				void setConfigMapMountDesc(const std::string& configMapMountDesc);
+				std::string getOssMountDescs()const;
+				void setOssMountDescs(const std::string& ossMountDescs);
 				std::string getPhpConfig()const;
 				void setPhpConfig(const std::string& phpConfig);
 				std::string getPreStop()const;
 				void setPreStop(const std::string& preStop);
+				bool getEnableGreyTagRoute()const;
+				void setEnableGreyTagRoute(bool enableGreyTagRoute);
 				std::string getCommand()const;
 				void setCommand(const std::string& command);
 				std::string getUpdateStrategy()const;
@@ -97,16 +107,24 @@ namespace AlibabaCloud
 				void setMinReadyInstances(int minReadyInstances);
 				std::string getChangeOrderDesc()const;
 				void setChangeOrderDesc(const std::string& changeOrderDesc);
+				std::string getAcrInstanceId()const;
+				void setAcrInstanceId(const std::string& acrInstanceId);
 				std::string getAppId()const;
 				void setAppId(const std::string& appId);
 				std::string getImageUrl()const;
 				void setImageUrl(const std::string& imageUrl);
+				std::string getPhp()const;
+				void setPhp(const std::string& php);
 				bool getAutoEnableApplicationScalingRule()const;
 				void setAutoEnableApplicationScalingRule(bool autoEnableApplicationScalingRule);
 				std::string getPhpConfigLocation()const;
 				void setPhpConfigLocation(const std::string& phpConfigLocation);
 				std::string getPostStart()const;
 				void setPostStart(const std::string& postStart);
+				std::string getPhpExtensions()const;
+				void setPhpExtensions(const std::string& phpExtensions);
+				bool getAssociateEip()const;
+				void setAssociateEip(bool associateEip);
 
             private:
 				std::string nasId_;
@@ -114,14 +132,17 @@ namespace AlibabaCloud
 				std::string jarStartArgs_;
 				std::string enableAhas_;
 				std::string slsConfigs_;
+				std::string ossAkSecret_;
 				std::string commandArgs_;
 				std::string acrAssumeRoleArn_;
 				std::string readiness_;
 				std::string timezone_;
 				std::string mountHost_;
 				int batchWaitTime_;
+				std::string ossAkId_;
 				std::string liveness_;
 				std::string envs_;
+				std::string phpPECLExtensions_;
 				std::string phpArmsConfigLocation_;
 				std::string packageVersion_;
 				std::string tomcatConfig_;
@@ -132,19 +153,25 @@ namespace AlibabaCloud
 				std::string packageUrl_;
 				int terminationGracePeriodSeconds_;
 				std::string configMapMountDesc_;
+				std::string ossMountDescs_;
 				std::string phpConfig_;
 				std::string preStop_;
+				bool enableGreyTagRoute_;
 				std::string command_;
 				std::string updateStrategy_;
 				std::string mountDesc_;
 				std::string jdk_;
 				int minReadyInstances_;
 				std::string changeOrderDesc_;
+				std::string acrInstanceId_;
 				std::string appId_;
 				std::string imageUrl_;
+				std::string php_;
 				bool autoEnableApplicationScalingRule_;
 				std::string phpConfigLocation_;
 				std::string postStart_;
+				std::string phpExtensions_;
+				bool associateEip_;
 
 			};
 		}

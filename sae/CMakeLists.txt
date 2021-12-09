@@ -39,6 +39,8 @@ set(sae_public_header_model
 	include/alibabacloud/sae/model/CreateApplicationScalingRuleResult.h
 	include/alibabacloud/sae/model/CreateConfigMapRequest.h
 	include/alibabacloud/sae/model/CreateConfigMapResult.h
+	include/alibabacloud/sae/model/CreateGreyTagRouteRequest.h
+	include/alibabacloud/sae/model/CreateGreyTagRouteResult.h
 	include/alibabacloud/sae/model/CreateIngressRequest.h
 	include/alibabacloud/sae/model/CreateIngressResult.h
 	include/alibabacloud/sae/model/CreateNamespaceRequest.h
@@ -49,12 +51,16 @@ set(sae_public_header_model
 	include/alibabacloud/sae/model/DeleteApplicationScalingRuleResult.h
 	include/alibabacloud/sae/model/DeleteConfigMapRequest.h
 	include/alibabacloud/sae/model/DeleteConfigMapResult.h
+	include/alibabacloud/sae/model/DeleteGreyTagRouteRequest.h
+	include/alibabacloud/sae/model/DeleteGreyTagRouteResult.h
 	include/alibabacloud/sae/model/DeleteIngressRequest.h
 	include/alibabacloud/sae/model/DeleteIngressResult.h
 	include/alibabacloud/sae/model/DeleteNamespaceRequest.h
 	include/alibabacloud/sae/model/DeleteNamespaceResult.h
 	include/alibabacloud/sae/model/DeployApplicationRequest.h
 	include/alibabacloud/sae/model/DeployApplicationResult.h
+	include/alibabacloud/sae/model/DescribeAppServiceDetailRequest.h
+	include/alibabacloud/sae/model/DescribeAppServiceDetailResult.h
 	include/alibabacloud/sae/model/DescribeApplicationConfigRequest.h
 	include/alibabacloud/sae/model/DescribeApplicationConfigResult.h
 	include/alibabacloud/sae/model/DescribeApplicationGroupsRequest.h
@@ -77,6 +83,8 @@ set(sae_public_header_model
 	include/alibabacloud/sae/model/DescribeConfigMapResult.h
 	include/alibabacloud/sae/model/DescribeEdasContainersRequest.h
 	include/alibabacloud/sae/model/DescribeEdasContainersResult.h
+	include/alibabacloud/sae/model/DescribeGreyTagRouteRequest.h
+	include/alibabacloud/sae/model/DescribeGreyTagRouteResult.h
 	include/alibabacloud/sae/model/DescribeIngressRequest.h
 	include/alibabacloud/sae/model/DescribeIngressResult.h
 	include/alibabacloud/sae/model/DescribeInstanceLogRequest.h
@@ -97,10 +105,14 @@ set(sae_public_header_model
 	include/alibabacloud/sae/model/DescribeRegionsResult.h
 	include/alibabacloud/sae/model/DisableApplicationScalingRuleRequest.h
 	include/alibabacloud/sae/model/DisableApplicationScalingRuleResult.h
+	include/alibabacloud/sae/model/DownloadFilesRequest.h
+	include/alibabacloud/sae/model/DownloadFilesResult.h
 	include/alibabacloud/sae/model/EnableApplicationScalingRuleRequest.h
 	include/alibabacloud/sae/model/EnableApplicationScalingRuleResult.h
 	include/alibabacloud/sae/model/ListAppEventsRequest.h
 	include/alibabacloud/sae/model/ListAppEventsResult.h
+	include/alibabacloud/sae/model/ListAppServicesPageRequest.h
+	include/alibabacloud/sae/model/ListAppServicesPageResult.h
 	include/alibabacloud/sae/model/ListAppVersionsRequest.h
 	include/alibabacloud/sae/model/ListAppVersionsResult.h
 	include/alibabacloud/sae/model/ListApplicationsRequest.h
@@ -109,6 +121,8 @@ set(sae_public_header_model
 	include/alibabacloud/sae/model/ListChangeOrdersResult.h
 	include/alibabacloud/sae/model/ListConsumedServicesRequest.h
 	include/alibabacloud/sae/model/ListConsumedServicesResult.h
+	include/alibabacloud/sae/model/ListGreyTagRouteRequest.h
+	include/alibabacloud/sae/model/ListGreyTagRouteResult.h
 	include/alibabacloud/sae/model/ListIngressesRequest.h
 	include/alibabacloud/sae/model/ListIngressesResult.h
 	include/alibabacloud/sae/model/ListLogConfigsRequest.h
@@ -125,6 +139,8 @@ set(sae_public_header_model
 	include/alibabacloud/sae/model/OpenSaeServiceResult.h
 	include/alibabacloud/sae/model/QueryResourceStaticsRequest.h
 	include/alibabacloud/sae/model/QueryResourceStaticsResult.h
+	include/alibabacloud/sae/model/ReduceApplicationCapacityByInstanceIdsRequest.h
+	include/alibabacloud/sae/model/ReduceApplicationCapacityByInstanceIdsResult.h
 	include/alibabacloud/sae/model/RescaleApplicationRequest.h
 	include/alibabacloud/sae/model/RescaleApplicationResult.h
 	include/alibabacloud/sae/model/RescaleApplicationVerticallyRequest.h
@@ -151,12 +167,16 @@ set(sae_public_header_model
 	include/alibabacloud/sae/model/UpdateApplicationScalingRuleResult.h
 	include/alibabacloud/sae/model/UpdateConfigMapRequest.h
 	include/alibabacloud/sae/model/UpdateConfigMapResult.h
+	include/alibabacloud/sae/model/UpdateGreyTagRouteRequest.h
+	include/alibabacloud/sae/model/UpdateGreyTagRouteResult.h
 	include/alibabacloud/sae/model/UpdateIngressRequest.h
 	include/alibabacloud/sae/model/UpdateIngressResult.h
 	include/alibabacloud/sae/model/UpdateNamespaceRequest.h
 	include/alibabacloud/sae/model/UpdateNamespaceResult.h
 	include/alibabacloud/sae/model/UpdateNamespaceVpcRequest.h
-	include/alibabacloud/sae/model/UpdateNamespaceVpcResult.h )
+	include/alibabacloud/sae/model/UpdateNamespaceVpcResult.h
+	include/alibabacloud/sae/model/UploadFilesRequest.h
+	include/alibabacloud/sae/model/UploadFilesResult.h )
 
 set(sae_src 
 	src/SaeClient.cc
@@ -178,6 +198,8 @@ set(sae_src
 	src/model/CreateApplicationScalingRuleResult.cc
 	src/model/CreateConfigMapRequest.cc
 	src/model/CreateConfigMapResult.cc
+	src/model/CreateGreyTagRouteRequest.cc
+	src/model/CreateGreyTagRouteResult.cc
 	src/model/CreateIngressRequest.cc
 	src/model/CreateIngressResult.cc
 	src/model/CreateNamespaceRequest.cc
@@ -188,12 +210,16 @@ set(sae_src
 	src/model/DeleteApplicationScalingRuleResult.cc
 	src/model/DeleteConfigMapRequest.cc
 	src/model/DeleteConfigMapResult.cc
+	src/model/DeleteGreyTagRouteRequest.cc
+	src/model/DeleteGreyTagRouteResult.cc
 	src/model/DeleteIngressRequest.cc
 	src/model/DeleteIngressResult.cc
 	src/model/DeleteNamespaceRequest.cc
 	src/model/DeleteNamespaceResult.cc
 	src/model/DeployApplicationRequest.cc
 	src/model/DeployApplicationResult.cc
+	src/model/DescribeAppServiceDetailRequest.cc
+	src/model/DescribeAppServiceDetailResult.cc
 	src/model/DescribeApplicationConfigRequest.cc
 	src/model/DescribeApplicationConfigResult.cc
 	src/model/DescribeApplicationGroupsRequest.cc
@@ -216,6 +242,8 @@ set(sae_src
 	src/model/DescribeConfigMapResult.cc
 	src/model/DescribeEdasContainersRequest.cc
 	src/model/DescribeEdasContainersResult.cc
+	src/model/DescribeGreyTagRouteRequest.cc
+	src/model/DescribeGreyTagRouteResult.cc
 	src/model/DescribeIngressRequest.cc
 	src/model/DescribeIngressResult.cc
 	src/model/DescribeInstanceLogRequest.cc
@@ -236,10 +264,14 @@ set(sae_src
 	src/model/DescribeRegionsResult.cc
 	src/model/DisableApplicationScalingRuleRequest.cc
 	src/model/DisableApplicationScalingRuleResult.cc
+	src/model/DownloadFilesRequest.cc
+	src/model/DownloadFilesResult.cc
 	src/model/EnableApplicationScalingRuleRequest.cc
 	src/model/EnableApplicationScalingRuleResult.cc
 	src/model/ListAppEventsRequest.cc
 	src/model/ListAppEventsResult.cc
+	src/model/ListAppServicesPageRequest.cc
+	src/model/ListAppServicesPageResult.cc
 	src/model/ListAppVersionsRequest.cc
 	src/model/ListAppVersionsResult.cc
 	src/model/ListApplicationsRequest.cc
@@ -248,6 +280,8 @@ set(sae_src
 	src/model/ListChangeOrdersResult.cc
 	src/model/ListConsumedServicesRequest.cc
 	src/model/ListConsumedServicesResult.cc
+	src/model/ListGreyTagRouteRequest.cc
+	src/model/ListGreyTagRouteResult.cc
 	src/model/ListIngressesRequest.cc
 	src/model/ListIngressesResult.cc
 	src/model/ListLogConfigsRequest.cc
@@ -264,6 +298,8 @@ set(sae_src
 	src/model/OpenSaeServiceResult.cc
 	src/model/QueryResourceStaticsRequest.cc
 	src/model/QueryResourceStaticsResult.cc
+	src/model/ReduceApplicationCapacityByInstanceIdsRequest.cc
+	src/model/ReduceApplicationCapacityByInstanceIdsResult.cc
 	src/model/RescaleApplicationRequest.cc
 	src/model/RescaleApplicationResult.cc
 	src/model/RescaleApplicationVerticallyRequest.cc
@@ -290,12 +326,16 @@ set(sae_src
 	src/model/UpdateApplicationScalingRuleResult.cc
 	src/model/UpdateConfigMapRequest.cc
 	src/model/UpdateConfigMapResult.cc
+	src/model/UpdateGreyTagRouteRequest.cc
+	src/model/UpdateGreyTagRouteResult.cc
 	src/model/UpdateIngressRequest.cc
 	src/model/UpdateIngressResult.cc
 	src/model/UpdateNamespaceRequest.cc
 	src/model/UpdateNamespaceResult.cc
 	src/model/UpdateNamespaceVpcRequest.cc
-	src/model/UpdateNamespaceVpcResult.cc )
+	src/model/UpdateNamespaceVpcResult.cc
+	src/model/UploadFilesRequest.cc
+	src/model/UploadFilesResult.cc )
 
 add_library(sae ${LIB_TYPE}
 	${sae_public_header}

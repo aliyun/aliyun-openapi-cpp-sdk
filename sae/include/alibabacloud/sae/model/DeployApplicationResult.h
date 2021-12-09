@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					std::string appId;
 					std::string changeOrderId;
+					bool isNeedApproval;
 				};
 
 

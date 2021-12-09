@@ -40,36 +40,38 @@ void DescribeApplicationInstancesResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["PageSize"].isNull())
-		data_.pageSize = std::stoi(dataNode["PageSize"].asString());
 	if(!dataNode["CurrentPage"].isNull())
 		data_.currentPage = std::stoi(dataNode["CurrentPage"].asString());
 	if(!dataNode["TotalSize"].isNull())
 		data_.totalSize = std::stoi(dataNode["TotalSize"].asString());
+	if(!dataNode["PageSize"].isNull())
+		data_.pageSize = std::stoi(dataNode["PageSize"].asString());
 	auto allInstancesNode = dataNode["Instances"]["Instance"];
 	for (auto dataNodeInstancesInstance : allInstancesNode)
 	{
 		Data::Instance instanceObject;
-		if(!dataNodeInstancesInstance["InstanceContainerIp"].isNull())
-			instanceObject.instanceContainerIp = dataNodeInstancesInstance["InstanceContainerIp"].asString();
-		if(!dataNodeInstancesInstance["InstanceHealthStatus"].isNull())
-			instanceObject.instanceHealthStatus = dataNodeInstancesInstance["InstanceHealthStatus"].asString();
-		if(!dataNodeInstancesInstance["InstanceId"].isNull())
-			instanceObject.instanceId = dataNodeInstancesInstance["InstanceId"].asString();
-		if(!dataNodeInstancesInstance["VSwitchId"].isNull())
-			instanceObject.vSwitchId = dataNodeInstancesInstance["VSwitchId"].asString();
-		if(!dataNodeInstancesInstance["ImageUrl"].isNull())
-			instanceObject.imageUrl = dataNodeInstancesInstance["ImageUrl"].asString();
-		if(!dataNodeInstancesInstance["InstanceContainerRestarts"].isNull())
-			instanceObject.instanceContainerRestarts = std::stol(dataNodeInstancesInstance["InstanceContainerRestarts"].asString());
-		if(!dataNodeInstancesInstance["PackageVersion"].isNull())
-			instanceObject.packageVersion = dataNodeInstancesInstance["PackageVersion"].asString();
-		if(!dataNodeInstancesInstance["InstanceContainerStatus"].isNull())
-			instanceObject.instanceContainerStatus = dataNodeInstancesInstance["InstanceContainerStatus"].asString();
 		if(!dataNodeInstancesInstance["CreateTimeStamp"].isNull())
 			instanceObject.createTimeStamp = std::stol(dataNodeInstancesInstance["CreateTimeStamp"].asString());
+		if(!dataNodeInstancesInstance["VSwitchId"].isNull())
+			instanceObject.vSwitchId = dataNodeInstancesInstance["VSwitchId"].asString();
+		if(!dataNodeInstancesInstance["InstanceContainerStatus"].isNull())
+			instanceObject.instanceContainerStatus = dataNodeInstancesInstance["InstanceContainerStatus"].asString();
+		if(!dataNodeInstancesInstance["InstanceHealthStatus"].isNull())
+			instanceObject.instanceHealthStatus = dataNodeInstancesInstance["InstanceHealthStatus"].asString();
+		if(!dataNodeInstancesInstance["InstanceContainerRestarts"].isNull())
+			instanceObject.instanceContainerRestarts = std::stol(dataNodeInstancesInstance["InstanceContainerRestarts"].asString());
 		if(!dataNodeInstancesInstance["GroupId"].isNull())
 			instanceObject.groupId = dataNodeInstancesInstance["GroupId"].asString();
+		if(!dataNodeInstancesInstance["InstanceContainerIp"].isNull())
+			instanceObject.instanceContainerIp = dataNodeInstancesInstance["InstanceContainerIp"].asString();
+		if(!dataNodeInstancesInstance["InstanceId"].isNull())
+			instanceObject.instanceId = dataNodeInstancesInstance["InstanceId"].asString();
+		if(!dataNodeInstancesInstance["ImageUrl"].isNull())
+			instanceObject.imageUrl = dataNodeInstancesInstance["ImageUrl"].asString();
+		if(!dataNodeInstancesInstance["PackageVersion"].isNull())
+			instanceObject.packageVersion = dataNodeInstancesInstance["PackageVersion"].asString();
+		if(!dataNodeInstancesInstance["Eip"].isNull())
+			instanceObject.eip = dataNodeInstancesInstance["Eip"].asString();
 		data_.instances.push_back(instanceObject);
 	}
 	if(!value["Message"].isNull())

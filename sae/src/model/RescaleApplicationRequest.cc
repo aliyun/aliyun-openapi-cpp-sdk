@@ -61,3 +61,14 @@ void RescaleApplicationRequest::setAppId(const std::string& appId)
 	setParameter("AppId", appId);
 }
 
+bool RescaleApplicationRequest::getAutoEnableApplicationScalingRule()const
+{
+	return autoEnableApplicationScalingRule_;
+}
+
+void RescaleApplicationRequest::setAutoEnableApplicationScalingRule(bool autoEnableApplicationScalingRule)
+{
+	autoEnableApplicationScalingRule_ = autoEnableApplicationScalingRule;
+	setParameter("AutoEnableApplicationScalingRule", autoEnableApplicationScalingRule ? "true" : "false");
+}
+

@@ -40,10 +40,12 @@ void DeployApplicationResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["AppId"].isNull())
-		data_.appId = dataNode["AppId"].asString();
 	if(!dataNode["ChangeOrderId"].isNull())
 		data_.changeOrderId = dataNode["ChangeOrderId"].asString();
+	if(!dataNode["AppId"].isNull())
+		data_.appId = dataNode["AppId"].asString();
+	if(!dataNode["IsNeedApproval"].isNull())
+		data_.isNeedApproval = dataNode["IsNeedApproval"].asString() == "true";
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
 	if(!value["TraceId"].isNull())

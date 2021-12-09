@@ -72,3 +72,14 @@ void DescribeApplicationInstancesRequest::setCurrentPage(int currentPage)
 	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
+bool DescribeApplicationInstancesRequest::getReverse()const
+{
+	return reverse_;
+}
+
+void DescribeApplicationInstancesRequest::setReverse(bool reverse)
+{
+	reverse_ = reverse;
+	setParameter("Reverse", reverse ? "true" : "false");
+}
+

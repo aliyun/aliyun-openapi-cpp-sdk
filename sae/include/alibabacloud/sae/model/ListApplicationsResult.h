@@ -41,15 +41,15 @@ namespace AlibabaCloud
 							std::string value;
 							std::string key;
 						};
-						int instances;
 						bool scaleRuleEnabled;
+						int instances;
 						std::string appDescription;
 						std::string appId;
 						int runningInstances;
-						std::string regionId;
 						std::string namespaceId;
-						std::string scaleRuleType;
+						std::string regionId;
 						bool appDeletingStatus;
+						std::string scaleRuleType;
 						std::vector<Application::TagsItem> tags;
 						std::string appName;
 					};
@@ -64,8 +64,11 @@ namespace AlibabaCloud
 				explicit ListApplicationsResult(const std::string &payload);
 				~ListApplicationsResult();
 				std::string getMessage()const;
+				int getPageSize()const;
+				int getCurrentPage()const;
 				Data getData()const;
 				std::string getErrorCode()const;
+				int getTotalSize()const;
 				std::string getCode()const;
 				bool getSuccess()const;
 
@@ -73,8 +76,11 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
+				int pageSize_;
+				int currentPage_;
 				Data data_;
 				std::string errorCode_;
+				int totalSize_;
 				std::string code_;
 				bool success_;
 

@@ -375,6 +375,42 @@ SaeClient::CreateConfigMapOutcomeCallable SaeClient::createConfigMapCallable(con
 	return task->get_future();
 }
 
+SaeClient::CreateGreyTagRouteOutcome SaeClient::createGreyTagRoute(const CreateGreyTagRouteRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateGreyTagRouteOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateGreyTagRouteOutcome(CreateGreyTagRouteResult(outcome.result()));
+	else
+		return CreateGreyTagRouteOutcome(outcome.error());
+}
+
+void SaeClient::createGreyTagRouteAsync(const CreateGreyTagRouteRequest& request, const CreateGreyTagRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createGreyTagRoute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::CreateGreyTagRouteOutcomeCallable SaeClient::createGreyTagRouteCallable(const CreateGreyTagRouteRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateGreyTagRouteOutcome()>>(
+			[this, request]()
+			{
+			return this->createGreyTagRoute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SaeClient::CreateIngressOutcome SaeClient::createIngress(const CreateIngressRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -555,6 +591,42 @@ SaeClient::DeleteConfigMapOutcomeCallable SaeClient::deleteConfigMapCallable(con
 	return task->get_future();
 }
 
+SaeClient::DeleteGreyTagRouteOutcome SaeClient::deleteGreyTagRoute(const DeleteGreyTagRouteRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteGreyTagRouteOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteGreyTagRouteOutcome(DeleteGreyTagRouteResult(outcome.result()));
+	else
+		return DeleteGreyTagRouteOutcome(outcome.error());
+}
+
+void SaeClient::deleteGreyTagRouteAsync(const DeleteGreyTagRouteRequest& request, const DeleteGreyTagRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteGreyTagRoute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::DeleteGreyTagRouteOutcomeCallable SaeClient::deleteGreyTagRouteCallable(const DeleteGreyTagRouteRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteGreyTagRouteOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteGreyTagRoute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SaeClient::DeleteIngressOutcome SaeClient::deleteIngress(const DeleteIngressRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -657,6 +729,42 @@ SaeClient::DeployApplicationOutcomeCallable SaeClient::deployApplicationCallable
 			[this, request]()
 			{
 			return this->deployApplication(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::DescribeAppServiceDetailOutcome SaeClient::describeAppServiceDetail(const DescribeAppServiceDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeAppServiceDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeAppServiceDetailOutcome(DescribeAppServiceDetailResult(outcome.result()));
+	else
+		return DescribeAppServiceDetailOutcome(outcome.error());
+}
+
+void SaeClient::describeAppServiceDetailAsync(const DescribeAppServiceDetailRequest& request, const DescribeAppServiceDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeAppServiceDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::DescribeAppServiceDetailOutcomeCallable SaeClient::describeAppServiceDetailCallable(const DescribeAppServiceDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeAppServiceDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->describeAppServiceDetail(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1059,6 +1167,42 @@ SaeClient::DescribeEdasContainersOutcomeCallable SaeClient::describeEdasContaine
 	return task->get_future();
 }
 
+SaeClient::DescribeGreyTagRouteOutcome SaeClient::describeGreyTagRoute(const DescribeGreyTagRouteRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeGreyTagRouteOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeGreyTagRouteOutcome(DescribeGreyTagRouteResult(outcome.result()));
+	else
+		return DescribeGreyTagRouteOutcome(outcome.error());
+}
+
+void SaeClient::describeGreyTagRouteAsync(const DescribeGreyTagRouteRequest& request, const DescribeGreyTagRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeGreyTagRoute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::DescribeGreyTagRouteOutcomeCallable SaeClient::describeGreyTagRouteCallable(const DescribeGreyTagRouteRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeGreyTagRouteOutcome()>>(
+			[this, request]()
+			{
+			return this->describeGreyTagRoute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SaeClient::DescribeIngressOutcome SaeClient::describeIngress(const DescribeIngressRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1419,6 +1563,42 @@ SaeClient::DisableApplicationScalingRuleOutcomeCallable SaeClient::disableApplic
 	return task->get_future();
 }
 
+SaeClient::DownloadFilesOutcome SaeClient::downloadFiles(const DownloadFilesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DownloadFilesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DownloadFilesOutcome(DownloadFilesResult(outcome.result()));
+	else
+		return DownloadFilesOutcome(outcome.error());
+}
+
+void SaeClient::downloadFilesAsync(const DownloadFilesRequest& request, const DownloadFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, downloadFiles(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::DownloadFilesOutcomeCallable SaeClient::downloadFilesCallable(const DownloadFilesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DownloadFilesOutcome()>>(
+			[this, request]()
+			{
+			return this->downloadFiles(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SaeClient::EnableApplicationScalingRuleOutcome SaeClient::enableApplicationScalingRule(const EnableApplicationScalingRuleRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1485,6 +1665,42 @@ SaeClient::ListAppEventsOutcomeCallable SaeClient::listAppEventsCallable(const L
 			[this, request]()
 			{
 			return this->listAppEvents(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::ListAppServicesPageOutcome SaeClient::listAppServicesPage(const ListAppServicesPageRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListAppServicesPageOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListAppServicesPageOutcome(ListAppServicesPageResult(outcome.result()));
+	else
+		return ListAppServicesPageOutcome(outcome.error());
+}
+
+void SaeClient::listAppServicesPageAsync(const ListAppServicesPageRequest& request, const ListAppServicesPageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listAppServicesPage(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::ListAppServicesPageOutcomeCallable SaeClient::listAppServicesPageCallable(const ListAppServicesPageRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListAppServicesPageOutcome()>>(
+			[this, request]()
+			{
+			return this->listAppServicesPage(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1629,6 +1845,42 @@ SaeClient::ListConsumedServicesOutcomeCallable SaeClient::listConsumedServicesCa
 			[this, request]()
 			{
 			return this->listConsumedServices(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::ListGreyTagRouteOutcome SaeClient::listGreyTagRoute(const ListGreyTagRouteRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListGreyTagRouteOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListGreyTagRouteOutcome(ListGreyTagRouteResult(outcome.result()));
+	else
+		return ListGreyTagRouteOutcome(outcome.error());
+}
+
+void SaeClient::listGreyTagRouteAsync(const ListGreyTagRouteRequest& request, const ListGreyTagRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listGreyTagRoute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::ListGreyTagRouteOutcomeCallable SaeClient::listGreyTagRouteCallable(const ListGreyTagRouteRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListGreyTagRouteOutcome()>>(
+			[this, request]()
+			{
+			return this->listGreyTagRoute(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1917,6 +2169,42 @@ SaeClient::QueryResourceStaticsOutcomeCallable SaeClient::queryResourceStaticsCa
 			[this, request]()
 			{
 			return this->queryResourceStatics(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::ReduceApplicationCapacityByInstanceIdsOutcome SaeClient::reduceApplicationCapacityByInstanceIds(const ReduceApplicationCapacityByInstanceIdsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ReduceApplicationCapacityByInstanceIdsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ReduceApplicationCapacityByInstanceIdsOutcome(ReduceApplicationCapacityByInstanceIdsResult(outcome.result()));
+	else
+		return ReduceApplicationCapacityByInstanceIdsOutcome(outcome.error());
+}
+
+void SaeClient::reduceApplicationCapacityByInstanceIdsAsync(const ReduceApplicationCapacityByInstanceIdsRequest& request, const ReduceApplicationCapacityByInstanceIdsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, reduceApplicationCapacityByInstanceIds(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::ReduceApplicationCapacityByInstanceIdsOutcomeCallable SaeClient::reduceApplicationCapacityByInstanceIdsCallable(const ReduceApplicationCapacityByInstanceIdsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ReduceApplicationCapacityByInstanceIdsOutcome()>>(
+			[this, request]()
+			{
+			return this->reduceApplicationCapacityByInstanceIds(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2391,6 +2679,42 @@ SaeClient::UpdateConfigMapOutcomeCallable SaeClient::updateConfigMapCallable(con
 	return task->get_future();
 }
 
+SaeClient::UpdateGreyTagRouteOutcome SaeClient::updateGreyTagRoute(const UpdateGreyTagRouteRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateGreyTagRouteOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateGreyTagRouteOutcome(UpdateGreyTagRouteResult(outcome.result()));
+	else
+		return UpdateGreyTagRouteOutcome(outcome.error());
+}
+
+void SaeClient::updateGreyTagRouteAsync(const UpdateGreyTagRouteRequest& request, const UpdateGreyTagRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateGreyTagRoute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::UpdateGreyTagRouteOutcomeCallable SaeClient::updateGreyTagRouteCallable(const UpdateGreyTagRouteRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateGreyTagRouteOutcome()>>(
+			[this, request]()
+			{
+			return this->updateGreyTagRoute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SaeClient::UpdateIngressOutcome SaeClient::updateIngress(const UpdateIngressRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2493,6 +2817,42 @@ SaeClient::UpdateNamespaceVpcOutcomeCallable SaeClient::updateNamespaceVpcCallab
 			[this, request]()
 			{
 			return this->updateNamespaceVpc(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::UploadFilesOutcome SaeClient::uploadFiles(const UploadFilesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UploadFilesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UploadFilesOutcome(UploadFilesResult(outcome.result()));
+	else
+		return UploadFilesOutcome(outcome.error());
+}
+
+void SaeClient::uploadFilesAsync(const UploadFilesRequest& request, const UploadFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, uploadFiles(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::UploadFilesOutcomeCallable SaeClient::uploadFilesCallable(const UploadFilesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UploadFilesOutcome()>>(
+			[this, request]()
+			{
+			return this->uploadFiles(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -34,16 +34,6 @@ namespace AlibabaCloud
 			public:
 				struct Data
 				{
-					struct MountDescItem
-					{
-						std::string mountPath;
-						std::string nasPath;
-					};
-					struct Tag
-					{
-						std::string value;
-						std::string key;
-					};
 					struct ConfigMapMountDescItem
 					{
 						std::string mountPath;
@@ -51,51 +41,79 @@ namespace AlibabaCloud
 						std::string configMapName;
 						std::string key;
 					};
+					struct Tag
+					{
+						std::string value;
+						std::string key;
+					};
+					struct MountDescItem
+					{
+						std::string mountPath;
+						std::string nasPath;
+					};
+					struct OssMountDesc
+					{
+						std::string mountPath;
+						bool readOnly;
+						std::string bucketName;
+						std::string bucketPath;
+					};
 					std::string timezone;
-					std::string appDescription;
 					std::string phpConfig;
 					std::vector<MountDescItem> mountDesc;
-					std::string nasId;
-					std::string warStartOptions;
 					std::string liveness;
+					std::string warStartOptions;
 					int memory;
 					std::string webContainer;
-					std::string slsConfigs;
 					int cpu;
-					std::string packageVersion;
-					std::string appName;
-					std::string jdk;
 					std::string jarStartArgs;
-					int minReadyInstances;
 					std::string preStop;
-					std::string readiness;
+					int minReadyInstances;
 					std::string phpArmsConfigLocation;
 					std::string packageType;
 					std::vector<Tag> tags;
+					std::string ossAkSecret;
+					std::string mseApplicationId;
+					std::string vSwitchId;
+					std::string imageUrl;
+					std::string postStart;
+					std::vector<ConfigMapMountDescItem> configMapMountDesc;
+					std::string phpExtensions;
+					std::string vpcId;
+					std::string appId;
+					std::string edasContainerVersion;
+					std::string namespaceId;
+					std::string tomcatConfig;
+					std::string appDescription;
+					std::string nasId;
+					std::string acrInstanceId;
+					std::string slsConfigs;
+					std::string updateStrategy;
+					std::string ossAkId;
+					std::vector<OssMountDesc> ossMountDescs;
+					std::string packageVersion;
+					std::string appName;
+					bool enableGreyTagRoute;
+					std::string jdk;
+					std::string readiness;
+					std::string php;
 					std::string commandArgs;
 					std::string acrAssumeRoleArn;
 					int terminationGracePeriodSeconds;
-					std::string envs;
-					std::string vSwitchId;
 					std::string securityGroupId;
-					std::string postStart;
-					std::string imageUrl;
-					std::string mountHost;
+					std::string envs;
 					std::string jarStartOptions;
+					std::string mountHost;
 					int replicas;
 					std::string customHostAlias;
-					std::vector<ConfigMapMountDescItem> configMapMountDesc;
-					std::string appId;
-					std::string vpcId;
-					std::string edasContainerVersion;
 					std::string command;
-					std::string phpConfigLocation;
+					bool associateEip;
 					std::string packageUrl;
+					std::string phpConfigLocation;
 					int batchWaitTime;
+					std::string phpPECLExtensions;
 					std::string regionId;
-					std::string namespaceId;
 					std::string enableAhas;
-					std::string tomcatConfig;
 				};
 
 

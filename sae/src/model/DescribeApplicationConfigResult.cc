@@ -40,90 +40,134 @@ void DescribeApplicationConfigResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["Timezone"].isNull())
-		data_.timezone = dataNode["Timezone"].asString();
-	if(!dataNode["AppDescription"].isNull())
-		data_.appDescription = dataNode["AppDescription"].asString();
-	if(!dataNode["PhpConfig"].isNull())
-		data_.phpConfig = dataNode["PhpConfig"].asString();
-	if(!dataNode["NasId"].isNull())
-		data_.nasId = dataNode["NasId"].asString();
-	if(!dataNode["WarStartOptions"].isNull())
-		data_.warStartOptions = dataNode["WarStartOptions"].asString();
-	if(!dataNode["Liveness"].isNull())
-		data_.liveness = dataNode["Liveness"].asString();
-	if(!dataNode["Memory"].isNull())
-		data_.memory = std::stoi(dataNode["Memory"].asString());
-	if(!dataNode["WebContainer"].isNull())
-		data_.webContainer = dataNode["WebContainer"].asString();
-	if(!dataNode["SlsConfigs"].isNull())
-		data_.slsConfigs = dataNode["SlsConfigs"].asString();
-	if(!dataNode["Cpu"].isNull())
-		data_.cpu = std::stoi(dataNode["Cpu"].asString());
-	if(!dataNode["PackageVersion"].isNull())
-		data_.packageVersion = dataNode["PackageVersion"].asString();
-	if(!dataNode["AppName"].isNull())
-		data_.appName = dataNode["AppName"].asString();
-	if(!dataNode["Jdk"].isNull())
-		data_.jdk = dataNode["Jdk"].asString();
-	if(!dataNode["JarStartArgs"].isNull())
-		data_.jarStartArgs = dataNode["JarStartArgs"].asString();
-	if(!dataNode["MinReadyInstances"].isNull())
-		data_.minReadyInstances = std::stoi(dataNode["MinReadyInstances"].asString());
-	if(!dataNode["PreStop"].isNull())
-		data_.preStop = dataNode["PreStop"].asString();
+	if(!dataNode["VpcId"].isNull())
+		data_.vpcId = dataNode["VpcId"].asString();
 	if(!dataNode["Readiness"].isNull())
 		data_.readiness = dataNode["Readiness"].asString();
-	if(!dataNode["PhpArmsConfigLocation"].isNull())
-		data_.phpArmsConfigLocation = dataNode["PhpArmsConfigLocation"].asString();
-	if(!dataNode["PackageType"].isNull())
-		data_.packageType = dataNode["PackageType"].asString();
-	if(!dataNode["CommandArgs"].isNull())
-		data_.commandArgs = dataNode["CommandArgs"].asString();
-	if(!dataNode["AcrAssumeRoleArn"].isNull())
-		data_.acrAssumeRoleArn = dataNode["AcrAssumeRoleArn"].asString();
-	if(!dataNode["TerminationGracePeriodSeconds"].isNull())
-		data_.terminationGracePeriodSeconds = std::stoi(dataNode["TerminationGracePeriodSeconds"].asString());
-	if(!dataNode["Envs"].isNull())
-		data_.envs = dataNode["Envs"].asString();
-	if(!dataNode["VSwitchId"].isNull())
-		data_.vSwitchId = dataNode["VSwitchId"].asString();
 	if(!dataNode["SecurityGroupId"].isNull())
 		data_.securityGroupId = dataNode["SecurityGroupId"].asString();
-	if(!dataNode["PostStart"].isNull())
-		data_.postStart = dataNode["PostStart"].asString();
+	if(!dataNode["BatchWaitTime"].isNull())
+		data_.batchWaitTime = std::stoi(dataNode["BatchWaitTime"].asString());
+	if(!dataNode["Jdk"].isNull())
+		data_.jdk = dataNode["Jdk"].asString();
 	if(!dataNode["ImageUrl"].isNull())
 		data_.imageUrl = dataNode["ImageUrl"].asString();
-	if(!dataNode["MountHost"].isNull())
-		data_.mountHost = dataNode["MountHost"].asString();
+	if(!dataNode["SlsConfigs"].isNull())
+		data_.slsConfigs = dataNode["SlsConfigs"].asString();
+	if(!dataNode["Liveness"].isNull())
+		data_.liveness = dataNode["Liveness"].asString();
+	if(!dataNode["PackageUrl"].isNull())
+		data_.packageUrl = dataNode["PackageUrl"].asString();
+	if(!dataNode["PackageType"].isNull())
+		data_.packageType = dataNode["PackageType"].asString();
+	if(!dataNode["PreStop"].isNull())
+		data_.preStop = dataNode["PreStop"].asString();
+	if(!dataNode["PackageVersion"].isNull())
+		data_.packageVersion = dataNode["PackageVersion"].asString();
+	if(!dataNode["JarStartArgs"].isNull())
+		data_.jarStartArgs = dataNode["JarStartArgs"].asString();
+	if(!dataNode["AppName"].isNull())
+		data_.appName = dataNode["AppName"].asString();
+	if(!dataNode["AppId"].isNull())
+		data_.appId = dataNode["AppId"].asString();
 	if(!dataNode["JarStartOptions"].isNull())
 		data_.jarStartOptions = dataNode["JarStartOptions"].asString();
 	if(!dataNode["Replicas"].isNull())
 		data_.replicas = std::stoi(dataNode["Replicas"].asString());
-	if(!dataNode["CustomHostAlias"].isNull())
-		data_.customHostAlias = dataNode["CustomHostAlias"].asString();
-	if(!dataNode["AppId"].isNull())
-		data_.appId = dataNode["AppId"].asString();
-	if(!dataNode["VpcId"].isNull())
-		data_.vpcId = dataNode["VpcId"].asString();
-	if(!dataNode["EdasContainerVersion"].isNull())
-		data_.edasContainerVersion = dataNode["EdasContainerVersion"].asString();
-	if(!dataNode["Command"].isNull())
-		data_.command = dataNode["Command"].asString();
+	if(!dataNode["UpdateStrategy"].isNull())
+		data_.updateStrategy = dataNode["UpdateStrategy"].asString();
+	if(!dataNode["MinReadyInstances"].isNull())
+		data_.minReadyInstances = std::stoi(dataNode["MinReadyInstances"].asString());
+	if(!dataNode["Memory"].isNull())
+		data_.memory = std::stoi(dataNode["Memory"].asString());
+	if(!dataNode["Php"].isNull())
+		data_.php = dataNode["Php"].asString();
+	if(!dataNode["PhpConfig"].isNull())
+		data_.phpConfig = dataNode["PhpConfig"].asString();
 	if(!dataNode["PhpConfigLocation"].isNull())
 		data_.phpConfigLocation = dataNode["PhpConfigLocation"].asString();
-	if(!dataNode["PackageUrl"].isNull())
-		data_.packageUrl = dataNode["PackageUrl"].asString();
-	if(!dataNode["BatchWaitTime"].isNull())
-		data_.batchWaitTime = std::stoi(dataNode["BatchWaitTime"].asString());
-	if(!dataNode["RegionId"].isNull())
-		data_.regionId = dataNode["RegionId"].asString();
+	if(!dataNode["PhpExtensions"].isNull())
+		data_.phpExtensions = dataNode["PhpExtensions"].asString();
+	if(!dataNode["PhpPECLExtensions"].isNull())
+		data_.phpPECLExtensions = dataNode["PhpPECLExtensions"].asString();
+	if(!dataNode["PostStart"].isNull())
+		data_.postStart = dataNode["PostStart"].asString();
+	if(!dataNode["TerminationGracePeriodSeconds"].isNull())
+		data_.terminationGracePeriodSeconds = std::stoi(dataNode["TerminationGracePeriodSeconds"].asString());
+	if(!dataNode["CommandArgs"].isNull())
+		data_.commandArgs = dataNode["CommandArgs"].asString();
 	if(!dataNode["NamespaceId"].isNull())
 		data_.namespaceId = dataNode["NamespaceId"].asString();
-	if(!dataNode["EnableAhas"].isNull())
-		data_.enableAhas = dataNode["EnableAhas"].asString();
+	if(!dataNode["MountHost"].isNull())
+		data_.mountHost = dataNode["MountHost"].asString();
 	if(!dataNode["TomcatConfig"].isNull())
 		data_.tomcatConfig = dataNode["TomcatConfig"].asString();
+	if(!dataNode["RegionId"].isNull())
+		data_.regionId = dataNode["RegionId"].asString();
+	if(!dataNode["VSwitchId"].isNull())
+		data_.vSwitchId = dataNode["VSwitchId"].asString();
+	if(!dataNode["Cpu"].isNull())
+		data_.cpu = std::stoi(dataNode["Cpu"].asString());
+	if(!dataNode["Envs"].isNull())
+		data_.envs = dataNode["Envs"].asString();
+	if(!dataNode["EnableAhas"].isNull())
+		data_.enableAhas = dataNode["EnableAhas"].asString();
+	if(!dataNode["CustomHostAlias"].isNull())
+		data_.customHostAlias = dataNode["CustomHostAlias"].asString();
+	if(!dataNode["WebContainer"].isNull())
+		data_.webContainer = dataNode["WebContainer"].asString();
+	if(!dataNode["Command"].isNull())
+		data_.command = dataNode["Command"].asString();
+	if(!dataNode["WarStartOptions"].isNull())
+		data_.warStartOptions = dataNode["WarStartOptions"].asString();
+	if(!dataNode["PhpArmsConfigLocation"].isNull())
+		data_.phpArmsConfigLocation = dataNode["PhpArmsConfigLocation"].asString();
+	if(!dataNode["NasId"].isNull())
+		data_.nasId = dataNode["NasId"].asString();
+	if(!dataNode["OssAkId"].isNull())
+		data_.ossAkId = dataNode["OssAkId"].asString();
+	if(!dataNode["OssAkSecret"].isNull())
+		data_.ossAkSecret = dataNode["OssAkSecret"].asString();
+	if(!dataNode["EdasContainerVersion"].isNull())
+		data_.edasContainerVersion = dataNode["EdasContainerVersion"].asString();
+	if(!dataNode["Timezone"].isNull())
+		data_.timezone = dataNode["Timezone"].asString();
+	if(!dataNode["AppDescription"].isNull())
+		data_.appDescription = dataNode["AppDescription"].asString();
+	if(!dataNode["EnableGreyTagRoute"].isNull())
+		data_.enableGreyTagRoute = dataNode["EnableGreyTagRoute"].asString() == "true";
+	if(!dataNode["MseApplicationId"].isNull())
+		data_.mseApplicationId = dataNode["MseApplicationId"].asString();
+	if(!dataNode["AcrInstanceId"].isNull())
+		data_.acrInstanceId = dataNode["AcrInstanceId"].asString();
+	if(!dataNode["AcrAssumeRoleArn"].isNull())
+		data_.acrAssumeRoleArn = dataNode["AcrAssumeRoleArn"].asString();
+	if(!dataNode["AssociateEip"].isNull())
+		data_.associateEip = dataNode["AssociateEip"].asString() == "true";
+	auto allConfigMapMountDescNode = dataNode["ConfigMapMountDesc"]["ConfigMapMountDescItem"];
+	for (auto dataNodeConfigMapMountDescConfigMapMountDescItem : allConfigMapMountDescNode)
+	{
+		Data::ConfigMapMountDescItem configMapMountDescItemObject;
+		if(!dataNodeConfigMapMountDescConfigMapMountDescItem["Key"].isNull())
+			configMapMountDescItemObject.key = dataNodeConfigMapMountDescConfigMapMountDescItem["Key"].asString();
+		if(!dataNodeConfigMapMountDescConfigMapMountDescItem["ConfigMapName"].isNull())
+			configMapMountDescItemObject.configMapName = dataNodeConfigMapMountDescConfigMapMountDescItem["ConfigMapName"].asString();
+		if(!dataNodeConfigMapMountDescConfigMapMountDescItem["MountPath"].isNull())
+			configMapMountDescItemObject.mountPath = dataNodeConfigMapMountDescConfigMapMountDescItem["MountPath"].asString();
+		if(!dataNodeConfigMapMountDescConfigMapMountDescItem["ConfigMapId"].isNull())
+			configMapMountDescItemObject.configMapId = std::stol(dataNodeConfigMapMountDescConfigMapMountDescItem["ConfigMapId"].asString());
+		data_.configMapMountDesc.push_back(configMapMountDescItemObject);
+	}
+	auto allTagsNode = dataNode["Tags"]["Tag"];
+	for (auto dataNodeTagsTag : allTagsNode)
+	{
+		Data::Tag tagObject;
+		if(!dataNodeTagsTag["Key"].isNull())
+			tagObject.key = dataNodeTagsTag["Key"].asString();
+		if(!dataNodeTagsTag["Value"].isNull())
+			tagObject.value = dataNodeTagsTag["Value"].asString();
+		data_.tags.push_back(tagObject);
+	}
 	auto allMountDescNode = dataNode["MountDesc"]["MountDescItem"];
 	for (auto dataNodeMountDescMountDescItem : allMountDescNode)
 	{
@@ -134,29 +178,19 @@ void DescribeApplicationConfigResult::parse(const std::string &payload)
 			mountDescItemObject.nasPath = dataNodeMountDescMountDescItem["NasPath"].asString();
 		data_.mountDesc.push_back(mountDescItemObject);
 	}
-	auto allTagsNode = dataNode["Tags"]["Tag"];
-	for (auto dataNodeTagsTag : allTagsNode)
+	auto allOssMountDescsNode = dataNode["OssMountDescs"]["ossMountDesc"];
+	for (auto dataNodeOssMountDescsossMountDesc : allOssMountDescsNode)
 	{
-		Data::Tag tagObject;
-		if(!dataNodeTagsTag["Value"].isNull())
-			tagObject.value = dataNodeTagsTag["Value"].asString();
-		if(!dataNodeTagsTag["Key"].isNull())
-			tagObject.key = dataNodeTagsTag["Key"].asString();
-		data_.tags.push_back(tagObject);
-	}
-	auto allConfigMapMountDescNode = dataNode["ConfigMapMountDesc"]["ConfigMapMountDescItem"];
-	for (auto dataNodeConfigMapMountDescConfigMapMountDescItem : allConfigMapMountDescNode)
-	{
-		Data::ConfigMapMountDescItem configMapMountDescItemObject;
-		if(!dataNodeConfigMapMountDescConfigMapMountDescItem["MountPath"].isNull())
-			configMapMountDescItemObject.mountPath = dataNodeConfigMapMountDescConfigMapMountDescItem["MountPath"].asString();
-		if(!dataNodeConfigMapMountDescConfigMapMountDescItem["ConfigMapId"].isNull())
-			configMapMountDescItemObject.configMapId = std::stol(dataNodeConfigMapMountDescConfigMapMountDescItem["ConfigMapId"].asString());
-		if(!dataNodeConfigMapMountDescConfigMapMountDescItem["ConfigMapName"].isNull())
-			configMapMountDescItemObject.configMapName = dataNodeConfigMapMountDescConfigMapMountDescItem["ConfigMapName"].asString();
-		if(!dataNodeConfigMapMountDescConfigMapMountDescItem["Key"].isNull())
-			configMapMountDescItemObject.key = dataNodeConfigMapMountDescConfigMapMountDescItem["Key"].asString();
-		data_.configMapMountDesc.push_back(configMapMountDescItemObject);
+		Data::OssMountDesc ossMountDescObject;
+		if(!dataNodeOssMountDescsossMountDesc["bucketName"].isNull())
+			ossMountDescObject.bucketName = dataNodeOssMountDescsossMountDesc["bucketName"].asString();
+		if(!dataNodeOssMountDescsossMountDesc["bucketPath"].isNull())
+			ossMountDescObject.bucketPath = dataNodeOssMountDescsossMountDesc["bucketPath"].asString();
+		if(!dataNodeOssMountDescsossMountDesc["mountPath"].isNull())
+			ossMountDescObject.mountPath = dataNodeOssMountDescsossMountDesc["mountPath"].asString();
+		if(!dataNodeOssMountDescsossMountDesc["readOnly"].isNull())
+			ossMountDescObject.readOnly = dataNodeOssMountDescsossMountDesc["readOnly"].asString() == "true";
+		data_.ossMountDescs.push_back(ossMountDescObject);
 	}
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();

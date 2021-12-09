@@ -40,34 +40,40 @@ void DescribeApplicationStatusResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["AppId"].isNull())
-		data_.appId = dataNode["AppId"].asString();
-	if(!dataNode["LastChangeOrderId"].isNull())
-		data_.lastChangeOrderId = dataNode["LastChangeOrderId"].asString();
-	if(!dataNode["LastChangeOrderStatus"].isNull())
-		data_.lastChangeOrderStatus = dataNode["LastChangeOrderStatus"].asString();
-	if(!dataNode["LastChangeOrderRunning"].isNull())
-		data_.lastChangeOrderRunning = dataNode["LastChangeOrderRunning"].asString() == "true";
-	if(!dataNode["CurrentStatus"].isNull())
-		data_.currentStatus = dataNode["CurrentStatus"].asString();
-	if(!dataNode["ArmsApmInfo"].isNull())
-		data_.armsApmInfo = dataNode["ArmsApmInfo"].asString();
-	if(!dataNode["RunningInstances"].isNull())
-		data_.runningInstances = std::stoi(dataNode["RunningInstances"].asString());
 	if(!dataNode["ArmsAdvancedEnabled"].isNull())
 		data_.armsAdvancedEnabled = dataNode["ArmsAdvancedEnabled"].asString();
+	if(!dataNode["LastChangeOrderId"].isNull())
+		data_.lastChangeOrderId = dataNode["LastChangeOrderId"].asString();
+	if(!dataNode["ArmsApmInfo"].isNull())
+		data_.armsApmInfo = dataNode["ArmsApmInfo"].asString();
 	if(!dataNode["CreateTime"].isNull())
 		data_.createTime = dataNode["CreateTime"].asString();
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
+	if(!dataNode["CurrentStatus"].isNull())
+		data_.currentStatus = dataNode["CurrentStatus"].asString();
+	if(!dataNode["AppId"].isNull())
+		data_.appId = dataNode["AppId"].asString();
+	if(!dataNode["LastChangeOrderRunning"].isNull())
+		data_.lastChangeOrderRunning = dataNode["LastChangeOrderRunning"].asString() == "true";
+	if(!dataNode["RunningInstances"].isNull())
+		data_.runningInstances = std::stoi(dataNode["RunningInstances"].asString());
+	if(!dataNode["LastChangeOrderStatus"].isNull())
+		data_.lastChangeOrderStatus = dataNode["LastChangeOrderStatus"].asString();
+	if(!dataNode["SubStatus"].isNull())
+		data_.subStatus = dataNode["SubStatus"].asString();
+	if(!dataNode["EnableAgent"].isNull())
+		data_.enableAgent = dataNode["EnableAgent"].asString() == "true";
+	if(!dataNode["FileSizeLimit"].isNull())
+		data_.fileSizeLimit = std::stol(dataNode["FileSizeLimit"].asString());
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
 	if(!value["TraceId"].isNull())
 		traceId_ = value["TraceId"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = value["ErrorCode"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

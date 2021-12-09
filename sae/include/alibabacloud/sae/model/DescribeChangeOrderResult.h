@@ -38,9 +38,9 @@ namespace AlibabaCloud
 					{
 						int status;
 						std::string pipelineName;
-						int parallelCount;
-						long updateTime;
 						long startTime;
+						long updateTime;
+						int parallelCount;
 						std::string pipelineId;
 						int batchType;
 					};
@@ -50,14 +50,16 @@ namespace AlibabaCloud
 					bool supportAbortFreeze;
 					std::vector<std::string> coTargets;
 					std::string createTime;
+					std::string approvalId;
 					std::string changeOrderId;
 					std::string batchType;
 					std::string appName;
 					std::string currentPipelineId;
-					bool _auto;
 					std::string coTypeCode;
+					bool _auto;
 					bool supportRollback;
 					int batchWaitTime;
+					int subStatus;
 					std::string errorMessage;
 					std::string coType;
 					int batchCount;

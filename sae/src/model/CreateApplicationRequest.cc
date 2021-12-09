@@ -39,17 +39,6 @@ void CreateApplicationRequest::setNasId(const std::string& nasId)
 	setParameter("NasId", nasId);
 }
 
-std::string CreateApplicationRequest::getWebContainer()const
-{
-	return webContainer_;
-}
-
-void CreateApplicationRequest::setWebContainer(const std::string& webContainer)
-{
-	webContainer_ = webContainer;
-	setParameter("WebContainer", webContainer);
-}
-
 std::string CreateApplicationRequest::getJarStartArgs()const
 {
 	return jarStartArgs_;
@@ -59,6 +48,237 @@ void CreateApplicationRequest::setJarStartArgs(const std::string& jarStartArgs)
 {
 	jarStartArgs_ = jarStartArgs;
 	setParameter("JarStartArgs", jarStartArgs);
+}
+
+std::string CreateApplicationRequest::getOssAkSecret()const
+{
+	return ossAkSecret_;
+}
+
+void CreateApplicationRequest::setOssAkSecret(const std::string& ossAkSecret)
+{
+	ossAkSecret_ = ossAkSecret;
+	setBodyParameter("OssAkSecret", ossAkSecret);
+}
+
+std::string CreateApplicationRequest::getMountHost()const
+{
+	return mountHost_;
+}
+
+void CreateApplicationRequest::setMountHost(const std::string& mountHost)
+{
+	mountHost_ = mountHost;
+	setParameter("MountHost", mountHost);
+}
+
+bool CreateApplicationRequest::getAutoConfig()const
+{
+	return autoConfig_;
+}
+
+void CreateApplicationRequest::setAutoConfig(bool autoConfig)
+{
+	autoConfig_ = autoConfig;
+	setParameter("AutoConfig", autoConfig ? "true" : "false");
+}
+
+std::string CreateApplicationRequest::getEnvs()const
+{
+	return envs_;
+}
+
+void CreateApplicationRequest::setEnvs(const std::string& envs)
+{
+	envs_ = envs;
+	setParameter("Envs", envs);
+}
+
+std::string CreateApplicationRequest::getPhpPECLExtensions()const
+{
+	return phpPECLExtensions_;
+}
+
+void CreateApplicationRequest::setPhpPECLExtensions(const std::string& phpPECLExtensions)
+{
+	phpPECLExtensions_ = phpPECLExtensions;
+	setBodyParameter("PhpPECLExtensions", phpPECLExtensions);
+}
+
+std::string CreateApplicationRequest::getPhpArmsConfigLocation()const
+{
+	return phpArmsConfigLocation_;
+}
+
+void CreateApplicationRequest::setPhpArmsConfigLocation(const std::string& phpArmsConfigLocation)
+{
+	phpArmsConfigLocation_ = phpArmsConfigLocation;
+	setParameter("PhpArmsConfigLocation", phpArmsConfigLocation);
+}
+
+std::string CreateApplicationRequest::getCustomHostAlias()const
+{
+	return customHostAlias_;
+}
+
+void CreateApplicationRequest::setCustomHostAlias(const std::string& customHostAlias)
+{
+	customHostAlias_ = customHostAlias;
+	setParameter("CustomHostAlias", customHostAlias);
+}
+
+bool CreateApplicationRequest::getDeploy()const
+{
+	return deploy_;
+}
+
+void CreateApplicationRequest::setDeploy(bool deploy)
+{
+	deploy_ = deploy;
+	setParameter("Deploy", deploy ? "true" : "false");
+}
+
+std::string CreateApplicationRequest::getJarStartOptions()const
+{
+	return jarStartOptions_;
+}
+
+void CreateApplicationRequest::setJarStartOptions(const std::string& jarStartOptions)
+{
+	jarStartOptions_ = jarStartOptions;
+	setParameter("JarStartOptions", jarStartOptions);
+}
+
+std::string CreateApplicationRequest::getAppName()const
+{
+	return appName_;
+}
+
+void CreateApplicationRequest::setAppName(const std::string& appName)
+{
+	appName_ = appName;
+	setParameter("AppName", appName);
+}
+
+std::string CreateApplicationRequest::getNamespaceId()const
+{
+	return namespaceId_;
+}
+
+void CreateApplicationRequest::setNamespaceId(const std::string& namespaceId)
+{
+	namespaceId_ = namespaceId;
+	setParameter("NamespaceId", namespaceId);
+}
+
+std::string CreateApplicationRequest::getConfigMapMountDesc()const
+{
+	return configMapMountDesc_;
+}
+
+void CreateApplicationRequest::setConfigMapMountDesc(const std::string& configMapMountDesc)
+{
+	configMapMountDesc_ = configMapMountDesc;
+	setBodyParameter("ConfigMapMountDesc", configMapMountDesc);
+}
+
+std::string CreateApplicationRequest::getOssMountDescs()const
+{
+	return ossMountDescs_;
+}
+
+void CreateApplicationRequest::setOssMountDescs(const std::string& ossMountDescs)
+{
+	ossMountDescs_ = ossMountDescs;
+	setBodyParameter("OssMountDescs", ossMountDescs);
+}
+
+std::string CreateApplicationRequest::getPreStop()const
+{
+	return preStop_;
+}
+
+void CreateApplicationRequest::setPreStop(const std::string& preStop)
+{
+	preStop_ = preStop;
+	setParameter("PreStop", preStop);
+}
+
+int CreateApplicationRequest::getCpu()const
+{
+	return cpu_;
+}
+
+void CreateApplicationRequest::setCpu(int cpu)
+{
+	cpu_ = cpu;
+	setParameter("Cpu", std::to_string(cpu));
+}
+
+std::string CreateApplicationRequest::getVSwitchId()const
+{
+	return vSwitchId_;
+}
+
+void CreateApplicationRequest::setVSwitchId(const std::string& vSwitchId)
+{
+	vSwitchId_ = vSwitchId;
+	setParameter("VSwitchId", vSwitchId);
+}
+
+std::string CreateApplicationRequest::getPackageType()const
+{
+	return packageType_;
+}
+
+void CreateApplicationRequest::setPackageType(const std::string& packageType)
+{
+	packageType_ = packageType;
+	setParameter("PackageType", packageType);
+}
+
+std::string CreateApplicationRequest::getPostStart()const
+{
+	return postStart_;
+}
+
+void CreateApplicationRequest::setPostStart(const std::string& postStart)
+{
+	postStart_ = postStart;
+	setParameter("PostStart", postStart);
+}
+
+std::string CreateApplicationRequest::getPhpExtensions()const
+{
+	return phpExtensions_;
+}
+
+void CreateApplicationRequest::setPhpExtensions(const std::string& phpExtensions)
+{
+	phpExtensions_ = phpExtensions;
+	setBodyParameter("PhpExtensions", phpExtensions);
+}
+
+bool CreateApplicationRequest::getAssociateEip()const
+{
+	return associateEip_;
+}
+
+void CreateApplicationRequest::setAssociateEip(bool associateEip)
+{
+	associateEip_ = associateEip;
+	setBodyParameter("AssociateEip", associateEip ? "true" : "false");
+}
+
+std::string CreateApplicationRequest::getWebContainer()const
+{
+	return webContainer_;
+}
+
+void CreateApplicationRequest::setWebContainer(const std::string& webContainer)
+{
+	webContainer_ = webContainer;
+	setParameter("WebContainer", webContainer);
 }
 
 int CreateApplicationRequest::getMemory()const
@@ -127,26 +347,15 @@ void CreateApplicationRequest::setTimezone(const std::string& timezone)
 	setParameter("Timezone", timezone);
 }
 
-std::string CreateApplicationRequest::getMountHost()const
+std::string CreateApplicationRequest::getOssAkId()const
 {
-	return mountHost_;
+	return ossAkId_;
 }
 
-void CreateApplicationRequest::setMountHost(const std::string& mountHost)
+void CreateApplicationRequest::setOssAkId(const std::string& ossAkId)
 {
-	mountHost_ = mountHost;
-	setParameter("MountHost", mountHost);
-}
-
-bool CreateApplicationRequest::getAutoConfig()const
-{
-	return autoConfig_;
-}
-
-void CreateApplicationRequest::setAutoConfig(bool autoConfig)
-{
-	autoConfig_ = autoConfig;
-	setParameter("AutoConfig", autoConfig ? "true" : "false");
+	ossAkId_ = ossAkId;
+	setBodyParameter("OssAkId", ossAkId);
 }
 
 std::string CreateApplicationRequest::getLiveness()const
@@ -171,28 +380,6 @@ void CreateApplicationRequest::setSecurityGroupId(const std::string& securityGro
 	setParameter("SecurityGroupId", securityGroupId);
 }
 
-std::string CreateApplicationRequest::getEnvs()const
-{
-	return envs_;
-}
-
-void CreateApplicationRequest::setEnvs(const std::string& envs)
-{
-	envs_ = envs;
-	setParameter("Envs", envs);
-}
-
-std::string CreateApplicationRequest::getPhpArmsConfigLocation()const
-{
-	return phpArmsConfigLocation_;
-}
-
-void CreateApplicationRequest::setPhpArmsConfigLocation(const std::string& phpArmsConfigLocation)
-{
-	phpArmsConfigLocation_ = phpArmsConfigLocation;
-	setParameter("PhpArmsConfigLocation", phpArmsConfigLocation);
-}
-
 std::string CreateApplicationRequest::getPackageVersion()const
 {
 	return packageVersion_;
@@ -215,28 +402,6 @@ void CreateApplicationRequest::setTomcatConfig(const std::string& tomcatConfig)
 	setParameter("TomcatConfig", tomcatConfig);
 }
 
-std::string CreateApplicationRequest::getCustomHostAlias()const
-{
-	return customHostAlias_;
-}
-
-void CreateApplicationRequest::setCustomHostAlias(const std::string& customHostAlias)
-{
-	customHostAlias_ = customHostAlias;
-	setParameter("CustomHostAlias", customHostAlias);
-}
-
-bool CreateApplicationRequest::getDeploy()const
-{
-	return deploy_;
-}
-
-void CreateApplicationRequest::setDeploy(bool deploy)
-{
-	deploy_ = deploy;
-	setParameter("Deploy", deploy ? "true" : "false");
-}
-
 std::string CreateApplicationRequest::getWarStartOptions()const
 {
 	return warStartOptions_;
@@ -248,17 +413,6 @@ void CreateApplicationRequest::setWarStartOptions(const std::string& warStartOpt
 	setParameter("WarStartOptions", warStartOptions);
 }
 
-std::string CreateApplicationRequest::getJarStartOptions()const
-{
-	return jarStartOptions_;
-}
-
-void CreateApplicationRequest::setJarStartOptions(const std::string& jarStartOptions)
-{
-	jarStartOptions_ = jarStartOptions;
-	setParameter("JarStartOptions", jarStartOptions);
-}
-
 std::string CreateApplicationRequest::getEdasContainerVersion()const
 {
 	return edasContainerVersion_;
@@ -268,28 +422,6 @@ void CreateApplicationRequest::setEdasContainerVersion(const std::string& edasCo
 {
 	edasContainerVersion_ = edasContainerVersion;
 	setParameter("EdasContainerVersion", edasContainerVersion);
-}
-
-std::string CreateApplicationRequest::getAppName()const
-{
-	return appName_;
-}
-
-void CreateApplicationRequest::setAppName(const std::string& appName)
-{
-	appName_ = appName;
-	setParameter("AppName", appName);
-}
-
-std::string CreateApplicationRequest::getNamespaceId()const
-{
-	return namespaceId_;
-}
-
-void CreateApplicationRequest::setNamespaceId(const std::string& namespaceId)
-{
-	namespaceId_ = namespaceId;
-	setParameter("NamespaceId", namespaceId);
 }
 
 std::string CreateApplicationRequest::getPackageUrl()const
@@ -314,17 +446,6 @@ void CreateApplicationRequest::setTerminationGracePeriodSeconds(int terminationG
 	setParameter("TerminationGracePeriodSeconds", std::to_string(terminationGracePeriodSeconds));
 }
 
-std::string CreateApplicationRequest::getConfigMapMountDesc()const
-{
-	return configMapMountDesc_;
-}
-
-void CreateApplicationRequest::setConfigMapMountDesc(const std::string& configMapMountDesc)
-{
-	configMapMountDesc_ = configMapMountDesc;
-	setBodyParameter("ConfigMapMountDesc", configMapMountDesc);
-}
-
 std::string CreateApplicationRequest::getPhpConfig()const
 {
 	return phpConfig_;
@@ -336,17 +457,6 @@ void CreateApplicationRequest::setPhpConfig(const std::string& phpConfig)
 	setBodyParameter("PhpConfig", phpConfig);
 }
 
-std::string CreateApplicationRequest::getPreStop()const
-{
-	return preStop_;
-}
-
-void CreateApplicationRequest::setPreStop(const std::string& preStop)
-{
-	preStop_ = preStop;
-	setParameter("PreStop", preStop);
-}
-
 int CreateApplicationRequest::getReplicas()const
 {
 	return replicas_;
@@ -356,17 +466,6 @@ void CreateApplicationRequest::setReplicas(int replicas)
 {
 	replicas_ = replicas;
 	setParameter("Replicas", std::to_string(replicas));
-}
-
-int CreateApplicationRequest::getCpu()const
-{
-	return cpu_;
-}
-
-void CreateApplicationRequest::setCpu(int cpu)
-{
-	cpu_ = cpu;
-	setParameter("Cpu", std::to_string(cpu));
 }
 
 std::string CreateApplicationRequest::getCommand()const
@@ -391,17 +490,6 @@ void CreateApplicationRequest::setMountDesc(const std::string& mountDesc)
 	setParameter("MountDesc", mountDesc);
 }
 
-std::string CreateApplicationRequest::getVSwitchId()const
-{
-	return vSwitchId_;
-}
-
-void CreateApplicationRequest::setVSwitchId(const std::string& vSwitchId)
-{
-	vSwitchId_ = vSwitchId;
-	setParameter("VSwitchId", vSwitchId);
-}
-
 std::string CreateApplicationRequest::getJdk()const
 {
 	return jdk_;
@@ -422,6 +510,17 @@ void CreateApplicationRequest::setAppDescription(const std::string& appDescripti
 {
 	appDescription_ = appDescription;
 	setParameter("AppDescription", appDescription);
+}
+
+std::string CreateApplicationRequest::getAcrInstanceId()const
+{
+	return acrInstanceId_;
+}
+
+void CreateApplicationRequest::setAcrInstanceId(const std::string& acrInstanceId)
+{
+	acrInstanceId_ = acrInstanceId;
+	setBodyParameter("AcrInstanceId", acrInstanceId);
 }
 
 std::string CreateApplicationRequest::getVpcId()const
@@ -446,15 +545,15 @@ void CreateApplicationRequest::setImageUrl(const std::string& imageUrl)
 	setParameter("ImageUrl", imageUrl);
 }
 
-std::string CreateApplicationRequest::getPackageType()const
+std::string CreateApplicationRequest::getPhp()const
 {
-	return packageType_;
+	return php_;
 }
 
-void CreateApplicationRequest::setPackageType(const std::string& packageType)
+void CreateApplicationRequest::setPhp(const std::string& php)
 {
-	packageType_ = packageType;
-	setParameter("PackageType", packageType);
+	php_ = php;
+	setBodyParameter("Php", php);
 }
 
 std::string CreateApplicationRequest::getPhpConfigLocation()const
@@ -466,16 +565,5 @@ void CreateApplicationRequest::setPhpConfigLocation(const std::string& phpConfig
 {
 	phpConfigLocation_ = phpConfigLocation;
 	setParameter("PhpConfigLocation", phpConfigLocation);
-}
-
-std::string CreateApplicationRequest::getPostStart()const
-{
-	return postStart_;
-}
-
-void CreateApplicationRequest::setPostStart(const std::string& postStart)
-{
-	postStart_ = postStart;
-	setParameter("PostStart", postStart);
 }
 

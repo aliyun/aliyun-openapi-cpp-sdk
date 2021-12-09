@@ -61,6 +61,17 @@ void ListApplicationsRequest::setPageSize(int pageSize)
 	setParameter("PageSize", std::to_string(pageSize));
 }
 
+std::string ListApplicationsRequest::getOrderBy()const
+{
+	return orderBy_;
+}
+
+void ListApplicationsRequest::setOrderBy(const std::string& orderBy)
+{
+	orderBy_ = orderBy;
+	setParameter("OrderBy", orderBy);
+}
+
 int ListApplicationsRequest::getCurrentPage()const
 {
 	return currentPage_;
@@ -70,6 +81,39 @@ void ListApplicationsRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
 	setParameter("CurrentPage", std::to_string(currentPage));
+}
+
+std::string ListApplicationsRequest::getFieldValue()const
+{
+	return fieldValue_;
+}
+
+void ListApplicationsRequest::setFieldValue(const std::string& fieldValue)
+{
+	fieldValue_ = fieldValue;
+	setParameter("FieldValue", fieldValue);
+}
+
+bool ListApplicationsRequest::getReverse()const
+{
+	return reverse_;
+}
+
+void ListApplicationsRequest::setReverse(bool reverse)
+{
+	reverse_ = reverse;
+	setParameter("Reverse", reverse ? "true" : "false");
+}
+
+std::string ListApplicationsRequest::getFieldType()const
+{
+	return fieldType_;
+}
+
+void ListApplicationsRequest::setFieldType(const std::string& fieldType)
+{
+	fieldType_ = fieldType;
+	setParameter("FieldType", fieldType);
 }
 
 std::string ListApplicationsRequest::getTags()const
