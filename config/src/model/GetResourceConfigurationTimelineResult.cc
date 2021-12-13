@@ -42,24 +42,18 @@ void GetResourceConfigurationTimelineResult::parse(const std::string &payload)
 	auto resourceConfigurationTimelineNode = value["ResourceConfigurationTimeline"];
 	if(!resourceConfigurationTimelineNode["NextToken"].isNull())
 		resourceConfigurationTimeline_.nextToken = resourceConfigurationTimelineNode["NextToken"].asString();
-	if(!resourceConfigurationTimelineNode["Limit"].isNull())
-		resourceConfigurationTimeline_.limit = std::stoi(resourceConfigurationTimelineNode["Limit"].asString());
-	if(!resourceConfigurationTimelineNode["TotalCount"].isNull())
-		resourceConfigurationTimeline_.totalCount = std::stol(resourceConfigurationTimelineNode["TotalCount"].asString());
+	if(!resourceConfigurationTimelineNode["MaxResults"].isNull())
+		resourceConfigurationTimeline_.maxResults = std::stoi(resourceConfigurationTimelineNode["MaxResults"].asString());
 	auto allConfigurationListNode = resourceConfigurationTimelineNode["ConfigurationList"]["ConfigurationListItem"];
 	for (auto resourceConfigurationTimelineNodeConfigurationListConfigurationListItem : allConfigurationListNode)
 	{
 		ResourceConfigurationTimeline::ConfigurationListItem configurationListItemObject;
-		if(!resourceConfigurationTimelineNodeConfigurationListConfigurationListItem["Relationship"].isNull())
-			configurationListItemObject.relationship = resourceConfigurationTimelineNodeConfigurationListConfigurationListItem["Relationship"].asString();
 		if(!resourceConfigurationTimelineNodeConfigurationListConfigurationListItem["Tags"].isNull())
 			configurationListItemObject.tags = resourceConfigurationTimelineNodeConfigurationListConfigurationListItem["Tags"].asString();
 		if(!resourceConfigurationTimelineNodeConfigurationListConfigurationListItem["AccountId"].isNull())
 			configurationListItemObject.accountId = std::stol(resourceConfigurationTimelineNodeConfigurationListConfigurationListItem["AccountId"].asString());
 		if(!resourceConfigurationTimelineNodeConfigurationListConfigurationListItem["ResourceEventType"].isNull())
 			configurationListItemObject.resourceEventType = resourceConfigurationTimelineNodeConfigurationListConfigurationListItem["ResourceEventType"].asString();
-		if(!resourceConfigurationTimelineNodeConfigurationListConfigurationListItem["RelationshipDiff"].isNull())
-			configurationListItemObject.relationshipDiff = resourceConfigurationTimelineNodeConfigurationListConfigurationListItem["RelationshipDiff"].asString();
 		if(!resourceConfigurationTimelineNodeConfigurationListConfigurationListItem["AvailabilityZone"].isNull())
 			configurationListItemObject.availabilityZone = resourceConfigurationTimelineNodeConfigurationListConfigurationListItem["AvailabilityZone"].asString();
 		if(!resourceConfigurationTimelineNodeConfigurationListConfigurationListItem["ResourceType"].isNull())
@@ -76,6 +70,10 @@ void GetResourceConfigurationTimelineResult::parse(const std::string &payload)
 			configurationListItemObject.resourceId = resourceConfigurationTimelineNodeConfigurationListConfigurationListItem["ResourceId"].asString();
 		if(!resourceConfigurationTimelineNodeConfigurationListConfigurationListItem["ResourceName"].isNull())
 			configurationListItemObject.resourceName = resourceConfigurationTimelineNodeConfigurationListConfigurationListItem["ResourceName"].asString();
+		if(!resourceConfigurationTimelineNodeConfigurationListConfigurationListItem["Relationship"].isNull())
+			configurationListItemObject.relationship = resourceConfigurationTimelineNodeConfigurationListConfigurationListItem["Relationship"].asString();
+		if(!resourceConfigurationTimelineNodeConfigurationListConfigurationListItem["RelationshipDiff"].isNull())
+			configurationListItemObject.relationshipDiff = resourceConfigurationTimelineNodeConfigurationListConfigurationListItem["RelationshipDiff"].asString();
 		resourceConfigurationTimeline_.configurationList.push_back(configurationListItemObject);
 	}
 
