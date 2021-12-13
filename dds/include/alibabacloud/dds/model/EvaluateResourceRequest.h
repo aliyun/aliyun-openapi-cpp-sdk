@@ -37,10 +37,14 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getReadonlyReplicas()const;
+				void setReadonlyReplicas(const std::string& readonlyReplicas);
 				std::string getEngineVersion()const;
 				void setEngineVersion(const std::string& engineVersion);
 				std::string getShardsInfo()const;
 				void setShardsInfo(const std::string& shardsInfo);
+				std::string getReplicationFactor()const;
+				void setReplicationFactor(const std::string& replicationFactor);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getSecurityToken()const;
@@ -64,8 +68,10 @@ namespace AlibabaCloud
 
             private:
 				long resourceOwnerId_;
+				std::string readonlyReplicas_;
 				std::string engineVersion_;
 				std::string shardsInfo_;
+				std::string replicationFactor_;
 				std::string accessKeyId_;
 				std::string securityToken_;
 				std::string regionId_;

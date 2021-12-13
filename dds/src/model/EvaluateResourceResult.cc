@@ -39,12 +39,12 @@ void EvaluateResourceResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Engine"].isNull())
-		engine_ = value["Engine"].asString();
-	if(!value["EngineVersion"].isNull())
-		engineVersion_ = value["EngineVersion"].asString();
 	if(!value["DBInstanceAvailable"].isNull())
 		dBInstanceAvailable_ = value["DBInstanceAvailable"].asString();
+	if(!value["EngineVersion"].isNull())
+		engineVersion_ = value["EngineVersion"].asString();
+	if(!value["Engine"].isNull())
+		engine_ = value["Engine"].asString();
 
 }
 

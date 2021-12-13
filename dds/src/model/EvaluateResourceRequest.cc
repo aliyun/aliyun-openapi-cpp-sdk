@@ -38,6 +38,17 @@ void EvaluateResourceRequest::setResourceOwnerId(long resourceOwnerId)
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string EvaluateResourceRequest::getReadonlyReplicas()const
+{
+	return readonlyReplicas_;
+}
+
+void EvaluateResourceRequest::setReadonlyReplicas(const std::string& readonlyReplicas)
+{
+	readonlyReplicas_ = readonlyReplicas;
+	setParameter("ReadonlyReplicas", readonlyReplicas);
+}
+
 std::string EvaluateResourceRequest::getEngineVersion()const
 {
 	return engineVersion_;
@@ -58,6 +69,17 @@ void EvaluateResourceRequest::setShardsInfo(const std::string& shardsInfo)
 {
 	shardsInfo_ = shardsInfo;
 	setParameter("ShardsInfo", shardsInfo);
+}
+
+std::string EvaluateResourceRequest::getReplicationFactor()const
+{
+	return replicationFactor_;
+}
+
+void EvaluateResourceRequest::setReplicationFactor(const std::string& replicationFactor)
+{
+	replicationFactor_ = replicationFactor;
+	setParameter("ReplicationFactor", replicationFactor);
 }
 
 std::string EvaluateResourceRequest::getAccessKeyId()const

@@ -27,6 +27,17 @@ CreateServerlessDBInstanceRequest::CreateServerlessDBInstanceRequest() :
 CreateServerlessDBInstanceRequest::~CreateServerlessDBInstanceRequest()
 {}
 
+std::string CreateServerlessDBInstanceRequest::getCapacityUnit()const
+{
+	return capacityUnit_;
+}
+
+void CreateServerlessDBInstanceRequest::setCapacityUnit(const std::string& capacityUnit)
+{
+	capacityUnit_ = capacityUnit;
+	setParameter("CapacityUnit", capacityUnit);
+}
+
 long CreateServerlessDBInstanceRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;

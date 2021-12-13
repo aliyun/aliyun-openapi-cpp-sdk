@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				CreateServerlessDBInstanceRequest();
 				~CreateServerlessDBInstanceRequest();
 
+				std::string getCapacityUnit()const;
+				void setCapacityUnit(const std::string& capacityUnit);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				int getDBInstanceStorage()const;
@@ -85,6 +87,7 @@ namespace AlibabaCloud
 				void setChargeType(const std::string& chargeType);
 
             private:
+				std::string capacityUnit_;
 				long resourceOwnerId_;
 				int dBInstanceStorage_;
 				std::string clientToken_;
