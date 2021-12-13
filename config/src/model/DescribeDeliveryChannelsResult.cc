@@ -43,22 +43,30 @@ void DescribeDeliveryChannelsResult::parse(const std::string &payload)
 	for (auto valueDeliveryChannelsDeliveryChannel : allDeliveryChannelsNode)
 	{
 		DeliveryChannel deliveryChannelsObject;
-		if(!valueDeliveryChannelsDeliveryChannel["DeliveryChannelId"].isNull())
-			deliveryChannelsObject.deliveryChannelId = valueDeliveryChannelsDeliveryChannel["DeliveryChannelId"].asString();
-		if(!valueDeliveryChannelsDeliveryChannel["DeliveryChannelName"].isNull())
-			deliveryChannelsObject.deliveryChannelName = valueDeliveryChannelsDeliveryChannel["DeliveryChannelName"].asString();
-		if(!valueDeliveryChannelsDeliveryChannel["DeliveryChannelType"].isNull())
-			deliveryChannelsObject.deliveryChannelType = valueDeliveryChannelsDeliveryChannel["DeliveryChannelType"].asString();
-		if(!valueDeliveryChannelsDeliveryChannel["DeliveryChannelTargetArn"].isNull())
-			deliveryChannelsObject.deliveryChannelTargetArn = valueDeliveryChannelsDeliveryChannel["DeliveryChannelTargetArn"].asString();
-		if(!valueDeliveryChannelsDeliveryChannel["DeliveryChannelAssumeRoleArn"].isNull())
-			deliveryChannelsObject.deliveryChannelAssumeRoleArn = valueDeliveryChannelsDeliveryChannel["DeliveryChannelAssumeRoleArn"].asString();
-		if(!valueDeliveryChannelsDeliveryChannel["DeliveryChannelCondition"].isNull())
-			deliveryChannelsObject.deliveryChannelCondition = valueDeliveryChannelsDeliveryChannel["DeliveryChannelCondition"].asString();
-		if(!valueDeliveryChannelsDeliveryChannel["Description"].isNull())
-			deliveryChannelsObject.description = valueDeliveryChannelsDeliveryChannel["Description"].asString();
 		if(!valueDeliveryChannelsDeliveryChannel["Status"].isNull())
 			deliveryChannelsObject.status = std::stoi(valueDeliveryChannelsDeliveryChannel["Status"].asString());
+		if(!valueDeliveryChannelsDeliveryChannel["DeliveryChannelName"].isNull())
+			deliveryChannelsObject.deliveryChannelName = valueDeliveryChannelsDeliveryChannel["DeliveryChannelName"].asString();
+		if(!valueDeliveryChannelsDeliveryChannel["DeliveryChannelId"].isNull())
+			deliveryChannelsObject.deliveryChannelId = valueDeliveryChannelsDeliveryChannel["DeliveryChannelId"].asString();
+		if(!valueDeliveryChannelsDeliveryChannel["DeliveryChannelType"].isNull())
+			deliveryChannelsObject.deliveryChannelType = valueDeliveryChannelsDeliveryChannel["DeliveryChannelType"].asString();
+		if(!valueDeliveryChannelsDeliveryChannel["DeliveryChannelAssumeRoleArn"].isNull())
+			deliveryChannelsObject.deliveryChannelAssumeRoleArn = valueDeliveryChannelsDeliveryChannel["DeliveryChannelAssumeRoleArn"].asString();
+		if(!valueDeliveryChannelsDeliveryChannel["Description"].isNull())
+			deliveryChannelsObject.description = valueDeliveryChannelsDeliveryChannel["Description"].asString();
+		if(!valueDeliveryChannelsDeliveryChannel["DeliveryChannelCondition"].isNull())
+			deliveryChannelsObject.deliveryChannelCondition = valueDeliveryChannelsDeliveryChannel["DeliveryChannelCondition"].asString();
+		if(!valueDeliveryChannelsDeliveryChannel["DeliveryChannelTargetArn"].isNull())
+			deliveryChannelsObject.deliveryChannelTargetArn = valueDeliveryChannelsDeliveryChannel["DeliveryChannelTargetArn"].asString();
+		if(!valueDeliveryChannelsDeliveryChannel["ConfigurationSnapshot"].isNull())
+			deliveryChannelsObject.configurationSnapshot = valueDeliveryChannelsDeliveryChannel["ConfigurationSnapshot"].asString() == "true";
+		if(!valueDeliveryChannelsDeliveryChannel["ConfigurationItemChangeNotification"].isNull())
+			deliveryChannelsObject.configurationItemChangeNotification = valueDeliveryChannelsDeliveryChannel["ConfigurationItemChangeNotification"].asString() == "true";
+		if(!valueDeliveryChannelsDeliveryChannel["NonCompliantNotification"].isNull())
+			deliveryChannelsObject.nonCompliantNotification = valueDeliveryChannelsDeliveryChannel["NonCompliantNotification"].asString() == "true";
+		if(!valueDeliveryChannelsDeliveryChannel["OversizedDataOSSTargetArn"].isNull())
+			deliveryChannelsObject.oversizedDataOSSTargetArn = valueDeliveryChannelsDeliveryChannel["OversizedDataOSSTargetArn"].asString();
 		deliveryChannels_.push_back(deliveryChannelsObject);
 	}
 

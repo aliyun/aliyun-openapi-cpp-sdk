@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,100 +18,82 @@
 
 using AlibabaCloud::Config::Model::DescribeEvaluationResultsRequest;
 
-DescribeEvaluationResultsRequest::DescribeEvaluationResultsRequest() :
-	RpcServiceRequest("config", "2019-01-08", "DescribeEvaluationResults")
-{
-	setMethod(HttpRequest::Method::Get);
+DescribeEvaluationResultsRequest::DescribeEvaluationResultsRequest()
+    : RpcServiceRequest("config", "2019-01-08", "DescribeEvaluationResults") {
+  setMethod(HttpRequest::Method::Get);
 }
 
-DescribeEvaluationResultsRequest::~DescribeEvaluationResultsRequest()
-{}
+DescribeEvaluationResultsRequest::~DescribeEvaluationResultsRequest() {}
 
-std::string DescribeEvaluationResultsRequest::getConfigRuleId()const
-{
-	return configRuleId_;
+std::string DescribeEvaluationResultsRequest::getConfigRuleId() const {
+  return configRuleId_;
 }
 
-void DescribeEvaluationResultsRequest::setConfigRuleId(const std::string& configRuleId)
-{
-	configRuleId_ = configRuleId;
-	setParameter("ConfigRuleId", configRuleId);
+void DescribeEvaluationResultsRequest::setConfigRuleId(const std::string &configRuleId) {
+  configRuleId_ = configRuleId;
+  setParameter(std::string("ConfigRuleId"), configRuleId);
 }
 
-bool DescribeEvaluationResultsRequest::getMultiAccount()const
-{
-	return multiAccount_;
+bool DescribeEvaluationResultsRequest::getMultiAccount() const {
+  return multiAccount_;
 }
 
-void DescribeEvaluationResultsRequest::setMultiAccount(bool multiAccount)
-{
-	multiAccount_ = multiAccount;
-	setParameter("MultiAccount", multiAccount ? "true" : "false");
+void DescribeEvaluationResultsRequest::setMultiAccount(bool multiAccount) {
+  multiAccount_ = multiAccount;
+  setParameter(std::string("MultiAccount"), multiAccount ? "true" : "false");
 }
 
-int DescribeEvaluationResultsRequest::getPageNumber()const
-{
-	return pageNumber_;
+int DescribeEvaluationResultsRequest::getPageNumber() const {
+  return pageNumber_;
 }
 
-void DescribeEvaluationResultsRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+void DescribeEvaluationResultsRequest::setPageNumber(int pageNumber) {
+  pageNumber_ = pageNumber;
+  setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
-int DescribeEvaluationResultsRequest::getPageSize()const
-{
-	return pageSize_;
+int DescribeEvaluationResultsRequest::getPageSize() const {
+  return pageSize_;
 }
 
-void DescribeEvaluationResultsRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+void DescribeEvaluationResultsRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
-std::string DescribeEvaluationResultsRequest::getComplianceType()const
-{
-	return complianceType_;
+std::string DescribeEvaluationResultsRequest::getComplianceType() const {
+  return complianceType_;
 }
 
-void DescribeEvaluationResultsRequest::setComplianceType(const std::string& complianceType)
-{
-	complianceType_ = complianceType;
-	setParameter("ComplianceType", complianceType);
+void DescribeEvaluationResultsRequest::setComplianceType(const std::string &complianceType) {
+  complianceType_ = complianceType;
+  setParameter(std::string("ComplianceType"), complianceType);
 }
 
-std::string DescribeEvaluationResultsRequest::getResourceId()const
-{
-	return resourceId_;
+std::string DescribeEvaluationResultsRequest::getResourceId() const {
+  return resourceId_;
 }
 
-void DescribeEvaluationResultsRequest::setResourceId(const std::string& resourceId)
-{
-	resourceId_ = resourceId;
-	setParameter("ResourceId", resourceId);
+void DescribeEvaluationResultsRequest::setResourceId(const std::string &resourceId) {
+  resourceId_ = resourceId;
+  setParameter(std::string("ResourceId"), resourceId);
 }
 
-std::string DescribeEvaluationResultsRequest::getResourceType()const
-{
-	return resourceType_;
+std::string DescribeEvaluationResultsRequest::getResourceType() const {
+  return resourceType_;
 }
 
-void DescribeEvaluationResultsRequest::setResourceType(const std::string& resourceType)
-{
-	resourceType_ = resourceType;
-	setParameter("ResourceType", resourceType);
+void DescribeEvaluationResultsRequest::setResourceType(const std::string &resourceType) {
+  resourceType_ = resourceType;
+  setParameter(std::string("ResourceType"), resourceType);
 }
 
-long DescribeEvaluationResultsRequest::getMemberId()const
-{
-	return memberId_;
+long DescribeEvaluationResultsRequest::getMemberId() const {
+  return memberId_;
 }
 
-void DescribeEvaluationResultsRequest::setMemberId(long memberId)
-{
-	memberId_ = memberId;
-	setParameter("MemberId", std::to_string(memberId));
+void DescribeEvaluationResultsRequest::setMemberId(long memberId) {
+  memberId_ = memberId;
+  setParameter(std::string("MemberId"), std::to_string(memberId));
 }
 

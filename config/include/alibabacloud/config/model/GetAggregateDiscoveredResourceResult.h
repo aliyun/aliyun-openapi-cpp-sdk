@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CONFIG_MODEL_DESCRIBEDISCOVEREDRESOURCERESULT_H_
-#define ALIBABACLOUD_CONFIG_MODEL_DESCRIBEDISCOVEREDRESOURCERESULT_H_
+#ifndef ALIBABACLOUD_CONFIG_MODEL_GETAGGREGATEDISCOVEREDRESOURCERESULT_H_
+#define ALIBABACLOUD_CONFIG_MODEL_GETAGGREGATEDISCOVEREDRESOURCERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,7 +29,7 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CONFIG_EXPORT DescribeDiscoveredResourceResult : public ServiceResult
+			class ALIBABACLOUD_CONFIG_EXPORT GetAggregateDiscoveredResourceResult : public ServiceResult
 			{
 			public:
 				struct DiscoveredResourceDetail
@@ -48,9 +48,9 @@ namespace AlibabaCloud
 				};
 
 
-				DescribeDiscoveredResourceResult();
-				explicit DescribeDiscoveredResourceResult(const std::string &payload);
-				~DescribeDiscoveredResourceResult();
+				GetAggregateDiscoveredResourceResult();
+				explicit GetAggregateDiscoveredResourceResult(const std::string &payload);
+				~GetAggregateDiscoveredResourceResult();
 				DiscoveredResourceDetail getDiscoveredResourceDetail()const;
 
 			protected:
@@ -62,4 +62,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CONFIG_MODEL_DESCRIBEDISCOVEREDRESOURCERESULT_H_
+#endif // !ALIBABACLOUD_CONFIG_MODEL_GETAGGREGATEDISCOVEREDRESOURCERESULT_H_

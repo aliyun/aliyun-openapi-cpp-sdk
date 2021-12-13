@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,111 +18,127 @@
 
 using AlibabaCloud::Config::Model::ListConfigRulesRequest;
 
-ListConfigRulesRequest::ListConfigRulesRequest() :
-	RpcServiceRequest("config", "2019-01-08", "ListConfigRules")
-{
-	setMethod(HttpRequest::Method::Get);
+ListConfigRulesRequest::ListConfigRulesRequest()
+    : RpcServiceRequest("config", "2019-01-08", "ListConfigRules") {
+  setMethod(HttpRequest::Method::Get);
 }
 
-ListConfigRulesRequest::~ListConfigRulesRequest()
-{}
+ListConfigRulesRequest::~ListConfigRulesRequest() {}
 
-bool ListConfigRulesRequest::getMultiAccount()const
-{
-	return multiAccount_;
+bool ListConfigRulesRequest::getMultiAccount() const {
+  return multiAccount_;
 }
 
-void ListConfigRulesRequest::setMultiAccount(bool multiAccount)
-{
-	multiAccount_ = multiAccount;
-	setParameter("MultiAccount", multiAccount ? "true" : "false");
+void ListConfigRulesRequest::setMultiAccount(bool multiAccount) {
+  multiAccount_ = multiAccount;
+  setParameter(std::string("MultiAccount"), multiAccount ? "true" : "false");
 }
 
-std::string ListConfigRulesRequest::getMessageType()const
-{
-	return messageType_;
+bool ListConfigRulesRequest::getFilterInCompliancePack() const {
+  return filterInCompliancePack_;
 }
 
-void ListConfigRulesRequest::setMessageType(const std::string& messageType)
-{
-	messageType_ = messageType;
-	setParameter("MessageType", messageType);
+void ListConfigRulesRequest::setFilterInCompliancePack(bool filterInCompliancePack) {
+  filterInCompliancePack_ = filterInCompliancePack;
+  setParameter(std::string("FilterInCompliancePack"), filterInCompliancePack ? "true" : "false");
 }
 
-std::string ListConfigRulesRequest::getConfigRuleState()const
-{
-	return configRuleState_;
+std::string ListConfigRulesRequest::getMessageType() const {
+  return messageType_;
 }
 
-void ListConfigRulesRequest::setConfigRuleState(const std::string& configRuleState)
-{
-	configRuleState_ = configRuleState;
-	setParameter("ConfigRuleState", configRuleState);
+void ListConfigRulesRequest::setMessageType(const std::string &messageType) {
+  messageType_ = messageType;
+  setParameter(std::string("MessageType"), messageType);
 }
 
-int ListConfigRulesRequest::getPageNumber()const
-{
-	return pageNumber_;
+std::string ListConfigRulesRequest::getConfigRuleState() const {
+  return configRuleState_;
 }
 
-void ListConfigRulesRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+void ListConfigRulesRequest::setConfigRuleState(const std::string &configRuleState) {
+  configRuleState_ = configRuleState;
+  setParameter(std::string("ConfigRuleState"), configRuleState);
 }
 
-int ListConfigRulesRequest::getPageSize()const
-{
-	return pageSize_;
+std::string ListConfigRulesRequest::getFilterInCompliancePackExcludeIds() const {
+  return filterInCompliancePackExcludeIds_;
 }
 
-void ListConfigRulesRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+void ListConfigRulesRequest::setFilterInCompliancePackExcludeIds(const std::string &filterInCompliancePackExcludeIds) {
+  filterInCompliancePackExcludeIds_ = filterInCompliancePackExcludeIds;
+  setParameter(std::string("FilterInCompliancePackExcludeIds"), filterInCompliancePackExcludeIds);
 }
 
-std::string ListConfigRulesRequest::getComplianceType()const
-{
-	return complianceType_;
+int ListConfigRulesRequest::getPageNumber() const {
+  return pageNumber_;
 }
 
-void ListConfigRulesRequest::setComplianceType(const std::string& complianceType)
-{
-	complianceType_ = complianceType;
-	setParameter("ComplianceType", complianceType);
+void ListConfigRulesRequest::setPageNumber(int pageNumber) {
+  pageNumber_ = pageNumber;
+  setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
-std::string ListConfigRulesRequest::getConfigRuleSceneId()const
-{
-	return configRuleSceneId_;
+int ListConfigRulesRequest::getPageSize() const {
+  return pageSize_;
 }
 
-void ListConfigRulesRequest::setConfigRuleSceneId(const std::string& configRuleSceneId)
-{
-	configRuleSceneId_ = configRuleSceneId;
-	setParameter("ConfigRuleSceneId", configRuleSceneId);
+void ListConfigRulesRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
-int ListConfigRulesRequest::getRiskLevel()const
-{
-	return riskLevel_;
+std::string ListConfigRulesRequest::getCompliancePackId() const {
+  return compliancePackId_;
 }
 
-void ListConfigRulesRequest::setRiskLevel(int riskLevel)
-{
-	riskLevel_ = riskLevel;
-	setParameter("RiskLevel", std::to_string(riskLevel));
+void ListConfigRulesRequest::setCompliancePackId(const std::string &compliancePackId) {
+  compliancePackId_ = compliancePackId;
+  setParameter(std::string("CompliancePackId"), compliancePackId);
 }
 
-long ListConfigRulesRequest::getMemberId()const
-{
-	return memberId_;
+std::string ListConfigRulesRequest::getComplianceType() const {
+  return complianceType_;
 }
 
-void ListConfigRulesRequest::setMemberId(long memberId)
-{
-	memberId_ = memberId;
-	setParameter("MemberId", std::to_string(memberId));
+void ListConfigRulesRequest::setComplianceType(const std::string &complianceType) {
+  complianceType_ = complianceType;
+  setParameter(std::string("ComplianceType"), complianceType);
+}
+
+std::string ListConfigRulesRequest::getConfigRuleSceneId() const {
+  return configRuleSceneId_;
+}
+
+void ListConfigRulesRequest::setConfigRuleSceneId(const std::string &configRuleSceneId) {
+  configRuleSceneId_ = configRuleSceneId;
+  setParameter(std::string("ConfigRuleSceneId"), configRuleSceneId);
+}
+
+int ListConfigRulesRequest::getRiskLevel() const {
+  return riskLevel_;
+}
+
+void ListConfigRulesRequest::setRiskLevel(int riskLevel) {
+  riskLevel_ = riskLevel;
+  setParameter(std::string("RiskLevel"), std::to_string(riskLevel));
+}
+
+std::string ListConfigRulesRequest::getConfigRuleName() const {
+  return configRuleName_;
+}
+
+void ListConfigRulesRequest::setConfigRuleName(const std::string &configRuleName) {
+  configRuleName_ = configRuleName;
+  setParameter(std::string("ConfigRuleName"), configRuleName);
+}
+
+long ListConfigRulesRequest::getMemberId() const {
+  return memberId_;
+}
+
+void ListConfigRulesRequest::setMemberId(long memberId) {
+  memberId_ = memberId;
+  setParameter(std::string("MemberId"), std::to_string(memberId));
 }
 

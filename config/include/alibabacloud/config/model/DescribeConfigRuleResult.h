@@ -34,6 +34,45 @@ namespace AlibabaCloud
 			public:
 				struct ConfigRule
 				{
+					struct Source
+					{
+						struct SourceDetailsItem
+						{
+							std::string eventSource;
+							std::string messageType;
+							std::string maximumExecutionFrequency;
+						};
+						struct SourceConditionsItem
+						{
+							std::string desiredValue;
+							bool required;
+							std::string _operator;
+							std::string selectPath;
+							std::string tips;
+							std::string name;
+						};
+						std::string owner;
+						std::string identifier;
+						std::vector<SourceConditionsItem> sourceConditions;
+						std::vector<SourceDetailsItem> sourceDetails;
+					};
+					struct ManagedRule
+					{
+						struct SourceDetailsItem2
+						{
+							std::string eventSource;
+							std::string messageType;
+							std::string maximumExecutionFrequency;
+						};
+						std::string managedRuleName;
+						std::string optionalInputParameterDetails;
+						std::string description;
+						std::string identifier;
+						std::string compulsoryInputParameterDetails;
+						std::vector<std::string> labels;
+						std::vector<SourceDetailsItem2> sourceDetails1;
+						std::string helpUrl;
+					};
 					struct CreateBy
 					{
 						std::string creatorId;
@@ -42,60 +81,21 @@ namespace AlibabaCloud
 						std::string creatorType;
 						std::string creatorName;
 					};
-					struct ConfigRuleEvaluationStatus
-					{
-						std::string lastErrorMessage;
-						long lastFailedInvocationTimestamp;
-						long firstActivatedTimestamp;
-						long lastSuccessfulEvaluationTimestamp;
-						bool firstEvaluationStarted;
-						long lastFailedEvaluationTimestamp;
-						std::string lastErrorCode;
-						long lastSuccessfulInvocationTimestamp;
-					};
-					struct ManagedRule
-					{
-						struct SourceDetailsItem
-						{
-							std::string eventSource;
-							std::string maximumExecutionFrequency;
-							std::string messageType;
-						};
-						std::string managedRuleName;
-						std::string optionalInputParameterDetails;
-						std::string description;
-						std::string identifier;
-						std::string compulsoryInputParameterDetails;
-						std::vector<std::string> labels;
-						std::vector<SourceDetailsItem> sourceDetails;
-						std::string helpUrl;
-					};
-					struct Source
-					{
-						struct SourceConditionsItem
-						{
-							std::string desiredValue;
-							bool required;
-							std::string _operator;
-							std::string selectPath;
-							std::string name;
-							std::string tips;
-						};
-						struct SourceDetailsItem2
-						{
-							std::string eventSource;
-							std::string maximumExecutionFrequency;
-							std::string messageType;
-						};
-						std::string owner;
-						std::string identifier;
-						std::vector<SourceConditionsItem> sourceConditions;
-						std::vector<SourceDetailsItem2> sourceDetails1;
-					};
 					struct Scope
 					{
 						std::string complianceResourceId;
 						std::vector<std::string> complianceResourceTypes;
+					};
+					struct ConfigRuleEvaluationStatus
+					{
+						std::string lastErrorMessage;
+						long lastFailedInvocationTimestamp;
+						long lastSuccessfulEvaluationTimestamp;
+						long firstActivatedTimestamp;
+						bool firstEvaluationStarted;
+						long lastFailedEvaluationTimestamp;
+						std::string lastErrorCode;
+						long lastSuccessfulInvocationTimestamp;
 					};
 					ManagedRule managedRule;
 					std::string description;
@@ -104,13 +104,14 @@ namespace AlibabaCloud
 					Source source;
 					std::string configRuleState;
 					std::string maximumExecutionFrequency;
+					bool organizationRule;
 					std::string configRuleId;
 					Scope scope;
 					std::string configRuleArn;
 					long modifiedTimestamp;
 					std::string configRuleName;
-					long createTimestamp;
 					int riskLevel;
+					long createTimestamp;
 					std::string inputParameters;
 				};
 

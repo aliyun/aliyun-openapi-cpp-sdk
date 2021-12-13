@@ -39,6 +39,8 @@ set(config_public_header_model
 	include/alibabacloud/config/model/DescribeDiscoveredResourceResult.h
 	include/alibabacloud/config/model/DescribeEvaluationResultsRequest.h
 	include/alibabacloud/config/model/DescribeEvaluationResultsResult.h
+	include/alibabacloud/config/model/GetAggregateDiscoveredResourceRequest.h
+	include/alibabacloud/config/model/GetAggregateDiscoveredResourceResult.h
 	include/alibabacloud/config/model/GetDiscoveredResourceCountsRequest.h
 	include/alibabacloud/config/model/GetDiscoveredResourceCountsResult.h
 	include/alibabacloud/config/model/GetDiscoveredResourceSummaryRequest.h
@@ -49,10 +51,14 @@ set(config_public_header_model
 	include/alibabacloud/config/model/GetResourceConfigurationTimelineResult.h
 	include/alibabacloud/config/model/GetSupportedResourceTypesRequest.h
 	include/alibabacloud/config/model/GetSupportedResourceTypesResult.h
+	include/alibabacloud/config/model/ListAggregateDiscoveredResourcesRequest.h
+	include/alibabacloud/config/model/ListAggregateDiscoveredResourcesResult.h
 	include/alibabacloud/config/model/ListConfigRulesRequest.h
 	include/alibabacloud/config/model/ListConfigRulesResult.h
 	include/alibabacloud/config/model/ListDiscoveredResourcesRequest.h
 	include/alibabacloud/config/model/ListDiscoveredResourcesResult.h
+	include/alibabacloud/config/model/ListRemediationTemplatesRequest.h
+	include/alibabacloud/config/model/ListRemediationTemplatesResult.h
 	include/alibabacloud/config/model/PutConfigRuleRequest.h
 	include/alibabacloud/config/model/PutConfigRuleResult.h
 	include/alibabacloud/config/model/PutConfigurationRecorderRequest.h
@@ -88,6 +94,8 @@ set(config_src
 	src/model/DescribeDiscoveredResourceResult.cc
 	src/model/DescribeEvaluationResultsRequest.cc
 	src/model/DescribeEvaluationResultsResult.cc
+	src/model/GetAggregateDiscoveredResourceRequest.cc
+	src/model/GetAggregateDiscoveredResourceResult.cc
 	src/model/GetDiscoveredResourceCountsRequest.cc
 	src/model/GetDiscoveredResourceCountsResult.cc
 	src/model/GetDiscoveredResourceSummaryRequest.cc
@@ -98,10 +106,14 @@ set(config_src
 	src/model/GetResourceConfigurationTimelineResult.cc
 	src/model/GetSupportedResourceTypesRequest.cc
 	src/model/GetSupportedResourceTypesResult.cc
+	src/model/ListAggregateDiscoveredResourcesRequest.cc
+	src/model/ListAggregateDiscoveredResourcesResult.cc
 	src/model/ListConfigRulesRequest.cc
 	src/model/ListConfigRulesResult.cc
 	src/model/ListDiscoveredResourcesRequest.cc
 	src/model/ListDiscoveredResourcesResult.cc
+	src/model/ListRemediationTemplatesRequest.cc
+	src/model/ListRemediationTemplatesResult.cc
 	src/model/PutConfigRuleRequest.cc
 	src/model/PutConfigRuleResult.cc
 	src/model/PutConfigurationRecorderRequest.cc

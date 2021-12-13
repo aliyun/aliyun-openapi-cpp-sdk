@@ -43,6 +43,7 @@ namespace AlibabaCloud
 								std::string configRuleId;
 								std::string configRuleArn;
 								std::string resourceId;
+								std::string resourceName;
 								std::string configRuleName;
 								std::string resourceType;
 								std::string regionId;
@@ -56,6 +57,7 @@ namespace AlibabaCloud
 						std::string invokingEventMessageType;
 						EvaluationResultIdentifier evaluationResultIdentifier;
 						int riskLevel;
+						bool remediationEnabled;
 						std::string annotation;
 					};
 					std::vector<EvaluationResult> evaluationResultList;

@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/config/model/DescribeDiscoveredResourceResult.h>
+#include <alibabacloud/config/model/GetAggregateDiscoveredResourceResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Config;
 using namespace AlibabaCloud::Config::Model;
 
-DescribeDiscoveredResourceResult::DescribeDiscoveredResourceResult() :
+GetAggregateDiscoveredResourceResult::GetAggregateDiscoveredResourceResult() :
 	ServiceResult()
 {}
 
-DescribeDiscoveredResourceResult::DescribeDiscoveredResourceResult(const std::string &payload) :
+GetAggregateDiscoveredResourceResult::GetAggregateDiscoveredResourceResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-DescribeDiscoveredResourceResult::~DescribeDiscoveredResourceResult()
+GetAggregateDiscoveredResourceResult::~GetAggregateDiscoveredResourceResult()
 {}
 
-void DescribeDiscoveredResourceResult::parse(const std::string &payload)
+void GetAggregateDiscoveredResourceResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -65,7 +65,7 @@ void DescribeDiscoveredResourceResult::parse(const std::string &payload)
 
 }
 
-DescribeDiscoveredResourceResult::DiscoveredResourceDetail DescribeDiscoveredResourceResult::getDiscoveredResourceDetail()const
+GetAggregateDiscoveredResourceResult::DiscoveredResourceDetail GetAggregateDiscoveredResourceResult::getDiscoveredResourceDetail()const
 {
 	return discoveredResourceDetail_;
 }

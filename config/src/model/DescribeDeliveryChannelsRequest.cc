@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,23 +18,19 @@
 
 using AlibabaCloud::Config::Model::DescribeDeliveryChannelsRequest;
 
-DescribeDeliveryChannelsRequest::DescribeDeliveryChannelsRequest() :
-	RpcServiceRequest("config", "2019-01-08", "DescribeDeliveryChannels")
-{
-	setMethod(HttpRequest::Method::Get);
+DescribeDeliveryChannelsRequest::DescribeDeliveryChannelsRequest()
+    : RpcServiceRequest("config", "2019-01-08", "DescribeDeliveryChannels") {
+  setMethod(HttpRequest::Method::Get);
 }
 
-DescribeDeliveryChannelsRequest::~DescribeDeliveryChannelsRequest()
-{}
+DescribeDeliveryChannelsRequest::~DescribeDeliveryChannelsRequest() {}
 
-std::string DescribeDeliveryChannelsRequest::getDeliveryChannelIds()const
-{
-	return deliveryChannelIds_;
+std::string DescribeDeliveryChannelsRequest::getDeliveryChannelIds() const {
+  return deliveryChannelIds_;
 }
 
-void DescribeDeliveryChannelsRequest::setDeliveryChannelIds(const std::string& deliveryChannelIds)
-{
-	deliveryChannelIds_ = deliveryChannelIds;
-	setParameter("DeliveryChannelIds", deliveryChannelIds);
+void DescribeDeliveryChannelsRequest::setDeliveryChannelIds(const std::string &deliveryChannelIds) {
+  deliveryChannelIds_ = deliveryChannelIds;
+  setParameter(std::string("DeliveryChannelIds"), deliveryChannelIds);
 }
 

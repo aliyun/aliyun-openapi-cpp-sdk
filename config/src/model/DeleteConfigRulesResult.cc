@@ -44,12 +44,12 @@ void DeleteConfigRulesResult::parse(const std::string &payload)
 	for (auto operateRuleResultNodeOperateRuleItemListOperateRuleItem : allOperateRuleItemListNode)
 	{
 		OperateRuleResult::OperateRuleItem operateRuleItemObject;
-		if(!operateRuleResultNodeOperateRuleItemListOperateRuleItem["ConfigRuleId"].isNull())
-			operateRuleItemObject.configRuleId = operateRuleResultNodeOperateRuleItemListOperateRuleItem["ConfigRuleId"].asString();
 		if(!operateRuleResultNodeOperateRuleItemListOperateRuleItem["ErrorCode"].isNull())
 			operateRuleItemObject.errorCode = operateRuleResultNodeOperateRuleItemListOperateRuleItem["ErrorCode"].asString();
 		if(!operateRuleResultNodeOperateRuleItemListOperateRuleItem["Success"].isNull())
 			operateRuleItemObject.success = operateRuleResultNodeOperateRuleItemListOperateRuleItem["Success"].asString() == "true";
+		if(!operateRuleResultNodeOperateRuleItemListOperateRuleItem["ConfigRuleId"].isNull())
+			operateRuleItemObject.configRuleId = operateRuleResultNodeOperateRuleItemListOperateRuleItem["ConfigRuleId"].asString();
 		operateRuleResult_.operateRuleItemList.push_back(operateRuleItemObject);
 	}
 

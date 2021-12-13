@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/config/model/ListDiscoveredResourcesResult.h>
+#include <alibabacloud/config/model/ListAggregateDiscoveredResourcesResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Config;
 using namespace AlibabaCloud::Config::Model;
 
-ListDiscoveredResourcesResult::ListDiscoveredResourcesResult() :
+ListAggregateDiscoveredResourcesResult::ListAggregateDiscoveredResourcesResult() :
 	ServiceResult()
 {}
 
-ListDiscoveredResourcesResult::ListDiscoveredResourcesResult(const std::string &payload) :
+ListAggregateDiscoveredResourcesResult::ListAggregateDiscoveredResourcesResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-ListDiscoveredResourcesResult::~ListDiscoveredResourcesResult()
+ListAggregateDiscoveredResourcesResult::~ListAggregateDiscoveredResourcesResult()
 {}
 
-void ListDiscoveredResourcesResult::parse(const std::string &payload)
+void ListAggregateDiscoveredResourcesResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -68,12 +68,14 @@ void ListDiscoveredResourcesResult::parse(const std::string &payload)
 			discoveredResourceProfileObject.resourceDeleted = std::stoi(discoveredResourceProfilesNodeDiscoveredResourceProfileListDiscoveredResourceProfile["ResourceDeleted"].asString());
 		if(!discoveredResourceProfilesNodeDiscoveredResourceProfileListDiscoveredResourceProfile["ResourceStatus"].isNull())
 			discoveredResourceProfileObject.resourceStatus = discoveredResourceProfilesNodeDiscoveredResourceProfileListDiscoveredResourceProfile["ResourceStatus"].asString();
+		if(!discoveredResourceProfilesNodeDiscoveredResourceProfileListDiscoveredResourceProfile["ResourceOwnerId"].isNull())
+			discoveredResourceProfileObject.resourceOwnerId = std::stol(discoveredResourceProfilesNodeDiscoveredResourceProfileListDiscoveredResourceProfile["ResourceOwnerId"].asString());
 		discoveredResourceProfiles_.discoveredResourceProfileList.push_back(discoveredResourceProfileObject);
 	}
 
 }
 
-ListDiscoveredResourcesResult::DiscoveredResourceProfiles ListDiscoveredResourcesResult::getDiscoveredResourceProfiles()const
+ListAggregateDiscoveredResourcesResult::DiscoveredResourceProfiles ListAggregateDiscoveredResourcesResult::getDiscoveredResourceProfiles()const
 {
 	return discoveredResourceProfiles_;
 }

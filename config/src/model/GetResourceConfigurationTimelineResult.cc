@@ -50,32 +50,32 @@ void GetResourceConfigurationTimelineResult::parse(const std::string &payload)
 	for (auto resourceConfigurationTimelineNodeConfigurationListConfigurationListItem : allConfigurationListNode)
 	{
 		ResourceConfigurationTimeline::ConfigurationListItem configurationListItemObject;
+		if(!resourceConfigurationTimelineNodeConfigurationListConfigurationListItem["Relationship"].isNull())
+			configurationListItemObject.relationship = resourceConfigurationTimelineNodeConfigurationListConfigurationListItem["Relationship"].asString();
+		if(!resourceConfigurationTimelineNodeConfigurationListConfigurationListItem["Tags"].isNull())
+			configurationListItemObject.tags = resourceConfigurationTimelineNodeConfigurationListConfigurationListItem["Tags"].asString();
 		if(!resourceConfigurationTimelineNodeConfigurationListConfigurationListItem["AccountId"].isNull())
 			configurationListItemObject.accountId = std::stol(resourceConfigurationTimelineNodeConfigurationListConfigurationListItem["AccountId"].asString());
+		if(!resourceConfigurationTimelineNodeConfigurationListConfigurationListItem["ResourceEventType"].isNull())
+			configurationListItemObject.resourceEventType = resourceConfigurationTimelineNodeConfigurationListConfigurationListItem["ResourceEventType"].asString();
+		if(!resourceConfigurationTimelineNodeConfigurationListConfigurationListItem["RelationshipDiff"].isNull())
+			configurationListItemObject.relationshipDiff = resourceConfigurationTimelineNodeConfigurationListConfigurationListItem["RelationshipDiff"].asString();
 		if(!resourceConfigurationTimelineNodeConfigurationListConfigurationListItem["AvailabilityZone"].isNull())
 			configurationListItemObject.availabilityZone = resourceConfigurationTimelineNodeConfigurationListConfigurationListItem["AvailabilityZone"].asString();
+		if(!resourceConfigurationTimelineNodeConfigurationListConfigurationListItem["ResourceType"].isNull())
+			configurationListItemObject.resourceType = resourceConfigurationTimelineNodeConfigurationListConfigurationListItem["ResourceType"].asString();
+		if(!resourceConfigurationTimelineNodeConfigurationListConfigurationListItem["ResourceCreateTime"].isNull())
+			configurationListItemObject.resourceCreateTime = resourceConfigurationTimelineNodeConfigurationListConfigurationListItem["ResourceCreateTime"].asString();
+		if(!resourceConfigurationTimelineNodeConfigurationListConfigurationListItem["Region"].isNull())
+			configurationListItemObject.region = resourceConfigurationTimelineNodeConfigurationListConfigurationListItem["Region"].asString();
 		if(!resourceConfigurationTimelineNodeConfigurationListConfigurationListItem["CaptureTime"].isNull())
 			configurationListItemObject.captureTime = resourceConfigurationTimelineNodeConfigurationListConfigurationListItem["CaptureTime"].asString();
 		if(!resourceConfigurationTimelineNodeConfigurationListConfigurationListItem["ConfigurationDiff"].isNull())
 			configurationListItemObject.configurationDiff = resourceConfigurationTimelineNodeConfigurationListConfigurationListItem["ConfigurationDiff"].asString();
-		if(!resourceConfigurationTimelineNodeConfigurationListConfigurationListItem["Region"].isNull())
-			configurationListItemObject.region = resourceConfigurationTimelineNodeConfigurationListConfigurationListItem["Region"].asString();
-		if(!resourceConfigurationTimelineNodeConfigurationListConfigurationListItem["Relationship"].isNull())
-			configurationListItemObject.relationship = resourceConfigurationTimelineNodeConfigurationListConfigurationListItem["Relationship"].asString();
-		if(!resourceConfigurationTimelineNodeConfigurationListConfigurationListItem["RelationshipDiff"].isNull())
-			configurationListItemObject.relationshipDiff = resourceConfigurationTimelineNodeConfigurationListConfigurationListItem["RelationshipDiff"].asString();
-		if(!resourceConfigurationTimelineNodeConfigurationListConfigurationListItem["ResourceCreateTime"].isNull())
-			configurationListItemObject.resourceCreateTime = resourceConfigurationTimelineNodeConfigurationListConfigurationListItem["ResourceCreateTime"].asString();
 		if(!resourceConfigurationTimelineNodeConfigurationListConfigurationListItem["ResourceId"].isNull())
 			configurationListItemObject.resourceId = resourceConfigurationTimelineNodeConfigurationListConfigurationListItem["ResourceId"].asString();
 		if(!resourceConfigurationTimelineNodeConfigurationListConfigurationListItem["ResourceName"].isNull())
 			configurationListItemObject.resourceName = resourceConfigurationTimelineNodeConfigurationListConfigurationListItem["ResourceName"].asString();
-		if(!resourceConfigurationTimelineNodeConfigurationListConfigurationListItem["ResourceType"].isNull())
-			configurationListItemObject.resourceType = resourceConfigurationTimelineNodeConfigurationListConfigurationListItem["ResourceType"].asString();
-		if(!resourceConfigurationTimelineNodeConfigurationListConfigurationListItem["Tags"].isNull())
-			configurationListItemObject.tags = resourceConfigurationTimelineNodeConfigurationListConfigurationListItem["Tags"].asString();
-		if(!resourceConfigurationTimelineNodeConfigurationListConfigurationListItem["ResourceEventType"].isNull())
-			configurationListItemObject.resourceEventType = resourceConfigurationTimelineNodeConfigurationListConfigurationListItem["ResourceEventType"].asString();
 		resourceConfigurationTimeline_.configurationList.push_back(configurationListItemObject);
 	}
 

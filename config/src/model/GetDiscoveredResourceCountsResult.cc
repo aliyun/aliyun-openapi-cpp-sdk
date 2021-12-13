@@ -46,10 +46,10 @@ void GetDiscoveredResourceCountsResult::parse(const std::string &payload)
 	for (auto groupedResourceCountsNodeGroupedResourceCountListGroupedResourceCount : allGroupedResourceCountListNode)
 	{
 		GroupedResourceCounts::GroupedResourceCount groupedResourceCountObject;
-		if(!groupedResourceCountsNodeGroupedResourceCountListGroupedResourceCount["GroupName"].isNull())
-			groupedResourceCountObject.groupName = groupedResourceCountsNodeGroupedResourceCountListGroupedResourceCount["GroupName"].asString();
 		if(!groupedResourceCountsNodeGroupedResourceCountListGroupedResourceCount["ResourceCount"].isNull())
 			groupedResourceCountObject.resourceCount = std::stol(groupedResourceCountsNodeGroupedResourceCountListGroupedResourceCount["ResourceCount"].asString());
+		if(!groupedResourceCountsNodeGroupedResourceCountListGroupedResourceCount["GroupName"].isNull())
+			groupedResourceCountObject.groupName = groupedResourceCountsNodeGroupedResourceCountListGroupedResourceCount["GroupName"].asString();
 		groupedResourceCounts_.groupedResourceCountList.push_back(groupedResourceCountObject);
 	}
 

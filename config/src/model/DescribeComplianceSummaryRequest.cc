@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,34 +18,28 @@
 
 using AlibabaCloud::Config::Model::DescribeComplianceSummaryRequest;
 
-DescribeComplianceSummaryRequest::DescribeComplianceSummaryRequest() :
-	RpcServiceRequest("config", "2019-01-08", "DescribeComplianceSummary")
-{
-	setMethod(HttpRequest::Method::Get);
+DescribeComplianceSummaryRequest::DescribeComplianceSummaryRequest()
+    : RpcServiceRequest("config", "2019-01-08", "DescribeComplianceSummary") {
+  setMethod(HttpRequest::Method::Get);
 }
 
-DescribeComplianceSummaryRequest::~DescribeComplianceSummaryRequest()
-{}
+DescribeComplianceSummaryRequest::~DescribeComplianceSummaryRequest() {}
 
-bool DescribeComplianceSummaryRequest::getMultiAccount()const
-{
-	return multiAccount_;
+bool DescribeComplianceSummaryRequest::getMultiAccount() const {
+  return multiAccount_;
 }
 
-void DescribeComplianceSummaryRequest::setMultiAccount(bool multiAccount)
-{
-	multiAccount_ = multiAccount;
-	setParameter("MultiAccount", multiAccount ? "true" : "false");
+void DescribeComplianceSummaryRequest::setMultiAccount(bool multiAccount) {
+  multiAccount_ = multiAccount;
+  setParameter(std::string("MultiAccount"), multiAccount ? "true" : "false");
 }
 
-long DescribeComplianceSummaryRequest::getMemberId()const
-{
-	return memberId_;
+long DescribeComplianceSummaryRequest::getMemberId() const {
+  return memberId_;
 }
 
-void DescribeComplianceSummaryRequest::setMemberId(long memberId)
-{
-	memberId_ = memberId;
-	setParameter("MemberId", std::to_string(memberId));
+void DescribeComplianceSummaryRequest::setMemberId(long memberId) {
+  memberId_ = memberId;
+  setParameter(std::string("MemberId"), std::to_string(memberId));
 }
 

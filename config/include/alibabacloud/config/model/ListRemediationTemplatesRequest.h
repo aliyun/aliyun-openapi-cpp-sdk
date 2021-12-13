@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CONFIG_MODEL_DESCRIBECONFIGRULEREQUEST_H_
-#define ALIBABACLOUD_CONFIG_MODEL_DESCRIBECONFIGRULEREQUEST_H_
+#ifndef ALIBABACLOUD_CONFIG_MODEL_LISTREMEDIATIONTEMPLATESREQUEST_H_
+#define ALIBABACLOUD_CONFIG_MODEL_LISTREMEDIATIONTEMPLATESREQUEST_H_
 
 #include <alibabacloud/config/ConfigExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,23 +26,20 @@
 namespace AlibabaCloud {
 namespace Config {
 namespace Model {
-class ALIBABACLOUD_CONFIG_EXPORT DescribeConfigRuleRequest : public RpcServiceRequest {
+class ALIBABACLOUD_CONFIG_EXPORT ListRemediationTemplatesRequest : public RpcServiceRequest {
 public:
-	DescribeConfigRuleRequest();
-	~DescribeConfigRuleRequest();
-	std::string getConfigRuleId() const;
-	void setConfigRuleId(const std::string &configRuleId);
-	bool getMultiAccount() const;
-	void setMultiAccount(bool multiAccount);
-	long getMemberId() const;
-	void setMemberId(long memberId);
+	ListRemediationTemplatesRequest();
+	~ListRemediationTemplatesRequest();
+	std::string getManagedRuleIdentifier() const;
+	void setManagedRuleIdentifier(const std::string &managedRuleIdentifier);
+	std::string getRemediationType() const;
+	void setRemediationType(const std::string &remediationType);
 
 private:
-	std::string configRuleId_;
-	bool multiAccount_;
-	long memberId_;
+	std::string managedRuleIdentifier_;
+	std::string remediationType_;
 };
 } // namespace Model
 } // namespace Config
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_CONFIG_MODEL_DESCRIBECONFIGRULEREQUEST_H_
+#endif // !ALIBABACLOUD_CONFIG_MODEL_LISTREMEDIATIONTEMPLATESREQUEST_H_

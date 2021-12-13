@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CONFIG_MODEL_LISTDISCOVEREDRESOURCESRESULT_H_
-#define ALIBABACLOUD_CONFIG_MODEL_LISTDISCOVEREDRESOURCESRESULT_H_
+#ifndef ALIBABACLOUD_CONFIG_MODEL_LISTAGGREGATEDISCOVEREDRESOURCESRESULT_H_
+#define ALIBABACLOUD_CONFIG_MODEL_LISTAGGREGATEDISCOVEREDRESOURCESRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,7 +29,7 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CONFIG_EXPORT ListDiscoveredResourcesResult : public ServiceResult
+			class ALIBABACLOUD_CONFIG_EXPORT ListAggregateDiscoveredResourcesResult : public ServiceResult
 			{
 			public:
 				struct DiscoveredResourceProfiles
@@ -43,6 +43,7 @@ namespace AlibabaCloud
 						std::string region;
 						std::string resourceStatus;
 						std::string resourceType;
+						long resourceOwnerId;
 						std::string tags;
 						int resourceDeleted;
 					};
@@ -53,9 +54,9 @@ namespace AlibabaCloud
 				};
 
 
-				ListDiscoveredResourcesResult();
-				explicit ListDiscoveredResourcesResult(const std::string &payload);
-				~ListDiscoveredResourcesResult();
+				ListAggregateDiscoveredResourcesResult();
+				explicit ListAggregateDiscoveredResourcesResult(const std::string &payload);
+				~ListAggregateDiscoveredResourcesResult();
 				DiscoveredResourceProfiles getDiscoveredResourceProfiles()const;
 
 			protected:
@@ -67,4 +68,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CONFIG_MODEL_LISTDISCOVEREDRESOURCESRESULT_H_
+#endif // !ALIBABACLOUD_CONFIG_MODEL_LISTAGGREGATEDISCOVEREDRESOURCESRESULT_H_

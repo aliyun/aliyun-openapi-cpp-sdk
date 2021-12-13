@@ -50,40 +50,46 @@ void ListConfigRulesResult::parse(const std::string &payload)
 	for (auto configRulesNodeConfigRuleListConfigRule : allConfigRuleListNode)
 	{
 		ConfigRules::ConfigRule configRuleObject;
-		if(!configRulesNodeConfigRuleListConfigRule["AccountId"].isNull())
-			configRuleObject.accountId = std::stol(configRulesNodeConfigRuleListConfigRule["AccountId"].asString());
-		if(!configRulesNodeConfigRuleListConfigRule["ConfigRuleArn"].isNull())
-			configRuleObject.configRuleArn = configRulesNodeConfigRuleListConfigRule["ConfigRuleArn"].asString();
-		if(!configRulesNodeConfigRuleListConfigRule["ConfigRuleId"].isNull())
-			configRuleObject.configRuleId = configRulesNodeConfigRuleListConfigRule["ConfigRuleId"].asString();
-		if(!configRulesNodeConfigRuleListConfigRule["ConfigRuleName"].isNull())
-			configRuleObject.configRuleName = configRulesNodeConfigRuleListConfigRule["ConfigRuleName"].asString();
-		if(!configRulesNodeConfigRuleListConfigRule["ConfigRuleState"].isNull())
-			configRuleObject.configRuleState = configRulesNodeConfigRuleListConfigRule["ConfigRuleState"].asString();
-		if(!configRulesNodeConfigRuleListConfigRule["Description"].isNull())
-			configRuleObject.description = configRulesNodeConfigRuleListConfigRule["Description"].asString();
+		if(!configRulesNodeConfigRuleListConfigRule["CompliancePackId"].isNull())
+			configRuleObject.compliancePackId = configRulesNodeConfigRuleListConfigRule["CompliancePackId"].asString();
 		if(!configRulesNodeConfigRuleListConfigRule["RiskLevel"].isNull())
 			configRuleObject.riskLevel = std::stoi(configRulesNodeConfigRuleListConfigRule["RiskLevel"].asString());
-		if(!configRulesNodeConfigRuleListConfigRule["SourceIdentifier"].isNull())
-			configRuleObject.sourceIdentifier = configRulesNodeConfigRuleListConfigRule["SourceIdentifier"].asString();
 		if(!configRulesNodeConfigRuleListConfigRule["SourceOwner"].isNull())
 			configRuleObject.sourceOwner = configRulesNodeConfigRuleListConfigRule["SourceOwner"].asString();
+		if(!configRulesNodeConfigRuleListConfigRule["AccountId"].isNull())
+			configRuleObject.accountId = std::stol(configRulesNodeConfigRuleListConfigRule["AccountId"].asString());
+		if(!configRulesNodeConfigRuleListConfigRule["ConfigRuleState"].isNull())
+			configRuleObject.configRuleState = configRulesNodeConfigRuleListConfigRule["ConfigRuleState"].asString();
+		if(!configRulesNodeConfigRuleListConfigRule["SourceIdentifier"].isNull())
+			configRuleObject.sourceIdentifier = configRulesNodeConfigRuleListConfigRule["SourceIdentifier"].asString();
+		if(!configRulesNodeConfigRuleListConfigRule["ConfigRuleArn"].isNull())
+			configRuleObject.configRuleArn = configRulesNodeConfigRuleListConfigRule["ConfigRuleArn"].asString();
+		if(!configRulesNodeConfigRuleListConfigRule["Description"].isNull())
+			configRuleObject.description = configRulesNodeConfigRuleListConfigRule["Description"].asString();
 		if(!configRulesNodeConfigRuleListConfigRule["AutomationType"].isNull())
 			configRuleObject.automationType = configRulesNodeConfigRuleListConfigRule["AutomationType"].asString();
+		if(!configRulesNodeConfigRuleListConfigRule["ConfigRuleName"].isNull())
+			configRuleObject.configRuleName = configRulesNodeConfigRuleListConfigRule["ConfigRuleName"].asString();
+		if(!configRulesNodeConfigRuleListConfigRule["ConfigRuleId"].isNull())
+			configRuleObject.configRuleId = configRulesNodeConfigRuleListConfigRule["ConfigRuleId"].asString();
 		auto complianceNode = value["Compliance"];
 		if(!complianceNode["ComplianceType"].isNull())
 			configRuleObject.compliance.complianceType = complianceNode["ComplianceType"].asString();
 		if(!complianceNode["Count"].isNull())
 			configRuleObject.compliance.count = std::stoi(complianceNode["Count"].asString());
 		auto createByNode = value["CreateBy"];
-		if(!createByNode["CreatorId"].isNull())
-			configRuleObject.createBy.creatorId = createByNode["CreatorId"].asString();
+		if(!createByNode["CompliancePackId"].isNull())
+			configRuleObject.createBy.compliancePackId = createByNode["CompliancePackId"].asString();
+		if(!createByNode["ConfigRuleSceneId"].isNull())
+			configRuleObject.createBy.configRuleSceneId = createByNode["ConfigRuleSceneId"].asString();
+		if(!createByNode["CompliancePackName"].isNull())
+			configRuleObject.createBy.compliancePackName = createByNode["CompliancePackName"].asString();
 		if(!createByNode["CreatorName"].isNull())
 			configRuleObject.createBy.creatorName = createByNode["CreatorName"].asString();
 		if(!createByNode["CreatorType"].isNull())
 			configRuleObject.createBy.creatorType = createByNode["CreatorType"].asString();
-		if(!createByNode["ConfigRuleSceneId"].isNull())
-			configRuleObject.createBy.configRuleSceneId = createByNode["ConfigRuleSceneId"].asString();
+		if(!createByNode["CreatorId"].isNull())
+			configRuleObject.createBy.creatorId = createByNode["CreatorId"].asString();
 		if(!createByNode["ConfigRuleSceneName"].isNull())
 			configRuleObject.createBy.configRuleSceneName = createByNode["ConfigRuleSceneName"].asString();
 		configRules_.configRuleList.push_back(configRuleObject);

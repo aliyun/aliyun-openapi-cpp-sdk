@@ -34,14 +34,14 @@ namespace AlibabaCloud
 			public:
 				struct ComplianceSummary
 				{
-					struct ComplianceSummaryByConfigRule
+					struct ComplianceSummaryByResource
 					{
 						long totalCount;
 						int compliantCount;
 						int nonCompliantCount;
 						long complianceSummaryTimestamp;
 					};
-					struct ComplianceSummaryByResource
+					struct ComplianceSummaryByConfigRule
 					{
 						long totalCount;
 						int compliantCount;

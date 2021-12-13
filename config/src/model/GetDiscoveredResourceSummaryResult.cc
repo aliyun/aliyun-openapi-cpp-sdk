@@ -40,12 +40,12 @@ void GetDiscoveredResourceSummaryResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto discoveredResourceSummaryNode = value["DiscoveredResourceSummary"];
+	if(!discoveredResourceSummaryNode["RegionCount"].isNull())
+		discoveredResourceSummary_.regionCount = std::stoi(discoveredResourceSummaryNode["RegionCount"].asString());
 	if(!discoveredResourceSummaryNode["ResourceCount"].isNull())
 		discoveredResourceSummary_.resourceCount = std::stoi(discoveredResourceSummaryNode["ResourceCount"].asString());
 	if(!discoveredResourceSummaryNode["ResourceTypeCount"].isNull())
 		discoveredResourceSummary_.resourceTypeCount = std::stoi(discoveredResourceSummaryNode["ResourceTypeCount"].asString());
-	if(!discoveredResourceSummaryNode["RegionCount"].isNull())
-		discoveredResourceSummary_.regionCount = std::stoi(discoveredResourceSummaryNode["RegionCount"].asString());
 
 }
 

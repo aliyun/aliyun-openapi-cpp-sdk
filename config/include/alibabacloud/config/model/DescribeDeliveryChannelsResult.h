@@ -35,13 +35,17 @@ namespace AlibabaCloud
 				struct DeliveryChannel
 				{
 					int status;
+					bool configurationSnapshot;
+					std::string oversizedDataOSSTargetArn;
 					std::string description;
-					std::string deliveryChannelId;
 					std::string deliveryChannelName;
+					std::string deliveryChannelId;
 					std::string deliveryChannelTargetArn;
 					std::string deliveryChannelAssumeRoleArn;
+					bool configurationItemChangeNotification;
 					std::string deliveryChannelType;
 					std::string deliveryChannelCondition;
+					bool nonCompliantNotification;
 				};
 
 

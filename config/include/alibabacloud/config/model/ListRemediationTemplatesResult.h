@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CONFIG_MODEL_GETDISCOVEREDRESOURCESUMMARYRESULT_H_
-#define ALIBABACLOUD_CONFIG_MODEL_GETDISCOVEREDRESOURCESUMMARYRESULT_H_
+#ifndef ALIBABACLOUD_CONFIG_MODEL_LISTREMEDIATIONTEMPLATESRESULT_H_
+#define ALIBABACLOUD_CONFIG_MODEL_LISTREMEDIATIONTEMPLATESRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,29 +29,31 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CONFIG_EXPORT GetDiscoveredResourceSummaryResult : public ServiceResult
+			class ALIBABACLOUD_CONFIG_EXPORT ListRemediationTemplatesResult : public ServiceResult
 			{
 			public:
-				struct DiscoveredResourceSummary
+				struct RemediationTemplate
 				{
-					int resourceTypeCount;
-					int regionCount;
-					int resourceCount;
+					std::string templateIdentifier;
+					std::string compulsoryParameters;
+					std::string templateName;
+					std::string templateDefinition;
+					std::string remediationType;
 				};
 
 
-				GetDiscoveredResourceSummaryResult();
-				explicit GetDiscoveredResourceSummaryResult(const std::string &payload);
-				~GetDiscoveredResourceSummaryResult();
-				DiscoveredResourceSummary getDiscoveredResourceSummary()const;
+				ListRemediationTemplatesResult();
+				explicit ListRemediationTemplatesResult(const std::string &payload);
+				~ListRemediationTemplatesResult();
+				std::vector<RemediationTemplate> getRemediationTemplates()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				DiscoveredResourceSummary discoveredResourceSummary_;
+				std::vector<RemediationTemplate> remediationTemplates_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CONFIG_MODEL_GETDISCOVEREDRESOURCESUMMARYRESULT_H_
+#endif // !ALIBABACLOUD_CONFIG_MODEL_LISTREMEDIATIONTEMPLATESRESULT_H_

@@ -40,6 +40,8 @@
 #include "model/DescribeDiscoveredResourceResult.h"
 #include "model/DescribeEvaluationResultsRequest.h"
 #include "model/DescribeEvaluationResultsResult.h"
+#include "model/GetAggregateDiscoveredResourceRequest.h"
+#include "model/GetAggregateDiscoveredResourceResult.h"
 #include "model/GetDiscoveredResourceCountsRequest.h"
 #include "model/GetDiscoveredResourceCountsResult.h"
 #include "model/GetDiscoveredResourceSummaryRequest.h"
@@ -50,10 +52,14 @@
 #include "model/GetResourceConfigurationTimelineResult.h"
 #include "model/GetSupportedResourceTypesRequest.h"
 #include "model/GetSupportedResourceTypesResult.h"
+#include "model/ListAggregateDiscoveredResourcesRequest.h"
+#include "model/ListAggregateDiscoveredResourcesResult.h"
 #include "model/ListConfigRulesRequest.h"
 #include "model/ListConfigRulesResult.h"
 #include "model/ListDiscoveredResourcesRequest.h"
 #include "model/ListDiscoveredResourcesResult.h"
+#include "model/ListRemediationTemplatesRequest.h"
+#include "model/ListRemediationTemplatesResult.h"
 #include "model/PutConfigRuleRequest.h"
 #include "model/PutConfigRuleResult.h"
 #include "model/PutConfigurationRecorderRequest.h"
@@ -104,6 +110,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeEvaluationResultsResult> DescribeEvaluationResultsOutcome;
 			typedef std::future<DescribeEvaluationResultsOutcome> DescribeEvaluationResultsOutcomeCallable;
 			typedef std::function<void(const ConfigClient*, const Model::DescribeEvaluationResultsRequest&, const DescribeEvaluationResultsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEvaluationResultsAsyncHandler;
+			typedef Outcome<Error, Model::GetAggregateDiscoveredResourceResult> GetAggregateDiscoveredResourceOutcome;
+			typedef std::future<GetAggregateDiscoveredResourceOutcome> GetAggregateDiscoveredResourceOutcomeCallable;
+			typedef std::function<void(const ConfigClient*, const Model::GetAggregateDiscoveredResourceRequest&, const GetAggregateDiscoveredResourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAggregateDiscoveredResourceAsyncHandler;
 			typedef Outcome<Error, Model::GetDiscoveredResourceCountsResult> GetDiscoveredResourceCountsOutcome;
 			typedef std::future<GetDiscoveredResourceCountsOutcome> GetDiscoveredResourceCountsOutcomeCallable;
 			typedef std::function<void(const ConfigClient*, const Model::GetDiscoveredResourceCountsRequest&, const GetDiscoveredResourceCountsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDiscoveredResourceCountsAsyncHandler;
@@ -119,12 +128,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetSupportedResourceTypesResult> GetSupportedResourceTypesOutcome;
 			typedef std::future<GetSupportedResourceTypesOutcome> GetSupportedResourceTypesOutcomeCallable;
 			typedef std::function<void(const ConfigClient*, const Model::GetSupportedResourceTypesRequest&, const GetSupportedResourceTypesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetSupportedResourceTypesAsyncHandler;
+			typedef Outcome<Error, Model::ListAggregateDiscoveredResourcesResult> ListAggregateDiscoveredResourcesOutcome;
+			typedef std::future<ListAggregateDiscoveredResourcesOutcome> ListAggregateDiscoveredResourcesOutcomeCallable;
+			typedef std::function<void(const ConfigClient*, const Model::ListAggregateDiscoveredResourcesRequest&, const ListAggregateDiscoveredResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAggregateDiscoveredResourcesAsyncHandler;
 			typedef Outcome<Error, Model::ListConfigRulesResult> ListConfigRulesOutcome;
 			typedef std::future<ListConfigRulesOutcome> ListConfigRulesOutcomeCallable;
 			typedef std::function<void(const ConfigClient*, const Model::ListConfigRulesRequest&, const ListConfigRulesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListConfigRulesAsyncHandler;
 			typedef Outcome<Error, Model::ListDiscoveredResourcesResult> ListDiscoveredResourcesOutcome;
 			typedef std::future<ListDiscoveredResourcesOutcome> ListDiscoveredResourcesOutcomeCallable;
 			typedef std::function<void(const ConfigClient*, const Model::ListDiscoveredResourcesRequest&, const ListDiscoveredResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDiscoveredResourcesAsyncHandler;
+			typedef Outcome<Error, Model::ListRemediationTemplatesResult> ListRemediationTemplatesOutcome;
+			typedef std::future<ListRemediationTemplatesOutcome> ListRemediationTemplatesOutcomeCallable;
+			typedef std::function<void(const ConfigClient*, const Model::ListRemediationTemplatesRequest&, const ListRemediationTemplatesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListRemediationTemplatesAsyncHandler;
 			typedef Outcome<Error, Model::PutConfigRuleResult> PutConfigRuleOutcome;
 			typedef std::future<PutConfigRuleOutcome> PutConfigRuleOutcomeCallable;
 			typedef std::function<void(const ConfigClient*, const Model::PutConfigRuleRequest&, const PutConfigRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PutConfigRuleAsyncHandler;
@@ -178,6 +193,9 @@ namespace AlibabaCloud
 			DescribeEvaluationResultsOutcome describeEvaluationResults(const Model::DescribeEvaluationResultsRequest &request)const;
 			void describeEvaluationResultsAsync(const Model::DescribeEvaluationResultsRequest& request, const DescribeEvaluationResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeEvaluationResultsOutcomeCallable describeEvaluationResultsCallable(const Model::DescribeEvaluationResultsRequest& request) const;
+			GetAggregateDiscoveredResourceOutcome getAggregateDiscoveredResource(const Model::GetAggregateDiscoveredResourceRequest &request)const;
+			void getAggregateDiscoveredResourceAsync(const Model::GetAggregateDiscoveredResourceRequest& request, const GetAggregateDiscoveredResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetAggregateDiscoveredResourceOutcomeCallable getAggregateDiscoveredResourceCallable(const Model::GetAggregateDiscoveredResourceRequest& request) const;
 			GetDiscoveredResourceCountsOutcome getDiscoveredResourceCounts(const Model::GetDiscoveredResourceCountsRequest &request)const;
 			void getDiscoveredResourceCountsAsync(const Model::GetDiscoveredResourceCountsRequest& request, const GetDiscoveredResourceCountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetDiscoveredResourceCountsOutcomeCallable getDiscoveredResourceCountsCallable(const Model::GetDiscoveredResourceCountsRequest& request) const;
@@ -193,12 +211,18 @@ namespace AlibabaCloud
 			GetSupportedResourceTypesOutcome getSupportedResourceTypes(const Model::GetSupportedResourceTypesRequest &request)const;
 			void getSupportedResourceTypesAsync(const Model::GetSupportedResourceTypesRequest& request, const GetSupportedResourceTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetSupportedResourceTypesOutcomeCallable getSupportedResourceTypesCallable(const Model::GetSupportedResourceTypesRequest& request) const;
+			ListAggregateDiscoveredResourcesOutcome listAggregateDiscoveredResources(const Model::ListAggregateDiscoveredResourcesRequest &request)const;
+			void listAggregateDiscoveredResourcesAsync(const Model::ListAggregateDiscoveredResourcesRequest& request, const ListAggregateDiscoveredResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListAggregateDiscoveredResourcesOutcomeCallable listAggregateDiscoveredResourcesCallable(const Model::ListAggregateDiscoveredResourcesRequest& request) const;
 			ListConfigRulesOutcome listConfigRules(const Model::ListConfigRulesRequest &request)const;
 			void listConfigRulesAsync(const Model::ListConfigRulesRequest& request, const ListConfigRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListConfigRulesOutcomeCallable listConfigRulesCallable(const Model::ListConfigRulesRequest& request) const;
 			ListDiscoveredResourcesOutcome listDiscoveredResources(const Model::ListDiscoveredResourcesRequest &request)const;
 			void listDiscoveredResourcesAsync(const Model::ListDiscoveredResourcesRequest& request, const ListDiscoveredResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListDiscoveredResourcesOutcomeCallable listDiscoveredResourcesCallable(const Model::ListDiscoveredResourcesRequest& request) const;
+			ListRemediationTemplatesOutcome listRemediationTemplates(const Model::ListRemediationTemplatesRequest &request)const;
+			void listRemediationTemplatesAsync(const Model::ListRemediationTemplatesRequest& request, const ListRemediationTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListRemediationTemplatesOutcomeCallable listRemediationTemplatesCallable(const Model::ListRemediationTemplatesRequest& request) const;
 			PutConfigRuleOutcome putConfigRule(const Model::PutConfigRuleRequest &request)const;
 			void putConfigRuleAsync(const Model::PutConfigRuleRequest& request, const PutConfigRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			PutConfigRuleOutcomeCallable putConfigRuleCallable(const Model::PutConfigRuleRequest& request) const;

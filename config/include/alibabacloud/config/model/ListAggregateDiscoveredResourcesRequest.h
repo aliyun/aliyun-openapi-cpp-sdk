@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CONFIG_MODEL_LISTDISCOVEREDRESOURCESREQUEST_H_
-#define ALIBABACLOUD_CONFIG_MODEL_LISTDISCOVEREDRESOURCESREQUEST_H_
+#ifndef ALIBABACLOUD_CONFIG_MODEL_LISTAGGREGATEDISCOVEREDRESOURCESREQUEST_H_
+#define ALIBABACLOUD_CONFIG_MODEL_LISTAGGREGATEDISCOVEREDRESOURCESREQUEST_H_
 
 #include <alibabacloud/config/ConfigExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,18 +26,22 @@
 namespace AlibabaCloud {
 namespace Config {
 namespace Model {
-class ALIBABACLOUD_CONFIG_EXPORT ListDiscoveredResourcesRequest : public RpcServiceRequest {
+class ALIBABACLOUD_CONFIG_EXPORT ListAggregateDiscoveredResourcesRequest : public RpcServiceRequest {
 public:
-	ListDiscoveredResourcesRequest();
-	~ListDiscoveredResourcesRequest();
+	ListAggregateDiscoveredResourcesRequest();
+	~ListAggregateDiscoveredResourcesRequest();
 	int getResourceDeleted() const;
 	void setResourceDeleted(int resourceDeleted);
-	bool getMultiAccount() const;
-	void setMultiAccount(bool multiAccount);
+	long getResourceOwnerId() const;
+	void setResourceOwnerId(long resourceOwnerId);
 	std::string getRegions() const;
 	void setRegions(const std::string &regions);
+	std::string getAggregatorId() const;
+	void setAggregatorId(const std::string &aggregatorId);
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
+	std::string getFolderId() const;
+	void setFolderId(const std::string &folderId);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	std::string getComplianceType() const;
@@ -46,21 +50,20 @@ public:
 	void setResourceId(const std::string &resourceId);
 	std::string getResourceTypes() const;
 	void setResourceTypes(const std::string &resourceTypes);
-	long getMemberId() const;
-	void setMemberId(long memberId);
 
 private:
 	int resourceDeleted_;
-	bool multiAccount_;
+	long resourceOwnerId_;
 	std::string regions_;
+	std::string aggregatorId_;
 	int pageNumber_;
+	std::string folderId_;
 	int pageSize_;
 	std::string complianceType_;
 	std::string resourceId_;
 	std::string resourceTypes_;
-	long memberId_;
 };
 } // namespace Model
 } // namespace Config
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_CONFIG_MODEL_LISTDISCOVEREDRESOURCESREQUEST_H_
+#endif // !ALIBABACLOUD_CONFIG_MODEL_LISTAGGREGATEDISCOVEREDRESOURCESREQUEST_H_

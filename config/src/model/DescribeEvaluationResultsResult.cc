@@ -50,32 +50,36 @@ void DescribeEvaluationResultsResult::parse(const std::string &payload)
 	for (auto evaluationResultsNodeEvaluationResultListEvaluationResult : allEvaluationResultListNode)
 	{
 		EvaluationResults::EvaluationResult evaluationResultObject;
-		if(!evaluationResultsNodeEvaluationResultListEvaluationResult["Annotation"].isNull())
-			evaluationResultObject.annotation = evaluationResultsNodeEvaluationResultListEvaluationResult["Annotation"].asString();
+		if(!evaluationResultsNodeEvaluationResultListEvaluationResult["RiskLevel"].isNull())
+			evaluationResultObject.riskLevel = std::stoi(evaluationResultsNodeEvaluationResultListEvaluationResult["RiskLevel"].asString());
 		if(!evaluationResultsNodeEvaluationResultListEvaluationResult["ComplianceType"].isNull())
 			evaluationResultObject.complianceType = evaluationResultsNodeEvaluationResultListEvaluationResult["ComplianceType"].asString();
+		if(!evaluationResultsNodeEvaluationResultListEvaluationResult["ResultRecordedTimestamp"].isNull())
+			evaluationResultObject.resultRecordedTimestamp = std::stol(evaluationResultsNodeEvaluationResultListEvaluationResult["ResultRecordedTimestamp"].asString());
+		if(!evaluationResultsNodeEvaluationResultListEvaluationResult["Annotation"].isNull())
+			evaluationResultObject.annotation = evaluationResultsNodeEvaluationResultListEvaluationResult["Annotation"].asString();
 		if(!evaluationResultsNodeEvaluationResultListEvaluationResult["ConfigRuleInvokedTimestamp"].isNull())
 			evaluationResultObject.configRuleInvokedTimestamp = std::stol(evaluationResultsNodeEvaluationResultListEvaluationResult["ConfigRuleInvokedTimestamp"].asString());
 		if(!evaluationResultsNodeEvaluationResultListEvaluationResult["InvokingEventMessageType"].isNull())
 			evaluationResultObject.invokingEventMessageType = evaluationResultsNodeEvaluationResultListEvaluationResult["InvokingEventMessageType"].asString();
-		if(!evaluationResultsNodeEvaluationResultListEvaluationResult["ResultRecordedTimestamp"].isNull())
-			evaluationResultObject.resultRecordedTimestamp = std::stol(evaluationResultsNodeEvaluationResultListEvaluationResult["ResultRecordedTimestamp"].asString());
-		if(!evaluationResultsNodeEvaluationResultListEvaluationResult["RiskLevel"].isNull())
-			evaluationResultObject.riskLevel = std::stoi(evaluationResultsNodeEvaluationResultListEvaluationResult["RiskLevel"].asString());
+		if(!evaluationResultsNodeEvaluationResultListEvaluationResult["RemediationEnabled"].isNull())
+			evaluationResultObject.remediationEnabled = evaluationResultsNodeEvaluationResultListEvaluationResult["RemediationEnabled"].asString() == "true";
 		auto evaluationResultIdentifierNode = value["EvaluationResultIdentifier"];
 		if(!evaluationResultIdentifierNode["OrderingTimestamp"].isNull())
 			evaluationResultObject.evaluationResultIdentifier.orderingTimestamp = std::stol(evaluationResultIdentifierNode["OrderingTimestamp"].asString());
 		auto evaluationResultQualifierNode = evaluationResultIdentifierNode["EvaluationResultQualifier"];
 		if(!evaluationResultQualifierNode["ConfigRuleArn"].isNull())
 			evaluationResultObject.evaluationResultIdentifier.evaluationResultQualifier.configRuleArn = evaluationResultQualifierNode["ConfigRuleArn"].asString();
-		if(!evaluationResultQualifierNode["ConfigRuleId"].isNull())
-			evaluationResultObject.evaluationResultIdentifier.evaluationResultQualifier.configRuleId = evaluationResultQualifierNode["ConfigRuleId"].asString();
+		if(!evaluationResultQualifierNode["ResourceType"].isNull())
+			evaluationResultObject.evaluationResultIdentifier.evaluationResultQualifier.resourceType = evaluationResultQualifierNode["ResourceType"].asString();
 		if(!evaluationResultQualifierNode["ConfigRuleName"].isNull())
 			evaluationResultObject.evaluationResultIdentifier.evaluationResultQualifier.configRuleName = evaluationResultQualifierNode["ConfigRuleName"].asString();
 		if(!evaluationResultQualifierNode["ResourceId"].isNull())
 			evaluationResultObject.evaluationResultIdentifier.evaluationResultQualifier.resourceId = evaluationResultQualifierNode["ResourceId"].asString();
-		if(!evaluationResultQualifierNode["ResourceType"].isNull())
-			evaluationResultObject.evaluationResultIdentifier.evaluationResultQualifier.resourceType = evaluationResultQualifierNode["ResourceType"].asString();
+		if(!evaluationResultQualifierNode["ConfigRuleId"].isNull())
+			evaluationResultObject.evaluationResultIdentifier.evaluationResultQualifier.configRuleId = evaluationResultQualifierNode["ConfigRuleId"].asString();
+		if(!evaluationResultQualifierNode["ResourceName"].isNull())
+			evaluationResultObject.evaluationResultIdentifier.evaluationResultQualifier.resourceName = evaluationResultQualifierNode["ResourceName"].asString();
 		if(!evaluationResultQualifierNode["RegionId"].isNull())
 			evaluationResultObject.evaluationResultIdentifier.evaluationResultQualifier.regionId = evaluationResultQualifierNode["RegionId"].asString();
 		evaluationResults_.evaluationResultList.push_back(evaluationResultObject);

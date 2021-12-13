@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,111 +18,91 @@
 
 using AlibabaCloud::Config::Model::ListDiscoveredResourcesRequest;
 
-ListDiscoveredResourcesRequest::ListDiscoveredResourcesRequest() :
-	RpcServiceRequest("config", "2019-01-08", "ListDiscoveredResources")
-{
-	setMethod(HttpRequest::Method::Get);
+ListDiscoveredResourcesRequest::ListDiscoveredResourcesRequest()
+    : RpcServiceRequest("config", "2019-01-08", "ListDiscoveredResources") {
+  setMethod(HttpRequest::Method::Get);
 }
 
-ListDiscoveredResourcesRequest::~ListDiscoveredResourcesRequest()
-{}
+ListDiscoveredResourcesRequest::~ListDiscoveredResourcesRequest() {}
 
-int ListDiscoveredResourcesRequest::getResourceDeleted()const
-{
-	return resourceDeleted_;
+int ListDiscoveredResourcesRequest::getResourceDeleted() const {
+  return resourceDeleted_;
 }
 
-void ListDiscoveredResourcesRequest::setResourceDeleted(int resourceDeleted)
-{
-	resourceDeleted_ = resourceDeleted;
-	setParameter("ResourceDeleted", std::to_string(resourceDeleted));
+void ListDiscoveredResourcesRequest::setResourceDeleted(int resourceDeleted) {
+  resourceDeleted_ = resourceDeleted;
+  setParameter(std::string("ResourceDeleted"), std::to_string(resourceDeleted));
 }
 
-bool ListDiscoveredResourcesRequest::getMultiAccount()const
-{
-	return multiAccount_;
+bool ListDiscoveredResourcesRequest::getMultiAccount() const {
+  return multiAccount_;
 }
 
-void ListDiscoveredResourcesRequest::setMultiAccount(bool multiAccount)
-{
-	multiAccount_ = multiAccount;
-	setParameter("MultiAccount", multiAccount ? "true" : "false");
+void ListDiscoveredResourcesRequest::setMultiAccount(bool multiAccount) {
+  multiAccount_ = multiAccount;
+  setParameter(std::string("MultiAccount"), multiAccount ? "true" : "false");
 }
 
-std::string ListDiscoveredResourcesRequest::getRegions()const
-{
-	return regions_;
+std::string ListDiscoveredResourcesRequest::getRegions() const {
+  return regions_;
 }
 
-void ListDiscoveredResourcesRequest::setRegions(const std::string& regions)
-{
-	regions_ = regions;
-	setParameter("Regions", regions);
+void ListDiscoveredResourcesRequest::setRegions(const std::string &regions) {
+  regions_ = regions;
+  setParameter(std::string("Regions"), regions);
 }
 
-int ListDiscoveredResourcesRequest::getPageNumber()const
-{
-	return pageNumber_;
+int ListDiscoveredResourcesRequest::getPageNumber() const {
+  return pageNumber_;
 }
 
-void ListDiscoveredResourcesRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+void ListDiscoveredResourcesRequest::setPageNumber(int pageNumber) {
+  pageNumber_ = pageNumber;
+  setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
-int ListDiscoveredResourcesRequest::getPageSize()const
-{
-	return pageSize_;
+int ListDiscoveredResourcesRequest::getPageSize() const {
+  return pageSize_;
 }
 
-void ListDiscoveredResourcesRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+void ListDiscoveredResourcesRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
-std::string ListDiscoveredResourcesRequest::getComplianceType()const
-{
-	return complianceType_;
+std::string ListDiscoveredResourcesRequest::getComplianceType() const {
+  return complianceType_;
 }
 
-void ListDiscoveredResourcesRequest::setComplianceType(const std::string& complianceType)
-{
-	complianceType_ = complianceType;
-	setParameter("ComplianceType", complianceType);
+void ListDiscoveredResourcesRequest::setComplianceType(const std::string &complianceType) {
+  complianceType_ = complianceType;
+  setParameter(std::string("ComplianceType"), complianceType);
 }
 
-std::string ListDiscoveredResourcesRequest::getResourceId()const
-{
-	return resourceId_;
+std::string ListDiscoveredResourcesRequest::getResourceId() const {
+  return resourceId_;
 }
 
-void ListDiscoveredResourcesRequest::setResourceId(const std::string& resourceId)
-{
-	resourceId_ = resourceId;
-	setParameter("ResourceId", resourceId);
+void ListDiscoveredResourcesRequest::setResourceId(const std::string &resourceId) {
+  resourceId_ = resourceId;
+  setParameter(std::string("ResourceId"), resourceId);
 }
 
-std::string ListDiscoveredResourcesRequest::getResourceTypes()const
-{
-	return resourceTypes_;
+std::string ListDiscoveredResourcesRequest::getResourceTypes() const {
+  return resourceTypes_;
 }
 
-void ListDiscoveredResourcesRequest::setResourceTypes(const std::string& resourceTypes)
-{
-	resourceTypes_ = resourceTypes;
-	setParameter("ResourceTypes", resourceTypes);
+void ListDiscoveredResourcesRequest::setResourceTypes(const std::string &resourceTypes) {
+  resourceTypes_ = resourceTypes;
+  setParameter(std::string("ResourceTypes"), resourceTypes);
 }
 
-long ListDiscoveredResourcesRequest::getMemberId()const
-{
-	return memberId_;
+long ListDiscoveredResourcesRequest::getMemberId() const {
+  return memberId_;
 }
 
-void ListDiscoveredResourcesRequest::setMemberId(long memberId)
-{
-	memberId_ = memberId;
-	setParameter("MemberId", std::to_string(memberId));
+void ListDiscoveredResourcesRequest::setMemberId(long memberId) {
+  memberId_ = memberId;
+  setParameter(std::string("MemberId"), std::to_string(memberId));
 }
 

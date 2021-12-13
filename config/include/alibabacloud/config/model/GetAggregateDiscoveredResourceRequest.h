@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CONFIG_MODEL_GETRESOURCECOMPLIANCETIMELINEREQUEST_H_
-#define ALIBABACLOUD_CONFIG_MODEL_GETRESOURCECOMPLIANCETIMELINEREQUEST_H_
+#ifndef ALIBABACLOUD_CONFIG_MODEL_GETAGGREGATEDISCOVEREDRESOURCEREQUEST_H_
+#define ALIBABACLOUD_CONFIG_MODEL_GETAGGREGATEDISCOVEREDRESOURCEREQUEST_H_
 
 #include <alibabacloud/config/ConfigExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,41 +26,29 @@
 namespace AlibabaCloud {
 namespace Config {
 namespace Model {
-class ALIBABACLOUD_CONFIG_EXPORT GetResourceComplianceTimelineRequest : public RpcServiceRequest {
+class ALIBABACLOUD_CONFIG_EXPORT GetAggregateDiscoveredResourceRequest : public RpcServiceRequest {
 public:
-	GetResourceComplianceTimelineRequest();
-	~GetResourceComplianceTimelineRequest();
-	bool getMultiAccount() const;
-	void setMultiAccount(bool multiAccount);
-	long getStartTime() const;
-	void setStartTime(long startTime);
-	std::string getNextToken() const;
-	void setNextToken(const std::string &nextToken);
-	int getLimit() const;
-	void setLimit(int limit);
+	GetAggregateDiscoveredResourceRequest();
+	~GetAggregateDiscoveredResourceRequest();
 	std::string getResourceId() const;
 	void setResourceId(const std::string &resourceId);
-	long getEndTime() const;
-	void setEndTime(long endTime);
+	long getResourceOwnerId() const;
+	void setResourceOwnerId(long resourceOwnerId);
+	std::string getAggregatorId() const;
+	void setAggregatorId(const std::string &aggregatorId);
 	std::string getResourceType() const;
 	void setResourceType(const std::string &resourceType);
 	std::string getRegion() const;
 	void setRegion(const std::string &region);
-	std::string getMemberId() const;
-	void setMemberId(const std::string &memberId);
 
 private:
-	bool multiAccount_;
-	long startTime_;
-	std::string nextToken_;
-	int limit_;
 	std::string resourceId_;
-	long endTime_;
+	long resourceOwnerId_;
+	std::string aggregatorId_;
 	std::string resourceType_;
 	std::string region_;
-	std::string memberId_;
 };
 } // namespace Model
 } // namespace Config
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_CONFIG_MODEL_GETRESOURCECOMPLIANCETIMELINEREQUEST_H_
+#endif // !ALIBABACLOUD_CONFIG_MODEL_GETAGGREGATEDISCOVEREDRESOURCEREQUEST_H_
