@@ -38,8 +38,8 @@ namespace AlibabaCloud
 					{
 						struct VSwitch
 						{
-							bool isDefault;
 							std::string status;
+							bool isDefault;
 							std::string izNo;
 							std::string gmtCreate;
 							std::string vSwitchId;
@@ -47,8 +47,8 @@ namespace AlibabaCloud
 							std::string cidrBlock;
 							std::string vSwitchName;
 						};
-						bool isDefault;
 						std::string status;
+						bool isDefault;
 						std::vector<VpcItem::VSwitch> vSwitchs;
 						std::string regionNo;
 						std::string gmtCreate;

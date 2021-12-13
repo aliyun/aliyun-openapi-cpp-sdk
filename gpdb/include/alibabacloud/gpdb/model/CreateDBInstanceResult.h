@@ -39,16 +39,16 @@ namespace AlibabaCloud
 				~CreateDBInstanceResult();
 				std::string getDBInstanceId()const;
 				std::string getPort()const;
-				std::string getOrderId()const;
 				std::string getConnectionString()const;
+				std::string getOrderId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string dBInstanceId_;
 				std::string port_;
-				std::string orderId_;
 				std::string connectionString_;
+				std::string orderId_;
 
 			};
 		}

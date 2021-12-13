@@ -43,18 +43,22 @@ void DescribeDBInstanceNetInfoResult::parse(const std::string &payload)
 	for (auto valueDBInstanceNetInfosDBInstanceNetInfo : allDBInstanceNetInfosNode)
 	{
 		DBInstanceNetInfo dBInstanceNetInfosObject;
+		if(!valueDBInstanceNetInfosDBInstanceNetInfo["VSwitchId"].isNull())
+			dBInstanceNetInfosObject.vSwitchId = valueDBInstanceNetInfosDBInstanceNetInfo["VSwitchId"].asString();
 		if(!valueDBInstanceNetInfosDBInstanceNetInfo["ConnectionString"].isNull())
 			dBInstanceNetInfosObject.connectionString = valueDBInstanceNetInfosDBInstanceNetInfo["ConnectionString"].asString();
-		if(!valueDBInstanceNetInfosDBInstanceNetInfo["IPAddress"].isNull())
-			dBInstanceNetInfosObject.iPAddress = valueDBInstanceNetInfosDBInstanceNetInfo["IPAddress"].asString();
 		if(!valueDBInstanceNetInfosDBInstanceNetInfo["IPType"].isNull())
 			dBInstanceNetInfosObject.iPType = valueDBInstanceNetInfosDBInstanceNetInfo["IPType"].asString();
 		if(!valueDBInstanceNetInfosDBInstanceNetInfo["Port"].isNull())
 			dBInstanceNetInfosObject.port = valueDBInstanceNetInfosDBInstanceNetInfo["Port"].asString();
+		if(!valueDBInstanceNetInfosDBInstanceNetInfo["VpcInstanceId"].isNull())
+			dBInstanceNetInfosObject.vpcInstanceId = valueDBInstanceNetInfosDBInstanceNetInfo["VpcInstanceId"].asString();
 		if(!valueDBInstanceNetInfosDBInstanceNetInfo["VPCId"].isNull())
 			dBInstanceNetInfosObject.vPCId = valueDBInstanceNetInfosDBInstanceNetInfo["VPCId"].asString();
-		if(!valueDBInstanceNetInfosDBInstanceNetInfo["VSwitchId"].isNull())
-			dBInstanceNetInfosObject.vSwitchId = valueDBInstanceNetInfosDBInstanceNetInfo["VSwitchId"].asString();
+		if(!valueDBInstanceNetInfosDBInstanceNetInfo["IPAddress"].isNull())
+			dBInstanceNetInfosObject.iPAddress = valueDBInstanceNetInfosDBInstanceNetInfo["IPAddress"].asString();
+		if(!valueDBInstanceNetInfosDBInstanceNetInfo["AddressType"].isNull())
+			dBInstanceNetInfosObject.addressType = valueDBInstanceNetInfosDBInstanceNetInfo["AddressType"].asString();
 		dBInstanceNetInfos_.push_back(dBInstanceNetInfosObject);
 	}
 	if(!value["InstanceNetworkType"].isNull())

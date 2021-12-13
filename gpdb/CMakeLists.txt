@@ -25,10 +25,16 @@ set(gpdb_public_header_model
 	include/alibabacloud/gpdb/model/AddBuDBInstanceRelationResult.h
 	include/alibabacloud/gpdb/model/AllocateInstancePublicConnectionRequest.h
 	include/alibabacloud/gpdb/model/AllocateInstancePublicConnectionResult.h
+	include/alibabacloud/gpdb/model/CheckServiceLinkedRoleRequest.h
+	include/alibabacloud/gpdb/model/CheckServiceLinkedRoleResult.h
 	include/alibabacloud/gpdb/model/CreateAccountRequest.h
 	include/alibabacloud/gpdb/model/CreateAccountResult.h
 	include/alibabacloud/gpdb/model/CreateDBInstanceRequest.h
 	include/alibabacloud/gpdb/model/CreateDBInstanceResult.h
+	include/alibabacloud/gpdb/model/CreateECSDBInstanceRequest.h
+	include/alibabacloud/gpdb/model/CreateECSDBInstanceResult.h
+	include/alibabacloud/gpdb/model/CreateServiceLinkedRoleRequest.h
+	include/alibabacloud/gpdb/model/CreateServiceLinkedRoleResult.h
 	include/alibabacloud/gpdb/model/DeleteDBInstanceRequest.h
 	include/alibabacloud/gpdb/model/DeleteDBInstanceResult.h
 	include/alibabacloud/gpdb/model/DeleteDatabaseRequest.h
@@ -37,18 +43,34 @@ set(gpdb_public_header_model
 	include/alibabacloud/gpdb/model/DescribeAccountsResult.h
 	include/alibabacloud/gpdb/model/DescribeAvailableResourcesRequest.h
 	include/alibabacloud/gpdb/model/DescribeAvailableResourcesResult.h
+	include/alibabacloud/gpdb/model/DescribeBackupPolicyRequest.h
+	include/alibabacloud/gpdb/model/DescribeBackupPolicyResult.h
+	include/alibabacloud/gpdb/model/DescribeDBClusterPerformanceRequest.h
+	include/alibabacloud/gpdb/model/DescribeDBClusterPerformanceResult.h
 	include/alibabacloud/gpdb/model/DescribeDBInstanceAttributeRequest.h
 	include/alibabacloud/gpdb/model/DescribeDBInstanceAttributeResult.h
 	include/alibabacloud/gpdb/model/DescribeDBInstanceIPArrayListRequest.h
 	include/alibabacloud/gpdb/model/DescribeDBInstanceIPArrayListResult.h
 	include/alibabacloud/gpdb/model/DescribeDBInstanceNetInfoRequest.h
 	include/alibabacloud/gpdb/model/DescribeDBInstanceNetInfoResult.h
+	include/alibabacloud/gpdb/model/DescribeDBInstanceOnECSAttributeRequest.h
+	include/alibabacloud/gpdb/model/DescribeDBInstanceOnECSAttributeResult.h
 	include/alibabacloud/gpdb/model/DescribeDBInstancePerformanceRequest.h
 	include/alibabacloud/gpdb/model/DescribeDBInstancePerformanceResult.h
+	include/alibabacloud/gpdb/model/DescribeDBInstanceSQLPatternsRequest.h
+	include/alibabacloud/gpdb/model/DescribeDBInstanceSQLPatternsResult.h
 	include/alibabacloud/gpdb/model/DescribeDBInstanceSSLRequest.h
 	include/alibabacloud/gpdb/model/DescribeDBInstanceSSLResult.h
 	include/alibabacloud/gpdb/model/DescribeDBInstancesRequest.h
 	include/alibabacloud/gpdb/model/DescribeDBInstancesResult.h
+	include/alibabacloud/gpdb/model/DescribeDataBackupsRequest.h
+	include/alibabacloud/gpdb/model/DescribeDataBackupsResult.h
+	include/alibabacloud/gpdb/model/DescribeLogBackupsRequest.h
+	include/alibabacloud/gpdb/model/DescribeLogBackupsResult.h
+	include/alibabacloud/gpdb/model/DescribeModifyParameterLogRequest.h
+	include/alibabacloud/gpdb/model/DescribeModifyParameterLogResult.h
+	include/alibabacloud/gpdb/model/DescribeParametersRequest.h
+	include/alibabacloud/gpdb/model/DescribeParametersResult.h
 	include/alibabacloud/gpdb/model/DescribeRdsVSwitchsRequest.h
 	include/alibabacloud/gpdb/model/DescribeRdsVSwitchsResult.h
 	include/alibabacloud/gpdb/model/DescribeRdsVpcsRequest.h
@@ -59,20 +81,34 @@ set(gpdb_public_header_model
 	include/alibabacloud/gpdb/model/DescribeResourceUsageResult.h
 	include/alibabacloud/gpdb/model/DescribeSQLCollectorPolicyRequest.h
 	include/alibabacloud/gpdb/model/DescribeSQLCollectorPolicyResult.h
+	include/alibabacloud/gpdb/model/DescribeSQLLogByQueryIdRequest.h
+	include/alibabacloud/gpdb/model/DescribeSQLLogByQueryIdResult.h
+	include/alibabacloud/gpdb/model/DescribeSQLLogCountRequest.h
+	include/alibabacloud/gpdb/model/DescribeSQLLogCountResult.h
 	include/alibabacloud/gpdb/model/DescribeSQLLogFilesRequest.h
 	include/alibabacloud/gpdb/model/DescribeSQLLogFilesResult.h
 	include/alibabacloud/gpdb/model/DescribeSQLLogRecordsRequest.h
 	include/alibabacloud/gpdb/model/DescribeSQLLogRecordsResult.h
+	include/alibabacloud/gpdb/model/DescribeSQLLogsRequest.h
+	include/alibabacloud/gpdb/model/DescribeSQLLogsResult.h
+	include/alibabacloud/gpdb/model/DescribeSQLLogsOnSliceRequest.h
+	include/alibabacloud/gpdb/model/DescribeSQLLogsOnSliceResult.h
 	include/alibabacloud/gpdb/model/DescribeSlowLogRecordsRequest.h
 	include/alibabacloud/gpdb/model/DescribeSlowLogRecordsResult.h
+	include/alibabacloud/gpdb/model/DescribeSlowSQLLogsRequest.h
+	include/alibabacloud/gpdb/model/DescribeSlowSQLLogsResult.h
 	include/alibabacloud/gpdb/model/DescribeSpecificationRequest.h
 	include/alibabacloud/gpdb/model/DescribeSpecificationResult.h
 	include/alibabacloud/gpdb/model/DescribeTagsRequest.h
 	include/alibabacloud/gpdb/model/DescribeTagsResult.h
+	include/alibabacloud/gpdb/model/DescribeUserEncryptionKeyListRequest.h
+	include/alibabacloud/gpdb/model/DescribeUserEncryptionKeyListResult.h
 	include/alibabacloud/gpdb/model/ListTagResourcesRequest.h
 	include/alibabacloud/gpdb/model/ListTagResourcesResult.h
 	include/alibabacloud/gpdb/model/ModifyAccountDescriptionRequest.h
 	include/alibabacloud/gpdb/model/ModifyAccountDescriptionResult.h
+	include/alibabacloud/gpdb/model/ModifyBackupPolicyRequest.h
+	include/alibabacloud/gpdb/model/ModifyBackupPolicyResult.h
 	include/alibabacloud/gpdb/model/ModifyDBInstanceConnectionModeRequest.h
 	include/alibabacloud/gpdb/model/ModifyDBInstanceConnectionModeResult.h
 	include/alibabacloud/gpdb/model/ModifyDBInstanceConnectionStringRequest.h
@@ -85,6 +121,8 @@ set(gpdb_public_header_model
 	include/alibabacloud/gpdb/model/ModifyDBInstanceNetworkTypeResult.h
 	include/alibabacloud/gpdb/model/ModifyDBInstanceSSLRequest.h
 	include/alibabacloud/gpdb/model/ModifyDBInstanceSSLResult.h
+	include/alibabacloud/gpdb/model/ModifyParametersRequest.h
+	include/alibabacloud/gpdb/model/ModifyParametersResult.h
 	include/alibabacloud/gpdb/model/ModifySQLCollectorPolicyRequest.h
 	include/alibabacloud/gpdb/model/ModifySQLCollectorPolicyResult.h
 	include/alibabacloud/gpdb/model/ModifySecurityIpsRequest.h
@@ -112,10 +150,16 @@ set(gpdb_src
 	src/model/AddBuDBInstanceRelationResult.cc
 	src/model/AllocateInstancePublicConnectionRequest.cc
 	src/model/AllocateInstancePublicConnectionResult.cc
+	src/model/CheckServiceLinkedRoleRequest.cc
+	src/model/CheckServiceLinkedRoleResult.cc
 	src/model/CreateAccountRequest.cc
 	src/model/CreateAccountResult.cc
 	src/model/CreateDBInstanceRequest.cc
 	src/model/CreateDBInstanceResult.cc
+	src/model/CreateECSDBInstanceRequest.cc
+	src/model/CreateECSDBInstanceResult.cc
+	src/model/CreateServiceLinkedRoleRequest.cc
+	src/model/CreateServiceLinkedRoleResult.cc
 	src/model/DeleteDBInstanceRequest.cc
 	src/model/DeleteDBInstanceResult.cc
 	src/model/DeleteDatabaseRequest.cc
@@ -124,18 +168,34 @@ set(gpdb_src
 	src/model/DescribeAccountsResult.cc
 	src/model/DescribeAvailableResourcesRequest.cc
 	src/model/DescribeAvailableResourcesResult.cc
+	src/model/DescribeBackupPolicyRequest.cc
+	src/model/DescribeBackupPolicyResult.cc
+	src/model/DescribeDBClusterPerformanceRequest.cc
+	src/model/DescribeDBClusterPerformanceResult.cc
 	src/model/DescribeDBInstanceAttributeRequest.cc
 	src/model/DescribeDBInstanceAttributeResult.cc
 	src/model/DescribeDBInstanceIPArrayListRequest.cc
 	src/model/DescribeDBInstanceIPArrayListResult.cc
 	src/model/DescribeDBInstanceNetInfoRequest.cc
 	src/model/DescribeDBInstanceNetInfoResult.cc
+	src/model/DescribeDBInstanceOnECSAttributeRequest.cc
+	src/model/DescribeDBInstanceOnECSAttributeResult.cc
 	src/model/DescribeDBInstancePerformanceRequest.cc
 	src/model/DescribeDBInstancePerformanceResult.cc
+	src/model/DescribeDBInstanceSQLPatternsRequest.cc
+	src/model/DescribeDBInstanceSQLPatternsResult.cc
 	src/model/DescribeDBInstanceSSLRequest.cc
 	src/model/DescribeDBInstanceSSLResult.cc
 	src/model/DescribeDBInstancesRequest.cc
 	src/model/DescribeDBInstancesResult.cc
+	src/model/DescribeDataBackupsRequest.cc
+	src/model/DescribeDataBackupsResult.cc
+	src/model/DescribeLogBackupsRequest.cc
+	src/model/DescribeLogBackupsResult.cc
+	src/model/DescribeModifyParameterLogRequest.cc
+	src/model/DescribeModifyParameterLogResult.cc
+	src/model/DescribeParametersRequest.cc
+	src/model/DescribeParametersResult.cc
 	src/model/DescribeRdsVSwitchsRequest.cc
 	src/model/DescribeRdsVSwitchsResult.cc
 	src/model/DescribeRdsVpcsRequest.cc
@@ -146,20 +206,34 @@ set(gpdb_src
 	src/model/DescribeResourceUsageResult.cc
 	src/model/DescribeSQLCollectorPolicyRequest.cc
 	src/model/DescribeSQLCollectorPolicyResult.cc
+	src/model/DescribeSQLLogByQueryIdRequest.cc
+	src/model/DescribeSQLLogByQueryIdResult.cc
+	src/model/DescribeSQLLogCountRequest.cc
+	src/model/DescribeSQLLogCountResult.cc
 	src/model/DescribeSQLLogFilesRequest.cc
 	src/model/DescribeSQLLogFilesResult.cc
 	src/model/DescribeSQLLogRecordsRequest.cc
 	src/model/DescribeSQLLogRecordsResult.cc
+	src/model/DescribeSQLLogsRequest.cc
+	src/model/DescribeSQLLogsResult.cc
+	src/model/DescribeSQLLogsOnSliceRequest.cc
+	src/model/DescribeSQLLogsOnSliceResult.cc
 	src/model/DescribeSlowLogRecordsRequest.cc
 	src/model/DescribeSlowLogRecordsResult.cc
+	src/model/DescribeSlowSQLLogsRequest.cc
+	src/model/DescribeSlowSQLLogsResult.cc
 	src/model/DescribeSpecificationRequest.cc
 	src/model/DescribeSpecificationResult.cc
 	src/model/DescribeTagsRequest.cc
 	src/model/DescribeTagsResult.cc
+	src/model/DescribeUserEncryptionKeyListRequest.cc
+	src/model/DescribeUserEncryptionKeyListResult.cc
 	src/model/ListTagResourcesRequest.cc
 	src/model/ListTagResourcesResult.cc
 	src/model/ModifyAccountDescriptionRequest.cc
 	src/model/ModifyAccountDescriptionResult.cc
+	src/model/ModifyBackupPolicyRequest.cc
+	src/model/ModifyBackupPolicyResult.cc
 	src/model/ModifyDBInstanceConnectionModeRequest.cc
 	src/model/ModifyDBInstanceConnectionModeResult.cc
 	src/model/ModifyDBInstanceConnectionStringRequest.cc
@@ -172,6 +246,8 @@ set(gpdb_src
 	src/model/ModifyDBInstanceNetworkTypeResult.cc
 	src/model/ModifyDBInstanceSSLRequest.cc
 	src/model/ModifyDBInstanceSSLResult.cc
+	src/model/ModifyParametersRequest.cc
+	src/model/ModifyParametersResult.cc
 	src/model/ModifySQLCollectorPolicyRequest.cc
 	src/model/ModifySQLCollectorPolicyResult.cc
 	src/model/ModifySecurityIpsRequest.cc

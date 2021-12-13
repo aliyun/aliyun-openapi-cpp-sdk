@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,56 +18,46 @@
 
 using AlibabaCloud::Gpdb::Model::ModifyAccountDescriptionRequest;
 
-ModifyAccountDescriptionRequest::ModifyAccountDescriptionRequest() :
-	RpcServiceRequest("gpdb", "2016-05-03", "ModifyAccountDescription")
-{
-	setMethod(HttpRequest::Method::Post);
+ModifyAccountDescriptionRequest::ModifyAccountDescriptionRequest()
+    : RpcServiceRequest("gpdb", "2016-05-03", "ModifyAccountDescription") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-ModifyAccountDescriptionRequest::~ModifyAccountDescriptionRequest()
-{}
+ModifyAccountDescriptionRequest::~ModifyAccountDescriptionRequest() {}
 
-std::string ModifyAccountDescriptionRequest::getAccountDescription()const
-{
-	return accountDescription_;
+std::string ModifyAccountDescriptionRequest::getAccountDescription() const {
+  return accountDescription_;
 }
 
-void ModifyAccountDescriptionRequest::setAccountDescription(const std::string& accountDescription)
-{
-	accountDescription_ = accountDescription;
-	setParameter("AccountDescription", accountDescription);
+void ModifyAccountDescriptionRequest::setAccountDescription(const std::string &accountDescription) {
+  accountDescription_ = accountDescription;
+  setParameter(std::string("AccountDescription"), accountDescription);
 }
 
-std::string ModifyAccountDescriptionRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string ModifyAccountDescriptionRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void ModifyAccountDescriptionRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void ModifyAccountDescriptionRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string ModifyAccountDescriptionRequest::getAccountName()const
-{
-	return accountName_;
+std::string ModifyAccountDescriptionRequest::getAccountName() const {
+  return accountName_;
 }
 
-void ModifyAccountDescriptionRequest::setAccountName(const std::string& accountName)
-{
-	accountName_ = accountName;
-	setParameter("AccountName", accountName);
+void ModifyAccountDescriptionRequest::setAccountName(const std::string &accountName) {
+  accountName_ = accountName;
+  setParameter(std::string("AccountName"), accountName);
 }
 
-std::string ModifyAccountDescriptionRequest::getDBInstanceId()const
-{
-	return dBInstanceId_;
+std::string ModifyAccountDescriptionRequest::getDBInstanceId() const {
+  return dBInstanceId_;
 }
 
-void ModifyAccountDescriptionRequest::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-	setParameter("DBInstanceId", dBInstanceId);
+void ModifyAccountDescriptionRequest::setDBInstanceId(const std::string &dBInstanceId) {
+  dBInstanceId_ = dBInstanceId;
+  setParameter(std::string("DBInstanceId"), dBInstanceId);
 }
 

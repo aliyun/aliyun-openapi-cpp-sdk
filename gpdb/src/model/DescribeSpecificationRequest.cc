@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,78 +18,64 @@
 
 using AlibabaCloud::Gpdb::Model::DescribeSpecificationRequest;
 
-DescribeSpecificationRequest::DescribeSpecificationRequest() :
-	RpcServiceRequest("gpdb", "2016-05-03", "DescribeSpecification")
-{
-	setMethod(HttpRequest::Method::Post);
+DescribeSpecificationRequest::DescribeSpecificationRequest()
+    : RpcServiceRequest("gpdb", "2016-05-03", "DescribeSpecification") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DescribeSpecificationRequest::~DescribeSpecificationRequest()
-{}
+DescribeSpecificationRequest::~DescribeSpecificationRequest() {}
 
-std::string DescribeSpecificationRequest::getStorageType()const
-{
-	return storageType_;
+std::string DescribeSpecificationRequest::getStorageType() const {
+  return storageType_;
 }
 
-void DescribeSpecificationRequest::setStorageType(const std::string& storageType)
-{
-	storageType_ = storageType;
-	setParameter("StorageType", storageType);
+void DescribeSpecificationRequest::setStorageType(const std::string &storageType) {
+  storageType_ = storageType;
+  setParameter(std::string("StorageType"), storageType);
 }
 
-std::string DescribeSpecificationRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string DescribeSpecificationRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void DescribeSpecificationRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void DescribeSpecificationRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-int DescribeSpecificationRequest::getCpuCores()const
-{
-	return cpuCores_;
+int DescribeSpecificationRequest::getCpuCores() const {
+  return cpuCores_;
 }
 
-void DescribeSpecificationRequest::setCpuCores(int cpuCores)
-{
-	cpuCores_ = cpuCores;
-	setParameter("CpuCores", std::to_string(cpuCores));
+void DescribeSpecificationRequest::setCpuCores(int cpuCores) {
+  cpuCores_ = cpuCores;
+  setParameter(std::string("CpuCores"), std::to_string(cpuCores));
 }
 
-std::string DescribeSpecificationRequest::getDBInstanceId()const
-{
-	return dBInstanceId_;
+std::string DescribeSpecificationRequest::getDBInstanceId() const {
+  return dBInstanceId_;
 }
 
-void DescribeSpecificationRequest::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-	setParameter("DBInstanceId", dBInstanceId);
+void DescribeSpecificationRequest::setDBInstanceId(const std::string &dBInstanceId) {
+  dBInstanceId_ = dBInstanceId;
+  setParameter(std::string("DBInstanceId"), dBInstanceId);
 }
 
-int DescribeSpecificationRequest::getTotalNodeNum()const
-{
-	return totalNodeNum_;
+int DescribeSpecificationRequest::getTotalNodeNum() const {
+  return totalNodeNum_;
 }
 
-void DescribeSpecificationRequest::setTotalNodeNum(int totalNodeNum)
-{
-	totalNodeNum_ = totalNodeNum;
-	setParameter("TotalNodeNum", std::to_string(totalNodeNum));
+void DescribeSpecificationRequest::setTotalNodeNum(int totalNodeNum) {
+  totalNodeNum_ = totalNodeNum;
+  setParameter(std::string("TotalNodeNum"), std::to_string(totalNodeNum));
 }
 
-long DescribeSpecificationRequest::getOwnerId()const
-{
-	return ownerId_;
+long DescribeSpecificationRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void DescribeSpecificationRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void DescribeSpecificationRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 

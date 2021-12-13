@@ -39,18 +39,18 @@ void DescribeResourceUsageResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["DBInstanceId"].isNull())
-		dBInstanceId_ = value["DBInstanceId"].asString();
-	if(!value["Engine"].isNull())
-		engine_ = value["Engine"].asString();
-	if(!value["DiskUsed"].isNull())
-		diskUsed_ = std::stol(value["DiskUsed"].asString());
-	if(!value["DataSize"].isNull())
-		dataSize_ = std::stol(value["DataSize"].asString());
 	if(!value["LogSize"].isNull())
 		logSize_ = std::stol(value["LogSize"].asString());
+	if(!value["DBInstanceId"].isNull())
+		dBInstanceId_ = value["DBInstanceId"].asString();
+	if(!value["DataSize"].isNull())
+		dataSize_ = std::stol(value["DataSize"].asString());
 	if(!value["BackupSize"].isNull())
 		backupSize_ = std::stol(value["BackupSize"].asString());
+	if(!value["DiskUsed"].isNull())
+		diskUsed_ = std::stol(value["DiskUsed"].asString());
+	if(!value["Engine"].isNull())
+		engine_ = value["Engine"].asString();
 
 }
 

@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,38 +17,35 @@
 #ifndef ALIBABACLOUD_GPDB_MODEL_RELEASEINSTANCEPUBLICCONNECTIONREQUEST_H_
 #define ALIBABACLOUD_GPDB_MODEL_RELEASEINSTANCEPUBLICCONNECTIONREQUEST_H_
 
+#include <alibabacloud/gpdb/GpdbExport.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
-#include <alibabacloud/gpdb/GpdbExport.h>
+#include <map>
 
-namespace AlibabaCloud
-{
-	namespace Gpdb
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_GPDB_EXPORT ReleaseInstancePublicConnectionRequest : public RpcServiceRequest
-			{
+namespace AlibabaCloud {
+namespace Gpdb {
+namespace Model {
+class ALIBABACLOUD_GPDB_EXPORT ReleaseInstancePublicConnectionRequest : public RpcServiceRequest {
+public:
+	ReleaseInstancePublicConnectionRequest();
+	~ReleaseInstancePublicConnectionRequest();
+	std::string getAccessKeyId() const;
+	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getAddressType() const;
+	void setAddressType(const std::string &addressType);
+	std::string getDBInstanceId() const;
+	void setDBInstanceId(const std::string &dBInstanceId);
+	std::string getCurrentConnectionString() const;
+	void setCurrentConnectionString(const std::string &currentConnectionString);
 
-			public:
-				ReleaseInstancePublicConnectionRequest();
-				~ReleaseInstancePublicConnectionRequest();
-
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getDBInstanceId()const;
-				void setDBInstanceId(const std::string& dBInstanceId);
-				std::string getCurrentConnectionString()const;
-				void setCurrentConnectionString(const std::string& currentConnectionString);
-
-            private:
-				std::string accessKeyId_;
-				std::string dBInstanceId_;
-				std::string currentConnectionString_;
-
-			};
-		}
-	}
-}
+private:
+	std::string accessKeyId_;
+	std::string addressType_;
+	std::string dBInstanceId_;
+	std::string currentConnectionString_;
+};
+} // namespace Model
+} // namespace Gpdb
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_GPDB_MODEL_RELEASEINSTANCEPUBLICCONNECTIONREQUEST_H_

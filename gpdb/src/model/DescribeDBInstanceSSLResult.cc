@@ -39,16 +39,16 @@ void DescribeDBInstanceSSLResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["DBInstanceId"].isNull())
-		dBInstanceId_ = value["DBInstanceId"].asString();
-	if(!value["DBInstanceName"].isNull())
-		dBInstanceName_ = value["DBInstanceName"].asString();
-	if(!value["CertCommonName"].isNull())
-		certCommonName_ = value["CertCommonName"].asString();
 	if(!value["SSLExpiredTime"].isNull())
 		sSLExpiredTime_ = value["SSLExpiredTime"].asString();
 	if(!value["SSLEnabled"].isNull())
 		sSLEnabled_ = value["SSLEnabled"].asString() == "true";
+	if(!value["DBInstanceId"].isNull())
+		dBInstanceId_ = value["DBInstanceId"].asString();
+	if(!value["CertCommonName"].isNull())
+		certCommonName_ = value["CertCommonName"].asString();
+	if(!value["DBInstanceName"].isNull())
+		dBInstanceName_ = value["DBInstanceName"].asString();
 
 }
 

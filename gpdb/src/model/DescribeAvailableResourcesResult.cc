@@ -45,25 +45,40 @@ void DescribeAvailableResourcesResult::parse(const std::string &payload)
 		Resource resourcesObject;
 		if(!valueResourcesResource["ZoneId"].isNull())
 			resourcesObject.zoneId = valueResourcesResource["ZoneId"].asString();
-		auto allSupportedEnginesNode = allResourcesNode["SupportedEngines"]["SupportedEngine"];
-		for (auto allResourcesNodeSupportedEnginesSupportedEngine : allSupportedEnginesNode)
+		auto allSupportedEnginesNode = valueResourcesResource["SupportedEngines"]["SupportedEngine"];
+		for (auto valueResourcesResourceSupportedEnginesSupportedEngine : allSupportedEnginesNode)
 		{
 			Resource::SupportedEngine supportedEnginesObject;
-			if(!allResourcesNodeSupportedEnginesSupportedEngine["SupportedEngineVersion"].isNull())
-				supportedEnginesObject.supportedEngineVersion = allResourcesNodeSupportedEnginesSupportedEngine["SupportedEngineVersion"].asString();
-			auto allSupportedInstanceClassesNode = allSupportedEnginesNode["SupportedInstanceClasses"]["SupportedInstanceClass"];
-			for (auto allSupportedEnginesNodeSupportedInstanceClassesSupportedInstanceClass : allSupportedInstanceClassesNode)
+			if(!valueResourcesResourceSupportedEnginesSupportedEngine["SupportedEngineVersion"].isNull())
+				supportedEnginesObject.supportedEngineVersion = valueResourcesResourceSupportedEnginesSupportedEngine["SupportedEngineVersion"].asString();
+			if(!valueResourcesResourceSupportedEnginesSupportedEngine["Mode"].isNull())
+				supportedEnginesObject.mode = valueResourcesResourceSupportedEnginesSupportedEngine["Mode"].asString();
+			auto allSupportedInstanceClassesNode = valueResourcesResourceSupportedEnginesSupportedEngine["SupportedInstanceClasses"]["SupportedInstanceClass"];
+			for (auto valueResourcesResourceSupportedEnginesSupportedEngineSupportedInstanceClassesSupportedInstanceClass : allSupportedInstanceClassesNode)
 			{
 				Resource::SupportedEngine::SupportedInstanceClass supportedInstanceClassesObject;
-				if(!allSupportedEnginesNodeSupportedInstanceClassesSupportedInstanceClass["DisplayClass"].isNull())
-					supportedInstanceClassesObject.displayClass = allSupportedEnginesNodeSupportedInstanceClassesSupportedInstanceClass["DisplayClass"].asString();
-				if(!allSupportedEnginesNodeSupportedInstanceClassesSupportedInstanceClass["InstanceClass"].isNull())
-					supportedInstanceClassesObject.instanceClass = allSupportedEnginesNodeSupportedInstanceClassesSupportedInstanceClass["InstanceClass"].asString();
-				if(!allSupportedEnginesNodeSupportedInstanceClassesSupportedInstanceClass["Description"].isNull())
-					supportedInstanceClassesObject.description = allSupportedEnginesNodeSupportedInstanceClassesSupportedInstanceClass["Description"].asString();
-				auto allNodeCount = value["NodeCount"]["NodeCount"];
-				for (auto value : allNodeCount)
-					supportedInstanceClassesObject.nodeCount.push_back(value.asString());
+				if(!valueResourcesResourceSupportedEnginesSupportedEngineSupportedInstanceClassesSupportedInstanceClass["Description"].isNull())
+					supportedInstanceClassesObject.description = valueResourcesResourceSupportedEnginesSupportedEngineSupportedInstanceClassesSupportedInstanceClass["Description"].asString();
+				if(!valueResourcesResourceSupportedEnginesSupportedEngineSupportedInstanceClassesSupportedInstanceClass["DisplayClass"].isNull())
+					supportedInstanceClassesObject.displayClass = valueResourcesResourceSupportedEnginesSupportedEngineSupportedInstanceClassesSupportedInstanceClass["DisplayClass"].asString();
+				if(!valueResourcesResourceSupportedEnginesSupportedEngineSupportedInstanceClassesSupportedInstanceClass["InstanceClass"].isNull())
+					supportedInstanceClassesObject.instanceClass = valueResourcesResourceSupportedEnginesSupportedEngineSupportedInstanceClassesSupportedInstanceClass["InstanceClass"].asString();
+				if(!valueResourcesResourceSupportedEnginesSupportedEngineSupportedInstanceClassesSupportedInstanceClass["StorageType"].isNull())
+					supportedInstanceClassesObject.storageType = valueResourcesResourceSupportedEnginesSupportedEngineSupportedInstanceClassesSupportedInstanceClass["StorageType"].asString();
+				auto nodeCountNode = value["NodeCount"];
+				if(!nodeCountNode["Step"].isNull())
+					supportedInstanceClassesObject.nodeCount.step = nodeCountNode["Step"].asString();
+				if(!nodeCountNode["MinCount"].isNull())
+					supportedInstanceClassesObject.nodeCount.minCount = nodeCountNode["MinCount"].asString();
+				if(!nodeCountNode["MaxCount"].isNull())
+					supportedInstanceClassesObject.nodeCount.maxCount = nodeCountNode["MaxCount"].asString();
+				auto storageSizeNode = value["StorageSize"];
+				if(!storageSizeNode["Step"].isNull())
+					supportedInstanceClassesObject.storageSize.step = storageSizeNode["Step"].asString();
+				if(!storageSizeNode["MinCount"].isNull())
+					supportedInstanceClassesObject.storageSize.minCount = storageSizeNode["MinCount"].asString();
+				if(!storageSizeNode["MaxCount"].isNull())
+					supportedInstanceClassesObject.storageSize.maxCount = storageSizeNode["MaxCount"].asString();
 				supportedEnginesObject.supportedInstanceClasses.push_back(supportedInstanceClassesObject);
 			}
 			resourcesObject.supportedEngines.push_back(supportedEnginesObject);

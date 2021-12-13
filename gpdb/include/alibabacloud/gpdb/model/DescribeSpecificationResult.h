@@ -32,17 +32,17 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_GPDB_EXPORT DescribeSpecificationResult : public ServiceResult
 			{
 			public:
+				struct StorageNoticeItem
+				{
+					std::string value;
+					std::string text;
+				};
 				struct DBInstanceClassItem
 				{
 					std::string value;
 					std::string text;
 				};
 				struct DBInstanceGroupCountItem
-				{
-					std::string value;
-					std::string text;
-				};
-				struct StorageNoticeItem
 				{
 					std::string value;
 					std::string text;

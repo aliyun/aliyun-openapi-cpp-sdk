@@ -39,35 +39,35 @@ void DescribeSpecificationResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto allStorageNoticeNode = value["StorageNotice"]["StorageNoticeItem"];
+	for (auto valueStorageNoticeStorageNoticeItem : allStorageNoticeNode)
+	{
+		StorageNoticeItem storageNoticeObject;
+		if(!valueStorageNoticeStorageNoticeItem["Value"].isNull())
+			storageNoticeObject.value = valueStorageNoticeStorageNoticeItem["Value"].asString();
+		if(!valueStorageNoticeStorageNoticeItem["Text"].isNull())
+			storageNoticeObject.text = valueStorageNoticeStorageNoticeItem["Text"].asString();
+		storageNotice_.push_back(storageNoticeObject);
+	}
 	auto allDBInstanceClassNode = value["DBInstanceClass"]["DBInstanceClassItem"];
 	for (auto valueDBInstanceClassDBInstanceClassItem : allDBInstanceClassNode)
 	{
 		DBInstanceClassItem dBInstanceClassObject;
-		if(!valueDBInstanceClassDBInstanceClassItem["Text"].isNull())
-			dBInstanceClassObject.text = valueDBInstanceClassDBInstanceClassItem["Text"].asString();
 		if(!valueDBInstanceClassDBInstanceClassItem["Value"].isNull())
 			dBInstanceClassObject.value = valueDBInstanceClassDBInstanceClassItem["Value"].asString();
+		if(!valueDBInstanceClassDBInstanceClassItem["Text"].isNull())
+			dBInstanceClassObject.text = valueDBInstanceClassDBInstanceClassItem["Text"].asString();
 		dBInstanceClass_.push_back(dBInstanceClassObject);
 	}
 	auto allDBInstanceGroupCountNode = value["DBInstanceGroupCount"]["DBInstanceGroupCountItem"];
 	for (auto valueDBInstanceGroupCountDBInstanceGroupCountItem : allDBInstanceGroupCountNode)
 	{
 		DBInstanceGroupCountItem dBInstanceGroupCountObject;
-		if(!valueDBInstanceGroupCountDBInstanceGroupCountItem["Text"].isNull())
-			dBInstanceGroupCountObject.text = valueDBInstanceGroupCountDBInstanceGroupCountItem["Text"].asString();
 		if(!valueDBInstanceGroupCountDBInstanceGroupCountItem["Value"].isNull())
 			dBInstanceGroupCountObject.value = valueDBInstanceGroupCountDBInstanceGroupCountItem["Value"].asString();
+		if(!valueDBInstanceGroupCountDBInstanceGroupCountItem["Text"].isNull())
+			dBInstanceGroupCountObject.text = valueDBInstanceGroupCountDBInstanceGroupCountItem["Text"].asString();
 		dBInstanceGroupCount_.push_back(dBInstanceGroupCountObject);
-	}
-	auto allStorageNoticeNode = value["StorageNotice"]["StorageNoticeItem"];
-	for (auto valueStorageNoticeStorageNoticeItem : allStorageNoticeNode)
-	{
-		StorageNoticeItem storageNoticeObject;
-		if(!valueStorageNoticeStorageNoticeItem["Text"].isNull())
-			storageNoticeObject.text = valueStorageNoticeStorageNoticeItem["Text"].asString();
-		if(!valueStorageNoticeStorageNoticeItem["Value"].isNull())
-			storageNoticeObject.value = valueStorageNoticeStorageNoticeItem["Value"].asString();
-		storageNotice_.push_back(storageNoticeObject);
 	}
 
 }

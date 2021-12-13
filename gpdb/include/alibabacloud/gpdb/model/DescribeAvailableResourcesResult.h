@@ -38,12 +38,27 @@ namespace AlibabaCloud
 					{
 						struct SupportedInstanceClass
 						{
+							struct NodeCount
+							{
+								std::string step;
+								std::string maxCount;
+								std::string minCount;
+							};
+							struct StorageSize
+							{
+								std::string step;
+								std::string maxCount;
+								std::string minCount;
+							};
 							std::string displayClass;
 							std::string description;
-							std::vector<std::string> nodeCount;
+							std::string storageType;
+							NodeCount nodeCount;
+							StorageSize storageSize;
 							std::string instanceClass;
 						};
 						std::vector<SupportedEngine::SupportedInstanceClass> supportedInstanceClasses;
+						std::string mode;
 						std::string supportedEngineVersion;
 					};
 					std::string zoneId;

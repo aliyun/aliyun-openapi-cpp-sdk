@@ -43,58 +43,72 @@ void DescribeDBInstancesResult::parse(const std::string &payload)
 	for (auto valueItemsDBInstance : allItemsNode)
 	{
 		DBInstance itemsObject;
-		if(!valueItemsDBInstance["DBInstanceId"].isNull())
-			itemsObject.dBInstanceId = valueItemsDBInstance["DBInstanceId"].asString();
-		if(!valueItemsDBInstance["DBInstanceDescription"].isNull())
-			itemsObject.dBInstanceDescription = valueItemsDBInstance["DBInstanceDescription"].asString();
-		if(!valueItemsDBInstance["PayType"].isNull())
-			itemsObject.payType = valueItemsDBInstance["PayType"].asString();
-		if(!valueItemsDBInstance["InstanceNetworkType"].isNull())
-			itemsObject.instanceNetworkType = valueItemsDBInstance["InstanceNetworkType"].asString();
-		if(!valueItemsDBInstance["ConnectionMode"].isNull())
-			itemsObject.connectionMode = valueItemsDBInstance["ConnectionMode"].asString();
-		if(!valueItemsDBInstance["RegionId"].isNull())
-			itemsObject.regionId = valueItemsDBInstance["RegionId"].asString();
-		if(!valueItemsDBInstance["ZoneId"].isNull())
-			itemsObject.zoneId = valueItemsDBInstance["ZoneId"].asString();
-		if(!valueItemsDBInstance["ExpireTime"].isNull())
-			itemsObject.expireTime = valueItemsDBInstance["ExpireTime"].asString();
-		if(!valueItemsDBInstance["DBInstanceStatus"].isNull())
-			itemsObject.dBInstanceStatus = valueItemsDBInstance["DBInstanceStatus"].asString();
-		if(!valueItemsDBInstance["Engine"].isNull())
-			itemsObject.engine = valueItemsDBInstance["Engine"].asString();
-		if(!valueItemsDBInstance["EngineVersion"].isNull())
-			itemsObject.engineVersion = valueItemsDBInstance["EngineVersion"].asString();
-		if(!valueItemsDBInstance["DBInstanceNetType"].isNull())
-			itemsObject.dBInstanceNetType = valueItemsDBInstance["DBInstanceNetType"].asString();
-		if(!valueItemsDBInstance["LockMode"].isNull())
-			itemsObject.lockMode = valueItemsDBInstance["LockMode"].asString();
-		if(!valueItemsDBInstance["LockReason"].isNull())
-			itemsObject.lockReason = valueItemsDBInstance["LockReason"].asString();
-		if(!valueItemsDBInstance["CreateTime"].isNull())
-			itemsObject.createTime = valueItemsDBInstance["CreateTime"].asString();
 		if(!valueItemsDBInstance["VpcId"].isNull())
 			itemsObject.vpcId = valueItemsDBInstance["VpcId"].asString();
+		if(!valueItemsDBInstance["ExpireTime"].isNull())
+			itemsObject.expireTime = valueItemsDBInstance["ExpireTime"].asString();
+		if(!valueItemsDBInstance["DBInstanceNetType"].isNull())
+			itemsObject.dBInstanceNetType = valueItemsDBInstance["DBInstanceNetType"].asString();
+		if(!valueItemsDBInstance["InstanceDeployType"].isNull())
+			itemsObject.instanceDeployType = valueItemsDBInstance["InstanceDeployType"].asString();
+		if(!valueItemsDBInstance["StorageType"].isNull())
+			itemsObject.storageType = valueItemsDBInstance["StorageType"].asString();
+		if(!valueItemsDBInstance["CreateTime"].isNull())
+			itemsObject.createTime = valueItemsDBInstance["CreateTime"].asString();
+		if(!valueItemsDBInstance["PayType"].isNull())
+			itemsObject.payType = valueItemsDBInstance["PayType"].asString();
+		if(!valueItemsDBInstance["LockReason"].isNull())
+			itemsObject.lockReason = valueItemsDBInstance["LockReason"].asString();
+		if(!valueItemsDBInstance["DBInstanceStatus"].isNull())
+			itemsObject.dBInstanceStatus = valueItemsDBInstance["DBInstanceStatus"].asString();
+		if(!valueItemsDBInstance["ConnectionMode"].isNull())
+			itemsObject.connectionMode = valueItemsDBInstance["ConnectionMode"].asString();
+		if(!valueItemsDBInstance["LockMode"].isNull())
+			itemsObject.lockMode = valueItemsDBInstance["LockMode"].asString();
+		if(!valueItemsDBInstance["EngineVersion"].isNull())
+			itemsObject.engineVersion = valueItemsDBInstance["EngineVersion"].asString();
+		if(!valueItemsDBInstance["RegionId"].isNull())
+			itemsObject.regionId = valueItemsDBInstance["RegionId"].asString();
 		if(!valueItemsDBInstance["VSwitchId"].isNull())
 			itemsObject.vSwitchId = valueItemsDBInstance["VSwitchId"].asString();
-		auto allTagsNode = allItemsNode["Tags"]["Tag"];
-		for (auto allItemsNodeTagsTag : allTagsNode)
+		if(!valueItemsDBInstance["InstanceNetworkType"].isNull())
+			itemsObject.instanceNetworkType = valueItemsDBInstance["InstanceNetworkType"].asString();
+		if(!valueItemsDBInstance["ZoneId"].isNull())
+			itemsObject.zoneId = valueItemsDBInstance["ZoneId"].asString();
+		if(!valueItemsDBInstance["DBInstanceId"].isNull())
+			itemsObject.dBInstanceId = valueItemsDBInstance["DBInstanceId"].asString();
+		if(!valueItemsDBInstance["Engine"].isNull())
+			itemsObject.engine = valueItemsDBInstance["Engine"].asString();
+		if(!valueItemsDBInstance["DBInstanceDescription"].isNull())
+			itemsObject.dBInstanceDescription = valueItemsDBInstance["DBInstanceDescription"].asString();
+		if(!valueItemsDBInstance["SegNodeNum"].isNull())
+			itemsObject.segNodeNum = valueItemsDBInstance["SegNodeNum"].asString();
+		if(!valueItemsDBInstance["StorageSize"].isNull())
+			itemsObject.storageSize = valueItemsDBInstance["StorageSize"].asString();
+		if(!valueItemsDBInstance["MasterNodeNum"].isNull())
+			itemsObject.masterNodeNum = std::stoi(valueItemsDBInstance["MasterNodeNum"].asString());
+		if(!valueItemsDBInstance["DBInstanceCategory"].isNull())
+			itemsObject.dBInstanceCategory = valueItemsDBInstance["DBInstanceCategory"].asString();
+		if(!valueItemsDBInstance["DBInstanceMode"].isNull())
+			itemsObject.dBInstanceMode = valueItemsDBInstance["DBInstanceMode"].asString();
+		auto allTagsNode = valueItemsDBInstance["Tags"]["Tag"];
+		for (auto valueItemsDBInstanceTagsTag : allTagsNode)
 		{
 			DBInstance::Tag tagsObject;
-			if(!allItemsNodeTagsTag["Key"].isNull())
-				tagsObject.key = allItemsNodeTagsTag["Key"].asString();
-			if(!allItemsNodeTagsTag["Value"].isNull())
-				tagsObject.value = allItemsNodeTagsTag["Value"].asString();
+			if(!valueItemsDBInstanceTagsTag["Key"].isNull())
+				tagsObject.key = valueItemsDBInstanceTagsTag["Key"].asString();
+			if(!valueItemsDBInstanceTagsTag["Value"].isNull())
+				tagsObject.value = valueItemsDBInstanceTagsTag["Value"].asString();
 			itemsObject.tags.push_back(tagsObject);
 		}
 		items_.push_back(itemsObject);
 	}
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["TotalRecordCount"].isNull())
 		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
 	if(!value["PageRecordCount"].isNull())
 		pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
 
 }
 

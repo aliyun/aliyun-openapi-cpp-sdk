@@ -39,12 +39,12 @@ void UpgradeDBVersionResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["TaskId"].isNull())
+		taskId_ = value["TaskId"].asString();
 	if(!value["DBInstanceId"].isNull())
 		dBInstanceId_ = value["DBInstanceId"].asString();
 	if(!value["DBInstanceName"].isNull())
 		dBInstanceName_ = value["DBInstanceName"].asString();
-	if(!value["TaskId"].isNull())
-		taskId_ = value["TaskId"].asString();
 
 }
 

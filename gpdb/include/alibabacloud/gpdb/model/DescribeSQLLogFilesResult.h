@@ -34,8 +34,8 @@ namespace AlibabaCloud
 			public:
 				struct LogFile
 				{
-					std::string logStatus;
 					std::string logStartTime;
+					std::string logStatus;
 					std::string logSize;
 					std::string logDownloadURL;
 					std::string fileID;

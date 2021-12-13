@@ -45,10 +45,10 @@ void DescribeDBInstanceIPArrayListResult::parse(const std::string &payload)
 		DBInstanceIPArray itemsObject;
 		if(!valueItemsDBInstanceIPArray["DBInstanceIPArrayName"].isNull())
 			itemsObject.dBInstanceIPArrayName = valueItemsDBInstanceIPArray["DBInstanceIPArrayName"].asString();
-		if(!valueItemsDBInstanceIPArray["DBInstanceIPArrayAttribute"].isNull())
-			itemsObject.dBInstanceIPArrayAttribute = valueItemsDBInstanceIPArray["DBInstanceIPArrayAttribute"].asString();
 		if(!valueItemsDBInstanceIPArray["SecurityIPList"].isNull())
 			itemsObject.securityIPList = valueItemsDBInstanceIPArray["SecurityIPList"].asString();
+		if(!valueItemsDBInstanceIPArray["DBInstanceIPArrayAttribute"].isNull())
+			itemsObject.dBInstanceIPArrayAttribute = valueItemsDBInstanceIPArray["DBInstanceIPArrayAttribute"].asString();
 		items_.push_back(itemsObject);
 	}
 
