@@ -39,20 +39,6 @@ void ModifyProtectionRuleCacheStatusResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["TaskStatus"].isNull())
-		taskStatus_ = std::stoi(value["TaskStatus"].asString());
-	if(!value["WafTaskId"].isNull())
-		wafTaskId_ = std::stoi(value["WafTaskId"].asString());
 
-}
-
-int ModifyProtectionRuleCacheStatusResult::getTaskStatus()const
-{
-	return taskStatus_;
-}
-
-int ModifyProtectionRuleCacheStatusResult::getWafTaskId()const
-{
-	return wafTaskId_;
 }
 

@@ -19,7 +19,7 @@
 using AlibabaCloud::Waf_openapi::Model::ModifyProtectionRuleCacheStatusRequest;
 
 ModifyProtectionRuleCacheStatusRequest::ModifyProtectionRuleCacheStatusRequest() :
-	RpcServiceRequest("waf-openapi", "2018-01-17", "ModifyProtectionRuleCacheStatus")
+	RpcServiceRequest("waf-openapi", "2019-09-10", "ModifyProtectionRuleCacheStatus")
 {
 	setMethod(HttpRequest::Method::Post);
 }
@@ -27,48 +27,15 @@ ModifyProtectionRuleCacheStatusRequest::ModifyProtectionRuleCacheStatusRequest()
 ModifyProtectionRuleCacheStatusRequest::~ModifyProtectionRuleCacheStatusRequest()
 {}
 
-std::string ModifyProtectionRuleCacheStatusRequest::getSourceIp()const
+std::string ModifyProtectionRuleCacheStatusRequest::getDefenseType()const
 {
-	return sourceIp_;
+	return defenseType_;
 }
 
-void ModifyProtectionRuleCacheStatusRequest::setSourceIp(const std::string& sourceIp)
+void ModifyProtectionRuleCacheStatusRequest::setDefenseType(const std::string& defenseType)
 {
-	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
-}
-
-std::string ModifyProtectionRuleCacheStatusRequest::getDefense()const
-{
-	return defense_;
-}
-
-void ModifyProtectionRuleCacheStatusRequest::setDefense(const std::string& defense)
-{
-	defense_ = defense;
-	setParameter("Defense", defense);
-}
-
-long ModifyProtectionRuleCacheStatusRequest::getId()const
-{
-	return id_;
-}
-
-void ModifyProtectionRuleCacheStatusRequest::setId(long id)
-{
-	id_ = id;
-	setParameter("Id", std::to_string(id));
-}
-
-std::string ModifyProtectionRuleCacheStatusRequest::getLang()const
-{
-	return lang_;
-}
-
-void ModifyProtectionRuleCacheStatusRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setParameter("Lang", lang);
+	defenseType_ = defenseType;
+	setParameter("DefenseType", defenseType);
 }
 
 std::string ModifyProtectionRuleCacheStatusRequest::getInstanceId()const
@@ -82,6 +49,17 @@ void ModifyProtectionRuleCacheStatusRequest::setInstanceId(const std::string& in
 	setParameter("InstanceId", instanceId);
 }
 
+std::string ModifyProtectionRuleCacheStatusRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void ModifyProtectionRuleCacheStatusRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setParameter("SourceIp", sourceIp);
+}
+
 std::string ModifyProtectionRuleCacheStatusRequest::getDomain()const
 {
 	return domain_;
@@ -93,14 +71,25 @@ void ModifyProtectionRuleCacheStatusRequest::setDomain(const std::string& domain
 	setParameter("Domain", domain);
 }
 
-std::string ModifyProtectionRuleCacheStatusRequest::getRegion()const
+std::string ModifyProtectionRuleCacheStatusRequest::getLang()const
 {
-	return region_;
+	return lang_;
 }
 
-void ModifyProtectionRuleCacheStatusRequest::setRegion(const std::string& region)
+void ModifyProtectionRuleCacheStatusRequest::setLang(const std::string& lang)
 {
-	region_ = region;
-	setParameter("Region", region);
+	lang_ = lang;
+	setParameter("Lang", lang);
+}
+
+long ModifyProtectionRuleCacheStatusRequest::getRuleId()const
+{
+	return ruleId_;
+}
+
+void ModifyProtectionRuleCacheStatusRequest::setRuleId(long ruleId)
+{
+	ruleId_ = ruleId;
+	setParameter("RuleId", std::to_string(ruleId));
 }
 

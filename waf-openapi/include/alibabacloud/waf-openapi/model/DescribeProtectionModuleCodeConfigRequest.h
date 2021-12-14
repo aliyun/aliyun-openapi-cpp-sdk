@@ -35,26 +35,26 @@ namespace AlibabaCloud
 				DescribeProtectionModuleCodeConfigRequest();
 				~DescribeProtectionModuleCodeConfigRequest();
 
-				int getCodeValue()const;
-				void setCodeValue(int codeValue);
 				std::string getResourceGroupId()const;
 				void setResourceGroupId(const std::string& resourceGroupId);
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
-				int getCodeType()const;
-				void setCodeType(int codeType);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
+				int getCodeValue()const;
+				void setCodeValue(int codeValue);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
+				int getCodeType()const;
+				void setCodeType(int codeType);
 
             private:
-				int codeValue_;
 				std::string resourceGroupId_;
-				std::string instanceId_;
 				std::string sourceIp_;
-				int codeType_;
 				std::string lang_;
+				int codeValue_;
+				std::string instanceId_;
+				int codeType_;
 
 			};
 		}

@@ -19,7 +19,7 @@
 using AlibabaCloud::Waf_openapi::Model::ModifyProtectionRuleStatusRequest;
 
 ModifyProtectionRuleStatusRequest::ModifyProtectionRuleStatusRequest() :
-	RpcServiceRequest("waf-openapi", "2018-01-17", "ModifyProtectionRuleStatus")
+	RpcServiceRequest("waf-openapi", "2019-09-10", "ModifyProtectionRuleStatus")
 {
 	setMethod(HttpRequest::Method::Post);
 }
@@ -49,28 +49,6 @@ void ModifyProtectionRuleStatusRequest::setSourceIp(const std::string& sourceIp)
 	setParameter("SourceIp", sourceIp);
 }
 
-std::string ModifyProtectionRuleStatusRequest::getDefense()const
-{
-	return defense_;
-}
-
-void ModifyProtectionRuleStatusRequest::setDefense(const std::string& defense)
-{
-	defense_ = defense;
-	setParameter("Defense", defense);
-}
-
-long ModifyProtectionRuleStatusRequest::getId()const
-{
-	return id_;
-}
-
-void ModifyProtectionRuleStatusRequest::setId(long id)
-{
-	id_ = id;
-	setParameter("Id", std::to_string(id));
-}
-
 std::string ModifyProtectionRuleStatusRequest::getLang()const
 {
 	return lang_;
@@ -80,6 +58,17 @@ void ModifyProtectionRuleStatusRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setParameter("Lang", lang);
+}
+
+std::string ModifyProtectionRuleStatusRequest::getDefenseType()const
+{
+	return defenseType_;
+}
+
+void ModifyProtectionRuleStatusRequest::setDefenseType(const std::string& defenseType)
+{
+	defenseType_ = defenseType;
+	setParameter("DefenseType", defenseType);
 }
 
 int ModifyProtectionRuleStatusRequest::getRuleStatus()const
@@ -115,14 +104,14 @@ void ModifyProtectionRuleStatusRequest::setDomain(const std::string& domain)
 	setParameter("Domain", domain);
 }
 
-std::string ModifyProtectionRuleStatusRequest::getRegion()const
+long ModifyProtectionRuleStatusRequest::getRuleId()const
 {
-	return region_;
+	return ruleId_;
 }
 
-void ModifyProtectionRuleStatusRequest::setRegion(const std::string& region)
+void ModifyProtectionRuleStatusRequest::setRuleId(long ruleId)
 {
-	region_ = region;
-	setParameter("Region", region);
+	ruleId_ = ruleId;
+	setParameter("RuleId", std::to_string(ruleId));
 }
 

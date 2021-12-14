@@ -22,34 +22,20 @@
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RpcServiceClient.h>
 #include "Waf_openapiExport.h"
-#include "model/CreateAclRuleRequest.h"
-#include "model/CreateAclRuleResult.h"
-#include "model/CreateCertAndKeyRequest.h"
-#include "model/CreateCertAndKeyResult.h"
 #include "model/CreateCertificateRequest.h"
 #include "model/CreateCertificateResult.h"
 #include "model/CreateCertificateByCertificateIdRequest.h"
 #include "model/CreateCertificateByCertificateIdResult.h"
 #include "model/CreateDomainRequest.h"
 #include "model/CreateDomainResult.h"
-#include "model/CreateDomainConfigRequest.h"
-#include "model/CreateDomainConfigResult.h"
 #include "model/CreateProtectionModuleRuleRequest.h"
 #include "model/CreateProtectionModuleRuleResult.h"
-#include "model/DeleteAclRuleRequest.h"
-#include "model/DeleteAclRuleResult.h"
 #include "model/DeleteDomainRequest.h"
 #include "model/DeleteDomainResult.h"
-#include "model/DeleteDomainConfigRequest.h"
-#include "model/DeleteDomainConfigResult.h"
 #include "model/DeleteInstanceRequest.h"
 #include "model/DeleteInstanceResult.h"
 #include "model/DeleteProtectionModuleRuleRequest.h"
 #include "model/DeleteProtectionModuleRuleResult.h"
-#include "model/DescribeAclRulesRequest.h"
-#include "model/DescribeAclRulesResult.h"
-#include "model/DescribeAsyncTaskStatusRequest.h"
-#include "model/DescribeAsyncTaskStatusResult.h"
 #include "model/DescribeCertMatchStatusRequest.h"
 #include "model/DescribeCertMatchStatusResult.h"
 #include "model/DescribeCertificatesRequest.h"
@@ -60,10 +46,6 @@
 #include "model/DescribeDomainAdvanceConfigsResult.h"
 #include "model/DescribeDomainBasicConfigsRequest.h"
 #include "model/DescribeDomainBasicConfigsResult.h"
-#include "model/DescribeDomainConfigRequest.h"
-#include "model/DescribeDomainConfigResult.h"
-#include "model/DescribeDomainConfigStatusRequest.h"
-#include "model/DescribeDomainConfigStatusResult.h"
 #include "model/DescribeDomainListRequest.h"
 #include "model/DescribeDomainListResult.h"
 #include "model/DescribeDomainNamesRequest.h"
@@ -72,32 +54,20 @@
 #include "model/DescribeDomainRuleGroupResult.h"
 #include "model/DescribeInstanceInfoRequest.h"
 #include "model/DescribeInstanceInfoResult.h"
-#include "model/DescribeInstanceInfosRequest.h"
-#include "model/DescribeInstanceInfosResult.h"
 #include "model/DescribeInstanceSpecInfoRequest.h"
 #include "model/DescribeInstanceSpecInfoResult.h"
 #include "model/DescribeLogServiceStatusRequest.h"
 #include "model/DescribeLogServiceStatusResult.h"
-#include "model/DescribePayInfoRequest.h"
-#include "model/DescribePayInfoResult.h"
 #include "model/DescribeProtectionModuleCodeConfigRequest.h"
 #include "model/DescribeProtectionModuleCodeConfigResult.h"
-#include "model/DescribeProtectionModuleModeRequest.h"
-#include "model/DescribeProtectionModuleModeResult.h"
 #include "model/DescribeProtectionModuleRulesRequest.h"
 #include "model/DescribeProtectionModuleRulesResult.h"
 #include "model/DescribeProtectionModuleStatusRequest.h"
 #include "model/DescribeProtectionModuleStatusResult.h"
-#include "model/DescribeRegionsRequest.h"
-#include "model/DescribeRegionsResult.h"
 #include "model/DescribeWafSourceIpSegmentRequest.h"
 #include "model/DescribeWafSourceIpSegmentResult.h"
-#include "model/ModifyAclRuleRequest.h"
-#include "model/ModifyAclRuleResult.h"
 #include "model/ModifyDomainRequest.h"
 #include "model/ModifyDomainResult.h"
-#include "model/ModifyDomainConfigRequest.h"
-#include "model/ModifyDomainConfigResult.h"
 #include "model/ModifyDomainIpv6StatusRequest.h"
 #include "model/ModifyDomainIpv6StatusResult.h"
 #include "model/ModifyLogRetrievalStatusRequest.h"
@@ -114,8 +84,6 @@
 #include "model/ModifyProtectionRuleCacheStatusResult.h"
 #include "model/ModifyProtectionRuleStatusRequest.h"
 #include "model/ModifyProtectionRuleStatusResult.h"
-#include "model/ModifyWafSwitchRequest.h"
-#include "model/ModifyWafSwitchResult.h"
 #include "model/MoveResourceGroupRequest.h"
 #include "model/MoveResourceGroupResult.h"
 #include "model/SetDomainRuleGroupRequest.h"
@@ -129,12 +97,6 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_WAF_OPENAPI_EXPORT Waf_openapiClient : public RpcServiceClient
 		{
 		public:
-			typedef Outcome<Error, Model::CreateAclRuleResult> CreateAclRuleOutcome;
-			typedef std::future<CreateAclRuleOutcome> CreateAclRuleOutcomeCallable;
-			typedef std::function<void(const Waf_openapiClient*, const Model::CreateAclRuleRequest&, const CreateAclRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateAclRuleAsyncHandler;
-			typedef Outcome<Error, Model::CreateCertAndKeyResult> CreateCertAndKeyOutcome;
-			typedef std::future<CreateCertAndKeyOutcome> CreateCertAndKeyOutcomeCallable;
-			typedef std::function<void(const Waf_openapiClient*, const Model::CreateCertAndKeyRequest&, const CreateCertAndKeyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateCertAndKeyAsyncHandler;
 			typedef Outcome<Error, Model::CreateCertificateResult> CreateCertificateOutcome;
 			typedef std::future<CreateCertificateOutcome> CreateCertificateOutcomeCallable;
 			typedef std::function<void(const Waf_openapiClient*, const Model::CreateCertificateRequest&, const CreateCertificateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateCertificateAsyncHandler;
@@ -144,33 +106,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateDomainResult> CreateDomainOutcome;
 			typedef std::future<CreateDomainOutcome> CreateDomainOutcomeCallable;
 			typedef std::function<void(const Waf_openapiClient*, const Model::CreateDomainRequest&, const CreateDomainOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDomainAsyncHandler;
-			typedef Outcome<Error, Model::CreateDomainConfigResult> CreateDomainConfigOutcome;
-			typedef std::future<CreateDomainConfigOutcome> CreateDomainConfigOutcomeCallable;
-			typedef std::function<void(const Waf_openapiClient*, const Model::CreateDomainConfigRequest&, const CreateDomainConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDomainConfigAsyncHandler;
 			typedef Outcome<Error, Model::CreateProtectionModuleRuleResult> CreateProtectionModuleRuleOutcome;
 			typedef std::future<CreateProtectionModuleRuleOutcome> CreateProtectionModuleRuleOutcomeCallable;
 			typedef std::function<void(const Waf_openapiClient*, const Model::CreateProtectionModuleRuleRequest&, const CreateProtectionModuleRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateProtectionModuleRuleAsyncHandler;
-			typedef Outcome<Error, Model::DeleteAclRuleResult> DeleteAclRuleOutcome;
-			typedef std::future<DeleteAclRuleOutcome> DeleteAclRuleOutcomeCallable;
-			typedef std::function<void(const Waf_openapiClient*, const Model::DeleteAclRuleRequest&, const DeleteAclRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAclRuleAsyncHandler;
 			typedef Outcome<Error, Model::DeleteDomainResult> DeleteDomainOutcome;
 			typedef std::future<DeleteDomainOutcome> DeleteDomainOutcomeCallable;
 			typedef std::function<void(const Waf_openapiClient*, const Model::DeleteDomainRequest&, const DeleteDomainOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDomainAsyncHandler;
-			typedef Outcome<Error, Model::DeleteDomainConfigResult> DeleteDomainConfigOutcome;
-			typedef std::future<DeleteDomainConfigOutcome> DeleteDomainConfigOutcomeCallable;
-			typedef std::function<void(const Waf_openapiClient*, const Model::DeleteDomainConfigRequest&, const DeleteDomainConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDomainConfigAsyncHandler;
 			typedef Outcome<Error, Model::DeleteInstanceResult> DeleteInstanceOutcome;
 			typedef std::future<DeleteInstanceOutcome> DeleteInstanceOutcomeCallable;
 			typedef std::function<void(const Waf_openapiClient*, const Model::DeleteInstanceRequest&, const DeleteInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteInstanceAsyncHandler;
 			typedef Outcome<Error, Model::DeleteProtectionModuleRuleResult> DeleteProtectionModuleRuleOutcome;
 			typedef std::future<DeleteProtectionModuleRuleOutcome> DeleteProtectionModuleRuleOutcomeCallable;
 			typedef std::function<void(const Waf_openapiClient*, const Model::DeleteProtectionModuleRuleRequest&, const DeleteProtectionModuleRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteProtectionModuleRuleAsyncHandler;
-			typedef Outcome<Error, Model::DescribeAclRulesResult> DescribeAclRulesOutcome;
-			typedef std::future<DescribeAclRulesOutcome> DescribeAclRulesOutcomeCallable;
-			typedef std::function<void(const Waf_openapiClient*, const Model::DescribeAclRulesRequest&, const DescribeAclRulesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAclRulesAsyncHandler;
-			typedef Outcome<Error, Model::DescribeAsyncTaskStatusResult> DescribeAsyncTaskStatusOutcome;
-			typedef std::future<DescribeAsyncTaskStatusOutcome> DescribeAsyncTaskStatusOutcomeCallable;
-			typedef std::function<void(const Waf_openapiClient*, const Model::DescribeAsyncTaskStatusRequest&, const DescribeAsyncTaskStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAsyncTaskStatusAsyncHandler;
 			typedef Outcome<Error, Model::DescribeCertMatchStatusResult> DescribeCertMatchStatusOutcome;
 			typedef std::future<DescribeCertMatchStatusOutcome> DescribeCertMatchStatusOutcomeCallable;
 			typedef std::function<void(const Waf_openapiClient*, const Model::DescribeCertMatchStatusRequest&, const DescribeCertMatchStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCertMatchStatusAsyncHandler;
@@ -186,12 +133,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeDomainBasicConfigsResult> DescribeDomainBasicConfigsOutcome;
 			typedef std::future<DescribeDomainBasicConfigsOutcome> DescribeDomainBasicConfigsOutcomeCallable;
 			typedef std::function<void(const Waf_openapiClient*, const Model::DescribeDomainBasicConfigsRequest&, const DescribeDomainBasicConfigsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainBasicConfigsAsyncHandler;
-			typedef Outcome<Error, Model::DescribeDomainConfigResult> DescribeDomainConfigOutcome;
-			typedef std::future<DescribeDomainConfigOutcome> DescribeDomainConfigOutcomeCallable;
-			typedef std::function<void(const Waf_openapiClient*, const Model::DescribeDomainConfigRequest&, const DescribeDomainConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainConfigAsyncHandler;
-			typedef Outcome<Error, Model::DescribeDomainConfigStatusResult> DescribeDomainConfigStatusOutcome;
-			typedef std::future<DescribeDomainConfigStatusOutcome> DescribeDomainConfigStatusOutcomeCallable;
-			typedef std::function<void(const Waf_openapiClient*, const Model::DescribeDomainConfigStatusRequest&, const DescribeDomainConfigStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainConfigStatusAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDomainListResult> DescribeDomainListOutcome;
 			typedef std::future<DescribeDomainListOutcome> DescribeDomainListOutcomeCallable;
 			typedef std::function<void(const Waf_openapiClient*, const Model::DescribeDomainListRequest&, const DescribeDomainListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainListAsyncHandler;
@@ -204,45 +145,27 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeInstanceInfoResult> DescribeInstanceInfoOutcome;
 			typedef std::future<DescribeInstanceInfoOutcome> DescribeInstanceInfoOutcomeCallable;
 			typedef std::function<void(const Waf_openapiClient*, const Model::DescribeInstanceInfoRequest&, const DescribeInstanceInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceInfoAsyncHandler;
-			typedef Outcome<Error, Model::DescribeInstanceInfosResult> DescribeInstanceInfosOutcome;
-			typedef std::future<DescribeInstanceInfosOutcome> DescribeInstanceInfosOutcomeCallable;
-			typedef std::function<void(const Waf_openapiClient*, const Model::DescribeInstanceInfosRequest&, const DescribeInstanceInfosOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceInfosAsyncHandler;
 			typedef Outcome<Error, Model::DescribeInstanceSpecInfoResult> DescribeInstanceSpecInfoOutcome;
 			typedef std::future<DescribeInstanceSpecInfoOutcome> DescribeInstanceSpecInfoOutcomeCallable;
 			typedef std::function<void(const Waf_openapiClient*, const Model::DescribeInstanceSpecInfoRequest&, const DescribeInstanceSpecInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceSpecInfoAsyncHandler;
 			typedef Outcome<Error, Model::DescribeLogServiceStatusResult> DescribeLogServiceStatusOutcome;
 			typedef std::future<DescribeLogServiceStatusOutcome> DescribeLogServiceStatusOutcomeCallable;
 			typedef std::function<void(const Waf_openapiClient*, const Model::DescribeLogServiceStatusRequest&, const DescribeLogServiceStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogServiceStatusAsyncHandler;
-			typedef Outcome<Error, Model::DescribePayInfoResult> DescribePayInfoOutcome;
-			typedef std::future<DescribePayInfoOutcome> DescribePayInfoOutcomeCallable;
-			typedef std::function<void(const Waf_openapiClient*, const Model::DescribePayInfoRequest&, const DescribePayInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePayInfoAsyncHandler;
 			typedef Outcome<Error, Model::DescribeProtectionModuleCodeConfigResult> DescribeProtectionModuleCodeConfigOutcome;
 			typedef std::future<DescribeProtectionModuleCodeConfigOutcome> DescribeProtectionModuleCodeConfigOutcomeCallable;
 			typedef std::function<void(const Waf_openapiClient*, const Model::DescribeProtectionModuleCodeConfigRequest&, const DescribeProtectionModuleCodeConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProtectionModuleCodeConfigAsyncHandler;
-			typedef Outcome<Error, Model::DescribeProtectionModuleModeResult> DescribeProtectionModuleModeOutcome;
-			typedef std::future<DescribeProtectionModuleModeOutcome> DescribeProtectionModuleModeOutcomeCallable;
-			typedef std::function<void(const Waf_openapiClient*, const Model::DescribeProtectionModuleModeRequest&, const DescribeProtectionModuleModeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProtectionModuleModeAsyncHandler;
 			typedef Outcome<Error, Model::DescribeProtectionModuleRulesResult> DescribeProtectionModuleRulesOutcome;
 			typedef std::future<DescribeProtectionModuleRulesOutcome> DescribeProtectionModuleRulesOutcomeCallable;
 			typedef std::function<void(const Waf_openapiClient*, const Model::DescribeProtectionModuleRulesRequest&, const DescribeProtectionModuleRulesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProtectionModuleRulesAsyncHandler;
 			typedef Outcome<Error, Model::DescribeProtectionModuleStatusResult> DescribeProtectionModuleStatusOutcome;
 			typedef std::future<DescribeProtectionModuleStatusOutcome> DescribeProtectionModuleStatusOutcomeCallable;
 			typedef std::function<void(const Waf_openapiClient*, const Model::DescribeProtectionModuleStatusRequest&, const DescribeProtectionModuleStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProtectionModuleStatusAsyncHandler;
-			typedef Outcome<Error, Model::DescribeRegionsResult> DescribeRegionsOutcome;
-			typedef std::future<DescribeRegionsOutcome> DescribeRegionsOutcomeCallable;
-			typedef std::function<void(const Waf_openapiClient*, const Model::DescribeRegionsRequest&, const DescribeRegionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRegionsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeWafSourceIpSegmentResult> DescribeWafSourceIpSegmentOutcome;
 			typedef std::future<DescribeWafSourceIpSegmentOutcome> DescribeWafSourceIpSegmentOutcomeCallable;
 			typedef std::function<void(const Waf_openapiClient*, const Model::DescribeWafSourceIpSegmentRequest&, const DescribeWafSourceIpSegmentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWafSourceIpSegmentAsyncHandler;
-			typedef Outcome<Error, Model::ModifyAclRuleResult> ModifyAclRuleOutcome;
-			typedef std::future<ModifyAclRuleOutcome> ModifyAclRuleOutcomeCallable;
-			typedef std::function<void(const Waf_openapiClient*, const Model::ModifyAclRuleRequest&, const ModifyAclRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAclRuleAsyncHandler;
 			typedef Outcome<Error, Model::ModifyDomainResult> ModifyDomainOutcome;
 			typedef std::future<ModifyDomainOutcome> ModifyDomainOutcomeCallable;
 			typedef std::function<void(const Waf_openapiClient*, const Model::ModifyDomainRequest&, const ModifyDomainOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDomainAsyncHandler;
-			typedef Outcome<Error, Model::ModifyDomainConfigResult> ModifyDomainConfigOutcome;
-			typedef std::future<ModifyDomainConfigOutcome> ModifyDomainConfigOutcomeCallable;
-			typedef std::function<void(const Waf_openapiClient*, const Model::ModifyDomainConfigRequest&, const ModifyDomainConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDomainConfigAsyncHandler;
 			typedef Outcome<Error, Model::ModifyDomainIpv6StatusResult> ModifyDomainIpv6StatusOutcome;
 			typedef std::future<ModifyDomainIpv6StatusOutcome> ModifyDomainIpv6StatusOutcomeCallable;
 			typedef std::function<void(const Waf_openapiClient*, const Model::ModifyDomainIpv6StatusRequest&, const ModifyDomainIpv6StatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDomainIpv6StatusAsyncHandler;
@@ -267,9 +190,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyProtectionRuleStatusResult> ModifyProtectionRuleStatusOutcome;
 			typedef std::future<ModifyProtectionRuleStatusOutcome> ModifyProtectionRuleStatusOutcomeCallable;
 			typedef std::function<void(const Waf_openapiClient*, const Model::ModifyProtectionRuleStatusRequest&, const ModifyProtectionRuleStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyProtectionRuleStatusAsyncHandler;
-			typedef Outcome<Error, Model::ModifyWafSwitchResult> ModifyWafSwitchOutcome;
-			typedef std::future<ModifyWafSwitchOutcome> ModifyWafSwitchOutcomeCallable;
-			typedef std::function<void(const Waf_openapiClient*, const Model::ModifyWafSwitchRequest&, const ModifyWafSwitchOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyWafSwitchAsyncHandler;
 			typedef Outcome<Error, Model::MoveResourceGroupResult> MoveResourceGroupOutcome;
 			typedef std::future<MoveResourceGroupOutcome> MoveResourceGroupOutcomeCallable;
 			typedef std::function<void(const Waf_openapiClient*, const Model::MoveResourceGroupRequest&, const MoveResourceGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> MoveResourceGroupAsyncHandler;
@@ -281,12 +201,6 @@ namespace AlibabaCloud
 			Waf_openapiClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			Waf_openapiClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~Waf_openapiClient();
-			CreateAclRuleOutcome createAclRule(const Model::CreateAclRuleRequest &request)const;
-			void createAclRuleAsync(const Model::CreateAclRuleRequest& request, const CreateAclRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CreateAclRuleOutcomeCallable createAclRuleCallable(const Model::CreateAclRuleRequest& request) const;
-			CreateCertAndKeyOutcome createCertAndKey(const Model::CreateCertAndKeyRequest &request)const;
-			void createCertAndKeyAsync(const Model::CreateCertAndKeyRequest& request, const CreateCertAndKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CreateCertAndKeyOutcomeCallable createCertAndKeyCallable(const Model::CreateCertAndKeyRequest& request) const;
 			CreateCertificateOutcome createCertificate(const Model::CreateCertificateRequest &request)const;
 			void createCertificateAsync(const Model::CreateCertificateRequest& request, const CreateCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateCertificateOutcomeCallable createCertificateCallable(const Model::CreateCertificateRequest& request) const;
@@ -296,33 +210,18 @@ namespace AlibabaCloud
 			CreateDomainOutcome createDomain(const Model::CreateDomainRequest &request)const;
 			void createDomainAsync(const Model::CreateDomainRequest& request, const CreateDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateDomainOutcomeCallable createDomainCallable(const Model::CreateDomainRequest& request) const;
-			CreateDomainConfigOutcome createDomainConfig(const Model::CreateDomainConfigRequest &request)const;
-			void createDomainConfigAsync(const Model::CreateDomainConfigRequest& request, const CreateDomainConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CreateDomainConfigOutcomeCallable createDomainConfigCallable(const Model::CreateDomainConfigRequest& request) const;
 			CreateProtectionModuleRuleOutcome createProtectionModuleRule(const Model::CreateProtectionModuleRuleRequest &request)const;
 			void createProtectionModuleRuleAsync(const Model::CreateProtectionModuleRuleRequest& request, const CreateProtectionModuleRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateProtectionModuleRuleOutcomeCallable createProtectionModuleRuleCallable(const Model::CreateProtectionModuleRuleRequest& request) const;
-			DeleteAclRuleOutcome deleteAclRule(const Model::DeleteAclRuleRequest &request)const;
-			void deleteAclRuleAsync(const Model::DeleteAclRuleRequest& request, const DeleteAclRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DeleteAclRuleOutcomeCallable deleteAclRuleCallable(const Model::DeleteAclRuleRequest& request) const;
 			DeleteDomainOutcome deleteDomain(const Model::DeleteDomainRequest &request)const;
 			void deleteDomainAsync(const Model::DeleteDomainRequest& request, const DeleteDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteDomainOutcomeCallable deleteDomainCallable(const Model::DeleteDomainRequest& request) const;
-			DeleteDomainConfigOutcome deleteDomainConfig(const Model::DeleteDomainConfigRequest &request)const;
-			void deleteDomainConfigAsync(const Model::DeleteDomainConfigRequest& request, const DeleteDomainConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DeleteDomainConfigOutcomeCallable deleteDomainConfigCallable(const Model::DeleteDomainConfigRequest& request) const;
 			DeleteInstanceOutcome deleteInstance(const Model::DeleteInstanceRequest &request)const;
 			void deleteInstanceAsync(const Model::DeleteInstanceRequest& request, const DeleteInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteInstanceOutcomeCallable deleteInstanceCallable(const Model::DeleteInstanceRequest& request) const;
 			DeleteProtectionModuleRuleOutcome deleteProtectionModuleRule(const Model::DeleteProtectionModuleRuleRequest &request)const;
 			void deleteProtectionModuleRuleAsync(const Model::DeleteProtectionModuleRuleRequest& request, const DeleteProtectionModuleRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteProtectionModuleRuleOutcomeCallable deleteProtectionModuleRuleCallable(const Model::DeleteProtectionModuleRuleRequest& request) const;
-			DescribeAclRulesOutcome describeAclRules(const Model::DescribeAclRulesRequest &request)const;
-			void describeAclRulesAsync(const Model::DescribeAclRulesRequest& request, const DescribeAclRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeAclRulesOutcomeCallable describeAclRulesCallable(const Model::DescribeAclRulesRequest& request) const;
-			DescribeAsyncTaskStatusOutcome describeAsyncTaskStatus(const Model::DescribeAsyncTaskStatusRequest &request)const;
-			void describeAsyncTaskStatusAsync(const Model::DescribeAsyncTaskStatusRequest& request, const DescribeAsyncTaskStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeAsyncTaskStatusOutcomeCallable describeAsyncTaskStatusCallable(const Model::DescribeAsyncTaskStatusRequest& request) const;
 			DescribeCertMatchStatusOutcome describeCertMatchStatus(const Model::DescribeCertMatchStatusRequest &request)const;
 			void describeCertMatchStatusAsync(const Model::DescribeCertMatchStatusRequest& request, const DescribeCertMatchStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeCertMatchStatusOutcomeCallable describeCertMatchStatusCallable(const Model::DescribeCertMatchStatusRequest& request) const;
@@ -338,12 +237,6 @@ namespace AlibabaCloud
 			DescribeDomainBasicConfigsOutcome describeDomainBasicConfigs(const Model::DescribeDomainBasicConfigsRequest &request)const;
 			void describeDomainBasicConfigsAsync(const Model::DescribeDomainBasicConfigsRequest& request, const DescribeDomainBasicConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDomainBasicConfigsOutcomeCallable describeDomainBasicConfigsCallable(const Model::DescribeDomainBasicConfigsRequest& request) const;
-			DescribeDomainConfigOutcome describeDomainConfig(const Model::DescribeDomainConfigRequest &request)const;
-			void describeDomainConfigAsync(const Model::DescribeDomainConfigRequest& request, const DescribeDomainConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeDomainConfigOutcomeCallable describeDomainConfigCallable(const Model::DescribeDomainConfigRequest& request) const;
-			DescribeDomainConfigStatusOutcome describeDomainConfigStatus(const Model::DescribeDomainConfigStatusRequest &request)const;
-			void describeDomainConfigStatusAsync(const Model::DescribeDomainConfigStatusRequest& request, const DescribeDomainConfigStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeDomainConfigStatusOutcomeCallable describeDomainConfigStatusCallable(const Model::DescribeDomainConfigStatusRequest& request) const;
 			DescribeDomainListOutcome describeDomainList(const Model::DescribeDomainListRequest &request)const;
 			void describeDomainListAsync(const Model::DescribeDomainListRequest& request, const DescribeDomainListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDomainListOutcomeCallable describeDomainListCallable(const Model::DescribeDomainListRequest& request) const;
@@ -356,45 +249,27 @@ namespace AlibabaCloud
 			DescribeInstanceInfoOutcome describeInstanceInfo(const Model::DescribeInstanceInfoRequest &request)const;
 			void describeInstanceInfoAsync(const Model::DescribeInstanceInfoRequest& request, const DescribeInstanceInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeInstanceInfoOutcomeCallable describeInstanceInfoCallable(const Model::DescribeInstanceInfoRequest& request) const;
-			DescribeInstanceInfosOutcome describeInstanceInfos(const Model::DescribeInstanceInfosRequest &request)const;
-			void describeInstanceInfosAsync(const Model::DescribeInstanceInfosRequest& request, const DescribeInstanceInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeInstanceInfosOutcomeCallable describeInstanceInfosCallable(const Model::DescribeInstanceInfosRequest& request) const;
 			DescribeInstanceSpecInfoOutcome describeInstanceSpecInfo(const Model::DescribeInstanceSpecInfoRequest &request)const;
 			void describeInstanceSpecInfoAsync(const Model::DescribeInstanceSpecInfoRequest& request, const DescribeInstanceSpecInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeInstanceSpecInfoOutcomeCallable describeInstanceSpecInfoCallable(const Model::DescribeInstanceSpecInfoRequest& request) const;
 			DescribeLogServiceStatusOutcome describeLogServiceStatus(const Model::DescribeLogServiceStatusRequest &request)const;
 			void describeLogServiceStatusAsync(const Model::DescribeLogServiceStatusRequest& request, const DescribeLogServiceStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLogServiceStatusOutcomeCallable describeLogServiceStatusCallable(const Model::DescribeLogServiceStatusRequest& request) const;
-			DescribePayInfoOutcome describePayInfo(const Model::DescribePayInfoRequest &request)const;
-			void describePayInfoAsync(const Model::DescribePayInfoRequest& request, const DescribePayInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribePayInfoOutcomeCallable describePayInfoCallable(const Model::DescribePayInfoRequest& request) const;
 			DescribeProtectionModuleCodeConfigOutcome describeProtectionModuleCodeConfig(const Model::DescribeProtectionModuleCodeConfigRequest &request)const;
 			void describeProtectionModuleCodeConfigAsync(const Model::DescribeProtectionModuleCodeConfigRequest& request, const DescribeProtectionModuleCodeConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeProtectionModuleCodeConfigOutcomeCallable describeProtectionModuleCodeConfigCallable(const Model::DescribeProtectionModuleCodeConfigRequest& request) const;
-			DescribeProtectionModuleModeOutcome describeProtectionModuleMode(const Model::DescribeProtectionModuleModeRequest &request)const;
-			void describeProtectionModuleModeAsync(const Model::DescribeProtectionModuleModeRequest& request, const DescribeProtectionModuleModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeProtectionModuleModeOutcomeCallable describeProtectionModuleModeCallable(const Model::DescribeProtectionModuleModeRequest& request) const;
 			DescribeProtectionModuleRulesOutcome describeProtectionModuleRules(const Model::DescribeProtectionModuleRulesRequest &request)const;
 			void describeProtectionModuleRulesAsync(const Model::DescribeProtectionModuleRulesRequest& request, const DescribeProtectionModuleRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeProtectionModuleRulesOutcomeCallable describeProtectionModuleRulesCallable(const Model::DescribeProtectionModuleRulesRequest& request) const;
 			DescribeProtectionModuleStatusOutcome describeProtectionModuleStatus(const Model::DescribeProtectionModuleStatusRequest &request)const;
 			void describeProtectionModuleStatusAsync(const Model::DescribeProtectionModuleStatusRequest& request, const DescribeProtectionModuleStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeProtectionModuleStatusOutcomeCallable describeProtectionModuleStatusCallable(const Model::DescribeProtectionModuleStatusRequest& request) const;
-			DescribeRegionsOutcome describeRegions(const Model::DescribeRegionsRequest &request)const;
-			void describeRegionsAsync(const Model::DescribeRegionsRequest& request, const DescribeRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeRegionsOutcomeCallable describeRegionsCallable(const Model::DescribeRegionsRequest& request) const;
 			DescribeWafSourceIpSegmentOutcome describeWafSourceIpSegment(const Model::DescribeWafSourceIpSegmentRequest &request)const;
 			void describeWafSourceIpSegmentAsync(const Model::DescribeWafSourceIpSegmentRequest& request, const DescribeWafSourceIpSegmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeWafSourceIpSegmentOutcomeCallable describeWafSourceIpSegmentCallable(const Model::DescribeWafSourceIpSegmentRequest& request) const;
-			ModifyAclRuleOutcome modifyAclRule(const Model::ModifyAclRuleRequest &request)const;
-			void modifyAclRuleAsync(const Model::ModifyAclRuleRequest& request, const ModifyAclRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ModifyAclRuleOutcomeCallable modifyAclRuleCallable(const Model::ModifyAclRuleRequest& request) const;
 			ModifyDomainOutcome modifyDomain(const Model::ModifyDomainRequest &request)const;
 			void modifyDomainAsync(const Model::ModifyDomainRequest& request, const ModifyDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyDomainOutcomeCallable modifyDomainCallable(const Model::ModifyDomainRequest& request) const;
-			ModifyDomainConfigOutcome modifyDomainConfig(const Model::ModifyDomainConfigRequest &request)const;
-			void modifyDomainConfigAsync(const Model::ModifyDomainConfigRequest& request, const ModifyDomainConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ModifyDomainConfigOutcomeCallable modifyDomainConfigCallable(const Model::ModifyDomainConfigRequest& request) const;
 			ModifyDomainIpv6StatusOutcome modifyDomainIpv6Status(const Model::ModifyDomainIpv6StatusRequest &request)const;
 			void modifyDomainIpv6StatusAsync(const Model::ModifyDomainIpv6StatusRequest& request, const ModifyDomainIpv6StatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyDomainIpv6StatusOutcomeCallable modifyDomainIpv6StatusCallable(const Model::ModifyDomainIpv6StatusRequest& request) const;
@@ -419,9 +294,6 @@ namespace AlibabaCloud
 			ModifyProtectionRuleStatusOutcome modifyProtectionRuleStatus(const Model::ModifyProtectionRuleStatusRequest &request)const;
 			void modifyProtectionRuleStatusAsync(const Model::ModifyProtectionRuleStatusRequest& request, const ModifyProtectionRuleStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyProtectionRuleStatusOutcomeCallable modifyProtectionRuleStatusCallable(const Model::ModifyProtectionRuleStatusRequest& request) const;
-			ModifyWafSwitchOutcome modifyWafSwitch(const Model::ModifyWafSwitchRequest &request)const;
-			void modifyWafSwitchAsync(const Model::ModifyWafSwitchRequest& request, const ModifyWafSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ModifyWafSwitchOutcomeCallable modifyWafSwitchCallable(const Model::ModifyWafSwitchRequest& request) const;
 			MoveResourceGroupOutcome moveResourceGroup(const Model::MoveResourceGroupRequest &request)const;
 			void moveResourceGroupAsync(const Model::MoveResourceGroupRequest& request, const MoveResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			MoveResourceGroupOutcomeCallable moveResourceGroupCallable(const Model::MoveResourceGroupRequest& request) const;

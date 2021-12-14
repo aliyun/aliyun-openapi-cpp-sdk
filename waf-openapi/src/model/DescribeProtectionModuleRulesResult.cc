@@ -39,39 +39,34 @@ void DescribeProtectionModuleRulesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allModuleRulesNode = value["ModuleRules"]["ModuleRulesItem"];
-	for (auto valueModuleRulesModuleRulesItem : allModuleRulesNode)
+	auto allRulesNode = value["Rules"]["Rule"];
+	for (auto valueRulesRule : allRulesNode)
 	{
-		ModuleRulesItem moduleRulesObject;
-		if(!valueModuleRulesModuleRulesItem["Id"].isNull())
-			moduleRulesObject.id = std::stol(valueModuleRulesModuleRulesItem["Id"].asString());
-		if(!valueModuleRulesModuleRulesItem["Version"].isNull())
-			moduleRulesObject.version = std::stol(valueModuleRulesModuleRulesItem["Version"].asString());
-		if(!valueModuleRulesModuleRulesItem["Content"].isNull())
-			moduleRulesObject.content = valueModuleRulesModuleRulesItem["Content"].asString();
-		if(!valueModuleRulesModuleRulesItem["Time"].isNull())
-			moduleRulesObject.time = std::stol(valueModuleRulesModuleRulesItem["Time"].asString());
-		moduleRules_.push_back(moduleRulesObject);
+		Rule rulesObject;
+		if(!valueRulesRule["RuleId"].isNull())
+			rulesObject.ruleId = std::stol(valueRulesRule["RuleId"].asString());
+		if(!valueRulesRule["Version"].isNull())
+			rulesObject.version = std::stol(valueRulesRule["Version"].asString());
+		if(!valueRulesRule["Content"].isNull())
+			rulesObject.content = valueRulesRule["Content"].asString();
+		if(!valueRulesRule["Time"].isNull())
+			rulesObject.time = std::stol(valueRulesRule["Time"].asString());
+		if(!valueRulesRule["Status"].isNull())
+			rulesObject.status = std::stol(valueRulesRule["Status"].asString());
+		rules_.push_back(rulesObject);
 	}
-	if(!value["TaskStatus"].isNull())
-		taskStatus_ = std::stoi(value["TaskStatus"].asString());
-	if(!value["Total"].isNull())
-		total_ = std::stoi(value["Total"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 
-std::vector<DescribeProtectionModuleRulesResult::ModuleRulesItem> DescribeProtectionModuleRulesResult::getModuleRules()const
+int DescribeProtectionModuleRulesResult::getTotalCount()const
 {
-	return moduleRules_;
+	return totalCount_;
 }
 
-int DescribeProtectionModuleRulesResult::getTotal()const
+std::vector<DescribeProtectionModuleRulesResult::Rule> DescribeProtectionModuleRulesResult::getRules()const
 {
-	return total_;
-}
-
-int DescribeProtectionModuleRulesResult::getTaskStatus()const
-{
-	return taskStatus_;
+	return rules_;
 }
 

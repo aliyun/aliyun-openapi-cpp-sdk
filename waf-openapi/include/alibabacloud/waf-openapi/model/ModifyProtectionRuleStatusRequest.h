@@ -39,31 +39,28 @@ namespace AlibabaCloud
 				void setLockVersion(long lockVersion);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
-				std::string getDefense()const;
-				void setDefense(const std::string& defense);
-				long getId()const;
-				void setId(long id);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
+				std::string getDefenseType()const;
+				void setDefenseType(const std::string& defenseType);
 				int getRuleStatus()const;
 				void setRuleStatus(int ruleStatus);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				std::string getDomain()const;
 				void setDomain(const std::string& domain);
-				std::string getRegion()const;
-				void setRegion(const std::string& region);
+				long getRuleId()const;
+				void setRuleId(long ruleId);
 
             private:
 				long lockVersion_;
 				std::string sourceIp_;
-				std::string defense_;
-				long id_;
 				std::string lang_;
+				std::string defenseType_;
 				int ruleStatus_;
 				std::string instanceId_;
 				std::string domain_;
-				std::string region_;
+				long ruleId_;
 
 			};
 		}

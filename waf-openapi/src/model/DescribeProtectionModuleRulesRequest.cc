@@ -19,13 +19,35 @@
 using AlibabaCloud::Waf_openapi::Model::DescribeProtectionModuleRulesRequest;
 
 DescribeProtectionModuleRulesRequest::DescribeProtectionModuleRulesRequest() :
-	RpcServiceRequest("waf-openapi", "2018-01-17", "DescribeProtectionModuleRules")
+	RpcServiceRequest("waf-openapi", "2019-09-10", "DescribeProtectionModuleRules")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
 DescribeProtectionModuleRulesRequest::~DescribeProtectionModuleRulesRequest()
 {}
+
+int DescribeProtectionModuleRulesRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void DescribeProtectionModuleRulesRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setParameter("PageNumber", std::to_string(pageNumber));
+}
+
+std::string DescribeProtectionModuleRulesRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DescribeProtectionModuleRulesRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
 
 std::string DescribeProtectionModuleRulesRequest::getSourceIp()const
 {
@@ -36,17 +58,6 @@ void DescribeProtectionModuleRulesRequest::setSourceIp(const std::string& source
 {
 	sourceIp_ = sourceIp;
 	setParameter("SourceIp", sourceIp);
-}
-
-std::string DescribeProtectionModuleRulesRequest::getDefense()const
-{
-	return defense_;
-}
-
-void DescribeProtectionModuleRulesRequest::setDefense(const std::string& defense)
-{
-	defense_ = defense;
-	setParameter("Defense", defense);
 }
 
 int DescribeProtectionModuleRulesRequest::getPageSize()const
@@ -71,15 +82,26 @@ void DescribeProtectionModuleRulesRequest::setLang(const std::string& lang)
 	setParameter("Lang", lang);
 }
 
-int DescribeProtectionModuleRulesRequest::getCurrentPage()const
+std::string DescribeProtectionModuleRulesRequest::getDefenseType()const
 {
-	return currentPage_;
+	return defenseType_;
 }
 
-void DescribeProtectionModuleRulesRequest::setCurrentPage(int currentPage)
+void DescribeProtectionModuleRulesRequest::setDefenseType(const std::string& defenseType)
 {
-	currentPage_ = currentPage;
-	setParameter("CurrentPage", std::to_string(currentPage));
+	defenseType_ = defenseType;
+	setParameter("DefenseType", defenseType);
+}
+
+std::string DescribeProtectionModuleRulesRequest::getQuery()const
+{
+	return query_;
+}
+
+void DescribeProtectionModuleRulesRequest::setQuery(const std::string& query)
+{
+	query_ = query;
+	setParameter("Query", query);
 }
 
 std::string DescribeProtectionModuleRulesRequest::getInstanceId()const
@@ -102,16 +124,5 @@ void DescribeProtectionModuleRulesRequest::setDomain(const std::string& domain)
 {
 	domain_ = domain;
 	setParameter("Domain", domain);
-}
-
-std::string DescribeProtectionModuleRulesRequest::getRegion()const
-{
-	return region_;
-}
-
-void DescribeProtectionModuleRulesRequest::setRegion(const std::string& region)
-{
-	region_ = region;
-	setParameter("Region", region);
 }
 

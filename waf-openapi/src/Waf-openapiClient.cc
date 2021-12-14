@@ -51,78 +51,6 @@ Waf_openapiClient::Waf_openapiClient(const std::string & accessKeyId, const std:
 Waf_openapiClient::~Waf_openapiClient()
 {}
 
-Waf_openapiClient::CreateAclRuleOutcome Waf_openapiClient::createAclRule(const CreateAclRuleRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateAclRuleOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateAclRuleOutcome(CreateAclRuleResult(outcome.result()));
-	else
-		return CreateAclRuleOutcome(outcome.error());
-}
-
-void Waf_openapiClient::createAclRuleAsync(const CreateAclRuleRequest& request, const CreateAclRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createAclRule(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Waf_openapiClient::CreateAclRuleOutcomeCallable Waf_openapiClient::createAclRuleCallable(const CreateAclRuleRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateAclRuleOutcome()>>(
-			[this, request]()
-			{
-			return this->createAclRule(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-Waf_openapiClient::CreateCertAndKeyOutcome Waf_openapiClient::createCertAndKey(const CreateCertAndKeyRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateCertAndKeyOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateCertAndKeyOutcome(CreateCertAndKeyResult(outcome.result()));
-	else
-		return CreateCertAndKeyOutcome(outcome.error());
-}
-
-void Waf_openapiClient::createCertAndKeyAsync(const CreateCertAndKeyRequest& request, const CreateCertAndKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createCertAndKey(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Waf_openapiClient::CreateCertAndKeyOutcomeCallable Waf_openapiClient::createCertAndKeyCallable(const CreateCertAndKeyRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateCertAndKeyOutcome()>>(
-			[this, request]()
-			{
-			return this->createCertAndKey(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 Waf_openapiClient::CreateCertificateOutcome Waf_openapiClient::createCertificate(const CreateCertificateRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -231,42 +159,6 @@ Waf_openapiClient::CreateDomainOutcomeCallable Waf_openapiClient::createDomainCa
 	return task->get_future();
 }
 
-Waf_openapiClient::CreateDomainConfigOutcome Waf_openapiClient::createDomainConfig(const CreateDomainConfigRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateDomainConfigOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateDomainConfigOutcome(CreateDomainConfigResult(outcome.result()));
-	else
-		return CreateDomainConfigOutcome(outcome.error());
-}
-
-void Waf_openapiClient::createDomainConfigAsync(const CreateDomainConfigRequest& request, const CreateDomainConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createDomainConfig(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Waf_openapiClient::CreateDomainConfigOutcomeCallable Waf_openapiClient::createDomainConfigCallable(const CreateDomainConfigRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateDomainConfigOutcome()>>(
-			[this, request]()
-			{
-			return this->createDomainConfig(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 Waf_openapiClient::CreateProtectionModuleRuleOutcome Waf_openapiClient::createProtectionModuleRule(const CreateProtectionModuleRuleRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -303,42 +195,6 @@ Waf_openapiClient::CreateProtectionModuleRuleOutcomeCallable Waf_openapiClient::
 	return task->get_future();
 }
 
-Waf_openapiClient::DeleteAclRuleOutcome Waf_openapiClient::deleteAclRule(const DeleteAclRuleRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DeleteAclRuleOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DeleteAclRuleOutcome(DeleteAclRuleResult(outcome.result()));
-	else
-		return DeleteAclRuleOutcome(outcome.error());
-}
-
-void Waf_openapiClient::deleteAclRuleAsync(const DeleteAclRuleRequest& request, const DeleteAclRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, deleteAclRule(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Waf_openapiClient::DeleteAclRuleOutcomeCallable Waf_openapiClient::deleteAclRuleCallable(const DeleteAclRuleRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DeleteAclRuleOutcome()>>(
-			[this, request]()
-			{
-			return this->deleteAclRule(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 Waf_openapiClient::DeleteDomainOutcome Waf_openapiClient::deleteDomain(const DeleteDomainRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -369,42 +225,6 @@ Waf_openapiClient::DeleteDomainOutcomeCallable Waf_openapiClient::deleteDomainCa
 			[this, request]()
 			{
 			return this->deleteDomain(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-Waf_openapiClient::DeleteDomainConfigOutcome Waf_openapiClient::deleteDomainConfig(const DeleteDomainConfigRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DeleteDomainConfigOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DeleteDomainConfigOutcome(DeleteDomainConfigResult(outcome.result()));
-	else
-		return DeleteDomainConfigOutcome(outcome.error());
-}
-
-void Waf_openapiClient::deleteDomainConfigAsync(const DeleteDomainConfigRequest& request, const DeleteDomainConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, deleteDomainConfig(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Waf_openapiClient::DeleteDomainConfigOutcomeCallable Waf_openapiClient::deleteDomainConfigCallable(const DeleteDomainConfigRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DeleteDomainConfigOutcome()>>(
-			[this, request]()
-			{
-			return this->deleteDomainConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -477,78 +297,6 @@ Waf_openapiClient::DeleteProtectionModuleRuleOutcomeCallable Waf_openapiClient::
 			[this, request]()
 			{
 			return this->deleteProtectionModuleRule(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-Waf_openapiClient::DescribeAclRulesOutcome Waf_openapiClient::describeAclRules(const DescribeAclRulesRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeAclRulesOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeAclRulesOutcome(DescribeAclRulesResult(outcome.result()));
-	else
-		return DescribeAclRulesOutcome(outcome.error());
-}
-
-void Waf_openapiClient::describeAclRulesAsync(const DescribeAclRulesRequest& request, const DescribeAclRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeAclRules(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Waf_openapiClient::DescribeAclRulesOutcomeCallable Waf_openapiClient::describeAclRulesCallable(const DescribeAclRulesRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeAclRulesOutcome()>>(
-			[this, request]()
-			{
-			return this->describeAclRules(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-Waf_openapiClient::DescribeAsyncTaskStatusOutcome Waf_openapiClient::describeAsyncTaskStatus(const DescribeAsyncTaskStatusRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeAsyncTaskStatusOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeAsyncTaskStatusOutcome(DescribeAsyncTaskStatusResult(outcome.result()));
-	else
-		return DescribeAsyncTaskStatusOutcome(outcome.error());
-}
-
-void Waf_openapiClient::describeAsyncTaskStatusAsync(const DescribeAsyncTaskStatusRequest& request, const DescribeAsyncTaskStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeAsyncTaskStatus(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Waf_openapiClient::DescribeAsyncTaskStatusOutcomeCallable Waf_openapiClient::describeAsyncTaskStatusCallable(const DescribeAsyncTaskStatusRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeAsyncTaskStatusOutcome()>>(
-			[this, request]()
-			{
-			return this->describeAsyncTaskStatus(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -735,78 +483,6 @@ Waf_openapiClient::DescribeDomainBasicConfigsOutcomeCallable Waf_openapiClient::
 	return task->get_future();
 }
 
-Waf_openapiClient::DescribeDomainConfigOutcome Waf_openapiClient::describeDomainConfig(const DescribeDomainConfigRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeDomainConfigOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeDomainConfigOutcome(DescribeDomainConfigResult(outcome.result()));
-	else
-		return DescribeDomainConfigOutcome(outcome.error());
-}
-
-void Waf_openapiClient::describeDomainConfigAsync(const DescribeDomainConfigRequest& request, const DescribeDomainConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeDomainConfig(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Waf_openapiClient::DescribeDomainConfigOutcomeCallable Waf_openapiClient::describeDomainConfigCallable(const DescribeDomainConfigRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeDomainConfigOutcome()>>(
-			[this, request]()
-			{
-			return this->describeDomainConfig(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-Waf_openapiClient::DescribeDomainConfigStatusOutcome Waf_openapiClient::describeDomainConfigStatus(const DescribeDomainConfigStatusRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeDomainConfigStatusOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeDomainConfigStatusOutcome(DescribeDomainConfigStatusResult(outcome.result()));
-	else
-		return DescribeDomainConfigStatusOutcome(outcome.error());
-}
-
-void Waf_openapiClient::describeDomainConfigStatusAsync(const DescribeDomainConfigStatusRequest& request, const DescribeDomainConfigStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeDomainConfigStatus(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Waf_openapiClient::DescribeDomainConfigStatusOutcomeCallable Waf_openapiClient::describeDomainConfigStatusCallable(const DescribeDomainConfigStatusRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeDomainConfigStatusOutcome()>>(
-			[this, request]()
-			{
-			return this->describeDomainConfigStatus(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 Waf_openapiClient::DescribeDomainListOutcome Waf_openapiClient::describeDomainList(const DescribeDomainListRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -951,42 +627,6 @@ Waf_openapiClient::DescribeInstanceInfoOutcomeCallable Waf_openapiClient::descri
 	return task->get_future();
 }
 
-Waf_openapiClient::DescribeInstanceInfosOutcome Waf_openapiClient::describeInstanceInfos(const DescribeInstanceInfosRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeInstanceInfosOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeInstanceInfosOutcome(DescribeInstanceInfosResult(outcome.result()));
-	else
-		return DescribeInstanceInfosOutcome(outcome.error());
-}
-
-void Waf_openapiClient::describeInstanceInfosAsync(const DescribeInstanceInfosRequest& request, const DescribeInstanceInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeInstanceInfos(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Waf_openapiClient::DescribeInstanceInfosOutcomeCallable Waf_openapiClient::describeInstanceInfosCallable(const DescribeInstanceInfosRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeInstanceInfosOutcome()>>(
-			[this, request]()
-			{
-			return this->describeInstanceInfos(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 Waf_openapiClient::DescribeInstanceSpecInfoOutcome Waf_openapiClient::describeInstanceSpecInfo(const DescribeInstanceSpecInfoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1059,42 +699,6 @@ Waf_openapiClient::DescribeLogServiceStatusOutcomeCallable Waf_openapiClient::de
 	return task->get_future();
 }
 
-Waf_openapiClient::DescribePayInfoOutcome Waf_openapiClient::describePayInfo(const DescribePayInfoRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribePayInfoOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribePayInfoOutcome(DescribePayInfoResult(outcome.result()));
-	else
-		return DescribePayInfoOutcome(outcome.error());
-}
-
-void Waf_openapiClient::describePayInfoAsync(const DescribePayInfoRequest& request, const DescribePayInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describePayInfo(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Waf_openapiClient::DescribePayInfoOutcomeCallable Waf_openapiClient::describePayInfoCallable(const DescribePayInfoRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribePayInfoOutcome()>>(
-			[this, request]()
-			{
-			return this->describePayInfo(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 Waf_openapiClient::DescribeProtectionModuleCodeConfigOutcome Waf_openapiClient::describeProtectionModuleCodeConfig(const DescribeProtectionModuleCodeConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1125,42 +729,6 @@ Waf_openapiClient::DescribeProtectionModuleCodeConfigOutcomeCallable Waf_openapi
 			[this, request]()
 			{
 			return this->describeProtectionModuleCodeConfig(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-Waf_openapiClient::DescribeProtectionModuleModeOutcome Waf_openapiClient::describeProtectionModuleMode(const DescribeProtectionModuleModeRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeProtectionModuleModeOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeProtectionModuleModeOutcome(DescribeProtectionModuleModeResult(outcome.result()));
-	else
-		return DescribeProtectionModuleModeOutcome(outcome.error());
-}
-
-void Waf_openapiClient::describeProtectionModuleModeAsync(const DescribeProtectionModuleModeRequest& request, const DescribeProtectionModuleModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeProtectionModuleMode(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Waf_openapiClient::DescribeProtectionModuleModeOutcomeCallable Waf_openapiClient::describeProtectionModuleModeCallable(const DescribeProtectionModuleModeRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeProtectionModuleModeOutcome()>>(
-			[this, request]()
-			{
-			return this->describeProtectionModuleMode(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1239,42 +807,6 @@ Waf_openapiClient::DescribeProtectionModuleStatusOutcomeCallable Waf_openapiClie
 	return task->get_future();
 }
 
-Waf_openapiClient::DescribeRegionsOutcome Waf_openapiClient::describeRegions(const DescribeRegionsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeRegionsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeRegionsOutcome(DescribeRegionsResult(outcome.result()));
-	else
-		return DescribeRegionsOutcome(outcome.error());
-}
-
-void Waf_openapiClient::describeRegionsAsync(const DescribeRegionsRequest& request, const DescribeRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeRegions(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Waf_openapiClient::DescribeRegionsOutcomeCallable Waf_openapiClient::describeRegionsCallable(const DescribeRegionsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeRegionsOutcome()>>(
-			[this, request]()
-			{
-			return this->describeRegions(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 Waf_openapiClient::DescribeWafSourceIpSegmentOutcome Waf_openapiClient::describeWafSourceIpSegment(const DescribeWafSourceIpSegmentRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1311,42 +843,6 @@ Waf_openapiClient::DescribeWafSourceIpSegmentOutcomeCallable Waf_openapiClient::
 	return task->get_future();
 }
 
-Waf_openapiClient::ModifyAclRuleOutcome Waf_openapiClient::modifyAclRule(const ModifyAclRuleRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyAclRuleOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyAclRuleOutcome(ModifyAclRuleResult(outcome.result()));
-	else
-		return ModifyAclRuleOutcome(outcome.error());
-}
-
-void Waf_openapiClient::modifyAclRuleAsync(const ModifyAclRuleRequest& request, const ModifyAclRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyAclRule(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Waf_openapiClient::ModifyAclRuleOutcomeCallable Waf_openapiClient::modifyAclRuleCallable(const ModifyAclRuleRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyAclRuleOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyAclRule(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 Waf_openapiClient::ModifyDomainOutcome Waf_openapiClient::modifyDomain(const ModifyDomainRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1377,42 +873,6 @@ Waf_openapiClient::ModifyDomainOutcomeCallable Waf_openapiClient::modifyDomainCa
 			[this, request]()
 			{
 			return this->modifyDomain(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-Waf_openapiClient::ModifyDomainConfigOutcome Waf_openapiClient::modifyDomainConfig(const ModifyDomainConfigRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyDomainConfigOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyDomainConfigOutcome(ModifyDomainConfigResult(outcome.result()));
-	else
-		return ModifyDomainConfigOutcome(outcome.error());
-}
-
-void Waf_openapiClient::modifyDomainConfigAsync(const ModifyDomainConfigRequest& request, const ModifyDomainConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyDomainConfig(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Waf_openapiClient::ModifyDomainConfigOutcomeCallable Waf_openapiClient::modifyDomainConfigCallable(const ModifyDomainConfigRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyDomainConfigOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyDomainConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1701,42 +1161,6 @@ Waf_openapiClient::ModifyProtectionRuleStatusOutcomeCallable Waf_openapiClient::
 			[this, request]()
 			{
 			return this->modifyProtectionRuleStatus(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-Waf_openapiClient::ModifyWafSwitchOutcome Waf_openapiClient::modifyWafSwitch(const ModifyWafSwitchRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyWafSwitchOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyWafSwitchOutcome(ModifyWafSwitchResult(outcome.result()));
-	else
-		return ModifyWafSwitchOutcome(outcome.error());
-}
-
-void Waf_openapiClient::modifyWafSwitchAsync(const ModifyWafSwitchRequest& request, const ModifyWafSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyWafSwitch(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Waf_openapiClient::ModifyWafSwitchOutcomeCallable Waf_openapiClient::modifyWafSwitchCallable(const ModifyWafSwitchRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyWafSwitchOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyWafSwitch(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -35,29 +35,26 @@ namespace AlibabaCloud
 				ModifyProtectionRuleCacheStatusRequest();
 				~ModifyProtectionRuleCacheStatusRequest();
 
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
-				std::string getDefense()const;
-				void setDefense(const std::string& defense);
-				long getId()const;
-				void setId(long id);
-				std::string getLang()const;
-				void setLang(const std::string& lang);
+				std::string getDefenseType()const;
+				void setDefenseType(const std::string& defenseType);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
 				std::string getDomain()const;
 				void setDomain(const std::string& domain);
-				std::string getRegion()const;
-				void setRegion(const std::string& region);
+				std::string getLang()const;
+				void setLang(const std::string& lang);
+				long getRuleId()const;
+				void setRuleId(long ruleId);
 
             private:
-				std::string sourceIp_;
-				std::string defense_;
-				long id_;
-				std::string lang_;
+				std::string defenseType_;
 				std::string instanceId_;
+				std::string sourceIp_;
 				std::string domain_;
-				std::string region_;
+				std::string lang_;
+				long ruleId_;
 
 			};
 		}

@@ -43,15 +43,15 @@ namespace AlibabaCloud
 				void setSourceIp(const std::string& sourceIp);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				std::string getRegion()const;
-				void setRegion(const std::string& region);
+				std::string getCallSource()const;
+				void setCallSource(const std::string& callSource);
 
             private:
 				std::string resourceGroupId_;
 				std::string instanceId_;
 				std::string sourceIp_;
 				std::string lang_;
-				std::string region_;
+				std::string callSource_;
 
 			};
 		}

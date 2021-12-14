@@ -37,14 +37,10 @@ namespace AlibabaCloud
 				ModifyProtectionRuleStatusResult();
 				explicit ModifyProtectionRuleStatusResult(const std::string &payload);
 				~ModifyProtectionRuleStatusResult();
-				int getTaskStatus()const;
-				int getWafTaskId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int taskStatus_;
-				int wafTaskId_;
 
 			};
 		}

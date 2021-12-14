@@ -27,17 +27,6 @@ DescribeProtectionModuleCodeConfigRequest::DescribeProtectionModuleCodeConfigReq
 DescribeProtectionModuleCodeConfigRequest::~DescribeProtectionModuleCodeConfigRequest()
 {}
 
-int DescribeProtectionModuleCodeConfigRequest::getCodeValue()const
-{
-	return codeValue_;
-}
-
-void DescribeProtectionModuleCodeConfigRequest::setCodeValue(int codeValue)
-{
-	codeValue_ = codeValue;
-	setParameter("CodeValue", std::to_string(codeValue));
-}
-
 std::string DescribeProtectionModuleCodeConfigRequest::getResourceGroupId()const
 {
 	return resourceGroupId_;
@@ -47,17 +36,6 @@ void DescribeProtectionModuleCodeConfigRequest::setResourceGroupId(const std::st
 {
 	resourceGroupId_ = resourceGroupId;
 	setParameter("ResourceGroupId", resourceGroupId);
-}
-
-std::string DescribeProtectionModuleCodeConfigRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void DescribeProtectionModuleCodeConfigRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
 }
 
 std::string DescribeProtectionModuleCodeConfigRequest::getSourceIp()const
@@ -71,17 +49,6 @@ void DescribeProtectionModuleCodeConfigRequest::setSourceIp(const std::string& s
 	setParameter("SourceIp", sourceIp);
 }
 
-int DescribeProtectionModuleCodeConfigRequest::getCodeType()const
-{
-	return codeType_;
-}
-
-void DescribeProtectionModuleCodeConfigRequest::setCodeType(int codeType)
-{
-	codeType_ = codeType;
-	setParameter("CodeType", std::to_string(codeType));
-}
-
 std::string DescribeProtectionModuleCodeConfigRequest::getLang()const
 {
 	return lang_;
@@ -91,5 +58,38 @@ void DescribeProtectionModuleCodeConfigRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setParameter("Lang", lang);
+}
+
+int DescribeProtectionModuleCodeConfigRequest::getCodeValue()const
+{
+	return codeValue_;
+}
+
+void DescribeProtectionModuleCodeConfigRequest::setCodeValue(int codeValue)
+{
+	codeValue_ = codeValue;
+	setParameter("CodeValue", std::to_string(codeValue));
+}
+
+std::string DescribeProtectionModuleCodeConfigRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void DescribeProtectionModuleCodeConfigRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setParameter("InstanceId", instanceId);
+}
+
+int DescribeProtectionModuleCodeConfigRequest::getCodeType()const
+{
+	return codeType_;
+}
+
+void DescribeProtectionModuleCodeConfigRequest::setCodeType(int codeType)
+{
+	codeType_ = codeType;
+	setParameter("CodeType", std::to_string(codeType));
 }
 

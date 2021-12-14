@@ -35,32 +35,35 @@ namespace AlibabaCloud
 				DescribeProtectionModuleRulesRequest();
 				~DescribeProtectionModuleRulesRequest();
 
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
-				std::string getDefense()const;
-				void setDefense(const std::string& defense);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				int getCurrentPage()const;
-				void setCurrentPage(int currentPage);
+				std::string getDefenseType()const;
+				void setDefenseType(const std::string& defenseType);
+				std::string getQuery()const;
+				void setQuery(const std::string& query);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				std::string getDomain()const;
 				void setDomain(const std::string& domain);
-				std::string getRegion()const;
-				void setRegion(const std::string& region);
 
             private:
+				int pageNumber_;
+				std::string resourceGroupId_;
 				std::string sourceIp_;
-				std::string defense_;
 				int pageSize_;
 				std::string lang_;
-				int currentPage_;
+				std::string defenseType_;
+				std::string query_;
 				std::string instanceId_;
 				std::string domain_;
-				std::string region_;
 
 			};
 		}

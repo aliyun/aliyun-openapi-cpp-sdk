@@ -37,12 +37,12 @@ namespace AlibabaCloud
 				DescribeDomainNamesResult();
 				explicit DescribeDomainNamesResult(const std::string &payload);
 				~DescribeDomainNamesResult();
-				std::vector<std::string> getResult()const;
+				std::vector<std::string> getDomainNames()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<std::string> result_;
+				std::vector<std::string> domainNames_;
 
 			};
 		}

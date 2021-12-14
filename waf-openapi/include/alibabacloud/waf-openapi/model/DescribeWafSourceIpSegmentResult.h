@@ -37,11 +37,13 @@ namespace AlibabaCloud
 				DescribeWafSourceIpSegmentResult();
 				explicit DescribeWafSourceIpSegmentResult(const std::string &payload);
 				~DescribeWafSourceIpSegmentResult();
+				std::string getIpV6s()const;
 				std::string getIps()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string ipV6s_;
 				std::string ips_;
 
 			};
