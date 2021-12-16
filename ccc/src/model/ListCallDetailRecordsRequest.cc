@@ -82,6 +82,17 @@ void ListCallDetailRecordsRequest::setPageNumber(int pageNumber)
 	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
+std::string ListCallDetailRecordsRequest::getEarlyMediaStateList()const
+{
+	return earlyMediaStateList_;
+}
+
+void ListCallDetailRecordsRequest::setEarlyMediaStateList(const std::string& earlyMediaStateList)
+{
+	earlyMediaStateList_ = earlyMediaStateList;
+	setParameter("EarlyMediaStateList", earlyMediaStateList);
+}
+
 std::string ListCallDetailRecordsRequest::getCalledNumber()const
 {
 	return calledNumber_;

@@ -95,6 +95,7 @@ namespace AlibabaCloud
 					std::string releaseInitiator;
 					std::string instanceId;
 					long startTime;
+					std::string earlyMediaState;
 					long callDuration;
 					std::vector<QueueEventsItem> queueEvents;
 					std::string calleeLocation;

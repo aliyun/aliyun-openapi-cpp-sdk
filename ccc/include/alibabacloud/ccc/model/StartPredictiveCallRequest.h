@@ -51,6 +51,8 @@ namespace AlibabaCloud
 				void setCaller(const std::string& caller);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
+				std::string getSkillGroupId()const;
+				void setSkillGroupId(const std::string& skillGroupId);
 
             private:
 				std::string contactFlowId_;
@@ -61,6 +63,7 @@ namespace AlibabaCloud
 				int timeoutSeconds_;
 				std::string caller_;
 				std::string instanceId_;
+				std::string skillGroupId_;
 
 			};
 		}

@@ -45,6 +45,8 @@ namespace AlibabaCloud
 				void setStartTime(long startTime);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
+				std::string getEarlyMediaStateList()const;
+				void setEarlyMediaStateList(const std::string& earlyMediaStateList);
 				std::string getCalledNumber()const;
 				void setCalledNumber(const std::string& calledNumber);
 				std::string getSatisfactionList()const;
@@ -78,6 +80,7 @@ namespace AlibabaCloud
 				std::string orderByField_;
 				long startTime_;
 				int pageNumber_;
+				std::string earlyMediaStateList_;
 				std::string calledNumber_;
 				std::string satisfactionList_;
 				int pageSize_;

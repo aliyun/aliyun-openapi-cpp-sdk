@@ -115,3 +115,14 @@ void StartPredictiveCallRequest::setInstanceId(const std::string& instanceId)
 	setParameter("InstanceId", instanceId);
 }
 
+std::string StartPredictiveCallRequest::getSkillGroupId()const
+{
+	return skillGroupId_;
+}
+
+void StartPredictiveCallRequest::setSkillGroupId(const std::string& skillGroupId)
+{
+	skillGroupId_ = skillGroupId;
+	setParameter("SkillGroupId", skillGroupId);
+}
+
