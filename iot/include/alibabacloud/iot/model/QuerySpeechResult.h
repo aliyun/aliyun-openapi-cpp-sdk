@@ -34,8 +34,15 @@ namespace AlibabaCloud
 			public:
 				struct Data
 				{
+					struct SoundCodeConfig
+					{
+						int additionalDuration;
+						std::string soundCodeContent;
+					};
+					SoundCodeConfig soundCodeConfig;
 					std::string speechType;
 					int volume;
+					bool enableSoundCode;
 					std::string speechCode;
 					std::string text;
 					std::string audioFormat;

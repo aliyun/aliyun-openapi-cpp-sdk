@@ -44,6 +44,7 @@ namespace AlibabaCloud
 					bool needPush;
 					int overwriteMode;
 					std::string firmwareId;
+					bool multiModuleMode;
 					std::string name;
 					std::string jobStatus;
 					int retryCount;

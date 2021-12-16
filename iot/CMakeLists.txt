@@ -345,8 +345,6 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/ListRuleResult.h
 	include/alibabacloud/iot/model/ListRuleActionsRequest.h
 	include/alibabacloud/iot/model/ListRuleActionsResult.h
-	include/alibabacloud/iot/model/ListSourceReplicaRequest.h
-	include/alibabacloud/iot/model/ListSourceReplicaResult.h
 	include/alibabacloud/iot/model/ListTaskRequest.h
 	include/alibabacloud/iot/model/ListTaskResult.h
 	include/alibabacloud/iot/model/ListTaskByPageRequest.h
@@ -371,8 +369,6 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/PublishThingModelResult.h
 	include/alibabacloud/iot/model/PushSpeechRequest.h
 	include/alibabacloud/iot/model/PushSpeechResult.h
-	include/alibabacloud/iot/model/QueryAppDeviceListRequest.h
-	include/alibabacloud/iot/model/QueryAppDeviceListResult.h
 	include/alibabacloud/iot/model/QueryBatchRegisterDeviceStatusRequest.h
 	include/alibabacloud/iot/model/QueryBatchRegisterDeviceStatusResult.h
 	include/alibabacloud/iot/model/QueryCertUrlByApplyIdRequest.h
@@ -581,6 +577,8 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/SetupStudioAppAuthModeOpenResult.h
 	include/alibabacloud/iot/model/SpeechByCombinationRequest.h
 	include/alibabacloud/iot/model/SpeechByCombinationResult.h
+	include/alibabacloud/iot/model/SpeechBySynthesisRequest.h
+	include/alibabacloud/iot/model/SpeechBySynthesisResult.h
 	include/alibabacloud/iot/model/StartRuleRequest.h
 	include/alibabacloud/iot/model/StartRuleResult.h
 	include/alibabacloud/iot/model/StopRuleRequest.h
@@ -972,8 +970,6 @@ set(iot_src
 	src/model/ListRuleResult.cc
 	src/model/ListRuleActionsRequest.cc
 	src/model/ListRuleActionsResult.cc
-	src/model/ListSourceReplicaRequest.cc
-	src/model/ListSourceReplicaResult.cc
 	src/model/ListTaskRequest.cc
 	src/model/ListTaskResult.cc
 	src/model/ListTaskByPageRequest.cc
@@ -998,8 +994,6 @@ set(iot_src
 	src/model/PublishThingModelResult.cc
 	src/model/PushSpeechRequest.cc
 	src/model/PushSpeechResult.cc
-	src/model/QueryAppDeviceListRequest.cc
-	src/model/QueryAppDeviceListResult.cc
 	src/model/QueryBatchRegisterDeviceStatusRequest.cc
 	src/model/QueryBatchRegisterDeviceStatusResult.cc
 	src/model/QueryCertUrlByApplyIdRequest.cc
@@ -1208,6 +1202,8 @@ set(iot_src
 	src/model/SetupStudioAppAuthModeOpenResult.cc
 	src/model/SpeechByCombinationRequest.cc
 	src/model/SpeechByCombinationResult.cc
+	src/model/SpeechBySynthesisRequest.cc
+	src/model/SpeechBySynthesisResult.cc
 	src/model/StartRuleRequest.cc
 	src/model/StartRuleResult.cc
 	src/model/StopRuleRequest.cc

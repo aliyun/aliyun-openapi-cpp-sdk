@@ -41,6 +41,10 @@ namespace AlibabaCloud
 				void setProjectCode(const std::string& projectCode);
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
+				std::string getSoundCodeConfig()const;
+				void setSoundCodeConfig(const std::string& soundCodeConfig);
+				bool getEnableSoundCode()const;
+				void setEnableSoundCode(bool enableSoundCode);
 				int getVolume()const;
 				void setVolume(int volume);
 				std::string getApiProduct()const;
@@ -56,6 +60,8 @@ namespace AlibabaCloud
 				std::string voice_;
 				std::string projectCode_;
 				std::string iotInstanceId_;
+				std::string soundCodeConfig_;
+				bool enableSoundCode_;
 				int volume_;
 				std::string apiProduct_;
 				std::string apiRevision_;

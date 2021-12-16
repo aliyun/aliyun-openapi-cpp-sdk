@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IOT_MODEL_PRINTBYTEMPLATEREQUEST_H_
-#define ALIBABACLOUD_IOT_MODEL_PRINTBYTEMPLATEREQUEST_H_
+#ifndef ALIBABACLOUD_IOT_MODEL_SPEECHBYSYNTHESISREQUEST_H_
+#define ALIBABACLOUD_IOT_MODEL_SPEECHBYSYNTHESISREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,45 +28,54 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IOT_EXPORT PrintByTemplateRequest : public RpcServiceRequest
+			class ALIBABACLOUD_IOT_EXPORT SpeechBySynthesisRequest : public RpcServiceRequest
 			{
 
 			public:
-				PrintByTemplateRequest();
-				~PrintByTemplateRequest();
+				SpeechBySynthesisRequest();
+				~SpeechBySynthesisRequest();
 
-				std::string getTemplateBizCode()const;
-				void setTemplateBizCode(const std::string& templateBizCode);
+				std::string getVoice()const;
+				void setVoice(const std::string& voice);
+				std::string getSpeechId()const;
+				void setSpeechId(const std::string& speechId);
+				std::string getAudioFormat()const;
+				void setAudioFormat(const std::string& audioFormat);
 				std::string getIotId()const;
 				void setIotId(const std::string& iotId);
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
-				bool getHistoryPrintTopic()const;
-				void setHistoryPrintTopic(bool historyPrintTopic);
+				std::string getText()const;
+				void setText(const std::string& text);
 				std::string getProductKey()const;
 				void setProductKey(const std::string& productKey);
-				std::string getParamsJsonString()const;
-				void setParamsJsonString(const std::string& paramsJsonString);
+				int getVolume()const;
+				void setVolume(int volume);
 				std::string getApiProduct()const;
 				void setApiProduct(const std::string& apiProduct);
 				std::string getApiRevision()const;
 				void setApiRevision(const std::string& apiRevision);
 				std::string getDeviceName()const;
 				void setDeviceName(const std::string& deviceName);
+				int getSpeechRate()const;
+				void setSpeechRate(int speechRate);
 
             private:
-				std::string templateBizCode_;
+				std::string voice_;
+				std::string speechId_;
+				std::string audioFormat_;
 				std::string iotId_;
 				std::string iotInstanceId_;
-				bool historyPrintTopic_;
+				std::string text_;
 				std::string productKey_;
-				std::string paramsJsonString_;
+				int volume_;
 				std::string apiProduct_;
 				std::string apiRevision_;
 				std::string deviceName_;
+				int speechRate_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IOT_MODEL_PRINTBYTEMPLATEREQUEST_H_
+#endif // !ALIBABACLOUD_IOT_MODEL_SPEECHBYSYNTHESISREQUEST_H_

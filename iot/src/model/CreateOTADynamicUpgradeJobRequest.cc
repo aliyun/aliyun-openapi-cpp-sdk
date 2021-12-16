@@ -38,6 +38,17 @@ void CreateOTADynamicUpgradeJobRequest::setDynamicMode(int dynamicMode)
 	setParameter("DynamicMode", std::to_string(dynamicMode));
 }
 
+bool CreateOTADynamicUpgradeJobRequest::getMultiModuleMode()const
+{
+	return multiModuleMode_;
+}
+
+void CreateOTADynamicUpgradeJobRequest::setMultiModuleMode(bool multiModuleMode)
+{
+	multiModuleMode_ = multiModuleMode;
+	setParameter("MultiModuleMode", multiModuleMode ? "true" : "false");
+}
+
 int CreateOTADynamicUpgradeJobRequest::getRetryCount()const
 {
 	return retryCount_;

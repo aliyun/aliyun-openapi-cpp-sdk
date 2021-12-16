@@ -96,6 +96,8 @@ void QueryOTAJobResult::parse(const std::string &payload)
 		data_.groupName = dataNode["GroupName"].asString();
 	if(!dataNode["DownloadProtocol"].isNull())
 		data_.downloadProtocol = dataNode["DownloadProtocol"].asString();
+	if(!dataNode["MultiModuleMode"].isNull())
+		data_.multiModuleMode = dataNode["MultiModuleMode"].asString() == "true";
 	auto allTagsNode = dataNode["Tags"]["OtaTagDTO"];
 	for (auto dataNodeTagsOtaTagDTO : allTagsNode)
 	{

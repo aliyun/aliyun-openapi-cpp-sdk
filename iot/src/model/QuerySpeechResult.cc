@@ -56,6 +56,13 @@ void QuerySpeechResult::parse(const std::string &payload)
 		data_.audioFormat = dataNode["AudioFormat"].asString();
 	if(!dataNode["SpeechType"].isNull())
 		data_.speechType = dataNode["SpeechType"].asString();
+	if(!dataNode["EnableSoundCode"].isNull())
+		data_.enableSoundCode = dataNode["EnableSoundCode"].asString() == "true";
+	auto soundCodeConfigNode = dataNode["SoundCodeConfig"];
+	if(!soundCodeConfigNode["AdditionalDuration"].isNull())
+		data_.soundCodeConfig.additionalDuration = std::stoi(soundCodeConfigNode["AdditionalDuration"].asString());
+	if(!soundCodeConfigNode["SoundCodeContent"].isNull())
+		data_.soundCodeConfig.soundCodeContent = soundCodeConfigNode["SoundCodeContent"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())

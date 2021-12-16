@@ -5883,42 +5883,6 @@ IotClient::ListRuleActionsOutcomeCallable IotClient::listRuleActionsCallable(con
 	return task->get_future();
 }
 
-IotClient::ListSourceReplicaOutcome IotClient::listSourceReplica(const ListSourceReplicaRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListSourceReplicaOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListSourceReplicaOutcome(ListSourceReplicaResult(outcome.result()));
-	else
-		return ListSourceReplicaOutcome(outcome.error());
-}
-
-void IotClient::listSourceReplicaAsync(const ListSourceReplicaRequest& request, const ListSourceReplicaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listSourceReplica(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-IotClient::ListSourceReplicaOutcomeCallable IotClient::listSourceReplicaCallable(const ListSourceReplicaRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListSourceReplicaOutcome()>>(
-			[this, request]()
-			{
-			return this->listSourceReplica(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 IotClient::ListTaskOutcome IotClient::listTask(const ListTaskRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -6345,42 +6309,6 @@ IotClient::PushSpeechOutcomeCallable IotClient::pushSpeechCallable(const PushSpe
 			[this, request]()
 			{
 			return this->pushSpeech(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-IotClient::QueryAppDeviceListOutcome IotClient::queryAppDeviceList(const QueryAppDeviceListRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return QueryAppDeviceListOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return QueryAppDeviceListOutcome(QueryAppDeviceListResult(outcome.result()));
-	else
-		return QueryAppDeviceListOutcome(outcome.error());
-}
-
-void IotClient::queryAppDeviceListAsync(const QueryAppDeviceListRequest& request, const QueryAppDeviceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, queryAppDeviceList(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-IotClient::QueryAppDeviceListOutcomeCallable IotClient::queryAppDeviceListCallable(const QueryAppDeviceListRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<QueryAppDeviceListOutcome()>>(
-			[this, request]()
-			{
-			return this->queryAppDeviceList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -10125,6 +10053,42 @@ IotClient::SpeechByCombinationOutcomeCallable IotClient::speechByCombinationCall
 			[this, request]()
 			{
 			return this->speechByCombination(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::SpeechBySynthesisOutcome IotClient::speechBySynthesis(const SpeechBySynthesisRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SpeechBySynthesisOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SpeechBySynthesisOutcome(SpeechBySynthesisResult(outcome.result()));
+	else
+		return SpeechBySynthesisOutcome(outcome.error());
+}
+
+void IotClient::speechBySynthesisAsync(const SpeechBySynthesisRequest& request, const SpeechBySynthesisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, speechBySynthesis(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::SpeechBySynthesisOutcomeCallable IotClient::speechBySynthesisCallable(const SpeechBySynthesisRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SpeechBySynthesisOutcome()>>(
+			[this, request]()
+			{
+			return this->speechBySynthesis(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

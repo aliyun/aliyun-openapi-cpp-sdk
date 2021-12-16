@@ -346,8 +346,6 @@
 #include "model/ListRuleResult.h"
 #include "model/ListRuleActionsRequest.h"
 #include "model/ListRuleActionsResult.h"
-#include "model/ListSourceReplicaRequest.h"
-#include "model/ListSourceReplicaResult.h"
 #include "model/ListTaskRequest.h"
 #include "model/ListTaskResult.h"
 #include "model/ListTaskByPageRequest.h"
@@ -372,8 +370,6 @@
 #include "model/PublishThingModelResult.h"
 #include "model/PushSpeechRequest.h"
 #include "model/PushSpeechResult.h"
-#include "model/QueryAppDeviceListRequest.h"
-#include "model/QueryAppDeviceListResult.h"
 #include "model/QueryBatchRegisterDeviceStatusRequest.h"
 #include "model/QueryBatchRegisterDeviceStatusResult.h"
 #include "model/QueryCertUrlByApplyIdRequest.h"
@@ -582,6 +578,8 @@
 #include "model/SetupStudioAppAuthModeOpenResult.h"
 #include "model/SpeechByCombinationRequest.h"
 #include "model/SpeechByCombinationResult.h"
+#include "model/SpeechBySynthesisRequest.h"
+#include "model/SpeechBySynthesisResult.h"
 #include "model/StartRuleRequest.h"
 #include "model/StartRuleResult.h"
 #include "model/StopRuleRequest.h"
@@ -1141,9 +1139,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListRuleActionsResult> ListRuleActionsOutcome;
 			typedef std::future<ListRuleActionsOutcome> ListRuleActionsOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::ListRuleActionsRequest&, const ListRuleActionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListRuleActionsAsyncHandler;
-			typedef Outcome<Error, Model::ListSourceReplicaResult> ListSourceReplicaOutcome;
-			typedef std::future<ListSourceReplicaOutcome> ListSourceReplicaOutcomeCallable;
-			typedef std::function<void(const IotClient*, const Model::ListSourceReplicaRequest&, const ListSourceReplicaOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListSourceReplicaAsyncHandler;
 			typedef Outcome<Error, Model::ListTaskResult> ListTaskOutcome;
 			typedef std::future<ListTaskOutcome> ListTaskOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::ListTaskRequest&, const ListTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTaskAsyncHandler;
@@ -1180,9 +1175,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::PushSpeechResult> PushSpeechOutcome;
 			typedef std::future<PushSpeechOutcome> PushSpeechOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::PushSpeechRequest&, const PushSpeechOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PushSpeechAsyncHandler;
-			typedef Outcome<Error, Model::QueryAppDeviceListResult> QueryAppDeviceListOutcome;
-			typedef std::future<QueryAppDeviceListOutcome> QueryAppDeviceListOutcomeCallable;
-			typedef std::function<void(const IotClient*, const Model::QueryAppDeviceListRequest&, const QueryAppDeviceListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryAppDeviceListAsyncHandler;
 			typedef Outcome<Error, Model::QueryBatchRegisterDeviceStatusResult> QueryBatchRegisterDeviceStatusOutcome;
 			typedef std::future<QueryBatchRegisterDeviceStatusOutcome> QueryBatchRegisterDeviceStatusOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::QueryBatchRegisterDeviceStatusRequest&, const QueryBatchRegisterDeviceStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryBatchRegisterDeviceStatusAsyncHandler;
@@ -1495,6 +1487,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SpeechByCombinationResult> SpeechByCombinationOutcome;
 			typedef std::future<SpeechByCombinationOutcome> SpeechByCombinationOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::SpeechByCombinationRequest&, const SpeechByCombinationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SpeechByCombinationAsyncHandler;
+			typedef Outcome<Error, Model::SpeechBySynthesisResult> SpeechBySynthesisOutcome;
+			typedef std::future<SpeechBySynthesisOutcome> SpeechBySynthesisOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::SpeechBySynthesisRequest&, const SpeechBySynthesisOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SpeechBySynthesisAsyncHandler;
 			typedef Outcome<Error, Model::StartRuleResult> StartRuleOutcome;
 			typedef std::future<StartRuleOutcome> StartRuleOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::StartRuleRequest&, const StartRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartRuleAsyncHandler;
@@ -2082,9 +2077,6 @@ namespace AlibabaCloud
 			ListRuleActionsOutcome listRuleActions(const Model::ListRuleActionsRequest &request)const;
 			void listRuleActionsAsync(const Model::ListRuleActionsRequest& request, const ListRuleActionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListRuleActionsOutcomeCallable listRuleActionsCallable(const Model::ListRuleActionsRequest& request) const;
-			ListSourceReplicaOutcome listSourceReplica(const Model::ListSourceReplicaRequest &request)const;
-			void listSourceReplicaAsync(const Model::ListSourceReplicaRequest& request, const ListSourceReplicaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListSourceReplicaOutcomeCallable listSourceReplicaCallable(const Model::ListSourceReplicaRequest& request) const;
 			ListTaskOutcome listTask(const Model::ListTaskRequest &request)const;
 			void listTaskAsync(const Model::ListTaskRequest& request, const ListTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListTaskOutcomeCallable listTaskCallable(const Model::ListTaskRequest& request) const;
@@ -2121,9 +2113,6 @@ namespace AlibabaCloud
 			PushSpeechOutcome pushSpeech(const Model::PushSpeechRequest &request)const;
 			void pushSpeechAsync(const Model::PushSpeechRequest& request, const PushSpeechAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			PushSpeechOutcomeCallable pushSpeechCallable(const Model::PushSpeechRequest& request) const;
-			QueryAppDeviceListOutcome queryAppDeviceList(const Model::QueryAppDeviceListRequest &request)const;
-			void queryAppDeviceListAsync(const Model::QueryAppDeviceListRequest& request, const QueryAppDeviceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			QueryAppDeviceListOutcomeCallable queryAppDeviceListCallable(const Model::QueryAppDeviceListRequest& request) const;
 			QueryBatchRegisterDeviceStatusOutcome queryBatchRegisterDeviceStatus(const Model::QueryBatchRegisterDeviceStatusRequest &request)const;
 			void queryBatchRegisterDeviceStatusAsync(const Model::QueryBatchRegisterDeviceStatusRequest& request, const QueryBatchRegisterDeviceStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryBatchRegisterDeviceStatusOutcomeCallable queryBatchRegisterDeviceStatusCallable(const Model::QueryBatchRegisterDeviceStatusRequest& request) const;
@@ -2436,6 +2425,9 @@ namespace AlibabaCloud
 			SpeechByCombinationOutcome speechByCombination(const Model::SpeechByCombinationRequest &request)const;
 			void speechByCombinationAsync(const Model::SpeechByCombinationRequest& request, const SpeechByCombinationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SpeechByCombinationOutcomeCallable speechByCombinationCallable(const Model::SpeechByCombinationRequest& request) const;
+			SpeechBySynthesisOutcome speechBySynthesis(const Model::SpeechBySynthesisRequest &request)const;
+			void speechBySynthesisAsync(const Model::SpeechBySynthesisRequest& request, const SpeechBySynthesisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SpeechBySynthesisOutcomeCallable speechBySynthesisCallable(const Model::SpeechBySynthesisRequest& request) const;
 			StartRuleOutcome startRule(const Model::StartRuleRequest &request)const;
 			void startRuleAsync(const Model::StartRuleRequest& request, const StartRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StartRuleOutcomeCallable startRuleCallable(const Model::StartRuleRequest& request) const;

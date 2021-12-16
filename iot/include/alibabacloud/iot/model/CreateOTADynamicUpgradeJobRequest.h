@@ -43,6 +43,8 @@ namespace AlibabaCloud
 
 				int getDynamicMode()const;
 				void setDynamicMode(int dynamicMode);
+				bool getMultiModuleMode()const;
+				void setMultiModuleMode(bool multiModuleMode);
 				int getRetryCount()const;
 				void setRetryCount(int retryCount);
 				int getTimeoutInMinutes()const;
@@ -82,6 +84,7 @@ namespace AlibabaCloud
 
             private:
 				int dynamicMode_;
+				bool multiModuleMode_;
 				int retryCount_;
 				int timeoutInMinutes_;
 				bool needConfirm_;

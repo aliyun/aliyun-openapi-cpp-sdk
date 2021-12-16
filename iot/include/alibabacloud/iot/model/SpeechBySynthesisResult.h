@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IOT_MODEL_QUERYAPPDEVICELISTRESULT_H_
-#define ALIBABACLOUD_IOT_MODEL_QUERYAPPDEVICELISTRESULT_H_
+#ifndef ALIBABACLOUD_IOT_MODEL_SPEECHBYSYNTHESISRESULT_H_
+#define ALIBABACLOUD_IOT_MODEL_SPEECHBYSYNTHESISRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,34 +29,14 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IOT_EXPORT QueryAppDeviceListResult : public ServiceResult
+			class ALIBABACLOUD_IOT_EXPORT SpeechBySynthesisResult : public ServiceResult
 			{
 			public:
-				struct DataItem
-				{
-					std::string status;
-					std::string lastOnlineTime;
-					std::string utcActiveTime;
-					std::string utcCreateTime;
-					std::string productName;
-					long childDeviceCount;
-					std::string activeTime;
-					std::string utcLastOnlineTime;
-					int nodeType;
-					std::string createTime;
-					std::string productKey;
-					std::string deviceName;
-				};
 
 
-				QueryAppDeviceListResult();
-				explicit QueryAppDeviceListResult(const std::string &payload);
-				~QueryAppDeviceListResult();
-				int getPageSize()const;
-				int getPageCount()const;
-				int getTotal()const;
-				std::vector<DataItem> getData()const;
-				int getPage()const;
+				SpeechBySynthesisResult();
+				explicit SpeechBySynthesisResult(const std::string &payload);
+				~SpeechBySynthesisResult();
 				std::string getErrorMessage()const;
 				std::string getCode()const;
 				bool getSuccess()const;
@@ -64,11 +44,6 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int pageSize_;
-				int pageCount_;
-				int total_;
-				std::vector<DataItem> data_;
-				int page_;
 				std::string errorMessage_;
 				std::string code_;
 				bool success_;
@@ -77,4 +52,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IOT_MODEL_QUERYAPPDEVICELISTRESULT_H_
+#endif // !ALIBABACLOUD_IOT_MODEL_SPEECHBYSYNTHESISRESULT_H_

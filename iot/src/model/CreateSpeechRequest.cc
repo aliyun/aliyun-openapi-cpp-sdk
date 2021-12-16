@@ -82,6 +82,17 @@ void CreateSpeechRequest::setText(const std::string& text)
 	setBodyParameter("Text", text);
 }
 
+std::string CreateSpeechRequest::getSoundCodeConfig()const
+{
+	return soundCodeConfig_;
+}
+
+void CreateSpeechRequest::setSoundCodeConfig(const std::string& soundCodeConfig)
+{
+	soundCodeConfig_ = soundCodeConfig;
+	setBodyParameter("SoundCodeConfig", soundCodeConfig);
+}
+
 std::string CreateSpeechRequest::getSpeechType()const
 {
 	return speechType_;
@@ -91,6 +102,17 @@ void CreateSpeechRequest::setSpeechType(const std::string& speechType)
 {
 	speechType_ = speechType;
 	setBodyParameter("SpeechType", speechType);
+}
+
+bool CreateSpeechRequest::getEnableSoundCode()const
+{
+	return enableSoundCode_;
+}
+
+void CreateSpeechRequest::setEnableSoundCode(bool enableSoundCode)
+{
+	enableSoundCode_ = enableSoundCode;
+	setBodyParameter("EnableSoundCode", enableSoundCode ? "true" : "false");
 }
 
 int CreateSpeechRequest::getVolume()const

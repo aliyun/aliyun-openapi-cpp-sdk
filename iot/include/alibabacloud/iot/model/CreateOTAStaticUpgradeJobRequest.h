@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				CreateOTAStaticUpgradeJobRequest();
 				~CreateOTAStaticUpgradeJobRequest();
 
+				bool getMultiModuleMode()const;
+				void setMultiModuleMode(bool multiModuleMode);
 				int getRetryCount()const;
 				void setRetryCount(int retryCount);
 				int getTimeoutInMinutes()const;
@@ -91,6 +93,7 @@ namespace AlibabaCloud
 				void setTargetDeviceName(const std::vector<std::string>& targetDeviceName);
 
             private:
+				bool multiModuleMode_;
 				int retryCount_;
 				int timeoutInMinutes_;
 				bool needConfirm_;

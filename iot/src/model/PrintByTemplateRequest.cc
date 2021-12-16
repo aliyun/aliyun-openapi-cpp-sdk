@@ -27,17 +27,6 @@ PrintByTemplateRequest::PrintByTemplateRequest() :
 PrintByTemplateRequest::~PrintByTemplateRequest()
 {}
 
-std::string PrintByTemplateRequest::getProjectCode()const
-{
-	return projectCode_;
-}
-
-void PrintByTemplateRequest::setProjectCode(const std::string& projectCode)
-{
-	projectCode_ = projectCode;
-	setBodyParameter("ProjectCode", projectCode);
-}
-
 std::string PrintByTemplateRequest::getTemplateBizCode()const
 {
 	return templateBizCode_;
@@ -69,6 +58,17 @@ void PrintByTemplateRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
 	setBodyParameter("IotInstanceId", iotInstanceId);
+}
+
+bool PrintByTemplateRequest::getHistoryPrintTopic()const
+{
+	return historyPrintTopic_;
+}
+
+void PrintByTemplateRequest::setHistoryPrintTopic(bool historyPrintTopic)
+{
+	historyPrintTopic_ = historyPrintTopic;
+	setBodyParameter("HistoryPrintTopic", historyPrintTopic ? "true" : "false");
 }
 
 std::string PrintByTemplateRequest::getProductKey()const

@@ -27,6 +27,17 @@ CreateOTAStaticUpgradeJobRequest::CreateOTAStaticUpgradeJobRequest() :
 CreateOTAStaticUpgradeJobRequest::~CreateOTAStaticUpgradeJobRequest()
 {}
 
+bool CreateOTAStaticUpgradeJobRequest::getMultiModuleMode()const
+{
+	return multiModuleMode_;
+}
+
+void CreateOTAStaticUpgradeJobRequest::setMultiModuleMode(bool multiModuleMode)
+{
+	multiModuleMode_ = multiModuleMode;
+	setParameter("MultiModuleMode", multiModuleMode ? "true" : "false");
+}
+
 int CreateOTAStaticUpgradeJobRequest::getRetryCount()const
 {
 	return retryCount_;

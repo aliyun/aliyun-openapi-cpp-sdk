@@ -60,6 +60,28 @@ void UpdateSpeechRequest::setIotInstanceId(const std::string& iotInstanceId)
 	setBodyParameter("IotInstanceId", iotInstanceId);
 }
 
+std::string UpdateSpeechRequest::getSoundCodeConfig()const
+{
+	return soundCodeConfig_;
+}
+
+void UpdateSpeechRequest::setSoundCodeConfig(const std::string& soundCodeConfig)
+{
+	soundCodeConfig_ = soundCodeConfig;
+	setBodyParameter("SoundCodeConfig", soundCodeConfig);
+}
+
+bool UpdateSpeechRequest::getEnableSoundCode()const
+{
+	return enableSoundCode_;
+}
+
+void UpdateSpeechRequest::setEnableSoundCode(bool enableSoundCode)
+{
+	enableSoundCode_ = enableSoundCode;
+	setBodyParameter("EnableSoundCode", enableSoundCode ? "true" : "false");
+}
+
 int UpdateSpeechRequest::getVolume()const
 {
 	return volume_;
