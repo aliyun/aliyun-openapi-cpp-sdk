@@ -1,0 +1,446 @@
+#
+# Copyright 2009-2017 Alibaba Cloud All rights reserved.
+# 
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+# 
+#      http://www.apache.org/licenses/LICENSE-2.0
+# 
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
+set(public_header_dir ${CMAKE_CURRENT_SOURCE_DIR}/../include)
+
+set(nas_public_header 
+	include/alibabacloud/nas/NASClient.h
+	include/alibabacloud/nas/NASExport.h )
+
+set(nas_public_header_model 
+	include/alibabacloud/nas/model/AddClientToBlackListRequest.h
+	include/alibabacloud/nas/model/AddClientToBlackListResult.h
+	include/alibabacloud/nas/model/AddTagsRequest.h
+	include/alibabacloud/nas/model/AddTagsResult.h
+	include/alibabacloud/nas/model/ApplyAutoSnapshotPolicyRequest.h
+	include/alibabacloud/nas/model/ApplyAutoSnapshotPolicyResult.h
+	include/alibabacloud/nas/model/ApplyDataFlowAutoRefreshRequest.h
+	include/alibabacloud/nas/model/ApplyDataFlowAutoRefreshResult.h
+	include/alibabacloud/nas/model/CancelAutoSnapshotPolicyRequest.h
+	include/alibabacloud/nas/model/CancelAutoSnapshotPolicyResult.h
+	include/alibabacloud/nas/model/CancelDataFlowAutoRefreshRequest.h
+	include/alibabacloud/nas/model/CancelDataFlowAutoRefreshResult.h
+	include/alibabacloud/nas/model/CancelDataFlowTaskRequest.h
+	include/alibabacloud/nas/model/CancelDataFlowTaskResult.h
+	include/alibabacloud/nas/model/CancelDirQuotaRequest.h
+	include/alibabacloud/nas/model/CancelDirQuotaResult.h
+	include/alibabacloud/nas/model/CancelLifecycleRetrieveJobRequest.h
+	include/alibabacloud/nas/model/CancelLifecycleRetrieveJobResult.h
+	include/alibabacloud/nas/model/CancelRecycleBinJobRequest.h
+	include/alibabacloud/nas/model/CancelRecycleBinJobResult.h
+	include/alibabacloud/nas/model/CreateAccessGroupRequest.h
+	include/alibabacloud/nas/model/CreateAccessGroupResult.h
+	include/alibabacloud/nas/model/CreateAccessRuleRequest.h
+	include/alibabacloud/nas/model/CreateAccessRuleResult.h
+	include/alibabacloud/nas/model/CreateAutoSnapshotPolicyRequest.h
+	include/alibabacloud/nas/model/CreateAutoSnapshotPolicyResult.h
+	include/alibabacloud/nas/model/CreateDataFlowRequest.h
+	include/alibabacloud/nas/model/CreateDataFlowResult.h
+	include/alibabacloud/nas/model/CreateDataFlowTaskRequest.h
+	include/alibabacloud/nas/model/CreateDataFlowTaskResult.h
+	include/alibabacloud/nas/model/CreateFileSystemRequest.h
+	include/alibabacloud/nas/model/CreateFileSystemResult.h
+	include/alibabacloud/nas/model/CreateFilesetRequest.h
+	include/alibabacloud/nas/model/CreateFilesetResult.h
+	include/alibabacloud/nas/model/CreateLDAPConfigRequest.h
+	include/alibabacloud/nas/model/CreateLDAPConfigResult.h
+	include/alibabacloud/nas/model/CreateLifecyclePolicyRequest.h
+	include/alibabacloud/nas/model/CreateLifecyclePolicyResult.h
+	include/alibabacloud/nas/model/CreateLifecycleRetrieveJobRequest.h
+	include/alibabacloud/nas/model/CreateLifecycleRetrieveJobResult.h
+	include/alibabacloud/nas/model/CreateMountTargetRequest.h
+	include/alibabacloud/nas/model/CreateMountTargetResult.h
+	include/alibabacloud/nas/model/CreateRecycleBinDeleteJobRequest.h
+	include/alibabacloud/nas/model/CreateRecycleBinDeleteJobResult.h
+	include/alibabacloud/nas/model/CreateRecycleBinRestoreJobRequest.h
+	include/alibabacloud/nas/model/CreateRecycleBinRestoreJobResult.h
+	include/alibabacloud/nas/model/CreateSnapshotRequest.h
+	include/alibabacloud/nas/model/CreateSnapshotResult.h
+	include/alibabacloud/nas/model/DeleteAccessGroupRequest.h
+	include/alibabacloud/nas/model/DeleteAccessGroupResult.h
+	include/alibabacloud/nas/model/DeleteAccessRuleRequest.h
+	include/alibabacloud/nas/model/DeleteAccessRuleResult.h
+	include/alibabacloud/nas/model/DeleteAutoSnapshotPolicyRequest.h
+	include/alibabacloud/nas/model/DeleteAutoSnapshotPolicyResult.h
+	include/alibabacloud/nas/model/DeleteDataFlowRequest.h
+	include/alibabacloud/nas/model/DeleteDataFlowResult.h
+	include/alibabacloud/nas/model/DeleteFileSystemRequest.h
+	include/alibabacloud/nas/model/DeleteFileSystemResult.h
+	include/alibabacloud/nas/model/DeleteFilesetRequest.h
+	include/alibabacloud/nas/model/DeleteFilesetResult.h
+	include/alibabacloud/nas/model/DeleteLDAPConfigRequest.h
+	include/alibabacloud/nas/model/DeleteLDAPConfigResult.h
+	include/alibabacloud/nas/model/DeleteLifecyclePolicyRequest.h
+	include/alibabacloud/nas/model/DeleteLifecyclePolicyResult.h
+	include/alibabacloud/nas/model/DeleteMountTargetRequest.h
+	include/alibabacloud/nas/model/DeleteMountTargetResult.h
+	include/alibabacloud/nas/model/DeleteSnapshotRequest.h
+	include/alibabacloud/nas/model/DeleteSnapshotResult.h
+	include/alibabacloud/nas/model/DescribeAccessGroupsRequest.h
+	include/alibabacloud/nas/model/DescribeAccessGroupsResult.h
+	include/alibabacloud/nas/model/DescribeAccessRulesRequest.h
+	include/alibabacloud/nas/model/DescribeAccessRulesResult.h
+	include/alibabacloud/nas/model/DescribeAutoSnapshotPoliciesRequest.h
+	include/alibabacloud/nas/model/DescribeAutoSnapshotPoliciesResult.h
+	include/alibabacloud/nas/model/DescribeAutoSnapshotTasksRequest.h
+	include/alibabacloud/nas/model/DescribeAutoSnapshotTasksResult.h
+	include/alibabacloud/nas/model/DescribeBlackListClientsRequest.h
+	include/alibabacloud/nas/model/DescribeBlackListClientsResult.h
+	include/alibabacloud/nas/model/DescribeDataFlowTasksRequest.h
+	include/alibabacloud/nas/model/DescribeDataFlowTasksResult.h
+	include/alibabacloud/nas/model/DescribeDataFlowsRequest.h
+	include/alibabacloud/nas/model/DescribeDataFlowsResult.h
+	include/alibabacloud/nas/model/DescribeDirQuotasRequest.h
+	include/alibabacloud/nas/model/DescribeDirQuotasResult.h
+	include/alibabacloud/nas/model/DescribeFileSystemStatisticsRequest.h
+	include/alibabacloud/nas/model/DescribeFileSystemStatisticsResult.h
+	include/alibabacloud/nas/model/DescribeFileSystemsRequest.h
+	include/alibabacloud/nas/model/DescribeFileSystemsResult.h
+	include/alibabacloud/nas/model/DescribeFilesetsRequest.h
+	include/alibabacloud/nas/model/DescribeFilesetsResult.h
+	include/alibabacloud/nas/model/DescribeLDAPConfigRequest.h
+	include/alibabacloud/nas/model/DescribeLDAPConfigResult.h
+	include/alibabacloud/nas/model/DescribeLifecyclePoliciesRequest.h
+	include/alibabacloud/nas/model/DescribeLifecyclePoliciesResult.h
+	include/alibabacloud/nas/model/DescribeLogAnalysisRequest.h
+	include/alibabacloud/nas/model/DescribeLogAnalysisResult.h
+	include/alibabacloud/nas/model/DescribeMountTargetsRequest.h
+	include/alibabacloud/nas/model/DescribeMountTargetsResult.h
+	include/alibabacloud/nas/model/DescribeMountedClientsRequest.h
+	include/alibabacloud/nas/model/DescribeMountedClientsResult.h
+	include/alibabacloud/nas/model/DescribeRegionsRequest.h
+	include/alibabacloud/nas/model/DescribeRegionsResult.h
+	include/alibabacloud/nas/model/DescribeSmbAclRequest.h
+	include/alibabacloud/nas/model/DescribeSmbAclResult.h
+	include/alibabacloud/nas/model/DescribeSnapshotsRequest.h
+	include/alibabacloud/nas/model/DescribeSnapshotsResult.h
+	include/alibabacloud/nas/model/DescribeStoragePackagesRequest.h
+	include/alibabacloud/nas/model/DescribeStoragePackagesResult.h
+	include/alibabacloud/nas/model/DescribeTagsRequest.h
+	include/alibabacloud/nas/model/DescribeTagsResult.h
+	include/alibabacloud/nas/model/DescribeZonesRequest.h
+	include/alibabacloud/nas/model/DescribeZonesResult.h
+	include/alibabacloud/nas/model/DisableAndCleanRecycleBinRequest.h
+	include/alibabacloud/nas/model/DisableAndCleanRecycleBinResult.h
+	include/alibabacloud/nas/model/DisableSmbAclRequest.h
+	include/alibabacloud/nas/model/DisableSmbAclResult.h
+	include/alibabacloud/nas/model/EnableRecycleBinRequest.h
+	include/alibabacloud/nas/model/EnableRecycleBinResult.h
+	include/alibabacloud/nas/model/EnableSmbAclRequest.h
+	include/alibabacloud/nas/model/EnableSmbAclResult.h
+	include/alibabacloud/nas/model/GetDirectoryOrFilePropertiesRequest.h
+	include/alibabacloud/nas/model/GetDirectoryOrFilePropertiesResult.h
+	include/alibabacloud/nas/model/GetRecycleBinAttributeRequest.h
+	include/alibabacloud/nas/model/GetRecycleBinAttributeResult.h
+	include/alibabacloud/nas/model/ListDirectoriesAndFilesRequest.h
+	include/alibabacloud/nas/model/ListDirectoriesAndFilesResult.h
+	include/alibabacloud/nas/model/ListLifecycleRetrieveJobsRequest.h
+	include/alibabacloud/nas/model/ListLifecycleRetrieveJobsResult.h
+	include/alibabacloud/nas/model/ListRecentlyRecycledDirectoriesRequest.h
+	include/alibabacloud/nas/model/ListRecentlyRecycledDirectoriesResult.h
+	include/alibabacloud/nas/model/ListRecycleBinJobsRequest.h
+	include/alibabacloud/nas/model/ListRecycleBinJobsResult.h
+	include/alibabacloud/nas/model/ListRecycledDirectoriesAndFilesRequest.h
+	include/alibabacloud/nas/model/ListRecycledDirectoriesAndFilesResult.h
+	include/alibabacloud/nas/model/ListTagResourcesRequest.h
+	include/alibabacloud/nas/model/ListTagResourcesResult.h
+	include/alibabacloud/nas/model/ModifyAccessGroupRequest.h
+	include/alibabacloud/nas/model/ModifyAccessGroupResult.h
+	include/alibabacloud/nas/model/ModifyAccessRuleRequest.h
+	include/alibabacloud/nas/model/ModifyAccessRuleResult.h
+	include/alibabacloud/nas/model/ModifyAutoSnapshotPolicyRequest.h
+	include/alibabacloud/nas/model/ModifyAutoSnapshotPolicyResult.h
+	include/alibabacloud/nas/model/ModifyDataFlowRequest.h
+	include/alibabacloud/nas/model/ModifyDataFlowResult.h
+	include/alibabacloud/nas/model/ModifyDataFlowAutoRefreshRequest.h
+	include/alibabacloud/nas/model/ModifyDataFlowAutoRefreshResult.h
+	include/alibabacloud/nas/model/ModifyFileSystemRequest.h
+	include/alibabacloud/nas/model/ModifyFileSystemResult.h
+	include/alibabacloud/nas/model/ModifyFilesetRequest.h
+	include/alibabacloud/nas/model/ModifyFilesetResult.h
+	include/alibabacloud/nas/model/ModifyLDAPConfigRequest.h
+	include/alibabacloud/nas/model/ModifyLDAPConfigResult.h
+	include/alibabacloud/nas/model/ModifyLifecyclePolicyRequest.h
+	include/alibabacloud/nas/model/ModifyLifecyclePolicyResult.h
+	include/alibabacloud/nas/model/ModifyMountTargetRequest.h
+	include/alibabacloud/nas/model/ModifyMountTargetResult.h
+	include/alibabacloud/nas/model/ModifySmbAclRequest.h
+	include/alibabacloud/nas/model/ModifySmbAclResult.h
+	include/alibabacloud/nas/model/OpenNASServiceRequest.h
+	include/alibabacloud/nas/model/OpenNASServiceResult.h
+	include/alibabacloud/nas/model/RemoveClientFromBlackListRequest.h
+	include/alibabacloud/nas/model/RemoveClientFromBlackListResult.h
+	include/alibabacloud/nas/model/RemoveTagsRequest.h
+	include/alibabacloud/nas/model/RemoveTagsResult.h
+	include/alibabacloud/nas/model/ResetFileSystemRequest.h
+	include/alibabacloud/nas/model/ResetFileSystemResult.h
+	include/alibabacloud/nas/model/RetryLifecycleRetrieveJobRequest.h
+	include/alibabacloud/nas/model/RetryLifecycleRetrieveJobResult.h
+	include/alibabacloud/nas/model/SetDirQuotaRequest.h
+	include/alibabacloud/nas/model/SetDirQuotaResult.h
+	include/alibabacloud/nas/model/StartDataFlowRequest.h
+	include/alibabacloud/nas/model/StartDataFlowResult.h
+	include/alibabacloud/nas/model/StopDataFlowRequest.h
+	include/alibabacloud/nas/model/StopDataFlowResult.h
+	include/alibabacloud/nas/model/TagResourcesRequest.h
+	include/alibabacloud/nas/model/TagResourcesResult.h
+	include/alibabacloud/nas/model/UntagResourcesRequest.h
+	include/alibabacloud/nas/model/UntagResourcesResult.h
+	include/alibabacloud/nas/model/UpdateRecycleBinAttributeRequest.h
+	include/alibabacloud/nas/model/UpdateRecycleBinAttributeResult.h
+	include/alibabacloud/nas/model/UpgradeFileSystemRequest.h
+	include/alibabacloud/nas/model/UpgradeFileSystemResult.h )
+
+set(nas_src 
+	src/NASClient.cc
+	src/model/AddClientToBlackListRequest.cc
+	src/model/AddClientToBlackListResult.cc
+	src/model/AddTagsRequest.cc
+	src/model/AddTagsResult.cc
+	src/model/ApplyAutoSnapshotPolicyRequest.cc
+	src/model/ApplyAutoSnapshotPolicyResult.cc
+	src/model/ApplyDataFlowAutoRefreshRequest.cc
+	src/model/ApplyDataFlowAutoRefreshResult.cc
+	src/model/CancelAutoSnapshotPolicyRequest.cc
+	src/model/CancelAutoSnapshotPolicyResult.cc
+	src/model/CancelDataFlowAutoRefreshRequest.cc
+	src/model/CancelDataFlowAutoRefreshResult.cc
+	src/model/CancelDataFlowTaskRequest.cc
+	src/model/CancelDataFlowTaskResult.cc
+	src/model/CancelDirQuotaRequest.cc
+	src/model/CancelDirQuotaResult.cc
+	src/model/CancelLifecycleRetrieveJobRequest.cc
+	src/model/CancelLifecycleRetrieveJobResult.cc
+	src/model/CancelRecycleBinJobRequest.cc
+	src/model/CancelRecycleBinJobResult.cc
+	src/model/CreateAccessGroupRequest.cc
+	src/model/CreateAccessGroupResult.cc
+	src/model/CreateAccessRuleRequest.cc
+	src/model/CreateAccessRuleResult.cc
+	src/model/CreateAutoSnapshotPolicyRequest.cc
+	src/model/CreateAutoSnapshotPolicyResult.cc
+	src/model/CreateDataFlowRequest.cc
+	src/model/CreateDataFlowResult.cc
+	src/model/CreateDataFlowTaskRequest.cc
+	src/model/CreateDataFlowTaskResult.cc
+	src/model/CreateFileSystemRequest.cc
+	src/model/CreateFileSystemResult.cc
+	src/model/CreateFilesetRequest.cc
+	src/model/CreateFilesetResult.cc
+	src/model/CreateLDAPConfigRequest.cc
+	src/model/CreateLDAPConfigResult.cc
+	src/model/CreateLifecyclePolicyRequest.cc
+	src/model/CreateLifecyclePolicyResult.cc
+	src/model/CreateLifecycleRetrieveJobRequest.cc
+	src/model/CreateLifecycleRetrieveJobResult.cc
+	src/model/CreateMountTargetRequest.cc
+	src/model/CreateMountTargetResult.cc
+	src/model/CreateRecycleBinDeleteJobRequest.cc
+	src/model/CreateRecycleBinDeleteJobResult.cc
+	src/model/CreateRecycleBinRestoreJobRequest.cc
+	src/model/CreateRecycleBinRestoreJobResult.cc
+	src/model/CreateSnapshotRequest.cc
+	src/model/CreateSnapshotResult.cc
+	src/model/DeleteAccessGroupRequest.cc
+	src/model/DeleteAccessGroupResult.cc
+	src/model/DeleteAccessRuleRequest.cc
+	src/model/DeleteAccessRuleResult.cc
+	src/model/DeleteAutoSnapshotPolicyRequest.cc
+	src/model/DeleteAutoSnapshotPolicyResult.cc
+	src/model/DeleteDataFlowRequest.cc
+	src/model/DeleteDataFlowResult.cc
+	src/model/DeleteFileSystemRequest.cc
+	src/model/DeleteFileSystemResult.cc
+	src/model/DeleteFilesetRequest.cc
+	src/model/DeleteFilesetResult.cc
+	src/model/DeleteLDAPConfigRequest.cc
+	src/model/DeleteLDAPConfigResult.cc
+	src/model/DeleteLifecyclePolicyRequest.cc
+	src/model/DeleteLifecyclePolicyResult.cc
+	src/model/DeleteMountTargetRequest.cc
+	src/model/DeleteMountTargetResult.cc
+	src/model/DeleteSnapshotRequest.cc
+	src/model/DeleteSnapshotResult.cc
+	src/model/DescribeAccessGroupsRequest.cc
+	src/model/DescribeAccessGroupsResult.cc
+	src/model/DescribeAccessRulesRequest.cc
+	src/model/DescribeAccessRulesResult.cc
+	src/model/DescribeAutoSnapshotPoliciesRequest.cc
+	src/model/DescribeAutoSnapshotPoliciesResult.cc
+	src/model/DescribeAutoSnapshotTasksRequest.cc
+	src/model/DescribeAutoSnapshotTasksResult.cc
+	src/model/DescribeBlackListClientsRequest.cc
+	src/model/DescribeBlackListClientsResult.cc
+	src/model/DescribeDataFlowTasksRequest.cc
+	src/model/DescribeDataFlowTasksResult.cc
+	src/model/DescribeDataFlowsRequest.cc
+	src/model/DescribeDataFlowsResult.cc
+	src/model/DescribeDirQuotasRequest.cc
+	src/model/DescribeDirQuotasResult.cc
+	src/model/DescribeFileSystemStatisticsRequest.cc
+	src/model/DescribeFileSystemStatisticsResult.cc
+	src/model/DescribeFileSystemsRequest.cc
+	src/model/DescribeFileSystemsResult.cc
+	src/model/DescribeFilesetsRequest.cc
+	src/model/DescribeFilesetsResult.cc
+	src/model/DescribeLDAPConfigRequest.cc
+	src/model/DescribeLDAPConfigResult.cc
+	src/model/DescribeLifecyclePoliciesRequest.cc
+	src/model/DescribeLifecyclePoliciesResult.cc
+	src/model/DescribeLogAnalysisRequest.cc
+	src/model/DescribeLogAnalysisResult.cc
+	src/model/DescribeMountTargetsRequest.cc
+	src/model/DescribeMountTargetsResult.cc
+	src/model/DescribeMountedClientsRequest.cc
+	src/model/DescribeMountedClientsResult.cc
+	src/model/DescribeRegionsRequest.cc
+	src/model/DescribeRegionsResult.cc
+	src/model/DescribeSmbAclRequest.cc
+	src/model/DescribeSmbAclResult.cc
+	src/model/DescribeSnapshotsRequest.cc
+	src/model/DescribeSnapshotsResult.cc
+	src/model/DescribeStoragePackagesRequest.cc
+	src/model/DescribeStoragePackagesResult.cc
+	src/model/DescribeTagsRequest.cc
+	src/model/DescribeTagsResult.cc
+	src/model/DescribeZonesRequest.cc
+	src/model/DescribeZonesResult.cc
+	src/model/DisableAndCleanRecycleBinRequest.cc
+	src/model/DisableAndCleanRecycleBinResult.cc
+	src/model/DisableSmbAclRequest.cc
+	src/model/DisableSmbAclResult.cc
+	src/model/EnableRecycleBinRequest.cc
+	src/model/EnableRecycleBinResult.cc
+	src/model/EnableSmbAclRequest.cc
+	src/model/EnableSmbAclResult.cc
+	src/model/GetDirectoryOrFilePropertiesRequest.cc
+	src/model/GetDirectoryOrFilePropertiesResult.cc
+	src/model/GetRecycleBinAttributeRequest.cc
+	src/model/GetRecycleBinAttributeResult.cc
+	src/model/ListDirectoriesAndFilesRequest.cc
+	src/model/ListDirectoriesAndFilesResult.cc
+	src/model/ListLifecycleRetrieveJobsRequest.cc
+	src/model/ListLifecycleRetrieveJobsResult.cc
+	src/model/ListRecentlyRecycledDirectoriesRequest.cc
+	src/model/ListRecentlyRecycledDirectoriesResult.cc
+	src/model/ListRecycleBinJobsRequest.cc
+	src/model/ListRecycleBinJobsResult.cc
+	src/model/ListRecycledDirectoriesAndFilesRequest.cc
+	src/model/ListRecycledDirectoriesAndFilesResult.cc
+	src/model/ListTagResourcesRequest.cc
+	src/model/ListTagResourcesResult.cc
+	src/model/ModifyAccessGroupRequest.cc
+	src/model/ModifyAccessGroupResult.cc
+	src/model/ModifyAccessRuleRequest.cc
+	src/model/ModifyAccessRuleResult.cc
+	src/model/ModifyAutoSnapshotPolicyRequest.cc
+	src/model/ModifyAutoSnapshotPolicyResult.cc
+	src/model/ModifyDataFlowRequest.cc
+	src/model/ModifyDataFlowResult.cc
+	src/model/ModifyDataFlowAutoRefreshRequest.cc
+	src/model/ModifyDataFlowAutoRefreshResult.cc
+	src/model/ModifyFileSystemRequest.cc
+	src/model/ModifyFileSystemResult.cc
+	src/model/ModifyFilesetRequest.cc
+	src/model/ModifyFilesetResult.cc
+	src/model/ModifyLDAPConfigRequest.cc
+	src/model/ModifyLDAPConfigResult.cc
+	src/model/ModifyLifecyclePolicyRequest.cc
+	src/model/ModifyLifecyclePolicyResult.cc
+	src/model/ModifyMountTargetRequest.cc
+	src/model/ModifyMountTargetResult.cc
+	src/model/ModifySmbAclRequest.cc
+	src/model/ModifySmbAclResult.cc
+	src/model/OpenNASServiceRequest.cc
+	src/model/OpenNASServiceResult.cc
+	src/model/RemoveClientFromBlackListRequest.cc
+	src/model/RemoveClientFromBlackListResult.cc
+	src/model/RemoveTagsRequest.cc
+	src/model/RemoveTagsResult.cc
+	src/model/ResetFileSystemRequest.cc
+	src/model/ResetFileSystemResult.cc
+	src/model/RetryLifecycleRetrieveJobRequest.cc
+	src/model/RetryLifecycleRetrieveJobResult.cc
+	src/model/SetDirQuotaRequest.cc
+	src/model/SetDirQuotaResult.cc
+	src/model/StartDataFlowRequest.cc
+	src/model/StartDataFlowResult.cc
+	src/model/StopDataFlowRequest.cc
+	src/model/StopDataFlowResult.cc
+	src/model/TagResourcesRequest.cc
+	src/model/TagResourcesResult.cc
+	src/model/UntagResourcesRequest.cc
+	src/model/UntagResourcesResult.cc
+	src/model/UpdateRecycleBinAttributeRequest.cc
+	src/model/UpdateRecycleBinAttributeResult.cc
+	src/model/UpgradeFileSystemRequest.cc
+	src/model/UpgradeFileSystemResult.cc )
+
+add_library(nas ${LIB_TYPE}
+	${nas_public_header}
+	${nas_public_header_model}
+	${nas_src})
+
+set_target_properties(nas
+	PROPERTIES
+	LINKER_LANGUAGE CXX
+	ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib
+	LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib
+	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
+	OUTPUT_NAME ${TARGET_OUTPUT_NAME_PREFIX}nas
+	)
+
+if(${LIB_TYPE} STREQUAL "SHARED")
+	set_target_properties(nas
+		PROPERTIES
+		DEFINE_SYMBOL ALIBABACLOUD_NAS_LIBRARY)
+endif()
+
+target_include_directories(nas
+	PRIVATE include
+		${CMAKE_SOURCE_DIR}/core/include
+	)
+target_link_libraries(nas
+	core)
+
+if(CMAKE_HOST_WIN32)
+	ExternalProject_Get_Property(jsoncpp INSTALL_DIR)
+	set(jsoncpp_install_dir ${INSTALL_DIR})
+	add_dependencies(nas
+		jsoncpp)
+	target_include_directories(nas
+		PRIVATE	${jsoncpp_install_dir}/include)
+	target_link_libraries(nas
+		${jsoncpp_install_dir}/lib/jsoncpp.lib)
+	set_target_properties(nas
+    	PROPERTIES
+    		COMPILE_OPTIONS "/bigobj")
+else()
+	target_include_directories(nas
+		PRIVATE /usr/include/jsoncpp)
+	target_link_libraries(nas
+		jsoncpp)
+endif()
+
+install(FILES ${nas_public_header}
+	DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/alibabacloud/nas)
+install(FILES ${nas_public_header_model}
+	DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/alibabacloud/nas/model)
+install(TARGETS nas
+	ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+	LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+	RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+	)
