@@ -152,6 +152,15 @@ void CreateLaunchTemplateRequest::setPeriod(int period) {
   setParameter(std::string("Period"), std::to_string(period));
 }
 
+int CreateLaunchTemplateRequest::getIpv6AddressCount() const {
+  return ipv6AddressCount_;
+}
+
+void CreateLaunchTemplateRequest::setIpv6AddressCount(int ipv6AddressCount) {
+  ipv6AddressCount_ = ipv6AddressCount;
+  setParameter(std::string("Ipv6AddressCount"), std::to_string(ipv6AddressCount));
+}
+
 std::string CreateLaunchTemplateRequest::getTemplateResourceGroupId() const {
   return templateResourceGroupId_;
 }

@@ -147,6 +147,15 @@ void CreateLaunchTemplateVersionRequest::setLaunchTemplateId(const std::string &
   setParameter(std::string("LaunchTemplateId"), launchTemplateId);
 }
 
+int CreateLaunchTemplateVersionRequest::getIpv6AddressCount() const {
+  return ipv6AddressCount_;
+}
+
+void CreateLaunchTemplateVersionRequest::setIpv6AddressCount(int ipv6AddressCount) {
+  ipv6AddressCount_ = ipv6AddressCount;
+  setParameter(std::string("Ipv6AddressCount"), std::to_string(ipv6AddressCount));
+}
+
 long CreateLaunchTemplateVersionRequest::getOwnerId() const {
   return ownerId_;
 }

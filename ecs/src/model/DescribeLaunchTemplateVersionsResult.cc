@@ -134,6 +134,8 @@ void DescribeLaunchTemplateVersionsResult::parse(const std::string &payload)
 			launchTemplateVersionSetsObject.launchTemplateData.internetChargeType = launchTemplateDataNode["InternetChargeType"].asString();
 		if(!launchTemplateDataNode["ZoneId"].isNull())
 			launchTemplateVersionSetsObject.launchTemplateData.zoneId = launchTemplateDataNode["ZoneId"].asString();
+		if(!launchTemplateDataNode["Ipv6AddressCount"].isNull())
+			launchTemplateVersionSetsObject.launchTemplateData.ipv6AddressCount = std::stoi(launchTemplateDataNode["Ipv6AddressCount"].asString());
 		auto allDataDisksNode = launchTemplateDataNode["DataDisks"]["DataDisk"];
 		for (auto launchTemplateDataNodeDataDisksDataDisk : allDataDisksNode)
 		{

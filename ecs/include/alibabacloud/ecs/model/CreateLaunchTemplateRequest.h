@@ -82,6 +82,8 @@ public:
 	void setTag(const std::vector<Tag> &tag);
 	int getPeriod() const;
 	void setPeriod(int period);
+	int getIpv6AddressCount() const;
+	void setIpv6AddressCount(int ipv6AddressCount);
 	std::string getTemplateResourceGroupId() const;
 	void setTemplateResourceGroupId(const std::string &templateResourceGroupId);
 	long getOwnerId() const;
@@ -171,6 +173,7 @@ private:
 	std::vector<TemplateTag> templateTag_;
 	std::vector<Tag> tag_;
 	int period_;
+	int ipv6AddressCount_;
 	std::string templateResourceGroupId_;
 	long ownerId_;
 	std::string vSwitchId_;

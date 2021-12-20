@@ -75,6 +75,7 @@ namespace AlibabaCloud
 						std::string ramRoleName;
 						std::string systemDiskPerformanceLevel;
 						std::string networkType;
+						int ipv6AddressCount;
 						std::vector<NetworkInterface> networkInterfaces;
 						std::string imageId;
 						std::string systemDiskDiskName;

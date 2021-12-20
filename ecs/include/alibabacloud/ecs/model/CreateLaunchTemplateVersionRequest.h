@@ -78,6 +78,8 @@ public:
 	void setPeriod(int period);
 	std::string getLaunchTemplateId() const;
 	void setLaunchTemplateId(const std::string &launchTemplateId);
+	int getIpv6AddressCount() const;
+	void setIpv6AddressCount(int ipv6AddressCount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
 	std::string getVSwitchId() const;
@@ -165,6 +167,7 @@ private:
 	std::vector<Tag> tag_;
 	int period_;
 	std::string launchTemplateId_;
+	int ipv6AddressCount_;
 	long ownerId_;
 	std::string vSwitchId_;
 	std::string spotStrategy_;

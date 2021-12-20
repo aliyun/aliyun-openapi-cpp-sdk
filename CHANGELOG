@@ -1,3 +1,7 @@
+2021-12-20 Version: 1.36.986
+- Add Request Param Ipv6AddressCount For API CreateLaunchTemplate AND CreateLaunchTemplateVersion.
+- Add Response Data Ipv6AddressCount For API DescribeLaunchTemplateVersions.
+
 2021-12-20 Version: 1.36.985
 - Generated 2016-04-08 for `Emr`.
 
