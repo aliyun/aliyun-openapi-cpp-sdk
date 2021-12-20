@@ -140,6 +140,8 @@ namespace AlibabaCloud
 				void setDepositType(const std::string& depositType);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getDataDiskKMSKeyId()const;
+				void setDataDiskKMSKeyId(const std::string& dataDiskKMSKeyId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				bool getUseLocalMetaDb()const;
@@ -148,6 +150,8 @@ namespace AlibabaCloud
 				void setTemplateName(const std::string& templateName);
 				std::string getUserDefinedEmrEcsRole()const;
 				void setUserDefinedEmrEcsRole(const std::string& userDefinedEmrEcsRole);
+				bool getDataDiskEncrypted()const;
+				void setDataDiskEncrypted(bool dataDiskEncrypted);
 				std::string getVpcId()const;
 				void setVpcId(const std::string& vpcId);
 				std::string getBizId()const;
@@ -192,10 +196,12 @@ namespace AlibabaCloud
 				bool easEnable_;
 				std::string depositType_;
 				std::string accessKeyId_;
+				std::string dataDiskKMSKeyId_;
 				std::string regionId_;
 				bool useLocalMetaDb_;
 				std::string templateName_;
 				std::string userDefinedEmrEcsRole_;
+				bool dataDiskEncrypted_;
 				std::string vpcId_;
 				std::string bizId_;
 				std::vector<HostGroup> hostGroup_;

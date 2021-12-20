@@ -41,6 +41,7 @@ namespace AlibabaCloud
 							std::string description;
 							bool isCustom;
 							std::string value;
+							std::string valueScope;
 							std::string itemName;
 						};
 						std::string configName;

@@ -25,32 +25,16 @@ set(emr_public_header_model
 	include/alibabacloud/emr/model/AddClusterServiceResult.h
 	include/alibabacloud/emr/model/AddScalingConfigItemV2Request.h
 	include/alibabacloud/emr/model/AddScalingConfigItemV2Result.h
-	include/alibabacloud/emr/model/AuthorizeSecurityGroupRequest.h
-	include/alibabacloud/emr/model/AuthorizeSecurityGroupResult.h
-	include/alibabacloud/emr/model/CancelOrderRequest.h
-	include/alibabacloud/emr/model/CancelOrderResult.h
 	include/alibabacloud/emr/model/CloneFlowRequest.h
 	include/alibabacloud/emr/model/CloneFlowResult.h
 	include/alibabacloud/emr/model/CloneFlowJobRequest.h
 	include/alibabacloud/emr/model/CloneFlowJobResult.h
-	include/alibabacloud/emr/model/CreateBackupRequest.h
-	include/alibabacloud/emr/model/CreateBackupResult.h
-	include/alibabacloud/emr/model/CreateBackupPlanRequest.h
-	include/alibabacloud/emr/model/CreateBackupPlanResult.h
-	include/alibabacloud/emr/model/CreateClusterBootstrapActionRequest.h
-	include/alibabacloud/emr/model/CreateClusterBootstrapActionResult.h
-	include/alibabacloud/emr/model/CreateClusterHostGroupRequest.h
-	include/alibabacloud/emr/model/CreateClusterHostGroupResult.h
 	include/alibabacloud/emr/model/CreateClusterTemplateRequest.h
 	include/alibabacloud/emr/model/CreateClusterTemplateResult.h
 	include/alibabacloud/emr/model/CreateClusterV2Request.h
 	include/alibabacloud/emr/model/CreateClusterV2Result.h
 	include/alibabacloud/emr/model/CreateClusterWithTemplateRequest.h
 	include/alibabacloud/emr/model/CreateClusterWithTemplateResult.h
-	include/alibabacloud/emr/model/CreateDataSourceRequest.h
-	include/alibabacloud/emr/model/CreateDataSourceResult.h
-	include/alibabacloud/emr/model/CreateExecutionPlanRequest.h
-	include/alibabacloud/emr/model/CreateExecutionPlanResult.h
 	include/alibabacloud/emr/model/CreateFlowRequest.h
 	include/alibabacloud/emr/model/CreateFlowResult.h
 	include/alibabacloud/emr/model/CreateFlowCategoryRequest.h
@@ -65,32 +49,14 @@ set(emr_public_header_model
 	include/alibabacloud/emr/model/CreateFlowProjectClusterSettingResult.h
 	include/alibabacloud/emr/model/CreateFlowProjectUserRequest.h
 	include/alibabacloud/emr/model/CreateFlowProjectUserResult.h
-	include/alibabacloud/emr/model/CreateJobRequest.h
-	include/alibabacloud/emr/model/CreateJobResult.h
-	include/alibabacloud/emr/model/CreateLibraryRequest.h
-	include/alibabacloud/emr/model/CreateLibraryResult.h
-	include/alibabacloud/emr/model/CreateMetaTablePreviewTaskRequest.h
-	include/alibabacloud/emr/model/CreateMetaTablePreviewTaskResult.h
 	include/alibabacloud/emr/model/CreateResourcePoolRequest.h
 	include/alibabacloud/emr/model/CreateResourcePoolResult.h
 	include/alibabacloud/emr/model/CreateResourceQueueRequest.h
 	include/alibabacloud/emr/model/CreateResourceQueueResult.h
 	include/alibabacloud/emr/model/CreateScalingGroupV2Request.h
 	include/alibabacloud/emr/model/CreateScalingGroupV2Result.h
-	include/alibabacloud/emr/model/CreateScalingRuleRequest.h
-	include/alibabacloud/emr/model/CreateScalingRuleResult.h
-	include/alibabacloud/emr/model/CreateTagRequest.h
-	include/alibabacloud/emr/model/CreateTagResult.h
-	include/alibabacloud/emr/model/CreateUserRequest.h
-	include/alibabacloud/emr/model/CreateUserResult.h
-	include/alibabacloud/emr/model/CreateUsersRequest.h
-	include/alibabacloud/emr/model/CreateUsersResult.h
-	include/alibabacloud/emr/model/DecommissionHostComponentRequest.h
-	include/alibabacloud/emr/model/DecommissionHostComponentResult.h
 	include/alibabacloud/emr/model/DeleteClusterTemplateRequest.h
 	include/alibabacloud/emr/model/DeleteClusterTemplateResult.h
-	include/alibabacloud/emr/model/DeleteExecutionPlanRequest.h
-	include/alibabacloud/emr/model/DeleteExecutionPlanResult.h
 	include/alibabacloud/emr/model/DeleteFlowRequest.h
 	include/alibabacloud/emr/model/DeleteFlowResult.h
 	include/alibabacloud/emr/model/DeleteFlowCategoryRequest.h
@@ -103,24 +69,12 @@ set(emr_public_header_model
 	include/alibabacloud/emr/model/DeleteFlowProjectClusterSettingResult.h
 	include/alibabacloud/emr/model/DeleteFlowProjectUserRequest.h
 	include/alibabacloud/emr/model/DeleteFlowProjectUserResult.h
-	include/alibabacloud/emr/model/DeleteJobRequest.h
-	include/alibabacloud/emr/model/DeleteJobResult.h
-	include/alibabacloud/emr/model/DeleteLibrariesRequest.h
-	include/alibabacloud/emr/model/DeleteLibrariesResult.h
 	include/alibabacloud/emr/model/DeleteResourcePoolRequest.h
 	include/alibabacloud/emr/model/DeleteResourcePoolResult.h
 	include/alibabacloud/emr/model/DeleteResourceQueueRequest.h
 	include/alibabacloud/emr/model/DeleteResourceQueueResult.h
-	include/alibabacloud/emr/model/DeleteScalingRuleRequest.h
-	include/alibabacloud/emr/model/DeleteScalingRuleResult.h
-	include/alibabacloud/emr/model/DeleteTagRequest.h
-	include/alibabacloud/emr/model/DeleteTagResult.h
-	include/alibabacloud/emr/model/DeleteUserRequest.h
-	include/alibabacloud/emr/model/DeleteUserResult.h
 	include/alibabacloud/emr/model/DescribeClusterBasicInfoRequest.h
 	include/alibabacloud/emr/model/DescribeClusterBasicInfoResult.h
-	include/alibabacloud/emr/model/DescribeClusterMetaCollectRequest.h
-	include/alibabacloud/emr/model/DescribeClusterMetaCollectResult.h
 	include/alibabacloud/emr/model/DescribeClusterOperationHostTaskLogRequest.h
 	include/alibabacloud/emr/model/DescribeClusterOperationHostTaskLogResult.h
 	include/alibabacloud/emr/model/DescribeClusterResourcePoolSchedulerTypeRequest.h
@@ -129,22 +83,12 @@ set(emr_public_header_model
 	include/alibabacloud/emr/model/DescribeClusterServiceResult.h
 	include/alibabacloud/emr/model/DescribeClusterServiceConfigRequest.h
 	include/alibabacloud/emr/model/DescribeClusterServiceConfigResult.h
-	include/alibabacloud/emr/model/DescribeClusterServiceConfigHistoryRequest.h
-	include/alibabacloud/emr/model/DescribeClusterServiceConfigHistoryResult.h
 	include/alibabacloud/emr/model/DescribeClusterServiceConfigTagRequest.h
 	include/alibabacloud/emr/model/DescribeClusterServiceConfigTagResult.h
 	include/alibabacloud/emr/model/DescribeClusterTemplateRequest.h
 	include/alibabacloud/emr/model/DescribeClusterTemplateResult.h
 	include/alibabacloud/emr/model/DescribeClusterV2Request.h
 	include/alibabacloud/emr/model/DescribeClusterV2Result.h
-	include/alibabacloud/emr/model/DescribeDataSourceRequest.h
-	include/alibabacloud/emr/model/DescribeDataSourceResult.h
-	include/alibabacloud/emr/model/DescribeDiskOpsActivityRequest.h
-	include/alibabacloud/emr/model/DescribeDiskOpsActivityResult.h
-	include/alibabacloud/emr/model/DescribeEmrMainVersionRequest.h
-	include/alibabacloud/emr/model/DescribeEmrMainVersionResult.h
-	include/alibabacloud/emr/model/DescribeExecutionPlanRequest.h
-	include/alibabacloud/emr/model/DescribeExecutionPlanResult.h
 	include/alibabacloud/emr/model/DescribeFlowRequest.h
 	include/alibabacloud/emr/model/DescribeFlowResult.h
 	include/alibabacloud/emr/model/DescribeFlowCategoryRequest.h
@@ -165,16 +109,6 @@ set(emr_public_header_model
 	include/alibabacloud/emr/model/DescribeFlowProjectResult.h
 	include/alibabacloud/emr/model/DescribeFlowProjectClusterSettingRequest.h
 	include/alibabacloud/emr/model/DescribeFlowProjectClusterSettingResult.h
-	include/alibabacloud/emr/model/DescribeJobRequest.h
-	include/alibabacloud/emr/model/DescribeJobResult.h
-	include/alibabacloud/emr/model/DescribeLibraryDetailRequest.h
-	include/alibabacloud/emr/model/DescribeLibraryDetailResult.h
-	include/alibabacloud/emr/model/DescribeLibraryInstallTaskDetailRequest.h
-	include/alibabacloud/emr/model/DescribeLibraryInstallTaskDetailResult.h
-	include/alibabacloud/emr/model/DescribeMetaTablePreviewTaskRequest.h
-	include/alibabacloud/emr/model/DescribeMetaTablePreviewTaskResult.h
-	include/alibabacloud/emr/model/DescribeScalingActivityRequest.h
-	include/alibabacloud/emr/model/DescribeScalingActivityResult.h
 	include/alibabacloud/emr/model/DescribeScalingCommonConfigRequest.h
 	include/alibabacloud/emr/model/DescribeScalingCommonConfigResult.h
 	include/alibabacloud/emr/model/DescribeScalingConfigItemV2Request.h
@@ -183,44 +117,12 @@ set(emr_public_header_model
 	include/alibabacloud/emr/model/DescribeScalingGroupInstanceV2Result.h
 	include/alibabacloud/emr/model/DescribeScalingGroupV2Request.h
 	include/alibabacloud/emr/model/DescribeScalingGroupV2Result.h
-	include/alibabacloud/emr/model/DescribeScalingRuleRequest.h
-	include/alibabacloud/emr/model/DescribeScalingRuleResult.h
-	include/alibabacloud/emr/model/DescribeSecurityGroupAttributeRequest.h
-	include/alibabacloud/emr/model/DescribeSecurityGroupAttributeResult.h
-	include/alibabacloud/emr/model/DetachAndReleaseClusterEniRequest.h
-	include/alibabacloud/emr/model/DetachAndReleaseClusterEniResult.h
-	include/alibabacloud/emr/model/GetHdfsCapacityStatisticInfoRequest.h
-	include/alibabacloud/emr/model/GetHdfsCapacityStatisticInfoResult.h
-	include/alibabacloud/emr/model/GetJobInputStatisticInfoRequest.h
-	include/alibabacloud/emr/model/GetJobInputStatisticInfoResult.h
-	include/alibabacloud/emr/model/GetJobOutputStatisticInfoRequest.h
-	include/alibabacloud/emr/model/GetJobOutputStatisticInfoResult.h
-	include/alibabacloud/emr/model/GetJobRunningTimeStatisticInfoRequest.h
-	include/alibabacloud/emr/model/GetJobRunningTimeStatisticInfoResult.h
-	include/alibabacloud/emr/model/GetQueueInputStatisticInfoRequest.h
-	include/alibabacloud/emr/model/GetQueueInputStatisticInfoResult.h
-	include/alibabacloud/emr/model/GetQueueOutputStatisticInfoRequest.h
-	include/alibabacloud/emr/model/GetQueueOutputStatisticInfoResult.h
-	include/alibabacloud/emr/model/GetQueueSubmissionStatisticInfoRequest.h
-	include/alibabacloud/emr/model/GetQueueSubmissionStatisticInfoResult.h
-	include/alibabacloud/emr/model/GetUserInputStatisticInfoRequest.h
-	include/alibabacloud/emr/model/GetUserInputStatisticInfoResult.h
-	include/alibabacloud/emr/model/GetUserOutputStatisticInfoRequest.h
-	include/alibabacloud/emr/model/GetUserOutputStatisticInfoResult.h
-	include/alibabacloud/emr/model/GetUserSubmissionStatisticInfoRequest.h
-	include/alibabacloud/emr/model/GetUserSubmissionStatisticInfoResult.h
-	include/alibabacloud/emr/model/InstallLibrariesRequest.h
-	include/alibabacloud/emr/model/InstallLibrariesResult.h
 	include/alibabacloud/emr/model/JoinResourceGroupRequest.h
 	include/alibabacloud/emr/model/JoinResourceGroupResult.h
 	include/alibabacloud/emr/model/KillFlowJobRequest.h
 	include/alibabacloud/emr/model/KillFlowJobResult.h
-	include/alibabacloud/emr/model/ListAdviceActionRequest.h
-	include/alibabacloud/emr/model/ListAdviceActionResult.h
 	include/alibabacloud/emr/model/ListApmApplicationRequest.h
 	include/alibabacloud/emr/model/ListApmApplicationResult.h
-	include/alibabacloud/emr/model/ListBackupsRequest.h
-	include/alibabacloud/emr/model/ListBackupsResult.h
 	include/alibabacloud/emr/model/ListClusterHostRequest.h
 	include/alibabacloud/emr/model/ListClusterHostResult.h
 	include/alibabacloud/emr/model/ListClusterHostComponentRequest.h
@@ -251,18 +153,12 @@ set(emr_public_header_model
 	include/alibabacloud/emr/model/ListClusterTemplatesResult.h
 	include/alibabacloud/emr/model/ListClustersRequest.h
 	include/alibabacloud/emr/model/ListClustersResult.h
-	include/alibabacloud/emr/model/ListDataSourceRequest.h
-	include/alibabacloud/emr/model/ListDataSourceResult.h
-	include/alibabacloud/emr/model/ListDiskOpsEventsRequest.h
-	include/alibabacloud/emr/model/ListDiskOpsEventsResult.h
 	include/alibabacloud/emr/model/ListEmrAvailableConfigRequest.h
 	include/alibabacloud/emr/model/ListEmrAvailableConfigResult.h
 	include/alibabacloud/emr/model/ListEmrAvailableResourceRequest.h
 	include/alibabacloud/emr/model/ListEmrAvailableResourceResult.h
 	include/alibabacloud/emr/model/ListEmrMainVersionRequest.h
 	include/alibabacloud/emr/model/ListEmrMainVersionResult.h
-	include/alibabacloud/emr/model/ListExecutionPlanInstancesRequest.h
-	include/alibabacloud/emr/model/ListExecutionPlanInstancesResult.h
 	include/alibabacloud/emr/model/ListFlowRequest.h
 	include/alibabacloud/emr/model/ListFlowResult.h
 	include/alibabacloud/emr/model/ListFlowCategoryRequest.h
@@ -293,72 +189,30 @@ set(emr_public_header_model
 	include/alibabacloud/emr/model/ListFlowProjectClusterSettingResult.h
 	include/alibabacloud/emr/model/ListFlowProjectUserRequest.h
 	include/alibabacloud/emr/model/ListFlowProjectUserResult.h
-	include/alibabacloud/emr/model/ListJobExecutionInstancesRequest.h
-	include/alibabacloud/emr/model/ListJobExecutionInstancesResult.h
-	include/alibabacloud/emr/model/ListJobsRequest.h
-	include/alibabacloud/emr/model/ListJobsResult.h
-	include/alibabacloud/emr/model/ListLibrariesRequest.h
-	include/alibabacloud/emr/model/ListLibrariesResult.h
-	include/alibabacloud/emr/model/ListLibraryInstallTasksRequest.h
-	include/alibabacloud/emr/model/ListLibraryInstallTasksResult.h
-	include/alibabacloud/emr/model/ListLibraryStatusRequest.h
-	include/alibabacloud/emr/model/ListLibraryStatusResult.h
-	include/alibabacloud/emr/model/ListLocalDiskComponentInfoRequest.h
-	include/alibabacloud/emr/model/ListLocalDiskComponentInfoResult.h
 	include/alibabacloud/emr/model/ListResourcePoolRequest.h
 	include/alibabacloud/emr/model/ListResourcePoolResult.h
-	include/alibabacloud/emr/model/ListRolesRequest.h
-	include/alibabacloud/emr/model/ListRolesResult.h
 	include/alibabacloud/emr/model/ListScalingActivityV2Request.h
 	include/alibabacloud/emr/model/ListScalingActivityV2Result.h
 	include/alibabacloud/emr/model/ListScalingConfigItemV2Request.h
 	include/alibabacloud/emr/model/ListScalingConfigItemV2Result.h
 	include/alibabacloud/emr/model/ListScalingGroupV2Request.h
 	include/alibabacloud/emr/model/ListScalingGroupV2Result.h
-	include/alibabacloud/emr/model/ListSecurityGroupRequest.h
-	include/alibabacloud/emr/model/ListSecurityGroupResult.h
-	include/alibabacloud/emr/model/ListStackRequest.h
-	include/alibabacloud/emr/model/ListStackResult.h
-	include/alibabacloud/emr/model/ListTagKeysRequest.h
-	include/alibabacloud/emr/model/ListTagKeysResult.h
 	include/alibabacloud/emr/model/ListTagResourcesRequest.h
 	include/alibabacloud/emr/model/ListTagResourcesResult.h
-	include/alibabacloud/emr/model/ListTagValuesRequest.h
-	include/alibabacloud/emr/model/ListTagValuesResult.h
-	include/alibabacloud/emr/model/ListUsersRequest.h
-	include/alibabacloud/emr/model/ListUsersResult.h
-	include/alibabacloud/emr/model/ListVswitchRequest.h
-	include/alibabacloud/emr/model/ListVswitchResult.h
-	include/alibabacloud/emr/model/ModifyClusterBootstrapActionRequest.h
-	include/alibabacloud/emr/model/ModifyClusterBootstrapActionResult.h
-	include/alibabacloud/emr/model/ModifyClusterHostGroupRequest.h
-	include/alibabacloud/emr/model/ModifyClusterHostGroupResult.h
-	include/alibabacloud/emr/model/ModifyClusterMetaCollectRequest.h
-	include/alibabacloud/emr/model/ModifyClusterMetaCollectResult.h
 	include/alibabacloud/emr/model/ModifyClusterNameRequest.h
 	include/alibabacloud/emr/model/ModifyClusterNameResult.h
-	include/alibabacloud/emr/model/ModifyClusterSecurityGroupRuleRequest.h
-	include/alibabacloud/emr/model/ModifyClusterSecurityGroupRuleResult.h
 	include/alibabacloud/emr/model/ModifyClusterServiceConfigRequest.h
 	include/alibabacloud/emr/model/ModifyClusterServiceConfigResult.h
 	include/alibabacloud/emr/model/ModifyClusterTemplateRequest.h
 	include/alibabacloud/emr/model/ModifyClusterTemplateResult.h
-	include/alibabacloud/emr/model/ModifyExecutionPlanRequest.h
-	include/alibabacloud/emr/model/ModifyExecutionPlanResult.h
-	include/alibabacloud/emr/model/ModifyFlowRequest.h
-	include/alibabacloud/emr/model/ModifyFlowResult.h
 	include/alibabacloud/emr/model/ModifyFlowCategoryRequest.h
 	include/alibabacloud/emr/model/ModifyFlowCategoryResult.h
 	include/alibabacloud/emr/model/ModifyFlowForWebRequest.h
 	include/alibabacloud/emr/model/ModifyFlowForWebResult.h
-	include/alibabacloud/emr/model/ModifyFlowJobRequest.h
-	include/alibabacloud/emr/model/ModifyFlowJobResult.h
 	include/alibabacloud/emr/model/ModifyFlowProjectRequest.h
 	include/alibabacloud/emr/model/ModifyFlowProjectResult.h
 	include/alibabacloud/emr/model/ModifyFlowProjectClusterSettingRequest.h
 	include/alibabacloud/emr/model/ModifyFlowProjectClusterSettingResult.h
-	include/alibabacloud/emr/model/ModifyJobRequest.h
-	include/alibabacloud/emr/model/ModifyJobResult.h
 	include/alibabacloud/emr/model/ModifyResourcePoolRequest.h
 	include/alibabacloud/emr/model/ModifyResourcePoolResult.h
 	include/alibabacloud/emr/model/ModifyResourcePoolSchedulerTypeRequest.h
@@ -369,14 +223,6 @@ set(emr_public_header_model
 	include/alibabacloud/emr/model/ModifyScalingConfigItemV2Result.h
 	include/alibabacloud/emr/model/ModifyScalingGroupV2Request.h
 	include/alibabacloud/emr/model/ModifyScalingGroupV2Result.h
-	include/alibabacloud/emr/model/ModifyScalingRuleRequest.h
-	include/alibabacloud/emr/model/ModifyScalingRuleResult.h
-	include/alibabacloud/emr/model/ModifyScalingTaskGroupRequest.h
-	include/alibabacloud/emr/model/ModifyScalingTaskGroupResult.h
-	include/alibabacloud/emr/model/QueryEntityRequest.h
-	include/alibabacloud/emr/model/QueryEntityResult.h
-	include/alibabacloud/emr/model/QueryTagRequest.h
-	include/alibabacloud/emr/model/QueryTagResult.h
 	include/alibabacloud/emr/model/RefreshClusterResourcePoolRequest.h
 	include/alibabacloud/emr/model/RefreshClusterResourcePoolResult.h
 	include/alibabacloud/emr/model/ReleaseClusterRequest.h
@@ -389,46 +235,24 @@ set(emr_public_header_model
 	include/alibabacloud/emr/model/RerunFlowResult.h
 	include/alibabacloud/emr/model/ResizeClusterV2Request.h
 	include/alibabacloud/emr/model/ResizeClusterV2Result.h
-	include/alibabacloud/emr/model/ResumeExecutionPlanSchedulerRequest.h
-	include/alibabacloud/emr/model/ResumeExecutionPlanSchedulerResult.h
 	include/alibabacloud/emr/model/ResumeFlowRequest.h
 	include/alibabacloud/emr/model/ResumeFlowResult.h
-	include/alibabacloud/emr/model/RetryOperationRequest.h
-	include/alibabacloud/emr/model/RetryOperationResult.h
 	include/alibabacloud/emr/model/RunClusterServiceActionRequest.h
 	include/alibabacloud/emr/model/RunClusterServiceActionResult.h
-	include/alibabacloud/emr/model/RunDiskOpsActivityRequest.h
-	include/alibabacloud/emr/model/RunDiskOpsActivityResult.h
-	include/alibabacloud/emr/model/RunExecutionPlanRequest.h
-	include/alibabacloud/emr/model/RunExecutionPlanResult.h
 	include/alibabacloud/emr/model/RunScalingActionV2Request.h
 	include/alibabacloud/emr/model/RunScalingActionV2Result.h
-	include/alibabacloud/emr/model/SearchLogRequest.h
-	include/alibabacloud/emr/model/SearchLogResult.h
 	include/alibabacloud/emr/model/StartFlowRequest.h
 	include/alibabacloud/emr/model/StartFlowResult.h
 	include/alibabacloud/emr/model/SubmitFlowRequest.h
 	include/alibabacloud/emr/model/SubmitFlowResult.h
 	include/alibabacloud/emr/model/SubmitFlowJobRequest.h
 	include/alibabacloud/emr/model/SubmitFlowJobResult.h
-	include/alibabacloud/emr/model/SuspendExecutionPlanSchedulerRequest.h
-	include/alibabacloud/emr/model/SuspendExecutionPlanSchedulerResult.h
 	include/alibabacloud/emr/model/SuspendFlowRequest.h
 	include/alibabacloud/emr/model/SuspendFlowResult.h
 	include/alibabacloud/emr/model/TagResourcesRequest.h
 	include/alibabacloud/emr/model/TagResourcesResult.h
-	include/alibabacloud/emr/model/UninstallLibrariesRequest.h
-	include/alibabacloud/emr/model/UninstallLibrariesResult.h
 	include/alibabacloud/emr/model/UntagResourcesRequest.h
-	include/alibabacloud/emr/model/UntagResourcesResult.h
-	include/alibabacloud/emr/model/UpdateDataSourceRequest.h
-	include/alibabacloud/emr/model/UpdateDataSourceResult.h
-	include/alibabacloud/emr/model/UpdateLibraryInstallTaskStatusRequest.h
-	include/alibabacloud/emr/model/UpdateLibraryInstallTaskStatusResult.h
-	include/alibabacloud/emr/model/UpdateTagRequest.h
-	include/alibabacloud/emr/model/UpdateTagResult.h
-	include/alibabacloud/emr/model/UpdateUserRequest.h
-	include/alibabacloud/emr/model/UpdateUserResult.h )
+	include/alibabacloud/emr/model/UntagResourcesResult.h )
 
 set(emr_src 
 	src/EmrClient.cc
@@ -436,32 +260,16 @@ set(emr_src
 	src/model/AddClusterServiceResult.cc
 	src/model/AddScalingConfigItemV2Request.cc
 	src/model/AddScalingConfigItemV2Result.cc
-	src/model/AuthorizeSecurityGroupRequest.cc
-	src/model/AuthorizeSecurityGroupResult.cc
-	src/model/CancelOrderRequest.cc
-	src/model/CancelOrderResult.cc
 	src/model/CloneFlowRequest.cc
 	src/model/CloneFlowResult.cc
 	src/model/CloneFlowJobRequest.cc
 	src/model/CloneFlowJobResult.cc
-	src/model/CreateBackupRequest.cc
-	src/model/CreateBackupResult.cc
-	src/model/CreateBackupPlanRequest.cc
-	src/model/CreateBackupPlanResult.cc
-	src/model/CreateClusterBootstrapActionRequest.cc
-	src/model/CreateClusterBootstrapActionResult.cc
-	src/model/CreateClusterHostGroupRequest.cc
-	src/model/CreateClusterHostGroupResult.cc
 	src/model/CreateClusterTemplateRequest.cc
 	src/model/CreateClusterTemplateResult.cc
 	src/model/CreateClusterV2Request.cc
 	src/model/CreateClusterV2Result.cc
 	src/model/CreateClusterWithTemplateRequest.cc
 	src/model/CreateClusterWithTemplateResult.cc
-	src/model/CreateDataSourceRequest.cc
-	src/model/CreateDataSourceResult.cc
-	src/model/CreateExecutionPlanRequest.cc
-	src/model/CreateExecutionPlanResult.cc
 	src/model/CreateFlowRequest.cc
 	src/model/CreateFlowResult.cc
 	src/model/CreateFlowCategoryRequest.cc
@@ -476,32 +284,14 @@ set(emr_src
 	src/model/CreateFlowProjectClusterSettingResult.cc
 	src/model/CreateFlowProjectUserRequest.cc
 	src/model/CreateFlowProjectUserResult.cc
-	src/model/CreateJobRequest.cc
-	src/model/CreateJobResult.cc
-	src/model/CreateLibraryRequest.cc
-	src/model/CreateLibraryResult.cc
-	src/model/CreateMetaTablePreviewTaskRequest.cc
-	src/model/CreateMetaTablePreviewTaskResult.cc
 	src/model/CreateResourcePoolRequest.cc
 	src/model/CreateResourcePoolResult.cc
 	src/model/CreateResourceQueueRequest.cc
 	src/model/CreateResourceQueueResult.cc
 	src/model/CreateScalingGroupV2Request.cc
 	src/model/CreateScalingGroupV2Result.cc
-	src/model/CreateScalingRuleRequest.cc
-	src/model/CreateScalingRuleResult.cc
-	src/model/CreateTagRequest.cc
-	src/model/CreateTagResult.cc
-	src/model/CreateUserRequest.cc
-	src/model/CreateUserResult.cc
-	src/model/CreateUsersRequest.cc
-	src/model/CreateUsersResult.cc
-	src/model/DecommissionHostComponentRequest.cc
-	src/model/DecommissionHostComponentResult.cc
 	src/model/DeleteClusterTemplateRequest.cc
 	src/model/DeleteClusterTemplateResult.cc
-	src/model/DeleteExecutionPlanRequest.cc
-	src/model/DeleteExecutionPlanResult.cc
 	src/model/DeleteFlowRequest.cc
 	src/model/DeleteFlowResult.cc
 	src/model/DeleteFlowCategoryRequest.cc
@@ -514,24 +304,12 @@ set(emr_src
 	src/model/DeleteFlowProjectClusterSettingResult.cc
 	src/model/DeleteFlowProjectUserRequest.cc
 	src/model/DeleteFlowProjectUserResult.cc
-	src/model/DeleteJobRequest.cc
-	src/model/DeleteJobResult.cc
-	src/model/DeleteLibrariesRequest.cc
-	src/model/DeleteLibrariesResult.cc
 	src/model/DeleteResourcePoolRequest.cc
 	src/model/DeleteResourcePoolResult.cc
 	src/model/DeleteResourceQueueRequest.cc
 	src/model/DeleteResourceQueueResult.cc
-	src/model/DeleteScalingRuleRequest.cc
-	src/model/DeleteScalingRuleResult.cc
-	src/model/DeleteTagRequest.cc
-	src/model/DeleteTagResult.cc
-	src/model/DeleteUserRequest.cc
-	src/model/DeleteUserResult.cc
 	src/model/DescribeClusterBasicInfoRequest.cc
 	src/model/DescribeClusterBasicInfoResult.cc
-	src/model/DescribeClusterMetaCollectRequest.cc
-	src/model/DescribeClusterMetaCollectResult.cc
 	src/model/DescribeClusterOperationHostTaskLogRequest.cc
 	src/model/DescribeClusterOperationHostTaskLogResult.cc
 	src/model/DescribeClusterResourcePoolSchedulerTypeRequest.cc
@@ -540,22 +318,12 @@ set(emr_src
 	src/model/DescribeClusterServiceResult.cc
 	src/model/DescribeClusterServiceConfigRequest.cc
 	src/model/DescribeClusterServiceConfigResult.cc
-	src/model/DescribeClusterServiceConfigHistoryRequest.cc
-	src/model/DescribeClusterServiceConfigHistoryResult.cc
 	src/model/DescribeClusterServiceConfigTagRequest.cc
 	src/model/DescribeClusterServiceConfigTagResult.cc
 	src/model/DescribeClusterTemplateRequest.cc
 	src/model/DescribeClusterTemplateResult.cc
 	src/model/DescribeClusterV2Request.cc
 	src/model/DescribeClusterV2Result.cc
-	src/model/DescribeDataSourceRequest.cc
-	src/model/DescribeDataSourceResult.cc
-	src/model/DescribeDiskOpsActivityRequest.cc
-	src/model/DescribeDiskOpsActivityResult.cc
-	src/model/DescribeEmrMainVersionRequest.cc
-	src/model/DescribeEmrMainVersionResult.cc
-	src/model/DescribeExecutionPlanRequest.cc
-	src/model/DescribeExecutionPlanResult.cc
 	src/model/DescribeFlowRequest.cc
 	src/model/DescribeFlowResult.cc
 	src/model/DescribeFlowCategoryRequest.cc
@@ -576,16 +344,6 @@ set(emr_src
 	src/model/DescribeFlowProjectResult.cc
 	src/model/DescribeFlowProjectClusterSettingRequest.cc
 	src/model/DescribeFlowProjectClusterSettingResult.cc
-	src/model/DescribeJobRequest.cc
-	src/model/DescribeJobResult.cc
-	src/model/DescribeLibraryDetailRequest.cc
-	src/model/DescribeLibraryDetailResult.cc
-	src/model/DescribeLibraryInstallTaskDetailRequest.cc
-	src/model/DescribeLibraryInstallTaskDetailResult.cc
-	src/model/DescribeMetaTablePreviewTaskRequest.cc
-	src/model/DescribeMetaTablePreviewTaskResult.cc
-	src/model/DescribeScalingActivityRequest.cc
-	src/model/DescribeScalingActivityResult.cc
 	src/model/DescribeScalingCommonConfigRequest.cc
 	src/model/DescribeScalingCommonConfigResult.cc
 	src/model/DescribeScalingConfigItemV2Request.cc
@@ -594,44 +352,12 @@ set(emr_src
 	src/model/DescribeScalingGroupInstanceV2Result.cc
 	src/model/DescribeScalingGroupV2Request.cc
 	src/model/DescribeScalingGroupV2Result.cc
-	src/model/DescribeScalingRuleRequest.cc
-	src/model/DescribeScalingRuleResult.cc
-	src/model/DescribeSecurityGroupAttributeRequest.cc
-	src/model/DescribeSecurityGroupAttributeResult.cc
-	src/model/DetachAndReleaseClusterEniRequest.cc
-	src/model/DetachAndReleaseClusterEniResult.cc
-	src/model/GetHdfsCapacityStatisticInfoRequest.cc
-	src/model/GetHdfsCapacityStatisticInfoResult.cc
-	src/model/GetJobInputStatisticInfoRequest.cc
-	src/model/GetJobInputStatisticInfoResult.cc
-	src/model/GetJobOutputStatisticInfoRequest.cc
-	src/model/GetJobOutputStatisticInfoResult.cc
-	src/model/GetJobRunningTimeStatisticInfoRequest.cc
-	src/model/GetJobRunningTimeStatisticInfoResult.cc
-	src/model/GetQueueInputStatisticInfoRequest.cc
-	src/model/GetQueueInputStatisticInfoResult.cc
-	src/model/GetQueueOutputStatisticInfoRequest.cc
-	src/model/GetQueueOutputStatisticInfoResult.cc
-	src/model/GetQueueSubmissionStatisticInfoRequest.cc
-	src/model/GetQueueSubmissionStatisticInfoResult.cc
-	src/model/GetUserInputStatisticInfoRequest.cc
-	src/model/GetUserInputStatisticInfoResult.cc
-	src/model/GetUserOutputStatisticInfoRequest.cc
-	src/model/GetUserOutputStatisticInfoResult.cc
-	src/model/GetUserSubmissionStatisticInfoRequest.cc
-	src/model/GetUserSubmissionStatisticInfoResult.cc
-	src/model/InstallLibrariesRequest.cc
-	src/model/InstallLibrariesResult.cc
 	src/model/JoinResourceGroupRequest.cc
 	src/model/JoinResourceGroupResult.cc
 	src/model/KillFlowJobRequest.cc
 	src/model/KillFlowJobResult.cc
-	src/model/ListAdviceActionRequest.cc
-	src/model/ListAdviceActionResult.cc
 	src/model/ListApmApplicationRequest.cc
 	src/model/ListApmApplicationResult.cc
-	src/model/ListBackupsRequest.cc
-	src/model/ListBackupsResult.cc
 	src/model/ListClusterHostRequest.cc
 	src/model/ListClusterHostResult.cc
 	src/model/ListClusterHostComponentRequest.cc
@@ -662,18 +388,12 @@ set(emr_src
 	src/model/ListClusterTemplatesResult.cc
 	src/model/ListClustersRequest.cc
 	src/model/ListClustersResult.cc
-	src/model/ListDataSourceRequest.cc
-	src/model/ListDataSourceResult.cc
-	src/model/ListDiskOpsEventsRequest.cc
-	src/model/ListDiskOpsEventsResult.cc
 	src/model/ListEmrAvailableConfigRequest.cc
 	src/model/ListEmrAvailableConfigResult.cc
 	src/model/ListEmrAvailableResourceRequest.cc
 	src/model/ListEmrAvailableResourceResult.cc
 	src/model/ListEmrMainVersionRequest.cc
 	src/model/ListEmrMainVersionResult.cc
-	src/model/ListExecutionPlanInstancesRequest.cc
-	src/model/ListExecutionPlanInstancesResult.cc
 	src/model/ListFlowRequest.cc
 	src/model/ListFlowResult.cc
 	src/model/ListFlowCategoryRequest.cc
@@ -704,72 +424,30 @@ set(emr_src
 	src/model/ListFlowProjectClusterSettingResult.cc
 	src/model/ListFlowProjectUserRequest.cc
 	src/model/ListFlowProjectUserResult.cc
-	src/model/ListJobExecutionInstancesRequest.cc
-	src/model/ListJobExecutionInstancesResult.cc
-	src/model/ListJobsRequest.cc
-	src/model/ListJobsResult.cc
-	src/model/ListLibrariesRequest.cc
-	src/model/ListLibrariesResult.cc
-	src/model/ListLibraryInstallTasksRequest.cc
-	src/model/ListLibraryInstallTasksResult.cc
-	src/model/ListLibraryStatusRequest.cc
-	src/model/ListLibraryStatusResult.cc
-	src/model/ListLocalDiskComponentInfoRequest.cc
-	src/model/ListLocalDiskComponentInfoResult.cc
 	src/model/ListResourcePoolRequest.cc
 	src/model/ListResourcePoolResult.cc
-	src/model/ListRolesRequest.cc
-	src/model/ListRolesResult.cc
 	src/model/ListScalingActivityV2Request.cc
 	src/model/ListScalingActivityV2Result.cc
 	src/model/ListScalingConfigItemV2Request.cc
 	src/model/ListScalingConfigItemV2Result.cc
 	src/model/ListScalingGroupV2Request.cc
 	src/model/ListScalingGroupV2Result.cc
-	src/model/ListSecurityGroupRequest.cc
-	src/model/ListSecurityGroupResult.cc
-	src/model/ListStackRequest.cc
-	src/model/ListStackResult.cc
-	src/model/ListTagKeysRequest.cc
-	src/model/ListTagKeysResult.cc
 	src/model/ListTagResourcesRequest.cc
 	src/model/ListTagResourcesResult.cc
-	src/model/ListTagValuesRequest.cc
-	src/model/ListTagValuesResult.cc
-	src/model/ListUsersRequest.cc
-	src/model/ListUsersResult.cc
-	src/model/ListVswitchRequest.cc
-	src/model/ListVswitchResult.cc
-	src/model/ModifyClusterBootstrapActionRequest.cc
-	src/model/ModifyClusterBootstrapActionResult.cc
-	src/model/ModifyClusterHostGroupRequest.cc
-	src/model/ModifyClusterHostGroupResult.cc
-	src/model/ModifyClusterMetaCollectRequest.cc
-	src/model/ModifyClusterMetaCollectResult.cc
 	src/model/ModifyClusterNameRequest.cc
 	src/model/ModifyClusterNameResult.cc
-	src/model/ModifyClusterSecurityGroupRuleRequest.cc
-	src/model/ModifyClusterSecurityGroupRuleResult.cc
 	src/model/ModifyClusterServiceConfigRequest.cc
 	src/model/ModifyClusterServiceConfigResult.cc
 	src/model/ModifyClusterTemplateRequest.cc
 	src/model/ModifyClusterTemplateResult.cc
-	src/model/ModifyExecutionPlanRequest.cc
-	src/model/ModifyExecutionPlanResult.cc
-	src/model/ModifyFlowRequest.cc
-	src/model/ModifyFlowResult.cc
 	src/model/ModifyFlowCategoryRequest.cc
 	src/model/ModifyFlowCategoryResult.cc
 	src/model/ModifyFlowForWebRequest.cc
 	src/model/ModifyFlowForWebResult.cc
-	src/model/ModifyFlowJobRequest.cc
-	src/model/ModifyFlowJobResult.cc
 	src/model/ModifyFlowProjectRequest.cc
 	src/model/ModifyFlowProjectResult.cc
 	src/model/ModifyFlowProjectClusterSettingRequest.cc
 	src/model/ModifyFlowProjectClusterSettingResult.cc
-	src/model/ModifyJobRequest.cc
-	src/model/ModifyJobResult.cc
 	src/model/ModifyResourcePoolRequest.cc
 	src/model/ModifyResourcePoolResult.cc
 	src/model/ModifyResourcePoolSchedulerTypeRequest.cc
@@ -780,14 +458,6 @@ set(emr_src
 	src/model/ModifyScalingConfigItemV2Result.cc
 	src/model/ModifyScalingGroupV2Request.cc
 	src/model/ModifyScalingGroupV2Result.cc
-	src/model/ModifyScalingRuleRequest.cc
-	src/model/ModifyScalingRuleResult.cc
-	src/model/ModifyScalingTaskGroupRequest.cc
-	src/model/ModifyScalingTaskGroupResult.cc
-	src/model/QueryEntityRequest.cc
-	src/model/QueryEntityResult.cc
-	src/model/QueryTagRequest.cc
-	src/model/QueryTagResult.cc
 	src/model/RefreshClusterResourcePoolRequest.cc
 	src/model/RefreshClusterResourcePoolResult.cc
 	src/model/ReleaseClusterRequest.cc
@@ -800,46 +470,24 @@ set(emr_src
 	src/model/RerunFlowResult.cc
 	src/model/ResizeClusterV2Request.cc
 	src/model/ResizeClusterV2Result.cc
-	src/model/ResumeExecutionPlanSchedulerRequest.cc
-	src/model/ResumeExecutionPlanSchedulerResult.cc
 	src/model/ResumeFlowRequest.cc
 	src/model/ResumeFlowResult.cc
-	src/model/RetryOperationRequest.cc
-	src/model/RetryOperationResult.cc
 	src/model/RunClusterServiceActionRequest.cc
 	src/model/RunClusterServiceActionResult.cc
-	src/model/RunDiskOpsActivityRequest.cc
-	src/model/RunDiskOpsActivityResult.cc
-	src/model/RunExecutionPlanRequest.cc
-	src/model/RunExecutionPlanResult.cc
 	src/model/RunScalingActionV2Request.cc
 	src/model/RunScalingActionV2Result.cc
-	src/model/SearchLogRequest.cc
-	src/model/SearchLogResult.cc
 	src/model/StartFlowRequest.cc
 	src/model/StartFlowResult.cc
 	src/model/SubmitFlowRequest.cc
 	src/model/SubmitFlowResult.cc
 	src/model/SubmitFlowJobRequest.cc
 	src/model/SubmitFlowJobResult.cc
-	src/model/SuspendExecutionPlanSchedulerRequest.cc
-	src/model/SuspendExecutionPlanSchedulerResult.cc
 	src/model/SuspendFlowRequest.cc
 	src/model/SuspendFlowResult.cc
 	src/model/TagResourcesRequest.cc
 	src/model/TagResourcesResult.cc
-	src/model/UninstallLibrariesRequest.cc
-	src/model/UninstallLibrariesResult.cc
 	src/model/UntagResourcesRequest.cc
-	src/model/UntagResourcesResult.cc
-	src/model/UpdateDataSourceRequest.cc
-	src/model/UpdateDataSourceResult.cc
-	src/model/UpdateLibraryInstallTaskStatusRequest.cc
-	src/model/UpdateLibraryInstallTaskStatusResult.cc
-	src/model/UpdateTagRequest.cc
-	src/model/UpdateTagResult.cc
-	src/model/UpdateUserRequest.cc
-	src/model/UpdateUserResult.cc )
+	src/model/UntagResourcesResult.cc )
 
 add_library(emr ${LIB_TYPE}
 	${emr_public_header}

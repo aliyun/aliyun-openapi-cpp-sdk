@@ -373,6 +373,17 @@ void ModifyClusterTemplateRequest::setAccessKeyId(const std::string& accessKeyId
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string ModifyClusterTemplateRequest::getDataDiskKMSKeyId()const
+{
+	return dataDiskKMSKeyId_;
+}
+
+void ModifyClusterTemplateRequest::setDataDiskKMSKeyId(const std::string& dataDiskKMSKeyId)
+{
+	dataDiskKMSKeyId_ = dataDiskKMSKeyId;
+	setParameter("DataDiskKMSKeyId", dataDiskKMSKeyId);
+}
+
 std::string ModifyClusterTemplateRequest::getRegionId()const
 {
 	return regionId_;
@@ -415,6 +426,17 @@ void ModifyClusterTemplateRequest::setUserDefinedEmrEcsRole(const std::string& u
 {
 	userDefinedEmrEcsRole_ = userDefinedEmrEcsRole;
 	setParameter("UserDefinedEmrEcsRole", userDefinedEmrEcsRole);
+}
+
+bool ModifyClusterTemplateRequest::getDataDiskEncrypted()const
+{
+	return dataDiskEncrypted_;
+}
+
+void ModifyClusterTemplateRequest::setDataDiskEncrypted(bool dataDiskEncrypted)
+{
+	dataDiskEncrypted_ = dataDiskEncrypted;
+	setParameter("DataDiskEncrypted", dataDiskEncrypted ? "true" : "false");
 }
 
 std::string ModifyClusterTemplateRequest::getVpcId()const

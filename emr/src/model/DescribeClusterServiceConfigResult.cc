@@ -76,6 +76,8 @@ void DescribeClusterServiceConfigResult::parse(const std::string &payload)
 				configItemValueListObject.isCustom = configNodeConfigValueListConfigValueConfigItemValueListConfigItemValue["IsCustom"].asString() == "true";
 			if(!configNodeConfigValueListConfigValueConfigItemValueListConfigItemValue["Description"].isNull())
 				configItemValueListObject.description = configNodeConfigValueListConfigValueConfigItemValueListConfigItemValue["Description"].asString();
+			if(!configNodeConfigValueListConfigValueConfigItemValueListConfigItemValue["ValueScope"].isNull())
+				configItemValueListObject.valueScope = configNodeConfigValueListConfigValueConfigItemValueListConfigItemValue["ValueScope"].asString();
 			configValueObject.configItemValueList.push_back(configItemValueListObject);
 		}
 		config_.configValueList.push_back(configValueObject);
