@@ -39,20 +39,20 @@ void RemovePhoneNumbersResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allParams = value["Params"]["Param"];
-	for (const auto &item : allParams)
-		params_.push_back(item.asString());
 	auto allFailureList = value["FailureList"]["Failure"];
 	for (const auto &item : allFailureList)
 		failureList_.push_back(item.asString());
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
-	if(!value["Data"].isNull())
-		data_ = value["Data"].asString();
+	auto allParams = value["Params"]["Param"];
+	for (const auto &item : allParams)
+		params_.push_back(item.asString());
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Data"].isNull())
+		data_ = value["Data"].asString();
 
 }
 

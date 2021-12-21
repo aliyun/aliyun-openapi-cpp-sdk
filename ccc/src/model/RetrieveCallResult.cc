@@ -51,59 +51,59 @@ void RetrieveCallResult::parse(const std::string &payload)
 	for (auto callContextNodeChannelContextsChannelContext : allChannelContextsNode)
 	{
 		Data::CallContext::ChannelContext channelContextObject;
-		if(!callContextNodeChannelContextsChannelContext["AssociatedData"].isNull())
-			channelContextObject.associatedData = callContextNodeChannelContextsChannelContext["AssociatedData"].asString();
-		if(!callContextNodeChannelContextsChannelContext["CallType"].isNull())
-			channelContextObject.callType = callContextNodeChannelContextsChannelContext["CallType"].asString();
-		if(!callContextNodeChannelContextsChannelContext["ChannelId"].isNull())
-			channelContextObject.channelId = callContextNodeChannelContextsChannelContext["ChannelId"].asString();
+		if(!callContextNodeChannelContextsChannelContext["ReleaseInitiator"].isNull())
+			channelContextObject.releaseInitiator = callContextNodeChannelContextsChannelContext["ReleaseInitiator"].asString();
 		if(!callContextNodeChannelContextsChannelContext["ChannelState"].isNull())
 			channelContextObject.channelState = callContextNodeChannelContextsChannelContext["ChannelState"].asString();
 		if(!callContextNodeChannelContextsChannelContext["Destination"].isNull())
 			channelContextObject.destination = callContextNodeChannelContextsChannelContext["Destination"].asString();
-		if(!callContextNodeChannelContextsChannelContext["JobId"].isNull())
-			channelContextObject.jobId = callContextNodeChannelContextsChannelContext["JobId"].asString();
-		if(!callContextNodeChannelContextsChannelContext["Originator"].isNull())
-			channelContextObject.originator = callContextNodeChannelContextsChannelContext["Originator"].asString();
-		if(!callContextNodeChannelContextsChannelContext["ReleaseInitiator"].isNull())
-			channelContextObject.releaseInitiator = callContextNodeChannelContextsChannelContext["ReleaseInitiator"].asString();
-		if(!callContextNodeChannelContextsChannelContext["ReleaseReason"].isNull())
-			channelContextObject.releaseReason = callContextNodeChannelContextsChannelContext["ReleaseReason"].asString();
+		if(!callContextNodeChannelContextsChannelContext["UserId"].isNull())
+			channelContextObject.userId = callContextNodeChannelContextsChannelContext["UserId"].asString();
 		if(!callContextNodeChannelContextsChannelContext["SkillGroupId"].isNull())
 			channelContextObject.skillGroupId = callContextNodeChannelContextsChannelContext["SkillGroupId"].asString();
 		if(!callContextNodeChannelContextsChannelContext["Timestamp"].isNull())
 			channelContextObject.timestamp = std::stol(callContextNodeChannelContextsChannelContext["Timestamp"].asString());
+		if(!callContextNodeChannelContextsChannelContext["AssociatedData"].isNull())
+			channelContextObject.associatedData = callContextNodeChannelContextsChannelContext["AssociatedData"].asString();
+		if(!callContextNodeChannelContextsChannelContext["ReleaseReason"].isNull())
+			channelContextObject.releaseReason = callContextNodeChannelContextsChannelContext["ReleaseReason"].asString();
+		if(!callContextNodeChannelContextsChannelContext["CallType"].isNull())
+			channelContextObject.callType = callContextNodeChannelContextsChannelContext["CallType"].asString();
+		if(!callContextNodeChannelContextsChannelContext["JobId"].isNull())
+			channelContextObject.jobId = callContextNodeChannelContextsChannelContext["JobId"].asString();
+		if(!callContextNodeChannelContextsChannelContext["ChannelId"].isNull())
+			channelContextObject.channelId = callContextNodeChannelContextsChannelContext["ChannelId"].asString();
+		if(!callContextNodeChannelContextsChannelContext["Originator"].isNull())
+			channelContextObject.originator = callContextNodeChannelContextsChannelContext["Originator"].asString();
 		if(!callContextNodeChannelContextsChannelContext["UserExtension"].isNull())
 			channelContextObject.userExtension = callContextNodeChannelContextsChannelContext["UserExtension"].asString();
-		if(!callContextNodeChannelContextsChannelContext["UserId"].isNull())
-			channelContextObject.userId = callContextNodeChannelContextsChannelContext["UserId"].asString();
 		data_.callContext.channelContexts.push_back(channelContextObject);
 	}
 	auto userContextNode = dataNode["UserContext"];
-	if(!userContextNode["BreakCode"].isNull())
-		data_.userContext.breakCode = userContextNode["BreakCode"].asString();
-	if(!userContextNode["DeviceId"].isNull())
-		data_.userContext.deviceId = userContextNode["DeviceId"].asString();
 	if(!userContextNode["Extension"].isNull())
 		data_.userContext.extension = userContextNode["Extension"].asString();
 	if(!userContextNode["Heartbeat"].isNull())
 		data_.userContext.heartbeat = std::stol(userContextNode["Heartbeat"].asString());
-	if(!userContextNode["InstanceId"].isNull())
-		data_.userContext.instanceId = userContextNode["InstanceId"].asString();
-	if(!userContextNode["JobId"].isNull())
-		data_.userContext.jobId = userContextNode["JobId"].asString();
-	if(!userContextNode["Mobile"].isNull())
-		data_.userContext.mobile = userContextNode["Mobile"].asString();
-	if(!userContextNode["OutboundScenario"].isNull())
-		data_.userContext.outboundScenario = userContextNode["OutboundScenario"].asString() == "true";
-	if(!userContextNode["Reserved"].isNull())
-		data_.userContext.reserved = std::stol(userContextNode["Reserved"].asString());
-	if(!userContextNode["UserId"].isNull())
-		data_.userContext.userId = userContextNode["UserId"].asString();
-	if(!userContextNode["UserState"].isNull())
-		data_.userContext.userState = userContextNode["UserState"].asString();
 	if(!userContextNode["WorkMode"].isNull())
 		data_.userContext.workMode = userContextNode["WorkMode"].asString();
+	if(!userContextNode["DeviceId"].isNull())
+		data_.userContext.deviceId = userContextNode["DeviceId"].asString();
+	if(!userContextNode["UserId"].isNull())
+		data_.userContext.userId = userContextNode["UserId"].asString();
+	if(!userContextNode["Reserved"].isNull())
+		data_.userContext.reserved = std::stol(userContextNode["Reserved"].asString());
+	if(!userContextNode["BreakCode"].isNull())
+		data_.userContext.breakCode = userContextNode["BreakCode"].asString();
+	if(!userContextNode["InstanceId"].isNull())
+		data_.userContext.instanceId = userContextNode["InstanceId"].asString();
+	if(!userContextNode["OutboundScenario"].isNull())
+		data_.userContext.outboundScenario = userContextNode["OutboundScenario"].asString() == "true";
+	if(!userContextNode["Mobile"].isNull())
+		data_.userContext.mobile = userContextNode["Mobile"].asString();
+	if(!userContextNode["JobId"].isNull())
+		data_.userContext.jobId = userContextNode["JobId"].asString();
+	if(!userContextNode["UserState"].isNull())
+		data_.userContext.userState = userContextNode["UserState"].asString();
 		auto allSignedSkillGroupIdList = userContextNode["SignedSkillGroupIdList"]["SkillGroupId"];
 		for (auto value : allSignedSkillGroupIdList)
 			data_.userContext.signedSkillGroupIdList.push_back(value.asString());

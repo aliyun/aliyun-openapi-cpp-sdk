@@ -40,24 +40,24 @@ void ResetAgentStateResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["BreakCode"].isNull())
-		data_.breakCode = dataNode["BreakCode"].asString();
-	if(!dataNode["DeviceId"].isNull())
-		data_.deviceId = dataNode["DeviceId"].asString();
 	if(!dataNode["Extension"].isNull())
 		data_.extension = dataNode["Extension"].asString();
-	if(!dataNode["InstanceId"].isNull())
-		data_.instanceId = dataNode["InstanceId"].asString();
-	if(!dataNode["JobId"].isNull())
-		data_.jobId = dataNode["JobId"].asString();
-	if(!dataNode["OutboundScenario"].isNull())
-		data_.outboundScenario = dataNode["OutboundScenario"].asString() == "true";
-	if(!dataNode["UserId"].isNull())
-		data_.userId = dataNode["UserId"].asString();
-	if(!dataNode["UserState"].isNull())
-		data_.userState = dataNode["UserState"].asString();
 	if(!dataNode["WorkMode"].isNull())
 		data_.workMode = dataNode["WorkMode"].asString();
+	if(!dataNode["DeviceId"].isNull())
+		data_.deviceId = dataNode["DeviceId"].asString();
+	if(!dataNode["JobId"].isNull())
+		data_.jobId = dataNode["JobId"].asString();
+	if(!dataNode["UserId"].isNull())
+		data_.userId = dataNode["UserId"].asString();
+	if(!dataNode["BreakCode"].isNull())
+		data_.breakCode = dataNode["BreakCode"].asString();
+	if(!dataNode["InstanceId"].isNull())
+		data_.instanceId = dataNode["InstanceId"].asString();
+	if(!dataNode["OutboundScenario"].isNull())
+		data_.outboundScenario = dataNode["OutboundScenario"].asString() == "true";
+	if(!dataNode["UserState"].isNull())
+		data_.userState = dataNode["UserState"].asString();
 		auto allSignedSkillGroupIdList = dataNode["SignedSkillGroupIdList"]["SkillGroupId"];
 		for (auto value : allSignedSkillGroupIdList)
 			data_.signedSkillGroupIdList.push_back(value.asString());

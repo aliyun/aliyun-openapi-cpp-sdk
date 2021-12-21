@@ -61,18 +61,18 @@ namespace AlibabaCloud
 					{
 						std::string userState;
 						std::string instanceId;
-						std::string breakCode;
 						std::string deviceId;
+						std::string breakCode;
 						bool outboundScenario;
-						std::string mobile;
 						std::string uri;
+						std::string mobile;
 						std::vector<std::string> signedSkillGroupIdList;
 						std::string extension;
 						std::string deviceState;
 						std::string userId;
 						long heartbeat;
-						std::string jobId;
 						std::string workMode;
+						std::string jobId;
 						long reserved;
 					};
 					UserContext userContext;

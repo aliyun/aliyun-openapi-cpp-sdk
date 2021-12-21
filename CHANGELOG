@@ -1,3 +1,6 @@
+2021-12-21 Version: 1.36.989
+- Add RAM ID in resonse of listUsers API.
+
 2021-12-21 Version: 1.36.988
 - Fix array params.
 

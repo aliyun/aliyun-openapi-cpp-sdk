@@ -70,6 +70,8 @@ void ListUsersResult::parse(const std::string &payload)
 			userDetailObject.roleId = dataNodeListUserDetail["RoleId"].asString();
 		if(!dataNodeListUserDetail["PrimaryAccount"].isNull())
 			userDetailObject.primaryAccount = dataNodeListUserDetail["PrimaryAccount"].asString() == "true";
+		if(!dataNodeListUserDetail["RamId"].isNull())
+			userDetailObject.ramId = std::stol(dataNodeListUserDetail["RamId"].asString());
 		auto allPersonalOutboundNumberListNode = dataNodeListUserDetail["PersonalOutboundNumberList"]["PhoneNumber"];
 		for (auto dataNodeListUserDetailPersonalOutboundNumberListPhoneNumber : allPersonalOutboundNumberListNode)
 		{

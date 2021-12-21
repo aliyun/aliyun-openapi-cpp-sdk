@@ -43,8 +43,8 @@ namespace AlibabaCloud
 							std::string releaseInitiator;
 							std::string callType;
 							int index;
-							std::string associatedData;
 							std::string skillGroupId;
+							std::string associatedData;
 							std::string channelId;
 							long timestamp;
 							std::string releaseReason;
@@ -64,14 +64,14 @@ namespace AlibabaCloud
 						std::string extension;
 						std::string userState;
 						std::string instanceId;
-						std::string breakCode;
 						std::string deviceId;
 						std::string userId;
+						std::string breakCode;
 						long heartbeat;
 						bool outboundScenario;
 						std::string mobile;
-						std::string jobId;
 						std::string workMode;
+						std::string jobId;
 						std::vector<std::string> signedSkillGroupIdList;
 					};
 					UserContext userContext;
