@@ -14,51 +14,51 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/schedulerx2/model/EnableWorkflowResult.h>
+#include <alibabacloud/schedulerx2/model/DesignateWorkersResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Schedulerx2;
 using namespace AlibabaCloud::Schedulerx2::Model;
 
-EnableWorkflowResult::EnableWorkflowResult() :
+DesignateWorkersResult::DesignateWorkersResult() :
 	ServiceResult()
 {}
 
-EnableWorkflowResult::EnableWorkflowResult(const std::string &payload) :
+DesignateWorkersResult::DesignateWorkersResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-EnableWorkflowResult::~EnableWorkflowResult()
+DesignateWorkersResult::~DesignateWorkersResult()
 {}
 
-void EnableWorkflowResult::parse(const std::string &payload)
+void DesignateWorkersResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Code"].isNull())
-		code_ = std::stoi(value["Code"].asString());
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Code"].isNull())
+		code_ = std::stoi(value["Code"].asString());
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 
 }
 
-std::string EnableWorkflowResult::getMessage()const
+std::string DesignateWorkersResult::getMessage()const
 {
 	return message_;
 }
 
-int EnableWorkflowResult::getCode()const
+int DesignateWorkersResult::getCode()const
 {
 	return code_;
 }
 
-bool EnableWorkflowResult::getSuccess()const
+bool DesignateWorkersResult::getSuccess()const
 {
 	return success_;
 }

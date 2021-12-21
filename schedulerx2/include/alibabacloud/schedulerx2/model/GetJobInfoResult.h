@@ -40,8 +40,8 @@ namespace AlibabaCloud
 						{
 							int taskAttemptInterval;
 							int queueSize;
-							int pageSize;
 							int dispatcherSize;
+							int pageSize;
 							int taskMaxAttempt;
 							int consumerSize;
 						};
@@ -72,8 +72,8 @@ namespace AlibabaCloud
 						};
 						int status;
 						int maxAttempt;
-						std::string description;
 						std::string parameters;
+						std::string description;
 						std::string jarUrl;
 						std::string maxConcurrency;
 						TimeConfig timeConfig;

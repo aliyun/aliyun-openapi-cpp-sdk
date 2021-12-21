@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SCHEDULERX2_MODEL_BATCHENABLEJOBSREQUEST_H_
-#define ALIBABACLOUD_SCHEDULERX2_MODEL_BATCHENABLEJOBSREQUEST_H_
+#ifndef ALIBABACLOUD_SCHEDULERX2_MODEL_DESIGNATEWORKERSREQUEST_H_
+#define ALIBABACLOUD_SCHEDULERX2_MODEL_DESIGNATEWORKERSREQUEST_H_
 
 #include <alibabacloud/schedulerx2/Schedulerx2Export.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,29 +26,41 @@
 namespace AlibabaCloud {
 namespace Schedulerx2 {
 namespace Model {
-class ALIBABACLOUD_SCHEDULERX2_EXPORT BatchEnableJobsRequest : public RpcServiceRequest {
+class ALIBABACLOUD_SCHEDULERX2_EXPORT DesignateWorkersRequest : public RpcServiceRequest {
 public:
-	BatchEnableJobsRequest();
-	~BatchEnableJobsRequest();
+	DesignateWorkersRequest();
+	~DesignateWorkersRequest();
 	std::string getNamespaceSource() const;
 	void setNamespaceSource(const std::string &namespaceSource);
-	std::string getRegionId() const;
-	void setRegionId(const std::string &regionId);
 	std::string getGroupId() const;
 	void setGroupId(const std::string &groupId);
+	bool getTransferable() const;
+	void setTransferable(bool transferable);
+	std::string getLabels() const;
+	void setLabels(const std::string &labels);
+	int getDesignateType() const;
+	void setDesignateType(int designateType);
+	long getJobId() const;
+	void setJobId(long jobId);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string get_Namespace() const;
 	void set_Namespace(const std::string &_namespace);
-	std::vector<long> getJobIdList() const;
-	void setJobIdList(const std::vector<long> &jobIdList);
+	std::string getWorkers() const;
+	void setWorkers(const std::string &workers);
 
 private:
 	std::string namespaceSource_;
-	std::string regionId_;
 	std::string groupId_;
+	bool transferable_;
+	std::string labels_;
+	int designateType_;
+	long jobId_;
+	std::string regionId_;
 	std::string _namespace_;
-	std::vector<long> jobIdList_;
+	std::string workers_;
 };
 } // namespace Model
 } // namespace Schedulerx2
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_SCHEDULERX2_MODEL_BATCHENABLEJOBSREQUEST_H_
+#endif // !ALIBABACLOUD_SCHEDULERX2_MODEL_DESIGNATEWORKERSREQUEST_H_

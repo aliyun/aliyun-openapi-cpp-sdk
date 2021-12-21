@@ -44,32 +44,32 @@ void GetJobInstanceListResult::parse(const std::string &payload)
 	for (auto dataNodeJobInstanceDetailsJobInstanceDetailsItem : allJobInstanceDetailsNode)
 	{
 		Data::JobInstanceDetailsItem jobInstanceDetailsItemObject;
-		if(!dataNodeJobInstanceDetailsJobInstanceDetailsItem["InstanceId"].isNull())
-			jobInstanceDetailsItemObject.instanceId = std::stol(dataNodeJobInstanceDetailsJobInstanceDetailsItem["InstanceId"].asString());
-		if(!dataNodeJobInstanceDetailsJobInstanceDetailsItem["JobId"].isNull())
-			jobInstanceDetailsItemObject.jobId = std::stol(dataNodeJobInstanceDetailsJobInstanceDetailsItem["JobId"].asString());
 		if(!dataNodeJobInstanceDetailsJobInstanceDetailsItem["Status"].isNull())
 			jobInstanceDetailsItemObject.status = std::stoi(dataNodeJobInstanceDetailsJobInstanceDetailsItem["Status"].asString());
-		if(!dataNodeJobInstanceDetailsJobInstanceDetailsItem["StartTime"].isNull())
-			jobInstanceDetailsItemObject.startTime = dataNodeJobInstanceDetailsJobInstanceDetailsItem["StartTime"].asString();
-		if(!dataNodeJobInstanceDetailsJobInstanceDetailsItem["EndTime"].isNull())
-			jobInstanceDetailsItemObject.endTime = dataNodeJobInstanceDetailsJobInstanceDetailsItem["EndTime"].asString();
-		if(!dataNodeJobInstanceDetailsJobInstanceDetailsItem["ScheduleTime"].isNull())
-			jobInstanceDetailsItemObject.scheduleTime = dataNodeJobInstanceDetailsJobInstanceDetailsItem["ScheduleTime"].asString();
-		if(!dataNodeJobInstanceDetailsJobInstanceDetailsItem["DataTime"].isNull())
-			jobInstanceDetailsItemObject.dataTime = dataNodeJobInstanceDetailsJobInstanceDetailsItem["DataTime"].asString();
-		if(!dataNodeJobInstanceDetailsJobInstanceDetailsItem["Executor"].isNull())
-			jobInstanceDetailsItemObject.executor = dataNodeJobInstanceDetailsJobInstanceDetailsItem["Executor"].asString();
-		if(!dataNodeJobInstanceDetailsJobInstanceDetailsItem["WorkAddr"].isNull())
-			jobInstanceDetailsItemObject.workAddr = dataNodeJobInstanceDetailsJobInstanceDetailsItem["WorkAddr"].asString();
-		if(!dataNodeJobInstanceDetailsJobInstanceDetailsItem["Result"].isNull())
-			jobInstanceDetailsItemObject.result = dataNodeJobInstanceDetailsJobInstanceDetailsItem["Result"].asString();
 		if(!dataNodeJobInstanceDetailsJobInstanceDetailsItem["Progress"].isNull())
 			jobInstanceDetailsItemObject.progress = dataNodeJobInstanceDetailsJobInstanceDetailsItem["Progress"].asString();
+		if(!dataNodeJobInstanceDetailsJobInstanceDetailsItem["Result"].isNull())
+			jobInstanceDetailsItemObject.result = dataNodeJobInstanceDetailsJobInstanceDetailsItem["Result"].asString();
+		if(!dataNodeJobInstanceDetailsJobInstanceDetailsItem["InstanceId"].isNull())
+			jobInstanceDetailsItemObject.instanceId = std::stol(dataNodeJobInstanceDetailsJobInstanceDetailsItem["InstanceId"].asString());
 		if(!dataNodeJobInstanceDetailsJobInstanceDetailsItem["TimeType"].isNull())
 			jobInstanceDetailsItemObject.timeType = std::stoi(dataNodeJobInstanceDetailsJobInstanceDetailsItem["TimeType"].asString());
 		if(!dataNodeJobInstanceDetailsJobInstanceDetailsItem["TriggerType"].isNull())
 			jobInstanceDetailsItemObject.triggerType = std::stoi(dataNodeJobInstanceDetailsJobInstanceDetailsItem["TriggerType"].asString());
+		if(!dataNodeJobInstanceDetailsJobInstanceDetailsItem["EndTime"].isNull())
+			jobInstanceDetailsItemObject.endTime = dataNodeJobInstanceDetailsJobInstanceDetailsItem["EndTime"].asString();
+		if(!dataNodeJobInstanceDetailsJobInstanceDetailsItem["StartTime"].isNull())
+			jobInstanceDetailsItemObject.startTime = dataNodeJobInstanceDetailsJobInstanceDetailsItem["StartTime"].asString();
+		if(!dataNodeJobInstanceDetailsJobInstanceDetailsItem["Executor"].isNull())
+			jobInstanceDetailsItemObject.executor = dataNodeJobInstanceDetailsJobInstanceDetailsItem["Executor"].asString();
+		if(!dataNodeJobInstanceDetailsJobInstanceDetailsItem["JobId"].isNull())
+			jobInstanceDetailsItemObject.jobId = std::stol(dataNodeJobInstanceDetailsJobInstanceDetailsItem["JobId"].asString());
+		if(!dataNodeJobInstanceDetailsJobInstanceDetailsItem["ScheduleTime"].isNull())
+			jobInstanceDetailsItemObject.scheduleTime = dataNodeJobInstanceDetailsJobInstanceDetailsItem["ScheduleTime"].asString();
+		if(!dataNodeJobInstanceDetailsJobInstanceDetailsItem["DataTime"].isNull())
+			jobInstanceDetailsItemObject.dataTime = dataNodeJobInstanceDetailsJobInstanceDetailsItem["DataTime"].asString();
+		if(!dataNodeJobInstanceDetailsJobInstanceDetailsItem["WorkAddr"].isNull())
+			jobInstanceDetailsItemObject.workAddr = dataNodeJobInstanceDetailsJobInstanceDetailsItem["WorkAddr"].asString();
 		data_.jobInstanceDetails.push_back(jobInstanceDetailsItemObject);
 	}
 	if(!value["Code"].isNull())

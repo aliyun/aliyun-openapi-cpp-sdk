@@ -41,32 +41,32 @@ void GetJobInstanceResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
 	auto jobInstanceDetailNode = dataNode["JobInstanceDetail"];
-	if(!jobInstanceDetailNode["InstanceId"].isNull())
-		data_.jobInstanceDetail.instanceId = std::stol(jobInstanceDetailNode["InstanceId"].asString());
-	if(!jobInstanceDetailNode["JobId"].isNull())
-		data_.jobInstanceDetail.jobId = std::stol(jobInstanceDetailNode["JobId"].asString());
 	if(!jobInstanceDetailNode["Status"].isNull())
 		data_.jobInstanceDetail.status = std::stoi(jobInstanceDetailNode["Status"].asString());
-	if(!jobInstanceDetailNode["StartTime"].isNull())
-		data_.jobInstanceDetail.startTime = jobInstanceDetailNode["StartTime"].asString();
-	if(!jobInstanceDetailNode["EndTime"].isNull())
-		data_.jobInstanceDetail.endTime = jobInstanceDetailNode["EndTime"].asString();
-	if(!jobInstanceDetailNode["ScheduleTime"].isNull())
-		data_.jobInstanceDetail.scheduleTime = jobInstanceDetailNode["ScheduleTime"].asString();
-	if(!jobInstanceDetailNode["DataTime"].isNull())
-		data_.jobInstanceDetail.dataTime = jobInstanceDetailNode["DataTime"].asString();
-	if(!jobInstanceDetailNode["Executor"].isNull())
-		data_.jobInstanceDetail.executor = jobInstanceDetailNode["Executor"].asString();
-	if(!jobInstanceDetailNode["WorkAddr"].isNull())
-		data_.jobInstanceDetail.workAddr = jobInstanceDetailNode["WorkAddr"].asString();
-	if(!jobInstanceDetailNode["Result"].isNull())
-		data_.jobInstanceDetail.result = jobInstanceDetailNode["Result"].asString();
 	if(!jobInstanceDetailNode["Progress"].isNull())
 		data_.jobInstanceDetail.progress = jobInstanceDetailNode["Progress"].asString();
+	if(!jobInstanceDetailNode["Result"].isNull())
+		data_.jobInstanceDetail.result = jobInstanceDetailNode["Result"].asString();
+	if(!jobInstanceDetailNode["InstanceId"].isNull())
+		data_.jobInstanceDetail.instanceId = std::stol(jobInstanceDetailNode["InstanceId"].asString());
 	if(!jobInstanceDetailNode["TimeType"].isNull())
 		data_.jobInstanceDetail.timeType = std::stoi(jobInstanceDetailNode["TimeType"].asString());
 	if(!jobInstanceDetailNode["TriggerType"].isNull())
 		data_.jobInstanceDetail.triggerType = std::stoi(jobInstanceDetailNode["TriggerType"].asString());
+	if(!jobInstanceDetailNode["EndTime"].isNull())
+		data_.jobInstanceDetail.endTime = jobInstanceDetailNode["EndTime"].asString();
+	if(!jobInstanceDetailNode["StartTime"].isNull())
+		data_.jobInstanceDetail.startTime = jobInstanceDetailNode["StartTime"].asString();
+	if(!jobInstanceDetailNode["Executor"].isNull())
+		data_.jobInstanceDetail.executor = jobInstanceDetailNode["Executor"].asString();
+	if(!jobInstanceDetailNode["JobId"].isNull())
+		data_.jobInstanceDetail.jobId = std::stol(jobInstanceDetailNode["JobId"].asString());
+	if(!jobInstanceDetailNode["ScheduleTime"].isNull())
+		data_.jobInstanceDetail.scheduleTime = jobInstanceDetailNode["ScheduleTime"].asString();
+	if(!jobInstanceDetailNode["DataTime"].isNull())
+		data_.jobInstanceDetail.dataTime = jobInstanceDetailNode["DataTime"].asString();
+	if(!jobInstanceDetailNode["WorkAddr"].isNull())
+		data_.jobInstanceDetail.workAddr = jobInstanceDetailNode["WorkAddr"].asString();
 	if(!value["Code"].isNull())
 		code_ = std::stoi(value["Code"].asString());
 	if(!value["Message"].isNull())

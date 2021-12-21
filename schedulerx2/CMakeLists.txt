@@ -37,6 +37,8 @@ set(schedulerx2_public_header_model
 	include/alibabacloud/schedulerx2/model/DeleteWorkflowResult.h
 	include/alibabacloud/schedulerx2/model/DescribeRegionsRequest.h
 	include/alibabacloud/schedulerx2/model/DescribeRegionsResult.h
+	include/alibabacloud/schedulerx2/model/DesignateWorkersRequest.h
+	include/alibabacloud/schedulerx2/model/DesignateWorkersResult.h
 	include/alibabacloud/schedulerx2/model/DisableJobRequest.h
 	include/alibabacloud/schedulerx2/model/DisableJobResult.h
 	include/alibabacloud/schedulerx2/model/DisableWorkflowRequest.h
@@ -55,6 +57,8 @@ set(schedulerx2_public_header_model
 	include/alibabacloud/schedulerx2/model/GetJobInstanceResult.h
 	include/alibabacloud/schedulerx2/model/GetJobInstanceListRequest.h
 	include/alibabacloud/schedulerx2/model/GetJobInstanceListResult.h
+	include/alibabacloud/schedulerx2/model/GetWorkFlowRequest.h
+	include/alibabacloud/schedulerx2/model/GetWorkFlowResult.h
 	include/alibabacloud/schedulerx2/model/GrantPermissionRequest.h
 	include/alibabacloud/schedulerx2/model/GrantPermissionResult.h
 	include/alibabacloud/schedulerx2/model/ListGroupsRequest.h
@@ -88,6 +92,8 @@ set(schedulerx2_src
 	src/model/DeleteWorkflowResult.cc
 	src/model/DescribeRegionsRequest.cc
 	src/model/DescribeRegionsResult.cc
+	src/model/DesignateWorkersRequest.cc
+	src/model/DesignateWorkersResult.cc
 	src/model/DisableJobRequest.cc
 	src/model/DisableJobResult.cc
 	src/model/DisableWorkflowRequest.cc
@@ -106,6 +112,8 @@ set(schedulerx2_src
 	src/model/GetJobInstanceResult.cc
 	src/model/GetJobInstanceListRequest.cc
 	src/model/GetJobInstanceListResult.cc
+	src/model/GetWorkFlowRequest.cc
+	src/model/GetWorkFlowResult.cc
 	src/model/GrantPermissionRequest.cc
 	src/model/GrantPermissionResult.cc
 	src/model/ListGroupsRequest.cc

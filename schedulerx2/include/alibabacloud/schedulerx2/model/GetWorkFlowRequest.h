@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SCHEDULERX2_MODEL_BATCHENABLEJOBSREQUEST_H_
-#define ALIBABACLOUD_SCHEDULERX2_MODEL_BATCHENABLEJOBSREQUEST_H_
+#ifndef ALIBABACLOUD_SCHEDULERX2_MODEL_GETWORKFLOWREQUEST_H_
+#define ALIBABACLOUD_SCHEDULERX2_MODEL_GETWORKFLOWREQUEST_H_
 
 #include <alibabacloud/schedulerx2/Schedulerx2Export.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,29 +26,29 @@
 namespace AlibabaCloud {
 namespace Schedulerx2 {
 namespace Model {
-class ALIBABACLOUD_SCHEDULERX2_EXPORT BatchEnableJobsRequest : public RpcServiceRequest {
+class ALIBABACLOUD_SCHEDULERX2_EXPORT GetWorkFlowRequest : public RpcServiceRequest {
 public:
-	BatchEnableJobsRequest();
-	~BatchEnableJobsRequest();
+	GetWorkFlowRequest();
+	~GetWorkFlowRequest();
 	std::string getNamespaceSource() const;
 	void setNamespaceSource(const std::string &namespaceSource);
-	std::string getRegionId() const;
-	void setRegionId(const std::string &regionId);
 	std::string getGroupId() const;
 	void setGroupId(const std::string &groupId);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string get_Namespace() const;
 	void set_Namespace(const std::string &_namespace);
-	std::vector<long> getJobIdList() const;
-	void setJobIdList(const std::vector<long> &jobIdList);
+	long getWorkflowId() const;
+	void setWorkflowId(long workflowId);
 
 private:
 	std::string namespaceSource_;
-	std::string regionId_;
 	std::string groupId_;
+	std::string regionId_;
 	std::string _namespace_;
-	std::vector<long> jobIdList_;
+	long workflowId_;
 };
 } // namespace Model
 } // namespace Schedulerx2
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_SCHEDULERX2_MODEL_BATCHENABLEJOBSREQUEST_H_
+#endif // !ALIBABACLOUD_SCHEDULERX2_MODEL_GETWORKFLOWREQUEST_H_

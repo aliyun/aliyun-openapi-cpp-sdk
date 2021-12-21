@@ -339,6 +339,42 @@ Schedulerx2Client::DescribeRegionsOutcomeCallable Schedulerx2Client::describeReg
 	return task->get_future();
 }
 
+Schedulerx2Client::DesignateWorkersOutcome Schedulerx2Client::designateWorkers(const DesignateWorkersRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DesignateWorkersOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DesignateWorkersOutcome(DesignateWorkersResult(outcome.result()));
+	else
+		return DesignateWorkersOutcome(outcome.error());
+}
+
+void Schedulerx2Client::designateWorkersAsync(const DesignateWorkersRequest& request, const DesignateWorkersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, designateWorkers(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Schedulerx2Client::DesignateWorkersOutcomeCallable Schedulerx2Client::designateWorkersCallable(const DesignateWorkersRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DesignateWorkersOutcome()>>(
+			[this, request]()
+			{
+			return this->designateWorkers(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Schedulerx2Client::DisableJobOutcome Schedulerx2Client::disableJob(const DisableJobRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -657,6 +693,42 @@ Schedulerx2Client::GetJobInstanceListOutcomeCallable Schedulerx2Client::getJobIn
 			[this, request]()
 			{
 			return this->getJobInstanceList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Schedulerx2Client::GetWorkFlowOutcome Schedulerx2Client::getWorkFlow(const GetWorkFlowRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetWorkFlowOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetWorkFlowOutcome(GetWorkFlowResult(outcome.result()));
+	else
+		return GetWorkFlowOutcome(outcome.error());
+}
+
+void Schedulerx2Client::getWorkFlowAsync(const GetWorkFlowRequest& request, const GetWorkFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getWorkFlow(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Schedulerx2Client::GetWorkFlowOutcomeCallable Schedulerx2Client::getWorkFlowCallable(const GetWorkFlowRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetWorkFlowOutcome()>>(
+			[this, request]()
+			{
+			return this->getWorkFlow(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -46,18 +46,18 @@ void ListNamespacesResult::parse(const std::string &payload)
 		Data::_Namespace _namespaceObject;
 		if(!dataNodeNamespacesNamespace["Name"].isNull())
 			_namespaceObject.name = dataNodeNamespacesNamespace["Name"].asString();
-		if(!dataNodeNamespacesNamespace["UId"].isNull())
-			_namespaceObject.uId = dataNodeNamespacesNamespace["UId"].asString();
 		if(!dataNodeNamespacesNamespace["Description"].isNull())
 			_namespaceObject.description = dataNodeNamespacesNamespace["Description"].asString();
+		if(!dataNodeNamespacesNamespace["UId"].isNull())
+			_namespaceObject.uId = dataNodeNamespacesNamespace["UId"].asString();
 		data_.namespaces.push_back(_namespaceObject);
 	}
 	if(!value["Code"].isNull())
 		code_ = std::stoi(value["Code"].asString());
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

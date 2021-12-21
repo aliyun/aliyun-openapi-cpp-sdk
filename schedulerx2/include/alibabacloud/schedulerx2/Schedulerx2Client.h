@@ -38,6 +38,8 @@
 #include "model/DeleteWorkflowResult.h"
 #include "model/DescribeRegionsRequest.h"
 #include "model/DescribeRegionsResult.h"
+#include "model/DesignateWorkersRequest.h"
+#include "model/DesignateWorkersResult.h"
 #include "model/DisableJobRequest.h"
 #include "model/DisableJobResult.h"
 #include "model/DisableWorkflowRequest.h"
@@ -56,6 +58,8 @@
 #include "model/GetJobInstanceResult.h"
 #include "model/GetJobInstanceListRequest.h"
 #include "model/GetJobInstanceListResult.h"
+#include "model/GetWorkFlowRequest.h"
+#include "model/GetWorkFlowResult.h"
 #include "model/GrantPermissionRequest.h"
 #include "model/GrantPermissionResult.h"
 #include "model/ListGroupsRequest.h"
@@ -103,6 +107,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeRegionsResult> DescribeRegionsOutcome;
 			typedef std::future<DescribeRegionsOutcome> DescribeRegionsOutcomeCallable;
 			typedef std::function<void(const Schedulerx2Client*, const Model::DescribeRegionsRequest&, const DescribeRegionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRegionsAsyncHandler;
+			typedef Outcome<Error, Model::DesignateWorkersResult> DesignateWorkersOutcome;
+			typedef std::future<DesignateWorkersOutcome> DesignateWorkersOutcomeCallable;
+			typedef std::function<void(const Schedulerx2Client*, const Model::DesignateWorkersRequest&, const DesignateWorkersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DesignateWorkersAsyncHandler;
 			typedef Outcome<Error, Model::DisableJobResult> DisableJobOutcome;
 			typedef std::future<DisableJobOutcome> DisableJobOutcomeCallable;
 			typedef std::function<void(const Schedulerx2Client*, const Model::DisableJobRequest&, const DisableJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DisableJobAsyncHandler;
@@ -130,6 +137,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetJobInstanceListResult> GetJobInstanceListOutcome;
 			typedef std::future<GetJobInstanceListOutcome> GetJobInstanceListOutcomeCallable;
 			typedef std::function<void(const Schedulerx2Client*, const Model::GetJobInstanceListRequest&, const GetJobInstanceListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetJobInstanceListAsyncHandler;
+			typedef Outcome<Error, Model::GetWorkFlowResult> GetWorkFlowOutcome;
+			typedef std::future<GetWorkFlowOutcome> GetWorkFlowOutcomeCallable;
+			typedef std::function<void(const Schedulerx2Client*, const Model::GetWorkFlowRequest&, const GetWorkFlowOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetWorkFlowAsyncHandler;
 			typedef Outcome<Error, Model::GrantPermissionResult> GrantPermissionOutcome;
 			typedef std::future<GrantPermissionOutcome> GrantPermissionOutcomeCallable;
 			typedef std::function<void(const Schedulerx2Client*, const Model::GrantPermissionRequest&, const GrantPermissionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GrantPermissionAsyncHandler;
@@ -180,6 +190,9 @@ namespace AlibabaCloud
 			DescribeRegionsOutcome describeRegions(const Model::DescribeRegionsRequest &request)const;
 			void describeRegionsAsync(const Model::DescribeRegionsRequest& request, const DescribeRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRegionsOutcomeCallable describeRegionsCallable(const Model::DescribeRegionsRequest& request) const;
+			DesignateWorkersOutcome designateWorkers(const Model::DesignateWorkersRequest &request)const;
+			void designateWorkersAsync(const Model::DesignateWorkersRequest& request, const DesignateWorkersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DesignateWorkersOutcomeCallable designateWorkersCallable(const Model::DesignateWorkersRequest& request) const;
 			DisableJobOutcome disableJob(const Model::DisableJobRequest &request)const;
 			void disableJobAsync(const Model::DisableJobRequest& request, const DisableJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DisableJobOutcomeCallable disableJobCallable(const Model::DisableJobRequest& request) const;
@@ -207,6 +220,9 @@ namespace AlibabaCloud
 			GetJobInstanceListOutcome getJobInstanceList(const Model::GetJobInstanceListRequest &request)const;
 			void getJobInstanceListAsync(const Model::GetJobInstanceListRequest& request, const GetJobInstanceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetJobInstanceListOutcomeCallable getJobInstanceListCallable(const Model::GetJobInstanceListRequest& request) const;
+			GetWorkFlowOutcome getWorkFlow(const Model::GetWorkFlowRequest &request)const;
+			void getWorkFlowAsync(const Model::GetWorkFlowRequest& request, const GetWorkFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetWorkFlowOutcomeCallable getWorkFlowCallable(const Model::GetWorkFlowRequest& request) const;
 			GrantPermissionOutcome grantPermission(const Model::GrantPermissionRequest &request)const;
 			void grantPermissionAsync(const Model::GrantPermissionRequest& request, const GrantPermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GrantPermissionOutcomeCallable grantPermissionCallable(const Model::GrantPermissionRequest& request) const;

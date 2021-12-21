@@ -14,59 +14,59 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/schedulerx2/model/ExecuteWorkflowRequest.h>
+#include <alibabacloud/schedulerx2/model/GetWorkFlowRequest.h>
 
-using AlibabaCloud::Schedulerx2::Model::ExecuteWorkflowRequest;
+using AlibabaCloud::Schedulerx2::Model::GetWorkFlowRequest;
 
-ExecuteWorkflowRequest::ExecuteWorkflowRequest()
-    : RpcServiceRequest("schedulerx2", "2019-04-30", "ExecuteWorkflow") {
+GetWorkFlowRequest::GetWorkFlowRequest()
+    : RpcServiceRequest("schedulerx2", "2019-04-30", "GetWorkFlow") {
   setMethod(HttpRequest::Method::Get);
 }
 
-ExecuteWorkflowRequest::~ExecuteWorkflowRequest() {}
+GetWorkFlowRequest::~GetWorkFlowRequest() {}
 
-std::string ExecuteWorkflowRequest::getNamespaceSource() const {
+std::string GetWorkFlowRequest::getNamespaceSource() const {
   return namespaceSource_;
 }
 
-void ExecuteWorkflowRequest::setNamespaceSource(const std::string &namespaceSource) {
+void GetWorkFlowRequest::setNamespaceSource(const std::string &namespaceSource) {
   namespaceSource_ = namespaceSource;
   setParameter(std::string("NamespaceSource"), namespaceSource);
 }
 
-std::string ExecuteWorkflowRequest::getGroupId() const {
+std::string GetWorkFlowRequest::getGroupId() const {
   return groupId_;
 }
 
-void ExecuteWorkflowRequest::setGroupId(const std::string &groupId) {
+void GetWorkFlowRequest::setGroupId(const std::string &groupId) {
   groupId_ = groupId;
   setParameter(std::string("GroupId"), groupId);
 }
 
-std::string ExecuteWorkflowRequest::get_Namespace() const {
+std::string GetWorkFlowRequest::getRegionId() const {
+  return regionId_;
+}
+
+void GetWorkFlowRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
+std::string GetWorkFlowRequest::get_Namespace() const {
   return _namespace_;
 }
 
-void ExecuteWorkflowRequest::set_Namespace(const std::string &_namespace) {
+void GetWorkFlowRequest::set_Namespace(const std::string &_namespace) {
   _namespace_ = _namespace;
   setParameter(std::string("Namespace"), _namespace);
 }
 
-long ExecuteWorkflowRequest::getWorkflowId() const {
+long GetWorkFlowRequest::getWorkflowId() const {
   return workflowId_;
 }
 
-void ExecuteWorkflowRequest::setWorkflowId(long workflowId) {
+void GetWorkFlowRequest::setWorkflowId(long workflowId) {
   workflowId_ = workflowId;
   setParameter(std::string("WorkflowId"), std::to_string(workflowId));
-}
-
-std::string ExecuteWorkflowRequest::getInstanceParameters() const {
-  return instanceParameters_;
-}
-
-void ExecuteWorkflowRequest::setInstanceParameters(const std::string &instanceParameters) {
-  instanceParameters_ = instanceParameters;
-  setParameter(std::string("InstanceParameters"), instanceParameters);
 }
 

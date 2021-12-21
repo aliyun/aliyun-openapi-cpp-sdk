@@ -41,72 +41,72 @@ void GetJobInfoResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
 	auto jobConfigInfoNode = dataNode["JobConfigInfo"];
-	if(!jobConfigInfoNode["ClassName"].isNull())
-		data_.jobConfigInfo.className = jobConfigInfoNode["ClassName"].asString();
-	if(!jobConfigInfoNode["JarUrl"].isNull())
-		data_.jobConfigInfo.jarUrl = jobConfigInfoNode["JarUrl"].asString();
-	if(!jobConfigInfoNode["Content"].isNull())
-		data_.jobConfigInfo.content = jobConfigInfoNode["Content"].asString();
-	if(!jobConfigInfoNode["Name"].isNull())
-		data_.jobConfigInfo.name = jobConfigInfoNode["Name"].asString();
-	if(!jobConfigInfoNode["Description"].isNull())
-		data_.jobConfigInfo.description = jobConfigInfoNode["Description"].asString();
 	if(!jobConfigInfoNode["Status"].isNull())
 		data_.jobConfigInfo.status = std::stoi(jobConfigInfoNode["Status"].asString());
-	if(!jobConfigInfoNode["ExecuteMode"].isNull())
-		data_.jobConfigInfo.executeMode = jobConfigInfoNode["ExecuteMode"].asString();
 	if(!jobConfigInfoNode["Parameters"].isNull())
 		data_.jobConfigInfo.parameters = jobConfigInfoNode["Parameters"].asString();
+	if(!jobConfigInfoNode["Description"].isNull())
+		data_.jobConfigInfo.description = jobConfigInfoNode["Description"].asString();
+	if(!jobConfigInfoNode["ExecuteMode"].isNull())
+		data_.jobConfigInfo.executeMode = jobConfigInfoNode["ExecuteMode"].asString();
 	if(!jobConfigInfoNode["MaxConcurrency"].isNull())
 		data_.jobConfigInfo.maxConcurrency = jobConfigInfoNode["MaxConcurrency"].asString();
+	if(!jobConfigInfoNode["Name"].isNull())
+		data_.jobConfigInfo.name = jobConfigInfoNode["Name"].asString();
 	if(!jobConfigInfoNode["MaxAttempt"].isNull())
 		data_.jobConfigInfo.maxAttempt = std::stoi(jobConfigInfoNode["MaxAttempt"].asString());
+	if(!jobConfigInfoNode["Content"].isNull())
+		data_.jobConfigInfo.content = jobConfigInfoNode["Content"].asString();
+	if(!jobConfigInfoNode["JarUrl"].isNull())
+		data_.jobConfigInfo.jarUrl = jobConfigInfoNode["JarUrl"].asString();
+	if(!jobConfigInfoNode["ClassName"].isNull())
+		data_.jobConfigInfo.className = jobConfigInfoNode["ClassName"].asString();
 	if(!jobConfigInfoNode["AttemptInterval"].isNull())
 		data_.jobConfigInfo.attemptInterval = std::stoi(jobConfigInfoNode["AttemptInterval"].asString());
 	auto mapTaskXAttrsNode = jobConfigInfoNode["MapTaskXAttrs"];
-	if(!mapTaskXAttrsNode["PageSize"].isNull())
-		data_.jobConfigInfo.mapTaskXAttrs.pageSize = std::stoi(mapTaskXAttrsNode["PageSize"].asString());
+	if(!mapTaskXAttrsNode["TaskMaxAttempt"].isNull())
+		data_.jobConfigInfo.mapTaskXAttrs.taskMaxAttempt = std::stoi(mapTaskXAttrsNode["TaskMaxAttempt"].asString());
+	if(!mapTaskXAttrsNode["TaskAttemptInterval"].isNull())
+		data_.jobConfigInfo.mapTaskXAttrs.taskAttemptInterval = std::stoi(mapTaskXAttrsNode["TaskAttemptInterval"].asString());
 	if(!mapTaskXAttrsNode["ConsumerSize"].isNull())
 		data_.jobConfigInfo.mapTaskXAttrs.consumerSize = std::stoi(mapTaskXAttrsNode["ConsumerSize"].asString());
 	if(!mapTaskXAttrsNode["QueueSize"].isNull())
 		data_.jobConfigInfo.mapTaskXAttrs.queueSize = std::stoi(mapTaskXAttrsNode["QueueSize"].asString());
 	if(!mapTaskXAttrsNode["DispatcherSize"].isNull())
 		data_.jobConfigInfo.mapTaskXAttrs.dispatcherSize = std::stoi(mapTaskXAttrsNode["DispatcherSize"].asString());
-	if(!mapTaskXAttrsNode["TaskMaxAttempt"].isNull())
-		data_.jobConfigInfo.mapTaskXAttrs.taskMaxAttempt = std::stoi(mapTaskXAttrsNode["TaskMaxAttempt"].asString());
-	if(!mapTaskXAttrsNode["TaskAttemptInterval"].isNull())
-		data_.jobConfigInfo.mapTaskXAttrs.taskAttemptInterval = std::stoi(mapTaskXAttrsNode["TaskAttemptInterval"].asString());
+	if(!mapTaskXAttrsNode["PageSize"].isNull())
+		data_.jobConfigInfo.mapTaskXAttrs.pageSize = std::stoi(mapTaskXAttrsNode["PageSize"].asString());
 	auto timeConfigNode = jobConfigInfoNode["TimeConfig"];
-	if(!timeConfigNode["TimeType"].isNull())
-		data_.jobConfigInfo.timeConfig.timeType = std::stoi(timeConfigNode["TimeType"].asString());
-	if(!timeConfigNode["TimeExpression"].isNull())
-		data_.jobConfigInfo.timeConfig.timeExpression = timeConfigNode["TimeExpression"].asString();
 	if(!timeConfigNode["Calendar"].isNull())
 		data_.jobConfigInfo.timeConfig.calendar = timeConfigNode["Calendar"].asString();
+	if(!timeConfigNode["TimeType"].isNull())
+		data_.jobConfigInfo.timeConfig.timeType = std::stoi(timeConfigNode["TimeType"].asString());
 	if(!timeConfigNode["DataOffset"].isNull())
 		data_.jobConfigInfo.timeConfig.dataOffset = std::stoi(timeConfigNode["DataOffset"].asString());
+	if(!timeConfigNode["TimeExpression"].isNull())
+		data_.jobConfigInfo.timeConfig.timeExpression = timeConfigNode["TimeExpression"].asString();
 	auto jobMonitorInfoNode = jobConfigInfoNode["JobMonitorInfo"];
 	auto allContactInfoNode = jobMonitorInfoNode["ContactInfo"]["ContactInfoItem"];
 	for (auto jobMonitorInfoNodeContactInfoContactInfoItem : allContactInfoNode)
 	{
 		Data::JobConfigInfo::JobMonitorInfo::ContactInfoItem contactInfoItemObject;
-		if(!jobMonitorInfoNodeContactInfoContactInfoItem["UserName"].isNull())
-			contactInfoItemObject.userName = jobMonitorInfoNodeContactInfoContactInfoItem["UserName"].asString();
 		if(!jobMonitorInfoNodeContactInfoContactInfoItem["UserPhone"].isNull())
 			contactInfoItemObject.userPhone = jobMonitorInfoNodeContactInfoContactInfoItem["UserPhone"].asString();
+		if(!jobMonitorInfoNodeContactInfoContactInfoItem["UserName"].isNull())
+			contactInfoItemObject.userName = jobMonitorInfoNodeContactInfoContactInfoItem["UserName"].asString();
 		data_.jobConfigInfo.jobMonitorInfo.contactInfo.push_back(contactInfoItemObject);
 	}
 	auto monitorConfigNode = jobMonitorInfoNode["MonitorConfig"];
-	if(!monitorConfigNode["TimeoutEnable"].isNull())
-		data_.jobConfigInfo.jobMonitorInfo.monitorConfig.timeoutEnable = monitorConfigNode["TimeoutEnable"].asString() == "true";
 	if(!monitorConfigNode["Timeout"].isNull())
 		data_.jobConfigInfo.jobMonitorInfo.monitorConfig.timeout = std::stol(monitorConfigNode["Timeout"].asString());
-	if(!monitorConfigNode["TimeoutKillEnable"].isNull())
-		data_.jobConfigInfo.jobMonitorInfo.monitorConfig.timeoutKillEnable = monitorConfigNode["TimeoutKillEnable"].asString() == "true";
-	if(!monitorConfigNode["FailEnable"].isNull())
-		data_.jobConfigInfo.jobMonitorInfo.monitorConfig.failEnable = monitorConfigNode["FailEnable"].asString() == "true";
 	if(!monitorConfigNode["SendChannel"].isNull())
 		data_.jobConfigInfo.jobMonitorInfo.monitorConfig.sendChannel = monitorConfigNode["SendChannel"].asString();
+	if(!monitorConfigNode["TimeoutKillEnable"].isNull())
+		data_.jobConfigInfo.jobMonitorInfo.monitorConfig.timeoutKillEnable = monitorConfigNode["TimeoutKillEnable"].asString() == "true";
+	if(!monitorConfigNode["TimeoutEnable"].isNull())
+		data_.jobConfigInfo.jobMonitorInfo.monitorConfig.timeoutEnable = monitorConfigNode["TimeoutEnable"].asString() == "true";
+	if(!monitorConfigNode["FailEnable"].isNull())
+		data_.jobConfigInfo.jobMonitorInfo.monitorConfig.failEnable = monitorConfigNode["FailEnable"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = std::stoi(value["Code"].asString());
 	if(!value["Message"].isNull())

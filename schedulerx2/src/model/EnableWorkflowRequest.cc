@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,67 +18,55 @@
 
 using AlibabaCloud::Schedulerx2::Model::EnableWorkflowRequest;
 
-EnableWorkflowRequest::EnableWorkflowRequest() :
-	RpcServiceRequest("schedulerx2", "2019-04-30", "EnableWorkflow")
-{
-	setMethod(HttpRequest::Method::Get);
+EnableWorkflowRequest::EnableWorkflowRequest()
+    : RpcServiceRequest("schedulerx2", "2019-04-30", "EnableWorkflow") {
+  setMethod(HttpRequest::Method::Get);
 }
 
-EnableWorkflowRequest::~EnableWorkflowRequest()
-{}
+EnableWorkflowRequest::~EnableWorkflowRequest() {}
 
-std::string EnableWorkflowRequest::getNamespaceSource()const
-{
-	return namespaceSource_;
+std::string EnableWorkflowRequest::getNamespaceSource() const {
+  return namespaceSource_;
 }
 
-void EnableWorkflowRequest::setNamespaceSource(const std::string& namespaceSource)
-{
-	namespaceSource_ = namespaceSource;
-	setParameter("NamespaceSource", namespaceSource);
+void EnableWorkflowRequest::setNamespaceSource(const std::string &namespaceSource) {
+  namespaceSource_ = namespaceSource;
+  setParameter(std::string("NamespaceSource"), namespaceSource);
 }
 
-std::string EnableWorkflowRequest::getRegionId()const
-{
-	return regionId_;
+std::string EnableWorkflowRequest::getRegionId() const {
+  return regionId_;
 }
 
-void EnableWorkflowRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void EnableWorkflowRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
-std::string EnableWorkflowRequest::getGroupId()const
-{
-	return groupId_;
+std::string EnableWorkflowRequest::getGroupId() const {
+  return groupId_;
 }
 
-void EnableWorkflowRequest::setGroupId(const std::string& groupId)
-{
-	groupId_ = groupId;
-	setParameter("GroupId", groupId);
+void EnableWorkflowRequest::setGroupId(const std::string &groupId) {
+  groupId_ = groupId;
+  setParameter(std::string("GroupId"), groupId);
 }
 
-std::string EnableWorkflowRequest::get_Namespace()const
-{
-	return _namespace_;
+std::string EnableWorkflowRequest::get_Namespace() const {
+  return _namespace_;
 }
 
-void EnableWorkflowRequest::set_Namespace(const std::string& _namespace)
-{
-	_namespace_ = _namespace;
-	setParameter("_Namespace", _namespace);
+void EnableWorkflowRequest::set_Namespace(const std::string &_namespace) {
+  _namespace_ = _namespace;
+  setParameter(std::string("Namespace"), _namespace);
 }
 
-long EnableWorkflowRequest::getWorkflowId()const
-{
-	return workflowId_;
+long EnableWorkflowRequest::getWorkflowId() const {
+  return workflowId_;
 }
 
-void EnableWorkflowRequest::setWorkflowId(long workflowId)
-{
-	workflowId_ = workflowId;
-	setParameter("WorkflowId", std::to_string(workflowId));
+void EnableWorkflowRequest::setWorkflowId(long workflowId) {
+  workflowId_ = workflowId;
+  setParameter(std::string("WorkflowId"), std::to_string(workflowId));
 }
 

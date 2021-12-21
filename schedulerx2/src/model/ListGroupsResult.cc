@@ -46,12 +46,12 @@ void ListGroupsResult::parse(const std::string &payload)
 		Data::AppGroup appGroupObject;
 		if(!dataNodeAppGroupsAppGroup["AppName"].isNull())
 			appGroupObject.appName = dataNodeAppGroupsAppGroup["AppName"].asString();
-		if(!dataNodeAppGroupsAppGroup["GroupId"].isNull())
-			appGroupObject.groupId = dataNodeAppGroupsAppGroup["GroupId"].asString();
 		if(!dataNodeAppGroupsAppGroup["AppKey"].isNull())
 			appGroupObject.appKey = dataNodeAppGroupsAppGroup["AppKey"].asString();
 		if(!dataNodeAppGroupsAppGroup["Description"].isNull())
 			appGroupObject.description = dataNodeAppGroupsAppGroup["Description"].asString();
+		if(!dataNodeAppGroupsAppGroup["GroupId"].isNull())
+			appGroupObject.groupId = dataNodeAppGroupsAppGroup["GroupId"].asString();
 		data_.appGroups.push_back(appGroupObject);
 	}
 	if(!value["Code"].isNull())

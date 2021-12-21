@@ -44,74 +44,74 @@ void ListJobsResult::parse(const std::string &payload)
 	for (auto dataNodeJobsJob : allJobsNode)
 	{
 		Data::Job jobObject;
-		if(!dataNodeJobsJob["ClassName"].isNull())
-			jobObject.className = dataNodeJobsJob["ClassName"].asString();
-		if(!dataNodeJobsJob["JarUrl"].isNull())
-			jobObject.jarUrl = dataNodeJobsJob["JarUrl"].asString();
-		if(!dataNodeJobsJob["Content"].isNull())
-			jobObject.content = dataNodeJobsJob["Content"].asString();
-		if(!dataNodeJobsJob["Name"].isNull())
-			jobObject.name = dataNodeJobsJob["Name"].asString();
-		if(!dataNodeJobsJob["Description"].isNull())
-			jobObject.description = dataNodeJobsJob["Description"].asString();
 		if(!dataNodeJobsJob["Status"].isNull())
 			jobObject.status = std::stoi(dataNodeJobsJob["Status"].asString());
-		if(!dataNodeJobsJob["ExecuteMode"].isNull())
-			jobObject.executeMode = dataNodeJobsJob["ExecuteMode"].asString();
-		if(!dataNodeJobsJob["Parameters"].isNull())
-			jobObject.parameters = dataNodeJobsJob["Parameters"].asString();
-		if(!dataNodeJobsJob["MaxConcurrency"].isNull())
-			jobObject.maxConcurrency = dataNodeJobsJob["MaxConcurrency"].asString();
+		if(!dataNodeJobsJob["JarUrl"].isNull())
+			jobObject.jarUrl = dataNodeJobsJob["JarUrl"].asString();
 		if(!dataNodeJobsJob["MaxAttempt"].isNull())
 			jobObject.maxAttempt = std::stoi(dataNodeJobsJob["MaxAttempt"].asString());
-		if(!dataNodeJobsJob["AttemptInterval"].isNull())
-			jobObject.attemptInterval = std::stoi(dataNodeJobsJob["AttemptInterval"].asString());
+		if(!dataNodeJobsJob["Parameters"].isNull())
+			jobObject.parameters = dataNodeJobsJob["Parameters"].asString();
+		if(!dataNodeJobsJob["Description"].isNull())
+			jobObject.description = dataNodeJobsJob["Description"].asString();
 		if(!dataNodeJobsJob["JobId"].isNull())
 			jobObject.jobId = std::stol(dataNodeJobsJob["JobId"].asString());
+		if(!dataNodeJobsJob["ExecuteMode"].isNull())
+			jobObject.executeMode = dataNodeJobsJob["ExecuteMode"].asString();
+		if(!dataNodeJobsJob["MaxConcurrency"].isNull())
+			jobObject.maxConcurrency = dataNodeJobsJob["MaxConcurrency"].asString();
+		if(!dataNodeJobsJob["Name"].isNull())
+			jobObject.name = dataNodeJobsJob["Name"].asString();
+		if(!dataNodeJobsJob["ClassName"].isNull())
+			jobObject.className = dataNodeJobsJob["ClassName"].asString();
+		if(!dataNodeJobsJob["Content"].isNull())
+			jobObject.content = dataNodeJobsJob["Content"].asString();
+		if(!dataNodeJobsJob["AttemptInterval"].isNull())
+			jobObject.attemptInterval = std::stoi(dataNodeJobsJob["AttemptInterval"].asString());
 		auto mapTaskXAttrsNode = value["MapTaskXAttrs"];
-		if(!mapTaskXAttrsNode["PageSize"].isNull())
-			jobObject.mapTaskXAttrs.pageSize = std::stoi(mapTaskXAttrsNode["PageSize"].asString());
+		if(!mapTaskXAttrsNode["TaskMaxAttempt"].isNull())
+			jobObject.mapTaskXAttrs.taskMaxAttempt = std::stoi(mapTaskXAttrsNode["TaskMaxAttempt"].asString());
+		if(!mapTaskXAttrsNode["TaskAttemptInterval"].isNull())
+			jobObject.mapTaskXAttrs.taskAttemptInterval = std::stoi(mapTaskXAttrsNode["TaskAttemptInterval"].asString());
 		if(!mapTaskXAttrsNode["ConsumerSize"].isNull())
 			jobObject.mapTaskXAttrs.consumerSize = std::stoi(mapTaskXAttrsNode["ConsumerSize"].asString());
 		if(!mapTaskXAttrsNode["QueueSize"].isNull())
 			jobObject.mapTaskXAttrs.queueSize = std::stoi(mapTaskXAttrsNode["QueueSize"].asString());
 		if(!mapTaskXAttrsNode["DispatcherSize"].isNull())
 			jobObject.mapTaskXAttrs.dispatcherSize = std::stoi(mapTaskXAttrsNode["DispatcherSize"].asString());
-		if(!mapTaskXAttrsNode["TaskMaxAttempt"].isNull())
-			jobObject.mapTaskXAttrs.taskMaxAttempt = std::stoi(mapTaskXAttrsNode["TaskMaxAttempt"].asString());
-		if(!mapTaskXAttrsNode["TaskAttemptInterval"].isNull())
-			jobObject.mapTaskXAttrs.taskAttemptInterval = std::stoi(mapTaskXAttrsNode["TaskAttemptInterval"].asString());
+		if(!mapTaskXAttrsNode["PageSize"].isNull())
+			jobObject.mapTaskXAttrs.pageSize = std::stoi(mapTaskXAttrsNode["PageSize"].asString());
 		auto timeConfigNode = value["TimeConfig"];
-		if(!timeConfigNode["TimeType"].isNull())
-			jobObject.timeConfig.timeType = std::stoi(timeConfigNode["TimeType"].asString());
-		if(!timeConfigNode["TimeExpression"].isNull())
-			jobObject.timeConfig.timeExpression = timeConfigNode["TimeExpression"].asString();
 		if(!timeConfigNode["Calendar"].isNull())
 			jobObject.timeConfig.calendar = timeConfigNode["Calendar"].asString();
+		if(!timeConfigNode["TimeType"].isNull())
+			jobObject.timeConfig.timeType = std::stoi(timeConfigNode["TimeType"].asString());
 		if(!timeConfigNode["DataOffset"].isNull())
 			jobObject.timeConfig.dataOffset = std::stoi(timeConfigNode["DataOffset"].asString());
+		if(!timeConfigNode["TimeExpression"].isNull())
+			jobObject.timeConfig.timeExpression = timeConfigNode["TimeExpression"].asString();
 		auto jobMonitorInfoNode = value["JobMonitorInfo"];
 		auto allContactInfoNode = jobMonitorInfoNode["ContactInfo"]["ContactInfoItem"];
 		for (auto jobMonitorInfoNodeContactInfoContactInfoItem : allContactInfoNode)
 		{
 			Data::Job::JobMonitorInfo::ContactInfoItem contactInfoItemObject;
-			if(!jobMonitorInfoNodeContactInfoContactInfoItem["UserName"].isNull())
-				contactInfoItemObject.userName = jobMonitorInfoNodeContactInfoContactInfoItem["UserName"].asString();
 			if(!jobMonitorInfoNodeContactInfoContactInfoItem["UserPhone"].isNull())
 				contactInfoItemObject.userPhone = jobMonitorInfoNodeContactInfoContactInfoItem["UserPhone"].asString();
+			if(!jobMonitorInfoNodeContactInfoContactInfoItem["UserName"].isNull())
+				contactInfoItemObject.userName = jobMonitorInfoNodeContactInfoContactInfoItem["UserName"].asString();
 			jobObject.jobMonitorInfo.contactInfo.push_back(contactInfoItemObject);
 		}
 		auto monitorConfigNode = jobMonitorInfoNode["MonitorConfig"];
-		if(!monitorConfigNode["TimeoutEnable"].isNull())
-			jobObject.jobMonitorInfo.monitorConfig.timeoutEnable = monitorConfigNode["TimeoutEnable"].asString() == "true";
 		if(!monitorConfigNode["Timeout"].isNull())
 			jobObject.jobMonitorInfo.monitorConfig.timeout = std::stol(monitorConfigNode["Timeout"].asString());
-		if(!monitorConfigNode["TimeoutKillEnable"].isNull())
-			jobObject.jobMonitorInfo.monitorConfig.timeoutKillEnable = monitorConfigNode["TimeoutKillEnable"].asString() == "true";
-		if(!monitorConfigNode["FailEnable"].isNull())
-			jobObject.jobMonitorInfo.monitorConfig.failEnable = monitorConfigNode["FailEnable"].asString() == "true";
 		if(!monitorConfigNode["SendChannel"].isNull())
 			jobObject.jobMonitorInfo.monitorConfig.sendChannel = monitorConfigNode["SendChannel"].asString();
+		if(!monitorConfigNode["TimeoutKillEnable"].isNull())
+			jobObject.jobMonitorInfo.monitorConfig.timeoutKillEnable = monitorConfigNode["TimeoutKillEnable"].asString() == "true";
+		if(!monitorConfigNode["TimeoutEnable"].isNull())
+			jobObject.jobMonitorInfo.monitorConfig.timeoutEnable = monitorConfigNode["TimeoutEnable"].asString() == "true";
+		if(!monitorConfigNode["FailEnable"].isNull())
+			jobObject.jobMonitorInfo.monitorConfig.failEnable = monitorConfigNode["FailEnable"].asString() == "true";
 		data_.jobs.push_back(jobObject);
 	}
 	if(!value["Code"].isNull())
