@@ -45,8 +45,8 @@ namespace AlibabaCloud
 						std::string routeMapId;
 					};
 					std::vector<CenRouteEntry::CenOutRouteMapRecord> cenOutRouteMapRecords;
-					std::string status;
 					std::string toOtherRegionStatus;
+					std::string status;
 					std::string nextHopType;
 					std::string nextHopRegionId;
 					std::string type;

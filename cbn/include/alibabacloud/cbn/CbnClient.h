@@ -144,8 +144,12 @@
 #include "model/EnableCenVbrHealthCheckResult.h"
 #include "model/EnableTransitRouterRouteTablePropagationRequest.h"
 #include "model/EnableTransitRouterRouteTablePropagationResult.h"
+#include "model/GrantInstanceToTransitRouterRequest.h"
+#include "model/GrantInstanceToTransitRouterResult.h"
 #include "model/ListCenInterRegionTrafficQosPoliciesRequest.h"
 #include "model/ListCenInterRegionTrafficQosPoliciesResult.h"
+#include "model/ListGrantVSwitchesToCenRequest.h"
+#include "model/ListGrantVSwitchesToCenResult.h"
 #include "model/ListTagResourcesRequest.h"
 #include "model/ListTagResourcesResult.h"
 #include "model/ListTrafficMarkingPoliciesRequest.h"
@@ -190,6 +194,8 @@
 #include "model/ReplaceTransitRouterRouteTableAssociationResult.h"
 #include "model/ResolveAndRouteServiceInCenRequest.h"
 #include "model/ResolveAndRouteServiceInCenResult.h"
+#include "model/RevokeInstanceFromTransitRouterRequest.h"
+#include "model/RevokeInstanceFromTransitRouterResult.h"
 #include "model/RoutePrivateZoneInCenToVpcRequest.h"
 #include "model/RoutePrivateZoneInCenToVpcResult.h"
 #include "model/SetCenInterRegionBandwidthLimitRequest.h"
@@ -416,9 +422,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::EnableTransitRouterRouteTablePropagationResult> EnableTransitRouterRouteTablePropagationOutcome;
 			typedef std::future<EnableTransitRouterRouteTablePropagationOutcome> EnableTransitRouterRouteTablePropagationOutcomeCallable;
 			typedef std::function<void(const CbnClient*, const Model::EnableTransitRouterRouteTablePropagationRequest&, const EnableTransitRouterRouteTablePropagationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnableTransitRouterRouteTablePropagationAsyncHandler;
+			typedef Outcome<Error, Model::GrantInstanceToTransitRouterResult> GrantInstanceToTransitRouterOutcome;
+			typedef std::future<GrantInstanceToTransitRouterOutcome> GrantInstanceToTransitRouterOutcomeCallable;
+			typedef std::function<void(const CbnClient*, const Model::GrantInstanceToTransitRouterRequest&, const GrantInstanceToTransitRouterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GrantInstanceToTransitRouterAsyncHandler;
 			typedef Outcome<Error, Model::ListCenInterRegionTrafficQosPoliciesResult> ListCenInterRegionTrafficQosPoliciesOutcome;
 			typedef std::future<ListCenInterRegionTrafficQosPoliciesOutcome> ListCenInterRegionTrafficQosPoliciesOutcomeCallable;
 			typedef std::function<void(const CbnClient*, const Model::ListCenInterRegionTrafficQosPoliciesRequest&, const ListCenInterRegionTrafficQosPoliciesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListCenInterRegionTrafficQosPoliciesAsyncHandler;
+			typedef Outcome<Error, Model::ListGrantVSwitchesToCenResult> ListGrantVSwitchesToCenOutcome;
+			typedef std::future<ListGrantVSwitchesToCenOutcome> ListGrantVSwitchesToCenOutcomeCallable;
+			typedef std::function<void(const CbnClient*, const Model::ListGrantVSwitchesToCenRequest&, const ListGrantVSwitchesToCenOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListGrantVSwitchesToCenAsyncHandler;
 			typedef Outcome<Error, Model::ListTagResourcesResult> ListTagResourcesOutcome;
 			typedef std::future<ListTagResourcesOutcome> ListTagResourcesOutcomeCallable;
 			typedef std::function<void(const CbnClient*, const Model::ListTagResourcesRequest&, const ListTagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTagResourcesAsyncHandler;
@@ -485,6 +497,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ResolveAndRouteServiceInCenResult> ResolveAndRouteServiceInCenOutcome;
 			typedef std::future<ResolveAndRouteServiceInCenOutcome> ResolveAndRouteServiceInCenOutcomeCallable;
 			typedef std::function<void(const CbnClient*, const Model::ResolveAndRouteServiceInCenRequest&, const ResolveAndRouteServiceInCenOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ResolveAndRouteServiceInCenAsyncHandler;
+			typedef Outcome<Error, Model::RevokeInstanceFromTransitRouterResult> RevokeInstanceFromTransitRouterOutcome;
+			typedef std::future<RevokeInstanceFromTransitRouterOutcome> RevokeInstanceFromTransitRouterOutcomeCallable;
+			typedef std::function<void(const CbnClient*, const Model::RevokeInstanceFromTransitRouterRequest&, const RevokeInstanceFromTransitRouterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RevokeInstanceFromTransitRouterAsyncHandler;
 			typedef Outcome<Error, Model::RoutePrivateZoneInCenToVpcResult> RoutePrivateZoneInCenToVpcOutcome;
 			typedef std::future<RoutePrivateZoneInCenToVpcOutcome> RoutePrivateZoneInCenToVpcOutcomeCallable;
 			typedef std::function<void(const CbnClient*, const Model::RoutePrivateZoneInCenToVpcRequest&, const RoutePrivateZoneInCenToVpcOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RoutePrivateZoneInCenToVpcAsyncHandler;
@@ -724,9 +739,15 @@ namespace AlibabaCloud
 			EnableTransitRouterRouteTablePropagationOutcome enableTransitRouterRouteTablePropagation(const Model::EnableTransitRouterRouteTablePropagationRequest &request)const;
 			void enableTransitRouterRouteTablePropagationAsync(const Model::EnableTransitRouterRouteTablePropagationRequest& request, const EnableTransitRouterRouteTablePropagationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			EnableTransitRouterRouteTablePropagationOutcomeCallable enableTransitRouterRouteTablePropagationCallable(const Model::EnableTransitRouterRouteTablePropagationRequest& request) const;
+			GrantInstanceToTransitRouterOutcome grantInstanceToTransitRouter(const Model::GrantInstanceToTransitRouterRequest &request)const;
+			void grantInstanceToTransitRouterAsync(const Model::GrantInstanceToTransitRouterRequest& request, const GrantInstanceToTransitRouterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GrantInstanceToTransitRouterOutcomeCallable grantInstanceToTransitRouterCallable(const Model::GrantInstanceToTransitRouterRequest& request) const;
 			ListCenInterRegionTrafficQosPoliciesOutcome listCenInterRegionTrafficQosPolicies(const Model::ListCenInterRegionTrafficQosPoliciesRequest &request)const;
 			void listCenInterRegionTrafficQosPoliciesAsync(const Model::ListCenInterRegionTrafficQosPoliciesRequest& request, const ListCenInterRegionTrafficQosPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListCenInterRegionTrafficQosPoliciesOutcomeCallable listCenInterRegionTrafficQosPoliciesCallable(const Model::ListCenInterRegionTrafficQosPoliciesRequest& request) const;
+			ListGrantVSwitchesToCenOutcome listGrantVSwitchesToCen(const Model::ListGrantVSwitchesToCenRequest &request)const;
+			void listGrantVSwitchesToCenAsync(const Model::ListGrantVSwitchesToCenRequest& request, const ListGrantVSwitchesToCenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListGrantVSwitchesToCenOutcomeCallable listGrantVSwitchesToCenCallable(const Model::ListGrantVSwitchesToCenRequest& request) const;
 			ListTagResourcesOutcome listTagResources(const Model::ListTagResourcesRequest &request)const;
 			void listTagResourcesAsync(const Model::ListTagResourcesRequest& request, const ListTagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListTagResourcesOutcomeCallable listTagResourcesCallable(const Model::ListTagResourcesRequest& request) const;
@@ -793,6 +814,9 @@ namespace AlibabaCloud
 			ResolveAndRouteServiceInCenOutcome resolveAndRouteServiceInCen(const Model::ResolveAndRouteServiceInCenRequest &request)const;
 			void resolveAndRouteServiceInCenAsync(const Model::ResolveAndRouteServiceInCenRequest& request, const ResolveAndRouteServiceInCenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ResolveAndRouteServiceInCenOutcomeCallable resolveAndRouteServiceInCenCallable(const Model::ResolveAndRouteServiceInCenRequest& request) const;
+			RevokeInstanceFromTransitRouterOutcome revokeInstanceFromTransitRouter(const Model::RevokeInstanceFromTransitRouterRequest &request)const;
+			void revokeInstanceFromTransitRouterAsync(const Model::RevokeInstanceFromTransitRouterRequest& request, const RevokeInstanceFromTransitRouterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RevokeInstanceFromTransitRouterOutcomeCallable revokeInstanceFromTransitRouterCallable(const Model::RevokeInstanceFromTransitRouterRequest& request) const;
 			RoutePrivateZoneInCenToVpcOutcome routePrivateZoneInCenToVpc(const Model::RoutePrivateZoneInCenToVpcRequest &request)const;
 			void routePrivateZoneInCenToVpcAsync(const Model::RoutePrivateZoneInCenToVpcRequest& request, const RoutePrivateZoneInCenToVpcAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RoutePrivateZoneInCenToVpcOutcomeCallable routePrivateZoneInCenToVpcCallable(const Model::RoutePrivateZoneInCenToVpcRequest& request) const;

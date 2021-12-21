@@ -43,24 +43,24 @@ void ListTransitRouterRouteTablePropagationsResult::parse(const std::string &pay
 	for (auto valueTransitRouterPropagationsTransitRouterPropagation : allTransitRouterPropagationsNode)
 	{
 		TransitRouterPropagation transitRouterPropagationsObject;
-		if(!valueTransitRouterPropagationsTransitRouterPropagation["Status"].isNull())
-			transitRouterPropagationsObject.status = valueTransitRouterPropagationsTransitRouterPropagation["Status"].asString();
 		if(!valueTransitRouterPropagationsTransitRouterPropagation["TransitRouterAttachmentId"].isNull())
 			transitRouterPropagationsObject.transitRouterAttachmentId = valueTransitRouterPropagationsTransitRouterPropagation["TransitRouterAttachmentId"].asString();
-		if(!valueTransitRouterPropagationsTransitRouterPropagation["TransitRouterRouteTableId"].isNull())
-			transitRouterPropagationsObject.transitRouterRouteTableId = valueTransitRouterPropagationsTransitRouterPropagation["TransitRouterRouteTableId"].asString();
-		if(!valueTransitRouterPropagationsTransitRouterPropagation["ResourceId"].isNull())
-			transitRouterPropagationsObject.resourceId = valueTransitRouterPropagationsTransitRouterPropagation["ResourceId"].asString();
+		if(!valueTransitRouterPropagationsTransitRouterPropagation["Status"].isNull())
+			transitRouterPropagationsObject.status = valueTransitRouterPropagationsTransitRouterPropagation["Status"].asString();
 		if(!valueTransitRouterPropagationsTransitRouterPropagation["ResourceType"].isNull())
 			transitRouterPropagationsObject.resourceType = valueTransitRouterPropagationsTransitRouterPropagation["ResourceType"].asString();
+		if(!valueTransitRouterPropagationsTransitRouterPropagation["ResourceId"].isNull())
+			transitRouterPropagationsObject.resourceId = valueTransitRouterPropagationsTransitRouterPropagation["ResourceId"].asString();
+		if(!valueTransitRouterPropagationsTransitRouterPropagation["TransitRouterRouteTableId"].isNull())
+			transitRouterPropagationsObject.transitRouterRouteTableId = valueTransitRouterPropagationsTransitRouterPropagation["TransitRouterRouteTableId"].asString();
 		transitRouterPropagations_.push_back(transitRouterPropagationsObject);
 	}
+	if(!value["NextToken"].isNull())
+		nextToken_ = value["NextToken"].asString();
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
 	if(!value["MaxResults"].isNull())
 		maxResults_ = std::stoi(value["MaxResults"].asString());
-	if(!value["NextToken"].isNull())
-		nextToken_ = value["NextToken"].asString();
 
 }
 

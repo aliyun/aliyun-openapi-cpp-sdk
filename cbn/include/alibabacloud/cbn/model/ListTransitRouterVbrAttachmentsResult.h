@@ -34,14 +34,14 @@ namespace AlibabaCloud
 			public:
 				struct TransitRouterAttachment
 				{
-					std::string transitRouterAttachmentId;
 					std::string status;
+					std::string transitRouterAttachmentId;
 					bool autoPublishRouteEnabled;
 					long vbrOwnerId;
 					std::string creationTime;
 					std::string transitRouterAttachmentName;
-					std::string vbrRegionId;
 					std::string resourceType;
+					std::string vbrRegionId;
 					std::string vbrId;
 					std::string transitRouterAttachmentDescription;
 					std::string transitRouterId;

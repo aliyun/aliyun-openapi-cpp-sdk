@@ -39,16 +39,16 @@ namespace AlibabaCloud
 						std::string zoneId;
 						std::string vSwitchId;
 					};
-					std::string transitRouterAttachmentId;
 					std::string status;
+					std::string transitRouterAttachmentId;
 					std::string vpcId;
 					std::string creationTime;
 					std::string vpcRegionId;
 					std::string transitRouterAttachmentName;
 					std::string resourceType;
 					std::vector<TransitRouterAttachment::ZoneMapping> zoneMappings;
-					long vpcOwnerId;
 					std::string transitRouterAttachmentDescription;
+					long vpcOwnerId;
 					std::string transitRouterId;
 				};
 

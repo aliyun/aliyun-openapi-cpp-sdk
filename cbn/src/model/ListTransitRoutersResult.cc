@@ -43,32 +43,32 @@ void ListTransitRoutersResult::parse(const std::string &payload)
 	for (auto valueTransitRoutersTransitRouter : allTransitRoutersNode)
 	{
 		TransitRouter transitRoutersObject;
-		if(!valueTransitRoutersTransitRouter["TransitRouterId"].isNull())
-			transitRoutersObject.transitRouterId = valueTransitRoutersTransitRouter["TransitRouterId"].asString();
-		if(!valueTransitRoutersTransitRouter["Status"].isNull())
-			transitRoutersObject.status = valueTransitRoutersTransitRouter["Status"].asString();
-		if(!valueTransitRoutersTransitRouter["CenId"].isNull())
-			transitRoutersObject.cenId = valueTransitRoutersTransitRouter["CenId"].asString();
-		if(!valueTransitRoutersTransitRouter["RegionId"].isNull())
-			transitRoutersObject.regionId = valueTransitRoutersTransitRouter["RegionId"].asString();
-		if(!valueTransitRoutersTransitRouter["AliUid"].isNull())
-			transitRoutersObject.aliUid = std::stol(valueTransitRoutersTransitRouter["AliUid"].asString());
-		if(!valueTransitRoutersTransitRouter["Type"].isNull())
-			transitRoutersObject.type = valueTransitRoutersTransitRouter["Type"].asString();
 		if(!valueTransitRoutersTransitRouter["CreationTime"].isNull())
 			transitRoutersObject.creationTime = valueTransitRoutersTransitRouter["CreationTime"].asString();
-		if(!valueTransitRoutersTransitRouter["TransitRouterName"].isNull())
-			transitRoutersObject.transitRouterName = valueTransitRoutersTransitRouter["TransitRouterName"].asString();
+		if(!valueTransitRoutersTransitRouter["Type"].isNull())
+			transitRoutersObject.type = valueTransitRoutersTransitRouter["Type"].asString();
+		if(!valueTransitRoutersTransitRouter["Status"].isNull())
+			transitRoutersObject.status = valueTransitRoutersTransitRouter["Status"].asString();
+		if(!valueTransitRoutersTransitRouter["TransitRouterId"].isNull())
+			transitRoutersObject.transitRouterId = valueTransitRoutersTransitRouter["TransitRouterId"].asString();
 		if(!valueTransitRoutersTransitRouter["TransitRouterDescription"].isNull())
 			transitRoutersObject.transitRouterDescription = valueTransitRoutersTransitRouter["TransitRouterDescription"].asString();
+		if(!valueTransitRoutersTransitRouter["TransitRouterName"].isNull())
+			transitRoutersObject.transitRouterName = valueTransitRoutersTransitRouter["TransitRouterName"].asString();
+		if(!valueTransitRoutersTransitRouter["CenId"].isNull())
+			transitRoutersObject.cenId = valueTransitRoutersTransitRouter["CenId"].asString();
+		if(!valueTransitRoutersTransitRouter["AliUid"].isNull())
+			transitRoutersObject.aliUid = std::stol(valueTransitRoutersTransitRouter["AliUid"].asString());
+		if(!valueTransitRoutersTransitRouter["RegionId"].isNull())
+			transitRoutersObject.regionId = valueTransitRoutersTransitRouter["RegionId"].asString();
 		transitRouters_.push_back(transitRoutersObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 

@@ -44,8 +44,8 @@ namespace AlibabaCloud
 					std::string description;
 					std::string resourceGroupId;
 					std::string ipv6Level;
-					std::string cenId;
 					std::string creationTime;
+					std::string cenId;
 					std::vector<std::string> cenBandwidthPackageIds;
 					std::vector<Cen::Tag> tags;
 					std::string name;

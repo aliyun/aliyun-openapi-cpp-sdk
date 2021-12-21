@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,137 +18,107 @@
 
 using AlibabaCloud::Cbn::Model::ListTransitRouterRouteTablesRequest;
 
-ListTransitRouterRouteTablesRequest::ListTransitRouterRouteTablesRequest() :
-	RpcServiceRequest("cbn", "2017-09-12", "ListTransitRouterRouteTables")
-{
-	setMethod(HttpRequest::Method::Post);
+ListTransitRouterRouteTablesRequest::ListTransitRouterRouteTablesRequest()
+    : RpcServiceRequest("cbn", "2017-09-12", "ListTransitRouterRouteTables") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-ListTransitRouterRouteTablesRequest::~ListTransitRouterRouteTablesRequest()
-{}
+ListTransitRouterRouteTablesRequest::~ListTransitRouterRouteTablesRequest() {}
 
-long ListTransitRouterRouteTablesRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long ListTransitRouterRouteTablesRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void ListTransitRouterRouteTablesRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void ListTransitRouterRouteTablesRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::vector<std::string> ListTransitRouterRouteTablesRequest::getTransitRouterRouteTableNames()const
-{
-	return transitRouterRouteTableNames_;
+std::vector<std::string> ListTransitRouterRouteTablesRequest::getTransitRouterRouteTableNames() const {
+  return transitRouterRouteTableNames_;
 }
 
-void ListTransitRouterRouteTablesRequest::setTransitRouterRouteTableNames(const std::vector<std::string>& transitRouterRouteTableNames)
-{
-	transitRouterRouteTableNames_ = transitRouterRouteTableNames;
-	for(int dep1 = 0; dep1!= transitRouterRouteTableNames.size(); dep1++) {
-		setParameter("TransitRouterRouteTableNames."+ std::to_string(dep1), transitRouterRouteTableNames.at(dep1));
-	}
+void ListTransitRouterRouteTablesRequest::setTransitRouterRouteTableNames(const std::vector<std::string> &transitRouterRouteTableNames) {
+  transitRouterRouteTableNames_ = transitRouterRouteTableNames;
 }
 
-std::string ListTransitRouterRouteTablesRequest::getTransitRouterRouteTableType()const
-{
-	return transitRouterRouteTableType_;
+std::string ListTransitRouterRouteTablesRequest::getTransitRouterRouteTableType() const {
+  return transitRouterRouteTableType_;
 }
 
-void ListTransitRouterRouteTablesRequest::setTransitRouterRouteTableType(const std::string& transitRouterRouteTableType)
-{
-	transitRouterRouteTableType_ = transitRouterRouteTableType;
-	setParameter("TransitRouterRouteTableType", transitRouterRouteTableType);
+void ListTransitRouterRouteTablesRequest::setTransitRouterRouteTableType(const std::string &transitRouterRouteTableType) {
+  transitRouterRouteTableType_ = transitRouterRouteTableType;
+  setParameter(std::string("TransitRouterRouteTableType"), transitRouterRouteTableType);
 }
 
-std::string ListTransitRouterRouteTablesRequest::getTransitRouterRouteTableStatus()const
-{
-	return transitRouterRouteTableStatus_;
+std::string ListTransitRouterRouteTablesRequest::getTransitRouterRouteTableStatus() const {
+  return transitRouterRouteTableStatus_;
 }
 
-void ListTransitRouterRouteTablesRequest::setTransitRouterRouteTableStatus(const std::string& transitRouterRouteTableStatus)
-{
-	transitRouterRouteTableStatus_ = transitRouterRouteTableStatus;
-	setParameter("TransitRouterRouteTableStatus", transitRouterRouteTableStatus);
+void ListTransitRouterRouteTablesRequest::setTransitRouterRouteTableStatus(const std::string &transitRouterRouteTableStatus) {
+  transitRouterRouteTableStatus_ = transitRouterRouteTableStatus;
+  setParameter(std::string("TransitRouterRouteTableStatus"), transitRouterRouteTableStatus);
 }
 
-std::vector<std::string> ListTransitRouterRouteTablesRequest::getTransitRouterRouteTableIds()const
-{
-	return transitRouterRouteTableIds_;
+std::vector<std::string> ListTransitRouterRouteTablesRequest::getTransitRouterRouteTableIds() const {
+  return transitRouterRouteTableIds_;
 }
 
-void ListTransitRouterRouteTablesRequest::setTransitRouterRouteTableIds(const std::vector<std::string>& transitRouterRouteTableIds)
-{
-	transitRouterRouteTableIds_ = transitRouterRouteTableIds;
-	for(int dep1 = 0; dep1!= transitRouterRouteTableIds.size(); dep1++) {
-		setParameter("TransitRouterRouteTableIds."+ std::to_string(dep1), transitRouterRouteTableIds.at(dep1));
-	}
+void ListTransitRouterRouteTablesRequest::setTransitRouterRouteTableIds(const std::vector<std::string> &transitRouterRouteTableIds) {
+  transitRouterRouteTableIds_ = transitRouterRouteTableIds;
 }
 
-std::string ListTransitRouterRouteTablesRequest::getNextToken()const
-{
-	return nextToken_;
+std::string ListTransitRouterRouteTablesRequest::getNextToken() const {
+  return nextToken_;
 }
 
-void ListTransitRouterRouteTablesRequest::setNextToken(const std::string& nextToken)
-{
-	nextToken_ = nextToken;
-	setParameter("NextToken", nextToken);
+void ListTransitRouterRouteTablesRequest::setNextToken(const std::string &nextToken) {
+  nextToken_ = nextToken;
+  setParameter(std::string("NextToken"), nextToken);
 }
 
-std::string ListTransitRouterRouteTablesRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string ListTransitRouterRouteTablesRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void ListTransitRouterRouteTablesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void ListTransitRouterRouteTablesRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string ListTransitRouterRouteTablesRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string ListTransitRouterRouteTablesRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void ListTransitRouterRouteTablesRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void ListTransitRouterRouteTablesRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-long ListTransitRouterRouteTablesRequest::getOwnerId()const
-{
-	return ownerId_;
+long ListTransitRouterRouteTablesRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void ListTransitRouterRouteTablesRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void ListTransitRouterRouteTablesRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string ListTransitRouterRouteTablesRequest::getTransitRouterId()const
-{
-	return transitRouterId_;
+std::string ListTransitRouterRouteTablesRequest::getTransitRouterId() const {
+  return transitRouterId_;
 }
 
-void ListTransitRouterRouteTablesRequest::setTransitRouterId(const std::string& transitRouterId)
-{
-	transitRouterId_ = transitRouterId;
-	setParameter("TransitRouterId", transitRouterId);
+void ListTransitRouterRouteTablesRequest::setTransitRouterId(const std::string &transitRouterId) {
+  transitRouterId_ = transitRouterId;
+  setParameter(std::string("TransitRouterId"), transitRouterId);
 }
 
-int ListTransitRouterRouteTablesRequest::getMaxResults()const
-{
-	return maxResults_;
+int ListTransitRouterRouteTablesRequest::getMaxResults() const {
+  return maxResults_;
 }
 
-void ListTransitRouterRouteTablesRequest::setMaxResults(int maxResults)
-{
-	maxResults_ = maxResults;
-	setParameter("MaxResults", std::to_string(maxResults));
+void ListTransitRouterRouteTablesRequest::setMaxResults(int maxResults) {
+  maxResults_ = maxResults;
+  setParameter(std::string("MaxResults"), std::to_string(maxResults));
 }
 

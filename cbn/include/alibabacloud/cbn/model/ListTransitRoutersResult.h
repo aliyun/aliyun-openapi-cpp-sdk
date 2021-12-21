@@ -36,10 +36,10 @@ namespace AlibabaCloud
 				{
 					std::string status;
 					std::string type;
-					std::string cenId;
 					std::string creationTime;
-					std::string transitRouterName;
+					std::string cenId;
 					std::string transitRouterDescription;
+					std::string transitRouterName;
 					std::string regionId;
 					std::string transitRouterId;
 					long aliUid;

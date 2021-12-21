@@ -43,64 +43,64 @@ void DescribeCenChildInstanceRouteEntriesResult::parse(const std::string &payloa
 	for (auto valueCenRouteEntriesCenRouteEntry : allCenRouteEntriesNode)
 	{
 		CenRouteEntry cenRouteEntriesObject;
-		if(!valueCenRouteEntriesCenRouteEntry["DestinationCidrBlock"].isNull())
-			cenRouteEntriesObject.destinationCidrBlock = valueCenRouteEntriesCenRouteEntry["DestinationCidrBlock"].asString();
-		if(!valueCenRouteEntriesCenRouteEntry["Type"].isNull())
-			cenRouteEntriesObject.type = valueCenRouteEntriesCenRouteEntry["Type"].asString();
-		if(!valueCenRouteEntriesCenRouteEntry["NextHopInstanceId"].isNull())
-			cenRouteEntriesObject.nextHopInstanceId = valueCenRouteEntriesCenRouteEntry["NextHopInstanceId"].asString();
-		if(!valueCenRouteEntriesCenRouteEntry["NextHopType"].isNull())
-			cenRouteEntriesObject.nextHopType = valueCenRouteEntriesCenRouteEntry["NextHopType"].asString();
-		if(!valueCenRouteEntriesCenRouteEntry["NextHopRegionId"].isNull())
-			cenRouteEntriesObject.nextHopRegionId = valueCenRouteEntriesCenRouteEntry["NextHopRegionId"].asString();
 		if(!valueCenRouteEntriesCenRouteEntry["Status"].isNull())
 			cenRouteEntriesObject.status = valueCenRouteEntriesCenRouteEntry["Status"].asString();
-		if(!valueCenRouteEntriesCenRouteEntry["OperationalMode"].isNull())
-			cenRouteEntriesObject.operationalMode = valueCenRouteEntriesCenRouteEntry["OperationalMode"].asString() == "true";
+		if(!valueCenRouteEntriesCenRouteEntry["Type"].isNull())
+			cenRouteEntriesObject.type = valueCenRouteEntriesCenRouteEntry["Type"].asString();
 		if(!valueCenRouteEntriesCenRouteEntry["PublishStatus"].isNull())
 			cenRouteEntriesObject.publishStatus = valueCenRouteEntriesCenRouteEntry["PublishStatus"].asString();
+		if(!valueCenRouteEntriesCenRouteEntry["NextHopType"].isNull())
+			cenRouteEntriesObject.nextHopType = valueCenRouteEntriesCenRouteEntry["NextHopType"].asString();
+		if(!valueCenRouteEntriesCenRouteEntry["OperationalMode"].isNull())
+			cenRouteEntriesObject.operationalMode = valueCenRouteEntriesCenRouteEntry["OperationalMode"].asString() == "true";
+		if(!valueCenRouteEntriesCenRouteEntry["NextHopRegionId"].isNull())
+			cenRouteEntriesObject.nextHopRegionId = valueCenRouteEntriesCenRouteEntry["NextHopRegionId"].asString();
+		if(!valueCenRouteEntriesCenRouteEntry["NextHopInstanceId"].isNull())
+			cenRouteEntriesObject.nextHopInstanceId = valueCenRouteEntriesCenRouteEntry["NextHopInstanceId"].asString();
+		if(!valueCenRouteEntriesCenRouteEntry["DestinationCidrBlock"].isNull())
+			cenRouteEntriesObject.destinationCidrBlock = valueCenRouteEntriesCenRouteEntry["DestinationCidrBlock"].asString();
 		if(!valueCenRouteEntriesCenRouteEntry["RouteTableId"].isNull())
 			cenRouteEntriesObject.routeTableId = valueCenRouteEntriesCenRouteEntry["RouteTableId"].asString();
 		auto allCenRouteMapRecordsNode = valueCenRouteEntriesCenRouteEntry["CenRouteMapRecords"]["CenRouteMapRecord"];
 		for (auto valueCenRouteEntriesCenRouteEntryCenRouteMapRecordsCenRouteMapRecord : allCenRouteMapRecordsNode)
 		{
 			CenRouteEntry::CenRouteMapRecord cenRouteMapRecordsObject;
-			if(!valueCenRouteEntriesCenRouteEntryCenRouteMapRecordsCenRouteMapRecord["RegionId"].isNull())
-				cenRouteMapRecordsObject.regionId = valueCenRouteEntriesCenRouteEntryCenRouteMapRecordsCenRouteMapRecord["RegionId"].asString();
 			if(!valueCenRouteEntriesCenRouteEntryCenRouteMapRecordsCenRouteMapRecord["RouteMapId"].isNull())
 				cenRouteMapRecordsObject.routeMapId = valueCenRouteEntriesCenRouteEntryCenRouteMapRecordsCenRouteMapRecord["RouteMapId"].asString();
+			if(!valueCenRouteEntriesCenRouteEntryCenRouteMapRecordsCenRouteMapRecord["RegionId"].isNull())
+				cenRouteMapRecordsObject.regionId = valueCenRouteEntriesCenRouteEntryCenRouteMapRecordsCenRouteMapRecord["RegionId"].asString();
 			cenRouteEntriesObject.cenRouteMapRecords.push_back(cenRouteMapRecordsObject);
 		}
 		auto allConflictsNode = valueCenRouteEntriesCenRouteEntry["Conflicts"]["Conflict"];
 		for (auto valueCenRouteEntriesCenRouteEntryConflictsConflict : allConflictsNode)
 		{
 			CenRouteEntry::Conflict conflictsObject;
+			if(!valueCenRouteEntriesCenRouteEntryConflictsConflict["Status"].isNull())
+				conflictsObject.status = valueCenRouteEntriesCenRouteEntryConflictsConflict["Status"].asString();
 			if(!valueCenRouteEntriesCenRouteEntryConflictsConflict["DestinationCidrBlock"].isNull())
 				conflictsObject.destinationCidrBlock = valueCenRouteEntriesCenRouteEntryConflictsConflict["DestinationCidrBlock"].asString();
-			if(!valueCenRouteEntriesCenRouteEntryConflictsConflict["RegionId"].isNull())
-				conflictsObject.regionId = valueCenRouteEntriesCenRouteEntryConflictsConflict["RegionId"].asString();
 			if(!valueCenRouteEntriesCenRouteEntryConflictsConflict["InstanceId"].isNull())
 				conflictsObject.instanceId = valueCenRouteEntriesCenRouteEntryConflictsConflict["InstanceId"].asString();
 			if(!valueCenRouteEntriesCenRouteEntryConflictsConflict["InstanceType"].isNull())
 				conflictsObject.instanceType = valueCenRouteEntriesCenRouteEntryConflictsConflict["InstanceType"].asString();
-			if(!valueCenRouteEntriesCenRouteEntryConflictsConflict["Status"].isNull())
-				conflictsObject.status = valueCenRouteEntriesCenRouteEntryConflictsConflict["Status"].asString();
+			if(!valueCenRouteEntriesCenRouteEntryConflictsConflict["RegionId"].isNull())
+				conflictsObject.regionId = valueCenRouteEntriesCenRouteEntryConflictsConflict["RegionId"].asString();
 			cenRouteEntriesObject.conflicts.push_back(conflictsObject);
 		}
-		auto allAsPaths = value["AsPaths"]["AsPath"];
-		for (auto value : allAsPaths)
-			cenRouteEntriesObject.asPaths.push_back(value.asString());
 		auto allCommunities = value["Communities"]["Community"];
 		for (auto value : allCommunities)
 			cenRouteEntriesObject.communities.push_back(value.asString());
+		auto allAsPaths = value["AsPaths"]["AsPath"];
+		for (auto value : allAsPaths)
+			cenRouteEntriesObject.asPaths.push_back(value.asString());
 		cenRouteEntries_.push_back(cenRouteEntriesObject);
 	}
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["PageNumber"].isNull())
 		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
 
 }
 

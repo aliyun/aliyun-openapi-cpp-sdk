@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,67 +18,55 @@
 
 using AlibabaCloud::Cbn::Model::DeleteCenRequest;
 
-DeleteCenRequest::DeleteCenRequest() :
-	RpcServiceRequest("cbn", "2017-09-12", "DeleteCen")
-{
-	setMethod(HttpRequest::Method::Post);
+DeleteCenRequest::DeleteCenRequest()
+    : RpcServiceRequest("cbn", "2017-09-12", "DeleteCen") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DeleteCenRequest::~DeleteCenRequest()
-{}
+DeleteCenRequest::~DeleteCenRequest() {}
 
-long DeleteCenRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long DeleteCenRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void DeleteCenRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void DeleteCenRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string DeleteCenRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string DeleteCenRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void DeleteCenRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void DeleteCenRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string DeleteCenRequest::getCenId()const
-{
-	return cenId_;
+std::string DeleteCenRequest::getCenId() const {
+  return cenId_;
 }
 
-void DeleteCenRequest::setCenId(const std::string& cenId)
-{
-	cenId_ = cenId;
-	setParameter("CenId", cenId);
+void DeleteCenRequest::setCenId(const std::string &cenId) {
+  cenId_ = cenId;
+  setParameter(std::string("CenId"), cenId);
 }
 
-std::string DeleteCenRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string DeleteCenRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void DeleteCenRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void DeleteCenRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-long DeleteCenRequest::getOwnerId()const
-{
-	return ownerId_;
+long DeleteCenRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void DeleteCenRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void DeleteCenRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 

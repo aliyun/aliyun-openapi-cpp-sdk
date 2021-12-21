@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,151 +18,122 @@
 
 using AlibabaCloud::Cbn::Model::DescribeCenRouteMapsRequest;
 
-DescribeCenRouteMapsRequest::DescribeCenRouteMapsRequest() :
-	RpcServiceRequest("cbn", "2017-09-12", "DescribeCenRouteMaps")
-{
-	setMethod(HttpRequest::Method::Post);
+DescribeCenRouteMapsRequest::DescribeCenRouteMapsRequest()
+    : RpcServiceRequest("cbn", "2017-09-12", "DescribeCenRouteMaps") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DescribeCenRouteMapsRequest::~DescribeCenRouteMapsRequest()
-{}
+DescribeCenRouteMapsRequest::~DescribeCenRouteMapsRequest() {}
 
-long DescribeCenRouteMapsRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long DescribeCenRouteMapsRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void DescribeCenRouteMapsRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void DescribeCenRouteMapsRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string DescribeCenRouteMapsRequest::getCenId()const
-{
-	return cenId_;
+std::string DescribeCenRouteMapsRequest::getCenId() const {
+  return cenId_;
 }
 
-void DescribeCenRouteMapsRequest::setCenId(const std::string& cenId)
-{
-	cenId_ = cenId;
-	setParameter("CenId", cenId);
+void DescribeCenRouteMapsRequest::setCenId(const std::string &cenId) {
+  cenId_ = cenId;
+  setParameter(std::string("CenId"), cenId);
 }
 
-int DescribeCenRouteMapsRequest::getPageNumber()const
-{
-	return pageNumber_;
+int DescribeCenRouteMapsRequest::getPageNumber() const {
+  return pageNumber_;
 }
 
-void DescribeCenRouteMapsRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+void DescribeCenRouteMapsRequest::setPageNumber(int pageNumber) {
+  pageNumber_ = pageNumber;
+  setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
-std::string DescribeCenRouteMapsRequest::getTransitRouterRouteTableId()const
-{
-	return transitRouterRouteTableId_;
+std::string DescribeCenRouteMapsRequest::getTransitRouterRouteTableId() const {
+  return transitRouterRouteTableId_;
 }
 
-void DescribeCenRouteMapsRequest::setTransitRouterRouteTableId(const std::string& transitRouterRouteTableId)
-{
-	transitRouterRouteTableId_ = transitRouterRouteTableId;
-	setParameter("TransitRouterRouteTableId", transitRouterRouteTableId);
+void DescribeCenRouteMapsRequest::setTransitRouterRouteTableId(const std::string &transitRouterRouteTableId) {
+  transitRouterRouteTableId_ = transitRouterRouteTableId;
+  setParameter(std::string("TransitRouterRouteTableId"), transitRouterRouteTableId);
 }
 
-int DescribeCenRouteMapsRequest::getPageSize()const
-{
-	return pageSize_;
+int DescribeCenRouteMapsRequest::getPageSize() const {
+  return pageSize_;
 }
 
-void DescribeCenRouteMapsRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+void DescribeCenRouteMapsRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
-std::string DescribeCenRouteMapsRequest::getTransmitDirection()const
-{
-	return transmitDirection_;
+std::string DescribeCenRouteMapsRequest::getTransmitDirection() const {
+  return transmitDirection_;
 }
 
-void DescribeCenRouteMapsRequest::setTransmitDirection(const std::string& transmitDirection)
-{
-	transmitDirection_ = transmitDirection;
-	setParameter("TransmitDirection", transmitDirection);
+void DescribeCenRouteMapsRequest::setTransmitDirection(const std::string &transmitDirection) {
+  transmitDirection_ = transmitDirection;
+  setParameter(std::string("TransmitDirection"), transmitDirection);
 }
 
-std::string DescribeCenRouteMapsRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string DescribeCenRouteMapsRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void DescribeCenRouteMapsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void DescribeCenRouteMapsRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string DescribeCenRouteMapsRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string DescribeCenRouteMapsRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void DescribeCenRouteMapsRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void DescribeCenRouteMapsRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-std::string DescribeCenRouteMapsRequest::getRouteMapId()const
-{
-	return routeMapId_;
+std::string DescribeCenRouteMapsRequest::getRouteMapId() const {
+  return routeMapId_;
 }
 
-void DescribeCenRouteMapsRequest::setRouteMapId(const std::string& routeMapId)
-{
-	routeMapId_ = routeMapId;
-	setParameter("RouteMapId", routeMapId);
+void DescribeCenRouteMapsRequest::setRouteMapId(const std::string &routeMapId) {
+  routeMapId_ = routeMapId;
+  setParameter(std::string("RouteMapId"), routeMapId);
 }
 
-long DescribeCenRouteMapsRequest::getOwnerId()const
-{
-	return ownerId_;
+long DescribeCenRouteMapsRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void DescribeCenRouteMapsRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void DescribeCenRouteMapsRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::vector<DescribeCenRouteMapsRequest::Filter> DescribeCenRouteMapsRequest::getFilter()const
-{
-	return filter_;
+std::vector<DescribeCenRouteMapsRequest::Filter> DescribeCenRouteMapsRequest::getFilter() const {
+  return filter_;
 }
 
-void DescribeCenRouteMapsRequest::setFilter(const std::vector<Filter>& filter)
-{
-	filter_ = filter;
-	for(int dep1 = 0; dep1!= filter.size(); dep1++) {
-		auto filterObj = filter.at(dep1);
-		std::string filterObjStr = "Filter." + std::to_string(dep1 + 1);
-		for(int dep2 = 0; dep2!= filterObj.value.size(); dep2++) {
-			setParameter(filterObjStr + ".Value."+ std::to_string(dep2), filterObj.value.at(dep2));
-		}
-		setParameter(filterObjStr + ".Key", filterObj.key);
-	}
+void DescribeCenRouteMapsRequest::setFilter(const std::vector<DescribeCenRouteMapsRequest::Filter> &filter) {
+  filter_ = filter;
+  for(int dep1 = 0; dep1 != filter.size(); dep1++) {
+  auto filterObj = filter.at(dep1);
+  std::string filterObjStr = std::string("Filter") + "." + std::to_string(dep1 + 1);
+    setParameter(filterObjStr + ".Key", filterObj.key);
+  }
 }
 
-std::string DescribeCenRouteMapsRequest::getCenRegionId()const
-{
-	return cenRegionId_;
+std::string DescribeCenRouteMapsRequest::getCenRegionId() const {
+  return cenRegionId_;
 }
 
-void DescribeCenRouteMapsRequest::setCenRegionId(const std::string& cenRegionId)
-{
-	cenRegionId_ = cenRegionId;
-	setParameter("CenRegionId", cenRegionId);
+void DescribeCenRouteMapsRequest::setCenRegionId(const std::string &cenRegionId) {
+  cenRegionId_ = cenRegionId;
+  setParameter(std::string("CenRegionId"), cenRegionId);
 }
 

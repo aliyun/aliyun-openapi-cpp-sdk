@@ -43,32 +43,32 @@ void ListTransitRouterRouteEntriesResult::parse(const std::string &payload)
 	for (auto valueTransitRouterRouteEntriesTransitRouterRouteEntry : allTransitRouterRouteEntriesNode)
 	{
 		TransitRouterRouteEntry transitRouterRouteEntriesObject;
-		if(!valueTransitRouterRouteEntriesTransitRouterRouteEntry["TransitRouterRouteEntryDescription"].isNull())
-			transitRouterRouteEntriesObject.transitRouterRouteEntryDescription = valueTransitRouterRouteEntriesTransitRouterRouteEntry["TransitRouterRouteEntryDescription"].asString();
-		if(!valueTransitRouterRouteEntriesTransitRouterRouteEntry["TransitRouterRouteEntryDestinationCidrBlock"].isNull())
-			transitRouterRouteEntriesObject.transitRouterRouteEntryDestinationCidrBlock = valueTransitRouterRouteEntriesTransitRouterRouteEntry["TransitRouterRouteEntryDestinationCidrBlock"].asString();
 		if(!valueTransitRouterRouteEntriesTransitRouterRouteEntry["TransitRouterRouteEntryId"].isNull())
 			transitRouterRouteEntriesObject.transitRouterRouteEntryId = valueTransitRouterRouteEntriesTransitRouterRouteEntry["TransitRouterRouteEntryId"].asString();
-		if(!valueTransitRouterRouteEntriesTransitRouterRouteEntry["TransitRouterRouteEntryName"].isNull())
-			transitRouterRouteEntriesObject.transitRouterRouteEntryName = valueTransitRouterRouteEntriesTransitRouterRouteEntry["TransitRouterRouteEntryName"].asString();
-		if(!valueTransitRouterRouteEntriesTransitRouterRouteEntry["TransitRouterRouteEntryNextHopId"].isNull())
-			transitRouterRouteEntriesObject.transitRouterRouteEntryNextHopId = valueTransitRouterRouteEntriesTransitRouterRouteEntry["TransitRouterRouteEntryNextHopId"].asString();
-		if(!valueTransitRouterRouteEntriesTransitRouterRouteEntry["TransitRouterRouteEntryNextHopType"].isNull())
-			transitRouterRouteEntriesObject.transitRouterRouteEntryNextHopType = valueTransitRouterRouteEntriesTransitRouterRouteEntry["TransitRouterRouteEntryNextHopType"].asString();
-		if(!valueTransitRouterRouteEntriesTransitRouterRouteEntry["TransitRouterRouteEntryStatus"].isNull())
-			transitRouterRouteEntriesObject.transitRouterRouteEntryStatus = valueTransitRouterRouteEntriesTransitRouterRouteEntry["TransitRouterRouteEntryStatus"].asString();
+		if(!valueTransitRouterRouteEntriesTransitRouterRouteEntry["TransitRouterRouteEntryDestinationCidrBlock"].isNull())
+			transitRouterRouteEntriesObject.transitRouterRouteEntryDestinationCidrBlock = valueTransitRouterRouteEntriesTransitRouterRouteEntry["TransitRouterRouteEntryDestinationCidrBlock"].asString();
 		if(!valueTransitRouterRouteEntriesTransitRouterRouteEntry["TransitRouterRouteEntryType"].isNull())
 			transitRouterRouteEntriesObject.transitRouterRouteEntryType = valueTransitRouterRouteEntriesTransitRouterRouteEntry["TransitRouterRouteEntryType"].asString();
 		if(!valueTransitRouterRouteEntriesTransitRouterRouteEntry["CreateTime"].isNull())
 			transitRouterRouteEntriesObject.createTime = valueTransitRouterRouteEntriesTransitRouterRouteEntry["CreateTime"].asString();
+		if(!valueTransitRouterRouteEntriesTransitRouterRouteEntry["TransitRouterRouteEntryName"].isNull())
+			transitRouterRouteEntriesObject.transitRouterRouteEntryName = valueTransitRouterRouteEntriesTransitRouterRouteEntry["TransitRouterRouteEntryName"].asString();
+		if(!valueTransitRouterRouteEntriesTransitRouterRouteEntry["TransitRouterRouteEntryStatus"].isNull())
+			transitRouterRouteEntriesObject.transitRouterRouteEntryStatus = valueTransitRouterRouteEntriesTransitRouterRouteEntry["TransitRouterRouteEntryStatus"].asString();
+		if(!valueTransitRouterRouteEntriesTransitRouterRouteEntry["TransitRouterRouteEntryNextHopType"].isNull())
+			transitRouterRouteEntriesObject.transitRouterRouteEntryNextHopType = valueTransitRouterRouteEntriesTransitRouterRouteEntry["TransitRouterRouteEntryNextHopType"].asString();
+		if(!valueTransitRouterRouteEntriesTransitRouterRouteEntry["TransitRouterRouteEntryNextHopId"].isNull())
+			transitRouterRouteEntriesObject.transitRouterRouteEntryNextHopId = valueTransitRouterRouteEntriesTransitRouterRouteEntry["TransitRouterRouteEntryNextHopId"].asString();
+		if(!valueTransitRouterRouteEntriesTransitRouterRouteEntry["TransitRouterRouteEntryDescription"].isNull())
+			transitRouterRouteEntriesObject.transitRouterRouteEntryDescription = valueTransitRouterRouteEntriesTransitRouterRouteEntry["TransitRouterRouteEntryDescription"].asString();
 		transitRouterRouteEntries_.push_back(transitRouterRouteEntriesObject);
 	}
-	if(!value["MaxResults"].isNull())
-		maxResults_ = std::stoi(value["MaxResults"].asString());
 	if(!value["NextToken"].isNull())
 		nextToken_ = value["NextToken"].asString();
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["MaxResults"].isNull())
+		maxResults_ = std::stoi(value["MaxResults"].asString());
 
 }
 

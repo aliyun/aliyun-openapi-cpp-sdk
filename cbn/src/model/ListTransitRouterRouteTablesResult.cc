@@ -45,24 +45,24 @@ void ListTransitRouterRouteTablesResult::parse(const std::string &payload)
 		TransitRouterRouteTable transitRouterRouteTablesObject;
 		if(!valueTransitRouterRouteTablesTransitRouterRouteTable["TransitRouterRouteTableStatus"].isNull())
 			transitRouterRouteTablesObject.transitRouterRouteTableStatus = valueTransitRouterRouteTablesTransitRouterRouteTable["TransitRouterRouteTableStatus"].asString();
-		if(!valueTransitRouterRouteTablesTransitRouterRouteTable["TransitRouterRouteTableName"].isNull())
-			transitRouterRouteTablesObject.transitRouterRouteTableName = valueTransitRouterRouteTablesTransitRouterRouteTable["TransitRouterRouteTableName"].asString();
-		if(!valueTransitRouterRouteTablesTransitRouterRouteTable["TransitRouterRouteTableId"].isNull())
-			transitRouterRouteTablesObject.transitRouterRouteTableId = valueTransitRouterRouteTablesTransitRouterRouteTable["TransitRouterRouteTableId"].asString();
-		if(!valueTransitRouterRouteTablesTransitRouterRouteTable["TransitRouterRouteTableDescription"].isNull())
-			transitRouterRouteTablesObject.transitRouterRouteTableDescription = valueTransitRouterRouteTablesTransitRouterRouteTable["TransitRouterRouteTableDescription"].asString();
 		if(!valueTransitRouterRouteTablesTransitRouterRouteTable["TransitRouterRouteTableType"].isNull())
 			transitRouterRouteTablesObject.transitRouterRouteTableType = valueTransitRouterRouteTablesTransitRouterRouteTable["TransitRouterRouteTableType"].asString();
 		if(!valueTransitRouterRouteTablesTransitRouterRouteTable["CreateTime"].isNull())
 			transitRouterRouteTablesObject.createTime = valueTransitRouterRouteTablesTransitRouterRouteTable["CreateTime"].asString();
+		if(!valueTransitRouterRouteTablesTransitRouterRouteTable["TransitRouterRouteTableId"].isNull())
+			transitRouterRouteTablesObject.transitRouterRouteTableId = valueTransitRouterRouteTablesTransitRouterRouteTable["TransitRouterRouteTableId"].asString();
+		if(!valueTransitRouterRouteTablesTransitRouterRouteTable["TransitRouterRouteTableName"].isNull())
+			transitRouterRouteTablesObject.transitRouterRouteTableName = valueTransitRouterRouteTablesTransitRouterRouteTable["TransitRouterRouteTableName"].asString();
+		if(!valueTransitRouterRouteTablesTransitRouterRouteTable["TransitRouterRouteTableDescription"].isNull())
+			transitRouterRouteTablesObject.transitRouterRouteTableDescription = valueTransitRouterRouteTablesTransitRouterRouteTable["TransitRouterRouteTableDescription"].asString();
 		transitRouterRouteTables_.push_back(transitRouterRouteTablesObject);
 	}
+	if(!value["NextToken"].isNull())
+		nextToken_ = value["NextToken"].asString();
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
 	if(!value["MaxResults"].isNull())
 		maxResults_ = std::stoi(value["MaxResults"].asString());
-	if(!value["NextToken"].isNull())
-		nextToken_ = value["NextToken"].asString();
 
 }
 

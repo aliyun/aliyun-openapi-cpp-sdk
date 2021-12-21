@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,100 +18,82 @@
 
 using AlibabaCloud::Cbn::Model::EnableTransitRouterRouteTablePropagationRequest;
 
-EnableTransitRouterRouteTablePropagationRequest::EnableTransitRouterRouteTablePropagationRequest() :
-	RpcServiceRequest("cbn", "2017-09-12", "EnableTransitRouterRouteTablePropagation")
-{
-	setMethod(HttpRequest::Method::Post);
+EnableTransitRouterRouteTablePropagationRequest::EnableTransitRouterRouteTablePropagationRequest()
+    : RpcServiceRequest("cbn", "2017-09-12", "EnableTransitRouterRouteTablePropagation") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-EnableTransitRouterRouteTablePropagationRequest::~EnableTransitRouterRouteTablePropagationRequest()
-{}
+EnableTransitRouterRouteTablePropagationRequest::~EnableTransitRouterRouteTablePropagationRequest() {}
 
-long EnableTransitRouterRouteTablePropagationRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long EnableTransitRouterRouteTablePropagationRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void EnableTransitRouterRouteTablePropagationRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void EnableTransitRouterRouteTablePropagationRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string EnableTransitRouterRouteTablePropagationRequest::getClientToken()const
-{
-	return clientToken_;
+std::string EnableTransitRouterRouteTablePropagationRequest::getClientToken() const {
+  return clientToken_;
 }
 
-void EnableTransitRouterRouteTablePropagationRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+void EnableTransitRouterRouteTablePropagationRequest::setClientToken(const std::string &clientToken) {
+  clientToken_ = clientToken;
+  setParameter(std::string("ClientToken"), clientToken);
 }
 
-std::string EnableTransitRouterRouteTablePropagationRequest::getTransitRouterRouteTableId()const
-{
-	return transitRouterRouteTableId_;
+std::string EnableTransitRouterRouteTablePropagationRequest::getTransitRouterRouteTableId() const {
+  return transitRouterRouteTableId_;
 }
 
-void EnableTransitRouterRouteTablePropagationRequest::setTransitRouterRouteTableId(const std::string& transitRouterRouteTableId)
-{
-	transitRouterRouteTableId_ = transitRouterRouteTableId;
-	setParameter("TransitRouterRouteTableId", transitRouterRouteTableId);
+void EnableTransitRouterRouteTablePropagationRequest::setTransitRouterRouteTableId(const std::string &transitRouterRouteTableId) {
+  transitRouterRouteTableId_ = transitRouterRouteTableId;
+  setParameter(std::string("TransitRouterRouteTableId"), transitRouterRouteTableId);
 }
 
-bool EnableTransitRouterRouteTablePropagationRequest::getDryRun()const
-{
-	return dryRun_;
+bool EnableTransitRouterRouteTablePropagationRequest::getDryRun() const {
+  return dryRun_;
 }
 
-void EnableTransitRouterRouteTablePropagationRequest::setDryRun(bool dryRun)
-{
-	dryRun_ = dryRun;
-	setParameter("DryRun", dryRun ? "true" : "false");
+void EnableTransitRouterRouteTablePropagationRequest::setDryRun(bool dryRun) {
+  dryRun_ = dryRun;
+  setParameter(std::string("DryRun"), dryRun ? "true" : "false");
 }
 
-std::string EnableTransitRouterRouteTablePropagationRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string EnableTransitRouterRouteTablePropagationRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void EnableTransitRouterRouteTablePropagationRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void EnableTransitRouterRouteTablePropagationRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string EnableTransitRouterRouteTablePropagationRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string EnableTransitRouterRouteTablePropagationRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void EnableTransitRouterRouteTablePropagationRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void EnableTransitRouterRouteTablePropagationRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-long EnableTransitRouterRouteTablePropagationRequest::getOwnerId()const
-{
-	return ownerId_;
+long EnableTransitRouterRouteTablePropagationRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void EnableTransitRouterRouteTablePropagationRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void EnableTransitRouterRouteTablePropagationRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string EnableTransitRouterRouteTablePropagationRequest::getTransitRouterAttachmentId()const
-{
-	return transitRouterAttachmentId_;
+std::string EnableTransitRouterRouteTablePropagationRequest::getTransitRouterAttachmentId() const {
+  return transitRouterAttachmentId_;
 }
 
-void EnableTransitRouterRouteTablePropagationRequest::setTransitRouterAttachmentId(const std::string& transitRouterAttachmentId)
-{
-	transitRouterAttachmentId_ = transitRouterAttachmentId;
-	setParameter("TransitRouterAttachmentId", transitRouterAttachmentId);
+void EnableTransitRouterRouteTablePropagationRequest::setTransitRouterAttachmentId(const std::string &transitRouterAttachmentId) {
+  transitRouterAttachmentId_ = transitRouterAttachmentId;
+  setParameter(std::string("TransitRouterAttachmentId"), transitRouterAttachmentId);
 }
 

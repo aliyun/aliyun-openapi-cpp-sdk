@@ -43,22 +43,22 @@ void DescribeCensResult::parse(const std::string &payload)
 	for (auto valueCensCen : allCensNode)
 	{
 		Cen censObject;
-		if(!valueCensCen["CenId"].isNull())
-			censObject.cenId = valueCensCen["CenId"].asString();
-		if(!valueCensCen["Name"].isNull())
-			censObject.name = valueCensCen["Name"].asString();
-		if(!valueCensCen["Description"].isNull())
-			censObject.description = valueCensCen["Description"].asString();
-		if(!valueCensCen["ProtectionLevel"].isNull())
-			censObject.protectionLevel = valueCensCen["ProtectionLevel"].asString();
 		if(!valueCensCen["Status"].isNull())
 			censObject.status = valueCensCen["Status"].asString();
 		if(!valueCensCen["CreationTime"].isNull())
 			censObject.creationTime = valueCensCen["CreationTime"].asString();
 		if(!valueCensCen["Ipv6Level"].isNull())
 			censObject.ipv6Level = valueCensCen["Ipv6Level"].asString();
+		if(!valueCensCen["Description"].isNull())
+			censObject.description = valueCensCen["Description"].asString();
 		if(!valueCensCen["ResourceGroupId"].isNull())
 			censObject.resourceGroupId = valueCensCen["ResourceGroupId"].asString();
+		if(!valueCensCen["CenId"].isNull())
+			censObject.cenId = valueCensCen["CenId"].asString();
+		if(!valueCensCen["ProtectionLevel"].isNull())
+			censObject.protectionLevel = valueCensCen["ProtectionLevel"].asString();
+		if(!valueCensCen["Name"].isNull())
+			censObject.name = valueCensCen["Name"].asString();
 		auto allTagsNode = valueCensCen["Tags"]["Tag"];
 		for (auto valueCensCenTagsTag : allTagsNode)
 		{
@@ -74,12 +74,12 @@ void DescribeCensResult::parse(const std::string &payload)
 			censObject.cenBandwidthPackageIds.push_back(value.asString());
 		cens_.push_back(censObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 

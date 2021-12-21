@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,133 +18,109 @@
 
 using AlibabaCloud::Cbn::Model::ListTransitRouterPeerAttachmentsRequest;
 
-ListTransitRouterPeerAttachmentsRequest::ListTransitRouterPeerAttachmentsRequest() :
-	RpcServiceRequest("cbn", "2017-09-12", "ListTransitRouterPeerAttachments")
-{
-	setMethod(HttpRequest::Method::Post);
+ListTransitRouterPeerAttachmentsRequest::ListTransitRouterPeerAttachmentsRequest()
+    : RpcServiceRequest("cbn", "2017-09-12", "ListTransitRouterPeerAttachments") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-ListTransitRouterPeerAttachmentsRequest::~ListTransitRouterPeerAttachmentsRequest()
-{}
+ListTransitRouterPeerAttachmentsRequest::~ListTransitRouterPeerAttachmentsRequest() {}
 
-long ListTransitRouterPeerAttachmentsRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long ListTransitRouterPeerAttachmentsRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void ListTransitRouterPeerAttachmentsRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void ListTransitRouterPeerAttachmentsRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string ListTransitRouterPeerAttachmentsRequest::getCenId()const
-{
-	return cenId_;
+std::string ListTransitRouterPeerAttachmentsRequest::getCenId() const {
+  return cenId_;
 }
 
-void ListTransitRouterPeerAttachmentsRequest::setCenId(const std::string& cenId)
-{
-	cenId_ = cenId;
-	setParameter("CenId", cenId);
+void ListTransitRouterPeerAttachmentsRequest::setCenId(const std::string &cenId) {
+  cenId_ = cenId;
+  setParameter(std::string("CenId"), cenId);
 }
 
-std::string ListTransitRouterPeerAttachmentsRequest::getRegionId()const
-{
-	return regionId_;
+std::string ListTransitRouterPeerAttachmentsRequest::getRegionId() const {
+  return regionId_;
 }
 
-void ListTransitRouterPeerAttachmentsRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void ListTransitRouterPeerAttachmentsRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
-std::string ListTransitRouterPeerAttachmentsRequest::getNextToken()const
-{
-	return nextToken_;
+std::string ListTransitRouterPeerAttachmentsRequest::getNextToken() const {
+  return nextToken_;
 }
 
-void ListTransitRouterPeerAttachmentsRequest::setNextToken(const std::string& nextToken)
-{
-	nextToken_ = nextToken;
-	setParameter("NextToken", nextToken);
+void ListTransitRouterPeerAttachmentsRequest::setNextToken(const std::string &nextToken) {
+  nextToken_ = nextToken;
+  setParameter(std::string("NextToken"), nextToken);
 }
 
-std::string ListTransitRouterPeerAttachmentsRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string ListTransitRouterPeerAttachmentsRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void ListTransitRouterPeerAttachmentsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void ListTransitRouterPeerAttachmentsRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string ListTransitRouterPeerAttachmentsRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string ListTransitRouterPeerAttachmentsRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void ListTransitRouterPeerAttachmentsRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void ListTransitRouterPeerAttachmentsRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-long ListTransitRouterPeerAttachmentsRequest::getOwnerId()const
-{
-	return ownerId_;
+long ListTransitRouterPeerAttachmentsRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void ListTransitRouterPeerAttachmentsRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void ListTransitRouterPeerAttachmentsRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string ListTransitRouterPeerAttachmentsRequest::getTransitRouterId()const
-{
-	return transitRouterId_;
+std::string ListTransitRouterPeerAttachmentsRequest::getTransitRouterId() const {
+  return transitRouterId_;
 }
 
-void ListTransitRouterPeerAttachmentsRequest::setTransitRouterId(const std::string& transitRouterId)
-{
-	transitRouterId_ = transitRouterId;
-	setParameter("TransitRouterId", transitRouterId);
+void ListTransitRouterPeerAttachmentsRequest::setTransitRouterId(const std::string &transitRouterId) {
+  transitRouterId_ = transitRouterId;
+  setParameter(std::string("TransitRouterId"), transitRouterId);
 }
 
-std::string ListTransitRouterPeerAttachmentsRequest::getResourceType()const
-{
-	return resourceType_;
+std::string ListTransitRouterPeerAttachmentsRequest::getResourceType() const {
+  return resourceType_;
 }
 
-void ListTransitRouterPeerAttachmentsRequest::setResourceType(const std::string& resourceType)
-{
-	resourceType_ = resourceType;
-	setParameter("ResourceType", resourceType);
+void ListTransitRouterPeerAttachmentsRequest::setResourceType(const std::string &resourceType) {
+  resourceType_ = resourceType;
+  setParameter(std::string("ResourceType"), resourceType);
 }
 
-std::string ListTransitRouterPeerAttachmentsRequest::getTransitRouterAttachmentId()const
-{
-	return transitRouterAttachmentId_;
+std::string ListTransitRouterPeerAttachmentsRequest::getTransitRouterAttachmentId() const {
+  return transitRouterAttachmentId_;
 }
 
-void ListTransitRouterPeerAttachmentsRequest::setTransitRouterAttachmentId(const std::string& transitRouterAttachmentId)
-{
-	transitRouterAttachmentId_ = transitRouterAttachmentId;
-	setParameter("TransitRouterAttachmentId", transitRouterAttachmentId);
+void ListTransitRouterPeerAttachmentsRequest::setTransitRouterAttachmentId(const std::string &transitRouterAttachmentId) {
+  transitRouterAttachmentId_ = transitRouterAttachmentId;
+  setParameter(std::string("TransitRouterAttachmentId"), transitRouterAttachmentId);
 }
 
-int ListTransitRouterPeerAttachmentsRequest::getMaxResults()const
-{
-	return maxResults_;
+int ListTransitRouterPeerAttachmentsRequest::getMaxResults() const {
+  return maxResults_;
 }
 
-void ListTransitRouterPeerAttachmentsRequest::setMaxResults(int maxResults)
-{
-	maxResults_ = maxResults;
-	setParameter("MaxResults", std::to_string(maxResults));
+void ListTransitRouterPeerAttachmentsRequest::setMaxResults(int maxResults) {
+  maxResults_ = maxResults;
+  setParameter(std::string("MaxResults"), std::to_string(maxResults));
 }
 

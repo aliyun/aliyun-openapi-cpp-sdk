@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,111 +18,91 @@
 
 using AlibabaCloud::Cbn::Model::UpdateTrafficMarkingPolicyAttributeRequest;
 
-UpdateTrafficMarkingPolicyAttributeRequest::UpdateTrafficMarkingPolicyAttributeRequest() :
-	RpcServiceRequest("cbn", "2017-09-12", "UpdateTrafficMarkingPolicyAttribute")
-{
-	setMethod(HttpRequest::Method::Post);
+UpdateTrafficMarkingPolicyAttributeRequest::UpdateTrafficMarkingPolicyAttributeRequest()
+    : RpcServiceRequest("cbn", "2017-09-12", "UpdateTrafficMarkingPolicyAttribute") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-UpdateTrafficMarkingPolicyAttributeRequest::~UpdateTrafficMarkingPolicyAttributeRequest()
-{}
+UpdateTrafficMarkingPolicyAttributeRequest::~UpdateTrafficMarkingPolicyAttributeRequest() {}
 
-long UpdateTrafficMarkingPolicyAttributeRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long UpdateTrafficMarkingPolicyAttributeRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void UpdateTrafficMarkingPolicyAttributeRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void UpdateTrafficMarkingPolicyAttributeRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string UpdateTrafficMarkingPolicyAttributeRequest::getClientToken()const
-{
-	return clientToken_;
+std::string UpdateTrafficMarkingPolicyAttributeRequest::getClientToken() const {
+  return clientToken_;
 }
 
-void UpdateTrafficMarkingPolicyAttributeRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+void UpdateTrafficMarkingPolicyAttributeRequest::setClientToken(const std::string &clientToken) {
+  clientToken_ = clientToken;
+  setParameter(std::string("ClientToken"), clientToken);
 }
 
-std::string UpdateTrafficMarkingPolicyAttributeRequest::getTrafficMarkingPolicyDescription()const
-{
-	return trafficMarkingPolicyDescription_;
+std::string UpdateTrafficMarkingPolicyAttributeRequest::getTrafficMarkingPolicyDescription() const {
+  return trafficMarkingPolicyDescription_;
 }
 
-void UpdateTrafficMarkingPolicyAttributeRequest::setTrafficMarkingPolicyDescription(const std::string& trafficMarkingPolicyDescription)
-{
-	trafficMarkingPolicyDescription_ = trafficMarkingPolicyDescription;
-	setParameter("TrafficMarkingPolicyDescription", trafficMarkingPolicyDescription);
+void UpdateTrafficMarkingPolicyAttributeRequest::setTrafficMarkingPolicyDescription(const std::string &trafficMarkingPolicyDescription) {
+  trafficMarkingPolicyDescription_ = trafficMarkingPolicyDescription;
+  setParameter(std::string("TrafficMarkingPolicyDescription"), trafficMarkingPolicyDescription);
 }
 
-std::string UpdateTrafficMarkingPolicyAttributeRequest::getTrafficMarkingPolicyId()const
-{
-	return trafficMarkingPolicyId_;
+std::string UpdateTrafficMarkingPolicyAttributeRequest::getTrafficMarkingPolicyId() const {
+  return trafficMarkingPolicyId_;
 }
 
-void UpdateTrafficMarkingPolicyAttributeRequest::setTrafficMarkingPolicyId(const std::string& trafficMarkingPolicyId)
-{
-	trafficMarkingPolicyId_ = trafficMarkingPolicyId;
-	setParameter("TrafficMarkingPolicyId", trafficMarkingPolicyId);
+void UpdateTrafficMarkingPolicyAttributeRequest::setTrafficMarkingPolicyId(const std::string &trafficMarkingPolicyId) {
+  trafficMarkingPolicyId_ = trafficMarkingPolicyId;
+  setParameter(std::string("TrafficMarkingPolicyId"), trafficMarkingPolicyId);
 }
 
-std::string UpdateTrafficMarkingPolicyAttributeRequest::getTrafficMarkingPolicyName()const
-{
-	return trafficMarkingPolicyName_;
+std::string UpdateTrafficMarkingPolicyAttributeRequest::getTrafficMarkingPolicyName() const {
+  return trafficMarkingPolicyName_;
 }
 
-void UpdateTrafficMarkingPolicyAttributeRequest::setTrafficMarkingPolicyName(const std::string& trafficMarkingPolicyName)
-{
-	trafficMarkingPolicyName_ = trafficMarkingPolicyName;
-	setParameter("TrafficMarkingPolicyName", trafficMarkingPolicyName);
+void UpdateTrafficMarkingPolicyAttributeRequest::setTrafficMarkingPolicyName(const std::string &trafficMarkingPolicyName) {
+  trafficMarkingPolicyName_ = trafficMarkingPolicyName;
+  setParameter(std::string("TrafficMarkingPolicyName"), trafficMarkingPolicyName);
 }
 
-bool UpdateTrafficMarkingPolicyAttributeRequest::getDryRun()const
-{
-	return dryRun_;
+bool UpdateTrafficMarkingPolicyAttributeRequest::getDryRun() const {
+  return dryRun_;
 }
 
-void UpdateTrafficMarkingPolicyAttributeRequest::setDryRun(bool dryRun)
-{
-	dryRun_ = dryRun;
-	setParameter("DryRun", dryRun ? "true" : "false");
+void UpdateTrafficMarkingPolicyAttributeRequest::setDryRun(bool dryRun) {
+  dryRun_ = dryRun;
+  setParameter(std::string("DryRun"), dryRun ? "true" : "false");
 }
 
-std::string UpdateTrafficMarkingPolicyAttributeRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string UpdateTrafficMarkingPolicyAttributeRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void UpdateTrafficMarkingPolicyAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void UpdateTrafficMarkingPolicyAttributeRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string UpdateTrafficMarkingPolicyAttributeRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string UpdateTrafficMarkingPolicyAttributeRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void UpdateTrafficMarkingPolicyAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void UpdateTrafficMarkingPolicyAttributeRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-long UpdateTrafficMarkingPolicyAttributeRequest::getOwnerId()const
-{
-	return ownerId_;
+long UpdateTrafficMarkingPolicyAttributeRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void UpdateTrafficMarkingPolicyAttributeRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void UpdateTrafficMarkingPolicyAttributeRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 

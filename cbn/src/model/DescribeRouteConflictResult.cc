@@ -43,24 +43,24 @@ void DescribeRouteConflictResult::parse(const std::string &payload)
 	for (auto valueRouteConflictsRouteConflict : allRouteConflictsNode)
 	{
 		RouteConflict routeConflictsObject;
+		if(!valueRouteConflictsRouteConflict["Status"].isNull())
+			routeConflictsObject.status = valueRouteConflictsRouteConflict["Status"].asString();
 		if(!valueRouteConflictsRouteConflict["DestinationCidrBlock"].isNull())
 			routeConflictsObject.destinationCidrBlock = valueRouteConflictsRouteConflict["DestinationCidrBlock"].asString();
-		if(!valueRouteConflictsRouteConflict["RegionId"].isNull())
-			routeConflictsObject.regionId = valueRouteConflictsRouteConflict["RegionId"].asString();
 		if(!valueRouteConflictsRouteConflict["InstanceId"].isNull())
 			routeConflictsObject.instanceId = valueRouteConflictsRouteConflict["InstanceId"].asString();
 		if(!valueRouteConflictsRouteConflict["InstanceType"].isNull())
 			routeConflictsObject.instanceType = valueRouteConflictsRouteConflict["InstanceType"].asString();
-		if(!valueRouteConflictsRouteConflict["Status"].isNull())
-			routeConflictsObject.status = valueRouteConflictsRouteConflict["Status"].asString();
+		if(!valueRouteConflictsRouteConflict["RegionId"].isNull())
+			routeConflictsObject.regionId = valueRouteConflictsRouteConflict["RegionId"].asString();
 		routeConflicts_.push_back(routeConflictsObject);
 	}
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["PageNumber"].isNull())
 		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
 
 }
 

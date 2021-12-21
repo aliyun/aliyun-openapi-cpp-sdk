@@ -143,8 +143,12 @@ set(cbn_public_header_model
 	include/alibabacloud/cbn/model/EnableCenVbrHealthCheckResult.h
 	include/alibabacloud/cbn/model/EnableTransitRouterRouteTablePropagationRequest.h
 	include/alibabacloud/cbn/model/EnableTransitRouterRouteTablePropagationResult.h
+	include/alibabacloud/cbn/model/GrantInstanceToTransitRouterRequest.h
+	include/alibabacloud/cbn/model/GrantInstanceToTransitRouterResult.h
 	include/alibabacloud/cbn/model/ListCenInterRegionTrafficQosPoliciesRequest.h
 	include/alibabacloud/cbn/model/ListCenInterRegionTrafficQosPoliciesResult.h
+	include/alibabacloud/cbn/model/ListGrantVSwitchesToCenRequest.h
+	include/alibabacloud/cbn/model/ListGrantVSwitchesToCenResult.h
 	include/alibabacloud/cbn/model/ListTagResourcesRequest.h
 	include/alibabacloud/cbn/model/ListTagResourcesResult.h
 	include/alibabacloud/cbn/model/ListTrafficMarkingPoliciesRequest.h
@@ -189,6 +193,8 @@ set(cbn_public_header_model
 	include/alibabacloud/cbn/model/ReplaceTransitRouterRouteTableAssociationResult.h
 	include/alibabacloud/cbn/model/ResolveAndRouteServiceInCenRequest.h
 	include/alibabacloud/cbn/model/ResolveAndRouteServiceInCenResult.h
+	include/alibabacloud/cbn/model/RevokeInstanceFromTransitRouterRequest.h
+	include/alibabacloud/cbn/model/RevokeInstanceFromTransitRouterResult.h
 	include/alibabacloud/cbn/model/RoutePrivateZoneInCenToVpcRequest.h
 	include/alibabacloud/cbn/model/RoutePrivateZoneInCenToVpcResult.h
 	include/alibabacloud/cbn/model/SetCenInterRegionBandwidthLimitRequest.h
@@ -348,8 +354,12 @@ set(cbn_src
 	src/model/EnableCenVbrHealthCheckResult.cc
 	src/model/EnableTransitRouterRouteTablePropagationRequest.cc
 	src/model/EnableTransitRouterRouteTablePropagationResult.cc
+	src/model/GrantInstanceToTransitRouterRequest.cc
+	src/model/GrantInstanceToTransitRouterResult.cc
 	src/model/ListCenInterRegionTrafficQosPoliciesRequest.cc
 	src/model/ListCenInterRegionTrafficQosPoliciesResult.cc
+	src/model/ListGrantVSwitchesToCenRequest.cc
+	src/model/ListGrantVSwitchesToCenResult.cc
 	src/model/ListTagResourcesRequest.cc
 	src/model/ListTagResourcesResult.cc
 	src/model/ListTrafficMarkingPoliciesRequest.cc
@@ -394,6 +404,8 @@ set(cbn_src
 	src/model/ReplaceTransitRouterRouteTableAssociationResult.cc
 	src/model/ResolveAndRouteServiceInCenRequest.cc
 	src/model/ResolveAndRouteServiceInCenResult.cc
+	src/model/RevokeInstanceFromTransitRouterRequest.cc
+	src/model/RevokeInstanceFromTransitRouterResult.cc
 	src/model/RoutePrivateZoneInCenToVpcRequest.cc
 	src/model/RoutePrivateZoneInCenToVpcResult.cc
 	src/model/SetCenInterRegionBandwidthLimitRequest.cc

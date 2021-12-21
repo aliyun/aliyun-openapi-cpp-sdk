@@ -31,21 +31,21 @@ CbnClient::CbnClient(const Credentials &credentials, const ClientConfiguration &
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "cbn");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 CbnClient::CbnClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "cbn");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 CbnClient::CbnClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "cbn");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 CbnClient::~CbnClient()
@@ -2247,6 +2247,42 @@ CbnClient::EnableTransitRouterRouteTablePropagationOutcomeCallable CbnClient::en
 	return task->get_future();
 }
 
+CbnClient::GrantInstanceToTransitRouterOutcome CbnClient::grantInstanceToTransitRouter(const GrantInstanceToTransitRouterRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GrantInstanceToTransitRouterOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GrantInstanceToTransitRouterOutcome(GrantInstanceToTransitRouterResult(outcome.result()));
+	else
+		return GrantInstanceToTransitRouterOutcome(outcome.error());
+}
+
+void CbnClient::grantInstanceToTransitRouterAsync(const GrantInstanceToTransitRouterRequest& request, const GrantInstanceToTransitRouterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, grantInstanceToTransitRouter(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::GrantInstanceToTransitRouterOutcomeCallable CbnClient::grantInstanceToTransitRouterCallable(const GrantInstanceToTransitRouterRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GrantInstanceToTransitRouterOutcome()>>(
+			[this, request]()
+			{
+			return this->grantInstanceToTransitRouter(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CbnClient::ListCenInterRegionTrafficQosPoliciesOutcome CbnClient::listCenInterRegionTrafficQosPolicies(const ListCenInterRegionTrafficQosPoliciesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2277,6 +2313,42 @@ CbnClient::ListCenInterRegionTrafficQosPoliciesOutcomeCallable CbnClient::listCe
 			[this, request]()
 			{
 			return this->listCenInterRegionTrafficQosPolicies(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CbnClient::ListGrantVSwitchesToCenOutcome CbnClient::listGrantVSwitchesToCen(const ListGrantVSwitchesToCenRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListGrantVSwitchesToCenOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListGrantVSwitchesToCenOutcome(ListGrantVSwitchesToCenResult(outcome.result()));
+	else
+		return ListGrantVSwitchesToCenOutcome(outcome.error());
+}
+
+void CbnClient::listGrantVSwitchesToCenAsync(const ListGrantVSwitchesToCenRequest& request, const ListGrantVSwitchesToCenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listGrantVSwitchesToCen(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::ListGrantVSwitchesToCenOutcomeCallable CbnClient::listGrantVSwitchesToCenCallable(const ListGrantVSwitchesToCenRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListGrantVSwitchesToCenOutcome()>>(
+			[this, request]()
+			{
+			return this->listGrantVSwitchesToCen(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3069,6 +3141,42 @@ CbnClient::ResolveAndRouteServiceInCenOutcomeCallable CbnClient::resolveAndRoute
 			[this, request]()
 			{
 			return this->resolveAndRouteServiceInCen(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CbnClient::RevokeInstanceFromTransitRouterOutcome CbnClient::revokeInstanceFromTransitRouter(const RevokeInstanceFromTransitRouterRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RevokeInstanceFromTransitRouterOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RevokeInstanceFromTransitRouterOutcome(RevokeInstanceFromTransitRouterResult(outcome.result()));
+	else
+		return RevokeInstanceFromTransitRouterOutcome(outcome.error());
+}
+
+void CbnClient::revokeInstanceFromTransitRouterAsync(const RevokeInstanceFromTransitRouterRequest& request, const RevokeInstanceFromTransitRouterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, revokeInstanceFromTransitRouter(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::RevokeInstanceFromTransitRouterOutcomeCallable CbnClient::revokeInstanceFromTransitRouterCallable(const RevokeInstanceFromTransitRouterRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RevokeInstanceFromTransitRouterOutcome()>>(
+			[this, request]()
+			{
+			return this->revokeInstanceFromTransitRouter(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

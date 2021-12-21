@@ -49,24 +49,24 @@ void DescribeCenAttachedChildInstanceAttributeResult::parse(const std::string &p
 			childInstanceRouteTablesObject.routeTableType = valueChildInstanceRouteTablesChildInstanceRouteTable["RouteTableType"].asString();
 		childInstanceRouteTables_.push_back(childInstanceRouteTablesObject);
 	}
-	if(!value["CenId"].isNull())
-		cenId_ = value["CenId"].asString();
-	if(!value["ChildInstanceId"].isNull())
-		childInstanceId_ = value["ChildInstanceId"].asString();
+	if(!value["Status"].isNull())
+		status_ = value["Status"].asString();
 	if(!value["ChildInstanceType"].isNull())
 		childInstanceType_ = value["ChildInstanceType"].asString();
 	if(!value["ChildInstanceRegionId"].isNull())
 		childInstanceRegionId_ = value["ChildInstanceRegionId"].asString();
 	if(!value["ChildInstanceOwnerId"].isNull())
 		childInstanceOwnerId_ = std::stol(value["ChildInstanceOwnerId"].asString());
-	if(!value["Status"].isNull())
-		status_ = value["Status"].asString();
+	if(!value["ChildInstanceId"].isNull())
+		childInstanceId_ = value["ChildInstanceId"].asString();
+	if(!value["CenId"].isNull())
+		cenId_ = value["CenId"].asString();
 	if(!value["ChildInstanceName"].isNull())
 		childInstanceName_ = value["ChildInstanceName"].asString();
-	if(!value["ChildInstanceAttachTime"].isNull())
-		childInstanceAttachTime_ = value["ChildInstanceAttachTime"].asString();
 	if(!value["Ipv6StatusInCen"].isNull())
 		ipv6StatusInCen_ = value["Ipv6StatusInCen"].asString();
+	if(!value["ChildInstanceAttachTime"].isNull())
+		childInstanceAttachTime_ = value["ChildInstanceAttachTime"].asString();
 
 }
 

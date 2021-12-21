@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,78 +18,64 @@
 
 using AlibabaCloud::Cbn::Model::DescribeChildInstanceRegionsRequest;
 
-DescribeChildInstanceRegionsRequest::DescribeChildInstanceRegionsRequest() :
-	RpcServiceRequest("cbn", "2017-09-12", "DescribeChildInstanceRegions")
-{
-	setMethod(HttpRequest::Method::Post);
+DescribeChildInstanceRegionsRequest::DescribeChildInstanceRegionsRequest()
+    : RpcServiceRequest("cbn", "2017-09-12", "DescribeChildInstanceRegions") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DescribeChildInstanceRegionsRequest::~DescribeChildInstanceRegionsRequest()
-{}
+DescribeChildInstanceRegionsRequest::~DescribeChildInstanceRegionsRequest() {}
 
-long DescribeChildInstanceRegionsRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long DescribeChildInstanceRegionsRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void DescribeChildInstanceRegionsRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void DescribeChildInstanceRegionsRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string DescribeChildInstanceRegionsRequest::getProductType()const
-{
-	return productType_;
+std::string DescribeChildInstanceRegionsRequest::getProductType() const {
+  return productType_;
 }
 
-void DescribeChildInstanceRegionsRequest::setProductType(const std::string& productType)
-{
-	productType_ = productType;
-	setParameter("ProductType", productType);
+void DescribeChildInstanceRegionsRequest::setProductType(const std::string &productType) {
+  productType_ = productType;
+  setParameter(std::string("ProductType"), productType);
 }
 
-std::string DescribeChildInstanceRegionsRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string DescribeChildInstanceRegionsRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void DescribeChildInstanceRegionsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void DescribeChildInstanceRegionsRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string DescribeChildInstanceRegionsRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string DescribeChildInstanceRegionsRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void DescribeChildInstanceRegionsRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void DescribeChildInstanceRegionsRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-long DescribeChildInstanceRegionsRequest::getOwnerId()const
-{
-	return ownerId_;
+long DescribeChildInstanceRegionsRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void DescribeChildInstanceRegionsRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void DescribeChildInstanceRegionsRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-long DescribeChildInstanceRegionsRequest::getChildInstanceOwnerId()const
-{
-	return childInstanceOwnerId_;
+long DescribeChildInstanceRegionsRequest::getChildInstanceOwnerId() const {
+  return childInstanceOwnerId_;
 }
 
-void DescribeChildInstanceRegionsRequest::setChildInstanceOwnerId(long childInstanceOwnerId)
-{
-	childInstanceOwnerId_ = childInstanceOwnerId;
-	setParameter("ChildInstanceOwnerId", std::to_string(childInstanceOwnerId));
+void DescribeChildInstanceRegionsRequest::setChildInstanceOwnerId(long childInstanceOwnerId) {
+  childInstanceOwnerId_ = childInstanceOwnerId;
+  setParameter(std::string("ChildInstanceOwnerId"), std::to_string(childInstanceOwnerId));
 }
 

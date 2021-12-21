@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,100 +18,82 @@
 
 using AlibabaCloud::Cbn::Model::ReplaceTransitRouterRouteTableAssociationRequest;
 
-ReplaceTransitRouterRouteTableAssociationRequest::ReplaceTransitRouterRouteTableAssociationRequest() :
-	RpcServiceRequest("cbn", "2017-09-12", "ReplaceTransitRouterRouteTableAssociation")
-{
-	setMethod(HttpRequest::Method::Post);
+ReplaceTransitRouterRouteTableAssociationRequest::ReplaceTransitRouterRouteTableAssociationRequest()
+    : RpcServiceRequest("cbn", "2017-09-12", "ReplaceTransitRouterRouteTableAssociation") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-ReplaceTransitRouterRouteTableAssociationRequest::~ReplaceTransitRouterRouteTableAssociationRequest()
-{}
+ReplaceTransitRouterRouteTableAssociationRequest::~ReplaceTransitRouterRouteTableAssociationRequest() {}
 
-long ReplaceTransitRouterRouteTableAssociationRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long ReplaceTransitRouterRouteTableAssociationRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void ReplaceTransitRouterRouteTableAssociationRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void ReplaceTransitRouterRouteTableAssociationRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string ReplaceTransitRouterRouteTableAssociationRequest::getClientToken()const
-{
-	return clientToken_;
+std::string ReplaceTransitRouterRouteTableAssociationRequest::getClientToken() const {
+  return clientToken_;
 }
 
-void ReplaceTransitRouterRouteTableAssociationRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+void ReplaceTransitRouterRouteTableAssociationRequest::setClientToken(const std::string &clientToken) {
+  clientToken_ = clientToken;
+  setParameter(std::string("ClientToken"), clientToken);
 }
 
-std::string ReplaceTransitRouterRouteTableAssociationRequest::getTransitRouterRouteTableId()const
-{
-	return transitRouterRouteTableId_;
+std::string ReplaceTransitRouterRouteTableAssociationRequest::getTransitRouterRouteTableId() const {
+  return transitRouterRouteTableId_;
 }
 
-void ReplaceTransitRouterRouteTableAssociationRequest::setTransitRouterRouteTableId(const std::string& transitRouterRouteTableId)
-{
-	transitRouterRouteTableId_ = transitRouterRouteTableId;
-	setParameter("TransitRouterRouteTableId", transitRouterRouteTableId);
+void ReplaceTransitRouterRouteTableAssociationRequest::setTransitRouterRouteTableId(const std::string &transitRouterRouteTableId) {
+  transitRouterRouteTableId_ = transitRouterRouteTableId;
+  setParameter(std::string("TransitRouterRouteTableId"), transitRouterRouteTableId);
 }
 
-bool ReplaceTransitRouterRouteTableAssociationRequest::getDryRun()const
-{
-	return dryRun_;
+bool ReplaceTransitRouterRouteTableAssociationRequest::getDryRun() const {
+  return dryRun_;
 }
 
-void ReplaceTransitRouterRouteTableAssociationRequest::setDryRun(bool dryRun)
-{
-	dryRun_ = dryRun;
-	setParameter("DryRun", dryRun ? "true" : "false");
+void ReplaceTransitRouterRouteTableAssociationRequest::setDryRun(bool dryRun) {
+  dryRun_ = dryRun;
+  setParameter(std::string("DryRun"), dryRun ? "true" : "false");
 }
 
-std::string ReplaceTransitRouterRouteTableAssociationRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string ReplaceTransitRouterRouteTableAssociationRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void ReplaceTransitRouterRouteTableAssociationRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void ReplaceTransitRouterRouteTableAssociationRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string ReplaceTransitRouterRouteTableAssociationRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string ReplaceTransitRouterRouteTableAssociationRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void ReplaceTransitRouterRouteTableAssociationRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void ReplaceTransitRouterRouteTableAssociationRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-long ReplaceTransitRouterRouteTableAssociationRequest::getOwnerId()const
-{
-	return ownerId_;
+long ReplaceTransitRouterRouteTableAssociationRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void ReplaceTransitRouterRouteTableAssociationRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void ReplaceTransitRouterRouteTableAssociationRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string ReplaceTransitRouterRouteTableAssociationRequest::getTransitRouterAttachmentId()const
-{
-	return transitRouterAttachmentId_;
+std::string ReplaceTransitRouterRouteTableAssociationRequest::getTransitRouterAttachmentId() const {
+  return transitRouterAttachmentId_;
 }
 
-void ReplaceTransitRouterRouteTableAssociationRequest::setTransitRouterAttachmentId(const std::string& transitRouterAttachmentId)
-{
-	transitRouterAttachmentId_ = transitRouterAttachmentId;
-	setParameter("TransitRouterAttachmentId", transitRouterAttachmentId);
+void ReplaceTransitRouterRouteTableAssociationRequest::setTransitRouterAttachmentId(const std::string &transitRouterAttachmentId) {
+  transitRouterAttachmentId_ = transitRouterAttachmentId;
+  setParameter(std::string("TransitRouterAttachmentId"), transitRouterAttachmentId);
 }
 

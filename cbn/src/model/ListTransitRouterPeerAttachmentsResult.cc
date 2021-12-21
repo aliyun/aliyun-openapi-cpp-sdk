@@ -43,48 +43,48 @@ void ListTransitRouterPeerAttachmentsResult::parse(const std::string &payload)
 	for (auto valueTransitRouterAttachmentsTransitRouterAttachment : allTransitRouterAttachmentsNode)
 	{
 		TransitRouterAttachment transitRouterAttachmentsObject;
-		if(!valueTransitRouterAttachmentsTransitRouterAttachment["TransitRouterAttachmentId"].isNull())
-			transitRouterAttachmentsObject.transitRouterAttachmentId = valueTransitRouterAttachmentsTransitRouterAttachment["TransitRouterAttachmentId"].asString();
-		if(!valueTransitRouterAttachmentsTransitRouterAttachment["PeerTransitRouterRegionId"].isNull())
-			transitRouterAttachmentsObject.peerTransitRouterRegionId = valueTransitRouterAttachmentsTransitRouterAttachment["PeerTransitRouterRegionId"].asString();
-		if(!valueTransitRouterAttachmentsTransitRouterAttachment["PeerTransitRouterOwnerId"].isNull())
-			transitRouterAttachmentsObject.peerTransitRouterOwnerId = std::stol(valueTransitRouterAttachmentsTransitRouterAttachment["PeerTransitRouterOwnerId"].asString());
-		if(!valueTransitRouterAttachmentsTransitRouterAttachment["PeerTransitRouterId"].isNull())
-			transitRouterAttachmentsObject.peerTransitRouterId = valueTransitRouterAttachmentsTransitRouterAttachment["PeerTransitRouterId"].asString();
-		if(!valueTransitRouterAttachmentsTransitRouterAttachment["TransitRouterAttachmentName"].isNull())
-			transitRouterAttachmentsObject.transitRouterAttachmentName = valueTransitRouterAttachmentsTransitRouterAttachment["TransitRouterAttachmentName"].asString();
-		if(!valueTransitRouterAttachmentsTransitRouterAttachment["ResourceType"].isNull())
-			transitRouterAttachmentsObject.resourceType = valueTransitRouterAttachmentsTransitRouterAttachment["ResourceType"].asString();
-		if(!valueTransitRouterAttachmentsTransitRouterAttachment["Status"].isNull())
-			transitRouterAttachmentsObject.status = valueTransitRouterAttachmentsTransitRouterAttachment["Status"].asString();
-		if(!valueTransitRouterAttachmentsTransitRouterAttachment["TransitRouterAttachmentDescription"].isNull())
-			transitRouterAttachmentsObject.transitRouterAttachmentDescription = valueTransitRouterAttachmentsTransitRouterAttachment["TransitRouterAttachmentDescription"].asString();
 		if(!valueTransitRouterAttachmentsTransitRouterAttachment["CreationTime"].isNull())
 			transitRouterAttachmentsObject.creationTime = valueTransitRouterAttachmentsTransitRouterAttachment["CreationTime"].asString();
-		if(!valueTransitRouterAttachmentsTransitRouterAttachment["AutoPublishRouteEnabled"].isNull())
-			transitRouterAttachmentsObject.autoPublishRouteEnabled = valueTransitRouterAttachmentsTransitRouterAttachment["AutoPublishRouteEnabled"].asString() == "true";
-		if(!valueTransitRouterAttachmentsTransitRouterAttachment["TransitRouterId"].isNull())
-			transitRouterAttachmentsObject.transitRouterId = valueTransitRouterAttachmentsTransitRouterAttachment["TransitRouterId"].asString();
-		if(!valueTransitRouterAttachmentsTransitRouterAttachment["Bandwidth"].isNull())
-			transitRouterAttachmentsObject.bandwidth = std::stoi(valueTransitRouterAttachmentsTransitRouterAttachment["Bandwidth"].asString());
-		if(!valueTransitRouterAttachmentsTransitRouterAttachment["BandwidthPackageId"].isNull())
-			transitRouterAttachmentsObject.bandwidthPackageId = valueTransitRouterAttachmentsTransitRouterAttachment["BandwidthPackageId"].asString();
-		if(!valueTransitRouterAttachmentsTransitRouterAttachment["RegionId"].isNull())
-			transitRouterAttachmentsObject.regionId = valueTransitRouterAttachmentsTransitRouterAttachment["RegionId"].asString();
-		if(!valueTransitRouterAttachmentsTransitRouterAttachment["GeographicSpanId"].isNull())
-			transitRouterAttachmentsObject.geographicSpanId = valueTransitRouterAttachmentsTransitRouterAttachment["GeographicSpanId"].asString();
-		if(!valueTransitRouterAttachmentsTransitRouterAttachment["CenBandwidthPackageId"].isNull())
-			transitRouterAttachmentsObject.cenBandwidthPackageId = valueTransitRouterAttachmentsTransitRouterAttachment["CenBandwidthPackageId"].asString();
+		if(!valueTransitRouterAttachmentsTransitRouterAttachment["Status"].isNull())
+			transitRouterAttachmentsObject.status = valueTransitRouterAttachmentsTransitRouterAttachment["Status"].asString();
+		if(!valueTransitRouterAttachmentsTransitRouterAttachment["TransitRouterAttachmentId"].isNull())
+			transitRouterAttachmentsObject.transitRouterAttachmentId = valueTransitRouterAttachmentsTransitRouterAttachment["TransitRouterAttachmentId"].asString();
 		if(!valueTransitRouterAttachmentsTransitRouterAttachment["BandwidthType"].isNull())
 			transitRouterAttachmentsObject.bandwidthType = valueTransitRouterAttachmentsTransitRouterAttachment["BandwidthType"].asString();
+		if(!valueTransitRouterAttachmentsTransitRouterAttachment["CenBandwidthPackageId"].isNull())
+			transitRouterAttachmentsObject.cenBandwidthPackageId = valueTransitRouterAttachmentsTransitRouterAttachment["CenBandwidthPackageId"].asString();
+		if(!valueTransitRouterAttachmentsTransitRouterAttachment["TransitRouterAttachmentDescription"].isNull())
+			transitRouterAttachmentsObject.transitRouterAttachmentDescription = valueTransitRouterAttachmentsTransitRouterAttachment["TransitRouterAttachmentDescription"].asString();
+		if(!valueTransitRouterAttachmentsTransitRouterAttachment["RegionId"].isNull())
+			transitRouterAttachmentsObject.regionId = valueTransitRouterAttachmentsTransitRouterAttachment["RegionId"].asString();
+		if(!valueTransitRouterAttachmentsTransitRouterAttachment["PeerTransitRouterId"].isNull())
+			transitRouterAttachmentsObject.peerTransitRouterId = valueTransitRouterAttachmentsTransitRouterAttachment["PeerTransitRouterId"].asString();
+		if(!valueTransitRouterAttachmentsTransitRouterAttachment["BandwidthPackageId"].isNull())
+			transitRouterAttachmentsObject.bandwidthPackageId = valueTransitRouterAttachmentsTransitRouterAttachment["BandwidthPackageId"].asString();
+		if(!valueTransitRouterAttachmentsTransitRouterAttachment["TransitRouterId"].isNull())
+			transitRouterAttachmentsObject.transitRouterId = valueTransitRouterAttachmentsTransitRouterAttachment["TransitRouterId"].asString();
+		if(!valueTransitRouterAttachmentsTransitRouterAttachment["PeerTransitRouterRegionId"].isNull())
+			transitRouterAttachmentsObject.peerTransitRouterRegionId = valueTransitRouterAttachmentsTransitRouterAttachment["PeerTransitRouterRegionId"].asString();
+		if(!valueTransitRouterAttachmentsTransitRouterAttachment["ResourceType"].isNull())
+			transitRouterAttachmentsObject.resourceType = valueTransitRouterAttachmentsTransitRouterAttachment["ResourceType"].asString();
+		if(!valueTransitRouterAttachmentsTransitRouterAttachment["Bandwidth"].isNull())
+			transitRouterAttachmentsObject.bandwidth = std::stoi(valueTransitRouterAttachmentsTransitRouterAttachment["Bandwidth"].asString());
+		if(!valueTransitRouterAttachmentsTransitRouterAttachment["GeographicSpanId"].isNull())
+			transitRouterAttachmentsObject.geographicSpanId = valueTransitRouterAttachmentsTransitRouterAttachment["GeographicSpanId"].asString();
+		if(!valueTransitRouterAttachmentsTransitRouterAttachment["PeerTransitRouterOwnerId"].isNull())
+			transitRouterAttachmentsObject.peerTransitRouterOwnerId = std::stol(valueTransitRouterAttachmentsTransitRouterAttachment["PeerTransitRouterOwnerId"].asString());
+		if(!valueTransitRouterAttachmentsTransitRouterAttachment["AutoPublishRouteEnabled"].isNull())
+			transitRouterAttachmentsObject.autoPublishRouteEnabled = valueTransitRouterAttachmentsTransitRouterAttachment["AutoPublishRouteEnabled"].asString() == "true";
+		if(!valueTransitRouterAttachmentsTransitRouterAttachment["TransitRouterAttachmentName"].isNull())
+			transitRouterAttachmentsObject.transitRouterAttachmentName = valueTransitRouterAttachmentsTransitRouterAttachment["TransitRouterAttachmentName"].asString();
 		transitRouterAttachments_.push_back(transitRouterAttachmentsObject);
 	}
+	if(!value["NextToken"].isNull())
+		nextToken_ = value["NextToken"].asString();
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
 	if(!value["MaxResults"].isNull())
 		maxResults_ = std::stoi(value["MaxResults"].asString());
-	if(!value["NextToken"].isNull())
-		nextToken_ = value["NextToken"].asString();
 
 }
 

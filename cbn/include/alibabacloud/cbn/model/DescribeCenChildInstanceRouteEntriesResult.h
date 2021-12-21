@@ -52,8 +52,8 @@ namespace AlibabaCloud
 					std::vector<std::string> communities;
 					std::vector<CenRouteEntry::Conflict> conflicts;
 					std::string destinationCidrBlock;
-					std::string nextHopInstanceId;
 					bool operationalMode;
+					std::string nextHopInstanceId;
 					std::string nextHopType;
 					std::string nextHopRegionId;
 					std::string type;

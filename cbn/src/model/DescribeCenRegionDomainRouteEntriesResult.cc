@@ -43,56 +43,56 @@ void DescribeCenRegionDomainRouteEntriesResult::parse(const std::string &payload
 	for (auto valueCenRouteEntriesCenRouteEntry : allCenRouteEntriesNode)
 	{
 		CenRouteEntry cenRouteEntriesObject;
-		if(!valueCenRouteEntriesCenRouteEntry["DestinationCidrBlock"].isNull())
-			cenRouteEntriesObject.destinationCidrBlock = valueCenRouteEntriesCenRouteEntry["DestinationCidrBlock"].asString();
-		if(!valueCenRouteEntriesCenRouteEntry["Type"].isNull())
-			cenRouteEntriesObject.type = valueCenRouteEntriesCenRouteEntry["Type"].asString();
-		if(!valueCenRouteEntriesCenRouteEntry["NextHopInstanceId"].isNull())
-			cenRouteEntriesObject.nextHopInstanceId = valueCenRouteEntriesCenRouteEntry["NextHopInstanceId"].asString();
-		if(!valueCenRouteEntriesCenRouteEntry["NextHopType"].isNull())
-			cenRouteEntriesObject.nextHopType = valueCenRouteEntriesCenRouteEntry["NextHopType"].asString();
-		if(!valueCenRouteEntriesCenRouteEntry["NextHopRegionId"].isNull())
-			cenRouteEntriesObject.nextHopRegionId = valueCenRouteEntriesCenRouteEntry["NextHopRegionId"].asString();
-		if(!valueCenRouteEntriesCenRouteEntry["Status"].isNull())
-			cenRouteEntriesObject.status = valueCenRouteEntriesCenRouteEntry["Status"].asString();
 		if(!valueCenRouteEntriesCenRouteEntry["ToOtherRegionStatus"].isNull())
 			cenRouteEntriesObject.toOtherRegionStatus = valueCenRouteEntriesCenRouteEntry["ToOtherRegionStatus"].asString();
+		if(!valueCenRouteEntriesCenRouteEntry["Type"].isNull())
+			cenRouteEntriesObject.type = valueCenRouteEntriesCenRouteEntry["Type"].asString();
+		if(!valueCenRouteEntriesCenRouteEntry["Status"].isNull())
+			cenRouteEntriesObject.status = valueCenRouteEntriesCenRouteEntry["Status"].asString();
+		if(!valueCenRouteEntriesCenRouteEntry["NextHopType"].isNull())
+			cenRouteEntriesObject.nextHopType = valueCenRouteEntriesCenRouteEntry["NextHopType"].asString();
+		if(!valueCenRouteEntriesCenRouteEntry["NextHopInstanceId"].isNull())
+			cenRouteEntriesObject.nextHopInstanceId = valueCenRouteEntriesCenRouteEntry["NextHopInstanceId"].asString();
+		if(!valueCenRouteEntriesCenRouteEntry["NextHopRegionId"].isNull())
+			cenRouteEntriesObject.nextHopRegionId = valueCenRouteEntriesCenRouteEntry["NextHopRegionId"].asString();
+		if(!valueCenRouteEntriesCenRouteEntry["DestinationCidrBlock"].isNull())
+			cenRouteEntriesObject.destinationCidrBlock = valueCenRouteEntriesCenRouteEntry["DestinationCidrBlock"].asString();
 		if(!valueCenRouteEntriesCenRouteEntry["Preference"].isNull())
 			cenRouteEntriesObject.preference = std::stoi(valueCenRouteEntriesCenRouteEntry["Preference"].asString());
 		auto allCenRouteMapRecordsNode = valueCenRouteEntriesCenRouteEntry["CenRouteMapRecords"]["CenRouteMapRecord"];
 		for (auto valueCenRouteEntriesCenRouteEntryCenRouteMapRecordsCenRouteMapRecord : allCenRouteMapRecordsNode)
 		{
 			CenRouteEntry::CenRouteMapRecord cenRouteMapRecordsObject;
-			if(!valueCenRouteEntriesCenRouteEntryCenRouteMapRecordsCenRouteMapRecord["RegionId"].isNull())
-				cenRouteMapRecordsObject.regionId = valueCenRouteEntriesCenRouteEntryCenRouteMapRecordsCenRouteMapRecord["RegionId"].asString();
 			if(!valueCenRouteEntriesCenRouteEntryCenRouteMapRecordsCenRouteMapRecord["RouteMapId"].isNull())
 				cenRouteMapRecordsObject.routeMapId = valueCenRouteEntriesCenRouteEntryCenRouteMapRecordsCenRouteMapRecord["RouteMapId"].asString();
+			if(!valueCenRouteEntriesCenRouteEntryCenRouteMapRecordsCenRouteMapRecord["RegionId"].isNull())
+				cenRouteMapRecordsObject.regionId = valueCenRouteEntriesCenRouteEntryCenRouteMapRecordsCenRouteMapRecord["RegionId"].asString();
 			cenRouteEntriesObject.cenRouteMapRecords.push_back(cenRouteMapRecordsObject);
 		}
 		auto allCenOutRouteMapRecordsNode = valueCenRouteEntriesCenRouteEntry["CenOutRouteMapRecords"]["CenOutRouteMapRecord"];
 		for (auto valueCenRouteEntriesCenRouteEntryCenOutRouteMapRecordsCenOutRouteMapRecord : allCenOutRouteMapRecordsNode)
 		{
 			CenRouteEntry::CenOutRouteMapRecord cenOutRouteMapRecordsObject;
-			if(!valueCenRouteEntriesCenRouteEntryCenOutRouteMapRecordsCenOutRouteMapRecord["RegionId"].isNull())
-				cenOutRouteMapRecordsObject.regionId = valueCenRouteEntriesCenRouteEntryCenOutRouteMapRecordsCenOutRouteMapRecord["RegionId"].asString();
 			if(!valueCenRouteEntriesCenRouteEntryCenOutRouteMapRecordsCenOutRouteMapRecord["RouteMapId"].isNull())
 				cenOutRouteMapRecordsObject.routeMapId = valueCenRouteEntriesCenRouteEntryCenOutRouteMapRecordsCenOutRouteMapRecord["RouteMapId"].asString();
+			if(!valueCenRouteEntriesCenRouteEntryCenOutRouteMapRecordsCenOutRouteMapRecord["RegionId"].isNull())
+				cenOutRouteMapRecordsObject.regionId = valueCenRouteEntriesCenRouteEntryCenOutRouteMapRecordsCenOutRouteMapRecord["RegionId"].asString();
 			cenRouteEntriesObject.cenOutRouteMapRecords.push_back(cenOutRouteMapRecordsObject);
 		}
-		auto allAsPaths = value["AsPaths"]["AsPath"];
-		for (auto value : allAsPaths)
-			cenRouteEntriesObject.asPaths.push_back(value.asString());
 		auto allCommunities = value["Communities"]["Community"];
 		for (auto value : allCommunities)
 			cenRouteEntriesObject.communities.push_back(value.asString());
+		auto allAsPaths = value["AsPaths"]["AsPath"];
+		for (auto value : allAsPaths)
+			cenRouteEntriesObject.asPaths.push_back(value.asString());
 		cenRouteEntries_.push_back(cenRouteEntriesObject);
 	}
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["PageNumber"].isNull())
 		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
 
 }
 

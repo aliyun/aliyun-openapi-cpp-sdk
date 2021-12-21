@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,145 +18,118 @@
 
 using AlibabaCloud::Cbn::Model::DescribeCenBandwidthPackagesRequest;
 
-DescribeCenBandwidthPackagesRequest::DescribeCenBandwidthPackagesRequest() :
-	RpcServiceRequest("cbn", "2017-09-12", "DescribeCenBandwidthPackages")
-{
-	setMethod(HttpRequest::Method::Post);
+DescribeCenBandwidthPackagesRequest::DescribeCenBandwidthPackagesRequest()
+    : RpcServiceRequest("cbn", "2017-09-12", "DescribeCenBandwidthPackages") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DescribeCenBandwidthPackagesRequest::~DescribeCenBandwidthPackagesRequest()
-{}
+DescribeCenBandwidthPackagesRequest::~DescribeCenBandwidthPackagesRequest() {}
 
-long DescribeCenBandwidthPackagesRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long DescribeCenBandwidthPackagesRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void DescribeCenBandwidthPackagesRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void DescribeCenBandwidthPackagesRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-bool DescribeCenBandwidthPackagesRequest::getIncludeReservationData()const
-{
-	return includeReservationData_;
+bool DescribeCenBandwidthPackagesRequest::getIncludeReservationData() const {
+  return includeReservationData_;
 }
 
-void DescribeCenBandwidthPackagesRequest::setIncludeReservationData(bool includeReservationData)
-{
-	includeReservationData_ = includeReservationData;
-	setParameter("IncludeReservationData", includeReservationData ? "true" : "false");
+void DescribeCenBandwidthPackagesRequest::setIncludeReservationData(bool includeReservationData) {
+  includeReservationData_ = includeReservationData;
+  setParameter(std::string("IncludeReservationData"), includeReservationData ? "true" : "false");
 }
 
-int DescribeCenBandwidthPackagesRequest::getPageNumber()const
-{
-	return pageNumber_;
+int DescribeCenBandwidthPackagesRequest::getPageNumber() const {
+  return pageNumber_;
 }
 
-void DescribeCenBandwidthPackagesRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+void DescribeCenBandwidthPackagesRequest::setPageNumber(int pageNumber) {
+  pageNumber_ = pageNumber;
+  setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
-bool DescribeCenBandwidthPackagesRequest::getIsOrKey()const
-{
-	return isOrKey_;
+bool DescribeCenBandwidthPackagesRequest::getIsOrKey() const {
+  return isOrKey_;
 }
 
-void DescribeCenBandwidthPackagesRequest::setIsOrKey(bool isOrKey)
-{
-	isOrKey_ = isOrKey;
-	setParameter("IsOrKey", isOrKey ? "true" : "false");
+void DescribeCenBandwidthPackagesRequest::setIsOrKey(bool isOrKey) {
+  isOrKey_ = isOrKey;
+  setParameter(std::string("IsOrKey"), isOrKey ? "true" : "false");
 }
 
-std::string DescribeCenBandwidthPackagesRequest::getResourceGroupId()const
-{
-	return resourceGroupId_;
+std::string DescribeCenBandwidthPackagesRequest::getResourceGroupId() const {
+  return resourceGroupId_;
 }
 
-void DescribeCenBandwidthPackagesRequest::setResourceGroupId(const std::string& resourceGroupId)
-{
-	resourceGroupId_ = resourceGroupId;
-	setParameter("ResourceGroupId", resourceGroupId);
+void DescribeCenBandwidthPackagesRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
-int DescribeCenBandwidthPackagesRequest::getPageSize()const
-{
-	return pageSize_;
+int DescribeCenBandwidthPackagesRequest::getPageSize() const {
+  return pageSize_;
 }
 
-void DescribeCenBandwidthPackagesRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+void DescribeCenBandwidthPackagesRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
-std::vector<DescribeCenBandwidthPackagesRequest::Tag> DescribeCenBandwidthPackagesRequest::getTag()const
-{
-	return tag_;
+std::vector<DescribeCenBandwidthPackagesRequest::Tag> DescribeCenBandwidthPackagesRequest::getTag() const {
+  return tag_;
 }
 
-void DescribeCenBandwidthPackagesRequest::setTag(const std::vector<Tag>& tag)
-{
-	tag_ = tag;
-	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
-		auto tagObj = tag.at(dep1);
-		std::string tagObjStr = "Tag." + std::to_string(dep1 + 1);
-		setParameter(tagObjStr + ".Value", tagObj.value);
-		setParameter(tagObjStr + ".Key", tagObj.key);
-	}
+void DescribeCenBandwidthPackagesRequest::setTag(const std::vector<DescribeCenBandwidthPackagesRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setParameter(tagObjStr + ".Value", tagObj.value);
+    setParameter(tagObjStr + ".Key", tagObj.key);
+  }
 }
 
-std::string DescribeCenBandwidthPackagesRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string DescribeCenBandwidthPackagesRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void DescribeCenBandwidthPackagesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void DescribeCenBandwidthPackagesRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string DescribeCenBandwidthPackagesRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string DescribeCenBandwidthPackagesRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void DescribeCenBandwidthPackagesRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void DescribeCenBandwidthPackagesRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-long DescribeCenBandwidthPackagesRequest::getOwnerId()const
-{
-	return ownerId_;
+long DescribeCenBandwidthPackagesRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void DescribeCenBandwidthPackagesRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void DescribeCenBandwidthPackagesRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::vector<DescribeCenBandwidthPackagesRequest::Filter> DescribeCenBandwidthPackagesRequest::getFilter()const
-{
-	return filter_;
+std::vector<DescribeCenBandwidthPackagesRequest::Filter> DescribeCenBandwidthPackagesRequest::getFilter() const {
+  return filter_;
 }
 
-void DescribeCenBandwidthPackagesRequest::setFilter(const std::vector<Filter>& filter)
-{
-	filter_ = filter;
-	for(int dep1 = 0; dep1!= filter.size(); dep1++) {
-		auto filterObj = filter.at(dep1);
-		std::string filterObjStr = "Filter." + std::to_string(dep1 + 1);
-		for(int dep2 = 0; dep2!= filterObj.value.size(); dep2++) {
-			setParameter(filterObjStr + ".Value."+ std::to_string(dep2), filterObj.value.at(dep2));
-		}
-		setParameter(filterObjStr + ".Key", filterObj.key);
-	}
+void DescribeCenBandwidthPackagesRequest::setFilter(const std::vector<DescribeCenBandwidthPackagesRequest::Filter> &filter) {
+  filter_ = filter;
+  for(int dep1 = 0; dep1 != filter.size(); dep1++) {
+  auto filterObj = filter.at(dep1);
+  std::string filterObjStr = std::string("Filter") + "." + std::to_string(dep1 + 1);
+    setParameter(filterObjStr + ".Key", filterObj.key);
+  }
 }
 

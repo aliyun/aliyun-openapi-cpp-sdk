@@ -34,23 +34,23 @@ namespace AlibabaCloud
 			public:
 				struct TransitRouterAttachment
 				{
-					std::string transitRouterAttachmentId;
 					std::string status;
+					std::string transitRouterAttachmentId;
 					std::string geographicSpanId;
 					long peerTransitRouterOwnerId;
 					std::string transitRouterAttachmentName;
 					std::string resourceType;
-					bool autoPublishRouteEnabled;
 					std::string bandwidthType;
+					bool autoPublishRouteEnabled;
 					int bandwidth;
 					std::string creationTime;
 					std::string bandwidthPackageId;
-					std::string peerTransitRouterId;
 					std::string regionId;
+					std::string peerTransitRouterId;
 					std::string cenBandwidthPackageId;
 					std::string transitRouterAttachmentDescription;
-					std::string peerTransitRouterRegionId;
 					std::string transitRouterId;
+					std::string peerTransitRouterRegionId;
 				};
 
 

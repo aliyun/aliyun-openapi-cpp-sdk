@@ -43,28 +43,28 @@ void DescribeCenAttachedChildInstancesResult::parse(const std::string &payload)
 	for (auto valueChildInstancesChildInstance : allChildInstancesNode)
 	{
 		ChildInstance childInstancesObject;
-		if(!valueChildInstancesChildInstance["CenId"].isNull())
-			childInstancesObject.cenId = valueChildInstancesChildInstance["CenId"].asString();
-		if(!valueChildInstancesChildInstance["ChildInstanceId"].isNull())
-			childInstancesObject.childInstanceId = valueChildInstancesChildInstance["ChildInstanceId"].asString();
 		if(!valueChildInstancesChildInstance["ChildInstanceType"].isNull())
 			childInstancesObject.childInstanceType = valueChildInstancesChildInstance["ChildInstanceType"].asString();
+		if(!valueChildInstancesChildInstance["Status"].isNull())
+			childInstancesObject.status = valueChildInstancesChildInstance["Status"].asString();
 		if(!valueChildInstancesChildInstance["ChildInstanceRegionId"].isNull())
 			childInstancesObject.childInstanceRegionId = valueChildInstancesChildInstance["ChildInstanceRegionId"].asString();
 		if(!valueChildInstancesChildInstance["ChildInstanceOwnerId"].isNull())
 			childInstancesObject.childInstanceOwnerId = std::stol(valueChildInstancesChildInstance["ChildInstanceOwnerId"].asString());
-		if(!valueChildInstancesChildInstance["Status"].isNull())
-			childInstancesObject.status = valueChildInstancesChildInstance["Status"].asString();
+		if(!valueChildInstancesChildInstance["ChildInstanceId"].isNull())
+			childInstancesObject.childInstanceId = valueChildInstancesChildInstance["ChildInstanceId"].asString();
+		if(!valueChildInstancesChildInstance["CenId"].isNull())
+			childInstancesObject.cenId = valueChildInstancesChildInstance["CenId"].asString();
 		if(!valueChildInstancesChildInstance["ChildInstanceAttachTime"].isNull())
 			childInstancesObject.childInstanceAttachTime = valueChildInstancesChildInstance["ChildInstanceAttachTime"].asString();
 		childInstances_.push_back(childInstancesObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 

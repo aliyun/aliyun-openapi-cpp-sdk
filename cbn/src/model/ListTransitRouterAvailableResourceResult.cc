@@ -39,12 +39,12 @@ void ListTransitRouterAvailableResourceResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allMasterZones = value["MasterZones"]["MasterZone"];
-	for (const auto &item : allMasterZones)
-		masterZones_.push_back(item.asString());
 	auto allSlaveZones = value["SlaveZones"]["SlaveZone"];
 	for (const auto &item : allSlaveZones)
 		slaveZones_.push_back(item.asString());
+	auto allMasterZones = value["MasterZones"]["MasterZone"];
+	for (const auto &item : allMasterZones)
+		masterZones_.push_back(item.asString());
 
 }
 
