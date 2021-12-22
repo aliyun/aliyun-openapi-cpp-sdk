@@ -41,7 +41,21 @@ void UploadStreamByURLResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["StreamJobId"].isNull())
 		streamJobId_ = value["StreamJobId"].asString();
+	if(!value["FileURL"].isNull())
+		fileURL_ = value["FileURL"].asString();
+	if(!value["SourceURL"].isNull())
+		sourceURL_ = value["SourceURL"].asString();
 
+}
+
+std::string UploadStreamByURLResult::getFileURL()const
+{
+	return fileURL_;
+}
+
+std::string UploadStreamByURLResult::getSourceURL()const
+{
+	return sourceURL_;
 }
 
 std::string UploadStreamByURLResult::getStreamJobId()const

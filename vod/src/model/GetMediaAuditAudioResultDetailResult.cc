@@ -48,10 +48,10 @@ void GetMediaAuditAudioResultDetailResult::parse(const std::string &payload)
 	for (auto mediaAuditAudioResultDetailNodeListListItem : allListNode)
 	{
 		MediaAuditAudioResultDetail::ListItem listItemObject;
-		if(!mediaAuditAudioResultDetailNodeListListItem["StartTime"].isNull())
-			listItemObject.startTime = std::stol(mediaAuditAudioResultDetailNodeListListItem["StartTime"].asString());
 		if(!mediaAuditAudioResultDetailNodeListListItem["EndTime"].isNull())
 			listItemObject.endTime = std::stol(mediaAuditAudioResultDetailNodeListListItem["EndTime"].asString());
+		if(!mediaAuditAudioResultDetailNodeListListItem["StartTime"].isNull())
+			listItemObject.startTime = std::stol(mediaAuditAudioResultDetailNodeListListItem["StartTime"].asString());
 		if(!mediaAuditAudioResultDetailNodeListListItem["Text"].isNull())
 			listItemObject.text = mediaAuditAudioResultDetailNodeListListItem["Text"].asString();
 		if(!mediaAuditAudioResultDetailNodeListListItem["Label"].isNull())

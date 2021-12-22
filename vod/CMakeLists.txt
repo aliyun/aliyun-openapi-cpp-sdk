@@ -121,6 +121,8 @@ set(vod_public_header_model
 	include/alibabacloud/vod/model/DescribeVodDomainRealtimeLogDeliveryResult.h
 	include/alibabacloud/vod/model/DescribeVodDomainSrcBpsDataRequest.h
 	include/alibabacloud/vod/model/DescribeVodDomainSrcBpsDataResult.h
+	include/alibabacloud/vod/model/DescribeVodDomainSrcTrafficDataRequest.h
+	include/alibabacloud/vod/model/DescribeVodDomainSrcTrafficDataResult.h
 	include/alibabacloud/vod/model/DescribeVodDomainTrafficDataRequest.h
 	include/alibabacloud/vod/model/DescribeVodDomainTrafficDataResult.h
 	include/alibabacloud/vod/model/DescribeVodDomainUsageDataRequest.h
@@ -434,6 +436,8 @@ set(vod_src
 	src/model/DescribeVodDomainRealtimeLogDeliveryResult.cc
 	src/model/DescribeVodDomainSrcBpsDataRequest.cc
 	src/model/DescribeVodDomainSrcBpsDataResult.cc
+	src/model/DescribeVodDomainSrcTrafficDataRequest.cc
+	src/model/DescribeVodDomainSrcTrafficDataResult.cc
 	src/model/DescribeVodDomainTrafficDataRequest.cc
 	src/model/DescribeVodDomainTrafficDataResult.cc
 	src/model/DescribeVodDomainUsageDataRequest.cc

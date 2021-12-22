@@ -1,3 +1,7 @@
+2021-12-22 Version: 1.36.991
+- Add return fields to UploadStreamByURL.
+- Set DescribeVodDomainSrcTrafficData pulic.
+
 2021-12-21 Version: 1.36.990
 - Support Darabonba API.
 

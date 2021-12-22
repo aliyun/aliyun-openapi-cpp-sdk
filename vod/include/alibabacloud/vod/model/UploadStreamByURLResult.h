@@ -37,11 +37,15 @@ namespace AlibabaCloud
 				UploadStreamByURLResult();
 				explicit UploadStreamByURLResult(const std::string &payload);
 				~UploadStreamByURLResult();
+				std::string getFileURL()const;
+				std::string getSourceURL()const;
 				std::string getStreamJobId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string fileURL_;
+				std::string sourceURL_;
 				std::string streamJobId_;
 
 			};
