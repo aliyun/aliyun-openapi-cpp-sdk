@@ -1,3 +1,6 @@
+2021-12-23 Version: 1.36.992
+- Fix array params.
+
 2021-12-22 Version: 1.36.991
 - Add return fields to UploadStreamByURL.
 - Set DescribeVodDomainSrcTrafficData pulic.
