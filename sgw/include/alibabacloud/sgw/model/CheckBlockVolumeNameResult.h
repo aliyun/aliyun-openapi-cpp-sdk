@@ -40,6 +40,7 @@ namespace AlibabaCloud
 				std::string getIsRequireRecovery()const;
 				std::string getMessage()const;
 				std::string getCode()const;
+				bool getIsAlreadyExist()const;
 				bool getSuccess()const;
 
 			protected:
@@ -48,6 +49,7 @@ namespace AlibabaCloud
 				std::string isRequireRecovery_;
 				std::string message_;
 				std::string code_;
+				bool isAlreadyExist_;
 				bool success_;
 
 			};

@@ -39,14 +39,16 @@ void CheckBlockVolumeNameResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
 	if(!value["IsRequireRecovery"].isNull())
 		isRequireRecovery_ = value["IsRequireRecovery"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
+	if(!value["IsAlreadyExist"].isNull())
+		isAlreadyExist_ = value["IsAlreadyExist"].asString() == "true";
 
 }
 
@@ -63,6 +65,11 @@ std::string CheckBlockVolumeNameResult::getMessage()const
 std::string CheckBlockVolumeNameResult::getCode()const
 {
 	return code_;
+}
+
+bool CheckBlockVolumeNameResult::getIsAlreadyExist()const
+{
+	return isAlreadyExist_;
 }
 
 bool CheckBlockVolumeNameResult::getSuccess()const
