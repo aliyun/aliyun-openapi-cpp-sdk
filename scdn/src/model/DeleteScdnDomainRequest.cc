@@ -27,6 +27,17 @@ DeleteScdnDomainRequest::DeleteScdnDomainRequest() :
 DeleteScdnDomainRequest::~DeleteScdnDomainRequest()
 {}
 
+std::string DeleteScdnDomainRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void DeleteScdnDomainRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setParameter("SecurityToken", securityToken);
+}
+
 std::string DeleteScdnDomainRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -58,16 +69,5 @@ void DeleteScdnDomainRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DeleteScdnDomainRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DeleteScdnDomainRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
 }
 

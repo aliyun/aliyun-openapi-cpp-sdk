@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SCDN_MODEL_UPDATESCDNDOMAINREQUEST_H_
-#define ALIBABACLOUD_SCDN_MODEL_UPDATESCDNDOMAINREQUEST_H_
+#ifndef ALIBABACLOUD_SCDN_MODEL_DESCRIBESCDNCCINFOREQUEST_H_
+#define ALIBABACLOUD_SCDN_MODEL_DESCRIBESCDNCCINFOREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,33 +28,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SCDN_EXPORT UpdateScdnDomainRequest : public RpcServiceRequest
+			class ALIBABACLOUD_SCDN_EXPORT DescribeScdnCcInfoRequest : public RpcServiceRequest
 			{
 
 			public:
-				UpdateScdnDomainRequest();
-				~UpdateScdnDomainRequest();
+				DescribeScdnCcInfoRequest();
+				~DescribeScdnCcInfoRequest();
 
-				std::string getSources()const;
-				void setSources(const std::string& sources);
-				std::string getResourceGroupId()const;
-				void setResourceGroupId(const std::string& resourceGroupId);
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
-				std::string getDomainName()const;
-				void setDomainName(const std::string& domainName);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 
             private:
-				std::string sources_;
-				std::string resourceGroupId_;
-				std::string securityToken_;
-				std::string domainName_;
 				long ownerId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SCDN_MODEL_UPDATESCDNDOMAINREQUEST_H_
+#endif // !ALIBABACLOUD_SCDN_MODEL_DESCRIBESCDNCCINFOREQUEST_H_

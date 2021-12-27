@@ -1,3 +1,6 @@
+2021-12-27 Version: 1.36.994
+- Add DescribeScdnDomainCcInfo.
+
 2021-12-24 Version: 1.36.993
 - Supported CheckBlockVolumeName api for Checking the volume name has been already used by the OSS bucket folder.
 

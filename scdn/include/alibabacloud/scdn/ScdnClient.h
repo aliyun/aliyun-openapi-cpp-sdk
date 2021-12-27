@@ -40,6 +40,8 @@
 #include "model/DeleteScdnDomainResult.h"
 #include "model/DeleteScdnSpecificConfigRequest.h"
 #include "model/DeleteScdnSpecificConfigResult.h"
+#include "model/DescribeScdnCcInfoRequest.h"
+#include "model/DescribeScdnCcInfoResult.h"
 #include "model/DescribeScdnCcQpsInfoRequest.h"
 #include "model/DescribeScdnCcQpsInfoResult.h"
 #include "model/DescribeScdnCcTopIpRequest.h"
@@ -178,6 +180,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteScdnSpecificConfigResult> DeleteScdnSpecificConfigOutcome;
 			typedef std::future<DeleteScdnSpecificConfigOutcome> DeleteScdnSpecificConfigOutcomeCallable;
 			typedef std::function<void(const ScdnClient*, const Model::DeleteScdnSpecificConfigRequest&, const DeleteScdnSpecificConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteScdnSpecificConfigAsyncHandler;
+			typedef Outcome<Error, Model::DescribeScdnCcInfoResult> DescribeScdnCcInfoOutcome;
+			typedef std::future<DescribeScdnCcInfoOutcome> DescribeScdnCcInfoOutcomeCallable;
+			typedef std::function<void(const ScdnClient*, const Model::DescribeScdnCcInfoRequest&, const DescribeScdnCcInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScdnCcInfoAsyncHandler;
 			typedef Outcome<Error, Model::DescribeScdnCcQpsInfoResult> DescribeScdnCcQpsInfoOutcome;
 			typedef std::future<DescribeScdnCcQpsInfoOutcome> DescribeScdnCcQpsInfoOutcomeCallable;
 			typedef std::function<void(const ScdnClient*, const Model::DescribeScdnCcQpsInfoRequest&, const DescribeScdnCcQpsInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScdnCcQpsInfoAsyncHandler;
@@ -363,6 +368,9 @@ namespace AlibabaCloud
 			DeleteScdnSpecificConfigOutcome deleteScdnSpecificConfig(const Model::DeleteScdnSpecificConfigRequest &request)const;
 			void deleteScdnSpecificConfigAsync(const Model::DeleteScdnSpecificConfigRequest& request, const DeleteScdnSpecificConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteScdnSpecificConfigOutcomeCallable deleteScdnSpecificConfigCallable(const Model::DeleteScdnSpecificConfigRequest& request) const;
+			DescribeScdnCcInfoOutcome describeScdnCcInfo(const Model::DescribeScdnCcInfoRequest &request)const;
+			void describeScdnCcInfoAsync(const Model::DescribeScdnCcInfoRequest& request, const DescribeScdnCcInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeScdnCcInfoOutcomeCallable describeScdnCcInfoCallable(const Model::DescribeScdnCcInfoRequest& request) const;
 			DescribeScdnCcQpsInfoOutcome describeScdnCcQpsInfo(const Model::DescribeScdnCcQpsInfoRequest &request)const;
 			void describeScdnCcQpsInfoAsync(const Model::DescribeScdnCcQpsInfoRequest& request, const DescribeScdnCcQpsInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeScdnCcQpsInfoOutcomeCallable describeScdnCcQpsInfoCallable(const Model::DescribeScdnCcQpsInfoRequest& request) const;

@@ -38,28 +38,6 @@ void UpdateScdnDomainRequest::setSources(const std::string& sources)
 	setParameter("Sources", sources);
 }
 
-std::string UpdateScdnDomainRequest::getDomainName()const
-{
-	return domainName_;
-}
-
-void UpdateScdnDomainRequest::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-	setParameter("DomainName", domainName);
-}
-
-long UpdateScdnDomainRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void UpdateScdnDomainRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
-}
-
 std::string UpdateScdnDomainRequest::getResourceGroupId()const
 {
 	return resourceGroupId_;
@@ -80,5 +58,27 @@ void UpdateScdnDomainRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
 	setParameter("SecurityToken", securityToken);
+}
+
+std::string UpdateScdnDomainRequest::getDomainName()const
+{
+	return domainName_;
+}
+
+void UpdateScdnDomainRequest::setDomainName(const std::string& domainName)
+{
+	domainName_ = domainName;
+	setParameter("DomainName", domainName);
+}
+
+long UpdateScdnDomainRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void UpdateScdnDomainRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

@@ -375,6 +375,42 @@ ScdnClient::DeleteScdnSpecificConfigOutcomeCallable ScdnClient::deleteScdnSpecif
 	return task->get_future();
 }
 
+ScdnClient::DescribeScdnCcInfoOutcome ScdnClient::describeScdnCcInfo(const DescribeScdnCcInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeScdnCcInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeScdnCcInfoOutcome(DescribeScdnCcInfoResult(outcome.result()));
+	else
+		return DescribeScdnCcInfoOutcome(outcome.error());
+}
+
+void ScdnClient::describeScdnCcInfoAsync(const DescribeScdnCcInfoRequest& request, const DescribeScdnCcInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeScdnCcInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ScdnClient::DescribeScdnCcInfoOutcomeCallable ScdnClient::describeScdnCcInfoCallable(const DescribeScdnCcInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeScdnCcInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->describeScdnCcInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ScdnClient::DescribeScdnCcQpsInfoOutcome ScdnClient::describeScdnCcQpsInfo(const DescribeScdnCcQpsInfoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
