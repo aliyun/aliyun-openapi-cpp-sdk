@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DCDN_MODEL_DISABLEDCDNDOMAINOFFLINELOGDELIVERYRESULT_H_
-#define ALIBABACLOUD_DCDN_MODEL_DISABLEDCDNDOMAINOFFLINELOGDELIVERYRESULT_H_
+#ifndef ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNESEXCEPTIONDATARESULT_H_
+#define ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNESEXCEPTIONDATARESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,21 +29,29 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DCDN_EXPORT DisableDcdnDomainOfflineLogDeliveryResult : public ServiceResult
+			class ALIBABACLOUD_DCDN_EXPORT DescribeDcdnEsExceptionDataResult : public ServiceResult
 			{
 			public:
+				struct Content
+				{
+					std::vector<std::string> points;
+					std::vector<std::string> columns;
+					std::string name;
+				};
 
 
-				DisableDcdnDomainOfflineLogDeliveryResult();
-				explicit DisableDcdnDomainOfflineLogDeliveryResult(const std::string &payload);
-				~DisableDcdnDomainOfflineLogDeliveryResult();
+				DescribeDcdnEsExceptionDataResult();
+				explicit DescribeDcdnEsExceptionDataResult(const std::string &payload);
+				~DescribeDcdnEsExceptionDataResult();
+				std::vector<Content> getContents()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::vector<Content> contents_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DCDN_MODEL_DISABLEDCDNDOMAINOFFLINELOGDELIVERYRESULT_H_
+#endif // !ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNESEXCEPTIONDATARESULT_H_

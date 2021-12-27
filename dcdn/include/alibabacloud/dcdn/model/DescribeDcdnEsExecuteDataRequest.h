@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNOFFLINELOGDELIVERYFIELDREQUEST_H_
-#define ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNOFFLINELOGDELIVERYFIELDREQUEST_H_
+#ifndef ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNESEXECUTEDATAREQUEST_H_
+#define ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNESEXECUTEDATAREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,21 +28,30 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DCDN_EXPORT DescribeDcdnOfflineLogDeliveryFieldRequest : public RpcServiceRequest
+			class ALIBABACLOUD_DCDN_EXPORT DescribeDcdnEsExecuteDataRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeDcdnOfflineLogDeliveryFieldRequest();
-				~DescribeDcdnOfflineLogDeliveryFieldRequest();
+				DescribeDcdnEsExecuteDataRequest();
+				~DescribeDcdnEsExecuteDataRequest();
 
+				std::string getStartTime()const;
+				void setStartTime(const std::string& startTime);
+				std::string getEndTime()const;
+				void setEndTime(const std::string& endTime);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getRuleId()const;
+				void setRuleId(const std::string& ruleId);
 
             private:
+				std::string startTime_;
+				std::string endTime_;
 				long ownerId_;
+				std::string ruleId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNOFFLINELOGDELIVERYFIELDREQUEST_H_
+#endif // !ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNESEXECUTEDATAREQUEST_H_

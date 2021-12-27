@@ -48,8 +48,6 @@
 #include "model/CreateDcdnCertificateSigningRequestResult.h"
 #include "model/CreateDcdnDeliverTaskRequest.h"
 #include "model/CreateDcdnDeliverTaskResult.h"
-#include "model/CreateDcdnDomainOfflineLogDeliveryRequest.h"
-#include "model/CreateDcdnDomainOfflineLogDeliveryResult.h"
 #include "model/CreateDcdnSLSRealTimeLogDeliveryRequest.h"
 #include "model/CreateDcdnSLSRealTimeLogDeliveryResult.h"
 #include "model/CreateDcdnSubTaskRequest.h"
@@ -178,6 +176,10 @@
 #include "model/DescribeDcdnDomainWebsocketHttpCodeDataResult.h"
 #include "model/DescribeDcdnDomainWebsocketTrafficDataRequest.h"
 #include "model/DescribeDcdnDomainWebsocketTrafficDataResult.h"
+#include "model/DescribeDcdnEsExceptionDataRequest.h"
+#include "model/DescribeDcdnEsExceptionDataResult.h"
+#include "model/DescribeDcdnEsExecuteDataRequest.h"
+#include "model/DescribeDcdnEsExecuteDataResult.h"
 #include "model/DescribeDcdnHttpsDomainListRequest.h"
 #include "model/DescribeDcdnHttpsDomainListResult.h"
 #include "model/DescribeDcdnIpInfoRequest.h"
@@ -190,14 +192,6 @@
 #include "model/DescribeDcdnIpaServiceResult.h"
 #include "model/DescribeDcdnIpaUserDomainsRequest.h"
 #include "model/DescribeDcdnIpaUserDomainsResult.h"
-#include "model/DescribeDcdnOfflineLogDeliveryRequest.h"
-#include "model/DescribeDcdnOfflineLogDeliveryResult.h"
-#include "model/DescribeDcdnOfflineLogDeliveryFieldRequest.h"
-#include "model/DescribeDcdnOfflineLogDeliveryFieldResult.h"
-#include "model/DescribeDcdnOfflineLogDeliveryRegionsRequest.h"
-#include "model/DescribeDcdnOfflineLogDeliveryRegionsResult.h"
-#include "model/DescribeDcdnOfflineLogDeliveryStatusRequest.h"
-#include "model/DescribeDcdnOfflineLogDeliveryStatusResult.h"
 #include "model/DescribeDcdnRealTimeDeliveryFieldRequest.h"
 #include "model/DescribeDcdnRealTimeDeliveryFieldResult.h"
 #include "model/DescribeDcdnRefreshQuotaRequest.h"
@@ -276,14 +270,8 @@
 #include "model/DescribeUserErStatusResult.h"
 #include "model/DescribeUserLogserviceStatusRequest.h"
 #include "model/DescribeUserLogserviceStatusResult.h"
-#include "model/DisableDcdnDomainOfflineLogDeliveryRequest.h"
-#include "model/DisableDcdnDomainOfflineLogDeliveryResult.h"
-#include "model/DisableDcdnOfflineLogDeliveryRequest.h"
-#include "model/DisableDcdnOfflineLogDeliveryResult.h"
 #include "model/EditRoutineConfRequest.h"
 #include "model/EditRoutineConfResult.h"
-#include "model/EnableDcdnDomainOfflineLogDeliveryRequest.h"
-#include "model/EnableDcdnDomainOfflineLogDeliveryResult.h"
 #include "model/ListDcdnRealTimeDeliveryProjectRequest.h"
 #include "model/ListDcdnRealTimeDeliveryProjectResult.h"
 #include "model/ModifyDCdnDomainSchdmByPropertyRequest.h"
@@ -394,9 +382,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateDcdnDeliverTaskResult> CreateDcdnDeliverTaskOutcome;
 			typedef std::future<CreateDcdnDeliverTaskOutcome> CreateDcdnDeliverTaskOutcomeCallable;
 			typedef std::function<void(const DcdnClient*, const Model::CreateDcdnDeliverTaskRequest&, const CreateDcdnDeliverTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDcdnDeliverTaskAsyncHandler;
-			typedef Outcome<Error, Model::CreateDcdnDomainOfflineLogDeliveryResult> CreateDcdnDomainOfflineLogDeliveryOutcome;
-			typedef std::future<CreateDcdnDomainOfflineLogDeliveryOutcome> CreateDcdnDomainOfflineLogDeliveryOutcomeCallable;
-			typedef std::function<void(const DcdnClient*, const Model::CreateDcdnDomainOfflineLogDeliveryRequest&, const CreateDcdnDomainOfflineLogDeliveryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDcdnDomainOfflineLogDeliveryAsyncHandler;
 			typedef Outcome<Error, Model::CreateDcdnSLSRealTimeLogDeliveryResult> CreateDcdnSLSRealTimeLogDeliveryOutcome;
 			typedef std::future<CreateDcdnSLSRealTimeLogDeliveryOutcome> CreateDcdnSLSRealTimeLogDeliveryOutcomeCallable;
 			typedef std::function<void(const DcdnClient*, const Model::CreateDcdnSLSRealTimeLogDeliveryRequest&, const CreateDcdnSLSRealTimeLogDeliveryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDcdnSLSRealTimeLogDeliveryAsyncHandler;
@@ -589,6 +574,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeDcdnDomainWebsocketTrafficDataResult> DescribeDcdnDomainWebsocketTrafficDataOutcome;
 			typedef std::future<DescribeDcdnDomainWebsocketTrafficDataOutcome> DescribeDcdnDomainWebsocketTrafficDataOutcomeCallable;
 			typedef std::function<void(const DcdnClient*, const Model::DescribeDcdnDomainWebsocketTrafficDataRequest&, const DescribeDcdnDomainWebsocketTrafficDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDcdnDomainWebsocketTrafficDataAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDcdnEsExceptionDataResult> DescribeDcdnEsExceptionDataOutcome;
+			typedef std::future<DescribeDcdnEsExceptionDataOutcome> DescribeDcdnEsExceptionDataOutcomeCallable;
+			typedef std::function<void(const DcdnClient*, const Model::DescribeDcdnEsExceptionDataRequest&, const DescribeDcdnEsExceptionDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDcdnEsExceptionDataAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDcdnEsExecuteDataResult> DescribeDcdnEsExecuteDataOutcome;
+			typedef std::future<DescribeDcdnEsExecuteDataOutcome> DescribeDcdnEsExecuteDataOutcomeCallable;
+			typedef std::function<void(const DcdnClient*, const Model::DescribeDcdnEsExecuteDataRequest&, const DescribeDcdnEsExecuteDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDcdnEsExecuteDataAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDcdnHttpsDomainListResult> DescribeDcdnHttpsDomainListOutcome;
 			typedef std::future<DescribeDcdnHttpsDomainListOutcome> DescribeDcdnHttpsDomainListOutcomeCallable;
 			typedef std::function<void(const DcdnClient*, const Model::DescribeDcdnHttpsDomainListRequest&, const DescribeDcdnHttpsDomainListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDcdnHttpsDomainListAsyncHandler;
@@ -607,18 +598,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeDcdnIpaUserDomainsResult> DescribeDcdnIpaUserDomainsOutcome;
 			typedef std::future<DescribeDcdnIpaUserDomainsOutcome> DescribeDcdnIpaUserDomainsOutcomeCallable;
 			typedef std::function<void(const DcdnClient*, const Model::DescribeDcdnIpaUserDomainsRequest&, const DescribeDcdnIpaUserDomainsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDcdnIpaUserDomainsAsyncHandler;
-			typedef Outcome<Error, Model::DescribeDcdnOfflineLogDeliveryResult> DescribeDcdnOfflineLogDeliveryOutcome;
-			typedef std::future<DescribeDcdnOfflineLogDeliveryOutcome> DescribeDcdnOfflineLogDeliveryOutcomeCallable;
-			typedef std::function<void(const DcdnClient*, const Model::DescribeDcdnOfflineLogDeliveryRequest&, const DescribeDcdnOfflineLogDeliveryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDcdnOfflineLogDeliveryAsyncHandler;
-			typedef Outcome<Error, Model::DescribeDcdnOfflineLogDeliveryFieldResult> DescribeDcdnOfflineLogDeliveryFieldOutcome;
-			typedef std::future<DescribeDcdnOfflineLogDeliveryFieldOutcome> DescribeDcdnOfflineLogDeliveryFieldOutcomeCallable;
-			typedef std::function<void(const DcdnClient*, const Model::DescribeDcdnOfflineLogDeliveryFieldRequest&, const DescribeDcdnOfflineLogDeliveryFieldOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDcdnOfflineLogDeliveryFieldAsyncHandler;
-			typedef Outcome<Error, Model::DescribeDcdnOfflineLogDeliveryRegionsResult> DescribeDcdnOfflineLogDeliveryRegionsOutcome;
-			typedef std::future<DescribeDcdnOfflineLogDeliveryRegionsOutcome> DescribeDcdnOfflineLogDeliveryRegionsOutcomeCallable;
-			typedef std::function<void(const DcdnClient*, const Model::DescribeDcdnOfflineLogDeliveryRegionsRequest&, const DescribeDcdnOfflineLogDeliveryRegionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDcdnOfflineLogDeliveryRegionsAsyncHandler;
-			typedef Outcome<Error, Model::DescribeDcdnOfflineLogDeliveryStatusResult> DescribeDcdnOfflineLogDeliveryStatusOutcome;
-			typedef std::future<DescribeDcdnOfflineLogDeliveryStatusOutcome> DescribeDcdnOfflineLogDeliveryStatusOutcomeCallable;
-			typedef std::function<void(const DcdnClient*, const Model::DescribeDcdnOfflineLogDeliveryStatusRequest&, const DescribeDcdnOfflineLogDeliveryStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDcdnOfflineLogDeliveryStatusAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDcdnRealTimeDeliveryFieldResult> DescribeDcdnRealTimeDeliveryFieldOutcome;
 			typedef std::future<DescribeDcdnRealTimeDeliveryFieldOutcome> DescribeDcdnRealTimeDeliveryFieldOutcomeCallable;
 			typedef std::function<void(const DcdnClient*, const Model::DescribeDcdnRealTimeDeliveryFieldRequest&, const DescribeDcdnRealTimeDeliveryFieldOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDcdnRealTimeDeliveryFieldAsyncHandler;
@@ -736,18 +715,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeUserLogserviceStatusResult> DescribeUserLogserviceStatusOutcome;
 			typedef std::future<DescribeUserLogserviceStatusOutcome> DescribeUserLogserviceStatusOutcomeCallable;
 			typedef std::function<void(const DcdnClient*, const Model::DescribeUserLogserviceStatusRequest&, const DescribeUserLogserviceStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserLogserviceStatusAsyncHandler;
-			typedef Outcome<Error, Model::DisableDcdnDomainOfflineLogDeliveryResult> DisableDcdnDomainOfflineLogDeliveryOutcome;
-			typedef std::future<DisableDcdnDomainOfflineLogDeliveryOutcome> DisableDcdnDomainOfflineLogDeliveryOutcomeCallable;
-			typedef std::function<void(const DcdnClient*, const Model::DisableDcdnDomainOfflineLogDeliveryRequest&, const DisableDcdnDomainOfflineLogDeliveryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DisableDcdnDomainOfflineLogDeliveryAsyncHandler;
-			typedef Outcome<Error, Model::DisableDcdnOfflineLogDeliveryResult> DisableDcdnOfflineLogDeliveryOutcome;
-			typedef std::future<DisableDcdnOfflineLogDeliveryOutcome> DisableDcdnOfflineLogDeliveryOutcomeCallable;
-			typedef std::function<void(const DcdnClient*, const Model::DisableDcdnOfflineLogDeliveryRequest&, const DisableDcdnOfflineLogDeliveryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DisableDcdnOfflineLogDeliveryAsyncHandler;
 			typedef Outcome<Error, Model::EditRoutineConfResult> EditRoutineConfOutcome;
 			typedef std::future<EditRoutineConfOutcome> EditRoutineConfOutcomeCallable;
 			typedef std::function<void(const DcdnClient*, const Model::EditRoutineConfRequest&, const EditRoutineConfOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EditRoutineConfAsyncHandler;
-			typedef Outcome<Error, Model::EnableDcdnDomainOfflineLogDeliveryResult> EnableDcdnDomainOfflineLogDeliveryOutcome;
-			typedef std::future<EnableDcdnDomainOfflineLogDeliveryOutcome> EnableDcdnDomainOfflineLogDeliveryOutcomeCallable;
-			typedef std::function<void(const DcdnClient*, const Model::EnableDcdnDomainOfflineLogDeliveryRequest&, const EnableDcdnDomainOfflineLogDeliveryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnableDcdnDomainOfflineLogDeliveryAsyncHandler;
 			typedef Outcome<Error, Model::ListDcdnRealTimeDeliveryProjectResult> ListDcdnRealTimeDeliveryProjectOutcome;
 			typedef std::future<ListDcdnRealTimeDeliveryProjectOutcome> ListDcdnRealTimeDeliveryProjectOutcomeCallable;
 			typedef std::function<void(const DcdnClient*, const Model::ListDcdnRealTimeDeliveryProjectRequest&, const ListDcdnRealTimeDeliveryProjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDcdnRealTimeDeliveryProjectAsyncHandler;
@@ -885,9 +855,6 @@ namespace AlibabaCloud
 			CreateDcdnDeliverTaskOutcome createDcdnDeliverTask(const Model::CreateDcdnDeliverTaskRequest &request)const;
 			void createDcdnDeliverTaskAsync(const Model::CreateDcdnDeliverTaskRequest& request, const CreateDcdnDeliverTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateDcdnDeliverTaskOutcomeCallable createDcdnDeliverTaskCallable(const Model::CreateDcdnDeliverTaskRequest& request) const;
-			CreateDcdnDomainOfflineLogDeliveryOutcome createDcdnDomainOfflineLogDelivery(const Model::CreateDcdnDomainOfflineLogDeliveryRequest &request)const;
-			void createDcdnDomainOfflineLogDeliveryAsync(const Model::CreateDcdnDomainOfflineLogDeliveryRequest& request, const CreateDcdnDomainOfflineLogDeliveryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CreateDcdnDomainOfflineLogDeliveryOutcomeCallable createDcdnDomainOfflineLogDeliveryCallable(const Model::CreateDcdnDomainOfflineLogDeliveryRequest& request) const;
 			CreateDcdnSLSRealTimeLogDeliveryOutcome createDcdnSLSRealTimeLogDelivery(const Model::CreateDcdnSLSRealTimeLogDeliveryRequest &request)const;
 			void createDcdnSLSRealTimeLogDeliveryAsync(const Model::CreateDcdnSLSRealTimeLogDeliveryRequest& request, const CreateDcdnSLSRealTimeLogDeliveryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateDcdnSLSRealTimeLogDeliveryOutcomeCallable createDcdnSLSRealTimeLogDeliveryCallable(const Model::CreateDcdnSLSRealTimeLogDeliveryRequest& request) const;
@@ -1080,6 +1047,12 @@ namespace AlibabaCloud
 			DescribeDcdnDomainWebsocketTrafficDataOutcome describeDcdnDomainWebsocketTrafficData(const Model::DescribeDcdnDomainWebsocketTrafficDataRequest &request)const;
 			void describeDcdnDomainWebsocketTrafficDataAsync(const Model::DescribeDcdnDomainWebsocketTrafficDataRequest& request, const DescribeDcdnDomainWebsocketTrafficDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDcdnDomainWebsocketTrafficDataOutcomeCallable describeDcdnDomainWebsocketTrafficDataCallable(const Model::DescribeDcdnDomainWebsocketTrafficDataRequest& request) const;
+			DescribeDcdnEsExceptionDataOutcome describeDcdnEsExceptionData(const Model::DescribeDcdnEsExceptionDataRequest &request)const;
+			void describeDcdnEsExceptionDataAsync(const Model::DescribeDcdnEsExceptionDataRequest& request, const DescribeDcdnEsExceptionDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDcdnEsExceptionDataOutcomeCallable describeDcdnEsExceptionDataCallable(const Model::DescribeDcdnEsExceptionDataRequest& request) const;
+			DescribeDcdnEsExecuteDataOutcome describeDcdnEsExecuteData(const Model::DescribeDcdnEsExecuteDataRequest &request)const;
+			void describeDcdnEsExecuteDataAsync(const Model::DescribeDcdnEsExecuteDataRequest& request, const DescribeDcdnEsExecuteDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDcdnEsExecuteDataOutcomeCallable describeDcdnEsExecuteDataCallable(const Model::DescribeDcdnEsExecuteDataRequest& request) const;
 			DescribeDcdnHttpsDomainListOutcome describeDcdnHttpsDomainList(const Model::DescribeDcdnHttpsDomainListRequest &request)const;
 			void describeDcdnHttpsDomainListAsync(const Model::DescribeDcdnHttpsDomainListRequest& request, const DescribeDcdnHttpsDomainListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDcdnHttpsDomainListOutcomeCallable describeDcdnHttpsDomainListCallable(const Model::DescribeDcdnHttpsDomainListRequest& request) const;
@@ -1098,18 +1071,6 @@ namespace AlibabaCloud
 			DescribeDcdnIpaUserDomainsOutcome describeDcdnIpaUserDomains(const Model::DescribeDcdnIpaUserDomainsRequest &request)const;
 			void describeDcdnIpaUserDomainsAsync(const Model::DescribeDcdnIpaUserDomainsRequest& request, const DescribeDcdnIpaUserDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDcdnIpaUserDomainsOutcomeCallable describeDcdnIpaUserDomainsCallable(const Model::DescribeDcdnIpaUserDomainsRequest& request) const;
-			DescribeDcdnOfflineLogDeliveryOutcome describeDcdnOfflineLogDelivery(const Model::DescribeDcdnOfflineLogDeliveryRequest &request)const;
-			void describeDcdnOfflineLogDeliveryAsync(const Model::DescribeDcdnOfflineLogDeliveryRequest& request, const DescribeDcdnOfflineLogDeliveryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeDcdnOfflineLogDeliveryOutcomeCallable describeDcdnOfflineLogDeliveryCallable(const Model::DescribeDcdnOfflineLogDeliveryRequest& request) const;
-			DescribeDcdnOfflineLogDeliveryFieldOutcome describeDcdnOfflineLogDeliveryField(const Model::DescribeDcdnOfflineLogDeliveryFieldRequest &request)const;
-			void describeDcdnOfflineLogDeliveryFieldAsync(const Model::DescribeDcdnOfflineLogDeliveryFieldRequest& request, const DescribeDcdnOfflineLogDeliveryFieldAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeDcdnOfflineLogDeliveryFieldOutcomeCallable describeDcdnOfflineLogDeliveryFieldCallable(const Model::DescribeDcdnOfflineLogDeliveryFieldRequest& request) const;
-			DescribeDcdnOfflineLogDeliveryRegionsOutcome describeDcdnOfflineLogDeliveryRegions(const Model::DescribeDcdnOfflineLogDeliveryRegionsRequest &request)const;
-			void describeDcdnOfflineLogDeliveryRegionsAsync(const Model::DescribeDcdnOfflineLogDeliveryRegionsRequest& request, const DescribeDcdnOfflineLogDeliveryRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeDcdnOfflineLogDeliveryRegionsOutcomeCallable describeDcdnOfflineLogDeliveryRegionsCallable(const Model::DescribeDcdnOfflineLogDeliveryRegionsRequest& request) const;
-			DescribeDcdnOfflineLogDeliveryStatusOutcome describeDcdnOfflineLogDeliveryStatus(const Model::DescribeDcdnOfflineLogDeliveryStatusRequest &request)const;
-			void describeDcdnOfflineLogDeliveryStatusAsync(const Model::DescribeDcdnOfflineLogDeliveryStatusRequest& request, const DescribeDcdnOfflineLogDeliveryStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeDcdnOfflineLogDeliveryStatusOutcomeCallable describeDcdnOfflineLogDeliveryStatusCallable(const Model::DescribeDcdnOfflineLogDeliveryStatusRequest& request) const;
 			DescribeDcdnRealTimeDeliveryFieldOutcome describeDcdnRealTimeDeliveryField(const Model::DescribeDcdnRealTimeDeliveryFieldRequest &request)const;
 			void describeDcdnRealTimeDeliveryFieldAsync(const Model::DescribeDcdnRealTimeDeliveryFieldRequest& request, const DescribeDcdnRealTimeDeliveryFieldAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDcdnRealTimeDeliveryFieldOutcomeCallable describeDcdnRealTimeDeliveryFieldCallable(const Model::DescribeDcdnRealTimeDeliveryFieldRequest& request) const;
@@ -1227,18 +1188,9 @@ namespace AlibabaCloud
 			DescribeUserLogserviceStatusOutcome describeUserLogserviceStatus(const Model::DescribeUserLogserviceStatusRequest &request)const;
 			void describeUserLogserviceStatusAsync(const Model::DescribeUserLogserviceStatusRequest& request, const DescribeUserLogserviceStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeUserLogserviceStatusOutcomeCallable describeUserLogserviceStatusCallable(const Model::DescribeUserLogserviceStatusRequest& request) const;
-			DisableDcdnDomainOfflineLogDeliveryOutcome disableDcdnDomainOfflineLogDelivery(const Model::DisableDcdnDomainOfflineLogDeliveryRequest &request)const;
-			void disableDcdnDomainOfflineLogDeliveryAsync(const Model::DisableDcdnDomainOfflineLogDeliveryRequest& request, const DisableDcdnDomainOfflineLogDeliveryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DisableDcdnDomainOfflineLogDeliveryOutcomeCallable disableDcdnDomainOfflineLogDeliveryCallable(const Model::DisableDcdnDomainOfflineLogDeliveryRequest& request) const;
-			DisableDcdnOfflineLogDeliveryOutcome disableDcdnOfflineLogDelivery(const Model::DisableDcdnOfflineLogDeliveryRequest &request)const;
-			void disableDcdnOfflineLogDeliveryAsync(const Model::DisableDcdnOfflineLogDeliveryRequest& request, const DisableDcdnOfflineLogDeliveryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DisableDcdnOfflineLogDeliveryOutcomeCallable disableDcdnOfflineLogDeliveryCallable(const Model::DisableDcdnOfflineLogDeliveryRequest& request) const;
 			EditRoutineConfOutcome editRoutineConf(const Model::EditRoutineConfRequest &request)const;
 			void editRoutineConfAsync(const Model::EditRoutineConfRequest& request, const EditRoutineConfAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			EditRoutineConfOutcomeCallable editRoutineConfCallable(const Model::EditRoutineConfRequest& request) const;
-			EnableDcdnDomainOfflineLogDeliveryOutcome enableDcdnDomainOfflineLogDelivery(const Model::EnableDcdnDomainOfflineLogDeliveryRequest &request)const;
-			void enableDcdnDomainOfflineLogDeliveryAsync(const Model::EnableDcdnDomainOfflineLogDeliveryRequest& request, const EnableDcdnDomainOfflineLogDeliveryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			EnableDcdnDomainOfflineLogDeliveryOutcomeCallable enableDcdnDomainOfflineLogDeliveryCallable(const Model::EnableDcdnDomainOfflineLogDeliveryRequest& request) const;
 			ListDcdnRealTimeDeliveryProjectOutcome listDcdnRealTimeDeliveryProject(const Model::ListDcdnRealTimeDeliveryProjectRequest &request)const;
 			void listDcdnRealTimeDeliveryProjectAsync(const Model::ListDcdnRealTimeDeliveryProjectRequest& request, const ListDcdnRealTimeDeliveryProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListDcdnRealTimeDeliveryProjectOutcomeCallable listDcdnRealTimeDeliveryProjectCallable(const Model::ListDcdnRealTimeDeliveryProjectRequest& request) const;

@@ -53,8 +53,12 @@ void DescribeDcdnRefreshQuotaResult::parse(const std::string &payload)
 		blockQuota_ = value["BlockQuota"].asString();
 	if(!value["PreloadRemain"].isNull())
 		preloadRemain_ = value["PreloadRemain"].asString();
-	if(!value["blockRemain"].isNull())
-		blockRemain_ = value["blockRemain"].asString();
+	if(!value["BlockRemain"].isNull())
+		blockRemain_ = value["BlockRemain"].asString();
+	if(!value["RegexQuota"].isNull())
+		regexQuota_ = value["RegexQuota"].asString();
+	if(!value["RegexRemain"].isNull())
+		regexRemain_ = value["RegexRemain"].asString();
 
 }
 
@@ -73,6 +77,11 @@ std::string DescribeDcdnRefreshQuotaResult::getBlockRemain()const
 	return blockRemain_;
 }
 
+std::string DescribeDcdnRefreshQuotaResult::getRegexRemain()const
+{
+	return regexRemain_;
+}
+
 std::string DescribeDcdnRefreshQuotaResult::getDirRemain()const
 {
 	return dirRemain_;
@@ -81,6 +90,11 @@ std::string DescribeDcdnRefreshQuotaResult::getDirRemain()const
 std::string DescribeDcdnRefreshQuotaResult::getBlockQuota()const
 {
 	return blockQuota_;
+}
+
+std::string DescribeDcdnRefreshQuotaResult::getRegexQuota()const
+{
+	return regexQuota_;
 }
 
 std::string DescribeDcdnRefreshQuotaResult::getUrlQuota()const

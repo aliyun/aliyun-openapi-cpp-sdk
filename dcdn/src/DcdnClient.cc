@@ -519,42 +519,6 @@ DcdnClient::CreateDcdnDeliverTaskOutcomeCallable DcdnClient::createDcdnDeliverTa
 	return task->get_future();
 }
 
-DcdnClient::CreateDcdnDomainOfflineLogDeliveryOutcome DcdnClient::createDcdnDomainOfflineLogDelivery(const CreateDcdnDomainOfflineLogDeliveryRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateDcdnDomainOfflineLogDeliveryOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateDcdnDomainOfflineLogDeliveryOutcome(CreateDcdnDomainOfflineLogDeliveryResult(outcome.result()));
-	else
-		return CreateDcdnDomainOfflineLogDeliveryOutcome(outcome.error());
-}
-
-void DcdnClient::createDcdnDomainOfflineLogDeliveryAsync(const CreateDcdnDomainOfflineLogDeliveryRequest& request, const CreateDcdnDomainOfflineLogDeliveryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createDcdnDomainOfflineLogDelivery(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DcdnClient::CreateDcdnDomainOfflineLogDeliveryOutcomeCallable DcdnClient::createDcdnDomainOfflineLogDeliveryCallable(const CreateDcdnDomainOfflineLogDeliveryRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateDcdnDomainOfflineLogDeliveryOutcome()>>(
-			[this, request]()
-			{
-			return this->createDcdnDomainOfflineLogDelivery(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 DcdnClient::CreateDcdnSLSRealTimeLogDeliveryOutcome DcdnClient::createDcdnSLSRealTimeLogDelivery(const CreateDcdnSLSRealTimeLogDeliveryRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2859,6 +2823,78 @@ DcdnClient::DescribeDcdnDomainWebsocketTrafficDataOutcomeCallable DcdnClient::de
 	return task->get_future();
 }
 
+DcdnClient::DescribeDcdnEsExceptionDataOutcome DcdnClient::describeDcdnEsExceptionData(const DescribeDcdnEsExceptionDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDcdnEsExceptionDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDcdnEsExceptionDataOutcome(DescribeDcdnEsExceptionDataResult(outcome.result()));
+	else
+		return DescribeDcdnEsExceptionDataOutcome(outcome.error());
+}
+
+void DcdnClient::describeDcdnEsExceptionDataAsync(const DescribeDcdnEsExceptionDataRequest& request, const DescribeDcdnEsExceptionDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDcdnEsExceptionData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DescribeDcdnEsExceptionDataOutcomeCallable DcdnClient::describeDcdnEsExceptionDataCallable(const DescribeDcdnEsExceptionDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDcdnEsExceptionDataOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDcdnEsExceptionData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::DescribeDcdnEsExecuteDataOutcome DcdnClient::describeDcdnEsExecuteData(const DescribeDcdnEsExecuteDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDcdnEsExecuteDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDcdnEsExecuteDataOutcome(DescribeDcdnEsExecuteDataResult(outcome.result()));
+	else
+		return DescribeDcdnEsExecuteDataOutcome(outcome.error());
+}
+
+void DcdnClient::describeDcdnEsExecuteDataAsync(const DescribeDcdnEsExecuteDataRequest& request, const DescribeDcdnEsExecuteDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDcdnEsExecuteData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DescribeDcdnEsExecuteDataOutcomeCallable DcdnClient::describeDcdnEsExecuteDataCallable(const DescribeDcdnEsExecuteDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDcdnEsExecuteDataOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDcdnEsExecuteData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DcdnClient::DescribeDcdnHttpsDomainListOutcome DcdnClient::describeDcdnHttpsDomainList(const DescribeDcdnHttpsDomainListRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3069,150 +3105,6 @@ DcdnClient::DescribeDcdnIpaUserDomainsOutcomeCallable DcdnClient::describeDcdnIp
 			[this, request]()
 			{
 			return this->describeDcdnIpaUserDomains(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-DcdnClient::DescribeDcdnOfflineLogDeliveryOutcome DcdnClient::describeDcdnOfflineLogDelivery(const DescribeDcdnOfflineLogDeliveryRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeDcdnOfflineLogDeliveryOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeDcdnOfflineLogDeliveryOutcome(DescribeDcdnOfflineLogDeliveryResult(outcome.result()));
-	else
-		return DescribeDcdnOfflineLogDeliveryOutcome(outcome.error());
-}
-
-void DcdnClient::describeDcdnOfflineLogDeliveryAsync(const DescribeDcdnOfflineLogDeliveryRequest& request, const DescribeDcdnOfflineLogDeliveryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeDcdnOfflineLogDelivery(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DcdnClient::DescribeDcdnOfflineLogDeliveryOutcomeCallable DcdnClient::describeDcdnOfflineLogDeliveryCallable(const DescribeDcdnOfflineLogDeliveryRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeDcdnOfflineLogDeliveryOutcome()>>(
-			[this, request]()
-			{
-			return this->describeDcdnOfflineLogDelivery(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-DcdnClient::DescribeDcdnOfflineLogDeliveryFieldOutcome DcdnClient::describeDcdnOfflineLogDeliveryField(const DescribeDcdnOfflineLogDeliveryFieldRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeDcdnOfflineLogDeliveryFieldOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeDcdnOfflineLogDeliveryFieldOutcome(DescribeDcdnOfflineLogDeliveryFieldResult(outcome.result()));
-	else
-		return DescribeDcdnOfflineLogDeliveryFieldOutcome(outcome.error());
-}
-
-void DcdnClient::describeDcdnOfflineLogDeliveryFieldAsync(const DescribeDcdnOfflineLogDeliveryFieldRequest& request, const DescribeDcdnOfflineLogDeliveryFieldAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeDcdnOfflineLogDeliveryField(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DcdnClient::DescribeDcdnOfflineLogDeliveryFieldOutcomeCallable DcdnClient::describeDcdnOfflineLogDeliveryFieldCallable(const DescribeDcdnOfflineLogDeliveryFieldRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeDcdnOfflineLogDeliveryFieldOutcome()>>(
-			[this, request]()
-			{
-			return this->describeDcdnOfflineLogDeliveryField(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-DcdnClient::DescribeDcdnOfflineLogDeliveryRegionsOutcome DcdnClient::describeDcdnOfflineLogDeliveryRegions(const DescribeDcdnOfflineLogDeliveryRegionsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeDcdnOfflineLogDeliveryRegionsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeDcdnOfflineLogDeliveryRegionsOutcome(DescribeDcdnOfflineLogDeliveryRegionsResult(outcome.result()));
-	else
-		return DescribeDcdnOfflineLogDeliveryRegionsOutcome(outcome.error());
-}
-
-void DcdnClient::describeDcdnOfflineLogDeliveryRegionsAsync(const DescribeDcdnOfflineLogDeliveryRegionsRequest& request, const DescribeDcdnOfflineLogDeliveryRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeDcdnOfflineLogDeliveryRegions(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DcdnClient::DescribeDcdnOfflineLogDeliveryRegionsOutcomeCallable DcdnClient::describeDcdnOfflineLogDeliveryRegionsCallable(const DescribeDcdnOfflineLogDeliveryRegionsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeDcdnOfflineLogDeliveryRegionsOutcome()>>(
-			[this, request]()
-			{
-			return this->describeDcdnOfflineLogDeliveryRegions(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-DcdnClient::DescribeDcdnOfflineLogDeliveryStatusOutcome DcdnClient::describeDcdnOfflineLogDeliveryStatus(const DescribeDcdnOfflineLogDeliveryStatusRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeDcdnOfflineLogDeliveryStatusOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeDcdnOfflineLogDeliveryStatusOutcome(DescribeDcdnOfflineLogDeliveryStatusResult(outcome.result()));
-	else
-		return DescribeDcdnOfflineLogDeliveryStatusOutcome(outcome.error());
-}
-
-void DcdnClient::describeDcdnOfflineLogDeliveryStatusAsync(const DescribeDcdnOfflineLogDeliveryStatusRequest& request, const DescribeDcdnOfflineLogDeliveryStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeDcdnOfflineLogDeliveryStatus(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DcdnClient::DescribeDcdnOfflineLogDeliveryStatusOutcomeCallable DcdnClient::describeDcdnOfflineLogDeliveryStatusCallable(const DescribeDcdnOfflineLogDeliveryStatusRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeDcdnOfflineLogDeliveryStatusOutcome()>>(
-			[this, request]()
-			{
-			return this->describeDcdnOfflineLogDeliveryStatus(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4623,78 +4515,6 @@ DcdnClient::DescribeUserLogserviceStatusOutcomeCallable DcdnClient::describeUser
 	return task->get_future();
 }
 
-DcdnClient::DisableDcdnDomainOfflineLogDeliveryOutcome DcdnClient::disableDcdnDomainOfflineLogDelivery(const DisableDcdnDomainOfflineLogDeliveryRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DisableDcdnDomainOfflineLogDeliveryOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DisableDcdnDomainOfflineLogDeliveryOutcome(DisableDcdnDomainOfflineLogDeliveryResult(outcome.result()));
-	else
-		return DisableDcdnDomainOfflineLogDeliveryOutcome(outcome.error());
-}
-
-void DcdnClient::disableDcdnDomainOfflineLogDeliveryAsync(const DisableDcdnDomainOfflineLogDeliveryRequest& request, const DisableDcdnDomainOfflineLogDeliveryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, disableDcdnDomainOfflineLogDelivery(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DcdnClient::DisableDcdnDomainOfflineLogDeliveryOutcomeCallable DcdnClient::disableDcdnDomainOfflineLogDeliveryCallable(const DisableDcdnDomainOfflineLogDeliveryRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DisableDcdnDomainOfflineLogDeliveryOutcome()>>(
-			[this, request]()
-			{
-			return this->disableDcdnDomainOfflineLogDelivery(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-DcdnClient::DisableDcdnOfflineLogDeliveryOutcome DcdnClient::disableDcdnOfflineLogDelivery(const DisableDcdnOfflineLogDeliveryRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DisableDcdnOfflineLogDeliveryOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DisableDcdnOfflineLogDeliveryOutcome(DisableDcdnOfflineLogDeliveryResult(outcome.result()));
-	else
-		return DisableDcdnOfflineLogDeliveryOutcome(outcome.error());
-}
-
-void DcdnClient::disableDcdnOfflineLogDeliveryAsync(const DisableDcdnOfflineLogDeliveryRequest& request, const DisableDcdnOfflineLogDeliveryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, disableDcdnOfflineLogDelivery(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DcdnClient::DisableDcdnOfflineLogDeliveryOutcomeCallable DcdnClient::disableDcdnOfflineLogDeliveryCallable(const DisableDcdnOfflineLogDeliveryRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DisableDcdnOfflineLogDeliveryOutcome()>>(
-			[this, request]()
-			{
-			return this->disableDcdnOfflineLogDelivery(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 DcdnClient::EditRoutineConfOutcome DcdnClient::editRoutineConf(const EditRoutineConfRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4725,42 +4545,6 @@ DcdnClient::EditRoutineConfOutcomeCallable DcdnClient::editRoutineConfCallable(c
 			[this, request]()
 			{
 			return this->editRoutineConf(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-DcdnClient::EnableDcdnDomainOfflineLogDeliveryOutcome DcdnClient::enableDcdnDomainOfflineLogDelivery(const EnableDcdnDomainOfflineLogDeliveryRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return EnableDcdnDomainOfflineLogDeliveryOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return EnableDcdnDomainOfflineLogDeliveryOutcome(EnableDcdnDomainOfflineLogDeliveryResult(outcome.result()));
-	else
-		return EnableDcdnDomainOfflineLogDeliveryOutcome(outcome.error());
-}
-
-void DcdnClient::enableDcdnDomainOfflineLogDeliveryAsync(const EnableDcdnDomainOfflineLogDeliveryRequest& request, const EnableDcdnDomainOfflineLogDeliveryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, enableDcdnDomainOfflineLogDelivery(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DcdnClient::EnableDcdnDomainOfflineLogDeliveryOutcomeCallable DcdnClient::enableDcdnDomainOfflineLogDeliveryCallable(const EnableDcdnDomainOfflineLogDeliveryRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<EnableDcdnDomainOfflineLogDeliveryOutcome()>>(
-			[this, request]()
-			{
-			return this->enableDcdnDomainOfflineLogDelivery(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

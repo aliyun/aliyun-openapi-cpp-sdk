@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNOFFLINELOGDELIVERYREGIONSREQUEST_H_
-#define ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNOFFLINELOGDELIVERYREGIONSREQUEST_H_
+#ifndef ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNESEXECUTEDATARESULT_H_
+#define ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNESEXECUTEDATARESULT_H_
 
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
+#include <utility>
+#include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/dcdn/DcdnExport.h>
 
 namespace AlibabaCloud
@@ -28,21 +29,29 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DCDN_EXPORT DescribeDcdnOfflineLogDeliveryRegionsRequest : public RpcServiceRequest
+			class ALIBABACLOUD_DCDN_EXPORT DescribeDcdnEsExecuteDataResult : public ServiceResult
 			{
-
 			public:
-				DescribeDcdnOfflineLogDeliveryRegionsRequest();
-				~DescribeDcdnOfflineLogDeliveryRegionsRequest();
+				struct Content
+				{
+					std::vector<std::string> points;
+					std::vector<std::string> columns;
+					std::string name;
+				};
 
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 
-            private:
-				long ownerId_;
+				DescribeDcdnEsExecuteDataResult();
+				explicit DescribeDcdnEsExecuteDataResult(const std::string &payload);
+				~DescribeDcdnEsExecuteDataResult();
+				std::vector<Content> getContents()const;
+
+			protected:
+				void parse(const std::string &payload);
+			private:
+				std::vector<Content> contents_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNOFFLINELOGDELIVERYREGIONSREQUEST_H_
+#endif // !ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNESEXECUTEDATARESULT_H_

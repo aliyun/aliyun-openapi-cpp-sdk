@@ -47,8 +47,6 @@ set(dcdn_public_header_model
 	include/alibabacloud/dcdn/model/CreateDcdnCertificateSigningRequestResult.h
 	include/alibabacloud/dcdn/model/CreateDcdnDeliverTaskRequest.h
 	include/alibabacloud/dcdn/model/CreateDcdnDeliverTaskResult.h
-	include/alibabacloud/dcdn/model/CreateDcdnDomainOfflineLogDeliveryRequest.h
-	include/alibabacloud/dcdn/model/CreateDcdnDomainOfflineLogDeliveryResult.h
 	include/alibabacloud/dcdn/model/CreateDcdnSLSRealTimeLogDeliveryRequest.h
 	include/alibabacloud/dcdn/model/CreateDcdnSLSRealTimeLogDeliveryResult.h
 	include/alibabacloud/dcdn/model/CreateDcdnSubTaskRequest.h
@@ -177,6 +175,10 @@ set(dcdn_public_header_model
 	include/alibabacloud/dcdn/model/DescribeDcdnDomainWebsocketHttpCodeDataResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnDomainWebsocketTrafficDataRequest.h
 	include/alibabacloud/dcdn/model/DescribeDcdnDomainWebsocketTrafficDataResult.h
+	include/alibabacloud/dcdn/model/DescribeDcdnEsExceptionDataRequest.h
+	include/alibabacloud/dcdn/model/DescribeDcdnEsExceptionDataResult.h
+	include/alibabacloud/dcdn/model/DescribeDcdnEsExecuteDataRequest.h
+	include/alibabacloud/dcdn/model/DescribeDcdnEsExecuteDataResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnHttpsDomainListRequest.h
 	include/alibabacloud/dcdn/model/DescribeDcdnHttpsDomainListResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnIpInfoRequest.h
@@ -189,14 +191,6 @@ set(dcdn_public_header_model
 	include/alibabacloud/dcdn/model/DescribeDcdnIpaServiceResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnIpaUserDomainsRequest.h
 	include/alibabacloud/dcdn/model/DescribeDcdnIpaUserDomainsResult.h
-	include/alibabacloud/dcdn/model/DescribeDcdnOfflineLogDeliveryRequest.h
-	include/alibabacloud/dcdn/model/DescribeDcdnOfflineLogDeliveryResult.h
-	include/alibabacloud/dcdn/model/DescribeDcdnOfflineLogDeliveryFieldRequest.h
-	include/alibabacloud/dcdn/model/DescribeDcdnOfflineLogDeliveryFieldResult.h
-	include/alibabacloud/dcdn/model/DescribeDcdnOfflineLogDeliveryRegionsRequest.h
-	include/alibabacloud/dcdn/model/DescribeDcdnOfflineLogDeliveryRegionsResult.h
-	include/alibabacloud/dcdn/model/DescribeDcdnOfflineLogDeliveryStatusRequest.h
-	include/alibabacloud/dcdn/model/DescribeDcdnOfflineLogDeliveryStatusResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnRealTimeDeliveryFieldRequest.h
 	include/alibabacloud/dcdn/model/DescribeDcdnRealTimeDeliveryFieldResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnRefreshQuotaRequest.h
@@ -275,14 +269,8 @@ set(dcdn_public_header_model
 	include/alibabacloud/dcdn/model/DescribeUserErStatusResult.h
 	include/alibabacloud/dcdn/model/DescribeUserLogserviceStatusRequest.h
 	include/alibabacloud/dcdn/model/DescribeUserLogserviceStatusResult.h
-	include/alibabacloud/dcdn/model/DisableDcdnDomainOfflineLogDeliveryRequest.h
-	include/alibabacloud/dcdn/model/DisableDcdnDomainOfflineLogDeliveryResult.h
-	include/alibabacloud/dcdn/model/DisableDcdnOfflineLogDeliveryRequest.h
-	include/alibabacloud/dcdn/model/DisableDcdnOfflineLogDeliveryResult.h
 	include/alibabacloud/dcdn/model/EditRoutineConfRequest.h
 	include/alibabacloud/dcdn/model/EditRoutineConfResult.h
-	include/alibabacloud/dcdn/model/EnableDcdnDomainOfflineLogDeliveryRequest.h
-	include/alibabacloud/dcdn/model/EnableDcdnDomainOfflineLogDeliveryResult.h
 	include/alibabacloud/dcdn/model/ListDcdnRealTimeDeliveryProjectRequest.h
 	include/alibabacloud/dcdn/model/ListDcdnRealTimeDeliveryProjectResult.h
 	include/alibabacloud/dcdn/model/ModifyDCdnDomainSchdmByPropertyRequest.h
@@ -374,8 +362,6 @@ set(dcdn_src
 	src/model/CreateDcdnCertificateSigningRequestResult.cc
 	src/model/CreateDcdnDeliverTaskRequest.cc
 	src/model/CreateDcdnDeliverTaskResult.cc
-	src/model/CreateDcdnDomainOfflineLogDeliveryRequest.cc
-	src/model/CreateDcdnDomainOfflineLogDeliveryResult.cc
 	src/model/CreateDcdnSLSRealTimeLogDeliveryRequest.cc
 	src/model/CreateDcdnSLSRealTimeLogDeliveryResult.cc
 	src/model/CreateDcdnSubTaskRequest.cc
@@ -504,6 +490,10 @@ set(dcdn_src
 	src/model/DescribeDcdnDomainWebsocketHttpCodeDataResult.cc
 	src/model/DescribeDcdnDomainWebsocketTrafficDataRequest.cc
 	src/model/DescribeDcdnDomainWebsocketTrafficDataResult.cc
+	src/model/DescribeDcdnEsExceptionDataRequest.cc
+	src/model/DescribeDcdnEsExceptionDataResult.cc
+	src/model/DescribeDcdnEsExecuteDataRequest.cc
+	src/model/DescribeDcdnEsExecuteDataResult.cc
 	src/model/DescribeDcdnHttpsDomainListRequest.cc
 	src/model/DescribeDcdnHttpsDomainListResult.cc
 	src/model/DescribeDcdnIpInfoRequest.cc
@@ -516,14 +506,6 @@ set(dcdn_src
 	src/model/DescribeDcdnIpaServiceResult.cc
 	src/model/DescribeDcdnIpaUserDomainsRequest.cc
 	src/model/DescribeDcdnIpaUserDomainsResult.cc
-	src/model/DescribeDcdnOfflineLogDeliveryRequest.cc
-	src/model/DescribeDcdnOfflineLogDeliveryResult.cc
-	src/model/DescribeDcdnOfflineLogDeliveryFieldRequest.cc
-	src/model/DescribeDcdnOfflineLogDeliveryFieldResult.cc
-	src/model/DescribeDcdnOfflineLogDeliveryRegionsRequest.cc
-	src/model/DescribeDcdnOfflineLogDeliveryRegionsResult.cc
-	src/model/DescribeDcdnOfflineLogDeliveryStatusRequest.cc
-	src/model/DescribeDcdnOfflineLogDeliveryStatusResult.cc
 	src/model/DescribeDcdnRealTimeDeliveryFieldRequest.cc
 	src/model/DescribeDcdnRealTimeDeliveryFieldResult.cc
 	src/model/DescribeDcdnRefreshQuotaRequest.cc
@@ -602,14 +584,8 @@ set(dcdn_src
 	src/model/DescribeUserErStatusResult.cc
 	src/model/DescribeUserLogserviceStatusRequest.cc
 	src/model/DescribeUserLogserviceStatusResult.cc
-	src/model/DisableDcdnDomainOfflineLogDeliveryRequest.cc
-	src/model/DisableDcdnDomainOfflineLogDeliveryResult.cc
-	src/model/DisableDcdnOfflineLogDeliveryRequest.cc
-	src/model/DisableDcdnOfflineLogDeliveryResult.cc
 	src/model/EditRoutineConfRequest.cc
 	src/model/EditRoutineConfResult.cc
-	src/model/EnableDcdnDomainOfflineLogDeliveryRequest.cc
-	src/model/EnableDcdnDomainOfflineLogDeliveryResult.cc
 	src/model/ListDcdnRealTimeDeliveryProjectRequest.cc
 	src/model/ListDcdnRealTimeDeliveryProjectResult.cc
 	src/model/ModifyDCdnDomainSchdmByPropertyRequest.cc
