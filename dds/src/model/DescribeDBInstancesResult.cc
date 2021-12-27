@@ -71,8 +71,6 @@ void DescribeDBInstancesResult::parse(const std::string &payload)
 			dBInstancesObject.regionId = valueDBInstancesDBInstance["RegionId"].asString();
 		if(!valueDBInstancesDBInstance["DBInstanceStorage"].isNull())
 			dBInstancesObject.dBInstanceStorage = std::stoi(valueDBInstancesDBInstance["DBInstanceStorage"].asString());
-		if(!valueDBInstancesDBInstance["CapacityUnit"].isNull())
-			dBInstancesObject.capacityUnit = valueDBInstancesDBInstance["CapacityUnit"].asString();
 		if(!valueDBInstancesDBInstance["ResourceGroupId"].isNull())
 			dBInstancesObject.resourceGroupId = valueDBInstancesDBInstance["ResourceGroupId"].asString();
 		if(!valueDBInstancesDBInstance["ZoneId"].isNull())
@@ -87,6 +85,10 @@ void DescribeDBInstancesResult::parse(const std::string &payload)
 			dBInstancesObject.replicationFactor = valueDBInstancesDBInstance["ReplicationFactor"].asString();
 		if(!valueDBInstancesDBInstance["KindCode"].isNull())
 			dBInstancesObject.kindCode = valueDBInstancesDBInstance["KindCode"].asString();
+		if(!valueDBInstancesDBInstance["CloudType"].isNull())
+			dBInstancesObject.cloudType = valueDBInstancesDBInstance["CloudType"].asString();
+		if(!valueDBInstancesDBInstance["CapacityUnit"].isNull())
+			dBInstancesObject.capacityUnit = valueDBInstancesDBInstance["CapacityUnit"].asString();
 		auto allTagsNode = valueDBInstancesDBInstance["Tags"]["Tag"];
 		for (auto valueDBInstancesDBInstanceTagsTag : allTagsNode)
 		{

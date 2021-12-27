@@ -69,6 +69,7 @@ namespace AlibabaCloud
 					std::string dBInstanceStatus;
 					std::string zoneId;
 					std::string replicationFactor;
+					std::string cloudType;
 					std::string dBInstanceClass;
 					std::vector<DBInstance::ShardAttribute> shardList;
 					std::string lockMode;

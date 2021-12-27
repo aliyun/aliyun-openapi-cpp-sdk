@@ -113,6 +113,7 @@ namespace AlibabaCloud
 					int maxConnections;
 					std::string readonlyReplicas;
 					std::string replicationFactor;
+					std::string cloudType;
 					std::string vPCId;
 					std::string dBInstanceClass;
 					std::string vSwitchId;
