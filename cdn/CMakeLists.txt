@@ -253,8 +253,6 @@ set(cdn_public_header_model
 	include/alibabacloud/cdn/model/DescribeL2VipsByDomainResult.h
 	include/alibabacloud/cdn/model/DescribeLivePullStreamConfigRequest.h
 	include/alibabacloud/cdn/model/DescribeLivePullStreamConfigResult.h
-	include/alibabacloud/cdn/model/DescribeLiveStreamBitRateDataRequest.h
-	include/alibabacloud/cdn/model/DescribeLiveStreamBitRateDataResult.h
 	include/alibabacloud/cdn/model/DescribeLiveStreamOnlineUserNumRequest.h
 	include/alibabacloud/cdn/model/DescribeLiveStreamOnlineUserNumResult.h
 	include/alibabacloud/cdn/model/DescribeLiveStreamRecordContentRequest.h
@@ -265,8 +263,6 @@ set(cdn_public_header_model
 	include/alibabacloud/cdn/model/DescribeLiveStreamRecordIndexFilesResult.h
 	include/alibabacloud/cdn/model/DescribeLiveStreamSnapshotInfoRequest.h
 	include/alibabacloud/cdn/model/DescribeLiveStreamSnapshotInfoResult.h
-	include/alibabacloud/cdn/model/DescribeLiveStreamsBlockListRequest.h
-	include/alibabacloud/cdn/model/DescribeLiveStreamsBlockListResult.h
 	include/alibabacloud/cdn/model/DescribeLiveStreamsFrameRateAndBitRateDataRequest.h
 	include/alibabacloud/cdn/model/DescribeLiveStreamsFrameRateAndBitRateDataResult.h
 	include/alibabacloud/cdn/model/DescribeLiveStreamsOnlineListRequest.h
@@ -387,8 +383,6 @@ set(cdn_public_header_model
 	include/alibabacloud/cdn/model/SetReqHeaderConfigResult.h
 	include/alibabacloud/cdn/model/SetSourceHostConfigRequest.h
 	include/alibabacloud/cdn/model/SetSourceHostConfigResult.h
-	include/alibabacloud/cdn/model/SetUserGreenManagerConfigRequest.h
-	include/alibabacloud/cdn/model/SetUserGreenManagerConfigResult.h
 	include/alibabacloud/cdn/model/SetWaitingRoomConfigRequest.h
 	include/alibabacloud/cdn/model/SetWaitingRoomConfigResult.h
 	include/alibabacloud/cdn/model/StartCdnDomainRequest.h
@@ -642,8 +636,6 @@ set(cdn_src
 	src/model/DescribeL2VipsByDomainResult.cc
 	src/model/DescribeLivePullStreamConfigRequest.cc
 	src/model/DescribeLivePullStreamConfigResult.cc
-	src/model/DescribeLiveStreamBitRateDataRequest.cc
-	src/model/DescribeLiveStreamBitRateDataResult.cc
 	src/model/DescribeLiveStreamOnlineUserNumRequest.cc
 	src/model/DescribeLiveStreamOnlineUserNumResult.cc
 	src/model/DescribeLiveStreamRecordContentRequest.cc
@@ -654,8 +646,6 @@ set(cdn_src
 	src/model/DescribeLiveStreamRecordIndexFilesResult.cc
 	src/model/DescribeLiveStreamSnapshotInfoRequest.cc
 	src/model/DescribeLiveStreamSnapshotInfoResult.cc
-	src/model/DescribeLiveStreamsBlockListRequest.cc
-	src/model/DescribeLiveStreamsBlockListResult.cc
 	src/model/DescribeLiveStreamsFrameRateAndBitRateDataRequest.cc
 	src/model/DescribeLiveStreamsFrameRateAndBitRateDataResult.cc
 	src/model/DescribeLiveStreamsOnlineListRequest.cc
@@ -776,8 +766,6 @@ set(cdn_src
 	src/model/SetReqHeaderConfigResult.cc
 	src/model/SetSourceHostConfigRequest.cc
 	src/model/SetSourceHostConfigResult.cc
-	src/model/SetUserGreenManagerConfigRequest.cc
-	src/model/SetUserGreenManagerConfigResult.cc
 	src/model/SetWaitingRoomConfigRequest.cc
 	src/model/SetWaitingRoomConfigResult.cc
 	src/model/StartCdnDomainRequest.cc

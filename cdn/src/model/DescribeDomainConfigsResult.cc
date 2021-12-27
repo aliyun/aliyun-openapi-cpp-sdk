@@ -287,13 +287,6 @@ void DescribeDomainConfigsResult::parse(const std::string &payload)
 		domainConfigs_.macServiceConfig.configId = macServiceConfigNode["ConfigId"].asString();
 	if(!macServiceConfigNode["Status"].isNull())
 		domainConfigs_.macServiceConfig.status = macServiceConfigNode["Status"].asString();
-	auto greenManagerConfigNode = domainConfigsNode["GreenManagerConfig"];
-	if(!greenManagerConfigNode["Enabled"].isNull())
-		domainConfigs_.greenManagerConfig.enabled = greenManagerConfigNode["Enabled"].asString();
-	if(!greenManagerConfigNode["ConfigId"].isNull())
-		domainConfigs_.greenManagerConfig.configId = greenManagerConfigNode["ConfigId"].asString();
-	if(!greenManagerConfigNode["Status"].isNull())
-		domainConfigs_.greenManagerConfig.status = greenManagerConfigNode["Status"].asString();
 	auto httpsOptionConfigNode = domainConfigsNode["HttpsOptionConfig"];
 	if(!httpsOptionConfigNode["Http2"].isNull())
 		domainConfigs_.httpsOptionConfig.http2 = httpsOptionConfigNode["Http2"].asString();

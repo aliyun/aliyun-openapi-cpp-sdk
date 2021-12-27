@@ -4227,42 +4227,6 @@ CdnClient::DescribeLivePullStreamConfigOutcomeCallable CdnClient::describeLivePu
 	return task->get_future();
 }
 
-CdnClient::DescribeLiveStreamBitRateDataOutcome CdnClient::describeLiveStreamBitRateData(const DescribeLiveStreamBitRateDataRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeLiveStreamBitRateDataOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeLiveStreamBitRateDataOutcome(DescribeLiveStreamBitRateDataResult(outcome.result()));
-	else
-		return DescribeLiveStreamBitRateDataOutcome(outcome.error());
-}
-
-void CdnClient::describeLiveStreamBitRateDataAsync(const DescribeLiveStreamBitRateDataRequest& request, const DescribeLiveStreamBitRateDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeLiveStreamBitRateData(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CdnClient::DescribeLiveStreamBitRateDataOutcomeCallable CdnClient::describeLiveStreamBitRateDataCallable(const DescribeLiveStreamBitRateDataRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeLiveStreamBitRateDataOutcome()>>(
-			[this, request]()
-			{
-			return this->describeLiveStreamBitRateData(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CdnClient::DescribeLiveStreamOnlineUserNumOutcome CdnClient::describeLiveStreamOnlineUserNum(const DescribeLiveStreamOnlineUserNumRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4437,42 +4401,6 @@ CdnClient::DescribeLiveStreamSnapshotInfoOutcomeCallable CdnClient::describeLive
 			[this, request]()
 			{
 			return this->describeLiveStreamSnapshotInfo(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CdnClient::DescribeLiveStreamsBlockListOutcome CdnClient::describeLiveStreamsBlockList(const DescribeLiveStreamsBlockListRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeLiveStreamsBlockListOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeLiveStreamsBlockListOutcome(DescribeLiveStreamsBlockListResult(outcome.result()));
-	else
-		return DescribeLiveStreamsBlockListOutcome(outcome.error());
-}
-
-void CdnClient::describeLiveStreamsBlockListAsync(const DescribeLiveStreamsBlockListRequest& request, const DescribeLiveStreamsBlockListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeLiveStreamsBlockList(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CdnClient::DescribeLiveStreamsBlockListOutcomeCallable CdnClient::describeLiveStreamsBlockListCallable(const DescribeLiveStreamsBlockListRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeLiveStreamsBlockListOutcome()>>(
-			[this, request]()
-			{
-			return this->describeLiveStreamsBlockList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -6633,42 +6561,6 @@ CdnClient::SetSourceHostConfigOutcomeCallable CdnClient::setSourceHostConfigCall
 			[this, request]()
 			{
 			return this->setSourceHostConfig(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CdnClient::SetUserGreenManagerConfigOutcome CdnClient::setUserGreenManagerConfig(const SetUserGreenManagerConfigRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SetUserGreenManagerConfigOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SetUserGreenManagerConfigOutcome(SetUserGreenManagerConfigResult(outcome.result()));
-	else
-		return SetUserGreenManagerConfigOutcome(outcome.error());
-}
-
-void CdnClient::setUserGreenManagerConfigAsync(const SetUserGreenManagerConfigRequest& request, const SetUserGreenManagerConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, setUserGreenManagerConfig(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CdnClient::SetUserGreenManagerConfigOutcomeCallable CdnClient::setUserGreenManagerConfigCallable(const SetUserGreenManagerConfigRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SetUserGreenManagerConfigOutcome()>>(
-			[this, request]()
-			{
-			return this->setUserGreenManagerConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

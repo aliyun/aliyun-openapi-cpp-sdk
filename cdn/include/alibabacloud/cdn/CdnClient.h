@@ -254,8 +254,6 @@
 #include "model/DescribeL2VipsByDomainResult.h"
 #include "model/DescribeLivePullStreamConfigRequest.h"
 #include "model/DescribeLivePullStreamConfigResult.h"
-#include "model/DescribeLiveStreamBitRateDataRequest.h"
-#include "model/DescribeLiveStreamBitRateDataResult.h"
 #include "model/DescribeLiveStreamOnlineUserNumRequest.h"
 #include "model/DescribeLiveStreamOnlineUserNumResult.h"
 #include "model/DescribeLiveStreamRecordContentRequest.h"
@@ -266,8 +264,6 @@
 #include "model/DescribeLiveStreamRecordIndexFilesResult.h"
 #include "model/DescribeLiveStreamSnapshotInfoRequest.h"
 #include "model/DescribeLiveStreamSnapshotInfoResult.h"
-#include "model/DescribeLiveStreamsBlockListRequest.h"
-#include "model/DescribeLiveStreamsBlockListResult.h"
 #include "model/DescribeLiveStreamsFrameRateAndBitRateDataRequest.h"
 #include "model/DescribeLiveStreamsFrameRateAndBitRateDataResult.h"
 #include "model/DescribeLiveStreamsOnlineListRequest.h"
@@ -388,8 +384,6 @@
 #include "model/SetReqHeaderConfigResult.h"
 #include "model/SetSourceHostConfigRequest.h"
 #include "model/SetSourceHostConfigResult.h"
-#include "model/SetUserGreenManagerConfigRequest.h"
-#include "model/SetUserGreenManagerConfigResult.h"
 #include "model/SetWaitingRoomConfigRequest.h"
 #include "model/SetWaitingRoomConfigResult.h"
 #include "model/StartCdnDomainRequest.h"
@@ -765,9 +759,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeLivePullStreamConfigResult> DescribeLivePullStreamConfigOutcome;
 			typedef std::future<DescribeLivePullStreamConfigOutcome> DescribeLivePullStreamConfigOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::DescribeLivePullStreamConfigRequest&, const DescribeLivePullStreamConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLivePullStreamConfigAsyncHandler;
-			typedef Outcome<Error, Model::DescribeLiveStreamBitRateDataResult> DescribeLiveStreamBitRateDataOutcome;
-			typedef std::future<DescribeLiveStreamBitRateDataOutcome> DescribeLiveStreamBitRateDataOutcomeCallable;
-			typedef std::function<void(const CdnClient*, const Model::DescribeLiveStreamBitRateDataRequest&, const DescribeLiveStreamBitRateDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveStreamBitRateDataAsyncHandler;
 			typedef Outcome<Error, Model::DescribeLiveStreamOnlineUserNumResult> DescribeLiveStreamOnlineUserNumOutcome;
 			typedef std::future<DescribeLiveStreamOnlineUserNumOutcome> DescribeLiveStreamOnlineUserNumOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::DescribeLiveStreamOnlineUserNumRequest&, const DescribeLiveStreamOnlineUserNumOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveStreamOnlineUserNumAsyncHandler;
@@ -783,9 +774,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeLiveStreamSnapshotInfoResult> DescribeLiveStreamSnapshotInfoOutcome;
 			typedef std::future<DescribeLiveStreamSnapshotInfoOutcome> DescribeLiveStreamSnapshotInfoOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::DescribeLiveStreamSnapshotInfoRequest&, const DescribeLiveStreamSnapshotInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveStreamSnapshotInfoAsyncHandler;
-			typedef Outcome<Error, Model::DescribeLiveStreamsBlockListResult> DescribeLiveStreamsBlockListOutcome;
-			typedef std::future<DescribeLiveStreamsBlockListOutcome> DescribeLiveStreamsBlockListOutcomeCallable;
-			typedef std::function<void(const CdnClient*, const Model::DescribeLiveStreamsBlockListRequest&, const DescribeLiveStreamsBlockListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveStreamsBlockListAsyncHandler;
 			typedef Outcome<Error, Model::DescribeLiveStreamsFrameRateAndBitRateDataResult> DescribeLiveStreamsFrameRateAndBitRateDataOutcome;
 			typedef std::future<DescribeLiveStreamsFrameRateAndBitRateDataOutcome> DescribeLiveStreamsFrameRateAndBitRateDataOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::DescribeLiveStreamsFrameRateAndBitRateDataRequest&, const DescribeLiveStreamsFrameRateAndBitRateDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveStreamsFrameRateAndBitRateDataAsyncHandler;
@@ -966,9 +954,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SetSourceHostConfigResult> SetSourceHostConfigOutcome;
 			typedef std::future<SetSourceHostConfigOutcome> SetSourceHostConfigOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::SetSourceHostConfigRequest&, const SetSourceHostConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetSourceHostConfigAsyncHandler;
-			typedef Outcome<Error, Model::SetUserGreenManagerConfigResult> SetUserGreenManagerConfigOutcome;
-			typedef std::future<SetUserGreenManagerConfigOutcome> SetUserGreenManagerConfigOutcomeCallable;
-			typedef std::function<void(const CdnClient*, const Model::SetUserGreenManagerConfigRequest&, const SetUserGreenManagerConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetUserGreenManagerConfigAsyncHandler;
 			typedef Outcome<Error, Model::SetWaitingRoomConfigResult> SetWaitingRoomConfigOutcome;
 			typedef std::future<SetWaitingRoomConfigOutcome> SetWaitingRoomConfigOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::SetWaitingRoomConfigRequest&, const SetWaitingRoomConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetWaitingRoomConfigAsyncHandler;
@@ -1349,9 +1334,6 @@ namespace AlibabaCloud
 			DescribeLivePullStreamConfigOutcome describeLivePullStreamConfig(const Model::DescribeLivePullStreamConfigRequest &request)const;
 			void describeLivePullStreamConfigAsync(const Model::DescribeLivePullStreamConfigRequest& request, const DescribeLivePullStreamConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLivePullStreamConfigOutcomeCallable describeLivePullStreamConfigCallable(const Model::DescribeLivePullStreamConfigRequest& request) const;
-			DescribeLiveStreamBitRateDataOutcome describeLiveStreamBitRateData(const Model::DescribeLiveStreamBitRateDataRequest &request)const;
-			void describeLiveStreamBitRateDataAsync(const Model::DescribeLiveStreamBitRateDataRequest& request, const DescribeLiveStreamBitRateDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeLiveStreamBitRateDataOutcomeCallable describeLiveStreamBitRateDataCallable(const Model::DescribeLiveStreamBitRateDataRequest& request) const;
 			DescribeLiveStreamOnlineUserNumOutcome describeLiveStreamOnlineUserNum(const Model::DescribeLiveStreamOnlineUserNumRequest &request)const;
 			void describeLiveStreamOnlineUserNumAsync(const Model::DescribeLiveStreamOnlineUserNumRequest& request, const DescribeLiveStreamOnlineUserNumAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLiveStreamOnlineUserNumOutcomeCallable describeLiveStreamOnlineUserNumCallable(const Model::DescribeLiveStreamOnlineUserNumRequest& request) const;
@@ -1367,9 +1349,6 @@ namespace AlibabaCloud
 			DescribeLiveStreamSnapshotInfoOutcome describeLiveStreamSnapshotInfo(const Model::DescribeLiveStreamSnapshotInfoRequest &request)const;
 			void describeLiveStreamSnapshotInfoAsync(const Model::DescribeLiveStreamSnapshotInfoRequest& request, const DescribeLiveStreamSnapshotInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLiveStreamSnapshotInfoOutcomeCallable describeLiveStreamSnapshotInfoCallable(const Model::DescribeLiveStreamSnapshotInfoRequest& request) const;
-			DescribeLiveStreamsBlockListOutcome describeLiveStreamsBlockList(const Model::DescribeLiveStreamsBlockListRequest &request)const;
-			void describeLiveStreamsBlockListAsync(const Model::DescribeLiveStreamsBlockListRequest& request, const DescribeLiveStreamsBlockListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeLiveStreamsBlockListOutcomeCallable describeLiveStreamsBlockListCallable(const Model::DescribeLiveStreamsBlockListRequest& request) const;
 			DescribeLiveStreamsFrameRateAndBitRateDataOutcome describeLiveStreamsFrameRateAndBitRateData(const Model::DescribeLiveStreamsFrameRateAndBitRateDataRequest &request)const;
 			void describeLiveStreamsFrameRateAndBitRateDataAsync(const Model::DescribeLiveStreamsFrameRateAndBitRateDataRequest& request, const DescribeLiveStreamsFrameRateAndBitRateDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLiveStreamsFrameRateAndBitRateDataOutcomeCallable describeLiveStreamsFrameRateAndBitRateDataCallable(const Model::DescribeLiveStreamsFrameRateAndBitRateDataRequest& request) const;
@@ -1550,9 +1529,6 @@ namespace AlibabaCloud
 			SetSourceHostConfigOutcome setSourceHostConfig(const Model::SetSourceHostConfigRequest &request)const;
 			void setSourceHostConfigAsync(const Model::SetSourceHostConfigRequest& request, const SetSourceHostConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetSourceHostConfigOutcomeCallable setSourceHostConfigCallable(const Model::SetSourceHostConfigRequest& request) const;
-			SetUserGreenManagerConfigOutcome setUserGreenManagerConfig(const Model::SetUserGreenManagerConfigRequest &request)const;
-			void setUserGreenManagerConfigAsync(const Model::SetUserGreenManagerConfigRequest& request, const SetUserGreenManagerConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			SetUserGreenManagerConfigOutcomeCallable setUserGreenManagerConfigCallable(const Model::SetUserGreenManagerConfigRequest& request) const;
 			SetWaitingRoomConfigOutcome setWaitingRoomConfig(const Model::SetWaitingRoomConfigRequest &request)const;
 			void setWaitingRoomConfigAsync(const Model::SetWaitingRoomConfigRequest& request, const SetWaitingRoomConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetWaitingRoomConfigOutcomeCallable setWaitingRoomConfigCallable(const Model::SetWaitingRoomConfigRequest& request) const;

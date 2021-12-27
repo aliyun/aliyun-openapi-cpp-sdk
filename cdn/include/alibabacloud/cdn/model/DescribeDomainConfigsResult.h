@@ -152,12 +152,6 @@ namespace AlibabaCloud
 						std::string configId;
 						std::string appList;
 					};
-					struct GreenManagerConfig
-					{
-						std::string status;
-						std::string enabled;
-						std::string configId;
-					};
 					struct HttpsOptionConfig
 					{
 						std::string status;
@@ -231,7 +225,6 @@ namespace AlibabaCloud
 					RedirectTypeConfig redirectTypeConfig;
 					std::vector<SetVarsConfig> setVarsConfigs;
 					ReqAuthConfig reqAuthConfig;
-					GreenManagerConfig greenManagerConfig;
 					RefererConfig refererConfig;
 					SrcHostConfig srcHostConfig;
 					ForwardSchemeConfig forwardSchemeConfig;
