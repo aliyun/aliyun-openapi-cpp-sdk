@@ -80,6 +80,10 @@
 #include "model/GetAggregateResourceComplianceByConfigRuleResult.h"
 #include "model/GetAggregateResourceComplianceByPackRequest.h"
 #include "model/GetAggregateResourceComplianceByPackResult.h"
+#include "model/GetAggregateResourceComplianceGroupByRegionRequest.h"
+#include "model/GetAggregateResourceComplianceGroupByRegionResult.h"
+#include "model/GetAggregateResourceComplianceGroupByResourceTypeRequest.h"
+#include "model/GetAggregateResourceComplianceGroupByResourceTypeResult.h"
 #include "model/GetAggregateResourceComplianceTimelineRequest.h"
 #include "model/GetAggregateResourceComplianceTimelineResult.h"
 #include "model/GetAggregateResourceConfigurationTimelineRequest.h"
@@ -106,10 +110,16 @@
 #include "model/GetDiscoveredResourceCountsGroupByRegionResult.h"
 #include "model/GetDiscoveredResourceCountsGroupByResourceTypeRequest.h"
 #include "model/GetDiscoveredResourceCountsGroupByResourceTypeResult.h"
+#include "model/GetManagedRuleRequest.h"
+#include "model/GetManagedRuleResult.h"
 #include "model/GetResourceComplianceByConfigRuleRequest.h"
 #include "model/GetResourceComplianceByConfigRuleResult.h"
 #include "model/GetResourceComplianceByPackRequest.h"
 #include "model/GetResourceComplianceByPackResult.h"
+#include "model/GetResourceComplianceGroupByRegionRequest.h"
+#include "model/GetResourceComplianceGroupByRegionResult.h"
+#include "model/GetResourceComplianceGroupByResourceTypeRequest.h"
+#include "model/GetResourceComplianceGroupByResourceTypeResult.h"
 #include "model/GetResourceComplianceTimelineRequest.h"
 #include "model/GetResourceComplianceTimelineResult.h"
 #include "model/GetResourceConfigurationTimelineRequest.h"
@@ -134,6 +144,8 @@
 #include "model/ListCompliancePacksResult.h"
 #include "model/ListConfigRuleEvaluationResultsRequest.h"
 #include "model/ListConfigRuleEvaluationResultsResult.h"
+#include "model/ListManagedRulesRequest.h"
+#include "model/ListManagedRulesResult.h"
 #include "model/ListResourceEvaluationResultsRequest.h"
 #include "model/ListResourceEvaluationResultsResult.h"
 #include "model/RevertAggregateEvaluationResultsRequest.h"
@@ -248,6 +260,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetAggregateResourceComplianceByPackResult> GetAggregateResourceComplianceByPackOutcome;
 			typedef std::future<GetAggregateResourceComplianceByPackOutcome> GetAggregateResourceComplianceByPackOutcomeCallable;
 			typedef std::function<void(const ConfigClient*, const Model::GetAggregateResourceComplianceByPackRequest&, const GetAggregateResourceComplianceByPackOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAggregateResourceComplianceByPackAsyncHandler;
+			typedef Outcome<Error, Model::GetAggregateResourceComplianceGroupByRegionResult> GetAggregateResourceComplianceGroupByRegionOutcome;
+			typedef std::future<GetAggregateResourceComplianceGroupByRegionOutcome> GetAggregateResourceComplianceGroupByRegionOutcomeCallable;
+			typedef std::function<void(const ConfigClient*, const Model::GetAggregateResourceComplianceGroupByRegionRequest&, const GetAggregateResourceComplianceGroupByRegionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAggregateResourceComplianceGroupByRegionAsyncHandler;
+			typedef Outcome<Error, Model::GetAggregateResourceComplianceGroupByResourceTypeResult> GetAggregateResourceComplianceGroupByResourceTypeOutcome;
+			typedef std::future<GetAggregateResourceComplianceGroupByResourceTypeOutcome> GetAggregateResourceComplianceGroupByResourceTypeOutcomeCallable;
+			typedef std::function<void(const ConfigClient*, const Model::GetAggregateResourceComplianceGroupByResourceTypeRequest&, const GetAggregateResourceComplianceGroupByResourceTypeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAggregateResourceComplianceGroupByResourceTypeAsyncHandler;
 			typedef Outcome<Error, Model::GetAggregateResourceComplianceTimelineResult> GetAggregateResourceComplianceTimelineOutcome;
 			typedef std::future<GetAggregateResourceComplianceTimelineOutcome> GetAggregateResourceComplianceTimelineOutcomeCallable;
 			typedef std::function<void(const ConfigClient*, const Model::GetAggregateResourceComplianceTimelineRequest&, const GetAggregateResourceComplianceTimelineOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAggregateResourceComplianceTimelineAsyncHandler;
@@ -287,12 +305,21 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetDiscoveredResourceCountsGroupByResourceTypeResult> GetDiscoveredResourceCountsGroupByResourceTypeOutcome;
 			typedef std::future<GetDiscoveredResourceCountsGroupByResourceTypeOutcome> GetDiscoveredResourceCountsGroupByResourceTypeOutcomeCallable;
 			typedef std::function<void(const ConfigClient*, const Model::GetDiscoveredResourceCountsGroupByResourceTypeRequest&, const GetDiscoveredResourceCountsGroupByResourceTypeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDiscoveredResourceCountsGroupByResourceTypeAsyncHandler;
+			typedef Outcome<Error, Model::GetManagedRuleResult> GetManagedRuleOutcome;
+			typedef std::future<GetManagedRuleOutcome> GetManagedRuleOutcomeCallable;
+			typedef std::function<void(const ConfigClient*, const Model::GetManagedRuleRequest&, const GetManagedRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetManagedRuleAsyncHandler;
 			typedef Outcome<Error, Model::GetResourceComplianceByConfigRuleResult> GetResourceComplianceByConfigRuleOutcome;
 			typedef std::future<GetResourceComplianceByConfigRuleOutcome> GetResourceComplianceByConfigRuleOutcomeCallable;
 			typedef std::function<void(const ConfigClient*, const Model::GetResourceComplianceByConfigRuleRequest&, const GetResourceComplianceByConfigRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetResourceComplianceByConfigRuleAsyncHandler;
 			typedef Outcome<Error, Model::GetResourceComplianceByPackResult> GetResourceComplianceByPackOutcome;
 			typedef std::future<GetResourceComplianceByPackOutcome> GetResourceComplianceByPackOutcomeCallable;
 			typedef std::function<void(const ConfigClient*, const Model::GetResourceComplianceByPackRequest&, const GetResourceComplianceByPackOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetResourceComplianceByPackAsyncHandler;
+			typedef Outcome<Error, Model::GetResourceComplianceGroupByRegionResult> GetResourceComplianceGroupByRegionOutcome;
+			typedef std::future<GetResourceComplianceGroupByRegionOutcome> GetResourceComplianceGroupByRegionOutcomeCallable;
+			typedef std::function<void(const ConfigClient*, const Model::GetResourceComplianceGroupByRegionRequest&, const GetResourceComplianceGroupByRegionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetResourceComplianceGroupByRegionAsyncHandler;
+			typedef Outcome<Error, Model::GetResourceComplianceGroupByResourceTypeResult> GetResourceComplianceGroupByResourceTypeOutcome;
+			typedef std::future<GetResourceComplianceGroupByResourceTypeOutcome> GetResourceComplianceGroupByResourceTypeOutcomeCallable;
+			typedef std::function<void(const ConfigClient*, const Model::GetResourceComplianceGroupByResourceTypeRequest&, const GetResourceComplianceGroupByResourceTypeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetResourceComplianceGroupByResourceTypeAsyncHandler;
 			typedef Outcome<Error, Model::GetResourceComplianceTimelineResult> GetResourceComplianceTimelineOutcome;
 			typedef std::future<GetResourceComplianceTimelineOutcome> GetResourceComplianceTimelineOutcomeCallable;
 			typedef std::function<void(const ConfigClient*, const Model::GetResourceComplianceTimelineRequest&, const GetResourceComplianceTimelineOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetResourceComplianceTimelineAsyncHandler;
@@ -329,6 +356,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListConfigRuleEvaluationResultsResult> ListConfigRuleEvaluationResultsOutcome;
 			typedef std::future<ListConfigRuleEvaluationResultsOutcome> ListConfigRuleEvaluationResultsOutcomeCallable;
 			typedef std::function<void(const ConfigClient*, const Model::ListConfigRuleEvaluationResultsRequest&, const ListConfigRuleEvaluationResultsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListConfigRuleEvaluationResultsAsyncHandler;
+			typedef Outcome<Error, Model::ListManagedRulesResult> ListManagedRulesOutcome;
+			typedef std::future<ListManagedRulesOutcome> ListManagedRulesOutcomeCallable;
+			typedef std::function<void(const ConfigClient*, const Model::ListManagedRulesRequest&, const ListManagedRulesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListManagedRulesAsyncHandler;
 			typedef Outcome<Error, Model::ListResourceEvaluationResultsResult> ListResourceEvaluationResultsOutcome;
 			typedef std::future<ListResourceEvaluationResultsOutcome> ListResourceEvaluationResultsOutcomeCallable;
 			typedef std::function<void(const ConfigClient*, const Model::ListResourceEvaluationResultsRequest&, const ListResourceEvaluationResultsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListResourceEvaluationResultsAsyncHandler;
@@ -448,6 +478,12 @@ namespace AlibabaCloud
 			GetAggregateResourceComplianceByPackOutcome getAggregateResourceComplianceByPack(const Model::GetAggregateResourceComplianceByPackRequest &request)const;
 			void getAggregateResourceComplianceByPackAsync(const Model::GetAggregateResourceComplianceByPackRequest& request, const GetAggregateResourceComplianceByPackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetAggregateResourceComplianceByPackOutcomeCallable getAggregateResourceComplianceByPackCallable(const Model::GetAggregateResourceComplianceByPackRequest& request) const;
+			GetAggregateResourceComplianceGroupByRegionOutcome getAggregateResourceComplianceGroupByRegion(const Model::GetAggregateResourceComplianceGroupByRegionRequest &request)const;
+			void getAggregateResourceComplianceGroupByRegionAsync(const Model::GetAggregateResourceComplianceGroupByRegionRequest& request, const GetAggregateResourceComplianceGroupByRegionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetAggregateResourceComplianceGroupByRegionOutcomeCallable getAggregateResourceComplianceGroupByRegionCallable(const Model::GetAggregateResourceComplianceGroupByRegionRequest& request) const;
+			GetAggregateResourceComplianceGroupByResourceTypeOutcome getAggregateResourceComplianceGroupByResourceType(const Model::GetAggregateResourceComplianceGroupByResourceTypeRequest &request)const;
+			void getAggregateResourceComplianceGroupByResourceTypeAsync(const Model::GetAggregateResourceComplianceGroupByResourceTypeRequest& request, const GetAggregateResourceComplianceGroupByResourceTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetAggregateResourceComplianceGroupByResourceTypeOutcomeCallable getAggregateResourceComplianceGroupByResourceTypeCallable(const Model::GetAggregateResourceComplianceGroupByResourceTypeRequest& request) const;
 			GetAggregateResourceComplianceTimelineOutcome getAggregateResourceComplianceTimeline(const Model::GetAggregateResourceComplianceTimelineRequest &request)const;
 			void getAggregateResourceComplianceTimelineAsync(const Model::GetAggregateResourceComplianceTimelineRequest& request, const GetAggregateResourceComplianceTimelineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetAggregateResourceComplianceTimelineOutcomeCallable getAggregateResourceComplianceTimelineCallable(const Model::GetAggregateResourceComplianceTimelineRequest& request) const;
@@ -487,12 +523,21 @@ namespace AlibabaCloud
 			GetDiscoveredResourceCountsGroupByResourceTypeOutcome getDiscoveredResourceCountsGroupByResourceType(const Model::GetDiscoveredResourceCountsGroupByResourceTypeRequest &request)const;
 			void getDiscoveredResourceCountsGroupByResourceTypeAsync(const Model::GetDiscoveredResourceCountsGroupByResourceTypeRequest& request, const GetDiscoveredResourceCountsGroupByResourceTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetDiscoveredResourceCountsGroupByResourceTypeOutcomeCallable getDiscoveredResourceCountsGroupByResourceTypeCallable(const Model::GetDiscoveredResourceCountsGroupByResourceTypeRequest& request) const;
+			GetManagedRuleOutcome getManagedRule(const Model::GetManagedRuleRequest &request)const;
+			void getManagedRuleAsync(const Model::GetManagedRuleRequest& request, const GetManagedRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetManagedRuleOutcomeCallable getManagedRuleCallable(const Model::GetManagedRuleRequest& request) const;
 			GetResourceComplianceByConfigRuleOutcome getResourceComplianceByConfigRule(const Model::GetResourceComplianceByConfigRuleRequest &request)const;
 			void getResourceComplianceByConfigRuleAsync(const Model::GetResourceComplianceByConfigRuleRequest& request, const GetResourceComplianceByConfigRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetResourceComplianceByConfigRuleOutcomeCallable getResourceComplianceByConfigRuleCallable(const Model::GetResourceComplianceByConfigRuleRequest& request) const;
 			GetResourceComplianceByPackOutcome getResourceComplianceByPack(const Model::GetResourceComplianceByPackRequest &request)const;
 			void getResourceComplianceByPackAsync(const Model::GetResourceComplianceByPackRequest& request, const GetResourceComplianceByPackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetResourceComplianceByPackOutcomeCallable getResourceComplianceByPackCallable(const Model::GetResourceComplianceByPackRequest& request) const;
+			GetResourceComplianceGroupByRegionOutcome getResourceComplianceGroupByRegion(const Model::GetResourceComplianceGroupByRegionRequest &request)const;
+			void getResourceComplianceGroupByRegionAsync(const Model::GetResourceComplianceGroupByRegionRequest& request, const GetResourceComplianceGroupByRegionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetResourceComplianceGroupByRegionOutcomeCallable getResourceComplianceGroupByRegionCallable(const Model::GetResourceComplianceGroupByRegionRequest& request) const;
+			GetResourceComplianceGroupByResourceTypeOutcome getResourceComplianceGroupByResourceType(const Model::GetResourceComplianceGroupByResourceTypeRequest &request)const;
+			void getResourceComplianceGroupByResourceTypeAsync(const Model::GetResourceComplianceGroupByResourceTypeRequest& request, const GetResourceComplianceGroupByResourceTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetResourceComplianceGroupByResourceTypeOutcomeCallable getResourceComplianceGroupByResourceTypeCallable(const Model::GetResourceComplianceGroupByResourceTypeRequest& request) const;
 			GetResourceComplianceTimelineOutcome getResourceComplianceTimeline(const Model::GetResourceComplianceTimelineRequest &request)const;
 			void getResourceComplianceTimelineAsync(const Model::GetResourceComplianceTimelineRequest& request, const GetResourceComplianceTimelineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetResourceComplianceTimelineOutcomeCallable getResourceComplianceTimelineCallable(const Model::GetResourceComplianceTimelineRequest& request) const;
@@ -529,6 +574,9 @@ namespace AlibabaCloud
 			ListConfigRuleEvaluationResultsOutcome listConfigRuleEvaluationResults(const Model::ListConfigRuleEvaluationResultsRequest &request)const;
 			void listConfigRuleEvaluationResultsAsync(const Model::ListConfigRuleEvaluationResultsRequest& request, const ListConfigRuleEvaluationResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListConfigRuleEvaluationResultsOutcomeCallable listConfigRuleEvaluationResultsCallable(const Model::ListConfigRuleEvaluationResultsRequest& request) const;
+			ListManagedRulesOutcome listManagedRules(const Model::ListManagedRulesRequest &request)const;
+			void listManagedRulesAsync(const Model::ListManagedRulesRequest& request, const ListManagedRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListManagedRulesOutcomeCallable listManagedRulesCallable(const Model::ListManagedRulesRequest& request) const;
 			ListResourceEvaluationResultsOutcome listResourceEvaluationResults(const Model::ListResourceEvaluationResultsRequest &request)const;
 			void listResourceEvaluationResultsAsync(const Model::ListResourceEvaluationResultsRequest& request, const ListResourceEvaluationResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListResourceEvaluationResultsOutcomeCallable listResourceEvaluationResultsCallable(const Model::ListResourceEvaluationResultsRequest& request) const;

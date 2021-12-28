@@ -58,6 +58,8 @@ public:
 	void setInputParameters(const std::string &inputParameters);
 	std::string getConfigRuleName() const;
 	void setConfigRuleName(const std::string &configRuleName);
+	std::string getTagKeyLogicScope() const;
+	void setTagKeyLogicScope(const std::string &tagKeyLogicScope);
 	std::string getMaximumExecutionFrequency() const;
 	void setMaximumExecutionFrequency(const std::string &maximumExecutionFrequency);
 	std::string getExcludeResourceIdsScope() const;
@@ -78,6 +80,7 @@ private:
 	std::string resourceGroupIdsScope_;
 	std::string inputParameters_;
 	std::string configRuleName_;
+	std::string tagKeyLogicScope_;
 	std::string maximumExecutionFrequency_;
 	std::string excludeResourceIdsScope_;
 };

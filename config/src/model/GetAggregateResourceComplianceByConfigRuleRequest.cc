@@ -20,7 +20,7 @@ using AlibabaCloud::Config::Model::GetAggregateResourceComplianceByConfigRuleReq
 
 GetAggregateResourceComplianceByConfigRuleRequest::GetAggregateResourceComplianceByConfigRuleRequest()
     : RpcServiceRequest("config", "2020-09-07", "GetAggregateResourceComplianceByConfigRule") {
-  setMethod(HttpRequest::Method::Get);
+  setMethod(HttpRequest::Method::Post);
 }
 
 GetAggregateResourceComplianceByConfigRuleRequest::~GetAggregateResourceComplianceByConfigRuleRequest() {}

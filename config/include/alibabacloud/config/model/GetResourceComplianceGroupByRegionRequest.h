@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CONFIG_MODEL_GENERATEAGGREGATECONFIGRULESREPORTREQUEST_H_
-#define ALIBABACLOUD_CONFIG_MODEL_GENERATEAGGREGATECONFIGRULESREPORTREQUEST_H_
+#ifndef ALIBABACLOUD_CONFIG_MODEL_GETRESOURCECOMPLIANCEGROUPBYREGIONREQUEST_H_
+#define ALIBABACLOUD_CONFIG_MODEL_GETRESOURCECOMPLIANCEGROUPBYREGIONREQUEST_H_
 
 #include <alibabacloud/config/ConfigExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,23 +26,17 @@
 namespace AlibabaCloud {
 namespace Config {
 namespace Model {
-class ALIBABACLOUD_CONFIG_EXPORT GenerateAggregateConfigRulesReportRequest : public RpcServiceRequest {
+class ALIBABACLOUD_CONFIG_EXPORT GetResourceComplianceGroupByRegionRequest : public RpcServiceRequest {
 public:
-	GenerateAggregateConfigRulesReportRequest();
-	~GenerateAggregateConfigRulesReportRequest();
-	std::string getClientToken() const;
-	void setClientToken(const std::string &clientToken);
+	GetResourceComplianceGroupByRegionRequest();
+	~GetResourceComplianceGroupByRegionRequest();
 	std::string getConfigRuleIds() const;
 	void setConfigRuleIds(const std::string &configRuleIds);
-	std::string getAggregatorId() const;
-	void setAggregatorId(const std::string &aggregatorId);
 
 private:
-	std::string clientToken_;
 	std::string configRuleIds_;
-	std::string aggregatorId_;
 };
 } // namespace Model
 } // namespace Config
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_CONFIG_MODEL_GENERATEAGGREGATECONFIGRULESREPORTREQUEST_H_
+#endif // !ALIBABACLOUD_CONFIG_MODEL_GETRESOURCECOMPLIANCEGROUPBYREGIONREQUEST_H_

@@ -32,9 +32,12 @@ public:
 	~GenerateConfigRulesReportRequest();
 	std::string getClientToken() const;
 	void setClientToken(const std::string &clientToken);
+	std::string getConfigRuleIds() const;
+	void setConfigRuleIds(const std::string &configRuleIds);
 
 private:
 	std::string clientToken_;
+	std::string configRuleIds_;
 };
 } // namespace Model
 } // namespace Config

@@ -30,8 +30,11 @@ class ALIBABACLOUD_CONFIG_EXPORT GetConfigRulesReportRequest : public RpcService
 public:
 	GetConfigRulesReportRequest();
 	~GetConfigRulesReportRequest();
+	std::string getReportId() const;
+	void setReportId(const std::string &reportId);
 
 private:
+	std::string reportId_;
 };
 } // namespace Model
 } // namespace Config

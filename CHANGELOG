@@ -1,3 +1,6 @@
+2021-12-28 Version: 1.36.999
+- Support managed rule query.
+
 2021-12-27 Version: 1.36.998
 - Support ACR EE, OSS, EIP for deploy.
 

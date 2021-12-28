@@ -39,6 +39,13 @@ void GenerateConfigRulesReportResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["ReportId"].isNull())
+		reportId_ = value["ReportId"].asString();
 
+}
+
+std::string GenerateConfigRulesReportResult::getReportId()const
+{
+	return reportId_;
 }
 

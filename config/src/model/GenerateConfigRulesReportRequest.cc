@@ -34,3 +34,12 @@ void GenerateConfigRulesReportRequest::setClientToken(const std::string &clientT
   setBodyParameter(std::string("ClientToken"), clientToken);
 }
 
+std::string GenerateConfigRulesReportRequest::getConfigRuleIds() const {
+  return configRuleIds_;
+}
+
+void GenerateConfigRulesReportRequest::setConfigRuleIds(const std::string &configRuleIds) {
+  configRuleIds_ = configRuleIds;
+  setBodyParameter(std::string("ConfigRuleIds"), configRuleIds);
+}
+

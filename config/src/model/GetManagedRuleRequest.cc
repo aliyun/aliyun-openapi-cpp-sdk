@@ -14,23 +14,23 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/config/model/GetConfigRulesReportRequest.h>
+#include <alibabacloud/config/model/GetManagedRuleRequest.h>
 
-using AlibabaCloud::Config::Model::GetConfigRulesReportRequest;
+using AlibabaCloud::Config::Model::GetManagedRuleRequest;
 
-GetConfigRulesReportRequest::GetConfigRulesReportRequest()
-    : RpcServiceRequest("config", "2020-09-07", "GetConfigRulesReport") {
+GetManagedRuleRequest::GetManagedRuleRequest()
+    : RpcServiceRequest("config", "2020-09-07", "GetManagedRule") {
   setMethod(HttpRequest::Method::Post);
 }
 
-GetConfigRulesReportRequest::~GetConfigRulesReportRequest() {}
+GetManagedRuleRequest::~GetManagedRuleRequest() {}
 
-std::string GetConfigRulesReportRequest::getReportId() const {
-  return reportId_;
+std::string GetManagedRuleRequest::getIdentifier() const {
+  return identifier_;
 }
 
-void GetConfigRulesReportRequest::setReportId(const std::string &reportId) {
-  reportId_ = reportId;
-  setParameter(std::string("ReportId"), reportId);
+void GetManagedRuleRequest::setIdentifier(const std::string &identifier) {
+  identifier_ = identifier;
+  setParameter(std::string("Identifier"), identifier);
 }
 

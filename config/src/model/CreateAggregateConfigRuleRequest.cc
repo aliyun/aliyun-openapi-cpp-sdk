@@ -153,6 +153,15 @@ void CreateAggregateConfigRuleRequest::setConfigRuleName(const std::string &conf
   setBodyParameter(std::string("ConfigRuleName"), configRuleName);
 }
 
+std::string CreateAggregateConfigRuleRequest::getTagKeyLogicScope() const {
+  return tagKeyLogicScope_;
+}
+
+void CreateAggregateConfigRuleRequest::setTagKeyLogicScope(const std::string &tagKeyLogicScope) {
+  tagKeyLogicScope_ = tagKeyLogicScope;
+  setBodyParameter(std::string("TagKeyLogicScope"), tagKeyLogicScope);
+}
+
 std::string CreateAggregateConfigRuleRequest::getMaximumExecutionFrequency() const {
   return maximumExecutionFrequency_;
 }

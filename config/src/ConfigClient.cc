@@ -1095,6 +1095,78 @@ ConfigClient::GetAggregateResourceComplianceByPackOutcomeCallable ConfigClient::
 	return task->get_future();
 }
 
+ConfigClient::GetAggregateResourceComplianceGroupByRegionOutcome ConfigClient::getAggregateResourceComplianceGroupByRegion(const GetAggregateResourceComplianceGroupByRegionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetAggregateResourceComplianceGroupByRegionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetAggregateResourceComplianceGroupByRegionOutcome(GetAggregateResourceComplianceGroupByRegionResult(outcome.result()));
+	else
+		return GetAggregateResourceComplianceGroupByRegionOutcome(outcome.error());
+}
+
+void ConfigClient::getAggregateResourceComplianceGroupByRegionAsync(const GetAggregateResourceComplianceGroupByRegionRequest& request, const GetAggregateResourceComplianceGroupByRegionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getAggregateResourceComplianceGroupByRegion(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ConfigClient::GetAggregateResourceComplianceGroupByRegionOutcomeCallable ConfigClient::getAggregateResourceComplianceGroupByRegionCallable(const GetAggregateResourceComplianceGroupByRegionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetAggregateResourceComplianceGroupByRegionOutcome()>>(
+			[this, request]()
+			{
+			return this->getAggregateResourceComplianceGroupByRegion(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ConfigClient::GetAggregateResourceComplianceGroupByResourceTypeOutcome ConfigClient::getAggregateResourceComplianceGroupByResourceType(const GetAggregateResourceComplianceGroupByResourceTypeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetAggregateResourceComplianceGroupByResourceTypeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetAggregateResourceComplianceGroupByResourceTypeOutcome(GetAggregateResourceComplianceGroupByResourceTypeResult(outcome.result()));
+	else
+		return GetAggregateResourceComplianceGroupByResourceTypeOutcome(outcome.error());
+}
+
+void ConfigClient::getAggregateResourceComplianceGroupByResourceTypeAsync(const GetAggregateResourceComplianceGroupByResourceTypeRequest& request, const GetAggregateResourceComplianceGroupByResourceTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getAggregateResourceComplianceGroupByResourceType(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ConfigClient::GetAggregateResourceComplianceGroupByResourceTypeOutcomeCallable ConfigClient::getAggregateResourceComplianceGroupByResourceTypeCallable(const GetAggregateResourceComplianceGroupByResourceTypeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetAggregateResourceComplianceGroupByResourceTypeOutcome()>>(
+			[this, request]()
+			{
+			return this->getAggregateResourceComplianceGroupByResourceType(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ConfigClient::GetAggregateResourceComplianceTimelineOutcome ConfigClient::getAggregateResourceComplianceTimeline(const GetAggregateResourceComplianceTimelineRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1563,6 +1635,42 @@ ConfigClient::GetDiscoveredResourceCountsGroupByResourceTypeOutcomeCallable Conf
 	return task->get_future();
 }
 
+ConfigClient::GetManagedRuleOutcome ConfigClient::getManagedRule(const GetManagedRuleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetManagedRuleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetManagedRuleOutcome(GetManagedRuleResult(outcome.result()));
+	else
+		return GetManagedRuleOutcome(outcome.error());
+}
+
+void ConfigClient::getManagedRuleAsync(const GetManagedRuleRequest& request, const GetManagedRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getManagedRule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ConfigClient::GetManagedRuleOutcomeCallable ConfigClient::getManagedRuleCallable(const GetManagedRuleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetManagedRuleOutcome()>>(
+			[this, request]()
+			{
+			return this->getManagedRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ConfigClient::GetResourceComplianceByConfigRuleOutcome ConfigClient::getResourceComplianceByConfigRule(const GetResourceComplianceByConfigRuleRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1629,6 +1737,78 @@ ConfigClient::GetResourceComplianceByPackOutcomeCallable ConfigClient::getResour
 			[this, request]()
 			{
 			return this->getResourceComplianceByPack(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ConfigClient::GetResourceComplianceGroupByRegionOutcome ConfigClient::getResourceComplianceGroupByRegion(const GetResourceComplianceGroupByRegionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetResourceComplianceGroupByRegionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetResourceComplianceGroupByRegionOutcome(GetResourceComplianceGroupByRegionResult(outcome.result()));
+	else
+		return GetResourceComplianceGroupByRegionOutcome(outcome.error());
+}
+
+void ConfigClient::getResourceComplianceGroupByRegionAsync(const GetResourceComplianceGroupByRegionRequest& request, const GetResourceComplianceGroupByRegionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getResourceComplianceGroupByRegion(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ConfigClient::GetResourceComplianceGroupByRegionOutcomeCallable ConfigClient::getResourceComplianceGroupByRegionCallable(const GetResourceComplianceGroupByRegionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetResourceComplianceGroupByRegionOutcome()>>(
+			[this, request]()
+			{
+			return this->getResourceComplianceGroupByRegion(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ConfigClient::GetResourceComplianceGroupByResourceTypeOutcome ConfigClient::getResourceComplianceGroupByResourceType(const GetResourceComplianceGroupByResourceTypeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetResourceComplianceGroupByResourceTypeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetResourceComplianceGroupByResourceTypeOutcome(GetResourceComplianceGroupByResourceTypeResult(outcome.result()));
+	else
+		return GetResourceComplianceGroupByResourceTypeOutcome(outcome.error());
+}
+
+void ConfigClient::getResourceComplianceGroupByResourceTypeAsync(const GetResourceComplianceGroupByResourceTypeRequest& request, const GetResourceComplianceGroupByResourceTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getResourceComplianceGroupByResourceType(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ConfigClient::GetResourceComplianceGroupByResourceTypeOutcomeCallable ConfigClient::getResourceComplianceGroupByResourceTypeCallable(const GetResourceComplianceGroupByResourceTypeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetResourceComplianceGroupByResourceTypeOutcome()>>(
+			[this, request]()
+			{
+			return this->getResourceComplianceGroupByResourceType(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2061,6 +2241,42 @@ ConfigClient::ListConfigRuleEvaluationResultsOutcomeCallable ConfigClient::listC
 			[this, request]()
 			{
 			return this->listConfigRuleEvaluationResults(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ConfigClient::ListManagedRulesOutcome ConfigClient::listManagedRules(const ListManagedRulesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListManagedRulesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListManagedRulesOutcome(ListManagedRulesResult(outcome.result()));
+	else
+		return ListManagedRulesOutcome(outcome.error());
+}
+
+void ConfigClient::listManagedRulesAsync(const ListManagedRulesRequest& request, const ListManagedRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listManagedRules(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ConfigClient::ListManagedRulesOutcomeCallable ConfigClient::listManagedRulesCallable(const ListManagedRulesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListManagedRulesOutcome()>>(
+			[this, request]()
+			{
+			return this->listManagedRules(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

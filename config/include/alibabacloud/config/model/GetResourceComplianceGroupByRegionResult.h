@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CONFIG_MODEL_GETCONFIGRULESREPORTRESULT_H_
-#define ALIBABACLOUD_CONFIG_MODEL_GETCONFIGRULESREPORTRESULT_H_
+#ifndef ALIBABACLOUD_CONFIG_MODEL_GETRESOURCECOMPLIANCEGROUPBYREGIONRESULT_H_
+#define ALIBABACLOUD_CONFIG_MODEL_GETRESOURCECOMPLIANCEGROUPBYREGIONRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,31 +29,37 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CONFIG_EXPORT GetConfigRulesReportResult : public ServiceResult
+			class ALIBABACLOUD_CONFIG_EXPORT GetResourceComplianceGroupByRegionResult : public ServiceResult
 			{
 			public:
-				struct ConfigRulesReport
+				struct ComplianceResult
 				{
-					long accountId;
-					std::string reportUrl;
-					std::string reportId;
-					std::string reportStatus;
-					long reportCreateTimestamp;
+					struct ComplianceResultListItem
+					{
+						struct CompliancesItem
+						{
+							std::string complianceType;
+							long count;
+						};
+						std::vector<ComplianceResultListItem::CompliancesItem> compliances;
+						std::string regionId;
+					};
+					std::vector<ComplianceResultListItem> complianceResultList;
 				};
 
 
-				GetConfigRulesReportResult();
-				explicit GetConfigRulesReportResult(const std::string &payload);
-				~GetConfigRulesReportResult();
-				ConfigRulesReport getConfigRulesReport()const;
+				GetResourceComplianceGroupByRegionResult();
+				explicit GetResourceComplianceGroupByRegionResult(const std::string &payload);
+				~GetResourceComplianceGroupByRegionResult();
+				ComplianceResult getComplianceResult()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				ConfigRulesReport configRulesReport_;
+				ComplianceResult complianceResult_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CONFIG_MODEL_GETCONFIGRULESREPORTRESULT_H_
+#endif // !ALIBABACLOUD_CONFIG_MODEL_GETRESOURCECOMPLIANCEGROUPBYREGIONRESULT_H_

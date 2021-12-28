@@ -34,6 +34,15 @@ void GenerateAggregateConfigRulesReportRequest::setClientToken(const std::string
   setBodyParameter(std::string("ClientToken"), clientToken);
 }
 
+std::string GenerateAggregateConfigRulesReportRequest::getConfigRuleIds() const {
+  return configRuleIds_;
+}
+
+void GenerateAggregateConfigRulesReportRequest::setConfigRuleIds(const std::string &configRuleIds) {
+  configRuleIds_ = configRuleIds;
+  setBodyParameter(std::string("ConfigRuleIds"), configRuleIds);
+}
+
 std::string GenerateAggregateConfigRulesReportRequest::getAggregatorId() const {
   return aggregatorId_;
 }

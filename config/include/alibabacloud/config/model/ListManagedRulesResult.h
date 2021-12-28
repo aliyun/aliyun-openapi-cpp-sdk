@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CONFIG_MODEL_GENERATEAGGREGATECONFIGRULESREPORTRESULT_H_
-#define ALIBABACLOUD_CONFIG_MODEL_GENERATEAGGREGATECONFIGRULESREPORTRESULT_H_
+#ifndef ALIBABACLOUD_CONFIG_MODEL_LISTMANAGEDRULESRESULT_H_
+#define ALIBABACLOUD_CONFIG_MODEL_LISTMANAGEDRULESRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,25 +29,41 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CONFIG_EXPORT GenerateAggregateConfigRulesReportResult : public ServiceResult
+			class ALIBABACLOUD_CONFIG_EXPORT ListManagedRulesResult : public ServiceResult
 			{
 			public:
+				struct Data
+				{
+					struct ManagedRule
+					{
+						std::string description;
+						std::string identifier;
+						std::string configRuleName;
+						std::vector<std::string> labels;
+						std::string useCases;
+						int riskLevel;
+						std::string helpUrls;
+						int referenceCount;
+					};
+					long totalCount;
+					int pageSize;
+					int pageNumber;
+					std::vector<Data::ManagedRule> managedRuleList;
+				};
 
 
-				GenerateAggregateConfigRulesReportResult();
-				explicit GenerateAggregateConfigRulesReportResult(const std::string &payload);
-				~GenerateAggregateConfigRulesReportResult();
-				std::string getReportId()const;
-				std::string getAggregatorId()const;
+				ListManagedRulesResult();
+				explicit ListManagedRulesResult(const std::string &payload);
+				~ListManagedRulesResult();
+				std::vector<Data> getManagedRules()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string reportId_;
-				std::string aggregatorId_;
+				std::vector<Data> managedRules_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CONFIG_MODEL_GENERATEAGGREGATECONFIGRULESREPORTRESULT_H_
+#endif // !ALIBABACLOUD_CONFIG_MODEL_LISTMANAGEDRULESRESULT_H_

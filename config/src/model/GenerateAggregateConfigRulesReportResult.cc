@@ -41,7 +41,14 @@ void GenerateAggregateConfigRulesReportResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["AggregatorId"].isNull())
 		aggregatorId_ = value["AggregatorId"].asString();
+	if(!value["ReportId"].isNull())
+		reportId_ = value["ReportId"].asString();
 
+}
+
+std::string GenerateAggregateConfigRulesReportResult::getReportId()const
+{
+	return reportId_;
 }
 
 std::string GenerateAggregateConfigRulesReportResult::getAggregatorId()const

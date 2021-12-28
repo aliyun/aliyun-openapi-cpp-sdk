@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					long accountId;
 					std::string reportUrl;
+					std::string reportId;
 					std::string reportStatus;
 					std::string aggregatorId;
 					long reportCreateTimestamp;

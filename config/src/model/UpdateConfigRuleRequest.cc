@@ -135,6 +135,15 @@ void UpdateConfigRuleRequest::setConfigRuleName(const std::string &configRuleNam
   setBodyParameter(std::string("ConfigRuleName"), configRuleName);
 }
 
+std::string UpdateConfigRuleRequest::getTagKeyLogicScope() const {
+  return tagKeyLogicScope_;
+}
+
+void UpdateConfigRuleRequest::setTagKeyLogicScope(const std::string &tagKeyLogicScope) {
+  tagKeyLogicScope_ = tagKeyLogicScope;
+  setBodyParameter(std::string("TagKeyLogicScope"), tagKeyLogicScope);
+}
+
 std::string UpdateConfigRuleRequest::getMaximumExecutionFrequency() const {
   return maximumExecutionFrequency_;
 }

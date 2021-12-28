@@ -20,7 +20,7 @@ using AlibabaCloud::Config::Model::ListAggregateResourceEvaluationResultsRequest
 
 ListAggregateResourceEvaluationResultsRequest::ListAggregateResourceEvaluationResultsRequest()
     : RpcServiceRequest("config", "2020-09-07", "ListAggregateResourceEvaluationResults") {
-  setMethod(HttpRequest::Method::Get);
+  setMethod(HttpRequest::Method::Post);
 }
 
 ListAggregateResourceEvaluationResultsRequest::~ListAggregateResourceEvaluationResultsRequest() {}

@@ -94,6 +94,7 @@ namespace AlibabaCloud
 					ManagedRule managedRule;
 					std::string description;
 					std::string excludeResourceIdsScope;
+					std::string tagKeyLogicScope;
 					CreateBy createBy;
 					ConfigRuleEvaluationStatus configRuleEvaluationStatus;
 					Source source;

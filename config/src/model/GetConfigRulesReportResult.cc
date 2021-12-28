@@ -48,6 +48,8 @@ void GetConfigRulesReportResult::parse(const std::string &payload)
 		configRulesReport_.accountId = std::stol(configRulesReportNode["AccountId"].asString());
 	if(!configRulesReportNode["ReportCreateTimestamp"].isNull())
 		configRulesReport_.reportCreateTimestamp = std::stol(configRulesReportNode["ReportCreateTimestamp"].asString());
+	if(!configRulesReportNode["ReportId"].isNull())
+		configRulesReport_.reportId = configRulesReportNode["ReportId"].asString();
 
 }
 

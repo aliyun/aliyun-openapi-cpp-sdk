@@ -50,6 +50,8 @@ void GetAggregateConfigRulesReportResult::parse(const std::string &payload)
 		configRulesReport_.aggregatorId = configRulesReportNode["AggregatorId"].asString();
 	if(!configRulesReportNode["ReportCreateTimestamp"].isNull())
 		configRulesReport_.reportCreateTimestamp = std::stol(configRulesReportNode["ReportCreateTimestamp"].asString());
+	if(!configRulesReportNode["ReportId"].isNull())
+		configRulesReport_.reportId = configRulesReportNode["ReportId"].asString();
 
 }
 

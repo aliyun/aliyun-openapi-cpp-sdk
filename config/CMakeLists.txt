@@ -79,6 +79,10 @@ set(config_public_header_model
 	include/alibabacloud/config/model/GetAggregateResourceComplianceByConfigRuleResult.h
 	include/alibabacloud/config/model/GetAggregateResourceComplianceByPackRequest.h
 	include/alibabacloud/config/model/GetAggregateResourceComplianceByPackResult.h
+	include/alibabacloud/config/model/GetAggregateResourceComplianceGroupByRegionRequest.h
+	include/alibabacloud/config/model/GetAggregateResourceComplianceGroupByRegionResult.h
+	include/alibabacloud/config/model/GetAggregateResourceComplianceGroupByResourceTypeRequest.h
+	include/alibabacloud/config/model/GetAggregateResourceComplianceGroupByResourceTypeResult.h
 	include/alibabacloud/config/model/GetAggregateResourceComplianceTimelineRequest.h
 	include/alibabacloud/config/model/GetAggregateResourceComplianceTimelineResult.h
 	include/alibabacloud/config/model/GetAggregateResourceConfigurationTimelineRequest.h
@@ -105,10 +109,16 @@ set(config_public_header_model
 	include/alibabacloud/config/model/GetDiscoveredResourceCountsGroupByRegionResult.h
 	include/alibabacloud/config/model/GetDiscoveredResourceCountsGroupByResourceTypeRequest.h
 	include/alibabacloud/config/model/GetDiscoveredResourceCountsGroupByResourceTypeResult.h
+	include/alibabacloud/config/model/GetManagedRuleRequest.h
+	include/alibabacloud/config/model/GetManagedRuleResult.h
 	include/alibabacloud/config/model/GetResourceComplianceByConfigRuleRequest.h
 	include/alibabacloud/config/model/GetResourceComplianceByConfigRuleResult.h
 	include/alibabacloud/config/model/GetResourceComplianceByPackRequest.h
 	include/alibabacloud/config/model/GetResourceComplianceByPackResult.h
+	include/alibabacloud/config/model/GetResourceComplianceGroupByRegionRequest.h
+	include/alibabacloud/config/model/GetResourceComplianceGroupByRegionResult.h
+	include/alibabacloud/config/model/GetResourceComplianceGroupByResourceTypeRequest.h
+	include/alibabacloud/config/model/GetResourceComplianceGroupByResourceTypeResult.h
 	include/alibabacloud/config/model/GetResourceComplianceTimelineRequest.h
 	include/alibabacloud/config/model/GetResourceComplianceTimelineResult.h
 	include/alibabacloud/config/model/GetResourceConfigurationTimelineRequest.h
@@ -133,6 +143,8 @@ set(config_public_header_model
 	include/alibabacloud/config/model/ListCompliancePacksResult.h
 	include/alibabacloud/config/model/ListConfigRuleEvaluationResultsRequest.h
 	include/alibabacloud/config/model/ListConfigRuleEvaluationResultsResult.h
+	include/alibabacloud/config/model/ListManagedRulesRequest.h
+	include/alibabacloud/config/model/ListManagedRulesResult.h
 	include/alibabacloud/config/model/ListResourceEvaluationResultsRequest.h
 	include/alibabacloud/config/model/ListResourceEvaluationResultsResult.h
 	include/alibabacloud/config/model/RevertAggregateEvaluationResultsRequest.h
@@ -212,6 +224,10 @@ set(config_src
 	src/model/GetAggregateResourceComplianceByConfigRuleResult.cc
 	src/model/GetAggregateResourceComplianceByPackRequest.cc
 	src/model/GetAggregateResourceComplianceByPackResult.cc
+	src/model/GetAggregateResourceComplianceGroupByRegionRequest.cc
+	src/model/GetAggregateResourceComplianceGroupByRegionResult.cc
+	src/model/GetAggregateResourceComplianceGroupByResourceTypeRequest.cc
+	src/model/GetAggregateResourceComplianceGroupByResourceTypeResult.cc
 	src/model/GetAggregateResourceComplianceTimelineRequest.cc
 	src/model/GetAggregateResourceComplianceTimelineResult.cc
 	src/model/GetAggregateResourceConfigurationTimelineRequest.cc
@@ -238,10 +254,16 @@ set(config_src
 	src/model/GetDiscoveredResourceCountsGroupByRegionResult.cc
 	src/model/GetDiscoveredResourceCountsGroupByResourceTypeRequest.cc
 	src/model/GetDiscoveredResourceCountsGroupByResourceTypeResult.cc
+	src/model/GetManagedRuleRequest.cc
+	src/model/GetManagedRuleResult.cc
 	src/model/GetResourceComplianceByConfigRuleRequest.cc
 	src/model/GetResourceComplianceByConfigRuleResult.cc
 	src/model/GetResourceComplianceByPackRequest.cc
 	src/model/GetResourceComplianceByPackResult.cc
+	src/model/GetResourceComplianceGroupByRegionRequest.cc
+	src/model/GetResourceComplianceGroupByRegionResult.cc
+	src/model/GetResourceComplianceGroupByResourceTypeRequest.cc
+	src/model/GetResourceComplianceGroupByResourceTypeResult.cc
 	src/model/GetResourceComplianceTimelineRequest.cc
 	src/model/GetResourceComplianceTimelineResult.cc
 	src/model/GetResourceConfigurationTimelineRequest.cc
@@ -266,6 +288,8 @@ set(config_src
 	src/model/ListCompliancePacksResult.cc
 	src/model/ListConfigRuleEvaluationResultsRequest.cc
 	src/model/ListConfigRuleEvaluationResultsResult.cc
+	src/model/ListManagedRulesRequest.cc
+	src/model/ListManagedRulesResult.cc
 	src/model/ListResourceEvaluationResultsRequest.cc
 	src/model/ListResourceEvaluationResultsResult.cc
 	src/model/RevertAggregateEvaluationResultsRequest.cc

@@ -74,6 +74,8 @@ void GetAggregateConfigRuleResult::parse(const std::string &payload)
 		configRule_.tagValueScope = configRuleNode["TagValueScope"].asString();
 	if(!configRuleNode["ConfigRuleTriggerTypes"].isNull())
 		configRule_.configRuleTriggerTypes = configRuleNode["ConfigRuleTriggerTypes"].asString();
+	if(!configRuleNode["TagKeyLogicScope"].isNull())
+		configRule_.tagKeyLogicScope = configRuleNode["TagKeyLogicScope"].asString();
 	auto sourceNode = configRuleNode["Source"];
 	if(!sourceNode["Owner"].isNull())
 		configRule_.source.owner = sourceNode["Owner"].asString();

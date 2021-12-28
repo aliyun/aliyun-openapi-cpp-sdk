@@ -37,10 +37,12 @@ namespace AlibabaCloud
 				GenerateConfigRulesReportResult();
 				explicit GenerateConfigRulesReportResult(const std::string &payload);
 				~GenerateConfigRulesReportResult();
+				std::string getReportId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string reportId_;
 
 			};
 		}

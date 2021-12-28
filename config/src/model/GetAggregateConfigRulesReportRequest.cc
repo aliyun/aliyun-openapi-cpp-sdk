@@ -20,10 +20,19 @@ using AlibabaCloud::Config::Model::GetAggregateConfigRulesReportRequest;
 
 GetAggregateConfigRulesReportRequest::GetAggregateConfigRulesReportRequest()
     : RpcServiceRequest("config", "2020-09-07", "GetAggregateConfigRulesReport") {
-  setMethod(HttpRequest::Method::Get);
+  setMethod(HttpRequest::Method::Post);
 }
 
 GetAggregateConfigRulesReportRequest::~GetAggregateConfigRulesReportRequest() {}
+
+std::string GetAggregateConfigRulesReportRequest::getReportId() const {
+  return reportId_;
+}
+
+void GetAggregateConfigRulesReportRequest::setReportId(const std::string &reportId) {
+  reportId_ = reportId;
+  setParameter(std::string("ReportId"), reportId);
+}
 
 std::string GetAggregateConfigRulesReportRequest::getAggregatorId() const {
   return aggregatorId_;

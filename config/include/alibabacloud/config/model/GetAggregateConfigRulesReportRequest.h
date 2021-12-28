@@ -30,10 +30,13 @@ class ALIBABACLOUD_CONFIG_EXPORT GetAggregateConfigRulesReportRequest : public R
 public:
 	GetAggregateConfigRulesReportRequest();
 	~GetAggregateConfigRulesReportRequest();
+	std::string getReportId() const;
+	void setReportId(const std::string &reportId);
 	std::string getAggregatorId() const;
 	void setAggregatorId(const std::string &aggregatorId);
 
 private:
+	std::string reportId_;
 	std::string aggregatorId_;
 };
 } // namespace Model
