@@ -79,6 +79,8 @@ void QueryJobsWithResultResult::parse(const std::string &payload)
 			jobObject.latestTask.callDurationDisplay = latestTaskNode["CallDurationDisplay"].asString();
 		if(!latestTaskNode["HasHangUpByRejection"].isNull())
 			jobObject.latestTask.hasHangUpByRejection = latestTaskNode["HasHangUpByRejection"].asString() == "true";
+		if(!latestTaskNode["HasLastPlaybackCompleted"].isNull())
+			jobObject.latestTask.hasLastPlaybackCompleted = latestTaskNode["HasLastPlaybackCompleted"].asString() == "true";
 		auto allExtrasNode = latestTaskNode["Extras"]["Extra"];
 		for (auto latestTaskNodeExtrasExtra : allExtrasNode)
 		{

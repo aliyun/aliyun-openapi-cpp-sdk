@@ -27,6 +27,17 @@ ModifyJobGroupRequest::ModifyJobGroupRequest() :
 ModifyJobGroupRequest::~ModifyJobGroupRequest()
 {}
 
+std::string ModifyJobGroupRequest::getRecallStrategyJson()const
+{
+	return recallStrategyJson_;
+}
+
+void ModifyJobGroupRequest::setRecallStrategyJson(const std::string& recallStrategyJson)
+{
+	recallStrategyJson_ = recallStrategyJson;
+	setParameter("RecallStrategyJson", recallStrategyJson);
+}
+
 std::string ModifyJobGroupRequest::getDescription()const
 {
 	return description_;
@@ -36,6 +47,17 @@ void ModifyJobGroupRequest::setDescription(const std::string& description)
 {
 	description_ = description;
 	setParameter("Description", description);
+}
+
+std::string ModifyJobGroupRequest::getScriptId()const
+{
+	return scriptId_;
+}
+
+void ModifyJobGroupRequest::setScriptId(const std::string& scriptId)
+{
+	scriptId_ = scriptId;
+	setParameter("ScriptId", scriptId);
 }
 
 std::vector<std::string> ModifyJobGroupRequest::getCallingNumber()const
@@ -49,17 +71,6 @@ void ModifyJobGroupRequest::setCallingNumber(const std::vector<std::string>& cal
 	for(int dep1 = 0; dep1!= callingNumber.size(); dep1++) {
 		setParameter("CallingNumber."+ std::to_string(dep1), callingNumber.at(dep1));
 	}
-}
-
-std::string ModifyJobGroupRequest::getScriptId()const
-{
-	return scriptId_;
-}
-
-void ModifyJobGroupRequest::setScriptId(const std::string& scriptId)
-{
-	scriptId_ = scriptId;
-	setParameter("ScriptId", scriptId);
 }
 
 std::string ModifyJobGroupRequest::getInstanceId()const

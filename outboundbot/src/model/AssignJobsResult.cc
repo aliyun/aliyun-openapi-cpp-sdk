@@ -42,16 +42,16 @@ void AssignJobsResult::parse(const std::string &payload)
 	auto allJobsId = value["JobsId"]["JobsId"];
 	for (const auto &item : allJobsId)
 		jobsId_.push_back(item.asString());
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 	if(!value["JobGroupId"].isNull())
 		jobGroupId_ = value["JobGroupId"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 
 }
 

@@ -27,6 +27,17 @@ CreateBatchRepeatJobRequest::CreateBatchRepeatJobRequest() :
 CreateBatchRepeatJobRequest::~CreateBatchRepeatJobRequest()
 {}
 
+std::string CreateBatchRepeatJobRequest::getRecallStrategyJson()const
+{
+	return recallStrategyJson_;
+}
+
+void CreateBatchRepeatJobRequest::setRecallStrategyJson(const std::string& recallStrategyJson)
+{
+	recallStrategyJson_ = recallStrategyJson;
+	setParameter("RecallStrategyJson", recallStrategyJson);
+}
+
 std::string CreateBatchRepeatJobRequest::getDescription()const
 {
 	return description_;

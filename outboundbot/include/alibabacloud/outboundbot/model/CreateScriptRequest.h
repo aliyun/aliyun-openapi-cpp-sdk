@@ -43,14 +43,18 @@ namespace AlibabaCloud
 				void setScriptName(const std::string& scriptName);
 				std::string getScene()const;
 				void setScene(const std::string& scene);
-				std::string getChatbotId()const;
-				void setChatbotId(const std::string& chatbotId);
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
 				std::vector<std::string> getScriptWaveform()const;
 				void setScriptWaveform(const std::vector<std::string>& scriptWaveform);
 				std::string getAsrConfig()const;
 				void setAsrConfig(const std::string& asrConfig);
+				bool getNewBargeInEnable()const;
+				void setNewBargeInEnable(bool newBargeInEnable);
+				bool getMiniPlaybackEnable()const;
+				void setMiniPlaybackEnable(bool miniPlaybackEnable);
+				std::string getChatbotId()const;
+				void setChatbotId(const std::string& chatbotId);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
 				std::string getScriptDescription()const;
 				void setScriptDescription(const std::string& scriptDescription);
 				std::vector<std::string> getScriptContent()const;
@@ -61,10 +65,12 @@ namespace AlibabaCloud
 				std::string industry_;
 				std::string scriptName_;
 				std::string scene_;
-				std::string chatbotId_;
-				std::string instanceId_;
 				std::vector<std::string> scriptWaveform_;
 				std::string asrConfig_;
+				bool newBargeInEnable_;
+				bool miniPlaybackEnable_;
+				std::string chatbotId_;
+				std::string instanceId_;
 				std::string scriptDescription_;
 				std::vector<std::string> scriptContent_;
 

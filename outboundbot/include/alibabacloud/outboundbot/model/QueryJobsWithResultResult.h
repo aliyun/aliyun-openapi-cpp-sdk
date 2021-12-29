@@ -76,6 +76,7 @@ namespace AlibabaCloud
 							int callDuration;
 							bool hasReachedEndOfFlow;
 							Contact contact;
+							bool hasLastPlaybackCompleted;
 							std::string taskEndReason;
 							std::string callDurationDisplay;
 							long callTime;

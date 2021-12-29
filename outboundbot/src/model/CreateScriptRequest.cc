@@ -71,28 +71,6 @@ void CreateScriptRequest::setScene(const std::string& scene)
 	setParameter("Scene", scene);
 }
 
-std::string CreateScriptRequest::getChatbotId()const
-{
-	return chatbotId_;
-}
-
-void CreateScriptRequest::setChatbotId(const std::string& chatbotId)
-{
-	chatbotId_ = chatbotId;
-	setParameter("ChatbotId", chatbotId);
-}
-
-std::string CreateScriptRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void CreateScriptRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
-}
-
 std::vector<std::string> CreateScriptRequest::getScriptWaveform()const
 {
 	return scriptWaveform_;
@@ -115,6 +93,50 @@ void CreateScriptRequest::setAsrConfig(const std::string& asrConfig)
 {
 	asrConfig_ = asrConfig;
 	setParameter("AsrConfig", asrConfig);
+}
+
+bool CreateScriptRequest::getNewBargeInEnable()const
+{
+	return newBargeInEnable_;
+}
+
+void CreateScriptRequest::setNewBargeInEnable(bool newBargeInEnable)
+{
+	newBargeInEnable_ = newBargeInEnable;
+	setParameter("NewBargeInEnable", newBargeInEnable ? "true" : "false");
+}
+
+bool CreateScriptRequest::getMiniPlaybackEnable()const
+{
+	return miniPlaybackEnable_;
+}
+
+void CreateScriptRequest::setMiniPlaybackEnable(bool miniPlaybackEnable)
+{
+	miniPlaybackEnable_ = miniPlaybackEnable;
+	setParameter("MiniPlaybackEnable", miniPlaybackEnable ? "true" : "false");
+}
+
+std::string CreateScriptRequest::getChatbotId()const
+{
+	return chatbotId_;
+}
+
+void CreateScriptRequest::setChatbotId(const std::string& chatbotId)
+{
+	chatbotId_ = chatbotId;
+	setParameter("ChatbotId", chatbotId);
+}
+
+std::string CreateScriptRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void CreateScriptRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setParameter("InstanceId", instanceId);
 }
 
 std::string CreateScriptRequest::getScriptDescription()const

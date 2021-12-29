@@ -58,8 +58,8 @@ namespace AlibabaCloud
 						std::vector<KeyValuePair> briefs;
 						int executing;
 						int totalNotAnswered;
-						int paused;
 						int totalJobs;
+						int paused;
 					};
 					struct Strategy
 					{
@@ -84,19 +84,25 @@ namespace AlibabaCloud
 						std::string routingStrategy;
 						std::vector<std::string> repeatDays;
 					};
+					struct RecallStrategy
+					{
+						bool outOfServiceIgnore;
+						bool emptyNumberIgnore;
+						bool inArrearsIgnore;
+					};
 					struct Result
 					{
 						int unrecognizedNum;
-						int noInteractNum;
 						int finishedNum;
+						int noInteractNum;
 						int clientHangupNum;
 						int timeoutHangupNum;
 					};
 					std::string status;
 					std::string modifyTime;
 					Progress progress;
-					std::string jobDataParsingTaskId;
 					std::string scenarioId;
+					std::string jobDataParsingTaskId;
 					std::string jobGroupName;
 					std::string scriptVersion;
 					std::string scriptId;
@@ -108,6 +114,7 @@ namespace AlibabaCloud
 					Strategy strategy;
 					std::string jobFilePath;
 					ExportProgress exportProgress;
+					RecallStrategy recallStrategy;
 					std::vector<std::string> callingNumbers;
 				};
 

@@ -63,10 +63,16 @@ namespace AlibabaCloud
 						std::string routingStrategy;
 						std::vector<std::string> repeatDays;
 					};
+					struct RecallStrategy
+					{
+						bool outOfServiceIgnore;
+						bool emptyNumberIgnore;
+						bool inArrearsIgnore;
+					};
 					std::string status;
 					std::string modifyTime;
-					std::string jobDataParsingTaskId;
 					std::string scenarioId;
+					std::string jobDataParsingTaskId;
 					std::string jobGroupName;
 					std::string scriptVersion;
 					std::string jobGroupDescription;
@@ -76,6 +82,7 @@ namespace AlibabaCloud
 					Strategy strategy;
 					std::string jobFilePath;
 					ExportProgress exportProgress;
+					RecallStrategy recallStrategy;
 					std::vector<std::string> callingNumbers;
 				};
 

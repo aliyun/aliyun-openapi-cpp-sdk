@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				CreateBatchRepeatJobRequest();
 				~CreateBatchRepeatJobRequest();
 
+				std::string getRecallStrategyJson()const;
+				void setRecallStrategyJson(const std::string& recallStrategyJson);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
 				std::string getScriptId()const;
@@ -53,6 +55,7 @@ namespace AlibabaCloud
 				void setSourceGroupId(const std::string& sourceGroupId);
 
             private:
+				std::string recallStrategyJson_;
 				std::string description_;
 				std::string scriptId_;
 				std::vector<std::string> callingNumber_;

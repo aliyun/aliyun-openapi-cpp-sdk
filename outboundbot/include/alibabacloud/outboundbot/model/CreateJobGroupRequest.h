@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				CreateJobGroupRequest();
 				~CreateJobGroupRequest();
 
+				std::string getRecallStrategyJson()const;
+				void setRecallStrategyJson(const std::string& recallStrategyJson);
 				std::string getJobGroupDescription()const;
 				void setJobGroupDescription(const std::string& jobGroupDescription);
 				std::string getJobGroupName()const;
@@ -51,6 +53,7 @@ namespace AlibabaCloud
 				void setScenarioId(const std::string& scenarioId);
 
             private:
+				std::string recallStrategyJson_;
 				std::string jobGroupDescription_;
 				std::string jobGroupName_;
 				std::string scriptId_;

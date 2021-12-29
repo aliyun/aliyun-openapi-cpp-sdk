@@ -39,6 +39,7 @@ namespace AlibabaCloud
 						std::string status;
 						std::string scriptDescription;
 						std::string scriptId;
+						bool newBargeInEnable;
 						std::string failReason;
 						std::string debugStatus;
 						std::string scene;

@@ -27,6 +27,17 @@ CreateJobGroupRequest::CreateJobGroupRequest() :
 CreateJobGroupRequest::~CreateJobGroupRequest()
 {}
 
+std::string CreateJobGroupRequest::getRecallStrategyJson()const
+{
+	return recallStrategyJson_;
+}
+
+void CreateJobGroupRequest::setRecallStrategyJson(const std::string& recallStrategyJson)
+{
+	recallStrategyJson_ = recallStrategyJson;
+	setParameter("RecallStrategyJson", recallStrategyJson);
+}
+
 std::string CreateJobGroupRequest::getJobGroupDescription()const
 {
 	return jobGroupDescription_;
