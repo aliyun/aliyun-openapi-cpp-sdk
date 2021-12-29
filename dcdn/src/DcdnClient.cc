@@ -663,6 +663,42 @@ DcdnClient::CreateSlrAndSlsProjectOutcomeCallable DcdnClient::createSlrAndSlsPro
 	return task->get_future();
 }
 
+DcdnClient::DcdnHttpRequestTestToolOutcome DcdnClient::dcdnHttpRequestTestTool(const DcdnHttpRequestTestToolRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DcdnHttpRequestTestToolOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DcdnHttpRequestTestToolOutcome(DcdnHttpRequestTestToolResult(outcome.result()));
+	else
+		return DcdnHttpRequestTestToolOutcome(outcome.error());
+}
+
+void DcdnClient::dcdnHttpRequestTestToolAsync(const DcdnHttpRequestTestToolRequest& request, const DcdnHttpRequestTestToolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, dcdnHttpRequestTestTool(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DcdnHttpRequestTestToolOutcomeCallable DcdnClient::dcdnHttpRequestTestToolCallable(const DcdnHttpRequestTestToolRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DcdnHttpRequestTestToolOutcome()>>(
+			[this, request]()
+			{
+			return this->dcdnHttpRequestTestTool(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DcdnClient::DeleteDcdnDeliverTaskOutcome DcdnClient::deleteDcdnDeliverTask(const DeleteDcdnDeliverTaskRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4545,6 +4581,42 @@ DcdnClient::EditRoutineConfOutcomeCallable DcdnClient::editRoutineConfCallable(c
 			[this, request]()
 			{
 			return this->editRoutineConf(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::ListDcdnEsTemplateInfoOutcome DcdnClient::listDcdnEsTemplateInfo(const ListDcdnEsTemplateInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListDcdnEsTemplateInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListDcdnEsTemplateInfoOutcome(ListDcdnEsTemplateInfoResult(outcome.result()));
+	else
+		return ListDcdnEsTemplateInfoOutcome(outcome.error());
+}
+
+void DcdnClient::listDcdnEsTemplateInfoAsync(const ListDcdnEsTemplateInfoRequest& request, const ListDcdnEsTemplateInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listDcdnEsTemplateInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::ListDcdnEsTemplateInfoOutcomeCallable DcdnClient::listDcdnEsTemplateInfoCallable(const ListDcdnEsTemplateInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListDcdnEsTemplateInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->listDcdnEsTemplateInfo(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

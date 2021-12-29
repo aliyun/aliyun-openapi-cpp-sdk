@@ -56,6 +56,8 @@
 #include "model/CreateRoutineResult.h"
 #include "model/CreateSlrAndSlsProjectRequest.h"
 #include "model/CreateSlrAndSlsProjectResult.h"
+#include "model/DcdnHttpRequestTestToolRequest.h"
+#include "model/DcdnHttpRequestTestToolResult.h"
 #include "model/DeleteDcdnDeliverTaskRequest.h"
 #include "model/DeleteDcdnDeliverTaskResult.h"
 #include "model/DeleteDcdnDomainRequest.h"
@@ -272,6 +274,8 @@
 #include "model/DescribeUserLogserviceStatusResult.h"
 #include "model/EditRoutineConfRequest.h"
 #include "model/EditRoutineConfResult.h"
+#include "model/ListDcdnEsTemplateInfoRequest.h"
+#include "model/ListDcdnEsTemplateInfoResult.h"
 #include "model/ListDcdnRealTimeDeliveryProjectRequest.h"
 #include "model/ListDcdnRealTimeDeliveryProjectResult.h"
 #include "model/ModifyDCdnDomainSchdmByPropertyRequest.h"
@@ -394,6 +398,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateSlrAndSlsProjectResult> CreateSlrAndSlsProjectOutcome;
 			typedef std::future<CreateSlrAndSlsProjectOutcome> CreateSlrAndSlsProjectOutcomeCallable;
 			typedef std::function<void(const DcdnClient*, const Model::CreateSlrAndSlsProjectRequest&, const CreateSlrAndSlsProjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateSlrAndSlsProjectAsyncHandler;
+			typedef Outcome<Error, Model::DcdnHttpRequestTestToolResult> DcdnHttpRequestTestToolOutcome;
+			typedef std::future<DcdnHttpRequestTestToolOutcome> DcdnHttpRequestTestToolOutcomeCallable;
+			typedef std::function<void(const DcdnClient*, const Model::DcdnHttpRequestTestToolRequest&, const DcdnHttpRequestTestToolOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DcdnHttpRequestTestToolAsyncHandler;
 			typedef Outcome<Error, Model::DeleteDcdnDeliverTaskResult> DeleteDcdnDeliverTaskOutcome;
 			typedef std::future<DeleteDcdnDeliverTaskOutcome> DeleteDcdnDeliverTaskOutcomeCallable;
 			typedef std::function<void(const DcdnClient*, const Model::DeleteDcdnDeliverTaskRequest&, const DeleteDcdnDeliverTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDcdnDeliverTaskAsyncHandler;
@@ -718,6 +725,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::EditRoutineConfResult> EditRoutineConfOutcome;
 			typedef std::future<EditRoutineConfOutcome> EditRoutineConfOutcomeCallable;
 			typedef std::function<void(const DcdnClient*, const Model::EditRoutineConfRequest&, const EditRoutineConfOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EditRoutineConfAsyncHandler;
+			typedef Outcome<Error, Model::ListDcdnEsTemplateInfoResult> ListDcdnEsTemplateInfoOutcome;
+			typedef std::future<ListDcdnEsTemplateInfoOutcome> ListDcdnEsTemplateInfoOutcomeCallable;
+			typedef std::function<void(const DcdnClient*, const Model::ListDcdnEsTemplateInfoRequest&, const ListDcdnEsTemplateInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDcdnEsTemplateInfoAsyncHandler;
 			typedef Outcome<Error, Model::ListDcdnRealTimeDeliveryProjectResult> ListDcdnRealTimeDeliveryProjectOutcome;
 			typedef std::future<ListDcdnRealTimeDeliveryProjectOutcome> ListDcdnRealTimeDeliveryProjectOutcomeCallable;
 			typedef std::function<void(const DcdnClient*, const Model::ListDcdnRealTimeDeliveryProjectRequest&, const ListDcdnRealTimeDeliveryProjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDcdnRealTimeDeliveryProjectAsyncHandler;
@@ -867,6 +877,9 @@ namespace AlibabaCloud
 			CreateSlrAndSlsProjectOutcome createSlrAndSlsProject(const Model::CreateSlrAndSlsProjectRequest &request)const;
 			void createSlrAndSlsProjectAsync(const Model::CreateSlrAndSlsProjectRequest& request, const CreateSlrAndSlsProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateSlrAndSlsProjectOutcomeCallable createSlrAndSlsProjectCallable(const Model::CreateSlrAndSlsProjectRequest& request) const;
+			DcdnHttpRequestTestToolOutcome dcdnHttpRequestTestTool(const Model::DcdnHttpRequestTestToolRequest &request)const;
+			void dcdnHttpRequestTestToolAsync(const Model::DcdnHttpRequestTestToolRequest& request, const DcdnHttpRequestTestToolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DcdnHttpRequestTestToolOutcomeCallable dcdnHttpRequestTestToolCallable(const Model::DcdnHttpRequestTestToolRequest& request) const;
 			DeleteDcdnDeliverTaskOutcome deleteDcdnDeliverTask(const Model::DeleteDcdnDeliverTaskRequest &request)const;
 			void deleteDcdnDeliverTaskAsync(const Model::DeleteDcdnDeliverTaskRequest& request, const DeleteDcdnDeliverTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteDcdnDeliverTaskOutcomeCallable deleteDcdnDeliverTaskCallable(const Model::DeleteDcdnDeliverTaskRequest& request) const;
@@ -1191,6 +1204,9 @@ namespace AlibabaCloud
 			EditRoutineConfOutcome editRoutineConf(const Model::EditRoutineConfRequest &request)const;
 			void editRoutineConfAsync(const Model::EditRoutineConfRequest& request, const EditRoutineConfAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			EditRoutineConfOutcomeCallable editRoutineConfCallable(const Model::EditRoutineConfRequest& request) const;
+			ListDcdnEsTemplateInfoOutcome listDcdnEsTemplateInfo(const Model::ListDcdnEsTemplateInfoRequest &request)const;
+			void listDcdnEsTemplateInfoAsync(const Model::ListDcdnEsTemplateInfoRequest& request, const ListDcdnEsTemplateInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListDcdnEsTemplateInfoOutcomeCallable listDcdnEsTemplateInfoCallable(const Model::ListDcdnEsTemplateInfoRequest& request) const;
 			ListDcdnRealTimeDeliveryProjectOutcome listDcdnRealTimeDeliveryProject(const Model::ListDcdnRealTimeDeliveryProjectRequest &request)const;
 			void listDcdnRealTimeDeliveryProjectAsync(const Model::ListDcdnRealTimeDeliveryProjectRequest& request, const ListDcdnRealTimeDeliveryProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListDcdnRealTimeDeliveryProjectOutcomeCallable listDcdnRealTimeDeliveryProjectCallable(const Model::ListDcdnRealTimeDeliveryProjectRequest& request) const;

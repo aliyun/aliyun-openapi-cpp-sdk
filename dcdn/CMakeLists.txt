@@ -55,6 +55,8 @@ set(dcdn_public_header_model
 	include/alibabacloud/dcdn/model/CreateRoutineResult.h
 	include/alibabacloud/dcdn/model/CreateSlrAndSlsProjectRequest.h
 	include/alibabacloud/dcdn/model/CreateSlrAndSlsProjectResult.h
+	include/alibabacloud/dcdn/model/DcdnHttpRequestTestToolRequest.h
+	include/alibabacloud/dcdn/model/DcdnHttpRequestTestToolResult.h
 	include/alibabacloud/dcdn/model/DeleteDcdnDeliverTaskRequest.h
 	include/alibabacloud/dcdn/model/DeleteDcdnDeliverTaskResult.h
 	include/alibabacloud/dcdn/model/DeleteDcdnDomainRequest.h
@@ -271,6 +273,8 @@ set(dcdn_public_header_model
 	include/alibabacloud/dcdn/model/DescribeUserLogserviceStatusResult.h
 	include/alibabacloud/dcdn/model/EditRoutineConfRequest.h
 	include/alibabacloud/dcdn/model/EditRoutineConfResult.h
+	include/alibabacloud/dcdn/model/ListDcdnEsTemplateInfoRequest.h
+	include/alibabacloud/dcdn/model/ListDcdnEsTemplateInfoResult.h
 	include/alibabacloud/dcdn/model/ListDcdnRealTimeDeliveryProjectRequest.h
 	include/alibabacloud/dcdn/model/ListDcdnRealTimeDeliveryProjectResult.h
 	include/alibabacloud/dcdn/model/ModifyDCdnDomainSchdmByPropertyRequest.h
@@ -370,6 +374,8 @@ set(dcdn_src
 	src/model/CreateRoutineResult.cc
 	src/model/CreateSlrAndSlsProjectRequest.cc
 	src/model/CreateSlrAndSlsProjectResult.cc
+	src/model/DcdnHttpRequestTestToolRequest.cc
+	src/model/DcdnHttpRequestTestToolResult.cc
 	src/model/DeleteDcdnDeliverTaskRequest.cc
 	src/model/DeleteDcdnDeliverTaskResult.cc
 	src/model/DeleteDcdnDomainRequest.cc
@@ -586,6 +592,8 @@ set(dcdn_src
 	src/model/DescribeUserLogserviceStatusResult.cc
 	src/model/EditRoutineConfRequest.cc
 	src/model/EditRoutineConfResult.cc
+	src/model/ListDcdnEsTemplateInfoRequest.cc
+	src/model/ListDcdnEsTemplateInfoResult.cc
 	src/model/ListDcdnRealTimeDeliveryProjectRequest.cc
 	src/model/ListDcdnRealTimeDeliveryProjectResult.cc
 	src/model/ModifyDCdnDomainSchdmByPropertyRequest.cc
