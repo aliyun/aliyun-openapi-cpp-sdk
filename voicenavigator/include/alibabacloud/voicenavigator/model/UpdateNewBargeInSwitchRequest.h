@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VOICENAVIGATOR_MODEL_ENDDIALOGUEREQUEST_H_
-#define ALIBABACLOUD_VOICENAVIGATOR_MODEL_ENDDIALOGUEREQUEST_H_
+#ifndef ALIBABACLOUD_VOICENAVIGATOR_MODEL_UPDATENEWBARGEINSWITCHREQUEST_H_
+#define ALIBABACLOUD_VOICENAVIGATOR_MODEL_UPDATENEWBARGEINSWITCHREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,30 +28,24 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VOICENAVIGATOR_EXPORT EndDialogueRequest : public RpcServiceRequest
+			class ALIBABACLOUD_VOICENAVIGATOR_EXPORT UpdateNewBargeInSwitchRequest : public RpcServiceRequest
 			{
 
 			public:
-				EndDialogueRequest();
-				~EndDialogueRequest();
+				UpdateNewBargeInSwitchRequest();
+				~UpdateNewBargeInSwitchRequest();
 
-				std::string getConversationId()const;
-				void setConversationId(const std::string& conversationId);
-				std::string getHangUpParams()const;
-				void setHangUpParams(const std::string& hangUpParams);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
-				long getInstanceOwnerId()const;
-				void setInstanceOwnerId(long instanceOwnerId);
+				bool getEnable()const;
+				void setEnable(bool enable);
 
             private:
-				std::string conversationId_;
-				std::string hangUpParams_;
 				std::string instanceId_;
-				long instanceOwnerId_;
+				bool enable_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VOICENAVIGATOR_MODEL_ENDDIALOGUEREQUEST_H_
+#endif // !ALIBABACLOUD_VOICENAVIGATOR_MODEL_UPDATENEWBARGEINSWITCHREQUEST_H_

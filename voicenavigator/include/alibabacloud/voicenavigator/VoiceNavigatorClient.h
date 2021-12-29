@@ -74,6 +74,10 @@
 #include "model/ExportConversationDetailsResult.h"
 #include "model/ExportStatisticalDataRequest.h"
 #include "model/ExportStatisticalDataResult.h"
+#include "model/GetInstanceConfigRequest.h"
+#include "model/GetInstanceConfigResult.h"
+#include "model/GetNewBargeInSwitchRequest.h"
+#include "model/GetNewBargeInSwitchResult.h"
 #include "model/ListChatbotInstancesRequest.h"
 #include "model/ListChatbotInstancesResult.h"
 #include "model/ListConversationDetailsRequest.h"
@@ -102,6 +106,8 @@
 #include "model/SaveRecordingResult.h"
 #include "model/SilenceTimeoutRequest.h"
 #include "model/SilenceTimeoutResult.h"
+#include "model/UpdateNewBargeInSwitchRequest.h"
+#include "model/UpdateNewBargeInSwitchResult.h"
 
 
 namespace AlibabaCloud
@@ -189,6 +195,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ExportStatisticalDataResult> ExportStatisticalDataOutcome;
 			typedef std::future<ExportStatisticalDataOutcome> ExportStatisticalDataOutcomeCallable;
 			typedef std::function<void(const VoiceNavigatorClient*, const Model::ExportStatisticalDataRequest&, const ExportStatisticalDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ExportStatisticalDataAsyncHandler;
+			typedef Outcome<Error, Model::GetInstanceConfigResult> GetInstanceConfigOutcome;
+			typedef std::future<GetInstanceConfigOutcome> GetInstanceConfigOutcomeCallable;
+			typedef std::function<void(const VoiceNavigatorClient*, const Model::GetInstanceConfigRequest&, const GetInstanceConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetInstanceConfigAsyncHandler;
+			typedef Outcome<Error, Model::GetNewBargeInSwitchResult> GetNewBargeInSwitchOutcome;
+			typedef std::future<GetNewBargeInSwitchOutcome> GetNewBargeInSwitchOutcomeCallable;
+			typedef std::function<void(const VoiceNavigatorClient*, const Model::GetNewBargeInSwitchRequest&, const GetNewBargeInSwitchOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetNewBargeInSwitchAsyncHandler;
 			typedef Outcome<Error, Model::ListChatbotInstancesResult> ListChatbotInstancesOutcome;
 			typedef std::future<ListChatbotInstancesOutcome> ListChatbotInstancesOutcomeCallable;
 			typedef std::function<void(const VoiceNavigatorClient*, const Model::ListChatbotInstancesRequest&, const ListChatbotInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListChatbotInstancesAsyncHandler;
@@ -231,6 +243,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SilenceTimeoutResult> SilenceTimeoutOutcome;
 			typedef std::future<SilenceTimeoutOutcome> SilenceTimeoutOutcomeCallable;
 			typedef std::function<void(const VoiceNavigatorClient*, const Model::SilenceTimeoutRequest&, const SilenceTimeoutOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SilenceTimeoutAsyncHandler;
+			typedef Outcome<Error, Model::UpdateNewBargeInSwitchResult> UpdateNewBargeInSwitchOutcome;
+			typedef std::future<UpdateNewBargeInSwitchOutcome> UpdateNewBargeInSwitchOutcomeCallable;
+			typedef std::function<void(const VoiceNavigatorClient*, const Model::UpdateNewBargeInSwitchRequest&, const UpdateNewBargeInSwitchOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateNewBargeInSwitchAsyncHandler;
 
 			VoiceNavigatorClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			VoiceNavigatorClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
@@ -314,6 +329,12 @@ namespace AlibabaCloud
 			ExportStatisticalDataOutcome exportStatisticalData(const Model::ExportStatisticalDataRequest &request)const;
 			void exportStatisticalDataAsync(const Model::ExportStatisticalDataRequest& request, const ExportStatisticalDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ExportStatisticalDataOutcomeCallable exportStatisticalDataCallable(const Model::ExportStatisticalDataRequest& request) const;
+			GetInstanceConfigOutcome getInstanceConfig(const Model::GetInstanceConfigRequest &request)const;
+			void getInstanceConfigAsync(const Model::GetInstanceConfigRequest& request, const GetInstanceConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetInstanceConfigOutcomeCallable getInstanceConfigCallable(const Model::GetInstanceConfigRequest& request) const;
+			GetNewBargeInSwitchOutcome getNewBargeInSwitch(const Model::GetNewBargeInSwitchRequest &request)const;
+			void getNewBargeInSwitchAsync(const Model::GetNewBargeInSwitchRequest& request, const GetNewBargeInSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetNewBargeInSwitchOutcomeCallable getNewBargeInSwitchCallable(const Model::GetNewBargeInSwitchRequest& request) const;
 			ListChatbotInstancesOutcome listChatbotInstances(const Model::ListChatbotInstancesRequest &request)const;
 			void listChatbotInstancesAsync(const Model::ListChatbotInstancesRequest& request, const ListChatbotInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListChatbotInstancesOutcomeCallable listChatbotInstancesCallable(const Model::ListChatbotInstancesRequest& request) const;
@@ -356,6 +377,9 @@ namespace AlibabaCloud
 			SilenceTimeoutOutcome silenceTimeout(const Model::SilenceTimeoutRequest &request)const;
 			void silenceTimeoutAsync(const Model::SilenceTimeoutRequest& request, const SilenceTimeoutAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SilenceTimeoutOutcomeCallable silenceTimeoutCallable(const Model::SilenceTimeoutRequest& request) const;
+			UpdateNewBargeInSwitchOutcome updateNewBargeInSwitch(const Model::UpdateNewBargeInSwitchRequest &request)const;
+			void updateNewBargeInSwitchAsync(const Model::UpdateNewBargeInSwitchRequest& request, const UpdateNewBargeInSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateNewBargeInSwitchOutcomeCallable updateNewBargeInSwitchCallable(const Model::UpdateNewBargeInSwitchRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

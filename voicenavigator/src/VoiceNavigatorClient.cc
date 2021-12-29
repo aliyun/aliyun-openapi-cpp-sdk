@@ -987,6 +987,78 @@ VoiceNavigatorClient::ExportStatisticalDataOutcomeCallable VoiceNavigatorClient:
 	return task->get_future();
 }
 
+VoiceNavigatorClient::GetInstanceConfigOutcome VoiceNavigatorClient::getInstanceConfig(const GetInstanceConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetInstanceConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetInstanceConfigOutcome(GetInstanceConfigResult(outcome.result()));
+	else
+		return GetInstanceConfigOutcome(outcome.error());
+}
+
+void VoiceNavigatorClient::getInstanceConfigAsync(const GetInstanceConfigRequest& request, const GetInstanceConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getInstanceConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VoiceNavigatorClient::GetInstanceConfigOutcomeCallable VoiceNavigatorClient::getInstanceConfigCallable(const GetInstanceConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetInstanceConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->getInstanceConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VoiceNavigatorClient::GetNewBargeInSwitchOutcome VoiceNavigatorClient::getNewBargeInSwitch(const GetNewBargeInSwitchRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetNewBargeInSwitchOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetNewBargeInSwitchOutcome(GetNewBargeInSwitchResult(outcome.result()));
+	else
+		return GetNewBargeInSwitchOutcome(outcome.error());
+}
+
+void VoiceNavigatorClient::getNewBargeInSwitchAsync(const GetNewBargeInSwitchRequest& request, const GetNewBargeInSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getNewBargeInSwitch(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VoiceNavigatorClient::GetNewBargeInSwitchOutcomeCallable VoiceNavigatorClient::getNewBargeInSwitchCallable(const GetNewBargeInSwitchRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetNewBargeInSwitchOutcome()>>(
+			[this, request]()
+			{
+			return this->getNewBargeInSwitch(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VoiceNavigatorClient::ListChatbotInstancesOutcome VoiceNavigatorClient::listChatbotInstances(const ListChatbotInstancesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1485,6 +1557,42 @@ VoiceNavigatorClient::SilenceTimeoutOutcomeCallable VoiceNavigatorClient::silenc
 			[this, request]()
 			{
 			return this->silenceTimeout(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VoiceNavigatorClient::UpdateNewBargeInSwitchOutcome VoiceNavigatorClient::updateNewBargeInSwitch(const UpdateNewBargeInSwitchRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateNewBargeInSwitchOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateNewBargeInSwitchOutcome(UpdateNewBargeInSwitchResult(outcome.result()));
+	else
+		return UpdateNewBargeInSwitchOutcome(outcome.error());
+}
+
+void VoiceNavigatorClient::updateNewBargeInSwitchAsync(const UpdateNewBargeInSwitchRequest& request, const UpdateNewBargeInSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateNewBargeInSwitch(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VoiceNavigatorClient::UpdateNewBargeInSwitchOutcomeCallable VoiceNavigatorClient::updateNewBargeInSwitchCallable(const UpdateNewBargeInSwitchRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateNewBargeInSwitchOutcome()>>(
+			[this, request]()
+			{
+			return this->updateNewBargeInSwitch(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

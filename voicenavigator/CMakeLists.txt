@@ -73,6 +73,10 @@ set(voicenavigator_public_header_model
 	include/alibabacloud/voicenavigator/model/ExportConversationDetailsResult.h
 	include/alibabacloud/voicenavigator/model/ExportStatisticalDataRequest.h
 	include/alibabacloud/voicenavigator/model/ExportStatisticalDataResult.h
+	include/alibabacloud/voicenavigator/model/GetInstanceConfigRequest.h
+	include/alibabacloud/voicenavigator/model/GetInstanceConfigResult.h
+	include/alibabacloud/voicenavigator/model/GetNewBargeInSwitchRequest.h
+	include/alibabacloud/voicenavigator/model/GetNewBargeInSwitchResult.h
 	include/alibabacloud/voicenavigator/model/ListChatbotInstancesRequest.h
 	include/alibabacloud/voicenavigator/model/ListChatbotInstancesResult.h
 	include/alibabacloud/voicenavigator/model/ListConversationDetailsRequest.h
@@ -100,7 +104,9 @@ set(voicenavigator_public_header_model
 	include/alibabacloud/voicenavigator/model/SaveRecordingRequest.h
 	include/alibabacloud/voicenavigator/model/SaveRecordingResult.h
 	include/alibabacloud/voicenavigator/model/SilenceTimeoutRequest.h
-	include/alibabacloud/voicenavigator/model/SilenceTimeoutResult.h )
+	include/alibabacloud/voicenavigator/model/SilenceTimeoutResult.h
+	include/alibabacloud/voicenavigator/model/UpdateNewBargeInSwitchRequest.h
+	include/alibabacloud/voicenavigator/model/UpdateNewBargeInSwitchResult.h )
 
 set(voicenavigator_src 
 	src/VoiceNavigatorClient.cc
@@ -156,6 +162,10 @@ set(voicenavigator_src
 	src/model/ExportConversationDetailsResult.cc
 	src/model/ExportStatisticalDataRequest.cc
 	src/model/ExportStatisticalDataResult.cc
+	src/model/GetInstanceConfigRequest.cc
+	src/model/GetInstanceConfigResult.cc
+	src/model/GetNewBargeInSwitchRequest.cc
+	src/model/GetNewBargeInSwitchResult.cc
 	src/model/ListChatbotInstancesRequest.cc
 	src/model/ListChatbotInstancesResult.cc
 	src/model/ListConversationDetailsRequest.cc
@@ -183,7 +193,9 @@ set(voicenavigator_src
 	src/model/SaveRecordingRequest.cc
 	src/model/SaveRecordingResult.cc
 	src/model/SilenceTimeoutRequest.cc
-	src/model/SilenceTimeoutResult.cc )
+	src/model/SilenceTimeoutResult.cc
+	src/model/UpdateNewBargeInSwitchRequest.cc
+	src/model/UpdateNewBargeInSwitchResult.cc )
 
 add_library(voicenavigator ${LIB_TYPE}
 	${voicenavigator_public_header}

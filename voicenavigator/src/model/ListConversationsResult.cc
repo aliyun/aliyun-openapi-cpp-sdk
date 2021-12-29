@@ -59,6 +59,8 @@ void ListConversationsResult::parse(const std::string &payload)
 			conversationsObject.endReason = std::stoi(valueConversationsConversation["EndReason"].asString());
 		if(!valueConversationsConversation["Rounds"].isNull())
 			conversationsObject.rounds = std::stoi(valueConversationsConversation["Rounds"].asString());
+		if(!valueConversationsConversation["HasLastPlaybackCompleted"].isNull())
+			conversationsObject.hasLastPlaybackCompleted = valueConversationsConversation["HasLastPlaybackCompleted"].asString() == "true";
 		conversations_.push_back(conversationsObject);
 	}
 	if(!value["TotalCount"].isNull())

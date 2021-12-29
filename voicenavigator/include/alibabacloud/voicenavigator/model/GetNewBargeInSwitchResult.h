@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VOICENAVIGATOR_MODEL_LISTCONVERSATIONSRESULT_H_
-#define ALIBABACLOUD_VOICENAVIGATOR_MODEL_LISTCONVERSATIONSRESULT_H_
+#ifndef ALIBABACLOUD_VOICENAVIGATOR_MODEL_GETNEWBARGEINSWITCHRESULT_H_
+#define ALIBABACLOUD_VOICENAVIGATOR_MODEL_GETNEWBARGEINSWITCHRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,41 +29,35 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VOICENAVIGATOR_EXPORT ListConversationsResult : public ServiceResult
+			class ALIBABACLOUD_VOICENAVIGATOR_EXPORT GetNewBargeInSwitchResult : public ServiceResult
 			{
 			public:
-				struct Conversation
+				struct Data
 				{
-					std::string skillGroup;
-					std::string conversationId;
-					bool hasLastPlaybackCompleted;
-					int endReason;
-					long endTime;
-					int rounds;
-					bool hasToAgent;
-					long startTime;
-					std::string callingNumber;
+					bool enable;
 				};
 
 
-				ListConversationsResult();
-				explicit ListConversationsResult(const std::string &payload);
-				~ListConversationsResult();
-				long getTotalCount()const;
-				int getPageSize()const;
-				int getPageNumber()const;
-				std::vector<Conversation> getConversations()const;
+				GetNewBargeInSwitchResult();
+				explicit GetNewBargeInSwitchResult(const std::string &payload);
+				~GetNewBargeInSwitchResult();
+				int getHttpStatusCode()const;
+				std::string getErrorMsg()const;
+				Data getData()const;
+				std::string getCode()const;
+				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				long totalCount_;
-				int pageSize_;
-				int pageNumber_;
-				std::vector<Conversation> conversations_;
+				int httpStatusCode_;
+				std::string errorMsg_;
+				Data data_;
+				std::string code_;
+				bool success_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VOICENAVIGATOR_MODEL_LISTCONVERSATIONSRESULT_H_
+#endif // !ALIBABACLOUD_VOICENAVIGATOR_MODEL_GETNEWBARGEINSWITCHRESULT_H_

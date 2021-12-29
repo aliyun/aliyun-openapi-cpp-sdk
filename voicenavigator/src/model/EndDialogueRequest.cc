@@ -38,6 +38,17 @@ void EndDialogueRequest::setConversationId(const std::string& conversationId)
 	setParameter("ConversationId", conversationId);
 }
 
+std::string EndDialogueRequest::getHangUpParams()const
+{
+	return hangUpParams_;
+}
+
+void EndDialogueRequest::setHangUpParams(const std::string& hangUpParams)
+{
+	hangUpParams_ = hangUpParams;
+	setParameter("HangUpParams", hangUpParams);
+}
+
 std::string EndDialogueRequest::getInstanceId()const
 {
 	return instanceId_;
