@@ -34,6 +34,8 @@
 #include "model/GetLindormInstanceEngineListResult.h"
 #include "model/GetLindormInstanceListRequest.h"
 #include "model/GetLindormInstanceListResult.h"
+#include "model/GetLindormSSLCertUrlRequest.h"
+#include "model/GetLindormSSLCertUrlResult.h"
 #include "model/ReleaseLindormInstanceRequest.h"
 #include "model/ReleaseLindormInstanceResult.h"
 #include "model/UpdateInstanceIpWhiteListRequest.h"
@@ -67,6 +69,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetLindormInstanceListResult> GetLindormInstanceListOutcome;
 			typedef std::future<GetLindormInstanceListOutcome> GetLindormInstanceListOutcomeCallable;
 			typedef std::function<void(const HitsdbClient*, const Model::GetLindormInstanceListRequest&, const GetLindormInstanceListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetLindormInstanceListAsyncHandler;
+			typedef Outcome<Error, Model::GetLindormSSLCertUrlResult> GetLindormSSLCertUrlOutcome;
+			typedef std::future<GetLindormSSLCertUrlOutcome> GetLindormSSLCertUrlOutcomeCallable;
+			typedef std::function<void(const HitsdbClient*, const Model::GetLindormSSLCertUrlRequest&, const GetLindormSSLCertUrlOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetLindormSSLCertUrlAsyncHandler;
 			typedef Outcome<Error, Model::ReleaseLindormInstanceResult> ReleaseLindormInstanceOutcome;
 			typedef std::future<ReleaseLindormInstanceOutcome> ReleaseLindormInstanceOutcomeCallable;
 			typedef std::function<void(const HitsdbClient*, const Model::ReleaseLindormInstanceRequest&, const ReleaseLindormInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ReleaseLindormInstanceAsyncHandler;
@@ -99,6 +104,9 @@ namespace AlibabaCloud
 			GetLindormInstanceListOutcome getLindormInstanceList(const Model::GetLindormInstanceListRequest &request)const;
 			void getLindormInstanceListAsync(const Model::GetLindormInstanceListRequest& request, const GetLindormInstanceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetLindormInstanceListOutcomeCallable getLindormInstanceListCallable(const Model::GetLindormInstanceListRequest& request) const;
+			GetLindormSSLCertUrlOutcome getLindormSSLCertUrl(const Model::GetLindormSSLCertUrlRequest &request)const;
+			void getLindormSSLCertUrlAsync(const Model::GetLindormSSLCertUrlRequest& request, const GetLindormSSLCertUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetLindormSSLCertUrlOutcomeCallable getLindormSSLCertUrlCallable(const Model::GetLindormSSLCertUrlRequest& request) const;
 			ReleaseLindormInstanceOutcome releaseLindormInstance(const Model::ReleaseLindormInstanceRequest &request)const;
 			void releaseLindormInstanceAsync(const Model::ReleaseLindormInstanceRequest& request, const ReleaseLindormInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ReleaseLindormInstanceOutcomeCallable releaseLindormInstanceCallable(const Model::ReleaseLindormInstanceRequest& request) const;

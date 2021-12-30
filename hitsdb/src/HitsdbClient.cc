@@ -267,6 +267,42 @@ HitsdbClient::GetLindormInstanceListOutcomeCallable HitsdbClient::getLindormInst
 	return task->get_future();
 }
 
+HitsdbClient::GetLindormSSLCertUrlOutcome HitsdbClient::getLindormSSLCertUrl(const GetLindormSSLCertUrlRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetLindormSSLCertUrlOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetLindormSSLCertUrlOutcome(GetLindormSSLCertUrlResult(outcome.result()));
+	else
+		return GetLindormSSLCertUrlOutcome(outcome.error());
+}
+
+void HitsdbClient::getLindormSSLCertUrlAsync(const GetLindormSSLCertUrlRequest& request, const GetLindormSSLCertUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getLindormSSLCertUrl(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+HitsdbClient::GetLindormSSLCertUrlOutcomeCallable HitsdbClient::getLindormSSLCertUrlCallable(const GetLindormSSLCertUrlRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetLindormSSLCertUrlOutcome()>>(
+			[this, request]()
+			{
+			return this->getLindormSSLCertUrl(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 HitsdbClient::ReleaseLindormInstanceOutcome HitsdbClient::releaseLindormInstance(const ReleaseLindormInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
