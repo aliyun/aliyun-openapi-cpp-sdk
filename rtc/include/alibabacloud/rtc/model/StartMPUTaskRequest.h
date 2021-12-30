@@ -80,6 +80,9 @@ public:
 		bool enableUserPaneBackground;
 		std::string backgroundPath;
 	};
+	struct OutputStreamParams {
+		std::string streamURL;
+	};
 	struct Backgrounds {
 		float width;
 		float height;
@@ -131,6 +134,8 @@ public:
 	void setCropMode(int cropMode);
 	std::vector<std::string> getSubSpecCameraUsers() const;
 	void setSubSpecCameraUsers(const std::vector<std::string> &subSpecCameraUsers);
+	std::vector<OutputStreamParams> getOutputStreamParams() const;
+	void setOutputStreamParams(const std::vector<OutputStreamParams> &outputStreamParams);
 	std::string getTaskProfile() const;
 	void setTaskProfile(const std::string &taskProfile);
 	std::vector<long> getLayoutIds() const;
@@ -177,6 +182,7 @@ private:
 	int rtpExtInfo_;
 	int cropMode_;
 	std::vector<std::string> subSpecCameraUsers_;
+	std::vector<OutputStreamParams> outputStreamParams_;
 	std::string taskProfile_;
 	std::vector<long> layoutIds_;
 	std::string streamURL_;

@@ -255,6 +255,19 @@ void StartMPUTaskRequest::setSubSpecCameraUsers(const std::vector<std::string> &
   subSpecCameraUsers_ = subSpecCameraUsers;
 }
 
+std::vector<StartMPUTaskRequest::OutputStreamParams> StartMPUTaskRequest::getOutputStreamParams() const {
+  return outputStreamParams_;
+}
+
+void StartMPUTaskRequest::setOutputStreamParams(const std::vector<StartMPUTaskRequest::OutputStreamParams> &outputStreamParams) {
+  outputStreamParams_ = outputStreamParams;
+  for(int dep1 = 0; dep1 != outputStreamParams.size(); dep1++) {
+  auto outputStreamParamsObj = outputStreamParams.at(dep1);
+  std::string outputStreamParamsObjStr = std::string("OutputStreamParams") + "." + std::to_string(dep1 + 1);
+    setParameter(outputStreamParamsObjStr + ".StreamURL", outputStreamParamsObj.streamURL);
+  }
+}
+
 std::string StartMPUTaskRequest::getTaskProfile() const {
   return taskProfile_;
 }

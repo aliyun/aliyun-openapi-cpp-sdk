@@ -32,6 +32,8 @@ public:
 	~CreateEventSubscribeRequest();
 	std::string getClientToken() const;
 	void setClientToken(const std::string &clientToken);
+	bool getNeedCallbackAuth() const;
+	void setNeedCallbackAuth(bool needCallbackAuth);
 	std::vector<std::string> getEvents() const;
 	void setEvents(const std::vector<std::string> &events);
 	std::string getShowLog() const;
@@ -49,6 +51,7 @@ public:
 
 private:
 	std::string clientToken_;
+	bool needCallbackAuth_;
 	std::vector<std::string> events_;
 	std::string showLog_;
 	long ownerId_;

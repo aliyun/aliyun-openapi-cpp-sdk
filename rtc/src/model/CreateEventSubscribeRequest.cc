@@ -34,6 +34,15 @@ void CreateEventSubscribeRequest::setClientToken(const std::string &clientToken)
   setParameter(std::string("ClientToken"), clientToken);
 }
 
+bool CreateEventSubscribeRequest::getNeedCallbackAuth() const {
+  return needCallbackAuth_;
+}
+
+void CreateEventSubscribeRequest::setNeedCallbackAuth(bool needCallbackAuth) {
+  needCallbackAuth_ = needCallbackAuth;
+  setParameter(std::string("NeedCallbackAuth"), needCallbackAuth ? "true" : "false");
+}
+
 std::vector<std::string> CreateEventSubscribeRequest::getEvents() const {
   return events_;
 }
