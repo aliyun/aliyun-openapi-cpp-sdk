@@ -19,7 +19,7 @@
 using AlibabaCloud::CCC::Model::SaveTerminalLogRequest;
 
 SaveTerminalLogRequest::SaveTerminalLogRequest() :
-	RpcServiceRequest("ccc", "2020-07-01", "SaveTerminalLog")
+	RpcServiceRequest("ccc", "2017-07-05", "SaveTerminalLog")
 {
 	setMethod(HttpRequest::Method::Post);
 }

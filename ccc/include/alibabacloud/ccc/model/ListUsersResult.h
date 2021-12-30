@@ -32,42 +32,51 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_CCC_EXPORT ListUsersResult : public ServiceResult
 			{
 			public:
-				struct Data
+				struct Users
 				{
-					struct UserDetail
+					struct User
 					{
-						struct PhoneNumber
+						struct Detail
 						{
-							bool active;
-							std::string usage;
-							std::string number;
-							std::string city;
-							std::string province;
+							std::string loginName;
+							std::string department;
+							std::string email;
+							std::string phone;
+							std::string displayName;
 						};
-						struct UserSkillLevel
+						struct Role
 						{
-							int skillLevel;
-							std::string skillGroupName;
-							std::string skillGroupId;
+							std::string roleName;
+							std::string instanceId;
+							std::string roleDescription;
+							std::string roleId;
 						};
-						std::string loginName;
-						std::string email;
-						std::vector<UserDetail::UserSkillLevel> skillLevelList;
-						bool primaryAccount;
-						long ramId;
-						std::vector<UserDetail::PhoneNumber> personalOutboundNumberList;
-						std::string displayId;
-						std::string mobile;
-						std::string roleId;
-						std::string roleName;
+						struct SkillLevel
+						{
+							struct Skill
+							{
+								std::string skillGroupName;
+								std::string instanceId;
+								std::string skillGroupId;
+								std::string skillGroupDescription;
+							};
+							Skill skill;
+							std::string skillLevelId;
+							int level;
+						};
+						std::vector<User::SkillLevel> skillLevels;
+						std::string privateOutboundNumberId;
+						std::string instanceId;
 						std::string userId;
-						std::string displayName;
-						std::string workMode;
+						bool primary;
+						std::string ramId;
+						std::vector<User::Role> roles;
+						Detail detail;
 					};
 					int totalCount;
 					int pageSize;
 					int pageNumber;
-					std::vector<UserDetail> list;
+					std::vector<User> list;
 				};
 
 
@@ -76,18 +85,18 @@ namespace AlibabaCloud
 				~ListUsersResult();
 				std::string getMessage()const;
 				int getHttpStatusCode()const;
-				std::vector<std::string> getParams()const;
-				Data getData()const;
+				Users getUsers()const;
 				std::string getCode()const;
+				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
 				int httpStatusCode_;
-				std::vector<std::string> params_;
-				Data data_;
+				Users users_;
 				std::string code_;
+				bool success_;
 
 			};
 		}

@@ -38,21 +38,19 @@ namespace AlibabaCloud
 				explicit SaveWebRTCStatsResult(const std::string &payload);
 				~SaveWebRTCStatsResult();
 				std::string getMessage()const;
-				long getHttpStatusCode()const;
+				int getHttpStatusCode()const;
 				long getRowCount()const;
 				std::string getCode()const;
 				bool getSuccess()const;
-				long getTimeStamp()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
-				long httpStatusCode_;
+				int httpStatusCode_;
 				long rowCount_;
 				std::string code_;
 				bool success_;
-				long timeStamp_;
 
 			};
 		}

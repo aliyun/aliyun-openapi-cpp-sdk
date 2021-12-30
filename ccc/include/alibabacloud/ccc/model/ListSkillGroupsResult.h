@@ -32,22 +32,29 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_CCC_EXPORT ListSkillGroupsResult : public ServiceResult
 			{
 			public:
-				struct Data
+				struct SkillGroup
 				{
-					struct SkillGroup
+					struct PhoneNumber
 					{
-						std::string description;
-						std::string skillGroupName;
-						int phoneNumberCount;
+						std::string usage;
+						bool testOnly;
+						bool allowOutbound;
+						std::string number;
 						std::string instanceId;
-						int userCount;
-						std::string displayName;
-						std::string skillGroupId;
+						int remainingTime;
+						int trunks;
+						std::string phoneNumberId;
+						std::string phoneNumberDescription;
 					};
-					int totalCount;
-					int pageSize;
-					int pageNumber;
-					std::vector<SkillGroup> list;
+					std::string skillGroupName;
+					std::string accSkillGroupName;
+					std::string instanceId;
+					int userCount;
+					std::string routingStrategy;
+					std::string skillGroupId;
+					std::vector<SkillGroup::PhoneNumber> outboundPhoneNumbers;
+					std::string accQueueName;
+					std::string skillGroupDescription;
 				};
 
 
@@ -56,16 +63,18 @@ namespace AlibabaCloud
 				~ListSkillGroupsResult();
 				std::string getMessage()const;
 				int getHttpStatusCode()const;
-				Data getData()const;
+				std::vector<SkillGroup> getSkillGroups()const;
 				std::string getCode()const;
+				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
 				int httpStatusCode_;
-				Data data_;
+				std::vector<SkillGroup> skillGroups_;
 				std::string code_;
+				bool success_;
 
 			};
 		}

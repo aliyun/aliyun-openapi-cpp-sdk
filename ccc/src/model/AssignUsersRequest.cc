@@ -19,7 +19,7 @@
 using AlibabaCloud::CCC::Model::AssignUsersRequest;
 
 AssignUsersRequest::AssignUsersRequest() :
-	RpcServiceRequest("ccc", "2020-07-01", "AssignUsers")
+	RpcServiceRequest("ccc", "2017-07-05", "AssignUsers")
 {
 	setMethod(HttpRequest::Method::Post);
 }
@@ -27,37 +27,54 @@ AssignUsersRequest::AssignUsersRequest() :
 AssignUsersRequest::~AssignUsersRequest()
 {}
 
-std::string AssignUsersRequest::getRamIdList()const
-{
-	return ramIdList_;
-}
-
-void AssignUsersRequest::setRamIdList(const std::string& ramIdList)
-{
-	ramIdList_ = ramIdList;
-	setParameter("RamIdList", ramIdList);
-}
-
-std::string AssignUsersRequest::getRoleId()const
+std::vector<std::string> AssignUsersRequest::getRoleId()const
 {
 	return roleId_;
 }
 
-void AssignUsersRequest::setRoleId(const std::string& roleId)
+void AssignUsersRequest::setRoleId(const std::vector<std::string>& roleId)
 {
 	roleId_ = roleId;
-	setParameter("RoleId", roleId);
+	for(int dep1 = 0; dep1!= roleId.size(); dep1++) {
+		setParameter("RoleId."+ std::to_string(dep1), roleId.at(dep1));
+	}
 }
 
-std::string AssignUsersRequest::getWorkMode()const
+std::string AssignUsersRequest::getAccessKeyId()const
 {
-	return workMode_;
+	return accessKeyId_;
 }
 
-void AssignUsersRequest::setWorkMode(const std::string& workMode)
+void AssignUsersRequest::setAccessKeyId(const std::string& accessKeyId)
 {
-	workMode_ = workMode;
-	setParameter("WorkMode", workMode);
+	accessKeyId_ = accessKeyId;
+	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::vector<std::string> AssignUsersRequest::getUserRamId()const
+{
+	return userRamId_;
+}
+
+void AssignUsersRequest::setUserRamId(const std::vector<std::string>& userRamId)
+{
+	userRamId_ = userRamId;
+	for(int dep1 = 0; dep1!= userRamId.size(); dep1++) {
+		setParameter("UserRamId."+ std::to_string(dep1), userRamId.at(dep1));
+	}
+}
+
+std::vector<int> AssignUsersRequest::getSkillLevel()const
+{
+	return skillLevel_;
+}
+
+void AssignUsersRequest::setSkillLevel(const std::vector<int>& skillLevel)
+{
+	skillLevel_ = skillLevel;
+	for(int dep1 = 0; dep1!= skillLevel.size(); dep1++) {
+		setParameter("SkillLevel."+ std::to_string(dep1), std::to_string(skillLevel.at(dep1)));
+	}
 }
 
 std::string AssignUsersRequest::getInstanceId()const
@@ -71,14 +88,16 @@ void AssignUsersRequest::setInstanceId(const std::string& instanceId)
 	setParameter("InstanceId", instanceId);
 }
 
-std::string AssignUsersRequest::getSkillLevelList()const
+std::vector<std::string> AssignUsersRequest::getSkillGroupId()const
 {
-	return skillLevelList_;
+	return skillGroupId_;
 }
 
-void AssignUsersRequest::setSkillLevelList(const std::string& skillLevelList)
+void AssignUsersRequest::setSkillGroupId(const std::vector<std::string>& skillGroupId)
 {
-	skillLevelList_ = skillLevelList;
-	setParameter("SkillLevelList", skillLevelList);
+	skillGroupId_ = skillGroupId;
+	for(int dep1 = 0; dep1!= skillGroupId.size(); dep1++) {
+		setParameter("SkillGroupId."+ std::to_string(dep1), skillGroupId.at(dep1));
+	}
 }
 

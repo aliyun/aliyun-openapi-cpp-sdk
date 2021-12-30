@@ -37,24 +37,36 @@ namespace AlibabaCloud
 
 				std::string getCallId()const;
 				void setCallId(const std::string& callId);
-				std::string getSenderReport()const;
-				void setSenderReport(const std::string& senderReport);
+				long getRecordTime()const;
+				void setRecordTime(long recordTime);
+				long getCallStartTime()const;
+				void setCallStartTime(long callStartTime);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getUid()const;
+				void setUid(const std::string& uid);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
-				std::string getReceiverReport()const;
-				void setReceiverReport(const std::string& receiverReport);
-				std::string getGoogAddress()const;
-				void setGoogAddress(const std::string& googAddress);
-				std::string getGeneralInfo()const;
-				void setGeneralInfo(const std::string& generalInfo);
+				std::string getStats()const;
+				void setStats(const std::string& stats);
+				std::string getTenantId()const;
+				void setTenantId(const std::string& tenantId);
+				std::string getCalleeNumber()const;
+				void setCalleeNumber(const std::string& calleeNumber);
+				std::string getCallerNumber()const;
+				void setCallerNumber(const std::string& callerNumber);
 
             private:
 				std::string callId_;
-				std::string senderReport_;
+				long recordTime_;
+				long callStartTime_;
+				std::string accessKeyId_;
+				std::string uid_;
 				std::string instanceId_;
-				std::string receiverReport_;
-				std::string googAddress_;
-				std::string generalInfo_;
+				std::string stats_;
+				std::string tenantId_;
+				std::string calleeNumber_;
+				std::string callerNumber_;
 
 			};
 		}

@@ -35,34 +35,37 @@ namespace AlibabaCloud
 				CreateUserRequest();
 				~CreateUserRequest();
 
+				std::string getPrivateOutboundNumberId()const;
+				void setPrivateOutboundNumberId(const std::string& privateOutboundNumberId);
 				std::string getLoginName()const;
 				void setLoginName(const std::string& loginName);
-				std::string getRoleId()const;
-				void setRoleId(const std::string& roleId);
-				std::string getMobile()const;
-				void setMobile(const std::string& mobile);
-				std::string getWorkMode()const;
-				void setWorkMode(const std::string& workMode);
+				std::vector<std::string> getRoleId()const;
+				void setRoleId(const std::vector<std::string>& roleId);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::vector<int> getSkillLevel()const;
+				void setSkillLevel(const std::vector<int>& skillLevel);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
+				std::string getPhone()const;
+				void setPhone(const std::string& phone);
 				std::string getDisplayName()const;
 				void setDisplayName(const std::string& displayName);
-				bool getResetPassword()const;
-				void setResetPassword(bool resetPassword);
-				std::string getSkillLevelList()const;
-				void setSkillLevelList(const std::string& skillLevelList);
+				std::vector<std::string> getSkillGroupId()const;
+				void setSkillGroupId(const std::vector<std::string>& skillGroupId);
 				std::string getEmail()const;
 				void setEmail(const std::string& email);
 
             private:
+				std::string privateOutboundNumberId_;
 				std::string loginName_;
-				std::string roleId_;
-				std::string mobile_;
-				std::string workMode_;
+				std::vector<std::string> roleId_;
+				std::string accessKeyId_;
+				std::vector<int> skillLevel_;
 				std::string instanceId_;
+				std::string phone_;
 				std::string displayName_;
-				bool resetPassword_;
-				std::string skillLevelList_;
+				std::vector<std::string> skillGroupId_;
 				std::string email_;
 
 			};

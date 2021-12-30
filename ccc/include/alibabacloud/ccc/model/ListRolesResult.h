@@ -34,8 +34,10 @@ namespace AlibabaCloud
 			public:
 				struct Role
 				{
+					std::string roleName;
+					std::string instanceId;
+					std::string roleDescription;
 					std::string roleId;
-					std::string name;
 				};
 
 
@@ -44,16 +46,18 @@ namespace AlibabaCloud
 				~ListRolesResult();
 				std::string getMessage()const;
 				int getHttpStatusCode()const;
-				std::vector<Role> getData()const;
+				std::vector<Role> getRoles()const;
 				std::string getCode()const;
+				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
 				int httpStatusCode_;
-				std::vector<Role> data_;
+				std::vector<Role> roles_;
 				std::string code_;
+				bool success_;
 
 			};
 		}
