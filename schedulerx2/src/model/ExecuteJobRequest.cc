@@ -52,6 +52,24 @@ void ExecuteJobRequest::setGroupId(const std::string &groupId) {
   setParameter(std::string("GroupId"), groupId);
 }
 
+std::string ExecuteJobRequest::getLabel() const {
+  return label_;
+}
+
+void ExecuteJobRequest::setLabel(const std::string &label) {
+  label_ = label;
+  setParameter(std::string("Label"), label);
+}
+
+int ExecuteJobRequest::getDesignateType() const {
+  return designateType_;
+}
+
+void ExecuteJobRequest::setDesignateType(int designateType) {
+  designateType_ = designateType;
+  setParameter(std::string("DesignateType"), std::to_string(designateType));
+}
+
 long ExecuteJobRequest::getJobId() const {
   return jobId_;
 }
@@ -77,6 +95,15 @@ std::string ExecuteJobRequest::get_Namespace() const {
 void ExecuteJobRequest::set_Namespace(const std::string &_namespace) {
   _namespace_ = _namespace;
   setParameter(std::string("Namespace"), _namespace);
+}
+
+std::string ExecuteJobRequest::getWorker() const {
+  return worker_;
+}
+
+void ExecuteJobRequest::setWorker(const std::string &worker) {
+  worker_ = worker;
+  setParameter(std::string("Worker"), worker);
 }
 
 std::string ExecuteJobRequest::getInstanceParameters() const {

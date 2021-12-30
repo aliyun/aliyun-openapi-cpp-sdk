@@ -60,6 +60,8 @@
 #include "model/GetJobInstanceListResult.h"
 #include "model/GetWorkFlowRequest.h"
 #include "model/GetWorkFlowResult.h"
+#include "model/GetWorkerListRequest.h"
+#include "model/GetWorkerListResult.h"
 #include "model/GrantPermissionRequest.h"
 #include "model/GrantPermissionResult.h"
 #include "model/ListGroupsRequest.h"
@@ -140,6 +142,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetWorkFlowResult> GetWorkFlowOutcome;
 			typedef std::future<GetWorkFlowOutcome> GetWorkFlowOutcomeCallable;
 			typedef std::function<void(const Schedulerx2Client*, const Model::GetWorkFlowRequest&, const GetWorkFlowOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetWorkFlowAsyncHandler;
+			typedef Outcome<Error, Model::GetWorkerListResult> GetWorkerListOutcome;
+			typedef std::future<GetWorkerListOutcome> GetWorkerListOutcomeCallable;
+			typedef std::function<void(const Schedulerx2Client*, const Model::GetWorkerListRequest&, const GetWorkerListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetWorkerListAsyncHandler;
 			typedef Outcome<Error, Model::GrantPermissionResult> GrantPermissionOutcome;
 			typedef std::future<GrantPermissionOutcome> GrantPermissionOutcomeCallable;
 			typedef std::function<void(const Schedulerx2Client*, const Model::GrantPermissionRequest&, const GrantPermissionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GrantPermissionAsyncHandler;
@@ -223,6 +228,9 @@ namespace AlibabaCloud
 			GetWorkFlowOutcome getWorkFlow(const Model::GetWorkFlowRequest &request)const;
 			void getWorkFlowAsync(const Model::GetWorkFlowRequest& request, const GetWorkFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetWorkFlowOutcomeCallable getWorkFlowCallable(const Model::GetWorkFlowRequest& request) const;
+			GetWorkerListOutcome getWorkerList(const Model::GetWorkerListRequest &request)const;
+			void getWorkerListAsync(const Model::GetWorkerListRequest& request, const GetWorkerListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetWorkerListOutcomeCallable getWorkerListCallable(const Model::GetWorkerListRequest& request) const;
 			GrantPermissionOutcome grantPermission(const Model::GrantPermissionRequest &request)const;
 			void grantPermissionAsync(const Model::GrantPermissionRequest& request, const GrantPermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GrantPermissionOutcomeCallable grantPermissionCallable(const Model::GrantPermissionRequest& request) const;

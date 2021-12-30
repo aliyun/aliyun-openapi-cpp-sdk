@@ -59,6 +59,8 @@ set(schedulerx2_public_header_model
 	include/alibabacloud/schedulerx2/model/GetJobInstanceListResult.h
 	include/alibabacloud/schedulerx2/model/GetWorkFlowRequest.h
 	include/alibabacloud/schedulerx2/model/GetWorkFlowResult.h
+	include/alibabacloud/schedulerx2/model/GetWorkerListRequest.h
+	include/alibabacloud/schedulerx2/model/GetWorkerListResult.h
 	include/alibabacloud/schedulerx2/model/GrantPermissionRequest.h
 	include/alibabacloud/schedulerx2/model/GrantPermissionResult.h
 	include/alibabacloud/schedulerx2/model/ListGroupsRequest.h
@@ -114,6 +116,8 @@ set(schedulerx2_src
 	src/model/GetJobInstanceListResult.cc
 	src/model/GetWorkFlowRequest.cc
 	src/model/GetWorkFlowResult.cc
+	src/model/GetWorkerListRequest.cc
+	src/model/GetWorkerListResult.cc
 	src/model/GrantPermissionRequest.cc
 	src/model/GrantPermissionResult.cc
 	src/model/ListGroupsRequest.cc

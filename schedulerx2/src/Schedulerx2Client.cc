@@ -735,6 +735,42 @@ Schedulerx2Client::GetWorkFlowOutcomeCallable Schedulerx2Client::getWorkFlowCall
 	return task->get_future();
 }
 
+Schedulerx2Client::GetWorkerListOutcome Schedulerx2Client::getWorkerList(const GetWorkerListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetWorkerListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetWorkerListOutcome(GetWorkerListResult(outcome.result()));
+	else
+		return GetWorkerListOutcome(outcome.error());
+}
+
+void Schedulerx2Client::getWorkerListAsync(const GetWorkerListRequest& request, const GetWorkerListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getWorkerList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Schedulerx2Client::GetWorkerListOutcomeCallable Schedulerx2Client::getWorkerListCallable(const GetWorkerListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetWorkerListOutcome()>>(
+			[this, request]()
+			{
+			return this->getWorkerList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Schedulerx2Client::GrantPermissionOutcome Schedulerx2Client::grantPermission(const GrantPermissionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
