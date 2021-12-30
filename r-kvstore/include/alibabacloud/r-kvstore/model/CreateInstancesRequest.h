@@ -45,6 +45,8 @@ namespace AlibabaCloud
 				void setEngineVersion(const std::string& engineVersion);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
 				bool getRebuildInstance()const;
@@ -76,6 +78,7 @@ namespace AlibabaCloud
 				std::string couponNo_;
 				std::string engineVersion_;
 				std::string accessKeyId_;
+				std::string resourceGroupId_;
 				std::string securityToken_;
 				bool rebuildInstance_;
 				std::string businessInfo_;

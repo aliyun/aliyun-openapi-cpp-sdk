@@ -14,31 +14,38 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/r-kvstore/model/DeleteUserClusterHostResult.h>
+#include <alibabacloud/r-kvstore/model/DescribeInstanceTDEStatusResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::R_kvstore;
 using namespace AlibabaCloud::R_kvstore::Model;
 
-DeleteUserClusterHostResult::DeleteUserClusterHostResult() :
+DescribeInstanceTDEStatusResult::DescribeInstanceTDEStatusResult() :
 	ServiceResult()
 {}
 
-DeleteUserClusterHostResult::DeleteUserClusterHostResult(const std::string &payload) :
+DescribeInstanceTDEStatusResult::DescribeInstanceTDEStatusResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-DeleteUserClusterHostResult::~DeleteUserClusterHostResult()
+DescribeInstanceTDEStatusResult::~DescribeInstanceTDEStatusResult()
 {}
 
-void DeleteUserClusterHostResult::parse(const std::string &payload)
+void DescribeInstanceTDEStatusResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["TDEStatus"].isNull())
+		tDEStatus_ = value["TDEStatus"].asString();
 
+}
+
+std::string DescribeInstanceTDEStatusResult::getTDEStatus()const
+{
+	return tDEStatus_;
 }
 

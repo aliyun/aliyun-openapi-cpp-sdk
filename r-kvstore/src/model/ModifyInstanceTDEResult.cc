@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/r-kvstore/model/ModifyUserClusterHostResult.h>
+#include <alibabacloud/r-kvstore/model/ModifyInstanceTDEResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::R_kvstore;
 using namespace AlibabaCloud::R_kvstore::Model;
 
-ModifyUserClusterHostResult::ModifyUserClusterHostResult() :
+ModifyInstanceTDEResult::ModifyInstanceTDEResult() :
 	ServiceResult()
 {}
 
-ModifyUserClusterHostResult::ModifyUserClusterHostResult(const std::string &payload) :
+ModifyInstanceTDEResult::ModifyInstanceTDEResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-ModifyUserClusterHostResult::~ModifyUserClusterHostResult()
+ModifyInstanceTDEResult::~ModifyInstanceTDEResult()
 {}
 
-void ModifyUserClusterHostResult::parse(const std::string &payload)
+void ModifyInstanceTDEResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;

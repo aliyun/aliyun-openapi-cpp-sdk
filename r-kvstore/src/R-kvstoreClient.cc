@@ -159,6 +159,42 @@ R_kvstoreClient::AllocateInstancePublicConnectionOutcomeCallable R_kvstoreClient
 	return task->get_future();
 }
 
+R_kvstoreClient::CheckCloudResourceAuthorizedOutcome R_kvstoreClient::checkCloudResourceAuthorized(const CheckCloudResourceAuthorizedRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CheckCloudResourceAuthorizedOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CheckCloudResourceAuthorizedOutcome(CheckCloudResourceAuthorizedResult(outcome.result()));
+	else
+		return CheckCloudResourceAuthorizedOutcome(outcome.error());
+}
+
+void R_kvstoreClient::checkCloudResourceAuthorizedAsync(const CheckCloudResourceAuthorizedRequest& request, const CheckCloudResourceAuthorizedAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, checkCloudResourceAuthorized(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::CheckCloudResourceAuthorizedOutcomeCallable R_kvstoreClient::checkCloudResourceAuthorizedCallable(const CheckCloudResourceAuthorizedRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CheckCloudResourceAuthorizedOutcome()>>(
+			[this, request]()
+			{
+			return this->checkCloudResourceAuthorized(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 R_kvstoreClient::CreateAccountOutcome R_kvstoreClient::createAccount(const CreateAccountRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -411,42 +447,6 @@ R_kvstoreClient::CreateTairInstanceOutcomeCallable R_kvstoreClient::createTairIn
 	return task->get_future();
 }
 
-R_kvstoreClient::CreateUserClusterHostOutcome R_kvstoreClient::createUserClusterHost(const CreateUserClusterHostRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateUserClusterHostOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateUserClusterHostOutcome(CreateUserClusterHostResult(outcome.result()));
-	else
-		return CreateUserClusterHostOutcome(outcome.error());
-}
-
-void R_kvstoreClient::createUserClusterHostAsync(const CreateUserClusterHostRequest& request, const CreateUserClusterHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createUserClusterHost(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-R_kvstoreClient::CreateUserClusterHostOutcomeCallable R_kvstoreClient::createUserClusterHostCallable(const CreateUserClusterHostRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateUserClusterHostOutcome()>>(
-			[this, request]()
-			{
-			return this->createUserClusterHost(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 R_kvstoreClient::DeleteAccountOutcome R_kvstoreClient::deleteAccount(const DeleteAccountRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -549,42 +549,6 @@ R_kvstoreClient::DeleteShardingNodeOutcomeCallable R_kvstoreClient::deleteShardi
 			[this, request]()
 			{
 			return this->deleteShardingNode(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-R_kvstoreClient::DeleteUserClusterHostOutcome R_kvstoreClient::deleteUserClusterHost(const DeleteUserClusterHostRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DeleteUserClusterHostOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DeleteUserClusterHostOutcome(DeleteUserClusterHostResult(outcome.result()));
-	else
-		return DeleteUserClusterHostOutcome(outcome.error());
-}
-
-void R_kvstoreClient::deleteUserClusterHostAsync(const DeleteUserClusterHostRequest& request, const DeleteUserClusterHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, deleteUserClusterHost(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-R_kvstoreClient::DeleteUserClusterHostOutcomeCallable R_kvstoreClient::deleteUserClusterHostCallable(const DeleteUserClusterHostRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DeleteUserClusterHostOutcome()>>(
-			[this, request]()
-			{
-			return this->deleteUserClusterHost(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1059,6 +1023,78 @@ R_kvstoreClient::DescribeDedicatedClusterInstanceListOutcomeCallable R_kvstoreCl
 	return task->get_future();
 }
 
+R_kvstoreClient::DescribeEncryptionKeyOutcome R_kvstoreClient::describeEncryptionKey(const DescribeEncryptionKeyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeEncryptionKeyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeEncryptionKeyOutcome(DescribeEncryptionKeyResult(outcome.result()));
+	else
+		return DescribeEncryptionKeyOutcome(outcome.error());
+}
+
+void R_kvstoreClient::describeEncryptionKeyAsync(const DescribeEncryptionKeyRequest& request, const DescribeEncryptionKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeEncryptionKey(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::DescribeEncryptionKeyOutcomeCallable R_kvstoreClient::describeEncryptionKeyCallable(const DescribeEncryptionKeyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeEncryptionKeyOutcome()>>(
+			[this, request]()
+			{
+			return this->describeEncryptionKey(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+R_kvstoreClient::DescribeEncryptionKeyListOutcome R_kvstoreClient::describeEncryptionKeyList(const DescribeEncryptionKeyListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeEncryptionKeyListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeEncryptionKeyListOutcome(DescribeEncryptionKeyListResult(outcome.result()));
+	else
+		return DescribeEncryptionKeyListOutcome(outcome.error());
+}
+
+void R_kvstoreClient::describeEncryptionKeyListAsync(const DescribeEncryptionKeyListRequest& request, const DescribeEncryptionKeyListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeEncryptionKeyList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::DescribeEncryptionKeyListOutcomeCallable R_kvstoreClient::describeEncryptionKeyListCallable(const DescribeEncryptionKeyListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeEncryptionKeyListOutcome()>>(
+			[this, request]()
+			{
+			return this->describeEncryptionKeyList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 R_kvstoreClient::DescribeEngineVersionOutcome R_kvstoreClient::describeEngineVersion(const DescribeEngineVersionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1311,6 +1347,42 @@ R_kvstoreClient::DescribeInstanceSSLOutcomeCallable R_kvstoreClient::describeIns
 	return task->get_future();
 }
 
+R_kvstoreClient::DescribeInstanceTDEStatusOutcome R_kvstoreClient::describeInstanceTDEStatus(const DescribeInstanceTDEStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeInstanceTDEStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeInstanceTDEStatusOutcome(DescribeInstanceTDEStatusResult(outcome.result()));
+	else
+		return DescribeInstanceTDEStatusOutcome(outcome.error());
+}
+
+void R_kvstoreClient::describeInstanceTDEStatusAsync(const DescribeInstanceTDEStatusRequest& request, const DescribeInstanceTDEStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeInstanceTDEStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::DescribeInstanceTDEStatusOutcomeCallable R_kvstoreClient::describeInstanceTDEStatusCallable(const DescribeInstanceTDEStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeInstanceTDEStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->describeInstanceTDEStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 R_kvstoreClient::DescribeInstancesOutcome R_kvstoreClient::describeInstances(const DescribeInstancesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1341,6 +1413,42 @@ R_kvstoreClient::DescribeInstancesOutcomeCallable R_kvstoreClient::describeInsta
 			[this, request]()
 			{
 			return this->describeInstances(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+R_kvstoreClient::DescribeInstancesOverviewOutcome R_kvstoreClient::describeInstancesOverview(const DescribeInstancesOverviewRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeInstancesOverviewOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeInstancesOverviewOutcome(DescribeInstancesOverviewResult(outcome.result()));
+	else
+		return DescribeInstancesOverviewOutcome(outcome.error());
+}
+
+void R_kvstoreClient::describeInstancesOverviewAsync(const DescribeInstancesOverviewRequest& request, const DescribeInstancesOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeInstancesOverview(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::DescribeInstancesOverviewOutcomeCallable R_kvstoreClient::describeInstancesOverviewCallable(const DescribeInstancesOverviewRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeInstancesOverviewOutcome()>>(
+			[this, request]()
+			{
+			return this->describeInstancesOverview(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1809,78 +1917,6 @@ R_kvstoreClient::DescribeTasksOutcomeCallable R_kvstoreClient::describeTasksCall
 			[this, request]()
 			{
 			return this->describeTasks(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-R_kvstoreClient::DescribeUserClusterHostOutcome R_kvstoreClient::describeUserClusterHost(const DescribeUserClusterHostRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeUserClusterHostOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeUserClusterHostOutcome(DescribeUserClusterHostResult(outcome.result()));
-	else
-		return DescribeUserClusterHostOutcome(outcome.error());
-}
-
-void R_kvstoreClient::describeUserClusterHostAsync(const DescribeUserClusterHostRequest& request, const DescribeUserClusterHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeUserClusterHost(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-R_kvstoreClient::DescribeUserClusterHostOutcomeCallable R_kvstoreClient::describeUserClusterHostCallable(const DescribeUserClusterHostRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeUserClusterHostOutcome()>>(
-			[this, request]()
-			{
-			return this->describeUserClusterHost(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-R_kvstoreClient::DescribeUserClusterHostInstanceOutcome R_kvstoreClient::describeUserClusterHostInstance(const DescribeUserClusterHostInstanceRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeUserClusterHostInstanceOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeUserClusterHostInstanceOutcome(DescribeUserClusterHostInstanceResult(outcome.result()));
-	else
-		return DescribeUserClusterHostInstanceOutcome(outcome.error());
-}
-
-void R_kvstoreClient::describeUserClusterHostInstanceAsync(const DescribeUserClusterHostInstanceRequest& request, const DescribeUserClusterHostInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeUserClusterHostInstance(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-R_kvstoreClient::DescribeUserClusterHostInstanceOutcomeCallable R_kvstoreClient::describeUserClusterHostInstanceCallable(const DescribeUserClusterHostInstanceRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeUserClusterHostInstanceOutcome()>>(
-			[this, request]()
-			{
-			return this->describeUserClusterHostInstance(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2715,6 +2751,42 @@ R_kvstoreClient::ModifyInstanceSpecOutcomeCallable R_kvstoreClient::modifyInstan
 	return task->get_future();
 }
 
+R_kvstoreClient::ModifyInstanceTDEOutcome R_kvstoreClient::modifyInstanceTDE(const ModifyInstanceTDERequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyInstanceTDEOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyInstanceTDEOutcome(ModifyInstanceTDEResult(outcome.result()));
+	else
+		return ModifyInstanceTDEOutcome(outcome.error());
+}
+
+void R_kvstoreClient::modifyInstanceTDEAsync(const ModifyInstanceTDERequest& request, const ModifyInstanceTDEAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyInstanceTDE(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::ModifyInstanceTDEOutcomeCallable R_kvstoreClient::modifyInstanceTDECallable(const ModifyInstanceTDERequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyInstanceTDEOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyInstanceTDE(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 R_kvstoreClient::ModifyInstanceVpcAuthModeOutcome R_kvstoreClient::modifyInstanceVpcAuthMode(const ModifyInstanceVpcAuthModeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2931,42 +3003,6 @@ R_kvstoreClient::ModifySecurityIpsOutcomeCallable R_kvstoreClient::modifySecurit
 	return task->get_future();
 }
 
-R_kvstoreClient::ModifyUserClusterHostOutcome R_kvstoreClient::modifyUserClusterHost(const ModifyUserClusterHostRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyUserClusterHostOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyUserClusterHostOutcome(ModifyUserClusterHostResult(outcome.result()));
-	else
-		return ModifyUserClusterHostOutcome(outcome.error());
-}
-
-void R_kvstoreClient::modifyUserClusterHostAsync(const ModifyUserClusterHostRequest& request, const ModifyUserClusterHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyUserClusterHost(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-R_kvstoreClient::ModifyUserClusterHostOutcomeCallable R_kvstoreClient::modifyUserClusterHostCallable(const ModifyUserClusterHostRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyUserClusterHostOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyUserClusterHost(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 R_kvstoreClient::ReleaseDirectConnectionOutcome R_kvstoreClient::releaseDirectConnection(const ReleaseDirectConnectionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3141,42 +3177,6 @@ R_kvstoreClient::RenewInstanceOutcomeCallable R_kvstoreClient::renewInstanceCall
 			[this, request]()
 			{
 			return this->renewInstance(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-R_kvstoreClient::ReplaceUserClusterHostOutcome R_kvstoreClient::replaceUserClusterHost(const ReplaceUserClusterHostRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ReplaceUserClusterHostOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ReplaceUserClusterHostOutcome(ReplaceUserClusterHostResult(outcome.result()));
-	else
-		return ReplaceUserClusterHostOutcome(outcome.error());
-}
-
-void R_kvstoreClient::replaceUserClusterHostAsync(const ReplaceUserClusterHostRequest& request, const ReplaceUserClusterHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, replaceUserClusterHost(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-R_kvstoreClient::ReplaceUserClusterHostOutcomeCallable R_kvstoreClient::replaceUserClusterHostCallable(const ReplaceUserClusterHostRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ReplaceUserClusterHostOutcome()>>(
-			[this, request]()
-			{
-			return this->replaceUserClusterHost(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

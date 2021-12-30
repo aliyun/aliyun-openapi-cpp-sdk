@@ -34,8 +34,8 @@ namespace AlibabaCloud
 			public:
 				struct _Parameter
 				{
-					bool modifiableStatus;
 					std::string checkingCode;
+					bool modifiableStatus;
 					std::string parameterValue;
 					bool forceRestart;
 					std::string parameterName;

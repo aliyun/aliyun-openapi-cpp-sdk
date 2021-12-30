@@ -93,6 +93,17 @@ void ModifyInstanceSpecRequest::setSecurityToken(const std::string& securityToke
 	setParameter("SecurityToken", securityToken);
 }
 
+std::string ModifyInstanceSpecRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ModifyInstanceSpecRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string ModifyInstanceSpecRequest::getEffectiveTime()const
 {
 	return effectiveTime_;

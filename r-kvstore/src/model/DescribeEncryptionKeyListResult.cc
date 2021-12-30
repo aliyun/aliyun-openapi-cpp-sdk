@@ -14,45 +14,39 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/r-kvstore/model/CreateUserClusterHostResult.h>
+#include <alibabacloud/r-kvstore/model/DescribeEncryptionKeyListResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::R_kvstore;
 using namespace AlibabaCloud::R_kvstore::Model;
 
-CreateUserClusterHostResult::CreateUserClusterHostResult() :
+DescribeEncryptionKeyListResult::DescribeEncryptionKeyListResult() :
 	ServiceResult()
 {}
 
-CreateUserClusterHostResult::CreateUserClusterHostResult(const std::string &payload) :
+DescribeEncryptionKeyListResult::DescribeEncryptionKeyListResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-CreateUserClusterHostResult::~CreateUserClusterHostResult()
+DescribeEncryptionKeyListResult::~DescribeEncryptionKeyListResult()
 {}
 
-void CreateUserClusterHostResult::parse(const std::string &payload)
+void DescribeEncryptionKeyListResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["ClusterId"].isNull())
-		clusterId_ = value["ClusterId"].asString();
-	if(!value["HostId"].isNull())
-		hostId_ = value["HostId"].asString();
+	auto allKeyIds = value["KeyIds"]["KeyId"];
+	for (const auto &item : allKeyIds)
+		keyIds_.push_back(item.asString());
 
 }
 
-std::string CreateUserClusterHostResult::getClusterId()const
+std::vector<std::string> DescribeEncryptionKeyListResult::getKeyIds()const
 {
-	return clusterId_;
-}
-
-std::string CreateUserClusterHostResult::getHostId()const
-{
-	return hostId_;
+	return keyIds_;
 }
 

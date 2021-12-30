@@ -27,6 +27,8 @@ set(r-kvstore_public_header_model
 	include/alibabacloud/r-kvstore/model/AllocateDirectConnectionResult.h
 	include/alibabacloud/r-kvstore/model/AllocateInstancePublicConnectionRequest.h
 	include/alibabacloud/r-kvstore/model/AllocateInstancePublicConnectionResult.h
+	include/alibabacloud/r-kvstore/model/CheckCloudResourceAuthorizedRequest.h
+	include/alibabacloud/r-kvstore/model/CheckCloudResourceAuthorizedResult.h
 	include/alibabacloud/r-kvstore/model/CreateAccountRequest.h
 	include/alibabacloud/r-kvstore/model/CreateAccountResult.h
 	include/alibabacloud/r-kvstore/model/CreateBackupRequest.h
@@ -41,16 +43,12 @@ set(r-kvstore_public_header_model
 	include/alibabacloud/r-kvstore/model/CreateInstancesResult.h
 	include/alibabacloud/r-kvstore/model/CreateTairInstanceRequest.h
 	include/alibabacloud/r-kvstore/model/CreateTairInstanceResult.h
-	include/alibabacloud/r-kvstore/model/CreateUserClusterHostRequest.h
-	include/alibabacloud/r-kvstore/model/CreateUserClusterHostResult.h
 	include/alibabacloud/r-kvstore/model/DeleteAccountRequest.h
 	include/alibabacloud/r-kvstore/model/DeleteAccountResult.h
 	include/alibabacloud/r-kvstore/model/DeleteInstanceRequest.h
 	include/alibabacloud/r-kvstore/model/DeleteInstanceResult.h
 	include/alibabacloud/r-kvstore/model/DeleteShardingNodeRequest.h
 	include/alibabacloud/r-kvstore/model/DeleteShardingNodeResult.h
-	include/alibabacloud/r-kvstore/model/DeleteUserClusterHostRequest.h
-	include/alibabacloud/r-kvstore/model/DeleteUserClusterHostResult.h
 	include/alibabacloud/r-kvstore/model/DescribeAccountsRequest.h
 	include/alibabacloud/r-kvstore/model/DescribeAccountsResult.h
 	include/alibabacloud/r-kvstore/model/DescribeActiveOperationTaskRequest.h
@@ -77,6 +75,10 @@ set(r-kvstore_public_header_model
 	include/alibabacloud/r-kvstore/model/DescribeDBInstanceNetInfoResult.h
 	include/alibabacloud/r-kvstore/model/DescribeDedicatedClusterInstanceListRequest.h
 	include/alibabacloud/r-kvstore/model/DescribeDedicatedClusterInstanceListResult.h
+	include/alibabacloud/r-kvstore/model/DescribeEncryptionKeyRequest.h
+	include/alibabacloud/r-kvstore/model/DescribeEncryptionKeyResult.h
+	include/alibabacloud/r-kvstore/model/DescribeEncryptionKeyListRequest.h
+	include/alibabacloud/r-kvstore/model/DescribeEncryptionKeyListResult.h
 	include/alibabacloud/r-kvstore/model/DescribeEngineVersionRequest.h
 	include/alibabacloud/r-kvstore/model/DescribeEngineVersionResult.h
 	include/alibabacloud/r-kvstore/model/DescribeGlobalDistributeCacheRequest.h
@@ -91,8 +93,12 @@ set(r-kvstore_public_header_model
 	include/alibabacloud/r-kvstore/model/DescribeInstanceConfigResult.h
 	include/alibabacloud/r-kvstore/model/DescribeInstanceSSLRequest.h
 	include/alibabacloud/r-kvstore/model/DescribeInstanceSSLResult.h
+	include/alibabacloud/r-kvstore/model/DescribeInstanceTDEStatusRequest.h
+	include/alibabacloud/r-kvstore/model/DescribeInstanceTDEStatusResult.h
 	include/alibabacloud/r-kvstore/model/DescribeInstancesRequest.h
 	include/alibabacloud/r-kvstore/model/DescribeInstancesResult.h
+	include/alibabacloud/r-kvstore/model/DescribeInstancesOverviewRequest.h
+	include/alibabacloud/r-kvstore/model/DescribeInstancesOverviewResult.h
 	include/alibabacloud/r-kvstore/model/DescribeIntranetAttributeRequest.h
 	include/alibabacloud/r-kvstore/model/DescribeIntranetAttributeResult.h
 	include/alibabacloud/r-kvstore/model/DescribeLogicInstanceTopologyRequest.h
@@ -119,10 +125,6 @@ set(r-kvstore_public_header_model
 	include/alibabacloud/r-kvstore/model/DescribeSlowLogRecordsResult.h
 	include/alibabacloud/r-kvstore/model/DescribeTasksRequest.h
 	include/alibabacloud/r-kvstore/model/DescribeTasksResult.h
-	include/alibabacloud/r-kvstore/model/DescribeUserClusterHostRequest.h
-	include/alibabacloud/r-kvstore/model/DescribeUserClusterHostResult.h
-	include/alibabacloud/r-kvstore/model/DescribeUserClusterHostInstanceRequest.h
-	include/alibabacloud/r-kvstore/model/DescribeUserClusterHostInstanceResult.h
 	include/alibabacloud/r-kvstore/model/DescribeZonesRequest.h
 	include/alibabacloud/r-kvstore/model/DescribeZonesResult.h
 	include/alibabacloud/r-kvstore/model/EnableAdditionalBandwidthRequest.h
@@ -169,6 +171,8 @@ set(r-kvstore_public_header_model
 	include/alibabacloud/r-kvstore/model/ModifyInstanceSSLResult.h
 	include/alibabacloud/r-kvstore/model/ModifyInstanceSpecRequest.h
 	include/alibabacloud/r-kvstore/model/ModifyInstanceSpecResult.h
+	include/alibabacloud/r-kvstore/model/ModifyInstanceTDERequest.h
+	include/alibabacloud/r-kvstore/model/ModifyInstanceTDEResult.h
 	include/alibabacloud/r-kvstore/model/ModifyInstanceVpcAuthModeRequest.h
 	include/alibabacloud/r-kvstore/model/ModifyInstanceVpcAuthModeResult.h
 	include/alibabacloud/r-kvstore/model/ModifyIntranetAttributeRequest.h
@@ -181,8 +185,6 @@ set(r-kvstore_public_header_model
 	include/alibabacloud/r-kvstore/model/ModifySecurityGroupConfigurationResult.h
 	include/alibabacloud/r-kvstore/model/ModifySecurityIpsRequest.h
 	include/alibabacloud/r-kvstore/model/ModifySecurityIpsResult.h
-	include/alibabacloud/r-kvstore/model/ModifyUserClusterHostRequest.h
-	include/alibabacloud/r-kvstore/model/ModifyUserClusterHostResult.h
 	include/alibabacloud/r-kvstore/model/ReleaseDirectConnectionRequest.h
 	include/alibabacloud/r-kvstore/model/ReleaseDirectConnectionResult.h
 	include/alibabacloud/r-kvstore/model/ReleaseInstancePublicConnectionRequest.h
@@ -193,8 +195,6 @@ set(r-kvstore_public_header_model
 	include/alibabacloud/r-kvstore/model/RenewAdditionalBandwidthResult.h
 	include/alibabacloud/r-kvstore/model/RenewInstanceRequest.h
 	include/alibabacloud/r-kvstore/model/RenewInstanceResult.h
-	include/alibabacloud/r-kvstore/model/ReplaceUserClusterHostRequest.h
-	include/alibabacloud/r-kvstore/model/ReplaceUserClusterHostResult.h
 	include/alibabacloud/r-kvstore/model/ResetAccountPasswordRequest.h
 	include/alibabacloud/r-kvstore/model/ResetAccountPasswordResult.h
 	include/alibabacloud/r-kvstore/model/RestartInstanceRequest.h
@@ -226,6 +226,8 @@ set(r-kvstore_src
 	src/model/AllocateDirectConnectionResult.cc
 	src/model/AllocateInstancePublicConnectionRequest.cc
 	src/model/AllocateInstancePublicConnectionResult.cc
+	src/model/CheckCloudResourceAuthorizedRequest.cc
+	src/model/CheckCloudResourceAuthorizedResult.cc
 	src/model/CreateAccountRequest.cc
 	src/model/CreateAccountResult.cc
 	src/model/CreateBackupRequest.cc
@@ -240,16 +242,12 @@ set(r-kvstore_src
 	src/model/CreateInstancesResult.cc
 	src/model/CreateTairInstanceRequest.cc
 	src/model/CreateTairInstanceResult.cc
-	src/model/CreateUserClusterHostRequest.cc
-	src/model/CreateUserClusterHostResult.cc
 	src/model/DeleteAccountRequest.cc
 	src/model/DeleteAccountResult.cc
 	src/model/DeleteInstanceRequest.cc
 	src/model/DeleteInstanceResult.cc
 	src/model/DeleteShardingNodeRequest.cc
 	src/model/DeleteShardingNodeResult.cc
-	src/model/DeleteUserClusterHostRequest.cc
-	src/model/DeleteUserClusterHostResult.cc
 	src/model/DescribeAccountsRequest.cc
 	src/model/DescribeAccountsResult.cc
 	src/model/DescribeActiveOperationTaskRequest.cc
@@ -276,6 +274,10 @@ set(r-kvstore_src
 	src/model/DescribeDBInstanceNetInfoResult.cc
 	src/model/DescribeDedicatedClusterInstanceListRequest.cc
 	src/model/DescribeDedicatedClusterInstanceListResult.cc
+	src/model/DescribeEncryptionKeyRequest.cc
+	src/model/DescribeEncryptionKeyResult.cc
+	src/model/DescribeEncryptionKeyListRequest.cc
+	src/model/DescribeEncryptionKeyListResult.cc
 	src/model/DescribeEngineVersionRequest.cc
 	src/model/DescribeEngineVersionResult.cc
 	src/model/DescribeGlobalDistributeCacheRequest.cc
@@ -290,8 +292,12 @@ set(r-kvstore_src
 	src/model/DescribeInstanceConfigResult.cc
 	src/model/DescribeInstanceSSLRequest.cc
 	src/model/DescribeInstanceSSLResult.cc
+	src/model/DescribeInstanceTDEStatusRequest.cc
+	src/model/DescribeInstanceTDEStatusResult.cc
 	src/model/DescribeInstancesRequest.cc
 	src/model/DescribeInstancesResult.cc
+	src/model/DescribeInstancesOverviewRequest.cc
+	src/model/DescribeInstancesOverviewResult.cc
 	src/model/DescribeIntranetAttributeRequest.cc
 	src/model/DescribeIntranetAttributeResult.cc
 	src/model/DescribeLogicInstanceTopologyRequest.cc
@@ -318,10 +324,6 @@ set(r-kvstore_src
 	src/model/DescribeSlowLogRecordsResult.cc
 	src/model/DescribeTasksRequest.cc
 	src/model/DescribeTasksResult.cc
-	src/model/DescribeUserClusterHostRequest.cc
-	src/model/DescribeUserClusterHostResult.cc
-	src/model/DescribeUserClusterHostInstanceRequest.cc
-	src/model/DescribeUserClusterHostInstanceResult.cc
 	src/model/DescribeZonesRequest.cc
 	src/model/DescribeZonesResult.cc
 	src/model/EnableAdditionalBandwidthRequest.cc
@@ -368,6 +370,8 @@ set(r-kvstore_src
 	src/model/ModifyInstanceSSLResult.cc
 	src/model/ModifyInstanceSpecRequest.cc
 	src/model/ModifyInstanceSpecResult.cc
+	src/model/ModifyInstanceTDERequest.cc
+	src/model/ModifyInstanceTDEResult.cc
 	src/model/ModifyInstanceVpcAuthModeRequest.cc
 	src/model/ModifyInstanceVpcAuthModeResult.cc
 	src/model/ModifyIntranetAttributeRequest.cc
@@ -380,8 +384,6 @@ set(r-kvstore_src
 	src/model/ModifySecurityGroupConfigurationResult.cc
 	src/model/ModifySecurityIpsRequest.cc
 	src/model/ModifySecurityIpsResult.cc
-	src/model/ModifyUserClusterHostRequest.cc
-	src/model/ModifyUserClusterHostResult.cc
 	src/model/ReleaseDirectConnectionRequest.cc
 	src/model/ReleaseDirectConnectionResult.cc
 	src/model/ReleaseInstancePublicConnectionRequest.cc
@@ -392,8 +394,6 @@ set(r-kvstore_src
 	src/model/RenewAdditionalBandwidthResult.cc
 	src/model/RenewInstanceRequest.cc
 	src/model/RenewInstanceResult.cc
-	src/model/ReplaceUserClusterHostRequest.cc
-	src/model/ReplaceUserClusterHostResult.cc
 	src/model/ResetAccountPasswordRequest.cc
 	src/model/ResetAccountPasswordResult.cc
 	src/model/RestartInstanceRequest.cc

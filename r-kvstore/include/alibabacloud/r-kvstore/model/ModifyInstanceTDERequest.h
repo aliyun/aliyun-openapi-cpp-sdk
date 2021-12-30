@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_R_KVSTORE_MODEL_DELETEUSERCLUSTERHOSTREQUEST_H_
-#define ALIBABACLOUD_R_KVSTORE_MODEL_DELETEUSERCLUSTERHOSTREQUEST_H_
+#ifndef ALIBABACLOUD_R_KVSTORE_MODEL_MODIFYINSTANCETDEREQUEST_H_
+#define ALIBABACLOUD_R_KVSTORE_MODEL_MODIFYINSTANCETDEREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,51 +28,57 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_R_KVSTORE_EXPORT DeleteUserClusterHostRequest : public RpcServiceRequest
+			class ALIBABACLOUD_R_KVSTORE_EXPORT ModifyInstanceTDERequest : public RpcServiceRequest
 			{
 
 			public:
-				DeleteUserClusterHostRequest();
-				~DeleteUserClusterHostRequest();
+				ModifyInstanceTDERequest();
+				~ModifyInstanceTDERequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getHostId()const;
-				void setHostId(const std::string& hostId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getEngine()const;
-				void setEngine(const std::string& engine);
+				std::string getProduct()const;
+				void setProduct(const std::string& product);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getClusterId()const;
-				void setClusterId(const std::string& clusterId);
+				std::string getEncryptionKey()const;
+				void setEncryptionKey(const std::string& encryptionKey);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getZoneId()const;
-				void setZoneId(const std::string& zoneId);
+				std::string getEncryptionName()const;
+				void setEncryptionName(const std::string& encryptionName);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
+				std::string getRoleArn()const;
+				void setRoleArn(const std::string& roleArn);
+				std::string getCategory()const;
+				void setCategory(const std::string& category);
+				std::string getTDEStatus()const;
+				void setTDEStatus(const std::string& tDEStatus);
 
             private:
 				long resourceOwnerId_;
-				std::string hostId_;
 				std::string accessKeyId_;
 				std::string securityToken_;
-				std::string regionId_;
-				std::string engine_;
+				std::string product_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
-				std::string clusterId_;
+				std::string encryptionKey_;
 				long ownerId_;
-				std::string zoneId_;
+				std::string encryptionName_;
+				std::string instanceId_;
+				std::string roleArn_;
+				std::string category_;
+				std::string tDEStatus_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_R_KVSTORE_MODEL_DELETEUSERCLUSTERHOSTREQUEST_H_
+#endif // !ALIBABACLOUD_R_KVSTORE_MODEL_MODIFYINSTANCETDEREQUEST_H_

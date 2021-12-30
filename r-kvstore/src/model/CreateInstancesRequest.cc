@@ -82,6 +82,17 @@ void CreateInstancesRequest::setAccessKeyId(const std::string& accessKeyId)
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string CreateInstancesRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void CreateInstancesRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string CreateInstancesRequest::getSecurityToken()const
 {
 	return securityToken_;

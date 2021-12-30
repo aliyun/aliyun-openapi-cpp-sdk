@@ -39,23 +39,23 @@ namespace AlibabaCloud
 				~CreateInstanceResult();
 				long getConnections()const;
 				std::string getUserName()const;
-				std::string getZoneId()const;
 				std::string getEndTime()const;
+				std::string getZoneId()const;
 				std::string getInstanceId()const;
 				std::string getConfig()const;
 				int getPort()const;
 				std::string getVSwitchId()const;
 				std::string getPrivateIpAddr()const;
-				std::string getInstanceName()const;
 				std::string getConnectionDomain()const;
+				std::string getInstanceName()const;
 				std::string getVpcId()const;
-				long getCapacity()const;
 				long getQPS()const;
-				std::string getInstanceStatus()const;
+				long getCapacity()const;
 				std::string getChargeType()const;
 				std::string getNetworkType()const;
-				long getBandwidth()const;
+				std::string getInstanceStatus()const;
 				std::string getNodeType()const;
+				long getBandwidth()const;
 				std::string getRegionId()const;
 
 			protected:
@@ -63,23 +63,23 @@ namespace AlibabaCloud
 			private:
 				long connections_;
 				std::string userName_;
-				std::string zoneId_;
 				std::string endTime_;
+				std::string zoneId_;
 				std::string instanceId_;
 				std::string config_;
 				int port_;
 				std::string vSwitchId_;
 				std::string privateIpAddr_;
-				std::string instanceName_;
 				std::string connectionDomain_;
+				std::string instanceName_;
 				std::string vpcId_;
-				long capacity_;
 				long qPS_;
-				std::string instanceStatus_;
+				long capacity_;
 				std::string chargeType_;
 				std::string networkType_;
-				long bandwidth_;
+				std::string instanceStatus_;
 				std::string nodeType_;
+				long bandwidth_;
 				std::string regionId_;
 
 			};

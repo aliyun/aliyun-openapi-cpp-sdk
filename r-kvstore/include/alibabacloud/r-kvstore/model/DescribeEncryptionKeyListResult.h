@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_R_KVSTORE_MODEL_REPLACEUSERCLUSTERHOSTRESULT_H_
-#define ALIBABACLOUD_R_KVSTORE_MODEL_REPLACEUSERCLUSTERHOSTRESULT_H_
+#ifndef ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEENCRYPTIONKEYLISTRESULT_H_
+#define ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEENCRYPTIONKEYLISTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,23 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_R_KVSTORE_EXPORT ReplaceUserClusterHostResult : public ServiceResult
+			class ALIBABACLOUD_R_KVSTORE_EXPORT DescribeEncryptionKeyListResult : public ServiceResult
 			{
 			public:
 
 
-				ReplaceUserClusterHostResult();
-				explicit ReplaceUserClusterHostResult(const std::string &payload);
-				~ReplaceUserClusterHostResult();
-				std::string getNewHostId()const;
+				DescribeEncryptionKeyListResult();
+				explicit DescribeEncryptionKeyListResult(const std::string &payload);
+				~DescribeEncryptionKeyListResult();
+				std::vector<std::string> getKeyIds()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string newHostId_;
+				std::vector<std::string> keyIds_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_R_KVSTORE_MODEL_REPLACEUSERCLUSTERHOSTRESULT_H_
+#endif // !ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEENCRYPTIONKEYLISTRESULT_H_

@@ -14,38 +14,38 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/r-kvstore/model/ReplaceUserClusterHostResult.h>
+#include <alibabacloud/r-kvstore/model/CheckCloudResourceAuthorizedResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::R_kvstore;
 using namespace AlibabaCloud::R_kvstore::Model;
 
-ReplaceUserClusterHostResult::ReplaceUserClusterHostResult() :
+CheckCloudResourceAuthorizedResult::CheckCloudResourceAuthorizedResult() :
 	ServiceResult()
 {}
 
-ReplaceUserClusterHostResult::ReplaceUserClusterHostResult(const std::string &payload) :
+CheckCloudResourceAuthorizedResult::CheckCloudResourceAuthorizedResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-ReplaceUserClusterHostResult::~ReplaceUserClusterHostResult()
+CheckCloudResourceAuthorizedResult::~CheckCloudResourceAuthorizedResult()
 {}
 
-void ReplaceUserClusterHostResult::parse(const std::string &payload)
+void CheckCloudResourceAuthorizedResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["NewHostId"].isNull())
-		newHostId_ = value["NewHostId"].asString();
+	if(!value["AuthorizationState"].isNull())
+		authorizationState_ = std::stoi(value["AuthorizationState"].asString());
 
 }
 
-std::string ReplaceUserClusterHostResult::getNewHostId()const
+int CheckCloudResourceAuthorizedResult::getAuthorizationState()const
 {
-	return newHostId_;
+	return authorizationState_;
 }
 

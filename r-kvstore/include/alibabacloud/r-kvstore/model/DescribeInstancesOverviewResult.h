@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEUSERCLUSTERHOSTINSTANCERESULT_H_
-#define ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEUSERCLUSTERHOSTINSTANCERESULT_H_
+#ifndef ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEINSTANCESOVERVIEWRESULT_H_
+#define ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEINSTANCESOVERVIEWRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,44 +29,50 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_R_KVSTORE_EXPORT DescribeUserClusterHostInstanceResult : public ServiceResult
+			class ALIBABACLOUD_R_KVSTORE_EXPORT DescribeInstancesOverviewResult : public ServiceResult
 			{
 			public:
-				struct InstanceInfo
+				struct KVStoreInstance
 				{
+					std::string architectureType;
 					std::string engineVersion;
+					std::string endTime;
+					std::string resourceGroupId;
 					std::string zoneId;
 					std::string instanceId;
-					std::string clusterId;
-					std::string instanceStatus;
 					std::string createTime;
+					long port;
+					std::string vSwitchId;
+					std::string globalInstanceId;
 					std::string instanceClass;
+					std::string connectionDomain;
+					std::string instanceName;
+					std::string vpcId;
+					std::string privateIp;
+					long capacity;
+					std::string chargeType;
+					std::string networkType;
+					std::string instanceStatus;
+					std::string connectionMode;
 					std::string regionId;
 					std::string instanceType;
-					std::string engine;
 				};
 
 
-				DescribeUserClusterHostInstanceResult();
-				explicit DescribeUserClusterHostInstanceResult(const std::string &payload);
-				~DescribeUserClusterHostInstanceResult();
-				int getMaxRecordsPerPage()const;
-				std::vector<InstanceInfo> getInstancesItems()const;
-				int getPageNumber()const;
-				int getTotalRecords()const;
-				int getItemNumbers()const;
+				DescribeInstancesOverviewResult();
+				explicit DescribeInstancesOverviewResult(const std::string &payload);
+				~DescribeInstancesOverviewResult();
+				std::vector<KVStoreInstance> getInstances()const;
+				int getTotalCount()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int maxRecordsPerPage_;
-				std::vector<InstanceInfo> instancesItems_;
-				int pageNumber_;
-				int totalRecords_;
-				int itemNumbers_;
+				std::vector<KVStoreInstance> instances_;
+				int totalCount_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEUSERCLUSTERHOSTINSTANCERESULT_H_
+#endif // !ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEINSTANCESOVERVIEWRESULT_H_

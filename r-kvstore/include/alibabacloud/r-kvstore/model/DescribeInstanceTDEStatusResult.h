@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_R_KVSTORE_MODEL_MODIFYUSERCLUSTERHOSTRESULT_H_
-#define ALIBABACLOUD_R_KVSTORE_MODEL_MODIFYUSERCLUSTERHOSTRESULT_H_
+#ifndef ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEINSTANCETDESTATUSRESULT_H_
+#define ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEINSTANCETDESTATUSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,21 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_R_KVSTORE_EXPORT ModifyUserClusterHostResult : public ServiceResult
+			class ALIBABACLOUD_R_KVSTORE_EXPORT DescribeInstanceTDEStatusResult : public ServiceResult
 			{
 			public:
 
 
-				ModifyUserClusterHostResult();
-				explicit ModifyUserClusterHostResult(const std::string &payload);
-				~ModifyUserClusterHostResult();
+				DescribeInstanceTDEStatusResult();
+				explicit DescribeInstanceTDEStatusResult(const std::string &payload);
+				~DescribeInstanceTDEStatusResult();
+				std::string getTDEStatus()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string tDEStatus_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_R_KVSTORE_MODEL_MODIFYUSERCLUSTERHOSTRESULT_H_
+#endif // !ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEINSTANCETDESTATUSRESULT_H_

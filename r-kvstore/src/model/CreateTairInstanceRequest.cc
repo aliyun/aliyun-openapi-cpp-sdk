@@ -82,15 +82,15 @@ void CreateTairInstanceRequest::setStorageType(const std::string& storageType)
 	setParameter("StorageType", storageType);
 }
 
-int CreateTairInstanceRequest::getResourceGroupId()const
+std::string CreateTairInstanceRequest::getResourceGroupId()const
 {
 	return resourceGroupId_;
 }
 
-void CreateTairInstanceRequest::setResourceGroupId(int resourceGroupId)
+void CreateTairInstanceRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setParameter("ResourceGroupId", std::to_string(resourceGroupId));
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string CreateTairInstanceRequest::getPassword()const

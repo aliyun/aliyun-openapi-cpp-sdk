@@ -203,6 +203,17 @@ void DescribeDedicatedClusterInstanceListRequest::setInstanceId(const std::strin
 	setParameter("InstanceId", instanceId);
 }
 
+std::string DescribeDedicatedClusterInstanceListRequest::getZoneId()const
+{
+	return zoneId_;
+}
+
+void DescribeDedicatedClusterInstanceListRequest::setZoneId(const std::string& zoneId)
+{
+	zoneId_ = zoneId;
+	setParameter("ZoneId", zoneId);
+}
+
 std::string DescribeDedicatedClusterInstanceListRequest::getRegion()const
 {
 	return region_;

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEDEDICATEDCLUSTERINSTANCELISTREQUEST_H_
-#define ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEDEDICATEDCLUSTERINSTANCELISTREQUEST_H_
+#ifndef ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEINSTANCETDESTATUSREQUEST_H_
+#define ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEINSTANCETDESTATUSREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,72 +28,39 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_R_KVSTORE_EXPORT DescribeDedicatedClusterInstanceListRequest : public RpcServiceRequest
+			class ALIBABACLOUD_R_KVSTORE_EXPORT DescribeInstanceTDEStatusRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeDedicatedClusterInstanceListRequest();
-				~DescribeDedicatedClusterInstanceListRequest();
+				DescribeInstanceTDEStatusRequest();
+				~DescribeInstanceTDEStatusRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getEngineVersion()const;
-				void setEngineVersion(const std::string& engineVersion);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getEngine()const;
-				void setEngine(const std::string& engine);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
-				int getInstanceStatus()const;
-				void setInstanceStatus(int instanceStatus);
-				std::string getDedicatedHostName()const;
-				void setDedicatedHostName(const std::string& dedicatedHostName);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getInstanceNetType()const;
-				void setInstanceNetType(const std::string& instanceNetType);
-				std::string getClusterId()const;
-				void setClusterId(const std::string& clusterId);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
-				std::string getZoneId()const;
-				void setZoneId(const std::string& zoneId);
-				std::string getRegion()const;
-				void setRegion(const std::string& region);
 
             private:
 				long resourceOwnerId_;
-				std::string engineVersion_;
-				int pageNumber_;
 				std::string accessKeyId_;
 				std::string securityToken_;
-				std::string regionId_;
-				std::string engine_;
-				int pageSize_;
-				int instanceStatus_;
-				std::string dedicatedHostName_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
-				std::string instanceNetType_;
-				std::string clusterId_;
 				long ownerId_;
 				std::string instanceId_;
-				std::string zoneId_;
-				std::string region_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEDEDICATEDCLUSTERINSTANCELISTREQUEST_H_
+#endif // !ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEINSTANCETDESTATUSREQUEST_H_

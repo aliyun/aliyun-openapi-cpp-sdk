@@ -43,14 +43,14 @@ void DescribeRegionsResult::parse(const std::string &payload)
 	for (auto valueRegionIdsKVStoreRegion : allRegionIdsNode)
 	{
 		KVStoreRegion regionIdsObject;
+		if(!valueRegionIdsKVStoreRegion["RegionEndpoint"].isNull())
+			regionIdsObject.regionEndpoint = valueRegionIdsKVStoreRegion["RegionEndpoint"].asString();
+		if(!valueRegionIdsKVStoreRegion["LocalName"].isNull())
+			regionIdsObject.localName = valueRegionIdsKVStoreRegion["LocalName"].asString();
 		if(!valueRegionIdsKVStoreRegion["RegionId"].isNull())
 			regionIdsObject.regionId = valueRegionIdsKVStoreRegion["RegionId"].asString();
 		if(!valueRegionIdsKVStoreRegion["ZoneIds"].isNull())
 			regionIdsObject.zoneIds = valueRegionIdsKVStoreRegion["ZoneIds"].asString();
-		if(!valueRegionIdsKVStoreRegion["LocalName"].isNull())
-			regionIdsObject.localName = valueRegionIdsKVStoreRegion["LocalName"].asString();
-		if(!valueRegionIdsKVStoreRegion["RegionEndpoint"].isNull())
-			regionIdsObject.regionEndpoint = valueRegionIdsKVStoreRegion["RegionEndpoint"].asString();
 		auto allZoneIdList = value["ZoneIdList"]["ZoneId"];
 		for (auto value : allZoneIdList)
 			regionIdsObject.zoneIdList.push_back(value.asString());

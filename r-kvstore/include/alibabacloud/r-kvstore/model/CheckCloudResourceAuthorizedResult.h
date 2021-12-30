@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_R_KVSTORE_MODEL_DELETEUSERCLUSTERHOSTRESULT_H_
-#define ALIBABACLOUD_R_KVSTORE_MODEL_DELETEUSERCLUSTERHOSTRESULT_H_
+#ifndef ALIBABACLOUD_R_KVSTORE_MODEL_CHECKCLOUDRESOURCEAUTHORIZEDRESULT_H_
+#define ALIBABACLOUD_R_KVSTORE_MODEL_CHECKCLOUDRESOURCEAUTHORIZEDRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,21 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_R_KVSTORE_EXPORT DeleteUserClusterHostResult : public ServiceResult
+			class ALIBABACLOUD_R_KVSTORE_EXPORT CheckCloudResourceAuthorizedResult : public ServiceResult
 			{
 			public:
 
 
-				DeleteUserClusterHostResult();
-				explicit DeleteUserClusterHostResult(const std::string &payload);
-				~DeleteUserClusterHostResult();
+				CheckCloudResourceAuthorizedResult();
+				explicit CheckCloudResourceAuthorizedResult(const std::string &payload);
+				~CheckCloudResourceAuthorizedResult();
+				int getAuthorizationState()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				int authorizationState_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_R_KVSTORE_MODEL_DELETEUSERCLUSTERHOSTRESULT_H_
+#endif // !ALIBABACLOUD_R_KVSTORE_MODEL_CHECKCLOUDRESOURCEAUTHORIZEDRESULT_H_

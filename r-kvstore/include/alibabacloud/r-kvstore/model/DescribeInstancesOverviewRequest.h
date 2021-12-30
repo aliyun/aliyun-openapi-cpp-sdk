@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEUSERCLUSTERHOSTINSTANCEREQUEST_H_
-#define ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEUSERCLUSTERHOSTINSTANCEREQUEST_H_
+#ifndef ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEINSTANCESOVERVIEWREQUEST_H_
+#define ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEINSTANCESOVERVIEWREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,60 +28,87 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_R_KVSTORE_EXPORT DescribeUserClusterHostInstanceRequest : public RpcServiceRequest
+			class ALIBABACLOUD_R_KVSTORE_EXPORT DescribeInstancesOverviewRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeUserClusterHostInstanceRequest();
-				~DescribeUserClusterHostInstanceRequest();
+				DescribeInstancesOverviewRequest();
+				~DescribeInstancesOverviewRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
+				std::string getSearchKey()const;
+				void setSearchKey(const std::string& searchKey);
+				std::string getNetworkType()const;
+				void setNetworkType(const std::string& networkType);
+				std::string getEngineVersion()const;
+				void setEngineVersion(const std::string& engineVersion);
+				std::string getInstanceClass()const;
+				void setInstanceClass(const std::string& instanceClass);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				std::string getEngine()const;
-				void setEngine(const std::string& engine);
+				std::string getInstanceType()const;
+				void setInstanceType(const std::string& instanceType);
+				std::string getEditionType()const;
+				void setEditionType(const std::string& editionType);
 				std::string getInstanceStatus()const;
 				void setInstanceStatus(const std::string& instanceStatus);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				int getMaxRecordsPerPage()const;
-				void setMaxRecordsPerPage(int maxRecordsPerPage);
-				std::string getClusterId()const;
-				void setClusterId(const std::string& clusterId);
+				bool getGlobalInstance()const;
+				void setGlobalInstance(bool globalInstance);
+				std::string getPrivateIp()const;
+				void setPrivateIp(const std::string& privateIp);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getVSwitchId()const;
+				void setVSwitchId(const std::string& vSwitchId);
 				std::string getInstanceIds()const;
 				void setInstanceIds(const std::string& instanceIds);
+				std::string getArchitectureType()const;
+				void setArchitectureType(const std::string& architectureType);
+				std::string getVpcId()const;
+				void setVpcId(const std::string& vpcId);
 				std::string getZoneId()const;
 				void setZoneId(const std::string& zoneId);
+				std::string getChargeType()const;
+				void setChargeType(const std::string& chargeType);
 
             private:
 				long resourceOwnerId_;
-				int pageNumber_;
+				std::string searchKey_;
+				std::string networkType_;
+				std::string engineVersion_;
+				std::string instanceClass_;
 				std::string accessKeyId_;
+				std::string resourceGroupId_;
 				std::string securityToken_;
 				std::string regionId_;
-				std::string engine_;
+				std::string instanceType_;
+				std::string editionType_;
 				std::string instanceStatus_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
-				int maxRecordsPerPage_;
-				std::string clusterId_;
+				bool globalInstance_;
+				std::string privateIp_;
 				long ownerId_;
+				std::string vSwitchId_;
 				std::string instanceIds_;
+				std::string architectureType_;
+				std::string vpcId_;
 				std::string zoneId_;
+				std::string chargeType_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEUSERCLUSTERHOSTINSTANCEREQUEST_H_
+#endif // !ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEINSTANCESOVERVIEWREQUEST_H_

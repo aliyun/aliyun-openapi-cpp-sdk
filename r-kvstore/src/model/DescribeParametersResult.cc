@@ -43,36 +43,36 @@ void DescribeParametersResult::parse(const std::string &payload)
 	for (auto valueConfigParametersParameter : allConfigParametersNode)
 	{
 		_Parameter configParametersObject;
+		if(!valueConfigParametersParameter["CheckingCode"].isNull())
+			configParametersObject.checkingCode = valueConfigParametersParameter["CheckingCode"].asString();
 		if(!valueConfigParametersParameter["ParameterName"].isNull())
 			configParametersObject.parameterName = valueConfigParametersParameter["ParameterName"].asString();
 		if(!valueConfigParametersParameter["ParameterValue"].isNull())
 			configParametersObject.parameterValue = valueConfigParametersParameter["ParameterValue"].asString();
-		if(!valueConfigParametersParameter["ModifiableStatus"].isNull())
-			configParametersObject.modifiableStatus = valueConfigParametersParameter["ModifiableStatus"].asString() == "true";
 		if(!valueConfigParametersParameter["ForceRestart"].isNull())
 			configParametersObject.forceRestart = valueConfigParametersParameter["ForceRestart"].asString() == "true";
-		if(!valueConfigParametersParameter["CheckingCode"].isNull())
-			configParametersObject.checkingCode = valueConfigParametersParameter["CheckingCode"].asString();
 		if(!valueConfigParametersParameter["ParameterDescription"].isNull())
 			configParametersObject.parameterDescription = valueConfigParametersParameter["ParameterDescription"].asString();
+		if(!valueConfigParametersParameter["ModifiableStatus"].isNull())
+			configParametersObject.modifiableStatus = valueConfigParametersParameter["ModifiableStatus"].asString() == "true";
 		configParameters_.push_back(configParametersObject);
 	}
 	auto allRunningParametersNode = value["RunningParameters"]["Parameter"];
 	for (auto valueRunningParametersParameter : allRunningParametersNode)
 	{
 		_Parameter runningParametersObject;
+		if(!valueRunningParametersParameter["CheckingCode"].isNull())
+			runningParametersObject.checkingCode = valueRunningParametersParameter["CheckingCode"].asString();
 		if(!valueRunningParametersParameter["ParameterName"].isNull())
 			runningParametersObject.parameterName = valueRunningParametersParameter["ParameterName"].asString();
 		if(!valueRunningParametersParameter["ParameterValue"].isNull())
 			runningParametersObject.parameterValue = valueRunningParametersParameter["ParameterValue"].asString();
-		if(!valueRunningParametersParameter["ModifiableStatus"].isNull())
-			runningParametersObject.modifiableStatus = valueRunningParametersParameter["ModifiableStatus"].asString() == "true";
 		if(!valueRunningParametersParameter["ForceRestart"].isNull())
 			runningParametersObject.forceRestart = valueRunningParametersParameter["ForceRestart"].asString() == "true";
-		if(!valueRunningParametersParameter["CheckingCode"].isNull())
-			runningParametersObject.checkingCode = valueRunningParametersParameter["CheckingCode"].asString();
 		if(!valueRunningParametersParameter["ParameterDescription"].isNull())
 			runningParametersObject.parameterDescription = valueRunningParametersParameter["ParameterDescription"].asString();
+		if(!valueRunningParametersParameter["ModifiableStatus"].isNull())
+			runningParametersObject.modifiableStatus = valueRunningParametersParameter["ModifiableStatus"].asString() == "true";
 		runningParameters_.push_back(runningParametersObject);
 	}
 	if(!value["Engine"].isNull())

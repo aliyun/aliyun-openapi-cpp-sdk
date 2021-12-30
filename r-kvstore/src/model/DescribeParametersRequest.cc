@@ -60,6 +60,17 @@ void DescribeParametersRequest::setSecurityToken(const std::string& securityToke
 	setParameter("SecurityToken", securityToken);
 }
 
+std::string DescribeParametersRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeParametersRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string DescribeParametersRequest::getDBInstanceId()const
 {
 	return dBInstanceId_;

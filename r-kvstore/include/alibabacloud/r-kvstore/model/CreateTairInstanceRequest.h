@@ -45,8 +45,8 @@ namespace AlibabaCloud
 				void setEngineVersion(const std::string& engineVersion);
 				std::string getStorageType()const;
 				void setStorageType(const std::string& storageType);
-				int getResourceGroupId()const;
-				void setResourceGroupId(int resourceGroupId);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getPassword()const;
 				void setPassword(const std::string& password);
 				std::string getSecurityToken()const;
@@ -110,7 +110,7 @@ namespace AlibabaCloud
 				std::string couponNo_;
 				std::string engineVersion_;
 				std::string storageType_;
-				int resourceGroupId_;
+				std::string resourceGroupId_;
 				std::string password_;
 				std::string securityToken_;
 				std::string businessInfo_;
