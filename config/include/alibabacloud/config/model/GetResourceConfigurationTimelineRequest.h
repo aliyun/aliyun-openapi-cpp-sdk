@@ -30,29 +30,35 @@ class ALIBABACLOUD_CONFIG_EXPORT GetResourceConfigurationTimelineRequest : publi
 public:
 	GetResourceConfigurationTimelineRequest();
 	~GetResourceConfigurationTimelineRequest();
+	bool getMultiAccount() const;
+	void setMultiAccount(bool multiAccount);
+	long getStartTime() const;
+	void setStartTime(long startTime);
+	std::string getNextToken() const;
+	void setNextToken(const std::string &nextToken);
+	int getLimit() const;
+	void setLimit(int limit);
 	std::string getResourceId() const;
 	void setResourceId(const std::string &resourceId);
 	long getEndTime() const;
 	void setEndTime(long endTime);
-	long getStartTime() const;
-	void setStartTime(long startTime);
 	std::string getResourceType() const;
 	void setResourceType(const std::string &resourceType);
-	std::string getNextToken() const;
-	void setNextToken(const std::string &nextToken);
-	int getMaxResults() const;
-	void setMaxResults(int maxResults);
 	std::string getRegion() const;
 	void setRegion(const std::string &region);
+	long getMemberId() const;
+	void setMemberId(long memberId);
 
 private:
+	bool multiAccount_;
+	long startTime_;
+	std::string nextToken_;
+	int limit_;
 	std::string resourceId_;
 	long endTime_;
-	long startTime_;
 	std::string resourceType_;
-	std::string nextToken_;
-	int maxResults_;
 	std::string region_;
+	long memberId_;
 };
 } // namespace Model
 } // namespace Config

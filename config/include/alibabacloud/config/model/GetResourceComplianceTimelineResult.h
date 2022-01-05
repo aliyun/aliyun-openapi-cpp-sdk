@@ -49,9 +49,10 @@ namespace AlibabaCloud
 						long resourceCreateTime;
 						std::string tags;
 					};
+					long totalCount;
 					std::vector<ComplianceListItem> complianceList;
 					std::string nextToken;
-					int maxResults;
+					int limit;
 				};
 
 
