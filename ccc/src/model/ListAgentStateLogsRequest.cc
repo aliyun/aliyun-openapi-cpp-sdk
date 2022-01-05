@@ -19,13 +19,24 @@
 using AlibabaCloud::CCC::Model::ListAgentStateLogsRequest;
 
 ListAgentStateLogsRequest::ListAgentStateLogsRequest() :
-	RpcServiceRequest("ccc", "2017-07-05", "ListAgentStateLogs")
+	RpcServiceRequest("ccc", "2020-07-01", "ListAgentStateLogs")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
 ListAgentStateLogsRequest::~ListAgentStateLogsRequest()
 {}
+
+std::string ListAgentStateLogsRequest::getAgentId()const
+{
+	return agentId_;
+}
+
+void ListAgentStateLogsRequest::setAgentId(const std::string& agentId)
+{
+	agentId_ = agentId;
+	setParameter("AgentId", agentId);
+}
 
 long ListAgentStateLogsRequest::getEndTime()const
 {
@@ -49,39 +60,6 @@ void ListAgentStateLogsRequest::setStartTime(long startTime)
 	setParameter("StartTime", std::to_string(startTime));
 }
 
-long ListAgentStateLogsRequest::getRamId()const
-{
-	return ramId_;
-}
-
-void ListAgentStateLogsRequest::setRamId(long ramId)
-{
-	ramId_ = ramId;
-	setParameter("RamId", std::to_string(ramId));
-}
-
-int ListAgentStateLogsRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void ListAgentStateLogsRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
-}
-
-std::string ListAgentStateLogsRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ListAgentStateLogsRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-
 std::string ListAgentStateLogsRequest::getInstanceId()const
 {
 	return instanceId_;
@@ -91,16 +69,5 @@ void ListAgentStateLogsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
 	setParameter("InstanceId", instanceId);
-}
-
-int ListAgentStateLogsRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void ListAgentStateLogsRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
 }
 

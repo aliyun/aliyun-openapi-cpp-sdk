@@ -35,41 +35,23 @@ namespace AlibabaCloud
 				CreateInstanceRequest();
 				~CreateInstanceRequest();
 
-				std::vector<std::string> getPhoneNumbers()const;
-				void setPhoneNumbers(const std::vector<std::string>& phoneNumbers);
-				std::vector<std::string> getUserObject()const;
-				void setUserObject(const std::vector<std::string>& userObject);
+				std::string getAdminRamIdList()const;
+				void setAdminRamIdList(const std::string& adminRamIdList);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
-				std::string getPhoneNumber()const;
-				void setPhoneNumber(const std::string& phoneNumber);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
-				int getStorageMaxDays()const;
-				void setStorageMaxDays(int storageMaxDays);
-				std::vector<std::string> getAdminRamId()const;
-				void setAdminRamId(const std::vector<std::string>& adminRamId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getNumberList()const;
+				void setNumberList(const std::string& numberList);
 				std::string getName()const;
 				void setName(const std::string& name);
-				int getStorageMaxSize()const;
-				void setStorageMaxSize(int storageMaxSize);
-				std::string getDirectoryId()const;
-				void setDirectoryId(const std::string& directoryId);
 
             private:
-				std::vector<std::string> phoneNumbers_;
-				std::vector<std::string> userObject_;
+				std::string adminRamIdList_;
 				std::string domainName_;
-				std::string phoneNumber_;
 				std::string description_;
-				int storageMaxDays_;
-				std::vector<std::string> adminRamId_;
-				std::string accessKeyId_;
+				std::string numberList_;
 				std::string name_;
-				int storageMaxSize_;
-				std::string directoryId_;
 
 			};
 		}

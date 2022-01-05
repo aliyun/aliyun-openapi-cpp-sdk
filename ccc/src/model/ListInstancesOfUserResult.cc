@@ -39,101 +39,111 @@ void ListInstancesOfUserResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allInstancesNode = value["Instances"]["CallCenterInstance"];
-	for (auto valueInstancesCallCenterInstance : allInstancesNode)
+	auto dataNode = value["Data"];
+	if(!dataNode["PageNumber"].isNull())
+		data_.pageNumber = std::stoi(dataNode["PageNumber"].asString());
+	if(!dataNode["PageSize"].isNull())
+		data_.pageSize = std::stoi(dataNode["PageSize"].asString());
+	if(!dataNode["TotalCount"].isNull())
+		data_.totalCount = std::stoi(dataNode["TotalCount"].asString());
+	auto allListNode = dataNode["List"]["CallCenterInstance"];
+	for (auto dataNodeListCallCenterInstance : allListNode)
 	{
-		CallCenterInstance instancesObject;
-		if(!valueInstancesCallCenterInstance["InstanceId"].isNull())
-			instancesObject.instanceId = valueInstancesCallCenterInstance["InstanceId"].asString();
-		if(!valueInstancesCallCenterInstance["InstanceName"].isNull())
-			instancesObject.instanceName = valueInstancesCallCenterInstance["InstanceName"].asString();
-		if(!valueInstancesCallCenterInstance["InstanceDescription"].isNull())
-			instancesObject.instanceDescription = valueInstancesCallCenterInstance["InstanceDescription"].asString();
-		if(!valueInstancesCallCenterInstance["DomainName"].isNull())
-			instancesObject.domainName = valueInstancesCallCenterInstance["DomainName"].asString();
-		if(!valueInstancesCallCenterInstance["ConsoleUrl"].isNull())
-			instancesObject.consoleUrl = valueInstancesCallCenterInstance["ConsoleUrl"].asString();
-		if(!valueInstancesCallCenterInstance["StorageBucket"].isNull())
-			instancesObject.storageBucket = valueInstancesCallCenterInstance["StorageBucket"].asString();
-		if(!valueInstancesCallCenterInstance["StorageMaxDays"].isNull())
-			instancesObject.storageMaxDays = std::stoi(valueInstancesCallCenterInstance["StorageMaxDays"].asString());
-		if(!valueInstancesCallCenterInstance["StorageMaxSize"].isNull())
-			instancesObject.storageMaxSize = std::stoi(valueInstancesCallCenterInstance["StorageMaxSize"].asString());
-		if(!valueInstancesCallCenterInstance["MaxOnlineAgents"].isNull())
-			instancesObject.maxOnlineAgents = std::stoi(valueInstancesCallCenterInstance["MaxOnlineAgents"].asString());
-		if(!valueInstancesCallCenterInstance["TenantId"].isNull())
-			instancesObject.tenantId = valueInstancesCallCenterInstance["TenantId"].asString();
-		if(!valueInstancesCallCenterInstance["DirectoryId"].isNull())
-			instancesObject.directoryId = valueInstancesCallCenterInstance["DirectoryId"].asString();
-		if(!valueInstancesCallCenterInstance["Status"].isNull())
-			instancesObject.status = valueInstancesCallCenterInstance["Status"].asString();
-		if(!valueInstancesCallCenterInstance["CreatedTime"].isNull())
-			instancesObject.createdTime = std::stol(valueInstancesCallCenterInstance["CreatedTime"].asString());
-		if(!valueInstancesCallCenterInstance["Owner"].isNull())
-			instancesObject.owner = valueInstancesCallCenterInstance["Owner"].asString();
-		auto allAdminNode = valueInstancesCallCenterInstance["Admin"]["User"];
-		for (auto valueInstancesCallCenterInstanceAdminUser : allAdminNode)
+		Data::CallCenterInstance callCenterInstanceObject;
+		if(!dataNodeListCallCenterInstance["Status"].isNull())
+			callCenterInstanceObject.status = dataNodeListCallCenterInstance["Status"].asString();
+		if(!dataNodeListCallCenterInstance["ConsoleUrl"].isNull())
+			callCenterInstanceObject.consoleUrl = dataNodeListCallCenterInstance["ConsoleUrl"].asString();
+		if(!dataNodeListCallCenterInstance["Description"].isNull())
+			callCenterInstanceObject.description = dataNodeListCallCenterInstance["Description"].asString();
+		if(!dataNodeListCallCenterInstance["AliyunUid"].isNull())
+			callCenterInstanceObject.aliyunUid = dataNodeListCallCenterInstance["AliyunUid"].asString();
+		if(!dataNodeListCallCenterInstance["Name"].isNull())
+			callCenterInstanceObject.name = dataNodeListCallCenterInstance["Name"].asString();
+		if(!dataNodeListCallCenterInstance["DomainName"].isNull())
+			callCenterInstanceObject.domainName = dataNodeListCallCenterInstance["DomainName"].asString();
+		if(!dataNodeListCallCenterInstance["Id"].isNull())
+			callCenterInstanceObject.id = dataNodeListCallCenterInstance["Id"].asString();
+		auto allAdminListNode = dataNodeListCallCenterInstance["AdminList"]["User"];
+		for (auto dataNodeListCallCenterInstanceAdminListUser : allAdminListNode)
 		{
-			CallCenterInstance::User adminObject;
-			if(!valueInstancesCallCenterInstanceAdminUser["UserId"].isNull())
-				adminObject.userId = valueInstancesCallCenterInstanceAdminUser["UserId"].asString();
-			if(!valueInstancesCallCenterInstanceAdminUser["RamId"].isNull())
-				adminObject.ramId = valueInstancesCallCenterInstanceAdminUser["RamId"].asString();
-			if(!valueInstancesCallCenterInstanceAdminUser["InstanceId"].isNull())
-				adminObject.instanceId = valueInstancesCallCenterInstanceAdminUser["InstanceId"].asString();
-			auto detailNode = value["Detail"];
-			if(!detailNode["LoginName"].isNull())
-				adminObject.detail.loginName = detailNode["LoginName"].asString();
-			if(!detailNode["DisplayName"].isNull())
-				adminObject.detail.displayName = detailNode["DisplayName"].asString();
-			if(!detailNode["Phone"].isNull())
-				adminObject.detail.phone = detailNode["Phone"].asString();
-			if(!detailNode["Email"].isNull())
-				adminObject.detail.email = detailNode["Email"].asString();
-			if(!detailNode["Department"].isNull())
-				adminObject.detail.department = detailNode["Department"].asString();
-			instancesObject.admin.push_back(adminObject);
+			Data::CallCenterInstance::User adminListObject;
+			if(!dataNodeListCallCenterInstanceAdminListUser["DisplayName"].isNull())
+				adminListObject.displayName = dataNodeListCallCenterInstanceAdminListUser["DisplayName"].asString();
+			if(!dataNodeListCallCenterInstanceAdminListUser["Extension"].isNull())
+				adminListObject.extension = dataNodeListCallCenterInstanceAdminListUser["Extension"].asString();
+			if(!dataNodeListCallCenterInstanceAdminListUser["LoginName"].isNull())
+				adminListObject.loginName = dataNodeListCallCenterInstanceAdminListUser["LoginName"].asString();
+			if(!dataNodeListCallCenterInstanceAdminListUser["Email"].isNull())
+				adminListObject.email = dataNodeListCallCenterInstanceAdminListUser["Email"].asString();
+			if(!dataNodeListCallCenterInstanceAdminListUser["WorkMode"].isNull())
+				adminListObject.workMode = dataNodeListCallCenterInstanceAdminListUser["WorkMode"].asString();
+			if(!dataNodeListCallCenterInstanceAdminListUser["Mobile"].isNull())
+				adminListObject.mobile = dataNodeListCallCenterInstanceAdminListUser["Mobile"].asString();
+			if(!dataNodeListCallCenterInstanceAdminListUser["UserId"].isNull())
+				adminListObject.userId = dataNodeListCallCenterInstanceAdminListUser["UserId"].asString();
+			if(!dataNodeListCallCenterInstanceAdminListUser["RoleName"].isNull())
+				adminListObject.roleName = dataNodeListCallCenterInstanceAdminListUser["RoleName"].asString();
+			if(!dataNodeListCallCenterInstanceAdminListUser["InstanceId"].isNull())
+				adminListObject.instanceId = dataNodeListCallCenterInstanceAdminListUser["InstanceId"].asString();
+			if(!dataNodeListCallCenterInstanceAdminListUser["RoleId"].isNull())
+				adminListObject.roleId = dataNodeListCallCenterInstanceAdminListUser["RoleId"].asString();
+			callCenterInstanceObject.adminList.push_back(adminListObject);
 		}
-		auto allPhoneNumbersNode = valueInstancesCallCenterInstance["PhoneNumbers"]["PhoneNumber"];
-		for (auto valueInstancesCallCenterInstancePhoneNumbersPhoneNumber : allPhoneNumbersNode)
+		auto allNumberListNode = dataNodeListCallCenterInstance["NumberList"]["PhoneNumber"];
+		for (auto dataNodeListCallCenterInstanceNumberListPhoneNumber : allNumberListNode)
 		{
-			CallCenterInstance::PhoneNumber phoneNumbersObject;
-			if(!valueInstancesCallCenterInstancePhoneNumbersPhoneNumber["PhoneNumberId"].isNull())
-				phoneNumbersObject.phoneNumberId = valueInstancesCallCenterInstancePhoneNumbersPhoneNumber["PhoneNumberId"].asString();
-			if(!valueInstancesCallCenterInstancePhoneNumbersPhoneNumber["InstanceId"].isNull())
-				phoneNumbersObject.instanceId = valueInstancesCallCenterInstancePhoneNumbersPhoneNumber["InstanceId"].asString();
-			if(!valueInstancesCallCenterInstancePhoneNumbersPhoneNumber["Number"].isNull())
-				phoneNumbersObject.number = valueInstancesCallCenterInstancePhoneNumbersPhoneNumber["Number"].asString();
-			if(!valueInstancesCallCenterInstancePhoneNumbersPhoneNumber["PhoneNumberDescription"].isNull())
-				phoneNumbersObject.phoneNumberDescription = valueInstancesCallCenterInstancePhoneNumbersPhoneNumber["PhoneNumberDescription"].asString();
-			if(!valueInstancesCallCenterInstancePhoneNumbersPhoneNumber["TestOnly"].isNull())
-				phoneNumbersObject.testOnly = valueInstancesCallCenterInstancePhoneNumbersPhoneNumber["TestOnly"].asString() == "true";
-			if(!valueInstancesCallCenterInstancePhoneNumbersPhoneNumber["RemainingTime"].isNull())
-				phoneNumbersObject.remainingTime = std::stoi(valueInstancesCallCenterInstancePhoneNumbersPhoneNumber["RemainingTime"].asString());
-			if(!valueInstancesCallCenterInstancePhoneNumbersPhoneNumber["AllowOutbound"].isNull())
-				phoneNumbersObject.allowOutbound = valueInstancesCallCenterInstancePhoneNumbersPhoneNumber["AllowOutbound"].asString() == "true";
-			if(!valueInstancesCallCenterInstancePhoneNumbersPhoneNumber["Usage"].isNull())
-				phoneNumbersObject.usage = valueInstancesCallCenterInstancePhoneNumbersPhoneNumber["Usage"].asString();
-			if(!valueInstancesCallCenterInstancePhoneNumbersPhoneNumber["Trunks"].isNull())
-				phoneNumbersObject.trunks = std::stoi(valueInstancesCallCenterInstancePhoneNumbersPhoneNumber["Trunks"].asString());
-			instancesObject.phoneNumbers.push_back(phoneNumbersObject);
+			Data::CallCenterInstance::PhoneNumber numberListObject;
+			if(!dataNodeListCallCenterInstanceNumberListPhoneNumber["Active"].isNull())
+				numberListObject.active = dataNodeListCallCenterInstanceNumberListPhoneNumber["Active"].asString() == "true";
+			if(!dataNodeListCallCenterInstanceNumberListPhoneNumber["UserId"].isNull())
+				numberListObject.userId = dataNodeListCallCenterInstanceNumberListPhoneNumber["UserId"].asString();
+			if(!dataNodeListCallCenterInstanceNumberListPhoneNumber["Number"].isNull())
+				numberListObject.number = dataNodeListCallCenterInstanceNumberListPhoneNumber["Number"].asString();
+			if(!dataNodeListCallCenterInstanceNumberListPhoneNumber["City"].isNull())
+				numberListObject.city = dataNodeListCallCenterInstanceNumberListPhoneNumber["City"].asString();
+			if(!dataNodeListCallCenterInstanceNumberListPhoneNumber["InstanceId"].isNull())
+				numberListObject.instanceId = dataNodeListCallCenterInstanceNumberListPhoneNumber["InstanceId"].asString();
+			if(!dataNodeListCallCenterInstanceNumberListPhoneNumber["Usage"].isNull())
+				numberListObject.usage = dataNodeListCallCenterInstanceNumberListPhoneNumber["Usage"].asString();
+			if(!dataNodeListCallCenterInstanceNumberListPhoneNumber["ContactFlowId"].isNull())
+				numberListObject.contactFlowId = dataNodeListCallCenterInstanceNumberListPhoneNumber["ContactFlowId"].asString();
+			if(!dataNodeListCallCenterInstanceNumberListPhoneNumber["Province"].isNull())
+				numberListObject.province = dataNodeListCallCenterInstanceNumberListPhoneNumber["Province"].asString();
+			auto allSkillGroupsNode = dataNodeListCallCenterInstanceNumberListPhoneNumber["SkillGroups"]["SkillGroup"];
+			for (auto dataNodeListCallCenterInstanceNumberListPhoneNumberSkillGroupsSkillGroup : allSkillGroupsNode)
+			{
+				Data::CallCenterInstance::PhoneNumber::SkillGroup skillGroupsObject;
+				if(!dataNodeListCallCenterInstanceNumberListPhoneNumberSkillGroupsSkillGroup["DisplayName"].isNull())
+					skillGroupsObject.displayName = dataNodeListCallCenterInstanceNumberListPhoneNumberSkillGroupsSkillGroup["DisplayName"].asString();
+				if(!dataNodeListCallCenterInstanceNumberListPhoneNumberSkillGroupsSkillGroup["Description"].isNull())
+					skillGroupsObject.description = dataNodeListCallCenterInstanceNumberListPhoneNumberSkillGroupsSkillGroup["Description"].asString();
+				if(!dataNodeListCallCenterInstanceNumberListPhoneNumberSkillGroupsSkillGroup["PhoneNumberCount"].isNull())
+					skillGroupsObject.phoneNumberCount = std::stoi(dataNodeListCallCenterInstanceNumberListPhoneNumberSkillGroupsSkillGroup["PhoneNumberCount"].asString());
+				if(!dataNodeListCallCenterInstanceNumberListPhoneNumberSkillGroupsSkillGroup["SkillGroupId"].isNull())
+					skillGroupsObject.skillGroupId = dataNodeListCallCenterInstanceNumberListPhoneNumberSkillGroupsSkillGroup["SkillGroupId"].asString();
+				if(!dataNodeListCallCenterInstanceNumberListPhoneNumberSkillGroupsSkillGroup["UserCount"].isNull())
+					skillGroupsObject.userCount = std::stoi(dataNodeListCallCenterInstanceNumberListPhoneNumberSkillGroupsSkillGroup["UserCount"].asString());
+				if(!dataNodeListCallCenterInstanceNumberListPhoneNumberSkillGroupsSkillGroup["InstanceId"].isNull())
+					skillGroupsObject.instanceId = dataNodeListCallCenterInstanceNumberListPhoneNumberSkillGroupsSkillGroup["InstanceId"].asString();
+				if(!dataNodeListCallCenterInstanceNumberListPhoneNumberSkillGroupsSkillGroup["Name"].isNull())
+					skillGroupsObject.name = dataNodeListCallCenterInstanceNumberListPhoneNumberSkillGroupsSkillGroup["Name"].asString();
+				numberListObject.skillGroups.push_back(skillGroupsObject);
+			}
+			callCenterInstanceObject.numberList.push_back(numberListObject);
 		}
-		instances_.push_back(instancesObject);
+		data_.list.push_back(callCenterInstanceObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
+	auto allParams = value["Params"]["Param"];
+	for (const auto &item : allParams)
+		params_.push_back(item.asString());
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 
-}
-
-std::vector<ListInstancesOfUserResult::CallCenterInstance> ListInstancesOfUserResult::getInstances()const
-{
-	return instances_;
 }
 
 std::string ListInstancesOfUserResult::getMessage()const
@@ -146,13 +156,18 @@ int ListInstancesOfUserResult::getHttpStatusCode()const
 	return httpStatusCode_;
 }
 
+std::vector<std::string> ListInstancesOfUserResult::getParams()const
+{
+	return params_;
+}
+
+ListInstancesOfUserResult::Data ListInstancesOfUserResult::getData()const
+{
+	return data_;
+}
+
 std::string ListInstancesOfUserResult::getCode()const
 {
 	return code_;
-}
-
-bool ListInstancesOfUserResult::getSuccess()const
-{
-	return success_;
 }
 

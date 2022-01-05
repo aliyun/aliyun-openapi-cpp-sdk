@@ -35,26 +35,29 @@ namespace AlibabaCloud
 				StartBack2BackCallRequest();
 				~StartBack2BackCallRequest();
 
-				std::string getCallCenterNumber()const;
-				void setCallCenterNumber(const std::string& callCenterNumber);
 				std::string getCallee()const;
 				void setCallee(const std::string& callee);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getBroker()const;
+				void setBroker(const std::string& broker);
+				std::string getAdditionalBroker()const;
+				void setAdditionalBroker(const std::string& additionalBroker);
+				std::string getTags()const;
+				void setTags(const std::string& tags);
+				int getTimeoutSeconds()const;
+				void setTimeoutSeconds(int timeoutSeconds);
 				std::string getCaller()const;
 				void setCaller(const std::string& caller);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
-				std::string getWorkflowId()const;
-				void setWorkflowId(const std::string& workflowId);
 
             private:
-				std::string callCenterNumber_;
 				std::string callee_;
-				std::string accessKeyId_;
+				std::string broker_;
+				std::string additionalBroker_;
+				std::string tags_;
+				int timeoutSeconds_;
 				std::string caller_;
 				std::string instanceId_;
-				std::string workflowId_;
 
 			};
 		}

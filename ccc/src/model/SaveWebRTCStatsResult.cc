@@ -39,16 +39,18 @@ void SaveWebRTCStatsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
+	if(!value["HttpStatusCode"].isNull())
+		httpStatusCode_ = std::stol(value["HttpStatusCode"].asString());
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
-	if(!value["HttpStatusCode"].isNull())
-		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 	if(!value["RowCount"].isNull())
 		rowCount_ = std::stol(value["RowCount"].asString());
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
+	if(!value["TimeStamp"].isNull())
+		timeStamp_ = std::stol(value["TimeStamp"].asString());
 
 }
 
@@ -57,7 +59,7 @@ std::string SaveWebRTCStatsResult::getMessage()const
 	return message_;
 }
 
-int SaveWebRTCStatsResult::getHttpStatusCode()const
+long SaveWebRTCStatsResult::getHttpStatusCode()const
 {
 	return httpStatusCode_;
 }
@@ -75,5 +77,10 @@ std::string SaveWebRTCStatsResult::getCode()const
 bool SaveWebRTCStatsResult::getSuccess()const
 {
 	return success_;
+}
+
+long SaveWebRTCStatsResult::getTimeStamp()const
+{
+	return timeStamp_;
 }
 

@@ -35,38 +35,23 @@ namespace AlibabaCloud
 				ModifyUserRequest();
 				~ModifyUserRequest();
 
-				std::string getPrivateOutboundNumberId()const;
-				void setPrivateOutboundNumberId(const std::string& privateOutboundNumberId);
-				std::vector<std::string> getRoleId()const;
-				void setRoleId(const std::vector<std::string>& roleId);
+				std::string getRoleId()const;
+				void setRoleId(const std::string& roleId);
+				std::string getMobile()const;
+				void setMobile(const std::string& mobile);
+				std::string getWorkMode()const;
+				void setWorkMode(const std::string& workMode);
 				std::string getUserId()const;
 				void setUserId(const std::string& userId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
-				std::vector<int> getSkillLevel()const;
-				void setSkillLevel(const std::vector<int>& skillLevel);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
-				std::string getPhone()const;
-				void setPhone(const std::string& phone);
-				std::string getDisplayName()const;
-				void setDisplayName(const std::string& displayName);
-				std::vector<std::string> getSkillGroupId()const;
-				void setSkillGroupId(const std::vector<std::string>& skillGroupId);
-				std::string getEmail()const;
-				void setEmail(const std::string& email);
 
             private:
-				std::string privateOutboundNumberId_;
-				std::vector<std::string> roleId_;
+				std::string roleId_;
+				std::string mobile_;
+				std::string workMode_;
 				std::string userId_;
-				std::string accessKeyId_;
-				std::vector<int> skillLevel_;
 				std::string instanceId_;
-				std::string phone_;
-				std::string displayName_;
-				std::vector<std::string> skillGroupId_;
-				std::string email_;
 
 			};
 		}

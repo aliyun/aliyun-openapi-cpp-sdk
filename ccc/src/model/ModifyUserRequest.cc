@@ -19,7 +19,7 @@
 using AlibabaCloud::CCC::Model::ModifyUserRequest;
 
 ModifyUserRequest::ModifyUserRequest() :
-	RpcServiceRequest("ccc", "2017-07-05", "ModifyUser")
+	RpcServiceRequest("ccc", "2020-07-01", "ModifyUser")
 {
 	setMethod(HttpRequest::Method::Post);
 }
@@ -27,28 +27,37 @@ ModifyUserRequest::ModifyUserRequest() :
 ModifyUserRequest::~ModifyUserRequest()
 {}
 
-std::string ModifyUserRequest::getPrivateOutboundNumberId()const
-{
-	return privateOutboundNumberId_;
-}
-
-void ModifyUserRequest::setPrivateOutboundNumberId(const std::string& privateOutboundNumberId)
-{
-	privateOutboundNumberId_ = privateOutboundNumberId;
-	setParameter("PrivateOutboundNumberId", privateOutboundNumberId);
-}
-
-std::vector<std::string> ModifyUserRequest::getRoleId()const
+std::string ModifyUserRequest::getRoleId()const
 {
 	return roleId_;
 }
 
-void ModifyUserRequest::setRoleId(const std::vector<std::string>& roleId)
+void ModifyUserRequest::setRoleId(const std::string& roleId)
 {
 	roleId_ = roleId;
-	for(int dep1 = 0; dep1!= roleId.size(); dep1++) {
-		setParameter("RoleId."+ std::to_string(dep1), roleId.at(dep1));
-	}
+	setParameter("RoleId", roleId);
+}
+
+std::string ModifyUserRequest::getMobile()const
+{
+	return mobile_;
+}
+
+void ModifyUserRequest::setMobile(const std::string& mobile)
+{
+	mobile_ = mobile;
+	setParameter("Mobile", mobile);
+}
+
+std::string ModifyUserRequest::getWorkMode()const
+{
+	return workMode_;
+}
+
+void ModifyUserRequest::setWorkMode(const std::string& workMode)
+{
+	workMode_ = workMode;
+	setParameter("WorkMode", workMode);
 }
 
 std::string ModifyUserRequest::getUserId()const
@@ -62,30 +71,6 @@ void ModifyUserRequest::setUserId(const std::string& userId)
 	setParameter("UserId", userId);
 }
 
-std::string ModifyUserRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ModifyUserRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-
-std::vector<int> ModifyUserRequest::getSkillLevel()const
-{
-	return skillLevel_;
-}
-
-void ModifyUserRequest::setSkillLevel(const std::vector<int>& skillLevel)
-{
-	skillLevel_ = skillLevel;
-	for(int dep1 = 0; dep1!= skillLevel.size(); dep1++) {
-		setParameter("SkillLevel."+ std::to_string(dep1), std::to_string(skillLevel.at(dep1)));
-	}
-}
-
 std::string ModifyUserRequest::getInstanceId()const
 {
 	return instanceId_;
@@ -95,51 +80,5 @@ void ModifyUserRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
 	setParameter("InstanceId", instanceId);
-}
-
-std::string ModifyUserRequest::getPhone()const
-{
-	return phone_;
-}
-
-void ModifyUserRequest::setPhone(const std::string& phone)
-{
-	phone_ = phone;
-	setParameter("Phone", phone);
-}
-
-std::string ModifyUserRequest::getDisplayName()const
-{
-	return displayName_;
-}
-
-void ModifyUserRequest::setDisplayName(const std::string& displayName)
-{
-	displayName_ = displayName;
-	setParameter("DisplayName", displayName);
-}
-
-std::vector<std::string> ModifyUserRequest::getSkillGroupId()const
-{
-	return skillGroupId_;
-}
-
-void ModifyUserRequest::setSkillGroupId(const std::vector<std::string>& skillGroupId)
-{
-	skillGroupId_ = skillGroupId;
-	for(int dep1 = 0; dep1!= skillGroupId.size(); dep1++) {
-		setParameter("SkillGroupId."+ std::to_string(dep1), skillGroupId.at(dep1));
-	}
-}
-
-std::string ModifyUserRequest::getEmail()const
-{
-	return email_;
-}
-
-void ModifyUserRequest::setEmail(const std::string& email)
-{
-	email_ = email;
-	setParameter("Email", email);
 }
 

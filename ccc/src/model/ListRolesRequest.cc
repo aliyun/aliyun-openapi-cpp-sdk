@@ -19,7 +19,7 @@
 using AlibabaCloud::CCC::Model::ListRolesRequest;
 
 ListRolesRequest::ListRolesRequest() :
-	RpcServiceRequest("ccc", "2017-07-05", "ListRoles")
+	RpcServiceRequest("ccc", "2020-07-01", "ListRoles")
 {
 	setMethod(HttpRequest::Method::Post);
 }
@@ -36,16 +36,5 @@ void ListRolesRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
 	setParameter("InstanceId", instanceId);
-}
-
-std::string ListRolesRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ListRolesRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
 }
 

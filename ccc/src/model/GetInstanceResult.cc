@@ -39,90 +39,98 @@ void GetInstanceResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto instanceNode = value["Instance"];
-	if(!instanceNode["InstanceId"].isNull())
-		instance_.instanceId = instanceNode["InstanceId"].asString();
-	if(!instanceNode["InstanceName"].isNull())
-		instance_.instanceName = instanceNode["InstanceName"].asString();
-	if(!instanceNode["InstanceDescription"].isNull())
-		instance_.instanceDescription = instanceNode["InstanceDescription"].asString();
-	if(!instanceNode["DomainName"].isNull())
-		instance_.domainName = instanceNode["DomainName"].asString();
-	if(!instanceNode["ConsoleUrl"].isNull())
-		instance_.consoleUrl = instanceNode["ConsoleUrl"].asString();
-	if(!instanceNode["StorageBucket"].isNull())
-		instance_.storageBucket = instanceNode["StorageBucket"].asString();
-	if(!instanceNode["StorageMaxDays"].isNull())
-		instance_.storageMaxDays = std::stoi(instanceNode["StorageMaxDays"].asString());
-	if(!instanceNode["StorageMaxSize"].isNull())
-		instance_.storageMaxSize = std::stoi(instanceNode["StorageMaxSize"].asString());
-	if(!instanceNode["MaxOnlineAgents"].isNull())
-		instance_.maxOnlineAgents = std::stoi(instanceNode["MaxOnlineAgents"].asString());
-	if(!instanceNode["TenantId"].isNull())
-		instance_.tenantId = instanceNode["TenantId"].asString();
-	if(!instanceNode["DirectoryId"].isNull())
-		instance_.directoryId = instanceNode["DirectoryId"].asString();
-	if(!instanceNode["Status"].isNull())
-		instance_.status = instanceNode["Status"].asString();
-	if(!instanceNode["CreatedTime"].isNull())
-		instance_.createdTime = std::stol(instanceNode["CreatedTime"].asString());
-	if(!instanceNode["Owner"].isNull())
-		instance_.owner = instanceNode["Owner"].asString();
-	auto allAdminNode = instanceNode["Admin"]["User"];
-	for (auto instanceNodeAdminUser : allAdminNode)
+	auto dataNode = value["Data"];
+	if(!dataNode["Status"].isNull())
+		data_.status = dataNode["Status"].asString();
+	if(!dataNode["ConsoleUrl"].isNull())
+		data_.consoleUrl = dataNode["ConsoleUrl"].asString();
+	if(!dataNode["Description"].isNull())
+		data_.description = dataNode["Description"].asString();
+	if(!dataNode["AliyunUid"].isNull())
+		data_.aliyunUid = dataNode["AliyunUid"].asString();
+	if(!dataNode["Name"].isNull())
+		data_.name = dataNode["Name"].asString();
+	if(!dataNode["DomainName"].isNull())
+		data_.domainName = dataNode["DomainName"].asString();
+	if(!dataNode["Id"].isNull())
+		data_.id = dataNode["Id"].asString();
+	auto allAdminListNode = dataNode["AdminList"]["User"];
+	for (auto dataNodeAdminListUser : allAdminListNode)
 	{
-		Instance::User userObject;
-		if(!instanceNodeAdminUser["UserId"].isNull())
-			userObject.userId = instanceNodeAdminUser["UserId"].asString();
-		if(!instanceNodeAdminUser["RamId"].isNull())
-			userObject.ramId = instanceNodeAdminUser["RamId"].asString();
-		if(!instanceNodeAdminUser["InstanceId"].isNull())
-			userObject.instanceId = instanceNodeAdminUser["InstanceId"].asString();
-		auto detailNode = value["Detail"];
-		if(!detailNode["LoginName"].isNull())
-			userObject.detail.loginName = detailNode["LoginName"].asString();
-		if(!detailNode["DisplayName"].isNull())
-			userObject.detail.displayName = detailNode["DisplayName"].asString();
-		if(!detailNode["Phone"].isNull())
-			userObject.detail.phone = detailNode["Phone"].asString();
-		if(!detailNode["Email"].isNull())
-			userObject.detail.email = detailNode["Email"].asString();
-		if(!detailNode["Department"].isNull())
-			userObject.detail.department = detailNode["Department"].asString();
-		instance_.admin.push_back(userObject);
+		Data::User userObject;
+		if(!dataNodeAdminListUser["DisplayName"].isNull())
+			userObject.displayName = dataNodeAdminListUser["DisplayName"].asString();
+		if(!dataNodeAdminListUser["Extension"].isNull())
+			userObject.extension = dataNodeAdminListUser["Extension"].asString();
+		if(!dataNodeAdminListUser["LoginName"].isNull())
+			userObject.loginName = dataNodeAdminListUser["LoginName"].asString();
+		if(!dataNodeAdminListUser["Email"].isNull())
+			userObject.email = dataNodeAdminListUser["Email"].asString();
+		if(!dataNodeAdminListUser["WorkMode"].isNull())
+			userObject.workMode = dataNodeAdminListUser["WorkMode"].asString();
+		if(!dataNodeAdminListUser["Mobile"].isNull())
+			userObject.mobile = dataNodeAdminListUser["Mobile"].asString();
+		if(!dataNodeAdminListUser["UserId"].isNull())
+			userObject.userId = dataNodeAdminListUser["UserId"].asString();
+		if(!dataNodeAdminListUser["RoleName"].isNull())
+			userObject.roleName = dataNodeAdminListUser["RoleName"].asString();
+		if(!dataNodeAdminListUser["InstanceId"].isNull())
+			userObject.instanceId = dataNodeAdminListUser["InstanceId"].asString();
+		if(!dataNodeAdminListUser["RoleId"].isNull())
+			userObject.roleId = dataNodeAdminListUser["RoleId"].asString();
+		data_.adminList.push_back(userObject);
 	}
-	auto allPhoneNumbersNode = instanceNode["PhoneNumbers"]["PhoneNumber"];
-	for (auto instanceNodePhoneNumbersPhoneNumber : allPhoneNumbersNode)
+	auto allNumberListNode = dataNode["NumberList"]["PhoneNumber"];
+	for (auto dataNodeNumberListPhoneNumber : allNumberListNode)
 	{
-		Instance::PhoneNumber phoneNumberObject;
-		if(!instanceNodePhoneNumbersPhoneNumber["PhoneNumberId"].isNull())
-			phoneNumberObject.phoneNumberId = instanceNodePhoneNumbersPhoneNumber["PhoneNumberId"].asString();
-		if(!instanceNodePhoneNumbersPhoneNumber["InstanceId"].isNull())
-			phoneNumberObject.instanceId = instanceNodePhoneNumbersPhoneNumber["InstanceId"].asString();
-		if(!instanceNodePhoneNumbersPhoneNumber["Number"].isNull())
-			phoneNumberObject.number = instanceNodePhoneNumbersPhoneNumber["Number"].asString();
-		if(!instanceNodePhoneNumbersPhoneNumber["PhoneNumberDescription"].isNull())
-			phoneNumberObject.phoneNumberDescription = instanceNodePhoneNumbersPhoneNumber["PhoneNumberDescription"].asString();
-		if(!instanceNodePhoneNumbersPhoneNumber["TestOnly"].isNull())
-			phoneNumberObject.testOnly = instanceNodePhoneNumbersPhoneNumber["TestOnly"].asString() == "true";
-		if(!instanceNodePhoneNumbersPhoneNumber["RemainingTime"].isNull())
-			phoneNumberObject.remainingTime = std::stoi(instanceNodePhoneNumbersPhoneNumber["RemainingTime"].asString());
-		if(!instanceNodePhoneNumbersPhoneNumber["AllowOutbound"].isNull())
-			phoneNumberObject.allowOutbound = instanceNodePhoneNumbersPhoneNumber["AllowOutbound"].asString() == "true";
-		if(!instanceNodePhoneNumbersPhoneNumber["Usage"].isNull())
-			phoneNumberObject.usage = instanceNodePhoneNumbersPhoneNumber["Usage"].asString();
-		if(!instanceNodePhoneNumbersPhoneNumber["Trunks"].isNull())
-			phoneNumberObject.trunks = std::stoi(instanceNodePhoneNumbersPhoneNumber["Trunks"].asString());
-		instance_.phoneNumbers.push_back(phoneNumberObject);
+		Data::PhoneNumber phoneNumberObject;
+		if(!dataNodeNumberListPhoneNumber["Active"].isNull())
+			phoneNumberObject.active = dataNodeNumberListPhoneNumber["Active"].asString() == "true";
+		if(!dataNodeNumberListPhoneNumber["UserId"].isNull())
+			phoneNumberObject.userId = dataNodeNumberListPhoneNumber["UserId"].asString();
+		if(!dataNodeNumberListPhoneNumber["Number"].isNull())
+			phoneNumberObject.number = dataNodeNumberListPhoneNumber["Number"].asString();
+		if(!dataNodeNumberListPhoneNumber["City"].isNull())
+			phoneNumberObject.city = dataNodeNumberListPhoneNumber["City"].asString();
+		if(!dataNodeNumberListPhoneNumber["InstanceId"].isNull())
+			phoneNumberObject.instanceId = dataNodeNumberListPhoneNumber["InstanceId"].asString();
+		if(!dataNodeNumberListPhoneNumber["Usage"].isNull())
+			phoneNumberObject.usage = dataNodeNumberListPhoneNumber["Usage"].asString();
+		if(!dataNodeNumberListPhoneNumber["ContactFlowId"].isNull())
+			phoneNumberObject.contactFlowId = dataNodeNumberListPhoneNumber["ContactFlowId"].asString();
+		if(!dataNodeNumberListPhoneNumber["Province"].isNull())
+			phoneNumberObject.province = dataNodeNumberListPhoneNumber["Province"].asString();
+		auto allSkillGroupsNode = dataNodeNumberListPhoneNumber["SkillGroups"]["SkillGroup"];
+		for (auto dataNodeNumberListPhoneNumberSkillGroupsSkillGroup : allSkillGroupsNode)
+		{
+			Data::PhoneNumber::SkillGroup skillGroupsObject;
+			if(!dataNodeNumberListPhoneNumberSkillGroupsSkillGroup["DisplayName"].isNull())
+				skillGroupsObject.displayName = dataNodeNumberListPhoneNumberSkillGroupsSkillGroup["DisplayName"].asString();
+			if(!dataNodeNumberListPhoneNumberSkillGroupsSkillGroup["Description"].isNull())
+				skillGroupsObject.description = dataNodeNumberListPhoneNumberSkillGroupsSkillGroup["Description"].asString();
+			if(!dataNodeNumberListPhoneNumberSkillGroupsSkillGroup["PhoneNumberCount"].isNull())
+				skillGroupsObject.phoneNumberCount = std::stoi(dataNodeNumberListPhoneNumberSkillGroupsSkillGroup["PhoneNumberCount"].asString());
+			if(!dataNodeNumberListPhoneNumberSkillGroupsSkillGroup["SkillGroupId"].isNull())
+				skillGroupsObject.skillGroupId = dataNodeNumberListPhoneNumberSkillGroupsSkillGroup["SkillGroupId"].asString();
+			if(!dataNodeNumberListPhoneNumberSkillGroupsSkillGroup["UserCount"].isNull())
+				skillGroupsObject.userCount = std::stoi(dataNodeNumberListPhoneNumberSkillGroupsSkillGroup["UserCount"].asString());
+			if(!dataNodeNumberListPhoneNumberSkillGroupsSkillGroup["InstanceId"].isNull())
+				skillGroupsObject.instanceId = dataNodeNumberListPhoneNumberSkillGroupsSkillGroup["InstanceId"].asString();
+			if(!dataNodeNumberListPhoneNumberSkillGroupsSkillGroup["Name"].isNull())
+				skillGroupsObject.name = dataNodeNumberListPhoneNumberSkillGroupsSkillGroup["Name"].asString();
+			phoneNumberObject.skillGroups.push_back(skillGroupsObject);
+		}
+		data_.numberList.push_back(phoneNumberObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
+	auto allParams = value["Params"]["Param"];
+	for (const auto &item : allParams)
+		params_.push_back(item.asString());
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 
 }
 
@@ -131,23 +139,23 @@ std::string GetInstanceResult::getMessage()const
 	return message_;
 }
 
-GetInstanceResult::Instance GetInstanceResult::getInstance()const
-{
-	return instance_;
-}
-
 int GetInstanceResult::getHttpStatusCode()const
 {
 	return httpStatusCode_;
 }
 
+std::vector<std::string> GetInstanceResult::getParams()const
+{
+	return params_;
+}
+
+GetInstanceResult::Data GetInstanceResult::getData()const
+{
+	return data_;
+}
+
 std::string GetInstanceResult::getCode()const
 {
 	return code_;
-}
-
-bool GetInstanceResult::getSuccess()const
-{
-	return success_;
 }
 

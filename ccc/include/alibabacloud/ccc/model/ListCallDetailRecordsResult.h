@@ -32,44 +32,40 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_CCC_EXPORT ListCallDetailRecordsResult : public ServiceResult
 			{
 			public:
-				struct CallDetailRecords
+				struct Data
 				{
 					struct CallDetailRecord
 					{
-						struct CallDetailAgent
-						{
-							std::string feedback;
-							std::string satisfaction;
-							std::string agentId;
-						};
-						struct Recording
-						{
-							std::string fileDescription;
-							std::string qualityCheckTid;
-							std::string fileName;
-							long startTime;
-							int duration;
-							std::string contactId;
-							std::string agentId;
-							std::string agentName;
-							std::string qualityCheckTaskId;
-						};
 						std::string calledNumber;
+						long ivrTime;
 						std::string contactType;
 						std::string contactDisposition;
-						std::string instanceId;
-						int satisfaction;
-						std::vector<CallDetailRecord::CallDetailAgent> agents;
-						long startTime;
-						int duration;
-						std::vector<CallDetailRecord::Recording> recordings;
+						int satisfactionIndex;
 						std::string contactId;
-						std::string satisfactionDesc;
 						std::string callingNumber;
-						std::string feedback;
+						bool recordingReady;
 						std::string skillGroupNames;
+						bool satisfactionSurveyOffered;
+						long establishedTime;
+						long queueTime;
+						std::string skillGroupIds;
+						std::string broker;
+						std::string releaseInitiator;
+						std::string instanceId;
+						long startTime;
+						std::string earlyMediaState;
+						long ringTime;
+						std::string callDuration;
+						std::string calleeLocation;
+						long releaseTime;
+						std::string satisfactionSurveyChannel;
+						std::string additionalBroker;
+						std::string satisfactionDescription;
+						std::string agentIds;
+						long waitTime;
+						std::string callerLocation;
 						std::string agentNames;
-						std::string skillGroupIdList;
+						long recordingDuration;
 					};
 					int totalCount;
 					int pageSize;
@@ -82,19 +78,17 @@ namespace AlibabaCloud
 				explicit ListCallDetailRecordsResult(const std::string &payload);
 				~ListCallDetailRecordsResult();
 				std::string getMessage()const;
-				CallDetailRecords getCallDetailRecords()const;
 				int getHttpStatusCode()const;
+				Data getData()const;
 				std::string getCode()const;
-				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
-				CallDetailRecords callDetailRecords_;
 				int httpStatusCode_;
+				Data data_;
 				std::string code_;
-				bool success_;
 
 			};
 		}
