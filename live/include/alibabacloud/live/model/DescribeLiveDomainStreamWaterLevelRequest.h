@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_OPENLIVESHIFTREQUEST_H_
-#define ALIBABACLOUD_LIVE_MODEL_OPENLIVESHIFTREQUEST_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINSTREAMWATERLEVELREQUEST_H_
+#define ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINSTREAMWATERLEVELREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,39 +28,24 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_LIVE_EXPORT OpenLiveShiftRequest : public RpcServiceRequest
+			class ALIBABACLOUD_LIVE_EXPORT DescribeLiveDomainStreamWaterLevelRequest : public RpcServiceRequest
 			{
 
 			public:
-				OpenLiveShiftRequest();
-				~OpenLiveShiftRequest();
+				DescribeLiveDomainStreamWaterLevelRequest();
+				~DescribeLiveDomainStreamWaterLevelRequest();
 
-				int getDuration()const;
-				void setDuration(int duration);
-				std::string getAppName()const;
-				void setAppName(const std::string& appName);
-				std::string getStreamName()const;
-				void setStreamName(const std::string& streamName);
-				bool getIgnoreTranscode()const;
-				void setIgnoreTranscode(bool ignoreTranscode);
-				std::string getDomainName()const;
-				void setDomainName(const std::string& domainName);
+				std::string getLiveRegion()const;
+				void setLiveRegion(const std::string& liveRegion);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				int getVision()const;
-				void setVision(int vision);
 
             private:
-				int duration_;
-				std::string appName_;
-				std::string streamName_;
-				bool ignoreTranscode_;
-				std::string domainName_;
+				std::string liveRegion_;
 				long ownerId_;
-				int vision_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_LIVE_MODEL_OPENLIVESHIFTREQUEST_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINSTREAMWATERLEVELREQUEST_H_

@@ -65,6 +65,12 @@ void DescribeCastersResult::parse(const std::string &payload)
 			casterListObject.casterTemplate = valueCasterListCaster["CasterTemplate"].asString();
 		if(!valueCasterListCaster["ChannelEnable"].isNull())
 			casterListObject.channelEnable = std::stoi(valueCasterListCaster["ChannelEnable"].asString());
+		if(!valueCasterListCaster["LastModified"].isNull())
+			casterListObject.lastModified = valueCasterListCaster["LastModified"].asString();
+		if(!valueCasterListCaster["Duration"].isNull())
+			casterListObject.duration = valueCasterListCaster["Duration"].asString();
+		if(!valueCasterListCaster["RoomId"].isNull())
+			casterListObject.roomId = std::stoi(valueCasterListCaster["RoomId"].asString());
 		casterList_.push_back(casterListObject);
 	}
 	if(!value["Total"].isNull())

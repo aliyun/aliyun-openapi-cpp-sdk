@@ -42,6 +42,7 @@ namespace AlibabaCloud
 					struct BgImageConfig
 					{
 						std::string materialId;
+						std::string locationId;
 						std::string imageUrl;
 						std::string id;
 					};

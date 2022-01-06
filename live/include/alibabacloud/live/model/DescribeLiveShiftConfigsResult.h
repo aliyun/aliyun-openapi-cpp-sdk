@@ -34,6 +34,7 @@ namespace AlibabaCloud
 			public:
 				struct Config
 				{
+					bool ignoreTranscode;
 					std::string streamName;
 					std::string domainName;
 					int vision;

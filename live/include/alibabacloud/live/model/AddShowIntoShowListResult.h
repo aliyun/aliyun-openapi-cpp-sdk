@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBECASTERSRESULT_H_
-#define ALIBABACLOUD_LIVE_MODEL_DESCRIBECASTERSRESULT_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_ADDSHOWINTOSHOWLISTRESULT_H_
+#define ALIBABACLOUD_LIVE_MODEL_ADDSHOWINTOSHOWLISTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,42 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_LIVE_EXPORT DescribeCastersResult : public ServiceResult
+			class ALIBABACLOUD_LIVE_EXPORT AddShowIntoShowListResult : public ServiceResult
 			{
 			public:
-				struct Caster
-				{
-					int status;
-					std::string casterTemplate;
-					int channelEnable;
-					std::string createTime;
-					std::string startTime;
-					int normType;
-					std::string duration;
-					int roomId;
-					std::string lastModified;
-					std::string purchaseTime;
-					std::string casterName;
-					std::string chargeType;
-					std::string expireTime;
-					std::string casterId;
-				};
 
 
-				DescribeCastersResult();
-				explicit DescribeCastersResult(const std::string &payload);
-				~DescribeCastersResult();
-				int getTotal()const;
-				std::vector<Caster> getCasterList()const;
+				AddShowIntoShowListResult();
+				explicit AddShowIntoShowListResult(const std::string &payload);
+				~AddShowIntoShowListResult();
+				std::string getShowId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int total_;
-				std::vector<Caster> casterList_;
+				std::string showId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBECASTERSRESULT_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_ADDSHOWINTOSHOWLISTRESULT_H_

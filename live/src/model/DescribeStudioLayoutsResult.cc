@@ -122,6 +122,8 @@ void DescribeStudioLayoutsResult::parse(const std::string &payload)
 			studioLayoutsObject.bgImageConfig.materialId = bgImageConfigNode["MaterialId"].asString();
 		if(!bgImageConfigNode["ImageUrl"].isNull())
 			studioLayoutsObject.bgImageConfig.imageUrl = bgImageConfigNode["ImageUrl"].asString();
+		if(!bgImageConfigNode["LocationId"].isNull())
+			studioLayoutsObject.bgImageConfig.locationId = bgImageConfigNode["LocationId"].asString();
 		studioLayouts_.push_back(studioLayoutsObject);
 	}
 	if(!value["Total"].isNull())

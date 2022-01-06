@@ -49,6 +49,10 @@ namespace AlibabaCloud
 				void setEndTime(const std::string& endTime);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getOrderByModifyAsc()const;
+				void setOrderByModifyAsc(const std::string& orderByModifyAsc);
+				int getChargeType()const;
+				void setChargeType(int chargeType);
 				int getStatus()const;
 				void setStatus(int status);
 
@@ -60,6 +64,8 @@ namespace AlibabaCloud
 				std::string casterId_;
 				std::string endTime_;
 				long ownerId_;
+				std::string orderByModifyAsc_;
+				int chargeType_;
 				int status_;
 
 			};

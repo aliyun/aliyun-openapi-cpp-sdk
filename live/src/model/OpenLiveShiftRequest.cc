@@ -60,6 +60,17 @@ void OpenLiveShiftRequest::setStreamName(const std::string& streamName)
 	setParameter("StreamName", streamName);
 }
 
+bool OpenLiveShiftRequest::getIgnoreTranscode()const
+{
+	return ignoreTranscode_;
+}
+
+void OpenLiveShiftRequest::setIgnoreTranscode(bool ignoreTranscode)
+{
+	ignoreTranscode_ = ignoreTranscode;
+	setParameter("IgnoreTranscode", ignoreTranscode ? "true" : "false");
+}
+
 std::string OpenLiveShiftRequest::getDomainName()const
 {
 	return domainName_;

@@ -49,6 +49,8 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getPurchaseTime()const;
 				void setPurchaseTime(const std::string& purchaseTime);
+				int getMicMode()const;
+				void setMicMode(int micMode);
 				std::string getChargeType()const;
 				void setChargeType(const std::string& chargeType);
 
@@ -60,6 +62,7 @@ namespace AlibabaCloud
 				int normType_;
 				long ownerId_;
 				std::string purchaseTime_;
+				int micMode_;
 				std::string chargeType_;
 
 			};

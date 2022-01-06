@@ -43,14 +43,16 @@ void DescribeLiveShiftConfigsResult::parse(const std::string &payload)
 	for (auto valueContentConfig : allContentNode)
 	{
 		Config contentObject;
-		if(!valueContentConfig["DomainName"].isNull())
-			contentObject.domainName = valueContentConfig["DomainName"].asString();
 		if(!valueContentConfig["AppName"].isNull())
 			contentObject.appName = valueContentConfig["AppName"].asString();
-		if(!valueContentConfig["StreamName"].isNull())
-			contentObject.streamName = valueContentConfig["StreamName"].asString();
 		if(!valueContentConfig["Vision"].isNull())
 			contentObject.vision = std::stoi(valueContentConfig["Vision"].asString());
+		if(!valueContentConfig["DomainName"].isNull())
+			contentObject.domainName = valueContentConfig["DomainName"].asString();
+		if(!valueContentConfig["StreamName"].isNull())
+			contentObject.streamName = valueContentConfig["StreamName"].asString();
+		if(!valueContentConfig["IgnoreTranscode"].isNull())
+			contentObject.ignoreTranscode = valueContentConfig["IgnoreTranscode"].asString() == "true";
 		content_.push_back(contentObject);
 	}
 

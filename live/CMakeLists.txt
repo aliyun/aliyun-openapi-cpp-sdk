@@ -73,6 +73,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/AddPlaylistItemsResult.h
 	include/alibabacloud/live/model/AddRtsLiveStreamTranscodeRequest.h
 	include/alibabacloud/live/model/AddRtsLiveStreamTranscodeResult.h
+	include/alibabacloud/live/model/AddShowIntoShowListRequest.h
+	include/alibabacloud/live/model/AddShowIntoShowListResult.h
 	include/alibabacloud/live/model/AddStudioLayoutRequest.h
 	include/alibabacloud/live/model/AddStudioLayoutResult.h
 	include/alibabacloud/live/model/AddTrancodeSEIRequest.h
@@ -293,6 +295,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DescribeLiveDomainStagingConfigResult.h
 	include/alibabacloud/live/model/DescribeLiveDomainStreamTranscodeDataRequest.h
 	include/alibabacloud/live/model/DescribeLiveDomainStreamTranscodeDataResult.h
+	include/alibabacloud/live/model/DescribeLiveDomainStreamWaterLevelRequest.h
+	include/alibabacloud/live/model/DescribeLiveDomainStreamWaterLevelResult.h
 	include/alibabacloud/live/model/DescribeLiveDomainTimeShiftDataRequest.h
 	include/alibabacloud/live/model/DescribeLiveDomainTimeShiftDataResult.h
 	include/alibabacloud/live/model/DescribeLiveDomainTrafficDataRequest.h
@@ -385,6 +389,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DescribeRoomListResult.h
 	include/alibabacloud/live/model/DescribeRoomStatusRequest.h
 	include/alibabacloud/live/model/DescribeRoomStatusResult.h
+	include/alibabacloud/live/model/DescribeShowListRequest.h
+	include/alibabacloud/live/model/DescribeShowListResult.h
 	include/alibabacloud/live/model/DescribeStudioLayoutsRequest.h
 	include/alibabacloud/live/model/DescribeStudioLayoutsResult.h
 	include/alibabacloud/live/model/DescribeToutiaoLivePlayRequest.h
@@ -449,16 +455,22 @@ set(live_public_header_model
 	include/alibabacloud/live/model/ModifyLiveDomainSchdmByPropertyResult.h
 	include/alibabacloud/live/model/ModifyLiveRealtimeLogDeliveryRequest.h
 	include/alibabacloud/live/model/ModifyLiveRealtimeLogDeliveryResult.h
+	include/alibabacloud/live/model/ModifyShowListRequest.h
+	include/alibabacloud/live/model/ModifyShowListResult.h
 	include/alibabacloud/live/model/ModifyStudioLayoutRequest.h
 	include/alibabacloud/live/model/ModifyStudioLayoutResult.h
 	include/alibabacloud/live/model/OpenLiveShiftRequest.h
 	include/alibabacloud/live/model/OpenLiveShiftResult.h
+	include/alibabacloud/live/model/PlayChoosenShowRequest.h
+	include/alibabacloud/live/model/PlayChoosenShowResult.h
 	include/alibabacloud/live/model/PublishLiveStagingConfigToProductionRequest.h
 	include/alibabacloud/live/model/PublishLiveStagingConfigToProductionResult.h
 	include/alibabacloud/live/model/RealTimeRecordCommandRequest.h
 	include/alibabacloud/live/model/RealTimeRecordCommandResult.h
 	include/alibabacloud/live/model/RealTimeSnapshotCommandRequest.h
 	include/alibabacloud/live/model/RealTimeSnapshotCommandResult.h
+	include/alibabacloud/live/model/RemoveShowFromShowListRequest.h
+	include/alibabacloud/live/model/RemoveShowFromShowListResult.h
 	include/alibabacloud/live/model/ResumeLiveStreamRequest.h
 	include/alibabacloud/live/model/ResumeLiveStreamResult.h
 	include/alibabacloud/live/model/RollbackLiveStagingConfigRequest.h
@@ -608,6 +620,8 @@ set(live_src
 	src/model/AddPlaylistItemsResult.cc
 	src/model/AddRtsLiveStreamTranscodeRequest.cc
 	src/model/AddRtsLiveStreamTranscodeResult.cc
+	src/model/AddShowIntoShowListRequest.cc
+	src/model/AddShowIntoShowListResult.cc
 	src/model/AddStudioLayoutRequest.cc
 	src/model/AddStudioLayoutResult.cc
 	src/model/AddTrancodeSEIRequest.cc
@@ -828,6 +842,8 @@ set(live_src
 	src/model/DescribeLiveDomainStagingConfigResult.cc
 	src/model/DescribeLiveDomainStreamTranscodeDataRequest.cc
 	src/model/DescribeLiveDomainStreamTranscodeDataResult.cc
+	src/model/DescribeLiveDomainStreamWaterLevelRequest.cc
+	src/model/DescribeLiveDomainStreamWaterLevelResult.cc
 	src/model/DescribeLiveDomainTimeShiftDataRequest.cc
 	src/model/DescribeLiveDomainTimeShiftDataResult.cc
 	src/model/DescribeLiveDomainTrafficDataRequest.cc
@@ -920,6 +936,8 @@ set(live_src
 	src/model/DescribeRoomListResult.cc
 	src/model/DescribeRoomStatusRequest.cc
 	src/model/DescribeRoomStatusResult.cc
+	src/model/DescribeShowListRequest.cc
+	src/model/DescribeShowListResult.cc
 	src/model/DescribeStudioLayoutsRequest.cc
 	src/model/DescribeStudioLayoutsResult.cc
 	src/model/DescribeToutiaoLivePlayRequest.cc
@@ -984,16 +1002,22 @@ set(live_src
 	src/model/ModifyLiveDomainSchdmByPropertyResult.cc
 	src/model/ModifyLiveRealtimeLogDeliveryRequest.cc
 	src/model/ModifyLiveRealtimeLogDeliveryResult.cc
+	src/model/ModifyShowListRequest.cc
+	src/model/ModifyShowListResult.cc
 	src/model/ModifyStudioLayoutRequest.cc
 	src/model/ModifyStudioLayoutResult.cc
 	src/model/OpenLiveShiftRequest.cc
 	src/model/OpenLiveShiftResult.cc
+	src/model/PlayChoosenShowRequest.cc
+	src/model/PlayChoosenShowResult.cc
 	src/model/PublishLiveStagingConfigToProductionRequest.cc
 	src/model/PublishLiveStagingConfigToProductionResult.cc
 	src/model/RealTimeRecordCommandRequest.cc
 	src/model/RealTimeRecordCommandResult.cc
 	src/model/RealTimeSnapshotCommandRequest.cc
 	src/model/RealTimeSnapshotCommandResult.cc
+	src/model/RemoveShowFromShowListRequest.cc
+	src/model/RemoveShowFromShowListResult.cc
 	src/model/ResumeLiveStreamRequest.cc
 	src/model/ResumeLiveStreamResult.cc
 	src/model/RollbackLiveStagingConfigRequest.cc

@@ -104,6 +104,28 @@ void DescribeCastersRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
+std::string DescribeCastersRequest::getOrderByModifyAsc()const
+{
+	return orderByModifyAsc_;
+}
+
+void DescribeCastersRequest::setOrderByModifyAsc(const std::string& orderByModifyAsc)
+{
+	orderByModifyAsc_ = orderByModifyAsc;
+	setParameter("OrderByModifyAsc", orderByModifyAsc);
+}
+
+int DescribeCastersRequest::getChargeType()const
+{
+	return chargeType_;
+}
+
+void DescribeCastersRequest::setChargeType(int chargeType)
+{
+	chargeType_ = chargeType;
+	setParameter("ChargeType", std::to_string(chargeType));
+}
+
 int DescribeCastersRequest::getStatus()const
 {
 	return status_;

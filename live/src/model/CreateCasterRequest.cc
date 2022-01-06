@@ -104,6 +104,17 @@ void CreateCasterRequest::setPurchaseTime(const std::string& purchaseTime)
 	setParameter("PurchaseTime", purchaseTime);
 }
 
+int CreateCasterRequest::getMicMode()const
+{
+	return micMode_;
+}
+
+void CreateCasterRequest::setMicMode(int micMode)
+{
+	micMode_ = micMode;
+	setParameter("MicMode", std::to_string(micMode));
+}
+
 std::string CreateCasterRequest::getChargeType()const
 {
 	return chargeType_;
