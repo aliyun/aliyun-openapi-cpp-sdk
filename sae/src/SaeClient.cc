@@ -915,6 +915,42 @@ SaeClient::DescribeApplicationInstancesOutcomeCallable SaeClient::describeApplic
 	return task->get_future();
 }
 
+SaeClient::DescribeApplicationScalingRuleOutcome SaeClient::describeApplicationScalingRule(const DescribeApplicationScalingRuleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeApplicationScalingRuleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeApplicationScalingRuleOutcome(DescribeApplicationScalingRuleResult(outcome.result()));
+	else
+		return DescribeApplicationScalingRuleOutcome(outcome.error());
+}
+
+void SaeClient::describeApplicationScalingRuleAsync(const DescribeApplicationScalingRuleRequest& request, const DescribeApplicationScalingRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeApplicationScalingRule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::DescribeApplicationScalingRuleOutcomeCallable SaeClient::describeApplicationScalingRuleCallable(const DescribeApplicationScalingRuleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeApplicationScalingRuleOutcome()>>(
+			[this, request]()
+			{
+			return this->describeApplicationScalingRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SaeClient::DescribeApplicationScalingRulesOutcome SaeClient::describeApplicationScalingRules(const DescribeApplicationScalingRulesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

@@ -72,6 +72,17 @@ void RollbackApplicationRequest::setBatchWaitTime(int batchWaitTime)
 	setParameter("BatchWaitTime", std::to_string(batchWaitTime));
 }
 
+int RollbackApplicationRequest::getMinReadyInstanceRatio()const
+{
+	return minReadyInstanceRatio_;
+}
+
+void RollbackApplicationRequest::setMinReadyInstanceRatio(int minReadyInstanceRatio)
+{
+	minReadyInstanceRatio_ = minReadyInstanceRatio;
+	setParameter("MinReadyInstanceRatio", std::to_string(minReadyInstanceRatio));
+}
+
 std::string RollbackApplicationRequest::getAutoEnableApplicationScalingRule()const
 {
 	return autoEnableApplicationScalingRule_;

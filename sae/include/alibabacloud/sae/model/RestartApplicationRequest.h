@@ -39,10 +39,13 @@ namespace AlibabaCloud
 				void setMinReadyInstances(int minReadyInstances);
 				std::string getAppId()const;
 				void setAppId(const std::string& appId);
+				int getMinReadyInstanceRatio()const;
+				void setMinReadyInstanceRatio(int minReadyInstanceRatio);
 
             private:
 				int minReadyInstances_;
 				std::string appId_;
+				int minReadyInstanceRatio_;
 
 			};
 		}

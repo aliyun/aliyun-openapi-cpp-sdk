@@ -50,3 +50,14 @@ void RestartApplicationRequest::setAppId(const std::string& appId)
 	setParameter("AppId", appId);
 }
 
+int RestartApplicationRequest::getMinReadyInstanceRatio()const
+{
+	return minReadyInstanceRatio_;
+}
+
+void RestartApplicationRequest::setMinReadyInstanceRatio(int minReadyInstanceRatio)
+{
+	minReadyInstanceRatio_ = minReadyInstanceRatio;
+	setParameter("MinReadyInstanceRatio", std::to_string(minReadyInstanceRatio));
+}
+

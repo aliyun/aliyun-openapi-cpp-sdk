@@ -111,6 +111,7 @@ namespace AlibabaCloud
 					std::string packageUrl;
 					std::string phpConfigLocation;
 					int batchWaitTime;
+					int minReadyInstanceRatio;
 					std::string phpPECLExtensions;
 					std::string regionId;
 					std::string enableAhas;

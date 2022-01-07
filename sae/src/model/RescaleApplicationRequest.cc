@@ -61,6 +61,17 @@ void RescaleApplicationRequest::setAppId(const std::string& appId)
 	setParameter("AppId", appId);
 }
 
+int RescaleApplicationRequest::getMinReadyInstanceRatio()const
+{
+	return minReadyInstanceRatio_;
+}
+
+void RescaleApplicationRequest::setMinReadyInstanceRatio(int minReadyInstanceRatio)
+{
+	minReadyInstanceRatio_ = minReadyInstanceRatio;
+	setParameter("MinReadyInstanceRatio", std::to_string(minReadyInstanceRatio));
+}
+
 bool RescaleApplicationRequest::getAutoEnableApplicationScalingRule()const
 {
 	return autoEnableApplicationScalingRule_;

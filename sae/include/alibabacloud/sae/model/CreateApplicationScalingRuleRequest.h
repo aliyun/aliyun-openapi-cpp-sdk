@@ -37,8 +37,8 @@ namespace AlibabaCloud
 
 				std::string getScalingRuleName()const;
 				void setScalingRuleName(const std::string& scalingRuleName);
-				std::string getMinReadyInstances()const;
-				void setMinReadyInstances(const std::string& minReadyInstances);
+				int getMinReadyInstances()const;
+				void setMinReadyInstances(int minReadyInstances);
 				bool getScalingRuleEnable()const;
 				void setScalingRuleEnable(bool scalingRuleEnable);
 				std::string getScalingRuleTimer()const;
@@ -47,16 +47,19 @@ namespace AlibabaCloud
 				void setScalingRuleMetric(const std::string& scalingRuleMetric);
 				std::string getAppId()const;
 				void setAppId(const std::string& appId);
+				int getMinReadyInstanceRatio()const;
+				void setMinReadyInstanceRatio(int minReadyInstanceRatio);
 				std::string getScalingRuleType()const;
 				void setScalingRuleType(const std::string& scalingRuleType);
 
             private:
 				std::string scalingRuleName_;
-				std::string minReadyInstances_;
+				int minReadyInstances_;
 				bool scalingRuleEnable_;
 				std::string scalingRuleTimer_;
 				std::string scalingRuleMetric_;
 				std::string appId_;
+				int minReadyInstanceRatio_;
 				std::string scalingRuleType_;
 
 			};

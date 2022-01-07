@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SAE_MODEL_UPDATEAPPLICATIONSCALINGRULERESULT_H_
-#define ALIBABACLOUD_SAE_MODEL_UPDATEAPPLICATIONSCALINGRULERESULT_H_
+#ifndef ALIBABACLOUD_SAE_MODEL_DESCRIBEAPPLICATIONSCALINGRULERESULT_H_
+#define ALIBABACLOUD_SAE_MODEL_DESCRIBEAPPLICATIONSCALINGRULERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,7 +29,7 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SAE_EXPORT UpdateApplicationScalingRuleResult : public ServiceResult
+			class ALIBABACLOUD_SAE_EXPORT DescribeApplicationScalingRuleResult : public ServiceResult
 			{
 			public:
 				struct Data
@@ -48,6 +48,39 @@ namespace AlibabaCloud
 					};
 					struct Metric
 					{
+						struct MetricsStatus
+						{
+							struct CurrentMetric
+							{
+								std::string type;
+								long currentValue;
+								std::string name;
+							};
+							struct NextScaleMetric
+							{
+								int nextScaleInAverageUtilization;
+								int nextScaleOutAverageUtilization;
+								std::string name;
+							};
+							std::vector<NextScaleMetric> nextScaleMetrics;
+							long desiredReplicas;
+							std::vector<CurrentMetric> currentMetrics;
+							long currentReplicas;
+							int nextScaleTimePeriod;
+							std::string lastScaleTime;
+						};
+						struct ScaleUpRules
+						{
+							long step;
+							long stabilizationWindowSeconds;
+							bool disabled;
+						};
+						struct ScaleDownRules
+						{
+							long step;
+							long stabilizationWindowSeconds;
+							bool disabled;
+						};
 						struct Metric1
 						{
 							std::string metricType;
@@ -55,7 +88,10 @@ namespace AlibabaCloud
 						};
 						std::vector<Metric1> metrics;
 						int minReplicas;
+						ScaleDownRules scaleDownRules;
 						int maxReplicas;
+						MetricsStatus metricsStatus;
+						ScaleUpRules scaleUpRules;
 					};
 					bool scaleRuleEnabled;
 					Timer timer;
@@ -69,9 +105,9 @@ namespace AlibabaCloud
 				};
 
 
-				UpdateApplicationScalingRuleResult();
-				explicit UpdateApplicationScalingRuleResult(const std::string &payload);
-				~UpdateApplicationScalingRuleResult();
+				DescribeApplicationScalingRuleResult();
+				explicit DescribeApplicationScalingRuleResult(const std::string &payload);
+				~DescribeApplicationScalingRuleResult();
 				std::string getTraceId()const;
 				Data getData()const;
 
@@ -85,4 +121,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SAE_MODEL_UPDATEAPPLICATIONSCALINGRULERESULT_H_
+#endif // !ALIBABACLOUD_SAE_MODEL_DESCRIBEAPPLICATIONSCALINGRULERESULT_H_

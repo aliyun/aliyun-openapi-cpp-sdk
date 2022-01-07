@@ -70,6 +70,8 @@
 #include "model/DescribeApplicationImageResult.h"
 #include "model/DescribeApplicationInstancesRequest.h"
 #include "model/DescribeApplicationInstancesResult.h"
+#include "model/DescribeApplicationScalingRuleRequest.h"
+#include "model/DescribeApplicationScalingRuleResult.h"
 #include "model/DescribeApplicationScalingRulesRequest.h"
 #include "model/DescribeApplicationScalingRulesResult.h"
 #include "model/DescribeApplicationSlbsRequest.h"
@@ -259,6 +261,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeApplicationInstancesResult> DescribeApplicationInstancesOutcome;
 			typedef std::future<DescribeApplicationInstancesOutcome> DescribeApplicationInstancesOutcomeCallable;
 			typedef std::function<void(const SaeClient*, const Model::DescribeApplicationInstancesRequest&, const DescribeApplicationInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApplicationInstancesAsyncHandler;
+			typedef Outcome<Error, Model::DescribeApplicationScalingRuleResult> DescribeApplicationScalingRuleOutcome;
+			typedef std::future<DescribeApplicationScalingRuleOutcome> DescribeApplicationScalingRuleOutcomeCallable;
+			typedef std::function<void(const SaeClient*, const Model::DescribeApplicationScalingRuleRequest&, const DescribeApplicationScalingRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApplicationScalingRuleAsyncHandler;
 			typedef Outcome<Error, Model::DescribeApplicationScalingRulesResult> DescribeApplicationScalingRulesOutcome;
 			typedef std::future<DescribeApplicationScalingRulesOutcome> DescribeApplicationScalingRulesOutcomeCallable;
 			typedef std::function<void(const SaeClient*, const Model::DescribeApplicationScalingRulesRequest&, const DescribeApplicationScalingRulesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApplicationScalingRulesAsyncHandler;
@@ -498,6 +503,9 @@ namespace AlibabaCloud
 			DescribeApplicationInstancesOutcome describeApplicationInstances(const Model::DescribeApplicationInstancesRequest &request)const;
 			void describeApplicationInstancesAsync(const Model::DescribeApplicationInstancesRequest& request, const DescribeApplicationInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeApplicationInstancesOutcomeCallable describeApplicationInstancesCallable(const Model::DescribeApplicationInstancesRequest& request) const;
+			DescribeApplicationScalingRuleOutcome describeApplicationScalingRule(const Model::DescribeApplicationScalingRuleRequest &request)const;
+			void describeApplicationScalingRuleAsync(const Model::DescribeApplicationScalingRuleRequest& request, const DescribeApplicationScalingRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeApplicationScalingRuleOutcomeCallable describeApplicationScalingRuleCallable(const Model::DescribeApplicationScalingRuleRequest& request) const;
 			DescribeApplicationScalingRulesOutcome describeApplicationScalingRules(const Model::DescribeApplicationScalingRulesRequest &request)const;
 			void describeApplicationScalingRulesAsync(const Model::DescribeApplicationScalingRulesRequest& request, const DescribeApplicationScalingRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeApplicationScalingRulesOutcomeCallable describeApplicationScalingRulesCallable(const Model::DescribeApplicationScalingRulesRequest& request) const;

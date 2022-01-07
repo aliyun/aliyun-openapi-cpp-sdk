@@ -43,6 +43,8 @@ namespace AlibabaCloud
 				void setAppId(const std::string& appId);
 				int getBatchWaitTime()const;
 				void setBatchWaitTime(int batchWaitTime);
+				int getMinReadyInstanceRatio()const;
+				void setMinReadyInstanceRatio(int minReadyInstanceRatio);
 				std::string getAutoEnableApplicationScalingRule()const;
 				void setAutoEnableApplicationScalingRule(const std::string& autoEnableApplicationScalingRule);
 				std::string getUpdateStrategy()const;
@@ -53,6 +55,7 @@ namespace AlibabaCloud
 				std::string versionId_;
 				std::string appId_;
 				int batchWaitTime_;
+				int minReadyInstanceRatio_;
 				std::string autoEnableApplicationScalingRule_;
 				std::string updateStrategy_;
 

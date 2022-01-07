@@ -78,6 +78,8 @@ void DescribeApplicationConfigResult::parse(const std::string &payload)
 		data_.updateStrategy = dataNode["UpdateStrategy"].asString();
 	if(!dataNode["MinReadyInstances"].isNull())
 		data_.minReadyInstances = std::stoi(dataNode["MinReadyInstances"].asString());
+	if(!dataNode["MinReadyInstanceRatio"].isNull())
+		data_.minReadyInstanceRatio = std::stoi(dataNode["MinReadyInstanceRatio"].asString());
 	if(!dataNode["Memory"].isNull())
 		data_.memory = std::stoi(dataNode["Memory"].asString());
 	if(!dataNode["Php"].isNull())

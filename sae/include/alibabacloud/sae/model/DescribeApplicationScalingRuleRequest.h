@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SAE_MODEL_UPDATEAPPLICATIONSCALINGRULEREQUEST_H_
-#define ALIBABACLOUD_SAE_MODEL_UPDATEAPPLICATIONSCALINGRULEREQUEST_H_
+#ifndef ALIBABACLOUD_SAE_MODEL_DESCRIBEAPPLICATIONSCALINGRULEREQUEST_H_
+#define ALIBABACLOUD_SAE_MODEL_DESCRIBEAPPLICATIONSCALINGRULEREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,36 +28,24 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SAE_EXPORT UpdateApplicationScalingRuleRequest : public RoaServiceRequest
+			class ALIBABACLOUD_SAE_EXPORT DescribeApplicationScalingRuleRequest : public RoaServiceRequest
 			{
 
 			public:
-				UpdateApplicationScalingRuleRequest();
-				~UpdateApplicationScalingRuleRequest();
+				DescribeApplicationScalingRuleRequest();
+				~DescribeApplicationScalingRuleRequest();
 
 				std::string getScalingRuleName()const;
 				void setScalingRuleName(const std::string& scalingRuleName);
-				int getMinReadyInstances()const;
-				void setMinReadyInstances(int minReadyInstances);
-				std::string getScalingRuleTimer()const;
-				void setScalingRuleTimer(const std::string& scalingRuleTimer);
-				std::string getScalingRuleMetric()const;
-				void setScalingRuleMetric(const std::string& scalingRuleMetric);
 				std::string getAppId()const;
 				void setAppId(const std::string& appId);
-				int getMinReadyInstanceRatio()const;
-				void setMinReadyInstanceRatio(int minReadyInstanceRatio);
 
             private:
 				std::string scalingRuleName_;
-				int minReadyInstances_;
-				std::string scalingRuleTimer_;
-				std::string scalingRuleMetric_;
 				std::string appId_;
-				int minReadyInstanceRatio_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SAE_MODEL_UPDATEAPPLICATIONSCALINGRULEREQUEST_H_
+#endif // !ALIBABACLOUD_SAE_MODEL_DESCRIBEAPPLICATIONSCALINGRULEREQUEST_H_

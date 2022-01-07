@@ -39,15 +39,15 @@ void CreateApplicationScalingRuleRequest::setScalingRuleName(const std::string& 
 	setParameter("ScalingRuleName", scalingRuleName);
 }
 
-std::string CreateApplicationScalingRuleRequest::getMinReadyInstances()const
+int CreateApplicationScalingRuleRequest::getMinReadyInstances()const
 {
 	return minReadyInstances_;
 }
 
-void CreateApplicationScalingRuleRequest::setMinReadyInstances(const std::string& minReadyInstances)
+void CreateApplicationScalingRuleRequest::setMinReadyInstances(int minReadyInstances)
 {
 	minReadyInstances_ = minReadyInstances;
-	setParameter("MinReadyInstances", minReadyInstances);
+	setParameter("MinReadyInstances", std::to_string(minReadyInstances));
 }
 
 bool CreateApplicationScalingRuleRequest::getScalingRuleEnable()const
@@ -92,6 +92,17 @@ void CreateApplicationScalingRuleRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
 	setParameter("AppId", appId);
+}
+
+int CreateApplicationScalingRuleRequest::getMinReadyInstanceRatio()const
+{
+	return minReadyInstanceRatio_;
+}
+
+void CreateApplicationScalingRuleRequest::setMinReadyInstanceRatio(int minReadyInstanceRatio)
+{
+	minReadyInstanceRatio_ = minReadyInstanceRatio;
+	setParameter("MinReadyInstanceRatio", std::to_string(minReadyInstanceRatio));
 }
 
 std::string CreateApplicationScalingRuleRequest::getScalingRuleType()const

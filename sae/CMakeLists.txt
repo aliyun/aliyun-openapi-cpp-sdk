@@ -69,6 +69,8 @@ set(sae_public_header_model
 	include/alibabacloud/sae/model/DescribeApplicationImageResult.h
 	include/alibabacloud/sae/model/DescribeApplicationInstancesRequest.h
 	include/alibabacloud/sae/model/DescribeApplicationInstancesResult.h
+	include/alibabacloud/sae/model/DescribeApplicationScalingRuleRequest.h
+	include/alibabacloud/sae/model/DescribeApplicationScalingRuleResult.h
 	include/alibabacloud/sae/model/DescribeApplicationScalingRulesRequest.h
 	include/alibabacloud/sae/model/DescribeApplicationScalingRulesResult.h
 	include/alibabacloud/sae/model/DescribeApplicationSlbsRequest.h
@@ -228,6 +230,8 @@ set(sae_src
 	src/model/DescribeApplicationImageResult.cc
 	src/model/DescribeApplicationInstancesRequest.cc
 	src/model/DescribeApplicationInstancesResult.cc
+	src/model/DescribeApplicationScalingRuleRequest.cc
+	src/model/DescribeApplicationScalingRuleResult.cc
 	src/model/DescribeApplicationScalingRulesRequest.cc
 	src/model/DescribeApplicationScalingRulesResult.cc
 	src/model/DescribeApplicationSlbsRequest.cc

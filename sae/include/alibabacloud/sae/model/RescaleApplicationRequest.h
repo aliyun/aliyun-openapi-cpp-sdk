@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setReplicas(int replicas);
 				std::string getAppId()const;
 				void setAppId(const std::string& appId);
+				int getMinReadyInstanceRatio()const;
+				void setMinReadyInstanceRatio(int minReadyInstanceRatio);
 				bool getAutoEnableApplicationScalingRule()const;
 				void setAutoEnableApplicationScalingRule(bool autoEnableApplicationScalingRule);
 
@@ -48,6 +50,7 @@ namespace AlibabaCloud
 				int minReadyInstances_;
 				int replicas_;
 				std::string appId_;
+				int minReadyInstanceRatio_;
 				bool autoEnableApplicationScalingRule_;
 
 			};

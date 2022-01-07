@@ -457,6 +457,17 @@ void DeployApplicationRequest::setImageUrl(const std::string& imageUrl)
 	setParameter("ImageUrl", imageUrl);
 }
 
+int DeployApplicationRequest::getMinReadyInstanceRatio()const
+{
+	return minReadyInstanceRatio_;
+}
+
+void DeployApplicationRequest::setMinReadyInstanceRatio(int minReadyInstanceRatio)
+{
+	minReadyInstanceRatio_ = minReadyInstanceRatio;
+	setParameter("MinReadyInstanceRatio", std::to_string(minReadyInstanceRatio));
+}
+
 std::string DeployApplicationRequest::getPhp()const
 {
 	return php_;

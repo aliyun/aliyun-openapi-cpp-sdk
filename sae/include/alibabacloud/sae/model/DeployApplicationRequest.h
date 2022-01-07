@@ -113,6 +113,8 @@ namespace AlibabaCloud
 				void setAppId(const std::string& appId);
 				std::string getImageUrl()const;
 				void setImageUrl(const std::string& imageUrl);
+				int getMinReadyInstanceRatio()const;
+				void setMinReadyInstanceRatio(int minReadyInstanceRatio);
 				std::string getPhp()const;
 				void setPhp(const std::string& php);
 				bool getAutoEnableApplicationScalingRule()const;
@@ -166,6 +168,7 @@ namespace AlibabaCloud
 				std::string acrInstanceId_;
 				std::string appId_;
 				std::string imageUrl_;
+				int minReadyInstanceRatio_;
 				std::string php_;
 				bool autoEnableApplicationScalingRule_;
 				std::string phpConfigLocation_;
