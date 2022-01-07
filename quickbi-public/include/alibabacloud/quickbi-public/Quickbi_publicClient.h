@@ -32,6 +32,8 @@
 #include "model/AddUserResult.h"
 #include "model/AddUserGroupMemberRequest.h"
 #include "model/AddUserGroupMemberResult.h"
+#include "model/AddUserGroupMembersRequest.h"
+#include "model/AddUserGroupMembersResult.h"
 #include "model/AddUserTagMetaRequest.h"
 #include "model/AddUserTagMetaResult.h"
 #include "model/AddUserToWorkspaceRequest.h"
@@ -132,6 +134,8 @@
 #include "model/QueryUserTagMetaListResult.h"
 #include "model/QueryUserTagValueListRequest.h"
 #include "model/QueryUserTagValueListResult.h"
+#include "model/QueryWorksRequest.h"
+#include "model/QueryWorksResult.h"
 #include "model/QueryWorksByOrganizationRequest.h"
 #include "model/QueryWorksByOrganizationResult.h"
 #include "model/QueryWorksByWorkspaceRequest.h"
@@ -188,6 +192,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AddUserGroupMemberResult> AddUserGroupMemberOutcome;
 			typedef std::future<AddUserGroupMemberOutcome> AddUserGroupMemberOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::AddUserGroupMemberRequest&, const AddUserGroupMemberOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddUserGroupMemberAsyncHandler;
+			typedef Outcome<Error, Model::AddUserGroupMembersResult> AddUserGroupMembersOutcome;
+			typedef std::future<AddUserGroupMembersOutcome> AddUserGroupMembersOutcomeCallable;
+			typedef std::function<void(const Quickbi_publicClient*, const Model::AddUserGroupMembersRequest&, const AddUserGroupMembersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddUserGroupMembersAsyncHandler;
 			typedef Outcome<Error, Model::AddUserTagMetaResult> AddUserTagMetaOutcome;
 			typedef std::future<AddUserTagMetaOutcome> AddUserTagMetaOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::AddUserTagMetaRequest&, const AddUserTagMetaOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddUserTagMetaAsyncHandler;
@@ -338,6 +345,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryUserTagValueListResult> QueryUserTagValueListOutcome;
 			typedef std::future<QueryUserTagValueListOutcome> QueryUserTagValueListOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::QueryUserTagValueListRequest&, const QueryUserTagValueListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryUserTagValueListAsyncHandler;
+			typedef Outcome<Error, Model::QueryWorksResult> QueryWorksOutcome;
+			typedef std::future<QueryWorksOutcome> QueryWorksOutcomeCallable;
+			typedef std::function<void(const Quickbi_publicClient*, const Model::QueryWorksRequest&, const QueryWorksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryWorksAsyncHandler;
 			typedef Outcome<Error, Model::QueryWorksByOrganizationResult> QueryWorksByOrganizationOutcome;
 			typedef std::future<QueryWorksByOrganizationOutcome> QueryWorksByOrganizationOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::QueryWorksByOrganizationRequest&, const QueryWorksByOrganizationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryWorksByOrganizationAsyncHandler;
@@ -406,6 +416,9 @@ namespace AlibabaCloud
 			AddUserGroupMemberOutcome addUserGroupMember(const Model::AddUserGroupMemberRequest &request)const;
 			void addUserGroupMemberAsync(const Model::AddUserGroupMemberRequest& request, const AddUserGroupMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddUserGroupMemberOutcomeCallable addUserGroupMemberCallable(const Model::AddUserGroupMemberRequest& request) const;
+			AddUserGroupMembersOutcome addUserGroupMembers(const Model::AddUserGroupMembersRequest &request)const;
+			void addUserGroupMembersAsync(const Model::AddUserGroupMembersRequest& request, const AddUserGroupMembersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddUserGroupMembersOutcomeCallable addUserGroupMembersCallable(const Model::AddUserGroupMembersRequest& request) const;
 			AddUserTagMetaOutcome addUserTagMeta(const Model::AddUserTagMetaRequest &request)const;
 			void addUserTagMetaAsync(const Model::AddUserTagMetaRequest& request, const AddUserTagMetaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddUserTagMetaOutcomeCallable addUserTagMetaCallable(const Model::AddUserTagMetaRequest& request) const;
@@ -556,6 +569,9 @@ namespace AlibabaCloud
 			QueryUserTagValueListOutcome queryUserTagValueList(const Model::QueryUserTagValueListRequest &request)const;
 			void queryUserTagValueListAsync(const Model::QueryUserTagValueListRequest& request, const QueryUserTagValueListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryUserTagValueListOutcomeCallable queryUserTagValueListCallable(const Model::QueryUserTagValueListRequest& request) const;
+			QueryWorksOutcome queryWorks(const Model::QueryWorksRequest &request)const;
+			void queryWorksAsync(const Model::QueryWorksRequest& request, const QueryWorksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryWorksOutcomeCallable queryWorksCallable(const Model::QueryWorksRequest& request) const;
 			QueryWorksByOrganizationOutcome queryWorksByOrganization(const Model::QueryWorksByOrganizationRequest &request)const;
 			void queryWorksByOrganizationAsync(const Model::QueryWorksByOrganizationRequest& request, const QueryWorksByOrganizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryWorksByOrganizationOutcomeCallable queryWorksByOrganizationCallable(const Model::QueryWorksByOrganizationRequest& request) const;

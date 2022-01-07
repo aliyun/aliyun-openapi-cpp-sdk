@@ -231,6 +231,42 @@ Quickbi_publicClient::AddUserGroupMemberOutcomeCallable Quickbi_publicClient::ad
 	return task->get_future();
 }
 
+Quickbi_publicClient::AddUserGroupMembersOutcome Quickbi_publicClient::addUserGroupMembers(const AddUserGroupMembersRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddUserGroupMembersOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddUserGroupMembersOutcome(AddUserGroupMembersResult(outcome.result()));
+	else
+		return AddUserGroupMembersOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::addUserGroupMembersAsync(const AddUserGroupMembersRequest& request, const AddUserGroupMembersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addUserGroupMembers(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::AddUserGroupMembersOutcomeCallable Quickbi_publicClient::addUserGroupMembersCallable(const AddUserGroupMembersRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddUserGroupMembersOutcome()>>(
+			[this, request]()
+			{
+			return this->addUserGroupMembers(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Quickbi_publicClient::AddUserTagMetaOutcome Quickbi_publicClient::addUserTagMeta(const AddUserTagMetaRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2025,6 +2061,42 @@ Quickbi_publicClient::QueryUserTagValueListOutcomeCallable Quickbi_publicClient:
 			[this, request]()
 			{
 			return this->queryUserTagValueList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Quickbi_publicClient::QueryWorksOutcome Quickbi_publicClient::queryWorks(const QueryWorksRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryWorksOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryWorksOutcome(QueryWorksResult(outcome.result()));
+	else
+		return QueryWorksOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::queryWorksAsync(const QueryWorksRequest& request, const QueryWorksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryWorks(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::QueryWorksOutcomeCallable Quickbi_publicClient::queryWorksCallable(const QueryWorksRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryWorksOutcome()>>(
+			[this, request]()
+			{
+			return this->queryWorks(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

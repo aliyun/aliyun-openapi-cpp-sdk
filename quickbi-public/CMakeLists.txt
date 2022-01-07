@@ -31,6 +31,8 @@ set(quickbi-public_public_header_model
 	include/alibabacloud/quickbi-public/model/AddUserResult.h
 	include/alibabacloud/quickbi-public/model/AddUserGroupMemberRequest.h
 	include/alibabacloud/quickbi-public/model/AddUserGroupMemberResult.h
+	include/alibabacloud/quickbi-public/model/AddUserGroupMembersRequest.h
+	include/alibabacloud/quickbi-public/model/AddUserGroupMembersResult.h
 	include/alibabacloud/quickbi-public/model/AddUserTagMetaRequest.h
 	include/alibabacloud/quickbi-public/model/AddUserTagMetaResult.h
 	include/alibabacloud/quickbi-public/model/AddUserToWorkspaceRequest.h
@@ -131,6 +133,8 @@ set(quickbi-public_public_header_model
 	include/alibabacloud/quickbi-public/model/QueryUserTagMetaListResult.h
 	include/alibabacloud/quickbi-public/model/QueryUserTagValueListRequest.h
 	include/alibabacloud/quickbi-public/model/QueryUserTagValueListResult.h
+	include/alibabacloud/quickbi-public/model/QueryWorksRequest.h
+	include/alibabacloud/quickbi-public/model/QueryWorksResult.h
 	include/alibabacloud/quickbi-public/model/QueryWorksByOrganizationRequest.h
 	include/alibabacloud/quickbi-public/model/QueryWorksByOrganizationResult.h
 	include/alibabacloud/quickbi-public/model/QueryWorksByWorkspaceRequest.h
@@ -176,6 +180,8 @@ set(quickbi-public_src
 	src/model/AddUserResult.cc
 	src/model/AddUserGroupMemberRequest.cc
 	src/model/AddUserGroupMemberResult.cc
+	src/model/AddUserGroupMembersRequest.cc
+	src/model/AddUserGroupMembersResult.cc
 	src/model/AddUserTagMetaRequest.cc
 	src/model/AddUserTagMetaResult.cc
 	src/model/AddUserToWorkspaceRequest.cc
@@ -276,6 +282,8 @@ set(quickbi-public_src
 	src/model/QueryUserTagMetaListResult.cc
 	src/model/QueryUserTagValueListRequest.cc
 	src/model/QueryUserTagValueListResult.cc
+	src/model/QueryWorksRequest.cc
+	src/model/QueryWorksResult.cc
 	src/model/QueryWorksByOrganizationRequest.cc
 	src/model/QueryWorksByOrganizationResult.cc
 	src/model/QueryWorksByWorkspaceRequest.cc

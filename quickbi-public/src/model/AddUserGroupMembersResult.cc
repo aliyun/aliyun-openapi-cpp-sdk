@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/quickbi-public/model/QueryEmbeddedStausResult.h>
+#include <alibabacloud/quickbi-public/model/AddUserGroupMembersResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Quickbi_public;
 using namespace AlibabaCloud::Quickbi_public::Model;
 
-QueryEmbeddedStausResult::QueryEmbeddedStausResult() :
+AddUserGroupMembersResult::AddUserGroupMembersResult() :
 	ServiceResult()
 {}
 
-QueryEmbeddedStausResult::QueryEmbeddedStausResult(const std::string &payload) :
+AddUserGroupMembersResult::AddUserGroupMembersResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-QueryEmbeddedStausResult::~QueryEmbeddedStausResult()
+AddUserGroupMembersResult::~AddUserGroupMembersResult()
 {}
 
-void QueryEmbeddedStausResult::parse(const std::string &payload)
+void AddUserGroupMembersResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -46,12 +46,12 @@ void QueryEmbeddedStausResult::parse(const std::string &payload)
 
 }
 
-bool QueryEmbeddedStausResult::getSuccess()const
+bool AddUserGroupMembersResult::getSuccess()const
 {
 	return success_;
 }
 
-bool QueryEmbeddedStausResult::getResult()const
+bool AddUserGroupMembersResult::getResult()const
 {
 	return result_;
 }
