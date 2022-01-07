@@ -150,6 +150,8 @@
 #include "model/UpdateListenerAttributeResult.h"
 #include "model/UpdateListenerLogConfigRequest.h"
 #include "model/UpdateListenerLogConfigResult.h"
+#include "model/UpdateLoadBalancerAddressTypeConfigRequest.h"
+#include "model/UpdateLoadBalancerAddressTypeConfigResult.h"
 #include "model/UpdateLoadBalancerAttributeRequest.h"
 #include "model/UpdateLoadBalancerAttributeResult.h"
 #include "model/UpdateLoadBalancerEditionRequest.h"
@@ -367,6 +369,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateListenerLogConfigResult> UpdateListenerLogConfigOutcome;
 			typedef std::future<UpdateListenerLogConfigOutcome> UpdateListenerLogConfigOutcomeCallable;
 			typedef std::function<void(const AlbClient*, const Model::UpdateListenerLogConfigRequest&, const UpdateListenerLogConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateListenerLogConfigAsyncHandler;
+			typedef Outcome<Error, Model::UpdateLoadBalancerAddressTypeConfigResult> UpdateLoadBalancerAddressTypeConfigOutcome;
+			typedef std::future<UpdateLoadBalancerAddressTypeConfigOutcome> UpdateLoadBalancerAddressTypeConfigOutcomeCallable;
+			typedef std::function<void(const AlbClient*, const Model::UpdateLoadBalancerAddressTypeConfigRequest&, const UpdateLoadBalancerAddressTypeConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateLoadBalancerAddressTypeConfigAsyncHandler;
 			typedef Outcome<Error, Model::UpdateLoadBalancerAttributeResult> UpdateLoadBalancerAttributeOutcome;
 			typedef std::future<UpdateLoadBalancerAttributeOutcome> UpdateLoadBalancerAttributeOutcomeCallable;
 			typedef std::function<void(const AlbClient*, const Model::UpdateLoadBalancerAttributeRequest&, const UpdateLoadBalancerAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateLoadBalancerAttributeAsyncHandler;
@@ -588,6 +593,9 @@ namespace AlibabaCloud
 			UpdateListenerLogConfigOutcome updateListenerLogConfig(const Model::UpdateListenerLogConfigRequest &request)const;
 			void updateListenerLogConfigAsync(const Model::UpdateListenerLogConfigRequest& request, const UpdateListenerLogConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateListenerLogConfigOutcomeCallable updateListenerLogConfigCallable(const Model::UpdateListenerLogConfigRequest& request) const;
+			UpdateLoadBalancerAddressTypeConfigOutcome updateLoadBalancerAddressTypeConfig(const Model::UpdateLoadBalancerAddressTypeConfigRequest &request)const;
+			void updateLoadBalancerAddressTypeConfigAsync(const Model::UpdateLoadBalancerAddressTypeConfigRequest& request, const UpdateLoadBalancerAddressTypeConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateLoadBalancerAddressTypeConfigOutcomeCallable updateLoadBalancerAddressTypeConfigCallable(const Model::UpdateLoadBalancerAddressTypeConfigRequest& request) const;
 			UpdateLoadBalancerAttributeOutcome updateLoadBalancerAttribute(const Model::UpdateLoadBalancerAttributeRequest &request)const;
 			void updateLoadBalancerAttributeAsync(const Model::UpdateLoadBalancerAttributeRequest& request, const UpdateLoadBalancerAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateLoadBalancerAttributeOutcomeCallable updateLoadBalancerAttributeCallable(const Model::UpdateLoadBalancerAttributeRequest& request) const;

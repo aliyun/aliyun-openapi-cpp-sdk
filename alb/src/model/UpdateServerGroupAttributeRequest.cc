@@ -96,6 +96,15 @@ void UpdateServerGroupAttributeRequest::setUpstreamKeepaliveEnabled(bool upstrea
   setParameter(std::string("UpstreamKeepaliveEnabled"), upstreamKeepaliveEnabled ? "true" : "false");
 }
 
+std::string UpdateServerGroupAttributeRequest::getServiceName() const {
+  return serviceName_;
+}
+
+void UpdateServerGroupAttributeRequest::setServiceName(const std::string &serviceName) {
+  serviceName_ = serviceName;
+  setParameter(std::string("ServiceName"), serviceName);
+}
+
 UpdateServerGroupAttributeRequest::StickySessionConfig UpdateServerGroupAttributeRequest::getStickySessionConfig() const {
   return stickySessionConfig_;
 }

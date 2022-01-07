@@ -76,6 +76,7 @@ namespace AlibabaCloud
 					bool ipv6Enabled;
 					bool configManagedEnabled;
 					std::string vpcId;
+					std::string serviceName;
 					std::string serviceManagedMode;
 					HealthCheckConfig healthCheckConfig;
 					std::string protocol;

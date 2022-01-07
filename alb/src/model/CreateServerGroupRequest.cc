@@ -105,6 +105,15 @@ void CreateServerGroupRequest::setUpstreamKeepaliveEnabled(bool upstreamKeepaliv
   setParameter(std::string("UpstreamKeepaliveEnabled"), upstreamKeepaliveEnabled ? "true" : "false");
 }
 
+std::string CreateServerGroupRequest::getServiceName() const {
+  return serviceName_;
+}
+
+void CreateServerGroupRequest::setServiceName(const std::string &serviceName) {
+  serviceName_ = serviceName;
+  setParameter(std::string("ServiceName"), serviceName);
+}
+
 CreateServerGroupRequest::StickySessionConfig CreateServerGroupRequest::getStickySessionConfig() const {
   return stickySessionConfig_;
 }

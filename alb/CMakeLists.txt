@@ -149,6 +149,8 @@ set(alb_public_header_model
 	include/alibabacloud/alb/model/UpdateListenerAttributeResult.h
 	include/alibabacloud/alb/model/UpdateListenerLogConfigRequest.h
 	include/alibabacloud/alb/model/UpdateListenerLogConfigResult.h
+	include/alibabacloud/alb/model/UpdateLoadBalancerAddressTypeConfigRequest.h
+	include/alibabacloud/alb/model/UpdateLoadBalancerAddressTypeConfigResult.h
 	include/alibabacloud/alb/model/UpdateLoadBalancerAttributeRequest.h
 	include/alibabacloud/alb/model/UpdateLoadBalancerAttributeResult.h
 	include/alibabacloud/alb/model/UpdateLoadBalancerEditionRequest.h
@@ -296,6 +298,8 @@ set(alb_src
 	src/model/UpdateListenerAttributeResult.cc
 	src/model/UpdateListenerLogConfigRequest.cc
 	src/model/UpdateListenerLogConfigResult.cc
+	src/model/UpdateLoadBalancerAddressTypeConfigRequest.cc
+	src/model/UpdateLoadBalancerAddressTypeConfigResult.cc
 	src/model/UpdateLoadBalancerAttributeRequest.cc
 	src/model/UpdateLoadBalancerAttributeResult.cc
 	src/model/UpdateLoadBalancerEditionRequest.cc

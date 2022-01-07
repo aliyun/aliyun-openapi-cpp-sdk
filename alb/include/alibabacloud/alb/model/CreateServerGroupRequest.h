@@ -68,6 +68,8 @@ public:
 	void setProtocol(const std::string &protocol);
 	bool getUpstreamKeepaliveEnabled() const;
 	void setUpstreamKeepaliveEnabled(bool upstreamKeepaliveEnabled);
+	std::string getServiceName() const;
+	void setServiceName(const std::string &serviceName);
 	StickySessionConfig getStickySessionConfig() const;
 	void setStickySessionConfig(const StickySessionConfig &stickySessionConfig);
 	bool getDryRun() const;
@@ -87,6 +89,7 @@ private:
 	std::string resourceGroupId_;
 	std::string protocol_;
 	bool upstreamKeepaliveEnabled_;
+	std::string serviceName_;
 	StickySessionConfig stickySessionConfig_;
 	bool dryRun_;
 	bool ipv6Enabled_;

@@ -71,6 +71,8 @@ void ListServerGroupsResult::parse(const std::string &payload)
 			serverGroupsObject.ipv6Enabled = valueServerGroupsServerGroup["Ipv6Enabled"].asString() == "true";
 		if(!valueServerGroupsServerGroup["ServerCount"].isNull())
 			serverGroupsObject.serverCount = std::stoi(valueServerGroupsServerGroup["ServerCount"].asString());
+		if(!valueServerGroupsServerGroup["ServiceName"].isNull())
+			serverGroupsObject.serviceName = valueServerGroupsServerGroup["ServiceName"].asString();
 		auto allTagsNode = valueServerGroupsServerGroup["Tags"]["Tag"];
 		for (auto valueServerGroupsServerGroupTagsTag : allTagsNode)
 		{

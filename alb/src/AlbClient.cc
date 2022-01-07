@@ -2355,6 +2355,42 @@ AlbClient::UpdateListenerLogConfigOutcomeCallable AlbClient::updateListenerLogCo
 	return task->get_future();
 }
 
+AlbClient::UpdateLoadBalancerAddressTypeConfigOutcome AlbClient::updateLoadBalancerAddressTypeConfig(const UpdateLoadBalancerAddressTypeConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateLoadBalancerAddressTypeConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateLoadBalancerAddressTypeConfigOutcome(UpdateLoadBalancerAddressTypeConfigResult(outcome.result()));
+	else
+		return UpdateLoadBalancerAddressTypeConfigOutcome(outcome.error());
+}
+
+void AlbClient::updateLoadBalancerAddressTypeConfigAsync(const UpdateLoadBalancerAddressTypeConfigRequest& request, const UpdateLoadBalancerAddressTypeConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateLoadBalancerAddressTypeConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlbClient::UpdateLoadBalancerAddressTypeConfigOutcomeCallable AlbClient::updateLoadBalancerAddressTypeConfigCallable(const UpdateLoadBalancerAddressTypeConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateLoadBalancerAddressTypeConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->updateLoadBalancerAddressTypeConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AlbClient::UpdateLoadBalancerAttributeOutcome AlbClient::updateLoadBalancerAttribute(const UpdateLoadBalancerAttributeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
