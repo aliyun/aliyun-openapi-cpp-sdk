@@ -14,36 +14,34 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/dypnsapi/model/TwiceTelVerifyResult.h>
+#include <alibabacloud/dypnsapi/model/GetAuthorizationUrlResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Dypnsapi;
 using namespace AlibabaCloud::Dypnsapi::Model;
 
-TwiceTelVerifyResult::TwiceTelVerifyResult() :
+GetAuthorizationUrlResult::GetAuthorizationUrlResult() :
 	ServiceResult()
 {}
 
-TwiceTelVerifyResult::TwiceTelVerifyResult(const std::string &payload) :
+GetAuthorizationUrlResult::GetAuthorizationUrlResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-TwiceTelVerifyResult::~TwiceTelVerifyResult()
+GetAuthorizationUrlResult::~GetAuthorizationUrlResult()
 {}
 
-void TwiceTelVerifyResult::parse(const std::string &payload)
+void GetAuthorizationUrlResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto twiceTelVerifyResultNode = value["TwiceTelVerifyResult"];
-	if(!twiceTelVerifyResultNode["Carrier"].isNull())
-		result_.carrier = twiceTelVerifyResultNode["Carrier"].asString();
-	if(!twiceTelVerifyResultNode["VerifyResult"].isNull())
-		result_.verifyResult = std::stoi(twiceTelVerifyResultNode["VerifyResult"].asString());
+	auto dataNode = value["Data"];
+	if(!dataNode["AuthorizationUrl"].isNull())
+		data_.authorizationUrl = dataNode["AuthorizationUrl"].asString();
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
@@ -51,17 +49,17 @@ void TwiceTelVerifyResult::parse(const std::string &payload)
 
 }
 
-std::string TwiceTelVerifyResult::getMessage()const
+std::string GetAuthorizationUrlResult::getMessage()const
 {
 	return message_;
 }
 
-TwiceTelVerifyResult::Result TwiceTelVerifyResult::getTwiceTelVerifyResult()const
+GetAuthorizationUrlResult::Data GetAuthorizationUrlResult::getData()const
 {
-	return twiceTelVerifyResult_;
+	return data_;
 }
 
-std::string TwiceTelVerifyResult::getCode()const
+std::string GetAuthorizationUrlResult::getCode()const
 {
 	return code_;
 }

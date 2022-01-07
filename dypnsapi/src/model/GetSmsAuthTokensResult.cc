@@ -14,36 +14,42 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/dypnsapi/model/VerifyPhoneWithTokenResult.h>
+#include <alibabacloud/dypnsapi/model/GetSmsAuthTokensResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Dypnsapi;
 using namespace AlibabaCloud::Dypnsapi::Model;
 
-VerifyPhoneWithTokenResult::VerifyPhoneWithTokenResult() :
+GetSmsAuthTokensResult::GetSmsAuthTokensResult() :
 	ServiceResult()
 {}
 
-VerifyPhoneWithTokenResult::VerifyPhoneWithTokenResult(const std::string &payload) :
+GetSmsAuthTokensResult::GetSmsAuthTokensResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-VerifyPhoneWithTokenResult::~VerifyPhoneWithTokenResult()
+GetSmsAuthTokensResult::~GetSmsAuthTokensResult()
 {}
 
-void VerifyPhoneWithTokenResult::parse(const std::string &payload)
+void GetSmsAuthTokensResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto gateVerifyNode = value["GateVerify"];
-	if(!gateVerifyNode["VerifyResult"].isNull())
-		gateVerify_.verifyResult = gateVerifyNode["VerifyResult"].asString();
-	if(!gateVerifyNode["VerifyId"].isNull())
-		gateVerify_.verifyId = gateVerifyNode["VerifyId"].asString();
+	auto dataNode = value["Data"];
+	if(!dataNode["BizToken"].isNull())
+		data_.bizToken = dataNode["BizToken"].asString();
+	if(!dataNode["StsAccessKeySecret"].isNull())
+		data_.stsAccessKeySecret = dataNode["StsAccessKeySecret"].asString();
+	if(!dataNode["StsAccessKeyId"].isNull())
+		data_.stsAccessKeyId = dataNode["StsAccessKeyId"].asString();
+	if(!dataNode["ExpireTime"].isNull())
+		data_.expireTime = std::stol(dataNode["ExpireTime"].asString());
+	if(!dataNode["StsToken"].isNull())
+		data_.stsToken = dataNode["StsToken"].asString();
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
@@ -51,17 +57,17 @@ void VerifyPhoneWithTokenResult::parse(const std::string &payload)
 
 }
 
-std::string VerifyPhoneWithTokenResult::getMessage()const
+std::string GetSmsAuthTokensResult::getMessage()const
 {
 	return message_;
 }
 
-VerifyPhoneWithTokenResult::GateVerify VerifyPhoneWithTokenResult::getGateVerify()const
+GetSmsAuthTokensResult::Data GetSmsAuthTokensResult::getData()const
 {
-	return gateVerify_;
+	return data_;
 }
 
-std::string VerifyPhoneWithTokenResult::getCode()const
+std::string GetSmsAuthTokensResult::getCode()const
 {
 	return code_;
 }

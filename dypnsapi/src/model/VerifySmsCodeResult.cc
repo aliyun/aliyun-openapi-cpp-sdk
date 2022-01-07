@@ -14,54 +14,51 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/dypnsapi/model/VerifyPhoneWithTokenResult.h>
+#include <alibabacloud/dypnsapi/model/VerifySmsCodeResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Dypnsapi;
 using namespace AlibabaCloud::Dypnsapi::Model;
 
-VerifyPhoneWithTokenResult::VerifyPhoneWithTokenResult() :
+VerifySmsCodeResult::VerifySmsCodeResult() :
 	ServiceResult()
 {}
 
-VerifyPhoneWithTokenResult::VerifyPhoneWithTokenResult(const std::string &payload) :
+VerifySmsCodeResult::VerifySmsCodeResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-VerifyPhoneWithTokenResult::~VerifyPhoneWithTokenResult()
+VerifySmsCodeResult::~VerifySmsCodeResult()
 {}
 
-void VerifyPhoneWithTokenResult::parse(const std::string &payload)
+void VerifySmsCodeResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto gateVerifyNode = value["GateVerify"];
-	if(!gateVerifyNode["VerifyResult"].isNull())
-		gateVerify_.verifyResult = gateVerifyNode["VerifyResult"].asString();
-	if(!gateVerifyNode["VerifyId"].isNull())
-		gateVerify_.verifyId = gateVerifyNode["VerifyId"].asString();
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Data"].isNull())
+		data_ = value["Data"].asString() == "true";
 
 }
 
-std::string VerifyPhoneWithTokenResult::getMessage()const
+std::string VerifySmsCodeResult::getMessage()const
 {
 	return message_;
 }
 
-VerifyPhoneWithTokenResult::GateVerify VerifyPhoneWithTokenResult::getGateVerify()const
+bool VerifySmsCodeResult::getData()const
 {
-	return gateVerify_;
+	return data_;
 }
 
-std::string VerifyPhoneWithTokenResult::getCode()const
+std::string VerifySmsCodeResult::getCode()const
 {
 	return code_;
 }

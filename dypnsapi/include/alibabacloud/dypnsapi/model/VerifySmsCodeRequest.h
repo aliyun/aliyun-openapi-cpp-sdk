@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DYPNSAPI_MODEL_TWICETELVERIFYREQUEST_H_
-#define ALIBABACLOUD_DYPNSAPI_MODEL_TWICETELVERIFYREQUEST_H_
+#ifndef ALIBABACLOUD_DYPNSAPI_MODEL_VERIFYSMSCODEREQUEST_H_
+#define ALIBABACLOUD_DYPNSAPI_MODEL_VERIFYSMSCODEREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,36 +28,42 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DYPNSAPI_EXPORT TwiceTelVerifyRequest : public RpcServiceRequest
+			class ALIBABACLOUD_DYPNSAPI_EXPORT VerifySmsCodeRequest : public RpcServiceRequest
 			{
 
 			public:
-				TwiceTelVerifyRequest();
-				~TwiceTelVerifyRequest();
+				VerifySmsCodeRequest();
+				~VerifySmsCodeRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getProductCode()const;
+				void setProductCode(const std::string& productCode);
+				std::string getSmsToken()const;
+				void setSmsToken(const std::string& smsToken);
 				std::string getPhoneNumber()const;
 				void setPhoneNumber(const std::string& phoneNumber);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getSince()const;
-				void setSince(const std::string& since);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				std::string getSmsCode()const;
+				void setSmsCode(const std::string& smsCode);
 
             private:
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
+				std::string productCode_;
+				std::string smsToken_;
 				std::string phoneNumber_;
-				long ownerId_;
 				std::string accessKeyId_;
-				std::string since_;
+				std::string resourceOwnerAccount_;
+				long ownerId_;
+				std::string smsCode_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DYPNSAPI_MODEL_TWICETELVERIFYREQUEST_H_
+#endif // !ALIBABACLOUD_DYPNSAPI_MODEL_VERIFYSMSCODEREQUEST_H_

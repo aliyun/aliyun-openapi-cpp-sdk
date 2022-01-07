@@ -29,14 +29,24 @@ set(dypnsapi_public_header_model
 	include/alibabacloud/dypnsapi/model/DescribeVerifySchemeResult.h
 	include/alibabacloud/dypnsapi/model/GetAuthTokenRequest.h
 	include/alibabacloud/dypnsapi/model/GetAuthTokenResult.h
+	include/alibabacloud/dypnsapi/model/GetAuthorizationUrlRequest.h
+	include/alibabacloud/dypnsapi/model/GetAuthorizationUrlResult.h
+	include/alibabacloud/dypnsapi/model/GetCertifyResultRequest.h
+	include/alibabacloud/dypnsapi/model/GetCertifyResultResult.h
 	include/alibabacloud/dypnsapi/model/GetMobileRequest.h
 	include/alibabacloud/dypnsapi/model/GetMobileResult.h
-	include/alibabacloud/dypnsapi/model/TwiceTelVerifyRequest.h
-	include/alibabacloud/dypnsapi/model/TwiceTelVerifyResult.h
+	include/alibabacloud/dypnsapi/model/GetSmsAuthTokensRequest.h
+	include/alibabacloud/dypnsapi/model/GetSmsAuthTokensResult.h
+	include/alibabacloud/dypnsapi/model/QueryGateVerifyBillingPublicRequest.h
+	include/alibabacloud/dypnsapi/model/QueryGateVerifyBillingPublicResult.h
+	include/alibabacloud/dypnsapi/model/QueryGateVerifyStatisticPublicRequest.h
+	include/alibabacloud/dypnsapi/model/QueryGateVerifyStatisticPublicResult.h
 	include/alibabacloud/dypnsapi/model/VerifyMobileRequest.h
 	include/alibabacloud/dypnsapi/model/VerifyMobileResult.h
 	include/alibabacloud/dypnsapi/model/VerifyPhoneWithTokenRequest.h
-	include/alibabacloud/dypnsapi/model/VerifyPhoneWithTokenResult.h )
+	include/alibabacloud/dypnsapi/model/VerifyPhoneWithTokenResult.h
+	include/alibabacloud/dypnsapi/model/VerifySmsCodeRequest.h
+	include/alibabacloud/dypnsapi/model/VerifySmsCodeResult.h )
 
 set(dypnsapi_src 
 	src/DypnsapiClient.cc
@@ -48,14 +58,24 @@ set(dypnsapi_src
 	src/model/DescribeVerifySchemeResult.cc
 	src/model/GetAuthTokenRequest.cc
 	src/model/GetAuthTokenResult.cc
+	src/model/GetAuthorizationUrlRequest.cc
+	src/model/GetAuthorizationUrlResult.cc
+	src/model/GetCertifyResultRequest.cc
+	src/model/GetCertifyResultResult.cc
 	src/model/GetMobileRequest.cc
 	src/model/GetMobileResult.cc
-	src/model/TwiceTelVerifyRequest.cc
-	src/model/TwiceTelVerifyResult.cc
+	src/model/GetSmsAuthTokensRequest.cc
+	src/model/GetSmsAuthTokensResult.cc
+	src/model/QueryGateVerifyBillingPublicRequest.cc
+	src/model/QueryGateVerifyBillingPublicResult.cc
+	src/model/QueryGateVerifyStatisticPublicRequest.cc
+	src/model/QueryGateVerifyStatisticPublicResult.cc
 	src/model/VerifyMobileRequest.cc
 	src/model/VerifyMobileResult.cc
 	src/model/VerifyPhoneWithTokenRequest.cc
-	src/model/VerifyPhoneWithTokenResult.cc )
+	src/model/VerifyPhoneWithTokenResult.cc
+	src/model/VerifySmsCodeRequest.cc
+	src/model/VerifySmsCodeResult.cc )
 
 add_library(dypnsapi ${LIB_TYPE}
 	${dypnsapi_public_header}

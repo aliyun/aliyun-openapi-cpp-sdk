@@ -30,14 +30,24 @@
 #include "model/DescribeVerifySchemeResult.h"
 #include "model/GetAuthTokenRequest.h"
 #include "model/GetAuthTokenResult.h"
+#include "model/GetAuthorizationUrlRequest.h"
+#include "model/GetAuthorizationUrlResult.h"
+#include "model/GetCertifyResultRequest.h"
+#include "model/GetCertifyResultResult.h"
 #include "model/GetMobileRequest.h"
 #include "model/GetMobileResult.h"
-#include "model/TwiceTelVerifyRequest.h"
-#include "model/TwiceTelVerifyResult.h"
+#include "model/GetSmsAuthTokensRequest.h"
+#include "model/GetSmsAuthTokensResult.h"
+#include "model/QueryGateVerifyBillingPublicRequest.h"
+#include "model/QueryGateVerifyBillingPublicResult.h"
+#include "model/QueryGateVerifyStatisticPublicRequest.h"
+#include "model/QueryGateVerifyStatisticPublicResult.h"
 #include "model/VerifyMobileRequest.h"
 #include "model/VerifyMobileResult.h"
 #include "model/VerifyPhoneWithTokenRequest.h"
 #include "model/VerifyPhoneWithTokenResult.h"
+#include "model/VerifySmsCodeRequest.h"
+#include "model/VerifySmsCodeResult.h"
 
 
 namespace AlibabaCloud
@@ -59,18 +69,33 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetAuthTokenResult> GetAuthTokenOutcome;
 			typedef std::future<GetAuthTokenOutcome> GetAuthTokenOutcomeCallable;
 			typedef std::function<void(const DypnsapiClient*, const Model::GetAuthTokenRequest&, const GetAuthTokenOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAuthTokenAsyncHandler;
+			typedef Outcome<Error, Model::GetAuthorizationUrlResult> GetAuthorizationUrlOutcome;
+			typedef std::future<GetAuthorizationUrlOutcome> GetAuthorizationUrlOutcomeCallable;
+			typedef std::function<void(const DypnsapiClient*, const Model::GetAuthorizationUrlRequest&, const GetAuthorizationUrlOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAuthorizationUrlAsyncHandler;
+			typedef Outcome<Error, Model::GetCertifyResultResult> GetCertifyResultOutcome;
+			typedef std::future<GetCertifyResultOutcome> GetCertifyResultOutcomeCallable;
+			typedef std::function<void(const DypnsapiClient*, const Model::GetCertifyResultRequest&, const GetCertifyResultOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetCertifyResultAsyncHandler;
 			typedef Outcome<Error, Model::GetMobileResult> GetMobileOutcome;
 			typedef std::future<GetMobileOutcome> GetMobileOutcomeCallable;
 			typedef std::function<void(const DypnsapiClient*, const Model::GetMobileRequest&, const GetMobileOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetMobileAsyncHandler;
-			typedef Outcome<Error, Model::TwiceTelVerifyResult> TwiceTelVerifyOutcome;
-			typedef std::future<TwiceTelVerifyOutcome> TwiceTelVerifyOutcomeCallable;
-			typedef std::function<void(const DypnsapiClient*, const Model::TwiceTelVerifyRequest&, const TwiceTelVerifyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TwiceTelVerifyAsyncHandler;
+			typedef Outcome<Error, Model::GetSmsAuthTokensResult> GetSmsAuthTokensOutcome;
+			typedef std::future<GetSmsAuthTokensOutcome> GetSmsAuthTokensOutcomeCallable;
+			typedef std::function<void(const DypnsapiClient*, const Model::GetSmsAuthTokensRequest&, const GetSmsAuthTokensOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetSmsAuthTokensAsyncHandler;
+			typedef Outcome<Error, Model::QueryGateVerifyBillingPublicResult> QueryGateVerifyBillingPublicOutcome;
+			typedef std::future<QueryGateVerifyBillingPublicOutcome> QueryGateVerifyBillingPublicOutcomeCallable;
+			typedef std::function<void(const DypnsapiClient*, const Model::QueryGateVerifyBillingPublicRequest&, const QueryGateVerifyBillingPublicOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryGateVerifyBillingPublicAsyncHandler;
+			typedef Outcome<Error, Model::QueryGateVerifyStatisticPublicResult> QueryGateVerifyStatisticPublicOutcome;
+			typedef std::future<QueryGateVerifyStatisticPublicOutcome> QueryGateVerifyStatisticPublicOutcomeCallable;
+			typedef std::function<void(const DypnsapiClient*, const Model::QueryGateVerifyStatisticPublicRequest&, const QueryGateVerifyStatisticPublicOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryGateVerifyStatisticPublicAsyncHandler;
 			typedef Outcome<Error, Model::VerifyMobileResult> VerifyMobileOutcome;
 			typedef std::future<VerifyMobileOutcome> VerifyMobileOutcomeCallable;
 			typedef std::function<void(const DypnsapiClient*, const Model::VerifyMobileRequest&, const VerifyMobileOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> VerifyMobileAsyncHandler;
 			typedef Outcome<Error, Model::VerifyPhoneWithTokenResult> VerifyPhoneWithTokenOutcome;
 			typedef std::future<VerifyPhoneWithTokenOutcome> VerifyPhoneWithTokenOutcomeCallable;
 			typedef std::function<void(const DypnsapiClient*, const Model::VerifyPhoneWithTokenRequest&, const VerifyPhoneWithTokenOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> VerifyPhoneWithTokenAsyncHandler;
+			typedef Outcome<Error, Model::VerifySmsCodeResult> VerifySmsCodeOutcome;
+			typedef std::future<VerifySmsCodeOutcome> VerifySmsCodeOutcomeCallable;
+			typedef std::function<void(const DypnsapiClient*, const Model::VerifySmsCodeRequest&, const VerifySmsCodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> VerifySmsCodeAsyncHandler;
 
 			DypnsapiClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			DypnsapiClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
@@ -88,18 +113,33 @@ namespace AlibabaCloud
 			GetAuthTokenOutcome getAuthToken(const Model::GetAuthTokenRequest &request)const;
 			void getAuthTokenAsync(const Model::GetAuthTokenRequest& request, const GetAuthTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetAuthTokenOutcomeCallable getAuthTokenCallable(const Model::GetAuthTokenRequest& request) const;
+			GetAuthorizationUrlOutcome getAuthorizationUrl(const Model::GetAuthorizationUrlRequest &request)const;
+			void getAuthorizationUrlAsync(const Model::GetAuthorizationUrlRequest& request, const GetAuthorizationUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetAuthorizationUrlOutcomeCallable getAuthorizationUrlCallable(const Model::GetAuthorizationUrlRequest& request) const;
+			GetCertifyResultOutcome getCertifyResult(const Model::GetCertifyResultRequest &request)const;
+			void getCertifyResultAsync(const Model::GetCertifyResultRequest& request, const GetCertifyResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetCertifyResultOutcomeCallable getCertifyResultCallable(const Model::GetCertifyResultRequest& request) const;
 			GetMobileOutcome getMobile(const Model::GetMobileRequest &request)const;
 			void getMobileAsync(const Model::GetMobileRequest& request, const GetMobileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetMobileOutcomeCallable getMobileCallable(const Model::GetMobileRequest& request) const;
-			TwiceTelVerifyOutcome twiceTelVerify(const Model::TwiceTelVerifyRequest &request)const;
-			void twiceTelVerifyAsync(const Model::TwiceTelVerifyRequest& request, const TwiceTelVerifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			TwiceTelVerifyOutcomeCallable twiceTelVerifyCallable(const Model::TwiceTelVerifyRequest& request) const;
+			GetSmsAuthTokensOutcome getSmsAuthTokens(const Model::GetSmsAuthTokensRequest &request)const;
+			void getSmsAuthTokensAsync(const Model::GetSmsAuthTokensRequest& request, const GetSmsAuthTokensAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetSmsAuthTokensOutcomeCallable getSmsAuthTokensCallable(const Model::GetSmsAuthTokensRequest& request) const;
+			QueryGateVerifyBillingPublicOutcome queryGateVerifyBillingPublic(const Model::QueryGateVerifyBillingPublicRequest &request)const;
+			void queryGateVerifyBillingPublicAsync(const Model::QueryGateVerifyBillingPublicRequest& request, const QueryGateVerifyBillingPublicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryGateVerifyBillingPublicOutcomeCallable queryGateVerifyBillingPublicCallable(const Model::QueryGateVerifyBillingPublicRequest& request) const;
+			QueryGateVerifyStatisticPublicOutcome queryGateVerifyStatisticPublic(const Model::QueryGateVerifyStatisticPublicRequest &request)const;
+			void queryGateVerifyStatisticPublicAsync(const Model::QueryGateVerifyStatisticPublicRequest& request, const QueryGateVerifyStatisticPublicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryGateVerifyStatisticPublicOutcomeCallable queryGateVerifyStatisticPublicCallable(const Model::QueryGateVerifyStatisticPublicRequest& request) const;
 			VerifyMobileOutcome verifyMobile(const Model::VerifyMobileRequest &request)const;
 			void verifyMobileAsync(const Model::VerifyMobileRequest& request, const VerifyMobileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			VerifyMobileOutcomeCallable verifyMobileCallable(const Model::VerifyMobileRequest& request) const;
 			VerifyPhoneWithTokenOutcome verifyPhoneWithToken(const Model::VerifyPhoneWithTokenRequest &request)const;
 			void verifyPhoneWithTokenAsync(const Model::VerifyPhoneWithTokenRequest& request, const VerifyPhoneWithTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			VerifyPhoneWithTokenOutcomeCallable verifyPhoneWithTokenCallable(const Model::VerifyPhoneWithTokenRequest& request) const;
+			VerifySmsCodeOutcome verifySmsCode(const Model::VerifySmsCodeRequest &request)const;
+			void verifySmsCodeAsync(const Model::VerifySmsCodeRequest& request, const VerifySmsCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			VerifySmsCodeOutcomeCallable verifySmsCodeCallable(const Model::VerifySmsCodeRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;
