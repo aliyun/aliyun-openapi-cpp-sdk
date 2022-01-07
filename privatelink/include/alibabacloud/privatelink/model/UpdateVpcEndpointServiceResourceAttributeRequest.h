@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_PRIVATELINK_MODEL_DETACHRESOURCEFROMVPCENDPOINTSERVICEREQUEST_H_
-#define ALIBABACLOUD_PRIVATELINK_MODEL_DETACHRESOURCEFROMVPCENDPOINTSERVICEREQUEST_H_
+#ifndef ALIBABACLOUD_PRIVATELINK_MODEL_UPDATEVPCENDPOINTSERVICERESOURCEATTRIBUTEREQUEST_H_
+#define ALIBABACLOUD_PRIVATELINK_MODEL_UPDATEVPCENDPOINTSERVICERESOURCEATTRIBUTEREQUEST_H_
 
 #include <alibabacloud/privatelink/PrivatelinkExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,14 +26,16 @@
 namespace AlibabaCloud {
 namespace Privatelink {
 namespace Model {
-class ALIBABACLOUD_PRIVATELINK_EXPORT DetachResourceFromVpcEndpointServiceRequest : public RpcServiceRequest {
+class ALIBABACLOUD_PRIVATELINK_EXPORT UpdateVpcEndpointServiceResourceAttributeRequest : public RpcServiceRequest {
 public:
-	DetachResourceFromVpcEndpointServiceRequest();
-	~DetachResourceFromVpcEndpointServiceRequest();
+	UpdateVpcEndpointServiceResourceAttributeRequest();
+	~UpdateVpcEndpointServiceResourceAttributeRequest();
 	std::string getClientToken() const;
 	void setClientToken(const std::string &clientToken);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	bool getAutoAllocatedEnabled() const;
+	void setAutoAllocatedEnabled(bool autoAllocatedEnabled);
 	std::string getResourceId() const;
 	void setResourceId(const std::string &resourceId);
 	bool getDryRun() const;
@@ -48,6 +50,7 @@ public:
 private:
 	std::string clientToken_;
 	std::string regionId_;
+	bool autoAllocatedEnabled_;
 	std::string resourceId_;
 	bool dryRun_;
 	std::string resourceType_;
@@ -57,4 +60,4 @@ private:
 } // namespace Model
 } // namespace Privatelink
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_PRIVATELINK_MODEL_DETACHRESOURCEFROMVPCENDPOINTSERVICEREQUEST_H_
+#endif // !ALIBABACLOUD_PRIVATELINK_MODEL_UPDATEVPCENDPOINTSERVICERESOURCEATTRIBUTEREQUEST_H_

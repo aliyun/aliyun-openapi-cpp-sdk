@@ -48,6 +48,8 @@ public:
 	void setMaxResults(int maxResults);
 	std::string getEniId() const;
 	void setEniId(const std::string &eniId);
+	std::string getZoneId() const;
+	void setZoneId(const std::string &zoneId);
 	std::string getServiceId() const;
 	void setServiceId(const std::string &serviceId);
 
@@ -61,6 +63,7 @@ private:
 	std::string connectionStatus_;
 	int maxResults_;
 	std::string eniId_;
+	std::string zoneId_;
 	std::string serviceId_;
 };
 } // namespace Model

@@ -106,6 +106,15 @@ void ListVpcEndpointConnectionsRequest::setEniId(const std::string &eniId) {
   setParameter(std::string("EniId"), eniId);
 }
 
+std::string ListVpcEndpointConnectionsRequest::getZoneId() const {
+  return zoneId_;
+}
+
+void ListVpcEndpointConnectionsRequest::setZoneId(const std::string &zoneId) {
+  zoneId_ = zoneId;
+  setParameter(std::string("ZoneId"), zoneId);
+}
+
 std::string ListVpcEndpointConnectionsRequest::getServiceId() const {
   return serviceId_;
 }

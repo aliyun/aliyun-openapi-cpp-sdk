@@ -31,6 +31,7 @@ public:
 	struct Resource {
 		std::string resourceType;
 		std::string resourceId;
+		std::string zoneId;
 	};
 	CreateVpcEndpointServiceRequest();
 	~CreateVpcEndpointServiceRequest();

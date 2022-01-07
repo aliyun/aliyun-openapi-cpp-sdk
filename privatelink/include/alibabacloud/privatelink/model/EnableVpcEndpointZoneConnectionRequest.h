@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_PRIVATELINK_MODEL_DETACHRESOURCEFROMVPCENDPOINTSERVICEREQUEST_H_
-#define ALIBABACLOUD_PRIVATELINK_MODEL_DETACHRESOURCEFROMVPCENDPOINTSERVICEREQUEST_H_
+#ifndef ALIBABACLOUD_PRIVATELINK_MODEL_ENABLEVPCENDPOINTZONECONNECTIONREQUEST_H_
+#define ALIBABACLOUD_PRIVATELINK_MODEL_ENABLEVPCENDPOINTZONECONNECTIONREQUEST_H_
 
 #include <alibabacloud/privatelink/PrivatelinkExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,20 +26,18 @@
 namespace AlibabaCloud {
 namespace Privatelink {
 namespace Model {
-class ALIBABACLOUD_PRIVATELINK_EXPORT DetachResourceFromVpcEndpointServiceRequest : public RpcServiceRequest {
+class ALIBABACLOUD_PRIVATELINK_EXPORT EnableVpcEndpointZoneConnectionRequest : public RpcServiceRequest {
 public:
-	DetachResourceFromVpcEndpointServiceRequest();
-	~DetachResourceFromVpcEndpointServiceRequest();
+	EnableVpcEndpointZoneConnectionRequest();
+	~EnableVpcEndpointZoneConnectionRequest();
 	std::string getClientToken() const;
 	void setClientToken(const std::string &clientToken);
+	std::string getEndpointId() const;
+	void setEndpointId(const std::string &endpointId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
-	std::string getResourceId() const;
-	void setResourceId(const std::string &resourceId);
 	bool getDryRun() const;
 	void setDryRun(bool dryRun);
-	std::string getResourceType() const;
-	void setResourceType(const std::string &resourceType);
 	std::string getZoneId() const;
 	void setZoneId(const std::string &zoneId);
 	std::string getServiceId() const;
@@ -47,14 +45,13 @@ public:
 
 private:
 	std::string clientToken_;
+	std::string endpointId_;
 	std::string regionId_;
-	std::string resourceId_;
 	bool dryRun_;
-	std::string resourceType_;
 	std::string zoneId_;
 	std::string serviceId_;
 };
 } // namespace Model
 } // namespace Privatelink
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_PRIVATELINK_MODEL_DETACHRESOURCEFROMVPCENDPOINTSERVICEREQUEST_H_
+#endif // !ALIBABACLOUD_PRIVATELINK_MODEL_ENABLEVPCENDPOINTZONECONNECTIONREQUEST_H_

@@ -49,8 +49,12 @@ set(privatelink_public_header_model
 	include/alibabacloud/privatelink/model/DetachSecurityGroupFromVpcEndpointResult.h
 	include/alibabacloud/privatelink/model/DisableVpcEndpointConnectionRequest.h
 	include/alibabacloud/privatelink/model/DisableVpcEndpointConnectionResult.h
+	include/alibabacloud/privatelink/model/DisableVpcEndpointZoneConnectionRequest.h
+	include/alibabacloud/privatelink/model/DisableVpcEndpointZoneConnectionResult.h
 	include/alibabacloud/privatelink/model/EnableVpcEndpointConnectionRequest.h
 	include/alibabacloud/privatelink/model/EnableVpcEndpointConnectionResult.h
+	include/alibabacloud/privatelink/model/EnableVpcEndpointZoneConnectionRequest.h
+	include/alibabacloud/privatelink/model/EnableVpcEndpointZoneConnectionResult.h
 	include/alibabacloud/privatelink/model/GetVpcEndpointAttributeRequest.h
 	include/alibabacloud/privatelink/model/GetVpcEndpointAttributeResult.h
 	include/alibabacloud/privatelink/model/GetVpcEndpointServiceAttributeRequest.h
@@ -82,7 +86,11 @@ set(privatelink_public_header_model
 	include/alibabacloud/privatelink/model/UpdateVpcEndpointConnectionAttributeRequest.h
 	include/alibabacloud/privatelink/model/UpdateVpcEndpointConnectionAttributeResult.h
 	include/alibabacloud/privatelink/model/UpdateVpcEndpointServiceAttributeRequest.h
-	include/alibabacloud/privatelink/model/UpdateVpcEndpointServiceAttributeResult.h )
+	include/alibabacloud/privatelink/model/UpdateVpcEndpointServiceAttributeResult.h
+	include/alibabacloud/privatelink/model/UpdateVpcEndpointServiceResourceAttributeRequest.h
+	include/alibabacloud/privatelink/model/UpdateVpcEndpointServiceResourceAttributeResult.h
+	include/alibabacloud/privatelink/model/UpdateVpcEndpointZoneConnectionResourceAttributeRequest.h
+	include/alibabacloud/privatelink/model/UpdateVpcEndpointZoneConnectionResourceAttributeResult.h )
 
 set(privatelink_src 
 	src/PrivatelinkClient.cc
@@ -114,8 +122,12 @@ set(privatelink_src
 	src/model/DetachSecurityGroupFromVpcEndpointResult.cc
 	src/model/DisableVpcEndpointConnectionRequest.cc
 	src/model/DisableVpcEndpointConnectionResult.cc
+	src/model/DisableVpcEndpointZoneConnectionRequest.cc
+	src/model/DisableVpcEndpointZoneConnectionResult.cc
 	src/model/EnableVpcEndpointConnectionRequest.cc
 	src/model/EnableVpcEndpointConnectionResult.cc
+	src/model/EnableVpcEndpointZoneConnectionRequest.cc
+	src/model/EnableVpcEndpointZoneConnectionResult.cc
 	src/model/GetVpcEndpointAttributeRequest.cc
 	src/model/GetVpcEndpointAttributeResult.cc
 	src/model/GetVpcEndpointServiceAttributeRequest.cc
@@ -147,7 +159,11 @@ set(privatelink_src
 	src/model/UpdateVpcEndpointConnectionAttributeRequest.cc
 	src/model/UpdateVpcEndpointConnectionAttributeResult.cc
 	src/model/UpdateVpcEndpointServiceAttributeRequest.cc
-	src/model/UpdateVpcEndpointServiceAttributeResult.cc )
+	src/model/UpdateVpcEndpointServiceAttributeResult.cc
+	src/model/UpdateVpcEndpointServiceResourceAttributeRequest.cc
+	src/model/UpdateVpcEndpointServiceResourceAttributeResult.cc
+	src/model/UpdateVpcEndpointZoneConnectionResourceAttributeRequest.cc
+	src/model/UpdateVpcEndpointZoneConnectionResourceAttributeResult.cc )
 
 add_library(privatelink ${LIB_TYPE}
 	${privatelink_public_header}

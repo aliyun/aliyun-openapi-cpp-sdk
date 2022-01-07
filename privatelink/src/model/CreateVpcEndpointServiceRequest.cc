@@ -108,6 +108,7 @@ void CreateVpcEndpointServiceRequest::setResource(const std::vector<CreateVpcEnd
   std::string resourceObjStr = std::string("Resource") + "." + std::to_string(dep1 + 1);
     setParameter(resourceObjStr + ".ResourceType", resourceObj.resourceType);
     setParameter(resourceObjStr + ".ResourceId", resourceObj.resourceId);
+    setParameter(resourceObjStr + ".ZoneId", resourceObj.zoneId);
   }
 }
 

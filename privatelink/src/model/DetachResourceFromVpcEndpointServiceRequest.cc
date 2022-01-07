@@ -70,6 +70,15 @@ void DetachResourceFromVpcEndpointServiceRequest::setResourceType(const std::str
   setParameter(std::string("ResourceType"), resourceType);
 }
 
+std::string DetachResourceFromVpcEndpointServiceRequest::getZoneId() const {
+  return zoneId_;
+}
+
+void DetachResourceFromVpcEndpointServiceRequest::setZoneId(const std::string &zoneId) {
+  zoneId_ = zoneId;
+  setParameter(std::string("ZoneId"), zoneId);
+}
+
 std::string DetachResourceFromVpcEndpointServiceRequest::getServiceId() const {
   return serviceId_;
 }

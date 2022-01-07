@@ -40,6 +40,8 @@ public:
 	void setDryRun(bool dryRun);
 	std::string getResourceType() const;
 	void setResourceType(const std::string &resourceType);
+	std::string getZoneId() const;
+	void setZoneId(const std::string &zoneId);
 	std::string getServiceId() const;
 	void setServiceId(const std::string &serviceId);
 
@@ -49,6 +51,7 @@ private:
 	std::string resourceId_;
 	bool dryRun_;
 	std::string resourceType_;
+	std::string zoneId_;
 	std::string serviceId_;
 };
 } // namespace Model

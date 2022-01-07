@@ -70,6 +70,15 @@ void AttachResourceToVpcEndpointServiceRequest::setResourceType(const std::strin
   setParameter(std::string("ResourceType"), resourceType);
 }
 
+std::string AttachResourceToVpcEndpointServiceRequest::getZoneId() const {
+  return zoneId_;
+}
+
+void AttachResourceToVpcEndpointServiceRequest::setZoneId(const std::string &zoneId) {
+  zoneId_ = zoneId;
+  setParameter(std::string("ZoneId"), zoneId);
+}
+
 std::string AttachResourceToVpcEndpointServiceRequest::getServiceId() const {
   return serviceId_;
 }

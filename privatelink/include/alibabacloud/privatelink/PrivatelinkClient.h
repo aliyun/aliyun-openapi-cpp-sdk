@@ -50,8 +50,12 @@
 #include "model/DetachSecurityGroupFromVpcEndpointResult.h"
 #include "model/DisableVpcEndpointConnectionRequest.h"
 #include "model/DisableVpcEndpointConnectionResult.h"
+#include "model/DisableVpcEndpointZoneConnectionRequest.h"
+#include "model/DisableVpcEndpointZoneConnectionResult.h"
 #include "model/EnableVpcEndpointConnectionRequest.h"
 #include "model/EnableVpcEndpointConnectionResult.h"
+#include "model/EnableVpcEndpointZoneConnectionRequest.h"
+#include "model/EnableVpcEndpointZoneConnectionResult.h"
 #include "model/GetVpcEndpointAttributeRequest.h"
 #include "model/GetVpcEndpointAttributeResult.h"
 #include "model/GetVpcEndpointServiceAttributeRequest.h"
@@ -84,6 +88,10 @@
 #include "model/UpdateVpcEndpointConnectionAttributeResult.h"
 #include "model/UpdateVpcEndpointServiceAttributeRequest.h"
 #include "model/UpdateVpcEndpointServiceAttributeResult.h"
+#include "model/UpdateVpcEndpointServiceResourceAttributeRequest.h"
+#include "model/UpdateVpcEndpointServiceResourceAttributeResult.h"
+#include "model/UpdateVpcEndpointZoneConnectionResourceAttributeRequest.h"
+#include "model/UpdateVpcEndpointZoneConnectionResourceAttributeResult.h"
 
 
 namespace AlibabaCloud
@@ -135,9 +143,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DisableVpcEndpointConnectionResult> DisableVpcEndpointConnectionOutcome;
 			typedef std::future<DisableVpcEndpointConnectionOutcome> DisableVpcEndpointConnectionOutcomeCallable;
 			typedef std::function<void(const PrivatelinkClient*, const Model::DisableVpcEndpointConnectionRequest&, const DisableVpcEndpointConnectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DisableVpcEndpointConnectionAsyncHandler;
+			typedef Outcome<Error, Model::DisableVpcEndpointZoneConnectionResult> DisableVpcEndpointZoneConnectionOutcome;
+			typedef std::future<DisableVpcEndpointZoneConnectionOutcome> DisableVpcEndpointZoneConnectionOutcomeCallable;
+			typedef std::function<void(const PrivatelinkClient*, const Model::DisableVpcEndpointZoneConnectionRequest&, const DisableVpcEndpointZoneConnectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DisableVpcEndpointZoneConnectionAsyncHandler;
 			typedef Outcome<Error, Model::EnableVpcEndpointConnectionResult> EnableVpcEndpointConnectionOutcome;
 			typedef std::future<EnableVpcEndpointConnectionOutcome> EnableVpcEndpointConnectionOutcomeCallable;
 			typedef std::function<void(const PrivatelinkClient*, const Model::EnableVpcEndpointConnectionRequest&, const EnableVpcEndpointConnectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnableVpcEndpointConnectionAsyncHandler;
+			typedef Outcome<Error, Model::EnableVpcEndpointZoneConnectionResult> EnableVpcEndpointZoneConnectionOutcome;
+			typedef std::future<EnableVpcEndpointZoneConnectionOutcome> EnableVpcEndpointZoneConnectionOutcomeCallable;
+			typedef std::function<void(const PrivatelinkClient*, const Model::EnableVpcEndpointZoneConnectionRequest&, const EnableVpcEndpointZoneConnectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnableVpcEndpointZoneConnectionAsyncHandler;
 			typedef Outcome<Error, Model::GetVpcEndpointAttributeResult> GetVpcEndpointAttributeOutcome;
 			typedef std::future<GetVpcEndpointAttributeOutcome> GetVpcEndpointAttributeOutcomeCallable;
 			typedef std::function<void(const PrivatelinkClient*, const Model::GetVpcEndpointAttributeRequest&, const GetVpcEndpointAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetVpcEndpointAttributeAsyncHandler;
@@ -186,6 +200,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateVpcEndpointServiceAttributeResult> UpdateVpcEndpointServiceAttributeOutcome;
 			typedef std::future<UpdateVpcEndpointServiceAttributeOutcome> UpdateVpcEndpointServiceAttributeOutcomeCallable;
 			typedef std::function<void(const PrivatelinkClient*, const Model::UpdateVpcEndpointServiceAttributeRequest&, const UpdateVpcEndpointServiceAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateVpcEndpointServiceAttributeAsyncHandler;
+			typedef Outcome<Error, Model::UpdateVpcEndpointServiceResourceAttributeResult> UpdateVpcEndpointServiceResourceAttributeOutcome;
+			typedef std::future<UpdateVpcEndpointServiceResourceAttributeOutcome> UpdateVpcEndpointServiceResourceAttributeOutcomeCallable;
+			typedef std::function<void(const PrivatelinkClient*, const Model::UpdateVpcEndpointServiceResourceAttributeRequest&, const UpdateVpcEndpointServiceResourceAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateVpcEndpointServiceResourceAttributeAsyncHandler;
+			typedef Outcome<Error, Model::UpdateVpcEndpointZoneConnectionResourceAttributeResult> UpdateVpcEndpointZoneConnectionResourceAttributeOutcome;
+			typedef std::future<UpdateVpcEndpointZoneConnectionResourceAttributeOutcome> UpdateVpcEndpointZoneConnectionResourceAttributeOutcomeCallable;
+			typedef std::function<void(const PrivatelinkClient*, const Model::UpdateVpcEndpointZoneConnectionResourceAttributeRequest&, const UpdateVpcEndpointZoneConnectionResourceAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateVpcEndpointZoneConnectionResourceAttributeAsyncHandler;
 
 			PrivatelinkClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			PrivatelinkClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
@@ -233,9 +253,15 @@ namespace AlibabaCloud
 			DisableVpcEndpointConnectionOutcome disableVpcEndpointConnection(const Model::DisableVpcEndpointConnectionRequest &request)const;
 			void disableVpcEndpointConnectionAsync(const Model::DisableVpcEndpointConnectionRequest& request, const DisableVpcEndpointConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DisableVpcEndpointConnectionOutcomeCallable disableVpcEndpointConnectionCallable(const Model::DisableVpcEndpointConnectionRequest& request) const;
+			DisableVpcEndpointZoneConnectionOutcome disableVpcEndpointZoneConnection(const Model::DisableVpcEndpointZoneConnectionRequest &request)const;
+			void disableVpcEndpointZoneConnectionAsync(const Model::DisableVpcEndpointZoneConnectionRequest& request, const DisableVpcEndpointZoneConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DisableVpcEndpointZoneConnectionOutcomeCallable disableVpcEndpointZoneConnectionCallable(const Model::DisableVpcEndpointZoneConnectionRequest& request) const;
 			EnableVpcEndpointConnectionOutcome enableVpcEndpointConnection(const Model::EnableVpcEndpointConnectionRequest &request)const;
 			void enableVpcEndpointConnectionAsync(const Model::EnableVpcEndpointConnectionRequest& request, const EnableVpcEndpointConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			EnableVpcEndpointConnectionOutcomeCallable enableVpcEndpointConnectionCallable(const Model::EnableVpcEndpointConnectionRequest& request) const;
+			EnableVpcEndpointZoneConnectionOutcome enableVpcEndpointZoneConnection(const Model::EnableVpcEndpointZoneConnectionRequest &request)const;
+			void enableVpcEndpointZoneConnectionAsync(const Model::EnableVpcEndpointZoneConnectionRequest& request, const EnableVpcEndpointZoneConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			EnableVpcEndpointZoneConnectionOutcomeCallable enableVpcEndpointZoneConnectionCallable(const Model::EnableVpcEndpointZoneConnectionRequest& request) const;
 			GetVpcEndpointAttributeOutcome getVpcEndpointAttribute(const Model::GetVpcEndpointAttributeRequest &request)const;
 			void getVpcEndpointAttributeAsync(const Model::GetVpcEndpointAttributeRequest& request, const GetVpcEndpointAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetVpcEndpointAttributeOutcomeCallable getVpcEndpointAttributeCallable(const Model::GetVpcEndpointAttributeRequest& request) const;
@@ -284,6 +310,12 @@ namespace AlibabaCloud
 			UpdateVpcEndpointServiceAttributeOutcome updateVpcEndpointServiceAttribute(const Model::UpdateVpcEndpointServiceAttributeRequest &request)const;
 			void updateVpcEndpointServiceAttributeAsync(const Model::UpdateVpcEndpointServiceAttributeRequest& request, const UpdateVpcEndpointServiceAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateVpcEndpointServiceAttributeOutcomeCallable updateVpcEndpointServiceAttributeCallable(const Model::UpdateVpcEndpointServiceAttributeRequest& request) const;
+			UpdateVpcEndpointServiceResourceAttributeOutcome updateVpcEndpointServiceResourceAttribute(const Model::UpdateVpcEndpointServiceResourceAttributeRequest &request)const;
+			void updateVpcEndpointServiceResourceAttributeAsync(const Model::UpdateVpcEndpointServiceResourceAttributeRequest& request, const UpdateVpcEndpointServiceResourceAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateVpcEndpointServiceResourceAttributeOutcomeCallable updateVpcEndpointServiceResourceAttributeCallable(const Model::UpdateVpcEndpointServiceResourceAttributeRequest& request) const;
+			UpdateVpcEndpointZoneConnectionResourceAttributeOutcome updateVpcEndpointZoneConnectionResourceAttribute(const Model::UpdateVpcEndpointZoneConnectionResourceAttributeRequest &request)const;
+			void updateVpcEndpointZoneConnectionResourceAttributeAsync(const Model::UpdateVpcEndpointZoneConnectionResourceAttributeRequest& request, const UpdateVpcEndpointZoneConnectionResourceAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateVpcEndpointZoneConnectionResourceAttributeOutcomeCallable updateVpcEndpointZoneConnectionResourceAttributeCallable(const Model::UpdateVpcEndpointZoneConnectionResourceAttributeRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

@@ -555,6 +555,42 @@ PrivatelinkClient::DisableVpcEndpointConnectionOutcomeCallable PrivatelinkClient
 	return task->get_future();
 }
 
+PrivatelinkClient::DisableVpcEndpointZoneConnectionOutcome PrivatelinkClient::disableVpcEndpointZoneConnection(const DisableVpcEndpointZoneConnectionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DisableVpcEndpointZoneConnectionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DisableVpcEndpointZoneConnectionOutcome(DisableVpcEndpointZoneConnectionResult(outcome.result()));
+	else
+		return DisableVpcEndpointZoneConnectionOutcome(outcome.error());
+}
+
+void PrivatelinkClient::disableVpcEndpointZoneConnectionAsync(const DisableVpcEndpointZoneConnectionRequest& request, const DisableVpcEndpointZoneConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, disableVpcEndpointZoneConnection(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PrivatelinkClient::DisableVpcEndpointZoneConnectionOutcomeCallable PrivatelinkClient::disableVpcEndpointZoneConnectionCallable(const DisableVpcEndpointZoneConnectionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DisableVpcEndpointZoneConnectionOutcome()>>(
+			[this, request]()
+			{
+			return this->disableVpcEndpointZoneConnection(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 PrivatelinkClient::EnableVpcEndpointConnectionOutcome PrivatelinkClient::enableVpcEndpointConnection(const EnableVpcEndpointConnectionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -585,6 +621,42 @@ PrivatelinkClient::EnableVpcEndpointConnectionOutcomeCallable PrivatelinkClient:
 			[this, request]()
 			{
 			return this->enableVpcEndpointConnection(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+PrivatelinkClient::EnableVpcEndpointZoneConnectionOutcome PrivatelinkClient::enableVpcEndpointZoneConnection(const EnableVpcEndpointZoneConnectionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return EnableVpcEndpointZoneConnectionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return EnableVpcEndpointZoneConnectionOutcome(EnableVpcEndpointZoneConnectionResult(outcome.result()));
+	else
+		return EnableVpcEndpointZoneConnectionOutcome(outcome.error());
+}
+
+void PrivatelinkClient::enableVpcEndpointZoneConnectionAsync(const EnableVpcEndpointZoneConnectionRequest& request, const EnableVpcEndpointZoneConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, enableVpcEndpointZoneConnection(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PrivatelinkClient::EnableVpcEndpointZoneConnectionOutcomeCallable PrivatelinkClient::enableVpcEndpointZoneConnectionCallable(const EnableVpcEndpointZoneConnectionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<EnableVpcEndpointZoneConnectionOutcome()>>(
+			[this, request]()
+			{
+			return this->enableVpcEndpointZoneConnection(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1161,6 +1233,78 @@ PrivatelinkClient::UpdateVpcEndpointServiceAttributeOutcomeCallable PrivatelinkC
 			[this, request]()
 			{
 			return this->updateVpcEndpointServiceAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+PrivatelinkClient::UpdateVpcEndpointServiceResourceAttributeOutcome PrivatelinkClient::updateVpcEndpointServiceResourceAttribute(const UpdateVpcEndpointServiceResourceAttributeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateVpcEndpointServiceResourceAttributeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateVpcEndpointServiceResourceAttributeOutcome(UpdateVpcEndpointServiceResourceAttributeResult(outcome.result()));
+	else
+		return UpdateVpcEndpointServiceResourceAttributeOutcome(outcome.error());
+}
+
+void PrivatelinkClient::updateVpcEndpointServiceResourceAttributeAsync(const UpdateVpcEndpointServiceResourceAttributeRequest& request, const UpdateVpcEndpointServiceResourceAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateVpcEndpointServiceResourceAttribute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PrivatelinkClient::UpdateVpcEndpointServiceResourceAttributeOutcomeCallable PrivatelinkClient::updateVpcEndpointServiceResourceAttributeCallable(const UpdateVpcEndpointServiceResourceAttributeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateVpcEndpointServiceResourceAttributeOutcome()>>(
+			[this, request]()
+			{
+			return this->updateVpcEndpointServiceResourceAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+PrivatelinkClient::UpdateVpcEndpointZoneConnectionResourceAttributeOutcome PrivatelinkClient::updateVpcEndpointZoneConnectionResourceAttribute(const UpdateVpcEndpointZoneConnectionResourceAttributeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateVpcEndpointZoneConnectionResourceAttributeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateVpcEndpointZoneConnectionResourceAttributeOutcome(UpdateVpcEndpointZoneConnectionResourceAttributeResult(outcome.result()));
+	else
+		return UpdateVpcEndpointZoneConnectionResourceAttributeOutcome(outcome.error());
+}
+
+void PrivatelinkClient::updateVpcEndpointZoneConnectionResourceAttributeAsync(const UpdateVpcEndpointZoneConnectionResourceAttributeRequest& request, const UpdateVpcEndpointZoneConnectionResourceAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateVpcEndpointZoneConnectionResourceAttribute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PrivatelinkClient::UpdateVpcEndpointZoneConnectionResourceAttributeOutcomeCallable PrivatelinkClient::updateVpcEndpointZoneConnectionResourceAttributeCallable(const UpdateVpcEndpointZoneConnectionResourceAttributeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateVpcEndpointZoneConnectionResourceAttributeOutcome()>>(
+			[this, request]()
+			{
+			return this->updateVpcEndpointZoneConnectionResourceAttribute(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
