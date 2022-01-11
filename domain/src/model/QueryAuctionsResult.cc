@@ -43,60 +43,64 @@ void QueryAuctionsResult::parse(const std::string &payload)
 	for (auto valueDataAuctionDetail : allDataNode)
 	{
 		AuctionDetail dataObject;
-		if(!valueDataAuctionDetail["DomainName"].isNull())
-			dataObject.domainName = valueDataAuctionDetail["DomainName"].asString();
-		if(!valueDataAuctionDetail["AuctionId"].isNull())
-			dataObject.auctionId = valueDataAuctionDetail["AuctionId"].asString();
-		if(!valueDataAuctionDetail["DomainType"].isNull())
-			dataObject.domainType = valueDataAuctionDetail["DomainType"].asString();
-		if(!valueDataAuctionDetail["BookedPartner"].isNull())
-			dataObject.bookedPartner = valueDataAuctionDetail["BookedPartner"].asString();
-		if(!valueDataAuctionDetail["PartnerType"].isNull())
-			dataObject.partnerType = valueDataAuctionDetail["PartnerType"].asString();
-		if(!valueDataAuctionDetail["Currency"].isNull())
-			dataObject.currency = valueDataAuctionDetail["Currency"].asString();
-		if(!valueDataAuctionDetail["YourCurrentBid"].isNull())
-			dataObject.yourCurrentBid = std::stof(valueDataAuctionDetail["YourCurrentBid"].asString());
-		if(!valueDataAuctionDetail["YourMaxBid"].isNull())
-			dataObject.yourMaxBid = std::stof(valueDataAuctionDetail["YourMaxBid"].asString());
-		if(!valueDataAuctionDetail["HighBid"].isNull())
-			dataObject.highBid = std::stof(valueDataAuctionDetail["HighBid"].asString());
-		if(!valueDataAuctionDetail["NextValidBid"].isNull())
-			dataObject.nextValidBid = std::stof(valueDataAuctionDetail["NextValidBid"].asString());
-		if(!valueDataAuctionDetail["ReserveMet"].isNull())
-			dataObject.reserveMet = valueDataAuctionDetail["ReserveMet"].asString() == "true";
-		if(!valueDataAuctionDetail["TransferInPrice"].isNull())
-			dataObject.transferInPrice = std::stof(valueDataAuctionDetail["TransferInPrice"].asString());
-		if(!valueDataAuctionDetail["PayPrice"].isNull())
-			dataObject.payPrice = std::stof(valueDataAuctionDetail["PayPrice"].asString());
-		if(!valueDataAuctionDetail["HighBidder"].isNull())
-			dataObject.highBidder = valueDataAuctionDetail["HighBidder"].asString();
 		if(!valueDataAuctionDetail["Status"].isNull())
 			dataObject.status = valueDataAuctionDetail["Status"].asString();
-		if(!valueDataAuctionDetail["PayStatus"].isNull())
-			dataObject.payStatus = valueDataAuctionDetail["PayStatus"].asString();
+		if(!valueDataAuctionDetail["ReserveMet"].isNull())
+			dataObject.reserveMet = valueDataAuctionDetail["ReserveMet"].asString() == "true";
+		if(!valueDataAuctionDetail["HighBid"].isNull())
+			dataObject.highBid = std::stof(valueDataAuctionDetail["HighBid"].asString());
+		if(!valueDataAuctionDetail["DeliveryTime"].isNull())
+			dataObject.deliveryTime = std::stol(valueDataAuctionDetail["DeliveryTime"].asString());
+		if(!valueDataAuctionDetail["TransferInPrice"].isNull())
+			dataObject.transferInPrice = std::stof(valueDataAuctionDetail["TransferInPrice"].asString());
+		if(!valueDataAuctionDetail["NextValidBid"].isNull())
+			dataObject.nextValidBid = std::stof(valueDataAuctionDetail["NextValidBid"].asString());
 		if(!valueDataAuctionDetail["ProduceStatus"].isNull())
 			dataObject.produceStatus = valueDataAuctionDetail["ProduceStatus"].asString();
+		if(!valueDataAuctionDetail["HighBidder"].isNull())
+			dataObject.highBidder = valueDataAuctionDetail["HighBidder"].asString();
+		if(!valueDataAuctionDetail["BookedPartner"].isNull())
+			dataObject.bookedPartner = valueDataAuctionDetail["BookedPartner"].asString();
+		if(!valueDataAuctionDetail["Currency"].isNull())
+			dataObject.currency = valueDataAuctionDetail["Currency"].asString();
+		if(!valueDataAuctionDetail["DomainName"].isNull())
+			dataObject.domainName = valueDataAuctionDetail["DomainName"].asString();
+		if(!valueDataAuctionDetail["YourCurrentBid"].isNull())
+			dataObject.yourCurrentBid = std::stof(valueDataAuctionDetail["YourCurrentBid"].asString());
+		if(!valueDataAuctionDetail["FailCode"].isNull())
+			dataObject.failCode = valueDataAuctionDetail["FailCode"].asString();
 		if(!valueDataAuctionDetail["AuctionEndTime"].isNull())
 			dataObject.auctionEndTime = std::stol(valueDataAuctionDetail["AuctionEndTime"].asString());
 		if(!valueDataAuctionDetail["BookEndTime"].isNull())
 			dataObject.bookEndTime = std::stol(valueDataAuctionDetail["BookEndTime"].asString());
 		if(!valueDataAuctionDetail["PayEndTime"].isNull())
 			dataObject.payEndTime = std::stol(valueDataAuctionDetail["PayEndTime"].asString());
-		if(!valueDataAuctionDetail["DeliveryTime"].isNull())
-			dataObject.deliveryTime = std::stol(valueDataAuctionDetail["DeliveryTime"].asString());
-		if(!valueDataAuctionDetail["FailCode"].isNull())
-			dataObject.failCode = valueDataAuctionDetail["FailCode"].asString();
+		if(!valueDataAuctionDetail["PayStatus"].isNull())
+			dataObject.payStatus = valueDataAuctionDetail["PayStatus"].asString();
+		if(!valueDataAuctionDetail["YourMaxBid"].isNull())
+			dataObject.yourMaxBid = std::stof(valueDataAuctionDetail["YourMaxBid"].asString());
+		if(!valueDataAuctionDetail["PayPrice"].isNull())
+			dataObject.payPrice = std::stof(valueDataAuctionDetail["PayPrice"].asString());
+		if(!valueDataAuctionDetail["AuctionId"].isNull())
+			dataObject.auctionId = valueDataAuctionDetail["AuctionId"].asString();
+		if(!valueDataAuctionDetail["PartnerType"].isNull())
+			dataObject.partnerType = valueDataAuctionDetail["PartnerType"].asString();
+		if(!valueDataAuctionDetail["DomainType"].isNull())
+			dataObject.domainType = valueDataAuctionDetail["DomainType"].asString();
+		if(!valueDataAuctionDetail["ReserveMin"].isNull())
+			dataObject.reserveMin = std::stol(valueDataAuctionDetail["ReserveMin"].asString());
+		if(!valueDataAuctionDetail["ReserveMax"].isNull())
+			dataObject.reserveMax = std::stol(valueDataAuctionDetail["ReserveMax"].asString());
 		data_.push_back(dataObject);
 	}
-	if(!value["TotalItemNum"].isNull())
-		totalItemNum_ = std::stoi(value["TotalItemNum"].asString());
 	if(!value["CurrentPageNum"].isNull())
 		currentPageNum_ = std::stoi(value["CurrentPageNum"].asString());
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["TotalPageNum"].isNull())
 		totalPageNum_ = std::stoi(value["TotalPageNum"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalItemNum"].isNull())
+		totalItemNum_ = std::stoi(value["TotalItemNum"].asString());
 
 }
 

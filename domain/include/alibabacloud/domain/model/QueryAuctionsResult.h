@@ -34,16 +34,18 @@ namespace AlibabaCloud
 			public:
 				struct AuctionDetail
 				{
-					std::string partnerType;
 					std::string status;
+					std::string partnerType;
 					float transferInPrice;
 					std::string payStatus;
 					std::string domainName;
 					std::string highBidder;
 					std::string failCode;
 					float yourCurrentBid;
-					float payPrice;
+					long reserveMin;
 					long deliveryTime;
+					float payPrice;
+					long reserveMax;
 					float highBid;
 					std::string domainType;
 					std::string bookedPartner;
@@ -51,10 +53,10 @@ namespace AlibabaCloud
 					bool reserveMet;
 					std::string produceStatus;
 					float nextValidBid;
-					float yourMaxBid;
 					long auctionEndTime;
 					long bookEndTime;
 					long payEndTime;
+					float yourMaxBid;
 					std::string auctionId;
 				};
 
