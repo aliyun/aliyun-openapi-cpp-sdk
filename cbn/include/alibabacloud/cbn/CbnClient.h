@@ -84,6 +84,8 @@
 #include "model/DeleteRouteServiceInCenResult.h"
 #include "model/DeleteTrafficMarkingPolicyRequest.h"
 #include "model/DeleteTrafficMarkingPolicyResult.h"
+#include "model/DeleteTransitRouterRequest.h"
+#include "model/DeleteTransitRouterResult.h"
 #include "model/DeleteTransitRouterPeerAttachmentRequest.h"
 #include "model/DeleteTransitRouterPeerAttachmentResult.h"
 #include "model/DeleteTransitRouterRouteEntryRequest.h"
@@ -332,6 +334,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteTrafficMarkingPolicyResult> DeleteTrafficMarkingPolicyOutcome;
 			typedef std::future<DeleteTrafficMarkingPolicyOutcome> DeleteTrafficMarkingPolicyOutcomeCallable;
 			typedef std::function<void(const CbnClient*, const Model::DeleteTrafficMarkingPolicyRequest&, const DeleteTrafficMarkingPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTrafficMarkingPolicyAsyncHandler;
+			typedef Outcome<Error, Model::DeleteTransitRouterResult> DeleteTransitRouterOutcome;
+			typedef std::future<DeleteTransitRouterOutcome> DeleteTransitRouterOutcomeCallable;
+			typedef std::function<void(const CbnClient*, const Model::DeleteTransitRouterRequest&, const DeleteTransitRouterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTransitRouterAsyncHandler;
 			typedef Outcome<Error, Model::DeleteTransitRouterPeerAttachmentResult> DeleteTransitRouterPeerAttachmentOutcome;
 			typedef std::future<DeleteTransitRouterPeerAttachmentOutcome> DeleteTransitRouterPeerAttachmentOutcomeCallable;
 			typedef std::function<void(const CbnClient*, const Model::DeleteTransitRouterPeerAttachmentRequest&, const DeleteTransitRouterPeerAttachmentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTransitRouterPeerAttachmentAsyncHandler;
@@ -649,6 +654,9 @@ namespace AlibabaCloud
 			DeleteTrafficMarkingPolicyOutcome deleteTrafficMarkingPolicy(const Model::DeleteTrafficMarkingPolicyRequest &request)const;
 			void deleteTrafficMarkingPolicyAsync(const Model::DeleteTrafficMarkingPolicyRequest& request, const DeleteTrafficMarkingPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteTrafficMarkingPolicyOutcomeCallable deleteTrafficMarkingPolicyCallable(const Model::DeleteTrafficMarkingPolicyRequest& request) const;
+			DeleteTransitRouterOutcome deleteTransitRouter(const Model::DeleteTransitRouterRequest &request)const;
+			void deleteTransitRouterAsync(const Model::DeleteTransitRouterRequest& request, const DeleteTransitRouterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteTransitRouterOutcomeCallable deleteTransitRouterCallable(const Model::DeleteTransitRouterRequest& request) const;
 			DeleteTransitRouterPeerAttachmentOutcome deleteTransitRouterPeerAttachment(const Model::DeleteTransitRouterPeerAttachmentRequest &request)const;
 			void deleteTransitRouterPeerAttachmentAsync(const Model::DeleteTransitRouterPeerAttachmentRequest& request, const DeleteTransitRouterPeerAttachmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteTransitRouterPeerAttachmentOutcomeCallable deleteTransitRouterPeerAttachmentCallable(const Model::DeleteTransitRouterPeerAttachmentRequest& request) const;

@@ -1167,6 +1167,42 @@ CbnClient::DeleteTrafficMarkingPolicyOutcomeCallable CbnClient::deleteTrafficMar
 	return task->get_future();
 }
 
+CbnClient::DeleteTransitRouterOutcome CbnClient::deleteTransitRouter(const DeleteTransitRouterRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteTransitRouterOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteTransitRouterOutcome(DeleteTransitRouterResult(outcome.result()));
+	else
+		return DeleteTransitRouterOutcome(outcome.error());
+}
+
+void CbnClient::deleteTransitRouterAsync(const DeleteTransitRouterRequest& request, const DeleteTransitRouterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteTransitRouter(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::DeleteTransitRouterOutcomeCallable CbnClient::deleteTransitRouterCallable(const DeleteTransitRouterRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteTransitRouterOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteTransitRouter(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CbnClient::DeleteTransitRouterPeerAttachmentOutcome CbnClient::deleteTransitRouterPeerAttachment(const DeleteTransitRouterPeerAttachmentRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

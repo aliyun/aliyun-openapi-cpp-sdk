@@ -83,6 +83,8 @@ set(cbn_public_header_model
 	include/alibabacloud/cbn/model/DeleteRouteServiceInCenResult.h
 	include/alibabacloud/cbn/model/DeleteTrafficMarkingPolicyRequest.h
 	include/alibabacloud/cbn/model/DeleteTrafficMarkingPolicyResult.h
+	include/alibabacloud/cbn/model/DeleteTransitRouterRequest.h
+	include/alibabacloud/cbn/model/DeleteTransitRouterResult.h
 	include/alibabacloud/cbn/model/DeleteTransitRouterPeerAttachmentRequest.h
 	include/alibabacloud/cbn/model/DeleteTransitRouterPeerAttachmentResult.h
 	include/alibabacloud/cbn/model/DeleteTransitRouterRouteEntryRequest.h
@@ -294,6 +296,8 @@ set(cbn_src
 	src/model/DeleteRouteServiceInCenResult.cc
 	src/model/DeleteTrafficMarkingPolicyRequest.cc
 	src/model/DeleteTrafficMarkingPolicyResult.cc
+	src/model/DeleteTransitRouterRequest.cc
+	src/model/DeleteTransitRouterResult.cc
 	src/model/DeleteTransitRouterPeerAttachmentRequest.cc
 	src/model/DeleteTransitRouterPeerAttachmentResult.cc
 	src/model/DeleteTransitRouterRouteEntryRequest.cc

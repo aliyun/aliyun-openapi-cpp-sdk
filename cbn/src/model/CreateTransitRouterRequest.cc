@@ -43,6 +43,15 @@ void CreateTransitRouterRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string CreateTransitRouterRequest::getServiceMode() const {
+  return serviceMode_;
+}
+
+void CreateTransitRouterRequest::setServiceMode(const std::string &serviceMode) {
+  serviceMode_ = serviceMode;
+  setParameter(std::string("ServiceMode"), serviceMode);
+}
+
 std::string CreateTransitRouterRequest::getClientToken() const {
   return clientToken_;
 }

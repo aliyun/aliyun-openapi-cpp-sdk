@@ -36,6 +36,8 @@ public:
 	~CreateTransitRouterVpcAttachmentRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::string getServiceMode() const;
+	void setServiceMode(const std::string &serviceMode);
 	long getVpcOwnerId() const;
 	void setVpcOwnerId(long vpcOwnerId);
 	std::string getClientToken() const;
@@ -75,6 +77,7 @@ public:
 
 private:
 	long resourceOwnerId_;
+	std::string serviceMode_;
 	long vpcOwnerId_;
 	std::string clientToken_;
 	std::string cenId_;

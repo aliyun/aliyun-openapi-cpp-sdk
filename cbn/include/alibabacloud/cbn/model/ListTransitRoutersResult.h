@@ -41,6 +41,7 @@ namespace AlibabaCloud
 					std::string transitRouterDescription;
 					std::string transitRouterName;
 					std::string regionId;
+					std::string serviceMode;
 					std::string transitRouterId;
 					long aliUid;
 				};

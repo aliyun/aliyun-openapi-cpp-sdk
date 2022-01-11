@@ -34,6 +34,15 @@ void CreateTransitRouterVpcAttachmentRequest::setResourceOwnerId(long resourceOw
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string CreateTransitRouterVpcAttachmentRequest::getServiceMode() const {
+  return serviceMode_;
+}
+
+void CreateTransitRouterVpcAttachmentRequest::setServiceMode(const std::string &serviceMode) {
+  serviceMode_ = serviceMode;
+  setParameter(std::string("ServiceMode"), serviceMode);
+}
+
 long CreateTransitRouterVpcAttachmentRequest::getVpcOwnerId() const {
   return vpcOwnerId_;
 }

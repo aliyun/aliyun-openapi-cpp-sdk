@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CBN_MODEL_CREATETRANSITROUTERREQUEST_H_
-#define ALIBABACLOUD_CBN_MODEL_CREATETRANSITROUTERREQUEST_H_
+#ifndef ALIBABACLOUD_CBN_MODEL_DELETETRANSITROUTERREQUEST_H_
+#define ALIBABACLOUD_CBN_MODEL_DELETETRANSITROUTERREQUEST_H_
 
 #include <alibabacloud/cbn/CbnExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,24 +26,14 @@
 namespace AlibabaCloud {
 namespace Cbn {
 namespace Model {
-class ALIBABACLOUD_CBN_EXPORT CreateTransitRouterRequest : public RpcServiceRequest {
+class ALIBABACLOUD_CBN_EXPORT DeleteTransitRouterRequest : public RpcServiceRequest {
 public:
-	CreateTransitRouterRequest();
-	~CreateTransitRouterRequest();
-	std::string getTransitRouterName() const;
-	void setTransitRouterName(const std::string &transitRouterName);
+	DeleteTransitRouterRequest();
+	~DeleteTransitRouterRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
-	std::string getServiceMode() const;
-	void setServiceMode(const std::string &serviceMode);
 	std::string getClientToken() const;
 	void setClientToken(const std::string &clientToken);
-	std::string getCenId() const;
-	void setCenId(const std::string &cenId);
-	std::string getType() const;
-	void setType(const std::string &type);
-	std::string getRegionId() const;
-	void setRegionId(const std::string &regionId);
 	bool getDryRun() const;
 	void setDryRun(bool dryRun);
 	std::string getResourceOwnerAccount() const;
@@ -52,24 +42,19 @@ public:
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
-	std::string getTransitRouterDescription() const;
-	void setTransitRouterDescription(const std::string &transitRouterDescription);
+	std::string getTransitRouterId() const;
+	void setTransitRouterId(const std::string &transitRouterId);
 
 private:
-	std::string transitRouterName_;
 	long resourceOwnerId_;
-	std::string serviceMode_;
 	std::string clientToken_;
-	std::string cenId_;
-	std::string type_;
-	std::string regionId_;
 	bool dryRun_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
-	std::string transitRouterDescription_;
+	std::string transitRouterId_;
 };
 } // namespace Model
 } // namespace Cbn
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_CBN_MODEL_CREATETRANSITROUTERREQUEST_H_
+#endif // !ALIBABACLOUD_CBN_MODEL_DELETETRANSITROUTERREQUEST_H_

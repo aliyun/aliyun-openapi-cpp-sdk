@@ -61,6 +61,8 @@ void ListTransitRoutersResult::parse(const std::string &payload)
 			transitRoutersObject.aliUid = std::stol(valueTransitRoutersTransitRouter["AliUid"].asString());
 		if(!valueTransitRoutersTransitRouter["RegionId"].isNull())
 			transitRoutersObject.regionId = valueTransitRoutersTransitRouter["RegionId"].asString();
+		if(!valueTransitRoutersTransitRouter["ServiceMode"].isNull())
+			transitRoutersObject.serviceMode = valueTransitRoutersTransitRouter["ServiceMode"].asString();
 		transitRouters_.push_back(transitRoutersObject);
 	}
 	if(!value["PageSize"].isNull())

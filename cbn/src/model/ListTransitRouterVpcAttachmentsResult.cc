@@ -63,6 +63,8 @@ void ListTransitRouterVpcAttachmentsResult::parse(const std::string &payload)
 			transitRouterAttachmentsObject.vpcRegionId = valueTransitRouterAttachmentsTransitRouterAttachment["VpcRegionId"].asString();
 		if(!valueTransitRouterAttachmentsTransitRouterAttachment["TransitRouterAttachmentName"].isNull())
 			transitRouterAttachmentsObject.transitRouterAttachmentName = valueTransitRouterAttachmentsTransitRouterAttachment["TransitRouterAttachmentName"].asString();
+		if(!valueTransitRouterAttachmentsTransitRouterAttachment["ServiceMode"].isNull())
+			transitRouterAttachmentsObject.serviceMode = valueTransitRouterAttachmentsTransitRouterAttachment["ServiceMode"].asString();
 		auto allZoneMappingsNode = valueTransitRouterAttachmentsTransitRouterAttachment["ZoneMappings"]["ZoneMapping"];
 		for (auto valueTransitRouterAttachmentsTransitRouterAttachmentZoneMappingsZoneMapping : allZoneMappingsNode)
 		{
@@ -71,6 +73,8 @@ void ListTransitRouterVpcAttachmentsResult::parse(const std::string &payload)
 				zoneMappingsObject.zoneId = valueTransitRouterAttachmentsTransitRouterAttachmentZoneMappingsZoneMapping["ZoneId"].asString();
 			if(!valueTransitRouterAttachmentsTransitRouterAttachmentZoneMappingsZoneMapping["VSwitchId"].isNull())
 				zoneMappingsObject.vSwitchId = valueTransitRouterAttachmentsTransitRouterAttachmentZoneMappingsZoneMapping["VSwitchId"].asString();
+			if(!valueTransitRouterAttachmentsTransitRouterAttachmentZoneMappingsZoneMapping["NetworkInterfaceId"].isNull())
+				zoneMappingsObject.networkInterfaceId = valueTransitRouterAttachmentsTransitRouterAttachmentZoneMappingsZoneMapping["NetworkInterfaceId"].asString();
 			transitRouterAttachmentsObject.zoneMappings.push_back(zoneMappingsObject);
 		}
 		transitRouterAttachments_.push_back(transitRouterAttachmentsObject);
