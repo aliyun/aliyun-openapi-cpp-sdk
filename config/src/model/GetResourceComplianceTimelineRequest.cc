@@ -19,47 +19,11 @@
 using AlibabaCloud::Config::Model::GetResourceComplianceTimelineRequest;
 
 GetResourceComplianceTimelineRequest::GetResourceComplianceTimelineRequest()
-    : RpcServiceRequest("config", "2019-01-08", "GetResourceComplianceTimeline") {
+    : RpcServiceRequest("config", "2020-09-07", "GetResourceComplianceTimeline") {
   setMethod(HttpRequest::Method::Get);
 }
 
 GetResourceComplianceTimelineRequest::~GetResourceComplianceTimelineRequest() {}
-
-bool GetResourceComplianceTimelineRequest::getMultiAccount() const {
-  return multiAccount_;
-}
-
-void GetResourceComplianceTimelineRequest::setMultiAccount(bool multiAccount) {
-  multiAccount_ = multiAccount;
-  setParameter(std::string("MultiAccount"), multiAccount ? "true" : "false");
-}
-
-long GetResourceComplianceTimelineRequest::getStartTime() const {
-  return startTime_;
-}
-
-void GetResourceComplianceTimelineRequest::setStartTime(long startTime) {
-  startTime_ = startTime;
-  setParameter(std::string("StartTime"), std::to_string(startTime));
-}
-
-std::string GetResourceComplianceTimelineRequest::getNextToken() const {
-  return nextToken_;
-}
-
-void GetResourceComplianceTimelineRequest::setNextToken(const std::string &nextToken) {
-  nextToken_ = nextToken;
-  setParameter(std::string("NextToken"), nextToken);
-}
-
-int GetResourceComplianceTimelineRequest::getLimit() const {
-  return limit_;
-}
-
-void GetResourceComplianceTimelineRequest::setLimit(int limit) {
-  limit_ = limit;
-  setParameter(std::string("Limit"), std::to_string(limit));
-}
 
 std::string GetResourceComplianceTimelineRequest::getResourceId() const {
   return resourceId_;
@@ -79,6 +43,15 @@ void GetResourceComplianceTimelineRequest::setEndTime(long endTime) {
   setParameter(std::string("EndTime"), std::to_string(endTime));
 }
 
+long GetResourceComplianceTimelineRequest::getStartTime() const {
+  return startTime_;
+}
+
+void GetResourceComplianceTimelineRequest::setStartTime(long startTime) {
+  startTime_ = startTime;
+  setParameter(std::string("StartTime"), std::to_string(startTime));
+}
+
 std::string GetResourceComplianceTimelineRequest::getResourceType() const {
   return resourceType_;
 }
@@ -88,6 +61,24 @@ void GetResourceComplianceTimelineRequest::setResourceType(const std::string &re
   setParameter(std::string("ResourceType"), resourceType);
 }
 
+std::string GetResourceComplianceTimelineRequest::getNextToken() const {
+  return nextToken_;
+}
+
+void GetResourceComplianceTimelineRequest::setNextToken(const std::string &nextToken) {
+  nextToken_ = nextToken;
+  setParameter(std::string("NextToken"), nextToken);
+}
+
+int GetResourceComplianceTimelineRequest::getMaxResults() const {
+  return maxResults_;
+}
+
+void GetResourceComplianceTimelineRequest::setMaxResults(int maxResults) {
+  maxResults_ = maxResults;
+  setParameter(std::string("MaxResults"), std::to_string(maxResults));
+}
+
 std::string GetResourceComplianceTimelineRequest::getRegion() const {
   return region_;
 }
@@ -95,14 +86,5 @@ std::string GetResourceComplianceTimelineRequest::getRegion() const {
 void GetResourceComplianceTimelineRequest::setRegion(const std::string &region) {
   region_ = region;
   setParameter(std::string("Region"), region);
-}
-
-std::string GetResourceComplianceTimelineRequest::getMemberId() const {
-  return memberId_;
-}
-
-void GetResourceComplianceTimelineRequest::setMemberId(const std::string &memberId) {
-  memberId_ = memberId;
-  setParameter(std::string("MemberId"), memberId);
 }
 
