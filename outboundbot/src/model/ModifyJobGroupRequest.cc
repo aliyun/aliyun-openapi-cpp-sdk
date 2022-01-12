@@ -60,6 +60,50 @@ void ModifyJobGroupRequest::setScriptId(const std::string& scriptId)
 	setParameter("ScriptId", scriptId);
 }
 
+std::string ModifyJobGroupRequest::getStrategyJson()const
+{
+	return strategyJson_;
+}
+
+void ModifyJobGroupRequest::setStrategyJson(const std::string& strategyJson)
+{
+	strategyJson_ = strategyJson;
+	setParameter("StrategyJson", strategyJson);
+}
+
+long ModifyJobGroupRequest::getRingingDuration()const
+{
+	return ringingDuration_;
+}
+
+void ModifyJobGroupRequest::setRingingDuration(long ringingDuration)
+{
+	ringingDuration_ = ringingDuration;
+	setParameter("RingingDuration", std::to_string(ringingDuration));
+}
+
+std::string ModifyJobGroupRequest::getScenarioId()const
+{
+	return scenarioId_;
+}
+
+void ModifyJobGroupRequest::setScenarioId(const std::string& scenarioId)
+{
+	scenarioId_ = scenarioId;
+	setParameter("ScenarioId", scenarioId);
+}
+
+std::string ModifyJobGroupRequest::getJobGroupStatus()const
+{
+	return jobGroupStatus_;
+}
+
+void ModifyJobGroupRequest::setJobGroupStatus(const std::string& jobGroupStatus)
+{
+	jobGroupStatus_ = jobGroupStatus;
+	setParameter("JobGroupStatus", jobGroupStatus);
+}
+
 std::vector<std::string> ModifyJobGroupRequest::getCallingNumber()const
 {
 	return callingNumber_;
@@ -84,17 +128,6 @@ void ModifyJobGroupRequest::setInstanceId(const std::string& instanceId)
 	setParameter("InstanceId", instanceId);
 }
 
-std::string ModifyJobGroupRequest::getStrategyJson()const
-{
-	return strategyJson_;
-}
-
-void ModifyJobGroupRequest::setStrategyJson(const std::string& strategyJson)
-{
-	strategyJson_ = strategyJson;
-	setParameter("StrategyJson", strategyJson);
-}
-
 std::string ModifyJobGroupRequest::getJobGroupId()const
 {
 	return jobGroupId_;
@@ -115,16 +148,5 @@ void ModifyJobGroupRequest::setName(const std::string& name)
 {
 	name_ = name;
 	setParameter("Name", name);
-}
-
-std::string ModifyJobGroupRequest::getScenarioId()const
-{
-	return scenarioId_;
-}
-
-void ModifyJobGroupRequest::setScenarioId(const std::string& scenarioId)
-{
-	scenarioId_ = scenarioId;
-	setParameter("ScenarioId", scenarioId);
 }
 

@@ -128,3 +128,14 @@ void CreateBatchRepeatJobRequest::setSourceGroupId(const std::string& sourceGrou
 	setParameter("SourceGroupId", sourceGroupId);
 }
 
+long CreateBatchRepeatJobRequest::getRingingDuration()const
+{
+	return ringingDuration_;
+}
+
+void CreateBatchRepeatJobRequest::setRingingDuration(long ringingDuration)
+{
+	ringingDuration_ = ringingDuration;
+	setParameter("RingingDuration", std::to_string(ringingDuration));
+}
+

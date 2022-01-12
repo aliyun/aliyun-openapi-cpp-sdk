@@ -64,6 +64,8 @@ void DescribeJobGroupResult::parse(const std::string &payload)
 		jobGroup_.modifyTime = jobGroupNode["ModifyTime"].asString();
 	if(!jobGroupNode["ScriptVersion"].isNull())
 		jobGroup_.scriptVersion = jobGroupNode["ScriptVersion"].asString();
+	if(!jobGroupNode["RingingDuration"].isNull())
+		jobGroup_.ringingDuration = std::stol(jobGroupNode["RingingDuration"].asString());
 	auto exportProgressNode = jobGroupNode["ExportProgress"];
 	if(!exportProgressNode["Status"].isNull())
 		jobGroup_.exportProgress.status = exportProgressNode["Status"].asString();

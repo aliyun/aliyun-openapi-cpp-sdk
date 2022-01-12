@@ -42,6 +42,8 @@ void CreateBatchRepeatJobResult::parse(const std::string &payload)
 	auto jobGroupNode = value["JobGroup"];
 	if(!jobGroupNode["Id"].isNull())
 		jobGroup_.id = jobGroupNode["Id"].asString();
+	if(!jobGroupNode["RingingDuration"].isNull())
+		jobGroup_.ringingDuration = std::stol(jobGroupNode["RingingDuration"].asString());
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 	if(!value["Code"].isNull())

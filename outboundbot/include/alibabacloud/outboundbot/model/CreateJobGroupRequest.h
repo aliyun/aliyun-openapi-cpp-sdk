@@ -49,6 +49,8 @@ namespace AlibabaCloud
 				void setInstanceId(const std::string& instanceId);
 				std::string getStrategyJson()const;
 				void setStrategyJson(const std::string& strategyJson);
+				long getRingingDuration()const;
+				void setRingingDuration(long ringingDuration);
 				std::string getScenarioId()const;
 				void setScenarioId(const std::string& scenarioId);
 
@@ -60,6 +62,7 @@ namespace AlibabaCloud
 				std::vector<std::string> callingNumber_;
 				std::string instanceId_;
 				std::string strategyJson_;
+				long ringingDuration_;
 				std::string scenarioId_;
 
 			};

@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/outboundbot/model/SuspendCallResult.h>
+#include <alibabacloud/outboundbot/model/GetNumberDistrictInfoTemplateDownloadUrlResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::OutboundBot;
 using namespace AlibabaCloud::OutboundBot::Model;
 
-SuspendCallResult::SuspendCallResult() :
+GetNumberDistrictInfoTemplateDownloadUrlResult::GetNumberDistrictInfoTemplateDownloadUrlResult() :
 	ServiceResult()
 {}
 
-SuspendCallResult::SuspendCallResult(const std::string &payload) :
+GetNumberDistrictInfoTemplateDownloadUrlResult::GetNumberDistrictInfoTemplateDownloadUrlResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-SuspendCallResult::~SuspendCallResult()
+GetNumberDistrictInfoTemplateDownloadUrlResult::~GetNumberDistrictInfoTemplateDownloadUrlResult()
 {}
 
-void SuspendCallResult::parse(const std::string &payload)
+void GetNumberDistrictInfoTemplateDownloadUrlResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -47,25 +47,32 @@ void SuspendCallResult::parse(const std::string &payload)
 		message_ = value["Message"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["FileHttpUrl"].isNull())
+		fileHttpUrl_ = value["FileHttpUrl"].asString();
 
 }
 
-std::string SuspendCallResult::getMessage()const
+std::string GetNumberDistrictInfoTemplateDownloadUrlResult::getMessage()const
 {
 	return message_;
 }
 
-int SuspendCallResult::getHttpStatusCode()const
+int GetNumberDistrictInfoTemplateDownloadUrlResult::getHttpStatusCode()const
 {
 	return httpStatusCode_;
 }
 
-std::string SuspendCallResult::getCode()const
+std::string GetNumberDistrictInfoTemplateDownloadUrlResult::getFileHttpUrl()const
+{
+	return fileHttpUrl_;
+}
+
+std::string GetNumberDistrictInfoTemplateDownloadUrlResult::getCode()const
 {
 	return code_;
 }
 
-bool SuspendCallResult::getSuccess()const
+bool GetNumberDistrictInfoTemplateDownloadUrlResult::getSuccess()const
 {
 	return success_;
 }

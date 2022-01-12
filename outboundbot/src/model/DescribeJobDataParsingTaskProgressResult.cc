@@ -40,24 +40,26 @@ void DescribeJobDataParsingTaskProgressResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto progressNode = value["Progress"];
-	if(!progressNode["Status"].isNull())
-		progress_.status = progressNode["Status"].asString();
 	if(!progressNode["FailErrorCode"].isNull())
 		progress_.failErrorCode = progressNode["FailErrorCode"].asString();
-	if(!progressNode["FailReason"].isNull())
-		progress_.failReason = progressNode["FailReason"].asString();
-	if(!progressNode["TotalJobCount"].isNull())
-		progress_.totalJobCount = std::stoi(progressNode["TotalJobCount"].asString());
+	if(!progressNode["Status"].isNull())
+		progress_.status = progressNode["Status"].asString();
 	if(!progressNode["HandledJobCount"].isNull())
 		progress_.handledJobCount = std::stoi(progressNode["HandledJobCount"].asString());
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
+	if(!progressNode["TotalJobCount"].isNull())
+		progress_.totalJobCount = std::stoi(progressNode["TotalJobCount"].asString());
+	if(!progressNode["FailReason"].isNull())
+		progress_.failReason = progressNode["FailReason"].asString();
+	if(!progressNode["FeedbackUrl"].isNull())
+		progress_.feedbackUrl = progressNode["FeedbackUrl"].asString();
+	if(!value["HttpStatusCode"].isNull())
+		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
-	if(!value["HttpStatusCode"].isNull())
-		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

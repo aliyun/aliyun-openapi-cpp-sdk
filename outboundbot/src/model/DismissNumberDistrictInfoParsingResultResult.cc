@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/outboundbot/model/SuspendCallResult.h>
+#include <alibabacloud/outboundbot/model/DismissNumberDistrictInfoParsingResultResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::OutboundBot;
 using namespace AlibabaCloud::OutboundBot::Model;
 
-SuspendCallResult::SuspendCallResult() :
+DismissNumberDistrictInfoParsingResultResult::DismissNumberDistrictInfoParsingResultResult() :
 	ServiceResult()
 {}
 
-SuspendCallResult::SuspendCallResult(const std::string &payload) :
+DismissNumberDistrictInfoParsingResultResult::DismissNumberDistrictInfoParsingResultResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-SuspendCallResult::~SuspendCallResult()
+DismissNumberDistrictInfoParsingResultResult::~DismissNumberDistrictInfoParsingResultResult()
 {}
 
-void SuspendCallResult::parse(const std::string &payload)
+void DismissNumberDistrictInfoParsingResultResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -50,22 +50,22 @@ void SuspendCallResult::parse(const std::string &payload)
 
 }
 
-std::string SuspendCallResult::getMessage()const
+std::string DismissNumberDistrictInfoParsingResultResult::getMessage()const
 {
 	return message_;
 }
 
-int SuspendCallResult::getHttpStatusCode()const
+int DismissNumberDistrictInfoParsingResultResult::getHttpStatusCode()const
 {
 	return httpStatusCode_;
 }
 
-std::string SuspendCallResult::getCode()const
+std::string DismissNumberDistrictInfoParsingResultResult::getCode()const
 {
 	return code_;
 }
 
-bool SuspendCallResult::getSuccess()const
+bool DismissNumberDistrictInfoParsingResultResult::getSuccess()const
 {
 	return success_;
 }

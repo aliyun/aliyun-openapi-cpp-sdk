@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_OUTBOUNDBOT_MODEL_DESCRIBEJOBDATAPARSINGTASKPROGRESSRESULT_H_
-#define ALIBABACLOUD_OUTBOUNDBOT_MODEL_DESCRIBEJOBDATAPARSINGTASKPROGRESSRESULT_H_
+#ifndef ALIBABACLOUD_OUTBOUNDBOT_MODEL_LISTCHATBOTINSTANCESRESULT_H_
+#define ALIBABACLOUD_OUTBOUNDBOT_MODEL_LISTCHATBOTINSTANCESRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,25 +29,29 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_OUTBOUNDBOT_EXPORT DescribeJobDataParsingTaskProgressResult : public ServiceResult
+			class ALIBABACLOUD_OUTBOUNDBOT_EXPORT ListChatbotInstancesResult : public ServiceResult
 			{
 			public:
-				struct Progress
+				struct Bot
 				{
-					std::string status;
-					int totalJobCount;
-					int handledJobCount;
-					std::string failReason;
-					std::string failErrorCode;
-					std::string feedbackUrl;
+					std::string languageCode;
+					std::string timeZone;
+					std::string introduction;
+					std::string instanceId;
+					std::string createTime;
+					std::string avatar;
+					std::string name;
 				};
 
 
-				DescribeJobDataParsingTaskProgressResult();
-				explicit DescribeJobDataParsingTaskProgressResult(const std::string &payload);
-				~DescribeJobDataParsingTaskProgressResult();
-				Progress getProgress()const;
+				ListChatbotInstancesResult();
+				explicit ListChatbotInstancesResult(const std::string &payload);
+				~ListChatbotInstancesResult();
+				long getTotalCount()const;
+				std::vector<Bot> getBots()const;
 				std::string getMessage()const;
+				long getPageSize()const;
+				long getPageNumber()const;
 				int getHttpStatusCode()const;
 				std::string getCode()const;
 				bool getSuccess()const;
@@ -55,8 +59,11 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				Progress progress_;
+				long totalCount_;
+				std::vector<Bot> bots_;
 				std::string message_;
+				long pageSize_;
+				long pageNumber_;
 				int httpStatusCode_;
 				std::string code_;
 				bool success_;
@@ -65,4 +72,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_OUTBOUNDBOT_MODEL_DESCRIBEJOBDATAPARSINGTASKPROGRESSRESULT_H_
+#endif // !ALIBABACLOUD_OUTBOUNDBOT_MODEL_LISTCHATBOTINSTANCESRESULT_H_

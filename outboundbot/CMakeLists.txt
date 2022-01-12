@@ -21,6 +21,8 @@ set(outboundbot_public_header
 	include/alibabacloud/outboundbot/OutboundBotExport.h )
 
 set(outboundbot_public_header_model 
+	include/alibabacloud/outboundbot/model/ApplyNumberDistrictInfoParsingResultRequest.h
+	include/alibabacloud/outboundbot/model/ApplyNumberDistrictInfoParsingResultResult.h
 	include/alibabacloud/outboundbot/model/AssignJobsRequest.h
 	include/alibabacloud/outboundbot/model/AssignJobsResult.h
 	include/alibabacloud/outboundbot/model/CancelJobsRequest.h
@@ -47,6 +49,10 @@ set(outboundbot_public_header_model
 	include/alibabacloud/outboundbot/model/CreateJobGroupResult.h
 	include/alibabacloud/outboundbot/model/CreateJobGroupExportTaskRequest.h
 	include/alibabacloud/outboundbot/model/CreateJobGroupExportTaskResult.h
+	include/alibabacloud/outboundbot/model/CreateNumberDistrictInfoDownloadUrlRequest.h
+	include/alibabacloud/outboundbot/model/CreateNumberDistrictInfoDownloadUrlResult.h
+	include/alibabacloud/outboundbot/model/CreateNumberDistrictInfoParsingTaskRequest.h
+	include/alibabacloud/outboundbot/model/CreateNumberDistrictInfoParsingTaskResult.h
 	include/alibabacloud/outboundbot/model/CreateOutboundCallNumberRequest.h
 	include/alibabacloud/outboundbot/model/CreateOutboundCallNumberResult.h
 	include/alibabacloud/outboundbot/model/CreateScriptRequest.h
@@ -55,6 +61,8 @@ set(outboundbot_public_header_model
 	include/alibabacloud/outboundbot/model/CreateScriptWaveformResult.h
 	include/alibabacloud/outboundbot/model/CreateTagRequest.h
 	include/alibabacloud/outboundbot/model/CreateTagResult.h
+	include/alibabacloud/outboundbot/model/DeleteAllNumberDistrictInfoRequest.h
+	include/alibabacloud/outboundbot/model/DeleteAllNumberDistrictInfoResult.h
 	include/alibabacloud/outboundbot/model/DeleteContactBlockListRequest.h
 	include/alibabacloud/outboundbot/model/DeleteContactBlockListResult.h
 	include/alibabacloud/outboundbot/model/DeleteContactWhiteListRequest.h
@@ -97,6 +105,8 @@ set(outboundbot_public_header_model
 	include/alibabacloud/outboundbot/model/DescribeJobGroupResult.h
 	include/alibabacloud/outboundbot/model/DescribeJobGroupExportTaskProgressRequest.h
 	include/alibabacloud/outboundbot/model/DescribeJobGroupExportTaskProgressResult.h
+	include/alibabacloud/outboundbot/model/DescribeNumberDistrictInfoStatusRequest.h
+	include/alibabacloud/outboundbot/model/DescribeNumberDistrictInfoStatusResult.h
 	include/alibabacloud/outboundbot/model/DescribeScriptRequest.h
 	include/alibabacloud/outboundbot/model/DescribeScriptResult.h
 	include/alibabacloud/outboundbot/model/DescribeScriptVoiceConfigRequest.h
@@ -109,6 +119,8 @@ set(outboundbot_public_header_model
 	include/alibabacloud/outboundbot/model/DescribeTagHitsSummaryResult.h
 	include/alibabacloud/outboundbot/model/DialogueRequest.h
 	include/alibabacloud/outboundbot/model/DialogueResult.h
+	include/alibabacloud/outboundbot/model/DismissNumberDistrictInfoParsingResultRequest.h
+	include/alibabacloud/outboundbot/model/DismissNumberDistrictInfoParsingResultResult.h
 	include/alibabacloud/outboundbot/model/DownloadRecordingRequest.h
 	include/alibabacloud/outboundbot/model/DownloadRecordingResult.h
 	include/alibabacloud/outboundbot/model/DuplicateScriptRequest.h
@@ -137,6 +149,8 @@ set(outboundbot_public_header_model
 	include/alibabacloud/outboundbot/model/GetInstanceConfigResult.h
 	include/alibabacloud/outboundbot/model/GetMaxAttemptsPerDayRequest.h
 	include/alibabacloud/outboundbot/model/GetMaxAttemptsPerDayResult.h
+	include/alibabacloud/outboundbot/model/GetNumberDistrictInfoTemplateDownloadUrlRequest.h
+	include/alibabacloud/outboundbot/model/GetNumberDistrictInfoTemplateDownloadUrlResult.h
 	include/alibabacloud/outboundbot/model/GetSummaryInfoRequest.h
 	include/alibabacloud/outboundbot/model/GetSummaryInfoResult.h
 	include/alibabacloud/outboundbot/model/GetTaskByUuidRequest.h
@@ -147,6 +161,8 @@ set(outboundbot_public_header_model
 	include/alibabacloud/outboundbot/model/ImportScriptResult.h
 	include/alibabacloud/outboundbot/model/InflightTaskTimeoutRequest.h
 	include/alibabacloud/outboundbot/model/InflightTaskTimeoutResult.h
+	include/alibabacloud/outboundbot/model/ListChatbotInstancesRequest.h
+	include/alibabacloud/outboundbot/model/ListChatbotInstancesResult.h
 	include/alibabacloud/outboundbot/model/ListDialogueFlowsRequest.h
 	include/alibabacloud/outboundbot/model/ListDialogueFlowsResult.h
 	include/alibabacloud/outboundbot/model/ListDownloadTasksRequest.h
@@ -264,6 +280,8 @@ set(outboundbot_public_header_model
 
 set(outboundbot_src 
 	src/OutboundBotClient.cc
+	src/model/ApplyNumberDistrictInfoParsingResultRequest.cc
+	src/model/ApplyNumberDistrictInfoParsingResultResult.cc
 	src/model/AssignJobsRequest.cc
 	src/model/AssignJobsResult.cc
 	src/model/CancelJobsRequest.cc
@@ -290,6 +308,10 @@ set(outboundbot_src
 	src/model/CreateJobGroupResult.cc
 	src/model/CreateJobGroupExportTaskRequest.cc
 	src/model/CreateJobGroupExportTaskResult.cc
+	src/model/CreateNumberDistrictInfoDownloadUrlRequest.cc
+	src/model/CreateNumberDistrictInfoDownloadUrlResult.cc
+	src/model/CreateNumberDistrictInfoParsingTaskRequest.cc
+	src/model/CreateNumberDistrictInfoParsingTaskResult.cc
 	src/model/CreateOutboundCallNumberRequest.cc
 	src/model/CreateOutboundCallNumberResult.cc
 	src/model/CreateScriptRequest.cc
@@ -298,6 +320,8 @@ set(outboundbot_src
 	src/model/CreateScriptWaveformResult.cc
 	src/model/CreateTagRequest.cc
 	src/model/CreateTagResult.cc
+	src/model/DeleteAllNumberDistrictInfoRequest.cc
+	src/model/DeleteAllNumberDistrictInfoResult.cc
 	src/model/DeleteContactBlockListRequest.cc
 	src/model/DeleteContactBlockListResult.cc
 	src/model/DeleteContactWhiteListRequest.cc
@@ -340,6 +364,8 @@ set(outboundbot_src
 	src/model/DescribeJobGroupResult.cc
 	src/model/DescribeJobGroupExportTaskProgressRequest.cc
 	src/model/DescribeJobGroupExportTaskProgressResult.cc
+	src/model/DescribeNumberDistrictInfoStatusRequest.cc
+	src/model/DescribeNumberDistrictInfoStatusResult.cc
 	src/model/DescribeScriptRequest.cc
 	src/model/DescribeScriptResult.cc
 	src/model/DescribeScriptVoiceConfigRequest.cc
@@ -352,6 +378,8 @@ set(outboundbot_src
 	src/model/DescribeTagHitsSummaryResult.cc
 	src/model/DialogueRequest.cc
 	src/model/DialogueResult.cc
+	src/model/DismissNumberDistrictInfoParsingResultRequest.cc
+	src/model/DismissNumberDistrictInfoParsingResultResult.cc
 	src/model/DownloadRecordingRequest.cc
 	src/model/DownloadRecordingResult.cc
 	src/model/DuplicateScriptRequest.cc
@@ -380,6 +408,8 @@ set(outboundbot_src
 	src/model/GetInstanceConfigResult.cc
 	src/model/GetMaxAttemptsPerDayRequest.cc
 	src/model/GetMaxAttemptsPerDayResult.cc
+	src/model/GetNumberDistrictInfoTemplateDownloadUrlRequest.cc
+	src/model/GetNumberDistrictInfoTemplateDownloadUrlResult.cc
 	src/model/GetSummaryInfoRequest.cc
 	src/model/GetSummaryInfoResult.cc
 	src/model/GetTaskByUuidRequest.cc
@@ -390,6 +420,8 @@ set(outboundbot_src
 	src/model/ImportScriptResult.cc
 	src/model/InflightTaskTimeoutRequest.cc
 	src/model/InflightTaskTimeoutResult.cc
+	src/model/ListChatbotInstancesRequest.cc
+	src/model/ListChatbotInstancesResult.cc
 	src/model/ListDialogueFlowsRequest.cc
 	src/model/ListDialogueFlowsResult.cc
 	src/model/ListDownloadTasksRequest.cc

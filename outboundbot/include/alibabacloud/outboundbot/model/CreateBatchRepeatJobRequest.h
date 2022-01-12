@@ -53,6 +53,8 @@ namespace AlibabaCloud
 				void setName(const std::string& name);
 				std::string getSourceGroupId()const;
 				void setSourceGroupId(const std::string& sourceGroupId);
+				long getRingingDuration()const;
+				void setRingingDuration(long ringingDuration);
 
             private:
 				std::string recallStrategyJson_;
@@ -64,6 +66,7 @@ namespace AlibabaCloud
 				std::string strategyJson_;
 				std::string name_;
 				std::string sourceGroupId_;
+				long ringingDuration_;
 
 			};
 		}

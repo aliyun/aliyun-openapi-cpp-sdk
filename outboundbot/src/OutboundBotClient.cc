@@ -51,6 +51,42 @@ OutboundBotClient::OutboundBotClient(const std::string & accessKeyId, const std:
 OutboundBotClient::~OutboundBotClient()
 {}
 
+OutboundBotClient::ApplyNumberDistrictInfoParsingResultOutcome OutboundBotClient::applyNumberDistrictInfoParsingResult(const ApplyNumberDistrictInfoParsingResultRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ApplyNumberDistrictInfoParsingResultOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ApplyNumberDistrictInfoParsingResultOutcome(ApplyNumberDistrictInfoParsingResultResult(outcome.result()));
+	else
+		return ApplyNumberDistrictInfoParsingResultOutcome(outcome.error());
+}
+
+void OutboundBotClient::applyNumberDistrictInfoParsingResultAsync(const ApplyNumberDistrictInfoParsingResultRequest& request, const ApplyNumberDistrictInfoParsingResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, applyNumberDistrictInfoParsingResult(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OutboundBotClient::ApplyNumberDistrictInfoParsingResultOutcomeCallable OutboundBotClient::applyNumberDistrictInfoParsingResultCallable(const ApplyNumberDistrictInfoParsingResultRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ApplyNumberDistrictInfoParsingResultOutcome()>>(
+			[this, request]()
+			{
+			return this->applyNumberDistrictInfoParsingResult(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 OutboundBotClient::AssignJobsOutcome OutboundBotClient::assignJobs(const AssignJobsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -519,6 +555,78 @@ OutboundBotClient::CreateJobGroupExportTaskOutcomeCallable OutboundBotClient::cr
 	return task->get_future();
 }
 
+OutboundBotClient::CreateNumberDistrictInfoDownloadUrlOutcome OutboundBotClient::createNumberDistrictInfoDownloadUrl(const CreateNumberDistrictInfoDownloadUrlRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateNumberDistrictInfoDownloadUrlOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateNumberDistrictInfoDownloadUrlOutcome(CreateNumberDistrictInfoDownloadUrlResult(outcome.result()));
+	else
+		return CreateNumberDistrictInfoDownloadUrlOutcome(outcome.error());
+}
+
+void OutboundBotClient::createNumberDistrictInfoDownloadUrlAsync(const CreateNumberDistrictInfoDownloadUrlRequest& request, const CreateNumberDistrictInfoDownloadUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createNumberDistrictInfoDownloadUrl(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OutboundBotClient::CreateNumberDistrictInfoDownloadUrlOutcomeCallable OutboundBotClient::createNumberDistrictInfoDownloadUrlCallable(const CreateNumberDistrictInfoDownloadUrlRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateNumberDistrictInfoDownloadUrlOutcome()>>(
+			[this, request]()
+			{
+			return this->createNumberDistrictInfoDownloadUrl(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OutboundBotClient::CreateNumberDistrictInfoParsingTaskOutcome OutboundBotClient::createNumberDistrictInfoParsingTask(const CreateNumberDistrictInfoParsingTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateNumberDistrictInfoParsingTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateNumberDistrictInfoParsingTaskOutcome(CreateNumberDistrictInfoParsingTaskResult(outcome.result()));
+	else
+		return CreateNumberDistrictInfoParsingTaskOutcome(outcome.error());
+}
+
+void OutboundBotClient::createNumberDistrictInfoParsingTaskAsync(const CreateNumberDistrictInfoParsingTaskRequest& request, const CreateNumberDistrictInfoParsingTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createNumberDistrictInfoParsingTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OutboundBotClient::CreateNumberDistrictInfoParsingTaskOutcomeCallable OutboundBotClient::createNumberDistrictInfoParsingTaskCallable(const CreateNumberDistrictInfoParsingTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateNumberDistrictInfoParsingTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->createNumberDistrictInfoParsingTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 OutboundBotClient::CreateOutboundCallNumberOutcome OutboundBotClient::createOutboundCallNumber(const CreateOutboundCallNumberRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -657,6 +765,42 @@ OutboundBotClient::CreateTagOutcomeCallable OutboundBotClient::createTagCallable
 			[this, request]()
 			{
 			return this->createTag(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OutboundBotClient::DeleteAllNumberDistrictInfoOutcome OutboundBotClient::deleteAllNumberDistrictInfo(const DeleteAllNumberDistrictInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteAllNumberDistrictInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteAllNumberDistrictInfoOutcome(DeleteAllNumberDistrictInfoResult(outcome.result()));
+	else
+		return DeleteAllNumberDistrictInfoOutcome(outcome.error());
+}
+
+void OutboundBotClient::deleteAllNumberDistrictInfoAsync(const DeleteAllNumberDistrictInfoRequest& request, const DeleteAllNumberDistrictInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteAllNumberDistrictInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OutboundBotClient::DeleteAllNumberDistrictInfoOutcomeCallable OutboundBotClient::deleteAllNumberDistrictInfoCallable(const DeleteAllNumberDistrictInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteAllNumberDistrictInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteAllNumberDistrictInfo(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1419,6 +1563,42 @@ OutboundBotClient::DescribeJobGroupExportTaskProgressOutcomeCallable OutboundBot
 	return task->get_future();
 }
 
+OutboundBotClient::DescribeNumberDistrictInfoStatusOutcome OutboundBotClient::describeNumberDistrictInfoStatus(const DescribeNumberDistrictInfoStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeNumberDistrictInfoStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeNumberDistrictInfoStatusOutcome(DescribeNumberDistrictInfoStatusResult(outcome.result()));
+	else
+		return DescribeNumberDistrictInfoStatusOutcome(outcome.error());
+}
+
+void OutboundBotClient::describeNumberDistrictInfoStatusAsync(const DescribeNumberDistrictInfoStatusRequest& request, const DescribeNumberDistrictInfoStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeNumberDistrictInfoStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OutboundBotClient::DescribeNumberDistrictInfoStatusOutcomeCallable OutboundBotClient::describeNumberDistrictInfoStatusCallable(const DescribeNumberDistrictInfoStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeNumberDistrictInfoStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->describeNumberDistrictInfoStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 OutboundBotClient::DescribeScriptOutcome OutboundBotClient::describeScript(const DescribeScriptRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1629,6 +1809,42 @@ OutboundBotClient::DialogueOutcomeCallable OutboundBotClient::dialogueCallable(c
 			[this, request]()
 			{
 			return this->dialogue(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OutboundBotClient::DismissNumberDistrictInfoParsingResultOutcome OutboundBotClient::dismissNumberDistrictInfoParsingResult(const DismissNumberDistrictInfoParsingResultRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DismissNumberDistrictInfoParsingResultOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DismissNumberDistrictInfoParsingResultOutcome(DismissNumberDistrictInfoParsingResultResult(outcome.result()));
+	else
+		return DismissNumberDistrictInfoParsingResultOutcome(outcome.error());
+}
+
+void OutboundBotClient::dismissNumberDistrictInfoParsingResultAsync(const DismissNumberDistrictInfoParsingResultRequest& request, const DismissNumberDistrictInfoParsingResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, dismissNumberDistrictInfoParsingResult(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OutboundBotClient::DismissNumberDistrictInfoParsingResultOutcomeCallable OutboundBotClient::dismissNumberDistrictInfoParsingResultCallable(const DismissNumberDistrictInfoParsingResultRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DismissNumberDistrictInfoParsingResultOutcome()>>(
+			[this, request]()
+			{
+			return this->dismissNumberDistrictInfoParsingResult(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2139,6 +2355,42 @@ OutboundBotClient::GetMaxAttemptsPerDayOutcomeCallable OutboundBotClient::getMax
 	return task->get_future();
 }
 
+OutboundBotClient::GetNumberDistrictInfoTemplateDownloadUrlOutcome OutboundBotClient::getNumberDistrictInfoTemplateDownloadUrl(const GetNumberDistrictInfoTemplateDownloadUrlRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetNumberDistrictInfoTemplateDownloadUrlOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetNumberDistrictInfoTemplateDownloadUrlOutcome(GetNumberDistrictInfoTemplateDownloadUrlResult(outcome.result()));
+	else
+		return GetNumberDistrictInfoTemplateDownloadUrlOutcome(outcome.error());
+}
+
+void OutboundBotClient::getNumberDistrictInfoTemplateDownloadUrlAsync(const GetNumberDistrictInfoTemplateDownloadUrlRequest& request, const GetNumberDistrictInfoTemplateDownloadUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getNumberDistrictInfoTemplateDownloadUrl(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OutboundBotClient::GetNumberDistrictInfoTemplateDownloadUrlOutcomeCallable OutboundBotClient::getNumberDistrictInfoTemplateDownloadUrlCallable(const GetNumberDistrictInfoTemplateDownloadUrlRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetNumberDistrictInfoTemplateDownloadUrlOutcome()>>(
+			[this, request]()
+			{
+			return this->getNumberDistrictInfoTemplateDownloadUrl(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 OutboundBotClient::GetSummaryInfoOutcome OutboundBotClient::getSummaryInfo(const GetSummaryInfoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2313,6 +2565,42 @@ OutboundBotClient::InflightTaskTimeoutOutcomeCallable OutboundBotClient::infligh
 			[this, request]()
 			{
 			return this->inflightTaskTimeout(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OutboundBotClient::ListChatbotInstancesOutcome OutboundBotClient::listChatbotInstances(const ListChatbotInstancesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListChatbotInstancesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListChatbotInstancesOutcome(ListChatbotInstancesResult(outcome.result()));
+	else
+		return ListChatbotInstancesOutcome(outcome.error());
+}
+
+void OutboundBotClient::listChatbotInstancesAsync(const ListChatbotInstancesRequest& request, const ListChatbotInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listChatbotInstances(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OutboundBotClient::ListChatbotInstancesOutcomeCallable OutboundBotClient::listChatbotInstancesCallable(const ListChatbotInstancesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListChatbotInstancesOutcome()>>(
+			[this, request]()
+			{
+			return this->listChatbotInstances(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

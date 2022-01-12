@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_OUTBOUNDBOT_MODEL_DESCRIBEJOBDATAPARSINGTASKPROGRESSRESULT_H_
-#define ALIBABACLOUD_OUTBOUNDBOT_MODEL_DESCRIBEJOBDATAPARSINGTASKPROGRESSRESULT_H_
+#ifndef ALIBABACLOUD_OUTBOUNDBOT_MODEL_DESCRIBENUMBERDISTRICTINFOSTATUSRESULT_H_
+#define ALIBABACLOUD_OUTBOUNDBOT_MODEL_DESCRIBENUMBERDISTRICTINFOSTATUSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,24 +29,30 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_OUTBOUNDBOT_EXPORT DescribeJobDataParsingTaskProgressResult : public ServiceResult
+			class ALIBABACLOUD_OUTBOUNDBOT_EXPORT DescribeNumberDistrictInfoStatusResult : public ServiceResult
 			{
 			public:
-				struct Progress
+				struct AppliedVersion
 				{
-					std::string status;
-					int totalJobCount;
-					int handledJobCount;
-					std::string failReason;
-					std::string failErrorCode;
-					std::string feedbackUrl;
+					std::string versionId;
+					std::string fileName;
+					long fileSize;
+				};
+				struct ParsingVersion
+				{
+					std::string versionId;
+					long parseProgress;
+					std::string fileName;
+					long fileSize;
 				};
 
 
-				DescribeJobDataParsingTaskProgressResult();
-				explicit DescribeJobDataParsingTaskProgressResult(const std::string &payload);
-				~DescribeJobDataParsingTaskProgressResult();
-				Progress getProgress()const;
+				DescribeNumberDistrictInfoStatusResult();
+				explicit DescribeNumberDistrictInfoStatusResult(const std::string &payload);
+				~DescribeNumberDistrictInfoStatusResult();
+				std::string getStatus()const;
+				AppliedVersion getAppliedVersion()const;
+				ParsingVersion getParsingVersion()const;
 				std::string getMessage()const;
 				int getHttpStatusCode()const;
 				std::string getCode()const;
@@ -55,7 +61,9 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				Progress progress_;
+				std::string status_;
+				AppliedVersion appliedVersion_;
+				ParsingVersion parsingVersion_;
 				std::string message_;
 				int httpStatusCode_;
 				std::string code_;
@@ -65,4 +73,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_OUTBOUNDBOT_MODEL_DESCRIBEJOBDATAPARSINGTASKPROGRESSRESULT_H_
+#endif // !ALIBABACLOUD_OUTBOUNDBOT_MODEL_DESCRIBENUMBERDISTRICTINFOSTATUSRESULT_H_

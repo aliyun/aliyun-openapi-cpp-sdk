@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_OUTBOUNDBOT_MODEL_DESCRIBEJOBDATAPARSINGTASKPROGRESSRESULT_H_
-#define ALIBABACLOUD_OUTBOUNDBOT_MODEL_DESCRIBEJOBDATAPARSINGTASKPROGRESSRESULT_H_
+#ifndef ALIBABACLOUD_OUTBOUNDBOT_MODEL_CREATENUMBERDISTRICTINFODOWNLOADURLRESULT_H_
+#define ALIBABACLOUD_OUTBOUNDBOT_MODEL_CREATENUMBERDISTRICTINFODOWNLOADURLRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,35 +29,26 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_OUTBOUNDBOT_EXPORT DescribeJobDataParsingTaskProgressResult : public ServiceResult
+			class ALIBABACLOUD_OUTBOUNDBOT_EXPORT CreateNumberDistrictInfoDownloadUrlResult : public ServiceResult
 			{
 			public:
-				struct Progress
-				{
-					std::string status;
-					int totalJobCount;
-					int handledJobCount;
-					std::string failReason;
-					std::string failErrorCode;
-					std::string feedbackUrl;
-				};
 
 
-				DescribeJobDataParsingTaskProgressResult();
-				explicit DescribeJobDataParsingTaskProgressResult(const std::string &payload);
-				~DescribeJobDataParsingTaskProgressResult();
-				Progress getProgress()const;
+				CreateNumberDistrictInfoDownloadUrlResult();
+				explicit CreateNumberDistrictInfoDownloadUrlResult(const std::string &payload);
+				~CreateNumberDistrictInfoDownloadUrlResult();
 				std::string getMessage()const;
 				int getHttpStatusCode()const;
+				std::string getFileHttpUrl()const;
 				std::string getCode()const;
 				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				Progress progress_;
 				std::string message_;
 				int httpStatusCode_;
+				std::string fileHttpUrl_;
 				std::string code_;
 				bool success_;
 
@@ -65,4 +56,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_OUTBOUNDBOT_MODEL_DESCRIBEJOBDATAPARSINGTASKPROGRESSRESULT_H_
+#endif // !ALIBABACLOUD_OUTBOUNDBOT_MODEL_CREATENUMBERDISTRICTINFODOWNLOADURLRESULT_H_

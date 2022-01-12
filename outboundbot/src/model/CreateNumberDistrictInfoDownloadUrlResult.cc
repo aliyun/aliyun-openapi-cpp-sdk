@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/outboundbot/model/SuspendCallResult.h>
+#include <alibabacloud/outboundbot/model/CreateNumberDistrictInfoDownloadUrlResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::OutboundBot;
 using namespace AlibabaCloud::OutboundBot::Model;
 
-SuspendCallResult::SuspendCallResult() :
+CreateNumberDistrictInfoDownloadUrlResult::CreateNumberDistrictInfoDownloadUrlResult() :
 	ServiceResult()
 {}
 
-SuspendCallResult::SuspendCallResult(const std::string &payload) :
+CreateNumberDistrictInfoDownloadUrlResult::CreateNumberDistrictInfoDownloadUrlResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-SuspendCallResult::~SuspendCallResult()
+CreateNumberDistrictInfoDownloadUrlResult::~CreateNumberDistrictInfoDownloadUrlResult()
 {}
 
-void SuspendCallResult::parse(const std::string &payload)
+void CreateNumberDistrictInfoDownloadUrlResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -47,25 +47,32 @@ void SuspendCallResult::parse(const std::string &payload)
 		message_ = value["Message"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["FileHttpUrl"].isNull())
+		fileHttpUrl_ = value["FileHttpUrl"].asString();
 
 }
 
-std::string SuspendCallResult::getMessage()const
+std::string CreateNumberDistrictInfoDownloadUrlResult::getMessage()const
 {
 	return message_;
 }
 
-int SuspendCallResult::getHttpStatusCode()const
+int CreateNumberDistrictInfoDownloadUrlResult::getHttpStatusCode()const
 {
 	return httpStatusCode_;
 }
 
-std::string SuspendCallResult::getCode()const
+std::string CreateNumberDistrictInfoDownloadUrlResult::getFileHttpUrl()const
+{
+	return fileHttpUrl_;
+}
+
+std::string CreateNumberDistrictInfoDownloadUrlResult::getCode()const
 {
 	return code_;
 }
 
-bool SuspendCallResult::getSuccess()const
+bool CreateNumberDistrictInfoDownloadUrlResult::getSuccess()const
 {
 	return success_;
 }

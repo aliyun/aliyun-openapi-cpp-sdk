@@ -76,6 +76,7 @@ namespace AlibabaCloud
 					std::string jobGroupName;
 					std::string scriptVersion;
 					std::string jobGroupDescription;
+					long ringingDuration;
 					std::string jobGroupId;
 					std::string scriptName;
 					long creationTime;

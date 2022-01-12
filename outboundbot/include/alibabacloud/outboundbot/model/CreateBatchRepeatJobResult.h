@@ -35,6 +35,7 @@ namespace AlibabaCloud
 				struct JobGroup
 				{
 					std::string id;
+					long ringingDuration;
 				};
 
 

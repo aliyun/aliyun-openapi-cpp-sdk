@@ -106,6 +106,17 @@ void CreateJobGroupRequest::setStrategyJson(const std::string& strategyJson)
 	setParameter("StrategyJson", strategyJson);
 }
 
+long CreateJobGroupRequest::getRingingDuration()const
+{
+	return ringingDuration_;
+}
+
+void CreateJobGroupRequest::setRingingDuration(long ringingDuration)
+{
+	ringingDuration_ = ringingDuration;
+	setParameter("RingingDuration", std::to_string(ringingDuration));
+}
+
 std::string CreateJobGroupRequest::getScenarioId()const
 {
 	return scenarioId_;
