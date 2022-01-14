@@ -1,0 +1,394 @@
+#
+# Copyright 2009-2017 Alibaba Cloud All rights reserved.
+# 
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+# 
+#      http://www.apache.org/licenses/LICENSE-2.0
+# 
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
+set(public_header_dir ${CMAKE_CURRENT_SOURCE_DIR}/../include)
+
+set(resourcemanager_public_header 
+	include/alibabacloud/resourcemanager/ResourceManagerClient.h
+	include/alibabacloud/resourcemanager/ResourceManagerExport.h )
+
+set(resourcemanager_public_header_model 
+	include/alibabacloud/resourcemanager/model/AcceptHandshakeRequest.h
+	include/alibabacloud/resourcemanager/model/AcceptHandshakeResult.h
+	include/alibabacloud/resourcemanager/model/AttachControlPolicyRequest.h
+	include/alibabacloud/resourcemanager/model/AttachControlPolicyResult.h
+	include/alibabacloud/resourcemanager/model/AttachPolicyRequest.h
+	include/alibabacloud/resourcemanager/model/AttachPolicyResult.h
+	include/alibabacloud/resourcemanager/model/BindSecureMobilePhoneRequest.h
+	include/alibabacloud/resourcemanager/model/BindSecureMobilePhoneResult.h
+	include/alibabacloud/resourcemanager/model/CancelCreateCloudAccountRequest.h
+	include/alibabacloud/resourcemanager/model/CancelCreateCloudAccountResult.h
+	include/alibabacloud/resourcemanager/model/CancelHandshakeRequest.h
+	include/alibabacloud/resourcemanager/model/CancelHandshakeResult.h
+	include/alibabacloud/resourcemanager/model/CancelPromoteResourceAccountRequest.h
+	include/alibabacloud/resourcemanager/model/CancelPromoteResourceAccountResult.h
+	include/alibabacloud/resourcemanager/model/CreateCloudAccountRequest.h
+	include/alibabacloud/resourcemanager/model/CreateCloudAccountResult.h
+	include/alibabacloud/resourcemanager/model/CreateControlPolicyRequest.h
+	include/alibabacloud/resourcemanager/model/CreateControlPolicyResult.h
+	include/alibabacloud/resourcemanager/model/CreateFolderRequest.h
+	include/alibabacloud/resourcemanager/model/CreateFolderResult.h
+	include/alibabacloud/resourcemanager/model/CreatePolicyRequest.h
+	include/alibabacloud/resourcemanager/model/CreatePolicyResult.h
+	include/alibabacloud/resourcemanager/model/CreatePolicyVersionRequest.h
+	include/alibabacloud/resourcemanager/model/CreatePolicyVersionResult.h
+	include/alibabacloud/resourcemanager/model/CreateResourceAccountRequest.h
+	include/alibabacloud/resourcemanager/model/CreateResourceAccountResult.h
+	include/alibabacloud/resourcemanager/model/CreateResourceGroupRequest.h
+	include/alibabacloud/resourcemanager/model/CreateResourceGroupResult.h
+	include/alibabacloud/resourcemanager/model/CreateRoleRequest.h
+	include/alibabacloud/resourcemanager/model/CreateRoleResult.h
+	include/alibabacloud/resourcemanager/model/CreateServiceLinkedRoleRequest.h
+	include/alibabacloud/resourcemanager/model/CreateServiceLinkedRoleResult.h
+	include/alibabacloud/resourcemanager/model/DeclineHandshakeRequest.h
+	include/alibabacloud/resourcemanager/model/DeclineHandshakeResult.h
+	include/alibabacloud/resourcemanager/model/DeleteControlPolicyRequest.h
+	include/alibabacloud/resourcemanager/model/DeleteControlPolicyResult.h
+	include/alibabacloud/resourcemanager/model/DeleteFolderRequest.h
+	include/alibabacloud/resourcemanager/model/DeleteFolderResult.h
+	include/alibabacloud/resourcemanager/model/DeletePolicyRequest.h
+	include/alibabacloud/resourcemanager/model/DeletePolicyResult.h
+	include/alibabacloud/resourcemanager/model/DeletePolicyVersionRequest.h
+	include/alibabacloud/resourcemanager/model/DeletePolicyVersionResult.h
+	include/alibabacloud/resourcemanager/model/DeleteResourceGroupRequest.h
+	include/alibabacloud/resourcemanager/model/DeleteResourceGroupResult.h
+	include/alibabacloud/resourcemanager/model/DeleteRoleRequest.h
+	include/alibabacloud/resourcemanager/model/DeleteRoleResult.h
+	include/alibabacloud/resourcemanager/model/DeleteServiceLinkedRoleRequest.h
+	include/alibabacloud/resourcemanager/model/DeleteServiceLinkedRoleResult.h
+	include/alibabacloud/resourcemanager/model/DeregisterDelegatedAdministratorRequest.h
+	include/alibabacloud/resourcemanager/model/DeregisterDelegatedAdministratorResult.h
+	include/alibabacloud/resourcemanager/model/DestroyResourceDirectoryRequest.h
+	include/alibabacloud/resourcemanager/model/DestroyResourceDirectoryResult.h
+	include/alibabacloud/resourcemanager/model/DetachControlPolicyRequest.h
+	include/alibabacloud/resourcemanager/model/DetachControlPolicyResult.h
+	include/alibabacloud/resourcemanager/model/DetachPolicyRequest.h
+	include/alibabacloud/resourcemanager/model/DetachPolicyResult.h
+	include/alibabacloud/resourcemanager/model/DisableControlPolicyRequest.h
+	include/alibabacloud/resourcemanager/model/DisableControlPolicyResult.h
+	include/alibabacloud/resourcemanager/model/EnableControlPolicyRequest.h
+	include/alibabacloud/resourcemanager/model/EnableControlPolicyResult.h
+	include/alibabacloud/resourcemanager/model/EnableResourceDirectoryRequest.h
+	include/alibabacloud/resourcemanager/model/EnableResourceDirectoryResult.h
+	include/alibabacloud/resourcemanager/model/GetAccountRequest.h
+	include/alibabacloud/resourcemanager/model/GetAccountResult.h
+	include/alibabacloud/resourcemanager/model/GetControlPolicyRequest.h
+	include/alibabacloud/resourcemanager/model/GetControlPolicyResult.h
+	include/alibabacloud/resourcemanager/model/GetControlPolicyEnablementStatusRequest.h
+	include/alibabacloud/resourcemanager/model/GetControlPolicyEnablementStatusResult.h
+	include/alibabacloud/resourcemanager/model/GetFolderRequest.h
+	include/alibabacloud/resourcemanager/model/GetFolderResult.h
+	include/alibabacloud/resourcemanager/model/GetHandshakeRequest.h
+	include/alibabacloud/resourcemanager/model/GetHandshakeResult.h
+	include/alibabacloud/resourcemanager/model/GetPayerForAccountRequest.h
+	include/alibabacloud/resourcemanager/model/GetPayerForAccountResult.h
+	include/alibabacloud/resourcemanager/model/GetPolicyRequest.h
+	include/alibabacloud/resourcemanager/model/GetPolicyResult.h
+	include/alibabacloud/resourcemanager/model/GetPolicyVersionRequest.h
+	include/alibabacloud/resourcemanager/model/GetPolicyVersionResult.h
+	include/alibabacloud/resourcemanager/model/GetResourceDirectoryRequest.h
+	include/alibabacloud/resourcemanager/model/GetResourceDirectoryResult.h
+	include/alibabacloud/resourcemanager/model/GetResourceGroupRequest.h
+	include/alibabacloud/resourcemanager/model/GetResourceGroupResult.h
+	include/alibabacloud/resourcemanager/model/GetRoleRequest.h
+	include/alibabacloud/resourcemanager/model/GetRoleResult.h
+	include/alibabacloud/resourcemanager/model/GetServiceLinkedRoleDeletionStatusRequest.h
+	include/alibabacloud/resourcemanager/model/GetServiceLinkedRoleDeletionStatusResult.h
+	include/alibabacloud/resourcemanager/model/InitResourceDirectoryRequest.h
+	include/alibabacloud/resourcemanager/model/InitResourceDirectoryResult.h
+	include/alibabacloud/resourcemanager/model/InviteAccountToResourceDirectoryRequest.h
+	include/alibabacloud/resourcemanager/model/InviteAccountToResourceDirectoryResult.h
+	include/alibabacloud/resourcemanager/model/ListAccountsRequest.h
+	include/alibabacloud/resourcemanager/model/ListAccountsResult.h
+	include/alibabacloud/resourcemanager/model/ListAccountsForParentRequest.h
+	include/alibabacloud/resourcemanager/model/ListAccountsForParentResult.h
+	include/alibabacloud/resourcemanager/model/ListAncestorsRequest.h
+	include/alibabacloud/resourcemanager/model/ListAncestorsResult.h
+	include/alibabacloud/resourcemanager/model/ListControlPoliciesRequest.h
+	include/alibabacloud/resourcemanager/model/ListControlPoliciesResult.h
+	include/alibabacloud/resourcemanager/model/ListControlPolicyAttachmentsForTargetRequest.h
+	include/alibabacloud/resourcemanager/model/ListControlPolicyAttachmentsForTargetResult.h
+	include/alibabacloud/resourcemanager/model/ListDelegatedAdministratorsRequest.h
+	include/alibabacloud/resourcemanager/model/ListDelegatedAdministratorsResult.h
+	include/alibabacloud/resourcemanager/model/ListDelegatedServicesForAccountRequest.h
+	include/alibabacloud/resourcemanager/model/ListDelegatedServicesForAccountResult.h
+	include/alibabacloud/resourcemanager/model/ListFoldersForParentRequest.h
+	include/alibabacloud/resourcemanager/model/ListFoldersForParentResult.h
+	include/alibabacloud/resourcemanager/model/ListHandshakesForAccountRequest.h
+	include/alibabacloud/resourcemanager/model/ListHandshakesForAccountResult.h
+	include/alibabacloud/resourcemanager/model/ListHandshakesForResourceDirectoryRequest.h
+	include/alibabacloud/resourcemanager/model/ListHandshakesForResourceDirectoryResult.h
+	include/alibabacloud/resourcemanager/model/ListPoliciesRequest.h
+	include/alibabacloud/resourcemanager/model/ListPoliciesResult.h
+	include/alibabacloud/resourcemanager/model/ListPolicyAttachmentsRequest.h
+	include/alibabacloud/resourcemanager/model/ListPolicyAttachmentsResult.h
+	include/alibabacloud/resourcemanager/model/ListPolicyVersionsRequest.h
+	include/alibabacloud/resourcemanager/model/ListPolicyVersionsResult.h
+	include/alibabacloud/resourcemanager/model/ListResourceGroupsRequest.h
+	include/alibabacloud/resourcemanager/model/ListResourceGroupsResult.h
+	include/alibabacloud/resourcemanager/model/ListResourcesRequest.h
+	include/alibabacloud/resourcemanager/model/ListResourcesResult.h
+	include/alibabacloud/resourcemanager/model/ListRolesRequest.h
+	include/alibabacloud/resourcemanager/model/ListRolesResult.h
+	include/alibabacloud/resourcemanager/model/ListTargetAttachmentsForControlPolicyRequest.h
+	include/alibabacloud/resourcemanager/model/ListTargetAttachmentsForControlPolicyResult.h
+	include/alibabacloud/resourcemanager/model/ListTrustedServiceStatusRequest.h
+	include/alibabacloud/resourcemanager/model/ListTrustedServiceStatusResult.h
+	include/alibabacloud/resourcemanager/model/MoveAccountRequest.h
+	include/alibabacloud/resourcemanager/model/MoveAccountResult.h
+	include/alibabacloud/resourcemanager/model/MoveResourcesRequest.h
+	include/alibabacloud/resourcemanager/model/MoveResourcesResult.h
+	include/alibabacloud/resourcemanager/model/PromoteResourceAccountRequest.h
+	include/alibabacloud/resourcemanager/model/PromoteResourceAccountResult.h
+	include/alibabacloud/resourcemanager/model/RegisterDelegatedAdministratorRequest.h
+	include/alibabacloud/resourcemanager/model/RegisterDelegatedAdministratorResult.h
+	include/alibabacloud/resourcemanager/model/RemoveCloudAccountRequest.h
+	include/alibabacloud/resourcemanager/model/RemoveCloudAccountResult.h
+	include/alibabacloud/resourcemanager/model/ResendCreateCloudAccountEmailRequest.h
+	include/alibabacloud/resourcemanager/model/ResendCreateCloudAccountEmailResult.h
+	include/alibabacloud/resourcemanager/model/ResendPromoteResourceAccountEmailRequest.h
+	include/alibabacloud/resourcemanager/model/ResendPromoteResourceAccountEmailResult.h
+	include/alibabacloud/resourcemanager/model/SendVerificationCodeForBindSecureMobilePhoneRequest.h
+	include/alibabacloud/resourcemanager/model/SendVerificationCodeForBindSecureMobilePhoneResult.h
+	include/alibabacloud/resourcemanager/model/SendVerificationCodeForEnableRDRequest.h
+	include/alibabacloud/resourcemanager/model/SendVerificationCodeForEnableRDResult.h
+	include/alibabacloud/resourcemanager/model/SetDefaultPolicyVersionRequest.h
+	include/alibabacloud/resourcemanager/model/SetDefaultPolicyVersionResult.h
+	include/alibabacloud/resourcemanager/model/UpdateAccountRequest.h
+	include/alibabacloud/resourcemanager/model/UpdateAccountResult.h
+	include/alibabacloud/resourcemanager/model/UpdateControlPolicyRequest.h
+	include/alibabacloud/resourcemanager/model/UpdateControlPolicyResult.h
+	include/alibabacloud/resourcemanager/model/UpdateFolderRequest.h
+	include/alibabacloud/resourcemanager/model/UpdateFolderResult.h
+	include/alibabacloud/resourcemanager/model/UpdateResourceGroupRequest.h
+	include/alibabacloud/resourcemanager/model/UpdateResourceGroupResult.h
+	include/alibabacloud/resourcemanager/model/UpdateRoleRequest.h
+	include/alibabacloud/resourcemanager/model/UpdateRoleResult.h )
+
+set(resourcemanager_src 
+	src/ResourceManagerClient.cc
+	src/model/AcceptHandshakeRequest.cc
+	src/model/AcceptHandshakeResult.cc
+	src/model/AttachControlPolicyRequest.cc
+	src/model/AttachControlPolicyResult.cc
+	src/model/AttachPolicyRequest.cc
+	src/model/AttachPolicyResult.cc
+	src/model/BindSecureMobilePhoneRequest.cc
+	src/model/BindSecureMobilePhoneResult.cc
+	src/model/CancelCreateCloudAccountRequest.cc
+	src/model/CancelCreateCloudAccountResult.cc
+	src/model/CancelHandshakeRequest.cc
+	src/model/CancelHandshakeResult.cc
+	src/model/CancelPromoteResourceAccountRequest.cc
+	src/model/CancelPromoteResourceAccountResult.cc
+	src/model/CreateCloudAccountRequest.cc
+	src/model/CreateCloudAccountResult.cc
+	src/model/CreateControlPolicyRequest.cc
+	src/model/CreateControlPolicyResult.cc
+	src/model/CreateFolderRequest.cc
+	src/model/CreateFolderResult.cc
+	src/model/CreatePolicyRequest.cc
+	src/model/CreatePolicyResult.cc
+	src/model/CreatePolicyVersionRequest.cc
+	src/model/CreatePolicyVersionResult.cc
+	src/model/CreateResourceAccountRequest.cc
+	src/model/CreateResourceAccountResult.cc
+	src/model/CreateResourceGroupRequest.cc
+	src/model/CreateResourceGroupResult.cc
+	src/model/CreateRoleRequest.cc
+	src/model/CreateRoleResult.cc
+	src/model/CreateServiceLinkedRoleRequest.cc
+	src/model/CreateServiceLinkedRoleResult.cc
+	src/model/DeclineHandshakeRequest.cc
+	src/model/DeclineHandshakeResult.cc
+	src/model/DeleteControlPolicyRequest.cc
+	src/model/DeleteControlPolicyResult.cc
+	src/model/DeleteFolderRequest.cc
+	src/model/DeleteFolderResult.cc
+	src/model/DeletePolicyRequest.cc
+	src/model/DeletePolicyResult.cc
+	src/model/DeletePolicyVersionRequest.cc
+	src/model/DeletePolicyVersionResult.cc
+	src/model/DeleteResourceGroupRequest.cc
+	src/model/DeleteResourceGroupResult.cc
+	src/model/DeleteRoleRequest.cc
+	src/model/DeleteRoleResult.cc
+	src/model/DeleteServiceLinkedRoleRequest.cc
+	src/model/DeleteServiceLinkedRoleResult.cc
+	src/model/DeregisterDelegatedAdministratorRequest.cc
+	src/model/DeregisterDelegatedAdministratorResult.cc
+	src/model/DestroyResourceDirectoryRequest.cc
+	src/model/DestroyResourceDirectoryResult.cc
+	src/model/DetachControlPolicyRequest.cc
+	src/model/DetachControlPolicyResult.cc
+	src/model/DetachPolicyRequest.cc
+	src/model/DetachPolicyResult.cc
+	src/model/DisableControlPolicyRequest.cc
+	src/model/DisableControlPolicyResult.cc
+	src/model/EnableControlPolicyRequest.cc
+	src/model/EnableControlPolicyResult.cc
+	src/model/EnableResourceDirectoryRequest.cc
+	src/model/EnableResourceDirectoryResult.cc
+	src/model/GetAccountRequest.cc
+	src/model/GetAccountResult.cc
+	src/model/GetControlPolicyRequest.cc
+	src/model/GetControlPolicyResult.cc
+	src/model/GetControlPolicyEnablementStatusRequest.cc
+	src/model/GetControlPolicyEnablementStatusResult.cc
+	src/model/GetFolderRequest.cc
+	src/model/GetFolderResult.cc
+	src/model/GetHandshakeRequest.cc
+	src/model/GetHandshakeResult.cc
+	src/model/GetPayerForAccountRequest.cc
+	src/model/GetPayerForAccountResult.cc
+	src/model/GetPolicyRequest.cc
+	src/model/GetPolicyResult.cc
+	src/model/GetPolicyVersionRequest.cc
+	src/model/GetPolicyVersionResult.cc
+	src/model/GetResourceDirectoryRequest.cc
+	src/model/GetResourceDirectoryResult.cc
+	src/model/GetResourceGroupRequest.cc
+	src/model/GetResourceGroupResult.cc
+	src/model/GetRoleRequest.cc
+	src/model/GetRoleResult.cc
+	src/model/GetServiceLinkedRoleDeletionStatusRequest.cc
+	src/model/GetServiceLinkedRoleDeletionStatusResult.cc
+	src/model/InitResourceDirectoryRequest.cc
+	src/model/InitResourceDirectoryResult.cc
+	src/model/InviteAccountToResourceDirectoryRequest.cc
+	src/model/InviteAccountToResourceDirectoryResult.cc
+	src/model/ListAccountsRequest.cc
+	src/model/ListAccountsResult.cc
+	src/model/ListAccountsForParentRequest.cc
+	src/model/ListAccountsForParentResult.cc
+	src/model/ListAncestorsRequest.cc
+	src/model/ListAncestorsResult.cc
+	src/model/ListControlPoliciesRequest.cc
+	src/model/ListControlPoliciesResult.cc
+	src/model/ListControlPolicyAttachmentsForTargetRequest.cc
+	src/model/ListControlPolicyAttachmentsForTargetResult.cc
+	src/model/ListDelegatedAdministratorsRequest.cc
+	src/model/ListDelegatedAdministratorsResult.cc
+	src/model/ListDelegatedServicesForAccountRequest.cc
+	src/model/ListDelegatedServicesForAccountResult.cc
+	src/model/ListFoldersForParentRequest.cc
+	src/model/ListFoldersForParentResult.cc
+	src/model/ListHandshakesForAccountRequest.cc
+	src/model/ListHandshakesForAccountResult.cc
+	src/model/ListHandshakesForResourceDirectoryRequest.cc
+	src/model/ListHandshakesForResourceDirectoryResult.cc
+	src/model/ListPoliciesRequest.cc
+	src/model/ListPoliciesResult.cc
+	src/model/ListPolicyAttachmentsRequest.cc
+	src/model/ListPolicyAttachmentsResult.cc
+	src/model/ListPolicyVersionsRequest.cc
+	src/model/ListPolicyVersionsResult.cc
+	src/model/ListResourceGroupsRequest.cc
+	src/model/ListResourceGroupsResult.cc
+	src/model/ListResourcesRequest.cc
+	src/model/ListResourcesResult.cc
+	src/model/ListRolesRequest.cc
+	src/model/ListRolesResult.cc
+	src/model/ListTargetAttachmentsForControlPolicyRequest.cc
+	src/model/ListTargetAttachmentsForControlPolicyResult.cc
+	src/model/ListTrustedServiceStatusRequest.cc
+	src/model/ListTrustedServiceStatusResult.cc
+	src/model/MoveAccountRequest.cc
+	src/model/MoveAccountResult.cc
+	src/model/MoveResourcesRequest.cc
+	src/model/MoveResourcesResult.cc
+	src/model/PromoteResourceAccountRequest.cc
+	src/model/PromoteResourceAccountResult.cc
+	src/model/RegisterDelegatedAdministratorRequest.cc
+	src/model/RegisterDelegatedAdministratorResult.cc
+	src/model/RemoveCloudAccountRequest.cc
+	src/model/RemoveCloudAccountResult.cc
+	src/model/ResendCreateCloudAccountEmailRequest.cc
+	src/model/ResendCreateCloudAccountEmailResult.cc
+	src/model/ResendPromoteResourceAccountEmailRequest.cc
+	src/model/ResendPromoteResourceAccountEmailResult.cc
+	src/model/SendVerificationCodeForBindSecureMobilePhoneRequest.cc
+	src/model/SendVerificationCodeForBindSecureMobilePhoneResult.cc
+	src/model/SendVerificationCodeForEnableRDRequest.cc
+	src/model/SendVerificationCodeForEnableRDResult.cc
+	src/model/SetDefaultPolicyVersionRequest.cc
+	src/model/SetDefaultPolicyVersionResult.cc
+	src/model/UpdateAccountRequest.cc
+	src/model/UpdateAccountResult.cc
+	src/model/UpdateControlPolicyRequest.cc
+	src/model/UpdateControlPolicyResult.cc
+	src/model/UpdateFolderRequest.cc
+	src/model/UpdateFolderResult.cc
+	src/model/UpdateResourceGroupRequest.cc
+	src/model/UpdateResourceGroupResult.cc
+	src/model/UpdateRoleRequest.cc
+	src/model/UpdateRoleResult.cc )
+
+add_library(resourcemanager ${LIB_TYPE}
+	${resourcemanager_public_header}
+	${resourcemanager_public_header_model}
+	${resourcemanager_src})
+
+set_target_properties(resourcemanager
+	PROPERTIES
+	LINKER_LANGUAGE CXX
+	ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib
+	LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib
+	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
+	OUTPUT_NAME ${TARGET_OUTPUT_NAME_PREFIX}resourcemanager
+	)
+
+if(${LIB_TYPE} STREQUAL "SHARED")
+	set_target_properties(resourcemanager
+		PROPERTIES
+		DEFINE_SYMBOL ALIBABACLOUD_RESOURCEMANAGER_LIBRARY)
+endif()
+
+target_include_directories(resourcemanager
+	PRIVATE include
+		${CMAKE_SOURCE_DIR}/core/include
+	)
+target_link_libraries(resourcemanager
+	core)
+
+if(CMAKE_HOST_WIN32)
+	ExternalProject_Get_Property(jsoncpp INSTALL_DIR)
+	set(jsoncpp_install_dir ${INSTALL_DIR})
+	add_dependencies(resourcemanager
+		jsoncpp)
+	target_include_directories(resourcemanager
+		PRIVATE	${jsoncpp_install_dir}/include)
+	target_link_libraries(resourcemanager
+		${jsoncpp_install_dir}/lib/jsoncpp.lib)
+	set_target_properties(resourcemanager
+    	PROPERTIES
+    		COMPILE_OPTIONS "/bigobj")
+else()
+	target_include_directories(resourcemanager
+		PRIVATE /usr/include/jsoncpp)
+	target_link_libraries(resourcemanager
+		jsoncpp)
+endif()
+
+install(FILES ${resourcemanager_public_header}
+	DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/alibabacloud/resourcemanager)
+install(FILES ${resourcemanager_public_header_model}
+	DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/alibabacloud/resourcemanager/model)
+install(TARGETS resourcemanager
+	ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+	LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+	RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+	)
