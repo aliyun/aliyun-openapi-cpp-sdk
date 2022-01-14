@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,45 +18,37 @@
 
 using AlibabaCloud::ResourceManager::Model::ListTargetAttachmentsForControlPolicyRequest;
 
-ListTargetAttachmentsForControlPolicyRequest::ListTargetAttachmentsForControlPolicyRequest() :
-	RpcServiceRequest("resourcemanager", "2020-03-31", "ListTargetAttachmentsForControlPolicy")
-{
-	setMethod(HttpRequest::Method::Post);
+ListTargetAttachmentsForControlPolicyRequest::ListTargetAttachmentsForControlPolicyRequest()
+    : RpcServiceRequest("resourcemanager", "2020-03-31", "ListTargetAttachmentsForControlPolicy") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-ListTargetAttachmentsForControlPolicyRequest::~ListTargetAttachmentsForControlPolicyRequest()
-{}
+ListTargetAttachmentsForControlPolicyRequest::~ListTargetAttachmentsForControlPolicyRequest() {}
 
-int ListTargetAttachmentsForControlPolicyRequest::getPageNumber()const
-{
-	return pageNumber_;
+int ListTargetAttachmentsForControlPolicyRequest::getPageNumber() const {
+  return pageNumber_;
 }
 
-void ListTargetAttachmentsForControlPolicyRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+void ListTargetAttachmentsForControlPolicyRequest::setPageNumber(int pageNumber) {
+  pageNumber_ = pageNumber;
+  setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
-std::string ListTargetAttachmentsForControlPolicyRequest::getPolicyId()const
-{
-	return policyId_;
+std::string ListTargetAttachmentsForControlPolicyRequest::getPolicyId() const {
+  return policyId_;
 }
 
-void ListTargetAttachmentsForControlPolicyRequest::setPolicyId(const std::string& policyId)
-{
-	policyId_ = policyId;
-	setParameter("PolicyId", policyId);
+void ListTargetAttachmentsForControlPolicyRequest::setPolicyId(const std::string &policyId) {
+  policyId_ = policyId;
+  setParameter(std::string("PolicyId"), policyId);
 }
 
-int ListTargetAttachmentsForControlPolicyRequest::getPageSize()const
-{
-	return pageSize_;
+int ListTargetAttachmentsForControlPolicyRequest::getPageSize() const {
+  return pageSize_;
 }
 
-void ListTargetAttachmentsForControlPolicyRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+void ListTargetAttachmentsForControlPolicyRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 

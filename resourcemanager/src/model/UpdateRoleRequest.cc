@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,56 +18,46 @@
 
 using AlibabaCloud::ResourceManager::Model::UpdateRoleRequest;
 
-UpdateRoleRequest::UpdateRoleRequest() :
-	RpcServiceRequest("resourcemanager", "2020-03-31", "UpdateRole")
-{
-	setMethod(HttpRequest::Method::Post);
+UpdateRoleRequest::UpdateRoleRequest()
+    : RpcServiceRequest("resourcemanager", "2020-03-31", "UpdateRole") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-UpdateRoleRequest::~UpdateRoleRequest()
-{}
+UpdateRoleRequest::~UpdateRoleRequest() {}
 
-std::string UpdateRoleRequest::getNewAssumeRolePolicyDocument()const
-{
-	return newAssumeRolePolicyDocument_;
+std::string UpdateRoleRequest::getNewAssumeRolePolicyDocument() const {
+  return newAssumeRolePolicyDocument_;
 }
 
-void UpdateRoleRequest::setNewAssumeRolePolicyDocument(const std::string& newAssumeRolePolicyDocument)
-{
-	newAssumeRolePolicyDocument_ = newAssumeRolePolicyDocument;
-	setParameter("NewAssumeRolePolicyDocument", newAssumeRolePolicyDocument);
+void UpdateRoleRequest::setNewAssumeRolePolicyDocument(const std::string &newAssumeRolePolicyDocument) {
+  newAssumeRolePolicyDocument_ = newAssumeRolePolicyDocument;
+  setParameter(std::string("NewAssumeRolePolicyDocument"), newAssumeRolePolicyDocument);
 }
 
-std::string UpdateRoleRequest::getRoleName()const
-{
-	return roleName_;
+std::string UpdateRoleRequest::getRoleName() const {
+  return roleName_;
 }
 
-void UpdateRoleRequest::setRoleName(const std::string& roleName)
-{
-	roleName_ = roleName;
-	setParameter("RoleName", roleName);
+void UpdateRoleRequest::setRoleName(const std::string &roleName) {
+  roleName_ = roleName;
+  setParameter(std::string("RoleName"), roleName);
 }
 
-long UpdateRoleRequest::getNewMaxSessionDuration()const
-{
-	return newMaxSessionDuration_;
+long UpdateRoleRequest::getNewMaxSessionDuration() const {
+  return newMaxSessionDuration_;
 }
 
-void UpdateRoleRequest::setNewMaxSessionDuration(long newMaxSessionDuration)
-{
-	newMaxSessionDuration_ = newMaxSessionDuration;
-	setParameter("NewMaxSessionDuration", std::to_string(newMaxSessionDuration));
+void UpdateRoleRequest::setNewMaxSessionDuration(long newMaxSessionDuration) {
+  newMaxSessionDuration_ = newMaxSessionDuration;
+  setParameter(std::string("NewMaxSessionDuration"), std::to_string(newMaxSessionDuration));
 }
 
-std::string UpdateRoleRequest::getNewDescription()const
-{
-	return newDescription_;
+std::string UpdateRoleRequest::getNewDescription() const {
+  return newDescription_;
 }
 
-void UpdateRoleRequest::setNewDescription(const std::string& newDescription)
-{
-	newDescription_ = newDescription;
-	setParameter("NewDescription", newDescription);
+void UpdateRoleRequest::setNewDescription(const std::string &newDescription) {
+  newDescription_ = newDescription;
+  setParameter(std::string("NewDescription"), newDescription);
 }
 

@@ -40,18 +40,18 @@ void CreateResourceGroupResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto resourceGroupNode = value["ResourceGroup"];
+	if(!resourceGroupNode["DisplayName"].isNull())
+		resourceGroup_.displayName = resourceGroupNode["DisplayName"].asString();
 	if(!resourceGroupNode["Status"].isNull())
 		resourceGroup_.status = resourceGroupNode["Status"].asString();
 	if(!resourceGroupNode["AccountId"].isNull())
 		resourceGroup_.accountId = resourceGroupNode["AccountId"].asString();
-	if(!resourceGroupNode["DisplayName"].isNull())
-		resourceGroup_.displayName = resourceGroupNode["DisplayName"].asString();
-	if(!resourceGroupNode["Id"].isNull())
-		resourceGroup_.id = resourceGroupNode["Id"].asString();
-	if(!resourceGroupNode["CreateDate"].isNull())
-		resourceGroup_.createDate = resourceGroupNode["CreateDate"].asString();
 	if(!resourceGroupNode["Name"].isNull())
 		resourceGroup_.name = resourceGroupNode["Name"].asString();
+	if(!resourceGroupNode["CreateDate"].isNull())
+		resourceGroup_.createDate = resourceGroupNode["CreateDate"].asString();
+	if(!resourceGroupNode["Id"].isNull())
+		resourceGroup_.id = resourceGroupNode["Id"].asString();
 	auto allRegionStatusesNode = resourceGroupNode["RegionStatuses"]["RegionStatus"];
 	for (auto resourceGroupNodeRegionStatusesRegionStatus : allRegionStatusesNode)
 	{

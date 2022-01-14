@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,34 +18,28 @@
 
 using AlibabaCloud::ResourceManager::Model::UpdateResourceGroupRequest;
 
-UpdateResourceGroupRequest::UpdateResourceGroupRequest() :
-	RpcServiceRequest("resourcemanager", "2020-03-31", "UpdateResourceGroup")
-{
-	setMethod(HttpRequest::Method::Post);
+UpdateResourceGroupRequest::UpdateResourceGroupRequest()
+    : RpcServiceRequest("resourcemanager", "2020-03-31", "UpdateResourceGroup") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-UpdateResourceGroupRequest::~UpdateResourceGroupRequest()
-{}
+UpdateResourceGroupRequest::~UpdateResourceGroupRequest() {}
 
-std::string UpdateResourceGroupRequest::getNewDisplayName()const
-{
-	return newDisplayName_;
+std::string UpdateResourceGroupRequest::getNewDisplayName() const {
+  return newDisplayName_;
 }
 
-void UpdateResourceGroupRequest::setNewDisplayName(const std::string& newDisplayName)
-{
-	newDisplayName_ = newDisplayName;
-	setParameter("NewDisplayName", newDisplayName);
+void UpdateResourceGroupRequest::setNewDisplayName(const std::string &newDisplayName) {
+  newDisplayName_ = newDisplayName;
+  setParameter(std::string("NewDisplayName"), newDisplayName);
 }
 
-std::string UpdateResourceGroupRequest::getResourceGroupId()const
-{
-	return resourceGroupId_;
+std::string UpdateResourceGroupRequest::getResourceGroupId() const {
+  return resourceGroupId_;
 }
 
-void UpdateResourceGroupRequest::setResourceGroupId(const std::string& resourceGroupId)
-{
-	resourceGroupId_ = resourceGroupId;
-	setParameter("ResourceGroupId", resourceGroupId);
+void UpdateResourceGroupRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 

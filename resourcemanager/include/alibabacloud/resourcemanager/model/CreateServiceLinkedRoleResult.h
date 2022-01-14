@@ -37,10 +37,10 @@ namespace AlibabaCloud
 					std::string roleName;
 					std::string description;
 					std::string assumeRolePolicyDocument;
-					bool isServiceLinkedRole;
 					std::string arn;
-					std::string roleId;
+					bool isServiceLinkedRole;
 					std::string createDate;
+					std::string roleId;
 					std::string rolePrincipalName;
 				};
 

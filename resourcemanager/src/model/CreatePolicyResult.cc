@@ -40,16 +40,16 @@ void CreatePolicyResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto policyNode = value["Policy"];
-	if(!policyNode["PolicyType"].isNull())
-		policy_.policyType = policyNode["PolicyType"].asString();
+	if(!policyNode["DefaultVersion"].isNull())
+		policy_.defaultVersion = policyNode["DefaultVersion"].asString();
 	if(!policyNode["Description"].isNull())
 		policy_.description = policyNode["Description"].asString();
 	if(!policyNode["PolicyName"].isNull())
 		policy_.policyName = policyNode["PolicyName"].asString();
-	if(!policyNode["DefaultVersion"].isNull())
-		policy_.defaultVersion = policyNode["DefaultVersion"].asString();
 	if(!policyNode["CreateDate"].isNull())
 		policy_.createDate = policyNode["CreateDate"].asString();
+	if(!policyNode["PolicyType"].isNull())
+		policy_.policyType = policyNode["PolicyType"].asString();
 
 }
 

@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,23 +18,19 @@
 
 using AlibabaCloud::ResourceManager::Model::DeleteRoleRequest;
 
-DeleteRoleRequest::DeleteRoleRequest() :
-	RpcServiceRequest("resourcemanager", "2020-03-31", "DeleteRole")
-{
-	setMethod(HttpRequest::Method::Post);
+DeleteRoleRequest::DeleteRoleRequest()
+    : RpcServiceRequest("resourcemanager", "2020-03-31", "DeleteRole") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DeleteRoleRequest::~DeleteRoleRequest()
-{}
+DeleteRoleRequest::~DeleteRoleRequest() {}
 
-std::string DeleteRoleRequest::getRoleName()const
-{
-	return roleName_;
+std::string DeleteRoleRequest::getRoleName() const {
+  return roleName_;
 }
 
-void DeleteRoleRequest::setRoleName(const std::string& roleName)
-{
-	roleName_ = roleName;
-	setParameter("RoleName", roleName);
+void DeleteRoleRequest::setRoleName(const std::string &roleName) {
+  roleName_ = roleName;
+  setParameter(std::string("RoleName"), roleName);
 }
 

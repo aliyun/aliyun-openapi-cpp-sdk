@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,38 +17,32 @@
 #ifndef ALIBABACLOUD_RESOURCEMANAGER_MODEL_LISTDELEGATEDADMINISTRATORSREQUEST_H_
 #define ALIBABACLOUD_RESOURCEMANAGER_MODEL_LISTDELEGATEDADMINISTRATORSREQUEST_H_
 
+#include <alibabacloud/resourcemanager/ResourceManagerExport.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
-#include <alibabacloud/resourcemanager/ResourceManagerExport.h>
+#include <map>
 
-namespace AlibabaCloud
-{
-	namespace ResourceManager
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_RESOURCEMANAGER_EXPORT ListDelegatedAdministratorsRequest : public RpcServiceRequest
-			{
+namespace AlibabaCloud {
+namespace ResourceManager {
+namespace Model {
+class ALIBABACLOUD_RESOURCEMANAGER_EXPORT ListDelegatedAdministratorsRequest : public RpcServiceRequest {
+public:
+	ListDelegatedAdministratorsRequest();
+	~ListDelegatedAdministratorsRequest();
+	long getPageNumber() const;
+	void setPageNumber(long pageNumber);
+	long getPageSize() const;
+	void setPageSize(long pageSize);
+	std::string getServicePrincipal() const;
+	void setServicePrincipal(const std::string &servicePrincipal);
 
-			public:
-				ListDelegatedAdministratorsRequest();
-				~ListDelegatedAdministratorsRequest();
-
-				long getPageNumber()const;
-				void setPageNumber(long pageNumber);
-				long getPageSize()const;
-				void setPageSize(long pageSize);
-				std::string getServicePrincipal()const;
-				void setServicePrincipal(const std::string& servicePrincipal);
-
-            private:
-				long pageNumber_;
-				long pageSize_;
-				std::string servicePrincipal_;
-
-			};
-		}
-	}
-}
+private:
+	long pageNumber_;
+	long pageSize_;
+	std::string servicePrincipal_;
+};
+} // namespace Model
+} // namespace ResourceManager
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_RESOURCEMANAGER_MODEL_LISTDELEGATEDADMINISTRATORSREQUEST_H_
