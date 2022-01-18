@@ -43,26 +43,26 @@ void DescribeDomainBasicConfigsResult::parse(const std::string &payload)
 	for (auto valueDomainConfigsDomainConfig : allDomainConfigsNode)
 	{
 		DomainConfig domainConfigsObject;
-		if(!valueDomainConfigsDomainConfig["Owner"].isNull())
-			domainConfigsObject.owner = valueDomainConfigsDomainConfig["Owner"].asString();
-		if(!valueDomainConfigsDomainConfig["WafStatus"].isNull())
-			domainConfigsObject.wafStatus = std::stoi(valueDomainConfigsDomainConfig["WafStatus"].asString());
-		if(!valueDomainConfigsDomainConfig["CcStatus"].isNull())
-			domainConfigsObject.ccStatus = std::stoi(valueDomainConfigsDomainConfig["CcStatus"].asString());
-		if(!valueDomainConfigsDomainConfig["CcMode"].isNull())
-			domainConfigsObject.ccMode = std::stoi(valueDomainConfigsDomainConfig["CcMode"].asString());
-		if(!valueDomainConfigsDomainConfig["AclStatus"].isNull())
-			domainConfigsObject.aclStatus = std::stoi(valueDomainConfigsDomainConfig["AclStatus"].asString());
-		if(!valueDomainConfigsDomainConfig["WafMode"].isNull())
-			domainConfigsObject.wafMode = std::stoi(valueDomainConfigsDomainConfig["WafMode"].asString());
-		if(!valueDomainConfigsDomainConfig["Version"].isNull())
-			domainConfigsObject.version = std::stol(valueDomainConfigsDomainConfig["Version"].asString());
-		if(!valueDomainConfigsDomainConfig["Domain"].isNull())
-			domainConfigsObject.domain = valueDomainConfigsDomainConfig["Domain"].asString();
 		if(!valueDomainConfigsDomainConfig["Status"].isNull())
 			domainConfigsObject.status = std::stoi(valueDomainConfigsDomainConfig["Status"].asString());
+		if(!valueDomainConfigsDomainConfig["Domain"].isNull())
+			domainConfigsObject.domain = valueDomainConfigsDomainConfig["Domain"].asString();
+		if(!valueDomainConfigsDomainConfig["Owner"].isNull())
+			domainConfigsObject.owner = valueDomainConfigsDomainConfig["Owner"].asString();
+		if(!valueDomainConfigsDomainConfig["CcMode"].isNull())
+			domainConfigsObject.ccMode = std::stoi(valueDomainConfigsDomainConfig["CcMode"].asString());
+		if(!valueDomainConfigsDomainConfig["CcStatus"].isNull())
+			domainConfigsObject.ccStatus = std::stoi(valueDomainConfigsDomainConfig["CcStatus"].asString());
 		if(!valueDomainConfigsDomainConfig["AccessType"].isNull())
 			domainConfigsObject.accessType = valueDomainConfigsDomainConfig["AccessType"].asString();
+		if(!valueDomainConfigsDomainConfig["Version"].isNull())
+			domainConfigsObject.version = std::stol(valueDomainConfigsDomainConfig["Version"].asString());
+		if(!valueDomainConfigsDomainConfig["AclStatus"].isNull())
+			domainConfigsObject.aclStatus = std::stoi(valueDomainConfigsDomainConfig["AclStatus"].asString());
+		if(!valueDomainConfigsDomainConfig["WafStatus"].isNull())
+			domainConfigsObject.wafStatus = std::stoi(valueDomainConfigsDomainConfig["WafStatus"].asString());
+		if(!valueDomainConfigsDomainConfig["WafMode"].isNull())
+			domainConfigsObject.wafMode = std::stoi(valueDomainConfigsDomainConfig["WafMode"].asString());
 		domainConfigs_.push_back(domainConfigsObject);
 	}
 	if(!value["TotalCount"].isNull())

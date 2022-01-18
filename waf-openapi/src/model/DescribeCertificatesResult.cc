@@ -43,14 +43,14 @@ void DescribeCertificatesResult::parse(const std::string &payload)
 	for (auto valueCertificatesCertificate : allCertificatesNode)
 	{
 		Certificate certificatesObject;
-		if(!valueCertificatesCertificate["CommonName"].isNull())
-			certificatesObject.commonName = valueCertificatesCertificate["CommonName"].asString();
 		if(!valueCertificatesCertificate["IsUsing"].isNull())
 			certificatesObject.isUsing = valueCertificatesCertificate["IsUsing"].asString() == "true";
 		if(!valueCertificatesCertificate["CertificateName"].isNull())
 			certificatesObject.certificateName = valueCertificatesCertificate["CertificateName"].asString();
 		if(!valueCertificatesCertificate["CertificateId"].isNull())
 			certificatesObject.certificateId = std::stol(valueCertificatesCertificate["CertificateId"].asString());
+		if(!valueCertificatesCertificate["CommonName"].isNull())
+			certificatesObject.commonName = valueCertificatesCertificate["CommonName"].asString();
 		auto allSans = value["Sans"]["San"];
 		for (auto value : allSans)
 			certificatesObject.sans.push_back(value.asString());

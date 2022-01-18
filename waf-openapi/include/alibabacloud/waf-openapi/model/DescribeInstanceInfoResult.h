@@ -37,8 +37,8 @@ namespace AlibabaCloud
 					int status;
 					std::string subscriptionType;
 					int trial;
-					std::string instanceId;
 					std::string version;
+					std::string instanceId;
 					int inDebt;
 					std::string region;
 					int remainDay;

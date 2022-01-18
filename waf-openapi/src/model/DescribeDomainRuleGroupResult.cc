@@ -41,11 +41,18 @@ void DescribeDomainRuleGroupResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["RuleGroupId"].isNull())
 		ruleGroupId_ = std::stol(value["RuleGroupId"].asString());
+	if(!value["WafAiStatus"].isNull())
+		wafAiStatus_ = std::stoi(value["WafAiStatus"].asString());
 
 }
 
 long DescribeDomainRuleGroupResult::getRuleGroupId()const
 {
 	return ruleGroupId_;
+}
+
+int DescribeDomainRuleGroupResult::getWafAiStatus()const
+{
+	return wafAiStatus_;
 }
 

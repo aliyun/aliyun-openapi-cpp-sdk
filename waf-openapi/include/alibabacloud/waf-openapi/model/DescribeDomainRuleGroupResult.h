@@ -38,11 +38,13 @@ namespace AlibabaCloud
 				explicit DescribeDomainRuleGroupResult(const std::string &payload);
 				~DescribeDomainRuleGroupResult();
 				long getRuleGroupId()const;
+				int getWafAiStatus()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				long ruleGroupId_;
+				int wafAiStatus_;
 
 			};
 		}

@@ -40,26 +40,26 @@ void DescribeInstanceInfoResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto instanceInfoNode = value["InstanceInfo"];
-	if(!instanceInfoNode["InDebt"].isNull())
-		instanceInfo_.inDebt = std::stoi(instanceInfoNode["InDebt"].asString());
-	if(!instanceInfoNode["InstanceId"].isNull())
-		instanceInfo_.instanceId = instanceInfoNode["InstanceId"].asString();
-	if(!instanceInfoNode["PayType"].isNull())
-		instanceInfo_.payType = std::stoi(instanceInfoNode["PayType"].asString());
+	if(!instanceInfoNode["Status"].isNull())
+		instanceInfo_.status = std::stoi(instanceInfoNode["Status"].asString());
 	if(!instanceInfoNode["EndDate"].isNull())
 		instanceInfo_.endDate = std::stol(instanceInfoNode["EndDate"].asString());
+	if(!instanceInfoNode["Version"].isNull())
+		instanceInfo_.version = instanceInfoNode["Version"].asString();
 	if(!instanceInfoNode["RemainDay"].isNull())
 		instanceInfo_.remainDay = std::stoi(instanceInfoNode["RemainDay"].asString());
 	if(!instanceInfoNode["Region"].isNull())
 		instanceInfo_.region = instanceInfoNode["Region"].asString();
-	if(!instanceInfoNode["Trial"].isNull())
-		instanceInfo_.trial = std::stoi(instanceInfoNode["Trial"].asString());
-	if(!instanceInfoNode["Status"].isNull())
-		instanceInfo_.status = std::stoi(instanceInfoNode["Status"].asString());
+	if(!instanceInfoNode["PayType"].isNull())
+		instanceInfo_.payType = std::stoi(instanceInfoNode["PayType"].asString());
+	if(!instanceInfoNode["InDebt"].isNull())
+		instanceInfo_.inDebt = std::stoi(instanceInfoNode["InDebt"].asString());
+	if(!instanceInfoNode["InstanceId"].isNull())
+		instanceInfo_.instanceId = instanceInfoNode["InstanceId"].asString();
 	if(!instanceInfoNode["SubscriptionType"].isNull())
 		instanceInfo_.subscriptionType = instanceInfoNode["SubscriptionType"].asString();
-	if(!instanceInfoNode["Version"].isNull())
-		instanceInfo_.version = instanceInfoNode["Version"].asString();
+	if(!instanceInfoNode["Trial"].isNull())
+		instanceInfo_.trial = std::stoi(instanceInfoNode["Trial"].asString());
 
 }
 

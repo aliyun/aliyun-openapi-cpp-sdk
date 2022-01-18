@@ -40,8 +40,8 @@ namespace AlibabaCloud
 					long version;
 					int ccStatus;
 					int wafMode;
-					int wafStatus;
 					std::string domain;
+					int wafStatus;
 					std::string accessType;
 					int ccMode;
 				};

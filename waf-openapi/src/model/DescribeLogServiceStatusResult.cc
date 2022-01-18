@@ -43,10 +43,10 @@ void DescribeLogServiceStatusResult::parse(const std::string &payload)
 	for (auto valueDomainStatusstatus : allDomainStatusNode)
 	{
 		Status domainStatusObject;
-		if(!valueDomainStatusstatus["SlsLogActive"].isNull())
-			domainStatusObject.slsLogActive = std::stoi(valueDomainStatusstatus["SlsLogActive"].asString());
 		if(!valueDomainStatusstatus["Domain"].isNull())
 			domainStatusObject.domain = valueDomainStatusstatus["Domain"].asString();
+		if(!valueDomainStatusstatus["SlsLogActive"].isNull())
+			domainStatusObject.slsLogActive = std::stoi(valueDomainStatusstatus["SlsLogActive"].asString());
 		domainStatus_.push_back(domainStatusObject);
 	}
 	if(!value["TotalCount"].isNull())

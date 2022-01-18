@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,102 +18,81 @@
 
 using AlibabaCloud::Waf_openapi::Model::DescribeDomainListRequest;
 
-DescribeDomainListRequest::DescribeDomainListRequest() :
-	RpcServiceRequest("waf-openapi", "2019-09-10", "DescribeDomainList")
-{
-	setMethod(HttpRequest::Method::Post);
+DescribeDomainListRequest::DescribeDomainListRequest()
+    : RpcServiceRequest("waf-openapi", "2019-09-10", "DescribeDomainList") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DescribeDomainListRequest::~DescribeDomainListRequest()
-{}
+DescribeDomainListRequest::~DescribeDomainListRequest() {}
 
-std::vector<std::string> DescribeDomainListRequest::getDomainNames()const
-{
-	return domainNames_;
+std::vector<std::string> DescribeDomainListRequest::getDomainNames() const {
+  return domainNames_;
 }
 
-void DescribeDomainListRequest::setDomainNames(const std::vector<std::string>& domainNames)
-{
-	domainNames_ = domainNames;
-	for(int dep1 = 0; dep1!= domainNames.size(); dep1++) {
-		setParameter("DomainNames."+ std::to_string(dep1), domainNames.at(dep1));
-	}
+void DescribeDomainListRequest::setDomainNames(const std::vector<std::string> &domainNames) {
+  domainNames_ = domainNames;
 }
 
-int DescribeDomainListRequest::getPageNumber()const
-{
-	return pageNumber_;
+int DescribeDomainListRequest::getPageNumber() const {
+  return pageNumber_;
 }
 
-void DescribeDomainListRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+void DescribeDomainListRequest::setPageNumber(int pageNumber) {
+  pageNumber_ = pageNumber;
+  setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
-std::string DescribeDomainListRequest::getResourceGroupId()const
-{
-	return resourceGroupId_;
+std::string DescribeDomainListRequest::getResourceGroupId() const {
+  return resourceGroupId_;
 }
 
-void DescribeDomainListRequest::setResourceGroupId(const std::string& resourceGroupId)
-{
-	resourceGroupId_ = resourceGroupId;
-	setParameter("ResourceGroupId", resourceGroupId);
+void DescribeDomainListRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
-std::string DescribeDomainListRequest::getSourceIp()const
-{
-	return sourceIp_;
+std::string DescribeDomainListRequest::getSourceIp() const {
+  return sourceIp_;
 }
 
-void DescribeDomainListRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
+void DescribeDomainListRequest::setSourceIp(const std::string &sourceIp) {
+  sourceIp_ = sourceIp;
+  setParameter(std::string("SourceIp"), sourceIp);
 }
 
-int DescribeDomainListRequest::getPageSize()const
-{
-	return pageSize_;
+int DescribeDomainListRequest::getPageSize() const {
+  return pageSize_;
 }
 
-void DescribeDomainListRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+void DescribeDomainListRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
-std::string DescribeDomainListRequest::getDomainName()const
-{
-	return domainName_;
+std::string DescribeDomainListRequest::getDomainName() const {
+  return domainName_;
 }
 
-void DescribeDomainListRequest::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+void DescribeDomainListRequest::setDomainName(const std::string &domainName) {
+  domainName_ = domainName;
+  setParameter(std::string("DomainName"), domainName);
 }
 
-int DescribeDomainListRequest::getIsSub()const
-{
-	return isSub_;
+int DescribeDomainListRequest::getIsSub() const {
+  return isSub_;
 }
 
-void DescribeDomainListRequest::setIsSub(int isSub)
-{
-	isSub_ = isSub;
-	setParameter("IsSub", std::to_string(isSub));
+void DescribeDomainListRequest::setIsSub(int isSub) {
+  isSub_ = isSub;
+  setParameter(std::string("IsSub"), std::to_string(isSub));
 }
 
-std::string DescribeDomainListRequest::getInstanceId()const
-{
-	return instanceId_;
+std::string DescribeDomainListRequest::getInstanceId() const {
+  return instanceId_;
 }
 
-void DescribeDomainListRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+void DescribeDomainListRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
 }
 

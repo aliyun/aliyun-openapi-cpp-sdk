@@ -43,18 +43,18 @@ void DescribeInstanceSpecInfoResult::parse(const std::string &payload)
 	for (auto valueInstanceSpecInfosInstanceSpecInfo : allInstanceSpecInfosNode)
 	{
 		InstanceSpecInfo instanceSpecInfosObject;
-		if(!valueInstanceSpecInfosInstanceSpecInfo["Value"].isNull())
-			instanceSpecInfosObject.value = valueInstanceSpecInfosInstanceSpecInfo["Value"].asString();
 		if(!valueInstanceSpecInfosInstanceSpecInfo["Code"].isNull())
 			instanceSpecInfosObject.code = valueInstanceSpecInfosInstanceSpecInfo["Code"].asString();
+		if(!valueInstanceSpecInfosInstanceSpecInfo["Value"].isNull())
+			instanceSpecInfosObject.value = valueInstanceSpecInfosInstanceSpecInfo["Value"].asString();
 		instanceSpecInfos_.push_back(instanceSpecInfosObject);
 	}
 	if(!value["InstanceId"].isNull())
 		instanceId_ = value["InstanceId"].asString();
-	if(!value["Version"].isNull())
-		version_ = value["Version"].asString();
 	if(!value["ExpireTime"].isNull())
 		expireTime_ = std::stol(value["ExpireTime"].asString());
+	if(!value["Version"].isNull())
+		version_ = value["Version"].asString();
 
 }
 

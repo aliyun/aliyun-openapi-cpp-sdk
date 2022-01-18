@@ -43,16 +43,16 @@ void DescribeProtectionModuleRulesResult::parse(const std::string &payload)
 	for (auto valueRulesRule : allRulesNode)
 	{
 		Rule rulesObject;
-		if(!valueRulesRule["RuleId"].isNull())
-			rulesObject.ruleId = std::stol(valueRulesRule["RuleId"].asString());
-		if(!valueRulesRule["Version"].isNull())
-			rulesObject.version = std::stol(valueRulesRule["Version"].asString());
-		if(!valueRulesRule["Content"].isNull())
-			rulesObject.content = valueRulesRule["Content"].asString();
-		if(!valueRulesRule["Time"].isNull())
-			rulesObject.time = std::stol(valueRulesRule["Time"].asString());
 		if(!valueRulesRule["Status"].isNull())
 			rulesObject.status = std::stol(valueRulesRule["Status"].asString());
+		if(!valueRulesRule["Time"].isNull())
+			rulesObject.time = std::stol(valueRulesRule["Time"].asString());
+		if(!valueRulesRule["Content"].isNull())
+			rulesObject.content = valueRulesRule["Content"].asString();
+		if(!valueRulesRule["Version"].isNull())
+			rulesObject.version = std::stol(valueRulesRule["Version"].asString());
+		if(!valueRulesRule["RuleId"].isNull())
+			rulesObject.ruleId = std::stol(valueRulesRule["RuleId"].asString());
 		rules_.push_back(rulesObject);
 	}
 	if(!value["TotalCount"].isNull())
