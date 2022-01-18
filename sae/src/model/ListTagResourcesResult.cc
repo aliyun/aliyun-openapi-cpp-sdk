@@ -46,26 +46,26 @@ void ListTagResourcesResult::parse(const std::string &payload)
 	for (auto dataNodeTagResourcesTagResource : allTagResourcesNode)
 	{
 		Data::TagResource tagResourceObject;
-		if(!dataNodeTagResourcesTagResource["TagKey"].isNull())
-			tagResourceObject.tagKey = dataNodeTagResourcesTagResource["TagKey"].asString();
+		if(!dataNodeTagResourcesTagResource["ResourceType"].isNull())
+			tagResourceObject.resourceType = dataNodeTagResourcesTagResource["ResourceType"].asString();
 		if(!dataNodeTagResourcesTagResource["TagValue"].isNull())
 			tagResourceObject.tagValue = dataNodeTagResourcesTagResource["TagValue"].asString();
 		if(!dataNodeTagResourcesTagResource["ResourceId"].isNull())
 			tagResourceObject.resourceId = dataNodeTagResourcesTagResource["ResourceId"].asString();
-		if(!dataNodeTagResourcesTagResource["ResourceType"].isNull())
-			tagResourceObject.resourceType = dataNodeTagResourcesTagResource["ResourceType"].asString();
+		if(!dataNodeTagResourcesTagResource["TagKey"].isNull())
+			tagResourceObject.tagKey = dataNodeTagResourcesTagResource["TagKey"].asString();
 		data_.tagResources.push_back(tagResourceObject);
 	}
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["TraceId"].isNull())
 		traceId_ = value["TraceId"].asString();
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

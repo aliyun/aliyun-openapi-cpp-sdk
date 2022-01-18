@@ -28,6 +28,17 @@ DescribeApplicationInstancesRequest::DescribeApplicationInstancesRequest() :
 DescribeApplicationInstancesRequest::~DescribeApplicationInstancesRequest()
 {}
 
+std::string DescribeApplicationInstancesRequest::getJobId()const
+{
+	return jobId_;
+}
+
+void DescribeApplicationInstancesRequest::setJobId(const std::string& jobId)
+{
+	jobId_ = jobId;
+	setParameter("JobId", jobId);
+}
+
 std::string DescribeApplicationInstancesRequest::getAppId()const
 {
 	return appId_;

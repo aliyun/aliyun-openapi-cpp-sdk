@@ -1167,6 +1167,42 @@ SaeClient::DescribeConfigMapOutcomeCallable SaeClient::describeConfigMapCallable
 	return task->get_future();
 }
 
+SaeClient::DescribeConfigurationPriceOutcome SaeClient::describeConfigurationPrice(const DescribeConfigurationPriceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeConfigurationPriceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeConfigurationPriceOutcome(DescribeConfigurationPriceResult(outcome.result()));
+	else
+		return DescribeConfigurationPriceOutcome(outcome.error());
+}
+
+void SaeClient::describeConfigurationPriceAsync(const DescribeConfigurationPriceRequest& request, const DescribeConfigurationPriceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeConfigurationPrice(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::DescribeConfigurationPriceOutcomeCallable SaeClient::describeConfigurationPriceCallable(const DescribeConfigurationPriceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeConfigurationPriceOutcome()>>(
+			[this, request]()
+			{
+			return this->describeConfigurationPrice(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SaeClient::DescribeEdasContainersOutcome SaeClient::describeEdasContainers(const DescribeEdasContainersRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

@@ -40,26 +40,28 @@ void QueryResourceStaticsResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	auto realTimeResNode = dataNode["RealTimeRes"];
-	if(!realTimeResNode["Cpu"].isNull())
-		data_.realTimeRes.cpu = std::stof(realTimeResNode["Cpu"].asString());
-	if(!realTimeResNode["Memory"].isNull())
-		data_.realTimeRes.memory = std::stof(realTimeResNode["Memory"].asString());
+	if(!dataNode["Workload"].isNull())
+		data_.workload = dataNode["Workload"].asString();
 	auto summaryNode = dataNode["Summary"];
 	if(!summaryNode["Cpu"].isNull())
 		data_.summary.cpu = std::stof(summaryNode["Cpu"].asString());
 	if(!summaryNode["Memory"].isNull())
 		data_.summary.memory = std::stof(summaryNode["Memory"].asString());
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
+	auto realTimeResNode = dataNode["RealTimeRes"];
+	if(!realTimeResNode["Cpu"].isNull())
+		data_.realTimeRes.cpu = std::stof(realTimeResNode["Cpu"].asString());
+	if(!realTimeResNode["Memory"].isNull())
+		data_.realTimeRes.memory = std::stof(realTimeResNode["Memory"].asString());
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["TraceId"].isNull())
 		traceId_ = value["TraceId"].asString();
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

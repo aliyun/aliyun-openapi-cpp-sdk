@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SAE_MODEL_QUERYRESOURCESTATICSRESULT_H_
-#define ALIBABACLOUD_SAE_MODEL_QUERYRESOURCESTATICSRESULT_H_
+#ifndef ALIBABACLOUD_SAE_MODEL_DESCRIBECONFIGURATIONPRICERESULT_H_
+#define ALIBABACLOUD_SAE_MODEL_DESCRIBECONFIGURATIONPRICERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,30 +29,37 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SAE_EXPORT QueryResourceStaticsResult : public ServiceResult
+			class ALIBABACLOUD_SAE_EXPORT DescribeConfigurationPriceResult : public ServiceResult
 			{
 			public:
 				struct Data
 				{
-					struct Summary
+					struct BagUsage
 					{
-						float memory;
+						float mem;
 						float cpu;
 					};
-					struct RealTimeRes
+					struct Order
 					{
-						float memory;
-						float cpu;
+						std::vector<std::string> ruleIds;
+						float tradeAmount;
+						float originalAmount;
+						float discountAmount;
 					};
-					Summary summary;
-					RealTimeRes realTimeRes;
-					std::string workload;
+					struct Rule
+					{
+						long ruleDescId;
+						std::string name;
+					};
+					Order order;
+					BagUsage bagUsage;
+					std::vector<Rule> rules;
 				};
 
 
-				QueryResourceStaticsResult();
-				explicit QueryResourceStaticsResult(const std::string &payload);
-				~QueryResourceStaticsResult();
+				DescribeConfigurationPriceResult();
+				explicit DescribeConfigurationPriceResult(const std::string &payload);
+				~DescribeConfigurationPriceResult();
 				std::string getMessage()const;
 				std::string getTraceId()const;
 				Data getData()const;
@@ -74,4 +81,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SAE_MODEL_QUERYRESOURCESTATICSRESULT_H_
+#endif // !ALIBABACLOUD_SAE_MODEL_DESCRIBECONFIGURATIONPRICERESULT_H_

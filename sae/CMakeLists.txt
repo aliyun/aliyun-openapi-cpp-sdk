@@ -83,6 +83,8 @@ set(sae_public_header_model
 	include/alibabacloud/sae/model/DescribeComponentsResult.h
 	include/alibabacloud/sae/model/DescribeConfigMapRequest.h
 	include/alibabacloud/sae/model/DescribeConfigMapResult.h
+	include/alibabacloud/sae/model/DescribeConfigurationPriceRequest.h
+	include/alibabacloud/sae/model/DescribeConfigurationPriceResult.h
 	include/alibabacloud/sae/model/DescribeEdasContainersRequest.h
 	include/alibabacloud/sae/model/DescribeEdasContainersResult.h
 	include/alibabacloud/sae/model/DescribeGreyTagRouteRequest.h
@@ -244,6 +246,8 @@ set(sae_src
 	src/model/DescribeComponentsResult.cc
 	src/model/DescribeConfigMapRequest.cc
 	src/model/DescribeConfigMapResult.cc
+	src/model/DescribeConfigurationPriceRequest.cc
+	src/model/DescribeConfigurationPriceResult.cc
 	src/model/DescribeEdasContainersRequest.cc
 	src/model/DescribeEdasContainersResult.cc
 	src/model/DescribeGreyTagRouteRequest.cc

@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				DescribeApplicationInstancesRequest();
 				~DescribeApplicationInstancesRequest();
 
+				std::string getJobId()const;
+				void setJobId(const std::string& jobId);
 				std::string getAppId()const;
 				void setAppId(const std::string& appId);
 				std::string getGroupId()const;
@@ -47,6 +49,7 @@ namespace AlibabaCloud
 				void setReverse(bool reverse);
 
             private:
+				std::string jobId_;
 				std::string appId_;
 				std::string groupId_;
 				int pageSize_;

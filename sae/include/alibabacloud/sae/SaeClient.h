@@ -84,6 +84,8 @@
 #include "model/DescribeComponentsResult.h"
 #include "model/DescribeConfigMapRequest.h"
 #include "model/DescribeConfigMapResult.h"
+#include "model/DescribeConfigurationPriceRequest.h"
+#include "model/DescribeConfigurationPriceResult.h"
 #include "model/DescribeEdasContainersRequest.h"
 #include "model/DescribeEdasContainersResult.h"
 #include "model/DescribeGreyTagRouteRequest.h"
@@ -282,6 +284,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeConfigMapResult> DescribeConfigMapOutcome;
 			typedef std::future<DescribeConfigMapOutcome> DescribeConfigMapOutcomeCallable;
 			typedef std::function<void(const SaeClient*, const Model::DescribeConfigMapRequest&, const DescribeConfigMapOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConfigMapAsyncHandler;
+			typedef Outcome<Error, Model::DescribeConfigurationPriceResult> DescribeConfigurationPriceOutcome;
+			typedef std::future<DescribeConfigurationPriceOutcome> DescribeConfigurationPriceOutcomeCallable;
+			typedef std::function<void(const SaeClient*, const Model::DescribeConfigurationPriceRequest&, const DescribeConfigurationPriceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConfigurationPriceAsyncHandler;
 			typedef Outcome<Error, Model::DescribeEdasContainersResult> DescribeEdasContainersOutcome;
 			typedef std::future<DescribeEdasContainersOutcome> DescribeEdasContainersOutcomeCallable;
 			typedef std::function<void(const SaeClient*, const Model::DescribeEdasContainersRequest&, const DescribeEdasContainersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEdasContainersAsyncHandler;
@@ -524,6 +529,9 @@ namespace AlibabaCloud
 			DescribeConfigMapOutcome describeConfigMap(const Model::DescribeConfigMapRequest &request)const;
 			void describeConfigMapAsync(const Model::DescribeConfigMapRequest& request, const DescribeConfigMapAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeConfigMapOutcomeCallable describeConfigMapCallable(const Model::DescribeConfigMapRequest& request) const;
+			DescribeConfigurationPriceOutcome describeConfigurationPrice(const Model::DescribeConfigurationPriceRequest &request)const;
+			void describeConfigurationPriceAsync(const Model::DescribeConfigurationPriceRequest& request, const DescribeConfigurationPriceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeConfigurationPriceOutcomeCallable describeConfigurationPriceCallable(const Model::DescribeConfigurationPriceRequest& request) const;
 			DescribeEdasContainersOutcome describeEdasContainers(const Model::DescribeEdasContainersRequest &request)const;
 			void describeEdasContainersAsync(const Model::DescribeEdasContainersRequest& request, const DescribeEdasContainersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeEdasContainersOutcomeCallable describeEdasContainersCallable(const Model::DescribeEdasContainersRequest& request) const;
