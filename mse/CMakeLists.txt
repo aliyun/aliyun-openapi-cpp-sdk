@@ -1,0 +1,522 @@
+#
+# Copyright 2009-2017 Alibaba Cloud All rights reserved.
+# 
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+# 
+#      http://www.apache.org/licenses/LICENSE-2.0
+# 
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
+set(public_header_dir ${CMAKE_CURRENT_SOURCE_DIR}/../include)
+
+set(mse_public_header 
+	include/alibabacloud/mse/MseClient.h
+	include/alibabacloud/mse/MseExport.h )
+
+set(mse_public_header_model 
+	include/alibabacloud/mse/model/AddAuthResourceRequest.h
+	include/alibabacloud/mse/model/AddAuthResourceResult.h
+	include/alibabacloud/mse/model/AddBlackWhiteListRequest.h
+	include/alibabacloud/mse/model/AddBlackWhiteListResult.h
+	include/alibabacloud/mse/model/AddGatewayRequest.h
+	include/alibabacloud/mse/model/AddGatewayResult.h
+	include/alibabacloud/mse/model/AddGatewayDomainRequest.h
+	include/alibabacloud/mse/model/AddGatewayDomainResult.h
+	include/alibabacloud/mse/model/AddGatewayServiceVersionRequest.h
+	include/alibabacloud/mse/model/AddGatewayServiceVersionResult.h
+	include/alibabacloud/mse/model/AddGatewaySlbRequest.h
+	include/alibabacloud/mse/model/AddGatewaySlbResult.h
+	include/alibabacloud/mse/model/AddMockRuleRequest.h
+	include/alibabacloud/mse/model/AddMockRuleResult.h
+	include/alibabacloud/mse/model/AddSSLCertRequest.h
+	include/alibabacloud/mse/model/AddSSLCertResult.h
+	include/alibabacloud/mse/model/AddServiceSourceRequest.h
+	include/alibabacloud/mse/model/AddServiceSourceResult.h
+	include/alibabacloud/mse/model/CloneNacosConfigRequest.h
+	include/alibabacloud/mse/model/CloneNacosConfigResult.h
+	include/alibabacloud/mse/model/CreateAlarmRuleRequest.h
+	include/alibabacloud/mse/model/CreateAlarmRuleResult.h
+	include/alibabacloud/mse/model/CreateApplicationRequest.h
+	include/alibabacloud/mse/model/CreateApplicationResult.h
+	include/alibabacloud/mse/model/CreateClusterRequest.h
+	include/alibabacloud/mse/model/CreateClusterResult.h
+	include/alibabacloud/mse/model/CreateEngineNamespaceRequest.h
+	include/alibabacloud/mse/model/CreateEngineNamespaceResult.h
+	include/alibabacloud/mse/model/CreateNacosConfigRequest.h
+	include/alibabacloud/mse/model/CreateNacosConfigResult.h
+	include/alibabacloud/mse/model/CreateNacosInstanceRequest.h
+	include/alibabacloud/mse/model/CreateNacosInstanceResult.h
+	include/alibabacloud/mse/model/CreateNacosServiceRequest.h
+	include/alibabacloud/mse/model/CreateNacosServiceResult.h
+	include/alibabacloud/mse/model/CreateZnodeRequest.h
+	include/alibabacloud/mse/model/CreateZnodeResult.h
+	include/alibabacloud/mse/model/DeleteAlarmRuleRequest.h
+	include/alibabacloud/mse/model/DeleteAlarmRuleResult.h
+	include/alibabacloud/mse/model/DeleteAuthResourceRequest.h
+	include/alibabacloud/mse/model/DeleteAuthResourceResult.h
+	include/alibabacloud/mse/model/DeleteClusterRequest.h
+	include/alibabacloud/mse/model/DeleteClusterResult.h
+	include/alibabacloud/mse/model/DeleteEngineNamespaceRequest.h
+	include/alibabacloud/mse/model/DeleteEngineNamespaceResult.h
+	include/alibabacloud/mse/model/DeleteGatewayRequest.h
+	include/alibabacloud/mse/model/DeleteGatewayResult.h
+	include/alibabacloud/mse/model/DeleteGatewayDomainRequest.h
+	include/alibabacloud/mse/model/DeleteGatewayDomainResult.h
+	include/alibabacloud/mse/model/DeleteGatewayServiceVersionRequest.h
+	include/alibabacloud/mse/model/DeleteGatewayServiceVersionResult.h
+	include/alibabacloud/mse/model/DeleteGatewaySlbRequest.h
+	include/alibabacloud/mse/model/DeleteGatewaySlbResult.h
+	include/alibabacloud/mse/model/DeleteNacosConfigRequest.h
+	include/alibabacloud/mse/model/DeleteNacosConfigResult.h
+	include/alibabacloud/mse/model/DeleteNacosConfigsRequest.h
+	include/alibabacloud/mse/model/DeleteNacosConfigsResult.h
+	include/alibabacloud/mse/model/DeleteNacosServiceRequest.h
+	include/alibabacloud/mse/model/DeleteNacosServiceResult.h
+	include/alibabacloud/mse/model/DeleteServiceSourceRequest.h
+	include/alibabacloud/mse/model/DeleteServiceSourceResult.h
+	include/alibabacloud/mse/model/DeleteZnodeRequest.h
+	include/alibabacloud/mse/model/DeleteZnodeResult.h
+	include/alibabacloud/mse/model/ExportNacosConfigRequest.h
+	include/alibabacloud/mse/model/ExportNacosConfigResult.h
+	include/alibabacloud/mse/model/GetBlackWhiteListRequest.h
+	include/alibabacloud/mse/model/GetBlackWhiteListResult.h
+	include/alibabacloud/mse/model/GetEngineNamepaceRequest.h
+	include/alibabacloud/mse/model/GetEngineNamepaceResult.h
+	include/alibabacloud/mse/model/GetGatewayRequest.h
+	include/alibabacloud/mse/model/GetGatewayResult.h
+	include/alibabacloud/mse/model/GetGatewayDomainDetailRequest.h
+	include/alibabacloud/mse/model/GetGatewayDomainDetailResult.h
+	include/alibabacloud/mse/model/GetGatewayOptionRequest.h
+	include/alibabacloud/mse/model/GetGatewayOptionResult.h
+	include/alibabacloud/mse/model/GetGatewayServiceDetailRequest.h
+	include/alibabacloud/mse/model/GetGatewayServiceDetailResult.h
+	include/alibabacloud/mse/model/GetGovernanceKubernetesClusterRequest.h
+	include/alibabacloud/mse/model/GetGovernanceKubernetesClusterResult.h
+	include/alibabacloud/mse/model/GetGovernanceKubernetesClusterListRequest.h
+	include/alibabacloud/mse/model/GetGovernanceKubernetesClusterListResult.h
+	include/alibabacloud/mse/model/GetImageRequest.h
+	include/alibabacloud/mse/model/GetImageResult.h
+	include/alibabacloud/mse/model/GetImportFileUrlRequest.h
+	include/alibabacloud/mse/model/GetImportFileUrlResult.h
+	include/alibabacloud/mse/model/GetKubernetesSourceRequest.h
+	include/alibabacloud/mse/model/GetKubernetesSourceResult.h
+	include/alibabacloud/mse/model/GetMseFeatureSwitchRequest.h
+	include/alibabacloud/mse/model/GetMseFeatureSwitchResult.h
+	include/alibabacloud/mse/model/GetMseSourceRequest.h
+	include/alibabacloud/mse/model/GetMseSourceResult.h
+	include/alibabacloud/mse/model/GetNacosConfigRequest.h
+	include/alibabacloud/mse/model/GetNacosConfigResult.h
+	include/alibabacloud/mse/model/GetNacosHistoryConfigRequest.h
+	include/alibabacloud/mse/model/GetNacosHistoryConfigResult.h
+	include/alibabacloud/mse/model/GetOverviewRequest.h
+	include/alibabacloud/mse/model/GetOverviewResult.h
+	include/alibabacloud/mse/model/ImportNacosConfigRequest.h
+	include/alibabacloud/mse/model/ImportNacosConfigResult.h
+	include/alibabacloud/mse/model/ImportServicesRequest.h
+	include/alibabacloud/mse/model/ImportServicesResult.h
+	include/alibabacloud/mse/model/ListAlarmContactGroupsRequest.h
+	include/alibabacloud/mse/model/ListAlarmContactGroupsResult.h
+	include/alibabacloud/mse/model/ListAlarmHistoriesRequest.h
+	include/alibabacloud/mse/model/ListAlarmHistoriesResult.h
+	include/alibabacloud/mse/model/ListAlarmItemsRequest.h
+	include/alibabacloud/mse/model/ListAlarmItemsResult.h
+	include/alibabacloud/mse/model/ListAlarmRulesRequest.h
+	include/alibabacloud/mse/model/ListAlarmRulesResult.h
+	include/alibabacloud/mse/model/ListAnsInstancesRequest.h
+	include/alibabacloud/mse/model/ListAnsInstancesResult.h
+	include/alibabacloud/mse/model/ListAnsServiceClustersRequest.h
+	include/alibabacloud/mse/model/ListAnsServiceClustersResult.h
+	include/alibabacloud/mse/model/ListAnsServicesRequest.h
+	include/alibabacloud/mse/model/ListAnsServicesResult.h
+	include/alibabacloud/mse/model/ListClusterConnectionTypesRequest.h
+	include/alibabacloud/mse/model/ListClusterConnectionTypesResult.h
+	include/alibabacloud/mse/model/ListClusterTypesRequest.h
+	include/alibabacloud/mse/model/ListClusterTypesResult.h
+	include/alibabacloud/mse/model/ListClusterVersionsRequest.h
+	include/alibabacloud/mse/model/ListClusterVersionsResult.h
+	include/alibabacloud/mse/model/ListClustersRequest.h
+	include/alibabacloud/mse/model/ListClustersResult.h
+	include/alibabacloud/mse/model/ListEngineNamespacesRequest.h
+	include/alibabacloud/mse/model/ListEngineNamespacesResult.h
+	include/alibabacloud/mse/model/ListEurekaInstancesRequest.h
+	include/alibabacloud/mse/model/ListEurekaInstancesResult.h
+	include/alibabacloud/mse/model/ListEurekaServicesRequest.h
+	include/alibabacloud/mse/model/ListEurekaServicesResult.h
+	include/alibabacloud/mse/model/ListGatewayRequest.h
+	include/alibabacloud/mse/model/ListGatewayResult.h
+	include/alibabacloud/mse/model/ListGatewayDomainRequest.h
+	include/alibabacloud/mse/model/ListGatewayDomainResult.h
+	include/alibabacloud/mse/model/ListGatewayServiceRequest.h
+	include/alibabacloud/mse/model/ListGatewayServiceResult.h
+	include/alibabacloud/mse/model/ListGatewaySlbRequest.h
+	include/alibabacloud/mse/model/ListGatewaySlbResult.h
+	include/alibabacloud/mse/model/ListListenersByConfigRequest.h
+	include/alibabacloud/mse/model/ListListenersByConfigResult.h
+	include/alibabacloud/mse/model/ListListenersByIpRequest.h
+	include/alibabacloud/mse/model/ListListenersByIpResult.h
+	include/alibabacloud/mse/model/ListNacosConfigsRequest.h
+	include/alibabacloud/mse/model/ListNacosConfigsResult.h
+	include/alibabacloud/mse/model/ListNacosHistoryConfigsRequest.h
+	include/alibabacloud/mse/model/ListNacosHistoryConfigsResult.h
+	include/alibabacloud/mse/model/ListSSLCertRequest.h
+	include/alibabacloud/mse/model/ListSSLCertResult.h
+	include/alibabacloud/mse/model/ListServiceSourceRequest.h
+	include/alibabacloud/mse/model/ListServiceSourceResult.h
+	include/alibabacloud/mse/model/ListZnodeChildrenRequest.h
+	include/alibabacloud/mse/model/ListZnodeChildrenResult.h
+	include/alibabacloud/mse/model/ModifyGovernanceKubernetesClusterRequest.h
+	include/alibabacloud/mse/model/ModifyGovernanceKubernetesClusterResult.h
+	include/alibabacloud/mse/model/PullServicesRequest.h
+	include/alibabacloud/mse/model/PullServicesResult.h
+	include/alibabacloud/mse/model/QueryBusinessLocationsRequest.h
+	include/alibabacloud/mse/model/QueryBusinessLocationsResult.h
+	include/alibabacloud/mse/model/QueryClusterDetailRequest.h
+	include/alibabacloud/mse/model/QueryClusterDetailResult.h
+	include/alibabacloud/mse/model/QueryClusterDiskSpecificationRequest.h
+	include/alibabacloud/mse/model/QueryClusterDiskSpecificationResult.h
+	include/alibabacloud/mse/model/QueryClusterSpecificationRequest.h
+	include/alibabacloud/mse/model/QueryClusterSpecificationResult.h
+	include/alibabacloud/mse/model/QueryConfigRequest.h
+	include/alibabacloud/mse/model/QueryConfigResult.h
+	include/alibabacloud/mse/model/QueryGatewayRegionRequest.h
+	include/alibabacloud/mse/model/QueryGatewayRegionResult.h
+	include/alibabacloud/mse/model/QueryGatewayTypeRequest.h
+	include/alibabacloud/mse/model/QueryGatewayTypeResult.h
+	include/alibabacloud/mse/model/QueryGovernanceKubernetesClusterRequest.h
+	include/alibabacloud/mse/model/QueryGovernanceKubernetesClusterResult.h
+	include/alibabacloud/mse/model/QueryMonitorRequest.h
+	include/alibabacloud/mse/model/QueryMonitorResult.h
+	include/alibabacloud/mse/model/QuerySlbSpecRequest.h
+	include/alibabacloud/mse/model/QuerySlbSpecResult.h
+	include/alibabacloud/mse/model/QueryZnodeDetailRequest.h
+	include/alibabacloud/mse/model/QueryZnodeDetailResult.h
+	include/alibabacloud/mse/model/RestartClusterRequest.h
+	include/alibabacloud/mse/model/RestartClusterResult.h
+	include/alibabacloud/mse/model/RetryClusterRequest.h
+	include/alibabacloud/mse/model/RetryClusterResult.h
+	include/alibabacloud/mse/model/ScalingClusterRequest.h
+	include/alibabacloud/mse/model/ScalingClusterResult.h
+	include/alibabacloud/mse/model/SelectGatewaySlbRequest.h
+	include/alibabacloud/mse/model/SelectGatewaySlbResult.h
+	include/alibabacloud/mse/model/UpdateAclRequest.h
+	include/alibabacloud/mse/model/UpdateAclResult.h
+	include/alibabacloud/mse/model/UpdateBlackWhiteListRequest.h
+	include/alibabacloud/mse/model/UpdateBlackWhiteListResult.h
+	include/alibabacloud/mse/model/UpdateClusterRequest.h
+	include/alibabacloud/mse/model/UpdateClusterResult.h
+	include/alibabacloud/mse/model/UpdateConfigRequest.h
+	include/alibabacloud/mse/model/UpdateConfigResult.h
+	include/alibabacloud/mse/model/UpdateEngineNamespaceRequest.h
+	include/alibabacloud/mse/model/UpdateEngineNamespaceResult.h
+	include/alibabacloud/mse/model/UpdateGatewayDomainRequest.h
+	include/alibabacloud/mse/model/UpdateGatewayDomainResult.h
+	include/alibabacloud/mse/model/UpdateGatewayNameRequest.h
+	include/alibabacloud/mse/model/UpdateGatewayNameResult.h
+	include/alibabacloud/mse/model/UpdateGatewayOptionRequest.h
+	include/alibabacloud/mse/model/UpdateGatewayOptionResult.h
+	include/alibabacloud/mse/model/UpdateGatewayRouteHTTPRewriteRequest.h
+	include/alibabacloud/mse/model/UpdateGatewayRouteHTTPRewriteResult.h
+	include/alibabacloud/mse/model/UpdateGatewayServiceVersionRequest.h
+	include/alibabacloud/mse/model/UpdateGatewayServiceVersionResult.h
+	include/alibabacloud/mse/model/UpdateImageRequest.h
+	include/alibabacloud/mse/model/UpdateImageResult.h
+	include/alibabacloud/mse/model/UpdateNacosClusterRequest.h
+	include/alibabacloud/mse/model/UpdateNacosClusterResult.h
+	include/alibabacloud/mse/model/UpdateNacosConfigRequest.h
+	include/alibabacloud/mse/model/UpdateNacosConfigResult.h
+	include/alibabacloud/mse/model/UpdateNacosInstanceRequest.h
+	include/alibabacloud/mse/model/UpdateNacosInstanceResult.h
+	include/alibabacloud/mse/model/UpdateNacosServiceRequest.h
+	include/alibabacloud/mse/model/UpdateNacosServiceResult.h
+	include/alibabacloud/mse/model/UpdateSSLCertRequest.h
+	include/alibabacloud/mse/model/UpdateSSLCertResult.h
+	include/alibabacloud/mse/model/UpdateZnodeRequest.h
+	include/alibabacloud/mse/model/UpdateZnodeResult.h
+	include/alibabacloud/mse/model/UpgradeClusterRequest.h
+	include/alibabacloud/mse/model/UpgradeClusterResult.h )
+
+set(mse_src 
+	src/MseClient.cc
+	src/model/AddAuthResourceRequest.cc
+	src/model/AddAuthResourceResult.cc
+	src/model/AddBlackWhiteListRequest.cc
+	src/model/AddBlackWhiteListResult.cc
+	src/model/AddGatewayRequest.cc
+	src/model/AddGatewayResult.cc
+	src/model/AddGatewayDomainRequest.cc
+	src/model/AddGatewayDomainResult.cc
+	src/model/AddGatewayServiceVersionRequest.cc
+	src/model/AddGatewayServiceVersionResult.cc
+	src/model/AddGatewaySlbRequest.cc
+	src/model/AddGatewaySlbResult.cc
+	src/model/AddMockRuleRequest.cc
+	src/model/AddMockRuleResult.cc
+	src/model/AddSSLCertRequest.cc
+	src/model/AddSSLCertResult.cc
+	src/model/AddServiceSourceRequest.cc
+	src/model/AddServiceSourceResult.cc
+	src/model/CloneNacosConfigRequest.cc
+	src/model/CloneNacosConfigResult.cc
+	src/model/CreateAlarmRuleRequest.cc
+	src/model/CreateAlarmRuleResult.cc
+	src/model/CreateApplicationRequest.cc
+	src/model/CreateApplicationResult.cc
+	src/model/CreateClusterRequest.cc
+	src/model/CreateClusterResult.cc
+	src/model/CreateEngineNamespaceRequest.cc
+	src/model/CreateEngineNamespaceResult.cc
+	src/model/CreateNacosConfigRequest.cc
+	src/model/CreateNacosConfigResult.cc
+	src/model/CreateNacosInstanceRequest.cc
+	src/model/CreateNacosInstanceResult.cc
+	src/model/CreateNacosServiceRequest.cc
+	src/model/CreateNacosServiceResult.cc
+	src/model/CreateZnodeRequest.cc
+	src/model/CreateZnodeResult.cc
+	src/model/DeleteAlarmRuleRequest.cc
+	src/model/DeleteAlarmRuleResult.cc
+	src/model/DeleteAuthResourceRequest.cc
+	src/model/DeleteAuthResourceResult.cc
+	src/model/DeleteClusterRequest.cc
+	src/model/DeleteClusterResult.cc
+	src/model/DeleteEngineNamespaceRequest.cc
+	src/model/DeleteEngineNamespaceResult.cc
+	src/model/DeleteGatewayRequest.cc
+	src/model/DeleteGatewayResult.cc
+	src/model/DeleteGatewayDomainRequest.cc
+	src/model/DeleteGatewayDomainResult.cc
+	src/model/DeleteGatewayServiceVersionRequest.cc
+	src/model/DeleteGatewayServiceVersionResult.cc
+	src/model/DeleteGatewaySlbRequest.cc
+	src/model/DeleteGatewaySlbResult.cc
+	src/model/DeleteNacosConfigRequest.cc
+	src/model/DeleteNacosConfigResult.cc
+	src/model/DeleteNacosConfigsRequest.cc
+	src/model/DeleteNacosConfigsResult.cc
+	src/model/DeleteNacosServiceRequest.cc
+	src/model/DeleteNacosServiceResult.cc
+	src/model/DeleteServiceSourceRequest.cc
+	src/model/DeleteServiceSourceResult.cc
+	src/model/DeleteZnodeRequest.cc
+	src/model/DeleteZnodeResult.cc
+	src/model/ExportNacosConfigRequest.cc
+	src/model/ExportNacosConfigResult.cc
+	src/model/GetBlackWhiteListRequest.cc
+	src/model/GetBlackWhiteListResult.cc
+	src/model/GetEngineNamepaceRequest.cc
+	src/model/GetEngineNamepaceResult.cc
+	src/model/GetGatewayRequest.cc
+	src/model/GetGatewayResult.cc
+	src/model/GetGatewayDomainDetailRequest.cc
+	src/model/GetGatewayDomainDetailResult.cc
+	src/model/GetGatewayOptionRequest.cc
+	src/model/GetGatewayOptionResult.cc
+	src/model/GetGatewayServiceDetailRequest.cc
+	src/model/GetGatewayServiceDetailResult.cc
+	src/model/GetGovernanceKubernetesClusterRequest.cc
+	src/model/GetGovernanceKubernetesClusterResult.cc
+	src/model/GetGovernanceKubernetesClusterListRequest.cc
+	src/model/GetGovernanceKubernetesClusterListResult.cc
+	src/model/GetImageRequest.cc
+	src/model/GetImageResult.cc
+	src/model/GetImportFileUrlRequest.cc
+	src/model/GetImportFileUrlResult.cc
+	src/model/GetKubernetesSourceRequest.cc
+	src/model/GetKubernetesSourceResult.cc
+	src/model/GetMseFeatureSwitchRequest.cc
+	src/model/GetMseFeatureSwitchResult.cc
+	src/model/GetMseSourceRequest.cc
+	src/model/GetMseSourceResult.cc
+	src/model/GetNacosConfigRequest.cc
+	src/model/GetNacosConfigResult.cc
+	src/model/GetNacosHistoryConfigRequest.cc
+	src/model/GetNacosHistoryConfigResult.cc
+	src/model/GetOverviewRequest.cc
+	src/model/GetOverviewResult.cc
+	src/model/ImportNacosConfigRequest.cc
+	src/model/ImportNacosConfigResult.cc
+	src/model/ImportServicesRequest.cc
+	src/model/ImportServicesResult.cc
+	src/model/ListAlarmContactGroupsRequest.cc
+	src/model/ListAlarmContactGroupsResult.cc
+	src/model/ListAlarmHistoriesRequest.cc
+	src/model/ListAlarmHistoriesResult.cc
+	src/model/ListAlarmItemsRequest.cc
+	src/model/ListAlarmItemsResult.cc
+	src/model/ListAlarmRulesRequest.cc
+	src/model/ListAlarmRulesResult.cc
+	src/model/ListAnsInstancesRequest.cc
+	src/model/ListAnsInstancesResult.cc
+	src/model/ListAnsServiceClustersRequest.cc
+	src/model/ListAnsServiceClustersResult.cc
+	src/model/ListAnsServicesRequest.cc
+	src/model/ListAnsServicesResult.cc
+	src/model/ListClusterConnectionTypesRequest.cc
+	src/model/ListClusterConnectionTypesResult.cc
+	src/model/ListClusterTypesRequest.cc
+	src/model/ListClusterTypesResult.cc
+	src/model/ListClusterVersionsRequest.cc
+	src/model/ListClusterVersionsResult.cc
+	src/model/ListClustersRequest.cc
+	src/model/ListClustersResult.cc
+	src/model/ListEngineNamespacesRequest.cc
+	src/model/ListEngineNamespacesResult.cc
+	src/model/ListEurekaInstancesRequest.cc
+	src/model/ListEurekaInstancesResult.cc
+	src/model/ListEurekaServicesRequest.cc
+	src/model/ListEurekaServicesResult.cc
+	src/model/ListGatewayRequest.cc
+	src/model/ListGatewayResult.cc
+	src/model/ListGatewayDomainRequest.cc
+	src/model/ListGatewayDomainResult.cc
+	src/model/ListGatewayServiceRequest.cc
+	src/model/ListGatewayServiceResult.cc
+	src/model/ListGatewaySlbRequest.cc
+	src/model/ListGatewaySlbResult.cc
+	src/model/ListListenersByConfigRequest.cc
+	src/model/ListListenersByConfigResult.cc
+	src/model/ListListenersByIpRequest.cc
+	src/model/ListListenersByIpResult.cc
+	src/model/ListNacosConfigsRequest.cc
+	src/model/ListNacosConfigsResult.cc
+	src/model/ListNacosHistoryConfigsRequest.cc
+	src/model/ListNacosHistoryConfigsResult.cc
+	src/model/ListSSLCertRequest.cc
+	src/model/ListSSLCertResult.cc
+	src/model/ListServiceSourceRequest.cc
+	src/model/ListServiceSourceResult.cc
+	src/model/ListZnodeChildrenRequest.cc
+	src/model/ListZnodeChildrenResult.cc
+	src/model/ModifyGovernanceKubernetesClusterRequest.cc
+	src/model/ModifyGovernanceKubernetesClusterResult.cc
+	src/model/PullServicesRequest.cc
+	src/model/PullServicesResult.cc
+	src/model/QueryBusinessLocationsRequest.cc
+	src/model/QueryBusinessLocationsResult.cc
+	src/model/QueryClusterDetailRequest.cc
+	src/model/QueryClusterDetailResult.cc
+	src/model/QueryClusterDiskSpecificationRequest.cc
+	src/model/QueryClusterDiskSpecificationResult.cc
+	src/model/QueryClusterSpecificationRequest.cc
+	src/model/QueryClusterSpecificationResult.cc
+	src/model/QueryConfigRequest.cc
+	src/model/QueryConfigResult.cc
+	src/model/QueryGatewayRegionRequest.cc
+	src/model/QueryGatewayRegionResult.cc
+	src/model/QueryGatewayTypeRequest.cc
+	src/model/QueryGatewayTypeResult.cc
+	src/model/QueryGovernanceKubernetesClusterRequest.cc
+	src/model/QueryGovernanceKubernetesClusterResult.cc
+	src/model/QueryMonitorRequest.cc
+	src/model/QueryMonitorResult.cc
+	src/model/QuerySlbSpecRequest.cc
+	src/model/QuerySlbSpecResult.cc
+	src/model/QueryZnodeDetailRequest.cc
+	src/model/QueryZnodeDetailResult.cc
+	src/model/RestartClusterRequest.cc
+	src/model/RestartClusterResult.cc
+	src/model/RetryClusterRequest.cc
+	src/model/RetryClusterResult.cc
+	src/model/ScalingClusterRequest.cc
+	src/model/ScalingClusterResult.cc
+	src/model/SelectGatewaySlbRequest.cc
+	src/model/SelectGatewaySlbResult.cc
+	src/model/UpdateAclRequest.cc
+	src/model/UpdateAclResult.cc
+	src/model/UpdateBlackWhiteListRequest.cc
+	src/model/UpdateBlackWhiteListResult.cc
+	src/model/UpdateClusterRequest.cc
+	src/model/UpdateClusterResult.cc
+	src/model/UpdateConfigRequest.cc
+	src/model/UpdateConfigResult.cc
+	src/model/UpdateEngineNamespaceRequest.cc
+	src/model/UpdateEngineNamespaceResult.cc
+	src/model/UpdateGatewayDomainRequest.cc
+	src/model/UpdateGatewayDomainResult.cc
+	src/model/UpdateGatewayNameRequest.cc
+	src/model/UpdateGatewayNameResult.cc
+	src/model/UpdateGatewayOptionRequest.cc
+	src/model/UpdateGatewayOptionResult.cc
+	src/model/UpdateGatewayRouteHTTPRewriteRequest.cc
+	src/model/UpdateGatewayRouteHTTPRewriteResult.cc
+	src/model/UpdateGatewayServiceVersionRequest.cc
+	src/model/UpdateGatewayServiceVersionResult.cc
+	src/model/UpdateImageRequest.cc
+	src/model/UpdateImageResult.cc
+	src/model/UpdateNacosClusterRequest.cc
+	src/model/UpdateNacosClusterResult.cc
+	src/model/UpdateNacosConfigRequest.cc
+	src/model/UpdateNacosConfigResult.cc
+	src/model/UpdateNacosInstanceRequest.cc
+	src/model/UpdateNacosInstanceResult.cc
+	src/model/UpdateNacosServiceRequest.cc
+	src/model/UpdateNacosServiceResult.cc
+	src/model/UpdateSSLCertRequest.cc
+	src/model/UpdateSSLCertResult.cc
+	src/model/UpdateZnodeRequest.cc
+	src/model/UpdateZnodeResult.cc
+	src/model/UpgradeClusterRequest.cc
+	src/model/UpgradeClusterResult.cc )
+
+add_library(mse ${LIB_TYPE}
+	${mse_public_header}
+	${mse_public_header_model}
+	${mse_src})
+
+set_target_properties(mse
+	PROPERTIES
+	LINKER_LANGUAGE CXX
+	ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib
+	LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib
+	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
+	OUTPUT_NAME ${TARGET_OUTPUT_NAME_PREFIX}mse
+	)
+
+if(${LIB_TYPE} STREQUAL "SHARED")
+	set_target_properties(mse
+		PROPERTIES
+		DEFINE_SYMBOL ALIBABACLOUD_MSE_LIBRARY)
+endif()
+
+target_include_directories(mse
+	PRIVATE include
+		${CMAKE_SOURCE_DIR}/core/include
+	)
+target_link_libraries(mse
+	core)
+
+if(CMAKE_HOST_WIN32)
+	ExternalProject_Get_Property(jsoncpp INSTALL_DIR)
+	set(jsoncpp_install_dir ${INSTALL_DIR})
+	add_dependencies(mse
+		jsoncpp)
+	target_include_directories(mse
+		PRIVATE	${jsoncpp_install_dir}/include)
+	target_link_libraries(mse
+		${jsoncpp_install_dir}/lib/jsoncpp.lib)
+	set_target_properties(mse
+    	PROPERTIES
+    		COMPILE_OPTIONS "/bigobj")
+else()
+	target_include_directories(mse
+		PRIVATE /usr/include/jsoncpp)
+	target_link_libraries(mse
+		jsoncpp)
+endif()
+
+install(FILES ${mse_public_header}
+	DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/alibabacloud/mse)
+install(FILES ${mse_public_header_model}
+	DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/alibabacloud/mse/model)
+install(TARGETS mse
+	ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+	LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+	RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+	)
