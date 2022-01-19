@@ -31,25 +31,61 @@ DysmsapiClient::DysmsapiClient(const Credentials &credentials, const ClientConfi
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "dysms");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 DysmsapiClient::DysmsapiClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "dysms");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 DysmsapiClient::DysmsapiClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "dysms");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 DysmsapiClient::~DysmsapiClient()
 {}
+
+DysmsapiClient::AddShortUrlOutcome DysmsapiClient::addShortUrl(const AddShortUrlRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddShortUrlOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddShortUrlOutcome(AddShortUrlResult(outcome.result()));
+	else
+		return AddShortUrlOutcome(outcome.error());
+}
+
+void DysmsapiClient::addShortUrlAsync(const AddShortUrlRequest& request, const AddShortUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addShortUrl(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DysmsapiClient::AddShortUrlOutcomeCallable DysmsapiClient::addShortUrlCallable(const AddShortUrlRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddShortUrlOutcome()>>(
+			[this, request]()
+			{
+			return this->addShortUrl(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
 
 DysmsapiClient::AddSmsSignOutcome DysmsapiClient::addSmsSign(const AddSmsSignRequest &request) const
 {
@@ -123,6 +159,42 @@ DysmsapiClient::AddSmsTemplateOutcomeCallable DysmsapiClient::addSmsTemplateCall
 	return task->get_future();
 }
 
+DysmsapiClient::DeleteShortUrlOutcome DysmsapiClient::deleteShortUrl(const DeleteShortUrlRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteShortUrlOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteShortUrlOutcome(DeleteShortUrlResult(outcome.result()));
+	else
+		return DeleteShortUrlOutcome(outcome.error());
+}
+
+void DysmsapiClient::deleteShortUrlAsync(const DeleteShortUrlRequest& request, const DeleteShortUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteShortUrl(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DysmsapiClient::DeleteShortUrlOutcomeCallable DysmsapiClient::deleteShortUrlCallable(const DeleteShortUrlRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteShortUrlOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteShortUrl(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DysmsapiClient::DeleteSmsSignOutcome DysmsapiClient::deleteSmsSign(const DeleteSmsSignRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -189,6 +261,42 @@ DysmsapiClient::DeleteSmsTemplateOutcomeCallable DysmsapiClient::deleteSmsTempla
 			[this, request]()
 			{
 			return this->deleteSmsTemplate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DysmsapiClient::ListTagResourcesOutcome DysmsapiClient::listTagResources(const ListTagResourcesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListTagResourcesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListTagResourcesOutcome(ListTagResourcesResult(outcome.result()));
+	else
+		return ListTagResourcesOutcome(outcome.error());
+}
+
+void DysmsapiClient::listTagResourcesAsync(const ListTagResourcesRequest& request, const ListTagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listTagResources(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DysmsapiClient::ListTagResourcesOutcomeCallable DysmsapiClient::listTagResourcesCallable(const ListTagResourcesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListTagResourcesOutcome()>>(
+			[this, request]()
+			{
+			return this->listTagResources(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -303,6 +411,78 @@ DysmsapiClient::QuerySendDetailsOutcomeCallable DysmsapiClient::querySendDetails
 	return task->get_future();
 }
 
+DysmsapiClient::QuerySendStatisticsOutcome DysmsapiClient::querySendStatistics(const QuerySendStatisticsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QuerySendStatisticsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QuerySendStatisticsOutcome(QuerySendStatisticsResult(outcome.result()));
+	else
+		return QuerySendStatisticsOutcome(outcome.error());
+}
+
+void DysmsapiClient::querySendStatisticsAsync(const QuerySendStatisticsRequest& request, const QuerySendStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, querySendStatistics(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DysmsapiClient::QuerySendStatisticsOutcomeCallable DysmsapiClient::querySendStatisticsCallable(const QuerySendStatisticsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QuerySendStatisticsOutcome()>>(
+			[this, request]()
+			{
+			return this->querySendStatistics(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DysmsapiClient::QueryShortUrlOutcome DysmsapiClient::queryShortUrl(const QueryShortUrlRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryShortUrlOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryShortUrlOutcome(QueryShortUrlResult(outcome.result()));
+	else
+		return QueryShortUrlOutcome(outcome.error());
+}
+
+void DysmsapiClient::queryShortUrlAsync(const QueryShortUrlRequest& request, const QueryShortUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryShortUrl(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DysmsapiClient::QueryShortUrlOutcomeCallable DysmsapiClient::queryShortUrlCallable(const QueryShortUrlRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryShortUrlOutcome()>>(
+			[this, request]()
+			{
+			return this->queryShortUrl(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DysmsapiClient::QuerySmsSignOutcome DysmsapiClient::querySmsSign(const QuerySmsSignRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -339,6 +519,42 @@ DysmsapiClient::QuerySmsSignOutcomeCallable DysmsapiClient::querySmsSignCallable
 	return task->get_future();
 }
 
+DysmsapiClient::QuerySmsSignListOutcome DysmsapiClient::querySmsSignList(const QuerySmsSignListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QuerySmsSignListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QuerySmsSignListOutcome(QuerySmsSignListResult(outcome.result()));
+	else
+		return QuerySmsSignListOutcome(outcome.error());
+}
+
+void DysmsapiClient::querySmsSignListAsync(const QuerySmsSignListRequest& request, const QuerySmsSignListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, querySmsSignList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DysmsapiClient::QuerySmsSignListOutcomeCallable DysmsapiClient::querySmsSignListCallable(const QuerySmsSignListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QuerySmsSignListOutcome()>>(
+			[this, request]()
+			{
+			return this->querySmsSignList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DysmsapiClient::QuerySmsTemplateOutcome DysmsapiClient::querySmsTemplate(const QuerySmsTemplateRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -369,6 +585,42 @@ DysmsapiClient::QuerySmsTemplateOutcomeCallable DysmsapiClient::querySmsTemplate
 			[this, request]()
 			{
 			return this->querySmsTemplate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DysmsapiClient::QuerySmsTemplateListOutcome DysmsapiClient::querySmsTemplateList(const QuerySmsTemplateListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QuerySmsTemplateListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QuerySmsTemplateListOutcome(QuerySmsTemplateListResult(outcome.result()));
+	else
+		return QuerySmsTemplateListOutcome(outcome.error());
+}
+
+void DysmsapiClient::querySmsTemplateListAsync(const QuerySmsTemplateListRequest& request, const QuerySmsTemplateListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, querySmsTemplateList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DysmsapiClient::QuerySmsTemplateListOutcomeCallable DysmsapiClient::querySmsTemplateListCallable(const QuerySmsTemplateListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QuerySmsTemplateListOutcome()>>(
+			[this, request]()
+			{
+			return this->querySmsTemplateList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -441,6 +693,78 @@ DysmsapiClient::SendSmsOutcomeCallable DysmsapiClient::sendSmsCallable(const Sen
 			[this, request]()
 			{
 			return this->sendSms(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DysmsapiClient::TagResourcesOutcome DysmsapiClient::tagResources(const TagResourcesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return TagResourcesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return TagResourcesOutcome(TagResourcesResult(outcome.result()));
+	else
+		return TagResourcesOutcome(outcome.error());
+}
+
+void DysmsapiClient::tagResourcesAsync(const TagResourcesRequest& request, const TagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, tagResources(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DysmsapiClient::TagResourcesOutcomeCallable DysmsapiClient::tagResourcesCallable(const TagResourcesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<TagResourcesOutcome()>>(
+			[this, request]()
+			{
+			return this->tagResources(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DysmsapiClient::UntagResourcesOutcome DysmsapiClient::untagResources(const UntagResourcesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UntagResourcesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UntagResourcesOutcome(UntagResourcesResult(outcome.result()));
+	else
+		return UntagResourcesOutcome(outcome.error());
+}
+
+void DysmsapiClient::untagResourcesAsync(const UntagResourcesRequest& request, const UntagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, untagResources(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DysmsapiClient::UntagResourcesOutcomeCallable DysmsapiClient::untagResourcesCallable(const UntagResourcesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UntagResourcesOutcome()>>(
+			[this, request]()
+			{
+			return this->untagResources(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
