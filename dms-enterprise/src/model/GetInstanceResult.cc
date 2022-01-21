@@ -84,6 +84,11 @@ void GetInstanceResult::parse(const std::string &payload)
 		instance_.ddlOnline = std::stoi(instanceNode["DdlOnline"].asString());
 	if(!instanceNode["EcsRegion"].isNull())
 		instance_.ecsRegion = instanceNode["EcsRegion"].asString();
+	auto standardGroupNode = instanceNode["StandardGroup"];
+	if(!standardGroupNode["GroupName"].isNull())
+		instance_.standardGroup.groupName = standardGroupNode["GroupName"].asString();
+	if(!standardGroupNode["GroupMode"].isNull())
+		instance_.standardGroup.groupMode = standardGroupNode["GroupMode"].asString();
 		auto allOwnerIdList = instanceNode["OwnerIdList"]["OwnerIds"];
 		for (auto value : allOwnerIdList)
 			instance_.ownerIdList.push_back(value.asString());

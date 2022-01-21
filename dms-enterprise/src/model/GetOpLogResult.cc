@@ -48,7 +48,9 @@ void GetOpLogResult::parse(const std::string &payload)
 		if(!valueOpLogDetailsOpLogDetail["Database"].isNull())
 			opLogDetailsObject.database = valueOpLogDetailsOpLogDetail["Database"].asString();
 		if(!valueOpLogDetailsOpLogDetail["UserId"].isNull())
-			opLogDetailsObject.userId = std::stol(valueOpLogDetailsOpLogDetail["UserId"].asString());
+			opLogDetailsObject.userId = valueOpLogDetailsOpLogDetail["UserId"].asString();
+		if(!valueOpLogDetailsOpLogDetail["OpUserId"].isNull())
+			opLogDetailsObject.opUserId = std::stol(valueOpLogDetailsOpLogDetail["OpUserId"].asString());
 		if(!valueOpLogDetailsOpLogDetail["OpContent"].isNull())
 			opLogDetailsObject.opContent = valueOpLogDetailsOpLogDetail["OpContent"].asString();
 		if(!valueOpLogDetailsOpLogDetail["UserNick"].isNull())

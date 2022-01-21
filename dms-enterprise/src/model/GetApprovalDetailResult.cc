@@ -42,6 +42,8 @@ void GetApprovalDetailResult::parse(const std::string &payload)
 	auto approvalDetailNode = value["ApprovalDetail"];
 	if(!approvalDetailNode["Description"].isNull())
 		approvalDetail_.description = approvalDetailNode["Description"].asString();
+	if(!approvalDetailNode["CreateTime"].isNull())
+		approvalDetail_.createTime = approvalDetailNode["CreateTime"].asString();
 	if(!approvalDetailNode["OrderType"].isNull())
 		approvalDetail_.orderType = approvalDetailNode["OrderType"].asString();
 	if(!approvalDetailNode["Title"].isNull())

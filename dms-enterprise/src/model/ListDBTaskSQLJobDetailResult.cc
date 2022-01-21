@@ -61,6 +61,16 @@ void ListDBTaskSQLJobDetailResult::parse(const std::string &payload)
 			dBTaskSQLJobDetailListObject.sqlType = valueDBTaskSQLJobDetailListDBTaskSQLJobDetail["SqlType"].asString();
 		if(!valueDBTaskSQLJobDetailListDBTaskSQLJobDetail["Status"].isNull())
 			dBTaskSQLJobDetailListObject.status = valueDBTaskSQLJobDetailListDBTaskSQLJobDetail["Status"].asString();
+		if(!valueDBTaskSQLJobDetailListDBTaskSQLJobDetail["Log"].isNull())
+			dBTaskSQLJobDetailListObject.log = valueDBTaskSQLJobDetailListDBTaskSQLJobDetail["Log"].asString();
+		if(!valueDBTaskSQLJobDetailListDBTaskSQLJobDetail["StartTime"].isNull())
+			dBTaskSQLJobDetailListObject.startTime = valueDBTaskSQLJobDetailListDBTaskSQLJobDetail["StartTime"].asString();
+		if(!valueDBTaskSQLJobDetailListDBTaskSQLJobDetail["EndTime"].isNull())
+			dBTaskSQLJobDetailListObject.endTime = valueDBTaskSQLJobDetailListDBTaskSQLJobDetail["EndTime"].asString();
+		if(!valueDBTaskSQLJobDetailListDBTaskSQLJobDetail["TimeDelay"].isNull())
+			dBTaskSQLJobDetailListObject.timeDelay = std::stol(valueDBTaskSQLJobDetailListDBTaskSQLJobDetail["TimeDelay"].asString());
+		if(!valueDBTaskSQLJobDetailListDBTaskSQLJobDetail["AffectRows"].isNull())
+			dBTaskSQLJobDetailListObject.affectRows = std::stol(valueDBTaskSQLJobDetailListDBTaskSQLJobDetail["AffectRows"].asString());
 		dBTaskSQLJobDetailList_.push_back(dBTaskSQLJobDetailListObject);
 	}
 	if(!value["Success"].isNull())

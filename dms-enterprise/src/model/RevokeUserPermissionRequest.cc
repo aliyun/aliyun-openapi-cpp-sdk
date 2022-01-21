@@ -70,6 +70,15 @@ void RevokeUserPermissionRequest::setTid(long tid) {
   setParameter(std::string("Tid"), std::to_string(tid));
 }
 
+long RevokeUserPermissionRequest::getInstanceId() const {
+  return instanceId_;
+}
+
+void RevokeUserPermissionRequest::setInstanceId(long instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+}
+
 std::string RevokeUserPermissionRequest::getDbId() const {
   return dbId_;
 }

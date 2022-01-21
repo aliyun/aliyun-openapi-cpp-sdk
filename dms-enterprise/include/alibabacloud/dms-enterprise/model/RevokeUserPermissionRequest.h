@@ -40,6 +40,8 @@ public:
 	void setUserId(const std::string &userId);
 	long getTid() const;
 	void setTid(long tid);
+	long getInstanceId() const;
+	void setInstanceId(long instanceId);
 	std::string getDbId() const;
 	void setDbId(const std::string &dbId);
 	std::string getTableId() const;
@@ -55,6 +57,7 @@ private:
 	std::string dsType_;
 	std::string userId_;
 	long tid_;
+	long instanceId_;
 	std::string dbId_;
 	std::string tableId_;
 	bool logic_;

@@ -65,6 +65,16 @@ void ListUsersResult::parse(const std::string &payload)
 			userListObject.mobile = valueUserListUser["Mobile"].asString();
 		if(!valueUserListUser["Uid"].isNull())
 			userListObject.uid = valueUserListUser["Uid"].asString();
+		if(!valueUserListUser["Email"].isNull())
+			userListObject.email = valueUserListUser["Email"].asString();
+		if(!valueUserListUser["DingRobot"].isNull())
+			userListObject.dingRobot = valueUserListUser["DingRobot"].asString();
+		if(!valueUserListUser["Webhook"].isNull())
+			userListObject.webhook = valueUserListUser["Webhook"].asString();
+		if(!valueUserListUser["SignatureMethod"].isNull())
+			userListObject.signatureMethod = valueUserListUser["SignatureMethod"].asString();
+		if(!valueUserListUser["NotificationMode"].isNull())
+			userListObject.notificationMode = valueUserListUser["NotificationMode"].asString();
 		auto allRoleIdList = value["RoleIdList"]["RoleIds"];
 		for (auto value : allRoleIdList)
 			userListObject.roleIdList.push_back(value.asString());

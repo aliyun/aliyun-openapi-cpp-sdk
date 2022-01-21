@@ -21,8 +21,12 @@ set(dms-enterprise_public_header
 	include/alibabacloud/dms-enterprise/Dms_enterpriseExport.h )
 
 set(dms-enterprise_public_header_model 
+	include/alibabacloud/dms-enterprise/model/AddLogicTableRouteConfigRequest.h
+	include/alibabacloud/dms-enterprise/model/AddLogicTableRouteConfigResult.h
 	include/alibabacloud/dms-enterprise/model/ApproveOrderRequest.h
 	include/alibabacloud/dms-enterprise/model/ApproveOrderResult.h
+	include/alibabacloud/dms-enterprise/model/ChangeColumnSecLevelRequest.h
+	include/alibabacloud/dms-enterprise/model/ChangeColumnSecLevelResult.h
 	include/alibabacloud/dms-enterprise/model/CloseOrderRequest.h
 	include/alibabacloud/dms-enterprise/model/CloseOrderResult.h
 	include/alibabacloud/dms-enterprise/model/CreateDataCorrectOrderRequest.h
@@ -33,8 +37,14 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/CreateDataImportOrderResult.h
 	include/alibabacloud/dms-enterprise/model/CreateFreeLockCorrectOrderRequest.h
 	include/alibabacloud/dms-enterprise/model/CreateFreeLockCorrectOrderResult.h
+	include/alibabacloud/dms-enterprise/model/CreateLogicDatabaseRequest.h
+	include/alibabacloud/dms-enterprise/model/CreateLogicDatabaseResult.h
 	include/alibabacloud/dms-enterprise/model/CreateOrderRequest.h
 	include/alibabacloud/dms-enterprise/model/CreateOrderResult.h
+	include/alibabacloud/dms-enterprise/model/CreateProxyRequest.h
+	include/alibabacloud/dms-enterprise/model/CreateProxyResult.h
+	include/alibabacloud/dms-enterprise/model/CreateProxyAccessRequest.h
+	include/alibabacloud/dms-enterprise/model/CreateProxyAccessResult.h
 	include/alibabacloud/dms-enterprise/model/CreatePublishGroupTaskRequest.h
 	include/alibabacloud/dms-enterprise/model/CreatePublishGroupTaskResult.h
 	include/alibabacloud/dms-enterprise/model/CreateSQLReviewOrderRequest.h
@@ -47,10 +57,20 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/CreateUploadOSSFileJobResult.h
 	include/alibabacloud/dms-enterprise/model/DeleteInstanceRequest.h
 	include/alibabacloud/dms-enterprise/model/DeleteInstanceResult.h
+	include/alibabacloud/dms-enterprise/model/DeleteLogicDatabaseRequest.h
+	include/alibabacloud/dms-enterprise/model/DeleteLogicDatabaseResult.h
+	include/alibabacloud/dms-enterprise/model/DeleteLogicTableRouteConfigRequest.h
+	include/alibabacloud/dms-enterprise/model/DeleteLogicTableRouteConfigResult.h
+	include/alibabacloud/dms-enterprise/model/DeleteProxyRequest.h
+	include/alibabacloud/dms-enterprise/model/DeleteProxyResult.h
+	include/alibabacloud/dms-enterprise/model/DeleteProxyAccessRequest.h
+	include/alibabacloud/dms-enterprise/model/DeleteProxyAccessResult.h
 	include/alibabacloud/dms-enterprise/model/DeleteUserRequest.h
 	include/alibabacloud/dms-enterprise/model/DeleteUserResult.h
 	include/alibabacloud/dms-enterprise/model/DisableUserRequest.h
 	include/alibabacloud/dms-enterprise/model/DisableUserResult.h
+	include/alibabacloud/dms-enterprise/model/EditLogicDatabaseRequest.h
+	include/alibabacloud/dms-enterprise/model/EditLogicDatabaseResult.h
 	include/alibabacloud/dms-enterprise/model/EnableUserRequest.h
 	include/alibabacloud/dms-enterprise/model/EnableUserResult.h
 	include/alibabacloud/dms-enterprise/model/ExecuteDataCorrectRequest.h
@@ -63,6 +83,8 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/ExecuteStructSyncResult.h
 	include/alibabacloud/dms-enterprise/model/GetApprovalDetailRequest.h
 	include/alibabacloud/dms-enterprise/model/GetApprovalDetailResult.h
+	include/alibabacloud/dms-enterprise/model/GetDBTaskSQLJobLogRequest.h
+	include/alibabacloud/dms-enterprise/model/GetDBTaskSQLJobLogResult.h
 	include/alibabacloud/dms-enterprise/model/GetDBTopologyRequest.h
 	include/alibabacloud/dms-enterprise/model/GetDBTopologyResult.h
 	include/alibabacloud/dms-enterprise/model/GetDataCorrectBackupFilesRequest.h
@@ -99,10 +121,20 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/GetPermApplyOrderDetailResult.h
 	include/alibabacloud/dms-enterprise/model/GetPhysicalDatabaseRequest.h
 	include/alibabacloud/dms-enterprise/model/GetPhysicalDatabaseResult.h
+	include/alibabacloud/dms-enterprise/model/GetProxyRequest.h
+	include/alibabacloud/dms-enterprise/model/GetProxyResult.h
 	include/alibabacloud/dms-enterprise/model/GetSQLReviewCheckResultStatusRequest.h
 	include/alibabacloud/dms-enterprise/model/GetSQLReviewCheckResultStatusResult.h
 	include/alibabacloud/dms-enterprise/model/GetSQLReviewOptimizeDetailRequest.h
 	include/alibabacloud/dms-enterprise/model/GetSQLReviewOptimizeDetailResult.h
+	include/alibabacloud/dms-enterprise/model/GetSparkJobDetailRequest.h
+	include/alibabacloud/dms-enterprise/model/GetSparkJobDetailResult.h
+	include/alibabacloud/dms-enterprise/model/GetSparkJobDriverLogRequest.h
+	include/alibabacloud/dms-enterprise/model/GetSparkJobDriverLogResult.h
+	include/alibabacloud/dms-enterprise/model/GetSparkJobExecutorLogsRequest.h
+	include/alibabacloud/dms-enterprise/model/GetSparkJobExecutorLogsResult.h
+	include/alibabacloud/dms-enterprise/model/GetSparkJobLogRequest.h
+	include/alibabacloud/dms-enterprise/model/GetSparkJobLogResult.h
 	include/alibabacloud/dms-enterprise/model/GetStructSyncExecSqlDetailRequest.h
 	include/alibabacloud/dms-enterprise/model/GetStructSyncExecSqlDetailResult.h
 	include/alibabacloud/dms-enterprise/model/GetStructSyncJobAnalyzeResultRequest.h
@@ -123,6 +155,10 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/GetUserUploadFileJobResult.h
 	include/alibabacloud/dms-enterprise/model/GrantUserPermissionRequest.h
 	include/alibabacloud/dms-enterprise/model/GrantUserPermissionResult.h
+	include/alibabacloud/dms-enterprise/model/InspectProxyAccessSecretRequest.h
+	include/alibabacloud/dms-enterprise/model/InspectProxyAccessSecretResult.h
+	include/alibabacloud/dms-enterprise/model/KillSparkJobRequest.h
+	include/alibabacloud/dms-enterprise/model/KillSparkJobResult.h
 	include/alibabacloud/dms-enterprise/model/ListColumnsRequest.h
 	include/alibabacloud/dms-enterprise/model/ListColumnsResult.h
 	include/alibabacloud/dms-enterprise/model/ListDBTaskSQLJobRequest.h
@@ -131,20 +167,38 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/ListDBTaskSQLJobDetailResult.h
 	include/alibabacloud/dms-enterprise/model/ListDDLPublishRecordsRequest.h
 	include/alibabacloud/dms-enterprise/model/ListDDLPublishRecordsResult.h
+	include/alibabacloud/dms-enterprise/model/ListDataCorrectPreCheckDBRequest.h
+	include/alibabacloud/dms-enterprise/model/ListDataCorrectPreCheckDBResult.h
+	include/alibabacloud/dms-enterprise/model/ListDataCorrectPreCheckSQLRequest.h
+	include/alibabacloud/dms-enterprise/model/ListDataCorrectPreCheckSQLResult.h
 	include/alibabacloud/dms-enterprise/model/ListDatabaseUserPermssionsRequest.h
 	include/alibabacloud/dms-enterprise/model/ListDatabaseUserPermssionsResult.h
 	include/alibabacloud/dms-enterprise/model/ListDatabasesRequest.h
 	include/alibabacloud/dms-enterprise/model/ListDatabasesResult.h
 	include/alibabacloud/dms-enterprise/model/ListIndexesRequest.h
 	include/alibabacloud/dms-enterprise/model/ListIndexesResult.h
+	include/alibabacloud/dms-enterprise/model/ListInstanceLoginAuditLogRequest.h
+	include/alibabacloud/dms-enterprise/model/ListInstanceLoginAuditLogResult.h
+	include/alibabacloud/dms-enterprise/model/ListInstanceUserPermissionsRequest.h
+	include/alibabacloud/dms-enterprise/model/ListInstanceUserPermissionsResult.h
 	include/alibabacloud/dms-enterprise/model/ListInstancesRequest.h
 	include/alibabacloud/dms-enterprise/model/ListInstancesResult.h
 	include/alibabacloud/dms-enterprise/model/ListLogicDatabasesRequest.h
 	include/alibabacloud/dms-enterprise/model/ListLogicDatabasesResult.h
+	include/alibabacloud/dms-enterprise/model/ListLogicTableRouteConfigRequest.h
+	include/alibabacloud/dms-enterprise/model/ListLogicTableRouteConfigResult.h
 	include/alibabacloud/dms-enterprise/model/ListLogicTablesRequest.h
 	include/alibabacloud/dms-enterprise/model/ListLogicTablesResult.h
 	include/alibabacloud/dms-enterprise/model/ListOrdersRequest.h
 	include/alibabacloud/dms-enterprise/model/ListOrdersResult.h
+	include/alibabacloud/dms-enterprise/model/ListProxiesRequest.h
+	include/alibabacloud/dms-enterprise/model/ListProxiesResult.h
+	include/alibabacloud/dms-enterprise/model/ListProxyAccessesRequest.h
+	include/alibabacloud/dms-enterprise/model/ListProxyAccessesResult.h
+	include/alibabacloud/dms-enterprise/model/ListProxySQLExecAuditLogRequest.h
+	include/alibabacloud/dms-enterprise/model/ListProxySQLExecAuditLogResult.h
+	include/alibabacloud/dms-enterprise/model/ListSQLExecAuditLogRequest.h
+	include/alibabacloud/dms-enterprise/model/ListSQLExecAuditLogResult.h
 	include/alibabacloud/dms-enterprise/model/ListSQLReviewOriginSQLRequest.h
 	include/alibabacloud/dms-enterprise/model/ListSQLReviewOriginSQLResult.h
 	include/alibabacloud/dms-enterprise/model/ListSensitiveColumnsRequest.h
@@ -163,10 +217,18 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/ListWorkFlowNodesResult.h
 	include/alibabacloud/dms-enterprise/model/ListWorkFlowTemplatesRequest.h
 	include/alibabacloud/dms-enterprise/model/ListWorkFlowTemplatesResult.h
+	include/alibabacloud/dms-enterprise/model/ModifyDataCorrectExecSQLRequest.h
+	include/alibabacloud/dms-enterprise/model/ModifyDataCorrectExecSQLResult.h
+	include/alibabacloud/dms-enterprise/model/PauseDataCorrectSQLJobRequest.h
+	include/alibabacloud/dms-enterprise/model/PauseDataCorrectSQLJobResult.h
 	include/alibabacloud/dms-enterprise/model/RegisterInstanceRequest.h
 	include/alibabacloud/dms-enterprise/model/RegisterInstanceResult.h
 	include/alibabacloud/dms-enterprise/model/RegisterUserRequest.h
 	include/alibabacloud/dms-enterprise/model/RegisterUserResult.h
+	include/alibabacloud/dms-enterprise/model/RestartDataCorrectSQLJobRequest.h
+	include/alibabacloud/dms-enterprise/model/RestartDataCorrectSQLJobResult.h
+	include/alibabacloud/dms-enterprise/model/RetryDataCorrectPreCheckRequest.h
+	include/alibabacloud/dms-enterprise/model/RetryDataCorrectPreCheckResult.h
 	include/alibabacloud/dms-enterprise/model/RevokeUserPermissionRequest.h
 	include/alibabacloud/dms-enterprise/model/RevokeUserPermissionResult.h
 	include/alibabacloud/dms-enterprise/model/SearchDatabaseRequest.h
@@ -177,6 +239,8 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/SetOwnersResult.h
 	include/alibabacloud/dms-enterprise/model/SubmitOrderApprovalRequest.h
 	include/alibabacloud/dms-enterprise/model/SubmitOrderApprovalResult.h
+	include/alibabacloud/dms-enterprise/model/SubmitSparkJobRequest.h
+	include/alibabacloud/dms-enterprise/model/SubmitSparkJobResult.h
 	include/alibabacloud/dms-enterprise/model/SubmitStructSyncOrderApprovalRequest.h
 	include/alibabacloud/dms-enterprise/model/SubmitStructSyncOrderApprovalResult.h
 	include/alibabacloud/dms-enterprise/model/SyncDatabaseMetaRequest.h
@@ -190,8 +254,12 @@ set(dms-enterprise_public_header_model
 
 set(dms-enterprise_src 
 	src/Dms-enterpriseClient.cc
+	src/model/AddLogicTableRouteConfigRequest.cc
+	src/model/AddLogicTableRouteConfigResult.cc
 	src/model/ApproveOrderRequest.cc
 	src/model/ApproveOrderResult.cc
+	src/model/ChangeColumnSecLevelRequest.cc
+	src/model/ChangeColumnSecLevelResult.cc
 	src/model/CloseOrderRequest.cc
 	src/model/CloseOrderResult.cc
 	src/model/CreateDataCorrectOrderRequest.cc
@@ -202,8 +270,14 @@ set(dms-enterprise_src
 	src/model/CreateDataImportOrderResult.cc
 	src/model/CreateFreeLockCorrectOrderRequest.cc
 	src/model/CreateFreeLockCorrectOrderResult.cc
+	src/model/CreateLogicDatabaseRequest.cc
+	src/model/CreateLogicDatabaseResult.cc
 	src/model/CreateOrderRequest.cc
 	src/model/CreateOrderResult.cc
+	src/model/CreateProxyRequest.cc
+	src/model/CreateProxyResult.cc
+	src/model/CreateProxyAccessRequest.cc
+	src/model/CreateProxyAccessResult.cc
 	src/model/CreatePublishGroupTaskRequest.cc
 	src/model/CreatePublishGroupTaskResult.cc
 	src/model/CreateSQLReviewOrderRequest.cc
@@ -216,10 +290,20 @@ set(dms-enterprise_src
 	src/model/CreateUploadOSSFileJobResult.cc
 	src/model/DeleteInstanceRequest.cc
 	src/model/DeleteInstanceResult.cc
+	src/model/DeleteLogicDatabaseRequest.cc
+	src/model/DeleteLogicDatabaseResult.cc
+	src/model/DeleteLogicTableRouteConfigRequest.cc
+	src/model/DeleteLogicTableRouteConfigResult.cc
+	src/model/DeleteProxyRequest.cc
+	src/model/DeleteProxyResult.cc
+	src/model/DeleteProxyAccessRequest.cc
+	src/model/DeleteProxyAccessResult.cc
 	src/model/DeleteUserRequest.cc
 	src/model/DeleteUserResult.cc
 	src/model/DisableUserRequest.cc
 	src/model/DisableUserResult.cc
+	src/model/EditLogicDatabaseRequest.cc
+	src/model/EditLogicDatabaseResult.cc
 	src/model/EnableUserRequest.cc
 	src/model/EnableUserResult.cc
 	src/model/ExecuteDataCorrectRequest.cc
@@ -232,6 +316,8 @@ set(dms-enterprise_src
 	src/model/ExecuteStructSyncResult.cc
 	src/model/GetApprovalDetailRequest.cc
 	src/model/GetApprovalDetailResult.cc
+	src/model/GetDBTaskSQLJobLogRequest.cc
+	src/model/GetDBTaskSQLJobLogResult.cc
 	src/model/GetDBTopologyRequest.cc
 	src/model/GetDBTopologyResult.cc
 	src/model/GetDataCorrectBackupFilesRequest.cc
@@ -268,10 +354,20 @@ set(dms-enterprise_src
 	src/model/GetPermApplyOrderDetailResult.cc
 	src/model/GetPhysicalDatabaseRequest.cc
 	src/model/GetPhysicalDatabaseResult.cc
+	src/model/GetProxyRequest.cc
+	src/model/GetProxyResult.cc
 	src/model/GetSQLReviewCheckResultStatusRequest.cc
 	src/model/GetSQLReviewCheckResultStatusResult.cc
 	src/model/GetSQLReviewOptimizeDetailRequest.cc
 	src/model/GetSQLReviewOptimizeDetailResult.cc
+	src/model/GetSparkJobDetailRequest.cc
+	src/model/GetSparkJobDetailResult.cc
+	src/model/GetSparkJobDriverLogRequest.cc
+	src/model/GetSparkJobDriverLogResult.cc
+	src/model/GetSparkJobExecutorLogsRequest.cc
+	src/model/GetSparkJobExecutorLogsResult.cc
+	src/model/GetSparkJobLogRequest.cc
+	src/model/GetSparkJobLogResult.cc
 	src/model/GetStructSyncExecSqlDetailRequest.cc
 	src/model/GetStructSyncExecSqlDetailResult.cc
 	src/model/GetStructSyncJobAnalyzeResultRequest.cc
@@ -292,6 +388,10 @@ set(dms-enterprise_src
 	src/model/GetUserUploadFileJobResult.cc
 	src/model/GrantUserPermissionRequest.cc
 	src/model/GrantUserPermissionResult.cc
+	src/model/InspectProxyAccessSecretRequest.cc
+	src/model/InspectProxyAccessSecretResult.cc
+	src/model/KillSparkJobRequest.cc
+	src/model/KillSparkJobResult.cc
 	src/model/ListColumnsRequest.cc
 	src/model/ListColumnsResult.cc
 	src/model/ListDBTaskSQLJobRequest.cc
@@ -300,20 +400,38 @@ set(dms-enterprise_src
 	src/model/ListDBTaskSQLJobDetailResult.cc
 	src/model/ListDDLPublishRecordsRequest.cc
 	src/model/ListDDLPublishRecordsResult.cc
+	src/model/ListDataCorrectPreCheckDBRequest.cc
+	src/model/ListDataCorrectPreCheckDBResult.cc
+	src/model/ListDataCorrectPreCheckSQLRequest.cc
+	src/model/ListDataCorrectPreCheckSQLResult.cc
 	src/model/ListDatabaseUserPermssionsRequest.cc
 	src/model/ListDatabaseUserPermssionsResult.cc
 	src/model/ListDatabasesRequest.cc
 	src/model/ListDatabasesResult.cc
 	src/model/ListIndexesRequest.cc
 	src/model/ListIndexesResult.cc
+	src/model/ListInstanceLoginAuditLogRequest.cc
+	src/model/ListInstanceLoginAuditLogResult.cc
+	src/model/ListInstanceUserPermissionsRequest.cc
+	src/model/ListInstanceUserPermissionsResult.cc
 	src/model/ListInstancesRequest.cc
 	src/model/ListInstancesResult.cc
 	src/model/ListLogicDatabasesRequest.cc
 	src/model/ListLogicDatabasesResult.cc
+	src/model/ListLogicTableRouteConfigRequest.cc
+	src/model/ListLogicTableRouteConfigResult.cc
 	src/model/ListLogicTablesRequest.cc
 	src/model/ListLogicTablesResult.cc
 	src/model/ListOrdersRequest.cc
 	src/model/ListOrdersResult.cc
+	src/model/ListProxiesRequest.cc
+	src/model/ListProxiesResult.cc
+	src/model/ListProxyAccessesRequest.cc
+	src/model/ListProxyAccessesResult.cc
+	src/model/ListProxySQLExecAuditLogRequest.cc
+	src/model/ListProxySQLExecAuditLogResult.cc
+	src/model/ListSQLExecAuditLogRequest.cc
+	src/model/ListSQLExecAuditLogResult.cc
 	src/model/ListSQLReviewOriginSQLRequest.cc
 	src/model/ListSQLReviewOriginSQLResult.cc
 	src/model/ListSensitiveColumnsRequest.cc
@@ -332,10 +450,18 @@ set(dms-enterprise_src
 	src/model/ListWorkFlowNodesResult.cc
 	src/model/ListWorkFlowTemplatesRequest.cc
 	src/model/ListWorkFlowTemplatesResult.cc
+	src/model/ModifyDataCorrectExecSQLRequest.cc
+	src/model/ModifyDataCorrectExecSQLResult.cc
+	src/model/PauseDataCorrectSQLJobRequest.cc
+	src/model/PauseDataCorrectSQLJobResult.cc
 	src/model/RegisterInstanceRequest.cc
 	src/model/RegisterInstanceResult.cc
 	src/model/RegisterUserRequest.cc
 	src/model/RegisterUserResult.cc
+	src/model/RestartDataCorrectSQLJobRequest.cc
+	src/model/RestartDataCorrectSQLJobResult.cc
+	src/model/RetryDataCorrectPreCheckRequest.cc
+	src/model/RetryDataCorrectPreCheckResult.cc
 	src/model/RevokeUserPermissionRequest.cc
 	src/model/RevokeUserPermissionResult.cc
 	src/model/SearchDatabaseRequest.cc
@@ -346,6 +472,8 @@ set(dms-enterprise_src
 	src/model/SetOwnersResult.cc
 	src/model/SubmitOrderApprovalRequest.cc
 	src/model/SubmitOrderApprovalResult.cc
+	src/model/SubmitSparkJobRequest.cc
+	src/model/SubmitSparkJobResult.cc
 	src/model/SubmitStructSyncOrderApprovalRequest.cc
 	src/model/SubmitStructSyncOrderApprovalResult.cc
 	src/model/SyncDatabaseMetaRequest.cc

@@ -52,6 +52,8 @@ void GetLogicDatabaseResult::parse(const std::string &payload)
 		logicDatabase_.searchName = logicDatabaseNode["SearchName"].asString();
 	if(!logicDatabaseNode["EnvType"].isNull())
 		logicDatabase_.envType = logicDatabaseNode["EnvType"].asString();
+	if(!logicDatabaseNode["Alias"].isNull())
+		logicDatabase_.alias = logicDatabaseNode["Alias"].asString();
 		auto allOwnerIdList = logicDatabaseNode["OwnerIdList"]["OwnerIds"];
 		for (auto value : allOwnerIdList)
 			logicDatabase_.ownerIdList.push_back(value.asString());

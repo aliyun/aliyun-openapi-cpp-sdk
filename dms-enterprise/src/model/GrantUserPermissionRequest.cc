@@ -70,6 +70,15 @@ void GrantUserPermissionRequest::setTid(long tid) {
   setParameter(std::string("Tid"), std::to_string(tid));
 }
 
+long GrantUserPermissionRequest::getInstanceId() const {
+  return instanceId_;
+}
+
+void GrantUserPermissionRequest::setInstanceId(long instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+}
+
 std::string GrantUserPermissionRequest::getDbId() const {
   return dbId_;
 }

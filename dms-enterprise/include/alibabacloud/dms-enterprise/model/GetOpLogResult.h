@@ -34,7 +34,8 @@ namespace AlibabaCloud
 			public:
 				struct OpLogDetail
 				{
-					long userId;
+					long opUserId;
+					std::string userId;
 					std::string database;
 					std::string opContent;
 					std::string userNick;

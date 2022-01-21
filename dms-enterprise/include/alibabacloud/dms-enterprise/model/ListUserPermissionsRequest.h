@@ -30,6 +30,8 @@ class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT ListUserPermissionsRequest : public Rpc
 public:
 	ListUserPermissionsRequest();
 	~ListUserPermissionsRequest();
+	std::string getSearchKey() const;
+	void setSearchKey(const std::string &searchKey);
 	std::string getUserId() const;
 	void setUserId(const std::string &userId);
 	long getTid() const;
@@ -50,6 +52,7 @@ public:
 	void setLogic(bool logic);
 
 private:
+	std::string searchKey_;
 	std::string userId_;
 	long tid_;
 	int pageNumber_;

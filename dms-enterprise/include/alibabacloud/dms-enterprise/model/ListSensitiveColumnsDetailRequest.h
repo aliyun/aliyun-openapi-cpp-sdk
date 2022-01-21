@@ -36,6 +36,10 @@ public:
 	void setColumnName(const std::string &columnName);
 	long getTid() const;
 	void setTid(long tid);
+	long getDbId() const;
+	void setDbId(long dbId);
+	bool getLogic() const;
+	void setLogic(bool logic);
 	std::string getTableName() const;
 	void setTableName(const std::string &tableName);
 
@@ -43,6 +47,8 @@ private:
 	std::string schemaName_;
 	std::string columnName_;
 	long tid_;
+	long dbId_;
+	bool logic_;
 	std::string tableName_;
 };
 } // namespace Model

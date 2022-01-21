@@ -71,6 +71,10 @@ void ListUserPermissionsResult::parse(const std::string &payload)
 			userPermissionsObject.searchName = valueUserPermissionsUserPermission["SearchName"].asString();
 		if(!valueUserPermissionsUserPermission["Alias"].isNull())
 			userPermissionsObject.alias = valueUserPermissionsUserPermission["Alias"].asString();
+		if(!valueUserPermissionsUserPermission["Host"].isNull())
+			userPermissionsObject.host = valueUserPermissionsUserPermission["Host"].asString();
+		if(!valueUserPermissionsUserPermission["Port"].isNull())
+			userPermissionsObject.port = std::stol(valueUserPermissionsUserPermission["Port"].asString());
 		auto allPermDetailsNode = valueUserPermissionsUserPermission["PermDetails"]["PermDetail"];
 		for (auto valueUserPermissionsUserPermissionPermDetailsPermDetail : allPermDetailsNode)
 		{

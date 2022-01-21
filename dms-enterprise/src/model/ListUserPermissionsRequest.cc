@@ -25,6 +25,15 @@ ListUserPermissionsRequest::ListUserPermissionsRequest()
 
 ListUserPermissionsRequest::~ListUserPermissionsRequest() {}
 
+std::string ListUserPermissionsRequest::getSearchKey() const {
+  return searchKey_;
+}
+
+void ListUserPermissionsRequest::setSearchKey(const std::string &searchKey) {
+  searchKey_ = searchKey;
+  setParameter(std::string("SearchKey"), searchKey);
+}
+
 std::string ListUserPermissionsRequest::getUserId() const {
   return userId_;
 }

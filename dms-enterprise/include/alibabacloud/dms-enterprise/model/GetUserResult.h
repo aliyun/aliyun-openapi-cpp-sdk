@@ -34,6 +34,8 @@ namespace AlibabaCloud
 			public:
 				struct User
 				{
+					std::string notificationMode;
+					std::string email;
 					std::vector<std::string> roleNameList;
 					std::string nickName;
 					long maxExecuteCount;
@@ -46,6 +48,9 @@ namespace AlibabaCloud
 					std::string state;
 					std::string userId;
 					long curExecuteCount;
+					std::string webhook;
+					std::string signatureMethod;
+					std::string dingRobot;
 					long parentUid;
 				};
 

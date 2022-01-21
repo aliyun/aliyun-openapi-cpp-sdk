@@ -1,3 +1,7 @@
+2022-01-21 Version: 1.36.1033
+- Supported RestartDataCorrectSQLJob,PauseDataCorrectSQLJob API.
+- Supported ListDataCorrectPreCheckSQL to return tableNames information.
+
 2022-01-19 Version: 1.36.1032
 - Upgrade Service for SMS.
 

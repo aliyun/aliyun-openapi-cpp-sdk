@@ -35,6 +35,7 @@ namespace AlibabaCloud
 				struct LogicDatabase
 				{
 					std::string searchName;
+					std::string alias;
 					std::string databaseId;
 					std::vector<std::string> ownerNameList;
 					bool logic;

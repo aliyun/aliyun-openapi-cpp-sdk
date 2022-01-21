@@ -40,8 +40,12 @@ public:
 	void setPageNumber(int pageNumber);
 	std::string getSecurityLevel() const;
 	void setSecurityLevel(const std::string &securityLevel);
+	long getDbId() const;
+	void setDbId(long dbId);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
+	bool getLogic() const;
+	void setLogic(bool logic);
 	std::string getTableName() const;
 	void setTableName(const std::string &tableName);
 
@@ -51,7 +55,9 @@ private:
 	long tid_;
 	int pageNumber_;
 	std::string securityLevel_;
+	long dbId_;
 	int pageSize_;
+	bool logic_;
 	std::string tableName_;
 };
 } // namespace Model

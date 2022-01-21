@@ -35,14 +35,19 @@ namespace AlibabaCloud
 				struct DBTaskSQLJobDetail
 				{
 					std::string status;
+					std::string endTime;
+					std::string log;
+					std::string startTime;
+					long timeDelay;
+					long jobDetailId;
 					bool skip;
 					long dbId;
 					long executeCount;
 					std::string sqlType;
-					long jobDetailId;
 					std::string currentSql;
 					bool logic;
 					long jobId;
+					long affectRows;
 				};
 
 

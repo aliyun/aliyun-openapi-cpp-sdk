@@ -55,6 +55,8 @@ void ListLogicDatabasesResult::parse(const std::string &payload)
 			logicDatabaseListObject.searchName = valueLogicDatabaseListLogicDatabase["SearchName"].asString();
 		if(!valueLogicDatabaseListLogicDatabase["EnvType"].isNull())
 			logicDatabaseListObject.envType = valueLogicDatabaseListLogicDatabase["EnvType"].asString();
+		if(!valueLogicDatabaseListLogicDatabase["Alias"].isNull())
+			logicDatabaseListObject.alias = valueLogicDatabaseListLogicDatabase["Alias"].asString();
 		auto allOwnerIdList = value["OwnerIdList"]["OwnerIds"];
 		for (auto value : allOwnerIdList)
 			logicDatabaseListObject.ownerIdList.push_back(value.asString());

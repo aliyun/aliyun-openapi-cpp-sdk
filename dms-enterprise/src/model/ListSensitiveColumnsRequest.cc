@@ -70,6 +70,15 @@ void ListSensitiveColumnsRequest::setSecurityLevel(const std::string &securityLe
   setParameter(std::string("SecurityLevel"), securityLevel);
 }
 
+long ListSensitiveColumnsRequest::getDbId() const {
+  return dbId_;
+}
+
+void ListSensitiveColumnsRequest::setDbId(long dbId) {
+  dbId_ = dbId;
+  setParameter(std::string("DbId"), std::to_string(dbId));
+}
+
 int ListSensitiveColumnsRequest::getPageSize() const {
   return pageSize_;
 }
@@ -77,6 +86,15 @@ int ListSensitiveColumnsRequest::getPageSize() const {
 void ListSensitiveColumnsRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
   setParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+bool ListSensitiveColumnsRequest::getLogic() const {
+  return logic_;
+}
+
+void ListSensitiveColumnsRequest::setLogic(bool logic) {
+  logic_ = logic;
+  setParameter(std::string("Logic"), logic ? "true" : "false");
 }
 
 std::string ListSensitiveColumnsRequest::getTableName() const {

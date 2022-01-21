@@ -62,6 +62,16 @@ void GetUserResult::parse(const std::string &payload)
 		user_.mobile = userNode["Mobile"].asString();
 	if(!userNode["Uid"].isNull())
 		user_.uid = userNode["Uid"].asString();
+	if(!userNode["Email"].isNull())
+		user_.email = userNode["Email"].asString();
+	if(!userNode["DingRobot"].isNull())
+		user_.dingRobot = userNode["DingRobot"].asString();
+	if(!userNode["Webhook"].isNull())
+		user_.webhook = userNode["Webhook"].asString();
+	if(!userNode["SignatureMethod"].isNull())
+		user_.signatureMethod = userNode["SignatureMethod"].asString();
+	if(!userNode["NotificationMode"].isNull())
+		user_.notificationMode = userNode["NotificationMode"].asString();
 		auto allRoleIdList = userNode["RoleIdList"]["RoleIds"];
 		for (auto value : allRoleIdList)
 			user_.roleIdList.push_back(value.asString());

@@ -53,6 +53,7 @@ namespace AlibabaCloud
 					std::string description;
 					std::string orderType;
 					std::string workflowInsCode;
+					std::string createTime;
 					long auditId;
 					std::string title;
 					std::vector<WorkflowNode> workflowNodes;

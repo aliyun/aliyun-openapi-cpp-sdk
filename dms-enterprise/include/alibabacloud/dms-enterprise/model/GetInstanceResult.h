@@ -34,30 +34,36 @@ namespace AlibabaCloud
 			public:
 				struct Instance
 				{
-					std::string instanceSource;
-					std::string instanceId;
+					struct StandardGroup
+					{
+						std::string groupName;
+						std::string groupMode;
+					};
 					int port;
 					std::string databasePassword;
-					std::string host;
 					int exportTimeout;
-					int ddlOnline;
 					std::string envType;
-					int useDsql;
-					std::string sid;
-					std::string ecsInstanceId;
 					std::string dbaId;
-					std::string vpcId;
-					std::string state;
 					std::string instanceAlias;
 					std::string ecsRegion;
-					std::string databaseUser;
-					std::vector<std::string> ownerNameList;
-					std::string dbaNickName;
 					std::string instanceType;
 					int queryTimeout;
 					std::string dataLinkName;
-					std::vector<std::string> ownerIdList;
 					std::string safeRuleId;
+					StandardGroup standardGroup;
+					std::string instanceSource;
+					std::string instanceId;
+					std::string host;
+					int ddlOnline;
+					int useDsql;
+					std::string sid;
+					std::string ecsInstanceId;
+					std::string vpcId;
+					std::string state;
+					std::string databaseUser;
+					std::vector<std::string> ownerNameList;
+					std::string dbaNickName;
+					std::vector<std::string> ownerIdList;
 				};
 
 
