@@ -43,12 +43,15 @@ namespace AlibabaCloud
 				void setInstanceId(const std::string& instanceId);
 				long getBeginTimeRightRange()const;
 				void setBeginTimeRightRange(long beginTimeRightRange);
+				std::vector<std::string> getOptions()const;
+				void setOptions(const std::vector<std::string>& options);
 
             private:
 				long beginTimeLeftRange_;
 				std::string callingNumber_;
 				std::string instanceId_;
 				long beginTimeRightRange_;
+				std::vector<std::string> options_;
 
 			};
 		}

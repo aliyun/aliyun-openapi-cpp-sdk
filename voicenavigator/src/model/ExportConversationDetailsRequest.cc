@@ -71,3 +71,16 @@ void ExportConversationDetailsRequest::setBeginTimeRightRange(long beginTimeRigh
 	setParameter("BeginTimeRightRange", std::to_string(beginTimeRightRange));
 }
 
+std::vector<std::string> ExportConversationDetailsRequest::getOptions()const
+{
+	return options_;
+}
+
+void ExportConversationDetailsRequest::setOptions(const std::vector<std::string>& options)
+{
+	options_ = options;
+	for(int dep1 = 0; dep1!= options.size(); dep1++) {
+		setParameter("Options."+ std::to_string(dep1), options.at(dep1));
+	}
+}
+
