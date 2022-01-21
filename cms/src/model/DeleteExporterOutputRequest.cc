@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,23 +18,19 @@
 
 using AlibabaCloud::Cms::Model::DeleteExporterOutputRequest;
 
-DeleteExporterOutputRequest::DeleteExporterOutputRequest() :
-	RpcServiceRequest("cms", "2019-01-01", "DeleteExporterOutput")
-{
-	setMethod(HttpRequest::Method::Post);
+DeleteExporterOutputRequest::DeleteExporterOutputRequest()
+    : RpcServiceRequest("cms", "2019-01-01", "DeleteExporterOutput") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DeleteExporterOutputRequest::~DeleteExporterOutputRequest()
-{}
+DeleteExporterOutputRequest::~DeleteExporterOutputRequest() {}
 
-std::string DeleteExporterOutputRequest::getDestName()const
-{
-	return destName_;
+std::string DeleteExporterOutputRequest::getDestName() const {
+  return destName_;
 }
 
-void DeleteExporterOutputRequest::setDestName(const std::string& destName)
-{
-	destName_ = destName;
-	setParameter("DestName", destName);
+void DeleteExporterOutputRequest::setDestName(const std::string &destName) {
+  destName_ = destName;
+  setParameter(std::string("DestName"), destName);
 }
 

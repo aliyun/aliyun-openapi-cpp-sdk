@@ -287,6 +287,8 @@ set(cms_public_header_model
 	include/alibabacloud/cms/model/PutExporterRuleResult.h
 	include/alibabacloud/cms/model/PutGroupMetricRuleRequest.h
 	include/alibabacloud/cms/model/PutGroupMetricRuleResult.h
+	include/alibabacloud/cms/model/PutHybridMonitorMetricDataRequest.h
+	include/alibabacloud/cms/model/PutHybridMonitorMetricDataResult.h
 	include/alibabacloud/cms/model/PutLogMonitorRequest.h
 	include/alibabacloud/cms/model/PutLogMonitorResult.h
 	include/alibabacloud/cms/model/PutMetricRuleTargetsRequest.h
@@ -574,6 +576,8 @@ set(cms_src
 	src/model/PutExporterRuleResult.cc
 	src/model/PutGroupMetricRuleRequest.cc
 	src/model/PutGroupMetricRuleResult.cc
+	src/model/PutHybridMonitorMetricDataRequest.cc
+	src/model/PutHybridMonitorMetricDataResult.cc
 	src/model/PutLogMonitorRequest.cc
 	src/model/PutLogMonitorResult.cc
 	src/model/PutMetricRuleTargetsRequest.cc

@@ -35,8 +35,8 @@ namespace AlibabaCloud
 				struct NodeProcess
 				{
 					std::string processName;
-					std::string instanceId;
 					std::string command;
+					std::string instanceId;
 					std::string processUser;
 					long processId;
 					std::string groupId;

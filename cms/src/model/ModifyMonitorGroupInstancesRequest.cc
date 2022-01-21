@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,41 +18,35 @@
 
 using AlibabaCloud::Cms::Model::ModifyMonitorGroupInstancesRequest;
 
-ModifyMonitorGroupInstancesRequest::ModifyMonitorGroupInstancesRequest() :
-	RpcServiceRequest("cms", "2019-01-01", "ModifyMonitorGroupInstances")
-{
-	setMethod(HttpRequest::Method::Post);
+ModifyMonitorGroupInstancesRequest::ModifyMonitorGroupInstancesRequest()
+    : RpcServiceRequest("cms", "2019-01-01", "ModifyMonitorGroupInstances") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-ModifyMonitorGroupInstancesRequest::~ModifyMonitorGroupInstancesRequest()
-{}
+ModifyMonitorGroupInstancesRequest::~ModifyMonitorGroupInstancesRequest() {}
 
-std::vector<ModifyMonitorGroupInstancesRequest::Instances> ModifyMonitorGroupInstancesRequest::getInstances()const
-{
-	return instances_;
+std::vector<ModifyMonitorGroupInstancesRequest::Instances> ModifyMonitorGroupInstancesRequest::getInstances() const {
+  return instances_;
 }
 
-void ModifyMonitorGroupInstancesRequest::setInstances(const std::vector<Instances>& instances)
-{
-	instances_ = instances;
-	for(int dep1 = 0; dep1!= instances.size(); dep1++) {
-		auto instancesObj = instances.at(dep1);
-		std::string instancesObjStr = "Instances." + std::to_string(dep1 + 1);
-		setParameter(instancesObjStr + ".InstanceId", instancesObj.instanceId);
-		setParameter(instancesObjStr + ".InstanceName", instancesObj.instanceName);
-		setParameter(instancesObjStr + ".RegionId", instancesObj.regionId);
-		setParameter(instancesObjStr + ".Category", instancesObj.category);
-	}
+void ModifyMonitorGroupInstancesRequest::setInstances(const std::vector<ModifyMonitorGroupInstancesRequest::Instances> &instances) {
+  instances_ = instances;
+  for(int dep1 = 0; dep1 != instances.size(); dep1++) {
+  auto instancesObj = instances.at(dep1);
+  std::string instancesObjStr = std::string("Instances") + "." + std::to_string(dep1 + 1);
+    setParameter(instancesObjStr + ".InstanceName", instancesObj.instanceName);
+    setParameter(instancesObjStr + ".InstanceId", instancesObj.instanceId);
+    setParameter(instancesObjStr + ".RegionId", instancesObj.regionId);
+    setParameter(instancesObjStr + ".Category", instancesObj.category);
+  }
 }
 
-long ModifyMonitorGroupInstancesRequest::getGroupId()const
-{
-	return groupId_;
+long ModifyMonitorGroupInstancesRequest::getGroupId() const {
+  return groupId_;
 }
 
-void ModifyMonitorGroupInstancesRequest::setGroupId(long groupId)
-{
-	groupId_ = groupId;
-	setParameter("GroupId", std::to_string(groupId));
+void ModifyMonitorGroupInstancesRequest::setGroupId(long groupId) {
+  groupId_ = groupId;
+  setParameter(std::string("GroupId"), std::to_string(groupId));
 }
 

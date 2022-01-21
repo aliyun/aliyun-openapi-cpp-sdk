@@ -55,61 +55,81 @@ void DescribeEventRuleTargetListResult::parse(const std::string &payload)
 	for (auto valueFcParametersFCParameter : allFcParametersNode)
 	{
 		FCParameter fcParametersObject;
-		if(!valueFcParametersFCParameter["Region"].isNull())
-			fcParametersObject.region = valueFcParametersFCParameter["Region"].asString();
 		if(!valueFcParametersFCParameter["ServiceName"].isNull())
 			fcParametersObject.serviceName = valueFcParametersFCParameter["ServiceName"].asString();
 		if(!valueFcParametersFCParameter["FunctionName"].isNull())
 			fcParametersObject.functionName = valueFcParametersFCParameter["FunctionName"].asString();
-		if(!valueFcParametersFCParameter["Id"].isNull())
-			fcParametersObject.id = valueFcParametersFCParameter["Id"].asString();
 		if(!valueFcParametersFCParameter["Arn"].isNull())
 			fcParametersObject.arn = valueFcParametersFCParameter["Arn"].asString();
+		if(!valueFcParametersFCParameter["Id"].isNull())
+			fcParametersObject.id = valueFcParametersFCParameter["Id"].asString();
+		if(!valueFcParametersFCParameter["Region"].isNull())
+			fcParametersObject.region = valueFcParametersFCParameter["Region"].asString();
 		fcParameters_.push_back(fcParametersObject);
 	}
 	auto allMnsParametersNode = value["MnsParameters"]["MnsParameter"];
 	for (auto valueMnsParametersMnsParameter : allMnsParametersNode)
 	{
 		MnsParameter mnsParametersObject;
-		if(!valueMnsParametersMnsParameter["Region"].isNull())
-			mnsParametersObject.region = valueMnsParametersMnsParameter["Region"].asString();
 		if(!valueMnsParametersMnsParameter["Queue"].isNull())
 			mnsParametersObject.queue = valueMnsParametersMnsParameter["Queue"].asString();
-		if(!valueMnsParametersMnsParameter["Id"].isNull())
-			mnsParametersObject.id = valueMnsParametersMnsParameter["Id"].asString();
 		if(!valueMnsParametersMnsParameter["Arn"].isNull())
 			mnsParametersObject.arn = valueMnsParametersMnsParameter["Arn"].asString();
+		if(!valueMnsParametersMnsParameter["Region"].isNull())
+			mnsParametersObject.region = valueMnsParametersMnsParameter["Region"].asString();
+		if(!valueMnsParametersMnsParameter["Id"].isNull())
+			mnsParametersObject.id = valueMnsParametersMnsParameter["Id"].asString();
 		mnsParameters_.push_back(mnsParametersObject);
 	}
 	auto allWebhookParametersNode = value["WebhookParameters"]["WebhookParameter"];
 	for (auto valueWebhookParametersWebhookParameter : allWebhookParametersNode)
 	{
 		WebhookParameter webhookParametersObject;
-		if(!valueWebhookParametersWebhookParameter["Id"].isNull())
-			webhookParametersObject.id = valueWebhookParametersWebhookParameter["Id"].asString();
-		if(!valueWebhookParametersWebhookParameter["Protocol"].isNull())
-			webhookParametersObject.protocol = valueWebhookParametersWebhookParameter["Protocol"].asString();
-		if(!valueWebhookParametersWebhookParameter["Method"].isNull())
-			webhookParametersObject.method = valueWebhookParametersWebhookParameter["Method"].asString();
 		if(!valueWebhookParametersWebhookParameter["Url"].isNull())
 			webhookParametersObject.url = valueWebhookParametersWebhookParameter["Url"].asString();
+		if(!valueWebhookParametersWebhookParameter["Method"].isNull())
+			webhookParametersObject.method = valueWebhookParametersWebhookParameter["Method"].asString();
+		if(!valueWebhookParametersWebhookParameter["Protocol"].isNull())
+			webhookParametersObject.protocol = valueWebhookParametersWebhookParameter["Protocol"].asString();
+		if(!valueWebhookParametersWebhookParameter["Id"].isNull())
+			webhookParametersObject.id = valueWebhookParametersWebhookParameter["Id"].asString();
 		webhookParameters_.push_back(webhookParametersObject);
 	}
 	auto allSlsParametersNode = value["SlsParameters"]["SlsParameter"];
 	for (auto valueSlsParametersSlsParameter : allSlsParametersNode)
 	{
 		SlsParameter slsParametersObject;
-		if(!valueSlsParametersSlsParameter["Id"].isNull())
-			slsParametersObject.id = valueSlsParametersSlsParameter["Id"].asString();
-		if(!valueSlsParametersSlsParameter["Region"].isNull())
-			slsParametersObject.region = valueSlsParametersSlsParameter["Region"].asString();
 		if(!valueSlsParametersSlsParameter["Project"].isNull())
 			slsParametersObject.project = valueSlsParametersSlsParameter["Project"].asString();
 		if(!valueSlsParametersSlsParameter["LogStore"].isNull())
 			slsParametersObject.logStore = valueSlsParametersSlsParameter["LogStore"].asString();
 		if(!valueSlsParametersSlsParameter["Arn"].isNull())
 			slsParametersObject.arn = valueSlsParametersSlsParameter["Arn"].asString();
+		if(!valueSlsParametersSlsParameter["Region"].isNull())
+			slsParametersObject.region = valueSlsParametersSlsParameter["Region"].asString();
+		if(!valueSlsParametersSlsParameter["Id"].isNull())
+			slsParametersObject.id = valueSlsParametersSlsParameter["Id"].asString();
 		slsParameters_.push_back(slsParametersObject);
+	}
+	auto allOpenApiParametersNode = value["OpenApiParameters"]["OpenApiParametersItem"];
+	for (auto valueOpenApiParametersOpenApiParametersItem : allOpenApiParametersNode)
+	{
+		OpenApiParametersItem openApiParametersObject;
+		if(!valueOpenApiParametersOpenApiParametersItem["Action"].isNull())
+			openApiParametersObject.action = valueOpenApiParametersOpenApiParametersItem["Action"].asString();
+		if(!valueOpenApiParametersOpenApiParametersItem["Arn"].isNull())
+			openApiParametersObject.arn = valueOpenApiParametersOpenApiParametersItem["Arn"].asString();
+		if(!valueOpenApiParametersOpenApiParametersItem["Id"].isNull())
+			openApiParametersObject.id = valueOpenApiParametersOpenApiParametersItem["Id"].asString();
+		if(!valueOpenApiParametersOpenApiParametersItem["Product"].isNull())
+			openApiParametersObject.product = valueOpenApiParametersOpenApiParametersItem["Product"].asString();
+		if(!valueOpenApiParametersOpenApiParametersItem["Region"].isNull())
+			openApiParametersObject.region = valueOpenApiParametersOpenApiParametersItem["Region"].asString();
+		if(!valueOpenApiParametersOpenApiParametersItem["Role"].isNull())
+			openApiParametersObject.role = valueOpenApiParametersOpenApiParametersItem["Role"].asString();
+		if(!valueOpenApiParametersOpenApiParametersItem["Version"].isNull())
+			openApiParametersObject.version = valueOpenApiParametersOpenApiParametersItem["Version"].asString();
+		openApiParameters_.push_back(openApiParametersObject);
 	}
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
@@ -121,6 +141,11 @@ void DescribeEventRuleTargetListResult::parse(const std::string &payload)
 std::vector<DescribeEventRuleTargetListResult::ContactParameter> DescribeEventRuleTargetListResult::getContactParameters()const
 {
 	return contactParameters_;
+}
+
+std::vector<DescribeEventRuleTargetListResult::OpenApiParametersItem> DescribeEventRuleTargetListResult::getOpenApiParameters()const
+{
+	return openApiParameters_;
 }
 
 std::string DescribeEventRuleTargetListResult::getMessage()const

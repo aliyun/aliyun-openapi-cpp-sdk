@@ -43,16 +43,16 @@ void DescribeContactGroupListResult::parse(const std::string &payload)
 	for (auto valueContactGroupListContactGroup : allContactGroupListNode)
 	{
 		ContactGroup contactGroupListObject;
-		if(!valueContactGroupListContactGroup["Name"].isNull())
-			contactGroupListObject.name = valueContactGroupListContactGroup["Name"].asString();
 		if(!valueContactGroupListContactGroup["Describe"].isNull())
 			contactGroupListObject.describe = valueContactGroupListContactGroup["Describe"].asString();
-		if(!valueContactGroupListContactGroup["CreateTime"].isNull())
-			contactGroupListObject.createTime = std::stol(valueContactGroupListContactGroup["CreateTime"].asString());
 		if(!valueContactGroupListContactGroup["UpdateTime"].isNull())
 			contactGroupListObject.updateTime = std::stol(valueContactGroupListContactGroup["UpdateTime"].asString());
+		if(!valueContactGroupListContactGroup["CreateTime"].isNull())
+			contactGroupListObject.createTime = std::stol(valueContactGroupListContactGroup["CreateTime"].asString());
 		if(!valueContactGroupListContactGroup["EnabledWeeklyReport"].isNull())
 			contactGroupListObject.enabledWeeklyReport = valueContactGroupListContactGroup["EnabledWeeklyReport"].asString() == "true";
+		if(!valueContactGroupListContactGroup["Name"].isNull())
+			contactGroupListObject.name = valueContactGroupListContactGroup["Name"].asString();
 		if(!valueContactGroupListContactGroup["EnableSubscribed"].isNull())
 			contactGroupListObject.enableSubscribed = valueContactGroupListContactGroup["EnableSubscribed"].asString() == "true";
 		auto allContacts = value["Contacts"]["Contact"];
@@ -63,14 +63,14 @@ void DescribeContactGroupListResult::parse(const std::string &payload)
 	auto allContactGroups = value["ContactGroups"]["ContactGroup"];
 	for (const auto &item : allContactGroups)
 		contactGroups_.push_back(item.asString());
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
 	if(!value["Total"].isNull())
 		total_ = std::stoi(value["Total"].asString());
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

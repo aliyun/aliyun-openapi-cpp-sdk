@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,47 +18,36 @@
 
 using AlibabaCloud::Cms::Model::InstallMonitoringAgentRequest;
 
-InstallMonitoringAgentRequest::InstallMonitoringAgentRequest() :
-	RpcServiceRequest("cms", "2019-01-01", "InstallMonitoringAgent")
-{
-	setMethod(HttpRequest::Method::Post);
+InstallMonitoringAgentRequest::InstallMonitoringAgentRequest()
+    : RpcServiceRequest("cms", "2019-01-01", "InstallMonitoringAgent") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-InstallMonitoringAgentRequest::~InstallMonitoringAgentRequest()
-{}
+InstallMonitoringAgentRequest::~InstallMonitoringAgentRequest() {}
 
-std::vector<std::string> InstallMonitoringAgentRequest::getInstanceIds()const
-{
-	return instanceIds_;
+std::vector<std::string> InstallMonitoringAgentRequest::getInstanceIds() const {
+  return instanceIds_;
 }
 
-void InstallMonitoringAgentRequest::setInstanceIds(const std::vector<std::string>& instanceIds)
-{
-	instanceIds_ = instanceIds;
-	for(int dep1 = 0; dep1!= instanceIds.size(); dep1++) {
-		setParameter("InstanceIds."+ std::to_string(dep1), instanceIds.at(dep1));
-	}
+void InstallMonitoringAgentRequest::setInstanceIds(const std::vector<std::string> &instanceIds) {
+  instanceIds_ = instanceIds;
 }
 
-bool InstallMonitoringAgentRequest::getForce()const
-{
-	return force_;
+bool InstallMonitoringAgentRequest::getForce() const {
+  return force_;
 }
 
-void InstallMonitoringAgentRequest::setForce(bool force)
-{
-	force_ = force;
-	setParameter("Force", force ? "true" : "false");
+void InstallMonitoringAgentRequest::setForce(bool force) {
+  force_ = force;
+  setParameter(std::string("Force"), force ? "true" : "false");
 }
 
-std::string InstallMonitoringAgentRequest::getInstallCommand()const
-{
-	return installCommand_;
+std::string InstallMonitoringAgentRequest::getInstallCommand() const {
+  return installCommand_;
 }
 
-void InstallMonitoringAgentRequest::setInstallCommand(const std::string& installCommand)
-{
-	installCommand_ = installCommand;
-	setParameter("InstallCommand", installCommand);
+void InstallMonitoringAgentRequest::setInstallCommand(const std::string &installCommand) {
+  installCommand_ = installCommand;
+  setParameter(std::string("InstallCommand"), installCommand);
 }
 

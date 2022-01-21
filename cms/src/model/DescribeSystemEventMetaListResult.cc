@@ -43,30 +43,30 @@ void DescribeSystemEventMetaListResult::parse(const std::string &payload)
 	for (auto valueDataResource : allDataNode)
 	{
 		Resource dataObject;
+		if(!valueDataResource["Status"].isNull())
+			dataObject.status = valueDataResource["Status"].asString();
+		if(!valueDataResource["EventType"].isNull())
+			dataObject.eventType = valueDataResource["EventType"].asString();
 		if(!valueDataResource["Product"].isNull())
 			dataObject.product = valueDataResource["Product"].asString();
-		if(!valueDataResource["Name"].isNull())
-			dataObject.name = valueDataResource["Name"].asString();
 		if(!valueDataResource["NameDesc"].isNull())
 			dataObject.nameDesc = valueDataResource["NameDesc"].asString();
 		if(!valueDataResource["NameDesc.En"].isNull())
 			dataObject.nameDescEn = valueDataResource["NameDesc.En"].asString();
-		if(!valueDataResource["Level"].isNull())
-			dataObject.level = valueDataResource["Level"].asString();
-		if(!valueDataResource["Status"].isNull())
-			dataObject.status = valueDataResource["Status"].asString();
+		if(!valueDataResource["Name"].isNull())
+			dataObject.name = valueDataResource["Name"].asString();
 		if(!valueDataResource["StatusDesc"].isNull())
 			dataObject.statusDesc = valueDataResource["StatusDesc"].asString();
-		if(!valueDataResource["EventType"].isNull())
-			dataObject.eventType = valueDataResource["EventType"].asString();
+		if(!valueDataResource["Level"].isNull())
+			dataObject.level = valueDataResource["Level"].asString();
 		data_.push_back(dataObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = std::stoi(value["Code"].asString());
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

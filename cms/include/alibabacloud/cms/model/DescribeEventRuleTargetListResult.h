@@ -55,8 +55,8 @@ namespace AlibabaCloud
 				};
 				struct WebhookParameter
 				{
-					std::string id;
 					std::string method;
+					std::string id;
 					std::string protocol;
 					std::string url;
 				};
@@ -68,12 +68,23 @@ namespace AlibabaCloud
 					std::string id;
 					std::string arn;
 				};
+				struct OpenApiParametersItem
+				{
+					std::string role;
+					std::string action;
+					std::string version;
+					std::string product;
+					std::string region;
+					std::string id;
+					std::string arn;
+				};
 
 
 				DescribeEventRuleTargetListResult();
 				explicit DescribeEventRuleTargetListResult(const std::string &payload);
 				~DescribeEventRuleTargetListResult();
 				std::vector<ContactParameter> getContactParameters()const;
+				std::vector<OpenApiParametersItem> getOpenApiParameters()const;
 				std::string getMessage()const;
 				std::vector<SlsParameter> getSlsParameters()const;
 				std::vector<WebhookParameter> getWebhookParameters()const;
@@ -85,6 +96,7 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::vector<ContactParameter> contactParameters_;
+				std::vector<OpenApiParametersItem> openApiParameters_;
 				std::string message_;
 				std::vector<SlsParameter> slsParameters_;
 				std::vector<WebhookParameter> webhookParameters_;

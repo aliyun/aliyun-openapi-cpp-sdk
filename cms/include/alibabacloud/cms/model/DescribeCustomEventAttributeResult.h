@@ -37,8 +37,8 @@ namespace AlibabaCloud
 					std::string content;
 					std::string time;
 					std::string id;
-					std::string groupId;
 					std::string name;
+					std::string groupId;
 				};
 
 

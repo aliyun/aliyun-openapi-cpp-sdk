@@ -50,12 +50,12 @@ void DeleteMonitorGroupResult::parse(const std::string &payload)
 			contactGroupObject.name = groupNodeContactGroupsContactGroup["Name"].asString();
 		group_.contactGroups.push_back(contactGroupObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = std::stoi(value["Code"].asString());
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

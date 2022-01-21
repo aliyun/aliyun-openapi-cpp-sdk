@@ -43,31 +43,31 @@ void DescribeContactListByContactGroupResult::parse(const std::string &payload)
 	for (auto valueContactsContact : allContactsNode)
 	{
 		Contact contactsObject;
-		if(!valueContactsContact["Name"].isNull())
-			contactsObject.name = valueContactsContact["Name"].asString();
-		if(!valueContactsContact["Desc"].isNull())
-			contactsObject.desc = valueContactsContact["Desc"].asString();
-		if(!valueContactsContact["CreateTime"].isNull())
-			contactsObject.createTime = std::stol(valueContactsContact["CreateTime"].asString());
 		if(!valueContactsContact["UpdateTime"].isNull())
 			contactsObject.updateTime = std::stol(valueContactsContact["UpdateTime"].asString());
+		if(!valueContactsContact["Name"].isNull())
+			contactsObject.name = valueContactsContact["Name"].asString();
+		if(!valueContactsContact["CreateTime"].isNull())
+			contactsObject.createTime = std::stol(valueContactsContact["CreateTime"].asString());
+		if(!valueContactsContact["Desc"].isNull())
+			contactsObject.desc = valueContactsContact["Desc"].asString();
 		auto channelsNode = value["Channels"];
-		if(!channelsNode["SMS"].isNull())
-			contactsObject.channels.sMS = channelsNode["SMS"].asString();
 		if(!channelsNode["Mail"].isNull())
 			contactsObject.channels.mail = channelsNode["Mail"].asString();
 		if(!channelsNode["AliIM"].isNull())
 			contactsObject.channels.aliIM = channelsNode["AliIM"].asString();
 		if(!channelsNode["DingWebHook"].isNull())
 			contactsObject.channels.dingWebHook = channelsNode["DingWebHook"].asString();
+		if(!channelsNode["SMS"].isNull())
+			contactsObject.channels.sMS = channelsNode["SMS"].asString();
 		contacts_.push_back(contactsObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

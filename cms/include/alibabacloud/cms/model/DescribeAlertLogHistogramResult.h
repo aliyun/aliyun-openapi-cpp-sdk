@@ -34,9 +34,9 @@ namespace AlibabaCloud
 			public:
 				struct AlertLogHistogramListItem
 				{
-					int count;
 					long from;
 					long to;
+					int count;
 				};
 
 

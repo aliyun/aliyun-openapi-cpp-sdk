@@ -46,18 +46,18 @@ void DescribeMonitorGroupCategoriesResult::parse(const std::string &payload)
 	for (auto monitorGroupCategoriesNodeMonitorGroupCategoryCategoryItem : allMonitorGroupCategoryNode)
 	{
 		MonitorGroupCategories::CategoryItem categoryItemObject;
-		if(!monitorGroupCategoriesNodeMonitorGroupCategoryCategoryItem["Category"].isNull())
-			categoryItemObject.category = monitorGroupCategoriesNodeMonitorGroupCategoryCategoryItem["Category"].asString();
 		if(!monitorGroupCategoriesNodeMonitorGroupCategoryCategoryItem["Count"].isNull())
 			categoryItemObject.count = std::stoi(monitorGroupCategoriesNodeMonitorGroupCategoryCategoryItem["Count"].asString());
+		if(!monitorGroupCategoriesNodeMonitorGroupCategoryCategoryItem["Category"].isNull())
+			categoryItemObject.category = monitorGroupCategoriesNodeMonitorGroupCategoryCategoryItem["Category"].asString();
 		monitorGroupCategories_.monitorGroupCategory.push_back(categoryItemObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = std::stoi(value["Code"].asString());
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

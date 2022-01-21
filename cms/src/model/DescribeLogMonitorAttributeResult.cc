@@ -40,38 +40,38 @@ void DescribeLogMonitorAttributeResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto logMonitorNode = value["LogMonitor"];
-	if(!logMonitorNode["LogId"].isNull())
-		logMonitor_.logId = std::stol(logMonitorNode["LogId"].asString());
-	if(!logMonitorNode["SlsRegionId"].isNull())
-		logMonitor_.slsRegionId = logMonitorNode["SlsRegionId"].asString();
-	if(!logMonitorNode["SlsProject"].isNull())
-		logMonitor_.slsProject = logMonitorNode["SlsProject"].asString();
+	if(!logMonitorNode["ValueFilterRelation"].isNull())
+		logMonitor_.valueFilterRelation = logMonitorNode["ValueFilterRelation"].asString();
 	if(!logMonitorNode["SlsLogstore"].isNull())
 		logMonitor_.slsLogstore = logMonitorNode["SlsLogstore"].asString();
 	if(!logMonitorNode["MetricName"].isNull())
 		logMonitor_.metricName = logMonitorNode["MetricName"].asString();
-	if(!logMonitorNode["MetricExpress"].isNull())
-		logMonitor_.metricExpress = logMonitorNode["MetricExpress"].asString();
-	if(!logMonitorNode["GmtCreate"].isNull())
-		logMonitor_.gmtCreate = std::stol(logMonitorNode["GmtCreate"].asString());
-	if(!logMonitorNode["ValueFilterRelation"].isNull())
-		logMonitor_.valueFilterRelation = logMonitorNode["ValueFilterRelation"].asString();
 	if(!logMonitorNode["GroupId"].isNull())
 		logMonitor_.groupId = std::stol(logMonitorNode["GroupId"].asString());
+	if(!logMonitorNode["LogId"].isNull())
+		logMonitor_.logId = std::stol(logMonitorNode["LogId"].asString());
+	if(!logMonitorNode["MetricExpress"].isNull())
+		logMonitor_.metricExpress = logMonitorNode["MetricExpress"].asString();
+	if(!logMonitorNode["SlsRegionId"].isNull())
+		logMonitor_.slsRegionId = logMonitorNode["SlsRegionId"].asString();
+	if(!logMonitorNode["GmtCreate"].isNull())
+		logMonitor_.gmtCreate = std::stol(logMonitorNode["GmtCreate"].asString());
+	if(!logMonitorNode["SlsProject"].isNull())
+		logMonitor_.slsProject = logMonitorNode["SlsProject"].asString();
 	auto allAggregatesNode = logMonitorNode["Aggregates"]["Aggregate"];
 	for (auto logMonitorNodeAggregatesAggregate : allAggregatesNode)
 	{
 		LogMonitor::Aggregate aggregateObject;
+		if(!logMonitorNodeAggregatesAggregate["Max"].isNull())
+			aggregateObject.max = logMonitorNodeAggregatesAggregate["Max"].asString();
+		if(!logMonitorNodeAggregatesAggregate["Min"].isNull())
+			aggregateObject.min = logMonitorNodeAggregatesAggregate["Min"].asString();
+		if(!logMonitorNodeAggregatesAggregate["Function"].isNull())
+			aggregateObject.function = logMonitorNodeAggregatesAggregate["Function"].asString();
 		if(!logMonitorNodeAggregatesAggregate["Alias"].isNull())
 			aggregateObject.alias = logMonitorNodeAggregatesAggregate["Alias"].asString();
 		if(!logMonitorNodeAggregatesAggregate["FieldName"].isNull())
 			aggregateObject.fieldName = logMonitorNodeAggregatesAggregate["FieldName"].asString();
-		if(!logMonitorNodeAggregatesAggregate["Function"].isNull())
-			aggregateObject.function = logMonitorNodeAggregatesAggregate["Function"].asString();
-		if(!logMonitorNodeAggregatesAggregate["Min"].isNull())
-			aggregateObject.min = logMonitorNodeAggregatesAggregate["Min"].asString();
-		if(!logMonitorNodeAggregatesAggregate["Max"].isNull())
-			aggregateObject.max = logMonitorNodeAggregatesAggregate["Max"].asString();
 		logMonitor_.aggregates.push_back(aggregateObject);
 	}
 	auto allValueFilterNode = logMonitorNode["ValueFilter"]["ValueFilterObject"];
@@ -80,10 +80,10 @@ void DescribeLogMonitorAttributeResult::parse(const std::string &payload)
 		LogMonitor::ValueFilterObject valueFilterObjectObject;
 		if(!logMonitorNodeValueFilterValueFilterObject["Key"].isNull())
 			valueFilterObjectObject.key = logMonitorNodeValueFilterValueFilterObject["Key"].asString();
-		if(!logMonitorNodeValueFilterValueFilterObject["Operator"].isNull())
-			valueFilterObjectObject._operator = logMonitorNodeValueFilterValueFilterObject["Operator"].asString();
 		if(!logMonitorNodeValueFilterValueFilterObject["Value"].isNull())
 			valueFilterObjectObject.value = logMonitorNodeValueFilterValueFilterObject["Value"].asString();
+		if(!logMonitorNodeValueFilterValueFilterObject["Operator"].isNull())
+			valueFilterObjectObject._operator = logMonitorNodeValueFilterValueFilterObject["Operator"].asString();
 		logMonitor_.valueFilter.push_back(valueFilterObjectObject);
 	}
 		auto allTumblingwindows = logMonitorNode["Tumblingwindows"]["Tumblingwindow"];
@@ -94,10 +94,10 @@ void DescribeLogMonitorAttributeResult::parse(const std::string &payload)
 			logMonitor_.groupbys.push_back(value.asString());
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

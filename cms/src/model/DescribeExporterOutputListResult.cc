@@ -43,33 +43,33 @@ void DescribeExporterOutputListResult::parse(const std::string &payload)
 	for (auto valueDatapointsDatapoint : allDatapointsNode)
 	{
 		Datapoint datapointsObject;
-		if(!valueDatapointsDatapoint["DestName"].isNull())
-			datapointsObject.destName = valueDatapointsDatapoint["DestName"].asString();
 		if(!valueDatapointsDatapoint["DestType"].isNull())
 			datapointsObject.destType = valueDatapointsDatapoint["DestType"].asString();
 		if(!valueDatapointsDatapoint["CreateTime"].isNull())
 			datapointsObject.createTime = std::stol(valueDatapointsDatapoint["CreateTime"].asString());
+		if(!valueDatapointsDatapoint["DestName"].isNull())
+			datapointsObject.destName = valueDatapointsDatapoint["DestName"].asString();
 		auto configJsonNode = value["ConfigJson"];
+		if(!configJsonNode["ak"].isNull())
+			datapointsObject.configJson.ak = configJsonNode["ak"].asString();
+		if(!configJsonNode["endpoint"].isNull())
+			datapointsObject.configJson.endpoint = configJsonNode["endpoint"].asString();
 		if(!configJsonNode["logstore"].isNull())
 			datapointsObject.configJson.logstore = configJsonNode["logstore"].asString();
 		if(!configJsonNode["project"].isNull())
 			datapointsObject.configJson.project = configJsonNode["project"].asString();
-		if(!configJsonNode["endpoint"].isNull())
-			datapointsObject.configJson.endpoint = configJsonNode["endpoint"].asString();
-		if(!configJsonNode["ak"].isNull())
-			datapointsObject.configJson.ak = configJsonNode["ak"].asString();
 		datapoints_.push_back(datapointsObject);
 	}
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
-	if(!value["Total"].isNull())
-		total_ = std::stoi(value["Total"].asString());
 	if(!value["PageNumber"].isNull())
 		pageNumber_ = std::stoi(value["PageNumber"].asString());
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
+	if(!value["Total"].isNull())
+		total_ = std::stoi(value["Total"].asString());
 
 }
 

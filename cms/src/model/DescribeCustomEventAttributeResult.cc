@@ -43,16 +43,16 @@ void DescribeCustomEventAttributeResult::parse(const std::string &payload)
 	for (auto valueCustomEventsCustomEvent : allCustomEventsNode)
 	{
 		CustomEvent customEventsObject;
-		if(!valueCustomEventsCustomEvent["Id"].isNull())
-			customEventsObject.id = valueCustomEventsCustomEvent["Id"].asString();
-		if(!valueCustomEventsCustomEvent["Content"].isNull())
-			customEventsObject.content = valueCustomEventsCustomEvent["Content"].asString();
-		if(!valueCustomEventsCustomEvent["GroupId"].isNull())
-			customEventsObject.groupId = valueCustomEventsCustomEvent["GroupId"].asString();
-		if(!valueCustomEventsCustomEvent["Name"].isNull())
-			customEventsObject.name = valueCustomEventsCustomEvent["Name"].asString();
 		if(!valueCustomEventsCustomEvent["Time"].isNull())
 			customEventsObject.time = valueCustomEventsCustomEvent["Time"].asString();
+		if(!valueCustomEventsCustomEvent["Name"].isNull())
+			customEventsObject.name = valueCustomEventsCustomEvent["Name"].asString();
+		if(!valueCustomEventsCustomEvent["GroupId"].isNull())
+			customEventsObject.groupId = valueCustomEventsCustomEvent["GroupId"].asString();
+		if(!valueCustomEventsCustomEvent["Content"].isNull())
+			customEventsObject.content = valueCustomEventsCustomEvent["Content"].asString();
+		if(!valueCustomEventsCustomEvent["Id"].isNull())
+			customEventsObject.id = valueCustomEventsCustomEvent["Id"].asString();
 		customEvents_.push_back(customEventsObject);
 	}
 	if(!value["Code"].isNull())

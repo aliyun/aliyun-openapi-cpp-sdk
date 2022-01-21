@@ -43,43 +43,55 @@ void DescribeEventRuleListResult::parse(const std::string &payload)
 	for (auto valueEventRulesEventRule : allEventRulesNode)
 	{
 		EventRule eventRulesObject;
-		if(!valueEventRulesEventRule["Name"].isNull())
-			eventRulesObject.name = valueEventRulesEventRule["Name"].asString();
-		if(!valueEventRulesEventRule["GroupId"].isNull())
-			eventRulesObject.groupId = valueEventRulesEventRule["GroupId"].asString();
 		if(!valueEventRulesEventRule["EventType"].isNull())
 			eventRulesObject.eventType = valueEventRulesEventRule["EventType"].asString();
-		if(!valueEventRulesEventRule["State"].isNull())
-			eventRulesObject.state = valueEventRulesEventRule["State"].asString();
 		if(!valueEventRulesEventRule["Description"].isNull())
 			eventRulesObject.description = valueEventRulesEventRule["Description"].asString();
+		if(!valueEventRulesEventRule["GroupId"].isNull())
+			eventRulesObject.groupId = valueEventRulesEventRule["GroupId"].asString();
+		if(!valueEventRulesEventRule["Name"].isNull())
+			eventRulesObject.name = valueEventRulesEventRule["Name"].asString();
+		if(!valueEventRulesEventRule["State"].isNull())
+			eventRulesObject.state = valueEventRulesEventRule["State"].asString();
+		if(!valueEventRulesEventRule["SilenceTime"].isNull())
+			eventRulesObject.silenceTime = std::stol(valueEventRulesEventRule["SilenceTime"].asString());
 		auto allEventPatternNode = valueEventRulesEventRule["EventPattern"]["EventPatternItem"];
 		for (auto valueEventRulesEventRuleEventPatternEventPatternItem : allEventPatternNode)
 		{
 			EventRule::EventPatternItem eventPatternObject;
 			if(!valueEventRulesEventRuleEventPatternEventPatternItem["Product"].isNull())
 				eventPatternObject.product = valueEventRulesEventRuleEventPatternEventPatternItem["Product"].asString();
-			auto allNameList = value["NameList"]["NameList"];
-			for (auto value : allNameList)
-				eventPatternObject.nameList.push_back(value.asString());
+			if(!valueEventRulesEventRuleEventPatternEventPatternItem["CustomFilters"].isNull())
+				eventPatternObject.customFilters = valueEventRulesEventRuleEventPatternEventPatternItem["CustomFilters"].asString();
+			if(!valueEventRulesEventRuleEventPatternEventPatternItem["SQLFilter"].isNull())
+				eventPatternObject.sQLFilter = valueEventRulesEventRuleEventPatternEventPatternItem["SQLFilter"].asString();
+			auto keywordFilterNode = value["KeywordFilter"];
+			if(!keywordFilterNode["Relation"].isNull())
+				eventPatternObject.keywordFilter.relation = keywordFilterNode["Relation"].asString();
+				auto allKeywords = keywordFilterNode["Keywords"]["Keywords"];
+				for (auto value : allKeywords)
+					eventPatternObject.keywordFilter.keywords.push_back(value.asString());
 			auto allLevelList = value["LevelList"]["LevelList"];
 			for (auto value : allLevelList)
 				eventPatternObject.levelList.push_back(value.asString());
 			auto allEventTypeList = value["EventTypeList"]["EventTypeList"];
 			for (auto value : allEventTypeList)
 				eventPatternObject.eventTypeList.push_back(value.asString());
+			auto allNameList = value["NameList"]["NameList"];
+			for (auto value : allNameList)
+				eventPatternObject.nameList.push_back(value.asString());
 			eventRulesObject.eventPattern.push_back(eventPatternObject);
 		}
 		eventRules_.push_back(eventRulesObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
 	if(!value["Total"].isNull())
 		total_ = std::stoi(value["Total"].asString());
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

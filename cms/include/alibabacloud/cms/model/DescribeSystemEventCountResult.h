@@ -40,11 +40,11 @@ namespace AlibabaCloud
 					std::string content;
 					long num;
 					std::string product;
-					std::string level;
 					long time;
+					std::string level;
 					std::string regionId;
-					std::string name;
 					std::string groupId;
+					std::string name;
 				};
 
 

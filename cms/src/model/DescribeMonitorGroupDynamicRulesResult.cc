@@ -51,22 +51,22 @@ void DescribeMonitorGroupDynamicRulesResult::parse(const std::string &payload)
 		for (auto valueResourceResourceItemFiltersFilter : allFiltersNode)
 		{
 			ResourceItem::Filter filtersObject;
+			if(!valueResourceResourceItemFiltersFilter["Value"].isNull())
+				filtersObject.value = valueResourceResourceItemFiltersFilter["Value"].asString();
 			if(!valueResourceResourceItemFiltersFilter["Function"].isNull())
 				filtersObject.function = valueResourceResourceItemFiltersFilter["Function"].asString();
 			if(!valueResourceResourceItemFiltersFilter["Name"].isNull())
 				filtersObject.name = valueResourceResourceItemFiltersFilter["Name"].asString();
-			if(!valueResourceResourceItemFiltersFilter["Value"].isNull())
-				filtersObject.value = valueResourceResourceItemFiltersFilter["Value"].asString();
 			resourceObject.filters.push_back(filtersObject);
 		}
 		resource_.push_back(resourceObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = std::stoi(value["Code"].asString());
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

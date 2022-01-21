@@ -39,29 +39,29 @@ void DescribeMonitoringAgentConfigResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["EnableActiveAlert"].isNull())
+		enableActiveAlert_ = value["EnableActiveAlert"].asString();
+	if(!value["AutoInstall"].isNull())
+		autoInstall_ = value["AutoInstall"].asString() == "true";
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
+	if(!value["EnableInstallAgentNewECS"].isNull())
+		enableInstallAgentNewECS_ = value["EnableInstallAgentNewECS"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["AutoInstall"].isNull())
-		autoInstall_ = value["AutoInstall"].asString() == "true";
-	if(!value["EnableInstallAgentNewECS"].isNull())
-		enableInstallAgentNewECS_ = value["EnableInstallAgentNewECS"].asString() == "true";
-	if(!value["EnableActiveAlert"].isNull())
-		enableActiveAlert_ = value["EnableActiveAlert"].asString();
 
-}
-
-bool DescribeMonitoringAgentConfigResult::getAutoInstall()const
-{
-	return autoInstall_;
 }
 
 std::string DescribeMonitoringAgentConfigResult::getEnableActiveAlert()const
 {
 	return enableActiveAlert_;
+}
+
+bool DescribeMonitoringAgentConfigResult::getAutoInstall()const
+{
+	return autoInstall_;
 }
 
 bool DescribeMonitoringAgentConfigResult::getEnableInstallAgentNewECS()const

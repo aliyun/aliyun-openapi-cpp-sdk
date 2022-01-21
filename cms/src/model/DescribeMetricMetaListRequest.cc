@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,67 +18,55 @@
 
 using AlibabaCloud::Cms::Model::DescribeMetricMetaListRequest;
 
-DescribeMetricMetaListRequest::DescribeMetricMetaListRequest() :
-	RpcServiceRequest("cms", "2019-01-01", "DescribeMetricMetaList")
-{
-	setMethod(HttpRequest::Method::Post);
+DescribeMetricMetaListRequest::DescribeMetricMetaListRequest()
+    : RpcServiceRequest("cms", "2019-01-01", "DescribeMetricMetaList") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DescribeMetricMetaListRequest::~DescribeMetricMetaListRequest()
-{}
+DescribeMetricMetaListRequest::~DescribeMetricMetaListRequest() {}
 
-int DescribeMetricMetaListRequest::getPageNumber()const
-{
-	return pageNumber_;
+int DescribeMetricMetaListRequest::getPageNumber() const {
+  return pageNumber_;
 }
 
-void DescribeMetricMetaListRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+void DescribeMetricMetaListRequest::setPageNumber(int pageNumber) {
+  pageNumber_ = pageNumber;
+  setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
-std::string DescribeMetricMetaListRequest::getLabels()const
-{
-	return labels_;
+std::string DescribeMetricMetaListRequest::getLabels() const {
+  return labels_;
 }
 
-void DescribeMetricMetaListRequest::setLabels(const std::string& labels)
-{
-	labels_ = labels;
-	setParameter("Labels", labels);
+void DescribeMetricMetaListRequest::setLabels(const std::string &labels) {
+  labels_ = labels;
+  setParameter(std::string("Labels"), labels);
 }
 
-std::string DescribeMetricMetaListRequest::get_Namespace()const
-{
-	return _namespace_;
+std::string DescribeMetricMetaListRequest::get_Namespace() const {
+  return _namespace_;
 }
 
-void DescribeMetricMetaListRequest::set_Namespace(const std::string& _namespace)
-{
-	_namespace_ = _namespace;
-	setParameter("_Namespace", _namespace);
+void DescribeMetricMetaListRequest::set_Namespace(const std::string &_namespace) {
+  _namespace_ = _namespace;
+  setParameter(std::string("Namespace"), _namespace);
 }
 
-int DescribeMetricMetaListRequest::getPageSize()const
-{
-	return pageSize_;
+int DescribeMetricMetaListRequest::getPageSize() const {
+  return pageSize_;
 }
 
-void DescribeMetricMetaListRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+void DescribeMetricMetaListRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
-std::string DescribeMetricMetaListRequest::getMetricName()const
-{
-	return metricName_;
+std::string DescribeMetricMetaListRequest::getMetricName() const {
+  return metricName_;
 }
 
-void DescribeMetricMetaListRequest::setMetricName(const std::string& metricName)
-{
-	metricName_ = metricName;
-	setParameter("MetricName", metricName);
+void DescribeMetricMetaListRequest::setMetricName(const std::string &metricName) {
+  metricName_ = metricName;
+  setParameter(std::string("MetricName"), metricName);
 }
 

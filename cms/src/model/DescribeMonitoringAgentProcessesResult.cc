@@ -43,18 +43,18 @@ void DescribeMonitoringAgentProcessesResult::parse(const std::string &payload)
 	for (auto valueNodeProcessesNodeProcess : allNodeProcessesNode)
 	{
 		NodeProcess nodeProcessesObject;
-		if(!valueNodeProcessesNodeProcess["ProcessId"].isNull())
-			nodeProcessesObject.processId = std::stol(valueNodeProcessesNodeProcess["ProcessId"].asString());
-		if(!valueNodeProcessesNodeProcess["InstanceId"].isNull())
-			nodeProcessesObject.instanceId = valueNodeProcessesNodeProcess["InstanceId"].asString();
 		if(!valueNodeProcessesNodeProcess["ProcessName"].isNull())
 			nodeProcessesObject.processName = valueNodeProcessesNodeProcess["ProcessName"].asString();
-		if(!valueNodeProcessesNodeProcess["ProcessUser"].isNull())
-			nodeProcessesObject.processUser = valueNodeProcessesNodeProcess["ProcessUser"].asString();
-		if(!valueNodeProcessesNodeProcess["Command"].isNull())
-			nodeProcessesObject.command = valueNodeProcessesNodeProcess["Command"].asString();
+		if(!valueNodeProcessesNodeProcess["ProcessId"].isNull())
+			nodeProcessesObject.processId = std::stol(valueNodeProcessesNodeProcess["ProcessId"].asString());
 		if(!valueNodeProcessesNodeProcess["GroupId"].isNull())
 			nodeProcessesObject.groupId = valueNodeProcessesNodeProcess["GroupId"].asString();
+		if(!valueNodeProcessesNodeProcess["Command"].isNull())
+			nodeProcessesObject.command = valueNodeProcessesNodeProcess["Command"].asString();
+		if(!valueNodeProcessesNodeProcess["ProcessUser"].isNull())
+			nodeProcessesObject.processUser = valueNodeProcessesNodeProcess["ProcessUser"].asString();
+		if(!valueNodeProcessesNodeProcess["InstanceId"].isNull())
+			nodeProcessesObject.instanceId = valueNodeProcessesNodeProcess["InstanceId"].asString();
 		nodeProcesses_.push_back(nodeProcessesObject);
 	}
 	if(!value["Code"].isNull())

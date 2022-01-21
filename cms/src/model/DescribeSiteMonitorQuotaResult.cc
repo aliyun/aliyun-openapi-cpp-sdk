@@ -40,18 +40,18 @@ void DescribeSiteMonitorQuotaResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["SiteMonitorIdcQuota"].isNull())
-		data_.siteMonitorIdcQuota = std::stoi(dataNode["SiteMonitorIdcQuota"].asString());
 	if(!dataNode["SiteMonitorOperatorQuotaQuota"].isNull())
 		data_.siteMonitorOperatorQuotaQuota = std::stoi(dataNode["SiteMonitorOperatorQuotaQuota"].asString());
-	if(!dataNode["SiteMonitorTaskQuota"].isNull())
-		data_.siteMonitorTaskQuota = std::stoi(dataNode["SiteMonitorTaskQuota"].asString());
-	if(!dataNode["SiteMonitorQuotaTaskUsed"].isNull())
-		data_.siteMonitorQuotaTaskUsed = std::stoi(dataNode["SiteMonitorQuotaTaskUsed"].asString());
-	if(!dataNode["SiteMonitorVersion"].isNull())
-		data_.siteMonitorVersion = dataNode["SiteMonitorVersion"].asString();
 	if(!dataNode["SecondMonitor"].isNull())
 		data_.secondMonitor = dataNode["SecondMonitor"].asString() == "true";
+	if(!dataNode["SiteMonitorQuotaTaskUsed"].isNull())
+		data_.siteMonitorQuotaTaskUsed = std::stoi(dataNode["SiteMonitorQuotaTaskUsed"].asString());
+	if(!dataNode["SiteMonitorTaskQuota"].isNull())
+		data_.siteMonitorTaskQuota = std::stoi(dataNode["SiteMonitorTaskQuota"].asString());
+	if(!dataNode["SiteMonitorVersion"].isNull())
+		data_.siteMonitorVersion = dataNode["SiteMonitorVersion"].asString();
+	if(!dataNode["SiteMonitorIdcQuota"].isNull())
+		data_.siteMonitorIdcQuota = std::stoi(dataNode["SiteMonitorIdcQuota"].asString());
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())

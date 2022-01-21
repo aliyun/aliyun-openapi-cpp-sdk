@@ -45,16 +45,16 @@ void DescribeMonitorGroupInstanceAttributeResult::parse(const std::string &paylo
 		Resource resourcesObject;
 		if(!valueResourcesResource["InstanceName"].isNull())
 			resourcesObject.instanceName = valueResourcesResource["InstanceName"].asString();
-		if(!valueResourcesResource["InstanceId"].isNull())
-			resourcesObject.instanceId = valueResourcesResource["InstanceId"].asString();
-		if(!valueResourcesResource["Desc"].isNull())
-			resourcesObject.desc = valueResourcesResource["Desc"].asString();
-		if(!valueResourcesResource["NetworkType"].isNull())
-			resourcesObject.networkType = valueResourcesResource["NetworkType"].asString();
-		if(!valueResourcesResource["Category"].isNull())
-			resourcesObject.category = valueResourcesResource["Category"].asString();
 		if(!valueResourcesResource["Dimension"].isNull())
 			resourcesObject.dimension = valueResourcesResource["Dimension"].asString();
+		if(!valueResourcesResource["Category"].isNull())
+			resourcesObject.category = valueResourcesResource["Category"].asString();
+		if(!valueResourcesResource["InstanceId"].isNull())
+			resourcesObject.instanceId = valueResourcesResource["InstanceId"].asString();
+		if(!valueResourcesResource["NetworkType"].isNull())
+			resourcesObject.networkType = valueResourcesResource["NetworkType"].asString();
+		if(!valueResourcesResource["Desc"].isNull())
+			resourcesObject.desc = valueResourcesResource["Desc"].asString();
 		auto allTagsNode = valueResourcesResource["Tags"]["Tag"];
 		for (auto valueResourcesResourceTagsTag : allTagsNode)
 		{
@@ -66,15 +66,15 @@ void DescribeMonitorGroupInstanceAttributeResult::parse(const std::string &paylo
 			resourcesObject.tags.push_back(tagsObject);
 		}
 		auto regionNode = value["Region"];
-		if(!regionNode["RegionId"].isNull())
-			resourcesObject.region.regionId = regionNode["RegionId"].asString();
 		if(!regionNode["AvailabilityZone"].isNull())
 			resourcesObject.region.availabilityZone = regionNode["AvailabilityZone"].asString();
+		if(!regionNode["RegionId"].isNull())
+			resourcesObject.region.regionId = regionNode["RegionId"].asString();
 		auto vpcNode = value["Vpc"];
-		if(!vpcNode["VpcInstanceId"].isNull())
-			resourcesObject.vpc.vpcInstanceId = vpcNode["VpcInstanceId"].asString();
 		if(!vpcNode["VswitchInstanceId"].isNull())
 			resourcesObject.vpc.vswitchInstanceId = vpcNode["VswitchInstanceId"].asString();
+		if(!vpcNode["VpcInstanceId"].isNull())
+			resourcesObject.vpc.vpcInstanceId = vpcNode["VpcInstanceId"].asString();
 		resources_.push_back(resourcesObject);
 	}
 	if(!value["Success"].isNull())

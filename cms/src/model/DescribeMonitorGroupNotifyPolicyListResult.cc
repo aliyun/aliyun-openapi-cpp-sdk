@@ -43,26 +43,26 @@ void DescribeMonitorGroupNotifyPolicyListResult::parse(const std::string &payloa
 	for (auto valueNotifyPolicyListNotifyPolicy : allNotifyPolicyListNode)
 	{
 		NotifyPolicy notifyPolicyListObject;
-		if(!valueNotifyPolicyListNotifyPolicy["Type"].isNull())
-			notifyPolicyListObject.type = valueNotifyPolicyListNotifyPolicy["Type"].asString();
-		if(!valueNotifyPolicyListNotifyPolicy["Id"].isNull())
-			notifyPolicyListObject.id = valueNotifyPolicyListNotifyPolicy["Id"].asString();
-		if(!valueNotifyPolicyListNotifyPolicy["StartTime"].isNull())
-			notifyPolicyListObject.startTime = std::stol(valueNotifyPolicyListNotifyPolicy["StartTime"].asString());
 		if(!valueNotifyPolicyListNotifyPolicy["EndTime"].isNull())
 			notifyPolicyListObject.endTime = std::stol(valueNotifyPolicyListNotifyPolicy["EndTime"].asString());
+		if(!valueNotifyPolicyListNotifyPolicy["Type"].isNull())
+			notifyPolicyListObject.type = valueNotifyPolicyListNotifyPolicy["Type"].asString();
+		if(!valueNotifyPolicyListNotifyPolicy["StartTime"].isNull())
+			notifyPolicyListObject.startTime = std::stol(valueNotifyPolicyListNotifyPolicy["StartTime"].asString());
 		if(!valueNotifyPolicyListNotifyPolicy["GroupId"].isNull())
 			notifyPolicyListObject.groupId = valueNotifyPolicyListNotifyPolicy["GroupId"].asString();
+		if(!valueNotifyPolicyListNotifyPolicy["Id"].isNull())
+			notifyPolicyListObject.id = valueNotifyPolicyListNotifyPolicy["Id"].asString();
 		notifyPolicyList_.push_back(notifyPolicyListObject);
 	}
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString();
 	if(!value["Total"].isNull())
 		total_ = std::stoi(value["Total"].asString());
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString();
 
 }
 

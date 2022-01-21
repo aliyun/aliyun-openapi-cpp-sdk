@@ -43,12 +43,12 @@ void DescribeCustomEventCountResult::parse(const std::string &payload)
 	for (auto valueCustomEventCountsCustomEventCount : allCustomEventCountsNode)
 	{
 		CustomEventCount customEventCountsObject;
-		if(!valueCustomEventCountsCustomEventCount["Name"].isNull())
-			customEventCountsObject.name = valueCustomEventCountsCustomEventCount["Name"].asString();
-		if(!valueCustomEventCountsCustomEventCount["Num"].isNull())
-			customEventCountsObject.num = std::stoi(valueCustomEventCountsCustomEventCount["Num"].asString());
 		if(!valueCustomEventCountsCustomEventCount["Time"].isNull())
 			customEventCountsObject.time = std::stol(valueCustomEventCountsCustomEventCount["Time"].asString());
+		if(!valueCustomEventCountsCustomEventCount["Num"].isNull())
+			customEventCountsObject.num = std::stoi(valueCustomEventCountsCustomEventCount["Num"].asString());
+		if(!valueCustomEventCountsCustomEventCount["Name"].isNull())
+			customEventCountsObject.name = valueCustomEventCountsCustomEventCount["Name"].asString();
 		customEventCounts_.push_back(customEventCountsObject);
 	}
 	if(!value["Code"].isNull())

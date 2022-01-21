@@ -40,34 +40,34 @@ void DescribeEventRuleAttributeResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto resultNode = value["Result"];
-	if(!resultNode["Description"].isNull())
-		result_.description = resultNode["Description"].asString();
-	if(!resultNode["Name"].isNull())
-		result_.name = resultNode["Name"].asString();
 	if(!resultNode["EventType"].isNull())
 		result_.eventType = resultNode["EventType"].asString();
 	if(!resultNode["GroupId"].isNull())
 		result_.groupId = resultNode["GroupId"].asString();
+	if(!resultNode["Name"].isNull())
+		result_.name = resultNode["Name"].asString();
+	if(!resultNode["Description"].isNull())
+		result_.description = resultNode["Description"].asString();
 	if(!resultNode["State"].isNull())
 		result_.state = resultNode["State"].asString();
 	auto eventPatternNode = resultNode["EventPattern"];
 	if(!eventPatternNode["Product"].isNull())
 		result_.eventPattern.product = eventPatternNode["Product"].asString();
-		auto allNameList = eventPatternNode["NameList"]["NameList"];
-		for (auto value : allNameList)
-			result_.eventPattern.nameList.push_back(value.asString());
-		auto allStatusList = eventPatternNode["StatusList"]["StatusList"];
-		for (auto value : allStatusList)
-			result_.eventPattern.statusList.push_back(value.asString());
 		auto allLevelList = eventPatternNode["LevelList"]["LevelList"];
 		for (auto value : allLevelList)
 			result_.eventPattern.levelList.push_back(value.asString());
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
+		auto allStatusList = eventPatternNode["StatusList"]["StatusList"];
+		for (auto value : allStatusList)
+			result_.eventPattern.statusList.push_back(value.asString());
+		auto allNameList = eventPatternNode["NameList"]["NameList"];
+		for (auto value : allNameList)
+			result_.eventPattern.nameList.push_back(value.asString());
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

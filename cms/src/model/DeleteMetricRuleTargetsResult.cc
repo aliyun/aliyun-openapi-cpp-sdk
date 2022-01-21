@@ -43,12 +43,12 @@ void DeleteMetricRuleTargetsResult::parse(const std::string &payload)
 		auto allTargetIds = failIdsNode["TargetIds"]["TargetId"];
 		for (auto value : allTargetIds)
 			failIds_.targetIds.push_back(value.asString());
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

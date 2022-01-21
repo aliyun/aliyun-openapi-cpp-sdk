@@ -37,8 +37,8 @@ namespace AlibabaCloud
 				DescribeSiteMonitorDataResult();
 				explicit DescribeSiteMonitorDataResult(const std::string &payload);
 				~DescribeSiteMonitorDataResult();
-				std::string getMessage()const;
 				std::string getNextToken()const;
+				std::string getMessage()const;
 				std::string getData()const;
 				std::string getCode()const;
 				std::string getSuccess()const;
@@ -46,8 +46,8 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string message_;
 				std::string nextToken_;
+				std::string message_;
 				std::string data_;
 				std::string code_;
 				std::string success_;

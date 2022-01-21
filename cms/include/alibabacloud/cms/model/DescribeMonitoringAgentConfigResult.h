@@ -37,8 +37,8 @@ namespace AlibabaCloud
 				DescribeMonitoringAgentConfigResult();
 				explicit DescribeMonitoringAgentConfigResult(const std::string &payload);
 				~DescribeMonitoringAgentConfigResult();
-				bool getAutoInstall()const;
 				std::string getEnableActiveAlert()const;
+				bool getAutoInstall()const;
 				bool getEnableInstallAgentNewECS()const;
 				std::string getMessage()const;
 				std::string getCode()const;
@@ -47,8 +47,8 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				bool autoInstall_;
 				std::string enableActiveAlert_;
+				bool autoInstall_;
 				bool enableInstallAgentNewECS_;
 				std::string message_;
 				std::string code_;

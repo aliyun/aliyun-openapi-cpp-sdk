@@ -45,8 +45,8 @@ namespace AlibabaCloud
 					std::string description;
 					std::string eventType;
 					std::string state;
-					std::string name;
 					std::string groupId;
+					std::string name;
 				};
 
 

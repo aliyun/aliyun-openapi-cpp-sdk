@@ -43,18 +43,18 @@ void DescribeMetricRuleTemplateListResult::parse(const std::string &payload)
 	for (auto valueTemplatesTemplate : allTemplatesNode)
 	{
 		_Template templatesObject;
-		if(!valueTemplatesTemplate["Name"].isNull())
-			templatesObject.name = valueTemplatesTemplate["Name"].asString();
 		if(!valueTemplatesTemplate["Description"].isNull())
 			templatesObject.description = valueTemplatesTemplate["Description"].asString();
-		if(!valueTemplatesTemplate["RestVersion"].isNull())
-			templatesObject.restVersion = std::stol(valueTemplatesTemplate["RestVersion"].asString());
-		if(!valueTemplatesTemplate["TemplateId"].isNull())
-			templatesObject.templateId = std::stol(valueTemplatesTemplate["TemplateId"].asString());
 		if(!valueTemplatesTemplate["GmtCreate"].isNull())
 			templatesObject.gmtCreate = std::stol(valueTemplatesTemplate["GmtCreate"].asString());
+		if(!valueTemplatesTemplate["Name"].isNull())
+			templatesObject.name = valueTemplatesTemplate["Name"].asString();
+		if(!valueTemplatesTemplate["RestVersion"].isNull())
+			templatesObject.restVersion = std::stol(valueTemplatesTemplate["RestVersion"].asString());
 		if(!valueTemplatesTemplate["GmtModified"].isNull())
 			templatesObject.gmtModified = std::stol(valueTemplatesTemplate["GmtModified"].asString());
+		if(!valueTemplatesTemplate["TemplateId"].isNull())
+			templatesObject.templateId = std::stol(valueTemplatesTemplate["TemplateId"].asString());
 		auto allApplyHistoriesNode = valueTemplatesTemplate["ApplyHistories"]["ApplyHistory"];
 		for (auto valueTemplatesTemplateApplyHistoriesApplyHistory : allApplyHistoriesNode)
 		{
@@ -69,14 +69,14 @@ void DescribeMetricRuleTemplateListResult::parse(const std::string &payload)
 		}
 		templates_.push_back(templatesObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = std::stoi(value["Code"].asString());
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
 	if(!value["Total"].isNull())
 		total_ = std::stol(value["Total"].asString());
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

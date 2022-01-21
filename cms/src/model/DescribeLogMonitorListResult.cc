@@ -43,48 +43,48 @@ void DescribeLogMonitorListResult::parse(const std::string &payload)
 	for (auto valueLogMonitorListLogMonitor : allLogMonitorListNode)
 	{
 		LogMonitor logMonitorListObject;
-		if(!valueLogMonitorListLogMonitor["LogId"].isNull())
-			logMonitorListObject.logId = std::stol(valueLogMonitorListLogMonitor["LogId"].asString());
-		if(!valueLogMonitorListLogMonitor["SlsRegionId"].isNull())
-			logMonitorListObject.slsRegionId = valueLogMonitorListLogMonitor["SlsRegionId"].asString();
-		if(!valueLogMonitorListLogMonitor["SlsProject"].isNull())
-			logMonitorListObject.slsProject = valueLogMonitorListLogMonitor["SlsProject"].asString();
+		if(!valueLogMonitorListLogMonitor["ValueFilterRelation"].isNull())
+			logMonitorListObject.valueFilterRelation = valueLogMonitorListLogMonitor["ValueFilterRelation"].asString();
 		if(!valueLogMonitorListLogMonitor["SlsLogstore"].isNull())
 			logMonitorListObject.slsLogstore = valueLogMonitorListLogMonitor["SlsLogstore"].asString();
 		if(!valueLogMonitorListLogMonitor["MetricName"].isNull())
 			logMonitorListObject.metricName = valueLogMonitorListLogMonitor["MetricName"].asString();
-		if(!valueLogMonitorListLogMonitor["GmtCreate"].isNull())
-			logMonitorListObject.gmtCreate = std::stol(valueLogMonitorListLogMonitor["GmtCreate"].asString());
-		if(!valueLogMonitorListLogMonitor["ValueFilterRelation"].isNull())
-			logMonitorListObject.valueFilterRelation = valueLogMonitorListLogMonitor["ValueFilterRelation"].asString();
 		if(!valueLogMonitorListLogMonitor["GroupId"].isNull())
 			logMonitorListObject.groupId = std::stol(valueLogMonitorListLogMonitor["GroupId"].asString());
+		if(!valueLogMonitorListLogMonitor["LogId"].isNull())
+			logMonitorListObject.logId = std::stol(valueLogMonitorListLogMonitor["LogId"].asString());
+		if(!valueLogMonitorListLogMonitor["SlsRegionId"].isNull())
+			logMonitorListObject.slsRegionId = valueLogMonitorListLogMonitor["SlsRegionId"].asString();
+		if(!valueLogMonitorListLogMonitor["GmtCreate"].isNull())
+			logMonitorListObject.gmtCreate = std::stol(valueLogMonitorListLogMonitor["GmtCreate"].asString());
+		if(!valueLogMonitorListLogMonitor["SlsProject"].isNull())
+			logMonitorListObject.slsProject = valueLogMonitorListLogMonitor["SlsProject"].asString();
 		auto allValueFilterNode = valueLogMonitorListLogMonitor["ValueFilter"]["ValueFilterObject"];
 		for (auto valueLogMonitorListLogMonitorValueFilterValueFilterObject : allValueFilterNode)
 		{
 			LogMonitor::ValueFilterObject valueFilterObject;
 			if(!valueLogMonitorListLogMonitorValueFilterValueFilterObject["Key"].isNull())
 				valueFilterObject.key = valueLogMonitorListLogMonitorValueFilterValueFilterObject["Key"].asString();
-			if(!valueLogMonitorListLogMonitorValueFilterValueFilterObject["Operator"].isNull())
-				valueFilterObject._operator = valueLogMonitorListLogMonitorValueFilterValueFilterObject["Operator"].asString();
 			if(!valueLogMonitorListLogMonitorValueFilterValueFilterObject["Value"].isNull())
 				valueFilterObject.value = valueLogMonitorListLogMonitorValueFilterValueFilterObject["Value"].asString();
+			if(!valueLogMonitorListLogMonitorValueFilterValueFilterObject["Operator"].isNull())
+				valueFilterObject._operator = valueLogMonitorListLogMonitorValueFilterValueFilterObject["Operator"].asString();
 			logMonitorListObject.valueFilter.push_back(valueFilterObject);
 		}
 		logMonitorList_.push_back(logMonitorListObject);
 	}
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["Total"].isNull())
-		total_ = std::stol(value["Total"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["Total"].isNull())
+		total_ = std::stol(value["Total"].asString());
 
 }
 

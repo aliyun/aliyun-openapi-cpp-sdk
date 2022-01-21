@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,36 +18,27 @@
 
 using AlibabaCloud::Cms::Model::DeleteMetricRuleTargetsRequest;
 
-DeleteMetricRuleTargetsRequest::DeleteMetricRuleTargetsRequest() :
-	RpcServiceRequest("cms", "2019-01-01", "DeleteMetricRuleTargets")
-{
-	setMethod(HttpRequest::Method::Post);
+DeleteMetricRuleTargetsRequest::DeleteMetricRuleTargetsRequest()
+    : RpcServiceRequest("cms", "2019-01-01", "DeleteMetricRuleTargets") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DeleteMetricRuleTargetsRequest::~DeleteMetricRuleTargetsRequest()
-{}
+DeleteMetricRuleTargetsRequest::~DeleteMetricRuleTargetsRequest() {}
 
-std::vector<std::string> DeleteMetricRuleTargetsRequest::getTargetIds()const
-{
-	return targetIds_;
+std::vector<std::string> DeleteMetricRuleTargetsRequest::getTargetIds() const {
+  return targetIds_;
 }
 
-void DeleteMetricRuleTargetsRequest::setTargetIds(const std::vector<std::string>& targetIds)
-{
-	targetIds_ = targetIds;
-	for(int dep1 = 0; dep1!= targetIds.size(); dep1++) {
-		setParameter("TargetIds."+ std::to_string(dep1), targetIds.at(dep1));
-	}
+void DeleteMetricRuleTargetsRequest::setTargetIds(const std::vector<std::string> &targetIds) {
+  targetIds_ = targetIds;
 }
 
-std::string DeleteMetricRuleTargetsRequest::getRuleId()const
-{
-	return ruleId_;
+std::string DeleteMetricRuleTargetsRequest::getRuleId() const {
+  return ruleId_;
 }
 
-void DeleteMetricRuleTargetsRequest::setRuleId(const std::string& ruleId)
-{
-	ruleId_ = ruleId;
-	setParameter("RuleId", ruleId);
+void DeleteMetricRuleTargetsRequest::setRuleId(const std::string &ruleId) {
+  ruleId_ = ruleId;
+  setParameter(std::string("RuleId"), ruleId);
 }
 

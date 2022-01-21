@@ -43,28 +43,28 @@ void DescribeSystemEventCountResult::parse(const std::string &payload)
 	for (auto valueSystemEventCountsSystemEventCount : allSystemEventCountsNode)
 	{
 		SystemEventCount systemEventCountsObject;
-		if(!valueSystemEventCountsSystemEventCount["Content"].isNull())
-			systemEventCountsObject.content = valueSystemEventCountsSystemEventCount["Content"].asString();
-		if(!valueSystemEventCountsSystemEventCount["Product"].isNull())
-			systemEventCountsObject.product = valueSystemEventCountsSystemEventCount["Product"].asString();
-		if(!valueSystemEventCountsSystemEventCount["Name"].isNull())
-			systemEventCountsObject.name = valueSystemEventCountsSystemEventCount["Name"].asString();
-		if(!valueSystemEventCountsSystemEventCount["GroupId"].isNull())
-			systemEventCountsObject.groupId = valueSystemEventCountsSystemEventCount["GroupId"].asString();
-		if(!valueSystemEventCountsSystemEventCount["Num"].isNull())
-			systemEventCountsObject.num = std::stol(valueSystemEventCountsSystemEventCount["Num"].asString());
-		if(!valueSystemEventCountsSystemEventCount["Level"].isNull())
-			systemEventCountsObject.level = valueSystemEventCountsSystemEventCount["Level"].asString();
 		if(!valueSystemEventCountsSystemEventCount["Status"].isNull())
 			systemEventCountsObject.status = valueSystemEventCountsSystemEventCount["Status"].asString();
-		if(!valueSystemEventCountsSystemEventCount["ResourceId"].isNull())
-			systemEventCountsObject.resourceId = valueSystemEventCountsSystemEventCount["ResourceId"].asString();
-		if(!valueSystemEventCountsSystemEventCount["RegionId"].isNull())
-			systemEventCountsObject.regionId = valueSystemEventCountsSystemEventCount["RegionId"].asString();
-		if(!valueSystemEventCountsSystemEventCount["InstanceName"].isNull())
-			systemEventCountsObject.instanceName = valueSystemEventCountsSystemEventCount["InstanceName"].asString();
 		if(!valueSystemEventCountsSystemEventCount["Time"].isNull())
 			systemEventCountsObject.time = std::stol(valueSystemEventCountsSystemEventCount["Time"].asString());
+		if(!valueSystemEventCountsSystemEventCount["GroupId"].isNull())
+			systemEventCountsObject.groupId = valueSystemEventCountsSystemEventCount["GroupId"].asString();
+		if(!valueSystemEventCountsSystemEventCount["Product"].isNull())
+			systemEventCountsObject.product = valueSystemEventCountsSystemEventCount["Product"].asString();
+		if(!valueSystemEventCountsSystemEventCount["InstanceName"].isNull())
+			systemEventCountsObject.instanceName = valueSystemEventCountsSystemEventCount["InstanceName"].asString();
+		if(!valueSystemEventCountsSystemEventCount["Num"].isNull())
+			systemEventCountsObject.num = std::stol(valueSystemEventCountsSystemEventCount["Num"].asString());
+		if(!valueSystemEventCountsSystemEventCount["ResourceId"].isNull())
+			systemEventCountsObject.resourceId = valueSystemEventCountsSystemEventCount["ResourceId"].asString();
+		if(!valueSystemEventCountsSystemEventCount["Name"].isNull())
+			systemEventCountsObject.name = valueSystemEventCountsSystemEventCount["Name"].asString();
+		if(!valueSystemEventCountsSystemEventCount["Content"].isNull())
+			systemEventCountsObject.content = valueSystemEventCountsSystemEventCount["Content"].asString();
+		if(!valueSystemEventCountsSystemEventCount["Level"].isNull())
+			systemEventCountsObject.level = valueSystemEventCountsSystemEventCount["Level"].asString();
+		if(!valueSystemEventCountsSystemEventCount["RegionId"].isNull())
+			systemEventCountsObject.regionId = valueSystemEventCountsSystemEventCount["RegionId"].asString();
 		systemEventCounts_.push_back(systemEventCountsObject);
 	}
 	if(!value["Code"].isNull())

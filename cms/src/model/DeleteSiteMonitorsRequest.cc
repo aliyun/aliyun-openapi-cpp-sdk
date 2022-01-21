@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,34 +18,28 @@
 
 using AlibabaCloud::Cms::Model::DeleteSiteMonitorsRequest;
 
-DeleteSiteMonitorsRequest::DeleteSiteMonitorsRequest() :
-	RpcServiceRequest("cms", "2019-01-01", "DeleteSiteMonitors")
-{
-	setMethod(HttpRequest::Method::Post);
+DeleteSiteMonitorsRequest::DeleteSiteMonitorsRequest()
+    : RpcServiceRequest("cms", "2019-01-01", "DeleteSiteMonitors") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DeleteSiteMonitorsRequest::~DeleteSiteMonitorsRequest()
-{}
+DeleteSiteMonitorsRequest::~DeleteSiteMonitorsRequest() {}
 
-bool DeleteSiteMonitorsRequest::getIsDeleteAlarms()const
-{
-	return isDeleteAlarms_;
+bool DeleteSiteMonitorsRequest::getIsDeleteAlarms() const {
+  return isDeleteAlarms_;
 }
 
-void DeleteSiteMonitorsRequest::setIsDeleteAlarms(bool isDeleteAlarms)
-{
-	isDeleteAlarms_ = isDeleteAlarms;
-	setParameter("IsDeleteAlarms", isDeleteAlarms ? "true" : "false");
+void DeleteSiteMonitorsRequest::setIsDeleteAlarms(bool isDeleteAlarms) {
+  isDeleteAlarms_ = isDeleteAlarms;
+  setParameter(std::string("IsDeleteAlarms"), isDeleteAlarms ? "true" : "false");
 }
 
-std::string DeleteSiteMonitorsRequest::getTaskIds()const
-{
-	return taskIds_;
+std::string DeleteSiteMonitorsRequest::getTaskIds() const {
+  return taskIds_;
 }
 
-void DeleteSiteMonitorsRequest::setTaskIds(const std::string& taskIds)
-{
-	taskIds_ = taskIds;
-	setParameter("TaskIds", taskIds);
+void DeleteSiteMonitorsRequest::setTaskIds(const std::string &taskIds) {
+  taskIds_ = taskIds;
+  setParameter(std::string("TaskIds"), taskIds);
 }
 

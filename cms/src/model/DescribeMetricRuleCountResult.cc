@@ -40,22 +40,22 @@ void DescribeMetricRuleCountResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto metricRuleCountNode = value["MetricRuleCount"];
-	if(!metricRuleCountNode["Alarm"].isNull())
-		metricRuleCount_.alarm = std::stoi(metricRuleCountNode["Alarm"].asString());
-	if(!metricRuleCountNode["Disable"].isNull())
-		metricRuleCount_.disable = std::stoi(metricRuleCountNode["Disable"].asString());
-	if(!metricRuleCountNode["Nodata"].isNull())
-		metricRuleCount_.nodata = std::stoi(metricRuleCountNode["Nodata"].asString());
 	if(!metricRuleCountNode["Ok"].isNull())
 		metricRuleCount_.ok = std::stoi(metricRuleCountNode["Ok"].asString());
+	if(!metricRuleCountNode["Nodata"].isNull())
+		metricRuleCount_.nodata = std::stoi(metricRuleCountNode["Nodata"].asString());
+	if(!metricRuleCountNode["Disable"].isNull())
+		metricRuleCount_.disable = std::stoi(metricRuleCountNode["Disable"].asString());
 	if(!metricRuleCountNode["Total"].isNull())
 		metricRuleCount_.total = std::stoi(metricRuleCountNode["Total"].asString());
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
+	if(!metricRuleCountNode["Alarm"].isNull())
+		metricRuleCount_.alarm = std::stoi(metricRuleCountNode["Alarm"].asString());
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

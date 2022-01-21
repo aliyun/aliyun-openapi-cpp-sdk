@@ -39,29 +39,29 @@ void DescribeMetricListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["NextToken"].isNull())
+		nextToken_ = value["NextToken"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
+	if(!value["Datapoints"].isNull())
+		datapoints_ = value["Datapoints"].asString();
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
-	if(!value["NextToken"].isNull())
-		nextToken_ = value["NextToken"].asString();
-	if(!value["Datapoints"].isNull())
-		datapoints_ = value["Datapoints"].asString();
 	if(!value["Period"].isNull())
 		period_ = value["Period"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 
-}
-
-std::string DescribeMetricListResult::getMessage()const
-{
-	return message_;
 }
 
 std::string DescribeMetricListResult::getNextToken()const
 {
 	return nextToken_;
+}
+
+std::string DescribeMetricListResult::getMessage()const
+{
+	return message_;
 }
 
 std::string DescribeMetricListResult::getPeriod()const

@@ -42,13 +42,13 @@ namespace AlibabaCloud
 					};
 					struct AlertConfigItem
 					{
-						std::string noEffectiveInterval;
 						std::string silenceTime;
+						std::string noEffectiveInterval;
 						std::string comparisonOperator;
 						std::string times;
 						std::string webhook;
-						std::string effectiveInterval;
 						std::string escalationsLevel;
+						std::string effectiveInterval;
 						std::string statistics;
 						std::string threshold;
 					};

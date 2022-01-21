@@ -37,8 +37,8 @@ namespace AlibabaCloud
 					int status;
 					std::vector<std::string> contactGroups;
 					std::string ruleId;
-					std::string dimensions;
 					int evaluationCount;
+					std::string dimensions;
 					std::string _namespace;
 					std::vector<std::string> contactMails;
 					std::vector<std::string> contactSmses;
@@ -49,12 +49,12 @@ namespace AlibabaCloud
 					std::vector<std::string> contacts;
 					std::string expression;
 					std::string state;
-					std::string value;
 					std::string webhooks;
+					std::string value;
 					std::string level;
 					std::string preLevel;
-					long lastTime;
 					std::string ruleName;
+					long lastTime;
 					std::vector<std::string> contactALIIMs;
 				};
 

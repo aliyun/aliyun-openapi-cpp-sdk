@@ -43,26 +43,26 @@ void DescribeSystemEventAttributeResult::parse(const std::string &payload)
 	for (auto valueSystemEventsSystemEvent : allSystemEventsNode)
 	{
 		SystemEvent systemEventsObject;
-		if(!valueSystemEventsSystemEvent["Content"].isNull())
-			systemEventsObject.content = valueSystemEventsSystemEvent["Content"].asString();
-		if(!valueSystemEventsSystemEvent["Product"].isNull())
-			systemEventsObject.product = valueSystemEventsSystemEvent["Product"].asString();
-		if(!valueSystemEventsSystemEvent["Name"].isNull())
-			systemEventsObject.name = valueSystemEventsSystemEvent["Name"].asString();
-		if(!valueSystemEventsSystemEvent["GroupId"].isNull())
-			systemEventsObject.groupId = valueSystemEventsSystemEvent["GroupId"].asString();
-		if(!valueSystemEventsSystemEvent["Level"].isNull())
-			systemEventsObject.level = valueSystemEventsSystemEvent["Level"].asString();
 		if(!valueSystemEventsSystemEvent["Status"].isNull())
 			systemEventsObject.status = valueSystemEventsSystemEvent["Status"].asString();
-		if(!valueSystemEventsSystemEvent["ResourceId"].isNull())
-			systemEventsObject.resourceId = valueSystemEventsSystemEvent["ResourceId"].asString();
-		if(!valueSystemEventsSystemEvent["RegionId"].isNull())
-			systemEventsObject.regionId = valueSystemEventsSystemEvent["RegionId"].asString();
-		if(!valueSystemEventsSystemEvent["InstanceName"].isNull())
-			systemEventsObject.instanceName = valueSystemEventsSystemEvent["InstanceName"].asString();
 		if(!valueSystemEventsSystemEvent["Time"].isNull())
 			systemEventsObject.time = std::stol(valueSystemEventsSystemEvent["Time"].asString());
+		if(!valueSystemEventsSystemEvent["GroupId"].isNull())
+			systemEventsObject.groupId = valueSystemEventsSystemEvent["GroupId"].asString();
+		if(!valueSystemEventsSystemEvent["Product"].isNull())
+			systemEventsObject.product = valueSystemEventsSystemEvent["Product"].asString();
+		if(!valueSystemEventsSystemEvent["InstanceName"].isNull())
+			systemEventsObject.instanceName = valueSystemEventsSystemEvent["InstanceName"].asString();
+		if(!valueSystemEventsSystemEvent["ResourceId"].isNull())
+			systemEventsObject.resourceId = valueSystemEventsSystemEvent["ResourceId"].asString();
+		if(!valueSystemEventsSystemEvent["Name"].isNull())
+			systemEventsObject.name = valueSystemEventsSystemEvent["Name"].asString();
+		if(!valueSystemEventsSystemEvent["Content"].isNull())
+			systemEventsObject.content = valueSystemEventsSystemEvent["Content"].asString();
+		if(!valueSystemEventsSystemEvent["Level"].isNull())
+			systemEventsObject.level = valueSystemEventsSystemEvent["Level"].asString();
+		if(!valueSystemEventsSystemEvent["RegionId"].isNull())
+			systemEventsObject.regionId = valueSystemEventsSystemEvent["RegionId"].asString();
 		systemEvents_.push_back(systemEventsObject);
 	}
 	if(!value["Code"].isNull())

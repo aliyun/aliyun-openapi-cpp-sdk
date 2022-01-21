@@ -43,10 +43,10 @@ void PutEventRuleTargetsResult::parse(const std::string &payload)
 	for (auto valueFailedContactParametersContactParameter : allFailedContactParametersNode)
 	{
 		ContactParameter failedContactParametersObject;
-		if(!valueFailedContactParametersContactParameter["Id"].isNull())
-			failedContactParametersObject.id = std::stoi(valueFailedContactParametersContactParameter["Id"].asString());
 		if(!valueFailedContactParametersContactParameter["ContactGroupName"].isNull())
 			failedContactParametersObject.contactGroupName = valueFailedContactParametersContactParameter["ContactGroupName"].asString();
+		if(!valueFailedContactParametersContactParameter["Id"].isNull())
+			failedContactParametersObject.id = std::stoi(valueFailedContactParametersContactParameter["Id"].asString());
 		if(!valueFailedContactParametersContactParameter["Level"].isNull())
 			failedContactParametersObject.level = valueFailedContactParametersContactParameter["Level"].asString();
 		failedContactParameters_.push_back(failedContactParametersObject);
@@ -55,34 +55,34 @@ void PutEventRuleTargetsResult::parse(const std::string &payload)
 	for (auto valueFailedMnsParametersMnsParameter : allFailedMnsParametersNode)
 	{
 		MnsParameter failedMnsParametersObject;
+		if(!valueFailedMnsParametersMnsParameter["Queue"].isNull())
+			failedMnsParametersObject.queue = valueFailedMnsParametersMnsParameter["Queue"].asString();
 		if(!valueFailedMnsParametersMnsParameter["Id"].isNull())
 			failedMnsParametersObject.id = std::stoi(valueFailedMnsParametersMnsParameter["Id"].asString());
 		if(!valueFailedMnsParametersMnsParameter["Region"].isNull())
 			failedMnsParametersObject.region = valueFailedMnsParametersMnsParameter["Region"].asString();
-		if(!valueFailedMnsParametersMnsParameter["Queue"].isNull())
-			failedMnsParametersObject.queue = valueFailedMnsParametersMnsParameter["Queue"].asString();
 		failedMnsParameters_.push_back(failedMnsParametersObject);
 	}
 	auto allFailedFcParametersNode = value["FailedFcParameters"]["FcParameter"];
 	for (auto valueFailedFcParametersFcParameter : allFailedFcParametersNode)
 	{
 		FcParameter failedFcParametersObject;
-		if(!valueFailedFcParametersFcParameter["Id"].isNull())
-			failedFcParametersObject.id = std::stoi(valueFailedFcParametersFcParameter["Id"].asString());
-		if(!valueFailedFcParametersFcParameter["Region"].isNull())
-			failedFcParametersObject.region = valueFailedFcParametersFcParameter["Region"].asString();
 		if(!valueFailedFcParametersFcParameter["ServiceName"].isNull())
 			failedFcParametersObject.serviceName = valueFailedFcParametersFcParameter["ServiceName"].asString();
 		if(!valueFailedFcParametersFcParameter["FunctionName"].isNull())
 			failedFcParametersObject.functionName = valueFailedFcParametersFcParameter["FunctionName"].asString();
+		if(!valueFailedFcParametersFcParameter["Id"].isNull())
+			failedFcParametersObject.id = std::stoi(valueFailedFcParametersFcParameter["Id"].asString());
+		if(!valueFailedFcParametersFcParameter["Region"].isNull())
+			failedFcParametersObject.region = valueFailedFcParametersFcParameter["Region"].asString();
 		failedFcParameters_.push_back(failedFcParametersObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 	if(!value["FailedParameterCount"].isNull())
 		failedParameterCount_ = value["FailedParameterCount"].asString();
 

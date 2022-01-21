@@ -36,17 +36,26 @@ namespace AlibabaCloud
 				{
 					struct EventPatternItem
 					{
+						struct KeywordFilter
+						{
+							std::string relation;
+							std::vector<std::string> keywords;
+						};
+						std::string sQLFilter;
 						std::vector<std::string> nameList;
 						std::vector<std::string> levelList;
+						KeywordFilter keywordFilter;
 						std::vector<std::string> eventTypeList;
 						std::string product;
+						std::string customFilters;
 					};
 					std::vector<EventRule::EventPatternItem> eventPattern;
+					long silenceTime;
 					std::string description;
 					std::string eventType;
 					std::string state;
-					std::string name;
 					std::string groupId;
+					std::string name;
 				};
 
 

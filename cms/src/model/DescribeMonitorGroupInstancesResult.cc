@@ -43,16 +43,16 @@ void DescribeMonitorGroupInstancesResult::parse(const std::string &payload)
 	for (auto valueResourcesResource : allResourcesNode)
 	{
 		Resource resourcesObject;
+		if(!valueResourcesResource["Category"].isNull())
+			resourcesObject.category = valueResourcesResource["Category"].asString();
+		if(!valueResourcesResource["InstanceId"].isNull())
+			resourcesObject.instanceId = valueResourcesResource["InstanceId"].asString();
+		if(!valueResourcesResource["InstanceName"].isNull())
+			resourcesObject.instanceName = valueResourcesResource["InstanceName"].asString();
 		if(!valueResourcesResource["Id"].isNull())
 			resourcesObject.id = std::stol(valueResourcesResource["Id"].asString());
 		if(!valueResourcesResource["RegionId"].isNull())
 			resourcesObject.regionId = valueResourcesResource["RegionId"].asString();
-		if(!valueResourcesResource["InstanceId"].isNull())
-			resourcesObject.instanceId = valueResourcesResource["InstanceId"].asString();
-		if(!valueResourcesResource["Category"].isNull())
-			resourcesObject.category = valueResourcesResource["Category"].asString();
-		if(!valueResourcesResource["InstanceName"].isNull())
-			resourcesObject.instanceName = valueResourcesResource["InstanceName"].asString();
 		resources_.push_back(resourcesObject);
 	}
 	if(!value["Success"].isNull())

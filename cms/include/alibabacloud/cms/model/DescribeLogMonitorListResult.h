@@ -40,14 +40,14 @@ namespace AlibabaCloud
 						std::string _operator;
 						std::string key;
 					};
-					std::string slsProject;
 					std::string metricName;
+					std::string slsProject;
 					long gmtCreate;
 					std::vector<LogMonitor::ValueFilterObject> valueFilter;
 					std::string valueFilterRelation;
+					std::string slsLogstore;
 					long logId;
 					std::string slsRegionId;
-					std::string slsLogstore;
 					long groupId;
 				};
 

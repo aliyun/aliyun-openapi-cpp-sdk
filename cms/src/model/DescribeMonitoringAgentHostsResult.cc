@@ -43,50 +43,50 @@ void DescribeMonitoringAgentHostsResult::parse(const std::string &payload)
 	for (auto valueHostsHost : allHostsNode)
 	{
 		Host hostsObject;
-		if(!valueHostsHost["InstanceId"].isNull())
-			hostsObject.instanceId = valueHostsHost["InstanceId"].asString();
 		if(!valueHostsHost["SerialNumber"].isNull())
 			hostsObject.serialNumber = valueHostsHost["SerialNumber"].asString();
+		if(!valueHostsHost["NatIp"].isNull())
+			hostsObject.natIp = valueHostsHost["NatIp"].asString();
 		if(!valueHostsHost["HostName"].isNull())
 			hostsObject.hostName = valueHostsHost["HostName"].asString();
 		if(!valueHostsHost["AliUid"].isNull())
 			hostsObject.aliUid = std::stol(valueHostsHost["AliUid"].asString());
-		if(!valueHostsHost["OperatingSystem"].isNull())
-			hostsObject.operatingSystem = valueHostsHost["OperatingSystem"].asString();
-		if(!valueHostsHost["IpGroup"].isNull())
-			hostsObject.ipGroup = valueHostsHost["IpGroup"].asString();
-		if(!valueHostsHost["Region"].isNull())
-			hostsObject.region = valueHostsHost["Region"].asString();
-		if(!valueHostsHost["AgentVersion"].isNull())
-			hostsObject.agentVersion = valueHostsHost["AgentVersion"].asString();
-		if(!valueHostsHost["EipAddress"].isNull())
-			hostsObject.eipAddress = valueHostsHost["EipAddress"].asString();
-		if(!valueHostsHost["EipId"].isNull())
-			hostsObject.eipId = valueHostsHost["EipId"].asString();
-		if(!valueHostsHost["isAliyunHost"].isNull())
-			hostsObject.isAliyunHost = valueHostsHost["isAliyunHost"].asString() == "true";
-		if(!valueHostsHost["NatIp"].isNull())
-			hostsObject.natIp = valueHostsHost["NatIp"].asString();
 		if(!valueHostsHost["NetworkType"].isNull())
 			hostsObject.networkType = valueHostsHost["NetworkType"].asString();
+		if(!valueHostsHost["InstanceId"].isNull())
+			hostsObject.instanceId = valueHostsHost["InstanceId"].asString();
+		if(!valueHostsHost["isAliyunHost"].isNull())
+			hostsObject.isAliyunHost = valueHostsHost["isAliyunHost"].asString() == "true";
+		if(!valueHostsHost["EipAddress"].isNull())
+			hostsObject.eipAddress = valueHostsHost["EipAddress"].asString();
+		if(!valueHostsHost["AgentVersion"].isNull())
+			hostsObject.agentVersion = valueHostsHost["AgentVersion"].asString();
+		if(!valueHostsHost["IpGroup"].isNull())
+			hostsObject.ipGroup = valueHostsHost["IpGroup"].asString();
+		if(!valueHostsHost["EipId"].isNull())
+			hostsObject.eipId = valueHostsHost["EipId"].asString();
+		if(!valueHostsHost["Region"].isNull())
+			hostsObject.region = valueHostsHost["Region"].asString();
 		if(!valueHostsHost["InstanceTypeFamily"].isNull())
 			hostsObject.instanceTypeFamily = valueHostsHost["InstanceTypeFamily"].asString();
+		if(!valueHostsHost["OperatingSystem"].isNull())
+			hostsObject.operatingSystem = valueHostsHost["OperatingSystem"].asString();
 		hosts_.push_back(hostsObject);
 	}
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["PageTotal"].isNull())
 		pageTotal_ = std::stoi(value["PageTotal"].asString());
 	if(!value["Total"].isNull())
 		total_ = std::stoi(value["Total"].asString());
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 
 }
 

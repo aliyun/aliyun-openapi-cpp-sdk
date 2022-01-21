@@ -39,27 +39,27 @@ void DescribeSiteMonitorDataResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString();
 	if(!value["NextToken"].isNull())
 		nextToken_ = value["NextToken"].asString();
 	if(!value["Data"].isNull())
 		data_ = value["Data"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 
-}
-
-std::string DescribeSiteMonitorDataResult::getMessage()const
-{
-	return message_;
 }
 
 std::string DescribeSiteMonitorDataResult::getNextToken()const
 {
 	return nextToken_;
+}
+
+std::string DescribeSiteMonitorDataResult::getMessage()const
+{
+	return message_;
 }
 
 std::string DescribeSiteMonitorDataResult::getData()const

@@ -49,30 +49,30 @@ void DescribeProductsOfActiveMetricRuleResult::parse(const std::string &payload)
 		for (auto valueAllProductInitMetricRuleListAllProductInitMetricRuleAlertInitConfigListAlertInitConfig : allAlertInitConfigListNode)
 		{
 			AllProductInitMetricRule::AlertInitConfig alertInitConfigListObject;
-			if(!valueAllProductInitMetricRuleListAllProductInitMetricRuleAlertInitConfigListAlertInitConfig["Namespace"].isNull())
-				alertInitConfigListObject._namespace = valueAllProductInitMetricRuleListAllProductInitMetricRuleAlertInitConfigListAlertInitConfig["Namespace"].asString();
 			if(!valueAllProductInitMetricRuleListAllProductInitMetricRuleAlertInitConfigListAlertInitConfig["MetricName"].isNull())
 				alertInitConfigListObject.metricName = valueAllProductInitMetricRuleListAllProductInitMetricRuleAlertInitConfigListAlertInitConfig["MetricName"].asString();
-			if(!valueAllProductInitMetricRuleListAllProductInitMetricRuleAlertInitConfigListAlertInitConfig["Statistics"].isNull())
-				alertInitConfigListObject.statistics = valueAllProductInitMetricRuleListAllProductInitMetricRuleAlertInitConfigListAlertInitConfig["Statistics"].asString();
 			if(!valueAllProductInitMetricRuleListAllProductInitMetricRuleAlertInitConfigListAlertInitConfig["EvaluationCount"].isNull())
 				alertInitConfigListObject.evaluationCount = valueAllProductInitMetricRuleListAllProductInitMetricRuleAlertInitConfigListAlertInitConfig["EvaluationCount"].asString();
+			if(!valueAllProductInitMetricRuleListAllProductInitMetricRuleAlertInitConfigListAlertInitConfig["Namespace"].isNull())
+				alertInitConfigListObject._namespace = valueAllProductInitMetricRuleListAllProductInitMetricRuleAlertInitConfigListAlertInitConfig["Namespace"].asString();
 			if(!valueAllProductInitMetricRuleListAllProductInitMetricRuleAlertInitConfigListAlertInitConfig["Threshold"].isNull())
 				alertInitConfigListObject.threshold = valueAllProductInitMetricRuleListAllProductInitMetricRuleAlertInitConfigListAlertInitConfig["Threshold"].asString();
+			if(!valueAllProductInitMetricRuleListAllProductInitMetricRuleAlertInitConfigListAlertInitConfig["Statistics"].isNull())
+				alertInitConfigListObject.statistics = valueAllProductInitMetricRuleListAllProductInitMetricRuleAlertInitConfigListAlertInitConfig["Statistics"].asString();
 			if(!valueAllProductInitMetricRuleListAllProductInitMetricRuleAlertInitConfigListAlertInitConfig["Period"].isNull())
 				alertInitConfigListObject.period = valueAllProductInitMetricRuleListAllProductInitMetricRuleAlertInitConfigListAlertInitConfig["Period"].asString();
 			allProductInitMetricRuleListObject.alertInitConfigList.push_back(alertInitConfigListObject);
 		}
 		allProductInitMetricRuleList_.push_back(allProductInitMetricRuleListObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = std::stoi(value["Code"].asString());
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
 	if(!value["Datapoints"].isNull())
 		datapoints_ = value["Datapoints"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

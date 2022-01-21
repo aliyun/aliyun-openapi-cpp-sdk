@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,41 +17,35 @@
 #ifndef ALIBABACLOUD_CMS_MODEL_DESCRIBEMONITORGROUPNOTIFYPOLICYLISTREQUEST_H_
 #define ALIBABACLOUD_CMS_MODEL_DESCRIBEMONITORGROUPNOTIFYPOLICYLISTREQUEST_H_
 
+#include <alibabacloud/cms/CmsExport.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
-#include <alibabacloud/cms/CmsExport.h>
+#include <map>
 
-namespace AlibabaCloud
-{
-	namespace Cms
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_CMS_EXPORT DescribeMonitorGroupNotifyPolicyListRequest : public RpcServiceRequest
-			{
+namespace AlibabaCloud {
+namespace Cms {
+namespace Model {
+class ALIBABACLOUD_CMS_EXPORT DescribeMonitorGroupNotifyPolicyListRequest : public RpcServiceRequest {
+public:
+	DescribeMonitorGroupNotifyPolicyListRequest();
+	~DescribeMonitorGroupNotifyPolicyListRequest();
+	std::string getPolicyType() const;
+	void setPolicyType(const std::string &policyType);
+	std::string getGroupId() const;
+	void setGroupId(const std::string &groupId);
+	int getPageNumber() const;
+	void setPageNumber(int pageNumber);
+	int getPageSize() const;
+	void setPageSize(int pageSize);
 
-			public:
-				DescribeMonitorGroupNotifyPolicyListRequest();
-				~DescribeMonitorGroupNotifyPolicyListRequest();
-
-				std::string getPolicyType()const;
-				void setPolicyType(const std::string& policyType);
-				std::string getGroupId()const;
-				void setGroupId(const std::string& groupId);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
-
-            private:
-				std::string policyType_;
-				std::string groupId_;
-				int pageNumber_;
-				int pageSize_;
-
-			};
-		}
-	}
-}
+private:
+	std::string policyType_;
+	std::string groupId_;
+	int pageNumber_;
+	int pageSize_;
+};
+} // namespace Model
+} // namespace Cms
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_CMS_MODEL_DESCRIBEMONITORGROUPNOTIFYPOLICYLISTREQUEST_H_

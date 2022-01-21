@@ -43,12 +43,12 @@ void DescribeSystemEventHistogramResult::parse(const std::string &payload)
 	for (auto valueSystemEventHistogramsSystemEventHistogram : allSystemEventHistogramsNode)
 	{
 		SystemEventHistogram systemEventHistogramsObject;
-		if(!valueSystemEventHistogramsSystemEventHistogram["Count"].isNull())
-			systemEventHistogramsObject.count = std::stol(valueSystemEventHistogramsSystemEventHistogram["Count"].asString());
-		if(!valueSystemEventHistogramsSystemEventHistogram["StartTime"].isNull())
-			systemEventHistogramsObject.startTime = std::stol(valueSystemEventHistogramsSystemEventHistogram["StartTime"].asString());
 		if(!valueSystemEventHistogramsSystemEventHistogram["EndTime"].isNull())
 			systemEventHistogramsObject.endTime = std::stol(valueSystemEventHistogramsSystemEventHistogram["EndTime"].asString());
+		if(!valueSystemEventHistogramsSystemEventHistogram["StartTime"].isNull())
+			systemEventHistogramsObject.startTime = std::stol(valueSystemEventHistogramsSystemEventHistogram["StartTime"].asString());
+		if(!valueSystemEventHistogramsSystemEventHistogram["Count"].isNull())
+			systemEventHistogramsObject.count = std::stol(valueSystemEventHistogramsSystemEventHistogram["Count"].asString());
 		systemEventHistograms_.push_back(systemEventHistogramsObject);
 	}
 	if(!value["Code"].isNull())

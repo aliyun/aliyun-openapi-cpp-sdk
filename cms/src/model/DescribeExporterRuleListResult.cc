@@ -43,37 +43,37 @@ void DescribeExporterRuleListResult::parse(const std::string &payload)
 	for (auto valueDatapointsDatapoint : allDatapointsNode)
 	{
 		Datapoint datapointsObject;
-		if(!valueDatapointsDatapoint["RuleName"].isNull())
-			datapointsObject.ruleName = valueDatapointsDatapoint["RuleName"].asString();
-		if(!valueDatapointsDatapoint["Namespace"].isNull())
-			datapointsObject._namespace = valueDatapointsDatapoint["Namespace"].asString();
 		if(!valueDatapointsDatapoint["MetricName"].isNull())
 			datapointsObject.metricName = valueDatapointsDatapoint["MetricName"].asString();
-		if(!valueDatapointsDatapoint["Enabled"].isNull())
-			datapointsObject.enabled = valueDatapointsDatapoint["Enabled"].asString() == "true";
-		if(!valueDatapointsDatapoint["TargetWindows"].isNull())
-			datapointsObject.targetWindows = valueDatapointsDatapoint["TargetWindows"].asString();
 		if(!valueDatapointsDatapoint["Describe"].isNull())
 			datapointsObject.describe = valueDatapointsDatapoint["Describe"].asString();
-		if(!valueDatapointsDatapoint["Dimension"].isNull())
-			datapointsObject.dimension = valueDatapointsDatapoint["Dimension"].asString();
+		if(!valueDatapointsDatapoint["TargetWindows"].isNull())
+			datapointsObject.targetWindows = valueDatapointsDatapoint["TargetWindows"].asString();
 		if(!valueDatapointsDatapoint["CreateTime"].isNull())
 			datapointsObject.createTime = std::stol(valueDatapointsDatapoint["CreateTime"].asString());
+		if(!valueDatapointsDatapoint["Enabled"].isNull())
+			datapointsObject.enabled = valueDatapointsDatapoint["Enabled"].asString() == "true";
+		if(!valueDatapointsDatapoint["Dimension"].isNull())
+			datapointsObject.dimension = valueDatapointsDatapoint["Dimension"].asString();
+		if(!valueDatapointsDatapoint["Namespace"].isNull())
+			datapointsObject._namespace = valueDatapointsDatapoint["Namespace"].asString();
+		if(!valueDatapointsDatapoint["RuleName"].isNull())
+			datapointsObject.ruleName = valueDatapointsDatapoint["RuleName"].asString();
 		auto allDstName = value["DstName"]["DstName"];
 		for (auto value : allDstName)
 			datapointsObject.dstName.push_back(value.asString());
 		datapoints_.push_back(datapointsObject);
 	}
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
-	if(!value["Total"].isNull())
-		total_ = std::stoi(value["Total"].asString());
 	if(!value["PageNumber"].isNull())
 		pageNumber_ = std::stoi(value["PageNumber"].asString());
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
+	if(!value["Total"].isNull())
+		total_ = std::stoi(value["Total"].asString());
 
 }
 

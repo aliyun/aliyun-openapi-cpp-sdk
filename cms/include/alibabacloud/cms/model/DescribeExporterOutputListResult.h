@@ -43,8 +43,8 @@ namespace AlibabaCloud
 					};
 					std::string destType;
 					ConfigJson configJson;
-					std::string destName;
 					long createTime;
+					std::string destName;
 				};
 
 

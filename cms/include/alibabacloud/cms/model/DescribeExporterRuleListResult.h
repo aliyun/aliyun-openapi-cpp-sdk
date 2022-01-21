@@ -34,8 +34,8 @@ namespace AlibabaCloud
 			public:
 				struct Datapoint
 				{
-					std::string targetWindows;
 					std::string describe;
+					std::string targetWindows;
 					std::string metricName;
 					long createTime;
 					bool enabled;

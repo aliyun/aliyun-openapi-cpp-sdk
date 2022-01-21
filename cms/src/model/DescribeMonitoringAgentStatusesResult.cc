@@ -43,12 +43,12 @@ void DescribeMonitoringAgentStatusesResult::parse(const std::string &payload)
 	for (auto valueNodeStatusListNodeStatus : allNodeStatusListNode)
 	{
 		NodeStatus nodeStatusListObject;
+		if(!valueNodeStatusListNodeStatus["Status"].isNull())
+			nodeStatusListObject.status = valueNodeStatusListNodeStatus["Status"].asString();
 		if(!valueNodeStatusListNodeStatus["InstanceId"].isNull())
 			nodeStatusListObject.instanceId = valueNodeStatusListNodeStatus["InstanceId"].asString();
 		if(!valueNodeStatusListNodeStatus["AutoInstall"].isNull())
 			nodeStatusListObject.autoInstall = valueNodeStatusListNodeStatus["AutoInstall"].asString() == "true";
-		if(!valueNodeStatusListNodeStatus["Status"].isNull())
-			nodeStatusListObject.status = valueNodeStatusListNodeStatus["Status"].asString();
 		nodeStatusList_.push_back(nodeStatusListObject);
 	}
 	if(!value["Code"].isNull())

@@ -31,21 +31,21 @@ CmsClient::CmsClient(const Credentials &credentials, const ClientConfiguration &
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "cms");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "Cms");
 }
 
 CmsClient::CmsClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "cms");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "Cms");
 }
 
 CmsClient::CmsClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "cms");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "Cms");
 }
 
 CmsClient::~CmsClient()
@@ -4833,6 +4833,42 @@ CmsClient::PutGroupMetricRuleOutcomeCallable CmsClient::putGroupMetricRuleCallab
 			[this, request]()
 			{
 			return this->putGroupMetricRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CmsClient::PutHybridMonitorMetricDataOutcome CmsClient::putHybridMonitorMetricData(const PutHybridMonitorMetricDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return PutHybridMonitorMetricDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return PutHybridMonitorMetricDataOutcome(PutHybridMonitorMetricDataResult(outcome.result()));
+	else
+		return PutHybridMonitorMetricDataOutcome(outcome.error());
+}
+
+void CmsClient::putHybridMonitorMetricDataAsync(const PutHybridMonitorMetricDataRequest& request, const PutHybridMonitorMetricDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, putHybridMonitorMetricData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CmsClient::PutHybridMonitorMetricDataOutcomeCallable CmsClient::putHybridMonitorMetricDataCallable(const PutHybridMonitorMetricDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<PutHybridMonitorMetricDataOutcome()>>(
+			[this, request]()
+			{
+			return this->putHybridMonitorMetricData(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

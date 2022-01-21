@@ -288,6 +288,8 @@
 #include "model/PutExporterRuleResult.h"
 #include "model/PutGroupMetricRuleRequest.h"
 #include "model/PutGroupMetricRuleResult.h"
+#include "model/PutHybridMonitorMetricDataRequest.h"
+#include "model/PutHybridMonitorMetricDataResult.h"
 #include "model/PutLogMonitorRequest.h"
 #include "model/PutLogMonitorResult.h"
 #include "model/PutMetricRuleTargetsRequest.h"
@@ -714,6 +716,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::PutGroupMetricRuleResult> PutGroupMetricRuleOutcome;
 			typedef std::future<PutGroupMetricRuleOutcome> PutGroupMetricRuleOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::PutGroupMetricRuleRequest&, const PutGroupMetricRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PutGroupMetricRuleAsyncHandler;
+			typedef Outcome<Error, Model::PutHybridMonitorMetricDataResult> PutHybridMonitorMetricDataOutcome;
+			typedef std::future<PutHybridMonitorMetricDataOutcome> PutHybridMonitorMetricDataOutcomeCallable;
+			typedef std::function<void(const CmsClient*, const Model::PutHybridMonitorMetricDataRequest&, const PutHybridMonitorMetricDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PutHybridMonitorMetricDataAsyncHandler;
 			typedef Outcome<Error, Model::PutLogMonitorResult> PutLogMonitorOutcome;
 			typedef std::future<PutLogMonitorOutcome> PutLogMonitorOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::PutLogMonitorRequest&, const PutLogMonitorOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PutLogMonitorAsyncHandler;
@@ -1145,6 +1150,9 @@ namespace AlibabaCloud
 			PutGroupMetricRuleOutcome putGroupMetricRule(const Model::PutGroupMetricRuleRequest &request)const;
 			void putGroupMetricRuleAsync(const Model::PutGroupMetricRuleRequest& request, const PutGroupMetricRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			PutGroupMetricRuleOutcomeCallable putGroupMetricRuleCallable(const Model::PutGroupMetricRuleRequest& request) const;
+			PutHybridMonitorMetricDataOutcome putHybridMonitorMetricData(const Model::PutHybridMonitorMetricDataRequest &request)const;
+			void putHybridMonitorMetricDataAsync(const Model::PutHybridMonitorMetricDataRequest& request, const PutHybridMonitorMetricDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			PutHybridMonitorMetricDataOutcomeCallable putHybridMonitorMetricDataCallable(const Model::PutHybridMonitorMetricDataRequest& request) const;
 			PutLogMonitorOutcome putLogMonitor(const Model::PutLogMonitorRequest &request)const;
 			void putLogMonitorAsync(const Model::PutLogMonitorRequest& request, const PutLogMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			PutLogMonitorOutcomeCallable putLogMonitorCallable(const Model::PutLogMonitorRequest& request) const;

@@ -34,11 +34,11 @@ namespace AlibabaCloud
 			public:
 				struct MetricRuleCount
 				{
-					int alarm;
 					int total;
+					int alarm;
 					int ok;
-					int disable;
 					int nodata;
+					int disable;
 				};
 
 

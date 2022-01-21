@@ -46,11 +46,11 @@ namespace AlibabaCloud
 					};
 					std::vector<Resource::Resource1> escalation;
 					std::string ruleId;
-					std::string resource;
 					std::string startTime;
+					std::string resource;
 					std::string dimensions;
-					std::string _namespace;
 					std::string metricValues;
+					std::string _namespace;
 					std::string lastModifyTime;
 					std::string statistics;
 					std::string groupId;
@@ -59,8 +59,8 @@ namespace AlibabaCloud
 					std::string productCategory;
 					std::string enable;
 					int level;
-					std::string ruleName;
 					std::string retryTimes;
+					std::string ruleName;
 					std::string threshold;
 				};
 

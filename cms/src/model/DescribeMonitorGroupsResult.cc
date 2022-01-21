@@ -43,26 +43,26 @@ void DescribeMonitorGroupsResult::parse(const std::string &payload)
 	for (auto valueResourcesResource : allResourcesNode)
 	{
 		Resource resourcesObject;
-		if(!valueResourcesResource["GroupId"].isNull())
-			resourcesObject.groupId = std::stol(valueResourcesResource["GroupId"].asString());
-		if(!valueResourcesResource["GroupName"].isNull())
-			resourcesObject.groupName = valueResourcesResource["GroupName"].asString();
-		if(!valueResourcesResource["ServiceId"].isNull())
-			resourcesObject.serviceId = valueResourcesResource["ServiceId"].asString();
 		if(!valueResourcesResource["Type"].isNull())
 			resourcesObject.type = valueResourcesResource["Type"].asString();
-		if(!valueResourcesResource["GmtModified"].isNull())
-			resourcesObject.gmtModified = std::stol(valueResourcesResource["GmtModified"].asString());
-		if(!valueResourcesResource["GmtCreate"].isNull())
-			resourcesObject.gmtCreate = std::stol(valueResourcesResource["GmtCreate"].asString());
-		if(!valueResourcesResource["BindUrl"].isNull())
-			resourcesObject.bindUrl = valueResourcesResource["BindUrl"].asString();
-		if(!valueResourcesResource["DynamicTagRuleId"].isNull())
-			resourcesObject.dynamicTagRuleId = valueResourcesResource["DynamicTagRuleId"].asString();
-		if(!valueResourcesResource["GroupFounderTagKey"].isNull())
-			resourcesObject.groupFounderTagKey = valueResourcesResource["GroupFounderTagKey"].asString();
 		if(!valueResourcesResource["GroupFounderTagValue"].isNull())
 			resourcesObject.groupFounderTagValue = valueResourcesResource["GroupFounderTagValue"].asString();
+		if(!valueResourcesResource["BindUrl"].isNull())
+			resourcesObject.bindUrl = valueResourcesResource["BindUrl"].asString();
+		if(!valueResourcesResource["GroupName"].isNull())
+			resourcesObject.groupName = valueResourcesResource["GroupName"].asString();
+		if(!valueResourcesResource["GroupId"].isNull())
+			resourcesObject.groupId = std::stol(valueResourcesResource["GroupId"].asString());
+		if(!valueResourcesResource["ServiceId"].isNull())
+			resourcesObject.serviceId = valueResourcesResource["ServiceId"].asString();
+		if(!valueResourcesResource["DynamicTagRuleId"].isNull())
+			resourcesObject.dynamicTagRuleId = valueResourcesResource["DynamicTagRuleId"].asString();
+		if(!valueResourcesResource["GmtCreate"].isNull())
+			resourcesObject.gmtCreate = std::stol(valueResourcesResource["GmtCreate"].asString());
+		if(!valueResourcesResource["GroupFounderTagKey"].isNull())
+			resourcesObject.groupFounderTagKey = valueResourcesResource["GroupFounderTagKey"].asString();
+		if(!valueResourcesResource["GmtModified"].isNull())
+			resourcesObject.gmtModified = std::stol(valueResourcesResource["GmtModified"].asString());
 		auto allContactGroupsNode = valueResourcesResource["ContactGroups"]["ContactGroup"];
 		for (auto valueResourcesResourceContactGroupsContactGroup : allContactGroupsNode)
 		{

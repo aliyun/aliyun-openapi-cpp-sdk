@@ -43,12 +43,12 @@ void DescribeAlertLogHistogramResult::parse(const std::string &payload)
 	for (auto valueAlertLogHistogramListAlertLogHistogramListItem : allAlertLogHistogramListNode)
 	{
 		AlertLogHistogramListItem alertLogHistogramListObject;
-		if(!valueAlertLogHistogramListAlertLogHistogramListItem["Count"].isNull())
-			alertLogHistogramListObject.count = std::stoi(valueAlertLogHistogramListAlertLogHistogramListItem["Count"].asString());
 		if(!valueAlertLogHistogramListAlertLogHistogramListItem["From"].isNull())
 			alertLogHistogramListObject.from = std::stol(valueAlertLogHistogramListAlertLogHistogramListItem["From"].asString());
 		if(!valueAlertLogHistogramListAlertLogHistogramListItem["To"].isNull())
 			alertLogHistogramListObject.to = std::stol(valueAlertLogHistogramListAlertLogHistogramListItem["To"].asString());
+		if(!valueAlertLogHistogramListAlertLogHistogramListItem["Count"].isNull())
+			alertLogHistogramListObject.count = std::stoi(valueAlertLogHistogramListAlertLogHistogramListItem["Count"].asString());
 		alertLogHistogramList_.push_back(alertLogHistogramListObject);
 	}
 	if(!value["Code"].isNull())

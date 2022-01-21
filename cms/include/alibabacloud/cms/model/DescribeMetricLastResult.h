@@ -37,8 +37,8 @@ namespace AlibabaCloud
 				DescribeMetricLastResult();
 				explicit DescribeMetricLastResult(const std::string &payload);
 				~DescribeMetricLastResult();
-				std::string getMessage()const;
 				std::string getNextToken()const;
+				std::string getMessage()const;
 				std::string getPeriod()const;
 				std::string getDatapoints()const;
 				std::string getCode()const;
@@ -47,8 +47,8 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string message_;
 				std::string nextToken_;
+				std::string message_;
 				std::string period_;
 				std::string datapoints_;
 				std::string code_;

@@ -35,8 +35,8 @@ namespace AlibabaCloud
 				struct Data
 				{
 					std::string siteMonitorVersion;
-					int siteMonitorQuotaTaskUsed;
 					bool secondMonitor;
+					int siteMonitorQuotaTaskUsed;
 					int siteMonitorOperatorQuotaQuota;
 					int siteMonitorTaskQuota;
 					int siteMonitorIdcQuota;

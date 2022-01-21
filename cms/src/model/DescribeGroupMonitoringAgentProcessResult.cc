@@ -43,64 +43,64 @@ void DescribeGroupMonitoringAgentProcessResult::parse(const std::string &payload
 	for (auto valueProcessesProcess : allProcessesNode)
 	{
 		Process processesObject;
-		if(!valueProcessesProcess["Id"].isNull())
-			processesObject.id = valueProcessesProcess["Id"].asString();
-		if(!valueProcessesProcess["GroupId"].isNull())
-			processesObject.groupId = valueProcessesProcess["GroupId"].asString();
 		if(!valueProcessesProcess["ProcessName"].isNull())
 			processesObject.processName = valueProcessesProcess["ProcessName"].asString();
 		if(!valueProcessesProcess["MatchExpressFilterRelation"].isNull())
 			processesObject.matchExpressFilterRelation = valueProcessesProcess["MatchExpressFilterRelation"].asString();
+		if(!valueProcessesProcess["GroupId"].isNull())
+			processesObject.groupId = valueProcessesProcess["GroupId"].asString();
+		if(!valueProcessesProcess["Id"].isNull())
+			processesObject.id = valueProcessesProcess["Id"].asString();
 		auto allMatchExpressNode = valueProcessesProcess["MatchExpress"]["MatchExpressItem"];
 		for (auto valueProcessesProcessMatchExpressMatchExpressItem : allMatchExpressNode)
 		{
 			Process::MatchExpressItem matchExpressObject;
+			if(!valueProcessesProcessMatchExpressMatchExpressItem["Value"].isNull())
+				matchExpressObject.value = valueProcessesProcessMatchExpressMatchExpressItem["Value"].asString();
 			if(!valueProcessesProcessMatchExpressMatchExpressItem["Name"].isNull())
 				matchExpressObject.name = valueProcessesProcessMatchExpressMatchExpressItem["Name"].asString();
 			if(!valueProcessesProcessMatchExpressMatchExpressItem["Function"].isNull())
 				matchExpressObject.function = valueProcessesProcessMatchExpressMatchExpressItem["Function"].asString();
-			if(!valueProcessesProcessMatchExpressMatchExpressItem["Value"].isNull())
-				matchExpressObject.value = valueProcessesProcessMatchExpressMatchExpressItem["Value"].asString();
 			processesObject.matchExpress.push_back(matchExpressObject);
 		}
 		auto allAlertConfigNode = valueProcessesProcess["AlertConfig"]["AlertConfigItem"];
 		for (auto valueProcessesProcessAlertConfigAlertConfigItem : allAlertConfigNode)
 		{
 			Process::AlertConfigItem alertConfigObject;
-			if(!valueProcessesProcessAlertConfigAlertConfigItem["EffectiveInterval"].isNull())
-				alertConfigObject.effectiveInterval = valueProcessesProcessAlertConfigAlertConfigItem["EffectiveInterval"].asString();
-			if(!valueProcessesProcessAlertConfigAlertConfigItem["NoEffectiveInterval"].isNull())
-				alertConfigObject.noEffectiveInterval = valueProcessesProcessAlertConfigAlertConfigItem["NoEffectiveInterval"].asString();
+			if(!valueProcessesProcessAlertConfigAlertConfigItem["ComparisonOperator"].isNull())
+				alertConfigObject.comparisonOperator = valueProcessesProcessAlertConfigAlertConfigItem["ComparisonOperator"].asString();
 			if(!valueProcessesProcessAlertConfigAlertConfigItem["SilenceTime"].isNull())
 				alertConfigObject.silenceTime = valueProcessesProcessAlertConfigAlertConfigItem["SilenceTime"].asString();
 			if(!valueProcessesProcessAlertConfigAlertConfigItem["Webhook"].isNull())
 				alertConfigObject.webhook = valueProcessesProcessAlertConfigAlertConfigItem["Webhook"].asString();
-			if(!valueProcessesProcessAlertConfigAlertConfigItem["EscalationsLevel"].isNull())
-				alertConfigObject.escalationsLevel = valueProcessesProcessAlertConfigAlertConfigItem["EscalationsLevel"].asString();
-			if(!valueProcessesProcessAlertConfigAlertConfigItem["ComparisonOperator"].isNull())
-				alertConfigObject.comparisonOperator = valueProcessesProcessAlertConfigAlertConfigItem["ComparisonOperator"].asString();
-			if(!valueProcessesProcessAlertConfigAlertConfigItem["Statistics"].isNull())
-				alertConfigObject.statistics = valueProcessesProcessAlertConfigAlertConfigItem["Statistics"].asString();
-			if(!valueProcessesProcessAlertConfigAlertConfigItem["Threshold"].isNull())
-				alertConfigObject.threshold = valueProcessesProcessAlertConfigAlertConfigItem["Threshold"].asString();
 			if(!valueProcessesProcessAlertConfigAlertConfigItem["Times"].isNull())
 				alertConfigObject.times = valueProcessesProcessAlertConfigAlertConfigItem["Times"].asString();
+			if(!valueProcessesProcessAlertConfigAlertConfigItem["EscalationsLevel"].isNull())
+				alertConfigObject.escalationsLevel = valueProcessesProcessAlertConfigAlertConfigItem["EscalationsLevel"].asString();
+			if(!valueProcessesProcessAlertConfigAlertConfigItem["NoEffectiveInterval"].isNull())
+				alertConfigObject.noEffectiveInterval = valueProcessesProcessAlertConfigAlertConfigItem["NoEffectiveInterval"].asString();
+			if(!valueProcessesProcessAlertConfigAlertConfigItem["EffectiveInterval"].isNull())
+				alertConfigObject.effectiveInterval = valueProcessesProcessAlertConfigAlertConfigItem["EffectiveInterval"].asString();
+			if(!valueProcessesProcessAlertConfigAlertConfigItem["Threshold"].isNull())
+				alertConfigObject.threshold = valueProcessesProcessAlertConfigAlertConfigItem["Threshold"].asString();
+			if(!valueProcessesProcessAlertConfigAlertConfigItem["Statistics"].isNull())
+				alertConfigObject.statistics = valueProcessesProcessAlertConfigAlertConfigItem["Statistics"].asString();
 			processesObject.alertConfig.push_back(alertConfigObject);
 		}
 		processes_.push_back(processesObject);
 	}
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["Total"].isNull())
-		total_ = value["Total"].asString();
-	if(!value["PageSize"].isNull())
-		pageSize_ = value["PageSize"].asString();
 	if(!value["PageNumber"].isNull())
 		pageNumber_ = value["PageNumber"].asString();
+	if(!value["PageSize"].isNull())
+		pageSize_ = value["PageSize"].asString();
+	if(!value["Total"].isNull())
+		total_ = value["Total"].asString();
 
 }
 

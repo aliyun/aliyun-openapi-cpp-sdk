@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,78 +18,64 @@
 
 using AlibabaCloud::Cms::Model::DescribeHostAvailabilityListRequest;
 
-DescribeHostAvailabilityListRequest::DescribeHostAvailabilityListRequest() :
-	RpcServiceRequest("cms", "2019-01-01", "DescribeHostAvailabilityList")
-{
-	setMethod(HttpRequest::Method::Post);
+DescribeHostAvailabilityListRequest::DescribeHostAvailabilityListRequest()
+    : RpcServiceRequest("cms", "2019-01-01", "DescribeHostAvailabilityList") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DescribeHostAvailabilityListRequest::~DescribeHostAvailabilityListRequest()
-{}
+DescribeHostAvailabilityListRequest::~DescribeHostAvailabilityListRequest() {}
 
-long DescribeHostAvailabilityListRequest::getGroupId()const
-{
-	return groupId_;
+long DescribeHostAvailabilityListRequest::getGroupId() const {
+  return groupId_;
 }
 
-void DescribeHostAvailabilityListRequest::setGroupId(long groupId)
-{
-	groupId_ = groupId;
-	setParameter("GroupId", std::to_string(groupId));
+void DescribeHostAvailabilityListRequest::setGroupId(long groupId) {
+  groupId_ = groupId;
+  setParameter(std::string("GroupId"), std::to_string(groupId));
 }
 
-std::string DescribeHostAvailabilityListRequest::getTaskName()const
-{
-	return taskName_;
+std::string DescribeHostAvailabilityListRequest::getTaskName() const {
+  return taskName_;
 }
 
-void DescribeHostAvailabilityListRequest::setTaskName(const std::string& taskName)
-{
-	taskName_ = taskName;
-	setParameter("TaskName", taskName);
+void DescribeHostAvailabilityListRequest::setTaskName(const std::string &taskName) {
+  taskName_ = taskName;
+  setParameter(std::string("TaskName"), taskName);
 }
 
-int DescribeHostAvailabilityListRequest::getPageNumber()const
-{
-	return pageNumber_;
+int DescribeHostAvailabilityListRequest::getPageNumber() const {
+  return pageNumber_;
 }
 
-void DescribeHostAvailabilityListRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+void DescribeHostAvailabilityListRequest::setPageNumber(int pageNumber) {
+  pageNumber_ = pageNumber;
+  setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
-int DescribeHostAvailabilityListRequest::getPageSize()const
-{
-	return pageSize_;
+int DescribeHostAvailabilityListRequest::getPageSize() const {
+  return pageSize_;
 }
 
-void DescribeHostAvailabilityListRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+void DescribeHostAvailabilityListRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
-std::string DescribeHostAvailabilityListRequest::getIds()const
-{
-	return ids_;
+std::string DescribeHostAvailabilityListRequest::getIds() const {
+  return ids_;
 }
 
-void DescribeHostAvailabilityListRequest::setIds(const std::string& ids)
-{
-	ids_ = ids;
-	setParameter("Ids", ids);
+void DescribeHostAvailabilityListRequest::setIds(const std::string &ids) {
+  ids_ = ids;
+  setParameter(std::string("Ids"), ids);
 }
 
-long DescribeHostAvailabilityListRequest::getId()const
-{
-	return id_;
+long DescribeHostAvailabilityListRequest::getId() const {
+  return id_;
 }
 
-void DescribeHostAvailabilityListRequest::setId(long id)
-{
-	id_ = id;
-	setParameter("Id", std::to_string(id));
+void DescribeHostAvailabilityListRequest::setId(long id) {
+  id_ = id;
+  setParameter(std::string("Id"), std::to_string(id));
 }
 
