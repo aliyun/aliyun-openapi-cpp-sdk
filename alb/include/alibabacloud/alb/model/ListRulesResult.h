@@ -101,10 +101,20 @@ namespace AlibabaCloud
 						{
 							int qPS;
 						};
+						struct CorsConfig
+						{
+							std::string allowCredentials;
+							std::vector<std::string> exposeHeaders;
+							std::vector<std::string> allowOrigin;
+							std::vector<std::string> allowHeaders;
+							long maxAge;
+							std::vector<std::string> allowMethods;
+						};
 						int order;
 						FixedResponseConfig fixedResponseConfig;
 						std::string type;
 						RedirectConfig redirectConfig;
+						CorsConfig corsConfig;
 						ForwardGroupConfig forwardGroupConfig;
 						RemoveHeaderConfig removeHeaderConfig;
 						InsertHeaderConfig insertHeaderConfig;

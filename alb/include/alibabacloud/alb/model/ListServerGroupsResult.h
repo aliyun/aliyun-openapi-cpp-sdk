@@ -58,6 +58,11 @@ namespace AlibabaCloud
 						std::string stickySessionType;
 						bool stickySessionEnabled;
 					};
+					struct UchConfig
+					{
+						std::string type;
+						std::string value;
+					};
 					struct Tag
 					{
 						std::string value;
@@ -66,6 +71,7 @@ namespace AlibabaCloud
 					bool serviceManagedEnabled;
 					std::vector<std::string> relatedLoadBalancerIds;
 					std::string resourceGroupId;
+					UchConfig uchConfig;
 					std::string scheduler;
 					bool upstreamKeepaliveEnabled;
 					StickySessionConfig stickySessionConfig;

@@ -47,6 +47,17 @@ void ListLoadBalancersRequest::setLoadBalancerIds(const std::vector<ListLoadBala
   }
 }
 
+std::vector<ListLoadBalancersRequest::std::string> ListLoadBalancersRequest::getLoadBalancerEditions() const {
+  return loadBalancerEditions_;
+}
+
+void ListLoadBalancersRequest::setLoadBalancerEditions(const std::vector<ListLoadBalancersRequest::std::string> &loadBalancerEditions) {
+  loadBalancerEditions_ = loadBalancerEditions;
+  for(int dep1 = 0; dep1 != loadBalancerEditions.size(); dep1++) {
+    setParameter(std::string("LoadBalancerEditions") + "." + std::to_string(dep1 + 1), loadBalancerEditions[dep1]);
+  }
+}
+
 std::string ListLoadBalancersRequest::getAddressIpVersion() const {
   return addressIpVersion_;
 }

@@ -52,6 +52,10 @@ public:
 		int cookieTimeout;
 		std::string stickySessionType;
 	};
+	struct UchConfig {
+		std::string type;
+		std::string value;
+	};
 	CreateServerGroupRequest();
 	~CreateServerGroupRequest();
 	std::string getServerGroupName() const;
@@ -80,6 +84,8 @@ public:
 	void setServerGroupType(const std::string &serverGroupType);
 	std::string getVpcId() const;
 	void setVpcId(const std::string &vpcId);
+	UchConfig getUchConfig() const;
+	void setUchConfig(const UchConfig &uchConfig);
 
 private:
 	std::string serverGroupName_;
@@ -95,6 +101,7 @@ private:
 	bool ipv6Enabled_;
 	std::string serverGroupType_;
 	std::string vpcId_;
+	UchConfig uchConfig_;
 };
 } // namespace Model
 } // namespace Alb

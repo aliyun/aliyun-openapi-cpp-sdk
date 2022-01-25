@@ -126,3 +126,13 @@ void UpdateServerGroupAttributeRequest::setDryRun(bool dryRun) {
   setParameter(std::string("DryRun"), dryRun ? "true" : "false");
 }
 
+UpdateServerGroupAttributeRequest::UchConfig UpdateServerGroupAttributeRequest::getUchConfig() const {
+  return uchConfig_;
+}
+
+void UpdateServerGroupAttributeRequest::setUchConfig(const UpdateServerGroupAttributeRequest::UchConfig &uchConfig) {
+  uchConfig_ = uchConfig;
+  setParameter(std::string("UchConfig") + ".Type", uchConfig.type);
+  setParameter(std::string("UchConfig") + ".Value", uchConfig.value);
+}
+

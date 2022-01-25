@@ -139,6 +139,19 @@ public:
 				int qPS;
 			};
 			TrafficLimitConfig trafficLimitConfig;
+			struct CorsConfig {
+				std::string allowCredentials;
+				std::string string;
+				std::vector<std::string> allowOrigin;
+				long maxAge;
+				std::string string;
+				std::vector<std::string> allowMethods;
+				std::string string;
+				std::vector<std::string> allowHeaders;
+				std::string string;
+				std::vector<std::string> exposeHeaders;
+			};
+			CorsConfig corsConfig;
 			struct RedirectConfig {
 				std::string path;
 				std::string protocol;

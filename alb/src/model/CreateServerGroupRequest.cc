@@ -162,3 +162,13 @@ void CreateServerGroupRequest::setVpcId(const std::string &vpcId) {
   setParameter(std::string("VpcId"), vpcId);
 }
 
+CreateServerGroupRequest::UchConfig CreateServerGroupRequest::getUchConfig() const {
+  return uchConfig_;
+}
+
+void CreateServerGroupRequest::setUchConfig(const CreateServerGroupRequest::UchConfig &uchConfig) {
+  uchConfig_ = uchConfig;
+  setParameter(std::string("UchConfig") + ".Type", uchConfig.type);
+  setParameter(std::string("UchConfig") + ".Value", uchConfig.value);
+}
+

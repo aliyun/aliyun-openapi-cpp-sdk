@@ -38,6 +38,8 @@ public:
 	void setLoadBalancerNames(const std::vector<std::string> &loadBalancerNames);
 	std::vector<std::string> getLoadBalancerIds() const;
 	void setLoadBalancerIds(const std::vector<std::string> &loadBalancerIds);
+	std::vector<std::string> getLoadBalancerEditions() const;
+	void setLoadBalancerEditions(const std::vector<std::string> &loadBalancerEditions);
 	std::string getAddressIpVersion() const;
 	void setAddressIpVersion(const std::string &addressIpVersion);
 	std::string getResourceGroupId() const;
@@ -70,6 +72,7 @@ public:
 private:
 	std::vector<std::string> loadBalancerNames_;
 	std::vector<std::string> loadBalancerIds_;
+	std::vector<std::string> loadBalancerEditions_;
 	std::string addressIpVersion_;
 	std::string resourceGroupId_;
 	std::string nextToken_;

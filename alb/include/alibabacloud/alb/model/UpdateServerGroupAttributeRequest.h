@@ -52,6 +52,10 @@ public:
 		int cookieTimeout;
 		std::string stickySessionType;
 	};
+	struct UchConfig {
+		std::string type;
+		std::string value;
+	};
 	UpdateServerGroupAttributeRequest();
 	~UpdateServerGroupAttributeRequest();
 	std::string getServerGroupName() const;
@@ -72,6 +76,8 @@ public:
 	void setStickySessionConfig(const StickySessionConfig &stickySessionConfig);
 	bool getDryRun() const;
 	void setDryRun(bool dryRun);
+	UchConfig getUchConfig() const;
+	void setUchConfig(const UchConfig &uchConfig);
 
 private:
 	std::string serverGroupName_;
@@ -83,6 +89,7 @@ private:
 	std::string serviceName_;
 	StickySessionConfig stickySessionConfig_;
 	bool dryRun_;
+	UchConfig uchConfig_;
 };
 } // namespace Model
 } // namespace Alb

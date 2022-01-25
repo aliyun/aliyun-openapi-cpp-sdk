@@ -98,6 +98,20 @@ void UpdateRulesAttributeRequest::setRules(const std::vector<UpdateRulesAttribut
       setParameter(std::string("Rules") + "." + std::to_string(dep1 + 1) + ".RuleActions." + std::to_string(dep2 + 1) + ".InsertHeaderConfig.Value", rules[dep1].ruleActions[dep2].insertHeaderConfig.value);
       setParameter(std::string("Rules") + "." + std::to_string(dep1 + 1) + ".RuleActions." + std::to_string(dep2 + 1) + ".InsertHeaderConfig.Key", rules[dep1].ruleActions[dep2].insertHeaderConfig.key);
       setParameter(std::string("Rules") + "." + std::to_string(dep1 + 1) + ".RuleActions." + std::to_string(dep2 + 1) + ".TrafficLimitConfig.QPS", std::to_string(rules[dep1].ruleActions[dep2].trafficLimitConfig.qPS));
+      setParameter(std::string("Rules") + "." + std::to_string(dep1 + 1) + ".RuleActions." + std::to_string(dep2 + 1) + ".CorsConfig.AllowCredentials", rules[dep1].ruleActions[dep2].corsConfig.allowCredentials);
+      for(int dep3 = 0; dep3 != rules[dep1].ruleActions[dep2].corsConfig.allowOrigin.size(); dep3++) {
+        setParameter(std::string("Rules") + "." + std::to_string(dep1 + 1) + ".RuleActions." + std::to_string(dep2 + 1) + ".CorsConfig.AllowOrigin." + std::to_string(dep3 + 1), rules[dep1].ruleActions[dep2].corsConfig.allowOrigin[dep3]);
+      }
+      setParameter(std::string("Rules") + "." + std::to_string(dep1 + 1) + ".RuleActions." + std::to_string(dep2 + 1) + ".CorsConfig.MaxAge", std::to_string(rules[dep1].ruleActions[dep2].corsConfig.maxAge));
+      for(int dep3 = 0; dep3 != rules[dep1].ruleActions[dep2].corsConfig.allowMethods.size(); dep3++) {
+        setParameter(std::string("Rules") + "." + std::to_string(dep1 + 1) + ".RuleActions." + std::to_string(dep2 + 1) + ".CorsConfig.AllowMethods." + std::to_string(dep3 + 1), rules[dep1].ruleActions[dep2].corsConfig.allowMethods[dep3]);
+      }
+      for(int dep3 = 0; dep3 != rules[dep1].ruleActions[dep2].corsConfig.allowHeaders.size(); dep3++) {
+        setParameter(std::string("Rules") + "." + std::to_string(dep1 + 1) + ".RuleActions." + std::to_string(dep2 + 1) + ".CorsConfig.AllowHeaders." + std::to_string(dep3 + 1), rules[dep1].ruleActions[dep2].corsConfig.allowHeaders[dep3]);
+      }
+      for(int dep3 = 0; dep3 != rules[dep1].ruleActions[dep2].corsConfig.exposeHeaders.size(); dep3++) {
+        setParameter(std::string("Rules") + "." + std::to_string(dep1 + 1) + ".RuleActions." + std::to_string(dep2 + 1) + ".CorsConfig.ExposeHeaders." + std::to_string(dep3 + 1), rules[dep1].ruleActions[dep2].corsConfig.exposeHeaders[dep3]);
+      }
       setParameter(std::string("Rules") + "." + std::to_string(dep1 + 1) + ".RuleActions." + std::to_string(dep2 + 1) + ".RedirectConfig.Path", rules[dep1].ruleActions[dep2].redirectConfig.path);
       setParameter(std::string("Rules") + "." + std::to_string(dep1 + 1) + ".RuleActions." + std::to_string(dep2 + 1) + ".RedirectConfig.Protocol", rules[dep1].ruleActions[dep2].redirectConfig.protocol);
       setParameter(std::string("Rules") + "." + std::to_string(dep1 + 1) + ".RuleActions." + std::to_string(dep2 + 1) + ".RedirectConfig.Port", rules[dep1].ruleActions[dep2].redirectConfig.port);

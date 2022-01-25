@@ -87,6 +87,20 @@ void CreateRuleRequest::setRuleActions(const std::vector<CreateRuleRequest::Rule
     setParameter(std::string("RuleActions") + "." + std::to_string(dep1 + 1) + ".InsertHeaderConfig.Value", ruleActions[dep1].insertHeaderConfig.value);
     setParameter(std::string("RuleActions") + "." + std::to_string(dep1 + 1) + ".InsertHeaderConfig.Key", ruleActions[dep1].insertHeaderConfig.key);
     setParameter(std::string("RuleActions") + "." + std::to_string(dep1 + 1) + ".TrafficLimitConfig.QPS", std::to_string(ruleActions[dep1].trafficLimitConfig.qPS));
+    setParameter(std::string("RuleActions") + "." + std::to_string(dep1 + 1) + ".CorsConfig.AllowCredentials", ruleActions[dep1].corsConfig.allowCredentials);
+    for(int dep2 = 0; dep2 != ruleActions[dep1].corsConfig.allowOrigin.size(); dep2++) {
+      setParameter(std::string("RuleActions") + "." + std::to_string(dep1 + 1) + ".CorsConfig.AllowOrigin." + std::to_string(dep2 + 1), ruleActions[dep1].corsConfig.allowOrigin[dep2]);
+    }
+    setParameter(std::string("RuleActions") + "." + std::to_string(dep1 + 1) + ".CorsConfig.MaxAge", std::to_string(ruleActions[dep1].corsConfig.maxAge));
+    for(int dep2 = 0; dep2 != ruleActions[dep1].corsConfig.allowMethods.size(); dep2++) {
+      setParameter(std::string("RuleActions") + "." + std::to_string(dep1 + 1) + ".CorsConfig.AllowMethods." + std::to_string(dep2 + 1), ruleActions[dep1].corsConfig.allowMethods[dep2]);
+    }
+    for(int dep2 = 0; dep2 != ruleActions[dep1].corsConfig.allowHeaders.size(); dep2++) {
+      setParameter(std::string("RuleActions") + "." + std::to_string(dep1 + 1) + ".CorsConfig.AllowHeaders." + std::to_string(dep2 + 1), ruleActions[dep1].corsConfig.allowHeaders[dep2]);
+    }
+    for(int dep2 = 0; dep2 != ruleActions[dep1].corsConfig.exposeHeaders.size(); dep2++) {
+      setParameter(std::string("RuleActions") + "." + std::to_string(dep1 + 1) + ".CorsConfig.ExposeHeaders." + std::to_string(dep2 + 1), ruleActions[dep1].corsConfig.exposeHeaders[dep2]);
+    }
     setParameter(std::string("RuleActions") + "." + std::to_string(dep1 + 1) + ".RedirectConfig.Path", ruleActions[dep1].redirectConfig.path);
     setParameter(std::string("RuleActions") + "." + std::to_string(dep1 + 1) + ".RedirectConfig.Protocol", ruleActions[dep1].redirectConfig.protocol);
     setParameter(std::string("RuleActions") + "." + std::to_string(dep1 + 1) + ".RedirectConfig.Port", ruleActions[dep1].redirectConfig.port);

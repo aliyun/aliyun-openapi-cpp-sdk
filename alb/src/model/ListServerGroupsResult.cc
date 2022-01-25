@@ -123,6 +123,11 @@ void ListServerGroupsResult::parse(const std::string &payload)
 			serverGroupsObject.stickySessionConfig.stickySessionEnabled = stickySessionConfigNode["StickySessionEnabled"].asString() == "true";
 		if(!stickySessionConfigNode["StickySessionType"].isNull())
 			serverGroupsObject.stickySessionConfig.stickySessionType = stickySessionConfigNode["StickySessionType"].asString();
+		auto uchConfigNode = value["UchConfig"];
+		if(!uchConfigNode["Type"].isNull())
+			serverGroupsObject.uchConfig.type = uchConfigNode["Type"].asString();
+		if(!uchConfigNode["Value"].isNull())
+			serverGroupsObject.uchConfig.value = uchConfigNode["Value"].asString();
 		auto allRelatedLoadBalancerIds = value["RelatedLoadBalancerIds"]["RelatedLoadBalancerId"];
 		for (auto value : allRelatedLoadBalancerIds)
 			serverGroupsObject.relatedLoadBalancerIds.push_back(value.asString());

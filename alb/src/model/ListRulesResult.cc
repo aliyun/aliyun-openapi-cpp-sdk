@@ -141,6 +141,23 @@ void ListRulesResult::parse(const std::string &payload)
 			auto trafficLimitConfigNode = value["TrafficLimitConfig"];
 			if(!trafficLimitConfigNode["QPS"].isNull())
 				ruleActionsObject.trafficLimitConfig.qPS = std::stoi(trafficLimitConfigNode["QPS"].asString());
+			auto corsConfigNode = value["CorsConfig"];
+			if(!corsConfigNode["AllowCredentials"].isNull())
+				ruleActionsObject.corsConfig.allowCredentials = corsConfigNode["AllowCredentials"].asString();
+			if(!corsConfigNode["MaxAge"].isNull())
+				ruleActionsObject.corsConfig.maxAge = std::stol(corsConfigNode["MaxAge"].asString());
+				auto allAllowOrigin = corsConfigNode["AllowOrigin"]["AllowOrigin"];
+				for (auto value : allAllowOrigin)
+					ruleActionsObject.corsConfig.allowOrigin.push_back(value.asString());
+				auto allAllowMethods = corsConfigNode["AllowMethods"]["AllowMethods"];
+				for (auto value : allAllowMethods)
+					ruleActionsObject.corsConfig.allowMethods.push_back(value.asString());
+				auto allAllowHeaders = corsConfigNode["AllowHeaders"]["AllowHeaders"];
+				for (auto value : allAllowHeaders)
+					ruleActionsObject.corsConfig.allowHeaders.push_back(value.asString());
+				auto allExposeHeaders = corsConfigNode["ExposeHeaders"]["ExposeHeaders"];
+				for (auto value : allExposeHeaders)
+					ruleActionsObject.corsConfig.exposeHeaders.push_back(value.asString());
 			rulesObject.ruleActions.push_back(ruleActionsObject);
 		}
 		auto allRuleConditionsNode = valueRulesRule["RuleConditions"]["Condition"];
