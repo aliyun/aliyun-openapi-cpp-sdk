@@ -39,12 +39,12 @@ void DescribeDomainWithIntegrityResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allContentNode = value["Content"]["ContentItem"];
-	for (auto valueContentContentItem : allContentNode)
+	auto allContentNode = value["Content"]["contentItem"];
+	for (auto valueContentcontentItem : allContentNode)
 	{
 		ContentItem contentObject;
-		if(!valueContentContentItem["Name"].isNull())
-			contentObject.name = valueContentContentItem["Name"].asString();
+		if(!valueContentcontentItem["Name"].isNull())
+			contentObject.name = valueContentcontentItem["Name"].asString();
 		auto allColumns = value["Columns"]["columns"];
 		for (auto value : allColumns)
 			contentObject.columns.push_back(value.asString());

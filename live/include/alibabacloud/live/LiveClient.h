@@ -68,6 +68,10 @@
 #include "model/AddLiveSnapshotDetectPornConfigResult.h"
 #include "model/AddLiveStreamTranscodeRequest.h"
 #include "model/AddLiveStreamTranscodeResult.h"
+#include "model/AddLiveStreamWatermarkRequest.h"
+#include "model/AddLiveStreamWatermarkResult.h"
+#include "model/AddLiveStreamWatermarkRuleRequest.h"
+#include "model/AddLiveStreamWatermarkRuleResult.h"
 #include "model/AddMultiRateConfigRequest.h"
 #include "model/AddMultiRateConfigResult.h"
 #include "model/AddPlaylistItemsRequest.h"
@@ -182,6 +186,10 @@
 #include "model/DeleteLiveStreamMonitorResult.h"
 #include "model/DeleteLiveStreamTranscodeRequest.h"
 #include "model/DeleteLiveStreamTranscodeResult.h"
+#include "model/DeleteLiveStreamWatermarkRequest.h"
+#include "model/DeleteLiveStreamWatermarkResult.h"
+#include "model/DeleteLiveStreamWatermarkRuleRequest.h"
+#include "model/DeleteLiveStreamWatermarkRuleResult.h"
 #include "model/DeleteLiveStreamsNotifyUrlConfigRequest.h"
 #include "model/DeleteLiveStreamsNotifyUrlConfigResult.h"
 #include "model/DeleteMixStreamRequest.h"
@@ -194,6 +202,8 @@
 #include "model/DeletePlaylistItemsResult.h"
 #include "model/DeleteRoomRequest.h"
 #include "model/DeleteRoomResult.h"
+#include "model/DeleteSnapshotCallbackAuthRequest.h"
+#include "model/DeleteSnapshotCallbackAuthResult.h"
 #include "model/DeleteStudioLayoutRequest.h"
 #include "model/DeleteStudioLayoutResult.h"
 #include "model/DescribeBoardEventsRequest.h"
@@ -358,6 +368,10 @@
 #include "model/DescribeLiveStreamTranscodeInfoResult.h"
 #include "model/DescribeLiveStreamTranscodeStreamNumRequest.h"
 #include "model/DescribeLiveStreamTranscodeStreamNumResult.h"
+#include "model/DescribeLiveStreamWatermarkRulesRequest.h"
+#include "model/DescribeLiveStreamWatermarkRulesResult.h"
+#include "model/DescribeLiveStreamWatermarksRequest.h"
+#include "model/DescribeLiveStreamWatermarksResult.h"
 #include "model/DescribeLiveStreamsBlockListRequest.h"
 #include "model/DescribeLiveStreamsBlockListResult.h"
 #include "model/DescribeLiveStreamsControlHistoryRequest.h"
@@ -466,6 +480,8 @@
 #include "model/PlayChoosenShowResult.h"
 #include "model/PublishLiveStagingConfigToProductionRequest.h"
 #include "model/PublishLiveStagingConfigToProductionResult.h"
+#include "model/QuerySnapshotCallbackAuthRequest.h"
+#include "model/QuerySnapshotCallbackAuthResult.h"
 #include "model/RealTimeRecordCommandRequest.h"
 #include "model/RealTimeRecordCommandResult.h"
 #include "model/RealTimeSnapshotCommandRequest.h"
@@ -504,6 +520,8 @@
 #include "model/SetLiveStreamOptimizedFeatureConfigResult.h"
 #include "model/SetLiveStreamsNotifyUrlConfigRequest.h"
 #include "model/SetLiveStreamsNotifyUrlConfigResult.h"
+#include "model/SetSnapshotCallbackAuthRequest.h"
+#include "model/SetSnapshotCallbackAuthResult.h"
 #include "model/StartBoardRecordRequest.h"
 #include "model/StartBoardRecordResult.h"
 #include "model/StartCasterRequest.h"
@@ -560,6 +578,10 @@
 #include "model/UpdateLiveSnapshotDetectPornConfigResult.h"
 #include "model/UpdateLiveStreamMonitorRequest.h"
 #include "model/UpdateLiveStreamMonitorResult.h"
+#include "model/UpdateLiveStreamWatermarkRequest.h"
+#include "model/UpdateLiveStreamWatermarkResult.h"
+#include "model/UpdateLiveStreamWatermarkRuleRequest.h"
+#include "model/UpdateLiveStreamWatermarkRuleResult.h"
 #include "model/UpdateLiveTopLevelDomainRequest.h"
 #include "model/UpdateLiveTopLevelDomainResult.h"
 #include "model/UpdateMixStreamRequest.h"
@@ -644,6 +666,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AddLiveStreamTranscodeResult> AddLiveStreamTranscodeOutcome;
 			typedef std::future<AddLiveStreamTranscodeOutcome> AddLiveStreamTranscodeOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::AddLiveStreamTranscodeRequest&, const AddLiveStreamTranscodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddLiveStreamTranscodeAsyncHandler;
+			typedef Outcome<Error, Model::AddLiveStreamWatermarkResult> AddLiveStreamWatermarkOutcome;
+			typedef std::future<AddLiveStreamWatermarkOutcome> AddLiveStreamWatermarkOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::AddLiveStreamWatermarkRequest&, const AddLiveStreamWatermarkOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddLiveStreamWatermarkAsyncHandler;
+			typedef Outcome<Error, Model::AddLiveStreamWatermarkRuleResult> AddLiveStreamWatermarkRuleOutcome;
+			typedef std::future<AddLiveStreamWatermarkRuleOutcome> AddLiveStreamWatermarkRuleOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::AddLiveStreamWatermarkRuleRequest&, const AddLiveStreamWatermarkRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddLiveStreamWatermarkRuleAsyncHandler;
 			typedef Outcome<Error, Model::AddMultiRateConfigResult> AddMultiRateConfigOutcome;
 			typedef std::future<AddMultiRateConfigOutcome> AddMultiRateConfigOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::AddMultiRateConfigRequest&, const AddMultiRateConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddMultiRateConfigAsyncHandler;
@@ -815,6 +843,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteLiveStreamTranscodeResult> DeleteLiveStreamTranscodeOutcome;
 			typedef std::future<DeleteLiveStreamTranscodeOutcome> DeleteLiveStreamTranscodeOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DeleteLiveStreamTranscodeRequest&, const DeleteLiveStreamTranscodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLiveStreamTranscodeAsyncHandler;
+			typedef Outcome<Error, Model::DeleteLiveStreamWatermarkResult> DeleteLiveStreamWatermarkOutcome;
+			typedef std::future<DeleteLiveStreamWatermarkOutcome> DeleteLiveStreamWatermarkOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DeleteLiveStreamWatermarkRequest&, const DeleteLiveStreamWatermarkOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLiveStreamWatermarkAsyncHandler;
+			typedef Outcome<Error, Model::DeleteLiveStreamWatermarkRuleResult> DeleteLiveStreamWatermarkRuleOutcome;
+			typedef std::future<DeleteLiveStreamWatermarkRuleOutcome> DeleteLiveStreamWatermarkRuleOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DeleteLiveStreamWatermarkRuleRequest&, const DeleteLiveStreamWatermarkRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLiveStreamWatermarkRuleAsyncHandler;
 			typedef Outcome<Error, Model::DeleteLiveStreamsNotifyUrlConfigResult> DeleteLiveStreamsNotifyUrlConfigOutcome;
 			typedef std::future<DeleteLiveStreamsNotifyUrlConfigOutcome> DeleteLiveStreamsNotifyUrlConfigOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DeleteLiveStreamsNotifyUrlConfigRequest&, const DeleteLiveStreamsNotifyUrlConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLiveStreamsNotifyUrlConfigAsyncHandler;
@@ -833,6 +867,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteRoomResult> DeleteRoomOutcome;
 			typedef std::future<DeleteRoomOutcome> DeleteRoomOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DeleteRoomRequest&, const DeleteRoomOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRoomAsyncHandler;
+			typedef Outcome<Error, Model::DeleteSnapshotCallbackAuthResult> DeleteSnapshotCallbackAuthOutcome;
+			typedef std::future<DeleteSnapshotCallbackAuthOutcome> DeleteSnapshotCallbackAuthOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DeleteSnapshotCallbackAuthRequest&, const DeleteSnapshotCallbackAuthOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSnapshotCallbackAuthAsyncHandler;
 			typedef Outcome<Error, Model::DeleteStudioLayoutResult> DeleteStudioLayoutOutcome;
 			typedef std::future<DeleteStudioLayoutOutcome> DeleteStudioLayoutOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DeleteStudioLayoutRequest&, const DeleteStudioLayoutOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteStudioLayoutAsyncHandler;
@@ -1079,6 +1116,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeLiveStreamTranscodeStreamNumResult> DescribeLiveStreamTranscodeStreamNumOutcome;
 			typedef std::future<DescribeLiveStreamTranscodeStreamNumOutcome> DescribeLiveStreamTranscodeStreamNumOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DescribeLiveStreamTranscodeStreamNumRequest&, const DescribeLiveStreamTranscodeStreamNumOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveStreamTranscodeStreamNumAsyncHandler;
+			typedef Outcome<Error, Model::DescribeLiveStreamWatermarkRulesResult> DescribeLiveStreamWatermarkRulesOutcome;
+			typedef std::future<DescribeLiveStreamWatermarkRulesOutcome> DescribeLiveStreamWatermarkRulesOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DescribeLiveStreamWatermarkRulesRequest&, const DescribeLiveStreamWatermarkRulesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveStreamWatermarkRulesAsyncHandler;
+			typedef Outcome<Error, Model::DescribeLiveStreamWatermarksResult> DescribeLiveStreamWatermarksOutcome;
+			typedef std::future<DescribeLiveStreamWatermarksOutcome> DescribeLiveStreamWatermarksOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DescribeLiveStreamWatermarksRequest&, const DescribeLiveStreamWatermarksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveStreamWatermarksAsyncHandler;
 			typedef Outcome<Error, Model::DescribeLiveStreamsBlockListResult> DescribeLiveStreamsBlockListOutcome;
 			typedef std::future<DescribeLiveStreamsBlockListOutcome> DescribeLiveStreamsBlockListOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DescribeLiveStreamsBlockListRequest&, const DescribeLiveStreamsBlockListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveStreamsBlockListAsyncHandler;
@@ -1241,6 +1284,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::PublishLiveStagingConfigToProductionResult> PublishLiveStagingConfigToProductionOutcome;
 			typedef std::future<PublishLiveStagingConfigToProductionOutcome> PublishLiveStagingConfigToProductionOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::PublishLiveStagingConfigToProductionRequest&, const PublishLiveStagingConfigToProductionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PublishLiveStagingConfigToProductionAsyncHandler;
+			typedef Outcome<Error, Model::QuerySnapshotCallbackAuthResult> QuerySnapshotCallbackAuthOutcome;
+			typedef std::future<QuerySnapshotCallbackAuthOutcome> QuerySnapshotCallbackAuthOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::QuerySnapshotCallbackAuthRequest&, const QuerySnapshotCallbackAuthOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QuerySnapshotCallbackAuthAsyncHandler;
 			typedef Outcome<Error, Model::RealTimeRecordCommandResult> RealTimeRecordCommandOutcome;
 			typedef std::future<RealTimeRecordCommandOutcome> RealTimeRecordCommandOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::RealTimeRecordCommandRequest&, const RealTimeRecordCommandOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RealTimeRecordCommandAsyncHandler;
@@ -1298,6 +1344,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SetLiveStreamsNotifyUrlConfigResult> SetLiveStreamsNotifyUrlConfigOutcome;
 			typedef std::future<SetLiveStreamsNotifyUrlConfigOutcome> SetLiveStreamsNotifyUrlConfigOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::SetLiveStreamsNotifyUrlConfigRequest&, const SetLiveStreamsNotifyUrlConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetLiveStreamsNotifyUrlConfigAsyncHandler;
+			typedef Outcome<Error, Model::SetSnapshotCallbackAuthResult> SetSnapshotCallbackAuthOutcome;
+			typedef std::future<SetSnapshotCallbackAuthOutcome> SetSnapshotCallbackAuthOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::SetSnapshotCallbackAuthRequest&, const SetSnapshotCallbackAuthOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetSnapshotCallbackAuthAsyncHandler;
 			typedef Outcome<Error, Model::StartBoardRecordResult> StartBoardRecordOutcome;
 			typedef std::future<StartBoardRecordOutcome> StartBoardRecordOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::StartBoardRecordRequest&, const StartBoardRecordOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartBoardRecordAsyncHandler;
@@ -1382,6 +1431,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateLiveStreamMonitorResult> UpdateLiveStreamMonitorOutcome;
 			typedef std::future<UpdateLiveStreamMonitorOutcome> UpdateLiveStreamMonitorOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::UpdateLiveStreamMonitorRequest&, const UpdateLiveStreamMonitorOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateLiveStreamMonitorAsyncHandler;
+			typedef Outcome<Error, Model::UpdateLiveStreamWatermarkResult> UpdateLiveStreamWatermarkOutcome;
+			typedef std::future<UpdateLiveStreamWatermarkOutcome> UpdateLiveStreamWatermarkOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::UpdateLiveStreamWatermarkRequest&, const UpdateLiveStreamWatermarkOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateLiveStreamWatermarkAsyncHandler;
+			typedef Outcome<Error, Model::UpdateLiveStreamWatermarkRuleResult> UpdateLiveStreamWatermarkRuleOutcome;
+			typedef std::future<UpdateLiveStreamWatermarkRuleOutcome> UpdateLiveStreamWatermarkRuleOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::UpdateLiveStreamWatermarkRuleRequest&, const UpdateLiveStreamWatermarkRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateLiveStreamWatermarkRuleAsyncHandler;
 			typedef Outcome<Error, Model::UpdateLiveTopLevelDomainResult> UpdateLiveTopLevelDomainOutcome;
 			typedef std::future<UpdateLiveTopLevelDomainOutcome> UpdateLiveTopLevelDomainOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::UpdateLiveTopLevelDomainRequest&, const UpdateLiveTopLevelDomainOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateLiveTopLevelDomainAsyncHandler;
@@ -1465,6 +1520,12 @@ namespace AlibabaCloud
 			AddLiveStreamTranscodeOutcome addLiveStreamTranscode(const Model::AddLiveStreamTranscodeRequest &request)const;
 			void addLiveStreamTranscodeAsync(const Model::AddLiveStreamTranscodeRequest& request, const AddLiveStreamTranscodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddLiveStreamTranscodeOutcomeCallable addLiveStreamTranscodeCallable(const Model::AddLiveStreamTranscodeRequest& request) const;
+			AddLiveStreamWatermarkOutcome addLiveStreamWatermark(const Model::AddLiveStreamWatermarkRequest &request)const;
+			void addLiveStreamWatermarkAsync(const Model::AddLiveStreamWatermarkRequest& request, const AddLiveStreamWatermarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddLiveStreamWatermarkOutcomeCallable addLiveStreamWatermarkCallable(const Model::AddLiveStreamWatermarkRequest& request) const;
+			AddLiveStreamWatermarkRuleOutcome addLiveStreamWatermarkRule(const Model::AddLiveStreamWatermarkRuleRequest &request)const;
+			void addLiveStreamWatermarkRuleAsync(const Model::AddLiveStreamWatermarkRuleRequest& request, const AddLiveStreamWatermarkRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddLiveStreamWatermarkRuleOutcomeCallable addLiveStreamWatermarkRuleCallable(const Model::AddLiveStreamWatermarkRuleRequest& request) const;
 			AddMultiRateConfigOutcome addMultiRateConfig(const Model::AddMultiRateConfigRequest &request)const;
 			void addMultiRateConfigAsync(const Model::AddMultiRateConfigRequest& request, const AddMultiRateConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddMultiRateConfigOutcomeCallable addMultiRateConfigCallable(const Model::AddMultiRateConfigRequest& request) const;
@@ -1636,6 +1697,12 @@ namespace AlibabaCloud
 			DeleteLiveStreamTranscodeOutcome deleteLiveStreamTranscode(const Model::DeleteLiveStreamTranscodeRequest &request)const;
 			void deleteLiveStreamTranscodeAsync(const Model::DeleteLiveStreamTranscodeRequest& request, const DeleteLiveStreamTranscodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteLiveStreamTranscodeOutcomeCallable deleteLiveStreamTranscodeCallable(const Model::DeleteLiveStreamTranscodeRequest& request) const;
+			DeleteLiveStreamWatermarkOutcome deleteLiveStreamWatermark(const Model::DeleteLiveStreamWatermarkRequest &request)const;
+			void deleteLiveStreamWatermarkAsync(const Model::DeleteLiveStreamWatermarkRequest& request, const DeleteLiveStreamWatermarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteLiveStreamWatermarkOutcomeCallable deleteLiveStreamWatermarkCallable(const Model::DeleteLiveStreamWatermarkRequest& request) const;
+			DeleteLiveStreamWatermarkRuleOutcome deleteLiveStreamWatermarkRule(const Model::DeleteLiveStreamWatermarkRuleRequest &request)const;
+			void deleteLiveStreamWatermarkRuleAsync(const Model::DeleteLiveStreamWatermarkRuleRequest& request, const DeleteLiveStreamWatermarkRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteLiveStreamWatermarkRuleOutcomeCallable deleteLiveStreamWatermarkRuleCallable(const Model::DeleteLiveStreamWatermarkRuleRequest& request) const;
 			DeleteLiveStreamsNotifyUrlConfigOutcome deleteLiveStreamsNotifyUrlConfig(const Model::DeleteLiveStreamsNotifyUrlConfigRequest &request)const;
 			void deleteLiveStreamsNotifyUrlConfigAsync(const Model::DeleteLiveStreamsNotifyUrlConfigRequest& request, const DeleteLiveStreamsNotifyUrlConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteLiveStreamsNotifyUrlConfigOutcomeCallable deleteLiveStreamsNotifyUrlConfigCallable(const Model::DeleteLiveStreamsNotifyUrlConfigRequest& request) const;
@@ -1654,6 +1721,9 @@ namespace AlibabaCloud
 			DeleteRoomOutcome deleteRoom(const Model::DeleteRoomRequest &request)const;
 			void deleteRoomAsync(const Model::DeleteRoomRequest& request, const DeleteRoomAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteRoomOutcomeCallable deleteRoomCallable(const Model::DeleteRoomRequest& request) const;
+			DeleteSnapshotCallbackAuthOutcome deleteSnapshotCallbackAuth(const Model::DeleteSnapshotCallbackAuthRequest &request)const;
+			void deleteSnapshotCallbackAuthAsync(const Model::DeleteSnapshotCallbackAuthRequest& request, const DeleteSnapshotCallbackAuthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteSnapshotCallbackAuthOutcomeCallable deleteSnapshotCallbackAuthCallable(const Model::DeleteSnapshotCallbackAuthRequest& request) const;
 			DeleteStudioLayoutOutcome deleteStudioLayout(const Model::DeleteStudioLayoutRequest &request)const;
 			void deleteStudioLayoutAsync(const Model::DeleteStudioLayoutRequest& request, const DeleteStudioLayoutAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteStudioLayoutOutcomeCallable deleteStudioLayoutCallable(const Model::DeleteStudioLayoutRequest& request) const;
@@ -1900,6 +1970,12 @@ namespace AlibabaCloud
 			DescribeLiveStreamTranscodeStreamNumOutcome describeLiveStreamTranscodeStreamNum(const Model::DescribeLiveStreamTranscodeStreamNumRequest &request)const;
 			void describeLiveStreamTranscodeStreamNumAsync(const Model::DescribeLiveStreamTranscodeStreamNumRequest& request, const DescribeLiveStreamTranscodeStreamNumAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLiveStreamTranscodeStreamNumOutcomeCallable describeLiveStreamTranscodeStreamNumCallable(const Model::DescribeLiveStreamTranscodeStreamNumRequest& request) const;
+			DescribeLiveStreamWatermarkRulesOutcome describeLiveStreamWatermarkRules(const Model::DescribeLiveStreamWatermarkRulesRequest &request)const;
+			void describeLiveStreamWatermarkRulesAsync(const Model::DescribeLiveStreamWatermarkRulesRequest& request, const DescribeLiveStreamWatermarkRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeLiveStreamWatermarkRulesOutcomeCallable describeLiveStreamWatermarkRulesCallable(const Model::DescribeLiveStreamWatermarkRulesRequest& request) const;
+			DescribeLiveStreamWatermarksOutcome describeLiveStreamWatermarks(const Model::DescribeLiveStreamWatermarksRequest &request)const;
+			void describeLiveStreamWatermarksAsync(const Model::DescribeLiveStreamWatermarksRequest& request, const DescribeLiveStreamWatermarksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeLiveStreamWatermarksOutcomeCallable describeLiveStreamWatermarksCallable(const Model::DescribeLiveStreamWatermarksRequest& request) const;
 			DescribeLiveStreamsBlockListOutcome describeLiveStreamsBlockList(const Model::DescribeLiveStreamsBlockListRequest &request)const;
 			void describeLiveStreamsBlockListAsync(const Model::DescribeLiveStreamsBlockListRequest& request, const DescribeLiveStreamsBlockListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLiveStreamsBlockListOutcomeCallable describeLiveStreamsBlockListCallable(const Model::DescribeLiveStreamsBlockListRequest& request) const;
@@ -2062,6 +2138,9 @@ namespace AlibabaCloud
 			PublishLiveStagingConfigToProductionOutcome publishLiveStagingConfigToProduction(const Model::PublishLiveStagingConfigToProductionRequest &request)const;
 			void publishLiveStagingConfigToProductionAsync(const Model::PublishLiveStagingConfigToProductionRequest& request, const PublishLiveStagingConfigToProductionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			PublishLiveStagingConfigToProductionOutcomeCallable publishLiveStagingConfigToProductionCallable(const Model::PublishLiveStagingConfigToProductionRequest& request) const;
+			QuerySnapshotCallbackAuthOutcome querySnapshotCallbackAuth(const Model::QuerySnapshotCallbackAuthRequest &request)const;
+			void querySnapshotCallbackAuthAsync(const Model::QuerySnapshotCallbackAuthRequest& request, const QuerySnapshotCallbackAuthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QuerySnapshotCallbackAuthOutcomeCallable querySnapshotCallbackAuthCallable(const Model::QuerySnapshotCallbackAuthRequest& request) const;
 			RealTimeRecordCommandOutcome realTimeRecordCommand(const Model::RealTimeRecordCommandRequest &request)const;
 			void realTimeRecordCommandAsync(const Model::RealTimeRecordCommandRequest& request, const RealTimeRecordCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RealTimeRecordCommandOutcomeCallable realTimeRecordCommandCallable(const Model::RealTimeRecordCommandRequest& request) const;
@@ -2119,6 +2198,9 @@ namespace AlibabaCloud
 			SetLiveStreamsNotifyUrlConfigOutcome setLiveStreamsNotifyUrlConfig(const Model::SetLiveStreamsNotifyUrlConfigRequest &request)const;
 			void setLiveStreamsNotifyUrlConfigAsync(const Model::SetLiveStreamsNotifyUrlConfigRequest& request, const SetLiveStreamsNotifyUrlConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetLiveStreamsNotifyUrlConfigOutcomeCallable setLiveStreamsNotifyUrlConfigCallable(const Model::SetLiveStreamsNotifyUrlConfigRequest& request) const;
+			SetSnapshotCallbackAuthOutcome setSnapshotCallbackAuth(const Model::SetSnapshotCallbackAuthRequest &request)const;
+			void setSnapshotCallbackAuthAsync(const Model::SetSnapshotCallbackAuthRequest& request, const SetSnapshotCallbackAuthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SetSnapshotCallbackAuthOutcomeCallable setSnapshotCallbackAuthCallable(const Model::SetSnapshotCallbackAuthRequest& request) const;
 			StartBoardRecordOutcome startBoardRecord(const Model::StartBoardRecordRequest &request)const;
 			void startBoardRecordAsync(const Model::StartBoardRecordRequest& request, const StartBoardRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StartBoardRecordOutcomeCallable startBoardRecordCallable(const Model::StartBoardRecordRequest& request) const;
@@ -2203,6 +2285,12 @@ namespace AlibabaCloud
 			UpdateLiveStreamMonitorOutcome updateLiveStreamMonitor(const Model::UpdateLiveStreamMonitorRequest &request)const;
 			void updateLiveStreamMonitorAsync(const Model::UpdateLiveStreamMonitorRequest& request, const UpdateLiveStreamMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateLiveStreamMonitorOutcomeCallable updateLiveStreamMonitorCallable(const Model::UpdateLiveStreamMonitorRequest& request) const;
+			UpdateLiveStreamWatermarkOutcome updateLiveStreamWatermark(const Model::UpdateLiveStreamWatermarkRequest &request)const;
+			void updateLiveStreamWatermarkAsync(const Model::UpdateLiveStreamWatermarkRequest& request, const UpdateLiveStreamWatermarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateLiveStreamWatermarkOutcomeCallable updateLiveStreamWatermarkCallable(const Model::UpdateLiveStreamWatermarkRequest& request) const;
+			UpdateLiveStreamWatermarkRuleOutcome updateLiveStreamWatermarkRule(const Model::UpdateLiveStreamWatermarkRuleRequest &request)const;
+			void updateLiveStreamWatermarkRuleAsync(const Model::UpdateLiveStreamWatermarkRuleRequest& request, const UpdateLiveStreamWatermarkRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateLiveStreamWatermarkRuleOutcomeCallable updateLiveStreamWatermarkRuleCallable(const Model::UpdateLiveStreamWatermarkRuleRequest& request) const;
 			UpdateLiveTopLevelDomainOutcome updateLiveTopLevelDomain(const Model::UpdateLiveTopLevelDomainRequest &request)const;
 			void updateLiveTopLevelDomainAsync(const Model::UpdateLiveTopLevelDomainRequest& request, const UpdateLiveTopLevelDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateLiveTopLevelDomainOutcomeCallable updateLiveTopLevelDomainCallable(const Model::UpdateLiveTopLevelDomainRequest& request) const;

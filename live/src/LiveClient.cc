@@ -879,6 +879,78 @@ LiveClient::AddLiveStreamTranscodeOutcomeCallable LiveClient::addLiveStreamTrans
 	return task->get_future();
 }
 
+LiveClient::AddLiveStreamWatermarkOutcome LiveClient::addLiveStreamWatermark(const AddLiveStreamWatermarkRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddLiveStreamWatermarkOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddLiveStreamWatermarkOutcome(AddLiveStreamWatermarkResult(outcome.result()));
+	else
+		return AddLiveStreamWatermarkOutcome(outcome.error());
+}
+
+void LiveClient::addLiveStreamWatermarkAsync(const AddLiveStreamWatermarkRequest& request, const AddLiveStreamWatermarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addLiveStreamWatermark(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::AddLiveStreamWatermarkOutcomeCallable LiveClient::addLiveStreamWatermarkCallable(const AddLiveStreamWatermarkRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddLiveStreamWatermarkOutcome()>>(
+			[this, request]()
+			{
+			return this->addLiveStreamWatermark(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::AddLiveStreamWatermarkRuleOutcome LiveClient::addLiveStreamWatermarkRule(const AddLiveStreamWatermarkRuleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddLiveStreamWatermarkRuleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddLiveStreamWatermarkRuleOutcome(AddLiveStreamWatermarkRuleResult(outcome.result()));
+	else
+		return AddLiveStreamWatermarkRuleOutcome(outcome.error());
+}
+
+void LiveClient::addLiveStreamWatermarkRuleAsync(const AddLiveStreamWatermarkRuleRequest& request, const AddLiveStreamWatermarkRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addLiveStreamWatermarkRule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::AddLiveStreamWatermarkRuleOutcomeCallable LiveClient::addLiveStreamWatermarkRuleCallable(const AddLiveStreamWatermarkRuleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddLiveStreamWatermarkRuleOutcome()>>(
+			[this, request]()
+			{
+			return this->addLiveStreamWatermarkRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::AddMultiRateConfigOutcome LiveClient::addMultiRateConfig(const AddMultiRateConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2931,6 +3003,78 @@ LiveClient::DeleteLiveStreamTranscodeOutcomeCallable LiveClient::deleteLiveStrea
 	return task->get_future();
 }
 
+LiveClient::DeleteLiveStreamWatermarkOutcome LiveClient::deleteLiveStreamWatermark(const DeleteLiveStreamWatermarkRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteLiveStreamWatermarkOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteLiveStreamWatermarkOutcome(DeleteLiveStreamWatermarkResult(outcome.result()));
+	else
+		return DeleteLiveStreamWatermarkOutcome(outcome.error());
+}
+
+void LiveClient::deleteLiveStreamWatermarkAsync(const DeleteLiveStreamWatermarkRequest& request, const DeleteLiveStreamWatermarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteLiveStreamWatermark(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DeleteLiveStreamWatermarkOutcomeCallable LiveClient::deleteLiveStreamWatermarkCallable(const DeleteLiveStreamWatermarkRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteLiveStreamWatermarkOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteLiveStreamWatermark(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::DeleteLiveStreamWatermarkRuleOutcome LiveClient::deleteLiveStreamWatermarkRule(const DeleteLiveStreamWatermarkRuleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteLiveStreamWatermarkRuleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteLiveStreamWatermarkRuleOutcome(DeleteLiveStreamWatermarkRuleResult(outcome.result()));
+	else
+		return DeleteLiveStreamWatermarkRuleOutcome(outcome.error());
+}
+
+void LiveClient::deleteLiveStreamWatermarkRuleAsync(const DeleteLiveStreamWatermarkRuleRequest& request, const DeleteLiveStreamWatermarkRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteLiveStreamWatermarkRule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DeleteLiveStreamWatermarkRuleOutcomeCallable LiveClient::deleteLiveStreamWatermarkRuleCallable(const DeleteLiveStreamWatermarkRuleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteLiveStreamWatermarkRuleOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteLiveStreamWatermarkRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::DeleteLiveStreamsNotifyUrlConfigOutcome LiveClient::deleteLiveStreamsNotifyUrlConfig(const DeleteLiveStreamsNotifyUrlConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3141,6 +3285,42 @@ LiveClient::DeleteRoomOutcomeCallable LiveClient::deleteRoomCallable(const Delet
 			[this, request]()
 			{
 			return this->deleteRoom(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::DeleteSnapshotCallbackAuthOutcome LiveClient::deleteSnapshotCallbackAuth(const DeleteSnapshotCallbackAuthRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteSnapshotCallbackAuthOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteSnapshotCallbackAuthOutcome(DeleteSnapshotCallbackAuthResult(outcome.result()));
+	else
+		return DeleteSnapshotCallbackAuthOutcome(outcome.error());
+}
+
+void LiveClient::deleteSnapshotCallbackAuthAsync(const DeleteSnapshotCallbackAuthRequest& request, const DeleteSnapshotCallbackAuthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteSnapshotCallbackAuth(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DeleteSnapshotCallbackAuthOutcomeCallable LiveClient::deleteSnapshotCallbackAuthCallable(const DeleteSnapshotCallbackAuthRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteSnapshotCallbackAuthOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteSnapshotCallbackAuth(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -6099,6 +6279,78 @@ LiveClient::DescribeLiveStreamTranscodeStreamNumOutcomeCallable LiveClient::desc
 	return task->get_future();
 }
 
+LiveClient::DescribeLiveStreamWatermarkRulesOutcome LiveClient::describeLiveStreamWatermarkRules(const DescribeLiveStreamWatermarkRulesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeLiveStreamWatermarkRulesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeLiveStreamWatermarkRulesOutcome(DescribeLiveStreamWatermarkRulesResult(outcome.result()));
+	else
+		return DescribeLiveStreamWatermarkRulesOutcome(outcome.error());
+}
+
+void LiveClient::describeLiveStreamWatermarkRulesAsync(const DescribeLiveStreamWatermarkRulesRequest& request, const DescribeLiveStreamWatermarkRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeLiveStreamWatermarkRules(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DescribeLiveStreamWatermarkRulesOutcomeCallable LiveClient::describeLiveStreamWatermarkRulesCallable(const DescribeLiveStreamWatermarkRulesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeLiveStreamWatermarkRulesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeLiveStreamWatermarkRules(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::DescribeLiveStreamWatermarksOutcome LiveClient::describeLiveStreamWatermarks(const DescribeLiveStreamWatermarksRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeLiveStreamWatermarksOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeLiveStreamWatermarksOutcome(DescribeLiveStreamWatermarksResult(outcome.result()));
+	else
+		return DescribeLiveStreamWatermarksOutcome(outcome.error());
+}
+
+void LiveClient::describeLiveStreamWatermarksAsync(const DescribeLiveStreamWatermarksRequest& request, const DescribeLiveStreamWatermarksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeLiveStreamWatermarks(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DescribeLiveStreamWatermarksOutcomeCallable LiveClient::describeLiveStreamWatermarksCallable(const DescribeLiveStreamWatermarksRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeLiveStreamWatermarksOutcome()>>(
+			[this, request]()
+			{
+			return this->describeLiveStreamWatermarks(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::DescribeLiveStreamsBlockListOutcome LiveClient::describeLiveStreamsBlockList(const DescribeLiveStreamsBlockListRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -8043,6 +8295,42 @@ LiveClient::PublishLiveStagingConfigToProductionOutcomeCallable LiveClient::publ
 	return task->get_future();
 }
 
+LiveClient::QuerySnapshotCallbackAuthOutcome LiveClient::querySnapshotCallbackAuth(const QuerySnapshotCallbackAuthRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QuerySnapshotCallbackAuthOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QuerySnapshotCallbackAuthOutcome(QuerySnapshotCallbackAuthResult(outcome.result()));
+	else
+		return QuerySnapshotCallbackAuthOutcome(outcome.error());
+}
+
+void LiveClient::querySnapshotCallbackAuthAsync(const QuerySnapshotCallbackAuthRequest& request, const QuerySnapshotCallbackAuthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, querySnapshotCallbackAuth(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::QuerySnapshotCallbackAuthOutcomeCallable LiveClient::querySnapshotCallbackAuthCallable(const QuerySnapshotCallbackAuthRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QuerySnapshotCallbackAuthOutcome()>>(
+			[this, request]()
+			{
+			return this->querySnapshotCallbackAuth(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::RealTimeRecordCommandOutcome LiveClient::realTimeRecordCommand(const RealTimeRecordCommandRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -8721,6 +9009,42 @@ LiveClient::SetLiveStreamsNotifyUrlConfigOutcomeCallable LiveClient::setLiveStre
 			[this, request]()
 			{
 			return this->setLiveStreamsNotifyUrlConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::SetSnapshotCallbackAuthOutcome LiveClient::setSnapshotCallbackAuth(const SetSnapshotCallbackAuthRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetSnapshotCallbackAuthOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetSnapshotCallbackAuthOutcome(SetSnapshotCallbackAuthResult(outcome.result()));
+	else
+		return SetSnapshotCallbackAuthOutcome(outcome.error());
+}
+
+void LiveClient::setSnapshotCallbackAuthAsync(const SetSnapshotCallbackAuthRequest& request, const SetSnapshotCallbackAuthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setSnapshotCallbackAuth(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::SetSnapshotCallbackAuthOutcomeCallable LiveClient::setSnapshotCallbackAuthCallable(const SetSnapshotCallbackAuthRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetSnapshotCallbackAuthOutcome()>>(
+			[this, request]()
+			{
+			return this->setSnapshotCallbackAuth(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -9729,6 +10053,78 @@ LiveClient::UpdateLiveStreamMonitorOutcomeCallable LiveClient::updateLiveStreamM
 			[this, request]()
 			{
 			return this->updateLiveStreamMonitor(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::UpdateLiveStreamWatermarkOutcome LiveClient::updateLiveStreamWatermark(const UpdateLiveStreamWatermarkRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateLiveStreamWatermarkOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateLiveStreamWatermarkOutcome(UpdateLiveStreamWatermarkResult(outcome.result()));
+	else
+		return UpdateLiveStreamWatermarkOutcome(outcome.error());
+}
+
+void LiveClient::updateLiveStreamWatermarkAsync(const UpdateLiveStreamWatermarkRequest& request, const UpdateLiveStreamWatermarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateLiveStreamWatermark(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::UpdateLiveStreamWatermarkOutcomeCallable LiveClient::updateLiveStreamWatermarkCallable(const UpdateLiveStreamWatermarkRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateLiveStreamWatermarkOutcome()>>(
+			[this, request]()
+			{
+			return this->updateLiveStreamWatermark(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::UpdateLiveStreamWatermarkRuleOutcome LiveClient::updateLiveStreamWatermarkRule(const UpdateLiveStreamWatermarkRuleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateLiveStreamWatermarkRuleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateLiveStreamWatermarkRuleOutcome(UpdateLiveStreamWatermarkRuleResult(outcome.result()));
+	else
+		return UpdateLiveStreamWatermarkRuleOutcome(outcome.error());
+}
+
+void LiveClient::updateLiveStreamWatermarkRuleAsync(const UpdateLiveStreamWatermarkRuleRequest& request, const UpdateLiveStreamWatermarkRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateLiveStreamWatermarkRule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::UpdateLiveStreamWatermarkRuleOutcomeCallable LiveClient::updateLiveStreamWatermarkRuleCallable(const UpdateLiveStreamWatermarkRuleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateLiveStreamWatermarkRuleOutcome()>>(
+			[this, request]()
+			{
+			return this->updateLiveStreamWatermarkRule(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

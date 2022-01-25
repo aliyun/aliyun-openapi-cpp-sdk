@@ -71,6 +71,13 @@ void DescribeStudioLayoutsResult::parse(const std::string &payload)
 				screenInputConfigListObject.heightNormalized = std::stof(valueStudioLayoutsStudioLayoutScreenInputConfigListScreenInputConfig["HeightNormalized"].asString());
 			if(!valueStudioLayoutsStudioLayoutScreenInputConfigListScreenInputConfig["PortraitType"].isNull())
 				screenInputConfigListObject.portraitType = std::stoi(valueStudioLayoutsStudioLayoutScreenInputConfigListScreenInputConfig["PortraitType"].asString());
+			if(!valueStudioLayoutsStudioLayoutScreenInputConfigListScreenInputConfig["OnlyAudio"].isNull())
+				screenInputConfigListObject.onlyAudio = valueStudioLayoutsStudioLayoutScreenInputConfigListScreenInputConfig["OnlyAudio"].asString() == "true";
+			auto audioConfigNode = value["AudioConfig"];
+			if(!audioConfigNode["VolumeRate"].isNull())
+				screenInputConfigListObject.audioConfig.volumeRate = std::stof(audioConfigNode["VolumeRate"].asString());
+			if(!audioConfigNode["ValidChannel"].isNull())
+				screenInputConfigListObject.audioConfig.validChannel = audioConfigNode["ValidChannel"].asString();
 			studioLayoutsObject.screenInputConfigList.push_back(screenInputConfigListObject);
 		}
 		auto allMediaInputConfigListNode = valueStudioLayoutsStudioLayout["MediaInputConfigList"]["MediaInputConfig"];

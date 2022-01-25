@@ -48,8 +48,14 @@ namespace AlibabaCloud
 					};
 					struct ScreenInputConfig
 					{
+						struct AudioConfig
+						{
+							std::string validChannel;
+							float volumeRate;
+						};
 						std::string positionY;
 						std::string color;
+						AudioConfig audioConfig;
 						float heightNormalized;
 						int portraitType;
 						int index;
@@ -57,6 +63,7 @@ namespace AlibabaCloud
 						std::string channelId;
 						std::string videoResourceId;
 						std::string positionX;
+						bool onlyAudio;
 					};
 					struct MediaInputConfig
 					{
