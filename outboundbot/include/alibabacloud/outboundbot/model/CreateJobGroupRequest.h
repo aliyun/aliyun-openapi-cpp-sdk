@@ -37,33 +37,39 @@ namespace AlibabaCloud
 
 				std::string getRecallStrategyJson()const;
 				void setRecallStrategyJson(const std::string& recallStrategyJson);
-				std::string getJobGroupDescription()const;
-				void setJobGroupDescription(const std::string& jobGroupDescription);
 				std::string getJobGroupName()const;
 				void setJobGroupName(const std::string& jobGroupName);
 				std::string getScriptId()const;
 				void setScriptId(const std::string& scriptId);
-				std::vector<std::string> getCallingNumber()const;
-				void setCallingNumber(const std::vector<std::string>& callingNumber);
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
 				std::string getStrategyJson()const;
 				void setStrategyJson(const std::string& strategyJson);
 				long getRingingDuration()const;
 				void setRingingDuration(long ringingDuration);
 				std::string getScenarioId()const;
 				void setScenarioId(const std::string& scenarioId);
+				std::string getPriority()const;
+				void setPriority(const std::string& priority);
+				std::string getJobGroupDescription()const;
+				void setJobGroupDescription(const std::string& jobGroupDescription);
+				std::vector<std::string> getCallingNumber()const;
+				void setCallingNumber(const std::vector<std::string>& callingNumber);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
+				long getMinConcurrency()const;
+				void setMinConcurrency(long minConcurrency);
 
             private:
 				std::string recallStrategyJson_;
-				std::string jobGroupDescription_;
 				std::string jobGroupName_;
 				std::string scriptId_;
-				std::vector<std::string> callingNumber_;
-				std::string instanceId_;
 				std::string strategyJson_;
 				long ringingDuration_;
 				std::string scenarioId_;
+				std::string priority_;
+				std::string jobGroupDescription_;
+				std::vector<std::string> callingNumber_;
+				std::string instanceId_;
+				long minConcurrency_;
 
 			};
 		}

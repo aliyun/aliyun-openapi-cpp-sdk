@@ -105,10 +105,12 @@ namespace AlibabaCloud
 					std::string jobDataParsingTaskId;
 					std::string jobGroupName;
 					std::string scriptVersion;
+					std::string priority;
 					std::string scriptId;
 					std::string jobGroupDescription;
 					Result result;
 					long ringingDuration;
+					long minConcurrency;
 					std::string jobGroupId;
 					std::string scriptName;
 					long creationTime;

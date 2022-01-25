@@ -34,8 +34,10 @@ namespace AlibabaCloud
 			public:
 				struct JobGroup
 				{
+					std::string priority;
 					std::string id;
 					long ringingDuration;
+					long minConcurrency;
 				};
 
 

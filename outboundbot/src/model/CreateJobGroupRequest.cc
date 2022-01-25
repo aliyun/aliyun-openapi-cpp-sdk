@@ -38,17 +38,6 @@ void CreateJobGroupRequest::setRecallStrategyJson(const std::string& recallStrat
 	setParameter("RecallStrategyJson", recallStrategyJson);
 }
 
-std::string CreateJobGroupRequest::getJobGroupDescription()const
-{
-	return jobGroupDescription_;
-}
-
-void CreateJobGroupRequest::setJobGroupDescription(const std::string& jobGroupDescription)
-{
-	jobGroupDescription_ = jobGroupDescription;
-	setParameter("JobGroupDescription", jobGroupDescription);
-}
-
 std::string CreateJobGroupRequest::getJobGroupName()const
 {
 	return jobGroupName_;
@@ -69,30 +58,6 @@ void CreateJobGroupRequest::setScriptId(const std::string& scriptId)
 {
 	scriptId_ = scriptId;
 	setParameter("ScriptId", scriptId);
-}
-
-std::vector<std::string> CreateJobGroupRequest::getCallingNumber()const
-{
-	return callingNumber_;
-}
-
-void CreateJobGroupRequest::setCallingNumber(const std::vector<std::string>& callingNumber)
-{
-	callingNumber_ = callingNumber;
-	for(int dep1 = 0; dep1!= callingNumber.size(); dep1++) {
-		setParameter("CallingNumber."+ std::to_string(dep1), callingNumber.at(dep1));
-	}
-}
-
-std::string CreateJobGroupRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void CreateJobGroupRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
 }
 
 std::string CreateJobGroupRequest::getStrategyJson()const
@@ -126,5 +91,62 @@ void CreateJobGroupRequest::setScenarioId(const std::string& scenarioId)
 {
 	scenarioId_ = scenarioId;
 	setParameter("ScenarioId", scenarioId);
+}
+
+std::string CreateJobGroupRequest::getPriority()const
+{
+	return priority_;
+}
+
+void CreateJobGroupRequest::setPriority(const std::string& priority)
+{
+	priority_ = priority;
+	setParameter("Priority", priority);
+}
+
+std::string CreateJobGroupRequest::getJobGroupDescription()const
+{
+	return jobGroupDescription_;
+}
+
+void CreateJobGroupRequest::setJobGroupDescription(const std::string& jobGroupDescription)
+{
+	jobGroupDescription_ = jobGroupDescription;
+	setParameter("JobGroupDescription", jobGroupDescription);
+}
+
+std::vector<std::string> CreateJobGroupRequest::getCallingNumber()const
+{
+	return callingNumber_;
+}
+
+void CreateJobGroupRequest::setCallingNumber(const std::vector<std::string>& callingNumber)
+{
+	callingNumber_ = callingNumber;
+	for(int dep1 = 0; dep1!= callingNumber.size(); dep1++) {
+		setParameter("CallingNumber."+ std::to_string(dep1), callingNumber.at(dep1));
+	}
+}
+
+std::string CreateJobGroupRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void CreateJobGroupRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setParameter("InstanceId", instanceId);
+}
+
+long CreateJobGroupRequest::getMinConcurrency()const
+{
+	return minConcurrency_;
+}
+
+void CreateJobGroupRequest::setMinConcurrency(long minConcurrency)
+{
+	minConcurrency_ = minConcurrency;
+	setParameter("MinConcurrency", std::to_string(minConcurrency));
 }
 

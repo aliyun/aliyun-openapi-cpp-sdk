@@ -60,6 +60,50 @@ void CreateBatchRepeatJobRequest::setScriptId(const std::string& scriptId)
 	setParameter("ScriptId", scriptId);
 }
 
+std::string CreateBatchRepeatJobRequest::getFilterStatus()const
+{
+	return filterStatus_;
+}
+
+void CreateBatchRepeatJobRequest::setFilterStatus(const std::string& filterStatus)
+{
+	filterStatus_ = filterStatus;
+	setParameter("FilterStatus", filterStatus);
+}
+
+std::string CreateBatchRepeatJobRequest::getStrategyJson()const
+{
+	return strategyJson_;
+}
+
+void CreateBatchRepeatJobRequest::setStrategyJson(const std::string& strategyJson)
+{
+	strategyJson_ = strategyJson;
+	setParameter("StrategyJson", strategyJson);
+}
+
+long CreateBatchRepeatJobRequest::getRingingDuration()const
+{
+	return ringingDuration_;
+}
+
+void CreateBatchRepeatJobRequest::setRingingDuration(long ringingDuration)
+{
+	ringingDuration_ = ringingDuration;
+	setParameter("RingingDuration", std::to_string(ringingDuration));
+}
+
+std::string CreateBatchRepeatJobRequest::getPriority()const
+{
+	return priority_;
+}
+
+void CreateBatchRepeatJobRequest::setPriority(const std::string& priority)
+{
+	priority_ = priority;
+	setParameter("Priority", priority);
+}
+
 std::vector<std::string> CreateBatchRepeatJobRequest::getCallingNumber()const
 {
 	return callingNumber_;
@@ -84,28 +128,6 @@ void CreateBatchRepeatJobRequest::setInstanceId(const std::string& instanceId)
 	setParameter("InstanceId", instanceId);
 }
 
-std::string CreateBatchRepeatJobRequest::getFilterStatus()const
-{
-	return filterStatus_;
-}
-
-void CreateBatchRepeatJobRequest::setFilterStatus(const std::string& filterStatus)
-{
-	filterStatus_ = filterStatus;
-	setParameter("FilterStatus", filterStatus);
-}
-
-std::string CreateBatchRepeatJobRequest::getStrategyJson()const
-{
-	return strategyJson_;
-}
-
-void CreateBatchRepeatJobRequest::setStrategyJson(const std::string& strategyJson)
-{
-	strategyJson_ = strategyJson;
-	setParameter("StrategyJson", strategyJson);
-}
-
 std::string CreateBatchRepeatJobRequest::getName()const
 {
 	return name_;
@@ -128,14 +150,14 @@ void CreateBatchRepeatJobRequest::setSourceGroupId(const std::string& sourceGrou
 	setParameter("SourceGroupId", sourceGroupId);
 }
 
-long CreateBatchRepeatJobRequest::getRingingDuration()const
+long CreateBatchRepeatJobRequest::getMinConcurrency()const
 {
-	return ringingDuration_;
+	return minConcurrency_;
 }
 
-void CreateBatchRepeatJobRequest::setRingingDuration(long ringingDuration)
+void CreateBatchRepeatJobRequest::setMinConcurrency(long minConcurrency)
 {
-	ringingDuration_ = ringingDuration;
-	setParameter("RingingDuration", std::to_string(ringingDuration));
+	minConcurrency_ = minConcurrency;
+	setParameter("MinConcurrency", std::to_string(minConcurrency));
 }
 

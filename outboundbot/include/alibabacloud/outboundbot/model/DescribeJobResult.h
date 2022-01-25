@@ -97,6 +97,7 @@ namespace AlibabaCloud
 						int duration;
 						std::string brief;
 						std::string callingNumber;
+						long ringingDuration;
 						std::string endReason;
 						Contact3 contact3;
 						std::string hangUpDirection;

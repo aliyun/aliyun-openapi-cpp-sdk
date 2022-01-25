@@ -104,6 +104,17 @@ void ModifyJobGroupRequest::setJobGroupStatus(const std::string& jobGroupStatus)
 	setParameter("JobGroupStatus", jobGroupStatus);
 }
 
+std::string ModifyJobGroupRequest::getPriority()const
+{
+	return priority_;
+}
+
+void ModifyJobGroupRequest::setPriority(const std::string& priority)
+{
+	priority_ = priority;
+	setParameter("Priority", priority);
+}
+
 std::vector<std::string> ModifyJobGroupRequest::getCallingNumber()const
 {
 	return callingNumber_;
@@ -148,5 +159,16 @@ void ModifyJobGroupRequest::setName(const std::string& name)
 {
 	name_ = name;
 	setParameter("Name", name);
+}
+
+long ModifyJobGroupRequest::getMinConcurrency()const
+{
+	return minConcurrency_;
+}
+
+void ModifyJobGroupRequest::setMinConcurrency(long minConcurrency)
+{
+	minConcurrency_ = minConcurrency;
+	setParameter("MinConcurrency", std::to_string(minConcurrency));
 }
 

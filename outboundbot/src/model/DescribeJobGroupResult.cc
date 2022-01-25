@@ -66,6 +66,10 @@ void DescribeJobGroupResult::parse(const std::string &payload)
 		jobGroup_.scriptVersion = jobGroupNode["ScriptVersion"].asString();
 	if(!jobGroupNode["RingingDuration"].isNull())
 		jobGroup_.ringingDuration = std::stol(jobGroupNode["RingingDuration"].asString());
+	if(!jobGroupNode["Priority"].isNull())
+		jobGroup_.priority = jobGroupNode["Priority"].asString();
+	if(!jobGroupNode["MinConcurrency"].isNull())
+		jobGroup_.minConcurrency = std::stol(jobGroupNode["MinConcurrency"].asString());
 	auto exportProgressNode = jobGroupNode["ExportProgress"];
 	if(!exportProgressNode["Status"].isNull())
 		jobGroup_.exportProgress.status = exportProgressNode["Status"].asString();

@@ -44,6 +44,10 @@ void CreateBatchRepeatJobResult::parse(const std::string &payload)
 		jobGroup_.id = jobGroupNode["Id"].asString();
 	if(!jobGroupNode["RingingDuration"].isNull())
 		jobGroup_.ringingDuration = std::stol(jobGroupNode["RingingDuration"].asString());
+	if(!jobGroupNode["Priority"].isNull())
+		jobGroup_.priority = jobGroupNode["Priority"].asString();
+	if(!jobGroupNode["MinConcurrency"].isNull())
+		jobGroup_.minConcurrency = std::stol(jobGroupNode["MinConcurrency"].asString());
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 	if(!value["Code"].isNull())
