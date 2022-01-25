@@ -56,16 +56,22 @@
 #include "model/CheckReadableResult.h"
 #include "model/CreateEmbedTokenRequest.h"
 #include "model/CreateEmbedTokenResult.h"
+#include "model/CreateTicketRequest.h"
+#include "model/CreateTicketResult.h"
 #include "model/CreateUserGroupRequest.h"
 #include "model/CreateUserGroupResult.h"
 #include "model/DelayEmbedTokenRequest.h"
 #include "model/DelayEmbedTokenResult.h"
+#include "model/DelayTicketExpireTimeRequest.h"
+#include "model/DelayTicketExpireTimeResult.h"
 #include "model/DeleteDataLevelPermissionRuleUsersRequest.h"
 #include "model/DeleteDataLevelPermissionRuleUsersResult.h"
 #include "model/DeleteDataLevelRuleConfigRequest.h"
 #include "model/DeleteDataLevelRuleConfigResult.h"
 #include "model/DeleteEmbedTokenRequest.h"
 #include "model/DeleteEmbedTokenResult.h"
+#include "model/DeleteTicketRequest.h"
+#include "model/DeleteTicketResult.h"
 #include "model/DeleteUserRequest.h"
 #include "model/DeleteUserResult.h"
 #include "model/DeleteUserFromWorkspaceRequest.h"
@@ -88,10 +94,16 @@
 #include "model/ListCubeDataLevelPermissionConfigResult.h"
 #include "model/ListDataLevelPermissionWhiteListRequest.h"
 #include "model/ListDataLevelPermissionWhiteListResult.h"
+#include "model/ListFavoriteReportsRequest.h"
+#include "model/ListFavoriteReportsResult.h"
 #include "model/ListPortalMenuAuthorizationRequest.h"
 #include "model/ListPortalMenuAuthorizationResult.h"
 #include "model/ListPortalMenusRequest.h"
 #include "model/ListPortalMenusResult.h"
+#include "model/ListRecentViewReportsRequest.h"
+#include "model/ListRecentViewReportsResult.h"
+#include "model/ListSharedReportsRequest.h"
+#include "model/ListSharedReportsResult.h"
 #include "model/ListUserGroupsByUserIdRequest.h"
 #include "model/ListUserGroupsByUserIdResult.h"
 #include "model/QueryDataServiceRequest.h"
@@ -118,6 +130,8 @@
 #include "model/QueryShareListResult.h"
 #include "model/QuerySharesToUserListRequest.h"
 #include "model/QuerySharesToUserListResult.h"
+#include "model/QueryTicketInfoRequest.h"
+#include "model/QueryTicketInfoResult.h"
 #include "model/QueryUserGroupListByParentIdRequest.h"
 #include "model/QueryUserGroupListByParentIdResult.h"
 #include "model/QueryUserGroupMemberRequest.h"
@@ -142,6 +156,8 @@
 #include "model/QueryWorksByWorkspaceResult.h"
 #include "model/QueryWorkspaceUserListRequest.h"
 #include "model/QueryWorkspaceUserListResult.h"
+#include "model/ResultCallbackRequest.h"
+#include "model/ResultCallbackResult.h"
 #include "model/SaveFavoritesRequest.h"
 #include "model/SaveFavoritesResult.h"
 #include "model/SetDataLevelPermissionExtraConfigRequest.h"
@@ -154,6 +170,8 @@
 #include "model/UpdateDataLevelPermissionStatusResult.h"
 #include "model/UpdateEmbeddedStatusRequest.h"
 #include "model/UpdateEmbeddedStatusResult.h"
+#include "model/UpdateTicketNumRequest.h"
+#include "model/UpdateTicketNumResult.h"
 #include "model/UpdateUserRequest.h"
 #include "model/UpdateUserResult.h"
 #include "model/UpdateUserGroupRequest.h"
@@ -228,12 +246,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateEmbedTokenResult> CreateEmbedTokenOutcome;
 			typedef std::future<CreateEmbedTokenOutcome> CreateEmbedTokenOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::CreateEmbedTokenRequest&, const CreateEmbedTokenOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateEmbedTokenAsyncHandler;
+			typedef Outcome<Error, Model::CreateTicketResult> CreateTicketOutcome;
+			typedef std::future<CreateTicketOutcome> CreateTicketOutcomeCallable;
+			typedef std::function<void(const Quickbi_publicClient*, const Model::CreateTicketRequest&, const CreateTicketOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateTicketAsyncHandler;
 			typedef Outcome<Error, Model::CreateUserGroupResult> CreateUserGroupOutcome;
 			typedef std::future<CreateUserGroupOutcome> CreateUserGroupOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::CreateUserGroupRequest&, const CreateUserGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserGroupAsyncHandler;
 			typedef Outcome<Error, Model::DelayEmbedTokenResult> DelayEmbedTokenOutcome;
 			typedef std::future<DelayEmbedTokenOutcome> DelayEmbedTokenOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::DelayEmbedTokenRequest&, const DelayEmbedTokenOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DelayEmbedTokenAsyncHandler;
+			typedef Outcome<Error, Model::DelayTicketExpireTimeResult> DelayTicketExpireTimeOutcome;
+			typedef std::future<DelayTicketExpireTimeOutcome> DelayTicketExpireTimeOutcomeCallable;
+			typedef std::function<void(const Quickbi_publicClient*, const Model::DelayTicketExpireTimeRequest&, const DelayTicketExpireTimeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DelayTicketExpireTimeAsyncHandler;
 			typedef Outcome<Error, Model::DeleteDataLevelPermissionRuleUsersResult> DeleteDataLevelPermissionRuleUsersOutcome;
 			typedef std::future<DeleteDataLevelPermissionRuleUsersOutcome> DeleteDataLevelPermissionRuleUsersOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::DeleteDataLevelPermissionRuleUsersRequest&, const DeleteDataLevelPermissionRuleUsersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDataLevelPermissionRuleUsersAsyncHandler;
@@ -243,6 +267,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteEmbedTokenResult> DeleteEmbedTokenOutcome;
 			typedef std::future<DeleteEmbedTokenOutcome> DeleteEmbedTokenOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::DeleteEmbedTokenRequest&, const DeleteEmbedTokenOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteEmbedTokenAsyncHandler;
+			typedef Outcome<Error, Model::DeleteTicketResult> DeleteTicketOutcome;
+			typedef std::future<DeleteTicketOutcome> DeleteTicketOutcomeCallable;
+			typedef std::function<void(const Quickbi_publicClient*, const Model::DeleteTicketRequest&, const DeleteTicketOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTicketAsyncHandler;
 			typedef Outcome<Error, Model::DeleteUserResult> DeleteUserOutcome;
 			typedef std::future<DeleteUserOutcome> DeleteUserOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::DeleteUserRequest&, const DeleteUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUserAsyncHandler;
@@ -276,12 +303,21 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListDataLevelPermissionWhiteListResult> ListDataLevelPermissionWhiteListOutcome;
 			typedef std::future<ListDataLevelPermissionWhiteListOutcome> ListDataLevelPermissionWhiteListOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::ListDataLevelPermissionWhiteListRequest&, const ListDataLevelPermissionWhiteListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDataLevelPermissionWhiteListAsyncHandler;
+			typedef Outcome<Error, Model::ListFavoriteReportsResult> ListFavoriteReportsOutcome;
+			typedef std::future<ListFavoriteReportsOutcome> ListFavoriteReportsOutcomeCallable;
+			typedef std::function<void(const Quickbi_publicClient*, const Model::ListFavoriteReportsRequest&, const ListFavoriteReportsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListFavoriteReportsAsyncHandler;
 			typedef Outcome<Error, Model::ListPortalMenuAuthorizationResult> ListPortalMenuAuthorizationOutcome;
 			typedef std::future<ListPortalMenuAuthorizationOutcome> ListPortalMenuAuthorizationOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::ListPortalMenuAuthorizationRequest&, const ListPortalMenuAuthorizationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListPortalMenuAuthorizationAsyncHandler;
 			typedef Outcome<Error, Model::ListPortalMenusResult> ListPortalMenusOutcome;
 			typedef std::future<ListPortalMenusOutcome> ListPortalMenusOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::ListPortalMenusRequest&, const ListPortalMenusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListPortalMenusAsyncHandler;
+			typedef Outcome<Error, Model::ListRecentViewReportsResult> ListRecentViewReportsOutcome;
+			typedef std::future<ListRecentViewReportsOutcome> ListRecentViewReportsOutcomeCallable;
+			typedef std::function<void(const Quickbi_publicClient*, const Model::ListRecentViewReportsRequest&, const ListRecentViewReportsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListRecentViewReportsAsyncHandler;
+			typedef Outcome<Error, Model::ListSharedReportsResult> ListSharedReportsOutcome;
+			typedef std::future<ListSharedReportsOutcome> ListSharedReportsOutcomeCallable;
+			typedef std::function<void(const Quickbi_publicClient*, const Model::ListSharedReportsRequest&, const ListSharedReportsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListSharedReportsAsyncHandler;
 			typedef Outcome<Error, Model::ListUserGroupsByUserIdResult> ListUserGroupsByUserIdOutcome;
 			typedef std::future<ListUserGroupsByUserIdOutcome> ListUserGroupsByUserIdOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::ListUserGroupsByUserIdRequest&, const ListUserGroupsByUserIdOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListUserGroupsByUserIdAsyncHandler;
@@ -321,6 +357,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QuerySharesToUserListResult> QuerySharesToUserListOutcome;
 			typedef std::future<QuerySharesToUserListOutcome> QuerySharesToUserListOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::QuerySharesToUserListRequest&, const QuerySharesToUserListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QuerySharesToUserListAsyncHandler;
+			typedef Outcome<Error, Model::QueryTicketInfoResult> QueryTicketInfoOutcome;
+			typedef std::future<QueryTicketInfoOutcome> QueryTicketInfoOutcomeCallable;
+			typedef std::function<void(const Quickbi_publicClient*, const Model::QueryTicketInfoRequest&, const QueryTicketInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryTicketInfoAsyncHandler;
 			typedef Outcome<Error, Model::QueryUserGroupListByParentIdResult> QueryUserGroupListByParentIdOutcome;
 			typedef std::future<QueryUserGroupListByParentIdOutcome> QueryUserGroupListByParentIdOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::QueryUserGroupListByParentIdRequest&, const QueryUserGroupListByParentIdOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryUserGroupListByParentIdAsyncHandler;
@@ -357,6 +396,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryWorkspaceUserListResult> QueryWorkspaceUserListOutcome;
 			typedef std::future<QueryWorkspaceUserListOutcome> QueryWorkspaceUserListOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::QueryWorkspaceUserListRequest&, const QueryWorkspaceUserListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryWorkspaceUserListAsyncHandler;
+			typedef Outcome<Error, Model::ResultCallbackResult> ResultCallbackOutcome;
+			typedef std::future<ResultCallbackOutcome> ResultCallbackOutcomeCallable;
+			typedef std::function<void(const Quickbi_publicClient*, const Model::ResultCallbackRequest&, const ResultCallbackOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ResultCallbackAsyncHandler;
 			typedef Outcome<Error, Model::SaveFavoritesResult> SaveFavoritesOutcome;
 			typedef std::future<SaveFavoritesOutcome> SaveFavoritesOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::SaveFavoritesRequest&, const SaveFavoritesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SaveFavoritesAsyncHandler;
@@ -375,6 +417,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateEmbeddedStatusResult> UpdateEmbeddedStatusOutcome;
 			typedef std::future<UpdateEmbeddedStatusOutcome> UpdateEmbeddedStatusOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::UpdateEmbeddedStatusRequest&, const UpdateEmbeddedStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateEmbeddedStatusAsyncHandler;
+			typedef Outcome<Error, Model::UpdateTicketNumResult> UpdateTicketNumOutcome;
+			typedef std::future<UpdateTicketNumOutcome> UpdateTicketNumOutcomeCallable;
+			typedef std::function<void(const Quickbi_publicClient*, const Model::UpdateTicketNumRequest&, const UpdateTicketNumOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateTicketNumAsyncHandler;
 			typedef Outcome<Error, Model::UpdateUserResult> UpdateUserOutcome;
 			typedef std::future<UpdateUserOutcome> UpdateUserOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::UpdateUserRequest&, const UpdateUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateUserAsyncHandler;
@@ -452,12 +497,18 @@ namespace AlibabaCloud
 			CreateEmbedTokenOutcome createEmbedToken(const Model::CreateEmbedTokenRequest &request)const;
 			void createEmbedTokenAsync(const Model::CreateEmbedTokenRequest& request, const CreateEmbedTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateEmbedTokenOutcomeCallable createEmbedTokenCallable(const Model::CreateEmbedTokenRequest& request) const;
+			CreateTicketOutcome createTicket(const Model::CreateTicketRequest &request)const;
+			void createTicketAsync(const Model::CreateTicketRequest& request, const CreateTicketAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateTicketOutcomeCallable createTicketCallable(const Model::CreateTicketRequest& request) const;
 			CreateUserGroupOutcome createUserGroup(const Model::CreateUserGroupRequest &request)const;
 			void createUserGroupAsync(const Model::CreateUserGroupRequest& request, const CreateUserGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateUserGroupOutcomeCallable createUserGroupCallable(const Model::CreateUserGroupRequest& request) const;
 			DelayEmbedTokenOutcome delayEmbedToken(const Model::DelayEmbedTokenRequest &request)const;
 			void delayEmbedTokenAsync(const Model::DelayEmbedTokenRequest& request, const DelayEmbedTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DelayEmbedTokenOutcomeCallable delayEmbedTokenCallable(const Model::DelayEmbedTokenRequest& request) const;
+			DelayTicketExpireTimeOutcome delayTicketExpireTime(const Model::DelayTicketExpireTimeRequest &request)const;
+			void delayTicketExpireTimeAsync(const Model::DelayTicketExpireTimeRequest& request, const DelayTicketExpireTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DelayTicketExpireTimeOutcomeCallable delayTicketExpireTimeCallable(const Model::DelayTicketExpireTimeRequest& request) const;
 			DeleteDataLevelPermissionRuleUsersOutcome deleteDataLevelPermissionRuleUsers(const Model::DeleteDataLevelPermissionRuleUsersRequest &request)const;
 			void deleteDataLevelPermissionRuleUsersAsync(const Model::DeleteDataLevelPermissionRuleUsersRequest& request, const DeleteDataLevelPermissionRuleUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteDataLevelPermissionRuleUsersOutcomeCallable deleteDataLevelPermissionRuleUsersCallable(const Model::DeleteDataLevelPermissionRuleUsersRequest& request) const;
@@ -467,6 +518,9 @@ namespace AlibabaCloud
 			DeleteEmbedTokenOutcome deleteEmbedToken(const Model::DeleteEmbedTokenRequest &request)const;
 			void deleteEmbedTokenAsync(const Model::DeleteEmbedTokenRequest& request, const DeleteEmbedTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteEmbedTokenOutcomeCallable deleteEmbedTokenCallable(const Model::DeleteEmbedTokenRequest& request) const;
+			DeleteTicketOutcome deleteTicket(const Model::DeleteTicketRequest &request)const;
+			void deleteTicketAsync(const Model::DeleteTicketRequest& request, const DeleteTicketAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteTicketOutcomeCallable deleteTicketCallable(const Model::DeleteTicketRequest& request) const;
 			DeleteUserOutcome deleteUser(const Model::DeleteUserRequest &request)const;
 			void deleteUserAsync(const Model::DeleteUserRequest& request, const DeleteUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteUserOutcomeCallable deleteUserCallable(const Model::DeleteUserRequest& request) const;
@@ -500,12 +554,21 @@ namespace AlibabaCloud
 			ListDataLevelPermissionWhiteListOutcome listDataLevelPermissionWhiteList(const Model::ListDataLevelPermissionWhiteListRequest &request)const;
 			void listDataLevelPermissionWhiteListAsync(const Model::ListDataLevelPermissionWhiteListRequest& request, const ListDataLevelPermissionWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListDataLevelPermissionWhiteListOutcomeCallable listDataLevelPermissionWhiteListCallable(const Model::ListDataLevelPermissionWhiteListRequest& request) const;
+			ListFavoriteReportsOutcome listFavoriteReports(const Model::ListFavoriteReportsRequest &request)const;
+			void listFavoriteReportsAsync(const Model::ListFavoriteReportsRequest& request, const ListFavoriteReportsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListFavoriteReportsOutcomeCallable listFavoriteReportsCallable(const Model::ListFavoriteReportsRequest& request) const;
 			ListPortalMenuAuthorizationOutcome listPortalMenuAuthorization(const Model::ListPortalMenuAuthorizationRequest &request)const;
 			void listPortalMenuAuthorizationAsync(const Model::ListPortalMenuAuthorizationRequest& request, const ListPortalMenuAuthorizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListPortalMenuAuthorizationOutcomeCallable listPortalMenuAuthorizationCallable(const Model::ListPortalMenuAuthorizationRequest& request) const;
 			ListPortalMenusOutcome listPortalMenus(const Model::ListPortalMenusRequest &request)const;
 			void listPortalMenusAsync(const Model::ListPortalMenusRequest& request, const ListPortalMenusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListPortalMenusOutcomeCallable listPortalMenusCallable(const Model::ListPortalMenusRequest& request) const;
+			ListRecentViewReportsOutcome listRecentViewReports(const Model::ListRecentViewReportsRequest &request)const;
+			void listRecentViewReportsAsync(const Model::ListRecentViewReportsRequest& request, const ListRecentViewReportsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListRecentViewReportsOutcomeCallable listRecentViewReportsCallable(const Model::ListRecentViewReportsRequest& request) const;
+			ListSharedReportsOutcome listSharedReports(const Model::ListSharedReportsRequest &request)const;
+			void listSharedReportsAsync(const Model::ListSharedReportsRequest& request, const ListSharedReportsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListSharedReportsOutcomeCallable listSharedReportsCallable(const Model::ListSharedReportsRequest& request) const;
 			ListUserGroupsByUserIdOutcome listUserGroupsByUserId(const Model::ListUserGroupsByUserIdRequest &request)const;
 			void listUserGroupsByUserIdAsync(const Model::ListUserGroupsByUserIdRequest& request, const ListUserGroupsByUserIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListUserGroupsByUserIdOutcomeCallable listUserGroupsByUserIdCallable(const Model::ListUserGroupsByUserIdRequest& request) const;
@@ -545,6 +608,9 @@ namespace AlibabaCloud
 			QuerySharesToUserListOutcome querySharesToUserList(const Model::QuerySharesToUserListRequest &request)const;
 			void querySharesToUserListAsync(const Model::QuerySharesToUserListRequest& request, const QuerySharesToUserListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QuerySharesToUserListOutcomeCallable querySharesToUserListCallable(const Model::QuerySharesToUserListRequest& request) const;
+			QueryTicketInfoOutcome queryTicketInfo(const Model::QueryTicketInfoRequest &request)const;
+			void queryTicketInfoAsync(const Model::QueryTicketInfoRequest& request, const QueryTicketInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryTicketInfoOutcomeCallable queryTicketInfoCallable(const Model::QueryTicketInfoRequest& request) const;
 			QueryUserGroupListByParentIdOutcome queryUserGroupListByParentId(const Model::QueryUserGroupListByParentIdRequest &request)const;
 			void queryUserGroupListByParentIdAsync(const Model::QueryUserGroupListByParentIdRequest& request, const QueryUserGroupListByParentIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryUserGroupListByParentIdOutcomeCallable queryUserGroupListByParentIdCallable(const Model::QueryUserGroupListByParentIdRequest& request) const;
@@ -581,6 +647,9 @@ namespace AlibabaCloud
 			QueryWorkspaceUserListOutcome queryWorkspaceUserList(const Model::QueryWorkspaceUserListRequest &request)const;
 			void queryWorkspaceUserListAsync(const Model::QueryWorkspaceUserListRequest& request, const QueryWorkspaceUserListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryWorkspaceUserListOutcomeCallable queryWorkspaceUserListCallable(const Model::QueryWorkspaceUserListRequest& request) const;
+			ResultCallbackOutcome resultCallback(const Model::ResultCallbackRequest &request)const;
+			void resultCallbackAsync(const Model::ResultCallbackRequest& request, const ResultCallbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ResultCallbackOutcomeCallable resultCallbackCallable(const Model::ResultCallbackRequest& request) const;
 			SaveFavoritesOutcome saveFavorites(const Model::SaveFavoritesRequest &request)const;
 			void saveFavoritesAsync(const Model::SaveFavoritesRequest& request, const SaveFavoritesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SaveFavoritesOutcomeCallable saveFavoritesCallable(const Model::SaveFavoritesRequest& request) const;
@@ -599,6 +668,9 @@ namespace AlibabaCloud
 			UpdateEmbeddedStatusOutcome updateEmbeddedStatus(const Model::UpdateEmbeddedStatusRequest &request)const;
 			void updateEmbeddedStatusAsync(const Model::UpdateEmbeddedStatusRequest& request, const UpdateEmbeddedStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateEmbeddedStatusOutcomeCallable updateEmbeddedStatusCallable(const Model::UpdateEmbeddedStatusRequest& request) const;
+			UpdateTicketNumOutcome updateTicketNum(const Model::UpdateTicketNumRequest &request)const;
+			void updateTicketNumAsync(const Model::UpdateTicketNumRequest& request, const UpdateTicketNumAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateTicketNumOutcomeCallable updateTicketNumCallable(const Model::UpdateTicketNumRequest& request) const;
 			UpdateUserOutcome updateUser(const Model::UpdateUserRequest &request)const;
 			void updateUserAsync(const Model::UpdateUserRequest& request, const UpdateUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateUserOutcomeCallable updateUserCallable(const Model::UpdateUserRequest& request) const;

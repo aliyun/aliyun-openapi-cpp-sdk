@@ -663,6 +663,42 @@ Quickbi_publicClient::CreateEmbedTokenOutcomeCallable Quickbi_publicClient::crea
 	return task->get_future();
 }
 
+Quickbi_publicClient::CreateTicketOutcome Quickbi_publicClient::createTicket(const CreateTicketRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateTicketOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateTicketOutcome(CreateTicketResult(outcome.result()));
+	else
+		return CreateTicketOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::createTicketAsync(const CreateTicketRequest& request, const CreateTicketAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createTicket(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::CreateTicketOutcomeCallable Quickbi_publicClient::createTicketCallable(const CreateTicketRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateTicketOutcome()>>(
+			[this, request]()
+			{
+			return this->createTicket(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Quickbi_publicClient::CreateUserGroupOutcome Quickbi_publicClient::createUserGroup(const CreateUserGroupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -729,6 +765,42 @@ Quickbi_publicClient::DelayEmbedTokenOutcomeCallable Quickbi_publicClient::delay
 			[this, request]()
 			{
 			return this->delayEmbedToken(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Quickbi_publicClient::DelayTicketExpireTimeOutcome Quickbi_publicClient::delayTicketExpireTime(const DelayTicketExpireTimeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DelayTicketExpireTimeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DelayTicketExpireTimeOutcome(DelayTicketExpireTimeResult(outcome.result()));
+	else
+		return DelayTicketExpireTimeOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::delayTicketExpireTimeAsync(const DelayTicketExpireTimeRequest& request, const DelayTicketExpireTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, delayTicketExpireTime(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::DelayTicketExpireTimeOutcomeCallable Quickbi_publicClient::delayTicketExpireTimeCallable(const DelayTicketExpireTimeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DelayTicketExpireTimeOutcome()>>(
+			[this, request]()
+			{
+			return this->delayTicketExpireTime(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -837,6 +909,42 @@ Quickbi_publicClient::DeleteEmbedTokenOutcomeCallable Quickbi_publicClient::dele
 			[this, request]()
 			{
 			return this->deleteEmbedToken(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Quickbi_publicClient::DeleteTicketOutcome Quickbi_publicClient::deleteTicket(const DeleteTicketRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteTicketOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteTicketOutcome(DeleteTicketResult(outcome.result()));
+	else
+		return DeleteTicketOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::deleteTicketAsync(const DeleteTicketRequest& request, const DeleteTicketAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteTicket(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::DeleteTicketOutcomeCallable Quickbi_publicClient::deleteTicketCallable(const DeleteTicketRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteTicketOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteTicket(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1239,6 +1347,42 @@ Quickbi_publicClient::ListDataLevelPermissionWhiteListOutcomeCallable Quickbi_pu
 	return task->get_future();
 }
 
+Quickbi_publicClient::ListFavoriteReportsOutcome Quickbi_publicClient::listFavoriteReports(const ListFavoriteReportsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListFavoriteReportsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListFavoriteReportsOutcome(ListFavoriteReportsResult(outcome.result()));
+	else
+		return ListFavoriteReportsOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::listFavoriteReportsAsync(const ListFavoriteReportsRequest& request, const ListFavoriteReportsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listFavoriteReports(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::ListFavoriteReportsOutcomeCallable Quickbi_publicClient::listFavoriteReportsCallable(const ListFavoriteReportsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListFavoriteReportsOutcome()>>(
+			[this, request]()
+			{
+			return this->listFavoriteReports(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Quickbi_publicClient::ListPortalMenuAuthorizationOutcome Quickbi_publicClient::listPortalMenuAuthorization(const ListPortalMenuAuthorizationRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1305,6 +1449,78 @@ Quickbi_publicClient::ListPortalMenusOutcomeCallable Quickbi_publicClient::listP
 			[this, request]()
 			{
 			return this->listPortalMenus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Quickbi_publicClient::ListRecentViewReportsOutcome Quickbi_publicClient::listRecentViewReports(const ListRecentViewReportsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListRecentViewReportsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListRecentViewReportsOutcome(ListRecentViewReportsResult(outcome.result()));
+	else
+		return ListRecentViewReportsOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::listRecentViewReportsAsync(const ListRecentViewReportsRequest& request, const ListRecentViewReportsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listRecentViewReports(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::ListRecentViewReportsOutcomeCallable Quickbi_publicClient::listRecentViewReportsCallable(const ListRecentViewReportsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListRecentViewReportsOutcome()>>(
+			[this, request]()
+			{
+			return this->listRecentViewReports(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Quickbi_publicClient::ListSharedReportsOutcome Quickbi_publicClient::listSharedReports(const ListSharedReportsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListSharedReportsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListSharedReportsOutcome(ListSharedReportsResult(outcome.result()));
+	else
+		return ListSharedReportsOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::listSharedReportsAsync(const ListSharedReportsRequest& request, const ListSharedReportsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listSharedReports(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::ListSharedReportsOutcomeCallable Quickbi_publicClient::listSharedReportsCallable(const ListSharedReportsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListSharedReportsOutcome()>>(
+			[this, request]()
+			{
+			return this->listSharedReports(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1779,6 +1995,42 @@ Quickbi_publicClient::QuerySharesToUserListOutcomeCallable Quickbi_publicClient:
 	return task->get_future();
 }
 
+Quickbi_publicClient::QueryTicketInfoOutcome Quickbi_publicClient::queryTicketInfo(const QueryTicketInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryTicketInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryTicketInfoOutcome(QueryTicketInfoResult(outcome.result()));
+	else
+		return QueryTicketInfoOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::queryTicketInfoAsync(const QueryTicketInfoRequest& request, const QueryTicketInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryTicketInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::QueryTicketInfoOutcomeCallable Quickbi_publicClient::queryTicketInfoCallable(const QueryTicketInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryTicketInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->queryTicketInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Quickbi_publicClient::QueryUserGroupListByParentIdOutcome Quickbi_publicClient::queryUserGroupListByParentId(const QueryUserGroupListByParentIdRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2211,6 +2463,42 @@ Quickbi_publicClient::QueryWorkspaceUserListOutcomeCallable Quickbi_publicClient
 	return task->get_future();
 }
 
+Quickbi_publicClient::ResultCallbackOutcome Quickbi_publicClient::resultCallback(const ResultCallbackRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ResultCallbackOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ResultCallbackOutcome(ResultCallbackResult(outcome.result()));
+	else
+		return ResultCallbackOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::resultCallbackAsync(const ResultCallbackRequest& request, const ResultCallbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, resultCallback(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::ResultCallbackOutcomeCallable Quickbi_publicClient::resultCallbackCallable(const ResultCallbackRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ResultCallbackOutcome()>>(
+			[this, request]()
+			{
+			return this->resultCallback(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Quickbi_publicClient::SaveFavoritesOutcome Quickbi_publicClient::saveFavorites(const SaveFavoritesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2421,6 +2709,42 @@ Quickbi_publicClient::UpdateEmbeddedStatusOutcomeCallable Quickbi_publicClient::
 			[this, request]()
 			{
 			return this->updateEmbeddedStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Quickbi_publicClient::UpdateTicketNumOutcome Quickbi_publicClient::updateTicketNum(const UpdateTicketNumRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateTicketNumOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateTicketNumOutcome(UpdateTicketNumResult(outcome.result()));
+	else
+		return UpdateTicketNumOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::updateTicketNumAsync(const UpdateTicketNumRequest& request, const UpdateTicketNumAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateTicketNum(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::UpdateTicketNumOutcomeCallable Quickbi_publicClient::updateTicketNumCallable(const UpdateTicketNumRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateTicketNumOutcome()>>(
+			[this, request]()
+			{
+			return this->updateTicketNum(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -55,16 +55,22 @@ set(quickbi-public_public_header_model
 	include/alibabacloud/quickbi-public/model/CheckReadableResult.h
 	include/alibabacloud/quickbi-public/model/CreateEmbedTokenRequest.h
 	include/alibabacloud/quickbi-public/model/CreateEmbedTokenResult.h
+	include/alibabacloud/quickbi-public/model/CreateTicketRequest.h
+	include/alibabacloud/quickbi-public/model/CreateTicketResult.h
 	include/alibabacloud/quickbi-public/model/CreateUserGroupRequest.h
 	include/alibabacloud/quickbi-public/model/CreateUserGroupResult.h
 	include/alibabacloud/quickbi-public/model/DelayEmbedTokenRequest.h
 	include/alibabacloud/quickbi-public/model/DelayEmbedTokenResult.h
+	include/alibabacloud/quickbi-public/model/DelayTicketExpireTimeRequest.h
+	include/alibabacloud/quickbi-public/model/DelayTicketExpireTimeResult.h
 	include/alibabacloud/quickbi-public/model/DeleteDataLevelPermissionRuleUsersRequest.h
 	include/alibabacloud/quickbi-public/model/DeleteDataLevelPermissionRuleUsersResult.h
 	include/alibabacloud/quickbi-public/model/DeleteDataLevelRuleConfigRequest.h
 	include/alibabacloud/quickbi-public/model/DeleteDataLevelRuleConfigResult.h
 	include/alibabacloud/quickbi-public/model/DeleteEmbedTokenRequest.h
 	include/alibabacloud/quickbi-public/model/DeleteEmbedTokenResult.h
+	include/alibabacloud/quickbi-public/model/DeleteTicketRequest.h
+	include/alibabacloud/quickbi-public/model/DeleteTicketResult.h
 	include/alibabacloud/quickbi-public/model/DeleteUserRequest.h
 	include/alibabacloud/quickbi-public/model/DeleteUserResult.h
 	include/alibabacloud/quickbi-public/model/DeleteUserFromWorkspaceRequest.h
@@ -87,10 +93,16 @@ set(quickbi-public_public_header_model
 	include/alibabacloud/quickbi-public/model/ListCubeDataLevelPermissionConfigResult.h
 	include/alibabacloud/quickbi-public/model/ListDataLevelPermissionWhiteListRequest.h
 	include/alibabacloud/quickbi-public/model/ListDataLevelPermissionWhiteListResult.h
+	include/alibabacloud/quickbi-public/model/ListFavoriteReportsRequest.h
+	include/alibabacloud/quickbi-public/model/ListFavoriteReportsResult.h
 	include/alibabacloud/quickbi-public/model/ListPortalMenuAuthorizationRequest.h
 	include/alibabacloud/quickbi-public/model/ListPortalMenuAuthorizationResult.h
 	include/alibabacloud/quickbi-public/model/ListPortalMenusRequest.h
 	include/alibabacloud/quickbi-public/model/ListPortalMenusResult.h
+	include/alibabacloud/quickbi-public/model/ListRecentViewReportsRequest.h
+	include/alibabacloud/quickbi-public/model/ListRecentViewReportsResult.h
+	include/alibabacloud/quickbi-public/model/ListSharedReportsRequest.h
+	include/alibabacloud/quickbi-public/model/ListSharedReportsResult.h
 	include/alibabacloud/quickbi-public/model/ListUserGroupsByUserIdRequest.h
 	include/alibabacloud/quickbi-public/model/ListUserGroupsByUserIdResult.h
 	include/alibabacloud/quickbi-public/model/QueryDataServiceRequest.h
@@ -117,6 +129,8 @@ set(quickbi-public_public_header_model
 	include/alibabacloud/quickbi-public/model/QueryShareListResult.h
 	include/alibabacloud/quickbi-public/model/QuerySharesToUserListRequest.h
 	include/alibabacloud/quickbi-public/model/QuerySharesToUserListResult.h
+	include/alibabacloud/quickbi-public/model/QueryTicketInfoRequest.h
+	include/alibabacloud/quickbi-public/model/QueryTicketInfoResult.h
 	include/alibabacloud/quickbi-public/model/QueryUserGroupListByParentIdRequest.h
 	include/alibabacloud/quickbi-public/model/QueryUserGroupListByParentIdResult.h
 	include/alibabacloud/quickbi-public/model/QueryUserGroupMemberRequest.h
@@ -141,6 +155,8 @@ set(quickbi-public_public_header_model
 	include/alibabacloud/quickbi-public/model/QueryWorksByWorkspaceResult.h
 	include/alibabacloud/quickbi-public/model/QueryWorkspaceUserListRequest.h
 	include/alibabacloud/quickbi-public/model/QueryWorkspaceUserListResult.h
+	include/alibabacloud/quickbi-public/model/ResultCallbackRequest.h
+	include/alibabacloud/quickbi-public/model/ResultCallbackResult.h
 	include/alibabacloud/quickbi-public/model/SaveFavoritesRequest.h
 	include/alibabacloud/quickbi-public/model/SaveFavoritesResult.h
 	include/alibabacloud/quickbi-public/model/SetDataLevelPermissionExtraConfigRequest.h
@@ -153,6 +169,8 @@ set(quickbi-public_public_header_model
 	include/alibabacloud/quickbi-public/model/UpdateDataLevelPermissionStatusResult.h
 	include/alibabacloud/quickbi-public/model/UpdateEmbeddedStatusRequest.h
 	include/alibabacloud/quickbi-public/model/UpdateEmbeddedStatusResult.h
+	include/alibabacloud/quickbi-public/model/UpdateTicketNumRequest.h
+	include/alibabacloud/quickbi-public/model/UpdateTicketNumResult.h
 	include/alibabacloud/quickbi-public/model/UpdateUserRequest.h
 	include/alibabacloud/quickbi-public/model/UpdateUserResult.h
 	include/alibabacloud/quickbi-public/model/UpdateUserGroupRequest.h
@@ -204,16 +222,22 @@ set(quickbi-public_src
 	src/model/CheckReadableResult.cc
 	src/model/CreateEmbedTokenRequest.cc
 	src/model/CreateEmbedTokenResult.cc
+	src/model/CreateTicketRequest.cc
+	src/model/CreateTicketResult.cc
 	src/model/CreateUserGroupRequest.cc
 	src/model/CreateUserGroupResult.cc
 	src/model/DelayEmbedTokenRequest.cc
 	src/model/DelayEmbedTokenResult.cc
+	src/model/DelayTicketExpireTimeRequest.cc
+	src/model/DelayTicketExpireTimeResult.cc
 	src/model/DeleteDataLevelPermissionRuleUsersRequest.cc
 	src/model/DeleteDataLevelPermissionRuleUsersResult.cc
 	src/model/DeleteDataLevelRuleConfigRequest.cc
 	src/model/DeleteDataLevelRuleConfigResult.cc
 	src/model/DeleteEmbedTokenRequest.cc
 	src/model/DeleteEmbedTokenResult.cc
+	src/model/DeleteTicketRequest.cc
+	src/model/DeleteTicketResult.cc
 	src/model/DeleteUserRequest.cc
 	src/model/DeleteUserResult.cc
 	src/model/DeleteUserFromWorkspaceRequest.cc
@@ -236,10 +260,16 @@ set(quickbi-public_src
 	src/model/ListCubeDataLevelPermissionConfigResult.cc
 	src/model/ListDataLevelPermissionWhiteListRequest.cc
 	src/model/ListDataLevelPermissionWhiteListResult.cc
+	src/model/ListFavoriteReportsRequest.cc
+	src/model/ListFavoriteReportsResult.cc
 	src/model/ListPortalMenuAuthorizationRequest.cc
 	src/model/ListPortalMenuAuthorizationResult.cc
 	src/model/ListPortalMenusRequest.cc
 	src/model/ListPortalMenusResult.cc
+	src/model/ListRecentViewReportsRequest.cc
+	src/model/ListRecentViewReportsResult.cc
+	src/model/ListSharedReportsRequest.cc
+	src/model/ListSharedReportsResult.cc
 	src/model/ListUserGroupsByUserIdRequest.cc
 	src/model/ListUserGroupsByUserIdResult.cc
 	src/model/QueryDataServiceRequest.cc
@@ -266,6 +296,8 @@ set(quickbi-public_src
 	src/model/QueryShareListResult.cc
 	src/model/QuerySharesToUserListRequest.cc
 	src/model/QuerySharesToUserListResult.cc
+	src/model/QueryTicketInfoRequest.cc
+	src/model/QueryTicketInfoResult.cc
 	src/model/QueryUserGroupListByParentIdRequest.cc
 	src/model/QueryUserGroupListByParentIdResult.cc
 	src/model/QueryUserGroupMemberRequest.cc
@@ -290,6 +322,8 @@ set(quickbi-public_src
 	src/model/QueryWorksByWorkspaceResult.cc
 	src/model/QueryWorkspaceUserListRequest.cc
 	src/model/QueryWorkspaceUserListResult.cc
+	src/model/ResultCallbackRequest.cc
+	src/model/ResultCallbackResult.cc
 	src/model/SaveFavoritesRequest.cc
 	src/model/SaveFavoritesResult.cc
 	src/model/SetDataLevelPermissionExtraConfigRequest.cc
@@ -302,6 +336,8 @@ set(quickbi-public_src
 	src/model/UpdateDataLevelPermissionStatusResult.cc
 	src/model/UpdateEmbeddedStatusRequest.cc
 	src/model/UpdateEmbeddedStatusResult.cc
+	src/model/UpdateTicketNumRequest.cc
+	src/model/UpdateTicketNumResult.cc
 	src/model/UpdateUserRequest.cc
 	src/model/UpdateUserResult.cc
 	src/model/UpdateUserGroupRequest.cc
