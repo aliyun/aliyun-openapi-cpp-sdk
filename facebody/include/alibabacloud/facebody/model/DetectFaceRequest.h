@@ -37,12 +37,18 @@ namespace AlibabaCloud
 
 				long getMaxFaceNumber()const;
 				void setMaxFaceNumber(long maxFaceNumber);
+				bool getFormatResultToJson()const;
+				void setFormatResultToJson(bool formatResultToJson);
 				bool getLandmark()const;
 				void setLandmark(bool landmark);
+				std::string getOssFile()const;
+				void setOssFile(const std::string& ossFile);
 				int getImageType()const;
 				void setImageType(int imageType);
 				bool getPose()const;
 				void setPose(bool pose);
+				std::string getRequestProxyBy()const;
+				void setRequestProxyBy(const std::string& requestProxyBy);
 				bool getQuality()const;
 				void setQuality(bool quality);
 				std::string getImageURL()const;
@@ -50,9 +56,12 @@ namespace AlibabaCloud
 
             private:
 				long maxFaceNumber_;
+				bool formatResultToJson_;
 				bool landmark_;
+				std::string ossFile_;
 				int imageType_;
 				bool pose_;
+				std::string requestProxyBy_;
 				bool quality_;
 				std::string imageURL_;
 

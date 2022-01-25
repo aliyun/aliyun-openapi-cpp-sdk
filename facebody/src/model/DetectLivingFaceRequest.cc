@@ -27,6 +27,28 @@ DetectLivingFaceRequest::DetectLivingFaceRequest() :
 DetectLivingFaceRequest::~DetectLivingFaceRequest()
 {}
 
+bool DetectLivingFaceRequest::getFormatResultToJson()const
+{
+	return formatResultToJson_;
+}
+
+void DetectLivingFaceRequest::setFormatResultToJson(bool formatResultToJson)
+{
+	formatResultToJson_ = formatResultToJson;
+	setParameter("FormatResultToJson", formatResultToJson ? "true" : "false");
+}
+
+std::string DetectLivingFaceRequest::getOssFile()const
+{
+	return ossFile_;
+}
+
+void DetectLivingFaceRequest::setOssFile(const std::string& ossFile)
+{
+	ossFile_ = ossFile;
+	setParameter("OssFile", ossFile);
+}
+
 std::vector<DetectLivingFaceRequest::Tasks> DetectLivingFaceRequest::getTasks()const
 {
 	return tasks_;
@@ -41,5 +63,16 @@ void DetectLivingFaceRequest::setTasks(const std::vector<Tasks>& tasks)
 		setParameter(tasksObjStr + ".ImageURL", tasksObj.imageURL);
 		setParameter(tasksObjStr + ".ImageData", tasksObj.imageData);
 	}
+}
+
+std::string DetectLivingFaceRequest::getRequestProxyBy()const
+{
+	return requestProxyBy_;
+}
+
+void DetectLivingFaceRequest::setRequestProxyBy(const std::string& requestProxyBy)
+{
+	requestProxyBy_ = requestProxyBy;
+	setParameter("RequestProxyBy", requestProxyBy);
 }
 

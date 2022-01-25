@@ -72,8 +72,6 @@
 #include "model/DetectIPCPedestrianResult.h"
 #include "model/DetectLivingFaceRequest.h"
 #include "model/DetectLivingFaceResult.h"
-#include "model/DetectMaskRequest.h"
-#include "model/DetectMaskResult.h"
 #include "model/DetectPedestrianRequest.h"
 #include "model/DetectPedestrianResult.h"
 #include "model/DetectPedestrianIntrusionRequest.h"
@@ -236,9 +234,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DetectLivingFaceResult> DetectLivingFaceOutcome;
 			typedef std::future<DetectLivingFaceOutcome> DetectLivingFaceOutcomeCallable;
 			typedef std::function<void(const FacebodyClient*, const Model::DetectLivingFaceRequest&, const DetectLivingFaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetectLivingFaceAsyncHandler;
-			typedef Outcome<Error, Model::DetectMaskResult> DetectMaskOutcome;
-			typedef std::future<DetectMaskOutcome> DetectMaskOutcomeCallable;
-			typedef std::function<void(const FacebodyClient*, const Model::DetectMaskRequest&, const DetectMaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetectMaskAsyncHandler;
 			typedef Outcome<Error, Model::DetectPedestrianResult> DetectPedestrianOutcome;
 			typedef std::future<DetectPedestrianOutcome> DetectPedestrianOutcomeCallable;
 			typedef std::function<void(const FacebodyClient*, const Model::DetectPedestrianRequest&, const DetectPedestrianOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetectPedestrianAsyncHandler;
@@ -436,9 +431,6 @@ namespace AlibabaCloud
 			DetectLivingFaceOutcome detectLivingFace(const Model::DetectLivingFaceRequest &request)const;
 			void detectLivingFaceAsync(const Model::DetectLivingFaceRequest& request, const DetectLivingFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DetectLivingFaceOutcomeCallable detectLivingFaceCallable(const Model::DetectLivingFaceRequest& request) const;
-			DetectMaskOutcome detectMask(const Model::DetectMaskRequest &request)const;
-			void detectMaskAsync(const Model::DetectMaskRequest& request, const DetectMaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DetectMaskOutcomeCallable detectMaskCallable(const Model::DetectMaskRequest& request) const;
 			DetectPedestrianOutcome detectPedestrian(const Model::DetectPedestrianRequest &request)const;
 			void detectPedestrianAsync(const Model::DetectPedestrianRequest& request, const DetectPedestrianAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DetectPedestrianOutcomeCallable detectPedestrianCallable(const Model::DetectPedestrianRequest& request) const;

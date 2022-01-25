@@ -38,6 +38,17 @@ void DetectFaceRequest::setMaxFaceNumber(long maxFaceNumber)
 	setBodyParameter("MaxFaceNumber", std::to_string(maxFaceNumber));
 }
 
+bool DetectFaceRequest::getFormatResultToJson()const
+{
+	return formatResultToJson_;
+}
+
+void DetectFaceRequest::setFormatResultToJson(bool formatResultToJson)
+{
+	formatResultToJson_ = formatResultToJson;
+	setParameter("FormatResultToJson", formatResultToJson ? "true" : "false");
+}
+
 bool DetectFaceRequest::getLandmark()const
 {
 	return landmark_;
@@ -47,6 +58,17 @@ void DetectFaceRequest::setLandmark(bool landmark)
 {
 	landmark_ = landmark;
 	setBodyParameter("Landmark", landmark ? "true" : "false");
+}
+
+std::string DetectFaceRequest::getOssFile()const
+{
+	return ossFile_;
+}
+
+void DetectFaceRequest::setOssFile(const std::string& ossFile)
+{
+	ossFile_ = ossFile;
+	setParameter("OssFile", ossFile);
 }
 
 int DetectFaceRequest::getImageType()const
@@ -69,6 +91,17 @@ void DetectFaceRequest::setPose(bool pose)
 {
 	pose_ = pose;
 	setBodyParameter("Pose", pose ? "true" : "false");
+}
+
+std::string DetectFaceRequest::getRequestProxyBy()const
+{
+	return requestProxyBy_;
+}
+
+void DetectFaceRequest::setRequestProxyBy(const std::string& requestProxyBy)
+{
+	requestProxyBy_ = requestProxyBy;
+	setParameter("RequestProxyBy", requestProxyBy);
 }
 
 bool DetectFaceRequest::getQuality()const

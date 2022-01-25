@@ -951,42 +951,6 @@ FacebodyClient::DetectLivingFaceOutcomeCallable FacebodyClient::detectLivingFace
 	return task->get_future();
 }
 
-FacebodyClient::DetectMaskOutcome FacebodyClient::detectMask(const DetectMaskRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DetectMaskOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DetectMaskOutcome(DetectMaskResult(outcome.result()));
-	else
-		return DetectMaskOutcome(outcome.error());
-}
-
-void FacebodyClient::detectMaskAsync(const DetectMaskRequest& request, const DetectMaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, detectMask(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-FacebodyClient::DetectMaskOutcomeCallable FacebodyClient::detectMaskCallable(const DetectMaskRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DetectMaskOutcome()>>(
-			[this, request]()
-			{
-			return this->detectMask(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 FacebodyClient::DetectPedestrianOutcome FacebodyClient::detectPedestrian(const DetectPedestrianRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

@@ -71,8 +71,6 @@ set(facebody_public_header_model
 	include/alibabacloud/facebody/model/DetectIPCPedestrianResult.h
 	include/alibabacloud/facebody/model/DetectLivingFaceRequest.h
 	include/alibabacloud/facebody/model/DetectLivingFaceResult.h
-	include/alibabacloud/facebody/model/DetectMaskRequest.h
-	include/alibabacloud/facebody/model/DetectMaskResult.h
 	include/alibabacloud/facebody/model/DetectPedestrianRequest.h
 	include/alibabacloud/facebody/model/DetectPedestrianResult.h
 	include/alibabacloud/facebody/model/DetectPedestrianIntrusionRequest.h
@@ -204,8 +202,6 @@ set(facebody_src
 	src/model/DetectIPCPedestrianResult.cc
 	src/model/DetectLivingFaceRequest.cc
 	src/model/DetectLivingFaceResult.cc
-	src/model/DetectMaskRequest.cc
-	src/model/DetectMaskResult.cc
 	src/model/DetectPedestrianRequest.cc
 	src/model/DetectPedestrianResult.cc
 	src/model/DetectPedestrianIntrusionRequest.cc

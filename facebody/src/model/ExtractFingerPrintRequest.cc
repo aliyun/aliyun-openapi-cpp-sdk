@@ -27,6 +27,28 @@ ExtractFingerPrintRequest::ExtractFingerPrintRequest() :
 ExtractFingerPrintRequest::~ExtractFingerPrintRequest()
 {}
 
+bool ExtractFingerPrintRequest::getFormatResultToJson()const
+{
+	return formatResultToJson_;
+}
+
+void ExtractFingerPrintRequest::setFormatResultToJson(bool formatResultToJson)
+{
+	formatResultToJson_ = formatResultToJson;
+	setParameter("FormatResultToJson", formatResultToJson ? "true" : "false");
+}
+
+std::string ExtractFingerPrintRequest::getOssFile()const
+{
+	return ossFile_;
+}
+
+void ExtractFingerPrintRequest::setOssFile(const std::string& ossFile)
+{
+	ossFile_ = ossFile;
+	setParameter("OssFile", ossFile);
+}
+
 std::string ExtractFingerPrintRequest::getImageData()const
 {
 	return imageData_;
@@ -36,6 +58,17 @@ void ExtractFingerPrintRequest::setImageData(const std::string& imageData)
 {
 	imageData_ = imageData;
 	setBodyParameter("ImageData", imageData);
+}
+
+std::string ExtractFingerPrintRequest::getRequestProxyBy()const
+{
+	return requestProxyBy_;
+}
+
+void ExtractFingerPrintRequest::setRequestProxyBy(const std::string& requestProxyBy)
+{
+	requestProxyBy_ = requestProxyBy;
+	setParameter("RequestProxyBy", requestProxyBy);
 }
 
 std::string ExtractFingerPrintRequest::getImageURL()const

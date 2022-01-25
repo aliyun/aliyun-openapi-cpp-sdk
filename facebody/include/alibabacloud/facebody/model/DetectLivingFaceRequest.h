@@ -41,11 +41,20 @@ namespace AlibabaCloud
 				DetectLivingFaceRequest();
 				~DetectLivingFaceRequest();
 
+				bool getFormatResultToJson()const;
+				void setFormatResultToJson(bool formatResultToJson);
+				std::string getOssFile()const;
+				void setOssFile(const std::string& ossFile);
 				std::vector<Tasks> getTasks()const;
 				void setTasks(const std::vector<Tasks>& tasks);
+				std::string getRequestProxyBy()const;
+				void setRequestProxyBy(const std::string& requestProxyBy);
 
             private:
+				bool formatResultToJson_;
+				std::string ossFile_;
 				std::vector<Tasks> tasks_;
+				std::string requestProxyBy_;
 
 			};
 		}
