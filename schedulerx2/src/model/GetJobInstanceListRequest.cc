@@ -25,15 +25,6 @@ GetJobInstanceListRequest::GetJobInstanceListRequest()
 
 GetJobInstanceListRequest::~GetJobInstanceListRequest() {}
 
-long GetJobInstanceListRequest::getJobId() const {
-  return jobId_;
-}
-
-void GetJobInstanceListRequest::setJobId(long jobId) {
-  jobId_ = jobId;
-  setParameter(std::string("JobId"), std::to_string(jobId));
-}
-
 std::string GetJobInstanceListRequest::getNamespaceSource() const {
   return namespaceSource_;
 }
@@ -43,15 +34,6 @@ void GetJobInstanceListRequest::setNamespaceSource(const std::string &namespaceS
   setParameter(std::string("NamespaceSource"), namespaceSource);
 }
 
-std::string GetJobInstanceListRequest::getRegionId() const {
-  return regionId_;
-}
-
-void GetJobInstanceListRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
-}
-
 std::string GetJobInstanceListRequest::getGroupId() const {
   return groupId_;
 }
@@ -59,6 +41,24 @@ std::string GetJobInstanceListRequest::getGroupId() const {
 void GetJobInstanceListRequest::setGroupId(const std::string &groupId) {
   groupId_ = groupId;
   setParameter(std::string("GroupId"), groupId);
+}
+
+long GetJobInstanceListRequest::getJobId() const {
+  return jobId_;
+}
+
+void GetJobInstanceListRequest::setJobId(long jobId) {
+  jobId_ = jobId;
+  setParameter(std::string("JobId"), std::to_string(jobId));
+}
+
+std::string GetJobInstanceListRequest::getRegionId() const {
+  return regionId_;
+}
+
+void GetJobInstanceListRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
 std::string GetJobInstanceListRequest::get_Namespace() const {

@@ -25,15 +25,6 @@ GetJobInstanceRequest::GetJobInstanceRequest()
 
 GetJobInstanceRequest::~GetJobInstanceRequest() {}
 
-long GetJobInstanceRequest::getJobId() const {
-  return jobId_;
-}
-
-void GetJobInstanceRequest::setJobId(long jobId) {
-  jobId_ = jobId;
-  setParameter(std::string("JobId"), std::to_string(jobId));
-}
-
 std::string GetJobInstanceRequest::getNamespaceSource() const {
   return namespaceSource_;
 }
@@ -50,6 +41,15 @@ std::string GetJobInstanceRequest::getGroupId() const {
 void GetJobInstanceRequest::setGroupId(const std::string &groupId) {
   groupId_ = groupId;
   setParameter(std::string("GroupId"), groupId);
+}
+
+long GetJobInstanceRequest::getJobId() const {
+  return jobId_;
+}
+
+void GetJobInstanceRequest::setJobId(long jobId) {
+  jobId_ = jobId;
+  setParameter(std::string("JobId"), std::to_string(jobId));
 }
 
 std::string GetJobInstanceRequest::get_Namespace() const {

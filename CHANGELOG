@@ -1,3 +1,8 @@
+2022-01-25 Version: 1.36.1038
+- Supported Get Worker List.
+- Execute Job Support Designate Machine.
+- Job Interface Add Config.
+
 2022-01-25 Version: 1.36.1037
 - Update DetectFace.
 

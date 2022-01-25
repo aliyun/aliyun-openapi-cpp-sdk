@@ -34,15 +34,6 @@ void DeleteWorkflowRequest::setNamespaceSource(const std::string &namespaceSourc
   setParameter(std::string("NamespaceSource"), namespaceSource);
 }
 
-std::string DeleteWorkflowRequest::getRegionId() const {
-  return regionId_;
-}
-
-void DeleteWorkflowRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
-}
-
 std::string DeleteWorkflowRequest::getGroupId() const {
   return groupId_;
 }
@@ -50,6 +41,15 @@ std::string DeleteWorkflowRequest::getGroupId() const {
 void DeleteWorkflowRequest::setGroupId(const std::string &groupId) {
   groupId_ = groupId;
   setParameter(std::string("GroupId"), groupId);
+}
+
+std::string DeleteWorkflowRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DeleteWorkflowRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
 std::string DeleteWorkflowRequest::get_Namespace() const {

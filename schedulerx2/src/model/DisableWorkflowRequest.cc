@@ -34,15 +34,6 @@ void DisableWorkflowRequest::setNamespaceSource(const std::string &namespaceSour
   setParameter(std::string("NamespaceSource"), namespaceSource);
 }
 
-std::string DisableWorkflowRequest::getRegionId() const {
-  return regionId_;
-}
-
-void DisableWorkflowRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
-}
-
 std::string DisableWorkflowRequest::getGroupId() const {
   return groupId_;
 }
@@ -50,6 +41,15 @@ std::string DisableWorkflowRequest::getGroupId() const {
 void DisableWorkflowRequest::setGroupId(const std::string &groupId) {
   groupId_ = groupId;
   setParameter(std::string("GroupId"), groupId);
+}
+
+std::string DisableWorkflowRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DisableWorkflowRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
 std::string DisableWorkflowRequest::get_Namespace() const {

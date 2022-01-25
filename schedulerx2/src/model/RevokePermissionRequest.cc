@@ -34,15 +34,6 @@ void RevokePermissionRequest::setNamespaceSource(const std::string &namespaceSou
   setParameter(std::string("NamespaceSource"), namespaceSource);
 }
 
-std::string RevokePermissionRequest::getRegionId() const {
-  return regionId_;
-}
-
-void RevokePermissionRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
-}
-
 std::string RevokePermissionRequest::getGroupId() const {
   return groupId_;
 }
@@ -52,15 +43,6 @@ void RevokePermissionRequest::setGroupId(const std::string &groupId) {
   setParameter(std::string("GroupId"), groupId);
 }
 
-std::string RevokePermissionRequest::get_Namespace() const {
-  return _namespace_;
-}
-
-void RevokePermissionRequest::set_Namespace(const std::string &_namespace) {
-  _namespace_ = _namespace;
-  setParameter(std::string("Namespace"), _namespace);
-}
-
 std::string RevokePermissionRequest::getUserId() const {
   return userId_;
 }
@@ -68,5 +50,23 @@ std::string RevokePermissionRequest::getUserId() const {
 void RevokePermissionRequest::setUserId(const std::string &userId) {
   userId_ = userId;
   setParameter(std::string("UserId"), userId);
+}
+
+std::string RevokePermissionRequest::getRegionId() const {
+  return regionId_;
+}
+
+void RevokePermissionRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
+std::string RevokePermissionRequest::get_Namespace() const {
+  return _namespace_;
+}
+
+void RevokePermissionRequest::set_Namespace(const std::string &_namespace) {
+  _namespace_ = _namespace;
+  setParameter(std::string("Namespace"), _namespace);
 }
 

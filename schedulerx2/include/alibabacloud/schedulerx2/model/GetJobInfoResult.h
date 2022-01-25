@@ -58,6 +58,7 @@ namespace AlibabaCloud
 							{
 								bool timeoutEnable;
 								long timeout;
+								bool missWorkerEnable;
 								bool failEnable;
 								std::string sendChannel;
 								bool timeoutKillEnable;
@@ -66,6 +67,8 @@ namespace AlibabaCloud
 							{
 								std::string userName;
 								std::string userPhone;
+								std::string userMail;
+								std::string ding;
 							};
 							std::vector<ContactInfoItem> contactInfo;
 							MonitorConfig monitorConfig;

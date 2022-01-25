@@ -29,7 +29,9 @@ namespace Model {
 class ALIBABACLOUD_SCHEDULERX2_EXPORT CreateJobRequest : public RpcServiceRequest {
 public:
 	struct ContactInfo {
+		std::string ding;
 		std::string userPhone;
+		std::string userMail;
 		std::string userName;
 	};
 	CreateJobRequest();
@@ -68,6 +70,8 @@ public:
 	void setTaskMaxAttempt(int taskMaxAttempt);
 	int getMaxAttempt() const;
 	void setMaxAttempt(int maxAttempt);
+	bool getMissWorkerEnable() const;
+	void setMissWorkerEnable(bool missWorkerEnable);
 	int getDispatcherSize() const;
 	void setDispatcherSize(int dispatcherSize);
 	std::string getJobType() const;
@@ -115,6 +119,7 @@ private:
 	std::string groupId_;
 	int taskMaxAttempt_;
 	int maxAttempt_;
+	bool missWorkerEnable_;
 	int dispatcherSize_;
 	std::string jobType_;
 	int taskAttemptInterval_;

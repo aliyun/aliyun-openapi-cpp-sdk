@@ -30,21 +30,21 @@ class ALIBABACLOUD_SCHEDULERX2_EXPORT GetJobInstanceRequest : public RpcServiceR
 public:
 	GetJobInstanceRequest();
 	~GetJobInstanceRequest();
-	long getJobId() const;
-	void setJobId(long jobId);
 	std::string getNamespaceSource() const;
 	void setNamespaceSource(const std::string &namespaceSource);
 	std::string getGroupId() const;
 	void setGroupId(const std::string &groupId);
+	long getJobId() const;
+	void setJobId(long jobId);
 	std::string get_Namespace() const;
 	void set_Namespace(const std::string &_namespace);
 	long getJobInstanceId() const;
 	void setJobInstanceId(long jobInstanceId);
 
 private:
-	long jobId_;
 	std::string namespaceSource_;
 	std::string groupId_;
+	long jobId_;
 	std::string _namespace_;
 	long jobInstanceId_;
 };

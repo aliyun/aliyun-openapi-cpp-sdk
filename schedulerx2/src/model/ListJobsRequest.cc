@@ -34,15 +34,6 @@ void ListJobsRequest::setNamespaceSource(const std::string &namespaceSource) {
   setParameter(std::string("NamespaceSource"), namespaceSource);
 }
 
-std::string ListJobsRequest::getRegionId() const {
-  return regionId_;
-}
-
-void ListJobsRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
-}
-
 std::string ListJobsRequest::getGroupId() const {
   return groupId_;
 }
@@ -50,6 +41,15 @@ std::string ListJobsRequest::getGroupId() const {
 void ListJobsRequest::setGroupId(const std::string &groupId) {
   groupId_ = groupId;
   setParameter(std::string("GroupId"), groupId);
+}
+
+std::string ListJobsRequest::getRegionId() const {
+  return regionId_;
+}
+
+void ListJobsRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
 std::string ListJobsRequest::get_Namespace() const {

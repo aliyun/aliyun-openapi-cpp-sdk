@@ -187,6 +187,15 @@ void UpdateJobRequest::setMaxAttempt(int maxAttempt) {
   setBodyParameter(std::string("MaxAttempt"), std::to_string(maxAttempt));
 }
 
+bool UpdateJobRequest::getMissWorkerEnable() const {
+  return missWorkerEnable_;
+}
+
+void UpdateJobRequest::setMissWorkerEnable(bool missWorkerEnable) {
+  missWorkerEnable_ = missWorkerEnable;
+  setBodyParameter(std::string("MissWorkerEnable"), missWorkerEnable ? "true" : "false");
+}
+
 int UpdateJobRequest::getDispatcherSize() const {
   return dispatcherSize_;
 }
@@ -259,7 +268,9 @@ void UpdateJobRequest::setContactInfo(const std::vector<UpdateJobRequest::Contac
   for(int dep1 = 0; dep1 != contactInfo.size(); dep1++) {
   auto contactInfoObj = contactInfo.at(dep1);
   std::string contactInfoObjStr = std::string("ContactInfo") + "." + std::to_string(dep1 + 1);
+    setBodyParameter(contactInfoObjStr + ".Ding", contactInfoObj.ding);
     setBodyParameter(contactInfoObjStr + ".UserPhone", contactInfoObj.userPhone);
+    setBodyParameter(contactInfoObjStr + ".UserMail", contactInfoObj.userMail);
     setBodyParameter(contactInfoObjStr + ".UserName", contactInfoObj.userName);
   }
 }

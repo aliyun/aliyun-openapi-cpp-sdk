@@ -34,15 +34,6 @@ void BatchEnableJobsRequest::setNamespaceSource(const std::string &namespaceSour
   setParameter(std::string("NamespaceSource"), namespaceSource);
 }
 
-std::string BatchEnableJobsRequest::getRegionId() const {
-  return regionId_;
-}
-
-void BatchEnableJobsRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
-}
-
 std::string BatchEnableJobsRequest::getGroupId() const {
   return groupId_;
 }
@@ -52,6 +43,23 @@ void BatchEnableJobsRequest::setGroupId(const std::string &groupId) {
   setParameter(std::string("GroupId"), groupId);
 }
 
+std::vector<long> BatchEnableJobsRequest::getJobIdList() const {
+  return jobIdList_;
+}
+
+void BatchEnableJobsRequest::setJobIdList(const std::vector<long> &jobIdList) {
+  jobIdList_ = jobIdList;
+}
+
+std::string BatchEnableJobsRequest::getRegionId() const {
+  return regionId_;
+}
+
+void BatchEnableJobsRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string BatchEnableJobsRequest::get_Namespace() const {
   return _namespace_;
 }
@@ -59,13 +67,5 @@ std::string BatchEnableJobsRequest::get_Namespace() const {
 void BatchEnableJobsRequest::set_Namespace(const std::string &_namespace) {
   _namespace_ = _namespace;
   setParameter(std::string("Namespace"), _namespace);
-}
-
-std::vector<long> BatchEnableJobsRequest::getJobIdList() const {
-  return jobIdList_;
-}
-
-void BatchEnableJobsRequest::setJobIdList(const std::vector<long> &jobIdList) {
-  jobIdList_ = jobIdList;
 }
 

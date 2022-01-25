@@ -25,15 +25,6 @@ StopInstanceRequest::StopInstanceRequest()
 
 StopInstanceRequest::~StopInstanceRequest() {}
 
-long StopInstanceRequest::getJobId() const {
-  return jobId_;
-}
-
-void StopInstanceRequest::setJobId(long jobId) {
-  jobId_ = jobId;
-  setParameter(std::string("JobId"), std::to_string(jobId));
-}
-
 std::string StopInstanceRequest::getNamespaceSource() const {
   return namespaceSource_;
 }
@@ -41,6 +32,24 @@ std::string StopInstanceRequest::getNamespaceSource() const {
 void StopInstanceRequest::setNamespaceSource(const std::string &namespaceSource) {
   namespaceSource_ = namespaceSource;
   setParameter(std::string("NamespaceSource"), namespaceSource);
+}
+
+std::string StopInstanceRequest::getGroupId() const {
+  return groupId_;
+}
+
+void StopInstanceRequest::setGroupId(const std::string &groupId) {
+  groupId_ = groupId;
+  setParameter(std::string("GroupId"), groupId);
+}
+
+long StopInstanceRequest::getJobId() const {
+  return jobId_;
+}
+
+void StopInstanceRequest::setJobId(long jobId) {
+  jobId_ = jobId;
+  setParameter(std::string("JobId"), std::to_string(jobId));
 }
 
 long StopInstanceRequest::getInstanceId() const {
@@ -59,15 +68,6 @@ std::string StopInstanceRequest::getRegionId() const {
 void StopInstanceRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setParameter(std::string("RegionId"), regionId);
-}
-
-std::string StopInstanceRequest::getGroupId() const {
-  return groupId_;
-}
-
-void StopInstanceRequest::setGroupId(const std::string &groupId) {
-  groupId_ = groupId;
-  setParameter(std::string("GroupId"), groupId);
 }
 
 std::string StopInstanceRequest::get_Namespace() const {

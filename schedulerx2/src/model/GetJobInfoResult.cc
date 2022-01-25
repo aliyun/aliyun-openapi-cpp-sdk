@@ -94,6 +94,10 @@ void GetJobInfoResult::parse(const std::string &payload)
 			contactInfoItemObject.userPhone = jobMonitorInfoNodeContactInfoContactInfoItem["UserPhone"].asString();
 		if(!jobMonitorInfoNodeContactInfoContactInfoItem["UserName"].isNull())
 			contactInfoItemObject.userName = jobMonitorInfoNodeContactInfoContactInfoItem["UserName"].asString();
+		if(!jobMonitorInfoNodeContactInfoContactInfoItem["UserMail"].isNull())
+			contactInfoItemObject.userMail = jobMonitorInfoNodeContactInfoContactInfoItem["UserMail"].asString();
+		if(!jobMonitorInfoNodeContactInfoContactInfoItem["Ding"].isNull())
+			contactInfoItemObject.ding = jobMonitorInfoNodeContactInfoContactInfoItem["Ding"].asString();
 		data_.jobConfigInfo.jobMonitorInfo.contactInfo.push_back(contactInfoItemObject);
 	}
 	auto monitorConfigNode = jobMonitorInfoNode["MonitorConfig"];
@@ -107,6 +111,8 @@ void GetJobInfoResult::parse(const std::string &payload)
 		data_.jobConfigInfo.jobMonitorInfo.monitorConfig.timeoutEnable = monitorConfigNode["TimeoutEnable"].asString() == "true";
 	if(!monitorConfigNode["FailEnable"].isNull())
 		data_.jobConfigInfo.jobMonitorInfo.monitorConfig.failEnable = monitorConfigNode["FailEnable"].asString() == "true";
+	if(!monitorConfigNode["MissWorkerEnable"].isNull())
+		data_.jobConfigInfo.jobMonitorInfo.monitorConfig.missWorkerEnable = monitorConfigNode["MissWorkerEnable"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = std::stoi(value["Code"].asString());
 	if(!value["Message"].isNull())
