@@ -73,6 +73,7 @@ namespace AlibabaCloud
 				std::string getDeletionProtection()const;
 				std::string getVswitchId()const;
 				std::string getVpcId()const;
+				bool getEnableCdc()const;
 				bool getEnablePhoenix()const;
 				std::string getRegionId()const;
 				std::string getExpireTime()const;
@@ -107,6 +108,7 @@ namespace AlibabaCloud
 				std::string deletionProtection_;
 				std::string vswitchId_;
 				std::string vpcId_;
+				bool enableCdc_;
 				bool enablePhoenix_;
 				std::string regionId_;
 				std::string expireTime_;

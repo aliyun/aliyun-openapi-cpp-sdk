@@ -33,8 +33,6 @@ set(hitsdb_public_header_model
 	include/alibabacloud/hitsdb/model/GetLindormInstanceEngineListResult.h
 	include/alibabacloud/hitsdb/model/GetLindormInstanceListRequest.h
 	include/alibabacloud/hitsdb/model/GetLindormInstanceListResult.h
-	include/alibabacloud/hitsdb/model/GetLindormSSLCertUrlRequest.h
-	include/alibabacloud/hitsdb/model/GetLindormSSLCertUrlResult.h
 	include/alibabacloud/hitsdb/model/ReleaseLindormInstanceRequest.h
 	include/alibabacloud/hitsdb/model/ReleaseLindormInstanceResult.h
 	include/alibabacloud/hitsdb/model/UpdateInstanceIpWhiteListRequest.h
@@ -56,8 +54,6 @@ set(hitsdb_src
 	src/model/GetLindormInstanceEngineListResult.cc
 	src/model/GetLindormInstanceListRequest.cc
 	src/model/GetLindormInstanceListResult.cc
-	src/model/GetLindormSSLCertUrlRequest.cc
-	src/model/GetLindormSSLCertUrlResult.cc
 	src/model/ReleaseLindormInstanceRequest.cc
 	src/model/ReleaseLindormInstanceResult.cc
 	src/model/UpdateInstanceIpWhiteListRequest.cc
