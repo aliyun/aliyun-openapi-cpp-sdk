@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_POLARDB_MODEL_CREATEDBNODESREQUEST_H_
-#define ALIBABACLOUD_POLARDB_MODEL_CREATEDBNODESREQUEST_H_
+#ifndef ALIBABACLOUD_POLARDB_MODEL_DESCRIBEDBPROXYPERFORMANCEREQUEST_H_
+#define ALIBABACLOUD_POLARDB_MODEL_DESCRIBEDBPROXYPERFORMANCEREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,60 +28,45 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_POLARDB_EXPORT CreateDBNodesRequest : public RpcServiceRequest
+			class ALIBABACLOUD_POLARDB_EXPORT DescribeDBProxyPerformanceRequest : public RpcServiceRequest
 			{
-			public:
-				struct DBNode
-				{
-					std::string targetClass;
-					std::string zoneId;
-				};
 
 			public:
-				CreateDBNodesRequest();
-				~CreateDBNodesRequest();
+				DescribeDBProxyPerformanceRequest();
+				~DescribeDBProxyPerformanceRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getClientToken()const;
-				void setClientToken(const std::string& clientToken);
-				std::string getEndpointBindList()const;
-				void setEndpointBindList(const std::string& endpointBindList);
-				std::string getPlannedEndTime()const;
-				void setPlannedEndTime(const std::string& plannedEndTime);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getStartTime()const;
+				void setStartTime(const std::string& startTime);
+				std::string getKey()const;
+				void setKey(const std::string& key);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getDBClusterId()const;
 				void setDBClusterId(const std::string& dBClusterId);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
+				std::string getEndTime()const;
+				void setEndTime(const std::string& endTime);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getPlannedStartTime()const;
-				void setPlannedStartTime(const std::string& plannedStartTime);
-				std::vector<DBNode> getDBNode()const;
-				void setDBNode(const std::vector<DBNode>& dBNode);
-				std::string getImciSwitch()const;
-				void setImciSwitch(const std::string& imciSwitch);
+				std::string getMetric()const;
+				void setMetric(const std::string& metric);
 
             private:
 				long resourceOwnerId_;
-				std::string clientToken_;
-				std::string endpointBindList_;
-				std::string plannedEndTime_;
-				std::string accessKeyId_;
+				std::string startTime_;
+				std::string key_;
 				std::string resourceOwnerAccount_;
 				std::string dBClusterId_;
 				std::string ownerAccount_;
+				std::string endTime_;
 				long ownerId_;
-				std::string plannedStartTime_;
-				std::vector<DBNode> dBNode_;
-				std::string imciSwitch_;
+				std::string metric_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_POLARDB_MODEL_CREATEDBNODESREQUEST_H_
+#endif // !ALIBABACLOUD_POLARDB_MODEL_DESCRIBEDBPROXYPERFORMANCEREQUEST_H_

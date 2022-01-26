@@ -61,6 +61,10 @@ void DescribeDBClusterAttributeResult::parse(const std::string &payload)
 			dBNodesObject.dBNodeStatus = valueDBNodesDBNode["DBNodeStatus"].asString();
 		if(!valueDBNodesDBNode["DBNodeId"].isNull())
 			dBNodesObject.dBNodeId = valueDBNodesDBNode["DBNodeId"].asString();
+		if(!valueDBNodesDBNode["ImciSwitch"].isNull())
+			dBNodesObject.imciSwitch = valueDBNodesDBNode["ImciSwitch"].asString();
+		if(!valueDBNodesDBNode["HotReplicaMode"].isNull())
+			dBNodesObject.hotReplicaMode = valueDBNodesDBNode["HotReplicaMode"].asString();
 		dBNodes_.push_back(dBNodesObject);
 	}
 	auto allTagsNode = value["Tags"]["Tag"];
@@ -129,6 +133,14 @@ void DescribeDBClusterAttributeResult::parse(const std::string &payload)
 		subCategory_ = value["SubCategory"].asString();
 	if(!value["IsProxyLatestVersion"].isNull())
 		isProxyLatestVersion_ = value["IsProxyLatestVersion"].asString() == "true";
+	if(!value["StorageType"].isNull())
+		storageType_ = value["StorageType"].asString();
+	if(!value["ProxyCpuCores"].isNull())
+		proxyCpuCores_ = value["ProxyCpuCores"].asString();
+	if(!value["ProxyType"].isNull())
+		proxyType_ = value["ProxyType"].asString();
+	if(!value["ProxyStatus"].isNull())
+		proxyStatus_ = value["ProxyStatus"].asString();
 
 }
 
@@ -155,6 +167,11 @@ long DescribeDBClusterAttributeResult::getDataLevel1BackupChainSize()const
 std::string DescribeDBClusterAttributeResult::getDBClusterId()const
 {
 	return dBClusterId_;
+}
+
+std::string DescribeDBClusterAttributeResult::getProxyStatus()const
+{
+	return proxyStatus_;
 }
 
 std::string DescribeDBClusterAttributeResult::getDBType()const
@@ -207,6 +224,11 @@ std::string DescribeDBClusterAttributeResult::getEngine()const
 	return engine_;
 }
 
+std::string DescribeDBClusterAttributeResult::getStorageType()const
+{
+	return storageType_;
+}
+
 std::string DescribeDBClusterAttributeResult::getVPCId()const
 {
 	return vPCId_;
@@ -230,6 +252,11 @@ std::string DescribeDBClusterAttributeResult::getDBClusterDescription()const
 std::string DescribeDBClusterAttributeResult::getExpired()const
 {
 	return expired_;
+}
+
+std::string DescribeDBClusterAttributeResult::getProxyCpuCores()const
+{
+	return proxyCpuCores_;
 }
 
 std::string DescribeDBClusterAttributeResult::getPayType()const
@@ -275,6 +302,11 @@ long DescribeDBClusterAttributeResult::getSQLSize()const
 std::string DescribeDBClusterAttributeResult::getRegionId()const
 {
 	return regionId_;
+}
+
+std::string DescribeDBClusterAttributeResult::getProxyType()const
+{
+	return proxyType_;
 }
 
 std::string DescribeDBClusterAttributeResult::getExpireTime()const

@@ -153,3 +153,14 @@ void CreateDBNodesRequest::setDBNode(const std::vector<DBNode>& dBNode)
 	}
 }
 
+std::string CreateDBNodesRequest::getImciSwitch()const
+{
+	return imciSwitch_;
+}
+
+void CreateDBNodesRequest::setImciSwitch(const std::string& imciSwitch)
+{
+	imciSwitch_ = imciSwitch;
+	setParameter("ImciSwitch", imciSwitch);
+}
+

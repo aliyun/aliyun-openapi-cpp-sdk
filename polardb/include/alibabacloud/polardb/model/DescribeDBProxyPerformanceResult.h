@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_POLARDB_MODEL_DESCRIBESLOWLOGRECORDSRESULT_H_
-#define ALIBABACLOUD_POLARDB_MODEL_DESCRIBESLOWLOGRECORDSRESULT_H_
+#ifndef ALIBABACLOUD_POLARDB_MODEL_DESCRIBEDBPROXYPERFORMANCERESULT_H_
+#define ALIBABACLOUD_POLARDB_MODEL_DESCRIBEDBPROXYPERFORMANCERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,46 +29,47 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_POLARDB_EXPORT DescribeSlowLogRecordsResult : public ServiceResult
+			class ALIBABACLOUD_POLARDB_EXPORT DescribeDBProxyPerformanceResult : public ServiceResult
 			{
 			public:
-				struct SQLSlowRecord
+				struct PerformanceItem
 				{
-					long queryTimes;
-					std::string executionStartTime;
-					long returnRowCounts;
-					long lockTimes;
-					std::string dBName;
-					long parseRowCounts;
+					struct PerformanceItemValue
+					{
+						std::string value;
+						long timestamp;
+					};
+					std::string measurement;
+					std::string metricName;
+					std::vector<PerformanceItem::PerformanceItemValue> points;
 					std::string dBNodeId;
-					std::string hostAddress;
-					long queryTimeMS;
-					std::string sQLText;
 				};
 
 
-				DescribeSlowLogRecordsResult();
-				explicit DescribeSlowLogRecordsResult(const std::string &payload);
-				~DescribeSlowLogRecordsResult();
-				int getTotalRecordCount()const;
-				int getPageRecordCount()const;
-				int getPageNumber()const;
+				DescribeDBProxyPerformanceResult();
+				explicit DescribeDBProxyPerformanceResult(const std::string &payload);
+				~DescribeDBProxyPerformanceResult();
+				std::vector<PerformanceItem> getPerformanceKeys()const;
+				std::string getDBVersion()const;
+				std::string getEndTime()const;
+				std::string getStartTime()const;
 				std::string getDBClusterId()const;
-				std::vector<SQLSlowRecord> getItems()const;
+				std::string getDBType()const;
 				std::string getEngine()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int totalRecordCount_;
-				int pageRecordCount_;
-				int pageNumber_;
+				std::vector<PerformanceItem> performanceKeys_;
+				std::string dBVersion_;
+				std::string endTime_;
+				std::string startTime_;
 				std::string dBClusterId_;
-				std::vector<SQLSlowRecord> items_;
+				std::string dBType_;
 				std::string engine_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_POLARDB_MODEL_DESCRIBESLOWLOGRECORDSRESULT_H_
+#endif // !ALIBABACLOUD_POLARDB_MODEL_DESCRIBEDBPROXYPERFORMANCERESULT_H_

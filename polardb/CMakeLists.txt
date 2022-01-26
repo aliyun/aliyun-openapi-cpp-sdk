@@ -121,6 +121,8 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/DescribeDBLinksResult.h
 	include/alibabacloud/polardb/model/DescribeDBNodePerformanceRequest.h
 	include/alibabacloud/polardb/model/DescribeDBNodePerformanceResult.h
+	include/alibabacloud/polardb/model/DescribeDBProxyPerformanceRequest.h
+	include/alibabacloud/polardb/model/DescribeDBProxyPerformanceResult.h
 	include/alibabacloud/polardb/model/DescribeDatabasesRequest.h
 	include/alibabacloud/polardb/model/DescribeDatabasesResult.h
 	include/alibabacloud/polardb/model/DescribeDetachedBackupsRequest.h
@@ -163,6 +165,8 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/GrantAccountPrivilegeResult.h
 	include/alibabacloud/polardb/model/ListTagResourcesRequest.h
 	include/alibabacloud/polardb/model/ListTagResourcesResult.h
+	include/alibabacloud/polardb/model/ListTagResourcesForRegionRequest.h
+	include/alibabacloud/polardb/model/ListTagResourcesForRegionResult.h
 	include/alibabacloud/polardb/model/ModifyAccountDescriptionRequest.h
 	include/alibabacloud/polardb/model/ModifyAccountDescriptionResult.h
 	include/alibabacloud/polardb/model/ModifyAccountPasswordRequest.h
@@ -199,6 +203,8 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/ModifyDBEndpointAddressResult.h
 	include/alibabacloud/polardb/model/ModifyDBNodeClassRequest.h
 	include/alibabacloud/polardb/model/ModifyDBNodeClassResult.h
+	include/alibabacloud/polardb/model/ModifyDBNodeHotReplicaModeRequest.h
+	include/alibabacloud/polardb/model/ModifyDBNodeHotReplicaModeResult.h
 	include/alibabacloud/polardb/model/ModifyGlobalDatabaseNetworkRequest.h
 	include/alibabacloud/polardb/model/ModifyGlobalDatabaseNetworkResult.h
 	include/alibabacloud/polardb/model/ModifyLogBackupPolicyRequest.h
@@ -332,6 +338,8 @@ set(polardb_src
 	src/model/DescribeDBLinksResult.cc
 	src/model/DescribeDBNodePerformanceRequest.cc
 	src/model/DescribeDBNodePerformanceResult.cc
+	src/model/DescribeDBProxyPerformanceRequest.cc
+	src/model/DescribeDBProxyPerformanceResult.cc
 	src/model/DescribeDatabasesRequest.cc
 	src/model/DescribeDatabasesResult.cc
 	src/model/DescribeDetachedBackupsRequest.cc
@@ -374,6 +382,8 @@ set(polardb_src
 	src/model/GrantAccountPrivilegeResult.cc
 	src/model/ListTagResourcesRequest.cc
 	src/model/ListTagResourcesResult.cc
+	src/model/ListTagResourcesForRegionRequest.cc
+	src/model/ListTagResourcesForRegionResult.cc
 	src/model/ModifyAccountDescriptionRequest.cc
 	src/model/ModifyAccountDescriptionResult.cc
 	src/model/ModifyAccountPasswordRequest.cc
@@ -410,6 +420,8 @@ set(polardb_src
 	src/model/ModifyDBEndpointAddressResult.cc
 	src/model/ModifyDBNodeClassRequest.cc
 	src/model/ModifyDBNodeClassResult.cc
+	src/model/ModifyDBNodeHotReplicaModeRequest.cc
+	src/model/ModifyDBNodeHotReplicaModeResult.cc
 	src/model/ModifyGlobalDatabaseNetworkRequest.cc
 	src/model/ModifyGlobalDatabaseNetworkResult.cc
 	src/model/ModifyLogBackupPolicyRequest.cc

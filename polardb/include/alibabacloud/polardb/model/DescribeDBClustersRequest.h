@@ -49,6 +49,8 @@ namespace AlibabaCloud
 				void setDBClusterStatus(const std::string& dBClusterStatus);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
+				std::string getDBNodeIds()const;
+				void setDBNodeIds(const std::string& dBNodeIds);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getResourceGroupId()const;
@@ -67,6 +69,8 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getDBType()const;
 				void setDBType(const std::string& dBType);
+				std::string getPayType()const;
+				void setPayType(const std::string& payType);
 				std::string getDBClusterIds()const;
 				void setDBClusterIds(const std::string& dBClusterIds);
 
@@ -75,6 +79,7 @@ namespace AlibabaCloud
 				std::string dBClusterDescription_;
 				std::string dBClusterStatus_;
 				int pageNumber_;
+				std::string dBNodeIds_;
 				std::string accessKeyId_;
 				std::string resourceGroupId_;
 				std::string regionId_;
@@ -84,6 +89,7 @@ namespace AlibabaCloud
 				std::string ownerAccount_;
 				long ownerId_;
 				std::string dBType_;
+				std::string payType_;
 				std::string dBClusterIds_;
 
 			};

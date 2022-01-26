@@ -43,36 +43,38 @@ void DescribeSlowLogRecordsResult::parse(const std::string &payload)
 	for (auto valueItemsSQLSlowRecord : allItemsNode)
 	{
 		SQLSlowRecord itemsObject;
-		if(!valueItemsSQLSlowRecord["HostAddress"].isNull())
-			itemsObject.hostAddress = valueItemsSQLSlowRecord["HostAddress"].asString();
-		if(!valueItemsSQLSlowRecord["DBName"].isNull())
-			itemsObject.dBName = valueItemsSQLSlowRecord["DBName"].asString();
-		if(!valueItemsSQLSlowRecord["SQLText"].isNull())
-			itemsObject.sQLText = valueItemsSQLSlowRecord["SQLText"].asString();
-		if(!valueItemsSQLSlowRecord["QueryTimes"].isNull())
-			itemsObject.queryTimes = std::stol(valueItemsSQLSlowRecord["QueryTimes"].asString());
-		if(!valueItemsSQLSlowRecord["LockTimes"].isNull())
-			itemsObject.lockTimes = std::stol(valueItemsSQLSlowRecord["LockTimes"].asString());
-		if(!valueItemsSQLSlowRecord["ParseRowCounts"].isNull())
-			itemsObject.parseRowCounts = std::stol(valueItemsSQLSlowRecord["ParseRowCounts"].asString());
-		if(!valueItemsSQLSlowRecord["ReturnRowCounts"].isNull())
-			itemsObject.returnRowCounts = std::stol(valueItemsSQLSlowRecord["ReturnRowCounts"].asString());
 		if(!valueItemsSQLSlowRecord["ExecutionStartTime"].isNull())
 			itemsObject.executionStartTime = valueItemsSQLSlowRecord["ExecutionStartTime"].asString();
+		if(!valueItemsSQLSlowRecord["HostAddress"].isNull())
+			itemsObject.hostAddress = valueItemsSQLSlowRecord["HostAddress"].asString();
+		if(!valueItemsSQLSlowRecord["QueryTimes"].isNull())
+			itemsObject.queryTimes = std::stol(valueItemsSQLSlowRecord["QueryTimes"].asString());
+		if(!valueItemsSQLSlowRecord["SQLText"].isNull())
+			itemsObject.sQLText = valueItemsSQLSlowRecord["SQLText"].asString();
+		if(!valueItemsSQLSlowRecord["ReturnRowCounts"].isNull())
+			itemsObject.returnRowCounts = std::stol(valueItemsSQLSlowRecord["ReturnRowCounts"].asString());
+		if(!valueItemsSQLSlowRecord["ParseRowCounts"].isNull())
+			itemsObject.parseRowCounts = std::stol(valueItemsSQLSlowRecord["ParseRowCounts"].asString());
+		if(!valueItemsSQLSlowRecord["DBName"].isNull())
+			itemsObject.dBName = valueItemsSQLSlowRecord["DBName"].asString();
+		if(!valueItemsSQLSlowRecord["LockTimes"].isNull())
+			itemsObject.lockTimes = std::stol(valueItemsSQLSlowRecord["LockTimes"].asString());
 		if(!valueItemsSQLSlowRecord["DBNodeId"].isNull())
 			itemsObject.dBNodeId = valueItemsSQLSlowRecord["DBNodeId"].asString();
+		if(!valueItemsSQLSlowRecord["QueryTimeMS"].isNull())
+			itemsObject.queryTimeMS = std::stol(valueItemsSQLSlowRecord["QueryTimeMS"].asString());
 		items_.push_back(itemsObject);
 	}
+	if(!value["TotalRecordCount"].isNull())
+		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
+	if(!value["PageRecordCount"].isNull())
+		pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["DBClusterId"].isNull())
 		dBClusterId_ = value["DBClusterId"].asString();
 	if(!value["Engine"].isNull())
 		engine_ = value["Engine"].asString();
-	if(!value["TotalRecordCount"].isNull())
-		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
-	if(!value["PageRecordCount"].isNull())
-		pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
 
 }
 

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_POLARDB_MODEL_CREATEDBNODESREQUEST_H_
-#define ALIBABACLOUD_POLARDB_MODEL_CREATEDBNODESREQUEST_H_
+#ifndef ALIBABACLOUD_POLARDB_MODEL_MODIFYDBNODEHOTREPLICAMODEREQUEST_H_
+#define ALIBABACLOUD_POLARDB_MODEL_MODIFYDBNODEHOTREPLICAMODEREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,27 +28,17 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_POLARDB_EXPORT CreateDBNodesRequest : public RpcServiceRequest
+			class ALIBABACLOUD_POLARDB_EXPORT ModifyDBNodeHotReplicaModeRequest : public RpcServiceRequest
 			{
-			public:
-				struct DBNode
-				{
-					std::string targetClass;
-					std::string zoneId;
-				};
 
 			public:
-				CreateDBNodesRequest();
-				~CreateDBNodesRequest();
+				ModifyDBNodeHotReplicaModeRequest();
+				~ModifyDBNodeHotReplicaModeRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getClientToken()const;
-				void setClientToken(const std::string& clientToken);
-				std::string getEndpointBindList()const;
-				void setEndpointBindList(const std::string& endpointBindList);
-				std::string getPlannedEndTime()const;
-				void setPlannedEndTime(const std::string& plannedEndTime);
+				std::string getDBNodeId()const;
+				void setDBNodeId(const std::string& dBNodeId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getResourceOwnerAccount()const;
@@ -59,29 +49,21 @@ namespace AlibabaCloud
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getPlannedStartTime()const;
-				void setPlannedStartTime(const std::string& plannedStartTime);
-				std::vector<DBNode> getDBNode()const;
-				void setDBNode(const std::vector<DBNode>& dBNode);
-				std::string getImciSwitch()const;
-				void setImciSwitch(const std::string& imciSwitch);
+				std::string getHotReplicaMode()const;
+				void setHotReplicaMode(const std::string& hotReplicaMode);
 
             private:
 				long resourceOwnerId_;
-				std::string clientToken_;
-				std::string endpointBindList_;
-				std::string plannedEndTime_;
+				std::string dBNodeId_;
 				std::string accessKeyId_;
 				std::string resourceOwnerAccount_;
 				std::string dBClusterId_;
 				std::string ownerAccount_;
 				long ownerId_;
-				std::string plannedStartTime_;
-				std::vector<DBNode> dBNode_;
-				std::string imciSwitch_;
+				std::string hotReplicaMode_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_POLARDB_MODEL_CREATEDBNODESREQUEST_H_
+#endif // !ALIBABACLOUD_POLARDB_MODEL_MODIFYDBNODEHOTREPLICAMODEREQUEST_H_

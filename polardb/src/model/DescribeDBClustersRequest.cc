@@ -71,6 +71,17 @@ void DescribeDBClustersRequest::setPageNumber(int pageNumber)
 	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
+std::string DescribeDBClustersRequest::getDBNodeIds()const
+{
+	return dBNodeIds_;
+}
+
+void DescribeDBClustersRequest::setDBNodeIds(const std::string& dBNodeIds)
+{
+	dBNodeIds_ = dBNodeIds;
+	setParameter("DBNodeIds", dBNodeIds);
+}
+
 std::string DescribeDBClustersRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -173,6 +184,17 @@ void DescribeDBClustersRequest::setDBType(const std::string& dBType)
 {
 	dBType_ = dBType;
 	setParameter("DBType", dBType);
+}
+
+std::string DescribeDBClustersRequest::getPayType()const
+{
+	return payType_;
+}
+
+void DescribeDBClustersRequest::setPayType(const std::string& payType)
+{
+	payType_ = payType;
+	setParameter("PayType", payType);
 }
 
 std::string DescribeDBClustersRequest::getDBClusterIds()const
