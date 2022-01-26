@@ -58,6 +58,7 @@ void CreateGroupMetricRulesRequest::setGroupMetricRules(const std::vector<Create
     setParameter(groupMetricRulesObjStr + ".CompositeExpression", groupMetricRulesObj.compositeExpression);
     setParameter(groupMetricRulesObjStr + ".Escalations.Warn.Threshold", groupMetricRulesObj.escalationsWarnThreshold);
     setParameter(groupMetricRulesObjStr + ".Period", groupMetricRulesObj.period);
+    setParameter(groupMetricRulesObjStr + ".ContactGroups", groupMetricRulesObj.contactGroups);
     setParameter(groupMetricRulesObjStr + ".Escalations.Critical.Statistics", groupMetricRulesObj.escalationsCriticalStatistics);
     setParameter(groupMetricRulesObjStr + ".Escalations.Info.Times", std::to_string(groupMetricRulesObj.escalationsInfoTimes));
     setParameter(groupMetricRulesObjStr + ".Escalations.Critical.Times", std::to_string(groupMetricRulesObj.escalationsCriticalTimes));

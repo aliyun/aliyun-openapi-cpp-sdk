@@ -70,6 +70,15 @@ void DescribeMetricRuleListRequest::setGroupId(const std::string &groupId) {
   setParameter(std::string("GroupId"), groupId);
 }
 
+std::string DescribeMetricRuleListRequest::getGroupBy() const {
+  return groupBy_;
+}
+
+void DescribeMetricRuleListRequest::setGroupBy(const std::string &groupBy) {
+  groupBy_ = groupBy;
+  setParameter(std::string("GroupBy"), groupBy);
+}
+
 std::string DescribeMetricRuleListRequest::getRuleIds() const {
   return ruleIds_;
 }

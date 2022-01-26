@@ -44,6 +44,7 @@ public:
 		std::string compositeExpression;
 		std::string escalationsWarnThreshold;
 		std::string period;
+		std::string contactGroups;
 		std::string escalationsCriticalStatistics;
 		int escalationsInfoTimes;
 		int escalationsCriticalTimes;

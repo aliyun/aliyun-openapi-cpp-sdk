@@ -40,6 +40,8 @@ public:
 	void setMetricName(const std::string &metricName);
 	std::string getGroupId() const;
 	void setGroupId(const std::string &groupId);
+	std::string getGroupBy() const;
+	void setGroupBy(const std::string &groupBy);
 	std::string getRuleIds() const;
 	void setRuleIds(const std::string &ruleIds);
 	std::string get_Namespace() const;
@@ -57,6 +59,7 @@ private:
 	int pageSize_;
 	std::string metricName_;
 	std::string groupId_;
+	std::string groupBy_;
 	std::string ruleIds_;
 	std::string _namespace_;
 	std::string alertState_;
