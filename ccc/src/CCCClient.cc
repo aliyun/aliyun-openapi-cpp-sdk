@@ -31,21 +31,21 @@ CCCClient::CCCClient(const Credentials &credentials, const ClientConfiguration &
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "CCC");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 CCCClient::CCCClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "CCC");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 CCCClient::CCCClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "CCC");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 CCCClient::~CCCClient()
@@ -837,6 +837,42 @@ CCCClient::GetCampaignOutcomeCallable CCCClient::getCampaignCallable(const GetCa
 			[this, request]()
 			{
 			return this->getCampaign(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CCCClient::GetCaseFileUploadUrlOutcome CCCClient::getCaseFileUploadUrl(const GetCaseFileUploadUrlRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetCaseFileUploadUrlOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetCaseFileUploadUrlOutcome(GetCaseFileUploadUrlResult(outcome.result()));
+	else
+		return GetCaseFileUploadUrlOutcome(outcome.error());
+}
+
+void CCCClient::getCaseFileUploadUrlAsync(const GetCaseFileUploadUrlRequest& request, const GetCaseFileUploadUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getCaseFileUploadUrl(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CCCClient::GetCaseFileUploadUrlOutcomeCallable CCCClient::getCaseFileUploadUrlCallable(const GetCaseFileUploadUrlRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetCaseFileUploadUrlOutcome()>>(
+			[this, request]()
+			{
+			return this->getCaseFileUploadUrl(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3213,6 +3249,42 @@ CCCClient::RegisterDeviceOutcomeCallable CCCClient::registerDeviceCallable(const
 			[this, request]()
 			{
 			return this->registerDevice(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CCCClient::RegisterDevicesOutcome CCCClient::registerDevices(const RegisterDevicesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RegisterDevicesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RegisterDevicesOutcome(RegisterDevicesResult(outcome.result()));
+	else
+		return RegisterDevicesOutcome(outcome.error());
+}
+
+void CCCClient::registerDevicesAsync(const RegisterDevicesRequest& request, const RegisterDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, registerDevices(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CCCClient::RegisterDevicesOutcomeCallable CCCClient::registerDevicesCallable(const RegisterDevicesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RegisterDevicesOutcome()>>(
+			[this, request]()
+			{
+			return this->registerDevices(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

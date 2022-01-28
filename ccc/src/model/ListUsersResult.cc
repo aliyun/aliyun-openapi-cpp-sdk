@@ -72,6 +72,14 @@ void ListUsersResult::parse(const std::string &payload)
 			userDetailObject.primaryAccount = dataNodeListUserDetail["PrimaryAccount"].asString() == "true";
 		if(!dataNodeListUserDetail["RamId"].isNull())
 			userDetailObject.ramId = std::stol(dataNodeListUserDetail["RamId"].asString());
+		if(!dataNodeListUserDetail["Extension"].isNull())
+			userDetailObject.extension = dataNodeListUserDetail["Extension"].asString();
+		if(!dataNodeListUserDetail["DeviceId"].isNull())
+			userDetailObject.deviceId = dataNodeListUserDetail["DeviceId"].asString();
+		if(!dataNodeListUserDetail["DeviceExt"].isNull())
+			userDetailObject.deviceExt = dataNodeListUserDetail["DeviceExt"].asString();
+		if(!dataNodeListUserDetail["DeviceState"].isNull())
+			userDetailObject.deviceState = dataNodeListUserDetail["DeviceState"].asString();
 		auto allPersonalOutboundNumberListNode = dataNodeListUserDetail["PersonalOutboundNumberList"]["PhoneNumber"];
 		for (auto dataNodeListUserDetailPersonalOutboundNumberListPhoneNumber : allPersonalOutboundNumberListNode)
 		{

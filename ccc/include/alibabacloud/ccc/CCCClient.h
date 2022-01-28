@@ -66,6 +66,8 @@
 #include "model/GetCallDetailRecordResult.h"
 #include "model/GetCampaignRequest.h"
 #include "model/GetCampaignResult.h"
+#include "model/GetCaseFileUploadUrlRequest.h"
+#include "model/GetCaseFileUploadUrlResult.h"
 #include "model/GetHistoricalCallerReportRequest.h"
 #include "model/GetHistoricalCallerReportResult.h"
 #include "model/GetHistoricalInstanceReportRequest.h"
@@ -198,6 +200,8 @@
 #include "model/ReadyForServiceResult.h"
 #include "model/RegisterDeviceRequest.h"
 #include "model/RegisterDeviceResult.h"
+#include "model/RegisterDevicesRequest.h"
+#include "model/RegisterDevicesResult.h"
 #include "model/ReleaseCallRequest.h"
 #include "model/ReleaseCallResult.h"
 #include "model/RemovePersonalNumbersFromUserRequest.h"
@@ -323,6 +327,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetCampaignResult> GetCampaignOutcome;
 			typedef std::future<GetCampaignOutcome> GetCampaignOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::GetCampaignRequest&, const GetCampaignOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetCampaignAsyncHandler;
+			typedef Outcome<Error, Model::GetCaseFileUploadUrlResult> GetCaseFileUploadUrlOutcome;
+			typedef std::future<GetCaseFileUploadUrlOutcome> GetCaseFileUploadUrlOutcomeCallable;
+			typedef std::function<void(const CCCClient*, const Model::GetCaseFileUploadUrlRequest&, const GetCaseFileUploadUrlOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetCaseFileUploadUrlAsyncHandler;
 			typedef Outcome<Error, Model::GetHistoricalCallerReportResult> GetHistoricalCallerReportOutcome;
 			typedef std::future<GetHistoricalCallerReportOutcome> GetHistoricalCallerReportOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::GetHistoricalCallerReportRequest&, const GetHistoricalCallerReportOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetHistoricalCallerReportAsyncHandler;
@@ -521,6 +528,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RegisterDeviceResult> RegisterDeviceOutcome;
 			typedef std::future<RegisterDeviceOutcome> RegisterDeviceOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::RegisterDeviceRequest&, const RegisterDeviceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RegisterDeviceAsyncHandler;
+			typedef Outcome<Error, Model::RegisterDevicesResult> RegisterDevicesOutcome;
+			typedef std::future<RegisterDevicesOutcome> RegisterDevicesOutcomeCallable;
+			typedef std::function<void(const CCCClient*, const Model::RegisterDevicesRequest&, const RegisterDevicesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RegisterDevicesAsyncHandler;
 			typedef Outcome<Error, Model::ReleaseCallResult> ReleaseCallOutcome;
 			typedef std::future<ReleaseCallOutcome> ReleaseCallOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::ReleaseCallRequest&, const ReleaseCallOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ReleaseCallAsyncHandler;
@@ -667,6 +677,9 @@ namespace AlibabaCloud
 			GetCampaignOutcome getCampaign(const Model::GetCampaignRequest &request)const;
 			void getCampaignAsync(const Model::GetCampaignRequest& request, const GetCampaignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetCampaignOutcomeCallable getCampaignCallable(const Model::GetCampaignRequest& request) const;
+			GetCaseFileUploadUrlOutcome getCaseFileUploadUrl(const Model::GetCaseFileUploadUrlRequest &request)const;
+			void getCaseFileUploadUrlAsync(const Model::GetCaseFileUploadUrlRequest& request, const GetCaseFileUploadUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetCaseFileUploadUrlOutcomeCallable getCaseFileUploadUrlCallable(const Model::GetCaseFileUploadUrlRequest& request) const;
 			GetHistoricalCallerReportOutcome getHistoricalCallerReport(const Model::GetHistoricalCallerReportRequest &request)const;
 			void getHistoricalCallerReportAsync(const Model::GetHistoricalCallerReportRequest& request, const GetHistoricalCallerReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetHistoricalCallerReportOutcomeCallable getHistoricalCallerReportCallable(const Model::GetHistoricalCallerReportRequest& request) const;
@@ -865,6 +878,9 @@ namespace AlibabaCloud
 			RegisterDeviceOutcome registerDevice(const Model::RegisterDeviceRequest &request)const;
 			void registerDeviceAsync(const Model::RegisterDeviceRequest& request, const RegisterDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RegisterDeviceOutcomeCallable registerDeviceCallable(const Model::RegisterDeviceRequest& request) const;
+			RegisterDevicesOutcome registerDevices(const Model::RegisterDevicesRequest &request)const;
+			void registerDevicesAsync(const Model::RegisterDevicesRequest& request, const RegisterDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RegisterDevicesOutcomeCallable registerDevicesCallable(const Model::RegisterDevicesRequest& request) const;
 			ReleaseCallOutcome releaseCall(const Model::ReleaseCallRequest &request)const;
 			void releaseCallAsync(const Model::ReleaseCallRequest& request, const ReleaseCallAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ReleaseCallOutcomeCallable releaseCallCallable(const Model::ReleaseCallRequest& request) const;

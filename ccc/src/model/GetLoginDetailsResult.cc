@@ -58,6 +58,14 @@ void GetLoginDetailsResult::parse(const std::string &payload)
 		data_.userKey = dataNode["UserKey"].asString();
 	if(!dataNode["WorkMode"].isNull())
 		data_.workMode = dataNode["WorkMode"].asString();
+	if(!dataNode["UserKey2"].isNull())
+		data_.userKey2 = dataNode["UserKey2"].asString();
+	if(!dataNode["Signature2"].isNull())
+		data_.signature2 = dataNode["Signature2"].asString();
+	if(!dataNode["DeviceExt"].isNull())
+		data_.deviceExt = dataNode["DeviceExt"].asString();
+	if(!dataNode["DeviceState"].isNull())
+		data_.deviceState = dataNode["DeviceState"].asString();
 	auto allParams = value["Params"]["Param"];
 	for (const auto &item : allParams)
 		params_.push_back(item.asString());

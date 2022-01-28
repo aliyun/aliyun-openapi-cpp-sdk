@@ -69,6 +69,7 @@ namespace AlibabaCloud
 						std::vector<std::string> signedSkillGroupIdList;
 					};
 					UserContext userContext;
+					long contextId;
 					CallContext callContext;
 				};
 

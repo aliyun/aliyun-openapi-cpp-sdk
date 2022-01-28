@@ -34,15 +34,18 @@ namespace AlibabaCloud
 			public:
 				struct Data
 				{
-					std::string extension;
 					std::string loginName;
-					std::string roleName;
 					std::string email;
 					std::string instanceId;
-					std::string userId;
-					std::string displayName;
+					std::string deviceId;
 					std::string mobile;
 					std::string roleId;
+					std::string extension;
+					std::string roleName;
+					std::string deviceState;
+					std::string userId;
+					std::string displayName;
+					std::string deviceExt;
 					std::string workMode;
 				};
 

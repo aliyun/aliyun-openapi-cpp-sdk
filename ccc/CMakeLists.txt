@@ -65,6 +65,8 @@ set(ccc_public_header_model
 	include/alibabacloud/ccc/model/GetCallDetailRecordResult.h
 	include/alibabacloud/ccc/model/GetCampaignRequest.h
 	include/alibabacloud/ccc/model/GetCampaignResult.h
+	include/alibabacloud/ccc/model/GetCaseFileUploadUrlRequest.h
+	include/alibabacloud/ccc/model/GetCaseFileUploadUrlResult.h
 	include/alibabacloud/ccc/model/GetHistoricalCallerReportRequest.h
 	include/alibabacloud/ccc/model/GetHistoricalCallerReportResult.h
 	include/alibabacloud/ccc/model/GetHistoricalInstanceReportRequest.h
@@ -197,6 +199,8 @@ set(ccc_public_header_model
 	include/alibabacloud/ccc/model/ReadyForServiceResult.h
 	include/alibabacloud/ccc/model/RegisterDeviceRequest.h
 	include/alibabacloud/ccc/model/RegisterDeviceResult.h
+	include/alibabacloud/ccc/model/RegisterDevicesRequest.h
+	include/alibabacloud/ccc/model/RegisterDevicesResult.h
 	include/alibabacloud/ccc/model/ReleaseCallRequest.h
 	include/alibabacloud/ccc/model/ReleaseCallResult.h
 	include/alibabacloud/ccc/model/RemovePersonalNumbersFromUserRequest.h
@@ -294,6 +298,8 @@ set(ccc_src
 	src/model/GetCallDetailRecordResult.cc
 	src/model/GetCampaignRequest.cc
 	src/model/GetCampaignResult.cc
+	src/model/GetCaseFileUploadUrlRequest.cc
+	src/model/GetCaseFileUploadUrlResult.cc
 	src/model/GetHistoricalCallerReportRequest.cc
 	src/model/GetHistoricalCallerReportResult.cc
 	src/model/GetHistoricalInstanceReportRequest.cc
@@ -426,6 +432,8 @@ set(ccc_src
 	src/model/ReadyForServiceResult.cc
 	src/model/RegisterDeviceRequest.cc
 	src/model/RegisterDeviceResult.cc
+	src/model/RegisterDevicesRequest.cc
+	src/model/RegisterDevicesResult.cc
 	src/model/ReleaseCallRequest.cc
 	src/model/ReleaseCallResult.cc
 	src/model/RemovePersonalNumbersFromUserRequest.cc

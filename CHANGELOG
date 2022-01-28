@@ -1,3 +1,6 @@
+2022-01-28 Version: 1.36.1046
+- Support SIP phone management.
+
 2022-01-26 Version: 1.36.1045
 - CreateContact API Add ContactGroupName.
 

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CCC_MODEL_GETLOGINDETAILSRESULT_H_
-#define ALIBABACLOUD_CCC_MODEL_GETLOGINDETAILSRESULT_H_
+#ifndef ALIBABACLOUD_CCC_MODEL_REGISTERDEVICESRESULT_H_
+#define ALIBABACLOUD_CCC_MODEL_REGISTERDEVICESRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,34 +29,17 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CCC_EXPORT GetLoginDetailsResult : public ServiceResult
+			class ALIBABACLOUD_CCC_EXPORT RegisterDevicesResult : public ServiceResult
 			{
 			public:
-				struct Data
-				{
-					std::string sipServerUrl;
-					std::string deviceId;
-					std::string userKey;
-					std::string userKey2;
-					std::string extension;
-					std::string agentServerUrl;
-					std::string deviceState;
-					std::string userId;
-					std::string signature;
-					std::string displayName;
-					std::string deviceExt;
-					std::string signature2;
-					std::string workMode;
-				};
 
 
-				GetLoginDetailsResult();
-				explicit GetLoginDetailsResult(const std::string &payload);
-				~GetLoginDetailsResult();
+				RegisterDevicesResult();
+				explicit RegisterDevicesResult(const std::string &payload);
+				~RegisterDevicesResult();
 				std::string getMessage()const;
 				int getHttpStatusCode()const;
 				std::vector<std::string> getParams()const;
-				Data getData()const;
 				std::string getCode()const;
 
 			protected:
@@ -65,11 +48,10 @@ namespace AlibabaCloud
 				std::string message_;
 				int httpStatusCode_;
 				std::vector<std::string> params_;
-				Data data_;
 				std::string code_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CCC_MODEL_GETLOGINDETAILSRESULT_H_
+#endif // !ALIBABACLOUD_CCC_MODEL_REGISTERDEVICESRESULT_H_

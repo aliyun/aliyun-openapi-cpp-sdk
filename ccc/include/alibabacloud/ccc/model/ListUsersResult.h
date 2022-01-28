@@ -52,6 +52,7 @@ namespace AlibabaCloud
 						};
 						std::string loginName;
 						std::string email;
+						std::string deviceId;
 						std::vector<UserDetail::UserSkillLevel> skillLevelList;
 						bool primaryAccount;
 						long ramId;
@@ -59,9 +60,12 @@ namespace AlibabaCloud
 						std::string displayId;
 						std::string mobile;
 						std::string roleId;
+						std::string extension;
 						std::string roleName;
+						std::string deviceState;
 						std::string userId;
 						std::string displayName;
+						std::string deviceExt;
 						std::string workMode;
 					};
 					int totalCount;

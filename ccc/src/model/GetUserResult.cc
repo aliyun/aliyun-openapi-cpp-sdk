@@ -60,6 +60,12 @@ void GetUserResult::parse(const std::string &payload)
 		data_.instanceId = dataNode["InstanceId"].asString();
 	if(!dataNode["RoleId"].isNull())
 		data_.roleId = dataNode["RoleId"].asString();
+	if(!dataNode["DeviceId"].isNull())
+		data_.deviceId = dataNode["DeviceId"].asString();
+	if(!dataNode["DeviceExt"].isNull())
+		data_.deviceExt = dataNode["DeviceExt"].asString();
+	if(!dataNode["DeviceState"].isNull())
+		data_.deviceState = dataNode["DeviceState"].asString();
 	auto allParams = value["Params"]["Param"];
 	for (const auto &item : allParams)
 		params_.push_back(item.asString());
