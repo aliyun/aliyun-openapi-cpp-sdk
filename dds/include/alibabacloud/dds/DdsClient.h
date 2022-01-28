@@ -88,6 +88,8 @@
 #include "model/DescribeDBInstanceTDEInfoResult.h"
 #include "model/DescribeDBInstancesRequest.h"
 #include "model/DescribeDBInstancesResult.h"
+#include "model/DescribeDBInstancesOverviewRequest.h"
+#include "model/DescribeDBInstancesOverviewResult.h"
 #include "model/DescribeDedicatedClusterInstanceListRequest.h"
 #include "model/DescribeDedicatedClusterInstanceListResult.h"
 #include "model/DescribeErrorLogRecordsRequest.h"
@@ -312,6 +314,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeDBInstancesResult> DescribeDBInstancesOutcome;
 			typedef std::future<DescribeDBInstancesOutcome> DescribeDBInstancesOutcomeCallable;
 			typedef std::function<void(const DdsClient*, const Model::DescribeDBInstancesRequest&, const DescribeDBInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBInstancesAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDBInstancesOverviewResult> DescribeDBInstancesOverviewOutcome;
+			typedef std::future<DescribeDBInstancesOverviewOutcome> DescribeDBInstancesOverviewOutcomeCallable;
+			typedef std::function<void(const DdsClient*, const Model::DescribeDBInstancesOverviewRequest&, const DescribeDBInstancesOverviewOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBInstancesOverviewAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDedicatedClusterInstanceListResult> DescribeDedicatedClusterInstanceListOutcome;
 			typedef std::future<DescribeDedicatedClusterInstanceListOutcome> DescribeDedicatedClusterInstanceListOutcomeCallable;
 			typedef std::function<void(const DdsClient*, const Model::DescribeDedicatedClusterInstanceListRequest&, const DescribeDedicatedClusterInstanceListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDedicatedClusterInstanceListAsyncHandler;
@@ -590,6 +595,9 @@ namespace AlibabaCloud
 			DescribeDBInstancesOutcome describeDBInstances(const Model::DescribeDBInstancesRequest &request)const;
 			void describeDBInstancesAsync(const Model::DescribeDBInstancesRequest& request, const DescribeDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDBInstancesOutcomeCallable describeDBInstancesCallable(const Model::DescribeDBInstancesRequest& request) const;
+			DescribeDBInstancesOverviewOutcome describeDBInstancesOverview(const Model::DescribeDBInstancesOverviewRequest &request)const;
+			void describeDBInstancesOverviewAsync(const Model::DescribeDBInstancesOverviewRequest& request, const DescribeDBInstancesOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDBInstancesOverviewOutcomeCallable describeDBInstancesOverviewCallable(const Model::DescribeDBInstancesOverviewRequest& request) const;
 			DescribeDedicatedClusterInstanceListOutcome describeDedicatedClusterInstanceList(const Model::DescribeDedicatedClusterInstanceListRequest &request)const;
 			void describeDedicatedClusterInstanceListAsync(const Model::DescribeDedicatedClusterInstanceListRequest& request, const DescribeDedicatedClusterInstanceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDedicatedClusterInstanceListOutcomeCallable describeDedicatedClusterInstanceListCallable(const Model::DescribeDedicatedClusterInstanceListRequest& request) const;

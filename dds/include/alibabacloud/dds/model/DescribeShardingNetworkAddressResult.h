@@ -32,26 +32,26 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_DDS_EXPORT DescribeShardingNetworkAddressResult : public ServiceResult
 			{
 			public:
+				struct CompatibleConnection
+				{
+					std::string networkAddress;
+					std::string vPCId;
+					std::string networkType;
+					std::string expiredTime;
+					std::string port;
+					std::string iPAddress;
+					std::string vswitchId;
+				};
 				struct NetworkAddress
 				{
 					std::string role;
 					std::string networkAddress;
 					std::string vPCId;
 					std::string networkType;
-					std::string port;
-					std::string expiredTime;
 					std::string nodeType;
-					std::string nodeId;
-					std::string iPAddress;
-					std::string vswitchId;
-				};
-				struct CompatibleConnection
-				{
-					std::string networkAddress;
-					std::string vPCId;
-					std::string networkType;
-					std::string port;
 					std::string expiredTime;
+					std::string port;
+					std::string nodeId;
 					std::string iPAddress;
 					std::string vswitchId;
 				};

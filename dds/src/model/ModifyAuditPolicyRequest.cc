@@ -71,6 +71,17 @@ void ModifyAuditPolicyRequest::setSecurityToken(const std::string& securityToken
 	setParameter("SecurityToken", securityToken);
 }
 
+std::string ModifyAuditPolicyRequest::getAuditLogSwitchSource()const
+{
+	return auditLogSwitchSource_;
+}
+
+void ModifyAuditPolicyRequest::setAuditLogSwitchSource(const std::string& auditLogSwitchSource)
+{
+	auditLogSwitchSource_ = auditLogSwitchSource;
+	setParameter("AuditLogSwitchSource", auditLogSwitchSource);
+}
+
 std::string ModifyAuditPolicyRequest::getDBInstanceId()const
 {
 	return dBInstanceId_;
@@ -124,5 +135,16 @@ void ModifyAuditPolicyRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string ModifyAuditPolicyRequest::getServiceType()const
+{
+	return serviceType_;
+}
+
+void ModifyAuditPolicyRequest::setServiceType(const std::string& serviceType)
+{
+	serviceType_ = serviceType;
+	setParameter("ServiceType", serviceType);
 }
 

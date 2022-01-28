@@ -43,6 +43,8 @@ namespace AlibabaCloud
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
+				std::string getAuditLogSwitchSource()const;
+				void setAuditLogSwitchSource(const std::string& auditLogSwitchSource);
 				std::string getDBInstanceId()const;
 				void setDBInstanceId(const std::string& dBInstanceId);
 				std::string getAuditStatus()const;
@@ -53,17 +55,21 @@ namespace AlibabaCloud
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getServiceType()const;
+				void setServiceType(const std::string& serviceType);
 
             private:
 				long resourceOwnerId_;
 				int storagePeriod_;
 				std::string accessKeyId_;
 				std::string securityToken_;
+				std::string auditLogSwitchSource_;
 				std::string dBInstanceId_;
 				std::string auditStatus_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
+				std::string serviceType_;
 
 			};
 		}

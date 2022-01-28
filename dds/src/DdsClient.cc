@@ -1239,6 +1239,42 @@ DdsClient::DescribeDBInstancesOutcomeCallable DdsClient::describeDBInstancesCall
 	return task->get_future();
 }
 
+DdsClient::DescribeDBInstancesOverviewOutcome DdsClient::describeDBInstancesOverview(const DescribeDBInstancesOverviewRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDBInstancesOverviewOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDBInstancesOverviewOutcome(DescribeDBInstancesOverviewResult(outcome.result()));
+	else
+		return DescribeDBInstancesOverviewOutcome(outcome.error());
+}
+
+void DdsClient::describeDBInstancesOverviewAsync(const DescribeDBInstancesOverviewRequest& request, const DescribeDBInstancesOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDBInstancesOverview(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DdsClient::DescribeDBInstancesOverviewOutcomeCallable DdsClient::describeDBInstancesOverviewCallable(const DescribeDBInstancesOverviewRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDBInstancesOverviewOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDBInstancesOverview(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DdsClient::DescribeDedicatedClusterInstanceListOutcome DdsClient::describeDedicatedClusterInstanceList(const DescribeDedicatedClusterInstanceListRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

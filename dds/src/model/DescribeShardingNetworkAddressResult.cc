@@ -39,51 +39,51 @@ void DescribeShardingNetworkAddressResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allNetworkAddressesNode = value["NetworkAddresses"]["NetworkAddress"];
-	for (auto valueNetworkAddressesNetworkAddress : allNetworkAddressesNode)
-	{
-		NetworkAddress networkAddressesObject;
-		if(!valueNetworkAddressesNetworkAddress["NetworkAddress"].isNull())
-			networkAddressesObject.networkAddress = valueNetworkAddressesNetworkAddress["NetworkAddress"].asString();
-		if(!valueNetworkAddressesNetworkAddress["IPAddress"].isNull())
-			networkAddressesObject.iPAddress = valueNetworkAddressesNetworkAddress["IPAddress"].asString();
-		if(!valueNetworkAddressesNetworkAddress["NetworkType"].isNull())
-			networkAddressesObject.networkType = valueNetworkAddressesNetworkAddress["NetworkType"].asString();
-		if(!valueNetworkAddressesNetworkAddress["Port"].isNull())
-			networkAddressesObject.port = valueNetworkAddressesNetworkAddress["Port"].asString();
-		if(!valueNetworkAddressesNetworkAddress["VPCId"].isNull())
-			networkAddressesObject.vPCId = valueNetworkAddressesNetworkAddress["VPCId"].asString();
-		if(!valueNetworkAddressesNetworkAddress["VswitchId"].isNull())
-			networkAddressesObject.vswitchId = valueNetworkAddressesNetworkAddress["VswitchId"].asString();
-		if(!valueNetworkAddressesNetworkAddress["NodeId"].isNull())
-			networkAddressesObject.nodeId = valueNetworkAddressesNetworkAddress["NodeId"].asString();
-		if(!valueNetworkAddressesNetworkAddress["ExpiredTime"].isNull())
-			networkAddressesObject.expiredTime = valueNetworkAddressesNetworkAddress["ExpiredTime"].asString();
-		if(!valueNetworkAddressesNetworkAddress["NodeType"].isNull())
-			networkAddressesObject.nodeType = valueNetworkAddressesNetworkAddress["NodeType"].asString();
-		if(!valueNetworkAddressesNetworkAddress["Role"].isNull())
-			networkAddressesObject.role = valueNetworkAddressesNetworkAddress["Role"].asString();
-		networkAddresses_.push_back(networkAddressesObject);
-	}
 	auto allCompatibleConnectionsNode = value["CompatibleConnections"]["CompatibleConnection"];
 	for (auto valueCompatibleConnectionsCompatibleConnection : allCompatibleConnectionsNode)
 	{
 		CompatibleConnection compatibleConnectionsObject;
-		if(!valueCompatibleConnectionsCompatibleConnection["NetworkAddress"].isNull())
-			compatibleConnectionsObject.networkAddress = valueCompatibleConnectionsCompatibleConnection["NetworkAddress"].asString();
-		if(!valueCompatibleConnectionsCompatibleConnection["IPAddress"].isNull())
-			compatibleConnectionsObject.iPAddress = valueCompatibleConnectionsCompatibleConnection["IPAddress"].asString();
-		if(!valueCompatibleConnectionsCompatibleConnection["NetworkType"].isNull())
-			compatibleConnectionsObject.networkType = valueCompatibleConnectionsCompatibleConnection["NetworkType"].asString();
-		if(!valueCompatibleConnectionsCompatibleConnection["Port"].isNull())
-			compatibleConnectionsObject.port = valueCompatibleConnectionsCompatibleConnection["Port"].asString();
-		if(!valueCompatibleConnectionsCompatibleConnection["VPCId"].isNull())
-			compatibleConnectionsObject.vPCId = valueCompatibleConnectionsCompatibleConnection["VPCId"].asString();
 		if(!valueCompatibleConnectionsCompatibleConnection["VswitchId"].isNull())
 			compatibleConnectionsObject.vswitchId = valueCompatibleConnectionsCompatibleConnection["VswitchId"].asString();
 		if(!valueCompatibleConnectionsCompatibleConnection["ExpiredTime"].isNull())
 			compatibleConnectionsObject.expiredTime = valueCompatibleConnectionsCompatibleConnection["ExpiredTime"].asString();
+		if(!valueCompatibleConnectionsCompatibleConnection["NetworkType"].isNull())
+			compatibleConnectionsObject.networkType = valueCompatibleConnectionsCompatibleConnection["NetworkType"].asString();
+		if(!valueCompatibleConnectionsCompatibleConnection["Port"].isNull())
+			compatibleConnectionsObject.port = valueCompatibleConnectionsCompatibleConnection["Port"].asString();
+		if(!valueCompatibleConnectionsCompatibleConnection["NetworkAddress"].isNull())
+			compatibleConnectionsObject.networkAddress = valueCompatibleConnectionsCompatibleConnection["NetworkAddress"].asString();
+		if(!valueCompatibleConnectionsCompatibleConnection["VPCId"].isNull())
+			compatibleConnectionsObject.vPCId = valueCompatibleConnectionsCompatibleConnection["VPCId"].asString();
+		if(!valueCompatibleConnectionsCompatibleConnection["IPAddress"].isNull())
+			compatibleConnectionsObject.iPAddress = valueCompatibleConnectionsCompatibleConnection["IPAddress"].asString();
 		compatibleConnections_.push_back(compatibleConnectionsObject);
+	}
+	auto allNetworkAddressesNode = value["NetworkAddresses"]["NetworkAddress"];
+	for (auto valueNetworkAddressesNetworkAddress : allNetworkAddressesNode)
+	{
+		NetworkAddress networkAddressesObject;
+		if(!valueNetworkAddressesNetworkAddress["NodeType"].isNull())
+			networkAddressesObject.nodeType = valueNetworkAddressesNetworkAddress["NodeType"].asString();
+		if(!valueNetworkAddressesNetworkAddress["VswitchId"].isNull())
+			networkAddressesObject.vswitchId = valueNetworkAddressesNetworkAddress["VswitchId"].asString();
+		if(!valueNetworkAddressesNetworkAddress["ExpiredTime"].isNull())
+			networkAddressesObject.expiredTime = valueNetworkAddressesNetworkAddress["ExpiredTime"].asString();
+		if(!valueNetworkAddressesNetworkAddress["NetworkType"].isNull())
+			networkAddressesObject.networkType = valueNetworkAddressesNetworkAddress["NetworkType"].asString();
+		if(!valueNetworkAddressesNetworkAddress["Role"].isNull())
+			networkAddressesObject.role = valueNetworkAddressesNetworkAddress["Role"].asString();
+		if(!valueNetworkAddressesNetworkAddress["Port"].isNull())
+			networkAddressesObject.port = valueNetworkAddressesNetworkAddress["Port"].asString();
+		if(!valueNetworkAddressesNetworkAddress["VPCId"].isNull())
+			networkAddressesObject.vPCId = valueNetworkAddressesNetworkAddress["VPCId"].asString();
+		if(!valueNetworkAddressesNetworkAddress["NetworkAddress"].isNull())
+			networkAddressesObject.networkAddress = valueNetworkAddressesNetworkAddress["NetworkAddress"].asString();
+		if(!valueNetworkAddressesNetworkAddress["NodeId"].isNull())
+			networkAddressesObject.nodeId = valueNetworkAddressesNetworkAddress["NodeId"].asString();
+		if(!valueNetworkAddressesNetworkAddress["IPAddress"].isNull())
+			networkAddressesObject.iPAddress = valueNetworkAddressesNetworkAddress["IPAddress"].asString();
+		networkAddresses_.push_back(networkAddressesObject);
 	}
 
 }

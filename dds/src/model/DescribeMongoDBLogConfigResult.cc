@@ -45,7 +45,38 @@ void DescribeMongoDBLogConfigResult::parse(const std::string &payload)
 		isUserProjectLogstoreExist_ = std::stoi(value["IsUserProjectLogstoreExist"].asString());
 	if(!value["IsEtlMetaExist"].isNull())
 		isEtlMetaExist_ = std::stoi(value["IsEtlMetaExist"].asString());
+	if(!value["ServiceType"].isNull())
+		serviceType_ = value["ServiceType"].asString();
+	if(!value["EnableAudit"].isNull())
+		enableAudit_ = value["EnableAudit"].asString() == "true";
+	if(!value["TtlForTrail"].isNull())
+		ttlForTrail_ = std::stol(value["TtlForTrail"].asString());
+	if(!value["UsedStorageForTrail"].isNull())
+		usedStorageForTrail_ = std::stol(value["UsedStorageForTrail"].asString());
+	if(!value["PreserveStorageForTrail"].isNull())
+		preserveStorageForTrail_ = std::stol(value["PreserveStorageForTrail"].asString());
+	if(!value["TtlForStandard"].isNull())
+		ttlForStandard_ = std::stol(value["TtlForStandard"].asString());
+	if(!value["UsedStorageForStandard"].isNull())
+		usedStorageForStandard_ = std::stol(value["UsedStorageForStandard"].asString());
+	if(!value["PreserveStorageForStandard"].isNull())
+		preserveStorageForStandard_ = std::stol(value["PreserveStorageForStandard"].asString());
 
+}
+
+bool DescribeMongoDBLogConfigResult::getEnableAudit()const
+{
+	return enableAudit_;
+}
+
+long DescribeMongoDBLogConfigResult::getTtlForStandard()const
+{
+	return ttlForStandard_;
+}
+
+long DescribeMongoDBLogConfigResult::getPreserveStorageForStandard()const
+{
+	return preserveStorageForStandard_;
 }
 
 std::string DescribeMongoDBLogConfigResult::getUserProjectName()const
@@ -53,13 +84,38 @@ std::string DescribeMongoDBLogConfigResult::getUserProjectName()const
 	return userProjectName_;
 }
 
+std::string DescribeMongoDBLogConfigResult::getServiceType()const
+{
+	return serviceType_;
+}
+
 int DescribeMongoDBLogConfigResult::getIsUserProjectLogstoreExist()const
 {
 	return isUserProjectLogstoreExist_;
 }
 
+long DescribeMongoDBLogConfigResult::getUsedStorageForTrail()const
+{
+	return usedStorageForTrail_;
+}
+
+long DescribeMongoDBLogConfigResult::getPreserveStorageForTrail()const
+{
+	return preserveStorageForTrail_;
+}
+
 int DescribeMongoDBLogConfigResult::getIsEtlMetaExist()const
 {
 	return isEtlMetaExist_;
+}
+
+long DescribeMongoDBLogConfigResult::getTtlForTrail()const
+{
+	return ttlForTrail_;
+}
+
+long DescribeMongoDBLogConfigResult::getUsedStorageForStandard()const
+{
+	return usedStorageForStandard_;
 }
 

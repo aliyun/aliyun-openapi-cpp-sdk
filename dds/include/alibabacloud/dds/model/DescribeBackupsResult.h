@@ -37,12 +37,12 @@ namespace AlibabaCloud
 					std::string backupMethod;
 					std::string backupDownloadURL;
 					std::string backupIntranetDownloadURL;
-					std::string backupEndTime;
-					std::string backupMode;
 					long backupSize;
+					std::string backupMode;
+					std::string backupEndTime;
 					std::string backupStartTime;
-					int backupId;
 					std::string backupType;
+					int backupId;
 					std::string backupDBNames;
 					std::string backupStatus;
 				};
