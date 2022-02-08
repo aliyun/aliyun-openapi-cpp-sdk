@@ -71,6 +71,28 @@ void ListDeviceDistributeJobRequest::setCurrentPage(int currentPage)
 	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
+std::string ListDeviceDistributeJobRequest::getProductKey()const
+{
+	return productKey_;
+}
+
+void ListDeviceDistributeJobRequest::setProductKey(const std::string& productKey)
+{
+	productKey_ = productKey;
+	setParameter("ProductKey", productKey);
+}
+
+std::string ListDeviceDistributeJobRequest::getJobType()const
+{
+	return jobType_;
+}
+
+void ListDeviceDistributeJobRequest::setJobType(const std::string& jobType)
+{
+	jobType_ = jobType;
+	setParameter("JobType", jobType);
+}
+
 std::string ListDeviceDistributeJobRequest::getApiProduct()const
 {
 	return apiProduct_;

@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/iot/model/SubscribeTopicResult.h>
+#include <alibabacloud/iot/model/DeleteSoundCodeResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Iot;
 using namespace AlibabaCloud::Iot::Model;
 
-SubscribeTopicResult::SubscribeTopicResult() :
+DeleteSoundCodeResult::DeleteSoundCodeResult() :
 	ServiceResult()
 {}
 
-SubscribeTopicResult::SubscribeTopicResult(const std::string &payload) :
+DeleteSoundCodeResult::DeleteSoundCodeResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-SubscribeTopicResult::~SubscribeTopicResult()
+DeleteSoundCodeResult::~DeleteSoundCodeResult()
 {}
 
-void SubscribeTopicResult::parse(const std::string &payload)
+void DeleteSoundCodeResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -48,17 +48,17 @@ void SubscribeTopicResult::parse(const std::string &payload)
 
 }
 
-std::string SubscribeTopicResult::getErrorMessage()const
+std::string DeleteSoundCodeResult::getErrorMessage()const
 {
 	return errorMessage_;
 }
 
-std::string SubscribeTopicResult::getCode()const
+std::string DeleteSoundCodeResult::getCode()const
 {
 	return code_;
 }
 
-bool SubscribeTopicResult::getSuccess()const
+bool DeleteSoundCodeResult::getSuccess()const
 {
 	return success_;
 }

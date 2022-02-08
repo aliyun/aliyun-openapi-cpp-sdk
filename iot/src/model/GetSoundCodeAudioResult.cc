@@ -14,31 +14,34 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/iot/model/SubscribeTopicResult.h>
+#include <alibabacloud/iot/model/GetSoundCodeAudioResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Iot;
 using namespace AlibabaCloud::Iot::Model;
 
-SubscribeTopicResult::SubscribeTopicResult() :
+GetSoundCodeAudioResult::GetSoundCodeAudioResult() :
 	ServiceResult()
 {}
 
-SubscribeTopicResult::SubscribeTopicResult(const std::string &payload) :
+GetSoundCodeAudioResult::GetSoundCodeAudioResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-SubscribeTopicResult::~SubscribeTopicResult()
+GetSoundCodeAudioResult::~GetSoundCodeAudioResult()
 {}
 
-void SubscribeTopicResult::parse(const std::string &payload)
+void GetSoundCodeAudioResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto allData = value["Data"]["Items"];
+	for (const auto &item : allData)
+		data_.push_back(item.asString());
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
@@ -48,17 +51,22 @@ void SubscribeTopicResult::parse(const std::string &payload)
 
 }
 
-std::string SubscribeTopicResult::getErrorMessage()const
+std::vector<std::string> GetSoundCodeAudioResult::getData()const
+{
+	return data_;
+}
+
+std::string GetSoundCodeAudioResult::getErrorMessage()const
 {
 	return errorMessage_;
 }
 
-std::string SubscribeTopicResult::getCode()const
+std::string GetSoundCodeAudioResult::getCode()const
 {
 	return code_;
 }
 
-bool SubscribeTopicResult::getSuccess()const
+bool GetSoundCodeAudioResult::getSuccess()const
 {
 	return success_;
 }

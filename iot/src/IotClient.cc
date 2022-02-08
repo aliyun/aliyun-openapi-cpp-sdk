@@ -31,21 +31,21 @@ IotClient::IotClient(const Credentials &credentials, const ClientConfiguration &
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "iot");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 IotClient::IotClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "iot");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 IotClient::IotClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "iot");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 IotClient::~IotClient()
@@ -2679,6 +2679,42 @@ IotClient::CreateSceneRuleOutcomeCallable IotClient::createSceneRuleCallable(con
 	return task->get_future();
 }
 
+IotClient::CreateSoundCodeOutcome IotClient::createSoundCode(const CreateSoundCodeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateSoundCodeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateSoundCodeOutcome(CreateSoundCodeResult(outcome.result()));
+	else
+		return CreateSoundCodeOutcome(outcome.error());
+}
+
+void IotClient::createSoundCodeAsync(const CreateSoundCodeRequest& request, const CreateSoundCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createSoundCode(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::CreateSoundCodeOutcomeCallable IotClient::createSoundCodeCallable(const CreateSoundCodeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateSoundCodeOutcome()>>(
+			[this, request]()
+			{
+			return this->createSoundCode(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 IotClient::CreateSpeechOutcome IotClient::createSpeech(const CreateSpeechRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3753,6 +3789,42 @@ IotClient::DeleteSceneRuleOutcomeCallable IotClient::deleteSceneRuleCallable(con
 			[this, request]()
 			{
 			return this->deleteSceneRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::DeleteSoundCodeOutcome IotClient::deleteSoundCode(const DeleteSoundCodeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteSoundCodeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteSoundCodeOutcome(DeleteSoundCodeResult(outcome.result()));
+	else
+		return DeleteSoundCodeOutcome(outcome.error());
+}
+
+void IotClient::deleteSoundCodeAsync(const DeleteSoundCodeRequest& request, const DeleteSoundCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteSoundCode(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::DeleteSoundCodeOutcomeCallable IotClient::deleteSoundCodeCallable(const DeleteSoundCodeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteSoundCodeOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteSoundCode(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4869,6 +4941,42 @@ IotClient::GetSceneRuleOutcomeCallable IotClient::getSceneRuleCallable(const Get
 			[this, request]()
 			{
 			return this->getSceneRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::GetSoundCodeAudioOutcome IotClient::getSoundCodeAudio(const GetSoundCodeAudioRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetSoundCodeAudioOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetSoundCodeAudioOutcome(GetSoundCodeAudioResult(outcome.result()));
+	else
+		return GetSoundCodeAudioOutcome(outcome.error());
+}
+
+void IotClient::getSoundCodeAudioAsync(const GetSoundCodeAudioRequest& request, const GetSoundCodeAudioAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getSoundCodeAudio(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::GetSoundCodeAudioOutcomeCallable IotClient::getSoundCodeAudioCallable(const GetSoundCodeAudioRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetSoundCodeAudioOutcome()>>(
+			[this, request]()
+			{
+			return this->getSoundCodeAudio(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -8583,6 +8691,42 @@ IotClient::QuerySolutionDeviceGroupPageOutcomeCallable IotClient::querySolutionD
 	return task->get_future();
 }
 
+IotClient::QuerySoundCodeListOutcome IotClient::querySoundCodeList(const QuerySoundCodeListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QuerySoundCodeListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QuerySoundCodeListOutcome(QuerySoundCodeListResult(outcome.result()));
+	else
+		return QuerySoundCodeListOutcome(outcome.error());
+}
+
+void IotClient::querySoundCodeListAsync(const QuerySoundCodeListRequest& request, const QuerySoundCodeListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, querySoundCodeList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::QuerySoundCodeListOutcomeCallable IotClient::querySoundCodeListCallable(const QuerySoundCodeListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QuerySoundCodeListOutcome()>>(
+			[this, request]()
+			{
+			return this->querySoundCodeList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 IotClient::QuerySpeechOutcome IotClient::querySpeech(const QuerySpeechRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -10089,6 +10233,42 @@ IotClient::SpeechBySynthesisOutcomeCallable IotClient::speechBySynthesisCallable
 			[this, request]()
 			{
 			return this->speechBySynthesis(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::StartAIBoxForceSyncOutcome IotClient::startAIBoxForceSync(const StartAIBoxForceSyncRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return StartAIBoxForceSyncOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return StartAIBoxForceSyncOutcome(StartAIBoxForceSyncResult(outcome.result()));
+	else
+		return StartAIBoxForceSyncOutcome(outcome.error());
+}
+
+void IotClient::startAIBoxForceSyncAsync(const StartAIBoxForceSyncRequest& request, const StartAIBoxForceSyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, startAIBoxForceSync(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::StartAIBoxForceSyncOutcomeCallable IotClient::startAIBoxForceSyncCallable(const StartAIBoxForceSyncRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<StartAIBoxForceSyncOutcome()>>(
+			[this, request]()
+			{
+			return this->startAIBoxForceSync(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

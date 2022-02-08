@@ -38,6 +38,7 @@ namespace AlibabaCloud
 					std::vector<std::string> resultList;
 					int pageSize;
 					int pageNo;
+					int totalSize;
 					std::vector<std::string> fieldNameList;
 				};
 

@@ -14,13 +14,12 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IOT_MODEL_SUBSCRIBETOPICRESULT_H_
-#define ALIBABACLOUD_IOT_MODEL_SUBSCRIBETOPICRESULT_H_
+#ifndef ALIBABACLOUD_IOT_MODEL_STARTAIBOXFORCESYNCREQUEST_H_
+#define ALIBABACLOUD_IOT_MODEL_STARTAIBOXFORCESYNCREQUEST_H_
 
 #include <string>
 #include <vector>
-#include <utility>
-#include <alibabacloud/core/ServiceResult.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
 #include <alibabacloud/iot/IotExport.h>
 
 namespace AlibabaCloud
@@ -29,27 +28,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IOT_EXPORT SubscribeTopicResult : public ServiceResult
+			class ALIBABACLOUD_IOT_EXPORT StartAIBoxForceSyncRequest : public RpcServiceRequest
 			{
+
 			public:
+				StartAIBoxForceSyncRequest();
+				~StartAIBoxForceSyncRequest();
 
+				std::string getIotId()const;
+				void setIotId(const std::string& iotId);
+				std::string getApiProduct()const;
+				void setApiProduct(const std::string& apiProduct);
+				std::string getApiRevision()const;
+				void setApiRevision(const std::string& apiRevision);
 
-				SubscribeTopicResult();
-				explicit SubscribeTopicResult(const std::string &payload);
-				~SubscribeTopicResult();
-				std::string getErrorMessage()const;
-				std::string getCode()const;
-				bool getSuccess()const;
-
-			protected:
-				void parse(const std::string &payload);
-			private:
-				std::string errorMessage_;
-				std::string code_;
-				bool success_;
+            private:
+				std::string iotId_;
+				std::string apiProduct_;
+				std::string apiRevision_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IOT_MODEL_SUBSCRIBETOPICRESULT_H_
+#endif // !ALIBABACLOUD_IOT_MODEL_STARTAIBOXFORCESYNCREQUEST_H_

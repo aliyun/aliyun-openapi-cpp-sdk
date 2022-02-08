@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IOT_MODEL_SUBSCRIBETOPICRESULT_H_
-#define ALIBABACLOUD_IOT_MODEL_SUBSCRIBETOPICRESULT_H_
+#ifndef ALIBABACLOUD_IOT_MODEL_DELETESOUNDCODERESULT_H_
+#define ALIBABACLOUD_IOT_MODEL_DELETESOUNDCODERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,14 +29,14 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IOT_EXPORT SubscribeTopicResult : public ServiceResult
+			class ALIBABACLOUD_IOT_EXPORT DeleteSoundCodeResult : public ServiceResult
 			{
 			public:
 
 
-				SubscribeTopicResult();
-				explicit SubscribeTopicResult(const std::string &payload);
-				~SubscribeTopicResult();
+				DeleteSoundCodeResult();
+				explicit DeleteSoundCodeResult(const std::string &payload);
+				~DeleteSoundCodeResult();
 				std::string getErrorMessage()const;
 				std::string getCode()const;
 				bool getSuccess()const;
@@ -52,4 +52,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IOT_MODEL_SUBSCRIBETOPICRESULT_H_
+#endif // !ALIBABACLOUD_IOT_MODEL_DELETESOUNDCODERESULT_H_

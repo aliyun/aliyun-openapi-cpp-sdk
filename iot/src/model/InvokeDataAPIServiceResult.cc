@@ -46,6 +46,8 @@ void InvokeDataAPIServiceResult::parse(const std::string &payload)
 		data_.pageSize = std::stoi(dataNode["PageSize"].asString());
 	if(!dataNode["ApiSrn"].isNull())
 		data_.apiSrn = dataNode["ApiSrn"].asString();
+	if(!dataNode["TotalSize"].isNull())
+		data_.totalSize = std::stoi(dataNode["TotalSize"].asString());
 		auto allFieldNameList = dataNode["FieldNameList"]["FieldNameList"];
 		for (auto value : allFieldNameList)
 			data_.fieldNameList.push_back(value.asString());

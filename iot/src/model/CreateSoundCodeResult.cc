@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/iot/model/SubscribeTopicResult.h>
+#include <alibabacloud/iot/model/CreateSoundCodeResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Iot;
 using namespace AlibabaCloud::Iot::Model;
 
-SubscribeTopicResult::SubscribeTopicResult() :
+CreateSoundCodeResult::CreateSoundCodeResult() :
 	ServiceResult()
 {}
 
-SubscribeTopicResult::SubscribeTopicResult(const std::string &payload) :
+CreateSoundCodeResult::CreateSoundCodeResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-SubscribeTopicResult::~SubscribeTopicResult()
+CreateSoundCodeResult::~CreateSoundCodeResult()
 {}
 
-void SubscribeTopicResult::parse(const std::string &payload)
+void CreateSoundCodeResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -45,20 +45,27 @@ void SubscribeTopicResult::parse(const std::string &payload)
 		code_ = value["Code"].asString();
 	if(!value["ErrorMessage"].isNull())
 		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["Data"].isNull())
+		data_ = value["Data"].asString();
 
 }
 
-std::string SubscribeTopicResult::getErrorMessage()const
+std::string CreateSoundCodeResult::getData()const
+{
+	return data_;
+}
+
+std::string CreateSoundCodeResult::getErrorMessage()const
 {
 	return errorMessage_;
 }
 
-std::string SubscribeTopicResult::getCode()const
+std::string CreateSoundCodeResult::getCode()const
 {
 	return code_;
 }
 
-bool SubscribeTopicResult::getSuccess()const
+bool CreateSoundCodeResult::getSuccess()const
 {
 	return success_;
 }

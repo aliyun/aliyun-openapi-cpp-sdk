@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IOT_MODEL_SUBSCRIBETOPICRESULT_H_
-#define ALIBABACLOUD_IOT_MODEL_SUBSCRIBETOPICRESULT_H_
+#ifndef ALIBABACLOUD_IOT_MODEL_GETSOUNDCODEAUDIORESULT_H_
+#define ALIBABACLOUD_IOT_MODEL_GETSOUNDCODEAUDIORESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,14 +29,15 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IOT_EXPORT SubscribeTopicResult : public ServiceResult
+			class ALIBABACLOUD_IOT_EXPORT GetSoundCodeAudioResult : public ServiceResult
 			{
 			public:
 
 
-				SubscribeTopicResult();
-				explicit SubscribeTopicResult(const std::string &payload);
-				~SubscribeTopicResult();
+				GetSoundCodeAudioResult();
+				explicit GetSoundCodeAudioResult(const std::string &payload);
+				~GetSoundCodeAudioResult();
+				std::vector<std::string> getData()const;
 				std::string getErrorMessage()const;
 				std::string getCode()const;
 				bool getSuccess()const;
@@ -44,6 +45,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::vector<std::string> data_;
 				std::string errorMessage_;
 				std::string code_;
 				bool success_;
@@ -52,4 +54,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IOT_MODEL_SUBSCRIBETOPICRESULT_H_
+#endif // !ALIBABACLOUD_IOT_MODEL_GETSOUNDCODEAUDIORESULT_H_

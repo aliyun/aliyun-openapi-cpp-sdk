@@ -167,6 +167,8 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/CreateRulengDistributeJobResult.h
 	include/alibabacloud/iot/model/CreateSceneRuleRequest.h
 	include/alibabacloud/iot/model/CreateSceneRuleResult.h
+	include/alibabacloud/iot/model/CreateSoundCodeRequest.h
+	include/alibabacloud/iot/model/CreateSoundCodeResult.h
 	include/alibabacloud/iot/model/CreateSpeechRequest.h
 	include/alibabacloud/iot/model/CreateSpeechResult.h
 	include/alibabacloud/iot/model/CreateStudioAppDomainOpenRequest.h
@@ -227,6 +229,8 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/DeleteRuleActionResult.h
 	include/alibabacloud/iot/model/DeleteSceneRuleRequest.h
 	include/alibabacloud/iot/model/DeleteSceneRuleResult.h
+	include/alibabacloud/iot/model/DeleteSoundCodeRequest.h
+	include/alibabacloud/iot/model/DeleteSoundCodeResult.h
 	include/alibabacloud/iot/model/DeleteSpeechRequest.h
 	include/alibabacloud/iot/model/DeleteSpeechResult.h
 	include/alibabacloud/iot/model/DeleteStudioAppDomainOpenRequest.h
@@ -289,6 +293,8 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/GetRuleActionResult.h
 	include/alibabacloud/iot/model/GetSceneRuleRequest.h
 	include/alibabacloud/iot/model/GetSceneRuleResult.h
+	include/alibabacloud/iot/model/GetSoundCodeAudioRequest.h
+	include/alibabacloud/iot/model/GetSoundCodeAudioResult.h
 	include/alibabacloud/iot/model/GetSpeechDeviceDetailRequest.h
 	include/alibabacloud/iot/model/GetSpeechDeviceDetailResult.h
 	include/alibabacloud/iot/model/GetSpeechVoiceRequest.h
@@ -495,6 +501,8 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/QuerySceneRuleResult.h
 	include/alibabacloud/iot/model/QuerySolutionDeviceGroupPageRequest.h
 	include/alibabacloud/iot/model/QuerySolutionDeviceGroupPageResult.h
+	include/alibabacloud/iot/model/QuerySoundCodeListRequest.h
+	include/alibabacloud/iot/model/QuerySoundCodeListResult.h
 	include/alibabacloud/iot/model/QuerySpeechRequest.h
 	include/alibabacloud/iot/model/QuerySpeechResult.h
 	include/alibabacloud/iot/model/QuerySpeechDeviceRequest.h
@@ -579,6 +587,8 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/SpeechByCombinationResult.h
 	include/alibabacloud/iot/model/SpeechBySynthesisRequest.h
 	include/alibabacloud/iot/model/SpeechBySynthesisResult.h
+	include/alibabacloud/iot/model/StartAIBoxForceSyncRequest.h
+	include/alibabacloud/iot/model/StartAIBoxForceSyncResult.h
 	include/alibabacloud/iot/model/StartRuleRequest.h
 	include/alibabacloud/iot/model/StartRuleResult.h
 	include/alibabacloud/iot/model/StopRuleRequest.h
@@ -792,6 +802,8 @@ set(iot_src
 	src/model/CreateRulengDistributeJobResult.cc
 	src/model/CreateSceneRuleRequest.cc
 	src/model/CreateSceneRuleResult.cc
+	src/model/CreateSoundCodeRequest.cc
+	src/model/CreateSoundCodeResult.cc
 	src/model/CreateSpeechRequest.cc
 	src/model/CreateSpeechResult.cc
 	src/model/CreateStudioAppDomainOpenRequest.cc
@@ -852,6 +864,8 @@ set(iot_src
 	src/model/DeleteRuleActionResult.cc
 	src/model/DeleteSceneRuleRequest.cc
 	src/model/DeleteSceneRuleResult.cc
+	src/model/DeleteSoundCodeRequest.cc
+	src/model/DeleteSoundCodeResult.cc
 	src/model/DeleteSpeechRequest.cc
 	src/model/DeleteSpeechResult.cc
 	src/model/DeleteStudioAppDomainOpenRequest.cc
@@ -914,6 +928,8 @@ set(iot_src
 	src/model/GetRuleActionResult.cc
 	src/model/GetSceneRuleRequest.cc
 	src/model/GetSceneRuleResult.cc
+	src/model/GetSoundCodeAudioRequest.cc
+	src/model/GetSoundCodeAudioResult.cc
 	src/model/GetSpeechDeviceDetailRequest.cc
 	src/model/GetSpeechDeviceDetailResult.cc
 	src/model/GetSpeechVoiceRequest.cc
@@ -1120,6 +1136,8 @@ set(iot_src
 	src/model/QuerySceneRuleResult.cc
 	src/model/QuerySolutionDeviceGroupPageRequest.cc
 	src/model/QuerySolutionDeviceGroupPageResult.cc
+	src/model/QuerySoundCodeListRequest.cc
+	src/model/QuerySoundCodeListResult.cc
 	src/model/QuerySpeechRequest.cc
 	src/model/QuerySpeechResult.cc
 	src/model/QuerySpeechDeviceRequest.cc
@@ -1204,6 +1222,8 @@ set(iot_src
 	src/model/SpeechByCombinationResult.cc
 	src/model/SpeechBySynthesisRequest.cc
 	src/model/SpeechBySynthesisResult.cc
+	src/model/StartAIBoxForceSyncRequest.cc
+	src/model/StartAIBoxForceSyncResult.cc
 	src/model/StartRuleRequest.cc
 	src/model/StartRuleResult.cc
 	src/model/StopRuleRequest.cc

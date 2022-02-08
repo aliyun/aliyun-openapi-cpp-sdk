@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/iot/model/SubscribeTopicResult.h>
+#include <alibabacloud/iot/model/StartAIBoxForceSyncResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Iot;
 using namespace AlibabaCloud::Iot::Model;
 
-SubscribeTopicResult::SubscribeTopicResult() :
+StartAIBoxForceSyncResult::StartAIBoxForceSyncResult() :
 	ServiceResult()
 {}
 
-SubscribeTopicResult::SubscribeTopicResult(const std::string &payload) :
+StartAIBoxForceSyncResult::StartAIBoxForceSyncResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-SubscribeTopicResult::~SubscribeTopicResult()
+StartAIBoxForceSyncResult::~StartAIBoxForceSyncResult()
 {}
 
-void SubscribeTopicResult::parse(const std::string &payload)
+void StartAIBoxForceSyncResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -41,24 +41,31 @@ void SubscribeTopicResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
 	if(!value["ErrorMessage"].isNull())
 		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Data"].isNull())
+		data_ = value["Data"].asString() == "true";
 
 }
 
-std::string SubscribeTopicResult::getErrorMessage()const
+bool StartAIBoxForceSyncResult::getData()const
+{
+	return data_;
+}
+
+std::string StartAIBoxForceSyncResult::getErrorMessage()const
 {
 	return errorMessage_;
 }
 
-std::string SubscribeTopicResult::getCode()const
+std::string StartAIBoxForceSyncResult::getCode()const
 {
 	return code_;
 }
 
-bool SubscribeTopicResult::getSuccess()const
+bool StartAIBoxForceSyncResult::getSuccess()const
 {
 	return success_;
 }

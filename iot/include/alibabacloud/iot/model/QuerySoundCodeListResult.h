@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IOT_MODEL_SUBSCRIBETOPICRESULT_H_
-#define ALIBABACLOUD_IOT_MODEL_SUBSCRIBETOPICRESULT_H_
+#ifndef ALIBABACLOUD_IOT_MODEL_QUERYSOUNDCODELISTRESULT_H_
+#define ALIBABACLOUD_IOT_MODEL_QUERYSOUNDCODELISTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,14 +29,29 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IOT_EXPORT SubscribeTopicResult : public ServiceResult
+			class ALIBABACLOUD_IOT_EXPORT QuerySoundCodeListResult : public ServiceResult
 			{
 			public:
+				struct Data
+				{
+					struct Items
+					{
+						long gmtCreate;
+						int duration;
+						std::string soundCodeContent;
+						std::string soundCode;
+					};
+					int pageId;
+					int pageSize;
+					int total;
+					std::vector<Items> list;
+				};
 
 
-				SubscribeTopicResult();
-				explicit SubscribeTopicResult(const std::string &payload);
-				~SubscribeTopicResult();
+				QuerySoundCodeListResult();
+				explicit QuerySoundCodeListResult(const std::string &payload);
+				~QuerySoundCodeListResult();
+				Data getData()const;
 				std::string getErrorMessage()const;
 				std::string getCode()const;
 				bool getSuccess()const;
@@ -44,6 +59,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
+				Data data_;
 				std::string errorMessage_;
 				std::string code_;
 				bool success_;
@@ -52,4 +68,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IOT_MODEL_SUBSCRIBETOPICRESULT_H_
+#endif // !ALIBABACLOUD_IOT_MODEL_QUERYSOUNDCODELISTRESULT_H_

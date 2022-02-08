@@ -168,6 +168,8 @@
 #include "model/CreateRulengDistributeJobResult.h"
 #include "model/CreateSceneRuleRequest.h"
 #include "model/CreateSceneRuleResult.h"
+#include "model/CreateSoundCodeRequest.h"
+#include "model/CreateSoundCodeResult.h"
 #include "model/CreateSpeechRequest.h"
 #include "model/CreateSpeechResult.h"
 #include "model/CreateStudioAppDomainOpenRequest.h"
@@ -228,6 +230,8 @@
 #include "model/DeleteRuleActionResult.h"
 #include "model/DeleteSceneRuleRequest.h"
 #include "model/DeleteSceneRuleResult.h"
+#include "model/DeleteSoundCodeRequest.h"
+#include "model/DeleteSoundCodeResult.h"
 #include "model/DeleteSpeechRequest.h"
 #include "model/DeleteSpeechResult.h"
 #include "model/DeleteStudioAppDomainOpenRequest.h"
@@ -290,6 +294,8 @@
 #include "model/GetRuleActionResult.h"
 #include "model/GetSceneRuleRequest.h"
 #include "model/GetSceneRuleResult.h"
+#include "model/GetSoundCodeAudioRequest.h"
+#include "model/GetSoundCodeAudioResult.h"
 #include "model/GetSpeechDeviceDetailRequest.h"
 #include "model/GetSpeechDeviceDetailResult.h"
 #include "model/GetSpeechVoiceRequest.h"
@@ -496,6 +502,8 @@
 #include "model/QuerySceneRuleResult.h"
 #include "model/QuerySolutionDeviceGroupPageRequest.h"
 #include "model/QuerySolutionDeviceGroupPageResult.h"
+#include "model/QuerySoundCodeListRequest.h"
+#include "model/QuerySoundCodeListResult.h"
 #include "model/QuerySpeechRequest.h"
 #include "model/QuerySpeechResult.h"
 #include "model/QuerySpeechDeviceRequest.h"
@@ -580,6 +588,8 @@
 #include "model/SpeechByCombinationResult.h"
 #include "model/SpeechBySynthesisRequest.h"
 #include "model/SpeechBySynthesisResult.h"
+#include "model/StartAIBoxForceSyncRequest.h"
+#include "model/StartAIBoxForceSyncResult.h"
 #include "model/StartRuleRequest.h"
 #include "model/StartRuleResult.h"
 #include "model/StopRuleRequest.h"
@@ -872,6 +882,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateSceneRuleResult> CreateSceneRuleOutcome;
 			typedef std::future<CreateSceneRuleOutcome> CreateSceneRuleOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::CreateSceneRuleRequest&, const CreateSceneRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateSceneRuleAsyncHandler;
+			typedef Outcome<Error, Model::CreateSoundCodeResult> CreateSoundCodeOutcome;
+			typedef std::future<CreateSoundCodeOutcome> CreateSoundCodeOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::CreateSoundCodeRequest&, const CreateSoundCodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateSoundCodeAsyncHandler;
 			typedef Outcome<Error, Model::CreateSpeechResult> CreateSpeechOutcome;
 			typedef std::future<CreateSpeechOutcome> CreateSpeechOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::CreateSpeechRequest&, const CreateSpeechOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateSpeechAsyncHandler;
@@ -962,6 +975,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteSceneRuleResult> DeleteSceneRuleOutcome;
 			typedef std::future<DeleteSceneRuleOutcome> DeleteSceneRuleOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::DeleteSceneRuleRequest&, const DeleteSceneRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSceneRuleAsyncHandler;
+			typedef Outcome<Error, Model::DeleteSoundCodeResult> DeleteSoundCodeOutcome;
+			typedef std::future<DeleteSoundCodeOutcome> DeleteSoundCodeOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::DeleteSoundCodeRequest&, const DeleteSoundCodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSoundCodeAsyncHandler;
 			typedef Outcome<Error, Model::DeleteSpeechResult> DeleteSpeechOutcome;
 			typedef std::future<DeleteSpeechOutcome> DeleteSpeechOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::DeleteSpeechRequest&, const DeleteSpeechOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSpeechAsyncHandler;
@@ -1055,6 +1071,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetSceneRuleResult> GetSceneRuleOutcome;
 			typedef std::future<GetSceneRuleOutcome> GetSceneRuleOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::GetSceneRuleRequest&, const GetSceneRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetSceneRuleAsyncHandler;
+			typedef Outcome<Error, Model::GetSoundCodeAudioResult> GetSoundCodeAudioOutcome;
+			typedef std::future<GetSoundCodeAudioOutcome> GetSoundCodeAudioOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::GetSoundCodeAudioRequest&, const GetSoundCodeAudioOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetSoundCodeAudioAsyncHandler;
 			typedef Outcome<Error, Model::GetSpeechDeviceDetailResult> GetSpeechDeviceDetailOutcome;
 			typedef std::future<GetSpeechDeviceDetailOutcome> GetSpeechDeviceDetailOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::GetSpeechDeviceDetailRequest&, const GetSpeechDeviceDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetSpeechDeviceDetailAsyncHandler;
@@ -1364,6 +1383,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QuerySolutionDeviceGroupPageResult> QuerySolutionDeviceGroupPageOutcome;
 			typedef std::future<QuerySolutionDeviceGroupPageOutcome> QuerySolutionDeviceGroupPageOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::QuerySolutionDeviceGroupPageRequest&, const QuerySolutionDeviceGroupPageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QuerySolutionDeviceGroupPageAsyncHandler;
+			typedef Outcome<Error, Model::QuerySoundCodeListResult> QuerySoundCodeListOutcome;
+			typedef std::future<QuerySoundCodeListOutcome> QuerySoundCodeListOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::QuerySoundCodeListRequest&, const QuerySoundCodeListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QuerySoundCodeListAsyncHandler;
 			typedef Outcome<Error, Model::QuerySpeechResult> QuerySpeechOutcome;
 			typedef std::future<QuerySpeechOutcome> QuerySpeechOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::QuerySpeechRequest&, const QuerySpeechOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QuerySpeechAsyncHandler;
@@ -1490,6 +1512,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SpeechBySynthesisResult> SpeechBySynthesisOutcome;
 			typedef std::future<SpeechBySynthesisOutcome> SpeechBySynthesisOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::SpeechBySynthesisRequest&, const SpeechBySynthesisOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SpeechBySynthesisAsyncHandler;
+			typedef Outcome<Error, Model::StartAIBoxForceSyncResult> StartAIBoxForceSyncOutcome;
+			typedef std::future<StartAIBoxForceSyncOutcome> StartAIBoxForceSyncOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::StartAIBoxForceSyncRequest&, const StartAIBoxForceSyncOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartAIBoxForceSyncAsyncHandler;
 			typedef Outcome<Error, Model::StartRuleResult> StartRuleOutcome;
 			typedef std::future<StartRuleOutcome> StartRuleOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::StartRuleRequest&, const StartRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartRuleAsyncHandler;
@@ -1810,6 +1835,9 @@ namespace AlibabaCloud
 			CreateSceneRuleOutcome createSceneRule(const Model::CreateSceneRuleRequest &request)const;
 			void createSceneRuleAsync(const Model::CreateSceneRuleRequest& request, const CreateSceneRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateSceneRuleOutcomeCallable createSceneRuleCallable(const Model::CreateSceneRuleRequest& request) const;
+			CreateSoundCodeOutcome createSoundCode(const Model::CreateSoundCodeRequest &request)const;
+			void createSoundCodeAsync(const Model::CreateSoundCodeRequest& request, const CreateSoundCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateSoundCodeOutcomeCallable createSoundCodeCallable(const Model::CreateSoundCodeRequest& request) const;
 			CreateSpeechOutcome createSpeech(const Model::CreateSpeechRequest &request)const;
 			void createSpeechAsync(const Model::CreateSpeechRequest& request, const CreateSpeechAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateSpeechOutcomeCallable createSpeechCallable(const Model::CreateSpeechRequest& request) const;
@@ -1900,6 +1928,9 @@ namespace AlibabaCloud
 			DeleteSceneRuleOutcome deleteSceneRule(const Model::DeleteSceneRuleRequest &request)const;
 			void deleteSceneRuleAsync(const Model::DeleteSceneRuleRequest& request, const DeleteSceneRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteSceneRuleOutcomeCallable deleteSceneRuleCallable(const Model::DeleteSceneRuleRequest& request) const;
+			DeleteSoundCodeOutcome deleteSoundCode(const Model::DeleteSoundCodeRequest &request)const;
+			void deleteSoundCodeAsync(const Model::DeleteSoundCodeRequest& request, const DeleteSoundCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteSoundCodeOutcomeCallable deleteSoundCodeCallable(const Model::DeleteSoundCodeRequest& request) const;
 			DeleteSpeechOutcome deleteSpeech(const Model::DeleteSpeechRequest &request)const;
 			void deleteSpeechAsync(const Model::DeleteSpeechRequest& request, const DeleteSpeechAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteSpeechOutcomeCallable deleteSpeechCallable(const Model::DeleteSpeechRequest& request) const;
@@ -1993,6 +2024,9 @@ namespace AlibabaCloud
 			GetSceneRuleOutcome getSceneRule(const Model::GetSceneRuleRequest &request)const;
 			void getSceneRuleAsync(const Model::GetSceneRuleRequest& request, const GetSceneRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetSceneRuleOutcomeCallable getSceneRuleCallable(const Model::GetSceneRuleRequest& request) const;
+			GetSoundCodeAudioOutcome getSoundCodeAudio(const Model::GetSoundCodeAudioRequest &request)const;
+			void getSoundCodeAudioAsync(const Model::GetSoundCodeAudioRequest& request, const GetSoundCodeAudioAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetSoundCodeAudioOutcomeCallable getSoundCodeAudioCallable(const Model::GetSoundCodeAudioRequest& request) const;
 			GetSpeechDeviceDetailOutcome getSpeechDeviceDetail(const Model::GetSpeechDeviceDetailRequest &request)const;
 			void getSpeechDeviceDetailAsync(const Model::GetSpeechDeviceDetailRequest& request, const GetSpeechDeviceDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetSpeechDeviceDetailOutcomeCallable getSpeechDeviceDetailCallable(const Model::GetSpeechDeviceDetailRequest& request) const;
@@ -2302,6 +2336,9 @@ namespace AlibabaCloud
 			QuerySolutionDeviceGroupPageOutcome querySolutionDeviceGroupPage(const Model::QuerySolutionDeviceGroupPageRequest &request)const;
 			void querySolutionDeviceGroupPageAsync(const Model::QuerySolutionDeviceGroupPageRequest& request, const QuerySolutionDeviceGroupPageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QuerySolutionDeviceGroupPageOutcomeCallable querySolutionDeviceGroupPageCallable(const Model::QuerySolutionDeviceGroupPageRequest& request) const;
+			QuerySoundCodeListOutcome querySoundCodeList(const Model::QuerySoundCodeListRequest &request)const;
+			void querySoundCodeListAsync(const Model::QuerySoundCodeListRequest& request, const QuerySoundCodeListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QuerySoundCodeListOutcomeCallable querySoundCodeListCallable(const Model::QuerySoundCodeListRequest& request) const;
 			QuerySpeechOutcome querySpeech(const Model::QuerySpeechRequest &request)const;
 			void querySpeechAsync(const Model::QuerySpeechRequest& request, const QuerySpeechAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QuerySpeechOutcomeCallable querySpeechCallable(const Model::QuerySpeechRequest& request) const;
@@ -2428,6 +2465,9 @@ namespace AlibabaCloud
 			SpeechBySynthesisOutcome speechBySynthesis(const Model::SpeechBySynthesisRequest &request)const;
 			void speechBySynthesisAsync(const Model::SpeechBySynthesisRequest& request, const SpeechBySynthesisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SpeechBySynthesisOutcomeCallable speechBySynthesisCallable(const Model::SpeechBySynthesisRequest& request) const;
+			StartAIBoxForceSyncOutcome startAIBoxForceSync(const Model::StartAIBoxForceSyncRequest &request)const;
+			void startAIBoxForceSyncAsync(const Model::StartAIBoxForceSyncRequest& request, const StartAIBoxForceSyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			StartAIBoxForceSyncOutcomeCallable startAIBoxForceSyncCallable(const Model::StartAIBoxForceSyncRequest& request) const;
 			StartRuleOutcome startRule(const Model::StartRuleRequest &request)const;
 			void startRuleAsync(const Model::StartRuleRequest& request, const StartRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StartRuleOutcomeCallable startRuleCallable(const Model::StartRuleRequest& request) const;
