@@ -149,6 +149,8 @@ set(quickbi-public_public_header_model
 	include/alibabacloud/quickbi-public/model/QueryUserTagValueListResult.h
 	include/alibabacloud/quickbi-public/model/QueryWorksRequest.h
 	include/alibabacloud/quickbi-public/model/QueryWorksResult.h
+	include/alibabacloud/quickbi-public/model/QueryWorksBloodRelationshipRequest.h
+	include/alibabacloud/quickbi-public/model/QueryWorksBloodRelationshipResult.h
 	include/alibabacloud/quickbi-public/model/QueryWorksByOrganizationRequest.h
 	include/alibabacloud/quickbi-public/model/QueryWorksByOrganizationResult.h
 	include/alibabacloud/quickbi-public/model/QueryWorksByWorkspaceRequest.h
@@ -316,6 +318,8 @@ set(quickbi-public_src
 	src/model/QueryUserTagValueListResult.cc
 	src/model/QueryWorksRequest.cc
 	src/model/QueryWorksResult.cc
+	src/model/QueryWorksBloodRelationshipRequest.cc
+	src/model/QueryWorksBloodRelationshipResult.cc
 	src/model/QueryWorksByOrganizationRequest.cc
 	src/model/QueryWorksByOrganizationResult.cc
 	src/model/QueryWorksByWorkspaceRequest.cc

@@ -150,6 +150,8 @@
 #include "model/QueryUserTagValueListResult.h"
 #include "model/QueryWorksRequest.h"
 #include "model/QueryWorksResult.h"
+#include "model/QueryWorksBloodRelationshipRequest.h"
+#include "model/QueryWorksBloodRelationshipResult.h"
 #include "model/QueryWorksByOrganizationRequest.h"
 #include "model/QueryWorksByOrganizationResult.h"
 #include "model/QueryWorksByWorkspaceRequest.h"
@@ -387,6 +389,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryWorksResult> QueryWorksOutcome;
 			typedef std::future<QueryWorksOutcome> QueryWorksOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::QueryWorksRequest&, const QueryWorksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryWorksAsyncHandler;
+			typedef Outcome<Error, Model::QueryWorksBloodRelationshipResult> QueryWorksBloodRelationshipOutcome;
+			typedef std::future<QueryWorksBloodRelationshipOutcome> QueryWorksBloodRelationshipOutcomeCallable;
+			typedef std::function<void(const Quickbi_publicClient*, const Model::QueryWorksBloodRelationshipRequest&, const QueryWorksBloodRelationshipOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryWorksBloodRelationshipAsyncHandler;
 			typedef Outcome<Error, Model::QueryWorksByOrganizationResult> QueryWorksByOrganizationOutcome;
 			typedef std::future<QueryWorksByOrganizationOutcome> QueryWorksByOrganizationOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::QueryWorksByOrganizationRequest&, const QueryWorksByOrganizationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryWorksByOrganizationAsyncHandler;
@@ -638,6 +643,9 @@ namespace AlibabaCloud
 			QueryWorksOutcome queryWorks(const Model::QueryWorksRequest &request)const;
 			void queryWorksAsync(const Model::QueryWorksRequest& request, const QueryWorksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryWorksOutcomeCallable queryWorksCallable(const Model::QueryWorksRequest& request) const;
+			QueryWorksBloodRelationshipOutcome queryWorksBloodRelationship(const Model::QueryWorksBloodRelationshipRequest &request)const;
+			void queryWorksBloodRelationshipAsync(const Model::QueryWorksBloodRelationshipRequest& request, const QueryWorksBloodRelationshipAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryWorksBloodRelationshipOutcomeCallable queryWorksBloodRelationshipCallable(const Model::QueryWorksBloodRelationshipRequest& request) const;
 			QueryWorksByOrganizationOutcome queryWorksByOrganization(const Model::QueryWorksByOrganizationRequest &request)const;
 			void queryWorksByOrganizationAsync(const Model::QueryWorksByOrganizationRequest& request, const QueryWorksByOrganizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryWorksByOrganizationOutcomeCallable queryWorksByOrganizationCallable(const Model::QueryWorksByOrganizationRequest& request) const;

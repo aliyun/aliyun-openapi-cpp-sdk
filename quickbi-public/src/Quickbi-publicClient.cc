@@ -2355,6 +2355,42 @@ Quickbi_publicClient::QueryWorksOutcomeCallable Quickbi_publicClient::queryWorks
 	return task->get_future();
 }
 
+Quickbi_publicClient::QueryWorksBloodRelationshipOutcome Quickbi_publicClient::queryWorksBloodRelationship(const QueryWorksBloodRelationshipRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryWorksBloodRelationshipOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryWorksBloodRelationshipOutcome(QueryWorksBloodRelationshipResult(outcome.result()));
+	else
+		return QueryWorksBloodRelationshipOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::queryWorksBloodRelationshipAsync(const QueryWorksBloodRelationshipRequest& request, const QueryWorksBloodRelationshipAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryWorksBloodRelationship(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::QueryWorksBloodRelationshipOutcomeCallable Quickbi_publicClient::queryWorksBloodRelationshipCallable(const QueryWorksBloodRelationshipRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryWorksBloodRelationshipOutcome()>>(
+			[this, request]()
+			{
+			return this->queryWorksBloodRelationship(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Quickbi_publicClient::QueryWorksByOrganizationOutcome Quickbi_publicClient::queryWorksByOrganization(const QueryWorksByOrganizationRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
