@@ -40,6 +40,10 @@ void GetGatewayOptionResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
+	if(!dataNode["EnableHardwareAcceleration"].isNull())
+		data_.enableHardwareAcceleration = dataNode["EnableHardwareAcceleration"].asString() == "true";
+	if(!dataNode["DisableHttp2Alpn"].isNull())
+		data_.disableHttp2Alpn = dataNode["DisableHttp2Alpn"].asString() == "true";
 	auto traceDetailsNode = dataNode["TraceDetails"];
 	if(!traceDetailsNode["TraceEnabled"].isNull())
 		data_.traceDetails.traceEnabled = traceDetailsNode["TraceEnabled"].asString() == "true";

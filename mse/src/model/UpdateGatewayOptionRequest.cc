@@ -40,6 +40,8 @@ UpdateGatewayOptionRequest::GatewayOption UpdateGatewayOptionRequest::getGateway
 
 void UpdateGatewayOptionRequest::setGatewayOption(const UpdateGatewayOptionRequest::GatewayOption &gatewayOption) {
   gatewayOption_ = gatewayOption;
+  setParameter(std::string("GatewayOption") + ".EnableHardwareAcceleration", gatewayOption.enableHardwareAcceleration ? "true" : "false");
+  setParameter(std::string("GatewayOption") + ".DisableHttp2Alpn", gatewayOption.disableHttp2Alpn ? "true" : "false");
   setParameter(std::string("GatewayOption") + ".LogConfigDetails.ProjectName", gatewayOption.logConfigDetails.projectName);
   setParameter(std::string("GatewayOption") + ".LogConfigDetails.LogStoreName", gatewayOption.logConfigDetails.logStoreName);
   setParameter(std::string("GatewayOption") + ".LogConfigDetails.LogEnabled", gatewayOption.logConfigDetails.logEnabled ? "true" : "false");

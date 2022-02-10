@@ -29,6 +29,8 @@ namespace Model {
 class ALIBABACLOUD_MSE_EXPORT UpdateGatewayOptionRequest : public RpcServiceRequest {
 public:
 	struct GatewayOption {
+		bool enableHardwareAcceleration;
+		bool disableHttp2Alpn;
 		struct LogConfigDetails {
 			std::string projectName;
 			std::string logStoreName;

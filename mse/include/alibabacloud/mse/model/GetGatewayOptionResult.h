@@ -45,8 +45,10 @@ namespace AlibabaCloud
 						std::string projectName;
 						bool logEnabled;
 					};
+					bool disableHttp2Alpn;
 					TraceDetails traceDetails;
 					LogConfigDetails logConfigDetails;
+					bool enableHardwareAcceleration;
 				};
 
 
