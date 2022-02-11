@@ -565,6 +565,8 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/ResetConsumerGroupPositionResult.h
 	include/alibabacloud/iot/model/ResetThingRequest.h
 	include/alibabacloud/iot/model/ResetThingResult.h
+	include/alibabacloud/iot/model/ReupgradeOTATaskRequest.h
+	include/alibabacloud/iot/model/ReupgradeOTATaskResult.h
 	include/alibabacloud/iot/model/SaveDevicePropRequest.h
 	include/alibabacloud/iot/model/SaveDevicePropResult.h
 	include/alibabacloud/iot/model/SetDeviceDesiredPropertyRequest.h
@@ -1200,6 +1202,8 @@ set(iot_src
 	src/model/ResetConsumerGroupPositionResult.cc
 	src/model/ResetThingRequest.cc
 	src/model/ResetThingResult.cc
+	src/model/ReupgradeOTATaskRequest.cc
+	src/model/ReupgradeOTATaskResult.cc
 	src/model/SaveDevicePropRequest.cc
 	src/model/SaveDevicePropResult.cc
 	src/model/SetDeviceDesiredPropertyRequest.cc

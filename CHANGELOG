@@ -1,3 +1,6 @@
+2022-02-11 Version: 1.36.1053
+- Add OTA API, including ReupgradeOTATask.
+
 2022-02-10 Version: 1.36.1052
 - Add deleteNacosInstance.
 

@@ -566,6 +566,8 @@
 #include "model/ResetConsumerGroupPositionResult.h"
 #include "model/ResetThingRequest.h"
 #include "model/ResetThingResult.h"
+#include "model/ReupgradeOTATaskRequest.h"
+#include "model/ReupgradeOTATaskResult.h"
 #include "model/SaveDevicePropRequest.h"
 #include "model/SaveDevicePropResult.h"
 #include "model/SetDeviceDesiredPropertyRequest.h"
@@ -1479,6 +1481,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ResetThingResult> ResetThingOutcome;
 			typedef std::future<ResetThingOutcome> ResetThingOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::ResetThingRequest&, const ResetThingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ResetThingAsyncHandler;
+			typedef Outcome<Error, Model::ReupgradeOTATaskResult> ReupgradeOTATaskOutcome;
+			typedef std::future<ReupgradeOTATaskOutcome> ReupgradeOTATaskOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::ReupgradeOTATaskRequest&, const ReupgradeOTATaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ReupgradeOTATaskAsyncHandler;
 			typedef Outcome<Error, Model::SaveDevicePropResult> SaveDevicePropOutcome;
 			typedef std::future<SaveDevicePropOutcome> SaveDevicePropOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::SaveDevicePropRequest&, const SaveDevicePropOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SaveDevicePropAsyncHandler;
@@ -2432,6 +2437,9 @@ namespace AlibabaCloud
 			ResetThingOutcome resetThing(const Model::ResetThingRequest &request)const;
 			void resetThingAsync(const Model::ResetThingRequest& request, const ResetThingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ResetThingOutcomeCallable resetThingCallable(const Model::ResetThingRequest& request) const;
+			ReupgradeOTATaskOutcome reupgradeOTATask(const Model::ReupgradeOTATaskRequest &request)const;
+			void reupgradeOTATaskAsync(const Model::ReupgradeOTATaskRequest& request, const ReupgradeOTATaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ReupgradeOTATaskOutcomeCallable reupgradeOTATaskCallable(const Model::ReupgradeOTATaskRequest& request) const;
 			SaveDevicePropOutcome saveDeviceProp(const Model::SaveDevicePropRequest &request)const;
 			void saveDevicePropAsync(const Model::SaveDevicePropRequest& request, const SaveDevicePropAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SaveDevicePropOutcomeCallable saveDevicePropCallable(const Model::SaveDevicePropRequest& request) const;
