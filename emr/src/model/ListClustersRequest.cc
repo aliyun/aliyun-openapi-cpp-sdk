@@ -19,7 +19,7 @@
 using AlibabaCloud::Emr::Model::ListClustersRequest;
 
 ListClustersRequest::ListClustersRequest() :
-	RpcServiceRequest("emr", "2021-03-20", "ListClusters")
+	RpcServiceRequest("emr", "2016-04-08", "ListClusters")
 {
 	setMethod(HttpRequest::Method::Post);
 }
@@ -27,15 +27,83 @@ ListClustersRequest::ListClustersRequest() :
 ListClustersRequest::~ListClustersRequest()
 {}
 
-std::string ListClustersRequest::getClusterName()const
+long ListClustersRequest::getResourceOwnerId()const
 {
-	return clusterName_;
+	return resourceOwnerId_;
 }
 
-void ListClustersRequest::setClusterName(const std::string& clusterName)
+void ListClustersRequest::setResourceOwnerId(long resourceOwnerId)
 {
-	clusterName_ = clusterName;
-	setParameter("ClusterName", clusterName);
+	resourceOwnerId_ = resourceOwnerId;
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+}
+
+std::vector<std::string> ListClustersRequest::getStatusList()const
+{
+	return statusList_;
+}
+
+void ListClustersRequest::setStatusList(const std::vector<std::string>& statusList)
+{
+	statusList_ = statusList;
+	for(int dep1 = 0; dep1!= statusList.size(); dep1++) {
+		setParameter("StatusList."+ std::to_string(dep1), statusList.at(dep1));
+	}
+}
+
+bool ListClustersRequest::getIsDesc()const
+{
+	return isDesc_;
+}
+
+void ListClustersRequest::setIsDesc(bool isDesc)
+{
+	isDesc_ = isDesc;
+	setParameter("IsDesc", isDesc ? "true" : "false");
+}
+
+std::string ListClustersRequest::getDepositType()const
+{
+	return depositType_;
+}
+
+void ListClustersRequest::setDepositType(const std::string& depositType)
+{
+	depositType_ = depositType;
+	setParameter("DepositType", depositType);
+}
+
+int ListClustersRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void ListClustersRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setParameter("PageNumber", std::to_string(pageNumber));
+}
+
+std::string ListClustersRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ListClustersRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ListClustersRequest::getMachineType()const
+{
+	return machineType_;
+}
+
+void ListClustersRequest::setMachineType(const std::string& machineType)
+{
+	machineType_ = machineType;
+	setParameter("MachineType", machineType);
 }
 
 std::string ListClustersRequest::getResourceGroupId()const
@@ -49,116 +117,6 @@ void ListClustersRequest::setResourceGroupId(const std::string& resourceGroupId)
 	setParameter("ResourceGroupId", resourceGroupId);
 }
 
-Array ListClustersRequest::getIaasTypes()const
-{
-	return iaasTypes_;
-}
-
-void ListClustersRequest::setIaasTypes(const Array& iaasTypes)
-{
-	iaasTypes_ = iaasTypes;
-	setParameter("IaasTypes", std::to_string(iaasTypes));
-}
-
-Array ListClustersRequest::getClusterIds()const
-{
-	return clusterIds_;
-}
-
-void ListClustersRequest::setClusterIds(const Array& clusterIds)
-{
-	clusterIds_ = clusterIds;
-	setParameter("ClusterIds", std::to_string(clusterIds));
-}
-
-Array ListClustersRequest::getTags()const
-{
-	return tags_;
-}
-
-void ListClustersRequest::setTags(const Array& tags)
-{
-	tags_ = tags;
-	setParameter("Tags", std::to_string(tags));
-}
-
-Array ListClustersRequest::getClusterStates()const
-{
-	return clusterStates_;
-}
-
-void ListClustersRequest::setClusterStates(const Array& clusterStates)
-{
-	clusterStates_ = clusterStates;
-	setParameter("ClusterStates", std::to_string(clusterStates));
-}
-
-Array ListClustersRequest::getPaymentTypes()const
-{
-	return paymentTypes_;
-}
-
-void ListClustersRequest::setPaymentTypes(const Array& paymentTypes)
-{
-	paymentTypes_ = paymentTypes;
-	setParameter("PaymentTypes", std::to_string(paymentTypes));
-}
-
-int ListClustersRequest::getMaxResults()const
-{
-	return maxResults_;
-}
-
-void ListClustersRequest::setMaxResults(int maxResults)
-{
-	maxResults_ = maxResults;
-	setParameter("MaxResults", std::to_string(maxResults));
-}
-
-std::string ListClustersRequest::getSystemDebug()const
-{
-	return systemDebug_;
-}
-
-void ListClustersRequest::setSystemDebug(const std::string& systemDebug)
-{
-	systemDebug_ = systemDebug;
-	setParameter("SystemDebug", systemDebug);
-}
-
-Array ListClustersRequest::getClusterTypes()const
-{
-	return clusterTypes_;
-}
-
-void ListClustersRequest::setClusterTypes(const Array& clusterTypes)
-{
-	clusterTypes_ = clusterTypes;
-	setParameter("ClusterTypes", std::to_string(clusterTypes));
-}
-
-std::string ListClustersRequest::getClientToken()const
-{
-	return clientToken_;
-}
-
-void ListClustersRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
-}
-
-std::string ListClustersRequest::getNextToken()const
-{
-	return nextToken_;
-}
-
-void ListClustersRequest::setNextToken(const std::string& nextToken)
-{
-	nextToken_ = nextToken;
-	setParameter("NextToken", nextToken);
-}
-
 std::string ListClustersRequest::getRegionId()const
 {
 	return regionId_;
@@ -170,14 +128,100 @@ void ListClustersRequest::setRegionId(const std::string& regionId)
 	setParameter("RegionId", regionId);
 }
 
-Array ListClustersRequest::getPaymentStatuses()const
+int ListClustersRequest::getPageSize()const
 {
-	return paymentStatuses_;
+	return pageSize_;
 }
 
-void ListClustersRequest::setPaymentStatuses(const Array& paymentStatuses)
+void ListClustersRequest::setPageSize(int pageSize)
 {
-	paymentStatuses_ = paymentStatuses;
-	setParameter("PaymentStatuses", std::to_string(paymentStatuses));
+	pageSize_ = pageSize;
+	setParameter("PageSize", std::to_string(pageSize));
+}
+
+std::vector<ListClustersRequest::Tag> ListClustersRequest::getTag()const
+{
+	return tag_;
+}
+
+void ListClustersRequest::setTag(const std::vector<Tag>& tag)
+{
+	tag_ = tag;
+	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
+		auto tagObj = tag.at(dep1);
+		std::string tagObjStr = "Tag." + std::to_string(dep1 + 1);
+		setParameter(tagObjStr + ".Value", tagObj.value);
+		setParameter(tagObjStr + ".Key", tagObj.key);
+	}
+}
+
+std::string ListClustersRequest::getCreateType()const
+{
+	return createType_;
+}
+
+void ListClustersRequest::setCreateType(const std::string& createType)
+{
+	createType_ = createType;
+	setParameter("CreateType", createType);
+}
+
+std::vector<std::string> ListClustersRequest::getExpiredTagList()const
+{
+	return expiredTagList_;
+}
+
+void ListClustersRequest::setExpiredTagList(const std::vector<std::string>& expiredTagList)
+{
+	expiredTagList_ = expiredTagList;
+	for(int dep1 = 0; dep1!= expiredTagList.size(); dep1++) {
+		setParameter("ExpiredTagList."+ std::to_string(dep1), expiredTagList.at(dep1));
+	}
+}
+
+bool ListClustersRequest::getDefaultStatus()const
+{
+	return defaultStatus_;
+}
+
+void ListClustersRequest::setDefaultStatus(bool defaultStatus)
+{
+	defaultStatus_ = defaultStatus;
+	setParameter("DefaultStatus", defaultStatus ? "true" : "false");
+}
+
+std::string ListClustersRequest::getVpcId()const
+{
+	return vpcId_;
+}
+
+void ListClustersRequest::setVpcId(const std::string& vpcId)
+{
+	vpcId_ = vpcId;
+	setParameter("VpcId", vpcId);
+}
+
+std::string ListClustersRequest::getName()const
+{
+	return name_;
+}
+
+void ListClustersRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setParameter("Name", name);
+}
+
+std::vector<std::string> ListClustersRequest::getClusterTypeList()const
+{
+	return clusterTypeList_;
+}
+
+void ListClustersRequest::setClusterTypeList(const std::vector<std::string>& clusterTypeList)
+{
+	clusterTypeList_ = clusterTypeList;
+	for(int dep1 = 0; dep1!= clusterTypeList.size(); dep1++) {
+		setParameter("ClusterTypeList."+ std::to_string(dep1), clusterTypeList.at(dep1));
+	}
 }
 

@@ -19,35 +19,13 @@
 using AlibabaCloud::Emr::Model::UntagResourcesRequest;
 
 UntagResourcesRequest::UntagResourcesRequest() :
-	RpcServiceRequest("emr", "2021-03-20", "UntagResources")
+	RpcServiceRequest("emr", "2016-04-08", "UntagResources")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
 UntagResourcesRequest::~UntagResourcesRequest()
 {}
-
-std::string UntagResourcesRequest::getClientToken()const
-{
-	return clientToken_;
-}
-
-void UntagResourcesRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
-}
-
-std::string UntagResourcesRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void UntagResourcesRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
-}
 
 bool UntagResourcesRequest::getAll()const
 {
@@ -58,6 +36,30 @@ void UntagResourcesRequest::setAll(bool all)
 {
 	all_ = all;
 	setParameter("All", all ? "true" : "false");
+}
+
+long UntagResourcesRequest::getResourceOwnerId()const
+{
+	return resourceOwnerId_;
+}
+
+void UntagResourcesRequest::setResourceOwnerId(long resourceOwnerId)
+{
+	resourceOwnerId_ = resourceOwnerId;
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+}
+
+std::vector<std::string> UntagResourcesRequest::getResourceId()const
+{
+	return resourceId_;
+}
+
+void UntagResourcesRequest::setResourceId(const std::vector<std::string>& resourceId)
+{
+	resourceId_ = resourceId;
+	for(int dep1 = 0; dep1!= resourceId.size(); dep1++) {
+		setParameter("ResourceId."+ std::to_string(dep1), resourceId.at(dep1));
+	}
 }
 
 std::string UntagResourcesRequest::getResourceType()const
@@ -71,58 +73,38 @@ void UntagResourcesRequest::setResourceType(const std::string& resourceType)
 	setParameter("ResourceType", resourceType);
 }
 
-bool UntagResourcesRequest::getUntagAll()const
+std::string UntagResourcesRequest::getAccessKeyId()const
 {
-	return untagAll_;
+	return accessKeyId_;
 }
 
-void UntagResourcesRequest::setUntagAll(bool untagAll)
+void UntagResourcesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
-	untagAll_ = untagAll;
-	setParameter("UntagAll", untagAll ? "true" : "false");
+	accessKeyId_ = accessKeyId;
+	setParameter("AccessKeyId", accessKeyId);
 }
 
-Array UntagResourcesRequest::getTagKeys()const
+std::string UntagResourcesRequest::getRegionId()const
 {
-	return tagKeys_;
+	return regionId_;
 }
 
-void UntagResourcesRequest::setTagKeys(const Array& tagKeys)
+void UntagResourcesRequest::setRegionId(const std::string& regionId)
 {
-	tagKeys_ = tagKeys;
-	setParameter("TagKeys", std::to_string(tagKeys));
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
 }
 
-std::string UntagResourcesRequest::getSystemDebug()const
-{
-	return systemDebug_;
-}
-
-void UntagResourcesRequest::setSystemDebug(const std::string& systemDebug)
-{
-	systemDebug_ = systemDebug;
-	setParameter("SystemDebug", systemDebug);
-}
-
-Array UntagResourcesRequest::getTagKey()const
+std::vector<std::string> UntagResourcesRequest::getTagKey()const
 {
 	return tagKey_;
 }
 
-void UntagResourcesRequest::setTagKey(const Array& tagKey)
+void UntagResourcesRequest::setTagKey(const std::vector<std::string>& tagKey)
 {
 	tagKey_ = tagKey;
-	setParameter("TagKey", std::to_string(tagKey));
-}
-
-Array UntagResourcesRequest::getResourceIds()const
-{
-	return resourceIds_;
-}
-
-void UntagResourcesRequest::setResourceIds(const Array& resourceIds)
-{
-	resourceIds_ = resourceIds;
-	setParameter("ResourceIds", std::to_string(resourceIds));
+	for(int dep1 = 0; dep1!= tagKey.size(); dep1++) {
+		setParameter("TagKey."+ std::to_string(dep1), tagKey.at(dep1));
+	}
 }
 

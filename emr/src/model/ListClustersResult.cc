@@ -39,79 +39,76 @@ void ListClustersResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allClustersNode = value["Clusters"]["Cluster"];
-	for (auto valueClustersCluster : allClustersNode)
+	auto allClustersNode = value["Clusters"]["ClusterInfo"];
+	for (auto valueClustersClusterInfo : allClustersNode)
 	{
-		Cluster clustersObject;
-		if(!valueClustersCluster["ClusterId"].isNull())
-			clustersObject.clusterId = valueClustersCluster["ClusterId"].asString();
-		if(!valueClustersCluster["ClusterName"].isNull())
-			clustersObject.clusterName = valueClustersCluster["ClusterName"].asString();
-		if(!valueClustersCluster["ClusterType"].isNull())
-			clustersObject.clusterType = valueClustersCluster["ClusterType"].asString();
-		if(!valueClustersCluster["ClusterState"].isNull())
-			clustersObject.clusterState = valueClustersCluster["ClusterState"].asString();
-		if(!valueClustersCluster["PaymentStatus"].isNull())
-			clustersObject.paymentStatus = valueClustersCluster["PaymentStatus"].asString();
-		if(!valueClustersCluster["PaymentType"].isNull())
-			clustersObject.paymentType = valueClustersCluster["PaymentType"].asString();
-		if(!valueClustersCluster["CreateTime"].isNull())
-			clustersObject.createTime = std::stol(valueClustersCluster["CreateTime"].asString());
-		if(!valueClustersCluster["ExpiredTime"].isNull())
-			clustersObject.expiredTime = std::stol(valueClustersCluster["ExpiredTime"].asString());
-		if(!valueClustersCluster["DeleteTime"].isNull())
-			clustersObject.deleteTime = std::stol(valueClustersCluster["DeleteTime"].asString());
-		if(!valueClustersCluster["MainVersion"].isNull())
-			clustersObject.mainVersion = valueClustersCluster["MainVersion"].asString();
-		if(!valueClustersCluster["ReleaseVersion"].isNull())
-			clustersObject.releaseVersion = valueClustersCluster["ReleaseVersion"].asString();
-		if(!valueClustersCluster["HasUncompletedOrder"].isNull())
-			clustersObject.hasUncompletedOrder = valueClustersCluster["HasUncompletedOrder"].asString() == "true";
-		auto allTagResourceListNode = valueClustersCluster["TagResourceList"]["TagResource"];
-		for (auto valueClustersClusterTagResourceListTagResource : allTagResourceListNode)
+		ClusterInfo clustersObject;
+		if(!valueClustersClusterInfo["Id"].isNull())
+			clustersObject.id = valueClustersClusterInfo["Id"].asString();
+		if(!valueClustersClusterInfo["Name"].isNull())
+			clustersObject.name = valueClustersClusterInfo["Name"].asString();
+		if(!valueClustersClusterInfo["MachineType"].isNull())
+			clustersObject.machineType = valueClustersClusterInfo["MachineType"].asString();
+		if(!valueClustersClusterInfo["Type"].isNull())
+			clustersObject.type = valueClustersClusterInfo["Type"].asString();
+		if(!valueClustersClusterInfo["CreateTime"].isNull())
+			clustersObject.createTime = std::stol(valueClustersClusterInfo["CreateTime"].asString());
+		if(!valueClustersClusterInfo["RunningTime"].isNull())
+			clustersObject.runningTime = std::stoi(valueClustersClusterInfo["RunningTime"].asString());
+		if(!valueClustersClusterInfo["Status"].isNull())
+			clustersObject.status = valueClustersClusterInfo["Status"].asString();
+		if(!valueClustersClusterInfo["ChargeType"].isNull())
+			clustersObject.chargeType = valueClustersClusterInfo["ChargeType"].asString();
+		if(!valueClustersClusterInfo["ExpiredTime"].isNull())
+			clustersObject.expiredTime = std::stol(valueClustersClusterInfo["ExpiredTime"].asString());
+		if(!valueClustersClusterInfo["Period"].isNull())
+			clustersObject.period = std::stoi(valueClustersClusterInfo["Period"].asString());
+		if(!valueClustersClusterInfo["HasUncompletedOrder"].isNull())
+			clustersObject.hasUncompletedOrder = valueClustersClusterInfo["HasUncompletedOrder"].asString() == "true";
+		if(!valueClustersClusterInfo["OrderList"].isNull())
+			clustersObject.orderList = valueClustersClusterInfo["OrderList"].asString();
+		if(!valueClustersClusterInfo["CreateResource"].isNull())
+			clustersObject.createResource = valueClustersClusterInfo["CreateResource"].asString();
+		if(!valueClustersClusterInfo["DepositType"].isNull())
+			clustersObject.depositType = valueClustersClusterInfo["DepositType"].asString();
+		if(!valueClustersClusterInfo["MetaStoreType"].isNull())
+			clustersObject.metaStoreType = valueClustersClusterInfo["MetaStoreType"].asString();
+		if(!valueClustersClusterInfo["K8sClusterId"].isNull())
+			clustersObject.k8sClusterId = valueClustersClusterInfo["K8sClusterId"].asString();
+		if(!valueClustersClusterInfo["OperationId"].isNull())
+			clustersObject.operationId = std::stol(valueClustersClusterInfo["OperationId"].asString());
+		auto allTagsNode = valueClustersClusterInfo["Tags"]["Tag"];
+		for (auto valueClustersClusterInfoTagsTag : allTagsNode)
 		{
-			Cluster::TagResource tagResourceListObject;
-			if(!valueClustersClusterTagResourceListTagResource["TagKey"].isNull())
-				tagResourceListObject.tagKey = valueClustersClusterTagResourceListTagResource["TagKey"].asString();
-			if(!valueClustersClusterTagResourceListTagResource["TagValue"].isNull())
-				tagResourceListObject.tagValue = valueClustersClusterTagResourceListTagResource["TagValue"].asString();
-			if(!valueClustersClusterTagResourceListTagResource["ResourceType"].isNull())
-				tagResourceListObject.resourceType = valueClustersClusterTagResourceListTagResource["ResourceType"].asString();
-			if(!valueClustersClusterTagResourceListTagResource["ResourceId"].isNull())
-				tagResourceListObject.resourceId = valueClustersClusterTagResourceListTagResource["ResourceId"].asString();
-			clustersObject.tagResourceList.push_back(tagResourceListObject);
-		}
-		auto allTagsNode = valueClustersCluster["Tags"]["Tag"];
-		for (auto valueClustersClusterTagsTag : allTagsNode)
-		{
-			Cluster::Tag tagsObject;
-			if(!valueClustersClusterTagsTag["TagKey"].isNull())
-				tagsObject.tagKey = valueClustersClusterTagsTag["TagKey"].asString();
-			if(!valueClustersClusterTagsTag["TagValue"].isNull())
-				tagsObject.tagValue = valueClustersClusterTagsTag["TagValue"].asString();
-			if(!valueClustersClusterTagsTag["Key"].isNull())
-				tagsObject.key = valueClustersClusterTagsTag["Key"].asString();
-			if(!valueClustersClusterTagsTag["Value"].isNull())
-				tagsObject.value = valueClustersClusterTagsTag["Value"].asString();
+			ClusterInfo::Tag tagsObject;
+			if(!valueClustersClusterInfoTagsTag["TagKey"].isNull())
+				tagsObject.tagKey = valueClustersClusterInfoTagsTag["TagKey"].asString();
+			if(!valueClustersClusterInfoTagsTag["TagValue"].isNull())
+				tagsObject.tagValue = valueClustersClusterInfoTagsTag["TagValue"].asString();
 			clustersObject.tags.push_back(tagsObject);
 		}
-		auto failedReasonNode = value["FailedReason"];
-		if(!failedReasonNode["ErrorCode"].isNull())
-			clustersObject.failedReason.errorCode = failedReasonNode["ErrorCode"].asString();
-		if(!failedReasonNode["ErrorMsg"].isNull())
-			clustersObject.failedReason.errorMsg = failedReasonNode["ErrorMsg"].asString();
-		if(!failedReasonNode["ErrorMessage"].isNull())
-			clustersObject.failedReason.errorMessage = failedReasonNode["ErrorMessage"].asString();
-		if(!failedReasonNode["RequestId"].isNull())
-			clustersObject.failedReason.requestId = failedReasonNode["RequestId"].asString();
+		auto orderTaskInfoNode = value["OrderTaskInfo"];
+		if(!orderTaskInfoNode["TargetCount"].isNull())
+			clustersObject.orderTaskInfo.targetCount = std::stoi(orderTaskInfoNode["TargetCount"].asString());
+		if(!orderTaskInfoNode["CurrentCount"].isNull())
+			clustersObject.orderTaskInfo.currentCount = std::stoi(orderTaskInfoNode["CurrentCount"].asString());
+		if(!orderTaskInfoNode["OrderIdList"].isNull())
+			clustersObject.orderTaskInfo.orderIdList = orderTaskInfoNode["OrderIdList"].asString();
+		auto failReasonNode = value["FailReason"];
+		if(!failReasonNode["ErrorCode"].isNull())
+			clustersObject.failReason.errorCode = failReasonNode["ErrorCode"].asString();
+		if(!failReasonNode["ErrorMsg"].isNull())
+			clustersObject.failReason.errorMsg = failReasonNode["ErrorMsg"].asString();
+		if(!failReasonNode["RequestId"].isNull())
+			clustersObject.failReason.requestId = failReasonNode["RequestId"].asString();
 		clusters_.push_back(clustersObject);
 	}
-	if(!value["NextToken"].isNull())
-		nextToken_ = value["NextToken"].asString();
-	if(!value["MaxResults"].isNull())
-		maxResults_ = std::stoi(value["MaxResults"].asString());
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 
 }
 
@@ -120,17 +117,17 @@ int ListClustersResult::getTotalCount()const
 	return totalCount_;
 }
 
-std::string ListClustersResult::getNextToken()const
+int ListClustersResult::getPageSize()const
 {
-	return nextToken_;
+	return pageSize_;
 }
 
-int ListClustersResult::getMaxResults()const
+int ListClustersResult::getPageNumber()const
 {
-	return maxResults_;
+	return pageNumber_;
 }
 
-std::vector<ListClustersResult::Cluster> ListClustersResult::getClusters()const
+std::vector<ListClustersResult::ClusterInfo> ListClustersResult::getClusters()const
 {
 	return clusters_;
 }

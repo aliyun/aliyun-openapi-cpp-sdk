@@ -30,31 +30,37 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_EMR_EXPORT TagResourcesRequest : public RpcServiceRequest
 			{
+			public:
+				struct Tag
+				{
+					std::string key;
+					std::string value;
+				};
 
 			public:
 				TagResourcesRequest();
 				~TagResourcesRequest();
 
-				std::string getClientToken()const;
-				void setClientToken(const std::string& clientToken);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
+				std::vector<std::string> getResourceId()const;
+				void setResourceId(const std::vector<std::string>& resourceId);
 				std::string getResourceType()const;
 				void setResourceType(const std::string& resourceType);
-				Array getTags()const;
-				void setTags(const Array& tags);
-				std::string getSystemDebug()const;
-				void setSystemDebug(const std::string& systemDebug);
-				Array getResourceIds()const;
-				void setResourceIds(const Array& resourceIds);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::vector<Tag> getTag()const;
+				void setTag(const std::vector<Tag>& tag);
 
             private:
-				std::string clientToken_;
-				std::string regionId_;
+				long resourceOwnerId_;
+				std::vector<std::string> resourceId_;
 				std::string resourceType_;
-				Array tags_;
-				std::string systemDebug_;
-				Array resourceIds_;
+				std::string accessKeyId_;
+				std::string regionId_;
+				std::vector<Tag> tag_;
 
 			};
 		}

@@ -32,44 +32,45 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_EMR_EXPORT ListClustersResult : public ServiceResult
 			{
 			public:
-				struct Cluster
+				struct ClusterInfo
 				{
-					struct FailedReason
+					struct OrderTaskInfo
+					{
+						std::string orderIdList;
+						int targetCount;
+						int currentCount;
+					};
+					struct FailReason
 					{
 						std::string requestId;
 						std::string errorMsg;
 						std::string errorCode;
-						std::string errorMessage;
-					};
-					struct TagResource
-					{
-						std::string resourceId;
-						std::string tagKey;
-						std::string resourceType;
-						std::string tagValue;
 					};
 					struct Tag
 					{
 						std::string tagKey;
-						std::string value;
 						std::string tagValue;
-						std::string key;
 					};
-					std::string clusterState;
-					std::string mainVersion;
-					std::string clusterId;
+					std::string status;
+					std::string createResource;
+					long operationId;
 					long createTime;
-					long deleteTime;
-					FailedReason failedReason;
-					std::string clusterType;
-					std::string releaseVersion;
+					std::string machineType;
+					std::string depositType;
+					int period;
+					std::string metaStoreType;
+					FailReason failReason;
+					std::string k8sClusterId;
+					std::string name;
+					std::string type;
+					std::string chargeType;
+					OrderTaskInfo orderTaskInfo;
 					long expiredTime;
-					std::vector<Cluster::TagResource> tagResourceList;
-					std::string clusterName;
-					std::string paymentType;
+					std::string id;
+					std::string orderList;
 					bool hasUncompletedOrder;
-					std::vector<Cluster::Tag> tags;
-					std::string paymentStatus;
+					int runningTime;
+					std::vector<ClusterInfo::Tag> tags;
 				};
 
 
@@ -77,17 +78,17 @@ namespace AlibabaCloud
 				explicit ListClustersResult(const std::string &payload);
 				~ListClustersResult();
 				int getTotalCount()const;
-				std::string getNextToken()const;
-				int getMaxResults()const;
-				std::vector<Cluster> getClusters()const;
+				int getPageSize()const;
+				int getPageNumber()const;
+				std::vector<ClusterInfo> getClusters()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				int totalCount_;
-				std::string nextToken_;
-				int maxResults_;
-				std::vector<Cluster> clusters_;
+				int pageSize_;
+				int pageNumber_;
+				std::vector<ClusterInfo> clusters_;
 
 			};
 		}

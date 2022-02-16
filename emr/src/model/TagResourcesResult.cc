@@ -39,13 +39,6 @@ void TagResourcesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Data"].isNull())
-		data_ = value["Data"].asString() == "true";
 
-}
-
-bool TagResourcesResult::getData()const
-{
-	return data_;
 }
 

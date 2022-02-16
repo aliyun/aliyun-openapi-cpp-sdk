@@ -35,26 +35,26 @@ namespace AlibabaCloud
 				JoinResourceGroupRequest();
 				~JoinResourceGroupRequest();
 
-				std::string getClientToken()const;
-				void setClientToken(const std::string& clientToken);
-				std::string getResourceGroupId()const;
-				void setResourceGroupId(const std::string& resourceGroupId);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
 				std::string getResourceId()const;
 				void setResourceId(const std::string& resourceId);
 				std::string getResourceType()const;
 				void setResourceType(const std::string& resourceType);
-				std::string getSystemDebug()const;
-				void setSystemDebug(const std::string& systemDebug);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 
             private:
-				std::string clientToken_;
-				std::string resourceGroupId_;
-				std::string regionId_;
+				long resourceOwnerId_;
 				std::string resourceId_;
 				std::string resourceType_;
-				std::string systemDebug_;
+				std::string accessKeyId_;
+				std::string resourceGroupId_;
+				std::string regionId_;
 
 			};
 		}

@@ -22,164 +22,240 @@
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RpcServiceClient.h>
 #include "EmrExport.h"
-#include "model/AddApplicationRequest.h"
-#include "model/AddApplicationResult.h"
-#include "model/AddApplicationsRequest.h"
-#include "model/AddApplicationsResult.h"
-#include "model/CancelOperationOrdersRequest.h"
-#include "model/CancelOperationOrdersResult.h"
-#include "model/CreateAutoScalingPolicyRequest.h"
-#include "model/CreateAutoScalingPolicyResult.h"
-#include "model/CreateAutoScalingRuleRequest.h"
-#include "model/CreateAutoScalingRuleResult.h"
-#include "model/CreateClusterRequest.h"
-#include "model/CreateClusterResult.h"
-#include "model/CreateClusterScriptRequest.h"
-#include "model/CreateClusterScriptResult.h"
-#include "model/CreateNodeGroupRequest.h"
-#include "model/CreateNodeGroupResult.h"
-#include "model/CreateOnAckClusterRequest.h"
-#include "model/CreateOnAckClusterResult.h"
-#include "model/CreateOnKubeClusterRequest.h"
-#include "model/CreateOnKubeClusterResult.h"
-#include "model/CreateScalingGroupRequest.h"
-#include "model/CreateScalingGroupResult.h"
-#include "model/DecreaseNodesRequest.h"
-#include "model/DecreaseNodesResult.h"
-#include "model/DeleteAutoScalingPolicyRequest.h"
-#include "model/DeleteAutoScalingPolicyResult.h"
-#include "model/DeleteAutoScalingRuleRequest.h"
-#include "model/DeleteAutoScalingRuleResult.h"
-#include "model/DeleteClusterRequest.h"
-#include "model/DeleteClusterResult.h"
-#include "model/DeleteClusterScriptRequest.h"
-#include "model/DeleteClusterScriptResult.h"
-#include "model/DeleteNodeGroupRequest.h"
-#include "model/DeleteNodeGroupResult.h"
-#include "model/DeleteOnAckClusterRequest.h"
-#include "model/DeleteOnAckClusterResult.h"
-#include "model/DeleteScalingGroupRequest.h"
-#include "model/DeleteScalingGroupResult.h"
-#include "model/DisableAutoScalingPolicyRequest.h"
-#include "model/DisableAutoScalingPolicyResult.h"
-#include "model/EnableAutoScalingPolicyRequest.h"
-#include "model/EnableAutoScalingPolicyResult.h"
-#include "model/GetApplicationRequest.h"
-#include "model/GetApplicationResult.h"
-#include "model/GetClusterRequest.h"
-#include "model/GetClusterResult.h"
-#include "model/GetClusterScriptExecutionResultRequest.h"
-#include "model/GetClusterScriptExecutionResultResult.h"
-#include "model/GetNodeGroupRequest.h"
-#include "model/GetNodeGroupResult.h"
-#include "model/GetOnAckClusterRequest.h"
-#include "model/GetOnAckClusterResult.h"
-#include "model/GetOnKubeClusterRequest.h"
-#include "model/GetOnKubeClusterResult.h"
-#include "model/GetOnKubeClusterResourceQuotaRequest.h"
-#include "model/GetOnKubeClusterResourceQuotaResult.h"
-#include "model/GetOnKubeClusterResourceUsageRequest.h"
-#include "model/GetOnKubeClusterResourceUsageResult.h"
-#include "model/GetOperationRequest.h"
-#include "model/GetOperationResult.h"
-#include "model/GetScalingGroupRequest.h"
-#include "model/GetScalingGroupResult.h"
-#include "model/IncreaseClusterDiskRequest.h"
-#include "model/IncreaseClusterDiskResult.h"
-#include "model/IncreaseNodesRequest.h"
-#include "model/IncreaseNodesResult.h"
+#include "model/AddClusterServiceRequest.h"
+#include "model/AddClusterServiceResult.h"
+#include "model/AddScalingConfigItemV2Request.h"
+#include "model/AddScalingConfigItemV2Result.h"
+#include "model/CloneFlowRequest.h"
+#include "model/CloneFlowResult.h"
+#include "model/CloneFlowJobRequest.h"
+#include "model/CloneFlowJobResult.h"
+#include "model/CreateClusterTemplateRequest.h"
+#include "model/CreateClusterTemplateResult.h"
+#include "model/CreateClusterV2Request.h"
+#include "model/CreateClusterV2Result.h"
+#include "model/CreateClusterWithTemplateRequest.h"
+#include "model/CreateClusterWithTemplateResult.h"
+#include "model/CreateFlowRequest.h"
+#include "model/CreateFlowResult.h"
+#include "model/CreateFlowCategoryRequest.h"
+#include "model/CreateFlowCategoryResult.h"
+#include "model/CreateFlowForWebRequest.h"
+#include "model/CreateFlowForWebResult.h"
+#include "model/CreateFlowJobRequest.h"
+#include "model/CreateFlowJobResult.h"
+#include "model/CreateFlowProjectRequest.h"
+#include "model/CreateFlowProjectResult.h"
+#include "model/CreateFlowProjectClusterSettingRequest.h"
+#include "model/CreateFlowProjectClusterSettingResult.h"
+#include "model/CreateFlowProjectUserRequest.h"
+#include "model/CreateFlowProjectUserResult.h"
+#include "model/CreateResourcePoolRequest.h"
+#include "model/CreateResourcePoolResult.h"
+#include "model/CreateResourceQueueRequest.h"
+#include "model/CreateResourceQueueResult.h"
+#include "model/CreateScalingGroupV2Request.h"
+#include "model/CreateScalingGroupV2Result.h"
+#include "model/DeleteClusterTemplateRequest.h"
+#include "model/DeleteClusterTemplateResult.h"
+#include "model/DeleteFlowRequest.h"
+#include "model/DeleteFlowResult.h"
+#include "model/DeleteFlowCategoryRequest.h"
+#include "model/DeleteFlowCategoryResult.h"
+#include "model/DeleteFlowJobRequest.h"
+#include "model/DeleteFlowJobResult.h"
+#include "model/DeleteFlowProjectRequest.h"
+#include "model/DeleteFlowProjectResult.h"
+#include "model/DeleteFlowProjectClusterSettingRequest.h"
+#include "model/DeleteFlowProjectClusterSettingResult.h"
+#include "model/DeleteFlowProjectUserRequest.h"
+#include "model/DeleteFlowProjectUserResult.h"
+#include "model/DeleteResourcePoolRequest.h"
+#include "model/DeleteResourcePoolResult.h"
+#include "model/DeleteResourceQueueRequest.h"
+#include "model/DeleteResourceQueueResult.h"
+#include "model/DescribeClusterBasicInfoRequest.h"
+#include "model/DescribeClusterBasicInfoResult.h"
+#include "model/DescribeClusterOperationHostTaskLogRequest.h"
+#include "model/DescribeClusterOperationHostTaskLogResult.h"
+#include "model/DescribeClusterResourcePoolSchedulerTypeRequest.h"
+#include "model/DescribeClusterResourcePoolSchedulerTypeResult.h"
+#include "model/DescribeClusterServiceRequest.h"
+#include "model/DescribeClusterServiceResult.h"
+#include "model/DescribeClusterServiceConfigRequest.h"
+#include "model/DescribeClusterServiceConfigResult.h"
+#include "model/DescribeClusterServiceConfigTagRequest.h"
+#include "model/DescribeClusterServiceConfigTagResult.h"
+#include "model/DescribeClusterTemplateRequest.h"
+#include "model/DescribeClusterTemplateResult.h"
+#include "model/DescribeClusterV2Request.h"
+#include "model/DescribeClusterV2Result.h"
+#include "model/DescribeFlowRequest.h"
+#include "model/DescribeFlowResult.h"
+#include "model/DescribeFlowCategoryRequest.h"
+#include "model/DescribeFlowCategoryResult.h"
+#include "model/DescribeFlowCategoryTreeRequest.h"
+#include "model/DescribeFlowCategoryTreeResult.h"
+#include "model/DescribeFlowInstanceRequest.h"
+#include "model/DescribeFlowInstanceResult.h"
+#include "model/DescribeFlowJobRequest.h"
+#include "model/DescribeFlowJobResult.h"
+#include "model/DescribeFlowNodeInstanceRequest.h"
+#include "model/DescribeFlowNodeInstanceResult.h"
+#include "model/DescribeFlowNodeInstanceContainerLogRequest.h"
+#include "model/DescribeFlowNodeInstanceContainerLogResult.h"
+#include "model/DescribeFlowNodeInstanceLauncherLogRequest.h"
+#include "model/DescribeFlowNodeInstanceLauncherLogResult.h"
+#include "model/DescribeFlowProjectRequest.h"
+#include "model/DescribeFlowProjectResult.h"
+#include "model/DescribeFlowProjectClusterSettingRequest.h"
+#include "model/DescribeFlowProjectClusterSettingResult.h"
+#include "model/DescribeFlowVariableCollectionRequest.h"
+#include "model/DescribeFlowVariableCollectionResult.h"
+#include "model/DescribeScalingCommonConfigRequest.h"
+#include "model/DescribeScalingCommonConfigResult.h"
+#include "model/DescribeScalingConfigItemV2Request.h"
+#include "model/DescribeScalingConfigItemV2Result.h"
+#include "model/DescribeScalingGroupInstanceV2Request.h"
+#include "model/DescribeScalingGroupInstanceV2Result.h"
+#include "model/DescribeScalingGroupV2Request.h"
+#include "model/DescribeScalingGroupV2Result.h"
 #include "model/JoinResourceGroupRequest.h"
 #include "model/JoinResourceGroupResult.h"
-#include "model/ListApplicationConfigFilesRequest.h"
-#include "model/ListApplicationConfigFilesResult.h"
-#include "model/ListApplicationConfigHistoryRequest.h"
-#include "model/ListApplicationConfigHistoryResult.h"
-#include "model/ListApplicationConfigsRequest.h"
-#include "model/ListApplicationConfigsResult.h"
-#include "model/ListApplicationsRequest.h"
-#include "model/ListApplicationsResult.h"
-#include "model/ListAutoScalingActivitiesRequest.h"
-#include "model/ListAutoScalingActivitiesResult.h"
-#include "model/ListAutoScalingMetricsRequest.h"
-#include "model/ListAutoScalingMetricsResult.h"
-#include "model/ListAutoScalingPoliciesRequest.h"
-#include "model/ListAutoScalingPoliciesResult.h"
-#include "model/ListAutoScalingRulesRequest.h"
-#include "model/ListAutoScalingRulesResult.h"
-#include "model/ListClusterScriptsRequest.h"
-#include "model/ListClusterScriptsResult.h"
+#include "model/KillFlowJobRequest.h"
+#include "model/KillFlowJobResult.h"
+#include "model/ListApmApplicationRequest.h"
+#include "model/ListApmApplicationResult.h"
+#include "model/ListClusterHostRequest.h"
+#include "model/ListClusterHostResult.h"
+#include "model/ListClusterHostComponentRequest.h"
+#include "model/ListClusterHostComponentResult.h"
+#include "model/ListClusterHostGroupRequest.h"
+#include "model/ListClusterHostGroupResult.h"
+#include "model/ListClusterInstalledServiceRequest.h"
+#include "model/ListClusterInstalledServiceResult.h"
+#include "model/ListClusterOperationRequest.h"
+#include "model/ListClusterOperationResult.h"
+#include "model/ListClusterOperationHostRequest.h"
+#include "model/ListClusterOperationHostResult.h"
+#include "model/ListClusterOperationHostTaskRequest.h"
+#include "model/ListClusterOperationHostTaskResult.h"
+#include "model/ListClusterOperationTaskRequest.h"
+#include "model/ListClusterOperationTaskResult.h"
+#include "model/ListClusterServiceRequest.h"
+#include "model/ListClusterServiceResult.h"
+#include "model/ListClusterServiceComponentRequest.h"
+#include "model/ListClusterServiceComponentResult.h"
+#include "model/ListClusterServiceComponentHealthInfoRequest.h"
+#include "model/ListClusterServiceComponentHealthInfoResult.h"
+#include "model/ListClusterServiceConfigHistoryRequest.h"
+#include "model/ListClusterServiceConfigHistoryResult.h"
+#include "model/ListClusterServiceQuickLinkRequest.h"
+#include "model/ListClusterServiceQuickLinkResult.h"
+#include "model/ListClusterTemplatesRequest.h"
+#include "model/ListClusterTemplatesResult.h"
 #include "model/ListClustersRequest.h"
 #include "model/ListClustersResult.h"
-#include "model/ListClusters2Request.h"
-#include "model/ListClusters2Result.h"
-#include "model/ListComponentHealthRequest.h"
-#include "model/ListComponentHealthResult.h"
-#include "model/ListComponentInstancesRequest.h"
-#include "model/ListComponentInstancesResult.h"
-#include "model/ListComponentsRequest.h"
-#include "model/ListComponentsResult.h"
-#include "model/ListNodeGroupsRequest.h"
-#include "model/ListNodeGroupsResult.h"
-#include "model/ListNodesRequest.h"
-#include "model/ListNodesResult.h"
-#include "model/ListNodesv3Request.h"
-#include "model/ListNodesv3Result.h"
-#include "model/ListOnAckClustersRequest.h"
-#include "model/ListOnAckClustersResult.h"
-#include "model/ListOnAckComponentsRequest.h"
-#include "model/ListOnAckComponentsResult.h"
-#include "model/ListOnKubeClusterDedicatedNodesRequest.h"
-#include "model/ListOnKubeClusterDedicatedNodesResult.h"
-#include "model/ListOnKubeClusterInspectionResultsRequest.h"
-#include "model/ListOnKubeClusterInspectionResultsResult.h"
-#include "model/ListOnKubeClustersRequest.h"
-#include "model/ListOnKubeClustersResult.h"
-#include "model/ListOnKubeComponentsRequest.h"
-#include "model/ListOnKubeComponentsResult.h"
-#include "model/ListResourceHealthInspectionRequest.h"
-#include "model/ListResourceHealthInspectionResult.h"
-#include "model/ListScalingActivitiesRequest.h"
-#include "model/ListScalingActivitiesResult.h"
-#include "model/ListScalingGroupsRequest.h"
-#include "model/ListScalingGroupsResult.h"
-#include "model/ListScalingMetricsRequest.h"
-#include "model/ListScalingMetricsResult.h"
+#include "model/ListEmrAvailableConfigRequest.h"
+#include "model/ListEmrAvailableConfigResult.h"
+#include "model/ListEmrAvailableResourceRequest.h"
+#include "model/ListEmrAvailableResourceResult.h"
+#include "model/ListEmrMainVersionRequest.h"
+#include "model/ListEmrMainVersionResult.h"
+#include "model/ListFlowRequest.h"
+#include "model/ListFlowResult.h"
+#include "model/ListFlowCategoryRequest.h"
+#include "model/ListFlowCategoryResult.h"
+#include "model/ListFlowClusterRequest.h"
+#include "model/ListFlowClusterResult.h"
+#include "model/ListFlowClusterAllRequest.h"
+#include "model/ListFlowClusterAllResult.h"
+#include "model/ListFlowClusterAllHostsRequest.h"
+#include "model/ListFlowClusterAllHostsResult.h"
+#include "model/ListFlowClusterHostRequest.h"
+#include "model/ListFlowClusterHostResult.h"
+#include "model/ListFlowInstanceRequest.h"
+#include "model/ListFlowInstanceResult.h"
+#include "model/ListFlowJobRequest.h"
+#include "model/ListFlowJobResult.h"
+#include "model/ListFlowJobHistoryRequest.h"
+#include "model/ListFlowJobHistoryResult.h"
+#include "model/ListFlowNodeInstanceRequest.h"
+#include "model/ListFlowNodeInstanceResult.h"
+#include "model/ListFlowNodeInstanceContainerStatusRequest.h"
+#include "model/ListFlowNodeInstanceContainerStatusResult.h"
+#include "model/ListFlowNodeSqlResultRequest.h"
+#include "model/ListFlowNodeSqlResultResult.h"
+#include "model/ListFlowProjectRequest.h"
+#include "model/ListFlowProjectResult.h"
+#include "model/ListFlowProjectClusterSettingRequest.h"
+#include "model/ListFlowProjectClusterSettingResult.h"
+#include "model/ListFlowProjectUserRequest.h"
+#include "model/ListFlowProjectUserResult.h"
+#include "model/ListResourcePoolRequest.h"
+#include "model/ListResourcePoolResult.h"
+#include "model/ListScalingActivityV2Request.h"
+#include "model/ListScalingActivityV2Result.h"
+#include "model/ListScalingConfigItemV2Request.h"
+#include "model/ListScalingConfigItemV2Result.h"
+#include "model/ListScalingGroupV2Request.h"
+#include "model/ListScalingGroupV2Result.h"
 #include "model/ListTagResourcesRequest.h"
 #include "model/ListTagResourcesResult.h"
-#include "model/ReleaseOnKubeClusterRequest.h"
-#include "model/ReleaseOnKubeClusterResult.h"
-#include "model/RunApplicationActionRequest.h"
-#include "model/RunApplicationActionResult.h"
-#include "model/RunScalingActionRequest.h"
-#include "model/RunScalingActionResult.h"
+#include "model/ModifyClusterNameRequest.h"
+#include "model/ModifyClusterNameResult.h"
+#include "model/ModifyClusterServiceConfigRequest.h"
+#include "model/ModifyClusterServiceConfigResult.h"
+#include "model/ModifyClusterTemplateRequest.h"
+#include "model/ModifyClusterTemplateResult.h"
+#include "model/ModifyFlowCategoryRequest.h"
+#include "model/ModifyFlowCategoryResult.h"
+#include "model/ModifyFlowForWebRequest.h"
+#include "model/ModifyFlowForWebResult.h"
+#include "model/ModifyFlowProjectRequest.h"
+#include "model/ModifyFlowProjectResult.h"
+#include "model/ModifyFlowProjectClusterSettingRequest.h"
+#include "model/ModifyFlowProjectClusterSettingResult.h"
+#include "model/ModifyResourcePoolRequest.h"
+#include "model/ModifyResourcePoolResult.h"
+#include "model/ModifyResourcePoolSchedulerTypeRequest.h"
+#include "model/ModifyResourcePoolSchedulerTypeResult.h"
+#include "model/ModifyResourceQueueRequest.h"
+#include "model/ModifyResourceQueueResult.h"
+#include "model/ModifyScalingConfigItemV2Request.h"
+#include "model/ModifyScalingConfigItemV2Result.h"
+#include "model/ModifyScalingGroupV2Request.h"
+#include "model/ModifyScalingGroupV2Result.h"
+#include "model/RefreshClusterResourcePoolRequest.h"
+#include "model/RefreshClusterResourcePoolResult.h"
+#include "model/ReleaseClusterRequest.h"
+#include "model/ReleaseClusterResult.h"
+#include "model/ReleaseClusterHostGroupRequest.h"
+#include "model/ReleaseClusterHostGroupResult.h"
+#include "model/RemoveScalingConfigItemV2Request.h"
+#include "model/RemoveScalingConfigItemV2Result.h"
+#include "model/RerunFlowRequest.h"
+#include "model/RerunFlowResult.h"
+#include "model/ResizeClusterV2Request.h"
+#include "model/ResizeClusterV2Result.h"
+#include "model/ResumeFlowRequest.h"
+#include "model/ResumeFlowResult.h"
+#include "model/RunClusterServiceActionRequest.h"
+#include "model/RunClusterServiceActionResult.h"
+#include "model/RunScalingActionV2Request.h"
+#include "model/RunScalingActionV2Result.h"
+#include "model/StartFlowRequest.h"
+#include "model/StartFlowResult.h"
+#include "model/SubmitFlowRequest.h"
+#include "model/SubmitFlowResult.h"
+#include "model/SubmitFlowJobRequest.h"
+#include "model/SubmitFlowJobResult.h"
+#include "model/SuspendFlowRequest.h"
+#include "model/SuspendFlowResult.h"
 #include "model/TagResourcesRequest.h"
 #include "model/TagResourcesResult.h"
-#include "model/TagResourcesSystemTagsRequest.h"
-#include "model/TagResourcesSystemTagsResult.h"
-#include "model/TerminateOperationRequest.h"
-#include "model/TerminateOperationResult.h"
 #include "model/UntagResourcesRequest.h"
 #include "model/UntagResourcesResult.h"
-#include "model/UntagResourcesSystemTagsRequest.h"
-#include "model/UntagResourcesSystemTagsResult.h"
-#include "model/UpdateAckClusterNodePoolsRequest.h"
-#include "model/UpdateAckClusterNodePoolsResult.h"
-#include "model/UpdateAckClusterNodesRequest.h"
-#include "model/UpdateAckClusterNodesResult.h"
-#include "model/UpdateApplicationConfigsRequest.h"
-#include "model/UpdateApplicationConfigsResult.h"
-#include "model/UpdateAutoScalingRuleRequest.h"
-#include "model/UpdateAutoScalingRuleResult.h"
-#include "model/UpdateClusterAttributeRequest.h"
-#include "model/UpdateClusterAttributeResult.h"
-#include "model/UpdateClusterScriptRequest.h"
-#include "model/UpdateClusterScriptResult.h"
-#include "model/UpdateOnKubeClusterDedicatedNodePoolsRequest.h"
-#include "model/UpdateOnKubeClusterDedicatedNodePoolsResult.h"
-#include "model/UpdateOnKubeClusterDedicatedNodesRequest.h"
-#include "model/UpdateOnKubeClusterDedicatedNodesResult.h"
-#include "model/UpdateScalingGroupRequest.h"
-#include "model/UpdateScalingGroupResult.h"
 
 
 namespace AlibabaCloud
@@ -189,485 +265,713 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_EMR_EXPORT EmrClient : public RpcServiceClient
 		{
 		public:
-			typedef Outcome<Error, Model::AddApplicationResult> AddApplicationOutcome;
-			typedef std::future<AddApplicationOutcome> AddApplicationOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::AddApplicationRequest&, const AddApplicationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddApplicationAsyncHandler;
-			typedef Outcome<Error, Model::AddApplicationsResult> AddApplicationsOutcome;
-			typedef std::future<AddApplicationsOutcome> AddApplicationsOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::AddApplicationsRequest&, const AddApplicationsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddApplicationsAsyncHandler;
-			typedef Outcome<Error, Model::CancelOperationOrdersResult> CancelOperationOrdersOutcome;
-			typedef std::future<CancelOperationOrdersOutcome> CancelOperationOrdersOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::CancelOperationOrdersRequest&, const CancelOperationOrdersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CancelOperationOrdersAsyncHandler;
-			typedef Outcome<Error, Model::CreateAutoScalingPolicyResult> CreateAutoScalingPolicyOutcome;
-			typedef std::future<CreateAutoScalingPolicyOutcome> CreateAutoScalingPolicyOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::CreateAutoScalingPolicyRequest&, const CreateAutoScalingPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateAutoScalingPolicyAsyncHandler;
-			typedef Outcome<Error, Model::CreateAutoScalingRuleResult> CreateAutoScalingRuleOutcome;
-			typedef std::future<CreateAutoScalingRuleOutcome> CreateAutoScalingRuleOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::CreateAutoScalingRuleRequest&, const CreateAutoScalingRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateAutoScalingRuleAsyncHandler;
-			typedef Outcome<Error, Model::CreateClusterResult> CreateClusterOutcome;
-			typedef std::future<CreateClusterOutcome> CreateClusterOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::CreateClusterRequest&, const CreateClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateClusterAsyncHandler;
-			typedef Outcome<Error, Model::CreateClusterScriptResult> CreateClusterScriptOutcome;
-			typedef std::future<CreateClusterScriptOutcome> CreateClusterScriptOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::CreateClusterScriptRequest&, const CreateClusterScriptOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateClusterScriptAsyncHandler;
-			typedef Outcome<Error, Model::CreateNodeGroupResult> CreateNodeGroupOutcome;
-			typedef std::future<CreateNodeGroupOutcome> CreateNodeGroupOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::CreateNodeGroupRequest&, const CreateNodeGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateNodeGroupAsyncHandler;
-			typedef Outcome<Error, Model::CreateOnAckClusterResult> CreateOnAckClusterOutcome;
-			typedef std::future<CreateOnAckClusterOutcome> CreateOnAckClusterOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::CreateOnAckClusterRequest&, const CreateOnAckClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateOnAckClusterAsyncHandler;
-			typedef Outcome<Error, Model::CreateOnKubeClusterResult> CreateOnKubeClusterOutcome;
-			typedef std::future<CreateOnKubeClusterOutcome> CreateOnKubeClusterOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::CreateOnKubeClusterRequest&, const CreateOnKubeClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateOnKubeClusterAsyncHandler;
-			typedef Outcome<Error, Model::CreateScalingGroupResult> CreateScalingGroupOutcome;
-			typedef std::future<CreateScalingGroupOutcome> CreateScalingGroupOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::CreateScalingGroupRequest&, const CreateScalingGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateScalingGroupAsyncHandler;
-			typedef Outcome<Error, Model::DecreaseNodesResult> DecreaseNodesOutcome;
-			typedef std::future<DecreaseNodesOutcome> DecreaseNodesOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::DecreaseNodesRequest&, const DecreaseNodesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DecreaseNodesAsyncHandler;
-			typedef Outcome<Error, Model::DeleteAutoScalingPolicyResult> DeleteAutoScalingPolicyOutcome;
-			typedef std::future<DeleteAutoScalingPolicyOutcome> DeleteAutoScalingPolicyOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::DeleteAutoScalingPolicyRequest&, const DeleteAutoScalingPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAutoScalingPolicyAsyncHandler;
-			typedef Outcome<Error, Model::DeleteAutoScalingRuleResult> DeleteAutoScalingRuleOutcome;
-			typedef std::future<DeleteAutoScalingRuleOutcome> DeleteAutoScalingRuleOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::DeleteAutoScalingRuleRequest&, const DeleteAutoScalingRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAutoScalingRuleAsyncHandler;
-			typedef Outcome<Error, Model::DeleteClusterResult> DeleteClusterOutcome;
-			typedef std::future<DeleteClusterOutcome> DeleteClusterOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::DeleteClusterRequest&, const DeleteClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteClusterAsyncHandler;
-			typedef Outcome<Error, Model::DeleteClusterScriptResult> DeleteClusterScriptOutcome;
-			typedef std::future<DeleteClusterScriptOutcome> DeleteClusterScriptOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::DeleteClusterScriptRequest&, const DeleteClusterScriptOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteClusterScriptAsyncHandler;
-			typedef Outcome<Error, Model::DeleteNodeGroupResult> DeleteNodeGroupOutcome;
-			typedef std::future<DeleteNodeGroupOutcome> DeleteNodeGroupOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::DeleteNodeGroupRequest&, const DeleteNodeGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNodeGroupAsyncHandler;
-			typedef Outcome<Error, Model::DeleteOnAckClusterResult> DeleteOnAckClusterOutcome;
-			typedef std::future<DeleteOnAckClusterOutcome> DeleteOnAckClusterOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::DeleteOnAckClusterRequest&, const DeleteOnAckClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteOnAckClusterAsyncHandler;
-			typedef Outcome<Error, Model::DeleteScalingGroupResult> DeleteScalingGroupOutcome;
-			typedef std::future<DeleteScalingGroupOutcome> DeleteScalingGroupOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::DeleteScalingGroupRequest&, const DeleteScalingGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteScalingGroupAsyncHandler;
-			typedef Outcome<Error, Model::DisableAutoScalingPolicyResult> DisableAutoScalingPolicyOutcome;
-			typedef std::future<DisableAutoScalingPolicyOutcome> DisableAutoScalingPolicyOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::DisableAutoScalingPolicyRequest&, const DisableAutoScalingPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DisableAutoScalingPolicyAsyncHandler;
-			typedef Outcome<Error, Model::EnableAutoScalingPolicyResult> EnableAutoScalingPolicyOutcome;
-			typedef std::future<EnableAutoScalingPolicyOutcome> EnableAutoScalingPolicyOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::EnableAutoScalingPolicyRequest&, const EnableAutoScalingPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnableAutoScalingPolicyAsyncHandler;
-			typedef Outcome<Error, Model::GetApplicationResult> GetApplicationOutcome;
-			typedef std::future<GetApplicationOutcome> GetApplicationOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::GetApplicationRequest&, const GetApplicationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetApplicationAsyncHandler;
-			typedef Outcome<Error, Model::GetClusterResult> GetClusterOutcome;
-			typedef std::future<GetClusterOutcome> GetClusterOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::GetClusterRequest&, const GetClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetClusterAsyncHandler;
-			typedef Outcome<Error, Model::GetClusterScriptExecutionResultResult> GetClusterScriptExecutionResultOutcome;
-			typedef std::future<GetClusterScriptExecutionResultOutcome> GetClusterScriptExecutionResultOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::GetClusterScriptExecutionResultRequest&, const GetClusterScriptExecutionResultOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetClusterScriptExecutionResultAsyncHandler;
-			typedef Outcome<Error, Model::GetNodeGroupResult> GetNodeGroupOutcome;
-			typedef std::future<GetNodeGroupOutcome> GetNodeGroupOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::GetNodeGroupRequest&, const GetNodeGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetNodeGroupAsyncHandler;
-			typedef Outcome<Error, Model::GetOnAckClusterResult> GetOnAckClusterOutcome;
-			typedef std::future<GetOnAckClusterOutcome> GetOnAckClusterOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::GetOnAckClusterRequest&, const GetOnAckClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetOnAckClusterAsyncHandler;
-			typedef Outcome<Error, Model::GetOnKubeClusterResult> GetOnKubeClusterOutcome;
-			typedef std::future<GetOnKubeClusterOutcome> GetOnKubeClusterOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::GetOnKubeClusterRequest&, const GetOnKubeClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetOnKubeClusterAsyncHandler;
-			typedef Outcome<Error, Model::GetOnKubeClusterResourceQuotaResult> GetOnKubeClusterResourceQuotaOutcome;
-			typedef std::future<GetOnKubeClusterResourceQuotaOutcome> GetOnKubeClusterResourceQuotaOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::GetOnKubeClusterResourceQuotaRequest&, const GetOnKubeClusterResourceQuotaOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetOnKubeClusterResourceQuotaAsyncHandler;
-			typedef Outcome<Error, Model::GetOnKubeClusterResourceUsageResult> GetOnKubeClusterResourceUsageOutcome;
-			typedef std::future<GetOnKubeClusterResourceUsageOutcome> GetOnKubeClusterResourceUsageOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::GetOnKubeClusterResourceUsageRequest&, const GetOnKubeClusterResourceUsageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetOnKubeClusterResourceUsageAsyncHandler;
-			typedef Outcome<Error, Model::GetOperationResult> GetOperationOutcome;
-			typedef std::future<GetOperationOutcome> GetOperationOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::GetOperationRequest&, const GetOperationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetOperationAsyncHandler;
-			typedef Outcome<Error, Model::GetScalingGroupResult> GetScalingGroupOutcome;
-			typedef std::future<GetScalingGroupOutcome> GetScalingGroupOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::GetScalingGroupRequest&, const GetScalingGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetScalingGroupAsyncHandler;
-			typedef Outcome<Error, Model::IncreaseClusterDiskResult> IncreaseClusterDiskOutcome;
-			typedef std::future<IncreaseClusterDiskOutcome> IncreaseClusterDiskOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::IncreaseClusterDiskRequest&, const IncreaseClusterDiskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> IncreaseClusterDiskAsyncHandler;
-			typedef Outcome<Error, Model::IncreaseNodesResult> IncreaseNodesOutcome;
-			typedef std::future<IncreaseNodesOutcome> IncreaseNodesOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::IncreaseNodesRequest&, const IncreaseNodesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> IncreaseNodesAsyncHandler;
+			typedef Outcome<Error, Model::AddClusterServiceResult> AddClusterServiceOutcome;
+			typedef std::future<AddClusterServiceOutcome> AddClusterServiceOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::AddClusterServiceRequest&, const AddClusterServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddClusterServiceAsyncHandler;
+			typedef Outcome<Error, Model::AddScalingConfigItemV2Result> AddScalingConfigItemV2Outcome;
+			typedef std::future<AddScalingConfigItemV2Outcome> AddScalingConfigItemV2OutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::AddScalingConfigItemV2Request&, const AddScalingConfigItemV2Outcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddScalingConfigItemV2AsyncHandler;
+			typedef Outcome<Error, Model::CloneFlowResult> CloneFlowOutcome;
+			typedef std::future<CloneFlowOutcome> CloneFlowOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::CloneFlowRequest&, const CloneFlowOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CloneFlowAsyncHandler;
+			typedef Outcome<Error, Model::CloneFlowJobResult> CloneFlowJobOutcome;
+			typedef std::future<CloneFlowJobOutcome> CloneFlowJobOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::CloneFlowJobRequest&, const CloneFlowJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CloneFlowJobAsyncHandler;
+			typedef Outcome<Error, Model::CreateClusterTemplateResult> CreateClusterTemplateOutcome;
+			typedef std::future<CreateClusterTemplateOutcome> CreateClusterTemplateOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::CreateClusterTemplateRequest&, const CreateClusterTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateClusterTemplateAsyncHandler;
+			typedef Outcome<Error, Model::CreateClusterV2Result> CreateClusterV2Outcome;
+			typedef std::future<CreateClusterV2Outcome> CreateClusterV2OutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::CreateClusterV2Request&, const CreateClusterV2Outcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateClusterV2AsyncHandler;
+			typedef Outcome<Error, Model::CreateClusterWithTemplateResult> CreateClusterWithTemplateOutcome;
+			typedef std::future<CreateClusterWithTemplateOutcome> CreateClusterWithTemplateOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::CreateClusterWithTemplateRequest&, const CreateClusterWithTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateClusterWithTemplateAsyncHandler;
+			typedef Outcome<Error, Model::CreateFlowResult> CreateFlowOutcome;
+			typedef std::future<CreateFlowOutcome> CreateFlowOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::CreateFlowRequest&, const CreateFlowOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateFlowAsyncHandler;
+			typedef Outcome<Error, Model::CreateFlowCategoryResult> CreateFlowCategoryOutcome;
+			typedef std::future<CreateFlowCategoryOutcome> CreateFlowCategoryOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::CreateFlowCategoryRequest&, const CreateFlowCategoryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateFlowCategoryAsyncHandler;
+			typedef Outcome<Error, Model::CreateFlowForWebResult> CreateFlowForWebOutcome;
+			typedef std::future<CreateFlowForWebOutcome> CreateFlowForWebOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::CreateFlowForWebRequest&, const CreateFlowForWebOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateFlowForWebAsyncHandler;
+			typedef Outcome<Error, Model::CreateFlowJobResult> CreateFlowJobOutcome;
+			typedef std::future<CreateFlowJobOutcome> CreateFlowJobOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::CreateFlowJobRequest&, const CreateFlowJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateFlowJobAsyncHandler;
+			typedef Outcome<Error, Model::CreateFlowProjectResult> CreateFlowProjectOutcome;
+			typedef std::future<CreateFlowProjectOutcome> CreateFlowProjectOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::CreateFlowProjectRequest&, const CreateFlowProjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateFlowProjectAsyncHandler;
+			typedef Outcome<Error, Model::CreateFlowProjectClusterSettingResult> CreateFlowProjectClusterSettingOutcome;
+			typedef std::future<CreateFlowProjectClusterSettingOutcome> CreateFlowProjectClusterSettingOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::CreateFlowProjectClusterSettingRequest&, const CreateFlowProjectClusterSettingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateFlowProjectClusterSettingAsyncHandler;
+			typedef Outcome<Error, Model::CreateFlowProjectUserResult> CreateFlowProjectUserOutcome;
+			typedef std::future<CreateFlowProjectUserOutcome> CreateFlowProjectUserOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::CreateFlowProjectUserRequest&, const CreateFlowProjectUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateFlowProjectUserAsyncHandler;
+			typedef Outcome<Error, Model::CreateResourcePoolResult> CreateResourcePoolOutcome;
+			typedef std::future<CreateResourcePoolOutcome> CreateResourcePoolOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::CreateResourcePoolRequest&, const CreateResourcePoolOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateResourcePoolAsyncHandler;
+			typedef Outcome<Error, Model::CreateResourceQueueResult> CreateResourceQueueOutcome;
+			typedef std::future<CreateResourceQueueOutcome> CreateResourceQueueOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::CreateResourceQueueRequest&, const CreateResourceQueueOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateResourceQueueAsyncHandler;
+			typedef Outcome<Error, Model::CreateScalingGroupV2Result> CreateScalingGroupV2Outcome;
+			typedef std::future<CreateScalingGroupV2Outcome> CreateScalingGroupV2OutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::CreateScalingGroupV2Request&, const CreateScalingGroupV2Outcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateScalingGroupV2AsyncHandler;
+			typedef Outcome<Error, Model::DeleteClusterTemplateResult> DeleteClusterTemplateOutcome;
+			typedef std::future<DeleteClusterTemplateOutcome> DeleteClusterTemplateOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::DeleteClusterTemplateRequest&, const DeleteClusterTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteClusterTemplateAsyncHandler;
+			typedef Outcome<Error, Model::DeleteFlowResult> DeleteFlowOutcome;
+			typedef std::future<DeleteFlowOutcome> DeleteFlowOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::DeleteFlowRequest&, const DeleteFlowOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFlowAsyncHandler;
+			typedef Outcome<Error, Model::DeleteFlowCategoryResult> DeleteFlowCategoryOutcome;
+			typedef std::future<DeleteFlowCategoryOutcome> DeleteFlowCategoryOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::DeleteFlowCategoryRequest&, const DeleteFlowCategoryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFlowCategoryAsyncHandler;
+			typedef Outcome<Error, Model::DeleteFlowJobResult> DeleteFlowJobOutcome;
+			typedef std::future<DeleteFlowJobOutcome> DeleteFlowJobOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::DeleteFlowJobRequest&, const DeleteFlowJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFlowJobAsyncHandler;
+			typedef Outcome<Error, Model::DeleteFlowProjectResult> DeleteFlowProjectOutcome;
+			typedef std::future<DeleteFlowProjectOutcome> DeleteFlowProjectOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::DeleteFlowProjectRequest&, const DeleteFlowProjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFlowProjectAsyncHandler;
+			typedef Outcome<Error, Model::DeleteFlowProjectClusterSettingResult> DeleteFlowProjectClusterSettingOutcome;
+			typedef std::future<DeleteFlowProjectClusterSettingOutcome> DeleteFlowProjectClusterSettingOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::DeleteFlowProjectClusterSettingRequest&, const DeleteFlowProjectClusterSettingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFlowProjectClusterSettingAsyncHandler;
+			typedef Outcome<Error, Model::DeleteFlowProjectUserResult> DeleteFlowProjectUserOutcome;
+			typedef std::future<DeleteFlowProjectUserOutcome> DeleteFlowProjectUserOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::DeleteFlowProjectUserRequest&, const DeleteFlowProjectUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFlowProjectUserAsyncHandler;
+			typedef Outcome<Error, Model::DeleteResourcePoolResult> DeleteResourcePoolOutcome;
+			typedef std::future<DeleteResourcePoolOutcome> DeleteResourcePoolOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::DeleteResourcePoolRequest&, const DeleteResourcePoolOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteResourcePoolAsyncHandler;
+			typedef Outcome<Error, Model::DeleteResourceQueueResult> DeleteResourceQueueOutcome;
+			typedef std::future<DeleteResourceQueueOutcome> DeleteResourceQueueOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::DeleteResourceQueueRequest&, const DeleteResourceQueueOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteResourceQueueAsyncHandler;
+			typedef Outcome<Error, Model::DescribeClusterBasicInfoResult> DescribeClusterBasicInfoOutcome;
+			typedef std::future<DescribeClusterBasicInfoOutcome> DescribeClusterBasicInfoOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::DescribeClusterBasicInfoRequest&, const DescribeClusterBasicInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterBasicInfoAsyncHandler;
+			typedef Outcome<Error, Model::DescribeClusterOperationHostTaskLogResult> DescribeClusterOperationHostTaskLogOutcome;
+			typedef std::future<DescribeClusterOperationHostTaskLogOutcome> DescribeClusterOperationHostTaskLogOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::DescribeClusterOperationHostTaskLogRequest&, const DescribeClusterOperationHostTaskLogOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterOperationHostTaskLogAsyncHandler;
+			typedef Outcome<Error, Model::DescribeClusterResourcePoolSchedulerTypeResult> DescribeClusterResourcePoolSchedulerTypeOutcome;
+			typedef std::future<DescribeClusterResourcePoolSchedulerTypeOutcome> DescribeClusterResourcePoolSchedulerTypeOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::DescribeClusterResourcePoolSchedulerTypeRequest&, const DescribeClusterResourcePoolSchedulerTypeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterResourcePoolSchedulerTypeAsyncHandler;
+			typedef Outcome<Error, Model::DescribeClusterServiceResult> DescribeClusterServiceOutcome;
+			typedef std::future<DescribeClusterServiceOutcome> DescribeClusterServiceOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::DescribeClusterServiceRequest&, const DescribeClusterServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterServiceAsyncHandler;
+			typedef Outcome<Error, Model::DescribeClusterServiceConfigResult> DescribeClusterServiceConfigOutcome;
+			typedef std::future<DescribeClusterServiceConfigOutcome> DescribeClusterServiceConfigOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::DescribeClusterServiceConfigRequest&, const DescribeClusterServiceConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterServiceConfigAsyncHandler;
+			typedef Outcome<Error, Model::DescribeClusterServiceConfigTagResult> DescribeClusterServiceConfigTagOutcome;
+			typedef std::future<DescribeClusterServiceConfigTagOutcome> DescribeClusterServiceConfigTagOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::DescribeClusterServiceConfigTagRequest&, const DescribeClusterServiceConfigTagOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterServiceConfigTagAsyncHandler;
+			typedef Outcome<Error, Model::DescribeClusterTemplateResult> DescribeClusterTemplateOutcome;
+			typedef std::future<DescribeClusterTemplateOutcome> DescribeClusterTemplateOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::DescribeClusterTemplateRequest&, const DescribeClusterTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterTemplateAsyncHandler;
+			typedef Outcome<Error, Model::DescribeClusterV2Result> DescribeClusterV2Outcome;
+			typedef std::future<DescribeClusterV2Outcome> DescribeClusterV2OutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::DescribeClusterV2Request&, const DescribeClusterV2Outcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterV2AsyncHandler;
+			typedef Outcome<Error, Model::DescribeFlowResult> DescribeFlowOutcome;
+			typedef std::future<DescribeFlowOutcome> DescribeFlowOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::DescribeFlowRequest&, const DescribeFlowOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFlowAsyncHandler;
+			typedef Outcome<Error, Model::DescribeFlowCategoryResult> DescribeFlowCategoryOutcome;
+			typedef std::future<DescribeFlowCategoryOutcome> DescribeFlowCategoryOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::DescribeFlowCategoryRequest&, const DescribeFlowCategoryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFlowCategoryAsyncHandler;
+			typedef Outcome<Error, Model::DescribeFlowCategoryTreeResult> DescribeFlowCategoryTreeOutcome;
+			typedef std::future<DescribeFlowCategoryTreeOutcome> DescribeFlowCategoryTreeOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::DescribeFlowCategoryTreeRequest&, const DescribeFlowCategoryTreeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFlowCategoryTreeAsyncHandler;
+			typedef Outcome<Error, Model::DescribeFlowInstanceResult> DescribeFlowInstanceOutcome;
+			typedef std::future<DescribeFlowInstanceOutcome> DescribeFlowInstanceOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::DescribeFlowInstanceRequest&, const DescribeFlowInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFlowInstanceAsyncHandler;
+			typedef Outcome<Error, Model::DescribeFlowJobResult> DescribeFlowJobOutcome;
+			typedef std::future<DescribeFlowJobOutcome> DescribeFlowJobOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::DescribeFlowJobRequest&, const DescribeFlowJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFlowJobAsyncHandler;
+			typedef Outcome<Error, Model::DescribeFlowNodeInstanceResult> DescribeFlowNodeInstanceOutcome;
+			typedef std::future<DescribeFlowNodeInstanceOutcome> DescribeFlowNodeInstanceOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::DescribeFlowNodeInstanceRequest&, const DescribeFlowNodeInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFlowNodeInstanceAsyncHandler;
+			typedef Outcome<Error, Model::DescribeFlowNodeInstanceContainerLogResult> DescribeFlowNodeInstanceContainerLogOutcome;
+			typedef std::future<DescribeFlowNodeInstanceContainerLogOutcome> DescribeFlowNodeInstanceContainerLogOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::DescribeFlowNodeInstanceContainerLogRequest&, const DescribeFlowNodeInstanceContainerLogOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFlowNodeInstanceContainerLogAsyncHandler;
+			typedef Outcome<Error, Model::DescribeFlowNodeInstanceLauncherLogResult> DescribeFlowNodeInstanceLauncherLogOutcome;
+			typedef std::future<DescribeFlowNodeInstanceLauncherLogOutcome> DescribeFlowNodeInstanceLauncherLogOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::DescribeFlowNodeInstanceLauncherLogRequest&, const DescribeFlowNodeInstanceLauncherLogOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFlowNodeInstanceLauncherLogAsyncHandler;
+			typedef Outcome<Error, Model::DescribeFlowProjectResult> DescribeFlowProjectOutcome;
+			typedef std::future<DescribeFlowProjectOutcome> DescribeFlowProjectOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::DescribeFlowProjectRequest&, const DescribeFlowProjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFlowProjectAsyncHandler;
+			typedef Outcome<Error, Model::DescribeFlowProjectClusterSettingResult> DescribeFlowProjectClusterSettingOutcome;
+			typedef std::future<DescribeFlowProjectClusterSettingOutcome> DescribeFlowProjectClusterSettingOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::DescribeFlowProjectClusterSettingRequest&, const DescribeFlowProjectClusterSettingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFlowProjectClusterSettingAsyncHandler;
+			typedef Outcome<Error, Model::DescribeFlowVariableCollectionResult> DescribeFlowVariableCollectionOutcome;
+			typedef std::future<DescribeFlowVariableCollectionOutcome> DescribeFlowVariableCollectionOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::DescribeFlowVariableCollectionRequest&, const DescribeFlowVariableCollectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFlowVariableCollectionAsyncHandler;
+			typedef Outcome<Error, Model::DescribeScalingCommonConfigResult> DescribeScalingCommonConfigOutcome;
+			typedef std::future<DescribeScalingCommonConfigOutcome> DescribeScalingCommonConfigOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::DescribeScalingCommonConfigRequest&, const DescribeScalingCommonConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScalingCommonConfigAsyncHandler;
+			typedef Outcome<Error, Model::DescribeScalingConfigItemV2Result> DescribeScalingConfigItemV2Outcome;
+			typedef std::future<DescribeScalingConfigItemV2Outcome> DescribeScalingConfigItemV2OutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::DescribeScalingConfigItemV2Request&, const DescribeScalingConfigItemV2Outcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScalingConfigItemV2AsyncHandler;
+			typedef Outcome<Error, Model::DescribeScalingGroupInstanceV2Result> DescribeScalingGroupInstanceV2Outcome;
+			typedef std::future<DescribeScalingGroupInstanceV2Outcome> DescribeScalingGroupInstanceV2OutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::DescribeScalingGroupInstanceV2Request&, const DescribeScalingGroupInstanceV2Outcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScalingGroupInstanceV2AsyncHandler;
+			typedef Outcome<Error, Model::DescribeScalingGroupV2Result> DescribeScalingGroupV2Outcome;
+			typedef std::future<DescribeScalingGroupV2Outcome> DescribeScalingGroupV2OutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::DescribeScalingGroupV2Request&, const DescribeScalingGroupV2Outcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScalingGroupV2AsyncHandler;
 			typedef Outcome<Error, Model::JoinResourceGroupResult> JoinResourceGroupOutcome;
 			typedef std::future<JoinResourceGroupOutcome> JoinResourceGroupOutcomeCallable;
 			typedef std::function<void(const EmrClient*, const Model::JoinResourceGroupRequest&, const JoinResourceGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> JoinResourceGroupAsyncHandler;
-			typedef Outcome<Error, Model::ListApplicationConfigFilesResult> ListApplicationConfigFilesOutcome;
-			typedef std::future<ListApplicationConfigFilesOutcome> ListApplicationConfigFilesOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::ListApplicationConfigFilesRequest&, const ListApplicationConfigFilesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListApplicationConfigFilesAsyncHandler;
-			typedef Outcome<Error, Model::ListApplicationConfigHistoryResult> ListApplicationConfigHistoryOutcome;
-			typedef std::future<ListApplicationConfigHistoryOutcome> ListApplicationConfigHistoryOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::ListApplicationConfigHistoryRequest&, const ListApplicationConfigHistoryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListApplicationConfigHistoryAsyncHandler;
-			typedef Outcome<Error, Model::ListApplicationConfigsResult> ListApplicationConfigsOutcome;
-			typedef std::future<ListApplicationConfigsOutcome> ListApplicationConfigsOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::ListApplicationConfigsRequest&, const ListApplicationConfigsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListApplicationConfigsAsyncHandler;
-			typedef Outcome<Error, Model::ListApplicationsResult> ListApplicationsOutcome;
-			typedef std::future<ListApplicationsOutcome> ListApplicationsOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::ListApplicationsRequest&, const ListApplicationsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListApplicationsAsyncHandler;
-			typedef Outcome<Error, Model::ListAutoScalingActivitiesResult> ListAutoScalingActivitiesOutcome;
-			typedef std::future<ListAutoScalingActivitiesOutcome> ListAutoScalingActivitiesOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::ListAutoScalingActivitiesRequest&, const ListAutoScalingActivitiesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAutoScalingActivitiesAsyncHandler;
-			typedef Outcome<Error, Model::ListAutoScalingMetricsResult> ListAutoScalingMetricsOutcome;
-			typedef std::future<ListAutoScalingMetricsOutcome> ListAutoScalingMetricsOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::ListAutoScalingMetricsRequest&, const ListAutoScalingMetricsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAutoScalingMetricsAsyncHandler;
-			typedef Outcome<Error, Model::ListAutoScalingPoliciesResult> ListAutoScalingPoliciesOutcome;
-			typedef std::future<ListAutoScalingPoliciesOutcome> ListAutoScalingPoliciesOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::ListAutoScalingPoliciesRequest&, const ListAutoScalingPoliciesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAutoScalingPoliciesAsyncHandler;
-			typedef Outcome<Error, Model::ListAutoScalingRulesResult> ListAutoScalingRulesOutcome;
-			typedef std::future<ListAutoScalingRulesOutcome> ListAutoScalingRulesOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::ListAutoScalingRulesRequest&, const ListAutoScalingRulesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAutoScalingRulesAsyncHandler;
-			typedef Outcome<Error, Model::ListClusterScriptsResult> ListClusterScriptsOutcome;
-			typedef std::future<ListClusterScriptsOutcome> ListClusterScriptsOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::ListClusterScriptsRequest&, const ListClusterScriptsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListClusterScriptsAsyncHandler;
+			typedef Outcome<Error, Model::KillFlowJobResult> KillFlowJobOutcome;
+			typedef std::future<KillFlowJobOutcome> KillFlowJobOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::KillFlowJobRequest&, const KillFlowJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> KillFlowJobAsyncHandler;
+			typedef Outcome<Error, Model::ListApmApplicationResult> ListApmApplicationOutcome;
+			typedef std::future<ListApmApplicationOutcome> ListApmApplicationOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::ListApmApplicationRequest&, const ListApmApplicationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListApmApplicationAsyncHandler;
+			typedef Outcome<Error, Model::ListClusterHostResult> ListClusterHostOutcome;
+			typedef std::future<ListClusterHostOutcome> ListClusterHostOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::ListClusterHostRequest&, const ListClusterHostOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListClusterHostAsyncHandler;
+			typedef Outcome<Error, Model::ListClusterHostComponentResult> ListClusterHostComponentOutcome;
+			typedef std::future<ListClusterHostComponentOutcome> ListClusterHostComponentOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::ListClusterHostComponentRequest&, const ListClusterHostComponentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListClusterHostComponentAsyncHandler;
+			typedef Outcome<Error, Model::ListClusterHostGroupResult> ListClusterHostGroupOutcome;
+			typedef std::future<ListClusterHostGroupOutcome> ListClusterHostGroupOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::ListClusterHostGroupRequest&, const ListClusterHostGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListClusterHostGroupAsyncHandler;
+			typedef Outcome<Error, Model::ListClusterInstalledServiceResult> ListClusterInstalledServiceOutcome;
+			typedef std::future<ListClusterInstalledServiceOutcome> ListClusterInstalledServiceOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::ListClusterInstalledServiceRequest&, const ListClusterInstalledServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListClusterInstalledServiceAsyncHandler;
+			typedef Outcome<Error, Model::ListClusterOperationResult> ListClusterOperationOutcome;
+			typedef std::future<ListClusterOperationOutcome> ListClusterOperationOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::ListClusterOperationRequest&, const ListClusterOperationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListClusterOperationAsyncHandler;
+			typedef Outcome<Error, Model::ListClusterOperationHostResult> ListClusterOperationHostOutcome;
+			typedef std::future<ListClusterOperationHostOutcome> ListClusterOperationHostOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::ListClusterOperationHostRequest&, const ListClusterOperationHostOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListClusterOperationHostAsyncHandler;
+			typedef Outcome<Error, Model::ListClusterOperationHostTaskResult> ListClusterOperationHostTaskOutcome;
+			typedef std::future<ListClusterOperationHostTaskOutcome> ListClusterOperationHostTaskOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::ListClusterOperationHostTaskRequest&, const ListClusterOperationHostTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListClusterOperationHostTaskAsyncHandler;
+			typedef Outcome<Error, Model::ListClusterOperationTaskResult> ListClusterOperationTaskOutcome;
+			typedef std::future<ListClusterOperationTaskOutcome> ListClusterOperationTaskOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::ListClusterOperationTaskRequest&, const ListClusterOperationTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListClusterOperationTaskAsyncHandler;
+			typedef Outcome<Error, Model::ListClusterServiceResult> ListClusterServiceOutcome;
+			typedef std::future<ListClusterServiceOutcome> ListClusterServiceOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::ListClusterServiceRequest&, const ListClusterServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListClusterServiceAsyncHandler;
+			typedef Outcome<Error, Model::ListClusterServiceComponentResult> ListClusterServiceComponentOutcome;
+			typedef std::future<ListClusterServiceComponentOutcome> ListClusterServiceComponentOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::ListClusterServiceComponentRequest&, const ListClusterServiceComponentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListClusterServiceComponentAsyncHandler;
+			typedef Outcome<Error, Model::ListClusterServiceComponentHealthInfoResult> ListClusterServiceComponentHealthInfoOutcome;
+			typedef std::future<ListClusterServiceComponentHealthInfoOutcome> ListClusterServiceComponentHealthInfoOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::ListClusterServiceComponentHealthInfoRequest&, const ListClusterServiceComponentHealthInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListClusterServiceComponentHealthInfoAsyncHandler;
+			typedef Outcome<Error, Model::ListClusterServiceConfigHistoryResult> ListClusterServiceConfigHistoryOutcome;
+			typedef std::future<ListClusterServiceConfigHistoryOutcome> ListClusterServiceConfigHistoryOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::ListClusterServiceConfigHistoryRequest&, const ListClusterServiceConfigHistoryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListClusterServiceConfigHistoryAsyncHandler;
+			typedef Outcome<Error, Model::ListClusterServiceQuickLinkResult> ListClusterServiceQuickLinkOutcome;
+			typedef std::future<ListClusterServiceQuickLinkOutcome> ListClusterServiceQuickLinkOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::ListClusterServiceQuickLinkRequest&, const ListClusterServiceQuickLinkOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListClusterServiceQuickLinkAsyncHandler;
+			typedef Outcome<Error, Model::ListClusterTemplatesResult> ListClusterTemplatesOutcome;
+			typedef std::future<ListClusterTemplatesOutcome> ListClusterTemplatesOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::ListClusterTemplatesRequest&, const ListClusterTemplatesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListClusterTemplatesAsyncHandler;
 			typedef Outcome<Error, Model::ListClustersResult> ListClustersOutcome;
 			typedef std::future<ListClustersOutcome> ListClustersOutcomeCallable;
 			typedef std::function<void(const EmrClient*, const Model::ListClustersRequest&, const ListClustersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListClustersAsyncHandler;
-			typedef Outcome<Error, Model::ListClusters2Result> ListClusters2Outcome;
-			typedef std::future<ListClusters2Outcome> ListClusters2OutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::ListClusters2Request&, const ListClusters2Outcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListClusters2AsyncHandler;
-			typedef Outcome<Error, Model::ListComponentHealthResult> ListComponentHealthOutcome;
-			typedef std::future<ListComponentHealthOutcome> ListComponentHealthOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::ListComponentHealthRequest&, const ListComponentHealthOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListComponentHealthAsyncHandler;
-			typedef Outcome<Error, Model::ListComponentInstancesResult> ListComponentInstancesOutcome;
-			typedef std::future<ListComponentInstancesOutcome> ListComponentInstancesOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::ListComponentInstancesRequest&, const ListComponentInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListComponentInstancesAsyncHandler;
-			typedef Outcome<Error, Model::ListComponentsResult> ListComponentsOutcome;
-			typedef std::future<ListComponentsOutcome> ListComponentsOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::ListComponentsRequest&, const ListComponentsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListComponentsAsyncHandler;
-			typedef Outcome<Error, Model::ListNodeGroupsResult> ListNodeGroupsOutcome;
-			typedef std::future<ListNodeGroupsOutcome> ListNodeGroupsOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::ListNodeGroupsRequest&, const ListNodeGroupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListNodeGroupsAsyncHandler;
-			typedef Outcome<Error, Model::ListNodesResult> ListNodesOutcome;
-			typedef std::future<ListNodesOutcome> ListNodesOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::ListNodesRequest&, const ListNodesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListNodesAsyncHandler;
-			typedef Outcome<Error, Model::ListNodesv3Result> ListNodesv3Outcome;
-			typedef std::future<ListNodesv3Outcome> ListNodesv3OutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::ListNodesv3Request&, const ListNodesv3Outcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListNodesv3AsyncHandler;
-			typedef Outcome<Error, Model::ListOnAckClustersResult> ListOnAckClustersOutcome;
-			typedef std::future<ListOnAckClustersOutcome> ListOnAckClustersOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::ListOnAckClustersRequest&, const ListOnAckClustersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListOnAckClustersAsyncHandler;
-			typedef Outcome<Error, Model::ListOnAckComponentsResult> ListOnAckComponentsOutcome;
-			typedef std::future<ListOnAckComponentsOutcome> ListOnAckComponentsOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::ListOnAckComponentsRequest&, const ListOnAckComponentsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListOnAckComponentsAsyncHandler;
-			typedef Outcome<Error, Model::ListOnKubeClusterDedicatedNodesResult> ListOnKubeClusterDedicatedNodesOutcome;
-			typedef std::future<ListOnKubeClusterDedicatedNodesOutcome> ListOnKubeClusterDedicatedNodesOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::ListOnKubeClusterDedicatedNodesRequest&, const ListOnKubeClusterDedicatedNodesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListOnKubeClusterDedicatedNodesAsyncHandler;
-			typedef Outcome<Error, Model::ListOnKubeClusterInspectionResultsResult> ListOnKubeClusterInspectionResultsOutcome;
-			typedef std::future<ListOnKubeClusterInspectionResultsOutcome> ListOnKubeClusterInspectionResultsOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::ListOnKubeClusterInspectionResultsRequest&, const ListOnKubeClusterInspectionResultsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListOnKubeClusterInspectionResultsAsyncHandler;
-			typedef Outcome<Error, Model::ListOnKubeClustersResult> ListOnKubeClustersOutcome;
-			typedef std::future<ListOnKubeClustersOutcome> ListOnKubeClustersOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::ListOnKubeClustersRequest&, const ListOnKubeClustersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListOnKubeClustersAsyncHandler;
-			typedef Outcome<Error, Model::ListOnKubeComponentsResult> ListOnKubeComponentsOutcome;
-			typedef std::future<ListOnKubeComponentsOutcome> ListOnKubeComponentsOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::ListOnKubeComponentsRequest&, const ListOnKubeComponentsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListOnKubeComponentsAsyncHandler;
-			typedef Outcome<Error, Model::ListResourceHealthInspectionResult> ListResourceHealthInspectionOutcome;
-			typedef std::future<ListResourceHealthInspectionOutcome> ListResourceHealthInspectionOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::ListResourceHealthInspectionRequest&, const ListResourceHealthInspectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListResourceHealthInspectionAsyncHandler;
-			typedef Outcome<Error, Model::ListScalingActivitiesResult> ListScalingActivitiesOutcome;
-			typedef std::future<ListScalingActivitiesOutcome> ListScalingActivitiesOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::ListScalingActivitiesRequest&, const ListScalingActivitiesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListScalingActivitiesAsyncHandler;
-			typedef Outcome<Error, Model::ListScalingGroupsResult> ListScalingGroupsOutcome;
-			typedef std::future<ListScalingGroupsOutcome> ListScalingGroupsOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::ListScalingGroupsRequest&, const ListScalingGroupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListScalingGroupsAsyncHandler;
-			typedef Outcome<Error, Model::ListScalingMetricsResult> ListScalingMetricsOutcome;
-			typedef std::future<ListScalingMetricsOutcome> ListScalingMetricsOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::ListScalingMetricsRequest&, const ListScalingMetricsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListScalingMetricsAsyncHandler;
+			typedef Outcome<Error, Model::ListEmrAvailableConfigResult> ListEmrAvailableConfigOutcome;
+			typedef std::future<ListEmrAvailableConfigOutcome> ListEmrAvailableConfigOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::ListEmrAvailableConfigRequest&, const ListEmrAvailableConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListEmrAvailableConfigAsyncHandler;
+			typedef Outcome<Error, Model::ListEmrAvailableResourceResult> ListEmrAvailableResourceOutcome;
+			typedef std::future<ListEmrAvailableResourceOutcome> ListEmrAvailableResourceOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::ListEmrAvailableResourceRequest&, const ListEmrAvailableResourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListEmrAvailableResourceAsyncHandler;
+			typedef Outcome<Error, Model::ListEmrMainVersionResult> ListEmrMainVersionOutcome;
+			typedef std::future<ListEmrMainVersionOutcome> ListEmrMainVersionOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::ListEmrMainVersionRequest&, const ListEmrMainVersionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListEmrMainVersionAsyncHandler;
+			typedef Outcome<Error, Model::ListFlowResult> ListFlowOutcome;
+			typedef std::future<ListFlowOutcome> ListFlowOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::ListFlowRequest&, const ListFlowOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListFlowAsyncHandler;
+			typedef Outcome<Error, Model::ListFlowCategoryResult> ListFlowCategoryOutcome;
+			typedef std::future<ListFlowCategoryOutcome> ListFlowCategoryOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::ListFlowCategoryRequest&, const ListFlowCategoryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListFlowCategoryAsyncHandler;
+			typedef Outcome<Error, Model::ListFlowClusterResult> ListFlowClusterOutcome;
+			typedef std::future<ListFlowClusterOutcome> ListFlowClusterOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::ListFlowClusterRequest&, const ListFlowClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListFlowClusterAsyncHandler;
+			typedef Outcome<Error, Model::ListFlowClusterAllResult> ListFlowClusterAllOutcome;
+			typedef std::future<ListFlowClusterAllOutcome> ListFlowClusterAllOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::ListFlowClusterAllRequest&, const ListFlowClusterAllOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListFlowClusterAllAsyncHandler;
+			typedef Outcome<Error, Model::ListFlowClusterAllHostsResult> ListFlowClusterAllHostsOutcome;
+			typedef std::future<ListFlowClusterAllHostsOutcome> ListFlowClusterAllHostsOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::ListFlowClusterAllHostsRequest&, const ListFlowClusterAllHostsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListFlowClusterAllHostsAsyncHandler;
+			typedef Outcome<Error, Model::ListFlowClusterHostResult> ListFlowClusterHostOutcome;
+			typedef std::future<ListFlowClusterHostOutcome> ListFlowClusterHostOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::ListFlowClusterHostRequest&, const ListFlowClusterHostOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListFlowClusterHostAsyncHandler;
+			typedef Outcome<Error, Model::ListFlowInstanceResult> ListFlowInstanceOutcome;
+			typedef std::future<ListFlowInstanceOutcome> ListFlowInstanceOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::ListFlowInstanceRequest&, const ListFlowInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListFlowInstanceAsyncHandler;
+			typedef Outcome<Error, Model::ListFlowJobResult> ListFlowJobOutcome;
+			typedef std::future<ListFlowJobOutcome> ListFlowJobOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::ListFlowJobRequest&, const ListFlowJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListFlowJobAsyncHandler;
+			typedef Outcome<Error, Model::ListFlowJobHistoryResult> ListFlowJobHistoryOutcome;
+			typedef std::future<ListFlowJobHistoryOutcome> ListFlowJobHistoryOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::ListFlowJobHistoryRequest&, const ListFlowJobHistoryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListFlowJobHistoryAsyncHandler;
+			typedef Outcome<Error, Model::ListFlowNodeInstanceResult> ListFlowNodeInstanceOutcome;
+			typedef std::future<ListFlowNodeInstanceOutcome> ListFlowNodeInstanceOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::ListFlowNodeInstanceRequest&, const ListFlowNodeInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListFlowNodeInstanceAsyncHandler;
+			typedef Outcome<Error, Model::ListFlowNodeInstanceContainerStatusResult> ListFlowNodeInstanceContainerStatusOutcome;
+			typedef std::future<ListFlowNodeInstanceContainerStatusOutcome> ListFlowNodeInstanceContainerStatusOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::ListFlowNodeInstanceContainerStatusRequest&, const ListFlowNodeInstanceContainerStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListFlowNodeInstanceContainerStatusAsyncHandler;
+			typedef Outcome<Error, Model::ListFlowNodeSqlResultResult> ListFlowNodeSqlResultOutcome;
+			typedef std::future<ListFlowNodeSqlResultOutcome> ListFlowNodeSqlResultOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::ListFlowNodeSqlResultRequest&, const ListFlowNodeSqlResultOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListFlowNodeSqlResultAsyncHandler;
+			typedef Outcome<Error, Model::ListFlowProjectResult> ListFlowProjectOutcome;
+			typedef std::future<ListFlowProjectOutcome> ListFlowProjectOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::ListFlowProjectRequest&, const ListFlowProjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListFlowProjectAsyncHandler;
+			typedef Outcome<Error, Model::ListFlowProjectClusterSettingResult> ListFlowProjectClusterSettingOutcome;
+			typedef std::future<ListFlowProjectClusterSettingOutcome> ListFlowProjectClusterSettingOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::ListFlowProjectClusterSettingRequest&, const ListFlowProjectClusterSettingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListFlowProjectClusterSettingAsyncHandler;
+			typedef Outcome<Error, Model::ListFlowProjectUserResult> ListFlowProjectUserOutcome;
+			typedef std::future<ListFlowProjectUserOutcome> ListFlowProjectUserOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::ListFlowProjectUserRequest&, const ListFlowProjectUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListFlowProjectUserAsyncHandler;
+			typedef Outcome<Error, Model::ListResourcePoolResult> ListResourcePoolOutcome;
+			typedef std::future<ListResourcePoolOutcome> ListResourcePoolOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::ListResourcePoolRequest&, const ListResourcePoolOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListResourcePoolAsyncHandler;
+			typedef Outcome<Error, Model::ListScalingActivityV2Result> ListScalingActivityV2Outcome;
+			typedef std::future<ListScalingActivityV2Outcome> ListScalingActivityV2OutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::ListScalingActivityV2Request&, const ListScalingActivityV2Outcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListScalingActivityV2AsyncHandler;
+			typedef Outcome<Error, Model::ListScalingConfigItemV2Result> ListScalingConfigItemV2Outcome;
+			typedef std::future<ListScalingConfigItemV2Outcome> ListScalingConfigItemV2OutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::ListScalingConfigItemV2Request&, const ListScalingConfigItemV2Outcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListScalingConfigItemV2AsyncHandler;
+			typedef Outcome<Error, Model::ListScalingGroupV2Result> ListScalingGroupV2Outcome;
+			typedef std::future<ListScalingGroupV2Outcome> ListScalingGroupV2OutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::ListScalingGroupV2Request&, const ListScalingGroupV2Outcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListScalingGroupV2AsyncHandler;
 			typedef Outcome<Error, Model::ListTagResourcesResult> ListTagResourcesOutcome;
 			typedef std::future<ListTagResourcesOutcome> ListTagResourcesOutcomeCallable;
 			typedef std::function<void(const EmrClient*, const Model::ListTagResourcesRequest&, const ListTagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTagResourcesAsyncHandler;
-			typedef Outcome<Error, Model::ReleaseOnKubeClusterResult> ReleaseOnKubeClusterOutcome;
-			typedef std::future<ReleaseOnKubeClusterOutcome> ReleaseOnKubeClusterOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::ReleaseOnKubeClusterRequest&, const ReleaseOnKubeClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ReleaseOnKubeClusterAsyncHandler;
-			typedef Outcome<Error, Model::RunApplicationActionResult> RunApplicationActionOutcome;
-			typedef std::future<RunApplicationActionOutcome> RunApplicationActionOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::RunApplicationActionRequest&, const RunApplicationActionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RunApplicationActionAsyncHandler;
-			typedef Outcome<Error, Model::RunScalingActionResult> RunScalingActionOutcome;
-			typedef std::future<RunScalingActionOutcome> RunScalingActionOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::RunScalingActionRequest&, const RunScalingActionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RunScalingActionAsyncHandler;
+			typedef Outcome<Error, Model::ModifyClusterNameResult> ModifyClusterNameOutcome;
+			typedef std::future<ModifyClusterNameOutcome> ModifyClusterNameOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::ModifyClusterNameRequest&, const ModifyClusterNameOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterNameAsyncHandler;
+			typedef Outcome<Error, Model::ModifyClusterServiceConfigResult> ModifyClusterServiceConfigOutcome;
+			typedef std::future<ModifyClusterServiceConfigOutcome> ModifyClusterServiceConfigOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::ModifyClusterServiceConfigRequest&, const ModifyClusterServiceConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterServiceConfigAsyncHandler;
+			typedef Outcome<Error, Model::ModifyClusterTemplateResult> ModifyClusterTemplateOutcome;
+			typedef std::future<ModifyClusterTemplateOutcome> ModifyClusterTemplateOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::ModifyClusterTemplateRequest&, const ModifyClusterTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterTemplateAsyncHandler;
+			typedef Outcome<Error, Model::ModifyFlowCategoryResult> ModifyFlowCategoryOutcome;
+			typedef std::future<ModifyFlowCategoryOutcome> ModifyFlowCategoryOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::ModifyFlowCategoryRequest&, const ModifyFlowCategoryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyFlowCategoryAsyncHandler;
+			typedef Outcome<Error, Model::ModifyFlowForWebResult> ModifyFlowForWebOutcome;
+			typedef std::future<ModifyFlowForWebOutcome> ModifyFlowForWebOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::ModifyFlowForWebRequest&, const ModifyFlowForWebOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyFlowForWebAsyncHandler;
+			typedef Outcome<Error, Model::ModifyFlowProjectResult> ModifyFlowProjectOutcome;
+			typedef std::future<ModifyFlowProjectOutcome> ModifyFlowProjectOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::ModifyFlowProjectRequest&, const ModifyFlowProjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyFlowProjectAsyncHandler;
+			typedef Outcome<Error, Model::ModifyFlowProjectClusterSettingResult> ModifyFlowProjectClusterSettingOutcome;
+			typedef std::future<ModifyFlowProjectClusterSettingOutcome> ModifyFlowProjectClusterSettingOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::ModifyFlowProjectClusterSettingRequest&, const ModifyFlowProjectClusterSettingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyFlowProjectClusterSettingAsyncHandler;
+			typedef Outcome<Error, Model::ModifyResourcePoolResult> ModifyResourcePoolOutcome;
+			typedef std::future<ModifyResourcePoolOutcome> ModifyResourcePoolOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::ModifyResourcePoolRequest&, const ModifyResourcePoolOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyResourcePoolAsyncHandler;
+			typedef Outcome<Error, Model::ModifyResourcePoolSchedulerTypeResult> ModifyResourcePoolSchedulerTypeOutcome;
+			typedef std::future<ModifyResourcePoolSchedulerTypeOutcome> ModifyResourcePoolSchedulerTypeOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::ModifyResourcePoolSchedulerTypeRequest&, const ModifyResourcePoolSchedulerTypeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyResourcePoolSchedulerTypeAsyncHandler;
+			typedef Outcome<Error, Model::ModifyResourceQueueResult> ModifyResourceQueueOutcome;
+			typedef std::future<ModifyResourceQueueOutcome> ModifyResourceQueueOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::ModifyResourceQueueRequest&, const ModifyResourceQueueOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyResourceQueueAsyncHandler;
+			typedef Outcome<Error, Model::ModifyScalingConfigItemV2Result> ModifyScalingConfigItemV2Outcome;
+			typedef std::future<ModifyScalingConfigItemV2Outcome> ModifyScalingConfigItemV2OutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::ModifyScalingConfigItemV2Request&, const ModifyScalingConfigItemV2Outcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyScalingConfigItemV2AsyncHandler;
+			typedef Outcome<Error, Model::ModifyScalingGroupV2Result> ModifyScalingGroupV2Outcome;
+			typedef std::future<ModifyScalingGroupV2Outcome> ModifyScalingGroupV2OutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::ModifyScalingGroupV2Request&, const ModifyScalingGroupV2Outcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyScalingGroupV2AsyncHandler;
+			typedef Outcome<Error, Model::RefreshClusterResourcePoolResult> RefreshClusterResourcePoolOutcome;
+			typedef std::future<RefreshClusterResourcePoolOutcome> RefreshClusterResourcePoolOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::RefreshClusterResourcePoolRequest&, const RefreshClusterResourcePoolOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RefreshClusterResourcePoolAsyncHandler;
+			typedef Outcome<Error, Model::ReleaseClusterResult> ReleaseClusterOutcome;
+			typedef std::future<ReleaseClusterOutcome> ReleaseClusterOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::ReleaseClusterRequest&, const ReleaseClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ReleaseClusterAsyncHandler;
+			typedef Outcome<Error, Model::ReleaseClusterHostGroupResult> ReleaseClusterHostGroupOutcome;
+			typedef std::future<ReleaseClusterHostGroupOutcome> ReleaseClusterHostGroupOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::ReleaseClusterHostGroupRequest&, const ReleaseClusterHostGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ReleaseClusterHostGroupAsyncHandler;
+			typedef Outcome<Error, Model::RemoveScalingConfigItemV2Result> RemoveScalingConfigItemV2Outcome;
+			typedef std::future<RemoveScalingConfigItemV2Outcome> RemoveScalingConfigItemV2OutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::RemoveScalingConfigItemV2Request&, const RemoveScalingConfigItemV2Outcome&, const std::shared_ptr<const AsyncCallerContext>&)> RemoveScalingConfigItemV2AsyncHandler;
+			typedef Outcome<Error, Model::RerunFlowResult> RerunFlowOutcome;
+			typedef std::future<RerunFlowOutcome> RerunFlowOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::RerunFlowRequest&, const RerunFlowOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RerunFlowAsyncHandler;
+			typedef Outcome<Error, Model::ResizeClusterV2Result> ResizeClusterV2Outcome;
+			typedef std::future<ResizeClusterV2Outcome> ResizeClusterV2OutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::ResizeClusterV2Request&, const ResizeClusterV2Outcome&, const std::shared_ptr<const AsyncCallerContext>&)> ResizeClusterV2AsyncHandler;
+			typedef Outcome<Error, Model::ResumeFlowResult> ResumeFlowOutcome;
+			typedef std::future<ResumeFlowOutcome> ResumeFlowOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::ResumeFlowRequest&, const ResumeFlowOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ResumeFlowAsyncHandler;
+			typedef Outcome<Error, Model::RunClusterServiceActionResult> RunClusterServiceActionOutcome;
+			typedef std::future<RunClusterServiceActionOutcome> RunClusterServiceActionOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::RunClusterServiceActionRequest&, const RunClusterServiceActionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RunClusterServiceActionAsyncHandler;
+			typedef Outcome<Error, Model::RunScalingActionV2Result> RunScalingActionV2Outcome;
+			typedef std::future<RunScalingActionV2Outcome> RunScalingActionV2OutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::RunScalingActionV2Request&, const RunScalingActionV2Outcome&, const std::shared_ptr<const AsyncCallerContext>&)> RunScalingActionV2AsyncHandler;
+			typedef Outcome<Error, Model::StartFlowResult> StartFlowOutcome;
+			typedef std::future<StartFlowOutcome> StartFlowOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::StartFlowRequest&, const StartFlowOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartFlowAsyncHandler;
+			typedef Outcome<Error, Model::SubmitFlowResult> SubmitFlowOutcome;
+			typedef std::future<SubmitFlowOutcome> SubmitFlowOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::SubmitFlowRequest&, const SubmitFlowOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SubmitFlowAsyncHandler;
+			typedef Outcome<Error, Model::SubmitFlowJobResult> SubmitFlowJobOutcome;
+			typedef std::future<SubmitFlowJobOutcome> SubmitFlowJobOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::SubmitFlowJobRequest&, const SubmitFlowJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SubmitFlowJobAsyncHandler;
+			typedef Outcome<Error, Model::SuspendFlowResult> SuspendFlowOutcome;
+			typedef std::future<SuspendFlowOutcome> SuspendFlowOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::SuspendFlowRequest&, const SuspendFlowOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SuspendFlowAsyncHandler;
 			typedef Outcome<Error, Model::TagResourcesResult> TagResourcesOutcome;
 			typedef std::future<TagResourcesOutcome> TagResourcesOutcomeCallable;
 			typedef std::function<void(const EmrClient*, const Model::TagResourcesRequest&, const TagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TagResourcesAsyncHandler;
-			typedef Outcome<Error, Model::TagResourcesSystemTagsResult> TagResourcesSystemTagsOutcome;
-			typedef std::future<TagResourcesSystemTagsOutcome> TagResourcesSystemTagsOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::TagResourcesSystemTagsRequest&, const TagResourcesSystemTagsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TagResourcesSystemTagsAsyncHandler;
-			typedef Outcome<Error, Model::TerminateOperationResult> TerminateOperationOutcome;
-			typedef std::future<TerminateOperationOutcome> TerminateOperationOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::TerminateOperationRequest&, const TerminateOperationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TerminateOperationAsyncHandler;
 			typedef Outcome<Error, Model::UntagResourcesResult> UntagResourcesOutcome;
 			typedef std::future<UntagResourcesOutcome> UntagResourcesOutcomeCallable;
 			typedef std::function<void(const EmrClient*, const Model::UntagResourcesRequest&, const UntagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UntagResourcesAsyncHandler;
-			typedef Outcome<Error, Model::UntagResourcesSystemTagsResult> UntagResourcesSystemTagsOutcome;
-			typedef std::future<UntagResourcesSystemTagsOutcome> UntagResourcesSystemTagsOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::UntagResourcesSystemTagsRequest&, const UntagResourcesSystemTagsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UntagResourcesSystemTagsAsyncHandler;
-			typedef Outcome<Error, Model::UpdateAckClusterNodePoolsResult> UpdateAckClusterNodePoolsOutcome;
-			typedef std::future<UpdateAckClusterNodePoolsOutcome> UpdateAckClusterNodePoolsOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::UpdateAckClusterNodePoolsRequest&, const UpdateAckClusterNodePoolsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAckClusterNodePoolsAsyncHandler;
-			typedef Outcome<Error, Model::UpdateAckClusterNodesResult> UpdateAckClusterNodesOutcome;
-			typedef std::future<UpdateAckClusterNodesOutcome> UpdateAckClusterNodesOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::UpdateAckClusterNodesRequest&, const UpdateAckClusterNodesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAckClusterNodesAsyncHandler;
-			typedef Outcome<Error, Model::UpdateApplicationConfigsResult> UpdateApplicationConfigsOutcome;
-			typedef std::future<UpdateApplicationConfigsOutcome> UpdateApplicationConfigsOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::UpdateApplicationConfigsRequest&, const UpdateApplicationConfigsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateApplicationConfigsAsyncHandler;
-			typedef Outcome<Error, Model::UpdateAutoScalingRuleResult> UpdateAutoScalingRuleOutcome;
-			typedef std::future<UpdateAutoScalingRuleOutcome> UpdateAutoScalingRuleOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::UpdateAutoScalingRuleRequest&, const UpdateAutoScalingRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAutoScalingRuleAsyncHandler;
-			typedef Outcome<Error, Model::UpdateClusterAttributeResult> UpdateClusterAttributeOutcome;
-			typedef std::future<UpdateClusterAttributeOutcome> UpdateClusterAttributeOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::UpdateClusterAttributeRequest&, const UpdateClusterAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateClusterAttributeAsyncHandler;
-			typedef Outcome<Error, Model::UpdateClusterScriptResult> UpdateClusterScriptOutcome;
-			typedef std::future<UpdateClusterScriptOutcome> UpdateClusterScriptOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::UpdateClusterScriptRequest&, const UpdateClusterScriptOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateClusterScriptAsyncHandler;
-			typedef Outcome<Error, Model::UpdateOnKubeClusterDedicatedNodePoolsResult> UpdateOnKubeClusterDedicatedNodePoolsOutcome;
-			typedef std::future<UpdateOnKubeClusterDedicatedNodePoolsOutcome> UpdateOnKubeClusterDedicatedNodePoolsOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::UpdateOnKubeClusterDedicatedNodePoolsRequest&, const UpdateOnKubeClusterDedicatedNodePoolsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateOnKubeClusterDedicatedNodePoolsAsyncHandler;
-			typedef Outcome<Error, Model::UpdateOnKubeClusterDedicatedNodesResult> UpdateOnKubeClusterDedicatedNodesOutcome;
-			typedef std::future<UpdateOnKubeClusterDedicatedNodesOutcome> UpdateOnKubeClusterDedicatedNodesOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::UpdateOnKubeClusterDedicatedNodesRequest&, const UpdateOnKubeClusterDedicatedNodesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateOnKubeClusterDedicatedNodesAsyncHandler;
-			typedef Outcome<Error, Model::UpdateScalingGroupResult> UpdateScalingGroupOutcome;
-			typedef std::future<UpdateScalingGroupOutcome> UpdateScalingGroupOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::UpdateScalingGroupRequest&, const UpdateScalingGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateScalingGroupAsyncHandler;
 
 			EmrClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			EmrClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			EmrClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~EmrClient();
-			AddApplicationOutcome addApplication(const Model::AddApplicationRequest &request)const;
-			void addApplicationAsync(const Model::AddApplicationRequest& request, const AddApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			AddApplicationOutcomeCallable addApplicationCallable(const Model::AddApplicationRequest& request) const;
-			AddApplicationsOutcome addApplications(const Model::AddApplicationsRequest &request)const;
-			void addApplicationsAsync(const Model::AddApplicationsRequest& request, const AddApplicationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			AddApplicationsOutcomeCallable addApplicationsCallable(const Model::AddApplicationsRequest& request) const;
-			CancelOperationOrdersOutcome cancelOperationOrders(const Model::CancelOperationOrdersRequest &request)const;
-			void cancelOperationOrdersAsync(const Model::CancelOperationOrdersRequest& request, const CancelOperationOrdersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CancelOperationOrdersOutcomeCallable cancelOperationOrdersCallable(const Model::CancelOperationOrdersRequest& request) const;
-			CreateAutoScalingPolicyOutcome createAutoScalingPolicy(const Model::CreateAutoScalingPolicyRequest &request)const;
-			void createAutoScalingPolicyAsync(const Model::CreateAutoScalingPolicyRequest& request, const CreateAutoScalingPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CreateAutoScalingPolicyOutcomeCallable createAutoScalingPolicyCallable(const Model::CreateAutoScalingPolicyRequest& request) const;
-			CreateAutoScalingRuleOutcome createAutoScalingRule(const Model::CreateAutoScalingRuleRequest &request)const;
-			void createAutoScalingRuleAsync(const Model::CreateAutoScalingRuleRequest& request, const CreateAutoScalingRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CreateAutoScalingRuleOutcomeCallable createAutoScalingRuleCallable(const Model::CreateAutoScalingRuleRequest& request) const;
-			CreateClusterOutcome createCluster(const Model::CreateClusterRequest &request)const;
-			void createClusterAsync(const Model::CreateClusterRequest& request, const CreateClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CreateClusterOutcomeCallable createClusterCallable(const Model::CreateClusterRequest& request) const;
-			CreateClusterScriptOutcome createClusterScript(const Model::CreateClusterScriptRequest &request)const;
-			void createClusterScriptAsync(const Model::CreateClusterScriptRequest& request, const CreateClusterScriptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CreateClusterScriptOutcomeCallable createClusterScriptCallable(const Model::CreateClusterScriptRequest& request) const;
-			CreateNodeGroupOutcome createNodeGroup(const Model::CreateNodeGroupRequest &request)const;
-			void createNodeGroupAsync(const Model::CreateNodeGroupRequest& request, const CreateNodeGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CreateNodeGroupOutcomeCallable createNodeGroupCallable(const Model::CreateNodeGroupRequest& request) const;
-			CreateOnAckClusterOutcome createOnAckCluster(const Model::CreateOnAckClusterRequest &request)const;
-			void createOnAckClusterAsync(const Model::CreateOnAckClusterRequest& request, const CreateOnAckClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CreateOnAckClusterOutcomeCallable createOnAckClusterCallable(const Model::CreateOnAckClusterRequest& request) const;
-			CreateOnKubeClusterOutcome createOnKubeCluster(const Model::CreateOnKubeClusterRequest &request)const;
-			void createOnKubeClusterAsync(const Model::CreateOnKubeClusterRequest& request, const CreateOnKubeClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CreateOnKubeClusterOutcomeCallable createOnKubeClusterCallable(const Model::CreateOnKubeClusterRequest& request) const;
-			CreateScalingGroupOutcome createScalingGroup(const Model::CreateScalingGroupRequest &request)const;
-			void createScalingGroupAsync(const Model::CreateScalingGroupRequest& request, const CreateScalingGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CreateScalingGroupOutcomeCallable createScalingGroupCallable(const Model::CreateScalingGroupRequest& request) const;
-			DecreaseNodesOutcome decreaseNodes(const Model::DecreaseNodesRequest &request)const;
-			void decreaseNodesAsync(const Model::DecreaseNodesRequest& request, const DecreaseNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DecreaseNodesOutcomeCallable decreaseNodesCallable(const Model::DecreaseNodesRequest& request) const;
-			DeleteAutoScalingPolicyOutcome deleteAutoScalingPolicy(const Model::DeleteAutoScalingPolicyRequest &request)const;
-			void deleteAutoScalingPolicyAsync(const Model::DeleteAutoScalingPolicyRequest& request, const DeleteAutoScalingPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DeleteAutoScalingPolicyOutcomeCallable deleteAutoScalingPolicyCallable(const Model::DeleteAutoScalingPolicyRequest& request) const;
-			DeleteAutoScalingRuleOutcome deleteAutoScalingRule(const Model::DeleteAutoScalingRuleRequest &request)const;
-			void deleteAutoScalingRuleAsync(const Model::DeleteAutoScalingRuleRequest& request, const DeleteAutoScalingRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DeleteAutoScalingRuleOutcomeCallable deleteAutoScalingRuleCallable(const Model::DeleteAutoScalingRuleRequest& request) const;
-			DeleteClusterOutcome deleteCluster(const Model::DeleteClusterRequest &request)const;
-			void deleteClusterAsync(const Model::DeleteClusterRequest& request, const DeleteClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DeleteClusterOutcomeCallable deleteClusterCallable(const Model::DeleteClusterRequest& request) const;
-			DeleteClusterScriptOutcome deleteClusterScript(const Model::DeleteClusterScriptRequest &request)const;
-			void deleteClusterScriptAsync(const Model::DeleteClusterScriptRequest& request, const DeleteClusterScriptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DeleteClusterScriptOutcomeCallable deleteClusterScriptCallable(const Model::DeleteClusterScriptRequest& request) const;
-			DeleteNodeGroupOutcome deleteNodeGroup(const Model::DeleteNodeGroupRequest &request)const;
-			void deleteNodeGroupAsync(const Model::DeleteNodeGroupRequest& request, const DeleteNodeGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DeleteNodeGroupOutcomeCallable deleteNodeGroupCallable(const Model::DeleteNodeGroupRequest& request) const;
-			DeleteOnAckClusterOutcome deleteOnAckCluster(const Model::DeleteOnAckClusterRequest &request)const;
-			void deleteOnAckClusterAsync(const Model::DeleteOnAckClusterRequest& request, const DeleteOnAckClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DeleteOnAckClusterOutcomeCallable deleteOnAckClusterCallable(const Model::DeleteOnAckClusterRequest& request) const;
-			DeleteScalingGroupOutcome deleteScalingGroup(const Model::DeleteScalingGroupRequest &request)const;
-			void deleteScalingGroupAsync(const Model::DeleteScalingGroupRequest& request, const DeleteScalingGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DeleteScalingGroupOutcomeCallable deleteScalingGroupCallable(const Model::DeleteScalingGroupRequest& request) const;
-			DisableAutoScalingPolicyOutcome disableAutoScalingPolicy(const Model::DisableAutoScalingPolicyRequest &request)const;
-			void disableAutoScalingPolicyAsync(const Model::DisableAutoScalingPolicyRequest& request, const DisableAutoScalingPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DisableAutoScalingPolicyOutcomeCallable disableAutoScalingPolicyCallable(const Model::DisableAutoScalingPolicyRequest& request) const;
-			EnableAutoScalingPolicyOutcome enableAutoScalingPolicy(const Model::EnableAutoScalingPolicyRequest &request)const;
-			void enableAutoScalingPolicyAsync(const Model::EnableAutoScalingPolicyRequest& request, const EnableAutoScalingPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			EnableAutoScalingPolicyOutcomeCallable enableAutoScalingPolicyCallable(const Model::EnableAutoScalingPolicyRequest& request) const;
-			GetApplicationOutcome getApplication(const Model::GetApplicationRequest &request)const;
-			void getApplicationAsync(const Model::GetApplicationRequest& request, const GetApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetApplicationOutcomeCallable getApplicationCallable(const Model::GetApplicationRequest& request) const;
-			GetClusterOutcome getCluster(const Model::GetClusterRequest &request)const;
-			void getClusterAsync(const Model::GetClusterRequest& request, const GetClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetClusterOutcomeCallable getClusterCallable(const Model::GetClusterRequest& request) const;
-			GetClusterScriptExecutionResultOutcome getClusterScriptExecutionResult(const Model::GetClusterScriptExecutionResultRequest &request)const;
-			void getClusterScriptExecutionResultAsync(const Model::GetClusterScriptExecutionResultRequest& request, const GetClusterScriptExecutionResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetClusterScriptExecutionResultOutcomeCallable getClusterScriptExecutionResultCallable(const Model::GetClusterScriptExecutionResultRequest& request) const;
-			GetNodeGroupOutcome getNodeGroup(const Model::GetNodeGroupRequest &request)const;
-			void getNodeGroupAsync(const Model::GetNodeGroupRequest& request, const GetNodeGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetNodeGroupOutcomeCallable getNodeGroupCallable(const Model::GetNodeGroupRequest& request) const;
-			GetOnAckClusterOutcome getOnAckCluster(const Model::GetOnAckClusterRequest &request)const;
-			void getOnAckClusterAsync(const Model::GetOnAckClusterRequest& request, const GetOnAckClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetOnAckClusterOutcomeCallable getOnAckClusterCallable(const Model::GetOnAckClusterRequest& request) const;
-			GetOnKubeClusterOutcome getOnKubeCluster(const Model::GetOnKubeClusterRequest &request)const;
-			void getOnKubeClusterAsync(const Model::GetOnKubeClusterRequest& request, const GetOnKubeClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetOnKubeClusterOutcomeCallable getOnKubeClusterCallable(const Model::GetOnKubeClusterRequest& request) const;
-			GetOnKubeClusterResourceQuotaOutcome getOnKubeClusterResourceQuota(const Model::GetOnKubeClusterResourceQuotaRequest &request)const;
-			void getOnKubeClusterResourceQuotaAsync(const Model::GetOnKubeClusterResourceQuotaRequest& request, const GetOnKubeClusterResourceQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetOnKubeClusterResourceQuotaOutcomeCallable getOnKubeClusterResourceQuotaCallable(const Model::GetOnKubeClusterResourceQuotaRequest& request) const;
-			GetOnKubeClusterResourceUsageOutcome getOnKubeClusterResourceUsage(const Model::GetOnKubeClusterResourceUsageRequest &request)const;
-			void getOnKubeClusterResourceUsageAsync(const Model::GetOnKubeClusterResourceUsageRequest& request, const GetOnKubeClusterResourceUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetOnKubeClusterResourceUsageOutcomeCallable getOnKubeClusterResourceUsageCallable(const Model::GetOnKubeClusterResourceUsageRequest& request) const;
-			GetOperationOutcome getOperation(const Model::GetOperationRequest &request)const;
-			void getOperationAsync(const Model::GetOperationRequest& request, const GetOperationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetOperationOutcomeCallable getOperationCallable(const Model::GetOperationRequest& request) const;
-			GetScalingGroupOutcome getScalingGroup(const Model::GetScalingGroupRequest &request)const;
-			void getScalingGroupAsync(const Model::GetScalingGroupRequest& request, const GetScalingGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetScalingGroupOutcomeCallable getScalingGroupCallable(const Model::GetScalingGroupRequest& request) const;
-			IncreaseClusterDiskOutcome increaseClusterDisk(const Model::IncreaseClusterDiskRequest &request)const;
-			void increaseClusterDiskAsync(const Model::IncreaseClusterDiskRequest& request, const IncreaseClusterDiskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			IncreaseClusterDiskOutcomeCallable increaseClusterDiskCallable(const Model::IncreaseClusterDiskRequest& request) const;
-			IncreaseNodesOutcome increaseNodes(const Model::IncreaseNodesRequest &request)const;
-			void increaseNodesAsync(const Model::IncreaseNodesRequest& request, const IncreaseNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			IncreaseNodesOutcomeCallable increaseNodesCallable(const Model::IncreaseNodesRequest& request) const;
+			AddClusterServiceOutcome addClusterService(const Model::AddClusterServiceRequest &request)const;
+			void addClusterServiceAsync(const Model::AddClusterServiceRequest& request, const AddClusterServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddClusterServiceOutcomeCallable addClusterServiceCallable(const Model::AddClusterServiceRequest& request) const;
+			AddScalingConfigItemV2Outcome addScalingConfigItemV2(const Model::AddScalingConfigItemV2Request &request)const;
+			void addScalingConfigItemV2Async(const Model::AddScalingConfigItemV2Request& request, const AddScalingConfigItemV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddScalingConfigItemV2OutcomeCallable addScalingConfigItemV2Callable(const Model::AddScalingConfigItemV2Request& request) const;
+			CloneFlowOutcome cloneFlow(const Model::CloneFlowRequest &request)const;
+			void cloneFlowAsync(const Model::CloneFlowRequest& request, const CloneFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CloneFlowOutcomeCallable cloneFlowCallable(const Model::CloneFlowRequest& request) const;
+			CloneFlowJobOutcome cloneFlowJob(const Model::CloneFlowJobRequest &request)const;
+			void cloneFlowJobAsync(const Model::CloneFlowJobRequest& request, const CloneFlowJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CloneFlowJobOutcomeCallable cloneFlowJobCallable(const Model::CloneFlowJobRequest& request) const;
+			CreateClusterTemplateOutcome createClusterTemplate(const Model::CreateClusterTemplateRequest &request)const;
+			void createClusterTemplateAsync(const Model::CreateClusterTemplateRequest& request, const CreateClusterTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateClusterTemplateOutcomeCallable createClusterTemplateCallable(const Model::CreateClusterTemplateRequest& request) const;
+			CreateClusterV2Outcome createClusterV2(const Model::CreateClusterV2Request &request)const;
+			void createClusterV2Async(const Model::CreateClusterV2Request& request, const CreateClusterV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateClusterV2OutcomeCallable createClusterV2Callable(const Model::CreateClusterV2Request& request) const;
+			CreateClusterWithTemplateOutcome createClusterWithTemplate(const Model::CreateClusterWithTemplateRequest &request)const;
+			void createClusterWithTemplateAsync(const Model::CreateClusterWithTemplateRequest& request, const CreateClusterWithTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateClusterWithTemplateOutcomeCallable createClusterWithTemplateCallable(const Model::CreateClusterWithTemplateRequest& request) const;
+			CreateFlowOutcome createFlow(const Model::CreateFlowRequest &request)const;
+			void createFlowAsync(const Model::CreateFlowRequest& request, const CreateFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateFlowOutcomeCallable createFlowCallable(const Model::CreateFlowRequest& request) const;
+			CreateFlowCategoryOutcome createFlowCategory(const Model::CreateFlowCategoryRequest &request)const;
+			void createFlowCategoryAsync(const Model::CreateFlowCategoryRequest& request, const CreateFlowCategoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateFlowCategoryOutcomeCallable createFlowCategoryCallable(const Model::CreateFlowCategoryRequest& request) const;
+			CreateFlowForWebOutcome createFlowForWeb(const Model::CreateFlowForWebRequest &request)const;
+			void createFlowForWebAsync(const Model::CreateFlowForWebRequest& request, const CreateFlowForWebAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateFlowForWebOutcomeCallable createFlowForWebCallable(const Model::CreateFlowForWebRequest& request) const;
+			CreateFlowJobOutcome createFlowJob(const Model::CreateFlowJobRequest &request)const;
+			void createFlowJobAsync(const Model::CreateFlowJobRequest& request, const CreateFlowJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateFlowJobOutcomeCallable createFlowJobCallable(const Model::CreateFlowJobRequest& request) const;
+			CreateFlowProjectOutcome createFlowProject(const Model::CreateFlowProjectRequest &request)const;
+			void createFlowProjectAsync(const Model::CreateFlowProjectRequest& request, const CreateFlowProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateFlowProjectOutcomeCallable createFlowProjectCallable(const Model::CreateFlowProjectRequest& request) const;
+			CreateFlowProjectClusterSettingOutcome createFlowProjectClusterSetting(const Model::CreateFlowProjectClusterSettingRequest &request)const;
+			void createFlowProjectClusterSettingAsync(const Model::CreateFlowProjectClusterSettingRequest& request, const CreateFlowProjectClusterSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateFlowProjectClusterSettingOutcomeCallable createFlowProjectClusterSettingCallable(const Model::CreateFlowProjectClusterSettingRequest& request) const;
+			CreateFlowProjectUserOutcome createFlowProjectUser(const Model::CreateFlowProjectUserRequest &request)const;
+			void createFlowProjectUserAsync(const Model::CreateFlowProjectUserRequest& request, const CreateFlowProjectUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateFlowProjectUserOutcomeCallable createFlowProjectUserCallable(const Model::CreateFlowProjectUserRequest& request) const;
+			CreateResourcePoolOutcome createResourcePool(const Model::CreateResourcePoolRequest &request)const;
+			void createResourcePoolAsync(const Model::CreateResourcePoolRequest& request, const CreateResourcePoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateResourcePoolOutcomeCallable createResourcePoolCallable(const Model::CreateResourcePoolRequest& request) const;
+			CreateResourceQueueOutcome createResourceQueue(const Model::CreateResourceQueueRequest &request)const;
+			void createResourceQueueAsync(const Model::CreateResourceQueueRequest& request, const CreateResourceQueueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateResourceQueueOutcomeCallable createResourceQueueCallable(const Model::CreateResourceQueueRequest& request) const;
+			CreateScalingGroupV2Outcome createScalingGroupV2(const Model::CreateScalingGroupV2Request &request)const;
+			void createScalingGroupV2Async(const Model::CreateScalingGroupV2Request& request, const CreateScalingGroupV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateScalingGroupV2OutcomeCallable createScalingGroupV2Callable(const Model::CreateScalingGroupV2Request& request) const;
+			DeleteClusterTemplateOutcome deleteClusterTemplate(const Model::DeleteClusterTemplateRequest &request)const;
+			void deleteClusterTemplateAsync(const Model::DeleteClusterTemplateRequest& request, const DeleteClusterTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteClusterTemplateOutcomeCallable deleteClusterTemplateCallable(const Model::DeleteClusterTemplateRequest& request) const;
+			DeleteFlowOutcome deleteFlow(const Model::DeleteFlowRequest &request)const;
+			void deleteFlowAsync(const Model::DeleteFlowRequest& request, const DeleteFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteFlowOutcomeCallable deleteFlowCallable(const Model::DeleteFlowRequest& request) const;
+			DeleteFlowCategoryOutcome deleteFlowCategory(const Model::DeleteFlowCategoryRequest &request)const;
+			void deleteFlowCategoryAsync(const Model::DeleteFlowCategoryRequest& request, const DeleteFlowCategoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteFlowCategoryOutcomeCallable deleteFlowCategoryCallable(const Model::DeleteFlowCategoryRequest& request) const;
+			DeleteFlowJobOutcome deleteFlowJob(const Model::DeleteFlowJobRequest &request)const;
+			void deleteFlowJobAsync(const Model::DeleteFlowJobRequest& request, const DeleteFlowJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteFlowJobOutcomeCallable deleteFlowJobCallable(const Model::DeleteFlowJobRequest& request) const;
+			DeleteFlowProjectOutcome deleteFlowProject(const Model::DeleteFlowProjectRequest &request)const;
+			void deleteFlowProjectAsync(const Model::DeleteFlowProjectRequest& request, const DeleteFlowProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteFlowProjectOutcomeCallable deleteFlowProjectCallable(const Model::DeleteFlowProjectRequest& request) const;
+			DeleteFlowProjectClusterSettingOutcome deleteFlowProjectClusterSetting(const Model::DeleteFlowProjectClusterSettingRequest &request)const;
+			void deleteFlowProjectClusterSettingAsync(const Model::DeleteFlowProjectClusterSettingRequest& request, const DeleteFlowProjectClusterSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteFlowProjectClusterSettingOutcomeCallable deleteFlowProjectClusterSettingCallable(const Model::DeleteFlowProjectClusterSettingRequest& request) const;
+			DeleteFlowProjectUserOutcome deleteFlowProjectUser(const Model::DeleteFlowProjectUserRequest &request)const;
+			void deleteFlowProjectUserAsync(const Model::DeleteFlowProjectUserRequest& request, const DeleteFlowProjectUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteFlowProjectUserOutcomeCallable deleteFlowProjectUserCallable(const Model::DeleteFlowProjectUserRequest& request) const;
+			DeleteResourcePoolOutcome deleteResourcePool(const Model::DeleteResourcePoolRequest &request)const;
+			void deleteResourcePoolAsync(const Model::DeleteResourcePoolRequest& request, const DeleteResourcePoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteResourcePoolOutcomeCallable deleteResourcePoolCallable(const Model::DeleteResourcePoolRequest& request) const;
+			DeleteResourceQueueOutcome deleteResourceQueue(const Model::DeleteResourceQueueRequest &request)const;
+			void deleteResourceQueueAsync(const Model::DeleteResourceQueueRequest& request, const DeleteResourceQueueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteResourceQueueOutcomeCallable deleteResourceQueueCallable(const Model::DeleteResourceQueueRequest& request) const;
+			DescribeClusterBasicInfoOutcome describeClusterBasicInfo(const Model::DescribeClusterBasicInfoRequest &request)const;
+			void describeClusterBasicInfoAsync(const Model::DescribeClusterBasicInfoRequest& request, const DescribeClusterBasicInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeClusterBasicInfoOutcomeCallable describeClusterBasicInfoCallable(const Model::DescribeClusterBasicInfoRequest& request) const;
+			DescribeClusterOperationHostTaskLogOutcome describeClusterOperationHostTaskLog(const Model::DescribeClusterOperationHostTaskLogRequest &request)const;
+			void describeClusterOperationHostTaskLogAsync(const Model::DescribeClusterOperationHostTaskLogRequest& request, const DescribeClusterOperationHostTaskLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeClusterOperationHostTaskLogOutcomeCallable describeClusterOperationHostTaskLogCallable(const Model::DescribeClusterOperationHostTaskLogRequest& request) const;
+			DescribeClusterResourcePoolSchedulerTypeOutcome describeClusterResourcePoolSchedulerType(const Model::DescribeClusterResourcePoolSchedulerTypeRequest &request)const;
+			void describeClusterResourcePoolSchedulerTypeAsync(const Model::DescribeClusterResourcePoolSchedulerTypeRequest& request, const DescribeClusterResourcePoolSchedulerTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeClusterResourcePoolSchedulerTypeOutcomeCallable describeClusterResourcePoolSchedulerTypeCallable(const Model::DescribeClusterResourcePoolSchedulerTypeRequest& request) const;
+			DescribeClusterServiceOutcome describeClusterService(const Model::DescribeClusterServiceRequest &request)const;
+			void describeClusterServiceAsync(const Model::DescribeClusterServiceRequest& request, const DescribeClusterServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeClusterServiceOutcomeCallable describeClusterServiceCallable(const Model::DescribeClusterServiceRequest& request) const;
+			DescribeClusterServiceConfigOutcome describeClusterServiceConfig(const Model::DescribeClusterServiceConfigRequest &request)const;
+			void describeClusterServiceConfigAsync(const Model::DescribeClusterServiceConfigRequest& request, const DescribeClusterServiceConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeClusterServiceConfigOutcomeCallable describeClusterServiceConfigCallable(const Model::DescribeClusterServiceConfigRequest& request) const;
+			DescribeClusterServiceConfigTagOutcome describeClusterServiceConfigTag(const Model::DescribeClusterServiceConfigTagRequest &request)const;
+			void describeClusterServiceConfigTagAsync(const Model::DescribeClusterServiceConfigTagRequest& request, const DescribeClusterServiceConfigTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeClusterServiceConfigTagOutcomeCallable describeClusterServiceConfigTagCallable(const Model::DescribeClusterServiceConfigTagRequest& request) const;
+			DescribeClusterTemplateOutcome describeClusterTemplate(const Model::DescribeClusterTemplateRequest &request)const;
+			void describeClusterTemplateAsync(const Model::DescribeClusterTemplateRequest& request, const DescribeClusterTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeClusterTemplateOutcomeCallable describeClusterTemplateCallable(const Model::DescribeClusterTemplateRequest& request) const;
+			DescribeClusterV2Outcome describeClusterV2(const Model::DescribeClusterV2Request &request)const;
+			void describeClusterV2Async(const Model::DescribeClusterV2Request& request, const DescribeClusterV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeClusterV2OutcomeCallable describeClusterV2Callable(const Model::DescribeClusterV2Request& request) const;
+			DescribeFlowOutcome describeFlow(const Model::DescribeFlowRequest &request)const;
+			void describeFlowAsync(const Model::DescribeFlowRequest& request, const DescribeFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeFlowOutcomeCallable describeFlowCallable(const Model::DescribeFlowRequest& request) const;
+			DescribeFlowCategoryOutcome describeFlowCategory(const Model::DescribeFlowCategoryRequest &request)const;
+			void describeFlowCategoryAsync(const Model::DescribeFlowCategoryRequest& request, const DescribeFlowCategoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeFlowCategoryOutcomeCallable describeFlowCategoryCallable(const Model::DescribeFlowCategoryRequest& request) const;
+			DescribeFlowCategoryTreeOutcome describeFlowCategoryTree(const Model::DescribeFlowCategoryTreeRequest &request)const;
+			void describeFlowCategoryTreeAsync(const Model::DescribeFlowCategoryTreeRequest& request, const DescribeFlowCategoryTreeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeFlowCategoryTreeOutcomeCallable describeFlowCategoryTreeCallable(const Model::DescribeFlowCategoryTreeRequest& request) const;
+			DescribeFlowInstanceOutcome describeFlowInstance(const Model::DescribeFlowInstanceRequest &request)const;
+			void describeFlowInstanceAsync(const Model::DescribeFlowInstanceRequest& request, const DescribeFlowInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeFlowInstanceOutcomeCallable describeFlowInstanceCallable(const Model::DescribeFlowInstanceRequest& request) const;
+			DescribeFlowJobOutcome describeFlowJob(const Model::DescribeFlowJobRequest &request)const;
+			void describeFlowJobAsync(const Model::DescribeFlowJobRequest& request, const DescribeFlowJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeFlowJobOutcomeCallable describeFlowJobCallable(const Model::DescribeFlowJobRequest& request) const;
+			DescribeFlowNodeInstanceOutcome describeFlowNodeInstance(const Model::DescribeFlowNodeInstanceRequest &request)const;
+			void describeFlowNodeInstanceAsync(const Model::DescribeFlowNodeInstanceRequest& request, const DescribeFlowNodeInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeFlowNodeInstanceOutcomeCallable describeFlowNodeInstanceCallable(const Model::DescribeFlowNodeInstanceRequest& request) const;
+			DescribeFlowNodeInstanceContainerLogOutcome describeFlowNodeInstanceContainerLog(const Model::DescribeFlowNodeInstanceContainerLogRequest &request)const;
+			void describeFlowNodeInstanceContainerLogAsync(const Model::DescribeFlowNodeInstanceContainerLogRequest& request, const DescribeFlowNodeInstanceContainerLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeFlowNodeInstanceContainerLogOutcomeCallable describeFlowNodeInstanceContainerLogCallable(const Model::DescribeFlowNodeInstanceContainerLogRequest& request) const;
+			DescribeFlowNodeInstanceLauncherLogOutcome describeFlowNodeInstanceLauncherLog(const Model::DescribeFlowNodeInstanceLauncherLogRequest &request)const;
+			void describeFlowNodeInstanceLauncherLogAsync(const Model::DescribeFlowNodeInstanceLauncherLogRequest& request, const DescribeFlowNodeInstanceLauncherLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeFlowNodeInstanceLauncherLogOutcomeCallable describeFlowNodeInstanceLauncherLogCallable(const Model::DescribeFlowNodeInstanceLauncherLogRequest& request) const;
+			DescribeFlowProjectOutcome describeFlowProject(const Model::DescribeFlowProjectRequest &request)const;
+			void describeFlowProjectAsync(const Model::DescribeFlowProjectRequest& request, const DescribeFlowProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeFlowProjectOutcomeCallable describeFlowProjectCallable(const Model::DescribeFlowProjectRequest& request) const;
+			DescribeFlowProjectClusterSettingOutcome describeFlowProjectClusterSetting(const Model::DescribeFlowProjectClusterSettingRequest &request)const;
+			void describeFlowProjectClusterSettingAsync(const Model::DescribeFlowProjectClusterSettingRequest& request, const DescribeFlowProjectClusterSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeFlowProjectClusterSettingOutcomeCallable describeFlowProjectClusterSettingCallable(const Model::DescribeFlowProjectClusterSettingRequest& request) const;
+			DescribeFlowVariableCollectionOutcome describeFlowVariableCollection(const Model::DescribeFlowVariableCollectionRequest &request)const;
+			void describeFlowVariableCollectionAsync(const Model::DescribeFlowVariableCollectionRequest& request, const DescribeFlowVariableCollectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeFlowVariableCollectionOutcomeCallable describeFlowVariableCollectionCallable(const Model::DescribeFlowVariableCollectionRequest& request) const;
+			DescribeScalingCommonConfigOutcome describeScalingCommonConfig(const Model::DescribeScalingCommonConfigRequest &request)const;
+			void describeScalingCommonConfigAsync(const Model::DescribeScalingCommonConfigRequest& request, const DescribeScalingCommonConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeScalingCommonConfigOutcomeCallable describeScalingCommonConfigCallable(const Model::DescribeScalingCommonConfigRequest& request) const;
+			DescribeScalingConfigItemV2Outcome describeScalingConfigItemV2(const Model::DescribeScalingConfigItemV2Request &request)const;
+			void describeScalingConfigItemV2Async(const Model::DescribeScalingConfigItemV2Request& request, const DescribeScalingConfigItemV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeScalingConfigItemV2OutcomeCallable describeScalingConfigItemV2Callable(const Model::DescribeScalingConfigItemV2Request& request) const;
+			DescribeScalingGroupInstanceV2Outcome describeScalingGroupInstanceV2(const Model::DescribeScalingGroupInstanceV2Request &request)const;
+			void describeScalingGroupInstanceV2Async(const Model::DescribeScalingGroupInstanceV2Request& request, const DescribeScalingGroupInstanceV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeScalingGroupInstanceV2OutcomeCallable describeScalingGroupInstanceV2Callable(const Model::DescribeScalingGroupInstanceV2Request& request) const;
+			DescribeScalingGroupV2Outcome describeScalingGroupV2(const Model::DescribeScalingGroupV2Request &request)const;
+			void describeScalingGroupV2Async(const Model::DescribeScalingGroupV2Request& request, const DescribeScalingGroupV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeScalingGroupV2OutcomeCallable describeScalingGroupV2Callable(const Model::DescribeScalingGroupV2Request& request) const;
 			JoinResourceGroupOutcome joinResourceGroup(const Model::JoinResourceGroupRequest &request)const;
 			void joinResourceGroupAsync(const Model::JoinResourceGroupRequest& request, const JoinResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			JoinResourceGroupOutcomeCallable joinResourceGroupCallable(const Model::JoinResourceGroupRequest& request) const;
-			ListApplicationConfigFilesOutcome listApplicationConfigFiles(const Model::ListApplicationConfigFilesRequest &request)const;
-			void listApplicationConfigFilesAsync(const Model::ListApplicationConfigFilesRequest& request, const ListApplicationConfigFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListApplicationConfigFilesOutcomeCallable listApplicationConfigFilesCallable(const Model::ListApplicationConfigFilesRequest& request) const;
-			ListApplicationConfigHistoryOutcome listApplicationConfigHistory(const Model::ListApplicationConfigHistoryRequest &request)const;
-			void listApplicationConfigHistoryAsync(const Model::ListApplicationConfigHistoryRequest& request, const ListApplicationConfigHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListApplicationConfigHistoryOutcomeCallable listApplicationConfigHistoryCallable(const Model::ListApplicationConfigHistoryRequest& request) const;
-			ListApplicationConfigsOutcome listApplicationConfigs(const Model::ListApplicationConfigsRequest &request)const;
-			void listApplicationConfigsAsync(const Model::ListApplicationConfigsRequest& request, const ListApplicationConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListApplicationConfigsOutcomeCallable listApplicationConfigsCallable(const Model::ListApplicationConfigsRequest& request) const;
-			ListApplicationsOutcome listApplications(const Model::ListApplicationsRequest &request)const;
-			void listApplicationsAsync(const Model::ListApplicationsRequest& request, const ListApplicationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListApplicationsOutcomeCallable listApplicationsCallable(const Model::ListApplicationsRequest& request) const;
-			ListAutoScalingActivitiesOutcome listAutoScalingActivities(const Model::ListAutoScalingActivitiesRequest &request)const;
-			void listAutoScalingActivitiesAsync(const Model::ListAutoScalingActivitiesRequest& request, const ListAutoScalingActivitiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListAutoScalingActivitiesOutcomeCallable listAutoScalingActivitiesCallable(const Model::ListAutoScalingActivitiesRequest& request) const;
-			ListAutoScalingMetricsOutcome listAutoScalingMetrics(const Model::ListAutoScalingMetricsRequest &request)const;
-			void listAutoScalingMetricsAsync(const Model::ListAutoScalingMetricsRequest& request, const ListAutoScalingMetricsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListAutoScalingMetricsOutcomeCallable listAutoScalingMetricsCallable(const Model::ListAutoScalingMetricsRequest& request) const;
-			ListAutoScalingPoliciesOutcome listAutoScalingPolicies(const Model::ListAutoScalingPoliciesRequest &request)const;
-			void listAutoScalingPoliciesAsync(const Model::ListAutoScalingPoliciesRequest& request, const ListAutoScalingPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListAutoScalingPoliciesOutcomeCallable listAutoScalingPoliciesCallable(const Model::ListAutoScalingPoliciesRequest& request) const;
-			ListAutoScalingRulesOutcome listAutoScalingRules(const Model::ListAutoScalingRulesRequest &request)const;
-			void listAutoScalingRulesAsync(const Model::ListAutoScalingRulesRequest& request, const ListAutoScalingRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListAutoScalingRulesOutcomeCallable listAutoScalingRulesCallable(const Model::ListAutoScalingRulesRequest& request) const;
-			ListClusterScriptsOutcome listClusterScripts(const Model::ListClusterScriptsRequest &request)const;
-			void listClusterScriptsAsync(const Model::ListClusterScriptsRequest& request, const ListClusterScriptsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListClusterScriptsOutcomeCallable listClusterScriptsCallable(const Model::ListClusterScriptsRequest& request) const;
+			KillFlowJobOutcome killFlowJob(const Model::KillFlowJobRequest &request)const;
+			void killFlowJobAsync(const Model::KillFlowJobRequest& request, const KillFlowJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			KillFlowJobOutcomeCallable killFlowJobCallable(const Model::KillFlowJobRequest& request) const;
+			ListApmApplicationOutcome listApmApplication(const Model::ListApmApplicationRequest &request)const;
+			void listApmApplicationAsync(const Model::ListApmApplicationRequest& request, const ListApmApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListApmApplicationOutcomeCallable listApmApplicationCallable(const Model::ListApmApplicationRequest& request) const;
+			ListClusterHostOutcome listClusterHost(const Model::ListClusterHostRequest &request)const;
+			void listClusterHostAsync(const Model::ListClusterHostRequest& request, const ListClusterHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListClusterHostOutcomeCallable listClusterHostCallable(const Model::ListClusterHostRequest& request) const;
+			ListClusterHostComponentOutcome listClusterHostComponent(const Model::ListClusterHostComponentRequest &request)const;
+			void listClusterHostComponentAsync(const Model::ListClusterHostComponentRequest& request, const ListClusterHostComponentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListClusterHostComponentOutcomeCallable listClusterHostComponentCallable(const Model::ListClusterHostComponentRequest& request) const;
+			ListClusterHostGroupOutcome listClusterHostGroup(const Model::ListClusterHostGroupRequest &request)const;
+			void listClusterHostGroupAsync(const Model::ListClusterHostGroupRequest& request, const ListClusterHostGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListClusterHostGroupOutcomeCallable listClusterHostGroupCallable(const Model::ListClusterHostGroupRequest& request) const;
+			ListClusterInstalledServiceOutcome listClusterInstalledService(const Model::ListClusterInstalledServiceRequest &request)const;
+			void listClusterInstalledServiceAsync(const Model::ListClusterInstalledServiceRequest& request, const ListClusterInstalledServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListClusterInstalledServiceOutcomeCallable listClusterInstalledServiceCallable(const Model::ListClusterInstalledServiceRequest& request) const;
+			ListClusterOperationOutcome listClusterOperation(const Model::ListClusterOperationRequest &request)const;
+			void listClusterOperationAsync(const Model::ListClusterOperationRequest& request, const ListClusterOperationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListClusterOperationOutcomeCallable listClusterOperationCallable(const Model::ListClusterOperationRequest& request) const;
+			ListClusterOperationHostOutcome listClusterOperationHost(const Model::ListClusterOperationHostRequest &request)const;
+			void listClusterOperationHostAsync(const Model::ListClusterOperationHostRequest& request, const ListClusterOperationHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListClusterOperationHostOutcomeCallable listClusterOperationHostCallable(const Model::ListClusterOperationHostRequest& request) const;
+			ListClusterOperationHostTaskOutcome listClusterOperationHostTask(const Model::ListClusterOperationHostTaskRequest &request)const;
+			void listClusterOperationHostTaskAsync(const Model::ListClusterOperationHostTaskRequest& request, const ListClusterOperationHostTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListClusterOperationHostTaskOutcomeCallable listClusterOperationHostTaskCallable(const Model::ListClusterOperationHostTaskRequest& request) const;
+			ListClusterOperationTaskOutcome listClusterOperationTask(const Model::ListClusterOperationTaskRequest &request)const;
+			void listClusterOperationTaskAsync(const Model::ListClusterOperationTaskRequest& request, const ListClusterOperationTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListClusterOperationTaskOutcomeCallable listClusterOperationTaskCallable(const Model::ListClusterOperationTaskRequest& request) const;
+			ListClusterServiceOutcome listClusterService(const Model::ListClusterServiceRequest &request)const;
+			void listClusterServiceAsync(const Model::ListClusterServiceRequest& request, const ListClusterServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListClusterServiceOutcomeCallable listClusterServiceCallable(const Model::ListClusterServiceRequest& request) const;
+			ListClusterServiceComponentOutcome listClusterServiceComponent(const Model::ListClusterServiceComponentRequest &request)const;
+			void listClusterServiceComponentAsync(const Model::ListClusterServiceComponentRequest& request, const ListClusterServiceComponentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListClusterServiceComponentOutcomeCallable listClusterServiceComponentCallable(const Model::ListClusterServiceComponentRequest& request) const;
+			ListClusterServiceComponentHealthInfoOutcome listClusterServiceComponentHealthInfo(const Model::ListClusterServiceComponentHealthInfoRequest &request)const;
+			void listClusterServiceComponentHealthInfoAsync(const Model::ListClusterServiceComponentHealthInfoRequest& request, const ListClusterServiceComponentHealthInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListClusterServiceComponentHealthInfoOutcomeCallable listClusterServiceComponentHealthInfoCallable(const Model::ListClusterServiceComponentHealthInfoRequest& request) const;
+			ListClusterServiceConfigHistoryOutcome listClusterServiceConfigHistory(const Model::ListClusterServiceConfigHistoryRequest &request)const;
+			void listClusterServiceConfigHistoryAsync(const Model::ListClusterServiceConfigHistoryRequest& request, const ListClusterServiceConfigHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListClusterServiceConfigHistoryOutcomeCallable listClusterServiceConfigHistoryCallable(const Model::ListClusterServiceConfigHistoryRequest& request) const;
+			ListClusterServiceQuickLinkOutcome listClusterServiceQuickLink(const Model::ListClusterServiceQuickLinkRequest &request)const;
+			void listClusterServiceQuickLinkAsync(const Model::ListClusterServiceQuickLinkRequest& request, const ListClusterServiceQuickLinkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListClusterServiceQuickLinkOutcomeCallable listClusterServiceQuickLinkCallable(const Model::ListClusterServiceQuickLinkRequest& request) const;
+			ListClusterTemplatesOutcome listClusterTemplates(const Model::ListClusterTemplatesRequest &request)const;
+			void listClusterTemplatesAsync(const Model::ListClusterTemplatesRequest& request, const ListClusterTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListClusterTemplatesOutcomeCallable listClusterTemplatesCallable(const Model::ListClusterTemplatesRequest& request) const;
 			ListClustersOutcome listClusters(const Model::ListClustersRequest &request)const;
 			void listClustersAsync(const Model::ListClustersRequest& request, const ListClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListClustersOutcomeCallable listClustersCallable(const Model::ListClustersRequest& request) const;
-			ListClusters2Outcome listClusters2(const Model::ListClusters2Request &request)const;
-			void listClusters2Async(const Model::ListClusters2Request& request, const ListClusters2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListClusters2OutcomeCallable listClusters2Callable(const Model::ListClusters2Request& request) const;
-			ListComponentHealthOutcome listComponentHealth(const Model::ListComponentHealthRequest &request)const;
-			void listComponentHealthAsync(const Model::ListComponentHealthRequest& request, const ListComponentHealthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListComponentHealthOutcomeCallable listComponentHealthCallable(const Model::ListComponentHealthRequest& request) const;
-			ListComponentInstancesOutcome listComponentInstances(const Model::ListComponentInstancesRequest &request)const;
-			void listComponentInstancesAsync(const Model::ListComponentInstancesRequest& request, const ListComponentInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListComponentInstancesOutcomeCallable listComponentInstancesCallable(const Model::ListComponentInstancesRequest& request) const;
-			ListComponentsOutcome listComponents(const Model::ListComponentsRequest &request)const;
-			void listComponentsAsync(const Model::ListComponentsRequest& request, const ListComponentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListComponentsOutcomeCallable listComponentsCallable(const Model::ListComponentsRequest& request) const;
-			ListNodeGroupsOutcome listNodeGroups(const Model::ListNodeGroupsRequest &request)const;
-			void listNodeGroupsAsync(const Model::ListNodeGroupsRequest& request, const ListNodeGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListNodeGroupsOutcomeCallable listNodeGroupsCallable(const Model::ListNodeGroupsRequest& request) const;
-			ListNodesOutcome listNodes(const Model::ListNodesRequest &request)const;
-			void listNodesAsync(const Model::ListNodesRequest& request, const ListNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListNodesOutcomeCallable listNodesCallable(const Model::ListNodesRequest& request) const;
-			ListNodesv3Outcome listNodesv3(const Model::ListNodesv3Request &request)const;
-			void listNodesv3Async(const Model::ListNodesv3Request& request, const ListNodesv3AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListNodesv3OutcomeCallable listNodesv3Callable(const Model::ListNodesv3Request& request) const;
-			ListOnAckClustersOutcome listOnAckClusters(const Model::ListOnAckClustersRequest &request)const;
-			void listOnAckClustersAsync(const Model::ListOnAckClustersRequest& request, const ListOnAckClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListOnAckClustersOutcomeCallable listOnAckClustersCallable(const Model::ListOnAckClustersRequest& request) const;
-			ListOnAckComponentsOutcome listOnAckComponents(const Model::ListOnAckComponentsRequest &request)const;
-			void listOnAckComponentsAsync(const Model::ListOnAckComponentsRequest& request, const ListOnAckComponentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListOnAckComponentsOutcomeCallable listOnAckComponentsCallable(const Model::ListOnAckComponentsRequest& request) const;
-			ListOnKubeClusterDedicatedNodesOutcome listOnKubeClusterDedicatedNodes(const Model::ListOnKubeClusterDedicatedNodesRequest &request)const;
-			void listOnKubeClusterDedicatedNodesAsync(const Model::ListOnKubeClusterDedicatedNodesRequest& request, const ListOnKubeClusterDedicatedNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListOnKubeClusterDedicatedNodesOutcomeCallable listOnKubeClusterDedicatedNodesCallable(const Model::ListOnKubeClusterDedicatedNodesRequest& request) const;
-			ListOnKubeClusterInspectionResultsOutcome listOnKubeClusterInspectionResults(const Model::ListOnKubeClusterInspectionResultsRequest &request)const;
-			void listOnKubeClusterInspectionResultsAsync(const Model::ListOnKubeClusterInspectionResultsRequest& request, const ListOnKubeClusterInspectionResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListOnKubeClusterInspectionResultsOutcomeCallable listOnKubeClusterInspectionResultsCallable(const Model::ListOnKubeClusterInspectionResultsRequest& request) const;
-			ListOnKubeClustersOutcome listOnKubeClusters(const Model::ListOnKubeClustersRequest &request)const;
-			void listOnKubeClustersAsync(const Model::ListOnKubeClustersRequest& request, const ListOnKubeClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListOnKubeClustersOutcomeCallable listOnKubeClustersCallable(const Model::ListOnKubeClustersRequest& request) const;
-			ListOnKubeComponentsOutcome listOnKubeComponents(const Model::ListOnKubeComponentsRequest &request)const;
-			void listOnKubeComponentsAsync(const Model::ListOnKubeComponentsRequest& request, const ListOnKubeComponentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListOnKubeComponentsOutcomeCallable listOnKubeComponentsCallable(const Model::ListOnKubeComponentsRequest& request) const;
-			ListResourceHealthInspectionOutcome listResourceHealthInspection(const Model::ListResourceHealthInspectionRequest &request)const;
-			void listResourceHealthInspectionAsync(const Model::ListResourceHealthInspectionRequest& request, const ListResourceHealthInspectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListResourceHealthInspectionOutcomeCallable listResourceHealthInspectionCallable(const Model::ListResourceHealthInspectionRequest& request) const;
-			ListScalingActivitiesOutcome listScalingActivities(const Model::ListScalingActivitiesRequest &request)const;
-			void listScalingActivitiesAsync(const Model::ListScalingActivitiesRequest& request, const ListScalingActivitiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListScalingActivitiesOutcomeCallable listScalingActivitiesCallable(const Model::ListScalingActivitiesRequest& request) const;
-			ListScalingGroupsOutcome listScalingGroups(const Model::ListScalingGroupsRequest &request)const;
-			void listScalingGroupsAsync(const Model::ListScalingGroupsRequest& request, const ListScalingGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListScalingGroupsOutcomeCallable listScalingGroupsCallable(const Model::ListScalingGroupsRequest& request) const;
-			ListScalingMetricsOutcome listScalingMetrics(const Model::ListScalingMetricsRequest &request)const;
-			void listScalingMetricsAsync(const Model::ListScalingMetricsRequest& request, const ListScalingMetricsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListScalingMetricsOutcomeCallable listScalingMetricsCallable(const Model::ListScalingMetricsRequest& request) const;
+			ListEmrAvailableConfigOutcome listEmrAvailableConfig(const Model::ListEmrAvailableConfigRequest &request)const;
+			void listEmrAvailableConfigAsync(const Model::ListEmrAvailableConfigRequest& request, const ListEmrAvailableConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListEmrAvailableConfigOutcomeCallable listEmrAvailableConfigCallable(const Model::ListEmrAvailableConfigRequest& request) const;
+			ListEmrAvailableResourceOutcome listEmrAvailableResource(const Model::ListEmrAvailableResourceRequest &request)const;
+			void listEmrAvailableResourceAsync(const Model::ListEmrAvailableResourceRequest& request, const ListEmrAvailableResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListEmrAvailableResourceOutcomeCallable listEmrAvailableResourceCallable(const Model::ListEmrAvailableResourceRequest& request) const;
+			ListEmrMainVersionOutcome listEmrMainVersion(const Model::ListEmrMainVersionRequest &request)const;
+			void listEmrMainVersionAsync(const Model::ListEmrMainVersionRequest& request, const ListEmrMainVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListEmrMainVersionOutcomeCallable listEmrMainVersionCallable(const Model::ListEmrMainVersionRequest& request) const;
+			ListFlowOutcome listFlow(const Model::ListFlowRequest &request)const;
+			void listFlowAsync(const Model::ListFlowRequest& request, const ListFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListFlowOutcomeCallable listFlowCallable(const Model::ListFlowRequest& request) const;
+			ListFlowCategoryOutcome listFlowCategory(const Model::ListFlowCategoryRequest &request)const;
+			void listFlowCategoryAsync(const Model::ListFlowCategoryRequest& request, const ListFlowCategoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListFlowCategoryOutcomeCallable listFlowCategoryCallable(const Model::ListFlowCategoryRequest& request) const;
+			ListFlowClusterOutcome listFlowCluster(const Model::ListFlowClusterRequest &request)const;
+			void listFlowClusterAsync(const Model::ListFlowClusterRequest& request, const ListFlowClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListFlowClusterOutcomeCallable listFlowClusterCallable(const Model::ListFlowClusterRequest& request) const;
+			ListFlowClusterAllOutcome listFlowClusterAll(const Model::ListFlowClusterAllRequest &request)const;
+			void listFlowClusterAllAsync(const Model::ListFlowClusterAllRequest& request, const ListFlowClusterAllAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListFlowClusterAllOutcomeCallable listFlowClusterAllCallable(const Model::ListFlowClusterAllRequest& request) const;
+			ListFlowClusterAllHostsOutcome listFlowClusterAllHosts(const Model::ListFlowClusterAllHostsRequest &request)const;
+			void listFlowClusterAllHostsAsync(const Model::ListFlowClusterAllHostsRequest& request, const ListFlowClusterAllHostsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListFlowClusterAllHostsOutcomeCallable listFlowClusterAllHostsCallable(const Model::ListFlowClusterAllHostsRequest& request) const;
+			ListFlowClusterHostOutcome listFlowClusterHost(const Model::ListFlowClusterHostRequest &request)const;
+			void listFlowClusterHostAsync(const Model::ListFlowClusterHostRequest& request, const ListFlowClusterHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListFlowClusterHostOutcomeCallable listFlowClusterHostCallable(const Model::ListFlowClusterHostRequest& request) const;
+			ListFlowInstanceOutcome listFlowInstance(const Model::ListFlowInstanceRequest &request)const;
+			void listFlowInstanceAsync(const Model::ListFlowInstanceRequest& request, const ListFlowInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListFlowInstanceOutcomeCallable listFlowInstanceCallable(const Model::ListFlowInstanceRequest& request) const;
+			ListFlowJobOutcome listFlowJob(const Model::ListFlowJobRequest &request)const;
+			void listFlowJobAsync(const Model::ListFlowJobRequest& request, const ListFlowJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListFlowJobOutcomeCallable listFlowJobCallable(const Model::ListFlowJobRequest& request) const;
+			ListFlowJobHistoryOutcome listFlowJobHistory(const Model::ListFlowJobHistoryRequest &request)const;
+			void listFlowJobHistoryAsync(const Model::ListFlowJobHistoryRequest& request, const ListFlowJobHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListFlowJobHistoryOutcomeCallable listFlowJobHistoryCallable(const Model::ListFlowJobHistoryRequest& request) const;
+			ListFlowNodeInstanceOutcome listFlowNodeInstance(const Model::ListFlowNodeInstanceRequest &request)const;
+			void listFlowNodeInstanceAsync(const Model::ListFlowNodeInstanceRequest& request, const ListFlowNodeInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListFlowNodeInstanceOutcomeCallable listFlowNodeInstanceCallable(const Model::ListFlowNodeInstanceRequest& request) const;
+			ListFlowNodeInstanceContainerStatusOutcome listFlowNodeInstanceContainerStatus(const Model::ListFlowNodeInstanceContainerStatusRequest &request)const;
+			void listFlowNodeInstanceContainerStatusAsync(const Model::ListFlowNodeInstanceContainerStatusRequest& request, const ListFlowNodeInstanceContainerStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListFlowNodeInstanceContainerStatusOutcomeCallable listFlowNodeInstanceContainerStatusCallable(const Model::ListFlowNodeInstanceContainerStatusRequest& request) const;
+			ListFlowNodeSqlResultOutcome listFlowNodeSqlResult(const Model::ListFlowNodeSqlResultRequest &request)const;
+			void listFlowNodeSqlResultAsync(const Model::ListFlowNodeSqlResultRequest& request, const ListFlowNodeSqlResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListFlowNodeSqlResultOutcomeCallable listFlowNodeSqlResultCallable(const Model::ListFlowNodeSqlResultRequest& request) const;
+			ListFlowProjectOutcome listFlowProject(const Model::ListFlowProjectRequest &request)const;
+			void listFlowProjectAsync(const Model::ListFlowProjectRequest& request, const ListFlowProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListFlowProjectOutcomeCallable listFlowProjectCallable(const Model::ListFlowProjectRequest& request) const;
+			ListFlowProjectClusterSettingOutcome listFlowProjectClusterSetting(const Model::ListFlowProjectClusterSettingRequest &request)const;
+			void listFlowProjectClusterSettingAsync(const Model::ListFlowProjectClusterSettingRequest& request, const ListFlowProjectClusterSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListFlowProjectClusterSettingOutcomeCallable listFlowProjectClusterSettingCallable(const Model::ListFlowProjectClusterSettingRequest& request) const;
+			ListFlowProjectUserOutcome listFlowProjectUser(const Model::ListFlowProjectUserRequest &request)const;
+			void listFlowProjectUserAsync(const Model::ListFlowProjectUserRequest& request, const ListFlowProjectUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListFlowProjectUserOutcomeCallable listFlowProjectUserCallable(const Model::ListFlowProjectUserRequest& request) const;
+			ListResourcePoolOutcome listResourcePool(const Model::ListResourcePoolRequest &request)const;
+			void listResourcePoolAsync(const Model::ListResourcePoolRequest& request, const ListResourcePoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListResourcePoolOutcomeCallable listResourcePoolCallable(const Model::ListResourcePoolRequest& request) const;
+			ListScalingActivityV2Outcome listScalingActivityV2(const Model::ListScalingActivityV2Request &request)const;
+			void listScalingActivityV2Async(const Model::ListScalingActivityV2Request& request, const ListScalingActivityV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListScalingActivityV2OutcomeCallable listScalingActivityV2Callable(const Model::ListScalingActivityV2Request& request) const;
+			ListScalingConfigItemV2Outcome listScalingConfigItemV2(const Model::ListScalingConfigItemV2Request &request)const;
+			void listScalingConfigItemV2Async(const Model::ListScalingConfigItemV2Request& request, const ListScalingConfigItemV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListScalingConfigItemV2OutcomeCallable listScalingConfigItemV2Callable(const Model::ListScalingConfigItemV2Request& request) const;
+			ListScalingGroupV2Outcome listScalingGroupV2(const Model::ListScalingGroupV2Request &request)const;
+			void listScalingGroupV2Async(const Model::ListScalingGroupV2Request& request, const ListScalingGroupV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListScalingGroupV2OutcomeCallable listScalingGroupV2Callable(const Model::ListScalingGroupV2Request& request) const;
 			ListTagResourcesOutcome listTagResources(const Model::ListTagResourcesRequest &request)const;
 			void listTagResourcesAsync(const Model::ListTagResourcesRequest& request, const ListTagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListTagResourcesOutcomeCallable listTagResourcesCallable(const Model::ListTagResourcesRequest& request) const;
-			ReleaseOnKubeClusterOutcome releaseOnKubeCluster(const Model::ReleaseOnKubeClusterRequest &request)const;
-			void releaseOnKubeClusterAsync(const Model::ReleaseOnKubeClusterRequest& request, const ReleaseOnKubeClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ReleaseOnKubeClusterOutcomeCallable releaseOnKubeClusterCallable(const Model::ReleaseOnKubeClusterRequest& request) const;
-			RunApplicationActionOutcome runApplicationAction(const Model::RunApplicationActionRequest &request)const;
-			void runApplicationActionAsync(const Model::RunApplicationActionRequest& request, const RunApplicationActionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			RunApplicationActionOutcomeCallable runApplicationActionCallable(const Model::RunApplicationActionRequest& request) const;
-			RunScalingActionOutcome runScalingAction(const Model::RunScalingActionRequest &request)const;
-			void runScalingActionAsync(const Model::RunScalingActionRequest& request, const RunScalingActionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			RunScalingActionOutcomeCallable runScalingActionCallable(const Model::RunScalingActionRequest& request) const;
+			ModifyClusterNameOutcome modifyClusterName(const Model::ModifyClusterNameRequest &request)const;
+			void modifyClusterNameAsync(const Model::ModifyClusterNameRequest& request, const ModifyClusterNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyClusterNameOutcomeCallable modifyClusterNameCallable(const Model::ModifyClusterNameRequest& request) const;
+			ModifyClusterServiceConfigOutcome modifyClusterServiceConfig(const Model::ModifyClusterServiceConfigRequest &request)const;
+			void modifyClusterServiceConfigAsync(const Model::ModifyClusterServiceConfigRequest& request, const ModifyClusterServiceConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyClusterServiceConfigOutcomeCallable modifyClusterServiceConfigCallable(const Model::ModifyClusterServiceConfigRequest& request) const;
+			ModifyClusterTemplateOutcome modifyClusterTemplate(const Model::ModifyClusterTemplateRequest &request)const;
+			void modifyClusterTemplateAsync(const Model::ModifyClusterTemplateRequest& request, const ModifyClusterTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyClusterTemplateOutcomeCallable modifyClusterTemplateCallable(const Model::ModifyClusterTemplateRequest& request) const;
+			ModifyFlowCategoryOutcome modifyFlowCategory(const Model::ModifyFlowCategoryRequest &request)const;
+			void modifyFlowCategoryAsync(const Model::ModifyFlowCategoryRequest& request, const ModifyFlowCategoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyFlowCategoryOutcomeCallable modifyFlowCategoryCallable(const Model::ModifyFlowCategoryRequest& request) const;
+			ModifyFlowForWebOutcome modifyFlowForWeb(const Model::ModifyFlowForWebRequest &request)const;
+			void modifyFlowForWebAsync(const Model::ModifyFlowForWebRequest& request, const ModifyFlowForWebAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyFlowForWebOutcomeCallable modifyFlowForWebCallable(const Model::ModifyFlowForWebRequest& request) const;
+			ModifyFlowProjectOutcome modifyFlowProject(const Model::ModifyFlowProjectRequest &request)const;
+			void modifyFlowProjectAsync(const Model::ModifyFlowProjectRequest& request, const ModifyFlowProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyFlowProjectOutcomeCallable modifyFlowProjectCallable(const Model::ModifyFlowProjectRequest& request) const;
+			ModifyFlowProjectClusterSettingOutcome modifyFlowProjectClusterSetting(const Model::ModifyFlowProjectClusterSettingRequest &request)const;
+			void modifyFlowProjectClusterSettingAsync(const Model::ModifyFlowProjectClusterSettingRequest& request, const ModifyFlowProjectClusterSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyFlowProjectClusterSettingOutcomeCallable modifyFlowProjectClusterSettingCallable(const Model::ModifyFlowProjectClusterSettingRequest& request) const;
+			ModifyResourcePoolOutcome modifyResourcePool(const Model::ModifyResourcePoolRequest &request)const;
+			void modifyResourcePoolAsync(const Model::ModifyResourcePoolRequest& request, const ModifyResourcePoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyResourcePoolOutcomeCallable modifyResourcePoolCallable(const Model::ModifyResourcePoolRequest& request) const;
+			ModifyResourcePoolSchedulerTypeOutcome modifyResourcePoolSchedulerType(const Model::ModifyResourcePoolSchedulerTypeRequest &request)const;
+			void modifyResourcePoolSchedulerTypeAsync(const Model::ModifyResourcePoolSchedulerTypeRequest& request, const ModifyResourcePoolSchedulerTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyResourcePoolSchedulerTypeOutcomeCallable modifyResourcePoolSchedulerTypeCallable(const Model::ModifyResourcePoolSchedulerTypeRequest& request) const;
+			ModifyResourceQueueOutcome modifyResourceQueue(const Model::ModifyResourceQueueRequest &request)const;
+			void modifyResourceQueueAsync(const Model::ModifyResourceQueueRequest& request, const ModifyResourceQueueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyResourceQueueOutcomeCallable modifyResourceQueueCallable(const Model::ModifyResourceQueueRequest& request) const;
+			ModifyScalingConfigItemV2Outcome modifyScalingConfigItemV2(const Model::ModifyScalingConfigItemV2Request &request)const;
+			void modifyScalingConfigItemV2Async(const Model::ModifyScalingConfigItemV2Request& request, const ModifyScalingConfigItemV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyScalingConfigItemV2OutcomeCallable modifyScalingConfigItemV2Callable(const Model::ModifyScalingConfigItemV2Request& request) const;
+			ModifyScalingGroupV2Outcome modifyScalingGroupV2(const Model::ModifyScalingGroupV2Request &request)const;
+			void modifyScalingGroupV2Async(const Model::ModifyScalingGroupV2Request& request, const ModifyScalingGroupV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyScalingGroupV2OutcomeCallable modifyScalingGroupV2Callable(const Model::ModifyScalingGroupV2Request& request) const;
+			RefreshClusterResourcePoolOutcome refreshClusterResourcePool(const Model::RefreshClusterResourcePoolRequest &request)const;
+			void refreshClusterResourcePoolAsync(const Model::RefreshClusterResourcePoolRequest& request, const RefreshClusterResourcePoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RefreshClusterResourcePoolOutcomeCallable refreshClusterResourcePoolCallable(const Model::RefreshClusterResourcePoolRequest& request) const;
+			ReleaseClusterOutcome releaseCluster(const Model::ReleaseClusterRequest &request)const;
+			void releaseClusterAsync(const Model::ReleaseClusterRequest& request, const ReleaseClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ReleaseClusterOutcomeCallable releaseClusterCallable(const Model::ReleaseClusterRequest& request) const;
+			ReleaseClusterHostGroupOutcome releaseClusterHostGroup(const Model::ReleaseClusterHostGroupRequest &request)const;
+			void releaseClusterHostGroupAsync(const Model::ReleaseClusterHostGroupRequest& request, const ReleaseClusterHostGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ReleaseClusterHostGroupOutcomeCallable releaseClusterHostGroupCallable(const Model::ReleaseClusterHostGroupRequest& request) const;
+			RemoveScalingConfigItemV2Outcome removeScalingConfigItemV2(const Model::RemoveScalingConfigItemV2Request &request)const;
+			void removeScalingConfigItemV2Async(const Model::RemoveScalingConfigItemV2Request& request, const RemoveScalingConfigItemV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RemoveScalingConfigItemV2OutcomeCallable removeScalingConfigItemV2Callable(const Model::RemoveScalingConfigItemV2Request& request) const;
+			RerunFlowOutcome rerunFlow(const Model::RerunFlowRequest &request)const;
+			void rerunFlowAsync(const Model::RerunFlowRequest& request, const RerunFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RerunFlowOutcomeCallable rerunFlowCallable(const Model::RerunFlowRequest& request) const;
+			ResizeClusterV2Outcome resizeClusterV2(const Model::ResizeClusterV2Request &request)const;
+			void resizeClusterV2Async(const Model::ResizeClusterV2Request& request, const ResizeClusterV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ResizeClusterV2OutcomeCallable resizeClusterV2Callable(const Model::ResizeClusterV2Request& request) const;
+			ResumeFlowOutcome resumeFlow(const Model::ResumeFlowRequest &request)const;
+			void resumeFlowAsync(const Model::ResumeFlowRequest& request, const ResumeFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ResumeFlowOutcomeCallable resumeFlowCallable(const Model::ResumeFlowRequest& request) const;
+			RunClusterServiceActionOutcome runClusterServiceAction(const Model::RunClusterServiceActionRequest &request)const;
+			void runClusterServiceActionAsync(const Model::RunClusterServiceActionRequest& request, const RunClusterServiceActionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RunClusterServiceActionOutcomeCallable runClusterServiceActionCallable(const Model::RunClusterServiceActionRequest& request) const;
+			RunScalingActionV2Outcome runScalingActionV2(const Model::RunScalingActionV2Request &request)const;
+			void runScalingActionV2Async(const Model::RunScalingActionV2Request& request, const RunScalingActionV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RunScalingActionV2OutcomeCallable runScalingActionV2Callable(const Model::RunScalingActionV2Request& request) const;
+			StartFlowOutcome startFlow(const Model::StartFlowRequest &request)const;
+			void startFlowAsync(const Model::StartFlowRequest& request, const StartFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			StartFlowOutcomeCallable startFlowCallable(const Model::StartFlowRequest& request) const;
+			SubmitFlowOutcome submitFlow(const Model::SubmitFlowRequest &request)const;
+			void submitFlowAsync(const Model::SubmitFlowRequest& request, const SubmitFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SubmitFlowOutcomeCallable submitFlowCallable(const Model::SubmitFlowRequest& request) const;
+			SubmitFlowJobOutcome submitFlowJob(const Model::SubmitFlowJobRequest &request)const;
+			void submitFlowJobAsync(const Model::SubmitFlowJobRequest& request, const SubmitFlowJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SubmitFlowJobOutcomeCallable submitFlowJobCallable(const Model::SubmitFlowJobRequest& request) const;
+			SuspendFlowOutcome suspendFlow(const Model::SuspendFlowRequest &request)const;
+			void suspendFlowAsync(const Model::SuspendFlowRequest& request, const SuspendFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SuspendFlowOutcomeCallable suspendFlowCallable(const Model::SuspendFlowRequest& request) const;
 			TagResourcesOutcome tagResources(const Model::TagResourcesRequest &request)const;
 			void tagResourcesAsync(const Model::TagResourcesRequest& request, const TagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			TagResourcesOutcomeCallable tagResourcesCallable(const Model::TagResourcesRequest& request) const;
-			TagResourcesSystemTagsOutcome tagResourcesSystemTags(const Model::TagResourcesSystemTagsRequest &request)const;
-			void tagResourcesSystemTagsAsync(const Model::TagResourcesSystemTagsRequest& request, const TagResourcesSystemTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			TagResourcesSystemTagsOutcomeCallable tagResourcesSystemTagsCallable(const Model::TagResourcesSystemTagsRequest& request) const;
-			TerminateOperationOutcome terminateOperation(const Model::TerminateOperationRequest &request)const;
-			void terminateOperationAsync(const Model::TerminateOperationRequest& request, const TerminateOperationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			TerminateOperationOutcomeCallable terminateOperationCallable(const Model::TerminateOperationRequest& request) const;
 			UntagResourcesOutcome untagResources(const Model::UntagResourcesRequest &request)const;
 			void untagResourcesAsync(const Model::UntagResourcesRequest& request, const UntagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UntagResourcesOutcomeCallable untagResourcesCallable(const Model::UntagResourcesRequest& request) const;
-			UntagResourcesSystemTagsOutcome untagResourcesSystemTags(const Model::UntagResourcesSystemTagsRequest &request)const;
-			void untagResourcesSystemTagsAsync(const Model::UntagResourcesSystemTagsRequest& request, const UntagResourcesSystemTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			UntagResourcesSystemTagsOutcomeCallable untagResourcesSystemTagsCallable(const Model::UntagResourcesSystemTagsRequest& request) const;
-			UpdateAckClusterNodePoolsOutcome updateAckClusterNodePools(const Model::UpdateAckClusterNodePoolsRequest &request)const;
-			void updateAckClusterNodePoolsAsync(const Model::UpdateAckClusterNodePoolsRequest& request, const UpdateAckClusterNodePoolsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			UpdateAckClusterNodePoolsOutcomeCallable updateAckClusterNodePoolsCallable(const Model::UpdateAckClusterNodePoolsRequest& request) const;
-			UpdateAckClusterNodesOutcome updateAckClusterNodes(const Model::UpdateAckClusterNodesRequest &request)const;
-			void updateAckClusterNodesAsync(const Model::UpdateAckClusterNodesRequest& request, const UpdateAckClusterNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			UpdateAckClusterNodesOutcomeCallable updateAckClusterNodesCallable(const Model::UpdateAckClusterNodesRequest& request) const;
-			UpdateApplicationConfigsOutcome updateApplicationConfigs(const Model::UpdateApplicationConfigsRequest &request)const;
-			void updateApplicationConfigsAsync(const Model::UpdateApplicationConfigsRequest& request, const UpdateApplicationConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			UpdateApplicationConfigsOutcomeCallable updateApplicationConfigsCallable(const Model::UpdateApplicationConfigsRequest& request) const;
-			UpdateAutoScalingRuleOutcome updateAutoScalingRule(const Model::UpdateAutoScalingRuleRequest &request)const;
-			void updateAutoScalingRuleAsync(const Model::UpdateAutoScalingRuleRequest& request, const UpdateAutoScalingRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			UpdateAutoScalingRuleOutcomeCallable updateAutoScalingRuleCallable(const Model::UpdateAutoScalingRuleRequest& request) const;
-			UpdateClusterAttributeOutcome updateClusterAttribute(const Model::UpdateClusterAttributeRequest &request)const;
-			void updateClusterAttributeAsync(const Model::UpdateClusterAttributeRequest& request, const UpdateClusterAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			UpdateClusterAttributeOutcomeCallable updateClusterAttributeCallable(const Model::UpdateClusterAttributeRequest& request) const;
-			UpdateClusterScriptOutcome updateClusterScript(const Model::UpdateClusterScriptRequest &request)const;
-			void updateClusterScriptAsync(const Model::UpdateClusterScriptRequest& request, const UpdateClusterScriptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			UpdateClusterScriptOutcomeCallable updateClusterScriptCallable(const Model::UpdateClusterScriptRequest& request) const;
-			UpdateOnKubeClusterDedicatedNodePoolsOutcome updateOnKubeClusterDedicatedNodePools(const Model::UpdateOnKubeClusterDedicatedNodePoolsRequest &request)const;
-			void updateOnKubeClusterDedicatedNodePoolsAsync(const Model::UpdateOnKubeClusterDedicatedNodePoolsRequest& request, const UpdateOnKubeClusterDedicatedNodePoolsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			UpdateOnKubeClusterDedicatedNodePoolsOutcomeCallable updateOnKubeClusterDedicatedNodePoolsCallable(const Model::UpdateOnKubeClusterDedicatedNodePoolsRequest& request) const;
-			UpdateOnKubeClusterDedicatedNodesOutcome updateOnKubeClusterDedicatedNodes(const Model::UpdateOnKubeClusterDedicatedNodesRequest &request)const;
-			void updateOnKubeClusterDedicatedNodesAsync(const Model::UpdateOnKubeClusterDedicatedNodesRequest& request, const UpdateOnKubeClusterDedicatedNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			UpdateOnKubeClusterDedicatedNodesOutcomeCallable updateOnKubeClusterDedicatedNodesCallable(const Model::UpdateOnKubeClusterDedicatedNodesRequest& request) const;
-			UpdateScalingGroupOutcome updateScalingGroup(const Model::UpdateScalingGroupRequest &request)const;
-			void updateScalingGroupAsync(const Model::UpdateScalingGroupRequest& request, const UpdateScalingGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			UpdateScalingGroupOutcomeCallable updateScalingGroupCallable(const Model::UpdateScalingGroupRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

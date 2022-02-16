@@ -53,32 +53,9 @@ void ListTagResourcesResult::parse(const std::string &payload)
 			tagResourcesObject.resourceId = valueTagResourcesTagResource["ResourceId"].asString();
 		tagResources_.push_back(tagResourcesObject);
 	}
-	auto allDataNode = value["Data"]["TagResource"];
-	for (auto valueDataTagResource : allDataNode)
-	{
-		TagResource dataObject;
-		if(!valueDataTagResource["TagKey"].isNull())
-			dataObject.tagKey = valueDataTagResource["TagKey"].asString();
-		if(!valueDataTagResource["TagValue"].isNull())
-			dataObject.tagValue = valueDataTagResource["TagValue"].asString();
-		if(!valueDataTagResource["ResourceType"].isNull())
-			dataObject.resourceType = valueDataTagResource["ResourceType"].asString();
-		if(!valueDataTagResource["ResourceId"].isNull())
-			dataObject.resourceId = valueDataTagResource["ResourceId"].asString();
-		data_.push_back(dataObject);
-	}
 	if(!value["NextToken"].isNull())
 		nextToken_ = value["NextToken"].asString();
-	if(!value["MaxResults"].isNull())
-		maxResults_ = std::stoi(value["MaxResults"].asString());
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
 
-}
-
-int ListTagResourcesResult::getTotalCount()const
-{
-	return totalCount_;
 }
 
 std::string ListTagResourcesResult::getNextToken()const
@@ -89,15 +66,5 @@ std::string ListTagResourcesResult::getNextToken()const
 std::vector<ListTagResourcesResult::TagResource> ListTagResourcesResult::getTagResources()const
 {
 	return tagResources_;
-}
-
-int ListTagResourcesResult::getMaxResults()const
-{
-	return maxResults_;
-}
-
-std::vector<ListTagResourcesResult::TagResource> ListTagResourcesResult::getData()const
-{
-	return data_;
 }
 
