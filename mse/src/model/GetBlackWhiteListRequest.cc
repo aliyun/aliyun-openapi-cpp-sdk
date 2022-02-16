@@ -52,6 +52,15 @@ void GetBlackWhiteListRequest::setResourceType(const std::string &resourceType) 
   setParameter(std::string("ResourceType"), resourceType);
 }
 
+bool GetBlackWhiteListRequest::getIsWhite() const {
+  return isWhite_;
+}
+
+void GetBlackWhiteListRequest::setIsWhite(bool isWhite) {
+  isWhite_ = isWhite;
+  setParameter(std::string("IsWhite"), isWhite ? "true" : "false");
+}
+
 std::string GetBlackWhiteListRequest::getAcceptLanguage() const {
   return acceptLanguage_;
 }

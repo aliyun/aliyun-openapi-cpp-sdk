@@ -36,6 +36,8 @@ public:
 	void setType(const std::string &type);
 	std::string getResourceType() const;
 	void setResourceType(const std::string &resourceType);
+	bool getIsWhite() const;
+	void setIsWhite(bool isWhite);
 	std::string getAcceptLanguage() const;
 	void setAcceptLanguage(const std::string &acceptLanguage);
 
@@ -43,6 +45,7 @@ private:
 	std::string gatewayUniqueId_;
 	std::string type_;
 	std::string resourceType_;
+	bool isWhite_;
 	std::string acceptLanguage_;
 };
 } // namespace Model

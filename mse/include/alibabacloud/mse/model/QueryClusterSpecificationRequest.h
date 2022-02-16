@@ -30,10 +30,13 @@ class ALIBABACLOUD_MSE_EXPORT QueryClusterSpecificationRequest : public RpcServi
 public:
 	QueryClusterSpecificationRequest();
 	~QueryClusterSpecificationRequest();
+	std::string getConnectType() const;
+	void setConnectType(const std::string &connectType);
 	std::string getAcceptLanguage() const;
 	void setAcceptLanguage(const std::string &acceptLanguage);
 
 private:
+	std::string connectType_;
 	std::string acceptLanguage_;
 };
 } // namespace Model

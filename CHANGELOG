@@ -1,3 +1,6 @@
+2022-02-16 Version: 1.36.1054
+- Fix normandy query api.
+
 2022-02-11 Version: 1.36.1053
 - Add OTA API, including ReupgradeOTATask.
 

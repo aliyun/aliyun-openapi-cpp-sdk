@@ -25,6 +25,15 @@ QueryClusterSpecificationRequest::QueryClusterSpecificationRequest()
 
 QueryClusterSpecificationRequest::~QueryClusterSpecificationRequest() {}
 
+std::string QueryClusterSpecificationRequest::getConnectType() const {
+  return connectType_;
+}
+
+void QueryClusterSpecificationRequest::setConnectType(const std::string &connectType) {
+  connectType_ = connectType;
+  setParameter(std::string("ConnectType"), connectType);
+}
+
 std::string QueryClusterSpecificationRequest::getAcceptLanguage() const {
   return acceptLanguage_;
 }

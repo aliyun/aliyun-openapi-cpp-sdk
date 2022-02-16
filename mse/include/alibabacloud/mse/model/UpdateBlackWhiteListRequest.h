@@ -36,6 +36,8 @@ public:
 	void setType(const std::string &type);
 	std::string getContent() const;
 	void setContent(const std::string &content);
+	bool getIsWhite() const;
+	void setIsWhite(bool isWhite);
 	long getId() const;
 	void setId(long id);
 	std::string getResourceType() const;
@@ -49,6 +51,7 @@ private:
 	std::string gatewayUniqueId_;
 	std::string type_;
 	std::string content_;
+	bool isWhite_;
 	long id_;
 	std::string resourceType_;
 	std::string acceptLanguage_;

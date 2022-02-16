@@ -52,6 +52,15 @@ void UpdateBlackWhiteListRequest::setContent(const std::string &content) {
   setParameter(std::string("Content"), content);
 }
 
+bool UpdateBlackWhiteListRequest::getIsWhite() const {
+  return isWhite_;
+}
+
+void UpdateBlackWhiteListRequest::setIsWhite(bool isWhite) {
+  isWhite_ = isWhite;
+  setParameter(std::string("IsWhite"), isWhite ? "true" : "false");
+}
+
 long UpdateBlackWhiteListRequest::getId() const {
   return id_;
 }

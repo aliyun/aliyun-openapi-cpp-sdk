@@ -25,6 +25,15 @@ ListClusterTypesRequest::ListClusterTypesRequest()
 
 ListClusterTypesRequest::~ListClusterTypesRequest() {}
 
+std::string ListClusterTypesRequest::getConnectType() const {
+  return connectType_;
+}
+
+void ListClusterTypesRequest::setConnectType(const std::string &connectType) {
+  connectType_ = connectType;
+  setParameter(std::string("ConnectType"), connectType);
+}
+
 std::string ListClusterTypesRequest::getRegionId() const {
   return regionId_;
 }
