@@ -35,29 +35,35 @@ namespace AlibabaCloud
 				UntagResourcesRequest();
 				~UntagResourcesRequest();
 
-				bool getAll()const;
-				void setAll(bool all);
-				long getResourceOwnerId()const;
-				void setResourceOwnerId(long resourceOwnerId);
-				std::vector<std::string> getResourceId()const;
-				void setResourceId(const std::vector<std::string>& resourceId);
-				std::string getResourceType()const;
-				void setResourceType(const std::string& resourceType);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getClientToken()const;
+				void setClientToken(const std::string& clientToken);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				std::vector<std::string> getTagKey()const;
-				void setTagKey(const std::vector<std::string>& tagKey);
+				bool getAll()const;
+				void setAll(bool all);
+				std::string getResourceType()const;
+				void setResourceType(const std::string& resourceType);
+				bool getUntagAll()const;
+				void setUntagAll(bool untagAll);
+				Array getTagKeys()const;
+				void setTagKeys(const Array& tagKeys);
+				std::string getSystemDebug()const;
+				void setSystemDebug(const std::string& systemDebug);
+				Array getTagKey()const;
+				void setTagKey(const Array& tagKey);
+				Array getResourceIds()const;
+				void setResourceIds(const Array& resourceIds);
 
             private:
-				bool all_;
-				long resourceOwnerId_;
-				std::vector<std::string> resourceId_;
-				std::string resourceType_;
-				std::string accessKeyId_;
+				std::string clientToken_;
 				std::string regionId_;
-				std::vector<std::string> tagKey_;
+				bool all_;
+				std::string resourceType_;
+				bool untagAll_;
+				Array tagKeys_;
+				std::string systemDebug_;
+				Array tagKey_;
+				Array resourceIds_;
 
 			};
 		}

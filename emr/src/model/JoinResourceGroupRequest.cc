@@ -19,7 +19,7 @@
 using AlibabaCloud::Emr::Model::JoinResourceGroupRequest;
 
 JoinResourceGroupRequest::JoinResourceGroupRequest() :
-	RpcServiceRequest("emr", "2016-04-08", "JoinResourceGroup")
+	RpcServiceRequest("emr", "2021-03-20", "JoinResourceGroup")
 {
 	setMethod(HttpRequest::Method::Post);
 }
@@ -27,15 +27,37 @@ JoinResourceGroupRequest::JoinResourceGroupRequest() :
 JoinResourceGroupRequest::~JoinResourceGroupRequest()
 {}
 
-long JoinResourceGroupRequest::getResourceOwnerId()const
+std::string JoinResourceGroupRequest::getClientToken()const
 {
-	return resourceOwnerId_;
+	return clientToken_;
 }
 
-void JoinResourceGroupRequest::setResourceOwnerId(long resourceOwnerId)
+void JoinResourceGroupRequest::setClientToken(const std::string& clientToken)
 {
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	clientToken_ = clientToken;
+	setParameter("ClientToken", clientToken);
+}
+
+std::string JoinResourceGroupRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void JoinResourceGroupRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
+std::string JoinResourceGroupRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void JoinResourceGroupRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
 }
 
 std::string JoinResourceGroupRequest::getResourceId()const
@@ -60,36 +82,14 @@ void JoinResourceGroupRequest::setResourceType(const std::string& resourceType)
 	setParameter("ResourceType", resourceType);
 }
 
-std::string JoinResourceGroupRequest::getAccessKeyId()const
+std::string JoinResourceGroupRequest::getSystemDebug()const
 {
-	return accessKeyId_;
+	return systemDebug_;
 }
 
-void JoinResourceGroupRequest::setAccessKeyId(const std::string& accessKeyId)
+void JoinResourceGroupRequest::setSystemDebug(const std::string& systemDebug)
 {
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-
-std::string JoinResourceGroupRequest::getResourceGroupId()const
-{
-	return resourceGroupId_;
-}
-
-void JoinResourceGroupRequest::setResourceGroupId(const std::string& resourceGroupId)
-{
-	resourceGroupId_ = resourceGroupId;
-	setParameter("ResourceGroupId", resourceGroupId);
-}
-
-std::string JoinResourceGroupRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void JoinResourceGroupRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	systemDebug_ = systemDebug;
+	setParameter("SystemDebug", systemDebug);
 }
 

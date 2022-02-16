@@ -44,14 +44,20 @@ namespace AlibabaCloud
 				ListTagResourcesResult();
 				explicit ListTagResourcesResult(const std::string &payload);
 				~ListTagResourcesResult();
+				int getTotalCount()const;
 				std::string getNextToken()const;
 				std::vector<TagResource> getTagResources()const;
+				int getMaxResults()const;
+				std::vector<TagResource> getData()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				int totalCount_;
 				std::string nextToken_;
 				std::vector<TagResource> tagResources_;
+				int maxResults_;
+				std::vector<TagResource> data_;
 
 			};
 		}

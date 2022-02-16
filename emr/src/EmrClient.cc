@@ -51,1728 +51,1188 @@ EmrClient::EmrClient(const std::string & accessKeyId, const std::string & access
 EmrClient::~EmrClient()
 {}
 
-EmrClient::AddClusterServiceOutcome EmrClient::addClusterService(const AddClusterServiceRequest &request) const
+EmrClient::AddApplicationOutcome EmrClient::addApplication(const AddApplicationRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return AddClusterServiceOutcome(endpointOutcome.error());
+		return AddApplicationOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return AddClusterServiceOutcome(AddClusterServiceResult(outcome.result()));
+		return AddApplicationOutcome(AddApplicationResult(outcome.result()));
 	else
-		return AddClusterServiceOutcome(outcome.error());
+		return AddApplicationOutcome(outcome.error());
 }
 
-void EmrClient::addClusterServiceAsync(const AddClusterServiceRequest& request, const AddClusterServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void EmrClient::addApplicationAsync(const AddApplicationRequest& request, const AddApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, addClusterService(request), context);
+		handler(this, request, addApplication(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-EmrClient::AddClusterServiceOutcomeCallable EmrClient::addClusterServiceCallable(const AddClusterServiceRequest &request) const
+EmrClient::AddApplicationOutcomeCallable EmrClient::addApplicationCallable(const AddApplicationRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<AddClusterServiceOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<AddApplicationOutcome()>>(
 			[this, request]()
 			{
-			return this->addClusterService(request);
+			return this->addApplication(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-EmrClient::AddScalingConfigItemV2Outcome EmrClient::addScalingConfigItemV2(const AddScalingConfigItemV2Request &request) const
+EmrClient::AddApplicationsOutcome EmrClient::addApplications(const AddApplicationsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return AddScalingConfigItemV2Outcome(endpointOutcome.error());
+		return AddApplicationsOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return AddScalingConfigItemV2Outcome(AddScalingConfigItemV2Result(outcome.result()));
+		return AddApplicationsOutcome(AddApplicationsResult(outcome.result()));
 	else
-		return AddScalingConfigItemV2Outcome(outcome.error());
+		return AddApplicationsOutcome(outcome.error());
 }
 
-void EmrClient::addScalingConfigItemV2Async(const AddScalingConfigItemV2Request& request, const AddScalingConfigItemV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void EmrClient::addApplicationsAsync(const AddApplicationsRequest& request, const AddApplicationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, addScalingConfigItemV2(request), context);
+		handler(this, request, addApplications(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-EmrClient::AddScalingConfigItemV2OutcomeCallable EmrClient::addScalingConfigItemV2Callable(const AddScalingConfigItemV2Request &request) const
+EmrClient::AddApplicationsOutcomeCallable EmrClient::addApplicationsCallable(const AddApplicationsRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<AddScalingConfigItemV2Outcome()>>(
+	auto task = std::make_shared<std::packaged_task<AddApplicationsOutcome()>>(
 			[this, request]()
 			{
-			return this->addScalingConfigItemV2(request);
+			return this->addApplications(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-EmrClient::CloneFlowOutcome EmrClient::cloneFlow(const CloneFlowRequest &request) const
+EmrClient::CancelOperationOrdersOutcome EmrClient::cancelOperationOrders(const CancelOperationOrdersRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return CloneFlowOutcome(endpointOutcome.error());
+		return CancelOperationOrdersOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return CloneFlowOutcome(CloneFlowResult(outcome.result()));
+		return CancelOperationOrdersOutcome(CancelOperationOrdersResult(outcome.result()));
 	else
-		return CloneFlowOutcome(outcome.error());
+		return CancelOperationOrdersOutcome(outcome.error());
 }
 
-void EmrClient::cloneFlowAsync(const CloneFlowRequest& request, const CloneFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void EmrClient::cancelOperationOrdersAsync(const CancelOperationOrdersRequest& request, const CancelOperationOrdersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, cloneFlow(request), context);
+		handler(this, request, cancelOperationOrders(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-EmrClient::CloneFlowOutcomeCallable EmrClient::cloneFlowCallable(const CloneFlowRequest &request) const
+EmrClient::CancelOperationOrdersOutcomeCallable EmrClient::cancelOperationOrdersCallable(const CancelOperationOrdersRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<CloneFlowOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<CancelOperationOrdersOutcome()>>(
 			[this, request]()
 			{
-			return this->cloneFlow(request);
+			return this->cancelOperationOrders(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-EmrClient::CloneFlowJobOutcome EmrClient::cloneFlowJob(const CloneFlowJobRequest &request) const
+EmrClient::CreateAutoScalingPolicyOutcome EmrClient::createAutoScalingPolicy(const CreateAutoScalingPolicyRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return CloneFlowJobOutcome(endpointOutcome.error());
+		return CreateAutoScalingPolicyOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return CloneFlowJobOutcome(CloneFlowJobResult(outcome.result()));
+		return CreateAutoScalingPolicyOutcome(CreateAutoScalingPolicyResult(outcome.result()));
 	else
-		return CloneFlowJobOutcome(outcome.error());
+		return CreateAutoScalingPolicyOutcome(outcome.error());
 }
 
-void EmrClient::cloneFlowJobAsync(const CloneFlowJobRequest& request, const CloneFlowJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void EmrClient::createAutoScalingPolicyAsync(const CreateAutoScalingPolicyRequest& request, const CreateAutoScalingPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, cloneFlowJob(request), context);
+		handler(this, request, createAutoScalingPolicy(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-EmrClient::CloneFlowJobOutcomeCallable EmrClient::cloneFlowJobCallable(const CloneFlowJobRequest &request) const
+EmrClient::CreateAutoScalingPolicyOutcomeCallable EmrClient::createAutoScalingPolicyCallable(const CreateAutoScalingPolicyRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<CloneFlowJobOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<CreateAutoScalingPolicyOutcome()>>(
 			[this, request]()
 			{
-			return this->cloneFlowJob(request);
+			return this->createAutoScalingPolicy(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-EmrClient::CreateClusterTemplateOutcome EmrClient::createClusterTemplate(const CreateClusterTemplateRequest &request) const
+EmrClient::CreateAutoScalingRuleOutcome EmrClient::createAutoScalingRule(const CreateAutoScalingRuleRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return CreateClusterTemplateOutcome(endpointOutcome.error());
+		return CreateAutoScalingRuleOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return CreateClusterTemplateOutcome(CreateClusterTemplateResult(outcome.result()));
+		return CreateAutoScalingRuleOutcome(CreateAutoScalingRuleResult(outcome.result()));
 	else
-		return CreateClusterTemplateOutcome(outcome.error());
+		return CreateAutoScalingRuleOutcome(outcome.error());
 }
 
-void EmrClient::createClusterTemplateAsync(const CreateClusterTemplateRequest& request, const CreateClusterTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void EmrClient::createAutoScalingRuleAsync(const CreateAutoScalingRuleRequest& request, const CreateAutoScalingRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, createClusterTemplate(request), context);
+		handler(this, request, createAutoScalingRule(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-EmrClient::CreateClusterTemplateOutcomeCallable EmrClient::createClusterTemplateCallable(const CreateClusterTemplateRequest &request) const
+EmrClient::CreateAutoScalingRuleOutcomeCallable EmrClient::createAutoScalingRuleCallable(const CreateAutoScalingRuleRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<CreateClusterTemplateOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<CreateAutoScalingRuleOutcome()>>(
 			[this, request]()
 			{
-			return this->createClusterTemplate(request);
+			return this->createAutoScalingRule(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-EmrClient::CreateClusterV2Outcome EmrClient::createClusterV2(const CreateClusterV2Request &request) const
+EmrClient::CreateClusterOutcome EmrClient::createCluster(const CreateClusterRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return CreateClusterV2Outcome(endpointOutcome.error());
+		return CreateClusterOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return CreateClusterV2Outcome(CreateClusterV2Result(outcome.result()));
+		return CreateClusterOutcome(CreateClusterResult(outcome.result()));
 	else
-		return CreateClusterV2Outcome(outcome.error());
+		return CreateClusterOutcome(outcome.error());
 }
 
-void EmrClient::createClusterV2Async(const CreateClusterV2Request& request, const CreateClusterV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void EmrClient::createClusterAsync(const CreateClusterRequest& request, const CreateClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, createClusterV2(request), context);
+		handler(this, request, createCluster(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-EmrClient::CreateClusterV2OutcomeCallable EmrClient::createClusterV2Callable(const CreateClusterV2Request &request) const
+EmrClient::CreateClusterOutcomeCallable EmrClient::createClusterCallable(const CreateClusterRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<CreateClusterV2Outcome()>>(
+	auto task = std::make_shared<std::packaged_task<CreateClusterOutcome()>>(
 			[this, request]()
 			{
-			return this->createClusterV2(request);
+			return this->createCluster(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-EmrClient::CreateClusterWithTemplateOutcome EmrClient::createClusterWithTemplate(const CreateClusterWithTemplateRequest &request) const
+EmrClient::CreateClusterScriptOutcome EmrClient::createClusterScript(const CreateClusterScriptRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return CreateClusterWithTemplateOutcome(endpointOutcome.error());
+		return CreateClusterScriptOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return CreateClusterWithTemplateOutcome(CreateClusterWithTemplateResult(outcome.result()));
+		return CreateClusterScriptOutcome(CreateClusterScriptResult(outcome.result()));
 	else
-		return CreateClusterWithTemplateOutcome(outcome.error());
+		return CreateClusterScriptOutcome(outcome.error());
 }
 
-void EmrClient::createClusterWithTemplateAsync(const CreateClusterWithTemplateRequest& request, const CreateClusterWithTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void EmrClient::createClusterScriptAsync(const CreateClusterScriptRequest& request, const CreateClusterScriptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, createClusterWithTemplate(request), context);
+		handler(this, request, createClusterScript(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-EmrClient::CreateClusterWithTemplateOutcomeCallable EmrClient::createClusterWithTemplateCallable(const CreateClusterWithTemplateRequest &request) const
+EmrClient::CreateClusterScriptOutcomeCallable EmrClient::createClusterScriptCallable(const CreateClusterScriptRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<CreateClusterWithTemplateOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<CreateClusterScriptOutcome()>>(
 			[this, request]()
 			{
-			return this->createClusterWithTemplate(request);
+			return this->createClusterScript(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-EmrClient::CreateFlowOutcome EmrClient::createFlow(const CreateFlowRequest &request) const
+EmrClient::CreateNodeGroupOutcome EmrClient::createNodeGroup(const CreateNodeGroupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return CreateFlowOutcome(endpointOutcome.error());
+		return CreateNodeGroupOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return CreateFlowOutcome(CreateFlowResult(outcome.result()));
+		return CreateNodeGroupOutcome(CreateNodeGroupResult(outcome.result()));
 	else
-		return CreateFlowOutcome(outcome.error());
+		return CreateNodeGroupOutcome(outcome.error());
 }
 
-void EmrClient::createFlowAsync(const CreateFlowRequest& request, const CreateFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void EmrClient::createNodeGroupAsync(const CreateNodeGroupRequest& request, const CreateNodeGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, createFlow(request), context);
+		handler(this, request, createNodeGroup(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-EmrClient::CreateFlowOutcomeCallable EmrClient::createFlowCallable(const CreateFlowRequest &request) const
+EmrClient::CreateNodeGroupOutcomeCallable EmrClient::createNodeGroupCallable(const CreateNodeGroupRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<CreateFlowOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<CreateNodeGroupOutcome()>>(
 			[this, request]()
 			{
-			return this->createFlow(request);
+			return this->createNodeGroup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-EmrClient::CreateFlowCategoryOutcome EmrClient::createFlowCategory(const CreateFlowCategoryRequest &request) const
+EmrClient::CreateOnAckClusterOutcome EmrClient::createOnAckCluster(const CreateOnAckClusterRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return CreateFlowCategoryOutcome(endpointOutcome.error());
+		return CreateOnAckClusterOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return CreateFlowCategoryOutcome(CreateFlowCategoryResult(outcome.result()));
+		return CreateOnAckClusterOutcome(CreateOnAckClusterResult(outcome.result()));
 	else
-		return CreateFlowCategoryOutcome(outcome.error());
+		return CreateOnAckClusterOutcome(outcome.error());
 }
 
-void EmrClient::createFlowCategoryAsync(const CreateFlowCategoryRequest& request, const CreateFlowCategoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void EmrClient::createOnAckClusterAsync(const CreateOnAckClusterRequest& request, const CreateOnAckClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, createFlowCategory(request), context);
+		handler(this, request, createOnAckCluster(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-EmrClient::CreateFlowCategoryOutcomeCallable EmrClient::createFlowCategoryCallable(const CreateFlowCategoryRequest &request) const
+EmrClient::CreateOnAckClusterOutcomeCallable EmrClient::createOnAckClusterCallable(const CreateOnAckClusterRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<CreateFlowCategoryOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<CreateOnAckClusterOutcome()>>(
 			[this, request]()
 			{
-			return this->createFlowCategory(request);
+			return this->createOnAckCluster(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-EmrClient::CreateFlowForWebOutcome EmrClient::createFlowForWeb(const CreateFlowForWebRequest &request) const
+EmrClient::CreateOnKubeClusterOutcome EmrClient::createOnKubeCluster(const CreateOnKubeClusterRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return CreateFlowForWebOutcome(endpointOutcome.error());
+		return CreateOnKubeClusterOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return CreateFlowForWebOutcome(CreateFlowForWebResult(outcome.result()));
+		return CreateOnKubeClusterOutcome(CreateOnKubeClusterResult(outcome.result()));
 	else
-		return CreateFlowForWebOutcome(outcome.error());
+		return CreateOnKubeClusterOutcome(outcome.error());
 }
 
-void EmrClient::createFlowForWebAsync(const CreateFlowForWebRequest& request, const CreateFlowForWebAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void EmrClient::createOnKubeClusterAsync(const CreateOnKubeClusterRequest& request, const CreateOnKubeClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, createFlowForWeb(request), context);
+		handler(this, request, createOnKubeCluster(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-EmrClient::CreateFlowForWebOutcomeCallable EmrClient::createFlowForWebCallable(const CreateFlowForWebRequest &request) const
+EmrClient::CreateOnKubeClusterOutcomeCallable EmrClient::createOnKubeClusterCallable(const CreateOnKubeClusterRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<CreateFlowForWebOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<CreateOnKubeClusterOutcome()>>(
 			[this, request]()
 			{
-			return this->createFlowForWeb(request);
+			return this->createOnKubeCluster(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-EmrClient::CreateFlowJobOutcome EmrClient::createFlowJob(const CreateFlowJobRequest &request) const
+EmrClient::CreateScalingGroupOutcome EmrClient::createScalingGroup(const CreateScalingGroupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return CreateFlowJobOutcome(endpointOutcome.error());
+		return CreateScalingGroupOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return CreateFlowJobOutcome(CreateFlowJobResult(outcome.result()));
+		return CreateScalingGroupOutcome(CreateScalingGroupResult(outcome.result()));
 	else
-		return CreateFlowJobOutcome(outcome.error());
+		return CreateScalingGroupOutcome(outcome.error());
 }
 
-void EmrClient::createFlowJobAsync(const CreateFlowJobRequest& request, const CreateFlowJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void EmrClient::createScalingGroupAsync(const CreateScalingGroupRequest& request, const CreateScalingGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, createFlowJob(request), context);
+		handler(this, request, createScalingGroup(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-EmrClient::CreateFlowJobOutcomeCallable EmrClient::createFlowJobCallable(const CreateFlowJobRequest &request) const
+EmrClient::CreateScalingGroupOutcomeCallable EmrClient::createScalingGroupCallable(const CreateScalingGroupRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<CreateFlowJobOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<CreateScalingGroupOutcome()>>(
 			[this, request]()
 			{
-			return this->createFlowJob(request);
+			return this->createScalingGroup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-EmrClient::CreateFlowProjectOutcome EmrClient::createFlowProject(const CreateFlowProjectRequest &request) const
+EmrClient::DecreaseNodesOutcome EmrClient::decreaseNodes(const DecreaseNodesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return CreateFlowProjectOutcome(endpointOutcome.error());
+		return DecreaseNodesOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return CreateFlowProjectOutcome(CreateFlowProjectResult(outcome.result()));
+		return DecreaseNodesOutcome(DecreaseNodesResult(outcome.result()));
 	else
-		return CreateFlowProjectOutcome(outcome.error());
+		return DecreaseNodesOutcome(outcome.error());
 }
 
-void EmrClient::createFlowProjectAsync(const CreateFlowProjectRequest& request, const CreateFlowProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void EmrClient::decreaseNodesAsync(const DecreaseNodesRequest& request, const DecreaseNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, createFlowProject(request), context);
+		handler(this, request, decreaseNodes(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-EmrClient::CreateFlowProjectOutcomeCallable EmrClient::createFlowProjectCallable(const CreateFlowProjectRequest &request) const
+EmrClient::DecreaseNodesOutcomeCallable EmrClient::decreaseNodesCallable(const DecreaseNodesRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<CreateFlowProjectOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DecreaseNodesOutcome()>>(
 			[this, request]()
 			{
-			return this->createFlowProject(request);
+			return this->decreaseNodes(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-EmrClient::CreateFlowProjectClusterSettingOutcome EmrClient::createFlowProjectClusterSetting(const CreateFlowProjectClusterSettingRequest &request) const
+EmrClient::DeleteAutoScalingPolicyOutcome EmrClient::deleteAutoScalingPolicy(const DeleteAutoScalingPolicyRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return CreateFlowProjectClusterSettingOutcome(endpointOutcome.error());
+		return DeleteAutoScalingPolicyOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return CreateFlowProjectClusterSettingOutcome(CreateFlowProjectClusterSettingResult(outcome.result()));
+		return DeleteAutoScalingPolicyOutcome(DeleteAutoScalingPolicyResult(outcome.result()));
 	else
-		return CreateFlowProjectClusterSettingOutcome(outcome.error());
+		return DeleteAutoScalingPolicyOutcome(outcome.error());
 }
 
-void EmrClient::createFlowProjectClusterSettingAsync(const CreateFlowProjectClusterSettingRequest& request, const CreateFlowProjectClusterSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void EmrClient::deleteAutoScalingPolicyAsync(const DeleteAutoScalingPolicyRequest& request, const DeleteAutoScalingPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, createFlowProjectClusterSetting(request), context);
+		handler(this, request, deleteAutoScalingPolicy(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-EmrClient::CreateFlowProjectClusterSettingOutcomeCallable EmrClient::createFlowProjectClusterSettingCallable(const CreateFlowProjectClusterSettingRequest &request) const
+EmrClient::DeleteAutoScalingPolicyOutcomeCallable EmrClient::deleteAutoScalingPolicyCallable(const DeleteAutoScalingPolicyRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<CreateFlowProjectClusterSettingOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DeleteAutoScalingPolicyOutcome()>>(
 			[this, request]()
 			{
-			return this->createFlowProjectClusterSetting(request);
+			return this->deleteAutoScalingPolicy(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-EmrClient::CreateFlowProjectUserOutcome EmrClient::createFlowProjectUser(const CreateFlowProjectUserRequest &request) const
+EmrClient::DeleteAutoScalingRuleOutcome EmrClient::deleteAutoScalingRule(const DeleteAutoScalingRuleRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return CreateFlowProjectUserOutcome(endpointOutcome.error());
+		return DeleteAutoScalingRuleOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return CreateFlowProjectUserOutcome(CreateFlowProjectUserResult(outcome.result()));
+		return DeleteAutoScalingRuleOutcome(DeleteAutoScalingRuleResult(outcome.result()));
 	else
-		return CreateFlowProjectUserOutcome(outcome.error());
+		return DeleteAutoScalingRuleOutcome(outcome.error());
 }
 
-void EmrClient::createFlowProjectUserAsync(const CreateFlowProjectUserRequest& request, const CreateFlowProjectUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void EmrClient::deleteAutoScalingRuleAsync(const DeleteAutoScalingRuleRequest& request, const DeleteAutoScalingRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, createFlowProjectUser(request), context);
+		handler(this, request, deleteAutoScalingRule(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-EmrClient::CreateFlowProjectUserOutcomeCallable EmrClient::createFlowProjectUserCallable(const CreateFlowProjectUserRequest &request) const
+EmrClient::DeleteAutoScalingRuleOutcomeCallable EmrClient::deleteAutoScalingRuleCallable(const DeleteAutoScalingRuleRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<CreateFlowProjectUserOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DeleteAutoScalingRuleOutcome()>>(
 			[this, request]()
 			{
-			return this->createFlowProjectUser(request);
+			return this->deleteAutoScalingRule(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-EmrClient::CreateResourcePoolOutcome EmrClient::createResourcePool(const CreateResourcePoolRequest &request) const
+EmrClient::DeleteClusterOutcome EmrClient::deleteCluster(const DeleteClusterRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return CreateResourcePoolOutcome(endpointOutcome.error());
+		return DeleteClusterOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return CreateResourcePoolOutcome(CreateResourcePoolResult(outcome.result()));
+		return DeleteClusterOutcome(DeleteClusterResult(outcome.result()));
 	else
-		return CreateResourcePoolOutcome(outcome.error());
+		return DeleteClusterOutcome(outcome.error());
 }
 
-void EmrClient::createResourcePoolAsync(const CreateResourcePoolRequest& request, const CreateResourcePoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void EmrClient::deleteClusterAsync(const DeleteClusterRequest& request, const DeleteClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, createResourcePool(request), context);
+		handler(this, request, deleteCluster(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-EmrClient::CreateResourcePoolOutcomeCallable EmrClient::createResourcePoolCallable(const CreateResourcePoolRequest &request) const
+EmrClient::DeleteClusterOutcomeCallable EmrClient::deleteClusterCallable(const DeleteClusterRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<CreateResourcePoolOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DeleteClusterOutcome()>>(
 			[this, request]()
 			{
-			return this->createResourcePool(request);
+			return this->deleteCluster(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-EmrClient::CreateResourceQueueOutcome EmrClient::createResourceQueue(const CreateResourceQueueRequest &request) const
+EmrClient::DeleteClusterScriptOutcome EmrClient::deleteClusterScript(const DeleteClusterScriptRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return CreateResourceQueueOutcome(endpointOutcome.error());
+		return DeleteClusterScriptOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return CreateResourceQueueOutcome(CreateResourceQueueResult(outcome.result()));
+		return DeleteClusterScriptOutcome(DeleteClusterScriptResult(outcome.result()));
 	else
-		return CreateResourceQueueOutcome(outcome.error());
+		return DeleteClusterScriptOutcome(outcome.error());
 }
 
-void EmrClient::createResourceQueueAsync(const CreateResourceQueueRequest& request, const CreateResourceQueueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void EmrClient::deleteClusterScriptAsync(const DeleteClusterScriptRequest& request, const DeleteClusterScriptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, createResourceQueue(request), context);
+		handler(this, request, deleteClusterScript(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-EmrClient::CreateResourceQueueOutcomeCallable EmrClient::createResourceQueueCallable(const CreateResourceQueueRequest &request) const
+EmrClient::DeleteClusterScriptOutcomeCallable EmrClient::deleteClusterScriptCallable(const DeleteClusterScriptRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<CreateResourceQueueOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DeleteClusterScriptOutcome()>>(
 			[this, request]()
 			{
-			return this->createResourceQueue(request);
+			return this->deleteClusterScript(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-EmrClient::CreateScalingGroupV2Outcome EmrClient::createScalingGroupV2(const CreateScalingGroupV2Request &request) const
+EmrClient::DeleteNodeGroupOutcome EmrClient::deleteNodeGroup(const DeleteNodeGroupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return CreateScalingGroupV2Outcome(endpointOutcome.error());
+		return DeleteNodeGroupOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return CreateScalingGroupV2Outcome(CreateScalingGroupV2Result(outcome.result()));
+		return DeleteNodeGroupOutcome(DeleteNodeGroupResult(outcome.result()));
 	else
-		return CreateScalingGroupV2Outcome(outcome.error());
+		return DeleteNodeGroupOutcome(outcome.error());
 }
 
-void EmrClient::createScalingGroupV2Async(const CreateScalingGroupV2Request& request, const CreateScalingGroupV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void EmrClient::deleteNodeGroupAsync(const DeleteNodeGroupRequest& request, const DeleteNodeGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, createScalingGroupV2(request), context);
+		handler(this, request, deleteNodeGroup(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-EmrClient::CreateScalingGroupV2OutcomeCallable EmrClient::createScalingGroupV2Callable(const CreateScalingGroupV2Request &request) const
+EmrClient::DeleteNodeGroupOutcomeCallable EmrClient::deleteNodeGroupCallable(const DeleteNodeGroupRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<CreateScalingGroupV2Outcome()>>(
+	auto task = std::make_shared<std::packaged_task<DeleteNodeGroupOutcome()>>(
 			[this, request]()
 			{
-			return this->createScalingGroupV2(request);
+			return this->deleteNodeGroup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-EmrClient::DeleteClusterTemplateOutcome EmrClient::deleteClusterTemplate(const DeleteClusterTemplateRequest &request) const
+EmrClient::DeleteOnAckClusterOutcome EmrClient::deleteOnAckCluster(const DeleteOnAckClusterRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DeleteClusterTemplateOutcome(endpointOutcome.error());
+		return DeleteOnAckClusterOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DeleteClusterTemplateOutcome(DeleteClusterTemplateResult(outcome.result()));
+		return DeleteOnAckClusterOutcome(DeleteOnAckClusterResult(outcome.result()));
 	else
-		return DeleteClusterTemplateOutcome(outcome.error());
+		return DeleteOnAckClusterOutcome(outcome.error());
 }
 
-void EmrClient::deleteClusterTemplateAsync(const DeleteClusterTemplateRequest& request, const DeleteClusterTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void EmrClient::deleteOnAckClusterAsync(const DeleteOnAckClusterRequest& request, const DeleteOnAckClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, deleteClusterTemplate(request), context);
+		handler(this, request, deleteOnAckCluster(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-EmrClient::DeleteClusterTemplateOutcomeCallable EmrClient::deleteClusterTemplateCallable(const DeleteClusterTemplateRequest &request) const
+EmrClient::DeleteOnAckClusterOutcomeCallable EmrClient::deleteOnAckClusterCallable(const DeleteOnAckClusterRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DeleteClusterTemplateOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DeleteOnAckClusterOutcome()>>(
 			[this, request]()
 			{
-			return this->deleteClusterTemplate(request);
+			return this->deleteOnAckCluster(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-EmrClient::DeleteFlowOutcome EmrClient::deleteFlow(const DeleteFlowRequest &request) const
+EmrClient::DeleteScalingGroupOutcome EmrClient::deleteScalingGroup(const DeleteScalingGroupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DeleteFlowOutcome(endpointOutcome.error());
+		return DeleteScalingGroupOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DeleteFlowOutcome(DeleteFlowResult(outcome.result()));
+		return DeleteScalingGroupOutcome(DeleteScalingGroupResult(outcome.result()));
 	else
-		return DeleteFlowOutcome(outcome.error());
+		return DeleteScalingGroupOutcome(outcome.error());
 }
 
-void EmrClient::deleteFlowAsync(const DeleteFlowRequest& request, const DeleteFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void EmrClient::deleteScalingGroupAsync(const DeleteScalingGroupRequest& request, const DeleteScalingGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, deleteFlow(request), context);
+		handler(this, request, deleteScalingGroup(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-EmrClient::DeleteFlowOutcomeCallable EmrClient::deleteFlowCallable(const DeleteFlowRequest &request) const
+EmrClient::DeleteScalingGroupOutcomeCallable EmrClient::deleteScalingGroupCallable(const DeleteScalingGroupRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DeleteFlowOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DeleteScalingGroupOutcome()>>(
 			[this, request]()
 			{
-			return this->deleteFlow(request);
+			return this->deleteScalingGroup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-EmrClient::DeleteFlowCategoryOutcome EmrClient::deleteFlowCategory(const DeleteFlowCategoryRequest &request) const
+EmrClient::DisableAutoScalingPolicyOutcome EmrClient::disableAutoScalingPolicy(const DisableAutoScalingPolicyRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DeleteFlowCategoryOutcome(endpointOutcome.error());
+		return DisableAutoScalingPolicyOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DeleteFlowCategoryOutcome(DeleteFlowCategoryResult(outcome.result()));
+		return DisableAutoScalingPolicyOutcome(DisableAutoScalingPolicyResult(outcome.result()));
 	else
-		return DeleteFlowCategoryOutcome(outcome.error());
+		return DisableAutoScalingPolicyOutcome(outcome.error());
 }
 
-void EmrClient::deleteFlowCategoryAsync(const DeleteFlowCategoryRequest& request, const DeleteFlowCategoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void EmrClient::disableAutoScalingPolicyAsync(const DisableAutoScalingPolicyRequest& request, const DisableAutoScalingPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, deleteFlowCategory(request), context);
+		handler(this, request, disableAutoScalingPolicy(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-EmrClient::DeleteFlowCategoryOutcomeCallable EmrClient::deleteFlowCategoryCallable(const DeleteFlowCategoryRequest &request) const
+EmrClient::DisableAutoScalingPolicyOutcomeCallable EmrClient::disableAutoScalingPolicyCallable(const DisableAutoScalingPolicyRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DeleteFlowCategoryOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DisableAutoScalingPolicyOutcome()>>(
 			[this, request]()
 			{
-			return this->deleteFlowCategory(request);
+			return this->disableAutoScalingPolicy(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-EmrClient::DeleteFlowJobOutcome EmrClient::deleteFlowJob(const DeleteFlowJobRequest &request) const
+EmrClient::EnableAutoScalingPolicyOutcome EmrClient::enableAutoScalingPolicy(const EnableAutoScalingPolicyRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DeleteFlowJobOutcome(endpointOutcome.error());
+		return EnableAutoScalingPolicyOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DeleteFlowJobOutcome(DeleteFlowJobResult(outcome.result()));
+		return EnableAutoScalingPolicyOutcome(EnableAutoScalingPolicyResult(outcome.result()));
 	else
-		return DeleteFlowJobOutcome(outcome.error());
+		return EnableAutoScalingPolicyOutcome(outcome.error());
 }
 
-void EmrClient::deleteFlowJobAsync(const DeleteFlowJobRequest& request, const DeleteFlowJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void EmrClient::enableAutoScalingPolicyAsync(const EnableAutoScalingPolicyRequest& request, const EnableAutoScalingPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, deleteFlowJob(request), context);
+		handler(this, request, enableAutoScalingPolicy(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-EmrClient::DeleteFlowJobOutcomeCallable EmrClient::deleteFlowJobCallable(const DeleteFlowJobRequest &request) const
+EmrClient::EnableAutoScalingPolicyOutcomeCallable EmrClient::enableAutoScalingPolicyCallable(const EnableAutoScalingPolicyRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DeleteFlowJobOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<EnableAutoScalingPolicyOutcome()>>(
 			[this, request]()
 			{
-			return this->deleteFlowJob(request);
+			return this->enableAutoScalingPolicy(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-EmrClient::DeleteFlowProjectOutcome EmrClient::deleteFlowProject(const DeleteFlowProjectRequest &request) const
+EmrClient::GetApplicationOutcome EmrClient::getApplication(const GetApplicationRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DeleteFlowProjectOutcome(endpointOutcome.error());
+		return GetApplicationOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DeleteFlowProjectOutcome(DeleteFlowProjectResult(outcome.result()));
+		return GetApplicationOutcome(GetApplicationResult(outcome.result()));
 	else
-		return DeleteFlowProjectOutcome(outcome.error());
+		return GetApplicationOutcome(outcome.error());
 }
 
-void EmrClient::deleteFlowProjectAsync(const DeleteFlowProjectRequest& request, const DeleteFlowProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void EmrClient::getApplicationAsync(const GetApplicationRequest& request, const GetApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, deleteFlowProject(request), context);
+		handler(this, request, getApplication(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-EmrClient::DeleteFlowProjectOutcomeCallable EmrClient::deleteFlowProjectCallable(const DeleteFlowProjectRequest &request) const
+EmrClient::GetApplicationOutcomeCallable EmrClient::getApplicationCallable(const GetApplicationRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DeleteFlowProjectOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<GetApplicationOutcome()>>(
 			[this, request]()
 			{
-			return this->deleteFlowProject(request);
+			return this->getApplication(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-EmrClient::DeleteFlowProjectClusterSettingOutcome EmrClient::deleteFlowProjectClusterSetting(const DeleteFlowProjectClusterSettingRequest &request) const
+EmrClient::GetClusterOutcome EmrClient::getCluster(const GetClusterRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DeleteFlowProjectClusterSettingOutcome(endpointOutcome.error());
+		return GetClusterOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DeleteFlowProjectClusterSettingOutcome(DeleteFlowProjectClusterSettingResult(outcome.result()));
+		return GetClusterOutcome(GetClusterResult(outcome.result()));
 	else
-		return DeleteFlowProjectClusterSettingOutcome(outcome.error());
+		return GetClusterOutcome(outcome.error());
 }
 
-void EmrClient::deleteFlowProjectClusterSettingAsync(const DeleteFlowProjectClusterSettingRequest& request, const DeleteFlowProjectClusterSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void EmrClient::getClusterAsync(const GetClusterRequest& request, const GetClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, deleteFlowProjectClusterSetting(request), context);
+		handler(this, request, getCluster(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-EmrClient::DeleteFlowProjectClusterSettingOutcomeCallable EmrClient::deleteFlowProjectClusterSettingCallable(const DeleteFlowProjectClusterSettingRequest &request) const
+EmrClient::GetClusterOutcomeCallable EmrClient::getClusterCallable(const GetClusterRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DeleteFlowProjectClusterSettingOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<GetClusterOutcome()>>(
 			[this, request]()
 			{
-			return this->deleteFlowProjectClusterSetting(request);
+			return this->getCluster(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-EmrClient::DeleteFlowProjectUserOutcome EmrClient::deleteFlowProjectUser(const DeleteFlowProjectUserRequest &request) const
+EmrClient::GetClusterScriptExecutionResultOutcome EmrClient::getClusterScriptExecutionResult(const GetClusterScriptExecutionResultRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DeleteFlowProjectUserOutcome(endpointOutcome.error());
+		return GetClusterScriptExecutionResultOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DeleteFlowProjectUserOutcome(DeleteFlowProjectUserResult(outcome.result()));
+		return GetClusterScriptExecutionResultOutcome(GetClusterScriptExecutionResultResult(outcome.result()));
 	else
-		return DeleteFlowProjectUserOutcome(outcome.error());
+		return GetClusterScriptExecutionResultOutcome(outcome.error());
 }
 
-void EmrClient::deleteFlowProjectUserAsync(const DeleteFlowProjectUserRequest& request, const DeleteFlowProjectUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void EmrClient::getClusterScriptExecutionResultAsync(const GetClusterScriptExecutionResultRequest& request, const GetClusterScriptExecutionResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, deleteFlowProjectUser(request), context);
+		handler(this, request, getClusterScriptExecutionResult(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-EmrClient::DeleteFlowProjectUserOutcomeCallable EmrClient::deleteFlowProjectUserCallable(const DeleteFlowProjectUserRequest &request) const
+EmrClient::GetClusterScriptExecutionResultOutcomeCallable EmrClient::getClusterScriptExecutionResultCallable(const GetClusterScriptExecutionResultRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DeleteFlowProjectUserOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<GetClusterScriptExecutionResultOutcome()>>(
 			[this, request]()
 			{
-			return this->deleteFlowProjectUser(request);
+			return this->getClusterScriptExecutionResult(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-EmrClient::DeleteResourcePoolOutcome EmrClient::deleteResourcePool(const DeleteResourcePoolRequest &request) const
+EmrClient::GetNodeGroupOutcome EmrClient::getNodeGroup(const GetNodeGroupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DeleteResourcePoolOutcome(endpointOutcome.error());
+		return GetNodeGroupOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DeleteResourcePoolOutcome(DeleteResourcePoolResult(outcome.result()));
+		return GetNodeGroupOutcome(GetNodeGroupResult(outcome.result()));
 	else
-		return DeleteResourcePoolOutcome(outcome.error());
+		return GetNodeGroupOutcome(outcome.error());
 }
 
-void EmrClient::deleteResourcePoolAsync(const DeleteResourcePoolRequest& request, const DeleteResourcePoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void EmrClient::getNodeGroupAsync(const GetNodeGroupRequest& request, const GetNodeGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, deleteResourcePool(request), context);
+		handler(this, request, getNodeGroup(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-EmrClient::DeleteResourcePoolOutcomeCallable EmrClient::deleteResourcePoolCallable(const DeleteResourcePoolRequest &request) const
+EmrClient::GetNodeGroupOutcomeCallable EmrClient::getNodeGroupCallable(const GetNodeGroupRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DeleteResourcePoolOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<GetNodeGroupOutcome()>>(
 			[this, request]()
 			{
-			return this->deleteResourcePool(request);
+			return this->getNodeGroup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-EmrClient::DeleteResourceQueueOutcome EmrClient::deleteResourceQueue(const DeleteResourceQueueRequest &request) const
+EmrClient::GetOnAckClusterOutcome EmrClient::getOnAckCluster(const GetOnAckClusterRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DeleteResourceQueueOutcome(endpointOutcome.error());
+		return GetOnAckClusterOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DeleteResourceQueueOutcome(DeleteResourceQueueResult(outcome.result()));
+		return GetOnAckClusterOutcome(GetOnAckClusterResult(outcome.result()));
 	else
-		return DeleteResourceQueueOutcome(outcome.error());
+		return GetOnAckClusterOutcome(outcome.error());
 }
 
-void EmrClient::deleteResourceQueueAsync(const DeleteResourceQueueRequest& request, const DeleteResourceQueueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void EmrClient::getOnAckClusterAsync(const GetOnAckClusterRequest& request, const GetOnAckClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, deleteResourceQueue(request), context);
+		handler(this, request, getOnAckCluster(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-EmrClient::DeleteResourceQueueOutcomeCallable EmrClient::deleteResourceQueueCallable(const DeleteResourceQueueRequest &request) const
+EmrClient::GetOnAckClusterOutcomeCallable EmrClient::getOnAckClusterCallable(const GetOnAckClusterRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DeleteResourceQueueOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<GetOnAckClusterOutcome()>>(
 			[this, request]()
 			{
-			return this->deleteResourceQueue(request);
+			return this->getOnAckCluster(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-EmrClient::DescribeClusterBasicInfoOutcome EmrClient::describeClusterBasicInfo(const DescribeClusterBasicInfoRequest &request) const
+EmrClient::GetOnKubeClusterOutcome EmrClient::getOnKubeCluster(const GetOnKubeClusterRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeClusterBasicInfoOutcome(endpointOutcome.error());
+		return GetOnKubeClusterOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeClusterBasicInfoOutcome(DescribeClusterBasicInfoResult(outcome.result()));
+		return GetOnKubeClusterOutcome(GetOnKubeClusterResult(outcome.result()));
 	else
-		return DescribeClusterBasicInfoOutcome(outcome.error());
+		return GetOnKubeClusterOutcome(outcome.error());
 }
 
-void EmrClient::describeClusterBasicInfoAsync(const DescribeClusterBasicInfoRequest& request, const DescribeClusterBasicInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void EmrClient::getOnKubeClusterAsync(const GetOnKubeClusterRequest& request, const GetOnKubeClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeClusterBasicInfo(request), context);
+		handler(this, request, getOnKubeCluster(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-EmrClient::DescribeClusterBasicInfoOutcomeCallable EmrClient::describeClusterBasicInfoCallable(const DescribeClusterBasicInfoRequest &request) const
+EmrClient::GetOnKubeClusterOutcomeCallable EmrClient::getOnKubeClusterCallable(const GetOnKubeClusterRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeClusterBasicInfoOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<GetOnKubeClusterOutcome()>>(
 			[this, request]()
 			{
-			return this->describeClusterBasicInfo(request);
+			return this->getOnKubeCluster(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-EmrClient::DescribeClusterOperationHostTaskLogOutcome EmrClient::describeClusterOperationHostTaskLog(const DescribeClusterOperationHostTaskLogRequest &request) const
+EmrClient::GetOnKubeClusterResourceQuotaOutcome EmrClient::getOnKubeClusterResourceQuota(const GetOnKubeClusterResourceQuotaRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeClusterOperationHostTaskLogOutcome(endpointOutcome.error());
+		return GetOnKubeClusterResourceQuotaOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeClusterOperationHostTaskLogOutcome(DescribeClusterOperationHostTaskLogResult(outcome.result()));
+		return GetOnKubeClusterResourceQuotaOutcome(GetOnKubeClusterResourceQuotaResult(outcome.result()));
 	else
-		return DescribeClusterOperationHostTaskLogOutcome(outcome.error());
+		return GetOnKubeClusterResourceQuotaOutcome(outcome.error());
 }
 
-void EmrClient::describeClusterOperationHostTaskLogAsync(const DescribeClusterOperationHostTaskLogRequest& request, const DescribeClusterOperationHostTaskLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void EmrClient::getOnKubeClusterResourceQuotaAsync(const GetOnKubeClusterResourceQuotaRequest& request, const GetOnKubeClusterResourceQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeClusterOperationHostTaskLog(request), context);
+		handler(this, request, getOnKubeClusterResourceQuota(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-EmrClient::DescribeClusterOperationHostTaskLogOutcomeCallable EmrClient::describeClusterOperationHostTaskLogCallable(const DescribeClusterOperationHostTaskLogRequest &request) const
+EmrClient::GetOnKubeClusterResourceQuotaOutcomeCallable EmrClient::getOnKubeClusterResourceQuotaCallable(const GetOnKubeClusterResourceQuotaRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeClusterOperationHostTaskLogOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<GetOnKubeClusterResourceQuotaOutcome()>>(
 			[this, request]()
 			{
-			return this->describeClusterOperationHostTaskLog(request);
+			return this->getOnKubeClusterResourceQuota(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-EmrClient::DescribeClusterResourcePoolSchedulerTypeOutcome EmrClient::describeClusterResourcePoolSchedulerType(const DescribeClusterResourcePoolSchedulerTypeRequest &request) const
+EmrClient::GetOnKubeClusterResourceUsageOutcome EmrClient::getOnKubeClusterResourceUsage(const GetOnKubeClusterResourceUsageRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeClusterResourcePoolSchedulerTypeOutcome(endpointOutcome.error());
+		return GetOnKubeClusterResourceUsageOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeClusterResourcePoolSchedulerTypeOutcome(DescribeClusterResourcePoolSchedulerTypeResult(outcome.result()));
+		return GetOnKubeClusterResourceUsageOutcome(GetOnKubeClusterResourceUsageResult(outcome.result()));
 	else
-		return DescribeClusterResourcePoolSchedulerTypeOutcome(outcome.error());
+		return GetOnKubeClusterResourceUsageOutcome(outcome.error());
 }
 
-void EmrClient::describeClusterResourcePoolSchedulerTypeAsync(const DescribeClusterResourcePoolSchedulerTypeRequest& request, const DescribeClusterResourcePoolSchedulerTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void EmrClient::getOnKubeClusterResourceUsageAsync(const GetOnKubeClusterResourceUsageRequest& request, const GetOnKubeClusterResourceUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeClusterResourcePoolSchedulerType(request), context);
+		handler(this, request, getOnKubeClusterResourceUsage(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-EmrClient::DescribeClusterResourcePoolSchedulerTypeOutcomeCallable EmrClient::describeClusterResourcePoolSchedulerTypeCallable(const DescribeClusterResourcePoolSchedulerTypeRequest &request) const
+EmrClient::GetOnKubeClusterResourceUsageOutcomeCallable EmrClient::getOnKubeClusterResourceUsageCallable(const GetOnKubeClusterResourceUsageRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeClusterResourcePoolSchedulerTypeOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<GetOnKubeClusterResourceUsageOutcome()>>(
 			[this, request]()
 			{
-			return this->describeClusterResourcePoolSchedulerType(request);
+			return this->getOnKubeClusterResourceUsage(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-EmrClient::DescribeClusterServiceOutcome EmrClient::describeClusterService(const DescribeClusterServiceRequest &request) const
+EmrClient::GetOperationOutcome EmrClient::getOperation(const GetOperationRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeClusterServiceOutcome(endpointOutcome.error());
+		return GetOperationOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeClusterServiceOutcome(DescribeClusterServiceResult(outcome.result()));
+		return GetOperationOutcome(GetOperationResult(outcome.result()));
 	else
-		return DescribeClusterServiceOutcome(outcome.error());
+		return GetOperationOutcome(outcome.error());
 }
 
-void EmrClient::describeClusterServiceAsync(const DescribeClusterServiceRequest& request, const DescribeClusterServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void EmrClient::getOperationAsync(const GetOperationRequest& request, const GetOperationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeClusterService(request), context);
+		handler(this, request, getOperation(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-EmrClient::DescribeClusterServiceOutcomeCallable EmrClient::describeClusterServiceCallable(const DescribeClusterServiceRequest &request) const
+EmrClient::GetOperationOutcomeCallable EmrClient::getOperationCallable(const GetOperationRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeClusterServiceOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<GetOperationOutcome()>>(
 			[this, request]()
 			{
-			return this->describeClusterService(request);
+			return this->getOperation(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-EmrClient::DescribeClusterServiceConfigOutcome EmrClient::describeClusterServiceConfig(const DescribeClusterServiceConfigRequest &request) const
+EmrClient::GetScalingGroupOutcome EmrClient::getScalingGroup(const GetScalingGroupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeClusterServiceConfigOutcome(endpointOutcome.error());
+		return GetScalingGroupOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeClusterServiceConfigOutcome(DescribeClusterServiceConfigResult(outcome.result()));
+		return GetScalingGroupOutcome(GetScalingGroupResult(outcome.result()));
 	else
-		return DescribeClusterServiceConfigOutcome(outcome.error());
+		return GetScalingGroupOutcome(outcome.error());
 }
 
-void EmrClient::describeClusterServiceConfigAsync(const DescribeClusterServiceConfigRequest& request, const DescribeClusterServiceConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void EmrClient::getScalingGroupAsync(const GetScalingGroupRequest& request, const GetScalingGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeClusterServiceConfig(request), context);
+		handler(this, request, getScalingGroup(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-EmrClient::DescribeClusterServiceConfigOutcomeCallable EmrClient::describeClusterServiceConfigCallable(const DescribeClusterServiceConfigRequest &request) const
+EmrClient::GetScalingGroupOutcomeCallable EmrClient::getScalingGroupCallable(const GetScalingGroupRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeClusterServiceConfigOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<GetScalingGroupOutcome()>>(
 			[this, request]()
 			{
-			return this->describeClusterServiceConfig(request);
+			return this->getScalingGroup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-EmrClient::DescribeClusterServiceConfigTagOutcome EmrClient::describeClusterServiceConfigTag(const DescribeClusterServiceConfigTagRequest &request) const
+EmrClient::IncreaseClusterDiskOutcome EmrClient::increaseClusterDisk(const IncreaseClusterDiskRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeClusterServiceConfigTagOutcome(endpointOutcome.error());
+		return IncreaseClusterDiskOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeClusterServiceConfigTagOutcome(DescribeClusterServiceConfigTagResult(outcome.result()));
+		return IncreaseClusterDiskOutcome(IncreaseClusterDiskResult(outcome.result()));
 	else
-		return DescribeClusterServiceConfigTagOutcome(outcome.error());
+		return IncreaseClusterDiskOutcome(outcome.error());
 }
 
-void EmrClient::describeClusterServiceConfigTagAsync(const DescribeClusterServiceConfigTagRequest& request, const DescribeClusterServiceConfigTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void EmrClient::increaseClusterDiskAsync(const IncreaseClusterDiskRequest& request, const IncreaseClusterDiskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeClusterServiceConfigTag(request), context);
+		handler(this, request, increaseClusterDisk(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-EmrClient::DescribeClusterServiceConfigTagOutcomeCallable EmrClient::describeClusterServiceConfigTagCallable(const DescribeClusterServiceConfigTagRequest &request) const
+EmrClient::IncreaseClusterDiskOutcomeCallable EmrClient::increaseClusterDiskCallable(const IncreaseClusterDiskRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeClusterServiceConfigTagOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<IncreaseClusterDiskOutcome()>>(
 			[this, request]()
 			{
-			return this->describeClusterServiceConfigTag(request);
+			return this->increaseClusterDisk(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-EmrClient::DescribeClusterTemplateOutcome EmrClient::describeClusterTemplate(const DescribeClusterTemplateRequest &request) const
+EmrClient::IncreaseNodesOutcome EmrClient::increaseNodes(const IncreaseNodesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeClusterTemplateOutcome(endpointOutcome.error());
+		return IncreaseNodesOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeClusterTemplateOutcome(DescribeClusterTemplateResult(outcome.result()));
+		return IncreaseNodesOutcome(IncreaseNodesResult(outcome.result()));
 	else
-		return DescribeClusterTemplateOutcome(outcome.error());
+		return IncreaseNodesOutcome(outcome.error());
 }
 
-void EmrClient::describeClusterTemplateAsync(const DescribeClusterTemplateRequest& request, const DescribeClusterTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void EmrClient::increaseNodesAsync(const IncreaseNodesRequest& request, const IncreaseNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeClusterTemplate(request), context);
+		handler(this, request, increaseNodes(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-EmrClient::DescribeClusterTemplateOutcomeCallable EmrClient::describeClusterTemplateCallable(const DescribeClusterTemplateRequest &request) const
+EmrClient::IncreaseNodesOutcomeCallable EmrClient::increaseNodesCallable(const IncreaseNodesRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeClusterTemplateOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<IncreaseNodesOutcome()>>(
 			[this, request]()
 			{
-			return this->describeClusterTemplate(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EmrClient::DescribeClusterV2Outcome EmrClient::describeClusterV2(const DescribeClusterV2Request &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeClusterV2Outcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeClusterV2Outcome(DescribeClusterV2Result(outcome.result()));
-	else
-		return DescribeClusterV2Outcome(outcome.error());
-}
-
-void EmrClient::describeClusterV2Async(const DescribeClusterV2Request& request, const DescribeClusterV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeClusterV2(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EmrClient::DescribeClusterV2OutcomeCallable EmrClient::describeClusterV2Callable(const DescribeClusterV2Request &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeClusterV2Outcome()>>(
-			[this, request]()
-			{
-			return this->describeClusterV2(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EmrClient::DescribeFlowOutcome EmrClient::describeFlow(const DescribeFlowRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeFlowOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeFlowOutcome(DescribeFlowResult(outcome.result()));
-	else
-		return DescribeFlowOutcome(outcome.error());
-}
-
-void EmrClient::describeFlowAsync(const DescribeFlowRequest& request, const DescribeFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeFlow(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EmrClient::DescribeFlowOutcomeCallable EmrClient::describeFlowCallable(const DescribeFlowRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeFlowOutcome()>>(
-			[this, request]()
-			{
-			return this->describeFlow(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EmrClient::DescribeFlowCategoryOutcome EmrClient::describeFlowCategory(const DescribeFlowCategoryRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeFlowCategoryOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeFlowCategoryOutcome(DescribeFlowCategoryResult(outcome.result()));
-	else
-		return DescribeFlowCategoryOutcome(outcome.error());
-}
-
-void EmrClient::describeFlowCategoryAsync(const DescribeFlowCategoryRequest& request, const DescribeFlowCategoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeFlowCategory(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EmrClient::DescribeFlowCategoryOutcomeCallable EmrClient::describeFlowCategoryCallable(const DescribeFlowCategoryRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeFlowCategoryOutcome()>>(
-			[this, request]()
-			{
-			return this->describeFlowCategory(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EmrClient::DescribeFlowCategoryTreeOutcome EmrClient::describeFlowCategoryTree(const DescribeFlowCategoryTreeRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeFlowCategoryTreeOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeFlowCategoryTreeOutcome(DescribeFlowCategoryTreeResult(outcome.result()));
-	else
-		return DescribeFlowCategoryTreeOutcome(outcome.error());
-}
-
-void EmrClient::describeFlowCategoryTreeAsync(const DescribeFlowCategoryTreeRequest& request, const DescribeFlowCategoryTreeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeFlowCategoryTree(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EmrClient::DescribeFlowCategoryTreeOutcomeCallable EmrClient::describeFlowCategoryTreeCallable(const DescribeFlowCategoryTreeRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeFlowCategoryTreeOutcome()>>(
-			[this, request]()
-			{
-			return this->describeFlowCategoryTree(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EmrClient::DescribeFlowInstanceOutcome EmrClient::describeFlowInstance(const DescribeFlowInstanceRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeFlowInstanceOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeFlowInstanceOutcome(DescribeFlowInstanceResult(outcome.result()));
-	else
-		return DescribeFlowInstanceOutcome(outcome.error());
-}
-
-void EmrClient::describeFlowInstanceAsync(const DescribeFlowInstanceRequest& request, const DescribeFlowInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeFlowInstance(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EmrClient::DescribeFlowInstanceOutcomeCallable EmrClient::describeFlowInstanceCallable(const DescribeFlowInstanceRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeFlowInstanceOutcome()>>(
-			[this, request]()
-			{
-			return this->describeFlowInstance(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EmrClient::DescribeFlowJobOutcome EmrClient::describeFlowJob(const DescribeFlowJobRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeFlowJobOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeFlowJobOutcome(DescribeFlowJobResult(outcome.result()));
-	else
-		return DescribeFlowJobOutcome(outcome.error());
-}
-
-void EmrClient::describeFlowJobAsync(const DescribeFlowJobRequest& request, const DescribeFlowJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeFlowJob(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EmrClient::DescribeFlowJobOutcomeCallable EmrClient::describeFlowJobCallable(const DescribeFlowJobRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeFlowJobOutcome()>>(
-			[this, request]()
-			{
-			return this->describeFlowJob(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EmrClient::DescribeFlowNodeInstanceOutcome EmrClient::describeFlowNodeInstance(const DescribeFlowNodeInstanceRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeFlowNodeInstanceOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeFlowNodeInstanceOutcome(DescribeFlowNodeInstanceResult(outcome.result()));
-	else
-		return DescribeFlowNodeInstanceOutcome(outcome.error());
-}
-
-void EmrClient::describeFlowNodeInstanceAsync(const DescribeFlowNodeInstanceRequest& request, const DescribeFlowNodeInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeFlowNodeInstance(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EmrClient::DescribeFlowNodeInstanceOutcomeCallable EmrClient::describeFlowNodeInstanceCallable(const DescribeFlowNodeInstanceRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeFlowNodeInstanceOutcome()>>(
-			[this, request]()
-			{
-			return this->describeFlowNodeInstance(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EmrClient::DescribeFlowNodeInstanceContainerLogOutcome EmrClient::describeFlowNodeInstanceContainerLog(const DescribeFlowNodeInstanceContainerLogRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeFlowNodeInstanceContainerLogOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeFlowNodeInstanceContainerLogOutcome(DescribeFlowNodeInstanceContainerLogResult(outcome.result()));
-	else
-		return DescribeFlowNodeInstanceContainerLogOutcome(outcome.error());
-}
-
-void EmrClient::describeFlowNodeInstanceContainerLogAsync(const DescribeFlowNodeInstanceContainerLogRequest& request, const DescribeFlowNodeInstanceContainerLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeFlowNodeInstanceContainerLog(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EmrClient::DescribeFlowNodeInstanceContainerLogOutcomeCallable EmrClient::describeFlowNodeInstanceContainerLogCallable(const DescribeFlowNodeInstanceContainerLogRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeFlowNodeInstanceContainerLogOutcome()>>(
-			[this, request]()
-			{
-			return this->describeFlowNodeInstanceContainerLog(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EmrClient::DescribeFlowNodeInstanceLauncherLogOutcome EmrClient::describeFlowNodeInstanceLauncherLog(const DescribeFlowNodeInstanceLauncherLogRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeFlowNodeInstanceLauncherLogOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeFlowNodeInstanceLauncherLogOutcome(DescribeFlowNodeInstanceLauncherLogResult(outcome.result()));
-	else
-		return DescribeFlowNodeInstanceLauncherLogOutcome(outcome.error());
-}
-
-void EmrClient::describeFlowNodeInstanceLauncherLogAsync(const DescribeFlowNodeInstanceLauncherLogRequest& request, const DescribeFlowNodeInstanceLauncherLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeFlowNodeInstanceLauncherLog(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EmrClient::DescribeFlowNodeInstanceLauncherLogOutcomeCallable EmrClient::describeFlowNodeInstanceLauncherLogCallable(const DescribeFlowNodeInstanceLauncherLogRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeFlowNodeInstanceLauncherLogOutcome()>>(
-			[this, request]()
-			{
-			return this->describeFlowNodeInstanceLauncherLog(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EmrClient::DescribeFlowProjectOutcome EmrClient::describeFlowProject(const DescribeFlowProjectRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeFlowProjectOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeFlowProjectOutcome(DescribeFlowProjectResult(outcome.result()));
-	else
-		return DescribeFlowProjectOutcome(outcome.error());
-}
-
-void EmrClient::describeFlowProjectAsync(const DescribeFlowProjectRequest& request, const DescribeFlowProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeFlowProject(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EmrClient::DescribeFlowProjectOutcomeCallable EmrClient::describeFlowProjectCallable(const DescribeFlowProjectRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeFlowProjectOutcome()>>(
-			[this, request]()
-			{
-			return this->describeFlowProject(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EmrClient::DescribeFlowProjectClusterSettingOutcome EmrClient::describeFlowProjectClusterSetting(const DescribeFlowProjectClusterSettingRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeFlowProjectClusterSettingOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeFlowProjectClusterSettingOutcome(DescribeFlowProjectClusterSettingResult(outcome.result()));
-	else
-		return DescribeFlowProjectClusterSettingOutcome(outcome.error());
-}
-
-void EmrClient::describeFlowProjectClusterSettingAsync(const DescribeFlowProjectClusterSettingRequest& request, const DescribeFlowProjectClusterSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeFlowProjectClusterSetting(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EmrClient::DescribeFlowProjectClusterSettingOutcomeCallable EmrClient::describeFlowProjectClusterSettingCallable(const DescribeFlowProjectClusterSettingRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeFlowProjectClusterSettingOutcome()>>(
-			[this, request]()
-			{
-			return this->describeFlowProjectClusterSetting(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EmrClient::DescribeScalingCommonConfigOutcome EmrClient::describeScalingCommonConfig(const DescribeScalingCommonConfigRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeScalingCommonConfigOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeScalingCommonConfigOutcome(DescribeScalingCommonConfigResult(outcome.result()));
-	else
-		return DescribeScalingCommonConfigOutcome(outcome.error());
-}
-
-void EmrClient::describeScalingCommonConfigAsync(const DescribeScalingCommonConfigRequest& request, const DescribeScalingCommonConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeScalingCommonConfig(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EmrClient::DescribeScalingCommonConfigOutcomeCallable EmrClient::describeScalingCommonConfigCallable(const DescribeScalingCommonConfigRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeScalingCommonConfigOutcome()>>(
-			[this, request]()
-			{
-			return this->describeScalingCommonConfig(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EmrClient::DescribeScalingConfigItemV2Outcome EmrClient::describeScalingConfigItemV2(const DescribeScalingConfigItemV2Request &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeScalingConfigItemV2Outcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeScalingConfigItemV2Outcome(DescribeScalingConfigItemV2Result(outcome.result()));
-	else
-		return DescribeScalingConfigItemV2Outcome(outcome.error());
-}
-
-void EmrClient::describeScalingConfigItemV2Async(const DescribeScalingConfigItemV2Request& request, const DescribeScalingConfigItemV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeScalingConfigItemV2(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EmrClient::DescribeScalingConfigItemV2OutcomeCallable EmrClient::describeScalingConfigItemV2Callable(const DescribeScalingConfigItemV2Request &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeScalingConfigItemV2Outcome()>>(
-			[this, request]()
-			{
-			return this->describeScalingConfigItemV2(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EmrClient::DescribeScalingGroupInstanceV2Outcome EmrClient::describeScalingGroupInstanceV2(const DescribeScalingGroupInstanceV2Request &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeScalingGroupInstanceV2Outcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeScalingGroupInstanceV2Outcome(DescribeScalingGroupInstanceV2Result(outcome.result()));
-	else
-		return DescribeScalingGroupInstanceV2Outcome(outcome.error());
-}
-
-void EmrClient::describeScalingGroupInstanceV2Async(const DescribeScalingGroupInstanceV2Request& request, const DescribeScalingGroupInstanceV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeScalingGroupInstanceV2(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EmrClient::DescribeScalingGroupInstanceV2OutcomeCallable EmrClient::describeScalingGroupInstanceV2Callable(const DescribeScalingGroupInstanceV2Request &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeScalingGroupInstanceV2Outcome()>>(
-			[this, request]()
-			{
-			return this->describeScalingGroupInstanceV2(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EmrClient::DescribeScalingGroupV2Outcome EmrClient::describeScalingGroupV2(const DescribeScalingGroupV2Request &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeScalingGroupV2Outcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeScalingGroupV2Outcome(DescribeScalingGroupV2Result(outcome.result()));
-	else
-		return DescribeScalingGroupV2Outcome(outcome.error());
-}
-
-void EmrClient::describeScalingGroupV2Async(const DescribeScalingGroupV2Request& request, const DescribeScalingGroupV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeScalingGroupV2(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EmrClient::DescribeScalingGroupV2OutcomeCallable EmrClient::describeScalingGroupV2Callable(const DescribeScalingGroupV2Request &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeScalingGroupV2Outcome()>>(
-			[this, request]()
-			{
-			return this->describeScalingGroupV2(request);
+			return this->increaseNodes(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1815,576 +1275,324 @@ EmrClient::JoinResourceGroupOutcomeCallable EmrClient::joinResourceGroupCallable
 	return task->get_future();
 }
 
-EmrClient::KillFlowJobOutcome EmrClient::killFlowJob(const KillFlowJobRequest &request) const
+EmrClient::ListApplicationConfigFilesOutcome EmrClient::listApplicationConfigFiles(const ListApplicationConfigFilesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return KillFlowJobOutcome(endpointOutcome.error());
+		return ListApplicationConfigFilesOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return KillFlowJobOutcome(KillFlowJobResult(outcome.result()));
+		return ListApplicationConfigFilesOutcome(ListApplicationConfigFilesResult(outcome.result()));
 	else
-		return KillFlowJobOutcome(outcome.error());
+		return ListApplicationConfigFilesOutcome(outcome.error());
 }
 
-void EmrClient::killFlowJobAsync(const KillFlowJobRequest& request, const KillFlowJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void EmrClient::listApplicationConfigFilesAsync(const ListApplicationConfigFilesRequest& request, const ListApplicationConfigFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, killFlowJob(request), context);
+		handler(this, request, listApplicationConfigFiles(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-EmrClient::KillFlowJobOutcomeCallable EmrClient::killFlowJobCallable(const KillFlowJobRequest &request) const
+EmrClient::ListApplicationConfigFilesOutcomeCallable EmrClient::listApplicationConfigFilesCallable(const ListApplicationConfigFilesRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<KillFlowJobOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ListApplicationConfigFilesOutcome()>>(
 			[this, request]()
 			{
-			return this->killFlowJob(request);
+			return this->listApplicationConfigFiles(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-EmrClient::ListApmApplicationOutcome EmrClient::listApmApplication(const ListApmApplicationRequest &request) const
+EmrClient::ListApplicationConfigHistoryOutcome EmrClient::listApplicationConfigHistory(const ListApplicationConfigHistoryRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ListApmApplicationOutcome(endpointOutcome.error());
+		return ListApplicationConfigHistoryOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ListApmApplicationOutcome(ListApmApplicationResult(outcome.result()));
+		return ListApplicationConfigHistoryOutcome(ListApplicationConfigHistoryResult(outcome.result()));
 	else
-		return ListApmApplicationOutcome(outcome.error());
+		return ListApplicationConfigHistoryOutcome(outcome.error());
 }
 
-void EmrClient::listApmApplicationAsync(const ListApmApplicationRequest& request, const ListApmApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void EmrClient::listApplicationConfigHistoryAsync(const ListApplicationConfigHistoryRequest& request, const ListApplicationConfigHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, listApmApplication(request), context);
+		handler(this, request, listApplicationConfigHistory(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-EmrClient::ListApmApplicationOutcomeCallable EmrClient::listApmApplicationCallable(const ListApmApplicationRequest &request) const
+EmrClient::ListApplicationConfigHistoryOutcomeCallable EmrClient::listApplicationConfigHistoryCallable(const ListApplicationConfigHistoryRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ListApmApplicationOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ListApplicationConfigHistoryOutcome()>>(
 			[this, request]()
 			{
-			return this->listApmApplication(request);
+			return this->listApplicationConfigHistory(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-EmrClient::ListClusterHostOutcome EmrClient::listClusterHost(const ListClusterHostRequest &request) const
+EmrClient::ListApplicationConfigsOutcome EmrClient::listApplicationConfigs(const ListApplicationConfigsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ListClusterHostOutcome(endpointOutcome.error());
+		return ListApplicationConfigsOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ListClusterHostOutcome(ListClusterHostResult(outcome.result()));
+		return ListApplicationConfigsOutcome(ListApplicationConfigsResult(outcome.result()));
 	else
-		return ListClusterHostOutcome(outcome.error());
+		return ListApplicationConfigsOutcome(outcome.error());
 }
 
-void EmrClient::listClusterHostAsync(const ListClusterHostRequest& request, const ListClusterHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void EmrClient::listApplicationConfigsAsync(const ListApplicationConfigsRequest& request, const ListApplicationConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, listClusterHost(request), context);
+		handler(this, request, listApplicationConfigs(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-EmrClient::ListClusterHostOutcomeCallable EmrClient::listClusterHostCallable(const ListClusterHostRequest &request) const
+EmrClient::ListApplicationConfigsOutcomeCallable EmrClient::listApplicationConfigsCallable(const ListApplicationConfigsRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ListClusterHostOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ListApplicationConfigsOutcome()>>(
 			[this, request]()
 			{
-			return this->listClusterHost(request);
+			return this->listApplicationConfigs(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-EmrClient::ListClusterHostComponentOutcome EmrClient::listClusterHostComponent(const ListClusterHostComponentRequest &request) const
+EmrClient::ListApplicationsOutcome EmrClient::listApplications(const ListApplicationsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ListClusterHostComponentOutcome(endpointOutcome.error());
+		return ListApplicationsOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ListClusterHostComponentOutcome(ListClusterHostComponentResult(outcome.result()));
+		return ListApplicationsOutcome(ListApplicationsResult(outcome.result()));
 	else
-		return ListClusterHostComponentOutcome(outcome.error());
+		return ListApplicationsOutcome(outcome.error());
 }
 
-void EmrClient::listClusterHostComponentAsync(const ListClusterHostComponentRequest& request, const ListClusterHostComponentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void EmrClient::listApplicationsAsync(const ListApplicationsRequest& request, const ListApplicationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, listClusterHostComponent(request), context);
+		handler(this, request, listApplications(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-EmrClient::ListClusterHostComponentOutcomeCallable EmrClient::listClusterHostComponentCallable(const ListClusterHostComponentRequest &request) const
+EmrClient::ListApplicationsOutcomeCallable EmrClient::listApplicationsCallable(const ListApplicationsRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ListClusterHostComponentOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ListApplicationsOutcome()>>(
 			[this, request]()
 			{
-			return this->listClusterHostComponent(request);
+			return this->listApplications(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-EmrClient::ListClusterHostGroupOutcome EmrClient::listClusterHostGroup(const ListClusterHostGroupRequest &request) const
+EmrClient::ListAutoScalingActivitiesOutcome EmrClient::listAutoScalingActivities(const ListAutoScalingActivitiesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ListClusterHostGroupOutcome(endpointOutcome.error());
+		return ListAutoScalingActivitiesOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ListClusterHostGroupOutcome(ListClusterHostGroupResult(outcome.result()));
+		return ListAutoScalingActivitiesOutcome(ListAutoScalingActivitiesResult(outcome.result()));
 	else
-		return ListClusterHostGroupOutcome(outcome.error());
+		return ListAutoScalingActivitiesOutcome(outcome.error());
 }
 
-void EmrClient::listClusterHostGroupAsync(const ListClusterHostGroupRequest& request, const ListClusterHostGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void EmrClient::listAutoScalingActivitiesAsync(const ListAutoScalingActivitiesRequest& request, const ListAutoScalingActivitiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, listClusterHostGroup(request), context);
+		handler(this, request, listAutoScalingActivities(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-EmrClient::ListClusterHostGroupOutcomeCallable EmrClient::listClusterHostGroupCallable(const ListClusterHostGroupRequest &request) const
+EmrClient::ListAutoScalingActivitiesOutcomeCallable EmrClient::listAutoScalingActivitiesCallable(const ListAutoScalingActivitiesRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ListClusterHostGroupOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ListAutoScalingActivitiesOutcome()>>(
 			[this, request]()
 			{
-			return this->listClusterHostGroup(request);
+			return this->listAutoScalingActivities(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-EmrClient::ListClusterInstalledServiceOutcome EmrClient::listClusterInstalledService(const ListClusterInstalledServiceRequest &request) const
+EmrClient::ListAutoScalingMetricsOutcome EmrClient::listAutoScalingMetrics(const ListAutoScalingMetricsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ListClusterInstalledServiceOutcome(endpointOutcome.error());
+		return ListAutoScalingMetricsOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ListClusterInstalledServiceOutcome(ListClusterInstalledServiceResult(outcome.result()));
+		return ListAutoScalingMetricsOutcome(ListAutoScalingMetricsResult(outcome.result()));
 	else
-		return ListClusterInstalledServiceOutcome(outcome.error());
+		return ListAutoScalingMetricsOutcome(outcome.error());
 }
 
-void EmrClient::listClusterInstalledServiceAsync(const ListClusterInstalledServiceRequest& request, const ListClusterInstalledServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void EmrClient::listAutoScalingMetricsAsync(const ListAutoScalingMetricsRequest& request, const ListAutoScalingMetricsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, listClusterInstalledService(request), context);
+		handler(this, request, listAutoScalingMetrics(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-EmrClient::ListClusterInstalledServiceOutcomeCallable EmrClient::listClusterInstalledServiceCallable(const ListClusterInstalledServiceRequest &request) const
+EmrClient::ListAutoScalingMetricsOutcomeCallable EmrClient::listAutoScalingMetricsCallable(const ListAutoScalingMetricsRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ListClusterInstalledServiceOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ListAutoScalingMetricsOutcome()>>(
 			[this, request]()
 			{
-			return this->listClusterInstalledService(request);
+			return this->listAutoScalingMetrics(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-EmrClient::ListClusterOperationOutcome EmrClient::listClusterOperation(const ListClusterOperationRequest &request) const
+EmrClient::ListAutoScalingPoliciesOutcome EmrClient::listAutoScalingPolicies(const ListAutoScalingPoliciesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ListClusterOperationOutcome(endpointOutcome.error());
+		return ListAutoScalingPoliciesOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ListClusterOperationOutcome(ListClusterOperationResult(outcome.result()));
+		return ListAutoScalingPoliciesOutcome(ListAutoScalingPoliciesResult(outcome.result()));
 	else
-		return ListClusterOperationOutcome(outcome.error());
+		return ListAutoScalingPoliciesOutcome(outcome.error());
 }
 
-void EmrClient::listClusterOperationAsync(const ListClusterOperationRequest& request, const ListClusterOperationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void EmrClient::listAutoScalingPoliciesAsync(const ListAutoScalingPoliciesRequest& request, const ListAutoScalingPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, listClusterOperation(request), context);
+		handler(this, request, listAutoScalingPolicies(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-EmrClient::ListClusterOperationOutcomeCallable EmrClient::listClusterOperationCallable(const ListClusterOperationRequest &request) const
+EmrClient::ListAutoScalingPoliciesOutcomeCallable EmrClient::listAutoScalingPoliciesCallable(const ListAutoScalingPoliciesRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ListClusterOperationOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ListAutoScalingPoliciesOutcome()>>(
 			[this, request]()
 			{
-			return this->listClusterOperation(request);
+			return this->listAutoScalingPolicies(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-EmrClient::ListClusterOperationHostOutcome EmrClient::listClusterOperationHost(const ListClusterOperationHostRequest &request) const
+EmrClient::ListAutoScalingRulesOutcome EmrClient::listAutoScalingRules(const ListAutoScalingRulesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ListClusterOperationHostOutcome(endpointOutcome.error());
+		return ListAutoScalingRulesOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ListClusterOperationHostOutcome(ListClusterOperationHostResult(outcome.result()));
+		return ListAutoScalingRulesOutcome(ListAutoScalingRulesResult(outcome.result()));
 	else
-		return ListClusterOperationHostOutcome(outcome.error());
+		return ListAutoScalingRulesOutcome(outcome.error());
 }
 
-void EmrClient::listClusterOperationHostAsync(const ListClusterOperationHostRequest& request, const ListClusterOperationHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void EmrClient::listAutoScalingRulesAsync(const ListAutoScalingRulesRequest& request, const ListAutoScalingRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, listClusterOperationHost(request), context);
+		handler(this, request, listAutoScalingRules(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-EmrClient::ListClusterOperationHostOutcomeCallable EmrClient::listClusterOperationHostCallable(const ListClusterOperationHostRequest &request) const
+EmrClient::ListAutoScalingRulesOutcomeCallable EmrClient::listAutoScalingRulesCallable(const ListAutoScalingRulesRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ListClusterOperationHostOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ListAutoScalingRulesOutcome()>>(
 			[this, request]()
 			{
-			return this->listClusterOperationHost(request);
+			return this->listAutoScalingRules(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-EmrClient::ListClusterOperationHostTaskOutcome EmrClient::listClusterOperationHostTask(const ListClusterOperationHostTaskRequest &request) const
+EmrClient::ListClusterScriptsOutcome EmrClient::listClusterScripts(const ListClusterScriptsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ListClusterOperationHostTaskOutcome(endpointOutcome.error());
+		return ListClusterScriptsOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ListClusterOperationHostTaskOutcome(ListClusterOperationHostTaskResult(outcome.result()));
+		return ListClusterScriptsOutcome(ListClusterScriptsResult(outcome.result()));
 	else
-		return ListClusterOperationHostTaskOutcome(outcome.error());
+		return ListClusterScriptsOutcome(outcome.error());
 }
 
-void EmrClient::listClusterOperationHostTaskAsync(const ListClusterOperationHostTaskRequest& request, const ListClusterOperationHostTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void EmrClient::listClusterScriptsAsync(const ListClusterScriptsRequest& request, const ListClusterScriptsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, listClusterOperationHostTask(request), context);
+		handler(this, request, listClusterScripts(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-EmrClient::ListClusterOperationHostTaskOutcomeCallable EmrClient::listClusterOperationHostTaskCallable(const ListClusterOperationHostTaskRequest &request) const
+EmrClient::ListClusterScriptsOutcomeCallable EmrClient::listClusterScriptsCallable(const ListClusterScriptsRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ListClusterOperationHostTaskOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ListClusterScriptsOutcome()>>(
 			[this, request]()
 			{
-			return this->listClusterOperationHostTask(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EmrClient::ListClusterOperationTaskOutcome EmrClient::listClusterOperationTask(const ListClusterOperationTaskRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListClusterOperationTaskOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListClusterOperationTaskOutcome(ListClusterOperationTaskResult(outcome.result()));
-	else
-		return ListClusterOperationTaskOutcome(outcome.error());
-}
-
-void EmrClient::listClusterOperationTaskAsync(const ListClusterOperationTaskRequest& request, const ListClusterOperationTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listClusterOperationTask(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EmrClient::ListClusterOperationTaskOutcomeCallable EmrClient::listClusterOperationTaskCallable(const ListClusterOperationTaskRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListClusterOperationTaskOutcome()>>(
-			[this, request]()
-			{
-			return this->listClusterOperationTask(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EmrClient::ListClusterServiceOutcome EmrClient::listClusterService(const ListClusterServiceRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListClusterServiceOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListClusterServiceOutcome(ListClusterServiceResult(outcome.result()));
-	else
-		return ListClusterServiceOutcome(outcome.error());
-}
-
-void EmrClient::listClusterServiceAsync(const ListClusterServiceRequest& request, const ListClusterServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listClusterService(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EmrClient::ListClusterServiceOutcomeCallable EmrClient::listClusterServiceCallable(const ListClusterServiceRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListClusterServiceOutcome()>>(
-			[this, request]()
-			{
-			return this->listClusterService(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EmrClient::ListClusterServiceComponentOutcome EmrClient::listClusterServiceComponent(const ListClusterServiceComponentRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListClusterServiceComponentOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListClusterServiceComponentOutcome(ListClusterServiceComponentResult(outcome.result()));
-	else
-		return ListClusterServiceComponentOutcome(outcome.error());
-}
-
-void EmrClient::listClusterServiceComponentAsync(const ListClusterServiceComponentRequest& request, const ListClusterServiceComponentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listClusterServiceComponent(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EmrClient::ListClusterServiceComponentOutcomeCallable EmrClient::listClusterServiceComponentCallable(const ListClusterServiceComponentRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListClusterServiceComponentOutcome()>>(
-			[this, request]()
-			{
-			return this->listClusterServiceComponent(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EmrClient::ListClusterServiceComponentHealthInfoOutcome EmrClient::listClusterServiceComponentHealthInfo(const ListClusterServiceComponentHealthInfoRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListClusterServiceComponentHealthInfoOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListClusterServiceComponentHealthInfoOutcome(ListClusterServiceComponentHealthInfoResult(outcome.result()));
-	else
-		return ListClusterServiceComponentHealthInfoOutcome(outcome.error());
-}
-
-void EmrClient::listClusterServiceComponentHealthInfoAsync(const ListClusterServiceComponentHealthInfoRequest& request, const ListClusterServiceComponentHealthInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listClusterServiceComponentHealthInfo(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EmrClient::ListClusterServiceComponentHealthInfoOutcomeCallable EmrClient::listClusterServiceComponentHealthInfoCallable(const ListClusterServiceComponentHealthInfoRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListClusterServiceComponentHealthInfoOutcome()>>(
-			[this, request]()
-			{
-			return this->listClusterServiceComponentHealthInfo(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EmrClient::ListClusterServiceConfigHistoryOutcome EmrClient::listClusterServiceConfigHistory(const ListClusterServiceConfigHistoryRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListClusterServiceConfigHistoryOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListClusterServiceConfigHistoryOutcome(ListClusterServiceConfigHistoryResult(outcome.result()));
-	else
-		return ListClusterServiceConfigHistoryOutcome(outcome.error());
-}
-
-void EmrClient::listClusterServiceConfigHistoryAsync(const ListClusterServiceConfigHistoryRequest& request, const ListClusterServiceConfigHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listClusterServiceConfigHistory(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EmrClient::ListClusterServiceConfigHistoryOutcomeCallable EmrClient::listClusterServiceConfigHistoryCallable(const ListClusterServiceConfigHistoryRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListClusterServiceConfigHistoryOutcome()>>(
-			[this, request]()
-			{
-			return this->listClusterServiceConfigHistory(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EmrClient::ListClusterServiceQuickLinkOutcome EmrClient::listClusterServiceQuickLink(const ListClusterServiceQuickLinkRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListClusterServiceQuickLinkOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListClusterServiceQuickLinkOutcome(ListClusterServiceQuickLinkResult(outcome.result()));
-	else
-		return ListClusterServiceQuickLinkOutcome(outcome.error());
-}
-
-void EmrClient::listClusterServiceQuickLinkAsync(const ListClusterServiceQuickLinkRequest& request, const ListClusterServiceQuickLinkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listClusterServiceQuickLink(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EmrClient::ListClusterServiceQuickLinkOutcomeCallable EmrClient::listClusterServiceQuickLinkCallable(const ListClusterServiceQuickLinkRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListClusterServiceQuickLinkOutcome()>>(
-			[this, request]()
-			{
-			return this->listClusterServiceQuickLink(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EmrClient::ListClusterTemplatesOutcome EmrClient::listClusterTemplates(const ListClusterTemplatesRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListClusterTemplatesOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListClusterTemplatesOutcome(ListClusterTemplatesResult(outcome.result()));
-	else
-		return ListClusterTemplatesOutcome(outcome.error());
-}
-
-void EmrClient::listClusterTemplatesAsync(const ListClusterTemplatesRequest& request, const ListClusterTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listClusterTemplates(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EmrClient::ListClusterTemplatesOutcomeCallable EmrClient::listClusterTemplatesCallable(const ListClusterTemplatesRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListClusterTemplatesOutcome()>>(
-			[this, request]()
-			{
-			return this->listClusterTemplates(request);
+			return this->listClusterScripts(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2427,792 +1635,612 @@ EmrClient::ListClustersOutcomeCallable EmrClient::listClustersCallable(const Lis
 	return task->get_future();
 }
 
-EmrClient::ListEmrAvailableConfigOutcome EmrClient::listEmrAvailableConfig(const ListEmrAvailableConfigRequest &request) const
+EmrClient::ListClusters2Outcome EmrClient::listClusters2(const ListClusters2Request &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ListEmrAvailableConfigOutcome(endpointOutcome.error());
+		return ListClusters2Outcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ListEmrAvailableConfigOutcome(ListEmrAvailableConfigResult(outcome.result()));
+		return ListClusters2Outcome(ListClusters2Result(outcome.result()));
 	else
-		return ListEmrAvailableConfigOutcome(outcome.error());
+		return ListClusters2Outcome(outcome.error());
 }
 
-void EmrClient::listEmrAvailableConfigAsync(const ListEmrAvailableConfigRequest& request, const ListEmrAvailableConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void EmrClient::listClusters2Async(const ListClusters2Request& request, const ListClusters2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, listEmrAvailableConfig(request), context);
+		handler(this, request, listClusters2(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-EmrClient::ListEmrAvailableConfigOutcomeCallable EmrClient::listEmrAvailableConfigCallable(const ListEmrAvailableConfigRequest &request) const
+EmrClient::ListClusters2OutcomeCallable EmrClient::listClusters2Callable(const ListClusters2Request &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ListEmrAvailableConfigOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ListClusters2Outcome()>>(
 			[this, request]()
 			{
-			return this->listEmrAvailableConfig(request);
+			return this->listClusters2(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-EmrClient::ListEmrAvailableResourceOutcome EmrClient::listEmrAvailableResource(const ListEmrAvailableResourceRequest &request) const
+EmrClient::ListComponentHealthOutcome EmrClient::listComponentHealth(const ListComponentHealthRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ListEmrAvailableResourceOutcome(endpointOutcome.error());
+		return ListComponentHealthOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ListEmrAvailableResourceOutcome(ListEmrAvailableResourceResult(outcome.result()));
+		return ListComponentHealthOutcome(ListComponentHealthResult(outcome.result()));
 	else
-		return ListEmrAvailableResourceOutcome(outcome.error());
+		return ListComponentHealthOutcome(outcome.error());
 }
 
-void EmrClient::listEmrAvailableResourceAsync(const ListEmrAvailableResourceRequest& request, const ListEmrAvailableResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void EmrClient::listComponentHealthAsync(const ListComponentHealthRequest& request, const ListComponentHealthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, listEmrAvailableResource(request), context);
+		handler(this, request, listComponentHealth(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-EmrClient::ListEmrAvailableResourceOutcomeCallable EmrClient::listEmrAvailableResourceCallable(const ListEmrAvailableResourceRequest &request) const
+EmrClient::ListComponentHealthOutcomeCallable EmrClient::listComponentHealthCallable(const ListComponentHealthRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ListEmrAvailableResourceOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ListComponentHealthOutcome()>>(
 			[this, request]()
 			{
-			return this->listEmrAvailableResource(request);
+			return this->listComponentHealth(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-EmrClient::ListEmrMainVersionOutcome EmrClient::listEmrMainVersion(const ListEmrMainVersionRequest &request) const
+EmrClient::ListComponentInstancesOutcome EmrClient::listComponentInstances(const ListComponentInstancesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ListEmrMainVersionOutcome(endpointOutcome.error());
+		return ListComponentInstancesOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ListEmrMainVersionOutcome(ListEmrMainVersionResult(outcome.result()));
+		return ListComponentInstancesOutcome(ListComponentInstancesResult(outcome.result()));
 	else
-		return ListEmrMainVersionOutcome(outcome.error());
+		return ListComponentInstancesOutcome(outcome.error());
 }
 
-void EmrClient::listEmrMainVersionAsync(const ListEmrMainVersionRequest& request, const ListEmrMainVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void EmrClient::listComponentInstancesAsync(const ListComponentInstancesRequest& request, const ListComponentInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, listEmrMainVersion(request), context);
+		handler(this, request, listComponentInstances(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-EmrClient::ListEmrMainVersionOutcomeCallable EmrClient::listEmrMainVersionCallable(const ListEmrMainVersionRequest &request) const
+EmrClient::ListComponentInstancesOutcomeCallable EmrClient::listComponentInstancesCallable(const ListComponentInstancesRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ListEmrMainVersionOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ListComponentInstancesOutcome()>>(
 			[this, request]()
 			{
-			return this->listEmrMainVersion(request);
+			return this->listComponentInstances(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-EmrClient::ListFlowOutcome EmrClient::listFlow(const ListFlowRequest &request) const
+EmrClient::ListComponentsOutcome EmrClient::listComponents(const ListComponentsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ListFlowOutcome(endpointOutcome.error());
+		return ListComponentsOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ListFlowOutcome(ListFlowResult(outcome.result()));
+		return ListComponentsOutcome(ListComponentsResult(outcome.result()));
 	else
-		return ListFlowOutcome(outcome.error());
+		return ListComponentsOutcome(outcome.error());
 }
 
-void EmrClient::listFlowAsync(const ListFlowRequest& request, const ListFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void EmrClient::listComponentsAsync(const ListComponentsRequest& request, const ListComponentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, listFlow(request), context);
+		handler(this, request, listComponents(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-EmrClient::ListFlowOutcomeCallable EmrClient::listFlowCallable(const ListFlowRequest &request) const
+EmrClient::ListComponentsOutcomeCallable EmrClient::listComponentsCallable(const ListComponentsRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ListFlowOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ListComponentsOutcome()>>(
 			[this, request]()
 			{
-			return this->listFlow(request);
+			return this->listComponents(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-EmrClient::ListFlowCategoryOutcome EmrClient::listFlowCategory(const ListFlowCategoryRequest &request) const
+EmrClient::ListNodeGroupsOutcome EmrClient::listNodeGroups(const ListNodeGroupsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ListFlowCategoryOutcome(endpointOutcome.error());
+		return ListNodeGroupsOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ListFlowCategoryOutcome(ListFlowCategoryResult(outcome.result()));
+		return ListNodeGroupsOutcome(ListNodeGroupsResult(outcome.result()));
 	else
-		return ListFlowCategoryOutcome(outcome.error());
+		return ListNodeGroupsOutcome(outcome.error());
 }
 
-void EmrClient::listFlowCategoryAsync(const ListFlowCategoryRequest& request, const ListFlowCategoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void EmrClient::listNodeGroupsAsync(const ListNodeGroupsRequest& request, const ListNodeGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, listFlowCategory(request), context);
+		handler(this, request, listNodeGroups(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-EmrClient::ListFlowCategoryOutcomeCallable EmrClient::listFlowCategoryCallable(const ListFlowCategoryRequest &request) const
+EmrClient::ListNodeGroupsOutcomeCallable EmrClient::listNodeGroupsCallable(const ListNodeGroupsRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ListFlowCategoryOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ListNodeGroupsOutcome()>>(
 			[this, request]()
 			{
-			return this->listFlowCategory(request);
+			return this->listNodeGroups(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-EmrClient::ListFlowClusterOutcome EmrClient::listFlowCluster(const ListFlowClusterRequest &request) const
+EmrClient::ListNodesOutcome EmrClient::listNodes(const ListNodesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ListFlowClusterOutcome(endpointOutcome.error());
+		return ListNodesOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ListFlowClusterOutcome(ListFlowClusterResult(outcome.result()));
+		return ListNodesOutcome(ListNodesResult(outcome.result()));
 	else
-		return ListFlowClusterOutcome(outcome.error());
+		return ListNodesOutcome(outcome.error());
 }
 
-void EmrClient::listFlowClusterAsync(const ListFlowClusterRequest& request, const ListFlowClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void EmrClient::listNodesAsync(const ListNodesRequest& request, const ListNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, listFlowCluster(request), context);
+		handler(this, request, listNodes(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-EmrClient::ListFlowClusterOutcomeCallable EmrClient::listFlowClusterCallable(const ListFlowClusterRequest &request) const
+EmrClient::ListNodesOutcomeCallable EmrClient::listNodesCallable(const ListNodesRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ListFlowClusterOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ListNodesOutcome()>>(
 			[this, request]()
 			{
-			return this->listFlowCluster(request);
+			return this->listNodes(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-EmrClient::ListFlowClusterAllOutcome EmrClient::listFlowClusterAll(const ListFlowClusterAllRequest &request) const
+EmrClient::ListNodesv3Outcome EmrClient::listNodesv3(const ListNodesv3Request &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ListFlowClusterAllOutcome(endpointOutcome.error());
+		return ListNodesv3Outcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ListFlowClusterAllOutcome(ListFlowClusterAllResult(outcome.result()));
+		return ListNodesv3Outcome(ListNodesv3Result(outcome.result()));
 	else
-		return ListFlowClusterAllOutcome(outcome.error());
+		return ListNodesv3Outcome(outcome.error());
 }
 
-void EmrClient::listFlowClusterAllAsync(const ListFlowClusterAllRequest& request, const ListFlowClusterAllAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void EmrClient::listNodesv3Async(const ListNodesv3Request& request, const ListNodesv3AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, listFlowClusterAll(request), context);
+		handler(this, request, listNodesv3(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-EmrClient::ListFlowClusterAllOutcomeCallable EmrClient::listFlowClusterAllCallable(const ListFlowClusterAllRequest &request) const
+EmrClient::ListNodesv3OutcomeCallable EmrClient::listNodesv3Callable(const ListNodesv3Request &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ListFlowClusterAllOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ListNodesv3Outcome()>>(
 			[this, request]()
 			{
-			return this->listFlowClusterAll(request);
+			return this->listNodesv3(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-EmrClient::ListFlowClusterAllHostsOutcome EmrClient::listFlowClusterAllHosts(const ListFlowClusterAllHostsRequest &request) const
+EmrClient::ListOnAckClustersOutcome EmrClient::listOnAckClusters(const ListOnAckClustersRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ListFlowClusterAllHostsOutcome(endpointOutcome.error());
+		return ListOnAckClustersOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ListFlowClusterAllHostsOutcome(ListFlowClusterAllHostsResult(outcome.result()));
+		return ListOnAckClustersOutcome(ListOnAckClustersResult(outcome.result()));
 	else
-		return ListFlowClusterAllHostsOutcome(outcome.error());
+		return ListOnAckClustersOutcome(outcome.error());
 }
 
-void EmrClient::listFlowClusterAllHostsAsync(const ListFlowClusterAllHostsRequest& request, const ListFlowClusterAllHostsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void EmrClient::listOnAckClustersAsync(const ListOnAckClustersRequest& request, const ListOnAckClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, listFlowClusterAllHosts(request), context);
+		handler(this, request, listOnAckClusters(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-EmrClient::ListFlowClusterAllHostsOutcomeCallable EmrClient::listFlowClusterAllHostsCallable(const ListFlowClusterAllHostsRequest &request) const
+EmrClient::ListOnAckClustersOutcomeCallable EmrClient::listOnAckClustersCallable(const ListOnAckClustersRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ListFlowClusterAllHostsOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ListOnAckClustersOutcome()>>(
 			[this, request]()
 			{
-			return this->listFlowClusterAllHosts(request);
+			return this->listOnAckClusters(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-EmrClient::ListFlowClusterHostOutcome EmrClient::listFlowClusterHost(const ListFlowClusterHostRequest &request) const
+EmrClient::ListOnAckComponentsOutcome EmrClient::listOnAckComponents(const ListOnAckComponentsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ListFlowClusterHostOutcome(endpointOutcome.error());
+		return ListOnAckComponentsOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ListFlowClusterHostOutcome(ListFlowClusterHostResult(outcome.result()));
+		return ListOnAckComponentsOutcome(ListOnAckComponentsResult(outcome.result()));
 	else
-		return ListFlowClusterHostOutcome(outcome.error());
+		return ListOnAckComponentsOutcome(outcome.error());
 }
 
-void EmrClient::listFlowClusterHostAsync(const ListFlowClusterHostRequest& request, const ListFlowClusterHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void EmrClient::listOnAckComponentsAsync(const ListOnAckComponentsRequest& request, const ListOnAckComponentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, listFlowClusterHost(request), context);
+		handler(this, request, listOnAckComponents(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-EmrClient::ListFlowClusterHostOutcomeCallable EmrClient::listFlowClusterHostCallable(const ListFlowClusterHostRequest &request) const
+EmrClient::ListOnAckComponentsOutcomeCallable EmrClient::listOnAckComponentsCallable(const ListOnAckComponentsRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ListFlowClusterHostOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ListOnAckComponentsOutcome()>>(
 			[this, request]()
 			{
-			return this->listFlowClusterHost(request);
+			return this->listOnAckComponents(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-EmrClient::ListFlowInstanceOutcome EmrClient::listFlowInstance(const ListFlowInstanceRequest &request) const
+EmrClient::ListOnKubeClusterDedicatedNodesOutcome EmrClient::listOnKubeClusterDedicatedNodes(const ListOnKubeClusterDedicatedNodesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ListFlowInstanceOutcome(endpointOutcome.error());
+		return ListOnKubeClusterDedicatedNodesOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ListFlowInstanceOutcome(ListFlowInstanceResult(outcome.result()));
+		return ListOnKubeClusterDedicatedNodesOutcome(ListOnKubeClusterDedicatedNodesResult(outcome.result()));
 	else
-		return ListFlowInstanceOutcome(outcome.error());
+		return ListOnKubeClusterDedicatedNodesOutcome(outcome.error());
 }
 
-void EmrClient::listFlowInstanceAsync(const ListFlowInstanceRequest& request, const ListFlowInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void EmrClient::listOnKubeClusterDedicatedNodesAsync(const ListOnKubeClusterDedicatedNodesRequest& request, const ListOnKubeClusterDedicatedNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, listFlowInstance(request), context);
+		handler(this, request, listOnKubeClusterDedicatedNodes(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-EmrClient::ListFlowInstanceOutcomeCallable EmrClient::listFlowInstanceCallable(const ListFlowInstanceRequest &request) const
+EmrClient::ListOnKubeClusterDedicatedNodesOutcomeCallable EmrClient::listOnKubeClusterDedicatedNodesCallable(const ListOnKubeClusterDedicatedNodesRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ListFlowInstanceOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ListOnKubeClusterDedicatedNodesOutcome()>>(
 			[this, request]()
 			{
-			return this->listFlowInstance(request);
+			return this->listOnKubeClusterDedicatedNodes(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-EmrClient::ListFlowJobOutcome EmrClient::listFlowJob(const ListFlowJobRequest &request) const
+EmrClient::ListOnKubeClusterInspectionResultsOutcome EmrClient::listOnKubeClusterInspectionResults(const ListOnKubeClusterInspectionResultsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ListFlowJobOutcome(endpointOutcome.error());
+		return ListOnKubeClusterInspectionResultsOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ListFlowJobOutcome(ListFlowJobResult(outcome.result()));
+		return ListOnKubeClusterInspectionResultsOutcome(ListOnKubeClusterInspectionResultsResult(outcome.result()));
 	else
-		return ListFlowJobOutcome(outcome.error());
+		return ListOnKubeClusterInspectionResultsOutcome(outcome.error());
 }
 
-void EmrClient::listFlowJobAsync(const ListFlowJobRequest& request, const ListFlowJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void EmrClient::listOnKubeClusterInspectionResultsAsync(const ListOnKubeClusterInspectionResultsRequest& request, const ListOnKubeClusterInspectionResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, listFlowJob(request), context);
+		handler(this, request, listOnKubeClusterInspectionResults(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-EmrClient::ListFlowJobOutcomeCallable EmrClient::listFlowJobCallable(const ListFlowJobRequest &request) const
+EmrClient::ListOnKubeClusterInspectionResultsOutcomeCallable EmrClient::listOnKubeClusterInspectionResultsCallable(const ListOnKubeClusterInspectionResultsRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ListFlowJobOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ListOnKubeClusterInspectionResultsOutcome()>>(
 			[this, request]()
 			{
-			return this->listFlowJob(request);
+			return this->listOnKubeClusterInspectionResults(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-EmrClient::ListFlowJobHistoryOutcome EmrClient::listFlowJobHistory(const ListFlowJobHistoryRequest &request) const
+EmrClient::ListOnKubeClustersOutcome EmrClient::listOnKubeClusters(const ListOnKubeClustersRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ListFlowJobHistoryOutcome(endpointOutcome.error());
+		return ListOnKubeClustersOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ListFlowJobHistoryOutcome(ListFlowJobHistoryResult(outcome.result()));
+		return ListOnKubeClustersOutcome(ListOnKubeClustersResult(outcome.result()));
 	else
-		return ListFlowJobHistoryOutcome(outcome.error());
+		return ListOnKubeClustersOutcome(outcome.error());
 }
 
-void EmrClient::listFlowJobHistoryAsync(const ListFlowJobHistoryRequest& request, const ListFlowJobHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void EmrClient::listOnKubeClustersAsync(const ListOnKubeClustersRequest& request, const ListOnKubeClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, listFlowJobHistory(request), context);
+		handler(this, request, listOnKubeClusters(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-EmrClient::ListFlowJobHistoryOutcomeCallable EmrClient::listFlowJobHistoryCallable(const ListFlowJobHistoryRequest &request) const
+EmrClient::ListOnKubeClustersOutcomeCallable EmrClient::listOnKubeClustersCallable(const ListOnKubeClustersRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ListFlowJobHistoryOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ListOnKubeClustersOutcome()>>(
 			[this, request]()
 			{
-			return this->listFlowJobHistory(request);
+			return this->listOnKubeClusters(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-EmrClient::ListFlowNodeInstanceOutcome EmrClient::listFlowNodeInstance(const ListFlowNodeInstanceRequest &request) const
+EmrClient::ListOnKubeComponentsOutcome EmrClient::listOnKubeComponents(const ListOnKubeComponentsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ListFlowNodeInstanceOutcome(endpointOutcome.error());
+		return ListOnKubeComponentsOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ListFlowNodeInstanceOutcome(ListFlowNodeInstanceResult(outcome.result()));
+		return ListOnKubeComponentsOutcome(ListOnKubeComponentsResult(outcome.result()));
 	else
-		return ListFlowNodeInstanceOutcome(outcome.error());
+		return ListOnKubeComponentsOutcome(outcome.error());
 }
 
-void EmrClient::listFlowNodeInstanceAsync(const ListFlowNodeInstanceRequest& request, const ListFlowNodeInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void EmrClient::listOnKubeComponentsAsync(const ListOnKubeComponentsRequest& request, const ListOnKubeComponentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, listFlowNodeInstance(request), context);
+		handler(this, request, listOnKubeComponents(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-EmrClient::ListFlowNodeInstanceOutcomeCallable EmrClient::listFlowNodeInstanceCallable(const ListFlowNodeInstanceRequest &request) const
+EmrClient::ListOnKubeComponentsOutcomeCallable EmrClient::listOnKubeComponentsCallable(const ListOnKubeComponentsRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ListFlowNodeInstanceOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ListOnKubeComponentsOutcome()>>(
 			[this, request]()
 			{
-			return this->listFlowNodeInstance(request);
+			return this->listOnKubeComponents(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-EmrClient::ListFlowNodeInstanceContainerStatusOutcome EmrClient::listFlowNodeInstanceContainerStatus(const ListFlowNodeInstanceContainerStatusRequest &request) const
+EmrClient::ListResourceHealthInspectionOutcome EmrClient::listResourceHealthInspection(const ListResourceHealthInspectionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ListFlowNodeInstanceContainerStatusOutcome(endpointOutcome.error());
+		return ListResourceHealthInspectionOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ListFlowNodeInstanceContainerStatusOutcome(ListFlowNodeInstanceContainerStatusResult(outcome.result()));
+		return ListResourceHealthInspectionOutcome(ListResourceHealthInspectionResult(outcome.result()));
 	else
-		return ListFlowNodeInstanceContainerStatusOutcome(outcome.error());
+		return ListResourceHealthInspectionOutcome(outcome.error());
 }
 
-void EmrClient::listFlowNodeInstanceContainerStatusAsync(const ListFlowNodeInstanceContainerStatusRequest& request, const ListFlowNodeInstanceContainerStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void EmrClient::listResourceHealthInspectionAsync(const ListResourceHealthInspectionRequest& request, const ListResourceHealthInspectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, listFlowNodeInstanceContainerStatus(request), context);
+		handler(this, request, listResourceHealthInspection(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-EmrClient::ListFlowNodeInstanceContainerStatusOutcomeCallable EmrClient::listFlowNodeInstanceContainerStatusCallable(const ListFlowNodeInstanceContainerStatusRequest &request) const
+EmrClient::ListResourceHealthInspectionOutcomeCallable EmrClient::listResourceHealthInspectionCallable(const ListResourceHealthInspectionRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ListFlowNodeInstanceContainerStatusOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ListResourceHealthInspectionOutcome()>>(
 			[this, request]()
 			{
-			return this->listFlowNodeInstanceContainerStatus(request);
+			return this->listResourceHealthInspection(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-EmrClient::ListFlowNodeSqlResultOutcome EmrClient::listFlowNodeSqlResult(const ListFlowNodeSqlResultRequest &request) const
+EmrClient::ListScalingActivitiesOutcome EmrClient::listScalingActivities(const ListScalingActivitiesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ListFlowNodeSqlResultOutcome(endpointOutcome.error());
+		return ListScalingActivitiesOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ListFlowNodeSqlResultOutcome(ListFlowNodeSqlResultResult(outcome.result()));
+		return ListScalingActivitiesOutcome(ListScalingActivitiesResult(outcome.result()));
 	else
-		return ListFlowNodeSqlResultOutcome(outcome.error());
+		return ListScalingActivitiesOutcome(outcome.error());
 }
 
-void EmrClient::listFlowNodeSqlResultAsync(const ListFlowNodeSqlResultRequest& request, const ListFlowNodeSqlResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void EmrClient::listScalingActivitiesAsync(const ListScalingActivitiesRequest& request, const ListScalingActivitiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, listFlowNodeSqlResult(request), context);
+		handler(this, request, listScalingActivities(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-EmrClient::ListFlowNodeSqlResultOutcomeCallable EmrClient::listFlowNodeSqlResultCallable(const ListFlowNodeSqlResultRequest &request) const
+EmrClient::ListScalingActivitiesOutcomeCallable EmrClient::listScalingActivitiesCallable(const ListScalingActivitiesRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ListFlowNodeSqlResultOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ListScalingActivitiesOutcome()>>(
 			[this, request]()
 			{
-			return this->listFlowNodeSqlResult(request);
+			return this->listScalingActivities(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-EmrClient::ListFlowProjectOutcome EmrClient::listFlowProject(const ListFlowProjectRequest &request) const
+EmrClient::ListScalingGroupsOutcome EmrClient::listScalingGroups(const ListScalingGroupsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ListFlowProjectOutcome(endpointOutcome.error());
+		return ListScalingGroupsOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ListFlowProjectOutcome(ListFlowProjectResult(outcome.result()));
+		return ListScalingGroupsOutcome(ListScalingGroupsResult(outcome.result()));
 	else
-		return ListFlowProjectOutcome(outcome.error());
+		return ListScalingGroupsOutcome(outcome.error());
 }
 
-void EmrClient::listFlowProjectAsync(const ListFlowProjectRequest& request, const ListFlowProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void EmrClient::listScalingGroupsAsync(const ListScalingGroupsRequest& request, const ListScalingGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, listFlowProject(request), context);
+		handler(this, request, listScalingGroups(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-EmrClient::ListFlowProjectOutcomeCallable EmrClient::listFlowProjectCallable(const ListFlowProjectRequest &request) const
+EmrClient::ListScalingGroupsOutcomeCallable EmrClient::listScalingGroupsCallable(const ListScalingGroupsRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ListFlowProjectOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ListScalingGroupsOutcome()>>(
 			[this, request]()
 			{
-			return this->listFlowProject(request);
+			return this->listScalingGroups(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-EmrClient::ListFlowProjectClusterSettingOutcome EmrClient::listFlowProjectClusterSetting(const ListFlowProjectClusterSettingRequest &request) const
+EmrClient::ListScalingMetricsOutcome EmrClient::listScalingMetrics(const ListScalingMetricsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ListFlowProjectClusterSettingOutcome(endpointOutcome.error());
+		return ListScalingMetricsOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ListFlowProjectClusterSettingOutcome(ListFlowProjectClusterSettingResult(outcome.result()));
+		return ListScalingMetricsOutcome(ListScalingMetricsResult(outcome.result()));
 	else
-		return ListFlowProjectClusterSettingOutcome(outcome.error());
+		return ListScalingMetricsOutcome(outcome.error());
 }
 
-void EmrClient::listFlowProjectClusterSettingAsync(const ListFlowProjectClusterSettingRequest& request, const ListFlowProjectClusterSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void EmrClient::listScalingMetricsAsync(const ListScalingMetricsRequest& request, const ListScalingMetricsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, listFlowProjectClusterSetting(request), context);
+		handler(this, request, listScalingMetrics(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-EmrClient::ListFlowProjectClusterSettingOutcomeCallable EmrClient::listFlowProjectClusterSettingCallable(const ListFlowProjectClusterSettingRequest &request) const
+EmrClient::ListScalingMetricsOutcomeCallable EmrClient::listScalingMetricsCallable(const ListScalingMetricsRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ListFlowProjectClusterSettingOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ListScalingMetricsOutcome()>>(
 			[this, request]()
 			{
-			return this->listFlowProjectClusterSetting(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EmrClient::ListFlowProjectUserOutcome EmrClient::listFlowProjectUser(const ListFlowProjectUserRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListFlowProjectUserOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListFlowProjectUserOutcome(ListFlowProjectUserResult(outcome.result()));
-	else
-		return ListFlowProjectUserOutcome(outcome.error());
-}
-
-void EmrClient::listFlowProjectUserAsync(const ListFlowProjectUserRequest& request, const ListFlowProjectUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listFlowProjectUser(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EmrClient::ListFlowProjectUserOutcomeCallable EmrClient::listFlowProjectUserCallable(const ListFlowProjectUserRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListFlowProjectUserOutcome()>>(
-			[this, request]()
-			{
-			return this->listFlowProjectUser(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EmrClient::ListResourcePoolOutcome EmrClient::listResourcePool(const ListResourcePoolRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListResourcePoolOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListResourcePoolOutcome(ListResourcePoolResult(outcome.result()));
-	else
-		return ListResourcePoolOutcome(outcome.error());
-}
-
-void EmrClient::listResourcePoolAsync(const ListResourcePoolRequest& request, const ListResourcePoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listResourcePool(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EmrClient::ListResourcePoolOutcomeCallable EmrClient::listResourcePoolCallable(const ListResourcePoolRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListResourcePoolOutcome()>>(
-			[this, request]()
-			{
-			return this->listResourcePool(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EmrClient::ListScalingActivityV2Outcome EmrClient::listScalingActivityV2(const ListScalingActivityV2Request &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListScalingActivityV2Outcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListScalingActivityV2Outcome(ListScalingActivityV2Result(outcome.result()));
-	else
-		return ListScalingActivityV2Outcome(outcome.error());
-}
-
-void EmrClient::listScalingActivityV2Async(const ListScalingActivityV2Request& request, const ListScalingActivityV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listScalingActivityV2(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EmrClient::ListScalingActivityV2OutcomeCallable EmrClient::listScalingActivityV2Callable(const ListScalingActivityV2Request &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListScalingActivityV2Outcome()>>(
-			[this, request]()
-			{
-			return this->listScalingActivityV2(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EmrClient::ListScalingConfigItemV2Outcome EmrClient::listScalingConfigItemV2(const ListScalingConfigItemV2Request &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListScalingConfigItemV2Outcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListScalingConfigItemV2Outcome(ListScalingConfigItemV2Result(outcome.result()));
-	else
-		return ListScalingConfigItemV2Outcome(outcome.error());
-}
-
-void EmrClient::listScalingConfigItemV2Async(const ListScalingConfigItemV2Request& request, const ListScalingConfigItemV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listScalingConfigItemV2(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EmrClient::ListScalingConfigItemV2OutcomeCallable EmrClient::listScalingConfigItemV2Callable(const ListScalingConfigItemV2Request &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListScalingConfigItemV2Outcome()>>(
-			[this, request]()
-			{
-			return this->listScalingConfigItemV2(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EmrClient::ListScalingGroupV2Outcome EmrClient::listScalingGroupV2(const ListScalingGroupV2Request &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListScalingGroupV2Outcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListScalingGroupV2Outcome(ListScalingGroupV2Result(outcome.result()));
-	else
-		return ListScalingGroupV2Outcome(outcome.error());
-}
-
-void EmrClient::listScalingGroupV2Async(const ListScalingGroupV2Request& request, const ListScalingGroupV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listScalingGroupV2(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EmrClient::ListScalingGroupV2OutcomeCallable EmrClient::listScalingGroupV2Callable(const ListScalingGroupV2Request &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListScalingGroupV2Outcome()>>(
-			[this, request]()
-			{
-			return this->listScalingGroupV2(request);
+			return this->listScalingMetrics(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3255,900 +2283,108 @@ EmrClient::ListTagResourcesOutcomeCallable EmrClient::listTagResourcesCallable(c
 	return task->get_future();
 }
 
-EmrClient::ModifyClusterNameOutcome EmrClient::modifyClusterName(const ModifyClusterNameRequest &request) const
+EmrClient::ReleaseOnKubeClusterOutcome EmrClient::releaseOnKubeCluster(const ReleaseOnKubeClusterRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ModifyClusterNameOutcome(endpointOutcome.error());
+		return ReleaseOnKubeClusterOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ModifyClusterNameOutcome(ModifyClusterNameResult(outcome.result()));
+		return ReleaseOnKubeClusterOutcome(ReleaseOnKubeClusterResult(outcome.result()));
 	else
-		return ModifyClusterNameOutcome(outcome.error());
+		return ReleaseOnKubeClusterOutcome(outcome.error());
 }
 
-void EmrClient::modifyClusterNameAsync(const ModifyClusterNameRequest& request, const ModifyClusterNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void EmrClient::releaseOnKubeClusterAsync(const ReleaseOnKubeClusterRequest& request, const ReleaseOnKubeClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, modifyClusterName(request), context);
+		handler(this, request, releaseOnKubeCluster(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-EmrClient::ModifyClusterNameOutcomeCallable EmrClient::modifyClusterNameCallable(const ModifyClusterNameRequest &request) const
+EmrClient::ReleaseOnKubeClusterOutcomeCallable EmrClient::releaseOnKubeClusterCallable(const ReleaseOnKubeClusterRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ModifyClusterNameOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ReleaseOnKubeClusterOutcome()>>(
 			[this, request]()
 			{
-			return this->modifyClusterName(request);
+			return this->releaseOnKubeCluster(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-EmrClient::ModifyClusterServiceConfigOutcome EmrClient::modifyClusterServiceConfig(const ModifyClusterServiceConfigRequest &request) const
+EmrClient::RunApplicationActionOutcome EmrClient::runApplicationAction(const RunApplicationActionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ModifyClusterServiceConfigOutcome(endpointOutcome.error());
+		return RunApplicationActionOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ModifyClusterServiceConfigOutcome(ModifyClusterServiceConfigResult(outcome.result()));
+		return RunApplicationActionOutcome(RunApplicationActionResult(outcome.result()));
 	else
-		return ModifyClusterServiceConfigOutcome(outcome.error());
+		return RunApplicationActionOutcome(outcome.error());
 }
 
-void EmrClient::modifyClusterServiceConfigAsync(const ModifyClusterServiceConfigRequest& request, const ModifyClusterServiceConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void EmrClient::runApplicationActionAsync(const RunApplicationActionRequest& request, const RunApplicationActionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, modifyClusterServiceConfig(request), context);
+		handler(this, request, runApplicationAction(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-EmrClient::ModifyClusterServiceConfigOutcomeCallable EmrClient::modifyClusterServiceConfigCallable(const ModifyClusterServiceConfigRequest &request) const
+EmrClient::RunApplicationActionOutcomeCallable EmrClient::runApplicationActionCallable(const RunApplicationActionRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ModifyClusterServiceConfigOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<RunApplicationActionOutcome()>>(
 			[this, request]()
 			{
-			return this->modifyClusterServiceConfig(request);
+			return this->runApplicationAction(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-EmrClient::ModifyClusterTemplateOutcome EmrClient::modifyClusterTemplate(const ModifyClusterTemplateRequest &request) const
+EmrClient::RunScalingActionOutcome EmrClient::runScalingAction(const RunScalingActionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ModifyClusterTemplateOutcome(endpointOutcome.error());
+		return RunScalingActionOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ModifyClusterTemplateOutcome(ModifyClusterTemplateResult(outcome.result()));
+		return RunScalingActionOutcome(RunScalingActionResult(outcome.result()));
 	else
-		return ModifyClusterTemplateOutcome(outcome.error());
+		return RunScalingActionOutcome(outcome.error());
 }
 
-void EmrClient::modifyClusterTemplateAsync(const ModifyClusterTemplateRequest& request, const ModifyClusterTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void EmrClient::runScalingActionAsync(const RunScalingActionRequest& request, const RunScalingActionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, modifyClusterTemplate(request), context);
+		handler(this, request, runScalingAction(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-EmrClient::ModifyClusterTemplateOutcomeCallable EmrClient::modifyClusterTemplateCallable(const ModifyClusterTemplateRequest &request) const
+EmrClient::RunScalingActionOutcomeCallable EmrClient::runScalingActionCallable(const RunScalingActionRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ModifyClusterTemplateOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<RunScalingActionOutcome()>>(
 			[this, request]()
 			{
-			return this->modifyClusterTemplate(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EmrClient::ModifyFlowCategoryOutcome EmrClient::modifyFlowCategory(const ModifyFlowCategoryRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyFlowCategoryOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyFlowCategoryOutcome(ModifyFlowCategoryResult(outcome.result()));
-	else
-		return ModifyFlowCategoryOutcome(outcome.error());
-}
-
-void EmrClient::modifyFlowCategoryAsync(const ModifyFlowCategoryRequest& request, const ModifyFlowCategoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyFlowCategory(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EmrClient::ModifyFlowCategoryOutcomeCallable EmrClient::modifyFlowCategoryCallable(const ModifyFlowCategoryRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyFlowCategoryOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyFlowCategory(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EmrClient::ModifyFlowForWebOutcome EmrClient::modifyFlowForWeb(const ModifyFlowForWebRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyFlowForWebOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyFlowForWebOutcome(ModifyFlowForWebResult(outcome.result()));
-	else
-		return ModifyFlowForWebOutcome(outcome.error());
-}
-
-void EmrClient::modifyFlowForWebAsync(const ModifyFlowForWebRequest& request, const ModifyFlowForWebAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyFlowForWeb(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EmrClient::ModifyFlowForWebOutcomeCallable EmrClient::modifyFlowForWebCallable(const ModifyFlowForWebRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyFlowForWebOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyFlowForWeb(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EmrClient::ModifyFlowProjectOutcome EmrClient::modifyFlowProject(const ModifyFlowProjectRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyFlowProjectOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyFlowProjectOutcome(ModifyFlowProjectResult(outcome.result()));
-	else
-		return ModifyFlowProjectOutcome(outcome.error());
-}
-
-void EmrClient::modifyFlowProjectAsync(const ModifyFlowProjectRequest& request, const ModifyFlowProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyFlowProject(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EmrClient::ModifyFlowProjectOutcomeCallable EmrClient::modifyFlowProjectCallable(const ModifyFlowProjectRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyFlowProjectOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyFlowProject(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EmrClient::ModifyFlowProjectClusterSettingOutcome EmrClient::modifyFlowProjectClusterSetting(const ModifyFlowProjectClusterSettingRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyFlowProjectClusterSettingOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyFlowProjectClusterSettingOutcome(ModifyFlowProjectClusterSettingResult(outcome.result()));
-	else
-		return ModifyFlowProjectClusterSettingOutcome(outcome.error());
-}
-
-void EmrClient::modifyFlowProjectClusterSettingAsync(const ModifyFlowProjectClusterSettingRequest& request, const ModifyFlowProjectClusterSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyFlowProjectClusterSetting(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EmrClient::ModifyFlowProjectClusterSettingOutcomeCallable EmrClient::modifyFlowProjectClusterSettingCallable(const ModifyFlowProjectClusterSettingRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyFlowProjectClusterSettingOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyFlowProjectClusterSetting(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EmrClient::ModifyResourcePoolOutcome EmrClient::modifyResourcePool(const ModifyResourcePoolRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyResourcePoolOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyResourcePoolOutcome(ModifyResourcePoolResult(outcome.result()));
-	else
-		return ModifyResourcePoolOutcome(outcome.error());
-}
-
-void EmrClient::modifyResourcePoolAsync(const ModifyResourcePoolRequest& request, const ModifyResourcePoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyResourcePool(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EmrClient::ModifyResourcePoolOutcomeCallable EmrClient::modifyResourcePoolCallable(const ModifyResourcePoolRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyResourcePoolOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyResourcePool(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EmrClient::ModifyResourcePoolSchedulerTypeOutcome EmrClient::modifyResourcePoolSchedulerType(const ModifyResourcePoolSchedulerTypeRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyResourcePoolSchedulerTypeOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyResourcePoolSchedulerTypeOutcome(ModifyResourcePoolSchedulerTypeResult(outcome.result()));
-	else
-		return ModifyResourcePoolSchedulerTypeOutcome(outcome.error());
-}
-
-void EmrClient::modifyResourcePoolSchedulerTypeAsync(const ModifyResourcePoolSchedulerTypeRequest& request, const ModifyResourcePoolSchedulerTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyResourcePoolSchedulerType(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EmrClient::ModifyResourcePoolSchedulerTypeOutcomeCallable EmrClient::modifyResourcePoolSchedulerTypeCallable(const ModifyResourcePoolSchedulerTypeRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyResourcePoolSchedulerTypeOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyResourcePoolSchedulerType(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EmrClient::ModifyResourceQueueOutcome EmrClient::modifyResourceQueue(const ModifyResourceQueueRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyResourceQueueOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyResourceQueueOutcome(ModifyResourceQueueResult(outcome.result()));
-	else
-		return ModifyResourceQueueOutcome(outcome.error());
-}
-
-void EmrClient::modifyResourceQueueAsync(const ModifyResourceQueueRequest& request, const ModifyResourceQueueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyResourceQueue(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EmrClient::ModifyResourceQueueOutcomeCallable EmrClient::modifyResourceQueueCallable(const ModifyResourceQueueRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyResourceQueueOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyResourceQueue(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EmrClient::ModifyScalingConfigItemV2Outcome EmrClient::modifyScalingConfigItemV2(const ModifyScalingConfigItemV2Request &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyScalingConfigItemV2Outcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyScalingConfigItemV2Outcome(ModifyScalingConfigItemV2Result(outcome.result()));
-	else
-		return ModifyScalingConfigItemV2Outcome(outcome.error());
-}
-
-void EmrClient::modifyScalingConfigItemV2Async(const ModifyScalingConfigItemV2Request& request, const ModifyScalingConfigItemV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyScalingConfigItemV2(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EmrClient::ModifyScalingConfigItemV2OutcomeCallable EmrClient::modifyScalingConfigItemV2Callable(const ModifyScalingConfigItemV2Request &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyScalingConfigItemV2Outcome()>>(
-			[this, request]()
-			{
-			return this->modifyScalingConfigItemV2(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EmrClient::ModifyScalingGroupV2Outcome EmrClient::modifyScalingGroupV2(const ModifyScalingGroupV2Request &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyScalingGroupV2Outcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyScalingGroupV2Outcome(ModifyScalingGroupV2Result(outcome.result()));
-	else
-		return ModifyScalingGroupV2Outcome(outcome.error());
-}
-
-void EmrClient::modifyScalingGroupV2Async(const ModifyScalingGroupV2Request& request, const ModifyScalingGroupV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyScalingGroupV2(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EmrClient::ModifyScalingGroupV2OutcomeCallable EmrClient::modifyScalingGroupV2Callable(const ModifyScalingGroupV2Request &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyScalingGroupV2Outcome()>>(
-			[this, request]()
-			{
-			return this->modifyScalingGroupV2(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EmrClient::RefreshClusterResourcePoolOutcome EmrClient::refreshClusterResourcePool(const RefreshClusterResourcePoolRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return RefreshClusterResourcePoolOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return RefreshClusterResourcePoolOutcome(RefreshClusterResourcePoolResult(outcome.result()));
-	else
-		return RefreshClusterResourcePoolOutcome(outcome.error());
-}
-
-void EmrClient::refreshClusterResourcePoolAsync(const RefreshClusterResourcePoolRequest& request, const RefreshClusterResourcePoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, refreshClusterResourcePool(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EmrClient::RefreshClusterResourcePoolOutcomeCallable EmrClient::refreshClusterResourcePoolCallable(const RefreshClusterResourcePoolRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<RefreshClusterResourcePoolOutcome()>>(
-			[this, request]()
-			{
-			return this->refreshClusterResourcePool(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EmrClient::ReleaseClusterOutcome EmrClient::releaseCluster(const ReleaseClusterRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ReleaseClusterOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ReleaseClusterOutcome(ReleaseClusterResult(outcome.result()));
-	else
-		return ReleaseClusterOutcome(outcome.error());
-}
-
-void EmrClient::releaseClusterAsync(const ReleaseClusterRequest& request, const ReleaseClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, releaseCluster(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EmrClient::ReleaseClusterOutcomeCallable EmrClient::releaseClusterCallable(const ReleaseClusterRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ReleaseClusterOutcome()>>(
-			[this, request]()
-			{
-			return this->releaseCluster(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EmrClient::ReleaseClusterHostGroupOutcome EmrClient::releaseClusterHostGroup(const ReleaseClusterHostGroupRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ReleaseClusterHostGroupOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ReleaseClusterHostGroupOutcome(ReleaseClusterHostGroupResult(outcome.result()));
-	else
-		return ReleaseClusterHostGroupOutcome(outcome.error());
-}
-
-void EmrClient::releaseClusterHostGroupAsync(const ReleaseClusterHostGroupRequest& request, const ReleaseClusterHostGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, releaseClusterHostGroup(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EmrClient::ReleaseClusterHostGroupOutcomeCallable EmrClient::releaseClusterHostGroupCallable(const ReleaseClusterHostGroupRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ReleaseClusterHostGroupOutcome()>>(
-			[this, request]()
-			{
-			return this->releaseClusterHostGroup(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EmrClient::RemoveScalingConfigItemV2Outcome EmrClient::removeScalingConfigItemV2(const RemoveScalingConfigItemV2Request &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return RemoveScalingConfigItemV2Outcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return RemoveScalingConfigItemV2Outcome(RemoveScalingConfigItemV2Result(outcome.result()));
-	else
-		return RemoveScalingConfigItemV2Outcome(outcome.error());
-}
-
-void EmrClient::removeScalingConfigItemV2Async(const RemoveScalingConfigItemV2Request& request, const RemoveScalingConfigItemV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, removeScalingConfigItemV2(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EmrClient::RemoveScalingConfigItemV2OutcomeCallable EmrClient::removeScalingConfigItemV2Callable(const RemoveScalingConfigItemV2Request &request) const
-{
-	auto task = std::make_shared<std::packaged_task<RemoveScalingConfigItemV2Outcome()>>(
-			[this, request]()
-			{
-			return this->removeScalingConfigItemV2(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EmrClient::RerunFlowOutcome EmrClient::rerunFlow(const RerunFlowRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return RerunFlowOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return RerunFlowOutcome(RerunFlowResult(outcome.result()));
-	else
-		return RerunFlowOutcome(outcome.error());
-}
-
-void EmrClient::rerunFlowAsync(const RerunFlowRequest& request, const RerunFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, rerunFlow(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EmrClient::RerunFlowOutcomeCallable EmrClient::rerunFlowCallable(const RerunFlowRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<RerunFlowOutcome()>>(
-			[this, request]()
-			{
-			return this->rerunFlow(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EmrClient::ResizeClusterV2Outcome EmrClient::resizeClusterV2(const ResizeClusterV2Request &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ResizeClusterV2Outcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ResizeClusterV2Outcome(ResizeClusterV2Result(outcome.result()));
-	else
-		return ResizeClusterV2Outcome(outcome.error());
-}
-
-void EmrClient::resizeClusterV2Async(const ResizeClusterV2Request& request, const ResizeClusterV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, resizeClusterV2(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EmrClient::ResizeClusterV2OutcomeCallable EmrClient::resizeClusterV2Callable(const ResizeClusterV2Request &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ResizeClusterV2Outcome()>>(
-			[this, request]()
-			{
-			return this->resizeClusterV2(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EmrClient::ResumeFlowOutcome EmrClient::resumeFlow(const ResumeFlowRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ResumeFlowOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ResumeFlowOutcome(ResumeFlowResult(outcome.result()));
-	else
-		return ResumeFlowOutcome(outcome.error());
-}
-
-void EmrClient::resumeFlowAsync(const ResumeFlowRequest& request, const ResumeFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, resumeFlow(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EmrClient::ResumeFlowOutcomeCallable EmrClient::resumeFlowCallable(const ResumeFlowRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ResumeFlowOutcome()>>(
-			[this, request]()
-			{
-			return this->resumeFlow(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EmrClient::RunClusterServiceActionOutcome EmrClient::runClusterServiceAction(const RunClusterServiceActionRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return RunClusterServiceActionOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return RunClusterServiceActionOutcome(RunClusterServiceActionResult(outcome.result()));
-	else
-		return RunClusterServiceActionOutcome(outcome.error());
-}
-
-void EmrClient::runClusterServiceActionAsync(const RunClusterServiceActionRequest& request, const RunClusterServiceActionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, runClusterServiceAction(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EmrClient::RunClusterServiceActionOutcomeCallable EmrClient::runClusterServiceActionCallable(const RunClusterServiceActionRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<RunClusterServiceActionOutcome()>>(
-			[this, request]()
-			{
-			return this->runClusterServiceAction(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EmrClient::RunScalingActionV2Outcome EmrClient::runScalingActionV2(const RunScalingActionV2Request &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return RunScalingActionV2Outcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return RunScalingActionV2Outcome(RunScalingActionV2Result(outcome.result()));
-	else
-		return RunScalingActionV2Outcome(outcome.error());
-}
-
-void EmrClient::runScalingActionV2Async(const RunScalingActionV2Request& request, const RunScalingActionV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, runScalingActionV2(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EmrClient::RunScalingActionV2OutcomeCallable EmrClient::runScalingActionV2Callable(const RunScalingActionV2Request &request) const
-{
-	auto task = std::make_shared<std::packaged_task<RunScalingActionV2Outcome()>>(
-			[this, request]()
-			{
-			return this->runScalingActionV2(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EmrClient::StartFlowOutcome EmrClient::startFlow(const StartFlowRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return StartFlowOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return StartFlowOutcome(StartFlowResult(outcome.result()));
-	else
-		return StartFlowOutcome(outcome.error());
-}
-
-void EmrClient::startFlowAsync(const StartFlowRequest& request, const StartFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, startFlow(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EmrClient::StartFlowOutcomeCallable EmrClient::startFlowCallable(const StartFlowRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<StartFlowOutcome()>>(
-			[this, request]()
-			{
-			return this->startFlow(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EmrClient::SubmitFlowOutcome EmrClient::submitFlow(const SubmitFlowRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SubmitFlowOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SubmitFlowOutcome(SubmitFlowResult(outcome.result()));
-	else
-		return SubmitFlowOutcome(outcome.error());
-}
-
-void EmrClient::submitFlowAsync(const SubmitFlowRequest& request, const SubmitFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, submitFlow(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EmrClient::SubmitFlowOutcomeCallable EmrClient::submitFlowCallable(const SubmitFlowRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SubmitFlowOutcome()>>(
-			[this, request]()
-			{
-			return this->submitFlow(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EmrClient::SubmitFlowJobOutcome EmrClient::submitFlowJob(const SubmitFlowJobRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SubmitFlowJobOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SubmitFlowJobOutcome(SubmitFlowJobResult(outcome.result()));
-	else
-		return SubmitFlowJobOutcome(outcome.error());
-}
-
-void EmrClient::submitFlowJobAsync(const SubmitFlowJobRequest& request, const SubmitFlowJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, submitFlowJob(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EmrClient::SubmitFlowJobOutcomeCallable EmrClient::submitFlowJobCallable(const SubmitFlowJobRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SubmitFlowJobOutcome()>>(
-			[this, request]()
-			{
-			return this->submitFlowJob(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EmrClient::SuspendFlowOutcome EmrClient::suspendFlow(const SuspendFlowRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SuspendFlowOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SuspendFlowOutcome(SuspendFlowResult(outcome.result()));
-	else
-		return SuspendFlowOutcome(outcome.error());
-}
-
-void EmrClient::suspendFlowAsync(const SuspendFlowRequest& request, const SuspendFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, suspendFlow(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EmrClient::SuspendFlowOutcomeCallable EmrClient::suspendFlowCallable(const SuspendFlowRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SuspendFlowOutcome()>>(
-			[this, request]()
-			{
-			return this->suspendFlow(request);
+			return this->runScalingAction(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4191,6 +2427,78 @@ EmrClient::TagResourcesOutcomeCallable EmrClient::tagResourcesCallable(const Tag
 	return task->get_future();
 }
 
+EmrClient::TagResourcesSystemTagsOutcome EmrClient::tagResourcesSystemTags(const TagResourcesSystemTagsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return TagResourcesSystemTagsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return TagResourcesSystemTagsOutcome(TagResourcesSystemTagsResult(outcome.result()));
+	else
+		return TagResourcesSystemTagsOutcome(outcome.error());
+}
+
+void EmrClient::tagResourcesSystemTagsAsync(const TagResourcesSystemTagsRequest& request, const TagResourcesSystemTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, tagResourcesSystemTags(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EmrClient::TagResourcesSystemTagsOutcomeCallable EmrClient::tagResourcesSystemTagsCallable(const TagResourcesSystemTagsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<TagResourcesSystemTagsOutcome()>>(
+			[this, request]()
+			{
+			return this->tagResourcesSystemTags(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EmrClient::TerminateOperationOutcome EmrClient::terminateOperation(const TerminateOperationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return TerminateOperationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return TerminateOperationOutcome(TerminateOperationResult(outcome.result()));
+	else
+		return TerminateOperationOutcome(outcome.error());
+}
+
+void EmrClient::terminateOperationAsync(const TerminateOperationRequest& request, const TerminateOperationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, terminateOperation(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EmrClient::TerminateOperationOutcomeCallable EmrClient::terminateOperationCallable(const TerminateOperationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<TerminateOperationOutcome()>>(
+			[this, request]()
+			{
+			return this->terminateOperation(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EmrClient::UntagResourcesOutcome EmrClient::untagResources(const UntagResourcesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4221,6 +2529,366 @@ EmrClient::UntagResourcesOutcomeCallable EmrClient::untagResourcesCallable(const
 			[this, request]()
 			{
 			return this->untagResources(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EmrClient::UntagResourcesSystemTagsOutcome EmrClient::untagResourcesSystemTags(const UntagResourcesSystemTagsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UntagResourcesSystemTagsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UntagResourcesSystemTagsOutcome(UntagResourcesSystemTagsResult(outcome.result()));
+	else
+		return UntagResourcesSystemTagsOutcome(outcome.error());
+}
+
+void EmrClient::untagResourcesSystemTagsAsync(const UntagResourcesSystemTagsRequest& request, const UntagResourcesSystemTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, untagResourcesSystemTags(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EmrClient::UntagResourcesSystemTagsOutcomeCallable EmrClient::untagResourcesSystemTagsCallable(const UntagResourcesSystemTagsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UntagResourcesSystemTagsOutcome()>>(
+			[this, request]()
+			{
+			return this->untagResourcesSystemTags(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EmrClient::UpdateAckClusterNodePoolsOutcome EmrClient::updateAckClusterNodePools(const UpdateAckClusterNodePoolsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateAckClusterNodePoolsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateAckClusterNodePoolsOutcome(UpdateAckClusterNodePoolsResult(outcome.result()));
+	else
+		return UpdateAckClusterNodePoolsOutcome(outcome.error());
+}
+
+void EmrClient::updateAckClusterNodePoolsAsync(const UpdateAckClusterNodePoolsRequest& request, const UpdateAckClusterNodePoolsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateAckClusterNodePools(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EmrClient::UpdateAckClusterNodePoolsOutcomeCallable EmrClient::updateAckClusterNodePoolsCallable(const UpdateAckClusterNodePoolsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateAckClusterNodePoolsOutcome()>>(
+			[this, request]()
+			{
+			return this->updateAckClusterNodePools(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EmrClient::UpdateAckClusterNodesOutcome EmrClient::updateAckClusterNodes(const UpdateAckClusterNodesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateAckClusterNodesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateAckClusterNodesOutcome(UpdateAckClusterNodesResult(outcome.result()));
+	else
+		return UpdateAckClusterNodesOutcome(outcome.error());
+}
+
+void EmrClient::updateAckClusterNodesAsync(const UpdateAckClusterNodesRequest& request, const UpdateAckClusterNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateAckClusterNodes(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EmrClient::UpdateAckClusterNodesOutcomeCallable EmrClient::updateAckClusterNodesCallable(const UpdateAckClusterNodesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateAckClusterNodesOutcome()>>(
+			[this, request]()
+			{
+			return this->updateAckClusterNodes(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EmrClient::UpdateApplicationConfigsOutcome EmrClient::updateApplicationConfigs(const UpdateApplicationConfigsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateApplicationConfigsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateApplicationConfigsOutcome(UpdateApplicationConfigsResult(outcome.result()));
+	else
+		return UpdateApplicationConfigsOutcome(outcome.error());
+}
+
+void EmrClient::updateApplicationConfigsAsync(const UpdateApplicationConfigsRequest& request, const UpdateApplicationConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateApplicationConfigs(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EmrClient::UpdateApplicationConfigsOutcomeCallable EmrClient::updateApplicationConfigsCallable(const UpdateApplicationConfigsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateApplicationConfigsOutcome()>>(
+			[this, request]()
+			{
+			return this->updateApplicationConfigs(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EmrClient::UpdateAutoScalingRuleOutcome EmrClient::updateAutoScalingRule(const UpdateAutoScalingRuleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateAutoScalingRuleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateAutoScalingRuleOutcome(UpdateAutoScalingRuleResult(outcome.result()));
+	else
+		return UpdateAutoScalingRuleOutcome(outcome.error());
+}
+
+void EmrClient::updateAutoScalingRuleAsync(const UpdateAutoScalingRuleRequest& request, const UpdateAutoScalingRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateAutoScalingRule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EmrClient::UpdateAutoScalingRuleOutcomeCallable EmrClient::updateAutoScalingRuleCallable(const UpdateAutoScalingRuleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateAutoScalingRuleOutcome()>>(
+			[this, request]()
+			{
+			return this->updateAutoScalingRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EmrClient::UpdateClusterAttributeOutcome EmrClient::updateClusterAttribute(const UpdateClusterAttributeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateClusterAttributeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateClusterAttributeOutcome(UpdateClusterAttributeResult(outcome.result()));
+	else
+		return UpdateClusterAttributeOutcome(outcome.error());
+}
+
+void EmrClient::updateClusterAttributeAsync(const UpdateClusterAttributeRequest& request, const UpdateClusterAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateClusterAttribute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EmrClient::UpdateClusterAttributeOutcomeCallable EmrClient::updateClusterAttributeCallable(const UpdateClusterAttributeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateClusterAttributeOutcome()>>(
+			[this, request]()
+			{
+			return this->updateClusterAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EmrClient::UpdateClusterScriptOutcome EmrClient::updateClusterScript(const UpdateClusterScriptRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateClusterScriptOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateClusterScriptOutcome(UpdateClusterScriptResult(outcome.result()));
+	else
+		return UpdateClusterScriptOutcome(outcome.error());
+}
+
+void EmrClient::updateClusterScriptAsync(const UpdateClusterScriptRequest& request, const UpdateClusterScriptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateClusterScript(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EmrClient::UpdateClusterScriptOutcomeCallable EmrClient::updateClusterScriptCallable(const UpdateClusterScriptRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateClusterScriptOutcome()>>(
+			[this, request]()
+			{
+			return this->updateClusterScript(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EmrClient::UpdateOnKubeClusterDedicatedNodePoolsOutcome EmrClient::updateOnKubeClusterDedicatedNodePools(const UpdateOnKubeClusterDedicatedNodePoolsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateOnKubeClusterDedicatedNodePoolsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateOnKubeClusterDedicatedNodePoolsOutcome(UpdateOnKubeClusterDedicatedNodePoolsResult(outcome.result()));
+	else
+		return UpdateOnKubeClusterDedicatedNodePoolsOutcome(outcome.error());
+}
+
+void EmrClient::updateOnKubeClusterDedicatedNodePoolsAsync(const UpdateOnKubeClusterDedicatedNodePoolsRequest& request, const UpdateOnKubeClusterDedicatedNodePoolsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateOnKubeClusterDedicatedNodePools(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EmrClient::UpdateOnKubeClusterDedicatedNodePoolsOutcomeCallable EmrClient::updateOnKubeClusterDedicatedNodePoolsCallable(const UpdateOnKubeClusterDedicatedNodePoolsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateOnKubeClusterDedicatedNodePoolsOutcome()>>(
+			[this, request]()
+			{
+			return this->updateOnKubeClusterDedicatedNodePools(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EmrClient::UpdateOnKubeClusterDedicatedNodesOutcome EmrClient::updateOnKubeClusterDedicatedNodes(const UpdateOnKubeClusterDedicatedNodesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateOnKubeClusterDedicatedNodesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateOnKubeClusterDedicatedNodesOutcome(UpdateOnKubeClusterDedicatedNodesResult(outcome.result()));
+	else
+		return UpdateOnKubeClusterDedicatedNodesOutcome(outcome.error());
+}
+
+void EmrClient::updateOnKubeClusterDedicatedNodesAsync(const UpdateOnKubeClusterDedicatedNodesRequest& request, const UpdateOnKubeClusterDedicatedNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateOnKubeClusterDedicatedNodes(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EmrClient::UpdateOnKubeClusterDedicatedNodesOutcomeCallable EmrClient::updateOnKubeClusterDedicatedNodesCallable(const UpdateOnKubeClusterDedicatedNodesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateOnKubeClusterDedicatedNodesOutcome()>>(
+			[this, request]()
+			{
+			return this->updateOnKubeClusterDedicatedNodes(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EmrClient::UpdateScalingGroupOutcome EmrClient::updateScalingGroup(const UpdateScalingGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateScalingGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateScalingGroupOutcome(UpdateScalingGroupResult(outcome.result()));
+	else
+		return UpdateScalingGroupOutcome(outcome.error());
+}
+
+void EmrClient::updateScalingGroupAsync(const UpdateScalingGroupRequest& request, const UpdateScalingGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateScalingGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EmrClient::UpdateScalingGroupOutcomeCallable EmrClient::updateScalingGroupCallable(const UpdateScalingGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateScalingGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->updateScalingGroup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

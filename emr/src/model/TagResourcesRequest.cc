@@ -19,7 +19,7 @@
 using AlibabaCloud::Emr::Model::TagResourcesRequest;
 
 TagResourcesRequest::TagResourcesRequest() :
-	RpcServiceRequest("emr", "2016-04-08", "TagResources")
+	RpcServiceRequest("emr", "2021-03-20", "TagResources")
 {
 	setMethod(HttpRequest::Method::Post);
 }
@@ -27,50 +27,15 @@ TagResourcesRequest::TagResourcesRequest() :
 TagResourcesRequest::~TagResourcesRequest()
 {}
 
-long TagResourcesRequest::getResourceOwnerId()const
+std::string TagResourcesRequest::getClientToken()const
 {
-	return resourceOwnerId_;
+	return clientToken_;
 }
 
-void TagResourcesRequest::setResourceOwnerId(long resourceOwnerId)
+void TagResourcesRequest::setClientToken(const std::string& clientToken)
 {
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-std::vector<std::string> TagResourcesRequest::getResourceId()const
-{
-	return resourceId_;
-}
-
-void TagResourcesRequest::setResourceId(const std::vector<std::string>& resourceId)
-{
-	resourceId_ = resourceId;
-	for(int dep1 = 0; dep1!= resourceId.size(); dep1++) {
-		setParameter("ResourceId."+ std::to_string(dep1), resourceId.at(dep1));
-	}
-}
-
-std::string TagResourcesRequest::getResourceType()const
-{
-	return resourceType_;
-}
-
-void TagResourcesRequest::setResourceType(const std::string& resourceType)
-{
-	resourceType_ = resourceType;
-	setParameter("ResourceType", resourceType);
-}
-
-std::string TagResourcesRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void TagResourcesRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	clientToken_ = clientToken;
+	setParameter("ClientToken", clientToken);
 }
 
 std::string TagResourcesRequest::getRegionId()const
@@ -84,19 +49,47 @@ void TagResourcesRequest::setRegionId(const std::string& regionId)
 	setParameter("RegionId", regionId);
 }
 
-std::vector<TagResourcesRequest::Tag> TagResourcesRequest::getTag()const
+std::string TagResourcesRequest::getResourceType()const
 {
-	return tag_;
+	return resourceType_;
 }
 
-void TagResourcesRequest::setTag(const std::vector<Tag>& tag)
+void TagResourcesRequest::setResourceType(const std::string& resourceType)
 {
-	tag_ = tag;
-	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
-		auto tagObj = tag.at(dep1);
-		std::string tagObjStr = "Tag." + std::to_string(dep1 + 1);
-		setParameter(tagObjStr + ".Key", tagObj.key);
-		setParameter(tagObjStr + ".Value", tagObj.value);
-	}
+	resourceType_ = resourceType;
+	setParameter("ResourceType", resourceType);
+}
+
+Array TagResourcesRequest::getTags()const
+{
+	return tags_;
+}
+
+void TagResourcesRequest::setTags(const Array& tags)
+{
+	tags_ = tags;
+	setParameter("Tags", std::to_string(tags));
+}
+
+std::string TagResourcesRequest::getSystemDebug()const
+{
+	return systemDebug_;
+}
+
+void TagResourcesRequest::setSystemDebug(const std::string& systemDebug)
+{
+	systemDebug_ = systemDebug;
+	setParameter("SystemDebug", systemDebug);
+}
+
+Array TagResourcesRequest::getResourceIds()const
+{
+	return resourceIds_;
+}
+
+void TagResourcesRequest::setResourceIds(const Array& resourceIds)
+{
+	resourceIds_ = resourceIds;
+	setParameter("ResourceIds", std::to_string(resourceIds));
 }
 
