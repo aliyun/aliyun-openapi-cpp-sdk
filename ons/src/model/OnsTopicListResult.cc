@@ -61,6 +61,8 @@ void OnsTopicListResult::parse(const std::string &payload)
 			dataObject.topic = valueDataPublishInfoDo["Topic"].asString();
 		if(!valueDataPublishInfoDo["InstanceId"].isNull())
 			dataObject.instanceId = valueDataPublishInfoDo["InstanceId"].asString();
+		if(!valueDataPublishInfoDo["ServiceStatus"].isNull())
+			dataObject.serviceStatus = std::stoi(valueDataPublishInfoDo["ServiceStatus"].asString());
 		auto allTagsNode = valueDataPublishInfoDo["Tags"]["Tag"];
 		for (auto valueDataPublishInfoDoTagsTag : allTagsNode)
 		{

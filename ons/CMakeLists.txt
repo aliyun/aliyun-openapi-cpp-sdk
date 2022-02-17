@@ -67,26 +67,8 @@ set(ons_public_header_model
 	include/alibabacloud/ons/model/OnsMessagePageQueryByTopicResult.h
 	include/alibabacloud/ons/model/OnsMessagePushRequest.h
 	include/alibabacloud/ons/model/OnsMessagePushResult.h
-	include/alibabacloud/ons/model/OnsMessageSendRequest.h
-	include/alibabacloud/ons/model/OnsMessageSendResult.h
 	include/alibabacloud/ons/model/OnsMessageTraceRequest.h
 	include/alibabacloud/ons/model/OnsMessageTraceResult.h
-	include/alibabacloud/ons/model/OnsMqttGroupIdCreateRequest.h
-	include/alibabacloud/ons/model/OnsMqttGroupIdCreateResult.h
-	include/alibabacloud/ons/model/OnsMqttGroupIdDeleteRequest.h
-	include/alibabacloud/ons/model/OnsMqttGroupIdDeleteResult.h
-	include/alibabacloud/ons/model/OnsMqttGroupIdListRequest.h
-	include/alibabacloud/ons/model/OnsMqttGroupIdListResult.h
-	include/alibabacloud/ons/model/OnsMqttQueryClientByClientIdRequest.h
-	include/alibabacloud/ons/model/OnsMqttQueryClientByClientIdResult.h
-	include/alibabacloud/ons/model/OnsMqttQueryClientByGroupIdRequest.h
-	include/alibabacloud/ons/model/OnsMqttQueryClientByGroupIdResult.h
-	include/alibabacloud/ons/model/OnsMqttQueryClientByTopicRequest.h
-	include/alibabacloud/ons/model/OnsMqttQueryClientByTopicResult.h
-	include/alibabacloud/ons/model/OnsMqttQueryHistoryOnlineRequest.h
-	include/alibabacloud/ons/model/OnsMqttQueryHistoryOnlineResult.h
-	include/alibabacloud/ons/model/OnsMqttQueryMsgTransTrendRequest.h
-	include/alibabacloud/ons/model/OnsMqttQueryMsgTransTrendResult.h
 	include/alibabacloud/ons/model/OnsRegionListRequest.h
 	include/alibabacloud/ons/model/OnsRegionListResult.h
 	include/alibabacloud/ons/model/OnsTopicCreateRequest.h
@@ -170,26 +152,8 @@ set(ons_src
 	src/model/OnsMessagePageQueryByTopicResult.cc
 	src/model/OnsMessagePushRequest.cc
 	src/model/OnsMessagePushResult.cc
-	src/model/OnsMessageSendRequest.cc
-	src/model/OnsMessageSendResult.cc
 	src/model/OnsMessageTraceRequest.cc
 	src/model/OnsMessageTraceResult.cc
-	src/model/OnsMqttGroupIdCreateRequest.cc
-	src/model/OnsMqttGroupIdCreateResult.cc
-	src/model/OnsMqttGroupIdDeleteRequest.cc
-	src/model/OnsMqttGroupIdDeleteResult.cc
-	src/model/OnsMqttGroupIdListRequest.cc
-	src/model/OnsMqttGroupIdListResult.cc
-	src/model/OnsMqttQueryClientByClientIdRequest.cc
-	src/model/OnsMqttQueryClientByClientIdResult.cc
-	src/model/OnsMqttQueryClientByGroupIdRequest.cc
-	src/model/OnsMqttQueryClientByGroupIdResult.cc
-	src/model/OnsMqttQueryClientByTopicRequest.cc
-	src/model/OnsMqttQueryClientByTopicResult.cc
-	src/model/OnsMqttQueryHistoryOnlineRequest.cc
-	src/model/OnsMqttQueryHistoryOnlineResult.cc
-	src/model/OnsMqttQueryMsgTransTrendRequest.cc
-	src/model/OnsMqttQueryMsgTransTrendResult.cc
 	src/model/OnsRegionListRequest.cc
 	src/model/OnsRegionListResult.cc
 	src/model/OnsTopicCreateRequest.cc

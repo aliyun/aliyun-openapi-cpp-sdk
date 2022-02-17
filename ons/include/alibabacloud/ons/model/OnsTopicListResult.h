@@ -42,6 +42,7 @@ namespace AlibabaCloud
 					std::string owner;
 					int relation;
 					std::string instanceId;
+					int serviceStatus;
 					long createTime;
 					std::string relationName;
 					bool independentNaming;

@@ -68,26 +68,8 @@
 #include "model/OnsMessagePageQueryByTopicResult.h"
 #include "model/OnsMessagePushRequest.h"
 #include "model/OnsMessagePushResult.h"
-#include "model/OnsMessageSendRequest.h"
-#include "model/OnsMessageSendResult.h"
 #include "model/OnsMessageTraceRequest.h"
 #include "model/OnsMessageTraceResult.h"
-#include "model/OnsMqttGroupIdCreateRequest.h"
-#include "model/OnsMqttGroupIdCreateResult.h"
-#include "model/OnsMqttGroupIdDeleteRequest.h"
-#include "model/OnsMqttGroupIdDeleteResult.h"
-#include "model/OnsMqttGroupIdListRequest.h"
-#include "model/OnsMqttGroupIdListResult.h"
-#include "model/OnsMqttQueryClientByClientIdRequest.h"
-#include "model/OnsMqttQueryClientByClientIdResult.h"
-#include "model/OnsMqttQueryClientByGroupIdRequest.h"
-#include "model/OnsMqttQueryClientByGroupIdResult.h"
-#include "model/OnsMqttQueryClientByTopicRequest.h"
-#include "model/OnsMqttQueryClientByTopicResult.h"
-#include "model/OnsMqttQueryHistoryOnlineRequest.h"
-#include "model/OnsMqttQueryHistoryOnlineResult.h"
-#include "model/OnsMqttQueryMsgTransTrendRequest.h"
-#include "model/OnsMqttQueryMsgTransTrendResult.h"
 #include "model/OnsRegionListRequest.h"
 #include "model/OnsRegionListResult.h"
 #include "model/OnsTopicCreateRequest.h"
@@ -200,36 +182,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::OnsMessagePushResult> OnsMessagePushOutcome;
 			typedef std::future<OnsMessagePushOutcome> OnsMessagePushOutcomeCallable;
 			typedef std::function<void(const OnsClient*, const Model::OnsMessagePushRequest&, const OnsMessagePushOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OnsMessagePushAsyncHandler;
-			typedef Outcome<Error, Model::OnsMessageSendResult> OnsMessageSendOutcome;
-			typedef std::future<OnsMessageSendOutcome> OnsMessageSendOutcomeCallable;
-			typedef std::function<void(const OnsClient*, const Model::OnsMessageSendRequest&, const OnsMessageSendOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OnsMessageSendAsyncHandler;
 			typedef Outcome<Error, Model::OnsMessageTraceResult> OnsMessageTraceOutcome;
 			typedef std::future<OnsMessageTraceOutcome> OnsMessageTraceOutcomeCallable;
 			typedef std::function<void(const OnsClient*, const Model::OnsMessageTraceRequest&, const OnsMessageTraceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OnsMessageTraceAsyncHandler;
-			typedef Outcome<Error, Model::OnsMqttGroupIdCreateResult> OnsMqttGroupIdCreateOutcome;
-			typedef std::future<OnsMqttGroupIdCreateOutcome> OnsMqttGroupIdCreateOutcomeCallable;
-			typedef std::function<void(const OnsClient*, const Model::OnsMqttGroupIdCreateRequest&, const OnsMqttGroupIdCreateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OnsMqttGroupIdCreateAsyncHandler;
-			typedef Outcome<Error, Model::OnsMqttGroupIdDeleteResult> OnsMqttGroupIdDeleteOutcome;
-			typedef std::future<OnsMqttGroupIdDeleteOutcome> OnsMqttGroupIdDeleteOutcomeCallable;
-			typedef std::function<void(const OnsClient*, const Model::OnsMqttGroupIdDeleteRequest&, const OnsMqttGroupIdDeleteOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OnsMqttGroupIdDeleteAsyncHandler;
-			typedef Outcome<Error, Model::OnsMqttGroupIdListResult> OnsMqttGroupIdListOutcome;
-			typedef std::future<OnsMqttGroupIdListOutcome> OnsMqttGroupIdListOutcomeCallable;
-			typedef std::function<void(const OnsClient*, const Model::OnsMqttGroupIdListRequest&, const OnsMqttGroupIdListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OnsMqttGroupIdListAsyncHandler;
-			typedef Outcome<Error, Model::OnsMqttQueryClientByClientIdResult> OnsMqttQueryClientByClientIdOutcome;
-			typedef std::future<OnsMqttQueryClientByClientIdOutcome> OnsMqttQueryClientByClientIdOutcomeCallable;
-			typedef std::function<void(const OnsClient*, const Model::OnsMqttQueryClientByClientIdRequest&, const OnsMqttQueryClientByClientIdOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OnsMqttQueryClientByClientIdAsyncHandler;
-			typedef Outcome<Error, Model::OnsMqttQueryClientByGroupIdResult> OnsMqttQueryClientByGroupIdOutcome;
-			typedef std::future<OnsMqttQueryClientByGroupIdOutcome> OnsMqttQueryClientByGroupIdOutcomeCallable;
-			typedef std::function<void(const OnsClient*, const Model::OnsMqttQueryClientByGroupIdRequest&, const OnsMqttQueryClientByGroupIdOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OnsMqttQueryClientByGroupIdAsyncHandler;
-			typedef Outcome<Error, Model::OnsMqttQueryClientByTopicResult> OnsMqttQueryClientByTopicOutcome;
-			typedef std::future<OnsMqttQueryClientByTopicOutcome> OnsMqttQueryClientByTopicOutcomeCallable;
-			typedef std::function<void(const OnsClient*, const Model::OnsMqttQueryClientByTopicRequest&, const OnsMqttQueryClientByTopicOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OnsMqttQueryClientByTopicAsyncHandler;
-			typedef Outcome<Error, Model::OnsMqttQueryHistoryOnlineResult> OnsMqttQueryHistoryOnlineOutcome;
-			typedef std::future<OnsMqttQueryHistoryOnlineOutcome> OnsMqttQueryHistoryOnlineOutcomeCallable;
-			typedef std::function<void(const OnsClient*, const Model::OnsMqttQueryHistoryOnlineRequest&, const OnsMqttQueryHistoryOnlineOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OnsMqttQueryHistoryOnlineAsyncHandler;
-			typedef Outcome<Error, Model::OnsMqttQueryMsgTransTrendResult> OnsMqttQueryMsgTransTrendOutcome;
-			typedef std::future<OnsMqttQueryMsgTransTrendOutcome> OnsMqttQueryMsgTransTrendOutcomeCallable;
-			typedef std::function<void(const OnsClient*, const Model::OnsMqttQueryMsgTransTrendRequest&, const OnsMqttQueryMsgTransTrendOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OnsMqttQueryMsgTransTrendAsyncHandler;
 			typedef Outcome<Error, Model::OnsRegionListResult> OnsRegionListOutcome;
 			typedef std::future<OnsRegionListOutcome> OnsRegionListOutcomeCallable;
 			typedef std::function<void(const OnsClient*, const Model::OnsRegionListRequest&, const OnsRegionListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OnsRegionListAsyncHandler;
@@ -355,36 +310,9 @@ namespace AlibabaCloud
 			OnsMessagePushOutcome onsMessagePush(const Model::OnsMessagePushRequest &request)const;
 			void onsMessagePushAsync(const Model::OnsMessagePushRequest& request, const OnsMessagePushAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			OnsMessagePushOutcomeCallable onsMessagePushCallable(const Model::OnsMessagePushRequest& request) const;
-			OnsMessageSendOutcome onsMessageSend(const Model::OnsMessageSendRequest &request)const;
-			void onsMessageSendAsync(const Model::OnsMessageSendRequest& request, const OnsMessageSendAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			OnsMessageSendOutcomeCallable onsMessageSendCallable(const Model::OnsMessageSendRequest& request) const;
 			OnsMessageTraceOutcome onsMessageTrace(const Model::OnsMessageTraceRequest &request)const;
 			void onsMessageTraceAsync(const Model::OnsMessageTraceRequest& request, const OnsMessageTraceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			OnsMessageTraceOutcomeCallable onsMessageTraceCallable(const Model::OnsMessageTraceRequest& request) const;
-			OnsMqttGroupIdCreateOutcome onsMqttGroupIdCreate(const Model::OnsMqttGroupIdCreateRequest &request)const;
-			void onsMqttGroupIdCreateAsync(const Model::OnsMqttGroupIdCreateRequest& request, const OnsMqttGroupIdCreateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			OnsMqttGroupIdCreateOutcomeCallable onsMqttGroupIdCreateCallable(const Model::OnsMqttGroupIdCreateRequest& request) const;
-			OnsMqttGroupIdDeleteOutcome onsMqttGroupIdDelete(const Model::OnsMqttGroupIdDeleteRequest &request)const;
-			void onsMqttGroupIdDeleteAsync(const Model::OnsMqttGroupIdDeleteRequest& request, const OnsMqttGroupIdDeleteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			OnsMqttGroupIdDeleteOutcomeCallable onsMqttGroupIdDeleteCallable(const Model::OnsMqttGroupIdDeleteRequest& request) const;
-			OnsMqttGroupIdListOutcome onsMqttGroupIdList(const Model::OnsMqttGroupIdListRequest &request)const;
-			void onsMqttGroupIdListAsync(const Model::OnsMqttGroupIdListRequest& request, const OnsMqttGroupIdListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			OnsMqttGroupIdListOutcomeCallable onsMqttGroupIdListCallable(const Model::OnsMqttGroupIdListRequest& request) const;
-			OnsMqttQueryClientByClientIdOutcome onsMqttQueryClientByClientId(const Model::OnsMqttQueryClientByClientIdRequest &request)const;
-			void onsMqttQueryClientByClientIdAsync(const Model::OnsMqttQueryClientByClientIdRequest& request, const OnsMqttQueryClientByClientIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			OnsMqttQueryClientByClientIdOutcomeCallable onsMqttQueryClientByClientIdCallable(const Model::OnsMqttQueryClientByClientIdRequest& request) const;
-			OnsMqttQueryClientByGroupIdOutcome onsMqttQueryClientByGroupId(const Model::OnsMqttQueryClientByGroupIdRequest &request)const;
-			void onsMqttQueryClientByGroupIdAsync(const Model::OnsMqttQueryClientByGroupIdRequest& request, const OnsMqttQueryClientByGroupIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			OnsMqttQueryClientByGroupIdOutcomeCallable onsMqttQueryClientByGroupIdCallable(const Model::OnsMqttQueryClientByGroupIdRequest& request) const;
-			OnsMqttQueryClientByTopicOutcome onsMqttQueryClientByTopic(const Model::OnsMqttQueryClientByTopicRequest &request)const;
-			void onsMqttQueryClientByTopicAsync(const Model::OnsMqttQueryClientByTopicRequest& request, const OnsMqttQueryClientByTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			OnsMqttQueryClientByTopicOutcomeCallable onsMqttQueryClientByTopicCallable(const Model::OnsMqttQueryClientByTopicRequest& request) const;
-			OnsMqttQueryHistoryOnlineOutcome onsMqttQueryHistoryOnline(const Model::OnsMqttQueryHistoryOnlineRequest &request)const;
-			void onsMqttQueryHistoryOnlineAsync(const Model::OnsMqttQueryHistoryOnlineRequest& request, const OnsMqttQueryHistoryOnlineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			OnsMqttQueryHistoryOnlineOutcomeCallable onsMqttQueryHistoryOnlineCallable(const Model::OnsMqttQueryHistoryOnlineRequest& request) const;
-			OnsMqttQueryMsgTransTrendOutcome onsMqttQueryMsgTransTrend(const Model::OnsMqttQueryMsgTransTrendRequest &request)const;
-			void onsMqttQueryMsgTransTrendAsync(const Model::OnsMqttQueryMsgTransTrendRequest& request, const OnsMqttQueryMsgTransTrendAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			OnsMqttQueryMsgTransTrendOutcomeCallable onsMqttQueryMsgTransTrendCallable(const Model::OnsMqttQueryMsgTransTrendRequest& request) const;
 			OnsRegionListOutcome onsRegionList(const Model::OnsRegionListRequest &request)const;
 			void onsRegionListAsync(const Model::OnsRegionListRequest& request, const OnsRegionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			OnsRegionListOutcomeCallable onsRegionListCallable(const Model::OnsRegionListRequest& request) const;
