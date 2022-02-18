@@ -284,8 +284,6 @@
 #include "model/GetGatewayBySubDeviceResult.h"
 #include "model/GetLoraNodesTaskRequest.h"
 #include "model/GetLoraNodesTaskResult.h"
-#include "model/GetNodesAddingTaskRequest.h"
-#include "model/GetNodesAddingTaskResult.h"
 #include "model/GetRuleRequest.h"
 #include "model/GetRuleResult.h"
 #include "model/GetRuleActionRequest.h"
@@ -1056,9 +1054,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetLoraNodesTaskResult> GetLoraNodesTaskOutcome;
 			typedef std::future<GetLoraNodesTaskOutcome> GetLoraNodesTaskOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::GetLoraNodesTaskRequest&, const GetLoraNodesTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetLoraNodesTaskAsyncHandler;
-			typedef Outcome<Error, Model::GetNodesAddingTaskResult> GetNodesAddingTaskOutcome;
-			typedef std::future<GetNodesAddingTaskOutcome> GetNodesAddingTaskOutcomeCallable;
-			typedef std::function<void(const IotClient*, const Model::GetNodesAddingTaskRequest&, const GetNodesAddingTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetNodesAddingTaskAsyncHandler;
 			typedef Outcome<Error, Model::GetRuleResult> GetRuleOutcome;
 			typedef std::future<GetRuleOutcome> GetRuleOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::GetRuleRequest&, const GetRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetRuleAsyncHandler;
@@ -2009,9 +2004,6 @@ namespace AlibabaCloud
 			GetLoraNodesTaskOutcome getLoraNodesTask(const Model::GetLoraNodesTaskRequest &request)const;
 			void getLoraNodesTaskAsync(const Model::GetLoraNodesTaskRequest& request, const GetLoraNodesTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetLoraNodesTaskOutcomeCallable getLoraNodesTaskCallable(const Model::GetLoraNodesTaskRequest& request) const;
-			GetNodesAddingTaskOutcome getNodesAddingTask(const Model::GetNodesAddingTaskRequest &request)const;
-			void getNodesAddingTaskAsync(const Model::GetNodesAddingTaskRequest& request, const GetNodesAddingTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetNodesAddingTaskOutcomeCallable getNodesAddingTaskCallable(const Model::GetNodesAddingTaskRequest& request) const;
 			GetRuleOutcome getRule(const Model::GetRuleRequest &request)const;
 			void getRuleAsync(const Model::GetRuleRequest& request, const GetRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetRuleOutcomeCallable getRuleCallable(const Model::GetRuleRequest& request) const;

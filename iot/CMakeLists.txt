@@ -283,8 +283,6 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/GetGatewayBySubDeviceResult.h
 	include/alibabacloud/iot/model/GetLoraNodesTaskRequest.h
 	include/alibabacloud/iot/model/GetLoraNodesTaskResult.h
-	include/alibabacloud/iot/model/GetNodesAddingTaskRequest.h
-	include/alibabacloud/iot/model/GetNodesAddingTaskResult.h
 	include/alibabacloud/iot/model/GetRuleRequest.h
 	include/alibabacloud/iot/model/GetRuleResult.h
 	include/alibabacloud/iot/model/GetRuleActionRequest.h
@@ -918,8 +916,6 @@ set(iot_src
 	src/model/GetGatewayBySubDeviceResult.cc
 	src/model/GetLoraNodesTaskRequest.cc
 	src/model/GetLoraNodesTaskResult.cc
-	src/model/GetNodesAddingTaskRequest.cc
-	src/model/GetNodesAddingTaskResult.cc
 	src/model/GetRuleRequest.cc
 	src/model/GetRuleResult.cc
 	src/model/GetRuleActionRequest.cc
