@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IOT_MODEL_STARTAIBOXFORCESYNCRESULT_H_
-#define ALIBABACLOUD_IOT_MODEL_STARTAIBOXFORCESYNCRESULT_H_
+#ifndef ALIBABACLOUD_IOT_MODEL_GISSEARCHDEVICETRACERESULT_H_
+#define ALIBABACLOUD_IOT_MODEL_GISSEARCHDEVICETRACERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,15 +29,26 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IOT_EXPORT StartAIBoxForceSyncResult : public ServiceResult
+			class ALIBABACLOUD_IOT_EXPORT GisSearchDeviceTraceResult : public ServiceResult
 			{
 			public:
+				struct Data
+				{
+					struct PointsItem
+					{
+						long locateTime;
+						std::string location;
+					};
+					std::vector<PointsItem> points;
+					std::string productKey;
+					std::string deviceName;
+				};
 
 
-				StartAIBoxForceSyncResult();
-				explicit StartAIBoxForceSyncResult(const std::string &payload);
-				~StartAIBoxForceSyncResult();
-				bool getData()const;
+				GisSearchDeviceTraceResult();
+				explicit GisSearchDeviceTraceResult(const std::string &payload);
+				~GisSearchDeviceTraceResult();
+				Data getData()const;
 				std::string getErrorMessage()const;
 				std::string getCode()const;
 				bool getSuccess()const;
@@ -45,7 +56,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				bool data_;
+				Data data_;
 				std::string errorMessage_;
 				std::string code_;
 				bool success_;
@@ -54,4 +65,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IOT_MODEL_STARTAIBOXFORCESYNCRESULT_H_
+#endif // !ALIBABACLOUD_IOT_MODEL_GISSEARCHDEVICETRACERESULT_H_

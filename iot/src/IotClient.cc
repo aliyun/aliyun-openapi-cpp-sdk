@@ -2607,42 +2607,6 @@ IotClient::CreateRuleActionOutcomeCallable IotClient::createRuleActionCallable(c
 	return task->get_future();
 }
 
-IotClient::CreateRulengDistributeJobOutcome IotClient::createRulengDistributeJob(const CreateRulengDistributeJobRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateRulengDistributeJobOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateRulengDistributeJobOutcome(CreateRulengDistributeJobResult(outcome.result()));
-	else
-		return CreateRulengDistributeJobOutcome(outcome.error());
-}
-
-void IotClient::createRulengDistributeJobAsync(const CreateRulengDistributeJobRequest& request, const CreateRulengDistributeJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createRulengDistributeJob(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-IotClient::CreateRulengDistributeJobOutcomeCallable IotClient::createRulengDistributeJobCallable(const CreateRulengDistributeJobRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateRulengDistributeJobOutcome()>>(
-			[this, request]()
-			{
-			return this->createRulengDistributeJob(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 IotClient::CreateSceneRuleOutcome IotClient::createSceneRule(const CreateSceneRuleRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5271,6 +5235,78 @@ IotClient::GetThingTopoOutcomeCallable IotClient::getThingTopoCallable(const Get
 	return task->get_future();
 }
 
+IotClient::GisQueryDeviceLocationOutcome IotClient::gisQueryDeviceLocation(const GisQueryDeviceLocationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GisQueryDeviceLocationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GisQueryDeviceLocationOutcome(GisQueryDeviceLocationResult(outcome.result()));
+	else
+		return GisQueryDeviceLocationOutcome(outcome.error());
+}
+
+void IotClient::gisQueryDeviceLocationAsync(const GisQueryDeviceLocationRequest& request, const GisQueryDeviceLocationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, gisQueryDeviceLocation(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::GisQueryDeviceLocationOutcomeCallable IotClient::gisQueryDeviceLocationCallable(const GisQueryDeviceLocationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GisQueryDeviceLocationOutcome()>>(
+			[this, request]()
+			{
+			return this->gisQueryDeviceLocation(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::GisSearchDeviceTraceOutcome IotClient::gisSearchDeviceTrace(const GisSearchDeviceTraceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GisSearchDeviceTraceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GisSearchDeviceTraceOutcome(GisSearchDeviceTraceResult(outcome.result()));
+	else
+		return GisSearchDeviceTraceOutcome(outcome.error());
+}
+
+void IotClient::gisSearchDeviceTraceAsync(const GisSearchDeviceTraceRequest& request, const GisSearchDeviceTraceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, gisSearchDeviceTrace(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::GisSearchDeviceTraceOutcomeCallable IotClient::gisSearchDeviceTraceCallable(const GisSearchDeviceTraceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GisSearchDeviceTraceOutcome()>>(
+			[this, request]()
+			{
+			return this->gisSearchDeviceTrace(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 IotClient::ImportThingModelTslOutcome IotClient::importThingModelTsl(const ImportThingModelTslRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -6021,42 +6057,6 @@ IotClient::ListTaskOutcomeCallable IotClient::listTaskCallable(const ListTaskReq
 			[this, request]()
 			{
 			return this->listTask(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-IotClient::ListTaskByPageOutcome IotClient::listTaskByPage(const ListTaskByPageRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListTaskByPageOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListTaskByPageOutcome(ListTaskByPageResult(outcome.result()));
-	else
-		return ListTaskByPageOutcome(outcome.error());
-}
-
-void IotClient::listTaskByPageAsync(const ListTaskByPageRequest& request, const ListTaskByPageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listTaskByPage(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-IotClient::ListTaskByPageOutcomeCallable IotClient::listTaskByPageCallable(const ListTaskByPageRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListTaskByPageOutcome()>>(
-			[this, request]()
-			{
-			return this->listTaskByPage(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -10269,42 +10269,6 @@ IotClient::SpeechBySynthesisOutcomeCallable IotClient::speechBySynthesisCallable
 			[this, request]()
 			{
 			return this->speechBySynthesis(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-IotClient::StartAIBoxForceSyncOutcome IotClient::startAIBoxForceSync(const StartAIBoxForceSyncRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return StartAIBoxForceSyncOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return StartAIBoxForceSyncOutcome(StartAIBoxForceSyncResult(outcome.result()));
-	else
-		return StartAIBoxForceSyncOutcome(outcome.error());
-}
-
-void IotClient::startAIBoxForceSyncAsync(const StartAIBoxForceSyncRequest& request, const StartAIBoxForceSyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, startAIBoxForceSync(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-IotClient::StartAIBoxForceSyncOutcomeCallable IotClient::startAIBoxForceSyncCallable(const StartAIBoxForceSyncRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<StartAIBoxForceSyncOutcome()>>(
-			[this, request]()
-			{
-			return this->startAIBoxForceSync(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

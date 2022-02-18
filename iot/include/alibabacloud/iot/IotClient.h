@@ -164,8 +164,6 @@
 #include "model/CreateRuleResult.h"
 #include "model/CreateRuleActionRequest.h"
 #include "model/CreateRuleActionResult.h"
-#include "model/CreateRulengDistributeJobRequest.h"
-#include "model/CreateRulengDistributeJobResult.h"
 #include "model/CreateSceneRuleRequest.h"
 #include "model/CreateSceneRuleResult.h"
 #include "model/CreateSoundCodeRequest.h"
@@ -312,6 +310,10 @@
 #include "model/GetThingTemplateResult.h"
 #include "model/GetThingTopoRequest.h"
 #include "model/GetThingTopoResult.h"
+#include "model/GisQueryDeviceLocationRequest.h"
+#include "model/GisQueryDeviceLocationResult.h"
+#include "model/GisSearchDeviceTraceRequest.h"
+#include "model/GisSearchDeviceTraceResult.h"
 #include "model/ImportThingModelTslRequest.h"
 #include "model/ImportThingModelTslResult.h"
 #include "model/InvokeDataAPIServiceRequest.h"
@@ -354,8 +356,6 @@
 #include "model/ListRuleActionsResult.h"
 #include "model/ListTaskRequest.h"
 #include "model/ListTaskResult.h"
-#include "model/ListTaskByPageRequest.h"
-#include "model/ListTaskByPageResult.h"
 #include "model/ListThingModelVersionRequest.h"
 #include "model/ListThingModelVersionResult.h"
 #include "model/ListThingTemplatesRequest.h"
@@ -590,8 +590,6 @@
 #include "model/SpeechByCombinationResult.h"
 #include "model/SpeechBySynthesisRequest.h"
 #include "model/SpeechBySynthesisResult.h"
-#include "model/StartAIBoxForceSyncRequest.h"
-#include "model/StartAIBoxForceSyncResult.h"
 #include "model/StartRuleRequest.h"
 #include "model/StartRuleResult.h"
 #include "model/StopRuleRequest.h"
@@ -878,9 +876,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateRuleActionResult> CreateRuleActionOutcome;
 			typedef std::future<CreateRuleActionOutcome> CreateRuleActionOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::CreateRuleActionRequest&, const CreateRuleActionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateRuleActionAsyncHandler;
-			typedef Outcome<Error, Model::CreateRulengDistributeJobResult> CreateRulengDistributeJobOutcome;
-			typedef std::future<CreateRulengDistributeJobOutcome> CreateRulengDistributeJobOutcomeCallable;
-			typedef std::function<void(const IotClient*, const Model::CreateRulengDistributeJobRequest&, const CreateRulengDistributeJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateRulengDistributeJobAsyncHandler;
 			typedef Outcome<Error, Model::CreateSceneRuleResult> CreateSceneRuleOutcome;
 			typedef std::future<CreateSceneRuleOutcome> CreateSceneRuleOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::CreateSceneRuleRequest&, const CreateSceneRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateSceneRuleAsyncHandler;
@@ -1100,6 +1095,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetThingTopoResult> GetThingTopoOutcome;
 			typedef std::future<GetThingTopoOutcome> GetThingTopoOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::GetThingTopoRequest&, const GetThingTopoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetThingTopoAsyncHandler;
+			typedef Outcome<Error, Model::GisQueryDeviceLocationResult> GisQueryDeviceLocationOutcome;
+			typedef std::future<GisQueryDeviceLocationOutcome> GisQueryDeviceLocationOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::GisQueryDeviceLocationRequest&, const GisQueryDeviceLocationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GisQueryDeviceLocationAsyncHandler;
+			typedef Outcome<Error, Model::GisSearchDeviceTraceResult> GisSearchDeviceTraceOutcome;
+			typedef std::future<GisSearchDeviceTraceOutcome> GisSearchDeviceTraceOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::GisSearchDeviceTraceRequest&, const GisSearchDeviceTraceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GisSearchDeviceTraceAsyncHandler;
 			typedef Outcome<Error, Model::ImportThingModelTslResult> ImportThingModelTslOutcome;
 			typedef std::future<ImportThingModelTslOutcome> ImportThingModelTslOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::ImportThingModelTslRequest&, const ImportThingModelTslOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ImportThingModelTslAsyncHandler;
@@ -1163,9 +1164,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListTaskResult> ListTaskOutcome;
 			typedef std::future<ListTaskOutcome> ListTaskOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::ListTaskRequest&, const ListTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTaskAsyncHandler;
-			typedef Outcome<Error, Model::ListTaskByPageResult> ListTaskByPageOutcome;
-			typedef std::future<ListTaskByPageOutcome> ListTaskByPageOutcomeCallable;
-			typedef std::function<void(const IotClient*, const Model::ListTaskByPageRequest&, const ListTaskByPageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTaskByPageAsyncHandler;
 			typedef Outcome<Error, Model::ListThingModelVersionResult> ListThingModelVersionOutcome;
 			typedef std::future<ListThingModelVersionOutcome> ListThingModelVersionOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::ListThingModelVersionRequest&, const ListThingModelVersionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListThingModelVersionAsyncHandler;
@@ -1517,9 +1515,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SpeechBySynthesisResult> SpeechBySynthesisOutcome;
 			typedef std::future<SpeechBySynthesisOutcome> SpeechBySynthesisOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::SpeechBySynthesisRequest&, const SpeechBySynthesisOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SpeechBySynthesisAsyncHandler;
-			typedef Outcome<Error, Model::StartAIBoxForceSyncResult> StartAIBoxForceSyncOutcome;
-			typedef std::future<StartAIBoxForceSyncOutcome> StartAIBoxForceSyncOutcomeCallable;
-			typedef std::function<void(const IotClient*, const Model::StartAIBoxForceSyncRequest&, const StartAIBoxForceSyncOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartAIBoxForceSyncAsyncHandler;
 			typedef Outcome<Error, Model::StartRuleResult> StartRuleOutcome;
 			typedef std::future<StartRuleOutcome> StartRuleOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::StartRuleRequest&, const StartRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartRuleAsyncHandler;
@@ -1834,9 +1829,6 @@ namespace AlibabaCloud
 			CreateRuleActionOutcome createRuleAction(const Model::CreateRuleActionRequest &request)const;
 			void createRuleActionAsync(const Model::CreateRuleActionRequest& request, const CreateRuleActionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateRuleActionOutcomeCallable createRuleActionCallable(const Model::CreateRuleActionRequest& request) const;
-			CreateRulengDistributeJobOutcome createRulengDistributeJob(const Model::CreateRulengDistributeJobRequest &request)const;
-			void createRulengDistributeJobAsync(const Model::CreateRulengDistributeJobRequest& request, const CreateRulengDistributeJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CreateRulengDistributeJobOutcomeCallable createRulengDistributeJobCallable(const Model::CreateRulengDistributeJobRequest& request) const;
 			CreateSceneRuleOutcome createSceneRule(const Model::CreateSceneRuleRequest &request)const;
 			void createSceneRuleAsync(const Model::CreateSceneRuleRequest& request, const CreateSceneRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateSceneRuleOutcomeCallable createSceneRuleCallable(const Model::CreateSceneRuleRequest& request) const;
@@ -2056,6 +2048,12 @@ namespace AlibabaCloud
 			GetThingTopoOutcome getThingTopo(const Model::GetThingTopoRequest &request)const;
 			void getThingTopoAsync(const Model::GetThingTopoRequest& request, const GetThingTopoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetThingTopoOutcomeCallable getThingTopoCallable(const Model::GetThingTopoRequest& request) const;
+			GisQueryDeviceLocationOutcome gisQueryDeviceLocation(const Model::GisQueryDeviceLocationRequest &request)const;
+			void gisQueryDeviceLocationAsync(const Model::GisQueryDeviceLocationRequest& request, const GisQueryDeviceLocationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GisQueryDeviceLocationOutcomeCallable gisQueryDeviceLocationCallable(const Model::GisQueryDeviceLocationRequest& request) const;
+			GisSearchDeviceTraceOutcome gisSearchDeviceTrace(const Model::GisSearchDeviceTraceRequest &request)const;
+			void gisSearchDeviceTraceAsync(const Model::GisSearchDeviceTraceRequest& request, const GisSearchDeviceTraceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GisSearchDeviceTraceOutcomeCallable gisSearchDeviceTraceCallable(const Model::GisSearchDeviceTraceRequest& request) const;
 			ImportThingModelTslOutcome importThingModelTsl(const Model::ImportThingModelTslRequest &request)const;
 			void importThingModelTslAsync(const Model::ImportThingModelTslRequest& request, const ImportThingModelTslAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ImportThingModelTslOutcomeCallable importThingModelTslCallable(const Model::ImportThingModelTslRequest& request) const;
@@ -2119,9 +2117,6 @@ namespace AlibabaCloud
 			ListTaskOutcome listTask(const Model::ListTaskRequest &request)const;
 			void listTaskAsync(const Model::ListTaskRequest& request, const ListTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListTaskOutcomeCallable listTaskCallable(const Model::ListTaskRequest& request) const;
-			ListTaskByPageOutcome listTaskByPage(const Model::ListTaskByPageRequest &request)const;
-			void listTaskByPageAsync(const Model::ListTaskByPageRequest& request, const ListTaskByPageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListTaskByPageOutcomeCallable listTaskByPageCallable(const Model::ListTaskByPageRequest& request) const;
 			ListThingModelVersionOutcome listThingModelVersion(const Model::ListThingModelVersionRequest &request)const;
 			void listThingModelVersionAsync(const Model::ListThingModelVersionRequest& request, const ListThingModelVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListThingModelVersionOutcomeCallable listThingModelVersionCallable(const Model::ListThingModelVersionRequest& request) const;
@@ -2473,9 +2468,6 @@ namespace AlibabaCloud
 			SpeechBySynthesisOutcome speechBySynthesis(const Model::SpeechBySynthesisRequest &request)const;
 			void speechBySynthesisAsync(const Model::SpeechBySynthesisRequest& request, const SpeechBySynthesisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SpeechBySynthesisOutcomeCallable speechBySynthesisCallable(const Model::SpeechBySynthesisRequest& request) const;
-			StartAIBoxForceSyncOutcome startAIBoxForceSync(const Model::StartAIBoxForceSyncRequest &request)const;
-			void startAIBoxForceSyncAsync(const Model::StartAIBoxForceSyncRequest& request, const StartAIBoxForceSyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			StartAIBoxForceSyncOutcomeCallable startAIBoxForceSyncCallable(const Model::StartAIBoxForceSyncRequest& request) const;
 			StartRuleOutcome startRule(const Model::StartRuleRequest &request)const;
 			void startRuleAsync(const Model::StartRuleRequest& request, const StartRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StartRuleOutcomeCallable startRuleCallable(const Model::StartRuleRequest& request) const;

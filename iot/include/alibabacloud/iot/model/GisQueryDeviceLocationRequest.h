@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IOT_MODEL_STARTAIBOXFORCESYNCREQUEST_H_
-#define ALIBABACLOUD_IOT_MODEL_STARTAIBOXFORCESYNCREQUEST_H_
+#ifndef ALIBABACLOUD_IOT_MODEL_GISQUERYDEVICELOCATIONREQUEST_H_
+#define ALIBABACLOUD_IOT_MODEL_GISQUERYDEVICELOCATIONREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,22 +28,31 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IOT_EXPORT StartAIBoxForceSyncRequest : public RpcServiceRequest
+			class ALIBABACLOUD_IOT_EXPORT GisQueryDeviceLocationRequest : public RpcServiceRequest
 			{
+			public:
+				struct ThingList
+				{
+					std::string productKey;
+					std::string deviceName;
+				};
 
 			public:
-				StartAIBoxForceSyncRequest();
-				~StartAIBoxForceSyncRequest();
+				GisQueryDeviceLocationRequest();
+				~GisQueryDeviceLocationRequest();
 
-				std::string getIotId()const;
-				void setIotId(const std::string& iotId);
+				std::string getIotInstanceId()const;
+				void setIotInstanceId(const std::string& iotInstanceId);
+				std::vector<ThingList> getThingList()const;
+				void setThingList(const std::vector<ThingList>& thingList);
 				std::string getApiProduct()const;
 				void setApiProduct(const std::string& apiProduct);
 				std::string getApiRevision()const;
 				void setApiRevision(const std::string& apiRevision);
 
             private:
-				std::string iotId_;
+				std::string iotInstanceId_;
+				std::vector<ThingList> thingList_;
 				std::string apiProduct_;
 				std::string apiRevision_;
 
@@ -51,4 +60,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IOT_MODEL_STARTAIBOXFORCESYNCREQUEST_H_
+#endif // !ALIBABACLOUD_IOT_MODEL_GISQUERYDEVICELOCATIONREQUEST_H_

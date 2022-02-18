@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IOT_MODEL_CREATERULENGDISTRIBUTEJOBRESULT_H_
-#define ALIBABACLOUD_IOT_MODEL_CREATERULENGDISTRIBUTEJOBRESULT_H_
+#ifndef ALIBABACLOUD_IOT_MODEL_GISQUERYDEVICELOCATIONRESULT_H_
+#define ALIBABACLOUD_IOT_MODEL_GISQUERYDEVICELOCATIONRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,14 +29,28 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IOT_EXPORT CreateRulengDistributeJobResult : public ServiceResult
+			class ALIBABACLOUD_IOT_EXPORT GisQueryDeviceLocationResult : public ServiceResult
 			{
 			public:
+				struct DataItem
+				{
+					int coordinateSystem;
+					std::string ip;
+					std::string country;
+					float latitude;
+					long adcode;
+					std::string city;
+					float longitude;
+					std::string productKey;
+					std::string province;
+					std::string deviceName;
+				};
 
 
-				CreateRulengDistributeJobResult();
-				explicit CreateRulengDistributeJobResult(const std::string &payload);
-				~CreateRulengDistributeJobResult();
+				GisQueryDeviceLocationResult();
+				explicit GisQueryDeviceLocationResult(const std::string &payload);
+				~GisQueryDeviceLocationResult();
+				std::vector<DataItem> getData()const;
 				std::string getErrorMessage()const;
 				std::string getCode()const;
 				bool getSuccess()const;
@@ -44,6 +58,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::vector<DataItem> data_;
 				std::string errorMessage_;
 				std::string code_;
 				bool success_;
@@ -52,4 +67,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IOT_MODEL_CREATERULENGDISTRIBUTEJOBRESULT_H_
+#endif // !ALIBABACLOUD_IOT_MODEL_GISQUERYDEVICELOCATIONRESULT_H_

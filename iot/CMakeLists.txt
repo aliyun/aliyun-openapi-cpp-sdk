@@ -163,8 +163,6 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/CreateRuleResult.h
 	include/alibabacloud/iot/model/CreateRuleActionRequest.h
 	include/alibabacloud/iot/model/CreateRuleActionResult.h
-	include/alibabacloud/iot/model/CreateRulengDistributeJobRequest.h
-	include/alibabacloud/iot/model/CreateRulengDistributeJobResult.h
 	include/alibabacloud/iot/model/CreateSceneRuleRequest.h
 	include/alibabacloud/iot/model/CreateSceneRuleResult.h
 	include/alibabacloud/iot/model/CreateSoundCodeRequest.h
@@ -311,6 +309,10 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/GetThingTemplateResult.h
 	include/alibabacloud/iot/model/GetThingTopoRequest.h
 	include/alibabacloud/iot/model/GetThingTopoResult.h
+	include/alibabacloud/iot/model/GisQueryDeviceLocationRequest.h
+	include/alibabacloud/iot/model/GisQueryDeviceLocationResult.h
+	include/alibabacloud/iot/model/GisSearchDeviceTraceRequest.h
+	include/alibabacloud/iot/model/GisSearchDeviceTraceResult.h
 	include/alibabacloud/iot/model/ImportThingModelTslRequest.h
 	include/alibabacloud/iot/model/ImportThingModelTslResult.h
 	include/alibabacloud/iot/model/InvokeDataAPIServiceRequest.h
@@ -353,8 +355,6 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/ListRuleActionsResult.h
 	include/alibabacloud/iot/model/ListTaskRequest.h
 	include/alibabacloud/iot/model/ListTaskResult.h
-	include/alibabacloud/iot/model/ListTaskByPageRequest.h
-	include/alibabacloud/iot/model/ListTaskByPageResult.h
 	include/alibabacloud/iot/model/ListThingModelVersionRequest.h
 	include/alibabacloud/iot/model/ListThingModelVersionResult.h
 	include/alibabacloud/iot/model/ListThingTemplatesRequest.h
@@ -589,8 +589,6 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/SpeechByCombinationResult.h
 	include/alibabacloud/iot/model/SpeechBySynthesisRequest.h
 	include/alibabacloud/iot/model/SpeechBySynthesisResult.h
-	include/alibabacloud/iot/model/StartAIBoxForceSyncRequest.h
-	include/alibabacloud/iot/model/StartAIBoxForceSyncResult.h
 	include/alibabacloud/iot/model/StartRuleRequest.h
 	include/alibabacloud/iot/model/StartRuleResult.h
 	include/alibabacloud/iot/model/StopRuleRequest.h
@@ -800,8 +798,6 @@ set(iot_src
 	src/model/CreateRuleResult.cc
 	src/model/CreateRuleActionRequest.cc
 	src/model/CreateRuleActionResult.cc
-	src/model/CreateRulengDistributeJobRequest.cc
-	src/model/CreateRulengDistributeJobResult.cc
 	src/model/CreateSceneRuleRequest.cc
 	src/model/CreateSceneRuleResult.cc
 	src/model/CreateSoundCodeRequest.cc
@@ -948,6 +944,10 @@ set(iot_src
 	src/model/GetThingTemplateResult.cc
 	src/model/GetThingTopoRequest.cc
 	src/model/GetThingTopoResult.cc
+	src/model/GisQueryDeviceLocationRequest.cc
+	src/model/GisQueryDeviceLocationResult.cc
+	src/model/GisSearchDeviceTraceRequest.cc
+	src/model/GisSearchDeviceTraceResult.cc
 	src/model/ImportThingModelTslRequest.cc
 	src/model/ImportThingModelTslResult.cc
 	src/model/InvokeDataAPIServiceRequest.cc
@@ -990,8 +990,6 @@ set(iot_src
 	src/model/ListRuleActionsResult.cc
 	src/model/ListTaskRequest.cc
 	src/model/ListTaskResult.cc
-	src/model/ListTaskByPageRequest.cc
-	src/model/ListTaskByPageResult.cc
 	src/model/ListThingModelVersionRequest.cc
 	src/model/ListThingModelVersionResult.cc
 	src/model/ListThingTemplatesRequest.cc
@@ -1226,8 +1224,6 @@ set(iot_src
 	src/model/SpeechByCombinationResult.cc
 	src/model/SpeechBySynthesisRequest.cc
 	src/model/SpeechBySynthesisResult.cc
-	src/model/StartAIBoxForceSyncRequest.cc
-	src/model/StartAIBoxForceSyncResult.cc
 	src/model/StartRuleRequest.cc
 	src/model/StartRuleResult.cc
 	src/model/StopRuleRequest.cc

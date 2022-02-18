@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IOT_MODEL_CREATERULENGDISTRIBUTEJOBREQUEST_H_
-#define ALIBABACLOUD_IOT_MODEL_CREATERULENGDISTRIBUTEJOBREQUEST_H_
+#ifndef ALIBABACLOUD_IOT_MODEL_GISSEARCHDEVICETRACEREQUEST_H_
+#define ALIBABACLOUD_IOT_MODEL_GISSEARCHDEVICETRACEREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,33 +28,42 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IOT_EXPORT CreateRulengDistributeJobRequest : public RpcServiceRequest
+			class ALIBABACLOUD_IOT_EXPORT GisSearchDeviceTraceRequest : public RpcServiceRequest
 			{
 
 			public:
-				CreateRulengDistributeJobRequest();
-				~CreateRulengDistributeJobRequest();
+				GisSearchDeviceTraceRequest();
+				~GisSearchDeviceTraceRequest();
 
-				std::string getSourceInstanceId()const;
-				void setSourceInstanceId(const std::string& sourceInstanceId);
+				int getMapMatch()const;
+				void setMapMatch(int mapMatch);
+				long getStartTime()const;
+				void setStartTime(long startTime);
+				std::string getIotInstanceId()const;
+				void setIotInstanceId(const std::string& iotInstanceId);
+				long getEndTime()const;
+				void setEndTime(long endTime);
 				std::string getProductKey()const;
 				void setProductKey(const std::string& productKey);
-				std::string getTargetInstanceId()const;
-				void setTargetInstanceId(const std::string& targetInstanceId);
 				std::string getApiProduct()const;
 				void setApiProduct(const std::string& apiProduct);
 				std::string getApiRevision()const;
 				void setApiRevision(const std::string& apiRevision);
+				std::string getDeviceName()const;
+				void setDeviceName(const std::string& deviceName);
 
             private:
-				std::string sourceInstanceId_;
+				int mapMatch_;
+				long startTime_;
+				std::string iotInstanceId_;
+				long endTime_;
 				std::string productKey_;
-				std::string targetInstanceId_;
 				std::string apiProduct_;
 				std::string apiRevision_;
+				std::string deviceName_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IOT_MODEL_CREATERULENGDISTRIBUTEJOBREQUEST_H_
+#endif // !ALIBABACLOUD_IOT_MODEL_GISSEARCHDEVICETRACEREQUEST_H_
