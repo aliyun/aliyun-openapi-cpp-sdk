@@ -1,3 +1,7 @@
+2022-02-21 Version: 1.36.1062
+- Add event tasks.
+- DescribeInstance taskProgress.
+
 2022-02-21 Version: 1.36.1061
 - Bugfix QueryMoniter.
 

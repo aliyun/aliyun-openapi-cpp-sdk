@@ -52,109 +52,108 @@ void DescribeInstanceResult::parse(const std::string &payload)
 	auto allNeedUpgradeComps = value["NeedUpgradeComps"]["Comps"];
 	for (const auto &item : allNeedUpgradeComps)
 		needUpgradeComps_.push_back(item.asString());
-	if(!value["InstanceId"].isNull())
-		instanceId_ = value["InstanceId"].asString();
-	if(!value["InstanceName"].isNull())
-		instanceName_ = value["InstanceName"].asString();
-	if(!value["Status"].isNull())
-		status_ = value["Status"].asString();
-	if(!value["PayType"].isNull())
-		payType_ = value["PayType"].asString();
-	if(!value["CreatedTime"].isNull())
-		createdTime_ = value["CreatedTime"].asString();
-	if(!value["ExpireTime"].isNull())
-		expireTime_ = value["ExpireTime"].asString();
-	if(!value["MajorVersion"].isNull())
-		majorVersion_ = value["MajorVersion"].asString();
-	if(!value["MinorVersion"].isNull())
-		minorVersion_ = value["MinorVersion"].asString();
-	if(!value["Engine"].isNull())
-		engine_ = value["Engine"].asString();
-	if(!value["IsHa"].isNull())
-		isHa_ = value["IsHa"].asString() == "true";
-	if(!value["NetworkType"].isNull())
-		networkType_ = value["NetworkType"].asString();
 	if(!value["VpcId"].isNull())
 		vpcId_ = value["VpcId"].asString();
-	if(!value["VswitchId"].isNull())
-		vswitchId_ = value["VswitchId"].asString();
-	if(!value["MasterInstanceType"].isNull())
-		masterInstanceType_ = value["MasterInstanceType"].asString();
-	if(!value["MasterNodeCount"].isNull())
-		masterNodeCount_ = std::stoi(value["MasterNodeCount"].asString());
-	if(!value["MasterDiskType"].isNull())
-		masterDiskType_ = value["MasterDiskType"].asString();
-	if(!value["MasterDiskSize"].isNull())
-		masterDiskSize_ = std::stoi(value["MasterDiskSize"].asString());
-	if(!value["CoreInstanceType"].isNull())
-		coreInstanceType_ = value["CoreInstanceType"].asString();
-	if(!value["CoreNodeCount"].isNull())
-		coreNodeCount_ = std::stoi(value["CoreNodeCount"].asString());
-	if(!value["CoreDiskType"].isNull())
-		coreDiskType_ = value["CoreDiskType"].asString();
-	if(!value["CoreDiskSize"].isNull())
-		coreDiskSize_ = std::stoi(value["CoreDiskSize"].asString());
-	if(!value["RegionId"].isNull())
-		regionId_ = value["RegionId"].asString();
-	if(!value["ZoneId"].isNull())
-		zoneId_ = value["ZoneId"].asString();
-	if(!value["ColdStorageStatus"].isNull())
-		coldStorageStatus_ = value["ColdStorageStatus"].asString();
-	if(!value["BackupStatus"].isNull())
-		backupStatus_ = value["BackupStatus"].asString();
-	if(!value["CoreDiskCount"].isNull())
-		coreDiskCount_ = value["CoreDiskCount"].asString();
-	if(!value["MaintainStartTime"].isNull())
-		maintainStartTime_ = value["MaintainStartTime"].asString();
-	if(!value["MaintainEndTime"].isNull())
-		maintainEndTime_ = value["MaintainEndTime"].asString();
-	if(!value["CreatedTimeUTC"].isNull())
-		createdTimeUTC_ = value["CreatedTimeUTC"].asString();
-	if(!value["ExpireTimeUTC"].isNull())
-		expireTimeUTC_ = value["ExpireTimeUTC"].asString();
-	if(!value["IsLatestVersion"].isNull())
-		isLatestVersion_ = value["IsLatestVersion"].asString() == "true";
-	if(!value["IsMultiModel"].isNull())
-		isMultiModel_ = value["IsMultiModel"].asString() == "true";
-	if(!value["ClusterType"].isNull())
-		clusterType_ = value["ClusterType"].asString();
-	if(!value["ClusterId"].isNull())
-		clusterId_ = value["ClusterId"].asString();
-	if(!value["ClusterName"].isNull())
-		clusterName_ = value["ClusterName"].asString();
-	if(!value["IsDeletionProtection"].isNull())
-		isDeletionProtection_ = value["IsDeletionProtection"].asString() == "true";
-	if(!value["ParentId"].isNull())
-		parentId_ = value["ParentId"].asString();
-	if(!value["ModuleId"].isNull())
-		moduleId_ = std::stoi(value["ModuleId"].asString());
-	if(!value["ModuleStackVersion"].isNull())
-		moduleStackVersion_ = value["ModuleStackVersion"].asString();
-	if(!value["AutoRenewal"].isNull())
-		autoRenewal_ = value["AutoRenewal"].asString() == "true";
-	if(!value["Duration"].isNull())
-		duration_ = std::stoi(value["Duration"].asString());
-	if(!value["ColdStorageSize"].isNull())
-		coldStorageSize_ = std::stoi(value["ColdStorageSize"].asString());
-	if(!value["ResourceGroupId"].isNull())
-		resourceGroupId_ = value["ResourceGroupId"].asString();
+	if(!value["Status"].isNull())
+		status_ = value["Status"].asString();
 	if(!value["EncryptionType"].isNull())
 		encryptionType_ = value["EncryptionType"].asString();
+	if(!value["ModuleId"].isNull())
+		moduleId_ = std::stoi(value["ModuleId"].asString());
+	if(!value["VswitchId"].isNull())
+		vswitchId_ = value["VswitchId"].asString();
+	if(!value["BackupStatus"].isNull())
+		backupStatus_ = value["BackupStatus"].asString();
+	if(!value["PayType"].isNull())
+		payType_ = value["PayType"].asString();
+	if(!value["CoreDiskType"].isNull())
+		coreDiskType_ = value["CoreDiskType"].asString();
+	if(!value["MasterNodeCount"].isNull())
+		masterNodeCount_ = std::stoi(value["MasterNodeCount"].asString());
+	if(!value["NetworkType"].isNull())
+		networkType_ = value["NetworkType"].asString();
+	if(!value["CreatedTimeUTC"].isNull())
+		createdTimeUTC_ = value["CreatedTimeUTC"].asString();
+	if(!value["ColdStorageSize"].isNull())
+		coldStorageSize_ = std::stoi(value["ColdStorageSize"].asString());
+	if(!value["ParentId"].isNull())
+		parentId_ = value["ParentId"].asString();
+	if(!value["IsLatestVersion"].isNull())
+		isLatestVersion_ = value["IsLatestVersion"].asString() == "true";
+	if(!value["ExpireTimeUTC"].isNull())
+		expireTimeUTC_ = value["ExpireTimeUTC"].asString();
+	if(!value["InstanceName"].isNull())
+		instanceName_ = value["InstanceName"].asString();
+	if(!value["MasterInstanceType"].isNull())
+		masterInstanceType_ = value["MasterInstanceType"].asString();
+	if(!value["CoreInstanceType"].isNull())
+		coreInstanceType_ = value["CoreInstanceType"].asString();
 	if(!value["EncryptionKey"].isNull())
 		encryptionKey_ = value["EncryptionKey"].asString();
+	if(!value["CreatedTime"].isNull())
+		createdTime_ = value["CreatedTime"].asString();
+	if(!value["CoreDiskSize"].isNull())
+		coreDiskSize_ = std::stoi(value["CoreDiskSize"].asString());
+	if(!value["ClusterId"].isNull())
+		clusterId_ = value["ClusterId"].asString();
+	if(!value["ExpireTime"].isNull())
+		expireTime_ = value["ExpireTime"].asString();
+	if(!value["MaintainStartTime"].isNull())
+		maintainStartTime_ = value["MaintainStartTime"].asString();
+	if(!value["ConfirmMaintainTime"].isNull())
+		confirmMaintainTime_ = value["ConfirmMaintainTime"].asString();
+	if(!value["IsHa"].isNull())
+		isHa_ = value["IsHa"].asString() == "true";
+	if(!value["MaintainEndTime"].isNull())
+		maintainEndTime_ = value["MaintainEndTime"].asString();
+	if(!value["InstanceId"].isNull())
+		instanceId_ = value["InstanceId"].asString();
+	if(!value["ColdStorageStatus"].isNull())
+		coldStorageStatus_ = value["ColdStorageStatus"].asString();
+	if(!value["IsDeletionProtection"].isNull())
+		isDeletionProtection_ = value["IsDeletionProtection"].asString() == "true";
+	if(!value["MinorVersion"].isNull())
+		minorVersion_ = value["MinorVersion"].asString();
+	if(!value["RegionId"].isNull())
+		regionId_ = value["RegionId"].asString();
+	if(!value["MasterDiskSize"].isNull())
+		masterDiskSize_ = std::stoi(value["MasterDiskSize"].asString());
+	if(!value["MasterDiskType"].isNull())
+		masterDiskType_ = value["MasterDiskType"].asString();
 	if(!value["NeedUpgrade"].isNull())
 		needUpgrade_ = value["NeedUpgrade"].asString() == "true";
+	if(!value["IsMultiModel"].isNull())
+		isMultiModel_ = value["IsMultiModel"].asString() == "true";
+	if(!value["AutoRenewal"].isNull())
+		autoRenewal_ = value["AutoRenewal"].asString() == "true";
+	if(!value["ClusterType"].isNull())
+		clusterType_ = value["ClusterType"].asString();
+	if(!value["ResourceGroupId"].isNull())
+		resourceGroupId_ = value["ResourceGroupId"].asString();
+	if(!value["ClusterName"].isNull())
+		clusterName_ = value["ClusterName"].asString();
+	if(!value["ZoneId"].isNull())
+		zoneId_ = value["ZoneId"].asString();
+	if(!value["Duration"].isNull())
+		duration_ = std::stoi(value["Duration"].asString());
+	if(!value["ModuleStackVersion"].isNull())
+		moduleStackVersion_ = value["ModuleStackVersion"].asString();
+	if(!value["Engine"].isNull())
+		engine_ = value["Engine"].asString();
+	if(!value["MajorVersion"].isNull())
+		majorVersion_ = value["MajorVersion"].asString();
+	if(!value["CoreDiskCount"].isNull())
+		coreDiskCount_ = value["CoreDiskCount"].asString();
+	if(!value["TaskProgress"].isNull())
+		taskProgress_ = value["TaskProgress"].asString();
+	if(!value["CoreNodeCount"].isNull())
+		coreNodeCount_ = std::stoi(value["CoreNodeCount"].asString());
 
 }
 
 std::string DescribeInstanceResult::getModuleStackVersion()const
 {
 	return moduleStackVersion_;
-}
-
-bool DescribeInstanceResult::getIsHa()const
-{
-	return isHa_;
 }
 
 std::string DescribeInstanceResult::getCreatedTime()const
@@ -172,9 +171,119 @@ bool DescribeInstanceResult::getNeedUpgrade()const
 	return needUpgrade_;
 }
 
+int DescribeInstanceResult::getModuleId()const
+{
+	return moduleId_;
+}
+
+std::vector<DescribeInstanceResult::Tag> DescribeInstanceResult::getTags()const
+{
+	return tags_;
+}
+
+std::vector<std::string> DescribeInstanceResult::getNeedUpgradeComps()const
+{
+	return needUpgradeComps_;
+}
+
+std::string DescribeInstanceResult::getEngine()const
+{
+	return engine_;
+}
+
+std::string DescribeInstanceResult::getStatus()const
+{
+	return status_;
+}
+
+int DescribeInstanceResult::getColdStorageSize()const
+{
+	return coldStorageSize_;
+}
+
+std::string DescribeInstanceResult::getEncryptionType()const
+{
+	return encryptionType_;
+}
+
+std::string DescribeInstanceResult::getExpireTimeUTC()const
+{
+	return expireTimeUTC_;
+}
+
+int DescribeInstanceResult::getMasterDiskSize()const
+{
+	return masterDiskSize_;
+}
+
+std::string DescribeInstanceResult::getInstanceId()const
+{
+	return instanceId_;
+}
+
+int DescribeInstanceResult::getDuration()const
+{
+	return duration_;
+}
+
+std::string DescribeInstanceResult::getPayType()const
+{
+	return payType_;
+}
+
+std::string DescribeInstanceResult::getVswitchId()const
+{
+	return vswitchId_;
+}
+
+int DescribeInstanceResult::getMasterNodeCount()const
+{
+	return masterNodeCount_;
+}
+
+std::string DescribeInstanceResult::getInstanceName()const
+{
+	return instanceName_;
+}
+
+std::string DescribeInstanceResult::getVpcId()const
+{
+	return vpcId_;
+}
+
+bool DescribeInstanceResult::getAutoRenewal()const
+{
+	return autoRenewal_;
+}
+
+std::string DescribeInstanceResult::getCoreDiskType()const
+{
+	return coreDiskType_;
+}
+
+std::string DescribeInstanceResult::getExpireTime()const
+{
+	return expireTime_;
+}
+
+std::string DescribeInstanceResult::getBackupStatus()const
+{
+	return backupStatus_;
+}
+
+bool DescribeInstanceResult::getIsHa()const
+{
+	return isHa_;
+}
+
 std::string DescribeInstanceResult::getEncryptionKey()const
 {
 	return encryptionKey_;
+}
+
+std::string DescribeInstanceResult::getTaskProgress()const
+{
+	return taskProgress_;
 }
 
 std::string DescribeInstanceResult::getMasterInstanceType()const
@@ -190,11 +299,6 @@ bool DescribeInstanceResult::getIsDeletionProtection()const
 bool DescribeInstanceResult::getIsLatestVersion()const
 {
 	return isLatestVersion_;
-}
-
-int DescribeInstanceResult::getModuleId()const
-{
-	return moduleId_;
 }
 
 std::string DescribeInstanceResult::getMaintainEndTime()const
@@ -222,29 +326,14 @@ std::string DescribeInstanceResult::getMasterDiskType()const
 	return masterDiskType_;
 }
 
-std::vector<DescribeInstanceResult::Tag> DescribeInstanceResult::getTags()const
-{
-	return tags_;
-}
-
-std::vector<std::string> DescribeInstanceResult::getNeedUpgradeComps()const
-{
-	return needUpgradeComps_;
-}
-
-std::string DescribeInstanceResult::getEngine()const
-{
-	return engine_;
-}
-
 std::string DescribeInstanceResult::getMaintainStartTime()const
 {
 	return maintainStartTime_;
 }
 
-std::string DescribeInstanceResult::getStatus()const
+std::string DescribeInstanceResult::getParentId()const
 {
-	return status_;
+	return parentId_;
 }
 
 std::string DescribeInstanceResult::getMajorVersion()const
@@ -257,44 +346,9 @@ std::string DescribeInstanceResult::getCoreDiskCount()const
 	return coreDiskCount_;
 }
 
-std::string DescribeInstanceResult::getParentId()const
-{
-	return parentId_;
-}
-
-int DescribeInstanceResult::getColdStorageSize()const
-{
-	return coldStorageSize_;
-}
-
-std::string DescribeInstanceResult::getEncryptionType()const
-{
-	return encryptionType_;
-}
-
-int DescribeInstanceResult::getMasterDiskSize()const
-{
-	return masterDiskSize_;
-}
-
-std::string DescribeInstanceResult::getExpireTimeUTC()const
-{
-	return expireTimeUTC_;
-}
-
 std::string DescribeInstanceResult::getZoneId()const
 {
 	return zoneId_;
-}
-
-std::string DescribeInstanceResult::getInstanceId()const
-{
-	return instanceId_;
-}
-
-int DescribeInstanceResult::getCoreNodeCount()const
-{
-	return coreNodeCount_;
 }
 
 std::string DescribeInstanceResult::getClusterId()const
@@ -302,14 +356,14 @@ std::string DescribeInstanceResult::getClusterId()const
 	return clusterId_;
 }
 
+int DescribeInstanceResult::getCoreNodeCount()const
+{
+	return coreNodeCount_;
+}
+
 std::string DescribeInstanceResult::getColdStorageStatus()const
 {
 	return coldStorageStatus_;
-}
-
-std::string DescribeInstanceResult::getMinorVersion()const
-{
-	return minorVersion_;
 }
 
 std::string DescribeInstanceResult::getCreatedTimeUTC()const
@@ -317,14 +371,9 @@ std::string DescribeInstanceResult::getCreatedTimeUTC()const
 	return createdTimeUTC_;
 }
 
-int DescribeInstanceResult::getDuration()const
+std::string DescribeInstanceResult::getMinorVersion()const
 {
-	return duration_;
-}
-
-std::string DescribeInstanceResult::getPayType()const
-{
-	return payType_;
+	return minorVersion_;
 }
 
 bool DescribeInstanceResult::getIsMultiModel()const
@@ -337,53 +386,18 @@ std::string DescribeInstanceResult::getClusterType()const
 	return clusterType_;
 }
 
-std::string DescribeInstanceResult::getVswitchId()const
-{
-	return vswitchId_;
-}
-
-std::string DescribeInstanceResult::getInstanceName()const
-{
-	return instanceName_;
-}
-
-int DescribeInstanceResult::getMasterNodeCount()const
-{
-	return masterNodeCount_;
-}
-
-std::string DescribeInstanceResult::getVpcId()const
-{
-	return vpcId_;
-}
-
-bool DescribeInstanceResult::getAutoRenewal()const
-{
-	return autoRenewal_;
-}
-
-std::string DescribeInstanceResult::getCoreDiskType()const
-{
-	return coreDiskType_;
-}
-
 std::string DescribeInstanceResult::getRegionId()const
 {
 	return regionId_;
 }
 
-std::string DescribeInstanceResult::getExpireTime()const
+std::string DescribeInstanceResult::getConfirmMaintainTime()const
 {
-	return expireTime_;
+	return confirmMaintainTime_;
 }
 
 int DescribeInstanceResult::getCoreDiskSize()const
 {
 	return coreDiskSize_;
-}
-
-std::string DescribeInstanceResult::getBackupStatus()const
-{
-	return backupStatus_;
 }
 
