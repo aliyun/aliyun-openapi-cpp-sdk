@@ -39,10 +39,21 @@ void QueryMonitorResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto allDataNode = value["Data"]["dataItem"];
+	for (auto valueDatadataItem : allDataNode)
+	{
+		DataItem dataObject;
+		if(!valueDatadataItem["podName"].isNull())
+			dataObject.podName = valueDatadataItem["podName"].asString();
+		if(!valueDatadataItem["clusterNamePrefix"].isNull())
+			dataObject.clusterNamePrefix = valueDatadataItem["clusterNamePrefix"].asString();
+		auto allValues = value["values"]["values"];
+		for (auto value : allValues)
+			dataObject.values.push_back(value.asString());
+		data_.push_back(dataObject);
+	}
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
-	if(!value["Data"].isNull())
-		data_ = value["Data"].asString();
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = value["ErrorCode"].asString();
 	if(!value["Success"].isNull())
@@ -55,7 +66,7 @@ std::string QueryMonitorResult::getMessage()const
 	return message_;
 }
 
-std::string QueryMonitorResult::getData()const
+std::vector<QueryMonitorResult::DataItem> QueryMonitorResult::getData()const
 {
 	return data_;
 }

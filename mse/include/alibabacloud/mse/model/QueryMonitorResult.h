@@ -32,13 +32,19 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_MSE_EXPORT QueryMonitorResult : public ServiceResult
 			{
 			public:
+				struct DataItem
+				{
+					std::string podName;
+					std::string clusterNamePrefix;
+					std::vector<std::string> values;
+				};
 
 
 				QueryMonitorResult();
 				explicit QueryMonitorResult(const std::string &payload);
 				~QueryMonitorResult();
 				std::string getMessage()const;
-				std::string getData()const;
+				std::vector<DataItem> getData()const;
 				std::string getErrorCode()const;
 				bool getSuccess()const;
 
@@ -46,7 +52,7 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
-				std::string data_;
+				std::vector<DataItem> data_;
 				std::string errorCode_;
 				bool success_;
 
