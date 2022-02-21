@@ -29,6 +29,8 @@ set(mse_public_header_model
 	include/alibabacloud/mse/model/AddGatewayResult.h
 	include/alibabacloud/mse/model/AddGatewayDomainRequest.h
 	include/alibabacloud/mse/model/AddGatewayDomainResult.h
+	include/alibabacloud/mse/model/AddGatewayRouteRequest.h
+	include/alibabacloud/mse/model/AddGatewayRouteResult.h
 	include/alibabacloud/mse/model/AddGatewayServiceVersionRequest.h
 	include/alibabacloud/mse/model/AddGatewayServiceVersionResult.h
 	include/alibabacloud/mse/model/AddGatewaySlbRequest.h
@@ -39,6 +41,10 @@ set(mse_public_header_model
 	include/alibabacloud/mse/model/AddSSLCertResult.h
 	include/alibabacloud/mse/model/AddServiceSourceRequest.h
 	include/alibabacloud/mse/model/AddServiceSourceResult.h
+	include/alibabacloud/mse/model/ApplyGatewayRouteRequest.h
+	include/alibabacloud/mse/model/ApplyGatewayRouteResult.h
+	include/alibabacloud/mse/model/ApplyTagPoliciesRequest.h
+	include/alibabacloud/mse/model/ApplyTagPoliciesResult.h
 	include/alibabacloud/mse/model/CloneNacosConfigRequest.h
 	include/alibabacloud/mse/model/CloneNacosConfigResult.h
 	include/alibabacloud/mse/model/CreateAlarmRuleRequest.h
@@ -55,6 +61,10 @@ set(mse_public_header_model
 	include/alibabacloud/mse/model/CreateNacosInstanceResult.h
 	include/alibabacloud/mse/model/CreateNacosServiceRequest.h
 	include/alibabacloud/mse/model/CreateNacosServiceResult.h
+	include/alibabacloud/mse/model/CreateOrUpdateSwimmingLaneRequest.h
+	include/alibabacloud/mse/model/CreateOrUpdateSwimmingLaneResult.h
+	include/alibabacloud/mse/model/CreateOrUpdateSwimmingLaneGroupRequest.h
+	include/alibabacloud/mse/model/CreateOrUpdateSwimmingLaneGroupResult.h
 	include/alibabacloud/mse/model/CreateZnodeRequest.h
 	include/alibabacloud/mse/model/CreateZnodeResult.h
 	include/alibabacloud/mse/model/DeleteAlarmRuleRequest.h
@@ -69,6 +79,8 @@ set(mse_public_header_model
 	include/alibabacloud/mse/model/DeleteGatewayResult.h
 	include/alibabacloud/mse/model/DeleteGatewayDomainRequest.h
 	include/alibabacloud/mse/model/DeleteGatewayDomainResult.h
+	include/alibabacloud/mse/model/DeleteGatewayRouteRequest.h
+	include/alibabacloud/mse/model/DeleteGatewayRouteResult.h
 	include/alibabacloud/mse/model/DeleteGatewayServiceVersionRequest.h
 	include/alibabacloud/mse/model/DeleteGatewayServiceVersionResult.h
 	include/alibabacloud/mse/model/DeleteGatewaySlbRequest.h
@@ -77,10 +89,16 @@ set(mse_public_header_model
 	include/alibabacloud/mse/model/DeleteNacosConfigResult.h
 	include/alibabacloud/mse/model/DeleteNacosConfigsRequest.h
 	include/alibabacloud/mse/model/DeleteNacosConfigsResult.h
+	include/alibabacloud/mse/model/DeleteNacosInstanceRequest.h
+	include/alibabacloud/mse/model/DeleteNacosInstanceResult.h
 	include/alibabacloud/mse/model/DeleteNacosServiceRequest.h
 	include/alibabacloud/mse/model/DeleteNacosServiceResult.h
 	include/alibabacloud/mse/model/DeleteServiceSourceRequest.h
 	include/alibabacloud/mse/model/DeleteServiceSourceResult.h
+	include/alibabacloud/mse/model/DeleteSwimmingLaneRequest.h
+	include/alibabacloud/mse/model/DeleteSwimmingLaneResult.h
+	include/alibabacloud/mse/model/DeleteSwimmingLaneGroupRequest.h
+	include/alibabacloud/mse/model/DeleteSwimmingLaneGroupResult.h
 	include/alibabacloud/mse/model/DeleteZnodeRequest.h
 	include/alibabacloud/mse/model/DeleteZnodeResult.h
 	include/alibabacloud/mse/model/ExportNacosConfigRequest.h
@@ -95,6 +113,8 @@ set(mse_public_header_model
 	include/alibabacloud/mse/model/GetGatewayDomainDetailResult.h
 	include/alibabacloud/mse/model/GetGatewayOptionRequest.h
 	include/alibabacloud/mse/model/GetGatewayOptionResult.h
+	include/alibabacloud/mse/model/GetGatewayRouteDetailRequest.h
+	include/alibabacloud/mse/model/GetGatewayRouteDetailResult.h
 	include/alibabacloud/mse/model/GetGatewayServiceDetailRequest.h
 	include/alibabacloud/mse/model/GetGatewayServiceDetailResult.h
 	include/alibabacloud/mse/model/GetGovernanceKubernetesClusterRequest.h
@@ -117,6 +137,10 @@ set(mse_public_header_model
 	include/alibabacloud/mse/model/GetNacosHistoryConfigResult.h
 	include/alibabacloud/mse/model/GetOverviewRequest.h
 	include/alibabacloud/mse/model/GetOverviewResult.h
+	include/alibabacloud/mse/model/GetServiceListRequest.h
+	include/alibabacloud/mse/model/GetServiceListResult.h
+	include/alibabacloud/mse/model/GetTagsBySwimmingLaneGroupIdRequest.h
+	include/alibabacloud/mse/model/GetTagsBySwimmingLaneGroupIdResult.h
 	include/alibabacloud/mse/model/ImportNacosConfigRequest.h
 	include/alibabacloud/mse/model/ImportNacosConfigResult.h
 	include/alibabacloud/mse/model/ImportServicesRequest.h
@@ -135,6 +159,10 @@ set(mse_public_header_model
 	include/alibabacloud/mse/model/ListAnsServiceClustersResult.h
 	include/alibabacloud/mse/model/ListAnsServicesRequest.h
 	include/alibabacloud/mse/model/ListAnsServicesResult.h
+	include/alibabacloud/mse/model/ListAppBySwimmingLaneGroupTagRequest.h
+	include/alibabacloud/mse/model/ListAppBySwimmingLaneGroupTagResult.h
+	include/alibabacloud/mse/model/ListApplicationsWithTagRulesRequest.h
+	include/alibabacloud/mse/model/ListApplicationsWithTagRulesResult.h
 	include/alibabacloud/mse/model/ListClusterConnectionTypesRequest.h
 	include/alibabacloud/mse/model/ListClusterConnectionTypesResult.h
 	include/alibabacloud/mse/model/ListClusterTypesRequest.h
@@ -153,6 +181,8 @@ set(mse_public_header_model
 	include/alibabacloud/mse/model/ListGatewayResult.h
 	include/alibabacloud/mse/model/ListGatewayDomainRequest.h
 	include/alibabacloud/mse/model/ListGatewayDomainResult.h
+	include/alibabacloud/mse/model/ListGatewayRouteRequest.h
+	include/alibabacloud/mse/model/ListGatewayRouteResult.h
 	include/alibabacloud/mse/model/ListGatewayServiceRequest.h
 	include/alibabacloud/mse/model/ListGatewayServiceResult.h
 	include/alibabacloud/mse/model/ListGatewaySlbRequest.h
@@ -173,8 +203,14 @@ set(mse_public_header_model
 	include/alibabacloud/mse/model/ListZnodeChildrenResult.h
 	include/alibabacloud/mse/model/ModifyGovernanceKubernetesClusterRequest.h
 	include/alibabacloud/mse/model/ModifyGovernanceKubernetesClusterResult.h
+	include/alibabacloud/mse/model/OfflineGatewayRouteRequest.h
+	include/alibabacloud/mse/model/OfflineGatewayRouteResult.h
 	include/alibabacloud/mse/model/PullServicesRequest.h
 	include/alibabacloud/mse/model/PullServicesResult.h
+	include/alibabacloud/mse/model/QueryAllSwimmingLaneRequest.h
+	include/alibabacloud/mse/model/QueryAllSwimmingLaneResult.h
+	include/alibabacloud/mse/model/QueryAllSwimmingLaneGroupRequest.h
+	include/alibabacloud/mse/model/QueryAllSwimmingLaneGroupResult.h
 	include/alibabacloud/mse/model/QueryBusinessLocationsRequest.h
 	include/alibabacloud/mse/model/QueryBusinessLocationsResult.h
 	include/alibabacloud/mse/model/QueryClusterDetailRequest.h
@@ -195,6 +231,8 @@ set(mse_public_header_model
 	include/alibabacloud/mse/model/QueryMonitorResult.h
 	include/alibabacloud/mse/model/QuerySlbSpecRequest.h
 	include/alibabacloud/mse/model/QuerySlbSpecResult.h
+	include/alibabacloud/mse/model/QuerySwimmingLaneByIdRequest.h
+	include/alibabacloud/mse/model/QuerySwimmingLaneByIdResult.h
 	include/alibabacloud/mse/model/QueryZnodeDetailRequest.h
 	include/alibabacloud/mse/model/QueryZnodeDetailResult.h
 	include/alibabacloud/mse/model/RestartClusterRequest.h
@@ -221,8 +259,18 @@ set(mse_public_header_model
 	include/alibabacloud/mse/model/UpdateGatewayNameResult.h
 	include/alibabacloud/mse/model/UpdateGatewayOptionRequest.h
 	include/alibabacloud/mse/model/UpdateGatewayOptionResult.h
+	include/alibabacloud/mse/model/UpdateGatewayRouteRequest.h
+	include/alibabacloud/mse/model/UpdateGatewayRouteResult.h
+	include/alibabacloud/mse/model/UpdateGatewayRouteCORSRequest.h
+	include/alibabacloud/mse/model/UpdateGatewayRouteCORSResult.h
 	include/alibabacloud/mse/model/UpdateGatewayRouteHTTPRewriteRequest.h
 	include/alibabacloud/mse/model/UpdateGatewayRouteHTTPRewriteResult.h
+	include/alibabacloud/mse/model/UpdateGatewayRouteHeaderOpRequest.h
+	include/alibabacloud/mse/model/UpdateGatewayRouteHeaderOpResult.h
+	include/alibabacloud/mse/model/UpdateGatewayRouteRetryRequest.h
+	include/alibabacloud/mse/model/UpdateGatewayRouteRetryResult.h
+	include/alibabacloud/mse/model/UpdateGatewayRouteTimeoutRequest.h
+	include/alibabacloud/mse/model/UpdateGatewayRouteTimeoutResult.h
 	include/alibabacloud/mse/model/UpdateGatewayServiceVersionRequest.h
 	include/alibabacloud/mse/model/UpdateGatewayServiceVersionResult.h
 	include/alibabacloud/mse/model/UpdateImageRequest.h
@@ -252,6 +300,8 @@ set(mse_src
 	src/model/AddGatewayResult.cc
 	src/model/AddGatewayDomainRequest.cc
 	src/model/AddGatewayDomainResult.cc
+	src/model/AddGatewayRouteRequest.cc
+	src/model/AddGatewayRouteResult.cc
 	src/model/AddGatewayServiceVersionRequest.cc
 	src/model/AddGatewayServiceVersionResult.cc
 	src/model/AddGatewaySlbRequest.cc
@@ -262,6 +312,10 @@ set(mse_src
 	src/model/AddSSLCertResult.cc
 	src/model/AddServiceSourceRequest.cc
 	src/model/AddServiceSourceResult.cc
+	src/model/ApplyGatewayRouteRequest.cc
+	src/model/ApplyGatewayRouteResult.cc
+	src/model/ApplyTagPoliciesRequest.cc
+	src/model/ApplyTagPoliciesResult.cc
 	src/model/CloneNacosConfigRequest.cc
 	src/model/CloneNacosConfigResult.cc
 	src/model/CreateAlarmRuleRequest.cc
@@ -278,6 +332,10 @@ set(mse_src
 	src/model/CreateNacosInstanceResult.cc
 	src/model/CreateNacosServiceRequest.cc
 	src/model/CreateNacosServiceResult.cc
+	src/model/CreateOrUpdateSwimmingLaneRequest.cc
+	src/model/CreateOrUpdateSwimmingLaneResult.cc
+	src/model/CreateOrUpdateSwimmingLaneGroupRequest.cc
+	src/model/CreateOrUpdateSwimmingLaneGroupResult.cc
 	src/model/CreateZnodeRequest.cc
 	src/model/CreateZnodeResult.cc
 	src/model/DeleteAlarmRuleRequest.cc
@@ -292,6 +350,8 @@ set(mse_src
 	src/model/DeleteGatewayResult.cc
 	src/model/DeleteGatewayDomainRequest.cc
 	src/model/DeleteGatewayDomainResult.cc
+	src/model/DeleteGatewayRouteRequest.cc
+	src/model/DeleteGatewayRouteResult.cc
 	src/model/DeleteGatewayServiceVersionRequest.cc
 	src/model/DeleteGatewayServiceVersionResult.cc
 	src/model/DeleteGatewaySlbRequest.cc
@@ -300,10 +360,16 @@ set(mse_src
 	src/model/DeleteNacosConfigResult.cc
 	src/model/DeleteNacosConfigsRequest.cc
 	src/model/DeleteNacosConfigsResult.cc
+	src/model/DeleteNacosInstanceRequest.cc
+	src/model/DeleteNacosInstanceResult.cc
 	src/model/DeleteNacosServiceRequest.cc
 	src/model/DeleteNacosServiceResult.cc
 	src/model/DeleteServiceSourceRequest.cc
 	src/model/DeleteServiceSourceResult.cc
+	src/model/DeleteSwimmingLaneRequest.cc
+	src/model/DeleteSwimmingLaneResult.cc
+	src/model/DeleteSwimmingLaneGroupRequest.cc
+	src/model/DeleteSwimmingLaneGroupResult.cc
 	src/model/DeleteZnodeRequest.cc
 	src/model/DeleteZnodeResult.cc
 	src/model/ExportNacosConfigRequest.cc
@@ -318,6 +384,8 @@ set(mse_src
 	src/model/GetGatewayDomainDetailResult.cc
 	src/model/GetGatewayOptionRequest.cc
 	src/model/GetGatewayOptionResult.cc
+	src/model/GetGatewayRouteDetailRequest.cc
+	src/model/GetGatewayRouteDetailResult.cc
 	src/model/GetGatewayServiceDetailRequest.cc
 	src/model/GetGatewayServiceDetailResult.cc
 	src/model/GetGovernanceKubernetesClusterRequest.cc
@@ -340,6 +408,10 @@ set(mse_src
 	src/model/GetNacosHistoryConfigResult.cc
 	src/model/GetOverviewRequest.cc
 	src/model/GetOverviewResult.cc
+	src/model/GetServiceListRequest.cc
+	src/model/GetServiceListResult.cc
+	src/model/GetTagsBySwimmingLaneGroupIdRequest.cc
+	src/model/GetTagsBySwimmingLaneGroupIdResult.cc
 	src/model/ImportNacosConfigRequest.cc
 	src/model/ImportNacosConfigResult.cc
 	src/model/ImportServicesRequest.cc
@@ -358,6 +430,10 @@ set(mse_src
 	src/model/ListAnsServiceClustersResult.cc
 	src/model/ListAnsServicesRequest.cc
 	src/model/ListAnsServicesResult.cc
+	src/model/ListAppBySwimmingLaneGroupTagRequest.cc
+	src/model/ListAppBySwimmingLaneGroupTagResult.cc
+	src/model/ListApplicationsWithTagRulesRequest.cc
+	src/model/ListApplicationsWithTagRulesResult.cc
 	src/model/ListClusterConnectionTypesRequest.cc
 	src/model/ListClusterConnectionTypesResult.cc
 	src/model/ListClusterTypesRequest.cc
@@ -376,6 +452,8 @@ set(mse_src
 	src/model/ListGatewayResult.cc
 	src/model/ListGatewayDomainRequest.cc
 	src/model/ListGatewayDomainResult.cc
+	src/model/ListGatewayRouteRequest.cc
+	src/model/ListGatewayRouteResult.cc
 	src/model/ListGatewayServiceRequest.cc
 	src/model/ListGatewayServiceResult.cc
 	src/model/ListGatewaySlbRequest.cc
@@ -396,8 +474,14 @@ set(mse_src
 	src/model/ListZnodeChildrenResult.cc
 	src/model/ModifyGovernanceKubernetesClusterRequest.cc
 	src/model/ModifyGovernanceKubernetesClusterResult.cc
+	src/model/OfflineGatewayRouteRequest.cc
+	src/model/OfflineGatewayRouteResult.cc
 	src/model/PullServicesRequest.cc
 	src/model/PullServicesResult.cc
+	src/model/QueryAllSwimmingLaneRequest.cc
+	src/model/QueryAllSwimmingLaneResult.cc
+	src/model/QueryAllSwimmingLaneGroupRequest.cc
+	src/model/QueryAllSwimmingLaneGroupResult.cc
 	src/model/QueryBusinessLocationsRequest.cc
 	src/model/QueryBusinessLocationsResult.cc
 	src/model/QueryClusterDetailRequest.cc
@@ -418,6 +502,8 @@ set(mse_src
 	src/model/QueryMonitorResult.cc
 	src/model/QuerySlbSpecRequest.cc
 	src/model/QuerySlbSpecResult.cc
+	src/model/QuerySwimmingLaneByIdRequest.cc
+	src/model/QuerySwimmingLaneByIdResult.cc
 	src/model/QueryZnodeDetailRequest.cc
 	src/model/QueryZnodeDetailResult.cc
 	src/model/RestartClusterRequest.cc
@@ -444,8 +530,18 @@ set(mse_src
 	src/model/UpdateGatewayNameResult.cc
 	src/model/UpdateGatewayOptionRequest.cc
 	src/model/UpdateGatewayOptionResult.cc
+	src/model/UpdateGatewayRouteRequest.cc
+	src/model/UpdateGatewayRouteResult.cc
+	src/model/UpdateGatewayRouteCORSRequest.cc
+	src/model/UpdateGatewayRouteCORSResult.cc
 	src/model/UpdateGatewayRouteHTTPRewriteRequest.cc
 	src/model/UpdateGatewayRouteHTTPRewriteResult.cc
+	src/model/UpdateGatewayRouteHeaderOpRequest.cc
+	src/model/UpdateGatewayRouteHeaderOpResult.cc
+	src/model/UpdateGatewayRouteRetryRequest.cc
+	src/model/UpdateGatewayRouteRetryResult.cc
+	src/model/UpdateGatewayRouteTimeoutRequest.cc
+	src/model/UpdateGatewayRouteTimeoutResult.cc
 	src/model/UpdateGatewayServiceVersionRequest.cc
 	src/model/UpdateGatewayServiceVersionResult.cc
 	src/model/UpdateImageRequest.cc

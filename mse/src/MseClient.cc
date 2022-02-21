@@ -195,6 +195,42 @@ MseClient::AddGatewayDomainOutcomeCallable MseClient::addGatewayDomainCallable(c
 	return task->get_future();
 }
 
+MseClient::AddGatewayRouteOutcome MseClient::addGatewayRoute(const AddGatewayRouteRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddGatewayRouteOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddGatewayRouteOutcome(AddGatewayRouteResult(outcome.result()));
+	else
+		return AddGatewayRouteOutcome(outcome.error());
+}
+
+void MseClient::addGatewayRouteAsync(const AddGatewayRouteRequest& request, const AddGatewayRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addGatewayRoute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::AddGatewayRouteOutcomeCallable MseClient::addGatewayRouteCallable(const AddGatewayRouteRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddGatewayRouteOutcome()>>(
+			[this, request]()
+			{
+			return this->addGatewayRoute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 MseClient::AddGatewayServiceVersionOutcome MseClient::addGatewayServiceVersion(const AddGatewayServiceVersionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -369,6 +405,78 @@ MseClient::AddServiceSourceOutcomeCallable MseClient::addServiceSourceCallable(c
 			[this, request]()
 			{
 			return this->addServiceSource(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MseClient::ApplyGatewayRouteOutcome MseClient::applyGatewayRoute(const ApplyGatewayRouteRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ApplyGatewayRouteOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ApplyGatewayRouteOutcome(ApplyGatewayRouteResult(outcome.result()));
+	else
+		return ApplyGatewayRouteOutcome(outcome.error());
+}
+
+void MseClient::applyGatewayRouteAsync(const ApplyGatewayRouteRequest& request, const ApplyGatewayRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, applyGatewayRoute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::ApplyGatewayRouteOutcomeCallable MseClient::applyGatewayRouteCallable(const ApplyGatewayRouteRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ApplyGatewayRouteOutcome()>>(
+			[this, request]()
+			{
+			return this->applyGatewayRoute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MseClient::ApplyTagPoliciesOutcome MseClient::applyTagPolicies(const ApplyTagPoliciesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ApplyTagPoliciesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ApplyTagPoliciesOutcome(ApplyTagPoliciesResult(outcome.result()));
+	else
+		return ApplyTagPoliciesOutcome(outcome.error());
+}
+
+void MseClient::applyTagPoliciesAsync(const ApplyTagPoliciesRequest& request, const ApplyTagPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, applyTagPolicies(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::ApplyTagPoliciesOutcomeCallable MseClient::applyTagPoliciesCallable(const ApplyTagPoliciesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ApplyTagPoliciesOutcome()>>(
+			[this, request]()
+			{
+			return this->applyTagPolicies(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -663,6 +771,78 @@ MseClient::CreateNacosServiceOutcomeCallable MseClient::createNacosServiceCallab
 	return task->get_future();
 }
 
+MseClient::CreateOrUpdateSwimmingLaneOutcome MseClient::createOrUpdateSwimmingLane(const CreateOrUpdateSwimmingLaneRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateOrUpdateSwimmingLaneOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateOrUpdateSwimmingLaneOutcome(CreateOrUpdateSwimmingLaneResult(outcome.result()));
+	else
+		return CreateOrUpdateSwimmingLaneOutcome(outcome.error());
+}
+
+void MseClient::createOrUpdateSwimmingLaneAsync(const CreateOrUpdateSwimmingLaneRequest& request, const CreateOrUpdateSwimmingLaneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createOrUpdateSwimmingLane(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::CreateOrUpdateSwimmingLaneOutcomeCallable MseClient::createOrUpdateSwimmingLaneCallable(const CreateOrUpdateSwimmingLaneRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateOrUpdateSwimmingLaneOutcome()>>(
+			[this, request]()
+			{
+			return this->createOrUpdateSwimmingLane(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MseClient::CreateOrUpdateSwimmingLaneGroupOutcome MseClient::createOrUpdateSwimmingLaneGroup(const CreateOrUpdateSwimmingLaneGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateOrUpdateSwimmingLaneGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateOrUpdateSwimmingLaneGroupOutcome(CreateOrUpdateSwimmingLaneGroupResult(outcome.result()));
+	else
+		return CreateOrUpdateSwimmingLaneGroupOutcome(outcome.error());
+}
+
+void MseClient::createOrUpdateSwimmingLaneGroupAsync(const CreateOrUpdateSwimmingLaneGroupRequest& request, const CreateOrUpdateSwimmingLaneGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createOrUpdateSwimmingLaneGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::CreateOrUpdateSwimmingLaneGroupOutcomeCallable MseClient::createOrUpdateSwimmingLaneGroupCallable(const CreateOrUpdateSwimmingLaneGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateOrUpdateSwimmingLaneGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->createOrUpdateSwimmingLaneGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 MseClient::CreateZnodeOutcome MseClient::createZnode(const CreateZnodeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -915,6 +1095,42 @@ MseClient::DeleteGatewayDomainOutcomeCallable MseClient::deleteGatewayDomainCall
 	return task->get_future();
 }
 
+MseClient::DeleteGatewayRouteOutcome MseClient::deleteGatewayRoute(const DeleteGatewayRouteRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteGatewayRouteOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteGatewayRouteOutcome(DeleteGatewayRouteResult(outcome.result()));
+	else
+		return DeleteGatewayRouteOutcome(outcome.error());
+}
+
+void MseClient::deleteGatewayRouteAsync(const DeleteGatewayRouteRequest& request, const DeleteGatewayRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteGatewayRoute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::DeleteGatewayRouteOutcomeCallable MseClient::deleteGatewayRouteCallable(const DeleteGatewayRouteRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteGatewayRouteOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteGatewayRoute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 MseClient::DeleteGatewayServiceVersionOutcome MseClient::deleteGatewayServiceVersion(const DeleteGatewayServiceVersionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1059,6 +1275,42 @@ MseClient::DeleteNacosConfigsOutcomeCallable MseClient::deleteNacosConfigsCallab
 	return task->get_future();
 }
 
+MseClient::DeleteNacosInstanceOutcome MseClient::deleteNacosInstance(const DeleteNacosInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteNacosInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteNacosInstanceOutcome(DeleteNacosInstanceResult(outcome.result()));
+	else
+		return DeleteNacosInstanceOutcome(outcome.error());
+}
+
+void MseClient::deleteNacosInstanceAsync(const DeleteNacosInstanceRequest& request, const DeleteNacosInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteNacosInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::DeleteNacosInstanceOutcomeCallable MseClient::deleteNacosInstanceCallable(const DeleteNacosInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteNacosInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteNacosInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 MseClient::DeleteNacosServiceOutcome MseClient::deleteNacosService(const DeleteNacosServiceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1125,6 +1377,78 @@ MseClient::DeleteServiceSourceOutcomeCallable MseClient::deleteServiceSourceCall
 			[this, request]()
 			{
 			return this->deleteServiceSource(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MseClient::DeleteSwimmingLaneOutcome MseClient::deleteSwimmingLane(const DeleteSwimmingLaneRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteSwimmingLaneOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteSwimmingLaneOutcome(DeleteSwimmingLaneResult(outcome.result()));
+	else
+		return DeleteSwimmingLaneOutcome(outcome.error());
+}
+
+void MseClient::deleteSwimmingLaneAsync(const DeleteSwimmingLaneRequest& request, const DeleteSwimmingLaneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteSwimmingLane(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::DeleteSwimmingLaneOutcomeCallable MseClient::deleteSwimmingLaneCallable(const DeleteSwimmingLaneRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteSwimmingLaneOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteSwimmingLane(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MseClient::DeleteSwimmingLaneGroupOutcome MseClient::deleteSwimmingLaneGroup(const DeleteSwimmingLaneGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteSwimmingLaneGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteSwimmingLaneGroupOutcome(DeleteSwimmingLaneGroupResult(outcome.result()));
+	else
+		return DeleteSwimmingLaneGroupOutcome(outcome.error());
+}
+
+void MseClient::deleteSwimmingLaneGroupAsync(const DeleteSwimmingLaneGroupRequest& request, const DeleteSwimmingLaneGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteSwimmingLaneGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::DeleteSwimmingLaneGroupOutcomeCallable MseClient::deleteSwimmingLaneGroupCallable(const DeleteSwimmingLaneGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteSwimmingLaneGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteSwimmingLaneGroup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1377,6 +1701,42 @@ MseClient::GetGatewayOptionOutcomeCallable MseClient::getGatewayOptionCallable(c
 			[this, request]()
 			{
 			return this->getGatewayOption(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MseClient::GetGatewayRouteDetailOutcome MseClient::getGatewayRouteDetail(const GetGatewayRouteDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetGatewayRouteDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetGatewayRouteDetailOutcome(GetGatewayRouteDetailResult(outcome.result()));
+	else
+		return GetGatewayRouteDetailOutcome(outcome.error());
+}
+
+void MseClient::getGatewayRouteDetailAsync(const GetGatewayRouteDetailRequest& request, const GetGatewayRouteDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getGatewayRouteDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::GetGatewayRouteDetailOutcomeCallable MseClient::getGatewayRouteDetailCallable(const GetGatewayRouteDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetGatewayRouteDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->getGatewayRouteDetail(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1779,6 +2139,78 @@ MseClient::GetOverviewOutcomeCallable MseClient::getOverviewCallable(const GetOv
 	return task->get_future();
 }
 
+MseClient::GetServiceListOutcome MseClient::getServiceList(const GetServiceListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetServiceListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetServiceListOutcome(GetServiceListResult(outcome.result()));
+	else
+		return GetServiceListOutcome(outcome.error());
+}
+
+void MseClient::getServiceListAsync(const GetServiceListRequest& request, const GetServiceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getServiceList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::GetServiceListOutcomeCallable MseClient::getServiceListCallable(const GetServiceListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetServiceListOutcome()>>(
+			[this, request]()
+			{
+			return this->getServiceList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MseClient::GetTagsBySwimmingLaneGroupIdOutcome MseClient::getTagsBySwimmingLaneGroupId(const GetTagsBySwimmingLaneGroupIdRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetTagsBySwimmingLaneGroupIdOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetTagsBySwimmingLaneGroupIdOutcome(GetTagsBySwimmingLaneGroupIdResult(outcome.result()));
+	else
+		return GetTagsBySwimmingLaneGroupIdOutcome(outcome.error());
+}
+
+void MseClient::getTagsBySwimmingLaneGroupIdAsync(const GetTagsBySwimmingLaneGroupIdRequest& request, const GetTagsBySwimmingLaneGroupIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getTagsBySwimmingLaneGroupId(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::GetTagsBySwimmingLaneGroupIdOutcomeCallable MseClient::getTagsBySwimmingLaneGroupIdCallable(const GetTagsBySwimmingLaneGroupIdRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetTagsBySwimmingLaneGroupIdOutcome()>>(
+			[this, request]()
+			{
+			return this->getTagsBySwimmingLaneGroupId(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 MseClient::ImportNacosConfigOutcome MseClient::importNacosConfig(const ImportNacosConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2103,6 +2535,78 @@ MseClient::ListAnsServicesOutcomeCallable MseClient::listAnsServicesCallable(con
 	return task->get_future();
 }
 
+MseClient::ListAppBySwimmingLaneGroupTagOutcome MseClient::listAppBySwimmingLaneGroupTag(const ListAppBySwimmingLaneGroupTagRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListAppBySwimmingLaneGroupTagOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListAppBySwimmingLaneGroupTagOutcome(ListAppBySwimmingLaneGroupTagResult(outcome.result()));
+	else
+		return ListAppBySwimmingLaneGroupTagOutcome(outcome.error());
+}
+
+void MseClient::listAppBySwimmingLaneGroupTagAsync(const ListAppBySwimmingLaneGroupTagRequest& request, const ListAppBySwimmingLaneGroupTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listAppBySwimmingLaneGroupTag(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::ListAppBySwimmingLaneGroupTagOutcomeCallable MseClient::listAppBySwimmingLaneGroupTagCallable(const ListAppBySwimmingLaneGroupTagRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListAppBySwimmingLaneGroupTagOutcome()>>(
+			[this, request]()
+			{
+			return this->listAppBySwimmingLaneGroupTag(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MseClient::ListApplicationsWithTagRulesOutcome MseClient::listApplicationsWithTagRules(const ListApplicationsWithTagRulesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListApplicationsWithTagRulesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListApplicationsWithTagRulesOutcome(ListApplicationsWithTagRulesResult(outcome.result()));
+	else
+		return ListApplicationsWithTagRulesOutcome(outcome.error());
+}
+
+void MseClient::listApplicationsWithTagRulesAsync(const ListApplicationsWithTagRulesRequest& request, const ListApplicationsWithTagRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listApplicationsWithTagRules(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::ListApplicationsWithTagRulesOutcomeCallable MseClient::listApplicationsWithTagRulesCallable(const ListApplicationsWithTagRulesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListApplicationsWithTagRulesOutcome()>>(
+			[this, request]()
+			{
+			return this->listApplicationsWithTagRules(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 MseClient::ListClusterConnectionTypesOutcome MseClient::listClusterConnectionTypes(const ListClusterConnectionTypesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2421,6 +2925,42 @@ MseClient::ListGatewayDomainOutcomeCallable MseClient::listGatewayDomainCallable
 			[this, request]()
 			{
 			return this->listGatewayDomain(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MseClient::ListGatewayRouteOutcome MseClient::listGatewayRoute(const ListGatewayRouteRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListGatewayRouteOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListGatewayRouteOutcome(ListGatewayRouteResult(outcome.result()));
+	else
+		return ListGatewayRouteOutcome(outcome.error());
+}
+
+void MseClient::listGatewayRouteAsync(const ListGatewayRouteRequest& request, const ListGatewayRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listGatewayRoute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::ListGatewayRouteOutcomeCallable MseClient::listGatewayRouteCallable(const ListGatewayRouteRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListGatewayRouteOutcome()>>(
+			[this, request]()
+			{
+			return this->listGatewayRoute(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2787,6 +3327,42 @@ MseClient::ModifyGovernanceKubernetesClusterOutcomeCallable MseClient::modifyGov
 	return task->get_future();
 }
 
+MseClient::OfflineGatewayRouteOutcome MseClient::offlineGatewayRoute(const OfflineGatewayRouteRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return OfflineGatewayRouteOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return OfflineGatewayRouteOutcome(OfflineGatewayRouteResult(outcome.result()));
+	else
+		return OfflineGatewayRouteOutcome(outcome.error());
+}
+
+void MseClient::offlineGatewayRouteAsync(const OfflineGatewayRouteRequest& request, const OfflineGatewayRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, offlineGatewayRoute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::OfflineGatewayRouteOutcomeCallable MseClient::offlineGatewayRouteCallable(const OfflineGatewayRouteRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<OfflineGatewayRouteOutcome()>>(
+			[this, request]()
+			{
+			return this->offlineGatewayRoute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 MseClient::PullServicesOutcome MseClient::pullServices(const PullServicesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2817,6 +3393,78 @@ MseClient::PullServicesOutcomeCallable MseClient::pullServicesCallable(const Pul
 			[this, request]()
 			{
 			return this->pullServices(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MseClient::QueryAllSwimmingLaneOutcome MseClient::queryAllSwimmingLane(const QueryAllSwimmingLaneRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryAllSwimmingLaneOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryAllSwimmingLaneOutcome(QueryAllSwimmingLaneResult(outcome.result()));
+	else
+		return QueryAllSwimmingLaneOutcome(outcome.error());
+}
+
+void MseClient::queryAllSwimmingLaneAsync(const QueryAllSwimmingLaneRequest& request, const QueryAllSwimmingLaneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryAllSwimmingLane(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::QueryAllSwimmingLaneOutcomeCallable MseClient::queryAllSwimmingLaneCallable(const QueryAllSwimmingLaneRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryAllSwimmingLaneOutcome()>>(
+			[this, request]()
+			{
+			return this->queryAllSwimmingLane(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MseClient::QueryAllSwimmingLaneGroupOutcome MseClient::queryAllSwimmingLaneGroup(const QueryAllSwimmingLaneGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryAllSwimmingLaneGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryAllSwimmingLaneGroupOutcome(QueryAllSwimmingLaneGroupResult(outcome.result()));
+	else
+		return QueryAllSwimmingLaneGroupOutcome(outcome.error());
+}
+
+void MseClient::queryAllSwimmingLaneGroupAsync(const QueryAllSwimmingLaneGroupRequest& request, const QueryAllSwimmingLaneGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryAllSwimmingLaneGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::QueryAllSwimmingLaneGroupOutcomeCallable MseClient::queryAllSwimmingLaneGroupCallable(const QueryAllSwimmingLaneGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryAllSwimmingLaneGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->queryAllSwimmingLaneGroup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3177,6 +3825,42 @@ MseClient::QuerySlbSpecOutcomeCallable MseClient::querySlbSpecCallable(const Que
 			[this, request]()
 			{
 			return this->querySlbSpec(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MseClient::QuerySwimmingLaneByIdOutcome MseClient::querySwimmingLaneById(const QuerySwimmingLaneByIdRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QuerySwimmingLaneByIdOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QuerySwimmingLaneByIdOutcome(QuerySwimmingLaneByIdResult(outcome.result()));
+	else
+		return QuerySwimmingLaneByIdOutcome(outcome.error());
+}
+
+void MseClient::querySwimmingLaneByIdAsync(const QuerySwimmingLaneByIdRequest& request, const QuerySwimmingLaneByIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, querySwimmingLaneById(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::QuerySwimmingLaneByIdOutcomeCallable MseClient::querySwimmingLaneByIdCallable(const QuerySwimmingLaneByIdRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QuerySwimmingLaneByIdOutcome()>>(
+			[this, request]()
+			{
+			return this->querySwimmingLaneById(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3651,6 +4335,78 @@ MseClient::UpdateGatewayOptionOutcomeCallable MseClient::updateGatewayOptionCall
 	return task->get_future();
 }
 
+MseClient::UpdateGatewayRouteOutcome MseClient::updateGatewayRoute(const UpdateGatewayRouteRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateGatewayRouteOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateGatewayRouteOutcome(UpdateGatewayRouteResult(outcome.result()));
+	else
+		return UpdateGatewayRouteOutcome(outcome.error());
+}
+
+void MseClient::updateGatewayRouteAsync(const UpdateGatewayRouteRequest& request, const UpdateGatewayRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateGatewayRoute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::UpdateGatewayRouteOutcomeCallable MseClient::updateGatewayRouteCallable(const UpdateGatewayRouteRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateGatewayRouteOutcome()>>(
+			[this, request]()
+			{
+			return this->updateGatewayRoute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MseClient::UpdateGatewayRouteCORSOutcome MseClient::updateGatewayRouteCORS(const UpdateGatewayRouteCORSRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateGatewayRouteCORSOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateGatewayRouteCORSOutcome(UpdateGatewayRouteCORSResult(outcome.result()));
+	else
+		return UpdateGatewayRouteCORSOutcome(outcome.error());
+}
+
+void MseClient::updateGatewayRouteCORSAsync(const UpdateGatewayRouteCORSRequest& request, const UpdateGatewayRouteCORSAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateGatewayRouteCORS(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::UpdateGatewayRouteCORSOutcomeCallable MseClient::updateGatewayRouteCORSCallable(const UpdateGatewayRouteCORSRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateGatewayRouteCORSOutcome()>>(
+			[this, request]()
+			{
+			return this->updateGatewayRouteCORS(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 MseClient::UpdateGatewayRouteHTTPRewriteOutcome MseClient::updateGatewayRouteHTTPRewrite(const UpdateGatewayRouteHTTPRewriteRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3681,6 +4437,114 @@ MseClient::UpdateGatewayRouteHTTPRewriteOutcomeCallable MseClient::updateGateway
 			[this, request]()
 			{
 			return this->updateGatewayRouteHTTPRewrite(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MseClient::UpdateGatewayRouteHeaderOpOutcome MseClient::updateGatewayRouteHeaderOp(const UpdateGatewayRouteHeaderOpRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateGatewayRouteHeaderOpOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateGatewayRouteHeaderOpOutcome(UpdateGatewayRouteHeaderOpResult(outcome.result()));
+	else
+		return UpdateGatewayRouteHeaderOpOutcome(outcome.error());
+}
+
+void MseClient::updateGatewayRouteHeaderOpAsync(const UpdateGatewayRouteHeaderOpRequest& request, const UpdateGatewayRouteHeaderOpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateGatewayRouteHeaderOp(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::UpdateGatewayRouteHeaderOpOutcomeCallable MseClient::updateGatewayRouteHeaderOpCallable(const UpdateGatewayRouteHeaderOpRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateGatewayRouteHeaderOpOutcome()>>(
+			[this, request]()
+			{
+			return this->updateGatewayRouteHeaderOp(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MseClient::UpdateGatewayRouteRetryOutcome MseClient::updateGatewayRouteRetry(const UpdateGatewayRouteRetryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateGatewayRouteRetryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateGatewayRouteRetryOutcome(UpdateGatewayRouteRetryResult(outcome.result()));
+	else
+		return UpdateGatewayRouteRetryOutcome(outcome.error());
+}
+
+void MseClient::updateGatewayRouteRetryAsync(const UpdateGatewayRouteRetryRequest& request, const UpdateGatewayRouteRetryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateGatewayRouteRetry(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::UpdateGatewayRouteRetryOutcomeCallable MseClient::updateGatewayRouteRetryCallable(const UpdateGatewayRouteRetryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateGatewayRouteRetryOutcome()>>(
+			[this, request]()
+			{
+			return this->updateGatewayRouteRetry(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MseClient::UpdateGatewayRouteTimeoutOutcome MseClient::updateGatewayRouteTimeout(const UpdateGatewayRouteTimeoutRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateGatewayRouteTimeoutOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateGatewayRouteTimeoutOutcome(UpdateGatewayRouteTimeoutResult(outcome.result()));
+	else
+		return UpdateGatewayRouteTimeoutOutcome(outcome.error());
+}
+
+void MseClient::updateGatewayRouteTimeoutAsync(const UpdateGatewayRouteTimeoutRequest& request, const UpdateGatewayRouteTimeoutAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateGatewayRouteTimeout(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::UpdateGatewayRouteTimeoutOutcomeCallable MseClient::updateGatewayRouteTimeoutCallable(const UpdateGatewayRouteTimeoutRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateGatewayRouteTimeoutOutcome()>>(
+			[this, request]()
+			{
+			return this->updateGatewayRouteTimeout(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

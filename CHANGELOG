@@ -1,3 +1,8 @@
+2022-02-21 Version: 1.36.1060
+- Add DleteNacosInstance.
+- Change CreateCluster parameter.
+- Change UpdateNacosInstance errorCode.
+
 2022-02-18 Version: 1.36.1059
 - Iot_20180120 build sdk.
 
