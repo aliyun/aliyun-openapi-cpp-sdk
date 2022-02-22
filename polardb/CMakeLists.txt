@@ -213,6 +213,8 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/ModifyMaskingRulesResult.h
 	include/alibabacloud/polardb/model/ModifyPendingMaintenanceActionRequest.h
 	include/alibabacloud/polardb/model/ModifyPendingMaintenanceActionResult.h
+	include/alibabacloud/polardb/model/RefreshProxyLevelRequest.h
+	include/alibabacloud/polardb/model/RefreshProxyLevelResult.h
 	include/alibabacloud/polardb/model/RemoveDBClusterFromGDNRequest.h
 	include/alibabacloud/polardb/model/RemoveDBClusterFromGDNResult.h
 	include/alibabacloud/polardb/model/ResetAccountRequest.h
@@ -430,6 +432,8 @@ set(polardb_src
 	src/model/ModifyMaskingRulesResult.cc
 	src/model/ModifyPendingMaintenanceActionRequest.cc
 	src/model/ModifyPendingMaintenanceActionResult.cc
+	src/model/RefreshProxyLevelRequest.cc
+	src/model/RefreshProxyLevelResult.cc
 	src/model/RemoveDBClusterFromGDNRequest.cc
 	src/model/RemoveDBClusterFromGDNResult.cc
 	src/model/ResetAccountRequest.cc

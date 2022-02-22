@@ -214,6 +214,8 @@
 #include "model/ModifyMaskingRulesResult.h"
 #include "model/ModifyPendingMaintenanceActionRequest.h"
 #include "model/ModifyPendingMaintenanceActionResult.h"
+#include "model/RefreshProxyLevelRequest.h"
+#include "model/RefreshProxyLevelResult.h"
 #include "model/RemoveDBClusterFromGDNRequest.h"
 #include "model/RemoveDBClusterFromGDNResult.h"
 #include "model/ResetAccountRequest.h"
@@ -533,6 +535,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyPendingMaintenanceActionResult> ModifyPendingMaintenanceActionOutcome;
 			typedef std::future<ModifyPendingMaintenanceActionOutcome> ModifyPendingMaintenanceActionOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::ModifyPendingMaintenanceActionRequest&, const ModifyPendingMaintenanceActionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPendingMaintenanceActionAsyncHandler;
+			typedef Outcome<Error, Model::RefreshProxyLevelResult> RefreshProxyLevelOutcome;
+			typedef std::future<RefreshProxyLevelOutcome> RefreshProxyLevelOutcomeCallable;
+			typedef std::function<void(const PolardbClient*, const Model::RefreshProxyLevelRequest&, const RefreshProxyLevelOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RefreshProxyLevelAsyncHandler;
 			typedef Outcome<Error, Model::RemoveDBClusterFromGDNResult> RemoveDBClusterFromGDNOutcome;
 			typedef std::future<RemoveDBClusterFromGDNOutcome> RemoveDBClusterFromGDNOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::RemoveDBClusterFromGDNRequest&, const RemoveDBClusterFromGDNOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RemoveDBClusterFromGDNAsyncHandler;
@@ -859,6 +864,9 @@ namespace AlibabaCloud
 			ModifyPendingMaintenanceActionOutcome modifyPendingMaintenanceAction(const Model::ModifyPendingMaintenanceActionRequest &request)const;
 			void modifyPendingMaintenanceActionAsync(const Model::ModifyPendingMaintenanceActionRequest& request, const ModifyPendingMaintenanceActionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyPendingMaintenanceActionOutcomeCallable modifyPendingMaintenanceActionCallable(const Model::ModifyPendingMaintenanceActionRequest& request) const;
+			RefreshProxyLevelOutcome refreshProxyLevel(const Model::RefreshProxyLevelRequest &request)const;
+			void refreshProxyLevelAsync(const Model::RefreshProxyLevelRequest& request, const RefreshProxyLevelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RefreshProxyLevelOutcomeCallable refreshProxyLevelCallable(const Model::RefreshProxyLevelRequest& request) const;
 			RemoveDBClusterFromGDNOutcome removeDBClusterFromGDN(const Model::RemoveDBClusterFromGDNRequest &request)const;
 			void removeDBClusterFromGDNAsync(const Model::RemoveDBClusterFromGDNRequest& request, const RemoveDBClusterFromGDNAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RemoveDBClusterFromGDNOutcomeCallable removeDBClusterFromGDNCallable(const Model::RemoveDBClusterFromGDNRequest& request) const;

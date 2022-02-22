@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_POLARDB_MODEL_MODIFYDBNODECLASSREQUEST_H_
-#define ALIBABACLOUD_POLARDB_MODEL_MODIFYDBNODECLASSREQUEST_H_
+#ifndef ALIBABACLOUD_POLARDB_MODEL_REFRESHPROXYLEVELREQUEST_H_
+#define ALIBABACLOUD_POLARDB_MODEL_REFRESHPROXYLEVELREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,23 +28,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_POLARDB_EXPORT ModifyDBNodeClassRequest : public RpcServiceRequest
+			class ALIBABACLOUD_POLARDB_EXPORT RefreshProxyLevelRequest : public RpcServiceRequest
 			{
 
 			public:
-				ModifyDBNodeClassRequest();
-				~ModifyDBNodeClassRequest();
+				RefreshProxyLevelRequest();
+				~RefreshProxyLevelRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getClientToken()const;
-				void setClientToken(const std::string& clientToken);
 				std::string getPlannedEndTime()const;
 				void setPlannedEndTime(const std::string& plannedEndTime);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getDBNodeTargetClass()const;
-				void setDBNodeTargetClass(const std::string& dBNodeTargetClass);
+				std::string getProxyTargetClass()const;
+				void setProxyTargetClass(const std::string& proxyTargetClass);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getDBClusterId()const;
@@ -55,27 +53,23 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getPlannedStartTime()const;
 				void setPlannedStartTime(const std::string& plannedStartTime);
-				std::string getModifyType()const;
-				void setModifyType(const std::string& modifyType);
-				std::string getSubCategory()const;
-				void setSubCategory(const std::string& subCategory);
+				bool getFromTimeService()const;
+				void setFromTimeService(bool fromTimeService);
 
             private:
 				long resourceOwnerId_;
-				std::string clientToken_;
 				std::string plannedEndTime_;
 				std::string accessKeyId_;
-				std::string dBNodeTargetClass_;
+				std::string proxyTargetClass_;
 				std::string resourceOwnerAccount_;
 				std::string dBClusterId_;
 				std::string ownerAccount_;
 				long ownerId_;
 				std::string plannedStartTime_;
-				std::string modifyType_;
-				std::string subCategory_;
+				bool fromTimeService_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_POLARDB_MODEL_MODIFYDBNODECLASSREQUEST_H_
+#endif // !ALIBABACLOUD_POLARDB_MODEL_REFRESHPROXYLEVELREQUEST_H_

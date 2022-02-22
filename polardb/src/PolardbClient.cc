@@ -31,21 +31,21 @@ PolardbClient::PolardbClient(const Credentials &credentials, const ClientConfigu
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "polardb");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 PolardbClient::PolardbClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "polardb");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 PolardbClient::PolardbClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "polardb");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 PolardbClient::~PolardbClient()
@@ -3501,6 +3501,42 @@ PolardbClient::ModifyPendingMaintenanceActionOutcomeCallable PolardbClient::modi
 			[this, request]()
 			{
 			return this->modifyPendingMaintenanceAction(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+PolardbClient::RefreshProxyLevelOutcome PolardbClient::refreshProxyLevel(const RefreshProxyLevelRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RefreshProxyLevelOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RefreshProxyLevelOutcome(RefreshProxyLevelResult(outcome.result()));
+	else
+		return RefreshProxyLevelOutcome(outcome.error());
+}
+
+void PolardbClient::refreshProxyLevelAsync(const RefreshProxyLevelRequest& request, const RefreshProxyLevelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, refreshProxyLevel(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbClient::RefreshProxyLevelOutcomeCallable PolardbClient::refreshProxyLevelCallable(const RefreshProxyLevelRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RefreshProxyLevelOutcome()>>(
+			[this, request]()
+			{
+			return this->refreshProxyLevel(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

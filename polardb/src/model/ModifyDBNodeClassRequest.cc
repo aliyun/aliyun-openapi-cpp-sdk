@@ -148,3 +148,14 @@ void ModifyDBNodeClassRequest::setModifyType(const std::string& modifyType)
 	setParameter("ModifyType", modifyType);
 }
 
+std::string ModifyDBNodeClassRequest::getSubCategory()const
+{
+	return subCategory_;
+}
+
+void ModifyDBNodeClassRequest::setSubCategory(const std::string& subCategory)
+{
+	subCategory_ = subCategory;
+	setParameter("SubCategory", subCategory);
+}
+
