@@ -32,12 +32,16 @@
 #include "model/CreateAggregateCompliancePackResult.h"
 #include "model/CreateAggregateConfigRuleRequest.h"
 #include "model/CreateAggregateConfigRuleResult.h"
+#include "model/CreateAggregateRemediationRequest.h"
+#include "model/CreateAggregateRemediationResult.h"
 #include "model/CreateAggregatorRequest.h"
 #include "model/CreateAggregatorResult.h"
 #include "model/CreateCompliancePackRequest.h"
 #include "model/CreateCompliancePackResult.h"
 #include "model/CreateConfigRuleRequest.h"
 #include "model/CreateConfigRuleResult.h"
+#include "model/CreateRemediationRequest.h"
+#include "model/CreateRemediationResult.h"
 #include "model/DeactiveAggregateConfigRulesRequest.h"
 #include "model/DeactiveAggregateConfigRulesResult.h"
 #include "model/DeactiveConfigRulesRequest.h"
@@ -46,10 +50,14 @@
 #include "model/DeleteAggregateCompliancePacksResult.h"
 #include "model/DeleteAggregateConfigRulesRequest.h"
 #include "model/DeleteAggregateConfigRulesResult.h"
+#include "model/DeleteAggregateRemediationsRequest.h"
+#include "model/DeleteAggregateRemediationsResult.h"
 #include "model/DeleteAggregatorsRequest.h"
 #include "model/DeleteAggregatorsResult.h"
 #include "model/DeleteCompliancePacksRequest.h"
 #include "model/DeleteCompliancePacksResult.h"
+#include "model/DeleteRemediationsRequest.h"
+#include "model/DeleteRemediationsResult.h"
 #include "model/DetachAggregateConfigRuleToCompliancePackRequest.h"
 #include "model/DetachAggregateConfigRuleToCompliancePackResult.h"
 #include "model/DetachConfigRuleToCompliancePackRequest.h"
@@ -76,6 +84,8 @@
 #include "model/GetAggregateConfigRuleSummaryByRiskLevelResult.h"
 #include "model/GetAggregateConfigRulesReportRequest.h"
 #include "model/GetAggregateConfigRulesReportResult.h"
+#include "model/GetAggregateDiscoveredResourceRequest.h"
+#include "model/GetAggregateDiscoveredResourceResult.h"
 #include "model/GetAggregateResourceComplianceByConfigRuleRequest.h"
 #include "model/GetAggregateResourceComplianceByConfigRuleResult.h"
 #include "model/GetAggregateResourceComplianceByPackRequest.h"
@@ -106,6 +116,8 @@
 #include "model/GetConfigRuleSummaryByRiskLevelResult.h"
 #include "model/GetConfigRulesReportRequest.h"
 #include "model/GetConfigRulesReportResult.h"
+#include "model/GetDiscoveredResourceRequest.h"
+#include "model/GetDiscoveredResourceResult.h"
 #include "model/GetDiscoveredResourceCountsGroupByRegionRequest.h"
 #include "model/GetDiscoveredResourceCountsGroupByRegionResult.h"
 #include "model/GetDiscoveredResourceCountsGroupByResourceTypeRequest.h"
@@ -134,6 +146,10 @@
 #include "model/ListAggregateConfigRuleEvaluationResultsResult.h"
 #include "model/ListAggregateConfigRulesRequest.h"
 #include "model/ListAggregateConfigRulesResult.h"
+#include "model/ListAggregateDiscoveredResourcesRequest.h"
+#include "model/ListAggregateDiscoveredResourcesResult.h"
+#include "model/ListAggregateRemediationsRequest.h"
+#include "model/ListAggregateRemediationsResult.h"
 #include "model/ListAggregateResourceEvaluationResultsRequest.h"
 #include "model/ListAggregateResourceEvaluationResultsResult.h"
 #include "model/ListAggregatorsRequest.h"
@@ -144,8 +160,14 @@
 #include "model/ListCompliancePacksResult.h"
 #include "model/ListConfigRuleEvaluationResultsRequest.h"
 #include "model/ListConfigRuleEvaluationResultsResult.h"
+#include "model/ListDiscoveredResourcesRequest.h"
+#include "model/ListDiscoveredResourcesResult.h"
 #include "model/ListManagedRulesRequest.h"
 #include "model/ListManagedRulesResult.h"
+#include "model/ListRemediationTemplatesRequest.h"
+#include "model/ListRemediationTemplatesResult.h"
+#include "model/ListRemediationsRequest.h"
+#include "model/ListRemediationsResult.h"
 #include "model/ListResourceEvaluationResultsRequest.h"
 #include "model/ListResourceEvaluationResultsResult.h"
 #include "model/RevertAggregateEvaluationResultsRequest.h"
@@ -154,10 +176,16 @@
 #include "model/RevertEvaluationResultsResult.h"
 #include "model/StartAggregateConfigRuleEvaluationRequest.h"
 #include "model/StartAggregateConfigRuleEvaluationResult.h"
+#include "model/StartAggregateRemediationRequest.h"
+#include "model/StartAggregateRemediationResult.h"
+#include "model/StartRemediationRequest.h"
+#include "model/StartRemediationResult.h"
 #include "model/UpdateAggregateCompliancePackRequest.h"
 #include "model/UpdateAggregateCompliancePackResult.h"
 #include "model/UpdateAggregateConfigRuleRequest.h"
 #include "model/UpdateAggregateConfigRuleResult.h"
+#include "model/UpdateAggregateRemediationRequest.h"
+#include "model/UpdateAggregateRemediationResult.h"
 #include "model/UpdateAggregatorRequest.h"
 #include "model/UpdateAggregatorResult.h"
 #include "model/UpdateCompliancePackRequest.h"
@@ -188,6 +216,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateAggregateConfigRuleResult> CreateAggregateConfigRuleOutcome;
 			typedef std::future<CreateAggregateConfigRuleOutcome> CreateAggregateConfigRuleOutcomeCallable;
 			typedef std::function<void(const ConfigClient*, const Model::CreateAggregateConfigRuleRequest&, const CreateAggregateConfigRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateAggregateConfigRuleAsyncHandler;
+			typedef Outcome<Error, Model::CreateAggregateRemediationResult> CreateAggregateRemediationOutcome;
+			typedef std::future<CreateAggregateRemediationOutcome> CreateAggregateRemediationOutcomeCallable;
+			typedef std::function<void(const ConfigClient*, const Model::CreateAggregateRemediationRequest&, const CreateAggregateRemediationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateAggregateRemediationAsyncHandler;
 			typedef Outcome<Error, Model::CreateAggregatorResult> CreateAggregatorOutcome;
 			typedef std::future<CreateAggregatorOutcome> CreateAggregatorOutcomeCallable;
 			typedef std::function<void(const ConfigClient*, const Model::CreateAggregatorRequest&, const CreateAggregatorOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateAggregatorAsyncHandler;
@@ -197,6 +228,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateConfigRuleResult> CreateConfigRuleOutcome;
 			typedef std::future<CreateConfigRuleOutcome> CreateConfigRuleOutcomeCallable;
 			typedef std::function<void(const ConfigClient*, const Model::CreateConfigRuleRequest&, const CreateConfigRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateConfigRuleAsyncHandler;
+			typedef Outcome<Error, Model::CreateRemediationResult> CreateRemediationOutcome;
+			typedef std::future<CreateRemediationOutcome> CreateRemediationOutcomeCallable;
+			typedef std::function<void(const ConfigClient*, const Model::CreateRemediationRequest&, const CreateRemediationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateRemediationAsyncHandler;
 			typedef Outcome<Error, Model::DeactiveAggregateConfigRulesResult> DeactiveAggregateConfigRulesOutcome;
 			typedef std::future<DeactiveAggregateConfigRulesOutcome> DeactiveAggregateConfigRulesOutcomeCallable;
 			typedef std::function<void(const ConfigClient*, const Model::DeactiveAggregateConfigRulesRequest&, const DeactiveAggregateConfigRulesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeactiveAggregateConfigRulesAsyncHandler;
@@ -209,12 +243,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteAggregateConfigRulesResult> DeleteAggregateConfigRulesOutcome;
 			typedef std::future<DeleteAggregateConfigRulesOutcome> DeleteAggregateConfigRulesOutcomeCallable;
 			typedef std::function<void(const ConfigClient*, const Model::DeleteAggregateConfigRulesRequest&, const DeleteAggregateConfigRulesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAggregateConfigRulesAsyncHandler;
+			typedef Outcome<Error, Model::DeleteAggregateRemediationsResult> DeleteAggregateRemediationsOutcome;
+			typedef std::future<DeleteAggregateRemediationsOutcome> DeleteAggregateRemediationsOutcomeCallable;
+			typedef std::function<void(const ConfigClient*, const Model::DeleteAggregateRemediationsRequest&, const DeleteAggregateRemediationsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAggregateRemediationsAsyncHandler;
 			typedef Outcome<Error, Model::DeleteAggregatorsResult> DeleteAggregatorsOutcome;
 			typedef std::future<DeleteAggregatorsOutcome> DeleteAggregatorsOutcomeCallable;
 			typedef std::function<void(const ConfigClient*, const Model::DeleteAggregatorsRequest&, const DeleteAggregatorsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAggregatorsAsyncHandler;
 			typedef Outcome<Error, Model::DeleteCompliancePacksResult> DeleteCompliancePacksOutcome;
 			typedef std::future<DeleteCompliancePacksOutcome> DeleteCompliancePacksOutcomeCallable;
 			typedef std::function<void(const ConfigClient*, const Model::DeleteCompliancePacksRequest&, const DeleteCompliancePacksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCompliancePacksAsyncHandler;
+			typedef Outcome<Error, Model::DeleteRemediationsResult> DeleteRemediationsOutcome;
+			typedef std::future<DeleteRemediationsOutcome> DeleteRemediationsOutcomeCallable;
+			typedef std::function<void(const ConfigClient*, const Model::DeleteRemediationsRequest&, const DeleteRemediationsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRemediationsAsyncHandler;
 			typedef Outcome<Error, Model::DetachAggregateConfigRuleToCompliancePackResult> DetachAggregateConfigRuleToCompliancePackOutcome;
 			typedef std::future<DetachAggregateConfigRuleToCompliancePackOutcome> DetachAggregateConfigRuleToCompliancePackOutcomeCallable;
 			typedef std::function<void(const ConfigClient*, const Model::DetachAggregateConfigRuleToCompliancePackRequest&, const DetachAggregateConfigRuleToCompliancePackOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetachAggregateConfigRuleToCompliancePackAsyncHandler;
@@ -254,6 +294,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetAggregateConfigRulesReportResult> GetAggregateConfigRulesReportOutcome;
 			typedef std::future<GetAggregateConfigRulesReportOutcome> GetAggregateConfigRulesReportOutcomeCallable;
 			typedef std::function<void(const ConfigClient*, const Model::GetAggregateConfigRulesReportRequest&, const GetAggregateConfigRulesReportOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAggregateConfigRulesReportAsyncHandler;
+			typedef Outcome<Error, Model::GetAggregateDiscoveredResourceResult> GetAggregateDiscoveredResourceOutcome;
+			typedef std::future<GetAggregateDiscoveredResourceOutcome> GetAggregateDiscoveredResourceOutcomeCallable;
+			typedef std::function<void(const ConfigClient*, const Model::GetAggregateDiscoveredResourceRequest&, const GetAggregateDiscoveredResourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAggregateDiscoveredResourceAsyncHandler;
 			typedef Outcome<Error, Model::GetAggregateResourceComplianceByConfigRuleResult> GetAggregateResourceComplianceByConfigRuleOutcome;
 			typedef std::future<GetAggregateResourceComplianceByConfigRuleOutcome> GetAggregateResourceComplianceByConfigRuleOutcomeCallable;
 			typedef std::function<void(const ConfigClient*, const Model::GetAggregateResourceComplianceByConfigRuleRequest&, const GetAggregateResourceComplianceByConfigRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAggregateResourceComplianceByConfigRuleAsyncHandler;
@@ -299,6 +342,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetConfigRulesReportResult> GetConfigRulesReportOutcome;
 			typedef std::future<GetConfigRulesReportOutcome> GetConfigRulesReportOutcomeCallable;
 			typedef std::function<void(const ConfigClient*, const Model::GetConfigRulesReportRequest&, const GetConfigRulesReportOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetConfigRulesReportAsyncHandler;
+			typedef Outcome<Error, Model::GetDiscoveredResourceResult> GetDiscoveredResourceOutcome;
+			typedef std::future<GetDiscoveredResourceOutcome> GetDiscoveredResourceOutcomeCallable;
+			typedef std::function<void(const ConfigClient*, const Model::GetDiscoveredResourceRequest&, const GetDiscoveredResourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDiscoveredResourceAsyncHandler;
 			typedef Outcome<Error, Model::GetDiscoveredResourceCountsGroupByRegionResult> GetDiscoveredResourceCountsGroupByRegionOutcome;
 			typedef std::future<GetDiscoveredResourceCountsGroupByRegionOutcome> GetDiscoveredResourceCountsGroupByRegionOutcomeCallable;
 			typedef std::function<void(const ConfigClient*, const Model::GetDiscoveredResourceCountsGroupByRegionRequest&, const GetDiscoveredResourceCountsGroupByRegionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDiscoveredResourceCountsGroupByRegionAsyncHandler;
@@ -341,6 +387,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListAggregateConfigRulesResult> ListAggregateConfigRulesOutcome;
 			typedef std::future<ListAggregateConfigRulesOutcome> ListAggregateConfigRulesOutcomeCallable;
 			typedef std::function<void(const ConfigClient*, const Model::ListAggregateConfigRulesRequest&, const ListAggregateConfigRulesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAggregateConfigRulesAsyncHandler;
+			typedef Outcome<Error, Model::ListAggregateDiscoveredResourcesResult> ListAggregateDiscoveredResourcesOutcome;
+			typedef std::future<ListAggregateDiscoveredResourcesOutcome> ListAggregateDiscoveredResourcesOutcomeCallable;
+			typedef std::function<void(const ConfigClient*, const Model::ListAggregateDiscoveredResourcesRequest&, const ListAggregateDiscoveredResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAggregateDiscoveredResourcesAsyncHandler;
+			typedef Outcome<Error, Model::ListAggregateRemediationsResult> ListAggregateRemediationsOutcome;
+			typedef std::future<ListAggregateRemediationsOutcome> ListAggregateRemediationsOutcomeCallable;
+			typedef std::function<void(const ConfigClient*, const Model::ListAggregateRemediationsRequest&, const ListAggregateRemediationsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAggregateRemediationsAsyncHandler;
 			typedef Outcome<Error, Model::ListAggregateResourceEvaluationResultsResult> ListAggregateResourceEvaluationResultsOutcome;
 			typedef std::future<ListAggregateResourceEvaluationResultsOutcome> ListAggregateResourceEvaluationResultsOutcomeCallable;
 			typedef std::function<void(const ConfigClient*, const Model::ListAggregateResourceEvaluationResultsRequest&, const ListAggregateResourceEvaluationResultsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAggregateResourceEvaluationResultsAsyncHandler;
@@ -356,9 +408,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListConfigRuleEvaluationResultsResult> ListConfigRuleEvaluationResultsOutcome;
 			typedef std::future<ListConfigRuleEvaluationResultsOutcome> ListConfigRuleEvaluationResultsOutcomeCallable;
 			typedef std::function<void(const ConfigClient*, const Model::ListConfigRuleEvaluationResultsRequest&, const ListConfigRuleEvaluationResultsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListConfigRuleEvaluationResultsAsyncHandler;
+			typedef Outcome<Error, Model::ListDiscoveredResourcesResult> ListDiscoveredResourcesOutcome;
+			typedef std::future<ListDiscoveredResourcesOutcome> ListDiscoveredResourcesOutcomeCallable;
+			typedef std::function<void(const ConfigClient*, const Model::ListDiscoveredResourcesRequest&, const ListDiscoveredResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDiscoveredResourcesAsyncHandler;
 			typedef Outcome<Error, Model::ListManagedRulesResult> ListManagedRulesOutcome;
 			typedef std::future<ListManagedRulesOutcome> ListManagedRulesOutcomeCallable;
 			typedef std::function<void(const ConfigClient*, const Model::ListManagedRulesRequest&, const ListManagedRulesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListManagedRulesAsyncHandler;
+			typedef Outcome<Error, Model::ListRemediationTemplatesResult> ListRemediationTemplatesOutcome;
+			typedef std::future<ListRemediationTemplatesOutcome> ListRemediationTemplatesOutcomeCallable;
+			typedef std::function<void(const ConfigClient*, const Model::ListRemediationTemplatesRequest&, const ListRemediationTemplatesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListRemediationTemplatesAsyncHandler;
+			typedef Outcome<Error, Model::ListRemediationsResult> ListRemediationsOutcome;
+			typedef std::future<ListRemediationsOutcome> ListRemediationsOutcomeCallable;
+			typedef std::function<void(const ConfigClient*, const Model::ListRemediationsRequest&, const ListRemediationsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListRemediationsAsyncHandler;
 			typedef Outcome<Error, Model::ListResourceEvaluationResultsResult> ListResourceEvaluationResultsOutcome;
 			typedef std::future<ListResourceEvaluationResultsOutcome> ListResourceEvaluationResultsOutcomeCallable;
 			typedef std::function<void(const ConfigClient*, const Model::ListResourceEvaluationResultsRequest&, const ListResourceEvaluationResultsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListResourceEvaluationResultsAsyncHandler;
@@ -371,12 +432,21 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::StartAggregateConfigRuleEvaluationResult> StartAggregateConfigRuleEvaluationOutcome;
 			typedef std::future<StartAggregateConfigRuleEvaluationOutcome> StartAggregateConfigRuleEvaluationOutcomeCallable;
 			typedef std::function<void(const ConfigClient*, const Model::StartAggregateConfigRuleEvaluationRequest&, const StartAggregateConfigRuleEvaluationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartAggregateConfigRuleEvaluationAsyncHandler;
+			typedef Outcome<Error, Model::StartAggregateRemediationResult> StartAggregateRemediationOutcome;
+			typedef std::future<StartAggregateRemediationOutcome> StartAggregateRemediationOutcomeCallable;
+			typedef std::function<void(const ConfigClient*, const Model::StartAggregateRemediationRequest&, const StartAggregateRemediationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartAggregateRemediationAsyncHandler;
+			typedef Outcome<Error, Model::StartRemediationResult> StartRemediationOutcome;
+			typedef std::future<StartRemediationOutcome> StartRemediationOutcomeCallable;
+			typedef std::function<void(const ConfigClient*, const Model::StartRemediationRequest&, const StartRemediationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartRemediationAsyncHandler;
 			typedef Outcome<Error, Model::UpdateAggregateCompliancePackResult> UpdateAggregateCompliancePackOutcome;
 			typedef std::future<UpdateAggregateCompliancePackOutcome> UpdateAggregateCompliancePackOutcomeCallable;
 			typedef std::function<void(const ConfigClient*, const Model::UpdateAggregateCompliancePackRequest&, const UpdateAggregateCompliancePackOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAggregateCompliancePackAsyncHandler;
 			typedef Outcome<Error, Model::UpdateAggregateConfigRuleResult> UpdateAggregateConfigRuleOutcome;
 			typedef std::future<UpdateAggregateConfigRuleOutcome> UpdateAggregateConfigRuleOutcomeCallable;
 			typedef std::function<void(const ConfigClient*, const Model::UpdateAggregateConfigRuleRequest&, const UpdateAggregateConfigRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAggregateConfigRuleAsyncHandler;
+			typedef Outcome<Error, Model::UpdateAggregateRemediationResult> UpdateAggregateRemediationOutcome;
+			typedef std::future<UpdateAggregateRemediationOutcome> UpdateAggregateRemediationOutcomeCallable;
+			typedef std::function<void(const ConfigClient*, const Model::UpdateAggregateRemediationRequest&, const UpdateAggregateRemediationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAggregateRemediationAsyncHandler;
 			typedef Outcome<Error, Model::UpdateAggregatorResult> UpdateAggregatorOutcome;
 			typedef std::future<UpdateAggregatorOutcome> UpdateAggregatorOutcomeCallable;
 			typedef std::function<void(const ConfigClient*, const Model::UpdateAggregatorRequest&, const UpdateAggregatorOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAggregatorAsyncHandler;
@@ -406,6 +476,9 @@ namespace AlibabaCloud
 			CreateAggregateConfigRuleOutcome createAggregateConfigRule(const Model::CreateAggregateConfigRuleRequest &request)const;
 			void createAggregateConfigRuleAsync(const Model::CreateAggregateConfigRuleRequest& request, const CreateAggregateConfigRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateAggregateConfigRuleOutcomeCallable createAggregateConfigRuleCallable(const Model::CreateAggregateConfigRuleRequest& request) const;
+			CreateAggregateRemediationOutcome createAggregateRemediation(const Model::CreateAggregateRemediationRequest &request)const;
+			void createAggregateRemediationAsync(const Model::CreateAggregateRemediationRequest& request, const CreateAggregateRemediationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateAggregateRemediationOutcomeCallable createAggregateRemediationCallable(const Model::CreateAggregateRemediationRequest& request) const;
 			CreateAggregatorOutcome createAggregator(const Model::CreateAggregatorRequest &request)const;
 			void createAggregatorAsync(const Model::CreateAggregatorRequest& request, const CreateAggregatorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateAggregatorOutcomeCallable createAggregatorCallable(const Model::CreateAggregatorRequest& request) const;
@@ -415,6 +488,9 @@ namespace AlibabaCloud
 			CreateConfigRuleOutcome createConfigRule(const Model::CreateConfigRuleRequest &request)const;
 			void createConfigRuleAsync(const Model::CreateConfigRuleRequest& request, const CreateConfigRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateConfigRuleOutcomeCallable createConfigRuleCallable(const Model::CreateConfigRuleRequest& request) const;
+			CreateRemediationOutcome createRemediation(const Model::CreateRemediationRequest &request)const;
+			void createRemediationAsync(const Model::CreateRemediationRequest& request, const CreateRemediationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateRemediationOutcomeCallable createRemediationCallable(const Model::CreateRemediationRequest& request) const;
 			DeactiveAggregateConfigRulesOutcome deactiveAggregateConfigRules(const Model::DeactiveAggregateConfigRulesRequest &request)const;
 			void deactiveAggregateConfigRulesAsync(const Model::DeactiveAggregateConfigRulesRequest& request, const DeactiveAggregateConfigRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeactiveAggregateConfigRulesOutcomeCallable deactiveAggregateConfigRulesCallable(const Model::DeactiveAggregateConfigRulesRequest& request) const;
@@ -427,12 +503,18 @@ namespace AlibabaCloud
 			DeleteAggregateConfigRulesOutcome deleteAggregateConfigRules(const Model::DeleteAggregateConfigRulesRequest &request)const;
 			void deleteAggregateConfigRulesAsync(const Model::DeleteAggregateConfigRulesRequest& request, const DeleteAggregateConfigRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteAggregateConfigRulesOutcomeCallable deleteAggregateConfigRulesCallable(const Model::DeleteAggregateConfigRulesRequest& request) const;
+			DeleteAggregateRemediationsOutcome deleteAggregateRemediations(const Model::DeleteAggregateRemediationsRequest &request)const;
+			void deleteAggregateRemediationsAsync(const Model::DeleteAggregateRemediationsRequest& request, const DeleteAggregateRemediationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteAggregateRemediationsOutcomeCallable deleteAggregateRemediationsCallable(const Model::DeleteAggregateRemediationsRequest& request) const;
 			DeleteAggregatorsOutcome deleteAggregators(const Model::DeleteAggregatorsRequest &request)const;
 			void deleteAggregatorsAsync(const Model::DeleteAggregatorsRequest& request, const DeleteAggregatorsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteAggregatorsOutcomeCallable deleteAggregatorsCallable(const Model::DeleteAggregatorsRequest& request) const;
 			DeleteCompliancePacksOutcome deleteCompliancePacks(const Model::DeleteCompliancePacksRequest &request)const;
 			void deleteCompliancePacksAsync(const Model::DeleteCompliancePacksRequest& request, const DeleteCompliancePacksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteCompliancePacksOutcomeCallable deleteCompliancePacksCallable(const Model::DeleteCompliancePacksRequest& request) const;
+			DeleteRemediationsOutcome deleteRemediations(const Model::DeleteRemediationsRequest &request)const;
+			void deleteRemediationsAsync(const Model::DeleteRemediationsRequest& request, const DeleteRemediationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteRemediationsOutcomeCallable deleteRemediationsCallable(const Model::DeleteRemediationsRequest& request) const;
 			DetachAggregateConfigRuleToCompliancePackOutcome detachAggregateConfigRuleToCompliancePack(const Model::DetachAggregateConfigRuleToCompliancePackRequest &request)const;
 			void detachAggregateConfigRuleToCompliancePackAsync(const Model::DetachAggregateConfigRuleToCompliancePackRequest& request, const DetachAggregateConfigRuleToCompliancePackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DetachAggregateConfigRuleToCompliancePackOutcomeCallable detachAggregateConfigRuleToCompliancePackCallable(const Model::DetachAggregateConfigRuleToCompliancePackRequest& request) const;
@@ -472,6 +554,9 @@ namespace AlibabaCloud
 			GetAggregateConfigRulesReportOutcome getAggregateConfigRulesReport(const Model::GetAggregateConfigRulesReportRequest &request)const;
 			void getAggregateConfigRulesReportAsync(const Model::GetAggregateConfigRulesReportRequest& request, const GetAggregateConfigRulesReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetAggregateConfigRulesReportOutcomeCallable getAggregateConfigRulesReportCallable(const Model::GetAggregateConfigRulesReportRequest& request) const;
+			GetAggregateDiscoveredResourceOutcome getAggregateDiscoveredResource(const Model::GetAggregateDiscoveredResourceRequest &request)const;
+			void getAggregateDiscoveredResourceAsync(const Model::GetAggregateDiscoveredResourceRequest& request, const GetAggregateDiscoveredResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetAggregateDiscoveredResourceOutcomeCallable getAggregateDiscoveredResourceCallable(const Model::GetAggregateDiscoveredResourceRequest& request) const;
 			GetAggregateResourceComplianceByConfigRuleOutcome getAggregateResourceComplianceByConfigRule(const Model::GetAggregateResourceComplianceByConfigRuleRequest &request)const;
 			void getAggregateResourceComplianceByConfigRuleAsync(const Model::GetAggregateResourceComplianceByConfigRuleRequest& request, const GetAggregateResourceComplianceByConfigRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetAggregateResourceComplianceByConfigRuleOutcomeCallable getAggregateResourceComplianceByConfigRuleCallable(const Model::GetAggregateResourceComplianceByConfigRuleRequest& request) const;
@@ -517,6 +602,9 @@ namespace AlibabaCloud
 			GetConfigRulesReportOutcome getConfigRulesReport(const Model::GetConfigRulesReportRequest &request)const;
 			void getConfigRulesReportAsync(const Model::GetConfigRulesReportRequest& request, const GetConfigRulesReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetConfigRulesReportOutcomeCallable getConfigRulesReportCallable(const Model::GetConfigRulesReportRequest& request) const;
+			GetDiscoveredResourceOutcome getDiscoveredResource(const Model::GetDiscoveredResourceRequest &request)const;
+			void getDiscoveredResourceAsync(const Model::GetDiscoveredResourceRequest& request, const GetDiscoveredResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetDiscoveredResourceOutcomeCallable getDiscoveredResourceCallable(const Model::GetDiscoveredResourceRequest& request) const;
 			GetDiscoveredResourceCountsGroupByRegionOutcome getDiscoveredResourceCountsGroupByRegion(const Model::GetDiscoveredResourceCountsGroupByRegionRequest &request)const;
 			void getDiscoveredResourceCountsGroupByRegionAsync(const Model::GetDiscoveredResourceCountsGroupByRegionRequest& request, const GetDiscoveredResourceCountsGroupByRegionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetDiscoveredResourceCountsGroupByRegionOutcomeCallable getDiscoveredResourceCountsGroupByRegionCallable(const Model::GetDiscoveredResourceCountsGroupByRegionRequest& request) const;
@@ -559,6 +647,12 @@ namespace AlibabaCloud
 			ListAggregateConfigRulesOutcome listAggregateConfigRules(const Model::ListAggregateConfigRulesRequest &request)const;
 			void listAggregateConfigRulesAsync(const Model::ListAggregateConfigRulesRequest& request, const ListAggregateConfigRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListAggregateConfigRulesOutcomeCallable listAggregateConfigRulesCallable(const Model::ListAggregateConfigRulesRequest& request) const;
+			ListAggregateDiscoveredResourcesOutcome listAggregateDiscoveredResources(const Model::ListAggregateDiscoveredResourcesRequest &request)const;
+			void listAggregateDiscoveredResourcesAsync(const Model::ListAggregateDiscoveredResourcesRequest& request, const ListAggregateDiscoveredResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListAggregateDiscoveredResourcesOutcomeCallable listAggregateDiscoveredResourcesCallable(const Model::ListAggregateDiscoveredResourcesRequest& request) const;
+			ListAggregateRemediationsOutcome listAggregateRemediations(const Model::ListAggregateRemediationsRequest &request)const;
+			void listAggregateRemediationsAsync(const Model::ListAggregateRemediationsRequest& request, const ListAggregateRemediationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListAggregateRemediationsOutcomeCallable listAggregateRemediationsCallable(const Model::ListAggregateRemediationsRequest& request) const;
 			ListAggregateResourceEvaluationResultsOutcome listAggregateResourceEvaluationResults(const Model::ListAggregateResourceEvaluationResultsRequest &request)const;
 			void listAggregateResourceEvaluationResultsAsync(const Model::ListAggregateResourceEvaluationResultsRequest& request, const ListAggregateResourceEvaluationResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListAggregateResourceEvaluationResultsOutcomeCallable listAggregateResourceEvaluationResultsCallable(const Model::ListAggregateResourceEvaluationResultsRequest& request) const;
@@ -574,9 +668,18 @@ namespace AlibabaCloud
 			ListConfigRuleEvaluationResultsOutcome listConfigRuleEvaluationResults(const Model::ListConfigRuleEvaluationResultsRequest &request)const;
 			void listConfigRuleEvaluationResultsAsync(const Model::ListConfigRuleEvaluationResultsRequest& request, const ListConfigRuleEvaluationResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListConfigRuleEvaluationResultsOutcomeCallable listConfigRuleEvaluationResultsCallable(const Model::ListConfigRuleEvaluationResultsRequest& request) const;
+			ListDiscoveredResourcesOutcome listDiscoveredResources(const Model::ListDiscoveredResourcesRequest &request)const;
+			void listDiscoveredResourcesAsync(const Model::ListDiscoveredResourcesRequest& request, const ListDiscoveredResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListDiscoveredResourcesOutcomeCallable listDiscoveredResourcesCallable(const Model::ListDiscoveredResourcesRequest& request) const;
 			ListManagedRulesOutcome listManagedRules(const Model::ListManagedRulesRequest &request)const;
 			void listManagedRulesAsync(const Model::ListManagedRulesRequest& request, const ListManagedRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListManagedRulesOutcomeCallable listManagedRulesCallable(const Model::ListManagedRulesRequest& request) const;
+			ListRemediationTemplatesOutcome listRemediationTemplates(const Model::ListRemediationTemplatesRequest &request)const;
+			void listRemediationTemplatesAsync(const Model::ListRemediationTemplatesRequest& request, const ListRemediationTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListRemediationTemplatesOutcomeCallable listRemediationTemplatesCallable(const Model::ListRemediationTemplatesRequest& request) const;
+			ListRemediationsOutcome listRemediations(const Model::ListRemediationsRequest &request)const;
+			void listRemediationsAsync(const Model::ListRemediationsRequest& request, const ListRemediationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListRemediationsOutcomeCallable listRemediationsCallable(const Model::ListRemediationsRequest& request) const;
 			ListResourceEvaluationResultsOutcome listResourceEvaluationResults(const Model::ListResourceEvaluationResultsRequest &request)const;
 			void listResourceEvaluationResultsAsync(const Model::ListResourceEvaluationResultsRequest& request, const ListResourceEvaluationResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListResourceEvaluationResultsOutcomeCallable listResourceEvaluationResultsCallable(const Model::ListResourceEvaluationResultsRequest& request) const;
@@ -589,12 +692,21 @@ namespace AlibabaCloud
 			StartAggregateConfigRuleEvaluationOutcome startAggregateConfigRuleEvaluation(const Model::StartAggregateConfigRuleEvaluationRequest &request)const;
 			void startAggregateConfigRuleEvaluationAsync(const Model::StartAggregateConfigRuleEvaluationRequest& request, const StartAggregateConfigRuleEvaluationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StartAggregateConfigRuleEvaluationOutcomeCallable startAggregateConfigRuleEvaluationCallable(const Model::StartAggregateConfigRuleEvaluationRequest& request) const;
+			StartAggregateRemediationOutcome startAggregateRemediation(const Model::StartAggregateRemediationRequest &request)const;
+			void startAggregateRemediationAsync(const Model::StartAggregateRemediationRequest& request, const StartAggregateRemediationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			StartAggregateRemediationOutcomeCallable startAggregateRemediationCallable(const Model::StartAggregateRemediationRequest& request) const;
+			StartRemediationOutcome startRemediation(const Model::StartRemediationRequest &request)const;
+			void startRemediationAsync(const Model::StartRemediationRequest& request, const StartRemediationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			StartRemediationOutcomeCallable startRemediationCallable(const Model::StartRemediationRequest& request) const;
 			UpdateAggregateCompliancePackOutcome updateAggregateCompliancePack(const Model::UpdateAggregateCompliancePackRequest &request)const;
 			void updateAggregateCompliancePackAsync(const Model::UpdateAggregateCompliancePackRequest& request, const UpdateAggregateCompliancePackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateAggregateCompliancePackOutcomeCallable updateAggregateCompliancePackCallable(const Model::UpdateAggregateCompliancePackRequest& request) const;
 			UpdateAggregateConfigRuleOutcome updateAggregateConfigRule(const Model::UpdateAggregateConfigRuleRequest &request)const;
 			void updateAggregateConfigRuleAsync(const Model::UpdateAggregateConfigRuleRequest& request, const UpdateAggregateConfigRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateAggregateConfigRuleOutcomeCallable updateAggregateConfigRuleCallable(const Model::UpdateAggregateConfigRuleRequest& request) const;
+			UpdateAggregateRemediationOutcome updateAggregateRemediation(const Model::UpdateAggregateRemediationRequest &request)const;
+			void updateAggregateRemediationAsync(const Model::UpdateAggregateRemediationRequest& request, const UpdateAggregateRemediationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateAggregateRemediationOutcomeCallable updateAggregateRemediationCallable(const Model::UpdateAggregateRemediationRequest& request) const;
 			UpdateAggregatorOutcome updateAggregator(const Model::UpdateAggregatorRequest &request)const;
 			void updateAggregatorAsync(const Model::UpdateAggregatorRequest& request, const UpdateAggregatorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateAggregatorOutcomeCallable updateAggregatorCallable(const Model::UpdateAggregatorRequest& request) const;

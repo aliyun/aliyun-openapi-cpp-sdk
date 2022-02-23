@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CONFIG_MODEL_GETAGGREGATERESOURCECOMPLIANCEBYCONFIGRULEREQUEST_H_
-#define ALIBABACLOUD_CONFIG_MODEL_GETAGGREGATERESOURCECOMPLIANCEBYCONFIGRULEREQUEST_H_
+#ifndef ALIBABACLOUD_CONFIG_MODEL_GETAGGREGATEDISCOVEREDRESOURCEREQUEST_H_
+#define ALIBABACLOUD_CONFIG_MODEL_GETAGGREGATEDISCOVEREDRESOURCEREQUEST_H_
 
 #include <alibabacloud/config/ConfigExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,26 +26,29 @@
 namespace AlibabaCloud {
 namespace Config {
 namespace Model {
-class ALIBABACLOUD_CONFIG_EXPORT GetAggregateResourceComplianceByConfigRuleRequest : public RpcServiceRequest {
+class ALIBABACLOUD_CONFIG_EXPORT GetAggregateDiscoveredResourceRequest : public RpcServiceRequest {
 public:
-	GetAggregateResourceComplianceByConfigRuleRequest();
-	~GetAggregateResourceComplianceByConfigRuleRequest();
-	std::string getConfigRuleId() const;
-	void setConfigRuleId(const std::string &configRuleId);
+	GetAggregateDiscoveredResourceRequest();
+	~GetAggregateDiscoveredResourceRequest();
+	std::string getResourceId() const;
+	void setResourceId(const std::string &resourceId);
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getAggregatorId() const;
 	void setAggregatorId(const std::string &aggregatorId);
-	std::string getComplianceType() const;
-	void setComplianceType(const std::string &complianceType);
+	std::string getResourceType() const;
+	void setResourceType(const std::string &resourceType);
+	std::string getRegion() const;
+	void setRegion(const std::string &region);
 
 private:
-	std::string configRuleId_;
+	std::string resourceId_;
 	long resourceOwnerId_;
 	std::string aggregatorId_;
-	std::string complianceType_;
+	std::string resourceType_;
+	std::string region_;
 };
 } // namespace Model
 } // namespace Config
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_CONFIG_MODEL_GETAGGREGATERESOURCECOMPLIANCEBYCONFIGRULEREQUEST_H_
+#endif // !ALIBABACLOUD_CONFIG_MODEL_GETAGGREGATEDISCOVEREDRESOURCEREQUEST_H_

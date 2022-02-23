@@ -34,6 +34,15 @@ void GetAggregateResourceComplianceByConfigRuleRequest::setConfigRuleId(const st
   setParameter(std::string("ConfigRuleId"), configRuleId);
 }
 
+long GetAggregateResourceComplianceByConfigRuleRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
+}
+
+void GetAggregateResourceComplianceByConfigRuleRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
+}
+
 std::string GetAggregateResourceComplianceByConfigRuleRequest::getAggregatorId() const {
   return aggregatorId_;
 }

@@ -31,12 +31,16 @@ set(config_public_header_model
 	include/alibabacloud/config/model/CreateAggregateCompliancePackResult.h
 	include/alibabacloud/config/model/CreateAggregateConfigRuleRequest.h
 	include/alibabacloud/config/model/CreateAggregateConfigRuleResult.h
+	include/alibabacloud/config/model/CreateAggregateRemediationRequest.h
+	include/alibabacloud/config/model/CreateAggregateRemediationResult.h
 	include/alibabacloud/config/model/CreateAggregatorRequest.h
 	include/alibabacloud/config/model/CreateAggregatorResult.h
 	include/alibabacloud/config/model/CreateCompliancePackRequest.h
 	include/alibabacloud/config/model/CreateCompliancePackResult.h
 	include/alibabacloud/config/model/CreateConfigRuleRequest.h
 	include/alibabacloud/config/model/CreateConfigRuleResult.h
+	include/alibabacloud/config/model/CreateRemediationRequest.h
+	include/alibabacloud/config/model/CreateRemediationResult.h
 	include/alibabacloud/config/model/DeactiveAggregateConfigRulesRequest.h
 	include/alibabacloud/config/model/DeactiveAggregateConfigRulesResult.h
 	include/alibabacloud/config/model/DeactiveConfigRulesRequest.h
@@ -45,10 +49,14 @@ set(config_public_header_model
 	include/alibabacloud/config/model/DeleteAggregateCompliancePacksResult.h
 	include/alibabacloud/config/model/DeleteAggregateConfigRulesRequest.h
 	include/alibabacloud/config/model/DeleteAggregateConfigRulesResult.h
+	include/alibabacloud/config/model/DeleteAggregateRemediationsRequest.h
+	include/alibabacloud/config/model/DeleteAggregateRemediationsResult.h
 	include/alibabacloud/config/model/DeleteAggregatorsRequest.h
 	include/alibabacloud/config/model/DeleteAggregatorsResult.h
 	include/alibabacloud/config/model/DeleteCompliancePacksRequest.h
 	include/alibabacloud/config/model/DeleteCompliancePacksResult.h
+	include/alibabacloud/config/model/DeleteRemediationsRequest.h
+	include/alibabacloud/config/model/DeleteRemediationsResult.h
 	include/alibabacloud/config/model/DetachAggregateConfigRuleToCompliancePackRequest.h
 	include/alibabacloud/config/model/DetachAggregateConfigRuleToCompliancePackResult.h
 	include/alibabacloud/config/model/DetachConfigRuleToCompliancePackRequest.h
@@ -75,6 +83,8 @@ set(config_public_header_model
 	include/alibabacloud/config/model/GetAggregateConfigRuleSummaryByRiskLevelResult.h
 	include/alibabacloud/config/model/GetAggregateConfigRulesReportRequest.h
 	include/alibabacloud/config/model/GetAggregateConfigRulesReportResult.h
+	include/alibabacloud/config/model/GetAggregateDiscoveredResourceRequest.h
+	include/alibabacloud/config/model/GetAggregateDiscoveredResourceResult.h
 	include/alibabacloud/config/model/GetAggregateResourceComplianceByConfigRuleRequest.h
 	include/alibabacloud/config/model/GetAggregateResourceComplianceByConfigRuleResult.h
 	include/alibabacloud/config/model/GetAggregateResourceComplianceByPackRequest.h
@@ -105,6 +115,8 @@ set(config_public_header_model
 	include/alibabacloud/config/model/GetConfigRuleSummaryByRiskLevelResult.h
 	include/alibabacloud/config/model/GetConfigRulesReportRequest.h
 	include/alibabacloud/config/model/GetConfigRulesReportResult.h
+	include/alibabacloud/config/model/GetDiscoveredResourceRequest.h
+	include/alibabacloud/config/model/GetDiscoveredResourceResult.h
 	include/alibabacloud/config/model/GetDiscoveredResourceCountsGroupByRegionRequest.h
 	include/alibabacloud/config/model/GetDiscoveredResourceCountsGroupByRegionResult.h
 	include/alibabacloud/config/model/GetDiscoveredResourceCountsGroupByResourceTypeRequest.h
@@ -133,6 +145,10 @@ set(config_public_header_model
 	include/alibabacloud/config/model/ListAggregateConfigRuleEvaluationResultsResult.h
 	include/alibabacloud/config/model/ListAggregateConfigRulesRequest.h
 	include/alibabacloud/config/model/ListAggregateConfigRulesResult.h
+	include/alibabacloud/config/model/ListAggregateDiscoveredResourcesRequest.h
+	include/alibabacloud/config/model/ListAggregateDiscoveredResourcesResult.h
+	include/alibabacloud/config/model/ListAggregateRemediationsRequest.h
+	include/alibabacloud/config/model/ListAggregateRemediationsResult.h
 	include/alibabacloud/config/model/ListAggregateResourceEvaluationResultsRequest.h
 	include/alibabacloud/config/model/ListAggregateResourceEvaluationResultsResult.h
 	include/alibabacloud/config/model/ListAggregatorsRequest.h
@@ -143,8 +159,14 @@ set(config_public_header_model
 	include/alibabacloud/config/model/ListCompliancePacksResult.h
 	include/alibabacloud/config/model/ListConfigRuleEvaluationResultsRequest.h
 	include/alibabacloud/config/model/ListConfigRuleEvaluationResultsResult.h
+	include/alibabacloud/config/model/ListDiscoveredResourcesRequest.h
+	include/alibabacloud/config/model/ListDiscoveredResourcesResult.h
 	include/alibabacloud/config/model/ListManagedRulesRequest.h
 	include/alibabacloud/config/model/ListManagedRulesResult.h
+	include/alibabacloud/config/model/ListRemediationTemplatesRequest.h
+	include/alibabacloud/config/model/ListRemediationTemplatesResult.h
+	include/alibabacloud/config/model/ListRemediationsRequest.h
+	include/alibabacloud/config/model/ListRemediationsResult.h
 	include/alibabacloud/config/model/ListResourceEvaluationResultsRequest.h
 	include/alibabacloud/config/model/ListResourceEvaluationResultsResult.h
 	include/alibabacloud/config/model/RevertAggregateEvaluationResultsRequest.h
@@ -153,10 +175,16 @@ set(config_public_header_model
 	include/alibabacloud/config/model/RevertEvaluationResultsResult.h
 	include/alibabacloud/config/model/StartAggregateConfigRuleEvaluationRequest.h
 	include/alibabacloud/config/model/StartAggregateConfigRuleEvaluationResult.h
+	include/alibabacloud/config/model/StartAggregateRemediationRequest.h
+	include/alibabacloud/config/model/StartAggregateRemediationResult.h
+	include/alibabacloud/config/model/StartRemediationRequest.h
+	include/alibabacloud/config/model/StartRemediationResult.h
 	include/alibabacloud/config/model/UpdateAggregateCompliancePackRequest.h
 	include/alibabacloud/config/model/UpdateAggregateCompliancePackResult.h
 	include/alibabacloud/config/model/UpdateAggregateConfigRuleRequest.h
 	include/alibabacloud/config/model/UpdateAggregateConfigRuleResult.h
+	include/alibabacloud/config/model/UpdateAggregateRemediationRequest.h
+	include/alibabacloud/config/model/UpdateAggregateRemediationResult.h
 	include/alibabacloud/config/model/UpdateAggregatorRequest.h
 	include/alibabacloud/config/model/UpdateAggregatorResult.h
 	include/alibabacloud/config/model/UpdateCompliancePackRequest.h
@@ -176,12 +204,16 @@ set(config_src
 	src/model/CreateAggregateCompliancePackResult.cc
 	src/model/CreateAggregateConfigRuleRequest.cc
 	src/model/CreateAggregateConfigRuleResult.cc
+	src/model/CreateAggregateRemediationRequest.cc
+	src/model/CreateAggregateRemediationResult.cc
 	src/model/CreateAggregatorRequest.cc
 	src/model/CreateAggregatorResult.cc
 	src/model/CreateCompliancePackRequest.cc
 	src/model/CreateCompliancePackResult.cc
 	src/model/CreateConfigRuleRequest.cc
 	src/model/CreateConfigRuleResult.cc
+	src/model/CreateRemediationRequest.cc
+	src/model/CreateRemediationResult.cc
 	src/model/DeactiveAggregateConfigRulesRequest.cc
 	src/model/DeactiveAggregateConfigRulesResult.cc
 	src/model/DeactiveConfigRulesRequest.cc
@@ -190,10 +222,14 @@ set(config_src
 	src/model/DeleteAggregateCompliancePacksResult.cc
 	src/model/DeleteAggregateConfigRulesRequest.cc
 	src/model/DeleteAggregateConfigRulesResult.cc
+	src/model/DeleteAggregateRemediationsRequest.cc
+	src/model/DeleteAggregateRemediationsResult.cc
 	src/model/DeleteAggregatorsRequest.cc
 	src/model/DeleteAggregatorsResult.cc
 	src/model/DeleteCompliancePacksRequest.cc
 	src/model/DeleteCompliancePacksResult.cc
+	src/model/DeleteRemediationsRequest.cc
+	src/model/DeleteRemediationsResult.cc
 	src/model/DetachAggregateConfigRuleToCompliancePackRequest.cc
 	src/model/DetachAggregateConfigRuleToCompliancePackResult.cc
 	src/model/DetachConfigRuleToCompliancePackRequest.cc
@@ -220,6 +256,8 @@ set(config_src
 	src/model/GetAggregateConfigRuleSummaryByRiskLevelResult.cc
 	src/model/GetAggregateConfigRulesReportRequest.cc
 	src/model/GetAggregateConfigRulesReportResult.cc
+	src/model/GetAggregateDiscoveredResourceRequest.cc
+	src/model/GetAggregateDiscoveredResourceResult.cc
 	src/model/GetAggregateResourceComplianceByConfigRuleRequest.cc
 	src/model/GetAggregateResourceComplianceByConfigRuleResult.cc
 	src/model/GetAggregateResourceComplianceByPackRequest.cc
@@ -250,6 +288,8 @@ set(config_src
 	src/model/GetConfigRuleSummaryByRiskLevelResult.cc
 	src/model/GetConfigRulesReportRequest.cc
 	src/model/GetConfigRulesReportResult.cc
+	src/model/GetDiscoveredResourceRequest.cc
+	src/model/GetDiscoveredResourceResult.cc
 	src/model/GetDiscoveredResourceCountsGroupByRegionRequest.cc
 	src/model/GetDiscoveredResourceCountsGroupByRegionResult.cc
 	src/model/GetDiscoveredResourceCountsGroupByResourceTypeRequest.cc
@@ -278,6 +318,10 @@ set(config_src
 	src/model/ListAggregateConfigRuleEvaluationResultsResult.cc
 	src/model/ListAggregateConfigRulesRequest.cc
 	src/model/ListAggregateConfigRulesResult.cc
+	src/model/ListAggregateDiscoveredResourcesRequest.cc
+	src/model/ListAggregateDiscoveredResourcesResult.cc
+	src/model/ListAggregateRemediationsRequest.cc
+	src/model/ListAggregateRemediationsResult.cc
 	src/model/ListAggregateResourceEvaluationResultsRequest.cc
 	src/model/ListAggregateResourceEvaluationResultsResult.cc
 	src/model/ListAggregatorsRequest.cc
@@ -288,8 +332,14 @@ set(config_src
 	src/model/ListCompliancePacksResult.cc
 	src/model/ListConfigRuleEvaluationResultsRequest.cc
 	src/model/ListConfigRuleEvaluationResultsResult.cc
+	src/model/ListDiscoveredResourcesRequest.cc
+	src/model/ListDiscoveredResourcesResult.cc
 	src/model/ListManagedRulesRequest.cc
 	src/model/ListManagedRulesResult.cc
+	src/model/ListRemediationTemplatesRequest.cc
+	src/model/ListRemediationTemplatesResult.cc
+	src/model/ListRemediationsRequest.cc
+	src/model/ListRemediationsResult.cc
 	src/model/ListResourceEvaluationResultsRequest.cc
 	src/model/ListResourceEvaluationResultsResult.cc
 	src/model/RevertAggregateEvaluationResultsRequest.cc
@@ -298,10 +348,16 @@ set(config_src
 	src/model/RevertEvaluationResultsResult.cc
 	src/model/StartAggregateConfigRuleEvaluationRequest.cc
 	src/model/StartAggregateConfigRuleEvaluationResult.cc
+	src/model/StartAggregateRemediationRequest.cc
+	src/model/StartAggregateRemediationResult.cc
+	src/model/StartRemediationRequest.cc
+	src/model/StartRemediationResult.cc
 	src/model/UpdateAggregateCompliancePackRequest.cc
 	src/model/UpdateAggregateCompliancePackResult.cc
 	src/model/UpdateAggregateConfigRuleRequest.cc
 	src/model/UpdateAggregateConfigRuleResult.cc
+	src/model/UpdateAggregateRemediationRequest.cc
+	src/model/UpdateAggregateRemediationResult.cc
 	src/model/UpdateAggregatorRequest.cc
 	src/model/UpdateAggregatorResult.cc
 	src/model/UpdateCompliancePackRequest.cc

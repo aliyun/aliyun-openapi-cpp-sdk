@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CONFIG_MODEL_GETAGGREGATERESOURCECOMPLIANCEBYCONFIGRULEREQUEST_H_
-#define ALIBABACLOUD_CONFIG_MODEL_GETAGGREGATERESOURCECOMPLIANCEBYCONFIGRULEREQUEST_H_
+#ifndef ALIBABACLOUD_CONFIG_MODEL_DELETEAGGREGATEREMEDIATIONSREQUEST_H_
+#define ALIBABACLOUD_CONFIG_MODEL_DELETEAGGREGATEREMEDIATIONSREQUEST_H_
 
 #include <alibabacloud/config/ConfigExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,26 +26,20 @@
 namespace AlibabaCloud {
 namespace Config {
 namespace Model {
-class ALIBABACLOUD_CONFIG_EXPORT GetAggregateResourceComplianceByConfigRuleRequest : public RpcServiceRequest {
+class ALIBABACLOUD_CONFIG_EXPORT DeleteAggregateRemediationsRequest : public RpcServiceRequest {
 public:
-	GetAggregateResourceComplianceByConfigRuleRequest();
-	~GetAggregateResourceComplianceByConfigRuleRequest();
-	std::string getConfigRuleId() const;
-	void setConfigRuleId(const std::string &configRuleId);
-	long getResourceOwnerId() const;
-	void setResourceOwnerId(long resourceOwnerId);
+	DeleteAggregateRemediationsRequest();
+	~DeleteAggregateRemediationsRequest();
+	std::string getRemediationIds() const;
+	void setRemediationIds(const std::string &remediationIds);
 	std::string getAggregatorId() const;
 	void setAggregatorId(const std::string &aggregatorId);
-	std::string getComplianceType() const;
-	void setComplianceType(const std::string &complianceType);
 
 private:
-	std::string configRuleId_;
-	long resourceOwnerId_;
+	std::string remediationIds_;
 	std::string aggregatorId_;
-	std::string complianceType_;
 };
 } // namespace Model
 } // namespace Config
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_CONFIG_MODEL_GETAGGREGATERESOURCECOMPLIANCEBYCONFIGRULEREQUEST_H_
+#endif // !ALIBABACLOUD_CONFIG_MODEL_DELETEAGGREGATEREMEDIATIONSREQUEST_H_

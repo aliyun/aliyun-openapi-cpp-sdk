@@ -231,6 +231,42 @@ ConfigClient::CreateAggregateConfigRuleOutcomeCallable ConfigClient::createAggre
 	return task->get_future();
 }
 
+ConfigClient::CreateAggregateRemediationOutcome ConfigClient::createAggregateRemediation(const CreateAggregateRemediationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateAggregateRemediationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateAggregateRemediationOutcome(CreateAggregateRemediationResult(outcome.result()));
+	else
+		return CreateAggregateRemediationOutcome(outcome.error());
+}
+
+void ConfigClient::createAggregateRemediationAsync(const CreateAggregateRemediationRequest& request, const CreateAggregateRemediationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createAggregateRemediation(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ConfigClient::CreateAggregateRemediationOutcomeCallable ConfigClient::createAggregateRemediationCallable(const CreateAggregateRemediationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateAggregateRemediationOutcome()>>(
+			[this, request]()
+			{
+			return this->createAggregateRemediation(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ConfigClient::CreateAggregatorOutcome ConfigClient::createAggregator(const CreateAggregatorRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -333,6 +369,42 @@ ConfigClient::CreateConfigRuleOutcomeCallable ConfigClient::createConfigRuleCall
 			[this, request]()
 			{
 			return this->createConfigRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ConfigClient::CreateRemediationOutcome ConfigClient::createRemediation(const CreateRemediationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateRemediationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateRemediationOutcome(CreateRemediationResult(outcome.result()));
+	else
+		return CreateRemediationOutcome(outcome.error());
+}
+
+void ConfigClient::createRemediationAsync(const CreateRemediationRequest& request, const CreateRemediationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createRemediation(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ConfigClient::CreateRemediationOutcomeCallable ConfigClient::createRemediationCallable(const CreateRemediationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateRemediationOutcome()>>(
+			[this, request]()
+			{
+			return this->createRemediation(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -483,6 +555,42 @@ ConfigClient::DeleteAggregateConfigRulesOutcomeCallable ConfigClient::deleteAggr
 	return task->get_future();
 }
 
+ConfigClient::DeleteAggregateRemediationsOutcome ConfigClient::deleteAggregateRemediations(const DeleteAggregateRemediationsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteAggregateRemediationsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteAggregateRemediationsOutcome(DeleteAggregateRemediationsResult(outcome.result()));
+	else
+		return DeleteAggregateRemediationsOutcome(outcome.error());
+}
+
+void ConfigClient::deleteAggregateRemediationsAsync(const DeleteAggregateRemediationsRequest& request, const DeleteAggregateRemediationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteAggregateRemediations(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ConfigClient::DeleteAggregateRemediationsOutcomeCallable ConfigClient::deleteAggregateRemediationsCallable(const DeleteAggregateRemediationsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteAggregateRemediationsOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteAggregateRemediations(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ConfigClient::DeleteAggregatorsOutcome ConfigClient::deleteAggregators(const DeleteAggregatorsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -549,6 +657,42 @@ ConfigClient::DeleteCompliancePacksOutcomeCallable ConfigClient::deleteComplianc
 			[this, request]()
 			{
 			return this->deleteCompliancePacks(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ConfigClient::DeleteRemediationsOutcome ConfigClient::deleteRemediations(const DeleteRemediationsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteRemediationsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteRemediationsOutcome(DeleteRemediationsResult(outcome.result()));
+	else
+		return DeleteRemediationsOutcome(outcome.error());
+}
+
+void ConfigClient::deleteRemediationsAsync(const DeleteRemediationsRequest& request, const DeleteRemediationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteRemediations(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ConfigClient::DeleteRemediationsOutcomeCallable ConfigClient::deleteRemediationsCallable(const DeleteRemediationsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteRemediationsOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteRemediations(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1017,6 +1161,42 @@ ConfigClient::GetAggregateConfigRulesReportOutcomeCallable ConfigClient::getAggr
 			[this, request]()
 			{
 			return this->getAggregateConfigRulesReport(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ConfigClient::GetAggregateDiscoveredResourceOutcome ConfigClient::getAggregateDiscoveredResource(const GetAggregateDiscoveredResourceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetAggregateDiscoveredResourceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetAggregateDiscoveredResourceOutcome(GetAggregateDiscoveredResourceResult(outcome.result()));
+	else
+		return GetAggregateDiscoveredResourceOutcome(outcome.error());
+}
+
+void ConfigClient::getAggregateDiscoveredResourceAsync(const GetAggregateDiscoveredResourceRequest& request, const GetAggregateDiscoveredResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getAggregateDiscoveredResource(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ConfigClient::GetAggregateDiscoveredResourceOutcomeCallable ConfigClient::getAggregateDiscoveredResourceCallable(const GetAggregateDiscoveredResourceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetAggregateDiscoveredResourceOutcome()>>(
+			[this, request]()
+			{
+			return this->getAggregateDiscoveredResource(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1563,6 +1743,42 @@ ConfigClient::GetConfigRulesReportOutcomeCallable ConfigClient::getConfigRulesRe
 	return task->get_future();
 }
 
+ConfigClient::GetDiscoveredResourceOutcome ConfigClient::getDiscoveredResource(const GetDiscoveredResourceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetDiscoveredResourceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetDiscoveredResourceOutcome(GetDiscoveredResourceResult(outcome.result()));
+	else
+		return GetDiscoveredResourceOutcome(outcome.error());
+}
+
+void ConfigClient::getDiscoveredResourceAsync(const GetDiscoveredResourceRequest& request, const GetDiscoveredResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getDiscoveredResource(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ConfigClient::GetDiscoveredResourceOutcomeCallable ConfigClient::getDiscoveredResourceCallable(const GetDiscoveredResourceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetDiscoveredResourceOutcome()>>(
+			[this, request]()
+			{
+			return this->getDiscoveredResource(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ConfigClient::GetDiscoveredResourceCountsGroupByRegionOutcome ConfigClient::getDiscoveredResourceCountsGroupByRegion(const GetDiscoveredResourceCountsGroupByRegionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2067,6 +2283,78 @@ ConfigClient::ListAggregateConfigRulesOutcomeCallable ConfigClient::listAggregat
 	return task->get_future();
 }
 
+ConfigClient::ListAggregateDiscoveredResourcesOutcome ConfigClient::listAggregateDiscoveredResources(const ListAggregateDiscoveredResourcesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListAggregateDiscoveredResourcesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListAggregateDiscoveredResourcesOutcome(ListAggregateDiscoveredResourcesResult(outcome.result()));
+	else
+		return ListAggregateDiscoveredResourcesOutcome(outcome.error());
+}
+
+void ConfigClient::listAggregateDiscoveredResourcesAsync(const ListAggregateDiscoveredResourcesRequest& request, const ListAggregateDiscoveredResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listAggregateDiscoveredResources(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ConfigClient::ListAggregateDiscoveredResourcesOutcomeCallable ConfigClient::listAggregateDiscoveredResourcesCallable(const ListAggregateDiscoveredResourcesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListAggregateDiscoveredResourcesOutcome()>>(
+			[this, request]()
+			{
+			return this->listAggregateDiscoveredResources(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ConfigClient::ListAggregateRemediationsOutcome ConfigClient::listAggregateRemediations(const ListAggregateRemediationsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListAggregateRemediationsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListAggregateRemediationsOutcome(ListAggregateRemediationsResult(outcome.result()));
+	else
+		return ListAggregateRemediationsOutcome(outcome.error());
+}
+
+void ConfigClient::listAggregateRemediationsAsync(const ListAggregateRemediationsRequest& request, const ListAggregateRemediationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listAggregateRemediations(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ConfigClient::ListAggregateRemediationsOutcomeCallable ConfigClient::listAggregateRemediationsCallable(const ListAggregateRemediationsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListAggregateRemediationsOutcome()>>(
+			[this, request]()
+			{
+			return this->listAggregateRemediations(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ConfigClient::ListAggregateResourceEvaluationResultsOutcome ConfigClient::listAggregateResourceEvaluationResults(const ListAggregateResourceEvaluationResultsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2247,6 +2535,42 @@ ConfigClient::ListConfigRuleEvaluationResultsOutcomeCallable ConfigClient::listC
 	return task->get_future();
 }
 
+ConfigClient::ListDiscoveredResourcesOutcome ConfigClient::listDiscoveredResources(const ListDiscoveredResourcesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListDiscoveredResourcesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListDiscoveredResourcesOutcome(ListDiscoveredResourcesResult(outcome.result()));
+	else
+		return ListDiscoveredResourcesOutcome(outcome.error());
+}
+
+void ConfigClient::listDiscoveredResourcesAsync(const ListDiscoveredResourcesRequest& request, const ListDiscoveredResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listDiscoveredResources(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ConfigClient::ListDiscoveredResourcesOutcomeCallable ConfigClient::listDiscoveredResourcesCallable(const ListDiscoveredResourcesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListDiscoveredResourcesOutcome()>>(
+			[this, request]()
+			{
+			return this->listDiscoveredResources(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ConfigClient::ListManagedRulesOutcome ConfigClient::listManagedRules(const ListManagedRulesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2277,6 +2601,78 @@ ConfigClient::ListManagedRulesOutcomeCallable ConfigClient::listManagedRulesCall
 			[this, request]()
 			{
 			return this->listManagedRules(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ConfigClient::ListRemediationTemplatesOutcome ConfigClient::listRemediationTemplates(const ListRemediationTemplatesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListRemediationTemplatesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListRemediationTemplatesOutcome(ListRemediationTemplatesResult(outcome.result()));
+	else
+		return ListRemediationTemplatesOutcome(outcome.error());
+}
+
+void ConfigClient::listRemediationTemplatesAsync(const ListRemediationTemplatesRequest& request, const ListRemediationTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listRemediationTemplates(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ConfigClient::ListRemediationTemplatesOutcomeCallable ConfigClient::listRemediationTemplatesCallable(const ListRemediationTemplatesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListRemediationTemplatesOutcome()>>(
+			[this, request]()
+			{
+			return this->listRemediationTemplates(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ConfigClient::ListRemediationsOutcome ConfigClient::listRemediations(const ListRemediationsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListRemediationsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListRemediationsOutcome(ListRemediationsResult(outcome.result()));
+	else
+		return ListRemediationsOutcome(outcome.error());
+}
+
+void ConfigClient::listRemediationsAsync(const ListRemediationsRequest& request, const ListRemediationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listRemediations(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ConfigClient::ListRemediationsOutcomeCallable ConfigClient::listRemediationsCallable(const ListRemediationsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListRemediationsOutcome()>>(
+			[this, request]()
+			{
+			return this->listRemediations(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2427,6 +2823,78 @@ ConfigClient::StartAggregateConfigRuleEvaluationOutcomeCallable ConfigClient::st
 	return task->get_future();
 }
 
+ConfigClient::StartAggregateRemediationOutcome ConfigClient::startAggregateRemediation(const StartAggregateRemediationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return StartAggregateRemediationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return StartAggregateRemediationOutcome(StartAggregateRemediationResult(outcome.result()));
+	else
+		return StartAggregateRemediationOutcome(outcome.error());
+}
+
+void ConfigClient::startAggregateRemediationAsync(const StartAggregateRemediationRequest& request, const StartAggregateRemediationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, startAggregateRemediation(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ConfigClient::StartAggregateRemediationOutcomeCallable ConfigClient::startAggregateRemediationCallable(const StartAggregateRemediationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<StartAggregateRemediationOutcome()>>(
+			[this, request]()
+			{
+			return this->startAggregateRemediation(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ConfigClient::StartRemediationOutcome ConfigClient::startRemediation(const StartRemediationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return StartRemediationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return StartRemediationOutcome(StartRemediationResult(outcome.result()));
+	else
+		return StartRemediationOutcome(outcome.error());
+}
+
+void ConfigClient::startRemediationAsync(const StartRemediationRequest& request, const StartRemediationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, startRemediation(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ConfigClient::StartRemediationOutcomeCallable ConfigClient::startRemediationCallable(const StartRemediationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<StartRemediationOutcome()>>(
+			[this, request]()
+			{
+			return this->startRemediation(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ConfigClient::UpdateAggregateCompliancePackOutcome ConfigClient::updateAggregateCompliancePack(const UpdateAggregateCompliancePackRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2493,6 +2961,42 @@ ConfigClient::UpdateAggregateConfigRuleOutcomeCallable ConfigClient::updateAggre
 			[this, request]()
 			{
 			return this->updateAggregateConfigRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ConfigClient::UpdateAggregateRemediationOutcome ConfigClient::updateAggregateRemediation(const UpdateAggregateRemediationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateAggregateRemediationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateAggregateRemediationOutcome(UpdateAggregateRemediationResult(outcome.result()));
+	else
+		return UpdateAggregateRemediationOutcome(outcome.error());
+}
+
+void ConfigClient::updateAggregateRemediationAsync(const UpdateAggregateRemediationRequest& request, const UpdateAggregateRemediationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateAggregateRemediation(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ConfigClient::UpdateAggregateRemediationOutcomeCallable ConfigClient::updateAggregateRemediationCallable(const UpdateAggregateRemediationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateAggregateRemediationOutcome()>>(
+			[this, request]()
+			{
+			return this->updateAggregateRemediation(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
