@@ -27,17 +27,6 @@ CompareFaceVerifyRequest::CompareFaceVerifyRequest() :
 CompareFaceVerifyRequest::~CompareFaceVerifyRequest()
 {}
 
-std::string CompareFaceVerifyRequest::getTargetFaceContrastPictureUrl()const
-{
-	return targetFaceContrastPictureUrl_;
-}
-
-void CompareFaceVerifyRequest::setTargetFaceContrastPictureUrl(const std::string& targetFaceContrastPictureUrl)
-{
-	targetFaceContrastPictureUrl_ = targetFaceContrastPictureUrl;
-	setBodyParameter("TargetFaceContrastPictureUrl", targetFaceContrastPictureUrl);
-}
-
 std::string CompareFaceVerifyRequest::getProductCode()const
 {
 	return productCode_;
@@ -58,17 +47,6 @@ void CompareFaceVerifyRequest::setTargetCertifyId(const std::string& targetCerti
 {
 	targetCertifyId_ = targetCertifyId;
 	setBodyParameter("TargetCertifyId", targetCertifyId);
-}
-
-std::string CompareFaceVerifyRequest::getSourceOssObjectName()const
-{
-	return sourceOssObjectName_;
-}
-
-void CompareFaceVerifyRequest::setSourceOssObjectName(const std::string& sourceOssObjectName)
-{
-	sourceOssObjectName_ = sourceOssObjectName;
-	setBodyParameter("SourceOssObjectName", sourceOssObjectName);
 }
 
 std::string CompareFaceVerifyRequest::getTargetFaceContrastPicture()const
@@ -93,17 +71,6 @@ void CompareFaceVerifyRequest::setTargetOssBucketName(const std::string& targetO
 	setBodyParameter("TargetOssBucketName", targetOssBucketName);
 }
 
-std::string CompareFaceVerifyRequest::getSourceOssBucketName()const
-{
-	return sourceOssBucketName_;
-}
-
-void CompareFaceVerifyRequest::setSourceOssBucketName(const std::string& sourceOssBucketName)
-{
-	sourceOssBucketName_ = sourceOssBucketName;
-	setBodyParameter("SourceOssBucketName", sourceOssBucketName);
-}
-
 std::string CompareFaceVerifyRequest::getOuterOrderNo()const
 {
 	return outerOrderNo_;
@@ -115,17 +82,6 @@ void CompareFaceVerifyRequest::setOuterOrderNo(const std::string& outerOrderNo)
 	setBodyParameter("OuterOrderNo", outerOrderNo);
 }
 
-std::string CompareFaceVerifyRequest::getTargetOssObjectName()const
-{
-	return targetOssObjectName_;
-}
-
-void CompareFaceVerifyRequest::setTargetOssObjectName(const std::string& targetOssObjectName)
-{
-	targetOssObjectName_ = targetOssObjectName;
-	setBodyParameter("TargetOssObjectName", targetOssObjectName);
-}
-
 std::string CompareFaceVerifyRequest::getSourceFaceContrastPicture()const
 {
 	return sourceFaceContrastPicture_;
@@ -135,6 +91,61 @@ void CompareFaceVerifyRequest::setSourceFaceContrastPicture(const std::string& s
 {
 	sourceFaceContrastPicture_ = sourceFaceContrastPicture;
 	setBodyParameter("SourceFaceContrastPicture", sourceFaceContrastPicture);
+}
+
+std::string CompareFaceVerifyRequest::getSourceCertifyId()const
+{
+	return sourceCertifyId_;
+}
+
+void CompareFaceVerifyRequest::setSourceCertifyId(const std::string& sourceCertifyId)
+{
+	sourceCertifyId_ = sourceCertifyId;
+	setBodyParameter("SourceCertifyId", sourceCertifyId);
+}
+
+std::string CompareFaceVerifyRequest::getTargetFaceContrastPictureUrl()const
+{
+	return targetFaceContrastPictureUrl_;
+}
+
+void CompareFaceVerifyRequest::setTargetFaceContrastPictureUrl(const std::string& targetFaceContrastPictureUrl)
+{
+	targetFaceContrastPictureUrl_ = targetFaceContrastPictureUrl;
+	setBodyParameter("TargetFaceContrastPictureUrl", targetFaceContrastPictureUrl);
+}
+
+std::string CompareFaceVerifyRequest::getSourceOssObjectName()const
+{
+	return sourceOssObjectName_;
+}
+
+void CompareFaceVerifyRequest::setSourceOssObjectName(const std::string& sourceOssObjectName)
+{
+	sourceOssObjectName_ = sourceOssObjectName;
+	setBodyParameter("SourceOssObjectName", sourceOssObjectName);
+}
+
+std::string CompareFaceVerifyRequest::getSourceOssBucketName()const
+{
+	return sourceOssBucketName_;
+}
+
+void CompareFaceVerifyRequest::setSourceOssBucketName(const std::string& sourceOssBucketName)
+{
+	sourceOssBucketName_ = sourceOssBucketName;
+	setBodyParameter("SourceOssBucketName", sourceOssBucketName);
+}
+
+std::string CompareFaceVerifyRequest::getTargetOssObjectName()const
+{
+	return targetOssObjectName_;
+}
+
+void CompareFaceVerifyRequest::setTargetOssObjectName(const std::string& targetOssObjectName)
+{
+	targetOssObjectName_ = targetOssObjectName;
+	setBodyParameter("TargetOssObjectName", targetOssObjectName);
 }
 
 long CompareFaceVerifyRequest::getSceneId()const
@@ -157,17 +168,6 @@ void CompareFaceVerifyRequest::setSourceFaceContrastPictureUrl(const std::string
 {
 	sourceFaceContrastPictureUrl_ = sourceFaceContrastPictureUrl;
 	setBodyParameter("SourceFaceContrastPictureUrl", sourceFaceContrastPictureUrl);
-}
-
-std::string CompareFaceVerifyRequest::getSourceCertifyId()const
-{
-	return sourceCertifyId_;
-}
-
-void CompareFaceVerifyRequest::setSourceCertifyId(const std::string& sourceCertifyId)
-{
-	sourceCertifyId_ = sourceCertifyId;
-	setBodyParameter("SourceCertifyId", sourceCertifyId);
 }
 
 std::string CompareFaceVerifyRequest::getCrop()const

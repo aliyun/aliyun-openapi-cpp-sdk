@@ -38,17 +38,6 @@ void LivenessFaceVerifyRequest::setProductCode(const std::string& productCode)
 	setBodyParameter("ProductCode", productCode);
 }
 
-std::string LivenessFaceVerifyRequest::getOssObjectName()const
-{
-	return ossObjectName_;
-}
-
-void LivenessFaceVerifyRequest::setOssObjectName(const std::string& ossObjectName)
-{
-	ossObjectName_ = ossObjectName;
-	setBodyParameter("OssObjectName", ossObjectName);
-}
-
 std::string LivenessFaceVerifyRequest::getFaceContrastPicture()const
 {
 	return faceContrastPicture_;
@@ -58,28 +47,6 @@ void LivenessFaceVerifyRequest::setFaceContrastPicture(const std::string& faceCo
 {
 	faceContrastPicture_ = faceContrastPicture;
 	setBodyParameter("FaceContrastPicture", faceContrastPicture);
-}
-
-std::string LivenessFaceVerifyRequest::getIp()const
-{
-	return ip_;
-}
-
-void LivenessFaceVerifyRequest::setIp(const std::string& ip)
-{
-	ip_ = ip;
-	setBodyParameter("Ip", ip);
-}
-
-std::string LivenessFaceVerifyRequest::getMobile()const
-{
-	return mobile_;
-}
-
-void LivenessFaceVerifyRequest::setMobile(const std::string& mobile)
-{
-	mobile_ = mobile;
-	setBodyParameter("Mobile", mobile);
 }
 
 std::string LivenessFaceVerifyRequest::getDeviceToken()const
@@ -137,6 +104,50 @@ void LivenessFaceVerifyRequest::setFaceContrastPictureUrl(const std::string& fac
 	setBodyParameter("FaceContrastPictureUrl", faceContrastPictureUrl);
 }
 
+std::string LivenessFaceVerifyRequest::getModel()const
+{
+	return model_;
+}
+
+void LivenessFaceVerifyRequest::setModel(const std::string& model)
+{
+	model_ = model;
+	setParameter("Model", model);
+}
+
+std::string LivenessFaceVerifyRequest::getOssObjectName()const
+{
+	return ossObjectName_;
+}
+
+void LivenessFaceVerifyRequest::setOssObjectName(const std::string& ossObjectName)
+{
+	ossObjectName_ = ossObjectName;
+	setBodyParameter("OssObjectName", ossObjectName);
+}
+
+std::string LivenessFaceVerifyRequest::getIp()const
+{
+	return ip_;
+}
+
+void LivenessFaceVerifyRequest::setIp(const std::string& ip)
+{
+	ip_ = ip;
+	setBodyParameter("Ip", ip);
+}
+
+std::string LivenessFaceVerifyRequest::getMobile()const
+{
+	return mobile_;
+}
+
+void LivenessFaceVerifyRequest::setMobile(const std::string& mobile)
+{
+	mobile_ = mobile;
+	setBodyParameter("Mobile", mobile);
+}
+
 long LivenessFaceVerifyRequest::getSceneId()const
 {
 	return sceneId_;
@@ -157,17 +168,6 @@ void LivenessFaceVerifyRequest::setOssBucketName(const std::string& ossBucketNam
 {
 	ossBucketName_ = ossBucketName;
 	setBodyParameter("OssBucketName", ossBucketName);
-}
-
-std::string LivenessFaceVerifyRequest::getModel()const
-{
-	return model_;
-}
-
-void LivenessFaceVerifyRequest::setModel(const std::string& model)
-{
-	model_ = model;
-	setParameter("Model", model);
 }
 
 std::string LivenessFaceVerifyRequest::getCrop()const

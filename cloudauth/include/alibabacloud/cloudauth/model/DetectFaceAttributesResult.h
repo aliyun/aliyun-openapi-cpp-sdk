@@ -69,8 +69,8 @@ namespace AlibabaCloud
 							Smiling smiling;
 							Gender gender;
 							float appearanceScore;
-							int age;
 							float facequal;
+							int age;
 							int integrity;
 						};
 						FaceAttributes faceAttributes;

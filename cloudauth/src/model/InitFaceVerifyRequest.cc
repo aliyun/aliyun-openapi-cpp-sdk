@@ -181,6 +181,17 @@ void InitFaceVerifyRequest::setMobile(const std::string& mobile)
 	setParameter("Mobile", mobile);
 }
 
+std::string InitFaceVerifyRequest::getAuthId()const
+{
+	return authId_;
+}
+
+void InitFaceVerifyRequest::setAuthId(const std::string& authId)
+{
+	authId_ = authId;
+	setBodyParameter("AuthId", authId);
+}
+
 long InitFaceVerifyRequest::getSceneId()const
 {
 	return sceneId_;
@@ -245,5 +256,16 @@ void InitFaceVerifyRequest::setCrop(const std::string& crop)
 {
 	crop_ = crop;
 	setBodyParameter("Crop", crop);
+}
+
+std::string InitFaceVerifyRequest::getCertifyUrlType()const
+{
+	return certifyUrlType_;
+}
+
+void InitFaceVerifyRequest::setCertifyUrlType(const std::string& certifyUrlType)
+{
+	certifyUrlType_ = certifyUrlType;
+	setParameter("CertifyUrlType", certifyUrlType);
 }
 

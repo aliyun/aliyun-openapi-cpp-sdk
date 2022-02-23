@@ -29,78 +29,28 @@ set(cloudauth_public_header_model
 	include/alibabacloud/cloudauth/model/ContrastFaceVerifyResult.h
 	include/alibabacloud/cloudauth/model/CreateAuthKeyRequest.h
 	include/alibabacloud/cloudauth/model/CreateAuthKeyResult.h
-	include/alibabacloud/cloudauth/model/CreateFaceConfigRequest.h
-	include/alibabacloud/cloudauth/model/CreateFaceConfigResult.h
-	include/alibabacloud/cloudauth/model/CreateRPSDKRequest.h
-	include/alibabacloud/cloudauth/model/CreateRPSDKResult.h
-	include/alibabacloud/cloudauth/model/CreateVerifySDKRequest.h
-	include/alibabacloud/cloudauth/model/CreateVerifySDKResult.h
 	include/alibabacloud/cloudauth/model/CreateVerifySettingRequest.h
 	include/alibabacloud/cloudauth/model/CreateVerifySettingResult.h
-	include/alibabacloud/cloudauth/model/CreateWhitelistRequest.h
-	include/alibabacloud/cloudauth/model/CreateWhitelistResult.h
-	include/alibabacloud/cloudauth/model/CreateWhitelistSettingRequest.h
-	include/alibabacloud/cloudauth/model/CreateWhitelistSettingResult.h
-	include/alibabacloud/cloudauth/model/DeleteWhitelistRequest.h
-	include/alibabacloud/cloudauth/model/DeleteWhitelistResult.h
-	include/alibabacloud/cloudauth/model/DeleteWhitelistSettingRequest.h
-	include/alibabacloud/cloudauth/model/DeleteWhitelistSettingResult.h
-	include/alibabacloud/cloudauth/model/DescribeAppInfoRequest.h
-	include/alibabacloud/cloudauth/model/DescribeAppInfoResult.h
 	include/alibabacloud/cloudauth/model/DescribeDeviceInfoRequest.h
 	include/alibabacloud/cloudauth/model/DescribeDeviceInfoResult.h
-	include/alibabacloud/cloudauth/model/DescribeFaceConfigRequest.h
-	include/alibabacloud/cloudauth/model/DescribeFaceConfigResult.h
-	include/alibabacloud/cloudauth/model/DescribeFaceUsageRequest.h
-	include/alibabacloud/cloudauth/model/DescribeFaceUsageResult.h
 	include/alibabacloud/cloudauth/model/DescribeFaceVerifyRequest.h
 	include/alibabacloud/cloudauth/model/DescribeFaceVerifyResult.h
 	include/alibabacloud/cloudauth/model/DescribeOssUploadTokenRequest.h
 	include/alibabacloud/cloudauth/model/DescribeOssUploadTokenResult.h
-	include/alibabacloud/cloudauth/model/DescribeRPSDKRequest.h
-	include/alibabacloud/cloudauth/model/DescribeRPSDKResult.h
-	include/alibabacloud/cloudauth/model/DescribeSdkUrlRequest.h
-	include/alibabacloud/cloudauth/model/DescribeSdkUrlResult.h
-	include/alibabacloud/cloudauth/model/DescribeUpdatePackageResultRequest.h
-	include/alibabacloud/cloudauth/model/DescribeUpdatePackageResultResult.h
-	include/alibabacloud/cloudauth/model/DescribeUploadInfoRequest.h
-	include/alibabacloud/cloudauth/model/DescribeUploadInfoResult.h
-	include/alibabacloud/cloudauth/model/DescribeUserStatusRequest.h
-	include/alibabacloud/cloudauth/model/DescribeUserStatusResult.h
-	include/alibabacloud/cloudauth/model/DescribeVerifyRecordsRequest.h
-	include/alibabacloud/cloudauth/model/DescribeVerifyRecordsResult.h
 	include/alibabacloud/cloudauth/model/DescribeVerifyResultRequest.h
 	include/alibabacloud/cloudauth/model/DescribeVerifyResultResult.h
 	include/alibabacloud/cloudauth/model/DescribeVerifySDKRequest.h
 	include/alibabacloud/cloudauth/model/DescribeVerifySDKResult.h
-	include/alibabacloud/cloudauth/model/DescribeVerifySettingRequest.h
-	include/alibabacloud/cloudauth/model/DescribeVerifySettingResult.h
 	include/alibabacloud/cloudauth/model/DescribeVerifyTokenRequest.h
 	include/alibabacloud/cloudauth/model/DescribeVerifyTokenResult.h
-	include/alibabacloud/cloudauth/model/DescribeVerifyUsageRequest.h
-	include/alibabacloud/cloudauth/model/DescribeVerifyUsageResult.h
-	include/alibabacloud/cloudauth/model/DescribeWhitelistRequest.h
-	include/alibabacloud/cloudauth/model/DescribeWhitelistResult.h
-	include/alibabacloud/cloudauth/model/DescribeWhitelistSettingRequest.h
-	include/alibabacloud/cloudauth/model/DescribeWhitelistSettingResult.h
 	include/alibabacloud/cloudauth/model/DetectFaceAttributesRequest.h
 	include/alibabacloud/cloudauth/model/DetectFaceAttributesResult.h
-	include/alibabacloud/cloudauth/model/InitDeviceRequest.h
-	include/alibabacloud/cloudauth/model/InitDeviceResult.h
 	include/alibabacloud/cloudauth/model/InitFaceVerifyRequest.h
 	include/alibabacloud/cloudauth/model/InitFaceVerifyResult.h
 	include/alibabacloud/cloudauth/model/LivenessFaceVerifyRequest.h
 	include/alibabacloud/cloudauth/model/LivenessFaceVerifyResult.h
 	include/alibabacloud/cloudauth/model/ModifyDeviceInfoRequest.h
 	include/alibabacloud/cloudauth/model/ModifyDeviceInfoResult.h
-	include/alibabacloud/cloudauth/model/UpdateAppPackageRequest.h
-	include/alibabacloud/cloudauth/model/UpdateAppPackageResult.h
-	include/alibabacloud/cloudauth/model/UpdateFaceConfigRequest.h
-	include/alibabacloud/cloudauth/model/UpdateFaceConfigResult.h
-	include/alibabacloud/cloudauth/model/UpdateVerifySettingRequest.h
-	include/alibabacloud/cloudauth/model/UpdateVerifySettingResult.h
-	include/alibabacloud/cloudauth/model/VerifyDeviceRequest.h
-	include/alibabacloud/cloudauth/model/VerifyDeviceResult.h
 	include/alibabacloud/cloudauth/model/VerifyMaterialRequest.h
 	include/alibabacloud/cloudauth/model/VerifyMaterialResult.h )
 
@@ -114,78 +64,28 @@ set(cloudauth_src
 	src/model/ContrastFaceVerifyResult.cc
 	src/model/CreateAuthKeyRequest.cc
 	src/model/CreateAuthKeyResult.cc
-	src/model/CreateFaceConfigRequest.cc
-	src/model/CreateFaceConfigResult.cc
-	src/model/CreateRPSDKRequest.cc
-	src/model/CreateRPSDKResult.cc
-	src/model/CreateVerifySDKRequest.cc
-	src/model/CreateVerifySDKResult.cc
 	src/model/CreateVerifySettingRequest.cc
 	src/model/CreateVerifySettingResult.cc
-	src/model/CreateWhitelistRequest.cc
-	src/model/CreateWhitelistResult.cc
-	src/model/CreateWhitelistSettingRequest.cc
-	src/model/CreateWhitelistSettingResult.cc
-	src/model/DeleteWhitelistRequest.cc
-	src/model/DeleteWhitelistResult.cc
-	src/model/DeleteWhitelistSettingRequest.cc
-	src/model/DeleteWhitelistSettingResult.cc
-	src/model/DescribeAppInfoRequest.cc
-	src/model/DescribeAppInfoResult.cc
 	src/model/DescribeDeviceInfoRequest.cc
 	src/model/DescribeDeviceInfoResult.cc
-	src/model/DescribeFaceConfigRequest.cc
-	src/model/DescribeFaceConfigResult.cc
-	src/model/DescribeFaceUsageRequest.cc
-	src/model/DescribeFaceUsageResult.cc
 	src/model/DescribeFaceVerifyRequest.cc
 	src/model/DescribeFaceVerifyResult.cc
 	src/model/DescribeOssUploadTokenRequest.cc
 	src/model/DescribeOssUploadTokenResult.cc
-	src/model/DescribeRPSDKRequest.cc
-	src/model/DescribeRPSDKResult.cc
-	src/model/DescribeSdkUrlRequest.cc
-	src/model/DescribeSdkUrlResult.cc
-	src/model/DescribeUpdatePackageResultRequest.cc
-	src/model/DescribeUpdatePackageResultResult.cc
-	src/model/DescribeUploadInfoRequest.cc
-	src/model/DescribeUploadInfoResult.cc
-	src/model/DescribeUserStatusRequest.cc
-	src/model/DescribeUserStatusResult.cc
-	src/model/DescribeVerifyRecordsRequest.cc
-	src/model/DescribeVerifyRecordsResult.cc
 	src/model/DescribeVerifyResultRequest.cc
 	src/model/DescribeVerifyResultResult.cc
 	src/model/DescribeVerifySDKRequest.cc
 	src/model/DescribeVerifySDKResult.cc
-	src/model/DescribeVerifySettingRequest.cc
-	src/model/DescribeVerifySettingResult.cc
 	src/model/DescribeVerifyTokenRequest.cc
 	src/model/DescribeVerifyTokenResult.cc
-	src/model/DescribeVerifyUsageRequest.cc
-	src/model/DescribeVerifyUsageResult.cc
-	src/model/DescribeWhitelistRequest.cc
-	src/model/DescribeWhitelistResult.cc
-	src/model/DescribeWhitelistSettingRequest.cc
-	src/model/DescribeWhitelistSettingResult.cc
 	src/model/DetectFaceAttributesRequest.cc
 	src/model/DetectFaceAttributesResult.cc
-	src/model/InitDeviceRequest.cc
-	src/model/InitDeviceResult.cc
 	src/model/InitFaceVerifyRequest.cc
 	src/model/InitFaceVerifyResult.cc
 	src/model/LivenessFaceVerifyRequest.cc
 	src/model/LivenessFaceVerifyResult.cc
 	src/model/ModifyDeviceInfoRequest.cc
 	src/model/ModifyDeviceInfoResult.cc
-	src/model/UpdateAppPackageRequest.cc
-	src/model/UpdateAppPackageResult.cc
-	src/model/UpdateFaceConfigRequest.cc
-	src/model/UpdateFaceConfigResult.cc
-	src/model/UpdateVerifySettingRequest.cc
-	src/model/UpdateVerifySettingResult.cc
-	src/model/VerifyDeviceRequest.cc
-	src/model/VerifyDeviceResult.cc
 	src/model/VerifyMaterialRequest.cc
 	src/model/VerifyMaterialResult.cc )
 

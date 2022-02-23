@@ -63,6 +63,8 @@ namespace AlibabaCloud
 				void setIp(const std::string& ip);
 				std::string getMobile()const;
 				void setMobile(const std::string& mobile);
+				std::string getAuthId()const;
+				void setAuthId(const std::string& authId);
 				long getSceneId()const;
 				void setSceneId(long sceneId);
 				std::string getOssBucketName()const;
@@ -75,6 +77,8 @@ namespace AlibabaCloud
 				void setCallbackUrl(const std::string& callbackUrl);
 				std::string getCrop()const;
 				void setCrop(const std::string& crop);
+				std::string getCertifyUrlType()const;
+				void setCertifyUrlType(const std::string& certifyUrlType);
 
             private:
 				std::string productCode_;
@@ -91,12 +95,14 @@ namespace AlibabaCloud
 				std::string certName_;
 				std::string ip_;
 				std::string mobile_;
+				std::string authId_;
 				long sceneId_;
 				std::string ossBucketName_;
 				std::string callbackToken_;
 				std::string returnUrl_;
 				std::string callbackUrl_;
 				std::string crop_;
+				std::string certifyUrlType_;
 
 			};
 		}

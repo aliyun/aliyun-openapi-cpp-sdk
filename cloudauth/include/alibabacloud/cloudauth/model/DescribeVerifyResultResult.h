@@ -37,8 +37,8 @@ namespace AlibabaCloud
 					struct IdCardInfo
 					{
 						std::string startDate;
-						std::string number;
 						std::string address;
+						std::string number;
 						std::string authority;
 						std::string sex;
 						std::string backImageUrl;
@@ -48,8 +48,8 @@ namespace AlibabaCloud
 						std::string nationality;
 						std::string name;
 					};
-					std::string idCardName;
 					std::string faceGlobalUrl;
+					std::string idCardName;
 					std::string faceQuality;
 					std::string idCardNumber;
 					std::vector<std::string> videoUrls;
