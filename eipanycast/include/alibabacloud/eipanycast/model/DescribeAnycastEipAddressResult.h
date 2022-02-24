@@ -34,10 +34,18 @@ namespace AlibabaCloud
 			public:
 				struct AnycastEipBindInfo
 				{
+					struct PopLocation
+					{
+						std::string popLocation;
+					};
+					std::string status;
 					std::string bindInstanceId;
 					std::string bindTime;
+					std::string privateIpAddress;
 					std::string bindInstanceType;
 					std::string bindInstanceRegionId;
+					std::vector<AnycastEipBindInfo::PopLocation> popLocations;
+					std::string associationMode;
 				};
 
 
@@ -50,8 +58,8 @@ namespace AlibabaCloud
 				std::string getCreateTime()const;
 				std::vector<AnycastEipBindInfo> getAnycastEipBindInfoList()const;
 				std::string getBusinessStatus()const;
-				std::string getName()const;
 				std::string getInternetChargeType()const;
+				std::string getName()const;
 				std::string getAnycastId()const;
 				std::string getServiceLocation()const;
 				int getBandwidth()const;
@@ -68,8 +76,8 @@ namespace AlibabaCloud
 				std::string createTime_;
 				std::vector<AnycastEipBindInfo> anycastEipBindInfoList_;
 				std::string businessStatus_;
-				std::string name_;
 				std::string internetChargeType_;
+				std::string name_;
 				std::string anycastId_;
 				std::string serviceLocation_;
 				int bandwidth_;

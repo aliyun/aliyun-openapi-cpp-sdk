@@ -27,6 +27,17 @@ DescribeAnycastEipAddressRequest::DescribeAnycastEipAddressRequest() :
 DescribeAnycastEipAddressRequest::~DescribeAnycastEipAddressRequest()
 {}
 
+std::string DescribeAnycastEipAddressRequest::getIp()const
+{
+	return ip_;
+}
+
+void DescribeAnycastEipAddressRequest::setIp(const std::string& ip)
+{
+	ip_ = ip;
+	setParameter("Ip", ip);
+}
+
 std::string DescribeAnycastEipAddressRequest::getRegionId()const
 {
 	return regionId_;

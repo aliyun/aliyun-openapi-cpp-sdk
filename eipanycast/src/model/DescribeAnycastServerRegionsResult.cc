@@ -43,10 +43,10 @@ void DescribeAnycastServerRegionsResult::parse(const std::string &payload)
 	for (auto valueAnycastServerRegionListAnycastServerRegion : allAnycastServerRegionListNode)
 	{
 		AnycastServerRegion anycastServerRegionListObject;
-		if(!valueAnycastServerRegionListAnycastServerRegion["RegionId"].isNull())
-			anycastServerRegionListObject.regionId = valueAnycastServerRegionListAnycastServerRegion["RegionId"].asString();
 		if(!valueAnycastServerRegionListAnycastServerRegion["RegionName"].isNull())
 			anycastServerRegionListObject.regionName = valueAnycastServerRegionListAnycastServerRegion["RegionName"].asString();
+		if(!valueAnycastServerRegionListAnycastServerRegion["RegionId"].isNull())
+			anycastServerRegionListObject.regionId = valueAnycastServerRegionListAnycastServerRegion["RegionId"].asString();
 		anycastServerRegionList_.push_back(anycastServerRegionListObject);
 	}
 	if(!value["Count"].isNull())

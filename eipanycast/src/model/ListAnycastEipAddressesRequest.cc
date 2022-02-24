@@ -27,6 +27,39 @@ ListAnycastEipAddressesRequest::ListAnycastEipAddressesRequest() :
 ListAnycastEipAddressesRequest::~ListAnycastEipAddressesRequest()
 {}
 
+std::string ListAnycastEipAddressesRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ListAnycastEipAddressesRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
+std::string ListAnycastEipAddressesRequest::getNextToken()const
+{
+	return nextToken_;
+}
+
+void ListAnycastEipAddressesRequest::setNextToken(const std::string& nextToken)
+{
+	nextToken_ = nextToken;
+	setParameter("NextToken", nextToken);
+}
+
+std::string ListAnycastEipAddressesRequest::getInstanceChargeType()const
+{
+	return instanceChargeType_;
+}
+
+void ListAnycastEipAddressesRequest::setInstanceChargeType(const std::string& instanceChargeType)
+{
+	instanceChargeType_ = instanceChargeType;
+	setParameter("InstanceChargeType", instanceChargeType);
+}
+
 std::string ListAnycastEipAddressesRequest::getBusinessStatus()const
 {
 	return businessStatus_;
@@ -58,28 +91,6 @@ void ListAnycastEipAddressesRequest::setAnycastEipAddress(const std::string& any
 {
 	anycastEipAddress_ = anycastEipAddress;
 	setParameter("AnycastEipAddress", anycastEipAddress);
-}
-
-std::string ListAnycastEipAddressesRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ListAnycastEipAddressesRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
-}
-
-std::string ListAnycastEipAddressesRequest::getNextToken()const
-{
-	return nextToken_;
-}
-
-void ListAnycastEipAddressesRequest::setNextToken(const std::string& nextToken)
-{
-	nextToken_ = nextToken;
-	setParameter("NextToken", nextToken);
 }
 
 std::string ListAnycastEipAddressesRequest::getInternetChargeType()const
@@ -137,17 +148,6 @@ void ListAnycastEipAddressesRequest::setMaxResults(int maxResults)
 {
 	maxResults_ = maxResults;
 	setParameter("MaxResults", std::to_string(maxResults));
-}
-
-std::string ListAnycastEipAddressesRequest::getInstanceChargeType()const
-{
-	return instanceChargeType_;
-}
-
-void ListAnycastEipAddressesRequest::setInstanceChargeType(const std::string& instanceChargeType)
-{
-	instanceChargeType_ = instanceChargeType;
-	setParameter("InstanceChargeType", instanceChargeType);
 }
 
 std::string ListAnycastEipAddressesRequest::getStatus()const

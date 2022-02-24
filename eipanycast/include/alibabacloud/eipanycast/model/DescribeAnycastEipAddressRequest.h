@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				DescribeAnycastEipAddressRequest();
 				~DescribeAnycastEipAddressRequest();
 
+				std::string getIp()const;
+				void setIp(const std::string& ip);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				std::string getAnycastId()const;
@@ -43,6 +45,7 @@ namespace AlibabaCloud
 				void setBindInstanceId(const std::string& bindInstanceId);
 
             private:
+				std::string ip_;
 				std::string regionId_;
 				std::string anycastId_;
 				std::string bindInstanceId_;

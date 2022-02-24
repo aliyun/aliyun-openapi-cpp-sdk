@@ -43,10 +43,10 @@ void DescribeAnycastPopLocationsResult::parse(const std::string &payload)
 	for (auto valueAnycastPopLocationListAnycastPopLocation : allAnycastPopLocationListNode)
 	{
 		AnycastPopLocation anycastPopLocationListObject;
-		if(!valueAnycastPopLocationListAnycastPopLocation["RegionId"].isNull())
-			anycastPopLocationListObject.regionId = valueAnycastPopLocationListAnycastPopLocation["RegionId"].asString();
 		if(!valueAnycastPopLocationListAnycastPopLocation["RegionName"].isNull())
 			anycastPopLocationListObject.regionName = valueAnycastPopLocationListAnycastPopLocation["RegionName"].asString();
+		if(!valueAnycastPopLocationListAnycastPopLocation["RegionId"].isNull())
+			anycastPopLocationListObject.regionId = valueAnycastPopLocationListAnycastPopLocation["RegionId"].asString();
 		anycastPopLocationList_.push_back(anycastPopLocationListObject);
 	}
 	if(!value["Count"].isNull())

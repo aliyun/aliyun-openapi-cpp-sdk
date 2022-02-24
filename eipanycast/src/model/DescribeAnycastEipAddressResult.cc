@@ -43,42 +43,56 @@ void DescribeAnycastEipAddressResult::parse(const std::string &payload)
 	for (auto valueAnycastEipBindInfoListAnycastEipBindInfo : allAnycastEipBindInfoListNode)
 	{
 		AnycastEipBindInfo anycastEipBindInfoListObject;
-		if(!valueAnycastEipBindInfoListAnycastEipBindInfo["BindInstanceId"].isNull())
-			anycastEipBindInfoListObject.bindInstanceId = valueAnycastEipBindInfoListAnycastEipBindInfo["BindInstanceId"].asString();
 		if(!valueAnycastEipBindInfoListAnycastEipBindInfo["BindInstanceType"].isNull())
 			anycastEipBindInfoListObject.bindInstanceType = valueAnycastEipBindInfoListAnycastEipBindInfo["BindInstanceType"].asString();
 		if(!valueAnycastEipBindInfoListAnycastEipBindInfo["BindTime"].isNull())
 			anycastEipBindInfoListObject.bindTime = valueAnycastEipBindInfoListAnycastEipBindInfo["BindTime"].asString();
+		if(!valueAnycastEipBindInfoListAnycastEipBindInfo["Status"].isNull())
+			anycastEipBindInfoListObject.status = valueAnycastEipBindInfoListAnycastEipBindInfo["Status"].asString();
 		if(!valueAnycastEipBindInfoListAnycastEipBindInfo["BindInstanceRegionId"].isNull())
 			anycastEipBindInfoListObject.bindInstanceRegionId = valueAnycastEipBindInfoListAnycastEipBindInfo["BindInstanceRegionId"].asString();
+		if(!valueAnycastEipBindInfoListAnycastEipBindInfo["BindInstanceId"].isNull())
+			anycastEipBindInfoListObject.bindInstanceId = valueAnycastEipBindInfoListAnycastEipBindInfo["BindInstanceId"].asString();
+		if(!valueAnycastEipBindInfoListAnycastEipBindInfo["AssociationMode"].isNull())
+			anycastEipBindInfoListObject.associationMode = valueAnycastEipBindInfoListAnycastEipBindInfo["AssociationMode"].asString();
+		if(!valueAnycastEipBindInfoListAnycastEipBindInfo["PrivateIpAddress"].isNull())
+			anycastEipBindInfoListObject.privateIpAddress = valueAnycastEipBindInfoListAnycastEipBindInfo["PrivateIpAddress"].asString();
+		auto allPopLocationsNode = valueAnycastEipBindInfoListAnycastEipBindInfo["PopLocations"]["PopLocation"];
+		for (auto valueAnycastEipBindInfoListAnycastEipBindInfoPopLocationsPopLocation : allPopLocationsNode)
+		{
+			AnycastEipBindInfo::PopLocation popLocationsObject;
+			if(!valueAnycastEipBindInfoListAnycastEipBindInfoPopLocationsPopLocation["PopLocation"].isNull())
+				popLocationsObject.popLocation = valueAnycastEipBindInfoListAnycastEipBindInfoPopLocationsPopLocation["PopLocation"].asString();
+			anycastEipBindInfoListObject.popLocations.push_back(popLocationsObject);
+		}
 		anycastEipBindInfoList_.push_back(anycastEipBindInfoListObject);
 	}
-	if(!value["AnycastId"].isNull())
-		anycastId_ = value["AnycastId"].asString();
-	if(!value["IpAddress"].isNull())
-		ipAddress_ = value["IpAddress"].asString();
-	if(!value["Name"].isNull())
-		name_ = value["Name"].asString();
-	if(!value["Description"].isNull())
-		description_ = value["Description"].asString();
-	if(!value["Bandwidth"].isNull())
-		bandwidth_ = std::stoi(value["Bandwidth"].asString());
-	if(!value["InstanceChargeType"].isNull())
-		instanceChargeType_ = value["InstanceChargeType"].asString();
-	if(!value["InternetChargeType"].isNull())
-		internetChargeType_ = value["InternetChargeType"].asString();
-	if(!value["CreateTime"].isNull())
-		createTime_ = value["CreateTime"].asString();
 	if(!value["Status"].isNull())
 		status_ = value["Status"].asString();
-	if(!value["ServiceLocation"].isNull())
-		serviceLocation_ = value["ServiceLocation"].asString();
-	if(!value["AliUid"].isNull())
-		aliUid_ = std::stol(value["AliUid"].asString());
-	if(!value["Bid"].isNull())
-		bid_ = value["Bid"].asString();
+	if(!value["Description"].isNull())
+		description_ = value["Description"].asString();
+	if(!value["InstanceChargeType"].isNull())
+		instanceChargeType_ = value["InstanceChargeType"].asString();
+	if(!value["CreateTime"].isNull())
+		createTime_ = value["CreateTime"].asString();
 	if(!value["BusinessStatus"].isNull())
 		businessStatus_ = value["BusinessStatus"].asString();
+	if(!value["InternetChargeType"].isNull())
+		internetChargeType_ = value["InternetChargeType"].asString();
+	if(!value["Name"].isNull())
+		name_ = value["Name"].asString();
+	if(!value["AnycastId"].isNull())
+		anycastId_ = value["AnycastId"].asString();
+	if(!value["ServiceLocation"].isNull())
+		serviceLocation_ = value["ServiceLocation"].asString();
+	if(!value["Bandwidth"].isNull())
+		bandwidth_ = std::stoi(value["Bandwidth"].asString());
+	if(!value["IpAddress"].isNull())
+		ipAddress_ = value["IpAddress"].asString();
+	if(!value["Bid"].isNull())
+		bid_ = value["Bid"].asString();
+	if(!value["AliUid"].isNull())
+		aliUid_ = std::stol(value["AliUid"].asString());
 
 }
 
@@ -112,14 +126,14 @@ std::string DescribeAnycastEipAddressResult::getBusinessStatus()const
 	return businessStatus_;
 }
 
-std::string DescribeAnycastEipAddressResult::getName()const
-{
-	return name_;
-}
-
 std::string DescribeAnycastEipAddressResult::getInternetChargeType()const
 {
 	return internetChargeType_;
+}
+
+std::string DescribeAnycastEipAddressResult::getName()const
+{
+	return name_;
 }
 
 std::string DescribeAnycastEipAddressResult::getAnycastId()const

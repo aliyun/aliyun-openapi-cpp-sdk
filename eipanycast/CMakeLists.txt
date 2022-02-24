@@ -40,7 +40,9 @@ set(eipanycast_public_header_model
 	include/alibabacloud/eipanycast/model/ReleaseAnycastEipAddressRequest.h
 	include/alibabacloud/eipanycast/model/ReleaseAnycastEipAddressResult.h
 	include/alibabacloud/eipanycast/model/UnassociateAnycastEipAddressRequest.h
-	include/alibabacloud/eipanycast/model/UnassociateAnycastEipAddressResult.h )
+	include/alibabacloud/eipanycast/model/UnassociateAnycastEipAddressResult.h
+	include/alibabacloud/eipanycast/model/UpdateAnycastEipAddressAssociationsRequest.h
+	include/alibabacloud/eipanycast/model/UpdateAnycastEipAddressAssociationsResult.h )
 
 set(eipanycast_src 
 	src/EipanycastClient.cc
@@ -63,7 +65,9 @@ set(eipanycast_src
 	src/model/ReleaseAnycastEipAddressRequest.cc
 	src/model/ReleaseAnycastEipAddressResult.cc
 	src/model/UnassociateAnycastEipAddressRequest.cc
-	src/model/UnassociateAnycastEipAddressResult.cc )
+	src/model/UnassociateAnycastEipAddressResult.cc
+	src/model/UpdateAnycastEipAddressAssociationsRequest.cc
+	src/model/UpdateAnycastEipAddressAssociationsResult.cc )
 
 add_library(eipanycast ${LIB_TYPE}
 	${eipanycast_public_header}

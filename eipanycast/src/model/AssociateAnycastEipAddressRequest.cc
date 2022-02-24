@@ -38,6 +38,17 @@ void AssociateAnycastEipAddressRequest::setDryRun(bool dryRun)
 	setParameter("DryRun", dryRun ? "true" : "false");
 }
 
+std::string AssociateAnycastEipAddressRequest::getAssociationMode()const
+{
+	return associationMode_;
+}
+
+void AssociateAnycastEipAddressRequest::setAssociationMode(const std::string& associationMode)
+{
+	associationMode_ = associationMode;
+	setParameter("AssociationMode", associationMode);
+}
+
 std::string AssociateAnycastEipAddressRequest::getClientToken()const
 {
 	return clientToken_;
@@ -47,6 +58,17 @@ void AssociateAnycastEipAddressRequest::setClientToken(const std::string& client
 {
 	clientToken_ = clientToken;
 	setParameter("ClientToken", clientToken);
+}
+
+Array AssociateAnycastEipAddressRequest::getPopLocations()const
+{
+	return popLocations_;
+}
+
+void AssociateAnycastEipAddressRequest::setPopLocations(const Array& popLocations)
+{
+	popLocations_ = popLocations;
+	setParameter("PopLocations", std::to_string(popLocations));
 }
 
 std::string AssociateAnycastEipAddressRequest::getBindInstanceType()const
@@ -69,6 +91,17 @@ void AssociateAnycastEipAddressRequest::setBindInstanceRegionId(const std::strin
 {
 	bindInstanceRegionId_ = bindInstanceRegionId;
 	setParameter("BindInstanceRegionId", bindInstanceRegionId);
+}
+
+std::string AssociateAnycastEipAddressRequest::getPrivateIpAddress()const
+{
+	return privateIpAddress_;
+}
+
+void AssociateAnycastEipAddressRequest::setPrivateIpAddress(const std::string& privateIpAddress)
+{
+	privateIpAddress_ = privateIpAddress;
+	setParameter("PrivateIpAddress", privateIpAddress);
 }
 
 std::string AssociateAnycastEipAddressRequest::getRegionId()const

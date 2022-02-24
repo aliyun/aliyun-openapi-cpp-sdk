@@ -47,8 +47,8 @@ namespace AlibabaCloud
 					std::string createTime;
 					std::vector<Anycast::AnycastEipBindInfo> anycastEipBindInfoList;
 					std::string businessStatus;
-					std::string name;
 					std::string internetChargeType;
+					std::string name;
 					std::string anycastId;
 					std::string serviceLocation;
 					int bandwidth;

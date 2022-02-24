@@ -43,44 +43,44 @@ void ListAnycastEipAddressesResult::parse(const std::string &payload)
 	for (auto valueAnycastListAnycast : allAnycastListNode)
 	{
 		Anycast anycastListObject;
-		if(!valueAnycastListAnycast["AnycastId"].isNull())
-			anycastListObject.anycastId = valueAnycastListAnycast["AnycastId"].asString();
-		if(!valueAnycastListAnycast["IpAddress"].isNull())
-			anycastListObject.ipAddress = valueAnycastListAnycast["IpAddress"].asString();
-		if(!valueAnycastListAnycast["Name"].isNull())
-			anycastListObject.name = valueAnycastListAnycast["Name"].asString();
-		if(!valueAnycastListAnycast["Description"].isNull())
-			anycastListObject.description = valueAnycastListAnycast["Description"].asString();
-		if(!valueAnycastListAnycast["Bandwidth"].isNull())
-			anycastListObject.bandwidth = std::stoi(valueAnycastListAnycast["Bandwidth"].asString());
-		if(!valueAnycastListAnycast["InstanceChargeType"].isNull())
-			anycastListObject.instanceChargeType = valueAnycastListAnycast["InstanceChargeType"].asString();
-		if(!valueAnycastListAnycast["InternetChargeType"].isNull())
-			anycastListObject.internetChargeType = valueAnycastListAnycast["InternetChargeType"].asString();
-		if(!valueAnycastListAnycast["CreateTime"].isNull())
-			anycastListObject.createTime = valueAnycastListAnycast["CreateTime"].asString();
 		if(!valueAnycastListAnycast["Status"].isNull())
 			anycastListObject.status = valueAnycastListAnycast["Status"].asString();
-		if(!valueAnycastListAnycast["ServiceLocation"].isNull())
-			anycastListObject.serviceLocation = valueAnycastListAnycast["ServiceLocation"].asString();
+		if(!valueAnycastListAnycast["CreateTime"].isNull())
+			anycastListObject.createTime = valueAnycastListAnycast["CreateTime"].asString();
+		if(!valueAnycastListAnycast["AnycastId"].isNull())
+			anycastListObject.anycastId = valueAnycastListAnycast["AnycastId"].asString();
 		if(!valueAnycastListAnycast["AliUid"].isNull())
 			anycastListObject.aliUid = std::stol(valueAnycastListAnycast["AliUid"].asString());
 		if(!valueAnycastListAnycast["Bid"].isNull())
 			anycastListObject.bid = valueAnycastListAnycast["Bid"].asString();
+		if(!valueAnycastListAnycast["ServiceLocation"].isNull())
+			anycastListObject.serviceLocation = valueAnycastListAnycast["ServiceLocation"].asString();
+		if(!valueAnycastListAnycast["InstanceChargeType"].isNull())
+			anycastListObject.instanceChargeType = valueAnycastListAnycast["InstanceChargeType"].asString();
+		if(!valueAnycastListAnycast["IpAddress"].isNull())
+			anycastListObject.ipAddress = valueAnycastListAnycast["IpAddress"].asString();
+		if(!valueAnycastListAnycast["Bandwidth"].isNull())
+			anycastListObject.bandwidth = std::stoi(valueAnycastListAnycast["Bandwidth"].asString());
+		if(!valueAnycastListAnycast["Description"].isNull())
+			anycastListObject.description = valueAnycastListAnycast["Description"].asString();
+		if(!valueAnycastListAnycast["InternetChargeType"].isNull())
+			anycastListObject.internetChargeType = valueAnycastListAnycast["InternetChargeType"].asString();
 		if(!valueAnycastListAnycast["BusinessStatus"].isNull())
 			anycastListObject.businessStatus = valueAnycastListAnycast["BusinessStatus"].asString();
+		if(!valueAnycastListAnycast["Name"].isNull())
+			anycastListObject.name = valueAnycastListAnycast["Name"].asString();
 		auto allAnycastEipBindInfoListNode = valueAnycastListAnycast["AnycastEipBindInfoList"]["AnycastEipBindInfo"];
 		for (auto valueAnycastListAnycastAnycastEipBindInfoListAnycastEipBindInfo : allAnycastEipBindInfoListNode)
 		{
 			Anycast::AnycastEipBindInfo anycastEipBindInfoListObject;
-			if(!valueAnycastListAnycastAnycastEipBindInfoListAnycastEipBindInfo["BindInstanceId"].isNull())
-				anycastEipBindInfoListObject.bindInstanceId = valueAnycastListAnycastAnycastEipBindInfoListAnycastEipBindInfo["BindInstanceId"].asString();
 			if(!valueAnycastListAnycastAnycastEipBindInfoListAnycastEipBindInfo["BindInstanceType"].isNull())
 				anycastEipBindInfoListObject.bindInstanceType = valueAnycastListAnycastAnycastEipBindInfoListAnycastEipBindInfo["BindInstanceType"].asString();
 			if(!valueAnycastListAnycastAnycastEipBindInfoListAnycastEipBindInfo["BindTime"].isNull())
 				anycastEipBindInfoListObject.bindTime = valueAnycastListAnycastAnycastEipBindInfoListAnycastEipBindInfo["BindTime"].asString();
 			if(!valueAnycastListAnycastAnycastEipBindInfoListAnycastEipBindInfo["BindInstanceRegionId"].isNull())
 				anycastEipBindInfoListObject.bindInstanceRegionId = valueAnycastListAnycastAnycastEipBindInfoListAnycastEipBindInfo["BindInstanceRegionId"].asString();
+			if(!valueAnycastListAnycastAnycastEipBindInfoListAnycastEipBindInfo["BindInstanceId"].isNull())
+				anycastEipBindInfoListObject.bindInstanceId = valueAnycastListAnycastAnycastEipBindInfoListAnycastEipBindInfo["BindInstanceId"].asString();
 			anycastListObject.anycastEipBindInfoList.push_back(anycastEipBindInfoListObject);
 		}
 		anycastList_.push_back(anycastListObject);

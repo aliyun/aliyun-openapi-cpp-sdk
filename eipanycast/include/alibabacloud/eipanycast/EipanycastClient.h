@@ -42,6 +42,8 @@
 #include "model/ReleaseAnycastEipAddressResult.h"
 #include "model/UnassociateAnycastEipAddressRequest.h"
 #include "model/UnassociateAnycastEipAddressResult.h"
+#include "model/UpdateAnycastEipAddressAssociationsRequest.h"
+#include "model/UpdateAnycastEipAddressAssociationsResult.h"
 
 
 namespace AlibabaCloud
@@ -81,6 +83,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UnassociateAnycastEipAddressResult> UnassociateAnycastEipAddressOutcome;
 			typedef std::future<UnassociateAnycastEipAddressOutcome> UnassociateAnycastEipAddressOutcomeCallable;
 			typedef std::function<void(const EipanycastClient*, const Model::UnassociateAnycastEipAddressRequest&, const UnassociateAnycastEipAddressOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnassociateAnycastEipAddressAsyncHandler;
+			typedef Outcome<Error, Model::UpdateAnycastEipAddressAssociationsResult> UpdateAnycastEipAddressAssociationsOutcome;
+			typedef std::future<UpdateAnycastEipAddressAssociationsOutcome> UpdateAnycastEipAddressAssociationsOutcomeCallable;
+			typedef std::function<void(const EipanycastClient*, const Model::UpdateAnycastEipAddressAssociationsRequest&, const UpdateAnycastEipAddressAssociationsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAnycastEipAddressAssociationsAsyncHandler;
 
 			EipanycastClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			EipanycastClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
@@ -116,6 +121,9 @@ namespace AlibabaCloud
 			UnassociateAnycastEipAddressOutcome unassociateAnycastEipAddress(const Model::UnassociateAnycastEipAddressRequest &request)const;
 			void unassociateAnycastEipAddressAsync(const Model::UnassociateAnycastEipAddressRequest& request, const UnassociateAnycastEipAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UnassociateAnycastEipAddressOutcomeCallable unassociateAnycastEipAddressCallable(const Model::UnassociateAnycastEipAddressRequest& request) const;
+			UpdateAnycastEipAddressAssociationsOutcome updateAnycastEipAddressAssociations(const Model::UpdateAnycastEipAddressAssociationsRequest &request)const;
+			void updateAnycastEipAddressAssociationsAsync(const Model::UpdateAnycastEipAddressAssociationsRequest& request, const UpdateAnycastEipAddressAssociationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateAnycastEipAddressAssociationsOutcomeCallable updateAnycastEipAddressAssociationsCallable(const Model::UpdateAnycastEipAddressAssociationsRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

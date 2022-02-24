@@ -35,16 +35,18 @@ namespace AlibabaCloud
 				ListAnycastEipAddressesRequest();
 				~ListAnycastEipAddressesRequest();
 
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::string getNextToken()const;
+				void setNextToken(const std::string& nextToken);
+				std::string getInstanceChargeType()const;
+				void setInstanceChargeType(const std::string& instanceChargeType);
 				std::string getBusinessStatus()const;
 				void setBusinessStatus(const std::string& businessStatus);
 				std::string getServiceLocation()const;
 				void setServiceLocation(const std::string& serviceLocation);
 				std::string getAnycastEipAddress()const;
 				void setAnycastEipAddress(const std::string& anycastEipAddress);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getNextToken()const;
-				void setNextToken(const std::string& nextToken);
 				std::string getInternetChargeType()const;
 				void setInternetChargeType(const std::string& internetChargeType);
 				std::string getAnycastId()const;
@@ -55,23 +57,21 @@ namespace AlibabaCloud
 				void setBindInstanceIds(const std::vector<std::string>& bindInstanceIds);
 				int getMaxResults()const;
 				void setMaxResults(int maxResults);
-				std::string getInstanceChargeType()const;
-				void setInstanceChargeType(const std::string& instanceChargeType);
 				std::string getStatus()const;
 				void setStatus(const std::string& status);
 
             private:
+				std::string regionId_;
+				std::string nextToken_;
+				std::string instanceChargeType_;
 				std::string businessStatus_;
 				std::string serviceLocation_;
 				std::string anycastEipAddress_;
-				std::string regionId_;
-				std::string nextToken_;
 				std::string internetChargeType_;
 				std::string anycastId_;
 				std::string name_;
 				std::vector<std::string> bindInstanceIds_;
 				int maxResults_;
-				std::string instanceChargeType_;
 				std::string status_;
 
 			};

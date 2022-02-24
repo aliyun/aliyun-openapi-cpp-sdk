@@ -43,6 +43,8 @@ namespace AlibabaCloud
 				void setBindInstanceType(const std::string& bindInstanceType);
 				std::string getBindInstanceRegionId()const;
 				void setBindInstanceRegionId(const std::string& bindInstanceRegionId);
+				std::string getPrivateIpAddress()const;
+				void setPrivateIpAddress(const std::string& privateIpAddress);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				std::string getAnycastId()const;
@@ -55,6 +57,7 @@ namespace AlibabaCloud
 				std::string clientToken_;
 				std::string bindInstanceType_;
 				std::string bindInstanceRegionId_;
+				std::string privateIpAddress_;
 				std::string regionId_;
 				std::string anycastId_;
 				std::string bindInstanceId_;

@@ -411,3 +411,39 @@ EipanycastClient::UnassociateAnycastEipAddressOutcomeCallable EipanycastClient::
 	return task->get_future();
 }
 
+EipanycastClient::UpdateAnycastEipAddressAssociationsOutcome EipanycastClient::updateAnycastEipAddressAssociations(const UpdateAnycastEipAddressAssociationsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateAnycastEipAddressAssociationsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateAnycastEipAddressAssociationsOutcome(UpdateAnycastEipAddressAssociationsResult(outcome.result()));
+	else
+		return UpdateAnycastEipAddressAssociationsOutcome(outcome.error());
+}
+
+void EipanycastClient::updateAnycastEipAddressAssociationsAsync(const UpdateAnycastEipAddressAssociationsRequest& request, const UpdateAnycastEipAddressAssociationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateAnycastEipAddressAssociations(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EipanycastClient::UpdateAnycastEipAddressAssociationsOutcomeCallable EipanycastClient::updateAnycastEipAddressAssociationsCallable(const UpdateAnycastEipAddressAssociationsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateAnycastEipAddressAssociationsOutcome()>>(
+			[this, request]()
+			{
+			return this->updateAnycastEipAddressAssociations(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+

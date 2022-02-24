@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_EIPANYCAST_MODEL_ASSOCIATEANYCASTEIPADDRESSREQUEST_H_
-#define ALIBABACLOUD_EIPANYCAST_MODEL_ASSOCIATEANYCASTEIPADDRESSREQUEST_H_
+#ifndef ALIBABACLOUD_EIPANYCAST_MODEL_UPDATEANYCASTEIPADDRESSASSOCIATIONSREQUEST_H_
+#define ALIBABACLOUD_EIPANYCAST_MODEL_UPDATEANYCASTEIPADDRESSASSOCIATIONSREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,12 +28,12 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_EIPANYCAST_EXPORT AssociateAnycastEipAddressRequest : public RpcServiceRequest
+			class ALIBABACLOUD_EIPANYCAST_EXPORT UpdateAnycastEipAddressAssociationsRequest : public RpcServiceRequest
 			{
 
 			public:
-				AssociateAnycastEipAddressRequest();
-				~AssociateAnycastEipAddressRequest();
+				UpdateAnycastEipAddressAssociationsRequest();
+				~UpdateAnycastEipAddressAssociationsRequest();
 
 				bool getDryRun()const;
 				void setDryRun(bool dryRun);
@@ -41,18 +41,14 @@ namespace AlibabaCloud
 				void setAssociationMode(const std::string& associationMode);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
-				Array getPopLocations()const;
-				void setPopLocations(const Array& popLocations);
-				std::string getBindInstanceType()const;
-				void setBindInstanceType(const std::string& bindInstanceType);
-				std::string getBindInstanceRegionId()const;
-				void setBindInstanceRegionId(const std::string& bindInstanceRegionId);
-				std::string getPrivateIpAddress()const;
-				void setPrivateIpAddress(const std::string& privateIpAddress);
+				Array getPopLocationDeleteList()const;
+				void setPopLocationDeleteList(const Array& popLocationDeleteList);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				std::string getAnycastId()const;
 				void setAnycastId(const std::string& anycastId);
+				Array getPopLocationAddList()const;
+				void setPopLocationAddList(const Array& popLocationAddList);
 				std::string getBindInstanceId()const;
 				void setBindInstanceId(const std::string& bindInstanceId);
 
@@ -60,16 +56,14 @@ namespace AlibabaCloud
 				bool dryRun_;
 				std::string associationMode_;
 				std::string clientToken_;
-				Array popLocations_;
-				std::string bindInstanceType_;
-				std::string bindInstanceRegionId_;
-				std::string privateIpAddress_;
+				Array popLocationDeleteList_;
 				std::string regionId_;
 				std::string anycastId_;
+				Array popLocationAddList_;
 				std::string bindInstanceId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_EIPANYCAST_MODEL_ASSOCIATEANYCASTEIPADDRESSREQUEST_H_
+#endif // !ALIBABACLOUD_EIPANYCAST_MODEL_UPDATEANYCASTEIPADDRESSASSOCIATIONSREQUEST_H_

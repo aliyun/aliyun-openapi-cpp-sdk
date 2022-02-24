@@ -71,6 +71,17 @@ void UnassociateAnycastEipAddressRequest::setBindInstanceRegionId(const std::str
 	setParameter("BindInstanceRegionId", bindInstanceRegionId);
 }
 
+std::string UnassociateAnycastEipAddressRequest::getPrivateIpAddress()const
+{
+	return privateIpAddress_;
+}
+
+void UnassociateAnycastEipAddressRequest::setPrivateIpAddress(const std::string& privateIpAddress)
+{
+	privateIpAddress_ = privateIpAddress;
+	setParameter("PrivateIpAddress", privateIpAddress);
+}
+
 std::string UnassociateAnycastEipAddressRequest::getRegionId()const
 {
 	return regionId_;
