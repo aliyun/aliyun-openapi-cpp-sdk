@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_OCR_MODEL_RECOGNIZEVIDEOCHARACTERREQUEST_H_
-#define ALIBABACLOUD_OCR_MODEL_RECOGNIZEVIDEOCHARACTERREQUEST_H_
+#ifndef ALIBABACLOUD_OCR_MODEL_RECOGNIZEVIDEOCASTCREWLISTRESULT_H_
+#define ALIBABACLOUD_OCR_MODEL_RECOGNIZEVIDEOCASTCREWLISTRESULT_H_
 
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
+#include <utility>
+#include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/ocr/OcrExport.h>
 
 namespace AlibabaCloud
@@ -28,24 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_OCR_EXPORT RecognizeVideoCharacterRequest : public RpcServiceRequest
+			class ALIBABACLOUD_OCR_EXPORT RecognizeVideoCastCrewListResult : public ServiceResult
 			{
-
 			public:
-				RecognizeVideoCharacterRequest();
-				~RecognizeVideoCharacterRequest();
 
-				bool getAsync()const;
-				void setAsync(bool async);
-				std::string getVideoURL()const;
-				void setVideoURL(const std::string& videoURL);
 
-            private:
-				bool async_;
-				std::string videoURL_;
+				RecognizeVideoCastCrewListResult();
+				explicit RecognizeVideoCastCrewListResult(const std::string &payload);
+				~RecognizeVideoCastCrewListResult();
+
+			protected:
+				void parse(const std::string &payload);
+			private:
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_OCR_MODEL_RECOGNIZEVIDEOCHARACTERREQUEST_H_
+#endif // !ALIBABACLOUD_OCR_MODEL_RECOGNIZEVIDEOCASTCREWLISTRESULT_H_

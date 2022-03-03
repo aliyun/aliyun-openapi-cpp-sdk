@@ -74,6 +74,8 @@
 #include "model/RecognizeVINCodeResult.h"
 #include "model/RecognizeVerificationcodeRequest.h"
 #include "model/RecognizeVerificationcodeResult.h"
+#include "model/RecognizeVideoCastCrewListRequest.h"
+#include "model/RecognizeVideoCastCrewListResult.h"
 #include "model/RecognizeVideoCharacterRequest.h"
 #include "model/RecognizeVideoCharacterResult.h"
 #include "model/TrimDocumentRequest.h"
@@ -165,6 +167,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RecognizeVerificationcodeResult> RecognizeVerificationcodeOutcome;
 			typedef std::future<RecognizeVerificationcodeOutcome> RecognizeVerificationcodeOutcomeCallable;
 			typedef std::function<void(const OcrClient*, const Model::RecognizeVerificationcodeRequest&, const RecognizeVerificationcodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeVerificationcodeAsyncHandler;
+			typedef Outcome<Error, Model::RecognizeVideoCastCrewListResult> RecognizeVideoCastCrewListOutcome;
+			typedef std::future<RecognizeVideoCastCrewListOutcome> RecognizeVideoCastCrewListOutcomeCallable;
+			typedef std::function<void(const OcrClient*, const Model::RecognizeVideoCastCrewListRequest&, const RecognizeVideoCastCrewListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeVideoCastCrewListAsyncHandler;
 			typedef Outcome<Error, Model::RecognizeVideoCharacterResult> RecognizeVideoCharacterOutcome;
 			typedef std::future<RecognizeVideoCharacterOutcome> RecognizeVideoCharacterOutcomeCallable;
 			typedef std::function<void(const OcrClient*, const Model::RecognizeVideoCharacterRequest&, const RecognizeVideoCharacterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeVideoCharacterAsyncHandler;
@@ -254,6 +259,9 @@ namespace AlibabaCloud
 			RecognizeVerificationcodeOutcome recognizeVerificationcode(const Model::RecognizeVerificationcodeRequest &request)const;
 			void recognizeVerificationcodeAsync(const Model::RecognizeVerificationcodeRequest& request, const RecognizeVerificationcodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RecognizeVerificationcodeOutcomeCallable recognizeVerificationcodeCallable(const Model::RecognizeVerificationcodeRequest& request) const;
+			RecognizeVideoCastCrewListOutcome recognizeVideoCastCrewList(const Model::RecognizeVideoCastCrewListRequest &request)const;
+			void recognizeVideoCastCrewListAsync(const Model::RecognizeVideoCastCrewListRequest& request, const RecognizeVideoCastCrewListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RecognizeVideoCastCrewListOutcomeCallable recognizeVideoCastCrewListCallable(const Model::RecognizeVideoCastCrewListRequest& request) const;
 			RecognizeVideoCharacterOutcome recognizeVideoCharacter(const Model::RecognizeVideoCharacterRequest &request)const;
 			void recognizeVideoCharacterAsync(const Model::RecognizeVideoCharacterRequest& request, const RecognizeVideoCharacterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RecognizeVideoCharacterOutcomeCallable recognizeVideoCharacterCallable(const Model::RecognizeVideoCharacterRequest& request) const;

@@ -27,6 +27,28 @@ RecognizeQrCodeRequest::RecognizeQrCodeRequest() :
 RecognizeQrCodeRequest::~RecognizeQrCodeRequest()
 {}
 
+bool RecognizeQrCodeRequest::getFormatResultToJson()const
+{
+	return formatResultToJson_;
+}
+
+void RecognizeQrCodeRequest::setFormatResultToJson(bool formatResultToJson)
+{
+	formatResultToJson_ = formatResultToJson;
+	setParameter("FormatResultToJson", formatResultToJson ? "true" : "false");
+}
+
+std::string RecognizeQrCodeRequest::getOssFile()const
+{
+	return ossFile_;
+}
+
+void RecognizeQrCodeRequest::setOssFile(const std::string& ossFile)
+{
+	ossFile_ = ossFile;
+	setParameter("OssFile", ossFile);
+}
+
 std::vector<RecognizeQrCodeRequest::Tasks> RecognizeQrCodeRequest::getTasks()const
 {
 	return tasks_;
@@ -40,5 +62,16 @@ void RecognizeQrCodeRequest::setTasks(const std::vector<Tasks>& tasks)
 		std::string tasksObjStr = "Tasks." + std::to_string(dep1 + 1);
 		setParameter(tasksObjStr + ".ImageURL", tasksObj.imageURL);
 	}
+}
+
+std::string RecognizeQrCodeRequest::getRequestProxyBy()const
+{
+	return requestProxyBy_;
+}
+
+void RecognizeQrCodeRequest::setRequestProxyBy(const std::string& requestProxyBy)
+{
+	requestProxyBy_ = requestProxyBy;
+	setParameter("RequestProxyBy", requestProxyBy);
 }
 

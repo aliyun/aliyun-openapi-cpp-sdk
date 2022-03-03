@@ -27,39 +27,6 @@ RecognizeVideoCharacterRequest::RecognizeVideoCharacterRequest() :
 RecognizeVideoCharacterRequest::~RecognizeVideoCharacterRequest()
 {}
 
-bool RecognizeVideoCharacterRequest::getFormatResultToJson()const
-{
-	return formatResultToJson_;
-}
-
-void RecognizeVideoCharacterRequest::setFormatResultToJson(bool formatResultToJson)
-{
-	formatResultToJson_ = formatResultToJson;
-	setParameter("FormatResultToJson", formatResultToJson ? "true" : "false");
-}
-
-std::string RecognizeVideoCharacterRequest::getOssFile()const
-{
-	return ossFile_;
-}
-
-void RecognizeVideoCharacterRequest::setOssFile(const std::string& ossFile)
-{
-	ossFile_ = ossFile;
-	setParameter("OssFile", ossFile);
-}
-
-std::string RecognizeVideoCharacterRequest::getRequestProxyBy()const
-{
-	return requestProxyBy_;
-}
-
-void RecognizeVideoCharacterRequest::setRequestProxyBy(const std::string& requestProxyBy)
-{
-	requestProxyBy_ = requestProxyBy;
-	setParameter("RequestProxyBy", requestProxyBy);
-}
-
 bool RecognizeVideoCharacterRequest::getAsync()const
 {
 	return async_;
