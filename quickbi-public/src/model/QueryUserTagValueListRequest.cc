@@ -19,7 +19,7 @@
 using AlibabaCloud::Quickbi_public::Model::QueryUserTagValueListRequest;
 
 QueryUserTagValueListRequest::QueryUserTagValueListRequest() :
-	RpcServiceRequest("quickbi-public", "2020-08-02", "QueryUserTagValueList")
+	RpcServiceRequest("quickbi-public", "2022-01-01", "QueryUserTagValueList")
 {
 	setMethod(HttpRequest::Method::Get);
 }

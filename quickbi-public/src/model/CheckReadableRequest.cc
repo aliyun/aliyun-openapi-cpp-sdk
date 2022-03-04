@@ -19,7 +19,7 @@
 using AlibabaCloud::Quickbi_public::Model::CheckReadableRequest;
 
 CheckReadableRequest::CheckReadableRequest() :
-	RpcServiceRequest("quickbi-public", "2020-08-07", "CheckReadable")
+	RpcServiceRequest("quickbi-public", "2022-01-01", "CheckReadable")
 {
 	setMethod(HttpRequest::Method::Post);
 }

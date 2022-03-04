@@ -37,29 +37,29 @@ namespace AlibabaCloud
 
 				std::string getAccessPoint()const;
 				void setAccessPoint(const std::string& accessPoint);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 				std::string getSignType()const;
 				void setSignType(const std::string& signType);
+				int getPageNum()const;
+				void setPageNum(int pageNum);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 				std::string getDirectoryId()const;
 				void setDirectoryId(const std::string& directoryId);
 				bool getWithChildren()const;
 				void setWithChildren(bool withChildren);
 				std::string getKeyword()const;
 				void setKeyword(const std::string& keyword);
-				int getPageNum()const;
-				void setPageNum(int pageNum);
 				std::string getWorkspaceId()const;
 				void setWorkspaceId(const std::string& workspaceId);
 
             private:
 				std::string accessPoint_;
-				int pageSize_;
 				std::string signType_;
+				int pageNum_;
+				int pageSize_;
 				std::string directoryId_;
 				bool withChildren_;
 				std::string keyword_;
-				int pageNum_;
 				std::string workspaceId_;
 
 			};

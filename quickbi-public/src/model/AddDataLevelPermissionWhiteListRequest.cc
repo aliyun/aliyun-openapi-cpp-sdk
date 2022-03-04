@@ -19,7 +19,7 @@
 using AlibabaCloud::Quickbi_public::Model::AddDataLevelPermissionWhiteListRequest;
 
 AddDataLevelPermissionWhiteListRequest::AddDataLevelPermissionWhiteListRequest() :
-	RpcServiceRequest("quickbi-public", "2020-11-11", "AddDataLevelPermissionWhiteList")
+	RpcServiceRequest("quickbi-public", "2022-01-01", "AddDataLevelPermissionWhiteList")
 {
 	setMethod(HttpRequest::Method::Post);
 }

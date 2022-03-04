@@ -19,7 +19,7 @@
 using AlibabaCloud::Quickbi_public::Model::SaveFavoritesRequest;
 
 SaveFavoritesRequest::SaveFavoritesRequest() :
-	RpcServiceRequest("quickbi-public", "2020-08-09", "SaveFavorites")
+	RpcServiceRequest("quickbi-public", "2022-01-01", "SaveFavorites")
 {
 	setMethod(HttpRequest::Method::Post);
 }

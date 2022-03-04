@@ -19,7 +19,7 @@
 using AlibabaCloud::Quickbi_public::Model::ResultCallbackRequest;
 
 ResultCallbackRequest::ResultCallbackRequest() :
-	RpcServiceRequest("quickbi-public", "2020-08-04", "ResultCallback")
+	RpcServiceRequest("quickbi-public", "2022-01-01", "ResultCallback")
 {
 	setMethod(HttpRequest::Method::Post);
 }

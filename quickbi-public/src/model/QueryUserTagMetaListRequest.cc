@@ -19,7 +19,7 @@
 using AlibabaCloud::Quickbi_public::Model::QueryUserTagMetaListRequest;
 
 QueryUserTagMetaListRequest::QueryUserTagMetaListRequest() :
-	RpcServiceRequest("quickbi-public", "2020-08-02", "QueryUserTagMetaList")
+	RpcServiceRequest("quickbi-public", "2022-01-01", "QueryUserTagMetaList")
 {
 	setMethod(HttpRequest::Method::Get);
 }

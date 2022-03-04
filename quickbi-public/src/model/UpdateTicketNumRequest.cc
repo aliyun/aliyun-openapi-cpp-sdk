@@ -19,7 +19,7 @@
 using AlibabaCloud::Quickbi_public::Model::UpdateTicketNumRequest;
 
 UpdateTicketNumRequest::UpdateTicketNumRequest() :
-	RpcServiceRequest("quickbi-public", "2021-03-25", "UpdateTicketNum")
+	RpcServiceRequest("quickbi-public", "2022-01-01", "UpdateTicketNum")
 {
 	setMethod(HttpRequest::Method::Post);
 }

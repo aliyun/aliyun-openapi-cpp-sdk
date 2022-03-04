@@ -19,7 +19,7 @@
 using AlibabaCloud::Quickbi_public::Model::AddDataLevelPermissionRuleUsersRequest;
 
 AddDataLevelPermissionRuleUsersRequest::AddDataLevelPermissionRuleUsersRequest() :
-	RpcServiceRequest("quickbi-public", "2020-11-11", "AddDataLevelPermissionRuleUsers")
+	RpcServiceRequest("quickbi-public", "2022-01-01", "AddDataLevelPermissionRuleUsers")
 {
 	setMethod(HttpRequest::Method::Post);
 }

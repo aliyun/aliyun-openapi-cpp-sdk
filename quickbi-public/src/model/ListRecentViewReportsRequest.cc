@@ -19,35 +19,13 @@
 using AlibabaCloud::Quickbi_public::Model::ListRecentViewReportsRequest;
 
 ListRecentViewReportsRequest::ListRecentViewReportsRequest() :
-	RpcServiceRequest("quickbi-public", "2020-08-09", "ListRecentViewReports")
+	RpcServiceRequest("quickbi-public", "2022-01-01", "ListRecentViewReports")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
 ListRecentViewReportsRequest::~ListRecentViewReportsRequest()
 {}
-
-std::string ListRecentViewReportsRequest::getQueryMode()const
-{
-	return queryMode_;
-}
-
-void ListRecentViewReportsRequest::setQueryMode(const std::string& queryMode)
-{
-	queryMode_ = queryMode;
-	setParameter("QueryMode", queryMode);
-}
-
-std::string ListRecentViewReportsRequest::getTreeType()const
-{
-	return treeType_;
-}
-
-void ListRecentViewReportsRequest::setTreeType(const std::string& treeType)
-{
-	treeType_ = treeType;
-	setParameter("TreeType", treeType);
-}
 
 std::string ListRecentViewReportsRequest::getAccessPoint()const
 {
@@ -58,17 +36,6 @@ void ListRecentViewReportsRequest::setAccessPoint(const std::string& accessPoint
 {
 	accessPoint_ = accessPoint;
 	setParameter("AccessPoint", accessPoint);
-}
-
-int ListRecentViewReportsRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void ListRecentViewReportsRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListRecentViewReportsRequest::getSignType()const
@@ -93,17 +60,6 @@ void ListRecentViewReportsRequest::setOffsetDay(int offsetDay)
 	setParameter("OffsetDay", std::to_string(offsetDay));
 }
 
-std::string ListRecentViewReportsRequest::getKeyword()const
-{
-	return keyword_;
-}
-
-void ListRecentViewReportsRequest::setKeyword(const std::string& keyword)
-{
-	keyword_ = keyword;
-	setParameter("Keyword", keyword);
-}
-
 std::string ListRecentViewReportsRequest::getUserId()const
 {
 	return userId_;
@@ -113,5 +69,49 @@ void ListRecentViewReportsRequest::setUserId(const std::string& userId)
 {
 	userId_ = userId;
 	setParameter("UserId", userId);
+}
+
+std::string ListRecentViewReportsRequest::getQueryMode()const
+{
+	return queryMode_;
+}
+
+void ListRecentViewReportsRequest::setQueryMode(const std::string& queryMode)
+{
+	queryMode_ = queryMode;
+	setParameter("QueryMode", queryMode);
+}
+
+std::string ListRecentViewReportsRequest::getTreeType()const
+{
+	return treeType_;
+}
+
+void ListRecentViewReportsRequest::setTreeType(const std::string& treeType)
+{
+	treeType_ = treeType;
+	setParameter("TreeType", treeType);
+}
+
+int ListRecentViewReportsRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void ListRecentViewReportsRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string ListRecentViewReportsRequest::getKeyword()const
+{
+	return keyword_;
+}
+
+void ListRecentViewReportsRequest::setKeyword(const std::string& keyword)
+{
+	keyword_ = keyword;
+	setParameter("Keyword", keyword);
 }
 

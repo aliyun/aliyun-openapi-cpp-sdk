@@ -36,8 +36,8 @@ namespace AlibabaCloud
 				{
 					std::string failureDetail;
 					int total;
-					int success;
 					int failure;
+					int success;
 				};
 
 

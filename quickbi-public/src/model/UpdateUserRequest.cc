@@ -19,7 +19,7 @@
 using AlibabaCloud::Quickbi_public::Model::UpdateUserRequest;
 
 UpdateUserRequest::UpdateUserRequest() :
-	RpcServiceRequest("quickbi-public", "2020-08-01", "UpdateUser")
+	RpcServiceRequest("quickbi-public", "2022-01-01", "UpdateUser")
 {
 	setMethod(HttpRequest::Method::Post);
 }

@@ -19,7 +19,7 @@
 using AlibabaCloud::Quickbi_public::Model::QueryWorkspaceUserListRequest;
 
 QueryWorkspaceUserListRequest::QueryWorkspaceUserListRequest() :
-	RpcServiceRequest("quickbi-public", "2020-08-03", "QueryWorkspaceUserList")
+	RpcServiceRequest("quickbi-public", "2022-01-01", "QueryWorkspaceUserList")
 {
 	setMethod(HttpRequest::Method::Post);
 }

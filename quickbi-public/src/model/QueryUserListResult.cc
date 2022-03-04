@@ -40,36 +40,36 @@ void QueryUserListResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto resultNode = value["Result"];
+	if(!resultNode["TotalPages"].isNull())
+		result_.totalPages = std::stoi(resultNode["TotalPages"].asString());
 	if(!resultNode["PageNum"].isNull())
 		result_.pageNum = std::stoi(resultNode["PageNum"].asString());
 	if(!resultNode["PageSize"].isNull())
 		result_.pageSize = std::stoi(resultNode["PageSize"].asString());
 	if(!resultNode["TotalNum"].isNull())
 		result_.totalNum = std::stoi(resultNode["TotalNum"].asString());
-	if(!resultNode["TotalPages"].isNull())
-		result_.totalPages = std::stoi(resultNode["TotalPages"].asString());
 	auto allDataNode = resultNode["Data"]["DataItem"];
 	for (auto resultNodeDataDataItem : allDataNode)
 	{
 		Result::DataItem dataItemObject;
-		if(!resultNodeDataDataItem["AccountId"].isNull())
-			dataItemObject.accountId = resultNodeDataDataItem["AccountId"].asString();
-		if(!resultNodeDataDataItem["AccountName"].isNull())
-			dataItemObject.accountName = resultNodeDataDataItem["AccountName"].asString();
-		if(!resultNodeDataDataItem["AdminUser"].isNull())
-			dataItemObject.adminUser = resultNodeDataDataItem["AdminUser"].asString() == "true";
-		if(!resultNodeDataDataItem["AuthAdminUser"].isNull())
-			dataItemObject.authAdminUser = resultNodeDataDataItem["AuthAdminUser"].asString() == "true";
-		if(!resultNodeDataDataItem["Email"].isNull())
-			dataItemObject.email = resultNodeDataDataItem["Email"].asString();
-		if(!resultNodeDataDataItem["NickName"].isNull())
-			dataItemObject.nickName = resultNodeDataDataItem["NickName"].asString();
-		if(!resultNodeDataDataItem["Phone"].isNull())
-			dataItemObject.phone = resultNodeDataDataItem["Phone"].asString();
-		if(!resultNodeDataDataItem["UserId"].isNull())
-			dataItemObject.userId = resultNodeDataDataItem["UserId"].asString();
 		if(!resultNodeDataDataItem["UserType"].isNull())
 			dataItemObject.userType = std::stoi(resultNodeDataDataItem["UserType"].asString());
+		if(!resultNodeDataDataItem["Email"].isNull())
+			dataItemObject.email = resultNodeDataDataItem["Email"].asString();
+		if(!resultNodeDataDataItem["UserId"].isNull())
+			dataItemObject.userId = resultNodeDataDataItem["UserId"].asString();
+		if(!resultNodeDataDataItem["AuthAdminUser"].isNull())
+			dataItemObject.authAdminUser = resultNodeDataDataItem["AuthAdminUser"].asString() == "true";
+		if(!resultNodeDataDataItem["AccountId"].isNull())
+			dataItemObject.accountId = resultNodeDataDataItem["AccountId"].asString();
+		if(!resultNodeDataDataItem["NickName"].isNull())
+			dataItemObject.nickName = resultNodeDataDataItem["NickName"].asString();
+		if(!resultNodeDataDataItem["AdminUser"].isNull())
+			dataItemObject.adminUser = resultNodeDataDataItem["AdminUser"].asString() == "true";
+		if(!resultNodeDataDataItem["Phone"].isNull())
+			dataItemObject.phone = resultNodeDataDataItem["Phone"].asString();
+		if(!resultNodeDataDataItem["AccountName"].isNull())
+			dataItemObject.accountName = resultNodeDataDataItem["AccountName"].asString();
 		result_.data.push_back(dataItemObject);
 	}
 	if(!value["Success"].isNull())

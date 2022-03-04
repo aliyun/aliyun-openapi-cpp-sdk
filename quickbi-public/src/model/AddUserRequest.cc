@@ -19,7 +19,7 @@
 using AlibabaCloud::Quickbi_public::Model::AddUserRequest;
 
 AddUserRequest::AddUserRequest() :
-	RpcServiceRequest("quickbi-public", "2020-08-01", "AddUser")
+	RpcServiceRequest("quickbi-public", "2022-01-01", "AddUser")
 {
 	setMethod(HttpRequest::Method::Post);
 }

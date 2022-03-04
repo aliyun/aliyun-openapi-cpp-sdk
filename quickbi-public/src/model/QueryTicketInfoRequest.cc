@@ -19,7 +19,7 @@
 using AlibabaCloud::Quickbi_public::Model::QueryTicketInfoRequest;
 
 QueryTicketInfoRequest::QueryTicketInfoRequest() :
-	RpcServiceRequest("quickbi-public", "2021-03-25", "QueryTicketInfo")
+	RpcServiceRequest("quickbi-public", "2022-01-01", "QueryTicketInfo")
 {
 	setMethod(HttpRequest::Method::Post);
 }

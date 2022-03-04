@@ -19,7 +19,7 @@
 using AlibabaCloud::Quickbi_public::Model::QueryUserListRequest;
 
 QueryUserListRequest::QueryUserListRequest() :
-	RpcServiceRequest("quickbi-public", "2020-08-01", "QueryUserList")
+	RpcServiceRequest("quickbi-public", "2022-01-01", "QueryUserList")
 {
 	setMethod(HttpRequest::Method::Get);
 }

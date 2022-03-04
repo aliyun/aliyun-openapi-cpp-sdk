@@ -19,7 +19,7 @@
 using AlibabaCloud::Quickbi_public::Model::QueryWorksByWorkspaceRequest;
 
 QueryWorksByWorkspaceRequest::QueryWorksByWorkspaceRequest() :
-	RpcServiceRequest("quickbi-public", "2020-08-07", "QueryWorksByWorkspace")
+	RpcServiceRequest("quickbi-public", "2022-01-01", "QueryWorksByWorkspace")
 {
 	setMethod(HttpRequest::Method::Post);
 }
@@ -60,17 +60,6 @@ void QueryWorksByWorkspaceRequest::setAccessPoint(const std::string& accessPoint
 	setParameter("AccessPoint", accessPoint);
 }
 
-int QueryWorksByWorkspaceRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void QueryWorksByWorkspaceRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
-}
-
 std::string QueryWorksByWorkspaceRequest::getSignType()const
 {
 	return signType_;
@@ -91,6 +80,17 @@ void QueryWorksByWorkspaceRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
 	setParameter("PageNum", std::to_string(pageNum));
+}
+
+int QueryWorksByWorkspaceRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void QueryWorksByWorkspaceRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string QueryWorksByWorkspaceRequest::getWorkspaceId()const

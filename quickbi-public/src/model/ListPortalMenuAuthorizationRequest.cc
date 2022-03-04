@@ -19,7 +19,7 @@
 using AlibabaCloud::Quickbi_public::Model::ListPortalMenuAuthorizationRequest;
 
 ListPortalMenuAuthorizationRequest::ListPortalMenuAuthorizationRequest() :
-	RpcServiceRequest("quickbi-public", "2020-08-08", "ListPortalMenuAuthorization")
+	RpcServiceRequest("quickbi-public", "2022-01-01", "ListPortalMenuAuthorization")
 {
 	setMethod(HttpRequest::Method::Post);
 }

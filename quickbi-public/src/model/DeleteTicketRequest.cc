@@ -19,7 +19,7 @@
 using AlibabaCloud::Quickbi_public::Model::DeleteTicketRequest;
 
 DeleteTicketRequest::DeleteTicketRequest() :
-	RpcServiceRequest("quickbi-public", "2021-03-25", "DeleteTicket")
+	RpcServiceRequest("quickbi-public", "2022-01-01", "DeleteTicket")
 {
 	setMethod(HttpRequest::Method::Post);
 }

@@ -37,8 +37,8 @@ namespace AlibabaCloud
 					struct UserGroupModelsItem
 					{
 						std::string modifyUser;
-						std::string usergroupDesc;
 						std::string modifiedTime;
+						std::string usergroupDesc;
 						std::string identifiedPath;
 						std::string createTime;
 						std::string parentUsergroupId;

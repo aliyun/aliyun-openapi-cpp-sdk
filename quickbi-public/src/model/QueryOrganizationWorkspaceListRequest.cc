@@ -19,7 +19,7 @@
 using AlibabaCloud::Quickbi_public::Model::QueryOrganizationWorkspaceListRequest;
 
 QueryOrganizationWorkspaceListRequest::QueryOrganizationWorkspaceListRequest() :
-	RpcServiceRequest("quickbi-public", "2020-08-03", "QueryOrganizationWorkspaceList")
+	RpcServiceRequest("quickbi-public", "2022-01-01", "QueryOrganizationWorkspaceList")
 {
 	setMethod(HttpRequest::Method::Post);
 }

@@ -19,7 +19,7 @@
 using AlibabaCloud::Quickbi_public::Model::QuerySharesToUserListRequest;
 
 QuerySharesToUserListRequest::QuerySharesToUserListRequest() :
-	RpcServiceRequest("quickbi-public", "2020-08-04", "QuerySharesToUserList")
+	RpcServiceRequest("quickbi-public", "2022-01-01", "QuerySharesToUserList")
 {
 	setMethod(HttpRequest::Method::Post);
 }

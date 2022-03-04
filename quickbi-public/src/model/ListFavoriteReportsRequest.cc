@@ -19,7 +19,7 @@
 using AlibabaCloud::Quickbi_public::Model::ListFavoriteReportsRequest;
 
 ListFavoriteReportsRequest::ListFavoriteReportsRequest() :
-	RpcServiceRequest("quickbi-public", "2020-08-09", "ListFavoriteReports")
+	RpcServiceRequest("quickbi-public", "2022-01-01", "ListFavoriteReports")
 {
 	setMethod(HttpRequest::Method::Post);
 }

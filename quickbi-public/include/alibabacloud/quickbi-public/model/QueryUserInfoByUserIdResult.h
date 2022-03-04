@@ -34,10 +34,10 @@ namespace AlibabaCloud
 			public:
 				struct Result
 				{
-					std::string accountId;
 					std::string email;
-					std::string phone;
+					std::string accountId;
 					std::string userId;
+					std::string phone;
 					bool adminUser;
 					std::string nickName;
 					int userType;

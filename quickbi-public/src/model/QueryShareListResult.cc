@@ -43,22 +43,22 @@ void QueryShareListResult::parse(const std::string &payload)
 	for (auto valueResultData : allResultNode)
 	{
 		Data resultObject;
-		if(!valueResultData["ReportId"].isNull())
-			resultObject.reportId = valueResultData["ReportId"].asString();
 		if(!valueResultData["ShareId"].isNull())
 			resultObject.shareId = valueResultData["ShareId"].asString();
-		if(!valueResultData["ShareType"].isNull())
-			resultObject.shareType = valueResultData["ShareType"].asString();
-		if(!valueResultData["ShareToName"].isNull())
-			resultObject.shareToName = valueResultData["ShareToName"].asString();
-		if(!valueResultData["ShareToType"].isNull())
-			resultObject.shareToType = std::stoi(valueResultData["ShareToType"].asString());
+		if(!valueResultData["ShareToId"].isNull())
+			resultObject.shareToId = valueResultData["ShareToId"].asString();
 		if(!valueResultData["AuthPoint"].isNull())
 			resultObject.authPoint = std::stoi(valueResultData["AuthPoint"].asString());
 		if(!valueResultData["ExpireDate"].isNull())
 			resultObject.expireDate = std::stol(valueResultData["ExpireDate"].asString());
-		if(!valueResultData["ShareToId"].isNull())
-			resultObject.shareToId = valueResultData["ShareToId"].asString();
+		if(!valueResultData["ShareToType"].isNull())
+			resultObject.shareToType = std::stoi(valueResultData["ShareToType"].asString());
+		if(!valueResultData["ReportId"].isNull())
+			resultObject.reportId = valueResultData["ReportId"].asString();
+		if(!valueResultData["ShareToName"].isNull())
+			resultObject.shareToName = valueResultData["ShareToName"].asString();
+		if(!valueResultData["ShareType"].isNull())
+			resultObject.shareType = valueResultData["ShareType"].asString();
 		result_.push_back(resultObject);
 	}
 	if(!value["Success"].isNull())

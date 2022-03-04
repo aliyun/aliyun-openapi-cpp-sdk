@@ -19,35 +19,13 @@
 using AlibabaCloud::Quickbi_public::Model::AddShareReportRequest;
 
 AddShareReportRequest::AddShareReportRequest() :
-	RpcServiceRequest("quickbi-public", "2020-08-04", "AddShareReport")
+	RpcServiceRequest("quickbi-public", "2022-01-01", "AddShareReport")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
 AddShareReportRequest::~AddShareReportRequest()
 {}
-
-int AddShareReportRequest::getShareToType()const
-{
-	return shareToType_;
-}
-
-void AddShareReportRequest::setShareToType(int shareToType)
-{
-	shareToType_ = shareToType;
-	setParameter("ShareToType", std::to_string(shareToType));
-}
-
-std::string AddShareReportRequest::getWorksId()const
-{
-	return worksId_;
-}
-
-void AddShareReportRequest::setWorksId(const std::string& worksId)
-{
-	worksId_ = worksId;
-	setParameter("WorksId", worksId);
-}
 
 std::string AddShareReportRequest::getClientToken()const
 {
@@ -58,17 +36,6 @@ void AddShareReportRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
 	setParameter("ClientToken", clientToken);
-}
-
-std::string AddShareReportRequest::getShareToId()const
-{
-	return shareToId_;
-}
-
-void AddShareReportRequest::setShareToId(const std::string& shareToId)
-{
-	shareToId_ = shareToId;
-	setParameter("ShareToId", shareToId);
 }
 
 std::string AddShareReportRequest::getAccessPoint()const
@@ -113,5 +80,38 @@ void AddShareReportRequest::setExpireDate(long expireDate)
 {
 	expireDate_ = expireDate;
 	setParameter("ExpireDate", std::to_string(expireDate));
+}
+
+int AddShareReportRequest::getShareToType()const
+{
+	return shareToType_;
+}
+
+void AddShareReportRequest::setShareToType(int shareToType)
+{
+	shareToType_ = shareToType;
+	setParameter("ShareToType", std::to_string(shareToType));
+}
+
+std::string AddShareReportRequest::getWorksId()const
+{
+	return worksId_;
+}
+
+void AddShareReportRequest::setWorksId(const std::string& worksId)
+{
+	worksId_ = worksId;
+	setParameter("WorksId", worksId);
+}
+
+std::string AddShareReportRequest::getShareToId()const
+{
+	return shareToId_;
+}
+
+void AddShareReportRequest::setShareToId(const std::string& shareToId)
+{
+	shareToId_ = shareToId;
+	setParameter("ShareToId", shareToId);
 }
 

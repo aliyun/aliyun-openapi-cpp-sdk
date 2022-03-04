@@ -19,7 +19,7 @@
 using AlibabaCloud::Quickbi_public::Model::DeleteUserRequest;
 
 DeleteUserRequest::DeleteUserRequest() :
-	RpcServiceRequest("quickbi-public", "2020-08-01", "DeleteUser")
+	RpcServiceRequest("quickbi-public", "2022-01-01", "DeleteUser")
 {
 	setMethod(HttpRequest::Method::Post);
 }

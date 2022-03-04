@@ -19,7 +19,7 @@
 using AlibabaCloud::Quickbi_public::Model::CancelReportShareRequest;
 
 CancelReportShareRequest::CancelReportShareRequest() :
-	RpcServiceRequest("quickbi-public", "2020-08-04", "CancelReportShare")
+	RpcServiceRequest("quickbi-public", "2022-01-01", "CancelReportShare")
 {
 	setMethod(HttpRequest::Method::Post);
 }

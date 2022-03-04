@@ -40,17 +40,17 @@ void QueryEmbeddedInfoResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto resultNode = value["Result"];
-	if(!resultNode["MaxCount"].isNull())
-		result_.maxCount = std::stoi(resultNode["MaxCount"].asString());
 	if(!resultNode["EmbeddedCount"].isNull())
 		result_.embeddedCount = std::stoi(resultNode["EmbeddedCount"].asString());
+	if(!resultNode["MaxCount"].isNull())
+		result_.maxCount = std::stoi(resultNode["MaxCount"].asString());
 	auto detailNode = resultNode["Detail"];
+	if(!detailNode["DashboardOfflineQuery"].isNull())
+		result_.detail.dashboardOfflineQuery = std::stoi(detailNode["DashboardOfflineQuery"].asString());
 	if(!detailNode["Report"].isNull())
 		result_.detail.report = std::stoi(detailNode["Report"].asString());
 	if(!detailNode["Page"].isNull())
 		result_.detail.page = std::stoi(detailNode["Page"].asString());
-	if(!detailNode["DashboardOfflineQuery"].isNull())
-		result_.detail.dashboardOfflineQuery = std::stoi(detailNode["DashboardOfflineQuery"].asString());
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 

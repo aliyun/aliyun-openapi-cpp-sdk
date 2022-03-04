@@ -19,7 +19,7 @@
 using AlibabaCloud::Quickbi_public::Model::GetUserGroupInfoRequest;
 
 GetUserGroupInfoRequest::GetUserGroupInfoRequest() :
-	RpcServiceRequest("quickbi-public", "2020-07-31", "GetUserGroupInfo")
+	RpcServiceRequest("quickbi-public", "2022-01-01", "GetUserGroupInfo")
 {
 	setMethod(HttpRequest::Method::Post);
 }

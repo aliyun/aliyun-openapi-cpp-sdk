@@ -36,8 +36,8 @@ namespace AlibabaCloud
 				{
 					std::string shareId;
 					std::string shareToId;
-					int shareToType;
 					long expireDate;
+					int shareToType;
 					int authPoint;
 					std::string shareToName;
 					std::string reportId;

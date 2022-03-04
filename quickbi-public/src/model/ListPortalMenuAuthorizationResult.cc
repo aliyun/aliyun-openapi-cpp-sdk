@@ -43,10 +43,10 @@ void ListPortalMenuAuthorizationResult::parse(const std::string &payload)
 	for (auto valueResultData : allResultNode)
 	{
 		Data resultObject;
-		if(!valueResultData["MenuId"].isNull())
-			resultObject.menuId = valueResultData["MenuId"].asString();
 		if(!valueResultData["ShowOnlyWithAccess"].isNull())
 			resultObject.showOnlyWithAccess = valueResultData["ShowOnlyWithAccess"].asString() == "true";
+		if(!valueResultData["MenuId"].isNull())
+			resultObject.menuId = valueResultData["MenuId"].asString();
 		auto allReceiversNode = valueResultData["Receivers"]["ReceiversItem"];
 		for (auto valueResultDataReceiversReceiversItem : allReceiversNode)
 		{

@@ -41,8 +41,6 @@ set(quickbi-public_public_header_model
 	include/alibabacloud/quickbi-public/model/AddWorkspaceUsersResult.h
 	include/alibabacloud/quickbi-public/model/AuthorizeMenuRequest.h
 	include/alibabacloud/quickbi-public/model/AuthorizeMenuResult.h
-	include/alibabacloud/quickbi-public/model/BuildSignatureUrlRequest.h
-	include/alibabacloud/quickbi-public/model/BuildSignatureUrlResult.h
 	include/alibabacloud/quickbi-public/model/CancelAuthorizationMenuRequest.h
 	include/alibabacloud/quickbi-public/model/CancelAuthorizationMenuResult.h
 	include/alibabacloud/quickbi-public/model/CancelCollectionRequest.h
@@ -53,22 +51,16 @@ set(quickbi-public_public_header_model
 	include/alibabacloud/quickbi-public/model/ChangeVisibilityModelResult.h
 	include/alibabacloud/quickbi-public/model/CheckReadableRequest.h
 	include/alibabacloud/quickbi-public/model/CheckReadableResult.h
-	include/alibabacloud/quickbi-public/model/CreateEmbedTokenRequest.h
-	include/alibabacloud/quickbi-public/model/CreateEmbedTokenResult.h
 	include/alibabacloud/quickbi-public/model/CreateTicketRequest.h
 	include/alibabacloud/quickbi-public/model/CreateTicketResult.h
 	include/alibabacloud/quickbi-public/model/CreateUserGroupRequest.h
 	include/alibabacloud/quickbi-public/model/CreateUserGroupResult.h
-	include/alibabacloud/quickbi-public/model/DelayEmbedTokenRequest.h
-	include/alibabacloud/quickbi-public/model/DelayEmbedTokenResult.h
 	include/alibabacloud/quickbi-public/model/DelayTicketExpireTimeRequest.h
 	include/alibabacloud/quickbi-public/model/DelayTicketExpireTimeResult.h
 	include/alibabacloud/quickbi-public/model/DeleteDataLevelPermissionRuleUsersRequest.h
 	include/alibabacloud/quickbi-public/model/DeleteDataLevelPermissionRuleUsersResult.h
 	include/alibabacloud/quickbi-public/model/DeleteDataLevelRuleConfigRequest.h
 	include/alibabacloud/quickbi-public/model/DeleteDataLevelRuleConfigResult.h
-	include/alibabacloud/quickbi-public/model/DeleteEmbedTokenRequest.h
-	include/alibabacloud/quickbi-public/model/DeleteEmbedTokenResult.h
 	include/alibabacloud/quickbi-public/model/DeleteTicketRequest.h
 	include/alibabacloud/quickbi-public/model/DeleteTicketResult.h
 	include/alibabacloud/quickbi-public/model/DeleteUserRequest.h
@@ -115,8 +107,6 @@ set(quickbi-public_public_header_model
 	include/alibabacloud/quickbi-public/model/QueryDatasetListResult.h
 	include/alibabacloud/quickbi-public/model/QueryDatasetSwitchInfoRequest.h
 	include/alibabacloud/quickbi-public/model/QueryDatasetSwitchInfoResult.h
-	include/alibabacloud/quickbi-public/model/QueryEmbedTokenInfoRequest.h
-	include/alibabacloud/quickbi-public/model/QueryEmbedTokenInfoResult.h
 	include/alibabacloud/quickbi-public/model/QueryEmbeddedInfoRequest.h
 	include/alibabacloud/quickbi-public/model/QueryEmbeddedInfoResult.h
 	include/alibabacloud/quickbi-public/model/QueryEmbeddedStausRequest.h
@@ -210,8 +200,6 @@ set(quickbi-public_src
 	src/model/AddWorkspaceUsersResult.cc
 	src/model/AuthorizeMenuRequest.cc
 	src/model/AuthorizeMenuResult.cc
-	src/model/BuildSignatureUrlRequest.cc
-	src/model/BuildSignatureUrlResult.cc
 	src/model/CancelAuthorizationMenuRequest.cc
 	src/model/CancelAuthorizationMenuResult.cc
 	src/model/CancelCollectionRequest.cc
@@ -222,22 +210,16 @@ set(quickbi-public_src
 	src/model/ChangeVisibilityModelResult.cc
 	src/model/CheckReadableRequest.cc
 	src/model/CheckReadableResult.cc
-	src/model/CreateEmbedTokenRequest.cc
-	src/model/CreateEmbedTokenResult.cc
 	src/model/CreateTicketRequest.cc
 	src/model/CreateTicketResult.cc
 	src/model/CreateUserGroupRequest.cc
 	src/model/CreateUserGroupResult.cc
-	src/model/DelayEmbedTokenRequest.cc
-	src/model/DelayEmbedTokenResult.cc
 	src/model/DelayTicketExpireTimeRequest.cc
 	src/model/DelayTicketExpireTimeResult.cc
 	src/model/DeleteDataLevelPermissionRuleUsersRequest.cc
 	src/model/DeleteDataLevelPermissionRuleUsersResult.cc
 	src/model/DeleteDataLevelRuleConfigRequest.cc
 	src/model/DeleteDataLevelRuleConfigResult.cc
-	src/model/DeleteEmbedTokenRequest.cc
-	src/model/DeleteEmbedTokenResult.cc
 	src/model/DeleteTicketRequest.cc
 	src/model/DeleteTicketResult.cc
 	src/model/DeleteUserRequest.cc
@@ -284,8 +266,6 @@ set(quickbi-public_src
 	src/model/QueryDatasetListResult.cc
 	src/model/QueryDatasetSwitchInfoRequest.cc
 	src/model/QueryDatasetSwitchInfoResult.cc
-	src/model/QueryEmbedTokenInfoRequest.cc
-	src/model/QueryEmbedTokenInfoResult.cc
 	src/model/QueryEmbeddedInfoRequest.cc
 	src/model/QueryEmbeddedInfoResult.cc
 	src/model/QueryEmbeddedStausRequest.cc

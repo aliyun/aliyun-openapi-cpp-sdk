@@ -19,7 +19,7 @@
 using AlibabaCloud::Quickbi_public::Model::CancelAuthorizationMenuRequest;
 
 CancelAuthorizationMenuRequest::CancelAuthorizationMenuRequest() :
-	RpcServiceRequest("quickbi-public", "2020-08-08", "CancelAuthorizationMenu")
+	RpcServiceRequest("quickbi-public", "2022-01-01", "CancelAuthorizationMenu")
 {
 	setMethod(HttpRequest::Method::Post);
 }

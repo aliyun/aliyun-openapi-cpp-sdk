@@ -19,7 +19,7 @@
 using AlibabaCloud::Quickbi_public::Model::DelayTicketExpireTimeRequest;
 
 DelayTicketExpireTimeRequest::DelayTicketExpireTimeRequest() :
-	RpcServiceRequest("quickbi-public", "2021-03-25", "DelayTicketExpireTime")
+	RpcServiceRequest("quickbi-public", "2022-01-01", "DelayTicketExpireTime")
 {
 	setMethod(HttpRequest::Method::Post);
 }

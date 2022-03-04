@@ -37,8 +37,8 @@ namespace AlibabaCloud
 					struct Directory
 					{
 						std::string pathId;
-						std::string id;
 						std::string pathName;
+						std::string id;
 						std::string name;
 					};
 					int status;
@@ -51,8 +51,8 @@ namespace AlibabaCloud
 					std::string workspaceId;
 					int thirdPartAuthFlag;
 					std::string ownerId;
-					std::string workName;
 					std::string securityLevel;
+					std::string workName;
 					std::string workspaceName;
 					std::string worksId;
 					Directory directory;

@@ -19,7 +19,7 @@
 using AlibabaCloud::Quickbi_public::Model::ListCubeDataLevelPermissionConfigRequest;
 
 ListCubeDataLevelPermissionConfigRequest::ListCubeDataLevelPermissionConfigRequest() :
-	RpcServiceRequest("quickbi-public", "2020-11-11", "ListCubeDataLevelPermissionConfig")
+	RpcServiceRequest("quickbi-public", "2022-01-01", "ListCubeDataLevelPermissionConfig")
 {
 	setMethod(HttpRequest::Method::Post);
 }

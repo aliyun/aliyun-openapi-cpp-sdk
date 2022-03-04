@@ -19,7 +19,7 @@
 using AlibabaCloud::Quickbi_public::Model::CancelCollectionRequest;
 
 CancelCollectionRequest::CancelCollectionRequest() :
-	RpcServiceRequest("quickbi-public", "2020-08-09", "CancelCollection")
+	RpcServiceRequest("quickbi-public", "2022-01-01", "CancelCollection")
 {
 	setMethod(HttpRequest::Method::Post);
 }

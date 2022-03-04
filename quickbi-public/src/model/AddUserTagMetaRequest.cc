@@ -19,7 +19,7 @@
 using AlibabaCloud::Quickbi_public::Model::AddUserTagMetaRequest;
 
 AddUserTagMetaRequest::AddUserTagMetaRequest() :
-	RpcServiceRequest("quickbi-public", "2020-08-02", "AddUserTagMeta")
+	RpcServiceRequest("quickbi-public", "2022-01-01", "AddUserTagMeta")
 {
 	setMethod(HttpRequest::Method::Post);
 }

@@ -19,7 +19,7 @@
 using AlibabaCloud::Quickbi_public::Model::UpdateWorkspaceUserRoleRequest;
 
 UpdateWorkspaceUserRoleRequest::UpdateWorkspaceUserRoleRequest() :
-	RpcServiceRequest("quickbi-public", "2020-08-03", "UpdateWorkspaceUserRole")
+	RpcServiceRequest("quickbi-public", "2022-01-01", "UpdateWorkspaceUserRole")
 {
 	setMethod(HttpRequest::Method::Post);
 }

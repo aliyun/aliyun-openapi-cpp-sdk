@@ -19,7 +19,7 @@
 using AlibabaCloud::Quickbi_public::Model::DeleteDataLevelRuleConfigRequest;
 
 DeleteDataLevelRuleConfigRequest::DeleteDataLevelRuleConfigRequest() :
-	RpcServiceRequest("quickbi-public", "2020-11-11", "DeleteDataLevelRuleConfig")
+	RpcServiceRequest("quickbi-public", "2022-01-01", "DeleteDataLevelRuleConfig")
 {
 	setMethod(HttpRequest::Method::Post);
 }

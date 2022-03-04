@@ -19,7 +19,7 @@
 using AlibabaCloud::Quickbi_public::Model::DeleteUserTagMetaRequest;
 
 DeleteUserTagMetaRequest::DeleteUserTagMetaRequest() :
-	RpcServiceRequest("quickbi-public", "2020-08-02", "DeleteUserTagMeta")
+	RpcServiceRequest("quickbi-public", "2022-01-01", "DeleteUserTagMeta")
 {
 	setMethod(HttpRequest::Method::Post);
 }

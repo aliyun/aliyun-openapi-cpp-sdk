@@ -40,24 +40,24 @@ void QueryUserInfoByUserIdResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto resultNode = value["Result"];
-	if(!resultNode["AccountId"].isNull())
-		result_.accountId = resultNode["AccountId"].asString();
-	if(!resultNode["AccountName"].isNull())
-		result_.accountName = resultNode["AccountName"].asString();
-	if(!resultNode["AdminUser"].isNull())
-		result_.adminUser = resultNode["AdminUser"].asString() == "true";
-	if(!resultNode["AuthAdminUser"].isNull())
-		result_.authAdminUser = resultNode["AuthAdminUser"].asString() == "true";
-	if(!resultNode["Email"].isNull())
-		result_.email = resultNode["Email"].asString();
-	if(!resultNode["NickName"].isNull())
-		result_.nickName = resultNode["NickName"].asString();
-	if(!resultNode["Phone"].isNull())
-		result_.phone = resultNode["Phone"].asString();
-	if(!resultNode["UserId"].isNull())
-		result_.userId = resultNode["UserId"].asString();
 	if(!resultNode["UserType"].isNull())
 		result_.userType = std::stoi(resultNode["UserType"].asString());
+	if(!resultNode["Email"].isNull())
+		result_.email = resultNode["Email"].asString();
+	if(!resultNode["UserId"].isNull())
+		result_.userId = resultNode["UserId"].asString();
+	if(!resultNode["AuthAdminUser"].isNull())
+		result_.authAdminUser = resultNode["AuthAdminUser"].asString() == "true";
+	if(!resultNode["AccountId"].isNull())
+		result_.accountId = resultNode["AccountId"].asString();
+	if(!resultNode["NickName"].isNull())
+		result_.nickName = resultNode["NickName"].asString();
+	if(!resultNode["AdminUser"].isNull())
+		result_.adminUser = resultNode["AdminUser"].asString() == "true";
+	if(!resultNode["Phone"].isNull())
+		result_.phone = resultNode["Phone"].asString();
+	if(!resultNode["AccountName"].isNull())
+		result_.accountName = resultNode["AccountName"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 

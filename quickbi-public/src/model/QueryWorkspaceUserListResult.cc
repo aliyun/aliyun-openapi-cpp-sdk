@@ -40,37 +40,37 @@ void QueryWorkspaceUserListResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto resultNode = value["Result"];
-	if(!resultNode["TotalNum"].isNull())
-		result_.totalNum = std::stoi(resultNode["TotalNum"].asString());
 	if(!resultNode["TotalPages"].isNull())
 		result_.totalPages = std::stoi(resultNode["TotalPages"].asString());
-	if(!resultNode["PageSize"].isNull())
-		result_.pageSize = std::stoi(resultNode["PageSize"].asString());
 	if(!resultNode["PageNum"].isNull())
 		result_.pageNum = std::stoi(resultNode["PageNum"].asString());
+	if(!resultNode["PageSize"].isNull())
+		result_.pageSize = std::stoi(resultNode["PageSize"].asString());
+	if(!resultNode["TotalNum"].isNull())
+		result_.totalNum = std::stoi(resultNode["TotalNum"].asString());
 	auto allDataNode = resultNode["Data"]["DataItem"];
 	for (auto resultNodeDataDataItem : allDataNode)
 	{
 		Result::DataItem dataItemObject;
-		if(!resultNodeDataDataItem["UserId"].isNull())
-			dataItemObject.userId = resultNodeDataDataItem["UserId"].asString();
-		if(!resultNodeDataDataItem["AccountName"].isNull())
-			dataItemObject.accountName = resultNodeDataDataItem["AccountName"].asString();
-		if(!resultNodeDataDataItem["Phone"].isNull())
-			dataItemObject.phone = resultNodeDataDataItem["Phone"].asString();
-		if(!resultNodeDataDataItem["NickName"].isNull())
-			dataItemObject.nickName = resultNodeDataDataItem["NickName"].asString();
 		if(!resultNodeDataDataItem["Email"].isNull())
 			dataItemObject.email = resultNodeDataDataItem["Email"].asString();
+		if(!resultNodeDataDataItem["UserId"].isNull())
+			dataItemObject.userId = resultNodeDataDataItem["UserId"].asString();
 		if(!resultNodeDataDataItem["AccountId"].isNull())
 			dataItemObject.accountId = resultNodeDataDataItem["AccountId"].asString();
+		if(!resultNodeDataDataItem["NickName"].isNull())
+			dataItemObject.nickName = resultNodeDataDataItem["NickName"].asString();
+		if(!resultNodeDataDataItem["Phone"].isNull())
+			dataItemObject.phone = resultNodeDataDataItem["Phone"].asString();
+		if(!resultNodeDataDataItem["AccountName"].isNull())
+			dataItemObject.accountName = resultNodeDataDataItem["AccountName"].asString();
 		auto roleNode = value["Role"];
+		if(!roleNode["RoleCode"].isNull())
+			dataItemObject.role.roleCode = roleNode["RoleCode"].asString();
 		if(!roleNode["RoleName"].isNull())
 			dataItemObject.role.roleName = roleNode["RoleName"].asString();
 		if(!roleNode["RoleId"].isNull())
 			dataItemObject.role.roleId = std::stol(roleNode["RoleId"].asString());
-		if(!roleNode["RoleCode"].isNull())
-			dataItemObject.role.roleCode = roleNode["RoleCode"].asString();
 		result_.data.push_back(dataItemObject);
 	}
 	if(!value["Success"].isNull())

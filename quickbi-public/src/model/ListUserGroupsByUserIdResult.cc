@@ -43,24 +43,24 @@ void ListUserGroupsByUserIdResult::parse(const std::string &payload)
 	for (auto valueResultData : allResultNode)
 	{
 		Data resultObject;
-		if(!valueResultData["UsergroupId"].isNull())
-			resultObject.usergroupId = valueResultData["UsergroupId"].asString();
-		if(!valueResultData["UsergroupName"].isNull())
-			resultObject.usergroupName = valueResultData["UsergroupName"].asString();
-		if(!valueResultData["UsergroupDesc"].isNull())
-			resultObject.usergroupDesc = valueResultData["UsergroupDesc"].asString();
-		if(!valueResultData["ParentUsergroupId"].isNull())
-			resultObject.parentUsergroupId = valueResultData["ParentUsergroupId"].asString();
 		if(!valueResultData["IdentifiedPath"].isNull())
 			resultObject.identifiedPath = valueResultData["IdentifiedPath"].asString();
-		if(!valueResultData["CreateUser"].isNull())
-			resultObject.createUser = valueResultData["CreateUser"].asString();
-		if(!valueResultData["ModifyUser"].isNull())
-			resultObject.modifyUser = valueResultData["ModifyUser"].asString();
-		if(!valueResultData["CreateTime"].isNull())
-			resultObject.createTime = valueResultData["CreateTime"].asString();
+		if(!valueResultData["ParentUsergroupId"].isNull())
+			resultObject.parentUsergroupId = valueResultData["ParentUsergroupId"].asString();
 		if(!valueResultData["ModifiedTime"].isNull())
 			resultObject.modifiedTime = valueResultData["ModifiedTime"].asString();
+		if(!valueResultData["CreateUser"].isNull())
+			resultObject.createUser = valueResultData["CreateUser"].asString();
+		if(!valueResultData["UsergroupName"].isNull())
+			resultObject.usergroupName = valueResultData["UsergroupName"].asString();
+		if(!valueResultData["CreateTime"].isNull())
+			resultObject.createTime = valueResultData["CreateTime"].asString();
+		if(!valueResultData["UsergroupDesc"].isNull())
+			resultObject.usergroupDesc = valueResultData["UsergroupDesc"].asString();
+		if(!valueResultData["UsergroupId"].isNull())
+			resultObject.usergroupId = valueResultData["UsergroupId"].asString();
+		if(!valueResultData["ModifyUser"].isNull())
+			resultObject.modifyUser = valueResultData["ModifyUser"].asString();
 		result_.push_back(resultObject);
 	}
 	if(!value["Success"].isNull())

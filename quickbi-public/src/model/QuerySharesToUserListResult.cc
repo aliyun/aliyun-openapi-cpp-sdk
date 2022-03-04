@@ -43,43 +43,43 @@ void QuerySharesToUserListResult::parse(const std::string &payload)
 	for (auto valueResultData : allResultNode)
 	{
 		Data resultObject;
+		if(!valueResultData["Status"].isNull())
+			resultObject.status = std::stoi(valueResultData["Status"].asString());
+		if(!valueResultData["ThirdPartAuthFlag"].isNull())
+			resultObject.thirdPartAuthFlag = std::stoi(valueResultData["ThirdPartAuthFlag"].asString());
 		if(!valueResultData["WorksId"].isNull())
 			resultObject.worksId = valueResultData["WorksId"].asString();
+		if(!valueResultData["CreateTime"].isNull())
+			resultObject.createTime = valueResultData["CreateTime"].asString();
 		if(!valueResultData["WorkType"].isNull())
 			resultObject.workType = valueResultData["WorkType"].asString();
-		if(!valueResultData["WorkName"].isNull())
-			resultObject.workName = valueResultData["WorkName"].asString();
-		if(!valueResultData["WorkspaceId"].isNull())
-			resultObject.workspaceId = valueResultData["WorkspaceId"].asString();
+		if(!valueResultData["OwnerName"].isNull())
+			resultObject.ownerName = valueResultData["OwnerName"].asString();
 		if(!valueResultData["WorkspaceName"].isNull())
 			resultObject.workspaceName = valueResultData["WorkspaceName"].asString();
+		if(!valueResultData["OwnerId"].isNull())
+			resultObject.ownerId = valueResultData["OwnerId"].asString();
+		if(!valueResultData["ModifyName"].isNull())
+			resultObject.modifyName = valueResultData["ModifyName"].asString();
+		if(!valueResultData["WorkspaceId"].isNull())
+			resultObject.workspaceId = valueResultData["WorkspaceId"].asString();
 		if(!valueResultData["SecurityLevel"].isNull())
 			resultObject.securityLevel = valueResultData["SecurityLevel"].asString();
 		if(!valueResultData["Description"].isNull())
 			resultObject.description = valueResultData["Description"].asString();
-		if(!valueResultData["OwnerId"].isNull())
-			resultObject.ownerId = valueResultData["OwnerId"].asString();
-		if(!valueResultData["OwnerName"].isNull())
-			resultObject.ownerName = valueResultData["OwnerName"].asString();
-		if(!valueResultData["ModifyName"].isNull())
-			resultObject.modifyName = valueResultData["ModifyName"].asString();
-		if(!valueResultData["CreateTime"].isNull())
-			resultObject.createTime = valueResultData["CreateTime"].asString();
+		if(!valueResultData["WorkName"].isNull())
+			resultObject.workName = valueResultData["WorkName"].asString();
 		if(!valueResultData["ModifyTime"].isNull())
 			resultObject.modifyTime = valueResultData["ModifyTime"].asString();
-		if(!valueResultData["ThirdPartAuthFlag"].isNull())
-			resultObject.thirdPartAuthFlag = std::stoi(valueResultData["ThirdPartAuthFlag"].asString());
-		if(!valueResultData["Status"].isNull())
-			resultObject.status = std::stoi(valueResultData["Status"].asString());
 		auto directoryNode = value["Directory"];
-		if(!directoryNode["Id"].isNull())
-			resultObject.directory.id = directoryNode["Id"].asString();
-		if(!directoryNode["Name"].isNull())
-			resultObject.directory.name = directoryNode["Name"].asString();
 		if(!directoryNode["PathId"].isNull())
 			resultObject.directory.pathId = directoryNode["PathId"].asString();
 		if(!directoryNode["PathName"].isNull())
 			resultObject.directory.pathName = directoryNode["PathName"].asString();
+		if(!directoryNode["Name"].isNull())
+			resultObject.directory.name = directoryNode["Name"].asString();
+		if(!directoryNode["Id"].isNull())
+			resultObject.directory.id = directoryNode["Id"].asString();
 		result_.push_back(resultObject);
 	}
 	if(!value["Success"].isNull())

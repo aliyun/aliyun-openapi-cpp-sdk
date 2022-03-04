@@ -35,8 +35,8 @@ namespace AlibabaCloud
 				struct Result
 				{
 					std::string roleName;
-					long roleId;
 					std::string roleCode;
+					long roleId;
 				};
 
 

@@ -411,42 +411,6 @@ Quickbi_publicClient::AuthorizeMenuOutcomeCallable Quickbi_publicClient::authori
 	return task->get_future();
 }
 
-Quickbi_publicClient::BuildSignatureUrlOutcome Quickbi_publicClient::buildSignatureUrl(const BuildSignatureUrlRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return BuildSignatureUrlOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return BuildSignatureUrlOutcome(BuildSignatureUrlResult(outcome.result()));
-	else
-		return BuildSignatureUrlOutcome(outcome.error());
-}
-
-void Quickbi_publicClient::buildSignatureUrlAsync(const BuildSignatureUrlRequest& request, const BuildSignatureUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, buildSignatureUrl(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Quickbi_publicClient::BuildSignatureUrlOutcomeCallable Quickbi_publicClient::buildSignatureUrlCallable(const BuildSignatureUrlRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<BuildSignatureUrlOutcome()>>(
-			[this, request]()
-			{
-			return this->buildSignatureUrl(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 Quickbi_publicClient::CancelAuthorizationMenuOutcome Quickbi_publicClient::cancelAuthorizationMenu(const CancelAuthorizationMenuRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -627,42 +591,6 @@ Quickbi_publicClient::CheckReadableOutcomeCallable Quickbi_publicClient::checkRe
 	return task->get_future();
 }
 
-Quickbi_publicClient::CreateEmbedTokenOutcome Quickbi_publicClient::createEmbedToken(const CreateEmbedTokenRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateEmbedTokenOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateEmbedTokenOutcome(CreateEmbedTokenResult(outcome.result()));
-	else
-		return CreateEmbedTokenOutcome(outcome.error());
-}
-
-void Quickbi_publicClient::createEmbedTokenAsync(const CreateEmbedTokenRequest& request, const CreateEmbedTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createEmbedToken(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Quickbi_publicClient::CreateEmbedTokenOutcomeCallable Quickbi_publicClient::createEmbedTokenCallable(const CreateEmbedTokenRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateEmbedTokenOutcome()>>(
-			[this, request]()
-			{
-			return this->createEmbedToken(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 Quickbi_publicClient::CreateTicketOutcome Quickbi_publicClient::createTicket(const CreateTicketRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -729,42 +657,6 @@ Quickbi_publicClient::CreateUserGroupOutcomeCallable Quickbi_publicClient::creat
 			[this, request]()
 			{
 			return this->createUserGroup(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-Quickbi_publicClient::DelayEmbedTokenOutcome Quickbi_publicClient::delayEmbedToken(const DelayEmbedTokenRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DelayEmbedTokenOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DelayEmbedTokenOutcome(DelayEmbedTokenResult(outcome.result()));
-	else
-		return DelayEmbedTokenOutcome(outcome.error());
-}
-
-void Quickbi_publicClient::delayEmbedTokenAsync(const DelayEmbedTokenRequest& request, const DelayEmbedTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, delayEmbedToken(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Quickbi_publicClient::DelayEmbedTokenOutcomeCallable Quickbi_publicClient::delayEmbedTokenCallable(const DelayEmbedTokenRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DelayEmbedTokenOutcome()>>(
-			[this, request]()
-			{
-			return this->delayEmbedToken(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -873,42 +765,6 @@ Quickbi_publicClient::DeleteDataLevelRuleConfigOutcomeCallable Quickbi_publicCli
 			[this, request]()
 			{
 			return this->deleteDataLevelRuleConfig(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-Quickbi_publicClient::DeleteEmbedTokenOutcome Quickbi_publicClient::deleteEmbedToken(const DeleteEmbedTokenRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DeleteEmbedTokenOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DeleteEmbedTokenOutcome(DeleteEmbedTokenResult(outcome.result()));
-	else
-		return DeleteEmbedTokenOutcome(outcome.error());
-}
-
-void Quickbi_publicClient::deleteEmbedTokenAsync(const DeleteEmbedTokenRequest& request, const DeleteEmbedTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, deleteEmbedToken(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Quickbi_publicClient::DeleteEmbedTokenOutcomeCallable Quickbi_publicClient::deleteEmbedTokenCallable(const DeleteEmbedTokenRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DeleteEmbedTokenOutcome()>>(
-			[this, request]()
-			{
-			return this->deleteEmbedToken(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1737,42 +1593,6 @@ Quickbi_publicClient::QueryDatasetSwitchInfoOutcomeCallable Quickbi_publicClient
 			[this, request]()
 			{
 			return this->queryDatasetSwitchInfo(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-Quickbi_publicClient::QueryEmbedTokenInfoOutcome Quickbi_publicClient::queryEmbedTokenInfo(const QueryEmbedTokenInfoRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return QueryEmbedTokenInfoOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return QueryEmbedTokenInfoOutcome(QueryEmbedTokenInfoResult(outcome.result()));
-	else
-		return QueryEmbedTokenInfoOutcome(outcome.error());
-}
-
-void Quickbi_publicClient::queryEmbedTokenInfoAsync(const QueryEmbedTokenInfoRequest& request, const QueryEmbedTokenInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, queryEmbedTokenInfo(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Quickbi_publicClient::QueryEmbedTokenInfoOutcomeCallable Quickbi_publicClient::queryEmbedTokenInfoCallable(const QueryEmbedTokenInfoRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<QueryEmbedTokenInfoOutcome()>>(
-			[this, request]()
-			{
-			return this->queryEmbedTokenInfo(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

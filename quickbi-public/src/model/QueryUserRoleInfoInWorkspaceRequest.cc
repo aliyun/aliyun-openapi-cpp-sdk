@@ -19,7 +19,7 @@
 using AlibabaCloud::Quickbi_public::Model::QueryUserRoleInfoInWorkspaceRequest;
 
 QueryUserRoleInfoInWorkspaceRequest::QueryUserRoleInfoInWorkspaceRequest() :
-	RpcServiceRequest("quickbi-public", "2020-08-03", "QueryUserRoleInfoInWorkspace")
+	RpcServiceRequest("quickbi-public", "2022-01-01", "QueryUserRoleInfoInWorkspace")
 {
 	setMethod(HttpRequest::Method::Post);
 }

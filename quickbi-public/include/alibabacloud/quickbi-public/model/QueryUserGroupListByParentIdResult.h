@@ -37,10 +37,10 @@ namespace AlibabaCloud
 					std::string parentUserGroupId;
 					std::string modifyUser;
 					std::string modifiedTime;
-					std::string userGroupId;
-					std::string userGroupName;
 					std::string identifiedPath;
 					std::string createTime;
+					std::string userGroupId;
+					std::string userGroupName;
 					std::string createUser;
 					std::string userGroupDescription;
 				};

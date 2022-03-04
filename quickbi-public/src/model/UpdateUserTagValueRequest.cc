@@ -19,7 +19,7 @@
 using AlibabaCloud::Quickbi_public::Model::UpdateUserTagValueRequest;
 
 UpdateUserTagValueRequest::UpdateUserTagValueRequest() :
-	RpcServiceRequest("quickbi-public", "2020-08-02", "UpdateUserTagValue")
+	RpcServiceRequest("quickbi-public", "2022-01-01", "UpdateUserTagValue")
 {
 	setMethod(HttpRequest::Method::Post);
 }

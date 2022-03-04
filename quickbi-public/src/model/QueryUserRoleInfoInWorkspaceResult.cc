@@ -40,12 +40,12 @@ void QueryUserRoleInfoInWorkspaceResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto resultNode = value["Result"];
-	if(!resultNode["RoleId"].isNull())
-		result_.roleId = std::stol(resultNode["RoleId"].asString());
 	if(!resultNode["RoleCode"].isNull())
 		result_.roleCode = resultNode["RoleCode"].asString();
 	if(!resultNode["RoleName"].isNull())
 		result_.roleName = resultNode["RoleName"].asString();
+	if(!resultNode["RoleId"].isNull())
+		result_.roleId = std::stol(resultNode["RoleId"].asString());
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 

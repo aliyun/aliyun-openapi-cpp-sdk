@@ -19,7 +19,7 @@
 using AlibabaCloud::Quickbi_public::Model::QueryDatasetListRequest;
 
 QueryDatasetListRequest::QueryDatasetListRequest() :
-	RpcServiceRequest("quickbi-public", "2020-08-06", "QueryDatasetList")
+	RpcServiceRequest("quickbi-public", "2022-01-01", "QueryDatasetList")
 {
 	setMethod(HttpRequest::Method::Post);
 }
@@ -38,17 +38,6 @@ void QueryDatasetListRequest::setAccessPoint(const std::string& accessPoint)
 	setParameter("AccessPoint", accessPoint);
 }
 
-int QueryDatasetListRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void QueryDatasetListRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
-}
-
 std::string QueryDatasetListRequest::getSignType()const
 {
 	return signType_;
@@ -58,6 +47,28 @@ void QueryDatasetListRequest::setSignType(const std::string& signType)
 {
 	signType_ = signType;
 	setParameter("SignType", signType);
+}
+
+int QueryDatasetListRequest::getPageNum()const
+{
+	return pageNum_;
+}
+
+void QueryDatasetListRequest::setPageNum(int pageNum)
+{
+	pageNum_ = pageNum;
+	setParameter("PageNum", std::to_string(pageNum));
+}
+
+int QueryDatasetListRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void QueryDatasetListRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string QueryDatasetListRequest::getDirectoryId()const
@@ -91,17 +102,6 @@ void QueryDatasetListRequest::setKeyword(const std::string& keyword)
 {
 	keyword_ = keyword;
 	setParameter("Keyword", keyword);
-}
-
-int QueryDatasetListRequest::getPageNum()const
-{
-	return pageNum_;
-}
-
-void QueryDatasetListRequest::setPageNum(int pageNum)
-{
-	pageNum_ = pageNum;
-	setParameter("PageNum", std::to_string(pageNum));
 }
 
 std::string QueryDatasetListRequest::getWorkspaceId()const

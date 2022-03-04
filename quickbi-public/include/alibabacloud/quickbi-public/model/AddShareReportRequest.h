@@ -35,14 +35,8 @@ namespace AlibabaCloud
 				AddShareReportRequest();
 				~AddShareReportRequest();
 
-				int getShareToType()const;
-				void setShareToType(int shareToType);
-				std::string getWorksId()const;
-				void setWorksId(const std::string& worksId);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
-				std::string getShareToId()const;
-				void setShareToId(const std::string& shareToId);
 				std::string getAccessPoint()const;
 				void setAccessPoint(const std::string& accessPoint);
 				int getAuthPoint()const;
@@ -51,16 +45,22 @@ namespace AlibabaCloud
 				void setSignType(const std::string& signType);
 				long getExpireDate()const;
 				void setExpireDate(long expireDate);
+				int getShareToType()const;
+				void setShareToType(int shareToType);
+				std::string getWorksId()const;
+				void setWorksId(const std::string& worksId);
+				std::string getShareToId()const;
+				void setShareToId(const std::string& shareToId);
 
             private:
-				int shareToType_;
-				std::string worksId_;
 				std::string clientToken_;
-				std::string shareToId_;
 				std::string accessPoint_;
 				int authPoint_;
 				std::string signType_;
 				long expireDate_;
+				int shareToType_;
+				std::string worksId_;
+				std::string shareToId_;
 
 			};
 		}

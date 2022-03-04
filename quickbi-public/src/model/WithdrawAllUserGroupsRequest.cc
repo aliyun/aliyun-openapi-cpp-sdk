@@ -19,7 +19,7 @@
 using AlibabaCloud::Quickbi_public::Model::WithdrawAllUserGroupsRequest;
 
 WithdrawAllUserGroupsRequest::WithdrawAllUserGroupsRequest() :
-	RpcServiceRequest("quickbi-public", "2020-07-31", "WithdrawAllUserGroups")
+	RpcServiceRequest("quickbi-public", "2022-01-01", "WithdrawAllUserGroups")
 {
 	setMethod(HttpRequest::Method::Post);
 }

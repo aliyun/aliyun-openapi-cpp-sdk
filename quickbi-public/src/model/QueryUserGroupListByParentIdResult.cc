@@ -43,24 +43,24 @@ void QueryUserGroupListByParentIdResult::parse(const std::string &payload)
 	for (auto valueResultData : allResultNode)
 	{
 		Data resultObject;
+		if(!valueResultData["IdentifiedPath"].isNull())
+			resultObject.identifiedPath = valueResultData["IdentifiedPath"].asString();
+		if(!valueResultData["ModifiedTime"].isNull())
+			resultObject.modifiedTime = valueResultData["ModifiedTime"].asString();
+		if(!valueResultData["CreateUser"].isNull())
+			resultObject.createUser = valueResultData["CreateUser"].asString();
+		if(!valueResultData["CreateTime"].isNull())
+			resultObject.createTime = valueResultData["CreateTime"].asString();
 		if(!valueResultData["UserGroupId"].isNull())
 			resultObject.userGroupId = valueResultData["UserGroupId"].asString();
 		if(!valueResultData["UserGroupName"].isNull())
 			resultObject.userGroupName = valueResultData["UserGroupName"].asString();
-		if(!valueResultData["UserGroupDescription"].isNull())
-			resultObject.userGroupDescription = valueResultData["UserGroupDescription"].asString();
-		if(!valueResultData["ParentUserGroupId"].isNull())
-			resultObject.parentUserGroupId = valueResultData["ParentUserGroupId"].asString();
-		if(!valueResultData["IdentifiedPath"].isNull())
-			resultObject.identifiedPath = valueResultData["IdentifiedPath"].asString();
-		if(!valueResultData["CreateUser"].isNull())
-			resultObject.createUser = valueResultData["CreateUser"].asString();
 		if(!valueResultData["ModifyUser"].isNull())
 			resultObject.modifyUser = valueResultData["ModifyUser"].asString();
-		if(!valueResultData["CreateTime"].isNull())
-			resultObject.createTime = valueResultData["CreateTime"].asString();
-		if(!valueResultData["ModifiedTime"].isNull())
-			resultObject.modifiedTime = valueResultData["ModifiedTime"].asString();
+		if(!valueResultData["ParentUserGroupId"].isNull())
+			resultObject.parentUserGroupId = valueResultData["ParentUserGroupId"].asString();
+		if(!valueResultData["UserGroupDescription"].isNull())
+			resultObject.userGroupDescription = valueResultData["UserGroupDescription"].asString();
 		result_.push_back(resultObject);
 	}
 	if(!value["Success"].isNull())

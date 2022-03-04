@@ -19,7 +19,7 @@
 using AlibabaCloud::Quickbi_public::Model::CreateTicketRequest;
 
 CreateTicketRequest::CreateTicketRequest() :
-	RpcServiceRequest("quickbi-public", "2021-03-25", "CreateTicket")
+	RpcServiceRequest("quickbi-public", "2022-01-01", "CreateTicket")
 {
 	setMethod(HttpRequest::Method::Post);
 }

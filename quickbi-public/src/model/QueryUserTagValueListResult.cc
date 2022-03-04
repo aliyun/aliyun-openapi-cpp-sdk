@@ -43,12 +43,12 @@ void QueryUserTagValueListResult::parse(const std::string &payload)
 	for (auto valueResultData : allResultNode)
 	{
 		Data resultObject;
-		if(!valueResultData["TagId"].isNull())
-			resultObject.tagId = valueResultData["TagId"].asString();
-		if(!valueResultData["TagName"].isNull())
-			resultObject.tagName = valueResultData["TagName"].asString();
 		if(!valueResultData["TagValue"].isNull())
 			resultObject.tagValue = valueResultData["TagValue"].asString();
+		if(!valueResultData["TagName"].isNull())
+			resultObject.tagName = valueResultData["TagName"].asString();
+		if(!valueResultData["TagId"].isNull())
+			resultObject.tagId = valueResultData["TagId"].asString();
 		result_.push_back(resultObject);
 	}
 	if(!value["Success"].isNull())

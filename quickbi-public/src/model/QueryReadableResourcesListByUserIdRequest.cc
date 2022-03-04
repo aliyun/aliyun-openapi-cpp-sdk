@@ -19,7 +19,7 @@
 using AlibabaCloud::Quickbi_public::Model::QueryReadableResourcesListByUserIdRequest;
 
 QueryReadableResourcesListByUserIdRequest::QueryReadableResourcesListByUserIdRequest() :
-	RpcServiceRequest("quickbi-public", "2020-08-07", "QueryReadableResourcesListByUserId")
+	RpcServiceRequest("quickbi-public", "2022-01-01", "QueryReadableResourcesListByUserId")
 {
 	setMethod(HttpRequest::Method::Post);
 }

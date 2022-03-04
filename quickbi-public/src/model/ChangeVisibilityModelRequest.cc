@@ -19,7 +19,7 @@
 using AlibabaCloud::Quickbi_public::Model::ChangeVisibilityModelRequest;
 
 ChangeVisibilityModelRequest::ChangeVisibilityModelRequest() :
-	RpcServiceRequest("quickbi-public", "2020-08-08", "ChangeVisibilityModel")
+	RpcServiceRequest("quickbi-public", "2022-01-01", "ChangeVisibilityModel")
 {
 	setMethod(HttpRequest::Method::Post);
 }

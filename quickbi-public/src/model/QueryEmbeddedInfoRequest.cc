@@ -19,7 +19,7 @@
 using AlibabaCloud::Quickbi_public::Model::QueryEmbeddedInfoRequest;
 
 QueryEmbeddedInfoRequest::QueryEmbeddedInfoRequest() :
-	RpcServiceRequest("quickbi-public", "2020-08-07", "QueryEmbeddedInfo")
+	RpcServiceRequest("quickbi-public", "2022-01-01", "QueryEmbeddedInfo")
 {
 	setMethod(HttpRequest::Method::Post);
 }

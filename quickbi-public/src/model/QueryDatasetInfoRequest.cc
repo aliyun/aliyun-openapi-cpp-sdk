@@ -19,7 +19,7 @@
 using AlibabaCloud::Quickbi_public::Model::QueryDatasetInfoRequest;
 
 QueryDatasetInfoRequest::QueryDatasetInfoRequest() :
-	RpcServiceRequest("quickbi-public", "2020-08-06", "QueryDatasetInfo")
+	RpcServiceRequest("quickbi-public", "2022-01-01", "QueryDatasetInfo")
 {
 	setMethod(HttpRequest::Method::Post);
 }

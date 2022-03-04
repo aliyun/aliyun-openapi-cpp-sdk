@@ -19,7 +19,7 @@
 using AlibabaCloud::Quickbi_public::Model::QueryUserGroupListByParentIdRequest;
 
 QueryUserGroupListByParentIdRequest::QueryUserGroupListByParentIdRequest() :
-	RpcServiceRequest("quickbi-public", "2020-07-31", "QueryUserGroupListByParentId")
+	RpcServiceRequest("quickbi-public", "2022-01-01", "QueryUserGroupListByParentId")
 {
 	setMethod(HttpRequest::Method::Post);
 }

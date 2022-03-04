@@ -19,7 +19,7 @@
 using AlibabaCloud::Quickbi_public::Model::QueryWorksBloodRelationshipRequest;
 
 QueryWorksBloodRelationshipRequest::QueryWorksBloodRelationshipRequest() :
-	RpcServiceRequest("quickbi-public", "2020-08-07", "QueryWorksBloodRelationship")
+	RpcServiceRequest("quickbi-public", "2022-01-01", "QueryWorksBloodRelationship")
 {
 	setMethod(HttpRequest::Method::Post);
 }

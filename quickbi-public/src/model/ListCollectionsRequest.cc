@@ -19,7 +19,7 @@
 using AlibabaCloud::Quickbi_public::Model::ListCollectionsRequest;
 
 ListCollectionsRequest::ListCollectionsRequest() :
-	RpcServiceRequest("quickbi-public", "2020-08-09", "ListCollections")
+	RpcServiceRequest("quickbi-public", "2022-01-01", "ListCollections")
 {
 	setMethod(HttpRequest::Method::Post);
 }

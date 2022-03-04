@@ -19,7 +19,7 @@
 using AlibabaCloud::Quickbi_public::Model::SetDataLevelPermissionExtraConfigRequest;
 
 SetDataLevelPermissionExtraConfigRequest::SetDataLevelPermissionExtraConfigRequest() :
-	RpcServiceRequest("quickbi-public", "2020-11-11", "SetDataLevelPermissionExtraConfig")
+	RpcServiceRequest("quickbi-public", "2022-01-01", "SetDataLevelPermissionExtraConfig")
 {
 	setMethod(HttpRequest::Method::Post);
 }

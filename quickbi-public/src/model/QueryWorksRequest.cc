@@ -19,7 +19,7 @@
 using AlibabaCloud::Quickbi_public::Model::QueryWorksRequest;
 
 QueryWorksRequest::QueryWorksRequest() :
-	RpcServiceRequest("quickbi-public", "2020-08-07", "QueryWorks")
+	RpcServiceRequest("quickbi-public", "2022-01-01", "QueryWorks")
 {
 	setMethod(HttpRequest::Method::Post);
 }

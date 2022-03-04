@@ -19,7 +19,7 @@
 using AlibabaCloud::Quickbi_public::Model::QueryDatasetSwitchInfoRequest;
 
 QueryDatasetSwitchInfoRequest::QueryDatasetSwitchInfoRequest() :
-	RpcServiceRequest("quickbi-public", "2020-11-11", "QueryDatasetSwitchInfo")
+	RpcServiceRequest("quickbi-public", "2022-01-01", "QueryDatasetSwitchInfo")
 {
 	setMethod(HttpRequest::Method::Post);
 }

@@ -19,7 +19,7 @@
 using AlibabaCloud::Quickbi_public::Model::ListPortalMenusRequest;
 
 ListPortalMenusRequest::ListPortalMenusRequest() :
-	RpcServiceRequest("quickbi-public", "2020-08-08", "ListPortalMenus")
+	RpcServiceRequest("quickbi-public", "2022-01-01", "ListPortalMenus")
 {
 	setMethod(HttpRequest::Method::Post);
 }

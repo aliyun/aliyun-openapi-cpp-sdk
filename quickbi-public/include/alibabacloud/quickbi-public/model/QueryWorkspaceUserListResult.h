@@ -39,8 +39,8 @@ namespace AlibabaCloud
 						struct Role
 						{
 							std::string roleName;
-							long roleId;
 							std::string roleCode;
+							long roleId;
 						};
 						Role role;
 						std::string email;
@@ -51,8 +51,8 @@ namespace AlibabaCloud
 						std::string accountName;
 					};
 					int totalNum;
-					int pageSize;
 					int pageNum;
+					int pageSize;
 					std::vector<DataItem> data;
 					int totalPages;
 				};

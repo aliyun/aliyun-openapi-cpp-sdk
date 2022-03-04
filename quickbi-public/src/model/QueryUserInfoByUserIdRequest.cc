@@ -19,7 +19,7 @@
 using AlibabaCloud::Quickbi_public::Model::QueryUserInfoByUserIdRequest;
 
 QueryUserInfoByUserIdRequest::QueryUserInfoByUserIdRequest() :
-	RpcServiceRequest("quickbi-public", "2020-08-01", "QueryUserInfoByUserId")
+	RpcServiceRequest("quickbi-public", "2022-01-01", "QueryUserInfoByUserId")
 {
 	setMethod(HttpRequest::Method::Post);
 }

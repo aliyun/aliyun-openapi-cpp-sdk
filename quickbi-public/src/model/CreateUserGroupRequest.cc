@@ -19,7 +19,7 @@
 using AlibabaCloud::Quickbi_public::Model::CreateUserGroupRequest;
 
 CreateUserGroupRequest::CreateUserGroupRequest() :
-	RpcServiceRequest("quickbi-public", "2020-07-31", "CreateUserGroup")
+	RpcServiceRequest("quickbi-public", "2022-01-01", "CreateUserGroup")
 {
 	setMethod(HttpRequest::Method::Post);
 }

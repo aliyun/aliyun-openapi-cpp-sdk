@@ -19,7 +19,7 @@
 using AlibabaCloud::Quickbi_public::Model::ListSharedReportsRequest;
 
 ListSharedReportsRequest::ListSharedReportsRequest() :
-	RpcServiceRequest("quickbi-public", "2020-08-09", "ListSharedReports")
+	RpcServiceRequest("quickbi-public", "2022-01-01", "ListSharedReports")
 {
 	setMethod(HttpRequest::Method::Post);
 }

@@ -19,7 +19,7 @@
 using AlibabaCloud::Quickbi_public::Model::AddWorkspaceUsersRequest;
 
 AddWorkspaceUsersRequest::AddWorkspaceUsersRequest() :
-	RpcServiceRequest("quickbi-public", "2020-08-03", "AddWorkspaceUsers")
+	RpcServiceRequest("quickbi-public", "2022-01-01", "AddWorkspaceUsers")
 {
 	setMethod(HttpRequest::Method::Post);
 }

@@ -19,7 +19,7 @@
 using AlibabaCloud::Quickbi_public::Model::UpdateDataLevelPermissionStatusRequest;
 
 UpdateDataLevelPermissionStatusRequest::UpdateDataLevelPermissionStatusRequest() :
-	RpcServiceRequest("quickbi-public", "2020-11-11", "UpdateDataLevelPermissionStatus")
+	RpcServiceRequest("quickbi-public", "2022-01-01", "UpdateDataLevelPermissionStatus")
 {
 	setMethod(HttpRequest::Method::Post);
 }

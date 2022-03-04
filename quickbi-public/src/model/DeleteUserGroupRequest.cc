@@ -19,7 +19,7 @@
 using AlibabaCloud::Quickbi_public::Model::DeleteUserGroupRequest;
 
 DeleteUserGroupRequest::DeleteUserGroupRequest() :
-	RpcServiceRequest("quickbi-public", "2020-07-31", "DeleteUserGroup")
+	RpcServiceRequest("quickbi-public", "2022-01-01", "DeleteUserGroup")
 {
 	setMethod(HttpRequest::Method::Post);
 }

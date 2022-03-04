@@ -19,7 +19,7 @@
 using AlibabaCloud::Quickbi_public::Model::DeleteDataLevelPermissionRuleUsersRequest;
 
 DeleteDataLevelPermissionRuleUsersRequest::DeleteDataLevelPermissionRuleUsersRequest() :
-	RpcServiceRequest("quickbi-public", "2020-11-11", "DeleteDataLevelPermissionRuleUsers")
+	RpcServiceRequest("quickbi-public", "2022-01-01", "DeleteDataLevelPermissionRuleUsers")
 {
 	setMethod(HttpRequest::Method::Post);
 }
