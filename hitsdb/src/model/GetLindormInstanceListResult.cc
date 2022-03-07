@@ -43,38 +43,40 @@ void GetLindormInstanceListResult::parse(const std::string &payload)
 	for (auto valueInstanceListLindormInstanceSummary : allInstanceListNode)
 	{
 		LindormInstanceSummary instanceListObject;
+		if(!valueInstanceListLindormInstanceSummary["VpcId"].isNull())
+			instanceListObject.vpcId = valueInstanceListLindormInstanceSummary["VpcId"].asString();
+		if(!valueInstanceListLindormInstanceSummary["EngineType"].isNull())
+			instanceListObject.engineType = valueInstanceListLindormInstanceSummary["EngineType"].asString();
+		if(!valueInstanceListLindormInstanceSummary["ExpireTime"].isNull())
+			instanceListObject.expireTime = valueInstanceListLindormInstanceSummary["ExpireTime"].asString();
+		if(!valueInstanceListLindormInstanceSummary["CreateTime"].isNull())
+			instanceListObject.createTime = valueInstanceListLindormInstanceSummary["CreateTime"].asString();
+		if(!valueInstanceListLindormInstanceSummary["PayType"].isNull())
+			instanceListObject.payType = valueInstanceListLindormInstanceSummary["PayType"].asString();
+		if(!valueInstanceListLindormInstanceSummary["AliUid"].isNull())
+			instanceListObject.aliUid = std::stol(valueInstanceListLindormInstanceSummary["AliUid"].asString());
+		if(!valueInstanceListLindormInstanceSummary["InstanceStorage"].isNull())
+			instanceListObject.instanceStorage = valueInstanceListLindormInstanceSummary["InstanceStorage"].asString();
 		if(!valueInstanceListLindormInstanceSummary["InstanceId"].isNull())
 			instanceListObject.instanceId = valueInstanceListLindormInstanceSummary["InstanceId"].asString();
-		if(!valueInstanceListLindormInstanceSummary["InstanceAlias"].isNull())
-			instanceListObject.instanceAlias = valueInstanceListLindormInstanceSummary["InstanceAlias"].asString();
+		if(!valueInstanceListLindormInstanceSummary["NetworkType"].isNull())
+			instanceListObject.networkType = valueInstanceListLindormInstanceSummary["NetworkType"].asString();
+		if(!valueInstanceListLindormInstanceSummary["ServiceType"].isNull())
+			instanceListObject.serviceType = valueInstanceListLindormInstanceSummary["ServiceType"].asString();
 		if(!valueInstanceListLindormInstanceSummary["RegionId"].isNull())
 			instanceListObject.regionId = valueInstanceListLindormInstanceSummary["RegionId"].asString();
+		if(!valueInstanceListLindormInstanceSummary["CreateMilliseconds"].isNull())
+			instanceListObject.createMilliseconds = std::stol(valueInstanceListLindormInstanceSummary["CreateMilliseconds"].asString());
+		if(!valueInstanceListLindormInstanceSummary["InstanceAlias"].isNull())
+			instanceListObject.instanceAlias = valueInstanceListLindormInstanceSummary["InstanceAlias"].asString();
 		if(!valueInstanceListLindormInstanceSummary["ZoneId"].isNull())
 			instanceListObject.zoneId = valueInstanceListLindormInstanceSummary["ZoneId"].asString();
 		if(!valueInstanceListLindormInstanceSummary["InstanceStatus"].isNull())
 			instanceListObject.instanceStatus = valueInstanceListLindormInstanceSummary["InstanceStatus"].asString();
-		if(!valueInstanceListLindormInstanceSummary["PayType"].isNull())
-			instanceListObject.payType = valueInstanceListLindormInstanceSummary["PayType"].asString();
-		if(!valueInstanceListLindormInstanceSummary["NetworkType"].isNull())
-			instanceListObject.networkType = valueInstanceListLindormInstanceSummary["NetworkType"].asString();
-		if(!valueInstanceListLindormInstanceSummary["CreateTime"].isNull())
-			instanceListObject.createTime = valueInstanceListLindormInstanceSummary["CreateTime"].asString();
-		if(!valueInstanceListLindormInstanceSummary["ExpireTime"].isNull())
-			instanceListObject.expireTime = valueInstanceListLindormInstanceSummary["ExpireTime"].asString();
-		if(!valueInstanceListLindormInstanceSummary["InstanceStorage"].isNull())
-			instanceListObject.instanceStorage = valueInstanceListLindormInstanceSummary["InstanceStorage"].asString();
-		if(!valueInstanceListLindormInstanceSummary["ServiceType"].isNull())
-			instanceListObject.serviceType = valueInstanceListLindormInstanceSummary["ServiceType"].asString();
-		if(!valueInstanceListLindormInstanceSummary["EngineType"].isNull())
-			instanceListObject.engineType = valueInstanceListLindormInstanceSummary["EngineType"].asString();
-		if(!valueInstanceListLindormInstanceSummary["AliUid"].isNull())
-			instanceListObject.aliUid = std::stol(valueInstanceListLindormInstanceSummary["AliUid"].asString());
-		if(!valueInstanceListLindormInstanceSummary["VpcId"].isNull())
-			instanceListObject.vpcId = valueInstanceListLindormInstanceSummary["VpcId"].asString();
-		if(!valueInstanceListLindormInstanceSummary["CreateMilliseconds"].isNull())
-			instanceListObject.createMilliseconds = std::stol(valueInstanceListLindormInstanceSummary["CreateMilliseconds"].asString());
 		if(!valueInstanceListLindormInstanceSummary["ExpiredMilliseconds"].isNull())
 			instanceListObject.expiredMilliseconds = std::stol(valueInstanceListLindormInstanceSummary["ExpiredMilliseconds"].asString());
+		if(!valueInstanceListLindormInstanceSummary["EnableStream"].isNull())
+			instanceListObject.enableStream = valueInstanceListLindormInstanceSummary["EnableStream"].asString() == "true";
 		instanceList_.push_back(instanceListObject);
 	}
 	if(!value["PageNumber"].isNull())

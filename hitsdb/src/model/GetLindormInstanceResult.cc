@@ -119,6 +119,8 @@ void GetLindormInstanceResult::parse(const std::string &payload)
 		enableSSL_ = value["EnableSSL"].asString() == "true";
 	if(!value["EnableCdc"].isNull())
 		enableCdc_ = value["EnableCdc"].asString() == "true";
+	if(!value["EnableStream"].isNull())
+		enableStream_ = value["EnableStream"].asString() == "true";
 
 }
 
@@ -255,6 +257,11 @@ std::string GetLindormInstanceResult::getVpcId()const
 bool GetLindormInstanceResult::getEnableCdc()const
 {
 	return enableCdc_;
+}
+
+bool GetLindormInstanceResult::getEnableStream()const
+{
+	return enableStream_;
 }
 
 bool GetLindormInstanceResult::getEnablePhoenix()const

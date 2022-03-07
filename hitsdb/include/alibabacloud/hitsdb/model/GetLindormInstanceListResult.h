@@ -41,10 +41,11 @@ namespace AlibabaCloud
 					std::string createTime;
 					std::string payType;
 					std::string vpcId;
-					std::string instanceAlias;
-					std::string instanceStatus;
 					std::string networkType;
 					std::string serviceType;
+					std::string instanceAlias;
+					std::string instanceStatus;
+					bool enableStream;
 					std::string engineType;
 					std::string regionId;
 					std::string expireTime;
