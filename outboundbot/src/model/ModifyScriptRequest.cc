@@ -106,6 +106,17 @@ void ModifyScriptRequest::setAsrConfig(const std::string& asrConfig)
 	setParameter("AsrConfig", asrConfig);
 }
 
+std::string ModifyScriptRequest::getNlsConfig()const
+{
+	return nlsConfig_;
+}
+
+void ModifyScriptRequest::setNlsConfig(const std::string& nlsConfig)
+{
+	nlsConfig_ = nlsConfig;
+	setParameter("NlsConfig", nlsConfig);
+}
+
 bool ModifyScriptRequest::getMiniPlaybackEnabled()const
 {
 	return miniPlaybackEnabled_;

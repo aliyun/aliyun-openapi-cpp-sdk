@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_OUTBOUNDBOT_MODEL_SEARCHTASKREQUEST_H_
-#define ALIBABACLOUD_OUTBOUNDBOT_MODEL_SEARCHTASKREQUEST_H_
+#ifndef ALIBABACLOUD_OUTBOUNDBOT_MODEL_CREATETASKEXPORTTASKREQUEST_H_
+#define ALIBABACLOUD_OUTBOUNDBOT_MODEL_CREATETASKEXPORTTASKREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,13 +28,15 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_OUTBOUNDBOT_EXPORT SearchTaskRequest : public RpcServiceRequest
+			class ALIBABACLOUD_OUTBOUNDBOT_EXPORT CreateTaskExportTaskRequest : public RpcServiceRequest
 			{
 
 			public:
-				SearchTaskRequest();
-				~SearchTaskRequest();
+				CreateTaskExportTaskRequest();
+				~CreateTaskExportTaskRequest();
 
+				bool getHasAnswered()const;
+				void setHasAnswered(bool hasAnswered);
 				long getActualTimeLte()const;
 				void setActualTimeLte(long actualTimeLte);
 				std::string getOtherId()const;
@@ -63,6 +65,10 @@ namespace AlibabaCloud
 				void setJobGroupNameQuery(const std::string& jobGroupNameQuery);
 				std::string getTaskId()const;
 				void setTaskId(const std::string& taskId);
+				bool getHasHangUpByRejection()const;
+				void setHasHangUpByRejection(bool hasHangUpByRejection);
+				bool getHasReachedEndOfFlow()const;
+				void setHasReachedEndOfFlow(bool hasReachedEndOfFlow);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				long getRecordingDurationGte()const;
@@ -83,6 +89,7 @@ namespace AlibabaCloud
 				void setRecordingDurationLte(long recordingDurationLte);
 
             private:
+				bool hasAnswered_;
 				long actualTimeLte_;
 				std::string otherId_;
 				long taskCreateTimeLte_;
@@ -97,6 +104,8 @@ namespace AlibabaCloud
 				std::string taskStatusStringList_;
 				std::string jobGroupNameQuery_;
 				std::string taskId_;
+				bool hasHangUpByRejection_;
+				bool hasReachedEndOfFlow_;
 				std::string instanceId_;
 				long recordingDurationGte_;
 				long callDurationLte_;
@@ -111,4 +120,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_OUTBOUNDBOT_MODEL_SEARCHTASKREQUEST_H_
+#endif // !ALIBABACLOUD_OUTBOUNDBOT_MODEL_CREATETASKEXPORTTASKREQUEST_H_

@@ -59,6 +59,7 @@ namespace AlibabaCloud
 					std::string taskStatusString;
 					int callDuration;
 					std::string userId;
+					std::string scriptName;
 					std::string jobStatusString;
 					int recordingDuration;
 				};

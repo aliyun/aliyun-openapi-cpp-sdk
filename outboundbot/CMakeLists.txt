@@ -41,6 +41,8 @@ set(outboundbot_public_header_model
 	include/alibabacloud/outboundbot/model/CreateGlobalQuestionResult.h
 	include/alibabacloud/outboundbot/model/CreateInstanceRequest.h
 	include/alibabacloud/outboundbot/model/CreateInstanceResult.h
+	include/alibabacloud/outboundbot/model/CreateInstanceBindNumberRequest.h
+	include/alibabacloud/outboundbot/model/CreateInstanceBindNumberResult.h
 	include/alibabacloud/outboundbot/model/CreateIntentRequest.h
 	include/alibabacloud/outboundbot/model/CreateIntentResult.h
 	include/alibabacloud/outboundbot/model/CreateJobDataParsingTaskRequest.h
@@ -61,6 +63,8 @@ set(outboundbot_public_header_model
 	include/alibabacloud/outboundbot/model/CreateScriptWaveformResult.h
 	include/alibabacloud/outboundbot/model/CreateTagRequest.h
 	include/alibabacloud/outboundbot/model/CreateTagResult.h
+	include/alibabacloud/outboundbot/model/CreateTaskExportTaskRequest.h
+	include/alibabacloud/outboundbot/model/CreateTaskExportTaskResult.h
 	include/alibabacloud/outboundbot/model/DeleteAllNumberDistrictInfoRequest.h
 	include/alibabacloud/outboundbot/model/DeleteAllNumberDistrictInfoResult.h
 	include/alibabacloud/outboundbot/model/DeleteContactBlockListRequest.h
@@ -117,6 +121,8 @@ set(outboundbot_public_header_model
 	include/alibabacloud/outboundbot/model/DescribeTTSDemoResult.h
 	include/alibabacloud/outboundbot/model/DescribeTagHitsSummaryRequest.h
 	include/alibabacloud/outboundbot/model/DescribeTagHitsSummaryResult.h
+	include/alibabacloud/outboundbot/model/DescribeTenantBindNumberRequest.h
+	include/alibabacloud/outboundbot/model/DescribeTenantBindNumberResult.h
 	include/alibabacloud/outboundbot/model/DialogueRequest.h
 	include/alibabacloud/outboundbot/model/DialogueResult.h
 	include/alibabacloud/outboundbot/model/DismissNumberDistrictInfoParsingResultRequest.h
@@ -161,6 +167,8 @@ set(outboundbot_public_header_model
 	include/alibabacloud/outboundbot/model/ImportScriptResult.h
 	include/alibabacloud/outboundbot/model/InflightTaskTimeoutRequest.h
 	include/alibabacloud/outboundbot/model/InflightTaskTimeoutResult.h
+	include/alibabacloud/outboundbot/model/ListAllTenantBindNumberBindingRequest.h
+	include/alibabacloud/outboundbot/model/ListAllTenantBindNumberBindingResult.h
 	include/alibabacloud/outboundbot/model/ListChatbotInstancesRequest.h
 	include/alibabacloud/outboundbot/model/ListChatbotInstancesResult.h
 	include/alibabacloud/outboundbot/model/ListDialogueFlowsRequest.h
@@ -300,6 +308,8 @@ set(outboundbot_src
 	src/model/CreateGlobalQuestionResult.cc
 	src/model/CreateInstanceRequest.cc
 	src/model/CreateInstanceResult.cc
+	src/model/CreateInstanceBindNumberRequest.cc
+	src/model/CreateInstanceBindNumberResult.cc
 	src/model/CreateIntentRequest.cc
 	src/model/CreateIntentResult.cc
 	src/model/CreateJobDataParsingTaskRequest.cc
@@ -320,6 +330,8 @@ set(outboundbot_src
 	src/model/CreateScriptWaveformResult.cc
 	src/model/CreateTagRequest.cc
 	src/model/CreateTagResult.cc
+	src/model/CreateTaskExportTaskRequest.cc
+	src/model/CreateTaskExportTaskResult.cc
 	src/model/DeleteAllNumberDistrictInfoRequest.cc
 	src/model/DeleteAllNumberDistrictInfoResult.cc
 	src/model/DeleteContactBlockListRequest.cc
@@ -376,6 +388,8 @@ set(outboundbot_src
 	src/model/DescribeTTSDemoResult.cc
 	src/model/DescribeTagHitsSummaryRequest.cc
 	src/model/DescribeTagHitsSummaryResult.cc
+	src/model/DescribeTenantBindNumberRequest.cc
+	src/model/DescribeTenantBindNumberResult.cc
 	src/model/DialogueRequest.cc
 	src/model/DialogueResult.cc
 	src/model/DismissNumberDistrictInfoParsingResultRequest.cc
@@ -420,6 +434,8 @@ set(outboundbot_src
 	src/model/ImportScriptResult.cc
 	src/model/InflightTaskTimeoutRequest.cc
 	src/model/InflightTaskTimeoutResult.cc
+	src/model/ListAllTenantBindNumberBindingRequest.cc
+	src/model/ListAllTenantBindNumberBindingResult.cc
 	src/model/ListChatbotInstancesRequest.cc
 	src/model/ListChatbotInstancesResult.cc
 	src/model/ListDialogueFlowsRequest.cc

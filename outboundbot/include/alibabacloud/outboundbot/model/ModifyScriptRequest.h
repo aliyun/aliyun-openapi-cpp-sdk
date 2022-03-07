@@ -49,6 +49,8 @@ namespace AlibabaCloud
 				void setScriptWaveform(const std::vector<std::string>& scriptWaveform);
 				std::string getAsrConfig()const;
 				void setAsrConfig(const std::string& asrConfig);
+				std::string getNlsConfig()const;
+				void setNlsConfig(const std::string& nlsConfig);
 				bool getMiniPlaybackEnabled()const;
 				void setMiniPlaybackEnabled(bool miniPlaybackEnabled);
 				std::string getChatbotId()const;
@@ -68,6 +70,7 @@ namespace AlibabaCloud
 				std::string scriptId_;
 				std::vector<std::string> scriptWaveform_;
 				std::string asrConfig_;
+				std::string nlsConfig_;
 				bool miniPlaybackEnabled_;
 				std::string chatbotId_;
 				std::string instanceId_;

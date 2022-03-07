@@ -34,10 +34,10 @@ namespace AlibabaCloud
 			public:
 				struct TTSConfig
 				{
-					std::string instanceId;
 					std::string volume;
-					std::string scriptId;
-					std::string id;
+					std::string instanceId;
+					std::string appKey;
+					std::string nlsServiceType;
 					std::string voice;
 					std::string speechRate;
 				};

@@ -62,6 +62,7 @@ namespace AlibabaCloud
 				std::string getTtsConfig()const;
 				std::string getCode()const;
 				bool getSuccess()const;
+				std::string getNlsConfig()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -74,6 +75,7 @@ namespace AlibabaCloud
 				std::string ttsConfig_;
 				std::string code_;
 				bool success_;
+				std::string nlsConfig_;
 
 			};
 		}

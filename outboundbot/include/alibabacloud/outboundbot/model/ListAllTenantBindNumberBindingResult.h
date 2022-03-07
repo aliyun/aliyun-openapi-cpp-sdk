@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_OUTBOUNDBOT_MODEL_MODIFYTTSCONFIGRESULT_H_
-#define ALIBABACLOUD_OUTBOUNDBOT_MODEL_MODIFYTTSCONFIGRESULT_H_
+#ifndef ALIBABACLOUD_OUTBOUNDBOT_MODEL_LISTALLTENANTBINDNUMBERBINDINGRESULT_H_
+#define ALIBABACLOUD_OUTBOUNDBOT_MODEL_LISTALLTENANTBINDNUMBERBINDINGRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,26 +29,29 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_OUTBOUNDBOT_EXPORT ModifyTTSConfigResult : public ServiceResult
+			class ALIBABACLOUD_OUTBOUNDBOT_EXPORT ListAllTenantBindNumberBindingResult : public ServiceResult
 			{
 			public:
-				struct TTSConfig
+				struct Data
 				{
-					std::string volume;
-					std::string instanceId;
-					std::string tTSConfigId;
-					std::string scriptId;
-					std::string voice;
-					std::string speechRate;
+					struct ListItem
+					{
+						std::string serializedParams;
+						std::string number;
+						std::vector<std::string> instanceNameList;
+						std::string bindingId;
+						std::string trunkName;
+					};
+					std::vector<ListItem> list;
 				};
 
 
-				ModifyTTSConfigResult();
-				explicit ModifyTTSConfigResult(const std::string &payload);
-				~ModifyTTSConfigResult();
+				ListAllTenantBindNumberBindingResult();
+				explicit ListAllTenantBindNumberBindingResult(const std::string &payload);
+				~ListAllTenantBindNumberBindingResult();
 				std::string getMessage()const;
-				TTSConfig getTTSConfig()const;
 				int getHttpStatusCode()const;
+				Data getData()const;
 				std::string getCode()const;
 				bool getSuccess()const;
 
@@ -56,8 +59,8 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
-				TTSConfig tTSConfig_;
 				int httpStatusCode_;
+				Data data_;
 				std::string code_;
 				bool success_;
 
@@ -65,4 +68,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_OUTBOUNDBOT_MODEL_MODIFYTTSCONFIGRESULT_H_
+#endif // !ALIBABACLOUD_OUTBOUNDBOT_MODEL_LISTALLTENANTBINDNUMBERBINDINGRESULT_H_

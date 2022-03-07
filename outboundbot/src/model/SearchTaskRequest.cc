@@ -115,6 +115,17 @@ void SearchTaskRequest::setPageSize(int pageSize)
 	setParameter("PageSize", std::to_string(pageSize));
 }
 
+std::string SearchTaskRequest::getScriptNameQuery()const
+{
+	return scriptNameQuery_;
+}
+
+void SearchTaskRequest::setScriptNameQuery(const std::string& scriptNameQuery)
+{
+	scriptNameQuery_ = scriptNameQuery;
+	setParameter("ScriptNameQuery", scriptNameQuery);
+}
+
 int SearchTaskRequest::getPageIndex()const
 {
 	return pageIndex_;

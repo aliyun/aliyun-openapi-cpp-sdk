@@ -411,6 +411,42 @@ OutboundBotClient::CreateInstanceOutcomeCallable OutboundBotClient::createInstan
 	return task->get_future();
 }
 
+OutboundBotClient::CreateInstanceBindNumberOutcome OutboundBotClient::createInstanceBindNumber(const CreateInstanceBindNumberRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateInstanceBindNumberOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateInstanceBindNumberOutcome(CreateInstanceBindNumberResult(outcome.result()));
+	else
+		return CreateInstanceBindNumberOutcome(outcome.error());
+}
+
+void OutboundBotClient::createInstanceBindNumberAsync(const CreateInstanceBindNumberRequest& request, const CreateInstanceBindNumberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createInstanceBindNumber(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OutboundBotClient::CreateInstanceBindNumberOutcomeCallable OutboundBotClient::createInstanceBindNumberCallable(const CreateInstanceBindNumberRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateInstanceBindNumberOutcome()>>(
+			[this, request]()
+			{
+			return this->createInstanceBindNumber(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 OutboundBotClient::CreateIntentOutcome OutboundBotClient::createIntent(const CreateIntentRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -765,6 +801,42 @@ OutboundBotClient::CreateTagOutcomeCallable OutboundBotClient::createTagCallable
 			[this, request]()
 			{
 			return this->createTag(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OutboundBotClient::CreateTaskExportTaskOutcome OutboundBotClient::createTaskExportTask(const CreateTaskExportTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateTaskExportTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateTaskExportTaskOutcome(CreateTaskExportTaskResult(outcome.result()));
+	else
+		return CreateTaskExportTaskOutcome(outcome.error());
+}
+
+void OutboundBotClient::createTaskExportTaskAsync(const CreateTaskExportTaskRequest& request, const CreateTaskExportTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createTaskExportTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OutboundBotClient::CreateTaskExportTaskOutcomeCallable OutboundBotClient::createTaskExportTaskCallable(const CreateTaskExportTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateTaskExportTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->createTaskExportTask(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1779,6 +1851,42 @@ OutboundBotClient::DescribeTagHitsSummaryOutcomeCallable OutboundBotClient::desc
 	return task->get_future();
 }
 
+OutboundBotClient::DescribeTenantBindNumberOutcome OutboundBotClient::describeTenantBindNumber(const DescribeTenantBindNumberRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeTenantBindNumberOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeTenantBindNumberOutcome(DescribeTenantBindNumberResult(outcome.result()));
+	else
+		return DescribeTenantBindNumberOutcome(outcome.error());
+}
+
+void OutboundBotClient::describeTenantBindNumberAsync(const DescribeTenantBindNumberRequest& request, const DescribeTenantBindNumberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeTenantBindNumber(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OutboundBotClient::DescribeTenantBindNumberOutcomeCallable OutboundBotClient::describeTenantBindNumberCallable(const DescribeTenantBindNumberRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeTenantBindNumberOutcome()>>(
+			[this, request]()
+			{
+			return this->describeTenantBindNumber(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 OutboundBotClient::DialogueOutcome OutboundBotClient::dialogue(const DialogueRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2565,6 +2673,42 @@ OutboundBotClient::InflightTaskTimeoutOutcomeCallable OutboundBotClient::infligh
 			[this, request]()
 			{
 			return this->inflightTaskTimeout(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OutboundBotClient::ListAllTenantBindNumberBindingOutcome OutboundBotClient::listAllTenantBindNumberBinding(const ListAllTenantBindNumberBindingRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListAllTenantBindNumberBindingOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListAllTenantBindNumberBindingOutcome(ListAllTenantBindNumberBindingResult(outcome.result()));
+	else
+		return ListAllTenantBindNumberBindingOutcome(outcome.error());
+}
+
+void OutboundBotClient::listAllTenantBindNumberBindingAsync(const ListAllTenantBindNumberBindingRequest& request, const ListAllTenantBindNumberBindingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listAllTenantBindNumberBinding(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OutboundBotClient::ListAllTenantBindNumberBindingOutcomeCallable OutboundBotClient::listAllTenantBindNumberBindingCallable(const ListAllTenantBindNumberBindingRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListAllTenantBindNumberBindingOutcome()>>(
+			[this, request]()
+			{
+			return this->listAllTenantBindNumberBinding(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -42,6 +42,8 @@
 #include "model/CreateGlobalQuestionResult.h"
 #include "model/CreateInstanceRequest.h"
 #include "model/CreateInstanceResult.h"
+#include "model/CreateInstanceBindNumberRequest.h"
+#include "model/CreateInstanceBindNumberResult.h"
 #include "model/CreateIntentRequest.h"
 #include "model/CreateIntentResult.h"
 #include "model/CreateJobDataParsingTaskRequest.h"
@@ -62,6 +64,8 @@
 #include "model/CreateScriptWaveformResult.h"
 #include "model/CreateTagRequest.h"
 #include "model/CreateTagResult.h"
+#include "model/CreateTaskExportTaskRequest.h"
+#include "model/CreateTaskExportTaskResult.h"
 #include "model/DeleteAllNumberDistrictInfoRequest.h"
 #include "model/DeleteAllNumberDistrictInfoResult.h"
 #include "model/DeleteContactBlockListRequest.h"
@@ -118,6 +122,8 @@
 #include "model/DescribeTTSDemoResult.h"
 #include "model/DescribeTagHitsSummaryRequest.h"
 #include "model/DescribeTagHitsSummaryResult.h"
+#include "model/DescribeTenantBindNumberRequest.h"
+#include "model/DescribeTenantBindNumberResult.h"
 #include "model/DialogueRequest.h"
 #include "model/DialogueResult.h"
 #include "model/DismissNumberDistrictInfoParsingResultRequest.h"
@@ -162,6 +168,8 @@
 #include "model/ImportScriptResult.h"
 #include "model/InflightTaskTimeoutRequest.h"
 #include "model/InflightTaskTimeoutResult.h"
+#include "model/ListAllTenantBindNumberBindingRequest.h"
+#include "model/ListAllTenantBindNumberBindingResult.h"
 #include "model/ListChatbotInstancesRequest.h"
 #include "model/ListChatbotInstancesResult.h"
 #include "model/ListDialogueFlowsRequest.h"
@@ -317,6 +325,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateInstanceResult> CreateInstanceOutcome;
 			typedef std::future<CreateInstanceOutcome> CreateInstanceOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::CreateInstanceRequest&, const CreateInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstanceAsyncHandler;
+			typedef Outcome<Error, Model::CreateInstanceBindNumberResult> CreateInstanceBindNumberOutcome;
+			typedef std::future<CreateInstanceBindNumberOutcome> CreateInstanceBindNumberOutcomeCallable;
+			typedef std::function<void(const OutboundBotClient*, const Model::CreateInstanceBindNumberRequest&, const CreateInstanceBindNumberOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstanceBindNumberAsyncHandler;
 			typedef Outcome<Error, Model::CreateIntentResult> CreateIntentOutcome;
 			typedef std::future<CreateIntentOutcome> CreateIntentOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::CreateIntentRequest&, const CreateIntentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateIntentAsyncHandler;
@@ -347,6 +358,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateTagResult> CreateTagOutcome;
 			typedef std::future<CreateTagOutcome> CreateTagOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::CreateTagRequest&, const CreateTagOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateTagAsyncHandler;
+			typedef Outcome<Error, Model::CreateTaskExportTaskResult> CreateTaskExportTaskOutcome;
+			typedef std::future<CreateTaskExportTaskOutcome> CreateTaskExportTaskOutcomeCallable;
+			typedef std::function<void(const OutboundBotClient*, const Model::CreateTaskExportTaskRequest&, const CreateTaskExportTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateTaskExportTaskAsyncHandler;
 			typedef Outcome<Error, Model::DeleteAllNumberDistrictInfoResult> DeleteAllNumberDistrictInfoOutcome;
 			typedef std::future<DeleteAllNumberDistrictInfoOutcome> DeleteAllNumberDistrictInfoOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::DeleteAllNumberDistrictInfoRequest&, const DeleteAllNumberDistrictInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAllNumberDistrictInfoAsyncHandler;
@@ -431,6 +445,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeTagHitsSummaryResult> DescribeTagHitsSummaryOutcome;
 			typedef std::future<DescribeTagHitsSummaryOutcome> DescribeTagHitsSummaryOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::DescribeTagHitsSummaryRequest&, const DescribeTagHitsSummaryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTagHitsSummaryAsyncHandler;
+			typedef Outcome<Error, Model::DescribeTenantBindNumberResult> DescribeTenantBindNumberOutcome;
+			typedef std::future<DescribeTenantBindNumberOutcome> DescribeTenantBindNumberOutcomeCallable;
+			typedef std::function<void(const OutboundBotClient*, const Model::DescribeTenantBindNumberRequest&, const DescribeTenantBindNumberOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTenantBindNumberAsyncHandler;
 			typedef Outcome<Error, Model::DialogueResult> DialogueOutcome;
 			typedef std::future<DialogueOutcome> DialogueOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::DialogueRequest&, const DialogueOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DialogueAsyncHandler;
@@ -497,6 +514,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::InflightTaskTimeoutResult> InflightTaskTimeoutOutcome;
 			typedef std::future<InflightTaskTimeoutOutcome> InflightTaskTimeoutOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::InflightTaskTimeoutRequest&, const InflightTaskTimeoutOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> InflightTaskTimeoutAsyncHandler;
+			typedef Outcome<Error, Model::ListAllTenantBindNumberBindingResult> ListAllTenantBindNumberBindingOutcome;
+			typedef std::future<ListAllTenantBindNumberBindingOutcome> ListAllTenantBindNumberBindingOutcomeCallable;
+			typedef std::function<void(const OutboundBotClient*, const Model::ListAllTenantBindNumberBindingRequest&, const ListAllTenantBindNumberBindingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAllTenantBindNumberBindingAsyncHandler;
 			typedef Outcome<Error, Model::ListChatbotInstancesResult> ListChatbotInstancesOutcome;
 			typedef std::future<ListChatbotInstancesOutcome> ListChatbotInstancesOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::ListChatbotInstancesRequest&, const ListChatbotInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListChatbotInstancesAsyncHandler;
@@ -706,6 +726,9 @@ namespace AlibabaCloud
 			CreateInstanceOutcome createInstance(const Model::CreateInstanceRequest &request)const;
 			void createInstanceAsync(const Model::CreateInstanceRequest& request, const CreateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateInstanceOutcomeCallable createInstanceCallable(const Model::CreateInstanceRequest& request) const;
+			CreateInstanceBindNumberOutcome createInstanceBindNumber(const Model::CreateInstanceBindNumberRequest &request)const;
+			void createInstanceBindNumberAsync(const Model::CreateInstanceBindNumberRequest& request, const CreateInstanceBindNumberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateInstanceBindNumberOutcomeCallable createInstanceBindNumberCallable(const Model::CreateInstanceBindNumberRequest& request) const;
 			CreateIntentOutcome createIntent(const Model::CreateIntentRequest &request)const;
 			void createIntentAsync(const Model::CreateIntentRequest& request, const CreateIntentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateIntentOutcomeCallable createIntentCallable(const Model::CreateIntentRequest& request) const;
@@ -736,6 +759,9 @@ namespace AlibabaCloud
 			CreateTagOutcome createTag(const Model::CreateTagRequest &request)const;
 			void createTagAsync(const Model::CreateTagRequest& request, const CreateTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateTagOutcomeCallable createTagCallable(const Model::CreateTagRequest& request) const;
+			CreateTaskExportTaskOutcome createTaskExportTask(const Model::CreateTaskExportTaskRequest &request)const;
+			void createTaskExportTaskAsync(const Model::CreateTaskExportTaskRequest& request, const CreateTaskExportTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateTaskExportTaskOutcomeCallable createTaskExportTaskCallable(const Model::CreateTaskExportTaskRequest& request) const;
 			DeleteAllNumberDistrictInfoOutcome deleteAllNumberDistrictInfo(const Model::DeleteAllNumberDistrictInfoRequest &request)const;
 			void deleteAllNumberDistrictInfoAsync(const Model::DeleteAllNumberDistrictInfoRequest& request, const DeleteAllNumberDistrictInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteAllNumberDistrictInfoOutcomeCallable deleteAllNumberDistrictInfoCallable(const Model::DeleteAllNumberDistrictInfoRequest& request) const;
@@ -820,6 +846,9 @@ namespace AlibabaCloud
 			DescribeTagHitsSummaryOutcome describeTagHitsSummary(const Model::DescribeTagHitsSummaryRequest &request)const;
 			void describeTagHitsSummaryAsync(const Model::DescribeTagHitsSummaryRequest& request, const DescribeTagHitsSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeTagHitsSummaryOutcomeCallable describeTagHitsSummaryCallable(const Model::DescribeTagHitsSummaryRequest& request) const;
+			DescribeTenantBindNumberOutcome describeTenantBindNumber(const Model::DescribeTenantBindNumberRequest &request)const;
+			void describeTenantBindNumberAsync(const Model::DescribeTenantBindNumberRequest& request, const DescribeTenantBindNumberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeTenantBindNumberOutcomeCallable describeTenantBindNumberCallable(const Model::DescribeTenantBindNumberRequest& request) const;
 			DialogueOutcome dialogue(const Model::DialogueRequest &request)const;
 			void dialogueAsync(const Model::DialogueRequest& request, const DialogueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DialogueOutcomeCallable dialogueCallable(const Model::DialogueRequest& request) const;
@@ -886,6 +915,9 @@ namespace AlibabaCloud
 			InflightTaskTimeoutOutcome inflightTaskTimeout(const Model::InflightTaskTimeoutRequest &request)const;
 			void inflightTaskTimeoutAsync(const Model::InflightTaskTimeoutRequest& request, const InflightTaskTimeoutAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			InflightTaskTimeoutOutcomeCallable inflightTaskTimeoutCallable(const Model::InflightTaskTimeoutRequest& request) const;
+			ListAllTenantBindNumberBindingOutcome listAllTenantBindNumberBinding(const Model::ListAllTenantBindNumberBindingRequest &request)const;
+			void listAllTenantBindNumberBindingAsync(const Model::ListAllTenantBindNumberBindingRequest& request, const ListAllTenantBindNumberBindingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListAllTenantBindNumberBindingOutcomeCallable listAllTenantBindNumberBindingCallable(const Model::ListAllTenantBindNumberBindingRequest& request) const;
 			ListChatbotInstancesOutcome listChatbotInstances(const Model::ListChatbotInstancesRequest &request)const;
 			void listChatbotInstancesAsync(const Model::ListChatbotInstancesRequest& request, const ListChatbotInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListChatbotInstancesOutcomeCallable listChatbotInstancesCallable(const Model::ListChatbotInstancesRequest& request) const;

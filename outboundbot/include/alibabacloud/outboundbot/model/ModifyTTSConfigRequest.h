@@ -37,20 +37,26 @@ namespace AlibabaCloud
 
 				std::string getVoice()const;
 				void setVoice(const std::string& voice);
+				std::string getNlsServiceType()const;
+				void setNlsServiceType(const std::string& nlsServiceType);
 				std::string getVolume()const;
 				void setVolume(const std::string& volume);
 				std::string getScriptId()const;
 				void setScriptId(const std::string& scriptId);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
+				std::string getAppKey()const;
+				void setAppKey(const std::string& appKey);
 				std::string getSpeechRate()const;
 				void setSpeechRate(const std::string& speechRate);
 
             private:
 				std::string voice_;
+				std::string nlsServiceType_;
 				std::string volume_;
 				std::string scriptId_;
 				std::string instanceId_;
+				std::string appKey_;
 				std::string speechRate_;
 
 			};

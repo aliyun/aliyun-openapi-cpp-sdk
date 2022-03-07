@@ -95,6 +95,8 @@ void SearchTaskResult::parse(const std::string &payload)
 			searchTaskInfoListObject.dialExceptionOld = valueSearchTaskInfoListSearchTaskInfo["DialExceptionOld"].asString();
 		if(!valueSearchTaskInfoListSearchTaskInfo["HasLastPlaybackCompleted"].isNull())
 			searchTaskInfoListObject.hasLastPlaybackCompleted = valueSearchTaskInfoListSearchTaskInfo["HasLastPlaybackCompleted"].asString() == "true";
+		if(!valueSearchTaskInfoListSearchTaskInfo["ScriptName"].isNull())
+			searchTaskInfoListObject.scriptName = valueSearchTaskInfoListSearchTaskInfo["ScriptName"].asString();
 		auto allDialExceptionCodes = value["DialExceptionCodes"]["String"];
 		for (auto value : allDialExceptionCodes)
 			searchTaskInfoListObject.dialExceptionCodes.push_back(value.asString());

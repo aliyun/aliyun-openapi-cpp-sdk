@@ -38,6 +38,17 @@ void ModifyTTSConfigRequest::setVoice(const std::string& voice)
 	setParameter("Voice", voice);
 }
 
+std::string ModifyTTSConfigRequest::getNlsServiceType()const
+{
+	return nlsServiceType_;
+}
+
+void ModifyTTSConfigRequest::setNlsServiceType(const std::string& nlsServiceType)
+{
+	nlsServiceType_ = nlsServiceType;
+	setParameter("NlsServiceType", nlsServiceType);
+}
+
 std::string ModifyTTSConfigRequest::getVolume()const
 {
 	return volume_;
@@ -69,6 +80,17 @@ void ModifyTTSConfigRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
 	setParameter("InstanceId", instanceId);
+}
+
+std::string ModifyTTSConfigRequest::getAppKey()const
+{
+	return appKey_;
+}
+
+void ModifyTTSConfigRequest::setAppKey(const std::string& appKey)
+{
+	appKey_ = appKey;
+	setParameter("AppKey", appKey);
 }
 
 std::string ModifyTTSConfigRequest::getSpeechRate()const

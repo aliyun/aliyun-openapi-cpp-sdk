@@ -40,36 +40,36 @@ void ModifyScriptResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto scriptNode = value["Script"];
-	if(!scriptNode["DebugStatus"].isNull())
-		script_.debugStatus = scriptNode["DebugStatus"].asString();
-	if(!scriptNode["Industry"].isNull())
-		script_.industry = scriptNode["Industry"].asString();
-	if(!scriptNode["IsDebugDrafted"].isNull())
-		script_.isDebugDrafted = scriptNode["IsDebugDrafted"].asString() == "true";
-	if(!scriptNode["IsDrafted"].isNull())
-		script_.isDrafted = scriptNode["IsDrafted"].asString() == "true";
-	if(!scriptNode["Scene"].isNull())
-		script_.scene = scriptNode["Scene"].asString();
-	if(!scriptNode["ScriptDescription"].isNull())
-		script_.scriptDescription = scriptNode["ScriptDescription"].asString();
-	if(!scriptNode["ScriptId"].isNull())
-		script_.scriptId = scriptNode["ScriptId"].asString();
-	if(!scriptNode["ScriptName"].isNull())
-		script_.scriptName = scriptNode["ScriptName"].asString();
 	if(!scriptNode["Status"].isNull())
 		script_.status = scriptNode["Status"].asString();
 	if(!scriptNode["UpdateTime"].isNull())
 		script_.updateTime = std::stol(scriptNode["UpdateTime"].asString());
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
+	if(!scriptNode["Industry"].isNull())
+		script_.industry = scriptNode["Industry"].asString();
+	if(!scriptNode["ScriptDescription"].isNull())
+		script_.scriptDescription = scriptNode["ScriptDescription"].asString();
+	if(!scriptNode["IsDrafted"].isNull())
+		script_.isDrafted = scriptNode["IsDrafted"].asString() == "true";
+	if(!scriptNode["DebugStatus"].isNull())
+		script_.debugStatus = scriptNode["DebugStatus"].asString();
+	if(!scriptNode["ScriptId"].isNull())
+		script_.scriptId = scriptNode["ScriptId"].asString();
+	if(!scriptNode["IsDebugDrafted"].isNull())
+		script_.isDebugDrafted = scriptNode["IsDebugDrafted"].asString() == "true";
+	if(!scriptNode["ScriptName"].isNull())
+		script_.scriptName = scriptNode["ScriptName"].asString();
+	if(!scriptNode["Scene"].isNull())
+		script_.scene = scriptNode["Scene"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["ChatbotId"].isNull())
 		chatbotId_ = value["ChatbotId"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 
 }
 
