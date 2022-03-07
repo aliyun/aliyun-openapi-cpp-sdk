@@ -123,6 +123,42 @@ VoiceNavigatorClient::AuditTTSVoiceOutcomeCallable VoiceNavigatorClient::auditTT
 	return task->get_future();
 }
 
+VoiceNavigatorClient::BatchCreateSandBoxWhileListOutcome VoiceNavigatorClient::batchCreateSandBoxWhileList(const BatchCreateSandBoxWhileListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return BatchCreateSandBoxWhileListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return BatchCreateSandBoxWhileListOutcome(BatchCreateSandBoxWhileListResult(outcome.result()));
+	else
+		return BatchCreateSandBoxWhileListOutcome(outcome.error());
+}
+
+void VoiceNavigatorClient::batchCreateSandBoxWhileListAsync(const BatchCreateSandBoxWhileListRequest& request, const BatchCreateSandBoxWhileListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, batchCreateSandBoxWhileList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VoiceNavigatorClient::BatchCreateSandBoxWhileListOutcomeCallable VoiceNavigatorClient::batchCreateSandBoxWhileListCallable(const BatchCreateSandBoxWhileListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<BatchCreateSandBoxWhileListOutcome()>>(
+			[this, request]()
+			{
+			return this->batchCreateSandBoxWhileList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VoiceNavigatorClient::BeginDialogueOutcome VoiceNavigatorClient::beginDialogue(const BeginDialogueRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -405,6 +441,42 @@ VoiceNavigatorClient::DeleteInstanceOutcomeCallable VoiceNavigatorClient::delete
 			[this, request]()
 			{
 			return this->deleteInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VoiceNavigatorClient::DeleteSandBoxWhileListOutcome VoiceNavigatorClient::deleteSandBoxWhileList(const DeleteSandBoxWhileListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteSandBoxWhileListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteSandBoxWhileListOutcome(DeleteSandBoxWhileListResult(outcome.result()));
+	else
+		return DeleteSandBoxWhileListOutcome(outcome.error());
+}
+
+void VoiceNavigatorClient::deleteSandBoxWhileListAsync(const DeleteSandBoxWhileListRequest& request, const DeleteSandBoxWhileListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteSandBoxWhileList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VoiceNavigatorClient::DeleteSandBoxWhileListOutcomeCallable VoiceNavigatorClient::deleteSandBoxWhileListCallable(const DeleteSandBoxWhileListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteSandBoxWhileListOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteSandBoxWhileList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -843,6 +915,42 @@ VoiceNavigatorClient::DisableInstanceOutcomeCallable VoiceNavigatorClient::disab
 	return task->get_future();
 }
 
+VoiceNavigatorClient::DisableSandBoxWhileListOutcome VoiceNavigatorClient::disableSandBoxWhileList(const DisableSandBoxWhileListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DisableSandBoxWhileListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DisableSandBoxWhileListOutcome(DisableSandBoxWhileListResult(outcome.result()));
+	else
+		return DisableSandBoxWhileListOutcome(outcome.error());
+}
+
+void VoiceNavigatorClient::disableSandBoxWhileListAsync(const DisableSandBoxWhileListRequest& request, const DisableSandBoxWhileListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, disableSandBoxWhileList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VoiceNavigatorClient::DisableSandBoxWhileListOutcomeCallable VoiceNavigatorClient::disableSandBoxWhileListCallable(const DisableSandBoxWhileListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DisableSandBoxWhileListOutcome()>>(
+			[this, request]()
+			{
+			return this->disableSandBoxWhileList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VoiceNavigatorClient::EnableInstanceOutcome VoiceNavigatorClient::enableInstance(const EnableInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -873,6 +981,42 @@ VoiceNavigatorClient::EnableInstanceOutcomeCallable VoiceNavigatorClient::enable
 			[this, request]()
 			{
 			return this->enableInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VoiceNavigatorClient::EnableSandBoxWhileListOutcome VoiceNavigatorClient::enableSandBoxWhileList(const EnableSandBoxWhileListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return EnableSandBoxWhileListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return EnableSandBoxWhileListOutcome(EnableSandBoxWhileListResult(outcome.result()));
+	else
+		return EnableSandBoxWhileListOutcome(outcome.error());
+}
+
+void VoiceNavigatorClient::enableSandBoxWhileListAsync(const EnableSandBoxWhileListRequest& request, const EnableSandBoxWhileListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, enableSandBoxWhileList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VoiceNavigatorClient::EnableSandBoxWhileListOutcomeCallable VoiceNavigatorClient::enableSandBoxWhileListCallable(const EnableSandBoxWhileListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<EnableSandBoxWhileListOutcome()>>(
+			[this, request]()
+			{
+			return this->enableSandBoxWhileList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1239,6 +1383,42 @@ VoiceNavigatorClient::ListInstancesOutcomeCallable VoiceNavigatorClient::listIns
 	return task->get_future();
 }
 
+VoiceNavigatorClient::ListSandBoxWhileListOutcome VoiceNavigatorClient::listSandBoxWhileList(const ListSandBoxWhileListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListSandBoxWhileListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListSandBoxWhileListOutcome(ListSandBoxWhileListResult(outcome.result()));
+	else
+		return ListSandBoxWhileListOutcome(outcome.error());
+}
+
+void VoiceNavigatorClient::listSandBoxWhileListAsync(const ListSandBoxWhileListRequest& request, const ListSandBoxWhileListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listSandBoxWhileList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VoiceNavigatorClient::ListSandBoxWhileListOutcomeCallable VoiceNavigatorClient::listSandBoxWhileListCallable(const ListSandBoxWhileListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListSandBoxWhileListOutcome()>>(
+			[this, request]()
+			{
+			return this->listSandBoxWhileList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VoiceNavigatorClient::ModifyAsrVadConfigOutcome VoiceNavigatorClient::modifyAsrVadConfig(const ModifyAsrVadConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1341,6 +1521,42 @@ VoiceNavigatorClient::ModifyInstanceOutcomeCallable VoiceNavigatorClient::modify
 			[this, request]()
 			{
 			return this->modifyInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VoiceNavigatorClient::ModifySandBoxWhileListOutcome VoiceNavigatorClient::modifySandBoxWhileList(const ModifySandBoxWhileListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifySandBoxWhileListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifySandBoxWhileListOutcome(ModifySandBoxWhileListResult(outcome.result()));
+	else
+		return ModifySandBoxWhileListOutcome(outcome.error());
+}
+
+void VoiceNavigatorClient::modifySandBoxWhileListAsync(const ModifySandBoxWhileListRequest& request, const ModifySandBoxWhileListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifySandBoxWhileList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VoiceNavigatorClient::ModifySandBoxWhileListOutcomeCallable VoiceNavigatorClient::modifySandBoxWhileListCallable(const ModifySandBoxWhileListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifySandBoxWhileListOutcome()>>(
+			[this, request]()
+			{
+			return this->modifySandBoxWhileList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

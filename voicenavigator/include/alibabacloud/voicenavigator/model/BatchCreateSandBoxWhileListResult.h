@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VOICENAVIGATOR_MODEL_LISTCONVERSATIONSRESULT_H_
-#define ALIBABACLOUD_VOICENAVIGATOR_MODEL_LISTCONVERSATIONSRESULT_H_
+#ifndef ALIBABACLOUD_VOICENAVIGATOR_MODEL_BATCHCREATESANDBOXWHILELISTRESULT_H_
+#define ALIBABACLOUD_VOICENAVIGATOR_MODEL_BATCHCREATESANDBOXWHILELISTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,42 +29,36 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VOICENAVIGATOR_EXPORT ListConversationsResult : public ServiceResult
+			class ALIBABACLOUD_VOICENAVIGATOR_EXPORT BatchCreateSandBoxWhileListResult : public ServiceResult
 			{
 			public:
-				struct Conversation
+				struct WhiteListItem
 				{
-					bool sandBox;
-					std::string skillGroup;
-					std::string conversationId;
-					bool hasLastPlaybackCompleted;
-					int endReason;
-					long endTime;
-					int rounds;
-					bool hasToAgent;
-					long startTime;
-					std::string callingNumber;
+					int isEnable;
+					long gmtCreate;
+					std::string uuid;
+					std::string description;
+					std::string instanceId;
+					long gmtModified;
+					std::string phoneNumber;
+					std::string name;
 				};
 
 
-				ListConversationsResult();
-				explicit ListConversationsResult(const std::string &payload);
-				~ListConversationsResult();
-				long getTotalCount()const;
-				int getPageSize()const;
-				int getPageNumber()const;
-				std::vector<Conversation> getConversations()const;
+				BatchCreateSandBoxWhileListResult();
+				explicit BatchCreateSandBoxWhileListResult(const std::string &payload);
+				~BatchCreateSandBoxWhileListResult();
+				std::vector<WhiteListItem> getWhiteList()const;
+				bool getRepeat()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				long totalCount_;
-				int pageSize_;
-				int pageNumber_;
-				std::vector<Conversation> conversations_;
+				std::vector<WhiteListItem> whiteList_;
+				bool repeat_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VOICENAVIGATOR_MODEL_LISTCONVERSATIONSRESULT_H_
+#endif // !ALIBABACLOUD_VOICENAVIGATOR_MODEL_BATCHCREATESANDBOXWHILELISTRESULT_H_

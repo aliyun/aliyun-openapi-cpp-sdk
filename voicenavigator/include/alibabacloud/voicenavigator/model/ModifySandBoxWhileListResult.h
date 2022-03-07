@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VOICENAVIGATOR_MODEL_LISTCONVERSATIONSRESULT_H_
-#define ALIBABACLOUD_VOICENAVIGATOR_MODEL_LISTCONVERSATIONSRESULT_H_
+#ifndef ALIBABACLOUD_VOICENAVIGATOR_MODEL_MODIFYSANDBOXWHILELISTRESULT_H_
+#define ALIBABACLOUD_VOICENAVIGATOR_MODEL_MODIFYSANDBOXWHILELISTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,42 +29,25 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VOICENAVIGATOR_EXPORT ListConversationsResult : public ServiceResult
+			class ALIBABACLOUD_VOICENAVIGATOR_EXPORT ModifySandBoxWhileListResult : public ServiceResult
 			{
 			public:
-				struct Conversation
-				{
-					bool sandBox;
-					std::string skillGroup;
-					std::string conversationId;
-					bool hasLastPlaybackCompleted;
-					int endReason;
-					long endTime;
-					int rounds;
-					bool hasToAgent;
-					long startTime;
-					std::string callingNumber;
-				};
 
 
-				ListConversationsResult();
-				explicit ListConversationsResult(const std::string &payload);
-				~ListConversationsResult();
-				long getTotalCount()const;
-				int getPageSize()const;
-				int getPageNumber()const;
-				std::vector<Conversation> getConversations()const;
+				ModifySandBoxWhileListResult();
+				explicit ModifySandBoxWhileListResult(const std::string &payload);
+				~ModifySandBoxWhileListResult();
+				std::string getUuid()const;
+				std::string getPhoneNumber()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				long totalCount_;
-				int pageSize_;
-				int pageNumber_;
-				std::vector<Conversation> conversations_;
+				std::string uuid_;
+				std::string phoneNumber_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VOICENAVIGATOR_MODEL_LISTCONVERSATIONSRESULT_H_
+#endif // !ALIBABACLOUD_VOICENAVIGATOR_MODEL_MODIFYSANDBOXWHILELISTRESULT_H_

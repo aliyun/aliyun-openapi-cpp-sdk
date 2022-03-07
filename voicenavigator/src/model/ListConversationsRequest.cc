@@ -104,6 +104,17 @@ void ListConversationsRequest::setBeginTimeRightRange(long beginTimeRightRange)
 	setParameter("BeginTimeRightRange", std::to_string(beginTimeRightRange));
 }
 
+std::string ListConversationsRequest::getIsSandBox()const
+{
+	return isSandBox_;
+}
+
+void ListConversationsRequest::setIsSandBox(const std::string& isSandBox)
+{
+	isSandBox_ = isSandBox;
+	setParameter("IsSandBox", isSandBox);
+}
+
 int ListConversationsRequest::getPageSize()const
 {
 	return pageSize_;

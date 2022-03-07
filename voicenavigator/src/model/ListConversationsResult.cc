@@ -61,6 +61,8 @@ void ListConversationsResult::parse(const std::string &payload)
 			conversationsObject.rounds = std::stoi(valueConversationsConversation["Rounds"].asString());
 		if(!valueConversationsConversation["HasLastPlaybackCompleted"].isNull())
 			conversationsObject.hasLastPlaybackCompleted = valueConversationsConversation["HasLastPlaybackCompleted"].asString() == "true";
+		if(!valueConversationsConversation["SandBox"].isNull())
+			conversationsObject.sandBox = valueConversationsConversation["SandBox"].asString() == "true";
 		conversations_.push_back(conversationsObject);
 	}
 	if(!value["TotalCount"].isNull())
