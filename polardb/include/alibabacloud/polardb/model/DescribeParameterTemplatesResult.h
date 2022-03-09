@@ -38,6 +38,8 @@ namespace AlibabaCloud
 					std::string checkingCode;
 					std::string parameterValue;
 					std::string forceRestart;
+					std::string isNodeAvailable;
+					std::string paramRelyRule;
 					std::string parameterName;
 					std::string parameterDescription;
 				};

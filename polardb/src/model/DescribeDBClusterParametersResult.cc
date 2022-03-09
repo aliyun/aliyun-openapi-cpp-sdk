@@ -43,32 +43,36 @@ void DescribeDBClusterParametersResult::parse(const std::string &payload)
 	for (auto valueRunningParametersParameter : allRunningParametersNode)
 	{
 		_Parameter runningParametersObject;
-		if(!valueRunningParametersParameter["ParameterName"].isNull())
-			runningParametersObject.parameterName = valueRunningParametersParameter["ParameterName"].asString();
-		if(!valueRunningParametersParameter["DataType"].isNull())
-			runningParametersObject.dataType = valueRunningParametersParameter["DataType"].asString();
-		if(!valueRunningParametersParameter["DefaultParameterValue"].isNull())
-			runningParametersObject.defaultParameterValue = valueRunningParametersParameter["DefaultParameterValue"].asString();
-		if(!valueRunningParametersParameter["ParameterValue"].isNull())
-			runningParametersObject.parameterValue = valueRunningParametersParameter["ParameterValue"].asString();
-		if(!valueRunningParametersParameter["IsModifiable"].isNull())
-			runningParametersObject.isModifiable = valueRunningParametersParameter["IsModifiable"].asString() == "true";
-		if(!valueRunningParametersParameter["ForceRestart"].isNull())
-			runningParametersObject.forceRestart = valueRunningParametersParameter["ForceRestart"].asString() == "true";
-		if(!valueRunningParametersParameter["ParameterStatus"].isNull())
-			runningParametersObject.parameterStatus = valueRunningParametersParameter["ParameterStatus"].asString();
 		if(!valueRunningParametersParameter["CheckingCode"].isNull())
 			runningParametersObject.checkingCode = valueRunningParametersParameter["CheckingCode"].asString();
+		if(!valueRunningParametersParameter["DataType"].isNull())
+			runningParametersObject.dataType = valueRunningParametersParameter["DataType"].asString();
+		if(!valueRunningParametersParameter["ParameterName"].isNull())
+			runningParametersObject.parameterName = valueRunningParametersParameter["ParameterName"].asString();
+		if(!valueRunningParametersParameter["ParameterValue"].isNull())
+			runningParametersObject.parameterValue = valueRunningParametersParameter["ParameterValue"].asString();
+		if(!valueRunningParametersParameter["ForceRestart"].isNull())
+			runningParametersObject.forceRestart = valueRunningParametersParameter["ForceRestart"].asString() == "true";
 		if(!valueRunningParametersParameter["ParameterDescription"].isNull())
 			runningParametersObject.parameterDescription = valueRunningParametersParameter["ParameterDescription"].asString();
+		if(!valueRunningParametersParameter["ParameterStatus"].isNull())
+			runningParametersObject.parameterStatus = valueRunningParametersParameter["ParameterStatus"].asString();
+		if(!valueRunningParametersParameter["DefaultParameterValue"].isNull())
+			runningParametersObject.defaultParameterValue = valueRunningParametersParameter["DefaultParameterValue"].asString();
+		if(!valueRunningParametersParameter["IsModifiable"].isNull())
+			runningParametersObject.isModifiable = valueRunningParametersParameter["IsModifiable"].asString() == "true";
+		if(!valueRunningParametersParameter["IsNodeAvailable"].isNull())
+			runningParametersObject.isNodeAvailable = valueRunningParametersParameter["IsNodeAvailable"].asString();
+		if(!valueRunningParametersParameter["ParamRelyRule"].isNull())
+			runningParametersObject.paramRelyRule = valueRunningParametersParameter["ParamRelyRule"].asString();
 		runningParameters_.push_back(runningParametersObject);
 	}
-	if(!value["Engine"].isNull())
-		engine_ = value["Engine"].asString();
-	if(!value["DBType"].isNull())
-		dBType_ = value["DBType"].asString();
 	if(!value["DBVersion"].isNull())
 		dBVersion_ = value["DBVersion"].asString();
+	if(!value["DBType"].isNull())
+		dBType_ = value["DBType"].asString();
+	if(!value["Engine"].isNull())
+		engine_ = value["Engine"].asString();
 
 }
 

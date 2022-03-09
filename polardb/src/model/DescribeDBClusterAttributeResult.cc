@@ -137,6 +137,8 @@ void DescribeDBClusterAttributeResult::parse(const std::string &payload)
 		storageType_ = value["StorageType"].asString();
 	if(!value["ProxyCpuCores"].isNull())
 		proxyCpuCores_ = value["ProxyCpuCores"].asString();
+	if(!value["ProxyStandardCpuCores"].isNull())
+		proxyStandardCpuCores_ = value["ProxyStandardCpuCores"].asString();
 	if(!value["ProxyType"].isNull())
 		proxyType_ = value["ProxyType"].asString();
 	if(!value["ProxyStatus"].isNull())
@@ -182,6 +184,11 @@ std::string DescribeDBClusterAttributeResult::getDBType()const
 std::string DescribeDBClusterAttributeResult::getDBClusterNetworkType()const
 {
 	return dBClusterNetworkType_;
+}
+
+std::string DescribeDBClusterAttributeResult::getProxyStandardCpuCores()const
+{
+	return proxyStandardCpuCores_;
 }
 
 bool DescribeDBClusterAttributeResult::getIsLatestVersion()const

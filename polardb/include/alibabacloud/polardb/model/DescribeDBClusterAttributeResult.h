@@ -64,6 +64,7 @@ namespace AlibabaCloud
 				std::string getProxyStatus()const;
 				std::string getDBType()const;
 				std::string getDBClusterNetworkType()const;
+				std::string getProxyStandardCpuCores()const;
 				bool getIsLatestVersion()const;
 				long getStorageMax()const;
 				std::string getDBVersion()const;
@@ -102,6 +103,7 @@ namespace AlibabaCloud
 				std::string proxyStatus_;
 				std::string dBType_;
 				std::string dBClusterNetworkType_;
+				std::string proxyStandardCpuCores_;
 				bool isLatestVersion_;
 				long storageMax_;
 				std::string dBVersion_;
