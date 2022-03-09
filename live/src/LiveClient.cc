@@ -3363,6 +3363,42 @@ LiveClient::DeleteStudioLayoutOutcomeCallable LiveClient::deleteStudioLayoutCall
 	return task->get_future();
 }
 
+LiveClient::DescribeAutoShowListTasksOutcome LiveClient::describeAutoShowListTasks(const DescribeAutoShowListTasksRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeAutoShowListTasksOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeAutoShowListTasksOutcome(DescribeAutoShowListTasksResult(outcome.result()));
+	else
+		return DescribeAutoShowListTasksOutcome(outcome.error());
+}
+
+void LiveClient::describeAutoShowListTasksAsync(const DescribeAutoShowListTasksRequest& request, const DescribeAutoShowListTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeAutoShowListTasks(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DescribeAutoShowListTasksOutcomeCallable LiveClient::describeAutoShowListTasksCallable(const DescribeAutoShowListTasksRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeAutoShowListTasksOutcome()>>(
+			[this, request]()
+			{
+			return this->describeAutoShowListTasks(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::DescribeBoardEventsOutcome LiveClient::describeBoardEvents(const DescribeBoardEventsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -7287,6 +7323,42 @@ LiveClient::EditPlaylistOutcomeCallable LiveClient::editPlaylistCallable(const E
 	return task->get_future();
 }
 
+LiveClient::EditShowAndReplaceOutcome LiveClient::editShowAndReplace(const EditShowAndReplaceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return EditShowAndReplaceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return EditShowAndReplaceOutcome(EditShowAndReplaceResult(outcome.result()));
+	else
+		return EditShowAndReplaceOutcome(outcome.error());
+}
+
+void LiveClient::editShowAndReplaceAsync(const EditShowAndReplaceRequest& request, const EditShowAndReplaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, editShowAndReplace(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::EditShowAndReplaceOutcomeCallable LiveClient::editShowAndReplaceCallable(const EditShowAndReplaceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<EditShowAndReplaceOutcome()>>(
+			[this, request]()
+			{
+			return this->editShowAndReplace(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::EffectCasterUrgentOutcome LiveClient::effectCasterUrgent(const EffectCasterUrgentRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -7389,42 +7461,6 @@ LiveClient::EnableLiveRealtimeLogDeliveryOutcomeCallable LiveClient::enableLiveR
 			[this, request]()
 			{
 			return this->enableLiveRealtimeLogDelivery(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-LiveClient::ForbidLiveCustomStreamOutcome LiveClient::forbidLiveCustomStream(const ForbidLiveCustomStreamRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ForbidLiveCustomStreamOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ForbidLiveCustomStreamOutcome(ForbidLiveCustomStreamResult(outcome.result()));
-	else
-		return ForbidLiveCustomStreamOutcome(outcome.error());
-}
-
-void LiveClient::forbidLiveCustomStreamAsync(const ForbidLiveCustomStreamRequest& request, const ForbidLiveCustomStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, forbidLiveCustomStream(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::ForbidLiveCustomStreamOutcomeCallable LiveClient::forbidLiveCustomStreamCallable(const ForbidLiveCustomStreamRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ForbidLiveCustomStreamOutcome()>>(
-			[this, request]()
-			{
-			return this->forbidLiveCustomStream(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -7575,6 +7611,42 @@ LiveClient::GetCustomTemplateOutcomeCallable LiveClient::getCustomTemplateCallab
 	return task->get_future();
 }
 
+LiveClient::GetEditingJobInfoOutcome LiveClient::getEditingJobInfo(const GetEditingJobInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetEditingJobInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetEditingJobInfoOutcome(GetEditingJobInfoResult(outcome.result()));
+	else
+		return GetEditingJobInfoOutcome(outcome.error());
+}
+
+void LiveClient::getEditingJobInfoAsync(const GetEditingJobInfoRequest& request, const GetEditingJobInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getEditingJobInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::GetEditingJobInfoOutcomeCallable LiveClient::getEditingJobInfoCallable(const GetEditingJobInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetEditingJobInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->getEditingJobInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::GetMultiRateConfigOutcome LiveClient::getMultiRateConfig(const GetMultiRateConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -7641,6 +7713,42 @@ LiveClient::GetMultiRateConfigListOutcomeCallable LiveClient::getMultiRateConfig
 			[this, request]()
 			{
 			return this->getMultiRateConfigList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::InitializeAutoShowListTaskOutcome LiveClient::initializeAutoShowListTask(const InitializeAutoShowListTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return InitializeAutoShowListTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return InitializeAutoShowListTaskOutcome(InitializeAutoShowListTaskResult(outcome.result()));
+	else
+		return InitializeAutoShowListTaskOutcome(outcome.error());
+}
+
+void LiveClient::initializeAutoShowListTaskAsync(const InitializeAutoShowListTaskRequest& request, const InitializeAutoShowListTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, initializeAutoShowListTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::InitializeAutoShowListTaskOutcomeCallable LiveClient::initializeAutoShowListTaskCallable(const InitializeAutoShowListTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<InitializeAutoShowListTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->initializeAutoShowListTask(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

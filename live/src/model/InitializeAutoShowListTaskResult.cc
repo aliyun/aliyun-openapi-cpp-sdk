@@ -14,31 +14,45 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/live/model/ForbidLiveCustomStreamResult.h>
+#include <alibabacloud/live/model/InitializeAutoShowListTaskResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Live;
 using namespace AlibabaCloud::Live::Model;
 
-ForbidLiveCustomStreamResult::ForbidLiveCustomStreamResult() :
+InitializeAutoShowListTaskResult::InitializeAutoShowListTaskResult() :
 	ServiceResult()
 {}
 
-ForbidLiveCustomStreamResult::ForbidLiveCustomStreamResult(const std::string &payload) :
+InitializeAutoShowListTaskResult::InitializeAutoShowListTaskResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-ForbidLiveCustomStreamResult::~ForbidLiveCustomStreamResult()
+InitializeAutoShowListTaskResult::~InitializeAutoShowListTaskResult()
 {}
 
-void ForbidLiveCustomStreamResult::parse(const std::string &payload)
+void InitializeAutoShowListTaskResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["CasterId"].isNull())
+		casterId_ = value["CasterId"].asString();
+	if(!value["StreamList"].isNull())
+		streamList_ = value["StreamList"].asString();
 
+}
+
+std::string InitializeAutoShowListTaskResult::getStreamList()const
+{
+	return streamList_;
+}
+
+std::string InitializeAutoShowListTaskResult::getCasterId()const
+{
+	return casterId_;
 }
 

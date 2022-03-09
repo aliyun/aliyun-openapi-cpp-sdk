@@ -57,6 +57,8 @@ void DescribeLivePullStreamConfigResult::parse(const std::string &payload)
 			liveAppRecordListObject.startTime = valueLiveAppRecordListLiveAppRecord["StartTime"].asString();
 		if(!valueLiveAppRecordListLiveAppRecord["EndTime"].isNull())
 			liveAppRecordListObject.endTime = valueLiveAppRecordListLiveAppRecord["EndTime"].asString();
+		if(!valueLiveAppRecordListLiveAppRecord["Always"].isNull())
+			liveAppRecordListObject.always = valueLiveAppRecordListLiveAppRecord["Always"].asString();
 		liveAppRecordList_.push_back(liveAppRecordListObject);
 	}
 

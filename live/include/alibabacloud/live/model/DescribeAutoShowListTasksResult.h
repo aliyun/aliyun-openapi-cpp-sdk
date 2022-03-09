@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_FORBIDLIVECUSTOMSTREAMRESULT_H_
-#define ALIBABACLOUD_LIVE_MODEL_FORBIDLIVECUSTOMSTREAMRESULT_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBEAUTOSHOWLISTTASKSRESULT_H_
+#define ALIBABACLOUD_LIVE_MODEL_DESCRIBEAUTOSHOWLISTTASKSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,21 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_LIVE_EXPORT ForbidLiveCustomStreamResult : public ServiceResult
+			class ALIBABACLOUD_LIVE_EXPORT DescribeAutoShowListTasksResult : public ServiceResult
 			{
 			public:
 
 
-				ForbidLiveCustomStreamResult();
-				explicit ForbidLiveCustomStreamResult(const std::string &payload);
-				~ForbidLiveCustomStreamResult();
+				DescribeAutoShowListTasksResult();
+				explicit DescribeAutoShowListTasksResult(const std::string &payload);
+				~DescribeAutoShowListTasksResult();
+				std::string getAutoShowListTasks()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string autoShowListTasks_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_LIVE_MODEL_FORBIDLIVECUSTOMSTREAMRESULT_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBEAUTOSHOWLISTTASKSRESULT_H_

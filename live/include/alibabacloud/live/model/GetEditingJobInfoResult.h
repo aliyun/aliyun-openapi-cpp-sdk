@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEPULLSTREAMCONFIGRESULT_H_
-#define ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEPULLSTREAMCONFIGRESULT_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_GETEDITINGJOBINFORESULT_H_
+#define ALIBABACLOUD_LIVE_MODEL_GETEDITINGJOBINFORESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,34 +29,25 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_LIVE_EXPORT DescribeLivePullStreamConfigResult : public ServiceResult
+			class ALIBABACLOUD_LIVE_EXPORT GetEditingJobInfoResult : public ServiceResult
 			{
 			public:
-				struct LiveAppRecord
-				{
-					std::string sourceUrl;
-					std::string streamName;
-					std::string endTime;
-					std::string domainName;
-					std::string startTime;
-					std::string sourceUsing;
-					std::string always;
-					std::string appName;
-				};
 
 
-				DescribeLivePullStreamConfigResult();
-				explicit DescribeLivePullStreamConfigResult(const std::string &payload);
-				~DescribeLivePullStreamConfigResult();
-				std::vector<LiveAppRecord> getLiveAppRecordList()const;
+				GetEditingJobInfoResult();
+				explicit GetEditingJobInfoResult(const std::string &payload);
+				~GetEditingJobInfoResult();
+				std::string getEditingTasksInfo()const;
+				std::string getCasterId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<LiveAppRecord> liveAppRecordList_;
+				std::string editingTasksInfo_;
+				std::string casterId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEPULLSTREAMCONFIGRESULT_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_GETEDITINGJOBINFORESULT_H_

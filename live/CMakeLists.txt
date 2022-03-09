@@ -205,6 +205,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DeleteSnapshotCallbackAuthResult.h
 	include/alibabacloud/live/model/DeleteStudioLayoutRequest.h
 	include/alibabacloud/live/model/DeleteStudioLayoutResult.h
+	include/alibabacloud/live/model/DescribeAutoShowListTasksRequest.h
+	include/alibabacloud/live/model/DescribeAutoShowListTasksResult.h
 	include/alibabacloud/live/model/DescribeBoardEventsRequest.h
 	include/alibabacloud/live/model/DescribeBoardEventsResult.h
 	include/alibabacloud/live/model/DescribeBoardSnapshotRequest.h
@@ -423,14 +425,14 @@ set(live_public_header_model
 	include/alibabacloud/live/model/EditHtmlResourceResult.h
 	include/alibabacloud/live/model/EditPlaylistRequest.h
 	include/alibabacloud/live/model/EditPlaylistResult.h
+	include/alibabacloud/live/model/EditShowAndReplaceRequest.h
+	include/alibabacloud/live/model/EditShowAndReplaceResult.h
 	include/alibabacloud/live/model/EffectCasterUrgentRequest.h
 	include/alibabacloud/live/model/EffectCasterUrgentResult.h
 	include/alibabacloud/live/model/EffectCasterVideoResourceRequest.h
 	include/alibabacloud/live/model/EffectCasterVideoResourceResult.h
 	include/alibabacloud/live/model/EnableLiveRealtimeLogDeliveryRequest.h
 	include/alibabacloud/live/model/EnableLiveRealtimeLogDeliveryResult.h
-	include/alibabacloud/live/model/ForbidLiveCustomStreamRequest.h
-	include/alibabacloud/live/model/ForbidLiveCustomStreamResult.h
 	include/alibabacloud/live/model/ForbidLiveStreamRequest.h
 	include/alibabacloud/live/model/ForbidLiveStreamResult.h
 	include/alibabacloud/live/model/ForbidPushStreamRequest.h
@@ -439,10 +441,14 @@ set(live_public_header_model
 	include/alibabacloud/live/model/GetAllCustomTemplatesResult.h
 	include/alibabacloud/live/model/GetCustomTemplateRequest.h
 	include/alibabacloud/live/model/GetCustomTemplateResult.h
+	include/alibabacloud/live/model/GetEditingJobInfoRequest.h
+	include/alibabacloud/live/model/GetEditingJobInfoResult.h
 	include/alibabacloud/live/model/GetMultiRateConfigRequest.h
 	include/alibabacloud/live/model/GetMultiRateConfigResult.h
 	include/alibabacloud/live/model/GetMultiRateConfigListRequest.h
 	include/alibabacloud/live/model/GetMultiRateConfigListResult.h
+	include/alibabacloud/live/model/InitializeAutoShowListTaskRequest.h
+	include/alibabacloud/live/model/InitializeAutoShowListTaskResult.h
 	include/alibabacloud/live/model/JoinBoardRequest.h
 	include/alibabacloud/live/model/JoinBoardResult.h
 	include/alibabacloud/live/model/ListLiveRealtimeLogDeliveryRequest.h
@@ -774,6 +780,8 @@ set(live_src
 	src/model/DeleteSnapshotCallbackAuthResult.cc
 	src/model/DeleteStudioLayoutRequest.cc
 	src/model/DeleteStudioLayoutResult.cc
+	src/model/DescribeAutoShowListTasksRequest.cc
+	src/model/DescribeAutoShowListTasksResult.cc
 	src/model/DescribeBoardEventsRequest.cc
 	src/model/DescribeBoardEventsResult.cc
 	src/model/DescribeBoardSnapshotRequest.cc
@@ -992,14 +1000,14 @@ set(live_src
 	src/model/EditHtmlResourceResult.cc
 	src/model/EditPlaylistRequest.cc
 	src/model/EditPlaylistResult.cc
+	src/model/EditShowAndReplaceRequest.cc
+	src/model/EditShowAndReplaceResult.cc
 	src/model/EffectCasterUrgentRequest.cc
 	src/model/EffectCasterUrgentResult.cc
 	src/model/EffectCasterVideoResourceRequest.cc
 	src/model/EffectCasterVideoResourceResult.cc
 	src/model/EnableLiveRealtimeLogDeliveryRequest.cc
 	src/model/EnableLiveRealtimeLogDeliveryResult.cc
-	src/model/ForbidLiveCustomStreamRequest.cc
-	src/model/ForbidLiveCustomStreamResult.cc
 	src/model/ForbidLiveStreamRequest.cc
 	src/model/ForbidLiveStreamResult.cc
 	src/model/ForbidPushStreamRequest.cc
@@ -1008,10 +1016,14 @@ set(live_src
 	src/model/GetAllCustomTemplatesResult.cc
 	src/model/GetCustomTemplateRequest.cc
 	src/model/GetCustomTemplateResult.cc
+	src/model/GetEditingJobInfoRequest.cc
+	src/model/GetEditingJobInfoResult.cc
 	src/model/GetMultiRateConfigRequest.cc
 	src/model/GetMultiRateConfigResult.cc
 	src/model/GetMultiRateConfigListRequest.cc
 	src/model/GetMultiRateConfigListResult.cc
+	src/model/InitializeAutoShowListTaskRequest.cc
+	src/model/InitializeAutoShowListTaskResult.cc
 	src/model/JoinBoardRequest.cc
 	src/model/JoinBoardResult.cc
 	src/model/ListLiveRealtimeLogDeliveryRequest.cc

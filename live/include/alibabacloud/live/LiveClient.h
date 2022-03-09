@@ -206,6 +206,8 @@
 #include "model/DeleteSnapshotCallbackAuthResult.h"
 #include "model/DeleteStudioLayoutRequest.h"
 #include "model/DeleteStudioLayoutResult.h"
+#include "model/DescribeAutoShowListTasksRequest.h"
+#include "model/DescribeAutoShowListTasksResult.h"
 #include "model/DescribeBoardEventsRequest.h"
 #include "model/DescribeBoardEventsResult.h"
 #include "model/DescribeBoardSnapshotRequest.h"
@@ -424,14 +426,14 @@
 #include "model/EditHtmlResourceResult.h"
 #include "model/EditPlaylistRequest.h"
 #include "model/EditPlaylistResult.h"
+#include "model/EditShowAndReplaceRequest.h"
+#include "model/EditShowAndReplaceResult.h"
 #include "model/EffectCasterUrgentRequest.h"
 #include "model/EffectCasterUrgentResult.h"
 #include "model/EffectCasterVideoResourceRequest.h"
 #include "model/EffectCasterVideoResourceResult.h"
 #include "model/EnableLiveRealtimeLogDeliveryRequest.h"
 #include "model/EnableLiveRealtimeLogDeliveryResult.h"
-#include "model/ForbidLiveCustomStreamRequest.h"
-#include "model/ForbidLiveCustomStreamResult.h"
 #include "model/ForbidLiveStreamRequest.h"
 #include "model/ForbidLiveStreamResult.h"
 #include "model/ForbidPushStreamRequest.h"
@@ -440,10 +442,14 @@
 #include "model/GetAllCustomTemplatesResult.h"
 #include "model/GetCustomTemplateRequest.h"
 #include "model/GetCustomTemplateResult.h"
+#include "model/GetEditingJobInfoRequest.h"
+#include "model/GetEditingJobInfoResult.h"
 #include "model/GetMultiRateConfigRequest.h"
 #include "model/GetMultiRateConfigResult.h"
 #include "model/GetMultiRateConfigListRequest.h"
 #include "model/GetMultiRateConfigListResult.h"
+#include "model/InitializeAutoShowListTaskRequest.h"
+#include "model/InitializeAutoShowListTaskResult.h"
 #include "model/JoinBoardRequest.h"
 #include "model/JoinBoardResult.h"
 #include "model/ListLiveRealtimeLogDeliveryRequest.h"
@@ -873,6 +879,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteStudioLayoutResult> DeleteStudioLayoutOutcome;
 			typedef std::future<DeleteStudioLayoutOutcome> DeleteStudioLayoutOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DeleteStudioLayoutRequest&, const DeleteStudioLayoutOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteStudioLayoutAsyncHandler;
+			typedef Outcome<Error, Model::DescribeAutoShowListTasksResult> DescribeAutoShowListTasksOutcome;
+			typedef std::future<DescribeAutoShowListTasksOutcome> DescribeAutoShowListTasksOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DescribeAutoShowListTasksRequest&, const DescribeAutoShowListTasksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAutoShowListTasksAsyncHandler;
 			typedef Outcome<Error, Model::DescribeBoardEventsResult> DescribeBoardEventsOutcome;
 			typedef std::future<DescribeBoardEventsOutcome> DescribeBoardEventsOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DescribeBoardEventsRequest&, const DescribeBoardEventsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBoardEventsAsyncHandler;
@@ -1200,6 +1209,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::EditPlaylistResult> EditPlaylistOutcome;
 			typedef std::future<EditPlaylistOutcome> EditPlaylistOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::EditPlaylistRequest&, const EditPlaylistOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EditPlaylistAsyncHandler;
+			typedef Outcome<Error, Model::EditShowAndReplaceResult> EditShowAndReplaceOutcome;
+			typedef std::future<EditShowAndReplaceOutcome> EditShowAndReplaceOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::EditShowAndReplaceRequest&, const EditShowAndReplaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EditShowAndReplaceAsyncHandler;
 			typedef Outcome<Error, Model::EffectCasterUrgentResult> EffectCasterUrgentOutcome;
 			typedef std::future<EffectCasterUrgentOutcome> EffectCasterUrgentOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::EffectCasterUrgentRequest&, const EffectCasterUrgentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EffectCasterUrgentAsyncHandler;
@@ -1209,9 +1221,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::EnableLiveRealtimeLogDeliveryResult> EnableLiveRealtimeLogDeliveryOutcome;
 			typedef std::future<EnableLiveRealtimeLogDeliveryOutcome> EnableLiveRealtimeLogDeliveryOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::EnableLiveRealtimeLogDeliveryRequest&, const EnableLiveRealtimeLogDeliveryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnableLiveRealtimeLogDeliveryAsyncHandler;
-			typedef Outcome<Error, Model::ForbidLiveCustomStreamResult> ForbidLiveCustomStreamOutcome;
-			typedef std::future<ForbidLiveCustomStreamOutcome> ForbidLiveCustomStreamOutcomeCallable;
-			typedef std::function<void(const LiveClient*, const Model::ForbidLiveCustomStreamRequest&, const ForbidLiveCustomStreamOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ForbidLiveCustomStreamAsyncHandler;
 			typedef Outcome<Error, Model::ForbidLiveStreamResult> ForbidLiveStreamOutcome;
 			typedef std::future<ForbidLiveStreamOutcome> ForbidLiveStreamOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::ForbidLiveStreamRequest&, const ForbidLiveStreamOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ForbidLiveStreamAsyncHandler;
@@ -1224,12 +1233,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetCustomTemplateResult> GetCustomTemplateOutcome;
 			typedef std::future<GetCustomTemplateOutcome> GetCustomTemplateOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::GetCustomTemplateRequest&, const GetCustomTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetCustomTemplateAsyncHandler;
+			typedef Outcome<Error, Model::GetEditingJobInfoResult> GetEditingJobInfoOutcome;
+			typedef std::future<GetEditingJobInfoOutcome> GetEditingJobInfoOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::GetEditingJobInfoRequest&, const GetEditingJobInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetEditingJobInfoAsyncHandler;
 			typedef Outcome<Error, Model::GetMultiRateConfigResult> GetMultiRateConfigOutcome;
 			typedef std::future<GetMultiRateConfigOutcome> GetMultiRateConfigOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::GetMultiRateConfigRequest&, const GetMultiRateConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetMultiRateConfigAsyncHandler;
 			typedef Outcome<Error, Model::GetMultiRateConfigListResult> GetMultiRateConfigListOutcome;
 			typedef std::future<GetMultiRateConfigListOutcome> GetMultiRateConfigListOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::GetMultiRateConfigListRequest&, const GetMultiRateConfigListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetMultiRateConfigListAsyncHandler;
+			typedef Outcome<Error, Model::InitializeAutoShowListTaskResult> InitializeAutoShowListTaskOutcome;
+			typedef std::future<InitializeAutoShowListTaskOutcome> InitializeAutoShowListTaskOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::InitializeAutoShowListTaskRequest&, const InitializeAutoShowListTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> InitializeAutoShowListTaskAsyncHandler;
 			typedef Outcome<Error, Model::JoinBoardResult> JoinBoardOutcome;
 			typedef std::future<JoinBoardOutcome> JoinBoardOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::JoinBoardRequest&, const JoinBoardOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> JoinBoardAsyncHandler;
@@ -1727,6 +1742,9 @@ namespace AlibabaCloud
 			DeleteStudioLayoutOutcome deleteStudioLayout(const Model::DeleteStudioLayoutRequest &request)const;
 			void deleteStudioLayoutAsync(const Model::DeleteStudioLayoutRequest& request, const DeleteStudioLayoutAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteStudioLayoutOutcomeCallable deleteStudioLayoutCallable(const Model::DeleteStudioLayoutRequest& request) const;
+			DescribeAutoShowListTasksOutcome describeAutoShowListTasks(const Model::DescribeAutoShowListTasksRequest &request)const;
+			void describeAutoShowListTasksAsync(const Model::DescribeAutoShowListTasksRequest& request, const DescribeAutoShowListTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeAutoShowListTasksOutcomeCallable describeAutoShowListTasksCallable(const Model::DescribeAutoShowListTasksRequest& request) const;
 			DescribeBoardEventsOutcome describeBoardEvents(const Model::DescribeBoardEventsRequest &request)const;
 			void describeBoardEventsAsync(const Model::DescribeBoardEventsRequest& request, const DescribeBoardEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeBoardEventsOutcomeCallable describeBoardEventsCallable(const Model::DescribeBoardEventsRequest& request) const;
@@ -2054,6 +2072,9 @@ namespace AlibabaCloud
 			EditPlaylistOutcome editPlaylist(const Model::EditPlaylistRequest &request)const;
 			void editPlaylistAsync(const Model::EditPlaylistRequest& request, const EditPlaylistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			EditPlaylistOutcomeCallable editPlaylistCallable(const Model::EditPlaylistRequest& request) const;
+			EditShowAndReplaceOutcome editShowAndReplace(const Model::EditShowAndReplaceRequest &request)const;
+			void editShowAndReplaceAsync(const Model::EditShowAndReplaceRequest& request, const EditShowAndReplaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			EditShowAndReplaceOutcomeCallable editShowAndReplaceCallable(const Model::EditShowAndReplaceRequest& request) const;
 			EffectCasterUrgentOutcome effectCasterUrgent(const Model::EffectCasterUrgentRequest &request)const;
 			void effectCasterUrgentAsync(const Model::EffectCasterUrgentRequest& request, const EffectCasterUrgentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			EffectCasterUrgentOutcomeCallable effectCasterUrgentCallable(const Model::EffectCasterUrgentRequest& request) const;
@@ -2063,9 +2084,6 @@ namespace AlibabaCloud
 			EnableLiveRealtimeLogDeliveryOutcome enableLiveRealtimeLogDelivery(const Model::EnableLiveRealtimeLogDeliveryRequest &request)const;
 			void enableLiveRealtimeLogDeliveryAsync(const Model::EnableLiveRealtimeLogDeliveryRequest& request, const EnableLiveRealtimeLogDeliveryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			EnableLiveRealtimeLogDeliveryOutcomeCallable enableLiveRealtimeLogDeliveryCallable(const Model::EnableLiveRealtimeLogDeliveryRequest& request) const;
-			ForbidLiveCustomStreamOutcome forbidLiveCustomStream(const Model::ForbidLiveCustomStreamRequest &request)const;
-			void forbidLiveCustomStreamAsync(const Model::ForbidLiveCustomStreamRequest& request, const ForbidLiveCustomStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ForbidLiveCustomStreamOutcomeCallable forbidLiveCustomStreamCallable(const Model::ForbidLiveCustomStreamRequest& request) const;
 			ForbidLiveStreamOutcome forbidLiveStream(const Model::ForbidLiveStreamRequest &request)const;
 			void forbidLiveStreamAsync(const Model::ForbidLiveStreamRequest& request, const ForbidLiveStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ForbidLiveStreamOutcomeCallable forbidLiveStreamCallable(const Model::ForbidLiveStreamRequest& request) const;
@@ -2078,12 +2096,18 @@ namespace AlibabaCloud
 			GetCustomTemplateOutcome getCustomTemplate(const Model::GetCustomTemplateRequest &request)const;
 			void getCustomTemplateAsync(const Model::GetCustomTemplateRequest& request, const GetCustomTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetCustomTemplateOutcomeCallable getCustomTemplateCallable(const Model::GetCustomTemplateRequest& request) const;
+			GetEditingJobInfoOutcome getEditingJobInfo(const Model::GetEditingJobInfoRequest &request)const;
+			void getEditingJobInfoAsync(const Model::GetEditingJobInfoRequest& request, const GetEditingJobInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetEditingJobInfoOutcomeCallable getEditingJobInfoCallable(const Model::GetEditingJobInfoRequest& request) const;
 			GetMultiRateConfigOutcome getMultiRateConfig(const Model::GetMultiRateConfigRequest &request)const;
 			void getMultiRateConfigAsync(const Model::GetMultiRateConfigRequest& request, const GetMultiRateConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetMultiRateConfigOutcomeCallable getMultiRateConfigCallable(const Model::GetMultiRateConfigRequest& request) const;
 			GetMultiRateConfigListOutcome getMultiRateConfigList(const Model::GetMultiRateConfigListRequest &request)const;
 			void getMultiRateConfigListAsync(const Model::GetMultiRateConfigListRequest& request, const GetMultiRateConfigListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetMultiRateConfigListOutcomeCallable getMultiRateConfigListCallable(const Model::GetMultiRateConfigListRequest& request) const;
+			InitializeAutoShowListTaskOutcome initializeAutoShowListTask(const Model::InitializeAutoShowListTaskRequest &request)const;
+			void initializeAutoShowListTaskAsync(const Model::InitializeAutoShowListTaskRequest& request, const InitializeAutoShowListTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			InitializeAutoShowListTaskOutcomeCallable initializeAutoShowListTaskCallable(const Model::InitializeAutoShowListTaskRequest& request) const;
 			JoinBoardOutcome joinBoard(const Model::JoinBoardRequest &request)const;
 			void joinBoardAsync(const Model::JoinBoardRequest& request, const JoinBoardAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			JoinBoardOutcomeCallable joinBoardCallable(const Model::JoinBoardRequest& request) const;
