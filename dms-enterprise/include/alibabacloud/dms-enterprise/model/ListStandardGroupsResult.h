@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DMS_ENTERPRISE_MODEL_KILLSPARKJOBRESULT_H_
-#define ALIBABACLOUD_DMS_ENTERPRISE_MODEL_KILLSPARKJOBRESULT_H_
+#ifndef ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTSTANDARDGROUPSRESULT_H_
+#define ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTSTANDARDGROUPSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,14 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT KillSparkJobResult : public ServiceResult
+			class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT ListStandardGroupsResult : public ServiceResult
 			{
 			public:
+				struct StandardGroupListItem
+				{
+					std::string groupName;
+					std::string description;
+					long lastMenderId;
+					std::string groupMode;
+					std::string dbType;
+				};
 
 
-				KillSparkJobResult();
-				explicit KillSparkJobResult(const std::string &payload);
-				~KillSparkJobResult();
+				ListStandardGroupsResult();
+				explicit ListStandardGroupsResult(const std::string &payload);
+				~ListStandardGroupsResult();
+				std::vector<StandardGroupListItem> getStandardGroupList()const;
 				std::string getErrorCode()const;
 				std::string getErrorMessage()const;
 				bool getSuccess()const;
@@ -44,6 +53,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::vector<StandardGroupListItem> standardGroupList_;
 				std::string errorCode_;
 				std::string errorMessage_;
 				bool success_;
@@ -52,4 +62,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DMS_ENTERPRISE_MODEL_KILLSPARKJOBRESULT_H_
+#endif // !ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTSTANDARDGROUPSRESULT_H_

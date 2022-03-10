@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DMS_ENTERPRISE_MODEL_GETSPARKJOBLOGREQUEST_H_
-#define ALIBABACLOUD_DMS_ENTERPRISE_MODEL_GETSPARKJOBLOGREQUEST_H_
+#ifndef ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTSTANDARDGROUPSREQUEST_H_
+#define ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTSTANDARDGROUPSREQUEST_H_
 
 #include <alibabacloud/dms-enterprise/Dms_enterpriseExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,20 +26,17 @@
 namespace AlibabaCloud {
 namespace Dms_enterprise {
 namespace Model {
-class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT GetSparkJobLogRequest : public RpcServiceRequest {
+class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT ListStandardGroupsRequest : public RpcServiceRequest {
 public:
-	GetSparkJobLogRequest();
-	~GetSparkJobLogRequest();
-	long getJobId() const;
-	void setJobId(long jobId);
+	ListStandardGroupsRequest();
+	~ListStandardGroupsRequest();
 	long getTid() const;
 	void setTid(long tid);
 
 private:
-	long jobId_;
 	long tid_;
 };
 } // namespace Model
 } // namespace Dms_enterprise
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_DMS_ENTERPRISE_MODEL_GETSPARKJOBLOGREQUEST_H_
+#endif // !ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTSTANDARDGROUPSREQUEST_H_

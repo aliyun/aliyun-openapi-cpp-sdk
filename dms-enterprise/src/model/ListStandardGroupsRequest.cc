@@ -14,31 +14,22 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/dms-enterprise/model/GetSparkJobLogRequest.h>
+#include <alibabacloud/dms-enterprise/model/ListStandardGroupsRequest.h>
 
-using AlibabaCloud::Dms_enterprise::Model::GetSparkJobLogRequest;
+using AlibabaCloud::Dms_enterprise::Model::ListStandardGroupsRequest;
 
-GetSparkJobLogRequest::GetSparkJobLogRequest()
-    : RpcServiceRequest("dms-enterprise", "2018-11-01", "GetSparkJobLog") {
+ListStandardGroupsRequest::ListStandardGroupsRequest()
+    : RpcServiceRequest("dms-enterprise", "2018-11-01", "ListStandardGroups") {
   setMethod(HttpRequest::Method::Post);
 }
 
-GetSparkJobLogRequest::~GetSparkJobLogRequest() {}
+ListStandardGroupsRequest::~ListStandardGroupsRequest() {}
 
-long GetSparkJobLogRequest::getJobId() const {
-  return jobId_;
-}
-
-void GetSparkJobLogRequest::setJobId(long jobId) {
-  jobId_ = jobId;
-  setParameter(std::string("JobId"), std::to_string(jobId));
-}
-
-long GetSparkJobLogRequest::getTid() const {
+long ListStandardGroupsRequest::getTid() const {
   return tid_;
 }
 
-void GetSparkJobLogRequest::setTid(long tid) {
+void ListStandardGroupsRequest::setTid(long tid) {
   tid_ = tid;
   setParameter(std::string("Tid"), std::to_string(tid));
 }

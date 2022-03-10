@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DMS_ENTERPRISE_MODEL_GETSPARKJOBDETAILRESULT_H_
-#define ALIBABACLOUD_DMS_ENTERPRISE_MODEL_GETSPARKJOBDETAILRESULT_H_
+#ifndef ALIBABACLOUD_DMS_ENTERPRISE_MODEL_CREATEDATAEXPORTORDERRESULT_H_
+#define ALIBABACLOUD_DMS_ENTERPRISE_MODEL_CREATEDATAEXPORTORDERRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,28 +29,15 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT GetSparkJobDetailResult : public ServiceResult
+			class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT CreateDataExportOrderResult : public ServiceResult
 			{
 			public:
-				struct JobDetail
-				{
-					std::string status;
-					std::string mainClass;
-					std::string configuration;
-					std::string endTime;
-					std::string mainFile;
-					std::string arguments;
-					std::string beginTime;
-					std::string submitTime;
-					std::string jobId;
-					std::string name;
-				};
 
 
-				GetSparkJobDetailResult();
-				explicit GetSparkJobDetailResult(const std::string &payload);
-				~GetSparkJobDetailResult();
-				JobDetail getJobDetail()const;
+				CreateDataExportOrderResult();
+				explicit CreateDataExportOrderResult(const std::string &payload);
+				~CreateDataExportOrderResult();
+				std::vector<std::string> getCreateOrderResult()const;
 				std::string getErrorCode()const;
 				std::string getErrorMessage()const;
 				bool getSuccess()const;
@@ -58,7 +45,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				JobDetail jobDetail_;
+				std::vector<std::string> createOrderResult_;
 				std::string errorCode_;
 				std::string errorMessage_;
 				bool success_;
@@ -67,4 +54,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DMS_ENTERPRISE_MODEL_GETSPARKJOBDETAILRESULT_H_
+#endif // !ALIBABACLOUD_DMS_ENTERPRISE_MODEL_CREATEDATAEXPORTORDERRESULT_H_

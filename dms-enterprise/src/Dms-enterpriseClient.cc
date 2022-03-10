@@ -267,6 +267,42 @@ Dms_enterpriseClient::CreateDataCronClearOrderOutcomeCallable Dms_enterpriseClie
 	return task->get_future();
 }
 
+Dms_enterpriseClient::CreateDataExportOrderOutcome Dms_enterpriseClient::createDataExportOrder(const CreateDataExportOrderRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateDataExportOrderOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateDataExportOrderOutcome(CreateDataExportOrderResult(outcome.result()));
+	else
+		return CreateDataExportOrderOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::createDataExportOrderAsync(const CreateDataExportOrderRequest& request, const CreateDataExportOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createDataExportOrder(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::CreateDataExportOrderOutcomeCallable Dms_enterpriseClient::createDataExportOrderCallable(const CreateDataExportOrderRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateDataExportOrderOutcome()>>(
+			[this, request]()
+			{
+			return this->createDataExportOrder(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dms_enterpriseClient::CreateDataImportOrderOutcome Dms_enterpriseClient::createDataImportOrder(const CreateDataImportOrderRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1959,150 +1995,6 @@ Dms_enterpriseClient::GetSQLReviewOptimizeDetailOutcomeCallable Dms_enterpriseCl
 	return task->get_future();
 }
 
-Dms_enterpriseClient::GetSparkJobDetailOutcome Dms_enterpriseClient::getSparkJobDetail(const GetSparkJobDetailRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetSparkJobDetailOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetSparkJobDetailOutcome(GetSparkJobDetailResult(outcome.result()));
-	else
-		return GetSparkJobDetailOutcome(outcome.error());
-}
-
-void Dms_enterpriseClient::getSparkJobDetailAsync(const GetSparkJobDetailRequest& request, const GetSparkJobDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getSparkJobDetail(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Dms_enterpriseClient::GetSparkJobDetailOutcomeCallable Dms_enterpriseClient::getSparkJobDetailCallable(const GetSparkJobDetailRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetSparkJobDetailOutcome()>>(
-			[this, request]()
-			{
-			return this->getSparkJobDetail(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-Dms_enterpriseClient::GetSparkJobDriverLogOutcome Dms_enterpriseClient::getSparkJobDriverLog(const GetSparkJobDriverLogRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetSparkJobDriverLogOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetSparkJobDriverLogOutcome(GetSparkJobDriverLogResult(outcome.result()));
-	else
-		return GetSparkJobDriverLogOutcome(outcome.error());
-}
-
-void Dms_enterpriseClient::getSparkJobDriverLogAsync(const GetSparkJobDriverLogRequest& request, const GetSparkJobDriverLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getSparkJobDriverLog(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Dms_enterpriseClient::GetSparkJobDriverLogOutcomeCallable Dms_enterpriseClient::getSparkJobDriverLogCallable(const GetSparkJobDriverLogRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetSparkJobDriverLogOutcome()>>(
-			[this, request]()
-			{
-			return this->getSparkJobDriverLog(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-Dms_enterpriseClient::GetSparkJobExecutorLogsOutcome Dms_enterpriseClient::getSparkJobExecutorLogs(const GetSparkJobExecutorLogsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetSparkJobExecutorLogsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetSparkJobExecutorLogsOutcome(GetSparkJobExecutorLogsResult(outcome.result()));
-	else
-		return GetSparkJobExecutorLogsOutcome(outcome.error());
-}
-
-void Dms_enterpriseClient::getSparkJobExecutorLogsAsync(const GetSparkJobExecutorLogsRequest& request, const GetSparkJobExecutorLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getSparkJobExecutorLogs(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Dms_enterpriseClient::GetSparkJobExecutorLogsOutcomeCallable Dms_enterpriseClient::getSparkJobExecutorLogsCallable(const GetSparkJobExecutorLogsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetSparkJobExecutorLogsOutcome()>>(
-			[this, request]()
-			{
-			return this->getSparkJobExecutorLogs(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-Dms_enterpriseClient::GetSparkJobLogOutcome Dms_enterpriseClient::getSparkJobLog(const GetSparkJobLogRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetSparkJobLogOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetSparkJobLogOutcome(GetSparkJobLogResult(outcome.result()));
-	else
-		return GetSparkJobLogOutcome(outcome.error());
-}
-
-void Dms_enterpriseClient::getSparkJobLogAsync(const GetSparkJobLogRequest& request, const GetSparkJobLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getSparkJobLog(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Dms_enterpriseClient::GetSparkJobLogOutcomeCallable Dms_enterpriseClient::getSparkJobLogCallable(const GetSparkJobLogRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetSparkJobLogOutcome()>>(
-			[this, request]()
-			{
-			return this->getSparkJobLog(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 Dms_enterpriseClient::GetStructSyncExecSqlDetailOutcome Dms_enterpriseClient::getStructSyncExecSqlDetail(const GetStructSyncExecSqlDetailRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2493,42 +2385,6 @@ Dms_enterpriseClient::InspectProxyAccessSecretOutcomeCallable Dms_enterpriseClie
 			[this, request]()
 			{
 			return this->inspectProxyAccessSecret(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-Dms_enterpriseClient::KillSparkJobOutcome Dms_enterpriseClient::killSparkJob(const KillSparkJobRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return KillSparkJobOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return KillSparkJobOutcome(KillSparkJobResult(outcome.result()));
-	else
-		return KillSparkJobOutcome(outcome.error());
-}
-
-void Dms_enterpriseClient::killSparkJobAsync(const KillSparkJobRequest& request, const KillSparkJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, killSparkJob(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Dms_enterpriseClient::KillSparkJobOutcomeCallable Dms_enterpriseClient::killSparkJobCallable(const KillSparkJobRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<KillSparkJobOutcome()>>(
-			[this, request]()
-			{
-			return this->killSparkJob(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3363,6 +3219,42 @@ Dms_enterpriseClient::ListSensitiveColumnsDetailOutcomeCallable Dms_enterpriseCl
 	return task->get_future();
 }
 
+Dms_enterpriseClient::ListStandardGroupsOutcome Dms_enterpriseClient::listStandardGroups(const ListStandardGroupsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListStandardGroupsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListStandardGroupsOutcome(ListStandardGroupsResult(outcome.result()));
+	else
+		return ListStandardGroupsOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::listStandardGroupsAsync(const ListStandardGroupsRequest& request, const ListStandardGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listStandardGroups(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::ListStandardGroupsOutcomeCallable Dms_enterpriseClient::listStandardGroupsCallable(const ListStandardGroupsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListStandardGroupsOutcome()>>(
+			[this, request]()
+			{
+			return this->listStandardGroups(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dms_enterpriseClient::ListTablesOutcome Dms_enterpriseClient::listTables(const ListTablesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3969,42 +3861,6 @@ Dms_enterpriseClient::SubmitOrderApprovalOutcomeCallable Dms_enterpriseClient::s
 			[this, request]()
 			{
 			return this->submitOrderApproval(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-Dms_enterpriseClient::SubmitSparkJobOutcome Dms_enterpriseClient::submitSparkJob(const SubmitSparkJobRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SubmitSparkJobOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SubmitSparkJobOutcome(SubmitSparkJobResult(outcome.result()));
-	else
-		return SubmitSparkJobOutcome(outcome.error());
-}
-
-void Dms_enterpriseClient::submitSparkJobAsync(const SubmitSparkJobRequest& request, const SubmitSparkJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, submitSparkJob(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Dms_enterpriseClient::SubmitSparkJobOutcomeCallable Dms_enterpriseClient::submitSparkJobCallable(const SubmitSparkJobRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SubmitSparkJobOutcome()>>(
-			[this, request]()
-			{
-			return this->submitSparkJob(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

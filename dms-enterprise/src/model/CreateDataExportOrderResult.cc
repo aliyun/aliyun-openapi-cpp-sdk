@@ -14,34 +14,34 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/dms-enterprise/model/GetSparkJobExecutorLogsResult.h>
+#include <alibabacloud/dms-enterprise/model/CreateDataExportOrderResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Dms_enterprise;
 using namespace AlibabaCloud::Dms_enterprise::Model;
 
-GetSparkJobExecutorLogsResult::GetSparkJobExecutorLogsResult() :
+CreateDataExportOrderResult::CreateDataExportOrderResult() :
 	ServiceResult()
 {}
 
-GetSparkJobExecutorLogsResult::GetSparkJobExecutorLogsResult(const std::string &payload) :
+CreateDataExportOrderResult::CreateDataExportOrderResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-GetSparkJobExecutorLogsResult::~GetSparkJobExecutorLogsResult()
+CreateDataExportOrderResult::~CreateDataExportOrderResult()
 {}
 
-void GetSparkJobExecutorLogsResult::parse(const std::string &payload)
+void CreateDataExportOrderResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allExecutorLogs = value["ExecutorLogs"]["executorLogs"];
-	for (const auto &item : allExecutorLogs)
-		executorLogs_.push_back(item.asString());
+	auto allCreateOrderResult = value["CreateOrderResult"]["OrderIds"];
+	for (const auto &item : allCreateOrderResult)
+		createOrderResult_.push_back(item.asString());
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["ErrorMessage"].isNull())
@@ -51,22 +51,22 @@ void GetSparkJobExecutorLogsResult::parse(const std::string &payload)
 
 }
 
-std::vector<std::string> GetSparkJobExecutorLogsResult::getExecutorLogs()const
+std::vector<std::string> CreateDataExportOrderResult::getCreateOrderResult()const
 {
-	return executorLogs_;
+	return createOrderResult_;
 }
 
-std::string GetSparkJobExecutorLogsResult::getErrorCode()const
+std::string CreateDataExportOrderResult::getErrorCode()const
 {
 	return errorCode_;
 }
 
-std::string GetSparkJobExecutorLogsResult::getErrorMessage()const
+std::string CreateDataExportOrderResult::getErrorMessage()const
 {
 	return errorMessage_;
 }
 
-bool GetSparkJobExecutorLogsResult::getSuccess()const
+bool CreateDataExportOrderResult::getSuccess()const
 {
 	return success_;
 }

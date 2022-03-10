@@ -34,6 +34,8 @@
 #include "model/CreateDataCorrectOrderResult.h"
 #include "model/CreateDataCronClearOrderRequest.h"
 #include "model/CreateDataCronClearOrderResult.h"
+#include "model/CreateDataExportOrderRequest.h"
+#include "model/CreateDataExportOrderResult.h"
 #include "model/CreateDataImportOrderRequest.h"
 #include "model/CreateDataImportOrderResult.h"
 #include "model/CreateFreeLockCorrectOrderRequest.h"
@@ -128,14 +130,6 @@
 #include "model/GetSQLReviewCheckResultStatusResult.h"
 #include "model/GetSQLReviewOptimizeDetailRequest.h"
 #include "model/GetSQLReviewOptimizeDetailResult.h"
-#include "model/GetSparkJobDetailRequest.h"
-#include "model/GetSparkJobDetailResult.h"
-#include "model/GetSparkJobDriverLogRequest.h"
-#include "model/GetSparkJobDriverLogResult.h"
-#include "model/GetSparkJobExecutorLogsRequest.h"
-#include "model/GetSparkJobExecutorLogsResult.h"
-#include "model/GetSparkJobLogRequest.h"
-#include "model/GetSparkJobLogResult.h"
 #include "model/GetStructSyncExecSqlDetailRequest.h"
 #include "model/GetStructSyncExecSqlDetailResult.h"
 #include "model/GetStructSyncJobAnalyzeResultRequest.h"
@@ -158,8 +152,6 @@
 #include "model/GrantUserPermissionResult.h"
 #include "model/InspectProxyAccessSecretRequest.h"
 #include "model/InspectProxyAccessSecretResult.h"
-#include "model/KillSparkJobRequest.h"
-#include "model/KillSparkJobResult.h"
 #include "model/ListColumnsRequest.h"
 #include "model/ListColumnsResult.h"
 #include "model/ListDBTaskSQLJobRequest.h"
@@ -206,6 +198,8 @@
 #include "model/ListSensitiveColumnsResult.h"
 #include "model/ListSensitiveColumnsDetailRequest.h"
 #include "model/ListSensitiveColumnsDetailResult.h"
+#include "model/ListStandardGroupsRequest.h"
+#include "model/ListStandardGroupsResult.h"
 #include "model/ListTablesRequest.h"
 #include "model/ListTablesResult.h"
 #include "model/ListUserPermissionsRequest.h"
@@ -240,8 +234,6 @@
 #include "model/SetOwnersResult.h"
 #include "model/SubmitOrderApprovalRequest.h"
 #include "model/SubmitOrderApprovalResult.h"
-#include "model/SubmitSparkJobRequest.h"
-#include "model/SubmitSparkJobResult.h"
 #include "model/SubmitStructSyncOrderApprovalRequest.h"
 #include "model/SubmitStructSyncOrderApprovalResult.h"
 #include "model/SyncDatabaseMetaRequest.h"
@@ -279,6 +271,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateDataCronClearOrderResult> CreateDataCronClearOrderOutcome;
 			typedef std::future<CreateDataCronClearOrderOutcome> CreateDataCronClearOrderOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::CreateDataCronClearOrderRequest&, const CreateDataCronClearOrderOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDataCronClearOrderAsyncHandler;
+			typedef Outcome<Error, Model::CreateDataExportOrderResult> CreateDataExportOrderOutcome;
+			typedef std::future<CreateDataExportOrderOutcome> CreateDataExportOrderOutcomeCallable;
+			typedef std::function<void(const Dms_enterpriseClient*, const Model::CreateDataExportOrderRequest&, const CreateDataExportOrderOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDataExportOrderAsyncHandler;
 			typedef Outcome<Error, Model::CreateDataImportOrderResult> CreateDataImportOrderOutcome;
 			typedef std::future<CreateDataImportOrderOutcome> CreateDataImportOrderOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::CreateDataImportOrderRequest&, const CreateDataImportOrderOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDataImportOrderAsyncHandler;
@@ -420,18 +415,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetSQLReviewOptimizeDetailResult> GetSQLReviewOptimizeDetailOutcome;
 			typedef std::future<GetSQLReviewOptimizeDetailOutcome> GetSQLReviewOptimizeDetailOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::GetSQLReviewOptimizeDetailRequest&, const GetSQLReviewOptimizeDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetSQLReviewOptimizeDetailAsyncHandler;
-			typedef Outcome<Error, Model::GetSparkJobDetailResult> GetSparkJobDetailOutcome;
-			typedef std::future<GetSparkJobDetailOutcome> GetSparkJobDetailOutcomeCallable;
-			typedef std::function<void(const Dms_enterpriseClient*, const Model::GetSparkJobDetailRequest&, const GetSparkJobDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetSparkJobDetailAsyncHandler;
-			typedef Outcome<Error, Model::GetSparkJobDriverLogResult> GetSparkJobDriverLogOutcome;
-			typedef std::future<GetSparkJobDriverLogOutcome> GetSparkJobDriverLogOutcomeCallable;
-			typedef std::function<void(const Dms_enterpriseClient*, const Model::GetSparkJobDriverLogRequest&, const GetSparkJobDriverLogOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetSparkJobDriverLogAsyncHandler;
-			typedef Outcome<Error, Model::GetSparkJobExecutorLogsResult> GetSparkJobExecutorLogsOutcome;
-			typedef std::future<GetSparkJobExecutorLogsOutcome> GetSparkJobExecutorLogsOutcomeCallable;
-			typedef std::function<void(const Dms_enterpriseClient*, const Model::GetSparkJobExecutorLogsRequest&, const GetSparkJobExecutorLogsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetSparkJobExecutorLogsAsyncHandler;
-			typedef Outcome<Error, Model::GetSparkJobLogResult> GetSparkJobLogOutcome;
-			typedef std::future<GetSparkJobLogOutcome> GetSparkJobLogOutcomeCallable;
-			typedef std::function<void(const Dms_enterpriseClient*, const Model::GetSparkJobLogRequest&, const GetSparkJobLogOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetSparkJobLogAsyncHandler;
 			typedef Outcome<Error, Model::GetStructSyncExecSqlDetailResult> GetStructSyncExecSqlDetailOutcome;
 			typedef std::future<GetStructSyncExecSqlDetailOutcome> GetStructSyncExecSqlDetailOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::GetStructSyncExecSqlDetailRequest&, const GetStructSyncExecSqlDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetStructSyncExecSqlDetailAsyncHandler;
@@ -465,9 +448,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::InspectProxyAccessSecretResult> InspectProxyAccessSecretOutcome;
 			typedef std::future<InspectProxyAccessSecretOutcome> InspectProxyAccessSecretOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::InspectProxyAccessSecretRequest&, const InspectProxyAccessSecretOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> InspectProxyAccessSecretAsyncHandler;
-			typedef Outcome<Error, Model::KillSparkJobResult> KillSparkJobOutcome;
-			typedef std::future<KillSparkJobOutcome> KillSparkJobOutcomeCallable;
-			typedef std::function<void(const Dms_enterpriseClient*, const Model::KillSparkJobRequest&, const KillSparkJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> KillSparkJobAsyncHandler;
 			typedef Outcome<Error, Model::ListColumnsResult> ListColumnsOutcome;
 			typedef std::future<ListColumnsOutcome> ListColumnsOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::ListColumnsRequest&, const ListColumnsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListColumnsAsyncHandler;
@@ -537,6 +517,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListSensitiveColumnsDetailResult> ListSensitiveColumnsDetailOutcome;
 			typedef std::future<ListSensitiveColumnsDetailOutcome> ListSensitiveColumnsDetailOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::ListSensitiveColumnsDetailRequest&, const ListSensitiveColumnsDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListSensitiveColumnsDetailAsyncHandler;
+			typedef Outcome<Error, Model::ListStandardGroupsResult> ListStandardGroupsOutcome;
+			typedef std::future<ListStandardGroupsOutcome> ListStandardGroupsOutcomeCallable;
+			typedef std::function<void(const Dms_enterpriseClient*, const Model::ListStandardGroupsRequest&, const ListStandardGroupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListStandardGroupsAsyncHandler;
 			typedef Outcome<Error, Model::ListTablesResult> ListTablesOutcome;
 			typedef std::future<ListTablesOutcome> ListTablesOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::ListTablesRequest&, const ListTablesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTablesAsyncHandler;
@@ -588,9 +571,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SubmitOrderApprovalResult> SubmitOrderApprovalOutcome;
 			typedef std::future<SubmitOrderApprovalOutcome> SubmitOrderApprovalOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::SubmitOrderApprovalRequest&, const SubmitOrderApprovalOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SubmitOrderApprovalAsyncHandler;
-			typedef Outcome<Error, Model::SubmitSparkJobResult> SubmitSparkJobOutcome;
-			typedef std::future<SubmitSparkJobOutcome> SubmitSparkJobOutcomeCallable;
-			typedef std::function<void(const Dms_enterpriseClient*, const Model::SubmitSparkJobRequest&, const SubmitSparkJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SubmitSparkJobAsyncHandler;
 			typedef Outcome<Error, Model::SubmitStructSyncOrderApprovalResult> SubmitStructSyncOrderApprovalOutcome;
 			typedef std::future<SubmitStructSyncOrderApprovalOutcome> SubmitStructSyncOrderApprovalOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::SubmitStructSyncOrderApprovalRequest&, const SubmitStructSyncOrderApprovalOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SubmitStructSyncOrderApprovalAsyncHandler;
@@ -629,6 +609,9 @@ namespace AlibabaCloud
 			CreateDataCronClearOrderOutcome createDataCronClearOrder(const Model::CreateDataCronClearOrderRequest &request)const;
 			void createDataCronClearOrderAsync(const Model::CreateDataCronClearOrderRequest& request, const CreateDataCronClearOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateDataCronClearOrderOutcomeCallable createDataCronClearOrderCallable(const Model::CreateDataCronClearOrderRequest& request) const;
+			CreateDataExportOrderOutcome createDataExportOrder(const Model::CreateDataExportOrderRequest &request)const;
+			void createDataExportOrderAsync(const Model::CreateDataExportOrderRequest& request, const CreateDataExportOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateDataExportOrderOutcomeCallable createDataExportOrderCallable(const Model::CreateDataExportOrderRequest& request) const;
 			CreateDataImportOrderOutcome createDataImportOrder(const Model::CreateDataImportOrderRequest &request)const;
 			void createDataImportOrderAsync(const Model::CreateDataImportOrderRequest& request, const CreateDataImportOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateDataImportOrderOutcomeCallable createDataImportOrderCallable(const Model::CreateDataImportOrderRequest& request) const;
@@ -770,18 +753,6 @@ namespace AlibabaCloud
 			GetSQLReviewOptimizeDetailOutcome getSQLReviewOptimizeDetail(const Model::GetSQLReviewOptimizeDetailRequest &request)const;
 			void getSQLReviewOptimizeDetailAsync(const Model::GetSQLReviewOptimizeDetailRequest& request, const GetSQLReviewOptimizeDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetSQLReviewOptimizeDetailOutcomeCallable getSQLReviewOptimizeDetailCallable(const Model::GetSQLReviewOptimizeDetailRequest& request) const;
-			GetSparkJobDetailOutcome getSparkJobDetail(const Model::GetSparkJobDetailRequest &request)const;
-			void getSparkJobDetailAsync(const Model::GetSparkJobDetailRequest& request, const GetSparkJobDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetSparkJobDetailOutcomeCallable getSparkJobDetailCallable(const Model::GetSparkJobDetailRequest& request) const;
-			GetSparkJobDriverLogOutcome getSparkJobDriverLog(const Model::GetSparkJobDriverLogRequest &request)const;
-			void getSparkJobDriverLogAsync(const Model::GetSparkJobDriverLogRequest& request, const GetSparkJobDriverLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetSparkJobDriverLogOutcomeCallable getSparkJobDriverLogCallable(const Model::GetSparkJobDriverLogRequest& request) const;
-			GetSparkJobExecutorLogsOutcome getSparkJobExecutorLogs(const Model::GetSparkJobExecutorLogsRequest &request)const;
-			void getSparkJobExecutorLogsAsync(const Model::GetSparkJobExecutorLogsRequest& request, const GetSparkJobExecutorLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetSparkJobExecutorLogsOutcomeCallable getSparkJobExecutorLogsCallable(const Model::GetSparkJobExecutorLogsRequest& request) const;
-			GetSparkJobLogOutcome getSparkJobLog(const Model::GetSparkJobLogRequest &request)const;
-			void getSparkJobLogAsync(const Model::GetSparkJobLogRequest& request, const GetSparkJobLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetSparkJobLogOutcomeCallable getSparkJobLogCallable(const Model::GetSparkJobLogRequest& request) const;
 			GetStructSyncExecSqlDetailOutcome getStructSyncExecSqlDetail(const Model::GetStructSyncExecSqlDetailRequest &request)const;
 			void getStructSyncExecSqlDetailAsync(const Model::GetStructSyncExecSqlDetailRequest& request, const GetStructSyncExecSqlDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetStructSyncExecSqlDetailOutcomeCallable getStructSyncExecSqlDetailCallable(const Model::GetStructSyncExecSqlDetailRequest& request) const;
@@ -815,9 +786,6 @@ namespace AlibabaCloud
 			InspectProxyAccessSecretOutcome inspectProxyAccessSecret(const Model::InspectProxyAccessSecretRequest &request)const;
 			void inspectProxyAccessSecretAsync(const Model::InspectProxyAccessSecretRequest& request, const InspectProxyAccessSecretAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			InspectProxyAccessSecretOutcomeCallable inspectProxyAccessSecretCallable(const Model::InspectProxyAccessSecretRequest& request) const;
-			KillSparkJobOutcome killSparkJob(const Model::KillSparkJobRequest &request)const;
-			void killSparkJobAsync(const Model::KillSparkJobRequest& request, const KillSparkJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			KillSparkJobOutcomeCallable killSparkJobCallable(const Model::KillSparkJobRequest& request) const;
 			ListColumnsOutcome listColumns(const Model::ListColumnsRequest &request)const;
 			void listColumnsAsync(const Model::ListColumnsRequest& request, const ListColumnsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListColumnsOutcomeCallable listColumnsCallable(const Model::ListColumnsRequest& request) const;
@@ -887,6 +855,9 @@ namespace AlibabaCloud
 			ListSensitiveColumnsDetailOutcome listSensitiveColumnsDetail(const Model::ListSensitiveColumnsDetailRequest &request)const;
 			void listSensitiveColumnsDetailAsync(const Model::ListSensitiveColumnsDetailRequest& request, const ListSensitiveColumnsDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListSensitiveColumnsDetailOutcomeCallable listSensitiveColumnsDetailCallable(const Model::ListSensitiveColumnsDetailRequest& request) const;
+			ListStandardGroupsOutcome listStandardGroups(const Model::ListStandardGroupsRequest &request)const;
+			void listStandardGroupsAsync(const Model::ListStandardGroupsRequest& request, const ListStandardGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListStandardGroupsOutcomeCallable listStandardGroupsCallable(const Model::ListStandardGroupsRequest& request) const;
 			ListTablesOutcome listTables(const Model::ListTablesRequest &request)const;
 			void listTablesAsync(const Model::ListTablesRequest& request, const ListTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListTablesOutcomeCallable listTablesCallable(const Model::ListTablesRequest& request) const;
@@ -938,9 +909,6 @@ namespace AlibabaCloud
 			SubmitOrderApprovalOutcome submitOrderApproval(const Model::SubmitOrderApprovalRequest &request)const;
 			void submitOrderApprovalAsync(const Model::SubmitOrderApprovalRequest& request, const SubmitOrderApprovalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SubmitOrderApprovalOutcomeCallable submitOrderApprovalCallable(const Model::SubmitOrderApprovalRequest& request) const;
-			SubmitSparkJobOutcome submitSparkJob(const Model::SubmitSparkJobRequest &request)const;
-			void submitSparkJobAsync(const Model::SubmitSparkJobRequest& request, const SubmitSparkJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			SubmitSparkJobOutcomeCallable submitSparkJobCallable(const Model::SubmitSparkJobRequest& request) const;
 			SubmitStructSyncOrderApprovalOutcome submitStructSyncOrderApproval(const Model::SubmitStructSyncOrderApprovalRequest &request)const;
 			void submitStructSyncOrderApprovalAsync(const Model::SubmitStructSyncOrderApprovalRequest& request, const SubmitStructSyncOrderApprovalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SubmitStructSyncOrderApprovalOutcomeCallable submitStructSyncOrderApprovalCallable(const Model::SubmitStructSyncOrderApprovalRequest& request) const;

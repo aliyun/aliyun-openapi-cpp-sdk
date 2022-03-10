@@ -33,6 +33,8 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/CreateDataCorrectOrderResult.h
 	include/alibabacloud/dms-enterprise/model/CreateDataCronClearOrderRequest.h
 	include/alibabacloud/dms-enterprise/model/CreateDataCronClearOrderResult.h
+	include/alibabacloud/dms-enterprise/model/CreateDataExportOrderRequest.h
+	include/alibabacloud/dms-enterprise/model/CreateDataExportOrderResult.h
 	include/alibabacloud/dms-enterprise/model/CreateDataImportOrderRequest.h
 	include/alibabacloud/dms-enterprise/model/CreateDataImportOrderResult.h
 	include/alibabacloud/dms-enterprise/model/CreateFreeLockCorrectOrderRequest.h
@@ -127,14 +129,6 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/GetSQLReviewCheckResultStatusResult.h
 	include/alibabacloud/dms-enterprise/model/GetSQLReviewOptimizeDetailRequest.h
 	include/alibabacloud/dms-enterprise/model/GetSQLReviewOptimizeDetailResult.h
-	include/alibabacloud/dms-enterprise/model/GetSparkJobDetailRequest.h
-	include/alibabacloud/dms-enterprise/model/GetSparkJobDetailResult.h
-	include/alibabacloud/dms-enterprise/model/GetSparkJobDriverLogRequest.h
-	include/alibabacloud/dms-enterprise/model/GetSparkJobDriverLogResult.h
-	include/alibabacloud/dms-enterprise/model/GetSparkJobExecutorLogsRequest.h
-	include/alibabacloud/dms-enterprise/model/GetSparkJobExecutorLogsResult.h
-	include/alibabacloud/dms-enterprise/model/GetSparkJobLogRequest.h
-	include/alibabacloud/dms-enterprise/model/GetSparkJobLogResult.h
 	include/alibabacloud/dms-enterprise/model/GetStructSyncExecSqlDetailRequest.h
 	include/alibabacloud/dms-enterprise/model/GetStructSyncExecSqlDetailResult.h
 	include/alibabacloud/dms-enterprise/model/GetStructSyncJobAnalyzeResultRequest.h
@@ -157,8 +151,6 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/GrantUserPermissionResult.h
 	include/alibabacloud/dms-enterprise/model/InspectProxyAccessSecretRequest.h
 	include/alibabacloud/dms-enterprise/model/InspectProxyAccessSecretResult.h
-	include/alibabacloud/dms-enterprise/model/KillSparkJobRequest.h
-	include/alibabacloud/dms-enterprise/model/KillSparkJobResult.h
 	include/alibabacloud/dms-enterprise/model/ListColumnsRequest.h
 	include/alibabacloud/dms-enterprise/model/ListColumnsResult.h
 	include/alibabacloud/dms-enterprise/model/ListDBTaskSQLJobRequest.h
@@ -205,6 +197,8 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/ListSensitiveColumnsResult.h
 	include/alibabacloud/dms-enterprise/model/ListSensitiveColumnsDetailRequest.h
 	include/alibabacloud/dms-enterprise/model/ListSensitiveColumnsDetailResult.h
+	include/alibabacloud/dms-enterprise/model/ListStandardGroupsRequest.h
+	include/alibabacloud/dms-enterprise/model/ListStandardGroupsResult.h
 	include/alibabacloud/dms-enterprise/model/ListTablesRequest.h
 	include/alibabacloud/dms-enterprise/model/ListTablesResult.h
 	include/alibabacloud/dms-enterprise/model/ListUserPermissionsRequest.h
@@ -239,8 +233,6 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/SetOwnersResult.h
 	include/alibabacloud/dms-enterprise/model/SubmitOrderApprovalRequest.h
 	include/alibabacloud/dms-enterprise/model/SubmitOrderApprovalResult.h
-	include/alibabacloud/dms-enterprise/model/SubmitSparkJobRequest.h
-	include/alibabacloud/dms-enterprise/model/SubmitSparkJobResult.h
 	include/alibabacloud/dms-enterprise/model/SubmitStructSyncOrderApprovalRequest.h
 	include/alibabacloud/dms-enterprise/model/SubmitStructSyncOrderApprovalResult.h
 	include/alibabacloud/dms-enterprise/model/SyncDatabaseMetaRequest.h
@@ -266,6 +258,8 @@ set(dms-enterprise_src
 	src/model/CreateDataCorrectOrderResult.cc
 	src/model/CreateDataCronClearOrderRequest.cc
 	src/model/CreateDataCronClearOrderResult.cc
+	src/model/CreateDataExportOrderRequest.cc
+	src/model/CreateDataExportOrderResult.cc
 	src/model/CreateDataImportOrderRequest.cc
 	src/model/CreateDataImportOrderResult.cc
 	src/model/CreateFreeLockCorrectOrderRequest.cc
@@ -360,14 +354,6 @@ set(dms-enterprise_src
 	src/model/GetSQLReviewCheckResultStatusResult.cc
 	src/model/GetSQLReviewOptimizeDetailRequest.cc
 	src/model/GetSQLReviewOptimizeDetailResult.cc
-	src/model/GetSparkJobDetailRequest.cc
-	src/model/GetSparkJobDetailResult.cc
-	src/model/GetSparkJobDriverLogRequest.cc
-	src/model/GetSparkJobDriverLogResult.cc
-	src/model/GetSparkJobExecutorLogsRequest.cc
-	src/model/GetSparkJobExecutorLogsResult.cc
-	src/model/GetSparkJobLogRequest.cc
-	src/model/GetSparkJobLogResult.cc
 	src/model/GetStructSyncExecSqlDetailRequest.cc
 	src/model/GetStructSyncExecSqlDetailResult.cc
 	src/model/GetStructSyncJobAnalyzeResultRequest.cc
@@ -390,8 +376,6 @@ set(dms-enterprise_src
 	src/model/GrantUserPermissionResult.cc
 	src/model/InspectProxyAccessSecretRequest.cc
 	src/model/InspectProxyAccessSecretResult.cc
-	src/model/KillSparkJobRequest.cc
-	src/model/KillSparkJobResult.cc
 	src/model/ListColumnsRequest.cc
 	src/model/ListColumnsResult.cc
 	src/model/ListDBTaskSQLJobRequest.cc
@@ -438,6 +422,8 @@ set(dms-enterprise_src
 	src/model/ListSensitiveColumnsResult.cc
 	src/model/ListSensitiveColumnsDetailRequest.cc
 	src/model/ListSensitiveColumnsDetailResult.cc
+	src/model/ListStandardGroupsRequest.cc
+	src/model/ListStandardGroupsResult.cc
 	src/model/ListTablesRequest.cc
 	src/model/ListTablesResult.cc
 	src/model/ListUserPermissionsRequest.cc
@@ -472,8 +458,6 @@ set(dms-enterprise_src
 	src/model/SetOwnersResult.cc
 	src/model/SubmitOrderApprovalRequest.cc
 	src/model/SubmitOrderApprovalResult.cc
-	src/model/SubmitSparkJobRequest.cc
-	src/model/SubmitSparkJobResult.cc
 	src/model/SubmitStructSyncOrderApprovalRequest.cc
 	src/model/SubmitStructSyncOrderApprovalResult.cc
 	src/model/SyncDatabaseMetaRequest.cc
