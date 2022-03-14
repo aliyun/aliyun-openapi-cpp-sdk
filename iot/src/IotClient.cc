@@ -11319,42 +11319,6 @@ IotClient::UpdateThingModelOutcomeCallable IotClient::updateThingModelCallable(c
 	return task->get_future();
 }
 
-IotClient::UpdateThingModelValidationConfigOutcome IotClient::updateThingModelValidationConfig(const UpdateThingModelValidationConfigRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return UpdateThingModelValidationConfigOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return UpdateThingModelValidationConfigOutcome(UpdateThingModelValidationConfigResult(outcome.result()));
-	else
-		return UpdateThingModelValidationConfigOutcome(outcome.error());
-}
-
-void IotClient::updateThingModelValidationConfigAsync(const UpdateThingModelValidationConfigRequest& request, const UpdateThingModelValidationConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, updateThingModelValidationConfig(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-IotClient::UpdateThingModelValidationConfigOutcomeCallable IotClient::updateThingModelValidationConfigCallable(const UpdateThingModelValidationConfigRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<UpdateThingModelValidationConfigOutcome()>>(
-			[this, request]()
-			{
-			return this->updateThingModelValidationConfig(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 IotClient::UpdateThingScriptOutcome IotClient::updateThingScript(const UpdateThingScriptRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

@@ -647,8 +647,6 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/UpdateSubscribeRelationResult.h
 	include/alibabacloud/iot/model/UpdateThingModelRequest.h
 	include/alibabacloud/iot/model/UpdateThingModelResult.h
-	include/alibabacloud/iot/model/UpdateThingModelValidationConfigRequest.h
-	include/alibabacloud/iot/model/UpdateThingModelValidationConfigResult.h
 	include/alibabacloud/iot/model/UpdateThingScriptRequest.h
 	include/alibabacloud/iot/model/UpdateThingScriptResult.h )
 
@@ -1280,8 +1278,6 @@ set(iot_src
 	src/model/UpdateSubscribeRelationResult.cc
 	src/model/UpdateThingModelRequest.cc
 	src/model/UpdateThingModelResult.cc
-	src/model/UpdateThingModelValidationConfigRequest.cc
-	src/model/UpdateThingModelValidationConfigResult.cc
 	src/model/UpdateThingScriptRequest.cc
 	src/model/UpdateThingScriptResult.cc )
 

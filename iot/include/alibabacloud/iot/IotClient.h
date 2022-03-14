@@ -648,8 +648,6 @@
 #include "model/UpdateSubscribeRelationResult.h"
 #include "model/UpdateThingModelRequest.h"
 #include "model/UpdateThingModelResult.h"
-#include "model/UpdateThingModelValidationConfigRequest.h"
-#include "model/UpdateThingModelValidationConfigResult.h"
 #include "model/UpdateThingScriptRequest.h"
 #include "model/UpdateThingScriptResult.h"
 
@@ -1600,9 +1598,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateThingModelResult> UpdateThingModelOutcome;
 			typedef std::future<UpdateThingModelOutcome> UpdateThingModelOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::UpdateThingModelRequest&, const UpdateThingModelOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateThingModelAsyncHandler;
-			typedef Outcome<Error, Model::UpdateThingModelValidationConfigResult> UpdateThingModelValidationConfigOutcome;
-			typedef std::future<UpdateThingModelValidationConfigOutcome> UpdateThingModelValidationConfigOutcomeCallable;
-			typedef std::function<void(const IotClient*, const Model::UpdateThingModelValidationConfigRequest&, const UpdateThingModelValidationConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateThingModelValidationConfigAsyncHandler;
 			typedef Outcome<Error, Model::UpdateThingScriptResult> UpdateThingScriptOutcome;
 			typedef std::future<UpdateThingScriptOutcome> UpdateThingScriptOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::UpdateThingScriptRequest&, const UpdateThingScriptOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateThingScriptAsyncHandler;
@@ -2550,9 +2545,6 @@ namespace AlibabaCloud
 			UpdateThingModelOutcome updateThingModel(const Model::UpdateThingModelRequest &request)const;
 			void updateThingModelAsync(const Model::UpdateThingModelRequest& request, const UpdateThingModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateThingModelOutcomeCallable updateThingModelCallable(const Model::UpdateThingModelRequest& request) const;
-			UpdateThingModelValidationConfigOutcome updateThingModelValidationConfig(const Model::UpdateThingModelValidationConfigRequest &request)const;
-			void updateThingModelValidationConfigAsync(const Model::UpdateThingModelValidationConfigRequest& request, const UpdateThingModelValidationConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			UpdateThingModelValidationConfigOutcomeCallable updateThingModelValidationConfigCallable(const Model::UpdateThingModelValidationConfigRequest& request) const;
 			UpdateThingScriptOutcome updateThingScript(const Model::UpdateThingScriptRequest &request)const;
 			void updateThingScriptAsync(const Model::UpdateThingScriptRequest& request, const UpdateThingScriptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateThingScriptOutcomeCallable updateThingScriptCallable(const Model::UpdateThingScriptRequest& request) const;
