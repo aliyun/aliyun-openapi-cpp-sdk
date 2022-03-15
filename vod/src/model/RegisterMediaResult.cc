@@ -43,12 +43,12 @@ void RegisterMediaResult::parse(const std::string &payload)
 	for (auto valueRegisteredMediaListRegisteredMedia : allRegisteredMediaListNode)
 	{
 		RegisteredMedia registeredMediaListObject;
-		if(!valueRegisteredMediaListRegisteredMedia["MediaId"].isNull())
-			registeredMediaListObject.mediaId = valueRegisteredMediaListRegisteredMedia["MediaId"].asString();
-		if(!valueRegisteredMediaListRegisteredMedia["FileURL"].isNull())
-			registeredMediaListObject.fileURL = valueRegisteredMediaListRegisteredMedia["FileURL"].asString();
 		if(!valueRegisteredMediaListRegisteredMedia["NewRegister"].isNull())
 			registeredMediaListObject.newRegister = valueRegisteredMediaListRegisteredMedia["NewRegister"].asString() == "true";
+		if(!valueRegisteredMediaListRegisteredMedia["FileURL"].isNull())
+			registeredMediaListObject.fileURL = valueRegisteredMediaListRegisteredMedia["FileURL"].asString();
+		if(!valueRegisteredMediaListRegisteredMedia["MediaId"].isNull())
+			registeredMediaListObject.mediaId = valueRegisteredMediaListRegisteredMedia["MediaId"].asString();
 		registeredMediaList_.push_back(registeredMediaListObject);
 	}
 	auto allFailedFileURLs = value["FailedFileURLs"]["FileURL"];

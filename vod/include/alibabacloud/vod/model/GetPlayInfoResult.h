@@ -52,30 +52,31 @@ namespace AlibabaCloud
 				};
 				struct PlayInfo
 				{
-					std::string status;
-					std::string streamType;
-					std::string rand;
 					std::string hDRType;
 					long size;
 					std::string watermarkId;
-					std::string definition;
 					std::string fps;
-					std::string specification;
 					std::string modificationTime;
-					std::string duration;
-					std::string bitrate;
-					long encrypt;
+					int bitDepth;
 					std::string preprocessStatus;
 					std::string complexity;
 					std::string format;
-					std::string encryptType;
 					std::string narrowBandType;
-					std::string playURL;
-					std::string creationTime;
 					std::string plaintext;
 					long height;
 					long width;
 					std::string jobId;
+					std::string status;
+					std::string streamType;
+					std::string rand;
+					std::string definition;
+					std::string specification;
+					std::string duration;
+					std::string bitrate;
+					long encrypt;
+					std::string encryptType;
+					std::string playURL;
+					std::string creationTime;
 				};
 
 
