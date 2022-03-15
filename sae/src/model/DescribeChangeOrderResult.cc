@@ -74,6 +74,8 @@ void DescribeChangeOrderResult::parse(const std::string &payload)
 		data_._auto = dataNode["Auto"].asString() == "true";
 	if(!dataNode["CurrentPipelineId"].isNull())
 		data_.currentPipelineId = dataNode["CurrentPipelineId"].asString();
+	if(!dataNode["AppId"].isNull())
+		data_.appId = dataNode["AppId"].asString();
 	auto allPipelinesNode = dataNode["Pipelines"]["Pipeline"];
 	for (auto dataNodePipelinesPipeline : allPipelinesNode)
 	{

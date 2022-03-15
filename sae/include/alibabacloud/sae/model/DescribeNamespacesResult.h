@@ -41,8 +41,8 @@ namespace AlibabaCloud
 						std::string tenantId;
 						std::string addressServerHost;
 						std::string accessKey;
-						std::string regionId;
 						std::string namespaceId;
+						std::string regionId;
 						std::string namespaceDescription;
 					};
 					std::vector<_Namespace> namespaces;

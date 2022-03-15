@@ -146,6 +146,8 @@ void DescribeApplicationConfigResult::parse(const std::string &payload)
 		data_.acrAssumeRoleArn = dataNode["AcrAssumeRoleArn"].asString();
 	if(!dataNode["AssociateEip"].isNull())
 		data_.associateEip = dataNode["AssociateEip"].asString() == "true";
+	if(!dataNode["KafkaConfigs"].isNull())
+		data_.kafkaConfigs = dataNode["KafkaConfigs"].asString();
 	auto allConfigMapMountDescNode = dataNode["ConfigMapMountDesc"]["ConfigMapMountDescItem"];
 	for (auto dataNodeConfigMapMountDescConfigMapMountDescItem : allConfigMapMountDescNode)
 	{

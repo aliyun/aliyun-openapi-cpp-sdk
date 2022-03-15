@@ -57,6 +57,7 @@ namespace AlibabaCloud
 					std::string currentPipelineId;
 					std::string coTypeCode;
 					bool _auto;
+					std::string appId;
 					bool supportRollback;
 					int batchWaitTime;
 					int subStatus;

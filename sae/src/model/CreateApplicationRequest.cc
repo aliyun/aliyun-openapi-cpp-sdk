@@ -94,6 +94,17 @@ void CreateApplicationRequest::setEnvs(const std::string& envs)
 	setParameter("Envs", envs);
 }
 
+std::string CreateApplicationRequest::getKafkaInstanceId()const
+{
+	return kafkaInstanceId_;
+}
+
+void CreateApplicationRequest::setKafkaInstanceId(const std::string& kafkaInstanceId)
+{
+	kafkaInstanceId_ = kafkaInstanceId;
+	setParameter("KafkaInstanceId", kafkaInstanceId);
+}
+
 std::string CreateApplicationRequest::getPhpPECLExtensions()const
 {
 	return phpPECLExtensions_;
@@ -191,6 +202,17 @@ void CreateApplicationRequest::setOssMountDescs(const std::string& ossMountDescs
 {
 	ossMountDescs_ = ossMountDescs;
 	setBodyParameter("OssMountDescs", ossMountDescs);
+}
+
+std::string CreateApplicationRequest::getKafkaEndpoint()const
+{
+	return kafkaEndpoint_;
+}
+
+void CreateApplicationRequest::setKafkaEndpoint(const std::string& kafkaEndpoint)
+{
+	kafkaEndpoint_ = kafkaEndpoint;
+	setParameter("KafkaEndpoint", kafkaEndpoint);
 }
 
 std::string CreateApplicationRequest::getPreStop()const
@@ -301,6 +323,17 @@ void CreateApplicationRequest::setSlsConfigs(const std::string& slsConfigs)
 {
 	slsConfigs_ = slsConfigs;
 	setParameter("SlsConfigs", slsConfigs);
+}
+
+bool CreateApplicationRequest::getOpenCollectToKafka()const
+{
+	return openCollectToKafka_;
+}
+
+void CreateApplicationRequest::setOpenCollectToKafka(bool openCollectToKafka)
+{
+	openCollectToKafka_ = openCollectToKafka;
+	setParameter("OpenCollectToKafka", openCollectToKafka ? "true" : "false");
 }
 
 std::string CreateApplicationRequest::getCommandArgs()const
@@ -510,6 +543,17 @@ void CreateApplicationRequest::setAppDescription(const std::string& appDescripti
 {
 	appDescription_ = appDescription;
 	setParameter("AppDescription", appDescription);
+}
+
+std::string CreateApplicationRequest::getKafkaLogfileConfig()const
+{
+	return kafkaLogfileConfig_;
+}
+
+void CreateApplicationRequest::setKafkaLogfileConfig(const std::string& kafkaLogfileConfig)
+{
+	kafkaLogfileConfig_ = kafkaLogfileConfig;
+	setParameter("KafkaLogfileConfig", kafkaLogfileConfig);
 }
 
 std::string CreateApplicationRequest::getAcrInstanceId()const

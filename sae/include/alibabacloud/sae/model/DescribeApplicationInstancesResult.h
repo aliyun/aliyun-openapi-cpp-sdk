@@ -41,6 +41,7 @@ namespace AlibabaCloud
 						std::string instanceId;
 						std::string vSwitchId;
 						std::string imageUrl;
+						long finishTimeStamp;
 						long instanceContainerRestarts;
 						std::string instanceContainerStatus;
 						std::string packageVersion;

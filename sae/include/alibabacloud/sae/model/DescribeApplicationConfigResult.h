@@ -87,6 +87,7 @@ namespace AlibabaCloud
 					std::string appDescription;
 					std::string nasId;
 					std::string acrInstanceId;
+					std::string kafkaConfigs;
 					std::string slsConfigs;
 					std::string updateStrategy;
 					std::string ossAkId;

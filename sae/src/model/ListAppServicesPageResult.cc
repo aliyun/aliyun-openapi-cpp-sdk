@@ -63,14 +63,10 @@ void ListAppServicesPageResult::parse(const std::string &payload)
 				resultObject.instanceNum = std::stol(valueDataDataItemResultMscAgentServiceResponse["InstanceNum"].asString());
 			if(!valueDataDataItemResultMscAgentServiceResponse["EdasAppId"].isNull())
 				resultObject.edasAppId = valueDataDataItemResultMscAgentServiceResponse["EdasAppId"].asString();
-			if(!valueDataDataItemResultMscAgentServiceResponse["GmtModifyTime"].isNull())
-				resultObject.gmtModifyTime = valueDataDataItemResultMscAgentServiceResponse["GmtModifyTime"].asString();
 			if(!valueDataDataItemResultMscAgentServiceResponse["ServiceName"].isNull())
 				resultObject.serviceName = valueDataDataItemResultMscAgentServiceResponse["ServiceName"].asString();
 			if(!valueDataDataItemResultMscAgentServiceResponse["Group"].isNull())
 				resultObject.group = valueDataDataItemResultMscAgentServiceResponse["Group"].asString();
-			if(!valueDataDataItemResultMscAgentServiceResponse["ClusterName"].isNull())
-				resultObject.clusterName = valueDataDataItemResultMscAgentServiceResponse["ClusterName"].asString();
 			dataObject.result.push_back(resultObject);
 		}
 		data_.push_back(dataObject);

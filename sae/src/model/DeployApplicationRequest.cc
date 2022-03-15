@@ -39,17 +39,6 @@ void DeployApplicationRequest::setNasId(const std::string& nasId)
 	setParameter("NasId", nasId);
 }
 
-std::string DeployApplicationRequest::getWebContainer()const
-{
-	return webContainer_;
-}
-
-void DeployApplicationRequest::setWebContainer(const std::string& webContainer)
-{
-	webContainer_ = webContainer;
-	setParameter("WebContainer", webContainer);
-}
-
 std::string DeployApplicationRequest::getJarStartArgs()const
 {
 	return jarStartArgs_;
@@ -59,6 +48,237 @@ void DeployApplicationRequest::setJarStartArgs(const std::string& jarStartArgs)
 {
 	jarStartArgs_ = jarStartArgs;
 	setParameter("JarStartArgs", jarStartArgs);
+}
+
+std::string DeployApplicationRequest::getOssAkSecret()const
+{
+	return ossAkSecret_;
+}
+
+void DeployApplicationRequest::setOssAkSecret(const std::string& ossAkSecret)
+{
+	ossAkSecret_ = ossAkSecret;
+	setBodyParameter("OssAkSecret", ossAkSecret);
+}
+
+std::string DeployApplicationRequest::getMountHost()const
+{
+	return mountHost_;
+}
+
+void DeployApplicationRequest::setMountHost(const std::string& mountHost)
+{
+	mountHost_ = mountHost;
+	setParameter("MountHost", mountHost);
+}
+
+int DeployApplicationRequest::getBatchWaitTime()const
+{
+	return batchWaitTime_;
+}
+
+void DeployApplicationRequest::setBatchWaitTime(int batchWaitTime)
+{
+	batchWaitTime_ = batchWaitTime;
+	setParameter("BatchWaitTime", std::to_string(batchWaitTime));
+}
+
+std::string DeployApplicationRequest::getEnvs()const
+{
+	return envs_;
+}
+
+void DeployApplicationRequest::setEnvs(const std::string& envs)
+{
+	envs_ = envs;
+	setParameter("Envs", envs);
+}
+
+std::string DeployApplicationRequest::getKafkaInstanceId()const
+{
+	return kafkaInstanceId_;
+}
+
+void DeployApplicationRequest::setKafkaInstanceId(const std::string& kafkaInstanceId)
+{
+	kafkaInstanceId_ = kafkaInstanceId;
+	setParameter("KafkaInstanceId", kafkaInstanceId);
+}
+
+std::string DeployApplicationRequest::getPhpPECLExtensions()const
+{
+	return phpPECLExtensions_;
+}
+
+void DeployApplicationRequest::setPhpPECLExtensions(const std::string& phpPECLExtensions)
+{
+	phpPECLExtensions_ = phpPECLExtensions;
+	setBodyParameter("PhpPECLExtensions", phpPECLExtensions);
+}
+
+std::string DeployApplicationRequest::getPhpArmsConfigLocation()const
+{
+	return phpArmsConfigLocation_;
+}
+
+void DeployApplicationRequest::setPhpArmsConfigLocation(const std::string& phpArmsConfigLocation)
+{
+	phpArmsConfigLocation_ = phpArmsConfigLocation;
+	setParameter("PhpArmsConfigLocation", phpArmsConfigLocation);
+}
+
+std::string DeployApplicationRequest::getCustomHostAlias()const
+{
+	return customHostAlias_;
+}
+
+void DeployApplicationRequest::setCustomHostAlias(const std::string& customHostAlias)
+{
+	customHostAlias_ = customHostAlias;
+	setParameter("CustomHostAlias", customHostAlias);
+}
+
+std::string DeployApplicationRequest::getJarStartOptions()const
+{
+	return jarStartOptions_;
+}
+
+void DeployApplicationRequest::setJarStartOptions(const std::string& jarStartOptions)
+{
+	jarStartOptions_ = jarStartOptions;
+	setParameter("JarStartOptions", jarStartOptions);
+}
+
+std::string DeployApplicationRequest::getConfigMapMountDesc()const
+{
+	return configMapMountDesc_;
+}
+
+void DeployApplicationRequest::setConfigMapMountDesc(const std::string& configMapMountDesc)
+{
+	configMapMountDesc_ = configMapMountDesc;
+	setBodyParameter("ConfigMapMountDesc", configMapMountDesc);
+}
+
+std::string DeployApplicationRequest::getOssMountDescs()const
+{
+	return ossMountDescs_;
+}
+
+void DeployApplicationRequest::setOssMountDescs(const std::string& ossMountDescs)
+{
+	ossMountDescs_ = ossMountDescs;
+	setBodyParameter("OssMountDescs", ossMountDescs);
+}
+
+std::string DeployApplicationRequest::getKafkaEndpoint()const
+{
+	return kafkaEndpoint_;
+}
+
+void DeployApplicationRequest::setKafkaEndpoint(const std::string& kafkaEndpoint)
+{
+	kafkaEndpoint_ = kafkaEndpoint;
+	setParameter("KafkaEndpoint", kafkaEndpoint);
+}
+
+std::string DeployApplicationRequest::getPreStop()const
+{
+	return preStop_;
+}
+
+void DeployApplicationRequest::setPreStop(const std::string& preStop)
+{
+	preStop_ = preStop;
+	setParameter("PreStop", preStop);
+}
+
+std::string DeployApplicationRequest::getUpdateStrategy()const
+{
+	return updateStrategy_;
+}
+
+void DeployApplicationRequest::setUpdateStrategy(const std::string& updateStrategy)
+{
+	updateStrategy_ = updateStrategy;
+	setParameter("UpdateStrategy", updateStrategy);
+}
+
+std::string DeployApplicationRequest::getChangeOrderDesc()const
+{
+	return changeOrderDesc_;
+}
+
+void DeployApplicationRequest::setChangeOrderDesc(const std::string& changeOrderDesc)
+{
+	changeOrderDesc_ = changeOrderDesc;
+	setParameter("ChangeOrderDesc", changeOrderDesc);
+}
+
+int DeployApplicationRequest::getMinReadyInstanceRatio()const
+{
+	return minReadyInstanceRatio_;
+}
+
+void DeployApplicationRequest::setMinReadyInstanceRatio(int minReadyInstanceRatio)
+{
+	minReadyInstanceRatio_ = minReadyInstanceRatio;
+	setParameter("MinReadyInstanceRatio", std::to_string(minReadyInstanceRatio));
+}
+
+bool DeployApplicationRequest::getAutoEnableApplicationScalingRule()const
+{
+	return autoEnableApplicationScalingRule_;
+}
+
+void DeployApplicationRequest::setAutoEnableApplicationScalingRule(bool autoEnableApplicationScalingRule)
+{
+	autoEnableApplicationScalingRule_ = autoEnableApplicationScalingRule;
+	setParameter("AutoEnableApplicationScalingRule", autoEnableApplicationScalingRule ? "true" : "false");
+}
+
+std::string DeployApplicationRequest::getPostStart()const
+{
+	return postStart_;
+}
+
+void DeployApplicationRequest::setPostStart(const std::string& postStart)
+{
+	postStart_ = postStart;
+	setParameter("PostStart", postStart);
+}
+
+std::string DeployApplicationRequest::getPhpExtensions()const
+{
+	return phpExtensions_;
+}
+
+void DeployApplicationRequest::setPhpExtensions(const std::string& phpExtensions)
+{
+	phpExtensions_ = phpExtensions;
+	setBodyParameter("PhpExtensions", phpExtensions);
+}
+
+bool DeployApplicationRequest::getAssociateEip()const
+{
+	return associateEip_;
+}
+
+void DeployApplicationRequest::setAssociateEip(bool associateEip)
+{
+	associateEip_ = associateEip;
+	setBodyParameter("AssociateEip", associateEip ? "true" : "false");
+}
+
+std::string DeployApplicationRequest::getWebContainer()const
+{
+	return webContainer_;
+}
+
+void DeployApplicationRequest::setWebContainer(const std::string& webContainer)
+{
+	webContainer_ = webContainer;
+	setParameter("WebContainer", webContainer);
 }
 
 std::string DeployApplicationRequest::getEnableAhas()const
@@ -83,15 +303,15 @@ void DeployApplicationRequest::setSlsConfigs(const std::string& slsConfigs)
 	setParameter("SlsConfigs", slsConfigs);
 }
 
-std::string DeployApplicationRequest::getOssAkSecret()const
+bool DeployApplicationRequest::getOpenCollectToKafka()const
 {
-	return ossAkSecret_;
+	return openCollectToKafka_;
 }
 
-void DeployApplicationRequest::setOssAkSecret(const std::string& ossAkSecret)
+void DeployApplicationRequest::setOpenCollectToKafka(bool openCollectToKafka)
 {
-	ossAkSecret_ = ossAkSecret;
-	setBodyParameter("OssAkSecret", ossAkSecret);
+	openCollectToKafka_ = openCollectToKafka;
+	setParameter("OpenCollectToKafka", openCollectToKafka ? "true" : "false");
 }
 
 std::string DeployApplicationRequest::getCommandArgs()const
@@ -138,28 +358,6 @@ void DeployApplicationRequest::setTimezone(const std::string& timezone)
 	setParameter("Timezone", timezone);
 }
 
-std::string DeployApplicationRequest::getMountHost()const
-{
-	return mountHost_;
-}
-
-void DeployApplicationRequest::setMountHost(const std::string& mountHost)
-{
-	mountHost_ = mountHost;
-	setParameter("MountHost", mountHost);
-}
-
-int DeployApplicationRequest::getBatchWaitTime()const
-{
-	return batchWaitTime_;
-}
-
-void DeployApplicationRequest::setBatchWaitTime(int batchWaitTime)
-{
-	batchWaitTime_ = batchWaitTime;
-	setParameter("BatchWaitTime", std::to_string(batchWaitTime));
-}
-
 std::string DeployApplicationRequest::getOssAkId()const
 {
 	return ossAkId_;
@@ -180,39 +378,6 @@ void DeployApplicationRequest::setLiveness(const std::string& liveness)
 {
 	liveness_ = liveness;
 	setParameter("Liveness", liveness);
-}
-
-std::string DeployApplicationRequest::getEnvs()const
-{
-	return envs_;
-}
-
-void DeployApplicationRequest::setEnvs(const std::string& envs)
-{
-	envs_ = envs;
-	setParameter("Envs", envs);
-}
-
-std::string DeployApplicationRequest::getPhpPECLExtensions()const
-{
-	return phpPECLExtensions_;
-}
-
-void DeployApplicationRequest::setPhpPECLExtensions(const std::string& phpPECLExtensions)
-{
-	phpPECLExtensions_ = phpPECLExtensions;
-	setBodyParameter("PhpPECLExtensions", phpPECLExtensions);
-}
-
-std::string DeployApplicationRequest::getPhpArmsConfigLocation()const
-{
-	return phpArmsConfigLocation_;
-}
-
-void DeployApplicationRequest::setPhpArmsConfigLocation(const std::string& phpArmsConfigLocation)
-{
-	phpArmsConfigLocation_ = phpArmsConfigLocation;
-	setParameter("PhpArmsConfigLocation", phpArmsConfigLocation);
 }
 
 std::string DeployApplicationRequest::getPackageVersion()const
@@ -237,17 +402,6 @@ void DeployApplicationRequest::setTomcatConfig(const std::string& tomcatConfig)
 	setParameter("TomcatConfig", tomcatConfig);
 }
 
-std::string DeployApplicationRequest::getCustomHostAlias()const
-{
-	return customHostAlias_;
-}
-
-void DeployApplicationRequest::setCustomHostAlias(const std::string& customHostAlias)
-{
-	customHostAlias_ = customHostAlias;
-	setParameter("CustomHostAlias", customHostAlias);
-}
-
 std::string DeployApplicationRequest::getWarStartOptions()const
 {
 	return warStartOptions_;
@@ -257,17 +411,6 @@ void DeployApplicationRequest::setWarStartOptions(const std::string& warStartOpt
 {
 	warStartOptions_ = warStartOptions;
 	setParameter("WarStartOptions", warStartOptions);
-}
-
-std::string DeployApplicationRequest::getJarStartOptions()const
-{
-	return jarStartOptions_;
-}
-
-void DeployApplicationRequest::setJarStartOptions(const std::string& jarStartOptions)
-{
-	jarStartOptions_ = jarStartOptions;
-	setParameter("JarStartOptions", jarStartOptions);
 }
 
 std::string DeployApplicationRequest::getEdasContainerVersion()const
@@ -303,28 +446,6 @@ void DeployApplicationRequest::setTerminationGracePeriodSeconds(int terminationG
 	setParameter("TerminationGracePeriodSeconds", std::to_string(terminationGracePeriodSeconds));
 }
 
-std::string DeployApplicationRequest::getConfigMapMountDesc()const
-{
-	return configMapMountDesc_;
-}
-
-void DeployApplicationRequest::setConfigMapMountDesc(const std::string& configMapMountDesc)
-{
-	configMapMountDesc_ = configMapMountDesc;
-	setBodyParameter("ConfigMapMountDesc", configMapMountDesc);
-}
-
-std::string DeployApplicationRequest::getOssMountDescs()const
-{
-	return ossMountDescs_;
-}
-
-void DeployApplicationRequest::setOssMountDescs(const std::string& ossMountDescs)
-{
-	ossMountDescs_ = ossMountDescs;
-	setBodyParameter("OssMountDescs", ossMountDescs);
-}
-
 std::string DeployApplicationRequest::getPhpConfig()const
 {
 	return phpConfig_;
@@ -334,17 +455,6 @@ void DeployApplicationRequest::setPhpConfig(const std::string& phpConfig)
 {
 	phpConfig_ = phpConfig;
 	setBodyParameter("PhpConfig", phpConfig);
-}
-
-std::string DeployApplicationRequest::getPreStop()const
-{
-	return preStop_;
-}
-
-void DeployApplicationRequest::setPreStop(const std::string& preStop)
-{
-	preStop_ = preStop;
-	setParameter("PreStop", preStop);
 }
 
 bool DeployApplicationRequest::getEnableGreyTagRoute()const
@@ -367,17 +477,6 @@ void DeployApplicationRequest::setCommand(const std::string& command)
 {
 	command_ = command;
 	setParameter("Command", command);
-}
-
-std::string DeployApplicationRequest::getUpdateStrategy()const
-{
-	return updateStrategy_;
-}
-
-void DeployApplicationRequest::setUpdateStrategy(const std::string& updateStrategy)
-{
-	updateStrategy_ = updateStrategy;
-	setParameter("UpdateStrategy", updateStrategy);
 }
 
 std::string DeployApplicationRequest::getMountDesc()const
@@ -413,15 +512,15 @@ void DeployApplicationRequest::setMinReadyInstances(int minReadyInstances)
 	setParameter("MinReadyInstances", std::to_string(minReadyInstances));
 }
 
-std::string DeployApplicationRequest::getChangeOrderDesc()const
+std::string DeployApplicationRequest::getKafkaLogfileConfig()const
 {
-	return changeOrderDesc_;
+	return kafkaLogfileConfig_;
 }
 
-void DeployApplicationRequest::setChangeOrderDesc(const std::string& changeOrderDesc)
+void DeployApplicationRequest::setKafkaLogfileConfig(const std::string& kafkaLogfileConfig)
 {
-	changeOrderDesc_ = changeOrderDesc;
-	setParameter("ChangeOrderDesc", changeOrderDesc);
+	kafkaLogfileConfig_ = kafkaLogfileConfig;
+	setParameter("KafkaLogfileConfig", kafkaLogfileConfig);
 }
 
 std::string DeployApplicationRequest::getAcrInstanceId()const
@@ -457,17 +556,6 @@ void DeployApplicationRequest::setImageUrl(const std::string& imageUrl)
 	setParameter("ImageUrl", imageUrl);
 }
 
-int DeployApplicationRequest::getMinReadyInstanceRatio()const
-{
-	return minReadyInstanceRatio_;
-}
-
-void DeployApplicationRequest::setMinReadyInstanceRatio(int minReadyInstanceRatio)
-{
-	minReadyInstanceRatio_ = minReadyInstanceRatio;
-	setParameter("MinReadyInstanceRatio", std::to_string(minReadyInstanceRatio));
-}
-
 std::string DeployApplicationRequest::getPhp()const
 {
 	return php_;
@@ -479,17 +567,6 @@ void DeployApplicationRequest::setPhp(const std::string& php)
 	setBodyParameter("Php", php);
 }
 
-bool DeployApplicationRequest::getAutoEnableApplicationScalingRule()const
-{
-	return autoEnableApplicationScalingRule_;
-}
-
-void DeployApplicationRequest::setAutoEnableApplicationScalingRule(bool autoEnableApplicationScalingRule)
-{
-	autoEnableApplicationScalingRule_ = autoEnableApplicationScalingRule;
-	setParameter("AutoEnableApplicationScalingRule", autoEnableApplicationScalingRule ? "true" : "false");
-}
-
 std::string DeployApplicationRequest::getPhpConfigLocation()const
 {
 	return phpConfigLocation_;
@@ -499,38 +576,5 @@ void DeployApplicationRequest::setPhpConfigLocation(const std::string& phpConfig
 {
 	phpConfigLocation_ = phpConfigLocation;
 	setParameter("PhpConfigLocation", phpConfigLocation);
-}
-
-std::string DeployApplicationRequest::getPostStart()const
-{
-	return postStart_;
-}
-
-void DeployApplicationRequest::setPostStart(const std::string& postStart)
-{
-	postStart_ = postStart;
-	setParameter("PostStart", postStart);
-}
-
-std::string DeployApplicationRequest::getPhpExtensions()const
-{
-	return phpExtensions_;
-}
-
-void DeployApplicationRequest::setPhpExtensions(const std::string& phpExtensions)
-{
-	phpExtensions_ = phpExtensions;
-	setBodyParameter("PhpExtensions", phpExtensions);
-}
-
-bool DeployApplicationRequest::getAssociateEip()const
-{
-	return associateEip_;
-}
-
-void DeployApplicationRequest::setAssociateEip(bool associateEip)
-{
-	associateEip_ = associateEip;
-	setBodyParameter("AssociateEip", associateEip ? "true" : "false");
 }
 

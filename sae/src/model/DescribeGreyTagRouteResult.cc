@@ -40,16 +40,18 @@ void DescribeGreyTagRouteResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["Description"].isNull())
-		data_.description = dataNode["Description"].asString();
 	if(!dataNode["GreyTagRouteId"].isNull())
 		data_.greyTagRouteId = std::stol(dataNode["GreyTagRouteId"].asString());
+	if(!dataNode["Name"].isNull())
+		data_.name = dataNode["Name"].asString();
+	if(!dataNode["Description"].isNull())
+		data_.description = dataNode["Description"].asString();
 	if(!dataNode["CreateTime"].isNull())
 		data_.createTime = std::stol(dataNode["CreateTime"].asString());
 	if(!dataNode["UpdateTime"].isNull())
 		data_.updateTime = std::stol(dataNode["UpdateTime"].asString());
-	if(!dataNode["Name"].isNull())
-		data_.name = dataNode["Name"].asString();
+	if(!dataNode["AppId"].isNull())
+		data_.appId = dataNode["AppId"].asString();
 	auto allScRulesNode = dataNode["ScRules"]["scRule"];
 	for (auto dataNodeScRulesscRule : allScRulesNode)
 	{
@@ -62,20 +64,20 @@ void DescribeGreyTagRouteResult::parse(const std::string &payload)
 		for (auto dataNodeScRulesscRuleitemsitem : allitemsNode)
 		{
 			Data::ScRule::Item itemsObject;
-			if(!dataNodeScRulesscRuleitemsitem["name"].isNull())
-				itemsObject.name = dataNodeScRulesscRuleitemsitem["name"].asString();
 			if(!dataNodeScRulesscRuleitemsitem["index"].isNull())
 				itemsObject.index = std::stoi(dataNodeScRulesscRuleitemsitem["index"].asString());
 			if(!dataNodeScRulesscRuleitemsitem["expr"].isNull())
 				itemsObject.expr = dataNodeScRulesscRuleitemsitem["expr"].asString();
-			if(!dataNodeScRulesscRuleitemsitem["type"].isNull())
-				itemsObject.type = dataNodeScRulesscRuleitemsitem["type"].asString();
-			if(!dataNodeScRulesscRuleitemsitem["cond"].isNull())
-				itemsObject.cond = dataNodeScRulesscRuleitemsitem["cond"].asString();
-			if(!dataNodeScRulesscRuleitemsitem["value"].isNull())
-				itemsObject.value = dataNodeScRulesscRuleitemsitem["value"].asString();
 			if(!dataNodeScRulesscRuleitemsitem["operator"].isNull())
 				itemsObject._operator = dataNodeScRulesscRuleitemsitem["operator"].asString();
+			if(!dataNodeScRulesscRuleitemsitem["value"].isNull())
+				itemsObject.value = dataNodeScRulesscRuleitemsitem["value"].asString();
+			if(!dataNodeScRulesscRuleitemsitem["cond"].isNull())
+				itemsObject.cond = dataNodeScRulesscRuleitemsitem["cond"].asString();
+			if(!dataNodeScRulesscRuleitemsitem["type"].isNull())
+				itemsObject.type = dataNodeScRulesscRuleitemsitem["type"].asString();
+			if(!dataNodeScRulesscRuleitemsitem["name"].isNull())
+				itemsObject.name = dataNodeScRulesscRuleitemsitem["name"].asString();
 			scRuleObject.items.push_back(itemsObject);
 		}
 		data_.scRules.push_back(scRuleObject);
@@ -84,34 +86,34 @@ void DescribeGreyTagRouteResult::parse(const std::string &payload)
 	for (auto dataNodeDubboRulesdubboRule : allDubboRulesNode)
 	{
 		Data::DubboRule dubboRuleObject;
-		if(!dataNodeDubboRulesdubboRule["condition"].isNull())
-			dubboRuleObject.condition = dataNodeDubboRulesdubboRule["condition"].asString();
-		if(!dataNodeDubboRulesdubboRule["methodName"].isNull())
-			dubboRuleObject.methodName = dataNodeDubboRulesdubboRule["methodName"].asString();
 		if(!dataNodeDubboRulesdubboRule["serviceName"].isNull())
 			dubboRuleObject.serviceName = dataNodeDubboRulesdubboRule["serviceName"].asString();
-		if(!dataNodeDubboRulesdubboRule["version"].isNull())
-			dubboRuleObject.version = dataNodeDubboRulesdubboRule["version"].asString();
 		if(!dataNodeDubboRulesdubboRule["group"].isNull())
 			dubboRuleObject.group = dataNodeDubboRulesdubboRule["group"].asString();
+		if(!dataNodeDubboRulesdubboRule["version"].isNull())
+			dubboRuleObject.version = dataNodeDubboRulesdubboRule["version"].asString();
+		if(!dataNodeDubboRulesdubboRule["methodName"].isNull())
+			dubboRuleObject.methodName = dataNodeDubboRulesdubboRule["methodName"].asString();
+		if(!dataNodeDubboRulesdubboRule["condition"].isNull())
+			dubboRuleObject.condition = dataNodeDubboRulesdubboRule["condition"].asString();
 		auto allitems1Node = dataNodeDubboRulesdubboRule["items"]["item"];
 		for (auto dataNodeDubboRulesdubboRuleitemsitem : allitems1Node)
 		{
 			Data::DubboRule::Item2 items1Object;
-			if(!dataNodeDubboRulesdubboRuleitemsitem["name"].isNull())
-				items1Object.name = dataNodeDubboRulesdubboRuleitemsitem["name"].asString();
 			if(!dataNodeDubboRulesdubboRuleitemsitem["index"].isNull())
 				items1Object.index = std::stoi(dataNodeDubboRulesdubboRuleitemsitem["index"].asString());
 			if(!dataNodeDubboRulesdubboRuleitemsitem["expr"].isNull())
 				items1Object.expr = dataNodeDubboRulesdubboRuleitemsitem["expr"].asString();
-			if(!dataNodeDubboRulesdubboRuleitemsitem["type"].isNull())
-				items1Object.type = dataNodeDubboRulesdubboRuleitemsitem["type"].asString();
-			if(!dataNodeDubboRulesdubboRuleitemsitem["cond"].isNull())
-				items1Object.cond = dataNodeDubboRulesdubboRuleitemsitem["cond"].asString();
-			if(!dataNodeDubboRulesdubboRuleitemsitem["value"].isNull())
-				items1Object.value = dataNodeDubboRulesdubboRuleitemsitem["value"].asString();
 			if(!dataNodeDubboRulesdubboRuleitemsitem["operator"].isNull())
 				items1Object._operator = dataNodeDubboRulesdubboRuleitemsitem["operator"].asString();
+			if(!dataNodeDubboRulesdubboRuleitemsitem["value"].isNull())
+				items1Object.value = dataNodeDubboRulesdubboRuleitemsitem["value"].asString();
+			if(!dataNodeDubboRulesdubboRuleitemsitem["cond"].isNull())
+				items1Object.cond = dataNodeDubboRulesdubboRuleitemsitem["cond"].asString();
+			if(!dataNodeDubboRulesdubboRuleitemsitem["type"].isNull())
+				items1Object.type = dataNodeDubboRulesdubboRuleitemsitem["type"].asString();
+			if(!dataNodeDubboRulesdubboRuleitemsitem["name"].isNull())
+				items1Object.name = dataNodeDubboRulesdubboRuleitemsitem["name"].asString();
 			dubboRuleObject.items1.push_back(items1Object);
 		}
 		data_.dubboRules.push_back(dubboRuleObject);

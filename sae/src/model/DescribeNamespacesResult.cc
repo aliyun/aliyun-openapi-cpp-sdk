@@ -42,42 +42,42 @@ void DescribeNamespacesResult::parse(const std::string &payload)
 	auto dataNode = value["Data"];
 	if(!dataNode["CurrentPage"].isNull())
 		data_.currentPage = std::stoi(dataNode["CurrentPage"].asString());
-	if(!dataNode["PageSize"].isNull())
-		data_.pageSize = std::stoi(dataNode["PageSize"].asString());
 	if(!dataNode["TotalSize"].isNull())
 		data_.totalSize = std::stoi(dataNode["TotalSize"].asString());
+	if(!dataNode["PageSize"].isNull())
+		data_.pageSize = std::stoi(dataNode["PageSize"].asString());
 	auto allNamespacesNode = dataNode["Namespaces"]["Namespace"];
 	for (auto dataNodeNamespacesNamespace : allNamespacesNode)
 	{
 		Data::_Namespace _namespaceObject;
+		if(!dataNodeNamespacesNamespace["NamespaceDescription"].isNull())
+			_namespaceObject.namespaceDescription = dataNodeNamespacesNamespace["NamespaceDescription"].asString();
 		if(!dataNodeNamespacesNamespace["AccessKey"].isNull())
 			_namespaceObject.accessKey = dataNodeNamespacesNamespace["AccessKey"].asString();
-		if(!dataNodeNamespacesNamespace["AddressServerHost"].isNull())
-			_namespaceObject.addressServerHost = dataNodeNamespacesNamespace["AddressServerHost"].asString();
 		if(!dataNodeNamespacesNamespace["SecretKey"].isNull())
 			_namespaceObject.secretKey = dataNodeNamespacesNamespace["SecretKey"].asString();
+		if(!dataNodeNamespacesNamespace["NamespaceId"].isNull())
+			_namespaceObject.namespaceId = dataNodeNamespacesNamespace["NamespaceId"].asString();
+		if(!dataNodeNamespacesNamespace["AddressServerHost"].isNull())
+			_namespaceObject.addressServerHost = dataNodeNamespacesNamespace["AddressServerHost"].asString();
+		if(!dataNodeNamespacesNamespace["NamespaceName"].isNull())
+			_namespaceObject.namespaceName = dataNodeNamespacesNamespace["NamespaceName"].asString();
 		if(!dataNodeNamespacesNamespace["TenantId"].isNull())
 			_namespaceObject.tenantId = dataNodeNamespacesNamespace["TenantId"].asString();
 		if(!dataNodeNamespacesNamespace["RegionId"].isNull())
 			_namespaceObject.regionId = dataNodeNamespacesNamespace["RegionId"].asString();
-		if(!dataNodeNamespacesNamespace["NamespaceId"].isNull())
-			_namespaceObject.namespaceId = dataNodeNamespacesNamespace["NamespaceId"].asString();
-		if(!dataNodeNamespacesNamespace["NamespaceName"].isNull())
-			_namespaceObject.namespaceName = dataNodeNamespacesNamespace["NamespaceName"].asString();
-		if(!dataNodeNamespacesNamespace["NamespaceDescription"].isNull())
-			_namespaceObject.namespaceDescription = dataNodeNamespacesNamespace["NamespaceDescription"].asString();
 		data_.namespaces.push_back(_namespaceObject);
 	}
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["TraceId"].isNull())
 		traceId_ = value["TraceId"].asString();
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

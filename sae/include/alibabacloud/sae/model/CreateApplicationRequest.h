@@ -47,6 +47,8 @@ namespace AlibabaCloud
 				void setAutoConfig(bool autoConfig);
 				std::string getEnvs()const;
 				void setEnvs(const std::string& envs);
+				std::string getKafkaInstanceId()const;
+				void setKafkaInstanceId(const std::string& kafkaInstanceId);
 				std::string getPhpPECLExtensions()const;
 				void setPhpPECLExtensions(const std::string& phpPECLExtensions);
 				std::string getPhpArmsConfigLocation()const;
@@ -65,6 +67,8 @@ namespace AlibabaCloud
 				void setConfigMapMountDesc(const std::string& configMapMountDesc);
 				std::string getOssMountDescs()const;
 				void setOssMountDescs(const std::string& ossMountDescs);
+				std::string getKafkaEndpoint()const;
+				void setKafkaEndpoint(const std::string& kafkaEndpoint);
 				std::string getPreStop()const;
 				void setPreStop(const std::string& preStop);
 				int getCpu()const;
@@ -85,6 +89,8 @@ namespace AlibabaCloud
 				void setMemory(int memory);
 				std::string getSlsConfigs()const;
 				void setSlsConfigs(const std::string& slsConfigs);
+				bool getOpenCollectToKafka()const;
+				void setOpenCollectToKafka(bool openCollectToKafka);
 				std::string getCommandArgs()const;
 				void setCommandArgs(const std::string& commandArgs);
 				std::string getAcrAssumeRoleArn()const;
@@ -123,6 +129,8 @@ namespace AlibabaCloud
 				void setJdk(const std::string& jdk);
 				std::string getAppDescription()const;
 				void setAppDescription(const std::string& appDescription);
+				std::string getKafkaLogfileConfig()const;
+				void setKafkaLogfileConfig(const std::string& kafkaLogfileConfig);
 				std::string getAcrInstanceId()const;
 				void setAcrInstanceId(const std::string& acrInstanceId);
 				std::string getVpcId()const;
@@ -141,6 +149,7 @@ namespace AlibabaCloud
 				std::string mountHost_;
 				bool autoConfig_;
 				std::string envs_;
+				std::string kafkaInstanceId_;
 				std::string phpPECLExtensions_;
 				std::string phpArmsConfigLocation_;
 				std::string customHostAlias_;
@@ -150,6 +159,7 @@ namespace AlibabaCloud
 				std::string namespaceId_;
 				std::string configMapMountDesc_;
 				std::string ossMountDescs_;
+				std::string kafkaEndpoint_;
 				std::string preStop_;
 				int cpu_;
 				std::string vSwitchId_;
@@ -160,6 +170,7 @@ namespace AlibabaCloud
 				std::string webContainer_;
 				int memory_;
 				std::string slsConfigs_;
+				bool openCollectToKafka_;
 				std::string commandArgs_;
 				std::string acrAssumeRoleArn_;
 				std::string readiness_;
@@ -179,6 +190,7 @@ namespace AlibabaCloud
 				std::string mountDesc_;
 				std::string jdk_;
 				std::string appDescription_;
+				std::string kafkaLogfileConfig_;
 				std::string acrInstanceId_;
 				std::string vpcId_;
 				std::string imageUrl_;

@@ -38,11 +38,9 @@ namespace AlibabaCloud
 					{
 						std::string group;
 						std::string edasAppId;
-						std::string gmtModifyTime;
 						std::string version;
 						std::string serviceName;
 						std::string edasAppName;
-						std::string clusterName;
 						long instanceNum;
 					};
 					std::string pageSize;

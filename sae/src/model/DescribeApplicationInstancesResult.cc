@@ -72,6 +72,8 @@ void DescribeApplicationInstancesResult::parse(const std::string &payload)
 			instanceObject.packageVersion = dataNodeInstancesInstance["PackageVersion"].asString();
 		if(!dataNodeInstancesInstance["Eip"].isNull())
 			instanceObject.eip = dataNodeInstancesInstance["Eip"].asString();
+		if(!dataNodeInstancesInstance["FinishTimeStamp"].isNull())
+			instanceObject.finishTimeStamp = std::stol(dataNodeInstancesInstance["FinishTimeStamp"].asString());
 		data_.instances.push_back(instanceObject);
 	}
 	if(!value["Message"].isNull())
