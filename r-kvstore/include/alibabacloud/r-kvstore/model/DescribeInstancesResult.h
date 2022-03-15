@@ -64,6 +64,7 @@ namespace AlibabaCloud
 					std::string engineVersion;
 					std::string userName;
 					std::string zoneId;
+					std::string cloudType;
 					std::string instanceId;
 					std::string createTime;
 					std::string vSwitchId;

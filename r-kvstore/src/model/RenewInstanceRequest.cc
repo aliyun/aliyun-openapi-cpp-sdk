@@ -38,6 +38,17 @@ void RenewInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string RenewInstanceRequest::getClientToken()const
+{
+	return clientToken_;
+}
+
+void RenewInstanceRequest::setClientToken(const std::string& clientToken)
+{
+	clientToken_ = clientToken;
+	setParameter("ClientToken", clientToken);
+}
+
 std::string RenewInstanceRequest::getCouponNo()const
 {
 	return couponNo_;

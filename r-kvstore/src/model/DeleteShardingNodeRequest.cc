@@ -71,6 +71,17 @@ void DeleteShardingNodeRequest::setNodeId(const std::string& nodeId)
 	setParameter("NodeId", nodeId);
 }
 
+std::string DeleteShardingNodeRequest::getShardCount()const
+{
+	return shardCount_;
+}
+
+void DeleteShardingNodeRequest::setShardCount(const std::string& shardCount)
+{
+	shardCount_ = shardCount;
+	setParameter("ShardCount", shardCount);
+}
+
 std::string DeleteShardingNodeRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
