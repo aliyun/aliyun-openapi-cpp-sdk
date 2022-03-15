@@ -67,6 +67,8 @@ void OnsInstanceBaseInfoResult::parse(const std::string &payload)
 		instanceBaseInfo_.endpoints.httpInternalEndpoint = endpointsNode["HttpInternalEndpoint"].asString();
 	if(!endpointsNode["HttpInternetSecureEndpoint"].isNull())
 		instanceBaseInfo_.endpoints.httpInternetSecureEndpoint = endpointsNode["HttpInternetSecureEndpoint"].asString();
+	if(!endpointsNode["TcpInternetEndpoint"].isNull())
+		instanceBaseInfo_.endpoints.tcpInternetEndpoint = endpointsNode["TcpInternetEndpoint"].asString();
 	if(!value["HelpUrl"].isNull())
 		helpUrl_ = value["HelpUrl"].asString();
 

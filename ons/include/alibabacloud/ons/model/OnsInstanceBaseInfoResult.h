@@ -38,6 +38,7 @@ namespace AlibabaCloud
 					{
 						std::string httpInternalEndpoint;
 						std::string tcpEndpoint;
+						std::string tcpInternetEndpoint;
 						std::string httpInternetEndpoint;
 						std::string httpInternetSecureEndpoint;
 					};
