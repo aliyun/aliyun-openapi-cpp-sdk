@@ -79,6 +79,7 @@ namespace AlibabaCloud
 						std::string type;
 						ForwardGroupConfig forwardGroupConfig;
 					};
+					std::string caEnabled;
 					int listenerPort;
 					bool serviceManagedEnabled;
 					int requestTimeout;

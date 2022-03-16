@@ -67,6 +67,7 @@ namespace AlibabaCloud
 				{
 					struct LoadBalancerAddress
 					{
+						std::string intranetAddress;
 						std::string address;
 						std::string ipv6Address;
 					};

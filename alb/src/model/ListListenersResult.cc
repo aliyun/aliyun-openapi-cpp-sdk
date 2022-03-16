@@ -47,6 +47,8 @@ void ListListenersResult::parse(const std::string &payload)
 			listenersObject.gzipEnabled = valueListenerslistener["GzipEnabled"].asString() == "true";
 		if(!valueListenerslistener["Http2Enabled"].isNull())
 			listenersObject.http2Enabled = valueListenerslistener["Http2Enabled"].asString() == "true";
+		if(!valueListenerslistener["CaEnabled"].isNull())
+			listenersObject.caEnabled = valueListenerslistener["CaEnabled"].asString();
 		if(!valueListenerslistener["IdleTimeout"].isNull())
 			listenersObject.idleTimeout = std::stoi(valueListenerslistener["IdleTimeout"].asString());
 		if(!valueListenerslistener["ListenerDescription"].isNull())
