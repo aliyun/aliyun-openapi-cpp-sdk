@@ -21,6 +21,8 @@ set(dms-enterprise_public_header
 	include/alibabacloud/dms-enterprise/Dms_enterpriseExport.h )
 
 set(dms-enterprise_public_header_model 
+	include/alibabacloud/dms-enterprise/model/AddLhMembersRequest.h
+	include/alibabacloud/dms-enterprise/model/AddLhMembersResult.h
 	include/alibabacloud/dms-enterprise/model/AddLogicTableRouteConfigRequest.h
 	include/alibabacloud/dms-enterprise/model/AddLogicTableRouteConfigResult.h
 	include/alibabacloud/dms-enterprise/model/ApproveOrderRequest.h
@@ -39,6 +41,8 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/CreateDataImportOrderResult.h
 	include/alibabacloud/dms-enterprise/model/CreateFreeLockCorrectOrderRequest.h
 	include/alibabacloud/dms-enterprise/model/CreateFreeLockCorrectOrderResult.h
+	include/alibabacloud/dms-enterprise/model/CreateLakeHouseSpaceRequest.h
+	include/alibabacloud/dms-enterprise/model/CreateLakeHouseSpaceResult.h
 	include/alibabacloud/dms-enterprise/model/CreateLogicDatabaseRequest.h
 	include/alibabacloud/dms-enterprise/model/CreateLogicDatabaseResult.h
 	include/alibabacloud/dms-enterprise/model/CreateOrderRequest.h
@@ -51,6 +55,8 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/CreatePublishGroupTaskResult.h
 	include/alibabacloud/dms-enterprise/model/CreateSQLReviewOrderRequest.h
 	include/alibabacloud/dms-enterprise/model/CreateSQLReviewOrderResult.h
+	include/alibabacloud/dms-enterprise/model/CreateStandardGroupRequest.h
+	include/alibabacloud/dms-enterprise/model/CreateStandardGroupResult.h
 	include/alibabacloud/dms-enterprise/model/CreateStructSyncOrderRequest.h
 	include/alibabacloud/dms-enterprise/model/CreateStructSyncOrderResult.h
 	include/alibabacloud/dms-enterprise/model/CreateUploadFileJobRequest.h
@@ -59,6 +65,8 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/CreateUploadOSSFileJobResult.h
 	include/alibabacloud/dms-enterprise/model/DeleteInstanceRequest.h
 	include/alibabacloud/dms-enterprise/model/DeleteInstanceResult.h
+	include/alibabacloud/dms-enterprise/model/DeleteLhMembersRequest.h
+	include/alibabacloud/dms-enterprise/model/DeleteLhMembersResult.h
 	include/alibabacloud/dms-enterprise/model/DeleteLogicDatabaseRequest.h
 	include/alibabacloud/dms-enterprise/model/DeleteLogicDatabaseResult.h
 	include/alibabacloud/dms-enterprise/model/DeleteLogicTableRouteConfigRequest.h
@@ -175,6 +183,8 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/ListInstanceUserPermissionsResult.h
 	include/alibabacloud/dms-enterprise/model/ListInstancesRequest.h
 	include/alibabacloud/dms-enterprise/model/ListInstancesResult.h
+	include/alibabacloud/dms-enterprise/model/ListLhTaskFlowAndScenarioRequest.h
+	include/alibabacloud/dms-enterprise/model/ListLhTaskFlowAndScenarioResult.h
 	include/alibabacloud/dms-enterprise/model/ListLogicDatabasesRequest.h
 	include/alibabacloud/dms-enterprise/model/ListLogicDatabasesResult.h
 	include/alibabacloud/dms-enterprise/model/ListLogicTableRouteConfigRequest.h
@@ -246,6 +256,8 @@ set(dms-enterprise_public_header_model
 
 set(dms-enterprise_src 
 	src/Dms-enterpriseClient.cc
+	src/model/AddLhMembersRequest.cc
+	src/model/AddLhMembersResult.cc
 	src/model/AddLogicTableRouteConfigRequest.cc
 	src/model/AddLogicTableRouteConfigResult.cc
 	src/model/ApproveOrderRequest.cc
@@ -264,6 +276,8 @@ set(dms-enterprise_src
 	src/model/CreateDataImportOrderResult.cc
 	src/model/CreateFreeLockCorrectOrderRequest.cc
 	src/model/CreateFreeLockCorrectOrderResult.cc
+	src/model/CreateLakeHouseSpaceRequest.cc
+	src/model/CreateLakeHouseSpaceResult.cc
 	src/model/CreateLogicDatabaseRequest.cc
 	src/model/CreateLogicDatabaseResult.cc
 	src/model/CreateOrderRequest.cc
@@ -276,6 +290,8 @@ set(dms-enterprise_src
 	src/model/CreatePublishGroupTaskResult.cc
 	src/model/CreateSQLReviewOrderRequest.cc
 	src/model/CreateSQLReviewOrderResult.cc
+	src/model/CreateStandardGroupRequest.cc
+	src/model/CreateStandardGroupResult.cc
 	src/model/CreateStructSyncOrderRequest.cc
 	src/model/CreateStructSyncOrderResult.cc
 	src/model/CreateUploadFileJobRequest.cc
@@ -284,6 +300,8 @@ set(dms-enterprise_src
 	src/model/CreateUploadOSSFileJobResult.cc
 	src/model/DeleteInstanceRequest.cc
 	src/model/DeleteInstanceResult.cc
+	src/model/DeleteLhMembersRequest.cc
+	src/model/DeleteLhMembersResult.cc
 	src/model/DeleteLogicDatabaseRequest.cc
 	src/model/DeleteLogicDatabaseResult.cc
 	src/model/DeleteLogicTableRouteConfigRequest.cc
@@ -400,6 +418,8 @@ set(dms-enterprise_src
 	src/model/ListInstanceUserPermissionsResult.cc
 	src/model/ListInstancesRequest.cc
 	src/model/ListInstancesResult.cc
+	src/model/ListLhTaskFlowAndScenarioRequest.cc
+	src/model/ListLhTaskFlowAndScenarioResult.cc
 	src/model/ListLogicDatabasesRequest.cc
 	src/model/ListLogicDatabasesResult.cc
 	src/model/ListLogicTableRouteConfigRequest.cc

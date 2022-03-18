@@ -51,6 +51,42 @@ Dms_enterpriseClient::Dms_enterpriseClient(const std::string & accessKeyId, cons
 Dms_enterpriseClient::~Dms_enterpriseClient()
 {}
 
+Dms_enterpriseClient::AddLhMembersOutcome Dms_enterpriseClient::addLhMembers(const AddLhMembersRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddLhMembersOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddLhMembersOutcome(AddLhMembersResult(outcome.result()));
+	else
+		return AddLhMembersOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::addLhMembersAsync(const AddLhMembersRequest& request, const AddLhMembersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addLhMembers(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::AddLhMembersOutcomeCallable Dms_enterpriseClient::addLhMembersCallable(const AddLhMembersRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddLhMembersOutcome()>>(
+			[this, request]()
+			{
+			return this->addLhMembers(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dms_enterpriseClient::AddLogicTableRouteConfigOutcome Dms_enterpriseClient::addLogicTableRouteConfig(const AddLogicTableRouteConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -375,6 +411,42 @@ Dms_enterpriseClient::CreateFreeLockCorrectOrderOutcomeCallable Dms_enterpriseCl
 	return task->get_future();
 }
 
+Dms_enterpriseClient::CreateLakeHouseSpaceOutcome Dms_enterpriseClient::createLakeHouseSpace(const CreateLakeHouseSpaceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateLakeHouseSpaceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateLakeHouseSpaceOutcome(CreateLakeHouseSpaceResult(outcome.result()));
+	else
+		return CreateLakeHouseSpaceOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::createLakeHouseSpaceAsync(const CreateLakeHouseSpaceRequest& request, const CreateLakeHouseSpaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createLakeHouseSpace(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::CreateLakeHouseSpaceOutcomeCallable Dms_enterpriseClient::createLakeHouseSpaceCallable(const CreateLakeHouseSpaceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateLakeHouseSpaceOutcome()>>(
+			[this, request]()
+			{
+			return this->createLakeHouseSpace(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dms_enterpriseClient::CreateLogicDatabaseOutcome Dms_enterpriseClient::createLogicDatabase(const CreateLogicDatabaseRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -591,6 +663,42 @@ Dms_enterpriseClient::CreateSQLReviewOrderOutcomeCallable Dms_enterpriseClient::
 	return task->get_future();
 }
 
+Dms_enterpriseClient::CreateStandardGroupOutcome Dms_enterpriseClient::createStandardGroup(const CreateStandardGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateStandardGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateStandardGroupOutcome(CreateStandardGroupResult(outcome.result()));
+	else
+		return CreateStandardGroupOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::createStandardGroupAsync(const CreateStandardGroupRequest& request, const CreateStandardGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createStandardGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::CreateStandardGroupOutcomeCallable Dms_enterpriseClient::createStandardGroupCallable(const CreateStandardGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateStandardGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->createStandardGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dms_enterpriseClient::CreateStructSyncOrderOutcome Dms_enterpriseClient::createStructSyncOrder(const CreateStructSyncOrderRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -729,6 +837,42 @@ Dms_enterpriseClient::DeleteInstanceOutcomeCallable Dms_enterpriseClient::delete
 			[this, request]()
 			{
 			return this->deleteInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::DeleteLhMembersOutcome Dms_enterpriseClient::deleteLhMembers(const DeleteLhMembersRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteLhMembersOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteLhMembersOutcome(DeleteLhMembersResult(outcome.result()));
+	else
+		return DeleteLhMembersOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::deleteLhMembersAsync(const DeleteLhMembersRequest& request, const DeleteLhMembersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteLhMembers(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::DeleteLhMembersOutcomeCallable Dms_enterpriseClient::deleteLhMembersCallable(const DeleteLhMembersRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteLhMembersOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteLhMembers(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2817,6 +2961,42 @@ Dms_enterpriseClient::ListInstancesOutcomeCallable Dms_enterpriseClient::listIns
 			[this, request]()
 			{
 			return this->listInstances(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::ListLhTaskFlowAndScenarioOutcome Dms_enterpriseClient::listLhTaskFlowAndScenario(const ListLhTaskFlowAndScenarioRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListLhTaskFlowAndScenarioOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListLhTaskFlowAndScenarioOutcome(ListLhTaskFlowAndScenarioResult(outcome.result()));
+	else
+		return ListLhTaskFlowAndScenarioOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::listLhTaskFlowAndScenarioAsync(const ListLhTaskFlowAndScenarioRequest& request, const ListLhTaskFlowAndScenarioAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listLhTaskFlowAndScenario(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::ListLhTaskFlowAndScenarioOutcomeCallable Dms_enterpriseClient::listLhTaskFlowAndScenarioCallable(const ListLhTaskFlowAndScenarioRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListLhTaskFlowAndScenarioOutcome()>>(
+			[this, request]()
+			{
+			return this->listLhTaskFlowAndScenario(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
