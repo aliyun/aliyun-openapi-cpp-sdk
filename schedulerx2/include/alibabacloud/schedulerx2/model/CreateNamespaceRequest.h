@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SCHEDULERX2_MODEL_GETJOBINFOREQUEST_H_
-#define ALIBABACLOUD_SCHEDULERX2_MODEL_GETJOBINFOREQUEST_H_
+#ifndef ALIBABACLOUD_SCHEDULERX2_MODEL_CREATENAMESPACEREQUEST_H_
+#define ALIBABACLOUD_SCHEDULERX2_MODEL_CREATENAMESPACEREQUEST_H_
 
 #include <alibabacloud/schedulerx2/Schedulerx2Export.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,32 +26,26 @@
 namespace AlibabaCloud {
 namespace Schedulerx2 {
 namespace Model {
-class ALIBABACLOUD_SCHEDULERX2_EXPORT GetJobInfoRequest : public RpcServiceRequest {
+class ALIBABACLOUD_SCHEDULERX2_EXPORT CreateNamespaceRequest : public RpcServiceRequest {
 public:
-	GetJobInfoRequest();
-	~GetJobInfoRequest();
-	std::string getNamespaceSource() const;
-	void setNamespaceSource(const std::string &namespaceSource);
-	std::string getGroupId() const;
-	void setGroupId(const std::string &groupId);
-	long getJobId() const;
-	void setJobId(long jobId);
+	CreateNamespaceRequest();
+	~CreateNamespaceRequest();
+	std::string getUid() const;
+	void setUid(const std::string &uid);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
-	std::string get_Namespace() const;
-	void set_Namespace(const std::string &_namespace);
-	std::string getJobName() const;
-	void setJobName(const std::string &jobName);
+	std::string getName() const;
+	void setName(const std::string &name);
+	std::string getDescription() const;
+	void setDescription(const std::string &description);
 
 private:
-	std::string namespaceSource_;
-	std::string groupId_;
-	long jobId_;
+	std::string uid_;
 	std::string regionId_;
-	std::string _namespace_;
-	std::string jobName_;
+	std::string name_;
+	std::string description_;
 };
 } // namespace Model
 } // namespace Schedulerx2
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_SCHEDULERX2_MODEL_GETJOBINFOREQUEST_H_
+#endif // !ALIBABACLOUD_SCHEDULERX2_MODEL_CREATENAMESPACEREQUEST_H_

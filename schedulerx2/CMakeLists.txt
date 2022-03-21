@@ -31,6 +31,8 @@ set(schedulerx2_public_header_model
 	include/alibabacloud/schedulerx2/model/CreateAppGroupResult.h
 	include/alibabacloud/schedulerx2/model/CreateJobRequest.h
 	include/alibabacloud/schedulerx2/model/CreateJobResult.h
+	include/alibabacloud/schedulerx2/model/CreateNamespaceRequest.h
+	include/alibabacloud/schedulerx2/model/CreateNamespaceResult.h
 	include/alibabacloud/schedulerx2/model/DeleteJobRequest.h
 	include/alibabacloud/schedulerx2/model/DeleteJobResult.h
 	include/alibabacloud/schedulerx2/model/DeleteWorkflowRequest.h
@@ -88,6 +90,8 @@ set(schedulerx2_src
 	src/model/CreateAppGroupResult.cc
 	src/model/CreateJobRequest.cc
 	src/model/CreateJobResult.cc
+	src/model/CreateNamespaceRequest.cc
+	src/model/CreateNamespaceResult.cc
 	src/model/DeleteJobRequest.cc
 	src/model/DeleteJobResult.cc
 	src/model/DeleteWorkflowRequest.cc

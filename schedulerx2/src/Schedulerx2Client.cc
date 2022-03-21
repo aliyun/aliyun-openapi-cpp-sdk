@@ -231,6 +231,42 @@ Schedulerx2Client::CreateJobOutcomeCallable Schedulerx2Client::createJobCallable
 	return task->get_future();
 }
 
+Schedulerx2Client::CreateNamespaceOutcome Schedulerx2Client::createNamespace(const CreateNamespaceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateNamespaceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateNamespaceOutcome(CreateNamespaceResult(outcome.result()));
+	else
+		return CreateNamespaceOutcome(outcome.error());
+}
+
+void Schedulerx2Client::createNamespaceAsync(const CreateNamespaceRequest& request, const CreateNamespaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createNamespace(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Schedulerx2Client::CreateNamespaceOutcomeCallable Schedulerx2Client::createNamespaceCallable(const CreateNamespaceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateNamespaceOutcome()>>(
+			[this, request]()
+			{
+			return this->createNamespace(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Schedulerx2Client::DeleteJobOutcome Schedulerx2Client::deleteJob(const DeleteJobRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

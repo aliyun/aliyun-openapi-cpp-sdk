@@ -14,36 +14,34 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/schedulerx2/model/CreateAppGroupResult.h>
+#include <alibabacloud/schedulerx2/model/CreateNamespaceResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Schedulerx2;
 using namespace AlibabaCloud::Schedulerx2::Model;
 
-CreateAppGroupResult::CreateAppGroupResult() :
+CreateNamespaceResult::CreateNamespaceResult() :
 	ServiceResult()
 {}
 
-CreateAppGroupResult::CreateAppGroupResult(const std::string &payload) :
+CreateNamespaceResult::CreateNamespaceResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-CreateAppGroupResult::~CreateAppGroupResult()
+CreateNamespaceResult::~CreateNamespaceResult()
 {}
 
-void CreateAppGroupResult::parse(const std::string &payload)
+void CreateNamespaceResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["AppGroupId"].isNull())
-		data_.appGroupId = std::stol(dataNode["AppGroupId"].asString());
-	if(!dataNode["AppKey"].isNull())
-		data_.appKey = dataNode["AppKey"].asString();
+	if(!dataNode["NamespaceUid"].isNull())
+		data_.namespaceUid = dataNode["NamespaceUid"].asString();
 	if(!value["Code"].isNull())
 		code_ = std::stoi(value["Code"].asString());
 	if(!value["Message"].isNull())
@@ -53,22 +51,22 @@ void CreateAppGroupResult::parse(const std::string &payload)
 
 }
 
-std::string CreateAppGroupResult::getMessage()const
+std::string CreateNamespaceResult::getMessage()const
 {
 	return message_;
 }
 
-CreateAppGroupResult::Data CreateAppGroupResult::getData()const
+CreateNamespaceResult::Data CreateNamespaceResult::getData()const
 {
 	return data_;
 }
 
-int CreateAppGroupResult::getCode()const
+int CreateNamespaceResult::getCode()const
 {
 	return code_;
 }
 
-bool CreateAppGroupResult::getSuccess()const
+bool CreateNamespaceResult::getSuccess()const
 {
 	return success_;
 }

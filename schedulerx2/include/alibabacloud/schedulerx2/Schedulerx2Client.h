@@ -32,6 +32,8 @@
 #include "model/CreateAppGroupResult.h"
 #include "model/CreateJobRequest.h"
 #include "model/CreateJobResult.h"
+#include "model/CreateNamespaceRequest.h"
+#include "model/CreateNamespaceResult.h"
 #include "model/DeleteJobRequest.h"
 #include "model/DeleteJobResult.h"
 #include "model/DeleteWorkflowRequest.h"
@@ -100,6 +102,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateJobResult> CreateJobOutcome;
 			typedef std::future<CreateJobOutcome> CreateJobOutcomeCallable;
 			typedef std::function<void(const Schedulerx2Client*, const Model::CreateJobRequest&, const CreateJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateJobAsyncHandler;
+			typedef Outcome<Error, Model::CreateNamespaceResult> CreateNamespaceOutcome;
+			typedef std::future<CreateNamespaceOutcome> CreateNamespaceOutcomeCallable;
+			typedef std::function<void(const Schedulerx2Client*, const Model::CreateNamespaceRequest&, const CreateNamespaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateNamespaceAsyncHandler;
 			typedef Outcome<Error, Model::DeleteJobResult> DeleteJobOutcome;
 			typedef std::future<DeleteJobOutcome> DeleteJobOutcomeCallable;
 			typedef std::function<void(const Schedulerx2Client*, const Model::DeleteJobRequest&, const DeleteJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteJobAsyncHandler;
@@ -186,6 +191,9 @@ namespace AlibabaCloud
 			CreateJobOutcome createJob(const Model::CreateJobRequest &request)const;
 			void createJobAsync(const Model::CreateJobRequest& request, const CreateJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateJobOutcomeCallable createJobCallable(const Model::CreateJobRequest& request) const;
+			CreateNamespaceOutcome createNamespace(const Model::CreateNamespaceRequest &request)const;
+			void createNamespaceAsync(const Model::CreateNamespaceRequest& request, const CreateNamespaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateNamespaceOutcomeCallable createNamespaceCallable(const Model::CreateNamespaceRequest& request) const;
 			DeleteJobOutcome deleteJob(const Model::DeleteJobRequest &request)const;
 			void deleteJobAsync(const Model::DeleteJobRequest& request, const DeleteJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteJobOutcomeCallable deleteJobCallable(const Model::DeleteJobRequest& request) const;

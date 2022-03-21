@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SCHEDULERX2_MODEL_CREATEAPPGROUPRESULT_H_
-#define ALIBABACLOUD_SCHEDULERX2_MODEL_CREATEAPPGROUPRESULT_H_
+#ifndef ALIBABACLOUD_SCHEDULERX2_MODEL_CREATENAMESPACERESULT_H_
+#define ALIBABACLOUD_SCHEDULERX2_MODEL_CREATENAMESPACERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,19 +29,18 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SCHEDULERX2_EXPORT CreateAppGroupResult : public ServiceResult
+			class ALIBABACLOUD_SCHEDULERX2_EXPORT CreateNamespaceResult : public ServiceResult
 			{
 			public:
 				struct Data
 				{
-					long appGroupId;
-					std::string appKey;
+					std::string namespaceUid;
 				};
 
 
-				CreateAppGroupResult();
-				explicit CreateAppGroupResult(const std::string &payload);
-				~CreateAppGroupResult();
+				CreateNamespaceResult();
+				explicit CreateNamespaceResult(const std::string &payload);
+				~CreateNamespaceResult();
 				std::string getMessage()const;
 				Data getData()const;
 				int getCode()const;
@@ -59,4 +58,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SCHEDULERX2_MODEL_CREATEAPPGROUPRESULT_H_
+#endif // !ALIBABACLOUD_SCHEDULERX2_MODEL_CREATENAMESPACERESULT_H_

@@ -79,6 +79,15 @@ void CreateAppGroupRequest::setDescription(const std::string &description) {
   setParameter(std::string("Description"), description);
 }
 
+std::string CreateAppGroupRequest::getMonitorConfigJson() const {
+  return monitorConfigJson_;
+}
+
+void CreateAppGroupRequest::setMonitorConfigJson(const std::string &monitorConfigJson) {
+  monitorConfigJson_ = monitorConfigJson;
+  setParameter(std::string("MonitorConfigJson"), monitorConfigJson);
+}
+
 std::string CreateAppGroupRequest::getAppName() const {
   return appName_;
 }
@@ -113,5 +122,23 @@ std::string CreateAppGroupRequest::getAlarmJson() const {
 void CreateAppGroupRequest::setAlarmJson(const std::string &alarmJson) {
   alarmJson_ = alarmJson;
   setParameter(std::string("AlarmJson"), alarmJson);
+}
+
+std::string CreateAppGroupRequest::getAppKey() const {
+  return appKey_;
+}
+
+void CreateAppGroupRequest::setAppKey(const std::string &appKey) {
+  appKey_ = appKey;
+  setParameter(std::string("AppKey"), appKey);
+}
+
+std::string CreateAppGroupRequest::getMonitorContactsJson() const {
+  return monitorContactsJson_;
+}
+
+void CreateAppGroupRequest::setMonitorContactsJson(const std::string &monitorContactsJson) {
+  monitorContactsJson_ = monitorContactsJson;
+  setParameter(std::string("MonitorContactsJson"), monitorContactsJson);
 }
 

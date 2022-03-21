@@ -70,3 +70,12 @@ void GetJobInfoRequest::set_Namespace(const std::string &_namespace) {
   setParameter(std::string("Namespace"), _namespace);
 }
 
+std::string GetJobInfoRequest::getJobName() const {
+  return jobName_;
+}
+
+void GetJobInfoRequest::setJobName(const std::string &jobName) {
+  jobName_ = jobName;
+  setParameter(std::string("JobName"), jobName);
+}
+

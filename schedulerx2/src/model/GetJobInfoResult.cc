@@ -41,6 +41,8 @@ void GetJobInfoResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
 	auto jobConfigInfoNode = dataNode["JobConfigInfo"];
+	if(!jobConfigInfoNode["JobId"].isNull())
+		data_.jobConfigInfo.jobId = std::stol(jobConfigInfoNode["JobId"].asString());
 	if(!jobConfigInfoNode["Status"].isNull())
 		data_.jobConfigInfo.status = std::stoi(jobConfigInfoNode["Status"].asString());
 	if(!jobConfigInfoNode["Parameters"].isNull())

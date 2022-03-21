@@ -42,6 +42,8 @@ public:
 	void setGroupId(const std::string &groupId);
 	std::string getDescription() const;
 	void setDescription(const std::string &description);
+	std::string getMonitorConfigJson() const;
+	void setMonitorConfigJson(const std::string &monitorConfigJson);
 	std::string getAppName() const;
 	void setAppName(const std::string &appName);
 	std::string getRegionId() const;
@@ -50,6 +52,10 @@ public:
 	void set_Namespace(const std::string &_namespace);
 	std::string getAlarmJson() const;
 	void setAlarmJson(const std::string &alarmJson);
+	std::string getAppKey() const;
+	void setAppKey(const std::string &appKey);
+	std::string getMonitorContactsJson() const;
+	void setMonitorContactsJson(const std::string &monitorContactsJson);
 
 private:
 	int maxJobs_;
@@ -58,10 +64,13 @@ private:
 	std::string metricsThresholdJson_;
 	std::string groupId_;
 	std::string description_;
+	std::string monitorConfigJson_;
 	std::string appName_;
 	std::string regionId_;
 	std::string _namespace_;
 	std::string alarmJson_;
+	std::string appKey_;
+	std::string monitorContactsJson_;
 };
 } // namespace Model
 } // namespace Schedulerx2

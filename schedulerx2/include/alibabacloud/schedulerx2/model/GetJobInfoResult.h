@@ -87,6 +87,7 @@ namespace AlibabaCloud
 						std::string className;
 						int attemptInterval;
 						std::string executeMode;
+						long jobId;
 					};
 					JobConfigInfo jobConfigInfo;
 				};
