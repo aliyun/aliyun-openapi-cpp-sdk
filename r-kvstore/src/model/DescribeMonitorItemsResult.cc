@@ -43,10 +43,10 @@ void DescribeMonitorItemsResult::parse(const std::string &payload)
 	for (auto valueMonitorItemsKVStoreMonitorItem : allMonitorItemsNode)
 	{
 		KVStoreMonitorItem monitorItemsObject;
-		if(!valueMonitorItemsKVStoreMonitorItem["MonitorKey"].isNull())
-			monitorItemsObject.monitorKey = valueMonitorItemsKVStoreMonitorItem["MonitorKey"].asString();
 		if(!valueMonitorItemsKVStoreMonitorItem["Unit"].isNull())
 			monitorItemsObject.unit = valueMonitorItemsKVStoreMonitorItem["Unit"].asString();
+		if(!valueMonitorItemsKVStoreMonitorItem["MonitorKey"].isNull())
+			monitorItemsObject.monitorKey = valueMonitorItemsKVStoreMonitorItem["MonitorKey"].asString();
 		monitorItems_.push_back(monitorItemsObject);
 	}
 

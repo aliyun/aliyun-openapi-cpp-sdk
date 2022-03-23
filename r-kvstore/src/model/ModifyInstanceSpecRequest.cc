@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,221 +18,181 @@
 
 using AlibabaCloud::R_kvstore::Model::ModifyInstanceSpecRequest;
 
-ModifyInstanceSpecRequest::ModifyInstanceSpecRequest() :
-	RpcServiceRequest("r-kvstore", "2015-01-01", "ModifyInstanceSpec")
-{
-	setMethod(HttpRequest::Method::Post);
+ModifyInstanceSpecRequest::ModifyInstanceSpecRequest()
+    : RpcServiceRequest("r-kvstore", "2015-01-01", "ModifyInstanceSpec") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-ModifyInstanceSpecRequest::~ModifyInstanceSpecRequest()
-{}
+ModifyInstanceSpecRequest::~ModifyInstanceSpecRequest() {}
 
-long ModifyInstanceSpecRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long ModifyInstanceSpecRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void ModifyInstanceSpecRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void ModifyInstanceSpecRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string ModifyInstanceSpecRequest::getClientToken()const
-{
-	return clientToken_;
+std::string ModifyInstanceSpecRequest::getClientToken() const {
+  return clientToken_;
 }
 
-void ModifyInstanceSpecRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+void ModifyInstanceSpecRequest::setClientToken(const std::string &clientToken) {
+  clientToken_ = clientToken;
+  setParameter(std::string("ClientToken"), clientToken);
 }
 
-std::string ModifyInstanceSpecRequest::getCouponNo()const
-{
-	return couponNo_;
+std::string ModifyInstanceSpecRequest::getCouponNo() const {
+  return couponNo_;
 }
 
-void ModifyInstanceSpecRequest::setCouponNo(const std::string& couponNo)
-{
-	couponNo_ = couponNo;
-	setParameter("CouponNo", couponNo);
+void ModifyInstanceSpecRequest::setCouponNo(const std::string &couponNo) {
+  couponNo_ = couponNo;
+  setParameter(std::string("CouponNo"), couponNo);
 }
 
-std::string ModifyInstanceSpecRequest::getInstanceClass()const
-{
-	return instanceClass_;
+std::string ModifyInstanceSpecRequest::getInstanceClass() const {
+  return instanceClass_;
 }
 
-void ModifyInstanceSpecRequest::setInstanceClass(const std::string& instanceClass)
-{
-	instanceClass_ = instanceClass;
-	setParameter("InstanceClass", instanceClass);
+void ModifyInstanceSpecRequest::setInstanceClass(const std::string &instanceClass) {
+  instanceClass_ = instanceClass;
+  setParameter(std::string("InstanceClass"), instanceClass);
 }
 
-std::string ModifyInstanceSpecRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string ModifyInstanceSpecRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void ModifyInstanceSpecRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void ModifyInstanceSpecRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string ModifyInstanceSpecRequest::getSecurityToken()const
-{
-	return securityToken_;
+std::string ModifyInstanceSpecRequest::getSecurityToken() const {
+  return securityToken_;
 }
 
-void ModifyInstanceSpecRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+void ModifyInstanceSpecRequest::setSecurityToken(const std::string &securityToken) {
+  securityToken_ = securityToken;
+  setParameter(std::string("SecurityToken"), securityToken);
 }
 
-std::string ModifyInstanceSpecRequest::getRegionId()const
-{
-	return regionId_;
+std::string ModifyInstanceSpecRequest::getRegionId() const {
+  return regionId_;
 }
 
-void ModifyInstanceSpecRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void ModifyInstanceSpecRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
-std::string ModifyInstanceSpecRequest::getEffectiveTime()const
-{
-	return effectiveTime_;
+std::string ModifyInstanceSpecRequest::getEffectiveTime() const {
+  return effectiveTime_;
 }
 
-void ModifyInstanceSpecRequest::setEffectiveTime(const std::string& effectiveTime)
-{
-	effectiveTime_ = effectiveTime;
-	setParameter("EffectiveTime", effectiveTime);
+void ModifyInstanceSpecRequest::setEffectiveTime(const std::string &effectiveTime) {
+  effectiveTime_ = effectiveTime;
+  setParameter(std::string("EffectiveTime"), effectiveTime);
 }
 
-std::string ModifyInstanceSpecRequest::getSourceBiz()const
-{
-	return sourceBiz_;
+std::string ModifyInstanceSpecRequest::getSourceBiz() const {
+  return sourceBiz_;
 }
 
-void ModifyInstanceSpecRequest::setSourceBiz(const std::string& sourceBiz)
-{
-	sourceBiz_ = sourceBiz;
-	setParameter("SourceBiz", sourceBiz);
+void ModifyInstanceSpecRequest::setSourceBiz(const std::string &sourceBiz) {
+  sourceBiz_ = sourceBiz;
+  setParameter(std::string("SourceBiz"), sourceBiz);
 }
 
-std::string ModifyInstanceSpecRequest::getBusinessInfo()const
-{
-	return businessInfo_;
+std::string ModifyInstanceSpecRequest::getBusinessInfo() const {
+  return businessInfo_;
 }
 
-void ModifyInstanceSpecRequest::setBusinessInfo(const std::string& businessInfo)
-{
-	businessInfo_ = businessInfo;
-	setParameter("BusinessInfo", businessInfo);
+void ModifyInstanceSpecRequest::setBusinessInfo(const std::string &businessInfo) {
+  businessInfo_ = businessInfo;
+  setParameter(std::string("BusinessInfo"), businessInfo);
 }
 
-bool ModifyInstanceSpecRequest::getAutoPay()const
-{
-	return autoPay_;
+bool ModifyInstanceSpecRequest::getAutoPay() const {
+  return autoPay_;
 }
 
-void ModifyInstanceSpecRequest::setAutoPay(bool autoPay)
-{
-	autoPay_ = autoPay;
-	setParameter("AutoPay", autoPay ? "true" : "false");
+void ModifyInstanceSpecRequest::setAutoPay(bool autoPay) {
+  autoPay_ = autoPay;
+  setParameter(std::string("AutoPay"), autoPay ? "true" : "false");
 }
 
-std::string ModifyInstanceSpecRequest::getFromApp()const
-{
-	return fromApp_;
+std::string ModifyInstanceSpecRequest::getFromApp() const {
+  return fromApp_;
 }
 
-void ModifyInstanceSpecRequest::setFromApp(const std::string& fromApp)
-{
-	fromApp_ = fromApp;
-	setParameter("FromApp", fromApp);
+void ModifyInstanceSpecRequest::setFromApp(const std::string &fromApp) {
+  fromApp_ = fromApp;
+  setParameter(std::string("FromApp"), fromApp);
 }
 
-std::string ModifyInstanceSpecRequest::getMajorVersion()const
-{
-	return majorVersion_;
+std::string ModifyInstanceSpecRequest::getMajorVersion() const {
+  return majorVersion_;
 }
 
-void ModifyInstanceSpecRequest::setMajorVersion(const std::string& majorVersion)
-{
-	majorVersion_ = majorVersion;
-	setParameter("MajorVersion", majorVersion);
+void ModifyInstanceSpecRequest::setMajorVersion(const std::string &majorVersion) {
+  majorVersion_ = majorVersion;
+  setParameter(std::string("MajorVersion"), majorVersion);
 }
 
-std::string ModifyInstanceSpecRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string ModifyInstanceSpecRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void ModifyInstanceSpecRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void ModifyInstanceSpecRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string ModifyInstanceSpecRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string ModifyInstanceSpecRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void ModifyInstanceSpecRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void ModifyInstanceSpecRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-long ModifyInstanceSpecRequest::getOwnerId()const
-{
-	return ownerId_;
+long ModifyInstanceSpecRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void ModifyInstanceSpecRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void ModifyInstanceSpecRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string ModifyInstanceSpecRequest::getInstanceId()const
-{
-	return instanceId_;
+std::string ModifyInstanceSpecRequest::getInstanceId() const {
+  return instanceId_;
 }
 
-void ModifyInstanceSpecRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+void ModifyInstanceSpecRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-bool ModifyInstanceSpecRequest::getForceUpgrade()const
-{
-	return forceUpgrade_;
+bool ModifyInstanceSpecRequest::getForceUpgrade() const {
+  return forceUpgrade_;
 }
 
-void ModifyInstanceSpecRequest::setForceUpgrade(bool forceUpgrade)
-{
-	forceUpgrade_ = forceUpgrade;
-	setParameter("ForceUpgrade", forceUpgrade ? "true" : "false");
+void ModifyInstanceSpecRequest::setForceUpgrade(bool forceUpgrade) {
+  forceUpgrade_ = forceUpgrade;
+  setParameter(std::string("ForceUpgrade"), forceUpgrade ? "true" : "false");
 }
 
-std::string ModifyInstanceSpecRequest::getOrderType()const
-{
-	return orderType_;
+std::string ModifyInstanceSpecRequest::getOrderType() const {
+  return orderType_;
 }
 
-void ModifyInstanceSpecRequest::setOrderType(const std::string& orderType)
-{
-	orderType_ = orderType;
-	setParameter("OrderType", orderType);
+void ModifyInstanceSpecRequest::setOrderType(const std::string &orderType) {
+  orderType_ = orderType;
+  setParameter(std::string("OrderType"), orderType);
 }
 

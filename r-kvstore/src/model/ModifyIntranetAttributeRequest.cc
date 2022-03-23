@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,111 +18,91 @@
 
 using AlibabaCloud::R_kvstore::Model::ModifyIntranetAttributeRequest;
 
-ModifyIntranetAttributeRequest::ModifyIntranetAttributeRequest() :
-	RpcServiceRequest("r-kvstore", "2015-01-01", "ModifyIntranetAttribute")
-{
-	setMethod(HttpRequest::Method::Post);
+ModifyIntranetAttributeRequest::ModifyIntranetAttributeRequest()
+    : RpcServiceRequest("r-kvstore", "2015-01-01", "ModifyIntranetAttribute") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-ModifyIntranetAttributeRequest::~ModifyIntranetAttributeRequest()
-{}
+ModifyIntranetAttributeRequest::~ModifyIntranetAttributeRequest() {}
 
-long ModifyIntranetAttributeRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long ModifyIntranetAttributeRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void ModifyIntranetAttributeRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void ModifyIntranetAttributeRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string ModifyIntranetAttributeRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string ModifyIntranetAttributeRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void ModifyIntranetAttributeRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void ModifyIntranetAttributeRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string ModifyIntranetAttributeRequest::getSecurityToken()const
-{
-	return securityToken_;
+std::string ModifyIntranetAttributeRequest::getSecurityToken() const {
+  return securityToken_;
 }
 
-void ModifyIntranetAttributeRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+void ModifyIntranetAttributeRequest::setSecurityToken(const std::string &securityToken) {
+  securityToken_ = securityToken;
+  setParameter(std::string("SecurityToken"), securityToken);
 }
 
-std::string ModifyIntranetAttributeRequest::getNodeId()const
-{
-	return nodeId_;
+std::string ModifyIntranetAttributeRequest::getNodeId() const {
+  return nodeId_;
 }
 
-void ModifyIntranetAttributeRequest::setNodeId(const std::string& nodeId)
-{
-	nodeId_ = nodeId;
-	setParameter("NodeId", nodeId);
+void ModifyIntranetAttributeRequest::setNodeId(const std::string &nodeId) {
+  nodeId_ = nodeId;
+  setParameter(std::string("NodeId"), nodeId);
 }
 
-std::string ModifyIntranetAttributeRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string ModifyIntranetAttributeRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void ModifyIntranetAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void ModifyIntranetAttributeRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-long ModifyIntranetAttributeRequest::getBandWidth()const
-{
-	return bandWidth_;
+long ModifyIntranetAttributeRequest::getBandWidth() const {
+  return bandWidth_;
 }
 
-void ModifyIntranetAttributeRequest::setBandWidth(long bandWidth)
-{
-	bandWidth_ = bandWidth;
-	setParameter("BandWidth", std::to_string(bandWidth));
+void ModifyIntranetAttributeRequest::setBandWidth(long bandWidth) {
+  bandWidth_ = bandWidth;
+  setParameter(std::string("BandWidth"), std::to_string(bandWidth));
 }
 
-std::string ModifyIntranetAttributeRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string ModifyIntranetAttributeRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void ModifyIntranetAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void ModifyIntranetAttributeRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-long ModifyIntranetAttributeRequest::getOwnerId()const
-{
-	return ownerId_;
+long ModifyIntranetAttributeRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void ModifyIntranetAttributeRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void ModifyIntranetAttributeRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string ModifyIntranetAttributeRequest::getInstanceId()const
-{
-	return instanceId_;
+std::string ModifyIntranetAttributeRequest::getInstanceId() const {
+  return instanceId_;
 }
 
-void ModifyIntranetAttributeRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+void ModifyIntranetAttributeRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
 }
 

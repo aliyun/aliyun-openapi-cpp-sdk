@@ -35,10 +35,10 @@ namespace AlibabaCloud
 				struct NodeInfo
 				{
 					std::string capacity;
-					std::string bandwidth;
 					std::string nodeType;
-					std::string nodeId;
+					std::string bandwidth;
 					std::string connection;
+					std::string nodeId;
 				};
 
 

@@ -39,22 +39,22 @@ void DescribeEncryptionKeyResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["EncryptionKey"].isNull())
-		encryptionKey_ = value["EncryptionKey"].asString();
-	if(!value["Description"].isNull())
-		description_ = value["Description"].asString();
-	if(!value["KeyUsage"].isNull())
-		keyUsage_ = value["KeyUsage"].asString();
 	if(!value["DeleteDate"].isNull())
 		deleteDate_ = value["DeleteDate"].asString();
-	if(!value["Creator"].isNull())
-		creator_ = value["Creator"].asString();
-	if(!value["EncryptionKeyStatus"].isNull())
-		encryptionKeyStatus_ = value["EncryptionKeyStatus"].asString();
+	if(!value["Description"].isNull())
+		description_ = value["Description"].asString();
 	if(!value["Origin"].isNull())
 		origin_ = value["Origin"].asString();
 	if(!value["MaterialExpireTime"].isNull())
 		materialExpireTime_ = value["MaterialExpireTime"].asString();
+	if(!value["EncryptionKeyStatus"].isNull())
+		encryptionKeyStatus_ = value["EncryptionKeyStatus"].asString();
+	if(!value["KeyUsage"].isNull())
+		keyUsage_ = value["KeyUsage"].asString();
+	if(!value["EncryptionKey"].isNull())
+		encryptionKey_ = value["EncryptionKey"].asString();
+	if(!value["Creator"].isNull())
+		creator_ = value["Creator"].asString();
 
 }
 

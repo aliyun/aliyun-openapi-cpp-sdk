@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,68 +17,62 @@
 #ifndef ALIBABACLOUD_R_KVSTORE_MODEL_CREATEACCOUNTREQUEST_H_
 #define ALIBABACLOUD_R_KVSTORE_MODEL_CREATEACCOUNTREQUEST_H_
 
+#include <alibabacloud/r-kvstore/R_kvstoreExport.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
-#include <alibabacloud/r-kvstore/R_kvstoreExport.h>
+#include <map>
 
-namespace AlibabaCloud
-{
-	namespace R_kvstore
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_R_KVSTORE_EXPORT CreateAccountRequest : public RpcServiceRequest
-			{
+namespace AlibabaCloud {
+namespace R_kvstore {
+namespace Model {
+class ALIBABACLOUD_R_KVSTORE_EXPORT CreateAccountRequest : public RpcServiceRequest {
+public:
+	CreateAccountRequest();
+	~CreateAccountRequest();
+	long getResourceOwnerId() const;
+	void setResourceOwnerId(long resourceOwnerId);
+	std::string getClientToken() const;
+	void setClientToken(const std::string &clientToken);
+	std::string getAccountType() const;
+	void setAccountType(const std::string &accountType);
+	std::string getAccountDescription() const;
+	void setAccountDescription(const std::string &accountDescription);
+	std::string getAccessKeyId() const;
+	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getAccountPrivilege() const;
+	void setAccountPrivilege(const std::string &accountPrivilege);
+	std::string getAccountName() const;
+	void setAccountName(const std::string &accountName);
+	std::string getSecurityToken() const;
+	void setSecurityToken(const std::string &securityToken);
+	std::string getResourceOwnerAccount() const;
+	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
+	std::string getOwnerAccount() const;
+	void setOwnerAccount(const std::string &ownerAccount);
+	long getOwnerId() const;
+	void setOwnerId(long ownerId);
+	std::string getAccountPassword() const;
+	void setAccountPassword(const std::string &accountPassword);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
 
-			public:
-				CreateAccountRequest();
-				~CreateAccountRequest();
-
-				long getResourceOwnerId()const;
-				void setResourceOwnerId(long resourceOwnerId);
-				std::string getClientToken()const;
-				void setClientToken(const std::string& clientToken);
-				std::string getAccountType()const;
-				void setAccountType(const std::string& accountType);
-				std::string getAccountDescription()const;
-				void setAccountDescription(const std::string& accountDescription);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getAccountPrivilege()const;
-				void setAccountPrivilege(const std::string& accountPrivilege);
-				std::string getAccountName()const;
-				void setAccountName(const std::string& accountName);
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
-				std::string getAccountPassword()const;
-				void setAccountPassword(const std::string& accountPassword);
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
-
-            private:
-				long resourceOwnerId_;
-				std::string clientToken_;
-				std::string accountType_;
-				std::string accountDescription_;
-				std::string accessKeyId_;
-				std::string accountPrivilege_;
-				std::string accountName_;
-				std::string securityToken_;
-				std::string resourceOwnerAccount_;
-				std::string ownerAccount_;
-				long ownerId_;
-				std::string accountPassword_;
-				std::string instanceId_;
-
-			};
-		}
-	}
-}
+private:
+	long resourceOwnerId_;
+	std::string clientToken_;
+	std::string accountType_;
+	std::string accountDescription_;
+	std::string accessKeyId_;
+	std::string accountPrivilege_;
+	std::string accountName_;
+	std::string securityToken_;
+	std::string resourceOwnerAccount_;
+	std::string ownerAccount_;
+	long ownerId_;
+	std::string accountPassword_;
+	std::string instanceId_;
+};
+} // namespace Model
+} // namespace R_kvstore
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_R_KVSTORE_MODEL_CREATEACCOUNTREQUEST_H_

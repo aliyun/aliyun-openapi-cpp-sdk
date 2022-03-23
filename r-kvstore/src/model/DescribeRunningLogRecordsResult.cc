@@ -43,38 +43,38 @@ void DescribeRunningLogRecordsResult::parse(const std::string &payload)
 	for (auto valueItemsLogRecords : allItemsNode)
 	{
 		LogRecords itemsObject;
-		if(!valueItemsLogRecords["Level"].isNull())
-			itemsObject.level = valueItemsLogRecords["Level"].asString();
-		if(!valueItemsLogRecords["Id"].isNull())
-			itemsObject.id = std::stoi(valueItemsLogRecords["Id"].asString());
+		if(!valueItemsLogRecords["ConnInfo"].isNull())
+			itemsObject.connInfo = valueItemsLogRecords["ConnInfo"].asString();
 		if(!valueItemsLogRecords["CreateTime"].isNull())
 			itemsObject.createTime = valueItemsLogRecords["CreateTime"].asString();
 		if(!valueItemsLogRecords["Category"].isNull())
 			itemsObject.category = valueItemsLogRecords["Category"].asString();
-		if(!valueItemsLogRecords["ConnInfo"].isNull())
-			itemsObject.connInfo = valueItemsLogRecords["ConnInfo"].asString();
-		if(!valueItemsLogRecords["Content"].isNull())
-			itemsObject.content = valueItemsLogRecords["Content"].asString();
 		if(!valueItemsLogRecords["InstanceId"].isNull())
 			itemsObject.instanceId = valueItemsLogRecords["InstanceId"].asString();
+		if(!valueItemsLogRecords["Content"].isNull())
+			itemsObject.content = valueItemsLogRecords["Content"].asString();
 		if(!valueItemsLogRecords["NodeId"].isNull())
 			itemsObject.nodeId = valueItemsLogRecords["NodeId"].asString();
+		if(!valueItemsLogRecords["Level"].isNull())
+			itemsObject.level = valueItemsLogRecords["Level"].asString();
+		if(!valueItemsLogRecords["Id"].isNull())
+			itemsObject.id = std::stoi(valueItemsLogRecords["Id"].asString());
 		items_.push_back(itemsObject);
 	}
-	if(!value["InstanceId"].isNull())
-		instanceId_ = value["InstanceId"].asString();
 	if(!value["StartTime"].isNull())
 		startTime_ = value["StartTime"].asString();
-	if(!value["Engine"].isNull())
-		engine_ = value["Engine"].asString();
-	if(!value["TotalRecordCount"].isNull())
-		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["PageRecordCount"].isNull())
 		pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
+	if(!value["TotalRecordCount"].isNull())
+		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["InstanceId"].isNull())
+		instanceId_ = value["InstanceId"].asString();
+	if(!value["Engine"].isNull())
+		engine_ = value["Engine"].asString();
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
 
 }
 

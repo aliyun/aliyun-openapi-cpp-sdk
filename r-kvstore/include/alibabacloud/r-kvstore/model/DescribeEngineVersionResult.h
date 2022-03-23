@@ -41,11 +41,11 @@ namespace AlibabaCloud
 				bool getIsLatestVersion()const;
 				std::string getMinorVersion()const;
 				std::string getProxyMinorVersion()const;
-				std::string getEngine()const;
-				bool getEnableUpgradeMinorVersion()const;
 				std::string getProxyVersionRelease()const;
-				bool getEnableUpgradeMajorVersion()const;
+				bool getEnableUpgradeMinorVersion()const;
+				std::string getEngine()const;
 				std::string getDBVersionRelease()const;
+				bool getEnableUpgradeMajorVersion()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -54,11 +54,11 @@ namespace AlibabaCloud
 				bool isLatestVersion_;
 				std::string minorVersion_;
 				std::string proxyMinorVersion_;
-				std::string engine_;
-				bool enableUpgradeMinorVersion_;
 				std::string proxyVersionRelease_;
-				bool enableUpgradeMajorVersion_;
+				bool enableUpgradeMinorVersion_;
+				std::string engine_;
 				std::string dBVersionRelease_;
+				bool enableUpgradeMajorVersion_;
 
 			};
 		}

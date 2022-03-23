@@ -43,26 +43,26 @@ void DescribeTasksResult::parse(const std::string &payload)
 	for (auto valueItemsTaskProgressInfo : allItemsNode)
 	{
 		TaskProgressInfo itemsObject;
-		if(!valueItemsTaskProgressInfo["TaskId"].isNull())
-			itemsObject.taskId = valueItemsTaskProgressInfo["TaskId"].asString();
-		if(!valueItemsTaskProgressInfo["TaskAction"].isNull())
-			itemsObject.taskAction = valueItemsTaskProgressInfo["TaskAction"].asString();
 		if(!valueItemsTaskProgressInfo["Status"].isNull())
 			itemsObject.status = valueItemsTaskProgressInfo["Status"].asString();
-		if(!valueItemsTaskProgressInfo["Progress"].isNull())
-			itemsObject.progress = std::stof(valueItemsTaskProgressInfo["Progress"].asString());
-		if(!valueItemsTaskProgressInfo["BeginTime"].isNull())
-			itemsObject.beginTime = valueItemsTaskProgressInfo["BeginTime"].asString();
 		if(!valueItemsTaskProgressInfo["FinishTime"].isNull())
 			itemsObject.finishTime = valueItemsTaskProgressInfo["FinishTime"].asString();
 		if(!valueItemsTaskProgressInfo["StepsInfo"].isNull())
 			itemsObject.stepsInfo = valueItemsTaskProgressInfo["StepsInfo"].asString();
+		if(!valueItemsTaskProgressInfo["Progress"].isNull())
+			itemsObject.progress = std::stof(valueItemsTaskProgressInfo["Progress"].asString());
+		if(!valueItemsTaskProgressInfo["BeginTime"].isNull())
+			itemsObject.beginTime = valueItemsTaskProgressInfo["BeginTime"].asString();
 		if(!valueItemsTaskProgressInfo["Remain"].isNull())
 			itemsObject.remain = std::stoi(valueItemsTaskProgressInfo["Remain"].asString());
-		if(!valueItemsTaskProgressInfo["StepProgressInfo"].isNull())
-			itemsObject.stepProgressInfo = valueItemsTaskProgressInfo["StepProgressInfo"].asString();
 		if(!valueItemsTaskProgressInfo["CurrentStepName"].isNull())
 			itemsObject.currentStepName = valueItemsTaskProgressInfo["CurrentStepName"].asString();
+		if(!valueItemsTaskProgressInfo["StepProgressInfo"].isNull())
+			itemsObject.stepProgressInfo = valueItemsTaskProgressInfo["StepProgressInfo"].asString();
+		if(!valueItemsTaskProgressInfo["TaskId"].isNull())
+			itemsObject.taskId = valueItemsTaskProgressInfo["TaskId"].asString();
+		if(!valueItemsTaskProgressInfo["TaskAction"].isNull())
+			itemsObject.taskAction = valueItemsTaskProgressInfo["TaskAction"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["PageNumber"].isNull())

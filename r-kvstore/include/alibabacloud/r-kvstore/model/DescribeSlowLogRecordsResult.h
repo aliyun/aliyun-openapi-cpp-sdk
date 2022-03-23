@@ -38,8 +38,8 @@ namespace AlibabaCloud
 					std::string command;
 					std::string executeTime;
 					std::string nodeId;
-					std::string dBName;
 					long elapsedTime;
+					std::string dBName;
 					std::string iPAddress;
 					std::string dataBaseName;
 					std::string accountName;

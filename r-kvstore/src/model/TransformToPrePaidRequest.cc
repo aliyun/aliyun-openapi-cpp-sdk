@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,133 +18,109 @@
 
 using AlibabaCloud::R_kvstore::Model::TransformToPrePaidRequest;
 
-TransformToPrePaidRequest::TransformToPrePaidRequest() :
-	RpcServiceRequest("r-kvstore", "2015-01-01", "TransformToPrePaid")
-{
-	setMethod(HttpRequest::Method::Post);
+TransformToPrePaidRequest::TransformToPrePaidRequest()
+    : RpcServiceRequest("r-kvstore", "2015-01-01", "TransformToPrePaid") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-TransformToPrePaidRequest::~TransformToPrePaidRequest()
-{}
+TransformToPrePaidRequest::~TransformToPrePaidRequest() {}
 
-long TransformToPrePaidRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long TransformToPrePaidRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void TransformToPrePaidRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void TransformToPrePaidRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string TransformToPrePaidRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string TransformToPrePaidRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void TransformToPrePaidRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void TransformToPrePaidRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string TransformToPrePaidRequest::getSecurityToken()const
-{
-	return securityToken_;
+std::string TransformToPrePaidRequest::getSecurityToken() const {
+  return securityToken_;
 }
 
-void TransformToPrePaidRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+void TransformToPrePaidRequest::setSecurityToken(const std::string &securityToken) {
+  securityToken_ = securityToken;
+  setParameter(std::string("SecurityToken"), securityToken);
 }
 
-long TransformToPrePaidRequest::getPeriod()const
-{
-	return period_;
+long TransformToPrePaidRequest::getPeriod() const {
+  return period_;
 }
 
-void TransformToPrePaidRequest::setPeriod(long period)
-{
-	period_ = period;
-	setParameter("Period", std::to_string(period));
+void TransformToPrePaidRequest::setPeriod(long period) {
+  period_ = period;
+  setParameter(std::string("Period"), std::to_string(period));
 }
 
-bool TransformToPrePaidRequest::getAutoPay()const
-{
-	return autoPay_;
+bool TransformToPrePaidRequest::getAutoPay() const {
+  return autoPay_;
 }
 
-void TransformToPrePaidRequest::setAutoPay(bool autoPay)
-{
-	autoPay_ = autoPay;
-	setParameter("AutoPay", autoPay ? "true" : "false");
+void TransformToPrePaidRequest::setAutoPay(bool autoPay) {
+  autoPay_ = autoPay;
+  setParameter(std::string("AutoPay"), autoPay ? "true" : "false");
 }
 
-std::string TransformToPrePaidRequest::getFromApp()const
-{
-	return fromApp_;
+std::string TransformToPrePaidRequest::getFromApp() const {
+  return fromApp_;
 }
 
-void TransformToPrePaidRequest::setFromApp(const std::string& fromApp)
-{
-	fromApp_ = fromApp;
-	setParameter("FromApp", fromApp);
+void TransformToPrePaidRequest::setFromApp(const std::string &fromApp) {
+  fromApp_ = fromApp;
+  setParameter(std::string("FromApp"), fromApp);
 }
 
-std::string TransformToPrePaidRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string TransformToPrePaidRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void TransformToPrePaidRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void TransformToPrePaidRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string TransformToPrePaidRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string TransformToPrePaidRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void TransformToPrePaidRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void TransformToPrePaidRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-long TransformToPrePaidRequest::getOwnerId()const
-{
-	return ownerId_;
+long TransformToPrePaidRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void TransformToPrePaidRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void TransformToPrePaidRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string TransformToPrePaidRequest::getInstanceId()const
-{
-	return instanceId_;
+std::string TransformToPrePaidRequest::getInstanceId() const {
+  return instanceId_;
 }
 
-void TransformToPrePaidRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+void TransformToPrePaidRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-std::string TransformToPrePaidRequest::getChargeType()const
-{
-	return chargeType_;
+std::string TransformToPrePaidRequest::getChargeType() const {
+  return chargeType_;
 }
 
-void TransformToPrePaidRequest::setChargeType(const std::string& chargeType)
-{
-	chargeType_ = chargeType;
-	setParameter("ChargeType", chargeType);
+void TransformToPrePaidRequest::setChargeType(const std::string &chargeType) {
+  chargeType_ = chargeType;
+  setParameter(std::string("ChargeType"), chargeType);
 }
 

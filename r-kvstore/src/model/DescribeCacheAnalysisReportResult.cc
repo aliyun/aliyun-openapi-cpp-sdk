@@ -39,20 +39,20 @@ void DescribeCacheAnalysisReportResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allHotKeys = value["HotKeys"]["HotKeys"];
-	for (const auto &item : allHotKeys)
-		hotKeys_.push_back(item.asString());
 	auto allBigKeys = value["BigKeys"]["BigKeys"];
 	for (const auto &item : allBigKeys)
 		bigKeys_.push_back(item.asString());
-	if(!value["TotalRecordCount"].isNull())
-		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
+	auto allHotKeys = value["HotKeys"]["HotKeys"];
+	for (const auto &item : allHotKeys)
+		hotKeys_.push_back(item.asString());
 	if(!value["PageNumber"].isNull())
 		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["PageRecordCount"].isNull())
 		pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
+	if(!value["TotalRecordCount"].isNull())
+		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
 
 }
 

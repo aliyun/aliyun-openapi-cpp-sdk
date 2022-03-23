@@ -38,8 +38,8 @@ namespace AlibabaCloud
 					{
 						std::string status;
 						std::string taskId;
-						std::string nodeId;
 						std::string startTime;
+						std::string nodeId;
 					};
 					std::vector<DailyTask::Task> tasks;
 					std::string date;

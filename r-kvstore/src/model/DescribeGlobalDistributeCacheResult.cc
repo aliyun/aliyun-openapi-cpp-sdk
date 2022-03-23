@@ -43,36 +43,36 @@ void DescribeGlobalDistributeCacheResult::parse(const std::string &payload)
 	for (auto valueGlobalDistributeCachesGlobalDistributeCache : allGlobalDistributeCachesNode)
 	{
 		GlobalDistributeCache globalDistributeCachesObject;
-		if(!valueGlobalDistributeCachesGlobalDistributeCache["GlobalInstanceId"].isNull())
-			globalDistributeCachesObject.globalInstanceId = valueGlobalDistributeCachesGlobalDistributeCache["GlobalInstanceId"].asString();
-		if(!valueGlobalDistributeCachesGlobalDistributeCache["GlobalInstanceName"].isNull())
-			globalDistributeCachesObject.globalInstanceName = valueGlobalDistributeCachesGlobalDistributeCache["GlobalInstanceName"].asString();
 		if(!valueGlobalDistributeCachesGlobalDistributeCache["Status"].isNull())
 			globalDistributeCachesObject.status = valueGlobalDistributeCachesGlobalDistributeCache["Status"].asString();
+		if(!valueGlobalDistributeCachesGlobalDistributeCache["GlobalInstanceName"].isNull())
+			globalDistributeCachesObject.globalInstanceName = valueGlobalDistributeCachesGlobalDistributeCache["GlobalInstanceName"].asString();
+		if(!valueGlobalDistributeCachesGlobalDistributeCache["GlobalInstanceId"].isNull())
+			globalDistributeCachesObject.globalInstanceId = valueGlobalDistributeCachesGlobalDistributeCache["GlobalInstanceId"].asString();
 		auto allSubInstancesNode = valueGlobalDistributeCachesGlobalDistributeCache["SubInstances"]["SubInstance"];
 		for (auto valueGlobalDistributeCachesGlobalDistributeCacheSubInstancesSubInstance : allSubInstancesNode)
 		{
 			GlobalDistributeCache::SubInstance subInstancesObject;
-			if(!valueGlobalDistributeCachesGlobalDistributeCacheSubInstancesSubInstance["GlobalInstanceId"].isNull())
-				subInstancesObject.globalInstanceId = valueGlobalDistributeCachesGlobalDistributeCacheSubInstancesSubInstance["GlobalInstanceId"].asString();
-			if(!valueGlobalDistributeCachesGlobalDistributeCacheSubInstancesSubInstance["InstanceID"].isNull())
-				subInstancesObject.instanceID = valueGlobalDistributeCachesGlobalDistributeCacheSubInstancesSubInstance["InstanceID"].asString();
-			if(!valueGlobalDistributeCachesGlobalDistributeCacheSubInstancesSubInstance["RegionId"].isNull())
-				subInstancesObject.regionId = valueGlobalDistributeCachesGlobalDistributeCacheSubInstancesSubInstance["RegionId"].asString();
 			if(!valueGlobalDistributeCachesGlobalDistributeCacheSubInstancesSubInstance["InstanceStatus"].isNull())
 				subInstancesObject.instanceStatus = valueGlobalDistributeCachesGlobalDistributeCacheSubInstancesSubInstance["InstanceStatus"].asString();
+			if(!valueGlobalDistributeCachesGlobalDistributeCacheSubInstancesSubInstance["InstanceID"].isNull())
+				subInstancesObject.instanceID = valueGlobalDistributeCachesGlobalDistributeCacheSubInstancesSubInstance["InstanceID"].asString();
 			if(!valueGlobalDistributeCachesGlobalDistributeCacheSubInstancesSubInstance["InstanceClass"].isNull())
 				subInstancesObject.instanceClass = valueGlobalDistributeCachesGlobalDistributeCacheSubInstancesSubInstance["InstanceClass"].asString();
+			if(!valueGlobalDistributeCachesGlobalDistributeCacheSubInstancesSubInstance["GlobalInstanceId"].isNull())
+				subInstancesObject.globalInstanceId = valueGlobalDistributeCachesGlobalDistributeCacheSubInstancesSubInstance["GlobalInstanceId"].asString();
+			if(!valueGlobalDistributeCachesGlobalDistributeCacheSubInstancesSubInstance["RegionId"].isNull())
+				subInstancesObject.regionId = valueGlobalDistributeCachesGlobalDistributeCacheSubInstancesSubInstance["RegionId"].asString();
 			globalDistributeCachesObject.subInstances.push_back(subInstancesObject);
 		}
 		globalDistributeCaches_.push_back(globalDistributeCachesObject);
 	}
-	if(!value["TotalRecordCount"].isNull())
-		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["TotalRecordCount"].isNull())
+		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
 
 }
 

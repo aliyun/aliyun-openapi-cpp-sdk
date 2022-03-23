@@ -43,24 +43,24 @@ void DescribeAccountsResult::parse(const std::string &payload)
 	for (auto valueAccountsAccount : allAccountsNode)
 	{
 		Account accountsObject;
-		if(!valueAccountsAccount["InstanceId"].isNull())
-			accountsObject.instanceId = valueAccountsAccount["InstanceId"].asString();
-		if(!valueAccountsAccount["AccountName"].isNull())
-			accountsObject.accountName = valueAccountsAccount["AccountName"].asString();
-		if(!valueAccountsAccount["AccountStatus"].isNull())
-			accountsObject.accountStatus = valueAccountsAccount["AccountStatus"].asString();
-		if(!valueAccountsAccount["AccountType"].isNull())
-			accountsObject.accountType = valueAccountsAccount["AccountType"].asString();
 		if(!valueAccountsAccount["AccountDescription"].isNull())
 			accountsObject.accountDescription = valueAccountsAccount["AccountDescription"].asString();
+		if(!valueAccountsAccount["InstanceId"].isNull())
+			accountsObject.instanceId = valueAccountsAccount["InstanceId"].asString();
+		if(!valueAccountsAccount["AccountType"].isNull())
+			accountsObject.accountType = valueAccountsAccount["AccountType"].asString();
+		if(!valueAccountsAccount["AccountStatus"].isNull())
+			accountsObject.accountStatus = valueAccountsAccount["AccountStatus"].asString();
+		if(!valueAccountsAccount["AccountName"].isNull())
+			accountsObject.accountName = valueAccountsAccount["AccountName"].asString();
 		auto allDatabasePrivilegesNode = valueAccountsAccount["DatabasePrivileges"]["DatabasePrivilege"];
 		for (auto valueAccountsAccountDatabasePrivilegesDatabasePrivilege : allDatabasePrivilegesNode)
 		{
 			Account::DatabasePrivilege databasePrivilegesObject;
-			if(!valueAccountsAccountDatabasePrivilegesDatabasePrivilege["AccountPrivilege"].isNull())
-				databasePrivilegesObject.accountPrivilege = valueAccountsAccountDatabasePrivilegesDatabasePrivilege["AccountPrivilege"].asString();
 			if(!valueAccountsAccountDatabasePrivilegesDatabasePrivilege["AccountPrivilegeDetail"].isNull())
 				databasePrivilegesObject.accountPrivilegeDetail = valueAccountsAccountDatabasePrivilegesDatabasePrivilege["AccountPrivilegeDetail"].asString();
+			if(!valueAccountsAccountDatabasePrivilegesDatabasePrivilege["AccountPrivilege"].isNull())
+				databasePrivilegesObject.accountPrivilege = valueAccountsAccountDatabasePrivilegesDatabasePrivilege["AccountPrivilege"].asString();
 			accountsObject.databasePrivileges.push_back(databasePrivilegesObject);
 		}
 		accounts_.push_back(accountsObject);

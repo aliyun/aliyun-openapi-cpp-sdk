@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,144 +18,118 @@
 
 using AlibabaCloud::R_kvstore::Model::DescribeActiveOperationTaskRequest;
 
-DescribeActiveOperationTaskRequest::DescribeActiveOperationTaskRequest() :
-	RpcServiceRequest("r-kvstore", "2015-01-01", "DescribeActiveOperationTask")
-{
-	setMethod(HttpRequest::Method::Post);
+DescribeActiveOperationTaskRequest::DescribeActiveOperationTaskRequest()
+    : RpcServiceRequest("r-kvstore", "2015-01-01", "DescribeActiveOperationTask") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DescribeActiveOperationTaskRequest::~DescribeActiveOperationTaskRequest()
-{}
+DescribeActiveOperationTaskRequest::~DescribeActiveOperationTaskRequest() {}
 
-long DescribeActiveOperationTaskRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long DescribeActiveOperationTaskRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void DescribeActiveOperationTaskRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void DescribeActiveOperationTaskRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string DescribeActiveOperationTaskRequest::getProductId()const
-{
-	return productId_;
+std::string DescribeActiveOperationTaskRequest::getProductId() const {
+  return productId_;
 }
 
-void DescribeActiveOperationTaskRequest::setProductId(const std::string& productId)
-{
-	productId_ = productId;
-	setParameter("ProductId", productId);
+void DescribeActiveOperationTaskRequest::setProductId(const std::string &productId) {
+  productId_ = productId;
+  setParameter(std::string("ProductId"), productId);
 }
 
-int DescribeActiveOperationTaskRequest::getPageNumber()const
-{
-	return pageNumber_;
+int DescribeActiveOperationTaskRequest::getPageNumber() const {
+  return pageNumber_;
 }
 
-void DescribeActiveOperationTaskRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+void DescribeActiveOperationTaskRequest::setPageNumber(int pageNumber) {
+  pageNumber_ = pageNumber;
+  setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
-std::string DescribeActiveOperationTaskRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string DescribeActiveOperationTaskRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void DescribeActiveOperationTaskRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void DescribeActiveOperationTaskRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-int DescribeActiveOperationTaskRequest::getIsHistory()const
-{
-	return isHistory_;
+int DescribeActiveOperationTaskRequest::getIsHistory() const {
+  return isHistory_;
 }
 
-void DescribeActiveOperationTaskRequest::setIsHistory(int isHistory)
-{
-	isHistory_ = isHistory;
-	setParameter("IsHistory", std::to_string(isHistory));
+void DescribeActiveOperationTaskRequest::setIsHistory(int isHistory) {
+  isHistory_ = isHistory;
+  setParameter(std::string("IsHistory"), std::to_string(isHistory));
 }
 
-std::string DescribeActiveOperationTaskRequest::getSecurityToken()const
-{
-	return securityToken_;
+std::string DescribeActiveOperationTaskRequest::getSecurityToken() const {
+  return securityToken_;
 }
 
-void DescribeActiveOperationTaskRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+void DescribeActiveOperationTaskRequest::setSecurityToken(const std::string &securityToken) {
+  securityToken_ = securityToken;
+  setParameter(std::string("SecurityToken"), securityToken);
 }
 
-int DescribeActiveOperationTaskRequest::getPageSize()const
-{
-	return pageSize_;
+int DescribeActiveOperationTaskRequest::getPageSize() const {
+  return pageSize_;
 }
 
-void DescribeActiveOperationTaskRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+void DescribeActiveOperationTaskRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
-std::string DescribeActiveOperationTaskRequest::getTaskType()const
-{
-	return taskType_;
+std::string DescribeActiveOperationTaskRequest::getTaskType() const {
+  return taskType_;
 }
 
-void DescribeActiveOperationTaskRequest::setTaskType(const std::string& taskType)
-{
-	taskType_ = taskType;
-	setParameter("TaskType", taskType);
+void DescribeActiveOperationTaskRequest::setTaskType(const std::string &taskType) {
+  taskType_ = taskType;
+  setParameter(std::string("TaskType"), taskType);
 }
 
-std::string DescribeActiveOperationTaskRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string DescribeActiveOperationTaskRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void DescribeActiveOperationTaskRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void DescribeActiveOperationTaskRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string DescribeActiveOperationTaskRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string DescribeActiveOperationTaskRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void DescribeActiveOperationTaskRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void DescribeActiveOperationTaskRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-long DescribeActiveOperationTaskRequest::getOwnerId()const
-{
-	return ownerId_;
+long DescribeActiveOperationTaskRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void DescribeActiveOperationTaskRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void DescribeActiveOperationTaskRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string DescribeActiveOperationTaskRequest::getRegion()const
-{
-	return region_;
+std::string DescribeActiveOperationTaskRequest::getRegion() const {
+  return region_;
 }
 
-void DescribeActiveOperationTaskRequest::setRegion(const std::string& region)
-{
-	region_ = region;
-	setParameter("Region", region);
+void DescribeActiveOperationTaskRequest::setRegion(const std::string &region) {
+  region_ = region;
+  setParameter(std::string("Region"), region);
 }
 

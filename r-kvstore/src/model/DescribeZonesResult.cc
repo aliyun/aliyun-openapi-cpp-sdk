@@ -43,18 +43,18 @@ void DescribeZonesResult::parse(const std::string &payload)
 	for (auto valueZonesKVStoreZone : allZonesNode)
 	{
 		KVStoreZone zonesObject;
-		if(!valueZonesKVStoreZone["RegionId"].isNull())
-			zonesObject.regionId = valueZonesKVStoreZone["RegionId"].asString();
-		if(!valueZonesKVStoreZone["ZoneId"].isNull())
-			zonesObject.zoneId = valueZonesKVStoreZone["ZoneId"].asString();
-		if(!valueZonesKVStoreZone["ZoneName"].isNull())
-			zonesObject.zoneName = valueZonesKVStoreZone["ZoneName"].asString();
-		if(!valueZonesKVStoreZone["SwitchNetwork"].isNull())
-			zonesObject.switchNetwork = valueZonesKVStoreZone["SwitchNetwork"].asString() == "true";
 		if(!valueZonesKVStoreZone["IsRds"].isNull())
 			zonesObject.isRds = valueZonesKVStoreZone["IsRds"].asString() == "true";
+		if(!valueZonesKVStoreZone["ZoneId"].isNull())
+			zonesObject.zoneId = valueZonesKVStoreZone["ZoneId"].asString();
 		if(!valueZonesKVStoreZone["Disabled"].isNull())
 			zonesObject.disabled = valueZonesKVStoreZone["Disabled"].asString() == "true";
+		if(!valueZonesKVStoreZone["SwitchNetwork"].isNull())
+			zonesObject.switchNetwork = valueZonesKVStoreZone["SwitchNetwork"].asString() == "true";
+		if(!valueZonesKVStoreZone["ZoneName"].isNull())
+			zonesObject.zoneName = valueZonesKVStoreZone["ZoneName"].asString();
+		if(!valueZonesKVStoreZone["RegionId"].isNull())
+			zonesObject.regionId = valueZonesKVStoreZone["RegionId"].asString();
 		zones_.push_back(zonesObject);
 	}
 

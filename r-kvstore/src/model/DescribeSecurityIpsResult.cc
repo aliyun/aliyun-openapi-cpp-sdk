@@ -43,12 +43,12 @@ void DescribeSecurityIpsResult::parse(const std::string &payload)
 	for (auto valueSecurityIpGroupsSecurityIpGroup : allSecurityIpGroupsNode)
 	{
 		SecurityIpGroup securityIpGroupsObject;
-		if(!valueSecurityIpGroupsSecurityIpGroup["SecurityIpGroupName"].isNull())
-			securityIpGroupsObject.securityIpGroupName = valueSecurityIpGroupsSecurityIpGroup["SecurityIpGroupName"].asString();
 		if(!valueSecurityIpGroupsSecurityIpGroup["SecurityIpGroupAttribute"].isNull())
 			securityIpGroupsObject.securityIpGroupAttribute = valueSecurityIpGroupsSecurityIpGroup["SecurityIpGroupAttribute"].asString();
 		if(!valueSecurityIpGroupsSecurityIpGroup["SecurityIpList"].isNull())
 			securityIpGroupsObject.securityIpList = valueSecurityIpGroupsSecurityIpGroup["SecurityIpList"].asString();
+		if(!valueSecurityIpGroupsSecurityIpGroup["SecurityIpGroupName"].isNull())
+			securityIpGroupsObject.securityIpGroupName = valueSecurityIpGroupsSecurityIpGroup["SecurityIpGroupName"].asString();
 		securityIpGroups_.push_back(securityIpGroupsObject);
 	}
 

@@ -43,40 +43,40 @@ void DescribeSlowLogRecordsResult::parse(const std::string &payload)
 	for (auto valueItemsLogRecords : allItemsNode)
 	{
 		LogRecords itemsObject;
-		if(!valueItemsLogRecords["NodeId"].isNull())
-			itemsObject.nodeId = valueItemsLogRecords["NodeId"].asString();
-		if(!valueItemsLogRecords["IPAddress"].isNull())
-			itemsObject.iPAddress = valueItemsLogRecords["IPAddress"].asString();
-		if(!valueItemsLogRecords["DBName"].isNull())
-			itemsObject.dBName = valueItemsLogRecords["DBName"].asString();
-		if(!valueItemsLogRecords["DataBaseName"].isNull())
-			itemsObject.dataBaseName = valueItemsLogRecords["DataBaseName"].asString();
-		if(!valueItemsLogRecords["Command"].isNull())
-			itemsObject.command = valueItemsLogRecords["Command"].asString();
-		if(!valueItemsLogRecords["ElapsedTime"].isNull())
-			itemsObject.elapsedTime = std::stol(valueItemsLogRecords["ElapsedTime"].asString());
-		if(!valueItemsLogRecords["ExecuteTime"].isNull())
-			itemsObject.executeTime = valueItemsLogRecords["ExecuteTime"].asString();
 		if(!valueItemsLogRecords["Account"].isNull())
 			itemsObject.account = valueItemsLogRecords["Account"].asString();
+		if(!valueItemsLogRecords["ElapsedTime"].isNull())
+			itemsObject.elapsedTime = std::stol(valueItemsLogRecords["ElapsedTime"].asString());
+		if(!valueItemsLogRecords["Command"].isNull())
+			itemsObject.command = valueItemsLogRecords["Command"].asString();
+		if(!valueItemsLogRecords["DBName"].isNull())
+			itemsObject.dBName = valueItemsLogRecords["DBName"].asString();
+		if(!valueItemsLogRecords["ExecuteTime"].isNull())
+			itemsObject.executeTime = valueItemsLogRecords["ExecuteTime"].asString();
+		if(!valueItemsLogRecords["DataBaseName"].isNull())
+			itemsObject.dataBaseName = valueItemsLogRecords["DataBaseName"].asString();
+		if(!valueItemsLogRecords["NodeId"].isNull())
+			itemsObject.nodeId = valueItemsLogRecords["NodeId"].asString();
 		if(!valueItemsLogRecords["AccountName"].isNull())
 			itemsObject.accountName = valueItemsLogRecords["AccountName"].asString();
+		if(!valueItemsLogRecords["IPAddress"].isNull())
+			itemsObject.iPAddress = valueItemsLogRecords["IPAddress"].asString();
 		items_.push_back(itemsObject);
 	}
-	if(!value["InstanceId"].isNull())
-		instanceId_ = value["InstanceId"].asString();
 	if(!value["StartTime"].isNull())
 		startTime_ = value["StartTime"].asString();
-	if(!value["Engine"].isNull())
-		engine_ = value["Engine"].asString();
-	if(!value["TotalRecordCount"].isNull())
-		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["PageRecordCount"].isNull())
 		pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
+	if(!value["TotalRecordCount"].isNull())
+		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["InstanceId"].isNull())
+		instanceId_ = value["InstanceId"].asString();
+	if(!value["Engine"].isNull())
+		engine_ = value["Engine"].asString();
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
 
 }
 

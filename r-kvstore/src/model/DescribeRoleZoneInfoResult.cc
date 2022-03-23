@@ -43,40 +43,40 @@ void DescribeRoleZoneInfoResult::parse(const std::string &payload)
 	for (auto valueNodeNodeInfo : allNodeNode)
 	{
 		NodeInfo nodeObject;
-		if(!valueNodeNodeInfo["NodeId"].isNull())
-			nodeObject.nodeId = valueNodeNodeInfo["NodeId"].asString();
-		if(!valueNodeNodeInfo["NodeType"].isNull())
-			nodeObject.nodeType = valueNodeNodeInfo["NodeType"].asString();
-		if(!valueNodeNodeInfo["Role"].isNull())
-			nodeObject.role = valueNodeNodeInfo["Role"].asString();
-		if(!valueNodeNodeInfo["ZoneId"].isNull())
-			nodeObject.zoneId = valueNodeNodeInfo["ZoneId"].asString();
 		if(!valueNodeNodeInfo["CPUUsage"].isNull())
 			nodeObject.cPUUsage = valueNodeNodeInfo["CPUUsage"].asString();
-		if(!valueNodeNodeInfo["Connection"].isNull())
-			nodeObject.connection = std::stof(valueNodeNodeInfo["Connection"].asString());
-		if(!valueNodeNodeInfo["AvgRt"].isNull())
-			nodeObject.avgRt = std::stof(valueNodeNodeInfo["AvgRt"].asString());
-		if(!valueNodeNodeInfo["IntranetIn"].isNull())
-			nodeObject.intranetIn = std::stof(valueNodeNodeInfo["IntranetIn"].asString());
-		if(!valueNodeNodeInfo["IntranetOut"].isNull())
-			nodeObject.intranetOut = std::stof(valueNodeNodeInfo["IntranetOut"].asString());
-		if(!valueNodeNodeInfo["CustinsId"].isNull())
-			nodeObject.custinsId = valueNodeNodeInfo["CustinsId"].asString();
-		if(!valueNodeNodeInfo["InsType"].isNull())
-			nodeObject.insType = std::stoi(valueNodeNodeInfo["InsType"].asString());
-		if(!valueNodeNodeInfo["InsName"].isNull())
-			nodeObject.insName = valueNodeNodeInfo["InsName"].asString();
-		if(!valueNodeNodeInfo["IsLatestVersion"].isNull())
-			nodeObject.isLatestVersion = std::stoi(valueNodeNodeInfo["IsLatestVersion"].asString());
+		if(!valueNodeNodeInfo["DefaultBandWidth"].isNull())
+			nodeObject.defaultBandWidth = std::stol(valueNodeNodeInfo["DefaultBandWidth"].asString());
 		if(!valueNodeNodeInfo["CurrentMinorVersion"].isNull())
 			nodeObject.currentMinorVersion = valueNodeNodeInfo["CurrentMinorVersion"].asString();
 		if(!valueNodeNodeInfo["CurrentBandWidth"].isNull())
 			nodeObject.currentBandWidth = std::stol(valueNodeNodeInfo["CurrentBandWidth"].asString());
-		if(!valueNodeNodeInfo["DefaultBandWidth"].isNull())
-			nodeObject.defaultBandWidth = std::stol(valueNodeNodeInfo["DefaultBandWidth"].asString());
+		if(!valueNodeNodeInfo["InsType"].isNull())
+			nodeObject.insType = std::stoi(valueNodeNodeInfo["InsType"].asString());
+		if(!valueNodeNodeInfo["IntranetOut"].isNull())
+			nodeObject.intranetOut = std::stof(valueNodeNodeInfo["IntranetOut"].asString());
+		if(!valueNodeNodeInfo["IsLatestVersion"].isNull())
+			nodeObject.isLatestVersion = std::stoi(valueNodeNodeInfo["IsLatestVersion"].asString());
+		if(!valueNodeNodeInfo["Connection"].isNull())
+			nodeObject.connection = std::stof(valueNodeNodeInfo["Connection"].asString());
+		if(!valueNodeNodeInfo["InsName"].isNull())
+			nodeObject.insName = valueNodeNodeInfo["InsName"].asString();
+		if(!valueNodeNodeInfo["NodeType"].isNull())
+			nodeObject.nodeType = valueNodeNodeInfo["NodeType"].asString();
+		if(!valueNodeNodeInfo["IntranetIn"].isNull())
+			nodeObject.intranetIn = std::stof(valueNodeNodeInfo["IntranetIn"].asString());
+		if(!valueNodeNodeInfo["AvgRt"].isNull())
+			nodeObject.avgRt = std::stof(valueNodeNodeInfo["AvgRt"].asString());
+		if(!valueNodeNodeInfo["ZoneId"].isNull())
+			nodeObject.zoneId = valueNodeNodeInfo["ZoneId"].asString();
 		if(!valueNodeNodeInfo["IsOpenBandWidthService"].isNull())
 			nodeObject.isOpenBandWidthService = valueNodeNodeInfo["IsOpenBandWidthService"].asString() == "true";
+		if(!valueNodeNodeInfo["CustinsId"].isNull())
+			nodeObject.custinsId = valueNodeNodeInfo["CustinsId"].asString();
+		if(!valueNodeNodeInfo["Role"].isNull())
+			nodeObject.role = valueNodeNodeInfo["Role"].asString();
+		if(!valueNodeNodeInfo["NodeId"].isNull())
+			nodeObject.nodeId = valueNodeNodeInfo["NodeId"].asString();
 		node_.push_back(nodeObject);
 	}
 	if(!value["PageNumber"].isNull())

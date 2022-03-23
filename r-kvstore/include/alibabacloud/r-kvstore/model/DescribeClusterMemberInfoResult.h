@@ -36,8 +36,8 @@ namespace AlibabaCloud
 				{
 					struct Item
 					{
-						std::string role;
 						std::string status;
+						std::string role;
 						std::string zoneId;
 						std::string ip;
 						std::vector<std::string> ports;
@@ -51,8 +51,8 @@ namespace AlibabaCloud
 					std::string bizType;
 					int diskSizeMB;
 					int creator;
-					std::string name;
 					long currentBandWidth;
+					std::string name;
 					int binlogRetentionDays;
 					long bandWidth;
 					std::string classCode;
@@ -63,9 +63,9 @@ namespace AlibabaCloud
 					long id;
 					std::string lockReason;
 					int modifier;
-					int replicaSize;
-					std::string nickname;
 					std::string resourceGroupName;
+					std::string nickname;
+					int replicaSize;
 				};
 
 

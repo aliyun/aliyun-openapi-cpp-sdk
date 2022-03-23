@@ -43,28 +43,28 @@ void DescribeDBInstanceNetInfoResult::parse(const std::string &payload)
 	for (auto valueNetInfoItemsInstanceNetInfo : allNetInfoItemsNode)
 	{
 		InstanceNetInfo netInfoItemsObject;
-		if(!valueNetInfoItemsInstanceNetInfo["ConnectionString"].isNull())
-			netInfoItemsObject.connectionString = valueNetInfoItemsInstanceNetInfo["ConnectionString"].asString();
-		if(!valueNetInfoItemsInstanceNetInfo["IPAddress"].isNull())
-			netInfoItemsObject.iPAddress = valueNetInfoItemsInstanceNetInfo["IPAddress"].asString();
-		if(!valueNetInfoItemsInstanceNetInfo["Port"].isNull())
-			netInfoItemsObject.port = valueNetInfoItemsInstanceNetInfo["Port"].asString();
-		if(!valueNetInfoItemsInstanceNetInfo["VPCId"].isNull())
-			netInfoItemsObject.vPCId = valueNetInfoItemsInstanceNetInfo["VPCId"].asString();
+		if(!valueNetInfoItemsInstanceNetInfo["DirectConnection"].isNull())
+			netInfoItemsObject.directConnection = std::stoi(valueNetInfoItemsInstanceNetInfo["DirectConnection"].asString());
 		if(!valueNetInfoItemsInstanceNetInfo["VSwitchId"].isNull())
 			netInfoItemsObject.vSwitchId = valueNetInfoItemsInstanceNetInfo["VSwitchId"].asString();
 		if(!valueNetInfoItemsInstanceNetInfo["DBInstanceNetType"].isNull())
 			netInfoItemsObject.dBInstanceNetType = valueNetInfoItemsInstanceNetInfo["DBInstanceNetType"].asString();
-		if(!valueNetInfoItemsInstanceNetInfo["VPCInstanceId"].isNull())
-			netInfoItemsObject.vPCInstanceId = valueNetInfoItemsInstanceNetInfo["VPCInstanceId"].asString();
-		if(!valueNetInfoItemsInstanceNetInfo["IPType"].isNull())
-			netInfoItemsObject.iPType = valueNetInfoItemsInstanceNetInfo["IPType"].asString();
-		if(!valueNetInfoItemsInstanceNetInfo["ExpiredTime"].isNull())
-			netInfoItemsObject.expiredTime = valueNetInfoItemsInstanceNetInfo["ExpiredTime"].asString();
 		if(!valueNetInfoItemsInstanceNetInfo["Upgradeable"].isNull())
 			netInfoItemsObject.upgradeable = valueNetInfoItemsInstanceNetInfo["Upgradeable"].asString();
-		if(!valueNetInfoItemsInstanceNetInfo["DirectConnection"].isNull())
-			netInfoItemsObject.directConnection = std::stoi(valueNetInfoItemsInstanceNetInfo["DirectConnection"].asString());
+		if(!valueNetInfoItemsInstanceNetInfo["ExpiredTime"].isNull())
+			netInfoItemsObject.expiredTime = valueNetInfoItemsInstanceNetInfo["ExpiredTime"].asString();
+		if(!valueNetInfoItemsInstanceNetInfo["ConnectionString"].isNull())
+			netInfoItemsObject.connectionString = valueNetInfoItemsInstanceNetInfo["ConnectionString"].asString();
+		if(!valueNetInfoItemsInstanceNetInfo["IPType"].isNull())
+			netInfoItemsObject.iPType = valueNetInfoItemsInstanceNetInfo["IPType"].asString();
+		if(!valueNetInfoItemsInstanceNetInfo["VPCInstanceId"].isNull())
+			netInfoItemsObject.vPCInstanceId = valueNetInfoItemsInstanceNetInfo["VPCInstanceId"].asString();
+		if(!valueNetInfoItemsInstanceNetInfo["Port"].isNull())
+			netInfoItemsObject.port = valueNetInfoItemsInstanceNetInfo["Port"].asString();
+		if(!valueNetInfoItemsInstanceNetInfo["VPCId"].isNull())
+			netInfoItemsObject.vPCId = valueNetInfoItemsInstanceNetInfo["VPCId"].asString();
+		if(!valueNetInfoItemsInstanceNetInfo["IPAddress"].isNull())
+			netInfoItemsObject.iPAddress = valueNetInfoItemsInstanceNetInfo["IPAddress"].asString();
 		netInfoItems_.push_back(netInfoItemsObject);
 	}
 	if(!value["InstanceNetworkType"].isNull())

@@ -38,8 +38,8 @@ namespace AlibabaCloud
 					{
 						std::string instanceID;
 						std::string instanceStatus;
-						std::string globalInstanceId;
 						std::string instanceClass;
+						std::string globalInstanceId;
 						std::string regionId;
 					};
 					std::string status;

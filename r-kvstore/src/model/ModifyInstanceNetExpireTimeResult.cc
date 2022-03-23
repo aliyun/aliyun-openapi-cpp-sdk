@@ -43,14 +43,14 @@ void ModifyInstanceNetExpireTimeResult::parse(const std::string &payload)
 	for (auto valueNetInfoItemsNetInfoItem : allNetInfoItemsNode)
 	{
 		NetInfoItem netInfoItemsObject;
-		if(!valueNetInfoItemsNetInfoItem["DBInstanceNetType"].isNull())
-			netInfoItemsObject.dBInstanceNetType = valueNetInfoItemsNetInfoItem["DBInstanceNetType"].asString();
 		if(!valueNetInfoItemsNetInfoItem["Port"].isNull())
 			netInfoItemsObject.port = valueNetInfoItemsNetInfoItem["Port"].asString();
-		if(!valueNetInfoItemsNetInfoItem["ExpiredTime"].isNull())
-			netInfoItemsObject.expiredTime = valueNetInfoItemsNetInfoItem["ExpiredTime"].asString();
+		if(!valueNetInfoItemsNetInfoItem["DBInstanceNetType"].isNull())
+			netInfoItemsObject.dBInstanceNetType = valueNetInfoItemsNetInfoItem["DBInstanceNetType"].asString();
 		if(!valueNetInfoItemsNetInfoItem["ConnectionString"].isNull())
 			netInfoItemsObject.connectionString = valueNetInfoItemsNetInfoItem["ConnectionString"].asString();
+		if(!valueNetInfoItemsNetInfoItem["ExpiredTime"].isNull())
+			netInfoItemsObject.expiredTime = valueNetInfoItemsNetInfoItem["ExpiredTime"].asString();
 		if(!valueNetInfoItemsNetInfoItem["IPAddress"].isNull())
 			netInfoItemsObject.iPAddress = valueNetInfoItemsNetInfoItem["IPAddress"].asString();
 		netInfoItems_.push_back(netInfoItemsObject);

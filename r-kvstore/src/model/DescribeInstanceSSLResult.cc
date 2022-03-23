@@ -43,10 +43,10 @@ void DescribeInstanceSSLResult::parse(const std::string &payload)
 		instanceId_ = value["InstanceId"].asString();
 	if(!value["SSLEnabled"].isNull())
 		sSLEnabled_ = value["SSLEnabled"].asString();
-	if(!value["CertCommonName"].isNull())
-		certCommonName_ = value["CertCommonName"].asString();
 	if(!value["SSLExpiredTime"].isNull())
 		sSLExpiredTime_ = value["SSLExpiredTime"].asString();
+	if(!value["CertCommonName"].isNull())
+		certCommonName_ = value["CertCommonName"].asString();
 
 }
 

@@ -43,32 +43,32 @@ void DescribeLogicInstanceTopologyResult::parse(const std::string &payload)
 	for (auto valueRedisProxyListNodeInfo : allRedisProxyListNode)
 	{
 		NodeInfo redisProxyListObject;
-		if(!valueRedisProxyListNodeInfo["NodeId"].isNull())
-			redisProxyListObject.nodeId = valueRedisProxyListNodeInfo["NodeId"].asString();
-		if(!valueRedisProxyListNodeInfo["Connection"].isNull())
-			redisProxyListObject.connection = valueRedisProxyListNodeInfo["Connection"].asString();
-		if(!valueRedisProxyListNodeInfo["Bandwidth"].isNull())
-			redisProxyListObject.bandwidth = valueRedisProxyListNodeInfo["Bandwidth"].asString();
 		if(!valueRedisProxyListNodeInfo["Capacity"].isNull())
 			redisProxyListObject.capacity = valueRedisProxyListNodeInfo["Capacity"].asString();
+		if(!valueRedisProxyListNodeInfo["Connection"].isNull())
+			redisProxyListObject.connection = valueRedisProxyListNodeInfo["Connection"].asString();
 		if(!valueRedisProxyListNodeInfo["NodeType"].isNull())
 			redisProxyListObject.nodeType = valueRedisProxyListNodeInfo["NodeType"].asString();
+		if(!valueRedisProxyListNodeInfo["Bandwidth"].isNull())
+			redisProxyListObject.bandwidth = valueRedisProxyListNodeInfo["Bandwidth"].asString();
+		if(!valueRedisProxyListNodeInfo["NodeId"].isNull())
+			redisProxyListObject.nodeId = valueRedisProxyListNodeInfo["NodeId"].asString();
 		redisProxyList_.push_back(redisProxyListObject);
 	}
 	auto allRedisShardListNode = value["RedisShardList"]["NodeInfo"];
 	for (auto valueRedisShardListNodeInfo : allRedisShardListNode)
 	{
 		NodeInfo redisShardListObject;
-		if(!valueRedisShardListNodeInfo["NodeId"].isNull())
-			redisShardListObject.nodeId = valueRedisShardListNodeInfo["NodeId"].asString();
-		if(!valueRedisShardListNodeInfo["Connection"].isNull())
-			redisShardListObject.connection = valueRedisShardListNodeInfo["Connection"].asString();
-		if(!valueRedisShardListNodeInfo["Bandwidth"].isNull())
-			redisShardListObject.bandwidth = valueRedisShardListNodeInfo["Bandwidth"].asString();
 		if(!valueRedisShardListNodeInfo["Capacity"].isNull())
 			redisShardListObject.capacity = valueRedisShardListNodeInfo["Capacity"].asString();
+		if(!valueRedisShardListNodeInfo["Connection"].isNull())
+			redisShardListObject.connection = valueRedisShardListNodeInfo["Connection"].asString();
 		if(!valueRedisShardListNodeInfo["NodeType"].isNull())
 			redisShardListObject.nodeType = valueRedisShardListNodeInfo["NodeType"].asString();
+		if(!valueRedisShardListNodeInfo["Bandwidth"].isNull())
+			redisShardListObject.bandwidth = valueRedisShardListNodeInfo["Bandwidth"].asString();
+		if(!valueRedisShardListNodeInfo["NodeId"].isNull())
+			redisShardListObject.nodeId = valueRedisShardListNodeInfo["NodeId"].asString();
 		redisShardList_.push_back(redisShardListObject);
 	}
 	if(!value["InstanceId"].isNull())

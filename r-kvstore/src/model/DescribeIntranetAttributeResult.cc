@@ -39,14 +39,14 @@ void DescribeIntranetAttributeResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["IntranetBandwidth"].isNull())
-		intranetBandwidth_ = std::stoi(value["IntranetBandwidth"].asString());
-	if(!value["ExpireTime"].isNull())
-		expireTime_ = value["ExpireTime"].asString();
 	if(!value["BandwidthExpireTime"].isNull())
 		bandwidthExpireTime_ = value["BandwidthExpireTime"].asString();
 	if(!value["AutoRenewal"].isNull())
 		autoRenewal_ = value["AutoRenewal"].asString() == "true";
+	if(!value["ExpireTime"].isNull())
+		expireTime_ = value["ExpireTime"].asString();
+	if(!value["IntranetBandwidth"].isNull())
+		intranetBandwidth_ = std::stoi(value["IntranetBandwidth"].asString());
 
 }
 

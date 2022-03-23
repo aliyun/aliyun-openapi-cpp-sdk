@@ -45,42 +45,37 @@ void DescribeAuditRecordsResult::parse(const std::string &payload)
 		SQL itemsObject;
 		if(!valueItemsSQL["HostAddress"].isNull())
 			itemsObject.hostAddress = valueItemsSQL["HostAddress"].asString();
-		if(!valueItemsSQL["DatabaseName"].isNull())
-			itemsObject.databaseName = valueItemsSQL["DatabaseName"].asString();
-		if(!valueItemsSQL["IPAddress"].isNull())
-			itemsObject.iPAddress = valueItemsSQL["IPAddress"].asString();
 		if(!valueItemsSQL["SQLText"].isNull())
 			itemsObject.sQLText = valueItemsSQL["SQLText"].asString();
+		if(!valueItemsSQL["DatabaseName"].isNull())
+			itemsObject.databaseName = valueItemsSQL["DatabaseName"].asString();
 		if(!valueItemsSQL["SQLType"].isNull())
 			itemsObject.sQLType = valueItemsSQL["SQLType"].asString();
-		if(!valueItemsSQL["TotalExecutionTimes"].isNull())
-			itemsObject.totalExecutionTimes = valueItemsSQL["TotalExecutionTimes"].asString();
 		if(!valueItemsSQL["ExecuteTime"].isNull())
 			itemsObject.executeTime = valueItemsSQL["ExecuteTime"].asString();
-		if(!valueItemsSQL["AccountName"].isNull())
-			itemsObject.accountName = valueItemsSQL["AccountName"].asString();
+		if(!valueItemsSQL["TotalExecutionTimes"].isNull())
+			itemsObject.totalExecutionTimes = valueItemsSQL["TotalExecutionTimes"].asString();
 		if(!valueItemsSQL["NodeId"].isNull())
 			itemsObject.nodeId = valueItemsSQL["NodeId"].asString();
+		if(!valueItemsSQL["AccountName"].isNull())
+			itemsObject.accountName = valueItemsSQL["AccountName"].asString();
+		if(!valueItemsSQL["IPAddress"].isNull())
+			itemsObject.iPAddress = valueItemsSQL["IPAddress"].asString();
 		items_.push_back(itemsObject);
 	}
+	if(!value["EndTime"].isNull())
+		endTime_ = value["EndTime"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
+	if(!value["InstanceName"].isNull())
+		instanceName_ = value["InstanceName"].asString();
+	if(!value["TotalRecordCount"].isNull())
+		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
 	if(!value["PageNumber"].isNull())
 		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
-	if(!value["TotalRecordCount"].isNull())
-		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
-	if(!value["InstanceName"].isNull())
-		instanceName_ = value["InstanceName"].asString();
-	if(!value["StartTime"].isNull())
-		startTime_ = value["StartTime"].asString();
-	if(!value["EndTime"].isNull())
-		endTime_ = value["EndTime"].asString();
 
-}
-
-int DescribeAuditRecordsResult::getTotalRecordCount()const
-{
-	return totalRecordCount_;
 }
 
 std::string DescribeAuditRecordsResult::getInstanceName()const
@@ -88,14 +83,19 @@ std::string DescribeAuditRecordsResult::getInstanceName()const
 	return instanceName_;
 }
 
-int DescribeAuditRecordsResult::getPageSize()const
+int DescribeAuditRecordsResult::getTotalRecordCount()const
 {
-	return pageSize_;
+	return totalRecordCount_;
 }
 
 std::string DescribeAuditRecordsResult::getEndTime()const
 {
 	return endTime_;
+}
+
+int DescribeAuditRecordsResult::getPageSize()const
+{
+	return pageSize_;
 }
 
 int DescribeAuditRecordsResult::getPageNumber()const

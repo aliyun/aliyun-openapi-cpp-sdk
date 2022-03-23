@@ -39,8 +39,8 @@ namespace AlibabaCloud
 					std::string nodeId;
 					std::string totalExecutionTimes;
 					std::string hostAddress;
-					std::string iPAddress;
 					std::string sQLType;
+					std::string iPAddress;
 					std::string sQLText;
 					std::string accountName;
 				};
@@ -49,10 +49,10 @@ namespace AlibabaCloud
 				DescribeAuditRecordsResult();
 				explicit DescribeAuditRecordsResult(const std::string &payload);
 				~DescribeAuditRecordsResult();
-				int getTotalRecordCount()const;
 				std::string getInstanceName()const;
-				int getPageSize()const;
+				int getTotalRecordCount()const;
 				std::string getEndTime()const;
+				int getPageSize()const;
 				int getPageNumber()const;
 				std::string getStartTime()const;
 				std::vector<SQL> getItems()const;
@@ -60,10 +60,10 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int totalRecordCount_;
 				std::string instanceName_;
-				int pageSize_;
+				int totalRecordCount_;
 				std::string endTime_;
+				int pageSize_;
 				int pageNumber_;
 				std::string startTime_;
 				std::vector<SQL> items_;

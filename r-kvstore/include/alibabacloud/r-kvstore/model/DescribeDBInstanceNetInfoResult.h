@@ -36,11 +36,11 @@ namespace AlibabaCloud
 				{
 					std::string iPType;
 					std::string vPCInstanceId;
-					std::string vPCId;
 					std::string dBInstanceNetType;
-					std::string port;
+					std::string vPCId;
 					std::string vSwitchId;
 					std::string expiredTime;
+					std::string port;
 					int directConnection;
 					std::string upgradeable;
 					std::string connectionString;

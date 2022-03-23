@@ -43,32 +43,32 @@ void DescribeBackupsResult::parse(const std::string &payload)
 	for (auto valueBackupsBackup : allBackupsNode)
 	{
 		Backup backupsObject;
-		if(!valueBackupsBackup["BackupId"].isNull())
-			backupsObject.backupId = std::stoi(valueBackupsBackup["BackupId"].asString());
-		if(!valueBackupsBackup["BackupDBNames"].isNull())
-			backupsObject.backupDBNames = valueBackupsBackup["BackupDBNames"].asString();
 		if(!valueBackupsBackup["BackupStatus"].isNull())
 			backupsObject.backupStatus = valueBackupsBackup["BackupStatus"].asString();
 		if(!valueBackupsBackup["BackupStartTime"].isNull())
 			backupsObject.backupStartTime = valueBackupsBackup["BackupStartTime"].asString();
-		if(!valueBackupsBackup["BackupEndTime"].isNull())
-			backupsObject.backupEndTime = valueBackupsBackup["BackupEndTime"].asString();
 		if(!valueBackupsBackup["BackupType"].isNull())
 			backupsObject.backupType = valueBackupsBackup["BackupType"].asString();
+		if(!valueBackupsBackup["BackupDownloadURL"].isNull())
+			backupsObject.backupDownloadURL = valueBackupsBackup["BackupDownloadURL"].asString();
+		if(!valueBackupsBackup["NodeInstanceId"].isNull())
+			backupsObject.nodeInstanceId = valueBackupsBackup["NodeInstanceId"].asString();
+		if(!valueBackupsBackup["BackupEndTime"].isNull())
+			backupsObject.backupEndTime = valueBackupsBackup["BackupEndTime"].asString();
+		if(!valueBackupsBackup["BackupId"].isNull())
+			backupsObject.backupId = std::stoi(valueBackupsBackup["BackupId"].asString());
+		if(!valueBackupsBackup["BackupDBNames"].isNull())
+			backupsObject.backupDBNames = valueBackupsBackup["BackupDBNames"].asString();
+		if(!valueBackupsBackup["EngineVersion"].isNull())
+			backupsObject.engineVersion = valueBackupsBackup["EngineVersion"].asString();
+		if(!valueBackupsBackup["BackupIntranetDownloadURL"].isNull())
+			backupsObject.backupIntranetDownloadURL = valueBackupsBackup["BackupIntranetDownloadURL"].asString();
+		if(!valueBackupsBackup["BackupSize"].isNull())
+			backupsObject.backupSize = std::stol(valueBackupsBackup["BackupSize"].asString());
 		if(!valueBackupsBackup["BackupMode"].isNull())
 			backupsObject.backupMode = valueBackupsBackup["BackupMode"].asString();
 		if(!valueBackupsBackup["BackupMethod"].isNull())
 			backupsObject.backupMethod = valueBackupsBackup["BackupMethod"].asString();
-		if(!valueBackupsBackup["BackupDownloadURL"].isNull())
-			backupsObject.backupDownloadURL = valueBackupsBackup["BackupDownloadURL"].asString();
-		if(!valueBackupsBackup["BackupSize"].isNull())
-			backupsObject.backupSize = std::stol(valueBackupsBackup["BackupSize"].asString());
-		if(!valueBackupsBackup["EngineVersion"].isNull())
-			backupsObject.engineVersion = valueBackupsBackup["EngineVersion"].asString();
-		if(!valueBackupsBackup["NodeInstanceId"].isNull())
-			backupsObject.nodeInstanceId = valueBackupsBackup["NodeInstanceId"].asString();
-		if(!valueBackupsBackup["BackupIntranetDownloadURL"].isNull())
-			backupsObject.backupIntranetDownloadURL = valueBackupsBackup["BackupIntranetDownloadURL"].asString();
 		backups_.push_back(backupsObject);
 	}
 	if(!value["PageNumber"].isNull())

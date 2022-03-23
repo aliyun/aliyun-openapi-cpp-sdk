@@ -37,12 +37,12 @@ namespace AlibabaCloud
 					std::string status;
 					std::string stepProgressInfo;
 					float progress;
-					std::string taskId;
 					int remain;
+					std::string taskId;
 					std::string finishTime;
-					std::string taskAction;
 					std::string stepsInfo;
 					std::string currentStepName;
+					std::string taskAction;
 					std::string beginTime;
 				};
 

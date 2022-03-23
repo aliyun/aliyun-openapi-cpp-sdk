@@ -49,26 +49,26 @@ void DescribeCacheAnalysisReportListResult::parse(const std::string &payload)
 		for (auto valueDailyTasksDailyTaskTasksTask : allTasksNode)
 		{
 			DailyTask::Task tasksObject;
+			if(!valueDailyTasksDailyTaskTasksTask["Status"].isNull())
+				tasksObject.status = valueDailyTasksDailyTaskTasksTask["Status"].asString();
+			if(!valueDailyTasksDailyTaskTasksTask["StartTime"].isNull())
+				tasksObject.startTime = valueDailyTasksDailyTaskTasksTask["StartTime"].asString();
 			if(!valueDailyTasksDailyTaskTasksTask["TaskId"].isNull())
 				tasksObject.taskId = valueDailyTasksDailyTaskTasksTask["TaskId"].asString();
 			if(!valueDailyTasksDailyTaskTasksTask["NodeId"].isNull())
 				tasksObject.nodeId = valueDailyTasksDailyTaskTasksTask["NodeId"].asString();
-			if(!valueDailyTasksDailyTaskTasksTask["StartTime"].isNull())
-				tasksObject.startTime = valueDailyTasksDailyTaskTasksTask["StartTime"].asString();
-			if(!valueDailyTasksDailyTaskTasksTask["Status"].isNull())
-				tasksObject.status = valueDailyTasksDailyTaskTasksTask["Status"].asString();
 			dailyTasksObject.tasks.push_back(tasksObject);
 		}
 		dailyTasks_.push_back(dailyTasksObject);
 	}
 	if(!value["InstanceId"].isNull())
 		instanceId_ = value["InstanceId"].asString();
-	if(!value["TotalRecordCount"].isNull())
-		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
-	if(!value["PageNumbers"].isNull())
-		pageNumbers_ = std::stoi(value["PageNumbers"].asString());
 	if(!value["PageRecordCount"].isNull())
 		pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
+	if(!value["PageNumbers"].isNull())
+		pageNumbers_ = std::stoi(value["PageNumbers"].asString());
+	if(!value["TotalRecordCount"].isNull())
+		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
 
 }
 

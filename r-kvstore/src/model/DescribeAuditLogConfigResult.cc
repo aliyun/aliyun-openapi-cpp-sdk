@@ -39,10 +39,10 @@ void DescribeAuditLogConfigResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["DbAudit"].isNull())
-		dbAudit_ = value["DbAudit"].asString();
 	if(!value["Retention"].isNull())
 		retention_ = value["Retention"].asString();
+	if(!value["DbAudit"].isNull())
+		dbAudit_ = value["DbAudit"].asString();
 
 }
 

@@ -41,12 +41,12 @@ void DescribeBackupPolicyResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["BackupRetentionPeriod"].isNull())
 		backupRetentionPeriod_ = value["BackupRetentionPeriod"].asString();
-	if(!value["PreferredBackupTime"].isNull())
-		preferredBackupTime_ = value["PreferredBackupTime"].asString();
 	if(!value["PreferredBackupPeriod"].isNull())
 		preferredBackupPeriod_ = value["PreferredBackupPeriod"].asString();
 	if(!value["PreferredNextBackupTime"].isNull())
 		preferredNextBackupTime_ = value["PreferredNextBackupTime"].asString();
+	if(!value["PreferredBackupTime"].isNull())
+		preferredBackupTime_ = value["PreferredBackupTime"].asString();
 	if(!value["EnableBackupLog"].isNull())
 		enableBackupLog_ = std::stoi(value["EnableBackupLog"].asString());
 

@@ -39,17 +39,17 @@ namespace AlibabaCloud
 					std::string cPUUsage;
 					float intranetOut;
 					std::string insName;
-					float intranetIn;
 					long currentBandWidth;
-					std::string role;
+					float intranetIn;
 					int insType;
+					std::string role;
 					int isLatestVersion;
 					std::string nodeType;
 					bool isOpenBandWidthService;
-					std::string nodeId;
 					std::string currentMinorVersion;
-					std::string custinsId;
+					std::string nodeId;
 					long defaultBandWidth;
+					std::string custinsId;
 					float avgRt;
 				};
 
