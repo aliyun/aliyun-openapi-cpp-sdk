@@ -14,59 +14,58 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/dms-enterprise/model/CreateDataExportOrderResult.h>
+#include <alibabacloud/dms-enterprise/model/ReDeployLhDagVersionResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Dms_enterprise;
 using namespace AlibabaCloud::Dms_enterprise::Model;
 
-CreateDataExportOrderResult::CreateDataExportOrderResult() :
+ReDeployLhDagVersionResult::ReDeployLhDagVersionResult() :
 	ServiceResult()
 {}
 
-CreateDataExportOrderResult::CreateDataExportOrderResult(const std::string &payload) :
+ReDeployLhDagVersionResult::ReDeployLhDagVersionResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-CreateDataExportOrderResult::~CreateDataExportOrderResult()
+ReDeployLhDagVersionResult::~ReDeployLhDagVersionResult()
 {}
 
-void CreateDataExportOrderResult::parse(const std::string &payload)
+void ReDeployLhDagVersionResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allCreateOrderResult = value["CreateOrderResult"]["OrderIds"];
-	for (const auto &item : allCreateOrderResult)
-		createOrderResult_.push_back(item.asString());
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = value["ErrorCode"].asString();
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
+	if(!value["DeployId"].isNull())
+		deployId_ = std::stol(value["DeployId"].asString());
 
 }
 
-std::vector<std::string> CreateDataExportOrderResult::getCreateOrderResult()const
+long ReDeployLhDagVersionResult::getDeployId()const
 {
-	return createOrderResult_;
+	return deployId_;
 }
 
-std::string CreateDataExportOrderResult::getErrorCode()const
+std::string ReDeployLhDagVersionResult::getErrorCode()const
 {
 	return errorCode_;
 }
 
-std::string CreateDataExportOrderResult::getErrorMessage()const
+std::string ReDeployLhDagVersionResult::getErrorMessage()const
 {
 	return errorMessage_;
 }
 
-bool CreateDataExportOrderResult::getSuccess()const
+bool ReDeployLhDagVersionResult::getSuccess()const
 {
 	return success_;
 }

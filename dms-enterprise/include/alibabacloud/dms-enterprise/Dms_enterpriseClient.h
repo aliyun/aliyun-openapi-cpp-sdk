@@ -30,14 +30,14 @@
 #include "model/ApproveOrderResult.h"
 #include "model/ChangeColumnSecLevelRequest.h"
 #include "model/ChangeColumnSecLevelResult.h"
+#include "model/ChangeLhDagOwnerRequest.h"
+#include "model/ChangeLhDagOwnerResult.h"
 #include "model/CloseOrderRequest.h"
 #include "model/CloseOrderResult.h"
 #include "model/CreateDataCorrectOrderRequest.h"
 #include "model/CreateDataCorrectOrderResult.h"
 #include "model/CreateDataCronClearOrderRequest.h"
 #include "model/CreateDataCronClearOrderResult.h"
-#include "model/CreateDataExportOrderRequest.h"
-#include "model/CreateDataExportOrderResult.h"
 #include "model/CreateDataImportOrderRequest.h"
 #include "model/CreateDataImportOrderResult.h"
 #include "model/CreateFreeLockCorrectOrderRequest.h"
@@ -226,6 +226,8 @@
 #include "model/ModifyDataCorrectExecSQLResult.h"
 #include "model/PauseDataCorrectSQLJobRequest.h"
 #include "model/PauseDataCorrectSQLJobResult.h"
+#include "model/ReDeployLhDagVersionRequest.h"
+#include "model/ReDeployLhDagVersionResult.h"
 #include "model/RegisterInstanceRequest.h"
 #include "model/RegisterInstanceResult.h"
 #include "model/RegisterUserRequest.h"
@@ -275,6 +277,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ChangeColumnSecLevelResult> ChangeColumnSecLevelOutcome;
 			typedef std::future<ChangeColumnSecLevelOutcome> ChangeColumnSecLevelOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::ChangeColumnSecLevelRequest&, const ChangeColumnSecLevelOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ChangeColumnSecLevelAsyncHandler;
+			typedef Outcome<Error, Model::ChangeLhDagOwnerResult> ChangeLhDagOwnerOutcome;
+			typedef std::future<ChangeLhDagOwnerOutcome> ChangeLhDagOwnerOutcomeCallable;
+			typedef std::function<void(const Dms_enterpriseClient*, const Model::ChangeLhDagOwnerRequest&, const ChangeLhDagOwnerOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ChangeLhDagOwnerAsyncHandler;
 			typedef Outcome<Error, Model::CloseOrderResult> CloseOrderOutcome;
 			typedef std::future<CloseOrderOutcome> CloseOrderOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::CloseOrderRequest&, const CloseOrderOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CloseOrderAsyncHandler;
@@ -284,9 +289,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateDataCronClearOrderResult> CreateDataCronClearOrderOutcome;
 			typedef std::future<CreateDataCronClearOrderOutcome> CreateDataCronClearOrderOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::CreateDataCronClearOrderRequest&, const CreateDataCronClearOrderOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDataCronClearOrderAsyncHandler;
-			typedef Outcome<Error, Model::CreateDataExportOrderResult> CreateDataExportOrderOutcome;
-			typedef std::future<CreateDataExportOrderOutcome> CreateDataExportOrderOutcomeCallable;
-			typedef std::function<void(const Dms_enterpriseClient*, const Model::CreateDataExportOrderRequest&, const CreateDataExportOrderOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDataExportOrderAsyncHandler;
 			typedef Outcome<Error, Model::CreateDataImportOrderResult> CreateDataImportOrderOutcome;
 			typedef std::future<CreateDataImportOrderOutcome> CreateDataImportOrderOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::CreateDataImportOrderRequest&, const CreateDataImportOrderOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDataImportOrderAsyncHandler;
@@ -569,6 +571,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::PauseDataCorrectSQLJobResult> PauseDataCorrectSQLJobOutcome;
 			typedef std::future<PauseDataCorrectSQLJobOutcome> PauseDataCorrectSQLJobOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::PauseDataCorrectSQLJobRequest&, const PauseDataCorrectSQLJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PauseDataCorrectSQLJobAsyncHandler;
+			typedef Outcome<Error, Model::ReDeployLhDagVersionResult> ReDeployLhDagVersionOutcome;
+			typedef std::future<ReDeployLhDagVersionOutcome> ReDeployLhDagVersionOutcomeCallable;
+			typedef std::function<void(const Dms_enterpriseClient*, const Model::ReDeployLhDagVersionRequest&, const ReDeployLhDagVersionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ReDeployLhDagVersionAsyncHandler;
 			typedef Outcome<Error, Model::RegisterInstanceResult> RegisterInstanceOutcome;
 			typedef std::future<RegisterInstanceOutcome> RegisterInstanceOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::RegisterInstanceRequest&, const RegisterInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RegisterInstanceAsyncHandler;
@@ -628,6 +633,9 @@ namespace AlibabaCloud
 			ChangeColumnSecLevelOutcome changeColumnSecLevel(const Model::ChangeColumnSecLevelRequest &request)const;
 			void changeColumnSecLevelAsync(const Model::ChangeColumnSecLevelRequest& request, const ChangeColumnSecLevelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ChangeColumnSecLevelOutcomeCallable changeColumnSecLevelCallable(const Model::ChangeColumnSecLevelRequest& request) const;
+			ChangeLhDagOwnerOutcome changeLhDagOwner(const Model::ChangeLhDagOwnerRequest &request)const;
+			void changeLhDagOwnerAsync(const Model::ChangeLhDagOwnerRequest& request, const ChangeLhDagOwnerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ChangeLhDagOwnerOutcomeCallable changeLhDagOwnerCallable(const Model::ChangeLhDagOwnerRequest& request) const;
 			CloseOrderOutcome closeOrder(const Model::CloseOrderRequest &request)const;
 			void closeOrderAsync(const Model::CloseOrderRequest& request, const CloseOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CloseOrderOutcomeCallable closeOrderCallable(const Model::CloseOrderRequest& request) const;
@@ -637,9 +645,6 @@ namespace AlibabaCloud
 			CreateDataCronClearOrderOutcome createDataCronClearOrder(const Model::CreateDataCronClearOrderRequest &request)const;
 			void createDataCronClearOrderAsync(const Model::CreateDataCronClearOrderRequest& request, const CreateDataCronClearOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateDataCronClearOrderOutcomeCallable createDataCronClearOrderCallable(const Model::CreateDataCronClearOrderRequest& request) const;
-			CreateDataExportOrderOutcome createDataExportOrder(const Model::CreateDataExportOrderRequest &request)const;
-			void createDataExportOrderAsync(const Model::CreateDataExportOrderRequest& request, const CreateDataExportOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CreateDataExportOrderOutcomeCallable createDataExportOrderCallable(const Model::CreateDataExportOrderRequest& request) const;
 			CreateDataImportOrderOutcome createDataImportOrder(const Model::CreateDataImportOrderRequest &request)const;
 			void createDataImportOrderAsync(const Model::CreateDataImportOrderRequest& request, const CreateDataImportOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateDataImportOrderOutcomeCallable createDataImportOrderCallable(const Model::CreateDataImportOrderRequest& request) const;
@@ -922,6 +927,9 @@ namespace AlibabaCloud
 			PauseDataCorrectSQLJobOutcome pauseDataCorrectSQLJob(const Model::PauseDataCorrectSQLJobRequest &request)const;
 			void pauseDataCorrectSQLJobAsync(const Model::PauseDataCorrectSQLJobRequest& request, const PauseDataCorrectSQLJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			PauseDataCorrectSQLJobOutcomeCallable pauseDataCorrectSQLJobCallable(const Model::PauseDataCorrectSQLJobRequest& request) const;
+			ReDeployLhDagVersionOutcome reDeployLhDagVersion(const Model::ReDeployLhDagVersionRequest &request)const;
+			void reDeployLhDagVersionAsync(const Model::ReDeployLhDagVersionRequest& request, const ReDeployLhDagVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ReDeployLhDagVersionOutcomeCallable reDeployLhDagVersionCallable(const Model::ReDeployLhDagVersionRequest& request) const;
 			RegisterInstanceOutcome registerInstance(const Model::RegisterInstanceRequest &request)const;
 			void registerInstanceAsync(const Model::RegisterInstanceRequest& request, const RegisterInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RegisterInstanceOutcomeCallable registerInstanceCallable(const Model::RegisterInstanceRequest& request) const;

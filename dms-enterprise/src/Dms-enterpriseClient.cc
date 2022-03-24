@@ -195,6 +195,42 @@ Dms_enterpriseClient::ChangeColumnSecLevelOutcomeCallable Dms_enterpriseClient::
 	return task->get_future();
 }
 
+Dms_enterpriseClient::ChangeLhDagOwnerOutcome Dms_enterpriseClient::changeLhDagOwner(const ChangeLhDagOwnerRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ChangeLhDagOwnerOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ChangeLhDagOwnerOutcome(ChangeLhDagOwnerResult(outcome.result()));
+	else
+		return ChangeLhDagOwnerOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::changeLhDagOwnerAsync(const ChangeLhDagOwnerRequest& request, const ChangeLhDagOwnerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, changeLhDagOwner(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::ChangeLhDagOwnerOutcomeCallable Dms_enterpriseClient::changeLhDagOwnerCallable(const ChangeLhDagOwnerRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ChangeLhDagOwnerOutcome()>>(
+			[this, request]()
+			{
+			return this->changeLhDagOwner(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dms_enterpriseClient::CloseOrderOutcome Dms_enterpriseClient::closeOrder(const CloseOrderRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -297,42 +333,6 @@ Dms_enterpriseClient::CreateDataCronClearOrderOutcomeCallable Dms_enterpriseClie
 			[this, request]()
 			{
 			return this->createDataCronClearOrder(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-Dms_enterpriseClient::CreateDataExportOrderOutcome Dms_enterpriseClient::createDataExportOrder(const CreateDataExportOrderRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateDataExportOrderOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateDataExportOrderOutcome(CreateDataExportOrderResult(outcome.result()));
-	else
-		return CreateDataExportOrderOutcome(outcome.error());
-}
-
-void Dms_enterpriseClient::createDataExportOrderAsync(const CreateDataExportOrderRequest& request, const CreateDataExportOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createDataExportOrder(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Dms_enterpriseClient::CreateDataExportOrderOutcomeCallable Dms_enterpriseClient::createDataExportOrderCallable(const CreateDataExportOrderRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateDataExportOrderOutcome()>>(
-			[this, request]()
-			{
-			return this->createDataExportOrder(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3717,6 +3717,42 @@ Dms_enterpriseClient::PauseDataCorrectSQLJobOutcomeCallable Dms_enterpriseClient
 			[this, request]()
 			{
 			return this->pauseDataCorrectSQLJob(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::ReDeployLhDagVersionOutcome Dms_enterpriseClient::reDeployLhDagVersion(const ReDeployLhDagVersionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ReDeployLhDagVersionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ReDeployLhDagVersionOutcome(ReDeployLhDagVersionResult(outcome.result()));
+	else
+		return ReDeployLhDagVersionOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::reDeployLhDagVersionAsync(const ReDeployLhDagVersionRequest& request, const ReDeployLhDagVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, reDeployLhDagVersion(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::ReDeployLhDagVersionOutcomeCallable Dms_enterpriseClient::reDeployLhDagVersionCallable(const ReDeployLhDagVersionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ReDeployLhDagVersionOutcome()>>(
+			[this, request]()
+			{
+			return this->reDeployLhDagVersion(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

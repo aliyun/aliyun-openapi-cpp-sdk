@@ -39,82 +39,87 @@ void ListLhTaskFlowAndScenarioResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allRawDAGListNode = value["RawDAGList"]["dag"];
-	for (auto valueRawDAGListdag : allRawDAGListNode)
+	auto allRawDAGListNode = value["RawDAGList"]["Dag"];
+	for (auto valueRawDAGListDag : allRawDAGListNode)
 	{
 		Dag rawDAGListObject;
-		if(!valueRawDAGListdag["Id"].isNull())
-			rawDAGListObject.id = std::stol(valueRawDAGListdag["Id"].asString());
-		if(!valueRawDAGListdag["CreatorId"].isNull())
-			rawDAGListObject.creatorId = valueRawDAGListdag["CreatorId"].asString();
-		if(!valueRawDAGListdag["IsDeleted"].isNull())
-			rawDAGListObject.isDeleted = valueRawDAGListdag["IsDeleted"].asString() == "true";
-		if(!valueRawDAGListdag["DemoId"].isNull())
-			rawDAGListObject.demoId = valueRawDAGListdag["DemoId"].asString();
-		if(!valueRawDAGListdag["DeployId"].isNull())
-			rawDAGListObject.deployId = std::stol(valueRawDAGListdag["DeployId"].asString());
-		if(!valueRawDAGListdag["DataFlowId"].isNull())
-			rawDAGListObject.dataFlowId = std::stol(valueRawDAGListdag["DataFlowId"].asString());
-		if(!valueRawDAGListdag["ScenarioId"].isNull())
-			rawDAGListObject.scenarioId = std::stol(valueRawDAGListdag["ScenarioId"].asString());
-		if(!valueRawDAGListdag["SpaceId"].isNull())
-			rawDAGListObject.spaceId = std::stol(valueRawDAGListdag["SpaceId"].asString());
-		if(!valueRawDAGListdag["CreatorNickName"].isNull())
-			rawDAGListObject.creatorNickName = valueRawDAGListdag["CreatorNickName"].asString();
-		if(!valueRawDAGListdag["DagOwnerNickName"].isNull())
-			rawDAGListObject.dagOwnerNickName = valueRawDAGListdag["DagOwnerNickName"].asString();
-		if(!valueRawDAGListdag["CanEdit"].isNull())
-			rawDAGListObject.canEdit = valueRawDAGListdag["CanEdit"].asString() == "true";
-		if(!valueRawDAGListdag["Status"].isNull())
-			rawDAGListObject.status = std::stoi(valueRawDAGListdag["Status"].asString());
-		if(!valueRawDAGListdag["LatestInstanceStatus"].isNull())
-			rawDAGListObject.latestInstanceStatus = std::stoi(valueRawDAGListdag["LatestInstanceStatus"].asString());
-		if(!valueRawDAGListdag["LatestInstanceTime"].isNull())
-			rawDAGListObject.latestInstanceTime = std::stoi(valueRawDAGListdag["LatestInstanceTime"].asString());
+		if(!valueRawDAGListDag["Id"].isNull())
+			rawDAGListObject.id = std::stol(valueRawDAGListDag["Id"].asString());
+		if(!valueRawDAGListDag["CreatorId"].isNull())
+			rawDAGListObject.creatorId = valueRawDAGListDag["CreatorId"].asString();
+		if(!valueRawDAGListDag["IsDeleted"].isNull())
+			rawDAGListObject.isDeleted = valueRawDAGListDag["IsDeleted"].asString() == "true";
+		if(!valueRawDAGListDag["DemoId"].isNull())
+			rawDAGListObject.demoId = valueRawDAGListDag["DemoId"].asString();
+		if(!valueRawDAGListDag["DeployId"].isNull())
+			rawDAGListObject.deployId = std::stol(valueRawDAGListDag["DeployId"].asString());
+		if(!valueRawDAGListDag["DataFlowId"].isNull())
+			rawDAGListObject.dataFlowId = std::stol(valueRawDAGListDag["DataFlowId"].asString());
+		if(!valueRawDAGListDag["ScenarioId"].isNull())
+			rawDAGListObject.scenarioId = std::stol(valueRawDAGListDag["ScenarioId"].asString());
+		if(!valueRawDAGListDag["SpaceId"].isNull())
+			rawDAGListObject.spaceId = std::stol(valueRawDAGListDag["SpaceId"].asString());
+		if(!valueRawDAGListDag["CreatorNickName"].isNull())
+			rawDAGListObject.creatorNickName = valueRawDAGListDag["CreatorNickName"].asString();
+		if(!valueRawDAGListDag["DagOwnerNickName"].isNull())
+			rawDAGListObject.dagOwnerNickName = valueRawDAGListDag["DagOwnerNickName"].asString();
+		if(!valueRawDAGListDag["CanEdit"].isNull())
+			rawDAGListObject.canEdit = valueRawDAGListDag["CanEdit"].asString() == "true";
+		if(!valueRawDAGListDag["Status"].isNull())
+			rawDAGListObject.status = std::stoi(valueRawDAGListDag["Status"].asString());
+		if(!valueRawDAGListDag["LatestInstanceStatus"].isNull())
+			rawDAGListObject.latestInstanceStatus = std::stoi(valueRawDAGListDag["LatestInstanceStatus"].asString());
+		if(!valueRawDAGListDag["LatestInstanceTime"].isNull())
+			rawDAGListObject.latestInstanceTime = std::stoi(valueRawDAGListDag["LatestInstanceTime"].asString());
 		rawDAGList_.push_back(rawDAGListObject);
 	}
-	auto scenarioDAGListNode = value["ScenarioDAGList"];
-	auto allDagListNode = scenarioDAGListNode["DagList"]["dag"];
-	for (auto scenarioDAGListNodeDagListdag : allDagListNode)
+	auto allScenarioDAGListNode = value["ScenarioDAGList"]["ScenarioDAG"];
+	for (auto valueScenarioDAGListScenarioDAG : allScenarioDAGListNode)
 	{
-		ScenarioDAGList::Dag1 dag1Object;
-		if(!scenarioDAGListNodeDagListdag["Id"].isNull())
-			dag1Object.id = std::stol(scenarioDAGListNodeDagListdag["Id"].asString());
-		if(!scenarioDAGListNodeDagListdag["CreatorId"].isNull())
-			dag1Object.creatorId = scenarioDAGListNodeDagListdag["CreatorId"].asString();
-		if(!scenarioDAGListNodeDagListdag["IsDeleted"].isNull())
-			dag1Object.isDeleted = scenarioDAGListNodeDagListdag["IsDeleted"].asString() == "true";
-		if(!scenarioDAGListNodeDagListdag["DemoId"].isNull())
-			dag1Object.demoId = scenarioDAGListNodeDagListdag["DemoId"].asString();
-		if(!scenarioDAGListNodeDagListdag["DeployId"].isNull())
-			dag1Object.deployId = std::stol(scenarioDAGListNodeDagListdag["DeployId"].asString());
-		if(!scenarioDAGListNodeDagListdag["DataFlowId"].isNull())
-			dag1Object.dataFlowId = std::stol(scenarioDAGListNodeDagListdag["DataFlowId"].asString());
-		if(!scenarioDAGListNodeDagListdag["ScenarioId"].isNull())
-			dag1Object.scenarioId = std::stol(scenarioDAGListNodeDagListdag["ScenarioId"].asString());
-		if(!scenarioDAGListNodeDagListdag["SpaceId"].isNull())
-			dag1Object.spaceId = std::stol(scenarioDAGListNodeDagListdag["SpaceId"].asString());
-		if(!scenarioDAGListNodeDagListdag["CreatorNickName"].isNull())
-			dag1Object.creatorNickName = scenarioDAGListNodeDagListdag["CreatorNickName"].asString();
-		if(!scenarioDAGListNodeDagListdag["DagOwnerNickName"].isNull())
-			dag1Object.dagOwnerNickName = scenarioDAGListNodeDagListdag["DagOwnerNickName"].asString();
-		if(!scenarioDAGListNodeDagListdag["CanEdit"].isNull())
-			dag1Object.canEdit = scenarioDAGListNodeDagListdag["CanEdit"].asString() == "true";
-		if(!scenarioDAGListNodeDagListdag["Status"].isNull())
-			dag1Object.status = std::stoi(scenarioDAGListNodeDagListdag["Status"].asString());
-		if(!scenarioDAGListNodeDagListdag["LatestInstanceStatus"].isNull())
-			dag1Object.latestInstanceStatus = std::stoi(scenarioDAGListNodeDagListdag["LatestInstanceStatus"].asString());
-		if(!scenarioDAGListNodeDagListdag["LatestInstanceTime"].isNull())
-			dag1Object.latestInstanceTime = std::stoi(scenarioDAGListNodeDagListdag["LatestInstanceTime"].asString());
-		scenarioDAGList_.dagList.push_back(dag1Object);
+		ScenarioDAG scenarioDAGListObject;
+		auto allDagListNode = valueScenarioDAGListScenarioDAG["DagList"]["Dag"];
+		for (auto valueScenarioDAGListScenarioDAGDagListDag : allDagListNode)
+		{
+			ScenarioDAG::Dag1 dagListObject;
+			if(!valueScenarioDAGListScenarioDAGDagListDag["Id"].isNull())
+				dagListObject.id = std::stol(valueScenarioDAGListScenarioDAGDagListDag["Id"].asString());
+			if(!valueScenarioDAGListScenarioDAGDagListDag["CreatorId"].isNull())
+				dagListObject.creatorId = valueScenarioDAGListScenarioDAGDagListDag["CreatorId"].asString();
+			if(!valueScenarioDAGListScenarioDAGDagListDag["IsDeleted"].isNull())
+				dagListObject.isDeleted = valueScenarioDAGListScenarioDAGDagListDag["IsDeleted"].asString() == "true";
+			if(!valueScenarioDAGListScenarioDAGDagListDag["DemoId"].isNull())
+				dagListObject.demoId = valueScenarioDAGListScenarioDAGDagListDag["DemoId"].asString();
+			if(!valueScenarioDAGListScenarioDAGDagListDag["DeployId"].isNull())
+				dagListObject.deployId = std::stol(valueScenarioDAGListScenarioDAGDagListDag["DeployId"].asString());
+			if(!valueScenarioDAGListScenarioDAGDagListDag["DataFlowId"].isNull())
+				dagListObject.dataFlowId = std::stol(valueScenarioDAGListScenarioDAGDagListDag["DataFlowId"].asString());
+			if(!valueScenarioDAGListScenarioDAGDagListDag["ScenarioId"].isNull())
+				dagListObject.scenarioId = std::stol(valueScenarioDAGListScenarioDAGDagListDag["ScenarioId"].asString());
+			if(!valueScenarioDAGListScenarioDAGDagListDag["SpaceId"].isNull())
+				dagListObject.spaceId = std::stol(valueScenarioDAGListScenarioDAGDagListDag["SpaceId"].asString());
+			if(!valueScenarioDAGListScenarioDAGDagListDag["CreatorNickName"].isNull())
+				dagListObject.creatorNickName = valueScenarioDAGListScenarioDAGDagListDag["CreatorNickName"].asString();
+			if(!valueScenarioDAGListScenarioDAGDagListDag["DagOwnerNickName"].isNull())
+				dagListObject.dagOwnerNickName = valueScenarioDAGListScenarioDAGDagListDag["DagOwnerNickName"].asString();
+			if(!valueScenarioDAGListScenarioDAGDagListDag["CanEdit"].isNull())
+				dagListObject.canEdit = valueScenarioDAGListScenarioDAGDagListDag["CanEdit"].asString() == "true";
+			if(!valueScenarioDAGListScenarioDAGDagListDag["Status"].isNull())
+				dagListObject.status = std::stoi(valueScenarioDAGListScenarioDAGDagListDag["Status"].asString());
+			if(!valueScenarioDAGListScenarioDAGDagListDag["LatestInstanceStatus"].isNull())
+				dagListObject.latestInstanceStatus = std::stoi(valueScenarioDAGListScenarioDAGDagListDag["LatestInstanceStatus"].asString());
+			if(!valueScenarioDAGListScenarioDAGDagListDag["LatestInstanceTime"].isNull())
+				dagListObject.latestInstanceTime = std::stoi(valueScenarioDAGListScenarioDAGDagListDag["LatestInstanceTime"].asString());
+			scenarioDAGListObject.dagList.push_back(dagListObject);
+		}
+		auto scenarioNode = value["Scenario"];
+		if(!scenarioNode["ScenarioName"].isNull())
+			scenarioDAGListObject.scenario.scenarioName = scenarioNode["ScenarioName"].asString();
+		if(!scenarioNode["CreatorId"].isNull())
+			scenarioDAGListObject.scenario.creatorId = scenarioNode["CreatorId"].asString();
+		if(!scenarioNode["Description"].isNull())
+			scenarioDAGListObject.scenario.description = scenarioNode["Description"].asString();
+		scenarioDAGList_.push_back(scenarioDAGListObject);
 	}
-	auto scenarioNode = scenarioDAGListNode["Scenario"];
-	if(!scenarioNode["ScenarioName"].isNull())
-		scenarioDAGList_.scenario.scenarioName = scenarioNode["ScenarioName"].asString();
-	if(!scenarioNode["CreatorId"].isNull())
-		scenarioDAGList_.scenario.creatorId = scenarioNode["CreatorId"].asString();
-	if(!scenarioNode["Description"].isNull())
-		scenarioDAGList_.scenario.description = scenarioNode["Description"].asString();
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = value["ErrorCode"].asString();
 	if(!value["ErrorMessage"].isNull())
@@ -124,7 +129,7 @@ void ListLhTaskFlowAndScenarioResult::parse(const std::string &payload)
 
 }
 
-ListLhTaskFlowAndScenarioResult::ScenarioDAGList ListLhTaskFlowAndScenarioResult::getScenarioDAGList()const
+std::vector<ListLhTaskFlowAndScenarioResult::ScenarioDAG> ListLhTaskFlowAndScenarioResult::getScenarioDAGList()const
 {
 	return scenarioDAGList_;
 }

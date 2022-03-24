@@ -29,14 +29,14 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/ApproveOrderResult.h
 	include/alibabacloud/dms-enterprise/model/ChangeColumnSecLevelRequest.h
 	include/alibabacloud/dms-enterprise/model/ChangeColumnSecLevelResult.h
+	include/alibabacloud/dms-enterprise/model/ChangeLhDagOwnerRequest.h
+	include/alibabacloud/dms-enterprise/model/ChangeLhDagOwnerResult.h
 	include/alibabacloud/dms-enterprise/model/CloseOrderRequest.h
 	include/alibabacloud/dms-enterprise/model/CloseOrderResult.h
 	include/alibabacloud/dms-enterprise/model/CreateDataCorrectOrderRequest.h
 	include/alibabacloud/dms-enterprise/model/CreateDataCorrectOrderResult.h
 	include/alibabacloud/dms-enterprise/model/CreateDataCronClearOrderRequest.h
 	include/alibabacloud/dms-enterprise/model/CreateDataCronClearOrderResult.h
-	include/alibabacloud/dms-enterprise/model/CreateDataExportOrderRequest.h
-	include/alibabacloud/dms-enterprise/model/CreateDataExportOrderResult.h
 	include/alibabacloud/dms-enterprise/model/CreateDataImportOrderRequest.h
 	include/alibabacloud/dms-enterprise/model/CreateDataImportOrderResult.h
 	include/alibabacloud/dms-enterprise/model/CreateFreeLockCorrectOrderRequest.h
@@ -225,6 +225,8 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/ModifyDataCorrectExecSQLResult.h
 	include/alibabacloud/dms-enterprise/model/PauseDataCorrectSQLJobRequest.h
 	include/alibabacloud/dms-enterprise/model/PauseDataCorrectSQLJobResult.h
+	include/alibabacloud/dms-enterprise/model/ReDeployLhDagVersionRequest.h
+	include/alibabacloud/dms-enterprise/model/ReDeployLhDagVersionResult.h
 	include/alibabacloud/dms-enterprise/model/RegisterInstanceRequest.h
 	include/alibabacloud/dms-enterprise/model/RegisterInstanceResult.h
 	include/alibabacloud/dms-enterprise/model/RegisterUserRequest.h
@@ -264,14 +266,14 @@ set(dms-enterprise_src
 	src/model/ApproveOrderResult.cc
 	src/model/ChangeColumnSecLevelRequest.cc
 	src/model/ChangeColumnSecLevelResult.cc
+	src/model/ChangeLhDagOwnerRequest.cc
+	src/model/ChangeLhDagOwnerResult.cc
 	src/model/CloseOrderRequest.cc
 	src/model/CloseOrderResult.cc
 	src/model/CreateDataCorrectOrderRequest.cc
 	src/model/CreateDataCorrectOrderResult.cc
 	src/model/CreateDataCronClearOrderRequest.cc
 	src/model/CreateDataCronClearOrderResult.cc
-	src/model/CreateDataExportOrderRequest.cc
-	src/model/CreateDataExportOrderResult.cc
 	src/model/CreateDataImportOrderRequest.cc
 	src/model/CreateDataImportOrderResult.cc
 	src/model/CreateFreeLockCorrectOrderRequest.cc
@@ -460,6 +462,8 @@ set(dms-enterprise_src
 	src/model/ModifyDataCorrectExecSQLResult.cc
 	src/model/PauseDataCorrectSQLJobRequest.cc
 	src/model/PauseDataCorrectSQLJobResult.cc
+	src/model/ReDeployLhDagVersionRequest.cc
+	src/model/ReDeployLhDagVersionResult.cc
 	src/model/RegisterInstanceRequest.cc
 	src/model/RegisterInstanceResult.cc
 	src/model/RegisterUserRequest.cc

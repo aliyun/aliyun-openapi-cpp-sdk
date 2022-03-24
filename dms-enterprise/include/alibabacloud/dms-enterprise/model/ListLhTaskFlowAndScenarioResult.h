@@ -32,7 +32,24 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT ListLhTaskFlowAndScenarioResult : public ServiceResult
 			{
 			public:
-				struct ScenarioDAGList
+				struct Dag
+				{
+					int status;
+					int latestInstanceTime;
+					bool isDeleted;
+					long scenarioId;
+					std::string creatorId;
+					long deployId;
+					long spaceId;
+					std::string dagOwnerNickName;
+					bool canEdit;
+					int latestInstanceStatus;
+					std::string demoId;
+					long id;
+					std::string creatorNickName;
+					long dataFlowId;
+				};
+				struct ScenarioDAG
 				{
 					struct Scenario
 					{
@@ -57,32 +74,15 @@ namespace AlibabaCloud
 						std::string creatorNickName;
 						long dataFlowId;
 					};
-					std::vector<Dag1> dagList;
+					std::vector<ScenarioDAG::Dag1> dagList;
 					Scenario scenario;
-				};
-				struct Dag
-				{
-					int status;
-					int latestInstanceTime;
-					bool isDeleted;
-					long scenarioId;
-					std::string creatorId;
-					long deployId;
-					long spaceId;
-					std::string dagOwnerNickName;
-					bool canEdit;
-					int latestInstanceStatus;
-					std::string demoId;
-					long id;
-					std::string creatorNickName;
-					long dataFlowId;
 				};
 
 
 				ListLhTaskFlowAndScenarioResult();
 				explicit ListLhTaskFlowAndScenarioResult(const std::string &payload);
 				~ListLhTaskFlowAndScenarioResult();
-				ScenarioDAGList getScenarioDAGList()const;
+				std::vector<ScenarioDAG> getScenarioDAGList()const;
 				std::string getErrorCode()const;
 				std::string getErrorMessage()const;
 				bool getSuccess()const;
@@ -91,7 +91,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				ScenarioDAGList scenarioDAGList_;
+				std::vector<ScenarioDAG> scenarioDAGList_;
 				std::string errorCode_;
 				std::string errorMessage_;
 				bool success_;
