@@ -9447,6 +9447,78 @@ IotClient::RRpcOutcomeCallable IotClient::rRpcCallable(const RRpcRequest &reques
 	return task->get_future();
 }
 
+IotClient::RecognizeCarNumOutcome IotClient::recognizeCarNum(const RecognizeCarNumRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RecognizeCarNumOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RecognizeCarNumOutcome(RecognizeCarNumResult(outcome.result()));
+	else
+		return RecognizeCarNumOutcome(outcome.error());
+}
+
+void IotClient::recognizeCarNumAsync(const RecognizeCarNumRequest& request, const RecognizeCarNumAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, recognizeCarNum(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::RecognizeCarNumOutcomeCallable IotClient::recognizeCarNumCallable(const RecognizeCarNumRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RecognizeCarNumOutcome()>>(
+			[this, request]()
+			{
+			return this->recognizeCarNum(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::RecognizePictureGeneralOutcome IotClient::recognizePictureGeneral(const RecognizePictureGeneralRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RecognizePictureGeneralOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RecognizePictureGeneralOutcome(RecognizePictureGeneralResult(outcome.result()));
+	else
+		return RecognizePictureGeneralOutcome(outcome.error());
+}
+
+void IotClient::recognizePictureGeneralAsync(const RecognizePictureGeneralRequest& request, const RecognizePictureGeneralAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, recognizePictureGeneral(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::RecognizePictureGeneralOutcomeCallable IotClient::recognizePictureGeneralCallable(const RecognizePictureGeneralRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RecognizePictureGeneralOutcome()>>(
+			[this, request]()
+			{
+			return this->recognizePictureGeneral(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 IotClient::RefreshDeviceTunnelSharePasswordOutcome IotClient::refreshDeviceTunnelSharePassword(const RefreshDeviceTunnelSharePasswordRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

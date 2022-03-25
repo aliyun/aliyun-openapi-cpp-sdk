@@ -543,6 +543,10 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/QueryTopicRouteTableResult.h
 	include/alibabacloud/iot/model/RRpcRequest.h
 	include/alibabacloud/iot/model/RRpcResult.h
+	include/alibabacloud/iot/model/RecognizeCarNumRequest.h
+	include/alibabacloud/iot/model/RecognizeCarNumResult.h
+	include/alibabacloud/iot/model/RecognizePictureGeneralRequest.h
+	include/alibabacloud/iot/model/RecognizePictureGeneralResult.h
 	include/alibabacloud/iot/model/RefreshDeviceTunnelSharePasswordRequest.h
 	include/alibabacloud/iot/model/RefreshDeviceTunnelSharePasswordResult.h
 	include/alibabacloud/iot/model/RefreshStudioAppTokenOpenRequest.h
@@ -1174,6 +1178,10 @@ set(iot_src
 	src/model/QueryTopicRouteTableResult.cc
 	src/model/RRpcRequest.cc
 	src/model/RRpcResult.cc
+	src/model/RecognizeCarNumRequest.cc
+	src/model/RecognizeCarNumResult.cc
+	src/model/RecognizePictureGeneralRequest.cc
+	src/model/RecognizePictureGeneralResult.cc
 	src/model/RefreshDeviceTunnelSharePasswordRequest.cc
 	src/model/RefreshDeviceTunnelSharePasswordResult.cc
 	src/model/RefreshStudioAppTokenOpenRequest.cc

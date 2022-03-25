@@ -544,6 +544,10 @@
 #include "model/QueryTopicRouteTableResult.h"
 #include "model/RRpcRequest.h"
 #include "model/RRpcResult.h"
+#include "model/RecognizeCarNumRequest.h"
+#include "model/RecognizeCarNumResult.h"
+#include "model/RecognizePictureGeneralRequest.h"
+#include "model/RecognizePictureGeneralResult.h"
 #include "model/RefreshDeviceTunnelSharePasswordRequest.h"
 #include "model/RefreshDeviceTunnelSharePasswordResult.h"
 #include "model/RefreshStudioAppTokenOpenRequest.h"
@@ -1442,6 +1446,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RRpcResult> RRpcOutcome;
 			typedef std::future<RRpcOutcome> RRpcOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::RRpcRequest&, const RRpcOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RRpcAsyncHandler;
+			typedef Outcome<Error, Model::RecognizeCarNumResult> RecognizeCarNumOutcome;
+			typedef std::future<RecognizeCarNumOutcome> RecognizeCarNumOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::RecognizeCarNumRequest&, const RecognizeCarNumOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeCarNumAsyncHandler;
+			typedef Outcome<Error, Model::RecognizePictureGeneralResult> RecognizePictureGeneralOutcome;
+			typedef std::future<RecognizePictureGeneralOutcome> RecognizePictureGeneralOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::RecognizePictureGeneralRequest&, const RecognizePictureGeneralOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RecognizePictureGeneralAsyncHandler;
 			typedef Outcome<Error, Model::RefreshDeviceTunnelSharePasswordResult> RefreshDeviceTunnelSharePasswordOutcome;
 			typedef std::future<RefreshDeviceTunnelSharePasswordOutcome> RefreshDeviceTunnelSharePasswordOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::RefreshDeviceTunnelSharePasswordRequest&, const RefreshDeviceTunnelSharePasswordOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RefreshDeviceTunnelSharePasswordAsyncHandler;
@@ -2389,6 +2399,12 @@ namespace AlibabaCloud
 			RRpcOutcome rRpc(const Model::RRpcRequest &request)const;
 			void rRpcAsync(const Model::RRpcRequest& request, const RRpcAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RRpcOutcomeCallable rRpcCallable(const Model::RRpcRequest& request) const;
+			RecognizeCarNumOutcome recognizeCarNum(const Model::RecognizeCarNumRequest &request)const;
+			void recognizeCarNumAsync(const Model::RecognizeCarNumRequest& request, const RecognizeCarNumAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RecognizeCarNumOutcomeCallable recognizeCarNumCallable(const Model::RecognizeCarNumRequest& request) const;
+			RecognizePictureGeneralOutcome recognizePictureGeneral(const Model::RecognizePictureGeneralRequest &request)const;
+			void recognizePictureGeneralAsync(const Model::RecognizePictureGeneralRequest& request, const RecognizePictureGeneralAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RecognizePictureGeneralOutcomeCallable recognizePictureGeneralCallable(const Model::RecognizePictureGeneralRequest& request) const;
 			RefreshDeviceTunnelSharePasswordOutcome refreshDeviceTunnelSharePassword(const Model::RefreshDeviceTunnelSharePasswordRequest &request)const;
 			void refreshDeviceTunnelSharePasswordAsync(const Model::RefreshDeviceTunnelSharePasswordRequest& request, const RefreshDeviceTunnelSharePasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RefreshDeviceTunnelSharePasswordOutcomeCallable refreshDeviceTunnelSharePasswordCallable(const Model::RefreshDeviceTunnelSharePasswordRequest& request) const;
