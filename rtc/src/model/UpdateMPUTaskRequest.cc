@@ -57,6 +57,12 @@ void UpdateMPUTaskRequest::setUserPanes(const std::vector<UpdateMPUTaskRequest::
       setParameter(textsObjStr + ".ZOrder", std::to_string(textsObj.zOrder));
       setParameter(textsObjStr + ".X", std::to_string(textsObj.x));
       setParameter(textsObjStr + ".FontSize", std::to_string(textsObj.fontSize));
+      setParameter(textsObjStr + ".BorderWidth", std::to_string(textsObj.borderWidth));
+      setParameter(textsObjStr + ".BorderColor", std::to_string(textsObj.borderColor));
+      setParameter(textsObjStr + ".Box", textsObj.box ? "true" : "false");
+      setParameter(textsObjStr + ".BoxColor", std::to_string(textsObj.boxColor));
+      setParameter(textsObjStr + ".BoxBorderWidth", std::to_string(textsObj.boxBorderWidth));
+      setParameter(textsObjStr + ".Alpha", std::to_string(textsObj.alpha));
     }
     setParameter(userPanesObjStr + ".SourceType", userPanesObj.sourceType);
     setParameter(userPanesObjStr + ".PaneId", std::to_string(userPanesObj.paneId));
@@ -105,6 +111,12 @@ void UpdateMPUTaskRequest::setClockWidgets(const std::vector<UpdateMPUTaskReques
     setParameter(clockWidgetsObjStr + ".ZOrder", std::to_string(clockWidgetsObj.zOrder));
     setParameter(clockWidgetsObjStr + ".X", std::to_string(clockWidgetsObj.x));
     setParameter(clockWidgetsObjStr + ".FontSize", std::to_string(clockWidgetsObj.fontSize));
+    setParameter(clockWidgetsObjStr + ".BorderWidth", std::to_string(clockWidgetsObj.borderWidth));
+    setParameter(clockWidgetsObjStr + ".BorderColor", std::to_string(clockWidgetsObj.borderColor));
+    setParameter(clockWidgetsObjStr + ".Box", clockWidgetsObj.box ? "true" : "false");
+    setParameter(clockWidgetsObjStr + ".BoxColor", std::to_string(clockWidgetsObj.boxColor));
+    setParameter(clockWidgetsObjStr + ".BoxBorderWidth", std::to_string(clockWidgetsObj.boxBorderWidth));
+    setParameter(clockWidgetsObjStr + ".Alpha", std::to_string(clockWidgetsObj.alpha));
   }
 }
 

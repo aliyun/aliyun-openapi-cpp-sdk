@@ -49,6 +49,12 @@ public:
 			int zOrder;
 			float x;
 			int fontSize;
+			int borderWidth;
+			long borderColor;
+			bool box;
+			long boxColor;
+			int boxBorderWidth;
+			float alpha;
 		};
 		std::vector<Texts> texts;
 		std::string sourceType;
@@ -61,6 +67,12 @@ public:
 		int zOrder;
 		float x;
 		int fontSize;
+		int borderWidth;
+		long borderColor;
+		bool box;
+		long boxColor;
+		int boxBorderWidth;
+		float alpha;
 	};
 	struct Watermarks {
 		float alpha;
