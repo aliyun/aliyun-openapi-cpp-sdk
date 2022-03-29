@@ -40,15 +40,15 @@ void CheckCertificateResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto productionCertInfoNode = value["ProductionCertInfo"];
-	if(!productionCertInfoNode["ExipreTime"].isNull())
-		productionCertInfo_.exipreTime = std::stol(productionCertInfoNode["ExipreTime"].asString());
 	if(!productionCertInfoNode["Status"].isNull())
 		productionCertInfo_.status = productionCertInfoNode["Status"].asString();
+	if(!productionCertInfoNode["ExipreTime"].isNull())
+		productionCertInfo_.exipreTime = std::stol(productionCertInfoNode["ExipreTime"].asString());
 	auto developmentCertInfoNode = value["DevelopmentCertInfo"];
-	if(!developmentCertInfoNode["ExipreTime"].isNull())
-		developmentCertInfo_.exipreTime = std::stol(developmentCertInfoNode["ExipreTime"].asString());
 	if(!developmentCertInfoNode["Status"].isNull())
 		developmentCertInfo_.status = developmentCertInfoNode["Status"].asString();
+	if(!developmentCertInfoNode["ExipreTime"].isNull())
+		developmentCertInfo_.exipreTime = std::stol(developmentCertInfoNode["ExipreTime"].asString());
 	if(!value["Android"].isNull())
 		android_ = value["Android"].asString() == "true";
 	if(!value["IOS"].isNull())

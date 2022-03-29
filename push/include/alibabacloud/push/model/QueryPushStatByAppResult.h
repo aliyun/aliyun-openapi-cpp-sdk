@@ -42,8 +42,8 @@ namespace AlibabaCloud
 					std::string time;
 					long deletedCount;
 					long smsReceiveSuccessCount;
-					long sentCount;
 					long receivedCount;
+					long sentCount;
 					long smsSentCount;
 				};
 

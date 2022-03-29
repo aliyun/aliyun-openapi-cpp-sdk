@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,89 +18,73 @@
 
 using AlibabaCloud::Push::Model::PushMessageToAndroidRequest;
 
-PushMessageToAndroidRequest::PushMessageToAndroidRequest() :
-	RpcServiceRequest("push", "2016-08-01", "PushMessageToAndroid")
-{
-	setMethod(HttpRequest::Method::Post);
+PushMessageToAndroidRequest::PushMessageToAndroidRequest()
+    : RpcServiceRequest("push", "2016-08-01", "PushMessageToAndroid") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-PushMessageToAndroidRequest::~PushMessageToAndroidRequest()
-{}
+PushMessageToAndroidRequest::~PushMessageToAndroidRequest() {}
 
-std::string PushMessageToAndroidRequest::getTitle()const
-{
-	return title_;
+std::string PushMessageToAndroidRequest::getTitle() const {
+  return title_;
 }
 
-void PushMessageToAndroidRequest::setTitle(const std::string& title)
-{
-	title_ = title;
-	setParameter("Title", title);
+void PushMessageToAndroidRequest::setTitle(const std::string &title) {
+  title_ = title;
+  setParameter(std::string("Title"), title);
 }
 
-std::string PushMessageToAndroidRequest::getBody()const
-{
-	return body_;
+std::string PushMessageToAndroidRequest::getBody() const {
+  return body_;
 }
 
-void PushMessageToAndroidRequest::setBody(const std::string& body)
-{
-	body_ = body;
-	setParameter("Body", body);
+void PushMessageToAndroidRequest::setBody(const std::string &body) {
+  body_ = body;
+  setParameter(std::string("Body"), body);
 }
 
-std::string PushMessageToAndroidRequest::getJobKey()const
-{
-	return jobKey_;
+std::string PushMessageToAndroidRequest::getJobKey() const {
+  return jobKey_;
 }
 
-void PushMessageToAndroidRequest::setJobKey(const std::string& jobKey)
-{
-	jobKey_ = jobKey;
-	setParameter("JobKey", jobKey);
+void PushMessageToAndroidRequest::setJobKey(const std::string &jobKey) {
+  jobKey_ = jobKey;
+  setParameter(std::string("JobKey"), jobKey);
 }
 
-std::string PushMessageToAndroidRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string PushMessageToAndroidRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void PushMessageToAndroidRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void PushMessageToAndroidRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string PushMessageToAndroidRequest::getTarget()const
-{
-	return target_;
+std::string PushMessageToAndroidRequest::getTarget() const {
+  return target_;
 }
 
-void PushMessageToAndroidRequest::setTarget(const std::string& target)
-{
-	target_ = target;
-	setParameter("Target", target);
+void PushMessageToAndroidRequest::setTarget(const std::string &target) {
+  target_ = target;
+  setParameter(std::string("Target"), target);
 }
 
-long PushMessageToAndroidRequest::getAppKey()const
-{
-	return appKey_;
+long PushMessageToAndroidRequest::getAppKey() const {
+  return appKey_;
 }
 
-void PushMessageToAndroidRequest::setAppKey(long appKey)
-{
-	appKey_ = appKey;
-	setParameter("AppKey", std::to_string(appKey));
+void PushMessageToAndroidRequest::setAppKey(long appKey) {
+  appKey_ = appKey;
+  setParameter(std::string("AppKey"), std::to_string(appKey));
 }
 
-std::string PushMessageToAndroidRequest::getTargetValue()const
-{
-	return targetValue_;
+std::string PushMessageToAndroidRequest::getTargetValue() const {
+  return targetValue_;
 }
 
-void PushMessageToAndroidRequest::setTargetValue(const std::string& targetValue)
-{
-	targetValue_ = targetValue;
-	setParameter("TargetValue", targetValue);
+void PushMessageToAndroidRequest::setTargetValue(const std::string &targetValue) {
+  targetValue_ = targetValue;
+  setParameter(std::string("TargetValue"), targetValue);
 }
 

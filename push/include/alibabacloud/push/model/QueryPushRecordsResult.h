@@ -35,10 +35,10 @@ namespace AlibabaCloud
 				struct PushInfo
 				{
 					std::string status;
-					std::string pushType;
 					std::string deviceType;
-					std::string target;
+					std::string pushType;
 					std::string pushTime;
+					std::string target;
 					long appKey;
 					std::string title;
 					std::string body;

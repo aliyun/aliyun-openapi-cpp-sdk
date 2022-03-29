@@ -43,36 +43,36 @@ void QueryPushRecordsResult::parse(const std::string &payload)
 	for (auto valuePushInfosPushInfo : allPushInfosNode)
 	{
 		PushInfo pushInfosObject;
-		if(!valuePushInfosPushInfo["AppKey"].isNull())
-			pushInfosObject.appKey = std::stol(valuePushInfosPushInfo["AppKey"].asString());
+		if(!valuePushInfosPushInfo["Status"].isNull())
+			pushInfosObject.status = valuePushInfosPushInfo["Status"].asString();
 		if(!valuePushInfosPushInfo["MessageId"].isNull())
 			pushInfosObject.messageId = valuePushInfosPushInfo["MessageId"].asString();
-		if(!valuePushInfosPushInfo["PushType"].isNull())
-			pushInfosObject.pushType = valuePushInfosPushInfo["PushType"].asString();
+		if(!valuePushInfosPushInfo["AppKey"].isNull())
+			pushInfosObject.appKey = std::stol(valuePushInfosPushInfo["AppKey"].asString());
 		if(!valuePushInfosPushInfo["DeviceType"].isNull())
 			pushInfosObject.deviceType = valuePushInfosPushInfo["DeviceType"].asString();
-		if(!valuePushInfosPushInfo["Target"].isNull())
-			pushInfosObject.target = valuePushInfosPushInfo["Target"].asString();
+		if(!valuePushInfosPushInfo["PushType"].isNull())
+			pushInfosObject.pushType = valuePushInfosPushInfo["PushType"].asString();
+		if(!valuePushInfosPushInfo["Body"].isNull())
+			pushInfosObject.body = valuePushInfosPushInfo["Body"].asString();
+		if(!valuePushInfosPushInfo["Title"].isNull())
+			pushInfosObject.title = valuePushInfosPushInfo["Title"].asString();
 		if(!valuePushInfosPushInfo["Source"].isNull())
 			pushInfosObject.source = valuePushInfosPushInfo["Source"].asString();
 		if(!valuePushInfosPushInfo["PushTime"].isNull())
 			pushInfosObject.pushTime = valuePushInfosPushInfo["PushTime"].asString();
-		if(!valuePushInfosPushInfo["Title"].isNull())
-			pushInfosObject.title = valuePushInfosPushInfo["Title"].asString();
-		if(!valuePushInfosPushInfo["Body"].isNull())
-			pushInfosObject.body = valuePushInfosPushInfo["Body"].asString();
-		if(!valuePushInfosPushInfo["Status"].isNull())
-			pushInfosObject.status = valuePushInfosPushInfo["Status"].asString();
+		if(!valuePushInfosPushInfo["Target"].isNull())
+			pushInfosObject.target = valuePushInfosPushInfo["Target"].asString();
 		pushInfos_.push_back(pushInfosObject);
 	}
 	if(!value["NextToken"].isNull())
 		nextToken_ = value["NextToken"].asString();
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
-	if(!value["Page"].isNull())
-		page_ = std::stoi(value["Page"].asString());
 	if(!value["Total"].isNull())
 		total_ = std::stoi(value["Total"].asString());
+	if(!value["Page"].isNull())
+		page_ = std::stoi(value["Page"].asString());
 
 }
 

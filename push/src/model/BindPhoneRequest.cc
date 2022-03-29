@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,56 +18,46 @@
 
 using AlibabaCloud::Push::Model::BindPhoneRequest;
 
-BindPhoneRequest::BindPhoneRequest() :
-	RpcServiceRequest("push", "2016-08-01", "BindPhone")
-{
-	setMethod(HttpRequest::Method::Post);
+BindPhoneRequest::BindPhoneRequest()
+    : RpcServiceRequest("push", "2016-08-01", "BindPhone") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-BindPhoneRequest::~BindPhoneRequest()
-{}
+BindPhoneRequest::~BindPhoneRequest() {}
 
-std::string BindPhoneRequest::getPhoneNumber()const
-{
-	return phoneNumber_;
+std::string BindPhoneRequest::getPhoneNumber() const {
+  return phoneNumber_;
 }
 
-void BindPhoneRequest::setPhoneNumber(const std::string& phoneNumber)
-{
-	phoneNumber_ = phoneNumber;
-	setParameter("PhoneNumber", phoneNumber);
+void BindPhoneRequest::setPhoneNumber(const std::string &phoneNumber) {
+  phoneNumber_ = phoneNumber;
+  setParameter(std::string("PhoneNumber"), phoneNumber);
 }
 
-std::string BindPhoneRequest::getDeviceId()const
-{
-	return deviceId_;
+std::string BindPhoneRequest::getDeviceId() const {
+  return deviceId_;
 }
 
-void BindPhoneRequest::setDeviceId(const std::string& deviceId)
-{
-	deviceId_ = deviceId;
-	setParameter("DeviceId", deviceId);
+void BindPhoneRequest::setDeviceId(const std::string &deviceId) {
+  deviceId_ = deviceId;
+  setParameter(std::string("DeviceId"), deviceId);
 }
 
-std::string BindPhoneRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string BindPhoneRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void BindPhoneRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void BindPhoneRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-long BindPhoneRequest::getAppKey()const
-{
-	return appKey_;
+long BindPhoneRequest::getAppKey() const {
+  return appKey_;
 }
 
-void BindPhoneRequest::setAppKey(long appKey)
-{
-	appKey_ = appKey;
-	setParameter("AppKey", std::to_string(appKey));
+void BindPhoneRequest::setAppKey(long appKey) {
+  appKey_ = appKey;
+  setParameter(std::string("AppKey"), std::to_string(appKey));
 }
 

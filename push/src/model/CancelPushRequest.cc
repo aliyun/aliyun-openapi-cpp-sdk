@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,45 +18,37 @@
 
 using AlibabaCloud::Push::Model::CancelPushRequest;
 
-CancelPushRequest::CancelPushRequest() :
-	RpcServiceRequest("push", "2016-08-01", "CancelPush")
-{
-	setMethod(HttpRequest::Method::Post);
+CancelPushRequest::CancelPushRequest()
+    : RpcServiceRequest("push", "2016-08-01", "CancelPush") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-CancelPushRequest::~CancelPushRequest()
-{}
+CancelPushRequest::~CancelPushRequest() {}
 
-long CancelPushRequest::getMessageId()const
-{
-	return messageId_;
+long CancelPushRequest::getMessageId() const {
+  return messageId_;
 }
 
-void CancelPushRequest::setMessageId(long messageId)
-{
-	messageId_ = messageId;
-	setParameter("MessageId", std::to_string(messageId));
+void CancelPushRequest::setMessageId(long messageId) {
+  messageId_ = messageId;
+  setParameter(std::string("MessageId"), std::to_string(messageId));
 }
 
-std::string CancelPushRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string CancelPushRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void CancelPushRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void CancelPushRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-long CancelPushRequest::getAppKey()const
-{
-	return appKey_;
+long CancelPushRequest::getAppKey() const {
+  return appKey_;
 }
 
-void CancelPushRequest::setAppKey(long appKey)
-{
-	appKey_ = appKey;
-	setParameter("AppKey", std::to_string(appKey));
+void CancelPushRequest::setAppKey(long appKey) {
+  appKey_ = appKey;
+  setParameter(std::string("AppKey"), std::to_string(appKey));
 }
 

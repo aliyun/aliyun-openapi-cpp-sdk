@@ -1,3 +1,6 @@
+2022-03-29 Version: 1.36.1092
+- Supported Trim, AndroidVivoPushMode, iOSInterruptionLevel, iOSRelevanceScore for Push and MassPush.
+
 2022-03-28 Version: 1.36.1091
 - Support more params in text, clockWidget.
 
