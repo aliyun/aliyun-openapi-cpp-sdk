@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,111 +18,91 @@
 
 using AlibabaCloud::Live::Model::AddLiveDomainRequest;
 
-AddLiveDomainRequest::AddLiveDomainRequest() :
-	RpcServiceRequest("live", "2016-11-01", "AddLiveDomain")
-{
-	setMethod(HttpRequest::Method::Post);
+AddLiveDomainRequest::AddLiveDomainRequest()
+    : RpcServiceRequest("live", "2016-11-01", "AddLiveDomain") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-AddLiveDomainRequest::~AddLiveDomainRequest()
-{}
+AddLiveDomainRequest::~AddLiveDomainRequest() {}
 
-std::string AddLiveDomainRequest::getSecurityToken()const
-{
-	return securityToken_;
+std::string AddLiveDomainRequest::getSecurityToken() const {
+  return securityToken_;
 }
 
-void AddLiveDomainRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+void AddLiveDomainRequest::setSecurityToken(const std::string &securityToken) {
+  securityToken_ = securityToken;
+  setParameter(std::string("SecurityToken"), securityToken);
 }
 
-std::string AddLiveDomainRequest::getScope()const
-{
-	return scope_;
+std::string AddLiveDomainRequest::getScope() const {
+  return scope_;
 }
 
-void AddLiveDomainRequest::setScope(const std::string& scope)
-{
-	scope_ = scope;
-	setParameter("Scope", scope);
+void AddLiveDomainRequest::setScope(const std::string &scope) {
+  scope_ = scope;
+  setParameter(std::string("Scope"), scope);
 }
 
-std::string AddLiveDomainRequest::getTopLevelDomain()const
-{
-	return topLevelDomain_;
+std::string AddLiveDomainRequest::getTopLevelDomain() const {
+  return topLevelDomain_;
 }
 
-void AddLiveDomainRequest::setTopLevelDomain(const std::string& topLevelDomain)
-{
-	topLevelDomain_ = topLevelDomain;
-	setParameter("TopLevelDomain", topLevelDomain);
+void AddLiveDomainRequest::setTopLevelDomain(const std::string &topLevelDomain) {
+  topLevelDomain_ = topLevelDomain;
+  setParameter(std::string("TopLevelDomain"), topLevelDomain);
 }
 
-std::string AddLiveDomainRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string AddLiveDomainRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void AddLiveDomainRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void AddLiveDomainRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-std::string AddLiveDomainRequest::getDomainName()const
-{
-	return domainName_;
+std::string AddLiveDomainRequest::getDomainName() const {
+  return domainName_;
 }
 
-void AddLiveDomainRequest::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+void AddLiveDomainRequest::setDomainName(const std::string &domainName) {
+  domainName_ = domainName;
+  setParameter(std::string("DomainName"), domainName);
 }
 
-long AddLiveDomainRequest::getOwnerId()const
-{
-	return ownerId_;
+long AddLiveDomainRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void AddLiveDomainRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void AddLiveDomainRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string AddLiveDomainRequest::getRegion()const
-{
-	return region_;
+std::string AddLiveDomainRequest::getRegion() const {
+  return region_;
 }
 
-void AddLiveDomainRequest::setRegion(const std::string& region)
-{
-	region_ = region;
-	setParameter("Region", region);
+void AddLiveDomainRequest::setRegion(const std::string &region) {
+  region_ = region;
+  setParameter(std::string("Region"), region);
 }
 
-std::string AddLiveDomainRequest::getCheckUrl()const
-{
-	return checkUrl_;
+std::string AddLiveDomainRequest::getCheckUrl() const {
+  return checkUrl_;
 }
 
-void AddLiveDomainRequest::setCheckUrl(const std::string& checkUrl)
-{
-	checkUrl_ = checkUrl;
-	setParameter("CheckUrl", checkUrl);
+void AddLiveDomainRequest::setCheckUrl(const std::string &checkUrl) {
+  checkUrl_ = checkUrl;
+  setParameter(std::string("CheckUrl"), checkUrl);
 }
 
-std::string AddLiveDomainRequest::getLiveDomainType()const
-{
-	return liveDomainType_;
+std::string AddLiveDomainRequest::getLiveDomainType() const {
+  return liveDomainType_;
 }
 
-void AddLiveDomainRequest::setLiveDomainType(const std::string& liveDomainType)
-{
-	liveDomainType_ = liveDomainType;
-	setParameter("LiveDomainType", liveDomainType);
+void AddLiveDomainRequest::setLiveDomainType(const std::string &liveDomainType) {
+  liveDomainType_ = liveDomainType;
+  setParameter(std::string("LiveDomainType"), liveDomainType);
 }
 

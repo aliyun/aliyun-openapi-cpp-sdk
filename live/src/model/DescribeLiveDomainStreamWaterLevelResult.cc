@@ -43,29 +43,29 @@ void DescribeLiveDomainStreamWaterLevelResult::parse(const std::string &payload)
 	for (auto valueLiveDomainWaterLevelListLiveDomainWaterLevel : allLiveDomainWaterLevelListNode)
 	{
 		LiveDomainWaterLevel liveDomainWaterLevelListObject;
-		if(!valueLiveDomainWaterLevelListLiveDomainWaterLevel["DomainName"].isNull())
-			liveDomainWaterLevelListObject.domainName = valueLiveDomainWaterLevelListLiveDomainWaterLevel["DomainName"].asString();
+		if(!valueLiveDomainWaterLevelListLiveDomainWaterLevel["DomainRawLimit"].isNull())
+			liveDomainWaterLevelListObject.domainRawLimit = std::stoi(valueLiveDomainWaterLevelListLiveDomainWaterLevel["DomainRawLimit"].asString());
 		if(!valueLiveDomainWaterLevelListLiveDomainWaterLevel["DomainRawCount"].isNull())
 			liveDomainWaterLevelListObject.domainRawCount = std::stoi(valueLiveDomainWaterLevelListLiveDomainWaterLevel["DomainRawCount"].asString());
 		if(!valueLiveDomainWaterLevelListLiveDomainWaterLevel["DomainTranscodeCount"].isNull())
 			liveDomainWaterLevelListObject.domainTranscodeCount = std::stoi(valueLiveDomainWaterLevelListLiveDomainWaterLevel["DomainTranscodeCount"].asString());
-		if(!valueLiveDomainWaterLevelListLiveDomainWaterLevel["DomainRawLimit"].isNull())
-			liveDomainWaterLevelListObject.domainRawLimit = std::stoi(valueLiveDomainWaterLevelListLiveDomainWaterLevel["DomainRawLimit"].asString());
+		if(!valueLiveDomainWaterLevelListLiveDomainWaterLevel["DomainName"].isNull())
+			liveDomainWaterLevelListObject.domainName = valueLiveDomainWaterLevelListLiveDomainWaterLevel["DomainName"].asString();
 		if(!valueLiveDomainWaterLevelListLiveDomainWaterLevel["DomainTranscodeLimit"].isNull())
 			liveDomainWaterLevelListObject.domainTranscodeLimit = std::stoi(valueLiveDomainWaterLevelListLiveDomainWaterLevel["DomainTranscodeLimit"].asString());
 		liveDomainWaterLevelList_.push_back(liveDomainWaterLevelListObject);
 	}
 	auto liveUidWaterLevelNode = value["LiveUidWaterLevel"];
+	if(!liveUidWaterLevelNode["UidTranscodeLimit"].isNull())
+		liveUidWaterLevel_.uidTranscodeLimit = std::stoi(liveUidWaterLevelNode["UidTranscodeLimit"].asString());
 	if(!liveUidWaterLevelNode["AliUid"].isNull())
 		liveUidWaterLevel_.aliUid = liveUidWaterLevelNode["AliUid"].asString();
-	if(!liveUidWaterLevelNode["UidRawCount"].isNull())
-		liveUidWaterLevel_.uidRawCount = std::stoi(liveUidWaterLevelNode["UidRawCount"].asString());
 	if(!liveUidWaterLevelNode["UidTranscodeCount"].isNull())
 		liveUidWaterLevel_.uidTranscodeCount = std::stoi(liveUidWaterLevelNode["UidTranscodeCount"].asString());
 	if(!liveUidWaterLevelNode["UidRawLimit"].isNull())
 		liveUidWaterLevel_.uidRawLimit = std::stoi(liveUidWaterLevelNode["UidRawLimit"].asString());
-	if(!liveUidWaterLevelNode["UidTranscodeLimit"].isNull())
-		liveUidWaterLevel_.uidTranscodeLimit = std::stoi(liveUidWaterLevelNode["UidTranscodeLimit"].asString());
+	if(!liveUidWaterLevelNode["UidRawCount"].isNull())
+		liveUidWaterLevel_.uidRawCount = std::stoi(liveUidWaterLevelNode["UidRawCount"].asString());
 
 }
 

@@ -43,20 +43,20 @@ void DescribeToutiaoLivePlayResult::parse(const std::string &payload)
 	for (auto valueContentContentItem : allContentNode)
 	{
 		ContentItem contentObject;
-		if(!valueContentContentItem["App"].isNull())
-			contentObject.app = valueContentContentItem["App"].asString();
-		if(!valueContentContentItem["Bandwidth"].isNull())
-			contentObject.bandwidth = std::stof(valueContentContentItem["Bandwidth"].asString());
-		if(!valueContentContentItem["CdnName"].isNull())
-			contentObject.cdnName = valueContentContentItem["CdnName"].asString();
 		if(!valueContentContentItem["Domain"].isNull())
 			contentObject.domain = valueContentContentItem["Domain"].asString();
-		if(!valueContentContentItem["PlayNum"].isNull())
-			contentObject.playNum = std::stol(valueContentContentItem["PlayNum"].asString());
+		if(!valueContentContentItem["Bandwidth"].isNull())
+			contentObject.bandwidth = std::stof(valueContentContentItem["Bandwidth"].asString());
 		if(!valueContentContentItem["StreamName"].isNull())
 			contentObject.streamName = valueContentContentItem["StreamName"].asString();
+		if(!valueContentContentItem["App"].isNull())
+			contentObject.app = valueContentContentItem["App"].asString();
+		if(!valueContentContentItem["PlayNum"].isNull())
+			contentObject.playNum = std::stol(valueContentContentItem["PlayNum"].asString());
 		if(!valueContentContentItem["Timestamp"].isNull())
 			contentObject.timestamp = std::stol(valueContentContentItem["Timestamp"].asString());
+		if(!valueContentContentItem["CdnName"].isNull())
+			contentObject.cdnName = valueContentContentItem["CdnName"].asString();
 		content_.push_back(contentObject);
 	}
 	if(!value["Description"].isNull())

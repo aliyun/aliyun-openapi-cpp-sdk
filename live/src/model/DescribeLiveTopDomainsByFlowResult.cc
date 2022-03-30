@@ -43,30 +43,30 @@ void DescribeLiveTopDomainsByFlowResult::parse(const std::string &payload)
 	for (auto valueTopDomainsTopDomain : allTopDomainsNode)
 	{
 		TopDomain topDomainsObject;
-		if(!valueTopDomainsTopDomain["DomainName"].isNull())
-			topDomainsObject.domainName = valueTopDomainsTopDomain["DomainName"].asString();
-		if(!valueTopDomainsTopDomain["Rank"].isNull())
-			topDomainsObject.rank = std::stol(valueTopDomainsTopDomain["Rank"].asString());
-		if(!valueTopDomainsTopDomain["TotalTraffic"].isNull())
-			topDomainsObject.totalTraffic = valueTopDomainsTopDomain["TotalTraffic"].asString();
-		if(!valueTopDomainsTopDomain["TrafficPercent"].isNull())
-			topDomainsObject.trafficPercent = valueTopDomainsTopDomain["TrafficPercent"].asString();
 		if(!valueTopDomainsTopDomain["MaxBps"].isNull())
 			topDomainsObject.maxBps = std::stol(valueTopDomainsTopDomain["MaxBps"].asString());
-		if(!valueTopDomainsTopDomain["MaxBpsTime"].isNull())
-			topDomainsObject.maxBpsTime = valueTopDomainsTopDomain["MaxBpsTime"].asString();
+		if(!valueTopDomainsTopDomain["Rank"].isNull())
+			topDomainsObject.rank = std::stol(valueTopDomainsTopDomain["Rank"].asString());
 		if(!valueTopDomainsTopDomain["TotalAccess"].isNull())
 			topDomainsObject.totalAccess = std::stol(valueTopDomainsTopDomain["TotalAccess"].asString());
+		if(!valueTopDomainsTopDomain["TrafficPercent"].isNull())
+			topDomainsObject.trafficPercent = valueTopDomainsTopDomain["TrafficPercent"].asString();
+		if(!valueTopDomainsTopDomain["DomainName"].isNull())
+			topDomainsObject.domainName = valueTopDomainsTopDomain["DomainName"].asString();
+		if(!valueTopDomainsTopDomain["TotalTraffic"].isNull())
+			topDomainsObject.totalTraffic = valueTopDomainsTopDomain["TotalTraffic"].asString();
+		if(!valueTopDomainsTopDomain["MaxBpsTime"].isNull())
+			topDomainsObject.maxBpsTime = valueTopDomainsTopDomain["MaxBpsTime"].asString();
 		topDomains_.push_back(topDomainsObject);
 	}
-	if(!value["StartTime"].isNull())
-		startTime_ = value["StartTime"].asString();
-	if(!value["EndTime"].isNull())
-		endTime_ = value["EndTime"].asString();
-	if(!value["DomainCount"].isNull())
-		domainCount_ = std::stol(value["DomainCount"].asString());
 	if(!value["DomainOnlineCount"].isNull())
 		domainOnlineCount_ = std::stol(value["DomainOnlineCount"].asString());
+	if(!value["EndTime"].isNull())
+		endTime_ = value["EndTime"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
+	if(!value["DomainCount"].isNull())
+		domainCount_ = std::stol(value["DomainCount"].asString());
 
 }
 

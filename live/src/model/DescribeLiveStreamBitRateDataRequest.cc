@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,89 +18,73 @@
 
 using AlibabaCloud::Live::Model::DescribeLiveStreamBitRateDataRequest;
 
-DescribeLiveStreamBitRateDataRequest::DescribeLiveStreamBitRateDataRequest() :
-	RpcServiceRequest("live", "2016-11-01", "DescribeLiveStreamBitRateData")
-{
-	setMethod(HttpRequest::Method::Post);
+DescribeLiveStreamBitRateDataRequest::DescribeLiveStreamBitRateDataRequest()
+    : RpcServiceRequest("live", "2016-11-01", "DescribeLiveStreamBitRateData") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DescribeLiveStreamBitRateDataRequest::~DescribeLiveStreamBitRateDataRequest()
-{}
+DescribeLiveStreamBitRateDataRequest::~DescribeLiveStreamBitRateDataRequest() {}
 
-std::string DescribeLiveStreamBitRateDataRequest::getStartTime()const
-{
-	return startTime_;
+std::string DescribeLiveStreamBitRateDataRequest::getStartTime() const {
+  return startTime_;
 }
 
-void DescribeLiveStreamBitRateDataRequest::setStartTime(const std::string& startTime)
-{
-	startTime_ = startTime;
-	setParameter("StartTime", startTime);
+void DescribeLiveStreamBitRateDataRequest::setStartTime(const std::string &startTime) {
+  startTime_ = startTime;
+  setParameter(std::string("StartTime"), startTime);
 }
 
-std::string DescribeLiveStreamBitRateDataRequest::getAppName()const
-{
-	return appName_;
+std::string DescribeLiveStreamBitRateDataRequest::getAppName() const {
+  return appName_;
 }
 
-void DescribeLiveStreamBitRateDataRequest::setAppName(const std::string& appName)
-{
-	appName_ = appName;
-	setParameter("AppName", appName);
+void DescribeLiveStreamBitRateDataRequest::setAppName(const std::string &appName) {
+  appName_ = appName;
+  setParameter(std::string("AppName"), appName);
 }
 
-std::string DescribeLiveStreamBitRateDataRequest::getSecurityToken()const
-{
-	return securityToken_;
+std::string DescribeLiveStreamBitRateDataRequest::getSecurityToken() const {
+  return securityToken_;
 }
 
-void DescribeLiveStreamBitRateDataRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+void DescribeLiveStreamBitRateDataRequest::setSecurityToken(const std::string &securityToken) {
+  securityToken_ = securityToken;
+  setParameter(std::string("SecurityToken"), securityToken);
 }
 
-std::string DescribeLiveStreamBitRateDataRequest::getStreamName()const
-{
-	return streamName_;
+std::string DescribeLiveStreamBitRateDataRequest::getStreamName() const {
+  return streamName_;
 }
 
-void DescribeLiveStreamBitRateDataRequest::setStreamName(const std::string& streamName)
-{
-	streamName_ = streamName;
-	setParameter("StreamName", streamName);
+void DescribeLiveStreamBitRateDataRequest::setStreamName(const std::string &streamName) {
+  streamName_ = streamName;
+  setParameter(std::string("StreamName"), streamName);
 }
 
-std::string DescribeLiveStreamBitRateDataRequest::getDomainName()const
-{
-	return domainName_;
+std::string DescribeLiveStreamBitRateDataRequest::getDomainName() const {
+  return domainName_;
 }
 
-void DescribeLiveStreamBitRateDataRequest::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+void DescribeLiveStreamBitRateDataRequest::setDomainName(const std::string &domainName) {
+  domainName_ = domainName;
+  setParameter(std::string("DomainName"), domainName);
 }
 
-std::string DescribeLiveStreamBitRateDataRequest::getEndTime()const
-{
-	return endTime_;
+std::string DescribeLiveStreamBitRateDataRequest::getEndTime() const {
+  return endTime_;
 }
 
-void DescribeLiveStreamBitRateDataRequest::setEndTime(const std::string& endTime)
-{
-	endTime_ = endTime;
-	setParameter("EndTime", endTime);
+void DescribeLiveStreamBitRateDataRequest::setEndTime(const std::string &endTime) {
+  endTime_ = endTime;
+  setParameter(std::string("EndTime"), endTime);
 }
 
-long DescribeLiveStreamBitRateDataRequest::getOwnerId()const
-{
-	return ownerId_;
+long DescribeLiveStreamBitRateDataRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void DescribeLiveStreamBitRateDataRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void DescribeLiveStreamBitRateDataRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 

@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,122 +18,100 @@
 
 using AlibabaCloud::Live::Model::DescribeLiveDetectPornDataRequest;
 
-DescribeLiveDetectPornDataRequest::DescribeLiveDetectPornDataRequest() :
-	RpcServiceRequest("live", "2016-11-01", "DescribeLiveDetectPornData")
-{
-	setMethod(HttpRequest::Method::Post);
+DescribeLiveDetectPornDataRequest::DescribeLiveDetectPornDataRequest()
+    : RpcServiceRequest("live", "2016-11-01", "DescribeLiveDetectPornData") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DescribeLiveDetectPornDataRequest::~DescribeLiveDetectPornDataRequest()
-{}
+DescribeLiveDetectPornDataRequest::~DescribeLiveDetectPornDataRequest() {}
 
-std::string DescribeLiveDetectPornDataRequest::getFee()const
-{
-	return fee_;
+std::string DescribeLiveDetectPornDataRequest::getFee() const {
+  return fee_;
 }
 
-void DescribeLiveDetectPornDataRequest::setFee(const std::string& fee)
-{
-	fee_ = fee;
-	setParameter("Fee", fee);
+void DescribeLiveDetectPornDataRequest::setFee(const std::string &fee) {
+  fee_ = fee;
+  setParameter(std::string("Fee"), fee);
 }
 
-std::string DescribeLiveDetectPornDataRequest::getStartTime()const
-{
-	return startTime_;
+std::string DescribeLiveDetectPornDataRequest::getStartTime() const {
+  return startTime_;
 }
 
-void DescribeLiveDetectPornDataRequest::setStartTime(const std::string& startTime)
-{
-	startTime_ = startTime;
-	setParameter("StartTime", startTime);
+void DescribeLiveDetectPornDataRequest::setStartTime(const std::string &startTime) {
+  startTime_ = startTime;
+  setParameter(std::string("StartTime"), startTime);
 }
 
-std::string DescribeLiveDetectPornDataRequest::getScene()const
-{
-	return scene_;
+std::string DescribeLiveDetectPornDataRequest::getScene() const {
+  return scene_;
 }
 
-void DescribeLiveDetectPornDataRequest::setScene(const std::string& scene)
-{
-	scene_ = scene;
-	setParameter("Scene", scene);
+void DescribeLiveDetectPornDataRequest::setScene(const std::string &scene) {
+  scene_ = scene;
+  setParameter(std::string("Scene"), scene);
 }
 
-std::string DescribeLiveDetectPornDataRequest::getStream()const
-{
-	return stream_;
+std::string DescribeLiveDetectPornDataRequest::getStream() const {
+  return stream_;
 }
 
-void DescribeLiveDetectPornDataRequest::setStream(const std::string& stream)
-{
-	stream_ = stream;
-	setParameter("Stream", stream);
+void DescribeLiveDetectPornDataRequest::setStream(const std::string &stream) {
+  stream_ = stream;
+  setParameter(std::string("Stream"), stream);
 }
 
-std::string DescribeLiveDetectPornDataRequest::getSplitBy()const
-{
-	return splitBy_;
+std::string DescribeLiveDetectPornDataRequest::getSplitBy() const {
+  return splitBy_;
 }
 
-void DescribeLiveDetectPornDataRequest::setSplitBy(const std::string& splitBy)
-{
-	splitBy_ = splitBy;
-	setParameter("SplitBy", splitBy);
+void DescribeLiveDetectPornDataRequest::setSplitBy(const std::string &splitBy) {
+  splitBy_ = splitBy;
+  setParameter(std::string("SplitBy"), splitBy);
 }
 
-std::string DescribeLiveDetectPornDataRequest::getApp()const
-{
-	return app_;
+std::string DescribeLiveDetectPornDataRequest::getApp() const {
+  return app_;
 }
 
-void DescribeLiveDetectPornDataRequest::setApp(const std::string& app)
-{
-	app_ = app;
-	setParameter("App", app);
+void DescribeLiveDetectPornDataRequest::setApp(const std::string &app) {
+  app_ = app;
+  setParameter(std::string("App"), app);
 }
 
-std::string DescribeLiveDetectPornDataRequest::getDomainName()const
-{
-	return domainName_;
+std::string DescribeLiveDetectPornDataRequest::getDomainName() const {
+  return domainName_;
 }
 
-void DescribeLiveDetectPornDataRequest::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+void DescribeLiveDetectPornDataRequest::setDomainName(const std::string &domainName) {
+  domainName_ = domainName;
+  setParameter(std::string("DomainName"), domainName);
 }
 
-std::string DescribeLiveDetectPornDataRequest::getEndTime()const
-{
-	return endTime_;
+std::string DescribeLiveDetectPornDataRequest::getEndTime() const {
+  return endTime_;
 }
 
-void DescribeLiveDetectPornDataRequest::setEndTime(const std::string& endTime)
-{
-	endTime_ = endTime;
-	setParameter("EndTime", endTime);
+void DescribeLiveDetectPornDataRequest::setEndTime(const std::string &endTime) {
+  endTime_ = endTime;
+  setParameter(std::string("EndTime"), endTime);
 }
 
-long DescribeLiveDetectPornDataRequest::getOwnerId()const
-{
-	return ownerId_;
+long DescribeLiveDetectPornDataRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void DescribeLiveDetectPornDataRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void DescribeLiveDetectPornDataRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string DescribeLiveDetectPornDataRequest::getRegion()const
-{
-	return region_;
+std::string DescribeLiveDetectPornDataRequest::getRegion() const {
+  return region_;
 }
 
-void DescribeLiveDetectPornDataRequest::setRegion(const std::string& region)
-{
-	region_ = region;
-	setParameter("Region", region);
+void DescribeLiveDetectPornDataRequest::setRegion(const std::string &region) {
+  region_ = region;
+  setParameter(std::string("Region"), region);
 }
 

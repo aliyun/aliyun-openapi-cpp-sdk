@@ -67,8 +67,8 @@ namespace AlibabaCloud
 				TranscodeConfig getTranscodeConfig()const;
 				std::string getProgramName()const;
 				float getDelay()const;
-				std::string getSideOutputUrl()const;
 				std::string getCallbackUrl()const;
+				std::string getSideOutputUrl()const;
 				std::string getCasterName()const;
 				int getProgramEffect()const;
 				std::vector<SyncGroup> getSyncGroupsConfig()const;
@@ -84,8 +84,8 @@ namespace AlibabaCloud
 				TranscodeConfig transcodeConfig_;
 				std::string programName_;
 				float delay_;
-				std::string sideOutputUrl_;
 				std::string callbackUrl_;
+				std::string sideOutputUrl_;
 				std::string casterName_;
 				int programEffect_;
 				std::vector<SyncGroup> syncGroupsConfig_;

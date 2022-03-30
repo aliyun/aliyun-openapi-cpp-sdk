@@ -43,18 +43,18 @@ void ListPlaylistItemsResult::parse(const std::string &payload)
 	for (auto valueProgramItemsProgramItem : allProgramItemsNode)
 	{
 		ProgramItem programItemsObject;
-		if(!valueProgramItemsProgramItem["ProgramId"].isNull())
-			programItemsObject.programId = valueProgramItemsProgramItem["ProgramId"].asString();
-		if(!valueProgramItemsProgramItem["ProgramItemId"].isNull())
-			programItemsObject.programItemId = valueProgramItemsProgramItem["ProgramItemId"].asString();
-		if(!valueProgramItemsProgramItem["ProgramItemName"].isNull())
-			programItemsObject.programItemName = valueProgramItemsProgramItem["ProgramItemName"].asString();
-		if(!valueProgramItemsProgramItem["ResourceType"].isNull())
-			programItemsObject.resourceType = valueProgramItemsProgramItem["ResourceType"].asString();
-		if(!valueProgramItemsProgramItem["ResourceValue"].isNull())
-			programItemsObject.resourceValue = valueProgramItemsProgramItem["ResourceValue"].asString();
 		if(!valueProgramItemsProgramItem["Index"].isNull())
 			programItemsObject.index = std::stoi(valueProgramItemsProgramItem["Index"].asString());
+		if(!valueProgramItemsProgramItem["ResourceType"].isNull())
+			programItemsObject.resourceType = valueProgramItemsProgramItem["ResourceType"].asString();
+		if(!valueProgramItemsProgramItem["ProgramItemId"].isNull())
+			programItemsObject.programItemId = valueProgramItemsProgramItem["ProgramItemId"].asString();
+		if(!valueProgramItemsProgramItem["ProgramId"].isNull())
+			programItemsObject.programId = valueProgramItemsProgramItem["ProgramId"].asString();
+		if(!valueProgramItemsProgramItem["ProgramItemName"].isNull())
+			programItemsObject.programItemName = valueProgramItemsProgramItem["ProgramItemName"].asString();
+		if(!valueProgramItemsProgramItem["ResourceValue"].isNull())
+			programItemsObject.resourceValue = valueProgramItemsProgramItem["ResourceValue"].asString();
 		programItems_.push_back(programItemsObject);
 	}
 	if(!value["Total"].isNull())

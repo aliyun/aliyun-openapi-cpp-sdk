@@ -43,22 +43,22 @@ void DescribeLivePullStreamConfigResult::parse(const std::string &payload)
 	for (auto valueLiveAppRecordListLiveAppRecord : allLiveAppRecordListNode)
 	{
 		LiveAppRecord liveAppRecordListObject;
-		if(!valueLiveAppRecordListLiveAppRecord["DomainName"].isNull())
-			liveAppRecordListObject.domainName = valueLiveAppRecordListLiveAppRecord["DomainName"].asString();
-		if(!valueLiveAppRecordListLiveAppRecord["AppName"].isNull())
-			liveAppRecordListObject.appName = valueLiveAppRecordListLiveAppRecord["AppName"].asString();
-		if(!valueLiveAppRecordListLiveAppRecord["StreamName"].isNull())
-			liveAppRecordListObject.streamName = valueLiveAppRecordListLiveAppRecord["StreamName"].asString();
-		if(!valueLiveAppRecordListLiveAppRecord["SourceUrl"].isNull())
-			liveAppRecordListObject.sourceUrl = valueLiveAppRecordListLiveAppRecord["SourceUrl"].asString();
-		if(!valueLiveAppRecordListLiveAppRecord["SourceUsing"].isNull())
-			liveAppRecordListObject.sourceUsing = valueLiveAppRecordListLiveAppRecord["SourceUsing"].asString();
-		if(!valueLiveAppRecordListLiveAppRecord["StartTime"].isNull())
-			liveAppRecordListObject.startTime = valueLiveAppRecordListLiveAppRecord["StartTime"].asString();
 		if(!valueLiveAppRecordListLiveAppRecord["EndTime"].isNull())
 			liveAppRecordListObject.endTime = valueLiveAppRecordListLiveAppRecord["EndTime"].asString();
+		if(!valueLiveAppRecordListLiveAppRecord["AppName"].isNull())
+			liveAppRecordListObject.appName = valueLiveAppRecordListLiveAppRecord["AppName"].asString();
+		if(!valueLiveAppRecordListLiveAppRecord["SourceUrl"].isNull())
+			liveAppRecordListObject.sourceUrl = valueLiveAppRecordListLiveAppRecord["SourceUrl"].asString();
+		if(!valueLiveAppRecordListLiveAppRecord["StartTime"].isNull())
+			liveAppRecordListObject.startTime = valueLiveAppRecordListLiveAppRecord["StartTime"].asString();
 		if(!valueLiveAppRecordListLiveAppRecord["Always"].isNull())
 			liveAppRecordListObject.always = valueLiveAppRecordListLiveAppRecord["Always"].asString();
+		if(!valueLiveAppRecordListLiveAppRecord["StreamName"].isNull())
+			liveAppRecordListObject.streamName = valueLiveAppRecordListLiveAppRecord["StreamName"].asString();
+		if(!valueLiveAppRecordListLiveAppRecord["SourceUsing"].isNull())
+			liveAppRecordListObject.sourceUsing = valueLiveAppRecordListLiveAppRecord["SourceUsing"].asString();
+		if(!valueLiveAppRecordListLiveAppRecord["DomainName"].isNull())
+			liveAppRecordListObject.domainName = valueLiveAppRecordListLiveAppRecord["DomainName"].asString();
 		liveAppRecordList_.push_back(liveAppRecordListObject);
 	}
 

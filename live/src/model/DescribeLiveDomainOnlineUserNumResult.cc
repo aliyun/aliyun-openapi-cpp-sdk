@@ -49,18 +49,18 @@ void DescribeLiveDomainOnlineUserNumResult::parse(const std::string &payload)
 		for (auto valueOnlineUserInfoLiveStreamOnlineUserNumInfoInfosInfo : allInfosNode)
 		{
 			LiveStreamOnlineUserNumInfo::Info infosObject;
-			if(!valueOnlineUserInfoLiveStreamOnlineUserNumInfoInfosInfo["TranscodeTemplate"].isNull())
-				infosObject.transcodeTemplate = valueOnlineUserInfoLiveStreamOnlineUserNumInfoInfosInfo["TranscodeTemplate"].asString();
 			if(!valueOnlineUserInfoLiveStreamOnlineUserNumInfoInfosInfo["UserNumber"].isNull())
 				infosObject.userNumber = std::stol(valueOnlineUserInfoLiveStreamOnlineUserNumInfoInfosInfo["UserNumber"].asString());
+			if(!valueOnlineUserInfoLiveStreamOnlineUserNumInfoInfosInfo["TranscodeTemplate"].isNull())
+				infosObject.transcodeTemplate = valueOnlineUserInfoLiveStreamOnlineUserNumInfoInfosInfo["TranscodeTemplate"].asString();
 			onlineUserInfoObject.infos.push_back(infosObject);
 		}
 		onlineUserInfo_.push_back(onlineUserInfoObject);
 	}
-	if(!value["StreamCount"].isNull())
-		streamCount_ = std::stoi(value["StreamCount"].asString());
 	if(!value["UserCount"].isNull())
 		userCount_ = std::stoi(value["UserCount"].asString());
+	if(!value["StreamCount"].isNull())
+		streamCount_ = std::stoi(value["StreamCount"].asString());
 
 }
 

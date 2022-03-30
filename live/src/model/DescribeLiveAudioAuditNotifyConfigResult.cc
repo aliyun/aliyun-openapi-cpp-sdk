@@ -43,12 +43,12 @@ void DescribeLiveAudioAuditNotifyConfigResult::parse(const std::string &payload)
 	for (auto valueLiveAudioAuditNotifyConfigListLiveAudioAuditNotifyConfig : allLiveAudioAuditNotifyConfigListNode)
 	{
 		LiveAudioAuditNotifyConfig liveAudioAuditNotifyConfigListObject;
+		if(!valueLiveAudioAuditNotifyConfigListLiveAudioAuditNotifyConfig["CallbackTemplate"].isNull())
+			liveAudioAuditNotifyConfigListObject.callbackTemplate = valueLiveAudioAuditNotifyConfigListLiveAudioAuditNotifyConfig["CallbackTemplate"].asString();
 		if(!valueLiveAudioAuditNotifyConfigListLiveAudioAuditNotifyConfig["DomainName"].isNull())
 			liveAudioAuditNotifyConfigListObject.domainName = valueLiveAudioAuditNotifyConfigListLiveAudioAuditNotifyConfig["DomainName"].asString();
 		if(!valueLiveAudioAuditNotifyConfigListLiveAudioAuditNotifyConfig["Callback"].isNull())
 			liveAudioAuditNotifyConfigListObject.callback = valueLiveAudioAuditNotifyConfigListLiveAudioAuditNotifyConfig["Callback"].asString();
-		if(!valueLiveAudioAuditNotifyConfigListLiveAudioAuditNotifyConfig["CallbackTemplate"].isNull())
-			liveAudioAuditNotifyConfigListObject.callbackTemplate = valueLiveAudioAuditNotifyConfigListLiveAudioAuditNotifyConfig["CallbackTemplate"].asString();
 		liveAudioAuditNotifyConfigList_.push_back(liveAudioAuditNotifyConfigListObject);
 	}
 

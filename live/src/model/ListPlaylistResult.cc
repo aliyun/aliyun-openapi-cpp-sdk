@@ -43,18 +43,18 @@ void ListPlaylistResult::parse(const std::string &payload)
 	for (auto valueProgramListProgramInfo : allProgramListNode)
 	{
 		ProgramInfo programListObject;
-		if(!valueProgramListProgramInfo["ProgramId"].isNull())
-			programListObject.programId = valueProgramListProgramInfo["ProgramId"].asString();
+		if(!valueProgramListProgramInfo["Status"].isNull())
+			programListObject.status = std::stoi(valueProgramListProgramInfo["Status"].asString());
+		if(!valueProgramListProgramInfo["RepeatNumber"].isNull())
+			programListObject.repeatNumber = std::stoi(valueProgramListProgramInfo["RepeatNumber"].asString());
 		if(!valueProgramListProgramInfo["ProgramName"].isNull())
 			programListObject.programName = valueProgramListProgramInfo["ProgramName"].asString();
+		if(!valueProgramListProgramInfo["ProgramId"].isNull())
+			programListObject.programId = valueProgramListProgramInfo["ProgramId"].asString();
 		if(!valueProgramListProgramInfo["CasterId"].isNull())
 			programListObject.casterId = valueProgramListProgramInfo["CasterId"].asString();
 		if(!valueProgramListProgramInfo["DomainName"].isNull())
 			programListObject.domainName = valueProgramListProgramInfo["DomainName"].asString();
-		if(!valueProgramListProgramInfo["RepeatNumber"].isNull())
-			programListObject.repeatNumber = std::stoi(valueProgramListProgramInfo["RepeatNumber"].asString());
-		if(!valueProgramListProgramInfo["Status"].isNull())
-			programListObject.status = std::stoi(valueProgramListProgramInfo["Status"].asString());
 		programList_.push_back(programListObject);
 	}
 	if(!value["Total"].isNull())

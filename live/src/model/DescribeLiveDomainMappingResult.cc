@@ -43,10 +43,10 @@ void DescribeLiveDomainMappingResult::parse(const std::string &payload)
 	for (auto valueLiveDomainModelsLiveDomainModel : allLiveDomainModelsNode)
 	{
 		LiveDomainModel liveDomainModelsObject;
-		if(!valueLiveDomainModelsLiveDomainModel["DomainName"].isNull())
-			liveDomainModelsObject.domainName = valueLiveDomainModelsLiveDomainModel["DomainName"].asString();
 		if(!valueLiveDomainModelsLiveDomainModel["Type"].isNull())
 			liveDomainModelsObject.type = valueLiveDomainModelsLiveDomainModel["Type"].asString();
+		if(!valueLiveDomainModelsLiveDomainModel["DomainName"].isNull())
+			liveDomainModelsObject.domainName = valueLiveDomainModelsLiveDomainModel["DomainName"].asString();
 		liveDomainModels_.push_back(liveDomainModelsObject);
 	}
 

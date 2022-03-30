@@ -43,34 +43,34 @@ void StartCasterResult::parse(const std::string &payload)
 	for (auto valuePvwSceneInfosSceneInfo : allPvwSceneInfosNode)
 	{
 		SceneInfo pvwSceneInfosObject;
+		if(!valuePvwSceneInfosSceneInfo["RtsUrl"].isNull())
+			pvwSceneInfosObject.rtsUrl = valuePvwSceneInfosSceneInfo["RtsUrl"].asString();
 		if(!valuePvwSceneInfosSceneInfo["SceneId"].isNull())
 			pvwSceneInfosObject.sceneId = valuePvwSceneInfosSceneInfo["SceneId"].asString();
 		if(!valuePvwSceneInfosSceneInfo["StreamUrl"].isNull())
 			pvwSceneInfosObject.streamUrl = valuePvwSceneInfosSceneInfo["StreamUrl"].asString();
-		if(!valuePvwSceneInfosSceneInfo["RtsUrl"].isNull())
-			pvwSceneInfosObject.rtsUrl = valuePvwSceneInfosSceneInfo["RtsUrl"].asString();
 		pvwSceneInfos_.push_back(pvwSceneInfosObject);
 	}
 	auto allPgmSceneInfosNode = value["PgmSceneInfos"]["SceneInfo"];
 	for (auto valuePgmSceneInfosSceneInfo : allPgmSceneInfosNode)
 	{
 		SceneInfo1 pgmSceneInfosObject;
+		if(!valuePgmSceneInfosSceneInfo["RtsUrl"].isNull())
+			pgmSceneInfosObject.rtsUrl = valuePgmSceneInfosSceneInfo["RtsUrl"].asString();
 		if(!valuePgmSceneInfosSceneInfo["SceneId"].isNull())
 			pgmSceneInfosObject.sceneId = valuePgmSceneInfosSceneInfo["SceneId"].asString();
 		if(!valuePgmSceneInfosSceneInfo["StreamUrl"].isNull())
 			pgmSceneInfosObject.streamUrl = valuePgmSceneInfosSceneInfo["StreamUrl"].asString();
-		if(!valuePgmSceneInfosSceneInfo["RtsUrl"].isNull())
-			pgmSceneInfosObject.rtsUrl = valuePgmSceneInfosSceneInfo["RtsUrl"].asString();
 		auto allStreamInfosNode = valuePgmSceneInfosSceneInfo["StreamInfos"]["StreamInfo"];
 		for (auto valuePgmSceneInfosSceneInfoStreamInfosStreamInfo : allStreamInfosNode)
 		{
 			SceneInfo1::StreamInfo streamInfosObject;
-			if(!valuePgmSceneInfosSceneInfoStreamInfosStreamInfo["TranscodeConfig"].isNull())
-				streamInfosObject.transcodeConfig = valuePgmSceneInfosSceneInfoStreamInfosStreamInfo["TranscodeConfig"].asString();
 			if(!valuePgmSceneInfosSceneInfoStreamInfosStreamInfo["VideoFormat"].isNull())
 				streamInfosObject.videoFormat = valuePgmSceneInfosSceneInfoStreamInfosStreamInfo["VideoFormat"].asString();
 			if(!valuePgmSceneInfosSceneInfoStreamInfosStreamInfo["OutputStreamUrl"].isNull())
 				streamInfosObject.outputStreamUrl = valuePgmSceneInfosSceneInfoStreamInfosStreamInfo["OutputStreamUrl"].asString();
+			if(!valuePgmSceneInfosSceneInfoStreamInfosStreamInfo["TranscodeConfig"].isNull())
+				streamInfosObject.transcodeConfig = valuePgmSceneInfosSceneInfoStreamInfosStreamInfo["TranscodeConfig"].asString();
 			pgmSceneInfosObject.streamInfos.push_back(streamInfosObject);
 		}
 		pgmSceneInfos_.push_back(pgmSceneInfosObject);

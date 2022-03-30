@@ -47,8 +47,8 @@ namespace AlibabaCloud
 						float borderWidthNormalized;
 						float sizeNormalized;
 						std::string color;
-						std::string fontName;
 						std::string borderColor;
+						std::string fontName;
 						std::string text;
 					};
 					struct ImageLayerContent
@@ -59,10 +59,10 @@ namespace AlibabaCloud
 					{
 						float borderWidthNormalized;
 						std::string color;
-						std::string locationId;
 						std::string sourceLan;
-						bool showSourceLan;
 						std::string borderColor;
+						std::string locationId;
+						bool showSourceLan;
 						int wordCountPerLine;
 						int ptsOffset;
 						float sizeNormalized;
@@ -77,8 +77,8 @@ namespace AlibabaCloud
 					std::string componentType;
 					ComponentLayer componentLayer;
 					std::string locationId;
-					std::string componentName;
 					std::string effect;
+					std::string componentName;
 					std::string componentId;
 					ImageLayerContent imageLayerContent;
 				};

@@ -34,13 +34,13 @@ namespace AlibabaCloud
 			public:
 				struct Episode
 				{
-					std::string switchType;
 					int status;
+					std::string switchType;
 					std::vector<std::string> componentIds;
 					std::string endTime;
 					std::string resourceId;
-					std::string episodeType;
 					std::string startTime;
+					std::string episodeType;
 					std::string episodeId;
 					std::string episodeName;
 				};
@@ -52,8 +52,8 @@ namespace AlibabaCloud
 				int getProgramEffect()const;
 				int getTotal()const;
 				std::vector<Episode> getEpisodes()const;
-				std::string getCasterId()const;
 				std::string getProgramName()const;
+				std::string getCasterId()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -61,8 +61,8 @@ namespace AlibabaCloud
 				int programEffect_;
 				int total_;
 				std::vector<Episode> episodes_;
-				std::string casterId_;
 				std::string programName_;
+				std::string casterId_;
 
 			};
 		}

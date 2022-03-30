@@ -339,78 +339,6 @@ LiveClient::AddCustomLiveStreamTranscodeOutcomeCallable LiveClient::addCustomLiv
 	return task->get_future();
 }
 
-LiveClient::AddDRMCertificateOutcome LiveClient::addDRMCertificate(const AddDRMCertificateRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return AddDRMCertificateOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return AddDRMCertificateOutcome(AddDRMCertificateResult(outcome.result()));
-	else
-		return AddDRMCertificateOutcome(outcome.error());
-}
-
-void LiveClient::addDRMCertificateAsync(const AddDRMCertificateRequest& request, const AddDRMCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, addDRMCertificate(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::AddDRMCertificateOutcomeCallable LiveClient::addDRMCertificateCallable(const AddDRMCertificateRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<AddDRMCertificateOutcome()>>(
-			[this, request]()
-			{
-			return this->addDRMCertificate(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-LiveClient::AddLiveASRConfigOutcome LiveClient::addLiveASRConfig(const AddLiveASRConfigRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return AddLiveASRConfigOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return AddLiveASRConfigOutcome(AddLiveASRConfigResult(outcome.result()));
-	else
-		return AddLiveASRConfigOutcome(outcome.error());
-}
-
-void LiveClient::addLiveASRConfigAsync(const AddLiveASRConfigRequest& request, const AddLiveASRConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, addLiveASRConfig(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::AddLiveASRConfigOutcomeCallable LiveClient::addLiveASRConfigCallable(const AddLiveASRConfigRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<AddLiveASRConfigOutcome()>>(
-			[this, request]()
-			{
-			return this->addLiveASRConfig(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 LiveClient::AddLiveAppRecordConfigOutcome LiveClient::addLiveAppRecordConfig(const AddLiveAppRecordConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1203,78 +1131,6 @@ LiveClient::AllowPushStreamOutcomeCallable LiveClient::allowPushStreamCallable(c
 	return task->get_future();
 }
 
-LiveClient::ApplyBoardTokenOutcome LiveClient::applyBoardToken(const ApplyBoardTokenRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ApplyBoardTokenOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ApplyBoardTokenOutcome(ApplyBoardTokenResult(outcome.result()));
-	else
-		return ApplyBoardTokenOutcome(outcome.error());
-}
-
-void LiveClient::applyBoardTokenAsync(const ApplyBoardTokenRequest& request, const ApplyBoardTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, applyBoardToken(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::ApplyBoardTokenOutcomeCallable LiveClient::applyBoardTokenCallable(const ApplyBoardTokenRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ApplyBoardTokenOutcome()>>(
-			[this, request]()
-			{
-			return this->applyBoardToken(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-LiveClient::ApplyRecordTokenOutcome LiveClient::applyRecordToken(const ApplyRecordTokenRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ApplyRecordTokenOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ApplyRecordTokenOutcome(ApplyRecordTokenResult(outcome.result()));
-	else
-		return ApplyRecordTokenOutcome(outcome.error());
-}
-
-void LiveClient::applyRecordTokenAsync(const ApplyRecordTokenRequest& request, const ApplyRecordTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, applyRecordToken(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::ApplyRecordTokenOutcomeCallable LiveClient::applyRecordTokenCallable(const ApplyRecordTokenRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ApplyRecordTokenOutcome()>>(
-			[this, request]()
-			{
-			return this->applyRecordToken(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 LiveClient::BatchDeleteLiveDomainConfigsOutcome LiveClient::batchDeleteLiveDomainConfigs(const BatchDeleteLiveDomainConfigsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1419,114 +1275,6 @@ LiveClient::CloseLiveShiftOutcomeCallable LiveClient::closeLiveShiftCallable(con
 	return task->get_future();
 }
 
-LiveClient::CompleteBoardOutcome LiveClient::completeBoard(const CompleteBoardRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CompleteBoardOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CompleteBoardOutcome(CompleteBoardResult(outcome.result()));
-	else
-		return CompleteBoardOutcome(outcome.error());
-}
-
-void LiveClient::completeBoardAsync(const CompleteBoardRequest& request, const CompleteBoardAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, completeBoard(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::CompleteBoardOutcomeCallable LiveClient::completeBoardCallable(const CompleteBoardRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CompleteBoardOutcome()>>(
-			[this, request]()
-			{
-			return this->completeBoard(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-LiveClient::CompleteBoardRecordOutcome LiveClient::completeBoardRecord(const CompleteBoardRecordRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CompleteBoardRecordOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CompleteBoardRecordOutcome(CompleteBoardRecordResult(outcome.result()));
-	else
-		return CompleteBoardRecordOutcome(outcome.error());
-}
-
-void LiveClient::completeBoardRecordAsync(const CompleteBoardRecordRequest& request, const CompleteBoardRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, completeBoardRecord(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::CompleteBoardRecordOutcomeCallable LiveClient::completeBoardRecordCallable(const CompleteBoardRecordRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CompleteBoardRecordOutcome()>>(
-			[this, request]()
-			{
-			return this->completeBoardRecord(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-LiveClient::ControlHtmlResourceOutcome LiveClient::controlHtmlResource(const ControlHtmlResourceRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ControlHtmlResourceOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ControlHtmlResourceOutcome(ControlHtmlResourceResult(outcome.result()));
-	else
-		return ControlHtmlResourceOutcome(outcome.error());
-}
-
-void LiveClient::controlHtmlResourceAsync(const ControlHtmlResourceRequest& request, const ControlHtmlResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, controlHtmlResource(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::ControlHtmlResourceOutcomeCallable LiveClient::controlHtmlResourceCallable(const ControlHtmlResourceRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ControlHtmlResourceOutcome()>>(
-			[this, request]()
-			{
-			return this->controlHtmlResource(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 LiveClient::CopyCasterOutcome LiveClient::copyCaster(const CopyCasterRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1593,42 +1341,6 @@ LiveClient::CopyCasterSceneConfigOutcomeCallable LiveClient::copyCasterSceneConf
 			[this, request]()
 			{
 			return this->copyCasterSceneConfig(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-LiveClient::CreateBoardOutcome LiveClient::createBoard(const CreateBoardRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateBoardOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateBoardOutcome(CreateBoardResult(outcome.result()));
-	else
-		return CreateBoardOutcome(outcome.error());
-}
-
-void LiveClient::createBoardAsync(const CreateBoardRequest& request, const CreateBoardAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createBoard(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::CreateBoardOutcomeCallable LiveClient::createBoardCallable(const CreateBoardRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateBoardOutcome()>>(
-			[this, request]()
-			{
-			return this->createBoard(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1845,78 +1557,6 @@ LiveClient::CreateMixStreamOutcomeCallable LiveClient::createMixStreamCallable(c
 			[this, request]()
 			{
 			return this->createMixStream(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-LiveClient::CreateRoomOutcome LiveClient::createRoom(const CreateRoomRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateRoomOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateRoomOutcome(CreateRoomResult(outcome.result()));
-	else
-		return CreateRoomOutcome(outcome.error());
-}
-
-void LiveClient::createRoomAsync(const CreateRoomRequest& request, const CreateRoomAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createRoom(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::CreateRoomOutcomeCallable LiveClient::createRoomCallable(const CreateRoomRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateRoomOutcome()>>(
-			[this, request]()
-			{
-			return this->createRoom(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-LiveClient::DeleteBoardOutcome LiveClient::deleteBoard(const DeleteBoardRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DeleteBoardOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DeleteBoardOutcome(DeleteBoardResult(outcome.result()));
-	else
-		return DeleteBoardOutcome(outcome.error());
-}
-
-void LiveClient::deleteBoardAsync(const DeleteBoardRequest& request, const DeleteBoardAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, deleteBoard(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::DeleteBoardOutcomeCallable LiveClient::deleteBoardCallable(const DeleteBoardRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DeleteBoardOutcome()>>(
-			[this, request]()
-			{
-			return this->deleteBoard(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2241,78 +1881,6 @@ LiveClient::DeleteCustomTemplateOutcomeCallable LiveClient::deleteCustomTemplate
 			[this, request]()
 			{
 			return this->deleteCustomTemplate(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-LiveClient::DeleteHtmlResourceOutcome LiveClient::deleteHtmlResource(const DeleteHtmlResourceRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DeleteHtmlResourceOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DeleteHtmlResourceOutcome(DeleteHtmlResourceResult(outcome.result()));
-	else
-		return DeleteHtmlResourceOutcome(outcome.error());
-}
-
-void LiveClient::deleteHtmlResourceAsync(const DeleteHtmlResourceRequest& request, const DeleteHtmlResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, deleteHtmlResource(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::DeleteHtmlResourceOutcomeCallable LiveClient::deleteHtmlResourceCallable(const DeleteHtmlResourceRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DeleteHtmlResourceOutcome()>>(
-			[this, request]()
-			{
-			return this->deleteHtmlResource(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-LiveClient::DeleteLiveASRConfigOutcome LiveClient::deleteLiveASRConfig(const DeleteLiveASRConfigRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DeleteLiveASRConfigOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DeleteLiveASRConfigOutcome(DeleteLiveASRConfigResult(outcome.result()));
-	else
-		return DeleteLiveASRConfigOutcome(outcome.error());
-}
-
-void LiveClient::deleteLiveASRConfigAsync(const DeleteLiveASRConfigRequest& request, const DeleteLiveASRConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, deleteLiveASRConfig(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::DeleteLiveASRConfigOutcomeCallable LiveClient::deleteLiveASRConfigCallable(const DeleteLiveASRConfigRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DeleteLiveASRConfigOutcome()>>(
-			[this, request]()
-			{
-			return this->deleteLiveASRConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3399,114 +2967,6 @@ LiveClient::DescribeAutoShowListTasksOutcomeCallable LiveClient::describeAutoSho
 	return task->get_future();
 }
 
-LiveClient::DescribeBoardEventsOutcome LiveClient::describeBoardEvents(const DescribeBoardEventsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeBoardEventsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeBoardEventsOutcome(DescribeBoardEventsResult(outcome.result()));
-	else
-		return DescribeBoardEventsOutcome(outcome.error());
-}
-
-void LiveClient::describeBoardEventsAsync(const DescribeBoardEventsRequest& request, const DescribeBoardEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeBoardEvents(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::DescribeBoardEventsOutcomeCallable LiveClient::describeBoardEventsCallable(const DescribeBoardEventsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeBoardEventsOutcome()>>(
-			[this, request]()
-			{
-			return this->describeBoardEvents(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-LiveClient::DescribeBoardSnapshotOutcome LiveClient::describeBoardSnapshot(const DescribeBoardSnapshotRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeBoardSnapshotOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeBoardSnapshotOutcome(DescribeBoardSnapshotResult(outcome.result()));
-	else
-		return DescribeBoardSnapshotOutcome(outcome.error());
-}
-
-void LiveClient::describeBoardSnapshotAsync(const DescribeBoardSnapshotRequest& request, const DescribeBoardSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeBoardSnapshot(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::DescribeBoardSnapshotOutcomeCallable LiveClient::describeBoardSnapshotCallable(const DescribeBoardSnapshotRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeBoardSnapshotOutcome()>>(
-			[this, request]()
-			{
-			return this->describeBoardSnapshot(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-LiveClient::DescribeBoardsOutcome LiveClient::describeBoards(const DescribeBoardsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeBoardsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeBoardsOutcome(DescribeBoardsResult(outcome.result()));
-	else
-		return DescribeBoardsOutcome(outcome.error());
-}
-
-void LiveClient::describeBoardsAsync(const DescribeBoardsRequest& request, const DescribeBoardsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeBoards(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::DescribeBoardsOutcomeCallable LiveClient::describeBoardsCallable(const DescribeBoardsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeBoardsOutcome()>>(
-			[this, request]()
-			{
-			return this->describeBoards(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 LiveClient::DescribeCasterChannelsOutcome LiveClient::describeCasterChannels(const DescribeCasterChannelsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3681,42 +3141,6 @@ LiveClient::DescribeCasterProgramOutcomeCallable LiveClient::describeCasterProgr
 			[this, request]()
 			{
 			return this->describeCasterProgram(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-LiveClient::DescribeCasterRtcInfoOutcome LiveClient::describeCasterRtcInfo(const DescribeCasterRtcInfoRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeCasterRtcInfoOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeCasterRtcInfoOutcome(DescribeCasterRtcInfoResult(outcome.result()));
-	else
-		return DescribeCasterRtcInfoOutcome(outcome.error());
-}
-
-void LiveClient::describeCasterRtcInfoAsync(const DescribeCasterRtcInfoRequest& request, const DescribeCasterRtcInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeCasterRtcInfo(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::DescribeCasterRtcInfoOutcomeCallable LiveClient::describeCasterRtcInfoCallable(const DescribeCasterRtcInfoRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeCasterRtcInfoOutcome()>>(
-			[this, request]()
-			{
-			return this->describeCasterRtcInfo(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3939,42 +3363,6 @@ LiveClient::DescribeCastersOutcomeCallable LiveClient::describeCastersCallable(c
 	return task->get_future();
 }
 
-LiveClient::DescribeDRMCertListOutcome LiveClient::describeDRMCertList(const DescribeDRMCertListRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeDRMCertListOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeDRMCertListOutcome(DescribeDRMCertListResult(outcome.result()));
-	else
-		return DescribeDRMCertListOutcome(outcome.error());
-}
-
-void LiveClient::describeDRMCertListAsync(const DescribeDRMCertListRequest& request, const DescribeDRMCertListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeDRMCertList(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::DescribeDRMCertListOutcomeCallable LiveClient::describeDRMCertListCallable(const DescribeDRMCertListRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeDRMCertListOutcome()>>(
-			[this, request]()
-			{
-			return this->describeDRMCertList(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 LiveClient::DescribeDomainUsageDataOutcome LiveClient::describeDomainUsageData(const DescribeDomainUsageDataRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4113,78 +3501,6 @@ LiveClient::DescribeHlsLiveStreamRealTimeBpsDataOutcomeCallable LiveClient::desc
 			[this, request]()
 			{
 			return this->describeHlsLiveStreamRealTimeBpsData(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-LiveClient::DescribeHtmlResourceOutcome LiveClient::describeHtmlResource(const DescribeHtmlResourceRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeHtmlResourceOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeHtmlResourceOutcome(DescribeHtmlResourceResult(outcome.result()));
-	else
-		return DescribeHtmlResourceOutcome(outcome.error());
-}
-
-void LiveClient::describeHtmlResourceAsync(const DescribeHtmlResourceRequest& request, const DescribeHtmlResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeHtmlResource(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::DescribeHtmlResourceOutcomeCallable LiveClient::describeHtmlResourceCallable(const DescribeHtmlResourceRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeHtmlResourceOutcome()>>(
-			[this, request]()
-			{
-			return this->describeHtmlResource(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-LiveClient::DescribeLiveAsrConfigOutcome LiveClient::describeLiveAsrConfig(const DescribeLiveAsrConfigRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeLiveAsrConfigOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeLiveAsrConfigOutcome(DescribeLiveAsrConfigResult(outcome.result()));
-	else
-		return DescribeLiveAsrConfigOutcome(outcome.error());
-}
-
-void LiveClient::describeLiveAsrConfigAsync(const DescribeLiveAsrConfigRequest& request, const DescribeLiveAsrConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeLiveAsrConfig(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::DescribeLiveAsrConfigOutcomeCallable LiveClient::describeLiveAsrConfigCallable(const DescribeLiveAsrConfigRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeLiveAsrConfigOutcome()>>(
-			[this, request]()
-			{
-			return this->describeLiveAsrConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5415,42 +4731,6 @@ LiveClient::DescribeLiveEdgeTransferOutcomeCallable LiveClient::describeLiveEdge
 	return task->get_future();
 }
 
-LiveClient::DescribeLiveIpInfoOutcome LiveClient::describeLiveIpInfo(const DescribeLiveIpInfoRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeLiveIpInfoOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeLiveIpInfoOutcome(DescribeLiveIpInfoResult(outcome.result()));
-	else
-		return DescribeLiveIpInfoOutcome(outcome.error());
-}
-
-void LiveClient::describeLiveIpInfoAsync(const DescribeLiveIpInfoRequest& request, const DescribeLiveIpInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeLiveIpInfo(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::DescribeLiveIpInfoOutcomeCallable LiveClient::describeLiveIpInfoCallable(const DescribeLiveIpInfoRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeLiveIpInfoOutcome()>>(
-			[this, request]()
-			{
-			return this->describeLiveIpInfo(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 LiveClient::DescribeLiveLazyPullStreamConfigOutcome LiveClient::describeLiveLazyPullStreamConfig(const DescribeLiveLazyPullStreamConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5805,42 +5085,6 @@ LiveClient::DescribeLiveSnapshotDetectPornConfigOutcomeCallable LiveClient::desc
 			[this, request]()
 			{
 			return this->describeLiveSnapshotDetectPornConfig(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-LiveClient::DescribeLiveStagingIpOutcome LiveClient::describeLiveStagingIp(const DescribeLiveStagingIpRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeLiveStagingIpOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeLiveStagingIpOutcome(DescribeLiveStagingIpResult(outcome.result()));
-	else
-		return DescribeLiveStagingIpOutcome(outcome.error());
-}
-
-void LiveClient::describeLiveStagingIpAsync(const DescribeLiveStagingIpRequest& request, const DescribeLiveStagingIpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeLiveStagingIp(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::DescribeLiveStagingIpOutcomeCallable LiveClient::describeLiveStagingIpCallable(const DescribeLiveStagingIpRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeLiveStagingIpOutcome()>>(
-			[this, request]()
-			{
-			return this->describeLiveStagingIp(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -6711,42 +5955,6 @@ LiveClient::DescribeLiveUserTagsOutcomeCallable LiveClient::describeLiveUserTags
 	return task->get_future();
 }
 
-LiveClient::DescribeLiveVerifyContentOutcome LiveClient::describeLiveVerifyContent(const DescribeLiveVerifyContentRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeLiveVerifyContentOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeLiveVerifyContentOutcome(DescribeLiveVerifyContentResult(outcome.result()));
-	else
-		return DescribeLiveVerifyContentOutcome(outcome.error());
-}
-
-void LiveClient::describeLiveVerifyContentAsync(const DescribeLiveVerifyContentRequest& request, const DescribeLiveVerifyContentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeLiveVerifyContent(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::DescribeLiveVerifyContentOutcomeCallable LiveClient::describeLiveVerifyContentCallable(const DescribeLiveVerifyContentRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeLiveVerifyContentOutcome()>>(
-			[this, request]()
-			{
-			return this->describeLiveVerifyContent(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 LiveClient::DescribeMixStreamListOutcome LiveClient::describeMixStreamList(const DescribeMixStreamListRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -6777,78 +5985,6 @@ LiveClient::DescribeMixStreamListOutcomeCallable LiveClient::describeMixStreamLi
 			[this, request]()
 			{
 			return this->describeMixStreamList(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-LiveClient::DescribeRecordOutcome LiveClient::describeRecord(const DescribeRecordRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeRecordOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeRecordOutcome(DescribeRecordResult(outcome.result()));
-	else
-		return DescribeRecordOutcome(outcome.error());
-}
-
-void LiveClient::describeRecordAsync(const DescribeRecordRequest& request, const DescribeRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeRecord(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::DescribeRecordOutcomeCallable LiveClient::describeRecordCallable(const DescribeRecordRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeRecordOutcome()>>(
-			[this, request]()
-			{
-			return this->describeRecord(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-LiveClient::DescribeRecordsOutcome LiveClient::describeRecords(const DescribeRecordsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeRecordsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeRecordsOutcome(DescribeRecordsResult(outcome.result()));
-	else
-		return DescribeRecordsOutcome(outcome.error());
-}
-
-void LiveClient::describeRecordsAsync(const DescribeRecordsRequest& request, const DescribeRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeRecords(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::DescribeRecordsOutcomeCallable LiveClient::describeRecordsCallable(const DescribeRecordsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeRecordsOutcome()>>(
-			[this, request]()
-			{
-			return this->describeRecords(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -7245,42 +6381,6 @@ LiveClient::DisableLiveRealtimeLogDeliveryOutcomeCallable LiveClient::disableLiv
 			[this, request]()
 			{
 			return this->disableLiveRealtimeLogDelivery(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-LiveClient::EditHtmlResourceOutcome LiveClient::editHtmlResource(const EditHtmlResourceRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return EditHtmlResourceOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return EditHtmlResourceOutcome(EditHtmlResourceResult(outcome.result()));
-	else
-		return EditHtmlResourceOutcome(outcome.error());
-}
-
-void LiveClient::editHtmlResourceAsync(const EditHtmlResourceRequest& request, const EditHtmlResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, editHtmlResource(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::EditHtmlResourceOutcomeCallable LiveClient::editHtmlResourceCallable(const EditHtmlResourceRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<EditHtmlResourceOutcome()>>(
-			[this, request]()
-			{
-			return this->editHtmlResource(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -7749,42 +6849,6 @@ LiveClient::InitializeAutoShowListTaskOutcomeCallable LiveClient::initializeAuto
 			[this, request]()
 			{
 			return this->initializeAutoShowListTask(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-LiveClient::JoinBoardOutcome LiveClient::joinBoard(const JoinBoardRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return JoinBoardOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return JoinBoardOutcome(JoinBoardResult(outcome.result()));
-	else
-		return JoinBoardOutcome(outcome.error());
-}
-
-void LiveClient::joinBoardAsync(const JoinBoardRequest& request, const JoinBoardAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, joinBoard(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::JoinBoardOutcomeCallable LiveClient::joinBoardCallable(const JoinBoardRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<JoinBoardOutcome()>>(
-			[this, request]()
-			{
-			return this->joinBoard(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -8691,42 +7755,6 @@ LiveClient::SendRoomUserNotificationOutcomeCallable LiveClient::sendRoomUserNoti
 	return task->get_future();
 }
 
-LiveClient::SetBoardCallbackOutcome LiveClient::setBoardCallback(const SetBoardCallbackRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SetBoardCallbackOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SetBoardCallbackOutcome(SetBoardCallbackResult(outcome.result()));
-	else
-		return SetBoardCallbackOutcome(outcome.error());
-}
-
-void LiveClient::setBoardCallbackAsync(const SetBoardCallbackRequest& request, const SetBoardCallbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, setBoardCallback(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::SetBoardCallbackOutcomeCallable LiveClient::setBoardCallbackCallable(const SetBoardCallbackRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SetBoardCallbackOutcome()>>(
-			[this, request]()
-			{
-			return this->setBoardCallback(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 LiveClient::SetCasterChannelOutcome LiveClient::setCasterChannel(const SetCasterChannelRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -9153,42 +8181,6 @@ LiveClient::SetSnapshotCallbackAuthOutcomeCallable LiveClient::setSnapshotCallba
 			[this, request]()
 			{
 			return this->setSnapshotCallbackAuth(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-LiveClient::StartBoardRecordOutcome LiveClient::startBoardRecord(const StartBoardRecordRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return StartBoardRecordOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return StartBoardRecordOutcome(StartBoardRecordResult(outcome.result()));
-	else
-		return StartBoardRecordOutcome(outcome.error());
-}
-
-void LiveClient::startBoardRecordAsync(const StartBoardRecordRequest& request, const StartBoardRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, startBoardRecord(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::StartBoardRecordOutcomeCallable LiveClient::startBoardRecordCallable(const StartBoardRecordRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<StartBoardRecordOutcome()>>(
-			[this, request]()
-			{
-			return this->startBoardRecord(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -9699,78 +8691,6 @@ LiveClient::UnTagLiveResourcesOutcomeCallable LiveClient::unTagLiveResourcesCall
 	return task->get_future();
 }
 
-LiveClient::UpdateBoardOutcome LiveClient::updateBoard(const UpdateBoardRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return UpdateBoardOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return UpdateBoardOutcome(UpdateBoardResult(outcome.result()));
-	else
-		return UpdateBoardOutcome(outcome.error());
-}
-
-void LiveClient::updateBoardAsync(const UpdateBoardRequest& request, const UpdateBoardAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, updateBoard(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::UpdateBoardOutcomeCallable LiveClient::updateBoardCallable(const UpdateBoardRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<UpdateBoardOutcome()>>(
-			[this, request]()
-			{
-			return this->updateBoard(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-LiveClient::UpdateBoardCallbackOutcome LiveClient::updateBoardCallback(const UpdateBoardCallbackRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return UpdateBoardCallbackOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return UpdateBoardCallbackOutcome(UpdateBoardCallbackResult(outcome.result()));
-	else
-		return UpdateBoardCallbackOutcome(outcome.error());
-}
-
-void LiveClient::updateBoardCallbackAsync(const UpdateBoardCallbackRequest& request, const UpdateBoardCallbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, updateBoardCallback(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::UpdateBoardCallbackOutcomeCallable LiveClient::updateBoardCallbackCallable(const UpdateBoardCallbackRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<UpdateBoardCallbackOutcome()>>(
-			[this, request]()
-			{
-			return this->updateBoardCallback(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 LiveClient::UpdateCasterSceneAudioOutcome LiveClient::updateCasterSceneAudio(const UpdateCasterSceneAudioRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -9837,42 +8757,6 @@ LiveClient::UpdateCasterSceneConfigOutcomeCallable LiveClient::updateCasterScene
 			[this, request]()
 			{
 			return this->updateCasterSceneConfig(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-LiveClient::UpdateLiveASRConfigOutcome LiveClient::updateLiveASRConfig(const UpdateLiveASRConfigRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return UpdateLiveASRConfigOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return UpdateLiveASRConfigOutcome(UpdateLiveASRConfigResult(outcome.result()));
-	else
-		return UpdateLiveASRConfigOutcome(outcome.error());
-}
-
-void LiveClient::updateLiveASRConfigAsync(const UpdateLiveASRConfigRequest& request, const UpdateLiveASRConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, updateLiveASRConfig(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::UpdateLiveASRConfigOutcomeCallable LiveClient::updateLiveASRConfigCallable(const UpdateLiveASRConfigRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<UpdateLiveASRConfigOutcome()>>(
-			[this, request]()
-			{
-			return this->updateLiveASRConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

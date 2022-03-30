@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,127 +18,105 @@
 
 using AlibabaCloud::Live::Model::DescribeLiveUserDomainsRequest;
 
-DescribeLiveUserDomainsRequest::DescribeLiveUserDomainsRequest() :
-	RpcServiceRequest("live", "2016-11-01", "DescribeLiveUserDomains")
-{
-	setMethod(HttpRequest::Method::Post);
+DescribeLiveUserDomainsRequest::DescribeLiveUserDomainsRequest()
+    : RpcServiceRequest("live", "2016-11-01", "DescribeLiveUserDomains") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DescribeLiveUserDomainsRequest::~DescribeLiveUserDomainsRequest()
-{}
+DescribeLiveUserDomainsRequest::~DescribeLiveUserDomainsRequest() {}
 
-int DescribeLiveUserDomainsRequest::getPageNumber()const
-{
-	return pageNumber_;
+int DescribeLiveUserDomainsRequest::getPageNumber() const {
+  return pageNumber_;
 }
 
-void DescribeLiveUserDomainsRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+void DescribeLiveUserDomainsRequest::setPageNumber(int pageNumber) {
+  pageNumber_ = pageNumber;
+  setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
-std::string DescribeLiveUserDomainsRequest::getSecurityToken()const
-{
-	return securityToken_;
+std::string DescribeLiveUserDomainsRequest::getSecurityToken() const {
+  return securityToken_;
 }
 
-void DescribeLiveUserDomainsRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+void DescribeLiveUserDomainsRequest::setSecurityToken(const std::string &securityToken) {
+  securityToken_ = securityToken;
+  setParameter(std::string("SecurityToken"), securityToken);
 }
 
-int DescribeLiveUserDomainsRequest::getPageSize()const
-{
-	return pageSize_;
+int DescribeLiveUserDomainsRequest::getPageSize() const {
+  return pageSize_;
 }
 
-void DescribeLiveUserDomainsRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+void DescribeLiveUserDomainsRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
-std::string DescribeLiveUserDomainsRequest::getRegionName()const
-{
-	return regionName_;
+std::string DescribeLiveUserDomainsRequest::getRegionName() const {
+  return regionName_;
 }
 
-void DescribeLiveUserDomainsRequest::setRegionName(const std::string& regionName)
-{
-	regionName_ = regionName;
-	setParameter("RegionName", regionName);
+void DescribeLiveUserDomainsRequest::setRegionName(const std::string &regionName) {
+  regionName_ = regionName;
+  setParameter(std::string("RegionName"), regionName);
 }
 
-std::vector<DescribeLiveUserDomainsRequest::Tag> DescribeLiveUserDomainsRequest::getTag()const
-{
-	return tag_;
+std::vector<DescribeLiveUserDomainsRequest::Tag> DescribeLiveUserDomainsRequest::getTag() const {
+  return tag_;
 }
 
-void DescribeLiveUserDomainsRequest::setTag(const std::vector<Tag>& tag)
-{
-	tag_ = tag;
-	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
-		auto tagObj = tag.at(dep1);
-		std::string tagObjStr = "Tag." + std::to_string(dep1 + 1);
-		setParameter(tagObjStr + ".Value", tagObj.value);
-		setParameter(tagObjStr + ".Key", tagObj.key);
-	}
+void DescribeLiveUserDomainsRequest::setTag(const std::vector<DescribeLiveUserDomainsRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setParameter(tagObjStr + ".Value", tagObj.value);
+    setParameter(tagObjStr + ".Key", tagObj.key);
+  }
 }
 
-std::string DescribeLiveUserDomainsRequest::getDomainName()const
-{
-	return domainName_;
+std::string DescribeLiveUserDomainsRequest::getDomainName() const {
+  return domainName_;
 }
 
-void DescribeLiveUserDomainsRequest::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+void DescribeLiveUserDomainsRequest::setDomainName(const std::string &domainName) {
+  domainName_ = domainName;
+  setParameter(std::string("DomainName"), domainName);
 }
 
-long DescribeLiveUserDomainsRequest::getOwnerId()const
-{
-	return ownerId_;
+long DescribeLiveUserDomainsRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void DescribeLiveUserDomainsRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void DescribeLiveUserDomainsRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string DescribeLiveUserDomainsRequest::getDomainStatus()const
-{
-	return domainStatus_;
+std::string DescribeLiveUserDomainsRequest::getDomainStatus() const {
+  return domainStatus_;
 }
 
-void DescribeLiveUserDomainsRequest::setDomainStatus(const std::string& domainStatus)
-{
-	domainStatus_ = domainStatus;
-	setParameter("DomainStatus", domainStatus);
+void DescribeLiveUserDomainsRequest::setDomainStatus(const std::string &domainStatus) {
+  domainStatus_ = domainStatus;
+  setParameter(std::string("DomainStatus"), domainStatus);
 }
 
-std::string DescribeLiveUserDomainsRequest::getDomainSearchType()const
-{
-	return domainSearchType_;
+std::string DescribeLiveUserDomainsRequest::getDomainSearchType() const {
+  return domainSearchType_;
 }
 
-void DescribeLiveUserDomainsRequest::setDomainSearchType(const std::string& domainSearchType)
-{
-	domainSearchType_ = domainSearchType;
-	setParameter("DomainSearchType", domainSearchType);
+void DescribeLiveUserDomainsRequest::setDomainSearchType(const std::string &domainSearchType) {
+  domainSearchType_ = domainSearchType;
+  setParameter(std::string("DomainSearchType"), domainSearchType);
 }
 
-std::string DescribeLiveUserDomainsRequest::getLiveDomainType()const
-{
-	return liveDomainType_;
+std::string DescribeLiveUserDomainsRequest::getLiveDomainType() const {
+  return liveDomainType_;
 }
 
-void DescribeLiveUserDomainsRequest::setLiveDomainType(const std::string& liveDomainType)
-{
-	liveDomainType_ = liveDomainType;
-	setParameter("LiveDomainType", liveDomainType);
+void DescribeLiveUserDomainsRequest::setLiveDomainType(const std::string &liveDomainType) {
+  liveDomainType_ = liveDomainType;
+  setParameter(std::string("LiveDomainType"), liveDomainType);
 }
 

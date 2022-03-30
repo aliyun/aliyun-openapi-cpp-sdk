@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,45 +18,37 @@
 
 using AlibabaCloud::Live::Model::DescribeLiveStreamWatermarkRulesRequest;
 
-DescribeLiveStreamWatermarkRulesRequest::DescribeLiveStreamWatermarkRulesRequest() :
-	RpcServiceRequest("live", "2016-11-01", "DescribeLiveStreamWatermarkRules")
-{
-	setMethod(HttpRequest::Method::Post);
+DescribeLiveStreamWatermarkRulesRequest::DescribeLiveStreamWatermarkRulesRequest()
+    : RpcServiceRequest("live", "2016-11-01", "DescribeLiveStreamWatermarkRules") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DescribeLiveStreamWatermarkRulesRequest::~DescribeLiveStreamWatermarkRulesRequest()
-{}
+DescribeLiveStreamWatermarkRulesRequest::~DescribeLiveStreamWatermarkRulesRequest() {}
 
-int DescribeLiveStreamWatermarkRulesRequest::getPageNumber()const
-{
-	return pageNumber_;
+int DescribeLiveStreamWatermarkRulesRequest::getPageNumber() const {
+  return pageNumber_;
 }
 
-void DescribeLiveStreamWatermarkRulesRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+void DescribeLiveStreamWatermarkRulesRequest::setPageNumber(int pageNumber) {
+  pageNumber_ = pageNumber;
+  setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
-int DescribeLiveStreamWatermarkRulesRequest::getPageSize()const
-{
-	return pageSize_;
+int DescribeLiveStreamWatermarkRulesRequest::getPageSize() const {
+  return pageSize_;
 }
 
-void DescribeLiveStreamWatermarkRulesRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+void DescribeLiveStreamWatermarkRulesRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
-long DescribeLiveStreamWatermarkRulesRequest::getOwnerId()const
-{
-	return ownerId_;
+long DescribeLiveStreamWatermarkRulesRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void DescribeLiveStreamWatermarkRulesRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void DescribeLiveStreamWatermarkRulesRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 

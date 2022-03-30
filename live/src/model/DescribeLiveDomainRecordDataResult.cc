@@ -48,12 +48,12 @@ void DescribeLiveDomainRecordDataResult::parse(const std::string &payload)
 		if(!valueRecordDataInfosRecordDataInfo["Total"].isNull())
 			recordDataInfosObject.total = std::stoi(valueRecordDataInfosRecordDataInfo["Total"].asString());
 		auto detailNode = value["Detail"];
-		if(!detailNode["MP4"].isNull())
-			recordDataInfosObject.detail.mP4 = std::stoi(detailNode["MP4"].asString());
 		if(!detailNode["FLV"].isNull())
 			recordDataInfosObject.detail.fLV = std::stoi(detailNode["FLV"].asString());
 		if(!detailNode["TS"].isNull())
 			recordDataInfosObject.detail.tS = std::stoi(detailNode["TS"].asString());
+		if(!detailNode["MP4"].isNull())
+			recordDataInfosObject.detail.mP4 = std::stoi(detailNode["MP4"].asString());
 		recordDataInfos_.push_back(recordDataInfosObject);
 	}
 

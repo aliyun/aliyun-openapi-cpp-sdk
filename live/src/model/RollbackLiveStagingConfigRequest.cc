@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,45 +18,37 @@
 
 using AlibabaCloud::Live::Model::RollbackLiveStagingConfigRequest;
 
-RollbackLiveStagingConfigRequest::RollbackLiveStagingConfigRequest() :
-	RpcServiceRequest("live", "2016-11-01", "RollbackLiveStagingConfig")
-{
-	setMethod(HttpRequest::Method::Post);
+RollbackLiveStagingConfigRequest::RollbackLiveStagingConfigRequest()
+    : RpcServiceRequest("live", "2016-11-01", "RollbackLiveStagingConfig") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-RollbackLiveStagingConfigRequest::~RollbackLiveStagingConfigRequest()
-{}
+RollbackLiveStagingConfigRequest::~RollbackLiveStagingConfigRequest() {}
 
-std::string RollbackLiveStagingConfigRequest::getFunctionName()const
-{
-	return functionName_;
+std::string RollbackLiveStagingConfigRequest::getFunctionName() const {
+  return functionName_;
 }
 
-void RollbackLiveStagingConfigRequest::setFunctionName(const std::string& functionName)
-{
-	functionName_ = functionName;
-	setParameter("FunctionName", functionName);
+void RollbackLiveStagingConfigRequest::setFunctionName(const std::string &functionName) {
+  functionName_ = functionName;
+  setParameter(std::string("FunctionName"), functionName);
 }
 
-std::string RollbackLiveStagingConfigRequest::getDomainName()const
-{
-	return domainName_;
+std::string RollbackLiveStagingConfigRequest::getDomainName() const {
+  return domainName_;
 }
 
-void RollbackLiveStagingConfigRequest::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+void RollbackLiveStagingConfigRequest::setDomainName(const std::string &domainName) {
+  domainName_ = domainName;
+  setParameter(std::string("DomainName"), domainName);
 }
 
-long RollbackLiveStagingConfigRequest::getOwnerId()const
-{
-	return ownerId_;
+long RollbackLiveStagingConfigRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void RollbackLiveStagingConfigRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void RollbackLiveStagingConfigRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 

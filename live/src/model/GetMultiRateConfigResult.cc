@@ -43,50 +43,50 @@ void GetMultiRateConfigResult::parse(const std::string &payload)
 	for (auto valueTemplatesInfoDetail : allTemplatesInfoNode)
 	{
 		Detail templatesInfoObject;
-		if(!valueTemplatesInfoDetail["Template"].isNull())
-			templatesInfoObject._template = valueTemplatesInfoDetail["Template"].asString();
-		if(!valueTemplatesInfoDetail["TemplateType"].isNull())
-			templatesInfoObject.templateType = valueTemplatesInfoDetail["TemplateType"].asString();
-		if(!valueTemplatesInfoDetail["Height"].isNull())
-			templatesInfoObject.height = std::stoi(valueTemplatesInfoDetail["Height"].asString());
-		if(!valueTemplatesInfoDetail["Width"].isNull())
-			templatesInfoObject.width = std::stoi(valueTemplatesInfoDetail["Width"].asString());
-		if(!valueTemplatesInfoDetail["Fps"].isNull())
-			templatesInfoObject.fps = std::stoi(valueTemplatesInfoDetail["Fps"].asString());
-		if(!valueTemplatesInfoDetail["Gop"].isNull())
-			templatesInfoObject.gop = valueTemplatesInfoDetail["Gop"].asString();
-		if(!valueTemplatesInfoDetail["VideoBitrate"].isNull())
-			templatesInfoObject.videoBitrate = std::stoi(valueTemplatesInfoDetail["VideoBitrate"].asString());
-		if(!valueTemplatesInfoDetail["Profile"].isNull())
-			templatesInfoObject.profile = std::stoi(valueTemplatesInfoDetail["Profile"].asString());
-		if(!valueTemplatesInfoDetail["AudioProfile"].isNull())
-			templatesInfoObject.audioProfile = valueTemplatesInfoDetail["AudioProfile"].asString();
-		if(!valueTemplatesInfoDetail["AudioCodec"].isNull())
-			templatesInfoObject.audioCodec = valueTemplatesInfoDetail["AudioCodec"].asString();
-		if(!valueTemplatesInfoDetail["AudioRate"].isNull())
-			templatesInfoObject.audioRate = std::stoi(valueTemplatesInfoDetail["AudioRate"].asString());
 		if(!valueTemplatesInfoDetail["AudioBitrate"].isNull())
 			templatesInfoObject.audioBitrate = std::stoi(valueTemplatesInfoDetail["AudioBitrate"].asString());
-		if(!valueTemplatesInfoDetail["AudioChannelNum"].isNull())
-			templatesInfoObject.audioChannelNum = std::stoi(valueTemplatesInfoDetail["AudioChannelNum"].asString());
+		if(!valueTemplatesInfoDetail["Template"].isNull())
+			templatesInfoObject._template = valueTemplatesInfoDetail["Template"].asString();
+		if(!valueTemplatesInfoDetail["Height"].isNull())
+			templatesInfoObject.height = std::stoi(valueTemplatesInfoDetail["Height"].asString());
+		if(!valueTemplatesInfoDetail["TemplateType"].isNull())
+			templatesInfoObject.templateType = valueTemplatesInfoDetail["TemplateType"].asString();
 		if(!valueTemplatesInfoDetail["BandWidth"].isNull())
 			templatesInfoObject.bandWidth = std::stoi(valueTemplatesInfoDetail["BandWidth"].asString());
+		if(!valueTemplatesInfoDetail["Profile"].isNull())
+			templatesInfoObject.profile = std::stoi(valueTemplatesInfoDetail["Profile"].asString());
+		if(!valueTemplatesInfoDetail["AudioRate"].isNull())
+			templatesInfoObject.audioRate = std::stoi(valueTemplatesInfoDetail["AudioRate"].asString());
+		if(!valueTemplatesInfoDetail["AudioCodec"].isNull())
+			templatesInfoObject.audioCodec = valueTemplatesInfoDetail["AudioCodec"].asString();
+		if(!valueTemplatesInfoDetail["Gop"].isNull())
+			templatesInfoObject.gop = valueTemplatesInfoDetail["Gop"].asString();
+		if(!valueTemplatesInfoDetail["Width"].isNull())
+			templatesInfoObject.width = std::stoi(valueTemplatesInfoDetail["Width"].asString());
+		if(!valueTemplatesInfoDetail["VideoBitrate"].isNull())
+			templatesInfoObject.videoBitrate = std::stoi(valueTemplatesInfoDetail["VideoBitrate"].asString());
+		if(!valueTemplatesInfoDetail["AudioChannelNum"].isNull())
+			templatesInfoObject.audioChannelNum = std::stoi(valueTemplatesInfoDetail["AudioChannelNum"].asString());
+		if(!valueTemplatesInfoDetail["Fps"].isNull())
+			templatesInfoObject.fps = std::stoi(valueTemplatesInfoDetail["Fps"].asString());
+		if(!valueTemplatesInfoDetail["AudioProfile"].isNull())
+			templatesInfoObject.audioProfile = valueTemplatesInfoDetail["AudioProfile"].asString();
 		templatesInfo_.push_back(templatesInfoObject);
 	}
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
-	if(!value["Code"].isNull())
-		code_ = std::stoi(value["Code"].asString());
 	if(!value["Domain"].isNull())
 		domain_ = value["Domain"].asString();
-	if(!value["App"].isNull())
-		app_ = value["App"].asString();
-	if(!value["Stream"].isNull())
-		stream_ = value["Stream"].asString();
-	if(!value["AvFormat"].isNull())
-		avFormat_ = value["AvFormat"].asString();
 	if(!value["GroupId"].isNull())
 		groupId_ = value["GroupId"].asString();
+	if(!value["App"].isNull())
+		app_ = value["App"].asString();
+	if(!value["AvFormat"].isNull())
+		avFormat_ = value["AvFormat"].asString();
+	if(!value["Stream"].isNull())
+		stream_ = value["Stream"].asString();
+	if(!value["Code"].isNull())
+		code_ = std::stoi(value["Code"].asString());
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 	if(!value["IsLazy"].isNull())
 		isLazy_ = value["IsLazy"].asString();
 	if(!value["IsTimeAlign"].isNull())

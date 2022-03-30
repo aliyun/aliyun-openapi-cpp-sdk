@@ -42,13 +42,13 @@ namespace AlibabaCloud
 						int audioBitrate;
 						std::string bframes;
 						std::string audioProfile;
+						std::string videoProfile;
 						std::string rtsFlag;
 						int height;
-						std::string videoProfile;
 						int audioChannelNum;
 						int width;
-						std::string audioCodec;
 						int audioRate;
+						std::string audioCodec;
 						int videoBitrate;
 					};
 					struct EncryptParameters

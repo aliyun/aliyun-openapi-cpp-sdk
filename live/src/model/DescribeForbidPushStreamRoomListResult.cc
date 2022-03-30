@@ -43,20 +43,20 @@ void DescribeForbidPushStreamRoomListResult::parse(const std::string &payload)
 	for (auto valueRoomListRoom : allRoomListNode)
 	{
 		Room roomListObject;
-		if(!valueRoomListRoom["RoomId"].isNull())
-			roomListObject.roomId = valueRoomListRoom["RoomId"].asString();
+		if(!valueRoomListRoom["OpEndTime"].isNull())
+			roomListObject.opEndTime = valueRoomListRoom["OpEndTime"].asString();
 		if(!valueRoomListRoom["AnchorId"].isNull())
 			roomListObject.anchorId = valueRoomListRoom["AnchorId"].asString();
 		if(!valueRoomListRoom["OpStartTime"].isNull())
 			roomListObject.opStartTime = valueRoomListRoom["OpStartTime"].asString();
-		if(!valueRoomListRoom["OpEndTime"].isNull())
-			roomListObject.opEndTime = valueRoomListRoom["OpEndTime"].asString();
+		if(!valueRoomListRoom["RoomId"].isNull())
+			roomListObject.roomId = valueRoomListRoom["RoomId"].asString();
 		roomList_.push_back(roomListObject);
 	}
-	if(!value["TotalNum"].isNull())
-		totalNum_ = std::stoi(value["TotalNum"].asString());
 	if(!value["TotalPage"].isNull())
 		totalPage_ = std::stoi(value["TotalPage"].asString());
+	if(!value["TotalNum"].isNull())
+		totalNum_ = std::stoi(value["TotalNum"].asString());
 
 }
 

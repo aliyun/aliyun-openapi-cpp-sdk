@@ -43,10 +43,10 @@ void DescribeCasterConfigResult::parse(const std::string &payload)
 	for (auto valueSyncGroupsConfigSyncGroup : allSyncGroupsConfigNode)
 	{
 		SyncGroup syncGroupsConfigObject;
-		if(!valueSyncGroupsConfigSyncGroup["Mode"].isNull())
-			syncGroupsConfigObject.mode = std::stoi(valueSyncGroupsConfigSyncGroup["Mode"].asString());
 		if(!valueSyncGroupsConfigSyncGroup["HostResourceId"].isNull())
 			syncGroupsConfigObject.hostResourceId = valueSyncGroupsConfigSyncGroup["HostResourceId"].asString();
+		if(!valueSyncGroupsConfigSyncGroup["Mode"].isNull())
+			syncGroupsConfigObject.mode = std::stoi(valueSyncGroupsConfigSyncGroup["Mode"].asString());
 		auto allResourceIds = value["ResourceIds"]["ResourceId"];
 		for (auto value : allResourceIds)
 			syncGroupsConfigObject.resourceIds.push_back(value.asString());
@@ -67,36 +67,36 @@ void DescribeCasterConfigResult::parse(const std::string &payload)
 	for (auto recordConfigNodeRecordFormatRecordFormatItem : allRecordFormatNode)
 	{
 		RecordConfig::RecordFormatItem recordFormatItemObject;
-		if(!recordConfigNodeRecordFormatRecordFormatItem["Format"].isNull())
-			recordFormatItemObject.format = recordConfigNodeRecordFormatRecordFormatItem["Format"].asString();
-		if(!recordConfigNodeRecordFormatRecordFormatItem["OssObjectPrefix"].isNull())
-			recordFormatItemObject.ossObjectPrefix = recordConfigNodeRecordFormatRecordFormatItem["OssObjectPrefix"].asString();
-		if(!recordConfigNodeRecordFormatRecordFormatItem["SliceOssObjectPrefix"].isNull())
-			recordFormatItemObject.sliceOssObjectPrefix = recordConfigNodeRecordFormatRecordFormatItem["SliceOssObjectPrefix"].asString();
 		if(!recordConfigNodeRecordFormatRecordFormatItem["CycleDuration"].isNull())
 			recordFormatItemObject.cycleDuration = std::stoi(recordConfigNodeRecordFormatRecordFormatItem["CycleDuration"].asString());
+		if(!recordConfigNodeRecordFormatRecordFormatItem["SliceOssObjectPrefix"].isNull())
+			recordFormatItemObject.sliceOssObjectPrefix = recordConfigNodeRecordFormatRecordFormatItem["SliceOssObjectPrefix"].asString();
+		if(!recordConfigNodeRecordFormatRecordFormatItem["OssObjectPrefix"].isNull())
+			recordFormatItemObject.ossObjectPrefix = recordConfigNodeRecordFormatRecordFormatItem["OssObjectPrefix"].asString();
+		if(!recordConfigNodeRecordFormatRecordFormatItem["Format"].isNull())
+			recordFormatItemObject.format = recordConfigNodeRecordFormatRecordFormatItem["Format"].asString();
 		recordConfig_.recordFormat.push_back(recordFormatItemObject);
 	}
-	if(!value["CasterId"].isNull())
-		casterId_ = value["CasterId"].asString();
-	if(!value["CasterName"].isNull())
-		casterName_ = value["CasterName"].asString();
-	if(!value["DomainName"].isNull())
-		domainName_ = value["DomainName"].asString();
 	if(!value["Delay"].isNull())
 		delay_ = std::stof(value["Delay"].asString());
-	if(!value["UrgentMaterialId"].isNull())
-		urgentMaterialId_ = value["UrgentMaterialId"].asString();
-	if(!value["SideOutputUrl"].isNull())
-		sideOutputUrl_ = value["SideOutputUrl"].asString();
 	if(!value["CallbackUrl"].isNull())
 		callbackUrl_ = value["CallbackUrl"].asString();
+	if(!value["UrgentMaterialId"].isNull())
+		urgentMaterialId_ = value["UrgentMaterialId"].asString();
 	if(!value["ProgramName"].isNull())
 		programName_ = value["ProgramName"].asString();
+	if(!value["SideOutputUrl"].isNull())
+		sideOutputUrl_ = value["SideOutputUrl"].asString();
+	if(!value["CasterName"].isNull())
+		casterName_ = value["CasterName"].asString();
 	if(!value["ProgramEffect"].isNull())
 		programEffect_ = std::stoi(value["ProgramEffect"].asString());
+	if(!value["CasterId"].isNull())
+		casterId_ = value["CasterId"].asString();
 	if(!value["ChannelEnable"].isNull())
 		channelEnable_ = std::stoi(value["ChannelEnable"].asString());
+	if(!value["DomainName"].isNull())
+		domainName_ = value["DomainName"].asString();
 
 }
 
@@ -130,14 +130,14 @@ float DescribeCasterConfigResult::getDelay()const
 	return delay_;
 }
 
-std::string DescribeCasterConfigResult::getSideOutputUrl()const
-{
-	return sideOutputUrl_;
-}
-
 std::string DescribeCasterConfigResult::getCallbackUrl()const
 {
 	return callbackUrl_;
+}
+
+std::string DescribeCasterConfigResult::getSideOutputUrl()const
+{
+	return sideOutputUrl_;
 }
 
 std::string DescribeCasterConfigResult::getCasterName()const

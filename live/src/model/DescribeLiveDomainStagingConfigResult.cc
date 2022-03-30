@@ -43,12 +43,12 @@ void DescribeLiveDomainStagingConfigResult::parse(const std::string &payload)
 	for (auto valueDomainConfigsDomainConfig : allDomainConfigsNode)
 	{
 		DomainConfig domainConfigsObject;
-		if(!valueDomainConfigsDomainConfig["FunctionName"].isNull())
-			domainConfigsObject.functionName = valueDomainConfigsDomainConfig["FunctionName"].asString();
-		if(!valueDomainConfigsDomainConfig["ConfigId"].isNull())
-			domainConfigsObject.configId = valueDomainConfigsDomainConfig["ConfigId"].asString();
 		if(!valueDomainConfigsDomainConfig["Status"].isNull())
 			domainConfigsObject.status = valueDomainConfigsDomainConfig["Status"].asString();
+		if(!valueDomainConfigsDomainConfig["ConfigId"].isNull())
+			domainConfigsObject.configId = valueDomainConfigsDomainConfig["ConfigId"].asString();
+		if(!valueDomainConfigsDomainConfig["FunctionName"].isNull())
+			domainConfigsObject.functionName = valueDomainConfigsDomainConfig["FunctionName"].asString();
 		auto allFunctionArgsNode = valueDomainConfigsDomainConfig["FunctionArgs"]["FunctionArg"];
 		for (auto valueDomainConfigsDomainConfigFunctionArgsFunctionArg : allFunctionArgsNode)
 		{

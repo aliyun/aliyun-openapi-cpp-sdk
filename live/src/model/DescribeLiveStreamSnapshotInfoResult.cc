@@ -43,14 +43,14 @@ void DescribeLiveStreamSnapshotInfoResult::parse(const std::string &payload)
 	for (auto valueLiveStreamSnapshotInfoListLiveStreamSnapshotInfo : allLiveStreamSnapshotInfoListNode)
 	{
 		LiveStreamSnapshotInfo liveStreamSnapshotInfoListObject;
-		if(!valueLiveStreamSnapshotInfoListLiveStreamSnapshotInfo["OssEndpoint"].isNull())
-			liveStreamSnapshotInfoListObject.ossEndpoint = valueLiveStreamSnapshotInfoListLiveStreamSnapshotInfo["OssEndpoint"].asString();
-		if(!valueLiveStreamSnapshotInfoListLiveStreamSnapshotInfo["OssBucket"].isNull())
-			liveStreamSnapshotInfoListObject.ossBucket = valueLiveStreamSnapshotInfoListLiveStreamSnapshotInfo["OssBucket"].asString();
 		if(!valueLiveStreamSnapshotInfoListLiveStreamSnapshotInfo["OssObject"].isNull())
 			liveStreamSnapshotInfoListObject.ossObject = valueLiveStreamSnapshotInfoListLiveStreamSnapshotInfo["OssObject"].asString();
+		if(!valueLiveStreamSnapshotInfoListLiveStreamSnapshotInfo["OssBucket"].isNull())
+			liveStreamSnapshotInfoListObject.ossBucket = valueLiveStreamSnapshotInfoListLiveStreamSnapshotInfo["OssBucket"].asString();
 		if(!valueLiveStreamSnapshotInfoListLiveStreamSnapshotInfo["CreateTime"].isNull())
 			liveStreamSnapshotInfoListObject.createTime = valueLiveStreamSnapshotInfoListLiveStreamSnapshotInfo["CreateTime"].asString();
+		if(!valueLiveStreamSnapshotInfoListLiveStreamSnapshotInfo["OssEndpoint"].isNull())
+			liveStreamSnapshotInfoListObject.ossEndpoint = valueLiveStreamSnapshotInfoListLiveStreamSnapshotInfo["OssEndpoint"].asString();
 		liveStreamSnapshotInfoList_.push_back(liveStreamSnapshotInfoListObject);
 	}
 	if(!value["NextStartTime"].isNull())

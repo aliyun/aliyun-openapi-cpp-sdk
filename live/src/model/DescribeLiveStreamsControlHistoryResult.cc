@@ -43,14 +43,14 @@ void DescribeLiveStreamsControlHistoryResult::parse(const std::string &payload)
 	for (auto valueControlInfoLiveStreamControlInfo : allControlInfoNode)
 	{
 		LiveStreamControlInfo controlInfoObject;
-		if(!valueControlInfoLiveStreamControlInfo["StreamName"].isNull())
-			controlInfoObject.streamName = valueControlInfoLiveStreamControlInfo["StreamName"].asString();
 		if(!valueControlInfoLiveStreamControlInfo["ClientIP"].isNull())
 			controlInfoObject.clientIP = valueControlInfoLiveStreamControlInfo["ClientIP"].asString();
-		if(!valueControlInfoLiveStreamControlInfo["Action"].isNull())
-			controlInfoObject.action = valueControlInfoLiveStreamControlInfo["Action"].asString();
 		if(!valueControlInfoLiveStreamControlInfo["TimeStamp"].isNull())
 			controlInfoObject.timeStamp = valueControlInfoLiveStreamControlInfo["TimeStamp"].asString();
+		if(!valueControlInfoLiveStreamControlInfo["Action"].isNull())
+			controlInfoObject.action = valueControlInfoLiveStreamControlInfo["Action"].asString();
+		if(!valueControlInfoLiveStreamControlInfo["StreamName"].isNull())
+			controlInfoObject.streamName = valueControlInfoLiveStreamControlInfo["StreamName"].asString();
 		controlInfo_.push_back(controlInfoObject);
 	}
 

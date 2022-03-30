@@ -43,26 +43,26 @@ void DescribeLiveDomainCertificateInfoResult::parse(const std::string &payload)
 	for (auto valueCertInfosCertInfo : allCertInfosNode)
 	{
 		CertInfo certInfosObject;
-		if(!valueCertInfosCertInfo["DomainName"].isNull())
-			certInfosObject.domainName = valueCertInfosCertInfo["DomainName"].asString();
-		if(!valueCertInfosCertInfo["CertName"].isNull())
-			certInfosObject.certName = valueCertInfosCertInfo["CertName"].asString();
-		if(!valueCertInfosCertInfo["CertDomainName"].isNull())
-			certInfosObject.certDomainName = valueCertInfosCertInfo["CertDomainName"].asString();
-		if(!valueCertInfosCertInfo["CertExpireTime"].isNull())
-			certInfosObject.certExpireTime = valueCertInfosCertInfo["CertExpireTime"].asString();
-		if(!valueCertInfosCertInfo["CertLife"].isNull())
-			certInfosObject.certLife = valueCertInfosCertInfo["CertLife"].asString();
-		if(!valueCertInfosCertInfo["CertOrg"].isNull())
-			certInfosObject.certOrg = valueCertInfosCertInfo["CertOrg"].asString();
-		if(!valueCertInfosCertInfo["CertType"].isNull())
-			certInfosObject.certType = valueCertInfosCertInfo["CertType"].asString();
-		if(!valueCertInfosCertInfo["SSLProtocol"].isNull())
-			certInfosObject.sSLProtocol = valueCertInfosCertInfo["SSLProtocol"].asString();
 		if(!valueCertInfosCertInfo["Status"].isNull())
 			certInfosObject.status = valueCertInfosCertInfo["Status"].asString();
+		if(!valueCertInfosCertInfo["CertLife"].isNull())
+			certInfosObject.certLife = valueCertInfosCertInfo["CertLife"].asString();
+		if(!valueCertInfosCertInfo["CertExpireTime"].isNull())
+			certInfosObject.certExpireTime = valueCertInfosCertInfo["CertExpireTime"].asString();
 		if(!valueCertInfosCertInfo["SSLPub"].isNull())
 			certInfosObject.sSLPub = valueCertInfosCertInfo["SSLPub"].asString();
+		if(!valueCertInfosCertInfo["SSLProtocol"].isNull())
+			certInfosObject.sSLProtocol = valueCertInfosCertInfo["SSLProtocol"].asString();
+		if(!valueCertInfosCertInfo["CertType"].isNull())
+			certInfosObject.certType = valueCertInfosCertInfo["CertType"].asString();
+		if(!valueCertInfosCertInfo["CertDomainName"].isNull())
+			certInfosObject.certDomainName = valueCertInfosCertInfo["CertDomainName"].asString();
+		if(!valueCertInfosCertInfo["CertName"].isNull())
+			certInfosObject.certName = valueCertInfosCertInfo["CertName"].asString();
+		if(!valueCertInfosCertInfo["CertOrg"].isNull())
+			certInfosObject.certOrg = valueCertInfosCertInfo["CertOrg"].asString();
+		if(!valueCertInfosCertInfo["DomainName"].isNull())
+			certInfosObject.domainName = valueCertInfosCertInfo["DomainName"].asString();
 		certInfos_.push_back(certInfosObject);
 	}
 

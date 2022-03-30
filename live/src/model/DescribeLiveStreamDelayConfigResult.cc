@@ -40,20 +40,20 @@ void DescribeLiveStreamDelayConfigResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto liveStreamHlsDelayConfigNode = value["LiveStreamHlsDelayConfig"];
-	if(!liveStreamHlsDelayConfigNode["Level"].isNull())
-		liveStreamHlsDelayConfig_.level = liveStreamHlsDelayConfigNode["Level"].asString();
 	if(!liveStreamHlsDelayConfigNode["Delay"].isNull())
 		liveStreamHlsDelayConfig_.delay = std::stoi(liveStreamHlsDelayConfigNode["Delay"].asString());
+	if(!liveStreamHlsDelayConfigNode["Level"].isNull())
+		liveStreamHlsDelayConfig_.level = liveStreamHlsDelayConfigNode["Level"].asString();
 	auto liveStreamFlvDelayConfigNode = value["LiveStreamFlvDelayConfig"];
-	if(!liveStreamFlvDelayConfigNode["Level"].isNull())
-		liveStreamFlvDelayConfig_.level = liveStreamFlvDelayConfigNode["Level"].asString();
 	if(!liveStreamFlvDelayConfigNode["Delay"].isNull())
 		liveStreamFlvDelayConfig_.delay = std::stoi(liveStreamFlvDelayConfigNode["Delay"].asString());
+	if(!liveStreamFlvDelayConfigNode["Level"].isNull())
+		liveStreamFlvDelayConfig_.level = liveStreamFlvDelayConfigNode["Level"].asString();
 	auto liveStreamRtmpDelayConfigNode = value["LiveStreamRtmpDelayConfig"];
-	if(!liveStreamRtmpDelayConfigNode["Level"].isNull())
-		liveStreamRtmpDelayConfig_.level = liveStreamRtmpDelayConfigNode["Level"].asString();
 	if(!liveStreamRtmpDelayConfigNode["Delay"].isNull())
 		liveStreamRtmpDelayConfig_.delay = std::stoi(liveStreamRtmpDelayConfigNode["Delay"].asString());
+	if(!liveStreamRtmpDelayConfigNode["Level"].isNull())
+		liveStreamRtmpDelayConfig_.level = liveStreamRtmpDelayConfigNode["Level"].asString();
 
 }
 

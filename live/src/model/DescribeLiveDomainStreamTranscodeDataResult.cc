@@ -43,20 +43,20 @@ void DescribeLiveDomainStreamTranscodeDataResult::parse(const std::string &paylo
 	for (auto valueTranscodeDataListTranscodeData : allTranscodeDataListNode)
 	{
 		TranscodeData transcodeDataListObject;
-		if(!valueTranscodeDataListTranscodeData["TimeStamp"].isNull())
-			transcodeDataListObject.timeStamp = valueTranscodeDataListTranscodeData["TimeStamp"].asString();
+		if(!valueTranscodeDataListTranscodeData["TanscodeType"].isNull())
+			transcodeDataListObject.tanscodeType = valueTranscodeDataListTranscodeData["TanscodeType"].asString();
 		if(!valueTranscodeDataListTranscodeData["Domain"].isNull())
 			transcodeDataListObject.domain = valueTranscodeDataListTranscodeData["Domain"].asString();
 		if(!valueTranscodeDataListTranscodeData["Region"].isNull())
 			transcodeDataListObject.region = valueTranscodeDataListTranscodeData["Region"].asString();
-		if(!valueTranscodeDataListTranscodeData["TanscodeType"].isNull())
-			transcodeDataListObject.tanscodeType = valueTranscodeDataListTranscodeData["TanscodeType"].asString();
-		if(!valueTranscodeDataListTranscodeData["Resolution"].isNull())
-			transcodeDataListObject.resolution = valueTranscodeDataListTranscodeData["Resolution"].asString();
-		if(!valueTranscodeDataListTranscodeData["Fps"].isNull())
-			transcodeDataListObject.fps = valueTranscodeDataListTranscodeData["Fps"].asString();
 		if(!valueTranscodeDataListTranscodeData["Duration"].isNull())
 			transcodeDataListObject.duration = std::stoi(valueTranscodeDataListTranscodeData["Duration"].asString());
+		if(!valueTranscodeDataListTranscodeData["TimeStamp"].isNull())
+			transcodeDataListObject.timeStamp = valueTranscodeDataListTranscodeData["TimeStamp"].asString();
+		if(!valueTranscodeDataListTranscodeData["Fps"].isNull())
+			transcodeDataListObject.fps = valueTranscodeDataListTranscodeData["Fps"].asString();
+		if(!valueTranscodeDataListTranscodeData["Resolution"].isNull())
+			transcodeDataListObject.resolution = valueTranscodeDataListTranscodeData["Resolution"].asString();
 		transcodeDataList_.push_back(transcodeDataListObject);
 	}
 

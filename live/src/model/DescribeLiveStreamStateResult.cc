@@ -39,10 +39,10 @@ void DescribeLiveStreamStateResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["StreamState"].isNull())
-		streamState_ = value["StreamState"].asString();
 	if(!value["Type"].isNull())
 		type_ = value["Type"].asString();
+	if(!value["StreamState"].isNull())
+		streamState_ = value["StreamState"].asString();
 
 }
 

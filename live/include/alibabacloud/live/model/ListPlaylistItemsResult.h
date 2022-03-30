@@ -37,8 +37,8 @@ namespace AlibabaCloud
 					std::string programItemName;
 					std::string programItemId;
 					std::string resourceValue;
-					std::string resourceType;
 					int index;
+					std::string resourceType;
 					std::string programId;
 				};
 

@@ -42,8 +42,8 @@ namespace AlibabaCloud
 				};
 				struct LiveDomainWaterLevel
 				{
-					std::string domainName;
 					int domainTranscodeCount;
+					std::string domainName;
 					int domainRawCount;
 					int domainTranscodeLimit;
 					int domainRawLimit;

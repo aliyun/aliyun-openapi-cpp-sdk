@@ -43,10 +43,10 @@ void DescribeLiveAudioAuditConfigResult::parse(const std::string &payload)
 	for (auto valueLiveAudioAuditConfigListLiveAudioAuditConfig : allLiveAudioAuditConfigListNode)
 	{
 		LiveAudioAuditConfig liveAudioAuditConfigListObject;
-		if(!valueLiveAudioAuditConfigListLiveAudioAuditConfig["DomainName"].isNull())
-			liveAudioAuditConfigListObject.domainName = valueLiveAudioAuditConfigListLiveAudioAuditConfig["DomainName"].asString();
 		if(!valueLiveAudioAuditConfigListLiveAudioAuditConfig["AppName"].isNull())
 			liveAudioAuditConfigListObject.appName = valueLiveAudioAuditConfigListLiveAudioAuditConfig["AppName"].asString();
+		if(!valueLiveAudioAuditConfigListLiveAudioAuditConfig["DomainName"].isNull())
+			liveAudioAuditConfigListObject.domainName = valueLiveAudioAuditConfigListLiveAudioAuditConfig["DomainName"].asString();
 		if(!valueLiveAudioAuditConfigListLiveAudioAuditConfig["StreamName"].isNull())
 			liveAudioAuditConfigListObject.streamName = valueLiveAudioAuditConfigListLiveAudioAuditConfig["StreamName"].asString();
 		if(!valueLiveAudioAuditConfigListLiveAudioAuditConfig["BizType"].isNull())

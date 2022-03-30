@@ -39,18 +39,18 @@ void DescribeLiveEdgeTransferResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["DomainName"].isNull())
-		domainName_ = value["DomainName"].asString();
+	if(!value["HttpDns"].isNull())
+		httpDns_ = value["HttpDns"].asString();
 	if(!value["AppName"].isNull())
 		appName_ = value["AppName"].asString();
+	if(!value["TransferArgs"].isNull())
+		transferArgs_ = value["TransferArgs"].asString();
 	if(!value["StreamName"].isNull())
 		streamName_ = value["StreamName"].asString();
 	if(!value["TargetDomainList"].isNull())
 		targetDomainList_ = value["TargetDomainList"].asString();
-	if(!value["TransferArgs"].isNull())
-		transferArgs_ = value["TransferArgs"].asString();
-	if(!value["HttpDns"].isNull())
-		httpDns_ = value["HttpDns"].asString();
+	if(!value["DomainName"].isNull())
+		domainName_ = value["DomainName"].asString();
 
 }
 
