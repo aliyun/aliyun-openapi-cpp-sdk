@@ -57,7 +57,7 @@ void ListDistributedProductResult::parse(const std::string &payload)
 		if(!dataNodeInfoitems["TargetInstanceId"].isNull())
 			itemsObject.targetInstanceId = dataNodeInfoitems["TargetInstanceId"].asString();
 		if(!dataNodeInfoitems["GmtCreate"].isNull())
-			itemsObject.gmtCreate = std::stoi(dataNodeInfoitems["GmtCreate"].asString());
+			itemsObject.gmtCreate = std::stol(dataNodeInfoitems["GmtCreate"].asString());
 		if(!dataNodeInfoitems["TargetAliyunId"].isNull())
 			itemsObject.targetAliyunId = dataNodeInfoitems["TargetAliyunId"].asString();
 		if(!dataNodeInfoitems["SourceRegion"].isNull())

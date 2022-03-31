@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IOT_MODEL_LISTDISTRIBUTEDPRODUCTRESULT_H_
-#define ALIBABACLOUD_IOT_MODEL_LISTDISTRIBUTEDPRODUCTRESULT_H_
+#ifndef ALIBABACLOUD_IOT_MODEL_LISTDATASOURCEITEMRESULT_H_
+#define ALIBABACLOUD_IOT_MODEL_LISTDATASOURCEITEMRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,34 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IOT_EXPORT ListDistributedProductResult : public ServiceResult
+			class ALIBABACLOUD_IOT_EXPORT ListDataSourceItemResult : public ServiceResult
 			{
 			public:
-				struct Data
+				struct DataSourceItem
 				{
-					struct Items
-					{
-						std::string targetRegion;
-						std::string targetAliyunId;
-						std::string sourceInstanceName;
-						long gmtCreate;
-						std::string sourceUid;
-						std::string targetInstanceName;
-						std::string targetInstanceId;
-						std::string targetUid;
-						std::string sourceInstanceId;
-						std::string sourceRegion;
-						std::string productKey;
-					};
-					int total;
-					std::vector<Items> info;
+					long dataSourceItemId;
+					std::string topic;
 				};
 
 
-				ListDistributedProductResult();
-				explicit ListDistributedProductResult(const std::string &payload);
-				~ListDistributedProductResult();
-				Data getData()const;
+				ListDataSourceItemResult();
+				explicit ListDataSourceItemResult(const std::string &payload);
+				~ListDataSourceItemResult();
+				std::vector<DataSourceItem> getDataSourceItems()const;
+				int getPageSize()const;
+				int getTotal()const;
+				int getPage()const;
 				std::string getErrorMessage()const;
 				std::string getCode()const;
 				bool getSuccess()const;
@@ -64,7 +53,10 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				Data data_;
+				std::vector<DataSourceItem> dataSourceItems_;
+				int pageSize_;
+				int total_;
+				int page_;
 				std::string errorMessage_;
 				std::string code_;
 				bool success_;
@@ -73,4 +65,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IOT_MODEL_LISTDISTRIBUTEDPRODUCTRESULT_H_
+#endif // !ALIBABACLOUD_IOT_MODEL_LISTDATASOURCEITEMRESULT_H_

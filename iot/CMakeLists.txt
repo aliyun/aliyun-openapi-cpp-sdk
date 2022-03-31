@@ -115,6 +115,8 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/CreateConsumerGroupSubscribeRelationResult.h
 	include/alibabacloud/iot/model/CreateDataAPIServiceRequest.h
 	include/alibabacloud/iot/model/CreateDataAPIServiceResult.h
+	include/alibabacloud/iot/model/CreateDataSourceItemRequest.h
+	include/alibabacloud/iot/model/CreateDataSourceItemResult.h
 	include/alibabacloud/iot/model/CreateDeviceDistributeJobRequest.h
 	include/alibabacloud/iot/model/CreateDeviceDistributeJobResult.h
 	include/alibabacloud/iot/model/CreateDeviceDynamicGroupRequest.h
@@ -321,6 +323,8 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/InvokeThingsServiceResult.h
 	include/alibabacloud/iot/model/ListAnalyticsDataRequest.h
 	include/alibabacloud/iot/model/ListAnalyticsDataResult.h
+	include/alibabacloud/iot/model/ListDataSourceItemRequest.h
+	include/alibabacloud/iot/model/ListDataSourceItemResult.h
 	include/alibabacloud/iot/model/ListDeviceDistributeJobRequest.h
 	include/alibabacloud/iot/model/ListDeviceDistributeJobResult.h
 	include/alibabacloud/iot/model/ListDistributedDeviceRequest.h
@@ -750,6 +754,8 @@ set(iot_src
 	src/model/CreateConsumerGroupSubscribeRelationResult.cc
 	src/model/CreateDataAPIServiceRequest.cc
 	src/model/CreateDataAPIServiceResult.cc
+	src/model/CreateDataSourceItemRequest.cc
+	src/model/CreateDataSourceItemResult.cc
 	src/model/CreateDeviceDistributeJobRequest.cc
 	src/model/CreateDeviceDistributeJobResult.cc
 	src/model/CreateDeviceDynamicGroupRequest.cc
@@ -956,6 +962,8 @@ set(iot_src
 	src/model/InvokeThingsServiceResult.cc
 	src/model/ListAnalyticsDataRequest.cc
 	src/model/ListAnalyticsDataResult.cc
+	src/model/ListDataSourceItemRequest.cc
+	src/model/ListDataSourceItemResult.cc
 	src/model/ListDeviceDistributeJobRequest.cc
 	src/model/ListDeviceDistributeJobResult.cc
 	src/model/ListDistributedDeviceRequest.cc

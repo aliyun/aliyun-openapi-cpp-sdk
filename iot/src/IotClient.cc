@@ -1743,6 +1743,42 @@ IotClient::CreateDataAPIServiceOutcomeCallable IotClient::createDataAPIServiceCa
 	return task->get_future();
 }
 
+IotClient::CreateDataSourceItemOutcome IotClient::createDataSourceItem(const CreateDataSourceItemRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateDataSourceItemOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateDataSourceItemOutcome(CreateDataSourceItemResult(outcome.result()));
+	else
+		return CreateDataSourceItemOutcome(outcome.error());
+}
+
+void IotClient::createDataSourceItemAsync(const CreateDataSourceItemRequest& request, const CreateDataSourceItemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createDataSourceItem(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::CreateDataSourceItemOutcomeCallable IotClient::createDataSourceItemCallable(const CreateDataSourceItemRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateDataSourceItemOutcome()>>(
+			[this, request]()
+			{
+			return this->createDataSourceItem(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 IotClient::CreateDeviceDistributeJobOutcome IotClient::createDeviceDistributeJob(const CreateDeviceDistributeJobRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5445,6 +5481,42 @@ IotClient::ListAnalyticsDataOutcomeCallable IotClient::listAnalyticsDataCallable
 			[this, request]()
 			{
 			return this->listAnalyticsData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::ListDataSourceItemOutcome IotClient::listDataSourceItem(const ListDataSourceItemRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListDataSourceItemOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListDataSourceItemOutcome(ListDataSourceItemResult(outcome.result()));
+	else
+		return ListDataSourceItemOutcome(outcome.error());
+}
+
+void IotClient::listDataSourceItemAsync(const ListDataSourceItemRequest& request, const ListDataSourceItemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listDataSourceItem(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::ListDataSourceItemOutcomeCallable IotClient::listDataSourceItemCallable(const ListDataSourceItemRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListDataSourceItemOutcome()>>(
+			[this, request]()
+			{
+			return this->listDataSourceItem(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
