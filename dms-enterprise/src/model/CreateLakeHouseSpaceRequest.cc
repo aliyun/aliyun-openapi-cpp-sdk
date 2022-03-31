@@ -43,15 +43,6 @@ void CreateLakeHouseSpaceRequest::setDescription(const std::string &description)
   setParameter(std::string("Description"), description);
 }
 
-long CreateLakeHouseSpaceRequest::getUserId() const {
-  return userId_;
-}
-
-void CreateLakeHouseSpaceRequest::setUserId(long userId) {
-  userId_ = userId;
-  setParameter(std::string("UserId"), std::to_string(userId));
-}
-
 long CreateLakeHouseSpaceRequest::getTid() const {
   return tid_;
 }

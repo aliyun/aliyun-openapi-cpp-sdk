@@ -65,6 +65,8 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/CreateUploadOSSFileJobResult.h
 	include/alibabacloud/dms-enterprise/model/DeleteInstanceRequest.h
 	include/alibabacloud/dms-enterprise/model/DeleteInstanceResult.h
+	include/alibabacloud/dms-enterprise/model/DeleteLakeHouseSpaceRequest.h
+	include/alibabacloud/dms-enterprise/model/DeleteLakeHouseSpaceResult.h
 	include/alibabacloud/dms-enterprise/model/DeleteLhMembersRequest.h
 	include/alibabacloud/dms-enterprise/model/DeleteLhMembersResult.h
 	include/alibabacloud/dms-enterprise/model/DeleteLogicDatabaseRequest.h
@@ -75,6 +77,8 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/DeleteProxyResult.h
 	include/alibabacloud/dms-enterprise/model/DeleteProxyAccessRequest.h
 	include/alibabacloud/dms-enterprise/model/DeleteProxyAccessResult.h
+	include/alibabacloud/dms-enterprise/model/DeleteTaskFlowRequest.h
+	include/alibabacloud/dms-enterprise/model/DeleteTaskFlowResult.h
 	include/alibabacloud/dms-enterprise/model/DeleteUserRequest.h
 	include/alibabacloud/dms-enterprise/model/DeleteUserResult.h
 	include/alibabacloud/dms-enterprise/model/DisableUserRequest.h
@@ -115,6 +119,8 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/GetDatabaseResult.h
 	include/alibabacloud/dms-enterprise/model/GetInstanceRequest.h
 	include/alibabacloud/dms-enterprise/model/GetInstanceResult.h
+	include/alibabacloud/dms-enterprise/model/GetLhSpaceByNameRequest.h
+	include/alibabacloud/dms-enterprise/model/GetLhSpaceByNameResult.h
 	include/alibabacloud/dms-enterprise/model/GetLogicDatabaseRequest.h
 	include/alibabacloud/dms-enterprise/model/GetLogicDatabaseResult.h
 	include/alibabacloud/dms-enterprise/model/GetMetaTableColumnRequest.h
@@ -149,6 +155,8 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/GetTableDBTopologyResult.h
 	include/alibabacloud/dms-enterprise/model/GetTableTopologyRequest.h
 	include/alibabacloud/dms-enterprise/model/GetTableTopologyResult.h
+	include/alibabacloud/dms-enterprise/model/GetTaskInstanceRelationRequest.h
+	include/alibabacloud/dms-enterprise/model/GetTaskInstanceRelationResult.h
 	include/alibabacloud/dms-enterprise/model/GetUserRequest.h
 	include/alibabacloud/dms-enterprise/model/GetUserResult.h
 	include/alibabacloud/dms-enterprise/model/GetUserActiveTenantRequest.h
@@ -211,6 +219,10 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/ListStandardGroupsResult.h
 	include/alibabacloud/dms-enterprise/model/ListTablesRequest.h
 	include/alibabacloud/dms-enterprise/model/ListTablesResult.h
+	include/alibabacloud/dms-enterprise/model/ListTaskFlowRequest.h
+	include/alibabacloud/dms-enterprise/model/ListTaskFlowResult.h
+	include/alibabacloud/dms-enterprise/model/ListTaskFlowInstanceRequest.h
+	include/alibabacloud/dms-enterprise/model/ListTaskFlowInstanceResult.h
 	include/alibabacloud/dms-enterprise/model/ListUserPermissionsRequest.h
 	include/alibabacloud/dms-enterprise/model/ListUserPermissionsResult.h
 	include/alibabacloud/dms-enterprise/model/ListUserTenantsRequest.h
@@ -302,6 +314,8 @@ set(dms-enterprise_src
 	src/model/CreateUploadOSSFileJobResult.cc
 	src/model/DeleteInstanceRequest.cc
 	src/model/DeleteInstanceResult.cc
+	src/model/DeleteLakeHouseSpaceRequest.cc
+	src/model/DeleteLakeHouseSpaceResult.cc
 	src/model/DeleteLhMembersRequest.cc
 	src/model/DeleteLhMembersResult.cc
 	src/model/DeleteLogicDatabaseRequest.cc
@@ -312,6 +326,8 @@ set(dms-enterprise_src
 	src/model/DeleteProxyResult.cc
 	src/model/DeleteProxyAccessRequest.cc
 	src/model/DeleteProxyAccessResult.cc
+	src/model/DeleteTaskFlowRequest.cc
+	src/model/DeleteTaskFlowResult.cc
 	src/model/DeleteUserRequest.cc
 	src/model/DeleteUserResult.cc
 	src/model/DisableUserRequest.cc
@@ -352,6 +368,8 @@ set(dms-enterprise_src
 	src/model/GetDatabaseResult.cc
 	src/model/GetInstanceRequest.cc
 	src/model/GetInstanceResult.cc
+	src/model/GetLhSpaceByNameRequest.cc
+	src/model/GetLhSpaceByNameResult.cc
 	src/model/GetLogicDatabaseRequest.cc
 	src/model/GetLogicDatabaseResult.cc
 	src/model/GetMetaTableColumnRequest.cc
@@ -386,6 +404,8 @@ set(dms-enterprise_src
 	src/model/GetTableDBTopologyResult.cc
 	src/model/GetTableTopologyRequest.cc
 	src/model/GetTableTopologyResult.cc
+	src/model/GetTaskInstanceRelationRequest.cc
+	src/model/GetTaskInstanceRelationResult.cc
 	src/model/GetUserRequest.cc
 	src/model/GetUserResult.cc
 	src/model/GetUserActiveTenantRequest.cc
@@ -448,6 +468,10 @@ set(dms-enterprise_src
 	src/model/ListStandardGroupsResult.cc
 	src/model/ListTablesRequest.cc
 	src/model/ListTablesResult.cc
+	src/model/ListTaskFlowRequest.cc
+	src/model/ListTaskFlowResult.cc
+	src/model/ListTaskFlowInstanceRequest.cc
+	src/model/ListTaskFlowInstanceResult.cc
 	src/model/ListUserPermissionsRequest.cc
 	src/model/ListUserPermissionsResult.cc
 	src/model/ListUserTenantsRequest.cc
