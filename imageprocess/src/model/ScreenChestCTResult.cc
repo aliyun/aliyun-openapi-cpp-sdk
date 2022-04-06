@@ -126,7 +126,7 @@ void ScreenChestCTResult::parse(const std::string &payload)
 			detectionsItemObject.fractureLocation = detectRibFractureNodeDetectionsDetectionsItem["FractureLocation"].asString();
 		if(!detectRibFractureNodeDetectionsDetectionsItem["FractureSegment"].isNull())
 			detectionsItemObject.fractureSegment = std::stol(detectRibFractureNodeDetectionsDetectionsItem["FractureSegment"].asString());
-		auto allCoordinates = value["Coordinates"]["coordinates"];
+		auto allCoordinates = value["Coordinates"]["Coordinates"];
 		for (auto value : allCoordinates)
 			detectionsItemObject.coordinates.push_back(value.asString());
 		auto allCoordinateImage = value["CoordinateImage"]["CoordinateImage"];

@@ -40,10 +40,10 @@ void CalcCACSResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["Score"].isNull())
-		data_.score = dataNode["Score"].asString();
 	if(!dataNode["ResultUrl"].isNull())
 		data_.resultUrl = dataNode["ResultUrl"].asString();
+	if(!dataNode["Score"].isNull())
+		data_.score = dataNode["Score"].asString();
 
 }
 

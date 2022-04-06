@@ -40,10 +40,10 @@ void TranslateMedResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["Text"].isNull())
-		data_.text = dataNode["Text"].asString();
 	if(!dataNode["Words"].isNull())
 		data_.words = std::stol(dataNode["Words"].asString());
+	if(!dataNode["Text"].isNull())
+		data_.text = dataNode["Text"].asString();
 
 }
 

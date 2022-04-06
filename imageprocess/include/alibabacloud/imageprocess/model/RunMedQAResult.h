@@ -35,10 +35,10 @@ namespace AlibabaCloud
 				struct Data
 				{
 					std::vector<std::string> options;
-					std::string reports;
 					std::string questionType;
-					std::string answerType;
+					std::string reports;
 					std::string question;
+					std::string answerType;
 					std::string sessionId;
 				};
 

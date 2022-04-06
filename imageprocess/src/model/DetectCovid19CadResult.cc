@@ -40,14 +40,14 @@ void DetectCovid19CadResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["NewProbability"].isNull())
-		data_.newProbability = dataNode["NewProbability"].asString();
 	if(!dataNode["NormalProbability"].isNull())
 		data_.normalProbability = dataNode["NormalProbability"].asString();
-	if(!dataNode["OtherProbability"].isNull())
-		data_.otherProbability = dataNode["OtherProbability"].asString();
+	if(!dataNode["NewProbability"].isNull())
+		data_.newProbability = dataNode["NewProbability"].asString();
 	if(!dataNode["LesionRatio"].isNull())
 		data_.lesionRatio = dataNode["LesionRatio"].asString();
+	if(!dataNode["OtherProbability"].isNull())
+		data_.otherProbability = dataNode["OtherProbability"].asString();
 	if(!dataNode["Mask"].isNull())
 		data_.mask = dataNode["Mask"].asString();
 

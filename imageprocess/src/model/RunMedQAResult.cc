@@ -40,23 +40,23 @@ void RunMedQAResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["Reports"].isNull())
-		data_.reports = dataNode["Reports"].asString();
-	if(!dataNode["QuestionType"].isNull())
-		data_.questionType = dataNode["QuestionType"].asString();
-	if(!dataNode["AnswerType"].isNull())
-		data_.answerType = dataNode["AnswerType"].asString();
-	if(!dataNode["Question"].isNull())
-		data_.question = dataNode["Question"].asString();
 	if(!dataNode["SessionId"].isNull())
 		data_.sessionId = dataNode["SessionId"].asString();
+	if(!dataNode["QuestionType"].isNull())
+		data_.questionType = dataNode["QuestionType"].asString();
+	if(!dataNode["Question"].isNull())
+		data_.question = dataNode["Question"].asString();
+	if(!dataNode["AnswerType"].isNull())
+		data_.answerType = dataNode["AnswerType"].asString();
+	if(!dataNode["Reports"].isNull())
+		data_.reports = dataNode["Reports"].asString();
 		auto allOptions = dataNode["Options"]["options"];
 		for (auto value : allOptions)
 			data_.options.push_back(value.asString());
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 
 }
 

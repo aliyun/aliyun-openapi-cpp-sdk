@@ -44,10 +44,10 @@ void DetectSpineMRIResult::parse(const std::string &payload)
 	for (auto dataNodeDiscsDisc : allDiscsNode)
 	{
 		Data::Disc discObject;
-		if(!dataNodeDiscsDisc["Disease"].isNull())
-			discObject.disease = dataNodeDiscsDisc["Disease"].asString();
 		if(!dataNodeDiscsDisc["Identification"].isNull())
 			discObject.identification = dataNodeDiscsDisc["Identification"].asString();
+		if(!dataNodeDiscsDisc["Disease"].isNull())
+			discObject.disease = dataNodeDiscsDisc["Disease"].asString();
 		auto allLocation = value["Location"]["Location"];
 		for (auto value : allLocation)
 			discObject.location.push_back(value.asString());
@@ -57,10 +57,10 @@ void DetectSpineMRIResult::parse(const std::string &payload)
 	for (auto dataNodeVertebrasVertebra : allVertebrasNode)
 	{
 		Data::Vertebra vertebraObject;
-		if(!dataNodeVertebrasVertebra["Disease"].isNull())
-			vertebraObject.disease = dataNodeVertebrasVertebra["Disease"].asString();
 		if(!dataNodeVertebrasVertebra["Identification"].isNull())
 			vertebraObject.identification = dataNodeVertebrasVertebra["Identification"].asString();
+		if(!dataNodeVertebrasVertebra["Disease"].isNull())
+			vertebraObject.disease = dataNodeVertebrasVertebra["Disease"].asString();
 		auto allLocation1 = value["Location"]["Location"];
 		for (auto value : allLocation1)
 			vertebraObject.location1.push_back(value.asString());
