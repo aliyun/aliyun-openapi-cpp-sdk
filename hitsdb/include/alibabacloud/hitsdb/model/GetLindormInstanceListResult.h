@@ -34,6 +34,11 @@ namespace AlibabaCloud
 			public:
 				struct LindormInstanceSummary
 				{
+					struct Tag
+					{
+						std::string value;
+						std::string key;
+					};
 					long expiredMilliseconds;
 					std::string instanceStorage;
 					std::string zoneId;
@@ -50,6 +55,7 @@ namespace AlibabaCloud
 					std::string regionId;
 					std::string expireTime;
 					long createMilliseconds;
+					std::vector<LindormInstanceSummary::Tag> tags;
 					long aliUid;
 				};
 

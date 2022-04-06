@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_HITSDB_MODEL_GETINSTANCEIPWHITELISTREQUEST_H_
-#define ALIBABACLOUD_HITSDB_MODEL_GETINSTANCEIPWHITELISTREQUEST_H_
+#ifndef ALIBABACLOUD_HITSDB_MODEL_TAGRESOURCESREQUEST_H_
+#define ALIBABACLOUD_HITSDB_MODEL_TAGRESOURCESREQUEST_H_
 
 #include <alibabacloud/hitsdb/HitsdbExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,38 +26,45 @@
 namespace AlibabaCloud {
 namespace Hitsdb {
 namespace Model {
-class ALIBABACLOUD_HITSDB_EXPORT GetInstanceIpWhiteListRequest : public RpcServiceRequest {
+class ALIBABACLOUD_HITSDB_EXPORT TagResourcesRequest : public RpcServiceRequest {
 public:
-	GetInstanceIpWhiteListRequest();
-	~GetInstanceIpWhiteListRequest();
+	struct Tag {
+		std::string value;
+		std::string key;
+	};
+	TagResourcesRequest();
+	~TagResourcesRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getSecurityToken() const;
 	void setSecurityToken(const std::string &securityToken);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
+	std::vector<std::string> getResourceId() const;
+	void setResourceId(const std::vector<std::string> &resourceId);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
-	std::string getGroupName() const;
-	void setGroupName(const std::string &groupName);
-	std::string getInstanceId() const;
-	void setInstanceId(const std::string &instanceId);
+	std::string getResourceType() const;
+	void setResourceType(const std::string &resourceType);
 
 private:
 	long resourceOwnerId_;
 	std::string accessKeyId_;
 	std::string securityToken_;
+	std::vector<Tag> tag_;
+	std::vector<std::string> resourceId_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
-	std::string groupName_;
-	std::string instanceId_;
+	std::string resourceType_;
 };
 } // namespace Model
 } // namespace Hitsdb
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_HITSDB_MODEL_GETINSTANCEIPWHITELISTREQUEST_H_
+#endif // !ALIBABACLOUD_HITSDB_MODEL_TAGRESOURCESREQUEST_H_

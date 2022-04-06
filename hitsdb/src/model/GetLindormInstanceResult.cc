@@ -121,6 +121,8 @@ void GetLindormInstanceResult::parse(const std::string &payload)
 		enableCdc_ = value["EnableCdc"].asString() == "true";
 	if(!value["EnableStream"].isNull())
 		enableStream_ = value["EnableStream"].asString() == "true";
+	if(!value["EnableShs"].isNull())
+		enableShs_ = value["EnableShs"].asString() == "true";
 
 }
 
@@ -157,6 +159,11 @@ std::string GetLindormInstanceResult::getDiskUsage()const
 bool GetLindormInstanceResult::getEnableFS()const
 {
 	return enableFS_;
+}
+
+bool GetLindormInstanceResult::getEnableShs()const
+{
+	return enableShs_;
 }
 
 bool GetLindormInstanceResult::getEnableCompute()const

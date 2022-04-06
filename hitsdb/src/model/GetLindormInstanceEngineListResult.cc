@@ -49,14 +49,14 @@ void GetLindormInstanceEngineListResult::parse(const std::string &payload)
 		for (auto valueEngineListEngineInfoNetInfoListNetInfo : allNetInfoListNode)
 		{
 			EngineInfo::NetInfo netInfoListObject;
-			if(!valueEngineListEngineInfoNetInfoListNetInfo["NetType"].isNull())
-				netInfoListObject.netType = valueEngineListEngineInfoNetInfoListNetInfo["NetType"].asString();
-			if(!valueEngineListEngineInfoNetInfoListNetInfo["ConnectionString"].isNull())
-				netInfoListObject.connectionString = valueEngineListEngineInfoNetInfoListNetInfo["ConnectionString"].asString();
-			if(!valueEngineListEngineInfoNetInfoListNetInfo["Port"].isNull())
-				netInfoListObject.port = std::stoi(valueEngineListEngineInfoNetInfoListNetInfo["Port"].asString());
 			if(!valueEngineListEngineInfoNetInfoListNetInfo["AccessType"].isNull())
 				netInfoListObject.accessType = std::stoi(valueEngineListEngineInfoNetInfoListNetInfo["AccessType"].asString());
+			if(!valueEngineListEngineInfoNetInfoListNetInfo["Port"].isNull())
+				netInfoListObject.port = std::stoi(valueEngineListEngineInfoNetInfoListNetInfo["Port"].asString());
+			if(!valueEngineListEngineInfoNetInfoListNetInfo["ConnectionString"].isNull())
+				netInfoListObject.connectionString = valueEngineListEngineInfoNetInfoListNetInfo["ConnectionString"].asString();
+			if(!valueEngineListEngineInfoNetInfoListNetInfo["NetType"].isNull())
+				netInfoListObject.netType = valueEngineListEngineInfoNetInfoListNetInfo["NetType"].asString();
 			engineListObject.netInfoList.push_back(netInfoListObject);
 		}
 		engineList_.push_back(engineListObject);

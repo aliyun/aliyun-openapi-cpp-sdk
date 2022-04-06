@@ -77,6 +77,16 @@ void GetLindormInstanceListResult::parse(const std::string &payload)
 			instanceListObject.expiredMilliseconds = std::stol(valueInstanceListLindormInstanceSummary["ExpiredMilliseconds"].asString());
 		if(!valueInstanceListLindormInstanceSummary["EnableStream"].isNull())
 			instanceListObject.enableStream = valueInstanceListLindormInstanceSummary["EnableStream"].asString() == "true";
+		auto allTagsNode = valueInstanceListLindormInstanceSummary["Tags"]["Tag"];
+		for (auto valueInstanceListLindormInstanceSummaryTagsTag : allTagsNode)
+		{
+			LindormInstanceSummary::Tag tagsObject;
+			if(!valueInstanceListLindormInstanceSummaryTagsTag["Key"].isNull())
+				tagsObject.key = valueInstanceListLindormInstanceSummaryTagsTag["Key"].asString();
+			if(!valueInstanceListLindormInstanceSummaryTagsTag["Value"].isNull())
+				tagsObject.value = valueInstanceListLindormInstanceSummaryTagsTag["Value"].asString();
+			instanceListObject.tags.push_back(tagsObject);
+		}
 		instanceList_.push_back(instanceListObject);
 	}
 	if(!value["PageNumber"].isNull())

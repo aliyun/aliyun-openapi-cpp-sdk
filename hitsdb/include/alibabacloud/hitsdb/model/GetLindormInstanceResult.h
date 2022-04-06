@@ -54,6 +54,7 @@ namespace AlibabaCloud
 				bool getAutoRenew()const;
 				std::string getDiskUsage()const;
 				bool getEnableFS()const;
+				bool getEnableShs()const;
 				bool getEnableCompute()const;
 				std::string getNetworkType()const;
 				std::string getServiceType()const;
@@ -90,6 +91,7 @@ namespace AlibabaCloud
 				bool autoRenew_;
 				std::string diskUsage_;
 				bool enableFS_;
+				bool enableShs_;
 				bool enableCompute_;
 				std::string networkType_;
 				std::string serviceType_;

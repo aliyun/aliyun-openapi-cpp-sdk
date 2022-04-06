@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,111 +18,91 @@
 
 using AlibabaCloud::Hitsdb::Model::UpdateInstanceIpWhiteListRequest;
 
-UpdateInstanceIpWhiteListRequest::UpdateInstanceIpWhiteListRequest() :
-	RpcServiceRequest("hitsdb", "2020-06-15", "UpdateInstanceIpWhiteList")
-{
-	setMethod(HttpRequest::Method::Post);
+UpdateInstanceIpWhiteListRequest::UpdateInstanceIpWhiteListRequest()
+    : RpcServiceRequest("hitsdb", "2020-06-15", "UpdateInstanceIpWhiteList") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-UpdateInstanceIpWhiteListRequest::~UpdateInstanceIpWhiteListRequest()
-{}
+UpdateInstanceIpWhiteListRequest::~UpdateInstanceIpWhiteListRequest() {}
 
-long UpdateInstanceIpWhiteListRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long UpdateInstanceIpWhiteListRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void UpdateInstanceIpWhiteListRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void UpdateInstanceIpWhiteListRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string UpdateInstanceIpWhiteListRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string UpdateInstanceIpWhiteListRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void UpdateInstanceIpWhiteListRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void UpdateInstanceIpWhiteListRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string UpdateInstanceIpWhiteListRequest::getSecurityToken()const
-{
-	return securityToken_;
+std::string UpdateInstanceIpWhiteListRequest::getSecurityToken() const {
+  return securityToken_;
 }
 
-void UpdateInstanceIpWhiteListRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+void UpdateInstanceIpWhiteListRequest::setSecurityToken(const std::string &securityToken) {
+  securityToken_ = securityToken;
+  setParameter(std::string("SecurityToken"), securityToken);
 }
 
-std::string UpdateInstanceIpWhiteListRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string UpdateInstanceIpWhiteListRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void UpdateInstanceIpWhiteListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void UpdateInstanceIpWhiteListRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string UpdateInstanceIpWhiteListRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string UpdateInstanceIpWhiteListRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void UpdateInstanceIpWhiteListRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void UpdateInstanceIpWhiteListRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-long UpdateInstanceIpWhiteListRequest::getOwnerId()const
-{
-	return ownerId_;
+long UpdateInstanceIpWhiteListRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void UpdateInstanceIpWhiteListRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void UpdateInstanceIpWhiteListRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string UpdateInstanceIpWhiteListRequest::getGroupName()const
-{
-	return groupName_;
+std::string UpdateInstanceIpWhiteListRequest::getGroupName() const {
+  return groupName_;
 }
 
-void UpdateInstanceIpWhiteListRequest::setGroupName(const std::string& groupName)
-{
-	groupName_ = groupName;
-	setParameter("GroupName", groupName);
+void UpdateInstanceIpWhiteListRequest::setGroupName(const std::string &groupName) {
+  groupName_ = groupName;
+  setParameter(std::string("GroupName"), groupName);
 }
 
-std::string UpdateInstanceIpWhiteListRequest::getSecurityIpList()const
-{
-	return securityIpList_;
+std::string UpdateInstanceIpWhiteListRequest::getSecurityIpList() const {
+  return securityIpList_;
 }
 
-void UpdateInstanceIpWhiteListRequest::setSecurityIpList(const std::string& securityIpList)
-{
-	securityIpList_ = securityIpList;
-	setParameter("SecurityIpList", securityIpList);
+void UpdateInstanceIpWhiteListRequest::setSecurityIpList(const std::string &securityIpList) {
+  securityIpList_ = securityIpList;
+  setParameter(std::string("SecurityIpList"), securityIpList);
 }
 
-std::string UpdateInstanceIpWhiteListRequest::getInstanceId()const
-{
-	return instanceId_;
+std::string UpdateInstanceIpWhiteListRequest::getInstanceId() const {
+  return instanceId_;
 }
 
-void UpdateInstanceIpWhiteListRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+void UpdateInstanceIpWhiteListRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
