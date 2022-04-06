@@ -36,6 +36,8 @@ public:
 	void setNamespaceName(const std::string &namespaceName);
 	std::string getNamespaceSource() const;
 	void setNamespaceSource(const std::string &namespaceSource);
+	bool getScheduleBusyWorkers() const;
+	void setScheduleBusyWorkers(bool scheduleBusyWorkers);
 	std::string getMetricsThresholdJson() const;
 	void setMetricsThresholdJson(const std::string &metricsThresholdJson);
 	std::string getGroupId() const;
@@ -61,6 +63,7 @@ private:
 	int maxJobs_;
 	std::string namespaceName_;
 	std::string namespaceSource_;
+	bool scheduleBusyWorkers_;
 	std::string metricsThresholdJson_;
 	std::string groupId_;
 	std::string description_;

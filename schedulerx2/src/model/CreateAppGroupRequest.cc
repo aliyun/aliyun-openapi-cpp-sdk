@@ -52,6 +52,15 @@ void CreateAppGroupRequest::setNamespaceSource(const std::string &namespaceSourc
   setParameter(std::string("NamespaceSource"), namespaceSource);
 }
 
+bool CreateAppGroupRequest::getScheduleBusyWorkers() const {
+  return scheduleBusyWorkers_;
+}
+
+void CreateAppGroupRequest::setScheduleBusyWorkers(bool scheduleBusyWorkers) {
+  scheduleBusyWorkers_ = scheduleBusyWorkers;
+  setParameter(std::string("ScheduleBusyWorkers"), scheduleBusyWorkers ? "true" : "false");
+}
+
 std::string CreateAppGroupRequest::getMetricsThresholdJson() const {
   return metricsThresholdJson_;
 }

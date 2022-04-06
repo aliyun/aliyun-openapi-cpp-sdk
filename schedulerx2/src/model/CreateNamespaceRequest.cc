@@ -25,6 +25,24 @@ CreateNamespaceRequest::CreateNamespaceRequest()
 
 CreateNamespaceRequest::~CreateNamespaceRequest() {}
 
+std::string CreateNamespaceRequest::getDescription() const {
+  return description_;
+}
+
+void CreateNamespaceRequest::setDescription(const std::string &description) {
+  description_ = description;
+  setParameter(std::string("Description"), description);
+}
+
+std::string CreateNamespaceRequest::getSource() const {
+  return source_;
+}
+
+void CreateNamespaceRequest::setSource(const std::string &source) {
+  source_ = source;
+  setParameter(std::string("Source"), source);
+}
+
 std::string CreateNamespaceRequest::getUid() const {
   return uid_;
 }
@@ -50,14 +68,5 @@ std::string CreateNamespaceRequest::getName() const {
 void CreateNamespaceRequest::setName(const std::string &name) {
   name_ = name;
   setParameter(std::string("Name"), name);
-}
-
-std::string CreateNamespaceRequest::getDescription() const {
-  return description_;
-}
-
-void CreateNamespaceRequest::setDescription(const std::string &description) {
-  description_ = description;
-  setParameter(std::string("Description"), description);
 }
 

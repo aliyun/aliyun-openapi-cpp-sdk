@@ -30,20 +30,23 @@ class ALIBABACLOUD_SCHEDULERX2_EXPORT CreateNamespaceRequest : public RpcService
 public:
 	CreateNamespaceRequest();
 	~CreateNamespaceRequest();
+	std::string getDescription() const;
+	void setDescription(const std::string &description);
+	std::string getSource() const;
+	void setSource(const std::string &source);
 	std::string getUid() const;
 	void setUid(const std::string &uid);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getName() const;
 	void setName(const std::string &name);
-	std::string getDescription() const;
-	void setDescription(const std::string &description);
 
 private:
+	std::string description_;
+	std::string source_;
 	std::string uid_;
 	std::string regionId_;
 	std::string name_;
-	std::string description_;
 };
 } // namespace Model
 } // namespace Schedulerx2
