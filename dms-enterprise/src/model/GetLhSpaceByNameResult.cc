@@ -52,8 +52,8 @@ void GetLhSpaceByNameResult::parse(const std::string &payload)
 		lakehouseSpace_.description = lakehouseSpaceNode["Description"].asString();
 	if(!lakehouseSpaceNode["Mode"].isNull())
 		lakehouseSpace_.mode = std::stoi(lakehouseSpaceNode["Mode"].asString());
-	if(!lakehouseSpaceNode["DbType"].isNull())
-		lakehouseSpace_.dbType = lakehouseSpaceNode["DbType"].asString();
+	if(!lakehouseSpaceNode["DwDbType"].isNull())
+		lakehouseSpace_.dwDbType = lakehouseSpaceNode["DwDbType"].asString();
 	if(!lakehouseSpaceNode["SpaceConfig"].isNull())
 		lakehouseSpace_.spaceConfig = lakehouseSpaceNode["SpaceConfig"].asString();
 	if(!lakehouseSpaceNode["DevDbId"].isNull())

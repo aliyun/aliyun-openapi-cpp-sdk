@@ -40,9 +40,9 @@ namespace AlibabaCloud
 					std::string spaceName;
 					std::string creatorId;
 					int mode;
+					std::string dwDbType;
 					long id;
 					std::string spaceConfig;
-					std::string dbType;
 					int devDbId;
 					int prodDbId;
 				};

@@ -71,6 +71,10 @@ void ListLhTaskFlowAndScenarioResult::parse(const std::string &payload)
 			rawDAGListObject.latestInstanceStatus = std::stoi(valueRawDAGListDag["LatestInstanceStatus"].asString());
 		if(!valueRawDAGListDag["LatestInstanceTime"].isNull())
 			rawDAGListObject.latestInstanceTime = std::stoi(valueRawDAGListDag["LatestInstanceTime"].asString());
+		if(!valueRawDAGListDag["DagName"].isNull())
+			rawDAGListObject.dagName = valueRawDAGListDag["DagName"].asString();
+		if(!valueRawDAGListDag["DagOwnerId"].isNull())
+			rawDAGListObject.dagOwnerId = valueRawDAGListDag["DagOwnerId"].asString();
 		rawDAGList_.push_back(rawDAGListObject);
 	}
 	auto allScenarioDAGListNode = value["ScenarioDAGList"]["ScenarioDAG"];
@@ -109,6 +113,10 @@ void ListLhTaskFlowAndScenarioResult::parse(const std::string &payload)
 				dagListObject.latestInstanceStatus = std::stoi(valueScenarioDAGListScenarioDAGDagListDag["LatestInstanceStatus"].asString());
 			if(!valueScenarioDAGListScenarioDAGDagListDag["LatestInstanceTime"].isNull())
 				dagListObject.latestInstanceTime = std::stoi(valueScenarioDAGListScenarioDAGDagListDag["LatestInstanceTime"].asString());
+			if(!valueScenarioDAGListScenarioDAGDagListDag["DagName"].isNull())
+				dagListObject.dagName = valueScenarioDAGListScenarioDAGDagListDag["DagName"].asString();
+			if(!valueScenarioDAGListScenarioDAGDagListDag["DagOwnerId"].isNull())
+				dagListObject.dagOwnerId = valueScenarioDAGListScenarioDAGDagListDag["DagOwnerId"].asString();
 			scenarioDAGListObject.dagList.push_back(dagListObject);
 		}
 		auto scenarioNode = value["Scenario"];

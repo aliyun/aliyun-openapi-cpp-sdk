@@ -39,8 +39,10 @@ namespace AlibabaCloud
 					bool isDeleted;
 					long scenarioId;
 					std::string creatorId;
+					std::string dagOwnerId;
 					long deployId;
 					long spaceId;
+					std::string dagName;
 					std::string dagOwnerNickName;
 					bool canEdit;
 					int latestInstanceStatus;
@@ -64,8 +66,10 @@ namespace AlibabaCloud
 						bool isDeleted;
 						long scenarioId;
 						std::string creatorId;
+						std::string dagOwnerId;
 						long deployId;
 						long spaceId;
+						std::string dagName;
 						std::string dagOwnerNickName;
 						bool canEdit;
 						int latestInstanceStatus;
