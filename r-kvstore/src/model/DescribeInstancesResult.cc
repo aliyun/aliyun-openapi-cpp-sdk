@@ -121,6 +121,8 @@ void DescribeInstancesResult::parse(const std::string &payload)
 			instancesObject.proxyCount = std::stoi(valueInstancesKVStoreInstance["ProxyCount"].asString());
 		if(!valueInstancesKVStoreInstance["CloudType"].isNull())
 			instancesObject.cloudType = valueInstancesKVStoreInstance["CloudType"].asString();
+		if(!valueInstancesKVStoreInstance["EditionType"].isNull())
+			instancesObject.editionType = valueInstancesKVStoreInstance["EditionType"].asString();
 		auto allTagsNode = valueInstancesKVStoreInstance["Tags"]["Tag"];
 		for (auto valueInstancesKVStoreInstanceTagsTag : allTagsNode)
 		{
