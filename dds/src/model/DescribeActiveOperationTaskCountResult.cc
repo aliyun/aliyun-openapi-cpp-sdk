@@ -39,10 +39,10 @@ void DescribeActiveOperationTaskCountResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["TaskCount"].isNull())
-		taskCount_ = std::stoi(value["TaskCount"].asString());
 	if(!value["NeedPop"].isNull())
 		needPop_ = std::stoi(value["NeedPop"].asString());
+	if(!value["TaskCount"].isNull())
+		taskCount_ = std::stoi(value["TaskCount"].asString());
 
 }
 

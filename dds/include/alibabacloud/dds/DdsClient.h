@@ -38,8 +38,6 @@
 #include "model/CreateNodeResult.h"
 #include "model/CreateNodeBatchRequest.h"
 #include "model/CreateNodeBatchResult.h"
-#include "model/CreateRecommendationTaskRequest.h"
-#include "model/CreateRecommendationTaskResult.h"
 #include "model/CreateServerlessDBInstanceRequest.h"
 #include "model/CreateServerlessDBInstanceResult.h"
 #include "model/CreateShardingDBInstanceRequest.h"
@@ -54,8 +52,6 @@
 #include "model/DescribeActiveOperationTaskCountResult.h"
 #include "model/DescribeActiveOperationTaskTypeRequest.h"
 #include "model/DescribeActiveOperationTaskTypeResult.h"
-#include "model/DescribeAuditFilesRequest.h"
-#include "model/DescribeAuditFilesResult.h"
 #include "model/DescribeAuditLogFilterRequest.h"
 #include "model/DescribeAuditLogFilterResult.h"
 #include "model/DescribeAuditPolicyRequest.h"
@@ -66,8 +62,6 @@
 #include "model/DescribeAvailableEngineVersionResult.h"
 #include "model/DescribeAvailableResourceRequest.h"
 #include "model/DescribeAvailableResourceResult.h"
-#include "model/DescribeAvailableTimeRangeRequest.h"
-#include "model/DescribeAvailableTimeRangeResult.h"
 #include "model/DescribeBackupDBsRequest.h"
 #include "model/DescribeBackupDBsResult.h"
 #include "model/DescribeBackupPolicyRequest.h"
@@ -239,9 +233,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateNodeBatchResult> CreateNodeBatchOutcome;
 			typedef std::future<CreateNodeBatchOutcome> CreateNodeBatchOutcomeCallable;
 			typedef std::function<void(const DdsClient*, const Model::CreateNodeBatchRequest&, const CreateNodeBatchOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateNodeBatchAsyncHandler;
-			typedef Outcome<Error, Model::CreateRecommendationTaskResult> CreateRecommendationTaskOutcome;
-			typedef std::future<CreateRecommendationTaskOutcome> CreateRecommendationTaskOutcomeCallable;
-			typedef std::function<void(const DdsClient*, const Model::CreateRecommendationTaskRequest&, const CreateRecommendationTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateRecommendationTaskAsyncHandler;
 			typedef Outcome<Error, Model::CreateServerlessDBInstanceResult> CreateServerlessDBInstanceOutcome;
 			typedef std::future<CreateServerlessDBInstanceOutcome> CreateServerlessDBInstanceOutcomeCallable;
 			typedef std::function<void(const DdsClient*, const Model::CreateServerlessDBInstanceRequest&, const CreateServerlessDBInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateServerlessDBInstanceAsyncHandler;
@@ -263,9 +254,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeActiveOperationTaskTypeResult> DescribeActiveOperationTaskTypeOutcome;
 			typedef std::future<DescribeActiveOperationTaskTypeOutcome> DescribeActiveOperationTaskTypeOutcomeCallable;
 			typedef std::function<void(const DdsClient*, const Model::DescribeActiveOperationTaskTypeRequest&, const DescribeActiveOperationTaskTypeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeActiveOperationTaskTypeAsyncHandler;
-			typedef Outcome<Error, Model::DescribeAuditFilesResult> DescribeAuditFilesOutcome;
-			typedef std::future<DescribeAuditFilesOutcome> DescribeAuditFilesOutcomeCallable;
-			typedef std::function<void(const DdsClient*, const Model::DescribeAuditFilesRequest&, const DescribeAuditFilesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuditFilesAsyncHandler;
 			typedef Outcome<Error, Model::DescribeAuditLogFilterResult> DescribeAuditLogFilterOutcome;
 			typedef std::future<DescribeAuditLogFilterOutcome> DescribeAuditLogFilterOutcomeCallable;
 			typedef std::function<void(const DdsClient*, const Model::DescribeAuditLogFilterRequest&, const DescribeAuditLogFilterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuditLogFilterAsyncHandler;
@@ -281,9 +269,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeAvailableResourceResult> DescribeAvailableResourceOutcome;
 			typedef std::future<DescribeAvailableResourceOutcome> DescribeAvailableResourceOutcomeCallable;
 			typedef std::function<void(const DdsClient*, const Model::DescribeAvailableResourceRequest&, const DescribeAvailableResourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAvailableResourceAsyncHandler;
-			typedef Outcome<Error, Model::DescribeAvailableTimeRangeResult> DescribeAvailableTimeRangeOutcome;
-			typedef std::future<DescribeAvailableTimeRangeOutcome> DescribeAvailableTimeRangeOutcomeCallable;
-			typedef std::function<void(const DdsClient*, const Model::DescribeAvailableTimeRangeRequest&, const DescribeAvailableTimeRangeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAvailableTimeRangeAsyncHandler;
 			typedef Outcome<Error, Model::DescribeBackupDBsResult> DescribeBackupDBsOutcome;
 			typedef std::future<DescribeBackupDBsOutcome> DescribeBackupDBsOutcomeCallable;
 			typedef std::function<void(const DdsClient*, const Model::DescribeBackupDBsRequest&, const DescribeBackupDBsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupDBsAsyncHandler;
@@ -520,9 +505,6 @@ namespace AlibabaCloud
 			CreateNodeBatchOutcome createNodeBatch(const Model::CreateNodeBatchRequest &request)const;
 			void createNodeBatchAsync(const Model::CreateNodeBatchRequest& request, const CreateNodeBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateNodeBatchOutcomeCallable createNodeBatchCallable(const Model::CreateNodeBatchRequest& request) const;
-			CreateRecommendationTaskOutcome createRecommendationTask(const Model::CreateRecommendationTaskRequest &request)const;
-			void createRecommendationTaskAsync(const Model::CreateRecommendationTaskRequest& request, const CreateRecommendationTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CreateRecommendationTaskOutcomeCallable createRecommendationTaskCallable(const Model::CreateRecommendationTaskRequest& request) const;
 			CreateServerlessDBInstanceOutcome createServerlessDBInstance(const Model::CreateServerlessDBInstanceRequest &request)const;
 			void createServerlessDBInstanceAsync(const Model::CreateServerlessDBInstanceRequest& request, const CreateServerlessDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateServerlessDBInstanceOutcomeCallable createServerlessDBInstanceCallable(const Model::CreateServerlessDBInstanceRequest& request) const;
@@ -544,9 +526,6 @@ namespace AlibabaCloud
 			DescribeActiveOperationTaskTypeOutcome describeActiveOperationTaskType(const Model::DescribeActiveOperationTaskTypeRequest &request)const;
 			void describeActiveOperationTaskTypeAsync(const Model::DescribeActiveOperationTaskTypeRequest& request, const DescribeActiveOperationTaskTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeActiveOperationTaskTypeOutcomeCallable describeActiveOperationTaskTypeCallable(const Model::DescribeActiveOperationTaskTypeRequest& request) const;
-			DescribeAuditFilesOutcome describeAuditFiles(const Model::DescribeAuditFilesRequest &request)const;
-			void describeAuditFilesAsync(const Model::DescribeAuditFilesRequest& request, const DescribeAuditFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeAuditFilesOutcomeCallable describeAuditFilesCallable(const Model::DescribeAuditFilesRequest& request) const;
 			DescribeAuditLogFilterOutcome describeAuditLogFilter(const Model::DescribeAuditLogFilterRequest &request)const;
 			void describeAuditLogFilterAsync(const Model::DescribeAuditLogFilterRequest& request, const DescribeAuditLogFilterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAuditLogFilterOutcomeCallable describeAuditLogFilterCallable(const Model::DescribeAuditLogFilterRequest& request) const;
@@ -562,9 +541,6 @@ namespace AlibabaCloud
 			DescribeAvailableResourceOutcome describeAvailableResource(const Model::DescribeAvailableResourceRequest &request)const;
 			void describeAvailableResourceAsync(const Model::DescribeAvailableResourceRequest& request, const DescribeAvailableResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAvailableResourceOutcomeCallable describeAvailableResourceCallable(const Model::DescribeAvailableResourceRequest& request) const;
-			DescribeAvailableTimeRangeOutcome describeAvailableTimeRange(const Model::DescribeAvailableTimeRangeRequest &request)const;
-			void describeAvailableTimeRangeAsync(const Model::DescribeAvailableTimeRangeRequest& request, const DescribeAvailableTimeRangeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeAvailableTimeRangeOutcomeCallable describeAvailableTimeRangeCallable(const Model::DescribeAvailableTimeRangeRequest& request) const;
 			DescribeBackupDBsOutcome describeBackupDBs(const Model::DescribeBackupDBsRequest &request)const;
 			void describeBackupDBsAsync(const Model::DescribeBackupDBsRequest& request, const DescribeBackupDBsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeBackupDBsOutcomeCallable describeBackupDBsCallable(const Model::DescribeBackupDBsRequest& request) const;

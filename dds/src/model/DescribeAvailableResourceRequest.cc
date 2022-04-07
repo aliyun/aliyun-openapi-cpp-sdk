@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,144 +18,118 @@
 
 using AlibabaCloud::Dds::Model::DescribeAvailableResourceRequest;
 
-DescribeAvailableResourceRequest::DescribeAvailableResourceRequest() :
-	RpcServiceRequest("dds", "2015-12-01", "DescribeAvailableResource")
-{
-	setMethod(HttpRequest::Method::Post);
+DescribeAvailableResourceRequest::DescribeAvailableResourceRequest()
+    : RpcServiceRequest("dds", "2015-12-01", "DescribeAvailableResource") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DescribeAvailableResourceRequest::~DescribeAvailableResourceRequest()
-{}
+DescribeAvailableResourceRequest::~DescribeAvailableResourceRequest() {}
 
-long DescribeAvailableResourceRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long DescribeAvailableResourceRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void DescribeAvailableResourceRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void DescribeAvailableResourceRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string DescribeAvailableResourceRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string DescribeAvailableResourceRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void DescribeAvailableResourceRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void DescribeAvailableResourceRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string DescribeAvailableResourceRequest::getResourceGroupId()const
-{
-	return resourceGroupId_;
+std::string DescribeAvailableResourceRequest::getResourceGroupId() const {
+  return resourceGroupId_;
 }
 
-void DescribeAvailableResourceRequest::setResourceGroupId(const std::string& resourceGroupId)
-{
-	resourceGroupId_ = resourceGroupId;
-	setParameter("ResourceGroupId", resourceGroupId);
+void DescribeAvailableResourceRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
-std::string DescribeAvailableResourceRequest::getSecurityToken()const
-{
-	return securityToken_;
+std::string DescribeAvailableResourceRequest::getSecurityToken() const {
+  return securityToken_;
 }
 
-void DescribeAvailableResourceRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+void DescribeAvailableResourceRequest::setSecurityToken(const std::string &securityToken) {
+  securityToken_ = securityToken;
+  setParameter(std::string("SecurityToken"), securityToken);
 }
 
-std::string DescribeAvailableResourceRequest::getRegionId()const
-{
-	return regionId_;
+std::string DescribeAvailableResourceRequest::getRegionId() const {
+  return regionId_;
 }
 
-void DescribeAvailableResourceRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void DescribeAvailableResourceRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
-std::string DescribeAvailableResourceRequest::getInstanceChargeType()const
-{
-	return instanceChargeType_;
+std::string DescribeAvailableResourceRequest::getInstanceChargeType() const {
+  return instanceChargeType_;
 }
 
-void DescribeAvailableResourceRequest::setInstanceChargeType(const std::string& instanceChargeType)
-{
-	instanceChargeType_ = instanceChargeType;
-	setParameter("InstanceChargeType", instanceChargeType);
+void DescribeAvailableResourceRequest::setInstanceChargeType(const std::string &instanceChargeType) {
+  instanceChargeType_ = instanceChargeType;
+  setParameter(std::string("InstanceChargeType"), instanceChargeType);
 }
 
-std::string DescribeAvailableResourceRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string DescribeAvailableResourceRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void DescribeAvailableResourceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void DescribeAvailableResourceRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string DescribeAvailableResourceRequest::getLevel()const
-{
-	return level_;
+std::string DescribeAvailableResourceRequest::getLevel() const {
+  return level_;
 }
 
-void DescribeAvailableResourceRequest::setLevel(const std::string& level)
-{
-	level_ = level;
-	setParameter("Level", level);
+void DescribeAvailableResourceRequest::setLevel(const std::string &level) {
+  level_ = level;
+  setParameter(std::string("Level"), level);
 }
 
-std::string DescribeAvailableResourceRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string DescribeAvailableResourceRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void DescribeAvailableResourceRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void DescribeAvailableResourceRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-long DescribeAvailableResourceRequest::getOwnerId()const
-{
-	return ownerId_;
+long DescribeAvailableResourceRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void DescribeAvailableResourceRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void DescribeAvailableResourceRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string DescribeAvailableResourceRequest::getDbType()const
-{
-	return dbType_;
+std::string DescribeAvailableResourceRequest::getDbType() const {
+  return dbType_;
 }
 
-void DescribeAvailableResourceRequest::setDbType(const std::string& dbType)
-{
-	dbType_ = dbType;
-	setParameter("DbType", dbType);
+void DescribeAvailableResourceRequest::setDbType(const std::string &dbType) {
+  dbType_ = dbType;
+  setParameter(std::string("DbType"), dbType);
 }
 
-std::string DescribeAvailableResourceRequest::getZoneId()const
-{
-	return zoneId_;
+std::string DescribeAvailableResourceRequest::getZoneId() const {
+  return zoneId_;
 }
 
-void DescribeAvailableResourceRequest::setZoneId(const std::string& zoneId)
-{
-	zoneId_ = zoneId;
-	setParameter("ZoneId", zoneId);
+void DescribeAvailableResourceRequest::setZoneId(const std::string &zoneId) {
+  zoneId_ = zoneId;
+  setParameter(std::string("ZoneId"), zoneId);
 }
 

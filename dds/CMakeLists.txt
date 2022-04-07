@@ -37,8 +37,6 @@ set(dds_public_header_model
 	include/alibabacloud/dds/model/CreateNodeResult.h
 	include/alibabacloud/dds/model/CreateNodeBatchRequest.h
 	include/alibabacloud/dds/model/CreateNodeBatchResult.h
-	include/alibabacloud/dds/model/CreateRecommendationTaskRequest.h
-	include/alibabacloud/dds/model/CreateRecommendationTaskResult.h
 	include/alibabacloud/dds/model/CreateServerlessDBInstanceRequest.h
 	include/alibabacloud/dds/model/CreateServerlessDBInstanceResult.h
 	include/alibabacloud/dds/model/CreateShardingDBInstanceRequest.h
@@ -53,8 +51,6 @@ set(dds_public_header_model
 	include/alibabacloud/dds/model/DescribeActiveOperationTaskCountResult.h
 	include/alibabacloud/dds/model/DescribeActiveOperationTaskTypeRequest.h
 	include/alibabacloud/dds/model/DescribeActiveOperationTaskTypeResult.h
-	include/alibabacloud/dds/model/DescribeAuditFilesRequest.h
-	include/alibabacloud/dds/model/DescribeAuditFilesResult.h
 	include/alibabacloud/dds/model/DescribeAuditLogFilterRequest.h
 	include/alibabacloud/dds/model/DescribeAuditLogFilterResult.h
 	include/alibabacloud/dds/model/DescribeAuditPolicyRequest.h
@@ -65,8 +61,6 @@ set(dds_public_header_model
 	include/alibabacloud/dds/model/DescribeAvailableEngineVersionResult.h
 	include/alibabacloud/dds/model/DescribeAvailableResourceRequest.h
 	include/alibabacloud/dds/model/DescribeAvailableResourceResult.h
-	include/alibabacloud/dds/model/DescribeAvailableTimeRangeRequest.h
-	include/alibabacloud/dds/model/DescribeAvailableTimeRangeResult.h
 	include/alibabacloud/dds/model/DescribeBackupDBsRequest.h
 	include/alibabacloud/dds/model/DescribeBackupDBsResult.h
 	include/alibabacloud/dds/model/DescribeBackupPolicyRequest.h
@@ -224,8 +218,6 @@ set(dds_src
 	src/model/CreateNodeResult.cc
 	src/model/CreateNodeBatchRequest.cc
 	src/model/CreateNodeBatchResult.cc
-	src/model/CreateRecommendationTaskRequest.cc
-	src/model/CreateRecommendationTaskResult.cc
 	src/model/CreateServerlessDBInstanceRequest.cc
 	src/model/CreateServerlessDBInstanceResult.cc
 	src/model/CreateShardingDBInstanceRequest.cc
@@ -240,8 +232,6 @@ set(dds_src
 	src/model/DescribeActiveOperationTaskCountResult.cc
 	src/model/DescribeActiveOperationTaskTypeRequest.cc
 	src/model/DescribeActiveOperationTaskTypeResult.cc
-	src/model/DescribeAuditFilesRequest.cc
-	src/model/DescribeAuditFilesResult.cc
 	src/model/DescribeAuditLogFilterRequest.cc
 	src/model/DescribeAuditLogFilterResult.cc
 	src/model/DescribeAuditPolicyRequest.cc
@@ -252,8 +242,6 @@ set(dds_src
 	src/model/DescribeAvailableEngineVersionResult.cc
 	src/model/DescribeAvailableResourceRequest.cc
 	src/model/DescribeAvailableResourceResult.cc
-	src/model/DescribeAvailableTimeRangeRequest.cc
-	src/model/DescribeAvailableTimeRangeResult.cc
 	src/model/DescribeBackupDBsRequest.cc
 	src/model/DescribeBackupDBsResult.cc
 	src/model/DescribeBackupPolicyRequest.cc

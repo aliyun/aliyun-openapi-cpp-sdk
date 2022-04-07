@@ -43,6 +43,8 @@ void DescribeRoleZoneInfoResult::parse(const std::string &payload)
 	for (auto valueZoneInfosZoneInfo : allZoneInfosNode)
 	{
 		ZoneInfo zoneInfosObject;
+		if(!valueZoneInfosZoneInfo["InsName"].isNull())
+			zoneInfosObject.insName = valueZoneInfosZoneInfo["InsName"].asString();
 		if(!valueZoneInfosZoneInfo["NodeType"].isNull())
 			zoneInfosObject.nodeType = valueZoneInfosZoneInfo["NodeType"].asString();
 		if(!valueZoneInfosZoneInfo["RoleType"].isNull())
@@ -51,8 +53,6 @@ void DescribeRoleZoneInfoResult::parse(const std::string &payload)
 			zoneInfosObject.zoneId = valueZoneInfosZoneInfo["ZoneId"].asString();
 		if(!valueZoneInfosZoneInfo["RoleId"].isNull())
 			zoneInfosObject.roleId = valueZoneInfosZoneInfo["RoleId"].asString();
-		if(!valueZoneInfosZoneInfo["InsName"].isNull())
-			zoneInfosObject.insName = valueZoneInfosZoneInfo["InsName"].asString();
 		zoneInfos_.push_back(zoneInfosObject);
 	}
 

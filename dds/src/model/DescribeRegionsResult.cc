@@ -43,10 +43,10 @@ void DescribeRegionsResult::parse(const std::string &payload)
 	for (auto valueRegionsDdsRegion : allRegionsNode)
 	{
 		DdsRegion regionsObject;
-		if(!valueRegionsDdsRegion["RegionId"].isNull())
-			regionsObject.regionId = valueRegionsDdsRegion["RegionId"].asString();
 		if(!valueRegionsDdsRegion["ZoneIds"].isNull())
 			regionsObject.zoneIds = valueRegionsDdsRegion["ZoneIds"].asString();
+		if(!valueRegionsDdsRegion["RegionId"].isNull())
+			regionsObject.regionId = valueRegionsDdsRegion["RegionId"].asString();
 		auto allZonesNode = valueRegionsDdsRegion["Zones"]["Zone"];
 		for (auto valueRegionsDdsRegionZonesZone : allZonesNode)
 		{

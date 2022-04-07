@@ -43,76 +43,76 @@ void DescribeDedicatedClusterInstanceListResult::parse(const std::string &payloa
 	for (auto valueInstancesdbInstance : allInstancesNode)
 	{
 		DbInstance instancesObject;
-		if(!valueInstancesdbInstance["Region"].isNull())
-			instancesObject.region = valueInstancesdbInstance["Region"].asString();
-		if(!valueInstancesdbInstance["ClusterId"].isNull())
-			instancesObject.clusterId = valueInstancesdbInstance["ClusterId"].asString();
-		if(!valueInstancesdbInstance["ClusterName"].isNull())
-			instancesObject.clusterName = valueInstancesdbInstance["ClusterName"].asString();
-		if(!valueInstancesdbInstance["InstanceId"].isNull())
-			instancesObject.instanceId = valueInstancesdbInstance["InstanceId"].asString();
-		if(!valueInstancesdbInstance["InstanceName"].isNull())
-			instancesObject.instanceName = valueInstancesdbInstance["InstanceName"].asString();
-		if(!valueInstancesdbInstance["InstanceStatus"].isNull())
-			instancesObject.instanceStatus = valueInstancesdbInstance["InstanceStatus"].asString();
-		if(!valueInstancesdbInstance["EngineVersion"].isNull())
-			instancesObject.engineVersion = valueInstancesdbInstance["EngineVersion"].asString();
-		if(!valueInstancesdbInstance["CharacterType"].isNull())
-			instancesObject.characterType = valueInstancesdbInstance["CharacterType"].asString();
-		if(!valueInstancesdbInstance["MaintainStartTime"].isNull())
-			instancesObject.maintainStartTime = valueInstancesdbInstance["MaintainStartTime"].asString();
-		if(!valueInstancesdbInstance["MaintainEndTime"].isNull())
-			instancesObject.maintainEndTime = valueInstancesdbInstance["MaintainEndTime"].asString();
-		if(!valueInstancesdbInstance["RegionId"].isNull())
-			instancesObject.regionId = valueInstancesdbInstance["RegionId"].asString();
 		if(!valueInstancesdbInstance["VpcId"].isNull())
 			instancesObject.vpcId = valueInstancesdbInstance["VpcId"].asString();
+		if(!valueInstancesdbInstance["CharacterType"].isNull())
+			instancesObject.characterType = valueInstancesdbInstance["CharacterType"].asString();
 		if(!valueInstancesdbInstance["VswitchId"].isNull())
 			instancesObject.vswitchId = valueInstancesdbInstance["VswitchId"].asString();
-		if(!valueInstancesdbInstance["ZoneId"].isNull())
-			instancesObject.zoneId = valueInstancesdbInstance["ZoneId"].asString();
-		if(!valueInstancesdbInstance["CustomId"].isNull())
-			instancesObject.customId = valueInstancesdbInstance["CustomId"].asString();
+		if(!valueInstancesdbInstance["MaintainStartTime"].isNull())
+			instancesObject.maintainStartTime = valueInstancesdbInstance["MaintainStartTime"].asString();
 		if(!valueInstancesdbInstance["InstanceClass"].isNull())
 			instancesObject.instanceClass = valueInstancesdbInstance["InstanceClass"].asString();
-		if(!valueInstancesdbInstance["Engine"].isNull())
-			instancesObject.engine = valueInstancesdbInstance["Engine"].asString();
-		if(!valueInstancesdbInstance["StorageType"].isNull())
-			instancesObject.storageType = valueInstancesdbInstance["StorageType"].asString();
 		if(!valueInstancesdbInstance["ConnectionDomain"].isNull())
 			instancesObject.connectionDomain = valueInstancesdbInstance["ConnectionDomain"].asString();
 		if(!valueInstancesdbInstance["CreateTime"].isNull())
 			instancesObject.createTime = valueInstancesdbInstance["CreateTime"].asString();
+		if(!valueInstancesdbInstance["MaintainEndTime"].isNull())
+			instancesObject.maintainEndTime = valueInstancesdbInstance["MaintainEndTime"].asString();
+		if(!valueInstancesdbInstance["StorageType"].isNull())
+			instancesObject.storageType = valueInstancesdbInstance["StorageType"].asString();
+		if(!valueInstancesdbInstance["InstanceId"].isNull())
+			instancesObject.instanceId = valueInstancesdbInstance["InstanceId"].asString();
+		if(!valueInstancesdbInstance["EngineVersion"].isNull())
+			instancesObject.engineVersion = valueInstancesdbInstance["EngineVersion"].asString();
+		if(!valueInstancesdbInstance["RegionId"].isNull())
+			instancesObject.regionId = valueInstancesdbInstance["RegionId"].asString();
+		if(!valueInstancesdbInstance["InstanceName"].isNull())
+			instancesObject.instanceName = valueInstancesdbInstance["InstanceName"].asString();
+		if(!valueInstancesdbInstance["Region"].isNull())
+			instancesObject.region = valueInstancesdbInstance["Region"].asString();
+		if(!valueInstancesdbInstance["ZoneId"].isNull())
+			instancesObject.zoneId = valueInstancesdbInstance["ZoneId"].asString();
+		if(!valueInstancesdbInstance["ClusterName"].isNull())
+			instancesObject.clusterName = valueInstancesdbInstance["ClusterName"].asString();
+		if(!valueInstancesdbInstance["InstanceStatus"].isNull())
+			instancesObject.instanceStatus = valueInstancesdbInstance["InstanceStatus"].asString();
+		if(!valueInstancesdbInstance["Engine"].isNull())
+			instancesObject.engine = valueInstancesdbInstance["Engine"].asString();
+		if(!valueInstancesdbInstance["CustomId"].isNull())
+			instancesObject.customId = valueInstancesdbInstance["CustomId"].asString();
+		if(!valueInstancesdbInstance["ClusterId"].isNull())
+			instancesObject.clusterId = valueInstancesdbInstance["ClusterId"].asString();
 		auto allInstanceNodeListNode = valueInstancesdbInstance["InstanceNodeList"]["InstanceNodes"];
 		for (auto valueInstancesdbInstanceInstanceNodeListInstanceNodes : allInstanceNodeListNode)
 		{
 			DbInstance::InstanceNodes instanceNodeListObject;
-			if(!valueInstancesdbInstanceInstanceNodeListInstanceNodes["InsName"].isNull())
-				instanceNodeListObject.insName = valueInstancesdbInstanceInstanceNodeListInstanceNodes["InsName"].asString();
-			if(!valueInstancesdbInstanceInstanceNodeListInstanceNodes["Role"].isNull())
-				instanceNodeListObject.role = valueInstancesdbInstanceInstanceNodeListInstanceNodes["Role"].asString();
-			if(!valueInstancesdbInstanceInstanceNodeListInstanceNodes["NodeId"].isNull())
-				instanceNodeListObject.nodeId = std::stoi(valueInstancesdbInstanceInstanceNodeListInstanceNodes["NodeId"].asString());
-			if(!valueInstancesdbInstanceInstanceNodeListInstanceNodes["NodeType"].isNull())
-				instanceNodeListObject.nodeType = valueInstancesdbInstanceInstanceNodeListInstanceNodes["NodeType"].asString();
 			if(!valueInstancesdbInstanceInstanceNodeListInstanceNodes["NodeIp"].isNull())
 				instanceNodeListObject.nodeIp = valueInstancesdbInstanceInstanceNodeListInstanceNodes["NodeIp"].asString();
-			if(!valueInstancesdbInstanceInstanceNodeListInstanceNodes["Port"].isNull())
-				instanceNodeListObject.port = std::stoi(valueInstancesdbInstanceInstanceNodeListInstanceNodes["Port"].asString());
-			if(!valueInstancesdbInstanceInstanceNodeListInstanceNodes["ZoneId"].isNull())
-				instanceNodeListObject.zoneId = valueInstancesdbInstanceInstanceNodeListInstanceNodes["ZoneId"].asString();
 			if(!valueInstancesdbInstanceInstanceNodeListInstanceNodes["DedicatedHostName"].isNull())
 				instanceNodeListObject.dedicatedHostName = valueInstancesdbInstanceInstanceNodeListInstanceNodes["DedicatedHostName"].asString();
+			if(!valueInstancesdbInstanceInstanceNodeListInstanceNodes["InsName"].isNull())
+				instanceNodeListObject.insName = valueInstancesdbInstanceInstanceNodeListInstanceNodes["InsName"].asString();
+			if(!valueInstancesdbInstanceInstanceNodeListInstanceNodes["NodeType"].isNull())
+				instanceNodeListObject.nodeType = valueInstancesdbInstanceInstanceNodeListInstanceNodes["NodeType"].asString();
+			if(!valueInstancesdbInstanceInstanceNodeListInstanceNodes["ZoneId"].isNull())
+				instanceNodeListObject.zoneId = valueInstancesdbInstanceInstanceNodeListInstanceNodes["ZoneId"].asString();
+			if(!valueInstancesdbInstanceInstanceNodeListInstanceNodes["Role"].isNull())
+				instanceNodeListObject.role = valueInstancesdbInstanceInstanceNodeListInstanceNodes["Role"].asString();
+			if(!valueInstancesdbInstanceInstanceNodeListInstanceNodes["Port"].isNull())
+				instanceNodeListObject.port = std::stoi(valueInstancesdbInstanceInstanceNodeListInstanceNodes["Port"].asString());
+			if(!valueInstancesdbInstanceInstanceNodeListInstanceNodes["NodeId"].isNull())
+				instanceNodeListObject.nodeId = std::stoi(valueInstancesdbInstanceInstanceNodeListInstanceNodes["NodeId"].asString());
 			instancesObject.instanceNodeList.push_back(instanceNodeListObject);
 		}
 		instances_.push_back(instancesObject);
 	}
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
 
 }
 

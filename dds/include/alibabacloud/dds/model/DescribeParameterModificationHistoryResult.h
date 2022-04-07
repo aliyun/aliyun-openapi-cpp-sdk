@@ -34,8 +34,8 @@ namespace AlibabaCloud
 			public:
 				struct HistoricalParameter
 				{
-					std::string modifyTime;
 					std::string newParameterValue;
+					std::string modifyTime;
 					std::string oldParameterValue;
 					std::string parameterName;
 				};

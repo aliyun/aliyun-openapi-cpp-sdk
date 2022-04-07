@@ -43,26 +43,26 @@ void DescribeSlowLogRecordsResult::parse(const std::string &payload)
 	for (auto valueItemsLogRecords : allItemsNode)
 	{
 		LogRecords itemsObject;
-		if(!valueItemsLogRecords["TableName"].isNull())
-			itemsObject.tableName = valueItemsLogRecords["TableName"].asString();
-		if(!valueItemsLogRecords["QueryTimes"].isNull())
-			itemsObject.queryTimes = valueItemsLogRecords["QueryTimes"].asString();
 		if(!valueItemsLogRecords["ExecutionStartTime"].isNull())
 			itemsObject.executionStartTime = valueItemsLogRecords["ExecutionStartTime"].asString();
-		if(!valueItemsLogRecords["ReturnRowCounts"].isNull())
-			itemsObject.returnRowCounts = std::stol(valueItemsLogRecords["ReturnRowCounts"].asString());
-		if(!valueItemsLogRecords["DBName"].isNull())
-			itemsObject.dBName = valueItemsLogRecords["DBName"].asString();
-		if(!valueItemsLogRecords["KeysExamined"].isNull())
-			itemsObject.keysExamined = std::stol(valueItemsLogRecords["KeysExamined"].asString());
-		if(!valueItemsLogRecords["DocsExamined"].isNull())
-			itemsObject.docsExamined = std::stol(valueItemsLogRecords["DocsExamined"].asString());
 		if(!valueItemsLogRecords["HostAddress"].isNull())
 			itemsObject.hostAddress = valueItemsLogRecords["HostAddress"].asString();
-		if(!valueItemsLogRecords["AccountName"].isNull())
-			itemsObject.accountName = valueItemsLogRecords["AccountName"].asString();
+		if(!valueItemsLogRecords["QueryTimes"].isNull())
+			itemsObject.queryTimes = valueItemsLogRecords["QueryTimes"].asString();
+		if(!valueItemsLogRecords["TableName"].isNull())
+			itemsObject.tableName = valueItemsLogRecords["TableName"].asString();
 		if(!valueItemsLogRecords["SQLText"].isNull())
 			itemsObject.sQLText = valueItemsLogRecords["SQLText"].asString();
+		if(!valueItemsLogRecords["ReturnRowCounts"].isNull())
+			itemsObject.returnRowCounts = std::stol(valueItemsLogRecords["ReturnRowCounts"].asString());
+		if(!valueItemsLogRecords["KeysExamined"].isNull())
+			itemsObject.keysExamined = std::stol(valueItemsLogRecords["KeysExamined"].asString());
+		if(!valueItemsLogRecords["DBName"].isNull())
+			itemsObject.dBName = valueItemsLogRecords["DBName"].asString();
+		if(!valueItemsLogRecords["DocsExamined"].isNull())
+			itemsObject.docsExamined = std::stol(valueItemsLogRecords["DocsExamined"].asString());
+		if(!valueItemsLogRecords["AccountName"].isNull())
+			itemsObject.accountName = valueItemsLogRecords["AccountName"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["TotalRecordCount"].isNull())

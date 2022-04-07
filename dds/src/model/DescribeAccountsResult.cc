@@ -43,16 +43,16 @@ void DescribeAccountsResult::parse(const std::string &payload)
 	for (auto valueAccountsAccount : allAccountsNode)
 	{
 		Account accountsObject;
-		if(!valueAccountsAccount["DBInstanceId"].isNull())
-			accountsObject.dBInstanceId = valueAccountsAccount["DBInstanceId"].asString();
-		if(!valueAccountsAccount["AccountName"].isNull())
-			accountsObject.accountName = valueAccountsAccount["AccountName"].asString();
+		if(!valueAccountsAccount["CharacterType"].isNull())
+			accountsObject.characterType = valueAccountsAccount["CharacterType"].asString();
 		if(!valueAccountsAccount["AccountStatus"].isNull())
 			accountsObject.accountStatus = valueAccountsAccount["AccountStatus"].asString();
 		if(!valueAccountsAccount["AccountDescription"].isNull())
 			accountsObject.accountDescription = valueAccountsAccount["AccountDescription"].asString();
-		if(!valueAccountsAccount["CharacterType"].isNull())
-			accountsObject.characterType = valueAccountsAccount["CharacterType"].asString();
+		if(!valueAccountsAccount["DBInstanceId"].isNull())
+			accountsObject.dBInstanceId = valueAccountsAccount["DBInstanceId"].asString();
+		if(!valueAccountsAccount["AccountName"].isNull())
+			accountsObject.accountName = valueAccountsAccount["AccountName"].asString();
 		accounts_.push_back(accountsObject);
 	}
 

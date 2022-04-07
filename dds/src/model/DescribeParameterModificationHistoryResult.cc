@@ -45,12 +45,12 @@ void DescribeParameterModificationHistoryResult::parse(const std::string &payloa
 		HistoricalParameter historicalParametersObject;
 		if(!valueHistoricalParametersHistoricalParameter["ParameterName"].isNull())
 			historicalParametersObject.parameterName = valueHistoricalParametersHistoricalParameter["ParameterName"].asString();
-		if(!valueHistoricalParametersHistoricalParameter["ModifyTime"].isNull())
-			historicalParametersObject.modifyTime = valueHistoricalParametersHistoricalParameter["ModifyTime"].asString();
 		if(!valueHistoricalParametersHistoricalParameter["OldParameterValue"].isNull())
 			historicalParametersObject.oldParameterValue = valueHistoricalParametersHistoricalParameter["OldParameterValue"].asString();
 		if(!valueHistoricalParametersHistoricalParameter["NewParameterValue"].isNull())
 			historicalParametersObject.newParameterValue = valueHistoricalParametersHistoricalParameter["NewParameterValue"].asString();
+		if(!valueHistoricalParametersHistoricalParameter["ModifyTime"].isNull())
+			historicalParametersObject.modifyTime = valueHistoricalParametersHistoricalParameter["ModifyTime"].asString();
 		historicalParameters_.push_back(historicalParametersObject);
 	}
 

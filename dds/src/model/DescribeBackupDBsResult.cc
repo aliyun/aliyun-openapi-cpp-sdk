@@ -47,12 +47,12 @@ void DescribeBackupDBsResult::parse(const std::string &payload)
 			databasesObject.dBName = valueDatabasesDatabase["DBName"].asString();
 		databases_.push_back(databasesObject);
 	}
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
 
 }
 

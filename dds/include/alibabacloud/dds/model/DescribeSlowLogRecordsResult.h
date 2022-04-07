@@ -38,12 +38,12 @@ namespace AlibabaCloud
 					std::string queryTimes;
 					std::string executionStartTime;
 					long returnRowCounts;
-					std::string dBName;
 					long keysExamined;
-					long docsExamined;
+					std::string dBName;
 					std::string hostAddress;
-					std::string accountName;
+					long docsExamined;
 					std::string sQLText;
+					std::string accountName;
 				};
 
 

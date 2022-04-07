@@ -43,10 +43,10 @@ void DescribeKernelReleaseNotesResult::parse(const std::string &payload)
 	for (auto valueReleaseNotesReleaseNote : allReleaseNotesNode)
 	{
 		ReleaseNote releaseNotesObject;
-		if(!valueReleaseNotesReleaseNote["KernelVersion"].isNull())
-			releaseNotesObject.kernelVersion = valueReleaseNotesReleaseNote["KernelVersion"].asString();
 		if(!valueReleaseNotesReleaseNote["ReleaseNote"].isNull())
 			releaseNotesObject.releaseNote = valueReleaseNotesReleaseNote["ReleaseNote"].asString();
+		if(!valueReleaseNotesReleaseNote["KernelVersion"].isNull())
+			releaseNotesObject.kernelVersion = valueReleaseNotesReleaseNote["KernelVersion"].asString();
 		releaseNotes_.push_back(releaseNotesObject);
 	}
 

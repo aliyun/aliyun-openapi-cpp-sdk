@@ -41,10 +41,10 @@ void DescribeDBInstanceSSLResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["SSLExpiredTime"].isNull())
 		sSLExpiredTime_ = value["SSLExpiredTime"].asString();
-	if(!value["CertCommonName"].isNull())
-		certCommonName_ = value["CertCommonName"].asString();
 	if(!value["SSLStatus"].isNull())
 		sSLStatus_ = value["SSLStatus"].asString();
+	if(!value["CertCommonName"].isNull())
+		certCommonName_ = value["CertCommonName"].asString();
 
 }
 

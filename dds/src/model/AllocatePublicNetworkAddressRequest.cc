@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,100 +18,82 @@
 
 using AlibabaCloud::Dds::Model::AllocatePublicNetworkAddressRequest;
 
-AllocatePublicNetworkAddressRequest::AllocatePublicNetworkAddressRequest() :
-	RpcServiceRequest("dds", "2015-12-01", "AllocatePublicNetworkAddress")
-{
-	setMethod(HttpRequest::Method::Post);
+AllocatePublicNetworkAddressRequest::AllocatePublicNetworkAddressRequest()
+    : RpcServiceRequest("dds", "2015-12-01", "AllocatePublicNetworkAddress") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-AllocatePublicNetworkAddressRequest::~AllocatePublicNetworkAddressRequest()
-{}
+AllocatePublicNetworkAddressRequest::~AllocatePublicNetworkAddressRequest() {}
 
-long AllocatePublicNetworkAddressRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long AllocatePublicNetworkAddressRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void AllocatePublicNetworkAddressRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void AllocatePublicNetworkAddressRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string AllocatePublicNetworkAddressRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string AllocatePublicNetworkAddressRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void AllocatePublicNetworkAddressRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void AllocatePublicNetworkAddressRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string AllocatePublicNetworkAddressRequest::getSecurityToken()const
-{
-	return securityToken_;
+std::string AllocatePublicNetworkAddressRequest::getSecurityToken() const {
+  return securityToken_;
 }
 
-void AllocatePublicNetworkAddressRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+void AllocatePublicNetworkAddressRequest::setSecurityToken(const std::string &securityToken) {
+  securityToken_ = securityToken;
+  setParameter(std::string("SecurityToken"), securityToken);
 }
 
-std::string AllocatePublicNetworkAddressRequest::getDBInstanceId()const
-{
-	return dBInstanceId_;
+std::string AllocatePublicNetworkAddressRequest::getDBInstanceId() const {
+  return dBInstanceId_;
 }
 
-void AllocatePublicNetworkAddressRequest::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-	setParameter("DBInstanceId", dBInstanceId);
+void AllocatePublicNetworkAddressRequest::setDBInstanceId(const std::string &dBInstanceId) {
+  dBInstanceId_ = dBInstanceId;
+  setParameter(std::string("DBInstanceId"), dBInstanceId);
 }
 
-std::string AllocatePublicNetworkAddressRequest::getNodeId()const
-{
-	return nodeId_;
+std::string AllocatePublicNetworkAddressRequest::getNodeId() const {
+  return nodeId_;
 }
 
-void AllocatePublicNetworkAddressRequest::setNodeId(const std::string& nodeId)
-{
-	nodeId_ = nodeId;
-	setParameter("NodeId", nodeId);
+void AllocatePublicNetworkAddressRequest::setNodeId(const std::string &nodeId) {
+  nodeId_ = nodeId;
+  setParameter(std::string("NodeId"), nodeId);
 }
 
-std::string AllocatePublicNetworkAddressRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string AllocatePublicNetworkAddressRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void AllocatePublicNetworkAddressRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void AllocatePublicNetworkAddressRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string AllocatePublicNetworkAddressRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string AllocatePublicNetworkAddressRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void AllocatePublicNetworkAddressRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void AllocatePublicNetworkAddressRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-long AllocatePublicNetworkAddressRequest::getOwnerId()const
-{
-	return ownerId_;
+long AllocatePublicNetworkAddressRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void AllocatePublicNetworkAddressRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void AllocatePublicNetworkAddressRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 

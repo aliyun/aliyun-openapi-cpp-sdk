@@ -40,8 +40,8 @@ namespace AlibabaCloud
 						std::string zoneName;
 						std::string zoneId;
 					};
-					std::string regionId;
 					std::string zoneIds;
+					std::string regionId;
 					std::vector<DdsRegion::Zone> zones;
 				};
 

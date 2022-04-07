@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,122 +18,100 @@
 
 using AlibabaCloud::Dds::Model::ModifyDBInstanceConnectionStringRequest;
 
-ModifyDBInstanceConnectionStringRequest::ModifyDBInstanceConnectionStringRequest() :
-	RpcServiceRequest("dds", "2015-12-01", "ModifyDBInstanceConnectionString")
-{
-	setMethod(HttpRequest::Method::Post);
+ModifyDBInstanceConnectionStringRequest::ModifyDBInstanceConnectionStringRequest()
+    : RpcServiceRequest("dds", "2015-12-01", "ModifyDBInstanceConnectionString") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-ModifyDBInstanceConnectionStringRequest::~ModifyDBInstanceConnectionStringRequest()
-{}
+ModifyDBInstanceConnectionStringRequest::~ModifyDBInstanceConnectionStringRequest() {}
 
-long ModifyDBInstanceConnectionStringRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long ModifyDBInstanceConnectionStringRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void ModifyDBInstanceConnectionStringRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void ModifyDBInstanceConnectionStringRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string ModifyDBInstanceConnectionStringRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string ModifyDBInstanceConnectionStringRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void ModifyDBInstanceConnectionStringRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void ModifyDBInstanceConnectionStringRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string ModifyDBInstanceConnectionStringRequest::getSecurityToken()const
-{
-	return securityToken_;
+std::string ModifyDBInstanceConnectionStringRequest::getSecurityToken() const {
+  return securityToken_;
 }
 
-void ModifyDBInstanceConnectionStringRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+void ModifyDBInstanceConnectionStringRequest::setSecurityToken(const std::string &securityToken) {
+  securityToken_ = securityToken;
+  setParameter(std::string("SecurityToken"), securityToken);
 }
 
-std::string ModifyDBInstanceConnectionStringRequest::getDBInstanceId()const
-{
-	return dBInstanceId_;
+std::string ModifyDBInstanceConnectionStringRequest::getDBInstanceId() const {
+  return dBInstanceId_;
 }
 
-void ModifyDBInstanceConnectionStringRequest::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-	setParameter("DBInstanceId", dBInstanceId);
+void ModifyDBInstanceConnectionStringRequest::setDBInstanceId(const std::string &dBInstanceId) {
+  dBInstanceId_ = dBInstanceId;
+  setParameter(std::string("DBInstanceId"), dBInstanceId);
 }
 
-std::string ModifyDBInstanceConnectionStringRequest::getNodeId()const
-{
-	return nodeId_;
+std::string ModifyDBInstanceConnectionStringRequest::getNodeId() const {
+  return nodeId_;
 }
 
-void ModifyDBInstanceConnectionStringRequest::setNodeId(const std::string& nodeId)
-{
-	nodeId_ = nodeId;
-	setParameter("NodeId", nodeId);
+void ModifyDBInstanceConnectionStringRequest::setNodeId(const std::string &nodeId) {
+  nodeId_ = nodeId;
+  setParameter(std::string("NodeId"), nodeId);
 }
 
-std::string ModifyDBInstanceConnectionStringRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string ModifyDBInstanceConnectionStringRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void ModifyDBInstanceConnectionStringRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void ModifyDBInstanceConnectionStringRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string ModifyDBInstanceConnectionStringRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string ModifyDBInstanceConnectionStringRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void ModifyDBInstanceConnectionStringRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void ModifyDBInstanceConnectionStringRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-std::string ModifyDBInstanceConnectionStringRequest::getNewConnectionString()const
-{
-	return newConnectionString_;
+std::string ModifyDBInstanceConnectionStringRequest::getNewConnectionString() const {
+  return newConnectionString_;
 }
 
-void ModifyDBInstanceConnectionStringRequest::setNewConnectionString(const std::string& newConnectionString)
-{
-	newConnectionString_ = newConnectionString;
-	setParameter("NewConnectionString", newConnectionString);
+void ModifyDBInstanceConnectionStringRequest::setNewConnectionString(const std::string &newConnectionString) {
+  newConnectionString_ = newConnectionString;
+  setParameter(std::string("NewConnectionString"), newConnectionString);
 }
 
-long ModifyDBInstanceConnectionStringRequest::getOwnerId()const
-{
-	return ownerId_;
+long ModifyDBInstanceConnectionStringRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void ModifyDBInstanceConnectionStringRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void ModifyDBInstanceConnectionStringRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string ModifyDBInstanceConnectionStringRequest::getCurrentConnectionString()const
-{
-	return currentConnectionString_;
+std::string ModifyDBInstanceConnectionStringRequest::getCurrentConnectionString() const {
+  return currentConnectionString_;
 }
 
-void ModifyDBInstanceConnectionStringRequest::setCurrentConnectionString(const std::string& currentConnectionString)
-{
-	currentConnectionString_ = currentConnectionString;
-	setParameter("CurrentConnectionString", currentConnectionString);
+void ModifyDBInstanceConnectionStringRequest::setCurrentConnectionString(const std::string &currentConnectionString) {
+  currentConnectionString_ = currentConnectionString;
+  setParameter(std::string("CurrentConnectionString"), currentConnectionString);
 }
 

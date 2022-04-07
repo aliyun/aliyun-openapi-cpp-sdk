@@ -339,42 +339,6 @@ DdsClient::CreateNodeBatchOutcomeCallable DdsClient::createNodeBatchCallable(con
 	return task->get_future();
 }
 
-DdsClient::CreateRecommendationTaskOutcome DdsClient::createRecommendationTask(const CreateRecommendationTaskRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateRecommendationTaskOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateRecommendationTaskOutcome(CreateRecommendationTaskResult(outcome.result()));
-	else
-		return CreateRecommendationTaskOutcome(outcome.error());
-}
-
-void DdsClient::createRecommendationTaskAsync(const CreateRecommendationTaskRequest& request, const CreateRecommendationTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createRecommendationTask(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DdsClient::CreateRecommendationTaskOutcomeCallable DdsClient::createRecommendationTaskCallable(const CreateRecommendationTaskRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateRecommendationTaskOutcome()>>(
-			[this, request]()
-			{
-			return this->createRecommendationTask(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 DdsClient::CreateServerlessDBInstanceOutcome DdsClient::createServerlessDBInstance(const CreateServerlessDBInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -627,42 +591,6 @@ DdsClient::DescribeActiveOperationTaskTypeOutcomeCallable DdsClient::describeAct
 	return task->get_future();
 }
 
-DdsClient::DescribeAuditFilesOutcome DdsClient::describeAuditFiles(const DescribeAuditFilesRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeAuditFilesOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeAuditFilesOutcome(DescribeAuditFilesResult(outcome.result()));
-	else
-		return DescribeAuditFilesOutcome(outcome.error());
-}
-
-void DdsClient::describeAuditFilesAsync(const DescribeAuditFilesRequest& request, const DescribeAuditFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeAuditFiles(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DdsClient::DescribeAuditFilesOutcomeCallable DdsClient::describeAuditFilesCallable(const DescribeAuditFilesRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeAuditFilesOutcome()>>(
-			[this, request]()
-			{
-			return this->describeAuditFiles(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 DdsClient::DescribeAuditLogFilterOutcome DdsClient::describeAuditLogFilter(const DescribeAuditLogFilterRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -837,42 +765,6 @@ DdsClient::DescribeAvailableResourceOutcomeCallable DdsClient::describeAvailable
 			[this, request]()
 			{
 			return this->describeAvailableResource(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-DdsClient::DescribeAvailableTimeRangeOutcome DdsClient::describeAvailableTimeRange(const DescribeAvailableTimeRangeRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeAvailableTimeRangeOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeAvailableTimeRangeOutcome(DescribeAvailableTimeRangeResult(outcome.result()));
-	else
-		return DescribeAvailableTimeRangeOutcome(outcome.error());
-}
-
-void DdsClient::describeAvailableTimeRangeAsync(const DescribeAvailableTimeRangeRequest& request, const DescribeAvailableTimeRangeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeAvailableTimeRange(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DdsClient::DescribeAvailableTimeRangeOutcomeCallable DdsClient::describeAvailableTimeRangeCallable(const DescribeAvailableTimeRangeRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeAvailableTimeRangeOutcome()>>(
-			[this, request]()
-			{
-			return this->describeAvailableTimeRange(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

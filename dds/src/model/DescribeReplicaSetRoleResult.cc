@@ -43,18 +43,18 @@ void DescribeReplicaSetRoleResult::parse(const std::string &payload)
 	for (auto valueReplicaSetsReplicaSet : allReplicaSetsNode)
 	{
 		ReplicaSet replicaSetsObject;
-		if(!valueReplicaSetsReplicaSet["ReplicaSetRole"].isNull())
-			replicaSetsObject.replicaSetRole = valueReplicaSetsReplicaSet["ReplicaSetRole"].asString();
-		if(!valueReplicaSetsReplicaSet["RoleId"].isNull())
-			replicaSetsObject.roleId = valueReplicaSetsReplicaSet["RoleId"].asString();
-		if(!valueReplicaSetsReplicaSet["ConnectionDomain"].isNull())
-			replicaSetsObject.connectionDomain = valueReplicaSetsReplicaSet["ConnectionDomain"].asString();
 		if(!valueReplicaSetsReplicaSet["ConnectionPort"].isNull())
 			replicaSetsObject.connectionPort = valueReplicaSetsReplicaSet["ConnectionPort"].asString();
+		if(!valueReplicaSetsReplicaSet["ReplicaSetRole"].isNull())
+			replicaSetsObject.replicaSetRole = valueReplicaSetsReplicaSet["ReplicaSetRole"].asString();
 		if(!valueReplicaSetsReplicaSet["ExpiredTime"].isNull())
 			replicaSetsObject.expiredTime = valueReplicaSetsReplicaSet["ExpiredTime"].asString();
+		if(!valueReplicaSetsReplicaSet["ConnectionDomain"].isNull())
+			replicaSetsObject.connectionDomain = valueReplicaSetsReplicaSet["ConnectionDomain"].asString();
 		if(!valueReplicaSetsReplicaSet["NetworkType"].isNull())
 			replicaSetsObject.networkType = valueReplicaSetsReplicaSet["NetworkType"].asString();
+		if(!valueReplicaSetsReplicaSet["RoleId"].isNull())
+			replicaSetsObject.roleId = valueReplicaSetsReplicaSet["RoleId"].asString();
 		replicaSets_.push_back(replicaSetsObject);
 	}
 	if(!value["DBInstanceId"].isNull())

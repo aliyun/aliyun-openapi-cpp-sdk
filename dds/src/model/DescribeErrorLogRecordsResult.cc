@@ -45,12 +45,12 @@ void DescribeErrorLogRecordsResult::parse(const std::string &payload)
 		LogRecords itemsObject;
 		if(!valueItemsLogRecords["ConnInfo"].isNull())
 			itemsObject.connInfo = valueItemsLogRecords["ConnInfo"].asString();
+		if(!valueItemsLogRecords["CreateTime"].isNull())
+			itemsObject.createTime = valueItemsLogRecords["CreateTime"].asString();
 		if(!valueItemsLogRecords["Category"].isNull())
 			itemsObject.category = valueItemsLogRecords["Category"].asString();
 		if(!valueItemsLogRecords["Content"].isNull())
 			itemsObject.content = valueItemsLogRecords["Content"].asString();
-		if(!valueItemsLogRecords["CreateTime"].isNull())
-			itemsObject.createTime = valueItemsLogRecords["CreateTime"].asString();
 		if(!valueItemsLogRecords["Id"].isNull())
 			itemsObject.id = std::stoi(valueItemsLogRecords["Id"].asString());
 		items_.push_back(itemsObject);

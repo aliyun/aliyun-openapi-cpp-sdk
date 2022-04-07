@@ -43,12 +43,12 @@ void DescribeSecurityGroupConfigurationResult::parse(const std::string &payload)
 	for (auto valueItemsRdsEcsSecurityGroupRel : allItemsNode)
 	{
 		RdsEcsSecurityGroupRel itemsObject;
-		if(!valueItemsRdsEcsSecurityGroupRel["RegionId"].isNull())
-			itemsObject.regionId = valueItemsRdsEcsSecurityGroupRel["RegionId"].asString();
 		if(!valueItemsRdsEcsSecurityGroupRel["SecurityGroupId"].isNull())
 			itemsObject.securityGroupId = valueItemsRdsEcsSecurityGroupRel["SecurityGroupId"].asString();
 		if(!valueItemsRdsEcsSecurityGroupRel["NetType"].isNull())
 			itemsObject.netType = valueItemsRdsEcsSecurityGroupRel["NetType"].asString();
+		if(!valueItemsRdsEcsSecurityGroupRel["RegionId"].isNull())
+			itemsObject.regionId = valueItemsRdsEcsSecurityGroupRel["RegionId"].asString();
 		items_.push_back(itemsObject);
 	}
 
