@@ -43,24 +43,24 @@ void ListAIJobResult::parse(const std::string &payload)
 	for (auto valueAIJobListAIJob : allAIJobListNode)
 	{
 		AIJob aIJobListObject;
-		if(!valueAIJobListAIJob["JobId"].isNull())
-			aIJobListObject.jobId = valueAIJobListAIJob["JobId"].asString();
-		if(!valueAIJobListAIJob["MediaId"].isNull())
-			aIJobListObject.mediaId = valueAIJobListAIJob["MediaId"].asString();
-		if(!valueAIJobListAIJob["Type"].isNull())
-			aIJobListObject.type = valueAIJobListAIJob["Type"].asString();
+		if(!valueAIJobListAIJob["CreationTime"].isNull())
+			aIJobListObject.creationTime = valueAIJobListAIJob["CreationTime"].asString();
 		if(!valueAIJobListAIJob["Status"].isNull())
 			aIJobListObject.status = valueAIJobListAIJob["Status"].asString();
+		if(!valueAIJobListAIJob["Type"].isNull())
+			aIJobListObject.type = valueAIJobListAIJob["Type"].asString();
+		if(!valueAIJobListAIJob["Data"].isNull())
+			aIJobListObject.data = valueAIJobListAIJob["Data"].asString();
+		if(!valueAIJobListAIJob["CompleteTime"].isNull())
+			aIJobListObject.completeTime = valueAIJobListAIJob["CompleteTime"].asString();
+		if(!valueAIJobListAIJob["JobId"].isNull())
+			aIJobListObject.jobId = valueAIJobListAIJob["JobId"].asString();
 		if(!valueAIJobListAIJob["Code"].isNull())
 			aIJobListObject.code = valueAIJobListAIJob["Code"].asString();
 		if(!valueAIJobListAIJob["Message"].isNull())
 			aIJobListObject.message = valueAIJobListAIJob["Message"].asString();
-		if(!valueAIJobListAIJob["CreationTime"].isNull())
-			aIJobListObject.creationTime = valueAIJobListAIJob["CreationTime"].asString();
-		if(!valueAIJobListAIJob["CompleteTime"].isNull())
-			aIJobListObject.completeTime = valueAIJobListAIJob["CompleteTime"].asString();
-		if(!valueAIJobListAIJob["Data"].isNull())
-			aIJobListObject.data = valueAIJobListAIJob["Data"].asString();
+		if(!valueAIJobListAIJob["MediaId"].isNull())
+			aIJobListObject.mediaId = valueAIJobListAIJob["MediaId"].asString();
 		aIJobList_.push_back(aIJobListObject);
 	}
 	auto allNonExistAIJobIds = value["NonExistAIJobIds"]["String"];

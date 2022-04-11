@@ -36,12 +36,12 @@ namespace AlibabaCloud
 				{
 					std::string status;
 					std::string type;
-					std::string mediaId;
 					std::string message;
+					std::string mediaId;
 					std::string creationTime;
 					std::string data;
-					std::string code;
 					std::string completeTime;
+					std::string code;
 					std::string jobId;
 				};
 

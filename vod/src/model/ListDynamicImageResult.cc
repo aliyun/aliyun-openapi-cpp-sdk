@@ -43,28 +43,28 @@ void ListDynamicImageResult::parse(const std::string &payload)
 	for (auto valueDynamicImageListDynamicImage : allDynamicImageListNode)
 	{
 		DynamicImage dynamicImageListObject;
-		if(!valueDynamicImageListDynamicImage["VideoId"].isNull())
-			dynamicImageListObject.videoId = valueDynamicImageListDynamicImage["VideoId"].asString();
-		if(!valueDynamicImageListDynamicImage["DynamicImageId"].isNull())
-			dynamicImageListObject.dynamicImageId = valueDynamicImageListDynamicImage["DynamicImageId"].asString();
-		if(!valueDynamicImageListDynamicImage["JobId"].isNull())
-			dynamicImageListObject.jobId = valueDynamicImageListDynamicImage["JobId"].asString();
+		if(!valueDynamicImageListDynamicImage["CreationTime"].isNull())
+			dynamicImageListObject.creationTime = valueDynamicImageListDynamicImage["CreationTime"].asString();
 		if(!valueDynamicImageListDynamicImage["FileURL"].isNull())
 			dynamicImageListObject.fileURL = valueDynamicImageListDynamicImage["FileURL"].asString();
+		if(!valueDynamicImageListDynamicImage["VideoId"].isNull())
+			dynamicImageListObject.videoId = valueDynamicImageListDynamicImage["VideoId"].asString();
 		if(!valueDynamicImageListDynamicImage["Width"].isNull())
 			dynamicImageListObject.width = valueDynamicImageListDynamicImage["Width"].asString();
+		if(!valueDynamicImageListDynamicImage["JobId"].isNull())
+			dynamicImageListObject.jobId = valueDynamicImageListDynamicImage["JobId"].asString();
 		if(!valueDynamicImageListDynamicImage["Height"].isNull())
 			dynamicImageListObject.height = valueDynamicImageListDynamicImage["Height"].asString();
+		if(!valueDynamicImageListDynamicImage["Fps"].isNull())
+			dynamicImageListObject.fps = valueDynamicImageListDynamicImage["Fps"].asString();
 		if(!valueDynamicImageListDynamicImage["Duration"].isNull())
 			dynamicImageListObject.duration = valueDynamicImageListDynamicImage["Duration"].asString();
 		if(!valueDynamicImageListDynamicImage["Format"].isNull())
 			dynamicImageListObject.format = valueDynamicImageListDynamicImage["Format"].asString();
+		if(!valueDynamicImageListDynamicImage["DynamicImageId"].isNull())
+			dynamicImageListObject.dynamicImageId = valueDynamicImageListDynamicImage["DynamicImageId"].asString();
 		if(!valueDynamicImageListDynamicImage["FileSize"].isNull())
 			dynamicImageListObject.fileSize = valueDynamicImageListDynamicImage["FileSize"].asString();
-		if(!valueDynamicImageListDynamicImage["Fps"].isNull())
-			dynamicImageListObject.fps = valueDynamicImageListDynamicImage["Fps"].asString();
-		if(!valueDynamicImageListDynamicImage["CreationTime"].isNull())
-			dynamicImageListObject.creationTime = valueDynamicImageListDynamicImage["CreationTime"].asString();
 		dynamicImageList_.push_back(dynamicImageListObject);
 	}
 

@@ -43,26 +43,26 @@ void GetAIImageJobsResult::parse(const std::string &payload)
 	for (auto valueAIImageJobListAIImageJob : allAIImageJobListNode)
 	{
 		AIImageJob aIImageJobListObject;
+		if(!valueAIImageJobListAIImageJob["Status"].isNull())
+			aIImageJobListObject.status = valueAIImageJobListAIImageJob["Status"].asString();
 		if(!valueAIImageJobListAIImageJob["CreationTime"].isNull())
 			aIImageJobListObject.creationTime = valueAIImageJobListAIImageJob["CreationTime"].asString();
-		if(!valueAIImageJobListAIImageJob["JobId"].isNull())
-			aIImageJobListObject.jobId = valueAIImageJobListAIImageJob["JobId"].asString();
-		if(!valueAIImageJobListAIImageJob["TemplateId"].isNull())
-			aIImageJobListObject.templateId = valueAIImageJobListAIImageJob["TemplateId"].asString();
-		if(!valueAIImageJobListAIImageJob["VideoId"].isNull())
-			aIImageJobListObject.videoId = valueAIImageJobListAIImageJob["VideoId"].asString();
 		if(!valueAIImageJobListAIImageJob["AIImageResult"].isNull())
 			aIImageJobListObject.aIImageResult = valueAIImageJobListAIImageJob["AIImageResult"].asString();
+		if(!valueAIImageJobListAIImageJob["VideoId"].isNull())
+			aIImageJobListObject.videoId = valueAIImageJobListAIImageJob["VideoId"].asString();
+		if(!valueAIImageJobListAIImageJob["JobId"].isNull())
+			aIImageJobListObject.jobId = valueAIImageJobListAIImageJob["JobId"].asString();
 		if(!valueAIImageJobListAIImageJob["UserData"].isNull())
 			aIImageJobListObject.userData = valueAIImageJobListAIImageJob["UserData"].asString();
 		if(!valueAIImageJobListAIImageJob["Code"].isNull())
 			aIImageJobListObject.code = valueAIImageJobListAIImageJob["Code"].asString();
 		if(!valueAIImageJobListAIImageJob["Message"].isNull())
 			aIImageJobListObject.message = valueAIImageJobListAIImageJob["Message"].asString();
-		if(!valueAIImageJobListAIImageJob["Status"].isNull())
-			aIImageJobListObject.status = valueAIImageJobListAIImageJob["Status"].asString();
 		if(!valueAIImageJobListAIImageJob["TemplateConfig"].isNull())
 			aIImageJobListObject.templateConfig = valueAIImageJobListAIImageJob["TemplateConfig"].asString();
+		if(!valueAIImageJobListAIImageJob["TemplateId"].isNull())
+			aIImageJobListObject.templateId = valueAIImageJobListAIImageJob["TemplateId"].asString();
 		aIImageJobList_.push_back(aIImageJobListObject);
 	}
 

@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,111 +18,91 @@
 
 using AlibabaCloud::Vod::Model::SearchMediaRequest;
 
-SearchMediaRequest::SearchMediaRequest() :
-	RpcServiceRequest("vod", "2017-03-21", "SearchMedia")
-{
-	setMethod(HttpRequest::Method::Post);
+SearchMediaRequest::SearchMediaRequest()
+    : RpcServiceRequest("vod", "2017-03-21", "SearchMedia") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-SearchMediaRequest::~SearchMediaRequest()
-{}
+SearchMediaRequest::~SearchMediaRequest() {}
 
-std::string SearchMediaRequest::getSessionId()const
-{
-	return sessionId_;
+std::string SearchMediaRequest::getSessionId() const {
+  return sessionId_;
 }
 
-void SearchMediaRequest::setSessionId(const std::string& sessionId)
-{
-	sessionId_ = sessionId;
-	setParameter("SessionId", sessionId);
+void SearchMediaRequest::setSessionId(const std::string &sessionId) {
+  sessionId_ = sessionId;
+  setParameter(std::string("SessionId"), sessionId);
 }
 
-std::string SearchMediaRequest::getScrollToken()const
-{
-	return scrollToken_;
+std::string SearchMediaRequest::getScrollToken() const {
+  return scrollToken_;
 }
 
-void SearchMediaRequest::setScrollToken(const std::string& scrollToken)
-{
-	scrollToken_ = scrollToken;
-	setParameter("ScrollToken", scrollToken);
+void SearchMediaRequest::setScrollToken(const std::string &scrollToken) {
+  scrollToken_ = scrollToken;
+  setParameter(std::string("ScrollToken"), scrollToken);
 }
 
-std::string SearchMediaRequest::getSearchType()const
-{
-	return searchType_;
+std::string SearchMediaRequest::getSearchType() const {
+  return searchType_;
 }
 
-void SearchMediaRequest::setSearchType(const std::string& searchType)
-{
-	searchType_ = searchType;
-	setParameter("SearchType", searchType);
+void SearchMediaRequest::setSearchType(const std::string &searchType) {
+  searchType_ = searchType;
+  setParameter(std::string("SearchType"), searchType);
 }
 
-int SearchMediaRequest::getPageSize()const
-{
-	return pageSize_;
+int SearchMediaRequest::getPageSize() const {
+  return pageSize_;
 }
 
-void SearchMediaRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+void SearchMediaRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
-std::string SearchMediaRequest::getResultTypes()const
-{
-	return resultTypes_;
+std::string SearchMediaRequest::getResultTypes() const {
+  return resultTypes_;
 }
 
-void SearchMediaRequest::setResultTypes(const std::string& resultTypes)
-{
-	resultTypes_ = resultTypes;
-	setParameter("ResultTypes", resultTypes);
+void SearchMediaRequest::setResultTypes(const std::string &resultTypes) {
+  resultTypes_ = resultTypes;
+  setParameter(std::string("ResultTypes"), resultTypes);
 }
 
-std::string SearchMediaRequest::getMatch()const
-{
-	return match_;
+std::string SearchMediaRequest::getMatch() const {
+  return match_;
 }
 
-void SearchMediaRequest::setMatch(const std::string& match)
-{
-	match_ = match;
-	setParameter("Match", match);
+void SearchMediaRequest::setMatch(const std::string &match) {
+  match_ = match;
+  setParameter(std::string("Match"), match);
 }
 
-int SearchMediaRequest::getPageNo()const
-{
-	return pageNo_;
+int SearchMediaRequest::getPageNo() const {
+  return pageNo_;
 }
 
-void SearchMediaRequest::setPageNo(int pageNo)
-{
-	pageNo_ = pageNo;
-	setParameter("PageNo", std::to_string(pageNo));
+void SearchMediaRequest::setPageNo(int pageNo) {
+  pageNo_ = pageNo;
+  setParameter(std::string("PageNo"), std::to_string(pageNo));
 }
 
-std::string SearchMediaRequest::getSortBy()const
-{
-	return sortBy_;
+std::string SearchMediaRequest::getSortBy() const {
+  return sortBy_;
 }
 
-void SearchMediaRequest::setSortBy(const std::string& sortBy)
-{
-	sortBy_ = sortBy;
-	setParameter("SortBy", sortBy);
+void SearchMediaRequest::setSortBy(const std::string &sortBy) {
+  sortBy_ = sortBy;
+  setParameter(std::string("SortBy"), sortBy);
 }
 
-std::string SearchMediaRequest::getFields()const
-{
-	return fields_;
+std::string SearchMediaRequest::getFields() const {
+  return fields_;
 }
 
-void SearchMediaRequest::setFields(const std::string& fields)
-{
-	fields_ = fields;
-	setParameter("Fields", fields);
+void SearchMediaRequest::setFields(const std::string &fields) {
+  fields_ = fields;
+  setParameter(std::string("Fields"), fields);
 }
 

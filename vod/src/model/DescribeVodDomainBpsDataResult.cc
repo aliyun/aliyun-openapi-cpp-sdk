@@ -43,32 +43,32 @@ void DescribeVodDomainBpsDataResult::parse(const std::string &payload)
 	for (auto valueBpsDataPerIntervalDataModule : allBpsDataPerIntervalNode)
 	{
 		DataModule bpsDataPerIntervalObject;
-		if(!valueBpsDataPerIntervalDataModule["TimeStamp"].isNull())
-			bpsDataPerIntervalObject.timeStamp = valueBpsDataPerIntervalDataModule["TimeStamp"].asString();
+		if(!valueBpsDataPerIntervalDataModule["HttpsDomesticValue"].isNull())
+			bpsDataPerIntervalObject.httpsDomesticValue = valueBpsDataPerIntervalDataModule["HttpsDomesticValue"].asString();
 		if(!valueBpsDataPerIntervalDataModule["Value"].isNull())
 			bpsDataPerIntervalObject.value = valueBpsDataPerIntervalDataModule["Value"].asString();
-		if(!valueBpsDataPerIntervalDataModule["DomesticValue"].isNull())
-			bpsDataPerIntervalObject.domesticValue = valueBpsDataPerIntervalDataModule["DomesticValue"].asString();
 		if(!valueBpsDataPerIntervalDataModule["OverseasValue"].isNull())
 			bpsDataPerIntervalObject.overseasValue = valueBpsDataPerIntervalDataModule["OverseasValue"].asString();
 		if(!valueBpsDataPerIntervalDataModule["HttpsValue"].isNull())
 			bpsDataPerIntervalObject.httpsValue = valueBpsDataPerIntervalDataModule["HttpsValue"].asString();
-		if(!valueBpsDataPerIntervalDataModule["HttpsDomesticValue"].isNull())
-			bpsDataPerIntervalObject.httpsDomesticValue = valueBpsDataPerIntervalDataModule["HttpsDomesticValue"].asString();
 		if(!valueBpsDataPerIntervalDataModule["HttpsOverseasValue"].isNull())
 			bpsDataPerIntervalObject.httpsOverseasValue = valueBpsDataPerIntervalDataModule["HttpsOverseasValue"].asString();
+		if(!valueBpsDataPerIntervalDataModule["TimeStamp"].isNull())
+			bpsDataPerIntervalObject.timeStamp = valueBpsDataPerIntervalDataModule["TimeStamp"].asString();
+		if(!valueBpsDataPerIntervalDataModule["DomesticValue"].isNull())
+			bpsDataPerIntervalObject.domesticValue = valueBpsDataPerIntervalDataModule["DomesticValue"].asString();
 		bpsDataPerInterval_.push_back(bpsDataPerIntervalObject);
 	}
-	if(!value["DomainName"].isNull())
-		domainName_ = value["DomainName"].asString();
-	if(!value["StartTime"].isNull())
-		startTime_ = value["StartTime"].asString();
 	if(!value["EndTime"].isNull())
 		endTime_ = value["EndTime"].asString();
-	if(!value["LocationNameEn"].isNull())
-		locationNameEn_ = value["LocationNameEn"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
 	if(!value["IspNameEn"].isNull())
 		ispNameEn_ = value["IspNameEn"].asString();
+	if(!value["LocationNameEn"].isNull())
+		locationNameEn_ = value["LocationNameEn"].asString();
+	if(!value["DomainName"].isNull())
+		domainName_ = value["DomainName"].asString();
 	if(!value["DataInterval"].isNull())
 		dataInterval_ = value["DataInterval"].asString();
 

@@ -40,16 +40,16 @@ void AddCategoryResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto categoryNode = value["Category"];
-	if(!categoryNode["CateId"].isNull())
-		category_.cateId = std::stol(categoryNode["CateId"].asString());
-	if(!categoryNode["CateName"].isNull())
-		category_.cateName = categoryNode["CateName"].asString();
-	if(!categoryNode["ParentId"].isNull())
-		category_.parentId = std::stol(categoryNode["ParentId"].asString());
-	if(!categoryNode["Level"].isNull())
-		category_.level = std::stol(categoryNode["Level"].asString());
 	if(!categoryNode["Type"].isNull())
 		category_.type = categoryNode["Type"].asString();
+	if(!categoryNode["ParentId"].isNull())
+		category_.parentId = std::stol(categoryNode["ParentId"].asString());
+	if(!categoryNode["CateName"].isNull())
+		category_.cateName = categoryNode["CateName"].asString();
+	if(!categoryNode["CateId"].isNull())
+		category_.cateId = std::stol(categoryNode["CateId"].asString());
+	if(!categoryNode["Level"].isNull())
+		category_.level = std::stol(categoryNode["Level"].asString());
 
 }
 

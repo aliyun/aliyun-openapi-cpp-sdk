@@ -40,50 +40,50 @@ void GetVideoInfoResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto videoNode = value["Video"];
-	if(!videoNode["VideoId"].isNull())
-		video_.videoId = videoNode["VideoId"].asString();
-	if(!videoNode["Title"].isNull())
-		video_.title = videoNode["Title"].asString();
-	if(!videoNode["Tags"].isNull())
-		video_.tags = videoNode["Tags"].asString();
-	if(!videoNode["Status"].isNull())
-		video_.status = videoNode["Status"].asString();
-	if(!videoNode["Size"].isNull())
-		video_.size = std::stol(videoNode["Size"].asString());
-	if(!videoNode["Duration"].isNull())
-		video_.duration = std::stof(videoNode["Duration"].asString());
-	if(!videoNode["Description"].isNull())
-		video_.description = videoNode["Description"].asString();
-	if(!videoNode["CreateTime"].isNull())
-		video_.createTime = videoNode["CreateTime"].asString();
-	if(!videoNode["ModifyTime"].isNull())
-		video_.modifyTime = videoNode["ModifyTime"].asString();
-	if(!videoNode["ModificationTime"].isNull())
-		video_.modificationTime = videoNode["ModificationTime"].asString();
-	if(!videoNode["CreationTime"].isNull())
-		video_.creationTime = videoNode["CreationTime"].asString();
-	if(!videoNode["CoverURL"].isNull())
-		video_.coverURL = videoNode["CoverURL"].asString();
-	if(!videoNode["CateId"].isNull())
-		video_.cateId = std::stol(videoNode["CateId"].asString());
-	if(!videoNode["CateName"].isNull())
-		video_.cateName = videoNode["CateName"].asString();
-	if(!videoNode["DownloadSwitch"].isNull())
-		video_.downloadSwitch = videoNode["DownloadSwitch"].asString();
-	if(!videoNode["TemplateGroupId"].isNull())
-		video_.templateGroupId = videoNode["TemplateGroupId"].asString();
-	if(!videoNode["PreprocessStatus"].isNull())
-		video_.preprocessStatus = videoNode["PreprocessStatus"].asString();
 	if(!videoNode["StorageLocation"].isNull())
 		video_.storageLocation = videoNode["StorageLocation"].asString();
+	if(!videoNode["CreationTime"].isNull())
+		video_.creationTime = videoNode["CreationTime"].asString();
+	if(!videoNode["Status"].isNull())
+		video_.status = videoNode["Status"].asString();
+	if(!videoNode["CateId"].isNull())
+		video_.cateId = std::stol(videoNode["CateId"].asString());
+	if(!videoNode["VideoId"].isNull())
+		video_.videoId = videoNode["VideoId"].asString();
+	if(!videoNode["CreateTime"].isNull())
+		video_.createTime = videoNode["CreateTime"].asString();
+	if(!videoNode["DownloadSwitch"].isNull())
+		video_.downloadSwitch = videoNode["DownloadSwitch"].asString();
+	if(!videoNode["Tags"].isNull())
+		video_.tags = videoNode["Tags"].asString();
+	if(!videoNode["ModificationTime"].isNull())
+		video_.modificationTime = videoNode["ModificationTime"].asString();
 	if(!videoNode["RegionId"].isNull())
 		video_.regionId = videoNode["RegionId"].asString();
 	if(!videoNode["CustomMediaInfo"].isNull())
 		video_.customMediaInfo = videoNode["CustomMediaInfo"].asString();
-	if(!videoNode["AuditStatus"].isNull())
-		video_.auditStatus = videoNode["AuditStatus"].asString();
+	if(!videoNode["CateName"].isNull())
+		video_.cateName = videoNode["CateName"].asString();
+	if(!videoNode["Description"].isNull())
+		video_.description = videoNode["Description"].asString();
+	if(!videoNode["PreprocessStatus"].isNull())
+		video_.preprocessStatus = videoNode["PreprocessStatus"].asString();
 	if(!videoNode["AppId"].isNull())
 		video_.appId = videoNode["AppId"].asString();
+	if(!videoNode["Size"].isNull())
+		video_.size = std::stol(videoNode["Size"].asString());
+	if(!videoNode["CoverURL"].isNull())
+		video_.coverURL = videoNode["CoverURL"].asString();
+	if(!videoNode["TemplateGroupId"].isNull())
+		video_.templateGroupId = videoNode["TemplateGroupId"].asString();
+	if(!videoNode["Duration"].isNull())
+		video_.duration = std::stof(videoNode["Duration"].asString());
+	if(!videoNode["Title"].isNull())
+		video_.title = videoNode["Title"].asString();
+	if(!videoNode["AuditStatus"].isNull())
+		video_.auditStatus = videoNode["AuditStatus"].asString();
+	if(!videoNode["ModifyTime"].isNull())
+		video_.modifyTime = videoNode["ModifyTime"].asString();
 	auto allThumbnailListNode = videoNode["ThumbnailList"]["Thumbnail"];
 	for (auto videoNodeThumbnailListThumbnail : allThumbnailListNode)
 	{

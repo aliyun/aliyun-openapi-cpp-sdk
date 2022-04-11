@@ -43,28 +43,30 @@ void DescribeVodDomainTrafficDataResult::parse(const std::string &payload)
 	for (auto valueTrafficDataPerIntervalDataModule : allTrafficDataPerIntervalNode)
 	{
 		DataModule trafficDataPerIntervalObject;
-		if(!valueTrafficDataPerIntervalDataModule["TimeStamp"].isNull())
-			trafficDataPerIntervalObject.timeStamp = valueTrafficDataPerIntervalDataModule["TimeStamp"].asString();
+		if(!valueTrafficDataPerIntervalDataModule["HttpsDomesticValue"].isNull())
+			trafficDataPerIntervalObject.httpsDomesticValue = valueTrafficDataPerIntervalDataModule["HttpsDomesticValue"].asString();
 		if(!valueTrafficDataPerIntervalDataModule["Value"].isNull())
 			trafficDataPerIntervalObject.value = valueTrafficDataPerIntervalDataModule["Value"].asString();
-		if(!valueTrafficDataPerIntervalDataModule["DomesticValue"].isNull())
-			trafficDataPerIntervalObject.domesticValue = valueTrafficDataPerIntervalDataModule["DomesticValue"].asString();
 		if(!valueTrafficDataPerIntervalDataModule["OverseasValue"].isNull())
 			trafficDataPerIntervalObject.overseasValue = valueTrafficDataPerIntervalDataModule["OverseasValue"].asString();
 		if(!valueTrafficDataPerIntervalDataModule["HttpsValue"].isNull())
 			trafficDataPerIntervalObject.httpsValue = valueTrafficDataPerIntervalDataModule["HttpsValue"].asString();
-		if(!valueTrafficDataPerIntervalDataModule["HttpsDomesticValue"].isNull())
-			trafficDataPerIntervalObject.httpsDomesticValue = valueTrafficDataPerIntervalDataModule["HttpsDomesticValue"].asString();
 		if(!valueTrafficDataPerIntervalDataModule["HttpsOverseasValue"].isNull())
 			trafficDataPerIntervalObject.httpsOverseasValue = valueTrafficDataPerIntervalDataModule["HttpsOverseasValue"].asString();
+		if(!valueTrafficDataPerIntervalDataModule["TimeStamp"].isNull())
+			trafficDataPerIntervalObject.timeStamp = valueTrafficDataPerIntervalDataModule["TimeStamp"].asString();
+		if(!valueTrafficDataPerIntervalDataModule["DomesticValue"].isNull())
+			trafficDataPerIntervalObject.domesticValue = valueTrafficDataPerIntervalDataModule["DomesticValue"].asString();
 		trafficDataPerInterval_.push_back(trafficDataPerIntervalObject);
 	}
-	if(!value["DomainName"].isNull())
-		domainName_ = value["DomainName"].asString();
-	if(!value["StartTime"].isNull())
-		startTime_ = value["StartTime"].asString();
 	if(!value["EndTime"].isNull())
 		endTime_ = value["EndTime"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
+	if(!value["DomainName"].isNull())
+		domainName_ = value["DomainName"].asString();
+	if(!value["TotalTraffic"].isNull())
+		totalTraffic_ = value["TotalTraffic"].asString();
 	if(!value["DataInterval"].isNull())
 		dataInterval_ = value["DataInterval"].asString();
 
@@ -93,5 +95,10 @@ std::string DescribeVodDomainTrafficDataResult::getStartTime()const
 std::string DescribeVodDomainTrafficDataResult::getDataInterval()const
 {
 	return dataInterval_;
+}
+
+std::string DescribeVodDomainTrafficDataResult::getTotalTraffic()const
+{
+	return totalTraffic_;
 }
 

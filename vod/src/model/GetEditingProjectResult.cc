@@ -40,28 +40,28 @@ void GetEditingProjectResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto projectNode = value["Project"];
-	if(!projectNode["ProjectId"].isNull())
-		project_.projectId = projectNode["ProjectId"].asString();
+	if(!projectNode["StorageLocation"].isNull())
+		project_.storageLocation = projectNode["StorageLocation"].asString();
+	if(!projectNode["Status"].isNull())
+		project_.status = projectNode["Status"].asString();
 	if(!projectNode["CreationTime"].isNull())
 		project_.creationTime = projectNode["CreationTime"].asString();
 	if(!projectNode["ModifiedTime"].isNull())
 		project_.modifiedTime = projectNode["ModifiedTime"].asString();
-	if(!projectNode["Status"].isNull())
-		project_.status = projectNode["Status"].asString();
-	if(!projectNode["Description"].isNull())
-		project_.description = projectNode["Description"].asString();
-	if(!projectNode["Title"].isNull())
-		project_.title = projectNode["Title"].asString();
-	if(!projectNode["Timeline"].isNull())
-		project_.timeline = projectNode["Timeline"].asString();
-	if(!projectNode["CoverURL"].isNull())
-		project_.coverURL = projectNode["CoverURL"].asString();
-	if(!projectNode["StorageLocation"].isNull())
-		project_.storageLocation = projectNode["StorageLocation"].asString();
-	if(!projectNode["RegionId"].isNull())
-		project_.regionId = projectNode["RegionId"].asString();
 	if(!projectNode["FEExtend"].isNull())
 		project_.fEExtend = projectNode["FEExtend"].asString();
+	if(!projectNode["Description"].isNull())
+		project_.description = projectNode["Description"].asString();
+	if(!projectNode["CoverURL"].isNull())
+		project_.coverURL = projectNode["CoverURL"].asString();
+	if(!projectNode["ProjectId"].isNull())
+		project_.projectId = projectNode["ProjectId"].asString();
+	if(!projectNode["Timeline"].isNull())
+		project_.timeline = projectNode["Timeline"].asString();
+	if(!projectNode["Title"].isNull())
+		project_.title = projectNode["Title"].asString();
+	if(!projectNode["RegionId"].isNull())
+		project_.regionId = projectNode["RegionId"].asString();
 
 }
 

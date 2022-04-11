@@ -37,8 +37,8 @@ namespace AlibabaCloud
 					long parentId;
 					std::string type;
 					long level;
-					long cateId;
 					std::string cateName;
+					long cateId;
 				};
 
 

@@ -40,71 +40,71 @@ void GetTranscodeTaskResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto transcodeTaskNode = value["TranscodeTask"];
-	if(!transcodeTaskNode["TranscodeTaskId"].isNull())
-		transcodeTask_.transcodeTaskId = transcodeTaskNode["TranscodeTaskId"].asString();
-	if(!transcodeTaskNode["VideoId"].isNull())
-		transcodeTask_.videoId = transcodeTaskNode["VideoId"].asString();
-	if(!transcodeTaskNode["TaskStatus"].isNull())
-		transcodeTask_.taskStatus = transcodeTaskNode["TaskStatus"].asString();
 	if(!transcodeTaskNode["CreationTime"].isNull())
 		transcodeTask_.creationTime = transcodeTaskNode["CreationTime"].asString();
-	if(!transcodeTaskNode["CompleteTime"].isNull())
-		transcodeTask_.completeTime = transcodeTaskNode["CompleteTime"].asString();
 	if(!transcodeTaskNode["Trigger"].isNull())
 		transcodeTask_.trigger = transcodeTaskNode["Trigger"].asString();
+	if(!transcodeTaskNode["TaskStatus"].isNull())
+		transcodeTask_.taskStatus = transcodeTaskNode["TaskStatus"].asString();
+	if(!transcodeTaskNode["VideoId"].isNull())
+		transcodeTask_.videoId = transcodeTaskNode["VideoId"].asString();
+	if(!transcodeTaskNode["CompleteTime"].isNull())
+		transcodeTask_.completeTime = transcodeTaskNode["CompleteTime"].asString();
 	if(!transcodeTaskNode["TranscodeTemplateGroupId"].isNull())
 		transcodeTask_.transcodeTemplateGroupId = transcodeTaskNode["TranscodeTemplateGroupId"].asString();
+	if(!transcodeTaskNode["TranscodeTaskId"].isNull())
+		transcodeTask_.transcodeTaskId = transcodeTaskNode["TranscodeTaskId"].asString();
 	auto allTranscodeJobInfoListNode = transcodeTaskNode["TranscodeJobInfoList"]["TranscodeJobInfo"];
 	for (auto transcodeTaskNodeTranscodeJobInfoListTranscodeJobInfo : allTranscodeJobInfoListNode)
 	{
 		TranscodeTask::TranscodeJobInfo transcodeJobInfoObject;
-		if(!transcodeTaskNodeTranscodeJobInfoListTranscodeJobInfo["TranscodeJobId"].isNull())
-			transcodeJobInfoObject.transcodeJobId = transcodeTaskNodeTranscodeJobInfoListTranscodeJobInfo["TranscodeJobId"].asString();
-		if(!transcodeTaskNodeTranscodeJobInfoListTranscodeJobInfo["TranscodeTemplateId"].isNull())
-			transcodeJobInfoObject.transcodeTemplateId = transcodeTaskNodeTranscodeJobInfoListTranscodeJobInfo["TranscodeTemplateId"].asString();
-		if(!transcodeTaskNodeTranscodeJobInfoListTranscodeJobInfo["TranscodeJobStatus"].isNull())
-			transcodeJobInfoObject.transcodeJobStatus = transcodeTaskNodeTranscodeJobInfoListTranscodeJobInfo["TranscodeJobStatus"].asString();
+		if(!transcodeTaskNodeTranscodeJobInfoListTranscodeJobInfo["Definition"].isNull())
+			transcodeJobInfoObject.definition = transcodeTaskNodeTranscodeJobInfoListTranscodeJobInfo["Definition"].asString();
 		if(!transcodeTaskNodeTranscodeJobInfoListTranscodeJobInfo["CreationTime"].isNull())
 			transcodeJobInfoObject.creationTime = transcodeTaskNodeTranscodeJobInfoListTranscodeJobInfo["CreationTime"].asString();
+		if(!transcodeTaskNodeTranscodeJobInfoListTranscodeJobInfo["InputFileUrl"].isNull())
+			transcodeJobInfoObject.inputFileUrl = transcodeTaskNodeTranscodeJobInfoListTranscodeJobInfo["InputFileUrl"].asString();
+		if(!transcodeTaskNodeTranscodeJobInfoListTranscodeJobInfo["ErrorMessage"].isNull())
+			transcodeJobInfoObject.errorMessage = transcodeTaskNodeTranscodeJobInfoListTranscodeJobInfo["ErrorMessage"].asString();
+		if(!transcodeTaskNodeTranscodeJobInfoListTranscodeJobInfo["ErrorCode"].isNull())
+			transcodeJobInfoObject.errorCode = transcodeTaskNodeTranscodeJobInfoListTranscodeJobInfo["ErrorCode"].asString();
 		if(!transcodeTaskNodeTranscodeJobInfoListTranscodeJobInfo["CompleteTime"].isNull())
 			transcodeJobInfoObject.completeTime = transcodeTaskNodeTranscodeJobInfoListTranscodeJobInfo["CompleteTime"].asString();
 		if(!transcodeTaskNodeTranscodeJobInfoListTranscodeJobInfo["TranscodeProgress"].isNull())
 			transcodeJobInfoObject.transcodeProgress = std::stol(transcodeTaskNodeTranscodeJobInfoListTranscodeJobInfo["TranscodeProgress"].asString());
-		if(!transcodeTaskNodeTranscodeJobInfoListTranscodeJobInfo["InputFileUrl"].isNull())
-			transcodeJobInfoObject.inputFileUrl = transcodeTaskNodeTranscodeJobInfoListTranscodeJobInfo["InputFileUrl"].asString();
 		if(!transcodeTaskNodeTranscodeJobInfoListTranscodeJobInfo["Priority"].isNull())
 			transcodeJobInfoObject.priority = transcodeTaskNodeTranscodeJobInfoListTranscodeJobInfo["Priority"].asString();
-		if(!transcodeTaskNodeTranscodeJobInfoListTranscodeJobInfo["ErrorCode"].isNull())
-			transcodeJobInfoObject.errorCode = transcodeTaskNodeTranscodeJobInfoListTranscodeJobInfo["ErrorCode"].asString();
-		if(!transcodeTaskNodeTranscodeJobInfoListTranscodeJobInfo["ErrorMessage"].isNull())
-			transcodeJobInfoObject.errorMessage = transcodeTaskNodeTranscodeJobInfoListTranscodeJobInfo["ErrorMessage"].asString();
-		if(!transcodeTaskNodeTranscodeJobInfoListTranscodeJobInfo["Definition"].isNull())
-			transcodeJobInfoObject.definition = transcodeTaskNodeTranscodeJobInfoListTranscodeJobInfo["Definition"].asString();
+		if(!transcodeTaskNodeTranscodeJobInfoListTranscodeJobInfo["TranscodeJobStatus"].isNull())
+			transcodeJobInfoObject.transcodeJobStatus = transcodeTaskNodeTranscodeJobInfoListTranscodeJobInfo["TranscodeJobStatus"].asString();
+		if(!transcodeTaskNodeTranscodeJobInfoListTranscodeJobInfo["TranscodeTemplateId"].isNull())
+			transcodeJobInfoObject.transcodeTemplateId = transcodeTaskNodeTranscodeJobInfoListTranscodeJobInfo["TranscodeTemplateId"].asString();
+		if(!transcodeTaskNodeTranscodeJobInfoListTranscodeJobInfo["TranscodeJobId"].isNull())
+			transcodeJobInfoObject.transcodeJobId = transcodeTaskNodeTranscodeJobInfoListTranscodeJobInfo["TranscodeJobId"].asString();
 		auto outputFileNode = value["OutputFile"];
-		if(!outputFileNode["Width"].isNull())
-			transcodeJobInfoObject.outputFile.width = outputFileNode["Width"].asString();
-		if(!outputFileNode["Height"].isNull())
-			transcodeJobInfoObject.outputFile.height = outputFileNode["Height"].asString();
-		if(!outputFileNode["Bitrate"].isNull())
-			transcodeJobInfoObject.outputFile.bitrate = outputFileNode["Bitrate"].asString();
-		if(!outputFileNode["Fps"].isNull())
-			transcodeJobInfoObject.outputFile.fps = outputFileNode["Fps"].asString();
-		if(!outputFileNode["Format"].isNull())
-			transcodeJobInfoObject.outputFile.format = outputFileNode["Format"].asString();
-		if(!outputFileNode["Duration"].isNull())
-			transcodeJobInfoObject.outputFile.duration = outputFileNode["Duration"].asString();
-		if(!outputFileNode["Filesize"].isNull())
-			transcodeJobInfoObject.outputFile.filesize = std::stol(outputFileNode["Filesize"].asString());
-		if(!outputFileNode["Encryption"].isNull())
-			transcodeJobInfoObject.outputFile.encryption = outputFileNode["Encryption"].asString();
-		if(!outputFileNode["AudioStreamList"].isNull())
-			transcodeJobInfoObject.outputFile.audioStreamList = outputFileNode["AudioStreamList"].asString();
 		if(!outputFileNode["VideoStreamList"].isNull())
 			transcodeJobInfoObject.outputFile.videoStreamList = outputFileNode["VideoStreamList"].asString();
-		if(!outputFileNode["SubtitleStreamList"].isNull())
-			transcodeJobInfoObject.outputFile.subtitleStreamList = outputFileNode["SubtitleStreamList"].asString();
 		if(!outputFileNode["OutputFileUrl"].isNull())
 			transcodeJobInfoObject.outputFile.outputFileUrl = outputFileNode["OutputFileUrl"].asString();
+		if(!outputFileNode["Encryption"].isNull())
+			transcodeJobInfoObject.outputFile.encryption = outputFileNode["Encryption"].asString();
+		if(!outputFileNode["Height"].isNull())
+			transcodeJobInfoObject.outputFile.height = outputFileNode["Height"].asString();
+		if(!outputFileNode["SubtitleStreamList"].isNull())
+			transcodeJobInfoObject.outputFile.subtitleStreamList = outputFileNode["SubtitleStreamList"].asString();
+		if(!outputFileNode["Bitrate"].isNull())
+			transcodeJobInfoObject.outputFile.bitrate = outputFileNode["Bitrate"].asString();
+		if(!outputFileNode["AudioStreamList"].isNull())
+			transcodeJobInfoObject.outputFile.audioStreamList = outputFileNode["AudioStreamList"].asString();
+		if(!outputFileNode["Width"].isNull())
+			transcodeJobInfoObject.outputFile.width = outputFileNode["Width"].asString();
+		if(!outputFileNode["Fps"].isNull())
+			transcodeJobInfoObject.outputFile.fps = outputFileNode["Fps"].asString();
+		if(!outputFileNode["Duration"].isNull())
+			transcodeJobInfoObject.outputFile.duration = outputFileNode["Duration"].asString();
+		if(!outputFileNode["Format"].isNull())
+			transcodeJobInfoObject.outputFile.format = outputFileNode["Format"].asString();
+		if(!outputFileNode["Filesize"].isNull())
+			transcodeJobInfoObject.outputFile.filesize = std::stol(outputFileNode["Filesize"].asString());
 			auto allWatermarkIdList = outputFileNode["WatermarkIdList"]["WatermarkId"];
 			for (auto value : allWatermarkIdList)
 				transcodeJobInfoObject.outputFile.watermarkIdList.push_back(value.asString());

@@ -37,15 +37,15 @@ namespace AlibabaCloud
 				CreateUploadVideoResult();
 				explicit CreateUploadVideoResult(const std::string &payload);
 				~CreateUploadVideoResult();
-				std::string getVideoId()const;
 				std::string getUploadAddress()const;
+				std::string getVideoId()const;
 				std::string getUploadAuth()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string videoId_;
 				std::string uploadAddress_;
+				std::string videoId_;
 				std::string uploadAuth_;
 
 			};

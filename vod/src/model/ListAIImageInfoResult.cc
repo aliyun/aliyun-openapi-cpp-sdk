@@ -43,24 +43,24 @@ void ListAIImageInfoResult::parse(const std::string &payload)
 	for (auto valueAIImageInfoListAIImageInfo : allAIImageInfoListNode)
 	{
 		AIImageInfo aIImageInfoListObject;
-		if(!valueAIImageInfoListAIImageInfo["VideoId"].isNull())
-			aIImageInfoListObject.videoId = valueAIImageInfoListAIImageInfo["VideoId"].asString();
-		if(!valueAIImageInfoListAIImageInfo["AIImageInfoId"].isNull())
-			aIImageInfoListObject.aIImageInfoId = valueAIImageInfoListAIImageInfo["AIImageInfoId"].asString();
-		if(!valueAIImageInfoListAIImageInfo["JobId"].isNull())
-			aIImageInfoListObject.jobId = valueAIImageInfoListAIImageInfo["JobId"].asString();
-		if(!valueAIImageInfoListAIImageInfo["FileURL"].isNull())
-			aIImageInfoListObject.fileURL = valueAIImageInfoListAIImageInfo["FileURL"].asString();
-		if(!valueAIImageInfoListAIImageInfo["Score"].isNull())
-			aIImageInfoListObject.score = valueAIImageInfoListAIImageInfo["Score"].asString();
-		if(!valueAIImageInfoListAIImageInfo["Time"].isNull())
-			aIImageInfoListObject.time = valueAIImageInfoListAIImageInfo["Time"].asString();
-		if(!valueAIImageInfoListAIImageInfo["Format"].isNull())
-			aIImageInfoListObject.format = valueAIImageInfoListAIImageInfo["Format"].asString();
 		if(!valueAIImageInfoListAIImageInfo["CreationTime"].isNull())
 			aIImageInfoListObject.creationTime = valueAIImageInfoListAIImageInfo["CreationTime"].asString();
+		if(!valueAIImageInfoListAIImageInfo["AIImageInfoId"].isNull())
+			aIImageInfoListObject.aIImageInfoId = valueAIImageInfoListAIImageInfo["AIImageInfoId"].asString();
+		if(!valueAIImageInfoListAIImageInfo["Time"].isNull())
+			aIImageInfoListObject.time = valueAIImageInfoListAIImageInfo["Time"].asString();
+		if(!valueAIImageInfoListAIImageInfo["FileURL"].isNull())
+			aIImageInfoListObject.fileURL = valueAIImageInfoListAIImageInfo["FileURL"].asString();
 		if(!valueAIImageInfoListAIImageInfo["Version"].isNull())
 			aIImageInfoListObject.version = valueAIImageInfoListAIImageInfo["Version"].asString();
+		if(!valueAIImageInfoListAIImageInfo["VideoId"].isNull())
+			aIImageInfoListObject.videoId = valueAIImageInfoListAIImageInfo["VideoId"].asString();
+		if(!valueAIImageInfoListAIImageInfo["JobId"].isNull())
+			aIImageInfoListObject.jobId = valueAIImageInfoListAIImageInfo["JobId"].asString();
+		if(!valueAIImageInfoListAIImageInfo["Score"].isNull())
+			aIImageInfoListObject.score = valueAIImageInfoListAIImageInfo["Score"].asString();
+		if(!valueAIImageInfoListAIImageInfo["Format"].isNull())
+			aIImageInfoListObject.format = valueAIImageInfoListAIImageInfo["Format"].asString();
 		aIImageInfoList_.push_back(aIImageInfoListObject);
 	}
 

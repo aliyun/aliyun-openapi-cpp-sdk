@@ -64,21 +64,21 @@ namespace AlibabaCloud
 						std::string preprocessStatus;
 						std::string auditAIResult;
 						std::string mediaType;
-						std::string auditManualStatus;
 						std::string auditTemplateId;
+						std::string auditManualStatus;
 						std::string storageLocation;
 						std::vector<std::string> snapshots;
 						std::string tags;
 						std::string status;
 						std::string videoId;
-						std::string downloadSwitch;
 						std::string auditLabel;
+						std::string downloadSwitch;
 						std::string title;
 						float duration;
 						std::string auditStatus;
 						std::string mediaSource;
-						std::string customMediaInfo;
 						std::string appId;
+						std::string customMediaInfo;
 						std::string transcodeMode;
 						std::string auditAbnormalModules;
 						std::string creationTime;
@@ -114,9 +114,9 @@ namespace AlibabaCloud
 						std::string cateName;
 						std::string preprocessStatus;
 						std::string auditAIResult;
-						std::string auditManualStatus;
+						std::vector<std::string> spriteSnapshots1;
 						std::string auditTemplateId;
-						std::vector<std::string> spriteSnapshots2;
+						std::string auditManualStatus;
 						std::string storageLocation;
 						std::string tags;
 						std::vector<PlayInfo4> playInfoList3;
@@ -124,11 +124,11 @@ namespace AlibabaCloud
 						std::string downloadSwitch;
 						std::string title;
 						float duration;
-						std::vector<std::string> snapshots1;
+						std::vector<std::string> snapshots2;
 						std::string auditStatus;
 						std::string mediaSource;
-						std::string customMediaInfo;
 						std::string appId;
+						std::string customMediaInfo;
 						std::string transcodeMode;
 						std::string creationTime;
 						std::string coverURL;
@@ -137,8 +137,8 @@ namespace AlibabaCloud
 					};
 					struct Image
 					{
-						std::string ext;
 						std::string status;
+						std::string ext;
 						std::string description;
 						std::string title;
 						std::string modificationTime;
@@ -147,8 +147,8 @@ namespace AlibabaCloud
 						std::string uRL;
 						std::string type;
 						std::string appId;
-						std::string imageId;
 						std::string creationTime;
+						std::string imageId;
 						std::string regionId;
 						std::string storageLocation;
 						std::string tags;
@@ -159,11 +159,11 @@ namespace AlibabaCloud
 						{
 							long parentId;
 							long level;
-							long cateId;
 							std::string cateName;
+							long cateId;
 						};
-						std::string ext;
 						std::string status;
+						std::string ext;
 						std::string description;
 						std::vector<Category> categories;
 						std::string businessType;
@@ -174,8 +174,8 @@ namespace AlibabaCloud
 						std::string mediaId;
 						std::string appId;
 						std::string creationTime;
-						std::string regionId;
 						std::string icon;
+						std::string regionId;
 						std::string storageLocation;
 						std::string tags;
 					};

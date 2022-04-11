@@ -38,8 +38,8 @@ namespace AlibabaCloud
 					std::string httpsValue;
 					std::string value;
 					std::string httpsDomesticValue;
-					std::string timeStamp;
 					std::string httpsOverseasValue;
+					std::string timeStamp;
 					std::string domesticValue;
 				};
 

@@ -43,18 +43,18 @@ void GetAppInfosResult::parse(const std::string &payload)
 	for (auto valueAppInfoListAppInfo : allAppInfoListNode)
 	{
 		AppInfo appInfoListObject;
-		if(!valueAppInfoListAppInfo["AppId"].isNull())
-			appInfoListObject.appId = valueAppInfoListAppInfo["AppId"].asString();
-		if(!valueAppInfoListAppInfo["AppName"].isNull())
-			appInfoListObject.appName = valueAppInfoListAppInfo["AppName"].asString();
 		if(!valueAppInfoListAppInfo["Type"].isNull())
 			appInfoListObject.type = valueAppInfoListAppInfo["Type"].asString();
-		if(!valueAppInfoListAppInfo["Description"].isNull())
-			appInfoListObject.description = valueAppInfoListAppInfo["Description"].asString();
 		if(!valueAppInfoListAppInfo["Status"].isNull())
 			appInfoListObject.status = valueAppInfoListAppInfo["Status"].asString();
 		if(!valueAppInfoListAppInfo["CreationTime"].isNull())
 			appInfoListObject.creationTime = valueAppInfoListAppInfo["CreationTime"].asString();
+		if(!valueAppInfoListAppInfo["AppName"].isNull())
+			appInfoListObject.appName = valueAppInfoListAppInfo["AppName"].asString();
+		if(!valueAppInfoListAppInfo["Description"].isNull())
+			appInfoListObject.description = valueAppInfoListAppInfo["Description"].asString();
+		if(!valueAppInfoListAppInfo["AppId"].isNull())
+			appInfoListObject.appId = valueAppInfoListAppInfo["AppId"].asString();
 		if(!valueAppInfoListAppInfo["ModificationTime"].isNull())
 			appInfoListObject.modificationTime = valueAppInfoListAppInfo["ModificationTime"].asString();
 		appInfoList_.push_back(appInfoListObject);

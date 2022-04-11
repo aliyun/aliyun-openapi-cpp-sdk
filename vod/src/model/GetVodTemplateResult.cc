@@ -40,24 +40,24 @@ void GetVodTemplateResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto vodTemplateInfoNode = value["VodTemplateInfo"];
-	if(!vodTemplateInfoNode["Name"].isNull())
-		vodTemplateInfo_.name = vodTemplateInfoNode["Name"].asString();
-	if(!vodTemplateInfoNode["VodTemplateId"].isNull())
-		vodTemplateInfo_.vodTemplateId = vodTemplateInfoNode["VodTemplateId"].asString();
-	if(!vodTemplateInfoNode["TemplateType"].isNull())
-		vodTemplateInfo_.templateType = vodTemplateInfoNode["TemplateType"].asString();
-	if(!vodTemplateInfoNode["SubTemplateType"].isNull())
-		vodTemplateInfo_.subTemplateType = vodTemplateInfoNode["SubTemplateType"].asString();
-	if(!vodTemplateInfoNode["Source"].isNull())
-		vodTemplateInfo_.source = vodTemplateInfoNode["Source"].asString();
-	if(!vodTemplateInfoNode["IsDefault"].isNull())
-		vodTemplateInfo_.isDefault = vodTemplateInfoNode["IsDefault"].asString();
-	if(!vodTemplateInfoNode["TemplateConfig"].isNull())
-		vodTemplateInfo_.templateConfig = vodTemplateInfoNode["TemplateConfig"].asString();
 	if(!vodTemplateInfoNode["CreationTime"].isNull())
 		vodTemplateInfo_.creationTime = vodTemplateInfoNode["CreationTime"].asString();
+	if(!vodTemplateInfoNode["IsDefault"].isNull())
+		vodTemplateInfo_.isDefault = vodTemplateInfoNode["IsDefault"].asString();
+	if(!vodTemplateInfoNode["TemplateType"].isNull())
+		vodTemplateInfo_.templateType = vodTemplateInfoNode["TemplateType"].asString();
+	if(!vodTemplateInfoNode["VodTemplateId"].isNull())
+		vodTemplateInfo_.vodTemplateId = vodTemplateInfoNode["VodTemplateId"].asString();
+	if(!vodTemplateInfoNode["TemplateConfig"].isNull())
+		vodTemplateInfo_.templateConfig = vodTemplateInfoNode["TemplateConfig"].asString();
+	if(!vodTemplateInfoNode["Source"].isNull())
+		vodTemplateInfo_.source = vodTemplateInfoNode["Source"].asString();
+	if(!vodTemplateInfoNode["Name"].isNull())
+		vodTemplateInfo_.name = vodTemplateInfoNode["Name"].asString();
 	if(!vodTemplateInfoNode["ModifyTime"].isNull())
 		vodTemplateInfo_.modifyTime = vodTemplateInfoNode["ModifyTime"].asString();
+	if(!vodTemplateInfoNode["SubTemplateType"].isNull())
+		vodTemplateInfo_.subTemplateType = vodTemplateInfoNode["SubTemplateType"].asString();
 
 }
 

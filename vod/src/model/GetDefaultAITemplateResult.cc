@@ -40,20 +40,20 @@ void GetDefaultAITemplateResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto templateInfoNode = value["TemplateInfo"];
-	if(!templateInfoNode["TemplateId"].isNull())
-		templateInfo_.templateId = templateInfoNode["TemplateId"].asString();
-	if(!templateInfoNode["TemplateType"].isNull())
-		templateInfo_.templateType = templateInfoNode["TemplateType"].asString();
-	if(!templateInfoNode["TemplateName"].isNull())
-		templateInfo_.templateName = templateInfoNode["TemplateName"].asString();
-	if(!templateInfoNode["TemplateConfig"].isNull())
-		templateInfo_.templateConfig = templateInfoNode["TemplateConfig"].asString();
-	if(!templateInfoNode["Source"].isNull())
-		templateInfo_.source = templateInfoNode["Source"].asString();
-	if(!templateInfoNode["IsDefault"].isNull())
-		templateInfo_.isDefault = templateInfoNode["IsDefault"].asString();
 	if(!templateInfoNode["CreationTime"].isNull())
 		templateInfo_.creationTime = templateInfoNode["CreationTime"].asString();
+	if(!templateInfoNode["IsDefault"].isNull())
+		templateInfo_.isDefault = templateInfoNode["IsDefault"].asString();
+	if(!templateInfoNode["TemplateType"].isNull())
+		templateInfo_.templateType = templateInfoNode["TemplateType"].asString();
+	if(!templateInfoNode["TemplateConfig"].isNull())
+		templateInfo_.templateConfig = templateInfoNode["TemplateConfig"].asString();
+	if(!templateInfoNode["TemplateName"].isNull())
+		templateInfo_.templateName = templateInfoNode["TemplateName"].asString();
+	if(!templateInfoNode["Source"].isNull())
+		templateInfo_.source = templateInfoNode["Source"].asString();
+	if(!templateInfoNode["TemplateId"].isNull())
+		templateInfo_.templateId = templateInfoNode["TemplateId"].asString();
 	if(!templateInfoNode["ModifyTime"].isNull())
 		templateInfo_.modifyTime = templateInfoNode["ModifyTime"].asString();
 

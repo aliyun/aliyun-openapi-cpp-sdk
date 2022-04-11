@@ -53,15 +53,15 @@ void GetMediaDNAResultResult::parse(const std::string &payload)
 		{
 			DNAResult::VideoDNAItem::DetailItem detailObject;
 			auto inputNode = value["Input"];
-			if(!inputNode["Start"].isNull())
-				detailObject.input.start = inputNode["Start"].asString();
 			if(!inputNode["Duration"].isNull())
 				detailObject.input.duration = inputNode["Duration"].asString();
+			if(!inputNode["Start"].isNull())
+				detailObject.input.start = inputNode["Start"].asString();
 			auto duplicationNode = value["Duplication"];
-			if(!duplicationNode["Start"].isNull())
-				detailObject.duplication.start = duplicationNode["Start"].asString();
 			if(!duplicationNode["Duration"].isNull())
 				detailObject.duplication.duration = duplicationNode["Duration"].asString();
+			if(!duplicationNode["Start"].isNull())
+				detailObject.duplication.start = duplicationNode["Start"].asString();
 			videoDNAItemObject.detail.push_back(detailObject);
 		}
 		dNAResult_.videoDNA.push_back(videoDNAItemObject);

@@ -39,12 +39,12 @@ void DeleteMezzaninesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allNonExistVideoIds = value["NonExistVideoIds"]["VideoId"];
-	for (const auto &item : allNonExistVideoIds)
-		nonExistVideoIds_.push_back(item.asString());
 	auto allUnRemoveableVideoIds = value["UnRemoveableVideoIds"]["VideoId"];
 	for (const auto &item : allUnRemoveableVideoIds)
 		unRemoveableVideoIds_.push_back(item.asString());
+	auto allNonExistVideoIds = value["NonExistVideoIds"]["VideoId"];
+	for (const auto &item : allNonExistVideoIds)
+		nonExistVideoIds_.push_back(item.asString());
 
 }
 

@@ -36,9 +36,9 @@ namespace AlibabaCloud
 				{
 					struct TranscodeJobInfoSummary
 					{
-						std::string transcodeJobStatus;
 						std::string definition;
 						std::string fps;
+						std::string transcodeJobStatus;
 						std::string duration;
 						std::string encryption;
 						long filesize;
@@ -54,8 +54,8 @@ namespace AlibabaCloud
 						std::string completeTime;
 						std::string width;
 					};
-					std::string videoId;
 					std::string trigger;
+					std::string videoId;
 					std::string transcodeTemplateGroupId;
 					std::vector<TranscodeSummary::TranscodeJobInfoSummary> transcodeJobInfoSummaryList;
 					std::string creationTime;

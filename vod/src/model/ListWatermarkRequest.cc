@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,56 +18,46 @@
 
 using AlibabaCloud::Vod::Model::ListWatermarkRequest;
 
-ListWatermarkRequest::ListWatermarkRequest() :
-	RpcServiceRequest("vod", "2017-03-21", "ListWatermark")
-{
-	setMethod(HttpRequest::Method::Post);
+ListWatermarkRequest::ListWatermarkRequest()
+    : RpcServiceRequest("vod", "2017-03-21", "ListWatermark") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-ListWatermarkRequest::~ListWatermarkRequest()
-{}
+ListWatermarkRequest::~ListWatermarkRequest() {}
 
-std::string ListWatermarkRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string ListWatermarkRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void ListWatermarkRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void ListWatermarkRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-int ListWatermarkRequest::getPageNo()const
-{
-	return pageNo_;
+int ListWatermarkRequest::getPageNo() const {
+  return pageNo_;
 }
 
-void ListWatermarkRequest::setPageNo(int pageNo)
-{
-	pageNo_ = pageNo;
-	setParameter("PageNo", std::to_string(pageNo));
+void ListWatermarkRequest::setPageNo(int pageNo) {
+  pageNo_ = pageNo;
+  setParameter(std::string("PageNo"), std::to_string(pageNo));
 }
 
-std::string ListWatermarkRequest::getAppId()const
-{
-	return appId_;
+std::string ListWatermarkRequest::getAppId() const {
+  return appId_;
 }
 
-void ListWatermarkRequest::setAppId(const std::string& appId)
-{
-	appId_ = appId;
-	setParameter("AppId", appId);
+void ListWatermarkRequest::setAppId(const std::string &appId) {
+  appId_ = appId;
+  setParameter(std::string("AppId"), appId);
 }
 
-int ListWatermarkRequest::getPageSize()const
-{
-	return pageSize_;
+int ListWatermarkRequest::getPageSize() const {
+  return pageSize_;
 }
 
-void ListWatermarkRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+void ListWatermarkRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 

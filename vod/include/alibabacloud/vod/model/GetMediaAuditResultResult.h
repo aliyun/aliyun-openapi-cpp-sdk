@@ -174,8 +174,8 @@ namespace AlibabaCloud
 					struct TextResultItem
 					{
 						std::string suggestion;
-						std::string score;
 						std::string type;
+						std::string score;
 						std::string content;
 						std::string label;
 						std::string scene;

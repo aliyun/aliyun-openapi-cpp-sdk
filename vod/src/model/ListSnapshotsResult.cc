@@ -40,12 +40,12 @@ void ListSnapshotsResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto mediaSnapshotNode = value["MediaSnapshot"];
-	if(!mediaSnapshotNode["Total"].isNull())
-		mediaSnapshot_.total = std::stol(mediaSnapshotNode["Total"].asString());
-	if(!mediaSnapshotNode["Regular"].isNull())
-		mediaSnapshot_.regular = mediaSnapshotNode["Regular"].asString();
 	if(!mediaSnapshotNode["CreationTime"].isNull())
 		mediaSnapshot_.creationTime = mediaSnapshotNode["CreationTime"].asString();
+	if(!mediaSnapshotNode["Regular"].isNull())
+		mediaSnapshot_.regular = mediaSnapshotNode["Regular"].asString();
+	if(!mediaSnapshotNode["Total"].isNull())
+		mediaSnapshot_.total = std::stol(mediaSnapshotNode["Total"].asString());
 	if(!mediaSnapshotNode["JobId"].isNull())
 		mediaSnapshot_.jobId = mediaSnapshotNode["JobId"].asString();
 	auto allSnapshotsNode = mediaSnapshotNode["Snapshots"]["Snapshot"];

@@ -40,16 +40,16 @@ void AddEditingProjectResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto projectNode = value["Project"];
-	if(!projectNode["ProjectId"].isNull())
-		project_.projectId = projectNode["ProjectId"].asString();
 	if(!projectNode["CreationTime"].isNull())
 		project_.creationTime = projectNode["CreationTime"].asString();
-	if(!projectNode["ModifiedTime"].isNull())
-		project_.modifiedTime = projectNode["ModifiedTime"].asString();
 	if(!projectNode["Status"].isNull())
 		project_.status = projectNode["Status"].asString();
+	if(!projectNode["ModifiedTime"].isNull())
+		project_.modifiedTime = projectNode["ModifiedTime"].asString();
 	if(!projectNode["Description"].isNull())
 		project_.description = projectNode["Description"].asString();
+	if(!projectNode["ProjectId"].isNull())
+		project_.projectId = projectNode["ProjectId"].asString();
 	if(!projectNode["Title"].isNull())
 		project_.title = projectNode["Title"].asString();
 

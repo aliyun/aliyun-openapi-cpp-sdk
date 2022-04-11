@@ -43,20 +43,20 @@ void ListAITemplateResult::parse(const std::string &payload)
 	for (auto valueTemplateInfoListTemplateInfoListItem : allTemplateInfoListNode)
 	{
 		TemplateInfoListItem templateInfoListObject;
-		if(!valueTemplateInfoListTemplateInfoListItem["TemplateId"].isNull())
-			templateInfoListObject.templateId = valueTemplateInfoListTemplateInfoListItem["TemplateId"].asString();
-		if(!valueTemplateInfoListTemplateInfoListItem["TemplateType"].isNull())
-			templateInfoListObject.templateType = valueTemplateInfoListTemplateInfoListItem["TemplateType"].asString();
-		if(!valueTemplateInfoListTemplateInfoListItem["TemplateName"].isNull())
-			templateInfoListObject.templateName = valueTemplateInfoListTemplateInfoListItem["TemplateName"].asString();
-		if(!valueTemplateInfoListTemplateInfoListItem["TemplateConfig"].isNull())
-			templateInfoListObject.templateConfig = valueTemplateInfoListTemplateInfoListItem["TemplateConfig"].asString();
-		if(!valueTemplateInfoListTemplateInfoListItem["Source"].isNull())
-			templateInfoListObject.source = valueTemplateInfoListTemplateInfoListItem["Source"].asString();
-		if(!valueTemplateInfoListTemplateInfoListItem["IsDefault"].isNull())
-			templateInfoListObject.isDefault = valueTemplateInfoListTemplateInfoListItem["IsDefault"].asString();
 		if(!valueTemplateInfoListTemplateInfoListItem["CreationTime"].isNull())
 			templateInfoListObject.creationTime = valueTemplateInfoListTemplateInfoListItem["CreationTime"].asString();
+		if(!valueTemplateInfoListTemplateInfoListItem["IsDefault"].isNull())
+			templateInfoListObject.isDefault = valueTemplateInfoListTemplateInfoListItem["IsDefault"].asString();
+		if(!valueTemplateInfoListTemplateInfoListItem["TemplateType"].isNull())
+			templateInfoListObject.templateType = valueTemplateInfoListTemplateInfoListItem["TemplateType"].asString();
+		if(!valueTemplateInfoListTemplateInfoListItem["TemplateConfig"].isNull())
+			templateInfoListObject.templateConfig = valueTemplateInfoListTemplateInfoListItem["TemplateConfig"].asString();
+		if(!valueTemplateInfoListTemplateInfoListItem["TemplateName"].isNull())
+			templateInfoListObject.templateName = valueTemplateInfoListTemplateInfoListItem["TemplateName"].asString();
+		if(!valueTemplateInfoListTemplateInfoListItem["Source"].isNull())
+			templateInfoListObject.source = valueTemplateInfoListTemplateInfoListItem["Source"].asString();
+		if(!valueTemplateInfoListTemplateInfoListItem["TemplateId"].isNull())
+			templateInfoListObject.templateId = valueTemplateInfoListTemplateInfoListItem["TemplateId"].asString();
 		if(!valueTemplateInfoListTemplateInfoListItem["ModifyTime"].isNull())
 			templateInfoListObject.modifyTime = valueTemplateInfoListTemplateInfoListItem["ModifyTime"].asString();
 		templateInfoList_.push_back(templateInfoListObject);

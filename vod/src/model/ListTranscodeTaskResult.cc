@@ -43,20 +43,20 @@ void ListTranscodeTaskResult::parse(const std::string &payload)
 	for (auto valueTranscodeTaskListTranscodeTask : allTranscodeTaskListNode)
 	{
 		TranscodeTask transcodeTaskListObject;
-		if(!valueTranscodeTaskListTranscodeTask["TranscodeTaskId"].isNull())
-			transcodeTaskListObject.transcodeTaskId = valueTranscodeTaskListTranscodeTask["TranscodeTaskId"].asString();
-		if(!valueTranscodeTaskListTranscodeTask["VideoId"].isNull())
-			transcodeTaskListObject.videoId = valueTranscodeTaskListTranscodeTask["VideoId"].asString();
-		if(!valueTranscodeTaskListTranscodeTask["TaskStatus"].isNull())
-			transcodeTaskListObject.taskStatus = valueTranscodeTaskListTranscodeTask["TaskStatus"].asString();
-		if(!valueTranscodeTaskListTranscodeTask["TranscodeTemplateGroupId"].isNull())
-			transcodeTaskListObject.transcodeTemplateGroupId = valueTranscodeTaskListTranscodeTask["TranscodeTemplateGroupId"].asString();
 		if(!valueTranscodeTaskListTranscodeTask["CreationTime"].isNull())
 			transcodeTaskListObject.creationTime = valueTranscodeTaskListTranscodeTask["CreationTime"].asString();
-		if(!valueTranscodeTaskListTranscodeTask["CompleteTime"].isNull())
-			transcodeTaskListObject.completeTime = valueTranscodeTaskListTranscodeTask["CompleteTime"].asString();
 		if(!valueTranscodeTaskListTranscodeTask["Trigger"].isNull())
 			transcodeTaskListObject.trigger = valueTranscodeTaskListTranscodeTask["Trigger"].asString();
+		if(!valueTranscodeTaskListTranscodeTask["TaskStatus"].isNull())
+			transcodeTaskListObject.taskStatus = valueTranscodeTaskListTranscodeTask["TaskStatus"].asString();
+		if(!valueTranscodeTaskListTranscodeTask["VideoId"].isNull())
+			transcodeTaskListObject.videoId = valueTranscodeTaskListTranscodeTask["VideoId"].asString();
+		if(!valueTranscodeTaskListTranscodeTask["CompleteTime"].isNull())
+			transcodeTaskListObject.completeTime = valueTranscodeTaskListTranscodeTask["CompleteTime"].asString();
+		if(!valueTranscodeTaskListTranscodeTask["TranscodeTemplateGroupId"].isNull())
+			transcodeTaskListObject.transcodeTemplateGroupId = valueTranscodeTaskListTranscodeTask["TranscodeTemplateGroupId"].asString();
+		if(!valueTranscodeTaskListTranscodeTask["TranscodeTaskId"].isNull())
+			transcodeTaskListObject.transcodeTaskId = valueTranscodeTaskListTranscodeTask["TranscodeTaskId"].asString();
 		transcodeTaskList_.push_back(transcodeTaskListObject);
 	}
 

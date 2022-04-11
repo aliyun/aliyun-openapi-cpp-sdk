@@ -38,8 +38,8 @@ namespace AlibabaCloud
 					std::string httpsValue;
 					std::string value;
 					std::string httpsDomesticValue;
-					std::string timeStamp;
 					std::string httpsOverseasValue;
+					std::string timeStamp;
 					std::string domesticValue;
 				};
 
@@ -52,6 +52,7 @@ namespace AlibabaCloud
 				std::string getDomainName()const;
 				std::string getStartTime()const;
 				std::string getDataInterval()const;
+				std::string getTotalTraffic()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -61,6 +62,7 @@ namespace AlibabaCloud
 				std::string domainName_;
 				std::string startTime_;
 				std::string dataInterval_;
+				std::string totalTraffic_;
 
 			};
 		}

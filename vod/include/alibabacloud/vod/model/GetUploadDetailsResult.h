@@ -39,11 +39,11 @@ namespace AlibabaCloud
 					std::string title;
 					std::string modificationTime;
 					float uploadRatio;
-					std::string mediaId;
 					std::string uploadSource;
-					std::string uploadStatus;
+					std::string mediaId;
 					std::string completionTime;
 					long uploadSize;
+					std::string uploadStatus;
 					std::string creationTime;
 					std::string uploadIP;
 					long fileSize;

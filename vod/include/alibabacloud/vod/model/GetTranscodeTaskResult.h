@@ -40,8 +40,8 @@ namespace AlibabaCloud
 						{
 							std::string outputFileUrl;
 							std::string fps;
-							std::string duration;
 							std::string videoStreamList;
+							std::string duration;
 							std::string encryption;
 							std::string audioStreamList;
 							long filesize;
@@ -56,18 +56,18 @@ namespace AlibabaCloud
 						std::string transcodeTemplateId;
 						std::string inputFileUrl;
 						std::string priority;
-						std::string transcodeJobStatus;
-						std::string creationTime;
 						std::string definition;
+						std::string creationTime;
+						std::string transcodeJobStatus;
 						std::string transcodeJobId;
-						long transcodeProgress;
 						std::string errorCode;
+						long transcodeProgress;
 						std::string errorMessage;
 						std::string completeTime;
 					};
 					std::vector<TranscodeJobInfo> transcodeJobInfoList;
-					std::string videoId;
 					std::string trigger;
+					std::string videoId;
 					std::string transcodeTemplateGroupId;
 					std::string creationTime;
 					std::string taskStatus;

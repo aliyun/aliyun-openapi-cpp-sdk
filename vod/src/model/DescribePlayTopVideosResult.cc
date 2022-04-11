@@ -43,16 +43,16 @@ void DescribePlayTopVideosResult::parse(const std::string &payload)
 	for (auto valueTopPlayVideosTopPlayVideoStatis : allTopPlayVideosNode)
 	{
 		TopPlayVideoStatis topPlayVideosObject;
-		if(!valueTopPlayVideosTopPlayVideoStatis["PlayDuration"].isNull())
-			topPlayVideosObject.playDuration = valueTopPlayVideosTopPlayVideoStatis["PlayDuration"].asString();
-		if(!valueTopPlayVideosTopPlayVideoStatis["VV"].isNull())
-			topPlayVideosObject.vV = valueTopPlayVideosTopPlayVideoStatis["VV"].asString();
-		if(!valueTopPlayVideosTopPlayVideoStatis["UV"].isNull())
-			topPlayVideosObject.uV = valueTopPlayVideosTopPlayVideoStatis["UV"].asString();
-		if(!valueTopPlayVideosTopPlayVideoStatis["VideoId"].isNull())
-			topPlayVideosObject.videoId = valueTopPlayVideosTopPlayVideoStatis["VideoId"].asString();
 		if(!valueTopPlayVideosTopPlayVideoStatis["Title"].isNull())
 			topPlayVideosObject.title = valueTopPlayVideosTopPlayVideoStatis["Title"].asString();
+		if(!valueTopPlayVideosTopPlayVideoStatis["VV"].isNull())
+			topPlayVideosObject.vV = valueTopPlayVideosTopPlayVideoStatis["VV"].asString();
+		if(!valueTopPlayVideosTopPlayVideoStatis["PlayDuration"].isNull())
+			topPlayVideosObject.playDuration = valueTopPlayVideosTopPlayVideoStatis["PlayDuration"].asString();
+		if(!valueTopPlayVideosTopPlayVideoStatis["VideoId"].isNull())
+			topPlayVideosObject.videoId = valueTopPlayVideosTopPlayVideoStatis["VideoId"].asString();
+		if(!valueTopPlayVideosTopPlayVideoStatis["UV"].isNull())
+			topPlayVideosObject.uV = valueTopPlayVideosTopPlayVideoStatis["UV"].asString();
 		topPlayVideos_.push_back(topPlayVideosObject);
 	}
 	if(!value["PageNo"].isNull())

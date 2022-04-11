@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,45 +18,37 @@
 
 using AlibabaCloud::Vod::Model::DescribePlayUserAvgRequest;
 
-DescribePlayUserAvgRequest::DescribePlayUserAvgRequest() :
-	RpcServiceRequest("vod", "2017-03-21", "DescribePlayUserAvg")
-{
-	setMethod(HttpRequest::Method::Post);
+DescribePlayUserAvgRequest::DescribePlayUserAvgRequest()
+    : RpcServiceRequest("vod", "2017-03-21", "DescribePlayUserAvg") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DescribePlayUserAvgRequest::~DescribePlayUserAvgRequest()
-{}
+DescribePlayUserAvgRequest::~DescribePlayUserAvgRequest() {}
 
-std::string DescribePlayUserAvgRequest::getStartTime()const
-{
-	return startTime_;
+std::string DescribePlayUserAvgRequest::getStartTime() const {
+  return startTime_;
 }
 
-void DescribePlayUserAvgRequest::setStartTime(const std::string& startTime)
-{
-	startTime_ = startTime;
-	setParameter("StartTime", startTime);
+void DescribePlayUserAvgRequest::setStartTime(const std::string &startTime) {
+  startTime_ = startTime;
+  setParameter(std::string("StartTime"), startTime);
 }
 
-std::string DescribePlayUserAvgRequest::getEndTime()const
-{
-	return endTime_;
+std::string DescribePlayUserAvgRequest::getEndTime() const {
+  return endTime_;
 }
 
-void DescribePlayUserAvgRequest::setEndTime(const std::string& endTime)
-{
-	endTime_ = endTime;
-	setParameter("EndTime", endTime);
+void DescribePlayUserAvgRequest::setEndTime(const std::string &endTime) {
+  endTime_ = endTime;
+  setParameter(std::string("EndTime"), endTime);
 }
 
-long DescribePlayUserAvgRequest::getOwnerId()const
-{
-	return ownerId_;
+long DescribePlayUserAvgRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void DescribePlayUserAvgRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void DescribePlayUserAvgRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 

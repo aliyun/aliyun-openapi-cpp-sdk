@@ -165,6 +165,8 @@ set(vod_public_header_model
 	include/alibabacloud/vod/model/GetMediaAuditResultTimelineResult.h
 	include/alibabacloud/vod/model/GetMediaDNAResultRequest.h
 	include/alibabacloud/vod/model/GetMediaDNAResultResult.h
+	include/alibabacloud/vod/model/GetMediaRefreshJobsRequest.h
+	include/alibabacloud/vod/model/GetMediaRefreshJobsResult.h
 	include/alibabacloud/vod/model/GetMessageCallbackRequest.h
 	include/alibabacloud/vod/model/GetMessageCallbackResult.h
 	include/alibabacloud/vod/model/GetMezzanineInfoRequest.h
@@ -225,6 +227,8 @@ set(vod_public_header_model
 	include/alibabacloud/vod/model/PreloadVodObjectCachesResult.h
 	include/alibabacloud/vod/model/ProduceEditingProjectVideoRequest.h
 	include/alibabacloud/vod/model/ProduceEditingProjectVideoResult.h
+	include/alibabacloud/vod/model/RefreshMediaPlayUrlsRequest.h
+	include/alibabacloud/vod/model/RefreshMediaPlayUrlsResult.h
 	include/alibabacloud/vod/model/RefreshUploadVideoRequest.h
 	include/alibabacloud/vod/model/RefreshUploadVideoResult.h
 	include/alibabacloud/vod/model/RefreshVodObjectCachesRequest.h
@@ -448,6 +452,8 @@ set(vod_src
 	src/model/GetMediaAuditResultTimelineResult.cc
 	src/model/GetMediaDNAResultRequest.cc
 	src/model/GetMediaDNAResultResult.cc
+	src/model/GetMediaRefreshJobsRequest.cc
+	src/model/GetMediaRefreshJobsResult.cc
 	src/model/GetMessageCallbackRequest.cc
 	src/model/GetMessageCallbackResult.cc
 	src/model/GetMezzanineInfoRequest.cc
@@ -508,6 +514,8 @@ set(vod_src
 	src/model/PreloadVodObjectCachesResult.cc
 	src/model/ProduceEditingProjectVideoRequest.cc
 	src/model/ProduceEditingProjectVideoResult.cc
+	src/model/RefreshMediaPlayUrlsRequest.cc
+	src/model/RefreshMediaPlayUrlsResult.cc
 	src/model/RefreshUploadVideoRequest.cc
 	src/model/RefreshUploadVideoResult.cc
 	src/model/RefreshVodObjectCachesRequest.cc

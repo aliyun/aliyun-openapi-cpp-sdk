@@ -43,22 +43,22 @@ void DescribeVodDomainUsageDataResult::parse(const std::string &payload)
 	for (auto valueUsageDataPerIntervalDataModule : allUsageDataPerIntervalNode)
 	{
 		DataModule usageDataPerIntervalObject;
-		if(!valueUsageDataPerIntervalDataModule["TimeStamp"].isNull())
-			usageDataPerIntervalObject.timeStamp = valueUsageDataPerIntervalDataModule["TimeStamp"].asString();
 		if(!valueUsageDataPerIntervalDataModule["Value"].isNull())
 			usageDataPerIntervalObject.value = valueUsageDataPerIntervalDataModule["Value"].asString();
+		if(!valueUsageDataPerIntervalDataModule["TimeStamp"].isNull())
+			usageDataPerIntervalObject.timeStamp = valueUsageDataPerIntervalDataModule["TimeStamp"].asString();
 		usageDataPerInterval_.push_back(usageDataPerIntervalObject);
 	}
-	if(!value["DomainName"].isNull())
-		domainName_ = value["DomainName"].asString();
-	if(!value["StartTime"].isNull())
-		startTime_ = value["StartTime"].asString();
 	if(!value["EndTime"].isNull())
 		endTime_ = value["EndTime"].asString();
 	if(!value["Type"].isNull())
 		type_ = value["Type"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
 	if(!value["Area"].isNull())
 		area_ = value["Area"].asString();
+	if(!value["DomainName"].isNull())
+		domainName_ = value["DomainName"].asString();
 	if(!value["DataInterval"].isNull())
 		dataInterval_ = value["DataInterval"].asString();
 

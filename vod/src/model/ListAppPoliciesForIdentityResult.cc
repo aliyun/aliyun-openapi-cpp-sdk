@@ -43,20 +43,20 @@ void ListAppPoliciesForIdentityResult::parse(const std::string &payload)
 	for (auto valueAppPolicyListAppPolicy : allAppPolicyListNode)
 	{
 		AppPolicy appPolicyListObject;
-		if(!valueAppPolicyListAppPolicy["AppId"].isNull())
-			appPolicyListObject.appId = valueAppPolicyListAppPolicy["AppId"].asString();
 		if(!valueAppPolicyListAppPolicy["CreationTime"].isNull())
 			appPolicyListObject.creationTime = valueAppPolicyListAppPolicy["CreationTime"].asString();
-		if(!valueAppPolicyListAppPolicy["PolicyName"].isNull())
-			appPolicyListObject.policyName = valueAppPolicyListAppPolicy["PolicyName"].asString();
-		if(!valueAppPolicyListAppPolicy["PolicyType"].isNull())
-			appPolicyListObject.policyType = valueAppPolicyListAppPolicy["PolicyType"].asString();
-		if(!valueAppPolicyListAppPolicy["PolicyValue"].isNull())
-			appPolicyListObject.policyValue = valueAppPolicyListAppPolicy["PolicyValue"].asString();
 		if(!valueAppPolicyListAppPolicy["Description"].isNull())
 			appPolicyListObject.description = valueAppPolicyListAppPolicy["Description"].asString();
+		if(!valueAppPolicyListAppPolicy["AppId"].isNull())
+			appPolicyListObject.appId = valueAppPolicyListAppPolicy["AppId"].asString();
+		if(!valueAppPolicyListAppPolicy["PolicyValue"].isNull())
+			appPolicyListObject.policyValue = valueAppPolicyListAppPolicy["PolicyValue"].asString();
+		if(!valueAppPolicyListAppPolicy["PolicyName"].isNull())
+			appPolicyListObject.policyName = valueAppPolicyListAppPolicy["PolicyName"].asString();
 		if(!valueAppPolicyListAppPolicy["ModificationTime"].isNull())
 			appPolicyListObject.modificationTime = valueAppPolicyListAppPolicy["ModificationTime"].asString();
+		if(!valueAppPolicyListAppPolicy["PolicyType"].isNull())
+			appPolicyListObject.policyType = valueAppPolicyListAppPolicy["PolicyType"].asString();
 		appPolicyList_.push_back(appPolicyListObject);
 	}
 

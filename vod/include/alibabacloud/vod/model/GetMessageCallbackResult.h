@@ -40,8 +40,8 @@ namespace AlibabaCloud
 					std::string callbackType;
 					std::string appId;
 					std::string eventTypeList;
-					std::string authKey;
 					std::string mnsQueueName;
+					std::string authKey;
 				};
 
 

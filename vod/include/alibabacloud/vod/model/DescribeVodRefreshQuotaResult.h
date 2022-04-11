@@ -40,8 +40,8 @@ namespace AlibabaCloud
 				std::string getUrlRemain()const;
 				std::string getPreloadRemain()const;
 				std::string getBlockRemain()const;
-				std::string getDirRemain()const;
 				std::string getBlockQuota()const;
+				std::string getDirRemain()const;
 				std::string getUrlQuota()const;
 				std::string getDirQuota()const;
 				std::string getPreloadQuota()const;
@@ -52,8 +52,8 @@ namespace AlibabaCloud
 				std::string urlRemain_;
 				std::string preloadRemain_;
 				std::string blockRemain_;
-				std::string dirRemain_;
 				std::string blockQuota_;
+				std::string dirRemain_;
 				std::string urlQuota_;
 				std::string dirQuota_;
 				std::string preloadQuota_;

@@ -46,16 +46,16 @@ void GetMessageCallbackResult::parse(const std::string &payload)
 		messageCallback_.callbackURL = messageCallbackNode["CallbackURL"].asString();
 	if(!messageCallbackNode["EventTypeList"].isNull())
 		messageCallback_.eventTypeList = messageCallbackNode["EventTypeList"].asString();
-	if(!messageCallbackNode["AuthSwitch"].isNull())
-		messageCallback_.authSwitch = messageCallbackNode["AuthSwitch"].asString();
-	if(!messageCallbackNode["AuthKey"].isNull())
-		messageCallback_.authKey = messageCallbackNode["AuthKey"].asString();
-	if(!messageCallbackNode["MnsEndpoint"].isNull())
-		messageCallback_.mnsEndpoint = messageCallbackNode["MnsEndpoint"].asString();
-	if(!messageCallbackNode["MnsQueueName"].isNull())
-		messageCallback_.mnsQueueName = messageCallbackNode["MnsQueueName"].asString();
 	if(!messageCallbackNode["AppId"].isNull())
 		messageCallback_.appId = messageCallbackNode["AppId"].asString();
+	if(!messageCallbackNode["MnsQueueName"].isNull())
+		messageCallback_.mnsQueueName = messageCallbackNode["MnsQueueName"].asString();
+	if(!messageCallbackNode["AuthKey"].isNull())
+		messageCallback_.authKey = messageCallbackNode["AuthKey"].asString();
+	if(!messageCallbackNode["AuthSwitch"].isNull())
+		messageCallback_.authSwitch = messageCallbackNode["AuthSwitch"].asString();
+	if(!messageCallbackNode["MnsEndpoint"].isNull())
+		messageCallback_.mnsEndpoint = messageCallbackNode["MnsEndpoint"].asString();
 
 }
 

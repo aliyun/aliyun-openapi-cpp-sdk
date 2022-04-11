@@ -166,6 +166,8 @@
 #include "model/GetMediaAuditResultTimelineResult.h"
 #include "model/GetMediaDNAResultRequest.h"
 #include "model/GetMediaDNAResultResult.h"
+#include "model/GetMediaRefreshJobsRequest.h"
+#include "model/GetMediaRefreshJobsResult.h"
 #include "model/GetMessageCallbackRequest.h"
 #include "model/GetMessageCallbackResult.h"
 #include "model/GetMezzanineInfoRequest.h"
@@ -226,6 +228,8 @@
 #include "model/PreloadVodObjectCachesResult.h"
 #include "model/ProduceEditingProjectVideoRequest.h"
 #include "model/ProduceEditingProjectVideoResult.h"
+#include "model/RefreshMediaPlayUrlsRequest.h"
+#include "model/RefreshMediaPlayUrlsResult.h"
 #include "model/RefreshUploadVideoRequest.h"
 #include "model/RefreshUploadVideoResult.h"
 #include "model/RefreshVodObjectCachesRequest.h"
@@ -527,6 +531,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetMediaDNAResultResult> GetMediaDNAResultOutcome;
 			typedef std::future<GetMediaDNAResultOutcome> GetMediaDNAResultOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::GetMediaDNAResultRequest&, const GetMediaDNAResultOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetMediaDNAResultAsyncHandler;
+			typedef Outcome<Error, Model::GetMediaRefreshJobsResult> GetMediaRefreshJobsOutcome;
+			typedef std::future<GetMediaRefreshJobsOutcome> GetMediaRefreshJobsOutcomeCallable;
+			typedef std::function<void(const VodClient*, const Model::GetMediaRefreshJobsRequest&, const GetMediaRefreshJobsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetMediaRefreshJobsAsyncHandler;
 			typedef Outcome<Error, Model::GetMessageCallbackResult> GetMessageCallbackOutcome;
 			typedef std::future<GetMessageCallbackOutcome> GetMessageCallbackOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::GetMessageCallbackRequest&, const GetMessageCallbackOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetMessageCallbackAsyncHandler;
@@ -617,6 +624,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ProduceEditingProjectVideoResult> ProduceEditingProjectVideoOutcome;
 			typedef std::future<ProduceEditingProjectVideoOutcome> ProduceEditingProjectVideoOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::ProduceEditingProjectVideoRequest&, const ProduceEditingProjectVideoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ProduceEditingProjectVideoAsyncHandler;
+			typedef Outcome<Error, Model::RefreshMediaPlayUrlsResult> RefreshMediaPlayUrlsOutcome;
+			typedef std::future<RefreshMediaPlayUrlsOutcome> RefreshMediaPlayUrlsOutcomeCallable;
+			typedef std::function<void(const VodClient*, const Model::RefreshMediaPlayUrlsRequest&, const RefreshMediaPlayUrlsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RefreshMediaPlayUrlsAsyncHandler;
 			typedef Outcome<Error, Model::RefreshUploadVideoResult> RefreshUploadVideoOutcome;
 			typedef std::future<RefreshUploadVideoOutcome> RefreshUploadVideoOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::RefreshUploadVideoRequest&, const RefreshUploadVideoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RefreshUploadVideoAsyncHandler;
@@ -952,6 +962,9 @@ namespace AlibabaCloud
 			GetMediaDNAResultOutcome getMediaDNAResult(const Model::GetMediaDNAResultRequest &request)const;
 			void getMediaDNAResultAsync(const Model::GetMediaDNAResultRequest& request, const GetMediaDNAResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetMediaDNAResultOutcomeCallable getMediaDNAResultCallable(const Model::GetMediaDNAResultRequest& request) const;
+			GetMediaRefreshJobsOutcome getMediaRefreshJobs(const Model::GetMediaRefreshJobsRequest &request)const;
+			void getMediaRefreshJobsAsync(const Model::GetMediaRefreshJobsRequest& request, const GetMediaRefreshJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetMediaRefreshJobsOutcomeCallable getMediaRefreshJobsCallable(const Model::GetMediaRefreshJobsRequest& request) const;
 			GetMessageCallbackOutcome getMessageCallback(const Model::GetMessageCallbackRequest &request)const;
 			void getMessageCallbackAsync(const Model::GetMessageCallbackRequest& request, const GetMessageCallbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetMessageCallbackOutcomeCallable getMessageCallbackCallable(const Model::GetMessageCallbackRequest& request) const;
@@ -1042,6 +1055,9 @@ namespace AlibabaCloud
 			ProduceEditingProjectVideoOutcome produceEditingProjectVideo(const Model::ProduceEditingProjectVideoRequest &request)const;
 			void produceEditingProjectVideoAsync(const Model::ProduceEditingProjectVideoRequest& request, const ProduceEditingProjectVideoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ProduceEditingProjectVideoOutcomeCallable produceEditingProjectVideoCallable(const Model::ProduceEditingProjectVideoRequest& request) const;
+			RefreshMediaPlayUrlsOutcome refreshMediaPlayUrls(const Model::RefreshMediaPlayUrlsRequest &request)const;
+			void refreshMediaPlayUrlsAsync(const Model::RefreshMediaPlayUrlsRequest& request, const RefreshMediaPlayUrlsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RefreshMediaPlayUrlsOutcomeCallable refreshMediaPlayUrlsCallable(const Model::RefreshMediaPlayUrlsRequest& request) const;
 			RefreshUploadVideoOutcome refreshUploadVideo(const Model::RefreshUploadVideoRequest &request)const;
 			void refreshUploadVideoAsync(const Model::RefreshUploadVideoRequest& request, const RefreshUploadVideoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RefreshUploadVideoOutcomeCallable refreshUploadVideoCallable(const Model::RefreshUploadVideoRequest& request) const;

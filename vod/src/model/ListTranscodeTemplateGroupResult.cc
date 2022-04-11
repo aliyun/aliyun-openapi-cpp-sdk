@@ -45,20 +45,20 @@ void ListTranscodeTemplateGroupResult::parse(const std::string &payload)
 		TranscodeTemplateGroup transcodeTemplateGroupListObject;
 		if(!valueTranscodeTemplateGroupListTranscodeTemplateGroup["CreationTime"].isNull())
 			transcodeTemplateGroupListObject.creationTime = valueTranscodeTemplateGroupListTranscodeTemplateGroup["CreationTime"].asString();
-		if(!valueTranscodeTemplateGroupListTranscodeTemplateGroup["ModifyTime"].isNull())
-			transcodeTemplateGroupListObject.modifyTime = valueTranscodeTemplateGroupListTranscodeTemplateGroup["ModifyTime"].asString();
-		if(!valueTranscodeTemplateGroupListTranscodeTemplateGroup["Name"].isNull())
-			transcodeTemplateGroupListObject.name = valueTranscodeTemplateGroupListTranscodeTemplateGroup["Name"].asString();
-		if(!valueTranscodeTemplateGroupListTranscodeTemplateGroup["IsDefault"].isNull())
-			transcodeTemplateGroupListObject.isDefault = valueTranscodeTemplateGroupListTranscodeTemplateGroup["IsDefault"].asString();
-		if(!valueTranscodeTemplateGroupListTranscodeTemplateGroup["Locked"].isNull())
-			transcodeTemplateGroupListObject.locked = valueTranscodeTemplateGroupListTranscodeTemplateGroup["Locked"].asString();
-		if(!valueTranscodeTemplateGroupListTranscodeTemplateGroup["TranscodeTemplateGroupId"].isNull())
-			transcodeTemplateGroupListObject.transcodeTemplateGroupId = valueTranscodeTemplateGroupListTranscodeTemplateGroup["TranscodeTemplateGroupId"].asString();
 		if(!valueTranscodeTemplateGroupListTranscodeTemplateGroup["TranscodeMode"].isNull())
 			transcodeTemplateGroupListObject.transcodeMode = valueTranscodeTemplateGroupListTranscodeTemplateGroup["TranscodeMode"].asString();
+		if(!valueTranscodeTemplateGroupListTranscodeTemplateGroup["IsDefault"].isNull())
+			transcodeTemplateGroupListObject.isDefault = valueTranscodeTemplateGroupListTranscodeTemplateGroup["IsDefault"].asString();
 		if(!valueTranscodeTemplateGroupListTranscodeTemplateGroup["AppId"].isNull())
 			transcodeTemplateGroupListObject.appId = valueTranscodeTemplateGroupListTranscodeTemplateGroup["AppId"].asString();
+		if(!valueTranscodeTemplateGroupListTranscodeTemplateGroup["TranscodeTemplateGroupId"].isNull())
+			transcodeTemplateGroupListObject.transcodeTemplateGroupId = valueTranscodeTemplateGroupListTranscodeTemplateGroup["TranscodeTemplateGroupId"].asString();
+		if(!valueTranscodeTemplateGroupListTranscodeTemplateGroup["Name"].isNull())
+			transcodeTemplateGroupListObject.name = valueTranscodeTemplateGroupListTranscodeTemplateGroup["Name"].asString();
+		if(!valueTranscodeTemplateGroupListTranscodeTemplateGroup["ModifyTime"].isNull())
+			transcodeTemplateGroupListObject.modifyTime = valueTranscodeTemplateGroupListTranscodeTemplateGroup["ModifyTime"].asString();
+		if(!valueTranscodeTemplateGroupListTranscodeTemplateGroup["Locked"].isNull())
+			transcodeTemplateGroupListObject.locked = valueTranscodeTemplateGroupListTranscodeTemplateGroup["Locked"].asString();
 		transcodeTemplateGroupList_.push_back(transcodeTemplateGroupListObject);
 	}
 

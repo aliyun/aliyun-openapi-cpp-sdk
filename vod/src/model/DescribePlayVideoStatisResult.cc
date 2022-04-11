@@ -43,18 +43,18 @@ void DescribePlayVideoStatisResult::parse(const std::string &payload)
 	for (auto valueVideoPlayStatisDetailsVideoPlayStatisDetail : allVideoPlayStatisDetailsNode)
 	{
 		VideoPlayStatisDetail videoPlayStatisDetailsObject;
-		if(!valueVideoPlayStatisDetailsVideoPlayStatisDetail["Date"].isNull())
-			videoPlayStatisDetailsObject.date = valueVideoPlayStatisDetailsVideoPlayStatisDetail["Date"].asString();
 		if(!valueVideoPlayStatisDetailsVideoPlayStatisDetail["PlayDuration"].isNull())
 			videoPlayStatisDetailsObject.playDuration = valueVideoPlayStatisDetailsVideoPlayStatisDetail["PlayDuration"].asString();
+		if(!valueVideoPlayStatisDetailsVideoPlayStatisDetail["Date"].isNull())
+			videoPlayStatisDetailsObject.date = valueVideoPlayStatisDetailsVideoPlayStatisDetail["Date"].asString();
 		if(!valueVideoPlayStatisDetailsVideoPlayStatisDetail["VV"].isNull())
 			videoPlayStatisDetailsObject.vV = valueVideoPlayStatisDetailsVideoPlayStatisDetail["VV"].asString();
+		if(!valueVideoPlayStatisDetailsVideoPlayStatisDetail["Title"].isNull())
+			videoPlayStatisDetailsObject.title = valueVideoPlayStatisDetailsVideoPlayStatisDetail["Title"].asString();
 		if(!valueVideoPlayStatisDetailsVideoPlayStatisDetail["UV"].isNull())
 			videoPlayStatisDetailsObject.uV = valueVideoPlayStatisDetailsVideoPlayStatisDetail["UV"].asString();
 		if(!valueVideoPlayStatisDetailsVideoPlayStatisDetail["PlayRange"].isNull())
 			videoPlayStatisDetailsObject.playRange = valueVideoPlayStatisDetailsVideoPlayStatisDetail["PlayRange"].asString();
-		if(!valueVideoPlayStatisDetailsVideoPlayStatisDetail["Title"].isNull())
-			videoPlayStatisDetailsObject.title = valueVideoPlayStatisDetailsVideoPlayStatisDetail["Title"].asString();
 		videoPlayStatisDetails_.push_back(videoPlayStatisDetailsObject);
 	}
 

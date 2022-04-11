@@ -38,8 +38,8 @@ namespace AlibabaCloud
 					std::string materialId;
 					std::string description;
 					long size;
-					std::string title;
 					std::string spriteConfig;
+					std::string title;
 					float duration;
 					int cateId;
 					std::string cateName;

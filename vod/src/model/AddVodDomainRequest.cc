@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,100 +18,82 @@
 
 using AlibabaCloud::Vod::Model::AddVodDomainRequest;
 
-AddVodDomainRequest::AddVodDomainRequest() :
-	RpcServiceRequest("vod", "2017-03-21", "AddVodDomain")
-{
-	setMethod(HttpRequest::Method::Post);
+AddVodDomainRequest::AddVodDomainRequest()
+    : RpcServiceRequest("vod", "2017-03-21", "AddVodDomain") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-AddVodDomainRequest::~AddVodDomainRequest()
-{}
+AddVodDomainRequest::~AddVodDomainRequest() {}
 
-std::string AddVodDomainRequest::getSources()const
-{
-	return sources_;
+std::string AddVodDomainRequest::getSources() const {
+  return sources_;
 }
 
-void AddVodDomainRequest::setSources(const std::string& sources)
-{
-	sources_ = sources;
-	setParameter("Sources", sources);
+void AddVodDomainRequest::setSources(const std::string &sources) {
+  sources_ = sources;
+  setParameter(std::string("Sources"), sources);
 }
 
-std::string AddVodDomainRequest::getSecurityToken()const
-{
-	return securityToken_;
+std::string AddVodDomainRequest::getSecurityToken() const {
+  return securityToken_;
 }
 
-void AddVodDomainRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+void AddVodDomainRequest::setSecurityToken(const std::string &securityToken) {
+  securityToken_ = securityToken;
+  setParameter(std::string("SecurityToken"), securityToken);
 }
 
-std::string AddVodDomainRequest::getScope()const
-{
-	return scope_;
+std::string AddVodDomainRequest::getScope() const {
+  return scope_;
 }
 
-void AddVodDomainRequest::setScope(const std::string& scope)
-{
-	scope_ = scope;
-	setParameter("Scope", scope);
+void AddVodDomainRequest::setScope(const std::string &scope) {
+  scope_ = scope;
+  setParameter(std::string("Scope"), scope);
 }
 
-std::string AddVodDomainRequest::getTopLevelDomain()const
-{
-	return topLevelDomain_;
+std::string AddVodDomainRequest::getTopLevelDomain() const {
+  return topLevelDomain_;
 }
 
-void AddVodDomainRequest::setTopLevelDomain(const std::string& topLevelDomain)
-{
-	topLevelDomain_ = topLevelDomain;
-	setParameter("TopLevelDomain", topLevelDomain);
+void AddVodDomainRequest::setTopLevelDomain(const std::string &topLevelDomain) {
+  topLevelDomain_ = topLevelDomain;
+  setParameter(std::string("TopLevelDomain"), topLevelDomain);
 }
 
-std::string AddVodDomainRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string AddVodDomainRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void AddVodDomainRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void AddVodDomainRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-std::string AddVodDomainRequest::getDomainName()const
-{
-	return domainName_;
+std::string AddVodDomainRequest::getDomainName() const {
+  return domainName_;
 }
 
-void AddVodDomainRequest::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+void AddVodDomainRequest::setDomainName(const std::string &domainName) {
+  domainName_ = domainName;
+  setParameter(std::string("DomainName"), domainName);
 }
 
-long AddVodDomainRequest::getOwnerId()const
-{
-	return ownerId_;
+long AddVodDomainRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void AddVodDomainRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void AddVodDomainRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string AddVodDomainRequest::getCheckUrl()const
-{
-	return checkUrl_;
+std::string AddVodDomainRequest::getCheckUrl() const {
+  return checkUrl_;
 }
 
-void AddVodDomainRequest::setCheckUrl(const std::string& checkUrl)
-{
-	checkUrl_ = checkUrl;
-	setParameter("CheckUrl", checkUrl);
+void AddVodDomainRequest::setCheckUrl(const std::string &checkUrl) {
+  checkUrl_ = checkUrl;
+  setParameter(std::string("CheckUrl"), checkUrl);
 }
 

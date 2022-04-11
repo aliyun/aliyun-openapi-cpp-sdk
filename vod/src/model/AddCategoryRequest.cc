@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,45 +18,37 @@
 
 using AlibabaCloud::Vod::Model::AddCategoryRequest;
 
-AddCategoryRequest::AddCategoryRequest() :
-	RpcServiceRequest("vod", "2017-03-21", "AddCategory")
-{
-	setMethod(HttpRequest::Method::Post);
+AddCategoryRequest::AddCategoryRequest()
+    : RpcServiceRequest("vod", "2017-03-21", "AddCategory") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-AddCategoryRequest::~AddCategoryRequest()
-{}
+AddCategoryRequest::~AddCategoryRequest() {}
 
-std::string AddCategoryRequest::getType()const
-{
-	return type_;
+std::string AddCategoryRequest::getType() const {
+  return type_;
 }
 
-void AddCategoryRequest::setType(const std::string& type)
-{
-	type_ = type;
-	setParameter("Type", type);
+void AddCategoryRequest::setType(const std::string &type) {
+  type_ = type;
+  setParameter(std::string("Type"), type);
 }
 
-long AddCategoryRequest::getParentId()const
-{
-	return parentId_;
+long AddCategoryRequest::getParentId() const {
+  return parentId_;
 }
 
-void AddCategoryRequest::setParentId(long parentId)
-{
-	parentId_ = parentId;
-	setParameter("ParentId", std::to_string(parentId));
+void AddCategoryRequest::setParentId(long parentId) {
+  parentId_ = parentId;
+  setParameter(std::string("ParentId"), std::to_string(parentId));
 }
 
-std::string AddCategoryRequest::getCateName()const
-{
-	return cateName_;
+std::string AddCategoryRequest::getCateName() const {
+  return cateName_;
 }
 
-void AddCategoryRequest::setCateName(const std::string& cateName)
-{
-	cateName_ = cateName;
-	setParameter("CateName", cateName);
+void AddCategoryRequest::setCateName(const std::string &cateName) {
+  cateName_ = cateName;
+  setParameter(std::string("CateName"), cateName);
 }
 

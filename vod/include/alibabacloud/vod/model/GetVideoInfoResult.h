@@ -46,8 +46,8 @@ namespace AlibabaCloud
 					std::string createTime;
 					std::string downloadSwitch;
 					std::string title;
-					float duration;
 					std::string modificationTime;
+					float duration;
 					long cateId;
 					std::string cateName;
 					std::vector<Thumbnail> thumbnailList;

@@ -43,14 +43,14 @@ void ListAuditSecurityIpResult::parse(const std::string &payload)
 	for (auto valueSecurityIpListSecurityIp : allSecurityIpListNode)
 	{
 		SecurityIp securityIpListObject;
-		if(!valueSecurityIpListSecurityIp["SecurityGroupName"].isNull())
-			securityIpListObject.securityGroupName = valueSecurityIpListSecurityIp["SecurityGroupName"].asString();
-		if(!valueSecurityIpListSecurityIp["Ips"].isNull())
-			securityIpListObject.ips = valueSecurityIpListSecurityIp["Ips"].asString();
 		if(!valueSecurityIpListSecurityIp["CreationTime"].isNull())
 			securityIpListObject.creationTime = valueSecurityIpListSecurityIp["CreationTime"].asString();
+		if(!valueSecurityIpListSecurityIp["Ips"].isNull())
+			securityIpListObject.ips = valueSecurityIpListSecurityIp["Ips"].asString();
 		if(!valueSecurityIpListSecurityIp["ModificationTime"].isNull())
 			securityIpListObject.modificationTime = valueSecurityIpListSecurityIp["ModificationTime"].asString();
+		if(!valueSecurityIpListSecurityIp["SecurityGroupName"].isNull())
+			securityIpListObject.securityGroupName = valueSecurityIpListSecurityIp["SecurityGroupName"].asString();
 		securityIpList_.push_back(securityIpListObject);
 	}
 

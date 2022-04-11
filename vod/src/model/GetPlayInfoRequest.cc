@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,166 +18,136 @@
 
 using AlibabaCloud::Vod::Model::GetPlayInfoRequest;
 
-GetPlayInfoRequest::GetPlayInfoRequest() :
-	RpcServiceRequest("vod", "2017-03-21", "GetPlayInfo")
-{
-	setMethod(HttpRequest::Method::Post);
+GetPlayInfoRequest::GetPlayInfoRequest()
+    : RpcServiceRequest("vod", "2017-03-21", "GetPlayInfo") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-GetPlayInfoRequest::~GetPlayInfoRequest()
-{}
+GetPlayInfoRequest::~GetPlayInfoRequest() {}
 
-std::string GetPlayInfoRequest::getFormats()const
-{
-	return formats_;
+std::string GetPlayInfoRequest::getFormats() const {
+  return formats_;
 }
 
-void GetPlayInfoRequest::setFormats(const std::string& formats)
-{
-	formats_ = formats;
-	setParameter("Formats", formats);
+void GetPlayInfoRequest::setFormats(const std::string &formats) {
+  formats_ = formats;
+  setParameter(std::string("Formats"), formats);
 }
 
-std::string GetPlayInfoRequest::getChannel()const
-{
-	return channel_;
+std::string GetPlayInfoRequest::getChannel() const {
+  return channel_;
 }
 
-void GetPlayInfoRequest::setChannel(const std::string& channel)
-{
-	channel_ = channel;
-	setParameter("Channel", channel);
+void GetPlayInfoRequest::setChannel(const std::string &channel) {
+  channel_ = channel;
+  setParameter(std::string("Channel"), channel);
 }
 
-std::string GetPlayInfoRequest::getPlayerVersion()const
-{
-	return playerVersion_;
+std::string GetPlayInfoRequest::getPlayerVersion() const {
+  return playerVersion_;
 }
 
-void GetPlayInfoRequest::setPlayerVersion(const std::string& playerVersion)
-{
-	playerVersion_ = playerVersion;
-	setParameter("PlayerVersion", playerVersion);
+void GetPlayInfoRequest::setPlayerVersion(const std::string &playerVersion) {
+  playerVersion_ = playerVersion;
+  setParameter(std::string("PlayerVersion"), playerVersion);
 }
 
-std::string GetPlayInfoRequest::getRand()const
-{
-	return rand_;
+std::string GetPlayInfoRequest::getRand() const {
+  return rand_;
 }
 
-void GetPlayInfoRequest::setRand(const std::string& rand)
-{
-	rand_ = rand;
-	setParameter("Rand", rand);
+void GetPlayInfoRequest::setRand(const std::string &rand) {
+  rand_ = rand;
+  setParameter(std::string("Rand"), rand);
 }
 
-std::string GetPlayInfoRequest::getReAuthInfo()const
-{
-	return reAuthInfo_;
+std::string GetPlayInfoRequest::getReAuthInfo() const {
+  return reAuthInfo_;
 }
 
-void GetPlayInfoRequest::setReAuthInfo(const std::string& reAuthInfo)
-{
-	reAuthInfo_ = reAuthInfo;
-	setParameter("ReAuthInfo", reAuthInfo);
+void GetPlayInfoRequest::setReAuthInfo(const std::string &reAuthInfo) {
+  reAuthInfo_ = reAuthInfo;
+  setParameter(std::string("ReAuthInfo"), reAuthInfo);
 }
 
-std::string GetPlayInfoRequest::getPlayConfig()const
-{
-	return playConfig_;
+std::string GetPlayInfoRequest::getPlayConfig() const {
+  return playConfig_;
 }
 
-void GetPlayInfoRequest::setPlayConfig(const std::string& playConfig)
-{
-	playConfig_ = playConfig;
-	setParameter("PlayConfig", playConfig);
+void GetPlayInfoRequest::setPlayConfig(const std::string &playConfig) {
+  playConfig_ = playConfig;
+  setParameter(std::string("PlayConfig"), playConfig);
 }
 
-std::string GetPlayInfoRequest::getOutputType()const
-{
-	return outputType_;
+std::string GetPlayInfoRequest::getOutputType() const {
+  return outputType_;
 }
 
-void GetPlayInfoRequest::setOutputType(const std::string& outputType)
-{
-	outputType_ = outputType;
-	setParameter("OutputType", outputType);
+void GetPlayInfoRequest::setOutputType(const std::string &outputType) {
+  outputType_ = outputType;
+  setParameter(std::string("OutputType"), outputType);
 }
 
-std::string GetPlayInfoRequest::getDefinition()const
-{
-	return definition_;
+std::string GetPlayInfoRequest::getDefinition() const {
+  return definition_;
 }
 
-void GetPlayInfoRequest::setDefinition(const std::string& definition)
-{
-	definition_ = definition;
-	setParameter("Definition", definition);
+void GetPlayInfoRequest::setDefinition(const std::string &definition) {
+  definition_ = definition;
+  setParameter(std::string("Definition"), definition);
 }
 
-long GetPlayInfoRequest::getAuthTimeout()const
-{
-	return authTimeout_;
+long GetPlayInfoRequest::getAuthTimeout() const {
+  return authTimeout_;
 }
 
-void GetPlayInfoRequest::setAuthTimeout(long authTimeout)
-{
-	authTimeout_ = authTimeout;
-	setParameter("AuthTimeout", std::to_string(authTimeout));
+void GetPlayInfoRequest::setAuthTimeout(long authTimeout) {
+  authTimeout_ = authTimeout;
+  setParameter(std::string("AuthTimeout"), std::to_string(authTimeout));
 }
 
-std::string GetPlayInfoRequest::getStreamType()const
-{
-	return streamType_;
+std::string GetPlayInfoRequest::getStreamType() const {
+  return streamType_;
 }
 
-void GetPlayInfoRequest::setStreamType(const std::string& streamType)
-{
-	streamType_ = streamType;
-	setParameter("StreamType", streamType);
+void GetPlayInfoRequest::setStreamType(const std::string &streamType) {
+  streamType_ = streamType;
+  setParameter(std::string("StreamType"), streamType);
 }
 
-std::string GetPlayInfoRequest::getVideoId()const
-{
-	return videoId_;
+std::string GetPlayInfoRequest::getVideoId() const {
+  return videoId_;
 }
 
-void GetPlayInfoRequest::setVideoId(const std::string& videoId)
-{
-	videoId_ = videoId;
-	setParameter("VideoId", videoId);
+void GetPlayInfoRequest::setVideoId(const std::string &videoId) {
+  videoId_ = videoId;
+  setParameter(std::string("VideoId"), videoId);
 }
 
-std::string GetPlayInfoRequest::getResultType()const
-{
-	return resultType_;
+std::string GetPlayInfoRequest::getResultType() const {
+  return resultType_;
 }
 
-void GetPlayInfoRequest::setResultType(const std::string& resultType)
-{
-	resultType_ = resultType;
-	setParameter("ResultType", resultType);
+void GetPlayInfoRequest::setResultType(const std::string &resultType) {
+  resultType_ = resultType;
+  setParameter(std::string("ResultType"), resultType);
 }
 
-std::string GetPlayInfoRequest::getAdditionType()const
-{
-	return additionType_;
+std::string GetPlayInfoRequest::getAdditionType() const {
+  return additionType_;
 }
 
-void GetPlayInfoRequest::setAdditionType(const std::string& additionType)
-{
-	additionType_ = additionType;
-	setParameter("AdditionType", additionType);
+void GetPlayInfoRequest::setAdditionType(const std::string &additionType) {
+  additionType_ = additionType;
+  setParameter(std::string("AdditionType"), additionType);
 }
 
-std::string GetPlayInfoRequest::getAuthInfo()const
-{
-	return authInfo_;
+std::string GetPlayInfoRequest::getAuthInfo() const {
+  return authInfo_;
 }
 
-void GetPlayInfoRequest::setAuthInfo(const std::string& authInfo)
-{
-	authInfo_ = authInfo;
-	setParameter("AuthInfo", authInfo);
+void GetPlayInfoRequest::setAuthInfo(const std::string &authInfo) {
+  authInfo_ = authInfo;
+  setParameter(std::string("AuthInfo"), authInfo);
 }
 

@@ -43,44 +43,44 @@ void GetVideoInfosResult::parse(const std::string &payload)
 	for (auto valueVideoListVideo : allVideoListNode)
 	{
 		Video videoListObject;
-		if(!valueVideoListVideo["VideoId"].isNull())
-			videoListObject.videoId = valueVideoListVideo["VideoId"].asString();
-		if(!valueVideoListVideo["Title"].isNull())
-			videoListObject.title = valueVideoListVideo["Title"].asString();
-		if(!valueVideoListVideo["Tags"].isNull())
-			videoListObject.tags = valueVideoListVideo["Tags"].asString();
-		if(!valueVideoListVideo["Status"].isNull())
-			videoListObject.status = valueVideoListVideo["Status"].asString();
-		if(!valueVideoListVideo["Size"].isNull())
-			videoListObject.size = std::stol(valueVideoListVideo["Size"].asString());
-		if(!valueVideoListVideo["Duration"].isNull())
-			videoListObject.duration = std::stof(valueVideoListVideo["Duration"].asString());
-		if(!valueVideoListVideo["Description"].isNull())
-			videoListObject.description = valueVideoListVideo["Description"].asString();
-		if(!valueVideoListVideo["ModificationTime"].isNull())
-			videoListObject.modificationTime = valueVideoListVideo["ModificationTime"].asString();
-		if(!valueVideoListVideo["CreationTime"].isNull())
-			videoListObject.creationTime = valueVideoListVideo["CreationTime"].asString();
-		if(!valueVideoListVideo["CoverURL"].isNull())
-			videoListObject.coverURL = valueVideoListVideo["CoverURL"].asString();
-		if(!valueVideoListVideo["CateId"].isNull())
-			videoListObject.cateId = std::stol(valueVideoListVideo["CateId"].asString());
-		if(!valueVideoListVideo["CateName"].isNull())
-			videoListObject.cateName = valueVideoListVideo["CateName"].asString();
-		if(!valueVideoListVideo["DownloadSwitch"].isNull())
-			videoListObject.downloadSwitch = valueVideoListVideo["DownloadSwitch"].asString();
-		if(!valueVideoListVideo["TemplateGroupId"].isNull())
-			videoListObject.templateGroupId = valueVideoListVideo["TemplateGroupId"].asString();
-		if(!valueVideoListVideo["PreprocessStatus"].isNull())
-			videoListObject.preprocessStatus = valueVideoListVideo["PreprocessStatus"].asString();
 		if(!valueVideoListVideo["StorageLocation"].isNull())
 			videoListObject.storageLocation = valueVideoListVideo["StorageLocation"].asString();
+		if(!valueVideoListVideo["CreationTime"].isNull())
+			videoListObject.creationTime = valueVideoListVideo["CreationTime"].asString();
+		if(!valueVideoListVideo["Status"].isNull())
+			videoListObject.status = valueVideoListVideo["Status"].asString();
+		if(!valueVideoListVideo["CateId"].isNull())
+			videoListObject.cateId = std::stol(valueVideoListVideo["CateId"].asString());
+		if(!valueVideoListVideo["VideoId"].isNull())
+			videoListObject.videoId = valueVideoListVideo["VideoId"].asString();
+		if(!valueVideoListVideo["DownloadSwitch"].isNull())
+			videoListObject.downloadSwitch = valueVideoListVideo["DownloadSwitch"].asString();
+		if(!valueVideoListVideo["Tags"].isNull())
+			videoListObject.tags = valueVideoListVideo["Tags"].asString();
+		if(!valueVideoListVideo["ModificationTime"].isNull())
+			videoListObject.modificationTime = valueVideoListVideo["ModificationTime"].asString();
 		if(!valueVideoListVideo["RegionId"].isNull())
 			videoListObject.regionId = valueVideoListVideo["RegionId"].asString();
 		if(!valueVideoListVideo["CustomMediaInfo"].isNull())
 			videoListObject.customMediaInfo = valueVideoListVideo["CustomMediaInfo"].asString();
+		if(!valueVideoListVideo["CateName"].isNull())
+			videoListObject.cateName = valueVideoListVideo["CateName"].asString();
+		if(!valueVideoListVideo["Description"].isNull())
+			videoListObject.description = valueVideoListVideo["Description"].asString();
+		if(!valueVideoListVideo["PreprocessStatus"].isNull())
+			videoListObject.preprocessStatus = valueVideoListVideo["PreprocessStatus"].asString();
 		if(!valueVideoListVideo["AppId"].isNull())
 			videoListObject.appId = valueVideoListVideo["AppId"].asString();
+		if(!valueVideoListVideo["Size"].isNull())
+			videoListObject.size = std::stol(valueVideoListVideo["Size"].asString());
+		if(!valueVideoListVideo["CoverURL"].isNull())
+			videoListObject.coverURL = valueVideoListVideo["CoverURL"].asString();
+		if(!valueVideoListVideo["TemplateGroupId"].isNull())
+			videoListObject.templateGroupId = valueVideoListVideo["TemplateGroupId"].asString();
+		if(!valueVideoListVideo["Duration"].isNull())
+			videoListObject.duration = std::stof(valueVideoListVideo["Duration"].asString());
+		if(!valueVideoListVideo["Title"].isNull())
+			videoListObject.title = valueVideoListVideo["Title"].asString();
 		auto allThumbnailListNode = valueVideoListVideo["ThumbnailList"]["Thumbnail"];
 		for (auto valueVideoListVideoThumbnailListThumbnail : allThumbnailListNode)
 		{

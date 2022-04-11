@@ -39,16 +39,16 @@ void CreateUploadAttachedMediaResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["FileURL"].isNull())
+		fileURL_ = value["FileURL"].asString();
+	if(!value["UploadAddress"].isNull())
+		uploadAddress_ = value["UploadAddress"].asString();
 	if(!value["MediaId"].isNull())
 		mediaId_ = value["MediaId"].asString();
 	if(!value["MediaURL"].isNull())
 		mediaURL_ = value["MediaURL"].asString();
-	if(!value["UploadAddress"].isNull())
-		uploadAddress_ = value["UploadAddress"].asString();
 	if(!value["UploadAuth"].isNull())
 		uploadAuth_ = value["UploadAuth"].asString();
-	if(!value["FileURL"].isNull())
-		fileURL_ = value["FileURL"].asString();
 
 }
 

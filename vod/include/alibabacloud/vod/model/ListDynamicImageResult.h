@@ -37,11 +37,11 @@ namespace AlibabaCloud
 					std::string fileURL;
 					std::string videoId;
 					std::string format;
-					std::string fps;
 					std::string creationTime;
-					std::string dynamicImageId;
+					std::string fps;
 					std::string height;
 					std::string duration;
+					std::string dynamicImageId;
 					std::string width;
 					std::string jobId;
 					std::string fileSize;

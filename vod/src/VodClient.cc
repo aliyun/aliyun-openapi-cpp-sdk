@@ -2643,6 +2643,42 @@ VodClient::GetMediaDNAResultOutcomeCallable VodClient::getMediaDNAResultCallable
 	return task->get_future();
 }
 
+VodClient::GetMediaRefreshJobsOutcome VodClient::getMediaRefreshJobs(const GetMediaRefreshJobsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetMediaRefreshJobsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetMediaRefreshJobsOutcome(GetMediaRefreshJobsResult(outcome.result()));
+	else
+		return GetMediaRefreshJobsOutcome(outcome.error());
+}
+
+void VodClient::getMediaRefreshJobsAsync(const GetMediaRefreshJobsRequest& request, const GetMediaRefreshJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getMediaRefreshJobs(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::GetMediaRefreshJobsOutcomeCallable VodClient::getMediaRefreshJobsCallable(const GetMediaRefreshJobsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetMediaRefreshJobsOutcome()>>(
+			[this, request]()
+			{
+			return this->getMediaRefreshJobs(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VodClient::GetMessageCallbackOutcome VodClient::getMessageCallback(const GetMessageCallbackRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3717,6 +3753,42 @@ VodClient::ProduceEditingProjectVideoOutcomeCallable VodClient::produceEditingPr
 			[this, request]()
 			{
 			return this->produceEditingProjectVideo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VodClient::RefreshMediaPlayUrlsOutcome VodClient::refreshMediaPlayUrls(const RefreshMediaPlayUrlsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RefreshMediaPlayUrlsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RefreshMediaPlayUrlsOutcome(RefreshMediaPlayUrlsResult(outcome.result()));
+	else
+		return RefreshMediaPlayUrlsOutcome(outcome.error());
+}
+
+void VodClient::refreshMediaPlayUrlsAsync(const RefreshMediaPlayUrlsRequest& request, const RefreshMediaPlayUrlsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, refreshMediaPlayUrls(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::RefreshMediaPlayUrlsOutcomeCallable VodClient::refreshMediaPlayUrlsCallable(const RefreshMediaPlayUrlsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RefreshMediaPlayUrlsOutcome()>>(
+			[this, request]()
+			{
+			return this->refreshMediaPlayUrls(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

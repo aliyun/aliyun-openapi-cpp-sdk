@@ -43,26 +43,26 @@ void SearchEditingProjectResult::parse(const std::string &payload)
 	for (auto valueProjectListProject : allProjectListNode)
 	{
 		Project projectListObject;
-		if(!valueProjectListProject["ProjectId"].isNull())
-			projectListObject.projectId = valueProjectListProject["ProjectId"].asString();
+		if(!valueProjectListProject["StorageLocation"].isNull())
+			projectListObject.storageLocation = valueProjectListProject["StorageLocation"].asString();
+		if(!valueProjectListProject["Status"].isNull())
+			projectListObject.status = valueProjectListProject["Status"].asString();
 		if(!valueProjectListProject["CreationTime"].isNull())
 			projectListObject.creationTime = valueProjectListProject["CreationTime"].asString();
 		if(!valueProjectListProject["ModifiedTime"].isNull())
 			projectListObject.modifiedTime = valueProjectListProject["ModifiedTime"].asString();
-		if(!valueProjectListProject["Status"].isNull())
-			projectListObject.status = valueProjectListProject["Status"].asString();
 		if(!valueProjectListProject["Description"].isNull())
 			projectListObject.description = valueProjectListProject["Description"].asString();
-		if(!valueProjectListProject["Title"].isNull())
-			projectListObject.title = valueProjectListProject["Title"].asString();
 		if(!valueProjectListProject["CoverURL"].isNull())
 			projectListObject.coverURL = valueProjectListProject["CoverURL"].asString();
-		if(!valueProjectListProject["StorageLocation"].isNull())
-			projectListObject.storageLocation = valueProjectListProject["StorageLocation"].asString();
-		if(!valueProjectListProject["RegionId"].isNull())
-			projectListObject.regionId = valueProjectListProject["RegionId"].asString();
+		if(!valueProjectListProject["ProjectId"].isNull())
+			projectListObject.projectId = valueProjectListProject["ProjectId"].asString();
 		if(!valueProjectListProject["Duration"].isNull())
 			projectListObject.duration = std::stof(valueProjectListProject["Duration"].asString());
+		if(!valueProjectListProject["Title"].isNull())
+			projectListObject.title = valueProjectListProject["Title"].asString();
+		if(!valueProjectListProject["RegionId"].isNull())
+			projectListObject.regionId = valueProjectListProject["RegionId"].asString();
 		projectList_.push_back(projectListObject);
 	}
 	if(!value["Total"].isNull())

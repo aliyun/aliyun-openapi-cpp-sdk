@@ -42,40 +42,40 @@ void DescribeVodDomainDetailResult::parse(const std::string &payload)
 	auto domainDetailNode = value["DomainDetail"];
 	if(!domainDetailNode["GmtCreated"].isNull())
 		domainDetail_.gmtCreated = domainDetailNode["GmtCreated"].asString();
-	if(!domainDetailNode["GmtModified"].isNull())
-		domainDetail_.gmtModified = domainDetailNode["GmtModified"].asString();
-	if(!domainDetailNode["DomainStatus"].isNull())
-		domainDetail_.domainStatus = domainDetailNode["DomainStatus"].asString();
-	if(!domainDetailNode["Cname"].isNull())
-		domainDetail_.cname = domainDetailNode["Cname"].asString();
-	if(!domainDetailNode["DomainName"].isNull())
-		domainDetail_.domainName = domainDetailNode["DomainName"].asString();
+	if(!domainDetailNode["Weight"].isNull())
+		domainDetail_.weight = domainDetailNode["Weight"].asString();
+	if(!domainDetailNode["SSLPub"].isNull())
+		domainDetail_.sSLPub = domainDetailNode["SSLPub"].asString();
 	if(!domainDetailNode["Description"].isNull())
 		domainDetail_.description = domainDetailNode["Description"].asString();
 	if(!domainDetailNode["SSLProtocol"].isNull())
 		domainDetail_.sSLProtocol = domainDetailNode["SSLProtocol"].asString();
-	if(!domainDetailNode["SSLPub"].isNull())
-		domainDetail_.sSLPub = domainDetailNode["SSLPub"].asString();
-	if(!domainDetailNode["Scope"].isNull())
-		domainDetail_.scope = domainDetailNode["Scope"].asString();
 	if(!domainDetailNode["CertName"].isNull())
 		domainDetail_.certName = domainDetailNode["CertName"].asString();
-	if(!domainDetailNode["Weight"].isNull())
-		domainDetail_.weight = domainDetailNode["Weight"].asString();
+	if(!domainDetailNode["Scope"].isNull())
+		domainDetail_.scope = domainDetailNode["Scope"].asString();
+	if(!domainDetailNode["Cname"].isNull())
+		domainDetail_.cname = domainDetailNode["Cname"].asString();
+	if(!domainDetailNode["DomainStatus"].isNull())
+		domainDetail_.domainStatus = domainDetailNode["DomainStatus"].asString();
+	if(!domainDetailNode["GmtModified"].isNull())
+		domainDetail_.gmtModified = domainDetailNode["GmtModified"].asString();
+	if(!domainDetailNode["DomainName"].isNull())
+		domainDetail_.domainName = domainDetailNode["DomainName"].asString();
 	auto allSourcesNode = domainDetailNode["Sources"]["Source"];
 	for (auto domainDetailNodeSourcesSource : allSourcesNode)
 	{
 		DomainDetail::Source sourceObject;
-		if(!domainDetailNodeSourcesSource["Content"].isNull())
-			sourceObject.content = domainDetailNodeSourcesSource["Content"].asString();
 		if(!domainDetailNodeSourcesSource["Type"].isNull())
 			sourceObject.type = domainDetailNodeSourcesSource["Type"].asString();
-		if(!domainDetailNodeSourcesSource["Port"].isNull())
-			sourceObject.port = std::stoi(domainDetailNodeSourcesSource["Port"].asString());
-		if(!domainDetailNodeSourcesSource["Enabled"].isNull())
-			sourceObject.enabled = domainDetailNodeSourcesSource["Enabled"].asString();
 		if(!domainDetailNodeSourcesSource["Priority"].isNull())
 			sourceObject.priority = domainDetailNodeSourcesSource["Priority"].asString();
+		if(!domainDetailNodeSourcesSource["Port"].isNull())
+			sourceObject.port = std::stoi(domainDetailNodeSourcesSource["Port"].asString());
+		if(!domainDetailNodeSourcesSource["Content"].isNull())
+			sourceObject.content = domainDetailNodeSourcesSource["Content"].asString();
+		if(!domainDetailNodeSourcesSource["Enabled"].isNull())
+			sourceObject.enabled = domainDetailNodeSourcesSource["Enabled"].asString();
 		domainDetail_.sources.push_back(sourceObject);
 	}
 

@@ -34,8 +34,8 @@ namespace AlibabaCloud
 			public:
 				struct TranscodeTask
 				{
-					std::string videoId;
 					std::string trigger;
+					std::string videoId;
 					std::string transcodeTemplateGroupId;
 					std::string creationTime;
 					std::string taskStatus;

@@ -37,15 +37,15 @@ namespace AlibabaCloud
 					struct VV
 					{
 						std::string hTML5;
-						std::string iOS;
 						std::string flash;
+						std::string iOS;
 						std::string android;
 					};
 					struct UV
 					{
 						std::string hTML5;
-						std::string iOS;
 						std::string flash;
+						std::string iOS;
 						std::string android;
 					};
 					VV vV;

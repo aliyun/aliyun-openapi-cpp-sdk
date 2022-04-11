@@ -50,23 +50,23 @@ void DescribePlayUserTotalResult::parse(const std::string &payload)
 		if(!valueUserPlayStatisTotalsUserPlayStatisTotal["PlayRange"].isNull())
 			userPlayStatisTotalsObject.playRange = valueUserPlayStatisTotalsUserPlayStatisTotal["PlayRange"].asString();
 		auto vVNode = value["VV"];
-		if(!vVNode["Android"].isNull())
-			userPlayStatisTotalsObject.vV.android = vVNode["Android"].asString();
-		if(!vVNode["iOS"].isNull())
-			userPlayStatisTotalsObject.vV.iOS = vVNode["iOS"].asString();
 		if(!vVNode["Flash"].isNull())
 			userPlayStatisTotalsObject.vV.flash = vVNode["Flash"].asString();
+		if(!vVNode["iOS"].isNull())
+			userPlayStatisTotalsObject.vV.iOS = vVNode["iOS"].asString();
 		if(!vVNode["HTML5"].isNull())
 			userPlayStatisTotalsObject.vV.hTML5 = vVNode["HTML5"].asString();
+		if(!vVNode["Android"].isNull())
+			userPlayStatisTotalsObject.vV.android = vVNode["Android"].asString();
 		auto uVNode = value["UV"];
-		if(!uVNode["Android"].isNull())
-			userPlayStatisTotalsObject.uV.android = uVNode["Android"].asString();
-		if(!uVNode["iOS"].isNull())
-			userPlayStatisTotalsObject.uV.iOS = uVNode["iOS"].asString();
 		if(!uVNode["Flash"].isNull())
 			userPlayStatisTotalsObject.uV.flash = uVNode["Flash"].asString();
+		if(!uVNode["iOS"].isNull())
+			userPlayStatisTotalsObject.uV.iOS = uVNode["iOS"].asString();
 		if(!uVNode["HTML5"].isNull())
 			userPlayStatisTotalsObject.uV.hTML5 = uVNode["HTML5"].asString();
+		if(!uVNode["Android"].isNull())
+			userPlayStatisTotalsObject.uV.android = uVNode["Android"].asString();
 		userPlayStatisTotals_.push_back(userPlayStatisTotalsObject);
 	}
 

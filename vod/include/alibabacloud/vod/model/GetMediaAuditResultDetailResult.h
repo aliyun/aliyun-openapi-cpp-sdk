@@ -42,8 +42,8 @@ namespace AlibabaCloud
 						std::string terrorismLabel;
 						std::string terrorismScore;
 						std::string adScore;
-						std::string pornScore;
 						std::string adLabel;
+						std::string pornScore;
 						std::string logoScore;
 						std::string liveLabel;
 						std::string timestamp;

@@ -45,8 +45,8 @@ namespace AlibabaCloud
 						std::vector<std::string> watermarkIds;
 						std::string encryptSetting;
 						std::string clip;
-						std::string container;
 						std::string type;
+						std::string container;
 						std::string transcodeTemplateId;
 						std::string transConfig;
 						std::string video;

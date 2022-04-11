@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,34 +18,28 @@
 
 using AlibabaCloud::Vod::Model::ListVodTemplateRequest;
 
-ListVodTemplateRequest::ListVodTemplateRequest() :
-	RpcServiceRequest("vod", "2017-03-21", "ListVodTemplate")
-{
-	setMethod(HttpRequest::Method::Post);
+ListVodTemplateRequest::ListVodTemplateRequest()
+    : RpcServiceRequest("vod", "2017-03-21", "ListVodTemplate") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-ListVodTemplateRequest::~ListVodTemplateRequest()
-{}
+ListVodTemplateRequest::~ListVodTemplateRequest() {}
 
-std::string ListVodTemplateRequest::getTemplateType()const
-{
-	return templateType_;
+std::string ListVodTemplateRequest::getTemplateType() const {
+  return templateType_;
 }
 
-void ListVodTemplateRequest::setTemplateType(const std::string& templateType)
-{
-	templateType_ = templateType;
-	setParameter("TemplateType", templateType);
+void ListVodTemplateRequest::setTemplateType(const std::string &templateType) {
+  templateType_ = templateType;
+  setParameter(std::string("TemplateType"), templateType);
 }
 
-std::string ListVodTemplateRequest::getAppId()const
-{
-	return appId_;
+std::string ListVodTemplateRequest::getAppId() const {
+  return appId_;
 }
 
-void ListVodTemplateRequest::setAppId(const std::string& appId)
-{
-	appId_ = appId;
-	setParameter("AppId", appId);
+void ListVodTemplateRequest::setAppId(const std::string &appId) {
+  appId_ = appId;
+  setParameter(std::string("AppId"), appId);
 }
 

@@ -43,14 +43,14 @@ void GetAuditHistoryResult::parse(const std::string &payload)
 	for (auto valueHistoriesHistory : allHistoriesNode)
 	{
 		History historiesObject;
-		if(!valueHistoriesHistory["CreationTime"].isNull())
-			historiesObject.creationTime = valueHistoriesHistory["CreationTime"].asString();
 		if(!valueHistoriesHistory["Status"].isNull())
 			historiesObject.status = valueHistoriesHistory["Status"].asString();
-		if(!valueHistoriesHistory["Reason"].isNull())
-			historiesObject.reason = valueHistoriesHistory["Reason"].asString();
+		if(!valueHistoriesHistory["CreationTime"].isNull())
+			historiesObject.creationTime = valueHistoriesHistory["CreationTime"].asString();
 		if(!valueHistoriesHistory["Comment"].isNull())
 			historiesObject.comment = valueHistoriesHistory["Comment"].asString();
+		if(!valueHistoriesHistory["Reason"].isNull())
+			historiesObject.reason = valueHistoriesHistory["Reason"].asString();
 		if(!valueHistoriesHistory["Auditor"].isNull())
 			historiesObject.auditor = valueHistoriesHistory["Auditor"].asString();
 		histories_.push_back(historiesObject);

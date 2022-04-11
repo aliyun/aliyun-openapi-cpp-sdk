@@ -49,16 +49,16 @@ void ListWatermarkResult::parse(const std::string &payload)
 			watermarkInfosObject.type = valueWatermarkInfosWatermarkInfo["Type"].asString();
 		if(!valueWatermarkInfosWatermarkInfo["IsDefault"].isNull())
 			watermarkInfosObject.isDefault = valueWatermarkInfosWatermarkInfo["IsDefault"].asString();
-		if(!valueWatermarkInfosWatermarkInfo["WatermarkId"].isNull())
-			watermarkInfosObject.watermarkId = valueWatermarkInfosWatermarkInfo["WatermarkId"].asString();
-		if(!valueWatermarkInfosWatermarkInfo["Name"].isNull())
-			watermarkInfosObject.name = valueWatermarkInfosWatermarkInfo["Name"].asString();
 		if(!valueWatermarkInfosWatermarkInfo["FileUrl"].isNull())
 			watermarkInfosObject.fileUrl = valueWatermarkInfosWatermarkInfo["FileUrl"].asString();
-		if(!valueWatermarkInfosWatermarkInfo["WatermarkConfig"].isNull())
-			watermarkInfosObject.watermarkConfig = valueWatermarkInfosWatermarkInfo["WatermarkConfig"].asString();
 		if(!valueWatermarkInfosWatermarkInfo["AppId"].isNull())
 			watermarkInfosObject.appId = valueWatermarkInfosWatermarkInfo["AppId"].asString();
+		if(!valueWatermarkInfosWatermarkInfo["WatermarkConfig"].isNull())
+			watermarkInfosObject.watermarkConfig = valueWatermarkInfosWatermarkInfo["WatermarkConfig"].asString();
+		if(!valueWatermarkInfosWatermarkInfo["Name"].isNull())
+			watermarkInfosObject.name = valueWatermarkInfosWatermarkInfo["Name"].asString();
+		if(!valueWatermarkInfosWatermarkInfo["WatermarkId"].isNull())
+			watermarkInfosObject.watermarkId = valueWatermarkInfosWatermarkInfo["WatermarkId"].asString();
 		watermarkInfos_.push_back(watermarkInfosObject);
 	}
 

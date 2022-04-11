@@ -39,16 +39,16 @@ void CreateUploadImageResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["ImageId"].isNull())
-		imageId_ = value["ImageId"].asString();
-	if(!value["ImageURL"].isNull())
-		imageURL_ = value["ImageURL"].asString();
-	if(!value["UploadAddress"].isNull())
-		uploadAddress_ = value["UploadAddress"].asString();
-	if(!value["UploadAuth"].isNull())
-		uploadAuth_ = value["UploadAuth"].asString();
 	if(!value["FileURL"].isNull())
 		fileURL_ = value["FileURL"].asString();
+	if(!value["UploadAddress"].isNull())
+		uploadAddress_ = value["UploadAddress"].asString();
+	if(!value["ImageURL"].isNull())
+		imageURL_ = value["ImageURL"].asString();
+	if(!value["ImageId"].isNull())
+		imageId_ = value["ImageId"].asString();
+	if(!value["UploadAuth"].isNull())
+		uploadAuth_ = value["UploadAuth"].asString();
 
 }
 

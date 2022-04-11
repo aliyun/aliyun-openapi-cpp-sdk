@@ -37,8 +37,8 @@ namespace AlibabaCloud
 					struct Source
 					{
 						std::string type;
-						std::string content;
 						std::string priority;
+						std::string content;
 						int port;
 						std::string enabled;
 					};
@@ -51,8 +51,8 @@ namespace AlibabaCloud
 					std::string certName;
 					std::vector<Source> sources;
 					std::string cname;
-					std::string domainStatus;
 					std::string weight;
+					std::string domainStatus;
 					std::string sSLProtocol;
 				};
 

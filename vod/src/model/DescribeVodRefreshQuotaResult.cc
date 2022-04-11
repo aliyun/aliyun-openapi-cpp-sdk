@@ -39,22 +39,22 @@ void DescribeVodRefreshQuotaResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["UrlQuota"].isNull())
-		urlQuota_ = value["UrlQuota"].asString();
-	if(!value["DirQuota"].isNull())
-		dirQuota_ = value["DirQuota"].asString();
-	if(!value["UrlRemain"].isNull())
-		urlRemain_ = value["UrlRemain"].asString();
-	if(!value["DirRemain"].isNull())
-		dirRemain_ = value["DirRemain"].asString();
-	if(!value["PreloadQuota"].isNull())
-		preloadQuota_ = value["PreloadQuota"].asString();
 	if(!value["BlockQuota"].isNull())
 		blockQuota_ = value["BlockQuota"].asString();
 	if(!value["PreloadRemain"].isNull())
 		preloadRemain_ = value["PreloadRemain"].asString();
 	if(!value["blockRemain"].isNull())
 		blockRemain_ = value["blockRemain"].asString();
+	if(!value["DirRemain"].isNull())
+		dirRemain_ = value["DirRemain"].asString();
+	if(!value["UrlRemain"].isNull())
+		urlRemain_ = value["UrlRemain"].asString();
+	if(!value["DirQuota"].isNull())
+		dirQuota_ = value["DirQuota"].asString();
+	if(!value["UrlQuota"].isNull())
+		urlQuota_ = value["UrlQuota"].asString();
+	if(!value["PreloadQuota"].isNull())
+		preloadQuota_ = value["PreloadQuota"].asString();
 
 }
 
@@ -73,14 +73,14 @@ std::string DescribeVodRefreshQuotaResult::getBlockRemain()const
 	return blockRemain_;
 }
 
-std::string DescribeVodRefreshQuotaResult::getDirRemain()const
-{
-	return dirRemain_;
-}
-
 std::string DescribeVodRefreshQuotaResult::getBlockQuota()const
 {
 	return blockQuota_;
+}
+
+std::string DescribeVodRefreshQuotaResult::getDirRemain()const
+{
+	return dirRemain_;
 }
 
 std::string DescribeVodRefreshQuotaResult::getUrlQuota()const

@@ -43,31 +43,31 @@ void GetCategoriesResult::parse(const std::string &payload)
 	for (auto valueSubCategoriesCategory : allSubCategoriesNode)
 	{
 		Category subCategoriesObject;
-		if(!valueSubCategoriesCategory["CateId"].isNull())
-			subCategoriesObject.cateId = std::stol(valueSubCategoriesCategory["CateId"].asString());
-		if(!valueSubCategoriesCategory["CateName"].isNull())
-			subCategoriesObject.cateName = valueSubCategoriesCategory["CateName"].asString();
-		if(!valueSubCategoriesCategory["Level"].isNull())
-			subCategoriesObject.level = std::stol(valueSubCategoriesCategory["Level"].asString());
-		if(!valueSubCategoriesCategory["ParentId"].isNull())
-			subCategoriesObject.parentId = std::stol(valueSubCategoriesCategory["ParentId"].asString());
-		if(!valueSubCategoriesCategory["SubTotal"].isNull())
-			subCategoriesObject.subTotal = std::stol(valueSubCategoriesCategory["SubTotal"].asString());
 		if(!valueSubCategoriesCategory["Type"].isNull())
 			subCategoriesObject.type = valueSubCategoriesCategory["Type"].asString();
+		if(!valueSubCategoriesCategory["CateName"].isNull())
+			subCategoriesObject.cateName = valueSubCategoriesCategory["CateName"].asString();
+		if(!valueSubCategoriesCategory["ParentId"].isNull())
+			subCategoriesObject.parentId = std::stol(valueSubCategoriesCategory["ParentId"].asString());
+		if(!valueSubCategoriesCategory["CateId"].isNull())
+			subCategoriesObject.cateId = std::stol(valueSubCategoriesCategory["CateId"].asString());
+		if(!valueSubCategoriesCategory["SubTotal"].isNull())
+			subCategoriesObject.subTotal = std::stol(valueSubCategoriesCategory["SubTotal"].asString());
+		if(!valueSubCategoriesCategory["Level"].isNull())
+			subCategoriesObject.level = std::stol(valueSubCategoriesCategory["Level"].asString());
 		subCategories_.push_back(subCategoriesObject);
 	}
 	auto category1Node = value["Category"];
-	if(!category1Node["CateId"].isNull())
-		category1_.cateId = std::stol(category1Node["CateId"].asString());
-	if(!category1Node["CateName"].isNull())
-		category1_.cateName = category1Node["CateName"].asString();
-	if(!category1Node["Level"].isNull())
-		category1_.level = std::stol(category1Node["Level"].asString());
-	if(!category1Node["ParentId"].isNull())
-		category1_.parentId = std::stol(category1Node["ParentId"].asString());
 	if(!category1Node["Type"].isNull())
 		category1_.type = category1Node["Type"].asString();
+	if(!category1Node["ParentId"].isNull())
+		category1_.parentId = std::stol(category1Node["ParentId"].asString());
+	if(!category1Node["CateName"].isNull())
+		category1_.cateName = category1Node["CateName"].asString();
+	if(!category1Node["CateId"].isNull())
+		category1_.cateId = std::stol(category1Node["CateId"].asString());
+	if(!category1Node["Level"].isNull())
+		category1_.level = std::stol(category1Node["Level"].asString());
 	if(!value["SubTotal"].isNull())
 		subTotal_ = std::stol(value["SubTotal"].asString());
 

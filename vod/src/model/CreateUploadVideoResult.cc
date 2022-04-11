@@ -39,23 +39,23 @@ void CreateUploadVideoResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["VideoId"].isNull())
-		videoId_ = value["VideoId"].asString();
 	if(!value["UploadAddress"].isNull())
 		uploadAddress_ = value["UploadAddress"].asString();
+	if(!value["VideoId"].isNull())
+		videoId_ = value["VideoId"].asString();
 	if(!value["UploadAuth"].isNull())
 		uploadAuth_ = value["UploadAuth"].asString();
 
 }
 
-std::string CreateUploadVideoResult::getVideoId()const
-{
-	return videoId_;
-}
-
 std::string CreateUploadVideoResult::getUploadAddress()const
 {
 	return uploadAddress_;
+}
+
+std::string CreateUploadVideoResult::getVideoId()const
+{
+	return videoId_;
 }
 
 std::string CreateUploadVideoResult::getUploadAuth()const

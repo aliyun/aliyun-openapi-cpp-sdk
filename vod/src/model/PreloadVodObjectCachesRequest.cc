@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,45 +18,37 @@
 
 using AlibabaCloud::Vod::Model::PreloadVodObjectCachesRequest;
 
-PreloadVodObjectCachesRequest::PreloadVodObjectCachesRequest() :
-	RpcServiceRequest("vod", "2017-03-21", "PreloadVodObjectCaches")
-{
-	setMethod(HttpRequest::Method::Post);
+PreloadVodObjectCachesRequest::PreloadVodObjectCachesRequest()
+    : RpcServiceRequest("vod", "2017-03-21", "PreloadVodObjectCaches") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-PreloadVodObjectCachesRequest::~PreloadVodObjectCachesRequest()
-{}
+PreloadVodObjectCachesRequest::~PreloadVodObjectCachesRequest() {}
 
-std::string PreloadVodObjectCachesRequest::getObjectPath()const
-{
-	return objectPath_;
+std::string PreloadVodObjectCachesRequest::getObjectPath() const {
+  return objectPath_;
 }
 
-void PreloadVodObjectCachesRequest::setObjectPath(const std::string& objectPath)
-{
-	objectPath_ = objectPath;
-	setParameter("ObjectPath", objectPath);
+void PreloadVodObjectCachesRequest::setObjectPath(const std::string &objectPath) {
+  objectPath_ = objectPath;
+  setParameter(std::string("ObjectPath"), objectPath);
 }
 
-long PreloadVodObjectCachesRequest::getOwnerId()const
-{
-	return ownerId_;
+long PreloadVodObjectCachesRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void PreloadVodObjectCachesRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void PreloadVodObjectCachesRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string PreloadVodObjectCachesRequest::getSecurityToken()const
-{
-	return securityToken_;
+std::string PreloadVodObjectCachesRequest::getSecurityToken() const {
+  return securityToken_;
 }
 
-void PreloadVodObjectCachesRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+void PreloadVodObjectCachesRequest::setSecurityToken(const std::string &securityToken) {
+  securityToken_ = securityToken;
+  setParameter(std::string("SecurityToken"), securityToken);
 }
 

@@ -45,9 +45,9 @@ namespace AlibabaCloud
 						std::string downloadSwitch;
 						std::string title;
 						float duration;
-						long customerId;
 						int cateId;
 						std::string cateName;
+						long customerId;
 						std::string creationTime;
 						std::string coverURL;
 						int privilege;
@@ -76,8 +76,8 @@ namespace AlibabaCloud
 					std::string playlistId;
 					std::string streamName;
 					std::string recordStartTime;
-					std::string domainName;
 					std::string recordEndTime;
+					std::string domainName;
 					Video video;
 					std::vector<LiveRecordVideo::PlayInfo> playInfoList;
 					std::string appName;

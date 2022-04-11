@@ -46,30 +46,30 @@ void GetMediaAuditResultDetailResult::parse(const std::string &payload)
 	for (auto mediaAuditResultDetailNodeListListItem : allListNode)
 	{
 		MediaAuditResultDetail::ListItem listItemObject;
+		if(!mediaAuditResultDetailNodeListListItem["TerrorismScore"].isNull())
+			listItemObject.terrorismScore = mediaAuditResultDetailNodeListListItem["TerrorismScore"].asString();
+		if(!mediaAuditResultDetailNodeListListItem["AdLabel"].isNull())
+			listItemObject.adLabel = mediaAuditResultDetailNodeListListItem["AdLabel"].asString();
 		if(!mediaAuditResultDetailNodeListListItem["PornLabel"].isNull())
 			listItemObject.pornLabel = mediaAuditResultDetailNodeListListItem["PornLabel"].asString();
 		if(!mediaAuditResultDetailNodeListListItem["PornScore"].isNull())
 			listItemObject.pornScore = mediaAuditResultDetailNodeListListItem["PornScore"].asString();
-		if(!mediaAuditResultDetailNodeListListItem["TerrorismLabel"].isNull())
-			listItemObject.terrorismLabel = mediaAuditResultDetailNodeListListItem["TerrorismLabel"].asString();
-		if(!mediaAuditResultDetailNodeListListItem["TerrorismScore"].isNull())
-			listItemObject.terrorismScore = mediaAuditResultDetailNodeListListItem["TerrorismScore"].asString();
-		if(!mediaAuditResultDetailNodeListListItem["Timestamp"].isNull())
-			listItemObject.timestamp = mediaAuditResultDetailNodeListListItem["Timestamp"].asString();
-		if(!mediaAuditResultDetailNodeListListItem["Url"].isNull())
-			listItemObject.url = mediaAuditResultDetailNodeListListItem["Url"].asString();
-		if(!mediaAuditResultDetailNodeListListItem["AdLabel"].isNull())
-			listItemObject.adLabel = mediaAuditResultDetailNodeListListItem["AdLabel"].asString();
-		if(!mediaAuditResultDetailNodeListListItem["AdScore"].isNull())
-			listItemObject.adScore = mediaAuditResultDetailNodeListListItem["AdScore"].asString();
 		if(!mediaAuditResultDetailNodeListListItem["LiveLabel"].isNull())
 			listItemObject.liveLabel = mediaAuditResultDetailNodeListListItem["LiveLabel"].asString();
+		if(!mediaAuditResultDetailNodeListListItem["Url"].isNull())
+			listItemObject.url = mediaAuditResultDetailNodeListListItem["Url"].asString();
+		if(!mediaAuditResultDetailNodeListListItem["Timestamp"].isNull())
+			listItemObject.timestamp = mediaAuditResultDetailNodeListListItem["Timestamp"].asString();
+		if(!mediaAuditResultDetailNodeListListItem["AdScore"].isNull())
+			listItemObject.adScore = mediaAuditResultDetailNodeListListItem["AdScore"].asString();
 		if(!mediaAuditResultDetailNodeListListItem["LiveScore"].isNull())
 			listItemObject.liveScore = mediaAuditResultDetailNodeListListItem["LiveScore"].asString();
-		if(!mediaAuditResultDetailNodeListListItem["LogoLabel"].isNull())
-			listItemObject.logoLabel = mediaAuditResultDetailNodeListListItem["LogoLabel"].asString();
 		if(!mediaAuditResultDetailNodeListListItem["LogoScore"].isNull())
 			listItemObject.logoScore = mediaAuditResultDetailNodeListListItem["LogoScore"].asString();
+		if(!mediaAuditResultDetailNodeListListItem["LogoLabel"].isNull())
+			listItemObject.logoLabel = mediaAuditResultDetailNodeListListItem["LogoLabel"].asString();
+		if(!mediaAuditResultDetailNodeListListItem["TerrorismLabel"].isNull())
+			listItemObject.terrorismLabel = mediaAuditResultDetailNodeListListItem["TerrorismLabel"].asString();
 		mediaAuditResultDetail_.list.push_back(listItemObject);
 	}
 
