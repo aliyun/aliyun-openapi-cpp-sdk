@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTTASKFLOWREQUEST_H_
-#define ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTTASKFLOWREQUEST_H_
+#ifndef ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTDAGVERSIONSREQUEST_H_
+#define ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTDAGVERSIONSREQUEST_H_
 
 #include <alibabacloud/dms-enterprise/Dms_enterpriseExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,17 +26,26 @@
 namespace AlibabaCloud {
 namespace Dms_enterprise {
 namespace Model {
-class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT ListTaskFlowRequest : public RpcServiceRequest {
+class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT ListDAGVersionsRequest : public RpcServiceRequest {
 public:
-	ListTaskFlowRequest();
-	~ListTaskFlowRequest();
+	ListDAGVersionsRequest();
+	~ListDAGVersionsRequest();
+	long getDagId() const;
+	void setDagId(long dagId);
 	long getTid() const;
 	void setTid(long tid);
+	int getPageSize() const;
+	void setPageSize(int pageSize);
+	int getPageIndex() const;
+	void setPageIndex(int pageIndex);
 
 private:
+	long dagId_;
 	long tid_;
+	int pageSize_;
+	int pageIndex_;
 };
 } // namespace Model
 } // namespace Dms_enterprise
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTTASKFLOWREQUEST_H_
+#endif // !ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTDAGVERSIONSREQUEST_H_

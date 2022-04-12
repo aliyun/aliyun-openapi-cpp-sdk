@@ -2715,6 +2715,42 @@ Dms_enterpriseClient::ListColumnsOutcomeCallable Dms_enterpriseClient::listColum
 	return task->get_future();
 }
 
+Dms_enterpriseClient::ListDAGVersionsOutcome Dms_enterpriseClient::listDAGVersions(const ListDAGVersionsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListDAGVersionsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListDAGVersionsOutcome(ListDAGVersionsResult(outcome.result()));
+	else
+		return ListDAGVersionsOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::listDAGVersionsAsync(const ListDAGVersionsRequest& request, const ListDAGVersionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listDAGVersions(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::ListDAGVersionsOutcomeCallable Dms_enterpriseClient::listDAGVersionsCallable(const ListDAGVersionsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListDAGVersionsOutcome()>>(
+			[this, request]()
+			{
+			return this->listDAGVersions(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dms_enterpriseClient::ListDBTaskSQLJobOutcome Dms_enterpriseClient::listDBTaskSQLJob(const ListDBTaskSQLJobRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

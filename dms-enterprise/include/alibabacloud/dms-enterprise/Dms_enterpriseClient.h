@@ -170,6 +170,8 @@
 #include "model/InspectProxyAccessSecretResult.h"
 #include "model/ListColumnsRequest.h"
 #include "model/ListColumnsResult.h"
+#include "model/ListDAGVersionsRequest.h"
+#include "model/ListDAGVersionsResult.h"
 #include "model/ListDBTaskSQLJobRequest.h"
 #include "model/ListDBTaskSQLJobResult.h"
 #include "model/ListDBTaskSQLJobDetailRequest.h"
@@ -499,6 +501,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListColumnsResult> ListColumnsOutcome;
 			typedef std::future<ListColumnsOutcome> ListColumnsOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::ListColumnsRequest&, const ListColumnsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListColumnsAsyncHandler;
+			typedef Outcome<Error, Model::ListDAGVersionsResult> ListDAGVersionsOutcome;
+			typedef std::future<ListDAGVersionsOutcome> ListDAGVersionsOutcomeCallable;
+			typedef std::function<void(const Dms_enterpriseClient*, const Model::ListDAGVersionsRequest&, const ListDAGVersionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDAGVersionsAsyncHandler;
 			typedef Outcome<Error, Model::ListDBTaskSQLJobResult> ListDBTaskSQLJobOutcome;
 			typedef std::future<ListDBTaskSQLJobOutcome> ListDBTaskSQLJobOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::ListDBTaskSQLJobRequest&, const ListDBTaskSQLJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDBTaskSQLJobAsyncHandler;
@@ -873,6 +878,9 @@ namespace AlibabaCloud
 			ListColumnsOutcome listColumns(const Model::ListColumnsRequest &request)const;
 			void listColumnsAsync(const Model::ListColumnsRequest& request, const ListColumnsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListColumnsOutcomeCallable listColumnsCallable(const Model::ListColumnsRequest& request) const;
+			ListDAGVersionsOutcome listDAGVersions(const Model::ListDAGVersionsRequest &request)const;
+			void listDAGVersionsAsync(const Model::ListDAGVersionsRequest& request, const ListDAGVersionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListDAGVersionsOutcomeCallable listDAGVersionsCallable(const Model::ListDAGVersionsRequest& request) const;
 			ListDBTaskSQLJobOutcome listDBTaskSQLJob(const Model::ListDBTaskSQLJobRequest &request)const;
 			void listDBTaskSQLJobAsync(const Model::ListDBTaskSQLJobRequest& request, const ListDBTaskSQLJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListDBTaskSQLJobOutcomeCallable listDBTaskSQLJobCallable(const Model::ListDBTaskSQLJobRequest& request) const;

@@ -169,6 +169,8 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/InspectProxyAccessSecretResult.h
 	include/alibabacloud/dms-enterprise/model/ListColumnsRequest.h
 	include/alibabacloud/dms-enterprise/model/ListColumnsResult.h
+	include/alibabacloud/dms-enterprise/model/ListDAGVersionsRequest.h
+	include/alibabacloud/dms-enterprise/model/ListDAGVersionsResult.h
 	include/alibabacloud/dms-enterprise/model/ListDBTaskSQLJobRequest.h
 	include/alibabacloud/dms-enterprise/model/ListDBTaskSQLJobResult.h
 	include/alibabacloud/dms-enterprise/model/ListDBTaskSQLJobDetailRequest.h
@@ -418,6 +420,8 @@ set(dms-enterprise_src
 	src/model/InspectProxyAccessSecretResult.cc
 	src/model/ListColumnsRequest.cc
 	src/model/ListColumnsResult.cc
+	src/model/ListDAGVersionsRequest.cc
+	src/model/ListDAGVersionsResult.cc
 	src/model/ListDBTaskSQLJobRequest.cc
 	src/model/ListDBTaskSQLJobResult.cc
 	src/model/ListDBTaskSQLJobDetailRequest.cc

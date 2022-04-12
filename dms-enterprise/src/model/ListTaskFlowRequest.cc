@@ -25,15 +25,6 @@ ListTaskFlowRequest::ListTaskFlowRequest()
 
 ListTaskFlowRequest::~ListTaskFlowRequest() {}
 
-long ListTaskFlowRequest::getDagId() const {
-  return dagId_;
-}
-
-void ListTaskFlowRequest::setDagId(long dagId) {
-  dagId_ = dagId;
-  setParameter(std::string("DagId"), std::to_string(dagId));
-}
-
 long ListTaskFlowRequest::getTid() const {
   return tid_;
 }
@@ -41,14 +32,5 @@ long ListTaskFlowRequest::getTid() const {
 void ListTaskFlowRequest::setTid(long tid) {
   tid_ = tid;
   setParameter(std::string("Tid"), std::to_string(tid));
-}
-
-long ListTaskFlowRequest::getDagInstanceId() const {
-  return dagInstanceId_;
-}
-
-void ListTaskFlowRequest::setDagInstanceId(long dagInstanceId) {
-  dagInstanceId_ = dagInstanceId;
-  setParameter(std::string("DagInstanceId"), std::to_string(dagInstanceId));
 }
 
