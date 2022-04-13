@@ -34,6 +34,12 @@ namespace AlibabaCloud
 			public:
 				struct DeploymentSet
 				{
+					struct Capacity
+					{
+						int usedAmount;
+						std::string zoneId;
+						int availableAmount;
+					};
 					std::string deploymentSetId;
 					std::string deploymentSetDescription;
 					int instanceAmount;
@@ -41,6 +47,7 @@ namespace AlibabaCloud
 					std::string creationTime;
 					std::string strategy;
 					std::string deploymentSetName;
+					std::vector<DeploymentSet::Capacity> capacities;
 					std::string domain;
 					std::string granularity;
 					std::vector<std::string> instanceIds;

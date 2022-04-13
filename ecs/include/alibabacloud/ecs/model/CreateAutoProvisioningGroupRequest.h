@@ -71,6 +71,8 @@ public:
 	void setLaunchConfigurationSystemDiskPerformanceLevel(const std::string &launchConfigurationSystemDiskPerformanceLevel);
 	std::vector<std::string> getLaunchConfigurationHostNames() const;
 	void setLaunchConfigurationHostNames(const std::vector<std::string> &launchConfigurationHostNames);
+	std::vector<std::string> getLaunchConfigurationSecurityGroupIds() const;
+	void setLaunchConfigurationSecurityGroupIds(const std::vector<std::string> &launchConfigurationSecurityGroupIds);
 	std::string getResourceGroupId() const;
 	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getLaunchConfigurationImageId() const;
@@ -179,6 +181,7 @@ private:
 	std::string autoProvisioningGroupType_;
 	std::string launchConfigurationSystemDiskPerformanceLevel_;
 	std::vector<std::string> launchConfigurationHostNames_;
+	std::vector<std::string> launchConfigurationSecurityGroupIds_;
 	std::string resourceGroupId_;
 	std::string launchConfigurationImageId_;
 	std::string launchConfigurationResourceGroupId_;

@@ -132,3 +132,12 @@ void ModifyDiskAttributeRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+bool ModifyDiskAttributeRequest::getBurstingEnabled() const {
+  return burstingEnabled_;
+}
+
+void ModifyDiskAttributeRequest::setBurstingEnabled(bool burstingEnabled) {
+  burstingEnabled_ = burstingEnabled;
+  setParameter(std::string("BurstingEnabled"), burstingEnabled ? "true" : "false");
+}
+

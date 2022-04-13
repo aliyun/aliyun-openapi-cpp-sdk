@@ -78,6 +78,8 @@ void DescribeInstanceHistoryEventsResult::parse(const std::string &payload)
 			instanceSystemEventSetObject.extendedAttribute.hostType = extendedAttributeNode["HostType"].asString();
 		if(!extendedAttributeNode["HostId"].isNull())
 			instanceSystemEventSetObject.extendedAttribute.hostId = extendedAttributeNode["HostId"].asString();
+		if(!extendedAttributeNode["OnlineRepairPolicy"].isNull())
+			instanceSystemEventSetObject.extendedAttribute.onlineRepairPolicy = extendedAttributeNode["OnlineRepairPolicy"].asString();
 		auto allInactiveDisksNode = extendedAttributeNode["InactiveDisks"]["InactiveDisk"];
 		for (auto extendedAttributeNodeInactiveDisksInactiveDisk : allInactiveDisksNode)
 		{

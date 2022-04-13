@@ -244,6 +244,9 @@ void DescribeInstancesResult::parse(const std::string &payload)
 			instancesObject.metadataOptions.httpPutResponseHopLimit = std::stoi(metadataOptionsNode["HttpPutResponseHopLimit"].asString());
 		if(!metadataOptionsNode["HttpTokens"].isNull())
 			instancesObject.metadataOptions.httpTokens = metadataOptionsNode["HttpTokens"].asString();
+		auto imageOptionsNode = value["ImageOptions"];
+		if(!imageOptionsNode["LoginAsNonRoot"].isNull())
+			instancesObject.imageOptions.loginAsNonRoot = imageOptionsNode["LoginAsNonRoot"].asString() == "true";
 		auto allRdmaIpAddress = value["RdmaIpAddress"]["IpAddress"];
 		for (auto value : allRdmaIpAddress)
 			instancesObject.rdmaIpAddress.push_back(value.asString());

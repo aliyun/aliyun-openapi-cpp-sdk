@@ -63,6 +63,18 @@ void DescribeDeploymentSetsResult::parse(const std::string &payload)
 			deploymentSetsObject.deploymentSetName = valueDeploymentSetsDeploymentSet["DeploymentSetName"].asString();
 		if(!valueDeploymentSetsDeploymentSet["InstanceAmount"].isNull())
 			deploymentSetsObject.instanceAmount = std::stoi(valueDeploymentSetsDeploymentSet["InstanceAmount"].asString());
+		auto allCapacitiesNode = valueDeploymentSetsDeploymentSet["Capacities"]["Capacity"];
+		for (auto valueDeploymentSetsDeploymentSetCapacitiesCapacity : allCapacitiesNode)
+		{
+			DeploymentSet::Capacity capacitiesObject;
+			if(!valueDeploymentSetsDeploymentSetCapacitiesCapacity["ZoneId"].isNull())
+				capacitiesObject.zoneId = valueDeploymentSetsDeploymentSetCapacitiesCapacity["ZoneId"].asString();
+			if(!valueDeploymentSetsDeploymentSetCapacitiesCapacity["UsedAmount"].isNull())
+				capacitiesObject.usedAmount = std::stoi(valueDeploymentSetsDeploymentSetCapacitiesCapacity["UsedAmount"].asString());
+			if(!valueDeploymentSetsDeploymentSetCapacitiesCapacity["AvailableAmount"].isNull())
+				capacitiesObject.availableAmount = std::stoi(valueDeploymentSetsDeploymentSetCapacitiesCapacity["AvailableAmount"].asString());
+			deploymentSetsObject.capacities.push_back(capacitiesObject);
+		}
 		auto allInstanceIds = value["InstanceIds"]["InstanceId"];
 		for (auto value : allInstanceIds)
 			deploymentSetsObject.instanceIds.push_back(value.asString());

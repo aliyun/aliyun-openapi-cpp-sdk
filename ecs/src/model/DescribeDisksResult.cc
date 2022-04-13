@@ -121,6 +121,12 @@ void DescribeDisksResult::parse(const std::string &payload)
 			disksObject.productCode = valueDisksDisk["ProductCode"].asString();
 		if(!valueDisksDisk["MultiAttach"].isNull())
 			disksObject.multiAttach = valueDisksDisk["MultiAttach"].asString();
+		if(!valueDisksDisk["ProvisionedIops"].isNull())
+			disksObject.provisionedIops = std::stol(valueDisksDisk["ProvisionedIops"].asString());
+		if(!valueDisksDisk["BurstingEnabled"].isNull())
+			disksObject.burstingEnabled = valueDisksDisk["BurstingEnabled"].asString() == "true";
+		if(!valueDisksDisk["Throughput"].isNull())
+			disksObject.throughput = std::stoi(valueDisksDisk["Throughput"].asString());
 		auto allOperationLocksNode = valueDisksDisk["OperationLocks"]["OperationLock"];
 		for (auto valueDisksDiskOperationLocksOperationLock : allOperationLocksNode)
 		{

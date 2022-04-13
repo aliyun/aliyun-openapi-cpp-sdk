@@ -44,6 +44,8 @@ public:
 	void setPlatform(const std::string &platform);
 	std::string getPassword() const;
 	void setPassword(const std::string &password);
+	bool getLoginAsNonRoot() const;
+	void setLoginAsNonRoot(bool loginAsNonRoot);
 	bool getPasswordInherit() const;
 	void setPasswordInherit(bool passwordInherit);
 	std::string getDiskId() const;
@@ -71,6 +73,7 @@ private:
 	std::string keyPairName_;
 	std::string platform_;
 	std::string password_;
+	bool loginAsNonRoot_;
 	bool passwordInherit_;
 	std::string diskId_;
 	std::string architecture_;

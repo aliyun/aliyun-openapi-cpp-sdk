@@ -92,6 +92,7 @@ namespace AlibabaCloud
 					std::vector<DedicatedHost::Instance> instances;
 					int cores;
 					int sockets;
+					std::string schedulerOptionsManagedPrivateSpaceId;
 					std::string chargeType;
 					std::vector<std::string> supportedInstanceTypeFamilies;
 					std::string creationTime;

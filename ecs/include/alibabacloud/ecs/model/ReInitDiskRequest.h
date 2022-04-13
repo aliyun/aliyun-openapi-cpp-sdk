@@ -40,6 +40,8 @@ public:
 	void setKeyPairName(const std::string &keyPairName);
 	std::string getPassword() const;
 	void setPassword(const std::string &password);
+	bool getLoginAsNonRoot() const;
+	void setLoginAsNonRoot(bool loginAsNonRoot);
 	std::string getDiskId() const;
 	void setDiskId(const std::string &diskId);
 	std::string getResourceOwnerAccount() const;
@@ -55,6 +57,7 @@ private:
 	std::string securityEnhancementStrategy_;
 	std::string keyPairName_;
 	std::string password_;
+	bool loginAsNonRoot_;
 	std::string diskId_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;

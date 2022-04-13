@@ -198,6 +198,24 @@ void CreateDiskRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+bool CreateDiskRequest::getBurstingEnabled() const {
+  return burstingEnabled_;
+}
+
+void CreateDiskRequest::setBurstingEnabled(bool burstingEnabled) {
+  burstingEnabled_ = burstingEnabled;
+  setParameter(std::string("BurstingEnabled"), burstingEnabled ? "true" : "false");
+}
+
+long CreateDiskRequest::getProvisionedIops() const {
+  return provisionedIops_;
+}
+
+void CreateDiskRequest::setProvisionedIops(long provisionedIops) {
+  provisionedIops_ = provisionedIops;
+  setParameter(std::string("ProvisionedIops"), std::to_string(provisionedIops));
+}
+
 std::string CreateDiskRequest::getInstanceId() const {
   return instanceId_;
 }

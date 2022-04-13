@@ -46,6 +46,8 @@ public:
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	long getProvisionedIops() const;
+	void setProvisionedIops(long provisionedIops);
 
 private:
 	long resourceOwnerId_;
@@ -56,6 +58,7 @@ private:
 	std::string performanceLevel_;
 	std::string ownerAccount_;
 	long ownerId_;
+	long provisionedIops_;
 };
 } // namespace Model
 } // namespace Ecs

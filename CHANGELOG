@@ -1,3 +1,7 @@
+2022-04-13 Version: 1.36.1104
+- Support throughput for API DescribeDisks.
+
+
 2022-04-12 Version: 1.36.1103
 - Remove redundant input for API ListTaskFlow.
 

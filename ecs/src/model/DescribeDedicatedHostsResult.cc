@@ -45,6 +45,8 @@ void DescribeDedicatedHostsResult::parse(const std::string &payload)
 		DedicatedHost dedicatedHostsObject;
 		if(!valueDedicatedHostsDedicatedHost["CreationTime"].isNull())
 			dedicatedHostsObject.creationTime = valueDedicatedHostsDedicatedHost["CreationTime"].asString();
+		if(!valueDedicatedHostsDedicatedHost["SchedulerOptions.ManagedPrivateSpaceId"].isNull())
+			dedicatedHostsObject.schedulerOptionsManagedPrivateSpaceId = valueDedicatedHostsDedicatedHost["SchedulerOptions.ManagedPrivateSpaceId"].asString();
 		if(!valueDedicatedHostsDedicatedHost["Status"].isNull())
 			dedicatedHostsObject.status = valueDedicatedHostsDedicatedHost["Status"].asString();
 		if(!valueDedicatedHostsDedicatedHost["Cores"].isNull())

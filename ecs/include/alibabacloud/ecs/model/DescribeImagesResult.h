@@ -63,6 +63,7 @@ namespace AlibabaCloud
 					std::string imageId;
 					std::vector<Image::Tag> tags;
 					std::string oSNameEn;
+					bool loginAsNonRootSupported;
 					std::string status;
 					std::string progress;
 					std::string usage;
@@ -76,6 +77,7 @@ namespace AlibabaCloud
 					std::string imageName;
 					std::vector<Image::DiskDeviceMapping> diskDeviceMappings;
 					std::string imageVersion;
+					std::string supplierName;
 					std::string oSType;
 					std::string creationTime;
 				};

@@ -93,6 +93,10 @@ void DescribeImagesResult::parse(const std::string &payload)
 			imagesObject.isPublic = valueImagesImage["IsPublic"].asString() == "true";
 		if(!valueImagesImage["ImageOwnerId"].isNull())
 			imagesObject.imageOwnerId = std::stol(valueImagesImage["ImageOwnerId"].asString());
+		if(!valueImagesImage["LoginAsNonRootSupported"].isNull())
+			imagesObject.loginAsNonRootSupported = valueImagesImage["LoginAsNonRootSupported"].asString() == "true";
+		if(!valueImagesImage["SupplierName"].isNull())
+			imagesObject.supplierName = valueImagesImage["SupplierName"].asString();
 		auto allDiskDeviceMappingsNode = valueImagesImage["DiskDeviceMappings"]["DiskDeviceMapping"];
 		for (auto valueImagesImageDiskDeviceMappingsDiskDeviceMapping : allDiskDeviceMappingsNode)
 		{

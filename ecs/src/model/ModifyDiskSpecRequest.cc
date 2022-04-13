@@ -97,3 +97,12 @@ void ModifyDiskSpecRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+long ModifyDiskSpecRequest::getProvisionedIops() const {
+  return provisionedIops_;
+}
+
+void ModifyDiskSpecRequest::setProvisionedIops(long provisionedIops) {
+  provisionedIops_ = provisionedIops;
+  setParameter(std::string("ProvisionedIops"), std::to_string(provisionedIops));
+}
+

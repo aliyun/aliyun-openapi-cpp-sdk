@@ -64,6 +64,7 @@ namespace AlibabaCloud
 					int size;
 					bool deleteAutoSnapshot;
 					std::string diskChargeType;
+					int throughput;
 					int storageSetPartitionNumber;
 					int iOPS;
 					std::vector<Disk::Attachment> attachments;
@@ -75,6 +76,7 @@ namespace AlibabaCloud
 					std::string status;
 					int iOPSRead;
 					std::string attachedTime;
+					bool burstingEnabled;
 					std::string storageClusterId;
 					int iOPSWrite;
 					std::string zoneId;
@@ -88,6 +90,7 @@ namespace AlibabaCloud
 					bool enableAutoSnapshot;
 					std::string autoSnapshotPolicyId;
 					std::string diskName;
+					long provisionedIops;
 					std::vector<Disk::OperationLock> operationLocks;
 					std::string bdfId;
 					bool portable;

@@ -104,6 +104,20 @@ RunInstancesRequest::SystemDisk RunInstancesRequest::getSystemDisk() const {
 void RunInstancesRequest::setSystemDisk(const RunInstancesRequest::SystemDisk &systemDisk) {
   systemDisk_ = systemDisk;
   setParameter(std::string("SystemDisk") + ".StorageClusterId", systemDisk.storageClusterId);
+  setParameter(std::string("SystemDisk") + ".ProvisionedIops", std::to_string(systemDisk.provisionedIops));
+  setParameter(std::string("SystemDisk") + ".BurstingEnabled", systemDisk.burstingEnabled ? "true" : "false");
+  setParameter(std::string("SystemDisk") + ".Encrypted", systemDisk.encrypted);
+  setParameter(std::string("SystemDisk") + ".KMSKeyId", systemDisk.kMSKeyId);
+  setParameter(std::string("SystemDisk") + ".EncryptAlgorithm", systemDisk.encryptAlgorithm);
+}
+
+RunInstancesRequest::ImageOptions RunInstancesRequest::getImageOptions() const {
+  return imageOptions_;
+}
+
+void RunInstancesRequest::setImageOptions(const RunInstancesRequest::ImageOptions &imageOptions) {
+  imageOptions_ = imageOptions;
+  setParameter(std::string("ImageOptions") + ".LoginAsNonRoot", imageOptions.loginAsNonRoot ? "true" : "false");
 }
 
 int RunInstancesRequest::getDeploymentSetGroupNo() const {
@@ -806,6 +820,8 @@ void RunInstancesRequest::setDataDisk(const std::vector<RunInstancesRequest::Dat
     setParameter(dataDiskObjStr + ".DeleteWithInstance", dataDiskObj.deleteWithInstance ? "true" : "false");
     setParameter(dataDiskObjStr + ".KMSKeyId", dataDiskObj.kMSKeyId);
     setParameter(dataDiskObjStr + ".StorageClusterId", dataDiskObj.storageClusterId);
+    setParameter(dataDiskObjStr + ".ProvisionedIops", std::to_string(dataDiskObj.provisionedIops));
+    setParameter(dataDiskObjStr + ".BurstingEnabled", dataDiskObj.burstingEnabled ? "true" : "false");
   }
 }
 

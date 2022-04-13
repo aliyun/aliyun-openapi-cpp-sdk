@@ -81,6 +81,10 @@ namespace AlibabaCloud
 						std::string httpTokens;
 						std::string httpEndpoint;
 					};
+					struct ImageOptions
+					{
+						bool loginAsNonRoot;
+					};
 					struct NetworkInterface
 					{
 						struct PrivateIpSet
@@ -119,6 +123,7 @@ namespace AlibabaCloud
 					std::string expiredTime;
 					EipAddress eipAddress;
 					std::string imageId;
+					ImageOptions imageOptions;
 					std::vector<Instance::Tag> tags;
 					std::string vlanId;
 					std::string hostName;

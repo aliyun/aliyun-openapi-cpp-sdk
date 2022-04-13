@@ -54,6 +54,8 @@ public:
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	bool getBurstingEnabled() const;
+	void setBurstingEnabled(bool burstingEnabled);
 
 private:
 	long resourceOwnerId_;
@@ -68,6 +70,7 @@ private:
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
+	bool burstingEnabled_;
 };
 } // namespace Model
 } // namespace Ecs

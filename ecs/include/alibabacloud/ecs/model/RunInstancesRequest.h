@@ -30,6 +30,14 @@ class ALIBABACLOUD_ECS_EXPORT RunInstancesRequest : public RpcServiceRequest {
 public:
 	struct SystemDisk {
 		std::string storageClusterId;
+		long provisionedIops;
+		bool burstingEnabled;
+		std::string encrypted;
+		std::string kMSKeyId;
+		std::string encryptAlgorithm;
+	};
+	struct ImageOptions {
+		bool loginAsNonRoot;
 	};
 	struct Arn {
 		std::string roleType;
@@ -66,6 +74,8 @@ public:
 		bool deleteWithInstance;
 		std::string kMSKeyId;
 		std::string storageClusterId;
+		long provisionedIops;
+		bool burstingEnabled;
 	};
 	RunInstancesRequest();
 	~RunInstancesRequest();
@@ -87,6 +97,8 @@ public:
 	void setPassword(const std::string &password);
 	SystemDisk getSystemDisk() const;
 	void setSystemDisk(const SystemDisk &systemDisk);
+	ImageOptions getImageOptions() const;
+	void setImageOptions(const ImageOptions &imageOptions);
 	int getDeploymentSetGroupNo() const;
 	void setDeploymentSetGroupNo(int deploymentSetGroupNo);
 	std::string getSystemDiskAutoSnapshotPolicyId() const;
@@ -252,6 +264,7 @@ private:
 	std::string hostName_;
 	std::string password_;
 	SystemDisk systemDisk_;
+	ImageOptions imageOptions_;
 	int deploymentSetGroupNo_;
 	std::string systemDiskAutoSnapshotPolicyId_;
 	int cpuOptionsCore_;

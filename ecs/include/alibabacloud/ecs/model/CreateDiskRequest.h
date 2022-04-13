@@ -75,6 +75,10 @@ public:
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	bool getBurstingEnabled() const;
+	void setBurstingEnabled(bool burstingEnabled);
+	long getProvisionedIops() const;
+	void setProvisionedIops(long provisionedIops);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
 	std::string getStorageSetId() const;
@@ -109,6 +113,8 @@ private:
 	std::string performanceLevel_;
 	std::string ownerAccount_;
 	long ownerId_;
+	bool burstingEnabled_;
+	long provisionedIops_;
 	std::string instanceId_;
 	std::string storageSetId_;
 	int size_;

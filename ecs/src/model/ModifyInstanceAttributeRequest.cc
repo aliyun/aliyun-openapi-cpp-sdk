@@ -159,3 +159,13 @@ void ModifyInstanceAttributeRequest::setInstanceName(const std::string &instance
   setParameter(std::string("InstanceName"), instanceName);
 }
 
+ModifyInstanceAttributeRequest::RemoteConnectionOptions ModifyInstanceAttributeRequest::getRemoteConnectionOptions() const {
+  return remoteConnectionOptions_;
+}
+
+void ModifyInstanceAttributeRequest::setRemoteConnectionOptions(const ModifyInstanceAttributeRequest::RemoteConnectionOptions &remoteConnectionOptions) {
+  remoteConnectionOptions_ = remoteConnectionOptions;
+  setParameter(std::string("RemoteConnectionOptions") + ".Password", remoteConnectionOptions.password);
+  setParameter(std::string("RemoteConnectionOptions") + ".Type", remoteConnectionOptions.type);
+}
+

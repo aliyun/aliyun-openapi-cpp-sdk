@@ -91,6 +91,14 @@ void CreateAutoProvisioningGroupRequest::setLaunchConfigurationHostNames(const s
   launchConfigurationHostNames_ = launchConfigurationHostNames;
 }
 
+std::vector<std::string> CreateAutoProvisioningGroupRequest::getLaunchConfigurationSecurityGroupIds() const {
+  return launchConfigurationSecurityGroupIds_;
+}
+
+void CreateAutoProvisioningGroupRequest::setLaunchConfigurationSecurityGroupIds(const std::vector<std::string> &launchConfigurationSecurityGroupIds) {
+  launchConfigurationSecurityGroupIds_ = launchConfigurationSecurityGroupIds;
+}
+
 std::string CreateAutoProvisioningGroupRequest::getResourceGroupId() const {
   return resourceGroupId_;
 }

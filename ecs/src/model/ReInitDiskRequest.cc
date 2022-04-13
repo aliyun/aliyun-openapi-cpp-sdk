@@ -70,6 +70,15 @@ void ReInitDiskRequest::setPassword(const std::string &password) {
   setParameter(std::string("Password"), password);
 }
 
+bool ReInitDiskRequest::getLoginAsNonRoot() const {
+  return loginAsNonRoot_;
+}
+
+void ReInitDiskRequest::setLoginAsNonRoot(bool loginAsNonRoot) {
+  loginAsNonRoot_ = loginAsNonRoot;
+  setParameter(std::string("LoginAsNonRoot"), loginAsNonRoot ? "true" : "false");
+}
+
 std::string ReInitDiskRequest::getDiskId() const {
   return diskId_;
 }

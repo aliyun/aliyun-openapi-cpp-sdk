@@ -88,6 +88,15 @@ void ReplaceSystemDiskRequest::setPassword(const std::string &password) {
   setParameter(std::string("Password"), password);
 }
 
+bool ReplaceSystemDiskRequest::getLoginAsNonRoot() const {
+  return loginAsNonRoot_;
+}
+
+void ReplaceSystemDiskRequest::setLoginAsNonRoot(bool loginAsNonRoot) {
+  loginAsNonRoot_ = loginAsNonRoot;
+  setParameter(std::string("LoginAsNonRoot"), loginAsNonRoot ? "true" : "false");
+}
+
 bool ReplaceSystemDiskRequest::getPasswordInherit() const {
   return passwordInherit_;
 }
