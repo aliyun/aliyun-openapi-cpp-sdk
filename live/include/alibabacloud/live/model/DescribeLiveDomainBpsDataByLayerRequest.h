@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_STOPLIVEINDEXREQUEST_H_
-#define ALIBABACLOUD_LIVE_MODEL_STOPLIVEINDEXREQUEST_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINBPSDATABYLAYERREQUEST_H_
+#define ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINBPSDATABYLAYERREQUEST_H_
 
 #include <alibabacloud/live/LiveExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,29 +26,38 @@
 namespace AlibabaCloud {
 namespace Live {
 namespace Model {
-class ALIBABACLOUD_LIVE_EXPORT StopLiveIndexRequest : public RpcServiceRequest {
+class ALIBABACLOUD_LIVE_EXPORT DescribeLiveDomainBpsDataByLayerRequest : public RpcServiceRequest {
 public:
-	StopLiveIndexRequest();
-	~StopLiveIndexRequest();
-	std::string getAppName() const;
-	void setAppName(const std::string &appName);
-	std::string getStreamName() const;
-	void setStreamName(const std::string &streamName);
-	std::string getTaskId() const;
-	void setTaskId(const std::string &taskId);
+	DescribeLiveDomainBpsDataByLayerRequest();
+	~DescribeLiveDomainBpsDataByLayerRequest();
+	std::string getLocationNameEn() const;
+	void setLocationNameEn(const std::string &locationNameEn);
+	std::string getStartTime() const;
+	void setStartTime(const std::string &startTime);
+	std::string getIspNameEn() const;
+	void setIspNameEn(const std::string &ispNameEn);
+	std::string getLayer() const;
+	void setLayer(const std::string &layer);
 	std::string getDomainName() const;
 	void setDomainName(const std::string &domainName);
+	std::string getEndTime() const;
+	void setEndTime(const std::string &endTime);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getInterval() const;
+	void setInterval(const std::string &interval);
 
 private:
-	std::string appName_;
-	std::string streamName_;
-	std::string taskId_;
+	std::string locationNameEn_;
+	std::string startTime_;
+	std::string ispNameEn_;
+	std::string layer_;
 	std::string domainName_;
+	std::string endTime_;
 	long ownerId_;
+	std::string interval_;
 };
 } // namespace Model
 } // namespace Live
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_LIVE_MODEL_STOPLIVEINDEXREQUEST_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINBPSDATABYLAYERREQUEST_H_

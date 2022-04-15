@@ -1203,42 +1203,6 @@ LiveClient::BatchSetLiveDomainConfigsOutcomeCallable LiveClient::batchSetLiveDom
 	return task->get_future();
 }
 
-LiveClient::CheckServiceForRoleOutcome LiveClient::checkServiceForRole(const CheckServiceForRoleRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CheckServiceForRoleOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CheckServiceForRoleOutcome(CheckServiceForRoleResult(outcome.result()));
-	else
-		return CheckServiceForRoleOutcome(outcome.error());
-}
-
-void LiveClient::checkServiceForRoleAsync(const CheckServiceForRoleRequest& request, const CheckServiceForRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, checkServiceForRole(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::CheckServiceForRoleOutcomeCallable LiveClient::checkServiceForRoleCallable(const CheckServiceForRoleRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CheckServiceForRoleOutcome()>>(
-			[this, request]()
-			{
-			return this->checkServiceForRole(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 LiveClient::CloseLiveShiftOutcome LiveClient::closeLiveShift(const CloseLiveShiftRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3759,6 +3723,42 @@ LiveClient::DescribeLiveDomainBpsDataOutcomeCallable LiveClient::describeLiveDom
 	return task->get_future();
 }
 
+LiveClient::DescribeLiveDomainBpsDataByLayerOutcome LiveClient::describeLiveDomainBpsDataByLayer(const DescribeLiveDomainBpsDataByLayerRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeLiveDomainBpsDataByLayerOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeLiveDomainBpsDataByLayerOutcome(DescribeLiveDomainBpsDataByLayerResult(outcome.result()));
+	else
+		return DescribeLiveDomainBpsDataByLayerOutcome(outcome.error());
+}
+
+void LiveClient::describeLiveDomainBpsDataByLayerAsync(const DescribeLiveDomainBpsDataByLayerRequest& request, const DescribeLiveDomainBpsDataByLayerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeLiveDomainBpsDataByLayer(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DescribeLiveDomainBpsDataByLayerOutcomeCallable LiveClient::describeLiveDomainBpsDataByLayerCallable(const DescribeLiveDomainBpsDataByLayerRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeLiveDomainBpsDataByLayerOutcome()>>(
+			[this, request]()
+			{
+			return this->describeLiveDomainBpsDataByLayer(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::DescribeLiveDomainBpsDataByTimeStampOutcome LiveClient::describeLiveDomainBpsDataByTimeStamp(const DescribeLiveDomainBpsDataByTimeStampRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5883,6 +5883,42 @@ LiveClient::DescribeLiveTopDomainsByFlowOutcomeCallable LiveClient::describeLive
 	return task->get_future();
 }
 
+LiveClient::DescribeLiveUserBillPredictionOutcome LiveClient::describeLiveUserBillPrediction(const DescribeLiveUserBillPredictionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeLiveUserBillPredictionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeLiveUserBillPredictionOutcome(DescribeLiveUserBillPredictionResult(outcome.result()));
+	else
+		return DescribeLiveUserBillPredictionOutcome(outcome.error());
+}
+
+void LiveClient::describeLiveUserBillPredictionAsync(const DescribeLiveUserBillPredictionRequest& request, const DescribeLiveUserBillPredictionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeLiveUserBillPrediction(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DescribeLiveUserBillPredictionOutcomeCallable LiveClient::describeLiveUserBillPredictionCallable(const DescribeLiveUserBillPredictionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeLiveUserBillPredictionOutcome()>>(
+			[this, request]()
+			{
+			return this->describeLiveUserBillPrediction(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::DescribeLiveUserDomainsOutcome LiveClient::describeLiveUserDomains(const DescribeLiveUserDomainsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -6381,6 +6417,42 @@ LiveClient::DisableLiveRealtimeLogDeliveryOutcomeCallable LiveClient::disableLiv
 			[this, request]()
 			{
 			return this->disableLiveRealtimeLogDelivery(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::DynamicUpdateWaterMarkStreamRuleOutcome LiveClient::dynamicUpdateWaterMarkStreamRule(const DynamicUpdateWaterMarkStreamRuleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DynamicUpdateWaterMarkStreamRuleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DynamicUpdateWaterMarkStreamRuleOutcome(DynamicUpdateWaterMarkStreamRuleResult(outcome.result()));
+	else
+		return DynamicUpdateWaterMarkStreamRuleOutcome(outcome.error());
+}
+
+void LiveClient::dynamicUpdateWaterMarkStreamRuleAsync(const DynamicUpdateWaterMarkStreamRuleRequest& request, const DynamicUpdateWaterMarkStreamRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, dynamicUpdateWaterMarkStreamRule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DynamicUpdateWaterMarkStreamRuleOutcomeCallable LiveClient::dynamicUpdateWaterMarkStreamRuleCallable(const DynamicUpdateWaterMarkStreamRuleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DynamicUpdateWaterMarkStreamRuleOutcome()>>(
+			[this, request]()
+			{
+			return this->dynamicUpdateWaterMarkStreamRule(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -8295,42 +8367,6 @@ LiveClient::StartLiveDomainOutcomeCallable LiveClient::startLiveDomainCallable(c
 	return task->get_future();
 }
 
-LiveClient::StartLiveIndexOutcome LiveClient::startLiveIndex(const StartLiveIndexRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return StartLiveIndexOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return StartLiveIndexOutcome(StartLiveIndexResult(outcome.result()));
-	else
-		return StartLiveIndexOutcome(outcome.error());
-}
-
-void LiveClient::startLiveIndexAsync(const StartLiveIndexRequest& request, const StartLiveIndexAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, startLiveIndex(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::StartLiveIndexOutcomeCallable LiveClient::startLiveIndexCallable(const StartLiveIndexRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<StartLiveIndexOutcome()>>(
-			[this, request]()
-			{
-			return this->startLiveIndex(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 LiveClient::StartLiveStreamMonitorOutcome LiveClient::startLiveStreamMonitor(const StartLiveStreamMonitorRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -8505,42 +8541,6 @@ LiveClient::StopLiveDomainOutcomeCallable LiveClient::stopLiveDomainCallable(con
 			[this, request]()
 			{
 			return this->stopLiveDomain(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-LiveClient::StopLiveIndexOutcome LiveClient::stopLiveIndex(const StopLiveIndexRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return StopLiveIndexOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return StopLiveIndexOutcome(StopLiveIndexResult(outcome.result()));
-	else
-		return StopLiveIndexOutcome(outcome.error());
-}
-
-void LiveClient::stopLiveIndexAsync(const StopLiveIndexRequest& request, const StopLiveIndexAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, stopLiveIndex(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::StopLiveIndexOutcomeCallable LiveClient::stopLiveIndexCallable(const StopLiveIndexRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<StopLiveIndexOutcome()>>(
-			[this, request]()
-			{
-			return this->stopLiveIndex(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

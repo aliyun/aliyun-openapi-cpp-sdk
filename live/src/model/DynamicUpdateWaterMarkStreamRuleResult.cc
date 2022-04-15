@@ -14,38 +14,31 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/live/model/CheckServiceForRoleResult.h>
+#include <alibabacloud/live/model/DynamicUpdateWaterMarkStreamRuleResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Live;
 using namespace AlibabaCloud::Live::Model;
 
-CheckServiceForRoleResult::CheckServiceForRoleResult() :
+DynamicUpdateWaterMarkStreamRuleResult::DynamicUpdateWaterMarkStreamRuleResult() :
 	ServiceResult()
 {}
 
-CheckServiceForRoleResult::CheckServiceForRoleResult(const std::string &payload) :
+DynamicUpdateWaterMarkStreamRuleResult::DynamicUpdateWaterMarkStreamRuleResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-CheckServiceForRoleResult::~CheckServiceForRoleResult()
+DynamicUpdateWaterMarkStreamRuleResult::~DynamicUpdateWaterMarkStreamRuleResult()
 {}
 
-void CheckServiceForRoleResult::parse(const std::string &payload)
+void DynamicUpdateWaterMarkStreamRuleResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Deletable"].isNull())
-		deletable_ = value["Deletable"].asString() == "true";
 
-}
-
-bool CheckServiceForRoleResult::getDeletable()const
-{
-	return deletable_;
 }
 

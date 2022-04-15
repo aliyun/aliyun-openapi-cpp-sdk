@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_STARTLIVEINDEXRESULT_H_
-#define ALIBABACLOUD_LIVE_MODEL_STARTLIVEINDEXRESULT_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_DYNAMICUPDATEWATERMARKSTREAMRULERESULT_H_
+#define ALIBABACLOUD_LIVE_MODEL_DYNAMICUPDATEWATERMARKSTREAMRULERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,23 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_LIVE_EXPORT StartLiveIndexResult : public ServiceResult
+			class ALIBABACLOUD_LIVE_EXPORT DynamicUpdateWaterMarkStreamRuleResult : public ServiceResult
 			{
 			public:
 
 
-				StartLiveIndexResult();
-				explicit StartLiveIndexResult(const std::string &payload);
-				~StartLiveIndexResult();
-				std::string getTaskId()const;
+				DynamicUpdateWaterMarkStreamRuleResult();
+				explicit DynamicUpdateWaterMarkStreamRuleResult(const std::string &payload);
+				~DynamicUpdateWaterMarkStreamRuleResult();
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string taskId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_LIVE_MODEL_STARTLIVEINDEXRESULT_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_DYNAMICUPDATEWATERMARKSTREAMRULERESULT_H_

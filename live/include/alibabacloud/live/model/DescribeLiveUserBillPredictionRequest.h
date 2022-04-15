@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_CHECKSERVICEFORROLEREQUEST_H_
-#define ALIBABACLOUD_LIVE_MODEL_CHECKSERVICEFORROLEREQUEST_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEUSERBILLPREDICTIONREQUEST_H_
+#define ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEUSERBILLPREDICTIONREQUEST_H_
 
 #include <alibabacloud/live/LiveExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,29 +26,29 @@
 namespace AlibabaCloud {
 namespace Live {
 namespace Model {
-class ALIBABACLOUD_LIVE_EXPORT CheckServiceForRoleRequest : public RpcServiceRequest {
+class ALIBABACLOUD_LIVE_EXPORT DescribeLiveUserBillPredictionRequest : public RpcServiceRequest {
 public:
-	CheckServiceForRoleRequest();
-	~CheckServiceForRoleRequest();
-	std::string getAccountId() const;
-	void setAccountId(const std::string &accountId);
-	std::string getSPIRegionId() const;
-	void setSPIRegionId(const std::string &sPIRegionId);
-	std::string getRoleArn() const;
-	void setRoleArn(const std::string &roleArn);
-	std::string getDeletionTaskId() const;
-	void setDeletionTaskId(const std::string &deletionTaskId);
-	std::string getServiceName() const;
-	void setServiceName(const std::string &serviceName);
+	DescribeLiveUserBillPredictionRequest();
+	~DescribeLiveUserBillPredictionRequest();
+	std::string getStartTime() const;
+	void setStartTime(const std::string &startTime);
+	std::string getDimension() const;
+	void setDimension(const std::string &dimension);
+	std::string getArea() const;
+	void setArea(const std::string &area);
+	std::string getEndTime() const;
+	void setEndTime(const std::string &endTime);
+	long getOwnerId() const;
+	void setOwnerId(long ownerId);
 
 private:
-	std::string accountId_;
-	std::string sPIRegionId_;
-	std::string roleArn_;
-	std::string deletionTaskId_;
-	std::string serviceName_;
+	std::string startTime_;
+	std::string dimension_;
+	std::string area_;
+	std::string endTime_;
+	long ownerId_;
 };
 } // namespace Model
 } // namespace Live
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_LIVE_MODEL_CHECKSERVICEFORROLEREQUEST_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEUSERBILLPREDICTIONREQUEST_H_

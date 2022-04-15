@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_CHECKSERVICEFORROLERESULT_H_
-#define ALIBABACLOUD_LIVE_MODEL_CHECKSERVICEFORROLERESULT_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEUSERBILLPREDICTIONRESULT_H_
+#define ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEUSERBILLPREDICTIONRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,23 +29,35 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_LIVE_EXPORT CheckServiceForRoleResult : public ServiceResult
+			class ALIBABACLOUD_LIVE_EXPORT DescribeLiveUserBillPredictionResult : public ServiceResult
 			{
 			public:
+				struct BillPredictionDataItem
+				{
+					std::string area;
+					std::string timeStp;
+					float value;
+				};
 
 
-				CheckServiceForRoleResult();
-				explicit CheckServiceForRoleResult(const std::string &payload);
-				~CheckServiceForRoleResult();
-				bool getDeletable()const;
+				DescribeLiveUserBillPredictionResult();
+				explicit DescribeLiveUserBillPredictionResult(const std::string &payload);
+				~DescribeLiveUserBillPredictionResult();
+				std::string getBillType()const;
+				std::string getEndTime()const;
+				std::string getStartTime()const;
+				std::vector<BillPredictionDataItem> getBillPredictionData()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				bool deletable_;
+				std::string billType_;
+				std::string endTime_;
+				std::string startTime_;
+				std::vector<BillPredictionDataItem> billPredictionData_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_LIVE_MODEL_CHECKSERVICEFORROLERESULT_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEUSERBILLPREDICTIONRESULT_H_

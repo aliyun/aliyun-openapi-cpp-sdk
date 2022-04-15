@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_STOPLIVEINDEXRESULT_H_
-#define ALIBABACLOUD_LIVE_MODEL_STOPLIVEINDEXRESULT_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINBPSDATABYLAYERRESULT_H_
+#define ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINBPSDATABYLAYERRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,21 +29,31 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_LIVE_EXPORT StopLiveIndexResult : public ServiceResult
+			class ALIBABACLOUD_LIVE_EXPORT DescribeLiveDomainBpsDataByLayerResult : public ServiceResult
 			{
 			public:
+				struct DataModule
+				{
+					std::string value;
+					std::string trafficValue;
+					std::string timeStamp;
+				};
 
 
-				StopLiveIndexResult();
-				explicit StopLiveIndexResult(const std::string &payload);
-				~StopLiveIndexResult();
+				DescribeLiveDomainBpsDataByLayerResult();
+				explicit DescribeLiveDomainBpsDataByLayerResult(const std::string &payload);
+				~DescribeLiveDomainBpsDataByLayerResult();
+				std::vector<DataModule> getBpsDataInterval()const;
+				std::string getDataInterval()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::vector<DataModule> bpsDataInterval_;
+				std::string dataInterval_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_LIVE_MODEL_STOPLIVEINDEXRESULT_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINBPSDATABYLAYERRESULT_H_
