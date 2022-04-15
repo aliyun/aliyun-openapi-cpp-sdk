@@ -32,7 +32,7 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT ListTaskFlowResult : public ServiceResult
 			{
 			public:
-				struct DAGInstance
+				struct TaskFlow
 				{
 					int status;
 					int latestInstanceStatus;
@@ -48,7 +48,7 @@ namespace AlibabaCloud
 				ListTaskFlowResult();
 				explicit ListTaskFlowResult(const std::string &payload);
 				~ListTaskFlowResult();
-				std::vector<DAGInstance> getTaskFlowList()const;
+				std::vector<TaskFlow> getTaskFlowList()const;
 				std::string getErrorCode()const;
 				std::string getErrorMessage()const;
 				bool getSuccess()const;
@@ -56,7 +56,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<DAGInstance> taskFlowList_;
+				std::vector<TaskFlow> taskFlowList_;
 				std::string errorCode_;
 				std::string errorMessage_;
 				bool success_;

@@ -39,26 +39,26 @@ void ListTaskFlowResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allTaskFlowListNode = value["TaskFlowList"]["DAGInstance"];
-	for (auto valueTaskFlowListDAGInstance : allTaskFlowListNode)
+	auto allTaskFlowListNode = value["TaskFlowList"]["TaskFlow"];
+	for (auto valueTaskFlowListTaskFlow : allTaskFlowListNode)
 	{
-		DAGInstance taskFlowListObject;
-		if(!valueTaskFlowListDAGInstance["Id"].isNull())
-			taskFlowListObject.id = std::stol(valueTaskFlowListDAGInstance["Id"].asString());
-		if(!valueTaskFlowListDAGInstance["CreatorId"].isNull())
-			taskFlowListObject.creatorId = valueTaskFlowListDAGInstance["CreatorId"].asString();
-		if(!valueTaskFlowListDAGInstance["CreatorNickName"].isNull())
-			taskFlowListObject.creatorNickName = valueTaskFlowListDAGInstance["CreatorNickName"].asString();
-		if(!valueTaskFlowListDAGInstance["DagOwnerNickName"].isNull())
-			taskFlowListObject.dagOwnerNickName = valueTaskFlowListDAGInstance["DagOwnerNickName"].asString();
-		if(!valueTaskFlowListDAGInstance["DeployId"].isNull())
-			taskFlowListObject.deployId = std::stol(valueTaskFlowListDAGInstance["DeployId"].asString());
-		if(!valueTaskFlowListDAGInstance["Status"].isNull())
-			taskFlowListObject.status = std::stoi(valueTaskFlowListDAGInstance["Status"].asString());
-		if(!valueTaskFlowListDAGInstance["LatestInstanceStatus"].isNull())
-			taskFlowListObject.latestInstanceStatus = std::stoi(valueTaskFlowListDAGInstance["LatestInstanceStatus"].asString());
-		if(!valueTaskFlowListDAGInstance["LatestInstanceTime"].isNull())
-			taskFlowListObject.latestInstanceTime = valueTaskFlowListDAGInstance["LatestInstanceTime"].asString();
+		TaskFlow taskFlowListObject;
+		if(!valueTaskFlowListTaskFlow["Id"].isNull())
+			taskFlowListObject.id = std::stol(valueTaskFlowListTaskFlow["Id"].asString());
+		if(!valueTaskFlowListTaskFlow["CreatorId"].isNull())
+			taskFlowListObject.creatorId = valueTaskFlowListTaskFlow["CreatorId"].asString();
+		if(!valueTaskFlowListTaskFlow["CreatorNickName"].isNull())
+			taskFlowListObject.creatorNickName = valueTaskFlowListTaskFlow["CreatorNickName"].asString();
+		if(!valueTaskFlowListTaskFlow["DagOwnerNickName"].isNull())
+			taskFlowListObject.dagOwnerNickName = valueTaskFlowListTaskFlow["DagOwnerNickName"].asString();
+		if(!valueTaskFlowListTaskFlow["DeployId"].isNull())
+			taskFlowListObject.deployId = std::stol(valueTaskFlowListTaskFlow["DeployId"].asString());
+		if(!valueTaskFlowListTaskFlow["Status"].isNull())
+			taskFlowListObject.status = std::stoi(valueTaskFlowListTaskFlow["Status"].asString());
+		if(!valueTaskFlowListTaskFlow["LatestInstanceStatus"].isNull())
+			taskFlowListObject.latestInstanceStatus = std::stoi(valueTaskFlowListTaskFlow["LatestInstanceStatus"].asString());
+		if(!valueTaskFlowListTaskFlow["LatestInstanceTime"].isNull())
+			taskFlowListObject.latestInstanceTime = valueTaskFlowListTaskFlow["LatestInstanceTime"].asString();
 		taskFlowList_.push_back(taskFlowListObject);
 	}
 	if(!value["ErrorCode"].isNull())
@@ -70,7 +70,7 @@ void ListTaskFlowResult::parse(const std::string &payload)
 
 }
 
-std::vector<ListTaskFlowResult::DAGInstance> ListTaskFlowResult::getTaskFlowList()const
+std::vector<ListTaskFlowResult::TaskFlow> ListTaskFlowResult::getTaskFlowList()const
 {
 	return taskFlowList_;
 }
