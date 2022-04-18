@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,100 +18,82 @@
 
 using AlibabaCloud::Sddp::Model::ModifyEventStatusRequest;
 
-ModifyEventStatusRequest::ModifyEventStatusRequest() :
-	RpcServiceRequest("sddp", "2019-01-03", "ModifyEventStatus")
-{
-	setMethod(HttpRequest::Method::Post);
+ModifyEventStatusRequest::ModifyEventStatusRequest()
+    : RpcServiceRequest("sddp", "2019-01-03", "ModifyEventStatus") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-ModifyEventStatusRequest::~ModifyEventStatusRequest()
-{}
+ModifyEventStatusRequest::~ModifyEventStatusRequest() {}
 
-bool ModifyEventStatusRequest::getBacked()const
-{
-	return backed_;
+bool ModifyEventStatusRequest::getBacked() const {
+  return backed_;
 }
 
-void ModifyEventStatusRequest::setBacked(bool backed)
-{
-	backed_ = backed;
-	setParameter("Backed", backed ? "true" : "false");
+void ModifyEventStatusRequest::setBacked(bool backed) {
+  backed_ = backed;
+  setParameter(std::string("Backed"), backed ? "true" : "false");
 }
 
-std::string ModifyEventStatusRequest::getSourceIp()const
-{
-	return sourceIp_;
+std::string ModifyEventStatusRequest::getSourceIp() const {
+  return sourceIp_;
 }
 
-void ModifyEventStatusRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
+void ModifyEventStatusRequest::setSourceIp(const std::string &sourceIp) {
+  sourceIp_ = sourceIp;
+  setParameter(std::string("SourceIp"), sourceIp);
 }
 
-std::string ModifyEventStatusRequest::getHandleInfo()const
-{
-	return handleInfo_;
+std::string ModifyEventStatusRequest::getHandleInfo() const {
+  return handleInfo_;
 }
 
-void ModifyEventStatusRequest::setHandleInfo(const std::string& handleInfo)
-{
-	handleInfo_ = handleInfo;
-	setParameter("HandleInfo", handleInfo);
+void ModifyEventStatusRequest::setHandleInfo(const std::string &handleInfo) {
+  handleInfo_ = handleInfo;
+  setParameter(std::string("HandleInfo"), handleInfo);
 }
 
-std::string ModifyEventStatusRequest::getDealReason()const
-{
-	return dealReason_;
+std::string ModifyEventStatusRequest::getDealReason() const {
+  return dealReason_;
 }
 
-void ModifyEventStatusRequest::setDealReason(const std::string& dealReason)
-{
-	dealReason_ = dealReason;
-	setParameter("DealReason", dealReason);
+void ModifyEventStatusRequest::setDealReason(const std::string &dealReason) {
+  dealReason_ = dealReason;
+  setParameter(std::string("DealReason"), dealReason);
 }
 
-long ModifyEventStatusRequest::getId()const
-{
-	return id_;
+long ModifyEventStatusRequest::getId() const {
+  return id_;
 }
 
-void ModifyEventStatusRequest::setId(long id)
-{
-	id_ = id;
-	setParameter("Id", std::to_string(id));
+void ModifyEventStatusRequest::setId(long id) {
+  id_ = id;
+  setParameter(std::string("Id"), std::to_string(id));
 }
 
-std::string ModifyEventStatusRequest::getLang()const
-{
-	return lang_;
+std::string ModifyEventStatusRequest::getLang() const {
+  return lang_;
 }
 
-void ModifyEventStatusRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setParameter("Lang", lang);
+void ModifyEventStatusRequest::setLang(const std::string &lang) {
+  lang_ = lang;
+  setParameter(std::string("Lang"), lang);
 }
 
-int ModifyEventStatusRequest::getFeatureType()const
-{
-	return featureType_;
+int ModifyEventStatusRequest::getFeatureType() const {
+  return featureType_;
 }
 
-void ModifyEventStatusRequest::setFeatureType(int featureType)
-{
-	featureType_ = featureType;
-	setParameter("FeatureType", std::to_string(featureType));
+void ModifyEventStatusRequest::setFeatureType(int featureType) {
+  featureType_ = featureType;
+  setParameter(std::string("FeatureType"), std::to_string(featureType));
 }
 
-int ModifyEventStatusRequest::getStatus()const
-{
-	return status_;
+int ModifyEventStatusRequest::getStatus() const {
+  return status_;
 }
 
-void ModifyEventStatusRequest::setStatus(int status)
-{
-	status_ = status;
-	setParameter("Status", std::to_string(status));
+void ModifyEventStatusRequest::setStatus(int status) {
+  status_ = status;
+  setParameter(std::string("Status"), std::to_string(status));
 }
 

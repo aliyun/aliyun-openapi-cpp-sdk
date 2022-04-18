@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SDDP_MODEL_DESCRIBERULECATEGORYRESULT_H_
-#define ALIBABACLOUD_SDDP_MODEL_DESCRIBERULECATEGORYRESULT_H_
+#ifndef ALIBABACLOUD_SDDP_MODEL_MODIFYREPORTTASKSTATUSRESULT_H_
+#define ALIBABACLOUD_SDDP_MODEL_MODIFYREPORTTASKSTATUSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,43 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SDDP_EXPORT DescribeRuleCategoryResult : public ServiceResult
+			class ALIBABACLOUD_SDDP_EXPORT ModifyReportTaskStatusResult : public ServiceResult
 			{
 			public:
-				struct Rule
-				{
-					struct ChildRule
-					{
-						std::string parentId;
-						long id;
-						std::string groupId;
-						std::string name;
-					};
-					std::vector<Rule::ChildRule> childList;
-					std::string groupId;
-					std::string name;
-				};
-				struct Product
-				{
-					std::string value;
-					std::string label;
-				};
 
 
-				DescribeRuleCategoryResult();
-				explicit DescribeRuleCategoryResult(const std::string &payload);
-				~DescribeRuleCategoryResult();
-				std::vector<Product> getProductList()const;
-				std::vector<Rule> getRuleList()const;
+				ModifyReportTaskStatusResult();
+				explicit ModifyReportTaskStatusResult(const std::string &payload);
+				~ModifyReportTaskStatusResult();
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<Product> productList_;
-				std::vector<Rule> ruleList_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SDDP_MODEL_DESCRIBERULECATEGORYRESULT_H_
+#endif // !ALIBABACLOUD_SDDP_MODEL_MODIFYREPORTTASKSTATUSRESULT_H_

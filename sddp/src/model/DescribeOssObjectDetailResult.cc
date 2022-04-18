@@ -40,32 +40,32 @@ void DescribeOssObjectDetailResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto ossObjectDetailNode = value["OssObjectDetail"];
-	if(!ossObjectDetailNode["Name"].isNull())
-		ossObjectDetail_.name = ossObjectDetailNode["Name"].asString();
-	if(!ossObjectDetailNode["RegionId"].isNull())
-		ossObjectDetail_.regionId = ossObjectDetailNode["RegionId"].asString();
-	if(!ossObjectDetailNode["RiskLevelName"].isNull())
-		ossObjectDetail_.riskLevelName = ossObjectDetailNode["RiskLevelName"].asString();
-	if(!ossObjectDetailNode["BucketName"].isNull())
-		ossObjectDetail_.bucketName = ossObjectDetailNode["BucketName"].asString();
 	if(!ossObjectDetailNode["CategoryName"].isNull())
 		ossObjectDetail_.categoryName = ossObjectDetailNode["CategoryName"].asString();
+	if(!ossObjectDetailNode["Name"].isNull())
+		ossObjectDetail_.name = ossObjectDetailNode["Name"].asString();
+	if(!ossObjectDetailNode["BucketName"].isNull())
+		ossObjectDetail_.bucketName = ossObjectDetailNode["BucketName"].asString();
+	if(!ossObjectDetailNode["RiskLevelName"].isNull())
+		ossObjectDetail_.riskLevelName = ossObjectDetailNode["RiskLevelName"].asString();
+	if(!ossObjectDetailNode["RegionId"].isNull())
+		ossObjectDetail_.regionId = ossObjectDetailNode["RegionId"].asString();
 	auto allRuleListNode = ossObjectDetailNode["RuleList"]["Rule"];
 	for (auto ossObjectDetailNodeRuleListRule : allRuleListNode)
 	{
 		OssObjectDetail::Rule ruleObject;
-		if(!ossObjectDetailNodeRuleListRule["RuleName"].isNull())
-			ruleObject.ruleName = ossObjectDetailNodeRuleListRule["RuleName"].asString();
-		if(!ossObjectDetailNodeRuleListRule["Count"].isNull())
-			ruleObject.count = std::stol(ossObjectDetailNodeRuleListRule["Count"].asString());
+		if(!ossObjectDetailNodeRuleListRule["RiskLevelName"].isNull())
+			ruleObject.riskLevelName = ossObjectDetailNodeRuleListRule["RiskLevelName"].asString();
 		if(!ossObjectDetailNodeRuleListRule["Category"].isNull())
 			ruleObject.category = std::stoi(ossObjectDetailNodeRuleListRule["Category"].asString());
 		if(!ossObjectDetailNodeRuleListRule["CategoryName"].isNull())
 			ruleObject.categoryName = ossObjectDetailNodeRuleListRule["CategoryName"].asString();
-		if(!ossObjectDetailNodeRuleListRule["RiskLevelName"].isNull())
-			ruleObject.riskLevelName = ossObjectDetailNodeRuleListRule["RiskLevelName"].asString();
 		if(!ossObjectDetailNodeRuleListRule["RiskLevelId"].isNull())
 			ruleObject.riskLevelId = std::stol(ossObjectDetailNodeRuleListRule["RiskLevelId"].asString());
+		if(!ossObjectDetailNodeRuleListRule["Count"].isNull())
+			ruleObject.count = std::stol(ossObjectDetailNodeRuleListRule["Count"].asString());
+		if(!ossObjectDetailNodeRuleListRule["RuleName"].isNull())
+			ruleObject.ruleName = ossObjectDetailNodeRuleListRule["RuleName"].asString();
 		auto allSampleList = value["SampleList"]["Sample"];
 		for (auto value : allSampleList)
 			ruleObject.sampleList.push_back(value.asString());

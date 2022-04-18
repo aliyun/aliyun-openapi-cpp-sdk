@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/sddp/model/BatchDeleteDataLimitResult.h>
+#include <alibabacloud/sddp/model/ModifyReportTaskStatusResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Sddp;
 using namespace AlibabaCloud::Sddp::Model;
 
-BatchDeleteDataLimitResult::BatchDeleteDataLimitResult() :
+ModifyReportTaskStatusResult::ModifyReportTaskStatusResult() :
 	ServiceResult()
 {}
 
-BatchDeleteDataLimitResult::BatchDeleteDataLimitResult(const std::string &payload) :
+ModifyReportTaskStatusResult::ModifyReportTaskStatusResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-BatchDeleteDataLimitResult::~BatchDeleteDataLimitResult()
+ModifyReportTaskStatusResult::~ModifyReportTaskStatusResult()
 {}
 
-void BatchDeleteDataLimitResult::parse(const std::string &payload)
+void ModifyReportTaskStatusResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;

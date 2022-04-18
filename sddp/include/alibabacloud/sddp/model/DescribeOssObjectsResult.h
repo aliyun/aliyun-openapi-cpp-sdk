@@ -53,8 +53,8 @@ namespace AlibabaCloud
 					std::string categoryName;
 					std::string fileId;
 					std::string riskLevelName;
-					std::string id;
 					std::string regionId;
+					std::string id;
 					int sensitiveCount;
 				};
 

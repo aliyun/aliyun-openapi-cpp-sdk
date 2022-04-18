@@ -34,29 +34,32 @@ namespace AlibabaCloud
 			public:
 				struct InstanceSource
 				{
-					std::string userName;
+					int samplingSize;
 					long instanceSize;
-					std::string instanceId;
 					int logStoreDay;
-					std::string tenantName;
+					int checkStatus;
 					long productId;
-					bool canModifyUserName;
 					long lastModifyTime;
-					std::string instanceDescription1;
+					std::string lastModifyUserId;
+					long dataLimitId;
+					std::string regionName;
+					int enable;
+					std::string engineType;
+					std::string dbName;
+					std::string userName;
+					std::string instanceId;
+					std::string tenantName;
+					bool canModifyUserName;
 					long gmtCreate;
 					std::string tenantId;
-					long dataLimitId;
 					int auditStatus;
-					std::string lastModifyUserId;
-					std::string regionName;
+					int datamaskStatus;
 					int autoScan;
 					int passwordStatus;
-					int enable;
-					std::string dbName;
-					std::string engineType;
 					std::string instanceDescription;
 					std::string regionId;
 					long id;
+					std::string errorMessage;
 				};
 
 

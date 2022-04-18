@@ -43,44 +43,44 @@ void DescribeDataMaskingTasksResult::parse(const std::string &payload)
 	for (auto valueItemsTask : allItemsNode)
 	{
 		Task itemsObject;
-		if(!valueItemsTask["Id"].isNull())
-			itemsObject.id = std::stol(valueItemsTask["Id"].asString());
-		if(!valueItemsTask["TaskId"].isNull())
-			itemsObject.taskId = valueItemsTask["TaskId"].asString();
-		if(!valueItemsTask["TaskName"].isNull())
-			itemsObject.taskName = valueItemsTask["TaskName"].asString();
-		if(!valueItemsTask["Owner"].isNull())
-			itemsObject.owner = valueItemsTask["Owner"].asString();
-		if(!valueItemsTask["GmtCreate"].isNull())
-			itemsObject.gmtCreate = std::stol(valueItemsTask["GmtCreate"].asString());
-		if(!valueItemsTask["DstType"].isNull())
-			itemsObject.dstType = std::stoi(valueItemsTask["DstType"].asString());
-		if(!valueItemsTask["DstPath"].isNull())
-			itemsObject.dstPath = valueItemsTask["DstPath"].asString();
-		if(!valueItemsTask["SrcType"].isNull())
-			itemsObject.srcType = std::stoi(valueItemsTask["SrcType"].asString());
-		if(!valueItemsTask["SrcPath"].isNull())
-			itemsObject.srcPath = valueItemsTask["SrcPath"].asString();
-		if(!valueItemsTask["RunCount"].isNull())
-			itemsObject.runCount = std::stoi(valueItemsTask["RunCount"].asString());
 		if(!valueItemsTask["Status"].isNull())
 			itemsObject.status = std::stoi(valueItemsTask["Status"].asString());
+		if(!valueItemsTask["Owner"].isNull())
+			itemsObject.owner = valueItemsTask["Owner"].asString();
+		if(!valueItemsTask["TaskName"].isNull())
+			itemsObject.taskName = valueItemsTask["TaskName"].asString();
+		if(!valueItemsTask["SrcType"].isNull())
+			itemsObject.srcType = std::stoi(valueItemsTask["SrcType"].asString());
+		if(!valueItemsTask["DstType"].isNull())
+			itemsObject.dstType = std::stoi(valueItemsTask["DstType"].asString());
 		if(!valueItemsTask["HasUnfinishProcess"].isNull())
 			itemsObject.hasUnfinishProcess = valueItemsTask["HasUnfinishProcess"].asString() == "true";
-		if(!valueItemsTask["DstTypeCode"].isNull())
-			itemsObject.dstTypeCode = valueItemsTask["DstTypeCode"].asString();
-		if(!valueItemsTask["SrcTypeCode"].isNull())
-			itemsObject.srcTypeCode = valueItemsTask["SrcTypeCode"].asString();
-		if(!valueItemsTask["TriggerType"].isNull())
-			itemsObject.triggerType = std::stoi(valueItemsTask["TriggerType"].asString());
 		if(!valueItemsTask["OriginalTable"].isNull())
 			itemsObject.originalTable = valueItemsTask["OriginalTable"].asString() == "true";
+		if(!valueItemsTask["TriggerType"].isNull())
+			itemsObject.triggerType = std::stoi(valueItemsTask["TriggerType"].asString());
+		if(!valueItemsTask["DstTypeCode"].isNull())
+			itemsObject.dstTypeCode = valueItemsTask["DstTypeCode"].asString();
+		if(!valueItemsTask["RunCount"].isNull())
+			itemsObject.runCount = std::stoi(valueItemsTask["RunCount"].asString());
+		if(!valueItemsTask["GmtCreate"].isNull())
+			itemsObject.gmtCreate = std::stol(valueItemsTask["GmtCreate"].asString());
+		if(!valueItemsTask["TaskId"].isNull())
+			itemsObject.taskId = valueItemsTask["TaskId"].asString();
+		if(!valueItemsTask["DstPath"].isNull())
+			itemsObject.dstPath = valueItemsTask["DstPath"].asString();
+		if(!valueItemsTask["SrcTypeCode"].isNull())
+			itemsObject.srcTypeCode = valueItemsTask["SrcTypeCode"].asString();
+		if(!valueItemsTask["Id"].isNull())
+			itemsObject.id = std::stol(valueItemsTask["Id"].asString());
+		if(!valueItemsTask["SrcPath"].isNull())
+			itemsObject.srcPath = valueItemsTask["SrcPath"].asString();
 		items_.push_back(itemsObject);
 	}
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["CurrentPage"].isNull())
 		currentPage_ = std::stoi(value["CurrentPage"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
 

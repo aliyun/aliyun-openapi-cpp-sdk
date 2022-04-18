@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,166 +18,136 @@
 
 using AlibabaCloud::Sddp::Model::ModifyDataLimitRequest;
 
-ModifyDataLimitRequest::ModifyDataLimitRequest() :
-	RpcServiceRequest("sddp", "2019-01-03", "ModifyDataLimit")
-{
-	setMethod(HttpRequest::Method::Post);
+ModifyDataLimitRequest::ModifyDataLimitRequest()
+    : RpcServiceRequest("sddp", "2019-01-03", "ModifyDataLimit") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-ModifyDataLimitRequest::~ModifyDataLimitRequest()
-{}
+ModifyDataLimitRequest::~ModifyDataLimitRequest() {}
 
-bool ModifyDataLimitRequest::getModifyPassword()const
-{
-	return modifyPassword_;
+bool ModifyDataLimitRequest::getModifyPassword() const {
+  return modifyPassword_;
 }
 
-void ModifyDataLimitRequest::setModifyPassword(bool modifyPassword)
-{
-	modifyPassword_ = modifyPassword;
-	setParameter("ModifyPassword", modifyPassword ? "true" : "false");
+void ModifyDataLimitRequest::setModifyPassword(bool modifyPassword) {
+  modifyPassword_ = modifyPassword;
+  setParameter(std::string("ModifyPassword"), modifyPassword ? "true" : "false");
 }
 
-std::string ModifyDataLimitRequest::getPassword()const
-{
-	return password_;
+std::string ModifyDataLimitRequest::getPassword() const {
+  return password_;
 }
 
-void ModifyDataLimitRequest::setPassword(const std::string& password)
-{
-	password_ = password;
-	setParameter("Password", password);
+void ModifyDataLimitRequest::setPassword(const std::string &password) {
+  password_ = password;
+  setParameter(std::string("Password"), password);
 }
 
-std::string ModifyDataLimitRequest::getSourceIp()const
-{
-	return sourceIp_;
+std::string ModifyDataLimitRequest::getSourceIp() const {
+  return sourceIp_;
 }
 
-void ModifyDataLimitRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
+void ModifyDataLimitRequest::setSourceIp(const std::string &sourceIp) {
+  sourceIp_ = sourceIp;
+  setParameter(std::string("SourceIp"), sourceIp);
 }
 
-long ModifyDataLimitRequest::getId()const
-{
-	return id_;
+long ModifyDataLimitRequest::getId() const {
+  return id_;
 }
 
-void ModifyDataLimitRequest::setId(long id)
-{
-	id_ = id;
-	setParameter("Id", std::to_string(id));
+void ModifyDataLimitRequest::setId(long id) {
+  id_ = id;
+  setParameter(std::string("Id"), std::to_string(id));
 }
 
-std::string ModifyDataLimitRequest::getLang()const
-{
-	return lang_;
+std::string ModifyDataLimitRequest::getLang() const {
+  return lang_;
 }
 
-void ModifyDataLimitRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setParameter("Lang", lang);
+void ModifyDataLimitRequest::setLang(const std::string &lang) {
+  lang_ = lang;
+  setParameter(std::string("Lang"), lang);
 }
 
-std::string ModifyDataLimitRequest::getServiceRegionId()const
-{
-	return serviceRegionId_;
+std::string ModifyDataLimitRequest::getServiceRegionId() const {
+  return serviceRegionId_;
 }
 
-void ModifyDataLimitRequest::setServiceRegionId(const std::string& serviceRegionId)
-{
-	serviceRegionId_ = serviceRegionId;
-	setParameter("ServiceRegionId", serviceRegionId);
+void ModifyDataLimitRequest::setServiceRegionId(const std::string &serviceRegionId) {
+  serviceRegionId_ = serviceRegionId;
+  setParameter(std::string("ServiceRegionId"), serviceRegionId);
 }
 
-std::string ModifyDataLimitRequest::getEngineType()const
-{
-	return engineType_;
+std::string ModifyDataLimitRequest::getEngineType() const {
+  return engineType_;
 }
 
-void ModifyDataLimitRequest::setEngineType(const std::string& engineType)
-{
-	engineType_ = engineType;
-	setParameter("EngineType", engineType);
+void ModifyDataLimitRequest::setEngineType(const std::string &engineType) {
+  engineType_ = engineType;
+  setParameter(std::string("EngineType"), engineType);
 }
 
-int ModifyDataLimitRequest::getAuditStatus()const
-{
-	return auditStatus_;
+int ModifyDataLimitRequest::getAuditStatus() const {
+  return auditStatus_;
 }
 
-void ModifyDataLimitRequest::setAuditStatus(int auditStatus)
-{
-	auditStatus_ = auditStatus;
-	setParameter("AuditStatus", std::to_string(auditStatus));
+void ModifyDataLimitRequest::setAuditStatus(int auditStatus) {
+  auditStatus_ = auditStatus;
+  setParameter(std::string("AuditStatus"), std::to_string(auditStatus));
 }
 
-int ModifyDataLimitRequest::getAutoScan()const
-{
-	return autoScan_;
+int ModifyDataLimitRequest::getAutoScan() const {
+  return autoScan_;
 }
 
-void ModifyDataLimitRequest::setAutoScan(int autoScan)
-{
-	autoScan_ = autoScan;
-	setParameter("AutoScan", std::to_string(autoScan));
+void ModifyDataLimitRequest::setAutoScan(int autoScan) {
+  autoScan_ = autoScan;
+  setParameter(std::string("AutoScan"), std::to_string(autoScan));
 }
 
-int ModifyDataLimitRequest::getLogStoreDay()const
-{
-	return logStoreDay_;
+int ModifyDataLimitRequest::getLogStoreDay() const {
+  return logStoreDay_;
 }
 
-void ModifyDataLimitRequest::setLogStoreDay(int logStoreDay)
-{
-	logStoreDay_ = logStoreDay;
-	setParameter("LogStoreDay", std::to_string(logStoreDay));
+void ModifyDataLimitRequest::setLogStoreDay(int logStoreDay) {
+  logStoreDay_ = logStoreDay;
+  setParameter(std::string("LogStoreDay"), std::to_string(logStoreDay));
 }
 
-int ModifyDataLimitRequest::getResourceType()const
-{
-	return resourceType_;
+int ModifyDataLimitRequest::getResourceType() const {
+  return resourceType_;
 }
 
-void ModifyDataLimitRequest::setResourceType(int resourceType)
-{
-	resourceType_ = resourceType;
-	setParameter("ResourceType", std::to_string(resourceType));
+void ModifyDataLimitRequest::setResourceType(int resourceType) {
+  resourceType_ = resourceType;
+  setParameter(std::string("ResourceType"), std::to_string(resourceType));
 }
 
-std::string ModifyDataLimitRequest::getConnector()const
-{
-	return connector_;
+std::string ModifyDataLimitRequest::getConnector() const {
+  return connector_;
 }
 
-void ModifyDataLimitRequest::setConnector(const std::string& connector)
-{
-	connector_ = connector;
-	setParameter("Connector", connector);
+void ModifyDataLimitRequest::setConnector(const std::string &connector) {
+  connector_ = connector;
+  setParameter(std::string("Connector"), connector);
 }
 
-int ModifyDataLimitRequest::getPort()const
-{
-	return port_;
+int ModifyDataLimitRequest::getPort() const {
+  return port_;
 }
 
-void ModifyDataLimitRequest::setPort(int port)
-{
-	port_ = port;
-	setParameter("Port", std::to_string(port));
+void ModifyDataLimitRequest::setPort(int port) {
+  port_ = port;
+  setParameter(std::string("Port"), std::to_string(port));
 }
 
-std::string ModifyDataLimitRequest::getUserName()const
-{
-	return userName_;
+std::string ModifyDataLimitRequest::getUserName() const {
+  return userName_;
 }
 
-void ModifyDataLimitRequest::setUserName(const std::string& userName)
-{
-	userName_ = userName;
-	setParameter("UserName", userName);
+void ModifyDataLimitRequest::setUserName(const std::string &userName) {
+  userName_ = userName;
+  setParameter(std::string("UserName"), userName);
 }
 

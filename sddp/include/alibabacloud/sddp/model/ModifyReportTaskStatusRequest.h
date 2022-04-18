@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SDDP_MODEL_DESCRIBEDATALIMITDETAILREQUEST_H_
-#define ALIBABACLOUD_SDDP_MODEL_DESCRIBEDATALIMITDETAILREQUEST_H_
+#ifndef ALIBABACLOUD_SDDP_MODEL_MODIFYREPORTTASKSTATUSREQUEST_H_
+#define ALIBABACLOUD_SDDP_MODEL_MODIFYREPORTTASKSTATUSREQUEST_H_
 
 #include <alibabacloud/sddp/SddpExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,26 +26,23 @@
 namespace AlibabaCloud {
 namespace Sddp {
 namespace Model {
-class ALIBABACLOUD_SDDP_EXPORT DescribeDataLimitDetailRequest : public RpcServiceRequest {
+class ALIBABACLOUD_SDDP_EXPORT ModifyReportTaskStatusRequest : public RpcServiceRequest {
 public:
-	DescribeDataLimitDetailRequest();
-	~DescribeDataLimitDetailRequest();
-	int getNetworkType() const;
-	void setNetworkType(int networkType);
+	ModifyReportTaskStatusRequest();
+	~ModifyReportTaskStatusRequest();
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
-	long getId() const;
-	void setId(long id);
+	int getReportTaskStatus() const;
+	void setReportTaskStatus(int reportTaskStatus);
 	std::string getLang() const;
 	void setLang(const std::string &lang);
 
 private:
-	int networkType_;
 	std::string sourceIp_;
-	long id_;
+	int reportTaskStatus_;
 	std::string lang_;
 };
 } // namespace Model
 } // namespace Sddp
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_SDDP_MODEL_DESCRIBEDATALIMITDETAILREQUEST_H_
+#endif // !ALIBABACLOUD_SDDP_MODEL_MODIFYREPORTTASKSTATUSREQUEST_H_

@@ -40,72 +40,72 @@ void DescribeEventDetailResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto eventNode = value["Event"];
-	if(!eventNode["Id"].isNull())
-		event_.id = std::stol(eventNode["Id"].asString());
-	if(!eventNode["UserId"].isNull())
-		event_.userId = std::stol(eventNode["UserId"].asString());
-	if(!eventNode["LoginName"].isNull())
-		event_.loginName = eventNode["LoginName"].asString();
 	if(!eventNode["DisplayName"].isNull())
 		event_.displayName = eventNode["DisplayName"].asString();
-	if(!eventNode["ProductCode"].isNull())
-		event_.productCode = eventNode["ProductCode"].asString();
-	if(!eventNode["TypeCode"].isNull())
-		event_.typeCode = eventNode["TypeCode"].asString();
-	if(!eventNode["TypeName"].isNull())
-		event_.typeName = eventNode["TypeName"].asString();
-	if(!eventNode["SubTypeCode"].isNull())
-		event_.subTypeCode = eventNode["SubTypeCode"].asString();
+	if(!eventNode["Status"].isNull())
+		event_.status = std::stoi(eventNode["Status"].asString());
+	if(!eventNode["DealReason"].isNull())
+		event_.dealReason = eventNode["DealReason"].asString();
+	if(!eventNode["UserId"].isNull())
+		event_.userId = std::stol(eventNode["UserId"].asString());
+	if(!eventNode["StatusName"].isNull())
+		event_.statusName = eventNode["StatusName"].asString();
+	if(!eventNode["DepartName"].isNull())
+		event_.departName = eventNode["DepartName"].asString();
+	if(!eventNode["DealTime"].isNull())
+		event_.dealTime = std::stol(eventNode["DealTime"].asString());
+	if(!eventNode["DealLoginName"].isNull())
+		event_.dealLoginName = eventNode["DealLoginName"].asString();
 	if(!eventNode["SubTypeName"].isNull())
 		event_.subTypeName = eventNode["SubTypeName"].asString();
-	if(!eventNode["AlertTime"].isNull())
-		event_.alertTime = std::stol(eventNode["AlertTime"].asString());
+	if(!eventNode["Backed"].isNull())
+		event_.backed = eventNode["Backed"].asString() == "true";
 	if(!eventNode["DataInstance"].isNull())
 		event_.dataInstance = eventNode["DataInstance"].asString();
 	if(!eventNode["EventTime"].isNull())
 		event_.eventTime = std::stol(eventNode["EventTime"].asString());
-	if(!eventNode["Status"].isNull())
-		event_.status = std::stoi(eventNode["Status"].asString());
-	if(!eventNode["StatusName"].isNull())
-		event_.statusName = eventNode["StatusName"].asString();
-	if(!eventNode["DealUserId"].isNull())
-		event_.dealUserId = std::stol(eventNode["DealUserId"].asString());
-	if(!eventNode["DealLoginName"].isNull())
-		event_.dealLoginName = eventNode["DealLoginName"].asString();
-	if(!eventNode["DealDisplayName"].isNull())
-		event_.dealDisplayName = eventNode["DealDisplayName"].asString();
-	if(!eventNode["DealTime"].isNull())
-		event_.dealTime = std::stol(eventNode["DealTime"].asString());
-	if(!eventNode["DepartName"].isNull())
-		event_.departName = eventNode["DepartName"].asString();
-	if(!eventNode["Backed"].isNull())
-		event_.backed = eventNode["Backed"].asString() == "true";
-	if(!eventNode["DealReason"].isNull())
-		event_.dealReason = eventNode["DealReason"].asString();
+	if(!eventNode["LoginName"].isNull())
+		event_.loginName = eventNode["LoginName"].asString();
 	if(!eventNode["UserIdValue"].isNull())
 		event_.userIdValue = eventNode["UserIdValue"].asString();
-	if(!eventNode["dealUserIdValue"].isNull())
-		event_.dealUserIdValue = eventNode["dealUserIdValue"].asString();
+	if(!eventNode["SubTypeCode"].isNull())
+		event_.subTypeCode = eventNode["SubTypeCode"].asString();
 	if(!eventNode["LogDetail"].isNull())
 		event_.logDetail = eventNode["LogDetail"].asString();
+	if(!eventNode["TypeCode"].isNull())
+		event_.typeCode = eventNode["TypeCode"].asString();
+	if(!eventNode["dealUserIdValue"].isNull())
+		event_.dealUserIdValue = eventNode["dealUserIdValue"].asString();
+	if(!eventNode["AlertTime"].isNull())
+		event_.alertTime = std::stol(eventNode["AlertTime"].asString());
+	if(!eventNode["DealUserId"].isNull())
+		event_.dealUserId = std::stol(eventNode["DealUserId"].asString());
+	if(!eventNode["TypeName"].isNull())
+		event_.typeName = eventNode["TypeName"].asString();
+	if(!eventNode["DealDisplayName"].isNull())
+		event_.dealDisplayName = eventNode["DealDisplayName"].asString();
+	if(!eventNode["Id"].isNull())
+		event_.id = std::stol(eventNode["Id"].asString());
+	if(!eventNode["ProductCode"].isNull())
+		event_.productCode = eventNode["ProductCode"].asString();
 	auto allHandleInfoListNode = eventNode["HandleInfoList"]["HandleInfo"];
 	for (auto eventNodeHandleInfoListHandleInfo : allHandleInfoListNode)
 	{
 		Event::HandleInfo handleInfoObject;
-		if(!eventNodeHandleInfoListHandleInfo["HandlerType"].isNull())
-			handleInfoObject.handlerType = eventNodeHandleInfoListHandleInfo["HandlerType"].asString();
-		if(!eventNodeHandleInfoListHandleInfo["HandlerName"].isNull())
-			handleInfoObject.handlerName = eventNodeHandleInfoListHandleInfo["HandlerName"].asString();
-		if(!eventNodeHandleInfoListHandleInfo["HandlerValue"].isNull())
-			handleInfoObject.handlerValue = std::stoi(eventNodeHandleInfoListHandleInfo["HandlerValue"].asString());
-		if(!eventNodeHandleInfoListHandleInfo["CurrentValue"].isNull())
-			handleInfoObject.currentValue = eventNodeHandleInfoListHandleInfo["CurrentValue"].asString();
-		if(!eventNodeHandleInfoListHandleInfo["DisableTime"].isNull())
-			handleInfoObject.disableTime = std::stol(eventNodeHandleInfoListHandleInfo["DisableTime"].asString());
-		if(!eventNodeHandleInfoListHandleInfo["EnableTime"].isNull())
-			handleInfoObject.enableTime = std::stol(eventNodeHandleInfoListHandleInfo["EnableTime"].asString());
 		if(!eventNodeHandleInfoListHandleInfo["Status"].isNull())
 			handleInfoObject.status = std::stoi(eventNodeHandleInfoListHandleInfo["Status"].asString());
+		if(!eventNodeHandleInfoListHandleInfo["EnableTime"].isNull())
+			handleInfoObject.enableTime = std::stol(eventNodeHandleInfoListHandleInfo["EnableTime"].asString());
+		if(!eventNodeHandleInfoListHandleInfo["HandlerValue"].isNull())
+			handleInfoObject.handlerValue = std::stoi(eventNodeHandleInfoListHandleInfo["HandlerValue"].asString());
+		if(!eventNodeHandleInfoListHandleInfo["DisableTime"].isNull())
+			handleInfoObject.disableTime = std::stol(eventNodeHandleInfoListHandleInfo["DisableTime"].asString());
+		if(!eventNodeHandleInfoListHandleInfo["HandlerName"].isNull())
+			handleInfoObject.handlerName = eventNodeHandleInfoListHandleInfo["HandlerName"].asString();
+		if(!eventNodeHandleInfoListHandleInfo["HandlerType"].isNull())
+			handleInfoObject.handlerType = eventNodeHandleInfoListHandleInfo["HandlerType"].asString();
+		if(!eventNodeHandleInfoListHandleInfo["CurrentValue"].isNull())
+			handleInfoObject.currentValue = eventNodeHandleInfoListHandleInfo["CurrentValue"].asString();
 		if(!eventNodeHandleInfoListHandleInfo["Id"].isNull())
 			handleInfoObject.id = std::stol(eventNodeHandleInfoListHandleInfo["Id"].asString());
 		event_.handleInfoList.push_back(handleInfoObject);
@@ -125,19 +125,21 @@ void DescribeEventDetailResult::parse(const std::string &payload)
 	for (auto detailNodeChartChartItem : allChartNode)
 	{
 		Event::Detail::ChartItem chartItemObject;
+		if(!detailNodeChartChartItem["Type"].isNull())
+			chartItemObject.type = detailNodeChartChartItem["Type"].asString();
 		if(!detailNodeChartChartItem["Label"].isNull())
 			chartItemObject.label = detailNodeChartChartItem["Label"].asString();
 		if(!detailNodeChartChartItem["XLabel"].isNull())
 			chartItemObject.xLabel = detailNodeChartChartItem["XLabel"].asString();
 		if(!detailNodeChartChartItem["YLabel"].isNull())
 			chartItemObject.yLabel = detailNodeChartChartItem["YLabel"].asString();
-		if(!detailNodeChartChartItem["Type"].isNull())
-			chartItemObject.type = detailNodeChartChartItem["Type"].asString();
 		auto dataNode = value["Data"];
-		if(!dataNode["X"].isNull())
-			chartItemObject.data.x = dataNode["X"].asString();
-		if(!dataNode["Y"].isNull())
-			chartItemObject.data.y = dataNode["Y"].asString();
+			auto allY = dataNode["Y"]["Y"];
+			for (auto value : allY)
+				chartItemObject.data.y.push_back(value.asString());
+			auto allX = dataNode["X"]["X"];
+			for (auto value : allX)
+				chartItemObject.data.x.push_back(value.asString());
 		event_.detail.chart.push_back(chartItemObject);
 	}
 	auto allResourceInfoNode = detailNode["ResourceInfo"]["ResourceInfoItem"];

@@ -43,34 +43,34 @@ void DescribePackagesResult::parse(const std::string &payload)
 	for (auto valueItemsPackage : allItemsNode)
 	{
 		Package itemsObject;
-		if(!valueItemsPackage["Id"].isNull())
-			itemsObject.id = std::stol(valueItemsPackage["Id"].asString());
-		if(!valueItemsPackage["Name"].isNull())
-			itemsObject.name = valueItemsPackage["Name"].asString();
-		if(!valueItemsPackage["Owner"].isNull())
-			itemsObject.owner = valueItemsPackage["Owner"].asString();
 		if(!valueItemsPackage["CreationTime"].isNull())
 			itemsObject.creationTime = std::stol(valueItemsPackage["CreationTime"].asString());
 		if(!valueItemsPackage["Sensitive"].isNull())
 			itemsObject.sensitive = valueItemsPackage["Sensitive"].asString() == "true";
-		if(!valueItemsPackage["RiskLevelId"].isNull())
-			itemsObject.riskLevelId = std::stol(valueItemsPackage["RiskLevelId"].asString());
+		if(!valueItemsPackage["Owner"].isNull())
+			itemsObject.owner = valueItemsPackage["Owner"].asString();
 		if(!valueItemsPackage["RiskLevelName"].isNull())
 			itemsObject.riskLevelName = valueItemsPackage["RiskLevelName"].asString();
 		if(!valueItemsPackage["DepartName"].isNull())
 			itemsObject.departName = valueItemsPackage["DepartName"].asString();
-		if(!valueItemsPackage["TotalCount"].isNull())
-			itemsObject.totalCount = std::stoi(valueItemsPackage["TotalCount"].asString());
-		if(!valueItemsPackage["SensitiveCount"].isNull())
-			itemsObject.sensitiveCount = std::stoi(valueItemsPackage["SensitiveCount"].asString());
 		if(!valueItemsPackage["InstanceId"].isNull())
 			itemsObject.instanceId = std::stol(valueItemsPackage["InstanceId"].asString());
+		if(!valueItemsPackage["TotalCount"].isNull())
+			itemsObject.totalCount = std::stoi(valueItemsPackage["TotalCount"].asString());
+		if(!valueItemsPackage["Name"].isNull())
+			itemsObject.name = valueItemsPackage["Name"].asString();
+		if(!valueItemsPackage["SensitiveCount"].isNull())
+			itemsObject.sensitiveCount = std::stoi(valueItemsPackage["SensitiveCount"].asString());
+		if(!valueItemsPackage["RiskLevelId"].isNull())
+			itemsObject.riskLevelId = std::stol(valueItemsPackage["RiskLevelId"].asString());
+		if(!valueItemsPackage["Id"].isNull())
+			itemsObject.id = std::stol(valueItemsPackage["Id"].asString());
 		items_.push_back(itemsObject);
 	}
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["CurrentPage"].isNull())
 		currentPage_ = std::stoi(value["CurrentPage"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
 

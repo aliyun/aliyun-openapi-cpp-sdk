@@ -45,8 +45,8 @@ namespace AlibabaCloud
 						{
 							struct Data
 							{
-								std::string x;
-								std::string y;
+								std::vector<std::string> x;
+								std::vector<std::string> y;
 							};
 							std::string yLabel;
 							std::string type;
@@ -75,8 +75,8 @@ namespace AlibabaCloud
 						std::string handlerName;
 					};
 					std::string loginName;
-					std::string typeName;
 					std::string dataInstance;
+					std::string typeName;
 					bool backed;
 					std::string userIdValue;
 					std::vector<HandleInfo> handleInfoList;
@@ -85,12 +85,12 @@ namespace AlibabaCloud
 					std::string dealUserIdValue;
 					std::string displayName;
 					int status;
-					std::string productCode;
 					std::string typeCode;
+					std::string productCode;
 					std::string statusName;
 					std::string subTypeCode;
-					long alertTime;
 					std::string departName;
+					long alertTime;
 					std::string dealReason;
 					std::string logDetail;
 					std::string dealDisplayName;

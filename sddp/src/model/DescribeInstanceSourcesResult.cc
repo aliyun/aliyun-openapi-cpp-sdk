@@ -43,58 +43,64 @@ void DescribeInstanceSourcesResult::parse(const std::string &payload)
 	for (auto valueItemsInstanceSource : allItemsNode)
 	{
 		InstanceSource itemsObject;
-		if(!valueItemsInstanceSource["RegionId"].isNull())
-			itemsObject.regionId = valueItemsInstanceSource["RegionId"].asString();
-		if(!valueItemsInstanceSource["RegionName"].isNull())
-			itemsObject.regionName = valueItemsInstanceSource["RegionName"].asString();
-		if(!valueItemsInstanceSource["InstanceId"].isNull())
-			itemsObject.instanceId = valueItemsInstanceSource["InstanceId"].asString();
-		if(!valueItemsInstanceSource["Id"].isNull())
-			itemsObject.id = std::stol(valueItemsInstanceSource["Id"].asString());
-		if(!valueItemsInstanceSource["UserName"].isNull())
-			itemsObject.userName = valueItemsInstanceSource["UserName"].asString();
-		if(!valueItemsInstanceSource["DbName"].isNull())
-			itemsObject.dbName = valueItemsInstanceSource["DbName"].asString();
-		if(!valueItemsInstanceSource["DataLimitId"].isNull())
-			itemsObject.dataLimitId = std::stol(valueItemsInstanceSource["DataLimitId"].asString());
-		if(!valueItemsInstanceSource["GmtCreate"].isNull())
-			itemsObject.gmtCreate = std::stol(valueItemsInstanceSource["GmtCreate"].asString());
-		if(!valueItemsInstanceSource["ProductId"].isNull())
-			itemsObject.productId = std::stol(valueItemsInstanceSource["ProductId"].asString());
-		if(!valueItemsInstanceSource["AuditStatus"].isNull())
-			itemsObject.auditStatus = std::stoi(valueItemsInstanceSource["AuditStatus"].asString());
-		if(!valueItemsInstanceSource["LogStoreDay"].isNull())
-			itemsObject.logStoreDay = std::stoi(valueItemsInstanceSource["LogStoreDay"].asString());
-		if(!valueItemsInstanceSource["Enable"].isNull())
-			itemsObject.enable = std::stoi(valueItemsInstanceSource["Enable"].asString());
-		if(!valueItemsInstanceSource["AutoScan"].isNull())
-			itemsObject.autoScan = std::stoi(valueItemsInstanceSource["AutoScan"].asString());
-		if(!valueItemsInstanceSource["EngineType"].isNull())
-			itemsObject.engineType = valueItemsInstanceSource["EngineType"].asString();
-		if(!valueItemsInstanceSource["InstanceSize"].isNull())
-			itemsObject.instanceSize = std::stol(valueItemsInstanceSource["InstanceSize"].asString());
-		if(!valueItemsInstanceSource["PasswordStatus"].isNull())
-			itemsObject.passwordStatus = std::stoi(valueItemsInstanceSource["PasswordStatus"].asString());
 		if(!valueItemsInstanceSource["LastModifyUserId"].isNull())
 			itemsObject.lastModifyUserId = valueItemsInstanceSource["LastModifyUserId"].asString();
-		if(!valueItemsInstanceSource["LastModifyTime"].isNull())
-			itemsObject.lastModifyTime = std::stol(valueItemsInstanceSource["LastModifyTime"].asString());
-		if(!valueItemsInstanceSource["TenantId"].isNull())
-			itemsObject.tenantId = valueItemsInstanceSource["TenantId"].asString();
+		if(!valueItemsInstanceSource["PasswordStatus"].isNull())
+			itemsObject.passwordStatus = std::stoi(valueItemsInstanceSource["PasswordStatus"].asString());
+		if(!valueItemsInstanceSource["EngineType"].isNull())
+			itemsObject.engineType = valueItemsInstanceSource["EngineType"].asString();
 		if(!valueItemsInstanceSource["TenantName"].isNull())
 			itemsObject.tenantName = valueItemsInstanceSource["TenantName"].asString();
+		if(!valueItemsInstanceSource["InstanceId"].isNull())
+			itemsObject.instanceId = valueItemsInstanceSource["InstanceId"].asString();
 		if(!valueItemsInstanceSource["InstanceDescription"].isNull())
 			itemsObject.instanceDescription = valueItemsInstanceSource["InstanceDescription"].asString();
+		if(!valueItemsInstanceSource["DataLimitId"].isNull())
+			itemsObject.dataLimitId = std::stol(valueItemsInstanceSource["DataLimitId"].asString());
+		if(!valueItemsInstanceSource["RegionId"].isNull())
+			itemsObject.regionId = valueItemsInstanceSource["RegionId"].asString();
+		if(!valueItemsInstanceSource["DbName"].isNull())
+			itemsObject.dbName = valueItemsInstanceSource["DbName"].asString();
+		if(!valueItemsInstanceSource["LastModifyTime"].isNull())
+			itemsObject.lastModifyTime = std::stol(valueItemsInstanceSource["LastModifyTime"].asString());
+		if(!valueItemsInstanceSource["RegionName"].isNull())
+			itemsObject.regionName = valueItemsInstanceSource["RegionName"].asString();
 		if(!valueItemsInstanceSource["CanModifyUserName"].isNull())
 			itemsObject.canModifyUserName = valueItemsInstanceSource["CanModifyUserName"].asString() == "true";
-		if(!valueItemsInstanceSource["InstanceDescription"].isNull())
-			itemsObject.instanceDescription1 = valueItemsInstanceSource["InstanceDescription"].asString();
+		if(!valueItemsInstanceSource["LogStoreDay"].isNull())
+			itemsObject.logStoreDay = std::stoi(valueItemsInstanceSource["LogStoreDay"].asString());
+		if(!valueItemsInstanceSource["GmtCreate"].isNull())
+			itemsObject.gmtCreate = std::stol(valueItemsInstanceSource["GmtCreate"].asString());
+		if(!valueItemsInstanceSource["AutoScan"].isNull())
+			itemsObject.autoScan = std::stoi(valueItemsInstanceSource["AutoScan"].asString());
+		if(!valueItemsInstanceSource["ProductId"].isNull())
+			itemsObject.productId = std::stol(valueItemsInstanceSource["ProductId"].asString());
+		if(!valueItemsInstanceSource["InstanceSize"].isNull())
+			itemsObject.instanceSize = std::stol(valueItemsInstanceSource["InstanceSize"].asString());
+		if(!valueItemsInstanceSource["UserName"].isNull())
+			itemsObject.userName = valueItemsInstanceSource["UserName"].asString();
+		if(!valueItemsInstanceSource["AuditStatus"].isNull())
+			itemsObject.auditStatus = std::stoi(valueItemsInstanceSource["AuditStatus"].asString());
+		if(!valueItemsInstanceSource["Id"].isNull())
+			itemsObject.id = std::stol(valueItemsInstanceSource["Id"].asString());
+		if(!valueItemsInstanceSource["TenantId"].isNull())
+			itemsObject.tenantId = valueItemsInstanceSource["TenantId"].asString();
+		if(!valueItemsInstanceSource["Enable"].isNull())
+			itemsObject.enable = std::stoi(valueItemsInstanceSource["Enable"].asString());
+		if(!valueItemsInstanceSource["CheckStatus"].isNull())
+			itemsObject.checkStatus = std::stoi(valueItemsInstanceSource["CheckStatus"].asString());
+		if(!valueItemsInstanceSource["DatamaskStatus"].isNull())
+			itemsObject.datamaskStatus = std::stoi(valueItemsInstanceSource["DatamaskStatus"].asString());
+		if(!valueItemsInstanceSource["ErrorMessage"].isNull())
+			itemsObject.errorMessage = valueItemsInstanceSource["ErrorMessage"].asString();
+		if(!valueItemsInstanceSource["SamplingSize"].isNull())
+			itemsObject.samplingSize = std::stoi(valueItemsInstanceSource["SamplingSize"].asString());
 		items_.push_back(itemsObject);
 	}
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["CurrentPage"].isNull())
 		currentPage_ = std::stoi(value["CurrentPage"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
 

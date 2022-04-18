@@ -14,31 +14,31 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/sddp/model/DescribeUserStatusRequest.h>
+#include <alibabacloud/sddp/model/CreateSlrRoleRequest.h>
 
-using AlibabaCloud::Sddp::Model::DescribeUserStatusRequest;
+using AlibabaCloud::Sddp::Model::CreateSlrRoleRequest;
 
-DescribeUserStatusRequest::DescribeUserStatusRequest()
-    : RpcServiceRequest("sddp", "2019-01-03", "DescribeUserStatus") {
+CreateSlrRoleRequest::CreateSlrRoleRequest()
+    : RpcServiceRequest("sddp", "2019-01-03", "CreateSlrRole") {
   setMethod(HttpRequest::Method::Post);
 }
 
-DescribeUserStatusRequest::~DescribeUserStatusRequest() {}
+CreateSlrRoleRequest::~CreateSlrRoleRequest() {}
 
-std::string DescribeUserStatusRequest::getSourceIp() const {
+std::string CreateSlrRoleRequest::getSourceIp() const {
   return sourceIp_;
 }
 
-void DescribeUserStatusRequest::setSourceIp(const std::string &sourceIp) {
+void CreateSlrRoleRequest::setSourceIp(const std::string &sourceIp) {
   sourceIp_ = sourceIp;
   setParameter(std::string("SourceIp"), sourceIp);
 }
 
-std::string DescribeUserStatusRequest::getLang() const {
+std::string CreateSlrRoleRequest::getLang() const {
   return lang_;
 }
 
-void DescribeUserStatusRequest::setLang(const std::string &lang) {
+void CreateSlrRoleRequest::setLang(const std::string &lang) {
   lang_ = lang;
   setParameter(std::string("Lang"), lang);
 }

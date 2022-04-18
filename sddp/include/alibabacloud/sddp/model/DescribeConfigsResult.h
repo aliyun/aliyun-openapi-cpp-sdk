@@ -36,9 +36,9 @@ namespace AlibabaCloud
 				{
 					std::string defaultValue;
 					std::string description;
-					long value;
+					std::string value;
 					long id;
-					int code;
+					std::string code;
 				};
 
 

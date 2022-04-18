@@ -58,21 +58,21 @@ namespace AlibabaCloud
 					std::string tenantName;
 					long resourceType;
 					std::string localName;
-					long gmtCreate;
 					int totalCount;
+					long gmtCreate;
 					int auditStatus;
 					int datamaskStatus;
 					int autoScan;
-					std::string resourceTypeCode;
 					long nextStartTime;
-					bool supportAudit;
+					std::string resourceTypeCode;
 					std::string instanceDescription;
-					std::string regionId;
-					long id;
+					bool supportAudit;
 					std::string errorCode;
 					int ocrStatus;
-					std::string checkStatusName;
+					std::string regionId;
+					long id;
 					std::string errorMessage;
+					std::string checkStatusName;
 					int processTotalCount;
 				};
 

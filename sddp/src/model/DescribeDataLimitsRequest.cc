@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,166 +18,136 @@
 
 using AlibabaCloud::Sddp::Model::DescribeDataLimitsRequest;
 
-DescribeDataLimitsRequest::DescribeDataLimitsRequest() :
-	RpcServiceRequest("sddp", "2019-01-03", "DescribeDataLimits")
-{
-	setMethod(HttpRequest::Method::Post);
+DescribeDataLimitsRequest::DescribeDataLimitsRequest()
+    : RpcServiceRequest("sddp", "2019-01-03", "DescribeDataLimits") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DescribeDataLimitsRequest::~DescribeDataLimitsRequest()
-{}
+DescribeDataLimitsRequest::~DescribeDataLimitsRequest() {}
 
-long DescribeDataLimitsRequest::getStartTime()const
-{
-	return startTime_;
+long DescribeDataLimitsRequest::getStartTime() const {
+  return startTime_;
 }
 
-void DescribeDataLimitsRequest::setStartTime(long startTime)
-{
-	startTime_ = startTime;
-	setParameter("StartTime", std::to_string(startTime));
+void DescribeDataLimitsRequest::setStartTime(long startTime) {
+  startTime_ = startTime;
+  setParameter(std::string("StartTime"), std::to_string(startTime));
 }
 
-std::string DescribeDataLimitsRequest::getParentId()const
-{
-	return parentId_;
+std::string DescribeDataLimitsRequest::getParentId() const {
+  return parentId_;
 }
 
-void DescribeDataLimitsRequest::setParentId(const std::string& parentId)
-{
-	parentId_ = parentId;
-	setParameter("ParentId", parentId);
+void DescribeDataLimitsRequest::setParentId(const std::string &parentId) {
+  parentId_ = parentId;
+  setParameter(std::string("ParentId"), parentId);
 }
 
-std::string DescribeDataLimitsRequest::getSourceIp()const
-{
-	return sourceIp_;
+std::string DescribeDataLimitsRequest::getSourceIp() const {
+  return sourceIp_;
 }
 
-void DescribeDataLimitsRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
+void DescribeDataLimitsRequest::setSourceIp(const std::string &sourceIp) {
+  sourceIp_ = sourceIp;
+  setParameter(std::string("SourceIp"), sourceIp);
 }
 
-int DescribeDataLimitsRequest::getEnable()const
-{
-	return enable_;
+int DescribeDataLimitsRequest::getEnable() const {
+  return enable_;
 }
 
-void DescribeDataLimitsRequest::setEnable(int enable)
-{
-	enable_ = enable;
-	setParameter("Enable", std::to_string(enable));
+void DescribeDataLimitsRequest::setEnable(int enable) {
+  enable_ = enable;
+  setParameter(std::string("Enable"), std::to_string(enable));
 }
 
-int DescribeDataLimitsRequest::getPageSize()const
-{
-	return pageSize_;
+int DescribeDataLimitsRequest::getPageSize() const {
+  return pageSize_;
 }
 
-void DescribeDataLimitsRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+void DescribeDataLimitsRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
-int DescribeDataLimitsRequest::getCheckStatus()const
-{
-	return checkStatus_;
+int DescribeDataLimitsRequest::getCheckStatus() const {
+  return checkStatus_;
 }
 
-void DescribeDataLimitsRequest::setCheckStatus(int checkStatus)
-{
-	checkStatus_ = checkStatus;
-	setParameter("CheckStatus", std::to_string(checkStatus));
+void DescribeDataLimitsRequest::setCheckStatus(int checkStatus) {
+  checkStatus_ = checkStatus;
+  setParameter(std::string("CheckStatus"), std::to_string(checkStatus));
 }
 
-int DescribeDataLimitsRequest::getDatamaskStatus()const
-{
-	return datamaskStatus_;
+int DescribeDataLimitsRequest::getDatamaskStatus() const {
+  return datamaskStatus_;
 }
 
-void DescribeDataLimitsRequest::setDatamaskStatus(int datamaskStatus)
-{
-	datamaskStatus_ = datamaskStatus;
-	setParameter("DatamaskStatus", std::to_string(datamaskStatus));
+void DescribeDataLimitsRequest::setDatamaskStatus(int datamaskStatus) {
+  datamaskStatus_ = datamaskStatus;
+  setParameter(std::string("DatamaskStatus"), std::to_string(datamaskStatus));
 }
 
-std::string DescribeDataLimitsRequest::getLang()const
-{
-	return lang_;
+std::string DescribeDataLimitsRequest::getLang() const {
+  return lang_;
 }
 
-void DescribeDataLimitsRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setParameter("Lang", lang);
+void DescribeDataLimitsRequest::setLang(const std::string &lang) {
+  lang_ = lang;
+  setParameter(std::string("Lang"), lang);
 }
 
-std::string DescribeDataLimitsRequest::getServiceRegionId()const
-{
-	return serviceRegionId_;
+std::string DescribeDataLimitsRequest::getServiceRegionId() const {
+  return serviceRegionId_;
 }
 
-void DescribeDataLimitsRequest::setServiceRegionId(const std::string& serviceRegionId)
-{
-	serviceRegionId_ = serviceRegionId;
-	setParameter("ServiceRegionId", serviceRegionId);
+void DescribeDataLimitsRequest::setServiceRegionId(const std::string &serviceRegionId) {
+  serviceRegionId_ = serviceRegionId;
+  setParameter(std::string("ServiceRegionId"), serviceRegionId);
 }
 
-std::string DescribeDataLimitsRequest::getEngineType()const
-{
-	return engineType_;
+std::string DescribeDataLimitsRequest::getEngineType() const {
+  return engineType_;
 }
 
-void DescribeDataLimitsRequest::setEngineType(const std::string& engineType)
-{
-	engineType_ = engineType;
-	setParameter("EngineType", engineType);
+void DescribeDataLimitsRequest::setEngineType(const std::string &engineType) {
+  engineType_ = engineType;
+  setParameter(std::string("EngineType"), engineType);
 }
 
-int DescribeDataLimitsRequest::getAuditStatus()const
-{
-	return auditStatus_;
+int DescribeDataLimitsRequest::getAuditStatus() const {
+  return auditStatus_;
 }
 
-void DescribeDataLimitsRequest::setAuditStatus(int auditStatus)
-{
-	auditStatus_ = auditStatus;
-	setParameter("AuditStatus", std::to_string(auditStatus));
+void DescribeDataLimitsRequest::setAuditStatus(int auditStatus) {
+  auditStatus_ = auditStatus;
+  setParameter(std::string("AuditStatus"), std::to_string(auditStatus));
 }
 
-long DescribeDataLimitsRequest::getEndTime()const
-{
-	return endTime_;
+long DescribeDataLimitsRequest::getEndTime() const {
+  return endTime_;
 }
 
-void DescribeDataLimitsRequest::setEndTime(long endTime)
-{
-	endTime_ = endTime;
-	setParameter("EndTime", std::to_string(endTime));
+void DescribeDataLimitsRequest::setEndTime(long endTime) {
+  endTime_ = endTime;
+  setParameter(std::string("EndTime"), std::to_string(endTime));
 }
 
-int DescribeDataLimitsRequest::getCurrentPage()const
-{
-	return currentPage_;
+int DescribeDataLimitsRequest::getCurrentPage() const {
+  return currentPage_;
 }
 
-void DescribeDataLimitsRequest::setCurrentPage(int currentPage)
-{
-	currentPage_ = currentPage;
-	setParameter("CurrentPage", std::to_string(currentPage));
+void DescribeDataLimitsRequest::setCurrentPage(int currentPage) {
+  currentPage_ = currentPage;
+  setParameter(std::string("CurrentPage"), std::to_string(currentPage));
 }
 
-int DescribeDataLimitsRequest::getResourceType()const
-{
-	return resourceType_;
+int DescribeDataLimitsRequest::getResourceType() const {
+  return resourceType_;
 }
 
-void DescribeDataLimitsRequest::setResourceType(int resourceType)
-{
-	resourceType_ = resourceType;
-	setParameter("ResourceType", std::to_string(resourceType));
+void DescribeDataLimitsRequest::setResourceType(int resourceType) {
+  resourceType_ = resourceType;
+  setParameter(std::string("ResourceType"), std::to_string(resourceType));
 }
 

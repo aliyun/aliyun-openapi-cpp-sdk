@@ -43,16 +43,16 @@ void DescribeConfigsResult::parse(const std::string &payload)
 	for (auto valueConfigListConfig : allConfigListNode)
 	{
 		Config configListObject;
-		if(!valueConfigListConfig["Id"].isNull())
-			configListObject.id = std::stol(valueConfigListConfig["Id"].asString());
 		if(!valueConfigListConfig["Code"].isNull())
-			configListObject.code = std::stoi(valueConfigListConfig["Code"].asString());
-		if(!valueConfigListConfig["Description"].isNull())
-			configListObject.description = valueConfigListConfig["Description"].asString();
+			configListObject.code = valueConfigListConfig["Code"].asString();
 		if(!valueConfigListConfig["Value"].isNull())
-			configListObject.value = std::stol(valueConfigListConfig["Value"].asString());
+			configListObject.value = valueConfigListConfig["Value"].asString();
 		if(!valueConfigListConfig["DefaultValue"].isNull())
 			configListObject.defaultValue = valueConfigListConfig["DefaultValue"].asString();
+		if(!valueConfigListConfig["Description"].isNull())
+			configListObject.description = valueConfigListConfig["Description"].asString();
+		if(!valueConfigListConfig["Id"].isNull())
+			configListObject.id = std::stol(valueConfigListConfig["Id"].asString());
 		configList_.push_back(configListObject);
 	}
 

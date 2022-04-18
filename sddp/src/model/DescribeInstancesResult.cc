@@ -43,72 +43,74 @@ void DescribeInstancesResult::parse(const std::string &payload)
 	for (auto valueItemsInstance : allItemsNode)
 	{
 		Instance itemsObject;
-		if(!valueItemsInstance["Id"].isNull())
-			itemsObject.id = std::stol(valueItemsInstance["Id"].asString());
-		if(!valueItemsInstance["Name"].isNull())
-			itemsObject.name = valueItemsInstance["Name"].asString();
-		if(!valueItemsInstance["Owner"].isNull())
-			itemsObject.owner = valueItemsInstance["Owner"].asString();
 		if(!valueItemsInstance["CreationTime"].isNull())
 			itemsObject.creationTime = std::stol(valueItemsInstance["CreationTime"].asString());
-		if(!valueItemsInstance["ProductId"].isNull())
-			itemsObject.productId = valueItemsInstance["ProductId"].asString();
-		if(!valueItemsInstance["ProductCode"].isNull())
-			itemsObject.productCode = valueItemsInstance["ProductCode"].asString();
-		if(!valueItemsInstance["Protection"].isNull())
-			itemsObject.protection = valueItemsInstance["Protection"].asString() == "true";
-		if(!valueItemsInstance["Labelsec"].isNull())
-			itemsObject.labelsec = valueItemsInstance["Labelsec"].asString() == "true";
-		if(!valueItemsInstance["OdpsRiskLevelName"].isNull())
-			itemsObject.odpsRiskLevelName = valueItemsInstance["OdpsRiskLevelName"].asString();
-		if(!valueItemsInstance["Sensitive"].isNull())
-			itemsObject.sensitive = valueItemsInstance["Sensitive"].asString() == "true";
-		if(!valueItemsInstance["RiskLevelId"].isNull())
-			itemsObject.riskLevelId = std::stol(valueItemsInstance["RiskLevelId"].asString());
-		if(!valueItemsInstance["RiskLevelName"].isNull())
-			itemsObject.riskLevelName = valueItemsInstance["RiskLevelName"].asString();
-		if(!valueItemsInstance["RuleName"].isNull())
-			itemsObject.ruleName = valueItemsInstance["RuleName"].asString();
-		if(!valueItemsInstance["DepartName"].isNull())
-			itemsObject.departName = valueItemsInstance["DepartName"].asString();
-		if(!valueItemsInstance["TotalCount"].isNull())
-			itemsObject.totalCount = std::stoi(valueItemsInstance["TotalCount"].asString());
-		if(!valueItemsInstance["SensitiveCount"].isNull())
-			itemsObject.sensitiveCount = std::stoi(valueItemsInstance["SensitiveCount"].asString());
 		if(!valueItemsInstance["Acl"].isNull())
 			itemsObject.acl = valueItemsInstance["Acl"].asString();
-		if(!valueItemsInstance["S2Count"].isNull())
-			itemsObject.s2Count = std::stoi(valueItemsInstance["S2Count"].asString());
-		if(!valueItemsInstance["S3Count"].isNull())
-			itemsObject.s3Count = std::stoi(valueItemsInstance["S3Count"].asString());
-		if(!valueItemsInstance["CountDetails"].isNull())
-			itemsObject.countDetails = valueItemsInstance["CountDetails"].asString();
 		if(!valueItemsInstance["LastFinishTime"].isNull())
 			itemsObject.lastFinishTime = std::stol(valueItemsInstance["LastFinishTime"].asString());
-		if(!valueItemsInstance["RegionName"].isNull())
-			itemsObject.regionName = valueItemsInstance["RegionName"].asString();
-		if(!valueItemsInstance["RegionId"].isNull())
-			itemsObject.regionId = valueItemsInstance["RegionId"].asString();
-		if(!valueItemsInstance["EngineType"].isNull())
-			itemsObject.engineType = valueItemsInstance["EngineType"].asString();
-		if(!valueItemsInstance["S1Count"].isNull())
-			itemsObject.s1Count = std::stoi(valueItemsInstance["S1Count"].asString());
-		if(!valueItemsInstance["RiskScore"].isNull())
-			itemsObject.riskScore = std::stof(valueItemsInstance["RiskScore"].asString());
-		if(!valueItemsInstance["LastRiskScore"].isNull())
-			itemsObject.lastRiskScore = std::stof(valueItemsInstance["LastRiskScore"].asString());
-		if(!valueItemsInstance["SensLevelName"].isNull())
-			itemsObject.sensLevelName = valueItemsInstance["SensLevelName"].asString();
-		if(!valueItemsInstance["InstanceDescription"].isNull())
-			itemsObject.instanceDescription = valueItemsInstance["InstanceDescription"].asString();
+		if(!valueItemsInstance["Owner"].isNull())
+			itemsObject.owner = valueItemsInstance["Owner"].asString();
+		if(!valueItemsInstance["CountDetails"].isNull())
+			itemsObject.countDetails = valueItemsInstance["CountDetails"].asString();
+		if(!valueItemsInstance["FileCountDetails"].isNull())
+			itemsObject.fileCountDetails = valueItemsInstance["FileCountDetails"].asString();
 		if(!valueItemsInstance["TenantName"].isNull())
 			itemsObject.tenantName = valueItemsInstance["TenantName"].asString();
+		if(!valueItemsInstance["Protection"].isNull())
+			itemsObject.protection = valueItemsInstance["Protection"].asString() == "true";
+		if(!valueItemsInstance["DepartName"].isNull())
+			itemsObject.departName = valueItemsInstance["DepartName"].asString();
+		if(!valueItemsInstance["Labelsec"].isNull())
+			itemsObject.labelsec = valueItemsInstance["Labelsec"].asString() == "true";
+		if(!valueItemsInstance["RiskScore"].isNull())
+			itemsObject.riskScore = std::stof(valueItemsInstance["RiskScore"].asString());
+		if(!valueItemsInstance["RiskLevelId"].isNull())
+			itemsObject.riskLevelId = std::stol(valueItemsInstance["RiskLevelId"].asString());
+		if(!valueItemsInstance["S3Count"].isNull())
+			itemsObject.s3Count = std::stoi(valueItemsInstance["S3Count"].asString());
+		if(!valueItemsInstance["S1Count"].isNull())
+			itemsObject.s1Count = std::stoi(valueItemsInstance["S1Count"].asString());
+		if(!valueItemsInstance["ProductId"].isNull())
+			itemsObject.productId = valueItemsInstance["ProductId"].asString();
+		if(!valueItemsInstance["Name"].isNull())
+			itemsObject.name = valueItemsInstance["Name"].asString();
+		if(!valueItemsInstance["S2Count"].isNull())
+			itemsObject.s2Count = std::stoi(valueItemsInstance["S2Count"].asString());
+		if(!valueItemsInstance["EngineType"].isNull())
+			itemsObject.engineType = valueItemsInstance["EngineType"].asString();
+		if(!valueItemsInstance["TotalCount"].isNull())
+			itemsObject.totalCount = std::stoi(valueItemsInstance["TotalCount"].asString());
+		if(!valueItemsInstance["InstanceDescription"].isNull())
+			itemsObject.instanceDescription = valueItemsInstance["InstanceDescription"].asString();
+		if(!valueItemsInstance["RuleName"].isNull())
+			itemsObject.ruleName = valueItemsInstance["RuleName"].asString();
+		if(!valueItemsInstance["RegionId"].isNull())
+			itemsObject.regionId = valueItemsInstance["RegionId"].asString();
+		if(!valueItemsInstance["Sensitive"].isNull())
+			itemsObject.sensitive = valueItemsInstance["Sensitive"].asString() == "true";
+		if(!valueItemsInstance["SensLevelName"].isNull())
+			itemsObject.sensLevelName = valueItemsInstance["SensLevelName"].asString();
+		if(!valueItemsInstance["RegionName"].isNull())
+			itemsObject.regionName = valueItemsInstance["RegionName"].asString();
+		if(!valueItemsInstance["LastRiskScore"].isNull())
+			itemsObject.lastRiskScore = std::stof(valueItemsInstance["LastRiskScore"].asString());
+		if(!valueItemsInstance["RiskLevelName"].isNull())
+			itemsObject.riskLevelName = valueItemsInstance["RiskLevelName"].asString();
+		if(!valueItemsInstance["OdpsRiskLevelName"].isNull())
+			itemsObject.odpsRiskLevelName = valueItemsInstance["OdpsRiskLevelName"].asString();
+		if(!valueItemsInstance["SensitiveCount"].isNull())
+			itemsObject.sensitiveCount = std::stoi(valueItemsInstance["SensitiveCount"].asString());
+		if(!valueItemsInstance["Id"].isNull())
+			itemsObject.id = std::stol(valueItemsInstance["Id"].asString());
+		if(!valueItemsInstance["ProductCode"].isNull())
+			itemsObject.productCode = valueItemsInstance["ProductCode"].asString();
 		items_.push_back(itemsObject);
 	}
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["CurrentPage"].isNull())
 		currentPage_ = std::stoi(value["CurrentPage"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
 

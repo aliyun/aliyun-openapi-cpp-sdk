@@ -21,8 +21,6 @@ set(sddp_public_header
 	include/alibabacloud/sddp/SddpExport.h )
 
 set(sddp_public_header_model 
-	include/alibabacloud/sddp/model/BatchDeleteDataLimitRequest.h
-	include/alibabacloud/sddp/model/BatchDeleteDataLimitResult.h
 	include/alibabacloud/sddp/model/CreateConfigRequest.h
 	include/alibabacloud/sddp/model/CreateConfigResult.h
 	include/alibabacloud/sddp/model/CreateDataLimitRequest.h
@@ -31,14 +29,14 @@ set(sddp_public_header_model
 	include/alibabacloud/sddp/model/CreateRuleResult.h
 	include/alibabacloud/sddp/model/CreateScanTaskRequest.h
 	include/alibabacloud/sddp/model/CreateScanTaskResult.h
+	include/alibabacloud/sddp/model/CreateSlrRoleRequest.h
+	include/alibabacloud/sddp/model/CreateSlrRoleResult.h
 	include/alibabacloud/sddp/model/DeleteDataLimitRequest.h
 	include/alibabacloud/sddp/model/DeleteDataLimitResult.h
 	include/alibabacloud/sddp/model/DeleteRuleRequest.h
 	include/alibabacloud/sddp/model/DeleteRuleResult.h
-	include/alibabacloud/sddp/model/DescribeAccountDetailRequest.h
-	include/alibabacloud/sddp/model/DescribeAccountDetailResult.h
-	include/alibabacloud/sddp/model/DescribeAccountsRequest.h
-	include/alibabacloud/sddp/model/DescribeAccountsResult.h
+	include/alibabacloud/sddp/model/DescribeCategoryTemplateRuleListRequest.h
+	include/alibabacloud/sddp/model/DescribeCategoryTemplateRuleListResult.h
 	include/alibabacloud/sddp/model/DescribeColumnsRequest.h
 	include/alibabacloud/sddp/model/DescribeColumnsResult.h
 	include/alibabacloud/sddp/model/DescribeConfigsRequest.h
@@ -51,26 +49,16 @@ set(sddp_public_header_model
 	include/alibabacloud/sddp/model/DescribeDataLimitSetResult.h
 	include/alibabacloud/sddp/model/DescribeDataLimitsRequest.h
 	include/alibabacloud/sddp/model/DescribeDataLimitsResult.h
-	include/alibabacloud/sddp/model/DescribeDataLimitsInstanceDimRequest.h
-	include/alibabacloud/sddp/model/DescribeDataLimitsInstanceDimResult.h
 	include/alibabacloud/sddp/model/DescribeDataMaskingRunHistoryRequest.h
 	include/alibabacloud/sddp/model/DescribeDataMaskingRunHistoryResult.h
 	include/alibabacloud/sddp/model/DescribeDataMaskingTasksRequest.h
 	include/alibabacloud/sddp/model/DescribeDataMaskingTasksResult.h
-	include/alibabacloud/sddp/model/DescribeDataTotalCountRequest.h
-	include/alibabacloud/sddp/model/DescribeDataTotalCountResult.h
 	include/alibabacloud/sddp/model/DescribeEventDetailRequest.h
 	include/alibabacloud/sddp/model/DescribeEventDetailResult.h
-	include/alibabacloud/sddp/model/DescribeEventTopRequest.h
-	include/alibabacloud/sddp/model/DescribeEventTopResult.h
 	include/alibabacloud/sddp/model/DescribeEventTypesRequest.h
 	include/alibabacloud/sddp/model/DescribeEventTypesResult.h
-	include/alibabacloud/sddp/model/DescribeEventTypesDetailRequest.h
-	include/alibabacloud/sddp/model/DescribeEventTypesDetailResult.h
 	include/alibabacloud/sddp/model/DescribeEventsRequest.h
 	include/alibabacloud/sddp/model/DescribeEventsResult.h
-	include/alibabacloud/sddp/model/DescribeInstancePortraitRequest.h
-	include/alibabacloud/sddp/model/DescribeInstancePortraitResult.h
 	include/alibabacloud/sddp/model/DescribeInstanceSourcesRequest.h
 	include/alibabacloud/sddp/model/DescribeInstanceSourcesResult.h
 	include/alibabacloud/sddp/model/DescribeInstancesRequest.h
@@ -83,14 +71,10 @@ set(sddp_public_header_model
 	include/alibabacloud/sddp/model/DescribePackagesResult.h
 	include/alibabacloud/sddp/model/DescribeRiskLevelsRequest.h
 	include/alibabacloud/sddp/model/DescribeRiskLevelsResult.h
-	include/alibabacloud/sddp/model/DescribeRuleCategoryRequest.h
-	include/alibabacloud/sddp/model/DescribeRuleCategoryResult.h
 	include/alibabacloud/sddp/model/DescribeRulesRequest.h
 	include/alibabacloud/sddp/model/DescribeRulesResult.h
 	include/alibabacloud/sddp/model/DescribeTablesRequest.h
 	include/alibabacloud/sddp/model/DescribeTablesResult.h
-	include/alibabacloud/sddp/model/DescribeUserCountRequest.h
-	include/alibabacloud/sddp/model/DescribeUserCountResult.h
 	include/alibabacloud/sddp/model/DescribeUserStatusRequest.h
 	include/alibabacloud/sddp/model/DescribeUserStatusResult.h
 	include/alibabacloud/sddp/model/DisableUserConfigRequest.h
@@ -107,6 +91,8 @@ set(sddp_public_header_model
 	include/alibabacloud/sddp/model/ModifyEventStatusResult.h
 	include/alibabacloud/sddp/model/ModifyEventTypeStatusRequest.h
 	include/alibabacloud/sddp/model/ModifyEventTypeStatusResult.h
+	include/alibabacloud/sddp/model/ModifyReportTaskStatusRequest.h
+	include/alibabacloud/sddp/model/ModifyReportTaskStatusResult.h
 	include/alibabacloud/sddp/model/ModifyRuleRequest.h
 	include/alibabacloud/sddp/model/ModifyRuleResult.h
 	include/alibabacloud/sddp/model/ModifyRuleStatusRequest.h
@@ -116,8 +102,6 @@ set(sddp_public_header_model
 
 set(sddp_src 
 	src/SddpClient.cc
-	src/model/BatchDeleteDataLimitRequest.cc
-	src/model/BatchDeleteDataLimitResult.cc
 	src/model/CreateConfigRequest.cc
 	src/model/CreateConfigResult.cc
 	src/model/CreateDataLimitRequest.cc
@@ -126,14 +110,14 @@ set(sddp_src
 	src/model/CreateRuleResult.cc
 	src/model/CreateScanTaskRequest.cc
 	src/model/CreateScanTaskResult.cc
+	src/model/CreateSlrRoleRequest.cc
+	src/model/CreateSlrRoleResult.cc
 	src/model/DeleteDataLimitRequest.cc
 	src/model/DeleteDataLimitResult.cc
 	src/model/DeleteRuleRequest.cc
 	src/model/DeleteRuleResult.cc
-	src/model/DescribeAccountDetailRequest.cc
-	src/model/DescribeAccountDetailResult.cc
-	src/model/DescribeAccountsRequest.cc
-	src/model/DescribeAccountsResult.cc
+	src/model/DescribeCategoryTemplateRuleListRequest.cc
+	src/model/DescribeCategoryTemplateRuleListResult.cc
 	src/model/DescribeColumnsRequest.cc
 	src/model/DescribeColumnsResult.cc
 	src/model/DescribeConfigsRequest.cc
@@ -146,26 +130,16 @@ set(sddp_src
 	src/model/DescribeDataLimitSetResult.cc
 	src/model/DescribeDataLimitsRequest.cc
 	src/model/DescribeDataLimitsResult.cc
-	src/model/DescribeDataLimitsInstanceDimRequest.cc
-	src/model/DescribeDataLimitsInstanceDimResult.cc
 	src/model/DescribeDataMaskingRunHistoryRequest.cc
 	src/model/DescribeDataMaskingRunHistoryResult.cc
 	src/model/DescribeDataMaskingTasksRequest.cc
 	src/model/DescribeDataMaskingTasksResult.cc
-	src/model/DescribeDataTotalCountRequest.cc
-	src/model/DescribeDataTotalCountResult.cc
 	src/model/DescribeEventDetailRequest.cc
 	src/model/DescribeEventDetailResult.cc
-	src/model/DescribeEventTopRequest.cc
-	src/model/DescribeEventTopResult.cc
 	src/model/DescribeEventTypesRequest.cc
 	src/model/DescribeEventTypesResult.cc
-	src/model/DescribeEventTypesDetailRequest.cc
-	src/model/DescribeEventTypesDetailResult.cc
 	src/model/DescribeEventsRequest.cc
 	src/model/DescribeEventsResult.cc
-	src/model/DescribeInstancePortraitRequest.cc
-	src/model/DescribeInstancePortraitResult.cc
 	src/model/DescribeInstanceSourcesRequest.cc
 	src/model/DescribeInstanceSourcesResult.cc
 	src/model/DescribeInstancesRequest.cc
@@ -178,14 +152,10 @@ set(sddp_src
 	src/model/DescribePackagesResult.cc
 	src/model/DescribeRiskLevelsRequest.cc
 	src/model/DescribeRiskLevelsResult.cc
-	src/model/DescribeRuleCategoryRequest.cc
-	src/model/DescribeRuleCategoryResult.cc
 	src/model/DescribeRulesRequest.cc
 	src/model/DescribeRulesResult.cc
 	src/model/DescribeTablesRequest.cc
 	src/model/DescribeTablesResult.cc
-	src/model/DescribeUserCountRequest.cc
-	src/model/DescribeUserCountResult.cc
 	src/model/DescribeUserStatusRequest.cc
 	src/model/DescribeUserStatusResult.cc
 	src/model/DisableUserConfigRequest.cc
@@ -202,6 +172,8 @@ set(sddp_src
 	src/model/ModifyEventStatusResult.cc
 	src/model/ModifyEventTypeStatusRequest.cc
 	src/model/ModifyEventTypeStatusResult.cc
+	src/model/ModifyReportTaskStatusRequest.cc
+	src/model/ModifyReportTaskStatusResult.cc
 	src/model/ModifyRuleRequest.cc
 	src/model/ModifyRuleResult.cc
 	src/model/ModifyRuleStatusRequest.cc

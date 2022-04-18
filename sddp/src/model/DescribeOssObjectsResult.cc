@@ -43,54 +43,54 @@ void DescribeOssObjectsResult::parse(const std::string &payload)
 	for (auto valueItemsColumn : allItemsNode)
 	{
 		Column itemsObject;
-		if(!valueItemsColumn["Id"].isNull())
-			itemsObject.id = valueItemsColumn["Id"].asString();
-		if(!valueItemsColumn["Name"].isNull())
-			itemsObject.name = valueItemsColumn["Name"].asString();
-		if(!valueItemsColumn["RegionId"].isNull())
-			itemsObject.regionId = valueItemsColumn["RegionId"].asString();
-		if(!valueItemsColumn["RiskLevelId"].isNull())
-			itemsObject.riskLevelId = std::stol(valueItemsColumn["RiskLevelId"].asString());
-		if(!valueItemsColumn["Category"].isNull())
-			itemsObject.category = std::stol(valueItemsColumn["Category"].asString());
 		if(!valueItemsColumn["InstanceId"].isNull())
 			itemsObject.instanceId = std::stol(valueItemsColumn["InstanceId"].asString());
-		if(!valueItemsColumn["FileId"].isNull())
-			itemsObject.fileId = valueItemsColumn["FileId"].asString();
-		if(!valueItemsColumn["RiskLevelName"].isNull())
-			itemsObject.riskLevelName = valueItemsColumn["RiskLevelName"].asString();
-		if(!valueItemsColumn["Size"].isNull())
-			itemsObject.size = std::stol(valueItemsColumn["Size"].asString());
-		if(!valueItemsColumn["SensitiveCount"].isNull())
-			itemsObject.sensitiveCount = std::stoi(valueItemsColumn["SensitiveCount"].asString());
-		if(!valueItemsColumn["RuleCount"].isNull())
-			itemsObject.ruleCount = std::stoi(valueItemsColumn["RuleCount"].asString());
 		if(!valueItemsColumn["CategoryName"].isNull())
 			itemsObject.categoryName = valueItemsColumn["CategoryName"].asString();
-		if(!valueItemsColumn["BucketName"].isNull())
-			itemsObject.bucketName = valueItemsColumn["BucketName"].asString();
-		if(!valueItemsColumn["RegionName"].isNull())
-			itemsObject.regionName = valueItemsColumn["RegionName"].asString();
+		if(!valueItemsColumn["RiskLevelId"].isNull())
+			itemsObject.riskLevelId = std::stol(valueItemsColumn["RiskLevelId"].asString());
+		if(!valueItemsColumn["RegionId"].isNull())
+			itemsObject.regionId = valueItemsColumn["RegionId"].asString();
+		if(!valueItemsColumn["FileId"].isNull())
+			itemsObject.fileId = valueItemsColumn["FileId"].asString();
 		if(!valueItemsColumn["LastScanTime"].isNull())
 			itemsObject.lastScanTime = std::stol(valueItemsColumn["LastScanTime"].asString());
+		if(!valueItemsColumn["RegionName"].isNull())
+			itemsObject.regionName = valueItemsColumn["RegionName"].asString();
+		if(!valueItemsColumn["Size"].isNull())
+			itemsObject.size = std::stol(valueItemsColumn["Size"].asString());
+		if(!valueItemsColumn["BucketName"].isNull())
+			itemsObject.bucketName = valueItemsColumn["BucketName"].asString();
+		if(!valueItemsColumn["RiskLevelName"].isNull())
+			itemsObject.riskLevelName = valueItemsColumn["RiskLevelName"].asString();
+		if(!valueItemsColumn["Category"].isNull())
+			itemsObject.category = std::stol(valueItemsColumn["Category"].asString());
+		if(!valueItemsColumn["Name"].isNull())
+			itemsObject.name = valueItemsColumn["Name"].asString();
+		if(!valueItemsColumn["RuleCount"].isNull())
+			itemsObject.ruleCount = std::stoi(valueItemsColumn["RuleCount"].asString());
+		if(!valueItemsColumn["SensitiveCount"].isNull())
+			itemsObject.sensitiveCount = std::stoi(valueItemsColumn["SensitiveCount"].asString());
+		if(!valueItemsColumn["Id"].isNull())
+			itemsObject.id = valueItemsColumn["Id"].asString();
 		auto allRuleListNode = valueItemsColumn["RuleList"]["Rule"];
 		for (auto valueItemsColumnRuleListRule : allRuleListNode)
 		{
 			Column::Rule ruleListObject;
 			if(!valueItemsColumnRuleListRule["Name"].isNull())
 				ruleListObject.name = valueItemsColumnRuleListRule["Name"].asString();
-			if(!valueItemsColumnRuleListRule["Count"].isNull())
-				ruleListObject.count = std::stol(valueItemsColumnRuleListRule["Count"].asString());
 			if(!valueItemsColumnRuleListRule["RiskLevelId"].isNull())
 				ruleListObject.riskLevelId = std::stol(valueItemsColumnRuleListRule["RiskLevelId"].asString());
+			if(!valueItemsColumnRuleListRule["Count"].isNull())
+				ruleListObject.count = std::stol(valueItemsColumnRuleListRule["Count"].asString());
 			itemsObject.ruleList.push_back(ruleListObject);
 		}
 		items_.push_back(itemsObject);
 	}
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["CurrentPage"].isNull())
 		currentPage_ = std::stoi(value["CurrentPage"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
 

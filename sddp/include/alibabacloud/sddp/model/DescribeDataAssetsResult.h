@@ -43,12 +43,12 @@ namespace AlibabaCloud
 					std::string acl;
 					long riskLevelId;
 					std::string departName;
-					std::string name;
 					bool labelsec;
+					std::string name;
 					int totalCount;
 					long creationTime;
-					bool sensitive;
 					std::string dataType;
+					bool sensitive;
 					std::string riskLevelName;
 					std::string id;
 					int sensitiveCount;

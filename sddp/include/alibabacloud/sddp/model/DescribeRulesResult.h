@@ -45,13 +45,13 @@ namespace AlibabaCloud
 					std::string target;
 					int warnLevel;
 					std::string displayName;
-					int customType;
 					int status;
+					int customType;
 					std::string productCode;
 					std::string departName;
 					int hitTotalCount;
-					std::string majorKey;
 					std::string groupId;
+					std::string majorKey;
 					long gmtCreate;
 					long userId;
 					std::string content;

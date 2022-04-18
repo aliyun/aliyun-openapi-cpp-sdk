@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SDDP_MODEL_DESCRIBEEVENTTYPESDETAILRESULT_H_
-#define ALIBABACLOUD_SDDP_MODEL_DESCRIBEEVENTTYPESDETAILRESULT_H_
+#ifndef ALIBABACLOUD_SDDP_MODEL_DESCRIBECATEGORYTEMPLATERULELISTRESULT_H_
+#define ALIBABACLOUD_SDDP_MODEL_DESCRIBECATEGORYTEMPLATERULELISTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,45 +29,44 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SDDP_EXPORT DescribeEventTypesDetailResult : public ServiceResult
+			class ALIBABACLOUD_SDDP_EXPORT DescribeCategoryTemplateRuleListResult : public ServiceResult
 			{
 			public:
-				struct UserStatus
+				struct DataLimit
 				{
 					int status;
-					int eventHitCount;
-					std::string configValue;
+					int customType;
+					std::string identificationRuleIds;
+					std::string identificationScope;
 					std::string description;
-					std::string riskEvent;
-					std::string descModel;
-					std::string configDescription;
-					std::string dealSuggestion;
-					std::string parentTypeName;
-					std::string code;
-					std::string descEvent;
-					std::string riskName;
+					int orderNum;
+					int categoryLevel;
+					long id;
+					long riskLevelId;
+					long parentCategoryId;
+					long templateId;
 					std::string name;
-					std::string adaptedProduct;
-					std::string configCode;
-					long parentTypeId;
-					int configContentType;
-					int riskLevel;
-					int accessCount;
 				};
 
 
-				DescribeEventTypesDetailResult();
-				explicit DescribeEventTypesDetailResult(const std::string &payload);
-				~DescribeEventTypesDetailResult();
-				UserStatus getUserStatus()const;
+				DescribeCategoryTemplateRuleListResult();
+				explicit DescribeCategoryTemplateRuleListResult(const std::string &payload);
+				~DescribeCategoryTemplateRuleListResult();
+				int getTotalCount()const;
+				int getPageSize()const;
+				int getCurrentPage()const;
+				std::vector<DataLimit> getItems()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				UserStatus userStatus_;
+				int totalCount_;
+				int pageSize_;
+				int currentPage_;
+				std::vector<DataLimit> items_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SDDP_MODEL_DESCRIBEEVENTTYPESDETAILRESULT_H_
+#endif // !ALIBABACLOUD_SDDP_MODEL_DESCRIBECATEGORYTEMPLATERULELISTRESULT_H_

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SDDP_MODEL_DESCRIBEDATALIMITDETAILREQUEST_H_
-#define ALIBABACLOUD_SDDP_MODEL_DESCRIBEDATALIMITDETAILREQUEST_H_
+#ifndef ALIBABACLOUD_SDDP_MODEL_DESCRIBECATEGORYTEMPLATERULELISTREQUEST_H_
+#define ALIBABACLOUD_SDDP_MODEL_DESCRIBECATEGORYTEMPLATERULELISTREQUEST_H_
 
 #include <alibabacloud/sddp/SddpExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,26 +26,41 @@
 namespace AlibabaCloud {
 namespace Sddp {
 namespace Model {
-class ALIBABACLOUD_SDDP_EXPORT DescribeDataLimitDetailRequest : public RpcServiceRequest {
+class ALIBABACLOUD_SDDP_EXPORT DescribeCategoryTemplateRuleListRequest : public RpcServiceRequest {
 public:
-	DescribeDataLimitDetailRequest();
-	~DescribeDataLimitDetailRequest();
-	int getNetworkType() const;
-	void setNetworkType(int networkType);
+	DescribeCategoryTemplateRuleListRequest();
+	~DescribeCategoryTemplateRuleListRequest();
+	long getRiskLevelId() const;
+	void setRiskLevelId(long riskLevelId);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
-	long getId() const;
-	void setId(long id);
+	int getPageSize() const;
+	void setPageSize(int pageSize);
 	std::string getLang() const;
 	void setLang(const std::string &lang);
+	std::string getParentCategoryIdList() const;
+	void setParentCategoryIdList(const std::string &parentCategoryIdList);
+	int getCurrentPage() const;
+	void setCurrentPage(int currentPage);
+	long getTemplateId() const;
+	void setTemplateId(long templateId);
+	int getCustomType() const;
+	void setCustomType(int customType);
+	int getStatus() const;
+	void setStatus(int status);
 
 private:
-	int networkType_;
+	long riskLevelId_;
 	std::string sourceIp_;
-	long id_;
+	int pageSize_;
 	std::string lang_;
+	std::string parentCategoryIdList_;
+	int currentPage_;
+	long templateId_;
+	int customType_;
+	int status_;
 };
 } // namespace Model
 } // namespace Sddp
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_SDDP_MODEL_DESCRIBEDATALIMITDETAILREQUEST_H_
+#endif // !ALIBABACLOUD_SDDP_MODEL_DESCRIBECATEGORYTEMPLATERULELISTREQUEST_H_

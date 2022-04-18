@@ -43,14 +43,14 @@ void DescribeRiskLevelsResult::parse(const std::string &payload)
 	for (auto valueRiskLevelListRiskLevel : allRiskLevelListNode)
 	{
 		RiskLevel riskLevelListObject;
-		if(!valueRiskLevelListRiskLevel["Id"].isNull())
-			riskLevelListObject.id = std::stol(valueRiskLevelListRiskLevel["Id"].asString());
-		if(!valueRiskLevelListRiskLevel["Description"].isNull())
-			riskLevelListObject.description = valueRiskLevelListRiskLevel["Description"].asString();
 		if(!valueRiskLevelListRiskLevel["Name"].isNull())
 			riskLevelListObject.name = valueRiskLevelListRiskLevel["Name"].asString();
+		if(!valueRiskLevelListRiskLevel["Description"].isNull())
+			riskLevelListObject.description = valueRiskLevelListRiskLevel["Description"].asString();
 		if(!valueRiskLevelListRiskLevel["Alias"].isNull())
 			riskLevelListObject.alias = valueRiskLevelListRiskLevel["Alias"].asString();
+		if(!valueRiskLevelListRiskLevel["Id"].isNull())
+			riskLevelListObject.id = std::stol(valueRiskLevelListRiskLevel["Id"].asString());
 		if(!valueRiskLevelListRiskLevel["ReferenceNum"].isNull())
 			riskLevelListObject.referenceNum = std::stoi(valueRiskLevelListRiskLevel["ReferenceNum"].asString());
 		riskLevelList_.push_back(riskLevelListObject);

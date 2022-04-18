@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SDDP_MODEL_DESCRIBEUSERCOUNTREQUEST_H_
-#define ALIBABACLOUD_SDDP_MODEL_DESCRIBEUSERCOUNTREQUEST_H_
+#ifndef ALIBABACLOUD_SDDP_MODEL_CREATESLRROLERESULT_H_
+#define ALIBABACLOUD_SDDP_MODEL_CREATESLRROLERESULT_H_
 
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
+#include <utility>
+#include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/sddp/SddpExport.h>
 
 namespace AlibabaCloud
@@ -28,24 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SDDP_EXPORT DescribeUserCountRequest : public RpcServiceRequest
+			class ALIBABACLOUD_SDDP_EXPORT CreateSlrRoleResult : public ServiceResult
 			{
-
 			public:
-				DescribeUserCountRequest();
-				~DescribeUserCountRequest();
 
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
-				std::string getLang()const;
-				void setLang(const std::string& lang);
 
-            private:
-				std::string sourceIp_;
-				std::string lang_;
+				CreateSlrRoleResult();
+				explicit CreateSlrRoleResult(const std::string &payload);
+				~CreateSlrRoleResult();
+				bool getHasPermission()const;
+
+			protected:
+				void parse(const std::string &payload);
+			private:
+				bool hasPermission_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SDDP_MODEL_DESCRIBEUSERCOUNTREQUEST_H_
+#endif // !ALIBABACLOUD_SDDP_MODEL_CREATESLRROLERESULT_H_

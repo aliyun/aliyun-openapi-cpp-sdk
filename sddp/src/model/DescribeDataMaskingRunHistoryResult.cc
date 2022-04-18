@@ -43,50 +43,50 @@ void DescribeDataMaskingRunHistoryResult::parse(const std::string &payload)
 	for (auto valueItemsTask : allItemsNode)
 	{
 		Task itemsObject;
-		if(!valueItemsTask["Id"].isNull())
-			itemsObject.id = std::stol(valueItemsTask["Id"].asString());
-		if(!valueItemsTask["TaskId"].isNull())
-			itemsObject.taskId = valueItemsTask["TaskId"].asString();
-		if(!valueItemsTask["StartTime"].isNull())
-			itemsObject.startTime = std::stol(valueItemsTask["StartTime"].asString());
+		if(!valueItemsTask["Status"].isNull())
+			itemsObject.status = std::stoi(valueItemsTask["Status"].asString());
+		if(!valueItemsTask["Type"].isNull())
+			itemsObject.type = std::stoi(valueItemsTask["Type"].asString());
+		if(!valueItemsTask["SrcType"].isNull())
+			itemsObject.srcType = std::stoi(valueItemsTask["SrcType"].asString());
+		if(!valueItemsTask["SrcTableName"].isNull())
+			itemsObject.srcTableName = valueItemsTask["SrcTableName"].asString();
+		if(!valueItemsTask["MaskingCount"].isNull())
+			itemsObject.maskingCount = std::stol(valueItemsTask["MaskingCount"].asString());
+		if(!valueItemsTask["Percentage"].isNull())
+			itemsObject.percentage = std::stoi(valueItemsTask["Percentage"].asString());
+		if(!valueItemsTask["DstType"].isNull())
+			itemsObject.dstType = std::stoi(valueItemsTask["DstType"].asString());
+		if(!valueItemsTask["FailMsg"].isNull())
+			itemsObject.failMsg = valueItemsTask["FailMsg"].asString();
+		if(!valueItemsTask["FailCode"].isNull())
+			itemsObject.failCode = valueItemsTask["FailCode"].asString();
+		if(!valueItemsTask["ConflictCount"].isNull())
+			itemsObject.conflictCount = std::stol(valueItemsTask["ConflictCount"].asString());
+		if(!valueItemsTask["DstTypeCode"].isNull())
+			itemsObject.dstTypeCode = valueItemsTask["DstTypeCode"].asString();
 		if(!valueItemsTask["EndTime"].isNull())
 			itemsObject.endTime = std::stol(valueItemsTask["EndTime"].asString());
 		if(!valueItemsTask["RunIndex"].isNull())
 			itemsObject.runIndex = std::stoi(valueItemsTask["RunIndex"].asString());
-		if(!valueItemsTask["Type"].isNull())
-			itemsObject.type = std::stoi(valueItemsTask["Type"].asString());
-		if(!valueItemsTask["DstType"].isNull())
-			itemsObject.dstType = std::stoi(valueItemsTask["DstType"].asString());
-		if(!valueItemsTask["Percentage"].isNull())
-			itemsObject.percentage = std::stoi(valueItemsTask["Percentage"].asString());
-		if(!valueItemsTask["SrcType"].isNull())
-			itemsObject.srcType = std::stoi(valueItemsTask["SrcType"].asString());
-		if(!valueItemsTask["MaskingCount"].isNull())
-			itemsObject.maskingCount = std::stol(valueItemsTask["MaskingCount"].asString());
-		if(!valueItemsTask["ConflictCount"].isNull())
-			itemsObject.conflictCount = std::stol(valueItemsTask["ConflictCount"].asString());
-		if(!valueItemsTask["Status"].isNull())
-			itemsObject.status = std::stoi(valueItemsTask["Status"].asString());
-		if(!valueItemsTask["FailCode"].isNull())
-			itemsObject.failCode = valueItemsTask["FailCode"].asString();
-		if(!valueItemsTask["DstTypeCode"].isNull())
-			itemsObject.dstTypeCode = valueItemsTask["DstTypeCode"].asString();
-		if(!valueItemsTask["SrcTypeCode"].isNull())
-			itemsObject.srcTypeCode = valueItemsTask["SrcTypeCode"].asString();
+		if(!valueItemsTask["StartTime"].isNull())
+			itemsObject.startTime = std::stol(valueItemsTask["StartTime"].asString());
 		if(!valueItemsTask["HasSubProcess"].isNull())
 			itemsObject.hasSubProcess = std::stoi(valueItemsTask["HasSubProcess"].asString());
 		if(!valueItemsTask["HasDownloadFile"].isNull())
 			itemsObject.hasDownloadFile = std::stoi(valueItemsTask["HasDownloadFile"].asString());
-		if(!valueItemsTask["SrcTableName"].isNull())
-			itemsObject.srcTableName = valueItemsTask["SrcTableName"].asString();
-		if(!valueItemsTask["FailMsg"].isNull())
-			itemsObject.failMsg = valueItemsTask["FailMsg"].asString();
+		if(!valueItemsTask["TaskId"].isNull())
+			itemsObject.taskId = valueItemsTask["TaskId"].asString();
+		if(!valueItemsTask["SrcTypeCode"].isNull())
+			itemsObject.srcTypeCode = valueItemsTask["SrcTypeCode"].asString();
+		if(!valueItemsTask["Id"].isNull())
+			itemsObject.id = std::stol(valueItemsTask["Id"].asString());
 		items_.push_back(itemsObject);
 	}
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["CurrentPage"].isNull())
 		currentPage_ = std::stoi(value["CurrentPage"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
 

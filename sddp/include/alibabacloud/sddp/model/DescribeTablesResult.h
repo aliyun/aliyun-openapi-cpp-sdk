@@ -47,12 +47,14 @@ namespace AlibabaCloud
 					int s2Count;
 					long riskLevelId;
 					std::string name;
-					int totalRows;
+					std::string objectHex;
 					std::string regionName;
+					int totalRows;
 					int s1Count;
 					bool sensitive;
-					std::string productCode;
+					int dataType;
 					long instanceId;
+					std::string productCode;
 					std::string tenantName;
 					std::string sensitiveRatio;
 					std::string countDetails;
@@ -62,8 +64,8 @@ namespace AlibabaCloud
 					int totalCount;
 					std::string sensLevelName;
 					long creationTime;
-					std::string riskLevelName;
 					std::string instanceDescription;
+					std::string riskLevelName;
 					long id;
 					int sensitiveCount;
 					int s3Count;

@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,199 +18,163 @@
 
 using AlibabaCloud::Sddp::Model::CreateDataLimitRequest;
 
-CreateDataLimitRequest::CreateDataLimitRequest() :
-	RpcServiceRequest("sddp", "2019-01-03", "CreateDataLimit")
-{
-	setMethod(HttpRequest::Method::Post);
+CreateDataLimitRequest::CreateDataLimitRequest()
+    : RpcServiceRequest("sddp", "2019-01-03", "CreateDataLimit") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-CreateDataLimitRequest::~CreateDataLimitRequest()
-{}
+CreateDataLimitRequest::~CreateDataLimitRequest() {}
 
-int CreateDataLimitRequest::getOcrStatus()const
-{
-	return ocrStatus_;
+int CreateDataLimitRequest::getOcrStatus() const {
+  return ocrStatus_;
 }
 
-void CreateDataLimitRequest::setOcrStatus(int ocrStatus)
-{
-	ocrStatus_ = ocrStatus;
-	setParameter("OcrStatus", std::to_string(ocrStatus));
+void CreateDataLimitRequest::setOcrStatus(int ocrStatus) {
+  ocrStatus_ = ocrStatus;
+  setParameter(std::string("OcrStatus"), std::to_string(ocrStatus));
 }
 
-std::string CreateDataLimitRequest::getParentId()const
-{
-	return parentId_;
+std::string CreateDataLimitRequest::getParentId() const {
+  return parentId_;
 }
 
-void CreateDataLimitRequest::setParentId(const std::string& parentId)
-{
-	parentId_ = parentId;
-	setParameter("ParentId", parentId);
+void CreateDataLimitRequest::setParentId(const std::string &parentId) {
+  parentId_ = parentId;
+  setParameter(std::string("ParentId"), parentId);
 }
 
-std::string CreateDataLimitRequest::getPassword()const
-{
-	return password_;
+std::string CreateDataLimitRequest::getPassword() const {
+  return password_;
 }
 
-void CreateDataLimitRequest::setPassword(const std::string& password)
-{
-	password_ = password;
-	setParameter("Password", password);
+void CreateDataLimitRequest::setPassword(const std::string &password) {
+  password_ = password;
+  setParameter(std::string("Password"), password);
 }
 
-bool CreateDataLimitRequest::getBatchCreate()const
-{
-	return batchCreate_;
+bool CreateDataLimitRequest::getBatchCreate() const {
+  return batchCreate_;
 }
 
-void CreateDataLimitRequest::setBatchCreate(bool batchCreate)
-{
-	batchCreate_ = batchCreate;
-	setParameter("BatchCreate", batchCreate ? "true" : "false");
+void CreateDataLimitRequest::setBatchCreate(bool batchCreate) {
+  batchCreate_ = batchCreate;
+  setParameter(std::string("BatchCreate"), batchCreate ? "true" : "false");
 }
 
-std::string CreateDataLimitRequest::getSourceIp()const
-{
-	return sourceIp_;
+std::string CreateDataLimitRequest::getSourceIp() const {
+  return sourceIp_;
 }
 
-void CreateDataLimitRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
+void CreateDataLimitRequest::setSourceIp(const std::string &sourceIp) {
+  sourceIp_ = sourceIp;
+  setParameter(std::string("SourceIp"), sourceIp);
 }
 
-std::string CreateDataLimitRequest::getDataLimitList()const
-{
-	return dataLimitList_;
+std::string CreateDataLimitRequest::getDataLimitList() const {
+  return dataLimitList_;
 }
 
-void CreateDataLimitRequest::setDataLimitList(const std::string& dataLimitList)
-{
-	dataLimitList_ = dataLimitList;
-	setParameter("DataLimitList", dataLimitList);
+void CreateDataLimitRequest::setDataLimitList(const std::string &dataLimitList) {
+  dataLimitList_ = dataLimitList;
+  setParameter(std::string("DataLimitList"), dataLimitList);
 }
 
-std::string CreateDataLimitRequest::getLang()const
-{
-	return lang_;
+std::string CreateDataLimitRequest::getLang() const {
+  return lang_;
 }
 
-void CreateDataLimitRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setParameter("Lang", lang);
+void CreateDataLimitRequest::setLang(const std::string &lang) {
+  lang_ = lang;
+  setParameter(std::string("Lang"), lang);
 }
 
-std::string CreateDataLimitRequest::getServiceRegionId()const
-{
-	return serviceRegionId_;
+std::string CreateDataLimitRequest::getServiceRegionId() const {
+  return serviceRegionId_;
 }
 
-void CreateDataLimitRequest::setServiceRegionId(const std::string& serviceRegionId)
-{
-	serviceRegionId_ = serviceRegionId;
-	setParameter("ServiceRegionId", serviceRegionId);
+void CreateDataLimitRequest::setServiceRegionId(const std::string &serviceRegionId) {
+  serviceRegionId_ = serviceRegionId;
+  setParameter(std::string("ServiceRegionId"), serviceRegionId);
 }
 
-std::string CreateDataLimitRequest::getEngineType()const
-{
-	return engineType_;
+std::string CreateDataLimitRequest::getEngineType() const {
+  return engineType_;
 }
 
-void CreateDataLimitRequest::setEngineType(const std::string& engineType)
-{
-	engineType_ = engineType;
-	setParameter("EngineType", engineType);
+void CreateDataLimitRequest::setEngineType(const std::string &engineType) {
+  engineType_ = engineType;
+  setParameter(std::string("EngineType"), engineType);
 }
 
-int CreateDataLimitRequest::getAuditStatus()const
-{
-	return auditStatus_;
+int CreateDataLimitRequest::getAuditStatus() const {
+  return auditStatus_;
 }
 
-void CreateDataLimitRequest::setAuditStatus(int auditStatus)
-{
-	auditStatus_ = auditStatus;
-	setParameter("AuditStatus", std::to_string(auditStatus));
+void CreateDataLimitRequest::setAuditStatus(int auditStatus) {
+  auditStatus_ = auditStatus;
+  setParameter(std::string("AuditStatus"), std::to_string(auditStatus));
 }
 
-int CreateDataLimitRequest::getAutoScan()const
-{
-	return autoScan_;
+int CreateDataLimitRequest::getAutoScan() const {
+  return autoScan_;
 }
 
-void CreateDataLimitRequest::setAutoScan(int autoScan)
-{
-	autoScan_ = autoScan;
-	setParameter("AutoScan", std::to_string(autoScan));
+void CreateDataLimitRequest::setAutoScan(int autoScan) {
+  autoScan_ = autoScan;
+  setParameter(std::string("AutoScan"), std::to_string(autoScan));
 }
 
-int CreateDataLimitRequest::getLogStoreDay()const
-{
-	return logStoreDay_;
+int CreateDataLimitRequest::getLogStoreDay() const {
+  return logStoreDay_;
 }
 
-void CreateDataLimitRequest::setLogStoreDay(int logStoreDay)
-{
-	logStoreDay_ = logStoreDay;
-	setParameter("LogStoreDay", std::to_string(logStoreDay));
+void CreateDataLimitRequest::setLogStoreDay(int logStoreDay) {
+  logStoreDay_ = logStoreDay;
+  setParameter(std::string("LogStoreDay"), std::to_string(logStoreDay));
 }
 
-int CreateDataLimitRequest::getResourceType()const
-{
-	return resourceType_;
+int CreateDataLimitRequest::getResourceType() const {
+  return resourceType_;
 }
 
-void CreateDataLimitRequest::setResourceType(int resourceType)
-{
-	resourceType_ = resourceType;
-	setParameter("ResourceType", std::to_string(resourceType));
+void CreateDataLimitRequest::setResourceType(int resourceType) {
+  resourceType_ = resourceType;
+  setParameter(std::string("ResourceType"), std::to_string(resourceType));
 }
 
-std::string CreateDataLimitRequest::getConnector()const
-{
-	return connector_;
+std::string CreateDataLimitRequest::getConnector() const {
+  return connector_;
 }
 
-void CreateDataLimitRequest::setConnector(const std::string& connector)
-{
-	connector_ = connector;
-	setParameter("Connector", connector);
+void CreateDataLimitRequest::setConnector(const std::string &connector) {
+  connector_ = connector;
+  setParameter(std::string("Connector"), connector);
 }
 
-int CreateDataLimitRequest::getPort()const
-{
-	return port_;
+int CreateDataLimitRequest::getPort() const {
+  return port_;
 }
 
-void CreateDataLimitRequest::setPort(int port)
-{
-	port_ = port;
-	setParameter("Port", std::to_string(port));
+void CreateDataLimitRequest::setPort(int port) {
+  port_ = port;
+  setParameter(std::string("Port"), std::to_string(port));
 }
 
-int CreateDataLimitRequest::getEventStatus()const
-{
-	return eventStatus_;
+int CreateDataLimitRequest::getEventStatus() const {
+  return eventStatus_;
 }
 
-void CreateDataLimitRequest::setEventStatus(int eventStatus)
-{
-	eventStatus_ = eventStatus;
-	setParameter("EventStatus", std::to_string(eventStatus));
+void CreateDataLimitRequest::setEventStatus(int eventStatus) {
+  eventStatus_ = eventStatus;
+  setParameter(std::string("EventStatus"), std::to_string(eventStatus));
 }
 
-std::string CreateDataLimitRequest::getUserName()const
-{
-	return userName_;
+std::string CreateDataLimitRequest::getUserName() const {
+  return userName_;
 }
 
-void CreateDataLimitRequest::setUserName(const std::string& userName)
-{
-	userName_ = userName;
-	setParameter("UserName", userName);
+void CreateDataLimitRequest::setUserName(const std::string &userName) {
+  userName_ = userName;
+  setParameter(std::string("UserName"), userName);
 }
 

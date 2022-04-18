@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,199 +18,163 @@
 
 using AlibabaCloud::Sddp::Model::CreateRuleRequest;
 
-CreateRuleRequest::CreateRuleRequest() :
-	RpcServiceRequest("sddp", "2019-01-03", "CreateRule")
-{
-	setMethod(HttpRequest::Method::Post);
+CreateRuleRequest::CreateRuleRequest()
+    : RpcServiceRequest("sddp", "2019-01-03", "CreateRule") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-CreateRuleRequest::~CreateRuleRequest()
-{}
+CreateRuleRequest::~CreateRuleRequest() {}
 
-int CreateRuleRequest::getWarnLevel()const
-{
-	return warnLevel_;
+int CreateRuleRequest::getWarnLevel() const {
+  return warnLevel_;
 }
 
-void CreateRuleRequest::setWarnLevel(int warnLevel)
-{
-	warnLevel_ = warnLevel;
-	setParameter("WarnLevel", std::to_string(warnLevel));
+void CreateRuleRequest::setWarnLevel(int warnLevel) {
+  warnLevel_ = warnLevel;
+  setParameter(std::string("WarnLevel"), std::to_string(warnLevel));
 }
 
-std::string CreateRuleRequest::getProductCode()const
-{
-	return productCode_;
+std::string CreateRuleRequest::getProductCode() const {
+  return productCode_;
 }
 
-void CreateRuleRequest::setProductCode(const std::string& productCode)
-{
-	productCode_ = productCode;
-	setParameter("ProductCode", productCode);
+void CreateRuleRequest::setProductCode(const std::string &productCode) {
+  productCode_ = productCode;
+  setParameter(std::string("ProductCode"), productCode);
 }
 
-long CreateRuleRequest::getProductId()const
-{
-	return productId_;
+long CreateRuleRequest::getProductId() const {
+  return productId_;
 }
 
-void CreateRuleRequest::setProductId(long productId)
-{
-	productId_ = productId;
-	setParameter("ProductId", std::to_string(productId));
+void CreateRuleRequest::setProductId(long productId) {
+  productId_ = productId;
+  setParameter(std::string("ProductId"), std::to_string(productId));
 }
 
-std::string CreateRuleRequest::getDescription()const
-{
-	return description_;
+std::string CreateRuleRequest::getDescription() const {
+  return description_;
 }
 
-void CreateRuleRequest::setDescription(const std::string& description)
-{
-	description_ = description;
-	setParameter("Description", description);
+void CreateRuleRequest::setDescription(const std::string &description) {
+  description_ = description;
+  setParameter(std::string("Description"), description);
 }
 
-long CreateRuleRequest::getRiskLevelId()const
-{
-	return riskLevelId_;
+long CreateRuleRequest::getRiskLevelId() const {
+  return riskLevelId_;
 }
 
-void CreateRuleRequest::setRiskLevelId(long riskLevelId)
-{
-	riskLevelId_ = riskLevelId;
-	setParameter("RiskLevelId", std::to_string(riskLevelId));
+void CreateRuleRequest::setRiskLevelId(long riskLevelId) {
+  riskLevelId_ = riskLevelId;
+  setParameter(std::string("RiskLevelId"), std::to_string(riskLevelId));
 }
 
-std::string CreateRuleRequest::getContent()const
-{
-	return content_;
+std::string CreateRuleRequest::getContent() const {
+  return content_;
 }
 
-void CreateRuleRequest::setContent(const std::string& content)
-{
-	content_ = content;
-	setParameter("Content", content);
+void CreateRuleRequest::setContent(const std::string &content) {
+  content_ = content;
+  setParameter(std::string("Content"), content);
 }
 
-std::string CreateRuleRequest::getSourceIp()const
-{
-	return sourceIp_;
+std::string CreateRuleRequest::getSourceIp() const {
+  return sourceIp_;
 }
 
-void CreateRuleRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
+void CreateRuleRequest::setSourceIp(const std::string &sourceIp) {
+  sourceIp_ = sourceIp;
+  setParameter(std::string("SourceIp"), sourceIp);
 }
 
-std::string CreateRuleRequest::getLang()const
-{
-	return lang_;
+std::string CreateRuleRequest::getLang() const {
+  return lang_;
 }
 
-void CreateRuleRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setParameter("Lang", lang);
+void CreateRuleRequest::setLang(const std::string &lang) {
+  lang_ = lang;
+  setParameter(std::string("Lang"), lang);
 }
 
-int CreateRuleRequest::getFeatureType()const
-{
-	return featureType_;
+int CreateRuleRequest::getFeatureType() const {
+  return featureType_;
 }
 
-void CreateRuleRequest::setFeatureType(int featureType)
-{
-	featureType_ = featureType;
-	setParameter("FeatureType", std::to_string(featureType));
+void CreateRuleRequest::setFeatureType(int featureType) {
+  featureType_ = featureType;
+  setParameter(std::string("FeatureType"), std::to_string(featureType));
 }
 
-int CreateRuleRequest::getRuleType()const
-{
-	return ruleType_;
+int CreateRuleRequest::getRuleType() const {
+  return ruleType_;
 }
 
-void CreateRuleRequest::setRuleType(int ruleType)
-{
-	ruleType_ = ruleType;
-	setParameter("RuleType", std::to_string(ruleType));
+void CreateRuleRequest::setRuleType(int ruleType) {
+  ruleType_ = ruleType;
+  setParameter(std::string("RuleType"), std::to_string(ruleType));
 }
 
-std::string CreateRuleRequest::getStatExpress()const
-{
-	return statExpress_;
+std::string CreateRuleRequest::getStatExpress() const {
+  return statExpress_;
 }
 
-void CreateRuleRequest::setStatExpress(const std::string& statExpress)
-{
-	statExpress_ = statExpress;
-	setParameter("StatExpress", statExpress);
+void CreateRuleRequest::setStatExpress(const std::string &statExpress) {
+  statExpress_ = statExpress;
+  setParameter(std::string("StatExpress"), statExpress);
 }
 
-int CreateRuleRequest::getContentCategory()const
-{
-	return contentCategory_;
+int CreateRuleRequest::getContentCategory() const {
+  return contentCategory_;
 }
 
-void CreateRuleRequest::setContentCategory(int contentCategory)
-{
-	contentCategory_ = contentCategory;
-	setParameter("ContentCategory", std::to_string(contentCategory));
+void CreateRuleRequest::setContentCategory(int contentCategory) {
+  contentCategory_ = contentCategory;
+  setParameter(std::string("ContentCategory"), std::to_string(contentCategory));
 }
 
-long CreateRuleRequest::getCustomType()const
-{
-	return customType_;
+long CreateRuleRequest::getCustomType() const {
+  return customType_;
 }
 
-void CreateRuleRequest::setCustomType(long customType)
-{
-	customType_ = customType;
-	setParameter("CustomType", std::to_string(customType));
+void CreateRuleRequest::setCustomType(long customType) {
+  customType_ = customType;
+  setParameter(std::string("CustomType"), std::to_string(customType));
 }
 
-std::string CreateRuleRequest::getTarget()const
-{
-	return target_;
+std::string CreateRuleRequest::getTarget() const {
+  return target_;
 }
 
-void CreateRuleRequest::setTarget(const std::string& target)
-{
-	target_ = target;
-	setParameter("Target", target);
+void CreateRuleRequest::setTarget(const std::string &target) {
+  target_ = target;
+  setParameter(std::string("Target"), target);
 }
 
-std::string CreateRuleRequest::getName()const
-{
-	return name_;
+std::string CreateRuleRequest::getName() const {
+  return name_;
 }
 
-void CreateRuleRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setParameter("Name", name);
+void CreateRuleRequest::setName(const std::string &name) {
+  name_ = name;
+  setParameter(std::string("Name"), name);
 }
 
-int CreateRuleRequest::getCategory()const
-{
-	return category_;
+int CreateRuleRequest::getCategory() const {
+  return category_;
 }
 
-void CreateRuleRequest::setCategory(int category)
-{
-	category_ = category;
-	setParameter("Category", std::to_string(category));
+void CreateRuleRequest::setCategory(int category) {
+  category_ = category;
+  setParameter(std::string("Category"), std::to_string(category));
 }
 
-int CreateRuleRequest::getStatus()const
-{
-	return status_;
+int CreateRuleRequest::getStatus() const {
+  return status_;
 }
 
-void CreateRuleRequest::setStatus(int status)
-{
-	status_ = status;
-	setParameter("Status", std::to_string(status));
+void CreateRuleRequest::setStatus(int status) {
+  status_ = status;
+  setParameter(std::string("Status"), std::to_string(status));
 }
 

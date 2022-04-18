@@ -43,62 +43,62 @@ void DescribeRulesResult::parse(const std::string &payload)
 	for (auto valueItemsRule : allItemsNode)
 	{
 		Rule itemsObject;
-		if(!valueItemsRule["Id"].isNull())
-			itemsObject.id = std::stol(valueItemsRule["Id"].asString());
-		if(!valueItemsRule["GmtCreate"].isNull())
-			itemsObject.gmtCreate = std::stol(valueItemsRule["GmtCreate"].asString());
-		if(!valueItemsRule["GmtModified"].isNull())
-			itemsObject.gmtModified = std::stol(valueItemsRule["GmtModified"].asString());
-		if(!valueItemsRule["CustomType"].isNull())
-			itemsObject.customType = std::stoi(valueItemsRule["CustomType"].asString());
-		if(!valueItemsRule["Name"].isNull())
-			itemsObject.name = valueItemsRule["Name"].asString();
-		if(!valueItemsRule["Description"].isNull())
-			itemsObject.description = valueItemsRule["Description"].asString();
-		if(!valueItemsRule["UserId"].isNull())
-			itemsObject.userId = std::stol(valueItemsRule["UserId"].asString());
-		if(!valueItemsRule["LoginName"].isNull())
-			itemsObject.loginName = valueItemsRule["LoginName"].asString();
 		if(!valueItemsRule["DisplayName"].isNull())
 			itemsObject.displayName = valueItemsRule["DisplayName"].asString();
-		if(!valueItemsRule["Category"].isNull())
-			itemsObject.category = std::stoi(valueItemsRule["Category"].asString());
-		if(!valueItemsRule["CategoryName"].isNull())
-			itemsObject.categoryName = valueItemsRule["CategoryName"].asString();
 		if(!valueItemsRule["Status"].isNull())
 			itemsObject.status = std::stoi(valueItemsRule["Status"].asString());
-		if(!valueItemsRule["RiskLevelName"].isNull())
-			itemsObject.riskLevelName = valueItemsRule["RiskLevelName"].asString();
-		if(!valueItemsRule["RiskLevelId"].isNull())
-			itemsObject.riskLevelId = std::stol(valueItemsRule["RiskLevelId"].asString());
-		if(!valueItemsRule["Content"].isNull())
-			itemsObject.content = valueItemsRule["Content"].asString();
+		if(!valueItemsRule["WarnLevel"].isNull())
+			itemsObject.warnLevel = std::stoi(valueItemsRule["WarnLevel"].asString());
+		if(!valueItemsRule["UserId"].isNull())
+			itemsObject.userId = std::stol(valueItemsRule["UserId"].asString());
 		if(!valueItemsRule["DepartName"].isNull())
 			itemsObject.departName = valueItemsRule["DepartName"].asString();
 		if(!valueItemsRule["StatExpress"].isNull())
 			itemsObject.statExpress = valueItemsRule["StatExpress"].asString();
+		if(!valueItemsRule["GmtModified"].isNull())
+			itemsObject.gmtModified = std::stol(valueItemsRule["GmtModified"].asString());
+		if(!valueItemsRule["RiskLevelId"].isNull())
+			itemsObject.riskLevelId = std::stol(valueItemsRule["RiskLevelId"].asString());
+		if(!valueItemsRule["Description"].isNull())
+			itemsObject.description = valueItemsRule["Description"].asString();
 		if(!valueItemsRule["ProductId"].isNull())
 			itemsObject.productId = std::stol(valueItemsRule["ProductId"].asString());
-		if(!valueItemsRule["HitTotalCount"].isNull())
-			itemsObject.hitTotalCount = std::stoi(valueItemsRule["HitTotalCount"].asString());
-		if(!valueItemsRule["ProductCode"].isNull())
-			itemsObject.productCode = valueItemsRule["ProductCode"].asString();
-		if(!valueItemsRule["WarnLevel"].isNull())
-			itemsObject.warnLevel = std::stoi(valueItemsRule["WarnLevel"].asString());
-		if(!valueItemsRule["MajorKey"].isNull())
-			itemsObject.majorKey = valueItemsRule["MajorKey"].asString();
-		if(!valueItemsRule["ContentCategory"].isNull())
-			itemsObject.contentCategory = valueItemsRule["ContentCategory"].asString();
+		if(!valueItemsRule["Name"].isNull())
+			itemsObject.name = valueItemsRule["Name"].asString();
+		if(!valueItemsRule["Content"].isNull())
+			itemsObject.content = valueItemsRule["Content"].asString();
 		if(!valueItemsRule["Target"].isNull())
 			itemsObject.target = valueItemsRule["Target"].asString();
+		if(!valueItemsRule["LoginName"].isNull())
+			itemsObject.loginName = valueItemsRule["LoginName"].asString();
+		if(!valueItemsRule["CategoryName"].isNull())
+			itemsObject.categoryName = valueItemsRule["CategoryName"].asString();
+		if(!valueItemsRule["ContentCategory"].isNull())
+			itemsObject.contentCategory = valueItemsRule["ContentCategory"].asString();
+		if(!valueItemsRule["HitTotalCount"].isNull())
+			itemsObject.hitTotalCount = std::stoi(valueItemsRule["HitTotalCount"].asString());
 		if(!valueItemsRule["GroupId"].isNull())
 			itemsObject.groupId = valueItemsRule["GroupId"].asString();
+		if(!valueItemsRule["CustomType"].isNull())
+			itemsObject.customType = std::stoi(valueItemsRule["CustomType"].asString());
+		if(!valueItemsRule["RiskLevelName"].isNull())
+			itemsObject.riskLevelName = valueItemsRule["RiskLevelName"].asString();
+		if(!valueItemsRule["GmtCreate"].isNull())
+			itemsObject.gmtCreate = std::stol(valueItemsRule["GmtCreate"].asString());
+		if(!valueItemsRule["Category"].isNull())
+			itemsObject.category = std::stoi(valueItemsRule["Category"].asString());
+		if(!valueItemsRule["MajorKey"].isNull())
+			itemsObject.majorKey = valueItemsRule["MajorKey"].asString();
+		if(!valueItemsRule["Id"].isNull())
+			itemsObject.id = std::stol(valueItemsRule["Id"].asString());
+		if(!valueItemsRule["ProductCode"].isNull())
+			itemsObject.productCode = valueItemsRule["ProductCode"].asString();
 		items_.push_back(itemsObject);
 	}
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["CurrentPage"].isNull())
 		currentPage_ = std::stoi(value["CurrentPage"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
 

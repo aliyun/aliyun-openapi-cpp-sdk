@@ -54,14 +54,15 @@ namespace AlibabaCloud
 					std::string departName;
 					float lastRiskScore;
 					bool labelsec;
+					std::string fileCountDetails;
 					int totalCount;
 					std::string sensLevelName;
 					long lastFinishTime;
 					long creationTime;
-					std::string riskLevelName;
 					std::string instanceDescription;
-					long id;
+					std::string riskLevelName;
 					std::string regionId;
+					long id;
 					int sensitiveCount;
 					int s3Count;
 				};
