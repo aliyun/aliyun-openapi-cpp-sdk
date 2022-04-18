@@ -16,8 +16,8 @@
 
 #include <alibabacloud/core/HmacSha1Signer.h>
 #ifdef _WIN32
-#include <wincrypt.h>
 #include <windows.h>
+#include <wincrypt.h>
 #else
 #include <openssl/hmac.h>
 #endif
