@@ -41,17 +41,18 @@ namespace AlibabaCloud
 						std::string flag;
 					};
 					int cycleStartTime;
+					std::string customType;
 					int ecsCount;
-					int type;
-					int execStatus;
 					int passRate;
-					int processRate;
 					int cycleDays;
-					int id;
-					std::string authVersionList;
 					std::vector<Strategy::ConfigTarget> configTargets;
 					int riskCount;
 					std::string name;
+					int type;
+					int execStatus;
+					int processRate;
+					std::string authVersionList;
+					int id;
 				};
 
 

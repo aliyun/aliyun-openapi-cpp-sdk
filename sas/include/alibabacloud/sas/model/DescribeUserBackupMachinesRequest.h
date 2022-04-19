@@ -39,16 +39,10 @@ namespace AlibabaCloud
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
-				int getCurrentPage()const;
-				void setCurrentPage(int currentPage);
 
             private:
 				long resourceOwnerId_;
 				std::string sourceIp_;
-				int pageSize_;
-				int currentPage_;
 
 			};
 		}

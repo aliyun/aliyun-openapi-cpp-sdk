@@ -46,7 +46,7 @@ namespace AlibabaCloud
 					std::string sourceClientId;
 					std::string exitCode;
 					std::string restoreName;
-					long gmtModified;
+					std::string gmtModified;
 					std::string vaultId;
 					long errorCount;
 					std::string excludes;
@@ -66,7 +66,6 @@ namespace AlibabaCloud
 					long actualBytes;
 					std::string restoreType;
 					long completeTime;
-					std::string errorFile1;
 					std::string status;
 					long speed;
 					std::string requestId;
@@ -81,8 +80,6 @@ namespace AlibabaCloud
 					std::string gmtCreate;
 					std::string uuid;
 					long eta;
-					std::string extra;
-					long id;
 					long updatedTime;
 				};
 

@@ -49,6 +49,17 @@ void DescribePropertyPortDetailRequest::setUuid(const std::string& uuid)
 	setParameter("Uuid", uuid);
 }
 
+std::string DescribePropertyPortDetailRequest::getBindIp()const
+{
+	return bindIp_;
+}
+
+void DescribePropertyPortDetailRequest::setBindIp(const std::string& bindIp)
+{
+	bindIp_ = bindIp;
+	setParameter("BindIp", bindIp);
+}
+
 std::string DescribePropertyPortDetailRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -80,6 +91,17 @@ void DescribePropertyPortDetailRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
 	setParameter("CurrentPage", std::to_string(currentPage));
+}
+
+std::string DescribePropertyPortDetailRequest::getExtend()const
+{
+	return extend_;
+}
+
+void DescribePropertyPortDetailRequest::setExtend(const std::string& extend)
+{
+	extend_ = extend;
+	setParameter("Extend", extend);
 }
 
 std::string DescribePropertyPortDetailRequest::getPort()const

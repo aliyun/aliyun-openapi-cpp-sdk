@@ -43,41 +43,41 @@ void DescribePropertySoftwareDetailResult::parse(const std::string &payload)
 	for (auto valuePropertysPropertySoftware : allPropertysNode)
 	{
 		PropertySoftware propertysObject;
-		if(!valuePropertysPropertySoftware["Name"].isNull())
-			propertysObject.name = valuePropertysPropertySoftware["Name"].asString();
-		if(!valuePropertysPropertySoftware["Path"].isNull())
-			propertysObject.path = valuePropertysPropertySoftware["Path"].asString();
-		if(!valuePropertysPropertySoftware["InstanceName"].isNull())
-			propertysObject.instanceName = valuePropertysPropertySoftware["InstanceName"].asString();
+		if(!valuePropertysPropertySoftware["InternetIp"].isNull())
+			propertysObject.internetIp = valuePropertysPropertySoftware["InternetIp"].asString();
 		if(!valuePropertysPropertySoftware["Ip"].isNull())
 			propertysObject.ip = valuePropertysPropertySoftware["Ip"].asString();
-		if(!valuePropertysPropertySoftware["Create"].isNull())
-			propertysObject.create = std::stol(valuePropertysPropertySoftware["Create"].asString());
-		if(!valuePropertysPropertySoftware["CreateTimestamp"].isNull())
-			propertysObject.createTimestamp = std::stol(valuePropertysPropertySoftware["CreateTimestamp"].asString());
-		if(!valuePropertysPropertySoftware["InstallTime"].isNull())
-			propertysObject.installTime = valuePropertysPropertySoftware["InstallTime"].asString();
-		if(!valuePropertysPropertySoftware["Version"].isNull())
-			propertysObject.version = valuePropertysPropertySoftware["Version"].asString();
-		if(!valuePropertysPropertySoftware["Uuid"].isNull())
-			propertysObject.uuid = valuePropertysPropertySoftware["Uuid"].asString();
 		if(!valuePropertysPropertySoftware["InstanceId"].isNull())
 			propertysObject.instanceId = valuePropertysPropertySoftware["InstanceId"].asString();
 		if(!valuePropertysPropertySoftware["IntranetIp"].isNull())
 			propertysObject.intranetIp = valuePropertysPropertySoftware["IntranetIp"].asString();
-		if(!valuePropertysPropertySoftware["InternetIp"].isNull())
-			propertysObject.internetIp = valuePropertysPropertySoftware["InternetIp"].asString();
+		if(!valuePropertysPropertySoftware["InstallTime"].isNull())
+			propertysObject.installTime = valuePropertysPropertySoftware["InstallTime"].asString();
+		if(!valuePropertysPropertySoftware["Uuid"].isNull())
+			propertysObject.uuid = valuePropertysPropertySoftware["Uuid"].asString();
+		if(!valuePropertysPropertySoftware["Version"].isNull())
+			propertysObject.version = valuePropertysPropertySoftware["Version"].asString();
+		if(!valuePropertysPropertySoftware["InstanceName"].isNull())
+			propertysObject.instanceName = valuePropertysPropertySoftware["InstanceName"].asString();
+		if(!valuePropertysPropertySoftware["Path"].isNull())
+			propertysObject.path = valuePropertysPropertySoftware["Path"].asString();
+		if(!valuePropertysPropertySoftware["Name"].isNull())
+			propertysObject.name = valuePropertysPropertySoftware["Name"].asString();
+		if(!valuePropertysPropertySoftware["CreateTimestamp"].isNull())
+			propertysObject.createTimestamp = std::stol(valuePropertysPropertySoftware["CreateTimestamp"].asString());
+		if(!valuePropertysPropertySoftware["InstallTimeDt"].isNull())
+			propertysObject.installTimeDt = std::stol(valuePropertysPropertySoftware["InstallTimeDt"].asString());
 		propertys_.push_back(propertysObject);
 	}
 	auto pageInfoNode = value["PageInfo"];
-	if(!pageInfoNode["Count"].isNull())
-		pageInfo_.count = std::stoi(pageInfoNode["Count"].asString());
+	if(!pageInfoNode["CurrentPage"].isNull())
+		pageInfo_.currentPage = std::stoi(pageInfoNode["CurrentPage"].asString());
 	if(!pageInfoNode["PageSize"].isNull())
 		pageInfo_.pageSize = std::stoi(pageInfoNode["PageSize"].asString());
 	if(!pageInfoNode["TotalCount"].isNull())
 		pageInfo_.totalCount = std::stoi(pageInfoNode["TotalCount"].asString());
-	if(!pageInfoNode["CurrentPage"].isNull())
-		pageInfo_.currentPage = std::stoi(pageInfoNode["CurrentPage"].asString());
+	if(!pageInfoNode["Count"].isNull())
+		pageInfo_.count = std::stoi(pageInfoNode["Count"].asString());
 
 }
 

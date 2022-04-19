@@ -60,6 +60,17 @@ void DescribeSuspEventQuaraFilesRequest::setFrom(const std::string& from)
 	setParameter("From", from);
 }
 
+long DescribeSuspEventQuaraFilesRequest::getGroupingId()const
+{
+	return groupingId_;
+}
+
+void DescribeSuspEventQuaraFilesRequest::setGroupingId(long groupingId)
+{
+	groupingId_ = groupingId;
+	setParameter("GroupingId", std::to_string(groupingId));
+}
+
 std::string DescribeSuspEventQuaraFilesRequest::getGroupId()const
 {
 	return groupId_;

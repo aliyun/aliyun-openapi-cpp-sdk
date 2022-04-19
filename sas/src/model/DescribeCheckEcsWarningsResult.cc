@@ -39,10 +39,10 @@ void DescribeCheckEcsWarningsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["CanTry"].isNull())
-		canTry_ = value["CanTry"].asString();
 	if(!value["SasVersion"].isNull())
 		sasVersion_ = value["SasVersion"].asString();
+	if(!value["CanTry"].isNull())
+		canTry_ = value["CanTry"].asString();
 	if(!value["WeakPasswordCount"].isNull())
 		weakPasswordCount_ = value["WeakPasswordCount"].asString();
 

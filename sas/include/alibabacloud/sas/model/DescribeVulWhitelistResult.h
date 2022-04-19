@@ -35,7 +35,9 @@ namespace AlibabaCloud
 				struct VulWhitelist
 				{
 					std::string type;
+					std::string targetInfo;
 					std::string aliasName;
+					std::string id;
 					std::string reason;
 					std::string name;
 				};

@@ -41,17 +41,17 @@ namespace AlibabaCloud
 				};
 				struct PropertySoftware
 				{
-					std::string path;
 					std::string instanceName;
+					std::string path;
 					std::string uuid;
 					std::string internetIp;
+					std::string instanceId;
 					std::string installTime;
 					std::string version;
-					std::string instanceId;
-					long create;
 					std::string ip;
-					long createTimestamp;
 					std::string intranetIp;
+					long createTimestamp;
+					long installTimeDt;
 					std::string name;
 				};
 

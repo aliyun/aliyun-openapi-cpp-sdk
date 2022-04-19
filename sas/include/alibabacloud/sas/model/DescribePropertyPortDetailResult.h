@@ -43,15 +43,15 @@ namespace AlibabaCloud
 				{
 					std::string instanceName;
 					std::string uuid;
-					std::string proto;
 					std::string internetIp;
+					std::string proto;
 					std::string instanceId;
-					std::string create;
-					std::string port;
 					std::string ip;
 					std::string procName;
-					long createTimestamp;
+					std::string port;
+					std::string pid;
 					std::string intranetIp;
+					long createTimestamp;
 					std::string bindIp;
 				};
 

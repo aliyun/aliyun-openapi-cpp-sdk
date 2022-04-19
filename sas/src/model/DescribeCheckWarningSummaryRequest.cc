@@ -27,6 +27,28 @@ DescribeCheckWarningSummaryRequest::DescribeCheckWarningSummaryRequest() :
 DescribeCheckWarningSummaryRequest::~DescribeCheckWarningSummaryRequest()
 {}
 
+std::string DescribeCheckWarningSummaryRequest::getTargetType()const
+{
+	return targetType_;
+}
+
+void DescribeCheckWarningSummaryRequest::setTargetType(const std::string& targetType)
+{
+	targetType_ = targetType;
+	setParameter("TargetType", targetType);
+}
+
+std::string DescribeCheckWarningSummaryRequest::getContainerFieldName()const
+{
+	return containerFieldName_;
+}
+
+void DescribeCheckWarningSummaryRequest::setContainerFieldName(const std::string& containerFieldName)
+{
+	containerFieldName_ = containerFieldName;
+	setParameter("ContainerFieldName", containerFieldName);
+}
+
 std::string DescribeCheckWarningSummaryRequest::getRiskName()const
 {
 	return riskName_;
@@ -47,6 +69,17 @@ void DescribeCheckWarningSummaryRequest::setSourceIp(const std::string& sourceIp
 {
 	sourceIp_ = sourceIp;
 	setParameter("SourceIp", sourceIp);
+}
+
+std::string DescribeCheckWarningSummaryRequest::getContainerFieldValue()const
+{
+	return containerFieldValue_;
+}
+
+void DescribeCheckWarningSummaryRequest::setContainerFieldValue(const std::string& containerFieldValue)
+{
+	containerFieldValue_ = containerFieldValue;
+	setParameter("ContainerFieldValue", containerFieldValue);
 }
 
 int DescribeCheckWarningSummaryRequest::getPageSize()const
@@ -80,6 +113,17 @@ void DescribeCheckWarningSummaryRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
 	setParameter("CurrentPage", std::to_string(currentPage));
+}
+
+std::string DescribeCheckWarningSummaryRequest::getClusterId()const
+{
+	return clusterId_;
+}
+
+void DescribeCheckWarningSummaryRequest::setClusterId(const std::string& clusterId)
+{
+	clusterId_ = clusterId;
+	setParameter("ClusterId", clusterId);
 }
 
 int DescribeCheckWarningSummaryRequest::getRiskStatus()const

@@ -82,3 +82,14 @@ void OperateSuspiciousTargetConfigRequest::setLang(const std::string& lang)
 	setParameter("Lang", lang);
 }
 
+std::string OperateSuspiciousTargetConfigRequest::getResourceDirectoryAccountId()const
+{
+	return resourceDirectoryAccountId_;
+}
+
+void OperateSuspiciousTargetConfigRequest::setResourceDirectoryAccountId(const std::string& resourceDirectoryAccountId)
+{
+	resourceDirectoryAccountId_ = resourceDirectoryAccountId;
+	setParameter("ResourceDirectoryAccountId", resourceDirectoryAccountId);
+}
+

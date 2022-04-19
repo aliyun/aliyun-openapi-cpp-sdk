@@ -40,35 +40,35 @@ void DescribeSecurityStatInfoResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto securityEventNode = value["SecurityEvent"];
-	if(!securityEventNode["SeriousCount"].isNull())
-		securityEvent_.seriousCount = std::stoi(securityEventNode["SeriousCount"].asString());
 	if(!securityEventNode["SuspiciousCount"].isNull())
 		securityEvent_.suspiciousCount = std::stoi(securityEventNode["SuspiciousCount"].asString());
+	if(!securityEventNode["SeriousCount"].isNull())
+		securityEvent_.seriousCount = std::stoi(securityEventNode["SeriousCount"].asString());
 	if(!securityEventNode["RemindCount"].isNull())
 		securityEvent_.remindCount = std::stoi(securityEventNode["RemindCount"].asString());
 	if(!securityEventNode["TotalCount"].isNull())
 		securityEvent_.totalCount = std::stoi(securityEventNode["TotalCount"].asString());
-		auto allDateArray = securityEventNode["DateArray"]["StringItem"];
-		for (auto value : allDateArray)
-			securityEvent_.dateArray.push_back(value.asString());
 		auto allValueArray = securityEventNode["ValueArray"]["IntegerItem"];
 		for (auto value : allValueArray)
 			securityEvent_.valueArray.push_back(value.asString());
-		auto allLevelsOn = securityEventNode["LevelsOn"]["StringItem"];
-		for (auto value : allLevelsOn)
-			securityEvent_.levelsOn.push_back(value.asString());
-		auto allSeriousList = securityEventNode["SeriousList"]["IntegerItem"];
-		for (auto value : allSeriousList)
-			securityEvent_.seriousList.push_back(value.asString());
-		auto allSuspiciousList = securityEventNode["SuspiciousList"]["IntegerItem"];
-		for (auto value : allSuspiciousList)
-			securityEvent_.suspiciousList.push_back(value.asString());
-		auto allRemindList = securityEventNode["RemindList"]["IntegerItem"];
-		for (auto value : allRemindList)
-			securityEvent_.remindList.push_back(value.asString());
 		auto allTimeArray = securityEventNode["TimeArray"]["LongItem"];
 		for (auto value : allTimeArray)
 			securityEvent_.timeArray.push_back(value.asString());
+		auto allRemindList = securityEventNode["RemindList"]["IntegerItem"];
+		for (auto value : allRemindList)
+			securityEvent_.remindList.push_back(value.asString());
+		auto allLevelsOn = securityEventNode["LevelsOn"]["StringItem"];
+		for (auto value : allLevelsOn)
+			securityEvent_.levelsOn.push_back(value.asString());
+		auto allDateArray = securityEventNode["DateArray"]["StringItem"];
+		for (auto value : allDateArray)
+			securityEvent_.dateArray.push_back(value.asString());
+		auto allSuspiciousList = securityEventNode["SuspiciousList"]["IntegerItem"];
+		for (auto value : allSuspiciousList)
+			securityEvent_.suspiciousList.push_back(value.asString());
+		auto allSeriousList = securityEventNode["SeriousList"]["IntegerItem"];
+		for (auto value : allSeriousList)
+			securityEvent_.seriousList.push_back(value.asString());
 	auto attackEventNode = value["AttackEvent"];
 	if(!attackEventNode["TotalCount"].isNull())
 		attackEvent_.totalCount = std::stoi(attackEventNode["TotalCount"].asString());
@@ -79,65 +79,65 @@ void DescribeSecurityStatInfoResult::parse(const std::string &payload)
 		for (auto value : allValueArray2)
 			attackEvent_.valueArray2.push_back(value.asString());
 	auto healthCheckNode = value["HealthCheck"];
-	if(!healthCheckNode["MediumCount"].isNull())
-		healthCheck_.mediumCount = std::stoi(healthCheckNode["MediumCount"].asString());
 	if(!healthCheckNode["HighCount"].isNull())
 		healthCheck_.highCount = std::stoi(healthCheckNode["HighCount"].asString());
 	if(!healthCheckNode["LowCount"].isNull())
 		healthCheck_.lowCount = std::stoi(healthCheckNode["LowCount"].asString());
 	if(!healthCheckNode["TotalCount"].isNull())
 		healthCheck_.totalCount = std::stoi(healthCheckNode["TotalCount"].asString());
-		auto allDateArray3 = healthCheckNode["DateArray"]["StringItem"];
-		for (auto value : allDateArray3)
-			healthCheck_.dateArray3.push_back(value.asString());
-		auto allValueArray4 = healthCheckNode["ValueArray"]["IntegerItem"];
-		for (auto value : allValueArray4)
-			healthCheck_.valueArray4.push_back(value.asString());
+	if(!healthCheckNode["MediumCount"].isNull())
+		healthCheck_.mediumCount = std::stoi(healthCheckNode["MediumCount"].asString());
+		auto allValueArray3 = healthCheckNode["ValueArray"]["IntegerItem"];
+		for (auto value : allValueArray3)
+			healthCheck_.valueArray3.push_back(value.asString());
+		auto allTimeArray4 = healthCheckNode["TimeArray"]["LongItem"];
+		for (auto value : allTimeArray4)
+			healthCheck_.timeArray4.push_back(value.asString());
 		auto allLevelsOn5 = healthCheckNode["LevelsOn"]["StringItem"];
 		for (auto value : allLevelsOn5)
 			healthCheck_.levelsOn5.push_back(value.asString());
-		auto allHighList = healthCheckNode["HighList"]["IntegerItem"];
-		for (auto value : allHighList)
-			healthCheck_.highList.push_back(value.asString());
-		auto allMediumList = healthCheckNode["MediumList"]["IntegerItem"];
-		for (auto value : allMediumList)
-			healthCheck_.mediumList.push_back(value.asString());
 		auto allLowList = healthCheckNode["LowList"]["IntegerItem"];
 		for (auto value : allLowList)
 			healthCheck_.lowList.push_back(value.asString());
-		auto allTimeArray6 = healthCheckNode["TimeArray"]["LongItem"];
-		for (auto value : allTimeArray6)
-			healthCheck_.timeArray6.push_back(value.asString());
+		auto allMediumList = healthCheckNode["MediumList"]["IntegerItem"];
+		for (auto value : allMediumList)
+			healthCheck_.mediumList.push_back(value.asString());
+		auto allDateArray6 = healthCheckNode["DateArray"]["StringItem"];
+		for (auto value : allDateArray6)
+			healthCheck_.dateArray6.push_back(value.asString());
+		auto allHighList = healthCheckNode["HighList"]["IntegerItem"];
+		for (auto value : allHighList)
+			healthCheck_.highList.push_back(value.asString());
 	auto vulnerabilityNode = value["Vulnerability"];
 	if(!vulnerabilityNode["NntfCount"].isNull())
 		vulnerability_.nntfCount = std::stoi(vulnerabilityNode["NntfCount"].asString());
 	if(!vulnerabilityNode["LaterCount"].isNull())
 		vulnerability_.laterCount = std::stoi(vulnerabilityNode["LaterCount"].asString());
-	if(!vulnerabilityNode["AsapCount"].isNull())
-		vulnerability_.asapCount = std::stoi(vulnerabilityNode["AsapCount"].asString());
 	if(!vulnerabilityNode["TotalCount"].isNull())
 		vulnerability_.totalCount = std::stoi(vulnerabilityNode["TotalCount"].asString());
-		auto allDateArray7 = vulnerabilityNode["DateArray"]["StringItem"];
-		for (auto value : allDateArray7)
-			vulnerability_.dateArray7.push_back(value.asString());
-		auto allValueArray8 = vulnerabilityNode["ValueArray"]["IntegerItem"];
-		for (auto value : allValueArray8)
-			vulnerability_.valueArray8.push_back(value.asString());
-		auto allLevelsOn9 = vulnerabilityNode["LevelsOn"]["StringItem"];
-		for (auto value : allLevelsOn9)
-			vulnerability_.levelsOn9.push_back(value.asString());
+	if(!vulnerabilityNode["AsapCount"].isNull())
+		vulnerability_.asapCount = std::stoi(vulnerabilityNode["AsapCount"].asString());
 		auto allNntfList = vulnerabilityNode["NntfList"]["IntegerItem"];
 		for (auto value : allNntfList)
 			vulnerability_.nntfList.push_back(value.asString());
 		auto allAsapList = vulnerabilityNode["AsapList"]["IntegerItem"];
 		for (auto value : allAsapList)
 			vulnerability_.asapList.push_back(value.asString());
+		auto allValueArray7 = vulnerabilityNode["ValueArray"]["IntegerItem"];
+		for (auto value : allValueArray7)
+			vulnerability_.valueArray7.push_back(value.asString());
+		auto allTimeArray8 = vulnerabilityNode["TimeArray"]["LongItem"];
+		for (auto value : allTimeArray8)
+			vulnerability_.timeArray8.push_back(value.asString());
+		auto allLevelsOn9 = vulnerabilityNode["LevelsOn"]["StringItem"];
+		for (auto value : allLevelsOn9)
+			vulnerability_.levelsOn9.push_back(value.asString());
 		auto allLaterList = vulnerabilityNode["LaterList"]["IntegerItem"];
 		for (auto value : allLaterList)
 			vulnerability_.laterList.push_back(value.asString());
-		auto allTimeArray10 = vulnerabilityNode["TimeArray"]["LongItem"];
-		for (auto value : allTimeArray10)
-			vulnerability_.timeArray10.push_back(value.asString());
+		auto allDateArray10 = vulnerabilityNode["DateArray"]["StringItem"];
+		for (auto value : allDateArray10)
+			vulnerability_.dateArray10.push_back(value.asString());
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 

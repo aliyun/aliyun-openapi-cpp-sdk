@@ -35,12 +35,15 @@ namespace AlibabaCloud
 				DescribeBackupClientsRequest();
 				~DescribeBackupClientsRequest();
 
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
 				std::string getSupportRegionId()const;
 				void setSupportRegionId(const std::string& supportRegionId);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 
             private:
+				long resourceOwnerId_;
 				std::string supportRegionId_;
 				std::string sourceIp_;
 

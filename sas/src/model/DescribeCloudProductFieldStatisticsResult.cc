@@ -40,12 +40,12 @@ void DescribeCloudProductFieldStatisticsResult::parse(const std::string &payload
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto groupedFieldsNode = value["GroupedFields"];
-	if(!groupedFieldsNode["RiskInstanceCount"].isNull())
-		groupedFields_.riskInstanceCount = std::stoi(groupedFieldsNode["RiskInstanceCount"].asString());
-	if(!groupedFieldsNode["InstanceCount"].isNull())
-		groupedFields_.instanceCount = std::stoi(groupedFieldsNode["InstanceCount"].asString());
 	if(!groupedFieldsNode["CategoryCount"].isNull())
 		groupedFields_.categoryCount = groupedFieldsNode["CategoryCount"].asString();
+	if(!groupedFieldsNode["InstanceCount"].isNull())
+		groupedFields_.instanceCount = std::stoi(groupedFieldsNode["InstanceCount"].asString());
+	if(!groupedFieldsNode["RiskInstanceCount"].isNull())
+		groupedFields_.riskInstanceCount = std::stoi(groupedFieldsNode["RiskInstanceCount"].asString());
 
 }
 

@@ -27,28 +27,6 @@ DescribeCheckWarningsRequest::DescribeCheckWarningsRequest() :
 DescribeCheckWarningsRequest::~DescribeCheckWarningsRequest()
 {}
 
-int DescribeCheckWarningsRequest::getCurrentPage()const
-{
-	return currentPage_;
-}
-
-void DescribeCheckWarningsRequest::setCurrentPage(int currentPage)
-{
-	currentPage_ = currentPage;
-	setParameter("CurrentPage", std::to_string(currentPage));
-}
-
-long DescribeCheckWarningsRequest::getRiskId()const
-{
-	return riskId_;
-}
-
-void DescribeCheckWarningsRequest::setRiskId(long riskId)
-{
-	riskId_ = riskId;
-	setParameter("RiskId", std::to_string(riskId));
-}
-
 std::string DescribeCheckWarningsRequest::getUuid()const
 {
 	return uuid_;
@@ -91,5 +69,38 @@ void DescribeCheckWarningsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setParameter("Lang", lang);
+}
+
+long DescribeCheckWarningsRequest::getCheckId()const
+{
+	return checkId_;
+}
+
+void DescribeCheckWarningsRequest::setCheckId(long checkId)
+{
+	checkId_ = checkId;
+	setParameter("CheckId", std::to_string(checkId));
+}
+
+int DescribeCheckWarningsRequest::getCurrentPage()const
+{
+	return currentPage_;
+}
+
+void DescribeCheckWarningsRequest::setCurrentPage(int currentPage)
+{
+	currentPage_ = currentPage;
+	setParameter("CurrentPage", std::to_string(currentPage));
+}
+
+long DescribeCheckWarningsRequest::getRiskId()const
+{
+	return riskId_;
+}
+
+void DescribeCheckWarningsRequest::setRiskId(long riskId)
+{
+	riskId_ = riskId;
+	setParameter("RiskId", std::to_string(riskId));
 }
 

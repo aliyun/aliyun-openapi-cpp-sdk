@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setPageSize(const std::string& pageSize);
 				std::string getFrom()const;
 				void setFrom(const std::string& from);
+				long getGroupingId()const;
+				void setGroupingId(long groupingId);
 				std::string getGroupId()const;
 				void setGroupId(const std::string& groupId);
 				std::string getCurrentPage()const;
@@ -54,6 +56,7 @@ namespace AlibabaCloud
 				std::string sourceIp_;
 				std::string pageSize_;
 				std::string from_;
+				long groupingId_;
 				std::string groupId_;
 				std::string currentPage_;
 				std::string quaraTag_;

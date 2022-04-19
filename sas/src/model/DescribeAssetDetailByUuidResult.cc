@@ -40,62 +40,68 @@ void DescribeAssetDetailByUuidResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto assetDetailNode = value["AssetDetail"];
-	if(!assetDetailNode["InternetIp"].isNull())
-		assetDetail_.internetIp = assetDetailNode["InternetIp"].asString();
-	if(!assetDetailNode["IntranetIp"].isNull())
-		assetDetail_.intranetIp = assetDetailNode["IntranetIp"].asString();
-	if(!assetDetailNode["InstanceName"].isNull())
-		assetDetail_.instanceName = assetDetailNode["InstanceName"].asString();
-	if(!assetDetailNode["InstanceId"].isNull())
-		assetDetail_.instanceId = assetDetailNode["InstanceId"].asString();
-	if(!assetDetailNode["Ip"].isNull())
-		assetDetail_.ip = assetDetailNode["Ip"].asString();
-	if(!assetDetailNode["Uuid"].isNull())
-		assetDetail_.uuid = assetDetailNode["Uuid"].asString();
-	if(!assetDetailNode["AssetType"].isNull())
-		assetDetail_.assetType = assetDetailNode["AssetType"].asString();
-	if(!assetDetailNode["Os"].isNull())
-		assetDetail_.os = assetDetailNode["Os"].asString();
-	if(!assetDetailNode["ClientStatus"].isNull())
-		assetDetail_.clientStatus = assetDetailNode["ClientStatus"].asString();
-	if(!assetDetailNode["Region"].isNull())
-		assetDetail_.region = assetDetailNode["Region"].asString();
-	if(!assetDetailNode["RegionId"].isNull())
-		assetDetail_.regionId = assetDetailNode["RegionId"].asString();
-	if(!assetDetailNode["RegionName"].isNull())
-		assetDetail_.regionName = assetDetailNode["RegionName"].asString();
-	if(!assetDetailNode["Tag"].isNull())
-		assetDetail_.tag = assetDetailNode["Tag"].asString();
-	if(!assetDetailNode["GroupTrace"].isNull())
-		assetDetail_.groupTrace = assetDetailNode["GroupTrace"].asString();
-	if(!assetDetailNode["Cpu"].isNull())
-		assetDetail_.cpu = std::stoi(assetDetailNode["Cpu"].asString());
 	if(!assetDetailNode["CpuInfo"].isNull())
 		assetDetail_.cpuInfo = assetDetailNode["CpuInfo"].asString();
-	if(!assetDetailNode["Kernel"].isNull())
-		assetDetail_.kernel = assetDetailNode["Kernel"].asString();
+	if(!assetDetailNode["InternetIp"].isNull())
+		assetDetail_.internetIp = assetDetailNode["InternetIp"].asString();
 	if(!assetDetailNode["OsDetail"].isNull())
 		assetDetail_.osDetail = assetDetailNode["OsDetail"].asString();
-	if(!assetDetailNode["Mem"].isNull())
-		assetDetail_.mem = std::stoi(assetDetailNode["Mem"].asString());
-	if(!assetDetailNode["SysInfo"].isNull())
-		assetDetail_.sysInfo = assetDetailNode["SysInfo"].asString();
-	if(!assetDetailNode["HostName"].isNull())
-		assetDetail_.hostName = assetDetailNode["HostName"].asString();
-	if(!assetDetailNode["OsName"].isNull())
-		assetDetail_.osName = assetDetailNode["OsName"].asString();
-	if(!assetDetailNode["VpcInstanceId"].isNull())
-		assetDetail_.vpcInstanceId = assetDetailNode["VpcInstanceId"].asString();
-	if(!assetDetailNode["InstanceStatus"].isNull())
-		assetDetail_.instanceStatus = assetDetailNode["InstanceStatus"].asString();
 	if(!assetDetailNode["CreateTime"].isNull())
 		assetDetail_.createTime = std::stol(assetDetailNode["CreateTime"].asString());
-	if(!assetDetailNode["AuthVersion"].isNull())
-		assetDetail_.authVersion = std::stoi(assetDetailNode["AuthVersion"].asString());
+	if(!assetDetailNode["Kernel"].isNull())
+		assetDetail_.kernel = assetDetailNode["Kernel"].asString();
 	if(!assetDetailNode["Bind"].isNull())
 		assetDetail_.bind = assetDetailNode["Bind"].asString() == "true";
+	if(!assetDetailNode["OsName"].isNull())
+		assetDetail_.osName = assetDetailNode["OsName"].asString();
+	if(!assetDetailNode["Tag"].isNull())
+		assetDetail_.tag = assetDetailNode["Tag"].asString();
+	if(!assetDetailNode["ClientStatus"].isNull())
+		assetDetail_.clientStatus = assetDetailNode["ClientStatus"].asString();
+	if(!assetDetailNode["Mem"].isNull())
+		assetDetail_.mem = std::stoi(assetDetailNode["Mem"].asString());
+	if(!assetDetailNode["Memory"].isNull())
+		assetDetail_.memory = std::stol(assetDetailNode["Memory"].asString());
+	if(!assetDetailNode["VpcInstanceId"].isNull())
+		assetDetail_.vpcInstanceId = assetDetailNode["VpcInstanceId"].asString();
+	if(!assetDetailNode["AuthVersion"].isNull())
+		assetDetail_.authVersion = std::stoi(assetDetailNode["AuthVersion"].asString());
+	if(!assetDetailNode["InstanceName"].isNull())
+		assetDetail_.instanceName = assetDetailNode["InstanceName"].asString();
+	if(!assetDetailNode["Region"].isNull())
+		assetDetail_.region = assetDetailNode["Region"].asString();
+	if(!assetDetailNode["GroupTrace"].isNull())
+		assetDetail_.groupTrace = assetDetailNode["GroupTrace"].asString();
+	if(!assetDetailNode["Ip"].isNull())
+		assetDetail_.ip = assetDetailNode["Ip"].asString();
+	if(!assetDetailNode["HostName"].isNull())
+		assetDetail_.hostName = assetDetailNode["HostName"].asString();
+	if(!assetDetailNode["Os"].isNull())
+		assetDetail_.os = assetDetailNode["Os"].asString();
 	if(!assetDetailNode["AuthModifyTime"].isNull())
 		assetDetail_.authModifyTime = std::stol(assetDetailNode["AuthModifyTime"].asString());
+	if(!assetDetailNode["InstanceId"].isNull())
+		assetDetail_.instanceId = assetDetailNode["InstanceId"].asString();
+	if(!assetDetailNode["IntranetIp"].isNull())
+		assetDetail_.intranetIp = assetDetailNode["IntranetIp"].asString();
+	if(!assetDetailNode["AssetType"].isNull())
+		assetDetail_.assetType = assetDetailNode["AssetType"].asString();
+	if(!assetDetailNode["RegionId"].isNull())
+		assetDetail_.regionId = assetDetailNode["RegionId"].asString();
+	if(!assetDetailNode["SysInfo"].isNull())
+		assetDetail_.sysInfo = assetDetailNode["SysInfo"].asString();
+	if(!assetDetailNode["Uuid"].isNull())
+		assetDetail_.uuid = assetDetailNode["Uuid"].asString();
+	if(!assetDetailNode["Cpu"].isNull())
+		assetDetail_.cpu = std::stoi(assetDetailNode["Cpu"].asString());
+	if(!assetDetailNode["RegionName"].isNull())
+		assetDetail_.regionName = assetDetailNode["RegionName"].asString();
+	if(!assetDetailNode["InstanceStatus"].isNull())
+		assetDetail_.instanceStatus = assetDetailNode["InstanceStatus"].asString();
+	if(!assetDetailNode["Flag"].isNull())
+		assetDetail_.flag = std::stoi(assetDetailNode["Flag"].asString());
+	if(!assetDetailNode["ClientVersion"].isNull())
+		assetDetail_.clientVersion = assetDetailNode["ClientVersion"].asString();
 		auto allIpList = assetDetailNode["IpList"]["Ip"];
 		for (auto value : allIpList)
 			assetDetail_.ipList.push_back(value.asString());

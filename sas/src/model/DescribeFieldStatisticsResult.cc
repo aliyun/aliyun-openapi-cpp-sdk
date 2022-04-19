@@ -40,40 +40,46 @@ void DescribeFieldStatisticsResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto groupedFieldsNode = value["GroupedFields"];
-	if(!groupedFieldsNode["RiskInstanceCount"].isNull())
-		groupedFields_.riskInstanceCount = std::stoi(groupedFieldsNode["RiskInstanceCount"].asString());
-	if(!groupedFieldsNode["InstanceCount"].isNull())
-		groupedFields_.instanceCount = std::stoi(groupedFieldsNode["InstanceCount"].asString());
-	if(!groupedFieldsNode["NewInstanceCount"].isNull())
-		groupedFields_.newInstanceCount = std::stoi(groupedFieldsNode["NewInstanceCount"].asString());
-	if(!groupedFieldsNode["RegionCount"].isNull())
-		groupedFields_.regionCount = std::stoi(groupedFieldsNode["RegionCount"].asString());
-	if(!groupedFieldsNode["UnprotectedInstanceCount"].isNull())
-		groupedFields_.unprotectedInstanceCount = std::stoi(groupedFieldsNode["UnprotectedInstanceCount"].asString());
-	if(!groupedFieldsNode["VpcCount"].isNull())
-		groupedFields_.vpcCount = std::stoi(groupedFieldsNode["VpcCount"].asString());
-	if(!groupedFieldsNode["GroupCount"].isNull())
-		groupedFields_.groupCount = std::stoi(groupedFieldsNode["GroupCount"].asString());
-	if(!groupedFieldsNode["NotRunningStatusCount"].isNull())
-		groupedFields_.notRunningStatusCount = std::stoi(groupedFieldsNode["NotRunningStatusCount"].asString());
 	if(!groupedFieldsNode["OfflineInstanceCount"].isNull())
 		groupedFields_.offlineInstanceCount = std::stoi(groupedFieldsNode["OfflineInstanceCount"].asString());
-	if(!groupedFieldsNode["ImportantAssetCount"].isNull())
-		groupedFields_.importantAssetCount = std::stoi(groupedFieldsNode["ImportantAssetCount"].asString());
-	if(!groupedFieldsNode["GeneralAssetCount"].isNull())
-		groupedFields_.generalAssetCount = std::stoi(groupedFieldsNode["GeneralAssetCount"].asString());
-	if(!groupedFieldsNode["TestAssetCount"].isNull())
-		groupedFields_.testAssetCount = std::stoi(groupedFieldsNode["TestAssetCount"].asString());
+	if(!groupedFieldsNode["RegionCount"].isNull())
+		groupedFields_.regionCount = std::stoi(groupedFieldsNode["RegionCount"].asString());
+	if(!groupedFieldsNode["NewInstanceCount"].isNull())
+		groupedFields_.newInstanceCount = std::stoi(groupedFieldsNode["NewInstanceCount"].asString());
 	if(!groupedFieldsNode["ExposedInstanceCount"].isNull())
 		groupedFields_.exposedInstanceCount = std::stoi(groupedFieldsNode["ExposedInstanceCount"].asString());
-	if(!groupedFieldsNode["AliYunInstanceCount"].isNull())
-		groupedFields_.aliYunInstanceCount = std::stoi(groupedFieldsNode["AliYunInstanceCount"].asString());
-	if(!groupedFieldsNode["IdcInstanceCount"].isNull())
-		groupedFields_.idcInstanceCount = std::stoi(groupedFieldsNode["IdcInstanceCount"].asString());
+	if(!groupedFieldsNode["GroupCount"].isNull())
+		groupedFields_.groupCount = std::stoi(groupedFieldsNode["GroupCount"].asString());
 	if(!groupedFieldsNode["TencentInstanceCount"].isNull())
 		groupedFields_.tencentInstanceCount = std::stoi(groupedFieldsNode["TencentInstanceCount"].asString());
+	if(!groupedFieldsNode["GeneralAssetCount"].isNull())
+		groupedFields_.generalAssetCount = std::stoi(groupedFieldsNode["GeneralAssetCount"].asString());
 	if(!groupedFieldsNode["InstanceSyncTaskCount"].isNull())
 		groupedFields_.instanceSyncTaskCount = std::stoi(groupedFieldsNode["InstanceSyncTaskCount"].asString());
+	if(!groupedFieldsNode["UnprotectedInstanceCount"].isNull())
+		groupedFields_.unprotectedInstanceCount = std::stoi(groupedFieldsNode["UnprotectedInstanceCount"].asString());
+	if(!groupedFieldsNode["ImportantAssetCount"].isNull())
+		groupedFields_.importantAssetCount = std::stoi(groupedFieldsNode["ImportantAssetCount"].asString());
+	if(!groupedFieldsNode["TestAssetCount"].isNull())
+		groupedFields_.testAssetCount = std::stoi(groupedFieldsNode["TestAssetCount"].asString());
+	if(!groupedFieldsNode["VpcCount"].isNull())
+		groupedFields_.vpcCount = std::stoi(groupedFieldsNode["VpcCount"].asString());
+	if(!groupedFieldsNode["InstanceCount"].isNull())
+		groupedFields_.instanceCount = std::stoi(groupedFieldsNode["InstanceCount"].asString());
+	if(!groupedFieldsNode["PauseInstanceCount"].isNull())
+		groupedFields_.pauseInstanceCount = std::stoi(groupedFieldsNode["PauseInstanceCount"].asString());
+	if(!groupedFieldsNode["IdcInstanceCount"].isNull())
+		groupedFields_.idcInstanceCount = std::stoi(groupedFieldsNode["IdcInstanceCount"].asString());
+	if(!groupedFieldsNode["NotRunningStatusCount"].isNull())
+		groupedFields_.notRunningStatusCount = std::stoi(groupedFieldsNode["NotRunningStatusCount"].asString());
+	if(!groupedFieldsNode["AliYunInstanceCount"].isNull())
+		groupedFields_.aliYunInstanceCount = std::stoi(groupedFieldsNode["AliYunInstanceCount"].asString());
+	if(!groupedFieldsNode["RiskInstanceCount"].isNull())
+		groupedFields_.riskInstanceCount = std::stoi(groupedFieldsNode["RiskInstanceCount"].asString());
+	if(!groupedFieldsNode["HuaweiInstanceCount"].isNull())
+		groupedFields_.huaweiInstanceCount = std::stoi(groupedFieldsNode["HuaweiInstanceCount"].asString());
+	if(!groupedFieldsNode["AwsInstanceCount"].isNull())
+		groupedFields_.awsInstanceCount = std::stoi(groupedFieldsNode["AwsInstanceCount"].asString());
 
 }
 

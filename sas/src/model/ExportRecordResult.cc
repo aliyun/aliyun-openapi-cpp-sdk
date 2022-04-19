@@ -39,10 +39,10 @@ void ExportRecordResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Id"].isNull())
-		id_ = std::stol(value["Id"].asString());
 	if(!value["FileName"].isNull())
 		fileName_ = value["FileName"].asString();
+	if(!value["Id"].isNull())
+		id_ = std::stol(value["Id"].asString());
 
 }
 

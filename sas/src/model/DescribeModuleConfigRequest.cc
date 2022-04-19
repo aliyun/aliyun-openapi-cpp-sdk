@@ -38,3 +38,14 @@ void DescribeModuleConfigRequest::setSourceIp(const std::string& sourceIp)
 	setParameter("SourceIp", sourceIp);
 }
 
+std::string DescribeModuleConfigRequest::getResourceDirectoryAccountId()const
+{
+	return resourceDirectoryAccountId_;
+}
+
+void DescribeModuleConfigRequest::setResourceDirectoryAccountId(const std::string& resourceDirectoryAccountId)
+{
+	resourceDirectoryAccountId_ = resourceDirectoryAccountId;
+	setParameter("ResourceDirectoryAccountId", resourceDirectoryAccountId);
+}
+

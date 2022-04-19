@@ -55,8 +55,8 @@ namespace AlibabaCloud
 				std::vector<AccessKeyLeak> getAccessKeyLeakList()const;
 				int getTotalCount()const;
 				int getPageSize()const;
-				long getGmtLast()const;
 				int getCurrentPage()const;
+				long getGmtLast()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -65,8 +65,8 @@ namespace AlibabaCloud
 				std::vector<AccessKeyLeak> accessKeyLeakList_;
 				int totalCount_;
 				int pageSize_;
-				long gmtLast_;
 				int currentPage_;
+				long gmtLast_;
 
 			};
 		}

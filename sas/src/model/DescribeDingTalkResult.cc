@@ -43,37 +43,37 @@ void DescribeDingTalkResult::parse(const std::string &payload)
 	for (auto valueActionListActionListArr : allActionListNode)
 	{
 		ActionListArr actionListObject;
-		if(!valueActionListActionListArr["GmtModified"].isNull())
-			actionListObject.gmtModified = std::stol(valueActionListActionListArr["GmtModified"].asString());
-		if(!valueActionListActionListArr["Id"].isNull())
-			actionListObject.id = std::stoi(valueActionListActionListArr["Id"].asString());
-		if(!valueActionListActionListArr["AliUid"].isNull())
-			actionListObject.aliUid = std::stol(valueActionListActionListArr["AliUid"].asString());
-		if(!valueActionListActionListArr["GmtCreate"].isNull())
-			actionListObject.gmtCreate = std::stol(valueActionListActionListArr["GmtCreate"].asString());
-		if(!valueActionListActionListArr["Url"].isNull())
-			actionListObject.url = valueActionListActionListArr["Url"].asString();
-		if(!valueActionListActionListArr["IntervalTime"].isNull())
-			actionListObject.intervalTime = std::stoi(valueActionListActionListArr["IntervalTime"].asString());
-		if(!valueActionListActionListArr["ActionName"].isNull())
-			actionListObject.actionName = valueActionListActionListArr["ActionName"].asString();
 		if(!valueActionListActionListArr["Status"].isNull())
 			actionListObject.status = std::stoi(valueActionListActionListArr["Status"].asString());
 		if(!valueActionListActionListArr["ConfigList"].isNull())
 			actionListObject.configList = valueActionListActionListArr["ConfigList"].asString();
-		if(!valueActionListActionListArr["GroupIdList"].isNull())
-			actionListObject.groupIdList = valueActionListActionListArr["GroupIdList"].asString();
+		if(!valueActionListActionListArr["GmtCreate"].isNull())
+			actionListObject.gmtCreate = std::stol(valueActionListActionListArr["GmtCreate"].asString());
+		if(!valueActionListActionListArr["ActionName"].isNull())
+			actionListObject.actionName = valueActionListActionListArr["ActionName"].asString();
+		if(!valueActionListActionListArr["Url"].isNull())
+			actionListObject.url = valueActionListActionListArr["Url"].asString();
+		if(!valueActionListActionListArr["AliUid"].isNull())
+			actionListObject.aliUid = std::stol(valueActionListActionListArr["AliUid"].asString());
 		if(!valueActionListActionListArr["DingTalkLang"].isNull())
 			actionListObject.dingTalkLang = valueActionListActionListArr["DingTalkLang"].asString();
+		if(!valueActionListActionListArr["IntervalTime"].isNull())
+			actionListObject.intervalTime = std::stoi(valueActionListActionListArr["IntervalTime"].asString());
+		if(!valueActionListActionListArr["GmtModified"].isNull())
+			actionListObject.gmtModified = std::stol(valueActionListActionListArr["GmtModified"].asString());
+		if(!valueActionListActionListArr["GroupIdList"].isNull())
+			actionListObject.groupIdList = valueActionListActionListArr["GroupIdList"].asString();
+		if(!valueActionListActionListArr["Id"].isNull())
+			actionListObject.id = std::stoi(valueActionListActionListArr["Id"].asString());
 		actionList_.push_back(actionListObject);
 	}
 	auto pageInfoNode = value["PageInfo"];
+	if(!pageInfoNode["CurrentPage"].isNull())
+		pageInfo_.currentPage = std::stoi(pageInfoNode["CurrentPage"].asString());
 	if(!pageInfoNode["PageSize"].isNull())
 		pageInfo_.pageSize = std::stoi(pageInfoNode["PageSize"].asString());
 	if(!pageInfoNode["TotalCount"].isNull())
 		pageInfo_.totalCount = std::stoi(pageInfoNode["TotalCount"].asString());
-	if(!pageInfoNode["CurrentPage"].isNull())
-		pageInfo_.currentPage = std::stoi(pageInfoNode["CurrentPage"].asString());
 
 }
 

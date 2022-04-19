@@ -43,14 +43,14 @@ void DescribeSearchConditionResult::parse(const std::string &payload)
 	for (auto valueConditionListCondition : allConditionListNode)
 	{
 		Condition conditionListObject;
+		if(!valueConditionListCondition["ConditionType"].isNull())
+			conditionListObject.conditionType = valueConditionListCondition["ConditionType"].asString();
+		if(!valueConditionListCondition["NameKey"].isNull())
+			conditionListObject.nameKey = valueConditionListCondition["NameKey"].asString();
 		if(!valueConditionListCondition["Name"].isNull())
 			conditionListObject.name = valueConditionListCondition["Name"].asString();
 		if(!valueConditionListCondition["FilterConditions"].isNull())
 			conditionListObject.filterConditions = valueConditionListCondition["FilterConditions"].asString();
-		if(!valueConditionListCondition["NameKey"].isNull())
-			conditionListObject.nameKey = valueConditionListCondition["NameKey"].asString();
-		if(!valueConditionListCondition["ConditionType"].isNull())
-			conditionListObject.conditionType = valueConditionListCondition["ConditionType"].asString();
 		conditionList_.push_back(conditionListObject);
 	}
 

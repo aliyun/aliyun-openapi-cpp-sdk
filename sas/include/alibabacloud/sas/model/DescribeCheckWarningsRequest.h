@@ -35,10 +35,6 @@ namespace AlibabaCloud
 				DescribeCheckWarningsRequest();
 				~DescribeCheckWarningsRequest();
 
-				int getCurrentPage()const;
-				void setCurrentPage(int currentPage);
-				long getRiskId()const;
-				void setRiskId(long riskId);
 				std::string getUuid()const;
 				void setUuid(const std::string& uuid);
 				std::string getSourceIp()const;
@@ -47,14 +43,21 @@ namespace AlibabaCloud
 				void setPageSize(int pageSize);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
+				long getCheckId()const;
+				void setCheckId(long checkId);
+				int getCurrentPage()const;
+				void setCurrentPage(int currentPage);
+				long getRiskId()const;
+				void setRiskId(long riskId);
 
             private:
-				int currentPage_;
-				long riskId_;
 				std::string uuid_;
 				std::string sourceIp_;
 				int pageSize_;
 				std::string lang_;
+				long checkId_;
+				int currentPage_;
+				long riskId_;
 
 			};
 		}

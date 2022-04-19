@@ -40,18 +40,18 @@ void DescribeRiskCheckItemResultResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto pageContentResourceNode = value["PageContentResource"];
-	if(!pageContentResourceNode["ContentResource"].isNull())
-		pageContentResource_.contentResource = pageContentResourceNode["ContentResource"].asString();
 	if(!pageContentResourceNode["CurrentPage"].isNull())
 		pageContentResource_.currentPage = std::stoi(pageContentResourceNode["CurrentPage"].asString());
+	if(!pageContentResourceNode["ContentResource"].isNull())
+		pageContentResource_.contentResource = pageContentResourceNode["ContentResource"].asString();
 	if(!pageContentResourceNode["PageSize"].isNull())
 		pageContentResource_.pageSize = std::stoi(pageContentResourceNode["PageSize"].asString());
 	if(!pageContentResourceNode["TotalCount"].isNull())
 		pageContentResource_.totalCount = std::stoi(pageContentResourceNode["TotalCount"].asString());
-	if(!pageContentResourceNode["Count"].isNull())
-		pageContentResource_.count = std::stoi(pageContentResourceNode["Count"].asString());
 	if(!pageContentResourceNode["PageCount"].isNull())
 		pageContentResource_.pageCount = std::stoi(pageContentResourceNode["PageCount"].asString());
+	if(!pageContentResourceNode["Count"].isNull())
+		pageContentResource_.count = std::stoi(pageContentResourceNode["Count"].asString());
 
 }
 

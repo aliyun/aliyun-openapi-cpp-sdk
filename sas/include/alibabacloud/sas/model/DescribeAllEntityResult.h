@@ -36,8 +36,8 @@ namespace AlibabaCloud
 				{
 					std::string instanceName;
 					std::string uuid;
-					std::string os;
 					std::string internetIp;
+					std::string os;
 					std::string ip;
 					std::string intranetIp;
 					int groupId;

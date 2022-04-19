@@ -43,30 +43,32 @@ void DescribeStrategyExecDetailResult::parse(const std::string &payload)
 	for (auto valueFailedEcsListFailedEcs : allFailedEcsListNode)
 	{
 		FailedEcs failedEcsListObject;
+		if(!valueFailedEcsListFailedEcs["IP"].isNull())
+			failedEcsListObject.iP = valueFailedEcsListFailedEcs["IP"].asString();
+		if(!valueFailedEcsListFailedEcs["InternetIp"].isNull())
+			failedEcsListObject.internetIp = valueFailedEcsListFailedEcs["InternetIp"].asString();
+		if(!valueFailedEcsListFailedEcs["IntranetIp"].isNull())
+			failedEcsListObject.intranetIp = valueFailedEcsListFailedEcs["IntranetIp"].asString();
 		if(!valueFailedEcsListFailedEcs["Reason"].isNull())
 			failedEcsListObject.reason = valueFailedEcsListFailedEcs["Reason"].asString();
 		if(!valueFailedEcsListFailedEcs["InstanceName"].isNull())
 			failedEcsListObject.instanceName = valueFailedEcsListFailedEcs["InstanceName"].asString();
-		if(!valueFailedEcsListFailedEcs["IP"].isNull())
-			failedEcsListObject.iP = valueFailedEcsListFailedEcs["IP"].asString();
-		if(!valueFailedEcsListFailedEcs["IntranetIp"].isNull())
-			failedEcsListObject.intranetIp = valueFailedEcsListFailedEcs["IntranetIp"].asString();
 		failedEcsList_.push_back(failedEcsListObject);
 	}
-	if(!value["StartTime"].isNull())
-		startTime_ = value["StartTime"].asString();
-	if(!value["EndTime"].isNull())
-		endTime_ = value["EndTime"].asString();
-	if(!value["Source"].isNull())
-		source_ = value["Source"].asString();
-	if(!value["Percent"].isNull())
-		percent_ = value["Percent"].asString();
-	if(!value["SuccessCount"].isNull())
-		successCount_ = std::stoi(value["SuccessCount"].asString());
-	if(!value["FailCount"].isNull())
-		failCount_ = std::stoi(value["FailCount"].asString());
 	if(!value["InProcessCount"].isNull())
 		inProcessCount_ = std::stoi(value["InProcessCount"].asString());
+	if(!value["EndTime"].isNull())
+		endTime_ = value["EndTime"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
+	if(!value["Percent"].isNull())
+		percent_ = value["Percent"].asString();
+	if(!value["FailCount"].isNull())
+		failCount_ = std::stoi(value["FailCount"].asString());
+	if(!value["Source"].isNull())
+		source_ = value["Source"].asString();
+	if(!value["SuccessCount"].isNull())
+		successCount_ = std::stoi(value["SuccessCount"].asString());
 
 }
 

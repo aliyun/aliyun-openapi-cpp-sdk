@@ -43,38 +43,40 @@ void DescribeWarningMachinesResult::parse(const std::string &payload)
 	for (auto valueWarningMachinesWarningMachine : allWarningMachinesNode)
 	{
 		WarningMachine warningMachinesObject;
-		if(!valueWarningMachinesWarningMachine["Uuid"].isNull())
-			warningMachinesObject.uuid = valueWarningMachinesWarningMachine["Uuid"].asString();
-		if(!valueWarningMachinesWarningMachine["InstanceName"].isNull())
-			warningMachinesObject.instanceName = valueWarningMachinesWarningMachine["InstanceName"].asString();
-		if(!valueWarningMachinesWarningMachine["InstanceId"].isNull())
-			warningMachinesObject.instanceId = valueWarningMachinesWarningMachine["InstanceId"].asString();
-		if(!valueWarningMachinesWarningMachine["RegionId"].isNull())
-			warningMachinesObject.regionId = valueWarningMachinesWarningMachine["RegionId"].asString();
-		if(!valueWarningMachinesWarningMachine["InternetIp"].isNull())
-			warningMachinesObject.internetIp = valueWarningMachinesWarningMachine["InternetIp"].asString();
-		if(!valueWarningMachinesWarningMachine["IntranetIp"].isNull())
-			warningMachinesObject.intranetIp = valueWarningMachinesWarningMachine["IntranetIp"].asString();
-		if(!valueWarningMachinesWarningMachine["PassCount"].isNull())
-			warningMachinesObject.passCount = std::stoi(valueWarningMachinesWarningMachine["PassCount"].asString());
-		if(!valueWarningMachinesWarningMachine["HighWarningCount"].isNull())
-			warningMachinesObject.highWarningCount = std::stoi(valueWarningMachinesWarningMachine["HighWarningCount"].asString());
-		if(!valueWarningMachinesWarningMachine["MediumWarningCount"].isNull())
-			warningMachinesObject.mediumWarningCount = std::stoi(valueWarningMachinesWarningMachine["MediumWarningCount"].asString());
-		if(!valueWarningMachinesWarningMachine["LowWarningCount"].isNull())
-			warningMachinesObject.lowWarningCount = std::stoi(valueWarningMachinesWarningMachine["LowWarningCount"].asString());
 		if(!valueWarningMachinesWarningMachine["Status"].isNull())
 			warningMachinesObject.status = std::stoi(valueWarningMachinesWarningMachine["Status"].asString());
+		if(!valueWarningMachinesWarningMachine["InternetIp"].isNull())
+			warningMachinesObject.internetIp = valueWarningMachinesWarningMachine["InternetIp"].asString();
+		if(!valueWarningMachinesWarningMachine["InstanceId"].isNull())
+			warningMachinesObject.instanceId = valueWarningMachinesWarningMachine["InstanceId"].asString();
+		if(!valueWarningMachinesWarningMachine["HighWarningCount"].isNull())
+			warningMachinesObject.highWarningCount = std::stoi(valueWarningMachinesWarningMachine["HighWarningCount"].asString());
+		if(!valueWarningMachinesWarningMachine["IntranetIp"].isNull())
+			warningMachinesObject.intranetIp = valueWarningMachinesWarningMachine["IntranetIp"].asString();
+		if(!valueWarningMachinesWarningMachine["RegionId"].isNull())
+			warningMachinesObject.regionId = valueWarningMachinesWarningMachine["RegionId"].asString();
+		if(!valueWarningMachinesWarningMachine["LowWarningCount"].isNull())
+			warningMachinesObject.lowWarningCount = std::stoi(valueWarningMachinesWarningMachine["LowWarningCount"].asString());
+		if(!valueWarningMachinesWarningMachine["PortOpen"].isNull())
+			warningMachinesObject.portOpen = valueWarningMachinesWarningMachine["PortOpen"].asString() == "true";
+		if(!valueWarningMachinesWarningMachine["Uuid"].isNull())
+			warningMachinesObject.uuid = valueWarningMachinesWarningMachine["Uuid"].asString();
+		if(!valueWarningMachinesWarningMachine["MediumWarningCount"].isNull())
+			warningMachinesObject.mediumWarningCount = std::stoi(valueWarningMachinesWarningMachine["MediumWarningCount"].asString());
+		if(!valueWarningMachinesWarningMachine["PassCount"].isNull())
+			warningMachinesObject.passCount = std::stoi(valueWarningMachinesWarningMachine["PassCount"].asString());
+		if(!valueWarningMachinesWarningMachine["InstanceName"].isNull())
+			warningMachinesObject.instanceName = valueWarningMachinesWarningMachine["InstanceName"].asString();
 		warningMachines_.push_back(warningMachinesObject);
 	}
-	if(!value["Count"].isNull())
-		count_ = std::stoi(value["Count"].asString());
+	if(!value["CurrentPage"].isNull())
+		currentPage_ = std::stoi(value["CurrentPage"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["CurrentPage"].isNull())
-		currentPage_ = std::stoi(value["CurrentPage"].asString());
+	if(!value["Count"].isNull())
+		count_ = std::stoi(value["Count"].asString());
 
 }
 

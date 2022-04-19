@@ -43,13 +43,14 @@ namespace AlibabaCloud
 				{
 					int status;
 					std::string filePath;
-					long latestScanTimestamp;
+					std::string highLight;
 					std::string repoRegionId;
+					long latestScanTimestamp;
 					std::string digest;
 					std::string repoName;
 					std::string _namespace;
-					std::string layer;
 					std::string imageUuid;
+					std::string layer;
 					std::string repoInstanceId;
 					long latestVerifyTimestamp;
 					std::string level;
@@ -57,6 +58,7 @@ namespace AlibabaCloud
 					std::string repoId;
 					long firstScanTimestamp;
 					std::string maliciousMd5;
+					std::string downloadUrl;
 				};
 
 

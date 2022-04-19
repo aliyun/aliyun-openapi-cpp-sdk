@@ -38,17 +38,6 @@ void DescribeStrategyRequest::setSourceIp(const std::string& sourceIp)
 	setParameter("SourceIp", sourceIp);
 }
 
-std::string DescribeStrategyRequest::getStrategyIds()const
-{
-	return strategyIds_;
-}
-
-void DescribeStrategyRequest::setStrategyIds(const std::string& strategyIds)
-{
-	strategyIds_ = strategyIds;
-	setParameter("StrategyIds", strategyIds);
-}
-
 std::string DescribeStrategyRequest::getLang()const
 {
 	return lang_;
@@ -58,5 +47,38 @@ void DescribeStrategyRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setParameter("Lang", lang);
+}
+
+std::string DescribeStrategyRequest::getResourceDirectoryAccountId()const
+{
+	return resourceDirectoryAccountId_;
+}
+
+void DescribeStrategyRequest::setResourceDirectoryAccountId(const std::string& resourceDirectoryAccountId)
+{
+	resourceDirectoryAccountId_ = resourceDirectoryAccountId;
+	setParameter("ResourceDirectoryAccountId", resourceDirectoryAccountId);
+}
+
+std::string DescribeStrategyRequest::getCustomType()const
+{
+	return customType_;
+}
+
+void DescribeStrategyRequest::setCustomType(const std::string& customType)
+{
+	customType_ = customType;
+	setParameter("CustomType", customType);
+}
+
+std::string DescribeStrategyRequest::getStrategyIds()const
+{
+	return strategyIds_;
+}
+
+void DescribeStrategyRequest::setStrategyIds(const std::string& strategyIds)
+{
+	strategyIds_ = strategyIds;
+	setParameter("StrategyIds", strategyIds);
 }
 

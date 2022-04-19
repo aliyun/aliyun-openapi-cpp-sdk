@@ -35,17 +35,20 @@ namespace AlibabaCloud
 				DescribeCriteriaRequest();
 				~DescribeCriteriaRequest();
 
-				std::string getMachineTypes()const;
-				void setMachineTypes(const std::string& machineTypes);
+				bool getSupportAutoTag()const;
+				void setSupportAutoTag(bool supportAutoTag);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				std::string getValue()const;
 				void setValue(const std::string& value);
+				std::string getMachineTypes()const;
+				void setMachineTypes(const std::string& machineTypes);
 
             private:
-				std::string machineTypes_;
+				bool supportAutoTag_;
 				std::string sourceIp_;
 				std::string value_;
+				std::string machineTypes_;
 
 			};
 		}

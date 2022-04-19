@@ -41,8 +41,8 @@ namespace AlibabaCloud
 							std::string status;
 							std::string total_score;
 							std::string gmt_create;
-							std::string cvss_factor;
 							std::string time_factor;
+							std::string cvss_factor;
 							std::string is_calc;
 							std::string enviroment_factor;
 							std::string assets_factor;
@@ -50,8 +50,12 @@ namespace AlibabaCloud
 						struct RpmEntity
 						{
 							std::string path;
+							std::string imageName;
 							std::string updateCmd;
+							std::vector<std::string> matchList;
 							std::string version;
+							std::string containerName;
+							std::string pid;
 							std::string fullVersion;
 							std::string matchDetail;
 							std::string name;
@@ -103,8 +107,8 @@ namespace AlibabaCloud
 					};
 					std::string k8sNodeId;
 					std::string k8sNodeName;
-					std::string ip;
 					std::string osVersion;
+					std::string ip;
 					std::string containerInnerPath;
 					std::string intranetIp;
 					std::string k8sClusterId;
@@ -113,8 +117,8 @@ namespace AlibabaCloud
 					std::string k8sNamespace;
 					long modifyTs;
 					std::string internetIp;
-					std::string containerName;
 					std::string containerId;
+					std::string containerName;
 					std::string aliasName;
 					long recordId;
 					std::string canFix;
@@ -126,15 +130,15 @@ namespace AlibabaCloud
 					std::string necessity;
 					ProcessInfo processInfo;
 					std::string needReboot;
-					std::string resultMessage;
 					std::string k8sPodName;
+					std::string resultMessage;
 					std::string containerImageId;
 					int groupId;
 					std::string instanceName;
 					std::string type;
 					long firstTs;
-					std::string uuid;
 					std::string related;
+					std::string uuid;
 					std::string containerImageName;
 					std::string level;
 					std::string tag;

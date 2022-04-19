@@ -41,18 +41,17 @@ namespace AlibabaCloud
 				};
 				struct PropertyCron
 				{
+					std::string instanceName;
 					std::string user;
+					std::string uuid;
+					std::string internetIp;
 					std::string instanceId;
 					std::string ip;
 					std::string period;
-					std::string intranetIp;
-					std::string source;
-					std::string instanceName;
-					std::string uuid;
-					std::string internetIp;
-					std::string create;
 					std::string cmd;
+					std::string intranetIp;
 					long createTimestamp;
+					std::string source;
 					std::string md5;
 				};
 

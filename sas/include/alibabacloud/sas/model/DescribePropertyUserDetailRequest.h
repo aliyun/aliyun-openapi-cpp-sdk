@@ -43,8 +43,14 @@ namespace AlibabaCloud
 				void setSourceIp(const std::string& sourceIp);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
+				long getLastLoginTimeStart()const;
+				void setLastLoginTimeStart(long lastLoginTimeStart);
 				int getCurrentPage()const;
 				void setCurrentPage(int currentPage);
+				long getLastLoginTimeEnd()const;
+				void setLastLoginTimeEnd(long lastLoginTimeEnd);
+				std::string getExtend()const;
+				void setExtend(const std::string& extend);
 				std::string getIsRoot()const;
 				void setIsRoot(const std::string& isRoot);
 				std::string getUser()const;
@@ -55,7 +61,10 @@ namespace AlibabaCloud
 				std::string uuid_;
 				std::string sourceIp_;
 				int pageSize_;
+				long lastLoginTimeStart_;
 				int currentPage_;
+				long lastLoginTimeEnd_;
+				std::string extend_;
 				std::string isRoot_;
 				std::string user_;
 

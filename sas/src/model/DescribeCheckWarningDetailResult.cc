@@ -39,20 +39,20 @@ void DescribeCheckWarningDetailResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["Advice"].isNull())
+		advice_ = value["Advice"].asString();
+	if(!value["Type"].isNull())
+		type_ = value["Type"].asString();
+	if(!value["Description"].isNull())
+		description_ = value["Description"].asString();
+	if(!value["Item"].isNull())
+		item_ = value["Item"].asString();
 	if(!value["CheckId"].isNull())
 		checkId_ = std::stol(value["CheckId"].asString());
 	if(!value["Level"].isNull())
 		level_ = value["Level"].asString();
-	if(!value["Item"].isNull())
-		item_ = value["Item"].asString();
 	if(!value["Prompt"].isNull())
 		prompt_ = value["Prompt"].asString();
-	if(!value["Type"].isNull())
-		type_ = value["Type"].asString();
-	if(!value["Advice"].isNull())
-		advice_ = value["Advice"].asString();
-	if(!value["Description"].isNull())
-		description_ = value["Description"].asString();
 
 }
 

@@ -43,52 +43,54 @@ void DescribeSuspEventDetailResult::parse(const std::string &payload)
 	for (auto valueDetailsQuaraFile : allDetailsNode)
 	{
 		QuaraFile detailsObject;
-		if(!valueDetailsQuaraFile["Name"].isNull())
-			detailsObject.name = valueDetailsQuaraFile["Name"].asString();
 		if(!valueDetailsQuaraFile["Type"].isNull())
 			detailsObject.type = valueDetailsQuaraFile["Type"].asString();
-		if(!valueDetailsQuaraFile["InfoType"].isNull())
-			detailsObject.infoType = valueDetailsQuaraFile["InfoType"].asString();
 		if(!valueDetailsQuaraFile["Value"].isNull())
 			detailsObject.value = valueDetailsQuaraFile["Value"].asString();
+		if(!valueDetailsQuaraFile["InfoType"].isNull())
+			detailsObject.infoType = valueDetailsQuaraFile["InfoType"].asString();
+		if(!valueDetailsQuaraFile["NameDisplay"].isNull())
+			detailsObject.nameDisplay = valueDetailsQuaraFile["NameDisplay"].asString();
+		if(!valueDetailsQuaraFile["Name"].isNull())
+			detailsObject.name = valueDetailsQuaraFile["Name"].asString();
 		details_.push_back(detailsObject);
 	}
-	if(!value["LastTime"].isNull())
-		lastTime_ = value["LastTime"].asString();
-	if(!value["Id"].isNull())
-		id_ = std::stoi(value["Id"].asString());
-	if(!value["InstanceName"].isNull())
-		instanceName_ = value["InstanceName"].asString();
+	if(!value["Type"].isNull())
+		type_ = value["Type"].asString();
+	if(!value["DataSource"].isNull())
+		dataSource_ = value["DataSource"].asString();
+	if(!value["EventName"].isNull())
+		eventName_ = value["EventName"].asString();
 	if(!value["InternetIp"].isNull())
 		internetIp_ = value["InternetIp"].asString();
 	if(!value["IntranetIp"].isNull())
 		intranetIp_ = value["IntranetIp"].asString();
+	if(!value["LastTime"].isNull())
+		lastTime_ = value["LastTime"].asString();
+	if(!value["OperateMsg"].isNull())
+		operateMsg_ = value["OperateMsg"].asString();
 	if(!value["Uuid"].isNull())
 		uuid_ = value["Uuid"].asString();
-	if(!value["EventDesc"].isNull())
-		eventDesc_ = value["EventDesc"].asString();
+	if(!value["CanBeDealOnLine"].isNull())
+		canBeDealOnLine_ = value["CanBeDealOnLine"].asString() == "true";
 	if(!value["EventTypeDesc"].isNull())
 		eventTypeDesc_ = value["EventTypeDesc"].asString();
-	if(!value["Level"].isNull())
-		level_ = value["Level"].asString();
+	if(!value["EventDesc"].isNull())
+		eventDesc_ = value["EventDesc"].asString();
+	if(!value["InstanceName"].isNull())
+		instanceName_ = value["InstanceName"].asString();
 	if(!value["EventStatus"].isNull())
 		eventStatus_ = value["EventStatus"].asString();
 	if(!value["SaleVersion"].isNull())
 		saleVersion_ = value["SaleVersion"].asString();
-	if(!value["DataSource"].isNull())
-		dataSource_ = value["DataSource"].asString();
-	if(!value["Type"].isNull())
-		type_ = value["Type"].asString();
-	if(!value["OperateMsg"].isNull())
-		operateMsg_ = value["OperateMsg"].asString();
-	if(!value["SasId"].isNull())
-		sasId_ = value["SasId"].asString();
-	if(!value["EventName"].isNull())
-		eventName_ = value["EventName"].asString();
-	if(!value["CanBeDealOnLine"].isNull())
-		canBeDealOnLine_ = value["CanBeDealOnLine"].asString() == "true";
 	if(!value["OperateErrorCode"].isNull())
 		operateErrorCode_ = value["OperateErrorCode"].asString();
+	if(!value["SasId"].isNull())
+		sasId_ = value["SasId"].asString();
+	if(!value["Level"].isNull())
+		level_ = value["Level"].asString();
+	if(!value["Id"].isNull())
+		id_ = std::stoi(value["Id"].asString());
 
 }
 

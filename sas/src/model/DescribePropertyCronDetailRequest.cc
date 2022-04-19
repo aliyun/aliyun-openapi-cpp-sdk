@@ -93,6 +93,17 @@ void DescribePropertyCronDetailRequest::setCurrentPage(int currentPage)
 	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
+std::string DescribePropertyCronDetailRequest::getExtend()const
+{
+	return extend_;
+}
+
+void DescribePropertyCronDetailRequest::setExtend(const std::string& extend)
+{
+	extend_ = extend;
+	setParameter("Extend", extend);
+}
+
 std::string DescribePropertyCronDetailRequest::getUser()const
 {
 	return user_;

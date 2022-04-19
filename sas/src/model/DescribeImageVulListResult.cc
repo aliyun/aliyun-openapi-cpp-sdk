@@ -43,63 +43,68 @@ void DescribeImageVulListResult::parse(const std::string &payload)
 	for (auto valueVulRecordsVulRecord : allVulRecordsNode)
 	{
 		VulRecord vulRecordsObject;
-		if(!valueVulRecordsVulRecord["PrimaryId"].isNull())
-			vulRecordsObject.primaryId = std::stol(valueVulRecordsVulRecord["PrimaryId"].asString());
-		if(!valueVulRecordsVulRecord["Uuid"].isNull())
-			vulRecordsObject.uuid = valueVulRecordsVulRecord["Uuid"].asString();
-		if(!valueVulRecordsVulRecord["Name"].isNull())
-			vulRecordsObject.name = valueVulRecordsVulRecord["Name"].asString();
-		if(!valueVulRecordsVulRecord["Tag"].isNull())
-			vulRecordsObject.tag = valueVulRecordsVulRecord["Tag"].asString();
-		if(!valueVulRecordsVulRecord["AliasName"].isNull())
-			vulRecordsObject.aliasName = valueVulRecordsVulRecord["AliasName"].asString();
+		if(!valueVulRecordsVulRecord["CanUpdate"].isNull())
+			vulRecordsObject.canUpdate = valueVulRecordsVulRecord["CanUpdate"].asString() == "true";
 		if(!valueVulRecordsVulRecord["Type"].isNull())
 			vulRecordsObject.type = valueVulRecordsVulRecord["Type"].asString();
-		if(!valueVulRecordsVulRecord["Level"].isNull())
-			vulRecordsObject.level = valueVulRecordsVulRecord["Level"].asString();
+		if(!valueVulRecordsVulRecord["Status"].isNull())
+			vulRecordsObject.status = std::stoi(valueVulRecordsVulRecord["Status"].asString());
+		if(!valueVulRecordsVulRecord["ModifyTs"].isNull())
+			vulRecordsObject.modifyTs = std::stol(valueVulRecordsVulRecord["ModifyTs"].asString());
+		if(!valueVulRecordsVulRecord["Progress"].isNull())
+			vulRecordsObject.progress = std::stoi(valueVulRecordsVulRecord["Progress"].asString());
+		if(!valueVulRecordsVulRecord["ImageDigest"].isNull())
+			vulRecordsObject.imageDigest = valueVulRecordsVulRecord["ImageDigest"].asString();
+		if(!valueVulRecordsVulRecord["PrimaryId"].isNull())
+			vulRecordsObject.primaryId = std::stol(valueVulRecordsVulRecord["PrimaryId"].asString());
+		if(!valueVulRecordsVulRecord["Tag"].isNull())
+			vulRecordsObject.tag = valueVulRecordsVulRecord["Tag"].asString();
+		if(!valueVulRecordsVulRecord["RepoNamespace"].isNull())
+			vulRecordsObject.repoNamespace = valueVulRecordsVulRecord["RepoNamespace"].asString();
+		if(!valueVulRecordsVulRecord["RepoName"].isNull())
+			vulRecordsObject.repoName = valueVulRecordsVulRecord["RepoName"].asString();
+		if(!valueVulRecordsVulRecord["Related"].isNull())
+			vulRecordsObject.related = valueVulRecordsVulRecord["Related"].asString();
 		if(!valueVulRecordsVulRecord["FirstTs"].isNull())
 			vulRecordsObject.firstTs = std::stol(valueVulRecordsVulRecord["FirstTs"].asString());
 		if(!valueVulRecordsVulRecord["LastTs"].isNull())
 			vulRecordsObject.lastTs = std::stol(valueVulRecordsVulRecord["LastTs"].asString());
-		if(!valueVulRecordsVulRecord["Status"].isNull())
-			vulRecordsObject.status = std::stoi(valueVulRecordsVulRecord["Status"].asString());
-		if(!valueVulRecordsVulRecord["Progress"].isNull())
-			vulRecordsObject.progress = std::stoi(valueVulRecordsVulRecord["Progress"].asString());
 		if(!valueVulRecordsVulRecord["Necessity"].isNull())
 			vulRecordsObject.necessity = valueVulRecordsVulRecord["Necessity"].asString();
-		if(!valueVulRecordsVulRecord["Related"].isNull())
-			vulRecordsObject.related = valueVulRecordsVulRecord["Related"].asString();
-		if(!valueVulRecordsVulRecord["ModifyTs"].isNull())
-			vulRecordsObject.modifyTs = std::stol(valueVulRecordsVulRecord["ModifyTs"].asString());
-		if(!valueVulRecordsVulRecord["ImageDigest"].isNull())
-			vulRecordsObject.imageDigest = valueVulRecordsVulRecord["ImageDigest"].asString();
-		if(!valueVulRecordsVulRecord["CanUpdate"].isNull())
-			vulRecordsObject.canUpdate = valueVulRecordsVulRecord["CanUpdate"].asString() == "true";
+		if(!valueVulRecordsVulRecord["Uuid"].isNull())
+			vulRecordsObject.uuid = valueVulRecordsVulRecord["Uuid"].asString();
+		if(!valueVulRecordsVulRecord["AliasName"].isNull())
+			vulRecordsObject.aliasName = valueVulRecordsVulRecord["AliasName"].asString();
+		if(!valueVulRecordsVulRecord["Name"].isNull())
+			vulRecordsObject.name = valueVulRecordsVulRecord["Name"].asString();
+		if(!valueVulRecordsVulRecord["Level"].isNull())
+			vulRecordsObject.level = valueVulRecordsVulRecord["Level"].asString();
 		auto extendContentJsonNode = value["ExtendContentJson"];
-		if(!extendContentJsonNode["Os"].isNull())
-			vulRecordsObject.extendContentJson.os = extendContentJsonNode["Os"].asString();
 		if(!extendContentJsonNode["OsRelease"].isNull())
 			vulRecordsObject.extendContentJson.osRelease = extendContentJsonNode["OsRelease"].asString();
+		if(!extendContentJsonNode["Os"].isNull())
+			vulRecordsObject.extendContentJson.os = extendContentJsonNode["Os"].asString();
 		auto allRpmEntityListNode = extendContentJsonNode["RpmEntityList"]["RpmEntity"];
 		for (auto extendContentJsonNodeRpmEntityListRpmEntity : allRpmEntityListNode)
 		{
 			VulRecord::ExtendContentJson::RpmEntity rpmEntityObject;
-			if(!extendContentJsonNodeRpmEntityListRpmEntity["FullVersion"].isNull())
-				rpmEntityObject.fullVersion = extendContentJsonNodeRpmEntityListRpmEntity["FullVersion"].asString();
-			if(!extendContentJsonNodeRpmEntityListRpmEntity["MatchDetail"].isNull())
-				rpmEntityObject.matchDetail = extendContentJsonNodeRpmEntityListRpmEntity["MatchDetail"].asString();
-			if(!extendContentJsonNodeRpmEntityListRpmEntity["Name"].isNull())
-				rpmEntityObject.name = extendContentJsonNodeRpmEntityListRpmEntity["Name"].asString();
-			if(!extendContentJsonNodeRpmEntityListRpmEntity["Path"].isNull())
-				rpmEntityObject.path = extendContentJsonNodeRpmEntityListRpmEntity["Path"].asString();
-			if(!extendContentJsonNodeRpmEntityListRpmEntity["UpdateCmd"].isNull())
-				rpmEntityObject.updateCmd = extendContentJsonNodeRpmEntityListRpmEntity["UpdateCmd"].asString();
-			if(!extendContentJsonNodeRpmEntityListRpmEntity["Version"].isNull())
-				rpmEntityObject.version = extendContentJsonNodeRpmEntityListRpmEntity["Version"].asString();
 			if(!extendContentJsonNodeRpmEntityListRpmEntity["Layer"].isNull())
 				rpmEntityObject.layer = extendContentJsonNodeRpmEntityListRpmEntity["Layer"].asString();
-			if(!extendContentJsonNodeRpmEntityListRpmEntity["MatchList"].isNull())
-				rpmEntityObject.matchList = extendContentJsonNodeRpmEntityListRpmEntity["MatchList"].asString();
+			if(!extendContentJsonNodeRpmEntityListRpmEntity["FullVersion"].isNull())
+				rpmEntityObject.fullVersion = extendContentJsonNodeRpmEntityListRpmEntity["FullVersion"].asString();
+			if(!extendContentJsonNodeRpmEntityListRpmEntity["Version"].isNull())
+				rpmEntityObject.version = extendContentJsonNodeRpmEntityListRpmEntity["Version"].asString();
+			if(!extendContentJsonNodeRpmEntityListRpmEntity["MatchDetail"].isNull())
+				rpmEntityObject.matchDetail = extendContentJsonNodeRpmEntityListRpmEntity["MatchDetail"].asString();
+			if(!extendContentJsonNodeRpmEntityListRpmEntity["Path"].isNull())
+				rpmEntityObject.path = extendContentJsonNodeRpmEntityListRpmEntity["Path"].asString();
+			if(!extendContentJsonNodeRpmEntityListRpmEntity["Name"].isNull())
+				rpmEntityObject.name = extendContentJsonNodeRpmEntityListRpmEntity["Name"].asString();
+			if(!extendContentJsonNodeRpmEntityListRpmEntity["UpdateCmd"].isNull())
+				rpmEntityObject.updateCmd = extendContentJsonNodeRpmEntityListRpmEntity["UpdateCmd"].asString();
+			auto allMatchList = value["MatchList"]["Match"];
+			for (auto value : allMatchList)
+				rpmEntityObject.matchList.push_back(value.asString());
 			vulRecordsObject.extendContentJson.rpmEntityList.push_back(rpmEntityObject);
 		}
 		auto allLayers = value["Layers"]["name"];
@@ -107,10 +112,10 @@ void DescribeImageVulListResult::parse(const std::string &payload)
 			vulRecordsObject.layers.push_back(value.asString());
 		vulRecords_.push_back(vulRecordsObject);
 	}
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["CurrentPage"].isNull())
 		currentPage_ = std::stoi(value["CurrentPage"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
 

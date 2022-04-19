@@ -39,6 +39,7 @@ namespace AlibabaCloud
 						std::string filedName;
 						std::vector<std::string> supportedMisType;
 						std::string markMisValue;
+						std::string uuid;
 						std::string markMisType;
 						std::string filedAliasName;
 					};

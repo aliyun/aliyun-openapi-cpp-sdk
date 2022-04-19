@@ -41,17 +41,22 @@ namespace AlibabaCloud
 				};
 				struct SuspEventsItem
 				{
+					struct TacticItem
+					{
+						std::string tacticId;
+						std::string tacticDisplayName;
+					};
 					std::string description;
 					std::string k8sNodeId;
-					long endTime;
 					bool containHwMode;
+					long endTime;
 					std::string k8sNodeName;
 					std::string operateErrorCode;
 					std::string alarmEventName;
 					std::string securityEventIds;
 					long gmtModified;
-					std::string intranetIp;
 					bool hasTraceInfo;
+					std::string intranetIp;
 					std::string k8sClusterId;
 					std::string appName;
 					std::string k8sNamespace;
@@ -72,12 +77,13 @@ namespace AlibabaCloud
 					std::string instanceName;
 					long operateTime;
 					bool canBeDealOnLine;
-					std::string uuid;
 					std::string k8sClusterName;
+					std::string uuid;
 					std::string containerImageName;
 					int suspiciousEventCount;
 					std::string alarmUniqueInfo;
 					std::string level;
+					std::vector<SuspEventsItem::TacticItem> tacticItems;
 				};
 
 

@@ -27,17 +27,6 @@ OperateVulsRequest::OperateVulsRequest() :
 OperateVulsRequest::~OperateVulsRequest()
 {}
 
-std::string OperateVulsRequest::getReason()const
-{
-	return reason_;
-}
-
-void OperateVulsRequest::setReason(const std::string& reason)
-{
-	reason_ = reason;
-	setParameter("Reason", reason);
-}
-
 std::string OperateVulsRequest::getType()const
 {
 	return type_;
@@ -71,17 +60,6 @@ void OperateVulsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
 	setParameter("SourceIp", sourceIp);
-}
-
-int OperateVulsRequest::getPrecondition()const
-{
-	return precondition_;
-}
-
-void OperateVulsRequest::setPrecondition(int precondition)
-{
-	precondition_ = precondition;
-	setParameter("Precondition", std::to_string(precondition));
 }
 
 std::string OperateVulsRequest::getOperateType()const

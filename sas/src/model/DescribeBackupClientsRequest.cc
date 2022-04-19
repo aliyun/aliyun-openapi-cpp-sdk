@@ -27,6 +27,17 @@ DescribeBackupClientsRequest::DescribeBackupClientsRequest() :
 DescribeBackupClientsRequest::~DescribeBackupClientsRequest()
 {}
 
+long DescribeBackupClientsRequest::getResourceOwnerId()const
+{
+	return resourceOwnerId_;
+}
+
+void DescribeBackupClientsRequest::setResourceOwnerId(long resourceOwnerId)
+{
+	resourceOwnerId_ = resourceOwnerId;
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+}
+
 std::string DescribeBackupClientsRequest::getSupportRegionId()const
 {
 	return supportRegionId_;

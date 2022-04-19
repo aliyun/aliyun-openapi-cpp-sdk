@@ -82,6 +82,17 @@ void DescribePropertySoftwareDetailRequest::setSourceIp(const std::string& sourc
 	setParameter("SourceIp", sourceIp);
 }
 
+long DescribePropertySoftwareDetailRequest::getInstallTimeStart()const
+{
+	return installTimeStart_;
+}
+
+void DescribePropertySoftwareDetailRequest::setInstallTimeStart(long installTimeStart)
+{
+	installTimeStart_ = installTimeStart;
+	setParameter("InstallTimeStart", std::to_string(installTimeStart));
+}
+
 int DescribePropertySoftwareDetailRequest::getPageSize()const
 {
 	return pageSize_;
@@ -93,6 +104,17 @@ void DescribePropertySoftwareDetailRequest::setPageSize(int pageSize)
 	setParameter("PageSize", std::to_string(pageSize));
 }
 
+long DescribePropertySoftwareDetailRequest::getInstallTimeEnd()const
+{
+	return installTimeEnd_;
+}
+
+void DescribePropertySoftwareDetailRequest::setInstallTimeEnd(long installTimeEnd)
+{
+	installTimeEnd_ = installTimeEnd;
+	setParameter("InstallTimeEnd", std::to_string(installTimeEnd));
+}
+
 int DescribePropertySoftwareDetailRequest::getCurrentPage()const
 {
 	return currentPage_;
@@ -102,6 +124,17 @@ void DescribePropertySoftwareDetailRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
 	setParameter("CurrentPage", std::to_string(currentPage));
+}
+
+std::string DescribePropertySoftwareDetailRequest::getExtend()const
+{
+	return extend_;
+}
+
+void DescribePropertySoftwareDetailRequest::setExtend(const std::string& extend)
+{
+	extend_ = extend;
+	setParameter("Extend", extend);
 }
 
 std::string DescribePropertySoftwareDetailRequest::getName()const

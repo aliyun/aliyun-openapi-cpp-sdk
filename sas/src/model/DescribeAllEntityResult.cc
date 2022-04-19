@@ -43,18 +43,18 @@ void DescribeAllEntityResult::parse(const std::string &payload)
 	for (auto valueEntityListEntity : allEntityListNode)
 	{
 		Entity entityListObject;
+		if(!valueEntityListEntity["Uuid"].isNull())
+			entityListObject.uuid = valueEntityListEntity["Uuid"].asString();
 		if(!valueEntityListEntity["GroupId"].isNull())
 			entityListObject.groupId = std::stoi(valueEntityListEntity["GroupId"].asString());
+		if(!valueEntityListEntity["InternetIp"].isNull())
+			entityListObject.internetIp = valueEntityListEntity["InternetIp"].asString();
 		if(!valueEntityListEntity["InstanceName"].isNull())
 			entityListObject.instanceName = valueEntityListEntity["InstanceName"].asString();
 		if(!valueEntityListEntity["Ip"].isNull())
 			entityListObject.ip = valueEntityListEntity["Ip"].asString();
-		if(!valueEntityListEntity["Uuid"].isNull())
-			entityListObject.uuid = valueEntityListEntity["Uuid"].asString();
 		if(!valueEntityListEntity["Os"].isNull())
 			entityListObject.os = valueEntityListEntity["Os"].asString();
-		if(!valueEntityListEntity["InternetIp"].isNull())
-			entityListObject.internetIp = valueEntityListEntity["InternetIp"].asString();
 		if(!valueEntityListEntity["IntranetIp"].isNull())
 			entityListObject.intranetIp = valueEntityListEntity["IntranetIp"].asString();
 		entityList_.push_back(entityListObject);

@@ -43,36 +43,36 @@ void DescribeModuleConfigResult::parse(const std::string &payload)
 	for (auto valueModuleConfigListModuleConfig : allModuleConfigListNode)
 	{
 		ModuleConfig moduleConfigListObject;
-		if(!valueModuleConfigListModuleConfig["ConfigName"].isNull())
-			moduleConfigListObject.configName = valueModuleConfigListModuleConfig["ConfigName"].asString();
 		if(!valueModuleConfigListModuleConfig["ModuleName"].isNull())
 			moduleConfigListObject.moduleName = valueModuleConfigListModuleConfig["ModuleName"].asString();
+		if(!valueModuleConfigListModuleConfig["ConfigName"].isNull())
+			moduleConfigListObject.configName = valueModuleConfigListModuleConfig["ConfigName"].asString();
 		auto allItemsNode = valueModuleConfigListModuleConfig["Items"]["Item"];
 		for (auto valueModuleConfigListModuleConfigItemsItem : allItemsNode)
 		{
 			ModuleConfig::Item itemsObject;
-			if(!valueModuleConfigListModuleConfigItemsItem["InstanceId"].isNull())
-				itemsObject.instanceId = valueModuleConfigListModuleConfigItemsItem["InstanceId"].asString();
-			if(!valueModuleConfigListModuleConfigItemsItem["InstanceName"].isNull())
-				itemsObject.instanceName = valueModuleConfigListModuleConfigItemsItem["InstanceName"].asString();
-			if(!valueModuleConfigListModuleConfigItemsItem["GroupId"].isNull())
-				itemsObject.groupId = std::stoi(valueModuleConfigListModuleConfigItemsItem["GroupId"].asString());
-			if(!valueModuleConfigListModuleConfigItemsItem["Ip"].isNull())
-				itemsObject.ip = valueModuleConfigListModuleConfigItemsItem["Ip"].asString();
-			if(!valueModuleConfigListModuleConfigItemsItem["Region"].isNull())
-				itemsObject.region = valueModuleConfigListModuleConfigItemsItem["Region"].asString();
 			if(!valueModuleConfigListModuleConfigItemsItem["Uuid"].isNull())
 				itemsObject.uuid = valueModuleConfigListModuleConfigItemsItem["Uuid"].asString();
+			if(!valueModuleConfigListModuleConfigItemsItem["GroupId"].isNull())
+				itemsObject.groupId = std::stoi(valueModuleConfigListModuleConfigItemsItem["GroupId"].asString());
+			if(!valueModuleConfigListModuleConfigItemsItem["InstanceName"].isNull())
+				itemsObject.instanceName = valueModuleConfigListModuleConfigItemsItem["InstanceName"].asString();
+			if(!valueModuleConfigListModuleConfigItemsItem["Region"].isNull())
+				itemsObject.region = valueModuleConfigListModuleConfigItemsItem["Region"].asString();
+			if(!valueModuleConfigListModuleConfigItemsItem["Ip"].isNull())
+				itemsObject.ip = valueModuleConfigListModuleConfigItemsItem["Ip"].asString();
+			if(!valueModuleConfigListModuleConfigItemsItem["InstanceId"].isNull())
+				itemsObject.instanceId = valueModuleConfigListModuleConfigItemsItem["InstanceId"].asString();
 			moduleConfigListObject.items.push_back(itemsObject);
 		}
 		moduleConfigList_.push_back(moduleConfigListObject);
 	}
+	if(!value["HttpStatusCode"].isNull())
+		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["Count"].isNull())
 		count_ = std::stoi(value["Count"].asString());
-	if(!value["HttpStatusCode"].isNull())
-		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 
 }
 

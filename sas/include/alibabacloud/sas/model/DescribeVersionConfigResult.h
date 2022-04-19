@@ -45,9 +45,9 @@ namespace AlibabaCloud
 				int getVersion()const;
 				int getAvdsFlag()const;
 				int getHighestVersion()const;
+				long getLastTrailEndTime()const;
 				long getWebLockAuthCount()const;
 				long getSlsCapacity()const;
-				long getLastTrailEndTime()const;
 				int getUserDefinedAlarms()const;
 				int getAllowPartialBuy()const;
 				int getWebLock()const;
@@ -65,8 +65,8 @@ namespace AlibabaCloud
 				int getMVAuthCount()const;
 				long getGmtCreate()const;
 				long getReleaseTime()const;
-				int getIsTrialVersion()const;
 				int getMVUnusedAuthCount()const;
+				int getIsTrialVersion()const;
 				int getAppWhiteList()const;
 
 			protected:
@@ -80,9 +80,9 @@ namespace AlibabaCloud
 				int version_;
 				int avdsFlag_;
 				int highestVersion_;
+				long lastTrailEndTime_;
 				long webLockAuthCount_;
 				long slsCapacity_;
-				long lastTrailEndTime_;
 				int userDefinedAlarms_;
 				int allowPartialBuy_;
 				int webLock_;
@@ -100,8 +100,8 @@ namespace AlibabaCloud
 				int mVAuthCount_;
 				long gmtCreate_;
 				long releaseTime_;
-				int isTrialVersion_;
 				int mVUnusedAuthCount_;
+				int isTrialVersion_;
 				int appWhiteList_;
 
 			};

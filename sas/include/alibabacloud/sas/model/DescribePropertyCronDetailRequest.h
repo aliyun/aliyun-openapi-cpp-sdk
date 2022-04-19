@@ -47,6 +47,8 @@ namespace AlibabaCloud
 				void setPageSize(int pageSize);
 				int getCurrentPage()const;
 				void setCurrentPage(int currentPage);
+				std::string getExtend()const;
+				void setExtend(const std::string& extend);
 				std::string getUser()const;
 				void setUser(const std::string& user);
 
@@ -57,6 +59,7 @@ namespace AlibabaCloud
 				std::string sourceIp_;
 				int pageSize_;
 				int currentPage_;
+				std::string extend_;
 				std::string user_;
 
 			};

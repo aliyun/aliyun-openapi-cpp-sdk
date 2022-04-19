@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setLastTsEnd(long lastTsEnd);
 				long getCreateTsStart()const;
 				void setCreateTsStart(long createTsStart);
+				int getIsLatest()const;
+				void setIsLatest(int isLatest);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				std::string getImageTag()const;
@@ -87,6 +89,8 @@ namespace AlibabaCloud
 				void setDealed(const std::string& dealed);
 				int getCurrentPage()const;
 				void setCurrentPage(int currentPage);
+				std::string getClusterId()const;
+				void setClusterId(const std::string& clusterId);
 				std::string getSearchTags()const;
 				void setSearchTags(const std::string& searchTags);
 				std::string getRepoName()const;
@@ -102,6 +106,7 @@ namespace AlibabaCloud
 				std::string type_;
 				long lastTsEnd_;
 				long createTsStart_;
+				int isLatest_;
 				std::string sourceIp_;
 				std::string imageTag_;
 				std::string level_;
@@ -125,6 +130,7 @@ namespace AlibabaCloud
 				std::string direction_;
 				std::string dealed_;
 				int currentPage_;
+				std::string clusterId_;
 				std::string searchTags_;
 				std::string repoName_;
 				std::string repoInstanceId_;

@@ -60,8 +60,8 @@ namespace AlibabaCloud
 				explicit DescribeRiskCheckResultResult(const std::string &payload);
 				~DescribeRiskCheckResultResult();
 				int getTotalCount()const;
-				int getPageCount()const;
 				int getPageSize()const;
+				int getPageCount()const;
 				int getCurrentPage()const;
 				std::vector<RiskCheckResultForDisplay> getList()const;
 				int getCount()const;
@@ -70,8 +70,8 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				int totalCount_;
-				int pageCount_;
 				int pageSize_;
+				int pageCount_;
 				int currentPage_;
 				std::vector<RiskCheckResultForDisplay> list_;
 				int count_;

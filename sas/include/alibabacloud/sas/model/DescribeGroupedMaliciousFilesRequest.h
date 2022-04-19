@@ -53,6 +53,8 @@ namespace AlibabaCloud
 				void setImageTag(const std::string& imageTag);
 				int getCurrentPage()const;
 				void setCurrentPage(int currentPage);
+				std::string getClusterId()const;
+				void setClusterId(const std::string& clusterId);
 				std::string getRepoName()const;
 				void setRepoName(const std::string& repoName);
 				std::string getRepoInstanceId()const;
@@ -61,10 +63,10 @@ namespace AlibabaCloud
 				void setImageLayer(const std::string& imageLayer);
 				std::string getLevels()const;
 				void setLevels(const std::string& levels);
-				std::vector<std::string> getUuids()const;
-				void setUuids(const std::vector<std::string>& uuids);
 				std::string getRepoRegionId()const;
 				void setRepoRegionId(const std::string& repoRegionId);
+				std::vector<std::string> getUuids()const;
+				void setUuids(const std::vector<std::string>& uuids);
 
             private:
 				std::string repoId_;
@@ -76,12 +78,13 @@ namespace AlibabaCloud
 				std::string lang_;
 				std::string imageTag_;
 				int currentPage_;
+				std::string clusterId_;
 				std::string repoName_;
 				std::string repoInstanceId_;
 				std::string imageLayer_;
 				std::string levels_;
-				std::vector<std::string> uuids_;
 				std::string repoRegionId_;
+				std::vector<std::string> uuids_;
 
 			};
 		}

@@ -43,32 +43,32 @@ void DescribeImageGroupedVulListResult::parse(const std::string &payload)
 	for (auto valueGroupedVulItemsGroupedVulItem : allGroupedVulItemsNode)
 	{
 		GroupedVulItem groupedVulItemsObject;
-		if(!valueGroupedVulItemsGroupedVulItem["Name"].isNull())
-			groupedVulItemsObject.name = valueGroupedVulItemsGroupedVulItem["Name"].asString();
-		if(!valueGroupedVulItemsGroupedVulItem["AliasName"].isNull())
-			groupedVulItemsObject.aliasName = valueGroupedVulItemsGroupedVulItem["AliasName"].asString();
-		if(!valueGroupedVulItemsGroupedVulItem["Type"].isNull())
-			groupedVulItemsObject.type = valueGroupedVulItemsGroupedVulItem["Type"].asString();
 		if(!valueGroupedVulItemsGroupedVulItem["Status"].isNull())
 			groupedVulItemsObject.status = std::stoi(valueGroupedVulItemsGroupedVulItem["Status"].asString());
-		if(!valueGroupedVulItemsGroupedVulItem["LastScanTime"].isNull())
-			groupedVulItemsObject.lastScanTime = std::stol(valueGroupedVulItemsGroupedVulItem["LastScanTime"].asString());
-		if(!valueGroupedVulItemsGroupedVulItem["GmtLast"].isNull())
-			groupedVulItemsObject.gmtLast = std::stol(valueGroupedVulItemsGroupedVulItem["GmtLast"].asString());
-		if(!valueGroupedVulItemsGroupedVulItem["AsapCount"].isNull())
-			groupedVulItemsObject.asapCount = std::stoi(valueGroupedVulItemsGroupedVulItem["AsapCount"].asString());
-		if(!valueGroupedVulItemsGroupedVulItem["LaterCount"].isNull())
-			groupedVulItemsObject.laterCount = std::stoi(valueGroupedVulItemsGroupedVulItem["LaterCount"].asString());
+		if(!valueGroupedVulItemsGroupedVulItem["Type"].isNull())
+			groupedVulItemsObject.type = valueGroupedVulItemsGroupedVulItem["Type"].asString();
 		if(!valueGroupedVulItemsGroupedVulItem["NntfCount"].isNull())
 			groupedVulItemsObject.nntfCount = std::stoi(valueGroupedVulItemsGroupedVulItem["NntfCount"].asString());
+		if(!valueGroupedVulItemsGroupedVulItem["GmtLast"].isNull())
+			groupedVulItemsObject.gmtLast = std::stol(valueGroupedVulItemsGroupedVulItem["GmtLast"].asString());
+		if(!valueGroupedVulItemsGroupedVulItem["LastScanTime"].isNull())
+			groupedVulItemsObject.lastScanTime = std::stol(valueGroupedVulItemsGroupedVulItem["LastScanTime"].asString());
 		if(!valueGroupedVulItemsGroupedVulItem["Tags"].isNull())
 			groupedVulItemsObject.tags = valueGroupedVulItemsGroupedVulItem["Tags"].asString();
+		if(!valueGroupedVulItemsGroupedVulItem["LaterCount"].isNull())
+			groupedVulItemsObject.laterCount = std::stoi(valueGroupedVulItemsGroupedVulItem["LaterCount"].asString());
+		if(!valueGroupedVulItemsGroupedVulItem["AliasName"].isNull())
+			groupedVulItemsObject.aliasName = valueGroupedVulItemsGroupedVulItem["AliasName"].asString();
+		if(!valueGroupedVulItemsGroupedVulItem["Name"].isNull())
+			groupedVulItemsObject.name = valueGroupedVulItemsGroupedVulItem["Name"].asString();
+		if(!valueGroupedVulItemsGroupedVulItem["AsapCount"].isNull())
+			groupedVulItemsObject.asapCount = std::stoi(valueGroupedVulItemsGroupedVulItem["AsapCount"].asString());
 		groupedVulItems_.push_back(groupedVulItemsObject);
 	}
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["CurrentPage"].isNull())
 		currentPage_ = std::stoi(value["CurrentPage"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
 

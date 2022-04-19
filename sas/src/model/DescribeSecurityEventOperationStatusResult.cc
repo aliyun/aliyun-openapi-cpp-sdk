@@ -46,10 +46,10 @@ void DescribeSecurityEventOperationStatusResult::parse(const std::string &payloa
 	for (auto securityEventOperationStatusResponseNodeSecurityEventOperationStatusesSecurityEventOperationStatus : allSecurityEventOperationStatusesNode)
 	{
 		SecurityEventOperationStatusResponse::SecurityEventOperationStatus securityEventOperationStatusObject;
-		if(!securityEventOperationStatusResponseNodeSecurityEventOperationStatusesSecurityEventOperationStatus["SecurityEventId"].isNull())
-			securityEventOperationStatusObject.securityEventId = securityEventOperationStatusResponseNodeSecurityEventOperationStatusesSecurityEventOperationStatus["SecurityEventId"].asString();
 		if(!securityEventOperationStatusResponseNodeSecurityEventOperationStatusesSecurityEventOperationStatus["Status"].isNull())
 			securityEventOperationStatusObject.status = securityEventOperationStatusResponseNodeSecurityEventOperationStatusesSecurityEventOperationStatus["Status"].asString();
+		if(!securityEventOperationStatusResponseNodeSecurityEventOperationStatusesSecurityEventOperationStatus["SecurityEventId"].isNull())
+			securityEventOperationStatusObject.securityEventId = securityEventOperationStatusResponseNodeSecurityEventOperationStatusesSecurityEventOperationStatus["SecurityEventId"].asString();
 		if(!securityEventOperationStatusResponseNodeSecurityEventOperationStatusesSecurityEventOperationStatus["ErrorCode"].isNull())
 			securityEventOperationStatusObject.errorCode = securityEventOperationStatusResponseNodeSecurityEventOperationStatusesSecurityEventOperationStatus["ErrorCode"].asString();
 		securityEventOperationStatusResponse_.securityEventOperationStatuses.push_back(securityEventOperationStatusObject);

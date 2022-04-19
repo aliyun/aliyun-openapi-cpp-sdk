@@ -43,38 +43,38 @@ void DescribeAccesskeyLeakListResult::parse(const std::string &payload)
 	for (auto valueAccessKeyLeakListAccessKeyLeak : allAccessKeyLeakListNode)
 	{
 		AccessKeyLeak accessKeyLeakListObject;
-		if(!valueAccessKeyLeakListAccessKeyLeak["Id"].isNull())
-			accessKeyLeakListObject.id = std::stol(valueAccessKeyLeakListAccessKeyLeak["Id"].asString());
-		if(!valueAccessKeyLeakListAccessKeyLeak["GmtModified"].isNull())
-			accessKeyLeakListObject.gmtModified = std::stol(valueAccessKeyLeakListAccessKeyLeak["GmtModified"].asString());
-		if(!valueAccessKeyLeakListAccessKeyLeak["Asset"].isNull())
-			accessKeyLeakListObject.asset = valueAccessKeyLeakListAccessKeyLeak["Asset"].asString();
-		if(!valueAccessKeyLeakListAccessKeyLeak["Type"].isNull())
-			accessKeyLeakListObject.type = valueAccessKeyLeakListAccessKeyLeak["Type"].asString();
-		if(!valueAccessKeyLeakListAccessKeyLeak["AccesskeyId"].isNull())
-			accessKeyLeakListObject.accesskeyId = valueAccessKeyLeakListAccessKeyLeak["AccesskeyId"].asString();
+		if(!valueAccessKeyLeakListAccessKeyLeak["DealTime"].isNull())
+			accessKeyLeakListObject.dealTime = valueAccessKeyLeakListAccessKeyLeak["DealTime"].asString();
 		if(!valueAccessKeyLeakListAccessKeyLeak["Status"].isNull())
 			accessKeyLeakListObject.status = valueAccessKeyLeakListAccessKeyLeak["Status"].asString();
+		if(!valueAccessKeyLeakListAccessKeyLeak["Type"].isNull())
+			accessKeyLeakListObject.type = valueAccessKeyLeakListAccessKeyLeak["Type"].asString();
+		if(!valueAccessKeyLeakListAccessKeyLeak["UserType"].isNull())
+			accessKeyLeakListObject.userType = valueAccessKeyLeakListAccessKeyLeak["UserType"].asString();
+		if(!valueAccessKeyLeakListAccessKeyLeak["AccesskeyId"].isNull())
+			accessKeyLeakListObject.accesskeyId = valueAccessKeyLeakListAccessKeyLeak["AccesskeyId"].asString();
 		if(!valueAccessKeyLeakListAccessKeyLeak["AliUserName"].isNull())
 			accessKeyLeakListObject.aliUserName = valueAccessKeyLeakListAccessKeyLeak["AliUserName"].asString();
 		if(!valueAccessKeyLeakListAccessKeyLeak["DealType"].isNull())
 			accessKeyLeakListObject.dealType = valueAccessKeyLeakListAccessKeyLeak["DealType"].asString();
-		if(!valueAccessKeyLeakListAccessKeyLeak["DealTime"].isNull())
-			accessKeyLeakListObject.dealTime = valueAccessKeyLeakListAccessKeyLeak["DealTime"].asString();
-		if(!valueAccessKeyLeakListAccessKeyLeak["UserType"].isNull())
-			accessKeyLeakListObject.userType = valueAccessKeyLeakListAccessKeyLeak["UserType"].asString();
 		if(!valueAccessKeyLeakListAccessKeyLeak["Url"].isNull())
 			accessKeyLeakListObject.url = valueAccessKeyLeakListAccessKeyLeak["Url"].asString();
+		if(!valueAccessKeyLeakListAccessKeyLeak["GmtModified"].isNull())
+			accessKeyLeakListObject.gmtModified = std::stol(valueAccessKeyLeakListAccessKeyLeak["GmtModified"].asString());
+		if(!valueAccessKeyLeakListAccessKeyLeak["Asset"].isNull())
+			accessKeyLeakListObject.asset = valueAccessKeyLeakListAccessKeyLeak["Asset"].asString();
+		if(!valueAccessKeyLeakListAccessKeyLeak["Id"].isNull())
+			accessKeyLeakListObject.id = std::stol(valueAccessKeyLeakListAccessKeyLeak["Id"].asString());
 		accessKeyLeakList_.push_back(accessKeyLeakListObject);
 	}
+	if(!value["CurrentPage"].isNull())
+		currentPage_ = std::stoi(value["CurrentPage"].asString());
 	if(!value["GmtLast"].isNull())
 		gmtLast_ = std::stol(value["GmtLast"].asString());
 	if(!value["AkLeakCount"].isNull())
 		akLeakCount_ = std::stoi(value["AkLeakCount"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
-	if(!value["CurrentPage"].isNull())
-		currentPage_ = std::stoi(value["CurrentPage"].asString());
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
 
@@ -100,13 +100,13 @@ int DescribeAccesskeyLeakListResult::getPageSize()const
 	return pageSize_;
 }
 
-long DescribeAccesskeyLeakListResult::getGmtLast()const
-{
-	return gmtLast_;
-}
-
 int DescribeAccesskeyLeakListResult::getCurrentPage()const
 {
 	return currentPage_;
+}
+
+long DescribeAccesskeyLeakListResult::getGmtLast()const
+{
+	return gmtLast_;
 }
 

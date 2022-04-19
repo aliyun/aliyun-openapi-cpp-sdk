@@ -43,34 +43,34 @@ void DescribeGroupedInstancesResult::parse(const std::string &payload)
 	for (auto valueInstancesInstance : allInstancesNode)
 	{
 		Instance instancesObject;
+		if(!valueInstancesInstance["AsapVulInstanceCount"].isNull())
+			instancesObject.asapVulInstanceCount = std::stol(valueInstancesInstance["AsapVulInstanceCount"].asString());
 		if(!valueInstancesInstance["UnProtectedInstanceCount"].isNull())
 			instancesObject.unProtectedInstanceCount = valueInstancesInstance["UnProtectedInstanceCount"].asString();
 		if(!valueInstancesInstance["FieldAliasName"].isNull())
 			instancesObject.fieldAliasName = valueInstancesInstance["FieldAliasName"].asString();
-		if(!valueInstancesInstance["GroupFlag"].isNull())
-			instancesObject.groupFlag = std::stoi(valueInstancesInstance["GroupFlag"].asString());
+		if(!valueInstancesInstance["InstanceCount"].isNull())
+			instancesObject.instanceCount = valueInstancesInstance["InstanceCount"].asString();
 		if(!valueInstancesInstance["FieldId"].isNull())
 			instancesObject.fieldId = std::stol(valueInstancesInstance["FieldId"].asString());
 		if(!valueInstancesInstance["RiskInstanceCount"].isNull())
 			instancesObject.riskInstanceCount = valueInstancesInstance["RiskInstanceCount"].asString();
-		if(!valueInstancesInstance["InstanceCount"].isNull())
-			instancesObject.instanceCount = valueInstancesInstance["InstanceCount"].asString();
-		if(!valueInstancesInstance["AsapVulInstanceCount"].isNull())
-			instancesObject.asapVulInstanceCount = std::stol(valueInstancesInstance["AsapVulInstanceCount"].asString());
+		if(!valueInstancesInstance["GroupFlag"].isNull())
+			instancesObject.groupFlag = std::stoi(valueInstancesInstance["GroupFlag"].asString());
 		auto allGroupPath = value["GroupPath"]["groupPath"];
 		for (auto value : allGroupPath)
 			instancesObject.groupPath.push_back(value.asString());
 		instances_.push_back(instancesObject);
 	}
 	auto pageInfoNode = value["PageInfo"];
-	if(!pageInfoNode["Count"].isNull())
-		pageInfo_.count = std::stoi(pageInfoNode["Count"].asString());
+	if(!pageInfoNode["CurrentPage"].isNull())
+		pageInfo_.currentPage = std::stoi(pageInfoNode["CurrentPage"].asString());
 	if(!pageInfoNode["PageSize"].isNull())
 		pageInfo_.pageSize = std::stoi(pageInfoNode["PageSize"].asString());
 	if(!pageInfoNode["TotalCount"].isNull())
 		pageInfo_.totalCount = std::stoi(pageInfoNode["TotalCount"].asString());
-	if(!pageInfoNode["CurrentPage"].isNull())
-		pageInfo_.currentPage = std::stoi(pageInfoNode["CurrentPage"].asString());
+	if(!pageInfoNode["Count"].isNull())
+		pageInfo_.count = std::stoi(pageInfoNode["Count"].asString());
 
 }
 

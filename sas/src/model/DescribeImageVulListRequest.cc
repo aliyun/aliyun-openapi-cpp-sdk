@@ -357,6 +357,17 @@ void DescribeImageVulListRequest::setCurrentPage(int currentPage)
 	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
+std::string DescribeImageVulListRequest::getClusterId()const
+{
+	return clusterId_;
+}
+
+void DescribeImageVulListRequest::setClusterId(const std::string& clusterId)
+{
+	clusterId_ = clusterId;
+	setParameter("ClusterId", clusterId);
+}
+
 std::string DescribeImageVulListRequest::getBatchName()const
 {
 	return batchName_;

@@ -34,18 +34,18 @@ namespace AlibabaCloud
 			public:
 				struct QuaraFile
 				{
-					std::string path;
 					std::string status;
+					std::string path;
 					std::string modifyTime;
-					std::string eventType;
 					std::string instanceId;
+					std::string eventType;
 					std::string ip;
 					std::string eventName;
 					std::string instanceName;
 					std::string uuid;
 					std::string internetIp;
-					int id;
 					std::string tag;
+					int id;
 					std::string link;
 					std::string md5;
 				};

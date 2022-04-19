@@ -45,6 +45,8 @@ namespace AlibabaCloud
 				void setSourceIp(const std::string& sourceIp);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
+				std::string getResourceDirectoryAccountId()const;
+				void setResourceDirectoryAccountId(const std::string& resourceDirectoryAccountId);
 
             private:
 				std::string targetType_;
@@ -52,6 +54,7 @@ namespace AlibabaCloud
 				std::string targetOperations_;
 				std::string sourceIp_;
 				std::string lang_;
+				std::string resourceDirectoryAccountId_;
 
 			};
 		}

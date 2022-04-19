@@ -53,7 +53,9 @@ namespace AlibabaCloud
 					std::string instanceName;
 					std::string uuid;
 					std::string internetIp;
-					std::string create;
+					int isPackage;
+					std::string state;
+					long startTimeDt;
 					std::string cmdline;
 					long createTimestamp;
 					std::string md5;

@@ -39,14 +39,14 @@ void DescribeLogstoreStorageResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Logstore"].isNull())
-		logstore_ = value["Logstore"].asString();
-	if(!value["Ttl"].isNull())
-		ttl_ = std::stoi(value["Ttl"].asString());
-	if(!value["Preserve"].isNull())
-		preserve_ = std::stol(value["Preserve"].asString());
 	if(!value["Used"].isNull())
 		used_ = std::stol(value["Used"].asString());
+	if(!value["Ttl"].isNull())
+		ttl_ = std::stoi(value["Ttl"].asString());
+	if(!value["Logstore"].isNull())
+		logstore_ = value["Logstore"].asString();
+	if(!value["Preserve"].isNull())
+		preserve_ = std::stol(value["Preserve"].asString());
 
 }
 

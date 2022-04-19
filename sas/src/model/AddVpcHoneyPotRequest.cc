@@ -38,17 +38,6 @@ void AddVpcHoneyPotRequest::setSourceIp(const std::string& sourceIp)
 	setParameter("SourceIp", sourceIp);
 }
 
-std::string AddVpcHoneyPotRequest::getVpcSwitchId()const
-{
-	return vpcSwitchId_;
-}
-
-void AddVpcHoneyPotRequest::setVpcSwitchId(const std::string& vpcSwitchId)
-{
-	vpcSwitchId_ = vpcSwitchId;
-	setParameter("VpcSwitchId", vpcSwitchId);
-}
-
 std::string AddVpcHoneyPotRequest::getVpcId()const
 {
 	return vpcId_;

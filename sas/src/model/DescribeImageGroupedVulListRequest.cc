@@ -60,6 +60,17 @@ void DescribeImageGroupedVulListRequest::setCreateTsStart(long createTsStart)
 	setParameter("CreateTsStart", std::to_string(createTsStart));
 }
 
+int DescribeImageGroupedVulListRequest::getIsLatest()const
+{
+	return isLatest_;
+}
+
+void DescribeImageGroupedVulListRequest::setIsLatest(int isLatest)
+{
+	isLatest_ = isLatest;
+	setParameter("IsLatest", std::to_string(isLatest));
+}
+
 std::string DescribeImageGroupedVulListRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -311,6 +322,17 @@ void DescribeImageGroupedVulListRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
 	setParameter("CurrentPage", std::to_string(currentPage));
+}
+
+std::string DescribeImageGroupedVulListRequest::getClusterId()const
+{
+	return clusterId_;
+}
+
+void DescribeImageGroupedVulListRequest::setClusterId(const std::string& clusterId)
+{
+	clusterId_ = clusterId;
+	setParameter("ClusterId", clusterId);
 }
 
 std::string DescribeImageGroupedVulListRequest::getSearchTags()const

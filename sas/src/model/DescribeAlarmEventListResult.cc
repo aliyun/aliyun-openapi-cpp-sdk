@@ -43,91 +43,101 @@ void DescribeAlarmEventListResult::parse(const std::string &payload)
 	for (auto valueSuspEventsSuspEventsItem : allSuspEventsNode)
 	{
 		SuspEventsItem suspEventsObject;
+		if(!valueSuspEventsSuspEventsItem["Dealed"].isNull())
+			suspEventsObject.dealed = valueSuspEventsSuspEventsItem["Dealed"].asString() == "true";
+		if(!valueSuspEventsSuspEventsItem["Stages"].isNull())
+			suspEventsObject.stages = valueSuspEventsSuspEventsItem["Stages"].asString();
+		if(!valueSuspEventsSuspEventsItem["InternetIp"].isNull())
+			suspEventsObject.internetIp = valueSuspEventsSuspEventsItem["InternetIp"].asString();
+		if(!valueSuspEventsSuspEventsItem["SuspiciousEventCount"].isNull())
+			suspEventsObject.suspiciousEventCount = std::stoi(valueSuspEventsSuspEventsItem["SuspiciousEventCount"].asString());
+		if(!valueSuspEventsSuspEventsItem["K8sClusterName"].isNull())
+			suspEventsObject.k8sClusterName = valueSuspEventsSuspEventsItem["K8sClusterName"].asString();
+		if(!valueSuspEventsSuspEventsItem["ContainerImageId"].isNull())
+			suspEventsObject.containerImageId = valueSuspEventsSuspEventsItem["ContainerImageId"].asString();
+		if(!valueSuspEventsSuspEventsItem["GmtModified"].isNull())
+			suspEventsObject.gmtModified = std::stol(valueSuspEventsSuspEventsItem["GmtModified"].asString());
+		if(!valueSuspEventsSuspEventsItem["AlarmEventNameOriginal"].isNull())
+			suspEventsObject.alarmEventNameOriginal = valueSuspEventsSuspEventsItem["AlarmEventNameOriginal"].asString();
 		if(!valueSuspEventsSuspEventsItem["AlarmUniqueInfo"].isNull())
 			suspEventsObject.alarmUniqueInfo = valueSuspEventsSuspEventsItem["AlarmUniqueInfo"].asString();
-		if(!valueSuspEventsSuspEventsItem["Solution"].isNull())
-			suspEventsObject.solution = valueSuspEventsSuspEventsItem["Solution"].asString();
-		if(!valueSuspEventsSuspEventsItem["Level"].isNull())
-			suspEventsObject.level = valueSuspEventsSuspEventsItem["Level"].asString();
+		if(!valueSuspEventsSuspEventsItem["CanCancelFault"].isNull())
+			suspEventsObject.canCancelFault = valueSuspEventsSuspEventsItem["CanCancelFault"].asString() == "true";
+		if(!valueSuspEventsSuspEventsItem["AppName"].isNull())
+			suspEventsObject.appName = valueSuspEventsSuspEventsItem["AppName"].asString();
+		if(!valueSuspEventsSuspEventsItem["SecurityEventIds"].isNull())
+			suspEventsObject.securityEventIds = valueSuspEventsSuspEventsItem["SecurityEventIds"].asString();
+		if(!valueSuspEventsSuspEventsItem["K8sClusterId"].isNull())
+			suspEventsObject.k8sClusterId = valueSuspEventsSuspEventsItem["K8sClusterId"].asString();
+		if(!valueSuspEventsSuspEventsItem["ContainerImageName"].isNull())
+			suspEventsObject.containerImageName = valueSuspEventsSuspEventsItem["ContainerImageName"].asString();
 		if(!valueSuspEventsSuspEventsItem["CanBeDealOnLine"].isNull())
 			suspEventsObject.canBeDealOnLine = valueSuspEventsSuspEventsItem["CanBeDealOnLine"].asString() == "true";
 		if(!valueSuspEventsSuspEventsItem["Description"].isNull())
 			suspEventsObject.description = valueSuspEventsSuspEventsItem["Description"].asString();
-		if(!valueSuspEventsSuspEventsItem["StartTime"].isNull())
-			suspEventsObject.startTime = std::stol(valueSuspEventsSuspEventsItem["StartTime"].asString());
-		if(!valueSuspEventsSuspEventsItem["EndTime"].isNull())
-			suspEventsObject.endTime = std::stol(valueSuspEventsSuspEventsItem["EndTime"].asString());
-		if(!valueSuspEventsSuspEventsItem["OperateTime"].isNull())
-			suspEventsObject.operateTime = std::stol(valueSuspEventsSuspEventsItem["OperateTime"].asString());
-		if(!valueSuspEventsSuspEventsItem["AlarmEventType"].isNull())
-			suspEventsObject.alarmEventType = valueSuspEventsSuspEventsItem["AlarmEventType"].asString();
-		if(!valueSuspEventsSuspEventsItem["SuspiciousEventCount"].isNull())
-			suspEventsObject.suspiciousEventCount = std::stoi(valueSuspEventsSuspEventsItem["SuspiciousEventCount"].asString());
-		if(!valueSuspEventsSuspEventsItem["Uuid"].isNull())
-			suspEventsObject.uuid = valueSuspEventsSuspEventsItem["Uuid"].asString();
-		if(!valueSuspEventsSuspEventsItem["InstanceName"].isNull())
-			suspEventsObject.instanceName = valueSuspEventsSuspEventsItem["InstanceName"].asString();
-		if(!valueSuspEventsSuspEventsItem["InternetIp"].isNull())
-			suspEventsObject.internetIp = valueSuspEventsSuspEventsItem["InternetIp"].asString();
-		if(!valueSuspEventsSuspEventsItem["IntranetIp"].isNull())
-			suspEventsObject.intranetIp = valueSuspEventsSuspEventsItem["IntranetIp"].asString();
-		if(!valueSuspEventsSuspEventsItem["AlarmEventName"].isNull())
-			suspEventsObject.alarmEventName = valueSuspEventsSuspEventsItem["AlarmEventName"].asString();
-		if(!valueSuspEventsSuspEventsItem["SaleVersion"].isNull())
-			suspEventsObject.saleVersion = valueSuspEventsSuspEventsItem["SaleVersion"].asString();
-		if(!valueSuspEventsSuspEventsItem["DataSource"].isNull())
-			suspEventsObject.dataSource = valueSuspEventsSuspEventsItem["DataSource"].asString();
-		if(!valueSuspEventsSuspEventsItem["CanCancelFault"].isNull())
-			suspEventsObject.canCancelFault = valueSuspEventsSuspEventsItem["CanCancelFault"].asString() == "true";
-		if(!valueSuspEventsSuspEventsItem["Dealed"].isNull())
-			suspEventsObject.dealed = valueSuspEventsSuspEventsItem["Dealed"].asString() == "true";
-		if(!valueSuspEventsSuspEventsItem["GmtModified"].isNull())
-			suspEventsObject.gmtModified = std::stol(valueSuspEventsSuspEventsItem["GmtModified"].asString());
-		if(!valueSuspEventsSuspEventsItem["HasTraceInfo"].isNull())
-			suspEventsObject.hasTraceInfo = valueSuspEventsSuspEventsItem["HasTraceInfo"].asString() == "true";
-		if(!valueSuspEventsSuspEventsItem["SecurityEventIds"].isNull())
-			suspEventsObject.securityEventIds = valueSuspEventsSuspEventsItem["SecurityEventIds"].asString();
-		if(!valueSuspEventsSuspEventsItem["OperateErrorCode"].isNull())
-			suspEventsObject.operateErrorCode = valueSuspEventsSuspEventsItem["OperateErrorCode"].asString();
-		if(!valueSuspEventsSuspEventsItem["AlarmEventNameOriginal"].isNull())
-			suspEventsObject.alarmEventNameOriginal = valueSuspEventsSuspEventsItem["AlarmEventNameOriginal"].asString();
-		if(!valueSuspEventsSuspEventsItem["InstanceId"].isNull())
-			suspEventsObject.instanceId = valueSuspEventsSuspEventsItem["InstanceId"].asString();
 		if(!valueSuspEventsSuspEventsItem["ContainHwMode"].isNull())
 			suspEventsObject.containHwMode = valueSuspEventsSuspEventsItem["ContainHwMode"].asString() == "true";
-		if(!valueSuspEventsSuspEventsItem["Stages"].isNull())
-			suspEventsObject.stages = valueSuspEventsSuspEventsItem["Stages"].asString();
-		if(!valueSuspEventsSuspEventsItem["ContainerImageId"].isNull())
-			suspEventsObject.containerImageId = valueSuspEventsSuspEventsItem["ContainerImageId"].asString();
-		if(!valueSuspEventsSuspEventsItem["ContainerImageName"].isNull())
-			suspEventsObject.containerImageName = valueSuspEventsSuspEventsItem["ContainerImageName"].asString();
-		if(!valueSuspEventsSuspEventsItem["ContainerId"].isNull())
-			suspEventsObject.containerId = valueSuspEventsSuspEventsItem["ContainerId"].asString();
-		if(!valueSuspEventsSuspEventsItem["K8sNamespace"].isNull())
-			suspEventsObject.k8sNamespace = valueSuspEventsSuspEventsItem["K8sNamespace"].asString();
-		if(!valueSuspEventsSuspEventsItem["K8sClusterId"].isNull())
-			suspEventsObject.k8sClusterId = valueSuspEventsSuspEventsItem["K8sClusterId"].asString();
-		if(!valueSuspEventsSuspEventsItem["K8sClusterName"].isNull())
-			suspEventsObject.k8sClusterName = valueSuspEventsSuspEventsItem["K8sClusterName"].asString();
 		if(!valueSuspEventsSuspEventsItem["K8sNodeId"].isNull())
 			suspEventsObject.k8sNodeId = valueSuspEventsSuspEventsItem["K8sNodeId"].asString();
+		if(!valueSuspEventsSuspEventsItem["InstanceName"].isNull())
+			suspEventsObject.instanceName = valueSuspEventsSuspEventsItem["InstanceName"].asString();
+		if(!valueSuspEventsSuspEventsItem["SaleVersion"].isNull())
+			suspEventsObject.saleVersion = valueSuspEventsSuspEventsItem["SaleVersion"].asString();
+		if(!valueSuspEventsSuspEventsItem["OperateErrorCode"].isNull())
+			suspEventsObject.operateErrorCode = valueSuspEventsSuspEventsItem["OperateErrorCode"].asString();
+		if(!valueSuspEventsSuspEventsItem["Solution"].isNull())
+			suspEventsObject.solution = valueSuspEventsSuspEventsItem["Solution"].asString();
+		if(!valueSuspEventsSuspEventsItem["HasTraceInfo"].isNull())
+			suspEventsObject.hasTraceInfo = valueSuspEventsSuspEventsItem["HasTraceInfo"].asString() == "true";
+		if(!valueSuspEventsSuspEventsItem["DataSource"].isNull())
+			suspEventsObject.dataSource = valueSuspEventsSuspEventsItem["DataSource"].asString();
+		if(!valueSuspEventsSuspEventsItem["OperateTime"].isNull())
+			suspEventsObject.operateTime = std::stol(valueSuspEventsSuspEventsItem["OperateTime"].asString());
+		if(!valueSuspEventsSuspEventsItem["InstanceId"].isNull())
+			suspEventsObject.instanceId = valueSuspEventsSuspEventsItem["InstanceId"].asString();
+		if(!valueSuspEventsSuspEventsItem["IntranetIp"].isNull())
+			suspEventsObject.intranetIp = valueSuspEventsSuspEventsItem["IntranetIp"].asString();
+		if(!valueSuspEventsSuspEventsItem["EndTime"].isNull())
+			suspEventsObject.endTime = std::stol(valueSuspEventsSuspEventsItem["EndTime"].asString());
+		if(!valueSuspEventsSuspEventsItem["Uuid"].isNull())
+			suspEventsObject.uuid = valueSuspEventsSuspEventsItem["Uuid"].asString();
+		if(!valueSuspEventsSuspEventsItem["StartTime"].isNull())
+			suspEventsObject.startTime = std::stol(valueSuspEventsSuspEventsItem["StartTime"].asString());
 		if(!valueSuspEventsSuspEventsItem["K8sPodName"].isNull())
 			suspEventsObject.k8sPodName = valueSuspEventsSuspEventsItem["K8sPodName"].asString();
+		if(!valueSuspEventsSuspEventsItem["ContainerId"].isNull())
+			suspEventsObject.containerId = valueSuspEventsSuspEventsItem["ContainerId"].asString();
+		if(!valueSuspEventsSuspEventsItem["AlarmEventType"].isNull())
+			suspEventsObject.alarmEventType = valueSuspEventsSuspEventsItem["AlarmEventType"].asString();
+		if(!valueSuspEventsSuspEventsItem["K8sNamespace"].isNull())
+			suspEventsObject.k8sNamespace = valueSuspEventsSuspEventsItem["K8sNamespace"].asString();
 		if(!valueSuspEventsSuspEventsItem["K8sNodeName"].isNull())
 			suspEventsObject.k8sNodeName = valueSuspEventsSuspEventsItem["K8sNodeName"].asString();
-		if(!valueSuspEventsSuspEventsItem["AppName"].isNull())
-			suspEventsObject.appName = valueSuspEventsSuspEventsItem["AppName"].asString();
+		if(!valueSuspEventsSuspEventsItem["AlarmEventName"].isNull())
+			suspEventsObject.alarmEventName = valueSuspEventsSuspEventsItem["AlarmEventName"].asString();
+		if(!valueSuspEventsSuspEventsItem["Level"].isNull())
+			suspEventsObject.level = valueSuspEventsSuspEventsItem["Level"].asString();
+		auto allTacticItemsNode = valueSuspEventsSuspEventsItem["TacticItems"]["TacticItem"];
+		for (auto valueSuspEventsSuspEventsItemTacticItemsTacticItem : allTacticItemsNode)
+		{
+			SuspEventsItem::TacticItem tacticItemsObject;
+			if(!valueSuspEventsSuspEventsItemTacticItemsTacticItem["TacticId"].isNull())
+				tacticItemsObject.tacticId = valueSuspEventsSuspEventsItemTacticItemsTacticItem["TacticId"].asString();
+			if(!valueSuspEventsSuspEventsItemTacticItemsTacticItem["TacticDisplayName"].isNull())
+				tacticItemsObject.tacticDisplayName = valueSuspEventsSuspEventsItemTacticItemsTacticItem["TacticDisplayName"].asString();
+			suspEventsObject.tacticItems.push_back(tacticItemsObject);
+		}
 		suspEvents_.push_back(suspEventsObject);
 	}
 	auto pageInfoNode = value["PageInfo"];
-	if(!pageInfoNode["Count"].isNull())
-		pageInfo_.count = std::stoi(pageInfoNode["Count"].asString());
+	if(!pageInfoNode["CurrentPage"].isNull())
+		pageInfo_.currentPage = std::stoi(pageInfoNode["CurrentPage"].asString());
 	if(!pageInfoNode["PageSize"].isNull())
 		pageInfo_.pageSize = std::stoi(pageInfoNode["PageSize"].asString());
 	if(!pageInfoNode["TotalCount"].isNull())
 		pageInfo_.totalCount = std::stoi(pageInfoNode["TotalCount"].asString());
-	if(!pageInfoNode["CurrentPage"].isNull())
-		pageInfo_.currentPage = std::stoi(pageInfoNode["CurrentPage"].asString());
+	if(!pageInfoNode["Count"].isNull())
+		pageInfo_.count = std::stoi(pageInfoNode["Count"].asString());
 
 }
 

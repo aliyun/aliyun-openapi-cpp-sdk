@@ -45,10 +45,10 @@ namespace AlibabaCloud
 					std::string actionName;
 					long gmtCreate;
 					long gmtModified;
-					int id;
 					int intervalTime;
-					std::string url;
+					int id;
 					std::string configList;
+					std::string url;
 					std::string dingTalkLang;
 					long aliUid;
 				};

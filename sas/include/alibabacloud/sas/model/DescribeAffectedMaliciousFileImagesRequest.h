@@ -53,16 +53,18 @@ namespace AlibabaCloud
 				void setMaliciousMd5(const std::string& maliciousMd5);
 				int getCurrentPage()const;
 				void setCurrentPage(int currentPage);
+				std::string getClusterId()const;
+				void setClusterId(const std::string& clusterId);
 				std::string getRepoName()const;
 				void setRepoName(const std::string& repoName);
 				std::string getRepoInstanceId()const;
 				void setRepoInstanceId(const std::string& repoInstanceId);
 				std::string getImageLayer()const;
 				void setImageLayer(const std::string& imageLayer);
-				std::vector<std::string> getUuids()const;
-				void setUuids(const std::vector<std::string>& uuids);
 				std::string getRepoRegionId()const;
 				void setRepoRegionId(const std::string& repoRegionId);
+				std::vector<std::string> getUuids()const;
+				void setUuids(const std::vector<std::string>& uuids);
 
             private:
 				std::string repoId_;
@@ -74,11 +76,12 @@ namespace AlibabaCloud
 				std::string imageTag_;
 				std::string maliciousMd5_;
 				int currentPage_;
+				std::string clusterId_;
 				std::string repoName_;
 				std::string repoInstanceId_;
 				std::string imageLayer_;
-				std::vector<std::string> uuids_;
 				std::string repoRegionId_;
+				std::vector<std::string> uuids_;
 
 			};
 		}

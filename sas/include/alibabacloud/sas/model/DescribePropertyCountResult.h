@@ -39,22 +39,30 @@ namespace AlibabaCloud
 				~DescribePropertyCountResult();
 				int getSca()const;
 				int getUser()const;
+				int getWeb()const;
 				int getPort()const;
+				int getDatabase()const;
 				int getProcess()const;
 				int getSoftware()const;
+				int getWebserver()const;
 				int getCron()const;
-				int getAutoRun()const;
+				int getAutorun()const;
+				int getLkm()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				int sca_;
 				int user_;
+				int web_;
 				int port_;
+				int database_;
 				int process_;
 				int software_;
+				int webserver_;
 				int cron_;
-				int autoRun_;
+				int autorun_;
+				int lkm_;
 
 			};
 		}

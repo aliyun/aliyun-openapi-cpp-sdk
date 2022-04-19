@@ -43,30 +43,30 @@ void DescribeCheckWarningsResult::parse(const std::string &payload)
 	for (auto valueCheckWarningsCheckWarning : allCheckWarningsNode)
 	{
 		CheckWarning checkWarningsObject;
-		if(!valueCheckWarningsCheckWarning["Uuid"].isNull())
-			checkWarningsObject.uuid = valueCheckWarningsCheckWarning["Uuid"].asString();
-		if(!valueCheckWarningsCheckWarning["CheckId"].isNull())
-			checkWarningsObject.checkId = std::stol(valueCheckWarningsCheckWarning["CheckId"].asString());
-		if(!valueCheckWarningsCheckWarning["CheckWarningId"].isNull())
-			checkWarningsObject.checkWarningId = std::stol(valueCheckWarningsCheckWarning["CheckWarningId"].asString());
-		if(!valueCheckWarningsCheckWarning["Level"].isNull())
-			checkWarningsObject.level = valueCheckWarningsCheckWarning["Level"].asString();
-		if(!valueCheckWarningsCheckWarning["Item"].isNull())
-			checkWarningsObject.item = valueCheckWarningsCheckWarning["Item"].asString();
-		if(!valueCheckWarningsCheckWarning["Type"].isNull())
-			checkWarningsObject.type = valueCheckWarningsCheckWarning["Type"].asString();
 		if(!valueCheckWarningsCheckWarning["Status"].isNull())
 			checkWarningsObject.status = std::stoi(valueCheckWarningsCheckWarning["Status"].asString());
+		if(!valueCheckWarningsCheckWarning["CheckWarningId"].isNull())
+			checkWarningsObject.checkWarningId = std::stol(valueCheckWarningsCheckWarning["CheckWarningId"].asString());
+		if(!valueCheckWarningsCheckWarning["Type"].isNull())
+			checkWarningsObject.type = valueCheckWarningsCheckWarning["Type"].asString();
+		if(!valueCheckWarningsCheckWarning["Uuid"].isNull())
+			checkWarningsObject.uuid = valueCheckWarningsCheckWarning["Uuid"].asString();
+		if(!valueCheckWarningsCheckWarning["Item"].isNull())
+			checkWarningsObject.item = valueCheckWarningsCheckWarning["Item"].asString();
+		if(!valueCheckWarningsCheckWarning["CheckId"].isNull())
+			checkWarningsObject.checkId = std::stol(valueCheckWarningsCheckWarning["CheckId"].asString());
+		if(!valueCheckWarningsCheckWarning["Level"].isNull())
+			checkWarningsObject.level = valueCheckWarningsCheckWarning["Level"].asString();
 		checkWarnings_.push_back(checkWarningsObject);
 	}
-	if(!value["Count"].isNull())
-		count_ = std::stoi(value["Count"].asString());
+	if(!value["CurrentPage"].isNull())
+		currentPage_ = std::stoi(value["CurrentPage"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["CurrentPage"].isNull())
-		currentPage_ = std::stoi(value["CurrentPage"].asString());
+	if(!value["Count"].isNull())
+		count_ = std::stoi(value["Count"].asString());
 
 }
 

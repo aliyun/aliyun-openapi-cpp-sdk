@@ -104,6 +104,17 @@ void DescribeCloudCenterInstancesRequest::setLogicalExp(const std::string& logic
 	setParameter("LogicalExp", logicalExp);
 }
 
+std::string DescribeCloudCenterInstancesRequest::getResourceDirectoryAccountId()const
+{
+	return resourceDirectoryAccountId_;
+}
+
+void DescribeCloudCenterInstancesRequest::setResourceDirectoryAccountId(const std::string& resourceDirectoryAccountId)
+{
+	resourceDirectoryAccountId_ = resourceDirectoryAccountId;
+	setParameter("ResourceDirectoryAccountId", resourceDirectoryAccountId);
+}
+
 int DescribeCloudCenterInstancesRequest::getCurrentPage()const
 {
 	return currentPage_;
@@ -124,5 +135,16 @@ void DescribeCloudCenterInstancesRequest::setMachineTypes(const std::string& mac
 {
 	machineTypes_ = machineTypes;
 	setParameter("MachineTypes", machineTypes);
+}
+
+bool DescribeCloudCenterInstancesRequest::getNoGroupTrace()const
+{
+	return noGroupTrace_;
+}
+
+void DescribeCloudCenterInstancesRequest::setNoGroupTrace(bool noGroupTrace)
+{
+	noGroupTrace_ = noGroupTrace;
+	setParameter("NoGroupTrace", noGroupTrace ? "true" : "false");
 }
 

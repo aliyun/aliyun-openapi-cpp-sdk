@@ -38,6 +38,28 @@ void DescribeStrategyExecDetailRequest::setSourceIp(const std::string& sourceIp)
 	setParameter("SourceIp", sourceIp);
 }
 
+int DescribeStrategyExecDetailRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeStrategyExecDetailRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setParameter("PageSize", std::to_string(pageSize));
+}
+
+int DescribeStrategyExecDetailRequest::getCurrentPage()const
+{
+	return currentPage_;
+}
+
+void DescribeStrategyExecDetailRequest::setCurrentPage(int currentPage)
+{
+	currentPage_ = currentPage;
+	setParameter("CurrentPage", std::to_string(currentPage));
+}
+
 int DescribeStrategyExecDetailRequest::getStrategyId()const
 {
 	return strategyId_;

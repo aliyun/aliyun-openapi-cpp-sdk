@@ -39,68 +39,68 @@ void DescribeVersionConfigResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["MVAuthCount"].isNull())
+		mVAuthCount_ = std::stoi(value["MVAuthCount"].asString());
+	if(!value["SasLog"].isNull())
+		sasLog_ = std::stoi(value["SasLog"].asString());
+	if(!value["LogCapacity"].isNull())
+		logCapacity_ = std::stoi(value["LogCapacity"].asString());
+	if(!value["SasScreen"].isNull())
+		sasScreen_ = std::stoi(value["SasScreen"].asString());
+	if(!value["HoneypotCapacity"].isNull())
+		honeypotCapacity_ = std::stol(value["HoneypotCapacity"].asString());
+	if(!value["CreateTime"].isNull())
+		createTime_ = std::stol(value["CreateTime"].asString());
+	if(!value["MVUnusedAuthCount"].isNull())
+		mVUnusedAuthCount_ = std::stoi(value["MVUnusedAuthCount"].asString());
+	if(!value["WebLock"].isNull())
+		webLock_ = std::stoi(value["WebLock"].asString());
+	if(!value["AppWhiteListAuthCount"].isNull())
+		appWhiteListAuthCount_ = std::stol(value["AppWhiteListAuthCount"].asString());
+	if(!value["LogTime"].isNull())
+		logTime_ = std::stoi(value["LogTime"].asString());
+	if(!value["Flag"].isNull())
+		flag_ = std::stoi(value["Flag"].asString());
+	if(!value["LastInstanceReleaseTime"].isNull())
+		lastInstanceReleaseTime_ = std::stol(value["LastInstanceReleaseTime"].asString());
+	if(!value["LastTrailEndTime"].isNull())
+		lastTrailEndTime_ = std::stol(value["LastTrailEndTime"].asString());
+	if(!value["Version"].isNull())
+		version_ = std::stoi(value["Version"].asString());
+	if(!value["WebLockAuthCount"].isNull())
+		webLockAuthCount_ = std::stol(value["WebLockAuthCount"].asString());
+	if(!value["ReleaseTime"].isNull())
+		releaseTime_ = std::stol(value["ReleaseTime"].asString());
+	if(!value["HighestVersion"].isNull())
+		highestVersion_ = std::stoi(value["HighestVersion"].asString());
 	if(!value["AssetLevel"].isNull())
 		assetLevel_ = std::stoi(value["AssetLevel"].asString());
 	if(!value["AvdsFlag"].isNull())
 		avdsFlag_ = std::stoi(value["AvdsFlag"].asString());
-	if(!value["CreateTime"].isNull())
-		createTime_ = std::stol(value["CreateTime"].asString());
-	if(!value["Flag"].isNull())
-		flag_ = std::stoi(value["Flag"].asString());
-	if(!value["InstanceId"].isNull())
-		instanceId_ = value["InstanceId"].asString();
-	if(!value["IsSasOpening"].isNull())
-		isSasOpening_ = value["IsSasOpening"].asString() == "true";
-	if(!value["IsTrialVersion"].isNull())
-		isTrialVersion_ = std::stoi(value["IsTrialVersion"].asString());
-	if(!value["LogCapacity"].isNull())
-		logCapacity_ = std::stoi(value["LogCapacity"].asString());
-	if(!value["LogTime"].isNull())
-		logTime_ = std::stoi(value["LogTime"].asString());
-	if(!value["ReleaseTime"].isNull())
-		releaseTime_ = std::stol(value["ReleaseTime"].asString());
-	if(!value["SasLog"].isNull())
-		sasLog_ = std::stoi(value["SasLog"].asString());
-	if(!value["SasScreen"].isNull())
-		sasScreen_ = std::stoi(value["SasScreen"].asString());
-	if(!value["Version"].isNull())
-		version_ = std::stoi(value["Version"].asString());
-	if(!value["UserDefinedAlarms"].isNull())
-		userDefinedAlarms_ = std::stoi(value["UserDefinedAlarms"].asString());
-	if(!value["WebLock"].isNull())
-		webLock_ = std::stoi(value["WebLock"].asString());
-	if(!value["WebLockAuthCount"].isNull())
-		webLockAuthCount_ = std::stol(value["WebLockAuthCount"].asString());
-	if(!value["AppWhiteListAuthCount"].isNull())
-		appWhiteListAuthCount_ = std::stol(value["AppWhiteListAuthCount"].asString());
-	if(!value["AppWhiteList"].isNull())
-		appWhiteList_ = std::stoi(value["AppWhiteList"].asString());
-	if(!value["SlsCapacity"].isNull())
-		slsCapacity_ = std::stol(value["SlsCapacity"].asString());
-	if(!value["GmtCreate"].isNull())
-		gmtCreate_ = std::stol(value["GmtCreate"].asString());
-	if(!value["LastInstanceReleaseTime"].isNull())
-		lastInstanceReleaseTime_ = std::stol(value["LastInstanceReleaseTime"].asString());
-	if(!value["IsOverBalance"].isNull())
-		isOverBalance_ = value["IsOverBalance"].asString() == "true";
-	if(!value["LastTrailEndTime"].isNull())
-		lastTrailEndTime_ = std::stol(value["LastTrailEndTime"].asString());
-	if(!value["HoneypotCapacity"].isNull())
-		honeypotCapacity_ = std::stol(value["HoneypotCapacity"].asString());
-	if(!value["ImageScanCapacity"].isNull())
-		imageScanCapacity_ = std::stol(value["ImageScanCapacity"].asString());
-	if(!value["VmCores"].isNull())
-		vmCores_ = std::stoi(value["VmCores"].asString());
 	if(!value["IsPaidUser"].isNull())
 		isPaidUser_ = value["IsPaidUser"].asString() == "true";
-	if(!value["HighestVersion"].isNull())
-		highestVersion_ = std::stoi(value["HighestVersion"].asString());
-	if(!value["MVAuthCount"].isNull())
-		mVAuthCount_ = std::stoi(value["MVAuthCount"].asString());
-	if(!value["MVUnusedAuthCount"].isNull())
-		mVUnusedAuthCount_ = std::stoi(value["MVUnusedAuthCount"].asString());
+	if(!value["IsOverBalance"].isNull())
+		isOverBalance_ = value["IsOverBalance"].asString() == "true";
+	if(!value["InstanceId"].isNull())
+		instanceId_ = value["InstanceId"].asString();
+	if(!value["SlsCapacity"].isNull())
+		slsCapacity_ = std::stol(value["SlsCapacity"].asString());
+	if(!value["VmCores"].isNull())
+		vmCores_ = std::stoi(value["VmCores"].asString());
 	if(!value["AllowPartialBuy"].isNull())
 		allowPartialBuy_ = std::stoi(value["AllowPartialBuy"].asString());
+	if(!value["AppWhiteList"].isNull())
+		appWhiteList_ = std::stoi(value["AppWhiteList"].asString());
+	if(!value["IsSasOpening"].isNull())
+		isSasOpening_ = value["IsSasOpening"].asString() == "true";
+	if(!value["GmtCreate"].isNull())
+		gmtCreate_ = std::stol(value["GmtCreate"].asString());
+	if(!value["ImageScanCapacity"].isNull())
+		imageScanCapacity_ = std::stol(value["ImageScanCapacity"].asString());
+	if(!value["IsTrialVersion"].isNull())
+		isTrialVersion_ = std::stoi(value["IsTrialVersion"].asString());
+	if(!value["UserDefinedAlarms"].isNull())
+		userDefinedAlarms_ = std::stoi(value["UserDefinedAlarms"].asString());
 
 }
 
@@ -144,6 +144,11 @@ int DescribeVersionConfigResult::getHighestVersion()const
 	return highestVersion_;
 }
 
+long DescribeVersionConfigResult::getLastTrailEndTime()const
+{
+	return lastTrailEndTime_;
+}
+
 long DescribeVersionConfigResult::getWebLockAuthCount()const
 {
 	return webLockAuthCount_;
@@ -152,11 +157,6 @@ long DescribeVersionConfigResult::getWebLockAuthCount()const
 long DescribeVersionConfigResult::getSlsCapacity()const
 {
 	return slsCapacity_;
-}
-
-long DescribeVersionConfigResult::getLastTrailEndTime()const
-{
-	return lastTrailEndTime_;
 }
 
 int DescribeVersionConfigResult::getUserDefinedAlarms()const
@@ -244,14 +244,14 @@ long DescribeVersionConfigResult::getReleaseTime()const
 	return releaseTime_;
 }
 
-int DescribeVersionConfigResult::getIsTrialVersion()const
-{
-	return isTrialVersion_;
-}
-
 int DescribeVersionConfigResult::getMVUnusedAuthCount()const
 {
 	return mVUnusedAuthCount_;
+}
+
+int DescribeVersionConfigResult::getIsTrialVersion()const
+{
+	return isTrialVersion_;
 }
 
 int DescribeVersionConfigResult::getAppWhiteList()const

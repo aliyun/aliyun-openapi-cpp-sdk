@@ -39,16 +39,26 @@ namespace AlibabaCloud
 				void setSearchItemSub(const std::string& searchItemSub);
 				std::string getRemark()const;
 				void setRemark(const std::string& remark);
+				std::string getPid()const;
+				void setPid(const std::string& pid);
 				std::string getSearchItem()const;
 				void setSearchItem(const std::string& searchItem);
 				std::string getUuid()const;
 				void setUuid(const std::string& uuid);
+				std::string getBiz()const;
+				void setBiz(const std::string& biz);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
+				long getProcessStartedStart()const;
+				void setProcessStartedStart(long processStartedStart);
+				long getProcessStartedEnd()const;
+				void setProcessStartedEnd(long processStartedEnd);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
+				std::string getScaVersion()const;
+				void setScaVersion(const std::string& scaVersion);
 				std::string getSearchInfoSub()const;
 				void setSearchInfoSub(const std::string& searchInfoSub);
 				std::string getSearchInfo()const;
@@ -57,25 +67,39 @@ namespace AlibabaCloud
 				void setCurrentPage(int currentPage);
 				std::string getBizType()const;
 				void setBizType(const std::string& bizType);
+				std::string getPort()const;
+				void setPort(const std::string& port);
 				long getName()const;
 				void setName(long name);
 				std::string getScaName()const;
 				void setScaName(const std::string& scaName);
+				std::string getScaNamePattern()const;
+				void setScaNamePattern(const std::string& scaNamePattern);
+				std::string getUser()const;
+				void setUser(const std::string& user);
 
             private:
 				std::string searchItemSub_;
 				std::string remark_;
+				std::string pid_;
 				std::string searchItem_;
 				std::string uuid_;
+				std::string biz_;
 				std::string sourceIp_;
 				int pageSize_;
+				long processStartedStart_;
+				long processStartedEnd_;
 				std::string lang_;
+				std::string scaVersion_;
 				std::string searchInfoSub_;
 				std::string searchInfo_;
 				int currentPage_;
 				std::string bizType_;
+				std::string port_;
 				long name_;
 				std::string scaName_;
+				std::string scaNamePattern_;
+				std::string user_;
 
 			};
 		}

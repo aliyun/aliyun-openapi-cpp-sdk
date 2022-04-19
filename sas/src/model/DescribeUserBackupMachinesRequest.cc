@@ -49,25 +49,3 @@ void DescribeUserBackupMachinesRequest::setSourceIp(const std::string& sourceIp)
 	setParameter("SourceIp", sourceIp);
 }
 
-int DescribeUserBackupMachinesRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void DescribeUserBackupMachinesRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
-}
-
-int DescribeUserBackupMachinesRequest::getCurrentPage()const
-{
-	return currentPage_;
-}
-
-void DescribeUserBackupMachinesRequest::setCurrentPage(int currentPage)
-{
-	currentPage_ = currentPage;
-	setParameter("CurrentPage", std::to_string(currentPage));
-}
-

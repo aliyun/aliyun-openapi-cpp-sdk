@@ -45,10 +45,16 @@ namespace AlibabaCloud
 				void setPath(const std::string& path);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
+				long getInstallTimeStart()const;
+				void setInstallTimeStart(long installTimeStart);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
+				long getInstallTimeEnd()const;
+				void setInstallTimeEnd(long installTimeEnd);
 				int getCurrentPage()const;
 				void setCurrentPage(int currentPage);
+				std::string getExtend()const;
+				void setExtend(const std::string& extend);
 				std::string getName()const;
 				void setName(const std::string& name);
 
@@ -58,8 +64,11 @@ namespace AlibabaCloud
 				std::string uuid_;
 				std::string path_;
 				std::string sourceIp_;
+				long installTimeStart_;
 				int pageSize_;
+				long installTimeEnd_;
 				int currentPage_;
+				std::string extend_;
 				std::string name_;
 
 			};

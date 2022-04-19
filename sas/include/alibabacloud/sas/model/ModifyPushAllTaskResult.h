@@ -40,8 +40,8 @@ namespace AlibabaCloud
 						std::string uuid;
 						std::string message;
 						std::string instanceId;
-						std::string osVersion;
 						std::string ip;
+						std::string osVersion;
 						std::string region;
 						bool online;
 						bool success;

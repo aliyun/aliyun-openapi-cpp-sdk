@@ -34,6 +34,11 @@ namespace AlibabaCloud
 			public:
 				struct WarningSummary
 				{
+					struct TacticItem
+					{
+						std::string tacticId;
+						std::string tacticDisplayName;
+					};
 					struct QuaraFile
 					{
 						std::string type;
@@ -46,25 +51,17 @@ namespace AlibabaCloud
 					struct EventNote
 					{
 						long noteId;
-						std::string noteTime;
 						std::string note;
+						std::string noteTime;
 					};
-					bool advanced;
 					std::string k8sNodeId;
 					bool containHwMode;
 					std::string k8sNodeName;
-					std::string operateErrorCode;
-					std::string alarmEventName;
-					std::string securityEventIds;
-					int eventStatus;
-					std::string intranetIp;
 					bool hasTraceInfo;
-					std::string eventSubType;
+					std::string intranetIp;
 					std::string k8sClusterId;
 					std::string name;
-					std::string appName;
 					std::string k8sNamespace;
-					long lastTimeStamp;
 					std::string desc;
 					std::string internetIp;
 					std::string containerId;
@@ -72,29 +69,39 @@ namespace AlibabaCloud
 					std::string alarmEventNameDisplay;
 					std::string uniqueInfo;
 					bool canCancelFault;
-					std::string alarmEventTypeDisplay;
+					std::string maliciousRuleStatus;
 					std::string instanceId;
-					std::string stages;
-					std::string markMisRules;
-					std::vector<WarningSummary::EventNote> eventNotes;
 					std::string saleVersion;
-					std::string k8sPodName;
 					std::string containerImageId;
 					std::string dataSource;
 					std::string occurrenceTime;
 					std::string instanceName;
 					long operateTime;
-					std::string operateMsg;
 					bool canBeDealOnLine;
 					std::vector<WarningSummary::QuaraFile> details;
-					std::string uuid;
 					std::string k8sClusterName;
 					std::string containerImageName;
 					std::string alarmUniqueInfo;
-					bool autoBreaking;
 					long occurrenceTimeStamp;
 					std::string level;
 					long id;
+					std::vector<WarningSummary::TacticItem> tacticItems;
+					bool advanced;
+					std::string operateErrorCode;
+					std::string alarmEventName;
+					std::string securityEventIds;
+					int eventStatus;
+					std::string eventSubType;
+					std::string appName;
+					long lastTimeStamp;
+					std::string alarmEventTypeDisplay;
+					std::string stages;
+					std::string markMisRules;
+					std::vector<WarningSummary::EventNote> eventNotes;
+					std::string k8sPodName;
+					std::string operateMsg;
+					std::string uuid;
+					bool autoBreaking;
 					std::string lastTime;
 				};
 

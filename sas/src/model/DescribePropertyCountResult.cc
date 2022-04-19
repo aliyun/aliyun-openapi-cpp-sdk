@@ -39,20 +39,28 @@ void DescribePropertyCountResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Port"].isNull())
-		port_ = std::stoi(value["Port"].asString());
 	if(!value["Process"].isNull())
 		process_ = std::stoi(value["Process"].asString());
-	if(!value["Software"].isNull())
-		software_ = std::stoi(value["Software"].asString());
 	if(!value["User"].isNull())
 		user_ = std::stoi(value["User"].asString());
+	if(!value["Software"].isNull())
+		software_ = std::stoi(value["Software"].asString());
 	if(!value["Cron"].isNull())
 		cron_ = std::stoi(value["Cron"].asString());
+	if(!value["Port"].isNull())
+		port_ = std::stoi(value["Port"].asString());
 	if(!value["Sca"].isNull())
 		sca_ = std::stoi(value["Sca"].asString());
-	if(!value["AutoRun"].isNull())
-		autoRun_ = std::stoi(value["AutoRun"].asString());
+	if(!value["Web"].isNull())
+		web_ = std::stoi(value["Web"].asString());
+	if(!value["Database"].isNull())
+		database_ = std::stoi(value["Database"].asString());
+	if(!value["Lkm"].isNull())
+		lkm_ = std::stoi(value["Lkm"].asString());
+	if(!value["Autorun"].isNull())
+		autorun_ = std::stoi(value["Autorun"].asString());
+	if(!value["Webserver"].isNull())
+		webserver_ = std::stoi(value["Webserver"].asString());
 
 }
 
@@ -66,9 +74,19 @@ int DescribePropertyCountResult::getUser()const
 	return user_;
 }
 
+int DescribePropertyCountResult::getWeb()const
+{
+	return web_;
+}
+
 int DescribePropertyCountResult::getPort()const
 {
 	return port_;
+}
+
+int DescribePropertyCountResult::getDatabase()const
+{
+	return database_;
 }
 
 int DescribePropertyCountResult::getProcess()const
@@ -81,13 +99,23 @@ int DescribePropertyCountResult::getSoftware()const
 	return software_;
 }
 
+int DescribePropertyCountResult::getWebserver()const
+{
+	return webserver_;
+}
+
 int DescribePropertyCountResult::getCron()const
 {
 	return cron_;
 }
 
-int DescribePropertyCountResult::getAutoRun()const
+int DescribePropertyCountResult::getAutorun()const
 {
-	return autoRun_;
+	return autorun_;
+}
+
+int DescribePropertyCountResult::getLkm()const
+{
+	return lkm_;
 }
 

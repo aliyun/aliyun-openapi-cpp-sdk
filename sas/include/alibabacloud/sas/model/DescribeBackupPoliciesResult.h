@@ -51,6 +51,7 @@ namespace AlibabaCloud
 					std::string policyRegionId;
 					std::vector<std::string> clientErrorUuidList;
 					std::vector<std::string> healthClientUuidList;
+					std::string upgradeStatus;
 					std::vector<std::string> uuidList;
 					int clientErrorCount;
 					int serviceErrorCount;

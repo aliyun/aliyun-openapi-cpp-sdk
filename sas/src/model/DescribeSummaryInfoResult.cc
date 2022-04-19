@@ -39,14 +39,14 @@ void DescribeSummaryInfoResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["AegisClientOfflineCount"].isNull())
-		aegisClientOfflineCount_ = std::stoi(value["AegisClientOfflineCount"].asString());
-	if(!value["SecurityScore"].isNull())
-		securityScore_ = std::stoi(value["SecurityScore"].asString());
-	if(!value["AegisClientOnlineCount"].isNull())
-		aegisClientOnlineCount_ = std::stoi(value["AegisClientOnlineCount"].asString());
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["AegisClientOfflineCount"].isNull())
+		aegisClientOfflineCount_ = std::stoi(value["AegisClientOfflineCount"].asString());
+	if(!value["AegisClientOnlineCount"].isNull())
+		aegisClientOnlineCount_ = std::stoi(value["AegisClientOnlineCount"].asString());
+	if(!value["SecurityScore"].isNull())
+		securityScore_ = std::stoi(value["SecurityScore"].asString());
 
 }
 

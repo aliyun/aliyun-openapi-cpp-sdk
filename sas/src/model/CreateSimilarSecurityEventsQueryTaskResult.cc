@@ -40,10 +40,10 @@ void CreateSimilarSecurityEventsQueryTaskResult::parse(const std::string &payloa
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto createSimilarSecurityEventsQueryTaskResponse1Node = value["CreateSimilarSecurityEventsQueryTaskResponse"];
-	if(!createSimilarSecurityEventsQueryTaskResponse1Node["TaskId"].isNull())
-		createSimilarSecurityEventsQueryTaskResponse1_.taskId = std::stol(createSimilarSecurityEventsQueryTaskResponse1Node["TaskId"].asString());
 	if(!createSimilarSecurityEventsQueryTaskResponse1Node["Status"].isNull())
 		createSimilarSecurityEventsQueryTaskResponse1_.status = createSimilarSecurityEventsQueryTaskResponse1Node["Status"].asString();
+	if(!createSimilarSecurityEventsQueryTaskResponse1Node["TaskId"].isNull())
+		createSimilarSecurityEventsQueryTaskResponse1_.taskId = std::stol(createSimilarSecurityEventsQueryTaskResponse1Node["TaskId"].asString());
 
 }
 

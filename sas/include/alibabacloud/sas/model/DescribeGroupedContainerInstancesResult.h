@@ -41,24 +41,31 @@ namespace AlibabaCloud
 				};
 				struct GroupedContainerInstance
 				{
-					std::string hostIp;
-					std::string pod;
-					std::string clusterId;
-					std::string instanceId;
+					std::string imageDigest;
 					std::string custerState;
-					int riskInstanceCount;
+					std::string imageRepoNamespace;
+					std::string image;
+					std::string imageUuid;
+					std::string appName;
+					std::string clusterName;
+					int alarmCount;
+					std::string hostIp;
+					int hcCount;
+					std::string pod;
+					std::string instanceId;
+					std::string clusterId;
 					long createTime;
+					int riskInstanceCount;
 					std::string _namespace;
 					std::string clusterType;
 					std::string riskStatus;
 					int vulCount;
-					std::string appName;
 					int instanceCount;
+					std::string imageRepoName;
 					std::string podIp;
-					std::string clusterName;
 					std::string regionId;
+					std::string imageRepoTag;
 					std::string riskLevel;
-					int alarmCount;
 				};
 
 

@@ -41,11 +41,14 @@ namespace AlibabaCloud
 				void setId(const std::string& id);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
+				std::string getResourceDirectoryAccountId()const;
+				void setResourceDirectoryAccountId(const std::string& resourceDirectoryAccountId);
 
             private:
 				std::string sourceIp_;
 				std::string id_;
 				std::string lang_;
+				std::string resourceDirectoryAccountId_;
 
 			};
 		}

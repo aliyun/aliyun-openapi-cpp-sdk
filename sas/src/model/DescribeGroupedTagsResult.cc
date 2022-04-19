@@ -45,18 +45,18 @@ void DescribeGroupedTagsResult::parse(const std::string &payload)
 		GroupedFiled groupedFiledsObject;
 		if(!valueGroupedFiledsGroupedFiled["Name"].isNull())
 			groupedFiledsObject.name = valueGroupedFiledsGroupedFiled["Name"].asString();
-		if(!valueGroupedFiledsGroupedFiled["TagId"].isNull())
-			groupedFiledsObject.tagId = std::stoi(valueGroupedFiledsGroupedFiled["TagId"].asString());
 		if(!valueGroupedFiledsGroupedFiled["Count"].isNull())
 			groupedFiledsObject.count = valueGroupedFiledsGroupedFiled["Count"].asString();
+		if(!valueGroupedFiledsGroupedFiled["TagId"].isNull())
+			groupedFiledsObject.tagId = std::stoi(valueGroupedFiledsGroupedFiled["TagId"].asString());
 		groupedFileds_.push_back(groupedFiledsObject);
 	}
+	if(!value["HttpStatusCode"].isNull())
+		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["Count"].isNull())
 		count_ = std::stoi(value["Count"].asString());
-	if(!value["HttpStatusCode"].isNull())
-		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 
 }
 

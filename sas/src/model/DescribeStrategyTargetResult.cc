@@ -43,14 +43,14 @@ void DescribeStrategyTargetResult::parse(const std::string &payload)
 	for (auto valueStrategyTargetsStrategyTarget : allStrategyTargetsNode)
 	{
 		StrategyTarget strategyTargetsObject;
+		if(!valueStrategyTargetsStrategyTarget["BindUuidCount"].isNull())
+			strategyTargetsObject.bindUuidCount = std::stoi(valueStrategyTargetsStrategyTarget["BindUuidCount"].asString());
 		if(!valueStrategyTargetsStrategyTarget["Flag"].isNull())
 			strategyTargetsObject.flag = valueStrategyTargetsStrategyTarget["Flag"].asString();
 		if(!valueStrategyTargetsStrategyTarget["Target"].isNull())
 			strategyTargetsObject.target = valueStrategyTargetsStrategyTarget["Target"].asString();
 		if(!valueStrategyTargetsStrategyTarget["TargetType"].isNull())
 			strategyTargetsObject.targetType = valueStrategyTargetsStrategyTarget["TargetType"].asString();
-		if(!valueStrategyTargetsStrategyTarget["BindUuidCount"].isNull())
-			strategyTargetsObject.bindUuidCount = std::stoi(valueStrategyTargetsStrategyTarget["BindUuidCount"].asString());
 		strategyTargets_.push_back(strategyTargetsObject);
 	}
 

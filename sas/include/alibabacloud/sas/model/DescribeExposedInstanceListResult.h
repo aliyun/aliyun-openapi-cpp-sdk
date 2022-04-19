@@ -47,16 +47,16 @@ namespace AlibabaCloud
 					std::string instanceId;
 					std::string exposureComponent;
 					std::string exposurePort;
-					int asapVulCount;
 					int nntfVulCount;
+					int asapVulCount;
 					int exploitHealthCount;
 					std::string intranetIp;
 					long groupId;
 					std::string instanceName;
 					std::string uuid;
+					std::string exposureIp;
 					std::string internetIp;
 					std::string exposureTypeId;
-					std::string exposureIp;
 					int laterVulCount;
 					std::string regionId;
 				};

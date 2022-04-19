@@ -43,52 +43,62 @@ void DescribePropertyUserDetailResult::parse(const std::string &payload)
 	for (auto valuePropertysPropertyUser : allPropertysNode)
 	{
 		PropertyUser propertysObject;
-		if(!valuePropertysPropertyUser["LastLoginTime"].isNull())
-			propertysObject.lastLoginTime = valuePropertysPropertyUser["LastLoginTime"].asString();
-		if(!valuePropertysPropertyUser["LastLoginTimestamp"].isNull())
-			propertysObject.lastLoginTimestamp = std::stol(valuePropertysPropertyUser["LastLoginTimestamp"].asString());
-		if(!valuePropertysPropertyUser["IsRoot"].isNull())
-			propertysObject.isRoot = valuePropertysPropertyUser["IsRoot"].asString();
-		if(!valuePropertysPropertyUser["InstanceName"].isNull())
-			propertysObject.instanceName = valuePropertysPropertyUser["InstanceName"].asString();
-		if(!valuePropertysPropertyUser["AccountsExpirationDate"].isNull())
-			propertysObject.accountsExpirationDate = valuePropertysPropertyUser["AccountsExpirationDate"].asString();
-		if(!valuePropertysPropertyUser["PasswordExpirationDate"].isNull())
-			propertysObject.passwordExpirationDate = valuePropertysPropertyUser["PasswordExpirationDate"].asString();
-		if(!valuePropertysPropertyUser["Ip"].isNull())
-			propertysObject.ip = valuePropertysPropertyUser["Ip"].asString();
-		if(!valuePropertysPropertyUser["Create"].isNull())
-			propertysObject.create = valuePropertysPropertyUser["Create"].asString();
-		if(!valuePropertysPropertyUser["CreateTimestamp"].isNull())
-			propertysObject.createTimestamp = std::stol(valuePropertysPropertyUser["CreateTimestamp"].asString());
-		if(!valuePropertysPropertyUser["User"].isNull())
-			propertysObject.user = valuePropertysPropertyUser["User"].asString();
-		if(!valuePropertysPropertyUser["Uuid"].isNull())
-			propertysObject.uuid = valuePropertysPropertyUser["Uuid"].asString();
+		if(!valuePropertysPropertyUser["Status"].isNull())
+			propertysObject.status = valuePropertysPropertyUser["Status"].asString();
 		if(!valuePropertysPropertyUser["LastLoginIp"].isNull())
 			propertysObject.lastLoginIp = valuePropertysPropertyUser["LastLoginIp"].asString();
+		if(!valuePropertysPropertyUser["InternetIp"].isNull())
+			propertysObject.internetIp = valuePropertysPropertyUser["InternetIp"].asString();
+		if(!valuePropertysPropertyUser["LastLoginTime"].isNull())
+			propertysObject.lastLoginTime = valuePropertysPropertyUser["LastLoginTime"].asString();
+		if(!valuePropertysPropertyUser["IsRoot"].isNull())
+			propertysObject.isRoot = valuePropertysPropertyUser["IsRoot"].asString();
+		if(!valuePropertysPropertyUser["Ip"].isNull())
+			propertysObject.ip = valuePropertysPropertyUser["Ip"].asString();
+		if(!valuePropertysPropertyUser["User"].isNull())
+			propertysObject.user = valuePropertysPropertyUser["User"].asString();
 		if(!valuePropertysPropertyUser["InstanceId"].isNull())
 			propertysObject.instanceId = valuePropertysPropertyUser["InstanceId"].asString();
 		if(!valuePropertysPropertyUser["IntranetIp"].isNull())
 			propertysObject.intranetIp = valuePropertysPropertyUser["IntranetIp"].asString();
-		if(!valuePropertysPropertyUser["InternetIp"].isNull())
-			propertysObject.internetIp = valuePropertysPropertyUser["InternetIp"].asString();
-		if(!valuePropertysPropertyUser["Status"].isNull())
-			propertysObject.status = valuePropertysPropertyUser["Status"].asString();
+		if(!valuePropertysPropertyUser["PasswordExpirationDate"].isNull())
+			propertysObject.passwordExpirationDate = valuePropertysPropertyUser["PasswordExpirationDate"].asString();
+		if(!valuePropertysPropertyUser["Uuid"].isNull())
+			propertysObject.uuid = valuePropertysPropertyUser["Uuid"].asString();
+		if(!valuePropertysPropertyUser["LastLoginTimestamp"].isNull())
+			propertysObject.lastLoginTimestamp = std::stol(valuePropertysPropertyUser["LastLoginTimestamp"].asString());
+		if(!valuePropertysPropertyUser["InstanceName"].isNull())
+			propertysObject.instanceName = valuePropertysPropertyUser["InstanceName"].asString();
+		if(!valuePropertysPropertyUser["AccountsExpirationDate"].isNull())
+			propertysObject.accountsExpirationDate = valuePropertysPropertyUser["AccountsExpirationDate"].asString();
+		if(!valuePropertysPropertyUser["CreateTimestamp"].isNull())
+			propertysObject.createTimestamp = std::stol(valuePropertysPropertyUser["CreateTimestamp"].asString());
+		if(!valuePropertysPropertyUser["LastLoginTimeDt"].isNull())
+			propertysObject.lastLoginTimeDt = std::stol(valuePropertysPropertyUser["LastLoginTimeDt"].asString());
+		if(!valuePropertysPropertyUser["IsPasswdExpired"].isNull())
+			propertysObject.isPasswdExpired = std::stoi(valuePropertysPropertyUser["IsPasswdExpired"].asString());
+		if(!valuePropertysPropertyUser["IsPasswdLocked"].isNull())
+			propertysObject.isPasswdLocked = std::stoi(valuePropertysPropertyUser["IsPasswdLocked"].asString());
+		if(!valuePropertysPropertyUser["IsUserExpired"].isNull())
+			propertysObject.isUserExpired = std::stoi(valuePropertysPropertyUser["IsUserExpired"].asString());
+		if(!valuePropertysPropertyUser["IsCouldLogin"].isNull())
+			propertysObject.isCouldLogin = std::stoi(valuePropertysPropertyUser["IsCouldLogin"].asString());
+		if(!valuePropertysPropertyUser["IsSudoer"].isNull())
+			propertysObject.isSudoer = std::stoi(valuePropertysPropertyUser["IsSudoer"].asString());
 		auto allGroupNames = value["GroupNames"]["GroupName"];
 		for (auto value : allGroupNames)
 			propertysObject.groupNames.push_back(value.asString());
 		propertys_.push_back(propertysObject);
 	}
 	auto pageInfoNode = value["PageInfo"];
-	if(!pageInfoNode["Count"].isNull())
-		pageInfo_.count = std::stoi(pageInfoNode["Count"].asString());
+	if(!pageInfoNode["CurrentPage"].isNull())
+		pageInfo_.currentPage = std::stoi(pageInfoNode["CurrentPage"].asString());
 	if(!pageInfoNode["PageSize"].isNull())
 		pageInfo_.pageSize = std::stoi(pageInfoNode["PageSize"].asString());
 	if(!pageInfoNode["TotalCount"].isNull())
 		pageInfo_.totalCount = std::stoi(pageInfoNode["TotalCount"].asString());
-	if(!pageInfoNode["CurrentPage"].isNull())
-		pageInfo_.currentPage = std::stoi(pageInfoNode["CurrentPage"].asString());
+	if(!pageInfoNode["Count"].isNull())
+		pageInfo_.count = std::stoi(pageInfoNode["Count"].asString());
 
 }
 

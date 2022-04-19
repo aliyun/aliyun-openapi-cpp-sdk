@@ -39,24 +39,24 @@ void DescribeExposedStatisticsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["ExposedLaterVulCount"].isNull())
+		exposedLaterVulCount_ = std::stoi(value["ExposedLaterVulCount"].asString());
+	if(!value["ExposedComponentCount"].isNull())
+		exposedComponentCount_ = std::stoi(value["ExposedComponentCount"].asString());
+	if(!value["ExposedPortCount"].isNull())
+		exposedPortCount_ = std::stoi(value["ExposedPortCount"].asString());
 	if(!value["ExposedInstanceCount"].isNull())
 		exposedInstanceCount_ = std::stoi(value["ExposedInstanceCount"].asString());
+	if(!value["ExposedWeekPasswordMachineCount"].isNull())
+		exposedWeekPasswordMachineCount_ = std::stoi(value["ExposedWeekPasswordMachineCount"].asString());
+	if(!value["ExposedNntfVulCount"].isNull())
+		exposedNntfVulCount_ = std::stoi(value["ExposedNntfVulCount"].asString());
 	if(!value["GatewayAssetCount"].isNull())
 		gatewayAssetCount_ = std::stoi(value["GatewayAssetCount"].asString());
 	if(!value["ExposedIpCount"].isNull())
 		exposedIpCount_ = std::stoi(value["ExposedIpCount"].asString());
-	if(!value["ExposedPortCount"].isNull())
-		exposedPortCount_ = std::stoi(value["ExposedPortCount"].asString());
-	if(!value["ExposedComponentCount"].isNull())
-		exposedComponentCount_ = std::stoi(value["ExposedComponentCount"].asString());
 	if(!value["ExposedAsapVulCount"].isNull())
 		exposedAsapVulCount_ = std::stoi(value["ExposedAsapVulCount"].asString());
-	if(!value["ExposedLaterVulCount"].isNull())
-		exposedLaterVulCount_ = std::stoi(value["ExposedLaterVulCount"].asString());
-	if(!value["ExposedNntfVulCount"].isNull())
-		exposedNntfVulCount_ = std::stoi(value["ExposedNntfVulCount"].asString());
-	if(!value["ExposedWeekPasswordMachineCount"].isNull())
-		exposedWeekPasswordMachineCount_ = std::stoi(value["ExposedWeekPasswordMachineCount"].asString());
 
 }
 
@@ -70,6 +70,11 @@ int DescribeExposedStatisticsResult::getExposedWeekPasswordMachineCount()const
 	return exposedWeekPasswordMachineCount_;
 }
 
+int DescribeExposedStatisticsResult::getExposedLaterVulCount()const
+{
+	return exposedLaterVulCount_;
+}
+
 int DescribeExposedStatisticsResult::getExposedInstanceCount()const
 {
 	return exposedInstanceCount_;
@@ -80,24 +85,19 @@ int DescribeExposedStatisticsResult::getGatewayAssetCount()const
 	return gatewayAssetCount_;
 }
 
-int DescribeExposedStatisticsResult::getExposedLaterVulCount()const
-{
-	return exposedLaterVulCount_;
-}
-
 int DescribeExposedStatisticsResult::getExposedComponentCount()const
 {
 	return exposedComponentCount_;
 }
 
-int DescribeExposedStatisticsResult::getExposedIpCount()const
-{
-	return exposedIpCount_;
-}
-
 int DescribeExposedStatisticsResult::getExposedNntfVulCount()const
 {
 	return exposedNntfVulCount_;
+}
+
+int DescribeExposedStatisticsResult::getExposedIpCount()const
+{
+	return exposedIpCount_;
 }
 
 int DescribeExposedStatisticsResult::getExposedAsapVulCount()const

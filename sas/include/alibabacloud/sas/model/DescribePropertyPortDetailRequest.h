@@ -39,12 +39,16 @@ namespace AlibabaCloud
 				void setRemark(const std::string& remark);
 				std::string getUuid()const;
 				void setUuid(const std::string& uuid);
+				std::string getBindIp()const;
+				void setBindIp(const std::string& bindIp);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				int getCurrentPage()const;
 				void setCurrentPage(int currentPage);
+				std::string getExtend()const;
+				void setExtend(const std::string& extend);
 				std::string getPort()const;
 				void setPort(const std::string& port);
 				std::string getProcName()const;
@@ -53,9 +57,11 @@ namespace AlibabaCloud
             private:
 				std::string remark_;
 				std::string uuid_;
+				std::string bindIp_;
 				std::string sourceIp_;
 				int pageSize_;
 				int currentPage_;
+				std::string extend_;
 				std::string port_;
 				std::string procName_;
 

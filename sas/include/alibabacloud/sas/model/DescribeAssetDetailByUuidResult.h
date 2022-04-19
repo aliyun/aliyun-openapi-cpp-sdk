@@ -37,10 +37,12 @@ namespace AlibabaCloud
 					std::string groupTrace;
 					bool bind;
 					std::string os;
+					long memory;
 					std::string ip;
 					int cpu;
-					std::string intranetIp;
+					std::string clientVersion;
 					std::string osDetail;
+					std::string intranetIp;
 					std::vector<std::string> diskInfoList;
 					long authModifyTime;
 					std::string internetIp;
@@ -49,12 +51,13 @@ namespace AlibabaCloud
 					std::string kernel;
 					std::string hostName;
 					std::string clientStatus;
-					std::string instanceId;
 					std::string cpuInfo;
+					std::string instanceId;
 					std::vector<std::string> ipList;
-					std::string osName;
 					long createTime;
+					std::string osName;
 					std::string sysInfo;
+					int flag;
 					std::string instanceName;
 					std::vector<std::string> macList;
 					std::string assetType;
@@ -62,8 +65,8 @@ namespace AlibabaCloud
 					int mem;
 					std::string region;
 					std::string vpcInstanceId;
-					std::string regionId;
 					std::string tag;
+					std::string regionId;
 					int authVersion;
 				};
 

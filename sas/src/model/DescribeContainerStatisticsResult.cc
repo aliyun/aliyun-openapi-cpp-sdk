@@ -40,16 +40,16 @@ void DescribeContainerStatisticsResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["TotalAlarmCount"].isNull())
-		data_.totalAlarmCount = std::stoi(dataNode["TotalAlarmCount"].asString());
+	if(!dataNode["TotalNode"].isNull())
+		data_.totalNode = std::stoi(dataNode["TotalNode"].asString());
 	if(!dataNode["RemindAlarmCount"].isNull())
 		data_.remindAlarmCount = std::stoi(dataNode["RemindAlarmCount"].asString());
+	if(!dataNode["TotalAlarmCount"].isNull())
+		data_.totalAlarmCount = std::stoi(dataNode["TotalAlarmCount"].asString());
 	if(!dataNode["SuspiciousAlarmCount"].isNull())
 		data_.suspiciousAlarmCount = std::stoi(dataNode["SuspiciousAlarmCount"].asString());
 	if(!dataNode["SeriousAlarmCount"].isNull())
 		data_.seriousAlarmCount = std::stoi(dataNode["SeriousAlarmCount"].asString());
-	if(!dataNode["TotalNode"].isNull())
-		data_.totalNode = std::stoi(dataNode["TotalNode"].asString());
 	if(!dataNode["hasRiskNode"].isNull())
 		data_.hasRiskNode = std::stoi(dataNode["hasRiskNode"].asString());
 

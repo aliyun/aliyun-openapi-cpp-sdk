@@ -44,26 +44,26 @@ void ModifyPushAllTaskResult::parse(const std::string &payload)
 	for (auto pushTaskRspNodePushTaskResultListpushTaskResult : allPushTaskResultListNode)
 	{
 		PushTaskRsp::PushTaskResult pushTaskResultObject;
-		if(!pushTaskRspNodePushTaskResultListpushTaskResult["InstanceId"].isNull())
-			pushTaskResultObject.instanceId = pushTaskRspNodePushTaskResultListpushTaskResult["InstanceId"].asString();
-		if(!pushTaskRspNodePushTaskResultListpushTaskResult["OsVersion"].isNull())
-			pushTaskResultObject.osVersion = pushTaskRspNodePushTaskResultListpushTaskResult["OsVersion"].asString();
-		if(!pushTaskRspNodePushTaskResultListpushTaskResult["InstanceName"].isNull())
-			pushTaskResultObject.instanceName = pushTaskRspNodePushTaskResultListpushTaskResult["InstanceName"].asString();
-		if(!pushTaskRspNodePushTaskResultListpushTaskResult["Success"].isNull())
-			pushTaskResultObject.success = pushTaskRspNodePushTaskResultListpushTaskResult["Success"].asString() == "true";
+		if(!pushTaskRspNodePushTaskResultListpushTaskResult["Uuid"].isNull())
+			pushTaskResultObject.uuid = pushTaskRspNodePushTaskResultListpushTaskResult["Uuid"].asString();
 		if(!pushTaskRspNodePushTaskResultListpushTaskResult["GroupId"].isNull())
 			pushTaskResultObject.groupId = std::stol(pushTaskRspNodePushTaskResultListpushTaskResult["GroupId"].asString());
-		if(!pushTaskRspNodePushTaskResultListpushTaskResult["Ip"].isNull())
-			pushTaskResultObject.ip = pushTaskRspNodePushTaskResultListpushTaskResult["Ip"].asString();
+		if(!pushTaskRspNodePushTaskResultListpushTaskResult["Success"].isNull())
+			pushTaskResultObject.success = pushTaskRspNodePushTaskResultListpushTaskResult["Success"].asString() == "true";
+		if(!pushTaskRspNodePushTaskResultListpushTaskResult["Region"].isNull())
+			pushTaskResultObject.region = pushTaskRspNodePushTaskResultListpushTaskResult["Region"].asString();
+		if(!pushTaskRspNodePushTaskResultListpushTaskResult["InstanceName"].isNull())
+			pushTaskResultObject.instanceName = pushTaskRspNodePushTaskResultListpushTaskResult["InstanceName"].asString();
 		if(!pushTaskRspNodePushTaskResultListpushTaskResult["Online"].isNull())
 			pushTaskResultObject.online = pushTaskRspNodePushTaskResultListpushTaskResult["Online"].asString() == "true";
 		if(!pushTaskRspNodePushTaskResultListpushTaskResult["Message"].isNull())
 			pushTaskResultObject.message = pushTaskRspNodePushTaskResultListpushTaskResult["Message"].asString();
-		if(!pushTaskRspNodePushTaskResultListpushTaskResult["Region"].isNull())
-			pushTaskResultObject.region = pushTaskRspNodePushTaskResultListpushTaskResult["Region"].asString();
-		if(!pushTaskRspNodePushTaskResultListpushTaskResult["Uuid"].isNull())
-			pushTaskResultObject.uuid = pushTaskRspNodePushTaskResultListpushTaskResult["Uuid"].asString();
+		if(!pushTaskRspNodePushTaskResultListpushTaskResult["Ip"].isNull())
+			pushTaskResultObject.ip = pushTaskRspNodePushTaskResultListpushTaskResult["Ip"].asString();
+		if(!pushTaskRspNodePushTaskResultListpushTaskResult["OsVersion"].isNull())
+			pushTaskResultObject.osVersion = pushTaskRspNodePushTaskResultListpushTaskResult["OsVersion"].asString();
+		if(!pushTaskRspNodePushTaskResultListpushTaskResult["InstanceId"].isNull())
+			pushTaskResultObject.instanceId = pushTaskRspNodePushTaskResultListpushTaskResult["InstanceId"].asString();
 		pushTaskRsp_.pushTaskResultList.push_back(pushTaskResultObject);
 	}
 

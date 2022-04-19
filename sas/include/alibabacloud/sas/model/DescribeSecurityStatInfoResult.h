@@ -54,31 +54,31 @@ namespace AlibabaCloud
 				};
 				struct HealthCheck
 				{
-					std::vector<std::string> valueArray4;
 					std::vector<std::string> levelsOn5;
 					int totalCount;
 					std::vector<std::string> highList;
 					int highCount;
-					std::vector<std::string> mediumList;
 					std::vector<std::string> lowList;
+					std::vector<std::string> mediumList;
+					std::vector<std::string> valueArray3;
 					int lowCount;
-					std::vector<std::string> dateArray3;
-					std::vector<std::string> timeArray6;
 					int mediumCount;
+					std::vector<std::string> timeArray4;
+					std::vector<std::string> dateArray6;
 				};
 				struct Vulnerability
 				{
 					int totalCount;
 					std::vector<std::string> asapList;
+					std::vector<std::string> valueArray7;
 					std::vector<std::string> laterList;
+					std::vector<std::string> dateArray10;
 					int laterCount;
 					int asapCount;
-					std::vector<std::string> dateArray7;
-					std::vector<std::string> valueArray8;
-					std::vector<std::string> levelsOn9;
+					std::vector<std::string> timeArray8;
 					std::vector<std::string> nntfList;
+					std::vector<std::string> levelsOn9;
 					int nntfCount;
-					std::vector<std::string> timeArray10;
 				};
 
 

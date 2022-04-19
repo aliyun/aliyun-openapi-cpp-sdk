@@ -42,21 +42,26 @@ namespace AlibabaCloud
 				struct PropertyUser
 				{
 					std::string status;
+					int isSudoer;
 					std::string isRoot;
 					std::vector<std::string> groupNames;
 					std::string user;
 					std::string lastLoginIp;
 					std::string instanceId;
+					int isPasswdLocked;
 					std::string ip;
-					std::string accountsExpirationDate;
+					int isCouldLogin;
 					std::string intranetIp;
+					std::string accountsExpirationDate;
 					std::string instanceName;
 					std::string lastLoginTime;
 					std::string uuid;
-					long lastLoginTimestamp;
 					std::string internetIp;
-					std::string create;
+					long lastLoginTimestamp;
+					long lastLoginTimeDt;
+					int isUserExpired;
 					long createTimestamp;
+					int isPasswdExpired;
 					std::string passwordExpirationDate;
 				};
 

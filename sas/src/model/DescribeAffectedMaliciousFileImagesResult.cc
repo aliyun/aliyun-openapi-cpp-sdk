@@ -43,49 +43,53 @@ void DescribeAffectedMaliciousFileImagesResult::parse(const std::string &payload
 	for (auto valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage : allAffectedMaliciousFileImagesResponseNode)
 	{
 		AffectedMaliciousFileImage affectedMaliciousFileImagesResponseObject;
-		if(!valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["Layer"].isNull())
-			affectedMaliciousFileImagesResponseObject.layer = valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["Layer"].asString();
-		if(!valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["FirstScanTimestamp"].isNull())
-			affectedMaliciousFileImagesResponseObject.firstScanTimestamp = std::stol(valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["FirstScanTimestamp"].asString());
-		if(!valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["LatestScanTimestamp"].isNull())
-			affectedMaliciousFileImagesResponseObject.latestScanTimestamp = std::stol(valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["LatestScanTimestamp"].asString());
-		if(!valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["LatestVerifyTimestamp"].isNull())
-			affectedMaliciousFileImagesResponseObject.latestVerifyTimestamp = std::stol(valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["LatestVerifyTimestamp"].asString());
-		if(!valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["MaliciousMd5"].isNull())
-			affectedMaliciousFileImagesResponseObject.maliciousMd5 = valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["MaliciousMd5"].asString();
 		if(!valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["Status"].isNull())
 			affectedMaliciousFileImagesResponseObject.status = std::stoi(valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["Status"].asString());
-		if(!valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["Level"].isNull())
-			affectedMaliciousFileImagesResponseObject.level = valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["Level"].asString();
-		if(!valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["ImageUuid"].isNull())
-			affectedMaliciousFileImagesResponseObject.imageUuid = valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["ImageUuid"].asString();
-		if(!valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["FilePath"].isNull())
-			affectedMaliciousFileImagesResponseObject.filePath = valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["FilePath"].asString();
 		if(!valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["Digest"].isNull())
 			affectedMaliciousFileImagesResponseObject.digest = valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["Digest"].asString();
-		if(!valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["RepoRegionId"].isNull())
-			affectedMaliciousFileImagesResponseObject.repoRegionId = valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["RepoRegionId"].asString();
+		if(!valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["LatestVerifyTimestamp"].isNull())
+			affectedMaliciousFileImagesResponseObject.latestVerifyTimestamp = std::stol(valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["LatestVerifyTimestamp"].asString());
 		if(!valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["RepoInstanceId"].isNull())
 			affectedMaliciousFileImagesResponseObject.repoInstanceId = valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["RepoInstanceId"].asString();
-		if(!valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["RepoId"].isNull())
-			affectedMaliciousFileImagesResponseObject.repoId = valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["RepoId"].asString();
-		if(!valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["RepoName"].isNull())
-			affectedMaliciousFileImagesResponseObject.repoName = valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["RepoName"].asString();
 		if(!valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["Namespace"].isNull())
 			affectedMaliciousFileImagesResponseObject._namespace = valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["Namespace"].asString();
 		if(!valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["Tag"].isNull())
 			affectedMaliciousFileImagesResponseObject.tag = valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["Tag"].asString();
+		if(!valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["RepoRegionId"].isNull())
+			affectedMaliciousFileImagesResponseObject.repoRegionId = valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["RepoRegionId"].asString();
+		if(!valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["ImageUuid"].isNull())
+			affectedMaliciousFileImagesResponseObject.imageUuid = valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["ImageUuid"].asString();
+		if(!valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["FirstScanTimestamp"].isNull())
+			affectedMaliciousFileImagesResponseObject.firstScanTimestamp = std::stol(valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["FirstScanTimestamp"].asString());
+		if(!valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["MaliciousMd5"].isNull())
+			affectedMaliciousFileImagesResponseObject.maliciousMd5 = valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["MaliciousMd5"].asString();
+		if(!valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["FilePath"].isNull())
+			affectedMaliciousFileImagesResponseObject.filePath = valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["FilePath"].asString();
+		if(!valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["RepoId"].isNull())
+			affectedMaliciousFileImagesResponseObject.repoId = valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["RepoId"].asString();
+		if(!valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["Layer"].isNull())
+			affectedMaliciousFileImagesResponseObject.layer = valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["Layer"].asString();
+		if(!valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["LatestScanTimestamp"].isNull())
+			affectedMaliciousFileImagesResponseObject.latestScanTimestamp = std::stol(valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["LatestScanTimestamp"].asString());
+		if(!valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["RepoName"].isNull())
+			affectedMaliciousFileImagesResponseObject.repoName = valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["RepoName"].asString();
+		if(!valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["Level"].isNull())
+			affectedMaliciousFileImagesResponseObject.level = valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["Level"].asString();
+		if(!valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["DownloadUrl"].isNull())
+			affectedMaliciousFileImagesResponseObject.downloadUrl = valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["DownloadUrl"].asString();
+		if(!valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["HighLight"].isNull())
+			affectedMaliciousFileImagesResponseObject.highLight = valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["HighLight"].asString();
 		affectedMaliciousFileImagesResponse_.push_back(affectedMaliciousFileImagesResponseObject);
 	}
 	auto pageInfoNode = value["PageInfo"];
-	if(!pageInfoNode["Count"].isNull())
-		pageInfo_.count = std::stoi(pageInfoNode["Count"].asString());
+	if(!pageInfoNode["CurrentPage"].isNull())
+		pageInfo_.currentPage = std::stoi(pageInfoNode["CurrentPage"].asString());
 	if(!pageInfoNode["PageSize"].isNull())
 		pageInfo_.pageSize = std::stoi(pageInfoNode["PageSize"].asString());
 	if(!pageInfoNode["TotalCount"].isNull())
 		pageInfo_.totalCount = std::stoi(pageInfoNode["TotalCount"].asString());
-	if(!pageInfoNode["CurrentPage"].isNull())
-		pageInfo_.currentPage = std::stoi(pageInfoNode["CurrentPage"].asString());
+	if(!pageInfoNode["Count"].isNull())
+		pageInfo_.count = std::stoi(pageInfoNode["Count"].asString());
 
 }
 

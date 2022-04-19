@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setTargetType(const std::string& targetType);
 				int getMinScore()const;
 				void setMinScore(int minScore);
+				std::string getAttachTypes()const;
+				void setAttachTypes(const std::string& attachTypes);
 				std::string getType()const;
 				void setType(const std::string& type);
 				std::string getContainerFieldName()const;
@@ -63,6 +65,8 @@ namespace AlibabaCloud
 				void setClusterId(const std::string& clusterId);
 				std::string getAliasName()const;
 				void setAliasName(const std::string& aliasName);
+				std::string getSearchTags()const;
+				void setSearchTags(const std::string& searchTags);
 				std::string getNecessity()const;
 				void setNecessity(const std::string& necessity);
 				std::string getUuids()const;
@@ -72,6 +76,7 @@ namespace AlibabaCloud
 				std::string statusList_;
 				std::string targetType_;
 				int minScore_;
+				std::string attachTypes_;
 				std::string type_;
 				std::string containerFieldName_;
 				std::string sourceIp_;
@@ -83,6 +88,7 @@ namespace AlibabaCloud
 				int currentPage_;
 				std::string clusterId_;
 				std::string aliasName_;
+				std::string searchTags_;
 				std::string necessity_;
 				std::string uuids_;
 

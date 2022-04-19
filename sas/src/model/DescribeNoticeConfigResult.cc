@@ -45,14 +45,14 @@ void DescribeNoticeConfigResult::parse(const std::string &payload)
 		NoticeConfig noticeConfigListObject;
 		if(!valueNoticeConfigListNoticeConfig["TimeLimit"].isNull())
 			noticeConfigListObject.timeLimit = std::stoi(valueNoticeConfigListNoticeConfig["TimeLimit"].asString());
-		if(!valueNoticeConfigListNoticeConfig["Route"].isNull())
-			noticeConfigListObject.route = std::stoi(valueNoticeConfigListNoticeConfig["Route"].asString());
-		if(!valueNoticeConfigListNoticeConfig["Project"].isNull())
-			noticeConfigListObject.project = valueNoticeConfigListNoticeConfig["Project"].asString();
 		if(!valueNoticeConfigListNoticeConfig["AliUid"].isNull())
 			noticeConfigListObject.aliUid = std::stol(valueNoticeConfigListNoticeConfig["AliUid"].asString());
 		if(!valueNoticeConfigListNoticeConfig["CurrentPage"].isNull())
 			noticeConfigListObject.currentPage = std::stoi(valueNoticeConfigListNoticeConfig["CurrentPage"].asString());
+		if(!valueNoticeConfigListNoticeConfig["Project"].isNull())
+			noticeConfigListObject.project = valueNoticeConfigListNoticeConfig["Project"].asString();
+		if(!valueNoticeConfigListNoticeConfig["Route"].isNull())
+			noticeConfigListObject.route = std::stoi(valueNoticeConfigListNoticeConfig["Route"].asString());
 		noticeConfigList_.push_back(noticeConfigListObject);
 	}
 

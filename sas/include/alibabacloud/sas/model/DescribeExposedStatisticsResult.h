@@ -39,12 +39,12 @@ namespace AlibabaCloud
 				~DescribeExposedStatisticsResult();
 				int getExposedPortCount()const;
 				int getExposedWeekPasswordMachineCount()const;
+				int getExposedLaterVulCount()const;
 				int getExposedInstanceCount()const;
 				int getGatewayAssetCount()const;
-				int getExposedLaterVulCount()const;
 				int getExposedComponentCount()const;
-				int getExposedIpCount()const;
 				int getExposedNntfVulCount()const;
+				int getExposedIpCount()const;
 				int getExposedAsapVulCount()const;
 
 			protected:
@@ -52,12 +52,12 @@ namespace AlibabaCloud
 			private:
 				int exposedPortCount_;
 				int exposedWeekPasswordMachineCount_;
+				int exposedLaterVulCount_;
 				int exposedInstanceCount_;
 				int gatewayAssetCount_;
-				int exposedLaterVulCount_;
 				int exposedComponentCount_;
-				int exposedIpCount_;
 				int exposedNntfVulCount_;
+				int exposedIpCount_;
 				int exposedAsapVulCount_;
 
 			};

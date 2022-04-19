@@ -34,8 +34,10 @@ namespace AlibabaCloud
 			public:
 				struct BackupStorageCount
 				{
+					long uniUsageStorageByte;
 					long usageStorageByte;
 					long buyStorageByte;
+					long ecsUsageStorageByte;
 					int overflow;
 				};
 

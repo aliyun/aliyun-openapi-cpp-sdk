@@ -46,8 +46,8 @@ namespace AlibabaCloud
 						std::string key;
 					};
 					std::string k8sNodeId;
-					long endTime;
 					bool containHwMode;
+					long endTime;
 					std::string k8sNodeName;
 					std::string intranetIp;
 					std::string k8sClusterId;
@@ -66,12 +66,12 @@ namespace AlibabaCloud
 					std::string instanceName;
 					std::string type;
 					bool canBeDealOnLine;
-					std::string uuid;
 					std::string k8sClusterName;
+					std::string uuid;
 					std::string containerImageName;
 					std::string alarmUniqueInfo;
-					std::string level;
 					std::string alarmEventAliasName;
+					std::string level;
 				};
 
 

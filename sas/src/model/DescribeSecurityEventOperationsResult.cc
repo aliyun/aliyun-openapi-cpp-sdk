@@ -43,24 +43,26 @@ void DescribeSecurityEventOperationsResult::parse(const std::string &payload)
 	for (auto valueSecurityEventOperationsResponseSecurityEventOperation : allSecurityEventOperationsResponseNode)
 	{
 		SecurityEventOperation securityEventOperationsResponseObject;
-		if(!valueSecurityEventOperationsResponseSecurityEventOperation["OperationCode"].isNull())
-			securityEventOperationsResponseObject.operationCode = valueSecurityEventOperationsResponseSecurityEventOperation["OperationCode"].asString();
 		if(!valueSecurityEventOperationsResponseSecurityEventOperation["OperationParams"].isNull())
 			securityEventOperationsResponseObject.operationParams = valueSecurityEventOperationsResponseSecurityEventOperation["OperationParams"].asString();
+		if(!valueSecurityEventOperationsResponseSecurityEventOperation["OperationCode"].isNull())
+			securityEventOperationsResponseObject.operationCode = valueSecurityEventOperationsResponseSecurityEventOperation["OperationCode"].asString();
 		if(!valueSecurityEventOperationsResponseSecurityEventOperation["UserCanOperate"].isNull())
 			securityEventOperationsResponseObject.userCanOperate = valueSecurityEventOperationsResponseSecurityEventOperation["UserCanOperate"].asString() == "true";
 		auto allMarkFieldNode = valueSecurityEventOperationsResponseSecurityEventOperation["MarkField"]["MarkFieldItem"];
 		for (auto valueSecurityEventOperationsResponseSecurityEventOperationMarkFieldMarkFieldItem : allMarkFieldNode)
 		{
 			SecurityEventOperation::MarkFieldItem markFieldObject;
+			if(!valueSecurityEventOperationsResponseSecurityEventOperationMarkFieldMarkFieldItem["MarkMisType"].isNull())
+				markFieldObject.markMisType = valueSecurityEventOperationsResponseSecurityEventOperationMarkFieldMarkFieldItem["MarkMisType"].asString();
 			if(!valueSecurityEventOperationsResponseSecurityEventOperationMarkFieldMarkFieldItem["FiledName"].isNull())
 				markFieldObject.filedName = valueSecurityEventOperationsResponseSecurityEventOperationMarkFieldMarkFieldItem["FiledName"].asString();
 			if(!valueSecurityEventOperationsResponseSecurityEventOperationMarkFieldMarkFieldItem["FiledAliasName"].isNull())
 				markFieldObject.filedAliasName = valueSecurityEventOperationsResponseSecurityEventOperationMarkFieldMarkFieldItem["FiledAliasName"].asString();
-			if(!valueSecurityEventOperationsResponseSecurityEventOperationMarkFieldMarkFieldItem["MarkMisType"].isNull())
-				markFieldObject.markMisType = valueSecurityEventOperationsResponseSecurityEventOperationMarkFieldMarkFieldItem["MarkMisType"].asString();
 			if(!valueSecurityEventOperationsResponseSecurityEventOperationMarkFieldMarkFieldItem["MarkMisValue"].isNull())
 				markFieldObject.markMisValue = valueSecurityEventOperationsResponseSecurityEventOperationMarkFieldMarkFieldItem["MarkMisValue"].asString();
+			if(!valueSecurityEventOperationsResponseSecurityEventOperationMarkFieldMarkFieldItem["Uuid"].isNull())
+				markFieldObject.uuid = valueSecurityEventOperationsResponseSecurityEventOperationMarkFieldMarkFieldItem["Uuid"].asString();
 			auto allSupportedMisType = value["SupportedMisType"]["StringItem"];
 			for (auto value : allSupportedMisType)
 				markFieldObject.supportedMisType.push_back(value.asString());

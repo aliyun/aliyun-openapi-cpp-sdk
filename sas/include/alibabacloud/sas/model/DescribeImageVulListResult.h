@@ -40,11 +40,11 @@ namespace AlibabaCloud
 						{
 							std::string path;
 							std::string updateCmd;
-							std::string matchList;
+							std::vector<std::string> matchList;
 							std::string version;
 							std::string fullVersion;
-							std::string matchDetail;
 							std::string layer;
+							std::string matchDetail;
 							std::string name;
 						};
 						std::string os;
@@ -53,15 +53,17 @@ namespace AlibabaCloud
 					};
 					int status;
 					int progress;
+					std::string repoNamespace;
 					std::string imageDigest;
+					std::string repoName;
 					long lastTs;
 					std::string necessity;
 					std::string name;
 					std::string type;
 					long firstTs;
-					std::string uuid;
-					std::string related;
 					long modifyTs;
+					std::string related;
+					std::string uuid;
 					bool canUpdate;
 					std::string aliasName;
 					std::string level;

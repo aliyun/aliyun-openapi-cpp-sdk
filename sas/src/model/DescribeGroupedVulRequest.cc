@@ -60,6 +60,17 @@ void DescribeGroupedVulRequest::setMinScore(int minScore)
 	setParameter("MinScore", std::to_string(minScore));
 }
 
+std::string DescribeGroupedVulRequest::getAttachTypes()const
+{
+	return attachTypes_;
+}
+
+void DescribeGroupedVulRequest::setAttachTypes(const std::string& attachTypes)
+{
+	attachTypes_ = attachTypes;
+	setParameter("AttachTypes", attachTypes);
+}
+
 std::string DescribeGroupedVulRequest::getType()const
 {
 	return type_;
@@ -179,6 +190,17 @@ void DescribeGroupedVulRequest::setAliasName(const std::string& aliasName)
 {
 	aliasName_ = aliasName;
 	setParameter("AliasName", aliasName);
+}
+
+std::string DescribeGroupedVulRequest::getSearchTags()const
+{
+	return searchTags_;
+}
+
+void DescribeGroupedVulRequest::setSearchTags(const std::string& searchTags)
+{
+	searchTags_ = searchTags;
+	setParameter("SearchTags", searchTags);
 }
 
 std::string DescribeGroupedVulRequest::getNecessity()const

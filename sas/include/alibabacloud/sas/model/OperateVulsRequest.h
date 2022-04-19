@@ -35,27 +35,21 @@ namespace AlibabaCloud
 				OperateVulsRequest();
 				~OperateVulsRequest();
 
-				std::string getReason()const;
-				void setReason(const std::string& reason);
 				std::string getType()const;
 				void setType(const std::string& type);
 				std::vector<std::string> getVulNames()const;
 				void setVulNames(const std::vector<std::string>& vulNames);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
-				int getPrecondition()const;
-				void setPrecondition(int precondition);
 				std::string getOperateType()const;
 				void setOperateType(const std::string& operateType);
 				std::vector<std::string> getUuids()const;
 				void setUuids(const std::vector<std::string>& uuids);
 
             private:
-				std::string reason_;
 				std::string type_;
 				std::vector<std::string> vulNames_;
 				std::string sourceIp_;
-				int precondition_;
 				std::string operateType_;
 				std::vector<std::string> uuids_;
 

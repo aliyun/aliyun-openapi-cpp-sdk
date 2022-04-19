@@ -49,10 +49,10 @@ void DescribePropertyUsageNewestResult::parse(const std::string &payload)
 			newestStatisticItemsObject.create = std::stol(valueNewestStatisticItemsNewestStatisticItem["Create"].asString());
 		newestStatisticItems_.push_back(newestStatisticItemsObject);
 	}
-	if(!value["ItemCount"].isNull())
-		itemCount_ = std::stoi(value["ItemCount"].asString());
 	if(!value["Type"].isNull())
 		type_ = value["Type"].asString();
+	if(!value["ItemCount"].isNull())
+		itemCount_ = std::stoi(value["ItemCount"].asString());
 
 }
 

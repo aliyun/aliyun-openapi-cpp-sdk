@@ -43,30 +43,30 @@ void DescribeDomainDetailResult::parse(const std::string &payload)
 	for (auto valueDomainDetailItemsDomainDetailItem : allDomainDetailItemsNode)
 	{
 		DomainDetailItem domainDetailItemsObject;
-		if(!valueDomainDetailItemsDomainDetailItem["InternetIp"].isNull())
-			domainDetailItemsObject.internetIp = valueDomainDetailItemsDomainDetailItem["InternetIp"].asString();
-		if(!valueDomainDetailItemsDomainDetailItem["InstanceId"].isNull())
-			domainDetailItemsObject.instanceId = valueDomainDetailItemsDomainDetailItem["InstanceId"].asString();
 		if(!valueDomainDetailItemsDomainDetailItem["Uuid"].isNull())
 			domainDetailItemsObject.uuid = valueDomainDetailItemsDomainDetailItem["Uuid"].asString();
-		if(!valueDomainDetailItemsDomainDetailItem["AssetType"].isNull())
-			domainDetailItemsObject.assetType = valueDomainDetailItemsDomainDetailItem["AssetType"].asString();
-		if(!valueDomainDetailItemsDomainDetailItem["InstanceName"].isNull())
-			domainDetailItemsObject.instanceName = valueDomainDetailItemsDomainDetailItem["InstanceName"].asString();
+		if(!valueDomainDetailItemsDomainDetailItem["InternetIp"].isNull())
+			domainDetailItemsObject.internetIp = valueDomainDetailItemsDomainDetailItem["InternetIp"].asString();
 		if(!valueDomainDetailItemsDomainDetailItem["MachineIp"].isNull())
 			domainDetailItemsObject.machineIp = valueDomainDetailItemsDomainDetailItem["MachineIp"].asString();
+		if(!valueDomainDetailItemsDomainDetailItem["InstanceName"].isNull())
+			domainDetailItemsObject.instanceName = valueDomainDetailItemsDomainDetailItem["InstanceName"].asString();
+		if(!valueDomainDetailItemsDomainDetailItem["InstanceId"].isNull())
+			domainDetailItemsObject.instanceId = valueDomainDetailItemsDomainDetailItem["InstanceId"].asString();
 		if(!valueDomainDetailItemsDomainDetailItem["IntranetIp"].isNull())
 			domainDetailItemsObject.intranetIp = valueDomainDetailItemsDomainDetailItem["IntranetIp"].asString();
+		if(!valueDomainDetailItemsDomainDetailItem["AssetType"].isNull())
+			domainDetailItemsObject.assetType = valueDomainDetailItemsDomainDetailItem["AssetType"].asString();
 		domainDetailItems_.push_back(domainDetailItemsObject);
 	}
 	if(!value["Domain"].isNull())
 		domain_ = value["Domain"].asString();
-	if(!value["RootDomain"].isNull())
-		rootDomain_ = value["RootDomain"].asString();
 	if(!value["VulCount"].isNull())
 		vulCount_ = std::stoi(value["VulCount"].asString());
 	if(!value["AlarmCount"].isNull())
 		alarmCount_ = std::stoi(value["AlarmCount"].asString());
+	if(!value["RootDomain"].isNull())
+		rootDomain_ = value["RootDomain"].asString();
 
 }
 

@@ -43,38 +43,38 @@ void DescribeWebLockBindListResult::parse(const std::string &payload)
 	for (auto valueBindListBind : allBindListNode)
 	{
 		Bind bindListObject;
-		if(!valueBindListBind["Uuid"].isNull())
-			bindListObject.uuid = valueBindListBind["Uuid"].asString();
-		if(!valueBindListBind["InstanceName"].isNull())
-			bindListObject.instanceName = valueBindListBind["InstanceName"].asString();
-		if(!valueBindListBind["InternetIp"].isNull())
-			bindListObject.internetIp = valueBindListBind["InternetIp"].asString();
-		if(!valueBindListBind["IntranetIp"].isNull())
-			bindListObject.intranetIp = valueBindListBind["IntranetIp"].asString();
-		if(!valueBindListBind["Os"].isNull())
-			bindListObject.os = valueBindListBind["Os"].asString();
-		if(!valueBindListBind["DirCount"].isNull())
-			bindListObject.dirCount = valueBindListBind["DirCount"].asString();
-		if(!valueBindListBind["ServiceStatus"].isNull())
-			bindListObject.serviceStatus = valueBindListBind["ServiceStatus"].asString();
-		if(!valueBindListBind["ServiceCode"].isNull())
-			bindListObject.serviceCode = valueBindListBind["ServiceCode"].asString();
-		if(!valueBindListBind["ServiceDetail"].isNull())
-			bindListObject.serviceDetail = valueBindListBind["ServiceDetail"].asString();
 		if(!valueBindListBind["Status"].isNull())
 			bindListObject.status = valueBindListBind["Status"].asString();
 		if(!valueBindListBind["Percent"].isNull())
 			bindListObject.percent = std::stoi(valueBindListBind["Percent"].asString());
+		if(!valueBindListBind["InternetIp"].isNull())
+			bindListObject.internetIp = valueBindListBind["InternetIp"].asString();
+		if(!valueBindListBind["ServiceDetail"].isNull())
+			bindListObject.serviceDetail = valueBindListBind["ServiceDetail"].asString();
+		if(!valueBindListBind["Os"].isNull())
+			bindListObject.os = valueBindListBind["Os"].asString();
+		if(!valueBindListBind["ServiceStatus"].isNull())
+			bindListObject.serviceStatus = valueBindListBind["ServiceStatus"].asString();
+		if(!valueBindListBind["IntranetIp"].isNull())
+			bindListObject.intranetIp = valueBindListBind["IntranetIp"].asString();
 		if(!valueBindListBind["AuditCount"].isNull())
 			bindListObject.auditCount = valueBindListBind["AuditCount"].asString();
+		if(!valueBindListBind["Uuid"].isNull())
+			bindListObject.uuid = valueBindListBind["Uuid"].asString();
+		if(!valueBindListBind["ServiceCode"].isNull())
+			bindListObject.serviceCode = valueBindListBind["ServiceCode"].asString();
+		if(!valueBindListBind["InstanceName"].isNull())
+			bindListObject.instanceName = valueBindListBind["InstanceName"].asString();
+		if(!valueBindListBind["DirCount"].isNull())
+			bindListObject.dirCount = valueBindListBind["DirCount"].asString();
 		if(!valueBindListBind["BlockCount"].isNull())
 			bindListObject.blockCount = valueBindListBind["BlockCount"].asString();
 		bindList_.push_back(bindListObject);
 	}
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["CurrentPage"].isNull())
 		currentPage_ = std::stoi(value["CurrentPage"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
 

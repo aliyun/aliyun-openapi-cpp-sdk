@@ -34,14 +34,14 @@ namespace AlibabaCloud
 			public:
 				struct GroupedVulItem
 				{
-					int pendingCount;
 					int status;
+					int pendingCount;
 					std::string type;
 					int progress;
 					std::string description;
 					std::string aliasName;
-					long gmtPublish;
 					long gmtLastCheck;
+					long gmtPublish;
 					std::string name;
 				};
 

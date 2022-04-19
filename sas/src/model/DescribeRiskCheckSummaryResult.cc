@@ -40,22 +40,22 @@ void DescribeRiskCheckSummaryResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto riskCheckSummaryNode = value["RiskCheckSummary"];
-	if(!riskCheckSummaryNode["RiskCount"].isNull())
-		riskCheckSummary_.riskCount = std::stoi(riskCheckSummaryNode["RiskCount"].asString());
-	if(!riskCheckSummaryNode["PreviousCount"].isNull())
-		riskCheckSummary_.previousCount = std::stoi(riskCheckSummaryNode["PreviousCount"].asString());
 	if(!riskCheckSummaryNode["ItemCount"].isNull())
 		riskCheckSummary_.itemCount = std::stoi(riskCheckSummaryNode["ItemCount"].asString());
-	if(!riskCheckSummaryNode["RiskRate"].isNull())
-		riskCheckSummary_.riskRate = std::stof(riskCheckSummaryNode["RiskRate"].asString());
 	if(!riskCheckSummaryNode["AffectedAssetCount"].isNull())
 		riskCheckSummary_.affectedAssetCount = std::stoi(riskCheckSummaryNode["AffectedAssetCount"].asString());
+	if(!riskCheckSummaryNode["DisabledRiskCount"].isNull())
+		riskCheckSummary_.disabledRiskCount = std::stoi(riskCheckSummaryNode["DisabledRiskCount"].asString());
+	if(!riskCheckSummaryNode["RiskCount"].isNull())
+		riskCheckSummary_.riskCount = std::stoi(riskCheckSummaryNode["RiskCount"].asString());
+	if(!riskCheckSummaryNode["RiskRate"].isNull())
+		riskCheckSummary_.riskRate = std::stof(riskCheckSummaryNode["RiskRate"].asString());
+	if(!riskCheckSummaryNode["PreviousCount"].isNull())
+		riskCheckSummary_.previousCount = std::stoi(riskCheckSummaryNode["PreviousCount"].asString());
 	if(!riskCheckSummaryNode["PreviousTime"].isNull())
 		riskCheckSummary_.previousTime = std::stol(riskCheckSummaryNode["PreviousTime"].asString());
 	if(!riskCheckSummaryNode["EnabledRiskCount"].isNull())
 		riskCheckSummary_.enabledRiskCount = std::stoi(riskCheckSummaryNode["EnabledRiskCount"].asString());
-	if(!riskCheckSummaryNode["DisabledRiskCount"].isNull())
-		riskCheckSummary_.disabledRiskCount = std::stoi(riskCheckSummaryNode["DisabledRiskCount"].asString());
 	auto allRiskLevelCountNode = riskCheckSummaryNode["RiskLevelCount"]["levelCount"];
 	for (auto riskCheckSummaryNodeRiskLevelCountlevelCount : allRiskLevelCountNode)
 	{
@@ -70,16 +70,16 @@ void DescribeRiskCheckSummaryResult::parse(const std::string &payload)
 	for (auto riskCheckSummaryNodeGroupsgroup : allGroupsNode)
 	{
 		RiskCheckSummary::Group groupObject;
-		if(!riskCheckSummaryNodeGroupsgroup["Id"].isNull())
-			groupObject.id = std::stol(riskCheckSummaryNodeGroupsgroup["Id"].asString());
-		if(!riskCheckSummaryNodeGroupsgroup["Title"].isNull())
-			groupObject.title = riskCheckSummaryNodeGroupsgroup["Title"].asString();
-		if(!riskCheckSummaryNodeGroupsgroup["Status"].isNull())
-			groupObject.status = riskCheckSummaryNodeGroupsgroup["Status"].asString();
 		if(!riskCheckSummaryNodeGroupsgroup["RemainingTime"].isNull())
 			groupObject.remainingTime = std::stoi(riskCheckSummaryNodeGroupsgroup["RemainingTime"].asString());
+		if(!riskCheckSummaryNodeGroupsgroup["Status"].isNull())
+			groupObject.status = riskCheckSummaryNodeGroupsgroup["Status"].asString();
 		if(!riskCheckSummaryNodeGroupsgroup["Sort"].isNull())
 			groupObject.sort = std::stoi(riskCheckSummaryNodeGroupsgroup["Sort"].asString());
+		if(!riskCheckSummaryNodeGroupsgroup["Title"].isNull())
+			groupObject.title = riskCheckSummaryNodeGroupsgroup["Title"].asString();
+		if(!riskCheckSummaryNodeGroupsgroup["Id"].isNull())
+			groupObject.id = std::stol(riskCheckSummaryNodeGroupsgroup["Id"].asString());
 		auto allCountByStatusNode = riskCheckSummaryNodeGroupsgroup["CountByStatus"]["statusCount"];
 		for (auto riskCheckSummaryNodeGroupsgroupCountByStatusstatusCount : allCountByStatusNode)
 		{

@@ -37,8 +37,8 @@ namespace AlibabaCloud
 					std::string clientStatus;
 					std::string os;
 					std::string instanceId;
-					std::string ip;
 					std::string osName;
+					std::string ip;
 					std::string intranetIp;
 					int flag;
 					std::string instanceName;

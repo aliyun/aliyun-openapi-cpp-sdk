@@ -42,8 +42,8 @@ namespace AlibabaCloud
 				struct GroupedMaliciousFile
 				{
 					int status;
-					long latestScanTimestamp;
 					long imageCount;
+					long latestScanTimestamp;
 					std::string maliciousName;
 					std::string level;
 					long firstScanTimestamp;

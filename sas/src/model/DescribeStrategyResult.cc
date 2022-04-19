@@ -43,38 +43,40 @@ void DescribeStrategyResult::parse(const std::string &payload)
 	for (auto valueStrategiesStrategy : allStrategiesNode)
 	{
 		Strategy strategiesObject;
-		if(!valueStrategiesStrategy["CycleDays"].isNull())
-			strategiesObject.cycleDays = std::stoi(valueStrategiesStrategy["CycleDays"].asString());
-		if(!valueStrategiesStrategy["Id"].isNull())
-			strategiesObject.id = std::stoi(valueStrategiesStrategy["Id"].asString());
-		if(!valueStrategiesStrategy["CycleStartTime"].isNull())
-			strategiesObject.cycleStartTime = std::stoi(valueStrategiesStrategy["CycleStartTime"].asString());
 		if(!valueStrategiesStrategy["Type"].isNull())
 			strategiesObject.type = std::stoi(valueStrategiesStrategy["Type"].asString());
-		if(!valueStrategiesStrategy["Name"].isNull())
-			strategiesObject.name = valueStrategiesStrategy["Name"].asString();
-		if(!valueStrategiesStrategy["RiskCount"].isNull())
-			strategiesObject.riskCount = std::stoi(valueStrategiesStrategy["RiskCount"].asString());
-		if(!valueStrategiesStrategy["EcsCount"].isNull())
-			strategiesObject.ecsCount = std::stoi(valueStrategiesStrategy["EcsCount"].asString());
 		if(!valueStrategiesStrategy["ExecStatus"].isNull())
 			strategiesObject.execStatus = std::stoi(valueStrategiesStrategy["ExecStatus"].asString());
-		if(!valueStrategiesStrategy["ProcessRate"].isNull())
-			strategiesObject.processRate = std::stoi(valueStrategiesStrategy["ProcessRate"].asString());
 		if(!valueStrategiesStrategy["PassRate"].isNull())
 			strategiesObject.passRate = std::stoi(valueStrategiesStrategy["PassRate"].asString());
 		if(!valueStrategiesStrategy["AuthVersionList"].isNull())
 			strategiesObject.authVersionList = valueStrategiesStrategy["AuthVersionList"].asString();
+		if(!valueStrategiesStrategy["CycleStartTime"].isNull())
+			strategiesObject.cycleStartTime = std::stoi(valueStrategiesStrategy["CycleStartTime"].asString());
+		if(!valueStrategiesStrategy["CustomType"].isNull())
+			strategiesObject.customType = valueStrategiesStrategy["CustomType"].asString();
+		if(!valueStrategiesStrategy["EcsCount"].isNull())
+			strategiesObject.ecsCount = std::stoi(valueStrategiesStrategy["EcsCount"].asString());
+		if(!valueStrategiesStrategy["ProcessRate"].isNull())
+			strategiesObject.processRate = std::stoi(valueStrategiesStrategy["ProcessRate"].asString());
+		if(!valueStrategiesStrategy["CycleDays"].isNull())
+			strategiesObject.cycleDays = std::stoi(valueStrategiesStrategy["CycleDays"].asString());
+		if(!valueStrategiesStrategy["RiskCount"].isNull())
+			strategiesObject.riskCount = std::stoi(valueStrategiesStrategy["RiskCount"].asString());
+		if(!valueStrategiesStrategy["Name"].isNull())
+			strategiesObject.name = valueStrategiesStrategy["Name"].asString();
+		if(!valueStrategiesStrategy["Id"].isNull())
+			strategiesObject.id = std::stoi(valueStrategiesStrategy["Id"].asString());
 		auto allConfigTargetsNode = valueStrategiesStrategy["ConfigTargets"]["ConfigTarget"];
 		for (auto valueStrategiesStrategyConfigTargetsConfigTarget : allConfigTargetsNode)
 		{
 			Strategy::ConfigTarget configTargetsObject;
 			if(!valueStrategiesStrategyConfigTargetsConfigTarget["Flag"].isNull())
 				configTargetsObject.flag = valueStrategiesStrategyConfigTargetsConfigTarget["Flag"].asString();
-			if(!valueStrategiesStrategyConfigTargetsConfigTarget["TargetType"].isNull())
-				configTargetsObject.targetType = valueStrategiesStrategyConfigTargetsConfigTarget["TargetType"].asString();
 			if(!valueStrategiesStrategyConfigTargetsConfigTarget["Target"].isNull())
 				configTargetsObject.target = valueStrategiesStrategyConfigTargetsConfigTarget["Target"].asString();
+			if(!valueStrategiesStrategyConfigTargetsConfigTarget["TargetType"].isNull())
+				configTargetsObject.targetType = valueStrategiesStrategyConfigTargetsConfigTarget["TargetType"].asString();
 			strategiesObject.configTargets.push_back(configTargetsObject);
 		}
 		strategies_.push_back(strategiesObject);

@@ -82,6 +82,17 @@ void DescribePropertyProcDetailRequest::setPageSize(int pageSize)
 	setParameter("PageSize", std::to_string(pageSize));
 }
 
+long DescribePropertyProcDetailRequest::getProcTimeStart()const
+{
+	return procTimeStart_;
+}
+
+void DescribePropertyProcDetailRequest::setProcTimeStart(long procTimeStart)
+{
+	procTimeStart_ = procTimeStart;
+	setParameter("ProcTimeStart", std::to_string(procTimeStart));
+}
+
 int DescribePropertyProcDetailRequest::getCurrentPage()const
 {
 	return currentPage_;
@@ -91,6 +102,28 @@ void DescribePropertyProcDetailRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
 	setParameter("CurrentPage", std::to_string(currentPage));
+}
+
+long DescribePropertyProcDetailRequest::getProcTimeEnd()const
+{
+	return procTimeEnd_;
+}
+
+void DescribePropertyProcDetailRequest::setProcTimeEnd(long procTimeEnd)
+{
+	procTimeEnd_ = procTimeEnd;
+	setParameter("ProcTimeEnd", std::to_string(procTimeEnd));
+}
+
+std::string DescribePropertyProcDetailRequest::getExtend()const
+{
+	return extend_;
+}
+
+void DescribePropertyProcDetailRequest::setExtend(const std::string& extend)
+{
+	extend_ = extend;
+	setParameter("Extend", extend);
 }
 
 std::string DescribePropertyProcDetailRequest::getName()const

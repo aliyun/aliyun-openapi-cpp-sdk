@@ -31,21 +31,21 @@ SasClient::SasClient(const Credentials &credentials, const ClientConfiguration &
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "sas");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 SasClient::SasClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "sas");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 SasClient::SasClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "sas");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 SasClient::~SasClient()
@@ -81,42 +81,6 @@ SasClient::AddVpcHoneyPotOutcomeCallable SasClient::addVpcHoneyPotCallable(const
 			[this, request]()
 			{
 			return this->addVpcHoneyPot(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SasClient::CheckQuaraFileIdOutcome SasClient::checkQuaraFileId(const CheckQuaraFileIdRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CheckQuaraFileIdOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CheckQuaraFileIdOutcome(CheckQuaraFileIdResult(outcome.result()));
-	else
-		return CheckQuaraFileIdOutcome(outcome.error());
-}
-
-void SasClient::checkQuaraFileIdAsync(const CheckQuaraFileIdRequest& request, const CheckQuaraFileIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, checkQuaraFileId(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SasClient::CheckQuaraFileIdOutcomeCallable SasClient::checkQuaraFileIdCallable(const CheckQuaraFileIdRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CheckQuaraFileIdOutcome()>>(
-			[this, request]()
-			{
-			return this->checkQuaraFileId(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -195,42 +159,6 @@ SasClient::CreateAntiBruteForceRuleOutcomeCallable SasClient::createAntiBruteFor
 	return task->get_future();
 }
 
-SasClient::CreateAssetOutcome SasClient::createAsset(const CreateAssetRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateAssetOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateAssetOutcome(CreateAssetResult(outcome.result()));
-	else
-		return CreateAssetOutcome(outcome.error());
-}
-
-void SasClient::createAssetAsync(const CreateAssetRequest& request, const CreateAssetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createAsset(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SasClient::CreateAssetOutcomeCallable SasClient::createAssetCallable(const CreateAssetRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateAssetOutcome()>>(
-			[this, request]()
-			{
-			return this->createAsset(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 SasClient::CreateBackupPolicyOutcome SasClient::createBackupPolicy(const CreateBackupPolicyRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -297,78 +225,6 @@ SasClient::CreateOrUpdateAssetGroupOutcomeCallable SasClient::createOrUpdateAsse
 			[this, request]()
 			{
 			return this->createOrUpdateAssetGroup(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SasClient::CreateRestoreJobOutcome SasClient::createRestoreJob(const CreateRestoreJobRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateRestoreJobOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateRestoreJobOutcome(CreateRestoreJobResult(outcome.result()));
-	else
-		return CreateRestoreJobOutcome(outcome.error());
-}
-
-void SasClient::createRestoreJobAsync(const CreateRestoreJobRequest& request, const CreateRestoreJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createRestoreJob(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SasClient::CreateRestoreJobOutcomeCallable SasClient::createRestoreJobCallable(const CreateRestoreJobRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateRestoreJobOutcome()>>(
-			[this, request]()
-			{
-			return this->createRestoreJob(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SasClient::CreateSasOrderOutcome SasClient::createSasOrder(const CreateSasOrderRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateSasOrderOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateSasOrderOutcome(CreateSasOrderResult(outcome.result()));
-	else
-		return CreateSasOrderOutcome(outcome.error());
-}
-
-void SasClient::createSasOrderAsync(const CreateSasOrderRequest& request, const CreateSasOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createSasOrder(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SasClient::CreateSasOrderOutcomeCallable SasClient::createSasOrderCallable(const CreateSasOrderRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateSasOrderOutcome()>>(
-			[this, request]()
-			{
-			return this->createSasOrder(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -447,36 +303,36 @@ SasClient::CreateSimilarSecurityEventsQueryTaskOutcomeCallable SasClient::create
 	return task->get_future();
 }
 
-SasClient::DeleteAssetOutcome SasClient::deleteAsset(const DeleteAssetRequest &request) const
+SasClient::CreateVulAutoRepairConfigOutcome SasClient::createVulAutoRepairConfig(const CreateVulAutoRepairConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DeleteAssetOutcome(endpointOutcome.error());
+		return CreateVulAutoRepairConfigOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DeleteAssetOutcome(DeleteAssetResult(outcome.result()));
+		return CreateVulAutoRepairConfigOutcome(CreateVulAutoRepairConfigResult(outcome.result()));
 	else
-		return DeleteAssetOutcome(outcome.error());
+		return CreateVulAutoRepairConfigOutcome(outcome.error());
 }
 
-void SasClient::deleteAssetAsync(const DeleteAssetRequest& request, const DeleteAssetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void SasClient::createVulAutoRepairConfigAsync(const CreateVulAutoRepairConfigRequest& request, const CreateVulAutoRepairConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, deleteAsset(request), context);
+		handler(this, request, createVulAutoRepairConfig(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-SasClient::DeleteAssetOutcomeCallable SasClient::deleteAssetCallable(const DeleteAssetRequest &request) const
+SasClient::CreateVulAutoRepairConfigOutcomeCallable SasClient::createVulAutoRepairConfigCallable(const CreateVulAutoRepairConfigRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DeleteAssetOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<CreateVulAutoRepairConfigOutcome()>>(
 			[this, request]()
 			{
-			return this->deleteAsset(request);
+			return this->createVulAutoRepairConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -735,6 +591,42 @@ SasClient::DeleteVpcHoneyPotOutcomeCallable SasClient::deleteVpcHoneyPotCallable
 	return task->get_future();
 }
 
+SasClient::DeleteVulAutoRepairConfigOutcome SasClient::deleteVulAutoRepairConfig(const DeleteVulAutoRepairConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteVulAutoRepairConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteVulAutoRepairConfigOutcome(DeleteVulAutoRepairConfigResult(outcome.result()));
+	else
+		return DeleteVulAutoRepairConfigOutcome(outcome.error());
+}
+
+void SasClient::deleteVulAutoRepairConfigAsync(const DeleteVulAutoRepairConfigRequest& request, const DeleteVulAutoRepairConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteVulAutoRepairConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::DeleteVulAutoRepairConfigOutcomeCallable SasClient::deleteVulAutoRepairConfigCallable(const DeleteVulAutoRepairConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteVulAutoRepairConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteVulAutoRepairConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SasClient::DescribeAccesskeyLeakListOutcome SasClient::describeAccesskeyLeakList(const DescribeAccesskeyLeakListRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -879,42 +771,6 @@ SasClient::DescribeAlarmEventListOutcomeCallable SasClient::describeAlarmEventLi
 	return task->get_future();
 }
 
-SasClient::DescribeAlarmEventStackInfoOutcome SasClient::describeAlarmEventStackInfo(const DescribeAlarmEventStackInfoRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeAlarmEventStackInfoOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeAlarmEventStackInfoOutcome(DescribeAlarmEventStackInfoResult(outcome.result()));
-	else
-		return DescribeAlarmEventStackInfoOutcome(outcome.error());
-}
-
-void SasClient::describeAlarmEventStackInfoAsync(const DescribeAlarmEventStackInfoRequest& request, const DescribeAlarmEventStackInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeAlarmEventStackInfo(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SasClient::DescribeAlarmEventStackInfoOutcomeCallable SasClient::describeAlarmEventStackInfoCallable(const DescribeAlarmEventStackInfoRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeAlarmEventStackInfoOutcome()>>(
-			[this, request]()
-			{
-			return this->describeAlarmEventStackInfo(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 SasClient::DescribeAllEntityOutcome SasClient::describeAllEntity(const DescribeAllEntityRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -981,42 +837,6 @@ SasClient::DescribeAllGroupsOutcomeCallable SasClient::describeAllGroupsCallable
 			[this, request]()
 			{
 			return this->describeAllGroups(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SasClient::DescribeAllRegionsStatisticsOutcome SasClient::describeAllRegionsStatistics(const DescribeAllRegionsStatisticsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeAllRegionsStatisticsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeAllRegionsStatisticsOutcome(DescribeAllRegionsStatisticsResult(outcome.result()));
-	else
-		return DescribeAllRegionsStatisticsOutcome(outcome.error());
-}
-
-void SasClient::describeAllRegionsStatisticsAsync(const DescribeAllRegionsStatisticsRequest& request, const DescribeAllRegionsStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeAllRegionsStatistics(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SasClient::DescribeAllRegionsStatisticsOutcomeCallable SasClient::describeAllRegionsStatisticsCallable(const DescribeAllRegionsStatisticsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeAllRegionsStatisticsOutcome()>>(
-			[this, request]()
-			{
-			return this->describeAllRegionsStatistics(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1131,6 +951,78 @@ SasClient::DescribeAssetDetailByUuidsOutcomeCallable SasClient::describeAssetDet
 	return task->get_future();
 }
 
+SasClient::DescribeAssetSummaryOutcome SasClient::describeAssetSummary(const DescribeAssetSummaryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeAssetSummaryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeAssetSummaryOutcome(DescribeAssetSummaryResult(outcome.result()));
+	else
+		return DescribeAssetSummaryOutcome(outcome.error());
+}
+
+void SasClient::describeAssetSummaryAsync(const DescribeAssetSummaryRequest& request, const DescribeAssetSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeAssetSummary(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::DescribeAssetSummaryOutcomeCallable SasClient::describeAssetSummaryCallable(const DescribeAssetSummaryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeAssetSummaryOutcome()>>(
+			[this, request]()
+			{
+			return this->describeAssetSummary(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SasClient::DescribeAttackAnalysisDataOutcome SasClient::describeAttackAnalysisData(const DescribeAttackAnalysisDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeAttackAnalysisDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeAttackAnalysisDataOutcome(DescribeAttackAnalysisDataResult(outcome.result()));
+	else
+		return DescribeAttackAnalysisDataOutcome(outcome.error());
+}
+
+void SasClient::describeAttackAnalysisDataAsync(const DescribeAttackAnalysisDataRequest& request, const DescribeAttackAnalysisDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeAttackAnalysisData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::DescribeAttackAnalysisDataOutcomeCallable SasClient::describeAttackAnalysisDataCallable(const DescribeAttackAnalysisDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeAttackAnalysisDataOutcome()>>(
+			[this, request]()
+			{
+			return this->describeAttackAnalysisData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SasClient::DescribeAutoDelConfigOutcome SasClient::describeAutoDelConfig(const DescribeAutoDelConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1203,42 +1095,6 @@ SasClient::DescribeBackupClientsOutcomeCallable SasClient::describeBackupClients
 	return task->get_future();
 }
 
-SasClient::DescribeBackupDirsOutcome SasClient::describeBackupDirs(const DescribeBackupDirsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeBackupDirsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeBackupDirsOutcome(DescribeBackupDirsResult(outcome.result()));
-	else
-		return DescribeBackupDirsOutcome(outcome.error());
-}
-
-void SasClient::describeBackupDirsAsync(const DescribeBackupDirsRequest& request, const DescribeBackupDirsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeBackupDirs(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SasClient::DescribeBackupDirsOutcomeCallable SasClient::describeBackupDirsCallable(const DescribeBackupDirsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeBackupDirsOutcome()>>(
-			[this, request]()
-			{
-			return this->describeBackupDirs(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 SasClient::DescribeBackupFilesOutcome SasClient::describeBackupFiles(const DescribeBackupFilesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1275,42 +1131,6 @@ SasClient::DescribeBackupFilesOutcomeCallable SasClient::describeBackupFilesCall
 	return task->get_future();
 }
 
-SasClient::DescribeBackupMachineStatusOutcome SasClient::describeBackupMachineStatus(const DescribeBackupMachineStatusRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeBackupMachineStatusOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeBackupMachineStatusOutcome(DescribeBackupMachineStatusResult(outcome.result()));
-	else
-		return DescribeBackupMachineStatusOutcome(outcome.error());
-}
-
-void SasClient::describeBackupMachineStatusAsync(const DescribeBackupMachineStatusRequest& request, const DescribeBackupMachineStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeBackupMachineStatus(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SasClient::DescribeBackupMachineStatusOutcomeCallable SasClient::describeBackupMachineStatusCallable(const DescribeBackupMachineStatusRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeBackupMachineStatusOutcome()>>(
-			[this, request]()
-			{
-			return this->describeBackupMachineStatus(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 SasClient::DescribeBackupPoliciesOutcome SasClient::describeBackupPolicies(const DescribeBackupPoliciesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1341,42 +1161,6 @@ SasClient::DescribeBackupPoliciesOutcomeCallable SasClient::describeBackupPolici
 			[this, request]()
 			{
 			return this->describeBackupPolicies(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SasClient::DescribeBackupPolicyOutcome SasClient::describeBackupPolicy(const DescribeBackupPolicyRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeBackupPolicyOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeBackupPolicyOutcome(DescribeBackupPolicyResult(outcome.result()));
-	else
-		return DescribeBackupPolicyOutcome(outcome.error());
-}
-
-void SasClient::describeBackupPolicyAsync(const DescribeBackupPolicyRequest& request, const DescribeBackupPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeBackupPolicy(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SasClient::DescribeBackupPolicyOutcomeCallable SasClient::describeBackupPolicyCallable(const DescribeBackupPolicyRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeBackupPolicyOutcome()>>(
-			[this, request]()
-			{
-			return this->describeBackupPolicy(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1779,42 +1563,6 @@ SasClient::DescribeCriteriaOutcomeCallable SasClient::describeCriteriaCallable(c
 	return task->get_future();
 }
 
-SasClient::DescribeDialogMessagesOutcome SasClient::describeDialogMessages(const DescribeDialogMessagesRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeDialogMessagesOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeDialogMessagesOutcome(DescribeDialogMessagesResult(outcome.result()));
-	else
-		return DescribeDialogMessagesOutcome(outcome.error());
-}
-
-void SasClient::describeDialogMessagesAsync(const DescribeDialogMessagesRequest& request, const DescribeDialogMessagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeDialogMessages(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SasClient::DescribeDialogMessagesOutcomeCallable SasClient::describeDialogMessagesCallable(const DescribeDialogMessagesRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeDialogMessagesOutcome()>>(
-			[this, request]()
-			{
-			return this->describeDialogMessages(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 SasClient::DescribeDingTalkOutcome SasClient::describeDingTalk(const DescribeDingTalkRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1989,42 +1737,6 @@ SasClient::DescribeEmgVulItemOutcomeCallable SasClient::describeEmgVulItemCallab
 			[this, request]()
 			{
 			return this->describeEmgVulItem(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SasClient::DescribeExcludeSystemPathOutcome SasClient::describeExcludeSystemPath(const DescribeExcludeSystemPathRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeExcludeSystemPathOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeExcludeSystemPathOutcome(DescribeExcludeSystemPathResult(outcome.result()));
-	else
-		return DescribeExcludeSystemPathOutcome(outcome.error());
-}
-
-void SasClient::describeExcludeSystemPathAsync(const DescribeExcludeSystemPathRequest& request, const DescribeExcludeSystemPathAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeExcludeSystemPath(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SasClient::DescribeExcludeSystemPathOutcomeCallable SasClient::describeExcludeSystemPathCallable(const DescribeExcludeSystemPathRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeExcludeSystemPathOutcome()>>(
-			[this, request]()
-			{
-			return this->describeExcludeSystemPath(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2283,78 +1995,6 @@ SasClient::DescribeFieldStatisticsOutcomeCallable SasClient::describeFieldStatis
 	return task->get_future();
 }
 
-SasClient::DescribeFrontVulPatchListOutcome SasClient::describeFrontVulPatchList(const DescribeFrontVulPatchListRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeFrontVulPatchListOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeFrontVulPatchListOutcome(DescribeFrontVulPatchListResult(outcome.result()));
-	else
-		return DescribeFrontVulPatchListOutcome(outcome.error());
-}
-
-void SasClient::describeFrontVulPatchListAsync(const DescribeFrontVulPatchListRequest& request, const DescribeFrontVulPatchListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeFrontVulPatchList(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SasClient::DescribeFrontVulPatchListOutcomeCallable SasClient::describeFrontVulPatchListCallable(const DescribeFrontVulPatchListRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeFrontVulPatchListOutcome()>>(
-			[this, request]()
-			{
-			return this->describeFrontVulPatchList(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SasClient::DescribeGraph4InvestigationOnlineOutcome SasClient::describeGraph4InvestigationOnline(const DescribeGraph4InvestigationOnlineRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeGraph4InvestigationOnlineOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeGraph4InvestigationOnlineOutcome(DescribeGraph4InvestigationOnlineResult(outcome.result()));
-	else
-		return DescribeGraph4InvestigationOnlineOutcome(outcome.error());
-}
-
-void SasClient::describeGraph4InvestigationOnlineAsync(const DescribeGraph4InvestigationOnlineRequest& request, const DescribeGraph4InvestigationOnlineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeGraph4InvestigationOnline(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SasClient::DescribeGraph4InvestigationOnlineOutcomeCallable SasClient::describeGraph4InvestigationOnlineCallable(const DescribeGraph4InvestigationOnlineRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeGraph4InvestigationOnlineOutcome()>>(
-			[this, request]()
-			{
-			return this->describeGraph4InvestigationOnline(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 SasClient::DescribeGroupedContainerInstancesOutcome SasClient::describeGroupedContainerInstances(const DescribeGroupedContainerInstancesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2607,6 +2247,78 @@ SasClient::DescribeHoneyPotSuspStatisticsOutcomeCallable SasClient::describeHone
 	return task->get_future();
 }
 
+SasClient::DescribeImageBaselineCheckSummaryOutcome SasClient::describeImageBaselineCheckSummary(const DescribeImageBaselineCheckSummaryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeImageBaselineCheckSummaryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeImageBaselineCheckSummaryOutcome(DescribeImageBaselineCheckSummaryResult(outcome.result()));
+	else
+		return DescribeImageBaselineCheckSummaryOutcome(outcome.error());
+}
+
+void SasClient::describeImageBaselineCheckSummaryAsync(const DescribeImageBaselineCheckSummaryRequest& request, const DescribeImageBaselineCheckSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeImageBaselineCheckSummary(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::DescribeImageBaselineCheckSummaryOutcomeCallable SasClient::describeImageBaselineCheckSummaryCallable(const DescribeImageBaselineCheckSummaryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeImageBaselineCheckSummaryOutcome()>>(
+			[this, request]()
+			{
+			return this->describeImageBaselineCheckSummary(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SasClient::DescribeImageFixTaskOutcome SasClient::describeImageFixTask(const DescribeImageFixTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeImageFixTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeImageFixTaskOutcome(DescribeImageFixTaskResult(outcome.result()));
+	else
+		return DescribeImageFixTaskOutcome(outcome.error());
+}
+
+void SasClient::describeImageFixTaskAsync(const DescribeImageFixTaskRequest& request, const DescribeImageFixTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeImageFixTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::DescribeImageFixTaskOutcomeCallable SasClient::describeImageFixTaskCallable(const DescribeImageFixTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeImageFixTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->describeImageFixTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SasClient::DescribeImageGroupedVulListOutcome SasClient::describeImageGroupedVulList(const DescribeImageGroupedVulListRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2637,6 +2349,42 @@ SasClient::DescribeImageGroupedVulListOutcomeCallable SasClient::describeImageGr
 			[this, request]()
 			{
 			return this->describeImageGroupedVulList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SasClient::DescribeImageListWithBaselineNameOutcome SasClient::describeImageListWithBaselineName(const DescribeImageListWithBaselineNameRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeImageListWithBaselineNameOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeImageListWithBaselineNameOutcome(DescribeImageListWithBaselineNameResult(outcome.result()));
+	else
+		return DescribeImageListWithBaselineNameOutcome(outcome.error());
+}
+
+void SasClient::describeImageListWithBaselineNameAsync(const DescribeImageListWithBaselineNameRequest& request, const DescribeImageListWithBaselineNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeImageListWithBaselineName(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::DescribeImageListWithBaselineNameOutcomeCallable SasClient::describeImageListWithBaselineNameCallable(const DescribeImageListWithBaselineNameRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeImageListWithBaselineNameOutcome()>>(
+			[this, request]()
+			{
+			return this->describeImageListWithBaselineName(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2787,6 +2535,42 @@ SasClient::DescribeInstallCaptchaOutcomeCallable SasClient::describeInstallCaptc
 	return task->get_future();
 }
 
+SasClient::DescribeInstallCodesOutcome SasClient::describeInstallCodes(const DescribeInstallCodesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeInstallCodesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeInstallCodesOutcome(DescribeInstallCodesResult(outcome.result()));
+	else
+		return DescribeInstallCodesOutcome(outcome.error());
+}
+
+void SasClient::describeInstallCodesAsync(const DescribeInstallCodesRequest& request, const DescribeInstallCodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeInstallCodes(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::DescribeInstallCodesOutcomeCallable SasClient::describeInstallCodesCallable(const DescribeInstallCodesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeInstallCodesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeInstallCodes(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SasClient::DescribeInstanceAntiBruteForceRulesOutcome SasClient::describeInstanceAntiBruteForceRules(const DescribeInstanceAntiBruteForceRulesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2859,36 +2643,36 @@ SasClient::DescribeInstanceStatisticsOutcomeCallable SasClient::describeInstance
 	return task->get_future();
 }
 
-SasClient::DescribeIpInfoOutcome SasClient::describeIpInfo(const DescribeIpInfoRequest &request) const
+SasClient::DescribeLoginBaseConfigsOutcome SasClient::describeLoginBaseConfigs(const DescribeLoginBaseConfigsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeIpInfoOutcome(endpointOutcome.error());
+		return DescribeLoginBaseConfigsOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeIpInfoOutcome(DescribeIpInfoResult(outcome.result()));
+		return DescribeLoginBaseConfigsOutcome(DescribeLoginBaseConfigsResult(outcome.result()));
 	else
-		return DescribeIpInfoOutcome(outcome.error());
+		return DescribeLoginBaseConfigsOutcome(outcome.error());
 }
 
-void SasClient::describeIpInfoAsync(const DescribeIpInfoRequest& request, const DescribeIpInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void SasClient::describeLoginBaseConfigsAsync(const DescribeLoginBaseConfigsRequest& request, const DescribeLoginBaseConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeIpInfo(request), context);
+		handler(this, request, describeLoginBaseConfigs(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-SasClient::DescribeIpInfoOutcomeCallable SasClient::describeIpInfoCallable(const DescribeIpInfoRequest &request) const
+SasClient::DescribeLoginBaseConfigsOutcomeCallable SasClient::describeLoginBaseConfigsCallable(const DescribeLoginBaseConfigsRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeIpInfoOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DescribeLoginBaseConfigsOutcome()>>(
 			[this, request]()
 			{
-			return this->describeIpInfo(request);
+			return this->describeLoginBaseConfigs(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3435,42 +3219,6 @@ SasClient::DescribePropertyUserItemOutcomeCallable SasClient::describePropertyUs
 	return task->get_future();
 }
 
-SasClient::DescribeQuaraFileDownloadInfoOutcome SasClient::describeQuaraFileDownloadInfo(const DescribeQuaraFileDownloadInfoRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeQuaraFileDownloadInfoOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeQuaraFileDownloadInfoOutcome(DescribeQuaraFileDownloadInfoResult(outcome.result()));
-	else
-		return DescribeQuaraFileDownloadInfoOutcome(outcome.error());
-}
-
-void SasClient::describeQuaraFileDownloadInfoAsync(const DescribeQuaraFileDownloadInfoRequest& request, const DescribeQuaraFileDownloadInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeQuaraFileDownloadInfo(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SasClient::DescribeQuaraFileDownloadInfoOutcomeCallable SasClient::describeQuaraFileDownloadInfoCallable(const DescribeQuaraFileDownloadInfoRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeQuaraFileDownloadInfoOutcome()>>(
-			[this, request]()
-			{
-			return this->describeQuaraFileDownloadInfo(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 SasClient::DescribeRestoreJobsOutcome SasClient::describeRestoreJobs(const DescribeRestoreJobsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3681,42 +3429,6 @@ SasClient::DescribeRiskListCheckResultOutcomeCallable SasClient::describeRiskLis
 			[this, request]()
 			{
 			return this->describeRiskListCheckResult(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SasClient::DescribeSasAssetStatisticsColumnOutcome SasClient::describeSasAssetStatisticsColumn(const DescribeSasAssetStatisticsColumnRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeSasAssetStatisticsColumnOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeSasAssetStatisticsColumnOutcome(DescribeSasAssetStatisticsColumnResult(outcome.result()));
-	else
-		return DescribeSasAssetStatisticsColumnOutcome(outcome.error());
-}
-
-void SasClient::describeSasAssetStatisticsColumnAsync(const DescribeSasAssetStatisticsColumnRequest& request, const DescribeSasAssetStatisticsColumnAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeSasAssetStatisticsColumn(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SasClient::DescribeSasAssetStatisticsColumnOutcomeCallable SasClient::describeSasAssetStatisticsColumnCallable(const DescribeSasAssetStatisticsColumnRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeSasAssetStatisticsColumnOutcome()>>(
-			[this, request]()
-			{
-			return this->describeSasAssetStatisticsColumn(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4083,42 +3795,6 @@ SasClient::DescribeSimilarSecurityEventsOutcomeCallable SasClient::describeSimil
 	return task->get_future();
 }
 
-SasClient::DescribeSnapshotsOutcome SasClient::describeSnapshots(const DescribeSnapshotsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeSnapshotsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeSnapshotsOutcome(DescribeSnapshotsResult(outcome.result()));
-	else
-		return DescribeSnapshotsOutcome(outcome.error());
-}
-
-void SasClient::describeSnapshotsAsync(const DescribeSnapshotsRequest& request, const DescribeSnapshotsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeSnapshots(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SasClient::DescribeSnapshotsOutcomeCallable SasClient::describeSnapshotsCallable(const DescribeSnapshotsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeSnapshotsOutcome()>>(
-			[this, request]()
-			{
-			return this->describeSnapshots(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 SasClient::DescribeStrategyOutcome SasClient::describeStrategy(const DescribeStrategyRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4185,42 +3861,6 @@ SasClient::DescribeStrategyExecDetailOutcomeCallable SasClient::describeStrategy
 			[this, request]()
 			{
 			return this->describeStrategyExecDetail(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SasClient::DescribeStrategyProcessOutcome SasClient::describeStrategyProcess(const DescribeStrategyProcessRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeStrategyProcessOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeStrategyProcessOutcome(DescribeStrategyProcessResult(outcome.result()));
-	else
-		return DescribeStrategyProcessOutcome(outcome.error());
-}
-
-void SasClient::describeStrategyProcessAsync(const DescribeStrategyProcessRequest& request, const DescribeStrategyProcessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeStrategyProcess(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SasClient::DescribeStrategyProcessOutcomeCallable SasClient::describeStrategyProcessCallable(const DescribeStrategyProcessRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeStrategyProcessOutcome()>>(
-			[this, request]()
-			{
-			return this->describeStrategyProcess(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4443,6 +4083,42 @@ SasClient::DescribeSuspEventsOutcomeCallable SasClient::describeSuspEventsCallab
 	return task->get_future();
 }
 
+SasClient::DescribeSuspiciousUUIDConfigOutcome SasClient::describeSuspiciousUUIDConfig(const DescribeSuspiciousUUIDConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeSuspiciousUUIDConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeSuspiciousUUIDConfigOutcome(DescribeSuspiciousUUIDConfigResult(outcome.result()));
+	else
+		return DescribeSuspiciousUUIDConfigOutcome(outcome.error());
+}
+
+void SasClient::describeSuspiciousUUIDConfigAsync(const DescribeSuspiciousUUIDConfigRequest& request, const DescribeSuspiciousUUIDConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeSuspiciousUUIDConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::DescribeSuspiciousUUIDConfigOutcomeCallable SasClient::describeSuspiciousUUIDConfigCallable(const DescribeSuspiciousUUIDConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeSuspiciousUUIDConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->describeSuspiciousUUIDConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SasClient::DescribeUserBackupMachinesOutcome SasClient::describeUserBackupMachines(const DescribeUserBackupMachinesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4551,42 +4227,6 @@ SasClient::DescribeUserLayoutAuthorizationOutcomeCallable SasClient::describeUse
 	return task->get_future();
 }
 
-SasClient::DescribeUuidsByVulNamesOutcome SasClient::describeUuidsByVulNames(const DescribeUuidsByVulNamesRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeUuidsByVulNamesOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeUuidsByVulNamesOutcome(DescribeUuidsByVulNamesResult(outcome.result()));
-	else
-		return DescribeUuidsByVulNamesOutcome(outcome.error());
-}
-
-void SasClient::describeUuidsByVulNamesAsync(const DescribeUuidsByVulNamesRequest& request, const DescribeUuidsByVulNamesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeUuidsByVulNames(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SasClient::DescribeUuidsByVulNamesOutcomeCallable SasClient::describeUuidsByVulNamesCallable(const DescribeUuidsByVulNamesRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeUuidsByVulNamesOutcome()>>(
-			[this, request]()
-			{
-			return this->describeUuidsByVulNames(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 SasClient::DescribeVersionConfigOutcome SasClient::describeVersionConfig(const DescribeVersionConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4617,42 +4257,6 @@ SasClient::DescribeVersionConfigOutcomeCallable SasClient::describeVersionConfig
 			[this, request]()
 			{
 			return this->describeVersionConfig(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SasClient::DescribeVolDingdingMessageOutcome SasClient::describeVolDingdingMessage(const DescribeVolDingdingMessageRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeVolDingdingMessageOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeVolDingdingMessageOutcome(DescribeVolDingdingMessageResult(outcome.result()));
-	else
-		return DescribeVolDingdingMessageOutcome(outcome.error());
-}
-
-void SasClient::describeVolDingdingMessageAsync(const DescribeVolDingdingMessageRequest& request, const DescribeVolDingdingMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeVolDingdingMessage(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SasClient::DescribeVolDingdingMessageOutcomeCallable SasClient::describeVolDingdingMessageCallable(const DescribeVolDingdingMessageRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeVolDingdingMessageOutcome()>>(
-			[this, request]()
-			{
-			return this->describeVolDingdingMessage(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4797,6 +4401,42 @@ SasClient::DescribeVulDetailsOutcomeCallable SasClient::describeVulDetailsCallab
 			[this, request]()
 			{
 			return this->describeVulDetails(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SasClient::DescribeVulExportInfoOutcome SasClient::describeVulExportInfo(const DescribeVulExportInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeVulExportInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeVulExportInfoOutcome(DescribeVulExportInfoResult(outcome.result()));
+	else
+		return DescribeVulExportInfoOutcome(outcome.error());
+}
+
+void SasClient::describeVulExportInfoAsync(const DescribeVulExportInfoRequest& request, const DescribeVulExportInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeVulExportInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::DescribeVulExportInfoOutcomeCallable SasClient::describeVulExportInfoCallable(const DescribeVulExportInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeVulExportInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->describeVulExportInfo(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4983,42 +4623,6 @@ SasClient::DescribeWebLockConfigListOutcomeCallable SasClient::describeWebLockCo
 	return task->get_future();
 }
 
-SasClient::ExecStrategyOutcome SasClient::execStrategy(const ExecStrategyRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ExecStrategyOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ExecStrategyOutcome(ExecStrategyResult(outcome.result()));
-	else
-		return ExecStrategyOutcome(outcome.error());
-}
-
-void SasClient::execStrategyAsync(const ExecStrategyRequest& request, const ExecStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, execStrategy(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SasClient::ExecStrategyOutcomeCallable SasClient::execStrategyCallable(const ExecStrategyRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ExecStrategyOutcome()>>(
-			[this, request]()
-			{
-			return this->execStrategy(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 SasClient::ExportRecordOutcome SasClient::exportRecord(const ExportRecordRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5049,6 +4653,78 @@ SasClient::ExportRecordOutcomeCallable SasClient::exportRecordCallable(const Exp
 			[this, request]()
 			{
 			return this->exportRecord(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SasClient::ExportVulOutcome SasClient::exportVul(const ExportVulRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ExportVulOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ExportVulOutcome(ExportVulResult(outcome.result()));
+	else
+		return ExportVulOutcome(outcome.error());
+}
+
+void SasClient::exportVulAsync(const ExportVulRequest& request, const ExportVulAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, exportVul(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::ExportVulOutcomeCallable SasClient::exportVulCallable(const ExportVulRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ExportVulOutcome()>>(
+			[this, request]()
+			{
+			return this->exportVul(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SasClient::ExportWarningOutcome SasClient::exportWarning(const ExportWarningRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ExportWarningOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ExportWarningOutcome(ExportWarningResult(outcome.result()));
+	else
+		return ExportWarningOutcome(outcome.error());
+}
+
+void SasClient::exportWarningAsync(const ExportWarningRequest& request, const ExportWarningAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, exportWarning(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::ExportWarningOutcomeCallable SasClient::exportWarningCallable(const ExportWarningRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ExportWarningOutcome()>>(
+			[this, request]()
+			{
+			return this->exportWarning(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5127,144 +4803,36 @@ SasClient::GetBackupStorageCountOutcomeCallable SasClient::getBackupStorageCount
 	return task->get_future();
 }
 
-SasClient::GetIOCsOutcome SasClient::getIOCs(const GetIOCsRequest &request) const
+SasClient::GetHoneypotNodeOutcome SasClient::getHoneypotNode(const GetHoneypotNodeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return GetIOCsOutcome(endpointOutcome.error());
+		return GetHoneypotNodeOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return GetIOCsOutcome(GetIOCsResult(outcome.result()));
+		return GetHoneypotNodeOutcome(GetHoneypotNodeResult(outcome.result()));
 	else
-		return GetIOCsOutcome(outcome.error());
+		return GetHoneypotNodeOutcome(outcome.error());
 }
 
-void SasClient::getIOCsAsync(const GetIOCsRequest& request, const GetIOCsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void SasClient::getHoneypotNodeAsync(const GetHoneypotNodeRequest& request, const GetHoneypotNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, getIOCs(request), context);
+		handler(this, request, getHoneypotNode(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-SasClient::GetIOCsOutcomeCallable SasClient::getIOCsCallable(const GetIOCsRequest &request) const
+SasClient::GetHoneypotNodeOutcomeCallable SasClient::getHoneypotNodeCallable(const GetHoneypotNodeRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<GetIOCsOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<GetHoneypotNodeOutcome()>>(
 			[this, request]()
 			{
-			return this->getIOCs(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SasClient::GetIncIOCsOutcome SasClient::getIncIOCs(const GetIncIOCsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetIncIOCsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetIncIOCsOutcome(GetIncIOCsResult(outcome.result()));
-	else
-		return GetIncIOCsOutcome(outcome.error());
-}
-
-void SasClient::getIncIOCsAsync(const GetIncIOCsRequest& request, const GetIncIOCsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getIncIOCs(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SasClient::GetIncIOCsOutcomeCallable SasClient::getIncIOCsCallable(const GetIncIOCsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetIncIOCsOutcome()>>(
-			[this, request]()
-			{
-			return this->getIncIOCs(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SasClient::GetLocalInstallScriptOutcome SasClient::getLocalInstallScript(const GetLocalInstallScriptRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetLocalInstallScriptOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetLocalInstallScriptOutcome(GetLocalInstallScriptResult(outcome.result()));
-	else
-		return GetLocalInstallScriptOutcome(outcome.error());
-}
-
-void SasClient::getLocalInstallScriptAsync(const GetLocalInstallScriptRequest& request, const GetLocalInstallScriptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getLocalInstallScript(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SasClient::GetLocalInstallScriptOutcomeCallable SasClient::getLocalInstallScriptCallable(const GetLocalInstallScriptRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetLocalInstallScriptOutcome()>>(
-			[this, request]()
-			{
-			return this->getLocalInstallScript(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SasClient::GetLocalUninstallScriptOutcome SasClient::getLocalUninstallScript(const GetLocalUninstallScriptRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetLocalUninstallScriptOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetLocalUninstallScriptOutcome(GetLocalUninstallScriptResult(outcome.result()));
-	else
-		return GetLocalUninstallScriptOutcome(outcome.error());
-}
-
-void SasClient::getLocalUninstallScriptAsync(const GetLocalUninstallScriptRequest& request, const GetLocalUninstallScriptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getLocalUninstallScript(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SasClient::GetLocalUninstallScriptOutcomeCallable SasClient::getLocalUninstallScriptCallable(const GetLocalUninstallScriptRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetLocalUninstallScriptOutcome()>>(
-			[this, request]()
-			{
-			return this->getLocalUninstallScript(request);
+			return this->getHoneypotNode(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5481,6 +5049,78 @@ SasClient::InstallBackupClientOutcomeCallable SasClient::installBackupClientCall
 			[this, request]()
 			{
 			return this->installBackupClient(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SasClient::InstallCloudMonitorOutcome SasClient::installCloudMonitor(const InstallCloudMonitorRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return InstallCloudMonitorOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return InstallCloudMonitorOutcome(InstallCloudMonitorResult(outcome.result()));
+	else
+		return InstallCloudMonitorOutcome(outcome.error());
+}
+
+void SasClient::installCloudMonitorAsync(const InstallCloudMonitorRequest& request, const InstallCloudMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, installCloudMonitor(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::InstallCloudMonitorOutcomeCallable SasClient::installCloudMonitorCallable(const InstallCloudMonitorRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<InstallCloudMonitorOutcome()>>(
+			[this, request]()
+			{
+			return this->installCloudMonitor(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SasClient::ListVulAutoRepairConfigOutcome SasClient::listVulAutoRepairConfig(const ListVulAutoRepairConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListVulAutoRepairConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListVulAutoRepairConfigOutcome(ListVulAutoRepairConfigResult(outcome.result()));
+	else
+		return ListVulAutoRepairConfigOutcome(outcome.error());
+}
+
+void SasClient::listVulAutoRepairConfigAsync(const ListVulAutoRepairConfigRequest& request, const ListVulAutoRepairConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listVulAutoRepairConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::ListVulAutoRepairConfigOutcomeCallable SasClient::listVulAutoRepairConfigCallable(const ListVulAutoRepairConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListVulAutoRepairConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->listVulAutoRepairConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5847,42 +5487,6 @@ SasClient::ModifyLoginSwitchConfigOutcomeCallable SasClient::modifyLoginSwitchCo
 	return task->get_future();
 }
 
-SasClient::ModifyNoticeConfigOutcome SasClient::modifyNoticeConfig(const ModifyNoticeConfigRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyNoticeConfigOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyNoticeConfigOutcome(ModifyNoticeConfigResult(outcome.result()));
-	else
-		return ModifyNoticeConfigOutcome(outcome.error());
-}
-
-void SasClient::modifyNoticeConfigAsync(const ModifyNoticeConfigRequest& request, const ModifyNoticeConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyNoticeConfig(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SasClient::ModifyNoticeConfigOutcomeCallable SasClient::modifyNoticeConfigCallable(const ModifyNoticeConfigRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyNoticeConfigOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyNoticeConfig(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 SasClient::ModifyOpenLogShipperOutcome SasClient::modifyOpenLogShipper(const ModifyOpenLogShipperRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5949,6 +5553,42 @@ SasClient::ModifyOperateVulOutcomeCallable SasClient::modifyOperateVulCallable(c
 			[this, request]()
 			{
 			return this->modifyOperateVul(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SasClient::ModifyPropertyScheduleConfigOutcome SasClient::modifyPropertyScheduleConfig(const ModifyPropertyScheduleConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyPropertyScheduleConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyPropertyScheduleConfigOutcome(ModifyPropertyScheduleConfigResult(outcome.result()));
+	else
+		return ModifyPropertyScheduleConfigOutcome(outcome.error());
+}
+
+void SasClient::modifyPropertyScheduleConfigAsync(const ModifyPropertyScheduleConfigRequest& request, const ModifyPropertyScheduleConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyPropertyScheduleConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::ModifyPropertyScheduleConfigOutcomeCallable SasClient::modifyPropertyScheduleConfigCallable(const ModifyPropertyScheduleConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyPropertyScheduleConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyPropertyScheduleConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -6129,78 +5769,6 @@ SasClient::ModifyStartVulScanOutcomeCallable SasClient::modifyStartVulScanCallab
 			[this, request]()
 			{
 			return this->modifyStartVulScan(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SasClient::ModifyStrategyOutcome SasClient::modifyStrategy(const ModifyStrategyRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyStrategyOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyStrategyOutcome(ModifyStrategyResult(outcome.result()));
-	else
-		return ModifyStrategyOutcome(outcome.error());
-}
-
-void SasClient::modifyStrategyAsync(const ModifyStrategyRequest& request, const ModifyStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyStrategy(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SasClient::ModifyStrategyOutcomeCallable SasClient::modifyStrategyCallable(const ModifyStrategyRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyStrategyOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyStrategy(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SasClient::ModifyStrategyTargetOutcome SasClient::modifyStrategyTarget(const ModifyStrategyTargetRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyStrategyTargetOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyStrategyTargetOutcome(ModifyStrategyTargetResult(outcome.result()));
-	else
-		return ModifyStrategyTargetOutcome(outcome.error());
-}
-
-void SasClient::modifyStrategyTargetAsync(const ModifyStrategyTargetRequest& request, const ModifyStrategyTargetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyStrategyTarget(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SasClient::ModifyStrategyTargetOutcomeCallable SasClient::modifyStrategyTargetCallable(const ModifyStrategyTargetRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyStrategyTargetOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyStrategyTarget(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -6459,42 +6027,6 @@ SasClient::ModifyWebLockStatusOutcomeCallable SasClient::modifyWebLockStatusCall
 	return task->get_future();
 }
 
-SasClient::ModifyWebLockUnbindOutcome SasClient::modifyWebLockUnbind(const ModifyWebLockUnbindRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyWebLockUnbindOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyWebLockUnbindOutcome(ModifyWebLockUnbindResult(outcome.result()));
-	else
-		return ModifyWebLockUnbindOutcome(outcome.error());
-}
-
-void SasClient::modifyWebLockUnbindAsync(const ModifyWebLockUnbindRequest& request, const ModifyWebLockUnbindAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyWebLockUnbind(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SasClient::ModifyWebLockUnbindOutcomeCallable SasClient::modifyWebLockUnbindCallable(const ModifyWebLockUnbindRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyWebLockUnbindOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyWebLockUnbind(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 SasClient::ModifyWebLockUpdateConfigOutcome SasClient::modifyWebLockUpdateConfig(const ModifyWebLockUpdateConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -6525,6 +6057,42 @@ SasClient::ModifyWebLockUpdateConfigOutcomeCallable SasClient::modifyWebLockUpda
 			[this, request]()
 			{
 			return this->modifyWebLockUpdateConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SasClient::OperateAgentClientInstallOutcome SasClient::operateAgentClientInstall(const OperateAgentClientInstallRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return OperateAgentClientInstallOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return OperateAgentClientInstallOutcome(OperateAgentClientInstallResult(outcome.result()));
+	else
+		return OperateAgentClientInstallOutcome(outcome.error());
+}
+
+void SasClient::operateAgentClientInstallAsync(const OperateAgentClientInstallRequest& request, const OperateAgentClientInstallAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, operateAgentClientInstall(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::OperateAgentClientInstallOutcomeCallable SasClient::operateAgentClientInstallCallable(const OperateAgentClientInstallRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<OperateAgentClientInstallOutcome()>>(
+			[this, request]()
+			{
+			return this->operateAgentClientInstall(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -6675,6 +6243,114 @@ SasClient::PauseClientOutcomeCallable SasClient::pauseClientCallable(const Pause
 	return task->get_future();
 }
 
+SasClient::QueryGroupIdByGroupNameOutcome SasClient::queryGroupIdByGroupName(const QueryGroupIdByGroupNameRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryGroupIdByGroupNameOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryGroupIdByGroupNameOutcome(QueryGroupIdByGroupNameResult(outcome.result()));
+	else
+		return QueryGroupIdByGroupNameOutcome(outcome.error());
+}
+
+void SasClient::queryGroupIdByGroupNameAsync(const QueryGroupIdByGroupNameRequest& request, const QueryGroupIdByGroupNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryGroupIdByGroupName(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::QueryGroupIdByGroupNameOutcomeCallable SasClient::queryGroupIdByGroupNameCallable(const QueryGroupIdByGroupNameRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryGroupIdByGroupNameOutcome()>>(
+			[this, request]()
+			{
+			return this->queryGroupIdByGroupName(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SasClient::QueryGroupedSecurityEventMarkMissListOutcome SasClient::queryGroupedSecurityEventMarkMissList(const QueryGroupedSecurityEventMarkMissListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryGroupedSecurityEventMarkMissListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryGroupedSecurityEventMarkMissListOutcome(QueryGroupedSecurityEventMarkMissListResult(outcome.result()));
+	else
+		return QueryGroupedSecurityEventMarkMissListOutcome(outcome.error());
+}
+
+void SasClient::queryGroupedSecurityEventMarkMissListAsync(const QueryGroupedSecurityEventMarkMissListRequest& request, const QueryGroupedSecurityEventMarkMissListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryGroupedSecurityEventMarkMissList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::QueryGroupedSecurityEventMarkMissListOutcomeCallable SasClient::queryGroupedSecurityEventMarkMissListCallable(const QueryGroupedSecurityEventMarkMissListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryGroupedSecurityEventMarkMissListOutcome()>>(
+			[this, request]()
+			{
+			return this->queryGroupedSecurityEventMarkMissList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SasClient::RefreshAssetsOutcome SasClient::refreshAssets(const RefreshAssetsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RefreshAssetsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RefreshAssetsOutcome(RefreshAssetsResult(outcome.result()));
+	else
+		return RefreshAssetsOutcome(outcome.error());
+}
+
+void SasClient::refreshAssetsAsync(const RefreshAssetsRequest& request, const RefreshAssetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, refreshAssets(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::RefreshAssetsOutcomeCallable SasClient::refreshAssetsCallable(const RefreshAssetsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RefreshAssetsOutcome()>>(
+			[this, request]()
+			{
+			return this->refreshAssets(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SasClient::RefreshContainerAssetsOutcome SasClient::refreshContainerAssets(const RefreshContainerAssetsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -6705,6 +6381,42 @@ SasClient::RefreshContainerAssetsOutcomeCallable SasClient::refreshContainerAsse
 			[this, request]()
 			{
 			return this->refreshContainerAssets(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SasClient::RetryInstallProbeOutcome SasClient::retryInstallProbe(const RetryInstallProbeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RetryInstallProbeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RetryInstallProbeOutcome(RetryInstallProbeResult(outcome.result()));
+	else
+		return RetryInstallProbeOutcome(outcome.error());
+}
+
+void SasClient::retryInstallProbeAsync(const RetryInstallProbeRequest& request, const RetryInstallProbeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, retryInstallProbe(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::RetryInstallProbeOutcomeCallable SasClient::retryInstallProbeCallable(const RetryInstallProbeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RetryInstallProbeOutcome()>>(
+			[this, request]()
+			{
+			return this->retryInstallProbe(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

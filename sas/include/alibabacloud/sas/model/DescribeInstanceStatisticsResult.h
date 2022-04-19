@@ -36,16 +36,16 @@ namespace AlibabaCloud
 				{
 					int account;
 					std::string uuid;
-					int health;
 					int suspicious;
+					int health;
 					int cveNum;
+					int scaNum;
 					int trojan;
 					int cmsNum;
-					int scaNum;
 					int emgNum;
 					int sysNum;
-					int vul;
 					int appNum;
+					int vul;
 				};
 
 

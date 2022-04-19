@@ -40,12 +40,12 @@ void DescribeImageScanAuthCountResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto imageScanNode = value["ImageScan"];
-	if(!imageScanNode["InstanceId"].isNull())
-		imageScan_.instanceId = imageScanNode["InstanceId"].asString();
-	if(!imageScanNode["ImageScanCapacity"].isNull())
-		imageScan_.imageScanCapacity = std::stol(imageScanNode["ImageScanCapacity"].asString());
 	if(!imageScanNode["ScanCount"].isNull())
 		imageScan_.scanCount = std::stol(imageScanNode["ScanCount"].asString());
+	if(!imageScanNode["ImageScanCapacity"].isNull())
+		imageScan_.imageScanCapacity = std::stol(imageScanNode["ImageScanCapacity"].asString());
+	if(!imageScanNode["InstanceId"].isNull())
+		imageScan_.instanceId = imageScanNode["InstanceId"].asString();
 
 }
 

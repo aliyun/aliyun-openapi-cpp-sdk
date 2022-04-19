@@ -43,29 +43,29 @@ void DescribeSimilarSecurityEventsResult::parse(const std::string &payload)
 	for (auto valueSecurityEventsResponseSimpleSecurityEvent : allSecurityEventsResponseNode)
 	{
 		SimpleSecurityEvent securityEventsResponseObject;
-		if(!valueSecurityEventsResponseSimpleSecurityEvent["SecurityEventId"].isNull())
-			securityEventsResponseObject.securityEventId = std::stol(valueSecurityEventsResponseSimpleSecurityEvent["SecurityEventId"].asString());
-		if(!valueSecurityEventsResponseSimpleSecurityEvent["Uuid"].isNull())
-			securityEventsResponseObject.uuid = valueSecurityEventsResponseSimpleSecurityEvent["Uuid"].asString();
-		if(!valueSecurityEventsResponseSimpleSecurityEvent["EventType"].isNull())
-			securityEventsResponseObject.eventType = valueSecurityEventsResponseSimpleSecurityEvent["EventType"].asString();
-		if(!valueSecurityEventsResponseSimpleSecurityEvent["EventName"].isNull())
-			securityEventsResponseObject.eventName = valueSecurityEventsResponseSimpleSecurityEvent["EventName"].asString();
-		if(!valueSecurityEventsResponseSimpleSecurityEvent["OccurrenceTime"].isNull())
-			securityEventsResponseObject.occurrenceTime = std::stol(valueSecurityEventsResponseSimpleSecurityEvent["OccurrenceTime"].asString());
 		if(!valueSecurityEventsResponseSimpleSecurityEvent["LastTime"].isNull())
 			securityEventsResponseObject.lastTime = std::stol(valueSecurityEventsResponseSimpleSecurityEvent["LastTime"].asString());
+		if(!valueSecurityEventsResponseSimpleSecurityEvent["Uuid"].isNull())
+			securityEventsResponseObject.uuid = valueSecurityEventsResponseSimpleSecurityEvent["Uuid"].asString();
+		if(!valueSecurityEventsResponseSimpleSecurityEvent["EventName"].isNull())
+			securityEventsResponseObject.eventName = valueSecurityEventsResponseSimpleSecurityEvent["EventName"].asString();
+		if(!valueSecurityEventsResponseSimpleSecurityEvent["EventType"].isNull())
+			securityEventsResponseObject.eventType = valueSecurityEventsResponseSimpleSecurityEvent["EventType"].asString();
+		if(!valueSecurityEventsResponseSimpleSecurityEvent["SecurityEventId"].isNull())
+			securityEventsResponseObject.securityEventId = std::stol(valueSecurityEventsResponseSimpleSecurityEvent["SecurityEventId"].asString());
+		if(!valueSecurityEventsResponseSimpleSecurityEvent["OccurrenceTime"].isNull())
+			securityEventsResponseObject.occurrenceTime = std::stol(valueSecurityEventsResponseSimpleSecurityEvent["OccurrenceTime"].asString());
 		securityEventsResponse_.push_back(securityEventsResponseObject);
 	}
 	auto pageInfoNode = value["PageInfo"];
-	if(!pageInfoNode["Count"].isNull())
-		pageInfo_.count = std::stoi(pageInfoNode["Count"].asString());
+	if(!pageInfoNode["CurrentPage"].isNull())
+		pageInfo_.currentPage = std::stoi(pageInfoNode["CurrentPage"].asString());
 	if(!pageInfoNode["PageSize"].isNull())
 		pageInfo_.pageSize = std::stoi(pageInfoNode["PageSize"].asString());
 	if(!pageInfoNode["TotalCount"].isNull())
 		pageInfo_.totalCount = std::stoi(pageInfoNode["TotalCount"].asString());
-	if(!pageInfoNode["CurrentPage"].isNull())
-		pageInfo_.currentPage = std::stoi(pageInfoNode["CurrentPage"].asString());
+	if(!pageInfoNode["Count"].isNull())
+		pageInfo_.count = std::stoi(pageInfoNode["Count"].asString());
 
 }
 

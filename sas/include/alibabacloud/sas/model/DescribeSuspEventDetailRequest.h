@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				DescribeSuspEventDetailRequest();
 				~DescribeSuspEventDetailRequest();
 
-				int getSuspiciousEventId()const;
-				void setSuspiciousEventId(int suspiciousEventId);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				std::string getFrom()const;
 				void setFrom(const std::string& from);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
+				int getSuspiciousEventId()const;
+				void setSuspiciousEventId(int suspiciousEventId);
 
             private:
-				int suspiciousEventId_;
 				std::string sourceIp_;
 				std::string from_;
 				std::string lang_;
+				int suspiciousEventId_;
 
 			};
 		}

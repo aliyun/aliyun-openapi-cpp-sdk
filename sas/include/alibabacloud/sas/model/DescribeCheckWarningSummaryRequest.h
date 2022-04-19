@@ -35,16 +35,24 @@ namespace AlibabaCloud
 				DescribeCheckWarningSummaryRequest();
 				~DescribeCheckWarningSummaryRequest();
 
+				std::string getTargetType()const;
+				void setTargetType(const std::string& targetType);
+				std::string getContainerFieldName()const;
+				void setContainerFieldName(const std::string& containerFieldName);
 				std::string getRiskName()const;
 				void setRiskName(const std::string& riskName);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
+				std::string getContainerFieldValue()const;
+				void setContainerFieldValue(const std::string& containerFieldValue);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 				int getCurrentPage()const;
 				void setCurrentPage(int currentPage);
+				std::string getClusterId()const;
+				void setClusterId(const std::string& clusterId);
 				int getRiskStatus()const;
 				void setRiskStatus(int riskStatus);
 				long getStrategyId()const;
@@ -57,11 +65,15 @@ namespace AlibabaCloud
 				void setUuids(const std::string& uuids);
 
             private:
+				std::string targetType_;
+				std::string containerFieldName_;
 				std::string riskName_;
 				std::string sourceIp_;
+				std::string containerFieldValue_;
 				int pageSize_;
 				std::string lang_;
 				int currentPage_;
+				std::string clusterId_;
 				int riskStatus_;
 				long strategyId_;
 				std::string typeName_;

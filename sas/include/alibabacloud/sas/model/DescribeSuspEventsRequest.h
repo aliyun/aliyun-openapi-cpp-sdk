@@ -47,10 +47,14 @@ namespace AlibabaCloud
 				void setSourceIp(const std::string& sourceIp);
 				std::string getContainerFieldValue()const;
 				void setContainerFieldValue(const std::string& containerFieldValue);
+				std::string getEventNames()const;
+				void setEventNames(const std::string& eventNames);
 				std::string getPageSize()const;
 				void setPageSize(const std::string& pageSize);
 				std::string getFrom()const;
 				void setFrom(const std::string& from);
+				std::string getTacticId()const;
+				void setTacticId(const std::string& tacticId);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 				std::string getAlarmUniqueInfo()const;
@@ -85,8 +89,10 @@ namespace AlibabaCloud
 				std::string containerFieldName_;
 				std::string sourceIp_;
 				std::string containerFieldValue_;
+				std::string eventNames_;
 				std::string pageSize_;
 				std::string from_;
+				std::string tacticId_;
 				std::string lang_;
 				std::string alarmUniqueInfo_;
 				std::string uniqueInfo_;

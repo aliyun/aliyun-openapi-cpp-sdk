@@ -43,30 +43,30 @@ void DescribeInstanceStatisticsResult::parse(const std::string &payload)
 	for (auto valueDataDataItem : allDataNode)
 	{
 		DataItem dataObject;
-		if(!valueDataDataItem["Uuid"].isNull())
-			dataObject.uuid = valueDataDataItem["Uuid"].asString();
 		if(!valueDataDataItem["Account"].isNull())
 			dataObject.account = std::stoi(valueDataDataItem["Account"].asString());
-		if(!valueDataDataItem["Health"].isNull())
-			dataObject.health = std::stoi(valueDataDataItem["Health"].asString());
-		if(!valueDataDataItem["Trojan"].isNull())
-			dataObject.trojan = std::stoi(valueDataDataItem["Trojan"].asString());
-		if(!valueDataDataItem["Suspicious"].isNull())
-			dataObject.suspicious = std::stoi(valueDataDataItem["Suspicious"].asString());
-		if(!valueDataDataItem["Vul"].isNull())
-			dataObject.vul = std::stoi(valueDataDataItem["Vul"].asString());
-		if(!valueDataDataItem["CveNum"].isNull())
-			dataObject.cveNum = std::stoi(valueDataDataItem["CveNum"].asString());
-		if(!valueDataDataItem["EmgNum"].isNull())
-			dataObject.emgNum = std::stoi(valueDataDataItem["EmgNum"].asString());
-		if(!valueDataDataItem["SysNum"].isNull())
-			dataObject.sysNum = std::stoi(valueDataDataItem["SysNum"].asString());
-		if(!valueDataDataItem["CmsNum"].isNull())
-			dataObject.cmsNum = std::stoi(valueDataDataItem["CmsNum"].asString());
 		if(!valueDataDataItem["AppNum"].isNull())
 			dataObject.appNum = std::stoi(valueDataDataItem["AppNum"].asString());
 		if(!valueDataDataItem["ScaNum"].isNull())
 			dataObject.scaNum = std::stoi(valueDataDataItem["ScaNum"].asString());
+		if(!valueDataDataItem["Trojan"].isNull())
+			dataObject.trojan = std::stoi(valueDataDataItem["Trojan"].asString());
+		if(!valueDataDataItem["CveNum"].isNull())
+			dataObject.cveNum = std::stoi(valueDataDataItem["CveNum"].asString());
+		if(!valueDataDataItem["EmgNum"].isNull())
+			dataObject.emgNum = std::stoi(valueDataDataItem["EmgNum"].asString());
+		if(!valueDataDataItem["Suspicious"].isNull())
+			dataObject.suspicious = std::stoi(valueDataDataItem["Suspicious"].asString());
+		if(!valueDataDataItem["CmsNum"].isNull())
+			dataObject.cmsNum = std::stoi(valueDataDataItem["CmsNum"].asString());
+		if(!valueDataDataItem["Uuid"].isNull())
+			dataObject.uuid = valueDataDataItem["Uuid"].asString();
+		if(!valueDataDataItem["Vul"].isNull())
+			dataObject.vul = std::stoi(valueDataDataItem["Vul"].asString());
+		if(!valueDataDataItem["Health"].isNull())
+			dataObject.health = std::stoi(valueDataDataItem["Health"].asString());
+		if(!valueDataDataItem["SysNum"].isNull())
+			dataObject.sysNum = std::stoi(valueDataDataItem["SysNum"].asString());
 		data_.push_back(dataObject);
 	}
 

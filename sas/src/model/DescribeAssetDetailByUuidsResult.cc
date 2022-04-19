@@ -45,34 +45,34 @@ void DescribeAssetDetailByUuidsResult::parse(const std::string &payload)
 		Asset assetListObject;
 		if(!valueAssetListAsset["InternetIp"].isNull())
 			assetListObject.internetIp = valueAssetListAsset["InternetIp"].asString();
-		if(!valueAssetListAsset["IntranetIp"].isNull())
-			assetListObject.intranetIp = valueAssetListAsset["IntranetIp"].asString();
-		if(!valueAssetListAsset["InstanceName"].isNull())
-			assetListObject.instanceName = valueAssetListAsset["InstanceName"].asString();
-		if(!valueAssetListAsset["InstanceId"].isNull())
-			assetListObject.instanceId = valueAssetListAsset["InstanceId"].asString();
-		if(!valueAssetListAsset["Ip"].isNull())
-			assetListObject.ip = valueAssetListAsset["Ip"].asString();
-		if(!valueAssetListAsset["Uuid"].isNull())
-			assetListObject.uuid = valueAssetListAsset["Uuid"].asString();
-		if(!valueAssetListAsset["AssetType"].isNull())
-			assetListObject.assetType = valueAssetListAsset["AssetType"].asString();
-		if(!valueAssetListAsset["Os"].isNull())
-			assetListObject.os = valueAssetListAsset["Os"].asString();
-		if(!valueAssetListAsset["ClientStatus"].isNull())
-			assetListObject.clientStatus = valueAssetListAsset["ClientStatus"].asString();
-		if(!valueAssetListAsset["RegionId"].isNull())
-			assetListObject.regionId = valueAssetListAsset["RegionId"].asString();
-		if(!valueAssetListAsset["Region"].isNull())
-			assetListObject.region = valueAssetListAsset["Region"].asString();
-		if(!valueAssetListAsset["RegionName"].isNull())
-			assetListObject.regionName = valueAssetListAsset["RegionName"].asString();
-		if(!valueAssetListAsset["VpcInstanceId"].isNull())
-			assetListObject.vpcInstanceId = valueAssetListAsset["VpcInstanceId"].asString();
 		if(!valueAssetListAsset["OsName"].isNull())
 			assetListObject.osName = valueAssetListAsset["OsName"].asString();
+		if(!valueAssetListAsset["Ip"].isNull())
+			assetListObject.ip = valueAssetListAsset["Ip"].asString();
+		if(!valueAssetListAsset["Os"].isNull())
+			assetListObject.os = valueAssetListAsset["Os"].asString();
+		if(!valueAssetListAsset["InstanceId"].isNull())
+			assetListObject.instanceId = valueAssetListAsset["InstanceId"].asString();
+		if(!valueAssetListAsset["ClientStatus"].isNull())
+			assetListObject.clientStatus = valueAssetListAsset["ClientStatus"].asString();
+		if(!valueAssetListAsset["VpcInstanceId"].isNull())
+			assetListObject.vpcInstanceId = valueAssetListAsset["VpcInstanceId"].asString();
+		if(!valueAssetListAsset["IntranetIp"].isNull())
+			assetListObject.intranetIp = valueAssetListAsset["IntranetIp"].asString();
+		if(!valueAssetListAsset["AssetType"].isNull())
+			assetListObject.assetType = valueAssetListAsset["AssetType"].asString();
+		if(!valueAssetListAsset["RegionId"].isNull())
+			assetListObject.regionId = valueAssetListAsset["RegionId"].asString();
+		if(!valueAssetListAsset["Uuid"].isNull())
+			assetListObject.uuid = valueAssetListAsset["Uuid"].asString();
 		if(!valueAssetListAsset["Flag"].isNull())
 			assetListObject.flag = std::stoi(valueAssetListAsset["Flag"].asString());
+		if(!valueAssetListAsset["RegionName"].isNull())
+			assetListObject.regionName = valueAssetListAsset["RegionName"].asString();
+		if(!valueAssetListAsset["InstanceName"].isNull())
+			assetListObject.instanceName = valueAssetListAsset["InstanceName"].asString();
+		if(!valueAssetListAsset["Region"].isNull())
+			assetListObject.region = valueAssetListAsset["Region"].asString();
 		assetList_.push_back(assetListObject);
 	}
 

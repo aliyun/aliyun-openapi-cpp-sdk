@@ -53,6 +53,8 @@ namespace AlibabaCloud
 				void setPageSize(const std::string& pageSize);
 				std::string getFrom()const;
 				void setFrom(const std::string& from);
+				std::string getTacticId()const;
+				void setTacticId(const std::string& tacticId);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 				std::string getGroupId()const;
@@ -78,6 +80,7 @@ namespace AlibabaCloud
 				std::string containerFieldValue_;
 				std::string pageSize_;
 				std::string from_;
+				std::string tacticId_;
 				std::string lang_;
 				std::string groupId_;
 				std::string dealed_;

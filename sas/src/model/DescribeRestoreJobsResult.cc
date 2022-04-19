@@ -43,8 +43,6 @@ void DescribeRestoreJobsResult::parse(const std::string &payload)
 	for (auto valueRestoreJobsRestoreJob : allRestoreJobsNode)
 	{
 		RestoreJob restoreJobsObject;
-		if(!valueRestoreJobsRestoreJob["Id"].isNull())
-			restoreJobsObject.id = std::stol(valueRestoreJobsRestoreJob["Id"].asString());
 		if(!valueRestoreJobsRestoreJob["CreatedTime"].isNull())
 			restoreJobsObject.createdTime = std::stol(valueRestoreJobsRestoreJob["CreatedTime"].asString());
 		if(!valueRestoreJobsRestoreJob["UpdatedTime"].isNull())
@@ -103,8 +101,6 @@ void DescribeRestoreJobsResult::parse(const std::string &payload)
 			restoreJobsObject.internetIp = valueRestoreJobsRestoreJob["InternetIp"].asString();
 		if(!valueRestoreJobsRestoreJob["IntranetIp"].isNull())
 			restoreJobsObject.intranetIp = valueRestoreJobsRestoreJob["IntranetIp"].asString();
-		if(!valueRestoreJobsRestoreJob["ErrorFile"].isNull())
-			restoreJobsObject.errorFile = valueRestoreJobsRestoreJob["ErrorFile"].asString();
 		if(!valueRestoreJobsRestoreJob["ErrorFileUrl"].isNull())
 			restoreJobsObject.errorFileUrl = valueRestoreJobsRestoreJob["ErrorFileUrl"].asString();
 		if(!valueRestoreJobsRestoreJob["RequestId"].isNull())
@@ -113,18 +109,16 @@ void DescribeRestoreJobsResult::parse(const std::string &payload)
 			restoreJobsObject.restoreName = valueRestoreJobsRestoreJob["RestoreName"].asString();
 		if(!valueRestoreJobsRestoreJob["InstanceId"].isNull())
 			restoreJobsObject.instanceId = valueRestoreJobsRestoreJob["InstanceId"].asString();
-		if(!valueRestoreJobsRestoreJob["Extra"].isNull())
-			restoreJobsObject.extra = valueRestoreJobsRestoreJob["Extra"].asString();
 		if(!valueRestoreJobsRestoreJob["Duration"].isNull())
 			restoreJobsObject.duration = std::stol(valueRestoreJobsRestoreJob["Duration"].asString());
 		if(!valueRestoreJobsRestoreJob["ExitCode"].isNull())
 			restoreJobsObject.exitCode = valueRestoreJobsRestoreJob["ExitCode"].asString();
 		if(!valueRestoreJobsRestoreJob["ErrorFile"].isNull())
-			restoreJobsObject.errorFile1 = valueRestoreJobsRestoreJob["ErrorFile"].asString();
+			restoreJobsObject.errorFile = valueRestoreJobsRestoreJob["ErrorFile"].asString();
 		if(!valueRestoreJobsRestoreJob["GmtCreate"].isNull())
 			restoreJobsObject.gmtCreate = valueRestoreJobsRestoreJob["GmtCreate"].asString();
 		if(!valueRestoreJobsRestoreJob["GmtModified"].isNull())
-			restoreJobsObject.gmtModified = std::stol(valueRestoreJobsRestoreJob["GmtModified"].asString());
+			restoreJobsObject.gmtModified = valueRestoreJobsRestoreJob["GmtModified"].asString();
 		if(!valueRestoreJobsRestoreJob["Excludes"].isNull())
 			restoreJobsObject.excludes = valueRestoreJobsRestoreJob["Excludes"].asString();
 		if(!valueRestoreJobsRestoreJob["Includes"].isNull())

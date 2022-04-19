@@ -43,12 +43,12 @@ void DescribeExposedInstanceCriteriaResult::parse(const std::string &payload)
 	for (auto valueCriteriaListCriteria : allCriteriaListNode)
 	{
 		Criteria criteriaListObject;
-		if(!valueCriteriaListCriteria["Values"].isNull())
-			criteriaListObject.values = valueCriteriaListCriteria["Values"].asString();
-		if(!valueCriteriaListCriteria["Name"].isNull())
-			criteriaListObject.name = valueCriteriaListCriteria["Name"].asString();
 		if(!valueCriteriaListCriteria["Type"].isNull())
 			criteriaListObject.type = valueCriteriaListCriteria["Type"].asString();
+		if(!valueCriteriaListCriteria["Name"].isNull())
+			criteriaListObject.name = valueCriteriaListCriteria["Name"].asString();
+		if(!valueCriteriaListCriteria["Values"].isNull())
+			criteriaListObject.values = valueCriteriaListCriteria["Values"].asString();
 		criteriaList_.push_back(criteriaListObject);
 	}
 

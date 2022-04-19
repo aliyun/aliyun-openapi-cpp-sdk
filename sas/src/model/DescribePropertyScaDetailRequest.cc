@@ -49,6 +49,17 @@ void DescribePropertyScaDetailRequest::setRemark(const std::string& remark)
 	setParameter("Remark", remark);
 }
 
+std::string DescribePropertyScaDetailRequest::getPid()const
+{
+	return pid_;
+}
+
+void DescribePropertyScaDetailRequest::setPid(const std::string& pid)
+{
+	pid_ = pid;
+	setParameter("Pid", pid);
+}
+
 std::string DescribePropertyScaDetailRequest::getSearchItem()const
 {
 	return searchItem_;
@@ -69,6 +80,17 @@ void DescribePropertyScaDetailRequest::setUuid(const std::string& uuid)
 {
 	uuid_ = uuid;
 	setParameter("Uuid", uuid);
+}
+
+std::string DescribePropertyScaDetailRequest::getBiz()const
+{
+	return biz_;
+}
+
+void DescribePropertyScaDetailRequest::setBiz(const std::string& biz)
+{
+	biz_ = biz;
+	setParameter("Biz", biz);
 }
 
 std::string DescribePropertyScaDetailRequest::getSourceIp()const
@@ -93,6 +115,28 @@ void DescribePropertyScaDetailRequest::setPageSize(int pageSize)
 	setParameter("PageSize", std::to_string(pageSize));
 }
 
+long DescribePropertyScaDetailRequest::getProcessStartedStart()const
+{
+	return processStartedStart_;
+}
+
+void DescribePropertyScaDetailRequest::setProcessStartedStart(long processStartedStart)
+{
+	processStartedStart_ = processStartedStart;
+	setParameter("ProcessStartedStart", std::to_string(processStartedStart));
+}
+
+long DescribePropertyScaDetailRequest::getProcessStartedEnd()const
+{
+	return processStartedEnd_;
+}
+
+void DescribePropertyScaDetailRequest::setProcessStartedEnd(long processStartedEnd)
+{
+	processStartedEnd_ = processStartedEnd;
+	setParameter("ProcessStartedEnd", std::to_string(processStartedEnd));
+}
+
 std::string DescribePropertyScaDetailRequest::getLang()const
 {
 	return lang_;
@@ -102,6 +146,17 @@ void DescribePropertyScaDetailRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setParameter("Lang", lang);
+}
+
+std::string DescribePropertyScaDetailRequest::getScaVersion()const
+{
+	return scaVersion_;
+}
+
+void DescribePropertyScaDetailRequest::setScaVersion(const std::string& scaVersion)
+{
+	scaVersion_ = scaVersion;
+	setParameter("ScaVersion", scaVersion);
 }
 
 std::string DescribePropertyScaDetailRequest::getSearchInfoSub()const
@@ -148,6 +203,17 @@ void DescribePropertyScaDetailRequest::setBizType(const std::string& bizType)
 	setParameter("BizType", bizType);
 }
 
+std::string DescribePropertyScaDetailRequest::getPort()const
+{
+	return port_;
+}
+
+void DescribePropertyScaDetailRequest::setPort(const std::string& port)
+{
+	port_ = port;
+	setParameter("Port", port);
+}
+
 long DescribePropertyScaDetailRequest::getName()const
 {
 	return name_;
@@ -168,5 +234,27 @@ void DescribePropertyScaDetailRequest::setScaName(const std::string& scaName)
 {
 	scaName_ = scaName;
 	setParameter("ScaName", scaName);
+}
+
+std::string DescribePropertyScaDetailRequest::getScaNamePattern()const
+{
+	return scaNamePattern_;
+}
+
+void DescribePropertyScaDetailRequest::setScaNamePattern(const std::string& scaNamePattern)
+{
+	scaNamePattern_ = scaNamePattern;
+	setParameter("ScaNamePattern", scaNamePattern);
+}
+
+std::string DescribePropertyScaDetailRequest::getUser()const
+{
+	return user_;
+}
+
+void DescribePropertyScaDetailRequest::setUser(const std::string& user)
+{
+	user_ = user;
+	setParameter("User", user);
 }
 

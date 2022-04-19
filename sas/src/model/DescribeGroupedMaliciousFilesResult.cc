@@ -43,31 +43,31 @@ void DescribeGroupedMaliciousFilesResult::parse(const std::string &payload)
 	for (auto valueGroupedMaliciousFileResponseGroupedMaliciousFile : allGroupedMaliciousFileResponseNode)
 	{
 		GroupedMaliciousFile groupedMaliciousFileResponseObject;
+		if(!valueGroupedMaliciousFileResponseGroupedMaliciousFile["Status"].isNull())
+			groupedMaliciousFileResponseObject.status = std::stoi(valueGroupedMaliciousFileResponseGroupedMaliciousFile["Status"].asString());
+		if(!valueGroupedMaliciousFileResponseGroupedMaliciousFile["ImageCount"].isNull())
+			groupedMaliciousFileResponseObject.imageCount = std::stol(valueGroupedMaliciousFileResponseGroupedMaliciousFile["ImageCount"].asString());
+		if(!valueGroupedMaliciousFileResponseGroupedMaliciousFile["LatestScanTimestamp"].isNull())
+			groupedMaliciousFileResponseObject.latestScanTimestamp = std::stol(valueGroupedMaliciousFileResponseGroupedMaliciousFile["LatestScanTimestamp"].asString());
 		if(!valueGroupedMaliciousFileResponseGroupedMaliciousFile["MaliciousName"].isNull())
 			groupedMaliciousFileResponseObject.maliciousName = valueGroupedMaliciousFileResponseGroupedMaliciousFile["MaliciousName"].asString();
 		if(!valueGroupedMaliciousFileResponseGroupedMaliciousFile["MaliciousMd5"].isNull())
 			groupedMaliciousFileResponseObject.maliciousMd5 = valueGroupedMaliciousFileResponseGroupedMaliciousFile["MaliciousMd5"].asString();
 		if(!valueGroupedMaliciousFileResponseGroupedMaliciousFile["FirstScanTimestamp"].isNull())
 			groupedMaliciousFileResponseObject.firstScanTimestamp = std::stol(valueGroupedMaliciousFileResponseGroupedMaliciousFile["FirstScanTimestamp"].asString());
-		if(!valueGroupedMaliciousFileResponseGroupedMaliciousFile["LatestScanTimestamp"].isNull())
-			groupedMaliciousFileResponseObject.latestScanTimestamp = std::stol(valueGroupedMaliciousFileResponseGroupedMaliciousFile["LatestScanTimestamp"].asString());
-		if(!valueGroupedMaliciousFileResponseGroupedMaliciousFile["Status"].isNull())
-			groupedMaliciousFileResponseObject.status = std::stoi(valueGroupedMaliciousFileResponseGroupedMaliciousFile["Status"].asString());
 		if(!valueGroupedMaliciousFileResponseGroupedMaliciousFile["Level"].isNull())
 			groupedMaliciousFileResponseObject.level = valueGroupedMaliciousFileResponseGroupedMaliciousFile["Level"].asString();
-		if(!valueGroupedMaliciousFileResponseGroupedMaliciousFile["ImageCount"].isNull())
-			groupedMaliciousFileResponseObject.imageCount = std::stol(valueGroupedMaliciousFileResponseGroupedMaliciousFile["ImageCount"].asString());
 		groupedMaliciousFileResponse_.push_back(groupedMaliciousFileResponseObject);
 	}
 	auto pageInfoNode = value["PageInfo"];
-	if(!pageInfoNode["Count"].isNull())
-		pageInfo_.count = std::stoi(pageInfoNode["Count"].asString());
+	if(!pageInfoNode["CurrentPage"].isNull())
+		pageInfo_.currentPage = std::stoi(pageInfoNode["CurrentPage"].asString());
 	if(!pageInfoNode["PageSize"].isNull())
 		pageInfo_.pageSize = std::stoi(pageInfoNode["PageSize"].asString());
 	if(!pageInfoNode["TotalCount"].isNull())
 		pageInfo_.totalCount = std::stoi(pageInfoNode["TotalCount"].asString());
-	if(!pageInfoNode["CurrentPage"].isNull())
-		pageInfo_.currentPage = std::stoi(pageInfoNode["CurrentPage"].asString());
+	if(!pageInfoNode["Count"].isNull())
+		pageInfo_.count = std::stoi(pageInfoNode["Count"].asString());
 
 }
 

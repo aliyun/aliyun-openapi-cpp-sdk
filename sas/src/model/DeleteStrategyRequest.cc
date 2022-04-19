@@ -60,3 +60,14 @@ void DeleteStrategyRequest::setLang(const std::string& lang)
 	setParameter("Lang", lang);
 }
 
+std::string DeleteStrategyRequest::getResourceDirectoryAccountId()const
+{
+	return resourceDirectoryAccountId_;
+}
+
+void DeleteStrategyRequest::setResourceDirectoryAccountId(const std::string& resourceDirectoryAccountId)
+{
+	resourceDirectoryAccountId_ = resourceDirectoryAccountId;
+	setParameter("ResourceDirectoryAccountId", resourceDirectoryAccountId);
+}
+

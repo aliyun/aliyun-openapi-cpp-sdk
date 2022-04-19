@@ -126,6 +126,17 @@ void DescribeAffectedMaliciousFileImagesRequest::setCurrentPage(int currentPage)
 	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
+std::string DescribeAffectedMaliciousFileImagesRequest::getClusterId()const
+{
+	return clusterId_;
+}
+
+void DescribeAffectedMaliciousFileImagesRequest::setClusterId(const std::string& clusterId)
+{
+	clusterId_ = clusterId;
+	setParameter("ClusterId", clusterId);
+}
+
 std::string DescribeAffectedMaliciousFileImagesRequest::getRepoName()const
 {
 	return repoName_;
@@ -159,6 +170,17 @@ void DescribeAffectedMaliciousFileImagesRequest::setImageLayer(const std::string
 	setParameter("ImageLayer", imageLayer);
 }
 
+std::string DescribeAffectedMaliciousFileImagesRequest::getRepoRegionId()const
+{
+	return repoRegionId_;
+}
+
+void DescribeAffectedMaliciousFileImagesRequest::setRepoRegionId(const std::string& repoRegionId)
+{
+	repoRegionId_ = repoRegionId;
+	setParameter("RepoRegionId", repoRegionId);
+}
+
 std::vector<std::string> DescribeAffectedMaliciousFileImagesRequest::getUuids()const
 {
 	return uuids_;
@@ -170,16 +192,5 @@ void DescribeAffectedMaliciousFileImagesRequest::setUuids(const std::vector<std:
 	for(int dep1 = 0; dep1!= uuids.size(); dep1++) {
 		setParameter("Uuids."+ std::to_string(dep1), uuids.at(dep1));
 	}
-}
-
-std::string DescribeAffectedMaliciousFileImagesRequest::getRepoRegionId()const
-{
-	return repoRegionId_;
-}
-
-void DescribeAffectedMaliciousFileImagesRequest::setRepoRegionId(const std::string& repoRegionId)
-{
-	repoRegionId_ = repoRegionId;
-	setParameter("RepoRegionId", repoRegionId);
 }
 

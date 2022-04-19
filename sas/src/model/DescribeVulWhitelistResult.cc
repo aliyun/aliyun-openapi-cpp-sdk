@@ -51,6 +51,10 @@ void DescribeVulWhitelistResult::parse(const std::string &payload)
 			vulWhitelistsObject.aliasName = valueVulWhitelistsVulWhitelist["AliasName"].asString();
 		if(!valueVulWhitelistsVulWhitelist["Reason"].isNull())
 			vulWhitelistsObject.reason = valueVulWhitelistsVulWhitelist["Reason"].asString();
+		if(!valueVulWhitelistsVulWhitelist["TargetInfo"].isNull())
+			vulWhitelistsObject.targetInfo = valueVulWhitelistsVulWhitelist["TargetInfo"].asString();
+		if(!valueVulWhitelistsVulWhitelist["Id"].isNull())
+			vulWhitelistsObject.id = valueVulWhitelistsVulWhitelist["Id"].asString();
 		vulWhitelists_.push_back(vulWhitelistsObject);
 	}
 	if(!value["PageSize"].isNull())

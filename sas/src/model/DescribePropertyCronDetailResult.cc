@@ -43,43 +43,41 @@ void DescribePropertyCronDetailResult::parse(const std::string &payload)
 	for (auto valuePropertysPropertyCron : allPropertysNode)
 	{
 		PropertyCron propertysObject;
-		if(!valuePropertysPropertyCron["InstanceName"].isNull())
-			propertysObject.instanceName = valuePropertysPropertyCron["InstanceName"].asString();
-		if(!valuePropertysPropertyCron["Ip"].isNull())
-			propertysObject.ip = valuePropertysPropertyCron["Ip"].asString();
-		if(!valuePropertysPropertyCron["Create"].isNull())
-			propertysObject.create = valuePropertysPropertyCron["Create"].asString();
-		if(!valuePropertysPropertyCron["CreateTimestamp"].isNull())
-			propertysObject.createTimestamp = std::stol(valuePropertysPropertyCron["CreateTimestamp"].asString());
-		if(!valuePropertysPropertyCron["Uuid"].isNull())
-			propertysObject.uuid = valuePropertysPropertyCron["Uuid"].asString();
-		if(!valuePropertysPropertyCron["InstanceId"].isNull())
-			propertysObject.instanceId = valuePropertysPropertyCron["InstanceId"].asString();
-		if(!valuePropertysPropertyCron["IntranetIp"].isNull())
-			propertysObject.intranetIp = valuePropertysPropertyCron["IntranetIp"].asString();
 		if(!valuePropertysPropertyCron["InternetIp"].isNull())
 			propertysObject.internetIp = valuePropertysPropertyCron["InternetIp"].asString();
-		if(!valuePropertysPropertyCron["Period"].isNull())
-			propertysObject.period = valuePropertysPropertyCron["Period"].asString();
-		if(!valuePropertysPropertyCron["Source"].isNull())
-			propertysObject.source = valuePropertysPropertyCron["Source"].asString();
-		if(!valuePropertysPropertyCron["Cmd"].isNull())
-			propertysObject.cmd = valuePropertysPropertyCron["Cmd"].asString();
+		if(!valuePropertysPropertyCron["Ip"].isNull())
+			propertysObject.ip = valuePropertysPropertyCron["Ip"].asString();
 		if(!valuePropertysPropertyCron["User"].isNull())
 			propertysObject.user = valuePropertysPropertyCron["User"].asString();
+		if(!valuePropertysPropertyCron["InstanceId"].isNull())
+			propertysObject.instanceId = valuePropertysPropertyCron["InstanceId"].asString();
+		if(!valuePropertysPropertyCron["Source"].isNull())
+			propertysObject.source = valuePropertysPropertyCron["Source"].asString();
+		if(!valuePropertysPropertyCron["IntranetIp"].isNull())
+			propertysObject.intranetIp = valuePropertysPropertyCron["IntranetIp"].asString();
+		if(!valuePropertysPropertyCron["Cmd"].isNull())
+			propertysObject.cmd = valuePropertysPropertyCron["Cmd"].asString();
+		if(!valuePropertysPropertyCron["Period"].isNull())
+			propertysObject.period = valuePropertysPropertyCron["Period"].asString();
+		if(!valuePropertysPropertyCron["Uuid"].isNull())
+			propertysObject.uuid = valuePropertysPropertyCron["Uuid"].asString();
+		if(!valuePropertysPropertyCron["InstanceName"].isNull())
+			propertysObject.instanceName = valuePropertysPropertyCron["InstanceName"].asString();
 		if(!valuePropertysPropertyCron["Md5"].isNull())
 			propertysObject.md5 = valuePropertysPropertyCron["Md5"].asString();
+		if(!valuePropertysPropertyCron["CreateTimestamp"].isNull())
+			propertysObject.createTimestamp = std::stol(valuePropertysPropertyCron["CreateTimestamp"].asString());
 		propertys_.push_back(propertysObject);
 	}
 	auto pageInfoNode = value["PageInfo"];
-	if(!pageInfoNode["Count"].isNull())
-		pageInfo_.count = std::stoi(pageInfoNode["Count"].asString());
+	if(!pageInfoNode["CurrentPage"].isNull())
+		pageInfo_.currentPage = std::stoi(pageInfoNode["CurrentPage"].asString());
 	if(!pageInfoNode["PageSize"].isNull())
 		pageInfo_.pageSize = std::stoi(pageInfoNode["PageSize"].asString());
 	if(!pageInfoNode["TotalCount"].isNull())
 		pageInfo_.totalCount = std::stoi(pageInfoNode["TotalCount"].asString());
-	if(!pageInfoNode["CurrentPage"].isNull())
-		pageInfo_.currentPage = std::stoi(pageInfoNode["CurrentPage"].asString());
+	if(!pageInfoNode["Count"].isNull())
+		pageInfo_.count = std::stoi(pageInfoNode["Count"].asString());
 
 }
 

@@ -39,12 +39,12 @@ void DescribeDomainCountResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["TotalDomainsCount"].isNull())
-		totalDomainsCount_ = std::stoi(value["TotalDomainsCount"].asString());
 	if(!value["RootDomainsCount"].isNull())
 		rootDomainsCount_ = std::stoi(value["RootDomainsCount"].asString());
 	if(!value["SubDomainsCount"].isNull())
 		subDomainsCount_ = std::stoi(value["SubDomainsCount"].asString());
+	if(!value["TotalDomainsCount"].isNull())
+		totalDomainsCount_ = std::stoi(value["TotalDomainsCount"].asString());
 
 }
 

@@ -95,6 +95,8 @@ namespace AlibabaCloud
 				void setDealed(const std::string& dealed);
 				int getCurrentPage()const;
 				void setCurrentPage(int currentPage);
+				std::string getClusterId()const;
+				void setClusterId(const std::string& clusterId);
 				std::string getBatchName()const;
 				void setBatchName(const std::string& batchName);
 				std::string getRepoName()const;
@@ -135,6 +137,7 @@ namespace AlibabaCloud
 				std::string lang_;
 				std::string dealed_;
 				int currentPage_;
+				std::string clusterId_;
 				std::string batchName_;
 				std::string repoName_;
 				std::string repoInstanceId_;

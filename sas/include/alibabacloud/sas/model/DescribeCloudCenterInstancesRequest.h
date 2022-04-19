@@ -49,10 +49,14 @@ namespace AlibabaCloud
 				void setPageSize(int pageSize);
 				std::string getLogicalExp()const;
 				void setLogicalExp(const std::string& logicalExp);
+				std::string getResourceDirectoryAccountId()const;
+				void setResourceDirectoryAccountId(const std::string& resourceDirectoryAccountId);
 				int getCurrentPage()const;
 				void setCurrentPage(int currentPage);
 				std::string getMachineTypes()const;
 				void setMachineTypes(const std::string& machineTypes);
+				bool getNoGroupTrace()const;
+				void setNoGroupTrace(bool noGroupTrace);
 
             private:
 				std::string criteria_;
@@ -62,8 +66,10 @@ namespace AlibabaCloud
 				bool noPage_;
 				int pageSize_;
 				std::string logicalExp_;
+				std::string resourceDirectoryAccountId_;
 				int currentPage_;
 				std::string machineTypes_;
+				bool noGroupTrace_;
 
 			};
 		}

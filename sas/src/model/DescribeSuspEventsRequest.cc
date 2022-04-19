@@ -93,6 +93,17 @@ void DescribeSuspEventsRequest::setContainerFieldValue(const std::string& contai
 	setParameter("ContainerFieldValue", containerFieldValue);
 }
 
+std::string DescribeSuspEventsRequest::getEventNames()const
+{
+	return eventNames_;
+}
+
+void DescribeSuspEventsRequest::setEventNames(const std::string& eventNames)
+{
+	eventNames_ = eventNames;
+	setParameter("EventNames", eventNames);
+}
+
 std::string DescribeSuspEventsRequest::getPageSize()const
 {
 	return pageSize_;
@@ -113,6 +124,17 @@ void DescribeSuspEventsRequest::setFrom(const std::string& from)
 {
 	from_ = from;
 	setParameter("From", from);
+}
+
+std::string DescribeSuspEventsRequest::getTacticId()const
+{
+	return tacticId_;
+}
+
+void DescribeSuspEventsRequest::setTacticId(const std::string& tacticId)
+{
+	tacticId_ = tacticId;
+	setBodyParameter("TacticId", tacticId);
 }
 
 std::string DescribeSuspEventsRequest::getLang()const

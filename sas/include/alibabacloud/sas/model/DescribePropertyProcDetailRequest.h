@@ -45,8 +45,14 @@ namespace AlibabaCloud
 				void setSourceIp(const std::string& sourceIp);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
+				long getProcTimeStart()const;
+				void setProcTimeStart(long procTimeStart);
 				int getCurrentPage()const;
 				void setCurrentPage(int currentPage);
+				long getProcTimeEnd()const;
+				void setProcTimeEnd(long procTimeEnd);
+				std::string getExtend()const;
+				void setExtend(const std::string& extend);
 				std::string getName()const;
 				void setName(const std::string& name);
 				std::string getUser()const;
@@ -58,7 +64,10 @@ namespace AlibabaCloud
 				std::string cmdline_;
 				std::string sourceIp_;
 				int pageSize_;
+				long procTimeStart_;
 				int currentPage_;
+				long procTimeEnd_;
+				std::string extend_;
 				std::string name_;
 				std::string user_;
 

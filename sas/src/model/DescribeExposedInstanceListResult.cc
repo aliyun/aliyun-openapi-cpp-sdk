@@ -43,53 +43,53 @@ void DescribeExposedInstanceListResult::parse(const std::string &payload)
 	for (auto valueExposedInstancesExposedInstance : allExposedInstancesNode)
 	{
 		ExposedInstance exposedInstancesObject;
-		if(!valueExposedInstancesExposedInstance["Uuid"].isNull())
-			exposedInstancesObject.uuid = valueExposedInstancesExposedInstance["Uuid"].asString();
-		if(!valueExposedInstancesExposedInstance["IntranetIp"].isNull())
-			exposedInstancesObject.intranetIp = valueExposedInstancesExposedInstance["IntranetIp"].asString();
-		if(!valueExposedInstancesExposedInstance["InternetIp"].isNull())
-			exposedInstancesObject.internetIp = valueExposedInstancesExposedInstance["InternetIp"].asString();
-		if(!valueExposedInstancesExposedInstance["AsapVulCount"].isNull())
-			exposedInstancesObject.asapVulCount = std::stoi(valueExposedInstancesExposedInstance["AsapVulCount"].asString());
-		if(!valueExposedInstancesExposedInstance["LaterVulCount"].isNull())
-			exposedInstancesObject.laterVulCount = std::stoi(valueExposedInstancesExposedInstance["LaterVulCount"].asString());
-		if(!valueExposedInstancesExposedInstance["NntfVulCount"].isNull())
-			exposedInstancesObject.nntfVulCount = std::stoi(valueExposedInstancesExposedInstance["NntfVulCount"].asString());
-		if(!valueExposedInstancesExposedInstance["TotalVulCount"].isNull())
-			exposedInstancesObject.totalVulCount = std::stoi(valueExposedInstancesExposedInstance["TotalVulCount"].asString());
-		if(!valueExposedInstancesExposedInstance["ExploitHealthCount"].isNull())
-			exposedInstancesObject.exploitHealthCount = std::stoi(valueExposedInstancesExposedInstance["ExploitHealthCount"].asString());
-		if(!valueExposedInstancesExposedInstance["ExposureComponent"].isNull())
-			exposedInstancesObject.exposureComponent = valueExposedInstancesExposedInstance["ExposureComponent"].asString();
-		if(!valueExposedInstancesExposedInstance["ExposureType"].isNull())
-			exposedInstancesObject.exposureType = valueExposedInstancesExposedInstance["ExposureType"].asString();
-		if(!valueExposedInstancesExposedInstance["ExposureTypeId"].isNull())
-			exposedInstancesObject.exposureTypeId = valueExposedInstancesExposedInstance["ExposureTypeId"].asString();
-		if(!valueExposedInstancesExposedInstance["ExposurePort"].isNull())
-			exposedInstancesObject.exposurePort = valueExposedInstancesExposedInstance["ExposurePort"].asString();
 		if(!valueExposedInstancesExposedInstance["ExposureIp"].isNull())
 			exposedInstancesObject.exposureIp = valueExposedInstancesExposedInstance["ExposureIp"].asString();
+		if(!valueExposedInstancesExposedInstance["TotalVulCount"].isNull())
+			exposedInstancesObject.totalVulCount = std::stoi(valueExposedInstancesExposedInstance["TotalVulCount"].asString());
+		if(!valueExposedInstancesExposedInstance["InternetIp"].isNull())
+			exposedInstancesObject.internetIp = valueExposedInstancesExposedInstance["InternetIp"].asString();
+		if(!valueExposedInstancesExposedInstance["NntfVulCount"].isNull())
+			exposedInstancesObject.nntfVulCount = std::stoi(valueExposedInstancesExposedInstance["NntfVulCount"].asString());
 		if(!valueExposedInstancesExposedInstance["InstanceId"].isNull())
 			exposedInstancesObject.instanceId = valueExposedInstancesExposedInstance["InstanceId"].asString();
-		if(!valueExposedInstancesExposedInstance["InstanceName"].isNull())
-			exposedInstancesObject.instanceName = valueExposedInstancesExposedInstance["InstanceName"].asString();
+		if(!valueExposedInstancesExposedInstance["ExposureType"].isNull())
+			exposedInstancesObject.exposureType = valueExposedInstancesExposedInstance["ExposureType"].asString();
+		if(!valueExposedInstancesExposedInstance["IntranetIp"].isNull())
+			exposedInstancesObject.intranetIp = valueExposedInstancesExposedInstance["IntranetIp"].asString();
 		if(!valueExposedInstancesExposedInstance["RegionId"].isNull())
 			exposedInstancesObject.regionId = valueExposedInstancesExposedInstance["RegionId"].asString();
-		if(!valueExposedInstancesExposedInstance["GroupId"].isNull())
-			exposedInstancesObject.groupId = std::stol(valueExposedInstancesExposedInstance["GroupId"].asString());
+		if(!valueExposedInstancesExposedInstance["ExposureTypeId"].isNull())
+			exposedInstancesObject.exposureTypeId = valueExposedInstancesExposedInstance["ExposureTypeId"].asString();
+		if(!valueExposedInstancesExposedInstance["AsapVulCount"].isNull())
+			exposedInstancesObject.asapVulCount = std::stoi(valueExposedInstancesExposedInstance["AsapVulCount"].asString());
+		if(!valueExposedInstancesExposedInstance["ExposurePort"].isNull())
+			exposedInstancesObject.exposurePort = valueExposedInstancesExposedInstance["ExposurePort"].asString();
+		if(!valueExposedInstancesExposedInstance["Uuid"].isNull())
+			exposedInstancesObject.uuid = valueExposedInstancesExposedInstance["Uuid"].asString();
 		if(!valueExposedInstancesExposedInstance["GroupName"].isNull())
 			exposedInstancesObject.groupName = valueExposedInstancesExposedInstance["GroupName"].asString();
+		if(!valueExposedInstancesExposedInstance["GroupId"].isNull())
+			exposedInstancesObject.groupId = std::stol(valueExposedInstancesExposedInstance["GroupId"].asString());
+		if(!valueExposedInstancesExposedInstance["ExploitHealthCount"].isNull())
+			exposedInstancesObject.exploitHealthCount = std::stoi(valueExposedInstancesExposedInstance["ExploitHealthCount"].asString());
+		if(!valueExposedInstancesExposedInstance["InstanceName"].isNull())
+			exposedInstancesObject.instanceName = valueExposedInstancesExposedInstance["InstanceName"].asString();
+		if(!valueExposedInstancesExposedInstance["ExposureComponent"].isNull())
+			exposedInstancesObject.exposureComponent = valueExposedInstancesExposedInstance["ExposureComponent"].asString();
+		if(!valueExposedInstancesExposedInstance["LaterVulCount"].isNull())
+			exposedInstancesObject.laterVulCount = std::stoi(valueExposedInstancesExposedInstance["LaterVulCount"].asString());
 		exposedInstances_.push_back(exposedInstancesObject);
 	}
 	auto pageInfoNode = value["PageInfo"];
-	if(!pageInfoNode["Count"].isNull())
-		pageInfo_.count = std::stoi(pageInfoNode["Count"].asString());
+	if(!pageInfoNode["CurrentPage"].isNull())
+		pageInfo_.currentPage = std::stoi(pageInfoNode["CurrentPage"].asString());
 	if(!pageInfoNode["PageSize"].isNull())
 		pageInfo_.pageSize = std::stoi(pageInfoNode["PageSize"].asString());
 	if(!pageInfoNode["TotalCount"].isNull())
 		pageInfo_.totalCount = std::stoi(pageInfoNode["TotalCount"].asString());
-	if(!pageInfoNode["CurrentPage"].isNull())
-		pageInfo_.currentPage = std::stoi(pageInfoNode["CurrentPage"].asString());
+	if(!pageInfoNode["Count"].isNull())
+		pageInfo_.count = std::stoi(pageInfoNode["Count"].asString());
 
 }
 

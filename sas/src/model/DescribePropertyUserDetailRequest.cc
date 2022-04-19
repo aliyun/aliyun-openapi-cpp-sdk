@@ -71,6 +71,17 @@ void DescribePropertyUserDetailRequest::setPageSize(int pageSize)
 	setParameter("PageSize", std::to_string(pageSize));
 }
 
+long DescribePropertyUserDetailRequest::getLastLoginTimeStart()const
+{
+	return lastLoginTimeStart_;
+}
+
+void DescribePropertyUserDetailRequest::setLastLoginTimeStart(long lastLoginTimeStart)
+{
+	lastLoginTimeStart_ = lastLoginTimeStart;
+	setParameter("LastLoginTimeStart", std::to_string(lastLoginTimeStart));
+}
+
 int DescribePropertyUserDetailRequest::getCurrentPage()const
 {
 	return currentPage_;
@@ -80,6 +91,28 @@ void DescribePropertyUserDetailRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
 	setParameter("CurrentPage", std::to_string(currentPage));
+}
+
+long DescribePropertyUserDetailRequest::getLastLoginTimeEnd()const
+{
+	return lastLoginTimeEnd_;
+}
+
+void DescribePropertyUserDetailRequest::setLastLoginTimeEnd(long lastLoginTimeEnd)
+{
+	lastLoginTimeEnd_ = lastLoginTimeEnd;
+	setParameter("LastLoginTimeEnd", std::to_string(lastLoginTimeEnd));
+}
+
+std::string DescribePropertyUserDetailRequest::getExtend()const
+{
+	return extend_;
+}
+
+void DescribePropertyUserDetailRequest::setExtend(const std::string& extend)
+{
+	extend_ = extend;
+	setParameter("Extend", extend);
 }
 
 std::string DescribePropertyUserDetailRequest::getIsRoot()const

@@ -43,54 +43,54 @@ void DescribeRiskCheckResultResult::parse(const std::string &payload)
 	for (auto valueListRiskCheckResultForDisplay : allListNode)
 	{
 		RiskCheckResultForDisplay listObject;
-		if(!valueListRiskCheckResultForDisplay["ItemId"].isNull())
-			listObject.itemId = std::stol(valueListRiskCheckResultForDisplay["ItemId"].asString());
-		if(!valueListRiskCheckResultForDisplay["TaskId"].isNull())
-			listObject.taskId = std::stol(valueListRiskCheckResultForDisplay["TaskId"].asString());
-		if(!valueListRiskCheckResultForDisplay["Title"].isNull())
-			listObject.title = valueListRiskCheckResultForDisplay["Title"].asString();
 		if(!valueListRiskCheckResultForDisplay["RiskLevel"].isNull())
 			listObject.riskLevel = valueListRiskCheckResultForDisplay["RiskLevel"].asString();
 		if(!valueListRiskCheckResultForDisplay["Status"].isNull())
 			listObject.status = valueListRiskCheckResultForDisplay["Status"].asString();
-		if(!valueListRiskCheckResultForDisplay["AffectedCount"].isNull())
-			listObject.affectedCount = std::stoi(valueListRiskCheckResultForDisplay["AffectedCount"].asString());
-		if(!valueListRiskCheckResultForDisplay["CheckTime"].isNull())
-			listObject.checkTime = std::stol(valueListRiskCheckResultForDisplay["CheckTime"].asString());
-		if(!valueListRiskCheckResultForDisplay["RemainingTime"].isNull())
-			listObject.remainingTime = std::stoi(valueListRiskCheckResultForDisplay["RemainingTime"].asString());
-		if(!valueListRiskCheckResultForDisplay["Sort"].isNull())
-			listObject.sort = std::stoi(valueListRiskCheckResultForDisplay["Sort"].asString());
 		if(!valueListRiskCheckResultForDisplay["Type"].isNull())
 			listObject.type = valueListRiskCheckResultForDisplay["Type"].asString();
-		if(!valueListRiskCheckResultForDisplay["StartStatus"].isNull())
-			listObject.startStatus = valueListRiskCheckResultForDisplay["StartStatus"].asString();
+		if(!valueListRiskCheckResultForDisplay["Sort"].isNull())
+			listObject.sort = std::stoi(valueListRiskCheckResultForDisplay["Sort"].asString());
 		if(!valueListRiskCheckResultForDisplay["RepairStatus"].isNull())
 			listObject.repairStatus = valueListRiskCheckResultForDisplay["RepairStatus"].asString();
+		if(!valueListRiskCheckResultForDisplay["RemainingTime"].isNull())
+			listObject.remainingTime = std::stoi(valueListRiskCheckResultForDisplay["RemainingTime"].asString());
+		if(!valueListRiskCheckResultForDisplay["ItemId"].isNull())
+			listObject.itemId = std::stol(valueListRiskCheckResultForDisplay["ItemId"].asString());
+		if(!valueListRiskCheckResultForDisplay["StartStatus"].isNull())
+			listObject.startStatus = valueListRiskCheckResultForDisplay["StartStatus"].asString();
+		if(!valueListRiskCheckResultForDisplay["AffectedCount"].isNull())
+			listObject.affectedCount = std::stoi(valueListRiskCheckResultForDisplay["AffectedCount"].asString());
 		if(!valueListRiskCheckResultForDisplay["RiskAssertType"].isNull())
 			listObject.riskAssertType = valueListRiskCheckResultForDisplay["RiskAssertType"].asString();
+		if(!valueListRiskCheckResultForDisplay["Title"].isNull())
+			listObject.title = valueListRiskCheckResultForDisplay["Title"].asString();
+		if(!valueListRiskCheckResultForDisplay["TaskId"].isNull())
+			listObject.taskId = std::stol(valueListRiskCheckResultForDisplay["TaskId"].asString());
+		if(!valueListRiskCheckResultForDisplay["CheckTime"].isNull())
+			listObject.checkTime = std::stol(valueListRiskCheckResultForDisplay["CheckTime"].asString());
 		auto allRiskItemResourcesNode = valueListRiskCheckResultForDisplay["RiskItemResources"]["RiskItemResource"];
 		for (auto valueListRiskCheckResultForDisplayRiskItemResourcesRiskItemResource : allRiskItemResourcesNode)
 		{
 			RiskCheckResultForDisplay::RiskItemResource riskItemResourcesObject;
-			if(!valueListRiskCheckResultForDisplayRiskItemResourcesRiskItemResource["ResourceName"].isNull())
-				riskItemResourcesObject.resourceName = valueListRiskCheckResultForDisplayRiskItemResourcesRiskItemResource["ResourceName"].asString();
 			if(!valueListRiskCheckResultForDisplayRiskItemResourcesRiskItemResource["ContentResource"].isNull())
 				riskItemResourcesObject.contentResource = valueListRiskCheckResultForDisplayRiskItemResourcesRiskItemResource["ContentResource"].asString();
+			if(!valueListRiskCheckResultForDisplayRiskItemResourcesRiskItemResource["ResourceName"].isNull())
+				riskItemResourcesObject.resourceName = valueListRiskCheckResultForDisplayRiskItemResourcesRiskItemResource["ResourceName"].asString();
 			listObject.riskItemResources.push_back(riskItemResourcesObject);
 		}
 		list_.push_back(listObject);
 	}
-	if(!value["PageCount"].isNull())
-		pageCount_ = std::stoi(value["PageCount"].asString());
-	if(!value["Count"].isNull())
-		count_ = std::stoi(value["Count"].asString());
+	if(!value["CurrentPage"].isNull())
+		currentPage_ = std::stoi(value["CurrentPage"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["CurrentPage"].isNull())
-		currentPage_ = std::stoi(value["CurrentPage"].asString());
+	if(!value["PageCount"].isNull())
+		pageCount_ = std::stoi(value["PageCount"].asString());
+	if(!value["Count"].isNull())
+		count_ = std::stoi(value["Count"].asString());
 
 }
 
@@ -99,14 +99,14 @@ int DescribeRiskCheckResultResult::getTotalCount()const
 	return totalCount_;
 }
 
-int DescribeRiskCheckResultResult::getPageCount()const
-{
-	return pageCount_;
-}
-
 int DescribeRiskCheckResultResult::getPageSize()const
 {
 	return pageSize_;
+}
+
+int DescribeRiskCheckResultResult::getPageCount()const
+{
+	return pageCount_;
 }
 
 int DescribeRiskCheckResultResult::getCurrentPage()const

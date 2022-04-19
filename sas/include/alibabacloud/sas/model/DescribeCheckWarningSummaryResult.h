@@ -34,17 +34,17 @@ namespace AlibabaCloud
 			public:
 				struct WarningSummary
 				{
-					long riskId;
 					std::string lastFoundTime;
+					long riskId;
 					int mediumWarningCount;
 					int checkCount;
 					int warningMachineCount;
+					int highWarningCount;
 					std::string typeAlias;
 					std::string level;
-					int highWarningCount;
-					std::string riskName;
-					std::string subTypeAlias;
 					int lowWarningCount;
+					std::string subTypeAlias;
+					std::string riskName;
 				};
 
 

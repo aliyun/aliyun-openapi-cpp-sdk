@@ -126,6 +126,17 @@ void DescribeAlarmEventListRequest::setFrom(const std::string& from)
 	setParameter("From", from);
 }
 
+std::string DescribeAlarmEventListRequest::getTacticId()const
+{
+	return tacticId_;
+}
+
+void DescribeAlarmEventListRequest::setTacticId(const std::string& tacticId)
+{
+	tacticId_ = tacticId;
+	setParameter("TacticId", tacticId);
+}
+
 std::string DescribeAlarmEventListRequest::getLang()const
 {
 	return lang_;

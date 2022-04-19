@@ -126,6 +126,17 @@ void DescribeGroupedMaliciousFilesRequest::setCurrentPage(int currentPage)
 	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
+std::string DescribeGroupedMaliciousFilesRequest::getClusterId()const
+{
+	return clusterId_;
+}
+
+void DescribeGroupedMaliciousFilesRequest::setClusterId(const std::string& clusterId)
+{
+	clusterId_ = clusterId;
+	setParameter("ClusterId", clusterId);
+}
+
 std::string DescribeGroupedMaliciousFilesRequest::getRepoName()const
 {
 	return repoName_;
@@ -170,6 +181,17 @@ void DescribeGroupedMaliciousFilesRequest::setLevels(const std::string& levels)
 	setParameter("Levels", levels);
 }
 
+std::string DescribeGroupedMaliciousFilesRequest::getRepoRegionId()const
+{
+	return repoRegionId_;
+}
+
+void DescribeGroupedMaliciousFilesRequest::setRepoRegionId(const std::string& repoRegionId)
+{
+	repoRegionId_ = repoRegionId;
+	setParameter("RepoRegionId", repoRegionId);
+}
+
 std::vector<std::string> DescribeGroupedMaliciousFilesRequest::getUuids()const
 {
 	return uuids_;
@@ -181,16 +203,5 @@ void DescribeGroupedMaliciousFilesRequest::setUuids(const std::vector<std::strin
 	for(int dep1 = 0; dep1!= uuids.size(); dep1++) {
 		setParameter("Uuids."+ std::to_string(dep1), uuids.at(dep1));
 	}
-}
-
-std::string DescribeGroupedMaliciousFilesRequest::getRepoRegionId()const
-{
-	return repoRegionId_;
-}
-
-void DescribeGroupedMaliciousFilesRequest::setRepoRegionId(const std::string& repoRegionId)
-{
-	repoRegionId_ = repoRegionId;
-	setParameter("RepoRegionId", repoRegionId);
 }
 

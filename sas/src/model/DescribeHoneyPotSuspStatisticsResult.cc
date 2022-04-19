@@ -43,18 +43,18 @@ void DescribeHoneyPotSuspStatisticsResult::parse(const std::string &payload)
 	for (auto valueSuspHoneyPotStatisticsResponseSuspHoneyPotStatisticsResponseItem : allSuspHoneyPotStatisticsResponseNode)
 	{
 		SuspHoneyPotStatisticsResponseItem suspHoneyPotStatisticsResponseObject;
-		if(!valueSuspHoneyPotStatisticsResponseSuspHoneyPotStatisticsResponseItem["Count"].isNull())
-			suspHoneyPotStatisticsResponseObject.count = std::stoi(valueSuspHoneyPotStatisticsResponseSuspHoneyPotStatisticsResponseItem["Count"].asString());
 		if(!valueSuspHoneyPotStatisticsResponseSuspHoneyPotStatisticsResponseItem["Type"].isNull())
 			suspHoneyPotStatisticsResponseObject.type = valueSuspHoneyPotStatisticsResponseSuspHoneyPotStatisticsResponseItem["Type"].asString();
-		if(!valueSuspHoneyPotStatisticsResponseSuspHoneyPotStatisticsResponseItem["InstanceId"].isNull())
-			suspHoneyPotStatisticsResponseObject.instanceId = valueSuspHoneyPotStatisticsResponseSuspHoneyPotStatisticsResponseItem["InstanceId"].asString();
-		if(!valueSuspHoneyPotStatisticsResponseSuspHoneyPotStatisticsResponseItem["InstanceName"].isNull())
-			suspHoneyPotStatisticsResponseObject.instanceName = valueSuspHoneyPotStatisticsResponseSuspHoneyPotStatisticsResponseItem["InstanceName"].asString();
 		if(!valueSuspHoneyPotStatisticsResponseSuspHoneyPotStatisticsResponseItem["VpcId"].isNull())
 			suspHoneyPotStatisticsResponseObject.vpcId = valueSuspHoneyPotStatisticsResponseSuspHoneyPotStatisticsResponseItem["VpcId"].asString();
 		if(!valueSuspHoneyPotStatisticsResponseSuspHoneyPotStatisticsResponseItem["VpcName"].isNull())
 			suspHoneyPotStatisticsResponseObject.vpcName = valueSuspHoneyPotStatisticsResponseSuspHoneyPotStatisticsResponseItem["VpcName"].asString();
+		if(!valueSuspHoneyPotStatisticsResponseSuspHoneyPotStatisticsResponseItem["InstanceName"].isNull())
+			suspHoneyPotStatisticsResponseObject.instanceName = valueSuspHoneyPotStatisticsResponseSuspHoneyPotStatisticsResponseItem["InstanceName"].asString();
+		if(!valueSuspHoneyPotStatisticsResponseSuspHoneyPotStatisticsResponseItem["InstanceId"].isNull())
+			suspHoneyPotStatisticsResponseObject.instanceId = valueSuspHoneyPotStatisticsResponseSuspHoneyPotStatisticsResponseItem["InstanceId"].asString();
+		if(!valueSuspHoneyPotStatisticsResponseSuspHoneyPotStatisticsResponseItem["Count"].isNull())
+			suspHoneyPotStatisticsResponseObject.count = std::stoi(valueSuspHoneyPotStatisticsResponseSuspHoneyPotStatisticsResponseItem["Count"].asString());
 		suspHoneyPotStatisticsResponse_.push_back(suspHoneyPotStatisticsResponseObject);
 	}
 

@@ -36,8 +36,8 @@ namespace AlibabaCloud
 				{
 					std::string filterConditions;
 					std::string conditionType;
-					std::string name;
 					std::string nameKey;
+					std::string name;
 				};
 
 
