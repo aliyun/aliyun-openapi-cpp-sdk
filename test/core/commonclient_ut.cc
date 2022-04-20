@@ -1,7 +1,8 @@
 
+#include "gtest/gtest.h"
 #include <iostream>
 #include <stdio.h>
-#include "gtest/gtest.h"
+
 #include "alibabacloud/core/Utils.h"
 #include "alibabacloud/core/Config.h"
 #include "alibabacloud/core/AlibabaCloud.h"
@@ -117,7 +118,7 @@ namespace {
     HttpRequest rr = client->buildRoaHttpRequest("cn-shanghai", cr, HttpRequest::Method::Get);
     EXPECT_TRUE(rr.method() == HttpRequest::Method::Get);
     EXPECT_TRUE(rr.header("Accept") == "application/json");
-    EXPECT_TRUE(rr.url().toString() == "https://cn-shanghai/?header_k1=header_v1");
+    EXPECT_TRUE(rr.url().toString() == "https://cn-shanghai/?query_k1=query_v1");
     EXPECT_TRUE(rr.header("Host") == "cn-shanghai");
     // Wed, 09 Jan 2019 06:32:41 GMT
     string date = "Wed, 09 Jan 2019 06:32:41 GMT";
@@ -137,8 +138,9 @@ namespace {
     cr.setScheme("http");
     cr.setHeaderParameter("Accept", "test-accept");
     cr.setHeaderParameter("Content-Type", "test-content-type");
+    cr.setQueryParameter("query_key", "query_value");
     rr = client->buildRoaHttpRequest("cn-shanghai", cr, HttpRequest::Method::Get);
-    EXPECT_TRUE(rr.url().toString() == "http://cn-shanghai/?Accept=test-accept&Content-Type=test-content-type&header_k1=header_v1");
+    EXPECT_TRUE(rr.url().toString() == "http://cn-shanghai/?query_k1=query_v1&query_key=query_value");
     EXPECT_TRUE(rr.header("Accept") == "test-accept");
     EXPECT_TRUE(rr.header("Content-Type") == "test-content-type");
 
