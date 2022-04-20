@@ -125,7 +125,7 @@ CommonClient::buildRoaHttpRequest(const std::string &endpoint,
   url.setHost(endpoint);
   url.setPath(msg.resourcePath());
 
-  auto params = msg.headerParameters();
+  auto params = msg.queryParameters();
   std::map<std::string, std::string> queryParams;
   for (const auto &p : params) {
     if (!p.second.empty())
