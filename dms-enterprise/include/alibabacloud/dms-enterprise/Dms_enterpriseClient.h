@@ -238,6 +238,8 @@
 #include "model/ListWorkFlowTemplatesResult.h"
 #include "model/ModifyDataCorrectExecSQLRequest.h"
 #include "model/ModifyDataCorrectExecSQLResult.h"
+#include "model/OfflineTaskFlowRequest.h"
+#include "model/OfflineTaskFlowResult.h"
 #include "model/PauseDataCorrectSQLJobRequest.h"
 #include "model/PauseDataCorrectSQLJobResult.h"
 #include "model/ReDeployLhDagVersionRequest.h"
@@ -603,6 +605,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyDataCorrectExecSQLResult> ModifyDataCorrectExecSQLOutcome;
 			typedef std::future<ModifyDataCorrectExecSQLOutcome> ModifyDataCorrectExecSQLOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::ModifyDataCorrectExecSQLRequest&, const ModifyDataCorrectExecSQLOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDataCorrectExecSQLAsyncHandler;
+			typedef Outcome<Error, Model::OfflineTaskFlowResult> OfflineTaskFlowOutcome;
+			typedef std::future<OfflineTaskFlowOutcome> OfflineTaskFlowOutcomeCallable;
+			typedef std::function<void(const Dms_enterpriseClient*, const Model::OfflineTaskFlowRequest&, const OfflineTaskFlowOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OfflineTaskFlowAsyncHandler;
 			typedef Outcome<Error, Model::PauseDataCorrectSQLJobResult> PauseDataCorrectSQLJobOutcome;
 			typedef std::future<PauseDataCorrectSQLJobOutcome> PauseDataCorrectSQLJobOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::PauseDataCorrectSQLJobRequest&, const PauseDataCorrectSQLJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PauseDataCorrectSQLJobAsyncHandler;
@@ -980,6 +985,9 @@ namespace AlibabaCloud
 			ModifyDataCorrectExecSQLOutcome modifyDataCorrectExecSQL(const Model::ModifyDataCorrectExecSQLRequest &request)const;
 			void modifyDataCorrectExecSQLAsync(const Model::ModifyDataCorrectExecSQLRequest& request, const ModifyDataCorrectExecSQLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyDataCorrectExecSQLOutcomeCallable modifyDataCorrectExecSQLCallable(const Model::ModifyDataCorrectExecSQLRequest& request) const;
+			OfflineTaskFlowOutcome offlineTaskFlow(const Model::OfflineTaskFlowRequest &request)const;
+			void offlineTaskFlowAsync(const Model::OfflineTaskFlowRequest& request, const OfflineTaskFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			OfflineTaskFlowOutcomeCallable offlineTaskFlowCallable(const Model::OfflineTaskFlowRequest& request) const;
 			PauseDataCorrectSQLJobOutcome pauseDataCorrectSQLJob(const Model::PauseDataCorrectSQLJobRequest &request)const;
 			void pauseDataCorrectSQLJobAsync(const Model::PauseDataCorrectSQLJobRequest& request, const PauseDataCorrectSQLJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			PauseDataCorrectSQLJobOutcomeCallable pauseDataCorrectSQLJobCallable(const Model::PauseDataCorrectSQLJobRequest& request) const;
