@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,45 +18,37 @@
 
 using AlibabaCloud::OutboundBot::Model::ListOutboundCallNumbersRequest;
 
-ListOutboundCallNumbersRequest::ListOutboundCallNumbersRequest() :
-	RpcServiceRequest("outboundbot", "2019-12-26", "ListOutboundCallNumbers")
-{
-	setMethod(HttpRequest::Method::Post);
+ListOutboundCallNumbersRequest::ListOutboundCallNumbersRequest()
+    : RpcServiceRequest("outboundbot", "2019-12-26", "ListOutboundCallNumbers") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-ListOutboundCallNumbersRequest::~ListOutboundCallNumbersRequest()
-{}
+ListOutboundCallNumbersRequest::~ListOutboundCallNumbersRequest() {}
 
-int ListOutboundCallNumbersRequest::getPageNumber()const
-{
-	return pageNumber_;
+int ListOutboundCallNumbersRequest::getPageNumber() const {
+  return pageNumber_;
 }
 
-void ListOutboundCallNumbersRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+void ListOutboundCallNumbersRequest::setPageNumber(int pageNumber) {
+  pageNumber_ = pageNumber;
+  setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
-std::string ListOutboundCallNumbersRequest::getInstanceId()const
-{
-	return instanceId_;
+std::string ListOutboundCallNumbersRequest::getInstanceId() const {
+  return instanceId_;
 }
 
-void ListOutboundCallNumbersRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+void ListOutboundCallNumbersRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-int ListOutboundCallNumbersRequest::getPageSize()const
-{
-	return pageSize_;
+int ListOutboundCallNumbersRequest::getPageSize() const {
+  return pageSize_;
 }
 
-void ListOutboundCallNumbersRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+void ListOutboundCallNumbersRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 

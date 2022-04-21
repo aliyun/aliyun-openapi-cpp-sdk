@@ -60,10 +60,10 @@ void ListOutboundCallNumbersResult::parse(const std::string &payload)
 			outboundCallNumberObject.rateLimitPeriod = outboundCallNumbersNodeListOutboundCallNumber["RateLimitPeriod"].asString();
 		outboundCallNumbers_.list.push_back(outboundCallNumberObject);
 	}
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
 	if(!value["Success"].isNull())

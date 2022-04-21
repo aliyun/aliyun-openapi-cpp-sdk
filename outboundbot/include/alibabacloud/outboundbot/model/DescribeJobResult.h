@@ -34,6 +34,23 @@ namespace AlibabaCloud
 			public:
 				struct Job
 				{
+					struct Script
+					{
+						std::string status;
+						std::string chatbotId;
+						bool miniPlaybackConfigEnabled;
+						std::string scriptDescription;
+						std::string scriptId;
+						std::string debugStatus;
+						std::string scene;
+						bool isDebugDrafted;
+						std::string name;
+						std::string industry;
+						std::string asrConfig;
+						bool isDrafted;
+						long updateTime;
+						std::string ttsConfig;
+					};
 					struct Contact
 					{
 						std::string role;
@@ -83,6 +100,7 @@ namespace AlibabaCloud
 							std::string actionParams;
 							long timestamp;
 							std::string speaker;
+							std::string sequenceId;
 						};
 						std::string status;
 						long planedTime;
@@ -104,6 +122,7 @@ namespace AlibabaCloud
 						std::string jobId;
 					};
 					std::string status;
+					Script script;
 					std::string calledNumber;
 					std::vector<Task> tasks;
 					std::string scenarioId;

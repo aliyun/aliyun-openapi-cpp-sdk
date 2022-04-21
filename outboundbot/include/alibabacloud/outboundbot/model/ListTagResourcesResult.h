@@ -44,8 +44,8 @@ namespace AlibabaCloud
 				ListTagResourcesResult();
 				explicit ListTagResourcesResult(const std::string &payload);
 				~ListTagResourcesResult();
-				std::string getMessage()const;
 				std::string getNextToken()const;
+				std::string getMessage()const;
 				std::vector<TagResource> getTagResources()const;
 				int getHttpStatusCode()const;
 				std::string getCode()const;
@@ -54,8 +54,8 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string message_;
 				std::string nextToken_;
+				std::string message_;
 				std::vector<TagResource> tagResources_;
 				int httpStatusCode_;
 				std::string code_;

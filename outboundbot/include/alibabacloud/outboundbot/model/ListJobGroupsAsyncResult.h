@@ -45,8 +45,8 @@ namespace AlibabaCloud
 						int pausedNum;
 						int failedNum;
 						long startTime;
-						int executingNum;
 						int cancelledNum;
+						int executingNum;
 						int duration;
 						int scheduling;
 						int totalCompleted;
@@ -68,8 +68,8 @@ namespace AlibabaCloud
 					std::string scriptId;
 					std::string jobGroupDescription;
 					std::string jobGroupId;
-					std::string scriptName;
 					int totalCallNum;
+					std::string scriptName;
 					long creationTime;
 					Strategy strategy;
 					ExportProgress exportProgress;

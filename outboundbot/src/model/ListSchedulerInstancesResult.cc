@@ -43,26 +43,26 @@ void ListSchedulerInstancesResult::parse(const std::string &payload)
 	for (auto valueSchedulerInstancesSchedulerInstance : allSchedulerInstancesNode)
 	{
 		SchedulerInstance schedulerInstancesObject;
-		if(!valueSchedulerInstancesSchedulerInstance["OwnerId"].isNull())
-			schedulerInstancesObject.ownerId = valueSchedulerInstancesSchedulerInstance["OwnerId"].asString();
-		if(!valueSchedulerInstancesSchedulerInstance["InstanceId"].isNull())
-			schedulerInstancesObject.instanceId = valueSchedulerInstancesSchedulerInstance["InstanceId"].asString();
 		if(!valueSchedulerInstancesSchedulerInstance["Business"].isNull())
 			schedulerInstancesObject.business = valueSchedulerInstancesSchedulerInstance["Business"].asString();
 		if(!valueSchedulerInstancesSchedulerInstance["MaxConcurrency"].isNull())
 			schedulerInstancesObject.maxConcurrency = std::stoi(valueSchedulerInstancesSchedulerInstance["MaxConcurrency"].asString());
+		if(!valueSchedulerInstancesSchedulerInstance["InstanceId"].isNull())
+			schedulerInstancesObject.instanceId = valueSchedulerInstancesSchedulerInstance["InstanceId"].asString();
 		if(!valueSchedulerInstancesSchedulerInstance["BaseStrategy"].isNull())
 			schedulerInstancesObject.baseStrategy = valueSchedulerInstancesSchedulerInstance["BaseStrategy"].asString();
+		if(!valueSchedulerInstancesSchedulerInstance["OwnerId"].isNull())
+			schedulerInstancesObject.ownerId = valueSchedulerInstancesSchedulerInstance["OwnerId"].asString();
 		schedulerInstances_.push_back(schedulerInstancesObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
+	if(!value["HttpStatusCode"].isNull())
+		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
-	if(!value["HttpStatusCode"].isNull())
-		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

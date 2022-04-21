@@ -59,10 +59,10 @@ void StartJobResult::parse(const std::string &payload)
 			callIdsObject.value = valueCallIdsKeyValuePair["Value"].asString();
 		callIds_.push_back(callIdsObject);
 	}
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
 	if(!value["Success"].isNull())

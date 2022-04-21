@@ -50,36 +50,36 @@ void QueryScriptsByStatusResult::parse(const std::string &payload)
 	for (auto scriptsNodeListScript : allListNode)
 	{
 		Scripts::Script scriptObject;
-		if(!scriptsNodeListScript["AppliedVersion"].isNull())
-			scriptObject.appliedVersion = scriptsNodeListScript["AppliedVersion"].asString();
-		if(!scriptsNodeListScript["DebugStatus"].isNull())
-			scriptObject.debugStatus = scriptsNodeListScript["DebugStatus"].asString();
-		if(!scriptsNodeListScript["DebugVersion"].isNull())
-			scriptObject.debugVersion = scriptsNodeListScript["DebugVersion"].asString();
-		if(!scriptsNodeListScript["Industry"].isNull())
-			scriptObject.industry = scriptsNodeListScript["Industry"].asString();
-		if(!scriptsNodeListScript["IsDebugDrafted"].isNull())
-			scriptObject.isDebugDrafted = scriptsNodeListScript["IsDebugDrafted"].asString() == "true";
-		if(!scriptsNodeListScript["IsDrafted"].isNull())
-			scriptObject.isDrafted = scriptsNodeListScript["IsDrafted"].asString() == "true";
-		if(!scriptsNodeListScript["Scene"].isNull())
-			scriptObject.scene = scriptsNodeListScript["Scene"].asString();
-		if(!scriptsNodeListScript["ScriptDescription"].isNull())
-			scriptObject.scriptDescription = scriptsNodeListScript["ScriptDescription"].asString();
-		if(!scriptsNodeListScript["ScriptId"].isNull())
-			scriptObject.scriptId = scriptsNodeListScript["ScriptId"].asString();
-		if(!scriptsNodeListScript["ScriptName"].isNull())
-			scriptObject.scriptName = scriptsNodeListScript["ScriptName"].asString();
 		if(!scriptsNodeListScript["Status"].isNull())
 			scriptObject.status = scriptsNodeListScript["Status"].asString();
 		if(!scriptsNodeListScript["UpdateTime"].isNull())
 			scriptObject.updateTime = std::stol(scriptsNodeListScript["UpdateTime"].asString());
+		if(!scriptsNodeListScript["ScriptId"].isNull())
+			scriptObject.scriptId = scriptsNodeListScript["ScriptId"].asString();
+		if(!scriptsNodeListScript["AppliedVersion"].isNull())
+			scriptObject.appliedVersion = scriptsNodeListScript["AppliedVersion"].asString();
+		if(!scriptsNodeListScript["IsDebugDrafted"].isNull())
+			scriptObject.isDebugDrafted = scriptsNodeListScript["IsDebugDrafted"].asString() == "true";
+		if(!scriptsNodeListScript["Industry"].isNull())
+			scriptObject.industry = scriptsNodeListScript["Industry"].asString();
+		if(!scriptsNodeListScript["ScriptDescription"].isNull())
+			scriptObject.scriptDescription = scriptsNodeListScript["ScriptDescription"].asString();
+		if(!scriptsNodeListScript["IsDrafted"].isNull())
+			scriptObject.isDrafted = scriptsNodeListScript["IsDrafted"].asString() == "true";
+		if(!scriptsNodeListScript["DebugStatus"].isNull())
+			scriptObject.debugStatus = scriptsNodeListScript["DebugStatus"].asString();
+		if(!scriptsNodeListScript["DebugVersion"].isNull())
+			scriptObject.debugVersion = scriptsNodeListScript["DebugVersion"].asString();
+		if(!scriptsNodeListScript["Scene"].isNull())
+			scriptObject.scene = scriptsNodeListScript["Scene"].asString();
+		if(!scriptsNodeListScript["ScriptName"].isNull())
+			scriptObject.scriptName = scriptsNodeListScript["ScriptName"].asString();
 		scripts_.list.push_back(scriptObject);
 	}
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
 	if(!value["Success"].isNull())

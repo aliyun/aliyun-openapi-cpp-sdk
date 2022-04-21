@@ -39,16 +39,16 @@ void GetVersionResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["HttpStatusCode"].isNull())
+		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["Version"].isNull())
+		version_ = value["Version"].asString();
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
-	if(!value["HttpStatusCode"].isNull())
-		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
-	if(!value["Version"].isNull())
-		version_ = value["Version"].asString();
 
 }
 

@@ -50,22 +50,22 @@ void ListScriptPublishHistoriesResult::parse(const std::string &payload)
 	for (auto scriptPublishHistoriesNodeListPublishHistory : allListNode)
 	{
 		ScriptPublishHistories::PublishHistory publishHistoryObject;
-		if(!scriptPublishHistoriesNodeListPublishHistory["Description"].isNull())
-			publishHistoryObject.description = scriptPublishHistoriesNodeListPublishHistory["Description"].asString();
-		if(!scriptPublishHistoriesNodeListPublishHistory["InstanceId"].isNull())
-			publishHistoryObject.instanceId = scriptPublishHistoriesNodeListPublishHistory["InstanceId"].asString();
 		if(!scriptPublishHistoriesNodeListPublishHistory["PublishTime"].isNull())
 			publishHistoryObject.publishTime = std::stol(scriptPublishHistoriesNodeListPublishHistory["PublishTime"].asString());
+		if(!scriptPublishHistoriesNodeListPublishHistory["InstanceId"].isNull())
+			publishHistoryObject.instanceId = scriptPublishHistoriesNodeListPublishHistory["InstanceId"].asString();
 		if(!scriptPublishHistoriesNodeListPublishHistory["ScriptId"].isNull())
 			publishHistoryObject.scriptId = scriptPublishHistoriesNodeListPublishHistory["ScriptId"].asString();
+		if(!scriptPublishHistoriesNodeListPublishHistory["Description"].isNull())
+			publishHistoryObject.description = scriptPublishHistoriesNodeListPublishHistory["Description"].asString();
 		if(!scriptPublishHistoriesNodeListPublishHistory["ScriptVersion"].isNull())
 			publishHistoryObject.scriptVersion = scriptPublishHistoriesNodeListPublishHistory["ScriptVersion"].asString();
 		scriptPublishHistories_.list.push_back(publishHistoryObject);
 	}
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
 	if(!value["Success"].isNull())

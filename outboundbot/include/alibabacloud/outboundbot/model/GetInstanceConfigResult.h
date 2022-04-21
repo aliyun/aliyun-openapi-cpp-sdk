@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					struct InstanceConfig
 					{
+						long esAllDataKeepDay;
 						bool newBargeInSystemSwitch;
 						bool searchTaskFunctionSwitch;
 						bool miniPlaybackSystemSwitch;

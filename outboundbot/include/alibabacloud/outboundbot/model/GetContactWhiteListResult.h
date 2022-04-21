@@ -42,8 +42,8 @@ namespace AlibabaCloud
 						std::string _operator;
 						std::string creator;
 						std::string contactWhiteListId;
-						std::string name;
 						std::string remark;
+						std::string name;
 					};
 					int totalCount;
 					int pageSize;

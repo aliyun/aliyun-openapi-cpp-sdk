@@ -39,18 +39,18 @@ void GetConcurrentConversationQuotaResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
-	if(!value["MaxConcurrent"].isNull())
-		maxConcurrent_ = std::stoi(value["MaxConcurrent"].asString());
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
 	if(!value["RemainingConcurrent"].isNull())
 		remainingConcurrent_ = std::stoi(value["RemainingConcurrent"].asString());
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
+	if(!value["MaxConcurrent"].isNull())
+		maxConcurrent_ = std::stoi(value["MaxConcurrent"].asString());
 
 }
 

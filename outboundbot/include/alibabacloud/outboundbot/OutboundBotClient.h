@@ -134,6 +134,8 @@
 #include "model/DuplicateScriptResult.h"
 #include "model/ExportScriptRequest.h"
 #include "model/ExportScriptResult.h"
+#include "model/GenerateUploadUrlRequest.h"
+#include "model/GenerateUploadUrlResult.h"
 #include "model/GetAfterAnswerDelayPlaybackRequest.h"
 #include "model/GetAfterAnswerDelayPlaybackResult.h"
 #include "model/GetAsrServerInfoRequest.h"
@@ -463,6 +465,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ExportScriptResult> ExportScriptOutcome;
 			typedef std::future<ExportScriptOutcome> ExportScriptOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::ExportScriptRequest&, const ExportScriptOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ExportScriptAsyncHandler;
+			typedef Outcome<Error, Model::GenerateUploadUrlResult> GenerateUploadUrlOutcome;
+			typedef std::future<GenerateUploadUrlOutcome> GenerateUploadUrlOutcomeCallable;
+			typedef std::function<void(const OutboundBotClient*, const Model::GenerateUploadUrlRequest&, const GenerateUploadUrlOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GenerateUploadUrlAsyncHandler;
 			typedef Outcome<Error, Model::GetAfterAnswerDelayPlaybackResult> GetAfterAnswerDelayPlaybackOutcome;
 			typedef std::future<GetAfterAnswerDelayPlaybackOutcome> GetAfterAnswerDelayPlaybackOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::GetAfterAnswerDelayPlaybackRequest&, const GetAfterAnswerDelayPlaybackOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAfterAnswerDelayPlaybackAsyncHandler;
@@ -864,6 +869,9 @@ namespace AlibabaCloud
 			ExportScriptOutcome exportScript(const Model::ExportScriptRequest &request)const;
 			void exportScriptAsync(const Model::ExportScriptRequest& request, const ExportScriptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ExportScriptOutcomeCallable exportScriptCallable(const Model::ExportScriptRequest& request) const;
+			GenerateUploadUrlOutcome generateUploadUrl(const Model::GenerateUploadUrlRequest &request)const;
+			void generateUploadUrlAsync(const Model::GenerateUploadUrlRequest& request, const GenerateUploadUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GenerateUploadUrlOutcomeCallable generateUploadUrlCallable(const Model::GenerateUploadUrlRequest& request) const;
 			GetAfterAnswerDelayPlaybackOutcome getAfterAnswerDelayPlayback(const Model::GetAfterAnswerDelayPlaybackRequest &request)const;
 			void getAfterAnswerDelayPlaybackAsync(const Model::GetAfterAnswerDelayPlaybackRequest& request, const GetAfterAnswerDelayPlaybackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetAfterAnswerDelayPlaybackOutcomeCallable getAfterAnswerDelayPlaybackCallable(const Model::GetAfterAnswerDelayPlaybackRequest& request) const;

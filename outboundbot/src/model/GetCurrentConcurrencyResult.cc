@@ -39,18 +39,18 @@ void GetCurrentConcurrencyResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["HttpStatusCode"].isNull())
+		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["CurrentConcurrency"].isNull())
+		currentConcurrency_ = std::stoi(value["CurrentConcurrency"].asString());
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
-	if(!value["HttpStatusCode"].isNull())
-		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 	if(!value["MaxConcurrentConversation"].isNull())
 		maxConcurrentConversation_ = std::stoi(value["MaxConcurrentConversation"].asString());
-	if(!value["CurrentConcurrency"].isNull())
-		currentConcurrency_ = std::stoi(value["CurrentConcurrency"].asString());
 	if(!value["InstanceId"].isNull())
 		instanceId_ = value["InstanceId"].asString();
 

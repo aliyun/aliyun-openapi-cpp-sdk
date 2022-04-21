@@ -164,6 +164,8 @@ void DescribeJobResult::parse(const std::string &payload)
 				conversationObject.speaker = jobNodeTasksTaskConversationConversationDetail["Speaker"].asString();
 			if(!jobNodeTasksTaskConversationConversationDetail["Script"].isNull())
 				conversationObject.script = jobNodeTasksTaskConversationConversationDetail["Script"].asString();
+			if(!jobNodeTasksTaskConversationConversationDetail["SequenceId"].isNull())
+				conversationObject.sequenceId = jobNodeTasksTaskConversationConversationDetail["SequenceId"].asString();
 			auto allSummary1Node = jobNodeTasksTaskConversationConversationDetail["Summary"]["SummaryItem"];
 			for (auto jobNodeTasksTaskConversationConversationDetailSummarySummaryItem : allSummary1Node)
 			{
@@ -197,6 +199,35 @@ void DescribeJobResult::parse(const std::string &payload)
 			taskObject.contact3.referenceId = contact3Node["ReferenceId"].asString();
 		job_.tasks.push_back(taskObject);
 	}
+	auto scriptNode = jobNode["Script"];
+	if(!scriptNode["Status"].isNull())
+		job_.script.status = scriptNode["Status"].asString();
+	if(!scriptNode["UpdateTime"].isNull())
+		job_.script.updateTime = std::stol(scriptNode["UpdateTime"].asString());
+	if(!scriptNode["ChatbotId"].isNull())
+		job_.script.chatbotId = scriptNode["ChatbotId"].asString();
+	if(!scriptNode["ScriptId"].isNull())
+		job_.script.scriptId = scriptNode["ScriptId"].asString();
+	if(!scriptNode["IsDebugDrafted"].isNull())
+		job_.script.isDebugDrafted = scriptNode["IsDebugDrafted"].asString() == "true";
+	if(!scriptNode["Industry"].isNull())
+		job_.script.industry = scriptNode["Industry"].asString();
+	if(!scriptNode["ScriptDescription"].isNull())
+		job_.script.scriptDescription = scriptNode["ScriptDescription"].asString();
+	if(!scriptNode["MiniPlaybackConfigEnabled"].isNull())
+		job_.script.miniPlaybackConfigEnabled = scriptNode["MiniPlaybackConfigEnabled"].asString() == "true";
+	if(!scriptNode["IsDrafted"].isNull())
+		job_.script.isDrafted = scriptNode["IsDrafted"].asString() == "true";
+	if(!scriptNode["TtsConfig"].isNull())
+		job_.script.ttsConfig = scriptNode["TtsConfig"].asString();
+	if(!scriptNode["DebugStatus"].isNull())
+		job_.script.debugStatus = scriptNode["DebugStatus"].asString();
+	if(!scriptNode["AsrConfig"].isNull())
+		job_.script.asrConfig = scriptNode["AsrConfig"].asString();
+	if(!scriptNode["Scene"].isNull())
+		job_.script.scene = scriptNode["Scene"].asString();
+	if(!scriptNode["Name"].isNull())
+		job_.script.name = scriptNode["Name"].asString();
 		auto allCallingNumbers = jobNode["CallingNumbers"]["String"];
 		for (auto value : allCallingNumbers)
 			job_.callingNumbers.push_back(value.asString());

@@ -47,6 +47,8 @@ void GetInstanceConfigResult::parse(const std::string &payload)
 		data_.instanceConfig.newBargeInSystemSwitch = instanceConfigNode["NewBargeInSystemSwitch"].asString() == "true";
 	if(!instanceConfigNode["SearchTaskFunctionSwitch"].isNull())
 		data_.instanceConfig.searchTaskFunctionSwitch = instanceConfigNode["SearchTaskFunctionSwitch"].asString() == "true";
+	if(!instanceConfigNode["EsAllDataKeepDay"].isNull())
+		data_.instanceConfig.esAllDataKeepDay = std::stol(instanceConfigNode["EsAllDataKeepDay"].asString());
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 	if(!value["Code"].isNull())

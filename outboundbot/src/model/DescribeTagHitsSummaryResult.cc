@@ -43,14 +43,14 @@ void DescribeTagHitsSummaryResult::parse(const std::string &payload)
 	for (auto valueTagGroupsTagGroup : allTagGroupsNode)
 	{
 		TagGroup tagGroupsObject;
-		if(!valueTagGroupsTagGroup["Id"].isNull())
-			tagGroupsObject.id = valueTagGroupsTagGroup["Id"].asString();
-		if(!valueTagGroupsTagGroup["ScriptId"].isNull())
-			tagGroupsObject.scriptId = valueTagGroupsTagGroup["ScriptId"].asString();
-		if(!valueTagGroupsTagGroup["TagGroup"].isNull())
-			tagGroupsObject.tagGroup = valueTagGroupsTagGroup["TagGroup"].asString();
 		if(!valueTagGroupsTagGroup["TagGroupIndex"].isNull())
 			tagGroupsObject.tagGroupIndex = std::stoi(valueTagGroupsTagGroup["TagGroupIndex"].asString());
+		if(!valueTagGroupsTagGroup["TagGroup"].isNull())
+			tagGroupsObject.tagGroup = valueTagGroupsTagGroup["TagGroup"].asString();
+		if(!valueTagGroupsTagGroup["ScriptId"].isNull())
+			tagGroupsObject.scriptId = valueTagGroupsTagGroup["ScriptId"].asString();
+		if(!valueTagGroupsTagGroup["Id"].isNull())
+			tagGroupsObject.id = valueTagGroupsTagGroup["Id"].asString();
 		tagGroups_.push_back(tagGroupsObject);
 	}
 	auto allTagHitsListNode = value["TagHitsList"]["TagHits"];
@@ -65,10 +65,10 @@ void DescribeTagHitsSummaryResult::parse(const std::string &payload)
 			tagHitsListObject.tagName = valueTagHitsListTagHits["TagName"].asString();
 		tagHitsList_.push_back(tagHitsListObject);
 	}
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
 	if(!value["Success"].isNull())

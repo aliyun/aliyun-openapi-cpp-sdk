@@ -40,51 +40,51 @@ void DescribeGroupExecutingInfoResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto executingInfoNode = value["ExecutingInfo"];
-	if(!executingInfoNode["StartTime"].isNull())
-		executingInfo_.startTime = std::stol(executingInfoNode["StartTime"].asString());
 	if(!executingInfoNode["EndTime"].isNull())
 		executingInfo_.endTime = std::stol(executingInfoNode["EndTime"].asString());
-	if(!executingInfoNode["CallFailedNum"].isNull())
-		executingInfo_.callFailedNum = std::stoi(executingInfoNode["CallFailedNum"].asString());
-	if(!executingInfoNode["CallNum"].isNull())
-		executingInfo_.callNum = std::stoi(executingInfoNode["CallNum"].asString());
-	if(!executingInfoNode["CreatorName"].isNull())
-		executingInfo_.creatorName = executingInfoNode["CreatorName"].asString();
-	if(!executingInfoNode["FinishedNum"].isNull())
-		executingInfo_.finishedNum = std::stoi(executingInfoNode["FinishedNum"].asString());
+	if(!executingInfoNode["StartTime"].isNull())
+		executingInfo_.startTime = std::stol(executingInfoNode["StartTime"].asString());
 	if(!executingInfoNode["HangUpByClientNum"].isNull())
 		executingInfo_.hangUpByClientNum = std::stoi(executingInfoNode["HangUpByClientNum"].asString());
-	if(!executingInfoNode["TransferByIntentNum"].isNull())
-		executingInfo_.transferByIntentNum = std::stoi(executingInfoNode["TransferByIntentNum"].asString());
+	if(!executingInfoNode["CreatorName"].isNull())
+		executingInfo_.creatorName = executingInfoNode["CreatorName"].asString();
 	if(!executingInfoNode["TransferByNoAnswer"].isNull())
 		executingInfo_.transferByNoAnswer = std::stoi(executingInfoNode["TransferByNoAnswer"].asString());
+	if(!executingInfoNode["FinishedNum"].isNull())
+		executingInfo_.finishedNum = std::stoi(executingInfoNode["FinishedNum"].asString());
+	if(!executingInfoNode["TransferByIntentNum"].isNull())
+		executingInfo_.transferByIntentNum = std::stoi(executingInfoNode["TransferByIntentNum"].asString());
+	if(!executingInfoNode["CallNum"].isNull())
+		executingInfo_.callNum = std::stoi(executingInfoNode["CallNum"].asString());
+	if(!executingInfoNode["CallFailedNum"].isNull())
+		executingInfo_.callFailedNum = std::stoi(executingInfoNode["CallFailedNum"].asString());
 	auto jobsProgressNode = executingInfoNode["JobsProgress"];
-	if(!jobsProgressNode["TotalJobs"].isNull())
-		executingInfo_.jobsProgress.totalJobs = std::stoi(jobsProgressNode["TotalJobs"].asString());
+	if(!jobsProgressNode["SchedulingNum"].isNull())
+		executingInfo_.jobsProgress.schedulingNum = std::stoi(jobsProgressNode["SchedulingNum"].asString());
 	if(!jobsProgressNode["TotalCompletedNum"].isNull())
 		executingInfo_.jobsProgress.totalCompletedNum = std::stoi(jobsProgressNode["TotalCompletedNum"].asString());
 	if(!jobsProgressNode["FailedNum"].isNull())
 		executingInfo_.jobsProgress.failedNum = std::stoi(jobsProgressNode["FailedNum"].asString());
+	if(!jobsProgressNode["PausedNum"].isNull())
+		executingInfo_.jobsProgress.pausedNum = std::stoi(jobsProgressNode["PausedNum"].asString());
 	if(!jobsProgressNode["CancelledNum"].isNull())
 		executingInfo_.jobsProgress.cancelledNum = std::stoi(jobsProgressNode["CancelledNum"].asString());
+	if(!jobsProgressNode["TotalJobs"].isNull())
+		executingInfo_.jobsProgress.totalJobs = std::stoi(jobsProgressNode["TotalJobs"].asString());
 	if(!jobsProgressNode["TotalNotAnsweredNum"].isNull())
 		executingInfo_.jobsProgress.totalNotAnsweredNum = std::stoi(jobsProgressNode["TotalNotAnsweredNum"].asString());
 	if(!jobsProgressNode["ExecutingNum"].isNull())
 		executingInfo_.jobsProgress.executingNum = std::stoi(jobsProgressNode["ExecutingNum"].asString());
-	if(!jobsProgressNode["PausedNum"].isNull())
-		executingInfo_.jobsProgress.pausedNum = std::stoi(jobsProgressNode["PausedNum"].asString());
-	if(!jobsProgressNode["SchedulingNum"].isNull())
-		executingInfo_.jobsProgress.schedulingNum = std::stoi(jobsProgressNode["SchedulingNum"].asString());
+	if(!value["HttpStatusCode"].isNull())
+		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["GroupId"].isNull())
+		groupId_ = value["GroupId"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
-	if(!value["HttpStatusCode"].isNull())
-		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
-	if(!value["GroupId"].isNull())
-		groupId_ = value["GroupId"].asString();
 	if(!value["InstanceId"].isNull())
 		instanceId_ = value["InstanceId"].asString();
 

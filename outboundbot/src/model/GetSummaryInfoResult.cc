@@ -43,24 +43,24 @@ void GetSummaryInfoResult::parse(const std::string &payload)
 	for (auto valueAgentBotInstanceSummaryListAgentBotInstanceSummary : allAgentBotInstanceSummaryListNode)
 	{
 		AgentBotInstanceSummary agentBotInstanceSummaryListObject;
-		if(!valueAgentBotInstanceSummaryListAgentBotInstanceSummary["TotalCallTime"].isNull())
-			agentBotInstanceSummaryListObject.totalCallTime = std::stol(valueAgentBotInstanceSummaryListAgentBotInstanceSummary["TotalCallTime"].asString());
 		if(!valueAgentBotInstanceSummaryListAgentBotInstanceSummary["TotalCallCount"].isNull())
 			agentBotInstanceSummaryListObject.totalCallCount = std::stol(valueAgentBotInstanceSummaryListAgentBotInstanceSummary["TotalCallCount"].asString());
-		if(!valueAgentBotInstanceSummaryListAgentBotInstanceSummary["UsedRecordingStorageSpace"].isNull())
-			agentBotInstanceSummaryListObject.usedRecordingStorageSpace = std::stoi(valueAgentBotInstanceSummaryListAgentBotInstanceSummary["UsedRecordingStorageSpace"].asString());
 		if(!valueAgentBotInstanceSummaryListAgentBotInstanceSummary["InstanceId"].isNull())
 			agentBotInstanceSummaryListObject.instanceId = valueAgentBotInstanceSummaryListAgentBotInstanceSummary["InstanceId"].asString();
+		if(!valueAgentBotInstanceSummaryListAgentBotInstanceSummary["TotalCallTime"].isNull())
+			agentBotInstanceSummaryListObject.totalCallTime = std::stol(valueAgentBotInstanceSummaryListAgentBotInstanceSummary["TotalCallTime"].asString());
+		if(!valueAgentBotInstanceSummaryListAgentBotInstanceSummary["UsedRecordingStorageSpace"].isNull())
+			agentBotInstanceSummaryListObject.usedRecordingStorageSpace = std::stoi(valueAgentBotInstanceSummaryListAgentBotInstanceSummary["UsedRecordingStorageSpace"].asString());
 		agentBotInstanceSummaryList_.push_back(agentBotInstanceSummaryListObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
+	if(!value["HttpStatusCode"].isNull())
+		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
-	if(!value["HttpStatusCode"].isNull())
-		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

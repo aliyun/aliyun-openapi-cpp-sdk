@@ -2067,6 +2067,42 @@ OutboundBotClient::ExportScriptOutcomeCallable OutboundBotClient::exportScriptCa
 	return task->get_future();
 }
 
+OutboundBotClient::GenerateUploadUrlOutcome OutboundBotClient::generateUploadUrl(const GenerateUploadUrlRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GenerateUploadUrlOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GenerateUploadUrlOutcome(GenerateUploadUrlResult(outcome.result()));
+	else
+		return GenerateUploadUrlOutcome(outcome.error());
+}
+
+void OutboundBotClient::generateUploadUrlAsync(const GenerateUploadUrlRequest& request, const GenerateUploadUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, generateUploadUrl(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OutboundBotClient::GenerateUploadUrlOutcomeCallable OutboundBotClient::generateUploadUrlCallable(const GenerateUploadUrlRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GenerateUploadUrlOutcome()>>(
+			[this, request]()
+			{
+			return this->generateUploadUrl(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 OutboundBotClient::GetAfterAnswerDelayPlaybackOutcome OutboundBotClient::getAfterAnswerDelayPlayback(const GetAfterAnswerDelayPlaybackRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

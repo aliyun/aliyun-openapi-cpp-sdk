@@ -50,28 +50,28 @@ void ListIntentsResult::parse(const std::string &payload)
 	for (auto intentsNodeListIntent : allListNode)
 	{
 		Intents::Intent intentObject;
-		if(!intentsNodeListIntent["CreateTime"].isNull())
-			intentObject.createTime = std::stol(intentsNodeListIntent["CreateTime"].asString());
+		if(!intentsNodeListIntent["Utterances"].isNull())
+			intentObject.utterances = intentsNodeListIntent["Utterances"].asString();
 		if(!intentsNodeListIntent["IntentDescription"].isNull())
 			intentObject.intentDescription = intentsNodeListIntent["IntentDescription"].asString();
-		if(!intentsNodeListIntent["IntentId"].isNull())
-			intentObject.intentId = intentsNodeListIntent["IntentId"].asString();
-		if(!intentsNodeListIntent["IntentName"].isNull())
-			intentObject.intentName = intentsNodeListIntent["IntentName"].asString();
+		if(!intentsNodeListIntent["UpdateTime"].isNull())
+			intentObject.updateTime = std::stol(intentsNodeListIntent["UpdateTime"].asString());
+		if(!intentsNodeListIntent["CreateTime"].isNull())
+			intentObject.createTime = std::stol(intentsNodeListIntent["CreateTime"].asString());
 		if(!intentsNodeListIntent["Keywords"].isNull())
 			intentObject.keywords = intentsNodeListIntent["Keywords"].asString();
 		if(!intentsNodeListIntent["ScriptId"].isNull())
 			intentObject.scriptId = intentsNodeListIntent["ScriptId"].asString();
-		if(!intentsNodeListIntent["UpdateTime"].isNull())
-			intentObject.updateTime = std::stol(intentsNodeListIntent["UpdateTime"].asString());
-		if(!intentsNodeListIntent["Utterances"].isNull())
-			intentObject.utterances = intentsNodeListIntent["Utterances"].asString();
+		if(!intentsNodeListIntent["IntentId"].isNull())
+			intentObject.intentId = intentsNodeListIntent["IntentId"].asString();
+		if(!intentsNodeListIntent["IntentName"].isNull())
+			intentObject.intentName = intentsNodeListIntent["IntentName"].asString();
 		intents_.list.push_back(intentObject);
 	}
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
 	if(!value["Success"].isNull())

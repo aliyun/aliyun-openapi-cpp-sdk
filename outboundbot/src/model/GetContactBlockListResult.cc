@@ -52,30 +52,30 @@ void GetContactBlockListResult::parse(const std::string &payload)
 		ContactBlocklistList::ContactBlockList contactBlockListObject;
 		if(!contactBlocklistListNodeListContactBlockList["ContactBlockListId"].isNull())
 			contactBlockListObject.contactBlockListId = contactBlocklistListNodeListContactBlockList["ContactBlockListId"].asString();
-		if(!contactBlocklistListNodeListContactBlockList["InstanceId"].isNull())
-			contactBlockListObject.instanceId = contactBlocklistListNodeListContactBlockList["InstanceId"].asString();
 		if(!contactBlocklistListNodeListContactBlockList["CreationTime"].isNull())
 			contactBlockListObject.creationTime = std::stol(contactBlocklistListNodeListContactBlockList["CreationTime"].asString());
+		if(!contactBlocklistListNodeListContactBlockList["Remark"].isNull())
+			contactBlockListObject.remark = contactBlocklistListNodeListContactBlockList["Remark"].asString();
 		if(!contactBlocklistListNodeListContactBlockList["PhoneNumber"].isNull())
 			contactBlockListObject.phoneNumber = contactBlocklistListNodeListContactBlockList["PhoneNumber"].asString();
+		if(!contactBlocklistListNodeListContactBlockList["Operator"].isNull())
+			contactBlockListObject._operator = contactBlocklistListNodeListContactBlockList["Operator"].asString();
+		if(!contactBlocklistListNodeListContactBlockList["InstanceId"].isNull())
+			contactBlockListObject.instanceId = contactBlocklistListNodeListContactBlockList["InstanceId"].asString();
 		if(!contactBlocklistListNodeListContactBlockList["Name"].isNull())
 			contactBlockListObject.name = contactBlocklistListNodeListContactBlockList["Name"].asString();
 		if(!contactBlocklistListNodeListContactBlockList["Creator"].isNull())
 			contactBlockListObject.creator = contactBlocklistListNodeListContactBlockList["Creator"].asString();
-		if(!contactBlocklistListNodeListContactBlockList["Operator"].isNull())
-			contactBlockListObject._operator = contactBlocklistListNodeListContactBlockList["Operator"].asString();
-		if(!contactBlocklistListNodeListContactBlockList["Remark"].isNull())
-			contactBlockListObject.remark = contactBlocklistListNodeListContactBlockList["Remark"].asString();
 		contactBlocklistList_.list.push_back(contactBlockListObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
+	if(!value["HttpStatusCode"].isNull())
+		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
-	if(!value["HttpStatusCode"].isNull())
-		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

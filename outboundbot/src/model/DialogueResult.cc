@@ -48,10 +48,10 @@ void DialogueResult::parse(const std::string &payload)
 		feedback_.content = feedbackNode["Content"].asString();
 	if(!feedbackNode["Interruptible"].isNull())
 		feedback_.interruptible = feedbackNode["Interruptible"].asString() == "true";
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
 	if(!value["Success"].isNull())

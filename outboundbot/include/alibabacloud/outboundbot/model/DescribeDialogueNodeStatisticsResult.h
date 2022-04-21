@@ -34,8 +34,8 @@ namespace AlibabaCloud
 			public:
 				struct NoAnswerDialogueNode
 				{
-					std::string instanceId;
 					std::string nodeName;
+					std::string instanceId;
 					std::string nodeId;
 					int hitNum;
 					int hangUpNum;

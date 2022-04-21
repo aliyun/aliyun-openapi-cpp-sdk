@@ -43,26 +43,26 @@ void GetBaseStrategyPeriodResult::parse(const std::string &payload)
 	for (auto valueWorkingTimeTimeFrame : allWorkingTimeNode)
 	{
 		TimeFrame workingTimeObject;
-		if(!valueWorkingTimeTimeFrame["BeginTimeMillis"].isNull())
-			workingTimeObject.beginTimeMillis = std::stol(valueWorkingTimeTimeFrame["BeginTimeMillis"].asString());
-		if(!valueWorkingTimeTimeFrame["BeginTime"].isNull())
-			workingTimeObject.beginTime = valueWorkingTimeTimeFrame["BeginTime"].asString();
-		if(!valueWorkingTimeTimeFrame["EndTimeMillis"].isNull())
-			workingTimeObject.endTimeMillis = std::stol(valueWorkingTimeTimeFrame["EndTimeMillis"].asString());
 		if(!valueWorkingTimeTimeFrame["EndTime"].isNull())
 			workingTimeObject.endTime = valueWorkingTimeTimeFrame["EndTime"].asString();
+		if(!valueWorkingTimeTimeFrame["BeginTimeMillis"].isNull())
+			workingTimeObject.beginTimeMillis = std::stol(valueWorkingTimeTimeFrame["BeginTimeMillis"].asString());
+		if(!valueWorkingTimeTimeFrame["EndTimeMillis"].isNull())
+			workingTimeObject.endTimeMillis = std::stol(valueWorkingTimeTimeFrame["EndTimeMillis"].asString());
+		if(!valueWorkingTimeTimeFrame["BeginTime"].isNull())
+			workingTimeObject.beginTime = valueWorkingTimeTimeFrame["BeginTime"].asString();
 		workingTime_.push_back(workingTimeObject);
 	}
+	if(!value["HttpStatusCode"].isNull())
+		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["OnlyWeekdays"].isNull())
+		onlyWeekdays_ = value["OnlyWeekdays"].asString() == "true";
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
-	if(!value["HttpStatusCode"].isNull())
-		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
-	if(!value["OnlyWeekdays"].isNull())
-		onlyWeekdays_ = value["OnlyWeekdays"].asString() == "true";
 
 }
 

@@ -133,6 +133,8 @@ set(outboundbot_public_header_model
 	include/alibabacloud/outboundbot/model/DuplicateScriptResult.h
 	include/alibabacloud/outboundbot/model/ExportScriptRequest.h
 	include/alibabacloud/outboundbot/model/ExportScriptResult.h
+	include/alibabacloud/outboundbot/model/GenerateUploadUrlRequest.h
+	include/alibabacloud/outboundbot/model/GenerateUploadUrlResult.h
 	include/alibabacloud/outboundbot/model/GetAfterAnswerDelayPlaybackRequest.h
 	include/alibabacloud/outboundbot/model/GetAfterAnswerDelayPlaybackResult.h
 	include/alibabacloud/outboundbot/model/GetAsrServerInfoRequest.h
@@ -400,6 +402,8 @@ set(outboundbot_src
 	src/model/DuplicateScriptResult.cc
 	src/model/ExportScriptRequest.cc
 	src/model/ExportScriptResult.cc
+	src/model/GenerateUploadUrlRequest.cc
+	src/model/GenerateUploadUrlResult.cc
 	src/model/GetAfterAnswerDelayPlaybackRequest.cc
 	src/model/GetAfterAnswerDelayPlaybackResult.cc
 	src/model/GetAsrServerInfoRequest.cc

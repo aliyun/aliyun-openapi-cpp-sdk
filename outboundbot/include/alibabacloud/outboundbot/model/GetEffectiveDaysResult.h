@@ -37,8 +37,8 @@ namespace AlibabaCloud
 				GetEffectiveDaysResult();
 				explicit GetEffectiveDaysResult(const std::string &payload);
 				~GetEffectiveDaysResult();
-				std::string getMessage()const;
 				int getEffectiveDays()const;
+				std::string getMessage()const;
 				int getHttpStatusCode()const;
 				std::string getCode()const;
 				bool getSuccess()const;
@@ -46,8 +46,8 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string message_;
 				int effectiveDays_;
+				std::string message_;
 				int httpStatusCode_;
 				std::string code_;
 				bool success_;

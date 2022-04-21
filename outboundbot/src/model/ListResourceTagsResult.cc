@@ -40,12 +40,12 @@ void ListResourceTagsResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto resourceTagsNode = value["ResourceTags"];
-	if(!resourceTagsNode["TotalCount"].isNull())
-		resourceTags_.totalCount = std::stoi(resourceTagsNode["TotalCount"].asString());
 	if(!resourceTagsNode["PageNumber"].isNull())
 		resourceTags_.pageNumber = std::stoi(resourceTagsNode["PageNumber"].asString());
 	if(!resourceTagsNode["PageSize"].isNull())
 		resourceTags_.pageSize = std::stoi(resourceTagsNode["PageSize"].asString());
+	if(!resourceTagsNode["TotalCount"].isNull())
+		resourceTags_.totalCount = std::stoi(resourceTagsNode["TotalCount"].asString());
 	auto allListNode = resourceTagsNode["List"]["ResourceTag"];
 	for (auto resourceTagsNodeListResourceTag : allListNode)
 	{
@@ -56,14 +56,14 @@ void ListResourceTagsResult::parse(const std::string &payload)
 			resourceTagObject.value = resourceTagsNodeListResourceTag["Value"].asString();
 		resourceTags_.list.push_back(resourceTagObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
+	if(!value["HttpStatusCode"].isNull())
+		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
-	if(!value["HttpStatusCode"].isNull())
-		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

@@ -52,8 +52,8 @@ namespace AlibabaCloud
 					int finishedNum;
 					int callFailedNum;
 					JobsProgress jobsProgress;
-					std::string creatorName;
 					int hangUpByClientNum;
+					std::string creatorName;
 					int transferByIntentNum;
 				};
 

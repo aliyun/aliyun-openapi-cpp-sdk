@@ -77,8 +77,8 @@ namespace AlibabaCloud
 								std::string jobId;
 							};
 							std::string status;
-							std::string chatbotId;
 							long planedTime;
+							std::string chatbotId;
 							std::string calledNumber;
 							std::string scenarioId;
 							std::string taskId;

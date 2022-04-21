@@ -34,10 +34,10 @@ namespace AlibabaCloud
 			public:
 				struct Task
 				{
-					std::string calledNumber;
 					std::string jobGroupId;
-					long plannedTime;
+					std::string calledNumber;
 					int endReason;
+					long plannedTime;
 					long endTime;
 					std::string instanceId;
 					long actualTime;

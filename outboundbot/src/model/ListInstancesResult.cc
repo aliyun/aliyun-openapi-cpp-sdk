@@ -43,32 +43,32 @@ void ListInstancesResult::parse(const std::string &payload)
 	for (auto valueInstancesInstance : allInstancesNode)
 	{
 		Instance instancesObject;
-		if(!valueInstancesInstance["CallCenterInstanceId"].isNull())
-			instancesObject.callCenterInstanceId = valueInstancesInstance["CallCenterInstanceId"].asString();
 		if(!valueInstancesInstance["CreationTime"].isNull())
 			instancesObject.creationTime = std::stol(valueInstancesInstance["CreationTime"].asString());
-		if(!valueInstancesInstance["InstanceDescription"].isNull())
-			instancesObject.instanceDescription = valueInstancesInstance["InstanceDescription"].asString();
-		if(!valueInstancesInstance["InstanceId"].isNull())
-			instancesObject.instanceId = valueInstancesInstance["InstanceId"].asString();
-		if(!valueInstancesInstance["InstanceName"].isNull())
-			instancesObject.instanceName = valueInstancesInstance["InstanceName"].asString();
+		if(!valueInstancesInstance["CallCenterInstanceId"].isNull())
+			instancesObject.callCenterInstanceId = valueInstancesInstance["CallCenterInstanceId"].asString();
+		if(!valueInstancesInstance["Owner"].isNull())
+			instancesObject.owner = valueInstancesInstance["Owner"].asString();
+		if(!valueInstancesInstance["NluServiceType"].isNull())
+			instancesObject.nluServiceType = valueInstancesInstance["NluServiceType"].asString();
 		if(!valueInstancesInstance["IsTemplateContainer"].isNull())
 			instancesObject.isTemplateContainer = valueInstancesInstance["IsTemplateContainer"].asString() == "true";
-		if(!valueInstancesInstance["MaxConcurrentConversation"].isNull())
-			instancesObject.maxConcurrentConversation = std::stoi(valueInstancesInstance["MaxConcurrentConversation"].asString());
+		if(!valueInstancesInstance["InstanceId"].isNull())
+			instancesObject.instanceId = valueInstancesInstance["InstanceId"].asString();
 		if(!valueInstancesInstance["OwnerName"].isNull())
 			instancesObject.ownerName = valueInstancesInstance["OwnerName"].asString();
 		if(!valueInstancesInstance["CreatorId"].isNull())
 			instancesObject.creatorId = std::stol(valueInstancesInstance["CreatorId"].asString());
-		if(!valueInstancesInstance["CreatorName"].isNull())
-			instancesObject.creatorName = valueInstancesInstance["CreatorName"].asString();
-		if(!valueInstancesInstance["NluServiceType"].isNull())
-			instancesObject.nluServiceType = valueInstancesInstance["NluServiceType"].asString();
-		if(!valueInstancesInstance["Owner"].isNull())
-			instancesObject.owner = valueInstancesInstance["Owner"].asString();
+		if(!valueInstancesInstance["InstanceDescription"].isNull())
+			instancesObject.instanceDescription = valueInstancesInstance["InstanceDescription"].asString();
+		if(!valueInstancesInstance["InstanceName"].isNull())
+			instancesObject.instanceName = valueInstancesInstance["InstanceName"].asString();
 		if(!valueInstancesInstance["ResourceGroupId"].isNull())
 			instancesObject.resourceGroupId = valueInstancesInstance["ResourceGroupId"].asString();
+		if(!valueInstancesInstance["CreatorName"].isNull())
+			instancesObject.creatorName = valueInstancesInstance["CreatorName"].asString();
+		if(!valueInstancesInstance["MaxConcurrentConversation"].isNull())
+			instancesObject.maxConcurrentConversation = std::stoi(valueInstancesInstance["MaxConcurrentConversation"].asString());
 		auto allResourceTagsNode = valueInstancesInstance["ResourceTags"]["ResourceTag"];
 		for (auto valueInstancesInstanceResourceTagsResourceTag : allResourceTagsNode)
 		{
@@ -82,16 +82,16 @@ void ListInstancesResult::parse(const std::string &payload)
 		auto nluProfileNode = value["NluProfile"];
 		if(!nluProfileNode["AccessKey"].isNull())
 			instancesObject.nluProfile.accessKey = nluProfileNode["AccessKey"].asString();
-		if(!nluProfileNode["Endpoint"].isNull())
-			instancesObject.nluProfile.endpoint = nluProfileNode["Endpoint"].asString();
 		if(!nluProfileNode["SecretKey"].isNull())
 			instancesObject.nluProfile.secretKey = nluProfileNode["SecretKey"].asString();
+		if(!nluProfileNode["Endpoint"].isNull())
+			instancesObject.nluProfile.endpoint = nluProfileNode["Endpoint"].asString();
 		instances_.push_back(instancesObject);
 	}
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
 	if(!value["Success"].isNull())

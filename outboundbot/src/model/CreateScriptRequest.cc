@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,148 +18,116 @@
 
 using AlibabaCloud::OutboundBot::Model::CreateScriptRequest;
 
-CreateScriptRequest::CreateScriptRequest() :
-	RpcServiceRequest("outboundbot", "2019-12-26", "CreateScript")
-{
-	setMethod(HttpRequest::Method::Post);
+CreateScriptRequest::CreateScriptRequest()
+    : RpcServiceRequest("outboundbot", "2019-12-26", "CreateScript") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-CreateScriptRequest::~CreateScriptRequest()
-{}
+CreateScriptRequest::~CreateScriptRequest() {}
 
-std::string CreateScriptRequest::getTtsConfig()const
-{
-	return ttsConfig_;
+std::string CreateScriptRequest::getTtsConfig() const {
+  return ttsConfig_;
 }
 
-void CreateScriptRequest::setTtsConfig(const std::string& ttsConfig)
-{
-	ttsConfig_ = ttsConfig;
-	setParameter("TtsConfig", ttsConfig);
+void CreateScriptRequest::setTtsConfig(const std::string &ttsConfig) {
+  ttsConfig_ = ttsConfig;
+  setParameter(std::string("TtsConfig"), ttsConfig);
 }
 
-std::string CreateScriptRequest::getIndustry()const
-{
-	return industry_;
+std::string CreateScriptRequest::getIndustry() const {
+  return industry_;
 }
 
-void CreateScriptRequest::setIndustry(const std::string& industry)
-{
-	industry_ = industry;
-	setParameter("Industry", industry);
+void CreateScriptRequest::setIndustry(const std::string &industry) {
+  industry_ = industry;
+  setParameter(std::string("Industry"), industry);
 }
 
-std::string CreateScriptRequest::getScriptName()const
-{
-	return scriptName_;
+std::string CreateScriptRequest::getScriptName() const {
+  return scriptName_;
 }
 
-void CreateScriptRequest::setScriptName(const std::string& scriptName)
-{
-	scriptName_ = scriptName;
-	setParameter("ScriptName", scriptName);
+void CreateScriptRequest::setScriptName(const std::string &scriptName) {
+  scriptName_ = scriptName;
+  setParameter(std::string("ScriptName"), scriptName);
 }
 
-std::string CreateScriptRequest::getScene()const
-{
-	return scene_;
+std::string CreateScriptRequest::getScene() const {
+  return scene_;
 }
 
-void CreateScriptRequest::setScene(const std::string& scene)
-{
-	scene_ = scene;
-	setParameter("Scene", scene);
+void CreateScriptRequest::setScene(const std::string &scene) {
+  scene_ = scene;
+  setParameter(std::string("Scene"), scene);
 }
 
-std::vector<std::string> CreateScriptRequest::getScriptWaveform()const
-{
-	return scriptWaveform_;
+std::vector<std::string> CreateScriptRequest::getScriptWaveform() const {
+  return scriptWaveform_;
 }
 
-void CreateScriptRequest::setScriptWaveform(const std::vector<std::string>& scriptWaveform)
-{
-	scriptWaveform_ = scriptWaveform;
-	for(int dep1 = 0; dep1!= scriptWaveform.size(); dep1++) {
-		setParameter("ScriptWaveform."+ std::to_string(dep1), scriptWaveform.at(dep1));
-	}
+void CreateScriptRequest::setScriptWaveform(const std::vector<std::string> &scriptWaveform) {
+  scriptWaveform_ = scriptWaveform;
 }
 
-std::string CreateScriptRequest::getAsrConfig()const
-{
-	return asrConfig_;
+std::string CreateScriptRequest::getAsrConfig() const {
+  return asrConfig_;
 }
 
-void CreateScriptRequest::setAsrConfig(const std::string& asrConfig)
-{
-	asrConfig_ = asrConfig;
-	setParameter("AsrConfig", asrConfig);
+void CreateScriptRequest::setAsrConfig(const std::string &asrConfig) {
+  asrConfig_ = asrConfig;
+  setParameter(std::string("AsrConfig"), asrConfig);
 }
 
-bool CreateScriptRequest::getNewBargeInEnable()const
-{
-	return newBargeInEnable_;
+bool CreateScriptRequest::getNewBargeInEnable() const {
+  return newBargeInEnable_;
 }
 
-void CreateScriptRequest::setNewBargeInEnable(bool newBargeInEnable)
-{
-	newBargeInEnable_ = newBargeInEnable;
-	setParameter("NewBargeInEnable", newBargeInEnable ? "true" : "false");
+void CreateScriptRequest::setNewBargeInEnable(bool newBargeInEnable) {
+  newBargeInEnable_ = newBargeInEnable;
+  setParameter(std::string("NewBargeInEnable"), newBargeInEnable ? "true" : "false");
 }
 
-bool CreateScriptRequest::getMiniPlaybackEnable()const
-{
-	return miniPlaybackEnable_;
+bool CreateScriptRequest::getMiniPlaybackEnable() const {
+  return miniPlaybackEnable_;
 }
 
-void CreateScriptRequest::setMiniPlaybackEnable(bool miniPlaybackEnable)
-{
-	miniPlaybackEnable_ = miniPlaybackEnable;
-	setParameter("MiniPlaybackEnable", miniPlaybackEnable ? "true" : "false");
+void CreateScriptRequest::setMiniPlaybackEnable(bool miniPlaybackEnable) {
+  miniPlaybackEnable_ = miniPlaybackEnable;
+  setParameter(std::string("MiniPlaybackEnable"), miniPlaybackEnable ? "true" : "false");
 }
 
-std::string CreateScriptRequest::getChatbotId()const
-{
-	return chatbotId_;
+std::string CreateScriptRequest::getChatbotId() const {
+  return chatbotId_;
 }
 
-void CreateScriptRequest::setChatbotId(const std::string& chatbotId)
-{
-	chatbotId_ = chatbotId;
-	setParameter("ChatbotId", chatbotId);
+void CreateScriptRequest::setChatbotId(const std::string &chatbotId) {
+  chatbotId_ = chatbotId;
+  setParameter(std::string("ChatbotId"), chatbotId);
 }
 
-std::string CreateScriptRequest::getInstanceId()const
-{
-	return instanceId_;
+std::string CreateScriptRequest::getInstanceId() const {
+  return instanceId_;
 }
 
-void CreateScriptRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+void CreateScriptRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-std::string CreateScriptRequest::getScriptDescription()const
-{
-	return scriptDescription_;
+std::string CreateScriptRequest::getScriptDescription() const {
+  return scriptDescription_;
 }
 
-void CreateScriptRequest::setScriptDescription(const std::string& scriptDescription)
-{
-	scriptDescription_ = scriptDescription;
-	setParameter("ScriptDescription", scriptDescription);
+void CreateScriptRequest::setScriptDescription(const std::string &scriptDescription) {
+  scriptDescription_ = scriptDescription;
+  setParameter(std::string("ScriptDescription"), scriptDescription);
 }
 
-std::vector<std::string> CreateScriptRequest::getScriptContent()const
-{
-	return scriptContent_;
+std::vector<std::string> CreateScriptRequest::getScriptContent() const {
+  return scriptContent_;
 }
 
-void CreateScriptRequest::setScriptContent(const std::vector<std::string>& scriptContent)
-{
-	scriptContent_ = scriptContent;
-	for(int dep1 = 0; dep1!= scriptContent.size(); dep1++) {
-		setParameter("ScriptContent."+ std::to_string(dep1), scriptContent.at(dep1));
-	}
+void CreateScriptRequest::setScriptContent(const std::vector<std::string> &scriptContent) {
+  scriptContent_ = scriptContent;
 }
 

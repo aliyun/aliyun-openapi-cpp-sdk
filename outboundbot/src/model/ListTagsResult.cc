@@ -43,36 +43,36 @@ void ListTagsResult::parse(const std::string &payload)
 	for (auto valueTagGroupsTagGroup : allTagGroupsNode)
 	{
 		TagGroup tagGroupsObject;
-		if(!valueTagGroupsTagGroup["ScriptId"].isNull())
-			tagGroupsObject.scriptId = valueTagGroupsTagGroup["ScriptId"].asString();
-		if(!valueTagGroupsTagGroup["TagGroup"].isNull())
-			tagGroupsObject.tagGroup = valueTagGroupsTagGroup["TagGroup"].asString();
 		if(!valueTagGroupsTagGroup["TagGroupId"].isNull())
 			tagGroupsObject.tagGroupId = valueTagGroupsTagGroup["TagGroupId"].asString();
 		if(!valueTagGroupsTagGroup["TagGroupIndex"].isNull())
 			tagGroupsObject.tagGroupIndex = std::stoi(valueTagGroupsTagGroup["TagGroupIndex"].asString());
+		if(!valueTagGroupsTagGroup["TagGroup"].isNull())
+			tagGroupsObject.tagGroup = valueTagGroupsTagGroup["TagGroup"].asString();
+		if(!valueTagGroupsTagGroup["ScriptId"].isNull())
+			tagGroupsObject.scriptId = valueTagGroupsTagGroup["ScriptId"].asString();
 		tagGroups_.push_back(tagGroupsObject);
 	}
 	auto allTagsNode = value["Tags"]["Tag"];
 	for (auto valueTagsTag : allTagsNode)
 	{
 		Tag tagsObject;
-		if(!valueTagsTag["ScriptId"].isNull())
-			tagsObject.scriptId = valueTagsTag["ScriptId"].asString();
 		if(!valueTagsTag["TagGroup"].isNull())
 			tagsObject.tagGroup = valueTagsTag["TagGroup"].asString();
-		if(!valueTagsTag["TagId"].isNull())
-			tagsObject.tagId = valueTagsTag["TagId"].asString();
-		if(!valueTagsTag["TagIndex"].isNull())
-			tagsObject.tagIndex = std::stoi(valueTagsTag["TagIndex"].asString());
 		if(!valueTagsTag["TagName"].isNull())
 			tagsObject.tagName = valueTagsTag["TagName"].asString();
+		if(!valueTagsTag["TagIndex"].isNull())
+			tagsObject.tagIndex = std::stoi(valueTagsTag["TagIndex"].asString());
+		if(!valueTagsTag["ScriptId"].isNull())
+			tagsObject.scriptId = valueTagsTag["ScriptId"].asString();
+		if(!valueTagsTag["TagId"].isNull())
+			tagsObject.tagId = valueTagsTag["TagId"].asString();
 		tags_.push_back(tagsObject);
 	}
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
 	if(!value["Success"].isNull())

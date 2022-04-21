@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,45 +18,37 @@
 
 using AlibabaCloud::OutboundBot::Model::DeleteContactBlockListRequest;
 
-DeleteContactBlockListRequest::DeleteContactBlockListRequest() :
-	RpcServiceRequest("outboundbot", "2019-12-26", "DeleteContactBlockList")
-{
-	setMethod(HttpRequest::Method::Post);
+DeleteContactBlockListRequest::DeleteContactBlockListRequest()
+    : RpcServiceRequest("outboundbot", "2019-12-26", "DeleteContactBlockList") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DeleteContactBlockListRequest::~DeleteContactBlockListRequest()
-{}
+DeleteContactBlockListRequest::~DeleteContactBlockListRequest() {}
 
-std::string DeleteContactBlockListRequest::getContactBlockListId()const
-{
-	return contactBlockListId_;
+std::string DeleteContactBlockListRequest::getContactBlockListId() const {
+  return contactBlockListId_;
 }
 
-void DeleteContactBlockListRequest::setContactBlockListId(const std::string& contactBlockListId)
-{
-	contactBlockListId_ = contactBlockListId;
-	setParameter("ContactBlockListId", contactBlockListId);
+void DeleteContactBlockListRequest::setContactBlockListId(const std::string &contactBlockListId) {
+  contactBlockListId_ = contactBlockListId;
+  setParameter(std::string("ContactBlockListId"), contactBlockListId);
 }
 
-std::string DeleteContactBlockListRequest::get_Operator()const
-{
-	return _operator_;
+std::string DeleteContactBlockListRequest::get_Operator() const {
+  return _operator_;
 }
 
-void DeleteContactBlockListRequest::set_Operator(const std::string& _operator)
-{
-	_operator_ = _operator;
-	setParameter("_Operator", _operator);
+void DeleteContactBlockListRequest::set_Operator(const std::string &_operator) {
+  _operator_ = _operator;
+  setParameter(std::string("Operator"), _operator);
 }
 
-std::string DeleteContactBlockListRequest::getInstanceId()const
-{
-	return instanceId_;
+std::string DeleteContactBlockListRequest::getInstanceId() const {
+  return instanceId_;
 }
 
-void DeleteContactBlockListRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+void DeleteContactBlockListRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
 }
 

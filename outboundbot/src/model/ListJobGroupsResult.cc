@@ -50,58 +50,58 @@ void ListJobGroupsResult::parse(const std::string &payload)
 	for (auto jobGroupsNodeListJobGroup : allListNode)
 	{
 		JobGroups::JobGroup jobGroupObject;
-		if(!jobGroupsNodeListJobGroup["CreationTime"].isNull())
-			jobGroupObject.creationTime = std::stol(jobGroupsNodeListJobGroup["CreationTime"].asString());
-		if(!jobGroupsNodeListJobGroup["JobGroupDescription"].isNull())
-			jobGroupObject.jobGroupDescription = jobGroupsNodeListJobGroup["JobGroupDescription"].asString();
-		if(!jobGroupsNodeListJobGroup["JobGroupId"].isNull())
-			jobGroupObject.jobGroupId = jobGroupsNodeListJobGroup["JobGroupId"].asString();
-		if(!jobGroupsNodeListJobGroup["JobGroupName"].isNull())
-			jobGroupObject.jobGroupName = jobGroupsNodeListJobGroup["JobGroupName"].asString();
-		if(!jobGroupsNodeListJobGroup["ScriptId"].isNull())
-			jobGroupObject.scriptId = jobGroupsNodeListJobGroup["ScriptId"].asString();
-		if(!jobGroupsNodeListJobGroup["ScriptName"].isNull())
-			jobGroupObject.scriptName = jobGroupsNodeListJobGroup["ScriptName"].asString();
-		if(!jobGroupsNodeListJobGroup["JobDataParsingTaskId"].isNull())
-			jobGroupObject.jobDataParsingTaskId = jobGroupsNodeListJobGroup["JobDataParsingTaskId"].asString();
-		if(!jobGroupsNodeListJobGroup["ModifyTime"].isNull())
-			jobGroupObject.modifyTime = jobGroupsNodeListJobGroup["ModifyTime"].asString();
-		if(!jobGroupsNodeListJobGroup["ScriptVersion"].isNull())
-			jobGroupObject.scriptVersion = jobGroupsNodeListJobGroup["ScriptVersion"].asString();
 		if(!jobGroupsNodeListJobGroup["Status"].isNull())
 			jobGroupObject.status = jobGroupsNodeListJobGroup["Status"].asString();
+		if(!jobGroupsNodeListJobGroup["JobGroupId"].isNull())
+			jobGroupObject.jobGroupId = jobGroupsNodeListJobGroup["JobGroupId"].asString();
+		if(!jobGroupsNodeListJobGroup["CreationTime"].isNull())
+			jobGroupObject.creationTime = std::stol(jobGroupsNodeListJobGroup["CreationTime"].asString());
+		if(!jobGroupsNodeListJobGroup["JobGroupName"].isNull())
+			jobGroupObject.jobGroupName = jobGroupsNodeListJobGroup["JobGroupName"].asString();
 		if(!jobGroupsNodeListJobGroup["TotalCallNum"].isNull())
 			jobGroupObject.totalCallNum = std::stoi(jobGroupsNodeListJobGroup["TotalCallNum"].asString());
+		if(!jobGroupsNodeListJobGroup["ScriptId"].isNull())
+			jobGroupObject.scriptId = jobGroupsNodeListJobGroup["ScriptId"].asString();
+		if(!jobGroupsNodeListJobGroup["JobGroupDescription"].isNull())
+			jobGroupObject.jobGroupDescription = jobGroupsNodeListJobGroup["JobGroupDescription"].asString();
+		if(!jobGroupsNodeListJobGroup["JobDataParsingTaskId"].isNull())
+			jobGroupObject.jobDataParsingTaskId = jobGroupsNodeListJobGroup["JobDataParsingTaskId"].asString();
+		if(!jobGroupsNodeListJobGroup["ScriptName"].isNull())
+			jobGroupObject.scriptName = jobGroupsNodeListJobGroup["ScriptName"].asString();
+		if(!jobGroupsNodeListJobGroup["ScriptVersion"].isNull())
+			jobGroupObject.scriptVersion = jobGroupsNodeListJobGroup["ScriptVersion"].asString();
+		if(!jobGroupsNodeListJobGroup["ModifyTime"].isNull())
+			jobGroupObject.modifyTime = jobGroupsNodeListJobGroup["ModifyTime"].asString();
 		auto progressNode = value["Progress"];
-		if(!progressNode["Duration"].isNull())
-			jobGroupObject.progress.duration = std::stoi(progressNode["Duration"].asString());
-		if(!progressNode["StartTime"].isNull())
-			jobGroupObject.progress.startTime = std::stol(progressNode["StartTime"].asString());
-		if(!progressNode["Status"].isNull())
-			jobGroupObject.progress.status = progressNode["Status"].asString();
-		if(!progressNode["TotalCompleted"].isNull())
-			jobGroupObject.progress.totalCompleted = std::stoi(progressNode["TotalCompleted"].asString());
-		if(!progressNode["TotalJobs"].isNull())
-			jobGroupObject.progress.totalJobs = std::stoi(progressNode["TotalJobs"].asString());
 		if(!progressNode["TotalNotAnswered"].isNull())
 			jobGroupObject.progress.totalNotAnswered = std::stoi(progressNode["TotalNotAnswered"].asString());
-		if(!progressNode["CancelledNum"].isNull())
-			jobGroupObject.progress.cancelledNum = std::stoi(progressNode["CancelledNum"].asString());
+		if(!progressNode["Status"].isNull())
+			jobGroupObject.progress.status = progressNode["Status"].asString();
+		if(!progressNode["StartTime"].isNull())
+			jobGroupObject.progress.startTime = std::stol(progressNode["StartTime"].asString());
 		if(!progressNode["FailedNum"].isNull())
 			jobGroupObject.progress.failedNum = std::stoi(progressNode["FailedNum"].asString());
-		if(!progressNode["Scheduling"].isNull())
-			jobGroupObject.progress.scheduling = std::stoi(progressNode["Scheduling"].asString());
 		if(!progressNode["PausedNum"].isNull())
 			jobGroupObject.progress.pausedNum = std::stoi(progressNode["PausedNum"].asString());
+		if(!progressNode["CancelledNum"].isNull())
+			jobGroupObject.progress.cancelledNum = std::stoi(progressNode["CancelledNum"].asString());
+		if(!progressNode["TotalJobs"].isNull())
+			jobGroupObject.progress.totalJobs = std::stoi(progressNode["TotalJobs"].asString());
+		if(!progressNode["TotalCompleted"].isNull())
+			jobGroupObject.progress.totalCompleted = std::stoi(progressNode["TotalCompleted"].asString());
+		if(!progressNode["Duration"].isNull())
+			jobGroupObject.progress.duration = std::stoi(progressNode["Duration"].asString());
 		if(!progressNode["ExecutingNum"].isNull())
 			jobGroupObject.progress.executingNum = std::stoi(progressNode["ExecutingNum"].asString());
+		if(!progressNode["Scheduling"].isNull())
+			jobGroupObject.progress.scheduling = std::stoi(progressNode["Scheduling"].asString());
 		auto exportProgressNode = value["ExportProgress"];
+		if(!exportProgressNode["Status"].isNull())
+			jobGroupObject.exportProgress.status = exportProgressNode["Status"].asString();
 		if(!exportProgressNode["FileHttpUrl"].isNull())
 			jobGroupObject.exportProgress.fileHttpUrl = exportProgressNode["FileHttpUrl"].asString();
 		if(!exportProgressNode["Progress"].isNull())
 			jobGroupObject.exportProgress.progress = exportProgressNode["Progress"].asString();
-		if(!exportProgressNode["Status"].isNull())
-			jobGroupObject.exportProgress.status = exportProgressNode["Status"].asString();
 		auto strategyNode = value["Strategy"];
 		if(!strategyNode["EndTime"].isNull())
 			jobGroupObject.strategy.endTime = std::stol(strategyNode["EndTime"].asString());
@@ -109,14 +109,14 @@ void ListJobGroupsResult::parse(const std::string &payload)
 			jobGroupObject.strategy.startTime = std::stol(strategyNode["StartTime"].asString());
 		jobGroups_.list.push_back(jobGroupObject);
 	}
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 	if(!value["AsyncTaskId"].isNull())
 		asyncTaskId_ = value["AsyncTaskId"].asString();
 

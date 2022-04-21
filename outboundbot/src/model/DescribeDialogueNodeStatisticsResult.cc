@@ -43,38 +43,38 @@ void DescribeDialogueNodeStatisticsResult::parse(const std::string &payload)
 	for (auto valueNoAnswerDialogueNodesNoAnswerDialogueNode : allNoAnswerDialogueNodesNode)
 	{
 		NoAnswerDialogueNode noAnswerDialogueNodesObject;
-		if(!valueNoAnswerDialogueNodesNoAnswerDialogueNode["Id"].isNull())
-			noAnswerDialogueNodesObject.id = valueNoAnswerDialogueNodesNoAnswerDialogueNode["Id"].asString();
-		if(!valueNoAnswerDialogueNodesNoAnswerDialogueNode["InstanceId"].isNull())
-			noAnswerDialogueNodesObject.instanceId = valueNoAnswerDialogueNodesNoAnswerDialogueNode["InstanceId"].asString();
-		if(!valueNoAnswerDialogueNodesNoAnswerDialogueNode["GroupId"].isNull())
-			noAnswerDialogueNodesObject.groupId = valueNoAnswerDialogueNodesNoAnswerDialogueNode["GroupId"].asString();
-		if(!valueNoAnswerDialogueNodesNoAnswerDialogueNode["NodeId"].isNull())
-			noAnswerDialogueNodesObject.nodeId = valueNoAnswerDialogueNodesNoAnswerDialogueNode["NodeId"].asString();
-		if(!valueNoAnswerDialogueNodesNoAnswerDialogueNode["NodeName"].isNull())
-			noAnswerDialogueNodesObject.nodeName = valueNoAnswerDialogueNodesNoAnswerDialogueNode["NodeName"].asString();
-		if(!valueNoAnswerDialogueNodesNoAnswerDialogueNode["HitNum"].isNull())
-			noAnswerDialogueNodesObject.hitNum = std::stoi(valueNoAnswerDialogueNodesNoAnswerDialogueNode["HitNum"].asString());
-		if(!valueNoAnswerDialogueNodesNoAnswerDialogueNode["HangUpNum"].isNull())
-			noAnswerDialogueNodesObject.hangUpNum = std::stoi(valueNoAnswerDialogueNodesNoAnswerDialogueNode["HangUpNum"].asString());
 		if(!valueNoAnswerDialogueNodesNoAnswerDialogueNode["NoAnswerNum"].isNull())
 			noAnswerDialogueNodesObject.noAnswerNum = std::stoi(valueNoAnswerDialogueNodesNoAnswerDialogueNode["NoAnswerNum"].asString());
+		if(!valueNoAnswerDialogueNodesNoAnswerDialogueNode["GroupId"].isNull())
+			noAnswerDialogueNodesObject.groupId = valueNoAnswerDialogueNodesNoAnswerDialogueNode["GroupId"].asString();
+		if(!valueNoAnswerDialogueNodesNoAnswerDialogueNode["NodeName"].isNull())
+			noAnswerDialogueNodesObject.nodeName = valueNoAnswerDialogueNodesNoAnswerDialogueNode["NodeName"].asString();
+		if(!valueNoAnswerDialogueNodesNoAnswerDialogueNode["HangUpNum"].isNull())
+			noAnswerDialogueNodesObject.hangUpNum = std::stoi(valueNoAnswerDialogueNodesNoAnswerDialogueNode["HangUpNum"].asString());
+		if(!valueNoAnswerDialogueNodesNoAnswerDialogueNode["InstanceId"].isNull())
+			noAnswerDialogueNodesObject.instanceId = valueNoAnswerDialogueNodesNoAnswerDialogueNode["InstanceId"].asString();
+		if(!valueNoAnswerDialogueNodesNoAnswerDialogueNode["HitNum"].isNull())
+			noAnswerDialogueNodesObject.hitNum = std::stoi(valueNoAnswerDialogueNodesNoAnswerDialogueNode["HitNum"].asString());
+		if(!valueNoAnswerDialogueNodesNoAnswerDialogueNode["Id"].isNull())
+			noAnswerDialogueNodesObject.id = valueNoAnswerDialogueNodesNoAnswerDialogueNode["Id"].asString();
+		if(!valueNoAnswerDialogueNodesNoAnswerDialogueNode["NodeId"].isNull())
+			noAnswerDialogueNodesObject.nodeId = valueNoAnswerDialogueNodesNoAnswerDialogueNode["NodeId"].asString();
 		noAnswerDialogueNodes_.push_back(noAnswerDialogueNodesObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 	if(!value["GroupId"].isNull())
 		groupId_ = value["GroupId"].asString();
-	if(!value["InstanceId"].isNull())
-		instanceId_ = value["InstanceId"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 	if(!value["TotalCompleted"].isNull())
 		totalCompleted_ = std::stoi(value["TotalCompleted"].asString());
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["InstanceId"].isNull())
+		instanceId_ = value["InstanceId"].asString();
 
 }
 

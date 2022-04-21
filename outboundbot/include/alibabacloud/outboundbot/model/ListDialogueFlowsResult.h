@@ -37,8 +37,8 @@ namespace AlibabaCloud
 					std::string dialogueFlowName;
 					std::string scriptVersion;
 					std::string scriptId;
-					std::string dialogueFlowId;
 					std::string dialogueFlowType;
+					std::string dialogueFlowId;
 					std::string dialogueFlowDefinition;
 				};
 

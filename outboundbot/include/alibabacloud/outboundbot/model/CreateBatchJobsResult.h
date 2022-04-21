@@ -57,8 +57,8 @@ namespace AlibabaCloud
 						std::string routingStrategy;
 						std::vector<std::string> repeatDays;
 					};
-					std::string batchJobId;
 					std::string scenarioId;
+					std::string batchJobId;
 					std::string jobGroupName;
 					long creationTime;
 					Strategy strategy;

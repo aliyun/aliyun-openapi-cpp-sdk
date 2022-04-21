@@ -48,10 +48,10 @@ void ModifyOutboundCallNumberResult::parse(const std::string &payload)
 		outboundCallNumber_.rateLimitCount = outboundCallNumberNode["RateLimitCount"].asString();
 	if(!outboundCallNumberNode["RateLimitPeriod"].isNull())
 		outboundCallNumber_.rateLimitPeriod = outboundCallNumberNode["RateLimitPeriod"].asString();
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
 	if(!value["Success"].isNull())

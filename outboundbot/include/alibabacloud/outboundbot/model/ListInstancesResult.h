@@ -45,8 +45,8 @@ namespace AlibabaCloud
 						std::string value;
 						std::string key;
 					};
-					std::string ownerName;
 					std::string owner;
+					std::string ownerName;
 					std::string resourceGroupId;
 					std::vector<Instance::ResourceTag> resourceTags;
 					std::string instanceId;

@@ -40,28 +40,28 @@ void GetTaskByUuidResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto taskNode = value["Task"];
-	if(!taskNode["Id"].isNull())
-		task_.id = taskNode["Id"].asString();
-	if(!taskNode["JobId"].isNull())
-		task_.jobId = taskNode["JobId"].asString();
-	if(!taskNode["PlannedTime"].isNull())
-		task_.plannedTime = std::stol(taskNode["PlannedTime"].asString());
-	if(!taskNode["ActualTime"].isNull())
-		task_.actualTime = std::stol(taskNode["ActualTime"].asString());
-	if(!taskNode["EndTime"].isNull())
-		task_.endTime = std::stol(taskNode["EndTime"].asString());
-	if(!taskNode["CallingNumber"].isNull())
-		task_.callingNumber = taskNode["CallingNumber"].asString();
-	if(!taskNode["CalledNumber"].isNull())
-		task_.calledNumber = taskNode["CalledNumber"].asString();
-	if(!taskNode["CallId"].isNull())
-		task_.callId = taskNode["CallId"].asString();
-	if(!taskNode["EndReason"].isNull())
-		task_.endReason = std::stoi(taskNode["EndReason"].asString());
-	if(!taskNode["InstanceId"].isNull())
-		task_.instanceId = taskNode["InstanceId"].asString();
 	if(!taskNode["JobGroupId"].isNull())
 		task_.jobGroupId = taskNode["JobGroupId"].asString();
+	if(!taskNode["EndTime"].isNull())
+		task_.endTime = std::stol(taskNode["EndTime"].asString());
+	if(!taskNode["EndReason"].isNull())
+		task_.endReason = std::stoi(taskNode["EndReason"].asString());
+	if(!taskNode["PlannedTime"].isNull())
+		task_.plannedTime = std::stol(taskNode["PlannedTime"].asString());
+	if(!taskNode["JobId"].isNull())
+		task_.jobId = taskNode["JobId"].asString();
+	if(!taskNode["CallId"].isNull())
+		task_.callId = taskNode["CallId"].asString();
+	if(!taskNode["CallingNumber"].isNull())
+		task_.callingNumber = taskNode["CallingNumber"].asString();
+	if(!taskNode["ActualTime"].isNull())
+		task_.actualTime = std::stol(taskNode["ActualTime"].asString());
+	if(!taskNode["InstanceId"].isNull())
+		task_.instanceId = taskNode["InstanceId"].asString();
+	if(!taskNode["CalledNumber"].isNull())
+		task_.calledNumber = taskNode["CalledNumber"].asString();
+	if(!taskNode["Id"].isNull())
+		task_.id = taskNode["Id"].asString();
 
 }
 

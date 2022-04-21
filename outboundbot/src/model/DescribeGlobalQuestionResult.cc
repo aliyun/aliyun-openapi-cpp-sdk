@@ -40,22 +40,22 @@ void DescribeGlobalQuestionResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto globalQuestionNode = value["GlobalQuestion"];
-	if(!globalQuestionNode["Answers"].isNull())
-		globalQuestion_.answers = globalQuestionNode["Answers"].asString();
 	if(!globalQuestionNode["GlobalQuestionId"].isNull())
 		globalQuestion_.globalQuestionId = globalQuestionNode["GlobalQuestionId"].asString();
-	if(!globalQuestionNode["GlobalQuestionName"].isNull())
-		globalQuestion_.globalQuestionName = globalQuestionNode["GlobalQuestionName"].asString();
+	if(!globalQuestionNode["Answers"].isNull())
+		globalQuestion_.answers = globalQuestionNode["Answers"].asString();
 	if(!globalQuestionNode["GlobalQuestionType"].isNull())
 		globalQuestion_.globalQuestionType = globalQuestionNode["GlobalQuestionType"].asString();
+	if(!globalQuestionNode["GlobalQuestionName"].isNull())
+		globalQuestion_.globalQuestionName = globalQuestionNode["GlobalQuestionName"].asString();
 	if(!globalQuestionNode["Questions"].isNull())
 		globalQuestion_.questions = globalQuestionNode["Questions"].asString();
 	if(!globalQuestionNode["ScriptId"].isNull())
 		globalQuestion_.scriptId = globalQuestionNode["ScriptId"].asString();
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
 	if(!value["Success"].isNull())

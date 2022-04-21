@@ -43,37 +43,37 @@ void ListTagResourcesResult::parse(const std::string &payload)
 	for (auto valueTagResourcesTagResource : allTagResourcesNode)
 	{
 		TagResource tagResourcesObject;
-		if(!valueTagResourcesTagResource["TagKey"].isNull())
-			tagResourcesObject.tagKey = valueTagResourcesTagResource["TagKey"].asString();
+		if(!valueTagResourcesTagResource["ResourceType"].isNull())
+			tagResourcesObject.resourceType = valueTagResourcesTagResource["ResourceType"].asString();
 		if(!valueTagResourcesTagResource["TagValue"].isNull())
 			tagResourcesObject.tagValue = valueTagResourcesTagResource["TagValue"].asString();
 		if(!valueTagResourcesTagResource["ResourceId"].isNull())
 			tagResourcesObject.resourceId = valueTagResourcesTagResource["ResourceId"].asString();
-		if(!valueTagResourcesTagResource["ResourceType"].isNull())
-			tagResourcesObject.resourceType = valueTagResourcesTagResource["ResourceType"].asString();
+		if(!valueTagResourcesTagResource["TagKey"].isNull())
+			tagResourcesObject.tagKey = valueTagResourcesTagResource["TagKey"].asString();
 		tagResources_.push_back(tagResourcesObject);
 	}
+	if(!value["HttpStatusCode"].isNull())
+		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["NextToken"].isNull())
+		nextToken_ = value["NextToken"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
-	if(!value["HttpStatusCode"].isNull())
-		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
-	if(!value["NextToken"].isNull())
-		nextToken_ = value["NextToken"].asString();
 
-}
-
-std::string ListTagResourcesResult::getMessage()const
-{
-	return message_;
 }
 
 std::string ListTagResourcesResult::getNextToken()const
 {
 	return nextToken_;
+}
+
+std::string ListTagResourcesResult::getMessage()const
+{
+	return message_;
 }
 
 std::vector<ListTagResourcesResult::TagResource> ListTagResourcesResult::getTagResources()const

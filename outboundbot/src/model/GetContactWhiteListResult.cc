@@ -50,32 +50,32 @@ void GetContactWhiteListResult::parse(const std::string &payload)
 	for (auto contactWhitelistListNodeListContactWhitelistList : allListNode)
 	{
 		ContactWhitelistList::ContactWhitelistList1 contactWhitelistList1Object;
+		if(!contactWhitelistListNodeListContactWhitelistList["CreationTime"].isNull())
+			contactWhitelistList1Object.creationTime = std::stol(contactWhitelistListNodeListContactWhitelistList["CreationTime"].asString());
+		if(!contactWhitelistListNodeListContactWhitelistList["Remark"].isNull())
+			contactWhitelistList1Object.remark = contactWhitelistListNodeListContactWhitelistList["Remark"].asString();
+		if(!contactWhitelistListNodeListContactWhitelistList["PhoneNumber"].isNull())
+			contactWhitelistList1Object.phoneNumber = contactWhitelistListNodeListContactWhitelistList["PhoneNumber"].asString();
+		if(!contactWhitelistListNodeListContactWhitelistList["Operator"].isNull())
+			contactWhitelistList1Object._operator = contactWhitelistListNodeListContactWhitelistList["Operator"].asString();
 		if(!contactWhitelistListNodeListContactWhitelistList["ContactWhiteListId"].isNull())
 			contactWhitelistList1Object.contactWhiteListId = contactWhitelistListNodeListContactWhitelistList["ContactWhiteListId"].asString();
 		if(!contactWhitelistListNodeListContactWhitelistList["InstanceId"].isNull())
 			contactWhitelistList1Object.instanceId = contactWhitelistListNodeListContactWhitelistList["InstanceId"].asString();
-		if(!contactWhitelistListNodeListContactWhitelistList["CreationTime"].isNull())
-			contactWhitelistList1Object.creationTime = std::stol(contactWhitelistListNodeListContactWhitelistList["CreationTime"].asString());
-		if(!contactWhitelistListNodeListContactWhitelistList["PhoneNumber"].isNull())
-			contactWhitelistList1Object.phoneNumber = contactWhitelistListNodeListContactWhitelistList["PhoneNumber"].asString();
 		if(!contactWhitelistListNodeListContactWhitelistList["Name"].isNull())
 			contactWhitelistList1Object.name = contactWhitelistListNodeListContactWhitelistList["Name"].asString();
 		if(!contactWhitelistListNodeListContactWhitelistList["Creator"].isNull())
 			contactWhitelistList1Object.creator = contactWhitelistListNodeListContactWhitelistList["Creator"].asString();
-		if(!contactWhitelistListNodeListContactWhitelistList["Operator"].isNull())
-			contactWhitelistList1Object._operator = contactWhitelistListNodeListContactWhitelistList["Operator"].asString();
-		if(!contactWhitelistListNodeListContactWhitelistList["Remark"].isNull())
-			contactWhitelistList1Object.remark = contactWhitelistListNodeListContactWhitelistList["Remark"].asString();
 		contactWhitelistList_.list.push_back(contactWhitelistList1Object);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
+	if(!value["HttpStatusCode"].isNull())
+		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
-	if(!value["HttpStatusCode"].isNull())
-		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

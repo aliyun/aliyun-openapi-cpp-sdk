@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,45 +18,37 @@
 
 using AlibabaCloud::OutboundBot::Model::DescribeIntentStatisticsRequest;
 
-DescribeIntentStatisticsRequest::DescribeIntentStatisticsRequest() :
-	RpcServiceRequest("outboundbot", "2019-12-26", "DescribeIntentStatistics")
-{
-	setMethod(HttpRequest::Method::Post);
+DescribeIntentStatisticsRequest::DescribeIntentStatisticsRequest()
+    : RpcServiceRequest("outboundbot", "2019-12-26", "DescribeIntentStatistics") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DescribeIntentStatisticsRequest::~DescribeIntentStatisticsRequest()
-{}
+DescribeIntentStatisticsRequest::~DescribeIntentStatisticsRequest() {}
 
-std::string DescribeIntentStatisticsRequest::getInstanceId()const
-{
-	return instanceId_;
+std::string DescribeIntentStatisticsRequest::getInstanceId() const {
+  return instanceId_;
 }
 
-void DescribeIntentStatisticsRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+void DescribeIntentStatisticsRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-std::string DescribeIntentStatisticsRequest::getJobGroupId()const
-{
-	return jobGroupId_;
+std::string DescribeIntentStatisticsRequest::getJobGroupId() const {
+  return jobGroupId_;
 }
 
-void DescribeIntentStatisticsRequest::setJobGroupId(const std::string& jobGroupId)
-{
-	jobGroupId_ = jobGroupId;
-	setParameter("JobGroupId", jobGroupId);
+void DescribeIntentStatisticsRequest::setJobGroupId(const std::string &jobGroupId) {
+  jobGroupId_ = jobGroupId;
+  setParameter(std::string("JobGroupId"), jobGroupId);
 }
 
-int DescribeIntentStatisticsRequest::getLimit()const
-{
-	return limit_;
+int DescribeIntentStatisticsRequest::getLimit() const {
+  return limit_;
 }
 
-void DescribeIntentStatisticsRequest::setLimit(int limit)
-{
-	limit_ = limit;
-	setParameter("Limit", std::to_string(limit));
+void DescribeIntentStatisticsRequest::setLimit(int limit) {
+  limit_ = limit;
+  setParameter(std::string("Limit"), std::to_string(limit));
 }
 

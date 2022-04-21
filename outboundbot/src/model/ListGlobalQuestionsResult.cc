@@ -50,24 +50,24 @@ void ListGlobalQuestionsResult::parse(const std::string &payload)
 	for (auto globalQuestionsNodeListGlobalQuestion : allListNode)
 	{
 		GlobalQuestions::GlobalQuestion globalQuestionObject;
-		if(!globalQuestionsNodeListGlobalQuestion["Answers"].isNull())
-			globalQuestionObject.answers = globalQuestionsNodeListGlobalQuestion["Answers"].asString();
 		if(!globalQuestionsNodeListGlobalQuestion["GlobalQuestionId"].isNull())
 			globalQuestionObject.globalQuestionId = globalQuestionsNodeListGlobalQuestion["GlobalQuestionId"].asString();
-		if(!globalQuestionsNodeListGlobalQuestion["GlobalQuestionName"].isNull())
-			globalQuestionObject.globalQuestionName = globalQuestionsNodeListGlobalQuestion["GlobalQuestionName"].asString();
+		if(!globalQuestionsNodeListGlobalQuestion["Answers"].isNull())
+			globalQuestionObject.answers = globalQuestionsNodeListGlobalQuestion["Answers"].asString();
 		if(!globalQuestionsNodeListGlobalQuestion["GlobalQuestionType"].isNull())
 			globalQuestionObject.globalQuestionType = globalQuestionsNodeListGlobalQuestion["GlobalQuestionType"].asString();
+		if(!globalQuestionsNodeListGlobalQuestion["GlobalQuestionName"].isNull())
+			globalQuestionObject.globalQuestionName = globalQuestionsNodeListGlobalQuestion["GlobalQuestionName"].asString();
 		if(!globalQuestionsNodeListGlobalQuestion["Questions"].isNull())
 			globalQuestionObject.questions = globalQuestionsNodeListGlobalQuestion["Questions"].asString();
 		if(!globalQuestionsNodeListGlobalQuestion["ScriptId"].isNull())
 			globalQuestionObject.scriptId = globalQuestionsNodeListGlobalQuestion["ScriptId"].asString();
 		globalQuestions_.list.push_back(globalQuestionObject);
 	}
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
 	if(!value["Success"].isNull())
