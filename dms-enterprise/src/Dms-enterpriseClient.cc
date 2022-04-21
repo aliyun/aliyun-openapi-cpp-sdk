@@ -3939,6 +3939,42 @@ Dms_enterpriseClient::ModifyDataCorrectExecSQLOutcomeCallable Dms_enterpriseClie
 	return task->get_future();
 }
 
+Dms_enterpriseClient::OfflineTaskFlowOutcome Dms_enterpriseClient::offlineTaskFlow(const OfflineTaskFlowRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return OfflineTaskFlowOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return OfflineTaskFlowOutcome(OfflineTaskFlowResult(outcome.result()));
+	else
+		return OfflineTaskFlowOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::offlineTaskFlowAsync(const OfflineTaskFlowRequest& request, const OfflineTaskFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, offlineTaskFlow(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::OfflineTaskFlowOutcomeCallable Dms_enterpriseClient::offlineTaskFlowCallable(const OfflineTaskFlowRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<OfflineTaskFlowOutcome()>>(
+			[this, request]()
+			{
+			return this->offlineTaskFlow(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dms_enterpriseClient::PauseDataCorrectSQLJobOutcome Dms_enterpriseClient::pauseDataCorrectSQLJob(const PauseDataCorrectSQLJobRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

@@ -237,6 +237,8 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/ListWorkFlowTemplatesResult.h
 	include/alibabacloud/dms-enterprise/model/ModifyDataCorrectExecSQLRequest.h
 	include/alibabacloud/dms-enterprise/model/ModifyDataCorrectExecSQLResult.h
+	include/alibabacloud/dms-enterprise/model/OfflineTaskFlowRequest.h
+	include/alibabacloud/dms-enterprise/model/OfflineTaskFlowResult.h
 	include/alibabacloud/dms-enterprise/model/PauseDataCorrectSQLJobRequest.h
 	include/alibabacloud/dms-enterprise/model/PauseDataCorrectSQLJobResult.h
 	include/alibabacloud/dms-enterprise/model/ReDeployLhDagVersionRequest.h
@@ -488,6 +490,8 @@ set(dms-enterprise_src
 	src/model/ListWorkFlowTemplatesResult.cc
 	src/model/ModifyDataCorrectExecSQLRequest.cc
 	src/model/ModifyDataCorrectExecSQLResult.cc
+	src/model/OfflineTaskFlowRequest.cc
+	src/model/OfflineTaskFlowResult.cc
 	src/model/PauseDataCorrectSQLJobRequest.cc
 	src/model/PauseDataCorrectSQLJobResult.cc
 	src/model/ReDeployLhDagVersionRequest.cc
