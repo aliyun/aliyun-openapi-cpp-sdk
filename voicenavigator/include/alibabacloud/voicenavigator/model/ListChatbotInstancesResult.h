@@ -36,8 +36,8 @@ namespace AlibabaCloud
 				{
 					std::string languageCode;
 					std::string timeZone;
-					std::string instanceId;
 					std::string introduction;
+					std::string instanceId;
 					std::string createTime;
 					std::string avatar;
 					std::string name;

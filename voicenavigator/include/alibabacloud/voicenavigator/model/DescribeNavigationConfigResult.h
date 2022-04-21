@@ -32,6 +32,31 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_VOICENAVIGATOR_EXPORT DescribeNavigationConfigResult : public ServiceResult
 			{
 			public:
+				struct RepeatingConfig
+				{
+					std::vector<std::string> utterances;
+				};
+				struct AskingBackConfig
+				{
+					std::vector<std::string> negativeFeedbackUtterances;
+					bool enableNegativeFeedback;
+					std::string negativeFeedbackAction;
+					bool enabled;
+					std::string negativeFeedbackActionParams;
+					std::string prompt;
+					std::string negativeFeedbackPrompt;
+				};
+				struct SilenceTimeoutConfig
+				{
+					std::string finalActionParams;
+					std::string intentTrigger;
+					long timeout;
+					std::string sourceType;
+					std::string prompt;
+					std::string finalPrompt;
+					std::string finalAction;
+					int threshold;
+				};
 				struct GreetingConfig
 				{
 					std::string greetingWords;
@@ -46,37 +71,12 @@ namespace AlibabaCloud
 					std::string finalAction;
 					int threshold;
 				};
-				struct RepeatingConfig
-				{
-					std::vector<std::string> utterances;
-				};
-				struct AskingBackConfig
-				{
-					std::vector<std::string> negativeFeedbackUtterances;
-					bool enableNegativeFeedback;
-					bool enabled;
-					std::string negativeFeedbackAction;
-					std::string prompt;
-					std::string negativeFeedbackActionParams;
-					std::string negativeFeedbackPrompt;
-				};
 				struct ComplainingConfig
 				{
 					std::string finalActionParams;
 					std::vector<std::string> utterances1;
 					std::string prompt;
 					std::string finalAction;
-				};
-				struct SilenceTimeoutConfig
-				{
-					std::string finalActionParams;
-					std::string intentTrigger;
-					long timeout;
-					std::string sourceType;
-					std::string prompt;
-					std::string finalPrompt;
-					std::string finalAction;
-					int threshold;
 				};
 
 

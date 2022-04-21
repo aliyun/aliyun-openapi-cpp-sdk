@@ -25,8 +25,6 @@ set(voicenavigator_public_header_model
 	include/alibabacloud/voicenavigator/model/AssociateChatbotInstanceResult.h
 	include/alibabacloud/voicenavigator/model/AuditTTSVoiceRequest.h
 	include/alibabacloud/voicenavigator/model/AuditTTSVoiceResult.h
-	include/alibabacloud/voicenavigator/model/BatchCreateSandBoxWhileListRequest.h
-	include/alibabacloud/voicenavigator/model/BatchCreateSandBoxWhileListResult.h
 	include/alibabacloud/voicenavigator/model/BeginDialogueRequest.h
 	include/alibabacloud/voicenavigator/model/BeginDialogueResult.h
 	include/alibabacloud/voicenavigator/model/CollectedNumberRequest.h
@@ -43,10 +41,6 @@ set(voicenavigator_public_header_model
 	include/alibabacloud/voicenavigator/model/DebugDialogueResult.h
 	include/alibabacloud/voicenavigator/model/DeleteInstanceRequest.h
 	include/alibabacloud/voicenavigator/model/DeleteInstanceResult.h
-	include/alibabacloud/voicenavigator/model/DeleteSandBoxWhileListRequest.h
-	include/alibabacloud/voicenavigator/model/DeleteSandBoxWhileListResult.h
-	include/alibabacloud/voicenavigator/model/DescribeAsrVadConfigRequest.h
-	include/alibabacloud/voicenavigator/model/DescribeAsrVadConfigResult.h
 	include/alibabacloud/voicenavigator/model/DescribeConversationRequest.h
 	include/alibabacloud/voicenavigator/model/DescribeConversationResult.h
 	include/alibabacloud/voicenavigator/model/DescribeConversationContextRequest.h
@@ -63,28 +57,22 @@ set(voicenavigator_public_header_model
 	include/alibabacloud/voicenavigator/model/DescribeStatisticalDataResult.h
 	include/alibabacloud/voicenavigator/model/DescribeTTSConfigRequest.h
 	include/alibabacloud/voicenavigator/model/DescribeTTSConfigResult.h
-	include/alibabacloud/voicenavigator/model/DescribeVoiceConfigRequest.h
-	include/alibabacloud/voicenavigator/model/DescribeVoiceConfigResult.h
 	include/alibabacloud/voicenavigator/model/DialogueRequest.h
 	include/alibabacloud/voicenavigator/model/DialogueResult.h
 	include/alibabacloud/voicenavigator/model/DisableInstanceRequest.h
 	include/alibabacloud/voicenavigator/model/DisableInstanceResult.h
-	include/alibabacloud/voicenavigator/model/DisableSandBoxWhileListRequest.h
-	include/alibabacloud/voicenavigator/model/DisableSandBoxWhileListResult.h
 	include/alibabacloud/voicenavigator/model/EnableInstanceRequest.h
 	include/alibabacloud/voicenavigator/model/EnableInstanceResult.h
-	include/alibabacloud/voicenavigator/model/EnableSandBoxWhileListRequest.h
-	include/alibabacloud/voicenavigator/model/EnableSandBoxWhileListResult.h
 	include/alibabacloud/voicenavigator/model/EndDialogueRequest.h
 	include/alibabacloud/voicenavigator/model/EndDialogueResult.h
 	include/alibabacloud/voicenavigator/model/ExportConversationDetailsRequest.h
 	include/alibabacloud/voicenavigator/model/ExportConversationDetailsResult.h
 	include/alibabacloud/voicenavigator/model/ExportStatisticalDataRequest.h
 	include/alibabacloud/voicenavigator/model/ExportStatisticalDataResult.h
-	include/alibabacloud/voicenavigator/model/GetInstanceConfigRequest.h
-	include/alibabacloud/voicenavigator/model/GetInstanceConfigResult.h
-	include/alibabacloud/voicenavigator/model/GetNewBargeInSwitchRequest.h
-	include/alibabacloud/voicenavigator/model/GetNewBargeInSwitchResult.h
+	include/alibabacloud/voicenavigator/model/GenerateUploadUrlRequest.h
+	include/alibabacloud/voicenavigator/model/GenerateUploadUrlResult.h
+	include/alibabacloud/voicenavigator/model/GetAsrConfigRequest.h
+	include/alibabacloud/voicenavigator/model/GetAsrConfigResult.h
 	include/alibabacloud/voicenavigator/model/ListChatbotInstancesRequest.h
 	include/alibabacloud/voicenavigator/model/ListChatbotInstancesResult.h
 	include/alibabacloud/voicenavigator/model/ListConversationDetailsRequest.h
@@ -95,16 +83,12 @@ set(voicenavigator_public_header_model
 	include/alibabacloud/voicenavigator/model/ListDownloadTasksResult.h
 	include/alibabacloud/voicenavigator/model/ListInstancesRequest.h
 	include/alibabacloud/voicenavigator/model/ListInstancesResult.h
-	include/alibabacloud/voicenavigator/model/ListSandBoxWhileListRequest.h
-	include/alibabacloud/voicenavigator/model/ListSandBoxWhileListResult.h
-	include/alibabacloud/voicenavigator/model/ModifyAsrVadConfigRequest.h
-	include/alibabacloud/voicenavigator/model/ModifyAsrVadConfigResult.h
+	include/alibabacloud/voicenavigator/model/ModifyAsrConfigRequest.h
+	include/alibabacloud/voicenavigator/model/ModifyAsrConfigResult.h
 	include/alibabacloud/voicenavigator/model/ModifyGreetingConfigRequest.h
 	include/alibabacloud/voicenavigator/model/ModifyGreetingConfigResult.h
 	include/alibabacloud/voicenavigator/model/ModifyInstanceRequest.h
 	include/alibabacloud/voicenavigator/model/ModifyInstanceResult.h
-	include/alibabacloud/voicenavigator/model/ModifySandBoxWhileListRequest.h
-	include/alibabacloud/voicenavigator/model/ModifySandBoxWhileListResult.h
 	include/alibabacloud/voicenavigator/model/ModifySilenceTimeoutConfigRequest.h
 	include/alibabacloud/voicenavigator/model/ModifySilenceTimeoutConfigResult.h
 	include/alibabacloud/voicenavigator/model/ModifyTTSConfigRequest.h
@@ -116,9 +100,7 @@ set(voicenavigator_public_header_model
 	include/alibabacloud/voicenavigator/model/SaveRecordingRequest.h
 	include/alibabacloud/voicenavigator/model/SaveRecordingResult.h
 	include/alibabacloud/voicenavigator/model/SilenceTimeoutRequest.h
-	include/alibabacloud/voicenavigator/model/SilenceTimeoutResult.h
-	include/alibabacloud/voicenavigator/model/UpdateNewBargeInSwitchRequest.h
-	include/alibabacloud/voicenavigator/model/UpdateNewBargeInSwitchResult.h )
+	include/alibabacloud/voicenavigator/model/SilenceTimeoutResult.h )
 
 set(voicenavigator_src 
 	src/VoiceNavigatorClient.cc
@@ -126,8 +108,6 @@ set(voicenavigator_src
 	src/model/AssociateChatbotInstanceResult.cc
 	src/model/AuditTTSVoiceRequest.cc
 	src/model/AuditTTSVoiceResult.cc
-	src/model/BatchCreateSandBoxWhileListRequest.cc
-	src/model/BatchCreateSandBoxWhileListResult.cc
 	src/model/BeginDialogueRequest.cc
 	src/model/BeginDialogueResult.cc
 	src/model/CollectedNumberRequest.cc
@@ -144,10 +124,6 @@ set(voicenavigator_src
 	src/model/DebugDialogueResult.cc
 	src/model/DeleteInstanceRequest.cc
 	src/model/DeleteInstanceResult.cc
-	src/model/DeleteSandBoxWhileListRequest.cc
-	src/model/DeleteSandBoxWhileListResult.cc
-	src/model/DescribeAsrVadConfigRequest.cc
-	src/model/DescribeAsrVadConfigResult.cc
 	src/model/DescribeConversationRequest.cc
 	src/model/DescribeConversationResult.cc
 	src/model/DescribeConversationContextRequest.cc
@@ -164,28 +140,22 @@ set(voicenavigator_src
 	src/model/DescribeStatisticalDataResult.cc
 	src/model/DescribeTTSConfigRequest.cc
 	src/model/DescribeTTSConfigResult.cc
-	src/model/DescribeVoiceConfigRequest.cc
-	src/model/DescribeVoiceConfigResult.cc
 	src/model/DialogueRequest.cc
 	src/model/DialogueResult.cc
 	src/model/DisableInstanceRequest.cc
 	src/model/DisableInstanceResult.cc
-	src/model/DisableSandBoxWhileListRequest.cc
-	src/model/DisableSandBoxWhileListResult.cc
 	src/model/EnableInstanceRequest.cc
 	src/model/EnableInstanceResult.cc
-	src/model/EnableSandBoxWhileListRequest.cc
-	src/model/EnableSandBoxWhileListResult.cc
 	src/model/EndDialogueRequest.cc
 	src/model/EndDialogueResult.cc
 	src/model/ExportConversationDetailsRequest.cc
 	src/model/ExportConversationDetailsResult.cc
 	src/model/ExportStatisticalDataRequest.cc
 	src/model/ExportStatisticalDataResult.cc
-	src/model/GetInstanceConfigRequest.cc
-	src/model/GetInstanceConfigResult.cc
-	src/model/GetNewBargeInSwitchRequest.cc
-	src/model/GetNewBargeInSwitchResult.cc
+	src/model/GenerateUploadUrlRequest.cc
+	src/model/GenerateUploadUrlResult.cc
+	src/model/GetAsrConfigRequest.cc
+	src/model/GetAsrConfigResult.cc
 	src/model/ListChatbotInstancesRequest.cc
 	src/model/ListChatbotInstancesResult.cc
 	src/model/ListConversationDetailsRequest.cc
@@ -196,16 +166,12 @@ set(voicenavigator_src
 	src/model/ListDownloadTasksResult.cc
 	src/model/ListInstancesRequest.cc
 	src/model/ListInstancesResult.cc
-	src/model/ListSandBoxWhileListRequest.cc
-	src/model/ListSandBoxWhileListResult.cc
-	src/model/ModifyAsrVadConfigRequest.cc
-	src/model/ModifyAsrVadConfigResult.cc
+	src/model/ModifyAsrConfigRequest.cc
+	src/model/ModifyAsrConfigResult.cc
 	src/model/ModifyGreetingConfigRequest.cc
 	src/model/ModifyGreetingConfigResult.cc
 	src/model/ModifyInstanceRequest.cc
 	src/model/ModifyInstanceResult.cc
-	src/model/ModifySandBoxWhileListRequest.cc
-	src/model/ModifySandBoxWhileListResult.cc
 	src/model/ModifySilenceTimeoutConfigRequest.cc
 	src/model/ModifySilenceTimeoutConfigResult.cc
 	src/model/ModifyTTSConfigRequest.cc
@@ -217,9 +183,7 @@ set(voicenavigator_src
 	src/model/SaveRecordingRequest.cc
 	src/model/SaveRecordingResult.cc
 	src/model/SilenceTimeoutRequest.cc
-	src/model/SilenceTimeoutResult.cc
-	src/model/UpdateNewBargeInSwitchRequest.cc
-	src/model/UpdateNewBargeInSwitchResult.cc )
+	src/model/SilenceTimeoutResult.cc )
 
 add_library(voicenavigator ${LIB_TYPE}
 	${voicenavigator_public_header}

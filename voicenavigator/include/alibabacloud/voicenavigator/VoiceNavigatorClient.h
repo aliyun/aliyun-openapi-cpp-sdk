@@ -26,8 +26,6 @@
 #include "model/AssociateChatbotInstanceResult.h"
 #include "model/AuditTTSVoiceRequest.h"
 #include "model/AuditTTSVoiceResult.h"
-#include "model/BatchCreateSandBoxWhileListRequest.h"
-#include "model/BatchCreateSandBoxWhileListResult.h"
 #include "model/BeginDialogueRequest.h"
 #include "model/BeginDialogueResult.h"
 #include "model/CollectedNumberRequest.h"
@@ -44,10 +42,6 @@
 #include "model/DebugDialogueResult.h"
 #include "model/DeleteInstanceRequest.h"
 #include "model/DeleteInstanceResult.h"
-#include "model/DeleteSandBoxWhileListRequest.h"
-#include "model/DeleteSandBoxWhileListResult.h"
-#include "model/DescribeAsrVadConfigRequest.h"
-#include "model/DescribeAsrVadConfigResult.h"
 #include "model/DescribeConversationRequest.h"
 #include "model/DescribeConversationResult.h"
 #include "model/DescribeConversationContextRequest.h"
@@ -64,28 +58,22 @@
 #include "model/DescribeStatisticalDataResult.h"
 #include "model/DescribeTTSConfigRequest.h"
 #include "model/DescribeTTSConfigResult.h"
-#include "model/DescribeVoiceConfigRequest.h"
-#include "model/DescribeVoiceConfigResult.h"
 #include "model/DialogueRequest.h"
 #include "model/DialogueResult.h"
 #include "model/DisableInstanceRequest.h"
 #include "model/DisableInstanceResult.h"
-#include "model/DisableSandBoxWhileListRequest.h"
-#include "model/DisableSandBoxWhileListResult.h"
 #include "model/EnableInstanceRequest.h"
 #include "model/EnableInstanceResult.h"
-#include "model/EnableSandBoxWhileListRequest.h"
-#include "model/EnableSandBoxWhileListResult.h"
 #include "model/EndDialogueRequest.h"
 #include "model/EndDialogueResult.h"
 #include "model/ExportConversationDetailsRequest.h"
 #include "model/ExportConversationDetailsResult.h"
 #include "model/ExportStatisticalDataRequest.h"
 #include "model/ExportStatisticalDataResult.h"
-#include "model/GetInstanceConfigRequest.h"
-#include "model/GetInstanceConfigResult.h"
-#include "model/GetNewBargeInSwitchRequest.h"
-#include "model/GetNewBargeInSwitchResult.h"
+#include "model/GenerateUploadUrlRequest.h"
+#include "model/GenerateUploadUrlResult.h"
+#include "model/GetAsrConfigRequest.h"
+#include "model/GetAsrConfigResult.h"
 #include "model/ListChatbotInstancesRequest.h"
 #include "model/ListChatbotInstancesResult.h"
 #include "model/ListConversationDetailsRequest.h"
@@ -96,16 +84,12 @@
 #include "model/ListDownloadTasksResult.h"
 #include "model/ListInstancesRequest.h"
 #include "model/ListInstancesResult.h"
-#include "model/ListSandBoxWhileListRequest.h"
-#include "model/ListSandBoxWhileListResult.h"
-#include "model/ModifyAsrVadConfigRequest.h"
-#include "model/ModifyAsrVadConfigResult.h"
+#include "model/ModifyAsrConfigRequest.h"
+#include "model/ModifyAsrConfigResult.h"
 #include "model/ModifyGreetingConfigRequest.h"
 #include "model/ModifyGreetingConfigResult.h"
 #include "model/ModifyInstanceRequest.h"
 #include "model/ModifyInstanceResult.h"
-#include "model/ModifySandBoxWhileListRequest.h"
-#include "model/ModifySandBoxWhileListResult.h"
 #include "model/ModifySilenceTimeoutConfigRequest.h"
 #include "model/ModifySilenceTimeoutConfigResult.h"
 #include "model/ModifyTTSConfigRequest.h"
@@ -118,8 +102,6 @@
 #include "model/SaveRecordingResult.h"
 #include "model/SilenceTimeoutRequest.h"
 #include "model/SilenceTimeoutResult.h"
-#include "model/UpdateNewBargeInSwitchRequest.h"
-#include "model/UpdateNewBargeInSwitchResult.h"
 
 
 namespace AlibabaCloud
@@ -135,9 +117,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AuditTTSVoiceResult> AuditTTSVoiceOutcome;
 			typedef std::future<AuditTTSVoiceOutcome> AuditTTSVoiceOutcomeCallable;
 			typedef std::function<void(const VoiceNavigatorClient*, const Model::AuditTTSVoiceRequest&, const AuditTTSVoiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AuditTTSVoiceAsyncHandler;
-			typedef Outcome<Error, Model::BatchCreateSandBoxWhileListResult> BatchCreateSandBoxWhileListOutcome;
-			typedef std::future<BatchCreateSandBoxWhileListOutcome> BatchCreateSandBoxWhileListOutcomeCallable;
-			typedef std::function<void(const VoiceNavigatorClient*, const Model::BatchCreateSandBoxWhileListRequest&, const BatchCreateSandBoxWhileListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchCreateSandBoxWhileListAsyncHandler;
 			typedef Outcome<Error, Model::BeginDialogueResult> BeginDialogueOutcome;
 			typedef std::future<BeginDialogueOutcome> BeginDialogueOutcomeCallable;
 			typedef std::function<void(const VoiceNavigatorClient*, const Model::BeginDialogueRequest&, const BeginDialogueOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BeginDialogueAsyncHandler;
@@ -162,12 +141,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteInstanceResult> DeleteInstanceOutcome;
 			typedef std::future<DeleteInstanceOutcome> DeleteInstanceOutcomeCallable;
 			typedef std::function<void(const VoiceNavigatorClient*, const Model::DeleteInstanceRequest&, const DeleteInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteInstanceAsyncHandler;
-			typedef Outcome<Error, Model::DeleteSandBoxWhileListResult> DeleteSandBoxWhileListOutcome;
-			typedef std::future<DeleteSandBoxWhileListOutcome> DeleteSandBoxWhileListOutcomeCallable;
-			typedef std::function<void(const VoiceNavigatorClient*, const Model::DeleteSandBoxWhileListRequest&, const DeleteSandBoxWhileListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSandBoxWhileListAsyncHandler;
-			typedef Outcome<Error, Model::DescribeAsrVadConfigResult> DescribeAsrVadConfigOutcome;
-			typedef std::future<DescribeAsrVadConfigOutcome> DescribeAsrVadConfigOutcomeCallable;
-			typedef std::function<void(const VoiceNavigatorClient*, const Model::DescribeAsrVadConfigRequest&, const DescribeAsrVadConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAsrVadConfigAsyncHandler;
 			typedef Outcome<Error, Model::DescribeConversationResult> DescribeConversationOutcome;
 			typedef std::future<DescribeConversationOutcome> DescribeConversationOutcomeCallable;
 			typedef std::function<void(const VoiceNavigatorClient*, const Model::DescribeConversationRequest&, const DescribeConversationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConversationAsyncHandler;
@@ -192,24 +165,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeTTSConfigResult> DescribeTTSConfigOutcome;
 			typedef std::future<DescribeTTSConfigOutcome> DescribeTTSConfigOutcomeCallable;
 			typedef std::function<void(const VoiceNavigatorClient*, const Model::DescribeTTSConfigRequest&, const DescribeTTSConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTTSConfigAsyncHandler;
-			typedef Outcome<Error, Model::DescribeVoiceConfigResult> DescribeVoiceConfigOutcome;
-			typedef std::future<DescribeVoiceConfigOutcome> DescribeVoiceConfigOutcomeCallable;
-			typedef std::function<void(const VoiceNavigatorClient*, const Model::DescribeVoiceConfigRequest&, const DescribeVoiceConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVoiceConfigAsyncHandler;
 			typedef Outcome<Error, Model::DialogueResult> DialogueOutcome;
 			typedef std::future<DialogueOutcome> DialogueOutcomeCallable;
 			typedef std::function<void(const VoiceNavigatorClient*, const Model::DialogueRequest&, const DialogueOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DialogueAsyncHandler;
 			typedef Outcome<Error, Model::DisableInstanceResult> DisableInstanceOutcome;
 			typedef std::future<DisableInstanceOutcome> DisableInstanceOutcomeCallable;
 			typedef std::function<void(const VoiceNavigatorClient*, const Model::DisableInstanceRequest&, const DisableInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DisableInstanceAsyncHandler;
-			typedef Outcome<Error, Model::DisableSandBoxWhileListResult> DisableSandBoxWhileListOutcome;
-			typedef std::future<DisableSandBoxWhileListOutcome> DisableSandBoxWhileListOutcomeCallable;
-			typedef std::function<void(const VoiceNavigatorClient*, const Model::DisableSandBoxWhileListRequest&, const DisableSandBoxWhileListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DisableSandBoxWhileListAsyncHandler;
 			typedef Outcome<Error, Model::EnableInstanceResult> EnableInstanceOutcome;
 			typedef std::future<EnableInstanceOutcome> EnableInstanceOutcomeCallable;
 			typedef std::function<void(const VoiceNavigatorClient*, const Model::EnableInstanceRequest&, const EnableInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnableInstanceAsyncHandler;
-			typedef Outcome<Error, Model::EnableSandBoxWhileListResult> EnableSandBoxWhileListOutcome;
-			typedef std::future<EnableSandBoxWhileListOutcome> EnableSandBoxWhileListOutcomeCallable;
-			typedef std::function<void(const VoiceNavigatorClient*, const Model::EnableSandBoxWhileListRequest&, const EnableSandBoxWhileListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnableSandBoxWhileListAsyncHandler;
 			typedef Outcome<Error, Model::EndDialogueResult> EndDialogueOutcome;
 			typedef std::future<EndDialogueOutcome> EndDialogueOutcomeCallable;
 			typedef std::function<void(const VoiceNavigatorClient*, const Model::EndDialogueRequest&, const EndDialogueOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EndDialogueAsyncHandler;
@@ -219,12 +183,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ExportStatisticalDataResult> ExportStatisticalDataOutcome;
 			typedef std::future<ExportStatisticalDataOutcome> ExportStatisticalDataOutcomeCallable;
 			typedef std::function<void(const VoiceNavigatorClient*, const Model::ExportStatisticalDataRequest&, const ExportStatisticalDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ExportStatisticalDataAsyncHandler;
-			typedef Outcome<Error, Model::GetInstanceConfigResult> GetInstanceConfigOutcome;
-			typedef std::future<GetInstanceConfigOutcome> GetInstanceConfigOutcomeCallable;
-			typedef std::function<void(const VoiceNavigatorClient*, const Model::GetInstanceConfigRequest&, const GetInstanceConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetInstanceConfigAsyncHandler;
-			typedef Outcome<Error, Model::GetNewBargeInSwitchResult> GetNewBargeInSwitchOutcome;
-			typedef std::future<GetNewBargeInSwitchOutcome> GetNewBargeInSwitchOutcomeCallable;
-			typedef std::function<void(const VoiceNavigatorClient*, const Model::GetNewBargeInSwitchRequest&, const GetNewBargeInSwitchOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetNewBargeInSwitchAsyncHandler;
+			typedef Outcome<Error, Model::GenerateUploadUrlResult> GenerateUploadUrlOutcome;
+			typedef std::future<GenerateUploadUrlOutcome> GenerateUploadUrlOutcomeCallable;
+			typedef std::function<void(const VoiceNavigatorClient*, const Model::GenerateUploadUrlRequest&, const GenerateUploadUrlOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GenerateUploadUrlAsyncHandler;
+			typedef Outcome<Error, Model::GetAsrConfigResult> GetAsrConfigOutcome;
+			typedef std::future<GetAsrConfigOutcome> GetAsrConfigOutcomeCallable;
+			typedef std::function<void(const VoiceNavigatorClient*, const Model::GetAsrConfigRequest&, const GetAsrConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAsrConfigAsyncHandler;
 			typedef Outcome<Error, Model::ListChatbotInstancesResult> ListChatbotInstancesOutcome;
 			typedef std::future<ListChatbotInstancesOutcome> ListChatbotInstancesOutcomeCallable;
 			typedef std::function<void(const VoiceNavigatorClient*, const Model::ListChatbotInstancesRequest&, const ListChatbotInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListChatbotInstancesAsyncHandler;
@@ -240,21 +204,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListInstancesResult> ListInstancesOutcome;
 			typedef std::future<ListInstancesOutcome> ListInstancesOutcomeCallable;
 			typedef std::function<void(const VoiceNavigatorClient*, const Model::ListInstancesRequest&, const ListInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListInstancesAsyncHandler;
-			typedef Outcome<Error, Model::ListSandBoxWhileListResult> ListSandBoxWhileListOutcome;
-			typedef std::future<ListSandBoxWhileListOutcome> ListSandBoxWhileListOutcomeCallable;
-			typedef std::function<void(const VoiceNavigatorClient*, const Model::ListSandBoxWhileListRequest&, const ListSandBoxWhileListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListSandBoxWhileListAsyncHandler;
-			typedef Outcome<Error, Model::ModifyAsrVadConfigResult> ModifyAsrVadConfigOutcome;
-			typedef std::future<ModifyAsrVadConfigOutcome> ModifyAsrVadConfigOutcomeCallable;
-			typedef std::function<void(const VoiceNavigatorClient*, const Model::ModifyAsrVadConfigRequest&, const ModifyAsrVadConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAsrVadConfigAsyncHandler;
+			typedef Outcome<Error, Model::ModifyAsrConfigResult> ModifyAsrConfigOutcome;
+			typedef std::future<ModifyAsrConfigOutcome> ModifyAsrConfigOutcomeCallable;
+			typedef std::function<void(const VoiceNavigatorClient*, const Model::ModifyAsrConfigRequest&, const ModifyAsrConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAsrConfigAsyncHandler;
 			typedef Outcome<Error, Model::ModifyGreetingConfigResult> ModifyGreetingConfigOutcome;
 			typedef std::future<ModifyGreetingConfigOutcome> ModifyGreetingConfigOutcomeCallable;
 			typedef std::function<void(const VoiceNavigatorClient*, const Model::ModifyGreetingConfigRequest&, const ModifyGreetingConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyGreetingConfigAsyncHandler;
 			typedef Outcome<Error, Model::ModifyInstanceResult> ModifyInstanceOutcome;
 			typedef std::future<ModifyInstanceOutcome> ModifyInstanceOutcomeCallable;
 			typedef std::function<void(const VoiceNavigatorClient*, const Model::ModifyInstanceRequest&, const ModifyInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceAsyncHandler;
-			typedef Outcome<Error, Model::ModifySandBoxWhileListResult> ModifySandBoxWhileListOutcome;
-			typedef std::future<ModifySandBoxWhileListOutcome> ModifySandBoxWhileListOutcomeCallable;
-			typedef std::function<void(const VoiceNavigatorClient*, const Model::ModifySandBoxWhileListRequest&, const ModifySandBoxWhileListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifySandBoxWhileListAsyncHandler;
 			typedef Outcome<Error, Model::ModifySilenceTimeoutConfigResult> ModifySilenceTimeoutConfigOutcome;
 			typedef std::future<ModifySilenceTimeoutConfigOutcome> ModifySilenceTimeoutConfigOutcomeCallable;
 			typedef std::function<void(const VoiceNavigatorClient*, const Model::ModifySilenceTimeoutConfigRequest&, const ModifySilenceTimeoutConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifySilenceTimeoutConfigAsyncHandler;
@@ -273,9 +231,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SilenceTimeoutResult> SilenceTimeoutOutcome;
 			typedef std::future<SilenceTimeoutOutcome> SilenceTimeoutOutcomeCallable;
 			typedef std::function<void(const VoiceNavigatorClient*, const Model::SilenceTimeoutRequest&, const SilenceTimeoutOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SilenceTimeoutAsyncHandler;
-			typedef Outcome<Error, Model::UpdateNewBargeInSwitchResult> UpdateNewBargeInSwitchOutcome;
-			typedef std::future<UpdateNewBargeInSwitchOutcome> UpdateNewBargeInSwitchOutcomeCallable;
-			typedef std::function<void(const VoiceNavigatorClient*, const Model::UpdateNewBargeInSwitchRequest&, const UpdateNewBargeInSwitchOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateNewBargeInSwitchAsyncHandler;
 
 			VoiceNavigatorClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			VoiceNavigatorClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
@@ -287,9 +242,6 @@ namespace AlibabaCloud
 			AuditTTSVoiceOutcome auditTTSVoice(const Model::AuditTTSVoiceRequest &request)const;
 			void auditTTSVoiceAsync(const Model::AuditTTSVoiceRequest& request, const AuditTTSVoiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AuditTTSVoiceOutcomeCallable auditTTSVoiceCallable(const Model::AuditTTSVoiceRequest& request) const;
-			BatchCreateSandBoxWhileListOutcome batchCreateSandBoxWhileList(const Model::BatchCreateSandBoxWhileListRequest &request)const;
-			void batchCreateSandBoxWhileListAsync(const Model::BatchCreateSandBoxWhileListRequest& request, const BatchCreateSandBoxWhileListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			BatchCreateSandBoxWhileListOutcomeCallable batchCreateSandBoxWhileListCallable(const Model::BatchCreateSandBoxWhileListRequest& request) const;
 			BeginDialogueOutcome beginDialogue(const Model::BeginDialogueRequest &request)const;
 			void beginDialogueAsync(const Model::BeginDialogueRequest& request, const BeginDialogueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			BeginDialogueOutcomeCallable beginDialogueCallable(const Model::BeginDialogueRequest& request) const;
@@ -314,12 +266,6 @@ namespace AlibabaCloud
 			DeleteInstanceOutcome deleteInstance(const Model::DeleteInstanceRequest &request)const;
 			void deleteInstanceAsync(const Model::DeleteInstanceRequest& request, const DeleteInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteInstanceOutcomeCallable deleteInstanceCallable(const Model::DeleteInstanceRequest& request) const;
-			DeleteSandBoxWhileListOutcome deleteSandBoxWhileList(const Model::DeleteSandBoxWhileListRequest &request)const;
-			void deleteSandBoxWhileListAsync(const Model::DeleteSandBoxWhileListRequest& request, const DeleteSandBoxWhileListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DeleteSandBoxWhileListOutcomeCallable deleteSandBoxWhileListCallable(const Model::DeleteSandBoxWhileListRequest& request) const;
-			DescribeAsrVadConfigOutcome describeAsrVadConfig(const Model::DescribeAsrVadConfigRequest &request)const;
-			void describeAsrVadConfigAsync(const Model::DescribeAsrVadConfigRequest& request, const DescribeAsrVadConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeAsrVadConfigOutcomeCallable describeAsrVadConfigCallable(const Model::DescribeAsrVadConfigRequest& request) const;
 			DescribeConversationOutcome describeConversation(const Model::DescribeConversationRequest &request)const;
 			void describeConversationAsync(const Model::DescribeConversationRequest& request, const DescribeConversationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeConversationOutcomeCallable describeConversationCallable(const Model::DescribeConversationRequest& request) const;
@@ -344,24 +290,15 @@ namespace AlibabaCloud
 			DescribeTTSConfigOutcome describeTTSConfig(const Model::DescribeTTSConfigRequest &request)const;
 			void describeTTSConfigAsync(const Model::DescribeTTSConfigRequest& request, const DescribeTTSConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeTTSConfigOutcomeCallable describeTTSConfigCallable(const Model::DescribeTTSConfigRequest& request) const;
-			DescribeVoiceConfigOutcome describeVoiceConfig(const Model::DescribeVoiceConfigRequest &request)const;
-			void describeVoiceConfigAsync(const Model::DescribeVoiceConfigRequest& request, const DescribeVoiceConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeVoiceConfigOutcomeCallable describeVoiceConfigCallable(const Model::DescribeVoiceConfigRequest& request) const;
 			DialogueOutcome dialogue(const Model::DialogueRequest &request)const;
 			void dialogueAsync(const Model::DialogueRequest& request, const DialogueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DialogueOutcomeCallable dialogueCallable(const Model::DialogueRequest& request) const;
 			DisableInstanceOutcome disableInstance(const Model::DisableInstanceRequest &request)const;
 			void disableInstanceAsync(const Model::DisableInstanceRequest& request, const DisableInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DisableInstanceOutcomeCallable disableInstanceCallable(const Model::DisableInstanceRequest& request) const;
-			DisableSandBoxWhileListOutcome disableSandBoxWhileList(const Model::DisableSandBoxWhileListRequest &request)const;
-			void disableSandBoxWhileListAsync(const Model::DisableSandBoxWhileListRequest& request, const DisableSandBoxWhileListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DisableSandBoxWhileListOutcomeCallable disableSandBoxWhileListCallable(const Model::DisableSandBoxWhileListRequest& request) const;
 			EnableInstanceOutcome enableInstance(const Model::EnableInstanceRequest &request)const;
 			void enableInstanceAsync(const Model::EnableInstanceRequest& request, const EnableInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			EnableInstanceOutcomeCallable enableInstanceCallable(const Model::EnableInstanceRequest& request) const;
-			EnableSandBoxWhileListOutcome enableSandBoxWhileList(const Model::EnableSandBoxWhileListRequest &request)const;
-			void enableSandBoxWhileListAsync(const Model::EnableSandBoxWhileListRequest& request, const EnableSandBoxWhileListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			EnableSandBoxWhileListOutcomeCallable enableSandBoxWhileListCallable(const Model::EnableSandBoxWhileListRequest& request) const;
 			EndDialogueOutcome endDialogue(const Model::EndDialogueRequest &request)const;
 			void endDialogueAsync(const Model::EndDialogueRequest& request, const EndDialogueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			EndDialogueOutcomeCallable endDialogueCallable(const Model::EndDialogueRequest& request) const;
@@ -371,12 +308,12 @@ namespace AlibabaCloud
 			ExportStatisticalDataOutcome exportStatisticalData(const Model::ExportStatisticalDataRequest &request)const;
 			void exportStatisticalDataAsync(const Model::ExportStatisticalDataRequest& request, const ExportStatisticalDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ExportStatisticalDataOutcomeCallable exportStatisticalDataCallable(const Model::ExportStatisticalDataRequest& request) const;
-			GetInstanceConfigOutcome getInstanceConfig(const Model::GetInstanceConfigRequest &request)const;
-			void getInstanceConfigAsync(const Model::GetInstanceConfigRequest& request, const GetInstanceConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetInstanceConfigOutcomeCallable getInstanceConfigCallable(const Model::GetInstanceConfigRequest& request) const;
-			GetNewBargeInSwitchOutcome getNewBargeInSwitch(const Model::GetNewBargeInSwitchRequest &request)const;
-			void getNewBargeInSwitchAsync(const Model::GetNewBargeInSwitchRequest& request, const GetNewBargeInSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetNewBargeInSwitchOutcomeCallable getNewBargeInSwitchCallable(const Model::GetNewBargeInSwitchRequest& request) const;
+			GenerateUploadUrlOutcome generateUploadUrl(const Model::GenerateUploadUrlRequest &request)const;
+			void generateUploadUrlAsync(const Model::GenerateUploadUrlRequest& request, const GenerateUploadUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GenerateUploadUrlOutcomeCallable generateUploadUrlCallable(const Model::GenerateUploadUrlRequest& request) const;
+			GetAsrConfigOutcome getAsrConfig(const Model::GetAsrConfigRequest &request)const;
+			void getAsrConfigAsync(const Model::GetAsrConfigRequest& request, const GetAsrConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetAsrConfigOutcomeCallable getAsrConfigCallable(const Model::GetAsrConfigRequest& request) const;
 			ListChatbotInstancesOutcome listChatbotInstances(const Model::ListChatbotInstancesRequest &request)const;
 			void listChatbotInstancesAsync(const Model::ListChatbotInstancesRequest& request, const ListChatbotInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListChatbotInstancesOutcomeCallable listChatbotInstancesCallable(const Model::ListChatbotInstancesRequest& request) const;
@@ -392,21 +329,15 @@ namespace AlibabaCloud
 			ListInstancesOutcome listInstances(const Model::ListInstancesRequest &request)const;
 			void listInstancesAsync(const Model::ListInstancesRequest& request, const ListInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListInstancesOutcomeCallable listInstancesCallable(const Model::ListInstancesRequest& request) const;
-			ListSandBoxWhileListOutcome listSandBoxWhileList(const Model::ListSandBoxWhileListRequest &request)const;
-			void listSandBoxWhileListAsync(const Model::ListSandBoxWhileListRequest& request, const ListSandBoxWhileListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListSandBoxWhileListOutcomeCallable listSandBoxWhileListCallable(const Model::ListSandBoxWhileListRequest& request) const;
-			ModifyAsrVadConfigOutcome modifyAsrVadConfig(const Model::ModifyAsrVadConfigRequest &request)const;
-			void modifyAsrVadConfigAsync(const Model::ModifyAsrVadConfigRequest& request, const ModifyAsrVadConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ModifyAsrVadConfigOutcomeCallable modifyAsrVadConfigCallable(const Model::ModifyAsrVadConfigRequest& request) const;
+			ModifyAsrConfigOutcome modifyAsrConfig(const Model::ModifyAsrConfigRequest &request)const;
+			void modifyAsrConfigAsync(const Model::ModifyAsrConfigRequest& request, const ModifyAsrConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyAsrConfigOutcomeCallable modifyAsrConfigCallable(const Model::ModifyAsrConfigRequest& request) const;
 			ModifyGreetingConfigOutcome modifyGreetingConfig(const Model::ModifyGreetingConfigRequest &request)const;
 			void modifyGreetingConfigAsync(const Model::ModifyGreetingConfigRequest& request, const ModifyGreetingConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyGreetingConfigOutcomeCallable modifyGreetingConfigCallable(const Model::ModifyGreetingConfigRequest& request) const;
 			ModifyInstanceOutcome modifyInstance(const Model::ModifyInstanceRequest &request)const;
 			void modifyInstanceAsync(const Model::ModifyInstanceRequest& request, const ModifyInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyInstanceOutcomeCallable modifyInstanceCallable(const Model::ModifyInstanceRequest& request) const;
-			ModifySandBoxWhileListOutcome modifySandBoxWhileList(const Model::ModifySandBoxWhileListRequest &request)const;
-			void modifySandBoxWhileListAsync(const Model::ModifySandBoxWhileListRequest& request, const ModifySandBoxWhileListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ModifySandBoxWhileListOutcomeCallable modifySandBoxWhileListCallable(const Model::ModifySandBoxWhileListRequest& request) const;
 			ModifySilenceTimeoutConfigOutcome modifySilenceTimeoutConfig(const Model::ModifySilenceTimeoutConfigRequest &request)const;
 			void modifySilenceTimeoutConfigAsync(const Model::ModifySilenceTimeoutConfigRequest& request, const ModifySilenceTimeoutConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifySilenceTimeoutConfigOutcomeCallable modifySilenceTimeoutConfigCallable(const Model::ModifySilenceTimeoutConfigRequest& request) const;
@@ -425,9 +356,6 @@ namespace AlibabaCloud
 			SilenceTimeoutOutcome silenceTimeout(const Model::SilenceTimeoutRequest &request)const;
 			void silenceTimeoutAsync(const Model::SilenceTimeoutRequest& request, const SilenceTimeoutAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SilenceTimeoutOutcomeCallable silenceTimeoutCallable(const Model::SilenceTimeoutRequest& request) const;
-			UpdateNewBargeInSwitchOutcome updateNewBargeInSwitch(const Model::UpdateNewBargeInSwitchRequest &request)const;
-			void updateNewBargeInSwitchAsync(const Model::UpdateNewBargeInSwitchRequest& request, const UpdateNewBargeInSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			UpdateNewBargeInSwitchOutcomeCallable updateNewBargeInSwitchCallable(const Model::UpdateNewBargeInSwitchRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

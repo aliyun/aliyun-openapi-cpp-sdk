@@ -43,22 +43,22 @@ void ListInstancesResult::parse(const std::string &payload)
 	for (auto valueInstancesInstance : allInstancesNode)
 	{
 		Instance instancesObject;
+		if(!valueInstancesInstance["Status"].isNull())
+			instancesObject.status = valueInstancesInstance["Status"].asString();
+		if(!valueInstancesInstance["NluServiceType"].isNull())
+			instancesObject.nluServiceType = valueInstancesInstance["NluServiceType"].asString();
+		if(!valueInstancesInstance["ModifyUserName"].isNull())
+			instancesObject.modifyUserName = valueInstancesInstance["ModifyUserName"].asString();
+		if(!valueInstancesInstance["Description"].isNull())
+			instancesObject.description = valueInstancesInstance["Description"].asString();
 		if(!valueInstancesInstance["InstanceId"].isNull())
 			instancesObject.instanceId = valueInstancesInstance["InstanceId"].asString();
 		if(!valueInstancesInstance["Name"].isNull())
 			instancesObject.name = valueInstancesInstance["Name"].asString();
-		if(!valueInstancesInstance["Description"].isNull())
-			instancesObject.description = valueInstancesInstance["Description"].asString();
-		if(!valueInstancesInstance["Status"].isNull())
-			instancesObject.status = valueInstancesInstance["Status"].asString();
 		if(!valueInstancesInstance["Concurrency"].isNull())
 			instancesObject.concurrency = std::stol(valueInstancesInstance["Concurrency"].asString());
 		if(!valueInstancesInstance["ModifyTime"].isNull())
 			instancesObject.modifyTime = std::stol(valueInstancesInstance["ModifyTime"].asString());
-		if(!valueInstancesInstance["ModifyUserName"].isNull())
-			instancesObject.modifyUserName = valueInstancesInstance["ModifyUserName"].asString();
-		if(!valueInstancesInstance["NluServiceType"].isNull())
-			instancesObject.nluServiceType = valueInstancesInstance["NluServiceType"].asString();
 		auto allApplicableOperations = value["ApplicableOperations"]["Operation"];
 		for (auto value : allApplicableOperations)
 			instancesObject.applicableOperations.push_back(value.asString());
@@ -66,10 +66,10 @@ void ListInstancesResult::parse(const std::string &payload)
 	}
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
 
 }
 

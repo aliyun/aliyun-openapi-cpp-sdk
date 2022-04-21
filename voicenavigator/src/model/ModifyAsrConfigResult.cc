@@ -14,31 +14,34 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/voicenavigator/model/UpdateNewBargeInSwitchResult.h>
+#include <alibabacloud/voicenavigator/model/ModifyAsrConfigResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::VoiceNavigator;
 using namespace AlibabaCloud::VoiceNavigator::Model;
 
-UpdateNewBargeInSwitchResult::UpdateNewBargeInSwitchResult() :
+ModifyAsrConfigResult::ModifyAsrConfigResult() :
 	ServiceResult()
 {}
 
-UpdateNewBargeInSwitchResult::UpdateNewBargeInSwitchResult(const std::string &payload) :
+ModifyAsrConfigResult::ModifyAsrConfigResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-UpdateNewBargeInSwitchResult::~UpdateNewBargeInSwitchResult()
+ModifyAsrConfigResult::~ModifyAsrConfigResult()
 {}
 
-void UpdateNewBargeInSwitchResult::parse(const std::string &payload)
+void ModifyAsrConfigResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto dataNode = value["Data"];
+	if(!dataNode["AffectedRows"].isNull())
+		data_.affectedRows = std::stoi(dataNode["AffectedRows"].asString());
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["HttpStatusCode"].isNull())
@@ -50,22 +53,27 @@ void UpdateNewBargeInSwitchResult::parse(const std::string &payload)
 
 }
 
-int UpdateNewBargeInSwitchResult::getHttpStatusCode()const
+int ModifyAsrConfigResult::getHttpStatusCode()const
 {
 	return httpStatusCode_;
 }
 
-std::string UpdateNewBargeInSwitchResult::getErrorMsg()const
+std::string ModifyAsrConfigResult::getErrorMsg()const
 {
 	return errorMsg_;
 }
 
-std::string UpdateNewBargeInSwitchResult::getCode()const
+ModifyAsrConfigResult::Data ModifyAsrConfigResult::getData()const
+{
+	return data_;
+}
+
+std::string ModifyAsrConfigResult::getCode()const
 {
 	return code_;
 }
 
-bool UpdateNewBargeInSwitchResult::getSuccess()const
+bool ModifyAsrConfigResult::getSuccess()const
 {
 	return success_;
 }

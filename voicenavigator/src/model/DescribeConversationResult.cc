@@ -39,22 +39,22 @@ void DescribeConversationResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["CallingNumber"].isNull())
-		callingNumber_ = value["CallingNumber"].asString();
-	if(!value["BeginTime"].isNull())
-		beginTime_ = std::stol(value["BeginTime"].asString());
-	if(!value["EndTime"].isNull())
-		endTime_ = std::stol(value["EndTime"].asString());
-	if(!value["TransferredToAgent"].isNull())
-		transferredToAgent_ = value["TransferredToAgent"].asString() == "true";
-	if(!value["SkillGroupId"].isNull())
-		skillGroupId_ = value["SkillGroupId"].asString();
-	if(!value["UserUtteranceCount"].isNull())
-		userUtteranceCount_ = std::stoi(value["UserUtteranceCount"].asString());
 	if(!value["EffectiveAnswerCount"].isNull())
 		effectiveAnswerCount_ = std::stoi(value["EffectiveAnswerCount"].asString());
 	if(!value["ConversationId"].isNull())
 		conversationId_ = value["ConversationId"].asString();
+	if(!value["TransferredToAgent"].isNull())
+		transferredToAgent_ = value["TransferredToAgent"].asString() == "true";
+	if(!value["EndTime"].isNull())
+		endTime_ = std::stol(value["EndTime"].asString());
+	if(!value["BeginTime"].isNull())
+		beginTime_ = std::stol(value["BeginTime"].asString());
+	if(!value["SkillGroupId"].isNull())
+		skillGroupId_ = value["SkillGroupId"].asString();
+	if(!value["CallingNumber"].isNull())
+		callingNumber_ = value["CallingNumber"].asString();
+	if(!value["UserUtteranceCount"].isNull())
+		userUtteranceCount_ = std::stoi(value["UserUtteranceCount"].asString());
 
 }
 

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VOICENAVIGATOR_MODEL_MODIFYINSTANCEREQUEST_H_
-#define ALIBABACLOUD_VOICENAVIGATOR_MODEL_MODIFYINSTANCEREQUEST_H_
+#ifndef ALIBABACLOUD_VOICENAVIGATOR_MODEL_GETASRCONFIGREQUEST_H_
+#define ALIBABACLOUD_VOICENAVIGATOR_MODEL_GETASRCONFIGREQUEST_H_
 
 #include <alibabacloud/voicenavigator/VoiceNavigatorExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,26 +26,20 @@
 namespace AlibabaCloud {
 namespace VoiceNavigator {
 namespace Model {
-class ALIBABACLOUD_VOICENAVIGATOR_EXPORT ModifyInstanceRequest : public RpcServiceRequest {
+class ALIBABACLOUD_VOICENAVIGATOR_EXPORT GetAsrConfigRequest : public RpcServiceRequest {
 public:
-	ModifyInstanceRequest();
-	~ModifyInstanceRequest();
-	std::string getDescription() const;
-	void setDescription(const std::string &description);
-	long getConcurrency() const;
-	void setConcurrency(long concurrency);
-	std::string getInstanceId() const;
-	void setInstanceId(const std::string &instanceId);
-	std::string getChatbotInstanceId() const;
-	void setChatbotInstanceId(const std::string &chatbotInstanceId);
+	GetAsrConfigRequest();
+	~GetAsrConfigRequest();
+	std::string getEntryId() const;
+	void setEntryId(const std::string &entryId);
+	int getConfigLevel() const;
+	void setConfigLevel(int configLevel);
 
 private:
-	std::string description_;
-	long concurrency_;
-	std::string instanceId_;
-	std::string chatbotInstanceId_;
+	std::string entryId_;
+	int configLevel_;
 };
 } // namespace Model
 } // namespace VoiceNavigator
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_VOICENAVIGATOR_MODEL_MODIFYINSTANCEREQUEST_H_
+#endif // !ALIBABACLOUD_VOICENAVIGATOR_MODEL_GETASRCONFIGREQUEST_H_

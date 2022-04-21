@@ -123,42 +123,6 @@ VoiceNavigatorClient::AuditTTSVoiceOutcomeCallable VoiceNavigatorClient::auditTT
 	return task->get_future();
 }
 
-VoiceNavigatorClient::BatchCreateSandBoxWhileListOutcome VoiceNavigatorClient::batchCreateSandBoxWhileList(const BatchCreateSandBoxWhileListRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return BatchCreateSandBoxWhileListOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return BatchCreateSandBoxWhileListOutcome(BatchCreateSandBoxWhileListResult(outcome.result()));
-	else
-		return BatchCreateSandBoxWhileListOutcome(outcome.error());
-}
-
-void VoiceNavigatorClient::batchCreateSandBoxWhileListAsync(const BatchCreateSandBoxWhileListRequest& request, const BatchCreateSandBoxWhileListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, batchCreateSandBoxWhileList(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-VoiceNavigatorClient::BatchCreateSandBoxWhileListOutcomeCallable VoiceNavigatorClient::batchCreateSandBoxWhileListCallable(const BatchCreateSandBoxWhileListRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<BatchCreateSandBoxWhileListOutcome()>>(
-			[this, request]()
-			{
-			return this->batchCreateSandBoxWhileList(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 VoiceNavigatorClient::BeginDialogueOutcome VoiceNavigatorClient::beginDialogue(const BeginDialogueRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -441,78 +405,6 @@ VoiceNavigatorClient::DeleteInstanceOutcomeCallable VoiceNavigatorClient::delete
 			[this, request]()
 			{
 			return this->deleteInstance(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-VoiceNavigatorClient::DeleteSandBoxWhileListOutcome VoiceNavigatorClient::deleteSandBoxWhileList(const DeleteSandBoxWhileListRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DeleteSandBoxWhileListOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DeleteSandBoxWhileListOutcome(DeleteSandBoxWhileListResult(outcome.result()));
-	else
-		return DeleteSandBoxWhileListOutcome(outcome.error());
-}
-
-void VoiceNavigatorClient::deleteSandBoxWhileListAsync(const DeleteSandBoxWhileListRequest& request, const DeleteSandBoxWhileListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, deleteSandBoxWhileList(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-VoiceNavigatorClient::DeleteSandBoxWhileListOutcomeCallable VoiceNavigatorClient::deleteSandBoxWhileListCallable(const DeleteSandBoxWhileListRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DeleteSandBoxWhileListOutcome()>>(
-			[this, request]()
-			{
-			return this->deleteSandBoxWhileList(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-VoiceNavigatorClient::DescribeAsrVadConfigOutcome VoiceNavigatorClient::describeAsrVadConfig(const DescribeAsrVadConfigRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeAsrVadConfigOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeAsrVadConfigOutcome(DescribeAsrVadConfigResult(outcome.result()));
-	else
-		return DescribeAsrVadConfigOutcome(outcome.error());
-}
-
-void VoiceNavigatorClient::describeAsrVadConfigAsync(const DescribeAsrVadConfigRequest& request, const DescribeAsrVadConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeAsrVadConfig(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-VoiceNavigatorClient::DescribeAsrVadConfigOutcomeCallable VoiceNavigatorClient::describeAsrVadConfigCallable(const DescribeAsrVadConfigRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeAsrVadConfigOutcome()>>(
-			[this, request]()
-			{
-			return this->describeAsrVadConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -807,42 +699,6 @@ VoiceNavigatorClient::DescribeTTSConfigOutcomeCallable VoiceNavigatorClient::des
 	return task->get_future();
 }
 
-VoiceNavigatorClient::DescribeVoiceConfigOutcome VoiceNavigatorClient::describeVoiceConfig(const DescribeVoiceConfigRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeVoiceConfigOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeVoiceConfigOutcome(DescribeVoiceConfigResult(outcome.result()));
-	else
-		return DescribeVoiceConfigOutcome(outcome.error());
-}
-
-void VoiceNavigatorClient::describeVoiceConfigAsync(const DescribeVoiceConfigRequest& request, const DescribeVoiceConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeVoiceConfig(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-VoiceNavigatorClient::DescribeVoiceConfigOutcomeCallable VoiceNavigatorClient::describeVoiceConfigCallable(const DescribeVoiceConfigRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeVoiceConfigOutcome()>>(
-			[this, request]()
-			{
-			return this->describeVoiceConfig(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 VoiceNavigatorClient::DialogueOutcome VoiceNavigatorClient::dialogue(const DialogueRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -915,42 +771,6 @@ VoiceNavigatorClient::DisableInstanceOutcomeCallable VoiceNavigatorClient::disab
 	return task->get_future();
 }
 
-VoiceNavigatorClient::DisableSandBoxWhileListOutcome VoiceNavigatorClient::disableSandBoxWhileList(const DisableSandBoxWhileListRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DisableSandBoxWhileListOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DisableSandBoxWhileListOutcome(DisableSandBoxWhileListResult(outcome.result()));
-	else
-		return DisableSandBoxWhileListOutcome(outcome.error());
-}
-
-void VoiceNavigatorClient::disableSandBoxWhileListAsync(const DisableSandBoxWhileListRequest& request, const DisableSandBoxWhileListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, disableSandBoxWhileList(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-VoiceNavigatorClient::DisableSandBoxWhileListOutcomeCallable VoiceNavigatorClient::disableSandBoxWhileListCallable(const DisableSandBoxWhileListRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DisableSandBoxWhileListOutcome()>>(
-			[this, request]()
-			{
-			return this->disableSandBoxWhileList(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 VoiceNavigatorClient::EnableInstanceOutcome VoiceNavigatorClient::enableInstance(const EnableInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -981,42 +801,6 @@ VoiceNavigatorClient::EnableInstanceOutcomeCallable VoiceNavigatorClient::enable
 			[this, request]()
 			{
 			return this->enableInstance(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-VoiceNavigatorClient::EnableSandBoxWhileListOutcome VoiceNavigatorClient::enableSandBoxWhileList(const EnableSandBoxWhileListRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return EnableSandBoxWhileListOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return EnableSandBoxWhileListOutcome(EnableSandBoxWhileListResult(outcome.result()));
-	else
-		return EnableSandBoxWhileListOutcome(outcome.error());
-}
-
-void VoiceNavigatorClient::enableSandBoxWhileListAsync(const EnableSandBoxWhileListRequest& request, const EnableSandBoxWhileListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, enableSandBoxWhileList(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-VoiceNavigatorClient::EnableSandBoxWhileListOutcomeCallable VoiceNavigatorClient::enableSandBoxWhileListCallable(const EnableSandBoxWhileListRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<EnableSandBoxWhileListOutcome()>>(
-			[this, request]()
-			{
-			return this->enableSandBoxWhileList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1131,72 +915,72 @@ VoiceNavigatorClient::ExportStatisticalDataOutcomeCallable VoiceNavigatorClient:
 	return task->get_future();
 }
 
-VoiceNavigatorClient::GetInstanceConfigOutcome VoiceNavigatorClient::getInstanceConfig(const GetInstanceConfigRequest &request) const
+VoiceNavigatorClient::GenerateUploadUrlOutcome VoiceNavigatorClient::generateUploadUrl(const GenerateUploadUrlRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return GetInstanceConfigOutcome(endpointOutcome.error());
+		return GenerateUploadUrlOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return GetInstanceConfigOutcome(GetInstanceConfigResult(outcome.result()));
+		return GenerateUploadUrlOutcome(GenerateUploadUrlResult(outcome.result()));
 	else
-		return GetInstanceConfigOutcome(outcome.error());
+		return GenerateUploadUrlOutcome(outcome.error());
 }
 
-void VoiceNavigatorClient::getInstanceConfigAsync(const GetInstanceConfigRequest& request, const GetInstanceConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void VoiceNavigatorClient::generateUploadUrlAsync(const GenerateUploadUrlRequest& request, const GenerateUploadUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, getInstanceConfig(request), context);
+		handler(this, request, generateUploadUrl(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-VoiceNavigatorClient::GetInstanceConfigOutcomeCallable VoiceNavigatorClient::getInstanceConfigCallable(const GetInstanceConfigRequest &request) const
+VoiceNavigatorClient::GenerateUploadUrlOutcomeCallable VoiceNavigatorClient::generateUploadUrlCallable(const GenerateUploadUrlRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<GetInstanceConfigOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<GenerateUploadUrlOutcome()>>(
 			[this, request]()
 			{
-			return this->getInstanceConfig(request);
+			return this->generateUploadUrl(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-VoiceNavigatorClient::GetNewBargeInSwitchOutcome VoiceNavigatorClient::getNewBargeInSwitch(const GetNewBargeInSwitchRequest &request) const
+VoiceNavigatorClient::GetAsrConfigOutcome VoiceNavigatorClient::getAsrConfig(const GetAsrConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return GetNewBargeInSwitchOutcome(endpointOutcome.error());
+		return GetAsrConfigOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return GetNewBargeInSwitchOutcome(GetNewBargeInSwitchResult(outcome.result()));
+		return GetAsrConfigOutcome(GetAsrConfigResult(outcome.result()));
 	else
-		return GetNewBargeInSwitchOutcome(outcome.error());
+		return GetAsrConfigOutcome(outcome.error());
 }
 
-void VoiceNavigatorClient::getNewBargeInSwitchAsync(const GetNewBargeInSwitchRequest& request, const GetNewBargeInSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void VoiceNavigatorClient::getAsrConfigAsync(const GetAsrConfigRequest& request, const GetAsrConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, getNewBargeInSwitch(request), context);
+		handler(this, request, getAsrConfig(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-VoiceNavigatorClient::GetNewBargeInSwitchOutcomeCallable VoiceNavigatorClient::getNewBargeInSwitchCallable(const GetNewBargeInSwitchRequest &request) const
+VoiceNavigatorClient::GetAsrConfigOutcomeCallable VoiceNavigatorClient::getAsrConfigCallable(const GetAsrConfigRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<GetNewBargeInSwitchOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<GetAsrConfigOutcome()>>(
 			[this, request]()
 			{
-			return this->getNewBargeInSwitch(request);
+			return this->getAsrConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1383,72 +1167,36 @@ VoiceNavigatorClient::ListInstancesOutcomeCallable VoiceNavigatorClient::listIns
 	return task->get_future();
 }
 
-VoiceNavigatorClient::ListSandBoxWhileListOutcome VoiceNavigatorClient::listSandBoxWhileList(const ListSandBoxWhileListRequest &request) const
+VoiceNavigatorClient::ModifyAsrConfigOutcome VoiceNavigatorClient::modifyAsrConfig(const ModifyAsrConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ListSandBoxWhileListOutcome(endpointOutcome.error());
+		return ModifyAsrConfigOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ListSandBoxWhileListOutcome(ListSandBoxWhileListResult(outcome.result()));
+		return ModifyAsrConfigOutcome(ModifyAsrConfigResult(outcome.result()));
 	else
-		return ListSandBoxWhileListOutcome(outcome.error());
+		return ModifyAsrConfigOutcome(outcome.error());
 }
 
-void VoiceNavigatorClient::listSandBoxWhileListAsync(const ListSandBoxWhileListRequest& request, const ListSandBoxWhileListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void VoiceNavigatorClient::modifyAsrConfigAsync(const ModifyAsrConfigRequest& request, const ModifyAsrConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, listSandBoxWhileList(request), context);
+		handler(this, request, modifyAsrConfig(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-VoiceNavigatorClient::ListSandBoxWhileListOutcomeCallable VoiceNavigatorClient::listSandBoxWhileListCallable(const ListSandBoxWhileListRequest &request) const
+VoiceNavigatorClient::ModifyAsrConfigOutcomeCallable VoiceNavigatorClient::modifyAsrConfigCallable(const ModifyAsrConfigRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ListSandBoxWhileListOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ModifyAsrConfigOutcome()>>(
 			[this, request]()
 			{
-			return this->listSandBoxWhileList(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-VoiceNavigatorClient::ModifyAsrVadConfigOutcome VoiceNavigatorClient::modifyAsrVadConfig(const ModifyAsrVadConfigRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyAsrVadConfigOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyAsrVadConfigOutcome(ModifyAsrVadConfigResult(outcome.result()));
-	else
-		return ModifyAsrVadConfigOutcome(outcome.error());
-}
-
-void VoiceNavigatorClient::modifyAsrVadConfigAsync(const ModifyAsrVadConfigRequest& request, const ModifyAsrVadConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyAsrVadConfig(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-VoiceNavigatorClient::ModifyAsrVadConfigOutcomeCallable VoiceNavigatorClient::modifyAsrVadConfigCallable(const ModifyAsrVadConfigRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyAsrVadConfigOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyAsrVadConfig(request);
+			return this->modifyAsrConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1521,42 +1269,6 @@ VoiceNavigatorClient::ModifyInstanceOutcomeCallable VoiceNavigatorClient::modify
 			[this, request]()
 			{
 			return this->modifyInstance(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-VoiceNavigatorClient::ModifySandBoxWhileListOutcome VoiceNavigatorClient::modifySandBoxWhileList(const ModifySandBoxWhileListRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifySandBoxWhileListOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifySandBoxWhileListOutcome(ModifySandBoxWhileListResult(outcome.result()));
-	else
-		return ModifySandBoxWhileListOutcome(outcome.error());
-}
-
-void VoiceNavigatorClient::modifySandBoxWhileListAsync(const ModifySandBoxWhileListRequest& request, const ModifySandBoxWhileListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifySandBoxWhileList(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-VoiceNavigatorClient::ModifySandBoxWhileListOutcomeCallable VoiceNavigatorClient::modifySandBoxWhileListCallable(const ModifySandBoxWhileListRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifySandBoxWhileListOutcome()>>(
-			[this, request]()
-			{
-			return this->modifySandBoxWhileList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1773,42 +1485,6 @@ VoiceNavigatorClient::SilenceTimeoutOutcomeCallable VoiceNavigatorClient::silenc
 			[this, request]()
 			{
 			return this->silenceTimeout(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-VoiceNavigatorClient::UpdateNewBargeInSwitchOutcome VoiceNavigatorClient::updateNewBargeInSwitch(const UpdateNewBargeInSwitchRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return UpdateNewBargeInSwitchOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return UpdateNewBargeInSwitchOutcome(UpdateNewBargeInSwitchResult(outcome.result()));
-	else
-		return UpdateNewBargeInSwitchOutcome(outcome.error());
-}
-
-void VoiceNavigatorClient::updateNewBargeInSwitchAsync(const UpdateNewBargeInSwitchRequest& request, const UpdateNewBargeInSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, updateNewBargeInSwitch(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-VoiceNavigatorClient::UpdateNewBargeInSwitchOutcomeCallable VoiceNavigatorClient::updateNewBargeInSwitchCallable(const UpdateNewBargeInSwitchRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<UpdateNewBargeInSwitchOutcome()>>(
-			[this, request]()
-			{
-			return this->updateNewBargeInSwitch(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

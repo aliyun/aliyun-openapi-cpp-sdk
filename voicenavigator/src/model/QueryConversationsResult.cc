@@ -43,30 +43,30 @@ void QueryConversationsResult::parse(const std::string &payload)
 	for (auto valueConversationsConversation : allConversationsNode)
 	{
 		Conversation conversationsObject;
-		if(!valueConversationsConversation["CallingNumber"].isNull())
-			conversationsObject.callingNumber = valueConversationsConversation["CallingNumber"].asString();
-		if(!valueConversationsConversation["BeginTime"].isNull())
-			conversationsObject.beginTime = std::stol(valueConversationsConversation["BeginTime"].asString());
 		if(!valueConversationsConversation["EndTime"].isNull())
 			conversationsObject.endTime = std::stol(valueConversationsConversation["EndTime"].asString());
-		if(!valueConversationsConversation["TransferredToAgent"].isNull())
-			conversationsObject.transferredToAgent = valueConversationsConversation["TransferredToAgent"].asString() == "true";
-		if(!valueConversationsConversation["SkillGroupId"].isNull())
-			conversationsObject.skillGroupId = valueConversationsConversation["SkillGroupId"].asString();
-		if(!valueConversationsConversation["UserUtteranceCount"].isNull())
-			conversationsObject.userUtteranceCount = std::stoi(valueConversationsConversation["UserUtteranceCount"].asString());
 		if(!valueConversationsConversation["EffectiveAnswerCount"].isNull())
 			conversationsObject.effectiveAnswerCount = std::stoi(valueConversationsConversation["EffectiveAnswerCount"].asString());
+		if(!valueConversationsConversation["TransferredToAgent"].isNull())
+			conversationsObject.transferredToAgent = valueConversationsConversation["TransferredToAgent"].asString() == "true";
+		if(!valueConversationsConversation["BeginTime"].isNull())
+			conversationsObject.beginTime = std::stol(valueConversationsConversation["BeginTime"].asString());
+		if(!valueConversationsConversation["SkillGroupId"].isNull())
+			conversationsObject.skillGroupId = valueConversationsConversation["SkillGroupId"].asString();
 		if(!valueConversationsConversation["ConversationId"].isNull())
 			conversationsObject.conversationId = valueConversationsConversation["ConversationId"].asString();
+		if(!valueConversationsConversation["CallingNumber"].isNull())
+			conversationsObject.callingNumber = valueConversationsConversation["CallingNumber"].asString();
+		if(!valueConversationsConversation["UserUtteranceCount"].isNull())
+			conversationsObject.userUtteranceCount = std::stoi(valueConversationsConversation["UserUtteranceCount"].asString());
 		conversations_.push_back(conversationsObject);
 	}
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stol(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
 
 }
 

@@ -43,28 +43,28 @@ void ListChatbotInstancesResult::parse(const std::string &payload)
 	for (auto valueBotsBot : allBotsNode)
 	{
 		Bot botsObject;
-		if(!valueBotsBot["InstanceId"].isNull())
-			botsObject.instanceId = valueBotsBot["InstanceId"].asString();
-		if(!valueBotsBot["TimeZone"].isNull())
-			botsObject.timeZone = valueBotsBot["TimeZone"].asString();
-		if(!valueBotsBot["Avatar"].isNull())
-			botsObject.avatar = valueBotsBot["Avatar"].asString();
-		if(!valueBotsBot["LanguageCode"].isNull())
-			botsObject.languageCode = valueBotsBot["LanguageCode"].asString();
-		if(!valueBotsBot["Name"].isNull())
-			botsObject.name = valueBotsBot["Name"].asString();
 		if(!valueBotsBot["Introduction"].isNull())
 			botsObject.introduction = valueBotsBot["Introduction"].asString();
+		if(!valueBotsBot["Avatar"].isNull())
+			botsObject.avatar = valueBotsBot["Avatar"].asString();
+		if(!valueBotsBot["TimeZone"].isNull())
+			botsObject.timeZone = valueBotsBot["TimeZone"].asString();
 		if(!valueBotsBot["CreateTime"].isNull())
 			botsObject.createTime = valueBotsBot["CreateTime"].asString();
+		if(!valueBotsBot["LanguageCode"].isNull())
+			botsObject.languageCode = valueBotsBot["LanguageCode"].asString();
+		if(!valueBotsBot["InstanceId"].isNull())
+			botsObject.instanceId = valueBotsBot["InstanceId"].asString();
+		if(!valueBotsBot["Name"].isNull())
+			botsObject.name = valueBotsBot["Name"].asString();
 		bots_.push_back(botsObject);
 	}
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stol(value["TotalCount"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stol(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
 
 }
 

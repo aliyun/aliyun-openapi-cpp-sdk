@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VOICENAVIGATOR_MODEL_DISABLESANDBOXWHILELISTRESULT_H_
-#define ALIBABACLOUD_VOICENAVIGATOR_MODEL_DISABLESANDBOXWHILELISTRESULT_H_
+#ifndef ALIBABACLOUD_VOICENAVIGATOR_MODEL_GETASRCONFIGRESULT_H_
+#define ALIBABACLOUD_VOICENAVIGATOR_MODEL_GETASRCONFIGRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,25 +29,38 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VOICENAVIGATOR_EXPORT DisableSandBoxWhileListResult : public ServiceResult
+			class ALIBABACLOUD_VOICENAVIGATOR_EXPORT GetAsrConfigResult : public ServiceResult
 			{
 			public:
+				struct Data
+				{
+					std::string asrVocabularyId;
+					std::string asrCustomizationId;
+					std::string asrAcousticModelId;
+					std::string asrClassVocabularyId;
+				};
 
 
-				DisableSandBoxWhileListResult();
-				explicit DisableSandBoxWhileListResult(const std::string &payload);
-				~DisableSandBoxWhileListResult();
-				std::string getUuid()const;
-				std::string getPhoneNumber()const;
+				GetAsrConfigResult();
+				explicit GetAsrConfigResult(const std::string &payload);
+				~GetAsrConfigResult();
+				int getHttpStatusCode()const;
+				std::string getErrorMsg()const;
+				Data getData()const;
+				std::string getCode()const;
+				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string uuid_;
-				std::string phoneNumber_;
+				int httpStatusCode_;
+				std::string errorMsg_;
+				Data data_;
+				std::string code_;
+				bool success_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VOICENAVIGATOR_MODEL_DISABLESANDBOXWHILELISTRESULT_H_
+#endif // !ALIBABACLOUD_VOICENAVIGATOR_MODEL_GETASRCONFIGRESULT_H_

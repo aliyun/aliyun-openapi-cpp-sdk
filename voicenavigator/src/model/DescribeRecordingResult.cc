@@ -39,10 +39,10 @@ void DescribeRecordingResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["FileName"].isNull())
-		fileName_ = value["FileName"].asString();
 	if(!value["FilePath"].isNull())
 		filePath_ = value["FilePath"].asString();
+	if(!value["FileName"].isNull())
+		fileName_ = value["FileName"].asString();
 
 }
 

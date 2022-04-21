@@ -43,20 +43,20 @@ void ListConversationDetailsResult::parse(const std::string &payload)
 	for (auto valueConversationDetailsConversationDetail : allConversationDetailsNode)
 	{
 		ConversationDetail conversationDetailsObject;
-		if(!valueConversationDetailsConversationDetail["ConversationId"].isNull())
-			conversationDetailsObject.conversationId = valueConversationDetailsConversationDetail["ConversationId"].asString();
-		if(!valueConversationDetailsConversationDetail["Speaker"].isNull())
-			conversationDetailsObject.speaker = valueConversationDetailsConversationDetail["Speaker"].asString();
-		if(!valueConversationDetailsConversationDetail["Utterance"].isNull())
-			conversationDetailsObject.utterance = valueConversationDetailsConversationDetail["Utterance"].asString();
 		if(!valueConversationDetailsConversationDetail["Action"].isNull())
 			conversationDetailsObject.action = valueConversationDetailsConversationDetail["Action"].asString();
-		if(!valueConversationDetailsConversationDetail["ActionParams"].isNull())
-			conversationDetailsObject.actionParams = valueConversationDetailsConversationDetail["ActionParams"].asString();
+		if(!valueConversationDetailsConversationDetail["Speaker"].isNull())
+			conversationDetailsObject.speaker = valueConversationDetailsConversationDetail["Speaker"].asString();
 		if(!valueConversationDetailsConversationDetail["CreateTime"].isNull())
 			conversationDetailsObject.createTime = std::stol(valueConversationDetailsConversationDetail["CreateTime"].asString());
+		if(!valueConversationDetailsConversationDetail["ConversationId"].isNull())
+			conversationDetailsObject.conversationId = valueConversationDetailsConversationDetail["ConversationId"].asString();
+		if(!valueConversationDetailsConversationDetail["ActionParams"].isNull())
+			conversationDetailsObject.actionParams = valueConversationDetailsConversationDetail["ActionParams"].asString();
 		if(!valueConversationDetailsConversationDetail["SequenceId"].isNull())
 			conversationDetailsObject.sequenceId = valueConversationDetailsConversationDetail["SequenceId"].asString();
+		if(!valueConversationDetailsConversationDetail["Utterance"].isNull())
+			conversationDetailsObject.utterance = valueConversationDetailsConversationDetail["Utterance"].asString();
 		conversationDetails_.push_back(conversationDetailsObject);
 	}
 

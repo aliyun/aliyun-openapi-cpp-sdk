@@ -42,22 +42,22 @@ void DescribeInstanceResult::parse(const std::string &payload)
 	auto allApplicableOperations = value["ApplicableOperations"]["Operation"];
 	for (const auto &item : allApplicableOperations)
 		applicableOperations_.push_back(item.asString());
-	if(!value["InstanceId"].isNull())
-		instanceId_ = value["InstanceId"].asString();
-	if(!value["Name"].isNull())
-		name_ = value["Name"].asString();
-	if(!value["Description"].isNull())
-		description_ = value["Description"].asString();
 	if(!value["Status"].isNull())
 		status_ = value["Status"].asString();
-	if(!value["Concurrency"].isNull())
-		concurrency_ = std::stol(value["Concurrency"].asString());
 	if(!value["ModifyTime"].isNull())
 		modifyTime_ = std::stol(value["ModifyTime"].asString());
+	if(!value["Description"].isNull())
+		description_ = value["Description"].asString();
+	if(!value["InstanceId"].isNull())
+		instanceId_ = value["InstanceId"].asString();
+	if(!value["Concurrency"].isNull())
+		concurrency_ = std::stol(value["Concurrency"].asString());
 	if(!value["ModifyUserName"].isNull())
 		modifyUserName_ = value["ModifyUserName"].asString();
 	if(!value["NluServiceType"].isNull())
 		nluServiceType_ = value["NluServiceType"].asString();
+	if(!value["Name"].isNull())
+		name_ = value["Name"].asString();
 
 }
 

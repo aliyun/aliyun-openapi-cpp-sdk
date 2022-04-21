@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,47 +17,41 @@
 #ifndef ALIBABACLOUD_VOICENAVIGATOR_MODEL_QUERYCONVERSATIONSREQUEST_H_
 #define ALIBABACLOUD_VOICENAVIGATOR_MODEL_QUERYCONVERSATIONSREQUEST_H_
 
+#include <alibabacloud/voicenavigator/VoiceNavigatorExport.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
-#include <alibabacloud/voicenavigator/VoiceNavigatorExport.h>
+#include <map>
 
-namespace AlibabaCloud
-{
-	namespace VoiceNavigator
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_VOICENAVIGATOR_EXPORT QueryConversationsRequest : public RpcServiceRequest
-			{
+namespace AlibabaCloud {
+namespace VoiceNavigator {
+namespace Model {
+class ALIBABACLOUD_VOICENAVIGATOR_EXPORT QueryConversationsRequest : public RpcServiceRequest {
+public:
+	QueryConversationsRequest();
+	~QueryConversationsRequest();
+	long getBeginTimeLeftRange() const;
+	void setBeginTimeLeftRange(long beginTimeLeftRange);
+	int getPageNumber() const;
+	void setPageNumber(int pageNumber);
+	std::string getCallingNumber() const;
+	void setCallingNumber(const std::string &callingNumber);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
+	long getBeginTimeRightRange() const;
+	void setBeginTimeRightRange(long beginTimeRightRange);
+	int getPageSize() const;
+	void setPageSize(int pageSize);
 
-			public:
-				QueryConversationsRequest();
-				~QueryConversationsRequest();
-
-				long getBeginTimeLeftRange()const;
-				void setBeginTimeLeftRange(long beginTimeLeftRange);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
-				std::string getCallingNumber()const;
-				void setCallingNumber(const std::string& callingNumber);
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
-				long getBeginTimeRightRange()const;
-				void setBeginTimeRightRange(long beginTimeRightRange);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
-
-            private:
-				long beginTimeLeftRange_;
-				int pageNumber_;
-				std::string callingNumber_;
-				std::string instanceId_;
-				long beginTimeRightRange_;
-				int pageSize_;
-
-			};
-		}
-	}
-}
+private:
+	long beginTimeLeftRange_;
+	int pageNumber_;
+	std::string callingNumber_;
+	std::string instanceId_;
+	long beginTimeRightRange_;
+	int pageSize_;
+};
+} // namespace Model
+} // namespace VoiceNavigator
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_VOICENAVIGATOR_MODEL_QUERYCONVERSATIONSREQUEST_H_

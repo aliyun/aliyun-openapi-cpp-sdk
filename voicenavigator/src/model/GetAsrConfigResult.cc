@@ -14,37 +14,40 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/voicenavigator/model/GetInstanceConfigResult.h>
+#include <alibabacloud/voicenavigator/model/GetAsrConfigResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::VoiceNavigator;
 using namespace AlibabaCloud::VoiceNavigator::Model;
 
-GetInstanceConfigResult::GetInstanceConfigResult() :
+GetAsrConfigResult::GetAsrConfigResult() :
 	ServiceResult()
 {}
 
-GetInstanceConfigResult::GetInstanceConfigResult(const std::string &payload) :
+GetAsrConfigResult::GetAsrConfigResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-GetInstanceConfigResult::~GetInstanceConfigResult()
+GetAsrConfigResult::~GetAsrConfigResult()
 {}
 
-void GetInstanceConfigResult::parse(const std::string &payload)
+void GetAsrConfigResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	auto instanceConfigNode = dataNode["InstanceConfig"];
-	if(!instanceConfigNode["MiniPlaybackSystemSwitch"].isNull())
-		data_.instanceConfig.miniPlaybackSystemSwitch = instanceConfigNode["MiniPlaybackSystemSwitch"].asString() == "true";
-	if(!instanceConfigNode["NewBargeInSystemSwitch"].isNull())
-		data_.instanceConfig.newBargeInSystemSwitch = instanceConfigNode["NewBargeInSystemSwitch"].asString() == "true";
+	if(!dataNode["AsrVocabularyId"].isNull())
+		data_.asrVocabularyId = dataNode["AsrVocabularyId"].asString();
+	if(!dataNode["AsrCustomizationId"].isNull())
+		data_.asrCustomizationId = dataNode["AsrCustomizationId"].asString();
+	if(!dataNode["AsrAcousticModelId"].isNull())
+		data_.asrAcousticModelId = dataNode["AsrAcousticModelId"].asString();
+	if(!dataNode["AsrClassVocabularyId"].isNull())
+		data_.asrClassVocabularyId = dataNode["AsrClassVocabularyId"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["HttpStatusCode"].isNull())
@@ -56,27 +59,27 @@ void GetInstanceConfigResult::parse(const std::string &payload)
 
 }
 
-int GetInstanceConfigResult::getHttpStatusCode()const
+int GetAsrConfigResult::getHttpStatusCode()const
 {
 	return httpStatusCode_;
 }
 
-std::string GetInstanceConfigResult::getErrorMsg()const
+std::string GetAsrConfigResult::getErrorMsg()const
 {
 	return errorMsg_;
 }
 
-GetInstanceConfigResult::Data GetInstanceConfigResult::getData()const
+GetAsrConfigResult::Data GetAsrConfigResult::getData()const
 {
 	return data_;
 }
 
-std::string GetInstanceConfigResult::getCode()const
+std::string GetAsrConfigResult::getCode()const
 {
 	return code_;
 }
 
-bool GetInstanceConfigResult::getSuccess()const
+bool GetAsrConfigResult::getSuccess()const
 {
 	return success_;
 }

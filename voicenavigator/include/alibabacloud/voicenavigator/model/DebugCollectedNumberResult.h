@@ -37,16 +37,16 @@ namespace AlibabaCloud
 				DebugCollectedNumberResult();
 				explicit DebugCollectedNumberResult(const std::string &payload);
 				~DebugCollectedNumberResult();
-				bool getInterruptible()const;
 				std::string getAction()const;
+				bool getInterruptible()const;
 				std::string getActionParams()const;
 				std::string getTextResponse()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				bool interruptible_;
 				std::string action_;
+				bool interruptible_;
 				std::string actionParams_;
 				std::string textResponse_;
 

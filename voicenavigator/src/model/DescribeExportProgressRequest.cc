@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,34 +18,28 @@
 
 using AlibabaCloud::VoiceNavigator::Model::DescribeExportProgressRequest;
 
-DescribeExportProgressRequest::DescribeExportProgressRequest() :
-	RpcServiceRequest("voicenavigator", "2018-06-12", "DescribeExportProgress")
-{
-	setMethod(HttpRequest::Method::Get);
+DescribeExportProgressRequest::DescribeExportProgressRequest()
+    : RpcServiceRequest("voicenavigator", "2018-06-12", "DescribeExportProgress") {
+  setMethod(HttpRequest::Method::Get);
 }
 
-DescribeExportProgressRequest::~DescribeExportProgressRequest()
-{}
+DescribeExportProgressRequest::~DescribeExportProgressRequest() {}
 
-std::string DescribeExportProgressRequest::getInstanceId()const
-{
-	return instanceId_;
+std::string DescribeExportProgressRequest::getInstanceId() const {
+  return instanceId_;
 }
 
-void DescribeExportProgressRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+void DescribeExportProgressRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-std::string DescribeExportProgressRequest::getExportTaskId()const
-{
-	return exportTaskId_;
+std::string DescribeExportProgressRequest::getExportTaskId() const {
+  return exportTaskId_;
 }
 
-void DescribeExportProgressRequest::setExportTaskId(const std::string& exportTaskId)
-{
-	exportTaskId_ = exportTaskId;
-	setParameter("ExportTaskId", exportTaskId);
+void DescribeExportProgressRequest::setExportTaskId(const std::string &exportTaskId) {
+  exportTaskId_ = exportTaskId;
+  setParameter(std::string("ExportTaskId"), exportTaskId);
 }
 

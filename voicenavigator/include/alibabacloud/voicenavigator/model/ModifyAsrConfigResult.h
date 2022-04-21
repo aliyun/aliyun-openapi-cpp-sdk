@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VOICENAVIGATOR_MODEL_UPDATENEWBARGEINSWITCHRESULT_H_
-#define ALIBABACLOUD_VOICENAVIGATOR_MODEL_UPDATENEWBARGEINSWITCHRESULT_H_
+#ifndef ALIBABACLOUD_VOICENAVIGATOR_MODEL_MODIFYASRCONFIGRESULT_H_
+#define ALIBABACLOUD_VOICENAVIGATOR_MODEL_MODIFYASRCONFIGRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,16 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VOICENAVIGATOR_EXPORT UpdateNewBargeInSwitchResult : public ServiceResult
+			class ALIBABACLOUD_VOICENAVIGATOR_EXPORT ModifyAsrConfigResult : public ServiceResult
 			{
 			public:
+				struct Data
+				{
+					int affectedRows;
+				};
 
 
-				UpdateNewBargeInSwitchResult();
-				explicit UpdateNewBargeInSwitchResult(const std::string &payload);
-				~UpdateNewBargeInSwitchResult();
+				ModifyAsrConfigResult();
+				explicit ModifyAsrConfigResult(const std::string &payload);
+				~ModifyAsrConfigResult();
 				int getHttpStatusCode()const;
 				std::string getErrorMsg()const;
+				Data getData()const;
 				std::string getCode()const;
 				bool getSuccess()const;
 
@@ -47,6 +52,7 @@ namespace AlibabaCloud
 			private:
 				int httpStatusCode_;
 				std::string errorMsg_;
+				Data data_;
 				std::string code_;
 				bool success_;
 
@@ -54,4 +60,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VOICENAVIGATOR_MODEL_UPDATENEWBARGEINSWITCHRESULT_H_
+#endif // !ALIBABACLOUD_VOICENAVIGATOR_MODEL_MODIFYASRCONFIGRESULT_H_

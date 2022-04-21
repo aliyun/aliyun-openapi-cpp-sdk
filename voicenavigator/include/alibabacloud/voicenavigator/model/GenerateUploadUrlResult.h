@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VOICENAVIGATOR_MODEL_DELETESANDBOXWHILELISTRESULT_H_
-#define ALIBABACLOUD_VOICENAVIGATOR_MODEL_DELETESANDBOXWHILELISTRESULT_H_
+#ifndef ALIBABACLOUD_VOICENAVIGATOR_MODEL_GENERATEUPLOADURLRESULT_H_
+#define ALIBABACLOUD_VOICENAVIGATOR_MODEL_GENERATEUPLOADURLRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,25 +29,42 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VOICENAVIGATOR_EXPORT DeleteSandBoxWhileListResult : public ServiceResult
+			class ALIBABACLOUD_VOICENAVIGATOR_EXPORT GenerateUploadUrlResult : public ServiceResult
 			{
 			public:
+				struct Data
+				{
+					std::string policy;
+					int expire;
+					std::string message;
+					std::string accessId;
+					std::string signature;
+					std::string host;
+					std::string folder;
+					bool success;
+				};
 
 
-				DeleteSandBoxWhileListResult();
-				explicit DeleteSandBoxWhileListResult(const std::string &payload);
-				~DeleteSandBoxWhileListResult();
-				std::string getUuid()const;
-				std::string getPhoneNumber()const;
+				GenerateUploadUrlResult();
+				explicit GenerateUploadUrlResult(const std::string &payload);
+				~GenerateUploadUrlResult();
+				std::string getMessage()const;
+				int getHttpStatusCode()const;
+				Data getData()const;
+				std::string getCode()const;
+				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string uuid_;
-				std::string phoneNumber_;
+				std::string message_;
+				int httpStatusCode_;
+				Data data_;
+				std::string code_;
+				bool success_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VOICENAVIGATOR_MODEL_DELETESANDBOXWHILELISTRESULT_H_
+#endif // !ALIBABACLOUD_VOICENAVIGATOR_MODEL_GENERATEUPLOADURLRESULT_H_

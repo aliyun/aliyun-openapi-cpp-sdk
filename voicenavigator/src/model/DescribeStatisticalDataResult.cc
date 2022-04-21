@@ -43,34 +43,34 @@ void DescribeStatisticalDataResult::parse(const std::string &payload)
 	for (auto valueStatisticalDataReportsStatisticalDataReport : allStatisticalDataReportsNode)
 	{
 		StatisticalDataReport statisticalDataReportsObject;
-		if(!valueStatisticalDataReportsStatisticalDataReport["StatisticalDate"].isNull())
-			statisticalDataReportsObject.statisticalDate = valueStatisticalDataReportsStatisticalDataReport["StatisticalDate"].asString();
+		if(!valueStatisticalDataReportsStatisticalDataReport["KnowledgeHitRate"].isNull())
+			statisticalDataReportsObject.knowledgeHitRate = valueStatisticalDataReportsStatisticalDataReport["KnowledgeHitRate"].asString();
 		if(!valueStatisticalDataReportsStatisticalDataReport["ResolvedQuestionNum"].isNull())
 			statisticalDataReportsObject.resolvedQuestionNum = std::stoi(valueStatisticalDataReportsStatisticalDataReport["ResolvedQuestionNum"].asString());
-		if(!valueStatisticalDataReportsStatisticalDataReport["TotalConversationNum"].isNull())
-			statisticalDataReportsObject.totalConversationNum = std::stoi(valueStatisticalDataReportsStatisticalDataReport["TotalConversationNum"].asString());
 		if(!valueStatisticalDataReportsStatisticalDataReport["ResolutionRate"].isNull())
 			statisticalDataReportsObject.resolutionRate = valueStatisticalDataReportsStatisticalDataReport["ResolutionRate"].asString();
+		if(!valueStatisticalDataReportsStatisticalDataReport["StatisticalDate"].isNull())
+			statisticalDataReportsObject.statisticalDate = valueStatisticalDataReportsStatisticalDataReport["StatisticalDate"].asString();
+		if(!valueStatisticalDataReportsStatisticalDataReport["TotalConversationNum"].isNull())
+			statisticalDataReportsObject.totalConversationNum = std::stoi(valueStatisticalDataReportsStatisticalDataReport["TotalConversationNum"].asString());
 		if(!valueStatisticalDataReportsStatisticalDataReport["ValidAnswerRate"].isNull())
 			statisticalDataReportsObject.validAnswerRate = valueStatisticalDataReportsStatisticalDataReport["ValidAnswerRate"].asString();
 		if(!valueStatisticalDataReportsStatisticalDataReport["DialoguePassRate"].isNull())
 			statisticalDataReportsObject.dialoguePassRate = valueStatisticalDataReportsStatisticalDataReport["DialoguePassRate"].asString();
-		if(!valueStatisticalDataReportsStatisticalDataReport["KnowledgeHitRate"].isNull())
-			statisticalDataReportsObject.knowledgeHitRate = valueStatisticalDataReportsStatisticalDataReport["KnowledgeHitRate"].asString();
 		statisticalDataReports_.push_back(statisticalDataReportsObject);
 	}
-	if(!value["ResolvedQuestionTotalNum"].isNull())
-		resolvedQuestionTotalNum_ = std::stol(value["ResolvedQuestionTotalNum"].asString());
-	if(!value["ConversationTotalNum"].isNull())
-		conversationTotalNum_ = std::stol(value["ConversationTotalNum"].asString());
-	if(!value["TotalResolutionRate"].isNull())
-		totalResolutionRate_ = value["TotalResolutionRate"].asString();
-	if(!value["TotalValidAnswerRate"].isNull())
-		totalValidAnswerRate_ = value["TotalValidAnswerRate"].asString();
 	if(!value["TotalDialoguePassRate"].isNull())
 		totalDialoguePassRate_ = value["TotalDialoguePassRate"].asString();
 	if(!value["TotalKnowledgeHitRate"].isNull())
 		totalKnowledgeHitRate_ = value["TotalKnowledgeHitRate"].asString();
+	if(!value["TotalResolutionRate"].isNull())
+		totalResolutionRate_ = value["TotalResolutionRate"].asString();
+	if(!value["TotalValidAnswerRate"].isNull())
+		totalValidAnswerRate_ = value["TotalValidAnswerRate"].asString();
+	if(!value["ResolvedQuestionTotalNum"].isNull())
+		resolvedQuestionTotalNum_ = std::stol(value["ResolvedQuestionTotalNum"].asString());
+	if(!value["ConversationTotalNum"].isNull())
+		conversationTotalNum_ = std::stol(value["ConversationTotalNum"].asString());
 
 }
 
