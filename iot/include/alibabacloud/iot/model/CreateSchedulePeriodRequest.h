@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IOT_MODEL_SAVEDEVICEPROPREQUEST_H_
-#define ALIBABACLOUD_IOT_MODEL_SAVEDEVICEPROPREQUEST_H_
+#ifndef ALIBABACLOUD_IOT_MODEL_CREATESCHEDULEPERIODREQUEST_H_
+#define ALIBABACLOUD_IOT_MODEL_CREATESCHEDULEPERIODREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,48 +28,42 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IOT_EXPORT SaveDevicePropRequest : public RpcServiceRequest
+			class ALIBABACLOUD_IOT_EXPORT CreateSchedulePeriodRequest : public RpcServiceRequest
 			{
 
 			public:
-				SaveDevicePropRequest();
-				~SaveDevicePropRequest();
+				CreateSchedulePeriodRequest();
+				~CreateSchedulePeriodRequest();
 
-				std::string getRealTenantId()const;
-				void setRealTenantId(const std::string& realTenantId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getRealTripartiteKey()const;
-				void setRealTripartiteKey(const std::string& realTripartiteKey);
-				std::string getIotId()const;
-				void setIotId(const std::string& iotId);
+				std::string getScheduleCode()const;
+				void setScheduleCode(const std::string& scheduleCode);
+				std::string getDescription()const;
+				void setDescription(const std::string& description);
+				std::string getStartTime()const;
+				void setStartTime(const std::string& startTime);
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
-				std::string getProductKey()const;
-				void setProductKey(const std::string& productKey);
-				std::string getProps()const;
-				void setProps(const std::string& props);
+				std::string getEndTime()const;
+				void setEndTime(const std::string& endTime);
+				std::string getSoundCodeContent()const;
+				void setSoundCodeContent(const std::string& soundCodeContent);
 				std::string getApiProduct()const;
 				void setApiProduct(const std::string& apiProduct);
 				std::string getApiRevision()const;
 				void setApiRevision(const std::string& apiRevision);
-				std::string getDeviceName()const;
-				void setDeviceName(const std::string& deviceName);
 
             private:
-				std::string realTenantId_;
-				std::string accessKeyId_;
-				std::string realTripartiteKey_;
-				std::string iotId_;
+				std::string scheduleCode_;
+				std::string description_;
+				std::string startTime_;
 				std::string iotInstanceId_;
-				std::string productKey_;
-				std::string props_;
+				std::string endTime_;
+				std::string soundCodeContent_;
 				std::string apiProduct_;
 				std::string apiRevision_;
-				std::string deviceName_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IOT_MODEL_SAVEDEVICEPROPREQUEST_H_
+#endif // !ALIBABACLOUD_IOT_MODEL_CREATESCHEDULEPERIODREQUEST_H_

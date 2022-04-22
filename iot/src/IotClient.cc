@@ -375,6 +375,78 @@ IotClient::BatchClearEdgeInstanceDeviceConfigOutcomeCallable IotClient::batchCle
 	return task->get_future();
 }
 
+IotClient::BatchCreateSoundCodeLabelOutcome IotClient::batchCreateSoundCodeLabel(const BatchCreateSoundCodeLabelRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return BatchCreateSoundCodeLabelOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return BatchCreateSoundCodeLabelOutcome(BatchCreateSoundCodeLabelResult(outcome.result()));
+	else
+		return BatchCreateSoundCodeLabelOutcome(outcome.error());
+}
+
+void IotClient::batchCreateSoundCodeLabelAsync(const BatchCreateSoundCodeLabelRequest& request, const BatchCreateSoundCodeLabelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, batchCreateSoundCodeLabel(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::BatchCreateSoundCodeLabelOutcomeCallable IotClient::batchCreateSoundCodeLabelCallable(const BatchCreateSoundCodeLabelRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<BatchCreateSoundCodeLabelOutcome()>>(
+			[this, request]()
+			{
+			return this->batchCreateSoundCodeLabel(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::BatchCreateSoundCodeLabelWithLabelsOutcome IotClient::batchCreateSoundCodeLabelWithLabels(const BatchCreateSoundCodeLabelWithLabelsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return BatchCreateSoundCodeLabelWithLabelsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return BatchCreateSoundCodeLabelWithLabelsOutcome(BatchCreateSoundCodeLabelWithLabelsResult(outcome.result()));
+	else
+		return BatchCreateSoundCodeLabelWithLabelsOutcome(outcome.error());
+}
+
+void IotClient::batchCreateSoundCodeLabelWithLabelsAsync(const BatchCreateSoundCodeLabelWithLabelsRequest& request, const BatchCreateSoundCodeLabelWithLabelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, batchCreateSoundCodeLabelWithLabels(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::BatchCreateSoundCodeLabelWithLabelsOutcomeCallable IotClient::batchCreateSoundCodeLabelWithLabelsCallable(const BatchCreateSoundCodeLabelWithLabelsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<BatchCreateSoundCodeLabelWithLabelsOutcome()>>(
+			[this, request]()
+			{
+			return this->batchCreateSoundCodeLabelWithLabels(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 IotClient::BatchDeleteDeviceGroupRelationsOutcome IotClient::batchDeleteDeviceGroupRelations(const BatchDeleteDeviceGroupRelationsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2679,6 +2751,42 @@ IotClient::CreateSceneRuleOutcomeCallable IotClient::createSceneRuleCallable(con
 	return task->get_future();
 }
 
+IotClient::CreateSchedulePeriodOutcome IotClient::createSchedulePeriod(const CreateSchedulePeriodRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateSchedulePeriodOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateSchedulePeriodOutcome(CreateSchedulePeriodResult(outcome.result()));
+	else
+		return CreateSchedulePeriodOutcome(outcome.error());
+}
+
+void IotClient::createSchedulePeriodAsync(const CreateSchedulePeriodRequest& request, const CreateSchedulePeriodAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createSchedulePeriod(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::CreateSchedulePeriodOutcomeCallable IotClient::createSchedulePeriodCallable(const CreateSchedulePeriodRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateSchedulePeriodOutcome()>>(
+			[this, request]()
+			{
+			return this->createSchedulePeriod(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 IotClient::CreateSoundCodeOutcome IotClient::createSoundCode(const CreateSoundCodeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2709,6 +2817,78 @@ IotClient::CreateSoundCodeOutcomeCallable IotClient::createSoundCodeCallable(con
 			[this, request]()
 			{
 			return this->createSoundCode(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::CreateSoundCodeLabelOutcome IotClient::createSoundCodeLabel(const CreateSoundCodeLabelRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateSoundCodeLabelOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateSoundCodeLabelOutcome(CreateSoundCodeLabelResult(outcome.result()));
+	else
+		return CreateSoundCodeLabelOutcome(outcome.error());
+}
+
+void IotClient::createSoundCodeLabelAsync(const CreateSoundCodeLabelRequest& request, const CreateSoundCodeLabelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createSoundCodeLabel(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::CreateSoundCodeLabelOutcomeCallable IotClient::createSoundCodeLabelCallable(const CreateSoundCodeLabelRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateSoundCodeLabelOutcome()>>(
+			[this, request]()
+			{
+			return this->createSoundCodeLabel(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::CreateSoundCodeScheduleOutcome IotClient::createSoundCodeSchedule(const CreateSoundCodeScheduleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateSoundCodeScheduleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateSoundCodeScheduleOutcome(CreateSoundCodeScheduleResult(outcome.result()));
+	else
+		return CreateSoundCodeScheduleOutcome(outcome.error());
+}
+
+void IotClient::createSoundCodeScheduleAsync(const CreateSoundCodeScheduleRequest& request, const CreateSoundCodeScheduleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createSoundCodeSchedule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::CreateSoundCodeScheduleOutcomeCallable IotClient::createSoundCodeScheduleCallable(const CreateSoundCodeScheduleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateSoundCodeScheduleOutcome()>>(
+			[this, request]()
+			{
+			return this->createSoundCodeSchedule(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3795,6 +3975,42 @@ IotClient::DeleteSceneRuleOutcomeCallable IotClient::deleteSceneRuleCallable(con
 	return task->get_future();
 }
 
+IotClient::DeleteSchedulePeriodOutcome IotClient::deleteSchedulePeriod(const DeleteSchedulePeriodRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteSchedulePeriodOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteSchedulePeriodOutcome(DeleteSchedulePeriodResult(outcome.result()));
+	else
+		return DeleteSchedulePeriodOutcome(outcome.error());
+}
+
+void IotClient::deleteSchedulePeriodAsync(const DeleteSchedulePeriodRequest& request, const DeleteSchedulePeriodAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteSchedulePeriod(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::DeleteSchedulePeriodOutcomeCallable IotClient::deleteSchedulePeriodCallable(const DeleteSchedulePeriodRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteSchedulePeriodOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteSchedulePeriod(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 IotClient::DeleteSoundCodeOutcome IotClient::deleteSoundCode(const DeleteSoundCodeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3825,6 +4041,78 @@ IotClient::DeleteSoundCodeOutcomeCallable IotClient::deleteSoundCodeCallable(con
 			[this, request]()
 			{
 			return this->deleteSoundCode(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::DeleteSoundCodeLabelOutcome IotClient::deleteSoundCodeLabel(const DeleteSoundCodeLabelRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteSoundCodeLabelOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteSoundCodeLabelOutcome(DeleteSoundCodeLabelResult(outcome.result()));
+	else
+		return DeleteSoundCodeLabelOutcome(outcome.error());
+}
+
+void IotClient::deleteSoundCodeLabelAsync(const DeleteSoundCodeLabelRequest& request, const DeleteSoundCodeLabelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteSoundCodeLabel(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::DeleteSoundCodeLabelOutcomeCallable IotClient::deleteSoundCodeLabelCallable(const DeleteSoundCodeLabelRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteSoundCodeLabelOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteSoundCodeLabel(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::DeleteSoundCodeScheduleOutcome IotClient::deleteSoundCodeSchedule(const DeleteSoundCodeScheduleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteSoundCodeScheduleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteSoundCodeScheduleOutcome(DeleteSoundCodeScheduleResult(outcome.result()));
+	else
+		return DeleteSoundCodeScheduleOutcome(outcome.error());
+}
+
+void IotClient::deleteSoundCodeScheduleAsync(const DeleteSoundCodeScheduleRequest& request, const DeleteSoundCodeScheduleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteSoundCodeSchedule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::DeleteSoundCodeScheduleOutcomeCallable IotClient::deleteSoundCodeScheduleCallable(const DeleteSoundCodeScheduleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteSoundCodeScheduleOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteSoundCodeSchedule(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4941,6 +5229,42 @@ IotClient::GetSoundCodeAudioOutcomeCallable IotClient::getSoundCodeAudioCallable
 			[this, request]()
 			{
 			return this->getSoundCodeAudio(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::GetSoundCodeScheduleOutcome IotClient::getSoundCodeSchedule(const GetSoundCodeScheduleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetSoundCodeScheduleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetSoundCodeScheduleOutcome(GetSoundCodeScheduleResult(outcome.result()));
+	else
+		return GetSoundCodeScheduleOutcome(outcome.error());
+}
+
+void IotClient::getSoundCodeScheduleAsync(const GetSoundCodeScheduleRequest& request, const GetSoundCodeScheduleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getSoundCodeSchedule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::GetSoundCodeScheduleOutcomeCallable IotClient::getSoundCodeScheduleCallable(const GetSoundCodeScheduleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetSoundCodeScheduleOutcome()>>(
+			[this, request]()
+			{
+			return this->getSoundCodeSchedule(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -6237,6 +6561,42 @@ IotClient::OpenIotServiceOutcomeCallable IotClient::openIotServiceCallable(const
 			[this, request]()
 			{
 			return this->openIotService(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::PackageSoundCodeLabelBatchAudioOutcome IotClient::packageSoundCodeLabelBatchAudio(const PackageSoundCodeLabelBatchAudioRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return PackageSoundCodeLabelBatchAudioOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return PackageSoundCodeLabelBatchAudioOutcome(PackageSoundCodeLabelBatchAudioResult(outcome.result()));
+	else
+		return PackageSoundCodeLabelBatchAudioOutcome(outcome.error());
+}
+
+void IotClient::packageSoundCodeLabelBatchAudioAsync(const PackageSoundCodeLabelBatchAudioRequest& request, const PackageSoundCodeLabelBatchAudioAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, packageSoundCodeLabelBatchAudio(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::PackageSoundCodeLabelBatchAudioOutcomeCallable IotClient::packageSoundCodeLabelBatchAudioCallable(const PackageSoundCodeLabelBatchAudioRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<PackageSoundCodeLabelBatchAudioOutcome()>>(
+			[this, request]()
+			{
+			return this->packageSoundCodeLabelBatchAudio(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -8691,6 +9051,42 @@ IotClient::QuerySceneRuleOutcomeCallable IotClient::querySceneRuleCallable(const
 	return task->get_future();
 }
 
+IotClient::QuerySchedulePeriodListOutcome IotClient::querySchedulePeriodList(const QuerySchedulePeriodListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QuerySchedulePeriodListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QuerySchedulePeriodListOutcome(QuerySchedulePeriodListResult(outcome.result()));
+	else
+		return QuerySchedulePeriodListOutcome(outcome.error());
+}
+
+void IotClient::querySchedulePeriodListAsync(const QuerySchedulePeriodListRequest& request, const QuerySchedulePeriodListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, querySchedulePeriodList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::QuerySchedulePeriodListOutcomeCallable IotClient::querySchedulePeriodListCallable(const QuerySchedulePeriodListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QuerySchedulePeriodListOutcome()>>(
+			[this, request]()
+			{
+			return this->querySchedulePeriodList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 IotClient::QuerySolutionDeviceGroupPageOutcome IotClient::querySolutionDeviceGroupPage(const QuerySolutionDeviceGroupPageRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -8727,6 +9123,114 @@ IotClient::QuerySolutionDeviceGroupPageOutcomeCallable IotClient::querySolutionD
 	return task->get_future();
 }
 
+IotClient::QuerySoundCodeLabelBatchFailedResultOutcome IotClient::querySoundCodeLabelBatchFailedResult(const QuerySoundCodeLabelBatchFailedResultRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QuerySoundCodeLabelBatchFailedResultOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QuerySoundCodeLabelBatchFailedResultOutcome(QuerySoundCodeLabelBatchFailedResultResult(outcome.result()));
+	else
+		return QuerySoundCodeLabelBatchFailedResultOutcome(outcome.error());
+}
+
+void IotClient::querySoundCodeLabelBatchFailedResultAsync(const QuerySoundCodeLabelBatchFailedResultRequest& request, const QuerySoundCodeLabelBatchFailedResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, querySoundCodeLabelBatchFailedResult(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::QuerySoundCodeLabelBatchFailedResultOutcomeCallable IotClient::querySoundCodeLabelBatchFailedResultCallable(const QuerySoundCodeLabelBatchFailedResultRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QuerySoundCodeLabelBatchFailedResultOutcome()>>(
+			[this, request]()
+			{
+			return this->querySoundCodeLabelBatchFailedResult(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::QuerySoundCodeLabelBatchListOutcome IotClient::querySoundCodeLabelBatchList(const QuerySoundCodeLabelBatchListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QuerySoundCodeLabelBatchListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QuerySoundCodeLabelBatchListOutcome(QuerySoundCodeLabelBatchListResult(outcome.result()));
+	else
+		return QuerySoundCodeLabelBatchListOutcome(outcome.error());
+}
+
+void IotClient::querySoundCodeLabelBatchListAsync(const QuerySoundCodeLabelBatchListRequest& request, const QuerySoundCodeLabelBatchListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, querySoundCodeLabelBatchList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::QuerySoundCodeLabelBatchListOutcomeCallable IotClient::querySoundCodeLabelBatchListCallable(const QuerySoundCodeLabelBatchListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QuerySoundCodeLabelBatchListOutcome()>>(
+			[this, request]()
+			{
+			return this->querySoundCodeLabelBatchList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::QuerySoundCodeLabelListOutcome IotClient::querySoundCodeLabelList(const QuerySoundCodeLabelListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QuerySoundCodeLabelListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QuerySoundCodeLabelListOutcome(QuerySoundCodeLabelListResult(outcome.result()));
+	else
+		return QuerySoundCodeLabelListOutcome(outcome.error());
+}
+
+void IotClient::querySoundCodeLabelListAsync(const QuerySoundCodeLabelListRequest& request, const QuerySoundCodeLabelListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, querySoundCodeLabelList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::QuerySoundCodeLabelListOutcomeCallable IotClient::querySoundCodeLabelListCallable(const QuerySoundCodeLabelListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QuerySoundCodeLabelListOutcome()>>(
+			[this, request]()
+			{
+			return this->querySoundCodeLabelList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 IotClient::QuerySoundCodeListOutcome IotClient::querySoundCodeList(const QuerySoundCodeListRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -8757,6 +9261,42 @@ IotClient::QuerySoundCodeListOutcomeCallable IotClient::querySoundCodeListCallab
 			[this, request]()
 			{
 			return this->querySoundCodeList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::QuerySoundCodeScheduleListOutcome IotClient::querySoundCodeScheduleList(const QuerySoundCodeScheduleListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QuerySoundCodeScheduleListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QuerySoundCodeScheduleListOutcome(QuerySoundCodeScheduleListResult(outcome.result()));
+	else
+		return QuerySoundCodeScheduleListOutcome(outcome.error());
+}
+
+void IotClient::querySoundCodeScheduleListAsync(const QuerySoundCodeScheduleListRequest& request, const QuerySoundCodeScheduleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, querySoundCodeScheduleList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::QuerySoundCodeScheduleListOutcomeCallable IotClient::querySoundCodeScheduleListCallable(const QuerySoundCodeScheduleListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QuerySoundCodeScheduleListOutcome()>>(
+			[this, request]()
+			{
+			return this->querySoundCodeScheduleList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -9945,6 +10485,42 @@ IotClient::ResetThingOutcomeCallable IotClient::resetThingCallable(const ResetTh
 			[this, request]()
 			{
 			return this->resetThing(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::RetrySoundCodeLabelBatchOutcome IotClient::retrySoundCodeLabelBatch(const RetrySoundCodeLabelBatchRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RetrySoundCodeLabelBatchOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RetrySoundCodeLabelBatchOutcome(RetrySoundCodeLabelBatchResult(outcome.result()));
+	else
+		return RetrySoundCodeLabelBatchOutcome(outcome.error());
+}
+
+void IotClient::retrySoundCodeLabelBatchAsync(const RetrySoundCodeLabelBatchRequest& request, const RetrySoundCodeLabelBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, retrySoundCodeLabelBatch(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::RetrySoundCodeLabelBatchOutcomeCallable IotClient::retrySoundCodeLabelBatchCallable(const RetrySoundCodeLabelBatchRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RetrySoundCodeLabelBatchOutcome()>>(
+			[this, request]()
+			{
+			return this->retrySoundCodeLabelBatch(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -11349,6 +11925,114 @@ IotClient::UpdateSceneRuleOutcomeCallable IotClient::updateSceneRuleCallable(con
 			[this, request]()
 			{
 			return this->updateSceneRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::UpdateSchedulePeriodOutcome IotClient::updateSchedulePeriod(const UpdateSchedulePeriodRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateSchedulePeriodOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateSchedulePeriodOutcome(UpdateSchedulePeriodResult(outcome.result()));
+	else
+		return UpdateSchedulePeriodOutcome(outcome.error());
+}
+
+void IotClient::updateSchedulePeriodAsync(const UpdateSchedulePeriodRequest& request, const UpdateSchedulePeriodAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateSchedulePeriod(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::UpdateSchedulePeriodOutcomeCallable IotClient::updateSchedulePeriodCallable(const UpdateSchedulePeriodRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateSchedulePeriodOutcome()>>(
+			[this, request]()
+			{
+			return this->updateSchedulePeriod(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::UpdateSoundCodeLabelOutcome IotClient::updateSoundCodeLabel(const UpdateSoundCodeLabelRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateSoundCodeLabelOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateSoundCodeLabelOutcome(UpdateSoundCodeLabelResult(outcome.result()));
+	else
+		return UpdateSoundCodeLabelOutcome(outcome.error());
+}
+
+void IotClient::updateSoundCodeLabelAsync(const UpdateSoundCodeLabelRequest& request, const UpdateSoundCodeLabelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateSoundCodeLabel(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::UpdateSoundCodeLabelOutcomeCallable IotClient::updateSoundCodeLabelCallable(const UpdateSoundCodeLabelRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateSoundCodeLabelOutcome()>>(
+			[this, request]()
+			{
+			return this->updateSoundCodeLabel(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::UpdateSoundCodeScheduleOutcome IotClient::updateSoundCodeSchedule(const UpdateSoundCodeScheduleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateSoundCodeScheduleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateSoundCodeScheduleOutcome(UpdateSoundCodeScheduleResult(outcome.result()));
+	else
+		return UpdateSoundCodeScheduleOutcome(outcome.error());
+}
+
+void IotClient::updateSoundCodeScheduleAsync(const UpdateSoundCodeScheduleRequest& request, const UpdateSoundCodeScheduleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateSoundCodeSchedule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::UpdateSoundCodeScheduleOutcomeCallable IotClient::updateSoundCodeScheduleCallable(const UpdateSoundCodeScheduleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateSoundCodeScheduleOutcome()>>(
+			[this, request]()
+			{
+			return this->updateSoundCodeSchedule(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

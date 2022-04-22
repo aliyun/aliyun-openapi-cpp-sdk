@@ -39,6 +39,10 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/BatchCheckDeviceNamesResult.h
 	include/alibabacloud/iot/model/BatchClearEdgeInstanceDeviceConfigRequest.h
 	include/alibabacloud/iot/model/BatchClearEdgeInstanceDeviceConfigResult.h
+	include/alibabacloud/iot/model/BatchCreateSoundCodeLabelRequest.h
+	include/alibabacloud/iot/model/BatchCreateSoundCodeLabelResult.h
+	include/alibabacloud/iot/model/BatchCreateSoundCodeLabelWithLabelsRequest.h
+	include/alibabacloud/iot/model/BatchCreateSoundCodeLabelWithLabelsResult.h
 	include/alibabacloud/iot/model/BatchDeleteDeviceGroupRelationsRequest.h
 	include/alibabacloud/iot/model/BatchDeleteDeviceGroupRelationsResult.h
 	include/alibabacloud/iot/model/BatchDeleteEdgeInstanceChannelRequest.h
@@ -167,8 +171,14 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/CreateRuleActionResult.h
 	include/alibabacloud/iot/model/CreateSceneRuleRequest.h
 	include/alibabacloud/iot/model/CreateSceneRuleResult.h
+	include/alibabacloud/iot/model/CreateSchedulePeriodRequest.h
+	include/alibabacloud/iot/model/CreateSchedulePeriodResult.h
 	include/alibabacloud/iot/model/CreateSoundCodeRequest.h
 	include/alibabacloud/iot/model/CreateSoundCodeResult.h
+	include/alibabacloud/iot/model/CreateSoundCodeLabelRequest.h
+	include/alibabacloud/iot/model/CreateSoundCodeLabelResult.h
+	include/alibabacloud/iot/model/CreateSoundCodeScheduleRequest.h
+	include/alibabacloud/iot/model/CreateSoundCodeScheduleResult.h
 	include/alibabacloud/iot/model/CreateSpeechRequest.h
 	include/alibabacloud/iot/model/CreateSpeechResult.h
 	include/alibabacloud/iot/model/CreateStudioAppDomainOpenRequest.h
@@ -229,8 +239,14 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/DeleteRuleActionResult.h
 	include/alibabacloud/iot/model/DeleteSceneRuleRequest.h
 	include/alibabacloud/iot/model/DeleteSceneRuleResult.h
+	include/alibabacloud/iot/model/DeleteSchedulePeriodRequest.h
+	include/alibabacloud/iot/model/DeleteSchedulePeriodResult.h
 	include/alibabacloud/iot/model/DeleteSoundCodeRequest.h
 	include/alibabacloud/iot/model/DeleteSoundCodeResult.h
+	include/alibabacloud/iot/model/DeleteSoundCodeLabelRequest.h
+	include/alibabacloud/iot/model/DeleteSoundCodeLabelResult.h
+	include/alibabacloud/iot/model/DeleteSoundCodeScheduleRequest.h
+	include/alibabacloud/iot/model/DeleteSoundCodeScheduleResult.h
 	include/alibabacloud/iot/model/DeleteSpeechRequest.h
 	include/alibabacloud/iot/model/DeleteSpeechResult.h
 	include/alibabacloud/iot/model/DeleteStudioAppDomainOpenRequest.h
@@ -293,6 +309,8 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/GetSceneRuleResult.h
 	include/alibabacloud/iot/model/GetSoundCodeAudioRequest.h
 	include/alibabacloud/iot/model/GetSoundCodeAudioResult.h
+	include/alibabacloud/iot/model/GetSoundCodeScheduleRequest.h
+	include/alibabacloud/iot/model/GetSoundCodeScheduleResult.h
 	include/alibabacloud/iot/model/GetSpeechDeviceDetailRequest.h
 	include/alibabacloud/iot/model/GetSpeechDeviceDetailResult.h
 	include/alibabacloud/iot/model/GetSpeechVoiceRequest.h
@@ -365,6 +383,8 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/NotifyAddThingTopoResult.h
 	include/alibabacloud/iot/model/OpenIotServiceRequest.h
 	include/alibabacloud/iot/model/OpenIotServiceResult.h
+	include/alibabacloud/iot/model/PackageSoundCodeLabelBatchAudioRequest.h
+	include/alibabacloud/iot/model/PackageSoundCodeLabelBatchAudioResult.h
 	include/alibabacloud/iot/model/PrintByTemplateRequest.h
 	include/alibabacloud/iot/model/PrintByTemplateResult.h
 	include/alibabacloud/iot/model/PubRequest.h
@@ -501,10 +521,20 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/QueryProductTopicResult.h
 	include/alibabacloud/iot/model/QuerySceneRuleRequest.h
 	include/alibabacloud/iot/model/QuerySceneRuleResult.h
+	include/alibabacloud/iot/model/QuerySchedulePeriodListRequest.h
+	include/alibabacloud/iot/model/QuerySchedulePeriodListResult.h
 	include/alibabacloud/iot/model/QuerySolutionDeviceGroupPageRequest.h
 	include/alibabacloud/iot/model/QuerySolutionDeviceGroupPageResult.h
+	include/alibabacloud/iot/model/QuerySoundCodeLabelBatchFailedResultRequest.h
+	include/alibabacloud/iot/model/QuerySoundCodeLabelBatchFailedResultResult.h
+	include/alibabacloud/iot/model/QuerySoundCodeLabelBatchListRequest.h
+	include/alibabacloud/iot/model/QuerySoundCodeLabelBatchListResult.h
+	include/alibabacloud/iot/model/QuerySoundCodeLabelListRequest.h
+	include/alibabacloud/iot/model/QuerySoundCodeLabelListResult.h
 	include/alibabacloud/iot/model/QuerySoundCodeListRequest.h
 	include/alibabacloud/iot/model/QuerySoundCodeListResult.h
+	include/alibabacloud/iot/model/QuerySoundCodeScheduleListRequest.h
+	include/alibabacloud/iot/model/QuerySoundCodeScheduleListResult.h
 	include/alibabacloud/iot/model/QuerySpeechRequest.h
 	include/alibabacloud/iot/model/QuerySpeechResult.h
 	include/alibabacloud/iot/model/QuerySpeechDeviceRequest.h
@@ -571,6 +601,8 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/ResetConsumerGroupPositionResult.h
 	include/alibabacloud/iot/model/ResetThingRequest.h
 	include/alibabacloud/iot/model/ResetThingResult.h
+	include/alibabacloud/iot/model/RetrySoundCodeLabelBatchRequest.h
+	include/alibabacloud/iot/model/RetrySoundCodeLabelBatchResult.h
 	include/alibabacloud/iot/model/ReupgradeOTATaskRequest.h
 	include/alibabacloud/iot/model/ReupgradeOTATaskResult.h
 	include/alibabacloud/iot/model/SaveDevicePropRequest.h
@@ -649,6 +681,12 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/UpdateRuleActionResult.h
 	include/alibabacloud/iot/model/UpdateSceneRuleRequest.h
 	include/alibabacloud/iot/model/UpdateSceneRuleResult.h
+	include/alibabacloud/iot/model/UpdateSchedulePeriodRequest.h
+	include/alibabacloud/iot/model/UpdateSchedulePeriodResult.h
+	include/alibabacloud/iot/model/UpdateSoundCodeLabelRequest.h
+	include/alibabacloud/iot/model/UpdateSoundCodeLabelResult.h
+	include/alibabacloud/iot/model/UpdateSoundCodeScheduleRequest.h
+	include/alibabacloud/iot/model/UpdateSoundCodeScheduleResult.h
 	include/alibabacloud/iot/model/UpdateSpeechRequest.h
 	include/alibabacloud/iot/model/UpdateSpeechResult.h
 	include/alibabacloud/iot/model/UpdateSubscribeRelationRequest.h
@@ -678,6 +716,10 @@ set(iot_src
 	src/model/BatchCheckDeviceNamesResult.cc
 	src/model/BatchClearEdgeInstanceDeviceConfigRequest.cc
 	src/model/BatchClearEdgeInstanceDeviceConfigResult.cc
+	src/model/BatchCreateSoundCodeLabelRequest.cc
+	src/model/BatchCreateSoundCodeLabelResult.cc
+	src/model/BatchCreateSoundCodeLabelWithLabelsRequest.cc
+	src/model/BatchCreateSoundCodeLabelWithLabelsResult.cc
 	src/model/BatchDeleteDeviceGroupRelationsRequest.cc
 	src/model/BatchDeleteDeviceGroupRelationsResult.cc
 	src/model/BatchDeleteEdgeInstanceChannelRequest.cc
@@ -806,8 +848,14 @@ set(iot_src
 	src/model/CreateRuleActionResult.cc
 	src/model/CreateSceneRuleRequest.cc
 	src/model/CreateSceneRuleResult.cc
+	src/model/CreateSchedulePeriodRequest.cc
+	src/model/CreateSchedulePeriodResult.cc
 	src/model/CreateSoundCodeRequest.cc
 	src/model/CreateSoundCodeResult.cc
+	src/model/CreateSoundCodeLabelRequest.cc
+	src/model/CreateSoundCodeLabelResult.cc
+	src/model/CreateSoundCodeScheduleRequest.cc
+	src/model/CreateSoundCodeScheduleResult.cc
 	src/model/CreateSpeechRequest.cc
 	src/model/CreateSpeechResult.cc
 	src/model/CreateStudioAppDomainOpenRequest.cc
@@ -868,8 +916,14 @@ set(iot_src
 	src/model/DeleteRuleActionResult.cc
 	src/model/DeleteSceneRuleRequest.cc
 	src/model/DeleteSceneRuleResult.cc
+	src/model/DeleteSchedulePeriodRequest.cc
+	src/model/DeleteSchedulePeriodResult.cc
 	src/model/DeleteSoundCodeRequest.cc
 	src/model/DeleteSoundCodeResult.cc
+	src/model/DeleteSoundCodeLabelRequest.cc
+	src/model/DeleteSoundCodeLabelResult.cc
+	src/model/DeleteSoundCodeScheduleRequest.cc
+	src/model/DeleteSoundCodeScheduleResult.cc
 	src/model/DeleteSpeechRequest.cc
 	src/model/DeleteSpeechResult.cc
 	src/model/DeleteStudioAppDomainOpenRequest.cc
@@ -932,6 +986,8 @@ set(iot_src
 	src/model/GetSceneRuleResult.cc
 	src/model/GetSoundCodeAudioRequest.cc
 	src/model/GetSoundCodeAudioResult.cc
+	src/model/GetSoundCodeScheduleRequest.cc
+	src/model/GetSoundCodeScheduleResult.cc
 	src/model/GetSpeechDeviceDetailRequest.cc
 	src/model/GetSpeechDeviceDetailResult.cc
 	src/model/GetSpeechVoiceRequest.cc
@@ -1004,6 +1060,8 @@ set(iot_src
 	src/model/NotifyAddThingTopoResult.cc
 	src/model/OpenIotServiceRequest.cc
 	src/model/OpenIotServiceResult.cc
+	src/model/PackageSoundCodeLabelBatchAudioRequest.cc
+	src/model/PackageSoundCodeLabelBatchAudioResult.cc
 	src/model/PrintByTemplateRequest.cc
 	src/model/PrintByTemplateResult.cc
 	src/model/PubRequest.cc
@@ -1140,10 +1198,20 @@ set(iot_src
 	src/model/QueryProductTopicResult.cc
 	src/model/QuerySceneRuleRequest.cc
 	src/model/QuerySceneRuleResult.cc
+	src/model/QuerySchedulePeriodListRequest.cc
+	src/model/QuerySchedulePeriodListResult.cc
 	src/model/QuerySolutionDeviceGroupPageRequest.cc
 	src/model/QuerySolutionDeviceGroupPageResult.cc
+	src/model/QuerySoundCodeLabelBatchFailedResultRequest.cc
+	src/model/QuerySoundCodeLabelBatchFailedResultResult.cc
+	src/model/QuerySoundCodeLabelBatchListRequest.cc
+	src/model/QuerySoundCodeLabelBatchListResult.cc
+	src/model/QuerySoundCodeLabelListRequest.cc
+	src/model/QuerySoundCodeLabelListResult.cc
 	src/model/QuerySoundCodeListRequest.cc
 	src/model/QuerySoundCodeListResult.cc
+	src/model/QuerySoundCodeScheduleListRequest.cc
+	src/model/QuerySoundCodeScheduleListResult.cc
 	src/model/QuerySpeechRequest.cc
 	src/model/QuerySpeechResult.cc
 	src/model/QuerySpeechDeviceRequest.cc
@@ -1210,6 +1278,8 @@ set(iot_src
 	src/model/ResetConsumerGroupPositionResult.cc
 	src/model/ResetThingRequest.cc
 	src/model/ResetThingResult.cc
+	src/model/RetrySoundCodeLabelBatchRequest.cc
+	src/model/RetrySoundCodeLabelBatchResult.cc
 	src/model/ReupgradeOTATaskRequest.cc
 	src/model/ReupgradeOTATaskResult.cc
 	src/model/SaveDevicePropRequest.cc
@@ -1288,6 +1358,12 @@ set(iot_src
 	src/model/UpdateRuleActionResult.cc
 	src/model/UpdateSceneRuleRequest.cc
 	src/model/UpdateSceneRuleResult.cc
+	src/model/UpdateSchedulePeriodRequest.cc
+	src/model/UpdateSchedulePeriodResult.cc
+	src/model/UpdateSoundCodeLabelRequest.cc
+	src/model/UpdateSoundCodeLabelResult.cc
+	src/model/UpdateSoundCodeScheduleRequest.cc
+	src/model/UpdateSoundCodeScheduleResult.cc
 	src/model/UpdateSpeechRequest.cc
 	src/model/UpdateSpeechResult.cc
 	src/model/UpdateSubscribeRelationRequest.cc
