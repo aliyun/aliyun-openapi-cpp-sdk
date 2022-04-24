@@ -47,12 +47,12 @@ void QueryUserOmsDataResult::parse(const std::string &payload)
 		auto allOmsData = dataNode["OmsData"]["Item"];
 		for (auto value : allOmsData)
 			data_.omsData.push_back(value.asString());
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

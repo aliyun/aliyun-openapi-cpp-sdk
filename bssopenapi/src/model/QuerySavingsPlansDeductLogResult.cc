@@ -50,36 +50,36 @@ void QuerySavingsPlansDeductLogResult::parse(const std::string &payload)
 	for (auto dataNodeItemsSavingsPlansDeductDetailResponse : allItemsNode)
 	{
 		Data::SavingsPlansDeductDetailResponse savingsPlansDeductDetailResponseObject;
-		if(!dataNodeItemsSavingsPlansDeductDetailResponse["InstanceId"].isNull())
-			savingsPlansDeductDetailResponseObject.instanceId = dataNodeItemsSavingsPlansDeductDetailResponse["InstanceId"].asString();
-		if(!dataNodeItemsSavingsPlansDeductDetailResponse["StartTime"].isNull())
-			savingsPlansDeductDetailResponseObject.startTime = dataNodeItemsSavingsPlansDeductDetailResponse["StartTime"].asString();
 		if(!dataNodeItemsSavingsPlansDeductDetailResponse["EndTime"].isNull())
 			savingsPlansDeductDetailResponseObject.endTime = dataNodeItemsSavingsPlansDeductDetailResponse["EndTime"].asString();
+		if(!dataNodeItemsSavingsPlansDeductDetailResponse["StartTime"].isNull())
+			savingsPlansDeductDetailResponseObject.startTime = dataNodeItemsSavingsPlansDeductDetailResponse["StartTime"].asString();
 		if(!dataNodeItemsSavingsPlansDeductDetailResponse["SavingsType"].isNull())
 			savingsPlansDeductDetailResponseObject.savingsType = dataNodeItemsSavingsPlansDeductDetailResponse["SavingsType"].asString();
-		if(!dataNodeItemsSavingsPlansDeductDetailResponse["BillModule"].isNull())
-			savingsPlansDeductDetailResponseObject.billModule = dataNodeItemsSavingsPlansDeductDetailResponse["BillModule"].asString();
-		if(!dataNodeItemsSavingsPlansDeductDetailResponse["DeductFee"].isNull())
-			savingsPlansDeductDetailResponseObject.deductFee = dataNodeItemsSavingsPlansDeductDetailResponse["DeductFee"].asString();
-		if(!dataNodeItemsSavingsPlansDeductDetailResponse["DeductRate"].isNull())
-			savingsPlansDeductDetailResponseObject.deductRate = dataNodeItemsSavingsPlansDeductDetailResponse["DeductRate"].asString();
 		if(!dataNodeItemsSavingsPlansDeductDetailResponse["UserId"].isNull())
 			savingsPlansDeductDetailResponseObject.userId = std::stol(dataNodeItemsSavingsPlansDeductDetailResponse["UserId"].asString());
-		if(!dataNodeItemsSavingsPlansDeductDetailResponse["DeductCommodity"].isNull())
-			savingsPlansDeductDetailResponseObject.deductCommodity = dataNodeItemsSavingsPlansDeductDetailResponse["DeductCommodity"].asString();
-		if(!dataNodeItemsSavingsPlansDeductDetailResponse["DeductInstanceId"].isNull())
-			savingsPlansDeductDetailResponseObject.deductInstanceId = dataNodeItemsSavingsPlansDeductDetailResponse["DeductInstanceId"].asString();
 		if(!dataNodeItemsSavingsPlansDeductDetailResponse["DiscountRate"].isNull())
 			savingsPlansDeductDetailResponseObject.discountRate = dataNodeItemsSavingsPlansDeductDetailResponse["DiscountRate"].asString();
+		if(!dataNodeItemsSavingsPlansDeductDetailResponse["BillModule"].isNull())
+			savingsPlansDeductDetailResponseObject.billModule = dataNodeItemsSavingsPlansDeductDetailResponse["BillModule"].asString();
+		if(!dataNodeItemsSavingsPlansDeductDetailResponse["InstanceId"].isNull())
+			savingsPlansDeductDetailResponseObject.instanceId = dataNodeItemsSavingsPlansDeductDetailResponse["InstanceId"].asString();
+		if(!dataNodeItemsSavingsPlansDeductDetailResponse["DeductInstanceId"].isNull())
+			savingsPlansDeductDetailResponseObject.deductInstanceId = dataNodeItemsSavingsPlansDeductDetailResponse["DeductInstanceId"].asString();
+		if(!dataNodeItemsSavingsPlansDeductDetailResponse["DeductCommodity"].isNull())
+			savingsPlansDeductDetailResponseObject.deductCommodity = dataNodeItemsSavingsPlansDeductDetailResponse["DeductCommodity"].asString();
+		if(!dataNodeItemsSavingsPlansDeductDetailResponse["DeductRate"].isNull())
+			savingsPlansDeductDetailResponseObject.deductRate = dataNodeItemsSavingsPlansDeductDetailResponse["DeductRate"].asString();
+		if(!dataNodeItemsSavingsPlansDeductDetailResponse["DeductFee"].isNull())
+			savingsPlansDeductDetailResponseObject.deductFee = dataNodeItemsSavingsPlansDeductDetailResponse["DeductFee"].asString();
 		data_.items.push_back(savingsPlansDeductDetailResponseObject);
 	}
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

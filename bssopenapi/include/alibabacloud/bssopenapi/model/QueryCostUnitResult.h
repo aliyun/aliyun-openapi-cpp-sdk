@@ -42,8 +42,8 @@ namespace AlibabaCloud
 						std::string unitName;
 					};
 					int totalCount;
-					int pageSize;
 					int pageNum;
+					int pageSize;
 					std::vector<CostUnitDtoListItem> costUnitDtoList;
 				};
 

@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,56 +18,46 @@
 
 using AlibabaCloud::BssOpenApi::Model::QueryCostUnitRequest;
 
-QueryCostUnitRequest::QueryCostUnitRequest() :
-	RpcServiceRequest("bssopenapi", "2017-12-14", "QueryCostUnit")
-{
-	setMethod(HttpRequest::Method::Post);
+QueryCostUnitRequest::QueryCostUnitRequest()
+    : RpcServiceRequest("bssopenapi", "2017-12-14", "QueryCostUnit") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-QueryCostUnitRequest::~QueryCostUnitRequest()
-{}
+QueryCostUnitRequest::~QueryCostUnitRequest() {}
 
-long QueryCostUnitRequest::getParentUnitId()const
-{
-	return parentUnitId_;
+long QueryCostUnitRequest::getParentUnitId() const {
+  return parentUnitId_;
 }
 
-void QueryCostUnitRequest::setParentUnitId(long parentUnitId)
-{
-	parentUnitId_ = parentUnitId;
-	setParameter("ParentUnitId", std::to_string(parentUnitId));
+void QueryCostUnitRequest::setParentUnitId(long parentUnitId) {
+  parentUnitId_ = parentUnitId;
+  setParameter(std::string("ParentUnitId"), std::to_string(parentUnitId));
 }
 
-int QueryCostUnitRequest::getPageNum()const
-{
-	return pageNum_;
+int QueryCostUnitRequest::getPageNum() const {
+  return pageNum_;
 }
 
-void QueryCostUnitRequest::setPageNum(int pageNum)
-{
-	pageNum_ = pageNum;
-	setParameter("PageNum", std::to_string(pageNum));
+void QueryCostUnitRequest::setPageNum(int pageNum) {
+  pageNum_ = pageNum;
+  setParameter(std::string("PageNum"), std::to_string(pageNum));
 }
 
-int QueryCostUnitRequest::getPageSize()const
-{
-	return pageSize_;
+int QueryCostUnitRequest::getPageSize() const {
+  return pageSize_;
 }
 
-void QueryCostUnitRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+void QueryCostUnitRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
-long QueryCostUnitRequest::getOwnerUid()const
-{
-	return ownerUid_;
+long QueryCostUnitRequest::getOwnerUid() const {
+  return ownerUid_;
 }
 
-void QueryCostUnitRequest::setOwnerUid(long ownerUid)
-{
-	ownerUid_ = ownerUid;
-	setParameter("OwnerUid", std::to_string(ownerUid));
+void QueryCostUnitRequest::setOwnerUid(long ownerUid) {
+  ownerUid_ = ownerUid;
+  setParameter(std::string("OwnerUid"), std::to_string(ownerUid));
 }
 

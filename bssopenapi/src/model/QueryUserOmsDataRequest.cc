@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,89 +18,73 @@
 
 using AlibabaCloud::BssOpenApi::Model::QueryUserOmsDataRequest;
 
-QueryUserOmsDataRequest::QueryUserOmsDataRequest() :
-	RpcServiceRequest("bssopenapi", "2017-12-14", "QueryUserOmsData")
-{
-	setMethod(HttpRequest::Method::Post);
+QueryUserOmsDataRequest::QueryUserOmsDataRequest()
+    : RpcServiceRequest("bssopenapi", "2017-12-14", "QueryUserOmsData") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-QueryUserOmsDataRequest::~QueryUserOmsDataRequest()
-{}
+QueryUserOmsDataRequest::~QueryUserOmsDataRequest() {}
 
-std::string QueryUserOmsDataRequest::getEndTime()const
-{
-	return endTime_;
+std::string QueryUserOmsDataRequest::getEndTime() const {
+  return endTime_;
 }
 
-void QueryUserOmsDataRequest::setEndTime(const std::string& endTime)
-{
-	endTime_ = endTime;
-	setParameter("EndTime", endTime);
+void QueryUserOmsDataRequest::setEndTime(const std::string &endTime) {
+  endTime_ = endTime;
+  setParameter(std::string("EndTime"), endTime);
 }
 
-std::string QueryUserOmsDataRequest::getStartTime()const
-{
-	return startTime_;
+std::string QueryUserOmsDataRequest::getStartTime() const {
+  return startTime_;
 }
 
-void QueryUserOmsDataRequest::setStartTime(const std::string& startTime)
-{
-	startTime_ = startTime;
-	setParameter("StartTime", startTime);
+void QueryUserOmsDataRequest::setStartTime(const std::string &startTime) {
+  startTime_ = startTime;
+  setParameter(std::string("StartTime"), startTime);
 }
 
-long QueryUserOmsDataRequest::getOwnerId()const
-{
-	return ownerId_;
+long QueryUserOmsDataRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void QueryUserOmsDataRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void QueryUserOmsDataRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string QueryUserOmsDataRequest::getDataType()const
-{
-	return dataType_;
+std::string QueryUserOmsDataRequest::getDataType() const {
+  return dataType_;
 }
 
-void QueryUserOmsDataRequest::setDataType(const std::string& dataType)
-{
-	dataType_ = dataType;
-	setParameter("DataType", dataType);
+void QueryUserOmsDataRequest::setDataType(const std::string &dataType) {
+  dataType_ = dataType;
+  setParameter(std::string("DataType"), dataType);
 }
 
-std::string QueryUserOmsDataRequest::getMarker()const
-{
-	return marker_;
+std::string QueryUserOmsDataRequest::getMarker() const {
+  return marker_;
 }
 
-void QueryUserOmsDataRequest::setMarker(const std::string& marker)
-{
-	marker_ = marker;
-	setParameter("Marker", marker);
+void QueryUserOmsDataRequest::setMarker(const std::string &marker) {
+  marker_ = marker;
+  setParameter(std::string("Marker"), marker);
 }
 
-int QueryUserOmsDataRequest::getPageSize()const
-{
-	return pageSize_;
+int QueryUserOmsDataRequest::getPageSize() const {
+  return pageSize_;
 }
 
-void QueryUserOmsDataRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+void QueryUserOmsDataRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
-std::string QueryUserOmsDataRequest::getTable()const
-{
-	return table_;
+std::string QueryUserOmsDataRequest::getTable() const {
+  return table_;
 }
 
-void QueryUserOmsDataRequest::setTable(const std::string& table)
-{
-	table_ = table;
-	setParameter("Table", table);
+void QueryUserOmsDataRequest::setTable(const std::string &table) {
+  table_ = table;
+  setParameter(std::string("Table"), table);
 }
 

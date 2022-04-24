@@ -43,9 +43,9 @@ namespace AlibabaCloud
 						std::string totalAmount;
 						std::string remark;
 						std::string remainingAmountUnit;
-						std::string totalAmountUnit;
 						std::string packageType;
 						std::string deductType;
+						std::string totalAmountUnit;
 						std::string region;
 						std::vector<std::string> applicableProducts;
 						std::string remainingAmount;

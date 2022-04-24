@@ -40,10 +40,10 @@ namespace AlibabaCloud
 						float afterTaxAmount;
 						std::string productCode;
 						std::string productType;
-						float outstandingAmount;
 						float deductedByCashCoupons;
-						float tax;
+						float outstandingAmount;
 						std::string paymentCurrency;
+						float tax;
 						float paymentAmount;
 						float deductedByPrepaidCard;
 						float invoiceDiscount;

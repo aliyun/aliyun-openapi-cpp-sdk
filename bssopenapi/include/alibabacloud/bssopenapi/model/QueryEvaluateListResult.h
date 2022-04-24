@@ -37,8 +37,8 @@ namespace AlibabaCloud
 					struct Evaluate
 					{
 						int status;
-						long offsetCostAmount;
 						std::string bizTime;
+						long offsetCostAmount;
 						std::string gmtModified;
 						std::string billCycle;
 						std::string bizType;
@@ -46,15 +46,15 @@ namespace AlibabaCloud
 						long itemId;
 						long originalAmount;
 						std::string name;
-						std::string gmtCreate;
 						int type;
+						std::string gmtCreate;
 						long userId;
 						long billId;
 						long offsetAcceptAmount;
 						std::string opId;
-						long id;
-						std::string userNick;
 						std::string outBizId;
+						std::string userNick;
+						long id;
 						long invoicedAmount;
 						long canInvoiceAmount;
 					};

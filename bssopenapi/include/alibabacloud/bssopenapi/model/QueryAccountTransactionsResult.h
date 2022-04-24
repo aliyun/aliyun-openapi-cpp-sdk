@@ -36,8 +36,8 @@ namespace AlibabaCloud
 				{
 					struct AccountTransactionsListItem
 					{
-						std::string transactionType;
 						std::string billingCycle;
+						std::string transactionType;
 						std::string transactionNumber;
 						std::string amount;
 						std::string transactionAccount;

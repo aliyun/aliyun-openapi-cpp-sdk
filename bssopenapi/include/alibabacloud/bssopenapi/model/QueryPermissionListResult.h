@@ -46,8 +46,8 @@ namespace AlibabaCloud
 					std::vector<PermissionListItem> permissionList;
 					std::string state;
 					std::string relationType;
-					std::string setupTime;
 					std::string startTime;
+					std::string setupTime;
 					long masterId;
 				};
 

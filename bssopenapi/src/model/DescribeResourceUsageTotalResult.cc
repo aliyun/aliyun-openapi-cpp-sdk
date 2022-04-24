@@ -44,29 +44,29 @@ void DescribeResourceUsageTotalResult::parse(const std::string &payload)
 	for (auto dataNodePeriodCoverageItem : allPeriodCoverageNode)
 	{
 		Data::Item itemObject;
-		if(!dataNodePeriodCoverageItem["Period"].isNull())
-			itemObject.period = dataNodePeriodCoverageItem["Period"].asString();
 		if(!dataNodePeriodCoverageItem["UsagePercentage"].isNull())
 			itemObject.usagePercentage = std::stof(dataNodePeriodCoverageItem["UsagePercentage"].asString());
+		if(!dataNodePeriodCoverageItem["Period"].isNull())
+			itemObject.period = dataNodePeriodCoverageItem["Period"].asString();
 		data_.periodCoverage.push_back(itemObject);
 	}
 	auto totalUsageNode = dataNode["TotalUsage"];
-	if(!totalUsageNode["UsagePercentage"].isNull())
-		data_.totalUsage.usagePercentage = std::stof(totalUsageNode["UsagePercentage"].asString());
 	if(!totalUsageNode["PostpaidCost"].isNull())
 		data_.totalUsage.postpaidCost = std::stof(totalUsageNode["PostpaidCost"].asString());
-	if(!totalUsageNode["ReservationCost"].isNull())
-		data_.totalUsage.reservationCost = std::stof(totalUsageNode["ReservationCost"].asString());
 	if(!totalUsageNode["SavedCost"].isNull())
 		data_.totalUsage.savedCost = std::stof(totalUsageNode["SavedCost"].asString());
+	if(!totalUsageNode["UsagePercentage"].isNull())
+		data_.totalUsage.usagePercentage = std::stof(totalUsageNode["UsagePercentage"].asString());
 	if(!totalUsageNode["PotentialSavedCost"].isNull())
 		data_.totalUsage.potentialSavedCost = std::stof(totalUsageNode["PotentialSavedCost"].asString());
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
+	if(!totalUsageNode["ReservationCost"].isNull())
+		data_.totalUsage.reservationCost = std::stof(totalUsageNode["ReservationCost"].asString());
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

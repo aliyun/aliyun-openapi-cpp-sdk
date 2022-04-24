@@ -46,6 +46,8 @@
 #include "model/CreateResellerUserQuotaResult.h"
 #include "model/CreateResourcePackageRequest.h"
 #include "model/CreateResourcePackageResult.h"
+#include "model/CreateSavingsPlansInstanceRequest.h"
+#include "model/CreateSavingsPlansInstanceResult.h"
 #include "model/DeleteCostUnitRequest.h"
 #include "model/DeleteCostUnitResult.h"
 #include "model/DescribeInstanceBillRequest.h"
@@ -74,6 +76,8 @@
 #include "model/DescribeSplitItemBillResult.h"
 #include "model/EnableBillGenerationRequest.h"
 #include "model/EnableBillGenerationResult.h"
+#include "model/GetAccountRelationRequest.h"
+#include "model/GetAccountRelationResult.h"
 #include "model/GetCustomerAccountInfoRequest.h"
 #include "model/GetCustomerAccountInfoResult.h"
 #include "model/GetCustomerListRequest.h"
@@ -86,6 +90,8 @@
 #include "model/GetResourcePackagePriceResult.h"
 #include "model/GetSubscriptionPriceRequest.h"
 #include "model/GetSubscriptionPriceResult.h"
+#include "model/InquiryPriceRefundInstanceRequest.h"
+#include "model/InquiryPriceRefundInstanceResult.h"
 #include "model/ModifyAccountRelationRequest.h"
 #include "model/ModifyAccountRelationResult.h"
 #include "model/ModifyCostUnitRequest.h"
@@ -164,6 +170,8 @@
 #include "model/QuerySplitItemBillResult.h"
 #include "model/QueryUserOmsDataRequest.h"
 #include "model/QueryUserOmsDataResult.h"
+#include "model/RefundInstanceRequest.h"
+#include "model/RefundInstanceResult.h"
 #include "model/RelieveAccountRelationRequest.h"
 #include "model/RelieveAccountRelationResult.h"
 #include "model/RenewInstanceRequest.h"
@@ -239,6 +247,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateResourcePackageResult> CreateResourcePackageOutcome;
 			typedef std::future<CreateResourcePackageOutcome> CreateResourcePackageOutcomeCallable;
 			typedef std::function<void(const BssOpenApiClient*, const Model::CreateResourcePackageRequest&, const CreateResourcePackageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateResourcePackageAsyncHandler;
+			typedef Outcome<Error, Model::CreateSavingsPlansInstanceResult> CreateSavingsPlansInstanceOutcome;
+			typedef std::future<CreateSavingsPlansInstanceOutcome> CreateSavingsPlansInstanceOutcomeCallable;
+			typedef std::function<void(const BssOpenApiClient*, const Model::CreateSavingsPlansInstanceRequest&, const CreateSavingsPlansInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateSavingsPlansInstanceAsyncHandler;
 			typedef Outcome<Error, Model::DeleteCostUnitResult> DeleteCostUnitOutcome;
 			typedef std::future<DeleteCostUnitOutcome> DeleteCostUnitOutcomeCallable;
 			typedef std::function<void(const BssOpenApiClient*, const Model::DeleteCostUnitRequest&, const DeleteCostUnitOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCostUnitAsyncHandler;
@@ -281,6 +292,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::EnableBillGenerationResult> EnableBillGenerationOutcome;
 			typedef std::future<EnableBillGenerationOutcome> EnableBillGenerationOutcomeCallable;
 			typedef std::function<void(const BssOpenApiClient*, const Model::EnableBillGenerationRequest&, const EnableBillGenerationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnableBillGenerationAsyncHandler;
+			typedef Outcome<Error, Model::GetAccountRelationResult> GetAccountRelationOutcome;
+			typedef std::future<GetAccountRelationOutcome> GetAccountRelationOutcomeCallable;
+			typedef std::function<void(const BssOpenApiClient*, const Model::GetAccountRelationRequest&, const GetAccountRelationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAccountRelationAsyncHandler;
 			typedef Outcome<Error, Model::GetCustomerAccountInfoResult> GetCustomerAccountInfoOutcome;
 			typedef std::future<GetCustomerAccountInfoOutcome> GetCustomerAccountInfoOutcomeCallable;
 			typedef std::function<void(const BssOpenApiClient*, const Model::GetCustomerAccountInfoRequest&, const GetCustomerAccountInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetCustomerAccountInfoAsyncHandler;
@@ -299,6 +313,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetSubscriptionPriceResult> GetSubscriptionPriceOutcome;
 			typedef std::future<GetSubscriptionPriceOutcome> GetSubscriptionPriceOutcomeCallable;
 			typedef std::function<void(const BssOpenApiClient*, const Model::GetSubscriptionPriceRequest&, const GetSubscriptionPriceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetSubscriptionPriceAsyncHandler;
+			typedef Outcome<Error, Model::InquiryPriceRefundInstanceResult> InquiryPriceRefundInstanceOutcome;
+			typedef std::future<InquiryPriceRefundInstanceOutcome> InquiryPriceRefundInstanceOutcomeCallable;
+			typedef std::function<void(const BssOpenApiClient*, const Model::InquiryPriceRefundInstanceRequest&, const InquiryPriceRefundInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> InquiryPriceRefundInstanceAsyncHandler;
 			typedef Outcome<Error, Model::ModifyAccountRelationResult> ModifyAccountRelationOutcome;
 			typedef std::future<ModifyAccountRelationOutcome> ModifyAccountRelationOutcomeCallable;
 			typedef std::function<void(const BssOpenApiClient*, const Model::ModifyAccountRelationRequest&, const ModifyAccountRelationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAccountRelationAsyncHandler;
@@ -416,6 +433,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryUserOmsDataResult> QueryUserOmsDataOutcome;
 			typedef std::future<QueryUserOmsDataOutcome> QueryUserOmsDataOutcomeCallable;
 			typedef std::function<void(const BssOpenApiClient*, const Model::QueryUserOmsDataRequest&, const QueryUserOmsDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryUserOmsDataAsyncHandler;
+			typedef Outcome<Error, Model::RefundInstanceResult> RefundInstanceOutcome;
+			typedef std::future<RefundInstanceOutcome> RefundInstanceOutcomeCallable;
+			typedef std::function<void(const BssOpenApiClient*, const Model::RefundInstanceRequest&, const RefundInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RefundInstanceAsyncHandler;
 			typedef Outcome<Error, Model::RelieveAccountRelationResult> RelieveAccountRelationOutcome;
 			typedef std::future<RelieveAccountRelationOutcome> RelieveAccountRelationOutcomeCallable;
 			typedef std::function<void(const BssOpenApiClient*, const Model::RelieveAccountRelationRequest&, const RelieveAccountRelationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RelieveAccountRelationAsyncHandler;
@@ -502,6 +522,9 @@ namespace AlibabaCloud
 			CreateResourcePackageOutcome createResourcePackage(const Model::CreateResourcePackageRequest &request)const;
 			void createResourcePackageAsync(const Model::CreateResourcePackageRequest& request, const CreateResourcePackageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateResourcePackageOutcomeCallable createResourcePackageCallable(const Model::CreateResourcePackageRequest& request) const;
+			CreateSavingsPlansInstanceOutcome createSavingsPlansInstance(const Model::CreateSavingsPlansInstanceRequest &request)const;
+			void createSavingsPlansInstanceAsync(const Model::CreateSavingsPlansInstanceRequest& request, const CreateSavingsPlansInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateSavingsPlansInstanceOutcomeCallable createSavingsPlansInstanceCallable(const Model::CreateSavingsPlansInstanceRequest& request) const;
 			DeleteCostUnitOutcome deleteCostUnit(const Model::DeleteCostUnitRequest &request)const;
 			void deleteCostUnitAsync(const Model::DeleteCostUnitRequest& request, const DeleteCostUnitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteCostUnitOutcomeCallable deleteCostUnitCallable(const Model::DeleteCostUnitRequest& request) const;
@@ -544,6 +567,9 @@ namespace AlibabaCloud
 			EnableBillGenerationOutcome enableBillGeneration(const Model::EnableBillGenerationRequest &request)const;
 			void enableBillGenerationAsync(const Model::EnableBillGenerationRequest& request, const EnableBillGenerationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			EnableBillGenerationOutcomeCallable enableBillGenerationCallable(const Model::EnableBillGenerationRequest& request) const;
+			GetAccountRelationOutcome getAccountRelation(const Model::GetAccountRelationRequest &request)const;
+			void getAccountRelationAsync(const Model::GetAccountRelationRequest& request, const GetAccountRelationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetAccountRelationOutcomeCallable getAccountRelationCallable(const Model::GetAccountRelationRequest& request) const;
 			GetCustomerAccountInfoOutcome getCustomerAccountInfo(const Model::GetCustomerAccountInfoRequest &request)const;
 			void getCustomerAccountInfoAsync(const Model::GetCustomerAccountInfoRequest& request, const GetCustomerAccountInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetCustomerAccountInfoOutcomeCallable getCustomerAccountInfoCallable(const Model::GetCustomerAccountInfoRequest& request) const;
@@ -562,6 +588,9 @@ namespace AlibabaCloud
 			GetSubscriptionPriceOutcome getSubscriptionPrice(const Model::GetSubscriptionPriceRequest &request)const;
 			void getSubscriptionPriceAsync(const Model::GetSubscriptionPriceRequest& request, const GetSubscriptionPriceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetSubscriptionPriceOutcomeCallable getSubscriptionPriceCallable(const Model::GetSubscriptionPriceRequest& request) const;
+			InquiryPriceRefundInstanceOutcome inquiryPriceRefundInstance(const Model::InquiryPriceRefundInstanceRequest &request)const;
+			void inquiryPriceRefundInstanceAsync(const Model::InquiryPriceRefundInstanceRequest& request, const InquiryPriceRefundInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			InquiryPriceRefundInstanceOutcomeCallable inquiryPriceRefundInstanceCallable(const Model::InquiryPriceRefundInstanceRequest& request) const;
 			ModifyAccountRelationOutcome modifyAccountRelation(const Model::ModifyAccountRelationRequest &request)const;
 			void modifyAccountRelationAsync(const Model::ModifyAccountRelationRequest& request, const ModifyAccountRelationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyAccountRelationOutcomeCallable modifyAccountRelationCallable(const Model::ModifyAccountRelationRequest& request) const;
@@ -679,6 +708,9 @@ namespace AlibabaCloud
 			QueryUserOmsDataOutcome queryUserOmsData(const Model::QueryUserOmsDataRequest &request)const;
 			void queryUserOmsDataAsync(const Model::QueryUserOmsDataRequest& request, const QueryUserOmsDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryUserOmsDataOutcomeCallable queryUserOmsDataCallable(const Model::QueryUserOmsDataRequest& request) const;
+			RefundInstanceOutcome refundInstance(const Model::RefundInstanceRequest &request)const;
+			void refundInstanceAsync(const Model::RefundInstanceRequest& request, const RefundInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RefundInstanceOutcomeCallable refundInstanceCallable(const Model::RefundInstanceRequest& request) const;
 			RelieveAccountRelationOutcome relieveAccountRelation(const Model::RelieveAccountRelationRequest &request)const;
 			void relieveAccountRelationAsync(const Model::RelieveAccountRelationRequest& request, const RelieveAccountRelationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RelieveAccountRelationOutcomeCallable relieveAccountRelationCallable(const Model::RelieveAccountRelationRequest& request) const;

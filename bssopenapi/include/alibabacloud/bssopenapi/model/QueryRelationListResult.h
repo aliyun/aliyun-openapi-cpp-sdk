@@ -40,11 +40,11 @@ namespace AlibabaCloud
 						std::string endTime;
 						std::string state;
 						std::string relationType;
-						long relationId;
-						std::string setupTime;
 						std::string startTime;
-						std::string accountType;
+						std::string setupTime;
+						long relationId;
 						std::string accountNickName;
+						std::string accountType;
 						std::string accountName;
 					};
 					int totalCount;

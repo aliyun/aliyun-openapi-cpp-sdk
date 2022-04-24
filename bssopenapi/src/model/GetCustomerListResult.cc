@@ -43,12 +43,12 @@ void GetCustomerListResult::parse(const std::string &payload)
 		auto allUidList = dataNode["UidList"]["Item"];
 		for (auto value : allUidList)
 			data_.uidList.push_back(value.asString());
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

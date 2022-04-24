@@ -42,12 +42,14 @@ void AddAccountRelationResult::parse(const std::string &payload)
 	auto dataNode = value["Data"];
 	if(!dataNode["HostId"].isNull())
 		data_.hostId = dataNode["HostId"].asString();
+	if(!dataNode["RelationId"].isNull())
+		data_.relationId = std::stol(dataNode["RelationId"].asString());
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

@@ -40,40 +40,40 @@ void QueryPermissionListResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
+	if(!dataNode["EndTime"].isNull())
+		data_.endTime = dataNode["EndTime"].asString();
+	if(!dataNode["RelationType"].isNull())
+		data_.relationType = dataNode["RelationType"].asString();
+	if(!dataNode["StartTime"].isNull())
+		data_.startTime = dataNode["StartTime"].asString();
+	if(!dataNode["State"].isNull())
+		data_.state = dataNode["State"].asString();
 	if(!dataNode["MasterId"].isNull())
 		data_.masterId = std::stol(dataNode["MasterId"].asString());
 	if(!dataNode["MemberId"].isNull())
 		data_.memberId = std::stol(dataNode["MemberId"].asString());
-	if(!dataNode["RelationType"].isNull())
-		data_.relationType = dataNode["RelationType"].asString();
-	if(!dataNode["State"].isNull())
-		data_.state = dataNode["State"].asString();
 	if(!dataNode["SetupTime"].isNull())
 		data_.setupTime = dataNode["SetupTime"].asString();
-	if(!dataNode["StartTime"].isNull())
-		data_.startTime = dataNode["StartTime"].asString();
-	if(!dataNode["EndTime"].isNull())
-		data_.endTime = dataNode["EndTime"].asString();
 	auto allPermissionListNode = dataNode["PermissionList"]["PermissionListItem"];
 	for (auto dataNodePermissionListPermissionListItem : allPermissionListNode)
 	{
 		Data::PermissionListItem permissionListItemObject;
+		if(!dataNodePermissionListPermissionListItem["EndTime"].isNull())
+			permissionListItemObject.endTime = dataNodePermissionListPermissionListItem["EndTime"].asString();
+		if(!dataNodePermissionListPermissionListItem["StartTime"].isNull())
+			permissionListItemObject.startTime = dataNodePermissionListPermissionListItem["StartTime"].asString();
 		if(!dataNodePermissionListPermissionListItem["PermissionCode"].isNull())
 			permissionListItemObject.permissionCode = dataNodePermissionListPermissionListItem["PermissionCode"].asString();
 		if(!dataNodePermissionListPermissionListItem["PermissionName"].isNull())
 			permissionListItemObject.permissionName = dataNodePermissionListPermissionListItem["PermissionName"].asString();
-		if(!dataNodePermissionListPermissionListItem["StartTime"].isNull())
-			permissionListItemObject.startTime = dataNodePermissionListPermissionListItem["StartTime"].asString();
-		if(!dataNodePermissionListPermissionListItem["EndTime"].isNull())
-			permissionListItemObject.endTime = dataNodePermissionListPermissionListItem["EndTime"].asString();
 		data_.permissionList.push_back(permissionListItemObject);
 	}
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

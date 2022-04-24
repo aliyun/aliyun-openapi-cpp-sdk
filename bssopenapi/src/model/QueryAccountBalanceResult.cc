@@ -42,20 +42,20 @@ void QueryAccountBalanceResult::parse(const std::string &payload)
 	auto dataNode = value["Data"];
 	if(!dataNode["AvailableAmount"].isNull())
 		data_.availableAmount = dataNode["AvailableAmount"].asString();
-	if(!dataNode["AvailableCashAmount"].isNull())
-		data_.availableCashAmount = dataNode["AvailableCashAmount"].asString();
 	if(!dataNode["CreditAmount"].isNull())
 		data_.creditAmount = dataNode["CreditAmount"].asString();
 	if(!dataNode["MybankCreditAmount"].isNull())
 		data_.mybankCreditAmount = dataNode["MybankCreditAmount"].asString();
 	if(!dataNode["Currency"].isNull())
 		data_.currency = dataNode["Currency"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
+	if(!dataNode["AvailableCashAmount"].isNull())
+		data_.availableCashAmount = dataNode["AvailableCashAmount"].asString();
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

@@ -36,11 +36,11 @@ namespace AlibabaCloud
 				{
 					struct Module
 					{
-						std::string instanceID;
 						std::string monthGaapPretaxGrossAmount;
+						std::string instanceID;
 						std::string accountingUnit;
-						std::string paymentCurrency;
 						std::string gaapPaymentAmount;
+						std::string paymentCurrency;
 						std::string payerAccount;
 						std::string paymentAmount;
 						std::string deductedByPrepaidCard;
@@ -49,8 +49,8 @@ namespace AlibabaCloud
 						std::string unallocatedPretaxAmountLocal;
 						std::string currency;
 						std::string monthGaapPaymentAmount;
-						std::string billingCycle;
 						std::string deductedByCoupons;
+						std::string billingCycle;
 						std::string monthGaapDeductedByCashCoupons;
 						std::string productCode;
 						std::string productType;
@@ -75,8 +75,8 @@ namespace AlibabaCloud
 						std::string pretaxGrossAmount;
 						std::string gaapPretaxAmountLocal;
 						std::string gaapDeductedByCoupons;
-						std::string resourceGroup;
 						std::string monthGaapPricingDiscount;
+						std::string resourceGroup;
 						std::string billType;
 						std::string monthGaapPretaxAmount;
 						std::string usageStartDate;

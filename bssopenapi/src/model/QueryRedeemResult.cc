@@ -50,34 +50,34 @@ void QueryRedeemResult::parse(const std::string &payload)
 	for (auto dataNodeRedeemRedeemItem : allRedeemNode)
 	{
 		Data::RedeemItem redeemItemObject;
+		if(!dataNodeRedeemRedeemItem["ExpiryTime"].isNull())
+			redeemItemObject.expiryTime = dataNodeRedeemRedeemItem["ExpiryTime"].asString();
+		if(!dataNodeRedeemRedeemItem["GrantedTime"].isNull())
+			redeemItemObject.grantedTime = dataNodeRedeemRedeemItem["GrantedTime"].asString();
+		if(!dataNodeRedeemRedeemItem["Status"].isNull())
+			redeemItemObject.status = dataNodeRedeemRedeemItem["Status"].asString();
+		if(!dataNodeRedeemRedeemItem["Specification"].isNull())
+			redeemItemObject.specification = dataNodeRedeemRedeemItem["Specification"].asString();
+		if(!dataNodeRedeemRedeemItem["NominalValue"].isNull())
+			redeemItemObject.nominalValue = dataNodeRedeemRedeemItem["NominalValue"].asString();
+		if(!dataNodeRedeemRedeemItem["EffectiveTime"].isNull())
+			redeemItemObject.effectiveTime = dataNodeRedeemRedeemItem["EffectiveTime"].asString();
 		if(!dataNodeRedeemRedeemItem["RedeemId"].isNull())
 			redeemItemObject.redeemId = dataNodeRedeemRedeemItem["RedeemId"].asString();
 		if(!dataNodeRedeemRedeemItem["RedeemNo"].isNull())
 			redeemItemObject.redeemNo = dataNodeRedeemRedeemItem["RedeemNo"].asString();
-		if(!dataNodeRedeemRedeemItem["Status"].isNull())
-			redeemItemObject.status = dataNodeRedeemRedeemItem["Status"].asString();
-		if(!dataNodeRedeemRedeemItem["GrantedTime"].isNull())
-			redeemItemObject.grantedTime = dataNodeRedeemRedeemItem["GrantedTime"].asString();
-		if(!dataNodeRedeemRedeemItem["EffectiveTime"].isNull())
-			redeemItemObject.effectiveTime = dataNodeRedeemRedeemItem["EffectiveTime"].asString();
-		if(!dataNodeRedeemRedeemItem["ExpiryTime"].isNull())
-			redeemItemObject.expiryTime = dataNodeRedeemRedeemItem["ExpiryTime"].asString();
-		if(!dataNodeRedeemRedeemItem["NominalValue"].isNull())
-			redeemItemObject.nominalValue = dataNodeRedeemRedeemItem["NominalValue"].asString();
-		if(!dataNodeRedeemRedeemItem["Balance"].isNull())
-			redeemItemObject.balance = dataNodeRedeemRedeemItem["Balance"].asString();
 		if(!dataNodeRedeemRedeemItem["ApplicableProducts"].isNull())
 			redeemItemObject.applicableProducts = dataNodeRedeemRedeemItem["ApplicableProducts"].asString();
-		if(!dataNodeRedeemRedeemItem["Specification"].isNull())
-			redeemItemObject.specification = dataNodeRedeemRedeemItem["Specification"].asString();
+		if(!dataNodeRedeemRedeemItem["Balance"].isNull())
+			redeemItemObject.balance = dataNodeRedeemRedeemItem["Balance"].asString();
 		data_.redeem.push_back(redeemItemObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

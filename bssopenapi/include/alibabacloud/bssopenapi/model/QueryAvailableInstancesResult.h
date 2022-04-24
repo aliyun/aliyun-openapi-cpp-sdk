@@ -36,12 +36,12 @@ namespace AlibabaCloud
 				{
 					struct Instance
 					{
-						std::string expectedReleaseTime;
 						std::string status;
+						std::string expectedReleaseTime;
 						int renewalDuration;
 						std::string endTime;
-						std::string productCode;
 						std::string instanceID;
+						std::string productCode;
 						std::string createTime;
 						std::string productType;
 						std::string renewStatus;
@@ -49,8 +49,8 @@ namespace AlibabaCloud
 						long ownerId;
 						std::string releaseTime;
 						long sellerId;
-						std::string region;
 						std::string renewalDurationUnit;
+						std::string region;
 						std::string seller;
 						std::string subStatus;
 						std::string stopTime;

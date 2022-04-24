@@ -42,10 +42,10 @@ namespace AlibabaCloud
 						std::string nominalValue;
 						std::string expiryTime;
 						std::string specification;
-						std::string balance;
 						std::string applicableProducts;
-						std::string redeemId;
+						std::string balance;
 						std::string grantedTime;
+						std::string redeemId;
 					};
 					long totalCount;
 					long pageNum;

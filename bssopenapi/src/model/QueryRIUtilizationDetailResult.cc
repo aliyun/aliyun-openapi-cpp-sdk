@@ -50,32 +50,32 @@ void QueryRIUtilizationDetailResult::parse(const std::string &payload)
 	for (auto dataNodeDetailListDetailListItem : allDetailListNode)
 	{
 		Data::DetailListItem detailListItemObject;
+		if(!dataNodeDetailListDetailListItem["DeductedCommodityCode"].isNull())
+			detailListItemObject.deductedCommodityCode = dataNodeDetailListDetailListItem["DeductedCommodityCode"].asString();
+		if(!dataNodeDetailListDetailListItem["DeductedProductDetail"].isNull())
+			detailListItemObject.deductedProductDetail = dataNodeDetailListDetailListItem["DeductedProductDetail"].asString();
+		if(!dataNodeDetailListDetailListItem["DeductedInstanceId"].isNull())
+			detailListItemObject.deductedInstanceId = dataNodeDetailListDetailListItem["DeductedInstanceId"].asString();
+		if(!dataNodeDetailListDetailListItem["DeductFactorTotal"].isNull())
+			detailListItemObject.deductFactorTotal = std::stof(dataNodeDetailListDetailListItem["DeductFactorTotal"].asString());
+		if(!dataNodeDetailListDetailListItem["DeductQuantity"].isNull())
+			detailListItemObject.deductQuantity = std::stof(dataNodeDetailListDetailListItem["DeductQuantity"].asString());
+		if(!dataNodeDetailListDetailListItem["DeductHours"].isNull())
+			detailListItemObject.deductHours = dataNodeDetailListDetailListItem["DeductHours"].asString();
+		if(!dataNodeDetailListDetailListItem["DeductDate"].isNull())
+			detailListItemObject.deductDate = dataNodeDetailListDetailListItem["DeductDate"].asString();
 		if(!dataNodeDetailListDetailListItem["RIInstanceId"].isNull())
 			detailListItemObject.rIInstanceId = dataNodeDetailListDetailListItem["RIInstanceId"].asString();
 		if(!dataNodeDetailListDetailListItem["InstanceSpec"].isNull())
 			detailListItemObject.instanceSpec = dataNodeDetailListDetailListItem["InstanceSpec"].asString();
-		if(!dataNodeDetailListDetailListItem["DeductedInstanceId"].isNull())
-			detailListItemObject.deductedInstanceId = dataNodeDetailListDetailListItem["DeductedInstanceId"].asString();
-		if(!dataNodeDetailListDetailListItem["DeductedCommodityCode"].isNull())
-			detailListItemObject.deductedCommodityCode = dataNodeDetailListDetailListItem["DeductedCommodityCode"].asString();
-		if(!dataNodeDetailListDetailListItem["DeductDate"].isNull())
-			detailListItemObject.deductDate = dataNodeDetailListDetailListItem["DeductDate"].asString();
-		if(!dataNodeDetailListDetailListItem["DeductHours"].isNull())
-			detailListItemObject.deductHours = dataNodeDetailListDetailListItem["DeductHours"].asString();
-		if(!dataNodeDetailListDetailListItem["DeductedProductDetail"].isNull())
-			detailListItemObject.deductedProductDetail = dataNodeDetailListDetailListItem["DeductedProductDetail"].asString();
-		if(!dataNodeDetailListDetailListItem["DeductQuantity"].isNull())
-			detailListItemObject.deductQuantity = std::stof(dataNodeDetailListDetailListItem["DeductQuantity"].asString());
-		if(!dataNodeDetailListDetailListItem["DeductFactorTotal"].isNull())
-			detailListItemObject.deductFactorTotal = std::stof(dataNodeDetailListDetailListItem["DeductFactorTotal"].asString());
 		data_.detailList.push_back(detailListItemObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

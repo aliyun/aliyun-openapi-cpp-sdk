@@ -41,9 +41,9 @@ namespace AlibabaCloud
 						std::string createTime;
 						std::string productType;
 						std::string relatedOrderId;
+						std::string paymentCurrency;
 						std::string paymentTime;
 						std::string tax;
-						std::string paymentCurrency;
 						std::string orderId;
 						std::string subscriptionType;
 						std::string pretaxGrossAmount;

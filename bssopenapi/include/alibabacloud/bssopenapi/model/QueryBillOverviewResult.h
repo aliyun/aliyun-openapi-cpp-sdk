@@ -50,6 +50,7 @@ namespace AlibabaCloud
 						float pretaxGrossAmount;
 						std::string currency;
 						std::string commodityCode;
+						float adjustAmount;
 						float deductedByCoupons;
 						std::string roundDownDiscount;
 						std::string productDetail;
@@ -61,6 +62,7 @@ namespace AlibabaCloud
 						float pretaxAmount;
 						std::string ownerID;
 						std::string billAccountName;
+						float cashAmount;
 						float pretaxAmountLocal;
 					};
 					std::string billingCycle;

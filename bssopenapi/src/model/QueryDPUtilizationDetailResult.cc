@@ -46,42 +46,42 @@ void QueryDPUtilizationDetailResult::parse(const std::string &payload)
 	for (auto dataNodeDetailListDetailListItem : allDetailListNode)
 	{
 		Data::DetailListItem detailListItemObject;
-		if(!dataNodeDetailListDetailListItem["Uid"].isNull())
-			detailListItemObject.uid = std::stol(dataNodeDetailListDetailListItem["Uid"].asString());
-		if(!dataNodeDetailListDetailListItem["InstanceId"].isNull())
-			detailListItemObject.instanceId = dataNodeDetailListDetailListItem["InstanceId"].asString();
-		if(!dataNodeDetailListDetailListItem["InstanceSpec"].isNull())
-			detailListItemObject.instanceSpec = dataNodeDetailListDetailListItem["InstanceSpec"].asString();
 		if(!dataNodeDetailListDetailListItem["DeductedInstanceId"].isNull())
 			detailListItemObject.deductedInstanceId = dataNodeDetailListDetailListItem["DeductedInstanceId"].asString();
+		if(!dataNodeDetailListDetailListItem["InstanceId"].isNull())
+			detailListItemObject.instanceId = dataNodeDetailListDetailListItem["InstanceId"].asString();
+		if(!dataNodeDetailListDetailListItem["DeductHours"].isNull())
+			detailListItemObject.deductHours = std::stof(dataNodeDetailListDetailListItem["DeductHours"].asString());
+		if(!dataNodeDetailListDetailListItem["ShareUid"].isNull())
+			detailListItemObject.shareUid = std::stol(dataNodeDetailListDetailListItem["ShareUid"].asString());
+		if(!dataNodeDetailListDetailListItem["DeductDate"].isNull())
+			detailListItemObject.deductDate = dataNodeDetailListDetailListItem["DeductDate"].asString();
+		if(!dataNodeDetailListDetailListItem["InstanceSpec"].isNull())
+			detailListItemObject.instanceSpec = dataNodeDetailListDetailListItem["InstanceSpec"].asString();
 		if(!dataNodeDetailListDetailListItem["DeductedCommodityCode"].isNull())
 			detailListItemObject.deductedCommodityCode = dataNodeDetailListDetailListItem["DeductedCommodityCode"].asString();
 		if(!dataNodeDetailListDetailListItem["DeductedProductDetail"].isNull())
 			detailListItemObject.deductedProductDetail = dataNodeDetailListDetailListItem["DeductedProductDetail"].asString();
-		if(!dataNodeDetailListDetailListItem["ResCode"].isNull())
-			detailListItemObject.resCode = dataNodeDetailListDetailListItem["ResCode"].asString();
-		if(!dataNodeDetailListDetailListItem["DeductDate"].isNull())
-			detailListItemObject.deductDate = dataNodeDetailListDetailListItem["DeductDate"].asString();
-		if(!dataNodeDetailListDetailListItem["DeductQuantity"].isNull())
-			detailListItemObject.deductQuantity = std::stof(dataNodeDetailListDetailListItem["DeductQuantity"].asString());
 		if(!dataNodeDetailListDetailListItem["DeductMeasure"].isNull())
 			detailListItemObject.deductMeasure = std::stof(dataNodeDetailListDetailListItem["DeductMeasure"].asString());
-		if(!dataNodeDetailListDetailListItem["DeductHours"].isNull())
-			detailListItemObject.deductHours = std::stof(dataNodeDetailListDetailListItem["DeductHours"].asString());
-		if(!dataNodeDetailListDetailListItem["DeductFactorTotal"].isNull())
-			detailListItemObject.deductFactorTotal = std::stof(dataNodeDetailListDetailListItem["DeductFactorTotal"].asString());
 		if(!dataNodeDetailListDetailListItem["Region"].isNull())
 			detailListItemObject.region = dataNodeDetailListDetailListItem["Region"].asString();
-		if(!dataNodeDetailListDetailListItem["ShareUid"].isNull())
-			detailListItemObject.shareUid = std::stol(dataNodeDetailListDetailListItem["ShareUid"].asString());
+		if(!dataNodeDetailListDetailListItem["DeductQuantity"].isNull())
+			detailListItemObject.deductQuantity = std::stof(dataNodeDetailListDetailListItem["DeductQuantity"].asString());
+		if(!dataNodeDetailListDetailListItem["DeductFactorTotal"].isNull())
+			detailListItemObject.deductFactorTotal = std::stof(dataNodeDetailListDetailListItem["DeductFactorTotal"].asString());
+		if(!dataNodeDetailListDetailListItem["ResCode"].isNull())
+			detailListItemObject.resCode = dataNodeDetailListDetailListItem["ResCode"].asString();
+		if(!dataNodeDetailListDetailListItem["Uid"].isNull())
+			detailListItemObject.uid = std::stol(dataNodeDetailListDetailListItem["Uid"].asString());
 		data_.detailList.push_back(detailListItemObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

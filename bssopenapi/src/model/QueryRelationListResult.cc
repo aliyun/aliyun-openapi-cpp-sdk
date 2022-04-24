@@ -50,34 +50,34 @@ void QueryRelationListResult::parse(const std::string &payload)
 	for (auto dataNodeFinancialRelationInfoListFinancialRelationInfoListItem : allFinancialRelationInfoListNode)
 	{
 		Data::FinancialRelationInfoListItem financialRelationInfoListItemObject;
-		if(!dataNodeFinancialRelationInfoListFinancialRelationInfoListItem["RelationId"].isNull())
-			financialRelationInfoListItemObject.relationId = std::stol(dataNodeFinancialRelationInfoListFinancialRelationInfoListItem["RelationId"].asString());
-		if(!dataNodeFinancialRelationInfoListFinancialRelationInfoListItem["AccountType"].isNull())
-			financialRelationInfoListItemObject.accountType = dataNodeFinancialRelationInfoListFinancialRelationInfoListItem["AccountType"].asString();
-		if(!dataNodeFinancialRelationInfoListFinancialRelationInfoListItem["AccountId"].isNull())
-			financialRelationInfoListItemObject.accountId = std::stol(dataNodeFinancialRelationInfoListFinancialRelationInfoListItem["AccountId"].asString());
-		if(!dataNodeFinancialRelationInfoListFinancialRelationInfoListItem["AccountName"].isNull())
-			financialRelationInfoListItemObject.accountName = dataNodeFinancialRelationInfoListFinancialRelationInfoListItem["AccountName"].asString();
-		if(!dataNodeFinancialRelationInfoListFinancialRelationInfoListItem["AccountNickName"].isNull())
-			financialRelationInfoListItemObject.accountNickName = dataNodeFinancialRelationInfoListFinancialRelationInfoListItem["AccountNickName"].asString();
-		if(!dataNodeFinancialRelationInfoListFinancialRelationInfoListItem["RelationType"].isNull())
-			financialRelationInfoListItemObject.relationType = dataNodeFinancialRelationInfoListFinancialRelationInfoListItem["RelationType"].asString();
-		if(!dataNodeFinancialRelationInfoListFinancialRelationInfoListItem["State"].isNull())
-			financialRelationInfoListItemObject.state = dataNodeFinancialRelationInfoListFinancialRelationInfoListItem["State"].asString();
-		if(!dataNodeFinancialRelationInfoListFinancialRelationInfoListItem["SetupTime"].isNull())
-			financialRelationInfoListItemObject.setupTime = dataNodeFinancialRelationInfoListFinancialRelationInfoListItem["SetupTime"].asString();
-		if(!dataNodeFinancialRelationInfoListFinancialRelationInfoListItem["StartTime"].isNull())
-			financialRelationInfoListItemObject.startTime = dataNodeFinancialRelationInfoListFinancialRelationInfoListItem["StartTime"].asString();
 		if(!dataNodeFinancialRelationInfoListFinancialRelationInfoListItem["EndTime"].isNull())
 			financialRelationInfoListItemObject.endTime = dataNodeFinancialRelationInfoListFinancialRelationInfoListItem["EndTime"].asString();
+		if(!dataNodeFinancialRelationInfoListFinancialRelationInfoListItem["RelationType"].isNull())
+			financialRelationInfoListItemObject.relationType = dataNodeFinancialRelationInfoListFinancialRelationInfoListItem["RelationType"].asString();
+		if(!dataNodeFinancialRelationInfoListFinancialRelationInfoListItem["AccountNickName"].isNull())
+			financialRelationInfoListItemObject.accountNickName = dataNodeFinancialRelationInfoListFinancialRelationInfoListItem["AccountNickName"].asString();
+		if(!dataNodeFinancialRelationInfoListFinancialRelationInfoListItem["StartTime"].isNull())
+			financialRelationInfoListItemObject.startTime = dataNodeFinancialRelationInfoListFinancialRelationInfoListItem["StartTime"].asString();
+		if(!dataNodeFinancialRelationInfoListFinancialRelationInfoListItem["State"].isNull())
+			financialRelationInfoListItemObject.state = dataNodeFinancialRelationInfoListFinancialRelationInfoListItem["State"].asString();
+		if(!dataNodeFinancialRelationInfoListFinancialRelationInfoListItem["AccountId"].isNull())
+			financialRelationInfoListItemObject.accountId = std::stol(dataNodeFinancialRelationInfoListFinancialRelationInfoListItem["AccountId"].asString());
+		if(!dataNodeFinancialRelationInfoListFinancialRelationInfoListItem["SetupTime"].isNull())
+			financialRelationInfoListItemObject.setupTime = dataNodeFinancialRelationInfoListFinancialRelationInfoListItem["SetupTime"].asString();
+		if(!dataNodeFinancialRelationInfoListFinancialRelationInfoListItem["AccountType"].isNull())
+			financialRelationInfoListItemObject.accountType = dataNodeFinancialRelationInfoListFinancialRelationInfoListItem["AccountType"].asString();
+		if(!dataNodeFinancialRelationInfoListFinancialRelationInfoListItem["AccountName"].isNull())
+			financialRelationInfoListItemObject.accountName = dataNodeFinancialRelationInfoListFinancialRelationInfoListItem["AccountName"].asString();
+		if(!dataNodeFinancialRelationInfoListFinancialRelationInfoListItem["RelationId"].isNull())
+			financialRelationInfoListItemObject.relationId = std::stol(dataNodeFinancialRelationInfoListFinancialRelationInfoListItem["RelationId"].asString());
 		data_.financialRelationInfoList.push_back(financialRelationInfoListItemObject);
 	}
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

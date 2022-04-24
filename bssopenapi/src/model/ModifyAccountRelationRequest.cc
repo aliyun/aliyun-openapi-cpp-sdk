@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,104 +18,89 @@
 
 using AlibabaCloud::BssOpenApi::Model::ModifyAccountRelationRequest;
 
-ModifyAccountRelationRequest::ModifyAccountRelationRequest() :
-	RpcServiceRequest("bssopenapi", "2017-12-14", "ModifyAccountRelation")
-{
-	setMethod(HttpRequest::Method::Post);
+ModifyAccountRelationRequest::ModifyAccountRelationRequest()
+    : RpcServiceRequest("bssopenapi", "2017-12-14", "ModifyAccountRelation") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-ModifyAccountRelationRequest::~ModifyAccountRelationRequest()
-{}
+ModifyAccountRelationRequest::~ModifyAccountRelationRequest() {}
 
-std::string ModifyAccountRelationRequest::getChildNick()const
-{
-	return childNick_;
+std::string ModifyAccountRelationRequest::getChildNick() const {
+  return childNick_;
 }
 
-void ModifyAccountRelationRequest::setChildNick(const std::string& childNick)
-{
-	childNick_ = childNick;
-	setParameter("ChildNick", childNick);
+void ModifyAccountRelationRequest::setChildNick(const std::string &childNick) {
+  childNick_ = childNick;
+  setParameter(std::string("ChildNick"), childNick);
 }
 
-std::string ModifyAccountRelationRequest::getRelationOperation()const
-{
-	return relationOperation_;
+long ModifyAccountRelationRequest::getParentUserId() const {
+  return parentUserId_;
 }
 
-void ModifyAccountRelationRequest::setRelationOperation(const std::string& relationOperation)
-{
-	relationOperation_ = relationOperation;
-	setParameter("RelationOperation", relationOperation);
+void ModifyAccountRelationRequest::setParentUserId(long parentUserId) {
+  parentUserId_ = parentUserId;
+  setParameter(std::string("ParentUserId"), std::to_string(parentUserId));
 }
 
-std::string ModifyAccountRelationRequest::getRelationType()const
-{
-	return relationType_;
+long ModifyAccountRelationRequest::getRelationId() const {
+  return relationId_;
 }
 
-void ModifyAccountRelationRequest::setRelationType(const std::string& relationType)
-{
-	relationType_ = relationType;
-	setParameter("RelationType", relationType);
+void ModifyAccountRelationRequest::setRelationId(long relationId) {
+  relationId_ = relationId;
+  setParameter(std::string("RelationId"), std::to_string(relationId));
 }
 
-long ModifyAccountRelationRequest::getParentUserId()const
-{
-	return parentUserId_;
+std::vector<std::string> ModifyAccountRelationRequest::getRoleCodes() const {
+  return roleCodes_;
 }
 
-void ModifyAccountRelationRequest::setParentUserId(long parentUserId)
-{
-	parentUserId_ = parentUserId;
-	setParameter("ParentUserId", std::to_string(parentUserId));
+void ModifyAccountRelationRequest::setRoleCodes(const std::vector<std::string> &roleCodes) {
+  roleCodes_ = roleCodes;
 }
 
-long ModifyAccountRelationRequest::getChildUserId()const
-{
-	return childUserId_;
+std::string ModifyAccountRelationRequest::getRelationOperation() const {
+  return relationOperation_;
 }
 
-void ModifyAccountRelationRequest::setChildUserId(long childUserId)
-{
-	childUserId_ = childUserId;
-	setParameter("ChildUserId", std::to_string(childUserId));
+void ModifyAccountRelationRequest::setRelationOperation(const std::string &relationOperation) {
+  relationOperation_ = relationOperation;
+  setParameter(std::string("RelationOperation"), relationOperation);
 }
 
-std::string ModifyAccountRelationRequest::getRequestId()const
-{
-	return requestId_;
+std::string ModifyAccountRelationRequest::getRelationType() const {
+  return relationType_;
 }
 
-void ModifyAccountRelationRequest::setRequestId(const std::string& requestId)
-{
-	requestId_ = requestId;
-	setParameter("RequestId", requestId);
+void ModifyAccountRelationRequest::setRelationType(const std::string &relationType) {
+  relationType_ = relationType;
+  setParameter(std::string("RelationType"), relationType);
 }
 
-std::vector<std::string> ModifyAccountRelationRequest::getPermissionCodes()const
-{
-	return permissionCodes_;
+long ModifyAccountRelationRequest::getChildUserId() const {
+  return childUserId_;
 }
 
-void ModifyAccountRelationRequest::setPermissionCodes(const std::vector<std::string>& permissionCodes)
-{
-	permissionCodes_ = permissionCodes;
-	for(int dep1 = 0; dep1!= permissionCodes.size(); dep1++) {
-		setParameter("PermissionCodes."+ std::to_string(dep1), permissionCodes.at(dep1));
-	}
+void ModifyAccountRelationRequest::setChildUserId(long childUserId) {
+  childUserId_ = childUserId;
+  setParameter(std::string("ChildUserId"), std::to_string(childUserId));
 }
 
-std::vector<std::string> ModifyAccountRelationRequest::getRoleCodes()const
-{
-	return roleCodes_;
+std::string ModifyAccountRelationRequest::getRequestId() const {
+  return requestId_;
 }
 
-void ModifyAccountRelationRequest::setRoleCodes(const std::vector<std::string>& roleCodes)
-{
-	roleCodes_ = roleCodes;
-	for(int dep1 = 0; dep1!= roleCodes.size(); dep1++) {
-		setParameter("RoleCodes."+ std::to_string(dep1), roleCodes.at(dep1));
-	}
+void ModifyAccountRelationRequest::setRequestId(const std::string &requestId) {
+  requestId_ = requestId;
+  setParameter(std::string("RequestId"), requestId);
+}
+
+std::vector<std::string> ModifyAccountRelationRequest::getPermissionCodes() const {
+  return permissionCodes_;
+}
+
+void ModifyAccountRelationRequest::setPermissionCodes(const std::vector<std::string> &permissionCodes) {
+  permissionCodes_ = permissionCodes;
 }
 

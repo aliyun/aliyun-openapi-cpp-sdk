@@ -37,13 +37,13 @@ namespace AlibabaCloud
 					struct Item
 					{
 						std::string regionNo;
-						std::string userName;
 						std::string instanceSpec;
+						std::string userName;
 						std::string productName;
 						std::string endTime;
-						std::string productCode;
-						std::string instanceId;
 						std::string capacityUnit;
+						std::string instanceId;
+						std::string productCode;
 						std::string zone;
 						std::string startTime;
 						float paymentAmount;

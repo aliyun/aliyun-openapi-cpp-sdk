@@ -40,32 +40,32 @@ void QueryProductListResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["TotalCount"].isNull())
-		data_.totalCount = std::stoi(dataNode["TotalCount"].asString());
 	if(!dataNode["PageNum"].isNull())
 		data_.pageNum = std::stoi(dataNode["PageNum"].asString());
 	if(!dataNode["PageSize"].isNull())
 		data_.pageSize = std::stoi(dataNode["PageSize"].asString());
+	if(!dataNode["TotalCount"].isNull())
+		data_.totalCount = std::stoi(dataNode["TotalCount"].asString());
 	auto allProductListNode = dataNode["ProductList"]["Product"];
 	for (auto dataNodeProductListProduct : allProductListNode)
 	{
 		Data::Product productObject;
-		if(!dataNodeProductListProduct["ProductCode"].isNull())
-			productObject.productCode = dataNodeProductListProduct["ProductCode"].asString();
 		if(!dataNodeProductListProduct["ProductName"].isNull())
 			productObject.productName = dataNodeProductListProduct["ProductName"].asString();
 		if(!dataNodeProductListProduct["ProductType"].isNull())
 			productObject.productType = dataNodeProductListProduct["ProductType"].asString();
 		if(!dataNodeProductListProduct["SubscriptionType"].isNull())
 			productObject.subscriptionType = dataNodeProductListProduct["SubscriptionType"].asString();
+		if(!dataNodeProductListProduct["ProductCode"].isNull())
+			productObject.productCode = dataNodeProductListProduct["ProductCode"].asString();
 		data_.productList.push_back(productObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

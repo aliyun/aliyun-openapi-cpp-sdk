@@ -43,8 +43,8 @@ namespace AlibabaCloud
 						std::string deductedProductDetail;
 						std::string deductedCommodityCode;
 						std::string deductedInstanceId;
-						std::string deductHours;
 						float deductQuantity;
+						std::string deductHours;
 					};
 					long totalCount;
 					long pageNum;

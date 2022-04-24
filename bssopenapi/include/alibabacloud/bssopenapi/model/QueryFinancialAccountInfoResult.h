@@ -35,8 +35,8 @@ namespace AlibabaCloud
 				struct Data
 				{
 					std::string userName;
-					bool isFinancialAccount;
 					std::string memberNickName;
+					bool isFinancialAccount;
 					std::string memberGroupName;
 					long memberGroupId;
 					std::string accountType;

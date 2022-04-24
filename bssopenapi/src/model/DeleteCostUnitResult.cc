@@ -46,10 +46,10 @@ void DeleteCostUnitResult::parse(const std::string &payload)
 		data_.unitId = std::stol(dataNode["UnitId"].asString());
 	if(!dataNode["OwnerUid"].isNull())
 		data_.ownerUid = std::stol(dataNode["OwnerUid"].asString());
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 

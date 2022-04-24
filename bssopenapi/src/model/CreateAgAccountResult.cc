@@ -40,14 +40,14 @@ void CreateAgAccountResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto agRelationDtoNode = value["AgRelationDto"];
-	if(!agRelationDtoNode["Pk"].isNull())
-		agRelationDto_.pk = agRelationDtoNode["Pk"].asString();
 	if(!agRelationDtoNode["Type"].isNull())
 		agRelationDto_.type = agRelationDtoNode["Type"].asString();
-	if(!agRelationDtoNode["Mpk"].isNull())
-		agRelationDto_.mpk = agRelationDtoNode["Mpk"].asString();
+	if(!agRelationDtoNode["Pk"].isNull())
+		agRelationDto_.pk = agRelationDtoNode["Pk"].asString();
 	if(!agRelationDtoNode["RamAdminRoleName"].isNull())
 		agRelationDto_.ramAdminRoleName = agRelationDtoNode["RamAdminRoleName"].asString();
+	if(!agRelationDtoNode["Mpk"].isNull())
+		agRelationDto_.mpk = agRelationDtoNode["Mpk"].asString();
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())

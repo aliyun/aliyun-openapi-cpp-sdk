@@ -40,24 +40,24 @@ void GetCustomerAccountInfoResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["LoginEmail"].isNull())
-		data_.loginEmail = dataNode["LoginEmail"].asString();
-	if(!dataNode["AccountType"].isNull())
-		data_.accountType = dataNode["AccountType"].asString();
 	if(!dataNode["Mpk"].isNull())
 		data_.mpk = std::stol(dataNode["Mpk"].asString());
+	if(!dataNode["LoginEmail"].isNull())
+		data_.loginEmail = dataNode["LoginEmail"].asString();
 	if(!dataNode["HostingStatus"].isNull())
 		data_.hostingStatus = dataNode["HostingStatus"].asString();
+	if(!dataNode["AccountType"].isNull())
+		data_.accountType = dataNode["AccountType"].asString();
 	if(!dataNode["CreditLimitStatus"].isNull())
 		data_.creditLimitStatus = dataNode["CreditLimitStatus"].asString();
 	if(!dataNode["IsCertified"].isNull())
 		data_.isCertified = dataNode["IsCertified"].asString() == "true";
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

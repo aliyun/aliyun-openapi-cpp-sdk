@@ -39,8 +39,8 @@ namespace AlibabaCloud
 						std::string status;
 						std::string regionNo;
 						std::string postpaidCost;
-						std::string userName;
 						std::string instanceSpec;
+						std::string userName;
 						std::string endTime;
 						std::string capacityUnit;
 						std::string zone;
@@ -55,8 +55,8 @@ namespace AlibabaCloud
 						float totalQuantity;
 						std::string userId;
 						std::string currency;
-						std::string region;
 						std::string potentialSavedCost;
+						std::string region;
 						std::string resourceInstanceId;
 						float deductQuantity;
 					};

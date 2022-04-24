@@ -44,8 +44,8 @@ namespace AlibabaCloud
 						long userId;
 						std::string startTime;
 						std::string deductRate;
-						std::string deductInstanceId;
 						std::string discountRate;
+						std::string deductInstanceId;
 						std::string savingsType;
 					};
 					int totalCount;

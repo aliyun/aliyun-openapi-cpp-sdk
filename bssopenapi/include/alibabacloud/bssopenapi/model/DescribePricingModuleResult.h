@@ -48,8 +48,8 @@ namespace AlibabaCloud
 						{
 							std::string type;
 							std::string value;
-							std::string name;
 							std::string remark;
+							std::string name;
 						};
 						std::vector<Attribute::AttributeValue> values;
 						std::string unit;

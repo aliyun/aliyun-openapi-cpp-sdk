@@ -44,20 +44,20 @@ void DescribeResourcePackageProductResult::parse(const std::string &payload)
 	for (auto dataNodeResourcePackagesResourcePackage : allResourcePackagesNode)
 	{
 		Data::ResourcePackage resourcePackageObject;
-		if(!dataNodeResourcePackagesResourcePackage["ProductCode"].isNull())
-			resourcePackageObject.productCode = dataNodeResourcePackagesResourcePackage["ProductCode"].asString();
 		if(!dataNodeResourcePackagesResourcePackage["ProductType"].isNull())
 			resourcePackageObject.productType = dataNodeResourcePackagesResourcePackage["ProductType"].asString();
 		if(!dataNodeResourcePackagesResourcePackage["Name"].isNull())
 			resourcePackageObject.name = dataNodeResourcePackagesResourcePackage["Name"].asString();
+		if(!dataNodeResourcePackagesResourcePackage["ProductCode"].isNull())
+			resourcePackageObject.productCode = dataNodeResourcePackagesResourcePackage["ProductCode"].asString();
 		auto allPackageTypesNode = dataNodeResourcePackagesResourcePackage["PackageTypes"]["PackageType"];
 		for (auto dataNodeResourcePackagesResourcePackagePackageTypesPackageType : allPackageTypesNode)
 		{
 			Data::ResourcePackage::PackageType packageTypesObject;
-			if(!dataNodeResourcePackagesResourcePackagePackageTypesPackageType["Name"].isNull())
-				packageTypesObject.name = dataNodeResourcePackagesResourcePackagePackageTypesPackageType["Name"].asString();
 			if(!dataNodeResourcePackagesResourcePackagePackageTypesPackageType["Code"].isNull())
 				packageTypesObject.code = dataNodeResourcePackagesResourcePackagePackageTypesPackageType["Code"].asString();
+			if(!dataNodeResourcePackagesResourcePackagePackageTypesPackageType["Name"].isNull())
+				packageTypesObject.name = dataNodeResourcePackagesResourcePackagePackageTypesPackageType["Name"].asString();
 			auto allPropertiesNode = dataNodeResourcePackagesResourcePackagePackageTypesPackageType["Properties"]["Property"];
 			for (auto dataNodeResourcePackagesResourcePackagePackageTypesPackageTypePropertiesProperty : allPropertiesNode)
 			{
@@ -80,10 +80,10 @@ void DescribeResourcePackageProductResult::parse(const std::string &payload)
 				for (auto dataNodeResourcePackagesResourcePackagePackageTypesPackageTypeSpecificationsSpecificationAvailableDurationsAvailableDuration : allAvailableDurationsNode)
 				{
 					Data::ResourcePackage::PackageType::Specification::AvailableDuration availableDurationsObject;
-					if(!dataNodeResourcePackagesResourcePackagePackageTypesPackageTypeSpecificationsSpecificationAvailableDurationsAvailableDuration["Name"].isNull())
-						availableDurationsObject.name = dataNodeResourcePackagesResourcePackagePackageTypesPackageTypeSpecificationsSpecificationAvailableDurationsAvailableDuration["Name"].asString();
 					if(!dataNodeResourcePackagesResourcePackagePackageTypesPackageTypeSpecificationsSpecificationAvailableDurationsAvailableDuration["Value"].isNull())
 						availableDurationsObject.value = std::stoi(dataNodeResourcePackagesResourcePackagePackageTypesPackageTypeSpecificationsSpecificationAvailableDurationsAvailableDuration["Value"].asString());
+					if(!dataNodeResourcePackagesResourcePackagePackageTypesPackageTypeSpecificationsSpecificationAvailableDurationsAvailableDuration["Name"].isNull())
+						availableDurationsObject.name = dataNodeResourcePackagesResourcePackagePackageTypesPackageTypeSpecificationsSpecificationAvailableDurationsAvailableDuration["Name"].asString();
 					if(!dataNodeResourcePackagesResourcePackagePackageTypesPackageTypeSpecificationsSpecificationAvailableDurationsAvailableDuration["Unit"].isNull())
 						availableDurationsObject.unit = dataNodeResourcePackagesResourcePackagePackageTypesPackageTypeSpecificationsSpecificationAvailableDurationsAvailableDuration["Unit"].asString();
 					specificationsObject.availableDurations.push_back(availableDurationsObject);
@@ -94,14 +94,14 @@ void DescribeResourcePackageProductResult::parse(const std::string &payload)
 		}
 		data_.resourcePackages.push_back(resourcePackageObject);
 	}
-	if(!value["OrderId"].isNull())
-		orderId_ = std::stol(value["OrderId"].asString());
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
+	if(!value["OrderId"].isNull())
+		orderId_ = std::stol(value["OrderId"].asString());
 
 }
 

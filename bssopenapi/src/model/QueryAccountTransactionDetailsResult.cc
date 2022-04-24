@@ -40,52 +40,52 @@ void QueryAccountTransactionDetailsResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["AccountName"].isNull())
-		data_.accountName = dataNode["AccountName"].asString();
-	if(!dataNode["TotalCount"].isNull())
-		data_.totalCount = std::stoi(dataNode["TotalCount"].asString());
 	if(!dataNode["NextToken"].isNull())
 		data_.nextToken = dataNode["NextToken"].asString();
+	if(!dataNode["TotalCount"].isNull())
+		data_.totalCount = std::stoi(dataNode["TotalCount"].asString());
 	if(!dataNode["MaxResults"].isNull())
 		data_.maxResults = std::stoi(dataNode["MaxResults"].asString());
+	if(!dataNode["AccountName"].isNull())
+		data_.accountName = dataNode["AccountName"].asString();
 	auto allAccountTransactionsListNode = dataNode["AccountTransactionsList"]["AccountTransactionsListItem"];
 	for (auto dataNodeAccountTransactionsListAccountTransactionsListItem : allAccountTransactionsListNode)
 	{
 		Data::AccountTransactionsListItem accountTransactionsListItemObject;
-		if(!dataNodeAccountTransactionsListAccountTransactionsListItem["TransactionNumber"].isNull())
-			accountTransactionsListItemObject.transactionNumber = dataNodeAccountTransactionsListAccountTransactionsListItem["TransactionNumber"].asString();
-		if(!dataNodeAccountTransactionsListAccountTransactionsListItem["TransactionTime"].isNull())
-			accountTransactionsListItemObject.transactionTime = dataNodeAccountTransactionsListAccountTransactionsListItem["TransactionTime"].asString();
-		if(!dataNodeAccountTransactionsListAccountTransactionsListItem["TransactionFlow"].isNull())
-			accountTransactionsListItemObject.transactionFlow = dataNodeAccountTransactionsListAccountTransactionsListItem["TransactionFlow"].asString();
-		if(!dataNodeAccountTransactionsListAccountTransactionsListItem["TransactionType"].isNull())
-			accountTransactionsListItemObject.transactionType = dataNodeAccountTransactionsListAccountTransactionsListItem["TransactionType"].asString();
+		if(!dataNodeAccountTransactionsListAccountTransactionsListItem["BillingCycle"].isNull())
+			accountTransactionsListItemObject.billingCycle = dataNodeAccountTransactionsListAccountTransactionsListItem["BillingCycle"].asString();
 		if(!dataNodeAccountTransactionsListAccountTransactionsListItem["TransactionChannel"].isNull())
 			accountTransactionsListItemObject.transactionChannel = dataNodeAccountTransactionsListAccountTransactionsListItem["TransactionChannel"].asString();
-		if(!dataNodeAccountTransactionsListAccountTransactionsListItem["TransactionChannelSN"].isNull())
-			accountTransactionsListItemObject.transactionChannelSN = dataNodeAccountTransactionsListAccountTransactionsListItem["TransactionChannelSN"].asString();
-		if(!dataNodeAccountTransactionsListAccountTransactionsListItem["FundType"].isNull())
-			accountTransactionsListItemObject.fundType = dataNodeAccountTransactionsListAccountTransactionsListItem["FundType"].asString();
 		if(!dataNodeAccountTransactionsListAccountTransactionsListItem["RecordID"].isNull())
 			accountTransactionsListItemObject.recordID = dataNodeAccountTransactionsListAccountTransactionsListItem["RecordID"].asString();
 		if(!dataNodeAccountTransactionsListAccountTransactionsListItem["Remarks"].isNull())
 			accountTransactionsListItemObject.remarks = dataNodeAccountTransactionsListAccountTransactionsListItem["Remarks"].asString();
-		if(!dataNodeAccountTransactionsListAccountTransactionsListItem["BillingCycle"].isNull())
-			accountTransactionsListItemObject.billingCycle = dataNodeAccountTransactionsListAccountTransactionsListItem["BillingCycle"].asString();
 		if(!dataNodeAccountTransactionsListAccountTransactionsListItem["Amount"].isNull())
 			accountTransactionsListItemObject.amount = dataNodeAccountTransactionsListAccountTransactionsListItem["Amount"].asString();
-		if(!dataNodeAccountTransactionsListAccountTransactionsListItem["Balance"].isNull())
-			accountTransactionsListItemObject.balance = dataNodeAccountTransactionsListAccountTransactionsListItem["Balance"].asString();
 		if(!dataNodeAccountTransactionsListAccountTransactionsListItem["TransactionAccount"].isNull())
 			accountTransactionsListItemObject.transactionAccount = dataNodeAccountTransactionsListAccountTransactionsListItem["TransactionAccount"].asString();
+		if(!dataNodeAccountTransactionsListAccountTransactionsListItem["TransactionTime"].isNull())
+			accountTransactionsListItemObject.transactionTime = dataNodeAccountTransactionsListAccountTransactionsListItem["TransactionTime"].asString();
+		if(!dataNodeAccountTransactionsListAccountTransactionsListItem["TransactionType"].isNull())
+			accountTransactionsListItemObject.transactionType = dataNodeAccountTransactionsListAccountTransactionsListItem["TransactionType"].asString();
+		if(!dataNodeAccountTransactionsListAccountTransactionsListItem["TransactionFlow"].isNull())
+			accountTransactionsListItemObject.transactionFlow = dataNodeAccountTransactionsListAccountTransactionsListItem["TransactionFlow"].asString();
+		if(!dataNodeAccountTransactionsListAccountTransactionsListItem["FundType"].isNull())
+			accountTransactionsListItemObject.fundType = dataNodeAccountTransactionsListAccountTransactionsListItem["FundType"].asString();
+		if(!dataNodeAccountTransactionsListAccountTransactionsListItem["TransactionChannelSN"].isNull())
+			accountTransactionsListItemObject.transactionChannelSN = dataNodeAccountTransactionsListAccountTransactionsListItem["TransactionChannelSN"].asString();
+		if(!dataNodeAccountTransactionsListAccountTransactionsListItem["TransactionNumber"].isNull())
+			accountTransactionsListItemObject.transactionNumber = dataNodeAccountTransactionsListAccountTransactionsListItem["TransactionNumber"].asString();
+		if(!dataNodeAccountTransactionsListAccountTransactionsListItem["Balance"].isNull())
+			accountTransactionsListItemObject.balance = dataNodeAccountTransactionsListAccountTransactionsListItem["Balance"].asString();
 		data_.accountTransactionsList.push_back(accountTransactionsListItemObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

@@ -50,34 +50,44 @@ void QuerySavingsPlansInstanceResult::parse(const std::string &payload)
 	for (auto dataNodeItemsSavingsPlansDetailResponse : allItemsNode)
 	{
 		Data::SavingsPlansDetailResponse savingsPlansDetailResponseObject;
-		if(!dataNodeItemsSavingsPlansDetailResponse["InstanceId"].isNull())
-			savingsPlansDetailResponseObject.instanceId = dataNodeItemsSavingsPlansDetailResponse["InstanceId"].asString();
+		if(!dataNodeItemsSavingsPlansDetailResponse["Status"].isNull())
+			savingsPlansDetailResponseObject.status = dataNodeItemsSavingsPlansDetailResponse["Status"].asString();
+		if(!dataNodeItemsSavingsPlansDetailResponse["Cycle"].isNull())
+			savingsPlansDetailResponseObject.cycle = dataNodeItemsSavingsPlansDetailResponse["Cycle"].asString();
+		if(!dataNodeItemsSavingsPlansDetailResponse["StartTimestamp"].isNull())
+			savingsPlansDetailResponseObject.startTimestamp = std::stol(dataNodeItemsSavingsPlansDetailResponse["StartTimestamp"].asString());
 		if(!dataNodeItemsSavingsPlansDetailResponse["SavingsType"].isNull())
 			savingsPlansDetailResponseObject.savingsType = dataNodeItemsSavingsPlansDetailResponse["SavingsType"].asString();
+		if(!dataNodeItemsSavingsPlansDetailResponse["Utilization"].isNull())
+			savingsPlansDetailResponseObject.utilization = dataNodeItemsSavingsPlansDetailResponse["Utilization"].asString();
+		if(!dataNodeItemsSavingsPlansDetailResponse["PrepayFee"].isNull())
+			savingsPlansDetailResponseObject.prepayFee = dataNodeItemsSavingsPlansDetailResponse["PrepayFee"].asString();
+		if(!dataNodeItemsSavingsPlansDetailResponse["InstanceId"].isNull())
+			savingsPlansDetailResponseObject.instanceId = dataNodeItemsSavingsPlansDetailResponse["InstanceId"].asString();
+		if(!dataNodeItemsSavingsPlansDetailResponse["Currency"].isNull())
+			savingsPlansDetailResponseObject.currency = dataNodeItemsSavingsPlansDetailResponse["Currency"].asString();
+		if(!dataNodeItemsSavingsPlansDetailResponse["EndTimestamp"].isNull())
+			savingsPlansDetailResponseObject.endTimestamp = std::stol(dataNodeItemsSavingsPlansDetailResponse["EndTimestamp"].asString());
+		if(!dataNodeItemsSavingsPlansDetailResponse["EndTime"].isNull())
+			savingsPlansDetailResponseObject.endTime = dataNodeItemsSavingsPlansDetailResponse["EndTime"].asString();
+		if(!dataNodeItemsSavingsPlansDetailResponse["StartTime"].isNull())
+			savingsPlansDetailResponseObject.startTime = dataNodeItemsSavingsPlansDetailResponse["StartTime"].asString();
+		if(!dataNodeItemsSavingsPlansDetailResponse["AllocationStatus"].isNull())
+			savingsPlansDetailResponseObject.allocationStatus = dataNodeItemsSavingsPlansDetailResponse["AllocationStatus"].asString();
 		if(!dataNodeItemsSavingsPlansDetailResponse["InstanceFamily"].isNull())
 			savingsPlansDetailResponseObject.instanceFamily = dataNodeItemsSavingsPlansDetailResponse["InstanceFamily"].asString();
 		if(!dataNodeItemsSavingsPlansDetailResponse["Region"].isNull())
 			savingsPlansDetailResponseObject.region = dataNodeItemsSavingsPlansDetailResponse["Region"].asString();
-		if(!dataNodeItemsSavingsPlansDetailResponse["PoolValue"].isNull())
-			savingsPlansDetailResponseObject.poolValue = dataNodeItemsSavingsPlansDetailResponse["PoolValue"].asString();
-		if(!dataNodeItemsSavingsPlansDetailResponse["Currency"].isNull())
-			savingsPlansDetailResponseObject.currency = dataNodeItemsSavingsPlansDetailResponse["Currency"].asString();
-		if(!dataNodeItemsSavingsPlansDetailResponse["Status"].isNull())
-			savingsPlansDetailResponseObject.status = dataNodeItemsSavingsPlansDetailResponse["Status"].asString();
-		if(!dataNodeItemsSavingsPlansDetailResponse["StartTime"].isNull())
-			savingsPlansDetailResponseObject.startTime = dataNodeItemsSavingsPlansDetailResponse["StartTime"].asString();
-		if(!dataNodeItemsSavingsPlansDetailResponse["EndTime"].isNull())
-			savingsPlansDetailResponseObject.endTime = dataNodeItemsSavingsPlansDetailResponse["EndTime"].asString();
-		if(!dataNodeItemsSavingsPlansDetailResponse["PayMode"].isNull())
-			savingsPlansDetailResponseObject.payMode = dataNodeItemsSavingsPlansDetailResponse["PayMode"].asString();
-		if(!dataNodeItemsSavingsPlansDetailResponse["PrepayFee"].isNull())
-			savingsPlansDetailResponseObject.prepayFee = dataNodeItemsSavingsPlansDetailResponse["PrepayFee"].asString();
+		if(!dataNodeItemsSavingsPlansDetailResponse["LastBillTotalUsage"].isNull())
+			savingsPlansDetailResponseObject.lastBillTotalUsage = dataNodeItemsSavingsPlansDetailResponse["LastBillTotalUsage"].asString();
+		if(!dataNodeItemsSavingsPlansDetailResponse["LastBillUtilization"].isNull())
+			savingsPlansDetailResponseObject.lastBillUtilization = dataNodeItemsSavingsPlansDetailResponse["LastBillUtilization"].asString();
 		if(!dataNodeItemsSavingsPlansDetailResponse["TotalSave"].isNull())
 			savingsPlansDetailResponseObject.totalSave = dataNodeItemsSavingsPlansDetailResponse["TotalSave"].asString();
-		if(!dataNodeItemsSavingsPlansDetailResponse["Utilization"].isNull())
-			savingsPlansDetailResponseObject.utilization = dataNodeItemsSavingsPlansDetailResponse["Utilization"].asString();
-		if(!dataNodeItemsSavingsPlansDetailResponse["AllocationStatus"].isNull())
-			savingsPlansDetailResponseObject.allocationStatus = dataNodeItemsSavingsPlansDetailResponse["AllocationStatus"].asString();
+		if(!dataNodeItemsSavingsPlansDetailResponse["PoolValue"].isNull())
+			savingsPlansDetailResponseObject.poolValue = dataNodeItemsSavingsPlansDetailResponse["PoolValue"].asString();
+		if(!dataNodeItemsSavingsPlansDetailResponse["PayMode"].isNull())
+			savingsPlansDetailResponseObject.payMode = dataNodeItemsSavingsPlansDetailResponse["PayMode"].asString();
 		auto allTagsNode = dataNodeItemsSavingsPlansDetailResponse["Tags"]["Tag"];
 		for (auto dataNodeItemsSavingsPlansDetailResponseTagsTag : allTagsNode)
 		{
@@ -92,10 +102,10 @@ void QuerySavingsPlansInstanceResult::parse(const std::string &payload)
 	}
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

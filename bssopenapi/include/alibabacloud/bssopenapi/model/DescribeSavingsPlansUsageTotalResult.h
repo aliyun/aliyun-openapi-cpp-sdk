@@ -37,8 +37,8 @@ namespace AlibabaCloud
 					struct TotalUsage
 					{
 						float postpaidCost;
-						float poolValue;
 						float savedCost;
+						float poolValue;
 						float usagePercentage;
 					};
 					struct Item

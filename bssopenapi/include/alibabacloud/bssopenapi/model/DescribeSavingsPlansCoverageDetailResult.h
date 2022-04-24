@@ -37,8 +37,8 @@ namespace AlibabaCloud
 					struct Item
 					{
 						float postpaidCost;
-						std::string userName;
 						std::string instanceSpec;
+						std::string userName;
 						std::string instanceId;
 						long userId;
 						std::string endPeriod;

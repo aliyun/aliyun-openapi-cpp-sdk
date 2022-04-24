@@ -40,20 +40,20 @@ void QueryBillToOSSSubscriptionResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["AccountID"].isNull())
-		data_.accountID = dataNode["AccountID"].asString();
 	if(!dataNode["AccountName"].isNull())
 		data_.accountName = dataNode["AccountName"].asString();
+	if(!dataNode["AccountID"].isNull())
+		data_.accountID = dataNode["AccountID"].asString();
 	auto allItemsNode = dataNode["Items"]["Item"];
 	for (auto dataNodeItemsItem : allItemsNode)
 	{
 		Data::Item itemObject;
+		if(!dataNodeItemsItem["BucketOwnerId"].isNull())
+			itemObject.bucketOwnerId = std::stol(dataNodeItemsItem["BucketOwnerId"].asString());
 		if(!dataNodeItemsItem["SubscribeType"].isNull())
 			itemObject.subscribeType = dataNodeItemsItem["SubscribeType"].asString();
 		if(!dataNodeItemsItem["SubscribeBucket"].isNull())
 			itemObject.subscribeBucket = dataNodeItemsItem["SubscribeBucket"].asString();
-		if(!dataNodeItemsItem["BucketOwnerId"].isNull())
-			itemObject.bucketOwnerId = std::stol(dataNodeItemsItem["BucketOwnerId"].asString());
 		if(!dataNodeItemsItem["SubscribeTime"].isNull())
 			itemObject.subscribeTime = dataNodeItemsItem["SubscribeTime"].asString();
 		if(!dataNodeItemsItem["SubscribeLanguage"].isNull())
@@ -62,12 +62,12 @@ void QueryBillToOSSSubscriptionResult::parse(const std::string &payload)
 			itemObject.multAccountRelSubscribe = dataNodeItemsItem["MultAccountRelSubscribe"].asString();
 		data_.items.push_back(itemObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

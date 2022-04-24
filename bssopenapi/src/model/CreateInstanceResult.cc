@@ -40,16 +40,16 @@ void CreateInstanceResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["InstanceId"].isNull())
-		data_.instanceId = dataNode["InstanceId"].asString();
 	if(!dataNode["OrderId"].isNull())
 		data_.orderId = dataNode["OrderId"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
+	if(!dataNode["InstanceId"].isNull())
+		data_.instanceId = dataNode["InstanceId"].asString();
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

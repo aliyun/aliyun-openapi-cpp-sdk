@@ -45,8 +45,8 @@ namespace AlibabaCloud
 						float deductHours;
 						long uid;
 						std::string deductDate;
-						float deductMeasure;
 						long shareUid;
+						float deductMeasure;
 						std::string region;
 						std::string deductedInstanceId;
 						float deductQuantity;

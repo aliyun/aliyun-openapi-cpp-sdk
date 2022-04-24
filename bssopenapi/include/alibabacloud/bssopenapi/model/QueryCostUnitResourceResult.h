@@ -44,8 +44,8 @@ namespace AlibabaCloud
 					struct CostUnitStatisInfo
 					{
 						long subUnitCount;
-						long totalResourceGroupCount;
 						long totalResourceCount;
+						long totalResourceGroupCount;
 						long userCount;
 						long resourceCount;
 						long totalUserCount;
@@ -55,21 +55,21 @@ namespace AlibabaCloud
 					{
 						long resourceUserId;
 						std::string resourceType;
-						std::string resourceNick;
 						std::string apportionCode;
+						std::string resourceNick;
+						std::string apportionName;
 						std::string resourceTag;
 						std::string relatedResources;
-						std::string apportionName;
 						std::string resourceId;
 						std::string commodityCode;
 						std::string resourceStatus;
 						std::string resourceUserName;
-						std::string resourceGroup;
 						std::string commodityName;
+						std::string resourceGroup;
 					};
 					int totalCount;
-					int pageSize;
 					int pageNum;
+					int pageSize;
 					CostUnit costUnit;
 					std::vector<ResourceInstanceList> resourceInstanceDtoList;
 					CostUnitStatisInfo costUnitStatisInfo;

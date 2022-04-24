@@ -40,30 +40,30 @@ void GetResourcePackagePriceResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["Currency"].isNull())
-		data_.currency = dataNode["Currency"].asString();
 	if(!dataNode["OriginalPrice"].isNull())
 		data_.originalPrice = std::stof(dataNode["OriginalPrice"].asString());
-	if(!dataNode["TradePrice"].isNull())
-		data_.tradePrice = std::stof(dataNode["TradePrice"].asString());
 	if(!dataNode["DiscountPrice"].isNull())
 		data_.discountPrice = std::stof(dataNode["DiscountPrice"].asString());
+	if(!dataNode["Currency"].isNull())
+		data_.currency = dataNode["Currency"].asString();
+	if(!dataNode["TradePrice"].isNull())
+		data_.tradePrice = std::stof(dataNode["TradePrice"].asString());
 	auto allPromotionsNode = dataNode["Promotions"]["Promotion"];
 	for (auto dataNodePromotionsPromotion : allPromotionsNode)
 	{
 		Data::Promotion promotionObject;
-		if(!dataNodePromotionsPromotion["Id"].isNull())
-			promotionObject.id = std::stol(dataNodePromotionsPromotion["Id"].asString());
 		if(!dataNodePromotionsPromotion["Name"].isNull())
 			promotionObject.name = dataNodePromotionsPromotion["Name"].asString();
+		if(!dataNodePromotionsPromotion["Id"].isNull())
+			promotionObject.id = std::stol(dataNodePromotionsPromotion["Id"].asString());
 		data_.promotions.push_back(promotionObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

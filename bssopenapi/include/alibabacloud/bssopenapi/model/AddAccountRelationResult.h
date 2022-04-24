@@ -34,6 +34,7 @@ namespace AlibabaCloud
 			public:
 				struct Data
 				{
+					long relationId;
 					std::string hostId;
 				};
 

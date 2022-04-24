@@ -51,10 +51,10 @@ void ModifyCostUnitResult::parse(const std::string &payload)
 			dataObject.ownerUid = std::stol(valueDataDataItem["OwnerUid"].asString());
 		data_.push_back(dataObject);
 	}
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 

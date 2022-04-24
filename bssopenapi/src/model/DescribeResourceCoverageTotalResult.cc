@@ -44,27 +44,27 @@ void DescribeResourceCoverageTotalResult::parse(const std::string &payload)
 	for (auto dataNodePeriodCoverageItem : allPeriodCoverageNode)
 	{
 		Data::Item itemObject;
-		if(!dataNodePeriodCoverageItem["Period"].isNull())
-			itemObject.period = dataNodePeriodCoverageItem["Period"].asString();
 		if(!dataNodePeriodCoverageItem["CoveragePercentage"].isNull())
 			itemObject.coveragePercentage = std::stof(dataNodePeriodCoverageItem["CoveragePercentage"].asString());
+		if(!dataNodePeriodCoverageItem["Period"].isNull())
+			itemObject.period = dataNodePeriodCoverageItem["Period"].asString();
 		data_.periodCoverage.push_back(itemObject);
 	}
 	auto totalCoverageNode = dataNode["TotalCoverage"];
-	if(!totalCoverageNode["CoveragePercentage"].isNull())
-		data_.totalCoverage.coveragePercentage = std::stof(totalCoverageNode["CoveragePercentage"].asString());
-	if(!totalCoverageNode["DeductQuantity"].isNull())
-		data_.totalCoverage.deductQuantity = std::stof(totalCoverageNode["DeductQuantity"].asString());
-	if(!totalCoverageNode["TotalQuantity"].isNull())
-		data_.totalCoverage.totalQuantity = std::stof(totalCoverageNode["TotalQuantity"].asString());
 	if(!totalCoverageNode["CapacityUnit"].isNull())
 		data_.totalCoverage.capacityUnit = totalCoverageNode["CapacityUnit"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
+	if(!totalCoverageNode["DeductQuantity"].isNull())
+		data_.totalCoverage.deductQuantity = std::stof(totalCoverageNode["DeductQuantity"].asString());
+	if(!totalCoverageNode["CoveragePercentage"].isNull())
+		data_.totalCoverage.coveragePercentage = std::stof(totalCoverageNode["CoveragePercentage"].asString());
+	if(!totalCoverageNode["TotalQuantity"].isNull())
+		data_.totalCoverage.totalQuantity = std::stof(totalCoverageNode["TotalQuantity"].asString());
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

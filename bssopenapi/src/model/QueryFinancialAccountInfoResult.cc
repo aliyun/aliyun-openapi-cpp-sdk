@@ -40,24 +40,24 @@ void QueryFinancialAccountInfoResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["UserName"].isNull())
-		data_.userName = dataNode["UserName"].asString();
-	if(!dataNode["IsFinancialAccount"].isNull())
-		data_.isFinancialAccount = dataNode["IsFinancialAccount"].asString() == "true";
-	if(!dataNode["AccountType"].isNull())
-		data_.accountType = dataNode["AccountType"].asString();
 	if(!dataNode["MemberNickName"].isNull())
 		data_.memberNickName = dataNode["MemberNickName"].asString();
-	if(!dataNode["MemberGroupId"].isNull())
-		data_.memberGroupId = std::stol(dataNode["MemberGroupId"].asString());
+	if(!dataNode["IsFinancialAccount"].isNull())
+		data_.isFinancialAccount = dataNode["IsFinancialAccount"].asString() == "true";
 	if(!dataNode["MemberGroupName"].isNull())
 		data_.memberGroupName = dataNode["MemberGroupName"].asString();
+	if(!dataNode["UserName"].isNull())
+		data_.userName = dataNode["UserName"].asString();
+	if(!dataNode["AccountType"].isNull())
+		data_.accountType = dataNode["AccountType"].asString();
+	if(!dataNode["MemberGroupId"].isNull())
+		data_.memberGroupId = std::stol(dataNode["MemberGroupId"].asString());
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

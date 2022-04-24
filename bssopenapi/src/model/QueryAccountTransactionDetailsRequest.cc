@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,111 +18,91 @@
 
 using AlibabaCloud::BssOpenApi::Model::QueryAccountTransactionDetailsRequest;
 
-QueryAccountTransactionDetailsRequest::QueryAccountTransactionDetailsRequest() :
-	RpcServiceRequest("bssopenapi", "2017-12-14", "QueryAccountTransactionDetails")
-{
-	setMethod(HttpRequest::Method::Post);
+QueryAccountTransactionDetailsRequest::QueryAccountTransactionDetailsRequest()
+    : RpcServiceRequest("bssopenapi", "2017-12-14", "QueryAccountTransactionDetails") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-QueryAccountTransactionDetailsRequest::~QueryAccountTransactionDetailsRequest()
-{}
+QueryAccountTransactionDetailsRequest::~QueryAccountTransactionDetailsRequest() {}
 
-std::string QueryAccountTransactionDetailsRequest::getTransactionType()const
-{
-	return transactionType_;
+std::string QueryAccountTransactionDetailsRequest::getTransactionType() const {
+  return transactionType_;
 }
 
-void QueryAccountTransactionDetailsRequest::setTransactionType(const std::string& transactionType)
-{
-	transactionType_ = transactionType;
-	setParameter("TransactionType", transactionType);
+void QueryAccountTransactionDetailsRequest::setTransactionType(const std::string &transactionType) {
+  transactionType_ = transactionType;
+  setParameter(std::string("TransactionType"), transactionType);
 }
 
-std::string QueryAccountTransactionDetailsRequest::getCreateTimeEnd()const
-{
-	return createTimeEnd_;
+std::string QueryAccountTransactionDetailsRequest::getCreateTimeEnd() const {
+  return createTimeEnd_;
 }
 
-void QueryAccountTransactionDetailsRequest::setCreateTimeEnd(const std::string& createTimeEnd)
-{
-	createTimeEnd_ = createTimeEnd;
-	setParameter("CreateTimeEnd", createTimeEnd);
+void QueryAccountTransactionDetailsRequest::setCreateTimeEnd(const std::string &createTimeEnd) {
+  createTimeEnd_ = createTimeEnd;
+  setParameter(std::string("CreateTimeEnd"), createTimeEnd);
 }
 
-std::string QueryAccountTransactionDetailsRequest::getRecordID()const
-{
-	return recordID_;
+std::string QueryAccountTransactionDetailsRequest::getRecordID() const {
+  return recordID_;
 }
 
-void QueryAccountTransactionDetailsRequest::setRecordID(const std::string& recordID)
-{
-	recordID_ = recordID;
-	setParameter("RecordID", recordID);
+void QueryAccountTransactionDetailsRequest::setRecordID(const std::string &recordID) {
+  recordID_ = recordID;
+  setParameter(std::string("RecordID"), recordID);
 }
 
-std::string QueryAccountTransactionDetailsRequest::getNextToken()const
-{
-	return nextToken_;
+std::string QueryAccountTransactionDetailsRequest::getNextToken() const {
+  return nextToken_;
 }
 
-void QueryAccountTransactionDetailsRequest::setNextToken(const std::string& nextToken)
-{
-	nextToken_ = nextToken;
-	setParameter("NextToken", nextToken);
+void QueryAccountTransactionDetailsRequest::setNextToken(const std::string &nextToken) {
+  nextToken_ = nextToken;
+  setParameter(std::string("NextToken"), nextToken);
 }
 
-int QueryAccountTransactionDetailsRequest::getMaxResults()const
-{
-	return maxResults_;
+int QueryAccountTransactionDetailsRequest::getMaxResults() const {
+  return maxResults_;
 }
 
-void QueryAccountTransactionDetailsRequest::setMaxResults(int maxResults)
-{
-	maxResults_ = maxResults;
-	setParameter("MaxResults", std::to_string(maxResults));
+void QueryAccountTransactionDetailsRequest::setMaxResults(int maxResults) {
+  maxResults_ = maxResults;
+  setParameter(std::string("MaxResults"), std::to_string(maxResults));
 }
 
-std::string QueryAccountTransactionDetailsRequest::getTransactionChannel()const
-{
-	return transactionChannel_;
+std::string QueryAccountTransactionDetailsRequest::getTransactionChannel() const {
+  return transactionChannel_;
 }
 
-void QueryAccountTransactionDetailsRequest::setTransactionChannel(const std::string& transactionChannel)
-{
-	transactionChannel_ = transactionChannel;
-	setParameter("TransactionChannel", transactionChannel);
+void QueryAccountTransactionDetailsRequest::setTransactionChannel(const std::string &transactionChannel) {
+  transactionChannel_ = transactionChannel;
+  setParameter(std::string("TransactionChannel"), transactionChannel);
 }
 
-std::string QueryAccountTransactionDetailsRequest::getTransactionChannelSN()const
-{
-	return transactionChannelSN_;
+std::string QueryAccountTransactionDetailsRequest::getTransactionChannelSN() const {
+  return transactionChannelSN_;
 }
 
-void QueryAccountTransactionDetailsRequest::setTransactionChannelSN(const std::string& transactionChannelSN)
-{
-	transactionChannelSN_ = transactionChannelSN;
-	setParameter("TransactionChannelSN", transactionChannelSN);
+void QueryAccountTransactionDetailsRequest::setTransactionChannelSN(const std::string &transactionChannelSN) {
+  transactionChannelSN_ = transactionChannelSN;
+  setParameter(std::string("TransactionChannelSN"), transactionChannelSN);
 }
 
-std::string QueryAccountTransactionDetailsRequest::getCreateTimeStart()const
-{
-	return createTimeStart_;
+std::string QueryAccountTransactionDetailsRequest::getCreateTimeStart() const {
+  return createTimeStart_;
 }
 
-void QueryAccountTransactionDetailsRequest::setCreateTimeStart(const std::string& createTimeStart)
-{
-	createTimeStart_ = createTimeStart;
-	setParameter("CreateTimeStart", createTimeStart);
+void QueryAccountTransactionDetailsRequest::setCreateTimeStart(const std::string &createTimeStart) {
+  createTimeStart_ = createTimeStart;
+  setParameter(std::string("CreateTimeStart"), createTimeStart);
 }
 
-std::string QueryAccountTransactionDetailsRequest::getTransactionNumber()const
-{
-	return transactionNumber_;
+std::string QueryAccountTransactionDetailsRequest::getTransactionNumber() const {
+  return transactionNumber_;
 }
 
-void QueryAccountTransactionDetailsRequest::setTransactionNumber(const std::string& transactionNumber)
-{
-	transactionNumber_ = transactionNumber;
-	setParameter("TransactionNumber", transactionNumber);
+void QueryAccountTransactionDetailsRequest::setTransactionNumber(const std::string &transactionNumber) {
+  transactionNumber_ = transactionNumber;
+  setParameter(std::string("TransactionNumber"), transactionNumber);
 }
 

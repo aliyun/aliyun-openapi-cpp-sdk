@@ -44,13 +44,18 @@ namespace AlibabaCloud
 						std::string status;
 						std::string allocationStatus;
 						std::string endTime;
+						long startTimestamp;
 						std::string instanceId;
 						std::string instanceFamily;
 						std::string startTime;
 						std::string totalSave;
 						std::string prepayFee;
+						long endTimestamp;
+						std::string lastBillTotalUsage;
 						std::string payMode;
+						std::string cycle;
 						std::string utilization;
+						std::string lastBillUtilization;
 						std::string currency;
 						std::string poolValue;
 						std::string region;

@@ -37,11 +37,11 @@ namespace AlibabaCloud
 					struct Order
 					{
 						std::string afterTaxAmount;
-						std::string subOrderId;
 						std::string config;
+						std::string subOrderId;
+						std::string paymentTime;
 						std::string _operator;
 						std::string tax;
-						std::string paymentTime;
 						std::string paymentCurrency;
 						std::string usageEndTime;
 						std::string subscriptionType;
@@ -55,18 +55,18 @@ namespace AlibabaCloud
 						std::string productCode;
 						std::string createTime;
 						std::string productType;
-						std::string relatedOrderId;
 						std::string quantity;
+						std::string relatedOrderId;
 						std::string orderId;
-						std::string pretaxAmount;
 						std::string orderSubType;
+						std::string pretaxAmount;
 						std::string region;
 						std::string instanceIDs;
 						std::string pretaxAmountLocal;
 					};
 					int totalCount;
-					int pageSize;
 					int pageNum;
+					int pageSize;
 					std::vector<Order> orderList;
 					std::string hostName;
 				};

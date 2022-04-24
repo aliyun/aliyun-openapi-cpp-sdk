@@ -43,34 +43,34 @@ void QueryCashCouponsResult::parse(const std::string &payload)
 	for (auto valueDataCashCoupon : allDataNode)
 	{
 		CashCoupon dataObject;
-		if(!valueDataCashCoupon["CashCouponId"].isNull())
-			dataObject.cashCouponId = std::stol(valueDataCashCoupon["CashCouponId"].asString());
-		if(!valueDataCashCoupon["CashCouponNo"].isNull())
-			dataObject.cashCouponNo = valueDataCashCoupon["CashCouponNo"].asString();
-		if(!valueDataCashCoupon["GrantedTime"].isNull())
-			dataObject.grantedTime = valueDataCashCoupon["GrantedTime"].asString();
-		if(!valueDataCashCoupon["EffectiveTime"].isNull())
-			dataObject.effectiveTime = valueDataCashCoupon["EffectiveTime"].asString();
-		if(!valueDataCashCoupon["ExpiryTime"].isNull())
-			dataObject.expiryTime = valueDataCashCoupon["ExpiryTime"].asString();
-		if(!valueDataCashCoupon["ApplicableProducts"].isNull())
-			dataObject.applicableProducts = valueDataCashCoupon["ApplicableProducts"].asString();
-		if(!valueDataCashCoupon["ApplicableScenarios"].isNull())
-			dataObject.applicableScenarios = valueDataCashCoupon["ApplicableScenarios"].asString();
-		if(!valueDataCashCoupon["NominalValue"].isNull())
-			dataObject.nominalValue = valueDataCashCoupon["NominalValue"].asString();
-		if(!valueDataCashCoupon["Balance"].isNull())
-			dataObject.balance = valueDataCashCoupon["Balance"].asString();
 		if(!valueDataCashCoupon["Status"].isNull())
 			dataObject.status = valueDataCashCoupon["Status"].asString();
+		if(!valueDataCashCoupon["ExpiryTime"].isNull())
+			dataObject.expiryTime = valueDataCashCoupon["ExpiryTime"].asString();
+		if(!valueDataCashCoupon["GrantedTime"].isNull())
+			dataObject.grantedTime = valueDataCashCoupon["GrantedTime"].asString();
+		if(!valueDataCashCoupon["NominalValue"].isNull())
+			dataObject.nominalValue = valueDataCashCoupon["NominalValue"].asString();
+		if(!valueDataCashCoupon["EffectiveTime"].isNull())
+			dataObject.effectiveTime = valueDataCashCoupon["EffectiveTime"].asString();
+		if(!valueDataCashCoupon["ApplicableScenarios"].isNull())
+			dataObject.applicableScenarios = valueDataCashCoupon["ApplicableScenarios"].asString();
+		if(!valueDataCashCoupon["CashCouponId"].isNull())
+			dataObject.cashCouponId = std::stol(valueDataCashCoupon["CashCouponId"].asString());
+		if(!valueDataCashCoupon["ApplicableProducts"].isNull())
+			dataObject.applicableProducts = valueDataCashCoupon["ApplicableProducts"].asString();
+		if(!valueDataCashCoupon["CashCouponNo"].isNull())
+			dataObject.cashCouponNo = valueDataCashCoupon["CashCouponNo"].asString();
+		if(!valueDataCashCoupon["Balance"].isNull())
+			dataObject.balance = valueDataCashCoupon["Balance"].asString();
 		data_.push_back(dataObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

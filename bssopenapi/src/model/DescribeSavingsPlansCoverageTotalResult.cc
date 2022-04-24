@@ -44,10 +44,10 @@ void DescribeSavingsPlansCoverageTotalResult::parse(const std::string &payload)
 	for (auto dataNodePeriodCoverageItem : allPeriodCoverageNode)
 	{
 		Data::Item itemObject;
-		if(!dataNodePeriodCoverageItem["Period"].isNull())
-			itemObject.period = dataNodePeriodCoverageItem["Period"].asString();
 		if(!dataNodePeriodCoverageItem["Percentage"].isNull())
 			itemObject.percentage = std::stof(dataNodePeriodCoverageItem["Percentage"].asString());
+		if(!dataNodePeriodCoverageItem["Period"].isNull())
+			itemObject.period = dataNodePeriodCoverageItem["Period"].asString();
 		data_.periodCoverage.push_back(itemObject);
 	}
 	auto totalCoverageNode = dataNode["TotalCoverage"];
@@ -55,12 +55,12 @@ void DescribeSavingsPlansCoverageTotalResult::parse(const std::string &payload)
 		data_.totalCoverage.coveragePercentage = std::stof(totalCoverageNode["CoveragePercentage"].asString());
 	if(!totalCoverageNode["DeductAmount"].isNull())
 		data_.totalCoverage.deductAmount = std::stof(totalCoverageNode["DeductAmount"].asString());
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

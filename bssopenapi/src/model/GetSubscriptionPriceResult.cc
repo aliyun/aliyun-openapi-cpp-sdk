@@ -44,46 +44,46 @@ void GetSubscriptionPriceResult::parse(const std::string &payload)
 		data_.originalPrice = std::stof(dataNode["OriginalPrice"].asString());
 	if(!dataNode["DiscountPrice"].isNull())
 		data_.discountPrice = std::stof(dataNode["DiscountPrice"].asString());
-	if(!dataNode["TradePrice"].isNull())
-		data_.tradePrice = std::stof(dataNode["TradePrice"].asString());
 	if(!dataNode["Currency"].isNull())
 		data_.currency = dataNode["Currency"].asString();
 	if(!dataNode["Quantity"].isNull())
 		data_.quantity = std::stoi(dataNode["Quantity"].asString());
+	if(!dataNode["TradePrice"].isNull())
+		data_.tradePrice = std::stof(dataNode["TradePrice"].asString());
 	auto allModuleDetailsNode = dataNode["ModuleDetails"]["ModuleDetail"];
 	for (auto dataNodeModuleDetailsModuleDetail : allModuleDetailsNode)
 	{
 		Data::ModuleDetail moduleDetailObject;
-		if(!dataNodeModuleDetailsModuleDetail["ModuleCode"].isNull())
-			moduleDetailObject.moduleCode = dataNodeModuleDetailsModuleDetail["ModuleCode"].asString();
-		if(!dataNodeModuleDetailsModuleDetail["OriginalCost"].isNull())
-			moduleDetailObject.originalCost = std::stof(dataNodeModuleDetailsModuleDetail["OriginalCost"].asString());
-		if(!dataNodeModuleDetailsModuleDetail["InvoiceDiscount"].isNull())
-			moduleDetailObject.invoiceDiscount = std::stof(dataNodeModuleDetailsModuleDetail["InvoiceDiscount"].asString());
 		if(!dataNodeModuleDetailsModuleDetail["CostAfterDiscount"].isNull())
 			moduleDetailObject.costAfterDiscount = std::stof(dataNodeModuleDetailsModuleDetail["CostAfterDiscount"].asString());
+		if(!dataNodeModuleDetailsModuleDetail["InvoiceDiscount"].isNull())
+			moduleDetailObject.invoiceDiscount = std::stof(dataNodeModuleDetailsModuleDetail["InvoiceDiscount"].asString());
 		if(!dataNodeModuleDetailsModuleDetail["UnitPrice"].isNull())
 			moduleDetailObject.unitPrice = std::stof(dataNodeModuleDetailsModuleDetail["UnitPrice"].asString());
+		if(!dataNodeModuleDetailsModuleDetail["OriginalCost"].isNull())
+			moduleDetailObject.originalCost = std::stof(dataNodeModuleDetailsModuleDetail["OriginalCost"].asString());
+		if(!dataNodeModuleDetailsModuleDetail["ModuleCode"].isNull())
+			moduleDetailObject.moduleCode = dataNodeModuleDetailsModuleDetail["ModuleCode"].asString();
 		data_.moduleDetails.push_back(moduleDetailObject);
 	}
 	auto allPromotionDetailsNode = dataNode["PromotionDetails"]["PromotionDetail"];
 	for (auto dataNodePromotionDetailsPromotionDetail : allPromotionDetailsNode)
 	{
 		Data::PromotionDetail promotionDetailObject;
-		if(!dataNodePromotionDetailsPromotionDetail["PromotionName"].isNull())
-			promotionDetailObject.promotionName = dataNodePromotionDetailsPromotionDetail["PromotionName"].asString();
 		if(!dataNodePromotionDetailsPromotionDetail["PromotionDesc"].isNull())
 			promotionDetailObject.promotionDesc = dataNodePromotionDetailsPromotionDetail["PromotionDesc"].asString();
 		if(!dataNodePromotionDetailsPromotionDetail["PromotionId"].isNull())
 			promotionDetailObject.promotionId = std::stol(dataNodePromotionDetailsPromotionDetail["PromotionId"].asString());
+		if(!dataNodePromotionDetailsPromotionDetail["PromotionName"].isNull())
+			promotionDetailObject.promotionName = dataNodePromotionDetailsPromotionDetail["PromotionName"].asString();
 		data_.promotionDetails.push_back(promotionDetailObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

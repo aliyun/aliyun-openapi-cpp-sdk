@@ -36,16 +36,16 @@ namespace AlibabaCloud
 				{
 					struct CustomerInvoiceAddress
 					{
-						long userId;
 						std::string addressee;
+						long userId;
 						std::string phone;
 						std::string deliveryAddress;
-						std::string street;
 						std::string postalCode;
+						std::string street;
 						std::string bizType;
-						long id;
-						std::string userNick;
 						std::string city;
+						std::string userNick;
+						long id;
 						std::string county;
 						std::string province;
 					};

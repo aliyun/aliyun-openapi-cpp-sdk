@@ -44,14 +44,14 @@ void DescribePricingModuleResult::parse(const std::string &payload)
 	for (auto dataNodeModuleListModule : allModuleListNode)
 	{
 		Data::Module moduleObject;
-		if(!dataNodeModuleListModule["ModuleCode"].isNull())
-			moduleObject.moduleCode = dataNodeModuleListModule["ModuleCode"].asString();
 		if(!dataNodeModuleListModule["ModuleName"].isNull())
 			moduleObject.moduleName = dataNodeModuleListModule["ModuleName"].asString();
 		if(!dataNodeModuleListModule["PriceType"].isNull())
 			moduleObject.priceType = dataNodeModuleListModule["PriceType"].asString();
 		if(!dataNodeModuleListModule["Currency"].isNull())
 			moduleObject.currency = dataNodeModuleListModule["Currency"].asString();
+		if(!dataNodeModuleListModule["ModuleCode"].isNull())
+			moduleObject.moduleCode = dataNodeModuleListModule["ModuleCode"].asString();
 		auto allConfigList = value["ConfigList"]["ConfigList"];
 		for (auto value : allConfigList)
 			moduleObject.configList.push_back(value.asString());
@@ -73,22 +73,22 @@ void DescribePricingModuleResult::parse(const std::string &payload)
 			Data::Attribute::AttributeValue valuesObject;
 			if(!dataNodeAttributeListAttributeValuesAttributeValue["Type"].isNull())
 				valuesObject.type = dataNodeAttributeListAttributeValuesAttributeValue["Type"].asString();
-			if(!dataNodeAttributeListAttributeValuesAttributeValue["Name"].isNull())
-				valuesObject.name = dataNodeAttributeListAttributeValuesAttributeValue["Name"].asString();
 			if(!dataNodeAttributeListAttributeValuesAttributeValue["Value"].isNull())
 				valuesObject.value = dataNodeAttributeListAttributeValuesAttributeValue["Value"].asString();
 			if(!dataNodeAttributeListAttributeValuesAttributeValue["Remark"].isNull())
 				valuesObject.remark = dataNodeAttributeListAttributeValuesAttributeValue["Remark"].asString();
+			if(!dataNodeAttributeListAttributeValuesAttributeValue["Name"].isNull())
+				valuesObject.name = dataNodeAttributeListAttributeValuesAttributeValue["Name"].asString();
 			attributeObject.values.push_back(valuesObject);
 		}
 		data_.attributeList.push_back(attributeObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 
