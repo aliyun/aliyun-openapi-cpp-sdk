@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_POLARDB_MODEL_REFRESHPROXYLEVELRESULT_H_
-#define ALIBABACLOUD_POLARDB_MODEL_REFRESHPROXYLEVELRESULT_H_
+#ifndef ALIBABACLOUD_POLARDB_MODEL_MODIFYDBNODESCLASSRESULT_H_
+#define ALIBABACLOUD_POLARDB_MODEL_MODIFYDBNODESCLASSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,21 +29,25 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_POLARDB_EXPORT RefreshProxyLevelResult : public ServiceResult
+			class ALIBABACLOUD_POLARDB_EXPORT ModifyDBNodesClassResult : public ServiceResult
 			{
 			public:
 
 
-				RefreshProxyLevelResult();
-				explicit RefreshProxyLevelResult(const std::string &payload);
-				~RefreshProxyLevelResult();
+				ModifyDBNodesClassResult();
+				explicit ModifyDBNodesClassResult(const std::string &payload);
+				~ModifyDBNodesClassResult();
+				std::string getDBClusterId()const;
+				std::string getOrderId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string dBClusterId_;
+				std::string orderId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_POLARDB_MODEL_REFRESHPROXYLEVELRESULT_H_
+#endif // !ALIBABACLOUD_POLARDB_MODEL_MODIFYDBNODESCLASSRESULT_H_

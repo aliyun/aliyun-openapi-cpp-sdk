@@ -43,40 +43,40 @@ void DescribeDetachedBackupsResult::parse(const std::string &payload)
 	for (auto valueItemsBackup : allItemsNode)
 	{
 		Backup itemsObject;
-		if(!valueItemsBackup["BackupId"].isNull())
-			itemsObject.backupId = valueItemsBackup["BackupId"].asString();
-		if(!valueItemsBackup["DBClusterId"].isNull())
-			itemsObject.dBClusterId = valueItemsBackup["DBClusterId"].asString();
-		if(!valueItemsBackup["BackupStatus"].isNull())
-			itemsObject.backupStatus = valueItemsBackup["BackupStatus"].asString();
-		if(!valueItemsBackup["BackupStartTime"].isNull())
-			itemsObject.backupStartTime = valueItemsBackup["BackupStartTime"].asString();
-		if(!valueItemsBackup["BackupEndTime"].isNull())
-			itemsObject.backupEndTime = valueItemsBackup["BackupEndTime"].asString();
-		if(!valueItemsBackup["BackupType"].isNull())
-			itemsObject.backupType = valueItemsBackup["BackupType"].asString();
-		if(!valueItemsBackup["BackupMode"].isNull())
-			itemsObject.backupMode = valueItemsBackup["BackupMode"].asString();
-		if(!valueItemsBackup["BackupMethod"].isNull())
-			itemsObject.backupMethod = valueItemsBackup["BackupMethod"].asString();
-		if(!valueItemsBackup["StoreStatus"].isNull())
-			itemsObject.storeStatus = valueItemsBackup["StoreStatus"].asString();
 		if(!valueItemsBackup["BackupSetSize"].isNull())
 			itemsObject.backupSetSize = valueItemsBackup["BackupSetSize"].asString();
 		if(!valueItemsBackup["ConsistentTime"].isNull())
 			itemsObject.consistentTime = valueItemsBackup["ConsistentTime"].asString();
-		if(!valueItemsBackup["BackupsLevel"].isNull())
-			itemsObject.backupsLevel = valueItemsBackup["BackupsLevel"].asString();
+		if(!valueItemsBackup["StoreStatus"].isNull())
+			itemsObject.storeStatus = valueItemsBackup["StoreStatus"].asString();
+		if(!valueItemsBackup["BackupStatus"].isNull())
+			itemsObject.backupStatus = valueItemsBackup["BackupStatus"].asString();
+		if(!valueItemsBackup["BackupType"].isNull())
+			itemsObject.backupType = valueItemsBackup["BackupType"].asString();
+		if(!valueItemsBackup["BackupStartTime"].isNull())
+			itemsObject.backupStartTime = valueItemsBackup["BackupStartTime"].asString();
 		if(!valueItemsBackup["IsAvail"].isNull())
 			itemsObject.isAvail = valueItemsBackup["IsAvail"].asString();
+		if(!valueItemsBackup["BackupEndTime"].isNull())
+			itemsObject.backupEndTime = valueItemsBackup["BackupEndTime"].asString();
+		if(!valueItemsBackup["BackupId"].isNull())
+			itemsObject.backupId = valueItemsBackup["BackupId"].asString();
+		if(!valueItemsBackup["DBClusterId"].isNull())
+			itemsObject.dBClusterId = valueItemsBackup["DBClusterId"].asString();
+		if(!valueItemsBackup["BackupsLevel"].isNull())
+			itemsObject.backupsLevel = valueItemsBackup["BackupsLevel"].asString();
+		if(!valueItemsBackup["BackupMode"].isNull())
+			itemsObject.backupMode = valueItemsBackup["BackupMode"].asString();
+		if(!valueItemsBackup["BackupMethod"].isNull())
+			itemsObject.backupMethod = valueItemsBackup["BackupMethod"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["TotalRecordCount"].isNull())
 		totalRecordCount_ = value["TotalRecordCount"].asString();
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = value["PageNumber"].asString();
 	if(!value["PageRecordCount"].isNull())
 		pageRecordCount_ = value["PageRecordCount"].asString();
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = value["PageNumber"].asString();
 
 }
 

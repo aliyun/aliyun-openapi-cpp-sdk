@@ -38,11 +38,11 @@ namespace AlibabaCloud
 					{
 						std::string privateZoneConnectionString;
 						std::string vPCId;
-						std::string port;
 						std::string vSwitchId;
+						std::string port;
 						std::string vpcInstanceId;
-						std::string iPAddress;
 						std::string connectionString;
+						std::string iPAddress;
 						std::string netType;
 					};
 					std::string dBEndpointId;
@@ -50,10 +50,10 @@ namespace AlibabaCloud
 					std::string autoAddNewNodes;
 					std::string endpointType;
 					std::vector<DBEndpoint::Address> addressItems;
-					std::string dBEndpointDescription;
-					std::string endpointConfig;
-					std::string readWriteMode;
 					std::string nodes;
+					std::string readWriteMode;
+					std::string endpointConfig;
+					std::string dBEndpointDescription;
 				};
 
 

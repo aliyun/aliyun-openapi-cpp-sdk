@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,56 +17,50 @@
 #ifndef ALIBABACLOUD_POLARDB_MODEL_DESCRIBEDBPROXYPERFORMANCEREQUEST_H_
 #define ALIBABACLOUD_POLARDB_MODEL_DESCRIBEDBPROXYPERFORMANCEREQUEST_H_
 
+#include <alibabacloud/polardb/PolardbExport.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
-#include <alibabacloud/polardb/PolardbExport.h>
+#include <map>
 
-namespace AlibabaCloud
-{
-	namespace Polardb
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_POLARDB_EXPORT DescribeDBProxyPerformanceRequest : public RpcServiceRequest
-			{
+namespace AlibabaCloud {
+namespace Polardb {
+namespace Model {
+class ALIBABACLOUD_POLARDB_EXPORT DescribeDBProxyPerformanceRequest : public RpcServiceRequest {
+public:
+	DescribeDBProxyPerformanceRequest();
+	~DescribeDBProxyPerformanceRequest();
+	long getResourceOwnerId() const;
+	void setResourceOwnerId(long resourceOwnerId);
+	std::string getStartTime() const;
+	void setStartTime(const std::string &startTime);
+	std::string getKey() const;
+	void setKey(const std::string &key);
+	std::string getResourceOwnerAccount() const;
+	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
+	std::string getDBClusterId() const;
+	void setDBClusterId(const std::string &dBClusterId);
+	std::string getOwnerAccount() const;
+	void setOwnerAccount(const std::string &ownerAccount);
+	std::string getEndTime() const;
+	void setEndTime(const std::string &endTime);
+	long getOwnerId() const;
+	void setOwnerId(long ownerId);
+	std::string getMetric() const;
+	void setMetric(const std::string &metric);
 
-			public:
-				DescribeDBProxyPerformanceRequest();
-				~DescribeDBProxyPerformanceRequest();
-
-				long getResourceOwnerId()const;
-				void setResourceOwnerId(long resourceOwnerId);
-				std::string getStartTime()const;
-				void setStartTime(const std::string& startTime);
-				std::string getKey()const;
-				void setKey(const std::string& key);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getDBClusterId()const;
-				void setDBClusterId(const std::string& dBClusterId);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getEndTime()const;
-				void setEndTime(const std::string& endTime);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
-				std::string getMetric()const;
-				void setMetric(const std::string& metric);
-
-            private:
-				long resourceOwnerId_;
-				std::string startTime_;
-				std::string key_;
-				std::string resourceOwnerAccount_;
-				std::string dBClusterId_;
-				std::string ownerAccount_;
-				std::string endTime_;
-				long ownerId_;
-				std::string metric_;
-
-			};
-		}
-	}
-}
+private:
+	long resourceOwnerId_;
+	std::string startTime_;
+	std::string key_;
+	std::string resourceOwnerAccount_;
+	std::string dBClusterId_;
+	std::string ownerAccount_;
+	std::string endTime_;
+	long ownerId_;
+	std::string metric_;
+};
+} // namespace Model
+} // namespace Polardb
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_POLARDB_MODEL_DESCRIBEDBPROXYPERFORMANCEREQUEST_H_

@@ -43,12 +43,12 @@ void DescribeDBClusterPerformanceResult::parse(const std::string &payload)
 	for (auto valuePerformanceKeysPerformanceItem : allPerformanceKeysNode)
 	{
 		PerformanceItem performanceKeysObject;
-		if(!valuePerformanceKeysPerformanceItem["DBNodeId"].isNull())
-			performanceKeysObject.dBNodeId = valuePerformanceKeysPerformanceItem["DBNodeId"].asString();
-		if(!valuePerformanceKeysPerformanceItem["Measurement"].isNull())
-			performanceKeysObject.measurement = valuePerformanceKeysPerformanceItem["Measurement"].asString();
 		if(!valuePerformanceKeysPerformanceItem["MetricName"].isNull())
 			performanceKeysObject.metricName = valuePerformanceKeysPerformanceItem["MetricName"].asString();
+		if(!valuePerformanceKeysPerformanceItem["Measurement"].isNull())
+			performanceKeysObject.measurement = valuePerformanceKeysPerformanceItem["Measurement"].asString();
+		if(!valuePerformanceKeysPerformanceItem["DBNodeId"].isNull())
+			performanceKeysObject.dBNodeId = valuePerformanceKeysPerformanceItem["DBNodeId"].asString();
 		auto allPointsNode = valuePerformanceKeysPerformanceItem["Points"]["PerformanceItemValue"];
 		for (auto valuePerformanceKeysPerformanceItemPointsPerformanceItemValue : allPointsNode)
 		{
@@ -61,18 +61,18 @@ void DescribeDBClusterPerformanceResult::parse(const std::string &payload)
 		}
 		performanceKeys_.push_back(performanceKeysObject);
 	}
-	if(!value["DBClusterId"].isNull())
-		dBClusterId_ = value["DBClusterId"].asString();
-	if(!value["Engine"].isNull())
-		engine_ = value["Engine"].asString();
-	if(!value["DBType"].isNull())
-		dBType_ = value["DBType"].asString();
 	if(!value["DBVersion"].isNull())
 		dBVersion_ = value["DBVersion"].asString();
-	if(!value["StartTime"].isNull())
-		startTime_ = value["StartTime"].asString();
 	if(!value["EndTime"].isNull())
 		endTime_ = value["EndTime"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
+	if(!value["DBClusterId"].isNull())
+		dBClusterId_ = value["DBClusterId"].asString();
+	if(!value["DBType"].isNull())
+		dBType_ = value["DBType"].asString();
+	if(!value["Engine"].isNull())
+		engine_ = value["Engine"].asString();
 
 }
 
@@ -91,14 +91,14 @@ std::string DescribeDBClusterPerformanceResult::getEndTime()const
 	return endTime_;
 }
 
-std::string DescribeDBClusterPerformanceResult::getDBClusterId()const
-{
-	return dBClusterId_;
-}
-
 std::string DescribeDBClusterPerformanceResult::getStartTime()const
 {
 	return startTime_;
+}
+
+std::string DescribeDBClusterPerformanceResult::getDBClusterId()const
+{
+	return dBClusterId_;
 }
 
 std::string DescribeDBClusterPerformanceResult::getDBType()const

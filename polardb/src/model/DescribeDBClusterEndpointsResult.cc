@@ -43,42 +43,42 @@ void DescribeDBClusterEndpointsResult::parse(const std::string &payload)
 	for (auto valueItemsDBEndpoint : allItemsNode)
 	{
 		DBEndpoint itemsObject;
-		if(!valueItemsDBEndpoint["DBEndpointId"].isNull())
-			itemsObject.dBEndpointId = valueItemsDBEndpoint["DBEndpointId"].asString();
 		if(!valueItemsDBEndpoint["NodeWithRoles"].isNull())
 			itemsObject.nodeWithRoles = valueItemsDBEndpoint["NodeWithRoles"].asString();
-		if(!valueItemsDBEndpoint["AutoAddNewNodes"].isNull())
-			itemsObject.autoAddNewNodes = valueItemsDBEndpoint["AutoAddNewNodes"].asString();
-		if(!valueItemsDBEndpoint["EndpointType"].isNull())
-			itemsObject.endpointType = valueItemsDBEndpoint["EndpointType"].asString();
-		if(!valueItemsDBEndpoint["DBEndpointDescription"].isNull())
-			itemsObject.dBEndpointDescription = valueItemsDBEndpoint["DBEndpointDescription"].asString();
-		if(!valueItemsDBEndpoint["EndpointConfig"].isNull())
-			itemsObject.endpointConfig = valueItemsDBEndpoint["EndpointConfig"].asString();
-		if(!valueItemsDBEndpoint["ReadWriteMode"].isNull())
-			itemsObject.readWriteMode = valueItemsDBEndpoint["ReadWriteMode"].asString();
 		if(!valueItemsDBEndpoint["Nodes"].isNull())
 			itemsObject.nodes = valueItemsDBEndpoint["Nodes"].asString();
+		if(!valueItemsDBEndpoint["ReadWriteMode"].isNull())
+			itemsObject.readWriteMode = valueItemsDBEndpoint["ReadWriteMode"].asString();
+		if(!valueItemsDBEndpoint["DBEndpointId"].isNull())
+			itemsObject.dBEndpointId = valueItemsDBEndpoint["DBEndpointId"].asString();
+		if(!valueItemsDBEndpoint["EndpointConfig"].isNull())
+			itemsObject.endpointConfig = valueItemsDBEndpoint["EndpointConfig"].asString();
+		if(!valueItemsDBEndpoint["DBEndpointDescription"].isNull())
+			itemsObject.dBEndpointDescription = valueItemsDBEndpoint["DBEndpointDescription"].asString();
+		if(!valueItemsDBEndpoint["EndpointType"].isNull())
+			itemsObject.endpointType = valueItemsDBEndpoint["EndpointType"].asString();
+		if(!valueItemsDBEndpoint["AutoAddNewNodes"].isNull())
+			itemsObject.autoAddNewNodes = valueItemsDBEndpoint["AutoAddNewNodes"].asString();
 		auto allAddressItemsNode = valueItemsDBEndpoint["AddressItems"]["Address"];
 		for (auto valueItemsDBEndpointAddressItemsAddress : allAddressItemsNode)
 		{
 			DBEndpoint::Address addressItemsObject;
-			if(!valueItemsDBEndpointAddressItemsAddress["PrivateZoneConnectionString"].isNull())
-				addressItemsObject.privateZoneConnectionString = valueItemsDBEndpointAddressItemsAddress["PrivateZoneConnectionString"].asString();
-			if(!valueItemsDBEndpointAddressItemsAddress["VPCId"].isNull())
-				addressItemsObject.vPCId = valueItemsDBEndpointAddressItemsAddress["VPCId"].asString();
-			if(!valueItemsDBEndpointAddressItemsAddress["Port"].isNull())
-				addressItemsObject.port = valueItemsDBEndpointAddressItemsAddress["Port"].asString();
 			if(!valueItemsDBEndpointAddressItemsAddress["VSwitchId"].isNull())
 				addressItemsObject.vSwitchId = valueItemsDBEndpointAddressItemsAddress["VSwitchId"].asString();
-			if(!valueItemsDBEndpointAddressItemsAddress["VpcInstanceId"].isNull())
-				addressItemsObject.vpcInstanceId = valueItemsDBEndpointAddressItemsAddress["VpcInstanceId"].asString();
-			if(!valueItemsDBEndpointAddressItemsAddress["IPAddress"].isNull())
-				addressItemsObject.iPAddress = valueItemsDBEndpointAddressItemsAddress["IPAddress"].asString();
+			if(!valueItemsDBEndpointAddressItemsAddress["PrivateZoneConnectionString"].isNull())
+				addressItemsObject.privateZoneConnectionString = valueItemsDBEndpointAddressItemsAddress["PrivateZoneConnectionString"].asString();
 			if(!valueItemsDBEndpointAddressItemsAddress["ConnectionString"].isNull())
 				addressItemsObject.connectionString = valueItemsDBEndpointAddressItemsAddress["ConnectionString"].asString();
 			if(!valueItemsDBEndpointAddressItemsAddress["NetType"].isNull())
 				addressItemsObject.netType = valueItemsDBEndpointAddressItemsAddress["NetType"].asString();
+			if(!valueItemsDBEndpointAddressItemsAddress["Port"].isNull())
+				addressItemsObject.port = valueItemsDBEndpointAddressItemsAddress["Port"].asString();
+			if(!valueItemsDBEndpointAddressItemsAddress["VpcInstanceId"].isNull())
+				addressItemsObject.vpcInstanceId = valueItemsDBEndpointAddressItemsAddress["VpcInstanceId"].asString();
+			if(!valueItemsDBEndpointAddressItemsAddress["VPCId"].isNull())
+				addressItemsObject.vPCId = valueItemsDBEndpointAddressItemsAddress["VPCId"].asString();
+			if(!valueItemsDBEndpointAddressItemsAddress["IPAddress"].isNull())
+				addressItemsObject.iPAddress = valueItemsDBEndpointAddressItemsAddress["IPAddress"].asString();
 			itemsObject.addressItems.push_back(addressItemsObject);
 		}
 		items_.push_back(itemsObject);

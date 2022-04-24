@@ -43,46 +43,46 @@ void DescribeTasksResult::parse(const std::string &payload)
 	for (auto valueTasksTask : allTasksNode)
 	{
 		Task tasksObject;
-		if(!valueTasksTask["TaskId"].isNull())
-			tasksObject.taskId = valueTasksTask["TaskId"].asString();
-		if(!valueTasksTask["BeginTime"].isNull())
-			tasksObject.beginTime = valueTasksTask["BeginTime"].asString();
 		if(!valueTasksTask["FinishTime"].isNull())
 			tasksObject.finishTime = valueTasksTask["FinishTime"].asString();
-		if(!valueTasksTask["ExpectedFinishTime"].isNull())
-			tasksObject.expectedFinishTime = valueTasksTask["ExpectedFinishTime"].asString();
-		if(!valueTasksTask["TaskAction"].isNull())
-			tasksObject.taskAction = valueTasksTask["TaskAction"].asString();
-		if(!valueTasksTask["Progress"].isNull())
-			tasksObject.progress = std::stoi(valueTasksTask["Progress"].asString());
-		if(!valueTasksTask["DBName"].isNull())
-			tasksObject.dBName = valueTasksTask["DBName"].asString();
-		if(!valueTasksTask["ProgressInfo"].isNull())
-			tasksObject.progressInfo = valueTasksTask["ProgressInfo"].asString();
-		if(!valueTasksTask["TaskErrorCode"].isNull())
-			tasksObject.taskErrorCode = valueTasksTask["TaskErrorCode"].asString();
-		if(!valueTasksTask["TaskErrorMessage"].isNull())
-			tasksObject.taskErrorMessage = valueTasksTask["TaskErrorMessage"].asString();
 		if(!valueTasksTask["StepsInfo"].isNull())
 			tasksObject.stepsInfo = valueTasksTask["StepsInfo"].asString();
-		if(!valueTasksTask["Remain"].isNull())
-			tasksObject.remain = std::stoi(valueTasksTask["Remain"].asString());
-		if(!valueTasksTask["StepProgressInfo"].isNull())
-			tasksObject.stepProgressInfo = valueTasksTask["StepProgressInfo"].asString();
+		if(!valueTasksTask["Progress"].isNull())
+			tasksObject.progress = std::stoi(valueTasksTask["Progress"].asString());
+		if(!valueTasksTask["ExpectedFinishTime"].isNull())
+			tasksObject.expectedFinishTime = valueTasksTask["ExpectedFinishTime"].asString();
+		if(!valueTasksTask["BeginTime"].isNull())
+			tasksObject.beginTime = valueTasksTask["BeginTime"].asString();
+		if(!valueTasksTask["TaskErrorCode"].isNull())
+			tasksObject.taskErrorCode = valueTasksTask["TaskErrorCode"].asString();
+		if(!valueTasksTask["ProgressInfo"].isNull())
+			tasksObject.progressInfo = valueTasksTask["ProgressInfo"].asString();
 		if(!valueTasksTask["CurrentStepName"].isNull())
 			tasksObject.currentStepName = valueTasksTask["CurrentStepName"].asString();
+		if(!valueTasksTask["StepProgressInfo"].isNull())
+			tasksObject.stepProgressInfo = valueTasksTask["StepProgressInfo"].asString();
+		if(!valueTasksTask["TaskErrorMessage"].isNull())
+			tasksObject.taskErrorMessage = valueTasksTask["TaskErrorMessage"].asString();
+		if(!valueTasksTask["TaskAction"].isNull())
+			tasksObject.taskAction = valueTasksTask["TaskAction"].asString();
+		if(!valueTasksTask["DBName"].isNull())
+			tasksObject.dBName = valueTasksTask["DBName"].asString();
+		if(!valueTasksTask["Remain"].isNull())
+			tasksObject.remain = std::stoi(valueTasksTask["Remain"].asString());
+		if(!valueTasksTask["TaskId"].isNull())
+			tasksObject.taskId = valueTasksTask["TaskId"].asString();
 		tasks_.push_back(tasksObject);
 	}
-	if(!value["StartTime"].isNull())
-		startTime_ = value["StartTime"].asString();
-	if(!value["EndTime"].isNull())
-		endTime_ = value["EndTime"].asString();
 	if(!value["TotalRecordCount"].isNull())
 		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageRecordCount"].isNull())
 		pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
+	if(!value["EndTime"].isNull())
+		endTime_ = value["EndTime"].asString();
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
 	if(!value["DBClusterId"].isNull())
 		dBClusterId_ = value["DBClusterId"].asString();
 

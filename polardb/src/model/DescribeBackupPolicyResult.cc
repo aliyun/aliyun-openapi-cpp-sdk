@@ -43,18 +43,26 @@ void DescribeBackupPolicyResult::parse(const std::string &payload)
 		preferredBackupPeriod_ = value["PreferredBackupPeriod"].asString();
 	if(!value["DataLevel1BackupRetentionPeriod"].isNull())
 		dataLevel1BackupRetentionPeriod_ = value["DataLevel1BackupRetentionPeriod"].asString();
-	if(!value["BackupRetentionPolicyOnClusterDeletion"].isNull())
-		backupRetentionPolicyOnClusterDeletion_ = value["BackupRetentionPolicyOnClusterDeletion"].asString();
 	if(!value["PreferredBackupTime"].isNull())
 		preferredBackupTime_ = value["PreferredBackupTime"].asString();
-	if(!value["BackupFrequency"].isNull())
-		backupFrequency_ = value["BackupFrequency"].asString();
-	if(!value["PreferredNextBackupTime"].isNull())
-		preferredNextBackupTime_ = value["PreferredNextBackupTime"].asString();
+	if(!value["BackupRetentionPolicyOnClusterDeletion"].isNull())
+		backupRetentionPolicyOnClusterDeletion_ = value["BackupRetentionPolicyOnClusterDeletion"].asString();
 	if(!value["BackupRetentionPeriod"].isNull())
 		backupRetentionPeriod_ = std::stoi(value["BackupRetentionPeriod"].asString());
+	if(!value["PreferredNextBackupTime"].isNull())
+		preferredNextBackupTime_ = value["PreferredNextBackupTime"].asString();
 	if(!value["DataLevel2BackupRetentionPeriod"].isNull())
 		dataLevel2BackupRetentionPeriod_ = value["DataLevel2BackupRetentionPeriod"].asString();
+	if(!value["BackupFrequency"].isNull())
+		backupFrequency_ = value["BackupFrequency"].asString();
+	if(!value["DataLevel1BackupFrequency"].isNull())
+		dataLevel1BackupFrequency_ = value["DataLevel1BackupFrequency"].asString();
+	if(!value["DataLevel1BackupPeriod"].isNull())
+		dataLevel1BackupPeriod_ = value["DataLevel1BackupPeriod"].asString();
+	if(!value["DataLevel1BackupTime"].isNull())
+		dataLevel1BackupTime_ = value["DataLevel1BackupTime"].asString();
+	if(!value["DataLevel2BackupPeriod"].isNull())
+		dataLevel2BackupPeriod_ = value["DataLevel2BackupPeriod"].asString();
 
 }
 
@@ -63,14 +71,19 @@ std::string DescribeBackupPolicyResult::getPreferredBackupPeriod()const
 	return preferredBackupPeriod_;
 }
 
+std::string DescribeBackupPolicyResult::getDataLevel1BackupFrequency()const
+{
+	return dataLevel1BackupFrequency_;
+}
+
 std::string DescribeBackupPolicyResult::getDataLevel1BackupRetentionPeriod()const
 {
 	return dataLevel1BackupRetentionPeriod_;
 }
 
-std::string DescribeBackupPolicyResult::getBackupRetentionPolicyOnClusterDeletion()const
+std::string DescribeBackupPolicyResult::getDataLevel2BackupPeriod()const
 {
-	return backupRetentionPolicyOnClusterDeletion_;
+	return dataLevel2BackupPeriod_;
 }
 
 std::string DescribeBackupPolicyResult::getPreferredBackupTime()const
@@ -78,9 +91,24 @@ std::string DescribeBackupPolicyResult::getPreferredBackupTime()const
 	return preferredBackupTime_;
 }
 
+std::string DescribeBackupPolicyResult::getBackupRetentionPolicyOnClusterDeletion()const
+{
+	return backupRetentionPolicyOnClusterDeletion_;
+}
+
 std::string DescribeBackupPolicyResult::getBackupFrequency()const
 {
 	return backupFrequency_;
+}
+
+std::string DescribeBackupPolicyResult::getDataLevel1BackupTime()const
+{
+	return dataLevel1BackupTime_;
+}
+
+int DescribeBackupPolicyResult::getBackupRetentionPeriod()const
+{
+	return backupRetentionPeriod_;
 }
 
 std::string DescribeBackupPolicyResult::getPreferredNextBackupTime()const
@@ -88,9 +116,9 @@ std::string DescribeBackupPolicyResult::getPreferredNextBackupTime()const
 	return preferredNextBackupTime_;
 }
 
-int DescribeBackupPolicyResult::getBackupRetentionPeriod()const
+std::string DescribeBackupPolicyResult::getDataLevel1BackupPeriod()const
 {
-	return backupRetentionPeriod_;
+	return dataLevel1BackupPeriod_;
 }
 
 std::string DescribeBackupPolicyResult::getDataLevel2BackupRetentionPeriod()const

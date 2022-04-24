@@ -43,18 +43,18 @@ void DescribeDBLinksResult::parse(const std::string &payload)
 	for (auto valueDBLinkInfosDBLinkInfosItem : allDBLinkInfosNode)
 	{
 		DBLinkInfosItem dBLinkInfosObject;
-		if(!valueDBLinkInfosDBLinkInfosItem["TargetDBInstanceName"].isNull())
-			dBLinkInfosObject.targetDBInstanceName = valueDBLinkInfosDBLinkInfosItem["TargetDBInstanceName"].asString();
 		if(!valueDBLinkInfosDBLinkInfosItem["DBInstanceName"].isNull())
 			dBLinkInfosObject.dBInstanceName = valueDBLinkInfosDBLinkInfosItem["DBInstanceName"].asString();
-		if(!valueDBLinkInfosDBLinkInfosItem["TargetDBName"].isNull())
-			dBLinkInfosObject.targetDBName = valueDBLinkInfosDBLinkInfosItem["TargetDBName"].asString();
-		if(!valueDBLinkInfosDBLinkInfosItem["TargetAccount"].isNull())
-			dBLinkInfosObject.targetAccount = valueDBLinkInfosDBLinkInfosItem["TargetAccount"].asString();
 		if(!valueDBLinkInfosDBLinkInfosItem["DBLinkName"].isNull())
 			dBLinkInfosObject.dBLinkName = valueDBLinkInfosDBLinkInfosItem["DBLinkName"].asString();
 		if(!valueDBLinkInfosDBLinkInfosItem["SourceDBName"].isNull())
 			dBLinkInfosObject.sourceDBName = valueDBLinkInfosDBLinkInfosItem["SourceDBName"].asString();
+		if(!valueDBLinkInfosDBLinkInfosItem["TargetDBName"].isNull())
+			dBLinkInfosObject.targetDBName = valueDBLinkInfosDBLinkInfosItem["TargetDBName"].asString();
+		if(!valueDBLinkInfosDBLinkInfosItem["TargetDBInstanceName"].isNull())
+			dBLinkInfosObject.targetDBInstanceName = valueDBLinkInfosDBLinkInfosItem["TargetDBInstanceName"].asString();
+		if(!valueDBLinkInfosDBLinkInfosItem["TargetAccount"].isNull())
+			dBLinkInfosObject.targetAccount = valueDBLinkInfosDBLinkInfosItem["TargetAccount"].asString();
 		dBLinkInfos_.push_back(dBLinkInfosObject);
 	}
 	if(!value["DBInstanceName"].isNull())

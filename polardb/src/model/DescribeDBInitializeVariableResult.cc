@@ -51,10 +51,10 @@ void DescribeDBInitializeVariableResult::parse(const std::string &payload)
 			variablesObject.ctype = valueVariablesVariable["Ctype"].asString();
 		variables_.push_back(variablesObject);
 	}
-	if(!value["DBType"].isNull())
-		dBType_ = value["DBType"].asString();
 	if(!value["DBVersion"].isNull())
 		dBVersion_ = value["DBVersion"].asString();
+	if(!value["DBType"].isNull())
+		dBType_ = value["DBType"].asString();
 
 }
 

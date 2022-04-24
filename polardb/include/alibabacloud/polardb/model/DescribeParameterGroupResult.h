@@ -42,11 +42,11 @@ namespace AlibabaCloud
 					std::vector<ParameterGroupItem::ParameterDetailItem> parameterDetail;
 					std::string dBVersion;
 					std::string parameterGroupId;
-					std::string forceRestart;
 					std::string parameterGroupName;
-					std::string createTime;
-					std::string parameterGroupDesc;
+					std::string forceRestart;
 					std::string parameterGroupType;
+					std::string parameterGroupDesc;
+					std::string createTime;
 					int parameterCounts;
 					std::string dBType;
 				};

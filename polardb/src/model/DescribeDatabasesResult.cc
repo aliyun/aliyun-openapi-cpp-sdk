@@ -43,36 +43,36 @@ void DescribeDatabasesResult::parse(const std::string &payload)
 	for (auto valueDatabasesDatabase : allDatabasesNode)
 	{
 		Database databasesObject;
-		if(!valueDatabasesDatabase["DBName"].isNull())
-			databasesObject.dBName = valueDatabasesDatabase["DBName"].asString();
-		if(!valueDatabasesDatabase["DBStatus"].isNull())
-			databasesObject.dBStatus = valueDatabasesDatabase["DBStatus"].asString();
 		if(!valueDatabasesDatabase["DBDescription"].isNull())
 			databasesObject.dBDescription = valueDatabasesDatabase["DBDescription"].asString();
-		if(!valueDatabasesDatabase["CharacterSetName"].isNull())
-			databasesObject.characterSetName = valueDatabasesDatabase["CharacterSetName"].asString();
+		if(!valueDatabasesDatabase["DBStatus"].isNull())
+			databasesObject.dBStatus = valueDatabasesDatabase["DBStatus"].asString();
+		if(!valueDatabasesDatabase["DBName"].isNull())
+			databasesObject.dBName = valueDatabasesDatabase["DBName"].asString();
 		if(!valueDatabasesDatabase["Engine"].isNull())
 			databasesObject.engine = valueDatabasesDatabase["Engine"].asString();
+		if(!valueDatabasesDatabase["CharacterSetName"].isNull())
+			databasesObject.characterSetName = valueDatabasesDatabase["CharacterSetName"].asString();
 		auto allAccountsNode = valueDatabasesDatabase["Accounts"]["Account"];
 		for (auto valueDatabasesDatabaseAccountsAccount : allAccountsNode)
 		{
 			Database::Account accountsObject;
-			if(!valueDatabasesDatabaseAccountsAccount["AccountName"].isNull())
-				accountsObject.accountName = valueDatabasesDatabaseAccountsAccount["AccountName"].asString();
+			if(!valueDatabasesDatabaseAccountsAccount["PrivilegeStatus"].isNull())
+				accountsObject.privilegeStatus = valueDatabasesDatabaseAccountsAccount["PrivilegeStatus"].asString();
 			if(!valueDatabasesDatabaseAccountsAccount["AccountStatus"].isNull())
 				accountsObject.accountStatus = valueDatabasesDatabaseAccountsAccount["AccountStatus"].asString();
 			if(!valueDatabasesDatabaseAccountsAccount["AccountPrivilege"].isNull())
 				accountsObject.accountPrivilege = valueDatabasesDatabaseAccountsAccount["AccountPrivilege"].asString();
-			if(!valueDatabasesDatabaseAccountsAccount["PrivilegeStatus"].isNull())
-				accountsObject.privilegeStatus = valueDatabasesDatabaseAccountsAccount["PrivilegeStatus"].asString();
+			if(!valueDatabasesDatabaseAccountsAccount["AccountName"].isNull())
+				accountsObject.accountName = valueDatabasesDatabaseAccountsAccount["AccountName"].asString();
 			databasesObject.accounts.push_back(accountsObject);
 		}
 		databases_.push_back(databasesObject);
 	}
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageRecordCount"].isNull())
 		pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
 
 }
 

@@ -39,8 +39,6 @@ void DescribeDBClusterVersionResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["ProxyVersionStatus"].isNull())
-		proxyVersionStatus_ = value["ProxyVersionStatus"].asString();
 	if(!value["IsLatestVersion"].isNull())
 		isLatestVersion_ = value["IsLatestVersion"].asString();
 	if(!value["DBVersion"].isNull())
@@ -51,14 +49,16 @@ void DescribeDBClusterVersionResult::parse(const std::string &payload)
 		dBVersionStatus_ = value["DBVersionStatus"].asString();
 	if(!value["DBClusterId"].isNull())
 		dBClusterId_ = value["DBClusterId"].asString();
-	if(!value["DBLatestVersion"].isNull())
-		dBLatestVersion_ = value["DBLatestVersion"].asString();
-	if(!value["ProxyRevisionVersion"].isNull())
-		proxyRevisionVersion_ = value["ProxyRevisionVersion"].asString();
 	if(!value["DBMinorVersion"].isNull())
 		dBMinorVersion_ = value["DBMinorVersion"].asString();
+	if(!value["ProxyRevisionVersion"].isNull())
+		proxyRevisionVersion_ = value["ProxyRevisionVersion"].asString();
+	if(!value["ProxyVersionStatus"].isNull())
+		proxyVersionStatus_ = value["ProxyVersionStatus"].asString();
 	if(!value["ProxyLatestVersion"].isNull())
 		proxyLatestVersion_ = value["ProxyLatestVersion"].asString();
+	if(!value["DBLatestVersion"].isNull())
+		dBLatestVersion_ = value["DBLatestVersion"].asString();
 
 }
 
@@ -92,14 +92,14 @@ std::string DescribeDBClusterVersionResult::getDBClusterId()const
 	return dBClusterId_;
 }
 
-std::string DescribeDBClusterVersionResult::getDBLatestVersion()const
-{
-	return dBLatestVersion_;
-}
-
 std::string DescribeDBClusterVersionResult::getProxyRevisionVersion()const
 {
 	return proxyRevisionVersion_;
+}
+
+std::string DescribeDBClusterVersionResult::getDBLatestVersion()const
+{
+	return dBLatestVersion_;
 }
 
 std::string DescribeDBClusterVersionResult::getDBMinorVersion()const

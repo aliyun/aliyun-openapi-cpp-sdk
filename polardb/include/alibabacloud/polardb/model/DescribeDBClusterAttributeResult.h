@@ -37,14 +37,16 @@ namespace AlibabaCloud
 					std::string dBNodeStatus;
 					std::string zoneId;
 					int maxConnections;
+					std::string addedCpuCores;
 					std::string dBNodeRole;
-					std::string creationTime;
 					std::string imciSwitch;
 					std::string dBNodeId;
-					int failoverPriority;
-					std::string hotReplicaMode;
 					int maxIOPS;
 					std::string dBNodeClass;
+					std::string creationTime;
+					std::string masterId;
+					int failoverPriority;
+					std::string hotReplicaMode;
 				};
 				struct Tag
 				{

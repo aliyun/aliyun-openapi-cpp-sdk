@@ -14,31 +14,45 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/polardb/model/RefreshProxyLevelResult.h>
+#include <alibabacloud/polardb/model/ModifyDBNodesClassResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Polardb;
 using namespace AlibabaCloud::Polardb::Model;
 
-RefreshProxyLevelResult::RefreshProxyLevelResult() :
+ModifyDBNodesClassResult::ModifyDBNodesClassResult() :
 	ServiceResult()
 {}
 
-RefreshProxyLevelResult::RefreshProxyLevelResult(const std::string &payload) :
+ModifyDBNodesClassResult::ModifyDBNodesClassResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-RefreshProxyLevelResult::~RefreshProxyLevelResult()
+ModifyDBNodesClassResult::~ModifyDBNodesClassResult()
 {}
 
-void RefreshProxyLevelResult::parse(const std::string &payload)
+void ModifyDBNodesClassResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["DBClusterId"].isNull())
+		dBClusterId_ = value["DBClusterId"].asString();
+	if(!value["OrderId"].isNull())
+		orderId_ = value["OrderId"].asString();
 
+}
+
+std::string ModifyDBNodesClassResult::getDBClusterId()const
+{
+	return dBClusterId_;
+}
+
+std::string ModifyDBNodesClassResult::getOrderId()const
+{
+	return orderId_;
 }
 

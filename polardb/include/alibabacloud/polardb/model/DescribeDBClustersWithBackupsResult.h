@@ -44,9 +44,9 @@ namespace AlibabaCloud
 					std::string dBClusterDescription;
 					std::string expired;
 					std::string payType;
-					std::string dBClusterNetworkType;
 					std::string dBType;
 					std::string lockMode;
+					std::string dBClusterNetworkType;
 					std::string dBNodeClass;
 					std::string dBVersion;
 					std::string vpcId;

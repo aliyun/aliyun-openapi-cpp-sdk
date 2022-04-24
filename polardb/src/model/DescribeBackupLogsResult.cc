@@ -45,28 +45,28 @@ void DescribeBackupLogsResult::parse(const std::string &payload)
 		BackupLog itemsObject;
 		if(!valueItemsBackupLog["BackupLogId"].isNull())
 			itemsObject.backupLogId = valueItemsBackupLog["BackupLogId"].asString();
-		if(!valueItemsBackupLog["BackupLogName"].isNull())
-			itemsObject.backupLogName = valueItemsBackupLog["BackupLogName"].asString();
-		if(!valueItemsBackupLog["BackupLogStartTime"].isNull())
-			itemsObject.backupLogStartTime = valueItemsBackupLog["BackupLogStartTime"].asString();
-		if(!valueItemsBackupLog["BackupLogEndTime"].isNull())
-			itemsObject.backupLogEndTime = valueItemsBackupLog["BackupLogEndTime"].asString();
-		if(!valueItemsBackupLog["BackupLogSize"].isNull())
-			itemsObject.backupLogSize = valueItemsBackupLog["BackupLogSize"].asString();
-		if(!valueItemsBackupLog["DownloadLink"].isNull())
-			itemsObject.downloadLink = valueItemsBackupLog["DownloadLink"].asString();
 		if(!valueItemsBackupLog["IntranetDownloadLink"].isNull())
 			itemsObject.intranetDownloadLink = valueItemsBackupLog["IntranetDownloadLink"].asString();
 		if(!valueItemsBackupLog["LinkExpiredTime"].isNull())
 			itemsObject.linkExpiredTime = valueItemsBackupLog["LinkExpiredTime"].asString();
+		if(!valueItemsBackupLog["BackupLogStartTime"].isNull())
+			itemsObject.backupLogStartTime = valueItemsBackupLog["BackupLogStartTime"].asString();
+		if(!valueItemsBackupLog["BackupLogEndTime"].isNull())
+			itemsObject.backupLogEndTime = valueItemsBackupLog["BackupLogEndTime"].asString();
+		if(!valueItemsBackupLog["DownloadLink"].isNull())
+			itemsObject.downloadLink = valueItemsBackupLog["DownloadLink"].asString();
+		if(!valueItemsBackupLog["BackupLogSize"].isNull())
+			itemsObject.backupLogSize = valueItemsBackupLog["BackupLogSize"].asString();
+		if(!valueItemsBackupLog["BackupLogName"].isNull())
+			itemsObject.backupLogName = valueItemsBackupLog["BackupLogName"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["TotalRecordCount"].isNull())
 		totalRecordCount_ = value["TotalRecordCount"].asString();
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = value["PageNumber"].asString();
 	if(!value["PageRecordCount"].isNull())
 		pageRecordCount_ = value["PageRecordCount"].asString();
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = value["PageNumber"].asString();
 
 }
 

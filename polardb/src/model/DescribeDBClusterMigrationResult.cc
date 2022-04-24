@@ -51,18 +51,18 @@ void DescribeDBClusterMigrationResult::parse(const std::string &payload)
 		for (auto valueDBClusterEndpointListDBClusterEndpointAddressItemsAddress : allAddressItemsNode)
 		{
 			DBClusterEndpoint::Address addressItemsObject;
+			if(!valueDBClusterEndpointListDBClusterEndpointAddressItemsAddress["VSwitchId"].isNull())
+				addressItemsObject.vSwitchId = valueDBClusterEndpointListDBClusterEndpointAddressItemsAddress["VSwitchId"].asString();
 			if(!valueDBClusterEndpointListDBClusterEndpointAddressItemsAddress["ConnectionString"].isNull())
 				addressItemsObject.connectionString = valueDBClusterEndpointListDBClusterEndpointAddressItemsAddress["ConnectionString"].asString();
-			if(!valueDBClusterEndpointListDBClusterEndpointAddressItemsAddress["IPAddress"].isNull())
-				addressItemsObject.iPAddress = valueDBClusterEndpointListDBClusterEndpointAddressItemsAddress["IPAddress"].asString();
 			if(!valueDBClusterEndpointListDBClusterEndpointAddressItemsAddress["NetType"].isNull())
 				addressItemsObject.netType = valueDBClusterEndpointListDBClusterEndpointAddressItemsAddress["NetType"].asString();
 			if(!valueDBClusterEndpointListDBClusterEndpointAddressItemsAddress["Port"].isNull())
 				addressItemsObject.port = valueDBClusterEndpointListDBClusterEndpointAddressItemsAddress["Port"].asString();
 			if(!valueDBClusterEndpointListDBClusterEndpointAddressItemsAddress["VPCId"].isNull())
 				addressItemsObject.vPCId = valueDBClusterEndpointListDBClusterEndpointAddressItemsAddress["VPCId"].asString();
-			if(!valueDBClusterEndpointListDBClusterEndpointAddressItemsAddress["VSwitchId"].isNull())
-				addressItemsObject.vSwitchId = valueDBClusterEndpointListDBClusterEndpointAddressItemsAddress["VSwitchId"].asString();
+			if(!valueDBClusterEndpointListDBClusterEndpointAddressItemsAddress["IPAddress"].isNull())
+				addressItemsObject.iPAddress = valueDBClusterEndpointListDBClusterEndpointAddressItemsAddress["IPAddress"].asString();
 			dBClusterEndpointListObject.addressItems.push_back(addressItemsObject);
 		}
 		dBClusterEndpointList_.push_back(dBClusterEndpointListObject);
@@ -79,40 +79,40 @@ void DescribeDBClusterMigrationResult::parse(const std::string &payload)
 		for (auto valueRdsEndpointListRdsEndpointAddressItemsAddress : allAddressItems1Node)
 		{
 			RdsEndpoint::Address2 addressItems1Object;
+			if(!valueRdsEndpointListRdsEndpointAddressItemsAddress["VSwitchId"].isNull())
+				addressItems1Object.vSwitchId = valueRdsEndpointListRdsEndpointAddressItemsAddress["VSwitchId"].asString();
 			if(!valueRdsEndpointListRdsEndpointAddressItemsAddress["ConnectionString"].isNull())
 				addressItems1Object.connectionString = valueRdsEndpointListRdsEndpointAddressItemsAddress["ConnectionString"].asString();
-			if(!valueRdsEndpointListRdsEndpointAddressItemsAddress["IPAddress"].isNull())
-				addressItems1Object.iPAddress = valueRdsEndpointListRdsEndpointAddressItemsAddress["IPAddress"].asString();
 			if(!valueRdsEndpointListRdsEndpointAddressItemsAddress["NetType"].isNull())
 				addressItems1Object.netType = valueRdsEndpointListRdsEndpointAddressItemsAddress["NetType"].asString();
 			if(!valueRdsEndpointListRdsEndpointAddressItemsAddress["Port"].isNull())
 				addressItems1Object.port = valueRdsEndpointListRdsEndpointAddressItemsAddress["Port"].asString();
 			if(!valueRdsEndpointListRdsEndpointAddressItemsAddress["VPCId"].isNull())
 				addressItems1Object.vPCId = valueRdsEndpointListRdsEndpointAddressItemsAddress["VPCId"].asString();
-			if(!valueRdsEndpointListRdsEndpointAddressItemsAddress["VSwitchId"].isNull())
-				addressItems1Object.vSwitchId = valueRdsEndpointListRdsEndpointAddressItemsAddress["VSwitchId"].asString();
+			if(!valueRdsEndpointListRdsEndpointAddressItemsAddress["IPAddress"].isNull())
+				addressItems1Object.iPAddress = valueRdsEndpointListRdsEndpointAddressItemsAddress["IPAddress"].asString();
 			rdsEndpointListObject.addressItems1.push_back(addressItems1Object);
 		}
 		rdsEndpointList_.push_back(rdsEndpointListObject);
 	}
-	if(!value["DBClusterId"].isNull())
-		dBClusterId_ = value["DBClusterId"].asString();
-	if(!value["SourceRDSDBInstanceId"].isNull())
-		sourceRDSDBInstanceId_ = value["SourceRDSDBInstanceId"].asString();
-	if(!value["MigrationStatus"].isNull())
-		migrationStatus_ = value["MigrationStatus"].asString();
-	if(!value["Topologies"].isNull())
-		topologies_ = value["Topologies"].asString();
-	if(!value["DelayedSeconds"].isNull())
-		delayedSeconds_ = std::stoi(value["DelayedSeconds"].asString());
-	if(!value["ExpiredTime"].isNull())
-		expiredTime_ = value["ExpiredTime"].asString();
-	if(!value["RdsReadWriteMode"].isNull())
-		rdsReadWriteMode_ = value["RdsReadWriteMode"].asString();
-	if(!value["DBClusterReadWriteMode"].isNull())
-		dBClusterReadWriteMode_ = value["DBClusterReadWriteMode"].asString();
 	if(!value["Comment"].isNull())
 		comment_ = value["Comment"].asString();
+	if(!value["ExpiredTime"].isNull())
+		expiredTime_ = value["ExpiredTime"].asString();
+	if(!value["DBClusterId"].isNull())
+		dBClusterId_ = value["DBClusterId"].asString();
+	if(!value["Topologies"].isNull())
+		topologies_ = value["Topologies"].asString();
+	if(!value["RdsReadWriteMode"].isNull())
+		rdsReadWriteMode_ = value["RdsReadWriteMode"].asString();
+	if(!value["SourceRDSDBInstanceId"].isNull())
+		sourceRDSDBInstanceId_ = value["SourceRDSDBInstanceId"].asString();
+	if(!value["DBClusterReadWriteMode"].isNull())
+		dBClusterReadWriteMode_ = value["DBClusterReadWriteMode"].asString();
+	if(!value["DelayedSeconds"].isNull())
+		delayedSeconds_ = std::stoi(value["DelayedSeconds"].asString());
+	if(!value["MigrationStatus"].isNull())
+		migrationStatus_ = value["MigrationStatus"].asString();
 
 }
 
@@ -151,14 +151,14 @@ std::string DescribeDBClusterMigrationResult::getSourceRDSDBInstanceId()const
 	return sourceRDSDBInstanceId_;
 }
 
-int DescribeDBClusterMigrationResult::getDelayedSeconds()const
-{
-	return delayedSeconds_;
-}
-
 std::string DescribeDBClusterMigrationResult::getDBClusterReadWriteMode()const
 {
 	return dBClusterReadWriteMode_;
+}
+
+int DescribeDBClusterMigrationResult::getDelayedSeconds()const
+{
+	return delayedSeconds_;
 }
 
 std::string DescribeDBClusterMigrationResult::getMigrationStatus()const

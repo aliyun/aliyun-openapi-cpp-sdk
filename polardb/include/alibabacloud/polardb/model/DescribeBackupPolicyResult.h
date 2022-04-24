@@ -38,24 +38,32 @@ namespace AlibabaCloud
 				explicit DescribeBackupPolicyResult(const std::string &payload);
 				~DescribeBackupPolicyResult();
 				std::string getPreferredBackupPeriod()const;
+				std::string getDataLevel1BackupFrequency()const;
 				std::string getDataLevel1BackupRetentionPeriod()const;
-				std::string getBackupRetentionPolicyOnClusterDeletion()const;
+				std::string getDataLevel2BackupPeriod()const;
 				std::string getPreferredBackupTime()const;
+				std::string getBackupRetentionPolicyOnClusterDeletion()const;
 				std::string getBackupFrequency()const;
-				std::string getPreferredNextBackupTime()const;
+				std::string getDataLevel1BackupTime()const;
 				int getBackupRetentionPeriod()const;
+				std::string getPreferredNextBackupTime()const;
+				std::string getDataLevel1BackupPeriod()const;
 				std::string getDataLevel2BackupRetentionPeriod()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string preferredBackupPeriod_;
+				std::string dataLevel1BackupFrequency_;
 				std::string dataLevel1BackupRetentionPeriod_;
-				std::string backupRetentionPolicyOnClusterDeletion_;
+				std::string dataLevel2BackupPeriod_;
 				std::string preferredBackupTime_;
+				std::string backupRetentionPolicyOnClusterDeletion_;
 				std::string backupFrequency_;
-				std::string preferredNextBackupTime_;
+				std::string dataLevel1BackupTime_;
 				int backupRetentionPeriod_;
+				std::string preferredNextBackupTime_;
+				std::string dataLevel1BackupPeriod_;
 				std::string dataLevel2BackupRetentionPeriod_;
 
 			};

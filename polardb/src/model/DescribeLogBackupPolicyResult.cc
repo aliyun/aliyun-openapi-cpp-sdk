@@ -39,10 +39,10 @@ void DescribeLogBackupPolicyResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["EnableBackupLog"].isNull())
-		enableBackupLog_ = std::stoi(value["EnableBackupLog"].asString());
 	if(!value["LogBackupRetentionPeriod"].isNull())
 		logBackupRetentionPeriod_ = std::stoi(value["LogBackupRetentionPeriod"].asString());
+	if(!value["EnableBackupLog"].isNull())
+		enableBackupLog_ = std::stoi(value["EnableBackupLog"].asString());
 
 }
 

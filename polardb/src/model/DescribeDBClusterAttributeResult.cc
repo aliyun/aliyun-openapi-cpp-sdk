@@ -65,6 +65,10 @@ void DescribeDBClusterAttributeResult::parse(const std::string &payload)
 			dBNodesObject.imciSwitch = valueDBNodesDBNode["ImciSwitch"].asString();
 		if(!valueDBNodesDBNode["HotReplicaMode"].isNull())
 			dBNodesObject.hotReplicaMode = valueDBNodesDBNode["HotReplicaMode"].asString();
+		if(!valueDBNodesDBNode["AddedCpuCores"].isNull())
+			dBNodesObject.addedCpuCores = valueDBNodesDBNode["AddedCpuCores"].asString();
+		if(!valueDBNodesDBNode["MasterId"].isNull())
+			dBNodesObject.masterId = valueDBNodesDBNode["MasterId"].asString();
 		dBNodes_.push_back(dBNodesObject);
 	}
 	auto allTagsNode = value["Tags"]["Tag"];

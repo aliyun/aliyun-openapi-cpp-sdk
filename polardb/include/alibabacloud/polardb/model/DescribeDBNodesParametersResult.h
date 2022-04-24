@@ -32,15 +32,42 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_POLARDB_EXPORT DescribeDBNodesParametersResult : public ServiceResult
 			{
 			public:
+				struct DBNodeParameter
+				{
+					struct _Parameter
+					{
+						std::string defaultParameterValue;
+						bool isModifiable;
+						std::string checkingCode;
+						std::string parameterStatus;
+						std::string parameterValue;
+						bool forceRestart;
+						std::string isNodeAvailable;
+						std::string paramRelyRule;
+						std::string dataType;
+						std::string parameterName;
+						std::string parameterDescription;
+					};
+					std::vector<DBNodeParameter::_Parameter> runningParameters;
+					std::string dBNodeId;
+				};
 
 
 				DescribeDBNodesParametersResult();
 				explicit DescribeDBNodesParametersResult(const std::string &payload);
 				~DescribeDBNodesParametersResult();
+				std::string getDBVersion()const;
+				std::vector<DBNodeParameter> getDBNodeIds()const;
+				std::string getDBType()const;
+				std::string getEngine()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string dBVersion_;
+				std::vector<DBNodeParameter> dBNodeIds_;
+				std::string dBType_;
+				std::string engine_;
 
 			};
 		}

@@ -157,6 +157,8 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/DescribeScheduleTasksResult.h
 	include/alibabacloud/polardb/model/DescribeSlowLogRecordsRequest.h
 	include/alibabacloud/polardb/model/DescribeSlowLogRecordsResult.h
+	include/alibabacloud/polardb/model/DescribeSlowLogsRequest.h
+	include/alibabacloud/polardb/model/DescribeSlowLogsResult.h
 	include/alibabacloud/polardb/model/DescribeStoragePlanRequest.h
 	include/alibabacloud/polardb/model/DescribeStoragePlanResult.h
 	include/alibabacloud/polardb/model/DescribeTasksRequest.h
@@ -167,8 +169,6 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/GrantAccountPrivilegeResult.h
 	include/alibabacloud/polardb/model/ListTagResourcesRequest.h
 	include/alibabacloud/polardb/model/ListTagResourcesResult.h
-	include/alibabacloud/polardb/model/ListTagResourcesForRegionRequest.h
-	include/alibabacloud/polardb/model/ListTagResourcesForRegionResult.h
 	include/alibabacloud/polardb/model/ModifyAccountDescriptionRequest.h
 	include/alibabacloud/polardb/model/ModifyAccountDescriptionResult.h
 	include/alibabacloud/polardb/model/ModifyAccountPasswordRequest.h
@@ -207,8 +207,8 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/ModifyDBEndpointAddressResult.h
 	include/alibabacloud/polardb/model/ModifyDBNodeClassRequest.h
 	include/alibabacloud/polardb/model/ModifyDBNodeClassResult.h
-	include/alibabacloud/polardb/model/ModifyDBNodeHotReplicaModeRequest.h
-	include/alibabacloud/polardb/model/ModifyDBNodeHotReplicaModeResult.h
+	include/alibabacloud/polardb/model/ModifyDBNodesClassRequest.h
+	include/alibabacloud/polardb/model/ModifyDBNodesClassResult.h
 	include/alibabacloud/polardb/model/ModifyDBNodesParametersRequest.h
 	include/alibabacloud/polardb/model/ModifyDBNodesParametersResult.h
 	include/alibabacloud/polardb/model/ModifyGlobalDatabaseNetworkRequest.h
@@ -219,8 +219,6 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/ModifyMaskingRulesResult.h
 	include/alibabacloud/polardb/model/ModifyPendingMaintenanceActionRequest.h
 	include/alibabacloud/polardb/model/ModifyPendingMaintenanceActionResult.h
-	include/alibabacloud/polardb/model/RefreshProxyLevelRequest.h
-	include/alibabacloud/polardb/model/RefreshProxyLevelResult.h
 	include/alibabacloud/polardb/model/RemoveDBClusterFromGDNRequest.h
 	include/alibabacloud/polardb/model/RemoveDBClusterFromGDNResult.h
 	include/alibabacloud/polardb/model/ResetAccountRequest.h
@@ -382,6 +380,8 @@ set(polardb_src
 	src/model/DescribeScheduleTasksResult.cc
 	src/model/DescribeSlowLogRecordsRequest.cc
 	src/model/DescribeSlowLogRecordsResult.cc
+	src/model/DescribeSlowLogsRequest.cc
+	src/model/DescribeSlowLogsResult.cc
 	src/model/DescribeStoragePlanRequest.cc
 	src/model/DescribeStoragePlanResult.cc
 	src/model/DescribeTasksRequest.cc
@@ -392,8 +392,6 @@ set(polardb_src
 	src/model/GrantAccountPrivilegeResult.cc
 	src/model/ListTagResourcesRequest.cc
 	src/model/ListTagResourcesResult.cc
-	src/model/ListTagResourcesForRegionRequest.cc
-	src/model/ListTagResourcesForRegionResult.cc
 	src/model/ModifyAccountDescriptionRequest.cc
 	src/model/ModifyAccountDescriptionResult.cc
 	src/model/ModifyAccountPasswordRequest.cc
@@ -432,8 +430,8 @@ set(polardb_src
 	src/model/ModifyDBEndpointAddressResult.cc
 	src/model/ModifyDBNodeClassRequest.cc
 	src/model/ModifyDBNodeClassResult.cc
-	src/model/ModifyDBNodeHotReplicaModeRequest.cc
-	src/model/ModifyDBNodeHotReplicaModeResult.cc
+	src/model/ModifyDBNodesClassRequest.cc
+	src/model/ModifyDBNodesClassResult.cc
 	src/model/ModifyDBNodesParametersRequest.cc
 	src/model/ModifyDBNodesParametersResult.cc
 	src/model/ModifyGlobalDatabaseNetworkRequest.cc
@@ -444,8 +442,6 @@ set(polardb_src
 	src/model/ModifyMaskingRulesResult.cc
 	src/model/ModifyPendingMaintenanceActionRequest.cc
 	src/model/ModifyPendingMaintenanceActionResult.cc
-	src/model/RefreshProxyLevelRequest.cc
-	src/model/RefreshProxyLevelResult.cc
 	src/model/RemoveDBClusterFromGDNRequest.cc
 	src/model/RemoveDBClusterFromGDNResult.cc
 	src/model/ResetAccountRequest.cc

@@ -37,8 +37,8 @@ namespace AlibabaCloud
 					struct Address
 					{
 						std::string vPCId;
-						std::string port;
 						std::string vSwitchId;
+						std::string port;
 						std::string connectionString;
 						std::string iPAddress;
 						std::string netType;
@@ -52,8 +52,8 @@ namespace AlibabaCloud
 					struct Address2
 					{
 						std::string vPCId;
-						std::string port;
 						std::string vSwitchId;
+						std::string port;
 						std::string connectionString;
 						std::string iPAddress;
 						std::string netType;
@@ -74,8 +74,8 @@ namespace AlibabaCloud
 				std::string getTopologies()const;
 				std::string getRdsReadWriteMode()const;
 				std::string getSourceRDSDBInstanceId()const;
-				int getDelayedSeconds()const;
 				std::string getDBClusterReadWriteMode()const;
+				int getDelayedSeconds()const;
 				std::string getMigrationStatus()const;
 				std::vector<RdsEndpoint> getRdsEndpointList()const;
 
@@ -89,8 +89,8 @@ namespace AlibabaCloud
 				std::string topologies_;
 				std::string rdsReadWriteMode_;
 				std::string sourceRDSDBInstanceId_;
-				int delayedSeconds_;
 				std::string dBClusterReadWriteMode_;
+				int delayedSeconds_;
 				std::string migrationStatus_;
 				std::vector<RdsEndpoint> rdsEndpointList_;
 

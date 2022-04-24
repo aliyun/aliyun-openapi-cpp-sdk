@@ -52,8 +52,8 @@ namespace AlibabaCloud
 				std::vector<PerformanceItem> getPerformanceKeys()const;
 				std::string getDBVersion()const;
 				std::string getEndTime()const;
-				std::string getDBClusterId()const;
 				std::string getStartTime()const;
+				std::string getDBClusterId()const;
 				std::string getDBType()const;
 				std::string getEngine()const;
 
@@ -63,8 +63,8 @@ namespace AlibabaCloud
 				std::vector<PerformanceItem> performanceKeys_;
 				std::string dBVersion_;
 				std::string endTime_;
-				std::string dBClusterId_;
 				std::string startTime_;
+				std::string dBClusterId_;
 				std::string dBType_;
 				std::string engine_;
 
