@@ -45,8 +45,12 @@ namespace AlibabaCloud
 				void setProjectIdentifier(const std::string& projectIdentifier);
 				long getResourceGroupId()const;
 				void setResourceGroupId(long resourceGroupId);
+				bool getStartImmediately()const;
+				void setStartImmediately(bool startImmediately);
 				long getProjectId()const;
 				void setProjectId(long projectId);
+				std::string getAdvancedSettings()const;
+				void setAdvancedSettings(const std::string& advancedSettings);
 				long getStartEffectDate()const;
 				void setStartEffectDate(long startEffectDate);
 				std::string getCycleType()const;
@@ -61,6 +65,8 @@ namespace AlibabaCloud
 				void setRerunMode(const std::string& rerunMode);
 				std::string getConnectionName()const;
 				void setConnectionName(const std::string& connectionName);
+				std::string getOutputParameters()const;
+				void setOutputParameters(const std::string& outputParameters);
 				std::string getParaValue()const;
 				void setParaValue(const std::string& paraValue);
 				std::string getResourceGroupIdentifier()const;
@@ -73,6 +79,8 @@ namespace AlibabaCloud
 				void setEndEffectDate(long endEffectDate);
 				std::string getFileName()const;
 				void setFileName(const std::string& fileName);
+				std::string getInputParameters()const;
+				void setInputParameters(const std::string& inputParameters);
 				bool getStop()const;
 				void setStop(bool stop);
 				std::string getDependentType()const;
@@ -92,7 +100,9 @@ namespace AlibabaCloud
 				std::string content_;
 				std::string projectIdentifier_;
 				long resourceGroupId_;
+				bool startImmediately_;
 				long projectId_;
+				std::string advancedSettings_;
 				long startEffectDate_;
 				std::string cycleType_;
 				std::string owner_;
@@ -100,12 +110,14 @@ namespace AlibabaCloud
 				std::string inputList_;
 				std::string rerunMode_;
 				std::string connectionName_;
+				std::string outputParameters_;
 				std::string paraValue_;
 				std::string resourceGroupIdentifier_;
 				int autoRerunTimes_;
 				std::string cronExpress_;
 				long endEffectDate_;
 				std::string fileName_;
+				std::string inputParameters_;
 				bool stop_;
 				std::string dependentType_;
 				std::string fileFolderPath_;

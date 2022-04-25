@@ -40,10 +40,10 @@ void TestNetworkConnectionResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto taskListNode = value["TaskList"];
-	if(!taskListNode["ConnectStatus"].isNull())
-		taskList_.connectStatus = taskListNode["ConnectStatus"].asString() == "true";
 	if(!taskListNode["ConnectMessage"].isNull())
 		taskList_.connectMessage = taskListNode["ConnectMessage"].asString();
+	if(!taskListNode["ConnectStatus"].isNull())
+		taskList_.connectStatus = taskListNode["ConnectStatus"].asString() == "true";
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 

@@ -50,14 +50,20 @@ void ExportDataSourcesResult::parse(const std::string &payload)
 	for (auto dataNodeDataSourcesDataSourcesItem : allDataSourcesNode)
 	{
 		Data::DataSourcesItem dataSourcesItemObject;
-		if(!dataNodeDataSourcesDataSourcesItem["Shared"].isNull())
-			dataSourcesItemObject.shared = dataNodeDataSourcesDataSourcesItem["Shared"].asString() == "true";
+		if(!dataNodeDataSourcesDataSourcesItem["Status"].isNull())
+			dataSourcesItemObject.status = std::stoi(dataNodeDataSourcesDataSourcesItem["Status"].asString());
+		if(!dataNodeDataSourcesDataSourcesItem["ProjectId"].isNull())
+			dataSourcesItemObject.projectId = std::stoi(dataNodeDataSourcesDataSourcesItem["ProjectId"].asString());
+		if(!dataNodeDataSourcesDataSourcesItem["SubType"].isNull())
+			dataSourcesItemObject.subType = dataNodeDataSourcesDataSourcesItem["SubType"].asString();
 		if(!dataNodeDataSourcesDataSourcesItem["GmtModified"].isNull())
 			dataSourcesItemObject.gmtModified = dataNodeDataSourcesDataSourcesItem["GmtModified"].asString();
+		if(!dataNodeDataSourcesDataSourcesItem["EnvType"].isNull())
+			dataSourcesItemObject.envType = std::stoi(dataNodeDataSourcesDataSourcesItem["EnvType"].asString());
 		if(!dataNodeDataSourcesDataSourcesItem["ConnectStatus"].isNull())
 			dataSourcesItemObject.connectStatus = std::stoi(dataNodeDataSourcesDataSourcesItem["ConnectStatus"].asString());
-		if(!dataNodeDataSourcesDataSourcesItem["BindingCalcEngineId"].isNull())
-			dataSourcesItemObject.bindingCalcEngineId = std::stoi(dataNodeDataSourcesDataSourcesItem["BindingCalcEngineId"].asString());
+		if(!dataNodeDataSourcesDataSourcesItem["Sequence"].isNull())
+			dataSourcesItemObject.sequence = std::stoi(dataNodeDataSourcesDataSourcesItem["Sequence"].asString());
 		if(!dataNodeDataSourcesDataSourcesItem["Description"].isNull())
 			dataSourcesItemObject.description = dataNodeDataSourcesDataSourcesItem["Description"].asString();
 		if(!dataNodeDataSourcesDataSourcesItem["DataSourceType"].isNull())
@@ -66,26 +72,20 @@ void ExportDataSourcesResult::parse(const std::string &payload)
 			dataSourcesItemObject.gmtCreate = dataNodeDataSourcesDataSourcesItem["GmtCreate"].asString();
 		if(!dataNodeDataSourcesDataSourcesItem["DefaultEngine"].isNull())
 			dataSourcesItemObject.defaultEngine = dataNodeDataSourcesDataSourcesItem["DefaultEngine"].asString() == "true";
+		if(!dataNodeDataSourcesDataSourcesItem["Shared"].isNull())
+			dataSourcesItemObject.shared = dataNodeDataSourcesDataSourcesItem["Shared"].asString() == "true";
 		if(!dataNodeDataSourcesDataSourcesItem["Operator"].isNull())
 			dataSourcesItemObject._operator = dataNodeDataSourcesDataSourcesItem["Operator"].asString();
-		if(!dataNodeDataSourcesDataSourcesItem["Sequence"].isNull())
-			dataSourcesItemObject.sequence = std::stoi(dataNodeDataSourcesDataSourcesItem["Sequence"].asString());
-		if(!dataNodeDataSourcesDataSourcesItem["EnvType"].isNull())
-			dataSourcesItemObject.envType = std::stoi(dataNodeDataSourcesDataSourcesItem["EnvType"].asString());
-		if(!dataNodeDataSourcesDataSourcesItem["TenantId"].isNull())
-			dataSourcesItemObject.tenantId = std::stol(dataNodeDataSourcesDataSourcesItem["TenantId"].asString());
 		if(!dataNodeDataSourcesDataSourcesItem["Name"].isNull())
 			dataSourcesItemObject.name = dataNodeDataSourcesDataSourcesItem["Name"].asString();
-		if(!dataNodeDataSourcesDataSourcesItem["SubType"].isNull())
-			dataSourcesItemObject.subType = dataNodeDataSourcesDataSourcesItem["SubType"].asString();
-		if(!dataNodeDataSourcesDataSourcesItem["Id"].isNull())
-			dataSourcesItemObject.id = std::stoi(dataNodeDataSourcesDataSourcesItem["Id"].asString());
-		if(!dataNodeDataSourcesDataSourcesItem["ProjectId"].isNull())
-			dataSourcesItemObject.projectId = std::stoi(dataNodeDataSourcesDataSourcesItem["ProjectId"].asString());
-		if(!dataNodeDataSourcesDataSourcesItem["Status"].isNull())
-			dataSourcesItemObject.status = std::stoi(dataNodeDataSourcesDataSourcesItem["Status"].asString());
 		if(!dataNodeDataSourcesDataSourcesItem["Content"].isNull())
 			dataSourcesItemObject.content = dataNodeDataSourcesDataSourcesItem["Content"].asString();
+		if(!dataNodeDataSourcesDataSourcesItem["Id"].isNull())
+			dataSourcesItemObject.id = std::stoi(dataNodeDataSourcesDataSourcesItem["Id"].asString());
+		if(!dataNodeDataSourcesDataSourcesItem["BindingCalcEngineId"].isNull())
+			dataSourcesItemObject.bindingCalcEngineId = std::stoi(dataNodeDataSourcesDataSourcesItem["BindingCalcEngineId"].asString());
+		if(!dataNodeDataSourcesDataSourcesItem["TenantId"].isNull())
+			dataSourcesItemObject.tenantId = std::stol(dataNodeDataSourcesDataSourcesItem["TenantId"].asString());
 		data_.dataSources.push_back(dataSourcesItemObject);
 	}
 	if(!value["HttpStatusCode"].isNull())

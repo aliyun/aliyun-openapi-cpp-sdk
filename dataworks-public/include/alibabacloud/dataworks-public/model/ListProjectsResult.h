@@ -38,8 +38,8 @@ namespace AlibabaCloud
 					{
 						std::string projectIdentifier;
 						std::string projectOwnerBaseId;
-						int projectStatus;
 						std::string projectStatusCode;
+						int projectStatus;
 						std::string projectName;
 						long projectId;
 						std::string projectDescription;

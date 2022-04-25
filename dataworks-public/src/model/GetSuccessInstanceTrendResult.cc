@@ -44,30 +44,30 @@ void GetSuccessInstanceTrendResult::parse(const std::string &payload)
 	for (auto instanceStatusTrendNodeTodayTrendTodayTrendItem : allTodayTrendNode)
 	{
 		InstanceStatusTrend::TodayTrendItem todayTrendItemObject;
-		if(!instanceStatusTrendNodeTodayTrendTodayTrendItem["Count"].isNull())
-			todayTrendItemObject.count = std::stoi(instanceStatusTrendNodeTodayTrendTodayTrendItem["Count"].asString());
 		if(!instanceStatusTrendNodeTodayTrendTodayTrendItem["TimePoint"].isNull())
 			todayTrendItemObject.timePoint = instanceStatusTrendNodeTodayTrendTodayTrendItem["TimePoint"].asString();
+		if(!instanceStatusTrendNodeTodayTrendTodayTrendItem["Count"].isNull())
+			todayTrendItemObject.count = std::stoi(instanceStatusTrendNodeTodayTrendTodayTrendItem["Count"].asString());
 		instanceStatusTrend_.todayTrend.push_back(todayTrendItemObject);
 	}
 	auto allYesterdayTrendNode = instanceStatusTrendNode["YesterdayTrend"]["YesterdayTrendItem"];
 	for (auto instanceStatusTrendNodeYesterdayTrendYesterdayTrendItem : allYesterdayTrendNode)
 	{
 		InstanceStatusTrend::YesterdayTrendItem yesterdayTrendItemObject;
-		if(!instanceStatusTrendNodeYesterdayTrendYesterdayTrendItem["Count"].isNull())
-			yesterdayTrendItemObject.count = std::stoi(instanceStatusTrendNodeYesterdayTrendYesterdayTrendItem["Count"].asString());
 		if(!instanceStatusTrendNodeYesterdayTrendYesterdayTrendItem["TimePoint"].isNull())
 			yesterdayTrendItemObject.timePoint = instanceStatusTrendNodeYesterdayTrendYesterdayTrendItem["TimePoint"].asString();
+		if(!instanceStatusTrendNodeYesterdayTrendYesterdayTrendItem["Count"].isNull())
+			yesterdayTrendItemObject.count = std::stoi(instanceStatusTrendNodeYesterdayTrendYesterdayTrendItem["Count"].asString());
 		instanceStatusTrend_.yesterdayTrend.push_back(yesterdayTrendItemObject);
 	}
 	auto allAvgTrendNode = instanceStatusTrendNode["AvgTrend"]["AvgTrendItem"];
 	for (auto instanceStatusTrendNodeAvgTrendAvgTrendItem : allAvgTrendNode)
 	{
 		InstanceStatusTrend::AvgTrendItem avgTrendItemObject;
-		if(!instanceStatusTrendNodeAvgTrendAvgTrendItem["Count"].isNull())
-			avgTrendItemObject.count = std::stoi(instanceStatusTrendNodeAvgTrendAvgTrendItem["Count"].asString());
 		if(!instanceStatusTrendNodeAvgTrendAvgTrendItem["TimePoint"].isNull())
 			avgTrendItemObject.timePoint = instanceStatusTrendNodeAvgTrendAvgTrendItem["TimePoint"].asString();
+		if(!instanceStatusTrendNodeAvgTrendAvgTrendItem["Count"].isNull())
+			avgTrendItemObject.count = std::stoi(instanceStatusTrendNodeAvgTrendAvgTrendItem["Count"].asString());
 		instanceStatusTrend_.avgTrend.push_back(avgTrendItemObject);
 	}
 

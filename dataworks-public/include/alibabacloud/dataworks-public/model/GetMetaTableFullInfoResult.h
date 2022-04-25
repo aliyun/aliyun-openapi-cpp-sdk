@@ -55,8 +55,8 @@ namespace AlibabaCloud
 					long totalColumnCount;
 					long projectId;
 					std::string databaseName;
-					long lastModifyTime;
 					long lastAccessTime;
+					long lastModifyTime;
 					int envType;
 					std::string tableName;
 					std::string tableGuid;

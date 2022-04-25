@@ -34,8 +34,8 @@ namespace AlibabaCloud
 			public:
 				struct Data
 				{
-					long modifyTime;
 					std::string comment;
+					long modifyTime;
 					std::string ownerName;
 					std::string projectName;
 					std::string projectNameCn;
@@ -44,10 +44,10 @@ namespace AlibabaCloud
 					std::string appGuid;
 					int envType;
 					std::string name;
-					long tenantId;
 					std::string type;
-					std::string endpoint;
+					long tenantId;
 					std::string ownerId;
+					std::string endpoint;
 					std::string clusterBizId;
 					std::string location;
 				};

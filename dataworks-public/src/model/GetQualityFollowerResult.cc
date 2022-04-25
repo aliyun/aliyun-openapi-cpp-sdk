@@ -43,30 +43,30 @@ void GetQualityFollowerResult::parse(const std::string &payload)
 	for (auto valueDataFollower : allDataNode)
 	{
 		Follower dataObject;
-		if(!valueDataFollower["ProjectName"].isNull())
-			dataObject.projectName = valueDataFollower["ProjectName"].asString();
-		if(!valueDataFollower["TableName"].isNull())
-			dataObject.tableName = valueDataFollower["TableName"].asString();
-		if(!valueDataFollower["Id"].isNull())
-			dataObject.id = std::stol(valueDataFollower["Id"].asString());
-		if(!valueDataFollower["EntityId"].isNull())
-			dataObject.entityId = valueDataFollower["EntityId"].asString();
-		if(!valueDataFollower["Follower"].isNull())
-			dataObject.follower = valueDataFollower["Follower"].asString();
-		if(!valueDataFollower["AlarmMode"].isNull())
-			dataObject.alarmMode = std::stoi(valueDataFollower["AlarmMode"].asString());
 		if(!valueDataFollower["FollowerAccountName"].isNull())
 			dataObject.followerAccountName = valueDataFollower["FollowerAccountName"].asString();
+		if(!valueDataFollower["TableName"].isNull())
+			dataObject.tableName = valueDataFollower["TableName"].asString();
+		if(!valueDataFollower["AlarmMode"].isNull())
+			dataObject.alarmMode = std::stoi(valueDataFollower["AlarmMode"].asString());
+		if(!valueDataFollower["EntityId"].isNull())
+			dataObject.entityId = valueDataFollower["EntityId"].asString();
+		if(!valueDataFollower["ProjectName"].isNull())
+			dataObject.projectName = valueDataFollower["ProjectName"].asString();
+		if(!valueDataFollower["Id"].isNull())
+			dataObject.id = std::stol(valueDataFollower["Id"].asString());
+		if(!valueDataFollower["Follower"].isNull())
+			dataObject.follower = valueDataFollower["Follower"].asString();
 		data_.push_back(dataObject);
 	}
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
 
 }
 

@@ -40,42 +40,42 @@ void GetBaselineConfigResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["BaselineId"].isNull())
-		data_.baselineId = std::stol(dataNode["BaselineId"].asString());
-	if(!dataNode["Priority"].isNull())
-		data_.priority = std::stoi(dataNode["Priority"].asString());
-	if(!dataNode["BaselineName"].isNull())
-		data_.baselineName = dataNode["BaselineName"].asString();
-	if(!dataNode["Owner"].isNull())
-		data_.owner = dataNode["Owner"].asString();
-	if(!dataNode["ProjectId"].isNull())
-		data_.projectId = std::stol(dataNode["ProjectId"].asString());
-	if(!dataNode["UseFlag"].isNull())
-		data_.useFlag = dataNode["UseFlag"].asString() == "true";
-	if(!dataNode["BaselineType"].isNull())
-		data_.baselineType = dataNode["BaselineType"].asString();
-	if(!dataNode["ExpHour"].isNull())
-		data_.expHour = std::stoi(dataNode["ExpHour"].asString());
-	if(!dataNode["ExpMinu"].isNull())
-		data_.expMinu = std::stoi(dataNode["ExpMinu"].asString());
-	if(!dataNode["SlaHour"].isNull())
-		data_.slaHour = std::stoi(dataNode["SlaHour"].asString());
-	if(!dataNode["SlaMinu"].isNull())
-		data_.slaMinu = std::stoi(dataNode["SlaMinu"].asString());
-	if(!dataNode["HourExpDetail"].isNull())
-		data_.hourExpDetail = dataNode["HourExpDetail"].asString();
 	if(!dataNode["HourSlaDetail"].isNull())
 		data_.hourSlaDetail = dataNode["HourSlaDetail"].asString();
 	if(!dataNode["IsDefault"].isNull())
 		data_.isDefault = dataNode["IsDefault"].asString() == "true";
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
+	if(!dataNode["Owner"].isNull())
+		data_.owner = dataNode["Owner"].asString();
+	if(!dataNode["ProjectId"].isNull())
+		data_.projectId = std::stol(dataNode["ProjectId"].asString());
+	if(!dataNode["Priority"].isNull())
+		data_.priority = std::stoi(dataNode["Priority"].asString());
+	if(!dataNode["SlaMinu"].isNull())
+		data_.slaMinu = std::stoi(dataNode["SlaMinu"].asString());
+	if(!dataNode["SlaHour"].isNull())
+		data_.slaHour = std::stoi(dataNode["SlaHour"].asString());
+	if(!dataNode["BaselineId"].isNull())
+		data_.baselineId = std::stol(dataNode["BaselineId"].asString());
+	if(!dataNode["BaselineName"].isNull())
+		data_.baselineName = dataNode["BaselineName"].asString();
+	if(!dataNode["HourExpDetail"].isNull())
+		data_.hourExpDetail = dataNode["HourExpDetail"].asString();
+	if(!dataNode["UseFlag"].isNull())
+		data_.useFlag = dataNode["UseFlag"].asString() == "true";
+	if(!dataNode["ExpHour"].isNull())
+		data_.expHour = std::stoi(dataNode["ExpHour"].asString());
+	if(!dataNode["BaselineType"].isNull())
+		data_.baselineType = dataNode["BaselineType"].asString();
+	if(!dataNode["ExpMinu"].isNull())
+		data_.expMinu = std::stoi(dataNode["ExpMinu"].asString());
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

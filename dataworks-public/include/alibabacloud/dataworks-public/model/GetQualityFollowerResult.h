@@ -35,8 +35,8 @@ namespace AlibabaCloud
 				struct Follower
 				{
 					std::string entityId;
-					std::string tableName;
 					std::string followerAccountName;
+					std::string tableName;
 					std::string projectName;
 					std::string follower;
 					long id;

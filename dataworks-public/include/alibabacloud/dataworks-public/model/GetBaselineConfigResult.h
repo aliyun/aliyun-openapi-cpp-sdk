@@ -34,10 +34,10 @@ namespace AlibabaCloud
 			public:
 				struct Data
 				{
-					long baselineId;
 					bool isDefault;
-					int expHour;
+					long baselineId;
 					std::string hourSlaDetail;
+					int expHour;
 					std::string owner;
 					int expMinu;
 					int slaHour;

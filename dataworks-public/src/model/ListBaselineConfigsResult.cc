@@ -50,44 +50,44 @@ void ListBaselineConfigsResult::parse(const std::string &payload)
 	for (auto dataNodeBaselinesBaselinesItem : allBaselinesNode)
 	{
 		Data::BaselinesItem baselinesItemObject;
-		if(!dataNodeBaselinesBaselinesItem["BaselineId"].isNull())
-			baselinesItemObject.baselineId = std::stol(dataNodeBaselinesBaselinesItem["BaselineId"].asString());
-		if(!dataNodeBaselinesBaselinesItem["Priority"].isNull())
-			baselinesItemObject.priority = std::stoi(dataNodeBaselinesBaselinesItem["Priority"].asString());
-		if(!dataNodeBaselinesBaselinesItem["BaselineName"].isNull())
-			baselinesItemObject.baselineName = dataNodeBaselinesBaselinesItem["BaselineName"].asString();
-		if(!dataNodeBaselinesBaselinesItem["Owner"].isNull())
-			baselinesItemObject.owner = dataNodeBaselinesBaselinesItem["Owner"].asString();
-		if(!dataNodeBaselinesBaselinesItem["ProjectId"].isNull())
-			baselinesItemObject.projectId = std::stol(dataNodeBaselinesBaselinesItem["ProjectId"].asString());
-		if(!dataNodeBaselinesBaselinesItem["UseFlag"].isNull())
-			baselinesItemObject.useFlag = dataNodeBaselinesBaselinesItem["UseFlag"].asString() == "true";
-		if(!dataNodeBaselinesBaselinesItem["BaselineType"].isNull())
-			baselinesItemObject.baselineType = dataNodeBaselinesBaselinesItem["BaselineType"].asString();
-		if(!dataNodeBaselinesBaselinesItem["ExpHour"].isNull())
-			baselinesItemObject.expHour = std::stoi(dataNodeBaselinesBaselinesItem["ExpHour"].asString());
-		if(!dataNodeBaselinesBaselinesItem["ExpMinu"].isNull())
-			baselinesItemObject.expMinu = std::stoi(dataNodeBaselinesBaselinesItem["ExpMinu"].asString());
-		if(!dataNodeBaselinesBaselinesItem["SlaHour"].isNull())
-			baselinesItemObject.slaHour = std::stoi(dataNodeBaselinesBaselinesItem["SlaHour"].asString());
-		if(!dataNodeBaselinesBaselinesItem["SlaMinu"].isNull())
-			baselinesItemObject.slaMinu = std::stoi(dataNodeBaselinesBaselinesItem["SlaMinu"].asString());
-		if(!dataNodeBaselinesBaselinesItem["HourExpDetail"].isNull())
-			baselinesItemObject.hourExpDetail = dataNodeBaselinesBaselinesItem["HourExpDetail"].asString();
 		if(!dataNodeBaselinesBaselinesItem["HourSlaDetail"].isNull())
 			baselinesItemObject.hourSlaDetail = dataNodeBaselinesBaselinesItem["HourSlaDetail"].asString();
 		if(!dataNodeBaselinesBaselinesItem["IsDefault"].isNull())
 			baselinesItemObject.isDefault = dataNodeBaselinesBaselinesItem["IsDefault"].asString() == "true";
+		if(!dataNodeBaselinesBaselinesItem["Owner"].isNull())
+			baselinesItemObject.owner = dataNodeBaselinesBaselinesItem["Owner"].asString();
+		if(!dataNodeBaselinesBaselinesItem["ProjectId"].isNull())
+			baselinesItemObject.projectId = std::stol(dataNodeBaselinesBaselinesItem["ProjectId"].asString());
+		if(!dataNodeBaselinesBaselinesItem["Priority"].isNull())
+			baselinesItemObject.priority = std::stoi(dataNodeBaselinesBaselinesItem["Priority"].asString());
+		if(!dataNodeBaselinesBaselinesItem["SlaMinu"].isNull())
+			baselinesItemObject.slaMinu = std::stoi(dataNodeBaselinesBaselinesItem["SlaMinu"].asString());
+		if(!dataNodeBaselinesBaselinesItem["SlaHour"].isNull())
+			baselinesItemObject.slaHour = std::stoi(dataNodeBaselinesBaselinesItem["SlaHour"].asString());
+		if(!dataNodeBaselinesBaselinesItem["BaselineId"].isNull())
+			baselinesItemObject.baselineId = std::stol(dataNodeBaselinesBaselinesItem["BaselineId"].asString());
+		if(!dataNodeBaselinesBaselinesItem["BaselineName"].isNull())
+			baselinesItemObject.baselineName = dataNodeBaselinesBaselinesItem["BaselineName"].asString();
+		if(!dataNodeBaselinesBaselinesItem["HourExpDetail"].isNull())
+			baselinesItemObject.hourExpDetail = dataNodeBaselinesBaselinesItem["HourExpDetail"].asString();
+		if(!dataNodeBaselinesBaselinesItem["UseFlag"].isNull())
+			baselinesItemObject.useFlag = dataNodeBaselinesBaselinesItem["UseFlag"].asString() == "true";
+		if(!dataNodeBaselinesBaselinesItem["ExpHour"].isNull())
+			baselinesItemObject.expHour = std::stoi(dataNodeBaselinesBaselinesItem["ExpHour"].asString());
+		if(!dataNodeBaselinesBaselinesItem["BaselineType"].isNull())
+			baselinesItemObject.baselineType = dataNodeBaselinesBaselinesItem["BaselineType"].asString();
+		if(!dataNodeBaselinesBaselinesItem["ExpMinu"].isNull())
+			baselinesItemObject.expMinu = std::stoi(dataNodeBaselinesBaselinesItem["ExpMinu"].asString());
 		data_.baselines.push_back(baselinesItemObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

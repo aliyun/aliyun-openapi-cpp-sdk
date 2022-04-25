@@ -46,34 +46,34 @@ void GetTopicInfluenceResult::parse(const std::string &payload)
 	for (auto dataNodeInfluencesInfluencesItem : allInfluencesNode)
 	{
 		Data::InfluencesItem influencesItemObject;
+		if(!dataNodeInfluencesInfluencesItem["Status"].isNull())
+			influencesItemObject.status = dataNodeInfluencesInfluencesItem["Status"].asString();
+		if(!dataNodeInfluencesInfluencesItem["Owner"].isNull())
+			influencesItemObject.owner = dataNodeInfluencesInfluencesItem["Owner"].asString();
+		if(!dataNodeInfluencesInfluencesItem["BaselineName"].isNull())
+			influencesItemObject.baselineName = dataNodeInfluencesInfluencesItem["BaselineName"].asString();
 		if(!dataNodeInfluencesInfluencesItem["BaselineId"].isNull())
 			influencesItemObject.baselineId = std::stol(dataNodeInfluencesInfluencesItem["BaselineId"].asString());
 		if(!dataNodeInfluencesInfluencesItem["Bizdate"].isNull())
 			influencesItemObject.bizdate = std::stol(dataNodeInfluencesInfluencesItem["Bizdate"].asString());
-		if(!dataNodeInfluencesInfluencesItem["InGroupId"].isNull())
-			influencesItemObject.inGroupId = std::stoi(dataNodeInfluencesInfluencesItem["InGroupId"].asString());
-		if(!dataNodeInfluencesInfluencesItem["BaselineName"].isNull())
-			influencesItemObject.baselineName = dataNodeInfluencesInfluencesItem["BaselineName"].asString();
-		if(!dataNodeInfluencesInfluencesItem["Owner"].isNull())
-			influencesItemObject.owner = dataNodeInfluencesInfluencesItem["Owner"].asString();
-		if(!dataNodeInfluencesInfluencesItem["Status"].isNull())
-			influencesItemObject.status = dataNodeInfluencesInfluencesItem["Status"].asString();
+		if(!dataNodeInfluencesInfluencesItem["Buffer"].isNull())
+			influencesItemObject.buffer = std::stol(dataNodeInfluencesInfluencesItem["Buffer"].asString());
 		if(!dataNodeInfluencesInfluencesItem["ProjectId"].isNull())
 			influencesItemObject.projectId = std::stol(dataNodeInfluencesInfluencesItem["ProjectId"].asString());
 		if(!dataNodeInfluencesInfluencesItem["Priority"].isNull())
 			influencesItemObject.priority = std::stoi(dataNodeInfluencesInfluencesItem["Priority"].asString());
-		if(!dataNodeInfluencesInfluencesItem["Buffer"].isNull())
-			influencesItemObject.buffer = std::stol(dataNodeInfluencesInfluencesItem["Buffer"].asString());
+		if(!dataNodeInfluencesInfluencesItem["InGroupId"].isNull())
+			influencesItemObject.inGroupId = std::stoi(dataNodeInfluencesInfluencesItem["InGroupId"].asString());
 		data_.influences.push_back(influencesItemObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

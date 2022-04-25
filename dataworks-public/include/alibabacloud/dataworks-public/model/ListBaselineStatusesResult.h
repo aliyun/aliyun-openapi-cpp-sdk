@@ -36,16 +36,16 @@ namespace AlibabaCloud
 				{
 					struct BaselineStatusesItem
 					{
+						std::string status;
 						long baselineId;
 						long buffer;
-						std::string status;
 						std::string owner;
 						int priority;
 						std::string finishStatus;
 						long projectId;
+						int inGroupId;
 						long bizdate;
 						long expTime;
-						int inGroupId;
 						long finishTime;
 						std::string baselineName;
 						long slaTime;

@@ -41,11 +41,11 @@ namespace AlibabaCloud
 						long instanceId;
 						std::string nodeName;
 						long projectId;
-						long beginWaitTimeTime;
 						long cycTime;
+						long beginWaitTimeTime;
 						long beginRunningTime;
-						long bizdate;
 						int inGroupId;
+						long bizdate;
 						long beginCast;
 						long absTime;
 						long finishTime;
@@ -63,8 +63,8 @@ namespace AlibabaCloud
 					int prgType;
 					std::string owner;
 					std::vector<DataItem::TopicsItem> topics;
-					long instanceId;
 					std::string nodeName;
+					long instanceId;
 					long projectId;
 					long nodeId;
 					std::vector<DataItem::RunsItem> runs;

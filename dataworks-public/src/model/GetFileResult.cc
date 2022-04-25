@@ -83,6 +83,8 @@ void GetFileResult::parse(const std::string &payload)
 		data_.file.content = fileNode["Content"].asString();
 	if(!fileNode["NodeId"].isNull())
 		data_.file.nodeId = std::stol(fileNode["NodeId"].asString());
+	if(!fileNode["AdvancedSettings"].isNull())
+		data_.file.advancedSettings = fileNode["AdvancedSettings"].asString();
 	auto nodeConfigurationNode = dataNode["NodeConfiguration"];
 	if(!nodeConfigurationNode["RerunMode"].isNull())
 		data_.nodeConfiguration.rerunMode = nodeConfigurationNode["RerunMode"].asString();
@@ -110,6 +112,8 @@ void GetFileResult::parse(const std::string &payload)
 		data_.nodeConfiguration.autoRerunIntervalMillis = std::stoi(nodeConfigurationNode["AutoRerunIntervalMillis"].asString());
 	if(!nodeConfigurationNode["CronExpress"].isNull())
 		data_.nodeConfiguration.cronExpress = nodeConfigurationNode["CronExpress"].asString();
+	if(!nodeConfigurationNode["StartImmediately"].isNull())
+		data_.nodeConfiguration.startImmediately = nodeConfigurationNode["StartImmediately"].asString() == "true";
 	auto allInputListNode = nodeConfigurationNode["InputList"]["NodeInputOutput"];
 	for (auto nodeConfigurationNodeInputListNodeInputOutput : allInputListNode)
 	{
@@ -129,6 +133,30 @@ void GetFileResult::parse(const std::string &payload)
 		if(!nodeConfigurationNodeOutputListNodeInputOutput["Output"].isNull())
 			nodeInputOutput1Object.output = nodeConfigurationNodeOutputListNodeInputOutput["Output"].asString();
 		data_.nodeConfiguration.outputList.push_back(nodeInputOutput1Object);
+	}
+	auto allInputParametersNode = nodeConfigurationNode["InputParameters"]["InputContextParameter"];
+	for (auto nodeConfigurationNodeInputParametersInputContextParameter : allInputParametersNode)
+	{
+		Data::NodeConfiguration::InputContextParameter inputContextParameterObject;
+		if(!nodeConfigurationNodeInputParametersInputContextParameter["ParameterName"].isNull())
+			inputContextParameterObject.parameterName = nodeConfigurationNodeInputParametersInputContextParameter["ParameterName"].asString();
+		if(!nodeConfigurationNodeInputParametersInputContextParameter["ValueSource"].isNull())
+			inputContextParameterObject.valueSource = nodeConfigurationNodeInputParametersInputContextParameter["ValueSource"].asString();
+		data_.nodeConfiguration.inputParameters.push_back(inputContextParameterObject);
+	}
+	auto allOutputParametersNode = nodeConfigurationNode["OutputParameters"]["OutputContextParameter"];
+	for (auto nodeConfigurationNodeOutputParametersOutputContextParameter : allOutputParametersNode)
+	{
+		Data::NodeConfiguration::OutputContextParameter outputContextParameterObject;
+		if(!nodeConfigurationNodeOutputParametersOutputContextParameter["ParameterName"].isNull())
+			outputContextParameterObject.parameterName = nodeConfigurationNodeOutputParametersOutputContextParameter["ParameterName"].asString();
+		if(!nodeConfigurationNodeOutputParametersOutputContextParameter["Value"].isNull())
+			outputContextParameterObject.value = nodeConfigurationNodeOutputParametersOutputContextParameter["Value"].asString();
+		if(!nodeConfigurationNodeOutputParametersOutputContextParameter["Type"].isNull())
+			outputContextParameterObject.type = nodeConfigurationNodeOutputParametersOutputContextParameter["Type"].asString();
+		if(!nodeConfigurationNodeOutputParametersOutputContextParameter["Description"].isNull())
+			outputContextParameterObject.description = nodeConfigurationNodeOutputParametersOutputContextParameter["Description"].asString();
+		data_.nodeConfiguration.outputParameters.push_back(outputContextParameterObject);
 	}
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());

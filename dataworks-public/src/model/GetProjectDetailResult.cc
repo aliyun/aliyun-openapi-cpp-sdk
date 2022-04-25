@@ -40,40 +40,40 @@ void GetProjectDetailResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["GmtModified"].isNull())
-		data_.gmtModified = dataNode["GmtModified"].asString();
-	if(!dataNode["DefaultDiResourceGroupIdentifier"].isNull())
-		data_.defaultDiResourceGroupIdentifier = dataNode["DefaultDiResourceGroupIdentifier"].asString();
-	if(!dataNode["IsAllowDownload"].isNull())
-		data_.isAllowDownload = std::stoi(dataNode["IsAllowDownload"].asString());
-	if(!dataNode["SchedulerRetryInterval"].isNull())
-		data_.schedulerRetryInterval = std::stoi(dataNode["SchedulerRetryInterval"].asString());
+	if(!dataNode["Status"].isNull())
+		data_.status = std::stoi(dataNode["Status"].asString());
 	if(!dataNode["ResidentArea"].isNull())
 		data_.residentArea = dataNode["ResidentArea"].asString();
-	if(!dataNode["ProjectOwnerBaseId"].isNull())
-		data_.projectOwnerBaseId = dataNode["ProjectOwnerBaseId"].asString();
+	if(!dataNode["ProjectId"].isNull())
+		data_.projectId = std::stoi(dataNode["ProjectId"].asString());
+	if(!dataNode["ProjectIdentifier"].isNull())
+		data_.projectIdentifier = dataNode["ProjectIdentifier"].asString();
+	if(!dataNode["ProjectName"].isNull())
+		data_.projectName = dataNode["ProjectName"].asString();
+	if(!dataNode["IsAllowDownload"].isNull())
+		data_.isAllowDownload = std::stoi(dataNode["IsAllowDownload"].asString());
 	if(!dataNode["ProjectMode"].isNull())
 		data_.projectMode = std::stoi(dataNode["ProjectMode"].asString());
+	if(!dataNode["ProjectDescription"].isNull())
+		data_.projectDescription = dataNode["ProjectDescription"].asString();
+	if(!dataNode["GmtModified"].isNull())
+		data_.gmtModified = dataNode["GmtModified"].asString();
+	if(!dataNode["ProjectOwnerBaseId"].isNull())
+		data_.projectOwnerBaseId = dataNode["ProjectOwnerBaseId"].asString();
+	if(!dataNode["DevelopmentType"].isNull())
+		data_.developmentType = std::stoi(dataNode["DevelopmentType"].asString());
+	if(!dataNode["DefaultDiResourceGroupIdentifier"].isNull())
+		data_.defaultDiResourceGroupIdentifier = dataNode["DefaultDiResourceGroupIdentifier"].asString();
 	if(!dataNode["GmtCreate"].isNull())
 		data_.gmtCreate = dataNode["GmtCreate"].asString();
+	if(!dataNode["SchedulerMaxRetryTimes"].isNull())
+		data_.schedulerMaxRetryTimes = std::stoi(dataNode["SchedulerMaxRetryTimes"].asString());
 	if(!dataNode["ProtectedMode"].isNull())
 		data_.protectedMode = std::stoi(dataNode["ProtectedMode"].asString());
 	if(!dataNode["TenantId"].isNull())
 		data_.tenantId = std::stol(dataNode["TenantId"].asString());
-	if(!dataNode["ProjectDescription"].isNull())
-		data_.projectDescription = dataNode["ProjectDescription"].asString();
-	if(!dataNode["SchedulerMaxRetryTimes"].isNull())
-		data_.schedulerMaxRetryTimes = std::stoi(dataNode["SchedulerMaxRetryTimes"].asString());
-	if(!dataNode["ProjectName"].isNull())
-		data_.projectName = dataNode["ProjectName"].asString();
-	if(!dataNode["ProjectIdentifier"].isNull())
-		data_.projectIdentifier = dataNode["ProjectIdentifier"].asString();
-	if(!dataNode["ProjectId"].isNull())
-		data_.projectId = std::stoi(dataNode["ProjectId"].asString());
-	if(!dataNode["Status"].isNull())
-		data_.status = std::stoi(dataNode["Status"].asString());
-	if(!dataNode["DevelopmentType"].isNull())
-		data_.developmentType = std::stoi(dataNode["DevelopmentType"].asString());
+	if(!dataNode["SchedulerRetryInterval"].isNull())
+		data_.schedulerRetryInterval = std::stoi(dataNode["SchedulerRetryInterval"].asString());
 		auto allEnvTypes = dataNode["EnvTypes"]["EnvTypes"];
 		for (auto value : allEnvTypes)
 			data_.envTypes.push_back(value.asString());

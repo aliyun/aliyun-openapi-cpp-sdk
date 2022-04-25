@@ -36,8 +36,8 @@ namespace AlibabaCloud
 				{
 					struct InfluencesItem
 					{
-						long baselineId;
 						std::string status;
+						long baselineId;
 						long buffer;
 						std::string owner;
 						int priority;

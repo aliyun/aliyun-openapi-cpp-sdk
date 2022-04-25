@@ -43,84 +43,84 @@ void GetBaselineKeyPathResult::parse(const std::string &payload)
 	for (auto valueDataDataItem : allDataNode)
 	{
 		DataItem dataObject;
-		if(!valueDataDataItem["InstanceId"].isNull())
-			dataObject.instanceId = std::stol(valueDataDataItem["InstanceId"].asString());
-		if(!valueDataDataItem["ProjectId"].isNull())
-			dataObject.projectId = std::stol(valueDataDataItem["ProjectId"].asString());
-		if(!valueDataDataItem["NodeId"].isNull())
-			dataObject.nodeId = std::stol(valueDataDataItem["NodeId"].asString());
+		if(!valueDataDataItem["Owner"].isNull())
+			dataObject.owner = valueDataDataItem["Owner"].asString();
 		if(!valueDataDataItem["NodeName"].isNull())
 			dataObject.nodeName = valueDataDataItem["NodeName"].asString();
 		if(!valueDataDataItem["Bizdate"].isNull())
 			dataObject.bizdate = std::stol(valueDataDataItem["Bizdate"].asString());
-		if(!valueDataDataItem["InGroupId"].isNull())
-			dataObject.inGroupId = std::stoi(valueDataDataItem["InGroupId"].asString());
-		if(!valueDataDataItem["Owner"].isNull())
-			dataObject.owner = valueDataDataItem["Owner"].asString();
+		if(!valueDataDataItem["ProjectId"].isNull())
+			dataObject.projectId = std::stol(valueDataDataItem["ProjectId"].asString());
+		if(!valueDataDataItem["InstanceId"].isNull())
+			dataObject.instanceId = std::stol(valueDataDataItem["InstanceId"].asString());
 		if(!valueDataDataItem["PrgType"].isNull())
 			dataObject.prgType = std::stoi(valueDataDataItem["PrgType"].asString());
+		if(!valueDataDataItem["NodeId"].isNull())
+			dataObject.nodeId = std::stol(valueDataDataItem["NodeId"].asString());
+		if(!valueDataDataItem["InGroupId"].isNull())
+			dataObject.inGroupId = std::stoi(valueDataDataItem["InGroupId"].asString());
 		auto allRunsNode = valueDataDataItem["Runs"]["RunsItem"];
 		for (auto valueDataDataItemRunsRunsItem : allRunsNode)
 		{
 			DataItem::RunsItem runsObject;
-			if(!valueDataDataItemRunsRunsItem["AbsTime"].isNull())
-				runsObject.absTime = std::stol(valueDataDataItemRunsRunsItem["AbsTime"].asString());
-			if(!valueDataDataItemRunsRunsItem["BeginCast"].isNull())
-				runsObject.beginCast = std::stol(valueDataDataItemRunsRunsItem["BeginCast"].asString());
-			if(!valueDataDataItemRunsRunsItem["BeginRunningTime"].isNull())
-				runsObject.beginRunningTime = std::stol(valueDataDataItemRunsRunsItem["BeginRunningTime"].asString());
-			if(!valueDataDataItemRunsRunsItem["BeginWaitResTime"].isNull())
-				runsObject.beginWaitResTime = std::stol(valueDataDataItemRunsRunsItem["BeginWaitResTime"].asString());
-			if(!valueDataDataItemRunsRunsItem["BeginWaitTimeTime"].isNull())
-				runsObject.beginWaitTimeTime = std::stol(valueDataDataItemRunsRunsItem["BeginWaitTimeTime"].asString());
-			if(!valueDataDataItemRunsRunsItem["Bizdate"].isNull())
-				runsObject.bizdate = std::stol(valueDataDataItemRunsRunsItem["Bizdate"].asString());
-			if(!valueDataDataItemRunsRunsItem["CycTime"].isNull())
-				runsObject.cycTime = std::stol(valueDataDataItemRunsRunsItem["CycTime"].asString());
-			if(!valueDataDataItemRunsRunsItem["EndCast"].isNull())
-				runsObject.endCast = std::stol(valueDataDataItemRunsRunsItem["EndCast"].asString());
-			if(!valueDataDataItemRunsRunsItem["FinishTime"].isNull())
-				runsObject.finishTime = std::stol(valueDataDataItemRunsRunsItem["FinishTime"].asString());
-			if(!valueDataDataItemRunsRunsItem["InGroupId"].isNull())
-				runsObject.inGroupId = std::stoi(valueDataDataItemRunsRunsItem["InGroupId"].asString());
-			if(!valueDataDataItemRunsRunsItem["InstanceId"].isNull())
-				runsObject.instanceId = std::stol(valueDataDataItemRunsRunsItem["InstanceId"].asString());
-			if(!valueDataDataItemRunsRunsItem["NodeId"].isNull())
-				runsObject.nodeId = std::stol(valueDataDataItemRunsRunsItem["NodeId"].asString());
-			if(!valueDataDataItemRunsRunsItem["NodeName"].isNull())
-				runsObject.nodeName = valueDataDataItemRunsRunsItem["NodeName"].asString();
-			if(!valueDataDataItemRunsRunsItem["Owner"].isNull())
-				runsObject.owner = valueDataDataItemRunsRunsItem["Owner"].asString();
-			if(!valueDataDataItemRunsRunsItem["ProjectId"].isNull())
-				runsObject.projectId = std::stol(valueDataDataItemRunsRunsItem["ProjectId"].asString());
 			if(!valueDataDataItemRunsRunsItem["Status"].isNull())
 				runsObject.status = valueDataDataItemRunsRunsItem["Status"].asString();
+			if(!valueDataDataItemRunsRunsItem["AbsTime"].isNull())
+				runsObject.absTime = std::stol(valueDataDataItemRunsRunsItem["AbsTime"].asString());
+			if(!valueDataDataItemRunsRunsItem["BeginRunningTime"].isNull())
+				runsObject.beginRunningTime = std::stol(valueDataDataItemRunsRunsItem["BeginRunningTime"].asString());
+			if(!valueDataDataItemRunsRunsItem["CycTime"].isNull())
+				runsObject.cycTime = std::stol(valueDataDataItemRunsRunsItem["CycTime"].asString());
+			if(!valueDataDataItemRunsRunsItem["Owner"].isNull())
+				runsObject.owner = valueDataDataItemRunsRunsItem["Owner"].asString();
+			if(!valueDataDataItemRunsRunsItem["FinishTime"].isNull())
+				runsObject.finishTime = std::stol(valueDataDataItemRunsRunsItem["FinishTime"].asString());
+			if(!valueDataDataItemRunsRunsItem["ProjectId"].isNull())
+				runsObject.projectId = std::stol(valueDataDataItemRunsRunsItem["ProjectId"].asString());
+			if(!valueDataDataItemRunsRunsItem["BeginCast"].isNull())
+				runsObject.beginCast = std::stol(valueDataDataItemRunsRunsItem["BeginCast"].asString());
+			if(!valueDataDataItemRunsRunsItem["InstanceId"].isNull())
+				runsObject.instanceId = std::stol(valueDataDataItemRunsRunsItem["InstanceId"].asString());
+			if(!valueDataDataItemRunsRunsItem["EndCast"].isNull())
+				runsObject.endCast = std::stol(valueDataDataItemRunsRunsItem["EndCast"].asString());
+			if(!valueDataDataItemRunsRunsItem["BeginWaitResTime"].isNull())
+				runsObject.beginWaitResTime = std::stol(valueDataDataItemRunsRunsItem["BeginWaitResTime"].asString());
+			if(!valueDataDataItemRunsRunsItem["InGroupId"].isNull())
+				runsObject.inGroupId = std::stoi(valueDataDataItemRunsRunsItem["InGroupId"].asString());
+			if(!valueDataDataItemRunsRunsItem["NodeName"].isNull())
+				runsObject.nodeName = valueDataDataItemRunsRunsItem["NodeName"].asString();
+			if(!valueDataDataItemRunsRunsItem["Bizdate"].isNull())
+				runsObject.bizdate = std::stol(valueDataDataItemRunsRunsItem["Bizdate"].asString());
+			if(!valueDataDataItemRunsRunsItem["BeginWaitTimeTime"].isNull())
+				runsObject.beginWaitTimeTime = std::stol(valueDataDataItemRunsRunsItem["BeginWaitTimeTime"].asString());
+			if(!valueDataDataItemRunsRunsItem["NodeId"].isNull())
+				runsObject.nodeId = std::stol(valueDataDataItemRunsRunsItem["NodeId"].asString());
 			dataObject.runs.push_back(runsObject);
 		}
 		auto allTopicsNode = valueDataDataItem["Topics"]["TopicsItem"];
 		for (auto valueDataDataItemTopicsTopicsItem : allTopicsNode)
 		{
 			DataItem::TopicsItem topicsObject;
+			if(!valueDataDataItemTopicsTopicsItem["TopicName"].isNull())
+				topicsObject.topicName = std::stol(valueDataDataItemTopicsTopicsItem["TopicName"].asString());
 			if(!valueDataDataItemTopicsTopicsItem["InstanceId"].isNull())
 				topicsObject.instanceId = std::stol(valueDataDataItemTopicsTopicsItem["InstanceId"].asString());
 			if(!valueDataDataItemTopicsTopicsItem["TopicId"].isNull())
 				topicsObject.topicId = std::stol(valueDataDataItemTopicsTopicsItem["TopicId"].asString());
-			if(!valueDataDataItemTopicsTopicsItem["TopicName"].isNull())
-				topicsObject.topicName = std::stol(valueDataDataItemTopicsTopicsItem["TopicName"].asString());
 			if(!valueDataDataItemTopicsTopicsItem["AddTime"].isNull())
 				topicsObject.addTime = std::stol(valueDataDataItemTopicsTopicsItem["AddTime"].asString());
 			dataObject.topics.push_back(topicsObject);
 		}
 		data_.push_back(dataObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

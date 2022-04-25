@@ -46,20 +46,20 @@ void ListMetaDBResult::parse(const std::string &payload)
 	for (auto databaseInfoNodeDbListDbListItem : allDbListNode)
 	{
 		DatabaseInfo::DbListItem dbListItemObject;
-		if(!databaseInfoNodeDbListDbListItem["Name"].isNull())
-			dbListItemObject.name = databaseInfoNodeDbListDbListItem["Name"].asString();
 		if(!databaseInfoNodeDbListDbListItem["Type"].isNull())
 			dbListItemObject.type = databaseInfoNodeDbListDbListItem["Type"].asString();
+		if(!databaseInfoNodeDbListDbListItem["CreateTimeStamp"].isNull())
+			dbListItemObject.createTimeStamp = std::stol(databaseInfoNodeDbListDbListItem["CreateTimeStamp"].asString());
+		if(!databaseInfoNodeDbListDbListItem["UUID"].isNull())
+			dbListItemObject.uUID = databaseInfoNodeDbListDbListItem["UUID"].asString();
+		if(!databaseInfoNodeDbListDbListItem["ModifiedTimeStamp"].isNull())
+			dbListItemObject.modifiedTimeStamp = std::stol(databaseInfoNodeDbListDbListItem["ModifiedTimeStamp"].asString());
+		if(!databaseInfoNodeDbListDbListItem["Name"].isNull())
+			dbListItemObject.name = databaseInfoNodeDbListDbListItem["Name"].asString();
 		if(!databaseInfoNodeDbListDbListItem["OwnerId"].isNull())
 			dbListItemObject.ownerId = databaseInfoNodeDbListDbListItem["OwnerId"].asString();
 		if(!databaseInfoNodeDbListDbListItem["Location"].isNull())
 			dbListItemObject.location = databaseInfoNodeDbListDbListItem["Location"].asString();
-		if(!databaseInfoNodeDbListDbListItem["CreateTimeStamp"].isNull())
-			dbListItemObject.createTimeStamp = std::stol(databaseInfoNodeDbListDbListItem["CreateTimeStamp"].asString());
-		if(!databaseInfoNodeDbListDbListItem["ModifiedTimeStamp"].isNull())
-			dbListItemObject.modifiedTimeStamp = std::stol(databaseInfoNodeDbListDbListItem["ModifiedTimeStamp"].asString());
-		if(!databaseInfoNodeDbListDbListItem["UUID"].isNull())
-			dbListItemObject.uUID = databaseInfoNodeDbListDbListItem["UUID"].asString();
 		databaseInfo_.dbList.push_back(dbListItemObject);
 	}
 

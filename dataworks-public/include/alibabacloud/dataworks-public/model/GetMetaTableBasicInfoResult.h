@@ -34,12 +34,12 @@ namespace AlibabaCloud
 			public:
 				struct Data
 				{
-					int lifeCycle;
 					bool isView;
+					int lifeCycle;
 					bool isPartitionTable;
 					std::string projectName;
-					long lastModifyTime;
 					long lastAccessTime;
+					long lastModifyTime;
 					int envType;
 					std::string ownerId;
 					long dataSize;

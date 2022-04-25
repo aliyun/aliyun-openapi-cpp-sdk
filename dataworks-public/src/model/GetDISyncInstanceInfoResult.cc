@@ -42,27 +42,27 @@ void GetDISyncInstanceInfoResult::parse(const std::string &payload)
 	auto dataNode = value["Data"];
 	if(!dataNode["Status"].isNull())
 		data_.status = dataNode["Status"].asString();
-	if(!dataNode["Name"].isNull())
-		data_.name = dataNode["Name"].asString();
 	if(!dataNode["Message"].isNull())
 		data_.message = dataNode["Message"].asString();
+	if(!dataNode["Name"].isNull())
+		data_.name = dataNode["Name"].asString();
 	auto solutionInfoNode = dataNode["SolutionInfo"];
-	if(!solutionInfoNode["Id"].isNull())
-		data_.solutionInfo.id = std::stol(solutionInfoNode["Id"].asString());
 	if(!solutionInfoNode["Status"].isNull())
 		data_.solutionInfo.status = solutionInfoNode["Status"].asString();
+	if(!solutionInfoNode["Id"].isNull())
+		data_.solutionInfo.id = std::stol(solutionInfoNode["Id"].asString());
 	if(!solutionInfoNode["CreatorName"].isNull())
 		data_.solutionInfo.creatorName = solutionInfoNode["CreatorName"].asString();
 	auto allStepDetailNode = solutionInfoNode["StepDetail"]["StepDetailItem"];
 	for (auto solutionInfoNodeStepDetailStepDetailItem : allStepDetailNode)
 	{
 		Data::SolutionInfo::StepDetailItem stepDetailItemObject;
-		if(!solutionInfoNodeStepDetailStepDetailItem["StepName"].isNull())
-			stepDetailItemObject.stepName = solutionInfoNodeStepDetailStepDetailItem["StepName"].asString();
-		if(!solutionInfoNodeStepDetailStepDetailItem["StepId"].isNull())
-			stepDetailItemObject.stepId = std::stol(solutionInfoNodeStepDetailStepDetailItem["StepId"].asString());
 		if(!solutionInfoNodeStepDetailStepDetailItem["Status"].isNull())
 			stepDetailItemObject.status = solutionInfoNodeStepDetailStepDetailItem["Status"].asString();
+		if(!solutionInfoNodeStepDetailStepDetailItem["StepId"].isNull())
+			stepDetailItemObject.stepId = std::stol(solutionInfoNodeStepDetailStepDetailItem["StepId"].asString());
+		if(!solutionInfoNodeStepDetailStepDetailItem["StepName"].isNull())
+			stepDetailItemObject.stepName = solutionInfoNodeStepDetailStepDetailItem["StepName"].asString();
 		data_.solutionInfo.stepDetail.push_back(stepDetailItemObject);
 	}
 	if(!value["Success"].isNull())

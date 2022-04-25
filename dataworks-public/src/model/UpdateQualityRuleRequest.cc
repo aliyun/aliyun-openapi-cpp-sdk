@@ -214,6 +214,17 @@ void UpdateQualityRuleRequest::setCriticalThreshold(const std::string& criticalT
 	setBodyParameter("CriticalThreshold", criticalThreshold);
 }
 
+bool UpdateQualityRuleRequest::getOpenSwitch()const
+{
+	return openSwitch_;
+}
+
+void UpdateQualityRuleRequest::setOpenSwitch(bool openSwitch)
+{
+	openSwitch_ = openSwitch;
+	setBodyParameter("OpenSwitch", openSwitch ? "true" : "false");
+}
+
 std::string UpdateQualityRuleRequest::getComment()const
 {
 	return comment_;

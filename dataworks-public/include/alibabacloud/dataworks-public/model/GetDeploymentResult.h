@@ -40,8 +40,8 @@ namespace AlibabaCloud
 						std::string handlerId;
 						long executeTime;
 						std::string creatorId;
-						long createTime;
 						int toEnvironment;
+						long createTime;
 						int fromEnvironment;
 						int checkingStatus;
 						std::string errorMessage;

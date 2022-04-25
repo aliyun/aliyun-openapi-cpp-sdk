@@ -43,10 +43,10 @@ void ListProgramTypeCountResult::parse(const std::string &payload)
 	for (auto valueProgramTypeAndCountsProgramTypeAndCount : allProgramTypeAndCountsNode)
 	{
 		ProgramTypeAndCount programTypeAndCountsObject;
-		if(!valueProgramTypeAndCountsProgramTypeAndCount["ProgramType"].isNull())
-			programTypeAndCountsObject.programType = valueProgramTypeAndCountsProgramTypeAndCount["ProgramType"].asString();
 		if(!valueProgramTypeAndCountsProgramTypeAndCount["Count"].isNull())
 			programTypeAndCountsObject.count = std::stoi(valueProgramTypeAndCountsProgramTypeAndCount["Count"].asString());
+		if(!valueProgramTypeAndCountsProgramTypeAndCount["ProgramType"].isNull())
+			programTypeAndCountsObject.programType = valueProgramTypeAndCountsProgramTypeAndCount["ProgramType"].asString();
 		programTypeAndCounts_.push_back(programTypeAndCountsObject);
 	}
 

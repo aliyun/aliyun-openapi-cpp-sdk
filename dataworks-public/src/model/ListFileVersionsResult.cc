@@ -50,42 +50,42 @@ void ListFileVersionsResult::parse(const std::string &payload)
 	for (auto dataNodeFileVersionsFileVersion : allFileVersionsNode)
 	{
 		Data::FileVersion fileVersionObject;
-		if(!dataNodeFileVersionsFileVersion["FileVersion"].isNull())
-			fileVersionObject.fileVersion = std::stoi(dataNodeFileVersionsFileVersion["FileVersion"].asString());
 		if(!dataNodeFileVersionsFileVersion["FileContent"].isNull())
 			fileVersionObject.fileContent = dataNodeFileVersionsFileVersion["FileContent"].asString();
-		if(!dataNodeFileVersionsFileVersion["CommitTime"].isNull())
-			fileVersionObject.commitTime = std::stol(dataNodeFileVersionsFileVersion["CommitTime"].asString());
-		if(!dataNodeFileVersionsFileVersion["CommitUser"].isNull())
-			fileVersionObject.commitUser = dataNodeFileVersionsFileVersion["CommitUser"].asString();
-		if(!dataNodeFileVersionsFileVersion["FileName"].isNull())
-			fileVersionObject.fileName = dataNodeFileVersionsFileVersion["FileName"].asString();
 		if(!dataNodeFileVersionsFileVersion["Status"].isNull())
 			fileVersionObject.status = dataNodeFileVersionsFileVersion["Status"].asString();
-		if(!dataNodeFileVersionsFileVersion["ChangeType"].isNull())
-			fileVersionObject.changeType = dataNodeFileVersionsFileVersion["ChangeType"].asString();
 		if(!dataNodeFileVersionsFileVersion["IsCurrentProd"].isNull())
 			fileVersionObject.isCurrentProd = dataNodeFileVersionsFileVersion["IsCurrentProd"].asString() == "true";
-		if(!dataNodeFileVersionsFileVersion["NodeId"].isNull())
-			fileVersionObject.nodeId = std::stol(dataNodeFileVersionsFileVersion["NodeId"].asString());
-		if(!dataNodeFileVersionsFileVersion["Comment"].isNull())
-			fileVersionObject.comment = dataNodeFileVersionsFileVersion["Comment"].asString();
+		if(!dataNodeFileVersionsFileVersion["CommitUser"].isNull())
+			fileVersionObject.commitUser = dataNodeFileVersionsFileVersion["CommitUser"].asString();
 		if(!dataNodeFileVersionsFileVersion["NodeContent"].isNull())
 			fileVersionObject.nodeContent = dataNodeFileVersionsFileVersion["NodeContent"].asString();
+		if(!dataNodeFileVersionsFileVersion["Comment"].isNull())
+			fileVersionObject.comment = dataNodeFileVersionsFileVersion["Comment"].asString();
 		if(!dataNodeFileVersionsFileVersion["FilePropertyContent"].isNull())
 			fileVersionObject.filePropertyContent = dataNodeFileVersionsFileVersion["FilePropertyContent"].asString();
+		if(!dataNodeFileVersionsFileVersion["FileName"].isNull())
+			fileVersionObject.fileName = dataNodeFileVersionsFileVersion["FileName"].asString();
 		if(!dataNodeFileVersionsFileVersion["UseType"].isNull())
 			fileVersionObject.useType = dataNodeFileVersionsFileVersion["UseType"].asString();
+		if(!dataNodeFileVersionsFileVersion["ChangeType"].isNull())
+			fileVersionObject.changeType = dataNodeFileVersionsFileVersion["ChangeType"].asString();
+		if(!dataNodeFileVersionsFileVersion["FileVersion"].isNull())
+			fileVersionObject.fileVersion = std::stoi(dataNodeFileVersionsFileVersion["FileVersion"].asString());
+		if(!dataNodeFileVersionsFileVersion["CommitTime"].isNull())
+			fileVersionObject.commitTime = std::stol(dataNodeFileVersionsFileVersion["CommitTime"].asString());
+		if(!dataNodeFileVersionsFileVersion["NodeId"].isNull())
+			fileVersionObject.nodeId = std::stol(dataNodeFileVersionsFileVersion["NodeId"].asString());
 		data_.fileVersions.push_back(fileVersionObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

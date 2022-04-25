@@ -42,64 +42,64 @@ void GetMetaTableBasicInfoResult::parse(const std::string &payload)
 	auto dataNode = value["Data"];
 	if(!dataNode["TableName"].isNull())
 		data_.tableName = dataNode["TableName"].asString();
-	if(!dataNode["TableGuid"].isNull())
-		data_.tableGuid = dataNode["TableGuid"].asString();
-	if(!dataNode["OwnerId"].isNull())
-		data_.ownerId = dataNode["OwnerId"].asString();
-	if(!dataNode["TenantId"].isNull())
-		data_.tenantId = std::stol(dataNode["TenantId"].asString());
-	if(!dataNode["ProjectId"].isNull())
-		data_.projectId = std::stol(dataNode["ProjectId"].asString());
-	if(!dataNode["CreateTime"].isNull())
-		data_.createTime = std::stol(dataNode["CreateTime"].asString());
-	if(!dataNode["LastModifyTime"].isNull())
-		data_.lastModifyTime = std::stol(dataNode["LastModifyTime"].asString());
-	if(!dataNode["LifeCycle"].isNull())
-		data_.lifeCycle = std::stoi(dataNode["LifeCycle"].asString());
-	if(!dataNode["IsVisible"].isNull())
-		data_.isVisible = std::stoi(dataNode["IsVisible"].asString());
-	if(!dataNode["LastDdlTime"].isNull())
-		data_.lastDdlTime = std::stol(dataNode["LastDdlTime"].asString());
-	if(!dataNode["LastAccessTime"].isNull())
-		data_.lastAccessTime = std::stol(dataNode["LastAccessTime"].asString());
-	if(!dataNode["EnvType"].isNull())
-		data_.envType = std::stoi(dataNode["EnvType"].asString());
-	if(!dataNode["DataSize"].isNull())
-		data_.dataSize = std::stol(dataNode["DataSize"].asString());
+	if(!dataNode["FavoriteCount"].isNull())
+		data_.favoriteCount = std::stol(dataNode["FavoriteCount"].asString());
 	if(!dataNode["Comment"].isNull())
 		data_.comment = dataNode["Comment"].asString();
-	if(!dataNode["ProjectName"].isNull())
-		data_.projectName = dataNode["ProjectName"].asString();
+	if(!dataNode["ColumnCount"].isNull())
+		data_.columnCount = std::stoi(dataNode["ColumnCount"].asString());
+	if(!dataNode["CreateTime"].isNull())
+		data_.createTime = std::stol(dataNode["CreateTime"].asString());
+	if(!dataNode["ProjectId"].isNull())
+		data_.projectId = std::stol(dataNode["ProjectId"].asString());
+	if(!dataNode["OwnerId"].isNull())
+		data_.ownerId = dataNode["OwnerId"].asString();
+	if(!dataNode["EnvType"].isNull())
+		data_.envType = std::stoi(dataNode["EnvType"].asString());
 	if(!dataNode["DatabaseName"].isNull())
 		data_.databaseName = dataNode["DatabaseName"].asString();
+	if(!dataNode["IsVisible"].isNull())
+		data_.isVisible = std::stoi(dataNode["IsVisible"].asString());
+	if(!dataNode["TableGuid"].isNull())
+		data_.tableGuid = dataNode["TableGuid"].asString();
+	if(!dataNode["ReadCount"].isNull())
+		data_.readCount = std::stol(dataNode["ReadCount"].asString());
+	if(!dataNode["ClusterId"].isNull())
+		data_.clusterId = dataNode["ClusterId"].asString();
+	if(!dataNode["IsPartitionTable"].isNull())
+		data_.isPartitionTable = dataNode["IsPartitionTable"].asString() == "true";
+	if(!dataNode["IsView"].isNull())
+		data_.isView = dataNode["IsView"].asString() == "true";
+	if(!dataNode["LifeCycle"].isNull())
+		data_.lifeCycle = std::stoi(dataNode["LifeCycle"].asString());
+	if(!dataNode["ProjectName"].isNull())
+		data_.projectName = dataNode["ProjectName"].asString();
+	if(!dataNode["ViewCount"].isNull())
+		data_.viewCount = std::stol(dataNode["ViewCount"].asString());
+	if(!dataNode["LastAccessTime"].isNull())
+		data_.lastAccessTime = std::stol(dataNode["LastAccessTime"].asString());
+	if(!dataNode["DataSize"].isNull())
+		data_.dataSize = std::stol(dataNode["DataSize"].asString());
+	if(!dataNode["LastModifyTime"].isNull())
+		data_.lastModifyTime = std::stol(dataNode["LastModifyTime"].asString());
+	if(!dataNode["LastDdlTime"].isNull())
+		data_.lastDdlTime = std::stol(dataNode["LastDdlTime"].asString());
 	if(!dataNode["PartitionKeys"].isNull())
 		data_.partitionKeys = dataNode["PartitionKeys"].asString();
 	if(!dataNode["Location"].isNull())
 		data_.location = dataNode["Location"].asString();
-	if(!dataNode["ClusterId"].isNull())
-		data_.clusterId = dataNode["ClusterId"].asString();
 	if(!dataNode["Caption"].isNull())
 		data_.caption = dataNode["Caption"].asString();
-	if(!dataNode["IsPartitionTable"].isNull())
-		data_.isPartitionTable = dataNode["IsPartitionTable"].asString() == "true";
-	if(!dataNode["ReadCount"].isNull())
-		data_.readCount = std::stol(dataNode["ReadCount"].asString());
-	if(!dataNode["ViewCount"].isNull())
-		data_.viewCount = std::stol(dataNode["ViewCount"].asString());
-	if(!dataNode["FavoriteCount"].isNull())
-		data_.favoriteCount = std::stol(dataNode["FavoriteCount"].asString());
-	if(!dataNode["IsView"].isNull())
-		data_.isView = dataNode["IsView"].asString() == "true";
-	if(!dataNode["ColumnCount"].isNull())
-		data_.columnCount = std::stoi(dataNode["ColumnCount"].asString());
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
+	if(!dataNode["TenantId"].isNull())
+		data_.tenantId = std::stol(dataNode["TenantId"].asString());
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
 
 }
 

@@ -44,10 +44,10 @@ namespace AlibabaCloud
 					bool baseProject;
 					int projectMode;
 					std::string projectDescription;
+					int status;
 					std::string devStorageQuota;
 					int isDefault;
 					std::string projectIdentifier;
-					int status;
 					int schedulerMaxRetryTimes;
 					int projectId;
 					std::string residentArea;

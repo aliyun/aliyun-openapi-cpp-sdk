@@ -38,12 +38,12 @@ namespace AlibabaCloud
 					{
 						int status;
 						int connectStatus;
-						std::string description;
 						std::string subType;
-						int bindingCalcEngineId;
+						std::string description;
 						std::string connectionType;
-						std::string gmtModified;
+						int bindingCalcEngineId;
 						int projectId;
+						std::string gmtModified;
 						std::string _operator;
 						int sequence;
 						bool shared;

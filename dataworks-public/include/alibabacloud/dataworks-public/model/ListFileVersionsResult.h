@@ -39,10 +39,10 @@ namespace AlibabaCloud
 						std::string status;
 						std::string commitUser;
 						std::string comment;
-						long commitTime;
-						std::string fileName;
 						std::string filePropertyContent;
+						std::string fileName;
 						std::string useType;
+						long commitTime;
 						bool isCurrentProd;
 						std::string fileContent;
 						std::string changeType;

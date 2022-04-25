@@ -40,26 +40,26 @@ void GetBusinessResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["BusinessId"].isNull())
-		data_.businessId = std::stol(dataNode["BusinessId"].asString());
-	if(!dataNode["BusinessName"].isNull())
-		data_.businessName = dataNode["BusinessName"].asString();
-	if(!dataNode["ProjectId"].isNull())
-		data_.projectId = dataNode["ProjectId"].asString();
 	if(!dataNode["Owner"].isNull())
 		data_.owner = dataNode["Owner"].asString();
 	if(!dataNode["Description"].isNull())
 		data_.description = dataNode["Description"].asString();
+	if(!dataNode["ProjectId"].isNull())
+		data_.projectId = dataNode["ProjectId"].asString();
+	if(!dataNode["BusinessId"].isNull())
+		data_.businessId = std::stol(dataNode["BusinessId"].asString());
+	if(!dataNode["BusinessName"].isNull())
+		data_.businessName = dataNode["BusinessName"].asString();
 	if(!dataNode["UseType"].isNull())
 		data_.useType = dataNode["UseType"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

@@ -40,30 +40,30 @@ void GetRemindResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["RemindId"].isNull())
-		data_.remindId = std::stol(dataNode["RemindId"].asString());
-	if(!dataNode["RemindName"].isNull())
-		data_.remindName = dataNode["RemindName"].asString();
-	if(!dataNode["DndStart"].isNull())
-		data_.dndStart = dataNode["DndStart"].asString();
-	if(!dataNode["DndEnd"].isNull())
-		data_.dndEnd = dataNode["DndEnd"].asString();
+	if(!dataNode["MaxAlertTimes"].isNull())
+		data_.maxAlertTimes = std::stoi(dataNode["MaxAlertTimes"].asString());
 	if(!dataNode["RemindUnit"].isNull())
 		data_.remindUnit = dataNode["RemindUnit"].asString();
-	if(!dataNode["RemindType"].isNull())
-		data_.remindType = dataNode["RemindType"].asString();
-	if(!dataNode["AlertUnit"].isNull())
-		data_.alertUnit = dataNode["AlertUnit"].asString();
+	if(!dataNode["AlertInterval"].isNull())
+		data_.alertInterval = std::stoi(dataNode["AlertInterval"].asString());
 	if(!dataNode["Useflag"].isNull())
 		data_.useflag = dataNode["Useflag"].asString() == "true";
 	if(!dataNode["Founder"].isNull())
 		data_.founder = dataNode["Founder"].asString();
-	if(!dataNode["AlertInterval"].isNull())
-		data_.alertInterval = std::stoi(dataNode["AlertInterval"].asString());
+	if(!dataNode["RemindId"].isNull())
+		data_.remindId = std::stol(dataNode["RemindId"].asString());
+	if(!dataNode["DndEnd"].isNull())
+		data_.dndEnd = dataNode["DndEnd"].asString();
+	if(!dataNode["RemindType"].isNull())
+		data_.remindType = dataNode["RemindType"].asString();
+	if(!dataNode["AlertUnit"].isNull())
+		data_.alertUnit = dataNode["AlertUnit"].asString();
+	if(!dataNode["DndStart"].isNull())
+		data_.dndStart = dataNode["DndStart"].asString();
+	if(!dataNode["RemindName"].isNull())
+		data_.remindName = dataNode["RemindName"].asString();
 	if(!dataNode["Detail"].isNull())
 		data_.detail = dataNode["Detail"].asString();
-	if(!dataNode["MaxAlertTimes"].isNull())
-		data_.maxAlertTimes = std::stoi(dataNode["MaxAlertTimes"].asString());
 	auto allRobotsNode = dataNode["Robots"]["RobotsItem"];
 	for (auto dataNodeRobotsRobotsItem : allRobotsNode)
 	{
@@ -78,12 +78,12 @@ void GetRemindResult::parse(const std::string &payload)
 	for (auto dataNodeNodesNodesItem : allNodesNode)
 	{
 		Data::NodesItem nodesItemObject;
-		if(!dataNodeNodesNodesItem["NodeId"].isNull())
-			nodesItemObject.nodeId = std::stol(dataNodeNodesNodesItem["NodeId"].asString());
-		if(!dataNodeNodesNodesItem["NodeName"].isNull())
-			nodesItemObject.nodeName = dataNodeNodesNodesItem["NodeName"].asString();
 		if(!dataNodeNodesNodesItem["Owner"].isNull())
 			nodesItemObject.owner = dataNodeNodesNodesItem["Owner"].asString();
+		if(!dataNodeNodesNodesItem["NodeName"].isNull())
+			nodesItemObject.nodeName = dataNodeNodesNodesItem["NodeName"].asString();
+		if(!dataNodeNodesNodesItem["NodeId"].isNull())
+			nodesItemObject.nodeId = std::stol(dataNodeNodesNodesItem["NodeId"].asString());
 		if(!dataNodeNodesNodesItem["ProjectId"].isNull())
 			nodesItemObject.projectId = std::stol(dataNodeNodesNodesItem["ProjectId"].asString());
 		data_.nodes.push_back(nodesItemObject);
@@ -92,10 +92,10 @@ void GetRemindResult::parse(const std::string &payload)
 	for (auto dataNodeBaselinesBaselinesItem : allBaselinesNode)
 	{
 		Data::BaselinesItem baselinesItemObject;
-		if(!dataNodeBaselinesBaselinesItem["BaselineId"].isNull())
-			baselinesItemObject.baselineId = std::stol(dataNodeBaselinesBaselinesItem["BaselineId"].asString());
 		if(!dataNodeBaselinesBaselinesItem["BaselineName"].isNull())
 			baselinesItemObject.baselineName = dataNodeBaselinesBaselinesItem["BaselineName"].asString();
+		if(!dataNodeBaselinesBaselinesItem["BaselineId"].isNull())
+			baselinesItemObject.baselineId = std::stol(dataNodeBaselinesBaselinesItem["BaselineId"].asString());
 		data_.baselines.push_back(baselinesItemObject);
 	}
 	auto allProjectsNode = dataNode["Projects"]["ProjectsItem"];
@@ -110,26 +110,26 @@ void GetRemindResult::parse(const std::string &payload)
 	for (auto dataNodeBizProcessesBizProcessesItem : allBizProcessesNode)
 	{
 		Data::BizProcessesItem bizProcessesItemObject;
-		if(!dataNodeBizProcessesBizProcessesItem["BizId"].isNull())
-			bizProcessesItemObject.bizId = std::stol(dataNodeBizProcessesBizProcessesItem["BizId"].asString());
 		if(!dataNodeBizProcessesBizProcessesItem["BizProcessName"].isNull())
 			bizProcessesItemObject.bizProcessName = dataNodeBizProcessesBizProcessesItem["BizProcessName"].asString();
+		if(!dataNodeBizProcessesBizProcessesItem["BizId"].isNull())
+			bizProcessesItemObject.bizId = std::stol(dataNodeBizProcessesBizProcessesItem["BizId"].asString());
 		data_.bizProcesses.push_back(bizProcessesItemObject);
 	}
-		auto allAlertMethods = dataNode["AlertMethods"]["AlertMethods"];
-		for (auto value : allAlertMethods)
-			data_.alertMethods.push_back(value.asString());
 		auto allAlertTargets = dataNode["AlertTargets"]["AlertTargets"];
 		for (auto value : allAlertTargets)
 			data_.alertTargets.push_back(value.asString());
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
+		auto allAlertMethods = dataNode["AlertMethods"]["AlertMethods"];
+		for (auto value : allAlertMethods)
+			data_.alertMethods.push_back(value.asString());
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

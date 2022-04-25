@@ -46,20 +46,20 @@ void TopTenElapsedTimeInstanceResult::parse(const std::string &payload)
 	for (auto instanceConsumeTimeRankNodeConsumeTimeRankConsumeTimeRankItem : allConsumeTimeRankNode)
 	{
 		InstanceConsumeTimeRank::ConsumeTimeRankItem consumeTimeRankItemObject;
-		if(!instanceConsumeTimeRankNodeConsumeTimeRankConsumeTimeRankItem["NodeName"].isNull())
-			consumeTimeRankItemObject.nodeName = instanceConsumeTimeRankNodeConsumeTimeRankConsumeTimeRankItem["NodeName"].asString();
-		if(!instanceConsumeTimeRankNodeConsumeTimeRankConsumeTimeRankItem["NodeId"].isNull())
-			consumeTimeRankItemObject.nodeId = std::stol(instanceConsumeTimeRankNodeConsumeTimeRankConsumeTimeRankItem["NodeId"].asString());
-		if(!instanceConsumeTimeRankNodeConsumeTimeRankConsumeTimeRankItem["BusinessDate"].isNull())
-			consumeTimeRankItemObject.businessDate = std::stol(instanceConsumeTimeRankNodeConsumeTimeRankConsumeTimeRankItem["BusinessDate"].asString());
 		if(!instanceConsumeTimeRankNodeConsumeTimeRankConsumeTimeRankItem["Owner"].isNull())
 			consumeTimeRankItemObject.owner = instanceConsumeTimeRankNodeConsumeTimeRankConsumeTimeRankItem["Owner"].asString();
-		if(!instanceConsumeTimeRankNodeConsumeTimeRankConsumeTimeRankItem["Consumed"].isNull())
-			consumeTimeRankItemObject.consumed = std::stol(instanceConsumeTimeRankNodeConsumeTimeRankConsumeTimeRankItem["Consumed"].asString());
-		if(!instanceConsumeTimeRankNodeConsumeTimeRankConsumeTimeRankItem["InstanceId"].isNull())
-			consumeTimeRankItemObject.instanceId = std::stol(instanceConsumeTimeRankNodeConsumeTimeRankConsumeTimeRankItem["InstanceId"].asString());
+		if(!instanceConsumeTimeRankNodeConsumeTimeRankConsumeTimeRankItem["NodeName"].isNull())
+			consumeTimeRankItemObject.nodeName = instanceConsumeTimeRankNodeConsumeTimeRankConsumeTimeRankItem["NodeName"].asString();
+		if(!instanceConsumeTimeRankNodeConsumeTimeRankConsumeTimeRankItem["BusinessDate"].isNull())
+			consumeTimeRankItemObject.businessDate = std::stol(instanceConsumeTimeRankNodeConsumeTimeRankConsumeTimeRankItem["BusinessDate"].asString());
 		if(!instanceConsumeTimeRankNodeConsumeTimeRankConsumeTimeRankItem["ProgramType"].isNull())
 			consumeTimeRankItemObject.programType = std::stoi(instanceConsumeTimeRankNodeConsumeTimeRankConsumeTimeRankItem["ProgramType"].asString());
+		if(!instanceConsumeTimeRankNodeConsumeTimeRankConsumeTimeRankItem["InstanceId"].isNull())
+			consumeTimeRankItemObject.instanceId = std::stol(instanceConsumeTimeRankNodeConsumeTimeRankConsumeTimeRankItem["InstanceId"].asString());
+		if(!instanceConsumeTimeRankNodeConsumeTimeRankConsumeTimeRankItem["NodeId"].isNull())
+			consumeTimeRankItemObject.nodeId = std::stol(instanceConsumeTimeRankNodeConsumeTimeRankConsumeTimeRankItem["NodeId"].asString());
+		if(!instanceConsumeTimeRankNodeConsumeTimeRankConsumeTimeRankItem["Consumed"].isNull())
+			consumeTimeRankItemObject.consumed = std::stol(instanceConsumeTimeRankNodeConsumeTimeRankConsumeTimeRankItem["Consumed"].asString());
 		instanceConsumeTimeRank_.consumeTimeRank.push_back(consumeTimeRankItemObject);
 	}
 

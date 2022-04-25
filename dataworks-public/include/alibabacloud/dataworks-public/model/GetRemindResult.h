@@ -67,8 +67,8 @@ namespace AlibabaCloud
 					std::string alertUnit;
 					std::vector<std::string> alertMethods;
 					std::vector<ProjectsItem> projects;
-					std::string remindType;
 					std::string founder;
+					std::string remindType;
 					std::vector<NodesItem> nodes;
 					std::vector<BaselinesItem> baselines;
 					long remindId;
@@ -77,8 +77,8 @@ namespace AlibabaCloud
 					bool useflag;
 					std::vector<RobotsItem> robots;
 					std::string detail;
-					std::string remindName;
 					int maxAlertTimes;
+					std::string remindName;
 				};
 
 

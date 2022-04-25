@@ -40,12 +40,12 @@ void GetDataSourceMetaResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["Meta"].isNull())
-		data_.meta = dataNode["Meta"].asString();
 	if(!dataNode["Status"].isNull())
 		data_.status = dataNode["Status"].asString();
 	if(!dataNode["Message"].isNull())
 		data_.message = dataNode["Message"].asString();
+	if(!dataNode["Meta"].isNull())
+		data_.meta = dataNode["Meta"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 

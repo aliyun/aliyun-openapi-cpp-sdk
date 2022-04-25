@@ -82,6 +82,17 @@ void CreateFileRequest::setResourceGroupId(long resourceGroupId)
 	setBodyParameter("ResourceGroupId", std::to_string(resourceGroupId));
 }
 
+bool CreateFileRequest::getStartImmediately()const
+{
+	return startImmediately_;
+}
+
+void CreateFileRequest::setStartImmediately(bool startImmediately)
+{
+	startImmediately_ = startImmediately;
+	setBodyParameter("StartImmediately", startImmediately ? "true" : "false");
+}
+
 long CreateFileRequest::getProjectId()const
 {
 	return projectId_;
@@ -91,6 +102,17 @@ void CreateFileRequest::setProjectId(long projectId)
 {
 	projectId_ = projectId;
 	setBodyParameter("ProjectId", std::to_string(projectId));
+}
+
+std::string CreateFileRequest::getAdvancedSettings()const
+{
+	return advancedSettings_;
+}
+
+void CreateFileRequest::setAdvancedSettings(const std::string& advancedSettings)
+{
+	advancedSettings_ = advancedSettings;
+	setBodyParameter("AdvancedSettings", advancedSettings);
 }
 
 long CreateFileRequest::getStartEffectDate()const
@@ -170,6 +192,17 @@ void CreateFileRequest::setConnectionName(const std::string& connectionName)
 	setBodyParameter("ConnectionName", connectionName);
 }
 
+std::string CreateFileRequest::getOutputParameters()const
+{
+	return outputParameters_;
+}
+
+void CreateFileRequest::setOutputParameters(const std::string& outputParameters)
+{
+	outputParameters_ = outputParameters;
+	setBodyParameter("OutputParameters", outputParameters);
+}
+
 std::string CreateFileRequest::getParaValue()const
 {
 	return paraValue_;
@@ -234,6 +267,17 @@ void CreateFileRequest::setFileName(const std::string& fileName)
 {
 	fileName_ = fileName;
 	setBodyParameter("FileName", fileName);
+}
+
+std::string CreateFileRequest::getInputParameters()const
+{
+	return inputParameters_;
+}
+
+void CreateFileRequest::setInputParameters(const std::string& inputParameters)
+{
+	inputParameters_ = inputParameters;
+	setBodyParameter("InputParameters", inputParameters);
 }
 
 bool CreateFileRequest::getStop()const

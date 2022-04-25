@@ -36,13 +36,13 @@ namespace AlibabaCloud
 				{
 					struct TopicsItem
 					{
-						std::string topicType;
 						long fixTime;
+						std::string topicType;
 						std::string nodeOwner;
 						long instanceId;
 						std::string nodeName;
-						long nodeId;
 						long projectId;
+						long nodeId;
 						long topicId;
 						std::string topicStatus;
 						long addTime;

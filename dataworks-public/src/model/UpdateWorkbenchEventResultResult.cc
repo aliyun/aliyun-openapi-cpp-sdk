@@ -14,45 +14,37 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/dataworks-public/model/SetConnectionShareResult.h>
+#include <alibabacloud/dataworks-public/model/UpdateWorkbenchEventResultResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Dataworks_public;
 using namespace AlibabaCloud::Dataworks_public::Model;
 
-SetConnectionShareResult::SetConnectionShareResult() :
+UpdateWorkbenchEventResultResult::UpdateWorkbenchEventResultResult() :
 	ServiceResult()
 {}
 
-SetConnectionShareResult::SetConnectionShareResult(const std::string &payload) :
+UpdateWorkbenchEventResultResult::UpdateWorkbenchEventResultResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-SetConnectionShareResult::~SetConnectionShareResult()
+UpdateWorkbenchEventResultResult::~UpdateWorkbenchEventResultResult()
 {}
 
-void SetConnectionShareResult::parse(const std::string &payload)
+void UpdateWorkbenchEventResultResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto dataNode = value["Data"];
-	if(!dataNode["Status"].isNull())
-		data_.status = dataNode["Status"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 
 }
 
-SetConnectionShareResult::Data SetConnectionShareResult::getData()const
-{
-	return data_;
-}
-
-bool SetConnectionShareResult::getSuccess()const
+bool UpdateWorkbenchEventResultResult::getSuccess()const
 {
 	return success_;
 }

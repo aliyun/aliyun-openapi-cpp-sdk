@@ -40,8 +40,8 @@ namespace AlibabaCloud
 				int getHttpStatusCode()const;
 				std::string getErrorCode()const;
 				std::string getErrorMessage()const;
-				bool getSuccess()const;
 				bool getUpdateResult()const;
+				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -49,8 +49,8 @@ namespace AlibabaCloud
 				int httpStatusCode_;
 				std::string errorCode_;
 				std::string errorMessage_;
-				bool success_;
 				bool updateResult_;
+				bool success_;
 
 			};
 		}

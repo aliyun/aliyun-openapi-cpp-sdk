@@ -35,11 +35,11 @@ namespace AlibabaCloud
 				struct StatusCount
 				{
 					int totalCount;
-					int runningCount;
 					int failureCount;
+					int runningCount;
 					int waitResCount;
-					int notRunCount;
 					int successCount;
+					int notRunCount;
 					int waitTimeCount;
 				};
 

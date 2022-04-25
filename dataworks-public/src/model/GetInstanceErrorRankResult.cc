@@ -46,16 +46,16 @@ void GetInstanceErrorRankResult::parse(const std::string &payload)
 	for (auto instanceErrorRankNodeErrorRankErrorRankItem : allErrorRankNode)
 	{
 		InstanceErrorRank::ErrorRankItem errorRankItemObject;
-		if(!instanceErrorRankNodeErrorRankErrorRankItem["NodeId"].isNull())
-			errorRankItemObject.nodeId = std::stol(instanceErrorRankNodeErrorRankErrorRankItem["NodeId"].asString());
-		if(!instanceErrorRankNodeErrorRankErrorRankItem["NodeName"].isNull())
-			errorRankItemObject.nodeName = instanceErrorRankNodeErrorRankErrorRankItem["NodeName"].asString();
 		if(!instanceErrorRankNodeErrorRankErrorRankItem["Owner"].isNull())
 			errorRankItemObject.owner = instanceErrorRankNodeErrorRankErrorRankItem["Owner"].asString();
-		if(!instanceErrorRankNodeErrorRankErrorRankItem["Count"].isNull())
-			errorRankItemObject.count = std::stoi(instanceErrorRankNodeErrorRankErrorRankItem["Count"].asString());
+		if(!instanceErrorRankNodeErrorRankErrorRankItem["NodeName"].isNull())
+			errorRankItemObject.nodeName = instanceErrorRankNodeErrorRankErrorRankItem["NodeName"].asString();
 		if(!instanceErrorRankNodeErrorRankErrorRankItem["ProjectId"].isNull())
 			errorRankItemObject.projectId = std::stol(instanceErrorRankNodeErrorRankErrorRankItem["ProjectId"].asString());
+		if(!instanceErrorRankNodeErrorRankErrorRankItem["NodeId"].isNull())
+			errorRankItemObject.nodeId = std::stol(instanceErrorRankNodeErrorRankErrorRankItem["NodeId"].asString());
+		if(!instanceErrorRankNodeErrorRankErrorRankItem["Count"].isNull())
+			errorRankItemObject.count = std::stoi(instanceErrorRankNodeErrorRankErrorRankItem["Count"].asString());
 		if(!instanceErrorRankNodeErrorRankErrorRankItem["PrgType"].isNull())
 			errorRankItemObject.prgType = std::stoi(instanceErrorRankNodeErrorRankErrorRankItem["PrgType"].asString());
 		instanceErrorRank_.errorRank.push_back(errorRankItemObject);

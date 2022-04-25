@@ -29,18 +29,12 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/AddToMetaCategoryResult.h
 	include/alibabacloud/dataworks-public/model/ApprovePermissionApplyOrderRequest.h
 	include/alibabacloud/dataworks-public/model/ApprovePermissionApplyOrderResult.h
-	include/alibabacloud/dataworks-public/model/CheckEngineMetaPartitionRequest.h
-	include/alibabacloud/dataworks-public/model/CheckEngineMetaPartitionResult.h
-	include/alibabacloud/dataworks-public/model/CheckEngineMetaTableRequest.h
-	include/alibabacloud/dataworks-public/model/CheckEngineMetaTableResult.h
 	include/alibabacloud/dataworks-public/model/CheckFileDeploymentRequest.h
 	include/alibabacloud/dataworks-public/model/CheckFileDeploymentResult.h
 	include/alibabacloud/dataworks-public/model/CheckMetaPartitionRequest.h
 	include/alibabacloud/dataworks-public/model/CheckMetaPartitionResult.h
 	include/alibabacloud/dataworks-public/model/CheckMetaTableRequest.h
 	include/alibabacloud/dataworks-public/model/CheckMetaTableResult.h
-	include/alibabacloud/dataworks-public/model/CheckMetaTableTaskRequest.h
-	include/alibabacloud/dataworks-public/model/CheckMetaTableTaskResult.h
 	include/alibabacloud/dataworks-public/model/CreateBusinessRequest.h
 	include/alibabacloud/dataworks-public/model/CreateBusinessResult.h
 	include/alibabacloud/dataworks-public/model/CreateConnectionRequest.h
@@ -95,8 +89,6 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/CreateTableThemeResult.h
 	include/alibabacloud/dataworks-public/model/CreateUdfFileRequest.h
 	include/alibabacloud/dataworks-public/model/CreateUdfFileResult.h
-	include/alibabacloud/dataworks-public/model/CreateViewRequest.h
-	include/alibabacloud/dataworks-public/model/CreateViewResult.h
 	include/alibabacloud/dataworks-public/model/DeleteBusinessRequest.h
 	include/alibabacloud/dataworks-public/model/DeleteBusinessResult.h
 	include/alibabacloud/dataworks-public/model/DeleteConnectionRequest.h
@@ -135,8 +127,6 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/DeleteTableLevelResult.h
 	include/alibabacloud/dataworks-public/model/DeleteTableThemeRequest.h
 	include/alibabacloud/dataworks-public/model/DeleteTableThemeResult.h
-	include/alibabacloud/dataworks-public/model/DeleteViewRequest.h
-	include/alibabacloud/dataworks-public/model/DeleteViewResult.h
 	include/alibabacloud/dataworks-public/model/DeployDISyncTaskRequest.h
 	include/alibabacloud/dataworks-public/model/DeployDISyncTaskResult.h
 	include/alibabacloud/dataworks-public/model/DeployFileRequest.h
@@ -145,10 +135,6 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/DesensitizeDataResult.h
 	include/alibabacloud/dataworks-public/model/EstablishRelationTableToBusinessRequest.h
 	include/alibabacloud/dataworks-public/model/EstablishRelationTableToBusinessResult.h
-	include/alibabacloud/dataworks-public/model/ExportConnectionsRequest.h
-	include/alibabacloud/dataworks-public/model/ExportConnectionsResult.h
-	include/alibabacloud/dataworks-public/model/ExportDISyncTasksRequest.h
-	include/alibabacloud/dataworks-public/model/ExportDISyncTasksResult.h
 	include/alibabacloud/dataworks-public/model/ExportDataSourcesRequest.h
 	include/alibabacloud/dataworks-public/model/ExportDataSourcesResult.h
 	include/alibabacloud/dataworks-public/model/GenerateDISyncTaskConfigForCreatingRequest.h
@@ -163,8 +149,6 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/GetBaselineStatusResult.h
 	include/alibabacloud/dataworks-public/model/GetBusinessRequest.h
 	include/alibabacloud/dataworks-public/model/GetBusinessResult.h
-	include/alibabacloud/dataworks-public/model/GetConnectionMetaRequest.h
-	include/alibabacloud/dataworks-public/model/GetConnectionMetaResult.h
 	include/alibabacloud/dataworks-public/model/GetDDLJobStatusRequest.h
 	include/alibabacloud/dataworks-public/model/GetDDLJobStatusResult.h
 	include/alibabacloud/dataworks-public/model/GetDISyncInstanceInfoRequest.h
@@ -285,10 +269,6 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/GetTopicResult.h
 	include/alibabacloud/dataworks-public/model/GetTopicInfluenceRequest.h
 	include/alibabacloud/dataworks-public/model/GetTopicInfluenceResult.h
-	include/alibabacloud/dataworks-public/model/ImportConnectionsRequest.h
-	include/alibabacloud/dataworks-public/model/ImportConnectionsResult.h
-	include/alibabacloud/dataworks-public/model/ImportDISyncTasksRequest.h
-	include/alibabacloud/dataworks-public/model/ImportDISyncTasksResult.h
 	include/alibabacloud/dataworks-public/model/ImportDataSourcesRequest.h
 	include/alibabacloud/dataworks-public/model/ImportDataSourcesResult.h
 	include/alibabacloud/dataworks-public/model/ListAlertMessagesRequest.h
@@ -305,8 +285,6 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/ListConnectionsResult.h
 	include/alibabacloud/dataworks-public/model/ListDIProjectConfigRequest.h
 	include/alibabacloud/dataworks-public/model/ListDIProjectConfigResult.h
-	include/alibabacloud/dataworks-public/model/ListDISyncTasksRequest.h
-	include/alibabacloud/dataworks-public/model/ListDISyncTasksResult.h
 	include/alibabacloud/dataworks-public/model/ListDagsRequest.h
 	include/alibabacloud/dataworks-public/model/ListDagsResult.h
 	include/alibabacloud/dataworks-public/model/ListDataServiceApiAuthoritiesRequest.h
@@ -415,8 +393,6 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/SearchMetaTablesResult.h
 	include/alibabacloud/dataworks-public/model/SearchNodesByOutputRequest.h
 	include/alibabacloud/dataworks-public/model/SearchNodesByOutputResult.h
-	include/alibabacloud/dataworks-public/model/SetConnectionShareRequest.h
-	include/alibabacloud/dataworks-public/model/SetConnectionShareResult.h
 	include/alibabacloud/dataworks-public/model/SetDataSourceShareRequest.h
 	include/alibabacloud/dataworks-public/model/SetDataSourceShareResult.h
 	include/alibabacloud/dataworks-public/model/SetSuccessInstanceRequest.h
@@ -486,7 +462,9 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/UpdateTableThemeRequest.h
 	include/alibabacloud/dataworks-public/model/UpdateTableThemeResult.h
 	include/alibabacloud/dataworks-public/model/UpdateUdfFileRequest.h
-	include/alibabacloud/dataworks-public/model/UpdateUdfFileResult.h )
+	include/alibabacloud/dataworks-public/model/UpdateUdfFileResult.h
+	include/alibabacloud/dataworks-public/model/UpdateWorkbenchEventResultRequest.h
+	include/alibabacloud/dataworks-public/model/UpdateWorkbenchEventResultResult.h )
 
 set(dataworks-public_src 
 	src/Dataworks-publicClient.cc
@@ -498,18 +476,12 @@ set(dataworks-public_src
 	src/model/AddToMetaCategoryResult.cc
 	src/model/ApprovePermissionApplyOrderRequest.cc
 	src/model/ApprovePermissionApplyOrderResult.cc
-	src/model/CheckEngineMetaPartitionRequest.cc
-	src/model/CheckEngineMetaPartitionResult.cc
-	src/model/CheckEngineMetaTableRequest.cc
-	src/model/CheckEngineMetaTableResult.cc
 	src/model/CheckFileDeploymentRequest.cc
 	src/model/CheckFileDeploymentResult.cc
 	src/model/CheckMetaPartitionRequest.cc
 	src/model/CheckMetaPartitionResult.cc
 	src/model/CheckMetaTableRequest.cc
 	src/model/CheckMetaTableResult.cc
-	src/model/CheckMetaTableTaskRequest.cc
-	src/model/CheckMetaTableTaskResult.cc
 	src/model/CreateBusinessRequest.cc
 	src/model/CreateBusinessResult.cc
 	src/model/CreateConnectionRequest.cc
@@ -564,8 +536,6 @@ set(dataworks-public_src
 	src/model/CreateTableThemeResult.cc
 	src/model/CreateUdfFileRequest.cc
 	src/model/CreateUdfFileResult.cc
-	src/model/CreateViewRequest.cc
-	src/model/CreateViewResult.cc
 	src/model/DeleteBusinessRequest.cc
 	src/model/DeleteBusinessResult.cc
 	src/model/DeleteConnectionRequest.cc
@@ -604,8 +574,6 @@ set(dataworks-public_src
 	src/model/DeleteTableLevelResult.cc
 	src/model/DeleteTableThemeRequest.cc
 	src/model/DeleteTableThemeResult.cc
-	src/model/DeleteViewRequest.cc
-	src/model/DeleteViewResult.cc
 	src/model/DeployDISyncTaskRequest.cc
 	src/model/DeployDISyncTaskResult.cc
 	src/model/DeployFileRequest.cc
@@ -614,10 +582,6 @@ set(dataworks-public_src
 	src/model/DesensitizeDataResult.cc
 	src/model/EstablishRelationTableToBusinessRequest.cc
 	src/model/EstablishRelationTableToBusinessResult.cc
-	src/model/ExportConnectionsRequest.cc
-	src/model/ExportConnectionsResult.cc
-	src/model/ExportDISyncTasksRequest.cc
-	src/model/ExportDISyncTasksResult.cc
 	src/model/ExportDataSourcesRequest.cc
 	src/model/ExportDataSourcesResult.cc
 	src/model/GenerateDISyncTaskConfigForCreatingRequest.cc
@@ -632,8 +596,6 @@ set(dataworks-public_src
 	src/model/GetBaselineStatusResult.cc
 	src/model/GetBusinessRequest.cc
 	src/model/GetBusinessResult.cc
-	src/model/GetConnectionMetaRequest.cc
-	src/model/GetConnectionMetaResult.cc
 	src/model/GetDDLJobStatusRequest.cc
 	src/model/GetDDLJobStatusResult.cc
 	src/model/GetDISyncInstanceInfoRequest.cc
@@ -754,10 +716,6 @@ set(dataworks-public_src
 	src/model/GetTopicResult.cc
 	src/model/GetTopicInfluenceRequest.cc
 	src/model/GetTopicInfluenceResult.cc
-	src/model/ImportConnectionsRequest.cc
-	src/model/ImportConnectionsResult.cc
-	src/model/ImportDISyncTasksRequest.cc
-	src/model/ImportDISyncTasksResult.cc
 	src/model/ImportDataSourcesRequest.cc
 	src/model/ImportDataSourcesResult.cc
 	src/model/ListAlertMessagesRequest.cc
@@ -774,8 +732,6 @@ set(dataworks-public_src
 	src/model/ListConnectionsResult.cc
 	src/model/ListDIProjectConfigRequest.cc
 	src/model/ListDIProjectConfigResult.cc
-	src/model/ListDISyncTasksRequest.cc
-	src/model/ListDISyncTasksResult.cc
 	src/model/ListDagsRequest.cc
 	src/model/ListDagsResult.cc
 	src/model/ListDataServiceApiAuthoritiesRequest.cc
@@ -884,8 +840,6 @@ set(dataworks-public_src
 	src/model/SearchMetaTablesResult.cc
 	src/model/SearchNodesByOutputRequest.cc
 	src/model/SearchNodesByOutputResult.cc
-	src/model/SetConnectionShareRequest.cc
-	src/model/SetConnectionShareResult.cc
 	src/model/SetDataSourceShareRequest.cc
 	src/model/SetDataSourceShareResult.cc
 	src/model/SetSuccessInstanceRequest.cc
@@ -955,7 +909,9 @@ set(dataworks-public_src
 	src/model/UpdateTableThemeRequest.cc
 	src/model/UpdateTableThemeResult.cc
 	src/model/UpdateUdfFileRequest.cc
-	src/model/UpdateUdfFileResult.cc )
+	src/model/UpdateUdfFileResult.cc
+	src/model/UpdateWorkbenchEventResultRequest.cc
+	src/model/UpdateWorkbenchEventResultResult.cc )
 
 add_library(dataworks-public ${LIB_TYPE}
 	${dataworks-public_public_header}

@@ -43,20 +43,20 @@ void GetMigrationProcessResult::parse(const std::string &payload)
 	for (auto valueDataProgressTaskItem : allDataNode)
 	{
 		ProgressTaskItem dataObject;
-		if(!valueDataProgressTaskItem["TaskName"].isNull())
-			dataObject.taskName = valueDataProgressTaskItem["TaskName"].asString();
 		if(!valueDataProgressTaskItem["TaskStatus"].isNull())
 			dataObject.taskStatus = valueDataProgressTaskItem["TaskStatus"].asString();
+		if(!valueDataProgressTaskItem["TaskName"].isNull())
+			dataObject.taskName = valueDataProgressTaskItem["TaskName"].asString();
 		data_.push_back(dataObject);
 	}
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
 
 }
 

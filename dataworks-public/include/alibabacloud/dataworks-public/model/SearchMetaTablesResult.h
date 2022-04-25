@@ -43,8 +43,8 @@ namespace AlibabaCloud
 						std::string ownerId;
 						std::string projectName;
 						std::string clusterId;
-						long projectId;
 						std::string databaseName;
+						long projectId;
 						int envType;
 					};
 					long totalCount;

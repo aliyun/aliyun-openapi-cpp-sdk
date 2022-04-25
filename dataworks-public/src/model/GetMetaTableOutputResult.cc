@@ -50,30 +50,30 @@ void GetMetaTableOutputResult::parse(const std::string &payload)
 	for (auto dataNodeDataEntityListDataEntityListItem : allDataEntityListNode)
 	{
 		Data::DataEntityListItem dataEntityListItemObject;
+		if(!dataNodeDataEntityListDataEntityListItem["EndTime"].isNull())
+			dataEntityListItemObject.endTime = dataNodeDataEntityListDataEntityListItem["EndTime"].asString();
+		if(!dataNodeDataEntityListDataEntityListItem["TaskInstanceId"].isNull())
+			dataEntityListItemObject.taskInstanceId = std::stol(dataNodeDataEntityListDataEntityListItem["TaskInstanceId"].asString());
+		if(!dataNodeDataEntityListDataEntityListItem["StartTime"].isNull())
+			dataEntityListItemObject.startTime = dataNodeDataEntityListDataEntityListItem["StartTime"].asString();
+		if(!dataNodeDataEntityListDataEntityListItem["ProjectId"].isNull())
+			dataEntityListItemObject.projectId = std::stol(dataNodeDataEntityListDataEntityListItem["ProjectId"].asString());
+		if(!dataNodeDataEntityListDataEntityListItem["WaitTime"].isNull())
+			dataEntityListItemObject.waitTime = dataNodeDataEntityListDataEntityListItem["WaitTime"].asString();
 		if(!dataNodeDataEntityListDataEntityListItem["TableGuid"].isNull())
 			dataEntityListItemObject.tableGuid = dataNodeDataEntityListDataEntityListItem["TableGuid"].asString();
 		if(!dataNodeDataEntityListDataEntityListItem["TaskId"].isNull())
 			dataEntityListItemObject.taskId = dataNodeDataEntityListDataEntityListItem["TaskId"].asString();
-		if(!dataNodeDataEntityListDataEntityListItem["StartTime"].isNull())
-			dataEntityListItemObject.startTime = dataNodeDataEntityListDataEntityListItem["StartTime"].asString();
-		if(!dataNodeDataEntityListDataEntityListItem["EndTime"].isNull())
-			dataEntityListItemObject.endTime = dataNodeDataEntityListDataEntityListItem["EndTime"].asString();
-		if(!dataNodeDataEntityListDataEntityListItem["WaitTime"].isNull())
-			dataEntityListItemObject.waitTime = dataNodeDataEntityListDataEntityListItem["WaitTime"].asString();
-		if(!dataNodeDataEntityListDataEntityListItem["ProjectId"].isNull())
-			dataEntityListItemObject.projectId = std::stol(dataNodeDataEntityListDataEntityListItem["ProjectId"].asString());
-		if(!dataNodeDataEntityListDataEntityListItem["TaskInstanceId"].isNull())
-			dataEntityListItemObject.taskInstanceId = std::stol(dataNodeDataEntityListDataEntityListItem["TaskInstanceId"].asString());
 		data_.dataEntityList.push_back(dataEntityListItemObject);
 	}
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
 
 }
 

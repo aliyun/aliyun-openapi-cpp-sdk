@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_DELETEVIEWREQUEST_H_
-#define ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_DELETEVIEWREQUEST_H_
+#ifndef ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_UPDATEWORKBENCHEVENTRESULTRESULT_H_
+#define ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_UPDATEWORKBENCHEVENTRESULTRESULT_H_
 
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
+#include <utility>
+#include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/dataworks-public/Dataworks_publicExport.h>
 
 namespace AlibabaCloud
@@ -28,24 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT DeleteViewRequest : public RpcServiceRequest
+			class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT UpdateWorkbenchEventResultResult : public ServiceResult
 			{
-
 			public:
-				DeleteViewRequest();
-				~DeleteViewRequest();
 
-				std::string getViewName()const;
-				void setViewName(const std::string& viewName);
-				std::string getAppGuid()const;
-				void setAppGuid(const std::string& appGuid);
 
-            private:
-				std::string viewName_;
-				std::string appGuid_;
+				UpdateWorkbenchEventResultResult();
+				explicit UpdateWorkbenchEventResultResult(const std::string &payload);
+				~UpdateWorkbenchEventResultResult();
+				bool getSuccess()const;
+
+			protected:
+				void parse(const std::string &payload);
+			private:
+				bool success_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_DELETEVIEWREQUEST_H_
+#endif // !ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_UPDATEWORKBENCHEVENTRESULTRESULT_H_

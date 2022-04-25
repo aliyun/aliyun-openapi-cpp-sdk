@@ -69,6 +69,8 @@ namespace AlibabaCloud
 				void setWhereCondition(const std::string& whereCondition);
 				std::string getCriticalThreshold()const;
 				void setCriticalThreshold(const std::string& criticalThreshold);
+				bool getOpenSwitch()const;
+				void setOpenSwitch(bool openSwitch);
 				std::string getComment()const;
 				void setComment(const std::string& comment);
 				int getPredictType()const;
@@ -92,6 +94,7 @@ namespace AlibabaCloud
 				std::string expectValue_;
 				std::string whereCondition_;
 				std::string criticalThreshold_;
+				bool openSwitch_;
 				std::string comment_;
 				int predictType_;
 

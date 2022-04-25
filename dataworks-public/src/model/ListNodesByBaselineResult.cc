@@ -43,24 +43,24 @@ void ListNodesByBaselineResult::parse(const std::string &payload)
 	for (auto valueDataDataItem : allDataNode)
 	{
 		DataItem dataObject;
-		if(!valueDataDataItem["NodeId"].isNull())
-			dataObject.nodeId = std::stol(valueDataDataItem["NodeId"].asString());
-		if(!valueDataDataItem["NodeName"].isNull())
-			dataObject.nodeName = valueDataDataItem["NodeName"].asString();
 		if(!valueDataDataItem["Owner"].isNull())
 			dataObject.owner = valueDataDataItem["Owner"].asString();
+		if(!valueDataDataItem["NodeName"].isNull())
+			dataObject.nodeName = valueDataDataItem["NodeName"].asString();
+		if(!valueDataDataItem["NodeId"].isNull())
+			dataObject.nodeId = std::stol(valueDataDataItem["NodeId"].asString());
 		if(!valueDataDataItem["ProjectId"].isNull())
 			dataObject.projectId = std::stol(valueDataDataItem["ProjectId"].asString());
 		data_.push_back(dataObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString();
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString();
 
 }
 

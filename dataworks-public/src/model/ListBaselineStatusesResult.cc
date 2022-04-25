@@ -50,44 +50,44 @@ void ListBaselineStatusesResult::parse(const std::string &payload)
 	for (auto dataNodeBaselineStatusesBaselineStatusesItem : allBaselineStatusesNode)
 	{
 		Data::BaselineStatusesItem baselineStatusesItemObject;
+		if(!dataNodeBaselineStatusesBaselineStatusesItem["Status"].isNull())
+			baselineStatusesItemObject.status = dataNodeBaselineStatusesBaselineStatusesItem["Status"].asString();
+		if(!dataNodeBaselineStatusesBaselineStatusesItem["Owner"].isNull())
+			baselineStatusesItemObject.owner = dataNodeBaselineStatusesBaselineStatusesItem["Owner"].asString();
+		if(!dataNodeBaselineStatusesBaselineStatusesItem["FinishTime"].isNull())
+			baselineStatusesItemObject.finishTime = std::stol(dataNodeBaselineStatusesBaselineStatusesItem["FinishTime"].asString());
+		if(!dataNodeBaselineStatusesBaselineStatusesItem["ProjectId"].isNull())
+			baselineStatusesItemObject.projectId = std::stol(dataNodeBaselineStatusesBaselineStatusesItem["ProjectId"].asString());
+		if(!dataNodeBaselineStatusesBaselineStatusesItem["Priority"].isNull())
+			baselineStatusesItemObject.priority = std::stoi(dataNodeBaselineStatusesBaselineStatusesItem["Priority"].asString());
+		if(!dataNodeBaselineStatusesBaselineStatusesItem["EndCast"].isNull())
+			baselineStatusesItemObject.endCast = std::stol(dataNodeBaselineStatusesBaselineStatusesItem["EndCast"].asString());
+		if(!dataNodeBaselineStatusesBaselineStatusesItem["InGroupId"].isNull())
+			baselineStatusesItemObject.inGroupId = std::stoi(dataNodeBaselineStatusesBaselineStatusesItem["InGroupId"].asString());
 		if(!dataNodeBaselineStatusesBaselineStatusesItem["BaselineName"].isNull())
 			baselineStatusesItemObject.baselineName = dataNodeBaselineStatusesBaselineStatusesItem["BaselineName"].asString();
 		if(!dataNodeBaselineStatusesBaselineStatusesItem["BaselineId"].isNull())
 			baselineStatusesItemObject.baselineId = std::stol(dataNodeBaselineStatusesBaselineStatusesItem["BaselineId"].asString());
-		if(!dataNodeBaselineStatusesBaselineStatusesItem["Bizdate"].isNull())
-			baselineStatusesItemObject.bizdate = std::stol(dataNodeBaselineStatusesBaselineStatusesItem["Bizdate"].asString());
-		if(!dataNodeBaselineStatusesBaselineStatusesItem["Owner"].isNull())
-			baselineStatusesItemObject.owner = dataNodeBaselineStatusesBaselineStatusesItem["Owner"].asString();
-		if(!dataNodeBaselineStatusesBaselineStatusesItem["ExpTime"].isNull())
-			baselineStatusesItemObject.expTime = std::stol(dataNodeBaselineStatusesBaselineStatusesItem["ExpTime"].asString());
-		if(!dataNodeBaselineStatusesBaselineStatusesItem["FinishTime"].isNull())
-			baselineStatusesItemObject.finishTime = std::stol(dataNodeBaselineStatusesBaselineStatusesItem["FinishTime"].asString());
-		if(!dataNodeBaselineStatusesBaselineStatusesItem["EndCast"].isNull())
-			baselineStatusesItemObject.endCast = std::stol(dataNodeBaselineStatusesBaselineStatusesItem["EndCast"].asString());
-		if(!dataNodeBaselineStatusesBaselineStatusesItem["SlaTime"].isNull())
-			baselineStatusesItemObject.slaTime = std::stol(dataNodeBaselineStatusesBaselineStatusesItem["SlaTime"].asString());
-		if(!dataNodeBaselineStatusesBaselineStatusesItem["Priority"].isNull())
-			baselineStatusesItemObject.priority = std::stoi(dataNodeBaselineStatusesBaselineStatusesItem["Priority"].asString());
-		if(!dataNodeBaselineStatusesBaselineStatusesItem["ProjectId"].isNull())
-			baselineStatusesItemObject.projectId = std::stol(dataNodeBaselineStatusesBaselineStatusesItem["ProjectId"].asString());
-		if(!dataNodeBaselineStatusesBaselineStatusesItem["Buffer"].isNull())
-			baselineStatusesItemObject.buffer = std::stol(dataNodeBaselineStatusesBaselineStatusesItem["Buffer"].asString());
-		if(!dataNodeBaselineStatusesBaselineStatusesItem["Status"].isNull())
-			baselineStatusesItemObject.status = dataNodeBaselineStatusesBaselineStatusesItem["Status"].asString();
 		if(!dataNodeBaselineStatusesBaselineStatusesItem["FinishStatus"].isNull())
 			baselineStatusesItemObject.finishStatus = dataNodeBaselineStatusesBaselineStatusesItem["FinishStatus"].asString();
-		if(!dataNodeBaselineStatusesBaselineStatusesItem["InGroupId"].isNull())
-			baselineStatusesItemObject.inGroupId = std::stoi(dataNodeBaselineStatusesBaselineStatusesItem["InGroupId"].asString());
+		if(!dataNodeBaselineStatusesBaselineStatusesItem["Bizdate"].isNull())
+			baselineStatusesItemObject.bizdate = std::stol(dataNodeBaselineStatusesBaselineStatusesItem["Bizdate"].asString());
+		if(!dataNodeBaselineStatusesBaselineStatusesItem["Buffer"].isNull())
+			baselineStatusesItemObject.buffer = std::stol(dataNodeBaselineStatusesBaselineStatusesItem["Buffer"].asString());
+		if(!dataNodeBaselineStatusesBaselineStatusesItem["SlaTime"].isNull())
+			baselineStatusesItemObject.slaTime = std::stol(dataNodeBaselineStatusesBaselineStatusesItem["SlaTime"].asString());
+		if(!dataNodeBaselineStatusesBaselineStatusesItem["ExpTime"].isNull())
+			baselineStatusesItemObject.expTime = std::stol(dataNodeBaselineStatusesBaselineStatusesItem["ExpTime"].asString());
 		data_.baselineStatuses.push_back(baselineStatusesItemObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

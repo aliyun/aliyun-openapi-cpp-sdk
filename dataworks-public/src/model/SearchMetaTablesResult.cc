@@ -52,34 +52,34 @@ void SearchMetaTablesResult::parse(const std::string &payload)
 		Data::DataEntityListItem dataEntityListItemObject;
 		if(!dataNodeDataEntityListDataEntityListItem["TableName"].isNull())
 			dataEntityListItemObject.tableName = dataNodeDataEntityListDataEntityListItem["TableName"].asString();
+		if(!dataNodeDataEntityListDataEntityListItem["DatabaseName"].isNull())
+			dataEntityListItemObject.databaseName = dataNodeDataEntityListDataEntityListItem["DatabaseName"].asString();
+		if(!dataNodeDataEntityListDataEntityListItem["EntityType"].isNull())
+			dataEntityListItemObject.entityType = std::stoi(dataNodeDataEntityListDataEntityListItem["EntityType"].asString());
+		if(!dataNodeDataEntityListDataEntityListItem["ProjectName"].isNull())
+			dataEntityListItemObject.projectName = dataNodeDataEntityListDataEntityListItem["ProjectName"].asString();
+		if(!dataNodeDataEntityListDataEntityListItem["ProjectId"].isNull())
+			dataEntityListItemObject.projectId = std::stol(dataNodeDataEntityListDataEntityListItem["ProjectId"].asString());
 		if(!dataNodeDataEntityListDataEntityListItem["TableGuid"].isNull())
 			dataEntityListItemObject.tableGuid = dataNodeDataEntityListDataEntityListItem["TableGuid"].asString();
 		if(!dataNodeDataEntityListDataEntityListItem["OwnerId"].isNull())
 			dataEntityListItemObject.ownerId = dataNodeDataEntityListDataEntityListItem["OwnerId"].asString();
-		if(!dataNodeDataEntityListDataEntityListItem["TenantId"].isNull())
-			dataEntityListItemObject.tenantId = std::stol(dataNodeDataEntityListDataEntityListItem["TenantId"].asString());
-		if(!dataNodeDataEntityListDataEntityListItem["EnvType"].isNull())
-			dataEntityListItemObject.envType = std::stoi(dataNodeDataEntityListDataEntityListItem["EnvType"].asString());
-		if(!dataNodeDataEntityListDataEntityListItem["EntityType"].isNull())
-			dataEntityListItemObject.entityType = std::stoi(dataNodeDataEntityListDataEntityListItem["EntityType"].asString());
-		if(!dataNodeDataEntityListDataEntityListItem["ProjectId"].isNull())
-			dataEntityListItemObject.projectId = std::stol(dataNodeDataEntityListDataEntityListItem["ProjectId"].asString());
-		if(!dataNodeDataEntityListDataEntityListItem["ProjectName"].isNull())
-			dataEntityListItemObject.projectName = dataNodeDataEntityListDataEntityListItem["ProjectName"].asString();
 		if(!dataNodeDataEntityListDataEntityListItem["ClusterId"].isNull())
 			dataEntityListItemObject.clusterId = dataNodeDataEntityListDataEntityListItem["ClusterId"].asString();
-		if(!dataNodeDataEntityListDataEntityListItem["DatabaseName"].isNull())
-			dataEntityListItemObject.databaseName = dataNodeDataEntityListDataEntityListItem["DatabaseName"].asString();
+		if(!dataNodeDataEntityListDataEntityListItem["EnvType"].isNull())
+			dataEntityListItemObject.envType = std::stoi(dataNodeDataEntityListDataEntityListItem["EnvType"].asString());
+		if(!dataNodeDataEntityListDataEntityListItem["TenantId"].isNull())
+			dataEntityListItemObject.tenantId = std::stol(dataNodeDataEntityListDataEntityListItem["TenantId"].asString());
 		data_.dataEntityList.push_back(dataEntityListItemObject);
 	}
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
 
 }
 

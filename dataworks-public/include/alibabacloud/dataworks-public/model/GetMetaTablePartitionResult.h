@@ -37,12 +37,12 @@ namespace AlibabaCloud
 					struct DataEntityListItem
 					{
 						std::string partitionName;
-						std::string partitionGuid;
 						std::string comment;
+						std::string partitionGuid;
 						std::string tableGuid;
 						long modifiedTime;
-						long createTime;
 						long dataSize;
+						long createTime;
 						std::string partitionPath;
 						std::string partitionType;
 						long recordCount;

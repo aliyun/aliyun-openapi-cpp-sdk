@@ -50,38 +50,38 @@ void GetMetaTablePartitionResult::parse(const std::string &payload)
 	for (auto dataNodeDataEntityListDataEntityListItem : allDataEntityListNode)
 	{
 		Data::DataEntityListItem dataEntityListItemObject;
-		if(!dataNodeDataEntityListDataEntityListItem["PartitionGuid"].isNull())
-			dataEntityListItemObject.partitionGuid = dataNodeDataEntityListDataEntityListItem["PartitionGuid"].asString();
-		if(!dataNodeDataEntityListDataEntityListItem["PartitionName"].isNull())
-			dataEntityListItemObject.partitionName = dataNodeDataEntityListDataEntityListItem["PartitionName"].asString();
-		if(!dataNodeDataEntityListDataEntityListItem["CreateTime"].isNull())
-			dataEntityListItemObject.createTime = std::stol(dataNodeDataEntityListDataEntityListItem["CreateTime"].asString());
-		if(!dataNodeDataEntityListDataEntityListItem["DataSize"].isNull())
-			dataEntityListItemObject.dataSize = std::stol(dataNodeDataEntityListDataEntityListItem["DataSize"].asString());
-		if(!dataNodeDataEntityListDataEntityListItem["RecordCount"].isNull())
-			dataEntityListItemObject.recordCount = std::stol(dataNodeDataEntityListDataEntityListItem["RecordCount"].asString());
-		if(!dataNodeDataEntityListDataEntityListItem["ModifiedTime"].isNull())
-			dataEntityListItemObject.modifiedTime = std::stol(dataNodeDataEntityListDataEntityListItem["ModifiedTime"].asString());
-		if(!dataNodeDataEntityListDataEntityListItem["TableGuid"].isNull())
-			dataEntityListItemObject.tableGuid = dataNodeDataEntityListDataEntityListItem["TableGuid"].asString();
-		if(!dataNodeDataEntityListDataEntityListItem["Comment"].isNull())
-			dataEntityListItemObject.comment = dataNodeDataEntityListDataEntityListItem["Comment"].asString();
-		if(!dataNodeDataEntityListDataEntityListItem["PartitionType"].isNull())
-			dataEntityListItemObject.partitionType = dataNodeDataEntityListDataEntityListItem["PartitionType"].asString();
 		if(!dataNodeDataEntityListDataEntityListItem["PartitionPath"].isNull())
 			dataEntityListItemObject.partitionPath = dataNodeDataEntityListDataEntityListItem["PartitionPath"].asString();
+		if(!dataNodeDataEntityListDataEntityListItem["DataSize"].isNull())
+			dataEntityListItemObject.dataSize = std::stol(dataNodeDataEntityListDataEntityListItem["DataSize"].asString());
+		if(!dataNodeDataEntityListDataEntityListItem["PartitionName"].isNull())
+			dataEntityListItemObject.partitionName = dataNodeDataEntityListDataEntityListItem["PartitionName"].asString();
+		if(!dataNodeDataEntityListDataEntityListItem["Comment"].isNull())
+			dataEntityListItemObject.comment = dataNodeDataEntityListDataEntityListItem["Comment"].asString();
+		if(!dataNodeDataEntityListDataEntityListItem["ModifiedTime"].isNull())
+			dataEntityListItemObject.modifiedTime = std::stol(dataNodeDataEntityListDataEntityListItem["ModifiedTime"].asString());
+		if(!dataNodeDataEntityListDataEntityListItem["CreateTime"].isNull())
+			dataEntityListItemObject.createTime = std::stol(dataNodeDataEntityListDataEntityListItem["CreateTime"].asString());
+		if(!dataNodeDataEntityListDataEntityListItem["RecordCount"].isNull())
+			dataEntityListItemObject.recordCount = std::stol(dataNodeDataEntityListDataEntityListItem["RecordCount"].asString());
+		if(!dataNodeDataEntityListDataEntityListItem["PartitionType"].isNull())
+			dataEntityListItemObject.partitionType = dataNodeDataEntityListDataEntityListItem["PartitionType"].asString();
+		if(!dataNodeDataEntityListDataEntityListItem["PartitionGuid"].isNull())
+			dataEntityListItemObject.partitionGuid = dataNodeDataEntityListDataEntityListItem["PartitionGuid"].asString();
 		if(!dataNodeDataEntityListDataEntityListItem["PartitionLocation"].isNull())
 			dataEntityListItemObject.partitionLocation = dataNodeDataEntityListDataEntityListItem["PartitionLocation"].asString();
+		if(!dataNodeDataEntityListDataEntityListItem["TableGuid"].isNull())
+			dataEntityListItemObject.tableGuid = dataNodeDataEntityListDataEntityListItem["TableGuid"].asString();
 		data_.dataEntityList.push_back(dataEntityListItemObject);
 	}
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
 
 }
 

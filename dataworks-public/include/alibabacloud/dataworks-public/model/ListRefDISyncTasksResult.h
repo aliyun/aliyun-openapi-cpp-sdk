@@ -38,8 +38,8 @@ namespace AlibabaCloud
 					{
 						std::string diDestinationDatasource;
 						std::string nodeName;
-						std::string taskType;
 						std::string diSourceDatasource;
+						std::string taskType;
 						long nodeId;
 					};
 					std::vector<DISyncTasksItem> dISyncTasks;

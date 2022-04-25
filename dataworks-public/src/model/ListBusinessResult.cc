@@ -50,28 +50,28 @@ void ListBusinessResult::parse(const std::string &payload)
 	for (auto dataNodeBusinessBusinessItem : allBusinessNode)
 	{
 		Data::BusinessItem businessItemObject;
-		if(!dataNodeBusinessBusinessItem["BusinessId"].isNull())
-			businessItemObject.businessId = std::stol(dataNodeBusinessBusinessItem["BusinessId"].asString());
-		if(!dataNodeBusinessBusinessItem["BusinessName"].isNull())
-			businessItemObject.businessName = dataNodeBusinessBusinessItem["BusinessName"].asString();
-		if(!dataNodeBusinessBusinessItem["ProjectId"].isNull())
-			businessItemObject.projectId = std::stol(dataNodeBusinessBusinessItem["ProjectId"].asString());
 		if(!dataNodeBusinessBusinessItem["Owner"].isNull())
 			businessItemObject.owner = dataNodeBusinessBusinessItem["Owner"].asString();
 		if(!dataNodeBusinessBusinessItem["Description"].isNull())
 			businessItemObject.description = dataNodeBusinessBusinessItem["Description"].asString();
+		if(!dataNodeBusinessBusinessItem["ProjectId"].isNull())
+			businessItemObject.projectId = std::stol(dataNodeBusinessBusinessItem["ProjectId"].asString());
+		if(!dataNodeBusinessBusinessItem["BusinessId"].isNull())
+			businessItemObject.businessId = std::stol(dataNodeBusinessBusinessItem["BusinessId"].asString());
+		if(!dataNodeBusinessBusinessItem["BusinessName"].isNull())
+			businessItemObject.businessName = dataNodeBusinessBusinessItem["BusinessName"].asString();
 		if(!dataNodeBusinessBusinessItem["UseType"].isNull())
 			businessItemObject.useType = dataNodeBusinessBusinessItem["UseType"].asString();
 		data_.business.push_back(businessItemObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

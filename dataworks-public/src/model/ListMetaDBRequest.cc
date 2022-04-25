@@ -49,6 +49,17 @@ void ListMetaDBRequest::setPageSize(int pageSize)
 	setParameter("PageSize", std::to_string(pageSize));
 }
 
+std::string ListMetaDBRequest::getClusterId()const
+{
+	return clusterId_;
+}
+
+void ListMetaDBRequest::setClusterId(const std::string& clusterId)
+{
+	clusterId_ = clusterId;
+	setParameter("ClusterId", clusterId);
+}
+
 int ListMetaDBRequest::getPageNum()const
 {
 	return pageNum_;

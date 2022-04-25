@@ -41,34 +41,34 @@ void GetDeploymentResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
 	auto deploymentNode = dataNode["Deployment"];
-	if(!deploymentNode["Name"].isNull())
-		data_.deployment.name = deploymentNode["Name"].asString();
-	if(!deploymentNode["CreatorId"].isNull())
-		data_.deployment.creatorId = deploymentNode["CreatorId"].asString();
-	if(!deploymentNode["HandlerId"].isNull())
-		data_.deployment.handlerId = deploymentNode["HandlerId"].asString();
-	if(!deploymentNode["CreateTime"].isNull())
-		data_.deployment.createTime = std::stol(deploymentNode["CreateTime"].asString());
-	if(!deploymentNode["ExecuteTime"].isNull())
-		data_.deployment.executeTime = std::stol(deploymentNode["ExecuteTime"].asString());
 	if(!deploymentNode["Status"].isNull())
 		data_.deployment.status = std::stoi(deploymentNode["Status"].asString());
+	if(!deploymentNode["ErrorMessage"].isNull())
+		data_.deployment.errorMessage = deploymentNode["ErrorMessage"].asString();
 	if(!deploymentNode["FromEnvironment"].isNull())
 		data_.deployment.fromEnvironment = std::stoi(deploymentNode["FromEnvironment"].asString());
 	if(!deploymentNode["ToEnvironment"].isNull())
 		data_.deployment.toEnvironment = std::stoi(deploymentNode["ToEnvironment"].asString());
-	if(!deploymentNode["ErrorMessage"].isNull())
-		data_.deployment.errorMessage = deploymentNode["ErrorMessage"].asString();
 	if(!deploymentNode["CheckingStatus"].isNull())
 		data_.deployment.checkingStatus = std::stoi(deploymentNode["CheckingStatus"].asString());
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
+	if(!deploymentNode["CreateTime"].isNull())
+		data_.deployment.createTime = std::stol(deploymentNode["CreateTime"].asString());
+	if(!deploymentNode["HandlerId"].isNull())
+		data_.deployment.handlerId = deploymentNode["HandlerId"].asString();
+	if(!deploymentNode["CreatorId"].isNull())
+		data_.deployment.creatorId = deploymentNode["CreatorId"].asString();
+	if(!deploymentNode["ExecuteTime"].isNull())
+		data_.deployment.executeTime = std::stol(deploymentNode["ExecuteTime"].asString());
+	if(!deploymentNode["Name"].isNull())
+		data_.deployment.name = deploymentNode["Name"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

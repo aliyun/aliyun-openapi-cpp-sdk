@@ -40,8 +40,8 @@ namespace AlibabaCloud
 						std::string type;
 						std::string processContent;
 						std::string sourceType;
-						long projectId;
 						std::string startTime;
+						long projectId;
 						long id;
 						std::string submitTime;
 						std::string creatorName;

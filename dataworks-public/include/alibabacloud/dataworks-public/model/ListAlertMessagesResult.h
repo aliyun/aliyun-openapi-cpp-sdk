@@ -38,8 +38,8 @@ namespace AlibabaCloud
 					{
 						struct SlaAlert
 						{
-							long baselineId;
 							std::string status;
+							long baselineId;
 							std::string baselineOwner;
 							std::string baselineName;
 							long projectId;
@@ -49,8 +49,8 @@ namespace AlibabaCloud
 						struct InstancesItem
 						{
 							std::string status;
-							std::string nodeName;
 							long instanceId;
+							std::string nodeName;
 							long nodeId;
 							long projectId;
 						};
@@ -70,8 +70,8 @@ namespace AlibabaCloud
 							long nodeId;
 							long projectId;
 						};
-						std::string alertUser;
 						std::string alertMessageStatus;
+						std::string alertUser;
 						std::vector<AlertMessagesItem::TopicsItem> topics;
 						std::string alertMethod;
 						std::vector<AlertMessagesItem::NodesItem> nodes;

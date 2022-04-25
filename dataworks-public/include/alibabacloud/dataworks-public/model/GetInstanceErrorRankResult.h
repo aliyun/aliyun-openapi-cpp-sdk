@@ -39,8 +39,8 @@ namespace AlibabaCloud
 						int prgType;
 						std::string owner;
 						std::string nodeName;
-						long nodeId;
 						long projectId;
+						long nodeId;
 						int count;
 					};
 					std::vector<ErrorRankItem> errorRank;

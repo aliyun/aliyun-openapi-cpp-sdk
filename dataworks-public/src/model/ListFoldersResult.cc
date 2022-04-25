@@ -50,20 +50,20 @@ void ListFoldersResult::parse(const std::string &payload)
 	for (auto dataNodeFoldersFoldersItem : allFoldersNode)
 	{
 		Data::FoldersItem foldersItemObject;
-		if(!dataNodeFoldersFoldersItem["FolderId"].isNull())
-			foldersItemObject.folderId = dataNodeFoldersFoldersItem["FolderId"].asString();
 		if(!dataNodeFoldersFoldersItem["FolderPath"].isNull())
 			foldersItemObject.folderPath = dataNodeFoldersFoldersItem["FolderPath"].asString();
+		if(!dataNodeFoldersFoldersItem["FolderId"].isNull())
+			foldersItemObject.folderId = dataNodeFoldersFoldersItem["FolderId"].asString();
 		data_.folders.push_back(foldersItemObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

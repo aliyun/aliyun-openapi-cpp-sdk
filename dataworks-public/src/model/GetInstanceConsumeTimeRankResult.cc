@@ -46,20 +46,20 @@ void GetInstanceConsumeTimeRankResult::parse(const std::string &payload)
 	for (auto instanceConsumeTimeRankNodeConsumeTimeRankConsumeTimeRankItem : allConsumeTimeRankNode)
 	{
 		InstanceConsumeTimeRank::ConsumeTimeRankItem consumeTimeRankItemObject;
-		if(!instanceConsumeTimeRankNodeConsumeTimeRankConsumeTimeRankItem["NodeName"].isNull())
-			consumeTimeRankItemObject.nodeName = instanceConsumeTimeRankNodeConsumeTimeRankConsumeTimeRankItem["NodeName"].asString();
-		if(!instanceConsumeTimeRankNodeConsumeTimeRankConsumeTimeRankItem["NodeId"].isNull())
-			consumeTimeRankItemObject.nodeId = std::stol(instanceConsumeTimeRankNodeConsumeTimeRankConsumeTimeRankItem["NodeId"].asString());
-		if(!instanceConsumeTimeRankNodeConsumeTimeRankConsumeTimeRankItem["Bizdate"].isNull())
-			consumeTimeRankItemObject.bizdate = std::stol(instanceConsumeTimeRankNodeConsumeTimeRankConsumeTimeRankItem["Bizdate"].asString());
 		if(!instanceConsumeTimeRankNodeConsumeTimeRankConsumeTimeRankItem["Owner"].isNull())
 			consumeTimeRankItemObject.owner = instanceConsumeTimeRankNodeConsumeTimeRankConsumeTimeRankItem["Owner"].asString();
-		if(!instanceConsumeTimeRankNodeConsumeTimeRankConsumeTimeRankItem["Consumed"].isNull())
-			consumeTimeRankItemObject.consumed = std::stol(instanceConsumeTimeRankNodeConsumeTimeRankConsumeTimeRankItem["Consumed"].asString());
+		if(!instanceConsumeTimeRankNodeConsumeTimeRankConsumeTimeRankItem["NodeName"].isNull())
+			consumeTimeRankItemObject.nodeName = instanceConsumeTimeRankNodeConsumeTimeRankConsumeTimeRankItem["NodeName"].asString();
+		if(!instanceConsumeTimeRankNodeConsumeTimeRankConsumeTimeRankItem["Bizdate"].isNull())
+			consumeTimeRankItemObject.bizdate = std::stol(instanceConsumeTimeRankNodeConsumeTimeRankConsumeTimeRankItem["Bizdate"].asString());
 		if(!instanceConsumeTimeRankNodeConsumeTimeRankConsumeTimeRankItem["InstanceId"].isNull())
 			consumeTimeRankItemObject.instanceId = std::stol(instanceConsumeTimeRankNodeConsumeTimeRankConsumeTimeRankItem["InstanceId"].asString());
 		if(!instanceConsumeTimeRankNodeConsumeTimeRankConsumeTimeRankItem["PrgType"].isNull())
 			consumeTimeRankItemObject.prgType = std::stoi(instanceConsumeTimeRankNodeConsumeTimeRankConsumeTimeRankItem["PrgType"].asString());
+		if(!instanceConsumeTimeRankNodeConsumeTimeRankConsumeTimeRankItem["NodeId"].isNull())
+			consumeTimeRankItemObject.nodeId = std::stol(instanceConsumeTimeRankNodeConsumeTimeRankConsumeTimeRankItem["NodeId"].asString());
+		if(!instanceConsumeTimeRankNodeConsumeTimeRankConsumeTimeRankItem["Consumed"].isNull())
+			consumeTimeRankItemObject.consumed = std::stol(instanceConsumeTimeRankNodeConsumeTimeRankConsumeTimeRankItem["Consumed"].asString());
 		instanceConsumeTimeRank_.consumeTimeRank.push_back(consumeTimeRankItemObject);
 	}
 

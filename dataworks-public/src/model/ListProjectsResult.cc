@@ -50,20 +50,20 @@ void ListProjectsResult::parse(const std::string &payload)
 	for (auto pageResultNodeProjectListProject : allProjectListNode)
 	{
 		PageResult::Project projectObject;
+		if(!pageResultNodeProjectListProject["ProjectStatusCode"].isNull())
+			projectObject.projectStatusCode = pageResultNodeProjectListProject["ProjectStatusCode"].asString();
+		if(!pageResultNodeProjectListProject["ProjectStatus"].isNull())
+			projectObject.projectStatus = std::stoi(pageResultNodeProjectListProject["ProjectStatus"].asString());
 		if(!pageResultNodeProjectListProject["ProjectName"].isNull())
 			projectObject.projectName = pageResultNodeProjectListProject["ProjectName"].asString();
 		if(!pageResultNodeProjectListProject["ProjectIdentifier"].isNull())
 			projectObject.projectIdentifier = pageResultNodeProjectListProject["ProjectIdentifier"].asString();
-		if(!pageResultNodeProjectListProject["ProjectDescription"].isNull())
-			projectObject.projectDescription = pageResultNodeProjectListProject["ProjectDescription"].asString();
-		if(!pageResultNodeProjectListProject["ProjectStatus"].isNull())
-			projectObject.projectStatus = std::stoi(pageResultNodeProjectListProject["ProjectStatus"].asString());
 		if(!pageResultNodeProjectListProject["ProjectId"].isNull())
 			projectObject.projectId = std::stol(pageResultNodeProjectListProject["ProjectId"].asString());
+		if(!pageResultNodeProjectListProject["ProjectDescription"].isNull())
+			projectObject.projectDescription = pageResultNodeProjectListProject["ProjectDescription"].asString();
 		if(!pageResultNodeProjectListProject["ProjectOwnerBaseId"].isNull())
 			projectObject.projectOwnerBaseId = pageResultNodeProjectListProject["ProjectOwnerBaseId"].asString();
-		if(!pageResultNodeProjectListProject["ProjectStatusCode"].isNull())
-			projectObject.projectStatusCode = pageResultNodeProjectListProject["ProjectStatusCode"].asString();
 		pageResult_.projectList.push_back(projectObject);
 	}
 

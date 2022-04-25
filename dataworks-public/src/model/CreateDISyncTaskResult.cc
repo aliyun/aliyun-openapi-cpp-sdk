@@ -40,12 +40,12 @@ void CreateDISyncTaskResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["FileId"].isNull())
-		data_.fileId = std::stol(dataNode["FileId"].asString());
 	if(!dataNode["Status"].isNull())
 		data_.status = dataNode["Status"].asString();
 	if(!dataNode["Message"].isNull())
 		data_.message = dataNode["Message"].asString();
+	if(!dataNode["FileId"].isNull())
+		data_.fileId = std::stol(dataNode["FileId"].asString());
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 

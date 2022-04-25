@@ -39,6 +39,8 @@ namespace AlibabaCloud
 				void setDataSourceType(const std::string& dataSourceType);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
+				std::string getClusterId()const;
+				void setClusterId(const std::string& clusterId);
 				int getPageNum()const;
 				void setPageNum(int pageNum);
 				long getProjectId()const;
@@ -47,6 +49,7 @@ namespace AlibabaCloud
             private:
 				std::string dataSourceType_;
 				int pageSize_;
+				std::string clusterId_;
 				int pageNum_;
 				long projectId_;
 

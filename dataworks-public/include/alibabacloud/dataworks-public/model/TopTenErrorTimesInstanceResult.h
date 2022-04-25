@@ -38,10 +38,10 @@ namespace AlibabaCloud
 					{
 						std::string owner;
 						std::string nodeName;
-						long nodeId;
 						long projectId;
-						int count;
+						long nodeId;
 						int programType;
+						int count;
 					};
 					std::vector<ErrorRankItem> errorRank;
 					long updateTime;

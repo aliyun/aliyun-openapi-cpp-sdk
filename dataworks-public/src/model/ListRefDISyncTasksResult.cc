@@ -44,16 +44,16 @@ void ListRefDISyncTasksResult::parse(const std::string &payload)
 	for (auto dataNodeDISyncTasksDISyncTasksItem : allDISyncTasksNode)
 	{
 		Data::DISyncTasksItem dISyncTasksItemObject;
-		if(!dataNodeDISyncTasksDISyncTasksItem["NodeName"].isNull())
-			dISyncTasksItemObject.nodeName = dataNodeDISyncTasksDISyncTasksItem["NodeName"].asString();
-		if(!dataNodeDISyncTasksDISyncTasksItem["NodeId"].isNull())
-			dISyncTasksItemObject.nodeId = std::stol(dataNodeDISyncTasksDISyncTasksItem["NodeId"].asString());
+		if(!dataNodeDISyncTasksDISyncTasksItem["DiSourceDatasource"].isNull())
+			dISyncTasksItemObject.diSourceDatasource = dataNodeDISyncTasksDISyncTasksItem["DiSourceDatasource"].asString();
 		if(!dataNodeDISyncTasksDISyncTasksItem["TaskType"].isNull())
 			dISyncTasksItemObject.taskType = dataNodeDISyncTasksDISyncTasksItem["TaskType"].asString();
 		if(!dataNodeDISyncTasksDISyncTasksItem["DiDestinationDatasource"].isNull())
 			dISyncTasksItemObject.diDestinationDatasource = dataNodeDISyncTasksDISyncTasksItem["DiDestinationDatasource"].asString();
-		if(!dataNodeDISyncTasksDISyncTasksItem["DiSourceDatasource"].isNull())
-			dISyncTasksItemObject.diSourceDatasource = dataNodeDISyncTasksDISyncTasksItem["DiSourceDatasource"].asString();
+		if(!dataNodeDISyncTasksDISyncTasksItem["NodeName"].isNull())
+			dISyncTasksItemObject.nodeName = dataNodeDISyncTasksDISyncTasksItem["NodeName"].asString();
+		if(!dataNodeDISyncTasksDISyncTasksItem["NodeId"].isNull())
+			dISyncTasksItemObject.nodeId = std::stol(dataNodeDISyncTasksDISyncTasksItem["NodeId"].asString());
 		data_.dISyncTasks.push_back(dISyncTasksItemObject);
 	}
 	if(!value["Success"].isNull())

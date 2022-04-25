@@ -46,26 +46,26 @@ void ListTableLevelResult::parse(const std::string &payload)
 	for (auto tableLevelInfoNodeLevelListLevelListItem : allLevelListNode)
 	{
 		TableLevelInfo::LevelListItem levelListItemObject;
-		if(!tableLevelInfoNodeLevelListLevelListItem["LevelId"].isNull())
-			levelListItemObject.levelId = std::stol(tableLevelInfoNodeLevelListLevelListItem["LevelId"].asString());
-		if(!tableLevelInfoNodeLevelListLevelListItem["Name"].isNull())
-			levelListItemObject.name = tableLevelInfoNodeLevelListLevelListItem["Name"].asString();
-		if(!tableLevelInfoNodeLevelListLevelListItem["ProjectId"].isNull())
-			levelListItemObject.projectId = std::stol(tableLevelInfoNodeLevelListLevelListItem["ProjectId"].asString());
 		if(!tableLevelInfoNodeLevelListLevelListItem["LevelType"].isNull())
 			levelListItemObject.levelType = std::stoi(tableLevelInfoNodeLevelListLevelListItem["LevelType"].asString());
 		if(!tableLevelInfoNodeLevelListLevelListItem["Description"].isNull())
 			levelListItemObject.description = tableLevelInfoNodeLevelListLevelListItem["Description"].asString();
+		if(!tableLevelInfoNodeLevelListLevelListItem["Name"].isNull())
+			levelListItemObject.name = tableLevelInfoNodeLevelListLevelListItem["Name"].asString();
+		if(!tableLevelInfoNodeLevelListLevelListItem["ProjectId"].isNull())
+			levelListItemObject.projectId = std::stol(tableLevelInfoNodeLevelListLevelListItem["ProjectId"].asString());
+		if(!tableLevelInfoNodeLevelListLevelListItem["LevelId"].isNull())
+			levelListItemObject.levelId = std::stol(tableLevelInfoNodeLevelListLevelListItem["LevelId"].asString());
 		tableLevelInfo_.levelList.push_back(levelListItemObject);
 	}
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
 
 }
 

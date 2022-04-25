@@ -40,38 +40,38 @@ void GetMetaDBInfoResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["AppGuid"].isNull())
-		data_.appGuid = dataNode["AppGuid"].asString();
-	if(!dataNode["TenantId"].isNull())
-		data_.tenantId = std::stol(dataNode["TenantId"].asString());
-	if(!dataNode["Endpoint"].isNull())
-		data_.endpoint = dataNode["Endpoint"].asString();
-	if(!dataNode["ProjectId"].isNull())
-		data_.projectId = std::stol(dataNode["ProjectId"].asString());
-	if(!dataNode["EnvType"].isNull())
-		data_.envType = std::stoi(dataNode["EnvType"].asString());
-	if(!dataNode["ProjectName"].isNull())
-		data_.projectName = dataNode["ProjectName"].asString();
-	if(!dataNode["ProjectNameCn"].isNull())
-		data_.projectNameCn = dataNode["ProjectNameCn"].asString();
-	if(!dataNode["CreateTime"].isNull())
-		data_.createTime = std::stol(dataNode["CreateTime"].asString());
-	if(!dataNode["ModifyTime"].isNull())
-		data_.modifyTime = std::stol(dataNode["ModifyTime"].asString());
-	if(!dataNode["OwnerId"].isNull())
-		data_.ownerId = dataNode["OwnerId"].asString();
-	if(!dataNode["OwnerName"].isNull())
-		data_.ownerName = dataNode["OwnerName"].asString();
-	if(!dataNode["Name"].isNull())
-		data_.name = dataNode["Name"].asString();
 	if(!dataNode["Type"].isNull())
 		data_.type = dataNode["Type"].asString();
 	if(!dataNode["Comment"].isNull())
 		data_.comment = dataNode["Comment"].asString();
-	if(!dataNode["Location"].isNull())
-		data_.location = dataNode["Location"].asString();
+	if(!dataNode["CreateTime"].isNull())
+		data_.createTime = std::stol(dataNode["CreateTime"].asString());
+	if(!dataNode["ProjectId"].isNull())
+		data_.projectId = std::stol(dataNode["ProjectId"].asString());
+	if(!dataNode["ProjectName"].isNull())
+		data_.projectName = dataNode["ProjectName"].asString();
+	if(!dataNode["AppGuid"].isNull())
+		data_.appGuid = dataNode["AppGuid"].asString();
+	if(!dataNode["OwnerName"].isNull())
+		data_.ownerName = dataNode["OwnerName"].asString();
+	if(!dataNode["OwnerId"].isNull())
+		data_.ownerId = dataNode["OwnerId"].asString();
+	if(!dataNode["EnvType"].isNull())
+		data_.envType = std::stoi(dataNode["EnvType"].asString());
+	if(!dataNode["ProjectNameCn"].isNull())
+		data_.projectNameCn = dataNode["ProjectNameCn"].asString();
+	if(!dataNode["Endpoint"].isNull())
+		data_.endpoint = dataNode["Endpoint"].asString();
 	if(!dataNode["ClusterBizId"].isNull())
 		data_.clusterBizId = dataNode["ClusterBizId"].asString();
+	if(!dataNode["Name"].isNull())
+		data_.name = dataNode["Name"].asString();
+	if(!dataNode["Location"].isNull())
+		data_.location = dataNode["Location"].asString();
+	if(!dataNode["TenantId"].isNull())
+		data_.tenantId = std::stol(dataNode["TenantId"].asString());
+	if(!dataNode["ModifyTime"].isNull())
+		data_.modifyTime = std::stol(dataNode["ModifyTime"].asString());
 
 }
 

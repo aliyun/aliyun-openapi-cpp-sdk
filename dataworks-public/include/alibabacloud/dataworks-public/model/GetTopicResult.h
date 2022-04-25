@@ -45,17 +45,17 @@ namespace AlibabaCloud
 					std::string topicStatus;
 					long addTime;
 					long happenTime;
-					long alertTime;
 					int baselineInGroupId;
+					long alertTime;
 					std::string topicName;
 					std::string topicType;
-					std::string assigner;
-					std::string dealUser;
 					long nextAlertTime;
+					std::string dealUser;
+					std::string assigner;
 					std::string baselineName;
 					long nodeId;
-					long topicId;
 					long baselineBuffer;
+					long topicId;
 					long dealTime;
 				};
 

@@ -36,10 +36,10 @@ namespace AlibabaCloud
 				{
 					struct BaselinesItem
 					{
-						long baselineId;
 						bool isDefault;
-						int expHour;
+						long baselineId;
 						std::string hourSlaDetail;
+						int expHour;
 						std::string owner;
 						int expMinu;
 						int slaHour;

@@ -47,28 +47,28 @@ void GetDISyncTaskResult::parse(const std::string &payload)
 	if(!dataNode["Message"].isNull())
 		data_.message = dataNode["Message"].asString();
 	auto solutionDetailNode = dataNode["SolutionDetail"];
-	if(!solutionDetailNode["Id"].isNull())
-		data_.solutionDetail.id = std::stol(solutionDetailNode["Id"].asString());
-	if(!solutionDetailNode["Type"].isNull())
-		data_.solutionDetail.type = solutionDetailNode["Type"].asString();
-	if(!solutionDetailNode["ProjectId"].isNull())
-		data_.solutionDetail.projectId = std::stol(solutionDetailNode["ProjectId"].asString());
 	if(!solutionDetailNode["Status"].isNull())
 		data_.solutionDetail.status = solutionDetailNode["Status"].asString();
-	if(!solutionDetailNode["ProcessContent"].isNull())
-		data_.solutionDetail.processContent = solutionDetailNode["ProcessContent"].asString();
+	if(!solutionDetailNode["Type"].isNull())
+		data_.solutionDetail.type = solutionDetailNode["Type"].asString();
 	if(!solutionDetailNode["StartTime"].isNull())
 		data_.solutionDetail.startTime = solutionDetailNode["StartTime"].asString();
-	if(!solutionDetailNode["Name"].isNull())
-		data_.solutionDetail.name = solutionDetailNode["Name"].asString();
 	if(!solutionDetailNode["CreatorName"].isNull())
 		data_.solutionDetail.creatorName = solutionDetailNode["CreatorName"].asString();
+	if(!solutionDetailNode["ProjectId"].isNull())
+		data_.solutionDetail.projectId = std::stol(solutionDetailNode["ProjectId"].asString());
 	if(!solutionDetailNode["SourceType"].isNull())
 		data_.solutionDetail.sourceType = solutionDetailNode["SourceType"].asString();
-	if(!solutionDetailNode["SubmitTime"].isNull())
-		data_.solutionDetail.submitTime = solutionDetailNode["SubmitTime"].asString();
+	if(!solutionDetailNode["ProcessContent"].isNull())
+		data_.solutionDetail.processContent = solutionDetailNode["ProcessContent"].asString();
+	if(!solutionDetailNode["Name"].isNull())
+		data_.solutionDetail.name = solutionDetailNode["Name"].asString();
 	if(!solutionDetailNode["ProcessExtra"].isNull())
 		data_.solutionDetail.processExtra = solutionDetailNode["ProcessExtra"].asString();
+	if(!solutionDetailNode["SubmitTime"].isNull())
+		data_.solutionDetail.submitTime = solutionDetailNode["SubmitTime"].asString();
+	if(!solutionDetailNode["Id"].isNull())
+		data_.solutionDetail.id = std::stol(solutionDetailNode["Id"].asString());
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 

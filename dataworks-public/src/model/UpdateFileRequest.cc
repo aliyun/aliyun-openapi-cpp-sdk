@@ -71,6 +71,17 @@ void UpdateFileRequest::setProjectIdentifier(const std::string& projectIdentifie
 	setBodyParameter("ProjectIdentifier", projectIdentifier);
 }
 
+bool UpdateFileRequest::getStartImmediately()const
+{
+	return startImmediately_;
+}
+
+void UpdateFileRequest::setStartImmediately(bool startImmediately)
+{
+	startImmediately_ = startImmediately;
+	setBodyParameter("StartImmediately", startImmediately ? "true" : "false");
+}
+
 long UpdateFileRequest::getProjectId()const
 {
 	return projectId_;
@@ -80,6 +91,17 @@ void UpdateFileRequest::setProjectId(long projectId)
 {
 	projectId_ = projectId;
 	setBodyParameter("ProjectId", std::to_string(projectId));
+}
+
+std::string UpdateFileRequest::getAdvancedSettings()const
+{
+	return advancedSettings_;
+}
+
+void UpdateFileRequest::setAdvancedSettings(const std::string& advancedSettings)
+{
+	advancedSettings_ = advancedSettings;
+	setBodyParameter("AdvancedSettings", advancedSettings);
 }
 
 long UpdateFileRequest::getStartEffectDate()const
@@ -170,6 +192,17 @@ void UpdateFileRequest::setConnectionName(const std::string& connectionName)
 	setBodyParameter("ConnectionName", connectionName);
 }
 
+std::string UpdateFileRequest::getOutputParameters()const
+{
+	return outputParameters_;
+}
+
+void UpdateFileRequest::setOutputParameters(const std::string& outputParameters)
+{
+	outputParameters_ = outputParameters;
+	setBodyParameter("OutputParameters", outputParameters);
+}
+
 std::string UpdateFileRequest::getParaValue()const
 {
 	return paraValue_;
@@ -234,6 +267,17 @@ void UpdateFileRequest::setFileName(const std::string& fileName)
 {
 	fileName_ = fileName;
 	setBodyParameter("FileName", fileName);
+}
+
+std::string UpdateFileRequest::getInputParameters()const
+{
+	return inputParameters_;
+}
+
+void UpdateFileRequest::setInputParameters(const std::string& inputParameters)
+{
+	inputParameters_ = inputParameters;
+	setBodyParameter("InputParameters", inputParameters);
 }
 
 bool UpdateFileRequest::getStop()const

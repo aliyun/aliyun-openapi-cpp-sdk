@@ -50,40 +50,40 @@ void ListTopicsResult::parse(const std::string &payload)
 	for (auto dataNodeTopicsTopicsItem : allTopicsNode)
 	{
 		Data::TopicsItem topicsItemObject;
-		if(!dataNodeTopicsTopicsItem["TopicId"].isNull())
-			topicsItemObject.topicId = std::stol(dataNodeTopicsTopicsItem["TopicId"].asString());
 		if(!dataNodeTopicsTopicsItem["TopicName"].isNull())
 			topicsItemObject.topicName = dataNodeTopicsTopicsItem["TopicName"].asString();
-		if(!dataNodeTopicsTopicsItem["TopicStatus"].isNull())
-			topicsItemObject.topicStatus = dataNodeTopicsTopicsItem["TopicStatus"].asString();
-		if(!dataNodeTopicsTopicsItem["TopicType"].isNull())
-			topicsItemObject.topicType = dataNodeTopicsTopicsItem["TopicType"].asString();
-		if(!dataNodeTopicsTopicsItem["AddTime"].isNull())
-			topicsItemObject.addTime = std::stol(dataNodeTopicsTopicsItem["AddTime"].asString());
-		if(!dataNodeTopicsTopicsItem["HappenTime"].isNull())
-			topicsItemObject.happenTime = std::stol(dataNodeTopicsTopicsItem["HappenTime"].asString());
-		if(!dataNodeTopicsTopicsItem["FixTime"].isNull())
-			topicsItemObject.fixTime = std::stol(dataNodeTopicsTopicsItem["FixTime"].asString());
-		if(!dataNodeTopicsTopicsItem["InstanceId"].isNull())
-			topicsItemObject.instanceId = std::stol(dataNodeTopicsTopicsItem["InstanceId"].asString());
-		if(!dataNodeTopicsTopicsItem["NodeId"].isNull())
-			topicsItemObject.nodeId = std::stol(dataNodeTopicsTopicsItem["NodeId"].asString());
-		if(!dataNodeTopicsTopicsItem["NodeName"].isNull())
-			topicsItemObject.nodeName = dataNodeTopicsTopicsItem["NodeName"].asString();
-		if(!dataNodeTopicsTopicsItem["NodeOwner"].isNull())
-			topicsItemObject.nodeOwner = dataNodeTopicsTopicsItem["NodeOwner"].asString();
 		if(!dataNodeTopicsTopicsItem["ProjectId"].isNull())
 			topicsItemObject.projectId = std::stol(dataNodeTopicsTopicsItem["ProjectId"].asString());
+		if(!dataNodeTopicsTopicsItem["NodeOwner"].isNull())
+			topicsItemObject.nodeOwner = dataNodeTopicsTopicsItem["NodeOwner"].asString();
+		if(!dataNodeTopicsTopicsItem["InstanceId"].isNull())
+			topicsItemObject.instanceId = std::stol(dataNodeTopicsTopicsItem["InstanceId"].asString());
+		if(!dataNodeTopicsTopicsItem["FixTime"].isNull())
+			topicsItemObject.fixTime = std::stol(dataNodeTopicsTopicsItem["FixTime"].asString());
+		if(!dataNodeTopicsTopicsItem["TopicType"].isNull())
+			topicsItemObject.topicType = dataNodeTopicsTopicsItem["TopicType"].asString();
+		if(!dataNodeTopicsTopicsItem["TopicStatus"].isNull())
+			topicsItemObject.topicStatus = dataNodeTopicsTopicsItem["TopicStatus"].asString();
+		if(!dataNodeTopicsTopicsItem["HappenTime"].isNull())
+			topicsItemObject.happenTime = std::stol(dataNodeTopicsTopicsItem["HappenTime"].asString());
+		if(!dataNodeTopicsTopicsItem["NodeName"].isNull())
+			topicsItemObject.nodeName = dataNodeTopicsTopicsItem["NodeName"].asString();
+		if(!dataNodeTopicsTopicsItem["TopicId"].isNull())
+			topicsItemObject.topicId = std::stol(dataNodeTopicsTopicsItem["TopicId"].asString());
+		if(!dataNodeTopicsTopicsItem["AddTime"].isNull())
+			topicsItemObject.addTime = std::stol(dataNodeTopicsTopicsItem["AddTime"].asString());
+		if(!dataNodeTopicsTopicsItem["NodeId"].isNull())
+			topicsItemObject.nodeId = std::stol(dataNodeTopicsTopicsItem["NodeId"].asString());
 		data_.topics.push_back(topicsItemObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

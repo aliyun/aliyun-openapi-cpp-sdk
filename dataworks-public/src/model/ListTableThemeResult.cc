@@ -46,30 +46,30 @@ void ListTableThemeResult::parse(const std::string &payload)
 	for (auto dataNodeThemeListThemeListItem : allThemeListNode)
 	{
 		Data::ThemeListItem themeListItemObject;
+		if(!dataNodeThemeListThemeListItem["CreateTimeStamp"].isNull())
+			themeListItemObject.createTimeStamp = std::stol(dataNodeThemeListThemeListItem["CreateTimeStamp"].asString());
+		if(!dataNodeThemeListThemeListItem["ParentId"].isNull())
+			themeListItemObject.parentId = std::stol(dataNodeThemeListThemeListItem["ParentId"].asString());
 		if(!dataNodeThemeListThemeListItem["ThemeId"].isNull())
 			themeListItemObject.themeId = std::stol(dataNodeThemeListThemeListItem["ThemeId"].asString());
+		if(!dataNodeThemeListThemeListItem["ProjectId"].isNull())
+			themeListItemObject.projectId = std::stol(dataNodeThemeListThemeListItem["ProjectId"].asString());
 		if(!dataNodeThemeListThemeListItem["Name"].isNull())
 			themeListItemObject.name = dataNodeThemeListThemeListItem["Name"].asString();
 		if(!dataNodeThemeListThemeListItem["Level"].isNull())
 			themeListItemObject.level = std::stoi(dataNodeThemeListThemeListItem["Level"].asString());
-		if(!dataNodeThemeListThemeListItem["ParentId"].isNull())
-			themeListItemObject.parentId = std::stol(dataNodeThemeListThemeListItem["ParentId"].asString());
-		if(!dataNodeThemeListThemeListItem["ProjectId"].isNull())
-			themeListItemObject.projectId = std::stol(dataNodeThemeListThemeListItem["ProjectId"].asString());
 		if(!dataNodeThemeListThemeListItem["Creator"].isNull())
 			themeListItemObject.creator = dataNodeThemeListThemeListItem["Creator"].asString();
-		if(!dataNodeThemeListThemeListItem["CreateTimeStamp"].isNull())
-			themeListItemObject.createTimeStamp = std::stol(dataNodeThemeListThemeListItem["CreateTimeStamp"].asString());
 		data_.themeList.push_back(themeListItemObject);
 	}
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
 
 }
 

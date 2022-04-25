@@ -40,14 +40,14 @@ void GetDDLJobStatusResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["NextTaskId"].isNull())
-		data_.nextTaskId = dataNode["NextTaskId"].asString();
-	if(!dataNode["Content"].isNull())
-		data_.content = dataNode["Content"].asString();
 	if(!dataNode["Status"].isNull())
 		data_.status = dataNode["Status"].asString();
+	if(!dataNode["NextTaskId"].isNull())
+		data_.nextTaskId = dataNode["NextTaskId"].asString();
 	if(!dataNode["TaskId"].isNull())
 		data_.taskId = dataNode["TaskId"].asString();
+	if(!dataNode["Content"].isNull())
+		data_.content = dataNode["Content"].asString();
 
 }
 

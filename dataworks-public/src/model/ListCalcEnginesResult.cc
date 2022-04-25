@@ -50,32 +50,32 @@ void ListCalcEnginesResult::parse(const std::string &payload)
 	for (auto dataNodeCalcEnginesCalcEnginesItem : allCalcEnginesNode)
 	{
 		Data::CalcEnginesItem calcEnginesItemObject;
-		if(!dataNodeCalcEnginesCalcEnginesItem["CalcEngineType"].isNull())
-			calcEnginesItemObject.calcEngineType = dataNodeCalcEnginesCalcEnginesItem["CalcEngineType"].asString();
-		if(!dataNodeCalcEnginesCalcEnginesItem["GmtCreate"].isNull())
-			calcEnginesItemObject.gmtCreate = dataNodeCalcEnginesCalcEnginesItem["GmtCreate"].asString();
-		if(!dataNodeCalcEnginesCalcEnginesItem["DwRegion"].isNull())
-			calcEnginesItemObject.dwRegion = dataNodeCalcEnginesCalcEnginesItem["DwRegion"].asString();
-		if(!dataNodeCalcEnginesCalcEnginesItem["IsDefault"].isNull())
-			calcEnginesItemObject.isDefault = dataNodeCalcEnginesCalcEnginesItem["IsDefault"].asString() == "true";
-		if(!dataNodeCalcEnginesCalcEnginesItem["BindingProjectId"].isNull())
-			calcEnginesItemObject.bindingProjectId = std::stoi(dataNodeCalcEnginesCalcEnginesItem["BindingProjectId"].asString());
-		if(!dataNodeCalcEnginesCalcEnginesItem["EnvType"].isNull())
-			calcEnginesItemObject.envType = dataNodeCalcEnginesCalcEnginesItem["EnvType"].asString();
-		if(!dataNodeCalcEnginesCalcEnginesItem["TenantId"].isNull())
-			calcEnginesItemObject.tenantId = std::stol(dataNodeCalcEnginesCalcEnginesItem["TenantId"].asString());
-		if(!dataNodeCalcEnginesCalcEnginesItem["Name"].isNull())
-			calcEnginesItemObject.name = dataNodeCalcEnginesCalcEnginesItem["Name"].asString();
 		if(!dataNodeCalcEnginesCalcEnginesItem["BindingProjectName"].isNull())
 			calcEnginesItemObject.bindingProjectName = dataNodeCalcEnginesCalcEnginesItem["BindingProjectName"].asString();
-		if(!dataNodeCalcEnginesCalcEnginesItem["Region"].isNull())
-			calcEnginesItemObject.region = dataNodeCalcEnginesCalcEnginesItem["Region"].asString();
+		if(!dataNodeCalcEnginesCalcEnginesItem["IsDefault"].isNull())
+			calcEnginesItemObject.isDefault = dataNodeCalcEnginesCalcEnginesItem["IsDefault"].asString() == "true";
 		if(!dataNodeCalcEnginesCalcEnginesItem["EngineId"].isNull())
 			calcEnginesItemObject.engineId = std::stoi(dataNodeCalcEnginesCalcEnginesItem["EngineId"].asString());
-		if(!dataNodeCalcEnginesCalcEnginesItem["EngineInfo"].isNull())
-			calcEnginesItemObject.engineInfo = dataNodeCalcEnginesCalcEnginesItem["EngineInfo"].asString();
+		if(!dataNodeCalcEnginesCalcEnginesItem["DwRegion"].isNull())
+			calcEnginesItemObject.dwRegion = dataNodeCalcEnginesCalcEnginesItem["DwRegion"].asString();
 		if(!dataNodeCalcEnginesCalcEnginesItem["TaskAuthType"].isNull())
 			calcEnginesItemObject.taskAuthType = dataNodeCalcEnginesCalcEnginesItem["TaskAuthType"].asString();
+		if(!dataNodeCalcEnginesCalcEnginesItem["CalcEngineType"].isNull())
+			calcEnginesItemObject.calcEngineType = dataNodeCalcEnginesCalcEnginesItem["CalcEngineType"].asString();
+		if(!dataNodeCalcEnginesCalcEnginesItem["EngineInfo"].isNull())
+			calcEnginesItemObject.engineInfo = dataNodeCalcEnginesCalcEnginesItem["EngineInfo"].asString();
+		if(!dataNodeCalcEnginesCalcEnginesItem["EnvType"].isNull())
+			calcEnginesItemObject.envType = dataNodeCalcEnginesCalcEnginesItem["EnvType"].asString();
+		if(!dataNodeCalcEnginesCalcEnginesItem["Region"].isNull())
+			calcEnginesItemObject.region = dataNodeCalcEnginesCalcEnginesItem["Region"].asString();
+		if(!dataNodeCalcEnginesCalcEnginesItem["GmtCreate"].isNull())
+			calcEnginesItemObject.gmtCreate = dataNodeCalcEnginesCalcEnginesItem["GmtCreate"].asString();
+		if(!dataNodeCalcEnginesCalcEnginesItem["BindingProjectId"].isNull())
+			calcEnginesItemObject.bindingProjectId = std::stoi(dataNodeCalcEnginesCalcEnginesItem["BindingProjectId"].asString());
+		if(!dataNodeCalcEnginesCalcEnginesItem["Name"].isNull())
+			calcEnginesItemObject.name = dataNodeCalcEnginesCalcEnginesItem["Name"].asString();
+		if(!dataNodeCalcEnginesCalcEnginesItem["TenantId"].isNull())
+			calcEnginesItemObject.tenantId = std::stol(dataNodeCalcEnginesCalcEnginesItem["TenantId"].asString());
 		data_.calcEngines.push_back(calcEnginesItemObject);
 	}
 	if(!value["HttpStatusCode"].isNull())

@@ -40,36 +40,36 @@ void GetMetaColumnLineageResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["TotalCount"].isNull())
-		data_.totalCount = std::stol(dataNode["TotalCount"].asString());
 	if(!dataNode["PageNum"].isNull())
 		data_.pageNum = std::stoi(dataNode["PageNum"].asString());
 	if(!dataNode["PageSize"].isNull())
 		data_.pageSize = std::stoi(dataNode["PageSize"].asString());
+	if(!dataNode["TotalCount"].isNull())
+		data_.totalCount = std::stol(dataNode["TotalCount"].asString());
 	auto allDataEntityListNode = dataNode["DataEntityList"]["DataEntityListItem"];
 	for (auto dataNodeDataEntityListDataEntityListItem : allDataEntityListNode)
 	{
 		Data::DataEntityListItem dataEntityListItemObject;
-		if(!dataNodeDataEntityListDataEntityListItem["ColumnName"].isNull())
-			dataEntityListItemObject.columnName = dataNodeDataEntityListDataEntityListItem["ColumnName"].asString();
 		if(!dataNodeDataEntityListDataEntityListItem["ColumnGuid"].isNull())
 			dataEntityListItemObject.columnGuid = dataNodeDataEntityListDataEntityListItem["ColumnGuid"].asString();
-		if(!dataNodeDataEntityListDataEntityListItem["ClusterId"].isNull())
-			dataEntityListItemObject.clusterId = dataNodeDataEntityListDataEntityListItem["ClusterId"].asString();
-		if(!dataNodeDataEntityListDataEntityListItem["DatabaseName"].isNull())
-			dataEntityListItemObject.databaseName = dataNodeDataEntityListDataEntityListItem["DatabaseName"].asString();
+		if(!dataNodeDataEntityListDataEntityListItem["ColumnName"].isNull())
+			dataEntityListItemObject.columnName = dataNodeDataEntityListDataEntityListItem["ColumnName"].asString();
 		if(!dataNodeDataEntityListDataEntityListItem["TableName"].isNull())
 			dataEntityListItemObject.tableName = dataNodeDataEntityListDataEntityListItem["TableName"].asString();
+		if(!dataNodeDataEntityListDataEntityListItem["DatabaseName"].isNull())
+			dataEntityListItemObject.databaseName = dataNodeDataEntityListDataEntityListItem["DatabaseName"].asString();
+		if(!dataNodeDataEntityListDataEntityListItem["ClusterId"].isNull())
+			dataEntityListItemObject.clusterId = dataNodeDataEntityListDataEntityListItem["ClusterId"].asString();
 		data_.dataEntityList.push_back(dataEntityListItemObject);
 	}
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
 
 }
 

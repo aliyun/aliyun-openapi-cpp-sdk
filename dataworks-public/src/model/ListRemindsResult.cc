@@ -50,52 +50,52 @@ void ListRemindsResult::parse(const std::string &payload)
 	for (auto dataNodeRemindsRemindsItem : allRemindsNode)
 	{
 		Data::RemindsItem remindsItemObject;
-		if(!dataNodeRemindsRemindsItem["RemindId"].isNull())
-			remindsItemObject.remindId = std::stol(dataNodeRemindsRemindsItem["RemindId"].asString());
-		if(!dataNodeRemindsRemindsItem["RemindName"].isNull())
-			remindsItemObject.remindName = dataNodeRemindsRemindsItem["RemindName"].asString();
-		if(!dataNodeRemindsRemindsItem["DndStart"].isNull())
-			remindsItemObject.dndStart = dataNodeRemindsRemindsItem["DndStart"].asString();
-		if(!dataNodeRemindsRemindsItem["DndEnd"].isNull())
-			remindsItemObject.dndEnd = dataNodeRemindsRemindsItem["DndEnd"].asString();
-		if(!dataNodeRemindsRemindsItem["RemindUnit"].isNull())
-			remindsItemObject.remindUnit = dataNodeRemindsRemindsItem["RemindUnit"].asString();
-		if(!dataNodeRemindsRemindsItem["RemindType"].isNull())
-			remindsItemObject.remindType = dataNodeRemindsRemindsItem["RemindType"].asString();
-		if(!dataNodeRemindsRemindsItem["AlertUnit"].isNull())
-			remindsItemObject.alertUnit = dataNodeRemindsRemindsItem["AlertUnit"].asString();
-		if(!dataNodeRemindsRemindsItem["Useflag"].isNull())
-			remindsItemObject.useflag = dataNodeRemindsRemindsItem["Useflag"].asString() == "true";
 		if(!dataNodeRemindsRemindsItem["Founder"].isNull())
 			remindsItemObject.founder = dataNodeRemindsRemindsItem["Founder"].asString();
-		auto allNodeIds = value["NodeIds"]["NodeIds"];
-		for (auto value : allNodeIds)
-			remindsItemObject.nodeIds.push_back(value.asString());
-		auto allBaselineIds = value["BaselineIds"]["BaselineIds"];
-		for (auto value : allBaselineIds)
-			remindsItemObject.baselineIds.push_back(value.asString());
-		auto allProjectIds = value["ProjectIds"]["ProjectIds"];
-		for (auto value : allProjectIds)
-			remindsItemObject.projectIds.push_back(value.asString());
-		auto allBizProcessIds = value["BizProcessIds"]["BizProcessIds"];
-		for (auto value : allBizProcessIds)
-			remindsItemObject.bizProcessIds.push_back(value.asString());
-		auto allAlertMethods = value["AlertMethods"]["AlertMethods"];
-		for (auto value : allAlertMethods)
-			remindsItemObject.alertMethods.push_back(value.asString());
+		if(!dataNodeRemindsRemindsItem["RemindId"].isNull())
+			remindsItemObject.remindId = std::stol(dataNodeRemindsRemindsItem["RemindId"].asString());
+		if(!dataNodeRemindsRemindsItem["AlertUnit"].isNull())
+			remindsItemObject.alertUnit = dataNodeRemindsRemindsItem["AlertUnit"].asString();
+		if(!dataNodeRemindsRemindsItem["RemindType"].isNull())
+			remindsItemObject.remindType = dataNodeRemindsRemindsItem["RemindType"].asString();
+		if(!dataNodeRemindsRemindsItem["DndEnd"].isNull())
+			remindsItemObject.dndEnd = dataNodeRemindsRemindsItem["DndEnd"].asString();
+		if(!dataNodeRemindsRemindsItem["DndStart"].isNull())
+			remindsItemObject.dndStart = dataNodeRemindsRemindsItem["DndStart"].asString();
+		if(!dataNodeRemindsRemindsItem["RemindUnit"].isNull())
+			remindsItemObject.remindUnit = dataNodeRemindsRemindsItem["RemindUnit"].asString();
+		if(!dataNodeRemindsRemindsItem["Useflag"].isNull())
+			remindsItemObject.useflag = dataNodeRemindsRemindsItem["Useflag"].asString() == "true";
+		if(!dataNodeRemindsRemindsItem["RemindName"].isNull())
+			remindsItemObject.remindName = dataNodeRemindsRemindsItem["RemindName"].asString();
 		auto allAlertTargets = value["AlertTargets"]["AlertTargets"];
 		for (auto value : allAlertTargets)
 			remindsItemObject.alertTargets.push_back(value.asString());
+		auto allNodeIds = value["NodeIds"]["NodeIds"];
+		for (auto value : allNodeIds)
+			remindsItemObject.nodeIds.push_back(value.asString());
+		auto allBizProcessIds = value["BizProcessIds"]["BizProcessIds"];
+		for (auto value : allBizProcessIds)
+			remindsItemObject.bizProcessIds.push_back(value.asString());
+		auto allProjectIds = value["ProjectIds"]["ProjectIds"];
+		for (auto value : allProjectIds)
+			remindsItemObject.projectIds.push_back(value.asString());
+		auto allBaselineIds = value["BaselineIds"]["BaselineIds"];
+		for (auto value : allBaselineIds)
+			remindsItemObject.baselineIds.push_back(value.asString());
+		auto allAlertMethods = value["AlertMethods"]["AlertMethods"];
+		for (auto value : allAlertMethods)
+			remindsItemObject.alertMethods.push_back(value.asString());
 		data_.reminds.push_back(remindsItemObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

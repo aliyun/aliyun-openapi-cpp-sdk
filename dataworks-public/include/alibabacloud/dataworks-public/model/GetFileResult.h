@@ -47,6 +47,7 @@ namespace AlibabaCloud
 						std::string connectionName;
 						long lastEditTime;
 						std::string fileDescription;
+						std::string advancedSettings;
 						int fileType;
 						std::string lastEditUser;
 						std::string content;
@@ -70,14 +71,28 @@ namespace AlibabaCloud
 							std::string output;
 							std::string refTableName;
 						};
+						struct InputContextParameter
+						{
+							std::string valueSource;
+							std::string parameterName;
+						};
+						struct OutputContextParameter
+						{
+							std::string type;
+							std::string description;
+							std::string value;
+							std::string parameterName;
+						};
 						std::string cycleType;
 						std::vector<NodeInputOutput> inputList;
 						long resourceGroupId;
 						bool stop;
 						std::string dependentType;
 						std::string schedulerType;
+						bool startImmediately;
 						std::string cronExpress;
 						long endEffectDate;
+						std::vector<OutputContextParameter> outputParameters;
 						std::string dependentNodeIdList;
 						int autoRerunIntervalMillis;
 						long startEffectDate;
@@ -85,6 +100,7 @@ namespace AlibabaCloud
 						std::string rerunMode;
 						std::string paraValue;
 						std::vector<NodeInputOutput1> outputList;
+						std::vector<InputContextParameter> inputParameters;
 					};
 					File file;
 					NodeConfiguration nodeConfiguration;

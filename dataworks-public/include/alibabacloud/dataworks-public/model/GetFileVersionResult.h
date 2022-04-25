@@ -35,12 +35,12 @@ namespace AlibabaCloud
 				struct Data
 				{
 					std::string status;
-					std::string comment;
 					std::string commitUser;
+					std::string comment;
 					std::string filePropertyContent;
 					std::string fileName;
-					long commitTime;
 					std::string useType;
+					long commitTime;
 					bool isCurrentProd;
 					std::string fileContent;
 					std::string changeType;

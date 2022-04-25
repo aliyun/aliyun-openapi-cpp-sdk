@@ -44,38 +44,38 @@ void GetMetaTableThemeLevelResult::parse(const std::string &payload)
 	for (auto entityNodeThemeThemeItem : allThemeNode)
 	{
 		Entity::ThemeItem themeItemObject;
-		if(!entityNodeThemeThemeItem["ThemeId"].isNull())
-			themeItemObject.themeId = std::stol(entityNodeThemeThemeItem["ThemeId"].asString());
-		if(!entityNodeThemeThemeItem["Name"].isNull())
-			themeItemObject.name = entityNodeThemeThemeItem["Name"].asString();
-		if(!entityNodeThemeThemeItem["Level"].isNull())
-			themeItemObject.level = std::stoi(entityNodeThemeThemeItem["Level"].asString());
 		if(!entityNodeThemeThemeItem["ParentId"].isNull())
 			themeItemObject.parentId = std::stol(entityNodeThemeThemeItem["ParentId"].asString());
+		if(!entityNodeThemeThemeItem["Name"].isNull())
+			themeItemObject.name = entityNodeThemeThemeItem["Name"].asString();
+		if(!entityNodeThemeThemeItem["ThemeId"].isNull())
+			themeItemObject.themeId = std::stol(entityNodeThemeThemeItem["ThemeId"].asString());
+		if(!entityNodeThemeThemeItem["Level"].isNull())
+			themeItemObject.level = std::stoi(entityNodeThemeThemeItem["Level"].asString());
 		entity_.theme.push_back(themeItemObject);
 	}
 	auto allLevelNode = entityNode["Level"]["LevelItem"];
 	for (auto entityNodeLevelLevelItem : allLevelNode)
 	{
 		Entity::LevelItem levelItemObject;
-		if(!entityNodeLevelLevelItem["LevelId"].isNull())
-			levelItemObject.levelId = std::stol(entityNodeLevelLevelItem["LevelId"].asString());
-		if(!entityNodeLevelLevelItem["Name"].isNull())
-			levelItemObject.name = entityNodeLevelLevelItem["Name"].asString();
 		if(!entityNodeLevelLevelItem["Type"].isNull())
 			levelItemObject.type = std::stoi(entityNodeLevelLevelItem["Type"].asString());
 		if(!entityNodeLevelLevelItem["Description"].isNull())
 			levelItemObject.description = entityNodeLevelLevelItem["Description"].asString();
+		if(!entityNodeLevelLevelItem["Name"].isNull())
+			levelItemObject.name = entityNodeLevelLevelItem["Name"].asString();
+		if(!entityNodeLevelLevelItem["LevelId"].isNull())
+			levelItemObject.levelId = std::stol(entityNodeLevelLevelItem["LevelId"].asString());
 		entity_.level.push_back(levelItemObject);
 	}
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
 
 }
 

@@ -38,11 +38,11 @@ namespace AlibabaCloud
 					{
 						std::string dndStart;
 						std::vector<std::string> bizProcessIds;
-						std::string dndEnd;
 						std::string alertUnit;
+						std::string dndEnd;
 						std::vector<std::string> alertMethods;
-						std::string remindType;
 						std::string founder;
+						std::string remindType;
 						long remindId;
 						std::vector<std::string> nodeIds;
 						std::vector<std::string> projectIds;

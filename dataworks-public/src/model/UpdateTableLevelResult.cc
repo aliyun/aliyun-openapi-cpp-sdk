@@ -39,16 +39,16 @@ void UpdateTableLevelResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["UpdateResult"].isNull())
 		updateResult_ = value["UpdateResult"].asString() == "true";
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 
@@ -67,13 +67,13 @@ std::string UpdateTableLevelResult::getErrorMessage()const
 	return errorMessage_;
 }
 
-bool UpdateTableLevelResult::getSuccess()const
-{
-	return success_;
-}
-
 bool UpdateTableLevelResult::getUpdateResult()const
 {
 	return updateResult_;
+}
+
+bool UpdateTableLevelResult::getSuccess()const
+{
+	return success_;
 }
 

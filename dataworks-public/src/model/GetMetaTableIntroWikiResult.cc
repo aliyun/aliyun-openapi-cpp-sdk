@@ -40,26 +40,26 @@ void GetMetaTableIntroWikiResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["CreateTime"].isNull())
-		data_.createTime = std::stol(dataNode["CreateTime"].asString());
 	if(!dataNode["ModifiedTime"].isNull())
 		data_.modifiedTime = std::stol(dataNode["ModifiedTime"].asString());
-	if(!dataNode["Creator"].isNull())
-		data_.creator = dataNode["Creator"].asString();
 	if(!dataNode["Version"].isNull())
 		data_.version = std::stol(dataNode["Version"].asString());
+	if(!dataNode["CreateTime"].isNull())
+		data_.createTime = std::stol(dataNode["CreateTime"].asString());
 	if(!dataNode["CreatorName"].isNull())
 		data_.creatorName = dataNode["CreatorName"].asString();
 	if(!dataNode["Content"].isNull())
 		data_.content = dataNode["Content"].asString();
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
+	if(!dataNode["Creator"].isNull())
+		data_.creator = dataNode["Creator"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
 
 }
 
