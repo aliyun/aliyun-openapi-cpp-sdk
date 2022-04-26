@@ -78,6 +78,8 @@ void GetCampaignResult::parse(const std::string &payload)
 		data_.simulation = dataNode["Simulation"].asString() == "true";
 	if(!dataNode["SimulationParameters"].isNull())
 		data_.simulationParameters = dataNode["SimulationParameters"].asString();
+	if(!dataNode["CasesUncompletedAfterAttempted"].isNull())
+		data_.casesUncompletedAfterAttempted = std::stol(dataNode["CasesUncompletedAfterAttempted"].asString());
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stol(value["HttpStatusCode"].asString());
 	if(!value["Code"].isNull())

@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,56 +18,46 @@
 
 using AlibabaCloud::CCC::Model::SignInGroupRequest;
 
-SignInGroupRequest::SignInGroupRequest() :
-	RpcServiceRequest("ccc", "2020-07-01", "SignInGroup")
-{
-	setMethod(HttpRequest::Method::Post);
+SignInGroupRequest::SignInGroupRequest()
+    : RpcServiceRequest("ccc", "2020-07-01", "SignInGroup") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-SignInGroupRequest::~SignInGroupRequest()
-{}
+SignInGroupRequest::~SignInGroupRequest() {}
 
-std::string SignInGroupRequest::getSignedSkillGroupIdList()const
-{
-	return signedSkillGroupIdList_;
+std::string SignInGroupRequest::getSignedSkillGroupIdList() const {
+  return signedSkillGroupIdList_;
 }
 
-void SignInGroupRequest::setSignedSkillGroupIdList(const std::string& signedSkillGroupIdList)
-{
-	signedSkillGroupIdList_ = signedSkillGroupIdList;
-	setParameter("SignedSkillGroupIdList", signedSkillGroupIdList);
+void SignInGroupRequest::setSignedSkillGroupIdList(const std::string &signedSkillGroupIdList) {
+  signedSkillGroupIdList_ = signedSkillGroupIdList;
+  setParameter(std::string("SignedSkillGroupIdList"), signedSkillGroupIdList);
 }
 
-std::string SignInGroupRequest::getUserId()const
-{
-	return userId_;
+std::string SignInGroupRequest::getUserId() const {
+  return userId_;
 }
 
-void SignInGroupRequest::setUserId(const std::string& userId)
-{
-	userId_ = userId;
-	setParameter("UserId", userId);
+void SignInGroupRequest::setUserId(const std::string &userId) {
+  userId_ = userId;
+  setParameter(std::string("UserId"), userId);
 }
 
-std::string SignInGroupRequest::getDeviceId()const
-{
-	return deviceId_;
+std::string SignInGroupRequest::getDeviceId() const {
+  return deviceId_;
 }
 
-void SignInGroupRequest::setDeviceId(const std::string& deviceId)
-{
-	deviceId_ = deviceId;
-	setParameter("DeviceId", deviceId);
+void SignInGroupRequest::setDeviceId(const std::string &deviceId) {
+  deviceId_ = deviceId;
+  setParameter(std::string("DeviceId"), deviceId);
 }
 
-std::string SignInGroupRequest::getInstanceId()const
-{
-	return instanceId_;
+std::string SignInGroupRequest::getInstanceId() const {
+  return instanceId_;
 }
 
-void SignInGroupRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+void SignInGroupRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
 }
 

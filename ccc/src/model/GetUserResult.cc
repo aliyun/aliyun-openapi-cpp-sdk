@@ -42,6 +42,8 @@ void GetUserResult::parse(const std::string &payload)
 	auto dataNode = value["Data"];
 	if(!dataNode["DisplayName"].isNull())
 		data_.displayName = dataNode["DisplayName"].asString();
+	if(!dataNode["DisplayId"].isNull())
+		data_.displayId = dataNode["DisplayId"].asString();
 	if(!dataNode["Extension"].isNull())
 		data_.extension = dataNode["Extension"].asString();
 	if(!dataNode["LoginName"].isNull())

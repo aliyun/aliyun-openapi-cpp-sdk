@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,45 +18,37 @@
 
 using AlibabaCloud::CCC::Model::RemovePhoneNumberFromSkillGroupsRequest;
 
-RemovePhoneNumberFromSkillGroupsRequest::RemovePhoneNumberFromSkillGroupsRequest() :
-	RpcServiceRequest("ccc", "2020-07-01", "RemovePhoneNumberFromSkillGroups")
-{
-	setMethod(HttpRequest::Method::Post);
+RemovePhoneNumberFromSkillGroupsRequest::RemovePhoneNumberFromSkillGroupsRequest()
+    : RpcServiceRequest("ccc", "2020-07-01", "RemovePhoneNumberFromSkillGroups") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-RemovePhoneNumberFromSkillGroupsRequest::~RemovePhoneNumberFromSkillGroupsRequest()
-{}
+RemovePhoneNumberFromSkillGroupsRequest::~RemovePhoneNumberFromSkillGroupsRequest() {}
 
-std::string RemovePhoneNumberFromSkillGroupsRequest::getNumber()const
-{
-	return number_;
+std::string RemovePhoneNumberFromSkillGroupsRequest::getNumber() const {
+  return number_;
 }
 
-void RemovePhoneNumberFromSkillGroupsRequest::setNumber(const std::string& number)
-{
-	number_ = number;
-	setParameter("Number", number);
+void RemovePhoneNumberFromSkillGroupsRequest::setNumber(const std::string &number) {
+  number_ = number;
+  setParameter(std::string("Number"), number);
 }
 
-std::string RemovePhoneNumberFromSkillGroupsRequest::getInstanceId()const
-{
-	return instanceId_;
+std::string RemovePhoneNumberFromSkillGroupsRequest::getInstanceId() const {
+  return instanceId_;
 }
 
-void RemovePhoneNumberFromSkillGroupsRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+void RemovePhoneNumberFromSkillGroupsRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-std::string RemovePhoneNumberFromSkillGroupsRequest::getSkillGroupIdList()const
-{
-	return skillGroupIdList_;
+std::string RemovePhoneNumberFromSkillGroupsRequest::getSkillGroupIdList() const {
+  return skillGroupIdList_;
 }
 
-void RemovePhoneNumberFromSkillGroupsRequest::setSkillGroupIdList(const std::string& skillGroupIdList)
-{
-	skillGroupIdList_ = skillGroupIdList;
-	setParameter("SkillGroupIdList", skillGroupIdList);
+void RemovePhoneNumberFromSkillGroupsRequest::setSkillGroupIdList(const std::string &skillGroupIdList) {
+  skillGroupIdList_ = skillGroupIdList;
+  setParameter(std::string("SkillGroupIdList"), skillGroupIdList);
 }
 

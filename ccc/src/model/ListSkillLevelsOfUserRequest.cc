@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,78 +18,64 @@
 
 using AlibabaCloud::CCC::Model::ListSkillLevelsOfUserRequest;
 
-ListSkillLevelsOfUserRequest::ListSkillLevelsOfUserRequest() :
-	RpcServiceRequest("ccc", "2020-07-01", "ListSkillLevelsOfUser")
-{
-	setMethod(HttpRequest::Method::Post);
+ListSkillLevelsOfUserRequest::ListSkillLevelsOfUserRequest()
+    : RpcServiceRequest("ccc", "2020-07-01", "ListSkillLevelsOfUser") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-ListSkillLevelsOfUserRequest::~ListSkillLevelsOfUserRequest()
-{}
+ListSkillLevelsOfUserRequest::~ListSkillLevelsOfUserRequest() {}
 
-std::string ListSkillLevelsOfUserRequest::getUserId()const
-{
-	return userId_;
+std::string ListSkillLevelsOfUserRequest::getUserId() const {
+  return userId_;
 }
 
-void ListSkillLevelsOfUserRequest::setUserId(const std::string& userId)
-{
-	userId_ = userId;
-	setParameter("UserId", userId);
+void ListSkillLevelsOfUserRequest::setUserId(const std::string &userId) {
+  userId_ = userId;
+  setParameter(std::string("UserId"), userId);
 }
 
-bool ListSkillLevelsOfUserRequest::getIsMember()const
-{
-	return isMember_;
+bool ListSkillLevelsOfUserRequest::getIsMember() const {
+  return isMember_;
 }
 
-void ListSkillLevelsOfUserRequest::setIsMember(bool isMember)
-{
-	isMember_ = isMember;
-	setParameter("IsMember", isMember ? "true" : "false");
+void ListSkillLevelsOfUserRequest::setIsMember(bool isMember) {
+  isMember_ = isMember;
+  setParameter(std::string("IsMember"), isMember ? "true" : "false");
 }
 
-int ListSkillLevelsOfUserRequest::getPageNumber()const
-{
-	return pageNumber_;
+int ListSkillLevelsOfUserRequest::getPageNumber() const {
+  return pageNumber_;
 }
 
-void ListSkillLevelsOfUserRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+void ListSkillLevelsOfUserRequest::setPageNumber(int pageNumber) {
+  pageNumber_ = pageNumber;
+  setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
-std::string ListSkillLevelsOfUserRequest::getSearchPattern()const
-{
-	return searchPattern_;
+std::string ListSkillLevelsOfUserRequest::getSearchPattern() const {
+  return searchPattern_;
 }
 
-void ListSkillLevelsOfUserRequest::setSearchPattern(const std::string& searchPattern)
-{
-	searchPattern_ = searchPattern;
-	setParameter("SearchPattern", searchPattern);
+void ListSkillLevelsOfUserRequest::setSearchPattern(const std::string &searchPattern) {
+  searchPattern_ = searchPattern;
+  setParameter(std::string("SearchPattern"), searchPattern);
 }
 
-std::string ListSkillLevelsOfUserRequest::getInstanceId()const
-{
-	return instanceId_;
+std::string ListSkillLevelsOfUserRequest::getInstanceId() const {
+  return instanceId_;
 }
 
-void ListSkillLevelsOfUserRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+void ListSkillLevelsOfUserRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-int ListSkillLevelsOfUserRequest::getPageSize()const
-{
-	return pageSize_;
+int ListSkillLevelsOfUserRequest::getPageSize() const {
+  return pageSize_;
 }
 
-void ListSkillLevelsOfUserRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+void ListSkillLevelsOfUserRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 

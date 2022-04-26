@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,89 +18,73 @@
 
 using AlibabaCloud::CCC::Model::BlindTransferRequest;
 
-BlindTransferRequest::BlindTransferRequest() :
-	RpcServiceRequest("ccc", "2020-07-01", "BlindTransfer")
-{
-	setMethod(HttpRequest::Method::Post);
+BlindTransferRequest::BlindTransferRequest()
+    : RpcServiceRequest("ccc", "2020-07-01", "BlindTransfer") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-BlindTransferRequest::~BlindTransferRequest()
-{}
+BlindTransferRequest::~BlindTransferRequest() {}
 
-std::string BlindTransferRequest::getTransferee()const
-{
-	return transferee_;
+std::string BlindTransferRequest::getTransferee() const {
+  return transferee_;
 }
 
-void BlindTransferRequest::setTransferee(const std::string& transferee)
-{
-	transferee_ = transferee;
-	setParameter("Transferee", transferee);
+void BlindTransferRequest::setTransferee(const std::string &transferee) {
+  transferee_ = transferee;
+  setParameter(std::string("Transferee"), transferee);
 }
 
-std::string BlindTransferRequest::getTransferor()const
-{
-	return transferor_;
+std::string BlindTransferRequest::getTransferor() const {
+  return transferor_;
 }
 
-void BlindTransferRequest::setTransferor(const std::string& transferor)
-{
-	transferor_ = transferor;
-	setParameter("Transferor", transferor);
+void BlindTransferRequest::setTransferor(const std::string &transferor) {
+  transferor_ = transferor;
+  setParameter(std::string("Transferor"), transferor);
 }
 
-std::string BlindTransferRequest::getUserId()const
-{
-	return userId_;
+std::string BlindTransferRequest::getUserId() const {
+  return userId_;
 }
 
-void BlindTransferRequest::setUserId(const std::string& userId)
-{
-	userId_ = userId;
-	setParameter("UserId", userId);
+void BlindTransferRequest::setUserId(const std::string &userId) {
+  userId_ = userId;
+  setParameter(std::string("UserId"), userId);
 }
 
-std::string BlindTransferRequest::getDeviceId()const
-{
-	return deviceId_;
+std::string BlindTransferRequest::getDeviceId() const {
+  return deviceId_;
 }
 
-void BlindTransferRequest::setDeviceId(const std::string& deviceId)
-{
-	deviceId_ = deviceId;
-	setParameter("DeviceId", deviceId);
+void BlindTransferRequest::setDeviceId(const std::string &deviceId) {
+  deviceId_ = deviceId;
+  setParameter(std::string("DeviceId"), deviceId);
 }
 
-int BlindTransferRequest::getTimeoutSeconds()const
-{
-	return timeoutSeconds_;
+int BlindTransferRequest::getTimeoutSeconds() const {
+  return timeoutSeconds_;
 }
 
-void BlindTransferRequest::setTimeoutSeconds(int timeoutSeconds)
-{
-	timeoutSeconds_ = timeoutSeconds;
-	setParameter("TimeoutSeconds", std::to_string(timeoutSeconds));
+void BlindTransferRequest::setTimeoutSeconds(int timeoutSeconds) {
+  timeoutSeconds_ = timeoutSeconds;
+  setParameter(std::string("TimeoutSeconds"), std::to_string(timeoutSeconds));
 }
 
-std::string BlindTransferRequest::getJobId()const
-{
-	return jobId_;
+std::string BlindTransferRequest::getJobId() const {
+  return jobId_;
 }
 
-void BlindTransferRequest::setJobId(const std::string& jobId)
-{
-	jobId_ = jobId;
-	setParameter("JobId", jobId);
+void BlindTransferRequest::setJobId(const std::string &jobId) {
+  jobId_ = jobId;
+  setParameter(std::string("JobId"), jobId);
 }
 
-std::string BlindTransferRequest::getInstanceId()const
-{
-	return instanceId_;
+std::string BlindTransferRequest::getInstanceId() const {
+  return instanceId_;
 }
 
-void BlindTransferRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+void BlindTransferRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
 }
 

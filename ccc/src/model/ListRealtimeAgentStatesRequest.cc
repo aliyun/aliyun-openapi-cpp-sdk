@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,89 +18,73 @@
 
 using AlibabaCloud::CCC::Model::ListRealtimeAgentStatesRequest;
 
-ListRealtimeAgentStatesRequest::ListRealtimeAgentStatesRequest() :
-	RpcServiceRequest("ccc", "2020-07-01", "ListRealtimeAgentStates")
-{
-	setMethod(HttpRequest::Method::Post);
+ListRealtimeAgentStatesRequest::ListRealtimeAgentStatesRequest()
+    : RpcServiceRequest("ccc", "2020-07-01", "ListRealtimeAgentStates") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-ListRealtimeAgentStatesRequest::~ListRealtimeAgentStatesRequest()
-{}
+ListRealtimeAgentStatesRequest::~ListRealtimeAgentStatesRequest() {}
 
-int ListRealtimeAgentStatesRequest::getPageNumber()const
-{
-	return pageNumber_;
+int ListRealtimeAgentStatesRequest::getPageNumber() const {
+  return pageNumber_;
 }
 
-void ListRealtimeAgentStatesRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+void ListRealtimeAgentStatesRequest::setPageNumber(int pageNumber) {
+  pageNumber_ = pageNumber;
+  setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
-std::string ListRealtimeAgentStatesRequest::getInstanceId()const
-{
-	return instanceId_;
+std::string ListRealtimeAgentStatesRequest::getInstanceId() const {
+  return instanceId_;
 }
 
-void ListRealtimeAgentStatesRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+void ListRealtimeAgentStatesRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-std::string ListRealtimeAgentStatesRequest::getAgentIdList()const
-{
-	return agentIdList_;
+std::string ListRealtimeAgentStatesRequest::getAgentIdList() const {
+  return agentIdList_;
 }
 
-void ListRealtimeAgentStatesRequest::setAgentIdList(const std::string& agentIdList)
-{
-	agentIdList_ = agentIdList;
-	setBodyParameter("AgentIdList", agentIdList);
+void ListRealtimeAgentStatesRequest::setAgentIdList(const std::string &agentIdList) {
+  agentIdList_ = agentIdList;
+  setBodyParameter(std::string("AgentIdList"), agentIdList);
 }
 
-std::string ListRealtimeAgentStatesRequest::getSkillGroupId()const
-{
-	return skillGroupId_;
+std::string ListRealtimeAgentStatesRequest::getSkillGroupId() const {
+  return skillGroupId_;
 }
 
-void ListRealtimeAgentStatesRequest::setSkillGroupId(const std::string& skillGroupId)
-{
-	skillGroupId_ = skillGroupId;
-	setParameter("SkillGroupId", skillGroupId);
+void ListRealtimeAgentStatesRequest::setSkillGroupId(const std::string &skillGroupId) {
+  skillGroupId_ = skillGroupId;
+  setParameter(std::string("SkillGroupId"), skillGroupId);
 }
 
-std::string ListRealtimeAgentStatesRequest::getAgentName()const
-{
-	return agentName_;
+std::string ListRealtimeAgentStatesRequest::getAgentName() const {
+  return agentName_;
 }
 
-void ListRealtimeAgentStatesRequest::setAgentName(const std::string& agentName)
-{
-	agentName_ = agentName;
-	setParameter("AgentName", agentName);
+void ListRealtimeAgentStatesRequest::setAgentName(const std::string &agentName) {
+  agentName_ = agentName;
+  setParameter(std::string("AgentName"), agentName);
 }
 
-int ListRealtimeAgentStatesRequest::getPageSize()const
-{
-	return pageSize_;
+int ListRealtimeAgentStatesRequest::getPageSize() const {
+  return pageSize_;
 }
 
-void ListRealtimeAgentStatesRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+void ListRealtimeAgentStatesRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
-std::string ListRealtimeAgentStatesRequest::getStateList()const
-{
-	return stateList_;
+std::string ListRealtimeAgentStatesRequest::getStateList() const {
+  return stateList_;
 }
 
-void ListRealtimeAgentStatesRequest::setStateList(const std::string& stateList)
-{
-	stateList_ = stateList;
-	setBodyParameter("StateList", stateList);
+void ListRealtimeAgentStatesRequest::setStateList(const std::string &stateList) {
+  stateList_ = stateList;
+  setBodyParameter(std::string("StateList"), stateList);
 }
 

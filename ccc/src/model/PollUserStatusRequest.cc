@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,45 +18,37 @@
 
 using AlibabaCloud::CCC::Model::PollUserStatusRequest;
 
-PollUserStatusRequest::PollUserStatusRequest() :
-	RpcServiceRequest("ccc", "2020-07-01", "PollUserStatus")
-{
-	setMethod(HttpRequest::Method::Post);
+PollUserStatusRequest::PollUserStatusRequest()
+    : RpcServiceRequest("ccc", "2020-07-01", "PollUserStatus") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-PollUserStatusRequest::~PollUserStatusRequest()
-{}
+PollUserStatusRequest::~PollUserStatusRequest() {}
 
-std::string PollUserStatusRequest::getUserId()const
-{
-	return userId_;
+std::string PollUserStatusRequest::getUserId() const {
+  return userId_;
 }
 
-void PollUserStatusRequest::setUserId(const std::string& userId)
-{
-	userId_ = userId;
-	setParameter("UserId", userId);
+void PollUserStatusRequest::setUserId(const std::string &userId) {
+  userId_ = userId;
+  setParameter(std::string("UserId"), userId);
 }
 
-std::string PollUserStatusRequest::getDeviceId()const
-{
-	return deviceId_;
+std::string PollUserStatusRequest::getDeviceId() const {
+  return deviceId_;
 }
 
-void PollUserStatusRequest::setDeviceId(const std::string& deviceId)
-{
-	deviceId_ = deviceId;
-	setParameter("DeviceId", deviceId);
+void PollUserStatusRequest::setDeviceId(const std::string &deviceId) {
+  deviceId_ = deviceId;
+  setParameter(std::string("DeviceId"), deviceId);
 }
 
-std::string PollUserStatusRequest::getInstanceId()const
-{
-	return instanceId_;
+std::string PollUserStatusRequest::getInstanceId() const {
+  return instanceId_;
 }
 
-void PollUserStatusRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+void PollUserStatusRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
 }
 

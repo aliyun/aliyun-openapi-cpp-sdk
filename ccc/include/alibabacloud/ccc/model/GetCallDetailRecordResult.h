@@ -40,6 +40,7 @@ namespace AlibabaCloud
 						{
 							long eventTime;
 							std::string event;
+							long duration;
 						};
 						std::vector<AgentEventsItem::EventSequenceItem> eventSequence;
 						std::string agentName;
@@ -55,6 +56,7 @@ namespace AlibabaCloud
 						};
 						std::string flowId;
 						std::vector<IvrEventsItem::EventSequenceItem2> eventSequence1;
+						std::string flowType;
 					};
 					struct QueueEventsItem
 					{

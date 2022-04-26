@@ -39,18 +39,18 @@ void SaveRTCStatsV2Result::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stol(value["HttpStatusCode"].asString());
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
-	if(!value["RowCount"].isNull())
-		rowCount_ = std::stol(value["RowCount"].asString());
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 	if(!value["TimeStamp"].isNull())
 		timeStamp_ = std::stol(value["TimeStamp"].asString());
+	if(!value["RowCount"].isNull())
+		rowCount_ = std::stol(value["RowCount"].asString());
 
 }
 

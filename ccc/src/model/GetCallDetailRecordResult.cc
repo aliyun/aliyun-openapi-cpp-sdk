@@ -102,6 +102,8 @@ void GetCallDetailRecordResult::parse(const std::string &payload)
 				eventSequenceObject.event = dataNodeAgentEventsAgentEventsItemEventSequenceEventSequenceItem["Event"].asString();
 			if(!dataNodeAgentEventsAgentEventsItemEventSequenceEventSequenceItem["EventTime"].isNull())
 				eventSequenceObject.eventTime = std::stol(dataNodeAgentEventsAgentEventsItemEventSequenceEventSequenceItem["EventTime"].asString());
+			if(!dataNodeAgentEventsAgentEventsItemEventSequenceEventSequenceItem["Duration"].isNull())
+				eventSequenceObject.duration = std::stol(dataNodeAgentEventsAgentEventsItemEventSequenceEventSequenceItem["Duration"].asString());
 			agentEventsItemObject.eventSequence.push_back(eventSequenceObject);
 		}
 		data_.agentEvents.push_back(agentEventsItemObject);
@@ -112,6 +114,8 @@ void GetCallDetailRecordResult::parse(const std::string &payload)
 		Data::IvrEventsItem ivrEventsItemObject;
 		if(!dataNodeIvrEventsIvrEventsItem["FlowId"].isNull())
 			ivrEventsItemObject.flowId = dataNodeIvrEventsIvrEventsItem["FlowId"].asString();
+		if(!dataNodeIvrEventsIvrEventsItem["FlowType"].isNull())
+			ivrEventsItemObject.flowType = dataNodeIvrEventsIvrEventsItem["FlowType"].asString();
 		auto allEventSequence1Node = dataNodeIvrEventsIvrEventsItem["EventSequence"]["EventSequenceItem"];
 		for (auto dataNodeIvrEventsIvrEventsItemEventSequenceEventSequenceItem : allEventSequence1Node)
 		{

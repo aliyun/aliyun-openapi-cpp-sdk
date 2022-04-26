@@ -40,8 +40,7 @@ namespace AlibabaCloud
 				std::string getMessage()const;
 				int getHttpStatusCode()const;
 				std::vector<std::string> getParams()const;
-				std::vector<std::string> getFailureList()const;
-				std::string getData()const;
+				std::vector<std::string> getData()const;
 				std::string getCode()const;
 
 			protected:
@@ -50,8 +49,7 @@ namespace AlibabaCloud
 				std::string message_;
 				int httpStatusCode_;
 				std::vector<std::string> params_;
-				std::vector<std::string> failureList_;
-				std::string data_;
+				std::vector<std::string> data_;
 				std::string code_;
 
 			};

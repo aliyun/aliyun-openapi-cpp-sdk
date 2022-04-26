@@ -38,6 +38,7 @@ namespace AlibabaCloud
 					std::string email;
 					std::string instanceId;
 					std::string deviceId;
+					std::string displayId;
 					std::string mobile;
 					std::string roleId;
 					std::string extension;

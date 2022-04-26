@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,45 +18,37 @@
 
 using AlibabaCloud::CCC::Model::AddUsersToSkillGroupRequest;
 
-AddUsersToSkillGroupRequest::AddUsersToSkillGroupRequest() :
-	RpcServiceRequest("ccc", "2020-07-01", "AddUsersToSkillGroup")
-{
-	setMethod(HttpRequest::Method::Post);
+AddUsersToSkillGroupRequest::AddUsersToSkillGroupRequest()
+    : RpcServiceRequest("ccc", "2020-07-01", "AddUsersToSkillGroup") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-AddUsersToSkillGroupRequest::~AddUsersToSkillGroupRequest()
-{}
+AddUsersToSkillGroupRequest::~AddUsersToSkillGroupRequest() {}
 
-std::string AddUsersToSkillGroupRequest::getInstanceId()const
-{
-	return instanceId_;
+std::string AddUsersToSkillGroupRequest::getInstanceId() const {
+  return instanceId_;
 }
 
-void AddUsersToSkillGroupRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+void AddUsersToSkillGroupRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-std::string AddUsersToSkillGroupRequest::getUserSkillLevelList()const
-{
-	return userSkillLevelList_;
+std::string AddUsersToSkillGroupRequest::getUserSkillLevelList() const {
+  return userSkillLevelList_;
 }
 
-void AddUsersToSkillGroupRequest::setUserSkillLevelList(const std::string& userSkillLevelList)
-{
-	userSkillLevelList_ = userSkillLevelList;
-	setParameter("UserSkillLevelList", userSkillLevelList);
+void AddUsersToSkillGroupRequest::setUserSkillLevelList(const std::string &userSkillLevelList) {
+  userSkillLevelList_ = userSkillLevelList;
+  setParameter(std::string("UserSkillLevelList"), userSkillLevelList);
 }
 
-std::string AddUsersToSkillGroupRequest::getSkillGroupId()const
-{
-	return skillGroupId_;
+std::string AddUsersToSkillGroupRequest::getSkillGroupId() const {
+  return skillGroupId_;
 }
 
-void AddUsersToSkillGroupRequest::setSkillGroupId(const std::string& skillGroupId)
-{
-	skillGroupId_ = skillGroupId;
-	setParameter("SkillGroupId", skillGroupId);
+void AddUsersToSkillGroupRequest::setSkillGroupId(const std::string &skillGroupId) {
+  skillGroupId_ = skillGroupId;
+  setParameter(std::string("SkillGroupId"), skillGroupId);
 }
 

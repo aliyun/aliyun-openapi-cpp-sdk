@@ -45,6 +45,7 @@ namespace AlibabaCloud
 					std::string queueId;
 					long totalCases;
 					std::string name;
+					long casesUncompletedAfterAttempted;
 					long actualStartTime;
 					std::string strategyParameters;
 					bool simulation;

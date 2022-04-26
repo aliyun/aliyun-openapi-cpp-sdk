@@ -51,24 +51,40 @@ set(ccc_public_header_model
 	include/alibabacloud/ccc/model/CoachCallResult.h
 	include/alibabacloud/ccc/model/CompleteAttendedTransferRequest.h
 	include/alibabacloud/ccc/model/CompleteAttendedTransferResult.h
+	include/alibabacloud/ccc/model/CreateCallTagsRequest.h
+	include/alibabacloud/ccc/model/CreateCallTagsResult.h
 	include/alibabacloud/ccc/model/CreateCampaignRequest.h
 	include/alibabacloud/ccc/model/CreateCampaignResult.h
+	include/alibabacloud/ccc/model/CreateCustomCallTaggingRequest.h
+	include/alibabacloud/ccc/model/CreateCustomCallTaggingResult.h
 	include/alibabacloud/ccc/model/CreateInstanceRequest.h
 	include/alibabacloud/ccc/model/CreateInstanceResult.h
 	include/alibabacloud/ccc/model/CreateSkillGroupRequest.h
 	include/alibabacloud/ccc/model/CreateSkillGroupResult.h
 	include/alibabacloud/ccc/model/CreateUserRequest.h
 	include/alibabacloud/ccc/model/CreateUserResult.h
+	include/alibabacloud/ccc/model/DeleteCallTagRequest.h
+	include/alibabacloud/ccc/model/DeleteCallTagResult.h
+	include/alibabacloud/ccc/model/DeleteCustomCallTaggingRequest.h
+	include/alibabacloud/ccc/model/DeleteCustomCallTaggingResult.h
 	include/alibabacloud/ccc/model/DeleteSkillGroupRequest.h
 	include/alibabacloud/ccc/model/DeleteSkillGroupResult.h
+	include/alibabacloud/ccc/model/ExportCustomCallTaggingRequest.h
+	include/alibabacloud/ccc/model/ExportCustomCallTaggingResult.h
+	include/alibabacloud/ccc/model/ExportDoNotCallNumbersRequest.h
+	include/alibabacloud/ccc/model/ExportDoNotCallNumbersResult.h
 	include/alibabacloud/ccc/model/GetCallDetailRecordRequest.h
 	include/alibabacloud/ccc/model/GetCallDetailRecordResult.h
 	include/alibabacloud/ccc/model/GetCampaignRequest.h
 	include/alibabacloud/ccc/model/GetCampaignResult.h
 	include/alibabacloud/ccc/model/GetCaseFileUploadUrlRequest.h
 	include/alibabacloud/ccc/model/GetCaseFileUploadUrlResult.h
+	include/alibabacloud/ccc/model/GetDoNotCallFileUploadParametersRequest.h
+	include/alibabacloud/ccc/model/GetDoNotCallFileUploadParametersResult.h
 	include/alibabacloud/ccc/model/GetHistoricalCallerReportRequest.h
 	include/alibabacloud/ccc/model/GetHistoricalCallerReportResult.h
+	include/alibabacloud/ccc/model/GetHistoricalCampaignReportRequest.h
+	include/alibabacloud/ccc/model/GetHistoricalCampaignReportResult.h
 	include/alibabacloud/ccc/model/GetHistoricalInstanceReportRequest.h
 	include/alibabacloud/ccc/model/GetHistoricalInstanceReportResult.h
 	include/alibabacloud/ccc/model/GetInstanceRequest.h
@@ -83,8 +99,12 @@ set(ccc_public_header_model
 	include/alibabacloud/ccc/model/GetMultiChannelRecordingResult.h
 	include/alibabacloud/ccc/model/GetNumberLocationRequest.h
 	include/alibabacloud/ccc/model/GetNumberLocationResult.h
+	include/alibabacloud/ccc/model/GetRealtimeCampaignStatsRequest.h
+	include/alibabacloud/ccc/model/GetRealtimeCampaignStatsResult.h
 	include/alibabacloud/ccc/model/GetRealtimeInstanceStatesRequest.h
 	include/alibabacloud/ccc/model/GetRealtimeInstanceStatesResult.h
+	include/alibabacloud/ccc/model/GetSkillGroupRequest.h
+	include/alibabacloud/ccc/model/GetSkillGroupResult.h
 	include/alibabacloud/ccc/model/GetTurnCredentialsRequest.h
 	include/alibabacloud/ccc/model/GetTurnCredentialsResult.h
 	include/alibabacloud/ccc/model/GetTurnServerListRequest.h
@@ -93,6 +113,12 @@ set(ccc_public_header_model
 	include/alibabacloud/ccc/model/GetUserResult.h
 	include/alibabacloud/ccc/model/HoldCallRequest.h
 	include/alibabacloud/ccc/model/HoldCallResult.h
+	include/alibabacloud/ccc/model/ImportAdminsRequest.h
+	include/alibabacloud/ccc/model/ImportAdminsResult.h
+	include/alibabacloud/ccc/model/ImportCustomCallTaggingRequest.h
+	include/alibabacloud/ccc/model/ImportCustomCallTaggingResult.h
+	include/alibabacloud/ccc/model/ImportDoNotCallNumbersRequest.h
+	include/alibabacloud/ccc/model/ImportDoNotCallNumbersResult.h
 	include/alibabacloud/ccc/model/InitiateAttendedTransferRequest.h
 	include/alibabacloud/ccc/model/InitiateAttendedTransferResult.h
 	include/alibabacloud/ccc/model/InterceptCallRequest.h
@@ -103,12 +129,18 @@ set(ccc_public_header_model
 	include/alibabacloud/ccc/model/LaunchSurveyResult.h
 	include/alibabacloud/ccc/model/ListAgentStateLogsRequest.h
 	include/alibabacloud/ccc/model/ListAgentStateLogsResult.h
+	include/alibabacloud/ccc/model/ListAgentStatesRequest.h
+	include/alibabacloud/ccc/model/ListAgentStatesResult.h
+	include/alibabacloud/ccc/model/ListAgentSummaryReportsSinceMidnightRequest.h
+	include/alibabacloud/ccc/model/ListAgentSummaryReportsSinceMidnightResult.h
 	include/alibabacloud/ccc/model/ListAttemptsRequest.h
 	include/alibabacloud/ccc/model/ListAttemptsResult.h
 	include/alibabacloud/ccc/model/ListBriefSkillGroupsRequest.h
 	include/alibabacloud/ccc/model/ListBriefSkillGroupsResult.h
 	include/alibabacloud/ccc/model/ListCallDetailRecordsRequest.h
 	include/alibabacloud/ccc/model/ListCallDetailRecordsResult.h
+	include/alibabacloud/ccc/model/ListCallTagsRequest.h
+	include/alibabacloud/ccc/model/ListCallTagsResult.h
 	include/alibabacloud/ccc/model/ListCampaignTrendingReportRequest.h
 	include/alibabacloud/ccc/model/ListCampaignTrendingReportResult.h
 	include/alibabacloud/ccc/model/ListCampaignsRequest.h
@@ -119,8 +151,12 @@ set(ccc_public_header_model
 	include/alibabacloud/ccc/model/ListConfigItemsResult.h
 	include/alibabacloud/ccc/model/ListContactFlowsRequest.h
 	include/alibabacloud/ccc/model/ListContactFlowsResult.h
+	include/alibabacloud/ccc/model/ListCustomCallTaggingRequest.h
+	include/alibabacloud/ccc/model/ListCustomCallTaggingResult.h
 	include/alibabacloud/ccc/model/ListDevicesRequest.h
 	include/alibabacloud/ccc/model/ListDevicesResult.h
+	include/alibabacloud/ccc/model/ListDoNotCallNumbersRequest.h
+	include/alibabacloud/ccc/model/ListDoNotCallNumbersResult.h
 	include/alibabacloud/ccc/model/ListHistoricalAgentReportRequest.h
 	include/alibabacloud/ccc/model/ListHistoricalAgentReportResult.h
 	include/alibabacloud/ccc/model/ListHistoricalSkillGroupReportRequest.h
@@ -137,6 +173,10 @@ set(ccc_public_header_model
 	include/alibabacloud/ccc/model/ListIntervalSkillGroupReportResult.h
 	include/alibabacloud/ccc/model/ListIvrTrackingDetailsRequest.h
 	include/alibabacloud/ccc/model/ListIvrTrackingDetailsResult.h
+	include/alibabacloud/ccc/model/ListMonoRecordingsRequest.h
+	include/alibabacloud/ccc/model/ListMonoRecordingsResult.h
+	include/alibabacloud/ccc/model/ListMultiChannelRecordingsRequest.h
+	include/alibabacloud/ccc/model/ListMultiChannelRecordingsResult.h
 	include/alibabacloud/ccc/model/ListOutboundNumbersOfUserRequest.h
 	include/alibabacloud/ccc/model/ListOutboundNumbersOfUserResult.h
 	include/alibabacloud/ccc/model/ListPersonalNumbersOfUserRequest.h
@@ -161,6 +201,10 @@ set(ccc_public_header_model
 	include/alibabacloud/ccc/model/ListSipCallRecordsResult.h
 	include/alibabacloud/ccc/model/ListSipTracesRequest.h
 	include/alibabacloud/ccc/model/ListSipTracesResult.h
+	include/alibabacloud/ccc/model/ListSkillGroupStatesRequest.h
+	include/alibabacloud/ccc/model/ListSkillGroupStatesResult.h
+	include/alibabacloud/ccc/model/ListSkillGroupSummaryReportsSinceMidnightRequest.h
+	include/alibabacloud/ccc/model/ListSkillGroupSummaryReportsSinceMidnightResult.h
 	include/alibabacloud/ccc/model/ListSkillGroupsRequest.h
 	include/alibabacloud/ccc/model/ListSkillGroupsResult.h
 	include/alibabacloud/ccc/model/ListSkillLevelsOfUserRequest.h
@@ -173,6 +217,8 @@ set(ccc_public_header_model
 	include/alibabacloud/ccc/model/ListUsersResult.h
 	include/alibabacloud/ccc/model/MakeCallRequest.h
 	include/alibabacloud/ccc/model/MakeCallResult.h
+	include/alibabacloud/ccc/model/ModifyCustomCallTaggingRequest.h
+	include/alibabacloud/ccc/model/ModifyCustomCallTaggingResult.h
 	include/alibabacloud/ccc/model/ModifyInstanceRequest.h
 	include/alibabacloud/ccc/model/ModifyInstanceResult.h
 	include/alibabacloud/ccc/model/ModifyPhoneNumberRequest.h
@@ -203,6 +249,8 @@ set(ccc_public_header_model
 	include/alibabacloud/ccc/model/RegisterDevicesResult.h
 	include/alibabacloud/ccc/model/ReleaseCallRequest.h
 	include/alibabacloud/ccc/model/ReleaseCallResult.h
+	include/alibabacloud/ccc/model/RemoveDoNotCallNumbersRequest.h
+	include/alibabacloud/ccc/model/RemoveDoNotCallNumbersResult.h
 	include/alibabacloud/ccc/model/RemovePersonalNumbersFromUserRequest.h
 	include/alibabacloud/ccc/model/RemovePersonalNumbersFromUserResult.h
 	include/alibabacloud/ccc/model/RemovePhoneNumberFromSkillGroupsRequest.h
@@ -249,6 +297,8 @@ set(ccc_public_header_model
 	include/alibabacloud/ccc/model/TakeBreakResult.h
 	include/alibabacloud/ccc/model/UnmuteCallRequest.h
 	include/alibabacloud/ccc/model/UnmuteCallResult.h
+	include/alibabacloud/ccc/model/UnregisterDeviceRequest.h
+	include/alibabacloud/ccc/model/UnregisterDeviceResult.h
 	include/alibabacloud/ccc/model/UpdateConfigItemsRequest.h
 	include/alibabacloud/ccc/model/UpdateConfigItemsResult.h )
 
@@ -284,24 +334,40 @@ set(ccc_src
 	src/model/CoachCallResult.cc
 	src/model/CompleteAttendedTransferRequest.cc
 	src/model/CompleteAttendedTransferResult.cc
+	src/model/CreateCallTagsRequest.cc
+	src/model/CreateCallTagsResult.cc
 	src/model/CreateCampaignRequest.cc
 	src/model/CreateCampaignResult.cc
+	src/model/CreateCustomCallTaggingRequest.cc
+	src/model/CreateCustomCallTaggingResult.cc
 	src/model/CreateInstanceRequest.cc
 	src/model/CreateInstanceResult.cc
 	src/model/CreateSkillGroupRequest.cc
 	src/model/CreateSkillGroupResult.cc
 	src/model/CreateUserRequest.cc
 	src/model/CreateUserResult.cc
+	src/model/DeleteCallTagRequest.cc
+	src/model/DeleteCallTagResult.cc
+	src/model/DeleteCustomCallTaggingRequest.cc
+	src/model/DeleteCustomCallTaggingResult.cc
 	src/model/DeleteSkillGroupRequest.cc
 	src/model/DeleteSkillGroupResult.cc
+	src/model/ExportCustomCallTaggingRequest.cc
+	src/model/ExportCustomCallTaggingResult.cc
+	src/model/ExportDoNotCallNumbersRequest.cc
+	src/model/ExportDoNotCallNumbersResult.cc
 	src/model/GetCallDetailRecordRequest.cc
 	src/model/GetCallDetailRecordResult.cc
 	src/model/GetCampaignRequest.cc
 	src/model/GetCampaignResult.cc
 	src/model/GetCaseFileUploadUrlRequest.cc
 	src/model/GetCaseFileUploadUrlResult.cc
+	src/model/GetDoNotCallFileUploadParametersRequest.cc
+	src/model/GetDoNotCallFileUploadParametersResult.cc
 	src/model/GetHistoricalCallerReportRequest.cc
 	src/model/GetHistoricalCallerReportResult.cc
+	src/model/GetHistoricalCampaignReportRequest.cc
+	src/model/GetHistoricalCampaignReportResult.cc
 	src/model/GetHistoricalInstanceReportRequest.cc
 	src/model/GetHistoricalInstanceReportResult.cc
 	src/model/GetInstanceRequest.cc
@@ -316,8 +382,12 @@ set(ccc_src
 	src/model/GetMultiChannelRecordingResult.cc
 	src/model/GetNumberLocationRequest.cc
 	src/model/GetNumberLocationResult.cc
+	src/model/GetRealtimeCampaignStatsRequest.cc
+	src/model/GetRealtimeCampaignStatsResult.cc
 	src/model/GetRealtimeInstanceStatesRequest.cc
 	src/model/GetRealtimeInstanceStatesResult.cc
+	src/model/GetSkillGroupRequest.cc
+	src/model/GetSkillGroupResult.cc
 	src/model/GetTurnCredentialsRequest.cc
 	src/model/GetTurnCredentialsResult.cc
 	src/model/GetTurnServerListRequest.cc
@@ -326,6 +396,12 @@ set(ccc_src
 	src/model/GetUserResult.cc
 	src/model/HoldCallRequest.cc
 	src/model/HoldCallResult.cc
+	src/model/ImportAdminsRequest.cc
+	src/model/ImportAdminsResult.cc
+	src/model/ImportCustomCallTaggingRequest.cc
+	src/model/ImportCustomCallTaggingResult.cc
+	src/model/ImportDoNotCallNumbersRequest.cc
+	src/model/ImportDoNotCallNumbersResult.cc
 	src/model/InitiateAttendedTransferRequest.cc
 	src/model/InitiateAttendedTransferResult.cc
 	src/model/InterceptCallRequest.cc
@@ -336,12 +412,18 @@ set(ccc_src
 	src/model/LaunchSurveyResult.cc
 	src/model/ListAgentStateLogsRequest.cc
 	src/model/ListAgentStateLogsResult.cc
+	src/model/ListAgentStatesRequest.cc
+	src/model/ListAgentStatesResult.cc
+	src/model/ListAgentSummaryReportsSinceMidnightRequest.cc
+	src/model/ListAgentSummaryReportsSinceMidnightResult.cc
 	src/model/ListAttemptsRequest.cc
 	src/model/ListAttemptsResult.cc
 	src/model/ListBriefSkillGroupsRequest.cc
 	src/model/ListBriefSkillGroupsResult.cc
 	src/model/ListCallDetailRecordsRequest.cc
 	src/model/ListCallDetailRecordsResult.cc
+	src/model/ListCallTagsRequest.cc
+	src/model/ListCallTagsResult.cc
 	src/model/ListCampaignTrendingReportRequest.cc
 	src/model/ListCampaignTrendingReportResult.cc
 	src/model/ListCampaignsRequest.cc
@@ -352,8 +434,12 @@ set(ccc_src
 	src/model/ListConfigItemsResult.cc
 	src/model/ListContactFlowsRequest.cc
 	src/model/ListContactFlowsResult.cc
+	src/model/ListCustomCallTaggingRequest.cc
+	src/model/ListCustomCallTaggingResult.cc
 	src/model/ListDevicesRequest.cc
 	src/model/ListDevicesResult.cc
+	src/model/ListDoNotCallNumbersRequest.cc
+	src/model/ListDoNotCallNumbersResult.cc
 	src/model/ListHistoricalAgentReportRequest.cc
 	src/model/ListHistoricalAgentReportResult.cc
 	src/model/ListHistoricalSkillGroupReportRequest.cc
@@ -370,6 +456,10 @@ set(ccc_src
 	src/model/ListIntervalSkillGroupReportResult.cc
 	src/model/ListIvrTrackingDetailsRequest.cc
 	src/model/ListIvrTrackingDetailsResult.cc
+	src/model/ListMonoRecordingsRequest.cc
+	src/model/ListMonoRecordingsResult.cc
+	src/model/ListMultiChannelRecordingsRequest.cc
+	src/model/ListMultiChannelRecordingsResult.cc
 	src/model/ListOutboundNumbersOfUserRequest.cc
 	src/model/ListOutboundNumbersOfUserResult.cc
 	src/model/ListPersonalNumbersOfUserRequest.cc
@@ -394,6 +484,10 @@ set(ccc_src
 	src/model/ListSipCallRecordsResult.cc
 	src/model/ListSipTracesRequest.cc
 	src/model/ListSipTracesResult.cc
+	src/model/ListSkillGroupStatesRequest.cc
+	src/model/ListSkillGroupStatesResult.cc
+	src/model/ListSkillGroupSummaryReportsSinceMidnightRequest.cc
+	src/model/ListSkillGroupSummaryReportsSinceMidnightResult.cc
 	src/model/ListSkillGroupsRequest.cc
 	src/model/ListSkillGroupsResult.cc
 	src/model/ListSkillLevelsOfUserRequest.cc
@@ -406,6 +500,8 @@ set(ccc_src
 	src/model/ListUsersResult.cc
 	src/model/MakeCallRequest.cc
 	src/model/MakeCallResult.cc
+	src/model/ModifyCustomCallTaggingRequest.cc
+	src/model/ModifyCustomCallTaggingResult.cc
 	src/model/ModifyInstanceRequest.cc
 	src/model/ModifyInstanceResult.cc
 	src/model/ModifyPhoneNumberRequest.cc
@@ -436,6 +532,8 @@ set(ccc_src
 	src/model/RegisterDevicesResult.cc
 	src/model/ReleaseCallRequest.cc
 	src/model/ReleaseCallResult.cc
+	src/model/RemoveDoNotCallNumbersRequest.cc
+	src/model/RemoveDoNotCallNumbersResult.cc
 	src/model/RemovePersonalNumbersFromUserRequest.cc
 	src/model/RemovePersonalNumbersFromUserResult.cc
 	src/model/RemovePhoneNumberFromSkillGroupsRequest.cc
@@ -482,6 +580,8 @@ set(ccc_src
 	src/model/TakeBreakResult.cc
 	src/model/UnmuteCallRequest.cc
 	src/model/UnmuteCallResult.cc
+	src/model/UnregisterDeviceRequest.cc
+	src/model/UnregisterDeviceResult.cc
 	src/model/UpdateConfigItemsRequest.cc
 	src/model/UpdateConfigItemsResult.cc )
 

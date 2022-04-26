@@ -47,6 +47,8 @@ void AnswerCallResult::parse(const std::string &payload)
 		data_.callContext.jobId = callContextNode["JobId"].asString();
 	if(!callContextNode["InstanceId"].isNull())
 		data_.callContext.instanceId = callContextNode["InstanceId"].asString();
+	if(!callContextNode["CallType"].isNull())
+		data_.callContext.callType = callContextNode["CallType"].asString();
 	auto allChannelContextsNode = callContextNode["ChannelContexts"]["ChannelContext"];
 	for (auto callContextNodeChannelContextsChannelContext : allChannelContextsNode)
 	{

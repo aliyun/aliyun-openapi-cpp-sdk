@@ -591,6 +591,42 @@ CCCClient::CompleteAttendedTransferOutcomeCallable CCCClient::completeAttendedTr
 	return task->get_future();
 }
 
+CCCClient::CreateCallTagsOutcome CCCClient::createCallTags(const CreateCallTagsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateCallTagsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateCallTagsOutcome(CreateCallTagsResult(outcome.result()));
+	else
+		return CreateCallTagsOutcome(outcome.error());
+}
+
+void CCCClient::createCallTagsAsync(const CreateCallTagsRequest& request, const CreateCallTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createCallTags(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CCCClient::CreateCallTagsOutcomeCallable CCCClient::createCallTagsCallable(const CreateCallTagsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateCallTagsOutcome()>>(
+			[this, request]()
+			{
+			return this->createCallTags(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CCCClient::CreateCampaignOutcome CCCClient::createCampaign(const CreateCampaignRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -621,6 +657,42 @@ CCCClient::CreateCampaignOutcomeCallable CCCClient::createCampaignCallable(const
 			[this, request]()
 			{
 			return this->createCampaign(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CCCClient::CreateCustomCallTaggingOutcome CCCClient::createCustomCallTagging(const CreateCustomCallTaggingRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateCustomCallTaggingOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateCustomCallTaggingOutcome(CreateCustomCallTaggingResult(outcome.result()));
+	else
+		return CreateCustomCallTaggingOutcome(outcome.error());
+}
+
+void CCCClient::createCustomCallTaggingAsync(const CreateCustomCallTaggingRequest& request, const CreateCustomCallTaggingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createCustomCallTagging(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CCCClient::CreateCustomCallTaggingOutcomeCallable CCCClient::createCustomCallTaggingCallable(const CreateCustomCallTaggingRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateCustomCallTaggingOutcome()>>(
+			[this, request]()
+			{
+			return this->createCustomCallTagging(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -735,6 +807,78 @@ CCCClient::CreateUserOutcomeCallable CCCClient::createUserCallable(const CreateU
 	return task->get_future();
 }
 
+CCCClient::DeleteCallTagOutcome CCCClient::deleteCallTag(const DeleteCallTagRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteCallTagOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteCallTagOutcome(DeleteCallTagResult(outcome.result()));
+	else
+		return DeleteCallTagOutcome(outcome.error());
+}
+
+void CCCClient::deleteCallTagAsync(const DeleteCallTagRequest& request, const DeleteCallTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteCallTag(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CCCClient::DeleteCallTagOutcomeCallable CCCClient::deleteCallTagCallable(const DeleteCallTagRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteCallTagOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteCallTag(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CCCClient::DeleteCustomCallTaggingOutcome CCCClient::deleteCustomCallTagging(const DeleteCustomCallTaggingRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteCustomCallTaggingOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteCustomCallTaggingOutcome(DeleteCustomCallTaggingResult(outcome.result()));
+	else
+		return DeleteCustomCallTaggingOutcome(outcome.error());
+}
+
+void CCCClient::deleteCustomCallTaggingAsync(const DeleteCustomCallTaggingRequest& request, const DeleteCustomCallTaggingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteCustomCallTagging(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CCCClient::DeleteCustomCallTaggingOutcomeCallable CCCClient::deleteCustomCallTaggingCallable(const DeleteCustomCallTaggingRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteCustomCallTaggingOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteCustomCallTagging(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CCCClient::DeleteSkillGroupOutcome CCCClient::deleteSkillGroup(const DeleteSkillGroupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -765,6 +909,78 @@ CCCClient::DeleteSkillGroupOutcomeCallable CCCClient::deleteSkillGroupCallable(c
 			[this, request]()
 			{
 			return this->deleteSkillGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CCCClient::ExportCustomCallTaggingOutcome CCCClient::exportCustomCallTagging(const ExportCustomCallTaggingRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ExportCustomCallTaggingOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ExportCustomCallTaggingOutcome(ExportCustomCallTaggingResult(outcome.result()));
+	else
+		return ExportCustomCallTaggingOutcome(outcome.error());
+}
+
+void CCCClient::exportCustomCallTaggingAsync(const ExportCustomCallTaggingRequest& request, const ExportCustomCallTaggingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, exportCustomCallTagging(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CCCClient::ExportCustomCallTaggingOutcomeCallable CCCClient::exportCustomCallTaggingCallable(const ExportCustomCallTaggingRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ExportCustomCallTaggingOutcome()>>(
+			[this, request]()
+			{
+			return this->exportCustomCallTagging(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CCCClient::ExportDoNotCallNumbersOutcome CCCClient::exportDoNotCallNumbers(const ExportDoNotCallNumbersRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ExportDoNotCallNumbersOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ExportDoNotCallNumbersOutcome(ExportDoNotCallNumbersResult(outcome.result()));
+	else
+		return ExportDoNotCallNumbersOutcome(outcome.error());
+}
+
+void CCCClient::exportDoNotCallNumbersAsync(const ExportDoNotCallNumbersRequest& request, const ExportDoNotCallNumbersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, exportDoNotCallNumbers(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CCCClient::ExportDoNotCallNumbersOutcomeCallable CCCClient::exportDoNotCallNumbersCallable(const ExportDoNotCallNumbersRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ExportDoNotCallNumbersOutcome()>>(
+			[this, request]()
+			{
+			return this->exportDoNotCallNumbers(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -879,6 +1095,42 @@ CCCClient::GetCaseFileUploadUrlOutcomeCallable CCCClient::getCaseFileUploadUrlCa
 	return task->get_future();
 }
 
+CCCClient::GetDoNotCallFileUploadParametersOutcome CCCClient::getDoNotCallFileUploadParameters(const GetDoNotCallFileUploadParametersRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetDoNotCallFileUploadParametersOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetDoNotCallFileUploadParametersOutcome(GetDoNotCallFileUploadParametersResult(outcome.result()));
+	else
+		return GetDoNotCallFileUploadParametersOutcome(outcome.error());
+}
+
+void CCCClient::getDoNotCallFileUploadParametersAsync(const GetDoNotCallFileUploadParametersRequest& request, const GetDoNotCallFileUploadParametersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getDoNotCallFileUploadParameters(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CCCClient::GetDoNotCallFileUploadParametersOutcomeCallable CCCClient::getDoNotCallFileUploadParametersCallable(const GetDoNotCallFileUploadParametersRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetDoNotCallFileUploadParametersOutcome()>>(
+			[this, request]()
+			{
+			return this->getDoNotCallFileUploadParameters(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CCCClient::GetHistoricalCallerReportOutcome CCCClient::getHistoricalCallerReport(const GetHistoricalCallerReportRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -909,6 +1161,42 @@ CCCClient::GetHistoricalCallerReportOutcomeCallable CCCClient::getHistoricalCall
 			[this, request]()
 			{
 			return this->getHistoricalCallerReport(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CCCClient::GetHistoricalCampaignReportOutcome CCCClient::getHistoricalCampaignReport(const GetHistoricalCampaignReportRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetHistoricalCampaignReportOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetHistoricalCampaignReportOutcome(GetHistoricalCampaignReportResult(outcome.result()));
+	else
+		return GetHistoricalCampaignReportOutcome(outcome.error());
+}
+
+void CCCClient::getHistoricalCampaignReportAsync(const GetHistoricalCampaignReportRequest& request, const GetHistoricalCampaignReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getHistoricalCampaignReport(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CCCClient::GetHistoricalCampaignReportOutcomeCallable CCCClient::getHistoricalCampaignReportCallable(const GetHistoricalCampaignReportRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetHistoricalCampaignReportOutcome()>>(
+			[this, request]()
+			{
+			return this->getHistoricalCampaignReport(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1167,6 +1455,42 @@ CCCClient::GetNumberLocationOutcomeCallable CCCClient::getNumberLocationCallable
 	return task->get_future();
 }
 
+CCCClient::GetRealtimeCampaignStatsOutcome CCCClient::getRealtimeCampaignStats(const GetRealtimeCampaignStatsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetRealtimeCampaignStatsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetRealtimeCampaignStatsOutcome(GetRealtimeCampaignStatsResult(outcome.result()));
+	else
+		return GetRealtimeCampaignStatsOutcome(outcome.error());
+}
+
+void CCCClient::getRealtimeCampaignStatsAsync(const GetRealtimeCampaignStatsRequest& request, const GetRealtimeCampaignStatsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getRealtimeCampaignStats(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CCCClient::GetRealtimeCampaignStatsOutcomeCallable CCCClient::getRealtimeCampaignStatsCallable(const GetRealtimeCampaignStatsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetRealtimeCampaignStatsOutcome()>>(
+			[this, request]()
+			{
+			return this->getRealtimeCampaignStats(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CCCClient::GetRealtimeInstanceStatesOutcome CCCClient::getRealtimeInstanceStates(const GetRealtimeInstanceStatesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1197,6 +1521,42 @@ CCCClient::GetRealtimeInstanceStatesOutcomeCallable CCCClient::getRealtimeInstan
 			[this, request]()
 			{
 			return this->getRealtimeInstanceStates(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CCCClient::GetSkillGroupOutcome CCCClient::getSkillGroup(const GetSkillGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetSkillGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetSkillGroupOutcome(GetSkillGroupResult(outcome.result()));
+	else
+		return GetSkillGroupOutcome(outcome.error());
+}
+
+void CCCClient::getSkillGroupAsync(const GetSkillGroupRequest& request, const GetSkillGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getSkillGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CCCClient::GetSkillGroupOutcomeCallable CCCClient::getSkillGroupCallable(const GetSkillGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetSkillGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->getSkillGroup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1341,6 +1701,114 @@ CCCClient::HoldCallOutcomeCallable CCCClient::holdCallCallable(const HoldCallReq
 			[this, request]()
 			{
 			return this->holdCall(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CCCClient::ImportAdminsOutcome CCCClient::importAdmins(const ImportAdminsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ImportAdminsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ImportAdminsOutcome(ImportAdminsResult(outcome.result()));
+	else
+		return ImportAdminsOutcome(outcome.error());
+}
+
+void CCCClient::importAdminsAsync(const ImportAdminsRequest& request, const ImportAdminsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, importAdmins(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CCCClient::ImportAdminsOutcomeCallable CCCClient::importAdminsCallable(const ImportAdminsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ImportAdminsOutcome()>>(
+			[this, request]()
+			{
+			return this->importAdmins(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CCCClient::ImportCustomCallTaggingOutcome CCCClient::importCustomCallTagging(const ImportCustomCallTaggingRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ImportCustomCallTaggingOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ImportCustomCallTaggingOutcome(ImportCustomCallTaggingResult(outcome.result()));
+	else
+		return ImportCustomCallTaggingOutcome(outcome.error());
+}
+
+void CCCClient::importCustomCallTaggingAsync(const ImportCustomCallTaggingRequest& request, const ImportCustomCallTaggingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, importCustomCallTagging(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CCCClient::ImportCustomCallTaggingOutcomeCallable CCCClient::importCustomCallTaggingCallable(const ImportCustomCallTaggingRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ImportCustomCallTaggingOutcome()>>(
+			[this, request]()
+			{
+			return this->importCustomCallTagging(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CCCClient::ImportDoNotCallNumbersOutcome CCCClient::importDoNotCallNumbers(const ImportDoNotCallNumbersRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ImportDoNotCallNumbersOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ImportDoNotCallNumbersOutcome(ImportDoNotCallNumbersResult(outcome.result()));
+	else
+		return ImportDoNotCallNumbersOutcome(outcome.error());
+}
+
+void CCCClient::importDoNotCallNumbersAsync(const ImportDoNotCallNumbersRequest& request, const ImportDoNotCallNumbersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, importDoNotCallNumbers(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CCCClient::ImportDoNotCallNumbersOutcomeCallable CCCClient::importDoNotCallNumbersCallable(const ImportDoNotCallNumbersRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ImportDoNotCallNumbersOutcome()>>(
+			[this, request]()
+			{
+			return this->importDoNotCallNumbers(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1527,6 +1995,78 @@ CCCClient::ListAgentStateLogsOutcomeCallable CCCClient::listAgentStateLogsCallab
 	return task->get_future();
 }
 
+CCCClient::ListAgentStatesOutcome CCCClient::listAgentStates(const ListAgentStatesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListAgentStatesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListAgentStatesOutcome(ListAgentStatesResult(outcome.result()));
+	else
+		return ListAgentStatesOutcome(outcome.error());
+}
+
+void CCCClient::listAgentStatesAsync(const ListAgentStatesRequest& request, const ListAgentStatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listAgentStates(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CCCClient::ListAgentStatesOutcomeCallable CCCClient::listAgentStatesCallable(const ListAgentStatesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListAgentStatesOutcome()>>(
+			[this, request]()
+			{
+			return this->listAgentStates(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CCCClient::ListAgentSummaryReportsSinceMidnightOutcome CCCClient::listAgentSummaryReportsSinceMidnight(const ListAgentSummaryReportsSinceMidnightRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListAgentSummaryReportsSinceMidnightOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListAgentSummaryReportsSinceMidnightOutcome(ListAgentSummaryReportsSinceMidnightResult(outcome.result()));
+	else
+		return ListAgentSummaryReportsSinceMidnightOutcome(outcome.error());
+}
+
+void CCCClient::listAgentSummaryReportsSinceMidnightAsync(const ListAgentSummaryReportsSinceMidnightRequest& request, const ListAgentSummaryReportsSinceMidnightAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listAgentSummaryReportsSinceMidnight(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CCCClient::ListAgentSummaryReportsSinceMidnightOutcomeCallable CCCClient::listAgentSummaryReportsSinceMidnightCallable(const ListAgentSummaryReportsSinceMidnightRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListAgentSummaryReportsSinceMidnightOutcome()>>(
+			[this, request]()
+			{
+			return this->listAgentSummaryReportsSinceMidnight(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CCCClient::ListAttemptsOutcome CCCClient::listAttempts(const ListAttemptsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1629,6 +2169,42 @@ CCCClient::ListCallDetailRecordsOutcomeCallable CCCClient::listCallDetailRecords
 			[this, request]()
 			{
 			return this->listCallDetailRecords(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CCCClient::ListCallTagsOutcome CCCClient::listCallTags(const ListCallTagsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListCallTagsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListCallTagsOutcome(ListCallTagsResult(outcome.result()));
+	else
+		return ListCallTagsOutcome(outcome.error());
+}
+
+void CCCClient::listCallTagsAsync(const ListCallTagsRequest& request, const ListCallTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listCallTags(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CCCClient::ListCallTagsOutcomeCallable CCCClient::listCallTagsCallable(const ListCallTagsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListCallTagsOutcome()>>(
+			[this, request]()
+			{
+			return this->listCallTags(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1815,6 +2391,42 @@ CCCClient::ListContactFlowsOutcomeCallable CCCClient::listContactFlowsCallable(c
 	return task->get_future();
 }
 
+CCCClient::ListCustomCallTaggingOutcome CCCClient::listCustomCallTagging(const ListCustomCallTaggingRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListCustomCallTaggingOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListCustomCallTaggingOutcome(ListCustomCallTaggingResult(outcome.result()));
+	else
+		return ListCustomCallTaggingOutcome(outcome.error());
+}
+
+void CCCClient::listCustomCallTaggingAsync(const ListCustomCallTaggingRequest& request, const ListCustomCallTaggingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listCustomCallTagging(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CCCClient::ListCustomCallTaggingOutcomeCallable CCCClient::listCustomCallTaggingCallable(const ListCustomCallTaggingRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListCustomCallTaggingOutcome()>>(
+			[this, request]()
+			{
+			return this->listCustomCallTagging(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CCCClient::ListDevicesOutcome CCCClient::listDevices(const ListDevicesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1845,6 +2457,42 @@ CCCClient::ListDevicesOutcomeCallable CCCClient::listDevicesCallable(const ListD
 			[this, request]()
 			{
 			return this->listDevices(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CCCClient::ListDoNotCallNumbersOutcome CCCClient::listDoNotCallNumbers(const ListDoNotCallNumbersRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListDoNotCallNumbersOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListDoNotCallNumbersOutcome(ListDoNotCallNumbersResult(outcome.result()));
+	else
+		return ListDoNotCallNumbersOutcome(outcome.error());
+}
+
+void CCCClient::listDoNotCallNumbersAsync(const ListDoNotCallNumbersRequest& request, const ListDoNotCallNumbersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listDoNotCallNumbers(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CCCClient::ListDoNotCallNumbersOutcomeCallable CCCClient::listDoNotCallNumbersCallable(const ListDoNotCallNumbersRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListDoNotCallNumbersOutcome()>>(
+			[this, request]()
+			{
+			return this->listDoNotCallNumbers(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2133,6 +2781,78 @@ CCCClient::ListIvrTrackingDetailsOutcomeCallable CCCClient::listIvrTrackingDetai
 			[this, request]()
 			{
 			return this->listIvrTrackingDetails(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CCCClient::ListMonoRecordingsOutcome CCCClient::listMonoRecordings(const ListMonoRecordingsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListMonoRecordingsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListMonoRecordingsOutcome(ListMonoRecordingsResult(outcome.result()));
+	else
+		return ListMonoRecordingsOutcome(outcome.error());
+}
+
+void CCCClient::listMonoRecordingsAsync(const ListMonoRecordingsRequest& request, const ListMonoRecordingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listMonoRecordings(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CCCClient::ListMonoRecordingsOutcomeCallable CCCClient::listMonoRecordingsCallable(const ListMonoRecordingsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListMonoRecordingsOutcome()>>(
+			[this, request]()
+			{
+			return this->listMonoRecordings(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CCCClient::ListMultiChannelRecordingsOutcome CCCClient::listMultiChannelRecordings(const ListMultiChannelRecordingsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListMultiChannelRecordingsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListMultiChannelRecordingsOutcome(ListMultiChannelRecordingsResult(outcome.result()));
+	else
+		return ListMultiChannelRecordingsOutcome(outcome.error());
+}
+
+void CCCClient::listMultiChannelRecordingsAsync(const ListMultiChannelRecordingsRequest& request, const ListMultiChannelRecordingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listMultiChannelRecordings(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CCCClient::ListMultiChannelRecordingsOutcomeCallable CCCClient::listMultiChannelRecordingsCallable(const ListMultiChannelRecordingsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListMultiChannelRecordingsOutcome()>>(
+			[this, request]()
+			{
+			return this->listMultiChannelRecordings(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2571,6 +3291,78 @@ CCCClient::ListSipTracesOutcomeCallable CCCClient::listSipTracesCallable(const L
 	return task->get_future();
 }
 
+CCCClient::ListSkillGroupStatesOutcome CCCClient::listSkillGroupStates(const ListSkillGroupStatesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListSkillGroupStatesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListSkillGroupStatesOutcome(ListSkillGroupStatesResult(outcome.result()));
+	else
+		return ListSkillGroupStatesOutcome(outcome.error());
+}
+
+void CCCClient::listSkillGroupStatesAsync(const ListSkillGroupStatesRequest& request, const ListSkillGroupStatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listSkillGroupStates(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CCCClient::ListSkillGroupStatesOutcomeCallable CCCClient::listSkillGroupStatesCallable(const ListSkillGroupStatesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListSkillGroupStatesOutcome()>>(
+			[this, request]()
+			{
+			return this->listSkillGroupStates(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CCCClient::ListSkillGroupSummaryReportsSinceMidnightOutcome CCCClient::listSkillGroupSummaryReportsSinceMidnight(const ListSkillGroupSummaryReportsSinceMidnightRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListSkillGroupSummaryReportsSinceMidnightOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListSkillGroupSummaryReportsSinceMidnightOutcome(ListSkillGroupSummaryReportsSinceMidnightResult(outcome.result()));
+	else
+		return ListSkillGroupSummaryReportsSinceMidnightOutcome(outcome.error());
+}
+
+void CCCClient::listSkillGroupSummaryReportsSinceMidnightAsync(const ListSkillGroupSummaryReportsSinceMidnightRequest& request, const ListSkillGroupSummaryReportsSinceMidnightAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listSkillGroupSummaryReportsSinceMidnight(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CCCClient::ListSkillGroupSummaryReportsSinceMidnightOutcomeCallable CCCClient::listSkillGroupSummaryReportsSinceMidnightCallable(const ListSkillGroupSummaryReportsSinceMidnightRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListSkillGroupSummaryReportsSinceMidnightOutcome()>>(
+			[this, request]()
+			{
+			return this->listSkillGroupSummaryReportsSinceMidnight(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CCCClient::ListSkillGroupsOutcome CCCClient::listSkillGroups(const ListSkillGroupsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2781,6 +3573,42 @@ CCCClient::MakeCallOutcomeCallable CCCClient::makeCallCallable(const MakeCallReq
 			[this, request]()
 			{
 			return this->makeCall(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CCCClient::ModifyCustomCallTaggingOutcome CCCClient::modifyCustomCallTagging(const ModifyCustomCallTaggingRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyCustomCallTaggingOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyCustomCallTaggingOutcome(ModifyCustomCallTaggingResult(outcome.result()));
+	else
+		return ModifyCustomCallTaggingOutcome(outcome.error());
+}
+
+void CCCClient::modifyCustomCallTaggingAsync(const ModifyCustomCallTaggingRequest& request, const ModifyCustomCallTaggingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyCustomCallTagging(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CCCClient::ModifyCustomCallTaggingOutcomeCallable CCCClient::modifyCustomCallTaggingCallable(const ModifyCustomCallTaggingRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyCustomCallTaggingOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyCustomCallTagging(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3321,6 +4149,42 @@ CCCClient::ReleaseCallOutcomeCallable CCCClient::releaseCallCallable(const Relea
 			[this, request]()
 			{
 			return this->releaseCall(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CCCClient::RemoveDoNotCallNumbersOutcome CCCClient::removeDoNotCallNumbers(const RemoveDoNotCallNumbersRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RemoveDoNotCallNumbersOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RemoveDoNotCallNumbersOutcome(RemoveDoNotCallNumbersResult(outcome.result()));
+	else
+		return RemoveDoNotCallNumbersOutcome(outcome.error());
+}
+
+void CCCClient::removeDoNotCallNumbersAsync(const RemoveDoNotCallNumbersRequest& request, const RemoveDoNotCallNumbersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, removeDoNotCallNumbers(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CCCClient::RemoveDoNotCallNumbersOutcomeCallable CCCClient::removeDoNotCallNumbersCallable(const RemoveDoNotCallNumbersRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RemoveDoNotCallNumbersOutcome()>>(
+			[this, request]()
+			{
+			return this->removeDoNotCallNumbers(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4149,6 +5013,42 @@ CCCClient::UnmuteCallOutcomeCallable CCCClient::unmuteCallCallable(const UnmuteC
 			[this, request]()
 			{
 			return this->unmuteCall(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CCCClient::UnregisterDeviceOutcome CCCClient::unregisterDevice(const UnregisterDeviceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UnregisterDeviceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UnregisterDeviceOutcome(UnregisterDeviceResult(outcome.result()));
+	else
+		return UnregisterDeviceOutcome(outcome.error());
+}
+
+void CCCClient::unregisterDeviceAsync(const UnregisterDeviceRequest& request, const UnregisterDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, unregisterDevice(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CCCClient::UnregisterDeviceOutcomeCallable CCCClient::unregisterDeviceCallable(const UnregisterDeviceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UnregisterDeviceOutcome()>>(
+			[this, request]()
+			{
+			return this->unregisterDevice(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

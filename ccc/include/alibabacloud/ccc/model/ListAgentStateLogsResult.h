@@ -37,6 +37,7 @@ namespace AlibabaCloud
 					std::string state;
 					long startTime;
 					std::string stateCode;
+					bool outboundScenario;
 					long duration;
 				};
 

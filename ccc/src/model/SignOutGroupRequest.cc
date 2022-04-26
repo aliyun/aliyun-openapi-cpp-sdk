@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,45 +18,37 @@
 
 using AlibabaCloud::CCC::Model::SignOutGroupRequest;
 
-SignOutGroupRequest::SignOutGroupRequest() :
-	RpcServiceRequest("ccc", "2020-07-01", "SignOutGroup")
-{
-	setMethod(HttpRequest::Method::Post);
+SignOutGroupRequest::SignOutGroupRequest()
+    : RpcServiceRequest("ccc", "2020-07-01", "SignOutGroup") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-SignOutGroupRequest::~SignOutGroupRequest()
-{}
+SignOutGroupRequest::~SignOutGroupRequest() {}
 
-std::string SignOutGroupRequest::getUserId()const
-{
-	return userId_;
+std::string SignOutGroupRequest::getUserId() const {
+  return userId_;
 }
 
-void SignOutGroupRequest::setUserId(const std::string& userId)
-{
-	userId_ = userId;
-	setParameter("UserId", userId);
+void SignOutGroupRequest::setUserId(const std::string &userId) {
+  userId_ = userId;
+  setParameter(std::string("UserId"), userId);
 }
 
-std::string SignOutGroupRequest::getDeviceId()const
-{
-	return deviceId_;
+std::string SignOutGroupRequest::getDeviceId() const {
+  return deviceId_;
 }
 
-void SignOutGroupRequest::setDeviceId(const std::string& deviceId)
-{
-	deviceId_ = deviceId;
-	setParameter("DeviceId", deviceId);
+void SignOutGroupRequest::setDeviceId(const std::string &deviceId) {
+  deviceId_ = deviceId;
+  setParameter(std::string("DeviceId"), deviceId);
 }
 
-std::string SignOutGroupRequest::getInstanceId()const
-{
-	return instanceId_;
+std::string SignOutGroupRequest::getInstanceId() const {
+  return instanceId_;
 }
 
-void SignOutGroupRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+void SignOutGroupRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
 }
 

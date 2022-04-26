@@ -69,6 +69,9 @@ void ListRealtimeAgentStatesResult::parse(const std::string &payload)
 		auto allSkillGroupIdList = value["SkillGroupIdList"]["SkillGroupId"];
 		for (auto value : allSkillGroupIdList)
 			agentStateObject.skillGroupIdList.push_back(value.asString());
+		auto allSkillGroupNameList = value["SkillGroupNameList"]["SkillGroupId"];
+		for (auto value : allSkillGroupNameList)
+			agentStateObject.skillGroupNameList.push_back(value.asString());
 		data_.list.push_back(agentStateObject);
 	}
 	if(!value["Code"].isNull())

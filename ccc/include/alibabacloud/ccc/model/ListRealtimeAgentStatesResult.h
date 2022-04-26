@@ -44,6 +44,7 @@ namespace AlibabaCloud
 						std::string stateCode;
 						std::string agentId;
 						std::string agentName;
+						std::vector<std::string> skillGroupNameList;
 						std::vector<std::string> skillGroupIdList;
 					};
 					int totalCount;

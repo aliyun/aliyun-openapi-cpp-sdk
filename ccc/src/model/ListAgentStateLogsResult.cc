@@ -51,6 +51,8 @@ void ListAgentStateLogsResult::parse(const std::string &payload)
 			dataObject.duration = std::stol(valueDataDataItem["Duration"].asString());
 		if(!valueDataDataItem["State"].isNull())
 			dataObject.state = valueDataDataItem["State"].asString();
+		if(!valueDataDataItem["OutboundScenario"].isNull())
+			dataObject.outboundScenario = valueDataDataItem["OutboundScenario"].asString() == "true";
 		data_.push_back(dataObject);
 	}
 	if(!value["Code"].isNull())

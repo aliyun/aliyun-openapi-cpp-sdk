@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,34 +18,28 @@
 
 using AlibabaCloud::CCC::Model::ListInstancesOfUserRequest;
 
-ListInstancesOfUserRequest::ListInstancesOfUserRequest() :
-	RpcServiceRequest("ccc", "2020-07-01", "ListInstancesOfUser")
-{
-	setMethod(HttpRequest::Method::Post);
+ListInstancesOfUserRequest::ListInstancesOfUserRequest()
+    : RpcServiceRequest("ccc", "2020-07-01", "ListInstancesOfUser") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-ListInstancesOfUserRequest::~ListInstancesOfUserRequest()
-{}
+ListInstancesOfUserRequest::~ListInstancesOfUserRequest() {}
 
-int ListInstancesOfUserRequest::getPageNumber()const
-{
-	return pageNumber_;
+int ListInstancesOfUserRequest::getPageNumber() const {
+  return pageNumber_;
 }
 
-void ListInstancesOfUserRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+void ListInstancesOfUserRequest::setPageNumber(int pageNumber) {
+  pageNumber_ = pageNumber;
+  setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
-int ListInstancesOfUserRequest::getPageSize()const
-{
-	return pageSize_;
+int ListInstancesOfUserRequest::getPageSize() const {
+  return pageSize_;
 }
 
-void ListInstancesOfUserRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+void ListInstancesOfUserRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 

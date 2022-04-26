@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,56 +18,46 @@
 
 using AlibabaCloud::CCC::Model::PickOutboundNumbersRequest;
 
-PickOutboundNumbersRequest::PickOutboundNumbersRequest() :
-	RpcServiceRequest("ccc", "2020-07-01", "PickOutboundNumbers")
-{
-	setMethod(HttpRequest::Method::Post);
+PickOutboundNumbersRequest::PickOutboundNumbersRequest()
+    : RpcServiceRequest("ccc", "2020-07-01", "PickOutboundNumbers") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-PickOutboundNumbersRequest::~PickOutboundNumbersRequest()
-{}
+PickOutboundNumbersRequest::~PickOutboundNumbersRequest() {}
 
-int PickOutboundNumbersRequest::getCount()const
-{
-	return count_;
+int PickOutboundNumbersRequest::getCount() const {
+  return count_;
 }
 
-void PickOutboundNumbersRequest::setCount(int count)
-{
-	count_ = count;
-	setParameter("Count", std::to_string(count));
+void PickOutboundNumbersRequest::setCount(int count) {
+  count_ = count;
+  setParameter(std::string("Count"), std::to_string(count));
 }
 
-std::string PickOutboundNumbersRequest::getInstanceId()const
-{
-	return instanceId_;
+std::string PickOutboundNumbersRequest::getInstanceId() const {
+  return instanceId_;
 }
 
-void PickOutboundNumbersRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+void PickOutboundNumbersRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-std::string PickOutboundNumbersRequest::getSkillGroupIdList()const
-{
-	return skillGroupIdList_;
+std::string PickOutboundNumbersRequest::getSkillGroupIdList() const {
+  return skillGroupIdList_;
 }
 
-void PickOutboundNumbersRequest::setSkillGroupIdList(const std::string& skillGroupIdList)
-{
-	skillGroupIdList_ = skillGroupIdList;
-	setParameter("SkillGroupIdList", skillGroupIdList);
+void PickOutboundNumbersRequest::setSkillGroupIdList(const std::string &skillGroupIdList) {
+  skillGroupIdList_ = skillGroupIdList;
+  setParameter(std::string("SkillGroupIdList"), skillGroupIdList);
 }
 
-std::string PickOutboundNumbersRequest::getCalledNumber()const
-{
-	return calledNumber_;
+std::string PickOutboundNumbersRequest::getCalledNumber() const {
+  return calledNumber_;
 }
 
-void PickOutboundNumbersRequest::setCalledNumber(const std::string& calledNumber)
-{
-	calledNumber_ = calledNumber;
-	setParameter("CalledNumber", calledNumber);
+void PickOutboundNumbersRequest::setCalledNumber(const std::string &calledNumber) {
+  calledNumber_ = calledNumber;
+  setParameter(std::string("CalledNumber"), calledNumber);
 }
 

@@ -53,6 +53,7 @@ namespace AlibabaCloud
 							std::string jobId;
 						};
 						std::string instanceId;
+						std::string callType;
 						std::string jobId;
 						std::vector<ChannelContext> channelContexts;
 					};

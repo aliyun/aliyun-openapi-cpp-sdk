@@ -39,9 +39,9 @@ void RemovePhoneNumbersResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allFailureList = value["FailureList"]["Failure"];
-	for (const auto &item : allFailureList)
-		failureList_.push_back(item.asString());
+	auto allData = value["Data"]["Number"];
+	for (const auto &item : allData)
+		data_.push_back(item.asString());
 	auto allParams = value["Params"]["Param"];
 	for (const auto &item : allParams)
 		params_.push_back(item.asString());
@@ -51,8 +51,6 @@ void RemovePhoneNumbersResult::parse(const std::string &payload)
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
-	if(!value["Data"].isNull())
-		data_ = value["Data"].asString();
 
 }
 
@@ -71,12 +69,7 @@ std::vector<std::string> RemovePhoneNumbersResult::getParams()const
 	return params_;
 }
 
-std::vector<std::string> RemovePhoneNumbersResult::getFailureList()const
-{
-	return failureList_;
-}
-
-std::string RemovePhoneNumbersResult::getData()const
+std::vector<std::string> RemovePhoneNumbersResult::getData()const
 {
 	return data_;
 }
