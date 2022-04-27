@@ -40,6 +40,8 @@ public:
 	void setBatchCreate(bool batchCreate);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
+	int getEnable() const;
+	void setEnable(int enable);
 	std::string getDataLimitList() const;
 	void setDataLimitList(const std::string &dataLimitList);
 	std::string getLang() const;
@@ -71,6 +73,7 @@ private:
 	std::string password_;
 	bool batchCreate_;
 	std::string sourceIp_;
+	int enable_;
 	std::string dataLimitList_;
 	std::string lang_;
 	std::string serviceRegionId_;

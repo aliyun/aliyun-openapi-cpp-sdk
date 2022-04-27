@@ -70,6 +70,15 @@ void CreateDataLimitRequest::setSourceIp(const std::string &sourceIp) {
   setParameter(std::string("SourceIp"), sourceIp);
 }
 
+int CreateDataLimitRequest::getEnable() const {
+  return enable_;
+}
+
+void CreateDataLimitRequest::setEnable(int enable) {
+  enable_ = enable;
+  setParameter(std::string("Enable"), std::to_string(enable));
+}
+
 std::string CreateDataLimitRequest::getDataLimitList() const {
   return dataLimitList_;
 }
