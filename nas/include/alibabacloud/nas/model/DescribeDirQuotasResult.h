@@ -38,14 +38,14 @@ namespace AlibabaCloud
 					{
 						long fileCountLimit;
 						std::string userId;
-						std::string quotaType;
 						long sizeLimit;
+						std::string quotaType;
 						long fileCountReal;
 						long sizeReal;
 						std::string userType;
 					};
-					std::string path;
 					std::string status;
+					std::string path;
 					std::string dirInode;
 					std::vector<DirQuotaInfo::UserQuotaInfo> userQuotaInfos;
 				};

@@ -43,30 +43,30 @@ void DescribeMountTargetsResult::parse(const std::string &payload)
 	for (auto valueMountTargetsMountTarget : allMountTargetsNode)
 	{
 		MountTarget mountTargetsObject;
-		if(!valueMountTargetsMountTarget["MountTargetDomain"].isNull())
-			mountTargetsObject.mountTargetDomain = valueMountTargetsMountTarget["MountTargetDomain"].asString();
-		if(!valueMountTargetsMountTarget["NetworkType"].isNull())
-			mountTargetsObject.networkType = valueMountTargetsMountTarget["NetworkType"].asString();
 		if(!valueMountTargetsMountTarget["VpcId"].isNull())
 			mountTargetsObject.vpcId = valueMountTargetsMountTarget["VpcId"].asString();
-		if(!valueMountTargetsMountTarget["VswId"].isNull())
-			mountTargetsObject.vswId = valueMountTargetsMountTarget["VswId"].asString();
-		if(!valueMountTargetsMountTarget["AccessGroup"].isNull())
-			mountTargetsObject.accessGroup = valueMountTargetsMountTarget["AccessGroup"].asString();
 		if(!valueMountTargetsMountTarget["Status"].isNull())
 			mountTargetsObject.status = valueMountTargetsMountTarget["Status"].asString();
+		if(!valueMountTargetsMountTarget["MountTargetDomain"].isNull())
+			mountTargetsObject.mountTargetDomain = valueMountTargetsMountTarget["MountTargetDomain"].asString();
+		if(!valueMountTargetsMountTarget["AccessGroup"].isNull())
+			mountTargetsObject.accessGroup = valueMountTargetsMountTarget["AccessGroup"].asString();
 		if(!valueMountTargetsMountTarget["DualStackMountTargetDomain"].isNull())
 			mountTargetsObject.dualStackMountTargetDomain = valueMountTargetsMountTarget["DualStackMountTargetDomain"].asString();
+		if(!valueMountTargetsMountTarget["VswId"].isNull())
+			mountTargetsObject.vswId = valueMountTargetsMountTarget["VswId"].asString();
+		if(!valueMountTargetsMountTarget["NetworkType"].isNull())
+			mountTargetsObject.networkType = valueMountTargetsMountTarget["NetworkType"].asString();
 		auto allClientMasterNodesNode = valueMountTargetsMountTarget["ClientMasterNodes"]["ClientMasterNode"];
 		for (auto valueMountTargetsMountTargetClientMasterNodesClientMasterNode : allClientMasterNodesNode)
 		{
 			MountTarget::ClientMasterNode clientMasterNodesObject;
 			if(!valueMountTargetsMountTargetClientMasterNodesClientMasterNode["EcsId"].isNull())
 				clientMasterNodesObject.ecsId = valueMountTargetsMountTargetClientMasterNodesClientMasterNode["EcsId"].asString();
-			if(!valueMountTargetsMountTargetClientMasterNodesClientMasterNode["EcsIp"].isNull())
-				clientMasterNodesObject.ecsIp = valueMountTargetsMountTargetClientMasterNodesClientMasterNode["EcsIp"].asString();
 			if(!valueMountTargetsMountTargetClientMasterNodesClientMasterNode["DefaultPasswd"].isNull())
 				clientMasterNodesObject.defaultPasswd = valueMountTargetsMountTargetClientMasterNodesClientMasterNode["DefaultPasswd"].asString();
+			if(!valueMountTargetsMountTargetClientMasterNodesClientMasterNode["EcsIp"].isNull())
+				clientMasterNodesObject.ecsIp = valueMountTargetsMountTargetClientMasterNodesClientMasterNode["EcsIp"].asString();
 			mountTargetsObject.clientMasterNodes.push_back(clientMasterNodesObject);
 		}
 		auto allTagsNode = valueMountTargetsMountTarget["Tags"]["Tag"];

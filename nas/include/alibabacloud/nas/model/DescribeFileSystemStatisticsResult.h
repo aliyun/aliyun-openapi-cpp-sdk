@@ -32,14 +32,6 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_NAS_EXPORT DescribeFileSystemStatisticsResult : public ServiceResult
 			{
 			public:
-				struct FileSystemStatistic
-				{
-					int totalCount;
-					int expiredCount;
-					std::string fileSystemType;
-					long meteredSize;
-					int expiringCount;
-				};
 				struct FileSystem
 				{
 					struct Package
@@ -50,20 +42,28 @@ namespace AlibabaCloud
 						std::string packageId;
 					};
 					std::string status;
-					std::string description;
 					std::string storageType;
+					std::string description;
 					std::string zoneId;
-					std::string createTime;
 					long meteredIASize;
+					std::string createTime;
 					long meteredSize;
 					long capacity;
 					std::vector<FileSystem::Package> packages;
-					std::string protocolType;
 					std::string chargeType;
-					std::string expiredTime;
+					std::string protocolType;
 					std::string fileSystemType;
+					std::string expiredTime;
 					std::string fileSystemId;
 					std::string regionId;
+				};
+				struct FileSystemStatistic
+				{
+					int totalCount;
+					int expiredCount;
+					std::string fileSystemType;
+					long meteredSize;
+					int expiringCount;
 				};
 
 

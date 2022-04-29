@@ -43,24 +43,24 @@ void DescribeAutoSnapshotPoliciesResult::parse(const std::string &payload)
 	for (auto valueAutoSnapshotPoliciesAutoSnapshotPolicy : allAutoSnapshotPoliciesNode)
 	{
 		AutoSnapshotPolicy autoSnapshotPoliciesObject;
-		if(!valueAutoSnapshotPoliciesAutoSnapshotPolicy["AutoSnapshotPolicyId"].isNull())
-			autoSnapshotPoliciesObject.autoSnapshotPolicyId = valueAutoSnapshotPoliciesAutoSnapshotPolicy["AutoSnapshotPolicyId"].asString();
+		if(!valueAutoSnapshotPoliciesAutoSnapshotPolicy["TimePoints"].isNull())
+			autoSnapshotPoliciesObject.timePoints = valueAutoSnapshotPoliciesAutoSnapshotPolicy["TimePoints"].asString();
+		if(!valueAutoSnapshotPoliciesAutoSnapshotPolicy["Status"].isNull())
+			autoSnapshotPoliciesObject.status = valueAutoSnapshotPoliciesAutoSnapshotPolicy["Status"].asString();
+		if(!valueAutoSnapshotPoliciesAutoSnapshotPolicy["RepeatWeekdays"].isNull())
+			autoSnapshotPoliciesObject.repeatWeekdays = valueAutoSnapshotPoliciesAutoSnapshotPolicy["RepeatWeekdays"].asString();
 		if(!valueAutoSnapshotPoliciesAutoSnapshotPolicy["AutoSnapshotPolicyName"].isNull())
 			autoSnapshotPoliciesObject.autoSnapshotPolicyName = valueAutoSnapshotPoliciesAutoSnapshotPolicy["AutoSnapshotPolicyName"].asString();
 		if(!valueAutoSnapshotPoliciesAutoSnapshotPolicy["CreateTime"].isNull())
 			autoSnapshotPoliciesObject.createTime = valueAutoSnapshotPoliciesAutoSnapshotPolicy["CreateTime"].asString();
+		if(!valueAutoSnapshotPoliciesAutoSnapshotPolicy["AutoSnapshotPolicyId"].isNull())
+			autoSnapshotPoliciesObject.autoSnapshotPolicyId = valueAutoSnapshotPoliciesAutoSnapshotPolicy["AutoSnapshotPolicyId"].asString();
+		if(!valueAutoSnapshotPoliciesAutoSnapshotPolicy["RetentionDays"].isNull())
+			autoSnapshotPoliciesObject.retentionDays = std::stoi(valueAutoSnapshotPoliciesAutoSnapshotPolicy["RetentionDays"].asString());
 		if(!valueAutoSnapshotPoliciesAutoSnapshotPolicy["FileSystemNums"].isNull())
 			autoSnapshotPoliciesObject.fileSystemNums = std::stoi(valueAutoSnapshotPoliciesAutoSnapshotPolicy["FileSystemNums"].asString());
 		if(!valueAutoSnapshotPoliciesAutoSnapshotPolicy["RegionId"].isNull())
 			autoSnapshotPoliciesObject.regionId = valueAutoSnapshotPoliciesAutoSnapshotPolicy["RegionId"].asString();
-		if(!valueAutoSnapshotPoliciesAutoSnapshotPolicy["RepeatWeekdays"].isNull())
-			autoSnapshotPoliciesObject.repeatWeekdays = valueAutoSnapshotPoliciesAutoSnapshotPolicy["RepeatWeekdays"].asString();
-		if(!valueAutoSnapshotPoliciesAutoSnapshotPolicy["RetentionDays"].isNull())
-			autoSnapshotPoliciesObject.retentionDays = std::stoi(valueAutoSnapshotPoliciesAutoSnapshotPolicy["RetentionDays"].asString());
-		if(!valueAutoSnapshotPoliciesAutoSnapshotPolicy["Status"].isNull())
-			autoSnapshotPoliciesObject.status = valueAutoSnapshotPoliciesAutoSnapshotPolicy["Status"].asString();
-		if(!valueAutoSnapshotPoliciesAutoSnapshotPolicy["TimePoints"].isNull())
-			autoSnapshotPoliciesObject.timePoints = valueAutoSnapshotPoliciesAutoSnapshotPolicy["TimePoints"].asString();
 		autoSnapshotPolicies_.push_back(autoSnapshotPoliciesObject);
 	}
 	if(!value["TotalCount"].isNull())

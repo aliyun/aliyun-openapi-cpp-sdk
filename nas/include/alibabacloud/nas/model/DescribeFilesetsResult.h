@@ -39,7 +39,7 @@ namespace AlibabaCloud
 					std::string status;
 					std::string description;
 					std::string createTime;
-					std::string updateTiem;
+					std::string updateTime;
 				};
 
 

@@ -46,24 +46,24 @@ void DescribeLogAnalysisResult::parse(const std::string &payload)
 		if(!valueAnalysesAnalysis["MetaKey"].isNull())
 			analysesObject.metaKey = valueAnalysesAnalysis["MetaKey"].asString();
 		auto metaValueNode = value["MetaValue"];
-		if(!metaValueNode["Logstore"].isNull())
-			analysesObject.metaValue.logstore = metaValueNode["Logstore"].asString();
-		if(!metaValueNode["Region"].isNull())
-			analysesObject.metaValue.region = metaValueNode["Region"].asString();
-		if(!metaValueNode["Project"].isNull())
-			analysesObject.metaValue.project = metaValueNode["Project"].asString();
 		if(!metaValueNode["RoleArn"].isNull())
 			analysesObject.metaValue.roleArn = metaValueNode["RoleArn"].asString();
+		if(!metaValueNode["Region"].isNull())
+			analysesObject.metaValue.region = metaValueNode["Region"].asString();
+		if(!metaValueNode["Logstore"].isNull())
+			analysesObject.metaValue.logstore = metaValueNode["Logstore"].asString();
+		if(!metaValueNode["Project"].isNull())
+			analysesObject.metaValue.project = metaValueNode["Project"].asString();
 		analyses_.push_back(analysesObject);
 	}
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["PageNumber"].isNull())
 		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
 
 }
 

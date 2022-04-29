@@ -43,18 +43,18 @@ void DescribeAccessRulesResult::parse(const std::string &payload)
 	for (auto valueAccessRulesAccessRule : allAccessRulesNode)
 	{
 		AccessRule accessRulesObject;
-		if(!valueAccessRulesAccessRule["SourceCidrIp"].isNull())
-			accessRulesObject.sourceCidrIp = valueAccessRulesAccessRule["SourceCidrIp"].asString();
-		if(!valueAccessRulesAccessRule["Priority"].isNull())
-			accessRulesObject.priority = std::stoi(valueAccessRulesAccessRule["Priority"].asString());
 		if(!valueAccessRulesAccessRule["AccessRuleId"].isNull())
 			accessRulesObject.accessRuleId = valueAccessRulesAccessRule["AccessRuleId"].asString();
+		if(!valueAccessRulesAccessRule["SourceCidrIp"].isNull())
+			accessRulesObject.sourceCidrIp = valueAccessRulesAccessRule["SourceCidrIp"].asString();
+		if(!valueAccessRulesAccessRule["Ipv6SourceCidrIp"].isNull())
+			accessRulesObject.ipv6SourceCidrIp = valueAccessRulesAccessRule["Ipv6SourceCidrIp"].asString();
 		if(!valueAccessRulesAccessRule["RWAccess"].isNull())
 			accessRulesObject.rWAccess = valueAccessRulesAccessRule["RWAccess"].asString();
 		if(!valueAccessRulesAccessRule["UserAccess"].isNull())
 			accessRulesObject.userAccess = valueAccessRulesAccessRule["UserAccess"].asString();
-		if(!valueAccessRulesAccessRule["Ipv6SourceCidrIp"].isNull())
-			accessRulesObject.ipv6SourceCidrIp = valueAccessRulesAccessRule["Ipv6SourceCidrIp"].asString();
+		if(!valueAccessRulesAccessRule["Priority"].isNull())
+			accessRulesObject.priority = std::stoi(valueAccessRulesAccessRule["Priority"].asString());
 		accessRules_.push_back(accessRulesObject);
 	}
 	if(!value["TotalCount"].isNull())

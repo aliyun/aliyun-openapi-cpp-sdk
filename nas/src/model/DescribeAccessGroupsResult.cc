@@ -45,16 +45,16 @@ void DescribeAccessGroupsResult::parse(const std::string &payload)
 		AccessGroup accessGroupsObject;
 		if(!valueAccessGroupsAccessGroup["AccessGroupName"].isNull())
 			accessGroupsObject.accessGroupName = valueAccessGroupsAccessGroup["AccessGroupName"].asString();
+		if(!valueAccessGroupsAccessGroup["Description"].isNull())
+			accessGroupsObject.description = valueAccessGroupsAccessGroup["Description"].asString();
+		if(!valueAccessGroupsAccessGroup["CreateTime"].isNull())
+			accessGroupsObject.createTime = valueAccessGroupsAccessGroup["CreateTime"].asString();
 		if(!valueAccessGroupsAccessGroup["AccessGroupType"].isNull())
 			accessGroupsObject.accessGroupType = valueAccessGroupsAccessGroup["AccessGroupType"].asString();
 		if(!valueAccessGroupsAccessGroup["RuleCount"].isNull())
 			accessGroupsObject.ruleCount = std::stoi(valueAccessGroupsAccessGroup["RuleCount"].asString());
 		if(!valueAccessGroupsAccessGroup["MountTargetCount"].isNull())
 			accessGroupsObject.mountTargetCount = std::stoi(valueAccessGroupsAccessGroup["MountTargetCount"].asString());
-		if(!valueAccessGroupsAccessGroup["Description"].isNull())
-			accessGroupsObject.description = valueAccessGroupsAccessGroup["Description"].asString();
-		if(!valueAccessGroupsAccessGroup["CreateTime"].isNull())
-			accessGroupsObject.createTime = valueAccessGroupsAccessGroup["CreateTime"].asString();
 		auto allTagsNode = valueAccessGroupsAccessGroup["Tags"]["Tag"];
 		for (auto valueAccessGroupsAccessGroupTagsTag : allTagsNode)
 		{

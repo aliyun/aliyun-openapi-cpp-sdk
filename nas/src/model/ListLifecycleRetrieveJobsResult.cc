@@ -43,20 +43,20 @@ void ListLifecycleRetrieveJobsResult::parse(const std::string &payload)
 	for (auto valueLifecycleRetrieveJobsLifecycleRetrieveJob : allLifecycleRetrieveJobsNode)
 	{
 		LifecycleRetrieveJob lifecycleRetrieveJobsObject;
-		if(!valueLifecycleRetrieveJobsLifecycleRetrieveJob["Status"].isNull())
-			lifecycleRetrieveJobsObject.status = valueLifecycleRetrieveJobsLifecycleRetrieveJob["Status"].asString();
-		if(!valueLifecycleRetrieveJobsLifecycleRetrieveJob["CreateTime"].isNull())
-			lifecycleRetrieveJobsObject.createTime = valueLifecycleRetrieveJobsLifecycleRetrieveJob["CreateTime"].asString();
-		if(!valueLifecycleRetrieveJobsLifecycleRetrieveJob["RetrievedFileCount"].isNull())
-			lifecycleRetrieveJobsObject.retrievedFileCount = std::stol(valueLifecycleRetrieveJobsLifecycleRetrieveJob["RetrievedFileCount"].asString());
-		if(!valueLifecycleRetrieveJobsLifecycleRetrieveJob["UpdateTime"].isNull())
-			lifecycleRetrieveJobsObject.updateTime = valueLifecycleRetrieveJobsLifecycleRetrieveJob["UpdateTime"].asString();
 		if(!valueLifecycleRetrieveJobsLifecycleRetrieveJob["FileSystemId"].isNull())
 			lifecycleRetrieveJobsObject.fileSystemId = valueLifecycleRetrieveJobsLifecycleRetrieveJob["FileSystemId"].asString();
-		if(!valueLifecycleRetrieveJobsLifecycleRetrieveJob["JobId"].isNull())
-			lifecycleRetrieveJobsObject.jobId = valueLifecycleRetrieveJobsLifecycleRetrieveJob["JobId"].asString();
+		if(!valueLifecycleRetrieveJobsLifecycleRetrieveJob["Status"].isNull())
+			lifecycleRetrieveJobsObject.status = valueLifecycleRetrieveJobsLifecycleRetrieveJob["Status"].asString();
 		if(!valueLifecycleRetrieveJobsLifecycleRetrieveJob["DiscoveredFileCount"].isNull())
 			lifecycleRetrieveJobsObject.discoveredFileCount = std::stol(valueLifecycleRetrieveJobsLifecycleRetrieveJob["DiscoveredFileCount"].asString());
+		if(!valueLifecycleRetrieveJobsLifecycleRetrieveJob["UpdateTime"].isNull())
+			lifecycleRetrieveJobsObject.updateTime = valueLifecycleRetrieveJobsLifecycleRetrieveJob["UpdateTime"].asString();
+		if(!valueLifecycleRetrieveJobsLifecycleRetrieveJob["RetrievedFileCount"].isNull())
+			lifecycleRetrieveJobsObject.retrievedFileCount = std::stol(valueLifecycleRetrieveJobsLifecycleRetrieveJob["RetrievedFileCount"].asString());
+		if(!valueLifecycleRetrieveJobsLifecycleRetrieveJob["JobId"].isNull())
+			lifecycleRetrieveJobsObject.jobId = valueLifecycleRetrieveJobsLifecycleRetrieveJob["JobId"].asString();
+		if(!valueLifecycleRetrieveJobsLifecycleRetrieveJob["CreateTime"].isNull())
+			lifecycleRetrieveJobsObject.createTime = valueLifecycleRetrieveJobsLifecycleRetrieveJob["CreateTime"].asString();
 		auto allPaths = value["Paths"]["Path"];
 		for (auto value : allPaths)
 			lifecycleRetrieveJobsObject.paths.push_back(value.asString());

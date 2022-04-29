@@ -42,24 +42,24 @@ void GetDirectoryOrFilePropertiesResult::parse(const std::string &payload)
 	auto entryNode = value["Entry"];
 	if(!entryNode["Type"].isNull())
 		entry_.type = entryNode["Type"].asString();
-	if(!entryNode["Inode"].isNull())
-		entry_.inode = entryNode["Inode"].asString();
-	if(!entryNode["StorageType"].isNull())
-		entry_.storageType = entryNode["StorageType"].asString();
+	if(!entryNode["HasInfrequentAccessFile"].isNull())
+		entry_.hasInfrequentAccessFile = entryNode["HasInfrequentAccessFile"].asString() == "true";
+	if(!entryNode["MTime"].isNull())
+		entry_.mTime = entryNode["MTime"].asString();
 	if(!entryNode["ATime"].isNull())
 		entry_.aTime = entryNode["ATime"].asString();
 	if(!entryNode["Size"].isNull())
 		entry_.size = std::stol(entryNode["Size"].asString());
-	if(!entryNode["HasInfrequentAccessFile"].isNull())
-		entry_.hasInfrequentAccessFile = entryNode["HasInfrequentAccessFile"].asString() == "true";
 	if(!entryNode["CTime"].isNull())
 		entry_.cTime = entryNode["CTime"].asString();
-	if(!entryNode["RetrieveTime"].isNull())
-		entry_.retrieveTime = entryNode["RetrieveTime"].asString();
-	if(!entryNode["MTime"].isNull())
-		entry_.mTime = entryNode["MTime"].asString();
+	if(!entryNode["StorageType"].isNull())
+		entry_.storageType = entryNode["StorageType"].asString();
 	if(!entryNode["Name"].isNull())
 		entry_.name = entryNode["Name"].asString();
+	if(!entryNode["RetrieveTime"].isNull())
+		entry_.retrieveTime = entryNode["RetrieveTime"].asString();
+	if(!entryNode["Inode"].isNull())
+		entry_.inode = entryNode["Inode"].asString();
 
 }
 

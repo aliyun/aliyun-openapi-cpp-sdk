@@ -807,6 +807,78 @@ NASClient::CreateMountTargetOutcomeCallable NASClient::createMountTargetCallable
 	return task->get_future();
 }
 
+NASClient::CreateProtocolMountTargetOutcome NASClient::createProtocolMountTarget(const CreateProtocolMountTargetRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateProtocolMountTargetOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateProtocolMountTargetOutcome(CreateProtocolMountTargetResult(outcome.result()));
+	else
+		return CreateProtocolMountTargetOutcome(outcome.error());
+}
+
+void NASClient::createProtocolMountTargetAsync(const CreateProtocolMountTargetRequest& request, const CreateProtocolMountTargetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createProtocolMountTarget(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+NASClient::CreateProtocolMountTargetOutcomeCallable NASClient::createProtocolMountTargetCallable(const CreateProtocolMountTargetRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateProtocolMountTargetOutcome()>>(
+			[this, request]()
+			{
+			return this->createProtocolMountTarget(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+NASClient::CreateProtocolServiceOutcome NASClient::createProtocolService(const CreateProtocolServiceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateProtocolServiceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateProtocolServiceOutcome(CreateProtocolServiceResult(outcome.result()));
+	else
+		return CreateProtocolServiceOutcome(outcome.error());
+}
+
+void NASClient::createProtocolServiceAsync(const CreateProtocolServiceRequest& request, const CreateProtocolServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createProtocolService(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+NASClient::CreateProtocolServiceOutcomeCallable NASClient::createProtocolServiceCallable(const CreateProtocolServiceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateProtocolServiceOutcome()>>(
+			[this, request]()
+			{
+			return this->createProtocolService(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 NASClient::CreateRecycleBinDeleteJobOutcome NASClient::createRecycleBinDeleteJob(const CreateRecycleBinDeleteJobRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1233,6 +1305,78 @@ NASClient::DeleteMountTargetOutcomeCallable NASClient::deleteMountTargetCallable
 			[this, request]()
 			{
 			return this->deleteMountTarget(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+NASClient::DeleteProtocolMountTargetOutcome NASClient::deleteProtocolMountTarget(const DeleteProtocolMountTargetRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteProtocolMountTargetOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteProtocolMountTargetOutcome(DeleteProtocolMountTargetResult(outcome.result()));
+	else
+		return DeleteProtocolMountTargetOutcome(outcome.error());
+}
+
+void NASClient::deleteProtocolMountTargetAsync(const DeleteProtocolMountTargetRequest& request, const DeleteProtocolMountTargetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteProtocolMountTarget(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+NASClient::DeleteProtocolMountTargetOutcomeCallable NASClient::deleteProtocolMountTargetCallable(const DeleteProtocolMountTargetRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteProtocolMountTargetOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteProtocolMountTarget(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+NASClient::DeleteProtocolServiceOutcome NASClient::deleteProtocolService(const DeleteProtocolServiceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteProtocolServiceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteProtocolServiceOutcome(DeleteProtocolServiceResult(outcome.result()));
+	else
+		return DeleteProtocolServiceOutcome(outcome.error());
+}
+
+void NASClient::deleteProtocolServiceAsync(const DeleteProtocolServiceRequest& request, const DeleteProtocolServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteProtocolService(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+NASClient::DeleteProtocolServiceOutcomeCallable NASClient::deleteProtocolServiceCallable(const DeleteProtocolServiceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteProtocolServiceOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteProtocolService(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1845,6 +1989,78 @@ NASClient::DescribeMountedClientsOutcomeCallable NASClient::describeMountedClien
 			[this, request]()
 			{
 			return this->describeMountedClients(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+NASClient::DescribeProtocolMountTargetOutcome NASClient::describeProtocolMountTarget(const DescribeProtocolMountTargetRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeProtocolMountTargetOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeProtocolMountTargetOutcome(DescribeProtocolMountTargetResult(outcome.result()));
+	else
+		return DescribeProtocolMountTargetOutcome(outcome.error());
+}
+
+void NASClient::describeProtocolMountTargetAsync(const DescribeProtocolMountTargetRequest& request, const DescribeProtocolMountTargetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeProtocolMountTarget(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+NASClient::DescribeProtocolMountTargetOutcomeCallable NASClient::describeProtocolMountTargetCallable(const DescribeProtocolMountTargetRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeProtocolMountTargetOutcome()>>(
+			[this, request]()
+			{
+			return this->describeProtocolMountTarget(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+NASClient::DescribeProtocolServiceOutcome NASClient::describeProtocolService(const DescribeProtocolServiceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeProtocolServiceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeProtocolServiceOutcome(DescribeProtocolServiceResult(outcome.result()));
+	else
+		return DescribeProtocolServiceOutcome(outcome.error());
+}
+
+void NASClient::describeProtocolServiceAsync(const DescribeProtocolServiceRequest& request, const DescribeProtocolServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeProtocolService(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+NASClient::DescribeProtocolServiceOutcomeCallable NASClient::describeProtocolServiceCallable(const DescribeProtocolServiceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeProtocolServiceOutcome()>>(
+			[this, request]()
+			{
+			return this->describeProtocolService(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2853,6 +3069,78 @@ NASClient::ModifyMountTargetOutcomeCallable NASClient::modifyMountTargetCallable
 			[this, request]()
 			{
 			return this->modifyMountTarget(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+NASClient::ModifyProtocolMountTargetOutcome NASClient::modifyProtocolMountTarget(const ModifyProtocolMountTargetRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyProtocolMountTargetOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyProtocolMountTargetOutcome(ModifyProtocolMountTargetResult(outcome.result()));
+	else
+		return ModifyProtocolMountTargetOutcome(outcome.error());
+}
+
+void NASClient::modifyProtocolMountTargetAsync(const ModifyProtocolMountTargetRequest& request, const ModifyProtocolMountTargetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyProtocolMountTarget(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+NASClient::ModifyProtocolMountTargetOutcomeCallable NASClient::modifyProtocolMountTargetCallable(const ModifyProtocolMountTargetRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyProtocolMountTargetOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyProtocolMountTarget(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+NASClient::ModifyProtocolServiceOutcome NASClient::modifyProtocolService(const ModifyProtocolServiceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyProtocolServiceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyProtocolServiceOutcome(ModifyProtocolServiceResult(outcome.result()));
+	else
+		return ModifyProtocolServiceOutcome(outcome.error());
+}
+
+void NASClient::modifyProtocolServiceAsync(const ModifyProtocolServiceRequest& request, const ModifyProtocolServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyProtocolService(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+NASClient::ModifyProtocolServiceOutcomeCallable NASClient::modifyProtocolServiceCallable(const ModifyProtocolServiceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyProtocolServiceOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyProtocolService(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

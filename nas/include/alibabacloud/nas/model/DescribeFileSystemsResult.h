@@ -40,6 +40,11 @@ namespace AlibabaCloud
 						std::string bindDN;
 						std::string uRI;
 					};
+					struct Tag
+					{
+						std::string value;
+						std::string key;
+					};
 					struct MountTarget
 					{
 						struct ClientMasterNode
@@ -48,16 +53,16 @@ namespace AlibabaCloud
 							std::string ecsId;
 							std::string defaultPasswd;
 						};
-						struct Tag
+						struct Tag2
 						{
 							std::string value;
 							std::string key;
 						};
 						std::string status;
 						std::string vpcId;
-						std::string vswId;
 						std::string dualStackMountTargetDomain;
-						std::vector<MountTarget::Tag> tags1;
+						std::string vswId;
+						std::vector<MountTarget::Tag2> tags1;
 						std::string mountTargetDomain;
 						std::string networkType;
 						std::string accessGroupName;
@@ -66,40 +71,37 @@ namespace AlibabaCloud
 					struct Package
 					{
 						long size;
-						std::string packageType;
 						std::string expiredTime;
+						std::string packageType;
 						std::string startTime;
 						std::string packageId;
 					};
-					struct Tag2
-					{
-						std::string value;
-						std::string key;
-					};
-					std::string description;
 					long mountTargetCountLimit;
+					std::string description;
 					std::string kMSKeyId;
 					long meteredSize;
+					std::vector<std::string> vswIds;
 					long capacity;
 					std::string version;
 					std::vector<FileSystem::Package> packages;
-					std::string expiredTime;
 					long bandwidth;
+					std::string expiredTime;
 					std::string fileSystemId;
-					std::vector<FileSystem::Tag2> tags;
+					std::vector<FileSystem::Tag> tags;
 					std::string status;
 					Ldap ldap;
 					std::string storageType;
 					std::string zoneId;
 					std::string nasNamespaceId;
-					std::string createTime;
 					long meteredIASize;
+					std::string createTime;
 					std::vector<std::string> supportedFeatures;
 					std::vector<FileSystem::MountTarget> mountTargets;
 					std::string autoSnapshotPolicyId;
 					int encryptType;
-					std::string protocolType;
+					std::string vpcId;
 					std::string chargeType;
+					std::string protocolType;
 					std::string fileSystemType;
 					std::string regionId;
 				};

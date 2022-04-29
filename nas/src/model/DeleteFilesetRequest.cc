@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,56 +18,46 @@
 
 using AlibabaCloud::NAS::Model::DeleteFilesetRequest;
 
-DeleteFilesetRequest::DeleteFilesetRequest() :
-	RpcServiceRequest("nas", "2017-06-26", "DeleteFileset")
-{
-	setMethod(HttpRequest::Method::Post);
+DeleteFilesetRequest::DeleteFilesetRequest()
+    : RpcServiceRequest("nas", "2017-06-26", "DeleteFileset") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DeleteFilesetRequest::~DeleteFilesetRequest()
-{}
+DeleteFilesetRequest::~DeleteFilesetRequest() {}
 
-std::string DeleteFilesetRequest::getFsetId()const
-{
-	return fsetId_;
+std::string DeleteFilesetRequest::getFsetId() const {
+  return fsetId_;
 }
 
-void DeleteFilesetRequest::setFsetId(const std::string& fsetId)
-{
-	fsetId_ = fsetId;
-	setParameter("FsetId", fsetId);
+void DeleteFilesetRequest::setFsetId(const std::string &fsetId) {
+  fsetId_ = fsetId;
+  setParameter(std::string("FsetId"), fsetId);
 }
 
-std::string DeleteFilesetRequest::getClientToken()const
-{
-	return clientToken_;
+std::string DeleteFilesetRequest::getClientToken() const {
+  return clientToken_;
 }
 
-void DeleteFilesetRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+void DeleteFilesetRequest::setClientToken(const std::string &clientToken) {
+  clientToken_ = clientToken;
+  setParameter(std::string("ClientToken"), clientToken);
 }
 
-std::string DeleteFilesetRequest::getFileSystemId()const
-{
-	return fileSystemId_;
+std::string DeleteFilesetRequest::getFileSystemId() const {
+  return fileSystemId_;
 }
 
-void DeleteFilesetRequest::setFileSystemId(const std::string& fileSystemId)
-{
-	fileSystemId_ = fileSystemId;
-	setParameter("FileSystemId", fileSystemId);
+void DeleteFilesetRequest::setFileSystemId(const std::string &fileSystemId) {
+  fileSystemId_ = fileSystemId;
+  setParameter(std::string("FileSystemId"), fileSystemId);
 }
 
-bool DeleteFilesetRequest::getDryRun()const
-{
-	return dryRun_;
+bool DeleteFilesetRequest::getDryRun() const {
+  return dryRun_;
 }
 
-void DeleteFilesetRequest::setDryRun(bool dryRun)
-{
-	dryRun_ = dryRun;
-	setParameter("DryRun", dryRun ? "true" : "false");
+void DeleteFilesetRequest::setDryRun(bool dryRun) {
+  dryRun_ = dryRun;
+  setParameter(std::string("DryRun"), dryRun ? "true" : "false");
 }
 

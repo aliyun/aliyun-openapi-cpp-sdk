@@ -40,8 +40,8 @@ namespace AlibabaCloud
 					int fileSystemNums;
 					std::string autoSnapshotPolicyId;
 					int retentionDays;
-					std::string regionId;
 					std::string repeatWeekdays;
+					std::string regionId;
 					std::string autoSnapshotPolicyName;
 				};
 

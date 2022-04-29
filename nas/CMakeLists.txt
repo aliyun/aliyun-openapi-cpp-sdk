@@ -63,6 +63,10 @@ set(nas_public_header_model
 	include/alibabacloud/nas/model/CreateLifecycleRetrieveJobResult.h
 	include/alibabacloud/nas/model/CreateMountTargetRequest.h
 	include/alibabacloud/nas/model/CreateMountTargetResult.h
+	include/alibabacloud/nas/model/CreateProtocolMountTargetRequest.h
+	include/alibabacloud/nas/model/CreateProtocolMountTargetResult.h
+	include/alibabacloud/nas/model/CreateProtocolServiceRequest.h
+	include/alibabacloud/nas/model/CreateProtocolServiceResult.h
 	include/alibabacloud/nas/model/CreateRecycleBinDeleteJobRequest.h
 	include/alibabacloud/nas/model/CreateRecycleBinDeleteJobResult.h
 	include/alibabacloud/nas/model/CreateRecycleBinRestoreJobRequest.h
@@ -87,6 +91,10 @@ set(nas_public_header_model
 	include/alibabacloud/nas/model/DeleteLifecyclePolicyResult.h
 	include/alibabacloud/nas/model/DeleteMountTargetRequest.h
 	include/alibabacloud/nas/model/DeleteMountTargetResult.h
+	include/alibabacloud/nas/model/DeleteProtocolMountTargetRequest.h
+	include/alibabacloud/nas/model/DeleteProtocolMountTargetResult.h
+	include/alibabacloud/nas/model/DeleteProtocolServiceRequest.h
+	include/alibabacloud/nas/model/DeleteProtocolServiceResult.h
 	include/alibabacloud/nas/model/DeleteSnapshotRequest.h
 	include/alibabacloud/nas/model/DeleteSnapshotResult.h
 	include/alibabacloud/nas/model/DescribeAccessGroupsRequest.h
@@ -121,6 +129,10 @@ set(nas_public_header_model
 	include/alibabacloud/nas/model/DescribeMountTargetsResult.h
 	include/alibabacloud/nas/model/DescribeMountedClientsRequest.h
 	include/alibabacloud/nas/model/DescribeMountedClientsResult.h
+	include/alibabacloud/nas/model/DescribeProtocolMountTargetRequest.h
+	include/alibabacloud/nas/model/DescribeProtocolMountTargetResult.h
+	include/alibabacloud/nas/model/DescribeProtocolServiceRequest.h
+	include/alibabacloud/nas/model/DescribeProtocolServiceResult.h
 	include/alibabacloud/nas/model/DescribeRegionsRequest.h
 	include/alibabacloud/nas/model/DescribeRegionsResult.h
 	include/alibabacloud/nas/model/DescribeSmbAclRequest.h
@@ -177,6 +189,10 @@ set(nas_public_header_model
 	include/alibabacloud/nas/model/ModifyLifecyclePolicyResult.h
 	include/alibabacloud/nas/model/ModifyMountTargetRequest.h
 	include/alibabacloud/nas/model/ModifyMountTargetResult.h
+	include/alibabacloud/nas/model/ModifyProtocolMountTargetRequest.h
+	include/alibabacloud/nas/model/ModifyProtocolMountTargetResult.h
+	include/alibabacloud/nas/model/ModifyProtocolServiceRequest.h
+	include/alibabacloud/nas/model/ModifyProtocolServiceResult.h
 	include/alibabacloud/nas/model/ModifySmbAclRequest.h
 	include/alibabacloud/nas/model/ModifySmbAclResult.h
 	include/alibabacloud/nas/model/OpenNASServiceRequest.h
@@ -248,6 +264,10 @@ set(nas_src
 	src/model/CreateLifecycleRetrieveJobResult.cc
 	src/model/CreateMountTargetRequest.cc
 	src/model/CreateMountTargetResult.cc
+	src/model/CreateProtocolMountTargetRequest.cc
+	src/model/CreateProtocolMountTargetResult.cc
+	src/model/CreateProtocolServiceRequest.cc
+	src/model/CreateProtocolServiceResult.cc
 	src/model/CreateRecycleBinDeleteJobRequest.cc
 	src/model/CreateRecycleBinDeleteJobResult.cc
 	src/model/CreateRecycleBinRestoreJobRequest.cc
@@ -272,6 +292,10 @@ set(nas_src
 	src/model/DeleteLifecyclePolicyResult.cc
 	src/model/DeleteMountTargetRequest.cc
 	src/model/DeleteMountTargetResult.cc
+	src/model/DeleteProtocolMountTargetRequest.cc
+	src/model/DeleteProtocolMountTargetResult.cc
+	src/model/DeleteProtocolServiceRequest.cc
+	src/model/DeleteProtocolServiceResult.cc
 	src/model/DeleteSnapshotRequest.cc
 	src/model/DeleteSnapshotResult.cc
 	src/model/DescribeAccessGroupsRequest.cc
@@ -306,6 +330,10 @@ set(nas_src
 	src/model/DescribeMountTargetsResult.cc
 	src/model/DescribeMountedClientsRequest.cc
 	src/model/DescribeMountedClientsResult.cc
+	src/model/DescribeProtocolMountTargetRequest.cc
+	src/model/DescribeProtocolMountTargetResult.cc
+	src/model/DescribeProtocolServiceRequest.cc
+	src/model/DescribeProtocolServiceResult.cc
 	src/model/DescribeRegionsRequest.cc
 	src/model/DescribeRegionsResult.cc
 	src/model/DescribeSmbAclRequest.cc
@@ -362,6 +390,10 @@ set(nas_src
 	src/model/ModifyLifecyclePolicyResult.cc
 	src/model/ModifyMountTargetRequest.cc
 	src/model/ModifyMountTargetResult.cc
+	src/model/ModifyProtocolMountTargetRequest.cc
+	src/model/ModifyProtocolMountTargetResult.cc
+	src/model/ModifyProtocolServiceRequest.cc
+	src/model/ModifyProtocolServiceResult.cc
 	src/model/ModifySmbAclRequest.cc
 	src/model/ModifySmbAclResult.cc
 	src/model/OpenNASServiceRequest.cc

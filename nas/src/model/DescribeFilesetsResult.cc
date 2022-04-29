@@ -53,8 +53,8 @@ void DescribeFilesetsResult::parse(const std::string &payload)
 			entriesObject.status = valueEntriesEntrie["Status"].asString();
 		if(!valueEntriesEntrie["CreateTime"].isNull())
 			entriesObject.createTime = valueEntriesEntrie["CreateTime"].asString();
-		if(!valueEntriesEntrie["UpdateTiem"].isNull())
-			entriesObject.updateTiem = valueEntriesEntrie["UpdateTiem"].asString();
+		if(!valueEntriesEntrie["UpdateTime"].isNull())
+			entriesObject.updateTime = valueEntriesEntrie["UpdateTime"].asString();
 		entries_.push_back(entriesObject);
 	}
 	if(!value["NextToken"].isNull())

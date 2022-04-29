@@ -36,12 +36,12 @@ namespace AlibabaCloud
 				{
 					std::string status;
 					std::string createTime;
-					long retrievedFileCount;
 					std::string updateTime;
+					long retrievedFileCount;
 					std::string fileSystemId;
 					std::vector<std::string> paths;
-					std::string jobId;
 					long discoveredFileCount;
+					std::string jobId;
 				};
 
 

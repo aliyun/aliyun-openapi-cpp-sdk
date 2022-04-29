@@ -42,10 +42,10 @@ void DescribeLDAPConfigResult::parse(const std::string &payload)
 	auto ldapNode = value["Ldap"];
 	if(!ldapNode["BindDN"].isNull())
 		ldap_.bindDN = ldapNode["BindDN"].asString();
-	if(!ldapNode["URI"].isNull())
-		ldap_.uRI = ldapNode["URI"].asString();
 	if(!ldapNode["SearchBase"].isNull())
 		ldap_.searchBase = ldapNode["SearchBase"].asString();
+	if(!ldapNode["URI"].isNull())
+		ldap_.uRI = ldapNode["URI"].asString();
 
 }
 

@@ -47,11 +47,11 @@ namespace AlibabaCloud
 					};
 					std::string status;
 					std::string vpcId;
-					std::string vswId;
 					std::string dualStackMountTargetDomain;
+					std::string vswId;
 					std::string mountTargetDomain;
-					std::string networkType;
 					std::string accessGroup;
+					std::string networkType;
 					std::vector<MountTarget::ClientMasterNode> clientMasterNodes;
 					std::vector<MountTarget::Tag> tags;
 				};

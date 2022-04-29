@@ -64,6 +64,10 @@
 #include "model/CreateLifecycleRetrieveJobResult.h"
 #include "model/CreateMountTargetRequest.h"
 #include "model/CreateMountTargetResult.h"
+#include "model/CreateProtocolMountTargetRequest.h"
+#include "model/CreateProtocolMountTargetResult.h"
+#include "model/CreateProtocolServiceRequest.h"
+#include "model/CreateProtocolServiceResult.h"
 #include "model/CreateRecycleBinDeleteJobRequest.h"
 #include "model/CreateRecycleBinDeleteJobResult.h"
 #include "model/CreateRecycleBinRestoreJobRequest.h"
@@ -88,6 +92,10 @@
 #include "model/DeleteLifecyclePolicyResult.h"
 #include "model/DeleteMountTargetRequest.h"
 #include "model/DeleteMountTargetResult.h"
+#include "model/DeleteProtocolMountTargetRequest.h"
+#include "model/DeleteProtocolMountTargetResult.h"
+#include "model/DeleteProtocolServiceRequest.h"
+#include "model/DeleteProtocolServiceResult.h"
 #include "model/DeleteSnapshotRequest.h"
 #include "model/DeleteSnapshotResult.h"
 #include "model/DescribeAccessGroupsRequest.h"
@@ -122,6 +130,10 @@
 #include "model/DescribeMountTargetsResult.h"
 #include "model/DescribeMountedClientsRequest.h"
 #include "model/DescribeMountedClientsResult.h"
+#include "model/DescribeProtocolMountTargetRequest.h"
+#include "model/DescribeProtocolMountTargetResult.h"
+#include "model/DescribeProtocolServiceRequest.h"
+#include "model/DescribeProtocolServiceResult.h"
 #include "model/DescribeRegionsRequest.h"
 #include "model/DescribeRegionsResult.h"
 #include "model/DescribeSmbAclRequest.h"
@@ -178,6 +190,10 @@
 #include "model/ModifyLifecyclePolicyResult.h"
 #include "model/ModifyMountTargetRequest.h"
 #include "model/ModifyMountTargetResult.h"
+#include "model/ModifyProtocolMountTargetRequest.h"
+#include "model/ModifyProtocolMountTargetResult.h"
+#include "model/ModifyProtocolServiceRequest.h"
+#include "model/ModifyProtocolServiceResult.h"
 #include "model/ModifySmbAclRequest.h"
 #include "model/ModifySmbAclResult.h"
 #include "model/OpenNASServiceRequest.h"
@@ -276,6 +292,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateMountTargetResult> CreateMountTargetOutcome;
 			typedef std::future<CreateMountTargetOutcome> CreateMountTargetOutcomeCallable;
 			typedef std::function<void(const NASClient*, const Model::CreateMountTargetRequest&, const CreateMountTargetOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateMountTargetAsyncHandler;
+			typedef Outcome<Error, Model::CreateProtocolMountTargetResult> CreateProtocolMountTargetOutcome;
+			typedef std::future<CreateProtocolMountTargetOutcome> CreateProtocolMountTargetOutcomeCallable;
+			typedef std::function<void(const NASClient*, const Model::CreateProtocolMountTargetRequest&, const CreateProtocolMountTargetOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateProtocolMountTargetAsyncHandler;
+			typedef Outcome<Error, Model::CreateProtocolServiceResult> CreateProtocolServiceOutcome;
+			typedef std::future<CreateProtocolServiceOutcome> CreateProtocolServiceOutcomeCallable;
+			typedef std::function<void(const NASClient*, const Model::CreateProtocolServiceRequest&, const CreateProtocolServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateProtocolServiceAsyncHandler;
 			typedef Outcome<Error, Model::CreateRecycleBinDeleteJobResult> CreateRecycleBinDeleteJobOutcome;
 			typedef std::future<CreateRecycleBinDeleteJobOutcome> CreateRecycleBinDeleteJobOutcomeCallable;
 			typedef std::function<void(const NASClient*, const Model::CreateRecycleBinDeleteJobRequest&, const CreateRecycleBinDeleteJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateRecycleBinDeleteJobAsyncHandler;
@@ -312,6 +334,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteMountTargetResult> DeleteMountTargetOutcome;
 			typedef std::future<DeleteMountTargetOutcome> DeleteMountTargetOutcomeCallable;
 			typedef std::function<void(const NASClient*, const Model::DeleteMountTargetRequest&, const DeleteMountTargetOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteMountTargetAsyncHandler;
+			typedef Outcome<Error, Model::DeleteProtocolMountTargetResult> DeleteProtocolMountTargetOutcome;
+			typedef std::future<DeleteProtocolMountTargetOutcome> DeleteProtocolMountTargetOutcomeCallable;
+			typedef std::function<void(const NASClient*, const Model::DeleteProtocolMountTargetRequest&, const DeleteProtocolMountTargetOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteProtocolMountTargetAsyncHandler;
+			typedef Outcome<Error, Model::DeleteProtocolServiceResult> DeleteProtocolServiceOutcome;
+			typedef std::future<DeleteProtocolServiceOutcome> DeleteProtocolServiceOutcomeCallable;
+			typedef std::function<void(const NASClient*, const Model::DeleteProtocolServiceRequest&, const DeleteProtocolServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteProtocolServiceAsyncHandler;
 			typedef Outcome<Error, Model::DeleteSnapshotResult> DeleteSnapshotOutcome;
 			typedef std::future<DeleteSnapshotOutcome> DeleteSnapshotOutcomeCallable;
 			typedef std::function<void(const NASClient*, const Model::DeleteSnapshotRequest&, const DeleteSnapshotOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSnapshotAsyncHandler;
@@ -363,6 +391,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeMountedClientsResult> DescribeMountedClientsOutcome;
 			typedef std::future<DescribeMountedClientsOutcome> DescribeMountedClientsOutcomeCallable;
 			typedef std::function<void(const NASClient*, const Model::DescribeMountedClientsRequest&, const DescribeMountedClientsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMountedClientsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeProtocolMountTargetResult> DescribeProtocolMountTargetOutcome;
+			typedef std::future<DescribeProtocolMountTargetOutcome> DescribeProtocolMountTargetOutcomeCallable;
+			typedef std::function<void(const NASClient*, const Model::DescribeProtocolMountTargetRequest&, const DescribeProtocolMountTargetOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProtocolMountTargetAsyncHandler;
+			typedef Outcome<Error, Model::DescribeProtocolServiceResult> DescribeProtocolServiceOutcome;
+			typedef std::future<DescribeProtocolServiceOutcome> DescribeProtocolServiceOutcomeCallable;
+			typedef std::function<void(const NASClient*, const Model::DescribeProtocolServiceRequest&, const DescribeProtocolServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProtocolServiceAsyncHandler;
 			typedef Outcome<Error, Model::DescribeRegionsResult> DescribeRegionsOutcome;
 			typedef std::future<DescribeRegionsOutcome> DescribeRegionsOutcomeCallable;
 			typedef std::function<void(const NASClient*, const Model::DescribeRegionsRequest&, const DescribeRegionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRegionsAsyncHandler;
@@ -447,6 +481,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyMountTargetResult> ModifyMountTargetOutcome;
 			typedef std::future<ModifyMountTargetOutcome> ModifyMountTargetOutcomeCallable;
 			typedef std::function<void(const NASClient*, const Model::ModifyMountTargetRequest&, const ModifyMountTargetOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMountTargetAsyncHandler;
+			typedef Outcome<Error, Model::ModifyProtocolMountTargetResult> ModifyProtocolMountTargetOutcome;
+			typedef std::future<ModifyProtocolMountTargetOutcome> ModifyProtocolMountTargetOutcomeCallable;
+			typedef std::function<void(const NASClient*, const Model::ModifyProtocolMountTargetRequest&, const ModifyProtocolMountTargetOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyProtocolMountTargetAsyncHandler;
+			typedef Outcome<Error, Model::ModifyProtocolServiceResult> ModifyProtocolServiceOutcome;
+			typedef std::future<ModifyProtocolServiceOutcome> ModifyProtocolServiceOutcomeCallable;
+			typedef std::function<void(const NASClient*, const Model::ModifyProtocolServiceRequest&, const ModifyProtocolServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyProtocolServiceAsyncHandler;
 			typedef Outcome<Error, Model::ModifySmbAclResult> ModifySmbAclOutcome;
 			typedef std::future<ModifySmbAclOutcome> ModifySmbAclOutcomeCallable;
 			typedef std::function<void(const NASClient*, const Model::ModifySmbAclRequest&, const ModifySmbAclOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifySmbAclAsyncHandler;
@@ -554,6 +594,12 @@ namespace AlibabaCloud
 			CreateMountTargetOutcome createMountTarget(const Model::CreateMountTargetRequest &request)const;
 			void createMountTargetAsync(const Model::CreateMountTargetRequest& request, const CreateMountTargetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateMountTargetOutcomeCallable createMountTargetCallable(const Model::CreateMountTargetRequest& request) const;
+			CreateProtocolMountTargetOutcome createProtocolMountTarget(const Model::CreateProtocolMountTargetRequest &request)const;
+			void createProtocolMountTargetAsync(const Model::CreateProtocolMountTargetRequest& request, const CreateProtocolMountTargetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateProtocolMountTargetOutcomeCallable createProtocolMountTargetCallable(const Model::CreateProtocolMountTargetRequest& request) const;
+			CreateProtocolServiceOutcome createProtocolService(const Model::CreateProtocolServiceRequest &request)const;
+			void createProtocolServiceAsync(const Model::CreateProtocolServiceRequest& request, const CreateProtocolServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateProtocolServiceOutcomeCallable createProtocolServiceCallable(const Model::CreateProtocolServiceRequest& request) const;
 			CreateRecycleBinDeleteJobOutcome createRecycleBinDeleteJob(const Model::CreateRecycleBinDeleteJobRequest &request)const;
 			void createRecycleBinDeleteJobAsync(const Model::CreateRecycleBinDeleteJobRequest& request, const CreateRecycleBinDeleteJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateRecycleBinDeleteJobOutcomeCallable createRecycleBinDeleteJobCallable(const Model::CreateRecycleBinDeleteJobRequest& request) const;
@@ -590,6 +636,12 @@ namespace AlibabaCloud
 			DeleteMountTargetOutcome deleteMountTarget(const Model::DeleteMountTargetRequest &request)const;
 			void deleteMountTargetAsync(const Model::DeleteMountTargetRequest& request, const DeleteMountTargetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteMountTargetOutcomeCallable deleteMountTargetCallable(const Model::DeleteMountTargetRequest& request) const;
+			DeleteProtocolMountTargetOutcome deleteProtocolMountTarget(const Model::DeleteProtocolMountTargetRequest &request)const;
+			void deleteProtocolMountTargetAsync(const Model::DeleteProtocolMountTargetRequest& request, const DeleteProtocolMountTargetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteProtocolMountTargetOutcomeCallable deleteProtocolMountTargetCallable(const Model::DeleteProtocolMountTargetRequest& request) const;
+			DeleteProtocolServiceOutcome deleteProtocolService(const Model::DeleteProtocolServiceRequest &request)const;
+			void deleteProtocolServiceAsync(const Model::DeleteProtocolServiceRequest& request, const DeleteProtocolServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteProtocolServiceOutcomeCallable deleteProtocolServiceCallable(const Model::DeleteProtocolServiceRequest& request) const;
 			DeleteSnapshotOutcome deleteSnapshot(const Model::DeleteSnapshotRequest &request)const;
 			void deleteSnapshotAsync(const Model::DeleteSnapshotRequest& request, const DeleteSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteSnapshotOutcomeCallable deleteSnapshotCallable(const Model::DeleteSnapshotRequest& request) const;
@@ -641,6 +693,12 @@ namespace AlibabaCloud
 			DescribeMountedClientsOutcome describeMountedClients(const Model::DescribeMountedClientsRequest &request)const;
 			void describeMountedClientsAsync(const Model::DescribeMountedClientsRequest& request, const DescribeMountedClientsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeMountedClientsOutcomeCallable describeMountedClientsCallable(const Model::DescribeMountedClientsRequest& request) const;
+			DescribeProtocolMountTargetOutcome describeProtocolMountTarget(const Model::DescribeProtocolMountTargetRequest &request)const;
+			void describeProtocolMountTargetAsync(const Model::DescribeProtocolMountTargetRequest& request, const DescribeProtocolMountTargetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeProtocolMountTargetOutcomeCallable describeProtocolMountTargetCallable(const Model::DescribeProtocolMountTargetRequest& request) const;
+			DescribeProtocolServiceOutcome describeProtocolService(const Model::DescribeProtocolServiceRequest &request)const;
+			void describeProtocolServiceAsync(const Model::DescribeProtocolServiceRequest& request, const DescribeProtocolServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeProtocolServiceOutcomeCallable describeProtocolServiceCallable(const Model::DescribeProtocolServiceRequest& request) const;
 			DescribeRegionsOutcome describeRegions(const Model::DescribeRegionsRequest &request)const;
 			void describeRegionsAsync(const Model::DescribeRegionsRequest& request, const DescribeRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRegionsOutcomeCallable describeRegionsCallable(const Model::DescribeRegionsRequest& request) const;
@@ -725,6 +783,12 @@ namespace AlibabaCloud
 			ModifyMountTargetOutcome modifyMountTarget(const Model::ModifyMountTargetRequest &request)const;
 			void modifyMountTargetAsync(const Model::ModifyMountTargetRequest& request, const ModifyMountTargetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyMountTargetOutcomeCallable modifyMountTargetCallable(const Model::ModifyMountTargetRequest& request) const;
+			ModifyProtocolMountTargetOutcome modifyProtocolMountTarget(const Model::ModifyProtocolMountTargetRequest &request)const;
+			void modifyProtocolMountTargetAsync(const Model::ModifyProtocolMountTargetRequest& request, const ModifyProtocolMountTargetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyProtocolMountTargetOutcomeCallable modifyProtocolMountTargetCallable(const Model::ModifyProtocolMountTargetRequest& request) const;
+			ModifyProtocolServiceOutcome modifyProtocolService(const Model::ModifyProtocolServiceRequest &request)const;
+			void modifyProtocolServiceAsync(const Model::ModifyProtocolServiceRequest& request, const ModifyProtocolServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyProtocolServiceOutcomeCallable modifyProtocolServiceCallable(const Model::ModifyProtocolServiceRequest& request) const;
 			ModifySmbAclOutcome modifySmbAcl(const Model::ModifySmbAclRequest &request)const;
 			void modifySmbAclAsync(const Model::ModifySmbAclRequest& request, const ModifySmbAclAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifySmbAclOutcomeCallable modifySmbAclCallable(const Model::ModifySmbAclRequest& request) const;

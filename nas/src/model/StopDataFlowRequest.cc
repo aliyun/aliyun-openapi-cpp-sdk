@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,56 +18,46 @@
 
 using AlibabaCloud::NAS::Model::StopDataFlowRequest;
 
-StopDataFlowRequest::StopDataFlowRequest() :
-	RpcServiceRequest("nas", "2017-06-26", "StopDataFlow")
-{
-	setMethod(HttpRequest::Method::Post);
+StopDataFlowRequest::StopDataFlowRequest()
+    : RpcServiceRequest("nas", "2017-06-26", "StopDataFlow") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-StopDataFlowRequest::~StopDataFlowRequest()
-{}
+StopDataFlowRequest::~StopDataFlowRequest() {}
 
-std::string StopDataFlowRequest::getClientToken()const
-{
-	return clientToken_;
+std::string StopDataFlowRequest::getClientToken() const {
+  return clientToken_;
 }
 
-void StopDataFlowRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+void StopDataFlowRequest::setClientToken(const std::string &clientToken) {
+  clientToken_ = clientToken;
+  setParameter(std::string("ClientToken"), clientToken);
 }
 
-std::string StopDataFlowRequest::getFileSystemId()const
-{
-	return fileSystemId_;
+std::string StopDataFlowRequest::getFileSystemId() const {
+  return fileSystemId_;
 }
 
-void StopDataFlowRequest::setFileSystemId(const std::string& fileSystemId)
-{
-	fileSystemId_ = fileSystemId;
-	setParameter("FileSystemId", fileSystemId);
+void StopDataFlowRequest::setFileSystemId(const std::string &fileSystemId) {
+  fileSystemId_ = fileSystemId;
+  setParameter(std::string("FileSystemId"), fileSystemId);
 }
 
-bool StopDataFlowRequest::getDryRun()const
-{
-	return dryRun_;
+bool StopDataFlowRequest::getDryRun() const {
+  return dryRun_;
 }
 
-void StopDataFlowRequest::setDryRun(bool dryRun)
-{
-	dryRun_ = dryRun;
-	setParameter("DryRun", dryRun ? "true" : "false");
+void StopDataFlowRequest::setDryRun(bool dryRun) {
+  dryRun_ = dryRun;
+  setParameter(std::string("DryRun"), dryRun ? "true" : "false");
 }
 
-std::string StopDataFlowRequest::getDataFlowId()const
-{
-	return dataFlowId_;
+std::string StopDataFlowRequest::getDataFlowId() const {
+  return dataFlowId_;
 }
 
-void StopDataFlowRequest::setDataFlowId(const std::string& dataFlowId)
-{
-	dataFlowId_ = dataFlowId;
-	setParameter("DataFlowId", dataFlowId);
+void StopDataFlowRequest::setDataFlowId(const std::string &dataFlowId) {
+  dataFlowId_ = dataFlowId;
+  setParameter(std::string("DataFlowId"), dataFlowId);
 }
 

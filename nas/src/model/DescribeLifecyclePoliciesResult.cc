@@ -43,18 +43,18 @@ void DescribeLifecyclePoliciesResult::parse(const std::string &payload)
 	for (auto valueLifecyclePoliciesLifecyclePolicy : allLifecyclePoliciesNode)
 	{
 		LifecyclePolicy lifecyclePoliciesObject;
-		if(!valueLifecyclePoliciesLifecyclePolicy["Path"].isNull())
-			lifecyclePoliciesObject.path = valueLifecyclePoliciesLifecyclePolicy["Path"].asString();
-		if(!valueLifecyclePoliciesLifecyclePolicy["LifecyclePolicyName"].isNull())
-			lifecyclePoliciesObject.lifecyclePolicyName = valueLifecyclePoliciesLifecyclePolicy["LifecyclePolicyName"].asString();
-		if(!valueLifecyclePoliciesLifecyclePolicy["StorageType"].isNull())
-			lifecyclePoliciesObject.storageType = valueLifecyclePoliciesLifecyclePolicy["StorageType"].asString();
+		if(!valueLifecyclePoliciesLifecyclePolicy["FileSystemId"].isNull())
+			lifecyclePoliciesObject.fileSystemId = valueLifecyclePoliciesLifecyclePolicy["FileSystemId"].asString();
 		if(!valueLifecyclePoliciesLifecyclePolicy["LifecycleRuleName"].isNull())
 			lifecyclePoliciesObject.lifecycleRuleName = valueLifecyclePoliciesLifecyclePolicy["LifecycleRuleName"].asString();
 		if(!valueLifecyclePoliciesLifecyclePolicy["CreateTime"].isNull())
 			lifecyclePoliciesObject.createTime = valueLifecyclePoliciesLifecyclePolicy["CreateTime"].asString();
-		if(!valueLifecyclePoliciesLifecyclePolicy["FileSystemId"].isNull())
-			lifecyclePoliciesObject.fileSystemId = valueLifecyclePoliciesLifecyclePolicy["FileSystemId"].asString();
+		if(!valueLifecyclePoliciesLifecyclePolicy["Path"].isNull())
+			lifecyclePoliciesObject.path = valueLifecyclePoliciesLifecyclePolicy["Path"].asString();
+		if(!valueLifecyclePoliciesLifecyclePolicy["StorageType"].isNull())
+			lifecyclePoliciesObject.storageType = valueLifecyclePoliciesLifecyclePolicy["StorageType"].asString();
+		if(!valueLifecyclePoliciesLifecyclePolicy["LifecyclePolicyName"].isNull())
+			lifecyclePoliciesObject.lifecyclePolicyName = valueLifecyclePoliciesLifecyclePolicy["LifecyclePolicyName"].asString();
 		auto allPaths = value["Paths"]["Path"];
 		for (auto value : allPaths)
 			lifecyclePoliciesObject.paths.push_back(value.asString());

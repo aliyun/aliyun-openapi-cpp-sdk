@@ -43,30 +43,30 @@ void DescribeDirQuotasResult::parse(const std::string &payload)
 	for (auto valueDirQuotaInfosDirQuotaInfo : allDirQuotaInfosNode)
 	{
 		DirQuotaInfo dirQuotaInfosObject;
+		if(!valueDirQuotaInfosDirQuotaInfo["Status"].isNull())
+			dirQuotaInfosObject.status = valueDirQuotaInfosDirQuotaInfo["Status"].asString();
 		if(!valueDirQuotaInfosDirQuotaInfo["Path"].isNull())
 			dirQuotaInfosObject.path = valueDirQuotaInfosDirQuotaInfo["Path"].asString();
 		if(!valueDirQuotaInfosDirQuotaInfo["DirInode"].isNull())
 			dirQuotaInfosObject.dirInode = valueDirQuotaInfosDirQuotaInfo["DirInode"].asString();
-		if(!valueDirQuotaInfosDirQuotaInfo["Status"].isNull())
-			dirQuotaInfosObject.status = valueDirQuotaInfosDirQuotaInfo["Status"].asString();
 		auto allUserQuotaInfosNode = valueDirQuotaInfosDirQuotaInfo["UserQuotaInfos"]["UserQuotaInfo"];
 		for (auto valueDirQuotaInfosDirQuotaInfoUserQuotaInfosUserQuotaInfo : allUserQuotaInfosNode)
 		{
 			DirQuotaInfo::UserQuotaInfo userQuotaInfosObject;
-			if(!valueDirQuotaInfosDirQuotaInfoUserQuotaInfosUserQuotaInfo["UserType"].isNull())
-				userQuotaInfosObject.userType = valueDirQuotaInfosDirQuotaInfoUserQuotaInfosUserQuotaInfo["UserType"].asString();
-			if(!valueDirQuotaInfosDirQuotaInfoUserQuotaInfosUserQuotaInfo["UserId"].isNull())
-				userQuotaInfosObject.userId = valueDirQuotaInfosDirQuotaInfoUserQuotaInfosUserQuotaInfo["UserId"].asString();
-			if(!valueDirQuotaInfosDirQuotaInfoUserQuotaInfosUserQuotaInfo["QuotaType"].isNull())
-				userQuotaInfosObject.quotaType = valueDirQuotaInfosDirQuotaInfoUserQuotaInfosUserQuotaInfo["QuotaType"].asString();
-			if(!valueDirQuotaInfosDirQuotaInfoUserQuotaInfosUserQuotaInfo["SizeLimit"].isNull())
-				userQuotaInfosObject.sizeLimit = std::stol(valueDirQuotaInfosDirQuotaInfoUserQuotaInfosUserQuotaInfo["SizeLimit"].asString());
-			if(!valueDirQuotaInfosDirQuotaInfoUserQuotaInfosUserQuotaInfo["SizeReal"].isNull())
-				userQuotaInfosObject.sizeReal = std::stol(valueDirQuotaInfosDirQuotaInfoUserQuotaInfosUserQuotaInfo["SizeReal"].asString());
-			if(!valueDirQuotaInfosDirQuotaInfoUserQuotaInfosUserQuotaInfo["FileCountLimit"].isNull())
-				userQuotaInfosObject.fileCountLimit = std::stol(valueDirQuotaInfosDirQuotaInfoUserQuotaInfosUserQuotaInfo["FileCountLimit"].asString());
 			if(!valueDirQuotaInfosDirQuotaInfoUserQuotaInfosUserQuotaInfo["FileCountReal"].isNull())
 				userQuotaInfosObject.fileCountReal = std::stol(valueDirQuotaInfosDirQuotaInfoUserQuotaInfosUserQuotaInfo["FileCountReal"].asString());
+			if(!valueDirQuotaInfosDirQuotaInfoUserQuotaInfosUserQuotaInfo["UserType"].isNull())
+				userQuotaInfosObject.userType = valueDirQuotaInfosDirQuotaInfoUserQuotaInfosUserQuotaInfo["UserType"].asString();
+			if(!valueDirQuotaInfosDirQuotaInfoUserQuotaInfosUserQuotaInfo["FileCountLimit"].isNull())
+				userQuotaInfosObject.fileCountLimit = std::stol(valueDirQuotaInfosDirQuotaInfoUserQuotaInfosUserQuotaInfo["FileCountLimit"].asString());
+			if(!valueDirQuotaInfosDirQuotaInfoUserQuotaInfosUserQuotaInfo["UserId"].isNull())
+				userQuotaInfosObject.userId = valueDirQuotaInfosDirQuotaInfoUserQuotaInfosUserQuotaInfo["UserId"].asString();
+			if(!valueDirQuotaInfosDirQuotaInfoUserQuotaInfosUserQuotaInfo["SizeLimit"].isNull())
+				userQuotaInfosObject.sizeLimit = std::stol(valueDirQuotaInfosDirQuotaInfoUserQuotaInfosUserQuotaInfo["SizeLimit"].asString());
+			if(!valueDirQuotaInfosDirQuotaInfoUserQuotaInfosUserQuotaInfo["QuotaType"].isNull())
+				userQuotaInfosObject.quotaType = valueDirQuotaInfosDirQuotaInfoUserQuotaInfosUserQuotaInfo["QuotaType"].asString();
+			if(!valueDirQuotaInfosDirQuotaInfoUserQuotaInfosUserQuotaInfo["SizeReal"].isNull())
+				userQuotaInfosObject.sizeReal = std::stol(valueDirQuotaInfosDirQuotaInfoUserQuotaInfosUserQuotaInfo["SizeReal"].asString());
 			dirQuotaInfosObject.userQuotaInfos.push_back(userQuotaInfosObject);
 		}
 		dirQuotaInfos_.push_back(dirQuotaInfosObject);

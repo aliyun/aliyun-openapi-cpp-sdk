@@ -43,20 +43,20 @@ void DescribeStoragePackagesResult::parse(const std::string &payload)
 	for (auto valuePackagesPackage : allPackagesNode)
 	{
 		Package packagesObject;
-		if(!valuePackagesPackage["StartTime"].isNull())
-			packagesObject.startTime = valuePackagesPackage["StartTime"].asString();
-		if(!valuePackagesPackage["StorageType"].isNull())
-			packagesObject.storageType = valuePackagesPackage["StorageType"].asString();
 		if(!valuePackagesPackage["Status"].isNull())
 			packagesObject.status = valuePackagesPackage["Status"].asString();
 		if(!valuePackagesPackage["FileSystemId"].isNull())
 			packagesObject.fileSystemId = valuePackagesPackage["FileSystemId"].asString();
-		if(!valuePackagesPackage["PackageId"].isNull())
-			packagesObject.packageId = valuePackagesPackage["PackageId"].asString();
+		if(!valuePackagesPackage["StartTime"].isNull())
+			packagesObject.startTime = valuePackagesPackage["StartTime"].asString();
 		if(!valuePackagesPackage["ExpiredTime"].isNull())
 			packagesObject.expiredTime = valuePackagesPackage["ExpiredTime"].asString();
 		if(!valuePackagesPackage["Size"].isNull())
 			packagesObject.size = std::stol(valuePackagesPackage["Size"].asString());
+		if(!valuePackagesPackage["StorageType"].isNull())
+			packagesObject.storageType = valuePackagesPackage["StorageType"].asString();
+		if(!valuePackagesPackage["PackageId"].isNull())
+			packagesObject.packageId = valuePackagesPackage["PackageId"].asString();
 		packages_.push_back(packagesObject);
 	}
 	if(!value["TotalCount"].isNull())

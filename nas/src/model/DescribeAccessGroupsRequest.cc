@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,67 +18,55 @@
 
 using AlibabaCloud::NAS::Model::DescribeAccessGroupsRequest;
 
-DescribeAccessGroupsRequest::DescribeAccessGroupsRequest() :
-	RpcServiceRequest("nas", "2017-06-26", "DescribeAccessGroups")
-{
-	setMethod(HttpRequest::Method::Post);
+DescribeAccessGroupsRequest::DescribeAccessGroupsRequest()
+    : RpcServiceRequest("nas", "2017-06-26", "DescribeAccessGroups") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DescribeAccessGroupsRequest::~DescribeAccessGroupsRequest()
-{}
+DescribeAccessGroupsRequest::~DescribeAccessGroupsRequest() {}
 
-bool DescribeAccessGroupsRequest::getUseUTCDateTime()const
-{
-	return useUTCDateTime_;
+bool DescribeAccessGroupsRequest::getUseUTCDateTime() const {
+  return useUTCDateTime_;
 }
 
-void DescribeAccessGroupsRequest::setUseUTCDateTime(bool useUTCDateTime)
-{
-	useUTCDateTime_ = useUTCDateTime;
-	setParameter("UseUTCDateTime", useUTCDateTime ? "true" : "false");
+void DescribeAccessGroupsRequest::setUseUTCDateTime(bool useUTCDateTime) {
+  useUTCDateTime_ = useUTCDateTime;
+  setParameter(std::string("UseUTCDateTime"), useUTCDateTime ? "true" : "false");
 }
 
-std::string DescribeAccessGroupsRequest::getFileSystemType()const
-{
-	return fileSystemType_;
+std::string DescribeAccessGroupsRequest::getFileSystemType() const {
+  return fileSystemType_;
 }
 
-void DescribeAccessGroupsRequest::setFileSystemType(const std::string& fileSystemType)
-{
-	fileSystemType_ = fileSystemType;
-	setParameter("FileSystemType", fileSystemType);
+void DescribeAccessGroupsRequest::setFileSystemType(const std::string &fileSystemType) {
+  fileSystemType_ = fileSystemType;
+  setParameter(std::string("FileSystemType"), fileSystemType);
 }
 
-int DescribeAccessGroupsRequest::getPageNumber()const
-{
-	return pageNumber_;
+int DescribeAccessGroupsRequest::getPageNumber() const {
+  return pageNumber_;
 }
 
-void DescribeAccessGroupsRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+void DescribeAccessGroupsRequest::setPageNumber(int pageNumber) {
+  pageNumber_ = pageNumber;
+  setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
-int DescribeAccessGroupsRequest::getPageSize()const
-{
-	return pageSize_;
+int DescribeAccessGroupsRequest::getPageSize() const {
+  return pageSize_;
 }
 
-void DescribeAccessGroupsRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+void DescribeAccessGroupsRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
-std::string DescribeAccessGroupsRequest::getAccessGroupName()const
-{
-	return accessGroupName_;
+std::string DescribeAccessGroupsRequest::getAccessGroupName() const {
+  return accessGroupName_;
 }
 
-void DescribeAccessGroupsRequest::setAccessGroupName(const std::string& accessGroupName)
-{
-	accessGroupName_ = accessGroupName;
-	setParameter("AccessGroupName", accessGroupName);
+void DescribeAccessGroupsRequest::setAccessGroupName(const std::string &accessGroupName) {
+  accessGroupName_ = accessGroupName;
+  setParameter(std::string("AccessGroupName"), accessGroupName);
 }
 

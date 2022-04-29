@@ -43,30 +43,30 @@ void DescribeSnapshotsResult::parse(const std::string &payload)
 	for (auto valueSnapshotsSnapshot : allSnapshotsNode)
 	{
 		Snapshot snapshotsObject;
-		if(!valueSnapshotsSnapshot["CreateTime"].isNull())
-			snapshotsObject.createTime = valueSnapshotsSnapshot["CreateTime"].asString();
-		if(!valueSnapshotsSnapshot["Description"].isNull())
-			snapshotsObject.description = valueSnapshotsSnapshot["Description"].asString();
-		if(!valueSnapshotsSnapshot["Progress"].isNull())
-			snapshotsObject.progress = valueSnapshotsSnapshot["Progress"].asString();
-		if(!valueSnapshotsSnapshot["RemainTime"].isNull())
-			snapshotsObject.remainTime = std::stoi(valueSnapshotsSnapshot["RemainTime"].asString());
-		if(!valueSnapshotsSnapshot["RetentionDays"].isNull())
-			snapshotsObject.retentionDays = std::stoi(valueSnapshotsSnapshot["RetentionDays"].asString());
-		if(!valueSnapshotsSnapshot["SnapshotId"].isNull())
-			snapshotsObject.snapshotId = valueSnapshotsSnapshot["SnapshotId"].asString();
-		if(!valueSnapshotsSnapshot["SnapshotName"].isNull())
-			snapshotsObject.snapshotName = valueSnapshotsSnapshot["SnapshotName"].asString();
-		if(!valueSnapshotsSnapshot["SourceFileSystemId"].isNull())
-			snapshotsObject.sourceFileSystemId = valueSnapshotsSnapshot["SourceFileSystemId"].asString();
-		if(!valueSnapshotsSnapshot["SourceFileSystemSize"].isNull())
-			snapshotsObject.sourceFileSystemSize = std::stol(valueSnapshotsSnapshot["SourceFileSystemSize"].asString());
 		if(!valueSnapshotsSnapshot["Status"].isNull())
 			snapshotsObject.status = valueSnapshotsSnapshot["Status"].asString();
-		if(!valueSnapshotsSnapshot["EncryptType"].isNull())
-			snapshotsObject.encryptType = std::stoi(valueSnapshotsSnapshot["EncryptType"].asString());
+		if(!valueSnapshotsSnapshot["Progress"].isNull())
+			snapshotsObject.progress = valueSnapshotsSnapshot["Progress"].asString();
+		if(!valueSnapshotsSnapshot["CreateTime"].isNull())
+			snapshotsObject.createTime = valueSnapshotsSnapshot["CreateTime"].asString();
+		if(!valueSnapshotsSnapshot["SourceFileSystemId"].isNull())
+			snapshotsObject.sourceFileSystemId = valueSnapshotsSnapshot["SourceFileSystemId"].asString();
+		if(!valueSnapshotsSnapshot["RetentionDays"].isNull())
+			snapshotsObject.retentionDays = std::stoi(valueSnapshotsSnapshot["RetentionDays"].asString());
+		if(!valueSnapshotsSnapshot["RemainTime"].isNull())
+			snapshotsObject.remainTime = std::stoi(valueSnapshotsSnapshot["RemainTime"].asString());
+		if(!valueSnapshotsSnapshot["SourceFileSystemSize"].isNull())
+			snapshotsObject.sourceFileSystemSize = std::stol(valueSnapshotsSnapshot["SourceFileSystemSize"].asString());
 		if(!valueSnapshotsSnapshot["SourceFileSystemVersion"].isNull())
 			snapshotsObject.sourceFileSystemVersion = valueSnapshotsSnapshot["SourceFileSystemVersion"].asString();
+		if(!valueSnapshotsSnapshot["SnapshotName"].isNull())
+			snapshotsObject.snapshotName = valueSnapshotsSnapshot["SnapshotName"].asString();
+		if(!valueSnapshotsSnapshot["EncryptType"].isNull())
+			snapshotsObject.encryptType = std::stoi(valueSnapshotsSnapshot["EncryptType"].asString());
+		if(!valueSnapshotsSnapshot["Description"].isNull())
+			snapshotsObject.description = valueSnapshotsSnapshot["Description"].asString();
+		if(!valueSnapshotsSnapshot["SnapshotId"].isNull())
+			snapshotsObject.snapshotId = valueSnapshotsSnapshot["SnapshotId"].asString();
 		snapshots_.push_back(snapshotsObject);
 	}
 	if(!value["TotalCount"].isNull())
