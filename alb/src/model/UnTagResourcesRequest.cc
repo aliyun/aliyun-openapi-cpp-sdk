@@ -37,6 +37,15 @@ void UnTagResourcesRequest::setTag(const std::vector<UnTagResourcesRequest::Tag>
   }
 }
 
+bool UnTagResourcesRequest::getAll() const {
+  return all_;
+}
+
+void UnTagResourcesRequest::setAll(bool all) {
+  all_ = all;
+  setParameter(std::string("All"), all ? "true" : "false");
+}
+
 std::vector<UnTagResourcesRequest::std::string> UnTagResourcesRequest::getResourceId() const {
   return resourceId_;
 }

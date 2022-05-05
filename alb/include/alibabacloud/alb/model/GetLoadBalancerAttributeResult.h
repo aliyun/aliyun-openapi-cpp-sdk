@@ -69,6 +69,8 @@ namespace AlibabaCloud
 					{
 						std::string intranetAddress;
 						std::string address;
+						std::string allocationId;
+						std::string eipType;
 						std::string ipv6Address;
 					};
 					std::string zoneId;

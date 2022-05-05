@@ -30,6 +30,7 @@ class ALIBABACLOUD_ALB_EXPORT UpdateLoadBalancerAddressTypeConfigRequest : publi
 public:
 	struct ZoneMappings {
 		std::string vSwitchId;
+		std::string eipType;
 		std::string zoneId;
 		std::string allocationId;
 	};

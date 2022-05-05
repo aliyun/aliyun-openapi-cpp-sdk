@@ -30,6 +30,7 @@ class ALIBABACLOUD_ALB_EXPORT UpdateLoadBalancerZonesRequest : public RpcService
 public:
 	struct ZoneMappings {
 		std::string vSwitchId;
+		std::string eipType;
 		std::string zoneId;
 		std::string allocationId;
 	};

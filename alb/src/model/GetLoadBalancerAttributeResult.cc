@@ -77,6 +77,10 @@ void GetLoadBalancerAttributeResult::parse(const std::string &payload)
 				loadBalancerAddressesObject.ipv6Address = valueZoneMappingsZoneMappingLoadBalancerAddressesLoadBalancerAddress["Ipv6Address"].asString();
 			if(!valueZoneMappingsZoneMappingLoadBalancerAddressesLoadBalancerAddress["IntranetAddress"].isNull())
 				loadBalancerAddressesObject.intranetAddress = valueZoneMappingsZoneMappingLoadBalancerAddressesLoadBalancerAddress["IntranetAddress"].asString();
+			if(!valueZoneMappingsZoneMappingLoadBalancerAddressesLoadBalancerAddress["AllocationId"].isNull())
+				loadBalancerAddressesObject.allocationId = valueZoneMappingsZoneMappingLoadBalancerAddressesLoadBalancerAddress["AllocationId"].asString();
+			if(!valueZoneMappingsZoneMappingLoadBalancerAddressesLoadBalancerAddress["EipType"].isNull())
+				loadBalancerAddressesObject.eipType = valueZoneMappingsZoneMappingLoadBalancerAddressesLoadBalancerAddress["EipType"].asString();
 			zoneMappingsObject.loadBalancerAddresses.push_back(loadBalancerAddressesObject);
 		}
 		zoneMappings_.push_back(zoneMappingsObject);

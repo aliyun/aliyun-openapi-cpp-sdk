@@ -36,6 +36,8 @@ public:
 	~UnTagResourcesRequest();
 	std::vector<Tag> getTag() const;
 	void setTag(const std::vector<Tag> &tag);
+	bool getAll() const;
+	void setAll(bool all);
 	std::vector<std::string> getResourceId() const;
 	void setResourceId(const std::vector<std::string> &resourceId);
 	std::string getResourceType() const;
@@ -45,6 +47,7 @@ public:
 
 private:
 	std::vector<Tag> tag_;
+	bool all_;
 	std::vector<std::string> resourceId_;
 	std::string resourceType_;
 	std::vector<std::string> tagKey_;

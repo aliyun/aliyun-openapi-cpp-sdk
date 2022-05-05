@@ -136,6 +136,7 @@ void CreateLoadBalancerRequest::setZoneMappings(const std::vector<CreateLoadBala
   zoneMappings_ = zoneMappings;
   for(int dep1 = 0; dep1 != zoneMappings.size(); dep1++) {
     setParameter(std::string("ZoneMappings") + "." + std::to_string(dep1 + 1) + ".VSwitchId", zoneMappings[dep1].vSwitchId);
+    setParameter(std::string("ZoneMappings") + "." + std::to_string(dep1 + 1) + ".EipType", zoneMappings[dep1].eipType);
     setParameter(std::string("ZoneMappings") + "." + std::to_string(dep1 + 1) + ".ZoneId", zoneMappings[dep1].zoneId);
     setParameter(std::string("ZoneMappings") + "." + std::to_string(dep1 + 1) + ".AllocationId", zoneMappings[dep1].allocationId);
   }

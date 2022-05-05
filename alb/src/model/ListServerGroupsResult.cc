@@ -131,6 +131,12 @@ void ListServerGroupsResult::parse(const std::string &payload)
 		auto allRelatedLoadBalancerIds = value["RelatedLoadBalancerIds"]["RelatedLoadBalancerId"];
 		for (auto value : allRelatedLoadBalancerIds)
 			serverGroupsObject.relatedLoadBalancerIds.push_back(value.asString());
+		auto allRelatedListenerIds = value["RelatedListenerIds"]["RelatedListenerIds"];
+		for (auto value : allRelatedListenerIds)
+			serverGroupsObject.relatedListenerIds.push_back(value.asString());
+		auto allRelatedRuleIds = value["RelatedRuleIds"]["RelatedRuleIds"];
+		for (auto value : allRelatedRuleIds)
+			serverGroupsObject.relatedRuleIds.push_back(value.asString());
 		serverGroups_.push_back(serverGroupsObject);
 	}
 	if(!value["MaxResults"].isNull())

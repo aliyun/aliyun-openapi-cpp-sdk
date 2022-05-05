@@ -70,11 +70,13 @@ namespace AlibabaCloud
 					};
 					bool serviceManagedEnabled;
 					std::vector<std::string> relatedLoadBalancerIds;
+					std::vector<std::string> relatedListenerIds;
 					std::string resourceGroupId;
 					UchConfig uchConfig;
 					std::string scheduler;
 					bool upstreamKeepaliveEnabled;
 					StickySessionConfig stickySessionConfig;
+					std::vector<std::string> relatedRuleIds;
 					std::string serverGroupId;
 					int serverCount;
 					std::string serverGroupType;
