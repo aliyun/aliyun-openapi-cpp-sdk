@@ -44,12 +44,12 @@ void RecognizeTakeoutOrderResult::parse(const std::string &payload)
 	for (auto dataNodeElementsElement : allElementsNode)
 	{
 		Data::Element elementObject;
+		if(!dataNodeElementsElement["Value"].isNull())
+			elementObject.value = dataNodeElementsElement["Value"].asString();
 		if(!dataNodeElementsElement["Score"].isNull())
 			elementObject.score = std::stof(dataNodeElementsElement["Score"].asString());
 		if(!dataNodeElementsElement["Name"].isNull())
 			elementObject.name = dataNodeElementsElement["Name"].asString();
-		if(!dataNodeElementsElement["Value"].isNull())
-			elementObject.value = dataNodeElementsElement["Value"].asString();
 		auto allBoxes = value["Boxes"]["Box"];
 		for (auto value : allBoxes)
 			elementObject.boxes.push_back(value.asString());

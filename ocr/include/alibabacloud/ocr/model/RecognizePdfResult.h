@@ -29,7 +29,7 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_OCR_EXPORT RecognizePDFResult : public ServiceResult
+			class ALIBABACLOUD_OCR_EXPORT RecognizePdfResult : public ServiceResult
 			{
 			public:
 				struct Data
@@ -59,9 +59,9 @@ namespace AlibabaCloud
 				};
 
 
-				RecognizePDFResult();
-				explicit RecognizePDFResult(const std::string &payload);
-				~RecognizePDFResult();
+				RecognizePdfResult();
+				explicit RecognizePdfResult(const std::string &payload);
+				~RecognizePdfResult();
 				std::string getMessage()const;
 				Data getData()const;
 				std::string getCode()const;

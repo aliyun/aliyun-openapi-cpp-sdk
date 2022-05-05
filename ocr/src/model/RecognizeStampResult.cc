@@ -48,26 +48,26 @@ void RecognizeStampResult::parse(const std::string &payload)
 		for (auto dataNodeResultsResultsItemGeneralTextGeneralTextItem : allGeneralTextNode)
 		{
 			Data::ResultsItem::GeneralTextItem generalTextObject;
-			if(!dataNodeResultsResultsItemGeneralTextGeneralTextItem["Content"].isNull())
-				generalTextObject.content = dataNodeResultsResultsItemGeneralTextGeneralTextItem["Content"].asString();
 			if(!dataNodeResultsResultsItemGeneralTextGeneralTextItem["Confidence"].isNull())
 				generalTextObject.confidence = std::stof(dataNodeResultsResultsItemGeneralTextGeneralTextItem["Confidence"].asString());
+			if(!dataNodeResultsResultsItemGeneralTextGeneralTextItem["Content"].isNull())
+				generalTextObject.content = dataNodeResultsResultsItemGeneralTextGeneralTextItem["Content"].asString();
 			resultsItemObject.generalText.push_back(generalTextObject);
 		}
+		auto textNode = value["Text"];
+		if(!textNode["Confidence"].isNull())
+			resultsItemObject.text.confidence = std::stof(textNode["Confidence"].asString());
+		if(!textNode["Content"].isNull())
+			resultsItemObject.text.content = textNode["Content"].asString();
 		auto roiNode = value["Roi"];
-		if(!roiNode["Left"].isNull())
-			resultsItemObject.roi.left = std::stoi(roiNode["Left"].asString());
 		if(!roiNode["Top"].isNull())
 			resultsItemObject.roi.top = std::stoi(roiNode["Top"].asString());
 		if(!roiNode["Width"].isNull())
 			resultsItemObject.roi.width = std::stoi(roiNode["Width"].asString());
 		if(!roiNode["Height"].isNull())
 			resultsItemObject.roi.height = std::stoi(roiNode["Height"].asString());
-		auto textNode = value["Text"];
-		if(!textNode["Content"].isNull())
-			resultsItemObject.text.content = textNode["Content"].asString();
-		if(!textNode["Confidence"].isNull())
-			resultsItemObject.text.confidence = std::stof(textNode["Confidence"].asString());
+		if(!roiNode["Left"].isNull())
+			resultsItemObject.roi.left = std::stoi(roiNode["Left"].asString());
 		data_.results.push_back(resultsItemObject);
 	}
 

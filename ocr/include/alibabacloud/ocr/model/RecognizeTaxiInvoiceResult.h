@@ -47,15 +47,15 @@ namespace AlibabaCloud
 						{
 							struct ItemRoi
 							{
-								struct Center
-								{
-									float x;
-									float y;
-								};
 								struct Size
 								{
 									float w;
 									float h;
+								};
+								struct Center
+								{
+									float x;
+									float y;
 								};
 								Center center;
 								float angle;

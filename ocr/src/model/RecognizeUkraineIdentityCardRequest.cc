@@ -14,23 +14,23 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/ocr/model/RecognizePassportMRZRequest.h>
+#include <alibabacloud/ocr/model/RecognizeUkraineIdentityCardRequest.h>
 
-using AlibabaCloud::Ocr::Model::RecognizePassportMRZRequest;
+using AlibabaCloud::Ocr::Model::RecognizeUkraineIdentityCardRequest;
 
-RecognizePassportMRZRequest::RecognizePassportMRZRequest()
-    : RpcServiceRequest("ocr", "2019-12-30", "RecognizePassportMRZ") {
+RecognizeUkraineIdentityCardRequest::RecognizeUkraineIdentityCardRequest()
+    : RpcServiceRequest("ocr", "2019-12-30", "RecognizeUkraineIdentityCard") {
   setMethod(HttpRequest::Method::Post);
 }
 
-RecognizePassportMRZRequest::~RecognizePassportMRZRequest() {}
+RecognizeUkraineIdentityCardRequest::~RecognizeUkraineIdentityCardRequest() {}
 
-std::string RecognizePassportMRZRequest::getImageURL() const {
-  return imageURL_;
+std::string RecognizeUkraineIdentityCardRequest::getImageUrl() const {
+  return imageUrl_;
 }
 
-void RecognizePassportMRZRequest::setImageURL(const std::string &imageURL) {
-  imageURL_ = imageURL;
-  setBodyParameter(std::string("ImageURL"), imageURL);
+void RecognizeUkraineIdentityCardRequest::setImageUrl(const std::string &imageUrl) {
+  imageUrl_ = imageUrl;
+  setBodyParameter(std::string("ImageUrl"), imageUrl);
 }
 

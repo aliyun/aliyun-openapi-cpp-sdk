@@ -44,14 +44,14 @@ void RecognizePassportMRZResult::parse(const std::string &payload)
 	for (auto dataNodeRegionsRegion : allRegionsNode)
 	{
 		Data::Region regionObject;
-		if(!dataNodeRegionsRegion["Name"].isNull())
-			regionObject.name = dataNodeRegionsRegion["Name"].asString();
 		if(!dataNodeRegionsRegion["RecognitionScore"].isNull())
 			regionObject.recognitionScore = std::stof(dataNodeRegionsRegion["RecognitionScore"].asString());
-		if(!dataNodeRegionsRegion["Content"].isNull())
-			regionObject.content = dataNodeRegionsRegion["Content"].asString();
 		if(!dataNodeRegionsRegion["DetectionScore"].isNull())
 			regionObject.detectionScore = std::stof(dataNodeRegionsRegion["DetectionScore"].asString());
+		if(!dataNodeRegionsRegion["Name"].isNull())
+			regionObject.name = dataNodeRegionsRegion["Name"].asString();
+		if(!dataNodeRegionsRegion["Content"].isNull())
+			regionObject.content = dataNodeRegionsRegion["Content"].asString();
 		auto allBandBoxes = value["BandBoxes"]["BandBox"];
 		for (auto value : allBandBoxes)
 			regionObject.bandBoxes.push_back(value.asString());

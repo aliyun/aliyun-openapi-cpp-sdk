@@ -43,8 +43,8 @@ namespace AlibabaCloud
 					{
 						struct TextsItem
 						{
-							float score;
 							std::string type;
+							float score;
 							std::vector<std::string> points;
 							std::string label;
 							std::string tag;

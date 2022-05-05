@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_OCR_MODEL_RECOGNIZETAKEOUTORDERREQUEST_H_
-#define ALIBABACLOUD_OCR_MODEL_RECOGNIZETAKEOUTORDERREQUEST_H_
+#ifndef ALIBABACLOUD_OCR_MODEL_RECOGNIZEUKRAINEIDENTITYCARDREQUEST_H_
+#define ALIBABACLOUD_OCR_MODEL_RECOGNIZEUKRAINEIDENTITYCARDREQUEST_H_
 
 #include <alibabacloud/ocr/OcrExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,17 +26,17 @@
 namespace AlibabaCloud {
 namespace Ocr {
 namespace Model {
-class ALIBABACLOUD_OCR_EXPORT RecognizeTakeoutOrderRequest : public RpcServiceRequest {
+class ALIBABACLOUD_OCR_EXPORT RecognizeUkraineIdentityCardRequest : public RpcServiceRequest {
 public:
-	RecognizeTakeoutOrderRequest();
-	~RecognizeTakeoutOrderRequest();
-	std::string getImageURL() const;
-	void setImageURL(const std::string &imageURL);
+	RecognizeUkraineIdentityCardRequest();
+	~RecognizeUkraineIdentityCardRequest();
+	std::string getImageUrl() const;
+	void setImageUrl(const std::string &imageUrl);
 
 private:
-	std::string imageURL_;
+	std::string imageUrl_;
 };
 } // namespace Model
 } // namespace Ocr
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_OCR_MODEL_RECOGNIZETAKEOUTORDERREQUEST_H_
+#endif // !ALIBABACLOUD_OCR_MODEL_RECOGNIZEUKRAINEIDENTITYCARDREQUEST_H_

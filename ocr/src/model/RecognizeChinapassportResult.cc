@@ -40,50 +40,50 @@ void RecognizeChinapassportResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["Authority"].isNull())
-		data_.authority = dataNode["Authority"].asString();
-	if(!dataNode["BirthDate"].isNull())
-		data_.birthDate = dataNode["BirthDate"].asString();
-	if(!dataNode["BirthDay"].isNull())
-		data_.birthDay = dataNode["BirthDay"].asString();
-	if(!dataNode["BirthPlace"].isNull())
-		data_.birthPlace = dataNode["BirthPlace"].asString();
-	if(!dataNode["BirthPlaceRaw"].isNull())
-		data_.birthPlaceRaw = dataNode["BirthPlaceRaw"].asString();
-	if(!dataNode["Country"].isNull())
-		data_.country = dataNode["Country"].asString();
-	if(!dataNode["ExpiryDate"].isNull())
-		data_.expiryDate = dataNode["ExpiryDate"].asString();
-	if(!dataNode["ExpiryDay"].isNull())
-		data_.expiryDay = dataNode["ExpiryDay"].asString();
-	if(!dataNode["IssueDate"].isNull())
-		data_.issueDate = dataNode["IssueDate"].asString();
-	if(!dataNode["IssuePlace"].isNull())
-		data_.issuePlace = dataNode["IssuePlace"].asString();
-	if(!dataNode["IssuePlaceRaw"].isNull())
-		data_.issuePlaceRaw = dataNode["IssuePlaceRaw"].asString();
-	if(!dataNode["LineZero"].isNull())
-		data_.lineZero = dataNode["LineZero"].asString();
-	if(!dataNode["LineOne"].isNull())
-		data_.lineOne = dataNode["LineOne"].asString();
-	if(!dataNode["Name"].isNull())
-		data_.name = dataNode["Name"].asString();
-	if(!dataNode["NameChinese"].isNull())
-		data_.nameChinese = dataNode["NameChinese"].asString();
-	if(!dataNode["NameChineseRaw"].isNull())
-		data_.nameChineseRaw = dataNode["NameChineseRaw"].asString();
-	if(!dataNode["PassportNo"].isNull())
-		data_.passportNo = dataNode["PassportNo"].asString();
-	if(!dataNode["PersonId"].isNull())
-		data_.personId = dataNode["PersonId"].asString();
-	if(!dataNode["Sex"].isNull())
-		data_.sex = dataNode["Sex"].asString();
-	if(!dataNode["SourceCountry"].isNull())
-		data_.sourceCountry = dataNode["SourceCountry"].asString();
-	if(!dataNode["Success"].isNull())
-		data_.success = dataNode["Success"].asString() == "true";
 	if(!dataNode["Type"].isNull())
 		data_.type = dataNode["Type"].asString();
+	if(!dataNode["Sex"].isNull())
+		data_.sex = dataNode["Sex"].asString();
+	if(!dataNode["Authority"].isNull())
+		data_.authority = dataNode["Authority"].asString();
+	if(!dataNode["IssuePlaceRaw"].isNull())
+		data_.issuePlaceRaw = dataNode["IssuePlaceRaw"].asString();
+	if(!dataNode["Success"].isNull())
+		data_.success = dataNode["Success"].asString() == "true";
+	if(!dataNode["LineOne"].isNull())
+		data_.lineOne = dataNode["LineOne"].asString();
+	if(!dataNode["ExpiryDate"].isNull())
+		data_.expiryDate = dataNode["ExpiryDate"].asString();
+	if(!dataNode["BirthPlace"].isNull())
+		data_.birthPlace = dataNode["BirthPlace"].asString();
+	if(!dataNode["PassportNo"].isNull())
+		data_.passportNo = dataNode["PassportNo"].asString();
+	if(!dataNode["BirthPlaceRaw"].isNull())
+		data_.birthPlaceRaw = dataNode["BirthPlaceRaw"].asString();
+	if(!dataNode["IssueDate"].isNull())
+		data_.issueDate = dataNode["IssueDate"].asString();
+	if(!dataNode["SourceCountry"].isNull())
+		data_.sourceCountry = dataNode["SourceCountry"].asString();
+	if(!dataNode["BirthDate"].isNull())
+		data_.birthDate = dataNode["BirthDate"].asString();
+	if(!dataNode["NameChineseRaw"].isNull())
+		data_.nameChineseRaw = dataNode["NameChineseRaw"].asString();
+	if(!dataNode["IssuePlace"].isNull())
+		data_.issuePlace = dataNode["IssuePlace"].asString();
+	if(!dataNode["NameChinese"].isNull())
+		data_.nameChinese = dataNode["NameChinese"].asString();
+	if(!dataNode["LineZero"].isNull())
+		data_.lineZero = dataNode["LineZero"].asString();
+	if(!dataNode["Country"].isNull())
+		data_.country = dataNode["Country"].asString();
+	if(!dataNode["BirthDay"].isNull())
+		data_.birthDay = dataNode["BirthDay"].asString();
+	if(!dataNode["ExpiryDay"].isNull())
+		data_.expiryDay = dataNode["ExpiryDay"].asString();
+	if(!dataNode["Name"].isNull())
+		data_.name = dataNode["Name"].asString();
+	if(!dataNode["PersonId"].isNull())
+		data_.personId = dataNode["PersonId"].asString();
 
 }
 

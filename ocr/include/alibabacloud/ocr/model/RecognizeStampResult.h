@@ -36,17 +36,17 @@ namespace AlibabaCloud
 				{
 					struct ResultsItem
 					{
+						struct Text
+						{
+							float confidence;
+							std::string content;
+						};
 						struct Roi
 						{
 							int left;
 							int top;
 							int height;
 							int width;
-						};
-						struct Text
-						{
-							float confidence;
-							std::string content;
 						};
 						struct GeneralTextItem
 						{

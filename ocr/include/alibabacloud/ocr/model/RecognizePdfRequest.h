@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_OCR_MODEL_RECOGNIZETAKEOUTORDERREQUEST_H_
-#define ALIBABACLOUD_OCR_MODEL_RECOGNIZETAKEOUTORDERREQUEST_H_
+#ifndef ALIBABACLOUD_OCR_MODEL_RECOGNIZEPDFREQUEST_H_
+#define ALIBABACLOUD_OCR_MODEL_RECOGNIZEPDFREQUEST_H_
 
 #include <alibabacloud/ocr/OcrExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,17 +26,17 @@
 namespace AlibabaCloud {
 namespace Ocr {
 namespace Model {
-class ALIBABACLOUD_OCR_EXPORT RecognizeTakeoutOrderRequest : public RpcServiceRequest {
+class ALIBABACLOUD_OCR_EXPORT RecognizePdfRequest : public RpcServiceRequest {
 public:
-	RecognizeTakeoutOrderRequest();
-	~RecognizeTakeoutOrderRequest();
-	std::string getImageURL() const;
-	void setImageURL(const std::string &imageURL);
+	RecognizePdfRequest();
+	~RecognizePdfRequest();
+	std::string getFileURL() const;
+	void setFileURL(const std::string &fileURL);
 
 private:
-	std::string imageURL_;
+	std::string fileURL_;
 };
 } // namespace Model
 } // namespace Ocr
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_OCR_MODEL_RECOGNIZETAKEOUTORDERREQUEST_H_
+#endif // !ALIBABACLOUD_OCR_MODEL_RECOGNIZEPDFREQUEST_H_

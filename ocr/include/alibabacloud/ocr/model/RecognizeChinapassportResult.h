@@ -42,15 +42,15 @@ namespace AlibabaCloud
 					std::string authority;
 					std::string sex;
 					std::string issueDate;
-					std::string birthDay;
 					std::string lineZero;
+					std::string birthDay;
 					std::string issuePlace;
 					std::string expiryDay;
 					bool success;
 					std::string name;
 					std::string lineOne;
-					std::string nameChinese;
 					std::string type;
+					std::string nameChinese;
 					std::string personId;
 					std::string passportNo;
 					std::string birthPlaceRaw;

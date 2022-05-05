@@ -40,22 +40,22 @@ void RecognizeTrainTicketResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["Date"].isNull())
-		data_.date = dataNode["Date"].asString();
-	if(!dataNode["Destination"].isNull())
-		data_.destination = dataNode["Destination"].asString();
-	if(!dataNode["Level"].isNull())
-		data_.level = dataNode["Level"].asString();
-	if(!dataNode["Number"].isNull())
-		data_.number = dataNode["Number"].asString();
-	if(!dataNode["Name"].isNull())
-		data_.name = dataNode["Name"].asString();
-	if(!dataNode["DepartureStation"].isNull())
-		data_.departureStation = dataNode["DepartureStation"].asString();
-	if(!dataNode["Seat"].isNull())
-		data_.seat = dataNode["Seat"].asString();
 	if(!dataNode["Price"].isNull())
 		data_.price = std::stof(dataNode["Price"].asString());
+	if(!dataNode["Destination"].isNull())
+		data_.destination = dataNode["Destination"].asString();
+	if(!dataNode["DepartureStation"].isNull())
+		data_.departureStation = dataNode["DepartureStation"].asString();
+	if(!dataNode["Date"].isNull())
+		data_.date = dataNode["Date"].asString();
+	if(!dataNode["Number"].isNull())
+		data_.number = dataNode["Number"].asString();
+	if(!dataNode["Seat"].isNull())
+		data_.seat = dataNode["Seat"].asString();
+	if(!dataNode["Name"].isNull())
+		data_.name = dataNode["Name"].asString();
+	if(!dataNode["Level"].isNull())
+		data_.level = dataNode["Level"].asString();
 
 }
 

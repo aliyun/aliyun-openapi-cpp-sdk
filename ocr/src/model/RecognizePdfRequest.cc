@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -14,27 +14,23 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/ocr/model/RecognizePDFRequest.h>
+#include <alibabacloud/ocr/model/RecognizePdfRequest.h>
 
-using AlibabaCloud::Ocr::Model::RecognizePDFRequest;
+using AlibabaCloud::Ocr::Model::RecognizePdfRequest;
 
-RecognizePDFRequest::RecognizePDFRequest() :
-	RpcServiceRequest("ocr", "2019-12-30", "RecognizePDF")
-{
-	setMethod(HttpRequest::Method::Post);
+RecognizePdfRequest::RecognizePdfRequest()
+    : RpcServiceRequest("ocr", "2019-12-30", "RecognizePdf") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-RecognizePDFRequest::~RecognizePDFRequest()
-{}
+RecognizePdfRequest::~RecognizePdfRequest() {}
 
-std::string RecognizePDFRequest::getFileURL()const
-{
-	return fileURL_;
+std::string RecognizePdfRequest::getFileURL() const {
+  return fileURL_;
 }
 
-void RecognizePDFRequest::setFileURL(const std::string& fileURL)
-{
-	fileURL_ = fileURL;
-	setBodyParameter("FileURL", fileURL);
+void RecognizePdfRequest::setFileURL(const std::string &fileURL) {
+  fileURL_ = fileURL;
+  setBodyParameter(std::string("FileURL"), fileURL);
 }
 

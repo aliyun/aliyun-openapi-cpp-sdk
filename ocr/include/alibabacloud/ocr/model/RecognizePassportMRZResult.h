@@ -39,8 +39,8 @@ namespace AlibabaCloud
 						std::string content;
 						float recognitionScore;
 						std::vector<std::string> bandBoxes;
-						std::string name;
 						float detectionScore;
+						std::string name;
 					};
 					std::vector<Region> regions;
 				};

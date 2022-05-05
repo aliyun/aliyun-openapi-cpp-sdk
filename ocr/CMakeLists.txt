@@ -45,10 +45,10 @@ set(ocr_public_header_model
 	include/alibabacloud/ocr/model/RecognizeIdentityCardResult.h
 	include/alibabacloud/ocr/model/RecognizeLicensePlateRequest.h
 	include/alibabacloud/ocr/model/RecognizeLicensePlateResult.h
-	include/alibabacloud/ocr/model/RecognizePDFRequest.h
-	include/alibabacloud/ocr/model/RecognizePDFResult.h
 	include/alibabacloud/ocr/model/RecognizePassportMRZRequest.h
 	include/alibabacloud/ocr/model/RecognizePassportMRZResult.h
+	include/alibabacloud/ocr/model/RecognizePdfRequest.h
+	include/alibabacloud/ocr/model/RecognizePdfResult.h
 	include/alibabacloud/ocr/model/RecognizePoiNameRequest.h
 	include/alibabacloud/ocr/model/RecognizePoiNameResult.h
 	include/alibabacloud/ocr/model/RecognizeQrCodeRequest.h
@@ -67,6 +67,8 @@ set(ocr_public_header_model
 	include/alibabacloud/ocr/model/RecognizeTicketInvoiceResult.h
 	include/alibabacloud/ocr/model/RecognizeTrainTicketRequest.h
 	include/alibabacloud/ocr/model/RecognizeTrainTicketResult.h
+	include/alibabacloud/ocr/model/RecognizeUkraineIdentityCardRequest.h
+	include/alibabacloud/ocr/model/RecognizeUkraineIdentityCardResult.h
 	include/alibabacloud/ocr/model/RecognizeVATInvoiceRequest.h
 	include/alibabacloud/ocr/model/RecognizeVATInvoiceResult.h
 	include/alibabacloud/ocr/model/RecognizeVINCodeRequest.h
@@ -106,10 +108,10 @@ set(ocr_src
 	src/model/RecognizeIdentityCardResult.cc
 	src/model/RecognizeLicensePlateRequest.cc
 	src/model/RecognizeLicensePlateResult.cc
-	src/model/RecognizePDFRequest.cc
-	src/model/RecognizePDFResult.cc
 	src/model/RecognizePassportMRZRequest.cc
 	src/model/RecognizePassportMRZResult.cc
+	src/model/RecognizePdfRequest.cc
+	src/model/RecognizePdfResult.cc
 	src/model/RecognizePoiNameRequest.cc
 	src/model/RecognizePoiNameResult.cc
 	src/model/RecognizeQrCodeRequest.cc
@@ -128,6 +130,8 @@ set(ocr_src
 	src/model/RecognizeTicketInvoiceResult.cc
 	src/model/RecognizeTrainTicketRequest.cc
 	src/model/RecognizeTrainTicketResult.cc
+	src/model/RecognizeUkraineIdentityCardRequest.cc
+	src/model/RecognizeUkraineIdentityCardResult.cc
 	src/model/RecognizeVATInvoiceRequest.cc
 	src/model/RecognizeVATInvoiceResult.cc
 	src/model/RecognizeVINCodeRequest.cc

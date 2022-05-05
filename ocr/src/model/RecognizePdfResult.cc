@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/ocr/model/RecognizePDFResult.h>
+#include <alibabacloud/ocr/model/RecognizePdfResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Ocr;
 using namespace AlibabaCloud::Ocr::Model;
 
-RecognizePDFResult::RecognizePDFResult() :
+RecognizePdfResult::RecognizePdfResult() :
 	ServiceResult()
 {}
 
-RecognizePDFResult::RecognizePDFResult(const std::string &payload) :
+RecognizePdfResult::RecognizePdfResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-RecognizePDFResult::~RecognizePDFResult()
+RecognizePdfResult::~RecognizePdfResult()
 {}
 
-void RecognizePDFResult::parse(const std::string &payload)
+void RecognizePdfResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -87,17 +87,17 @@ void RecognizePDFResult::parse(const std::string &payload)
 
 }
 
-std::string RecognizePDFResult::getMessage()const
+std::string RecognizePdfResult::getMessage()const
 {
 	return message_;
 }
 
-RecognizePDFResult::Data RecognizePDFResult::getData()const
+RecognizePdfResult::Data RecognizePdfResult::getData()const
 {
 	return data_;
 }
 
-std::string RecognizePDFResult::getCode()const
+std::string RecognizePdfResult::getCode()const
 {
 	return code_;
 }

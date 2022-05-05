@@ -40,18 +40,18 @@ void DetectCardScreenshotResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["IsCard"].isNull())
-		data_.isCard = dataNode["IsCard"].asString() == "true";
 	if(!dataNode["IsBlur"].isNull())
 		data_.isBlur = dataNode["IsBlur"].asString() == "true";
+	if(!dataNode["IsCard"].isNull())
+		data_.isCard = dataNode["IsCard"].asString() == "true";
 	auto spoofResultNode = dataNode["SpoofResult"];
 	if(!spoofResultNode["IsSpoof"].isNull())
 		data_.spoofResult.isSpoof = spoofResultNode["IsSpoof"].asString() == "true";
 	auto resultMapNode = spoofResultNode["ResultMap"];
-	if(!resultMapNode["ScreenScore"].isNull())
-		data_.spoofResult.resultMap.screenScore = std::stof(resultMapNode["ScreenScore"].asString());
 	if(!resultMapNode["ScreenThreshold"].isNull())
 		data_.spoofResult.resultMap.screenThreshold = std::stof(resultMapNode["ScreenThreshold"].asString());
+	if(!resultMapNode["ScreenScore"].isNull())
+		data_.spoofResult.resultMap.screenScore = std::stof(resultMapNode["ScreenScore"].asString());
 
 }
 

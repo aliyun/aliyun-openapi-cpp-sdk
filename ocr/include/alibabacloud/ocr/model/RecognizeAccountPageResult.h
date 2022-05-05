@@ -41,7 +41,14 @@ namespace AlibabaCloud
 						int height;
 						int width;
 					};
-					struct InvalidStampArea
+					struct RegisterStampArea
+					{
+						int left;
+						int top;
+						int height;
+						int width;
+					};
+					struct OtherStampArea
 					{
 						int left;
 						int top;
@@ -55,14 +62,7 @@ namespace AlibabaCloud
 						int height;
 						int width;
 					};
-					struct RegisterStampArea
-					{
-						int left;
-						int top;
-						int height;
-						int width;
-					};
-					struct OtherStampArea
+					struct InvalidStampArea
 					{
 						int left;
 						int top;

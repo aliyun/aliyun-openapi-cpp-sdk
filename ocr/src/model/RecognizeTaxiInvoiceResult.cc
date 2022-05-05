@@ -55,27 +55,27 @@ void RecognizeTaxiInvoiceResult::parse(const std::string &payload)
 			auto itemRoiNode = value["ItemRoi"];
 			if(!itemRoiNode["Angle"].isNull())
 				itemsObject.itemRoi.angle = std::stof(itemRoiNode["Angle"].asString());
-			auto centerNode = itemRoiNode["Center"];
-			if(!centerNode["X"].isNull())
-				itemsObject.itemRoi.center.x = std::stof(centerNode["X"].asString());
-			if(!centerNode["Y"].isNull())
-				itemsObject.itemRoi.center.y = std::stof(centerNode["Y"].asString());
 			auto sizeNode = itemRoiNode["Size"];
-			if(!sizeNode["H"].isNull())
-				itemsObject.itemRoi.size.h = std::stof(sizeNode["H"].asString());
 			if(!sizeNode["W"].isNull())
 				itemsObject.itemRoi.size.w = std::stof(sizeNode["W"].asString());
+			if(!sizeNode["H"].isNull())
+				itemsObject.itemRoi.size.h = std::stof(sizeNode["H"].asString());
+			auto centerNode = itemRoiNode["Center"];
+			if(!centerNode["Y"].isNull())
+				itemsObject.itemRoi.center.y = std::stof(centerNode["Y"].asString());
+			if(!centerNode["X"].isNull())
+				itemsObject.itemRoi.center.x = std::stof(centerNode["X"].asString());
 			invoiceObject.items.push_back(itemsObject);
 		}
 		auto invoiceRoiNode = value["InvoiceRoi"];
-		if(!invoiceRoiNode["H"].isNull())
-			invoiceObject.invoiceRoi.h = std::stof(invoiceRoiNode["H"].asString());
 		if(!invoiceRoiNode["W"].isNull())
 			invoiceObject.invoiceRoi.w = std::stof(invoiceRoiNode["W"].asString());
-		if(!invoiceRoiNode["X"].isNull())
-			invoiceObject.invoiceRoi.x = std::stof(invoiceRoiNode["X"].asString());
+		if(!invoiceRoiNode["H"].isNull())
+			invoiceObject.invoiceRoi.h = std::stof(invoiceRoiNode["H"].asString());
 		if(!invoiceRoiNode["Y"].isNull())
 			invoiceObject.invoiceRoi.y = std::stof(invoiceRoiNode["Y"].asString());
+		if(!invoiceRoiNode["X"].isNull())
+			invoiceObject.invoiceRoi.x = std::stof(invoiceRoiNode["X"].asString());
 		data_.invoices.push_back(invoiceObject);
 	}
 

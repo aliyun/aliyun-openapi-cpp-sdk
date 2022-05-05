@@ -45,24 +45,24 @@ void RecognizeBusinessCardResult::parse(const std::string &payload)
 		auto allCompanies = dataNode["Companies"]["Company"];
 		for (auto value : allCompanies)
 			data_.companies.push_back(value.asString());
-		auto allDepartments = dataNode["Departments"]["Department"];
-		for (auto value : allDepartments)
-			data_.departments.push_back(value.asString());
 		auto allTitles = dataNode["Titles"]["Title"];
 		for (auto value : allTitles)
 			data_.titles.push_back(value.asString());
-		auto allCellPhoneNumbers = dataNode["CellPhoneNumbers"]["CellPhoneNumber"];
-		for (auto value : allCellPhoneNumbers)
-			data_.cellPhoneNumbers.push_back(value.asString());
-		auto allOfficePhoneNumbers = dataNode["OfficePhoneNumbers"]["OfficePhoneNumber"];
-		for (auto value : allOfficePhoneNumbers)
-			data_.officePhoneNumbers.push_back(value.asString());
-		auto allAddresses = dataNode["Addresses"]["Address"];
-		for (auto value : allAddresses)
-			data_.addresses.push_back(value.asString());
 		auto allEmails = dataNode["Emails"]["Email"];
 		for (auto value : allEmails)
 			data_.emails.push_back(value.asString());
+		auto allDepartments = dataNode["Departments"]["Department"];
+		for (auto value : allDepartments)
+			data_.departments.push_back(value.asString());
+		auto allOfficePhoneNumbers = dataNode["OfficePhoneNumbers"]["OfficePhoneNumber"];
+		for (auto value : allOfficePhoneNumbers)
+			data_.officePhoneNumbers.push_back(value.asString());
+		auto allCellPhoneNumbers = dataNode["CellPhoneNumbers"]["CellPhoneNumber"];
+		for (auto value : allCellPhoneNumbers)
+			data_.cellPhoneNumbers.push_back(value.asString());
+		auto allAddresses = dataNode["Addresses"]["Address"];
+		for (auto value : allAddresses)
+			data_.addresses.push_back(value.asString());
 
 }
 

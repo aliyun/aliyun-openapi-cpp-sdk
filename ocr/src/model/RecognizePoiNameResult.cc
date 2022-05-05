@@ -48,14 +48,14 @@ void RecognizePoiNameResult::parse(const std::string &payload)
 		for (auto dataNodeSignboardsSignboardsItemTextsTextsItem : allTextsNode)
 		{
 			Data::SignboardsItem::TextsItem textsObject;
-			if(!dataNodeSignboardsSignboardsItemTextsTextsItem["Label"].isNull())
-				textsObject.label = dataNodeSignboardsSignboardsItemTextsTextsItem["Label"].asString();
+			if(!dataNodeSignboardsSignboardsItemTextsTextsItem["Type"].isNull())
+				textsObject.type = dataNodeSignboardsSignboardsItemTextsTextsItem["Type"].asString();
 			if(!dataNodeSignboardsSignboardsItemTextsTextsItem["Score"].isNull())
 				textsObject.score = std::stof(dataNodeSignboardsSignboardsItemTextsTextsItem["Score"].asString());
 			if(!dataNodeSignboardsSignboardsItemTextsTextsItem["Tag"].isNull())
 				textsObject.tag = dataNodeSignboardsSignboardsItemTextsTextsItem["Tag"].asString();
-			if(!dataNodeSignboardsSignboardsItemTextsTextsItem["Type"].isNull())
-				textsObject.type = dataNodeSignboardsSignboardsItemTextsTextsItem["Type"].asString();
+			if(!dataNodeSignboardsSignboardsItemTextsTextsItem["Label"].isNull())
+				textsObject.label = dataNodeSignboardsSignboardsItemTextsTextsItem["Label"].asString();
 			auto allPoints = value["Points"]["Points"];
 			for (auto value : allPoints)
 				textsObject.points.push_back(value.asString());
