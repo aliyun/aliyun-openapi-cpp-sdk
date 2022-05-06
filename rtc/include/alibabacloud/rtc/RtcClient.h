@@ -40,6 +40,8 @@
 #include "model/DeleteMPULayoutResult.h"
 #include "model/DeleteRecordTemplateRequest.h"
 #include "model/DeleteRecordTemplateResult.h"
+#include "model/DescribeAppKeyRequest.h"
+#include "model/DescribeAppKeyResult.h"
 #include "model/DescribeAppsRequest.h"
 #include "model/DescribeAppsResult.h"
 #include "model/DescribeAutoLiveStreamRuleRequest.h"
@@ -120,6 +122,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteRecordTemplateResult> DeleteRecordTemplateOutcome;
 			typedef std::future<DeleteRecordTemplateOutcome> DeleteRecordTemplateOutcomeCallable;
 			typedef std::function<void(const RtcClient*, const Model::DeleteRecordTemplateRequest&, const DeleteRecordTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRecordTemplateAsyncHandler;
+			typedef Outcome<Error, Model::DescribeAppKeyResult> DescribeAppKeyOutcome;
+			typedef std::future<DescribeAppKeyOutcome> DescribeAppKeyOutcomeCallable;
+			typedef std::function<void(const RtcClient*, const Model::DescribeAppKeyRequest&, const DescribeAppKeyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAppKeyAsyncHandler;
 			typedef Outcome<Error, Model::DescribeAppsResult> DescribeAppsOutcome;
 			typedef std::future<DescribeAppsOutcome> DescribeAppsOutcomeCallable;
 			typedef std::function<void(const RtcClient*, const Model::DescribeAppsRequest&, const DescribeAppsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAppsAsyncHandler;
@@ -218,6 +223,9 @@ namespace AlibabaCloud
 			DeleteRecordTemplateOutcome deleteRecordTemplate(const Model::DeleteRecordTemplateRequest &request)const;
 			void deleteRecordTemplateAsync(const Model::DeleteRecordTemplateRequest& request, const DeleteRecordTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteRecordTemplateOutcomeCallable deleteRecordTemplateCallable(const Model::DeleteRecordTemplateRequest& request) const;
+			DescribeAppKeyOutcome describeAppKey(const Model::DescribeAppKeyRequest &request)const;
+			void describeAppKeyAsync(const Model::DescribeAppKeyRequest& request, const DescribeAppKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeAppKeyOutcomeCallable describeAppKeyCallable(const Model::DescribeAppKeyRequest& request) const;
 			DescribeAppsOutcome describeApps(const Model::DescribeAppsRequest &request)const;
 			void describeAppsAsync(const Model::DescribeAppsRequest& request, const DescribeAppsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAppsOutcomeCallable describeAppsCallable(const Model::DescribeAppsRequest& request) const;

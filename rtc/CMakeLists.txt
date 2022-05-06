@@ -39,6 +39,8 @@ set(rtc_public_header_model
 	include/alibabacloud/rtc/model/DeleteMPULayoutResult.h
 	include/alibabacloud/rtc/model/DeleteRecordTemplateRequest.h
 	include/alibabacloud/rtc/model/DeleteRecordTemplateResult.h
+	include/alibabacloud/rtc/model/DescribeAppKeyRequest.h
+	include/alibabacloud/rtc/model/DescribeAppKeyResult.h
 	include/alibabacloud/rtc/model/DescribeAppsRequest.h
 	include/alibabacloud/rtc/model/DescribeAppsResult.h
 	include/alibabacloud/rtc/model/DescribeAutoLiveStreamRuleRequest.h
@@ -104,6 +106,8 @@ set(rtc_src
 	src/model/DeleteMPULayoutResult.cc
 	src/model/DeleteRecordTemplateRequest.cc
 	src/model/DeleteRecordTemplateResult.cc
+	src/model/DescribeAppKeyRequest.cc
+	src/model/DescribeAppKeyResult.cc
 	src/model/DescribeAppsRequest.cc
 	src/model/DescribeAppsResult.cc
 	src/model/DescribeAutoLiveStreamRuleRequest.cc

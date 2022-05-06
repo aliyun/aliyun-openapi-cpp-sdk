@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RTC_MODEL_DESCRIBEAPPSRESULT_H_
-#define ALIBABACLOUD_RTC_MODEL_DESCRIBEAPPSRESULT_H_
+#ifndef ALIBABACLOUD_RTC_MODEL_DESCRIBEAPPKEYRESULT_H_
+#define ALIBABACLOUD_RTC_MODEL_DESCRIBEAPPKEYRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,38 +29,25 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_RTC_EXPORT DescribeAppsResult : public ServiceResult
+			class ALIBABACLOUD_RTC_EXPORT DescribeAppKeyResult : public ServiceResult
 			{
 			public:
-				struct App
-				{
-					int status;
-					std::string billType;
-					std::string appId;
-					std::string createTime;
-					std::vector<std::string> serviceAreas;
-					std::string region;
-					std::string appType;
-					std::string appName;
-				};
 
 
-				DescribeAppsResult();
-				explicit DescribeAppsResult(const std::string &payload);
-				~DescribeAppsResult();
-				int getTotalNum()const;
-				int getTotalPage()const;
-				std::vector<App> getAppList()const;
+				DescribeAppKeyResult();
+				explicit DescribeAppKeyResult(const std::string &payload);
+				~DescribeAppKeyResult();
+				std::string getAppKey()const;
+				std::string getBizId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int totalNum_;
-				int totalPage_;
-				std::vector<App> appList_;
+				std::string appKey_;
+				std::string bizId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_RTC_MODEL_DESCRIBEAPPSRESULT_H_
+#endif // !ALIBABACLOUD_RTC_MODEL_DESCRIBEAPPKEYRESULT_H_

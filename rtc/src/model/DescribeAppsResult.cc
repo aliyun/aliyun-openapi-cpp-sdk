@@ -55,6 +55,8 @@ void DescribeAppsResult::parse(const std::string &payload)
 			appListObject.billType = valueAppListApp["BillType"].asString();
 		if(!valueAppListApp["AppType"].isNull())
 			appListObject.appType = valueAppListApp["AppType"].asString();
+		if(!valueAppListApp["Region"].isNull())
+			appListObject.region = valueAppListApp["Region"].asString();
 		auto allServiceAreas = value["ServiceAreas"]["ServiceArea"];
 		for (auto value : allServiceAreas)
 			appListObject.serviceAreas.push_back(value.asString());

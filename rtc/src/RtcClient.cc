@@ -375,6 +375,42 @@ RtcClient::DeleteRecordTemplateOutcomeCallable RtcClient::deleteRecordTemplateCa
 	return task->get_future();
 }
 
+RtcClient::DescribeAppKeyOutcome RtcClient::describeAppKey(const DescribeAppKeyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeAppKeyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeAppKeyOutcome(DescribeAppKeyResult(outcome.result()));
+	else
+		return DescribeAppKeyOutcome(outcome.error());
+}
+
+void RtcClient::describeAppKeyAsync(const DescribeAppKeyRequest& request, const DescribeAppKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeAppKey(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RtcClient::DescribeAppKeyOutcomeCallable RtcClient::describeAppKeyCallable(const DescribeAppKeyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeAppKeyOutcome()>>(
+			[this, request]()
+			{
+			return this->describeAppKey(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 RtcClient::DescribeAppsOutcome RtcClient::describeApps(const DescribeAppsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
