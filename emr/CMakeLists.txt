@@ -109,10 +109,6 @@ set(emr_public_header_model
 	include/alibabacloud/emr/model/DescribeFlowProjectResult.h
 	include/alibabacloud/emr/model/DescribeFlowProjectClusterSettingRequest.h
 	include/alibabacloud/emr/model/DescribeFlowProjectClusterSettingResult.h
-	include/alibabacloud/emr/model/DescribeFlowVariableCollectionRequest.h
-	include/alibabacloud/emr/model/DescribeFlowVariableCollectionResult.h
-	include/alibabacloud/emr/model/DescribeScalingCommonConfigRequest.h
-	include/alibabacloud/emr/model/DescribeScalingCommonConfigResult.h
 	include/alibabacloud/emr/model/DescribeScalingConfigItemV2Request.h
 	include/alibabacloud/emr/model/DescribeScalingConfigItemV2Result.h
 	include/alibabacloud/emr/model/DescribeScalingGroupInstanceV2Request.h
@@ -123,8 +119,6 @@ set(emr_public_header_model
 	include/alibabacloud/emr/model/JoinResourceGroupResult.h
 	include/alibabacloud/emr/model/KillFlowJobRequest.h
 	include/alibabacloud/emr/model/KillFlowJobResult.h
-	include/alibabacloud/emr/model/ListApmApplicationRequest.h
-	include/alibabacloud/emr/model/ListApmApplicationResult.h
 	include/alibabacloud/emr/model/ListClusterHostRequest.h
 	include/alibabacloud/emr/model/ListClusterHostResult.h
 	include/alibabacloud/emr/model/ListClusterHostComponentRequest.h
@@ -143,8 +137,6 @@ set(emr_public_header_model
 	include/alibabacloud/emr/model/ListClusterOperationTaskResult.h
 	include/alibabacloud/emr/model/ListClusterServiceRequest.h
 	include/alibabacloud/emr/model/ListClusterServiceResult.h
-	include/alibabacloud/emr/model/ListClusterServiceComponentRequest.h
-	include/alibabacloud/emr/model/ListClusterServiceComponentResult.h
 	include/alibabacloud/emr/model/ListClusterServiceComponentHealthInfoRequest.h
 	include/alibabacloud/emr/model/ListClusterServiceComponentHealthInfoResult.h
 	include/alibabacloud/emr/model/ListClusterServiceConfigHistoryRequest.h
@@ -346,10 +338,6 @@ set(emr_src
 	src/model/DescribeFlowProjectResult.cc
 	src/model/DescribeFlowProjectClusterSettingRequest.cc
 	src/model/DescribeFlowProjectClusterSettingResult.cc
-	src/model/DescribeFlowVariableCollectionRequest.cc
-	src/model/DescribeFlowVariableCollectionResult.cc
-	src/model/DescribeScalingCommonConfigRequest.cc
-	src/model/DescribeScalingCommonConfigResult.cc
 	src/model/DescribeScalingConfigItemV2Request.cc
 	src/model/DescribeScalingConfigItemV2Result.cc
 	src/model/DescribeScalingGroupInstanceV2Request.cc
@@ -360,8 +348,6 @@ set(emr_src
 	src/model/JoinResourceGroupResult.cc
 	src/model/KillFlowJobRequest.cc
 	src/model/KillFlowJobResult.cc
-	src/model/ListApmApplicationRequest.cc
-	src/model/ListApmApplicationResult.cc
 	src/model/ListClusterHostRequest.cc
 	src/model/ListClusterHostResult.cc
 	src/model/ListClusterHostComponentRequest.cc
@@ -380,8 +366,6 @@ set(emr_src
 	src/model/ListClusterOperationTaskResult.cc
 	src/model/ListClusterServiceRequest.cc
 	src/model/ListClusterServiceResult.cc
-	src/model/ListClusterServiceComponentRequest.cc
-	src/model/ListClusterServiceComponentResult.cc
 	src/model/ListClusterServiceComponentHealthInfoRequest.cc
 	src/model/ListClusterServiceComponentHealthInfoResult.cc
 	src/model/ListClusterServiceConfigHistoryRequest.cc

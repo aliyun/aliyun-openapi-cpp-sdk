@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				bool getEnableGracefulDecommission()const;
+				void setEnableGracefulDecommission(bool enableGracefulDecommission);
 				std::string getClusterId()const;
 				void setClusterId(const std::string& clusterId);
 				std::string getAccessKeyId()const;
@@ -47,14 +49,21 @@ namespace AlibabaCloud
 				void setHostGroupId(const std::string& hostGroupId);
 				std::string getInstanceIdList()const;
 				void setInstanceIdList(const std::string& instanceIdList);
+				int getReleaseNumber()const;
+				void setReleaseNumber(int releaseNumber);
+				int getDecommissionTimeout()const;
+				void setDecommissionTimeout(int decommissionTimeout);
 
             private:
 				long resourceOwnerId_;
+				bool enableGracefulDecommission_;
 				std::string clusterId_;
 				std::string accessKeyId_;
 				std::string regionId_;
 				std::string hostGroupId_;
 				std::string instanceIdList_;
+				int releaseNumber_;
+				int decommissionTimeout_;
 
 			};
 		}

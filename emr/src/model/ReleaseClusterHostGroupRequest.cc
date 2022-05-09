@@ -38,6 +38,17 @@ void ReleaseClusterHostGroupRequest::setResourceOwnerId(long resourceOwnerId)
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+bool ReleaseClusterHostGroupRequest::getEnableGracefulDecommission()const
+{
+	return enableGracefulDecommission_;
+}
+
+void ReleaseClusterHostGroupRequest::setEnableGracefulDecommission(bool enableGracefulDecommission)
+{
+	enableGracefulDecommission_ = enableGracefulDecommission;
+	setParameter("EnableGracefulDecommission", enableGracefulDecommission ? "true" : "false");
+}
+
 std::string ReleaseClusterHostGroupRequest::getClusterId()const
 {
 	return clusterId_;
@@ -91,5 +102,27 @@ void ReleaseClusterHostGroupRequest::setInstanceIdList(const std::string& instan
 {
 	instanceIdList_ = instanceIdList;
 	setParameter("InstanceIdList", instanceIdList);
+}
+
+int ReleaseClusterHostGroupRequest::getReleaseNumber()const
+{
+	return releaseNumber_;
+}
+
+void ReleaseClusterHostGroupRequest::setReleaseNumber(int releaseNumber)
+{
+	releaseNumber_ = releaseNumber;
+	setParameter("ReleaseNumber", std::to_string(releaseNumber));
+}
+
+int ReleaseClusterHostGroupRequest::getDecommissionTimeout()const
+{
+	return decommissionTimeout_;
+}
+
+void ReleaseClusterHostGroupRequest::setDecommissionTimeout(int decommissionTimeout)
+{
+	decommissionTimeout_ = decommissionTimeout;
+	setParameter("DecommissionTimeout", std::to_string(decommissionTimeout));
 }
 

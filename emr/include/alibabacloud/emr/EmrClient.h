@@ -110,10 +110,6 @@
 #include "model/DescribeFlowProjectResult.h"
 #include "model/DescribeFlowProjectClusterSettingRequest.h"
 #include "model/DescribeFlowProjectClusterSettingResult.h"
-#include "model/DescribeFlowVariableCollectionRequest.h"
-#include "model/DescribeFlowVariableCollectionResult.h"
-#include "model/DescribeScalingCommonConfigRequest.h"
-#include "model/DescribeScalingCommonConfigResult.h"
 #include "model/DescribeScalingConfigItemV2Request.h"
 #include "model/DescribeScalingConfigItemV2Result.h"
 #include "model/DescribeScalingGroupInstanceV2Request.h"
@@ -124,8 +120,6 @@
 #include "model/JoinResourceGroupResult.h"
 #include "model/KillFlowJobRequest.h"
 #include "model/KillFlowJobResult.h"
-#include "model/ListApmApplicationRequest.h"
-#include "model/ListApmApplicationResult.h"
 #include "model/ListClusterHostRequest.h"
 #include "model/ListClusterHostResult.h"
 #include "model/ListClusterHostComponentRequest.h"
@@ -144,8 +138,6 @@
 #include "model/ListClusterOperationTaskResult.h"
 #include "model/ListClusterServiceRequest.h"
 #include "model/ListClusterServiceResult.h"
-#include "model/ListClusterServiceComponentRequest.h"
-#include "model/ListClusterServiceComponentResult.h"
 #include "model/ListClusterServiceComponentHealthInfoRequest.h"
 #include "model/ListClusterServiceComponentHealthInfoResult.h"
 #include "model/ListClusterServiceConfigHistoryRequest.h"
@@ -397,12 +389,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeFlowProjectClusterSettingResult> DescribeFlowProjectClusterSettingOutcome;
 			typedef std::future<DescribeFlowProjectClusterSettingOutcome> DescribeFlowProjectClusterSettingOutcomeCallable;
 			typedef std::function<void(const EmrClient*, const Model::DescribeFlowProjectClusterSettingRequest&, const DescribeFlowProjectClusterSettingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFlowProjectClusterSettingAsyncHandler;
-			typedef Outcome<Error, Model::DescribeFlowVariableCollectionResult> DescribeFlowVariableCollectionOutcome;
-			typedef std::future<DescribeFlowVariableCollectionOutcome> DescribeFlowVariableCollectionOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::DescribeFlowVariableCollectionRequest&, const DescribeFlowVariableCollectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFlowVariableCollectionAsyncHandler;
-			typedef Outcome<Error, Model::DescribeScalingCommonConfigResult> DescribeScalingCommonConfigOutcome;
-			typedef std::future<DescribeScalingCommonConfigOutcome> DescribeScalingCommonConfigOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::DescribeScalingCommonConfigRequest&, const DescribeScalingCommonConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScalingCommonConfigAsyncHandler;
 			typedef Outcome<Error, Model::DescribeScalingConfigItemV2Result> DescribeScalingConfigItemV2Outcome;
 			typedef std::future<DescribeScalingConfigItemV2Outcome> DescribeScalingConfigItemV2OutcomeCallable;
 			typedef std::function<void(const EmrClient*, const Model::DescribeScalingConfigItemV2Request&, const DescribeScalingConfigItemV2Outcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScalingConfigItemV2AsyncHandler;
@@ -418,9 +404,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::KillFlowJobResult> KillFlowJobOutcome;
 			typedef std::future<KillFlowJobOutcome> KillFlowJobOutcomeCallable;
 			typedef std::function<void(const EmrClient*, const Model::KillFlowJobRequest&, const KillFlowJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> KillFlowJobAsyncHandler;
-			typedef Outcome<Error, Model::ListApmApplicationResult> ListApmApplicationOutcome;
-			typedef std::future<ListApmApplicationOutcome> ListApmApplicationOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::ListApmApplicationRequest&, const ListApmApplicationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListApmApplicationAsyncHandler;
 			typedef Outcome<Error, Model::ListClusterHostResult> ListClusterHostOutcome;
 			typedef std::future<ListClusterHostOutcome> ListClusterHostOutcomeCallable;
 			typedef std::function<void(const EmrClient*, const Model::ListClusterHostRequest&, const ListClusterHostOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListClusterHostAsyncHandler;
@@ -448,9 +431,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListClusterServiceResult> ListClusterServiceOutcome;
 			typedef std::future<ListClusterServiceOutcome> ListClusterServiceOutcomeCallable;
 			typedef std::function<void(const EmrClient*, const Model::ListClusterServiceRequest&, const ListClusterServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListClusterServiceAsyncHandler;
-			typedef Outcome<Error, Model::ListClusterServiceComponentResult> ListClusterServiceComponentOutcome;
-			typedef std::future<ListClusterServiceComponentOutcome> ListClusterServiceComponentOutcomeCallable;
-			typedef std::function<void(const EmrClient*, const Model::ListClusterServiceComponentRequest&, const ListClusterServiceComponentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListClusterServiceComponentAsyncHandler;
 			typedef Outcome<Error, Model::ListClusterServiceComponentHealthInfoResult> ListClusterServiceComponentHealthInfoOutcome;
 			typedef std::future<ListClusterServiceComponentHealthInfoOutcome> ListClusterServiceComponentHealthInfoOutcomeCallable;
 			typedef std::function<void(const EmrClient*, const Model::ListClusterServiceComponentHealthInfoRequest&, const ListClusterServiceComponentHealthInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListClusterServiceComponentHealthInfoAsyncHandler;
@@ -753,12 +733,6 @@ namespace AlibabaCloud
 			DescribeFlowProjectClusterSettingOutcome describeFlowProjectClusterSetting(const Model::DescribeFlowProjectClusterSettingRequest &request)const;
 			void describeFlowProjectClusterSettingAsync(const Model::DescribeFlowProjectClusterSettingRequest& request, const DescribeFlowProjectClusterSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeFlowProjectClusterSettingOutcomeCallable describeFlowProjectClusterSettingCallable(const Model::DescribeFlowProjectClusterSettingRequest& request) const;
-			DescribeFlowVariableCollectionOutcome describeFlowVariableCollection(const Model::DescribeFlowVariableCollectionRequest &request)const;
-			void describeFlowVariableCollectionAsync(const Model::DescribeFlowVariableCollectionRequest& request, const DescribeFlowVariableCollectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeFlowVariableCollectionOutcomeCallable describeFlowVariableCollectionCallable(const Model::DescribeFlowVariableCollectionRequest& request) const;
-			DescribeScalingCommonConfigOutcome describeScalingCommonConfig(const Model::DescribeScalingCommonConfigRequest &request)const;
-			void describeScalingCommonConfigAsync(const Model::DescribeScalingCommonConfigRequest& request, const DescribeScalingCommonConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeScalingCommonConfigOutcomeCallable describeScalingCommonConfigCallable(const Model::DescribeScalingCommonConfigRequest& request) const;
 			DescribeScalingConfigItemV2Outcome describeScalingConfigItemV2(const Model::DescribeScalingConfigItemV2Request &request)const;
 			void describeScalingConfigItemV2Async(const Model::DescribeScalingConfigItemV2Request& request, const DescribeScalingConfigItemV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeScalingConfigItemV2OutcomeCallable describeScalingConfigItemV2Callable(const Model::DescribeScalingConfigItemV2Request& request) const;
@@ -774,9 +748,6 @@ namespace AlibabaCloud
 			KillFlowJobOutcome killFlowJob(const Model::KillFlowJobRequest &request)const;
 			void killFlowJobAsync(const Model::KillFlowJobRequest& request, const KillFlowJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			KillFlowJobOutcomeCallable killFlowJobCallable(const Model::KillFlowJobRequest& request) const;
-			ListApmApplicationOutcome listApmApplication(const Model::ListApmApplicationRequest &request)const;
-			void listApmApplicationAsync(const Model::ListApmApplicationRequest& request, const ListApmApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListApmApplicationOutcomeCallable listApmApplicationCallable(const Model::ListApmApplicationRequest& request) const;
 			ListClusterHostOutcome listClusterHost(const Model::ListClusterHostRequest &request)const;
 			void listClusterHostAsync(const Model::ListClusterHostRequest& request, const ListClusterHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListClusterHostOutcomeCallable listClusterHostCallable(const Model::ListClusterHostRequest& request) const;
@@ -804,9 +775,6 @@ namespace AlibabaCloud
 			ListClusterServiceOutcome listClusterService(const Model::ListClusterServiceRequest &request)const;
 			void listClusterServiceAsync(const Model::ListClusterServiceRequest& request, const ListClusterServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListClusterServiceOutcomeCallable listClusterServiceCallable(const Model::ListClusterServiceRequest& request) const;
-			ListClusterServiceComponentOutcome listClusterServiceComponent(const Model::ListClusterServiceComponentRequest &request)const;
-			void listClusterServiceComponentAsync(const Model::ListClusterServiceComponentRequest& request, const ListClusterServiceComponentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListClusterServiceComponentOutcomeCallable listClusterServiceComponentCallable(const Model::ListClusterServiceComponentRequest& request) const;
 			ListClusterServiceComponentHealthInfoOutcome listClusterServiceComponentHealthInfo(const Model::ListClusterServiceComponentHealthInfoRequest &request)const;
 			void listClusterServiceComponentHealthInfoAsync(const Model::ListClusterServiceComponentHealthInfoRequest& request, const ListClusterServiceComponentHealthInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListClusterServiceComponentHealthInfoOutcomeCallable listClusterServiceComponentHealthInfoCallable(const Model::ListClusterServiceComponentHealthInfoRequest& request) const;
