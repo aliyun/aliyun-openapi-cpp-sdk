@@ -64,6 +64,8 @@ public:
 	void setEditionType(const std::string &editionType);
 	std::vector<Tag> getTag() const;
 	void setTag(const std::vector<Tag> &tag);
+	bool getWithoutTair() const;
+	void setWithoutTair(bool withoutTair);
 	std::string getInstanceStatus() const;
 	void setInstanceStatus(const std::string &instanceStatus);
 	std::string getResourceOwnerAccount() const;
@@ -107,6 +109,7 @@ private:
 	std::string instanceType_;
 	std::string editionType_;
 	std::vector<Tag> tag_;
+	bool withoutTair_;
 	std::string instanceStatus_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;

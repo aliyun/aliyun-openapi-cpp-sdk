@@ -165,6 +165,15 @@ void DescribeInstancesRequest::setTag(const std::vector<DescribeInstancesRequest
   }
 }
 
+bool DescribeInstancesRequest::getWithoutTair() const {
+  return withoutTair_;
+}
+
+void DescribeInstancesRequest::setWithoutTair(bool withoutTair) {
+  withoutTair_ = withoutTair;
+  setParameter(std::string("WithoutTair"), withoutTair ? "true" : "false");
+}
+
 std::string DescribeInstancesRequest::getInstanceStatus() const {
   return instanceStatus_;
 }

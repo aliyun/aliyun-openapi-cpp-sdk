@@ -59,10 +59,6 @@ void DescribeInstancesOverviewResult::parse(const std::string &payload)
 			instancesObject.architectureType = valueInstancesKVStoreInstance["ArchitectureType"].asString();
 		if(!valueInstancesKVStoreInstance["NetworkType"].isNull())
 			instancesObject.networkType = valueInstancesKVStoreInstance["NetworkType"].asString();
-		if(!valueInstancesKVStoreInstance["ConnectionMode"].isNull())
-			instancesObject.connectionMode = valueInstancesKVStoreInstance["ConnectionMode"].asString();
-		if(!valueInstancesKVStoreInstance["Port"].isNull())
-			instancesObject.port = std::stol(valueInstancesKVStoreInstance["Port"].asString());
 		if(!valueInstancesKVStoreInstance["EngineVersion"].isNull())
 			instancesObject.engineVersion = valueInstancesKVStoreInstance["EngineVersion"].asString();
 		if(!valueInstancesKVStoreInstance["InstanceName"].isNull())

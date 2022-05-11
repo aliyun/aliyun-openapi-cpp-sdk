@@ -372,6 +372,15 @@ void CreateInstanceRequest::setVpcId(const std::string &vpcId) {
   setParameter(std::string("VpcId"), vpcId);
 }
 
+int CreateInstanceRequest::getReadOnlyCount() const {
+  return readOnlyCount_;
+}
+
+void CreateInstanceRequest::setReadOnlyCount(int readOnlyCount) {
+  readOnlyCount_ = readOnlyCount;
+  setParameter(std::string("ReadOnlyCount"), std::to_string(readOnlyCount));
+}
+
 std::string CreateInstanceRequest::getChargeType() const {
   return chargeType_;
 }

@@ -1,3 +1,6 @@
+2022-05-11 Version: 1.36.1124
+- Update by sdk platform.
+
 2022-05-09 Version: 1.36.1123
 - ReleaseClusterHostGroup add support for ReleaseNumber.
 - ReleaseClusterHostGroup add support for Decommission Gracefully.

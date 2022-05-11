@@ -101,8 +101,6 @@ void DescribeInstancesResult::parse(const std::string &payload)
 			instancesObject.hasRenewChangeOrder = valueInstancesKVStoreInstance["HasRenewChangeOrder"].asString() == "true";
 		if(!valueInstancesKVStoreInstance["RegionId"].isNull())
 			instancesObject.regionId = valueInstancesKVStoreInstance["RegionId"].asString();
-		if(!valueInstancesKVStoreInstance["SearchKey"].isNull())
-			instancesObject.searchKey = valueInstancesKVStoreInstance["SearchKey"].asString();
 		if(!valueInstancesKVStoreInstance["EndTime"].isNull())
 			instancesObject.endTime = valueInstancesKVStoreInstance["EndTime"].asString();
 		if(!valueInstancesKVStoreInstance["VSwitchId"].isNull())

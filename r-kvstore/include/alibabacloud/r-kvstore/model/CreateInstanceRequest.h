@@ -110,6 +110,8 @@ public:
 	void setGlobalInstanceId(const std::string &globalInstanceId);
 	std::string getVpcId() const;
 	void setVpcId(const std::string &vpcId);
+	int getReadOnlyCount() const;
+	void setReadOnlyCount(int readOnlyCount);
 	std::string getChargeType() const;
 	void setChargeType(const std::string &chargeType);
 	std::string getConfig() const;
@@ -154,6 +156,7 @@ private:
 	std::string token_;
 	std::string globalInstanceId_;
 	std::string vpcId_;
+	int readOnlyCount_;
 	std::string chargeType_;
 	std::string config_;
 };

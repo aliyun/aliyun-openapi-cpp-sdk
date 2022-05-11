@@ -57,7 +57,6 @@ namespace AlibabaCloud
 					std::string instanceStatus;
 					std::string packageType;
 					long bandwidth;
-					std::string searchKey;
 					std::string instanceType;
 					std::vector<KVStoreInstance::Tag> tags;
 					std::string replacateId;

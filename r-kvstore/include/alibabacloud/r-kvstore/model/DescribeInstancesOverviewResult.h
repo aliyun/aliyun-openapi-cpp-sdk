@@ -41,7 +41,6 @@ namespace AlibabaCloud
 					std::string zoneId;
 					std::string instanceId;
 					std::string createTime;
-					long port;
 					std::string vSwitchId;
 					std::string globalInstanceId;
 					std::string instanceClass;
@@ -53,7 +52,6 @@ namespace AlibabaCloud
 					std::string chargeType;
 					std::string networkType;
 					std::string instanceStatus;
-					std::string connectionMode;
 					std::string regionId;
 					std::string instanceType;
 				};
