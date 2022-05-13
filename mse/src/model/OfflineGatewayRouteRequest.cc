@@ -20,7 +20,7 @@ using AlibabaCloud::Mse::Model::OfflineGatewayRouteRequest;
 
 OfflineGatewayRouteRequest::OfflineGatewayRouteRequest()
     : RpcServiceRequest("mse", "2019-05-31", "OfflineGatewayRoute") {
-  setMethod(HttpRequest::Method::Get);
+  setMethod(HttpRequest::Method::Post);
 }
 
 OfflineGatewayRouteRequest::~OfflineGatewayRouteRequest() {}

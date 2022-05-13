@@ -72,6 +72,10 @@ namespace AlibabaCloud
 							std::string host;
 							int code;
 						};
+						struct Comment
+						{
+							std::string status;
+						};
 						struct RouteServicesItem
 						{
 							std::string groupName;
@@ -85,6 +89,7 @@ namespace AlibabaCloud
 						};
 						int status;
 						std::string defaultServiceName;
+						Comment comment;
 						std::string domainName;
 						std::string gmtModified;
 						long defaultServiceId;
@@ -97,6 +102,8 @@ namespace AlibabaCloud
 						std::string services;
 						std::vector<std::string> domainIdList;
 						std::string gmtCreate;
+						std::string type;
+						std::string enableWaf;
 						int routeOrder;
 						long domainId;
 						std::vector<std::string> domainNameList;

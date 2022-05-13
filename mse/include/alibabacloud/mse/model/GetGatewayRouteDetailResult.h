@@ -145,6 +145,7 @@ namespace AlibabaCloud
 					std::string gatewayUniqueId;
 					std::string services;
 					std::string gmtCreate;
+					bool enableWaf;
 					int routeOrder;
 					long domainId;
 					Retry retry;

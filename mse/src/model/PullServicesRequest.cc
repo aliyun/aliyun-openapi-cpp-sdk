@@ -20,19 +20,10 @@ using AlibabaCloud::Mse::Model::PullServicesRequest;
 
 PullServicesRequest::PullServicesRequest()
     : RpcServiceRequest("mse", "2019-05-31", "PullServices") {
-  setMethod(HttpRequest::Method::Get);
+  setMethod(HttpRequest::Method::Post);
 }
 
 PullServicesRequest::~PullServicesRequest() {}
-
-std::string PullServicesRequest::getSourceId() const {
-  return sourceId_;
-}
-
-void PullServicesRequest::setSourceId(const std::string &sourceId) {
-  sourceId_ = sourceId;
-  setParameter(std::string("SourceId"), sourceId);
-}
 
 std::string PullServicesRequest::getGatewayUniqueId() const {
   return gatewayUniqueId_;

@@ -28,8 +28,15 @@ namespace Mse {
 namespace Model {
 class ALIBABACLOUD_MSE_EXPORT AddServiceSourceRequest : public RpcServiceRequest {
 public:
+	struct IngressOptionsRequest {
+		bool enableIngress;
+		std::string watchNamespace;
+		std::string ingressClass;
+	};
 	AddServiceSourceRequest();
 	~AddServiceSourceRequest();
+	IngressOptionsRequest getIngressOptionsRequest() const;
+	void setIngressOptionsRequest(const IngressOptionsRequest &ingressOptionsRequest);
 	std::string getGatewayUniqueId() const;
 	void setGatewayUniqueId(const std::string &gatewayUniqueId);
 	std::string getSource() const;
@@ -44,6 +51,7 @@ public:
 	void setAcceptLanguage(const std::string &acceptLanguage);
 
 private:
+	IngressOptionsRequest ingressOptionsRequest_;
 	std::string gatewayUniqueId_;
 	std::string source_;
 	std::string type_;

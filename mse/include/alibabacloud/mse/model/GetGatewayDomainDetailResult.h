@@ -45,7 +45,7 @@ namespace AlibabaCloud
 					std::string gatewayUniqueId;
 					std::string gmtCreate;
 					std::string sans;
-					int certIdentifier;
+					std::string certIdentifier;
 					long id;
 					std::string certName;
 					std::string protocol;

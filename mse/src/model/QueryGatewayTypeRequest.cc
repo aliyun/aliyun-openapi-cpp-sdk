@@ -20,7 +20,7 @@ using AlibabaCloud::Mse::Model::QueryGatewayTypeRequest;
 
 QueryGatewayTypeRequest::QueryGatewayTypeRequest()
     : RpcServiceRequest("mse", "2019-05-31", "QueryGatewayType") {
-  setMethod(HttpRequest::Method::Get);
+  setMethod(HttpRequest::Method::Post);
 }
 
 QueryGatewayTypeRequest::~QueryGatewayTypeRequest() {}

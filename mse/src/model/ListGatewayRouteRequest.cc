@@ -71,6 +71,7 @@ void ListGatewayRouteRequest::setFilterParams(const ListGatewayRouteRequest::Fil
   setParameter(std::string("FilterParams") + ".RouteOrder", std::to_string(filterParams.routeOrder));
   setParameter(std::string("FilterParams") + ".GatewayUniqueId", filterParams.gatewayUniqueId);
   setParameter(std::string("FilterParams") + ".Name", filterParams.name);
+  setParameter(std::string("FilterParams") + ".DomainName", filterParams.domainName);
   setParameter(std::string("FilterParams") + ".GatewayId", std::to_string(filterParams.gatewayId));
   setParameter(std::string("FilterParams") + ".DomainId", std::to_string(filterParams.domainId));
   setParameter(std::string("FilterParams") + ".Status", std::to_string(filterParams.status));

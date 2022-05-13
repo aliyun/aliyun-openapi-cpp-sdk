@@ -30,8 +30,6 @@ class ALIBABACLOUD_MSE_EXPORT PullServicesRequest : public RpcServiceRequest {
 public:
 	PullServicesRequest();
 	~PullServicesRequest();
-	std::string getSourceId() const;
-	void setSourceId(const std::string &sourceId);
 	std::string getGatewayUniqueId() const;
 	void setGatewayUniqueId(const std::string &gatewayUniqueId);
 	std::string getAcceptLanguage() const;
@@ -40,7 +38,6 @@ public:
 	void setSourceType(const std::string &sourceType);
 
 private:
-	std::string sourceId_;
 	std::string gatewayUniqueId_;
 	std::string acceptLanguage_;
 	std::string sourceType_;

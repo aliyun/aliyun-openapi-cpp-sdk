@@ -20,7 +20,7 @@ using AlibabaCloud::Mse::Model::DeleteAuthResourceRequest;
 
 DeleteAuthResourceRequest::DeleteAuthResourceRequest()
     : RpcServiceRequest("mse", "2019-05-31", "DeleteAuthResource") {
-  setMethod(HttpRequest::Method::Get);
+  setMethod(HttpRequest::Method::Post);
 }
 
 DeleteAuthResourceRequest::~DeleteAuthResourceRequest() {}

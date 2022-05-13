@@ -20,7 +20,7 @@ using AlibabaCloud::Mse::Model::DeleteGatewayRouteRequest;
 
 DeleteGatewayRouteRequest::DeleteGatewayRouteRequest()
     : RpcServiceRequest("mse", "2019-05-31", "DeleteGatewayRoute") {
-  setMethod(HttpRequest::Method::Get);
+  setMethod(HttpRequest::Method::Post);
 }
 
 DeleteGatewayRouteRequest::~DeleteGatewayRouteRequest() {}

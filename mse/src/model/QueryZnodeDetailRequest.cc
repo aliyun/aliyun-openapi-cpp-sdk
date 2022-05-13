@@ -43,6 +43,15 @@ void QueryZnodeDetailRequest::setPath(const std::string &path) {
   setParameter(std::string("Path"), path);
 }
 
+std::string QueryZnodeDetailRequest::getInstanceId() const {
+  return instanceId_;
+}
+
+void QueryZnodeDetailRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
+}
+
 std::string QueryZnodeDetailRequest::getRequestPars() const {
   return requestPars_;
 }

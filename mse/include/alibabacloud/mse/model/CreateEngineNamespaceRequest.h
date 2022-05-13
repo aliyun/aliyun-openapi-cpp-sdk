@@ -40,6 +40,8 @@ public:
 	void setName(const std::string &name);
 	std::string getAcceptLanguage() const;
 	void setAcceptLanguage(const std::string &acceptLanguage);
+	std::string getId() const;
+	void setId(const std::string &id);
 	std::string getDesc() const;
 	void setDesc(const std::string &desc);
 
@@ -49,6 +51,7 @@ private:
 	int serviceCount_;
 	std::string name_;
 	std::string acceptLanguage_;
+	std::string id_;
 	std::string desc_;
 };
 } // namespace Model

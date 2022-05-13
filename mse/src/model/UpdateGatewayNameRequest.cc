@@ -20,7 +20,7 @@ using AlibabaCloud::Mse::Model::UpdateGatewayNameRequest;
 
 UpdateGatewayNameRequest::UpdateGatewayNameRequest()
     : RpcServiceRequest("mse", "2019-05-31", "UpdateGatewayName") {
-  setMethod(HttpRequest::Method::Get);
+  setMethod(HttpRequest::Method::Post);
 }
 
 UpdateGatewayNameRequest::~UpdateGatewayNameRequest() {}

@@ -47,6 +47,8 @@ void PullServicesResult::parse(const std::string &payload)
 			dataObject._namespace = valueDataPullServices["Namespace"].asString();
 		if(!valueDataPullServices["GroupName"].isNull())
 			dataObject.groupName = valueDataPullServices["GroupName"].asString();
+		if(!valueDataPullServices["NamespaceShowName"].isNull())
+			dataObject.namespaceShowName = valueDataPullServices["NamespaceShowName"].asString();
 		auto allServicesNode = valueDataPullServices["Services"]["ServicesItem"];
 		for (auto valueDataPullServicesServicesServicesItem : allServicesNode)
 		{

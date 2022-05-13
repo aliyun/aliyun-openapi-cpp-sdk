@@ -77,6 +77,8 @@ void ListClustersResult::parse(const std::string &payload)
 			dataObject.instanceCount = std::stol(valueDataClusterForListModel["InstanceCount"].asString());
 		if(!valueDataClusterForListModel["ClusterName"].isNull())
 			dataObject.clusterName = valueDataClusterForListModel["ClusterName"].asString();
+		if(!valueDataClusterForListModel["MseVersion"].isNull())
+			dataObject.mseVersion = valueDataClusterForListModel["MseVersion"].asString();
 		data_.push_back(dataObject);
 	}
 	if(!value["HttpCode"].isNull())

@@ -46,6 +46,7 @@ namespace AlibabaCloud
 						long sourceId;
 						std::string metaInfo;
 						std::string gmtModified;
+						std::string healehStatus;
 						std::string _namespace;
 						long gatewayId;
 						std::vector<std::string> ips;

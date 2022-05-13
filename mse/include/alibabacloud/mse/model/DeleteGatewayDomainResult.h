@@ -38,7 +38,7 @@ namespace AlibabaCloud
 					std::string gmtCreate;
 					bool mustHttps;
 					std::string gmtModified;
-					int certIdentifier;
+					std::string certIdentifier;
 					long id;
 					long gatewayId;
 					std::string protocol;

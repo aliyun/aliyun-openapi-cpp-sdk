@@ -53,7 +53,7 @@ void DeleteGatewayDomainResult::parse(const std::string &payload)
 	if(!dataNode["MustHttps"].isNull())
 		data_.mustHttps = dataNode["MustHttps"].asString() == "true";
 	if(!dataNode["CertIdentifier"].isNull())
-		data_.certIdentifier = std::stoi(dataNode["CertIdentifier"].asString());
+		data_.certIdentifier = dataNode["CertIdentifier"].asString();
 	if(!dataNode["GmtCreate"].isNull())
 		data_.gmtCreate = dataNode["GmtCreate"].asString();
 	if(!dataNode["GmtModified"].isNull())

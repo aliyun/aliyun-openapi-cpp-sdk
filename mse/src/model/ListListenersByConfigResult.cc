@@ -47,6 +47,8 @@ void ListListenersByConfigResult::parse(const std::string &payload)
 			listenersObject.ip = valueListenersListener["Ip"].asString();
 		if(!valueListenersListener["Md5"].isNull())
 			listenersObject.md5 = valueListenersListener["Md5"].asString();
+		if(!valueListenersListener["Status"].isNull())
+			listenersObject.status = valueListenersListener["Status"].asString();
 		listeners_.push_back(listenersObject);
 	}
 	if(!value["HttpCode"].isNull())

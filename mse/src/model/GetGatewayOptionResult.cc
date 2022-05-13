@@ -44,6 +44,8 @@ void GetGatewayOptionResult::parse(const std::string &payload)
 		data_.enableHardwareAcceleration = dataNode["EnableHardwareAcceleration"].asString() == "true";
 	if(!dataNode["DisableHttp2Alpn"].isNull())
 		data_.disableHttp2Alpn = dataNode["DisableHttp2Alpn"].asString() == "true";
+	if(!dataNode["EnableWaf"].isNull())
+		data_.enableWaf = dataNode["EnableWaf"].asString() == "true";
 	auto traceDetailsNode = dataNode["TraceDetails"];
 	if(!traceDetailsNode["TraceEnabled"].isNull())
 		data_.traceDetails.traceEnabled = traceDetailsNode["TraceEnabled"].asString() == "true";

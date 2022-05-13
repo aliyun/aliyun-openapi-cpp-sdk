@@ -25,6 +25,15 @@ QueryClusterDetailRequest::QueryClusterDetailRequest()
 
 QueryClusterDetailRequest::~QueryClusterDetailRequest() {}
 
+bool QueryClusterDetailRequest::getAclSwitch() const {
+  return aclSwitch_;
+}
+
+void QueryClusterDetailRequest::setAclSwitch(bool aclSwitch) {
+  aclSwitch_ = aclSwitch;
+  setParameter(std::string("AclSwitch"), aclSwitch ? "true" : "false");
+}
+
 std::string QueryClusterDetailRequest::getOrderId() const {
   return orderId_;
 }

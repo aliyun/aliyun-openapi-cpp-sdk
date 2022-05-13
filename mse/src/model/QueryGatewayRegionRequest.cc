@@ -20,7 +20,7 @@ using AlibabaCloud::Mse::Model::QueryGatewayRegionRequest;
 
 QueryGatewayRegionRequest::QueryGatewayRegionRequest()
     : RpcServiceRequest("mse", "2019-05-31", "QueryGatewayRegion") {
-  setMethod(HttpRequest::Method::Get);
+  setMethod(HttpRequest::Method::Post);
 }
 
 QueryGatewayRegionRequest::~QueryGatewayRegionRequest() {}

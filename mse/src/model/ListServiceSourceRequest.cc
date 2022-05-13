@@ -20,7 +20,7 @@ using AlibabaCloud::Mse::Model::ListServiceSourceRequest;
 
 ListServiceSourceRequest::ListServiceSourceRequest()
     : RpcServiceRequest("mse", "2019-05-31", "ListServiceSource") {
-  setMethod(HttpRequest::Method::Get);
+  setMethod(HttpRequest::Method::Post);
 }
 
 ListServiceSourceRequest::~ListServiceSourceRequest() {}

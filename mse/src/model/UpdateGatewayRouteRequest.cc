@@ -79,6 +79,15 @@ void UpdateGatewayRouteRequest::setRouteOrder(int routeOrder) {
   setParameter(std::string("RouteOrder"), std::to_string(routeOrder));
 }
 
+bool UpdateGatewayRouteRequest::getEnableWaf() const {
+  return enableWaf_;
+}
+
+void UpdateGatewayRouteRequest::setEnableWaf(bool enableWaf) {
+  enableWaf_ = enableWaf;
+  setParameter(std::string("EnableWaf"), enableWaf ? "true" : "false");
+}
+
 std::vector<UpdateGatewayRouteRequest::Services> UpdateGatewayRouteRequest::getServices() const {
   return services_;
 }

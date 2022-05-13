@@ -78,6 +78,8 @@ void ListGatewayServiceResult::parse(const std::string &payload)
 			servicesObject.serviceProtocol = dataNodeResultServices["ServiceProtocol"].asString();
 		if(!dataNodeResultServices["ServicePort"].isNull())
 			servicesObject.servicePort = std::stol(dataNodeResultServices["ServicePort"].asString());
+		if(!dataNodeResultServices["HealehStatus"].isNull())
+			servicesObject.healehStatus = dataNodeResultServices["HealehStatus"].asString();
 		auto allVersionsNode = dataNodeResultServices["Versions"]["VersionsItem"];
 		for (auto dataNodeResultServicesVersionsVersionsItem : allVersionsNode)
 		{

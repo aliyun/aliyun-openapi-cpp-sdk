@@ -20,7 +20,7 @@ using AlibabaCloud::Mse::Model::UpdateSSLCertRequest;
 
 UpdateSSLCertRequest::UpdateSSLCertRequest()
     : RpcServiceRequest("mse", "2019-05-31", "UpdateSSLCert") {
-  setMethod(HttpRequest::Method::Get);
+  setMethod(HttpRequest::Method::Post);
 }
 
 UpdateSSLCertRequest::~UpdateSSLCertRequest() {}

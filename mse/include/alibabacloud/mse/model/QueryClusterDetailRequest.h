@@ -30,6 +30,8 @@ class ALIBABACLOUD_MSE_EXPORT QueryClusterDetailRequest : public RpcServiceReque
 public:
 	QueryClusterDetailRequest();
 	~QueryClusterDetailRequest();
+	bool getAclSwitch() const;
+	void setAclSwitch(bool aclSwitch);
 	std::string getOrderId() const;
 	void setOrderId(const std::string &orderId);
 	std::string getClusterId() const;
@@ -40,6 +42,7 @@ public:
 	void setAcceptLanguage(const std::string &acceptLanguage);
 
 private:
+	bool aclSwitch_;
 	std::string orderId_;
 	std::string clusterId_;
 	std::string instanceId_;

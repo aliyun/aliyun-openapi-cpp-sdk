@@ -82,8 +82,12 @@ void ListGatewayResult::parse(const std::string &payload)
 			gatewaysObject.upgrade = dataNodeResultGateways["Upgrade"].asString() == "true";
 		if(!dataNodeResultGateways["MustUpgrade"].isNull())
 			gatewaysObject.mustUpgrade = dataNodeResultGateways["MustUpgrade"].asString() == "true";
+		if(!dataNodeResultGateways["SupportWasm"].isNull())
+			gatewaysObject.supportWasm = dataNodeResultGateways["SupportWasm"].asString() == "true";
 		if(!dataNodeResultGateways["CurrentVersion"].isNull())
 			gatewaysObject.currentVersion = dataNodeResultGateways["CurrentVersion"].asString();
+		if(!dataNodeResultGateways["AppVersion"].isNull())
+			gatewaysObject.appVersion = dataNodeResultGateways["AppVersion"].asString();
 		if(!dataNodeResultGateways["LatestVersion"].isNull())
 			gatewaysObject.latestVersion = dataNodeResultGateways["LatestVersion"].asString();
 		if(!dataNodeResultGateways["Vswitch2"].isNull())
@@ -142,6 +146,11 @@ void ListGatewayResult::parse(const std::string &payload)
 				internetSlbObject.slbId = dataNodeResultGatewaysInternetSlbinternetSlbItem["SlbId"].asString();
 			gatewaysObject.internetSlb.push_back(internetSlbObject);
 		}
+		auto initConfigNode = value["InitConfig"];
+		if(!initConfigNode["EnableWaf"].isNull())
+			gatewaysObject.initConfig.enableWaf = initConfigNode["EnableWaf"].asString() == "true";
+		if(!initConfigNode["SupportWaf"].isNull())
+			gatewaysObject.initConfig.supportWaf = initConfigNode["SupportWaf"].asString() == "true";
 		data_.result.push_back(gatewaysObject);
 	}
 	if(!value["HttpStatusCode"].isNull())

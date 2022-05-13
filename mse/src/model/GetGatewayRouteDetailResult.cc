@@ -70,6 +70,8 @@ void GetGatewayRouteDetailResult::parse(const std::string &payload)
 		data_.services = dataNode["Services"].asString();
 	if(!dataNode["DestinationType"].isNull())
 		data_.destinationType = dataNode["DestinationType"].asString();
+	if(!dataNode["EnableWaf"].isNull())
+		data_.enableWaf = dataNode["EnableWaf"].asString() == "true";
 	auto allRouteServicesNode = dataNode["RouteServices"]["RouteServicesItem"];
 	for (auto dataNodeRouteServicesRouteServicesItem : allRouteServicesNode)
 	{

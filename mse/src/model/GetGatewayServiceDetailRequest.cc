@@ -20,7 +20,7 @@ using AlibabaCloud::Mse::Model::GetGatewayServiceDetailRequest;
 
 GetGatewayServiceDetailRequest::GetGatewayServiceDetailRequest()
     : RpcServiceRequest("mse", "2019-05-31", "GetGatewayServiceDetail") {
-  setMethod(HttpRequest::Method::Get);
+  setMethod(HttpRequest::Method::Post);
 }
 
 GetGatewayServiceDetailRequest::~GetGatewayServiceDetailRequest() {}

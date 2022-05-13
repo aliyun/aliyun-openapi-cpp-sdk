@@ -44,6 +44,7 @@ namespace AlibabaCloud
 					};
 					std::string groupName;
 					std::vector<PullServices::ServicesItem> services;
+					std::string namespaceShowName;
 					std::string _namespace;
 				};
 

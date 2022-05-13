@@ -63,6 +63,13 @@ void ListServiceSourceResult::parse(const std::string &payload)
 			dataObject.gmtModified = valueDataSources["GmtModified"].asString();
 		if(!valueDataSources["SourceUniqueId"].isNull())
 			dataObject.sourceUniqueId = valueDataSources["SourceUniqueId"].asString();
+		auto ingressOptionsNode = value["IngressOptions"];
+		if(!ingressOptionsNode["EnableIngress"].isNull())
+			dataObject.ingressOptions.enableIngress = ingressOptionsNode["EnableIngress"].asString() == "true";
+		if(!ingressOptionsNode["IngressClass"].isNull())
+			dataObject.ingressOptions.ingressClass = ingressOptionsNode["IngressClass"].asString();
+		if(!ingressOptionsNode["WatchNamespace"].isNull())
+			dataObject.ingressOptions.watchNamespace = ingressOptionsNode["WatchNamespace"].asString();
 		data_.push_back(dataObject);
 	}
 	if(!value["HttpStatusCode"].isNull())

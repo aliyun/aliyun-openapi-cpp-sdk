@@ -33,6 +33,7 @@ public:
 		int routeOrder;
 		std::string gatewayUniqueId;
 		std::string name;
+		std::string domainName;
 		long gatewayId;
 		long domainId;
 		int status;

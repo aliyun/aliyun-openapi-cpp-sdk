@@ -34,6 +34,7 @@ namespace AlibabaCloud
 			public:
 				struct ClusterForListModel
 				{
+					std::string mseVersion;
 					std::string internetAddress;
 					std::string instanceId;
 					std::string clusterId;

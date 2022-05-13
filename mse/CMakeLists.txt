@@ -39,16 +39,20 @@ set(mse_public_header_model
 	include/alibabacloud/mse/model/AddMockRuleResult.h
 	include/alibabacloud/mse/model/AddSSLCertRequest.h
 	include/alibabacloud/mse/model/AddSSLCertResult.h
+	include/alibabacloud/mse/model/AddSeataServerRequest.h
+	include/alibabacloud/mse/model/AddSeataServerResult.h
+	include/alibabacloud/mse/model/AddSecurityGroupRuleRequest.h
+	include/alibabacloud/mse/model/AddSecurityGroupRuleResult.h
 	include/alibabacloud/mse/model/AddServiceSourceRequest.h
 	include/alibabacloud/mse/model/AddServiceSourceResult.h
+	include/alibabacloud/mse/model/AddTestRequest.h
+	include/alibabacloud/mse/model/AddTestResult.h
 	include/alibabacloud/mse/model/ApplyGatewayRouteRequest.h
 	include/alibabacloud/mse/model/ApplyGatewayRouteResult.h
 	include/alibabacloud/mse/model/ApplyTagPoliciesRequest.h
 	include/alibabacloud/mse/model/ApplyTagPoliciesResult.h
 	include/alibabacloud/mse/model/CloneNacosConfigRequest.h
 	include/alibabacloud/mse/model/CloneNacosConfigResult.h
-	include/alibabacloud/mse/model/CreateAlarmRuleRequest.h
-	include/alibabacloud/mse/model/CreateAlarmRuleResult.h
 	include/alibabacloud/mse/model/CreateApplicationRequest.h
 	include/alibabacloud/mse/model/CreateApplicationResult.h
 	include/alibabacloud/mse/model/CreateClusterRequest.h
@@ -65,10 +69,10 @@ set(mse_public_header_model
 	include/alibabacloud/mse/model/CreateOrUpdateSwimmingLaneResult.h
 	include/alibabacloud/mse/model/CreateOrUpdateSwimmingLaneGroupRequest.h
 	include/alibabacloud/mse/model/CreateOrUpdateSwimmingLaneGroupResult.h
+	include/alibabacloud/mse/model/CreateVGroupRequest.h
+	include/alibabacloud/mse/model/CreateVGroupResult.h
 	include/alibabacloud/mse/model/CreateZnodeRequest.h
 	include/alibabacloud/mse/model/CreateZnodeResult.h
-	include/alibabacloud/mse/model/DeleteAlarmRuleRequest.h
-	include/alibabacloud/mse/model/DeleteAlarmRuleResult.h
 	include/alibabacloud/mse/model/DeleteAuthResourceRequest.h
 	include/alibabacloud/mse/model/DeleteAuthResourceResult.h
 	include/alibabacloud/mse/model/DeleteClusterRequest.h
@@ -81,6 +85,8 @@ set(mse_public_header_model
 	include/alibabacloud/mse/model/DeleteGatewayDomainResult.h
 	include/alibabacloud/mse/model/DeleteGatewayRouteRequest.h
 	include/alibabacloud/mse/model/DeleteGatewayRouteResult.h
+	include/alibabacloud/mse/model/DeleteGatewayServiceRequest.h
+	include/alibabacloud/mse/model/DeleteGatewayServiceResult.h
 	include/alibabacloud/mse/model/DeleteGatewayServiceVersionRequest.h
 	include/alibabacloud/mse/model/DeleteGatewayServiceVersionResult.h
 	include/alibabacloud/mse/model/DeleteGatewaySlbRequest.h
@@ -93,18 +99,30 @@ set(mse_public_header_model
 	include/alibabacloud/mse/model/DeleteNacosInstanceResult.h
 	include/alibabacloud/mse/model/DeleteNacosServiceRequest.h
 	include/alibabacloud/mse/model/DeleteNacosServiceResult.h
+	include/alibabacloud/mse/model/DeleteSeataServerRequest.h
+	include/alibabacloud/mse/model/DeleteSeataServerResult.h
+	include/alibabacloud/mse/model/DeleteSecurityGroupRuleRequest.h
+	include/alibabacloud/mse/model/DeleteSecurityGroupRuleResult.h
 	include/alibabacloud/mse/model/DeleteServiceSourceRequest.h
 	include/alibabacloud/mse/model/DeleteServiceSourceResult.h
 	include/alibabacloud/mse/model/DeleteSwimmingLaneRequest.h
 	include/alibabacloud/mse/model/DeleteSwimmingLaneResult.h
 	include/alibabacloud/mse/model/DeleteSwimmingLaneGroupRequest.h
 	include/alibabacloud/mse/model/DeleteSwimmingLaneGroupResult.h
+	include/alibabacloud/mse/model/DeleteVGroupRequest.h
+	include/alibabacloud/mse/model/DeleteVGroupResult.h
 	include/alibabacloud/mse/model/DeleteZnodeRequest.h
 	include/alibabacloud/mse/model/DeleteZnodeResult.h
 	include/alibabacloud/mse/model/ExportNacosConfigRequest.h
 	include/alibabacloud/mse/model/ExportNacosConfigResult.h
+	include/alibabacloud/mse/model/GetAppMessageQueueRouteRequest.h
+	include/alibabacloud/mse/model/GetAppMessageQueueRouteResult.h
+	include/alibabacloud/mse/model/GetApplicationListRequest.h
+	include/alibabacloud/mse/model/GetApplicationListResult.h
 	include/alibabacloud/mse/model/GetBlackWhiteListRequest.h
 	include/alibabacloud/mse/model/GetBlackWhiteListResult.h
+	include/alibabacloud/mse/model/GetDashBoardUrlRequest.h
+	include/alibabacloud/mse/model/GetDashBoardUrlResult.h
 	include/alibabacloud/mse/model/GetEngineNamepaceRequest.h
 	include/alibabacloud/mse/model/GetEngineNamepaceResult.h
 	include/alibabacloud/mse/model/GetGatewayRequest.h
@@ -145,14 +163,6 @@ set(mse_public_header_model
 	include/alibabacloud/mse/model/ImportNacosConfigResult.h
 	include/alibabacloud/mse/model/ImportServicesRequest.h
 	include/alibabacloud/mse/model/ImportServicesResult.h
-	include/alibabacloud/mse/model/ListAlarmContactGroupsRequest.h
-	include/alibabacloud/mse/model/ListAlarmContactGroupsResult.h
-	include/alibabacloud/mse/model/ListAlarmHistoriesRequest.h
-	include/alibabacloud/mse/model/ListAlarmHistoriesResult.h
-	include/alibabacloud/mse/model/ListAlarmItemsRequest.h
-	include/alibabacloud/mse/model/ListAlarmItemsResult.h
-	include/alibabacloud/mse/model/ListAlarmRulesRequest.h
-	include/alibabacloud/mse/model/ListAlarmRulesResult.h
 	include/alibabacloud/mse/model/ListAnsInstancesRequest.h
 	include/alibabacloud/mse/model/ListAnsInstancesResult.h
 	include/alibabacloud/mse/model/ListAnsServiceClustersRequest.h
@@ -165,6 +175,8 @@ set(mse_public_header_model
 	include/alibabacloud/mse/model/ListApplicationsWithTagRulesResult.h
 	include/alibabacloud/mse/model/ListClusterConnectionTypesRequest.h
 	include/alibabacloud/mse/model/ListClusterConnectionTypesResult.h
+	include/alibabacloud/mse/model/ListClusterDetailFeatureRequest.h
+	include/alibabacloud/mse/model/ListClusterDetailFeatureResult.h
 	include/alibabacloud/mse/model/ListClusterTypesRequest.h
 	include/alibabacloud/mse/model/ListClusterTypesResult.h
 	include/alibabacloud/mse/model/ListClusterVersionsRequest.h
@@ -187,6 +199,8 @@ set(mse_public_header_model
 	include/alibabacloud/mse/model/ListGatewayServiceResult.h
 	include/alibabacloud/mse/model/ListGatewaySlbRequest.h
 	include/alibabacloud/mse/model/ListGatewaySlbResult.h
+	include/alibabacloud/mse/model/ListInstancesRequest.h
+	include/alibabacloud/mse/model/ListInstancesResult.h
 	include/alibabacloud/mse/model/ListListenersByConfigRequest.h
 	include/alibabacloud/mse/model/ListListenersByConfigResult.h
 	include/alibabacloud/mse/model/ListListenersByIpRequest.h
@@ -197,6 +211,10 @@ set(mse_public_header_model
 	include/alibabacloud/mse/model/ListNacosHistoryConfigsResult.h
 	include/alibabacloud/mse/model/ListSSLCertRequest.h
 	include/alibabacloud/mse/model/ListSSLCertResult.h
+	include/alibabacloud/mse/model/ListSecurityGroupRequest.h
+	include/alibabacloud/mse/model/ListSecurityGroupResult.h
+	include/alibabacloud/mse/model/ListSecurityGroupRuleRequest.h
+	include/alibabacloud/mse/model/ListSecurityGroupRuleResult.h
 	include/alibabacloud/mse/model/ListServiceSourceRequest.h
 	include/alibabacloud/mse/model/ListServiceSourceResult.h
 	include/alibabacloud/mse/model/ListZnodeChildrenRequest.h
@@ -233,14 +251,16 @@ set(mse_public_header_model
 	include/alibabacloud/mse/model/QuerySlbSpecResult.h
 	include/alibabacloud/mse/model/QuerySwimmingLaneByIdRequest.h
 	include/alibabacloud/mse/model/QuerySwimmingLaneByIdResult.h
+	include/alibabacloud/mse/model/QueryUserVpcRequest.h
+	include/alibabacloud/mse/model/QueryUserVpcResult.h
 	include/alibabacloud/mse/model/QueryZnodeDetailRequest.h
 	include/alibabacloud/mse/model/QueryZnodeDetailResult.h
 	include/alibabacloud/mse/model/RestartClusterRequest.h
 	include/alibabacloud/mse/model/RestartClusterResult.h
+	include/alibabacloud/mse/model/RestartSeataServerRequest.h
+	include/alibabacloud/mse/model/RestartSeataServerResult.h
 	include/alibabacloud/mse/model/RetryClusterRequest.h
 	include/alibabacloud/mse/model/RetryClusterResult.h
-	include/alibabacloud/mse/model/ScalingClusterRequest.h
-	include/alibabacloud/mse/model/ScalingClusterResult.h
 	include/alibabacloud/mse/model/SelectGatewaySlbRequest.h
 	include/alibabacloud/mse/model/SelectGatewaySlbResult.h
 	include/alibabacloud/mse/model/UpdateAclRequest.h
@@ -271,10 +291,16 @@ set(mse_public_header_model
 	include/alibabacloud/mse/model/UpdateGatewayRouteRetryResult.h
 	include/alibabacloud/mse/model/UpdateGatewayRouteTimeoutRequest.h
 	include/alibabacloud/mse/model/UpdateGatewayRouteTimeoutResult.h
+	include/alibabacloud/mse/model/UpdateGatewayRouteWafStatusRequest.h
+	include/alibabacloud/mse/model/UpdateGatewayRouteWafStatusResult.h
+	include/alibabacloud/mse/model/UpdateGatewayServiceTrafficPolicyRequest.h
+	include/alibabacloud/mse/model/UpdateGatewayServiceTrafficPolicyResult.h
 	include/alibabacloud/mse/model/UpdateGatewayServiceVersionRequest.h
 	include/alibabacloud/mse/model/UpdateGatewayServiceVersionResult.h
 	include/alibabacloud/mse/model/UpdateImageRequest.h
 	include/alibabacloud/mse/model/UpdateImageResult.h
+	include/alibabacloud/mse/model/UpdateMessageQueueRouteRequest.h
+	include/alibabacloud/mse/model/UpdateMessageQueueRouteResult.h
 	include/alibabacloud/mse/model/UpdateNacosClusterRequest.h
 	include/alibabacloud/mse/model/UpdateNacosClusterResult.h
 	include/alibabacloud/mse/model/UpdateNacosConfigRequest.h
@@ -310,16 +336,20 @@ set(mse_src
 	src/model/AddMockRuleResult.cc
 	src/model/AddSSLCertRequest.cc
 	src/model/AddSSLCertResult.cc
+	src/model/AddSeataServerRequest.cc
+	src/model/AddSeataServerResult.cc
+	src/model/AddSecurityGroupRuleRequest.cc
+	src/model/AddSecurityGroupRuleResult.cc
 	src/model/AddServiceSourceRequest.cc
 	src/model/AddServiceSourceResult.cc
+	src/model/AddTestRequest.cc
+	src/model/AddTestResult.cc
 	src/model/ApplyGatewayRouteRequest.cc
 	src/model/ApplyGatewayRouteResult.cc
 	src/model/ApplyTagPoliciesRequest.cc
 	src/model/ApplyTagPoliciesResult.cc
 	src/model/CloneNacosConfigRequest.cc
 	src/model/CloneNacosConfigResult.cc
-	src/model/CreateAlarmRuleRequest.cc
-	src/model/CreateAlarmRuleResult.cc
 	src/model/CreateApplicationRequest.cc
 	src/model/CreateApplicationResult.cc
 	src/model/CreateClusterRequest.cc
@@ -336,10 +366,10 @@ set(mse_src
 	src/model/CreateOrUpdateSwimmingLaneResult.cc
 	src/model/CreateOrUpdateSwimmingLaneGroupRequest.cc
 	src/model/CreateOrUpdateSwimmingLaneGroupResult.cc
+	src/model/CreateVGroupRequest.cc
+	src/model/CreateVGroupResult.cc
 	src/model/CreateZnodeRequest.cc
 	src/model/CreateZnodeResult.cc
-	src/model/DeleteAlarmRuleRequest.cc
-	src/model/DeleteAlarmRuleResult.cc
 	src/model/DeleteAuthResourceRequest.cc
 	src/model/DeleteAuthResourceResult.cc
 	src/model/DeleteClusterRequest.cc
@@ -352,6 +382,8 @@ set(mse_src
 	src/model/DeleteGatewayDomainResult.cc
 	src/model/DeleteGatewayRouteRequest.cc
 	src/model/DeleteGatewayRouteResult.cc
+	src/model/DeleteGatewayServiceRequest.cc
+	src/model/DeleteGatewayServiceResult.cc
 	src/model/DeleteGatewayServiceVersionRequest.cc
 	src/model/DeleteGatewayServiceVersionResult.cc
 	src/model/DeleteGatewaySlbRequest.cc
@@ -364,18 +396,30 @@ set(mse_src
 	src/model/DeleteNacosInstanceResult.cc
 	src/model/DeleteNacosServiceRequest.cc
 	src/model/DeleteNacosServiceResult.cc
+	src/model/DeleteSeataServerRequest.cc
+	src/model/DeleteSeataServerResult.cc
+	src/model/DeleteSecurityGroupRuleRequest.cc
+	src/model/DeleteSecurityGroupRuleResult.cc
 	src/model/DeleteServiceSourceRequest.cc
 	src/model/DeleteServiceSourceResult.cc
 	src/model/DeleteSwimmingLaneRequest.cc
 	src/model/DeleteSwimmingLaneResult.cc
 	src/model/DeleteSwimmingLaneGroupRequest.cc
 	src/model/DeleteSwimmingLaneGroupResult.cc
+	src/model/DeleteVGroupRequest.cc
+	src/model/DeleteVGroupResult.cc
 	src/model/DeleteZnodeRequest.cc
 	src/model/DeleteZnodeResult.cc
 	src/model/ExportNacosConfigRequest.cc
 	src/model/ExportNacosConfigResult.cc
+	src/model/GetAppMessageQueueRouteRequest.cc
+	src/model/GetAppMessageQueueRouteResult.cc
+	src/model/GetApplicationListRequest.cc
+	src/model/GetApplicationListResult.cc
 	src/model/GetBlackWhiteListRequest.cc
 	src/model/GetBlackWhiteListResult.cc
+	src/model/GetDashBoardUrlRequest.cc
+	src/model/GetDashBoardUrlResult.cc
 	src/model/GetEngineNamepaceRequest.cc
 	src/model/GetEngineNamepaceResult.cc
 	src/model/GetGatewayRequest.cc
@@ -416,14 +460,6 @@ set(mse_src
 	src/model/ImportNacosConfigResult.cc
 	src/model/ImportServicesRequest.cc
 	src/model/ImportServicesResult.cc
-	src/model/ListAlarmContactGroupsRequest.cc
-	src/model/ListAlarmContactGroupsResult.cc
-	src/model/ListAlarmHistoriesRequest.cc
-	src/model/ListAlarmHistoriesResult.cc
-	src/model/ListAlarmItemsRequest.cc
-	src/model/ListAlarmItemsResult.cc
-	src/model/ListAlarmRulesRequest.cc
-	src/model/ListAlarmRulesResult.cc
 	src/model/ListAnsInstancesRequest.cc
 	src/model/ListAnsInstancesResult.cc
 	src/model/ListAnsServiceClustersRequest.cc
@@ -436,6 +472,8 @@ set(mse_src
 	src/model/ListApplicationsWithTagRulesResult.cc
 	src/model/ListClusterConnectionTypesRequest.cc
 	src/model/ListClusterConnectionTypesResult.cc
+	src/model/ListClusterDetailFeatureRequest.cc
+	src/model/ListClusterDetailFeatureResult.cc
 	src/model/ListClusterTypesRequest.cc
 	src/model/ListClusterTypesResult.cc
 	src/model/ListClusterVersionsRequest.cc
@@ -458,6 +496,8 @@ set(mse_src
 	src/model/ListGatewayServiceResult.cc
 	src/model/ListGatewaySlbRequest.cc
 	src/model/ListGatewaySlbResult.cc
+	src/model/ListInstancesRequest.cc
+	src/model/ListInstancesResult.cc
 	src/model/ListListenersByConfigRequest.cc
 	src/model/ListListenersByConfigResult.cc
 	src/model/ListListenersByIpRequest.cc
@@ -468,6 +508,10 @@ set(mse_src
 	src/model/ListNacosHistoryConfigsResult.cc
 	src/model/ListSSLCertRequest.cc
 	src/model/ListSSLCertResult.cc
+	src/model/ListSecurityGroupRequest.cc
+	src/model/ListSecurityGroupResult.cc
+	src/model/ListSecurityGroupRuleRequest.cc
+	src/model/ListSecurityGroupRuleResult.cc
 	src/model/ListServiceSourceRequest.cc
 	src/model/ListServiceSourceResult.cc
 	src/model/ListZnodeChildrenRequest.cc
@@ -504,14 +548,16 @@ set(mse_src
 	src/model/QuerySlbSpecResult.cc
 	src/model/QuerySwimmingLaneByIdRequest.cc
 	src/model/QuerySwimmingLaneByIdResult.cc
+	src/model/QueryUserVpcRequest.cc
+	src/model/QueryUserVpcResult.cc
 	src/model/QueryZnodeDetailRequest.cc
 	src/model/QueryZnodeDetailResult.cc
 	src/model/RestartClusterRequest.cc
 	src/model/RestartClusterResult.cc
+	src/model/RestartSeataServerRequest.cc
+	src/model/RestartSeataServerResult.cc
 	src/model/RetryClusterRequest.cc
 	src/model/RetryClusterResult.cc
-	src/model/ScalingClusterRequest.cc
-	src/model/ScalingClusterResult.cc
 	src/model/SelectGatewaySlbRequest.cc
 	src/model/SelectGatewaySlbResult.cc
 	src/model/UpdateAclRequest.cc
@@ -542,10 +588,16 @@ set(mse_src
 	src/model/UpdateGatewayRouteRetryResult.cc
 	src/model/UpdateGatewayRouteTimeoutRequest.cc
 	src/model/UpdateGatewayRouteTimeoutResult.cc
+	src/model/UpdateGatewayRouteWafStatusRequest.cc
+	src/model/UpdateGatewayRouteWafStatusResult.cc
+	src/model/UpdateGatewayServiceTrafficPolicyRequest.cc
+	src/model/UpdateGatewayServiceTrafficPolicyResult.cc
 	src/model/UpdateGatewayServiceVersionRequest.cc
 	src/model/UpdateGatewayServiceVersionResult.cc
 	src/model/UpdateImageRequest.cc
 	src/model/UpdateImageResult.cc
+	src/model/UpdateMessageQueueRouteRequest.cc
+	src/model/UpdateMessageQueueRouteResult.cc
 	src/model/UpdateNacosClusterRequest.cc
 	src/model/UpdateNacosClusterResult.cc
 	src/model/UpdateNacosConfigRequest.cc

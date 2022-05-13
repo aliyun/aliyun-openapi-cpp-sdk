@@ -70,6 +70,15 @@ void CreateEngineNamespaceRequest::setAcceptLanguage(const std::string &acceptLa
   setParameter(std::string("AcceptLanguage"), acceptLanguage);
 }
 
+std::string CreateEngineNamespaceRequest::getId() const {
+  return id_;
+}
+
+void CreateEngineNamespaceRequest::setId(const std::string &id) {
+  id_ = id;
+  setParameter(std::string("Id"), id);
+}
+
 std::string CreateEngineNamespaceRequest::getDesc() const {
   return desc_;
 }

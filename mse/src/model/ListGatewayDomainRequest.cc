@@ -20,7 +20,7 @@ using AlibabaCloud::Mse::Model::ListGatewayDomainRequest;
 
 ListGatewayDomainRequest::ListGatewayDomainRequest()
     : RpcServiceRequest("mse", "2019-05-31", "ListGatewayDomain") {
-  setMethod(HttpRequest::Method::Get);
+  setMethod(HttpRequest::Method::Post);
 }
 
 ListGatewayDomainRequest::~ListGatewayDomainRequest() {}
@@ -32,6 +32,15 @@ std::string ListGatewayDomainRequest::getGatewayUniqueId() const {
 void ListGatewayDomainRequest::setGatewayUniqueId(const std::string &gatewayUniqueId) {
   gatewayUniqueId_ = gatewayUniqueId;
   setParameter(std::string("GatewayUniqueId"), gatewayUniqueId);
+}
+
+std::string ListGatewayDomainRequest::getType() const {
+  return type_;
+}
+
+void ListGatewayDomainRequest::setType(const std::string &type) {
+  type_ = type;
+  setParameter(std::string("Type"), type);
 }
 
 std::string ListGatewayDomainRequest::getAcceptLanguage() const {

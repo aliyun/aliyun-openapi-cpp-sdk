@@ -61,6 +61,13 @@ void ListGatewayDomainResult::parse(const std::string &payload)
 			dataObject.gmtCreate = valueDataDomains["GmtCreate"].asString();
 		if(!valueDataDomains["GmtModified"].isNull())
 			dataObject.gmtModified = valueDataDomains["GmtModified"].asString();
+		if(!valueDataDomains["Status"].isNull())
+			dataObject.status = std::stoi(valueDataDomains["Status"].asString());
+		if(!valueDataDomains["Type"].isNull())
+			dataObject.type = valueDataDomains["Type"].asString();
+		auto commentNode = value["Comment"];
+		if(!commentNode["Status"].isNull())
+			dataObject.comment.status = commentNode["Status"].asString();
 		data_.push_back(dataObject);
 	}
 	if(!value["HttpStatusCode"].isNull())

@@ -25,6 +25,17 @@ AddServiceSourceRequest::AddServiceSourceRequest()
 
 AddServiceSourceRequest::~AddServiceSourceRequest() {}
 
+AddServiceSourceRequest::IngressOptionsRequest AddServiceSourceRequest::getIngressOptionsRequest() const {
+  return ingressOptionsRequest_;
+}
+
+void AddServiceSourceRequest::setIngressOptionsRequest(const AddServiceSourceRequest::IngressOptionsRequest &ingressOptionsRequest) {
+  ingressOptionsRequest_ = ingressOptionsRequest;
+  setParameter(std::string("IngressOptionsRequest") + ".EnableIngress", ingressOptionsRequest.enableIngress ? "true" : "false");
+  setParameter(std::string("IngressOptionsRequest") + ".WatchNamespace", ingressOptionsRequest.watchNamespace);
+  setParameter(std::string("IngressOptionsRequest") + ".IngressClass", ingressOptionsRequest.ingressClass);
+}
+
 std::string AddServiceSourceRequest::getGatewayUniqueId() const {
   return gatewayUniqueId_;
 }

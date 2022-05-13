@@ -45,6 +45,7 @@ namespace AlibabaCloud
 						std::string projectName;
 						bool logEnabled;
 					};
+					bool enableWaf;
 					bool disableHttp2Alpn;
 					TraceDetails traceDetails;
 					LogConfigDetails logConfigDetails;

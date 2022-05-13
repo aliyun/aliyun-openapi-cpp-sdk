@@ -20,7 +20,7 @@ using AlibabaCloud::Mse::Model::GetKubernetesSourceRequest;
 
 GetKubernetesSourceRequest::GetKubernetesSourceRequest()
     : RpcServiceRequest("mse", "2019-05-31", "GetKubernetesSource") {
-  setMethod(HttpRequest::Method::Get);
+  setMethod(HttpRequest::Method::Post);
 }
 
 GetKubernetesSourceRequest::~GetKubernetesSourceRequest() {}

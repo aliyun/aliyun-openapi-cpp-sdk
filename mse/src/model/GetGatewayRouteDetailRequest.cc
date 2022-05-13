@@ -20,7 +20,7 @@ using AlibabaCloud::Mse::Model::GetGatewayRouteDetailRequest;
 
 GetGatewayRouteDetailRequest::GetGatewayRouteDetailRequest()
     : RpcServiceRequest("mse", "2019-05-31", "GetGatewayRouteDetail") {
-  setMethod(HttpRequest::Method::Get);
+  setMethod(HttpRequest::Method::Post);
 }
 
 GetGatewayRouteDetailRequest::~GetGatewayRouteDetailRequest() {}

@@ -20,7 +20,7 @@ using AlibabaCloud::Mse::Model::GetGatewayDomainDetailRequest;
 
 GetGatewayDomainDetailRequest::GetGatewayDomainDetailRequest()
     : RpcServiceRequest("mse", "2019-05-31", "GetGatewayDomainDetail") {
-  setMethod(HttpRequest::Method::Get);
+  setMethod(HttpRequest::Method::Post);
 }
 
 GetGatewayDomainDetailRequest::~GetGatewayDomainDetailRequest() {}

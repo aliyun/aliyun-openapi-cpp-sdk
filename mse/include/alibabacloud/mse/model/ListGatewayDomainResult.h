@@ -34,7 +34,14 @@ namespace AlibabaCloud
 			public:
 				struct Domains
 				{
+					struct Comment
+					{
+						std::string status;
+					};
+					int status;
+					Comment comment;
 					std::string gmtCreate;
+					std::string type;
 					bool mustHttps;
 					std::string gmtModified;
 					std::string certIdentifier;

@@ -38,8 +38,12 @@ public:
 	void setExtraInfo(const std::string &extraInfo);
 	std::string getAppName() const;
 	void setAppName(const std::string &appName);
+	std::string getSwitchEnable() const;
+	void setSwitchEnable(const std::string &switchEnable);
 	std::string getAcceptLanguage() const;
 	void setAcceptLanguage(const std::string &acceptLanguage);
+	std::string getSentinelEnable() const;
+	void setSentinelEnable(const std::string &sentinelEnable);
 	std::string getRegion() const;
 	void setRegion(const std::string &region);
 
@@ -48,7 +52,9 @@ private:
 	std::string source_;
 	std::string extraInfo_;
 	std::string appName_;
+	std::string switchEnable_;
 	std::string acceptLanguage_;
+	std::string sentinelEnable_;
 	std::string region_;
 };
 } // namespace Model

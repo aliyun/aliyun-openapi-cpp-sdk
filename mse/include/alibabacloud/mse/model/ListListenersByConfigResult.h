@@ -34,6 +34,7 @@ namespace AlibabaCloud
 			public:
 				struct Listener
 				{
+					std::string status;
 					std::string ip;
 					std::string md5;
 				};

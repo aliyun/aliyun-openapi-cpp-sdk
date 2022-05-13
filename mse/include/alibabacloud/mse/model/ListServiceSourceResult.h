@@ -34,8 +34,15 @@ namespace AlibabaCloud
 			public:
 				struct Sources
 				{
+					struct IngressOptions
+					{
+						std::string ingressClass;
+						std::string watchNamespace;
+						bool enableIngress;
+					};
 					std::string type;
 					std::string gmtCreate;
+					IngressOptions ingressOptions;
 					std::string sourceUniqueId;
 					std::string address;
 					std::string gmtModified;

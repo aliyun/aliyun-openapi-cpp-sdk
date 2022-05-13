@@ -126,6 +126,8 @@ void QueryClusterDetailResult::parse(const std::string &payload)
 			instanceModelObject.healthStatus = dataNodeInstanceModelsInstanceModel["HealthStatus"].asString();
 		if(!dataNodeInstanceModelsInstanceModel["CreationTimestamp"].isNull())
 			instanceModelObject.creationTimestamp = dataNodeInstanceModelsInstanceModel["CreationTimestamp"].asString();
+		if(!dataNodeInstanceModelsInstanceModel["Zone"].isNull())
+			instanceModelObject.zone = dataNodeInstanceModelsInstanceModel["Zone"].asString();
 		data_.instanceModels.push_back(instanceModelObject);
 	}
 	if(!value["Message"].isNull())

@@ -34,6 +34,8 @@ public:
 	void setClusterId(const std::string &clusterId);
 	std::string getPath() const;
 	void setPath(const std::string &path);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
 	std::string getRequestPars() const;
 	void setRequestPars(const std::string &requestPars);
 	std::string getAcceptLanguage() const;
@@ -42,6 +44,7 @@ public:
 private:
 	std::string clusterId_;
 	std::string path_;
+	std::string instanceId_;
 	std::string requestPars_;
 	std::string acceptLanguage_;
 };

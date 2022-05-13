@@ -20,7 +20,7 @@ using AlibabaCloud::Mse::Model::GetBlackWhiteListRequest;
 
 GetBlackWhiteListRequest::GetBlackWhiteListRequest()
     : RpcServiceRequest("mse", "2019-05-31", "GetBlackWhiteList") {
-  setMethod(HttpRequest::Method::Get);
+  setMethod(HttpRequest::Method::Post);
 }
 
 GetBlackWhiteListRequest::~GetBlackWhiteListRequest() {}

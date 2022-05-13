@@ -36,6 +36,11 @@ namespace AlibabaCloud
 				{
 					struct Gateways
 					{
+						struct InitConfig
+						{
+							bool enableWaf;
+							bool supportWaf;
+						};
 						struct SlbItem
 						{
 							std::string slbId;
@@ -66,10 +71,12 @@ namespace AlibabaCloud
 						std::string gatewayType;
 						bool upgrade;
 						std::string name;
+						std::string appVersion;
 						std::string statusDesc;
 						bool armsOn;
 						std::vector<Gateways::InternetSlbItem> internetSlb;
 						int status;
+						bool supportWasm;
 						bool mustUpgrade;
 						std::string instanceId;
 						bool ahasOn;
@@ -79,6 +86,7 @@ namespace AlibabaCloud
 						std::string gmtCreate;
 						std::string latestVersion;
 						std::string chargeType;
+						InitConfig initConfig;
 						std::string region;
 						std::string primaryUser;
 						long id;

@@ -32,11 +32,14 @@ public:
 	~ListGatewayDomainRequest();
 	std::string getGatewayUniqueId() const;
 	void setGatewayUniqueId(const std::string &gatewayUniqueId);
+	std::string getType() const;
+	void setType(const std::string &type);
 	std::string getAcceptLanguage() const;
 	void setAcceptLanguage(const std::string &acceptLanguage);
 
 private:
 	std::string gatewayUniqueId_;
+	std::string type_;
 	std::string acceptLanguage_;
 };
 } // namespace Model

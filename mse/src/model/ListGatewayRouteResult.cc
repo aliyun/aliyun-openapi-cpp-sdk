@@ -80,6 +80,10 @@ void ListGatewayRouteResult::parse(const std::string &payload)
 			routesObject.domainName = dataNodeResultRoutes["DomainName"].asString();
 		if(!dataNodeResultRoutes["DestinationType"].isNull())
 			routesObject.destinationType = dataNodeResultRoutes["DestinationType"].asString();
+		if(!dataNodeResultRoutes["Type"].isNull())
+			routesObject.type = dataNodeResultRoutes["Type"].asString();
+		if(!dataNodeResultRoutes["EnableWaf"].isNull())
+			routesObject.enableWaf = dataNodeResultRoutes["EnableWaf"].asString();
 		auto allRouteServicesNode = dataNodeResultRoutes["RouteServices"]["RouteServicesItem"];
 		for (auto dataNodeResultRoutesRouteServicesRouteServicesItem : allRouteServicesNode)
 		{
@@ -149,6 +153,9 @@ void ListGatewayRouteResult::parse(const std::string &payload)
 			routesObject.redirect.host = redirectNode["Host"].asString();
 		if(!redirectNode["Path"].isNull())
 			routesObject.redirect.path = redirectNode["Path"].asString();
+		auto commentNode = value["Comment"];
+		if(!commentNode["Status"].isNull())
+			routesObject.comment.status = commentNode["Status"].asString();
 		auto allDomainIdList = value["DomainIdList"]["DomainIdList"];
 		for (auto value : allDomainIdList)
 			routesObject.domainIdList.push_back(value.asString());

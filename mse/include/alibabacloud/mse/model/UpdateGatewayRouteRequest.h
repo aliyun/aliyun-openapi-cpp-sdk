@@ -84,6 +84,8 @@ public:
 	void setGatewayId(long gatewayId);
 	int getRouteOrder() const;
 	void setRouteOrder(int routeOrder);
+	bool getEnableWaf() const;
+	void setEnableWaf(bool enableWaf);
 	std::vector<Services> getServices() const;
 	void setServices(const std::vector<Services> &services);
 	Predicates getPredicates() const;
@@ -104,6 +106,7 @@ private:
 	long id_;
 	long gatewayId_;
 	int routeOrder_;
+	bool enableWaf_;
 	std::vector<Services> services_;
 	Predicates predicates_;
 	RedirectJSON redirectJSON_;

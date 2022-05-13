@@ -61,6 +61,15 @@ void CreateApplicationRequest::setAppName(const std::string &appName) {
   setParameter(std::string("AppName"), appName);
 }
 
+std::string CreateApplicationRequest::getSwitchEnable() const {
+  return switchEnable_;
+}
+
+void CreateApplicationRequest::setSwitchEnable(const std::string &switchEnable) {
+  switchEnable_ = switchEnable;
+  setParameter(std::string("SwitchEnable"), switchEnable);
+}
+
 std::string CreateApplicationRequest::getAcceptLanguage() const {
   return acceptLanguage_;
 }
@@ -68,6 +77,15 @@ std::string CreateApplicationRequest::getAcceptLanguage() const {
 void CreateApplicationRequest::setAcceptLanguage(const std::string &acceptLanguage) {
   acceptLanguage_ = acceptLanguage;
   setParameter(std::string("AcceptLanguage"), acceptLanguage);
+}
+
+std::string CreateApplicationRequest::getSentinelEnable() const {
+  return sentinelEnable_;
+}
+
+void CreateApplicationRequest::setSentinelEnable(const std::string &sentinelEnable) {
+  sentinelEnable_ = sentinelEnable;
+  setParameter(std::string("SentinelEnable"), sentinelEnable);
 }
 
 std::string CreateApplicationRequest::getRegion() const {

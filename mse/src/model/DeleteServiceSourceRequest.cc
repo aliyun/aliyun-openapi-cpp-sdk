@@ -20,7 +20,7 @@ using AlibabaCloud::Mse::Model::DeleteServiceSourceRequest;
 
 DeleteServiceSourceRequest::DeleteServiceSourceRequest()
     : RpcServiceRequest("mse", "2019-05-31", "DeleteServiceSource") {
-  setMethod(HttpRequest::Method::Get);
+  setMethod(HttpRequest::Method::Post);
 }
 
 DeleteServiceSourceRequest::~DeleteServiceSourceRequest() {}

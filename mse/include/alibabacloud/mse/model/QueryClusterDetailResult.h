@@ -41,6 +41,7 @@ namespace AlibabaCloud
 						std::string internetIp;
 						std::string creationTimestamp;
 						std::string singleTunnelVip;
+						std::string zone;
 						std::string ip;
 						std::string healthStatus;
 					};

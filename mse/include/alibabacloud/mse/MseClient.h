@@ -40,16 +40,20 @@
 #include "model/AddMockRuleResult.h"
 #include "model/AddSSLCertRequest.h"
 #include "model/AddSSLCertResult.h"
+#include "model/AddSeataServerRequest.h"
+#include "model/AddSeataServerResult.h"
+#include "model/AddSecurityGroupRuleRequest.h"
+#include "model/AddSecurityGroupRuleResult.h"
 #include "model/AddServiceSourceRequest.h"
 #include "model/AddServiceSourceResult.h"
+#include "model/AddTestRequest.h"
+#include "model/AddTestResult.h"
 #include "model/ApplyGatewayRouteRequest.h"
 #include "model/ApplyGatewayRouteResult.h"
 #include "model/ApplyTagPoliciesRequest.h"
 #include "model/ApplyTagPoliciesResult.h"
 #include "model/CloneNacosConfigRequest.h"
 #include "model/CloneNacosConfigResult.h"
-#include "model/CreateAlarmRuleRequest.h"
-#include "model/CreateAlarmRuleResult.h"
 #include "model/CreateApplicationRequest.h"
 #include "model/CreateApplicationResult.h"
 #include "model/CreateClusterRequest.h"
@@ -66,10 +70,10 @@
 #include "model/CreateOrUpdateSwimmingLaneResult.h"
 #include "model/CreateOrUpdateSwimmingLaneGroupRequest.h"
 #include "model/CreateOrUpdateSwimmingLaneGroupResult.h"
+#include "model/CreateVGroupRequest.h"
+#include "model/CreateVGroupResult.h"
 #include "model/CreateZnodeRequest.h"
 #include "model/CreateZnodeResult.h"
-#include "model/DeleteAlarmRuleRequest.h"
-#include "model/DeleteAlarmRuleResult.h"
 #include "model/DeleteAuthResourceRequest.h"
 #include "model/DeleteAuthResourceResult.h"
 #include "model/DeleteClusterRequest.h"
@@ -82,6 +86,8 @@
 #include "model/DeleteGatewayDomainResult.h"
 #include "model/DeleteGatewayRouteRequest.h"
 #include "model/DeleteGatewayRouteResult.h"
+#include "model/DeleteGatewayServiceRequest.h"
+#include "model/DeleteGatewayServiceResult.h"
 #include "model/DeleteGatewayServiceVersionRequest.h"
 #include "model/DeleteGatewayServiceVersionResult.h"
 #include "model/DeleteGatewaySlbRequest.h"
@@ -94,18 +100,30 @@
 #include "model/DeleteNacosInstanceResult.h"
 #include "model/DeleteNacosServiceRequest.h"
 #include "model/DeleteNacosServiceResult.h"
+#include "model/DeleteSeataServerRequest.h"
+#include "model/DeleteSeataServerResult.h"
+#include "model/DeleteSecurityGroupRuleRequest.h"
+#include "model/DeleteSecurityGroupRuleResult.h"
 #include "model/DeleteServiceSourceRequest.h"
 #include "model/DeleteServiceSourceResult.h"
 #include "model/DeleteSwimmingLaneRequest.h"
 #include "model/DeleteSwimmingLaneResult.h"
 #include "model/DeleteSwimmingLaneGroupRequest.h"
 #include "model/DeleteSwimmingLaneGroupResult.h"
+#include "model/DeleteVGroupRequest.h"
+#include "model/DeleteVGroupResult.h"
 #include "model/DeleteZnodeRequest.h"
 #include "model/DeleteZnodeResult.h"
 #include "model/ExportNacosConfigRequest.h"
 #include "model/ExportNacosConfigResult.h"
+#include "model/GetAppMessageQueueRouteRequest.h"
+#include "model/GetAppMessageQueueRouteResult.h"
+#include "model/GetApplicationListRequest.h"
+#include "model/GetApplicationListResult.h"
 #include "model/GetBlackWhiteListRequest.h"
 #include "model/GetBlackWhiteListResult.h"
+#include "model/GetDashBoardUrlRequest.h"
+#include "model/GetDashBoardUrlResult.h"
 #include "model/GetEngineNamepaceRequest.h"
 #include "model/GetEngineNamepaceResult.h"
 #include "model/GetGatewayRequest.h"
@@ -146,14 +164,6 @@
 #include "model/ImportNacosConfigResult.h"
 #include "model/ImportServicesRequest.h"
 #include "model/ImportServicesResult.h"
-#include "model/ListAlarmContactGroupsRequest.h"
-#include "model/ListAlarmContactGroupsResult.h"
-#include "model/ListAlarmHistoriesRequest.h"
-#include "model/ListAlarmHistoriesResult.h"
-#include "model/ListAlarmItemsRequest.h"
-#include "model/ListAlarmItemsResult.h"
-#include "model/ListAlarmRulesRequest.h"
-#include "model/ListAlarmRulesResult.h"
 #include "model/ListAnsInstancesRequest.h"
 #include "model/ListAnsInstancesResult.h"
 #include "model/ListAnsServiceClustersRequest.h"
@@ -166,6 +176,8 @@
 #include "model/ListApplicationsWithTagRulesResult.h"
 #include "model/ListClusterConnectionTypesRequest.h"
 #include "model/ListClusterConnectionTypesResult.h"
+#include "model/ListClusterDetailFeatureRequest.h"
+#include "model/ListClusterDetailFeatureResult.h"
 #include "model/ListClusterTypesRequest.h"
 #include "model/ListClusterTypesResult.h"
 #include "model/ListClusterVersionsRequest.h"
@@ -188,6 +200,8 @@
 #include "model/ListGatewayServiceResult.h"
 #include "model/ListGatewaySlbRequest.h"
 #include "model/ListGatewaySlbResult.h"
+#include "model/ListInstancesRequest.h"
+#include "model/ListInstancesResult.h"
 #include "model/ListListenersByConfigRequest.h"
 #include "model/ListListenersByConfigResult.h"
 #include "model/ListListenersByIpRequest.h"
@@ -198,6 +212,10 @@
 #include "model/ListNacosHistoryConfigsResult.h"
 #include "model/ListSSLCertRequest.h"
 #include "model/ListSSLCertResult.h"
+#include "model/ListSecurityGroupRequest.h"
+#include "model/ListSecurityGroupResult.h"
+#include "model/ListSecurityGroupRuleRequest.h"
+#include "model/ListSecurityGroupRuleResult.h"
 #include "model/ListServiceSourceRequest.h"
 #include "model/ListServiceSourceResult.h"
 #include "model/ListZnodeChildrenRequest.h"
@@ -234,14 +252,16 @@
 #include "model/QuerySlbSpecResult.h"
 #include "model/QuerySwimmingLaneByIdRequest.h"
 #include "model/QuerySwimmingLaneByIdResult.h"
+#include "model/QueryUserVpcRequest.h"
+#include "model/QueryUserVpcResult.h"
 #include "model/QueryZnodeDetailRequest.h"
 #include "model/QueryZnodeDetailResult.h"
 #include "model/RestartClusterRequest.h"
 #include "model/RestartClusterResult.h"
+#include "model/RestartSeataServerRequest.h"
+#include "model/RestartSeataServerResult.h"
 #include "model/RetryClusterRequest.h"
 #include "model/RetryClusterResult.h"
-#include "model/ScalingClusterRequest.h"
-#include "model/ScalingClusterResult.h"
 #include "model/SelectGatewaySlbRequest.h"
 #include "model/SelectGatewaySlbResult.h"
 #include "model/UpdateAclRequest.h"
@@ -272,10 +292,16 @@
 #include "model/UpdateGatewayRouteRetryResult.h"
 #include "model/UpdateGatewayRouteTimeoutRequest.h"
 #include "model/UpdateGatewayRouteTimeoutResult.h"
+#include "model/UpdateGatewayRouteWafStatusRequest.h"
+#include "model/UpdateGatewayRouteWafStatusResult.h"
+#include "model/UpdateGatewayServiceTrafficPolicyRequest.h"
+#include "model/UpdateGatewayServiceTrafficPolicyResult.h"
 #include "model/UpdateGatewayServiceVersionRequest.h"
 #include "model/UpdateGatewayServiceVersionResult.h"
 #include "model/UpdateImageRequest.h"
 #include "model/UpdateImageResult.h"
+#include "model/UpdateMessageQueueRouteRequest.h"
+#include "model/UpdateMessageQueueRouteResult.h"
 #include "model/UpdateNacosClusterRequest.h"
 #include "model/UpdateNacosClusterResult.h"
 #include "model/UpdateNacosConfigRequest.h"
@@ -326,9 +352,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AddSSLCertResult> AddSSLCertOutcome;
 			typedef std::future<AddSSLCertOutcome> AddSSLCertOutcomeCallable;
 			typedef std::function<void(const MseClient*, const Model::AddSSLCertRequest&, const AddSSLCertOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddSSLCertAsyncHandler;
+			typedef Outcome<Error, Model::AddSeataServerResult> AddSeataServerOutcome;
+			typedef std::future<AddSeataServerOutcome> AddSeataServerOutcomeCallable;
+			typedef std::function<void(const MseClient*, const Model::AddSeataServerRequest&, const AddSeataServerOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddSeataServerAsyncHandler;
+			typedef Outcome<Error, Model::AddSecurityGroupRuleResult> AddSecurityGroupRuleOutcome;
+			typedef std::future<AddSecurityGroupRuleOutcome> AddSecurityGroupRuleOutcomeCallable;
+			typedef std::function<void(const MseClient*, const Model::AddSecurityGroupRuleRequest&, const AddSecurityGroupRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddSecurityGroupRuleAsyncHandler;
 			typedef Outcome<Error, Model::AddServiceSourceResult> AddServiceSourceOutcome;
 			typedef std::future<AddServiceSourceOutcome> AddServiceSourceOutcomeCallable;
 			typedef std::function<void(const MseClient*, const Model::AddServiceSourceRequest&, const AddServiceSourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddServiceSourceAsyncHandler;
+			typedef Outcome<Error, Model::AddTestResult> AddTestOutcome;
+			typedef std::future<AddTestOutcome> AddTestOutcomeCallable;
+			typedef std::function<void(const MseClient*, const Model::AddTestRequest&, const AddTestOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddTestAsyncHandler;
 			typedef Outcome<Error, Model::ApplyGatewayRouteResult> ApplyGatewayRouteOutcome;
 			typedef std::future<ApplyGatewayRouteOutcome> ApplyGatewayRouteOutcomeCallable;
 			typedef std::function<void(const MseClient*, const Model::ApplyGatewayRouteRequest&, const ApplyGatewayRouteOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ApplyGatewayRouteAsyncHandler;
@@ -338,9 +373,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CloneNacosConfigResult> CloneNacosConfigOutcome;
 			typedef std::future<CloneNacosConfigOutcome> CloneNacosConfigOutcomeCallable;
 			typedef std::function<void(const MseClient*, const Model::CloneNacosConfigRequest&, const CloneNacosConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CloneNacosConfigAsyncHandler;
-			typedef Outcome<Error, Model::CreateAlarmRuleResult> CreateAlarmRuleOutcome;
-			typedef std::future<CreateAlarmRuleOutcome> CreateAlarmRuleOutcomeCallable;
-			typedef std::function<void(const MseClient*, const Model::CreateAlarmRuleRequest&, const CreateAlarmRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateAlarmRuleAsyncHandler;
 			typedef Outcome<Error, Model::CreateApplicationResult> CreateApplicationOutcome;
 			typedef std::future<CreateApplicationOutcome> CreateApplicationOutcomeCallable;
 			typedef std::function<void(const MseClient*, const Model::CreateApplicationRequest&, const CreateApplicationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateApplicationAsyncHandler;
@@ -365,12 +397,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateOrUpdateSwimmingLaneGroupResult> CreateOrUpdateSwimmingLaneGroupOutcome;
 			typedef std::future<CreateOrUpdateSwimmingLaneGroupOutcome> CreateOrUpdateSwimmingLaneGroupOutcomeCallable;
 			typedef std::function<void(const MseClient*, const Model::CreateOrUpdateSwimmingLaneGroupRequest&, const CreateOrUpdateSwimmingLaneGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateOrUpdateSwimmingLaneGroupAsyncHandler;
+			typedef Outcome<Error, Model::CreateVGroupResult> CreateVGroupOutcome;
+			typedef std::future<CreateVGroupOutcome> CreateVGroupOutcomeCallable;
+			typedef std::function<void(const MseClient*, const Model::CreateVGroupRequest&, const CreateVGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateVGroupAsyncHandler;
 			typedef Outcome<Error, Model::CreateZnodeResult> CreateZnodeOutcome;
 			typedef std::future<CreateZnodeOutcome> CreateZnodeOutcomeCallable;
 			typedef std::function<void(const MseClient*, const Model::CreateZnodeRequest&, const CreateZnodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateZnodeAsyncHandler;
-			typedef Outcome<Error, Model::DeleteAlarmRuleResult> DeleteAlarmRuleOutcome;
-			typedef std::future<DeleteAlarmRuleOutcome> DeleteAlarmRuleOutcomeCallable;
-			typedef std::function<void(const MseClient*, const Model::DeleteAlarmRuleRequest&, const DeleteAlarmRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAlarmRuleAsyncHandler;
 			typedef Outcome<Error, Model::DeleteAuthResourceResult> DeleteAuthResourceOutcome;
 			typedef std::future<DeleteAuthResourceOutcome> DeleteAuthResourceOutcomeCallable;
 			typedef std::function<void(const MseClient*, const Model::DeleteAuthResourceRequest&, const DeleteAuthResourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAuthResourceAsyncHandler;
@@ -389,6 +421,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteGatewayRouteResult> DeleteGatewayRouteOutcome;
 			typedef std::future<DeleteGatewayRouteOutcome> DeleteGatewayRouteOutcomeCallable;
 			typedef std::function<void(const MseClient*, const Model::DeleteGatewayRouteRequest&, const DeleteGatewayRouteOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteGatewayRouteAsyncHandler;
+			typedef Outcome<Error, Model::DeleteGatewayServiceResult> DeleteGatewayServiceOutcome;
+			typedef std::future<DeleteGatewayServiceOutcome> DeleteGatewayServiceOutcomeCallable;
+			typedef std::function<void(const MseClient*, const Model::DeleteGatewayServiceRequest&, const DeleteGatewayServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteGatewayServiceAsyncHandler;
 			typedef Outcome<Error, Model::DeleteGatewayServiceVersionResult> DeleteGatewayServiceVersionOutcome;
 			typedef std::future<DeleteGatewayServiceVersionOutcome> DeleteGatewayServiceVersionOutcomeCallable;
 			typedef std::function<void(const MseClient*, const Model::DeleteGatewayServiceVersionRequest&, const DeleteGatewayServiceVersionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteGatewayServiceVersionAsyncHandler;
@@ -407,6 +442,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteNacosServiceResult> DeleteNacosServiceOutcome;
 			typedef std::future<DeleteNacosServiceOutcome> DeleteNacosServiceOutcomeCallable;
 			typedef std::function<void(const MseClient*, const Model::DeleteNacosServiceRequest&, const DeleteNacosServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNacosServiceAsyncHandler;
+			typedef Outcome<Error, Model::DeleteSeataServerResult> DeleteSeataServerOutcome;
+			typedef std::future<DeleteSeataServerOutcome> DeleteSeataServerOutcomeCallable;
+			typedef std::function<void(const MseClient*, const Model::DeleteSeataServerRequest&, const DeleteSeataServerOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSeataServerAsyncHandler;
+			typedef Outcome<Error, Model::DeleteSecurityGroupRuleResult> DeleteSecurityGroupRuleOutcome;
+			typedef std::future<DeleteSecurityGroupRuleOutcome> DeleteSecurityGroupRuleOutcomeCallable;
+			typedef std::function<void(const MseClient*, const Model::DeleteSecurityGroupRuleRequest&, const DeleteSecurityGroupRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSecurityGroupRuleAsyncHandler;
 			typedef Outcome<Error, Model::DeleteServiceSourceResult> DeleteServiceSourceOutcome;
 			typedef std::future<DeleteServiceSourceOutcome> DeleteServiceSourceOutcomeCallable;
 			typedef std::function<void(const MseClient*, const Model::DeleteServiceSourceRequest&, const DeleteServiceSourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteServiceSourceAsyncHandler;
@@ -416,15 +457,27 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteSwimmingLaneGroupResult> DeleteSwimmingLaneGroupOutcome;
 			typedef std::future<DeleteSwimmingLaneGroupOutcome> DeleteSwimmingLaneGroupOutcomeCallable;
 			typedef std::function<void(const MseClient*, const Model::DeleteSwimmingLaneGroupRequest&, const DeleteSwimmingLaneGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSwimmingLaneGroupAsyncHandler;
+			typedef Outcome<Error, Model::DeleteVGroupResult> DeleteVGroupOutcome;
+			typedef std::future<DeleteVGroupOutcome> DeleteVGroupOutcomeCallable;
+			typedef std::function<void(const MseClient*, const Model::DeleteVGroupRequest&, const DeleteVGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteVGroupAsyncHandler;
 			typedef Outcome<Error, Model::DeleteZnodeResult> DeleteZnodeOutcome;
 			typedef std::future<DeleteZnodeOutcome> DeleteZnodeOutcomeCallable;
 			typedef std::function<void(const MseClient*, const Model::DeleteZnodeRequest&, const DeleteZnodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteZnodeAsyncHandler;
 			typedef Outcome<Error, Model::ExportNacosConfigResult> ExportNacosConfigOutcome;
 			typedef std::future<ExportNacosConfigOutcome> ExportNacosConfigOutcomeCallable;
 			typedef std::function<void(const MseClient*, const Model::ExportNacosConfigRequest&, const ExportNacosConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ExportNacosConfigAsyncHandler;
+			typedef Outcome<Error, Model::GetAppMessageQueueRouteResult> GetAppMessageQueueRouteOutcome;
+			typedef std::future<GetAppMessageQueueRouteOutcome> GetAppMessageQueueRouteOutcomeCallable;
+			typedef std::function<void(const MseClient*, const Model::GetAppMessageQueueRouteRequest&, const GetAppMessageQueueRouteOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAppMessageQueueRouteAsyncHandler;
+			typedef Outcome<Error, Model::GetApplicationListResult> GetApplicationListOutcome;
+			typedef std::future<GetApplicationListOutcome> GetApplicationListOutcomeCallable;
+			typedef std::function<void(const MseClient*, const Model::GetApplicationListRequest&, const GetApplicationListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetApplicationListAsyncHandler;
 			typedef Outcome<Error, Model::GetBlackWhiteListResult> GetBlackWhiteListOutcome;
 			typedef std::future<GetBlackWhiteListOutcome> GetBlackWhiteListOutcomeCallable;
 			typedef std::function<void(const MseClient*, const Model::GetBlackWhiteListRequest&, const GetBlackWhiteListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetBlackWhiteListAsyncHandler;
+			typedef Outcome<Error, Model::GetDashBoardUrlResult> GetDashBoardUrlOutcome;
+			typedef std::future<GetDashBoardUrlOutcome> GetDashBoardUrlOutcomeCallable;
+			typedef std::function<void(const MseClient*, const Model::GetDashBoardUrlRequest&, const GetDashBoardUrlOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDashBoardUrlAsyncHandler;
 			typedef Outcome<Error, Model::GetEngineNamepaceResult> GetEngineNamepaceOutcome;
 			typedef std::future<GetEngineNamepaceOutcome> GetEngineNamepaceOutcomeCallable;
 			typedef std::function<void(const MseClient*, const Model::GetEngineNamepaceRequest&, const GetEngineNamepaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetEngineNamepaceAsyncHandler;
@@ -485,18 +538,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ImportServicesResult> ImportServicesOutcome;
 			typedef std::future<ImportServicesOutcome> ImportServicesOutcomeCallable;
 			typedef std::function<void(const MseClient*, const Model::ImportServicesRequest&, const ImportServicesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ImportServicesAsyncHandler;
-			typedef Outcome<Error, Model::ListAlarmContactGroupsResult> ListAlarmContactGroupsOutcome;
-			typedef std::future<ListAlarmContactGroupsOutcome> ListAlarmContactGroupsOutcomeCallable;
-			typedef std::function<void(const MseClient*, const Model::ListAlarmContactGroupsRequest&, const ListAlarmContactGroupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAlarmContactGroupsAsyncHandler;
-			typedef Outcome<Error, Model::ListAlarmHistoriesResult> ListAlarmHistoriesOutcome;
-			typedef std::future<ListAlarmHistoriesOutcome> ListAlarmHistoriesOutcomeCallable;
-			typedef std::function<void(const MseClient*, const Model::ListAlarmHistoriesRequest&, const ListAlarmHistoriesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAlarmHistoriesAsyncHandler;
-			typedef Outcome<Error, Model::ListAlarmItemsResult> ListAlarmItemsOutcome;
-			typedef std::future<ListAlarmItemsOutcome> ListAlarmItemsOutcomeCallable;
-			typedef std::function<void(const MseClient*, const Model::ListAlarmItemsRequest&, const ListAlarmItemsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAlarmItemsAsyncHandler;
-			typedef Outcome<Error, Model::ListAlarmRulesResult> ListAlarmRulesOutcome;
-			typedef std::future<ListAlarmRulesOutcome> ListAlarmRulesOutcomeCallable;
-			typedef std::function<void(const MseClient*, const Model::ListAlarmRulesRequest&, const ListAlarmRulesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAlarmRulesAsyncHandler;
 			typedef Outcome<Error, Model::ListAnsInstancesResult> ListAnsInstancesOutcome;
 			typedef std::future<ListAnsInstancesOutcome> ListAnsInstancesOutcomeCallable;
 			typedef std::function<void(const MseClient*, const Model::ListAnsInstancesRequest&, const ListAnsInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAnsInstancesAsyncHandler;
@@ -515,6 +556,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListClusterConnectionTypesResult> ListClusterConnectionTypesOutcome;
 			typedef std::future<ListClusterConnectionTypesOutcome> ListClusterConnectionTypesOutcomeCallable;
 			typedef std::function<void(const MseClient*, const Model::ListClusterConnectionTypesRequest&, const ListClusterConnectionTypesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListClusterConnectionTypesAsyncHandler;
+			typedef Outcome<Error, Model::ListClusterDetailFeatureResult> ListClusterDetailFeatureOutcome;
+			typedef std::future<ListClusterDetailFeatureOutcome> ListClusterDetailFeatureOutcomeCallable;
+			typedef std::function<void(const MseClient*, const Model::ListClusterDetailFeatureRequest&, const ListClusterDetailFeatureOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListClusterDetailFeatureAsyncHandler;
 			typedef Outcome<Error, Model::ListClusterTypesResult> ListClusterTypesOutcome;
 			typedef std::future<ListClusterTypesOutcome> ListClusterTypesOutcomeCallable;
 			typedef std::function<void(const MseClient*, const Model::ListClusterTypesRequest&, const ListClusterTypesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListClusterTypesAsyncHandler;
@@ -548,6 +592,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListGatewaySlbResult> ListGatewaySlbOutcome;
 			typedef std::future<ListGatewaySlbOutcome> ListGatewaySlbOutcomeCallable;
 			typedef std::function<void(const MseClient*, const Model::ListGatewaySlbRequest&, const ListGatewaySlbOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListGatewaySlbAsyncHandler;
+			typedef Outcome<Error, Model::ListInstancesResult> ListInstancesOutcome;
+			typedef std::future<ListInstancesOutcome> ListInstancesOutcomeCallable;
+			typedef std::function<void(const MseClient*, const Model::ListInstancesRequest&, const ListInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListInstancesAsyncHandler;
 			typedef Outcome<Error, Model::ListListenersByConfigResult> ListListenersByConfigOutcome;
 			typedef std::future<ListListenersByConfigOutcome> ListListenersByConfigOutcomeCallable;
 			typedef std::function<void(const MseClient*, const Model::ListListenersByConfigRequest&, const ListListenersByConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListListenersByConfigAsyncHandler;
@@ -563,6 +610,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListSSLCertResult> ListSSLCertOutcome;
 			typedef std::future<ListSSLCertOutcome> ListSSLCertOutcomeCallable;
 			typedef std::function<void(const MseClient*, const Model::ListSSLCertRequest&, const ListSSLCertOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListSSLCertAsyncHandler;
+			typedef Outcome<Error, Model::ListSecurityGroupResult> ListSecurityGroupOutcome;
+			typedef std::future<ListSecurityGroupOutcome> ListSecurityGroupOutcomeCallable;
+			typedef std::function<void(const MseClient*, const Model::ListSecurityGroupRequest&, const ListSecurityGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListSecurityGroupAsyncHandler;
+			typedef Outcome<Error, Model::ListSecurityGroupRuleResult> ListSecurityGroupRuleOutcome;
+			typedef std::future<ListSecurityGroupRuleOutcome> ListSecurityGroupRuleOutcomeCallable;
+			typedef std::function<void(const MseClient*, const Model::ListSecurityGroupRuleRequest&, const ListSecurityGroupRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListSecurityGroupRuleAsyncHandler;
 			typedef Outcome<Error, Model::ListServiceSourceResult> ListServiceSourceOutcome;
 			typedef std::future<ListServiceSourceOutcome> ListServiceSourceOutcomeCallable;
 			typedef std::function<void(const MseClient*, const Model::ListServiceSourceRequest&, const ListServiceSourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListServiceSourceAsyncHandler;
@@ -617,18 +670,21 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QuerySwimmingLaneByIdResult> QuerySwimmingLaneByIdOutcome;
 			typedef std::future<QuerySwimmingLaneByIdOutcome> QuerySwimmingLaneByIdOutcomeCallable;
 			typedef std::function<void(const MseClient*, const Model::QuerySwimmingLaneByIdRequest&, const QuerySwimmingLaneByIdOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QuerySwimmingLaneByIdAsyncHandler;
+			typedef Outcome<Error, Model::QueryUserVpcResult> QueryUserVpcOutcome;
+			typedef std::future<QueryUserVpcOutcome> QueryUserVpcOutcomeCallable;
+			typedef std::function<void(const MseClient*, const Model::QueryUserVpcRequest&, const QueryUserVpcOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryUserVpcAsyncHandler;
 			typedef Outcome<Error, Model::QueryZnodeDetailResult> QueryZnodeDetailOutcome;
 			typedef std::future<QueryZnodeDetailOutcome> QueryZnodeDetailOutcomeCallable;
 			typedef std::function<void(const MseClient*, const Model::QueryZnodeDetailRequest&, const QueryZnodeDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryZnodeDetailAsyncHandler;
 			typedef Outcome<Error, Model::RestartClusterResult> RestartClusterOutcome;
 			typedef std::future<RestartClusterOutcome> RestartClusterOutcomeCallable;
 			typedef std::function<void(const MseClient*, const Model::RestartClusterRequest&, const RestartClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RestartClusterAsyncHandler;
+			typedef Outcome<Error, Model::RestartSeataServerResult> RestartSeataServerOutcome;
+			typedef std::future<RestartSeataServerOutcome> RestartSeataServerOutcomeCallable;
+			typedef std::function<void(const MseClient*, const Model::RestartSeataServerRequest&, const RestartSeataServerOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RestartSeataServerAsyncHandler;
 			typedef Outcome<Error, Model::RetryClusterResult> RetryClusterOutcome;
 			typedef std::future<RetryClusterOutcome> RetryClusterOutcomeCallable;
 			typedef std::function<void(const MseClient*, const Model::RetryClusterRequest&, const RetryClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RetryClusterAsyncHandler;
-			typedef Outcome<Error, Model::ScalingClusterResult> ScalingClusterOutcome;
-			typedef std::future<ScalingClusterOutcome> ScalingClusterOutcomeCallable;
-			typedef std::function<void(const MseClient*, const Model::ScalingClusterRequest&, const ScalingClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ScalingClusterAsyncHandler;
 			typedef Outcome<Error, Model::SelectGatewaySlbResult> SelectGatewaySlbOutcome;
 			typedef std::future<SelectGatewaySlbOutcome> SelectGatewaySlbOutcomeCallable;
 			typedef std::function<void(const MseClient*, const Model::SelectGatewaySlbRequest&, const SelectGatewaySlbOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SelectGatewaySlbAsyncHandler;
@@ -674,12 +730,21 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateGatewayRouteTimeoutResult> UpdateGatewayRouteTimeoutOutcome;
 			typedef std::future<UpdateGatewayRouteTimeoutOutcome> UpdateGatewayRouteTimeoutOutcomeCallable;
 			typedef std::function<void(const MseClient*, const Model::UpdateGatewayRouteTimeoutRequest&, const UpdateGatewayRouteTimeoutOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateGatewayRouteTimeoutAsyncHandler;
+			typedef Outcome<Error, Model::UpdateGatewayRouteWafStatusResult> UpdateGatewayRouteWafStatusOutcome;
+			typedef std::future<UpdateGatewayRouteWafStatusOutcome> UpdateGatewayRouteWafStatusOutcomeCallable;
+			typedef std::function<void(const MseClient*, const Model::UpdateGatewayRouteWafStatusRequest&, const UpdateGatewayRouteWafStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateGatewayRouteWafStatusAsyncHandler;
+			typedef Outcome<Error, Model::UpdateGatewayServiceTrafficPolicyResult> UpdateGatewayServiceTrafficPolicyOutcome;
+			typedef std::future<UpdateGatewayServiceTrafficPolicyOutcome> UpdateGatewayServiceTrafficPolicyOutcomeCallable;
+			typedef std::function<void(const MseClient*, const Model::UpdateGatewayServiceTrafficPolicyRequest&, const UpdateGatewayServiceTrafficPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateGatewayServiceTrafficPolicyAsyncHandler;
 			typedef Outcome<Error, Model::UpdateGatewayServiceVersionResult> UpdateGatewayServiceVersionOutcome;
 			typedef std::future<UpdateGatewayServiceVersionOutcome> UpdateGatewayServiceVersionOutcomeCallable;
 			typedef std::function<void(const MseClient*, const Model::UpdateGatewayServiceVersionRequest&, const UpdateGatewayServiceVersionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateGatewayServiceVersionAsyncHandler;
 			typedef Outcome<Error, Model::UpdateImageResult> UpdateImageOutcome;
 			typedef std::future<UpdateImageOutcome> UpdateImageOutcomeCallable;
 			typedef std::function<void(const MseClient*, const Model::UpdateImageRequest&, const UpdateImageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateImageAsyncHandler;
+			typedef Outcome<Error, Model::UpdateMessageQueueRouteResult> UpdateMessageQueueRouteOutcome;
+			typedef std::future<UpdateMessageQueueRouteOutcome> UpdateMessageQueueRouteOutcomeCallable;
+			typedef std::function<void(const MseClient*, const Model::UpdateMessageQueueRouteRequest&, const UpdateMessageQueueRouteOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateMessageQueueRouteAsyncHandler;
 			typedef Outcome<Error, Model::UpdateNacosClusterResult> UpdateNacosClusterOutcome;
 			typedef std::future<UpdateNacosClusterOutcome> UpdateNacosClusterOutcomeCallable;
 			typedef std::function<void(const MseClient*, const Model::UpdateNacosClusterRequest&, const UpdateNacosClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateNacosClusterAsyncHandler;
@@ -733,9 +798,18 @@ namespace AlibabaCloud
 			AddSSLCertOutcome addSSLCert(const Model::AddSSLCertRequest &request)const;
 			void addSSLCertAsync(const Model::AddSSLCertRequest& request, const AddSSLCertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddSSLCertOutcomeCallable addSSLCertCallable(const Model::AddSSLCertRequest& request) const;
+			AddSeataServerOutcome addSeataServer(const Model::AddSeataServerRequest &request)const;
+			void addSeataServerAsync(const Model::AddSeataServerRequest& request, const AddSeataServerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddSeataServerOutcomeCallable addSeataServerCallable(const Model::AddSeataServerRequest& request) const;
+			AddSecurityGroupRuleOutcome addSecurityGroupRule(const Model::AddSecurityGroupRuleRequest &request)const;
+			void addSecurityGroupRuleAsync(const Model::AddSecurityGroupRuleRequest& request, const AddSecurityGroupRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddSecurityGroupRuleOutcomeCallable addSecurityGroupRuleCallable(const Model::AddSecurityGroupRuleRequest& request) const;
 			AddServiceSourceOutcome addServiceSource(const Model::AddServiceSourceRequest &request)const;
 			void addServiceSourceAsync(const Model::AddServiceSourceRequest& request, const AddServiceSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddServiceSourceOutcomeCallable addServiceSourceCallable(const Model::AddServiceSourceRequest& request) const;
+			AddTestOutcome addTest(const Model::AddTestRequest &request)const;
+			void addTestAsync(const Model::AddTestRequest& request, const AddTestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddTestOutcomeCallable addTestCallable(const Model::AddTestRequest& request) const;
 			ApplyGatewayRouteOutcome applyGatewayRoute(const Model::ApplyGatewayRouteRequest &request)const;
 			void applyGatewayRouteAsync(const Model::ApplyGatewayRouteRequest& request, const ApplyGatewayRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ApplyGatewayRouteOutcomeCallable applyGatewayRouteCallable(const Model::ApplyGatewayRouteRequest& request) const;
@@ -745,9 +819,6 @@ namespace AlibabaCloud
 			CloneNacosConfigOutcome cloneNacosConfig(const Model::CloneNacosConfigRequest &request)const;
 			void cloneNacosConfigAsync(const Model::CloneNacosConfigRequest& request, const CloneNacosConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CloneNacosConfigOutcomeCallable cloneNacosConfigCallable(const Model::CloneNacosConfigRequest& request) const;
-			CreateAlarmRuleOutcome createAlarmRule(const Model::CreateAlarmRuleRequest &request)const;
-			void createAlarmRuleAsync(const Model::CreateAlarmRuleRequest& request, const CreateAlarmRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CreateAlarmRuleOutcomeCallable createAlarmRuleCallable(const Model::CreateAlarmRuleRequest& request) const;
 			CreateApplicationOutcome createApplication(const Model::CreateApplicationRequest &request)const;
 			void createApplicationAsync(const Model::CreateApplicationRequest& request, const CreateApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateApplicationOutcomeCallable createApplicationCallable(const Model::CreateApplicationRequest& request) const;
@@ -772,12 +843,12 @@ namespace AlibabaCloud
 			CreateOrUpdateSwimmingLaneGroupOutcome createOrUpdateSwimmingLaneGroup(const Model::CreateOrUpdateSwimmingLaneGroupRequest &request)const;
 			void createOrUpdateSwimmingLaneGroupAsync(const Model::CreateOrUpdateSwimmingLaneGroupRequest& request, const CreateOrUpdateSwimmingLaneGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateOrUpdateSwimmingLaneGroupOutcomeCallable createOrUpdateSwimmingLaneGroupCallable(const Model::CreateOrUpdateSwimmingLaneGroupRequest& request) const;
+			CreateVGroupOutcome createVGroup(const Model::CreateVGroupRequest &request)const;
+			void createVGroupAsync(const Model::CreateVGroupRequest& request, const CreateVGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateVGroupOutcomeCallable createVGroupCallable(const Model::CreateVGroupRequest& request) const;
 			CreateZnodeOutcome createZnode(const Model::CreateZnodeRequest &request)const;
 			void createZnodeAsync(const Model::CreateZnodeRequest& request, const CreateZnodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateZnodeOutcomeCallable createZnodeCallable(const Model::CreateZnodeRequest& request) const;
-			DeleteAlarmRuleOutcome deleteAlarmRule(const Model::DeleteAlarmRuleRequest &request)const;
-			void deleteAlarmRuleAsync(const Model::DeleteAlarmRuleRequest& request, const DeleteAlarmRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DeleteAlarmRuleOutcomeCallable deleteAlarmRuleCallable(const Model::DeleteAlarmRuleRequest& request) const;
 			DeleteAuthResourceOutcome deleteAuthResource(const Model::DeleteAuthResourceRequest &request)const;
 			void deleteAuthResourceAsync(const Model::DeleteAuthResourceRequest& request, const DeleteAuthResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteAuthResourceOutcomeCallable deleteAuthResourceCallable(const Model::DeleteAuthResourceRequest& request) const;
@@ -796,6 +867,9 @@ namespace AlibabaCloud
 			DeleteGatewayRouteOutcome deleteGatewayRoute(const Model::DeleteGatewayRouteRequest &request)const;
 			void deleteGatewayRouteAsync(const Model::DeleteGatewayRouteRequest& request, const DeleteGatewayRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteGatewayRouteOutcomeCallable deleteGatewayRouteCallable(const Model::DeleteGatewayRouteRequest& request) const;
+			DeleteGatewayServiceOutcome deleteGatewayService(const Model::DeleteGatewayServiceRequest &request)const;
+			void deleteGatewayServiceAsync(const Model::DeleteGatewayServiceRequest& request, const DeleteGatewayServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteGatewayServiceOutcomeCallable deleteGatewayServiceCallable(const Model::DeleteGatewayServiceRequest& request) const;
 			DeleteGatewayServiceVersionOutcome deleteGatewayServiceVersion(const Model::DeleteGatewayServiceVersionRequest &request)const;
 			void deleteGatewayServiceVersionAsync(const Model::DeleteGatewayServiceVersionRequest& request, const DeleteGatewayServiceVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteGatewayServiceVersionOutcomeCallable deleteGatewayServiceVersionCallable(const Model::DeleteGatewayServiceVersionRequest& request) const;
@@ -814,6 +888,12 @@ namespace AlibabaCloud
 			DeleteNacosServiceOutcome deleteNacosService(const Model::DeleteNacosServiceRequest &request)const;
 			void deleteNacosServiceAsync(const Model::DeleteNacosServiceRequest& request, const DeleteNacosServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteNacosServiceOutcomeCallable deleteNacosServiceCallable(const Model::DeleteNacosServiceRequest& request) const;
+			DeleteSeataServerOutcome deleteSeataServer(const Model::DeleteSeataServerRequest &request)const;
+			void deleteSeataServerAsync(const Model::DeleteSeataServerRequest& request, const DeleteSeataServerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteSeataServerOutcomeCallable deleteSeataServerCallable(const Model::DeleteSeataServerRequest& request) const;
+			DeleteSecurityGroupRuleOutcome deleteSecurityGroupRule(const Model::DeleteSecurityGroupRuleRequest &request)const;
+			void deleteSecurityGroupRuleAsync(const Model::DeleteSecurityGroupRuleRequest& request, const DeleteSecurityGroupRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteSecurityGroupRuleOutcomeCallable deleteSecurityGroupRuleCallable(const Model::DeleteSecurityGroupRuleRequest& request) const;
 			DeleteServiceSourceOutcome deleteServiceSource(const Model::DeleteServiceSourceRequest &request)const;
 			void deleteServiceSourceAsync(const Model::DeleteServiceSourceRequest& request, const DeleteServiceSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteServiceSourceOutcomeCallable deleteServiceSourceCallable(const Model::DeleteServiceSourceRequest& request) const;
@@ -823,15 +903,27 @@ namespace AlibabaCloud
 			DeleteSwimmingLaneGroupOutcome deleteSwimmingLaneGroup(const Model::DeleteSwimmingLaneGroupRequest &request)const;
 			void deleteSwimmingLaneGroupAsync(const Model::DeleteSwimmingLaneGroupRequest& request, const DeleteSwimmingLaneGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteSwimmingLaneGroupOutcomeCallable deleteSwimmingLaneGroupCallable(const Model::DeleteSwimmingLaneGroupRequest& request) const;
+			DeleteVGroupOutcome deleteVGroup(const Model::DeleteVGroupRequest &request)const;
+			void deleteVGroupAsync(const Model::DeleteVGroupRequest& request, const DeleteVGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteVGroupOutcomeCallable deleteVGroupCallable(const Model::DeleteVGroupRequest& request) const;
 			DeleteZnodeOutcome deleteZnode(const Model::DeleteZnodeRequest &request)const;
 			void deleteZnodeAsync(const Model::DeleteZnodeRequest& request, const DeleteZnodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteZnodeOutcomeCallable deleteZnodeCallable(const Model::DeleteZnodeRequest& request) const;
 			ExportNacosConfigOutcome exportNacosConfig(const Model::ExportNacosConfigRequest &request)const;
 			void exportNacosConfigAsync(const Model::ExportNacosConfigRequest& request, const ExportNacosConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ExportNacosConfigOutcomeCallable exportNacosConfigCallable(const Model::ExportNacosConfigRequest& request) const;
+			GetAppMessageQueueRouteOutcome getAppMessageQueueRoute(const Model::GetAppMessageQueueRouteRequest &request)const;
+			void getAppMessageQueueRouteAsync(const Model::GetAppMessageQueueRouteRequest& request, const GetAppMessageQueueRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetAppMessageQueueRouteOutcomeCallable getAppMessageQueueRouteCallable(const Model::GetAppMessageQueueRouteRequest& request) const;
+			GetApplicationListOutcome getApplicationList(const Model::GetApplicationListRequest &request)const;
+			void getApplicationListAsync(const Model::GetApplicationListRequest& request, const GetApplicationListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetApplicationListOutcomeCallable getApplicationListCallable(const Model::GetApplicationListRequest& request) const;
 			GetBlackWhiteListOutcome getBlackWhiteList(const Model::GetBlackWhiteListRequest &request)const;
 			void getBlackWhiteListAsync(const Model::GetBlackWhiteListRequest& request, const GetBlackWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetBlackWhiteListOutcomeCallable getBlackWhiteListCallable(const Model::GetBlackWhiteListRequest& request) const;
+			GetDashBoardUrlOutcome getDashBoardUrl(const Model::GetDashBoardUrlRequest &request)const;
+			void getDashBoardUrlAsync(const Model::GetDashBoardUrlRequest& request, const GetDashBoardUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetDashBoardUrlOutcomeCallable getDashBoardUrlCallable(const Model::GetDashBoardUrlRequest& request) const;
 			GetEngineNamepaceOutcome getEngineNamepace(const Model::GetEngineNamepaceRequest &request)const;
 			void getEngineNamepaceAsync(const Model::GetEngineNamepaceRequest& request, const GetEngineNamepaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetEngineNamepaceOutcomeCallable getEngineNamepaceCallable(const Model::GetEngineNamepaceRequest& request) const;
@@ -892,18 +984,6 @@ namespace AlibabaCloud
 			ImportServicesOutcome importServices(const Model::ImportServicesRequest &request)const;
 			void importServicesAsync(const Model::ImportServicesRequest& request, const ImportServicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ImportServicesOutcomeCallable importServicesCallable(const Model::ImportServicesRequest& request) const;
-			ListAlarmContactGroupsOutcome listAlarmContactGroups(const Model::ListAlarmContactGroupsRequest &request)const;
-			void listAlarmContactGroupsAsync(const Model::ListAlarmContactGroupsRequest& request, const ListAlarmContactGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListAlarmContactGroupsOutcomeCallable listAlarmContactGroupsCallable(const Model::ListAlarmContactGroupsRequest& request) const;
-			ListAlarmHistoriesOutcome listAlarmHistories(const Model::ListAlarmHistoriesRequest &request)const;
-			void listAlarmHistoriesAsync(const Model::ListAlarmHistoriesRequest& request, const ListAlarmHistoriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListAlarmHistoriesOutcomeCallable listAlarmHistoriesCallable(const Model::ListAlarmHistoriesRequest& request) const;
-			ListAlarmItemsOutcome listAlarmItems(const Model::ListAlarmItemsRequest &request)const;
-			void listAlarmItemsAsync(const Model::ListAlarmItemsRequest& request, const ListAlarmItemsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListAlarmItemsOutcomeCallable listAlarmItemsCallable(const Model::ListAlarmItemsRequest& request) const;
-			ListAlarmRulesOutcome listAlarmRules(const Model::ListAlarmRulesRequest &request)const;
-			void listAlarmRulesAsync(const Model::ListAlarmRulesRequest& request, const ListAlarmRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListAlarmRulesOutcomeCallable listAlarmRulesCallable(const Model::ListAlarmRulesRequest& request) const;
 			ListAnsInstancesOutcome listAnsInstances(const Model::ListAnsInstancesRequest &request)const;
 			void listAnsInstancesAsync(const Model::ListAnsInstancesRequest& request, const ListAnsInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListAnsInstancesOutcomeCallable listAnsInstancesCallable(const Model::ListAnsInstancesRequest& request) const;
@@ -922,6 +1002,9 @@ namespace AlibabaCloud
 			ListClusterConnectionTypesOutcome listClusterConnectionTypes(const Model::ListClusterConnectionTypesRequest &request)const;
 			void listClusterConnectionTypesAsync(const Model::ListClusterConnectionTypesRequest& request, const ListClusterConnectionTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListClusterConnectionTypesOutcomeCallable listClusterConnectionTypesCallable(const Model::ListClusterConnectionTypesRequest& request) const;
+			ListClusterDetailFeatureOutcome listClusterDetailFeature(const Model::ListClusterDetailFeatureRequest &request)const;
+			void listClusterDetailFeatureAsync(const Model::ListClusterDetailFeatureRequest& request, const ListClusterDetailFeatureAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListClusterDetailFeatureOutcomeCallable listClusterDetailFeatureCallable(const Model::ListClusterDetailFeatureRequest& request) const;
 			ListClusterTypesOutcome listClusterTypes(const Model::ListClusterTypesRequest &request)const;
 			void listClusterTypesAsync(const Model::ListClusterTypesRequest& request, const ListClusterTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListClusterTypesOutcomeCallable listClusterTypesCallable(const Model::ListClusterTypesRequest& request) const;
@@ -955,6 +1038,9 @@ namespace AlibabaCloud
 			ListGatewaySlbOutcome listGatewaySlb(const Model::ListGatewaySlbRequest &request)const;
 			void listGatewaySlbAsync(const Model::ListGatewaySlbRequest& request, const ListGatewaySlbAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListGatewaySlbOutcomeCallable listGatewaySlbCallable(const Model::ListGatewaySlbRequest& request) const;
+			ListInstancesOutcome listInstances(const Model::ListInstancesRequest &request)const;
+			void listInstancesAsync(const Model::ListInstancesRequest& request, const ListInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListInstancesOutcomeCallable listInstancesCallable(const Model::ListInstancesRequest& request) const;
 			ListListenersByConfigOutcome listListenersByConfig(const Model::ListListenersByConfigRequest &request)const;
 			void listListenersByConfigAsync(const Model::ListListenersByConfigRequest& request, const ListListenersByConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListListenersByConfigOutcomeCallable listListenersByConfigCallable(const Model::ListListenersByConfigRequest& request) const;
@@ -970,6 +1056,12 @@ namespace AlibabaCloud
 			ListSSLCertOutcome listSSLCert(const Model::ListSSLCertRequest &request)const;
 			void listSSLCertAsync(const Model::ListSSLCertRequest& request, const ListSSLCertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListSSLCertOutcomeCallable listSSLCertCallable(const Model::ListSSLCertRequest& request) const;
+			ListSecurityGroupOutcome listSecurityGroup(const Model::ListSecurityGroupRequest &request)const;
+			void listSecurityGroupAsync(const Model::ListSecurityGroupRequest& request, const ListSecurityGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListSecurityGroupOutcomeCallable listSecurityGroupCallable(const Model::ListSecurityGroupRequest& request) const;
+			ListSecurityGroupRuleOutcome listSecurityGroupRule(const Model::ListSecurityGroupRuleRequest &request)const;
+			void listSecurityGroupRuleAsync(const Model::ListSecurityGroupRuleRequest& request, const ListSecurityGroupRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListSecurityGroupRuleOutcomeCallable listSecurityGroupRuleCallable(const Model::ListSecurityGroupRuleRequest& request) const;
 			ListServiceSourceOutcome listServiceSource(const Model::ListServiceSourceRequest &request)const;
 			void listServiceSourceAsync(const Model::ListServiceSourceRequest& request, const ListServiceSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListServiceSourceOutcomeCallable listServiceSourceCallable(const Model::ListServiceSourceRequest& request) const;
@@ -1024,18 +1116,21 @@ namespace AlibabaCloud
 			QuerySwimmingLaneByIdOutcome querySwimmingLaneById(const Model::QuerySwimmingLaneByIdRequest &request)const;
 			void querySwimmingLaneByIdAsync(const Model::QuerySwimmingLaneByIdRequest& request, const QuerySwimmingLaneByIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QuerySwimmingLaneByIdOutcomeCallable querySwimmingLaneByIdCallable(const Model::QuerySwimmingLaneByIdRequest& request) const;
+			QueryUserVpcOutcome queryUserVpc(const Model::QueryUserVpcRequest &request)const;
+			void queryUserVpcAsync(const Model::QueryUserVpcRequest& request, const QueryUserVpcAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryUserVpcOutcomeCallable queryUserVpcCallable(const Model::QueryUserVpcRequest& request) const;
 			QueryZnodeDetailOutcome queryZnodeDetail(const Model::QueryZnodeDetailRequest &request)const;
 			void queryZnodeDetailAsync(const Model::QueryZnodeDetailRequest& request, const QueryZnodeDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryZnodeDetailOutcomeCallable queryZnodeDetailCallable(const Model::QueryZnodeDetailRequest& request) const;
 			RestartClusterOutcome restartCluster(const Model::RestartClusterRequest &request)const;
 			void restartClusterAsync(const Model::RestartClusterRequest& request, const RestartClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RestartClusterOutcomeCallable restartClusterCallable(const Model::RestartClusterRequest& request) const;
+			RestartSeataServerOutcome restartSeataServer(const Model::RestartSeataServerRequest &request)const;
+			void restartSeataServerAsync(const Model::RestartSeataServerRequest& request, const RestartSeataServerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RestartSeataServerOutcomeCallable restartSeataServerCallable(const Model::RestartSeataServerRequest& request) const;
 			RetryClusterOutcome retryCluster(const Model::RetryClusterRequest &request)const;
 			void retryClusterAsync(const Model::RetryClusterRequest& request, const RetryClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RetryClusterOutcomeCallable retryClusterCallable(const Model::RetryClusterRequest& request) const;
-			ScalingClusterOutcome scalingCluster(const Model::ScalingClusterRequest &request)const;
-			void scalingClusterAsync(const Model::ScalingClusterRequest& request, const ScalingClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ScalingClusterOutcomeCallable scalingClusterCallable(const Model::ScalingClusterRequest& request) const;
 			SelectGatewaySlbOutcome selectGatewaySlb(const Model::SelectGatewaySlbRequest &request)const;
 			void selectGatewaySlbAsync(const Model::SelectGatewaySlbRequest& request, const SelectGatewaySlbAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SelectGatewaySlbOutcomeCallable selectGatewaySlbCallable(const Model::SelectGatewaySlbRequest& request) const;
@@ -1081,12 +1176,21 @@ namespace AlibabaCloud
 			UpdateGatewayRouteTimeoutOutcome updateGatewayRouteTimeout(const Model::UpdateGatewayRouteTimeoutRequest &request)const;
 			void updateGatewayRouteTimeoutAsync(const Model::UpdateGatewayRouteTimeoutRequest& request, const UpdateGatewayRouteTimeoutAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateGatewayRouteTimeoutOutcomeCallable updateGatewayRouteTimeoutCallable(const Model::UpdateGatewayRouteTimeoutRequest& request) const;
+			UpdateGatewayRouteWafStatusOutcome updateGatewayRouteWafStatus(const Model::UpdateGatewayRouteWafStatusRequest &request)const;
+			void updateGatewayRouteWafStatusAsync(const Model::UpdateGatewayRouteWafStatusRequest& request, const UpdateGatewayRouteWafStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateGatewayRouteWafStatusOutcomeCallable updateGatewayRouteWafStatusCallable(const Model::UpdateGatewayRouteWafStatusRequest& request) const;
+			UpdateGatewayServiceTrafficPolicyOutcome updateGatewayServiceTrafficPolicy(const Model::UpdateGatewayServiceTrafficPolicyRequest &request)const;
+			void updateGatewayServiceTrafficPolicyAsync(const Model::UpdateGatewayServiceTrafficPolicyRequest& request, const UpdateGatewayServiceTrafficPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateGatewayServiceTrafficPolicyOutcomeCallable updateGatewayServiceTrafficPolicyCallable(const Model::UpdateGatewayServiceTrafficPolicyRequest& request) const;
 			UpdateGatewayServiceVersionOutcome updateGatewayServiceVersion(const Model::UpdateGatewayServiceVersionRequest &request)const;
 			void updateGatewayServiceVersionAsync(const Model::UpdateGatewayServiceVersionRequest& request, const UpdateGatewayServiceVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateGatewayServiceVersionOutcomeCallable updateGatewayServiceVersionCallable(const Model::UpdateGatewayServiceVersionRequest& request) const;
 			UpdateImageOutcome updateImage(const Model::UpdateImageRequest &request)const;
 			void updateImageAsync(const Model::UpdateImageRequest& request, const UpdateImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateImageOutcomeCallable updateImageCallable(const Model::UpdateImageRequest& request) const;
+			UpdateMessageQueueRouteOutcome updateMessageQueueRoute(const Model::UpdateMessageQueueRouteRequest &request)const;
+			void updateMessageQueueRouteAsync(const Model::UpdateMessageQueueRouteRequest& request, const UpdateMessageQueueRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateMessageQueueRouteOutcomeCallable updateMessageQueueRouteCallable(const Model::UpdateMessageQueueRouteRequest& request) const;
 			UpdateNacosClusterOutcome updateNacosCluster(const Model::UpdateNacosClusterRequest &request)const;
 			void updateNacosClusterAsync(const Model::UpdateNacosClusterRequest& request, const UpdateNacosClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateNacosClusterOutcomeCallable updateNacosClusterCallable(const Model::UpdateNacosClusterRequest& request) const;

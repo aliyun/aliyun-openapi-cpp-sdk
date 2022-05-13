@@ -20,7 +20,7 @@ using AlibabaCloud::Mse::Model::DeleteGatewayDomainRequest;
 
 DeleteGatewayDomainRequest::DeleteGatewayDomainRequest()
     : RpcServiceRequest("mse", "2019-05-31", "DeleteGatewayDomain") {
-  setMethod(HttpRequest::Method::Get);
+  setMethod(HttpRequest::Method::Post);
 }
 
 DeleteGatewayDomainRequest::~DeleteGatewayDomainRequest() {}
