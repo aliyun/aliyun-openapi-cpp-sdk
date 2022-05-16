@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_QUALITYCHECK_MODEL_GETRULEDIMENSIONREQUEST_H_
-#define ALIBABACLOUD_QUALITYCHECK_MODEL_GETRULEDIMENSIONREQUEST_H_
+#ifndef ALIBABACLOUD_QUALITYCHECK_MODEL_LISTQUALITYCHECKSCHEMEREQUEST_H_
+#define ALIBABACLOUD_QUALITYCHECK_MODEL_LISTQUALITYCHECKSCHEMEREQUEST_H_
 
 #include <alibabacloud/qualitycheck/QualitycheckExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,10 +26,10 @@
 namespace AlibabaCloud {
 namespace Qualitycheck {
 namespace Model {
-class ALIBABACLOUD_QUALITYCHECK_EXPORT GetRuleDimensionRequest : public RpcServiceRequest {
+class ALIBABACLOUD_QUALITYCHECK_EXPORT ListQualityCheckSchemeRequest : public RpcServiceRequest {
 public:
-	GetRuleDimensionRequest();
-	~GetRuleDimensionRequest();
+	ListQualityCheckSchemeRequest();
+	~ListQualityCheckSchemeRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getJsonStr() const;
@@ -45,4 +45,4 @@ private:
 } // namespace Model
 } // namespace Qualitycheck
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_QUALITYCHECK_MODEL_GETRULEDIMENSIONREQUEST_H_
+#endif // !ALIBABACLOUD_QUALITYCHECK_MODEL_LISTQUALITYCHECKSCHEMEREQUEST_H_

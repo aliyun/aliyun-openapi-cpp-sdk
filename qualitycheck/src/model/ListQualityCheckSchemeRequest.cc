@@ -14,40 +14,40 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/qualitycheck/model/UpdateOnPurchaseSuccessRequest.h>
+#include <alibabacloud/qualitycheck/model/ListQualityCheckSchemeRequest.h>
 
-using AlibabaCloud::Qualitycheck::Model::UpdateOnPurchaseSuccessRequest;
+using AlibabaCloud::Qualitycheck::Model::ListQualityCheckSchemeRequest;
 
-UpdateOnPurchaseSuccessRequest::UpdateOnPurchaseSuccessRequest()
-    : RpcServiceRequest("qualitycheck", "2019-01-15", "UpdateOnPurchaseSuccess") {
+ListQualityCheckSchemeRequest::ListQualityCheckSchemeRequest()
+    : RpcServiceRequest("qualitycheck", "2019-01-15", "ListQualityCheckScheme") {
   setMethod(HttpRequest::Method::Post);
 }
 
-UpdateOnPurchaseSuccessRequest::~UpdateOnPurchaseSuccessRequest() {}
+ListQualityCheckSchemeRequest::~ListQualityCheckSchemeRequest() {}
 
-long UpdateOnPurchaseSuccessRequest::getResourceOwnerId() const {
+long ListQualityCheckSchemeRequest::getResourceOwnerId() const {
   return resourceOwnerId_;
 }
 
-void UpdateOnPurchaseSuccessRequest::setResourceOwnerId(long resourceOwnerId) {
+void ListQualityCheckSchemeRequest::setResourceOwnerId(long resourceOwnerId) {
   resourceOwnerId_ = resourceOwnerId;
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string UpdateOnPurchaseSuccessRequest::getJsonStr() const {
+std::string ListQualityCheckSchemeRequest::getJsonStr() const {
   return jsonStr_;
 }
 
-void UpdateOnPurchaseSuccessRequest::setJsonStr(const std::string &jsonStr) {
+void ListQualityCheckSchemeRequest::setJsonStr(const std::string &jsonStr) {
   jsonStr_ = jsonStr;
   setParameter(std::string("JsonStr"), jsonStr);
 }
 
-std::string UpdateOnPurchaseSuccessRequest::getAccessKeyId() const {
+std::string ListQualityCheckSchemeRequest::getAccessKeyId() const {
   return accessKeyId_;
 }
 
-void UpdateOnPurchaseSuccessRequest::setAccessKeyId(const std::string &accessKeyId) {
+void ListQualityCheckSchemeRequest::setAccessKeyId(const std::string &accessKeyId) {
   accessKeyId_ = accessKeyId;
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }

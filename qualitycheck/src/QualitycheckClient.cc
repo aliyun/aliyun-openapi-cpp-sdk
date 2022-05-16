@@ -159,42 +159,6 @@ QualitycheckClient::AddThesaurusForApiOutcomeCallable QualitycheckClient::addThe
 	return task->get_future();
 }
 
-QualitycheckClient::AddUploadDataSetOutcome QualitycheckClient::addUploadDataSet(const AddUploadDataSetRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return AddUploadDataSetOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return AddUploadDataSetOutcome(AddUploadDataSetResult(outcome.result()));
-	else
-		return AddUploadDataSetOutcome(outcome.error());
-}
-
-void QualitycheckClient::addUploadDataSetAsync(const AddUploadDataSetRequest& request, const AddUploadDataSetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, addUploadDataSet(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-QualitycheckClient::AddUploadDataSetOutcomeCallable QualitycheckClient::addUploadDataSetCallable(const AddUploadDataSetRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<AddUploadDataSetOutcome()>>(
-			[this, request]()
-			{
-			return this->addUploadDataSet(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 QualitycheckClient::AssignReviewerOutcome QualitycheckClient::assignReviewer(const AssignReviewerRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -231,42 +195,6 @@ QualitycheckClient::AssignReviewerOutcomeCallable QualitycheckClient::assignRevi
 	return task->get_future();
 }
 
-QualitycheckClient::ConfigDataSetOutcome QualitycheckClient::configDataSet(const ConfigDataSetRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ConfigDataSetOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ConfigDataSetOutcome(ConfigDataSetResult(outcome.result()));
-	else
-		return ConfigDataSetOutcome(outcome.error());
-}
-
-void QualitycheckClient::configDataSetAsync(const ConfigDataSetRequest& request, const ConfigDataSetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, configDataSet(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-QualitycheckClient::ConfigDataSetOutcomeCallable QualitycheckClient::configDataSetCallable(const ConfigDataSetRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ConfigDataSetOutcome()>>(
-			[this, request]()
-			{
-			return this->configDataSet(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 QualitycheckClient::CreateAsrVocabOutcome QualitycheckClient::createAsrVocab(const CreateAsrVocabRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -297,42 +225,6 @@ QualitycheckClient::CreateAsrVocabOutcomeCallable QualitycheckClient::createAsrV
 			[this, request]()
 			{
 			return this->createAsrVocab(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-QualitycheckClient::CreateRuleOutcome QualitycheckClient::createRule(const CreateRuleRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateRuleOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateRuleOutcome(CreateRuleResult(outcome.result()));
-	else
-		return CreateRuleOutcome(outcome.error());
-}
-
-void QualitycheckClient::createRuleAsync(const CreateRuleRequest& request, const CreateRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createRule(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-QualitycheckClient::CreateRuleOutcomeCallable QualitycheckClient::createRuleCallable(const CreateRuleRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateRuleOutcome()>>(
-			[this, request]()
-			{
-			return this->createRule(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1311,42 +1203,6 @@ QualitycheckClient::GetResultToReviewOutcomeCallable QualitycheckClient::getResu
 	return task->get_future();
 }
 
-QualitycheckClient::GetReviewInfoOutcome QualitycheckClient::getReviewInfo(const GetReviewInfoRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetReviewInfoOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetReviewInfoOutcome(GetReviewInfoResult(outcome.result()));
-	else
-		return GetReviewInfoOutcome(outcome.error());
-}
-
-void QualitycheckClient::getReviewInfoAsync(const GetReviewInfoRequest& request, const GetReviewInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getReviewInfo(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-QualitycheckClient::GetReviewInfoOutcomeCallable QualitycheckClient::getReviewInfoCallable(const GetReviewInfoRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetReviewInfoOutcome()>>(
-			[this, request]()
-			{
-			return this->getReviewInfo(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 QualitycheckClient::GetRuleOutcome QualitycheckClient::getRule(const GetRuleRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1455,42 +1311,6 @@ QualitycheckClient::GetRuleDetailOutcomeCallable QualitycheckClient::getRuleDeta
 	return task->get_future();
 }
 
-QualitycheckClient::GetRuleDimensionOutcome QualitycheckClient::getRuleDimension(const GetRuleDimensionRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetRuleDimensionOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetRuleDimensionOutcome(GetRuleDimensionResult(outcome.result()));
-	else
-		return GetRuleDimensionOutcome(outcome.error());
-}
-
-void QualitycheckClient::getRuleDimensionAsync(const GetRuleDimensionRequest& request, const GetRuleDimensionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getRuleDimension(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-QualitycheckClient::GetRuleDimensionOutcomeCallable QualitycheckClient::getRuleDimensionCallable(const GetRuleDimensionRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetRuleDimensionOutcome()>>(
-			[this, request]()
-			{
-			return this->getRuleDimension(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 QualitycheckClient::GetScoreInfoOutcome QualitycheckClient::getScoreInfo(const GetScoreInfoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1593,78 +1413,6 @@ QualitycheckClient::GetSyncResultOutcomeCallable QualitycheckClient::getSyncResu
 			[this, request]()
 			{
 			return this->getSyncResult(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-QualitycheckClient::GetTaskFileResultListOutcome QualitycheckClient::getTaskFileResultList(const GetTaskFileResultListRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetTaskFileResultListOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetTaskFileResultListOutcome(GetTaskFileResultListResult(outcome.result()));
-	else
-		return GetTaskFileResultListOutcome(outcome.error());
-}
-
-void QualitycheckClient::getTaskFileResultListAsync(const GetTaskFileResultListRequest& request, const GetTaskFileResultListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getTaskFileResultList(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-QualitycheckClient::GetTaskFileResultListOutcomeCallable QualitycheckClient::getTaskFileResultListCallable(const GetTaskFileResultListRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetTaskFileResultListOutcome()>>(
-			[this, request]()
-			{
-			return this->getTaskFileResultList(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-QualitycheckClient::GetTaskRuleListOutcome QualitycheckClient::getTaskRuleList(const GetTaskRuleListRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetTaskRuleListOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetTaskRuleListOutcome(GetTaskRuleListResult(outcome.result()));
-	else
-		return GetTaskRuleListOutcome(outcome.error());
-}
-
-void QualitycheckClient::getTaskRuleListAsync(const GetTaskRuleListRequest& request, const GetTaskRuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getTaskRuleList(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-QualitycheckClient::GetTaskRuleListOutcomeCallable QualitycheckClient::getTaskRuleListCallable(const GetTaskRuleListRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetTaskRuleListOutcome()>>(
-			[this, request]()
-			{
-			return this->getTaskRuleList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1887,42 +1635,6 @@ QualitycheckClient::ListAsrVocabOutcomeCallable QualitycheckClient::listAsrVocab
 	return task->get_future();
 }
 
-QualitycheckClient::ListDataSetTaskOutcome QualitycheckClient::listDataSetTask(const ListDataSetTaskRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListDataSetTaskOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListDataSetTaskOutcome(ListDataSetTaskResult(outcome.result()));
-	else
-		return ListDataSetTaskOutcome(outcome.error());
-}
-
-void QualitycheckClient::listDataSetTaskAsync(const ListDataSetTaskRequest& request, const ListDataSetTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listDataSetTask(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-QualitycheckClient::ListDataSetTaskOutcomeCallable QualitycheckClient::listDataSetTaskCallable(const ListDataSetTaskRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListDataSetTaskOutcome()>>(
-			[this, request]()
-			{
-			return this->listDataSetTask(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 QualitycheckClient::ListHotWordsTasksOutcome QualitycheckClient::listHotWordsTasks(const ListHotWordsTasksRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1989,6 +1701,42 @@ QualitycheckClient::ListPrecisionTaskOutcomeCallable QualitycheckClient::listPre
 			[this, request]()
 			{
 			return this->listPrecisionTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+QualitycheckClient::ListQualityCheckSchemeOutcome QualitycheckClient::listQualityCheckScheme(const ListQualityCheckSchemeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListQualityCheckSchemeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListQualityCheckSchemeOutcome(ListQualityCheckSchemeResult(outcome.result()));
+	else
+		return ListQualityCheckSchemeOutcome(outcome.error());
+}
+
+void QualitycheckClient::listQualityCheckSchemeAsync(const ListQualityCheckSchemeRequest& request, const ListQualityCheckSchemeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listQualityCheckScheme(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+QualitycheckClient::ListQualityCheckSchemeOutcomeCallable QualitycheckClient::listQualityCheckSchemeCallable(const ListQualityCheckSchemeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListQualityCheckSchemeOutcome()>>(
+			[this, request]()
+			{
+			return this->listQualityCheckScheme(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2211,42 +1959,6 @@ QualitycheckClient::ListWarningConfigOutcomeCallable QualitycheckClient::listWar
 	return task->get_future();
 }
 
-QualitycheckClient::RemoveAndGetTaskRulesOutcome QualitycheckClient::removeAndGetTaskRules(const RemoveAndGetTaskRulesRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return RemoveAndGetTaskRulesOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return RemoveAndGetTaskRulesOutcome(RemoveAndGetTaskRulesResult(outcome.result()));
-	else
-		return RemoveAndGetTaskRulesOutcome(outcome.error());
-}
-
-void QualitycheckClient::removeAndGetTaskRulesAsync(const RemoveAndGetTaskRulesRequest& request, const RemoveAndGetTaskRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, removeAndGetTaskRules(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-QualitycheckClient::RemoveAndGetTaskRulesOutcomeCallable QualitycheckClient::removeAndGetTaskRulesCallable(const RemoveAndGetTaskRulesRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<RemoveAndGetTaskRulesOutcome()>>(
-			[this, request]()
-			{
-			return this->removeAndGetTaskRules(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 QualitycheckClient::RestartAsrTaskOutcome QualitycheckClient::restartAsrTask(const RestartAsrTaskRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2277,42 +1989,6 @@ QualitycheckClient::RestartAsrTaskOutcomeCallable QualitycheckClient::restartAsr
 			[this, request]()
 			{
 			return this->restartAsrTask(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-QualitycheckClient::ReviewSingleResultByIdOutcome QualitycheckClient::reviewSingleResultById(const ReviewSingleResultByIdRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ReviewSingleResultByIdOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ReviewSingleResultByIdOutcome(ReviewSingleResultByIdResult(outcome.result()));
-	else
-		return ReviewSingleResultByIdOutcome(outcome.error());
-}
-
-void QualitycheckClient::reviewSingleResultByIdAsync(const ReviewSingleResultByIdRequest& request, const ReviewSingleResultByIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, reviewSingleResultById(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-QualitycheckClient::ReviewSingleResultByIdOutcomeCallable QualitycheckClient::reviewSingleResultByIdCallable(const ReviewSingleResultByIdRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ReviewSingleResultByIdOutcome()>>(
-			[this, request]()
-			{
-			return this->reviewSingleResultById(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2385,42 +2061,6 @@ QualitycheckClient::SubmitComplaintOutcomeCallable QualitycheckClient::submitCom
 			[this, request]()
 			{
 			return this->submitComplaint(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-QualitycheckClient::SubmitCustomizationConfigOutcome QualitycheckClient::submitCustomizationConfig(const SubmitCustomizationConfigRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SubmitCustomizationConfigOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SubmitCustomizationConfigOutcome(SubmitCustomizationConfigResult(outcome.result()));
-	else
-		return SubmitCustomizationConfigOutcome(outcome.error());
-}
-
-void QualitycheckClient::submitCustomizationConfigAsync(const SubmitCustomizationConfigRequest& request, const SubmitCustomizationConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, submitCustomizationConfig(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-QualitycheckClient::SubmitCustomizationConfigOutcomeCallable QualitycheckClient::submitCustomizationConfigCallable(const SubmitCustomizationConfigRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SubmitCustomizationConfigOutcome()>>(
-			[this, request]()
-			{
-			return this->submitCustomizationConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2571,42 +2211,6 @@ QualitycheckClient::SyncQualityCheckOutcomeCallable QualitycheckClient::syncQual
 	return task->get_future();
 }
 
-QualitycheckClient::TestRuleOutcome QualitycheckClient::testRule(const TestRuleRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return TestRuleOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return TestRuleOutcome(TestRuleResult(outcome.result()));
-	else
-		return TestRuleOutcome(outcome.error());
-}
-
-void QualitycheckClient::testRuleAsync(const TestRuleRequest& request, const TestRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, testRule(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-QualitycheckClient::TestRuleOutcomeCallable QualitycheckClient::testRuleCallable(const TestRuleRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<TestRuleOutcome()>>(
-			[this, request]()
-			{
-			return this->testRule(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 QualitycheckClient::UpdateAsrVocabOutcome QualitycheckClient::updateAsrVocab(const UpdateAsrVocabRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2637,42 +2241,6 @@ QualitycheckClient::UpdateAsrVocabOutcomeCallable QualitycheckClient::updateAsrV
 			[this, request]()
 			{
 			return this->updateAsrVocab(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-QualitycheckClient::UpdateOnPurchaseSuccessOutcome QualitycheckClient::updateOnPurchaseSuccess(const UpdateOnPurchaseSuccessRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return UpdateOnPurchaseSuccessOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return UpdateOnPurchaseSuccessOutcome(UpdateOnPurchaseSuccessResult(outcome.result()));
-	else
-		return UpdateOnPurchaseSuccessOutcome(outcome.error());
-}
-
-void QualitycheckClient::updateOnPurchaseSuccessAsync(const UpdateOnPurchaseSuccessRequest& request, const UpdateOnPurchaseSuccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, updateOnPurchaseSuccess(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-QualitycheckClient::UpdateOnPurchaseSuccessOutcomeCallable QualitycheckClient::updateOnPurchaseSuccessCallable(const UpdateOnPurchaseSuccessRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<UpdateOnPurchaseSuccessOutcome()>>(
-			[this, request]()
-			{
-			return this->updateOnPurchaseSuccess(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
