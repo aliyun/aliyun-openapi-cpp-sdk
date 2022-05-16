@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,44 +17,38 @@
 #ifndef ALIBABACLOUD_SAE_MODEL_LISTTAGRESOURCESREQUEST_H_
 #define ALIBABACLOUD_SAE_MODEL_LISTTAGRESOURCESREQUEST_H_
 
+#include <alibabacloud/sae/SaeExport.h>
+#include <alibabacloud/core/RoaServiceRequest.h>
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RoaServiceRequest.h>
-#include <alibabacloud/sae/SaeExport.h>
+#include <map>
 
-namespace AlibabaCloud
-{
-	namespace Sae
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_SAE_EXPORT ListTagResourcesRequest : public RoaServiceRequest
-			{
+namespace AlibabaCloud {
+namespace Sae {
+namespace Model {
+class ALIBABACLOUD_SAE_EXPORT ListTagResourcesRequest : public RoaServiceRequest {
+public:
+	ListTagResourcesRequest();
+	~ListTagResourcesRequest();
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
+	std::string getNextToken() const;
+	void setNextToken(const std::string &nextToken);
+	std::string getResourceType() const;
+	void setResourceType(const std::string &resourceType);
+	std::string getResourceIds() const;
+	void setResourceIds(const std::string &resourceIds);
+	std::string getTags() const;
+	void setTags(const std::string &tags);
 
-			public:
-				ListTagResourcesRequest();
-				~ListTagResourcesRequest();
-
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getNextToken()const;
-				void setNextToken(const std::string& nextToken);
-				std::string getResourceType()const;
-				void setResourceType(const std::string& resourceType);
-				std::string getResourceIds()const;
-				void setResourceIds(const std::string& resourceIds);
-				std::string getTags()const;
-				void setTags(const std::string& tags);
-
-            private:
-				std::string regionId_;
-				std::string nextToken_;
-				std::string resourceType_;
-				std::string resourceIds_;
-				std::string tags_;
-
-			};
-		}
-	}
-}
+private:
+	std::string regionId_;
+	std::string nextToken_;
+	std::string resourceType_;
+	std::string resourceIds_;
+	std::string tags_;
+};
+} // namespace Model
+} // namespace Sae
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_SAE_MODEL_LISTTAGRESOURCESREQUEST_H_

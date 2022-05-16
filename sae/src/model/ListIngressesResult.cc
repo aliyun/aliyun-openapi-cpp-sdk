@@ -44,34 +44,38 @@ void ListIngressesResult::parse(const std::string &payload)
 	for (auto dataNodeIngressListIngress : allIngressListNode)
 	{
 		Data::Ingress ingressObject;
-		if(!dataNodeIngressListIngress["Id"].isNull())
-			ingressObject.id = std::stol(dataNodeIngressListIngress["Id"].asString());
-		if(!dataNodeIngressListIngress["Name"].isNull())
-			ingressObject.name = dataNodeIngressListIngress["Name"].asString();
-		if(!dataNodeIngressListIngress["NamespaceId"].isNull())
-			ingressObject.namespaceId = dataNodeIngressListIngress["NamespaceId"].asString();
 		if(!dataNodeIngressListIngress["SlbId"].isNull())
 			ingressObject.slbId = dataNodeIngressListIngress["SlbId"].asString();
-		if(!dataNodeIngressListIngress["ListenerPort"].isNull())
-			ingressObject.listenerPort = dataNodeIngressListIngress["ListenerPort"].asString();
-		if(!dataNodeIngressListIngress["CertId"].isNull())
-			ingressObject.certId = dataNodeIngressListIngress["CertId"].asString();
+		if(!dataNodeIngressListIngress["NamespaceId"].isNull())
+			ingressObject.namespaceId = dataNodeIngressListIngress["NamespaceId"].asString();
 		if(!dataNodeIngressListIngress["Description"].isNull())
 			ingressObject.description = dataNodeIngressListIngress["Description"].asString();
+		if(!dataNodeIngressListIngress["ListenerPort"].isNull())
+			ingressObject.listenerPort = dataNodeIngressListIngress["ListenerPort"].asString();
 		if(!dataNodeIngressListIngress["SlbType"].isNull())
 			ingressObject.slbType = dataNodeIngressListIngress["SlbType"].asString();
+		if(!dataNodeIngressListIngress["CertId"].isNull())
+			ingressObject.certId = dataNodeIngressListIngress["CertId"].asString();
+		if(!dataNodeIngressListIngress["Name"].isNull())
+			ingressObject.name = dataNodeIngressListIngress["Name"].asString();
+		if(!dataNodeIngressListIngress["Id"].isNull())
+			ingressObject.id = std::stol(dataNodeIngressListIngress["Id"].asString());
+		if(!dataNodeIngressListIngress["LoadBalanceType"].isNull())
+			ingressObject.loadBalanceType = dataNodeIngressListIngress["LoadBalanceType"].asString();
+		if(!dataNodeIngressListIngress["ListenerProtocol"].isNull())
+			ingressObject.listenerProtocol = dataNodeIngressListIngress["ListenerProtocol"].asString();
 		data_.ingressList.push_back(ingressObject);
 	}
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
 	if(!value["TraceId"].isNull())
 		traceId_ = value["TraceId"].asString();
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

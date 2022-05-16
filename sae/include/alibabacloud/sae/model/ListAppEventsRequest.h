@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,53 +17,47 @@
 #ifndef ALIBABACLOUD_SAE_MODEL_LISTAPPEVENTSREQUEST_H_
 #define ALIBABACLOUD_SAE_MODEL_LISTAPPEVENTSREQUEST_H_
 
+#include <alibabacloud/sae/SaeExport.h>
+#include <alibabacloud/core/RoaServiceRequest.h>
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RoaServiceRequest.h>
-#include <alibabacloud/sae/SaeExport.h>
+#include <map>
 
-namespace AlibabaCloud
-{
-	namespace Sae
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_SAE_EXPORT ListAppEventsRequest : public RoaServiceRequest
-			{
+namespace AlibabaCloud {
+namespace Sae {
+namespace Model {
+class ALIBABACLOUD_SAE_EXPORT ListAppEventsRequest : public RoaServiceRequest {
+public:
+	ListAppEventsRequest();
+	~ListAppEventsRequest();
+	std::string getReason() const;
+	void setReason(const std::string &reason);
+	std::string getObjectKind() const;
+	void setObjectKind(const std::string &objectKind);
+	std::string getAppId() const;
+	void setAppId(const std::string &appId);
+	int getPageSize() const;
+	void setPageSize(int pageSize);
+	std::string getObjectName() const;
+	void setObjectName(const std::string &objectName);
+	std::string get_Namespace() const;
+	void set_Namespace(const std::string &_namespace);
+	int getCurrentPage() const;
+	void setCurrentPage(int currentPage);
+	std::string getEventType() const;
+	void setEventType(const std::string &eventType);
 
-			public:
-				ListAppEventsRequest();
-				~ListAppEventsRequest();
-
-				std::string getReason()const;
-				void setReason(const std::string& reason);
-				std::string getObjectKind()const;
-				void setObjectKind(const std::string& objectKind);
-				std::string getAppId()const;
-				void setAppId(const std::string& appId);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
-				std::string getObjectName()const;
-				void setObjectName(const std::string& objectName);
-				std::string get_Namespace()const;
-				void set_Namespace(const std::string& _namespace);
-				int getCurrentPage()const;
-				void setCurrentPage(int currentPage);
-				std::string getEventType()const;
-				void setEventType(const std::string& eventType);
-
-            private:
-				std::string reason_;
-				std::string objectKind_;
-				std::string appId_;
-				int pageSize_;
-				std::string objectName_;
-				std::string _namespace_;
-				int currentPage_;
-				std::string eventType_;
-
-			};
-		}
-	}
-}
+private:
+	std::string reason_;
+	std::string objectKind_;
+	std::string appId_;
+	int pageSize_;
+	std::string objectName_;
+	std::string _namespace_;
+	int currentPage_;
+	std::string eventType_;
+};
+} // namespace Model
+} // namespace Sae
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_SAE_MODEL_LISTAPPEVENTSREQUEST_H_

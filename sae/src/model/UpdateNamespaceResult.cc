@@ -40,24 +40,24 @@ void UpdateNamespaceResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["RegionId"].isNull())
-		data_.regionId = dataNode["RegionId"].asString();
+	if(!dataNode["NamespaceDescription"].isNull())
+		data_.namespaceDescription = dataNode["NamespaceDescription"].asString();
 	if(!dataNode["NamespaceId"].isNull())
 		data_.namespaceId = dataNode["NamespaceId"].asString();
 	if(!dataNode["NamespaceName"].isNull())
 		data_.namespaceName = dataNode["NamespaceName"].asString();
-	if(!dataNode["NamespaceDescription"].isNull())
-		data_.namespaceDescription = dataNode["NamespaceDescription"].asString();
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
+	if(!dataNode["RegionId"].isNull())
+		data_.regionId = dataNode["RegionId"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["TraceId"].isNull())
 		traceId_ = value["TraceId"].asString();
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

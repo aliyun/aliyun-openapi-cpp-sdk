@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,24 +18,20 @@
 
 using AlibabaCloud::Sae::Model::DescribeNamespaceRequest;
 
-DescribeNamespaceRequest::DescribeNamespaceRequest() :
-	RoaServiceRequest("sae", "2019-05-06")
-{
-	setResourcePath("/pop/v1/paas/namespace");
-	setMethod(HttpRequest::Method::Get);
+DescribeNamespaceRequest::DescribeNamespaceRequest()
+    : RoaServiceRequest("sae", "2019-05-06") {
+  setResourcePath("/pop/v1/paas/namespace"};
+  setMethod(HttpRequest::Method::Get);
 }
 
-DescribeNamespaceRequest::~DescribeNamespaceRequest()
-{}
+DescribeNamespaceRequest::~DescribeNamespaceRequest() {}
 
-std::string DescribeNamespaceRequest::getNamespaceId()const
-{
-	return namespaceId_;
+std::string DescribeNamespaceRequest::getNamespaceId() const {
+  return namespaceId_;
 }
 
-void DescribeNamespaceRequest::setNamespaceId(const std::string& namespaceId)
-{
-	namespaceId_ = namespaceId;
-	setParameter("NamespaceId", namespaceId);
+void DescribeNamespaceRequest::setNamespaceId(const std::string &namespaceId) {
+  namespaceId_ = namespaceId;
+  setParameter(std::string("NamespaceId"), namespaceId);
 }
 

@@ -40,34 +40,34 @@ void DescribeApplicationImageResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["CrUrl"].isNull())
-		data_.crUrl = dataNode["CrUrl"].asString();
-	if(!dataNode["Logo"].isNull())
-		data_.logo = dataNode["Logo"].asString();
-	if(!dataNode["RegionId"].isNull())
-		data_.regionId = dataNode["RegionId"].asString();
 	if(!dataNode["RepoId"].isNull())
 		data_.repoId = std::stoi(dataNode["RepoId"].asString());
+	if(!dataNode["Logo"].isNull())
+		data_.logo = dataNode["Logo"].asString();
+	if(!dataNode["RepoOriginType"].isNull())
+		data_.repoOriginType = dataNode["RepoOriginType"].asString();
+	if(!dataNode["CrUrl"].isNull())
+		data_.crUrl = dataNode["CrUrl"].asString();
+	if(!dataNode["RepoTag"].isNull())
+		data_.repoTag = dataNode["RepoTag"].asString();
+	if(!dataNode["RepoType"].isNull())
+		data_.repoType = dataNode["RepoType"].asString();
 	if(!dataNode["RepoName"].isNull())
 		data_.repoName = dataNode["RepoName"].asString();
 	if(!dataNode["RepoNamespace"].isNull())
 		data_.repoNamespace = dataNode["RepoNamespace"].asString();
-	if(!dataNode["RepoOriginType"].isNull())
-		data_.repoOriginType = dataNode["RepoOriginType"].asString();
-	if(!dataNode["RepoType"].isNull())
-		data_.repoType = dataNode["RepoType"].asString();
-	if(!dataNode["RepoTag"].isNull())
-		data_.repoTag = dataNode["RepoTag"].asString();
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
+	if(!dataNode["RegionId"].isNull())
+		data_.regionId = dataNode["RegionId"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
 	if(!value["TraceId"].isNull())
 		traceId_ = value["TraceId"].asString();
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

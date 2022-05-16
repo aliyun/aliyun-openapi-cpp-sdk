@@ -43,26 +43,26 @@ void ListAppVersionsResult::parse(const std::string &payload)
 	for (auto valueDataPackageVersionEntity : allDataNode)
 	{
 		PackageVersionEntity dataObject;
-		if(!valueDataPackageVersionEntity["Id"].isNull())
-			dataObject.id = valueDataPackageVersionEntity["Id"].asString();
-		if(!valueDataPackageVersionEntity["CreateTime"].isNull())
-			dataObject.createTime = valueDataPackageVersionEntity["CreateTime"].asString();
-		if(!valueDataPackageVersionEntity["WarUrl"].isNull())
-			dataObject.warUrl = valueDataPackageVersionEntity["WarUrl"].asString();
 		if(!valueDataPackageVersionEntity["Type"].isNull())
 			dataObject.type = valueDataPackageVersionEntity["Type"].asString();
+		if(!valueDataPackageVersionEntity["CreateTime"].isNull())
+			dataObject.createTime = valueDataPackageVersionEntity["CreateTime"].asString();
 		if(!valueDataPackageVersionEntity["BuildPackageUrl"].isNull())
 			dataObject.buildPackageUrl = valueDataPackageVersionEntity["BuildPackageUrl"].asString();
+		if(!valueDataPackageVersionEntity["WarUrl"].isNull())
+			dataObject.warUrl = valueDataPackageVersionEntity["WarUrl"].asString();
+		if(!valueDataPackageVersionEntity["Id"].isNull())
+			dataObject.id = valueDataPackageVersionEntity["Id"].asString();
 		data_.push_back(dataObject);
 	}
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = value["ErrorCode"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

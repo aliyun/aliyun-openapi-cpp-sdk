@@ -42,38 +42,38 @@ void ListAppEventsResult::parse(const std::string &payload)
 	auto dataNode = value["Data"];
 	if(!dataNode["CurrentPage"].isNull())
 		data_.currentPage = std::stoi(dataNode["CurrentPage"].asString());
-	if(!dataNode["PageSize"].isNull())
-		data_.pageSize = std::stoi(dataNode["PageSize"].asString());
 	if(!dataNode["TotalSize"].isNull())
 		data_.totalSize = std::stoi(dataNode["TotalSize"].asString());
+	if(!dataNode["PageSize"].isNull())
+		data_.pageSize = std::stoi(dataNode["PageSize"].asString());
 	auto allAppEventEntityNode = dataNode["AppEventEntity"]["AppEventEntityItem"];
 	for (auto dataNodeAppEventEntityAppEventEntityItem : allAppEventEntityNode)
 	{
 		Data::AppEventEntityItem appEventEntityItemObject;
 		if(!dataNodeAppEventEntityAppEventEntityItem["ObjectKind"].isNull())
 			appEventEntityItemObject.objectKind = dataNodeAppEventEntityAppEventEntityItem["ObjectKind"].asString();
-		if(!dataNodeAppEventEntityAppEventEntityItem["ObjectName"].isNull())
-			appEventEntityItemObject.objectName = dataNodeAppEventEntityAppEventEntityItem["ObjectName"].asString();
 		if(!dataNodeAppEventEntityAppEventEntityItem["EventType"].isNull())
 			appEventEntityItemObject.eventType = dataNodeAppEventEntityAppEventEntityItem["EventType"].asString();
-		if(!dataNodeAppEventEntityAppEventEntityItem["Message"].isNull())
-			appEventEntityItemObject.message = dataNodeAppEventEntityAppEventEntityItem["Message"].asString();
-		if(!dataNodeAppEventEntityAppEventEntityItem["FirstTimestamp"].isNull())
-			appEventEntityItemObject.firstTimestamp = dataNodeAppEventEntityAppEventEntityItem["FirstTimestamp"].asString();
 		if(!dataNodeAppEventEntityAppEventEntityItem["LastTimestamp"].isNull())
 			appEventEntityItemObject.lastTimestamp = dataNodeAppEventEntityAppEventEntityItem["LastTimestamp"].asString();
+		if(!dataNodeAppEventEntityAppEventEntityItem["Message"].isNull())
+			appEventEntityItemObject.message = dataNodeAppEventEntityAppEventEntityItem["Message"].asString();
+		if(!dataNodeAppEventEntityAppEventEntityItem["ObjectName"].isNull())
+			appEventEntityItemObject.objectName = dataNodeAppEventEntityAppEventEntityItem["ObjectName"].asString();
 		if(!dataNodeAppEventEntityAppEventEntityItem["Reason"].isNull())
 			appEventEntityItemObject.reason = dataNodeAppEventEntityAppEventEntityItem["Reason"].asString();
+		if(!dataNodeAppEventEntityAppEventEntityItem["FirstTimestamp"].isNull())
+			appEventEntityItemObject.firstTimestamp = dataNodeAppEventEntityAppEventEntityItem["FirstTimestamp"].asString();
 		data_.appEventEntity.push_back(appEventEntityItemObject);
 	}
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = value["ErrorCode"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

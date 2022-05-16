@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,44 +17,38 @@
 #ifndef ALIBABACLOUD_SAE_MODEL_RESCALEAPPLICATIONREQUEST_H_
 #define ALIBABACLOUD_SAE_MODEL_RESCALEAPPLICATIONREQUEST_H_
 
+#include <alibabacloud/sae/SaeExport.h>
+#include <alibabacloud/core/RoaServiceRequest.h>
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RoaServiceRequest.h>
-#include <alibabacloud/sae/SaeExport.h>
+#include <map>
 
-namespace AlibabaCloud
-{
-	namespace Sae
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_SAE_EXPORT RescaleApplicationRequest : public RoaServiceRequest
-			{
+namespace AlibabaCloud {
+namespace Sae {
+namespace Model {
+class ALIBABACLOUD_SAE_EXPORT RescaleApplicationRequest : public RoaServiceRequest {
+public:
+	RescaleApplicationRequest();
+	~RescaleApplicationRequest();
+	int getMinReadyInstances() const;
+	void setMinReadyInstances(int minReadyInstances);
+	int getReplicas() const;
+	void setReplicas(int replicas);
+	std::string getAppId() const;
+	void setAppId(const std::string &appId);
+	int getMinReadyInstanceRatio() const;
+	void setMinReadyInstanceRatio(int minReadyInstanceRatio);
+	bool getAutoEnableApplicationScalingRule() const;
+	void setAutoEnableApplicationScalingRule(bool autoEnableApplicationScalingRule);
 
-			public:
-				RescaleApplicationRequest();
-				~RescaleApplicationRequest();
-
-				int getMinReadyInstances()const;
-				void setMinReadyInstances(int minReadyInstances);
-				int getReplicas()const;
-				void setReplicas(int replicas);
-				std::string getAppId()const;
-				void setAppId(const std::string& appId);
-				int getMinReadyInstanceRatio()const;
-				void setMinReadyInstanceRatio(int minReadyInstanceRatio);
-				bool getAutoEnableApplicationScalingRule()const;
-				void setAutoEnableApplicationScalingRule(bool autoEnableApplicationScalingRule);
-
-            private:
-				int minReadyInstances_;
-				int replicas_;
-				std::string appId_;
-				int minReadyInstanceRatio_;
-				bool autoEnableApplicationScalingRule_;
-
-			};
-		}
-	}
-}
+private:
+	int minReadyInstances_;
+	int replicas_;
+	std::string appId_;
+	int minReadyInstanceRatio_;
+	bool autoEnableApplicationScalingRule_;
+};
+} // namespace Model
+} // namespace Sae
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_SAE_MODEL_RESCALEAPPLICATIONREQUEST_H_

@@ -34,8 +34,8 @@ namespace AlibabaCloud
 			public:
 				struct Data
 				{
-					std::string repoNamespace;
 					std::string repoOriginType;
+					std::string repoNamespace;
 					std::string repoType;
 					std::string crUrl;
 					std::string repoName;

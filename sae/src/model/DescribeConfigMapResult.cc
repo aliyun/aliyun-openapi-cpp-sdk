@@ -40,38 +40,38 @@ void DescribeConfigMapResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["ConfigMapId"].isNull())
-		data_.configMapId = std::stol(dataNode["ConfigMapId"].asString());
-	if(!dataNode["Name"].isNull())
-		data_.name = dataNode["Name"].asString();
+	if(!dataNode["UpdateTime"].isNull())
+		data_.updateTime = std::stol(dataNode["UpdateTime"].asString());
+	if(!dataNode["Data"].isNull())
+		data_.data = dataNode["Data"].asString();
 	if(!dataNode["NamespaceId"].isNull())
 		data_.namespaceId = dataNode["NamespaceId"].asString();
 	if(!dataNode["Description"].isNull())
 		data_.description = dataNode["Description"].asString();
-	if(!dataNode["Data"].isNull())
-		data_.data = dataNode["Data"].asString();
 	if(!dataNode["CreateTime"].isNull())
 		data_.createTime = std::stol(dataNode["CreateTime"].asString());
-	if(!dataNode["UpdateTime"].isNull())
-		data_.updateTime = std::stol(dataNode["UpdateTime"].asString());
+	if(!dataNode["ConfigMapId"].isNull())
+		data_.configMapId = std::stol(dataNode["ConfigMapId"].asString());
+	if(!dataNode["Name"].isNull())
+		data_.name = dataNode["Name"].asString();
 	auto allRelateAppsNode = dataNode["RelateApps"]["RelateApp"];
 	for (auto dataNodeRelateAppsRelateApp : allRelateAppsNode)
 	{
 		Data::RelateApp relateAppObject;
-		if(!dataNodeRelateAppsRelateApp["AppId"].isNull())
-			relateAppObject.appId = dataNodeRelateAppsRelateApp["AppId"].asString();
 		if(!dataNodeRelateAppsRelateApp["AppName"].isNull())
 			relateAppObject.appName = dataNodeRelateAppsRelateApp["AppName"].asString();
+		if(!dataNodeRelateAppsRelateApp["AppId"].isNull())
+			relateAppObject.appId = dataNodeRelateAppsRelateApp["AppId"].asString();
 		data_.relateApps.push_back(relateAppObject);
 	}
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
 	if(!value["TraceId"].isNull())
 		traceId_ = value["TraceId"].asString();
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 

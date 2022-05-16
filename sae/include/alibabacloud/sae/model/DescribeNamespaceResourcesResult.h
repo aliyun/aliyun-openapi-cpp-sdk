@@ -35,8 +35,8 @@ namespace AlibabaCloud
 				struct Data
 				{
 					std::string description;
-					std::string vSwitchId;
 					std::string securityGroupId;
+					std::string vSwitchId;
 					long appCount;
 					bool notificationExpired;
 					std::string belongRegion;
@@ -50,6 +50,7 @@ namespace AlibabaCloud
 					std::string vSwitchName;
 					std::string namespaceId;
 					std::string lastChangeOrderStatus;
+					std::string jumpServerAppId;
 				};
 
 

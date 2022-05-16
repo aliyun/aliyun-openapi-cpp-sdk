@@ -1,3 +1,6 @@
+2022-05-16 Version: 1.36.1127
+- Support UpdateApplicationVswitches and DescribeComponents.
+
 2022-05-16 Version: 1.36.1126
 - Generated 2016-11-01 for `live`.
 

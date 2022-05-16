@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SAE_MODEL_DOWNLOADFILESRESULT_H_
-#define ALIBABACLOUD_SAE_MODEL_DOWNLOADFILESRESULT_H_
+#ifndef ALIBABACLOUD_SAE_MODEL_UPDATEAPPLICATIONVSWITCHESRESULT_H_
+#define ALIBABACLOUD_SAE_MODEL_UPDATEAPPLICATIONVSWITCHESRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,17 +29,16 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SAE_EXPORT DownloadFilesResult : public ServiceResult
+			class ALIBABACLOUD_SAE_EXPORT UpdateApplicationVswitchesResult : public ServiceResult
 			{
 			public:
 
 
-				DownloadFilesResult();
-				explicit DownloadFilesResult(const std::string &payload);
-				~DownloadFilesResult();
+				UpdateApplicationVswitchesResult();
+				explicit UpdateApplicationVswitchesResult(const std::string &payload);
+				~UpdateApplicationVswitchesResult();
 				std::string getMessage()const;
 				std::string getTraceId()const;
-				std::string getData()const;
 				std::string getErrorCode()const;
 				std::string getCode()const;
 				bool getSuccess()const;
@@ -49,7 +48,6 @@ namespace AlibabaCloud
 			private:
 				std::string message_;
 				std::string traceId_;
-				std::string data_;
 				std::string errorCode_;
 				std::string code_;
 				bool success_;
@@ -58,4 +56,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SAE_MODEL_DOWNLOADFILESRESULT_H_
+#endif // !ALIBABACLOUD_SAE_MODEL_UPDATEAPPLICATIONVSWITCHESRESULT_H_

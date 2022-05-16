@@ -42,11 +42,11 @@ namespace AlibabaCloud
 						std::string createTime;
 						std::string changeOrderId;
 						std::string createUserId;
-						std::string batchType;
 						std::string source;
+						std::string batchType;
 						std::string groupId;
-						std::string coTypeCode;
 						std::string finishTime;
+						std::string coTypeCode;
 						std::string userId;
 						std::string namespaceId;
 						std::string coType;

@@ -43,26 +43,26 @@ void DescribeComponentsResult::parse(const std::string &payload)
 	for (auto valueDataDataItem : allDataNode)
 	{
 		DataItem dataObject;
+		if(!valueDataDataItem["Type"].isNull())
+			dataObject.type = valueDataDataItem["Type"].asString();
 		if(!valueDataDataItem["ComponentKey"].isNull())
 			dataObject.componentKey = valueDataDataItem["ComponentKey"].asString();
 		if(!valueDataDataItem["ComponentDescription"].isNull())
 			dataObject.componentDescription = valueDataDataItem["ComponentDescription"].asString();
 		if(!valueDataDataItem["Expired"].isNull())
 			dataObject.expired = valueDataDataItem["Expired"].asString() == "true";
-		if(!valueDataDataItem["Type"].isNull())
-			dataObject.type = valueDataDataItem["Type"].asString();
 		data_.push_back(dataObject);
 	}
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["TraceId"].isNull())
 		traceId_ = value["TraceId"].asString();
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

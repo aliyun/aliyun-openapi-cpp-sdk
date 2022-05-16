@@ -14,23 +14,32 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/sae/model/StartApplicationRequest.h>
+#include <alibabacloud/sae/model/UpdateApplicationVswitchesRequest.h>
 
-using AlibabaCloud::Sae::Model::StartApplicationRequest;
+using AlibabaCloud::Sae::Model::UpdateApplicationVswitchesRequest;
 
-StartApplicationRequest::StartApplicationRequest()
+UpdateApplicationVswitchesRequest::UpdateApplicationVswitchesRequest()
     : RoaServiceRequest("sae", "2019-05-06") {
-  setResourcePath("/pop/v1/sam/app/startApplication"};
+  setResourcePath("/pop/v1/sam/app/updateAppVswitches"};
   setMethod(HttpRequest::Method::Put);
 }
 
-StartApplicationRequest::~StartApplicationRequest() {}
+UpdateApplicationVswitchesRequest::~UpdateApplicationVswitchesRequest() {}
 
-std::string StartApplicationRequest::getAppId() const {
+std::string UpdateApplicationVswitchesRequest::getVSwitchId() const {
+  return vSwitchId_;
+}
+
+void UpdateApplicationVswitchesRequest::setVSwitchId(const std::string &vSwitchId) {
+  vSwitchId_ = vSwitchId;
+  setParameter(std::string("VSwitchId"), vSwitchId);
+}
+
+std::string UpdateApplicationVswitchesRequest::getAppId() const {
   return appId_;
 }
 
-void StartApplicationRequest::setAppId(const std::string &appId) {
+void UpdateApplicationVswitchesRequest::setAppId(const std::string &appId) {
   appId_ = appId;
   setParameter(std::string("AppId"), appId);
 }

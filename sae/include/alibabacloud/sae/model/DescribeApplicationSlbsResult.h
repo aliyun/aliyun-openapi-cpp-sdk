@@ -34,14 +34,14 @@ namespace AlibabaCloud
 			public:
 				struct Data
 				{
-					struct InternetItem
+					struct IntranetItem
 					{
 						int targetPort;
 						int port;
 						std::string protocol;
 						std::string httpsCertId;
 					};
-					struct IntranetItem
+					struct InternetItem
 					{
 						int targetPort;
 						int port;

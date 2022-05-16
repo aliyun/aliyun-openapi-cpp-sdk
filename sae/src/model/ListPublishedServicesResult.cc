@@ -43,14 +43,14 @@ void ListPublishedServicesResult::parse(const std::string &payload)
 	for (auto valueDataDataItem : allDataNode)
 	{
 		DataItem dataObject;
-		if(!valueDataDataItem["Group2Ip"].isNull())
-			dataObject.group2Ip = valueDataDataItem["Group2Ip"].asString();
 		if(!valueDataDataItem["Type"].isNull())
 			dataObject.type = valueDataDataItem["Type"].asString();
-		if(!valueDataDataItem["AppId"].isNull())
-			dataObject.appId = valueDataDataItem["AppId"].asString();
 		if(!valueDataDataItem["Version"].isNull())
 			dataObject.version = valueDataDataItem["Version"].asString();
+		if(!valueDataDataItem["AppId"].isNull())
+			dataObject.appId = valueDataDataItem["AppId"].asString();
+		if(!valueDataDataItem["Group2Ip"].isNull())
+			dataObject.group2Ip = valueDataDataItem["Group2Ip"].asString();
 		if(!valueDataDataItem["Name"].isNull())
 			dataObject.name = valueDataDataItem["Name"].asString();
 		auto allGroups = value["Groups"]["Group"];

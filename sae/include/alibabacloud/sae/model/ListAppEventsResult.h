@@ -36,8 +36,8 @@ namespace AlibabaCloud
 				{
 					struct AppEventEntityItem
 					{
-						std::string message;
 						std::string lastTimestamp;
+						std::string message;
 						std::string eventType;
 						std::string objectKind;
 						std::string firstTimestamp;

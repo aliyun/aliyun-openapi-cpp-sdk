@@ -14,32 +14,32 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/sae/model/RestartInstancesRequest.h>
+#include <alibabacloud/sae/model/UpdateApplicationDescriptionRequest.h>
 
-using AlibabaCloud::Sae::Model::RestartInstancesRequest;
+using AlibabaCloud::Sae::Model::UpdateApplicationDescriptionRequest;
 
-RestartInstancesRequest::RestartInstancesRequest()
+UpdateApplicationDescriptionRequest::UpdateApplicationDescriptionRequest()
     : RoaServiceRequest("sae", "2019-05-06") {
-  setResourcePath("/pop/v1/sam/app/restartInstances"};
+  setResourcePath("/pop/v1/sam/app/updateAppDescription"};
   setMethod(HttpRequest::Method::Put);
 }
 
-RestartInstancesRequest::~RestartInstancesRequest() {}
+UpdateApplicationDescriptionRequest::~UpdateApplicationDescriptionRequest() {}
 
-std::string RestartInstancesRequest::getInstanceIds() const {
-  return instanceIds_;
+std::string UpdateApplicationDescriptionRequest::getAppDescription() const {
+  return appDescription_;
 }
 
-void RestartInstancesRequest::setInstanceIds(const std::string &instanceIds) {
-  instanceIds_ = instanceIds;
-  setParameter(std::string("InstanceIds"), instanceIds);
+void UpdateApplicationDescriptionRequest::setAppDescription(const std::string &appDescription) {
+  appDescription_ = appDescription;
+  setParameter(std::string("AppDescription"), appDescription);
 }
 
-std::string RestartInstancesRequest::getAppId() const {
+std::string UpdateApplicationDescriptionRequest::getAppId() const {
   return appId_;
 }
 
-void RestartInstancesRequest::setAppId(const std::string &appId) {
+void UpdateApplicationDescriptionRequest::setAppId(const std::string &appId) {
   appId_ = appId;
   setParameter(std::string("AppId"), appId);
 }

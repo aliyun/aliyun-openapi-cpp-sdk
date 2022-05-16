@@ -148,6 +148,8 @@ void DescribeApplicationConfigResult::parse(const std::string &payload)
 		data_.associateEip = dataNode["AssociateEip"].asString() == "true";
 	if(!dataNode["KafkaConfigs"].isNull())
 		data_.kafkaConfigs = dataNode["KafkaConfigs"].asString();
+	if(!dataNode["ProgrammingLanguage"].isNull())
+		data_.programmingLanguage = dataNode["ProgrammingLanguage"].asString();
 	auto allConfigMapMountDescNode = dataNode["ConfigMapMountDesc"]["ConfigMapMountDescItem"];
 	for (auto dataNodeConfigMapMountDescConfigMapMountDescItem : allConfigMapMountDescNode)
 	{

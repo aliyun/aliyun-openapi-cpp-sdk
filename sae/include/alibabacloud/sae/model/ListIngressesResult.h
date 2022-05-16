@@ -40,8 +40,10 @@ namespace AlibabaCloud
 						std::string listenerPort;
 						std::string description;
 						std::string certId;
-						long id;
+						std::string loadBalanceType;
 						std::string namespaceId;
+						long id;
+						std::string listenerProtocol;
 						std::string slbType;
 						std::string name;
 					};

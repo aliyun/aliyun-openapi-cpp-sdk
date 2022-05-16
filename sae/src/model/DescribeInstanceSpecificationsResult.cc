@@ -45,28 +45,28 @@ void DescribeInstanceSpecificationsResult::parse(const std::string &payload)
 		DataItem dataObject;
 		if(!valueDataDataItem["Cpu"].isNull())
 			dataObject.cpu = std::stoi(valueDataDataItem["Cpu"].asString());
-		if(!valueDataDataItem["Enable"].isNull())
-			dataObject.enable = valueDataDataItem["Enable"].asString() == "true";
-		if(!valueDataDataItem["Id"].isNull())
-			dataObject.id = std::stoi(valueDataDataItem["Id"].asString());
+		if(!valueDataDataItem["Version"].isNull())
+			dataObject.version = std::stoi(valueDataDataItem["Version"].asString());
 		if(!valueDataDataItem["Memory"].isNull())
 			dataObject.memory = std::stoi(valueDataDataItem["Memory"].asString());
 		if(!valueDataDataItem["SpecInfo"].isNull())
 			dataObject.specInfo = valueDataDataItem["SpecInfo"].asString();
-		if(!valueDataDataItem["Version"].isNull())
-			dataObject.version = std::stoi(valueDataDataItem["Version"].asString());
+		if(!valueDataDataItem["Id"].isNull())
+			dataObject.id = std::stoi(valueDataDataItem["Id"].asString());
+		if(!valueDataDataItem["Enable"].isNull())
+			dataObject.enable = valueDataDataItem["Enable"].asString() == "true";
 		data_.push_back(dataObject);
 	}
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
 	if(!value["TraceId"].isNull())
 		traceId_ = value["TraceId"].asString();
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

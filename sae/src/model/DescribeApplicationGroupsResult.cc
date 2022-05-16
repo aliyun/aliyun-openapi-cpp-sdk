@@ -43,42 +43,42 @@ void DescribeApplicationGroupsResult::parse(const std::string &payload)
 	for (auto valueDataApplicationGroup : allDataNode)
 	{
 		ApplicationGroup dataObject;
-		if(!valueDataApplicationGroup["GroupId"].isNull())
-			dataObject.groupId = valueDataApplicationGroup["GroupId"].asString();
-		if(!valueDataApplicationGroup["GroupName"].isNull())
-			dataObject.groupName = valueDataApplicationGroup["GroupName"].asString();
-		if(!valueDataApplicationGroup["GroupType"].isNull())
-			dataObject.groupType = std::stoi(valueDataApplicationGroup["GroupType"].asString());
-		if(!valueDataApplicationGroup["PackageType"].isNull())
-			dataObject.packageType = valueDataApplicationGroup["PackageType"].asString();
-		if(!valueDataApplicationGroup["PackageVersion"].isNull())
-			dataObject.packageVersion = valueDataApplicationGroup["PackageVersion"].asString();
+		if(!valueDataApplicationGroup["Jdk"].isNull())
+			dataObject.jdk = valueDataApplicationGroup["Jdk"].asString();
 		if(!valueDataApplicationGroup["ImageUrl"].isNull())
 			dataObject.imageUrl = valueDataApplicationGroup["ImageUrl"].asString();
 		if(!valueDataApplicationGroup["PackageUrl"].isNull())
 			dataObject.packageUrl = valueDataApplicationGroup["PackageUrl"].asString();
-		if(!valueDataApplicationGroup["Jdk"].isNull())
-			dataObject.jdk = valueDataApplicationGroup["Jdk"].asString();
+		if(!valueDataApplicationGroup["PackageType"].isNull())
+			dataObject.packageType = valueDataApplicationGroup["PackageType"].asString();
+		if(!valueDataApplicationGroup["PackageVersion"].isNull())
+			dataObject.packageVersion = valueDataApplicationGroup["PackageVersion"].asString();
+		if(!valueDataApplicationGroup["GroupName"].isNull())
+			dataObject.groupName = valueDataApplicationGroup["GroupName"].asString();
+		if(!valueDataApplicationGroup["GroupId"].isNull())
+			dataObject.groupId = valueDataApplicationGroup["GroupId"].asString();
 		if(!valueDataApplicationGroup["WebContainer"].isNull())
 			dataObject.webContainer = valueDataApplicationGroup["WebContainer"].asString();
-		if(!valueDataApplicationGroup["EdasContainerVersion"].isNull())
-			dataObject.edasContainerVersion = valueDataApplicationGroup["EdasContainerVersion"].asString();
 		if(!valueDataApplicationGroup["Replicas"].isNull())
 			dataObject.replicas = std::stoi(valueDataApplicationGroup["Replicas"].asString());
+		if(!valueDataApplicationGroup["EdasContainerVersion"].isNull())
+			dataObject.edasContainerVersion = valueDataApplicationGroup["EdasContainerVersion"].asString();
 		if(!valueDataApplicationGroup["RunningInstances"].isNull())
 			dataObject.runningInstances = std::stoi(valueDataApplicationGroup["RunningInstances"].asString());
+		if(!valueDataApplicationGroup["GroupType"].isNull())
+			dataObject.groupType = std::stoi(valueDataApplicationGroup["GroupType"].asString());
 		data_.push_back(dataObject);
 	}
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
 	if(!value["TraceId"].isNull())
 		traceId_ = value["TraceId"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = value["ErrorCode"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

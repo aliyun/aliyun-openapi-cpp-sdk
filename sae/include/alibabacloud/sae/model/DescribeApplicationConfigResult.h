@@ -115,6 +115,7 @@ namespace AlibabaCloud
 					int minReadyInstanceRatio;
 					std::string phpPECLExtensions;
 					std::string regionId;
+					std::string programmingLanguage;
 					std::string enableAhas;
 				};
 

@@ -43,38 +43,38 @@ void DescribeNamespaceListResult::parse(const std::string &payload)
 	for (auto valueDataRegionList : allDataNode)
 	{
 		RegionList dataObject;
-		if(!valueDataRegionList["NamespaceName"].isNull())
-			dataObject.namespaceName = valueDataRegionList["NamespaceName"].asString();
-		if(!valueDataRegionList["NamespaceId"].isNull())
-			dataObject.namespaceId = valueDataRegionList["NamespaceId"].asString();
-		if(!valueDataRegionList["AgentInstall"].isNull())
-			dataObject.agentInstall = valueDataRegionList["AgentInstall"].asString();
-		if(!valueDataRegionList["Current"].isNull())
-			dataObject.current = valueDataRegionList["Current"].asString() == "true";
-		if(!valueDataRegionList["Custom"].isNull())
-			dataObject.custom = valueDataRegionList["Custom"].asString() == "true";
-		if(!valueDataRegionList["RegionId"].isNull())
-			dataObject.regionId = valueDataRegionList["RegionId"].asString();
-		if(!valueDataRegionList["HybridCloudEnable"].isNull())
-			dataObject.hybridCloudEnable = valueDataRegionList["HybridCloudEnable"].asString() == "true";
 		if(!valueDataRegionList["VpcId"].isNull())
 			dataObject.vpcId = valueDataRegionList["VpcId"].asString();
 		if(!valueDataRegionList["VSwitchId"].isNull())
 			dataObject.vSwitchId = valueDataRegionList["VSwitchId"].asString();
+		if(!valueDataRegionList["Custom"].isNull())
+			dataObject.custom = valueDataRegionList["Custom"].asString() == "true";
+		if(!valueDataRegionList["AgentInstall"].isNull())
+			dataObject.agentInstall = valueDataRegionList["AgentInstall"].asString();
+		if(!valueDataRegionList["NamespaceId"].isNull())
+			dataObject.namespaceId = valueDataRegionList["NamespaceId"].asString();
+		if(!valueDataRegionList["HybridCloudEnable"].isNull())
+			dataObject.hybridCloudEnable = valueDataRegionList["HybridCloudEnable"].asString() == "true";
 		if(!valueDataRegionList["SecurityGroupId"].isNull())
 			dataObject.securityGroupId = valueDataRegionList["SecurityGroupId"].asString();
+		if(!valueDataRegionList["Current"].isNull())
+			dataObject.current = valueDataRegionList["Current"].asString() == "true";
+		if(!valueDataRegionList["NamespaceName"].isNull())
+			dataObject.namespaceName = valueDataRegionList["NamespaceName"].asString();
+		if(!valueDataRegionList["RegionId"].isNull())
+			dataObject.regionId = valueDataRegionList["RegionId"].asString();
 		data_.push_back(dataObject);
 	}
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
 	if(!value["TraceId"].isNull())
 		traceId_ = value["TraceId"].asString();
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

@@ -44,8 +44,8 @@ namespace AlibabaCloud
 					long updateTime;
 					std::vector<RelateApp> relateApps;
 					std::string data;
-					long configMapId;
 					std::string namespaceId;
+					long configMapId;
 					std::string name;
 				};
 

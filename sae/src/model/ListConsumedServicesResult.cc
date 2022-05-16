@@ -43,14 +43,14 @@ void ListConsumedServicesResult::parse(const std::string &payload)
 	for (auto valueDataListConsumedServices : allDataNode)
 	{
 		ListConsumedServices dataObject;
-		if(!valueDataListConsumedServices["Group2Ip"].isNull())
-			dataObject.group2Ip = valueDataListConsumedServices["Group2Ip"].asString();
 		if(!valueDataListConsumedServices["Type"].isNull())
 			dataObject.type = valueDataListConsumedServices["Type"].asString();
-		if(!valueDataListConsumedServices["AppId"].isNull())
-			dataObject.appId = valueDataListConsumedServices["AppId"].asString();
 		if(!valueDataListConsumedServices["Version"].isNull())
 			dataObject.version = valueDataListConsumedServices["Version"].asString();
+		if(!valueDataListConsumedServices["AppId"].isNull())
+			dataObject.appId = valueDataListConsumedServices["AppId"].asString();
+		if(!valueDataListConsumedServices["Group2Ip"].isNull())
+			dataObject.group2Ip = valueDataListConsumedServices["Group2Ip"].asString();
 		if(!valueDataListConsumedServices["Name"].isNull())
 			dataObject.name = valueDataListConsumedServices["Name"].asString();
 		auto allGroups = value["Groups"]["Group"];

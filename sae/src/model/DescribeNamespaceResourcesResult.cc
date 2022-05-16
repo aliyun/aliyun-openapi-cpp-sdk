@@ -40,46 +40,48 @@ void DescribeNamespaceResourcesResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["NamespaceId"].isNull())
-		data_.namespaceId = dataNode["NamespaceId"].asString();
-	if(!dataNode["NamespaceName"].isNull())
-		data_.namespaceName = dataNode["NamespaceName"].asString();
-	if(!dataNode["Description"].isNull())
-		data_.description = dataNode["Description"].asString();
-	if(!dataNode["UserId"].isNull())
-		data_.userId = dataNode["UserId"].asString();
-	if(!dataNode["BelongRegion"].isNull())
-		data_.belongRegion = dataNode["BelongRegion"].asString();
-	if(!dataNode["TenantId"].isNull())
-		data_.tenantId = dataNode["TenantId"].asString();
 	if(!dataNode["VpcId"].isNull())
 		data_.vpcId = dataNode["VpcId"].asString();
-	if(!dataNode["VSwitchId"].isNull())
-		data_.vSwitchId = dataNode["VSwitchId"].asString();
-	if(!dataNode["SecurityGroupId"].isNull())
-		data_.securityGroupId = dataNode["SecurityGroupId"].asString();
-	if(!dataNode["AppCount"].isNull())
-		data_.appCount = std::stol(dataNode["AppCount"].asString());
 	if(!dataNode["LastChangeOrderId"].isNull())
 		data_.lastChangeOrderId = dataNode["LastChangeOrderId"].asString();
+	if(!dataNode["BelongRegion"].isNull())
+		data_.belongRegion = dataNode["BelongRegion"].asString();
+	if(!dataNode["NamespaceId"].isNull())
+		data_.namespaceId = dataNode["NamespaceId"].asString();
+	if(!dataNode["SecurityGroupId"].isNull())
+		data_.securityGroupId = dataNode["SecurityGroupId"].asString();
+	if(!dataNode["UserId"].isNull())
+		data_.userId = dataNode["UserId"].asString();
+	if(!dataNode["NamespaceName"].isNull())
+		data_.namespaceName = dataNode["NamespaceName"].asString();
 	if(!dataNode["LastChangeOrderStatus"].isNull())
 		data_.lastChangeOrderStatus = dataNode["LastChangeOrderStatus"].asString();
-	if(!dataNode["LastChangeOrderRunning"].isNull())
-		data_.lastChangeOrderRunning = dataNode["LastChangeOrderRunning"].asString() == "true";
 	if(!dataNode["VpcName"].isNull())
 		data_.vpcName = dataNode["VpcName"].asString();
+	if(!dataNode["VSwitchId"].isNull())
+		data_.vSwitchId = dataNode["VSwitchId"].asString();
+	if(!dataNode["Description"].isNull())
+		data_.description = dataNode["Description"].asString();
+	if(!dataNode["LastChangeOrderRunning"].isNull())
+		data_.lastChangeOrderRunning = dataNode["LastChangeOrderRunning"].asString() == "true";
+	if(!dataNode["AppCount"].isNull())
+		data_.appCount = std::stol(dataNode["AppCount"].asString());
 	if(!dataNode["VSwitchName"].isNull())
 		data_.vSwitchName = dataNode["VSwitchName"].asString();
 	if(!dataNode["NotificationExpired"].isNull())
 		data_.notificationExpired = dataNode["NotificationExpired"].asString() == "true";
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
+	if(!dataNode["TenantId"].isNull())
+		data_.tenantId = dataNode["TenantId"].asString();
+	if(!dataNode["JumpServerAppId"].isNull())
+		data_.jumpServerAppId = dataNode["JumpServerAppId"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
 	if(!value["TraceId"].isNull())
 		traceId_ = value["TraceId"].asString();
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 

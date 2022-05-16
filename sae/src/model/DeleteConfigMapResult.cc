@@ -44,12 +44,12 @@ void DeleteConfigMapResult::parse(const std::string &payload)
 		data_.configMapId = std::stol(dataNode["ConfigMapId"].asString());
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
 	if(!value["TraceId"].isNull())
 		traceId_ = value["TraceId"].asString();
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 

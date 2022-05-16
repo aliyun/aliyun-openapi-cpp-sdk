@@ -40,55 +40,59 @@ void DescribeIngressResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["Id"].isNull())
-		data_.id = std::stol(dataNode["Id"].asString());
-	if(!dataNode["Name"].isNull())
-		data_.name = dataNode["Name"].asString();
+	if(!dataNode["SlbId"].isNull())
+		data_.slbId = dataNode["SlbId"].asString();
 	if(!dataNode["NamespaceId"].isNull())
 		data_.namespaceId = dataNode["NamespaceId"].asString();
 	if(!dataNode["Description"].isNull())
 		data_.description = dataNode["Description"].asString();
-	if(!dataNode["SlbId"].isNull())
-		data_.slbId = dataNode["SlbId"].asString();
 	if(!dataNode["ListenerPort"].isNull())
 		data_.listenerPort = std::stoi(dataNode["ListenerPort"].asString());
-	if(!dataNode["CertId"].isNull())
-		data_.certId = dataNode["CertId"].asString();
 	if(!dataNode["SlbType"].isNull())
 		data_.slbType = dataNode["SlbType"].asString();
+	if(!dataNode["CertId"].isNull())
+		data_.certId = dataNode["CertId"].asString();
+	if(!dataNode["Name"].isNull())
+		data_.name = dataNode["Name"].asString();
+	if(!dataNode["Id"].isNull())
+		data_.id = std::stol(dataNode["Id"].asString());
+	if(!dataNode["LoadBalanceType"].isNull())
+		data_.loadBalanceType = dataNode["LoadBalanceType"].asString();
+	if(!dataNode["ListenerProtocol"].isNull())
+		data_.listenerProtocol = dataNode["ListenerProtocol"].asString();
 	auto allRulesNode = dataNode["Rules"]["Rule"];
 	for (auto dataNodeRulesRule : allRulesNode)
 	{
 		Data::Rule ruleObject;
-		if(!dataNodeRulesRule["AppId"].isNull())
-			ruleObject.appId = dataNodeRulesRule["AppId"].asString();
+		if(!dataNodeRulesRule["AppName"].isNull())
+			ruleObject.appName = dataNodeRulesRule["AppName"].asString();
 		if(!dataNodeRulesRule["ContainerPort"].isNull())
 			ruleObject.containerPort = std::stoi(dataNodeRulesRule["ContainerPort"].asString());
 		if(!dataNodeRulesRule["Domain"].isNull())
 			ruleObject.domain = dataNodeRulesRule["Domain"].asString();
+		if(!dataNodeRulesRule["AppId"].isNull())
+			ruleObject.appId = dataNodeRulesRule["AppId"].asString();
 		if(!dataNodeRulesRule["Path"].isNull())
 			ruleObject.path = dataNodeRulesRule["Path"].asString();
-		if(!dataNodeRulesRule["AppName"].isNull())
-			ruleObject.appName = dataNodeRulesRule["AppName"].asString();
 		data_.rules.push_back(ruleObject);
 	}
 	auto defaultRuleNode = dataNode["DefaultRule"];
-	if(!defaultRuleNode["AppId"].isNull())
-		data_.defaultRule.appId = defaultRuleNode["AppId"].asString();
 	if(!defaultRuleNode["ContainerPort"].isNull())
 		data_.defaultRule.containerPort = std::stoi(defaultRuleNode["ContainerPort"].asString());
 	if(!defaultRuleNode["AppName"].isNull())
 		data_.defaultRule.appName = defaultRuleNode["AppName"].asString();
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
+	if(!defaultRuleNode["AppId"].isNull())
+		data_.defaultRule.appId = defaultRuleNode["AppId"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
 	if(!value["TraceId"].isNull())
 		traceId_ = value["TraceId"].asString();
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

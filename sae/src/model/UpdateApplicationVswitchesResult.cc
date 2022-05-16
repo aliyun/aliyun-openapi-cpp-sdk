@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/sae/model/DownloadFilesResult.h>
+#include <alibabacloud/sae/model/UpdateApplicationVswitchesResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Sae;
 using namespace AlibabaCloud::Sae::Model;
 
-DownloadFilesResult::DownloadFilesResult() :
+UpdateApplicationVswitchesResult::UpdateApplicationVswitchesResult() :
 	ServiceResult()
 {}
 
-DownloadFilesResult::DownloadFilesResult(const std::string &payload) :
+UpdateApplicationVswitchesResult::UpdateApplicationVswitchesResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-DownloadFilesResult::~DownloadFilesResult()
+UpdateApplicationVswitchesResult::~UpdateApplicationVswitchesResult()
 {}
 
-void DownloadFilesResult::parse(const std::string &payload)
+void UpdateApplicationVswitchesResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -43,8 +43,6 @@ void DownloadFilesResult::parse(const std::string &payload)
 		message_ = value["Message"].asString();
 	if(!value["TraceId"].isNull())
 		traceId_ = value["TraceId"].asString();
-	if(!value["Data"].isNull())
-		data_ = value["Data"].asString();
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = value["ErrorCode"].asString();
 	if(!value["Code"].isNull())
@@ -54,32 +52,27 @@ void DownloadFilesResult::parse(const std::string &payload)
 
 }
 
-std::string DownloadFilesResult::getMessage()const
+std::string UpdateApplicationVswitchesResult::getMessage()const
 {
 	return message_;
 }
 
-std::string DownloadFilesResult::getTraceId()const
+std::string UpdateApplicationVswitchesResult::getTraceId()const
 {
 	return traceId_;
 }
 
-std::string DownloadFilesResult::getData()const
-{
-	return data_;
-}
-
-std::string DownloadFilesResult::getErrorCode()const
+std::string UpdateApplicationVswitchesResult::getErrorCode()const
 {
 	return errorCode_;
 }
 
-std::string DownloadFilesResult::getCode()const
+std::string UpdateApplicationVswitchesResult::getCode()const
 {
 	return code_;
 }
 
-bool DownloadFilesResult::getSuccess()const
+bool UpdateApplicationVswitchesResult::getSuccess()const
 {
 	return success_;
 }

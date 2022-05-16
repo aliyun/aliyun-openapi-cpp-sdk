@@ -42,50 +42,50 @@ void DescribeApplicationSlbsResult::parse(const std::string &payload)
 	auto dataNode = value["Data"];
 	if(!dataNode["InternetIp"].isNull())
 		data_.internetIp = dataNode["InternetIp"].asString();
-	if(!dataNode["IntranetIp"].isNull())
-		data_.intranetIp = dataNode["IntranetIp"].asString();
 	if(!dataNode["InternetSlbId"].isNull())
 		data_.internetSlbId = dataNode["InternetSlbId"].asString();
 	if(!dataNode["IntranetSlbId"].isNull())
 		data_.intranetSlbId = dataNode["IntranetSlbId"].asString();
-	auto allInternetNode = dataNode["Internet"]["InternetItem"];
-	for (auto dataNodeInternetInternetItem : allInternetNode)
-	{
-		Data::InternetItem internetItemObject;
-		if(!dataNodeInternetInternetItem["Port"].isNull())
-			internetItemObject.port = std::stoi(dataNodeInternetInternetItem["Port"].asString());
-		if(!dataNodeInternetInternetItem["Protocol"].isNull())
-			internetItemObject.protocol = dataNodeInternetInternetItem["Protocol"].asString();
-		if(!dataNodeInternetInternetItem["TargetPort"].isNull())
-			internetItemObject.targetPort = std::stoi(dataNodeInternetInternetItem["TargetPort"].asString());
-		if(!dataNodeInternetInternetItem["HttpsCertId"].isNull())
-			internetItemObject.httpsCertId = dataNodeInternetInternetItem["HttpsCertId"].asString();
-		data_.internet.push_back(internetItemObject);
-	}
+	if(!dataNode["IntranetIp"].isNull())
+		data_.intranetIp = dataNode["IntranetIp"].asString();
 	auto allIntranetNode = dataNode["Intranet"]["IntranetItem"];
 	for (auto dataNodeIntranetIntranetItem : allIntranetNode)
 	{
 		Data::IntranetItem intranetItemObject;
-		if(!dataNodeIntranetIntranetItem["Port"].isNull())
-			intranetItemObject.port = std::stoi(dataNodeIntranetIntranetItem["Port"].asString());
+		if(!dataNodeIntranetIntranetItem["HttpsCertId"].isNull())
+			intranetItemObject.httpsCertId = dataNodeIntranetIntranetItem["HttpsCertId"].asString();
 		if(!dataNodeIntranetIntranetItem["Protocol"].isNull())
 			intranetItemObject.protocol = dataNodeIntranetIntranetItem["Protocol"].asString();
 		if(!dataNodeIntranetIntranetItem["TargetPort"].isNull())
 			intranetItemObject.targetPort = std::stoi(dataNodeIntranetIntranetItem["TargetPort"].asString());
-		if(!dataNodeIntranetIntranetItem["HttpsCertId"].isNull())
-			intranetItemObject.httpsCertId = dataNodeIntranetIntranetItem["HttpsCertId"].asString();
+		if(!dataNodeIntranetIntranetItem["Port"].isNull())
+			intranetItemObject.port = std::stoi(dataNodeIntranetIntranetItem["Port"].asString());
 		data_.intranet.push_back(intranetItemObject);
 	}
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
+	auto allInternetNode = dataNode["Internet"]["InternetItem"];
+	for (auto dataNodeInternetInternetItem : allInternetNode)
+	{
+		Data::InternetItem internetItemObject;
+		if(!dataNodeInternetInternetItem["HttpsCertId"].isNull())
+			internetItemObject.httpsCertId = dataNodeInternetInternetItem["HttpsCertId"].asString();
+		if(!dataNodeInternetInternetItem["Protocol"].isNull())
+			internetItemObject.protocol = dataNodeInternetInternetItem["Protocol"].asString();
+		if(!dataNodeInternetInternetItem["TargetPort"].isNull())
+			internetItemObject.targetPort = std::stoi(dataNodeInternetInternetItem["TargetPort"].asString());
+		if(!dataNodeInternetInternetItem["Port"].isNull())
+			internetItemObject.port = std::stoi(dataNodeInternetInternetItem["Port"].asString());
+		data_.internet.push_back(internetItemObject);
+	}
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["TraceId"].isNull())
 		traceId_ = value["TraceId"].asString();
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

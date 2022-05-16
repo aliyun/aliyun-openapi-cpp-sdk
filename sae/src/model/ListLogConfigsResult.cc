@@ -42,10 +42,10 @@ void ListLogConfigsResult::parse(const std::string &payload)
 	auto dataNode = value["Data"];
 	if(!dataNode["CurrentPage"].isNull())
 		data_.currentPage = std::stoi(dataNode["CurrentPage"].asString());
-	if(!dataNode["PageSize"].isNull())
-		data_.pageSize = std::stoi(dataNode["PageSize"].asString());
 	if(!dataNode["TotalSize"].isNull())
 		data_.totalSize = std::stoi(dataNode["TotalSize"].asString());
+	if(!dataNode["PageSize"].isNull())
+		data_.pageSize = std::stoi(dataNode["PageSize"].asString());
 	auto allLogConfigsNode = dataNode["LogConfigs"]["LogConfig"];
 	for (auto dataNodeLogConfigsLogConfig : allLogConfigsNode)
 	{
@@ -54,30 +54,30 @@ void ListLogConfigsResult::parse(const std::string &payload)
 			logConfigObject.configName = dataNodeLogConfigsLogConfig["ConfigName"].asString();
 		if(!dataNodeLogConfigsLogConfig["LogDir"].isNull())
 			logConfigObject.logDir = dataNodeLogConfigsLogConfig["LogDir"].asString();
-		if(!dataNodeLogConfigsLogConfig["SlsProject"].isNull())
-			logConfigObject.slsProject = dataNodeLogConfigsLogConfig["SlsProject"].asString();
 		if(!dataNodeLogConfigsLogConfig["SlsLogStore"].isNull())
 			logConfigObject.slsLogStore = dataNodeLogConfigsLogConfig["SlsLogStore"].asString();
+		if(!dataNodeLogConfigsLogConfig["CreateTime"].isNull())
+			logConfigObject.createTime = dataNodeLogConfigsLogConfig["CreateTime"].asString();
 		if(!dataNodeLogConfigsLogConfig["StoreType"].isNull())
 			logConfigObject.storeType = dataNodeLogConfigsLogConfig["StoreType"].asString();
+		if(!dataNodeLogConfigsLogConfig["SlsProject"].isNull())
+			logConfigObject.slsProject = dataNodeLogConfigsLogConfig["SlsProject"].asString();
 		if(!dataNodeLogConfigsLogConfig["LogType"].isNull())
 			logConfigObject.logType = dataNodeLogConfigsLogConfig["LogType"].asString();
 		if(!dataNodeLogConfigsLogConfig["RegionId"].isNull())
 			logConfigObject.regionId = dataNodeLogConfigsLogConfig["RegionId"].asString();
-		if(!dataNodeLogConfigsLogConfig["CreateTime"].isNull())
-			logConfigObject.createTime = dataNodeLogConfigsLogConfig["CreateTime"].asString();
 		data_.logConfigs.push_back(logConfigObject);
 	}
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
 	if(!value["TraceId"].isNull())
 		traceId_ = value["TraceId"].asString();
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

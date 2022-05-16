@@ -44,40 +44,40 @@ void ListNamespacedConfigMapsResult::parse(const std::string &payload)
 	for (auto dataNodeConfigMapsConfigMap : allConfigMapsNode)
 	{
 		Data::ConfigMap configMapObject;
-		if(!dataNodeConfigMapsConfigMap["ConfigMapId"].isNull())
-			configMapObject.configMapId = std::stol(dataNodeConfigMapsConfigMap["ConfigMapId"].asString());
-		if(!dataNodeConfigMapsConfigMap["Name"].isNull())
-			configMapObject.name = dataNodeConfigMapsConfigMap["Name"].asString();
+		if(!dataNodeConfigMapsConfigMap["UpdateTime"].isNull())
+			configMapObject.updateTime = std::stol(dataNodeConfigMapsConfigMap["UpdateTime"].asString());
+		if(!dataNodeConfigMapsConfigMap["Data"].isNull())
+			configMapObject.data = dataNodeConfigMapsConfigMap["Data"].asString();
 		if(!dataNodeConfigMapsConfigMap["NamespaceId"].isNull())
 			configMapObject.namespaceId = dataNodeConfigMapsConfigMap["NamespaceId"].asString();
 		if(!dataNodeConfigMapsConfigMap["Description"].isNull())
 			configMapObject.description = dataNodeConfigMapsConfigMap["Description"].asString();
-		if(!dataNodeConfigMapsConfigMap["Data"].isNull())
-			configMapObject.data = dataNodeConfigMapsConfigMap["Data"].asString();
 		if(!dataNodeConfigMapsConfigMap["CreateTime"].isNull())
 			configMapObject.createTime = std::stol(dataNodeConfigMapsConfigMap["CreateTime"].asString());
-		if(!dataNodeConfigMapsConfigMap["UpdateTime"].isNull())
-			configMapObject.updateTime = std::stol(dataNodeConfigMapsConfigMap["UpdateTime"].asString());
+		if(!dataNodeConfigMapsConfigMap["ConfigMapId"].isNull())
+			configMapObject.configMapId = std::stol(dataNodeConfigMapsConfigMap["ConfigMapId"].asString());
+		if(!dataNodeConfigMapsConfigMap["Name"].isNull())
+			configMapObject.name = dataNodeConfigMapsConfigMap["Name"].asString();
 		auto allRelateAppsNode = dataNodeConfigMapsConfigMap["RelateApps"]["RelateApp"];
 		for (auto dataNodeConfigMapsConfigMapRelateAppsRelateApp : allRelateAppsNode)
 		{
 			Data::ConfigMap::RelateApp relateAppsObject;
-			if(!dataNodeConfigMapsConfigMapRelateAppsRelateApp["AppId"].isNull())
-				relateAppsObject.appId = dataNodeConfigMapsConfigMapRelateAppsRelateApp["AppId"].asString();
 			if(!dataNodeConfigMapsConfigMapRelateAppsRelateApp["AppName"].isNull())
 				relateAppsObject.appName = dataNodeConfigMapsConfigMapRelateAppsRelateApp["AppName"].asString();
+			if(!dataNodeConfigMapsConfigMapRelateAppsRelateApp["AppId"].isNull())
+				relateAppsObject.appId = dataNodeConfigMapsConfigMapRelateAppsRelateApp["AppId"].asString();
 			configMapObject.relateApps.push_back(relateAppsObject);
 		}
 		data_.configMaps.push_back(configMapObject);
 	}
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
 	if(!value["TraceId"].isNull())
 		traceId_ = value["TraceId"].asString();
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 

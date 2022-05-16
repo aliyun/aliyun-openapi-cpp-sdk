@@ -60,24 +60,24 @@ void DescribeGreyTagRouteResult::parse(const std::string &payload)
 			scRuleObject.path = dataNodeScRulesscRule["path"].asString();
 		if(!dataNodeScRulesscRule["condition"].isNull())
 			scRuleObject.condition = dataNodeScRulesscRule["condition"].asString();
-		auto allitemsNode = dataNodeScRulesscRule["items"]["item"];
-		for (auto dataNodeScRulesscRuleitemsitem : allitemsNode)
+		auto allitemsNode = dataNodeScRulesscRule["items"]["Scrulesitem"];
+		for (auto dataNodeScRulesscRuleitemsScrulesitem : allitemsNode)
 		{
-			Data::ScRule::Item itemsObject;
-			if(!dataNodeScRulesscRuleitemsitem["index"].isNull())
-				itemsObject.index = std::stoi(dataNodeScRulesscRuleitemsitem["index"].asString());
-			if(!dataNodeScRulesscRuleitemsitem["expr"].isNull())
-				itemsObject.expr = dataNodeScRulesscRuleitemsitem["expr"].asString();
-			if(!dataNodeScRulesscRuleitemsitem["operator"].isNull())
-				itemsObject._operator = dataNodeScRulesscRuleitemsitem["operator"].asString();
-			if(!dataNodeScRulesscRuleitemsitem["value"].isNull())
-				itemsObject.value = dataNodeScRulesscRuleitemsitem["value"].asString();
-			if(!dataNodeScRulesscRuleitemsitem["cond"].isNull())
-				itemsObject.cond = dataNodeScRulesscRuleitemsitem["cond"].asString();
-			if(!dataNodeScRulesscRuleitemsitem["type"].isNull())
-				itemsObject.type = dataNodeScRulesscRuleitemsitem["type"].asString();
-			if(!dataNodeScRulesscRuleitemsitem["name"].isNull())
-				itemsObject.name = dataNodeScRulesscRuleitemsitem["name"].asString();
+			Data::ScRule::Scrulesitem itemsObject;
+			if(!dataNodeScRulesscRuleitemsScrulesitem["type"].isNull())
+				itemsObject.type = dataNodeScRulesscRuleitemsScrulesitem["type"].asString();
+			if(!dataNodeScRulesscRuleitemsScrulesitem["name"].isNull())
+				itemsObject.name = dataNodeScRulesscRuleitemsScrulesitem["name"].asString();
+			if(!dataNodeScRulesscRuleitemsScrulesitem["operator"].isNull())
+				itemsObject._operator = dataNodeScRulesscRuleitemsScrulesitem["operator"].asString();
+			if(!dataNodeScRulesscRuleitemsScrulesitem["value"].isNull())
+				itemsObject.value = dataNodeScRulesscRuleitemsScrulesitem["value"].asString();
+			if(!dataNodeScRulesscRuleitemsScrulesitem["cond"].isNull())
+				itemsObject.cond = dataNodeScRulesscRuleitemsScrulesitem["cond"].asString();
+			if(!dataNodeScRulesscRuleitemsScrulesitem["index"].isNull())
+				itemsObject.index = std::stoi(dataNodeScRulesscRuleitemsScrulesitem["index"].asString());
+			if(!dataNodeScRulesscRuleitemsScrulesitem["expr"].isNull())
+				itemsObject.expr = dataNodeScRulesscRuleitemsScrulesitem["expr"].asString();
 			scRuleObject.items.push_back(itemsObject);
 		}
 		data_.scRules.push_back(scRuleObject);
@@ -99,7 +99,7 @@ void DescribeGreyTagRouteResult::parse(const std::string &payload)
 		auto allitems1Node = dataNodeDubboRulesdubboRule["items"]["item"];
 		for (auto dataNodeDubboRulesdubboRuleitemsitem : allitems1Node)
 		{
-			Data::DubboRule::Item2 items1Object;
+			Data::DubboRule::Item items1Object;
 			if(!dataNodeDubboRulesdubboRuleitemsitem["index"].isNull())
 				items1Object.index = std::stoi(dataNodeDubboRulesdubboRuleitemsitem["index"].asString());
 			if(!dataNodeDubboRulesdubboRuleitemsitem["expr"].isNull())

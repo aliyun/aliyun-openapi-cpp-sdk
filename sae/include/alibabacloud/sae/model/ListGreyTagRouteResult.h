@@ -44,8 +44,8 @@ namespace AlibabaCloud
 								std::string cond;
 								std::string expr;
 								std::string value;
-								int index;
 								std::string _operator;
+								int index;
 								std::string name;
 							};
 							std::string path;
@@ -56,8 +56,8 @@ namespace AlibabaCloud
 						{
 							struct Item2
 							{
-								std::string type;
 								std::string cond;
+								std::string type;
 								std::string expr;
 								std::string value;
 								int index;
@@ -71,8 +71,8 @@ namespace AlibabaCloud
 							std::string methodName;
 							std::vector<DubboRule::Item2> items1;
 						};
-						std::string description;
 						long greyTagRouteId;
+						std::string description;
 						long createTime;
 						std::vector<ResultItem::ScRule> scRules;
 						long updateTime;

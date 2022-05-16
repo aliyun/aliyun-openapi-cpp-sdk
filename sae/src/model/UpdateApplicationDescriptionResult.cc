@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/sae/model/UploadFilesResult.h>
+#include <alibabacloud/sae/model/UpdateApplicationDescriptionResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Sae;
 using namespace AlibabaCloud::Sae::Model;
 
-UploadFilesResult::UploadFilesResult() :
+UpdateApplicationDescriptionResult::UpdateApplicationDescriptionResult() :
 	ServiceResult()
 {}
 
-UploadFilesResult::UploadFilesResult(const std::string &payload) :
+UpdateApplicationDescriptionResult::UpdateApplicationDescriptionResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-UploadFilesResult::~UploadFilesResult()
+UpdateApplicationDescriptionResult::~UpdateApplicationDescriptionResult()
 {}
 
-void UploadFilesResult::parse(const std::string &payload)
+void UpdateApplicationDescriptionResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -43,8 +43,6 @@ void UploadFilesResult::parse(const std::string &payload)
 		message_ = value["Message"].asString();
 	if(!value["TraceId"].isNull())
 		traceId_ = value["TraceId"].asString();
-	if(!value["Data"].isNull())
-		data_ = value["Data"].asString();
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = value["ErrorCode"].asString();
 	if(!value["Code"].isNull())
@@ -54,32 +52,27 @@ void UploadFilesResult::parse(const std::string &payload)
 
 }
 
-std::string UploadFilesResult::getMessage()const
+std::string UpdateApplicationDescriptionResult::getMessage()const
 {
 	return message_;
 }
 
-std::string UploadFilesResult::getTraceId()const
+std::string UpdateApplicationDescriptionResult::getTraceId()const
 {
 	return traceId_;
 }
 
-std::string UploadFilesResult::getData()const
-{
-	return data_;
-}
-
-std::string UploadFilesResult::getErrorCode()const
+std::string UpdateApplicationDescriptionResult::getErrorCode()const
 {
 	return errorCode_;
 }
 
-std::string UploadFilesResult::getCode()const
+std::string UpdateApplicationDescriptionResult::getCode()const
 {
 	return code_;
 }
 
-bool UploadFilesResult::getSuccess()const
+bool UpdateApplicationDescriptionResult::getSuccess()const
 {
 	return success_;
 }

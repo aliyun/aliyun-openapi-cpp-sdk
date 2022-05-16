@@ -1635,42 +1635,6 @@ SaeClient::DisableApplicationScalingRuleOutcomeCallable SaeClient::disableApplic
 	return task->get_future();
 }
 
-SaeClient::DownloadFilesOutcome SaeClient::downloadFiles(const DownloadFilesRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DownloadFilesOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DownloadFilesOutcome(DownloadFilesResult(outcome.result()));
-	else
-		return DownloadFilesOutcome(outcome.error());
-}
-
-void SaeClient::downloadFilesAsync(const DownloadFilesRequest& request, const DownloadFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, downloadFiles(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SaeClient::DownloadFilesOutcomeCallable SaeClient::downloadFilesCallable(const DownloadFilesRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DownloadFilesOutcome()>>(
-			[this, request]()
-			{
-			return this->downloadFiles(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 SaeClient::EnableApplicationScalingRuleOutcome SaeClient::enableApplicationScalingRule(const EnableApplicationScalingRuleRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2679,6 +2643,42 @@ SaeClient::UpdateAppSecurityGroupOutcomeCallable SaeClient::updateAppSecurityGro
 	return task->get_future();
 }
 
+SaeClient::UpdateApplicationDescriptionOutcome SaeClient::updateApplicationDescription(const UpdateApplicationDescriptionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateApplicationDescriptionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateApplicationDescriptionOutcome(UpdateApplicationDescriptionResult(outcome.result()));
+	else
+		return UpdateApplicationDescriptionOutcome(outcome.error());
+}
+
+void SaeClient::updateApplicationDescriptionAsync(const UpdateApplicationDescriptionRequest& request, const UpdateApplicationDescriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateApplicationDescription(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::UpdateApplicationDescriptionOutcomeCallable SaeClient::updateApplicationDescriptionCallable(const UpdateApplicationDescriptionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateApplicationDescriptionOutcome()>>(
+			[this, request]()
+			{
+			return this->updateApplicationDescription(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SaeClient::UpdateApplicationScalingRuleOutcome SaeClient::updateApplicationScalingRule(const UpdateApplicationScalingRuleRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2709,6 +2709,42 @@ SaeClient::UpdateApplicationScalingRuleOutcomeCallable SaeClient::updateApplicat
 			[this, request]()
 			{
 			return this->updateApplicationScalingRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::UpdateApplicationVswitchesOutcome SaeClient::updateApplicationVswitches(const UpdateApplicationVswitchesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateApplicationVswitchesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateApplicationVswitchesOutcome(UpdateApplicationVswitchesResult(outcome.result()));
+	else
+		return UpdateApplicationVswitchesOutcome(outcome.error());
+}
+
+void SaeClient::updateApplicationVswitchesAsync(const UpdateApplicationVswitchesRequest& request, const UpdateApplicationVswitchesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateApplicationVswitches(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::UpdateApplicationVswitchesOutcomeCallable SaeClient::updateApplicationVswitchesCallable(const UpdateApplicationVswitchesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateApplicationVswitchesOutcome()>>(
+			[this, request]()
+			{
+			return this->updateApplicationVswitches(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2889,42 +2925,6 @@ SaeClient::UpdateNamespaceVpcOutcomeCallable SaeClient::updateNamespaceVpcCallab
 			[this, request]()
 			{
 			return this->updateNamespaceVpc(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SaeClient::UploadFilesOutcome SaeClient::uploadFiles(const UploadFilesRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return UploadFilesOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return UploadFilesOutcome(UploadFilesResult(outcome.result()));
-	else
-		return UploadFilesOutcome(outcome.error());
-}
-
-void SaeClient::uploadFilesAsync(const UploadFilesRequest& request, const UploadFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, uploadFiles(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SaeClient::UploadFilesOutcomeCallable SaeClient::uploadFilesCallable(const UploadFilesRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<UploadFilesOutcome()>>(
-			[this, request]()
-			{
-			return this->uploadFiles(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

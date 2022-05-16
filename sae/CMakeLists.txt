@@ -109,8 +109,6 @@ set(sae_public_header_model
 	include/alibabacloud/sae/model/DescribeRegionsResult.h
 	include/alibabacloud/sae/model/DisableApplicationScalingRuleRequest.h
 	include/alibabacloud/sae/model/DisableApplicationScalingRuleResult.h
-	include/alibabacloud/sae/model/DownloadFilesRequest.h
-	include/alibabacloud/sae/model/DownloadFilesResult.h
 	include/alibabacloud/sae/model/EnableApplicationScalingRuleRequest.h
 	include/alibabacloud/sae/model/EnableApplicationScalingRuleResult.h
 	include/alibabacloud/sae/model/ListAppEventsRequest.h
@@ -167,8 +165,12 @@ set(sae_public_header_model
 	include/alibabacloud/sae/model/UntagResourcesResult.h
 	include/alibabacloud/sae/model/UpdateAppSecurityGroupRequest.h
 	include/alibabacloud/sae/model/UpdateAppSecurityGroupResult.h
+	include/alibabacloud/sae/model/UpdateApplicationDescriptionRequest.h
+	include/alibabacloud/sae/model/UpdateApplicationDescriptionResult.h
 	include/alibabacloud/sae/model/UpdateApplicationScalingRuleRequest.h
 	include/alibabacloud/sae/model/UpdateApplicationScalingRuleResult.h
+	include/alibabacloud/sae/model/UpdateApplicationVswitchesRequest.h
+	include/alibabacloud/sae/model/UpdateApplicationVswitchesResult.h
 	include/alibabacloud/sae/model/UpdateConfigMapRequest.h
 	include/alibabacloud/sae/model/UpdateConfigMapResult.h
 	include/alibabacloud/sae/model/UpdateGreyTagRouteRequest.h
@@ -178,9 +180,7 @@ set(sae_public_header_model
 	include/alibabacloud/sae/model/UpdateNamespaceRequest.h
 	include/alibabacloud/sae/model/UpdateNamespaceResult.h
 	include/alibabacloud/sae/model/UpdateNamespaceVpcRequest.h
-	include/alibabacloud/sae/model/UpdateNamespaceVpcResult.h
-	include/alibabacloud/sae/model/UploadFilesRequest.h
-	include/alibabacloud/sae/model/UploadFilesResult.h )
+	include/alibabacloud/sae/model/UpdateNamespaceVpcResult.h )
 
 set(sae_src 
 	src/SaeClient.cc
@@ -272,8 +272,6 @@ set(sae_src
 	src/model/DescribeRegionsResult.cc
 	src/model/DisableApplicationScalingRuleRequest.cc
 	src/model/DisableApplicationScalingRuleResult.cc
-	src/model/DownloadFilesRequest.cc
-	src/model/DownloadFilesResult.cc
 	src/model/EnableApplicationScalingRuleRequest.cc
 	src/model/EnableApplicationScalingRuleResult.cc
 	src/model/ListAppEventsRequest.cc
@@ -330,8 +328,12 @@ set(sae_src
 	src/model/UntagResourcesResult.cc
 	src/model/UpdateAppSecurityGroupRequest.cc
 	src/model/UpdateAppSecurityGroupResult.cc
+	src/model/UpdateApplicationDescriptionRequest.cc
+	src/model/UpdateApplicationDescriptionResult.cc
 	src/model/UpdateApplicationScalingRuleRequest.cc
 	src/model/UpdateApplicationScalingRuleResult.cc
+	src/model/UpdateApplicationVswitchesRequest.cc
+	src/model/UpdateApplicationVswitchesResult.cc
 	src/model/UpdateConfigMapRequest.cc
 	src/model/UpdateConfigMapResult.cc
 	src/model/UpdateGreyTagRouteRequest.cc
@@ -341,9 +343,7 @@ set(sae_src
 	src/model/UpdateNamespaceRequest.cc
 	src/model/UpdateNamespaceResult.cc
 	src/model/UpdateNamespaceVpcRequest.cc
-	src/model/UpdateNamespaceVpcResult.cc
-	src/model/UploadFilesRequest.cc
-	src/model/UploadFilesResult.cc )
+	src/model/UpdateNamespaceVpcResult.cc )
 
 add_library(sae ${LIB_TYPE}
 	${sae_public_header}

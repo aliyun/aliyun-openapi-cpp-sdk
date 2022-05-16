@@ -40,26 +40,26 @@ void ListGreyTagRouteResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["PageSize"].isNull())
-		data_.pageSize = std::stoi(dataNode["PageSize"].asString());
 	if(!dataNode["CurrentPage"].isNull())
 		data_.currentPage = std::stoi(dataNode["CurrentPage"].asString());
+	if(!dataNode["PageSize"].isNull())
+		data_.pageSize = std::stoi(dataNode["PageSize"].asString());
 	if(!dataNode["TotalSize"].isNull())
 		data_.totalSize = std::stol(dataNode["TotalSize"].asString());
 	auto allResultNode = dataNode["Result"]["resultItem"];
 	for (auto dataNodeResultresultItem : allResultNode)
 	{
 		Data::ResultItem resultItemObject;
-		if(!dataNodeResultresultItem["Description"].isNull())
-			resultItemObject.description = dataNodeResultresultItem["Description"].asString();
 		if(!dataNodeResultresultItem["GreyTagRouteId"].isNull())
 			resultItemObject.greyTagRouteId = std::stol(dataNodeResultresultItem["GreyTagRouteId"].asString());
+		if(!dataNodeResultresultItem["Name"].isNull())
+			resultItemObject.name = dataNodeResultresultItem["Name"].asString();
+		if(!dataNodeResultresultItem["Description"].isNull())
+			resultItemObject.description = dataNodeResultresultItem["Description"].asString();
 		if(!dataNodeResultresultItem["CreateTime"].isNull())
 			resultItemObject.createTime = std::stol(dataNodeResultresultItem["CreateTime"].asString());
 		if(!dataNodeResultresultItem["UpdateTime"].isNull())
 			resultItemObject.updateTime = std::stol(dataNodeResultresultItem["UpdateTime"].asString());
-		if(!dataNodeResultresultItem["Name"].isNull())
-			resultItemObject.name = dataNodeResultresultItem["Name"].asString();
 		auto allScRulesNode = dataNodeResultresultItem["ScRules"]["scRule"];
 		for (auto dataNodeResultresultItemScRulesscRule : allScRulesNode)
 		{
@@ -72,20 +72,20 @@ void ListGreyTagRouteResult::parse(const std::string &payload)
 			for (auto dataNodeResultresultItemScRulesscRuleitemsitem : allitemsNode)
 			{
 				Data::ResultItem::ScRule::Item itemsObject;
+				if(!dataNodeResultresultItemScRulesscRuleitemsitem["type"].isNull())
+					itemsObject.type = dataNodeResultresultItemScRulesscRuleitemsitem["type"].asString();
 				if(!dataNodeResultresultItemScRulesscRuleitemsitem["name"].isNull())
 					itemsObject.name = dataNodeResultresultItemScRulesscRuleitemsitem["name"].asString();
+				if(!dataNodeResultresultItemScRulesscRuleitemsitem["operator"].isNull())
+					itemsObject._operator = dataNodeResultresultItemScRulesscRuleitemsitem["operator"].asString();
+				if(!dataNodeResultresultItemScRulesscRuleitemsitem["value"].isNull())
+					itemsObject.value = dataNodeResultresultItemScRulesscRuleitemsitem["value"].asString();
+				if(!dataNodeResultresultItemScRulesscRuleitemsitem["cond"].isNull())
+					itemsObject.cond = dataNodeResultresultItemScRulesscRuleitemsitem["cond"].asString();
 				if(!dataNodeResultresultItemScRulesscRuleitemsitem["index"].isNull())
 					itemsObject.index = std::stoi(dataNodeResultresultItemScRulesscRuleitemsitem["index"].asString());
 				if(!dataNodeResultresultItemScRulesscRuleitemsitem["expr"].isNull())
 					itemsObject.expr = dataNodeResultresultItemScRulesscRuleitemsitem["expr"].asString();
-				if(!dataNodeResultresultItemScRulesscRuleitemsitem["type"].isNull())
-					itemsObject.type = dataNodeResultresultItemScRulesscRuleitemsitem["type"].asString();
-				if(!dataNodeResultresultItemScRulesscRuleitemsitem["cond"].isNull())
-					itemsObject.cond = dataNodeResultresultItemScRulesscRuleitemsitem["cond"].asString();
-				if(!dataNodeResultresultItemScRulesscRuleitemsitem["value"].isNull())
-					itemsObject.value = dataNodeResultresultItemScRulesscRuleitemsitem["value"].asString();
-				if(!dataNodeResultresultItemScRulesscRuleitemsitem["operator"].isNull())
-					itemsObject._operator = dataNodeResultresultItemScRulesscRuleitemsitem["operator"].asString();
 				scRulesObject.items.push_back(itemsObject);
 			}
 			resultItemObject.scRules.push_back(scRulesObject);
@@ -94,34 +94,34 @@ void ListGreyTagRouteResult::parse(const std::string &payload)
 		for (auto dataNodeResultresultItemDubboRulesdubboRule : allDubboRulesNode)
 		{
 			Data::ResultItem::DubboRule dubboRulesObject;
-			if(!dataNodeResultresultItemDubboRulesdubboRule["condition"].isNull())
-				dubboRulesObject.condition = dataNodeResultresultItemDubboRulesdubboRule["condition"].asString();
-			if(!dataNodeResultresultItemDubboRulesdubboRule["methodName"].isNull())
-				dubboRulesObject.methodName = dataNodeResultresultItemDubboRulesdubboRule["methodName"].asString();
 			if(!dataNodeResultresultItemDubboRulesdubboRule["serviceName"].isNull())
 				dubboRulesObject.serviceName = dataNodeResultresultItemDubboRulesdubboRule["serviceName"].asString();
-			if(!dataNodeResultresultItemDubboRulesdubboRule["version"].isNull())
-				dubboRulesObject.version = dataNodeResultresultItemDubboRulesdubboRule["version"].asString();
 			if(!dataNodeResultresultItemDubboRulesdubboRule["group"].isNull())
 				dubboRulesObject.group = dataNodeResultresultItemDubboRulesdubboRule["group"].asString();
+			if(!dataNodeResultresultItemDubboRulesdubboRule["version"].isNull())
+				dubboRulesObject.version = dataNodeResultresultItemDubboRulesdubboRule["version"].asString();
+			if(!dataNodeResultresultItemDubboRulesdubboRule["methodName"].isNull())
+				dubboRulesObject.methodName = dataNodeResultresultItemDubboRulesdubboRule["methodName"].asString();
+			if(!dataNodeResultresultItemDubboRulesdubboRule["condition"].isNull())
+				dubboRulesObject.condition = dataNodeResultresultItemDubboRulesdubboRule["condition"].asString();
 			auto allitems1Node = dataNodeResultresultItemDubboRulesdubboRule["items"]["item"];
 			for (auto dataNodeResultresultItemDubboRulesdubboRuleitemsitem : allitems1Node)
 			{
 				Data::ResultItem::DubboRule::Item2 items1Object;
-				if(!dataNodeResultresultItemDubboRulesdubboRuleitemsitem["name"].isNull())
-					items1Object.name = dataNodeResultresultItemDubboRulesdubboRuleitemsitem["name"].asString();
 				if(!dataNodeResultresultItemDubboRulesdubboRuleitemsitem["index"].isNull())
 					items1Object.index = std::stoi(dataNodeResultresultItemDubboRulesdubboRuleitemsitem["index"].asString());
 				if(!dataNodeResultresultItemDubboRulesdubboRuleitemsitem["expr"].isNull())
 					items1Object.expr = dataNodeResultresultItemDubboRulesdubboRuleitemsitem["expr"].asString();
-				if(!dataNodeResultresultItemDubboRulesdubboRuleitemsitem["type"].isNull())
-					items1Object.type = dataNodeResultresultItemDubboRulesdubboRuleitemsitem["type"].asString();
-				if(!dataNodeResultresultItemDubboRulesdubboRuleitemsitem["cond"].isNull())
-					items1Object.cond = dataNodeResultresultItemDubboRulesdubboRuleitemsitem["cond"].asString();
-				if(!dataNodeResultresultItemDubboRulesdubboRuleitemsitem["value"].isNull())
-					items1Object.value = dataNodeResultresultItemDubboRulesdubboRuleitemsitem["value"].asString();
 				if(!dataNodeResultresultItemDubboRulesdubboRuleitemsitem["operator"].isNull())
 					items1Object._operator = dataNodeResultresultItemDubboRulesdubboRuleitemsitem["operator"].asString();
+				if(!dataNodeResultresultItemDubboRulesdubboRuleitemsitem["value"].isNull())
+					items1Object.value = dataNodeResultresultItemDubboRulesdubboRuleitemsitem["value"].asString();
+				if(!dataNodeResultresultItemDubboRulesdubboRuleitemsitem["cond"].isNull())
+					items1Object.cond = dataNodeResultresultItemDubboRulesdubboRuleitemsitem["cond"].asString();
+				if(!dataNodeResultresultItemDubboRulesdubboRuleitemsitem["type"].isNull())
+					items1Object.type = dataNodeResultresultItemDubboRulesdubboRuleitemsitem["type"].asString();
+				if(!dataNodeResultresultItemDubboRulesdubboRuleitemsitem["name"].isNull())
+					items1Object.name = dataNodeResultresultItemDubboRulesdubboRuleitemsitem["name"].asString();
 				dubboRulesObject.items1.push_back(items1Object);
 			}
 			resultItemObject.dubboRules.push_back(dubboRulesObject);

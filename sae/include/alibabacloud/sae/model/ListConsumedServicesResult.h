@@ -34,8 +34,8 @@ namespace AlibabaCloud
 			public:
 				struct ListConsumedServices
 				{
-					std::string group2Ip;
 					std::string type;
+					std::string group2Ip;
 					std::string appId;
 					std::string version;
 					std::vector<std::string> groups;

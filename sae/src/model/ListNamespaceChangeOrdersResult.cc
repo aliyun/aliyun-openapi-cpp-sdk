@@ -50,48 +50,48 @@ void ListNamespaceChangeOrdersResult::parse(const std::string &payload)
 	for (auto dataNodeChangeOrderListChangeOrder : allChangeOrderListNode)
 	{
 		Data::ChangeOrder changeOrderObject;
-		if(!dataNodeChangeOrderListChangeOrder["NamespaceId"].isNull())
-			changeOrderObject.namespaceId = dataNodeChangeOrderListChangeOrder["NamespaceId"].asString();
-		if(!dataNodeChangeOrderListChangeOrder["BatchCount"].isNull())
-			changeOrderObject.batchCount = std::stoi(dataNodeChangeOrderListChangeOrder["BatchCount"].asString());
-		if(!dataNodeChangeOrderListChangeOrder["BatchType"].isNull())
-			changeOrderObject.batchType = dataNodeChangeOrderListChangeOrder["BatchType"].asString();
-		if(!dataNodeChangeOrderListChangeOrder["ChangeOrderId"].isNull())
-			changeOrderObject.changeOrderId = dataNodeChangeOrderListChangeOrder["ChangeOrderId"].asString();
-		if(!dataNodeChangeOrderListChangeOrder["CoType"].isNull())
-			changeOrderObject.coType = dataNodeChangeOrderListChangeOrder["CoType"].asString();
-		if(!dataNodeChangeOrderListChangeOrder["CoTypeCode"].isNull())
-			changeOrderObject.coTypeCode = dataNodeChangeOrderListChangeOrder["CoTypeCode"].asString();
-		if(!dataNodeChangeOrderListChangeOrder["CreateTime"].isNull())
-			changeOrderObject.createTime = dataNodeChangeOrderListChangeOrder["CreateTime"].asString();
-		if(!dataNodeChangeOrderListChangeOrder["Description"].isNull())
-			changeOrderObject.description = dataNodeChangeOrderListChangeOrder["Description"].asString();
-		if(!dataNodeChangeOrderListChangeOrder["FinishTime"].isNull())
-			changeOrderObject.finishTime = dataNodeChangeOrderListChangeOrder["FinishTime"].asString();
-		if(!dataNodeChangeOrderListChangeOrder["GroupId"].isNull())
-			changeOrderObject.groupId = dataNodeChangeOrderListChangeOrder["GroupId"].asString();
-		if(!dataNodeChangeOrderListChangeOrder["Pipelines"].isNull())
-			changeOrderObject.pipelines = dataNodeChangeOrderListChangeOrder["Pipelines"].asString();
-		if(!dataNodeChangeOrderListChangeOrder["Source"].isNull())
-			changeOrderObject.source = dataNodeChangeOrderListChangeOrder["Source"].asString();
 		if(!dataNodeChangeOrderListChangeOrder["Status"].isNull())
 			changeOrderObject.status = std::stoi(dataNodeChangeOrderListChangeOrder["Status"].asString());
-		if(!dataNodeChangeOrderListChangeOrder["CreateUserId"].isNull())
-			changeOrderObject.createUserId = dataNodeChangeOrderListChangeOrder["CreateUserId"].asString();
+		if(!dataNodeChangeOrderListChangeOrder["FinishTime"].isNull())
+			changeOrderObject.finishTime = dataNodeChangeOrderListChangeOrder["FinishTime"].asString();
+		if(!dataNodeChangeOrderListChangeOrder["NamespaceId"].isNull())
+			changeOrderObject.namespaceId = dataNodeChangeOrderListChangeOrder["NamespaceId"].asString();
+		if(!dataNodeChangeOrderListChangeOrder["CreateTime"].isNull())
+			changeOrderObject.createTime = dataNodeChangeOrderListChangeOrder["CreateTime"].asString();
 		if(!dataNodeChangeOrderListChangeOrder["UserId"].isNull())
 			changeOrderObject.userId = dataNodeChangeOrderListChangeOrder["UserId"].asString();
+		if(!dataNodeChangeOrderListChangeOrder["Source"].isNull())
+			changeOrderObject.source = dataNodeChangeOrderListChangeOrder["Source"].asString();
+		if(!dataNodeChangeOrderListChangeOrder["CreateUserId"].isNull())
+			changeOrderObject.createUserId = dataNodeChangeOrderListChangeOrder["CreateUserId"].asString();
+		if(!dataNodeChangeOrderListChangeOrder["BatchCount"].isNull())
+			changeOrderObject.batchCount = std::stoi(dataNodeChangeOrderListChangeOrder["BatchCount"].asString());
+		if(!dataNodeChangeOrderListChangeOrder["CoTypeCode"].isNull())
+			changeOrderObject.coTypeCode = dataNodeChangeOrderListChangeOrder["CoTypeCode"].asString();
+		if(!dataNodeChangeOrderListChangeOrder["ChangeOrderId"].isNull())
+			changeOrderObject.changeOrderId = dataNodeChangeOrderListChangeOrder["ChangeOrderId"].asString();
+		if(!dataNodeChangeOrderListChangeOrder["BatchType"].isNull())
+			changeOrderObject.batchType = dataNodeChangeOrderListChangeOrder["BatchType"].asString();
+		if(!dataNodeChangeOrderListChangeOrder["Description"].isNull())
+			changeOrderObject.description = dataNodeChangeOrderListChangeOrder["Description"].asString();
+		if(!dataNodeChangeOrderListChangeOrder["GroupId"].isNull())
+			changeOrderObject.groupId = dataNodeChangeOrderListChangeOrder["GroupId"].asString();
+		if(!dataNodeChangeOrderListChangeOrder["CoType"].isNull())
+			changeOrderObject.coType = dataNodeChangeOrderListChangeOrder["CoType"].asString();
+		if(!dataNodeChangeOrderListChangeOrder["Pipelines"].isNull())
+			changeOrderObject.pipelines = dataNodeChangeOrderListChangeOrder["Pipelines"].asString();
 		data_.changeOrderList.push_back(changeOrderObject);
 	}
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
 	if(!value["TraceId"].isNull())
 		traceId_ = value["TraceId"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 
 }
 

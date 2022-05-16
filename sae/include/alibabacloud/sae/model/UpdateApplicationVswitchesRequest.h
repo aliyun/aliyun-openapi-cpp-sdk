@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SAE_MODEL_UPDATENAMESPACEREQUEST_H_
-#define ALIBABACLOUD_SAE_MODEL_UPDATENAMESPACEREQUEST_H_
+#ifndef ALIBABACLOUD_SAE_MODEL_UPDATEAPPLICATIONVSWITCHESREQUEST_H_
+#define ALIBABACLOUD_SAE_MODEL_UPDATEAPPLICATIONVSWITCHESREQUEST_H_
 
 #include <alibabacloud/sae/SaeExport.h>
 #include <alibabacloud/core/RoaServiceRequest.h>
@@ -26,23 +26,20 @@
 namespace AlibabaCloud {
 namespace Sae {
 namespace Model {
-class ALIBABACLOUD_SAE_EXPORT UpdateNamespaceRequest : public RoaServiceRequest {
+class ALIBABACLOUD_SAE_EXPORT UpdateApplicationVswitchesRequest : public RoaServiceRequest {
 public:
-	UpdateNamespaceRequest();
-	~UpdateNamespaceRequest();
-	std::string getNamespaceName() const;
-	void setNamespaceName(const std::string &namespaceName);
-	std::string getNamespaceDescription() const;
-	void setNamespaceDescription(const std::string &namespaceDescription);
-	std::string getNamespaceId() const;
-	void setNamespaceId(const std::string &namespaceId);
+	UpdateApplicationVswitchesRequest();
+	~UpdateApplicationVswitchesRequest();
+	std::string getVSwitchId() const;
+	void setVSwitchId(const std::string &vSwitchId);
+	std::string getAppId() const;
+	void setAppId(const std::string &appId);
 
 private:
-	std::string namespaceName_;
-	std::string namespaceDescription_;
-	std::string namespaceId_;
+	std::string vSwitchId_;
+	std::string appId_;
 };
 } // namespace Model
 } // namespace Sae
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_SAE_MODEL_UPDATENAMESPACEREQUEST_H_
+#endif // !ALIBABACLOUD_SAE_MODEL_UPDATEAPPLICATIONVSWITCHESREQUEST_H_

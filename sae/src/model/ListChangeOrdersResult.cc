@@ -40,44 +40,44 @@ void ListChangeOrdersResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["PageSize"].isNull())
-		data_.pageSize = std::stoi(dataNode["PageSize"].asString());
 	if(!dataNode["CurrentPage"].isNull())
 		data_.currentPage = std::stoi(dataNode["CurrentPage"].asString());
 	if(!dataNode["TotalSize"].isNull())
 		data_.totalSize = std::stoi(dataNode["TotalSize"].asString());
+	if(!dataNode["PageSize"].isNull())
+		data_.pageSize = std::stoi(dataNode["PageSize"].asString());
 	auto allChangeOrderListNode = dataNode["ChangeOrderList"]["ChangeOrder"];
 	for (auto dataNodeChangeOrderListChangeOrder : allChangeOrderListNode)
 	{
 		Data::ChangeOrder changeOrderObject;
 		if(!dataNodeChangeOrderListChangeOrder["Status"].isNull())
 			changeOrderObject.status = std::stoi(dataNodeChangeOrderListChangeOrder["Status"].asString());
-		if(!dataNodeChangeOrderListChangeOrder["Description"].isNull())
-			changeOrderObject.description = dataNodeChangeOrderListChangeOrder["Description"].asString();
-		if(!dataNodeChangeOrderListChangeOrder["CreateTime"].isNull())
-			changeOrderObject.createTime = dataNodeChangeOrderListChangeOrder["CreateTime"].asString();
-		if(!dataNodeChangeOrderListChangeOrder["ChangeOrderId"].isNull())
-			changeOrderObject.changeOrderId = dataNodeChangeOrderListChangeOrder["ChangeOrderId"].asString();
-		if(!dataNodeChangeOrderListChangeOrder["CreateUserId"].isNull())
-			changeOrderObject.createUserId = dataNodeChangeOrderListChangeOrder["CreateUserId"].asString();
-		if(!dataNodeChangeOrderListChangeOrder["BatchType"].isNull())
-			changeOrderObject.batchType = dataNodeChangeOrderListChangeOrder["BatchType"].asString();
-		if(!dataNodeChangeOrderListChangeOrder["Source"].isNull())
-			changeOrderObject.source = dataNodeChangeOrderListChangeOrder["Source"].asString();
-		if(!dataNodeChangeOrderListChangeOrder["GroupId"].isNull())
-			changeOrderObject.groupId = dataNodeChangeOrderListChangeOrder["GroupId"].asString();
-		if(!dataNodeChangeOrderListChangeOrder["AppId"].isNull())
-			changeOrderObject.appId = dataNodeChangeOrderListChangeOrder["AppId"].asString();
-		if(!dataNodeChangeOrderListChangeOrder["CoTypeCode"].isNull())
-			changeOrderObject.coTypeCode = dataNodeChangeOrderListChangeOrder["CoTypeCode"].asString();
 		if(!dataNodeChangeOrderListChangeOrder["FinishTime"].isNull())
 			changeOrderObject.finishTime = dataNodeChangeOrderListChangeOrder["FinishTime"].asString();
+		if(!dataNodeChangeOrderListChangeOrder["CreateTime"].isNull())
+			changeOrderObject.createTime = dataNodeChangeOrderListChangeOrder["CreateTime"].asString();
 		if(!dataNodeChangeOrderListChangeOrder["UserId"].isNull())
 			changeOrderObject.userId = dataNodeChangeOrderListChangeOrder["UserId"].asString();
-		if(!dataNodeChangeOrderListChangeOrder["CoType"].isNull())
-			changeOrderObject.coType = dataNodeChangeOrderListChangeOrder["CoType"].asString();
+		if(!dataNodeChangeOrderListChangeOrder["Source"].isNull())
+			changeOrderObject.source = dataNodeChangeOrderListChangeOrder["Source"].asString();
 		if(!dataNodeChangeOrderListChangeOrder["BatchCount"].isNull())
 			changeOrderObject.batchCount = std::stoi(dataNodeChangeOrderListChangeOrder["BatchCount"].asString());
+		if(!dataNodeChangeOrderListChangeOrder["CreateUserId"].isNull())
+			changeOrderObject.createUserId = dataNodeChangeOrderListChangeOrder["CreateUserId"].asString();
+		if(!dataNodeChangeOrderListChangeOrder["CoTypeCode"].isNull())
+			changeOrderObject.coTypeCode = dataNodeChangeOrderListChangeOrder["CoTypeCode"].asString();
+		if(!dataNodeChangeOrderListChangeOrder["ChangeOrderId"].isNull())
+			changeOrderObject.changeOrderId = dataNodeChangeOrderListChangeOrder["ChangeOrderId"].asString();
+		if(!dataNodeChangeOrderListChangeOrder["BatchType"].isNull())
+			changeOrderObject.batchType = dataNodeChangeOrderListChangeOrder["BatchType"].asString();
+		if(!dataNodeChangeOrderListChangeOrder["GroupId"].isNull())
+			changeOrderObject.groupId = dataNodeChangeOrderListChangeOrder["GroupId"].asString();
+		if(!dataNodeChangeOrderListChangeOrder["Description"].isNull())
+			changeOrderObject.description = dataNodeChangeOrderListChangeOrder["Description"].asString();
+		if(!dataNodeChangeOrderListChangeOrder["CoType"].isNull())
+			changeOrderObject.coType = dataNodeChangeOrderListChangeOrder["CoType"].asString();
+		if(!dataNodeChangeOrderListChangeOrder["AppId"].isNull())
+			changeOrderObject.appId = dataNodeChangeOrderListChangeOrder["AppId"].asString();
 		data_.changeOrderList.push_back(changeOrderObject);
 	}
 	if(!value["Message"].isNull())

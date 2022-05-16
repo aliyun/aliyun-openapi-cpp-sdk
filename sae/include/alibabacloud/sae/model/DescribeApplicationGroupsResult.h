@@ -34,8 +34,8 @@ namespace AlibabaCloud
 			public:
 				struct ApplicationGroup
 				{
-					std::string groupName;
 					std::string jdk;
+					std::string groupName;
 					int groupType;
 					std::string edasContainerVersion;
 					std::string packageType;
