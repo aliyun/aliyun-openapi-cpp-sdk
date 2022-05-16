@@ -70,6 +70,15 @@ void InitializeAutoShowListTaskRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string InitializeAutoShowListTaskRequest::getCallBackUrl() const {
+  return callBackUrl_;
+}
+
+void InitializeAutoShowListTaskRequest::setCallBackUrl(const std::string &callBackUrl) {
+  callBackUrl_ = callBackUrl;
+  setParameter(std::string("CallBackUrl"), callBackUrl);
+}
+
 std::string InitializeAutoShowListTaskRequest::getResourceIds() const {
   return resourceIds_;
 }

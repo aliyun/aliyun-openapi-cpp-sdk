@@ -32,16 +32,42 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_LIVE_EXPORT DescribeShowListResult : public ServiceResult
 			{
 			public:
+				struct ShowListInfo
+				{
+					struct Show
+					{
+						struct ResourceInfo
+						{
+							std::string resourceId;
+							std::string resourceType;
+							std::string resourceUrl;
+							int liveInputType;
+						};
+						ResourceInfo resourceInfo;
+						std::string showId;
+						long duration;
+						int repeatTimes;
+						std::string showName;
+					};
+					std::string currentShowId;
+					std::string highPriorityShowStartTime;
+					int totalShowListRepeatTimes;
+					std::string highPriorityShowId;
+					int showListRepeatTimes;
+					std::vector<Show> showList;
+				};
 
 
 				DescribeShowListResult();
 				explicit DescribeShowListResult(const std::string &payload);
 				~DescribeShowListResult();
+				ShowListInfo getShowListInfo()const;
 				std::string getShowList()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				ShowListInfo showListInfo_;
 				std::string showList_;
 
 			};

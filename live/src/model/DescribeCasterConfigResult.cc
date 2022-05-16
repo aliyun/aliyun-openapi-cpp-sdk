@@ -79,24 +79,26 @@ void DescribeCasterConfigResult::parse(const std::string &payload)
 	}
 	if(!value["Delay"].isNull())
 		delay_ = std::stof(value["Delay"].asString());
-	if(!value["CallbackUrl"].isNull())
-		callbackUrl_ = value["CallbackUrl"].asString();
 	if(!value["UrgentMaterialId"].isNull())
 		urgentMaterialId_ = value["UrgentMaterialId"].asString();
+	if(!value["CallbackUrl"].isNull())
+		callbackUrl_ = value["CallbackUrl"].asString();
 	if(!value["ProgramName"].isNull())
 		programName_ = value["ProgramName"].asString();
-	if(!value["SideOutputUrl"].isNull())
-		sideOutputUrl_ = value["SideOutputUrl"].asString();
 	if(!value["CasterName"].isNull())
 		casterName_ = value["CasterName"].asString();
-	if(!value["ProgramEffect"].isNull())
-		programEffect_ = std::stoi(value["ProgramEffect"].asString());
 	if(!value["CasterId"].isNull())
 		casterId_ = value["CasterId"].asString();
-	if(!value["ChannelEnable"].isNull())
-		channelEnable_ = std::stoi(value["ChannelEnable"].asString());
+	if(!value["ProgramEffect"].isNull())
+		programEffect_ = std::stoi(value["ProgramEffect"].asString());
 	if(!value["DomainName"].isNull())
 		domainName_ = value["DomainName"].asString();
+	if(!value["ChannelEnable"].isNull())
+		channelEnable_ = std::stoi(value["ChannelEnable"].asString());
+	if(!value["SideOutputUrlList"].isNull())
+		sideOutputUrlList_ = value["SideOutputUrlList"].asString();
+	if(!value["SideOutputUrl"].isNull())
+		sideOutputUrl_ = value["SideOutputUrl"].asString();
 
 }
 
@@ -113,6 +115,11 @@ std::string DescribeCasterConfigResult::getDomainName()const
 std::string DescribeCasterConfigResult::getUrgentMaterialId()const
 {
 	return urgentMaterialId_;
+}
+
+std::string DescribeCasterConfigResult::getSideOutputUrlList()const
+{
+	return sideOutputUrlList_;
 }
 
 DescribeCasterConfigResult::TranscodeConfig DescribeCasterConfigResult::getTranscodeConfig()const

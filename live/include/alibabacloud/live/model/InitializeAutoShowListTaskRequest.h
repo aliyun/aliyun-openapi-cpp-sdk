@@ -40,6 +40,8 @@ public:
 	void setEndTime(long endTime);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getCallBackUrl() const;
+	void setCallBackUrl(const std::string &callBackUrl);
 	std::string getResourceIds() const;
 	void setResourceIds(const std::string &resourceIds);
 
@@ -49,6 +51,7 @@ private:
 	std::string domainName_;
 	long endTime_;
 	long ownerId_;
+	std::string callBackUrl_;
 	std::string resourceIds_;
 };
 } // namespace Model

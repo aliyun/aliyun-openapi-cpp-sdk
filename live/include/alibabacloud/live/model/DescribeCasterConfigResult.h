@@ -64,6 +64,7 @@ namespace AlibabaCloud
 				int getChannelEnable()const;
 				std::string getDomainName()const;
 				std::string getUrgentMaterialId()const;
+				std::string getSideOutputUrlList()const;
 				TranscodeConfig getTranscodeConfig()const;
 				std::string getProgramName()const;
 				float getDelay()const;
@@ -81,6 +82,7 @@ namespace AlibabaCloud
 				int channelEnable_;
 				std::string domainName_;
 				std::string urgentMaterialId_;
+				std::string sideOutputUrlList_;
 				TranscodeConfig transcodeConfig_;
 				std::string programName_;
 				float delay_;
