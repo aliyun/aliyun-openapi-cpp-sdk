@@ -171,6 +171,8 @@ set(bssopenapi_public_header_model
 	include/alibabacloud/bssopenapi/model/QueryUserOmsDataResult.h
 	include/alibabacloud/bssopenapi/model/RefundInstanceRequest.h
 	include/alibabacloud/bssopenapi/model/RefundInstanceResult.h
+	include/alibabacloud/bssopenapi/model/ReleaseInstanceRequest.h
+	include/alibabacloud/bssopenapi/model/ReleaseInstanceResult.h
 	include/alibabacloud/bssopenapi/model/RelieveAccountRelationRequest.h
 	include/alibabacloud/bssopenapi/model/RelieveAccountRelationResult.h
 	include/alibabacloud/bssopenapi/model/RenewInstanceRequest.h
@@ -354,6 +356,8 @@ set(bssopenapi_src
 	src/model/QueryUserOmsDataResult.cc
 	src/model/RefundInstanceRequest.cc
 	src/model/RefundInstanceResult.cc
+	src/model/ReleaseInstanceRequest.cc
+	src/model/ReleaseInstanceResult.cc
 	src/model/RelieveAccountRelationRequest.cc
 	src/model/RelieveAccountRelationResult.cc
 	src/model/RenewInstanceRequest.cc

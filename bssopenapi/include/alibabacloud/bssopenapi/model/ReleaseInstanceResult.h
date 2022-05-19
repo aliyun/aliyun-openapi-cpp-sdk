@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYBILLTOOSSSUBSCRIPTIONRESULT_H_
-#define ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYBILLTOOSSSUBSCRIPTIONRESULT_H_
+#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_RELEASEINSTANCERESULT_H_
+#define ALIBABACLOUD_BSSOPENAPI_MODEL_RELEASEINSTANCERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,30 +29,19 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_BSSOPENAPI_EXPORT QueryBillToOSSSubscriptionResult : public ServiceResult
+			class ALIBABACLOUD_BSSOPENAPI_EXPORT ReleaseInstanceResult : public ServiceResult
 			{
 			public:
 				struct Data
 				{
-					struct Item
-					{
-						std::string subscribeBucket;
-						std::string subscribeTime;
-						std::string subscribeType;
-						std::string bucketPath;
-						long bucketOwnerId;
-						std::string multAccountRelSubscribe;
-						std::string subscribeLanguage;
-					};
-					std::string accountID;
-					std::vector<Item> items;
-					std::string accountName;
+					bool releaseResult;
+					std::string hostId;
 				};
 
 
-				QueryBillToOSSSubscriptionResult();
-				explicit QueryBillToOSSSubscriptionResult(const std::string &payload);
-				~QueryBillToOSSSubscriptionResult();
+				ReleaseInstanceResult();
+				explicit ReleaseInstanceResult(const std::string &payload);
+				~ReleaseInstanceResult();
 				std::string getMessage()const;
 				Data getData()const;
 				std::string getCode()const;
@@ -70,4 +59,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYBILLTOOSSSUBSCRIPTIONRESULT_H_
+#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_RELEASEINSTANCERESULT_H_

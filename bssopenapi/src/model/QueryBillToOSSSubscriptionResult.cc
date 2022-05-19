@@ -60,6 +60,8 @@ void QueryBillToOSSSubscriptionResult::parse(const std::string &payload)
 			itemObject.subscribeLanguage = dataNodeItemsItem["SubscribeLanguage"].asString();
 		if(!dataNodeItemsItem["MultAccountRelSubscribe"].isNull())
 			itemObject.multAccountRelSubscribe = dataNodeItemsItem["MultAccountRelSubscribe"].asString();
+		if(!dataNodeItemsItem["BucketPath"].isNull())
+			itemObject.bucketPath = dataNodeItemsItem["BucketPath"].asString();
 		data_.items.push_back(itemObject);
 	}
 	if(!value["Code"].isNull())

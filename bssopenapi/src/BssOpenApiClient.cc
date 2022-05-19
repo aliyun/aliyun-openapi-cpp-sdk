@@ -2751,6 +2751,42 @@ BssOpenApiClient::RefundInstanceOutcomeCallable BssOpenApiClient::refundInstance
 	return task->get_future();
 }
 
+BssOpenApiClient::ReleaseInstanceOutcome BssOpenApiClient::releaseInstance(const ReleaseInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ReleaseInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ReleaseInstanceOutcome(ReleaseInstanceResult(outcome.result()));
+	else
+		return ReleaseInstanceOutcome(outcome.error());
+}
+
+void BssOpenApiClient::releaseInstanceAsync(const ReleaseInstanceRequest& request, const ReleaseInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, releaseInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+BssOpenApiClient::ReleaseInstanceOutcomeCallable BssOpenApiClient::releaseInstanceCallable(const ReleaseInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ReleaseInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->releaseInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 BssOpenApiClient::RelieveAccountRelationOutcome BssOpenApiClient::relieveAccountRelation(const RelieveAccountRelationRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

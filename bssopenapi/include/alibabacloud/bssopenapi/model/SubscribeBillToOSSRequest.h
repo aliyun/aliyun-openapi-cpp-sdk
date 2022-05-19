@@ -36,6 +36,8 @@ public:
 	void setSubscribeType(const std::string &subscribeType);
 	std::string getSubscribeBucket() const;
 	void setSubscribeBucket(const std::string &subscribeBucket);
+	std::string getBucketPath() const;
+	void setBucketPath(const std::string &bucketPath);
 	std::string getBeginBillingCycle() const;
 	void setBeginBillingCycle(const std::string &beginBillingCycle);
 	std::string getMultAccountRelSubscribe() const;
@@ -45,6 +47,7 @@ private:
 	long bucketOwnerId_;
 	std::string subscribeType_;
 	std::string subscribeBucket_;
+	std::string bucketPath_;
 	std::string beginBillingCycle_;
 	std::string multAccountRelSubscribe_;
 };

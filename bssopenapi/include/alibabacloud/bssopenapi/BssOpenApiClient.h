@@ -172,6 +172,8 @@
 #include "model/QueryUserOmsDataResult.h"
 #include "model/RefundInstanceRequest.h"
 #include "model/RefundInstanceResult.h"
+#include "model/ReleaseInstanceRequest.h"
+#include "model/ReleaseInstanceResult.h"
 #include "model/RelieveAccountRelationRequest.h"
 #include "model/RelieveAccountRelationResult.h"
 #include "model/RenewInstanceRequest.h"
@@ -436,6 +438,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RefundInstanceResult> RefundInstanceOutcome;
 			typedef std::future<RefundInstanceOutcome> RefundInstanceOutcomeCallable;
 			typedef std::function<void(const BssOpenApiClient*, const Model::RefundInstanceRequest&, const RefundInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RefundInstanceAsyncHandler;
+			typedef Outcome<Error, Model::ReleaseInstanceResult> ReleaseInstanceOutcome;
+			typedef std::future<ReleaseInstanceOutcome> ReleaseInstanceOutcomeCallable;
+			typedef std::function<void(const BssOpenApiClient*, const Model::ReleaseInstanceRequest&, const ReleaseInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ReleaseInstanceAsyncHandler;
 			typedef Outcome<Error, Model::RelieveAccountRelationResult> RelieveAccountRelationOutcome;
 			typedef std::future<RelieveAccountRelationOutcome> RelieveAccountRelationOutcomeCallable;
 			typedef std::function<void(const BssOpenApiClient*, const Model::RelieveAccountRelationRequest&, const RelieveAccountRelationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RelieveAccountRelationAsyncHandler;
@@ -711,6 +716,9 @@ namespace AlibabaCloud
 			RefundInstanceOutcome refundInstance(const Model::RefundInstanceRequest &request)const;
 			void refundInstanceAsync(const Model::RefundInstanceRequest& request, const RefundInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RefundInstanceOutcomeCallable refundInstanceCallable(const Model::RefundInstanceRequest& request) const;
+			ReleaseInstanceOutcome releaseInstance(const Model::ReleaseInstanceRequest &request)const;
+			void releaseInstanceAsync(const Model::ReleaseInstanceRequest& request, const ReleaseInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ReleaseInstanceOutcomeCallable releaseInstanceCallable(const Model::ReleaseInstanceRequest& request) const;
 			RelieveAccountRelationOutcome relieveAccountRelation(const Model::RelieveAccountRelationRequest &request)const;
 			void relieveAccountRelationAsync(const Model::RelieveAccountRelationRequest& request, const RelieveAccountRelationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RelieveAccountRelationOutcomeCallable relieveAccountRelationCallable(const Model::RelieveAccountRelationRequest& request) const;

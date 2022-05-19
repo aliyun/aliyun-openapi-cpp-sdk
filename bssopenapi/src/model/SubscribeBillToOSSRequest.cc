@@ -52,6 +52,15 @@ void SubscribeBillToOSSRequest::setSubscribeBucket(const std::string &subscribeB
   setParameter(std::string("SubscribeBucket"), subscribeBucket);
 }
 
+std::string SubscribeBillToOSSRequest::getBucketPath() const {
+  return bucketPath_;
+}
+
+void SubscribeBillToOSSRequest::setBucketPath(const std::string &bucketPath) {
+  bucketPath_ = bucketPath;
+  setParameter(std::string("BucketPath"), bucketPath);
+}
+
 std::string SubscribeBillToOSSRequest::getBeginBillingCycle() const {
   return beginBillingCycle_;
 }
