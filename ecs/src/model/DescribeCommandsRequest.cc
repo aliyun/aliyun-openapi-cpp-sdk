@@ -106,6 +106,15 @@ void DescribeCommandsRequest::setPageSize(long pageSize) {
   setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
+bool DescribeCommandsRequest::getLatest() const {
+  return latest_;
+}
+
+void DescribeCommandsRequest::setLatest(bool latest) {
+  latest_ = latest;
+  setParameter(std::string("Latest"), latest ? "true" : "false");
+}
+
 std::string DescribeCommandsRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }

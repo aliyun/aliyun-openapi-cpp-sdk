@@ -54,6 +54,8 @@ public:
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getAutoSnapshotPolicyName() const;
+	void setAutoSnapshotPolicyName(const std::string &autoSnapshotPolicyName);
 
 private:
 	long resourceOwnerId_;
@@ -66,6 +68,7 @@ private:
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
+	std::string autoSnapshotPolicyName_;
 };
 } // namespace Model
 } // namespace Ecs

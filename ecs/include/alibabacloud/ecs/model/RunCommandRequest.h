@@ -56,6 +56,8 @@ public:
 	void setKeepCommand(bool keepCommand);
 	bool getTimed() const;
 	void setTimed(bool timed);
+	bool getDryRun() const;
+	void setDryRun(bool dryRun);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
@@ -87,6 +89,7 @@ private:
 	std::string windowsPasswordName_;
 	bool keepCommand_;
 	bool timed_;
+	bool dryRun_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;

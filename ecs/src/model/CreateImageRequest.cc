@@ -95,6 +95,15 @@ void CreateImageRequest::setResourceGroupId(const std::string &resourceGroupId) 
   setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
+std::string CreateImageRequest::getBootMode() const {
+  return bootMode_;
+}
+
+void CreateImageRequest::setBootMode(const std::string &bootMode) {
+  bootMode_ = bootMode;
+  setParameter(std::string("BootMode"), bootMode);
+}
+
 std::string CreateImageRequest::getRegionId() const {
   return regionId_;
 }
@@ -122,7 +131,7 @@ void CreateImageRequest::setTag(const std::vector<CreateImageRequest::Tag> &tag)
   for(int dep1 = 0; dep1 != tag.size(); dep1++) {
   auto tagObj = tag.at(dep1);
   std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
-    setParameter(tagObjStr + ".value", tagObj.value);
+    setParameter(tagObjStr + ".Value", tagObj.value);
     setParameter(tagObjStr + ".Key", tagObj.key);
   }
 }

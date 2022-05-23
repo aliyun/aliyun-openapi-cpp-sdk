@@ -28,6 +28,10 @@ namespace Ecs {
 namespace Model {
 class ALIBABACLOUD_ECS_EXPORT DescribeInstanceTypesRequest : public RpcServiceRequest {
 public:
+	struct Filters {
+		std::string name;
+		std::string value;
+	};
 	DescribeInstanceTypesRequest();
 	~DescribeInstanceTypesRequest();
 	long getResourceOwnerId() const;
@@ -42,6 +46,8 @@ public:
 	void setOwnerAccount(const std::string &ownerAccount);
 	std::string getInstanceTypeFamily() const;
 	void setInstanceTypeFamily(const std::string &instanceTypeFamily);
+	std::vector<Filters> getFilters() const;
+	void setFilters(const std::vector<Filters> &filters);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
 	long getMaxResults() const;
@@ -54,6 +60,7 @@ private:
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	std::string instanceTypeFamily_;
+	std::vector<Filters> filters_;
 	long ownerId_;
 	long maxResults_;
 };

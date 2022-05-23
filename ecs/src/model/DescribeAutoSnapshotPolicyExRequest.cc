@@ -120,3 +120,12 @@ void DescribeAutoSnapshotPolicyExRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string DescribeAutoSnapshotPolicyExRequest::getAutoSnapshotPolicyName() const {
+  return autoSnapshotPolicyName_;
+}
+
+void DescribeAutoSnapshotPolicyExRequest::setAutoSnapshotPolicyName(const std::string &autoSnapshotPolicyName) {
+  autoSnapshotPolicyName_ = autoSnapshotPolicyName;
+  setParameter(std::string("AutoSnapshotPolicyName"), autoSnapshotPolicyName);
+}
+

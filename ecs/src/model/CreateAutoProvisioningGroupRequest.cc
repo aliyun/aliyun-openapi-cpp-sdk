@@ -260,6 +260,21 @@ void CreateAutoProvisioningGroupRequest::setMaxSpotPrice(float maxSpotPrice) {
   setParameter(std::string("MaxSpotPrice"), std::to_string(maxSpotPrice));
 }
 
+std::vector<CreateAutoProvisioningGroupRequest::LaunchConfigurationArn> CreateAutoProvisioningGroupRequest::getLaunchConfigurationArn() const {
+  return launchConfigurationArn_;
+}
+
+void CreateAutoProvisioningGroupRequest::setLaunchConfigurationArn(const std::vector<CreateAutoProvisioningGroupRequest::LaunchConfigurationArn> &launchConfigurationArn) {
+  launchConfigurationArn_ = launchConfigurationArn;
+  for(int dep1 = 0; dep1 != launchConfigurationArn.size(); dep1++) {
+  auto launchConfigurationArnObj = launchConfigurationArn.at(dep1);
+  std::string launchConfigurationArnObjStr = std::string("LaunchConfiguration.Arn") + "." + std::to_string(dep1 + 1);
+    setParameter(launchConfigurationArnObjStr + ".Rolearn", launchConfigurationArnObj.rolearn);
+    setParameter(launchConfigurationArnObjStr + ".RoleType", launchConfigurationArnObj.roleType);
+    setParameter(launchConfigurationArnObjStr + ".AssumeRoleFor", std::to_string(launchConfigurationArnObj.assumeRoleFor));
+  }
+}
+
 bool CreateAutoProvisioningGroupRequest::getLaunchConfigurationPasswordInherit() const {
   return launchConfigurationPasswordInherit_;
 }
@@ -321,6 +336,17 @@ std::string CreateAutoProvisioningGroupRequest::getLaunchConfigurationCreditSpec
 void CreateAutoProvisioningGroupRequest::setLaunchConfigurationCreditSpecification(const std::string &launchConfigurationCreditSpecification) {
   launchConfigurationCreditSpecification_ = launchConfigurationCreditSpecification;
   setParameter(std::string("LaunchConfiguration.CreditSpecification"), launchConfigurationCreditSpecification);
+}
+
+CreateAutoProvisioningGroupRequest::LaunchConfigurationSystemDisk CreateAutoProvisioningGroupRequest::getLaunchConfigurationSystemDisk() const {
+  return launchConfigurationSystemDisk_;
+}
+
+void CreateAutoProvisioningGroupRequest::setLaunchConfigurationSystemDisk(const CreateAutoProvisioningGroupRequest::LaunchConfigurationSystemDisk &launchConfigurationSystemDisk) {
+  launchConfigurationSystemDisk_ = launchConfigurationSystemDisk;
+  setParameter(std::string("LaunchConfiguration.SystemDisk") + ".Encrypted", launchConfigurationSystemDisk.encrypted);
+  setParameter(std::string("LaunchConfiguration.SystemDisk") + ".KMSKeyId", launchConfigurationSystemDisk.kMSKeyId);
+  setParameter(std::string("LaunchConfiguration.SystemDisk") + ".EncryptAlgorithm", launchConfigurationSystemDisk.encryptAlgorithm);
 }
 
 std::string CreateAutoProvisioningGroupRequest::getLaunchConfigurationInstanceName() const {

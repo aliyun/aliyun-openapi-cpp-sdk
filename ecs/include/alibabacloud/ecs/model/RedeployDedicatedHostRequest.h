@@ -42,6 +42,8 @@ public:
 	void setDedicatedHostId(const std::string &dedicatedHostId);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	bool getWaiveLocalDiskData() const;
+	void setWaiveLocalDiskData(bool waiveLocalDiskData);
 
 private:
 	long resourceOwnerId_;
@@ -50,6 +52,7 @@ private:
 	std::string ownerAccount_;
 	std::string dedicatedHostId_;
 	long ownerId_;
+	bool waiveLocalDiskData_;
 };
 } // namespace Model
 } // namespace Ecs

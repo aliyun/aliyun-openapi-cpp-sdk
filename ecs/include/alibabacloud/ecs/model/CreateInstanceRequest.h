@@ -29,7 +29,10 @@ namespace Model {
 class ALIBABACLOUD_ECS_EXPORT CreateInstanceRequest : public RpcServiceRequest {
 public:
 	struct SystemDisk {
+		bool encrypted;
+		std::string encryptAlgorithm;
 		std::string storageClusterId;
+		std::string kMSKeyId;
 	};
 	struct Tag {
 		std::string value;

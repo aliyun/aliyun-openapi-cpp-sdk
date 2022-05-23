@@ -79,3 +79,12 @@ void RedeployDedicatedHostRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+bool RedeployDedicatedHostRequest::getWaiveLocalDiskData() const {
+  return waiveLocalDiskData_;
+}
+
+void RedeployDedicatedHostRequest::setWaiveLocalDiskData(bool waiveLocalDiskData) {
+  waiveLocalDiskData_ = waiveLocalDiskData;
+  setParameter(std::string("WaiveLocalDiskData"), waiveLocalDiskData ? "true" : "false");
+}
+

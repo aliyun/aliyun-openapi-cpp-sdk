@@ -140,6 +140,7 @@ namespace AlibabaCloud
 					std::string internetChargeType;
 					std::string deploymentSetId;
 					std::string instanceName;
+					std::string spotInterruptionBehavior;
 					int internetMaxBandwidthOut;
 					std::string serialNumber;
 					std::string oSType;

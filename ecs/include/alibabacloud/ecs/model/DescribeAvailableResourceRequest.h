@@ -32,6 +32,8 @@ public:
 	~DescribeAvailableResourceRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	bool getNeedInventoryScore() const;
+	void setNeedInventoryScore(bool needInventoryScore);
 	float getMemory() const;
 	void setMemory(float memory);
 	std::string getIoOptimized() const;
@@ -52,6 +54,8 @@ public:
 	void setNetworkCategory(const std::string &networkCategory);
 	std::string getInstanceChargeType() const;
 	void setInstanceChargeType(const std::string &instanceChargeType);
+	std::vector<std::string> getInstanceFeatureOptions() const;
+	void setInstanceFeatureOptions(const std::vector<std::string> &instanceFeatureOptions);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
@@ -73,6 +77,7 @@ public:
 
 private:
 	long resourceOwnerId_;
+	bool needInventoryScore_;
 	float memory_;
 	std::string ioOptimized_;
 	std::string dataDiskCategory_;
@@ -83,6 +88,7 @@ private:
 	std::string instanceType_;
 	std::string networkCategory_;
 	std::string instanceChargeType_;
+	std::vector<std::string> instanceFeatureOptions_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	std::string dedicatedHostId_;

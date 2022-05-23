@@ -46,6 +46,16 @@ public:
 	struct DataDiskConfig {
 		std::string diskCategory;
 	};
+	struct LaunchConfigurationArn {
+		std::string rolearn;
+		std::string roleType;
+		long assumeRoleFor;
+	};
+	struct LaunchConfigurationSystemDisk {
+		std::string encrypted;
+		std::string kMSKeyId;
+		std::string encryptAlgorithm;
+	};
 	struct LaunchTemplateConfig {
 		std::string vSwitchId;
 		double maxPrice;
@@ -107,6 +117,8 @@ public:
 	void setMinTargetCapacity(const std::string &minTargetCapacity);
 	float getMaxSpotPrice() const;
 	void setMaxSpotPrice(float maxSpotPrice);
+	std::vector<LaunchConfigurationArn> getLaunchConfigurationArn() const;
+	void setLaunchConfigurationArn(const std::vector<LaunchConfigurationArn> &launchConfigurationArn);
 	bool getLaunchConfigurationPasswordInherit() const;
 	void setLaunchConfigurationPasswordInherit(bool launchConfigurationPasswordInherit);
 	std::string getClientToken() const;
@@ -121,6 +133,8 @@ public:
 	void setLaunchConfigurationUserData(const std::string &launchConfigurationUserData);
 	std::string getLaunchConfigurationCreditSpecification() const;
 	void setLaunchConfigurationCreditSpecification(const std::string &launchConfigurationCreditSpecification);
+	LaunchConfigurationSystemDisk getLaunchConfigurationSystemDisk() const;
+	void setLaunchConfigurationSystemDisk(const LaunchConfigurationSystemDisk &launchConfigurationSystemDisk);
 	std::string getLaunchConfigurationInstanceName() const;
 	void setLaunchConfigurationInstanceName(const std::string &launchConfigurationInstanceName);
 	std::string getLaunchConfigurationInstanceDescription() const;
@@ -199,6 +213,7 @@ private:
 	std::string launchConfigurationHostName_;
 	std::string minTargetCapacity_;
 	float maxSpotPrice_;
+	std::vector<LaunchConfigurationArn> launchConfigurationArn_;
 	bool launchConfigurationPasswordInherit_;
 	std::string clientToken_;
 	std::string launchConfigurationSecurityGroupId_;
@@ -206,6 +221,7 @@ private:
 	bool terminateInstancesWithExpiration_;
 	std::string launchConfigurationUserData_;
 	std::string launchConfigurationCreditSpecification_;
+	LaunchConfigurationSystemDisk launchConfigurationSystemDisk_;
 	std::string launchConfigurationInstanceName_;
 	std::string launchConfigurationInstanceDescription_;
 	std::string spotAllocationStrategy_;

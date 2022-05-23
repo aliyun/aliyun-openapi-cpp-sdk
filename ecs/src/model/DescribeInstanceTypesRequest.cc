@@ -78,6 +78,18 @@ void DescribeInstanceTypesRequest::setInstanceTypeFamily(const std::string &inst
   setParameter(std::string("InstanceTypeFamily"), instanceTypeFamily);
 }
 
+std::vector<DescribeInstanceTypesRequest::Filters> DescribeInstanceTypesRequest::getFilters() const {
+  return filters_;
+}
+
+void DescribeInstanceTypesRequest::setFilters(const std::vector<DescribeInstanceTypesRequest::Filters> &filters) {
+  filters_ = filters;
+  for(int dep1 = 0; dep1 != filters.size(); dep1++) {
+    setParameter(std::string("Filters") + "." + std::to_string(dep1 + 1) + ".Name", filters[dep1].name);
+    setParameter(std::string("Filters") + "." + std::to_string(dep1 + 1) + ".Value", filters[dep1].value);
+  }
+}
+
 long DescribeInstanceTypesRequest::getOwnerId() const {
   return ownerId_;
 }

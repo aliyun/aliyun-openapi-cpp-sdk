@@ -130,7 +130,10 @@ CreateInstanceRequest::SystemDisk CreateInstanceRequest::getSystemDisk() const {
 
 void CreateInstanceRequest::setSystemDisk(const CreateInstanceRequest::SystemDisk &systemDisk) {
   systemDisk_ = systemDisk;
+  setParameter(std::string("SystemDisk") + ".Encrypted", systemDisk.encrypted ? "true" : "false");
+  setParameter(std::string("SystemDisk") + ".EncryptAlgorithm", systemDisk.encryptAlgorithm);
   setParameter(std::string("SystemDisk") + ".StorageClusterId", systemDisk.storageClusterId);
+  setParameter(std::string("SystemDisk") + ".KMSKeyId", systemDisk.kMSKeyId);
 }
 
 int CreateInstanceRequest::getDeploymentSetGroupNo() const {
@@ -160,7 +163,7 @@ void CreateInstanceRequest::setTag(const std::vector<CreateInstanceRequest::Tag>
   for(int dep1 = 0; dep1 != tag.size(); dep1++) {
   auto tagObj = tag.at(dep1);
   std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
-    setParameter(tagObjStr + ".value", tagObj.value);
+    setParameter(tagObjStr + ".Value", tagObj.value);
     setParameter(tagObjStr + ".Key", tagObj.key);
   }
 }

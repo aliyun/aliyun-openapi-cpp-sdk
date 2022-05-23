@@ -61,6 +61,15 @@ void ModifySnapshotAttributeRequest::setSnapshotName(const std::string &snapshot
   setParameter(std::string("SnapshotName"), snapshotName);
 }
 
+long ModifySnapshotAttributeRequest::getInstantAccessRetentionDays() const {
+  return instantAccessRetentionDays_;
+}
+
+void ModifySnapshotAttributeRequest::setInstantAccessRetentionDays(long instantAccessRetentionDays) {
+  instantAccessRetentionDays_ = instantAccessRetentionDays;
+  setParameter(std::string("InstantAccessRetentionDays"), std::to_string(instantAccessRetentionDays));
+}
+
 std::string ModifySnapshotAttributeRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }
@@ -95,5 +104,14 @@ bool ModifySnapshotAttributeRequest::getDisableInstantAccess() const {
 void ModifySnapshotAttributeRequest::setDisableInstantAccess(bool disableInstantAccess) {
   disableInstantAccess_ = disableInstantAccess;
   setParameter(std::string("DisableInstantAccess"), disableInstantAccess ? "true" : "false");
+}
+
+long ModifySnapshotAttributeRequest::getRetentionDays() const {
+  return retentionDays_;
+}
+
+void ModifySnapshotAttributeRequest::setRetentionDays(long retentionDays) {
+  retentionDays_ = retentionDays;
+  setParameter(std::string("RetentionDays"), std::to_string(retentionDays));
 }
 

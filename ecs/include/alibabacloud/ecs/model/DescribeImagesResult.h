@@ -58,6 +58,7 @@ namespace AlibabaCloud
 					std::string platform;
 					int size;
 					bool isSubscribed;
+					std::string bootMode;
 					std::string oSName;
 					bool isPublic;
 					std::string imageId;

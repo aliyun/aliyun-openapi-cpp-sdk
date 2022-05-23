@@ -89,6 +89,8 @@ void DescribeImagesResult::parse(const std::string &payload)
 			imagesObject.productCode = valueImagesImage["ProductCode"].asString();
 		if(!valueImagesImage["Architecture"].isNull())
 			imagesObject.architecture = valueImagesImage["Architecture"].asString();
+		if(!valueImagesImage["BootMode"].isNull())
+			imagesObject.bootMode = valueImagesImage["BootMode"].asString();
 		if(!valueImagesImage["IsPublic"].isNull())
 			imagesObject.isPublic = valueImagesImage["IsPublic"].asString() == "true";
 		if(!valueImagesImage["ImageOwnerId"].isNull())

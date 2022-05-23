@@ -54,6 +54,7 @@ namespace AlibabaCloud
 							std::string creationTime;
 							std::string deviceCategory;
 						};
+						std::string rack;
 						std::string hostType;
 						std::string device;
 						std::string hostId;

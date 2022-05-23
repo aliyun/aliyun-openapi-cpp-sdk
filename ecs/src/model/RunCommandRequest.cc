@@ -142,6 +142,15 @@ void RunCommandRequest::setTimed(bool timed) {
   setParameter(std::string("Timed"), timed ? "true" : "false");
 }
 
+bool RunCommandRequest::getDryRun() const {
+  return dryRun_;
+}
+
+void RunCommandRequest::setDryRun(bool dryRun) {
+  dryRun_ = dryRun;
+  setParameter(std::string("DryRun"), dryRun ? "true" : "false");
+}
+
 std::string RunCommandRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }

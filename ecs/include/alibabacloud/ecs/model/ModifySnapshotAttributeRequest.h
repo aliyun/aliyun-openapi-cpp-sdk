@@ -38,6 +38,8 @@ public:
 	void setDescription(const std::string &description);
 	std::string getSnapshotName() const;
 	void setSnapshotName(const std::string &snapshotName);
+	long getInstantAccessRetentionDays() const;
+	void setInstantAccessRetentionDays(long instantAccessRetentionDays);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
@@ -46,16 +48,20 @@ public:
 	void setOwnerId(long ownerId);
 	bool getDisableInstantAccess() const;
 	void setDisableInstantAccess(bool disableInstantAccess);
+	long getRetentionDays() const;
+	void setRetentionDays(long retentionDays);
 
 private:
 	long resourceOwnerId_;
 	std::string snapshotId_;
 	std::string description_;
 	std::string snapshotName_;
+	long instantAccessRetentionDays_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
 	bool disableInstantAccess_;
+	long retentionDays_;
 };
 } // namespace Model
 } // namespace Ecs

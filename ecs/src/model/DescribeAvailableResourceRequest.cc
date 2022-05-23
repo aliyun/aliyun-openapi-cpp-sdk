@@ -34,6 +34,15 @@ void DescribeAvailableResourceRequest::setResourceOwnerId(long resourceOwnerId) 
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+bool DescribeAvailableResourceRequest::getNeedInventoryScore() const {
+  return needInventoryScore_;
+}
+
+void DescribeAvailableResourceRequest::setNeedInventoryScore(bool needInventoryScore) {
+  needInventoryScore_ = needInventoryScore;
+  setParameter(std::string("NeedInventoryScore"), needInventoryScore ? "true" : "false");
+}
+
 float DescribeAvailableResourceRequest::getMemory() const {
   return memory_;
 }
@@ -122,6 +131,14 @@ std::string DescribeAvailableResourceRequest::getInstanceChargeType() const {
 void DescribeAvailableResourceRequest::setInstanceChargeType(const std::string &instanceChargeType) {
   instanceChargeType_ = instanceChargeType;
   setParameter(std::string("InstanceChargeType"), instanceChargeType);
+}
+
+std::vector<std::string> DescribeAvailableResourceRequest::getInstanceFeatureOptions() const {
+  return instanceFeatureOptions_;
+}
+
+void DescribeAvailableResourceRequest::setInstanceFeatureOptions(const std::vector<std::string> &instanceFeatureOptions) {
+  instanceFeatureOptions_ = instanceFeatureOptions;
 }
 
 std::string DescribeAvailableResourceRequest::getResourceOwnerAccount() const {
