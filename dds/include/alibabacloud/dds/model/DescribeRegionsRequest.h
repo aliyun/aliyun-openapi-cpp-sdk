@@ -44,6 +44,8 @@ public:
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getAcceptLanguage() const;
+	void setAcceptLanguage(const std::string &acceptLanguage);
 	std::string getZoneId() const;
 	void setZoneId(const std::string &zoneId);
 
@@ -55,6 +57,7 @@ private:
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
+	std::string acceptLanguage_;
 	std::string zoneId_;
 };
 } // namespace Model

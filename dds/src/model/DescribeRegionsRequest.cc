@@ -88,6 +88,15 @@ void DescribeRegionsRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string DescribeRegionsRequest::getAcceptLanguage() const {
+  return acceptLanguage_;
+}
+
+void DescribeRegionsRequest::setAcceptLanguage(const std::string &acceptLanguage) {
+  acceptLanguage_ = acceptLanguage;
+  setParameter(std::string("AcceptLanguage"), acceptLanguage);
+}
+
 std::string DescribeRegionsRequest::getZoneId() const {
   return zoneId_;
 }

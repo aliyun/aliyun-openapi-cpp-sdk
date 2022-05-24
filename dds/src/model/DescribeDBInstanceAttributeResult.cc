@@ -115,6 +115,8 @@ void DescribeDBInstanceAttributeResult::parse(const std::string &payload)
 			dBInstancesObject.capacityUnit = valueDBInstancesDBInstance["CapacityUnit"].asString();
 		if(!valueDBInstancesDBInstance["CloudType"].isNull())
 			dBInstancesObject.cloudType = valueDBInstancesDBInstance["CloudType"].asString();
+		if(!valueDBInstancesDBInstance["StorageType"].isNull())
+			dBInstancesObject.storageType = valueDBInstancesDBInstance["StorageType"].asString();
 		auto allReplicaSetsNode = valueDBInstancesDBInstance["ReplicaSets"]["ReplicaSet"];
 		for (auto valueDBInstancesDBInstanceReplicaSetsReplicaSet : allReplicaSetsNode)
 		{

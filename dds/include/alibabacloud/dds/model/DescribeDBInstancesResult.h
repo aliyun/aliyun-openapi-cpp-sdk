@@ -66,6 +66,7 @@ namespace AlibabaCloud
 					std::string dBInstanceDescription;
 					std::string engine;
 					std::string engineVersion;
+					std::string storageType;
 					std::string dBInstanceStatus;
 					std::string zoneId;
 					std::string replicationFactor;

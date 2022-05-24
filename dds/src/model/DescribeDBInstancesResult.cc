@@ -89,6 +89,8 @@ void DescribeDBInstancesResult::parse(const std::string &payload)
 			dBInstancesObject.cloudType = valueDBInstancesDBInstance["CloudType"].asString();
 		if(!valueDBInstancesDBInstance["CapacityUnit"].isNull())
 			dBInstancesObject.capacityUnit = valueDBInstancesDBInstance["CapacityUnit"].asString();
+		if(!valueDBInstancesDBInstance["StorageType"].isNull())
+			dBInstancesObject.storageType = valueDBInstancesDBInstance["StorageType"].asString();
 		auto allTagsNode = valueDBInstancesDBInstance["Tags"]["Tag"];
 		for (auto valueDBInstancesDBInstanceTagsTag : allTagsNode)
 		{

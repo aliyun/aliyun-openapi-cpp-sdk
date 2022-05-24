@@ -70,6 +70,15 @@ void CreateDBInstanceRequest::setNetworkType(const std::string &networkType) {
   setParameter(std::string("NetworkType"), networkType);
 }
 
+std::string CreateDBInstanceRequest::getStorageType() const {
+  return storageType_;
+}
+
+void CreateDBInstanceRequest::setStorageType(const std::string &storageType) {
+  storageType_ = storageType;
+  setParameter(std::string("StorageType"), storageType);
+}
+
 std::string CreateDBInstanceRequest::getResourceGroupId() const {
   return resourceGroupId_;
 }

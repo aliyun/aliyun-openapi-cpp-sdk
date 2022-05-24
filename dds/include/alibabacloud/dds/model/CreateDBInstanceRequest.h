@@ -40,6 +40,8 @@ public:
 	void setEngineVersion(const std::string &engineVersion);
 	std::string getNetworkType() const;
 	void setNetworkType(const std::string &networkType);
+	std::string getStorageType() const;
+	void setStorageType(const std::string &storageType);
 	std::string getResourceGroupId() const;
 	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getSecurityToken() const;
@@ -103,6 +105,7 @@ private:
 	std::string couponNo_;
 	std::string engineVersion_;
 	std::string networkType_;
+	std::string storageType_;
 	std::string resourceGroupId_;
 	std::string securityToken_;
 	std::string dBInstanceDescription_;

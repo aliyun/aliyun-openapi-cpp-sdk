@@ -108,6 +108,7 @@ namespace AlibabaCloud
 					std::string replacateId;
 					bool dBInstanceReleaseProtection;
 					std::string engineVersion;
+					std::string storageType;
 					std::string dBInstanceStatus;
 					std::string zoneId;
 					int maxConnections;
