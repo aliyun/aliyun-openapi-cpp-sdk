@@ -43,24 +43,24 @@ void DescribeParametersResult::parse(const std::string &payload)
 	for (auto valueConfigParametersDBInstanceParameter : allConfigParametersNode)
 	{
 		DBInstanceParameter configParametersObject;
+		if(!valueConfigParametersDBInstanceParameter["ParameterDescription"].isNull())
+			configParametersObject.parameterDescription = valueConfigParametersDBInstanceParameter["ParameterDescription"].asString();
 		if(!valueConfigParametersDBInstanceParameter["ParameterName"].isNull())
 			configParametersObject.parameterName = valueConfigParametersDBInstanceParameter["ParameterName"].asString();
 		if(!valueConfigParametersDBInstanceParameter["ParameterValue"].isNull())
 			configParametersObject.parameterValue = valueConfigParametersDBInstanceParameter["ParameterValue"].asString();
-		if(!valueConfigParametersDBInstanceParameter["ParameterDescription"].isNull())
-			configParametersObject.parameterDescription = valueConfigParametersDBInstanceParameter["ParameterDescription"].asString();
 		configParameters_.push_back(configParametersObject);
 	}
 	auto allRunningParametersNode = value["RunningParameters"]["DBInstanceParameter"];
 	for (auto valueRunningParametersDBInstanceParameter : allRunningParametersNode)
 	{
 		DBInstanceParameter runningParametersObject;
+		if(!valueRunningParametersDBInstanceParameter["ParameterDescription"].isNull())
+			runningParametersObject.parameterDescription = valueRunningParametersDBInstanceParameter["ParameterDescription"].asString();
 		if(!valueRunningParametersDBInstanceParameter["ParameterName"].isNull())
 			runningParametersObject.parameterName = valueRunningParametersDBInstanceParameter["ParameterName"].asString();
 		if(!valueRunningParametersDBInstanceParameter["ParameterValue"].isNull())
 			runningParametersObject.parameterValue = valueRunningParametersDBInstanceParameter["ParameterValue"].asString();
-		if(!valueRunningParametersDBInstanceParameter["ParameterDescription"].isNull())
-			runningParametersObject.parameterDescription = valueRunningParametersDBInstanceParameter["ParameterDescription"].asString();
 		runningParameters_.push_back(runningParametersObject);
 	}
 	if(!value["Engine"].isNull())

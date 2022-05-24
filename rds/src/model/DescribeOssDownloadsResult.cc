@@ -43,22 +43,22 @@ void DescribeOssDownloadsResult::parse(const std::string &payload)
 	for (auto valueItemsOssDownload : allItemsNode)
 	{
 		OssDownload itemsObject;
-		if(!valueItemsOssDownload["FileName"].isNull())
-			itemsObject.fileName = valueItemsOssDownload["FileName"].asString();
-		if(!valueItemsOssDownload["CreateTime"].isNull())
-			itemsObject.createTime = valueItemsOssDownload["CreateTime"].asString();
 		if(!valueItemsOssDownload["EndTime"].isNull())
 			itemsObject.endTime = valueItemsOssDownload["EndTime"].asString();
-		if(!valueItemsOssDownload["BackupMode"].isNull())
-			itemsObject.backupMode = valueItemsOssDownload["BackupMode"].asString();
-		if(!valueItemsOssDownload["FileSize"].isNull())
-			itemsObject.fileSize = valueItemsOssDownload["FileSize"].asString();
 		if(!valueItemsOssDownload["Status"].isNull())
 			itemsObject.status = valueItemsOssDownload["Status"].asString();
-		if(!valueItemsOssDownload["IsAvailable"].isNull())
-			itemsObject.isAvailable = valueItemsOssDownload["IsAvailable"].asString();
 		if(!valueItemsOssDownload["Description"].isNull())
 			itemsObject.description = valueItemsOssDownload["Description"].asString();
+		if(!valueItemsOssDownload["CreateTime"].isNull())
+			itemsObject.createTime = valueItemsOssDownload["CreateTime"].asString();
+		if(!valueItemsOssDownload["BackupMode"].isNull())
+			itemsObject.backupMode = valueItemsOssDownload["BackupMode"].asString();
+		if(!valueItemsOssDownload["IsAvailable"].isNull())
+			itemsObject.isAvailable = valueItemsOssDownload["IsAvailable"].asString();
+		if(!valueItemsOssDownload["FileName"].isNull())
+			itemsObject.fileName = valueItemsOssDownload["FileName"].asString();
+		if(!valueItemsOssDownload["FileSize"].isNull())
+			itemsObject.fileSize = valueItemsOssDownload["FileSize"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["DBInstanceId"].isNull())

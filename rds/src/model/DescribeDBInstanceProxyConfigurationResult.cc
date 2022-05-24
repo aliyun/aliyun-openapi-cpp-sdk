@@ -39,12 +39,12 @@ void DescribeDBInstanceProxyConfigurationResult::parse(const std::string &payloa
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["TransparentSwitchConfiguration"].isNull())
-		transparentSwitchConfiguration_ = value["TransparentSwitchConfiguration"].asString();
 	if(!value["PersistentConnectionsConfiguration"].isNull())
 		persistentConnectionsConfiguration_ = value["PersistentConnectionsConfiguration"].asString();
 	if(!value["AttacksProtectionConfiguration"].isNull())
 		attacksProtectionConfiguration_ = value["AttacksProtectionConfiguration"].asString();
+	if(!value["TransparentSwitchConfiguration"].isNull())
+		transparentSwitchConfiguration_ = value["TransparentSwitchConfiguration"].asString();
 
 }
 

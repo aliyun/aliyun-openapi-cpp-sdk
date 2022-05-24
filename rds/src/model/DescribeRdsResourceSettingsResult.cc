@@ -43,24 +43,24 @@ void DescribeRdsResourceSettingsResult::parse(const std::string &payload)
 	for (auto valueRdsInstanceResourceSettingsRdsInstanceResourceSetting : allRdsInstanceResourceSettingsNode)
 	{
 		RdsInstanceResourceSetting rdsInstanceResourceSettingsObject;
-		if(!valueRdsInstanceResourceSettingsRdsInstanceResourceSetting["StartDate"].isNull())
-			rdsInstanceResourceSettingsObject.startDate = valueRdsInstanceResourceSettingsRdsInstanceResourceSetting["StartDate"].asString();
-		if(!valueRdsInstanceResourceSettingsRdsInstanceResourceSetting["EndDate"].isNull())
-			rdsInstanceResourceSettingsObject.endDate = valueRdsInstanceResourceSettingsRdsInstanceResourceSetting["EndDate"].asString();
-		if(!valueRdsInstanceResourceSettingsRdsInstanceResourceSetting["ResourceNiche"].isNull())
-			rdsInstanceResourceSettingsObject.resourceNiche = valueRdsInstanceResourceSettingsRdsInstanceResourceSetting["ResourceNiche"].asString();
-		if(!valueRdsInstanceResourceSettingsRdsInstanceResourceSetting["NoticeBarContent"].isNull())
-			rdsInstanceResourceSettingsObject.noticeBarContent = valueRdsInstanceResourceSettingsRdsInstanceResourceSetting["NoticeBarContent"].asString();
-		if(!valueRdsInstanceResourceSettingsRdsInstanceResourceSetting["PoppedUpButtonText"].isNull())
-			rdsInstanceResourceSettingsObject.poppedUpButtonText = valueRdsInstanceResourceSettingsRdsInstanceResourceSetting["PoppedUpButtonText"].asString();
 		if(!valueRdsInstanceResourceSettingsRdsInstanceResourceSetting["PoppedUpButtonType"].isNull())
 			rdsInstanceResourceSettingsObject.poppedUpButtonType = valueRdsInstanceResourceSettingsRdsInstanceResourceSetting["PoppedUpButtonType"].asString();
-		if(!valueRdsInstanceResourceSettingsRdsInstanceResourceSetting["PoppedUpButtonUrl"].isNull())
-			rdsInstanceResourceSettingsObject.poppedUpButtonUrl = valueRdsInstanceResourceSettingsRdsInstanceResourceSetting["PoppedUpButtonUrl"].asString();
+		if(!valueRdsInstanceResourceSettingsRdsInstanceResourceSetting["NoticeBarContent"].isNull())
+			rdsInstanceResourceSettingsObject.noticeBarContent = valueRdsInstanceResourceSettingsRdsInstanceResourceSetting["NoticeBarContent"].asString();
+		if(!valueRdsInstanceResourceSettingsRdsInstanceResourceSetting["EndDate"].isNull())
+			rdsInstanceResourceSettingsObject.endDate = valueRdsInstanceResourceSettingsRdsInstanceResourceSetting["EndDate"].asString();
 		if(!valueRdsInstanceResourceSettingsRdsInstanceResourceSetting["PoppedUpContent"].isNull())
 			rdsInstanceResourceSettingsObject.poppedUpContent = valueRdsInstanceResourceSettingsRdsInstanceResourceSetting["PoppedUpContent"].asString();
+		if(!valueRdsInstanceResourceSettingsRdsInstanceResourceSetting["StartDate"].isNull())
+			rdsInstanceResourceSettingsObject.startDate = valueRdsInstanceResourceSettingsRdsInstanceResourceSetting["StartDate"].asString();
+		if(!valueRdsInstanceResourceSettingsRdsInstanceResourceSetting["PoppedUpButtonText"].isNull())
+			rdsInstanceResourceSettingsObject.poppedUpButtonText = valueRdsInstanceResourceSettingsRdsInstanceResourceSetting["PoppedUpButtonText"].asString();
 		if(!valueRdsInstanceResourceSettingsRdsInstanceResourceSetting["IsTop"].isNull())
 			rdsInstanceResourceSettingsObject.isTop = valueRdsInstanceResourceSettingsRdsInstanceResourceSetting["IsTop"].asString();
+		if(!valueRdsInstanceResourceSettingsRdsInstanceResourceSetting["ResourceNiche"].isNull())
+			rdsInstanceResourceSettingsObject.resourceNiche = valueRdsInstanceResourceSettingsRdsInstanceResourceSetting["ResourceNiche"].asString();
+		if(!valueRdsInstanceResourceSettingsRdsInstanceResourceSetting["PoppedUpButtonUrl"].isNull())
+			rdsInstanceResourceSettingsObject.poppedUpButtonUrl = valueRdsInstanceResourceSettingsRdsInstanceResourceSetting["PoppedUpButtonUrl"].asString();
 		rdsInstanceResourceSettings_.push_back(rdsInstanceResourceSettingsObject);
 	}
 

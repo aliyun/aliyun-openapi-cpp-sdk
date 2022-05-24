@@ -39,10 +39,10 @@ void DescribeHASwitchConfigResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["HAConfig"].isNull())
-		hAConfig_ = value["HAConfig"].asString();
 	if(!value["ManualHATime"].isNull())
 		manualHATime_ = value["ManualHATime"].asString();
+	if(!value["HAConfig"].isNull())
+		hAConfig_ = value["HAConfig"].asString();
 
 }
 

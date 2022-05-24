@@ -39,10 +39,10 @@ void SwitchDBInstanceNetTypeResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["OldConnectionString"].isNull())
-		oldConnectionString_ = value["OldConnectionString"].asString();
 	if(!value["NewConnectionString"].isNull())
 		newConnectionString_ = value["NewConnectionString"].asString();
+	if(!value["OldConnectionString"].isNull())
+		oldConnectionString_ = value["OldConnectionString"].asString();
 
 }
 

@@ -39,14 +39,14 @@ void TransformDBInstancePayTypeResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["DBInstanceId"].isNull())
+		dBInstanceId_ = value["DBInstanceId"].asString();
+	if(!value["ExpiredTime"].isNull())
+		expiredTime_ = value["ExpiredTime"].asString();
 	if(!value["OrderId"].isNull())
 		orderId_ = std::stol(value["OrderId"].asString());
 	if(!value["ChargeType"].isNull())
 		chargeType_ = value["ChargeType"].asString();
-	if(!value["ExpiredTime"].isNull())
-		expiredTime_ = value["ExpiredTime"].asString();
-	if(!value["DBInstanceId"].isNull())
-		dBInstanceId_ = value["DBInstanceId"].asString();
 
 }
 

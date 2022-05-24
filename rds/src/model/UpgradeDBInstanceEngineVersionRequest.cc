@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,111 +18,91 @@
 
 using AlibabaCloud::Rds::Model::UpgradeDBInstanceEngineVersionRequest;
 
-UpgradeDBInstanceEngineVersionRequest::UpgradeDBInstanceEngineVersionRequest() :
-	RpcServiceRequest("rds", "2014-08-15", "UpgradeDBInstanceEngineVersion")
-{
-	setMethod(HttpRequest::Method::Post);
+UpgradeDBInstanceEngineVersionRequest::UpgradeDBInstanceEngineVersionRequest()
+    : RpcServiceRequest("rds", "2014-08-15", "UpgradeDBInstanceEngineVersion") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-UpgradeDBInstanceEngineVersionRequest::~UpgradeDBInstanceEngineVersionRequest()
-{}
+UpgradeDBInstanceEngineVersionRequest::~UpgradeDBInstanceEngineVersionRequest() {}
 
-long UpgradeDBInstanceEngineVersionRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long UpgradeDBInstanceEngineVersionRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void UpgradeDBInstanceEngineVersionRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void UpgradeDBInstanceEngineVersionRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string UpgradeDBInstanceEngineVersionRequest::getClientToken()const
-{
-	return clientToken_;
+std::string UpgradeDBInstanceEngineVersionRequest::getClientToken() const {
+  return clientToken_;
 }
 
-void UpgradeDBInstanceEngineVersionRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+void UpgradeDBInstanceEngineVersionRequest::setClientToken(const std::string &clientToken) {
+  clientToken_ = clientToken;
+  setParameter(std::string("ClientToken"), clientToken);
 }
 
-std::string UpgradeDBInstanceEngineVersionRequest::getEngineVersion()const
-{
-	return engineVersion_;
+std::string UpgradeDBInstanceEngineVersionRequest::getEngineVersion() const {
+  return engineVersion_;
 }
 
-void UpgradeDBInstanceEngineVersionRequest::setEngineVersion(const std::string& engineVersion)
-{
-	engineVersion_ = engineVersion;
-	setParameter("EngineVersion", engineVersion);
+void UpgradeDBInstanceEngineVersionRequest::setEngineVersion(const std::string &engineVersion) {
+  engineVersion_ = engineVersion;
+  setParameter(std::string("EngineVersion"), engineVersion);
 }
 
-std::string UpgradeDBInstanceEngineVersionRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string UpgradeDBInstanceEngineVersionRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void UpgradeDBInstanceEngineVersionRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void UpgradeDBInstanceEngineVersionRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string UpgradeDBInstanceEngineVersionRequest::getEffectiveTime()const
-{
-	return effectiveTime_;
+std::string UpgradeDBInstanceEngineVersionRequest::getEffectiveTime() const {
+  return effectiveTime_;
 }
 
-void UpgradeDBInstanceEngineVersionRequest::setEffectiveTime(const std::string& effectiveTime)
-{
-	effectiveTime_ = effectiveTime;
-	setParameter("EffectiveTime", effectiveTime);
+void UpgradeDBInstanceEngineVersionRequest::setEffectiveTime(const std::string &effectiveTime) {
+  effectiveTime_ = effectiveTime;
+  setParameter(std::string("EffectiveTime"), effectiveTime);
 }
 
-std::string UpgradeDBInstanceEngineVersionRequest::getDBInstanceId()const
-{
-	return dBInstanceId_;
+std::string UpgradeDBInstanceEngineVersionRequest::getDBInstanceId() const {
+  return dBInstanceId_;
 }
 
-void UpgradeDBInstanceEngineVersionRequest::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-	setParameter("DBInstanceId", dBInstanceId);
+void UpgradeDBInstanceEngineVersionRequest::setDBInstanceId(const std::string &dBInstanceId) {
+  dBInstanceId_ = dBInstanceId;
+  setParameter(std::string("DBInstanceId"), dBInstanceId);
 }
 
-std::string UpgradeDBInstanceEngineVersionRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string UpgradeDBInstanceEngineVersionRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void UpgradeDBInstanceEngineVersionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void UpgradeDBInstanceEngineVersionRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string UpgradeDBInstanceEngineVersionRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string UpgradeDBInstanceEngineVersionRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void UpgradeDBInstanceEngineVersionRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void UpgradeDBInstanceEngineVersionRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-long UpgradeDBInstanceEngineVersionRequest::getOwnerId()const
-{
-	return ownerId_;
+long UpgradeDBInstanceEngineVersionRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void UpgradeDBInstanceEngineVersionRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void UpgradeDBInstanceEngineVersionRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 

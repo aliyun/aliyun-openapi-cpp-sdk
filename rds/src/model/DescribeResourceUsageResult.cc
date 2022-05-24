@@ -39,34 +39,34 @@ void DescribeResourceUsageResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["DBInstanceId"].isNull())
-		dBInstanceId_ = value["DBInstanceId"].asString();
-	if(!value["Engine"].isNull())
-		engine_ = value["Engine"].asString();
+	if(!value["BackupOssDataSize"].isNull())
+		backupOssDataSize_ = std::stol(value["BackupOssDataSize"].asString());
 	if(!value["DiskUsed"].isNull())
 		diskUsed_ = std::stol(value["DiskUsed"].asString());
+	if(!value["ArchiveBackupSize"].isNull())
+		archiveBackupSize_ = std::stol(value["ArchiveBackupSize"].asString());
+	if(!value["BackupOssLogSize"].isNull())
+		backupOssLogSize_ = std::stol(value["BackupOssLogSize"].asString());
+	if(!value["BackupLogSize"].isNull())
+		backupLogSize_ = std::stol(value["BackupLogSize"].asString());
+	if(!value["BackupDataSize"].isNull())
+		backupDataSize_ = std::stol(value["BackupDataSize"].asString());
+	if(!value["ColdBackupSize"].isNull())
+		coldBackupSize_ = std::stol(value["ColdBackupSize"].asString());
 	if(!value["DataSize"].isNull())
 		dataSize_ = std::stol(value["DataSize"].asString());
+	if(!value["PaidBackupSize"].isNull())
+		paidBackupSize_ = std::stol(value["PaidBackupSize"].asString());
 	if(!value["LogSize"].isNull())
 		logSize_ = std::stol(value["LogSize"].asString());
 	if(!value["BackupSize"].isNull())
 		backupSize_ = std::stol(value["BackupSize"].asString());
-	if(!value["BackupOssDataSize"].isNull())
-		backupOssDataSize_ = std::stol(value["BackupOssDataSize"].asString());
-	if(!value["BackupOssLogSize"].isNull())
-		backupOssLogSize_ = std::stol(value["BackupOssLogSize"].asString());
+	if(!value["DBInstanceId"].isNull())
+		dBInstanceId_ = value["DBInstanceId"].asString();
+	if(!value["Engine"].isNull())
+		engine_ = value["Engine"].asString();
 	if(!value["SQLSize"].isNull())
 		sQLSize_ = std::stol(value["SQLSize"].asString());
-	if(!value["ColdBackupSize"].isNull())
-		coldBackupSize_ = std::stol(value["ColdBackupSize"].asString());
-	if(!value["BackupDataSize"].isNull())
-		backupDataSize_ = std::stol(value["BackupDataSize"].asString());
-	if(!value["BackupLogSize"].isNull())
-		backupLogSize_ = std::stol(value["BackupLogSize"].asString());
-	if(!value["PaidBackupSize"].isNull())
-		paidBackupSize_ = std::stol(value["PaidBackupSize"].asString());
-	if(!value["ArchiveBackupSize"].isNull())
-		archiveBackupSize_ = std::stol(value["ArchiveBackupSize"].asString());
 
 }
 
@@ -90,14 +90,14 @@ long DescribeResourceUsageResult::getColdBackupSize()const
 	return coldBackupSize_;
 }
 
-long DescribeResourceUsageResult::getLogSize()const
-{
-	return logSize_;
-}
-
 long DescribeResourceUsageResult::getBackupOssLogSize()const
 {
 	return backupOssLogSize_;
+}
+
+long DescribeResourceUsageResult::getLogSize()const
+{
+	return logSize_;
 }
 
 std::string DescribeResourceUsageResult::getDBInstanceId()const

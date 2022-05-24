@@ -34,8 +34,9 @@ namespace AlibabaCloud
 			public:
 				struct Result
 				{
-					std::string createCount;
+					std::string taskID;
 					std::string gadInstanceName;
+					std::string createMemberCount;
 				};
 
 

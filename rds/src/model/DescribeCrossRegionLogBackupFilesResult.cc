@@ -43,42 +43,42 @@ void DescribeCrossRegionLogBackupFilesResult::parse(const std::string &payload)
 	for (auto valueItemsItem : allItemsNode)
 	{
 		Item itemsObject;
-		if(!valueItemsItem["CrossLogBackupId"].isNull())
-			itemsObject.crossLogBackupId = std::stoi(valueItemsItem["CrossLogBackupId"].asString());
-		if(!valueItemsItem["CrossBackupRegion"].isNull())
-			itemsObject.crossBackupRegion = valueItemsItem["CrossBackupRegion"].asString();
-		if(!valueItemsItem["CrossLogBackupSize"].isNull())
-			itemsObject.crossLogBackupSize = std::stol(valueItemsItem["CrossLogBackupSize"].asString());
 		if(!valueItemsItem["LogBeginTime"].isNull())
 			itemsObject.logBeginTime = valueItemsItem["LogBeginTime"].asString();
-		if(!valueItemsItem["LogEndTime"].isNull())
-			itemsObject.logEndTime = valueItemsItem["LogEndTime"].asString();
-		if(!valueItemsItem["CrossDownloadLink"].isNull())
-			itemsObject.crossDownloadLink = valueItemsItem["CrossDownloadLink"].asString();
-		if(!valueItemsItem["CrossIntranetDownloadLink"].isNull())
-			itemsObject.crossIntranetDownloadLink = valueItemsItem["CrossIntranetDownloadLink"].asString();
 		if(!valueItemsItem["LinkExpiredTime"].isNull())
 			itemsObject.linkExpiredTime = valueItemsItem["LinkExpiredTime"].asString();
+		if(!valueItemsItem["CrossIntranetDownloadLink"].isNull())
+			itemsObject.crossIntranetDownloadLink = valueItemsItem["CrossIntranetDownloadLink"].asString();
 		if(!valueItemsItem["LogFileName"].isNull())
 			itemsObject.logFileName = valueItemsItem["LogFileName"].asString();
+		if(!valueItemsItem["CrossBackupRegion"].isNull())
+			itemsObject.crossBackupRegion = valueItemsItem["CrossBackupRegion"].asString();
+		if(!valueItemsItem["CrossDownloadLink"].isNull())
+			itemsObject.crossDownloadLink = valueItemsItem["CrossDownloadLink"].asString();
+		if(!valueItemsItem["CrossLogBackupSize"].isNull())
+			itemsObject.crossLogBackupSize = std::stol(valueItemsItem["CrossLogBackupSize"].asString());
 		if(!valueItemsItem["InstanceId"].isNull())
 			itemsObject.instanceId = std::stoi(valueItemsItem["InstanceId"].asString());
+		if(!valueItemsItem["CrossLogBackupId"].isNull())
+			itemsObject.crossLogBackupId = std::stoi(valueItemsItem["CrossLogBackupId"].asString());
+		if(!valueItemsItem["LogEndTime"].isNull())
+			itemsObject.logEndTime = valueItemsItem["LogEndTime"].asString();
 		items_.push_back(itemsObject);
 	}
-	if(!value["RegionId"].isNull())
-		regionId_ = value["RegionId"].asString();
-	if(!value["DBInstanceId"].isNull())
-		dBInstanceId_ = value["DBInstanceId"].asString();
-	if(!value["StartTime"].isNull())
-		startTime_ = value["StartTime"].asString();
 	if(!value["EndTime"].isNull())
 		endTime_ = value["EndTime"].asString();
-	if(!value["TotalRecordCount"].isNull())
-		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
 	if(!value["PageRecordCount"].isNull())
 		pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
+	if(!value["TotalRecordCount"].isNull())
+		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
+	if(!value["DBInstanceId"].isNull())
+		dBInstanceId_ = value["DBInstanceId"].asString();
 	if(!value["PageNumber"].isNull())
 		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["RegionId"].isNull())
+		regionId_ = value["RegionId"].asString();
 
 }
 

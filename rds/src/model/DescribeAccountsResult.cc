@@ -43,18 +43,18 @@ void DescribeAccountsResult::parse(const std::string &payload)
 	for (auto valueAccountsDBInstanceAccount : allAccountsNode)
 	{
 		DBInstanceAccount accountsObject;
-		if(!valueAccountsDBInstanceAccount["DBInstanceId"].isNull())
-			accountsObject.dBInstanceId = valueAccountsDBInstanceAccount["DBInstanceId"].asString();
-		if(!valueAccountsDBInstanceAccount["AccountName"].isNull())
-			accountsObject.accountName = valueAccountsDBInstanceAccount["AccountName"].asString();
 		if(!valueAccountsDBInstanceAccount["AccountStatus"].isNull())
 			accountsObject.accountStatus = valueAccountsDBInstanceAccount["AccountStatus"].asString();
-		if(!valueAccountsDBInstanceAccount["AccountType"].isNull())
-			accountsObject.accountType = valueAccountsDBInstanceAccount["AccountType"].asString();
 		if(!valueAccountsDBInstanceAccount["AccountDescription"].isNull())
 			accountsObject.accountDescription = valueAccountsDBInstanceAccount["AccountDescription"].asString();
+		if(!valueAccountsDBInstanceAccount["DBInstanceId"].isNull())
+			accountsObject.dBInstanceId = valueAccountsDBInstanceAccount["DBInstanceId"].asString();
 		if(!valueAccountsDBInstanceAccount["PrivExceeded"].isNull())
 			accountsObject.privExceeded = valueAccountsDBInstanceAccount["PrivExceeded"].asString();
+		if(!valueAccountsDBInstanceAccount["AccountType"].isNull())
+			accountsObject.accountType = valueAccountsDBInstanceAccount["AccountType"].asString();
+		if(!valueAccountsDBInstanceAccount["AccountName"].isNull())
+			accountsObject.accountName = valueAccountsDBInstanceAccount["AccountName"].asString();
 		auto allDatabasePrivilegesNode = valueAccountsDBInstanceAccount["DatabasePrivileges"]["DatabasePrivilege"];
 		for (auto valueAccountsDBInstanceAccountDatabasePrivilegesDatabasePrivilege : allDatabasePrivilegesNode)
 		{

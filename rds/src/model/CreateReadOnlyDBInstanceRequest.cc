@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,342 +18,289 @@
 
 using AlibabaCloud::Rds::Model::CreateReadOnlyDBInstanceRequest;
 
-CreateReadOnlyDBInstanceRequest::CreateReadOnlyDBInstanceRequest() :
-	RpcServiceRequest("rds", "2014-08-15", "CreateReadOnlyDBInstance")
-{
-	setMethod(HttpRequest::Method::Post);
+CreateReadOnlyDBInstanceRequest::CreateReadOnlyDBInstanceRequest()
+    : RpcServiceRequest("rds", "2014-08-15", "CreateReadOnlyDBInstance") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-CreateReadOnlyDBInstanceRequest::~CreateReadOnlyDBInstanceRequest()
-{}
+CreateReadOnlyDBInstanceRequest::~CreateReadOnlyDBInstanceRequest() {}
 
-long CreateReadOnlyDBInstanceRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long CreateReadOnlyDBInstanceRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void CreateReadOnlyDBInstanceRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void CreateReadOnlyDBInstanceRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-int CreateReadOnlyDBInstanceRequest::getDBInstanceStorage()const
-{
-	return dBInstanceStorage_;
+int CreateReadOnlyDBInstanceRequest::getDBInstanceStorage() const {
+  return dBInstanceStorage_;
 }
 
-void CreateReadOnlyDBInstanceRequest::setDBInstanceStorage(int dBInstanceStorage)
-{
-	dBInstanceStorage_ = dBInstanceStorage;
-	setParameter("DBInstanceStorage", std::to_string(dBInstanceStorage));
+void CreateReadOnlyDBInstanceRequest::setDBInstanceStorage(int dBInstanceStorage) {
+  dBInstanceStorage_ = dBInstanceStorage;
+  setParameter(std::string("DBInstanceStorage"), std::to_string(dBInstanceStorage));
 }
 
-std::string CreateReadOnlyDBInstanceRequest::getClientToken()const
-{
-	return clientToken_;
+std::string CreateReadOnlyDBInstanceRequest::getClientToken() const {
+  return clientToken_;
 }
 
-void CreateReadOnlyDBInstanceRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+void CreateReadOnlyDBInstanceRequest::setClientToken(const std::string &clientToken) {
+  clientToken_ = clientToken;
+  setParameter(std::string("ClientToken"), clientToken);
 }
 
-std::string CreateReadOnlyDBInstanceRequest::getInstructionSetArch()const
-{
-	return instructionSetArch_;
+std::string CreateReadOnlyDBInstanceRequest::getInstructionSetArch() const {
+  return instructionSetArch_;
 }
 
-void CreateReadOnlyDBInstanceRequest::setInstructionSetArch(const std::string& instructionSetArch)
-{
-	instructionSetArch_ = instructionSetArch;
-	setParameter("InstructionSetArch", instructionSetArch);
+void CreateReadOnlyDBInstanceRequest::setInstructionSetArch(const std::string &instructionSetArch) {
+  instructionSetArch_ = instructionSetArch;
+  setParameter(std::string("InstructionSetArch"), instructionSetArch);
 }
 
-std::string CreateReadOnlyDBInstanceRequest::getEngineVersion()const
-{
-	return engineVersion_;
+std::string CreateReadOnlyDBInstanceRequest::getEngineVersion() const {
+  return engineVersion_;
 }
 
-void CreateReadOnlyDBInstanceRequest::setEngineVersion(const std::string& engineVersion)
-{
-	engineVersion_ = engineVersion;
-	setParameter("EngineVersion", engineVersion);
+void CreateReadOnlyDBInstanceRequest::setEngineVersion(const std::string &engineVersion) {
+  engineVersion_ = engineVersion;
+  setParameter(std::string("EngineVersion"), engineVersion);
 }
 
-std::string CreateReadOnlyDBInstanceRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string CreateReadOnlyDBInstanceRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void CreateReadOnlyDBInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void CreateReadOnlyDBInstanceRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string CreateReadOnlyDBInstanceRequest::getResourceGroupId()const
-{
-	return resourceGroupId_;
+bool CreateReadOnlyDBInstanceRequest::getDeletionProtection() const {
+  return deletionProtection_;
 }
 
-void CreateReadOnlyDBInstanceRequest::setResourceGroupId(const std::string& resourceGroupId)
-{
-	resourceGroupId_ = resourceGroupId;
-	setParameter("ResourceGroupId", resourceGroupId);
+void CreateReadOnlyDBInstanceRequest::setDeletionProtection(bool deletionProtection) {
+  deletionProtection_ = deletionProtection;
+  setParameter(std::string("DeletionProtection"), deletionProtection ? "true" : "false");
 }
 
-std::string CreateReadOnlyDBInstanceRequest::getRegionId()const
-{
-	return regionId_;
+std::string CreateReadOnlyDBInstanceRequest::getResourceGroupId() const {
+  return resourceGroupId_;
 }
 
-void CreateReadOnlyDBInstanceRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void CreateReadOnlyDBInstanceRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
-std::string CreateReadOnlyDBInstanceRequest::getTddlRegionConfig()const
-{
-	return tddlRegionConfig_;
+std::string CreateReadOnlyDBInstanceRequest::getRegionId() const {
+  return regionId_;
 }
 
-void CreateReadOnlyDBInstanceRequest::setTddlRegionConfig(const std::string& tddlRegionConfig)
-{
-	tddlRegionConfig_ = tddlRegionConfig;
-	setParameter("TddlRegionConfig", tddlRegionConfig);
+void CreateReadOnlyDBInstanceRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
-std::string CreateReadOnlyDBInstanceRequest::getTargetDedicatedHostIdForMaster()const
-{
-	return targetDedicatedHostIdForMaster_;
+std::string CreateReadOnlyDBInstanceRequest::getTddlRegionConfig() const {
+  return tddlRegionConfig_;
 }
 
-void CreateReadOnlyDBInstanceRequest::setTargetDedicatedHostIdForMaster(const std::string& targetDedicatedHostIdForMaster)
-{
-	targetDedicatedHostIdForMaster_ = targetDedicatedHostIdForMaster;
-	setParameter("TargetDedicatedHostIdForMaster", targetDedicatedHostIdForMaster);
+void CreateReadOnlyDBInstanceRequest::setTddlRegionConfig(const std::string &tddlRegionConfig) {
+  tddlRegionConfig_ = tddlRegionConfig;
+  setParameter(std::string("TddlRegionConfig"), tddlRegionConfig);
 }
 
-std::string CreateReadOnlyDBInstanceRequest::getDBInstanceId()const
-{
-	return dBInstanceId_;
+std::string CreateReadOnlyDBInstanceRequest::getTargetDedicatedHostIdForMaster() const {
+  return targetDedicatedHostIdForMaster_;
 }
 
-void CreateReadOnlyDBInstanceRequest::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-	setParameter("DBInstanceId", dBInstanceId);
+void CreateReadOnlyDBInstanceRequest::setTargetDedicatedHostIdForMaster(const std::string &targetDedicatedHostIdForMaster) {
+  targetDedicatedHostIdForMaster_ = targetDedicatedHostIdForMaster;
+  setParameter(std::string("TargetDedicatedHostIdForMaster"), targetDedicatedHostIdForMaster);
 }
 
-std::string CreateReadOnlyDBInstanceRequest::getDBInstanceDescription()const
-{
-	return dBInstanceDescription_;
+std::string CreateReadOnlyDBInstanceRequest::getDBInstanceId() const {
+  return dBInstanceId_;
 }
 
-void CreateReadOnlyDBInstanceRequest::setDBInstanceDescription(const std::string& dBInstanceDescription)
-{
-	dBInstanceDescription_ = dBInstanceDescription;
-	setParameter("DBInstanceDescription", dBInstanceDescription);
+void CreateReadOnlyDBInstanceRequest::setDBInstanceId(const std::string &dBInstanceId) {
+  dBInstanceId_ = dBInstanceId;
+  setParameter(std::string("DBInstanceId"), dBInstanceId);
 }
 
-std::string CreateReadOnlyDBInstanceRequest::getGdnInstanceName()const
-{
-	return gdnInstanceName_;
+std::string CreateReadOnlyDBInstanceRequest::getDBInstanceDescription() const {
+  return dBInstanceDescription_;
 }
 
-void CreateReadOnlyDBInstanceRequest::setGdnInstanceName(const std::string& gdnInstanceName)
-{
-	gdnInstanceName_ = gdnInstanceName;
-	setParameter("GdnInstanceName", gdnInstanceName);
+void CreateReadOnlyDBInstanceRequest::setDBInstanceDescription(const std::string &dBInstanceDescription) {
+  dBInstanceDescription_ = dBInstanceDescription;
+  setParameter(std::string("DBInstanceDescription"), dBInstanceDescription);
 }
 
-std::string CreateReadOnlyDBInstanceRequest::getDBInstanceStorageType()const
-{
-	return dBInstanceStorageType_;
+std::string CreateReadOnlyDBInstanceRequest::getGdnInstanceName() const {
+  return gdnInstanceName_;
 }
 
-void CreateReadOnlyDBInstanceRequest::setDBInstanceStorageType(const std::string& dBInstanceStorageType)
-{
-	dBInstanceStorageType_ = dBInstanceStorageType;
-	setParameter("DBInstanceStorageType", dBInstanceStorageType);
+void CreateReadOnlyDBInstanceRequest::setGdnInstanceName(const std::string &gdnInstanceName) {
+  gdnInstanceName_ = gdnInstanceName;
+  setParameter(std::string("GdnInstanceName"), gdnInstanceName);
 }
 
-std::string CreateReadOnlyDBInstanceRequest::getDedicatedHostGroupId()const
-{
-	return dedicatedHostGroupId_;
+std::string CreateReadOnlyDBInstanceRequest::getDBInstanceStorageType() const {
+  return dBInstanceStorageType_;
 }
 
-void CreateReadOnlyDBInstanceRequest::setDedicatedHostGroupId(const std::string& dedicatedHostGroupId)
-{
-	dedicatedHostGroupId_ = dedicatedHostGroupId;
-	setParameter("DedicatedHostGroupId", dedicatedHostGroupId);
+void CreateReadOnlyDBInstanceRequest::setDBInstanceStorageType(const std::string &dBInstanceStorageType) {
+  dBInstanceStorageType_ = dBInstanceStorageType;
+  setParameter(std::string("DBInstanceStorageType"), dBInstanceStorageType);
 }
 
-std::string CreateReadOnlyDBInstanceRequest::getTddlBizType()const
-{
-	return tddlBizType_;
+std::string CreateReadOnlyDBInstanceRequest::getDedicatedHostGroupId() const {
+  return dedicatedHostGroupId_;
 }
 
-void CreateReadOnlyDBInstanceRequest::setTddlBizType(const std::string& tddlBizType)
-{
-	tddlBizType_ = tddlBizType;
-	setParameter("TddlBizType", tddlBizType);
+void CreateReadOnlyDBInstanceRequest::setDedicatedHostGroupId(const std::string &dedicatedHostGroupId) {
+  dedicatedHostGroupId_ = dedicatedHostGroupId;
+  setParameter(std::string("DedicatedHostGroupId"), dedicatedHostGroupId);
 }
 
-std::string CreateReadOnlyDBInstanceRequest::getPeriod()const
-{
-	return period_;
+std::string CreateReadOnlyDBInstanceRequest::getTddlBizType() const {
+  return tddlBizType_;
 }
 
-void CreateReadOnlyDBInstanceRequest::setPeriod(const std::string& period)
-{
-	period_ = period;
-	setParameter("Period", period);
+void CreateReadOnlyDBInstanceRequest::setTddlBizType(const std::string &tddlBizType) {
+  tddlBizType_ = tddlBizType;
+  setParameter(std::string("TddlBizType"), tddlBizType);
 }
 
-std::string CreateReadOnlyDBInstanceRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string CreateReadOnlyDBInstanceRequest::getPeriod() const {
+  return period_;
 }
 
-void CreateReadOnlyDBInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void CreateReadOnlyDBInstanceRequest::setPeriod(const std::string &period) {
+  period_ = period;
+  setParameter(std::string("Period"), period);
 }
 
-std::string CreateReadOnlyDBInstanceRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string CreateReadOnlyDBInstanceRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void CreateReadOnlyDBInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void CreateReadOnlyDBInstanceRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-long CreateReadOnlyDBInstanceRequest::getOwnerId()const
-{
-	return ownerId_;
+std::string CreateReadOnlyDBInstanceRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void CreateReadOnlyDBInstanceRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void CreateReadOnlyDBInstanceRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-std::string CreateReadOnlyDBInstanceRequest::getUsedTime()const
-{
-	return usedTime_;
+long CreateReadOnlyDBInstanceRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void CreateReadOnlyDBInstanceRequest::setUsedTime(const std::string& usedTime)
-{
-	usedTime_ = usedTime;
-	setParameter("UsedTime", usedTime);
+void CreateReadOnlyDBInstanceRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string CreateReadOnlyDBInstanceRequest::getDBInstanceClass()const
-{
-	return dBInstanceClass_;
+std::string CreateReadOnlyDBInstanceRequest::getUsedTime() const {
+  return usedTime_;
 }
 
-void CreateReadOnlyDBInstanceRequest::setDBInstanceClass(const std::string& dBInstanceClass)
-{
-	dBInstanceClass_ = dBInstanceClass;
-	setParameter("DBInstanceClass", dBInstanceClass);
+void CreateReadOnlyDBInstanceRequest::setUsedTime(const std::string &usedTime) {
+  usedTime_ = usedTime;
+  setParameter(std::string("UsedTime"), usedTime);
 }
 
-std::string CreateReadOnlyDBInstanceRequest::getVSwitchId()const
-{
-	return vSwitchId_;
+std::string CreateReadOnlyDBInstanceRequest::getDBInstanceClass() const {
+  return dBInstanceClass_;
 }
 
-void CreateReadOnlyDBInstanceRequest::setVSwitchId(const std::string& vSwitchId)
-{
-	vSwitchId_ = vSwitchId;
-	setParameter("VSwitchId", vSwitchId);
+void CreateReadOnlyDBInstanceRequest::setDBInstanceClass(const std::string &dBInstanceClass) {
+  dBInstanceClass_ = dBInstanceClass;
+  setParameter(std::string("DBInstanceClass"), dBInstanceClass);
 }
 
-std::string CreateReadOnlyDBInstanceRequest::getPrivateIpAddress()const
-{
-	return privateIpAddress_;
+std::string CreateReadOnlyDBInstanceRequest::getVSwitchId() const {
+  return vSwitchId_;
 }
 
-void CreateReadOnlyDBInstanceRequest::setPrivateIpAddress(const std::string& privateIpAddress)
-{
-	privateIpAddress_ = privateIpAddress;
-	setParameter("PrivateIpAddress", privateIpAddress);
+void CreateReadOnlyDBInstanceRequest::setVSwitchId(const std::string &vSwitchId) {
+  vSwitchId_ = vSwitchId;
+  setParameter(std::string("VSwitchId"), vSwitchId);
 }
 
-std::string CreateReadOnlyDBInstanceRequest::getAutoRenew()const
-{
-	return autoRenew_;
+std::string CreateReadOnlyDBInstanceRequest::getPrivateIpAddress() const {
+  return privateIpAddress_;
 }
 
-void CreateReadOnlyDBInstanceRequest::setAutoRenew(const std::string& autoRenew)
-{
-	autoRenew_ = autoRenew;
-	setParameter("AutoRenew", autoRenew);
+void CreateReadOnlyDBInstanceRequest::setPrivateIpAddress(const std::string &privateIpAddress) {
+  privateIpAddress_ = privateIpAddress;
+  setParameter(std::string("PrivateIpAddress"), privateIpAddress);
 }
 
-std::string CreateReadOnlyDBInstanceRequest::getVPCId()const
-{
-	return vPCId_;
+std::string CreateReadOnlyDBInstanceRequest::getAutoRenew() const {
+  return autoRenew_;
 }
 
-void CreateReadOnlyDBInstanceRequest::setVPCId(const std::string& vPCId)
-{
-	vPCId_ = vPCId;
-	setParameter("VPCId", vPCId);
+void CreateReadOnlyDBInstanceRequest::setAutoRenew(const std::string &autoRenew) {
+  autoRenew_ = autoRenew;
+  setParameter(std::string("AutoRenew"), autoRenew);
 }
 
-std::string CreateReadOnlyDBInstanceRequest::getZoneId()const
-{
-	return zoneId_;
+std::string CreateReadOnlyDBInstanceRequest::getVPCId() const {
+  return vPCId_;
 }
 
-void CreateReadOnlyDBInstanceRequest::setZoneId(const std::string& zoneId)
-{
-	zoneId_ = zoneId;
-	setParameter("ZoneId", zoneId);
+void CreateReadOnlyDBInstanceRequest::setVPCId(const std::string &vPCId) {
+  vPCId_ = vPCId;
+  setParameter(std::string("VPCId"), vPCId);
 }
 
-std::string CreateReadOnlyDBInstanceRequest::getCategory()const
-{
-	return category_;
+std::string CreateReadOnlyDBInstanceRequest::getZoneId() const {
+  return zoneId_;
 }
 
-void CreateReadOnlyDBInstanceRequest::setCategory(const std::string& category)
-{
-	category_ = category;
-	setParameter("Category", category);
+void CreateReadOnlyDBInstanceRequest::setZoneId(const std::string &zoneId) {
+  zoneId_ = zoneId;
+  setParameter(std::string("ZoneId"), zoneId);
 }
 
-std::string CreateReadOnlyDBInstanceRequest::getPayType()const
-{
-	return payType_;
+std::string CreateReadOnlyDBInstanceRequest::getCategory() const {
+  return category_;
 }
 
-void CreateReadOnlyDBInstanceRequest::setPayType(const std::string& payType)
-{
-	payType_ = payType;
-	setParameter("PayType", payType);
+void CreateReadOnlyDBInstanceRequest::setCategory(const std::string &category) {
+  category_ = category;
+  setParameter(std::string("Category"), category);
 }
 
-std::string CreateReadOnlyDBInstanceRequest::getInstanceNetworkType()const
-{
-	return instanceNetworkType_;
+std::string CreateReadOnlyDBInstanceRequest::getPayType() const {
+  return payType_;
 }
 
-void CreateReadOnlyDBInstanceRequest::setInstanceNetworkType(const std::string& instanceNetworkType)
-{
-	instanceNetworkType_ = instanceNetworkType;
-	setParameter("InstanceNetworkType", instanceNetworkType);
+void CreateReadOnlyDBInstanceRequest::setPayType(const std::string &payType) {
+  payType_ = payType;
+  setParameter(std::string("PayType"), payType);
+}
+
+std::string CreateReadOnlyDBInstanceRequest::getInstanceNetworkType() const {
+  return instanceNetworkType_;
+}
+
+void CreateReadOnlyDBInstanceRequest::setInstanceNetworkType(const std::string &instanceNetworkType) {
+  instanceNetworkType_ = instanceNetworkType;
+  setParameter(std::string("InstanceNetworkType"), instanceNetworkType);
 }
 

@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,100 +18,82 @@
 
 using AlibabaCloud::Rds::Model::ModifyHASwitchConfigRequest;
 
-ModifyHASwitchConfigRequest::ModifyHASwitchConfigRequest() :
-	RpcServiceRequest("rds", "2014-08-15", "ModifyHASwitchConfig")
-{
-	setMethod(HttpRequest::Method::Post);
+ModifyHASwitchConfigRequest::ModifyHASwitchConfigRequest()
+    : RpcServiceRequest("rds", "2014-08-15", "ModifyHASwitchConfig") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-ModifyHASwitchConfigRequest::~ModifyHASwitchConfigRequest()
-{}
+ModifyHASwitchConfigRequest::~ModifyHASwitchConfigRequest() {}
 
-long ModifyHASwitchConfigRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long ModifyHASwitchConfigRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void ModifyHASwitchConfigRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void ModifyHASwitchConfigRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string ModifyHASwitchConfigRequest::getHAConfig()const
-{
-	return hAConfig_;
+std::string ModifyHASwitchConfigRequest::getHAConfig() const {
+  return hAConfig_;
 }
 
-void ModifyHASwitchConfigRequest::setHAConfig(const std::string& hAConfig)
-{
-	hAConfig_ = hAConfig;
-	setParameter("HAConfig", hAConfig);
+void ModifyHASwitchConfigRequest::setHAConfig(const std::string &hAConfig) {
+  hAConfig_ = hAConfig;
+  setParameter(std::string("HAConfig"), hAConfig);
 }
 
-std::string ModifyHASwitchConfigRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string ModifyHASwitchConfigRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void ModifyHASwitchConfigRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void ModifyHASwitchConfigRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string ModifyHASwitchConfigRequest::getManualHATime()const
-{
-	return manualHATime_;
+std::string ModifyHASwitchConfigRequest::getManualHATime() const {
+  return manualHATime_;
 }
 
-void ModifyHASwitchConfigRequest::setManualHATime(const std::string& manualHATime)
-{
-	manualHATime_ = manualHATime;
-	setParameter("ManualHATime", manualHATime);
+void ModifyHASwitchConfigRequest::setManualHATime(const std::string &manualHATime) {
+  manualHATime_ = manualHATime;
+  setParameter(std::string("ManualHATime"), manualHATime);
 }
 
-std::string ModifyHASwitchConfigRequest::getRegionId()const
-{
-	return regionId_;
+std::string ModifyHASwitchConfigRequest::getRegionId() const {
+  return regionId_;
 }
 
-void ModifyHASwitchConfigRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void ModifyHASwitchConfigRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
-std::string ModifyHASwitchConfigRequest::getDBInstanceId()const
-{
-	return dBInstanceId_;
+std::string ModifyHASwitchConfigRequest::getDBInstanceId() const {
+  return dBInstanceId_;
 }
 
-void ModifyHASwitchConfigRequest::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-	setParameter("DBInstanceId", dBInstanceId);
+void ModifyHASwitchConfigRequest::setDBInstanceId(const std::string &dBInstanceId) {
+  dBInstanceId_ = dBInstanceId;
+  setParameter(std::string("DBInstanceId"), dBInstanceId);
 }
 
-std::string ModifyHASwitchConfigRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string ModifyHASwitchConfigRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void ModifyHASwitchConfigRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void ModifyHASwitchConfigRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-long ModifyHASwitchConfigRequest::getOwnerId()const
-{
-	return ownerId_;
+long ModifyHASwitchConfigRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void ModifyHASwitchConfigRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void ModifyHASwitchConfigRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 

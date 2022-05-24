@@ -43,62 +43,62 @@ void DescribeDedicatedHostsResult::parse(const std::string &payload)
 	for (auto valueDedicatedHostsDedicatedHostsItem : allDedicatedHostsNode)
 	{
 		DedicatedHostsItem dedicatedHostsObject;
-		if(!valueDedicatedHostsDedicatedHostsItem["HostName"].isNull())
-			dedicatedHostsObject.hostName = valueDedicatedHostsDedicatedHostsItem["HostName"].asString();
-		if(!valueDedicatedHostsDedicatedHostsItem["HostStatus"].isNull())
-			dedicatedHostsObject.hostStatus = valueDedicatedHostsDedicatedHostsItem["HostStatus"].asString();
-		if(!valueDedicatedHostsDedicatedHostsItem["InstanceNumber"].isNull())
-			dedicatedHostsObject.instanceNumber = valueDedicatedHostsDedicatedHostsItem["InstanceNumber"].asString();
-		if(!valueDedicatedHostsDedicatedHostsItem["CPUAllocationRatio"].isNull())
-			dedicatedHostsObject.cPUAllocationRatio = valueDedicatedHostsDedicatedHostsItem["CPUAllocationRatio"].asString();
-		if(!valueDedicatedHostsDedicatedHostsItem["MemAllocationRatio"].isNull())
-			dedicatedHostsObject.memAllocationRatio = valueDedicatedHostsDedicatedHostsItem["MemAllocationRatio"].asString();
-		if(!valueDedicatedHostsDedicatedHostsItem["DiskAllocationRatio"].isNull())
-			dedicatedHostsObject.diskAllocationRatio = valueDedicatedHostsDedicatedHostsItem["DiskAllocationRatio"].asString();
-		if(!valueDedicatedHostsDedicatedHostsItem["VPCId"].isNull())
-			dedicatedHostsObject.vPCId = valueDedicatedHostsDedicatedHostsItem["VPCId"].asString();
-		if(!valueDedicatedHostsDedicatedHostsItem["VSwitchId"].isNull())
-			dedicatedHostsObject.vSwitchId = valueDedicatedHostsDedicatedHostsItem["VSwitchId"].asString();
-		if(!valueDedicatedHostsDedicatedHostsItem["ZoneId"].isNull())
-			dedicatedHostsObject.zoneId = valueDedicatedHostsDedicatedHostsItem["ZoneId"].asString();
-		if(!valueDedicatedHostsDedicatedHostsItem["IPAddress"].isNull())
-			dedicatedHostsObject.iPAddress = valueDedicatedHostsDedicatedHostsItem["IPAddress"].asString();
-		if(!valueDedicatedHostsDedicatedHostsItem["HostClass"].isNull())
-			dedicatedHostsObject.hostClass = valueDedicatedHostsDedicatedHostsItem["HostClass"].asString();
-		if(!valueDedicatedHostsDedicatedHostsItem["CreatedTime"].isNull())
-			dedicatedHostsObject.createdTime = valueDedicatedHostsDedicatedHostsItem["CreatedTime"].asString();
-		if(!valueDedicatedHostsDedicatedHostsItem["DedicatedHostId"].isNull())
-			dedicatedHostsObject.dedicatedHostId = valueDedicatedHostsDedicatedHostsItem["DedicatedHostId"].asString();
-		if(!valueDedicatedHostsDedicatedHostsItem["AllocationStatus"].isNull())
-			dedicatedHostsObject.allocationStatus = valueDedicatedHostsDedicatedHostsItem["AllocationStatus"].asString();
-		if(!valueDedicatedHostsDedicatedHostsItem["EndTime"].isNull())
-			dedicatedHostsObject.endTime = valueDedicatedHostsDedicatedHostsItem["EndTime"].asString();
 		if(!valueDedicatedHostsDedicatedHostsItem["HostType"].isNull())
 			dedicatedHostsObject.hostType = valueDedicatedHostsDedicatedHostsItem["HostType"].asString();
-		if(!valueDedicatedHostsDedicatedHostsItem["BastionInstanceId"].isNull())
-			dedicatedHostsObject.bastionInstanceId = valueDedicatedHostsDedicatedHostsItem["BastionInstanceId"].asString();
-		if(!valueDedicatedHostsDedicatedHostsItem["OpenPermission"].isNull())
-			dedicatedHostsObject.openPermission = valueDedicatedHostsDedicatedHostsItem["OpenPermission"].asString();
-		if(!valueDedicatedHostsDedicatedHostsItem["AccountName"].isNull())
-			dedicatedHostsObject.accountName = valueDedicatedHostsDedicatedHostsItem["AccountName"].asString();
-		if(!valueDedicatedHostsDedicatedHostsItem["HostCPU"].isNull())
-			dedicatedHostsObject.hostCPU = valueDedicatedHostsDedicatedHostsItem["HostCPU"].asString();
-		if(!valueDedicatedHostsDedicatedHostsItem["HostMem"].isNull())
-			dedicatedHostsObject.hostMem = valueDedicatedHostsDedicatedHostsItem["HostMem"].asString();
 		if(!valueDedicatedHostsDedicatedHostsItem["HostStorage"].isNull())
 			dedicatedHostsObject.hostStorage = valueDedicatedHostsDedicatedHostsItem["HostStorage"].asString();
-		if(!valueDedicatedHostsDedicatedHostsItem["CpuUsed"].isNull())
-			dedicatedHostsObject.cpuUsed = valueDedicatedHostsDedicatedHostsItem["CpuUsed"].asString();
 		if(!valueDedicatedHostsDedicatedHostsItem["MemoryUsed"].isNull())
 			dedicatedHostsObject.memoryUsed = valueDedicatedHostsDedicatedHostsItem["MemoryUsed"].asString();
-		if(!valueDedicatedHostsDedicatedHostsItem["StorageUsed"].isNull())
-			dedicatedHostsObject.storageUsed = valueDedicatedHostsDedicatedHostsItem["StorageUsed"].asString();
-		if(!valueDedicatedHostsDedicatedHostsItem["ImageCategory"].isNull())
-			dedicatedHostsObject.imageCategory = valueDedicatedHostsDedicatedHostsItem["ImageCategory"].asString();
 		if(!valueDedicatedHostsDedicatedHostsItem["DedicatedHostGroupId"].isNull())
 			dedicatedHostsObject.dedicatedHostGroupId = valueDedicatedHostsDedicatedHostsItem["DedicatedHostGroupId"].asString();
+		if(!valueDedicatedHostsDedicatedHostsItem["AllocationStatus"].isNull())
+			dedicatedHostsObject.allocationStatus = valueDedicatedHostsDedicatedHostsItem["AllocationStatus"].asString();
+		if(!valueDedicatedHostsDedicatedHostsItem["StorageUsed"].isNull())
+			dedicatedHostsObject.storageUsed = valueDedicatedHostsDedicatedHostsItem["StorageUsed"].asString();
+		if(!valueDedicatedHostsDedicatedHostsItem["DedicatedHostId"].isNull())
+			dedicatedHostsObject.dedicatedHostId = valueDedicatedHostsDedicatedHostsItem["DedicatedHostId"].asString();
+		if(!valueDedicatedHostsDedicatedHostsItem["MemAllocationRatio"].isNull())
+			dedicatedHostsObject.memAllocationRatio = valueDedicatedHostsDedicatedHostsItem["MemAllocationRatio"].asString();
+		if(!valueDedicatedHostsDedicatedHostsItem["CreatedTime"].isNull())
+			dedicatedHostsObject.createdTime = valueDedicatedHostsDedicatedHostsItem["CreatedTime"].asString();
+		if(!valueDedicatedHostsDedicatedHostsItem["IPAddress"].isNull())
+			dedicatedHostsObject.iPAddress = valueDedicatedHostsDedicatedHostsItem["IPAddress"].asString();
+		if(!valueDedicatedHostsDedicatedHostsItem["HostStatus"].isNull())
+			dedicatedHostsObject.hostStatus = valueDedicatedHostsDedicatedHostsItem["HostStatus"].asString();
+		if(!valueDedicatedHostsDedicatedHostsItem["HostName"].isNull())
+			dedicatedHostsObject.hostName = valueDedicatedHostsDedicatedHostsItem["HostName"].asString();
+		if(!valueDedicatedHostsDedicatedHostsItem["HostCPU"].isNull())
+			dedicatedHostsObject.hostCPU = valueDedicatedHostsDedicatedHostsItem["HostCPU"].asString();
+		if(!valueDedicatedHostsDedicatedHostsItem["InstanceNumber"].isNull())
+			dedicatedHostsObject.instanceNumber = valueDedicatedHostsDedicatedHostsItem["InstanceNumber"].asString();
+		if(!valueDedicatedHostsDedicatedHostsItem["OpenPermission"].isNull())
+			dedicatedHostsObject.openPermission = valueDedicatedHostsDedicatedHostsItem["OpenPermission"].asString();
+		if(!valueDedicatedHostsDedicatedHostsItem["CpuUsed"].isNull())
+			dedicatedHostsObject.cpuUsed = valueDedicatedHostsDedicatedHostsItem["CpuUsed"].asString();
+		if(!valueDedicatedHostsDedicatedHostsItem["VPCId"].isNull())
+			dedicatedHostsObject.vPCId = valueDedicatedHostsDedicatedHostsItem["VPCId"].asString();
+		if(!valueDedicatedHostsDedicatedHostsItem["HostClass"].isNull())
+			dedicatedHostsObject.hostClass = valueDedicatedHostsDedicatedHostsItem["HostClass"].asString();
+		if(!valueDedicatedHostsDedicatedHostsItem["EndTime"].isNull())
+			dedicatedHostsObject.endTime = valueDedicatedHostsDedicatedHostsItem["EndTime"].asString();
+		if(!valueDedicatedHostsDedicatedHostsItem["VSwitchId"].isNull())
+			dedicatedHostsObject.vSwitchId = valueDedicatedHostsDedicatedHostsItem["VSwitchId"].asString();
+		if(!valueDedicatedHostsDedicatedHostsItem["CPUAllocationRatio"].isNull())
+			dedicatedHostsObject.cPUAllocationRatio = valueDedicatedHostsDedicatedHostsItem["CPUAllocationRatio"].asString();
+		if(!valueDedicatedHostsDedicatedHostsItem["ZoneId"].isNull())
+			dedicatedHostsObject.zoneId = valueDedicatedHostsDedicatedHostsItem["ZoneId"].asString();
+		if(!valueDedicatedHostsDedicatedHostsItem["ImageCategory"].isNull())
+			dedicatedHostsObject.imageCategory = valueDedicatedHostsDedicatedHostsItem["ImageCategory"].asString();
 		if(!valueDedicatedHostsDedicatedHostsItem["Engine"].isNull())
 			dedicatedHostsObject.engine = valueDedicatedHostsDedicatedHostsItem["Engine"].asString();
+		if(!valueDedicatedHostsDedicatedHostsItem["DiskAllocationRatio"].isNull())
+			dedicatedHostsObject.diskAllocationRatio = valueDedicatedHostsDedicatedHostsItem["DiskAllocationRatio"].asString();
+		if(!valueDedicatedHostsDedicatedHostsItem["HostMem"].isNull())
+			dedicatedHostsObject.hostMem = valueDedicatedHostsDedicatedHostsItem["HostMem"].asString();
+		if(!valueDedicatedHostsDedicatedHostsItem["BastionInstanceId"].isNull())
+			dedicatedHostsObject.bastionInstanceId = valueDedicatedHostsDedicatedHostsItem["BastionInstanceId"].asString();
+		if(!valueDedicatedHostsDedicatedHostsItem["AccountName"].isNull())
+			dedicatedHostsObject.accountName = valueDedicatedHostsDedicatedHostsItem["AccountName"].asString();
 		dedicatedHosts_.push_back(dedicatedHostsObject);
 	}
 	if(!value["DedicatedHostGroupId"].isNull())

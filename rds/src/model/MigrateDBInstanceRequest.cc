@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,254 +18,208 @@
 
 using AlibabaCloud::Rds::Model::MigrateDBInstanceRequest;
 
-MigrateDBInstanceRequest::MigrateDBInstanceRequest() :
-	RpcServiceRequest("rds", "2014-08-15", "MigrateDBInstance")
-{
-	setMethod(HttpRequest::Method::Post);
+MigrateDBInstanceRequest::MigrateDBInstanceRequest()
+    : RpcServiceRequest("rds", "2014-08-15", "MigrateDBInstance") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-MigrateDBInstanceRequest::~MigrateDBInstanceRequest()
-{}
+MigrateDBInstanceRequest::~MigrateDBInstanceRequest() {}
 
-long MigrateDBInstanceRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long MigrateDBInstanceRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void MigrateDBInstanceRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void MigrateDBInstanceRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string MigrateDBInstanceRequest::getSpecifiedTime()const
-{
-	return specifiedTime_;
+std::string MigrateDBInstanceRequest::getSpecifiedTime() const {
+  return specifiedTime_;
 }
 
-void MigrateDBInstanceRequest::setSpecifiedTime(const std::string& specifiedTime)
-{
-	specifiedTime_ = specifiedTime;
-	setParameter("SpecifiedTime", specifiedTime);
+void MigrateDBInstanceRequest::setSpecifiedTime(const std::string &specifiedTime) {
+  specifiedTime_ = specifiedTime;
+  setParameter(std::string("SpecifiedTime"), specifiedTime);
 }
 
-std::string MigrateDBInstanceRequest::getTargetDedicatedHostIdForSlave()const
-{
-	return targetDedicatedHostIdForSlave_;
+std::string MigrateDBInstanceRequest::getTargetDedicatedHostIdForSlave() const {
+  return targetDedicatedHostIdForSlave_;
 }
 
-void MigrateDBInstanceRequest::setTargetDedicatedHostIdForSlave(const std::string& targetDedicatedHostIdForSlave)
-{
-	targetDedicatedHostIdForSlave_ = targetDedicatedHostIdForSlave;
-	setParameter("TargetDedicatedHostIdForSlave", targetDedicatedHostIdForSlave);
+void MigrateDBInstanceRequest::setTargetDedicatedHostIdForSlave(const std::string &targetDedicatedHostIdForSlave) {
+  targetDedicatedHostIdForSlave_ = targetDedicatedHostIdForSlave;
+  setParameter(std::string("TargetDedicatedHostIdForSlave"), targetDedicatedHostIdForSlave);
 }
 
-std::string MigrateDBInstanceRequest::getZoneIdSlave1()const
-{
-	return zoneIdSlave1_;
+std::string MigrateDBInstanceRequest::getZoneIdSlave1() const {
+  return zoneIdSlave1_;
 }
 
-void MigrateDBInstanceRequest::setZoneIdSlave1(const std::string& zoneIdSlave1)
-{
-	zoneIdSlave1_ = zoneIdSlave1;
-	setParameter("ZoneIdSlave1", zoneIdSlave1);
+void MigrateDBInstanceRequest::setZoneIdSlave1(const std::string &zoneIdSlave1) {
+  zoneIdSlave1_ = zoneIdSlave1;
+  setParameter(std::string("ZoneIdSlave1"), zoneIdSlave1);
 }
 
-std::string MigrateDBInstanceRequest::getZoneIdSlave2()const
-{
-	return zoneIdSlave2_;
+std::string MigrateDBInstanceRequest::getZoneIdSlave2() const {
+  return zoneIdSlave2_;
 }
 
-void MigrateDBInstanceRequest::setZoneIdSlave2(const std::string& zoneIdSlave2)
-{
-	zoneIdSlave2_ = zoneIdSlave2;
-	setParameter("ZoneIdSlave2", zoneIdSlave2);
+void MigrateDBInstanceRequest::setZoneIdSlave2(const std::string &zoneIdSlave2) {
+  zoneIdSlave2_ = zoneIdSlave2;
+  setParameter(std::string("ZoneIdSlave2"), zoneIdSlave2);
 }
 
-std::string MigrateDBInstanceRequest::getEngineVersion()const
-{
-	return engineVersion_;
+std::string MigrateDBInstanceRequest::getEngineVersion() const {
+  return engineVersion_;
 }
 
-void MigrateDBInstanceRequest::setEngineVersion(const std::string& engineVersion)
-{
-	engineVersion_ = engineVersion;
-	setParameter("EngineVersion", engineVersion);
+void MigrateDBInstanceRequest::setEngineVersion(const std::string &engineVersion) {
+  engineVersion_ = engineVersion;
+  setParameter(std::string("EngineVersion"), engineVersion);
 }
 
-int MigrateDBInstanceRequest::getStorage()const
-{
-	return storage_;
+int MigrateDBInstanceRequest::getStorage() const {
+  return storage_;
 }
 
-void MigrateDBInstanceRequest::setStorage(int storage)
-{
-	storage_ = storage;
-	setParameter("Storage", std::to_string(storage));
+void MigrateDBInstanceRequest::setStorage(int storage) {
+  storage_ = storage;
+  setParameter(std::string("Storage"), std::to_string(storage));
 }
 
-std::string MigrateDBInstanceRequest::getZoneIdForFollower()const
-{
-	return zoneIdForFollower_;
+std::string MigrateDBInstanceRequest::getZoneIdForFollower() const {
+  return zoneIdForFollower_;
 }
 
-void MigrateDBInstanceRequest::setZoneIdForFollower(const std::string& zoneIdForFollower)
-{
-	zoneIdForFollower_ = zoneIdForFollower;
-	setParameter("ZoneIdForFollower", zoneIdForFollower);
+void MigrateDBInstanceRequest::setZoneIdForFollower(const std::string &zoneIdForFollower) {
+  zoneIdForFollower_ = zoneIdForFollower;
+  setParameter(std::string("ZoneIdForFollower"), zoneIdForFollower);
 }
 
-std::string MigrateDBInstanceRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string MigrateDBInstanceRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void MigrateDBInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void MigrateDBInstanceRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string MigrateDBInstanceRequest::getRegionId()const
-{
-	return regionId_;
+std::string MigrateDBInstanceRequest::getRegionId() const {
+  return regionId_;
 }
 
-void MigrateDBInstanceRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void MigrateDBInstanceRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
-std::string MigrateDBInstanceRequest::getEffectiveTime()const
-{
-	return effectiveTime_;
+std::string MigrateDBInstanceRequest::getEffectiveTime() const {
+  return effectiveTime_;
 }
 
-void MigrateDBInstanceRequest::setEffectiveTime(const std::string& effectiveTime)
-{
-	effectiveTime_ = effectiveTime;
-	setParameter("EffectiveTime", effectiveTime);
+void MigrateDBInstanceRequest::setEffectiveTime(const std::string &effectiveTime) {
+  effectiveTime_ = effectiveTime;
+  setParameter(std::string("EffectiveTime"), effectiveTime);
 }
 
-int MigrateDBInstanceRequest::getDBInstanceTransType()const
-{
-	return dBInstanceTransType_;
+int MigrateDBInstanceRequest::getDBInstanceTransType() const {
+  return dBInstanceTransType_;
 }
 
-void MigrateDBInstanceRequest::setDBInstanceTransType(int dBInstanceTransType)
-{
-	dBInstanceTransType_ = dBInstanceTransType;
-	setParameter("DBInstanceTransType", std::to_string(dBInstanceTransType));
+void MigrateDBInstanceRequest::setDBInstanceTransType(int dBInstanceTransType) {
+  dBInstanceTransType_ = dBInstanceTransType;
+  setParameter(std::string("DBInstanceTransType"), std::to_string(dBInstanceTransType));
 }
 
-std::string MigrateDBInstanceRequest::getTargetDedicatedHostIdForMaster()const
-{
-	return targetDedicatedHostIdForMaster_;
+std::string MigrateDBInstanceRequest::getTargetDedicatedHostIdForMaster() const {
+  return targetDedicatedHostIdForMaster_;
 }
 
-void MigrateDBInstanceRequest::setTargetDedicatedHostIdForMaster(const std::string& targetDedicatedHostIdForMaster)
-{
-	targetDedicatedHostIdForMaster_ = targetDedicatedHostIdForMaster;
-	setParameter("TargetDedicatedHostIdForMaster", targetDedicatedHostIdForMaster);
+void MigrateDBInstanceRequest::setTargetDedicatedHostIdForMaster(const std::string &targetDedicatedHostIdForMaster) {
+  targetDedicatedHostIdForMaster_ = targetDedicatedHostIdForMaster;
+  setParameter(std::string("TargetDedicatedHostIdForMaster"), targetDedicatedHostIdForMaster);
 }
 
-std::string MigrateDBInstanceRequest::getDBInstanceId()const
-{
-	return dBInstanceId_;
+std::string MigrateDBInstanceRequest::getDBInstanceId() const {
+  return dBInstanceId_;
 }
 
-void MigrateDBInstanceRequest::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-	setParameter("DBInstanceId", dBInstanceId);
+void MigrateDBInstanceRequest::setDBInstanceId(const std::string &dBInstanceId) {
+  dBInstanceId_ = dBInstanceId;
+  setParameter(std::string("DBInstanceId"), dBInstanceId);
 }
 
-std::string MigrateDBInstanceRequest::getDedicatedHostGroupId()const
-{
-	return dedicatedHostGroupId_;
+std::string MigrateDBInstanceRequest::getDedicatedHostGroupId() const {
+  return dedicatedHostGroupId_;
 }
 
-void MigrateDBInstanceRequest::setDedicatedHostGroupId(const std::string& dedicatedHostGroupId)
-{
-	dedicatedHostGroupId_ = dedicatedHostGroupId;
-	setParameter("DedicatedHostGroupId", dedicatedHostGroupId);
+void MigrateDBInstanceRequest::setDedicatedHostGroupId(const std::string &dedicatedHostGroupId) {
+  dedicatedHostGroupId_ = dedicatedHostGroupId;
+  setParameter(std::string("DedicatedHostGroupId"), dedicatedHostGroupId);
 }
 
-std::string MigrateDBInstanceRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string MigrateDBInstanceRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void MigrateDBInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void MigrateDBInstanceRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string MigrateDBInstanceRequest::getZoneIdForLog()const
-{
-	return zoneIdForLog_;
+std::string MigrateDBInstanceRequest::getZoneIdForLog() const {
+  return zoneIdForLog_;
 }
 
-void MigrateDBInstanceRequest::setZoneIdForLog(const std::string& zoneIdForLog)
-{
-	zoneIdForLog_ = zoneIdForLog;
-	setParameter("ZoneIdForLog", zoneIdForLog);
+void MigrateDBInstanceRequest::setZoneIdForLog(const std::string &zoneIdForLog) {
+  zoneIdForLog_ = zoneIdForLog;
+  setParameter(std::string("ZoneIdForLog"), zoneIdForLog);
 }
 
-long MigrateDBInstanceRequest::getOwnerId()const
-{
-	return ownerId_;
+long MigrateDBInstanceRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void MigrateDBInstanceRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void MigrateDBInstanceRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string MigrateDBInstanceRequest::getTargetDBInstanceClass()const
-{
-	return targetDBInstanceClass_;
+std::string MigrateDBInstanceRequest::getTargetDBInstanceClass() const {
+  return targetDBInstanceClass_;
 }
 
-void MigrateDBInstanceRequest::setTargetDBInstanceClass(const std::string& targetDBInstanceClass)
-{
-	targetDBInstanceClass_ = targetDBInstanceClass;
-	setParameter("TargetDBInstanceClass", targetDBInstanceClass);
+void MigrateDBInstanceRequest::setTargetDBInstanceClass(const std::string &targetDBInstanceClass) {
+  targetDBInstanceClass_ = targetDBInstanceClass;
+  setParameter(std::string("TargetDBInstanceClass"), targetDBInstanceClass);
 }
 
-std::string MigrateDBInstanceRequest::getVSwitchId()const
-{
-	return vSwitchId_;
+std::string MigrateDBInstanceRequest::getVSwitchId() const {
+  return vSwitchId_;
 }
 
-void MigrateDBInstanceRequest::setVSwitchId(const std::string& vSwitchId)
-{
-	vSwitchId_ = vSwitchId;
-	setParameter("VSwitchId", vSwitchId);
+void MigrateDBInstanceRequest::setVSwitchId(const std::string &vSwitchId) {
+  vSwitchId_ = vSwitchId;
+  setParameter(std::string("VSwitchId"), vSwitchId);
 }
 
-std::string MigrateDBInstanceRequest::getTargetDedicatedHostIdForLog()const
-{
-	return targetDedicatedHostIdForLog_;
+std::string MigrateDBInstanceRequest::getTargetDedicatedHostIdForLog() const {
+  return targetDedicatedHostIdForLog_;
 }
 
-void MigrateDBInstanceRequest::setTargetDedicatedHostIdForLog(const std::string& targetDedicatedHostIdForLog)
-{
-	targetDedicatedHostIdForLog_ = targetDedicatedHostIdForLog;
-	setParameter("TargetDedicatedHostIdForLog", targetDedicatedHostIdForLog);
+void MigrateDBInstanceRequest::setTargetDedicatedHostIdForLog(const std::string &targetDedicatedHostIdForLog) {
+  targetDedicatedHostIdForLog_ = targetDedicatedHostIdForLog;
+  setParameter(std::string("TargetDedicatedHostIdForLog"), targetDedicatedHostIdForLog);
 }
 
-std::string MigrateDBInstanceRequest::getZoneId()const
-{
-	return zoneId_;
+std::string MigrateDBInstanceRequest::getZoneId() const {
+  return zoneId_;
 }
 
-void MigrateDBInstanceRequest::setZoneId(const std::string& zoneId)
-{
-	zoneId_ = zoneId;
-	setParameter("ZoneId", zoneId);
+void MigrateDBInstanceRequest::setZoneId(const std::string &zoneId) {
+  zoneId_ = zoneId;
+  setParameter(std::string("ZoneId"), zoneId);
 }
 

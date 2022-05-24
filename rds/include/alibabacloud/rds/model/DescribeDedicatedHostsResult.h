@@ -36,8 +36,8 @@ namespace AlibabaCloud
 				{
 					std::string cPUAllocationRatio;
 					std::string diskAllocationRatio;
-					std::string instanceNumber;
 					std::string dedicatedHostId;
+					std::string instanceNumber;
 					std::string createdTime;
 					std::string endTime;
 					std::string dedicatedHostGroupId;
@@ -47,8 +47,8 @@ namespace AlibabaCloud
 					std::string openPermission;
 					std::string hostType;
 					std::string hostMem;
-					std::string hostStatus;
 					std::string memoryUsed;
+					std::string hostStatus;
 					std::string cpuUsed;
 					std::string hostName;
 					std::string engine;

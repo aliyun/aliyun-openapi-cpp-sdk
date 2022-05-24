@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,100 +18,82 @@
 
 using AlibabaCloud::Rds::Model::CheckAccountNameAvailableRequest;
 
-CheckAccountNameAvailableRequest::CheckAccountNameAvailableRequest() :
-	RpcServiceRequest("rds", "2014-08-15", "CheckAccountNameAvailable")
-{
-	setMethod(HttpRequest::Method::Post);
+CheckAccountNameAvailableRequest::CheckAccountNameAvailableRequest()
+    : RpcServiceRequest("rds", "2014-08-15", "CheckAccountNameAvailable") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-CheckAccountNameAvailableRequest::~CheckAccountNameAvailableRequest()
-{}
+CheckAccountNameAvailableRequest::~CheckAccountNameAvailableRequest() {}
 
-long CheckAccountNameAvailableRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long CheckAccountNameAvailableRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void CheckAccountNameAvailableRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void CheckAccountNameAvailableRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string CheckAccountNameAvailableRequest::getClientToken()const
-{
-	return clientToken_;
+std::string CheckAccountNameAvailableRequest::getClientToken() const {
+  return clientToken_;
 }
 
-void CheckAccountNameAvailableRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+void CheckAccountNameAvailableRequest::setClientToken(const std::string &clientToken) {
+  clientToken_ = clientToken;
+  setParameter(std::string("ClientToken"), clientToken);
 }
 
-std::string CheckAccountNameAvailableRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string CheckAccountNameAvailableRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void CheckAccountNameAvailableRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void CheckAccountNameAvailableRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string CheckAccountNameAvailableRequest::getAccountName()const
-{
-	return accountName_;
+std::string CheckAccountNameAvailableRequest::getAccountName() const {
+  return accountName_;
 }
 
-void CheckAccountNameAvailableRequest::setAccountName(const std::string& accountName)
-{
-	accountName_ = accountName;
-	setParameter("AccountName", accountName);
+void CheckAccountNameAvailableRequest::setAccountName(const std::string &accountName) {
+  accountName_ = accountName;
+  setParameter(std::string("AccountName"), accountName);
 }
 
-std::string CheckAccountNameAvailableRequest::getDBInstanceId()const
-{
-	return dBInstanceId_;
+std::string CheckAccountNameAvailableRequest::getDBInstanceId() const {
+  return dBInstanceId_;
 }
 
-void CheckAccountNameAvailableRequest::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-	setParameter("DBInstanceId", dBInstanceId);
+void CheckAccountNameAvailableRequest::setDBInstanceId(const std::string &dBInstanceId) {
+  dBInstanceId_ = dBInstanceId;
+  setParameter(std::string("DBInstanceId"), dBInstanceId);
 }
 
-std::string CheckAccountNameAvailableRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string CheckAccountNameAvailableRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void CheckAccountNameAvailableRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void CheckAccountNameAvailableRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string CheckAccountNameAvailableRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string CheckAccountNameAvailableRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void CheckAccountNameAvailableRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void CheckAccountNameAvailableRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-long CheckAccountNameAvailableRequest::getOwnerId()const
-{
-	return ownerId_;
+long CheckAccountNameAvailableRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void CheckAccountNameAvailableRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void CheckAccountNameAvailableRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 

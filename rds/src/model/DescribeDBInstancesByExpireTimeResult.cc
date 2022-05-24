@@ -43,26 +43,26 @@ void DescribeDBInstancesByExpireTimeResult::parse(const std::string &payload)
 	for (auto valueItemsDBInstanceExpireTime : allItemsNode)
 	{
 		DBInstanceExpireTime itemsObject;
-		if(!valueItemsDBInstanceExpireTime["DBInstanceId"].isNull())
-			itemsObject.dBInstanceId = valueItemsDBInstanceExpireTime["DBInstanceId"].asString();
-		if(!valueItemsDBInstanceExpireTime["DBInstanceDescription"].isNull())
-			itemsObject.dBInstanceDescription = valueItemsDBInstanceExpireTime["DBInstanceDescription"].asString();
 		if(!valueItemsDBInstanceExpireTime["ExpireTime"].isNull())
 			itemsObject.expireTime = valueItemsDBInstanceExpireTime["ExpireTime"].asString();
-		if(!valueItemsDBInstanceExpireTime["DBInstanceStatus"].isNull())
-			itemsObject.dBInstanceStatus = valueItemsDBInstanceExpireTime["DBInstanceStatus"].asString();
-		if(!valueItemsDBInstanceExpireTime["LockMode"].isNull())
-			itemsObject.lockMode = valueItemsDBInstanceExpireTime["LockMode"].asString();
 		if(!valueItemsDBInstanceExpireTime["PayType"].isNull())
 			itemsObject.payType = valueItemsDBInstanceExpireTime["PayType"].asString();
+		if(!valueItemsDBInstanceExpireTime["DBInstanceId"].isNull())
+			itemsObject.dBInstanceId = valueItemsDBInstanceExpireTime["DBInstanceId"].asString();
+		if(!valueItemsDBInstanceExpireTime["DBInstanceStatus"].isNull())
+			itemsObject.dBInstanceStatus = valueItemsDBInstanceExpireTime["DBInstanceStatus"].asString();
+		if(!valueItemsDBInstanceExpireTime["DBInstanceDescription"].isNull())
+			itemsObject.dBInstanceDescription = valueItemsDBInstanceExpireTime["DBInstanceDescription"].asString();
+		if(!valueItemsDBInstanceExpireTime["LockMode"].isNull())
+			itemsObject.lockMode = valueItemsDBInstanceExpireTime["LockMode"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["PageNumber"].isNull())
 		pageNumber_ = std::stoi(value["PageNumber"].asString());
-	if(!value["TotalRecordCount"].isNull())
-		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
 	if(!value["PageRecordCount"].isNull())
 		pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
+	if(!value["TotalRecordCount"].isNull())
+		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
 
 }
 

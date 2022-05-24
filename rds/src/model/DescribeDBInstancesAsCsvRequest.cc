@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,78 +18,64 @@
 
 using AlibabaCloud::Rds::Model::DescribeDBInstancesAsCsvRequest;
 
-DescribeDBInstancesAsCsvRequest::DescribeDBInstancesAsCsvRequest() :
-	RpcServiceRequest("rds", "2014-08-15", "DescribeDBInstancesAsCsv")
-{
-	setMethod(HttpRequest::Method::Post);
+DescribeDBInstancesAsCsvRequest::DescribeDBInstancesAsCsvRequest()
+    : RpcServiceRequest("rds", "2014-08-15", "DescribeDBInstancesAsCsv") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DescribeDBInstancesAsCsvRequest::~DescribeDBInstancesAsCsvRequest()
-{}
+DescribeDBInstancesAsCsvRequest::~DescribeDBInstancesAsCsvRequest() {}
 
-long DescribeDBInstancesAsCsvRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long DescribeDBInstancesAsCsvRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void DescribeDBInstancesAsCsvRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void DescribeDBInstancesAsCsvRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string DescribeDBInstancesAsCsvRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string DescribeDBInstancesAsCsvRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void DescribeDBInstancesAsCsvRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void DescribeDBInstancesAsCsvRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-long DescribeDBInstancesAsCsvRequest::getOwnerId()const
-{
-	return ownerId_;
+long DescribeDBInstancesAsCsvRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void DescribeDBInstancesAsCsvRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void DescribeDBInstancesAsCsvRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string DescribeDBInstancesAsCsvRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string DescribeDBInstancesAsCsvRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void DescribeDBInstancesAsCsvRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void DescribeDBInstancesAsCsvRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string DescribeDBInstancesAsCsvRequest::getRegionId()const
-{
-	return regionId_;
+std::string DescribeDBInstancesAsCsvRequest::getRegionId() const {
+  return regionId_;
 }
 
-void DescribeDBInstancesAsCsvRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void DescribeDBInstancesAsCsvRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
-std::string DescribeDBInstancesAsCsvRequest::getDBInstanceId()const
-{
-	return dBInstanceId_;
+std::string DescribeDBInstancesAsCsvRequest::getDBInstanceId() const {
+  return dBInstanceId_;
 }
 
-void DescribeDBInstancesAsCsvRequest::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-	setParameter("DBInstanceId", dBInstanceId);
+void DescribeDBInstancesAsCsvRequest::setDBInstanceId(const std::string &dBInstanceId) {
+  dBInstanceId_ = dBInstanceId;
+  setParameter(std::string("DBInstanceId"), dBInstanceId);
 }
 

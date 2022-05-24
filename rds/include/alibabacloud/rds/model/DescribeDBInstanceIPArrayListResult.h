@@ -36,8 +36,8 @@ namespace AlibabaCloud
 				{
 					std::string dBInstanceIPArrayAttribute;
 					std::string securityIPType;
-					std::string securityIPList;
 					std::string whitelistNetworkType;
+					std::string securityIPList;
 					std::string dBInstanceIPArrayName;
 				};
 

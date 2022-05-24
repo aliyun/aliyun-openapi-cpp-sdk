@@ -37,9 +37,19 @@ namespace AlibabaCloud
 					struct Extra
 					{
 						std::string replicaGroupStatus;
-						std::string replicaGroupID;
 						std::string activeReplicaDBInstanceID;
+						std::string replicaGroupID;
 						std::vector<std::string> dBInstanceIds;
+					};
+					struct ServerlessConfig
+					{
+						double scaleMin;
+						double scaleMax;
+					};
+					struct BabelfishConfig
+					{
+						std::string babelfishEnabled;
+						std::string migrationMode;
 					};
 					struct SlaveZone
 					{
@@ -52,36 +62,38 @@ namespace AlibabaCloud
 					long dBInstanceMemory;
 					std::string resourceGroupId;
 					std::string incrementSourceDBInstanceId;
-					std::string port;
 					std::string masterZone;
+					std::string port;
 					std::string latestKernelVersion;
-					std::string dBInstanceType;
 					std::string consoleVersion;
+					std::string dBInstanceType;
 					std::string instanceNetworkType;
 					std::string generalGroupName;
 					std::string dBInstanceClassType;
-					std::string tempUpgradeRecoveryMaxIOPS;
 					std::string replicateId;
-					std::string dBInstanceId;
+					std::string tempUpgradeRecoveryMaxIOPS;
 					std::string autoUpgradeMinorVersion;
+					std::string dBInstanceId;
 					int dBInstanceStorage;
 					std::string lockReason;
 					std::string availabilityValue;
+					std::string dBInstanceDescription;
 					std::string tempUpgradeRecoveryClass;
 					std::string engine;
-					std::string dBInstanceDescription;
 					std::string iPType;
-					std::string dBInstanceDiskUsed;
+					int maxIOMBPS;
 					std::string engineVersion;
-					std::string dBInstanceStatus;
+					std::string dBInstanceDiskUsed;
 					int maxConnections;
+					std::string dBInstanceStatus;
 					std::string dBInstanceClass;
 					int accountMaxQuantity;
 					std::string vSwitchId;
 					int tipsLevel;
 					std::string payType;
-					std::string lockMode;
 					std::string guardDBInstanceId;
+					std::string lockMode;
+					bool deletionProtection;
 					std::string supportCreateSuperAccount;
 					int insId;
 					std::string timeZone;
@@ -90,8 +102,8 @@ namespace AlibabaCloud
 					std::string currentKernelVersion;
 					std::string tempUpgradeTimeStart;
 					std::string tempUpgradeTimeEnd;
-					std::string readDelayTime;
 					std::string creationTime;
+					std::string readDelayTime;
 					std::string connectionMode;
 					std::string vpcCloudInstanceId;
 					std::string readonlyInstanceSQLDelayedTime;
@@ -101,17 +113,17 @@ namespace AlibabaCloud
 					std::string advancedFeatures;
 					int dBMaxQuantity;
 					std::string category;
-					std::string dBInstanceNetType;
 					std::string superPermissionMode;
-					int tempUpgradeRecoveryCpu;
+					std::string dBInstanceNetType;
 					std::string dedicatedHostGroupId;
+					int tempUpgradeRecoveryCpu;
 					std::string tempDBInstanceId;
 					std::string dBInstanceCPU;
 					int tempUpgradeRecoveryMemory;
-					std::string guardDBInstanceName;
 					std::string tempUpgradeRecoveryMaxConnections;
-					std::string securityIPList;
 					std::string originConfiguration;
+					std::string securityIPList;
+					std::string guardDBInstanceName;
 					std::vector<DBInstanceAttribute::ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
 					std::string securityIPMode;
 					std::string maintainTime;
@@ -126,6 +138,8 @@ namespace AlibabaCloud
 					std::string supportUpgradeAccountType;
 					Extra extra;
 					bool multipleTempUpgrade;
+					ServerlessConfig serverlessConfig;
+					BabelfishConfig babelfishConfig;
 					bool canTempUpgrade;
 					std::string regionId;
 					std::string tips;

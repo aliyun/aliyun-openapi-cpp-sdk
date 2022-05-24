@@ -40,14 +40,14 @@ namespace AlibabaCloud
 						std::string paramName;
 					};
 					std::vector<ParameterGroup::ParameterDetail> paramDetail;
-					std::string engineVersion;
 					std::string parameterGroupId;
-					std::string parameterGroupName;
+					std::string engineVersion;
 					int forceRestart;
-					int parameterGroupType;
-					int paramCounts;
+					std::string parameterGroupName;
 					std::string parameterGroupDesc;
 					std::string createTime;
+					int paramCounts;
+					int parameterGroupType;
 					std::string updateTime;
 					std::string engine;
 				};

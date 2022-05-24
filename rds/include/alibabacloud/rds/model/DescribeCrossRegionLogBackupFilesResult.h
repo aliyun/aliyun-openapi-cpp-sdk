@@ -34,11 +34,11 @@ namespace AlibabaCloud
 			public:
 				struct Item
 				{
-					int crossLogBackupId;
 					std::string logBeginTime;
+					int crossLogBackupId;
 					int instanceId;
-					std::string crossBackupRegion;
 					std::string linkExpiredTime;
+					std::string crossBackupRegion;
 					std::string logEndTime;
 					std::string crossIntranetDownloadLink;
 					long crossLogBackupSize;

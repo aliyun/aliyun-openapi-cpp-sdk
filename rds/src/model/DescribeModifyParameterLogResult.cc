@@ -43,30 +43,30 @@ void DescribeModifyParameterLogResult::parse(const std::string &payload)
 	for (auto valueItemsParameterChangeLog : allItemsNode)
 	{
 		ParameterChangeLog itemsObject;
-		if(!valueItemsParameterChangeLog["ModifyTime"].isNull())
-			itemsObject.modifyTime = valueItemsParameterChangeLog["ModifyTime"].asString();
-		if(!valueItemsParameterChangeLog["OldParameterValue"].isNull())
-			itemsObject.oldParameterValue = valueItemsParameterChangeLog["OldParameterValue"].asString();
-		if(!valueItemsParameterChangeLog["NewParameterValue"].isNull())
-			itemsObject.newParameterValue = valueItemsParameterChangeLog["NewParameterValue"].asString();
-		if(!valueItemsParameterChangeLog["ParameterName"].isNull())
-			itemsObject.parameterName = valueItemsParameterChangeLog["ParameterName"].asString();
 		if(!valueItemsParameterChangeLog["Status"].isNull())
 			itemsObject.status = valueItemsParameterChangeLog["Status"].asString();
+		if(!valueItemsParameterChangeLog["OldParameterValue"].isNull())
+			itemsObject.oldParameterValue = valueItemsParameterChangeLog["OldParameterValue"].asString();
+		if(!valueItemsParameterChangeLog["ParameterName"].isNull())
+			itemsObject.parameterName = valueItemsParameterChangeLog["ParameterName"].asString();
+		if(!valueItemsParameterChangeLog["NewParameterValue"].isNull())
+			itemsObject.newParameterValue = valueItemsParameterChangeLog["NewParameterValue"].asString();
+		if(!valueItemsParameterChangeLog["ModifyTime"].isNull())
+			itemsObject.modifyTime = valueItemsParameterChangeLog["ModifyTime"].asString();
 		items_.push_back(itemsObject);
 	}
-	if(!value["Engine"].isNull())
-		engine_ = value["Engine"].asString();
-	if(!value["DBInstanceId"].isNull())
-		dBInstanceId_ = value["DBInstanceId"].asString();
-	if(!value["EngineVersion"].isNull())
-		engineVersion_ = value["EngineVersion"].asString();
-	if(!value["TotalRecordCount"].isNull())
-		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageRecordCount"].isNull())
 		pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
+	if(!value["TotalRecordCount"].isNull())
+		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
+	if(!value["DBInstanceId"].isNull())
+		dBInstanceId_ = value["DBInstanceId"].asString();
+	if(!value["Engine"].isNull())
+		engine_ = value["Engine"].asString();
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["EngineVersion"].isNull())
+		engineVersion_ = value["EngineVersion"].asString();
 
 }
 
@@ -75,14 +75,14 @@ int DescribeModifyParameterLogResult::getTotalRecordCount()const
 	return totalRecordCount_;
 }
 
-std::string DescribeModifyParameterLogResult::getEngineVersion()const
-{
-	return engineVersion_;
-}
-
 int DescribeModifyParameterLogResult::getPageRecordCount()const
 {
 	return pageRecordCount_;
+}
+
+std::string DescribeModifyParameterLogResult::getEngineVersion()const
+{
+	return engineVersion_;
 }
 
 std::string DescribeModifyParameterLogResult::getDBInstanceId()const

@@ -39,10 +39,10 @@ void ModifyActionEventPolicyResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["RegionId"].isNull())
-		regionId_ = value["RegionId"].asString();
 	if(!value["EnableEventLog"].isNull())
 		enableEventLog_ = value["EnableEventLog"].asString();
+	if(!value["RegionId"].isNull())
+		regionId_ = value["RegionId"].asString();
 
 }
 

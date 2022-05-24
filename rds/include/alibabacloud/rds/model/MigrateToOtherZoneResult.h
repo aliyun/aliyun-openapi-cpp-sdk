@@ -37,10 +37,14 @@ namespace AlibabaCloud
 				MigrateToOtherZoneResult();
 				explicit MigrateToOtherZoneResult(const std::string &payload);
 				~MigrateToOtherZoneResult();
+				std::string getDBInstanceId()const;
+				long getOrderId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string dBInstanceId_;
+				long orderId_;
 
 			};
 		}

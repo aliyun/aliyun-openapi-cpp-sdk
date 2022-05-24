@@ -43,22 +43,22 @@ void ListClassesResult::parse(const std::string &payload)
 	for (auto valueItemsClassList : allItemsNode)
 	{
 		ClassList itemsObject;
+		if(!valueItemsClassList["MaxIOPS"].isNull())
+			itemsObject.maxIOPS = valueItemsClassList["MaxIOPS"].asString();
+		if(!valueItemsClassList["Cpu"].isNull())
+			itemsObject.cpu = valueItemsClassList["Cpu"].asString();
+		if(!valueItemsClassList["ReferencePrice"].isNull())
+			itemsObject.referencePrice = valueItemsClassList["ReferencePrice"].asString();
+		if(!valueItemsClassList["MaxConnections"].isNull())
+			itemsObject.maxConnections = valueItemsClassList["MaxConnections"].asString();
+		if(!valueItemsClassList["MemoryClass"].isNull())
+			itemsObject.memoryClass = valueItemsClassList["MemoryClass"].asString();
 		if(!valueItemsClassList["ClassCode"].isNull())
 			itemsObject.classCode = valueItemsClassList["ClassCode"].asString();
 		if(!valueItemsClassList["ClassGroup"].isNull())
 			itemsObject.classGroup = valueItemsClassList["ClassGroup"].asString();
-		if(!valueItemsClassList["Cpu"].isNull())
-			itemsObject.cpu = valueItemsClassList["Cpu"].asString();
-		if(!valueItemsClassList["MaxConnections"].isNull())
-			itemsObject.maxConnections = valueItemsClassList["MaxConnections"].asString();
 		if(!valueItemsClassList["MaxIOMBPS"].isNull())
 			itemsObject.maxIOMBPS = valueItemsClassList["MaxIOMBPS"].asString();
-		if(!valueItemsClassList["MaxIOPS"].isNull())
-			itemsObject.maxIOPS = valueItemsClassList["MaxIOPS"].asString();
-		if(!valueItemsClassList["MemoryClass"].isNull())
-			itemsObject.memoryClass = valueItemsClassList["MemoryClass"].asString();
-		if(!valueItemsClassList["ReferencePrice"].isNull())
-			itemsObject.referencePrice = valueItemsClassList["ReferencePrice"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["RegionId"].isNull())

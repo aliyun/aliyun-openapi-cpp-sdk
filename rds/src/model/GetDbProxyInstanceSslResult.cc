@@ -49,10 +49,10 @@ void GetDbProxyInstanceSslResult::parse(const std::string &payload)
 			dbProxyCertListItemsObject.endpointName = valueDbProxyCertListItemsDbProxyCertListItemsItem["EndpointName"].asString();
 		if(!valueDbProxyCertListItemsDbProxyCertListItemsItem["EndpointType"].isNull())
 			dbProxyCertListItemsObject.endpointType = valueDbProxyCertListItemsDbProxyCertListItemsItem["EndpointType"].asString();
-		if(!valueDbProxyCertListItemsDbProxyCertListItemsItem["CertCommonName"].isNull())
-			dbProxyCertListItemsObject.certCommonName = valueDbProxyCertListItemsDbProxyCertListItemsItem["CertCommonName"].asString();
 		if(!valueDbProxyCertListItemsDbProxyCertListItemsItem["SslExpiredTime"].isNull())
 			dbProxyCertListItemsObject.sslExpiredTime = valueDbProxyCertListItemsDbProxyCertListItemsItem["SslExpiredTime"].asString();
+		if(!valueDbProxyCertListItemsDbProxyCertListItemsItem["CertCommonName"].isNull())
+			dbProxyCertListItemsObject.certCommonName = valueDbProxyCertListItemsDbProxyCertListItemsItem["CertCommonName"].asString();
 		dbProxyCertListItems_.push_back(dbProxyCertListItemsObject);
 	}
 

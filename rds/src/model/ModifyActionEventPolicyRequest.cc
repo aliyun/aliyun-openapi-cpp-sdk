@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,78 +18,64 @@
 
 using AlibabaCloud::Rds::Model::ModifyActionEventPolicyRequest;
 
-ModifyActionEventPolicyRequest::ModifyActionEventPolicyRequest() :
-	RpcServiceRequest("rds", "2014-08-15", "ModifyActionEventPolicy")
-{
-	setMethod(HttpRequest::Method::Post);
+ModifyActionEventPolicyRequest::ModifyActionEventPolicyRequest()
+    : RpcServiceRequest("rds", "2014-08-15", "ModifyActionEventPolicy") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-ModifyActionEventPolicyRequest::~ModifyActionEventPolicyRequest()
-{}
+ModifyActionEventPolicyRequest::~ModifyActionEventPolicyRequest() {}
 
-long ModifyActionEventPolicyRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long ModifyActionEventPolicyRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void ModifyActionEventPolicyRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void ModifyActionEventPolicyRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string ModifyActionEventPolicyRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string ModifyActionEventPolicyRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void ModifyActionEventPolicyRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void ModifyActionEventPolicyRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-long ModifyActionEventPolicyRequest::getOwnerId()const
-{
-	return ownerId_;
+long ModifyActionEventPolicyRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void ModifyActionEventPolicyRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void ModifyActionEventPolicyRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string ModifyActionEventPolicyRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string ModifyActionEventPolicyRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void ModifyActionEventPolicyRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void ModifyActionEventPolicyRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string ModifyActionEventPolicyRequest::getRegionId()const
-{
-	return regionId_;
+std::string ModifyActionEventPolicyRequest::getRegionId() const {
+  return regionId_;
 }
 
-void ModifyActionEventPolicyRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void ModifyActionEventPolicyRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
-std::string ModifyActionEventPolicyRequest::getEnableEventLog()const
-{
-	return enableEventLog_;
+std::string ModifyActionEventPolicyRequest::getEnableEventLog() const {
+  return enableEventLog_;
 }
 
-void ModifyActionEventPolicyRequest::setEnableEventLog(const std::string& enableEventLog)
-{
-	enableEventLog_ = enableEventLog;
-	setParameter("EnableEventLog", enableEventLog);
+void ModifyActionEventPolicyRequest::setEnableEventLog(const std::string &enableEventLog) {
+  enableEventLog_ = enableEventLog;
+  setParameter(std::string("EnableEventLog"), enableEventLog);
 }
 

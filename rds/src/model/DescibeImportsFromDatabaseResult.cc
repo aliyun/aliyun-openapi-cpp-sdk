@@ -43,24 +43,24 @@ void DescibeImportsFromDatabaseResult::parse(const std::string &payload)
 	for (auto valueItemsImportResultFromDB : allItemsNode)
 	{
 		ImportResultFromDB itemsObject;
-		if(!valueItemsImportResultFromDB["ImportId"].isNull())
-			itemsObject.importId = std::stoi(valueItemsImportResultFromDB["ImportId"].asString());
-		if(!valueItemsImportResultFromDB["ImportDataType"].isNull())
-			itemsObject.importDataType = valueItemsImportResultFromDB["ImportDataType"].asString();
-		if(!valueItemsImportResultFromDB["ImportDataStatus"].isNull())
-			itemsObject.importDataStatus = valueItemsImportResultFromDB["ImportDataStatus"].asString();
-		if(!valueItemsImportResultFromDB["ImportDataStatusDescription"].isNull())
-			itemsObject.importDataStatusDescription = valueItemsImportResultFromDB["ImportDataStatusDescription"].asString();
 		if(!valueItemsImportResultFromDB["IncrementalImportingTime"].isNull())
 			itemsObject.incrementalImportingTime = valueItemsImportResultFromDB["IncrementalImportingTime"].asString();
+		if(!valueItemsImportResultFromDB["ImportId"].isNull())
+			itemsObject.importId = std::stoi(valueItemsImportResultFromDB["ImportId"].asString());
+		if(!valueItemsImportResultFromDB["ImportDataStatus"].isNull())
+			itemsObject.importDataStatus = valueItemsImportResultFromDB["ImportDataStatus"].asString();
+		if(!valueItemsImportResultFromDB["ImportDataType"].isNull())
+			itemsObject.importDataType = valueItemsImportResultFromDB["ImportDataType"].asString();
+		if(!valueItemsImportResultFromDB["ImportDataStatusDescription"].isNull())
+			itemsObject.importDataStatusDescription = valueItemsImportResultFromDB["ImportDataStatusDescription"].asString();
 		items_.push_back(itemsObject);
 	}
-	if(!value["TotalRecordCount"].isNull())
-		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
 	if(!value["PageNumber"].isNull())
 		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageRecordCount"].isNull())
 		pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
+	if(!value["TotalRecordCount"].isNull())
+		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
 
 }
 

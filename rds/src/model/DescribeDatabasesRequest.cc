@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,122 +18,100 @@
 
 using AlibabaCloud::Rds::Model::DescribeDatabasesRequest;
 
-DescribeDatabasesRequest::DescribeDatabasesRequest() :
-	RpcServiceRequest("rds", "2014-08-15", "DescribeDatabases")
-{
-	setMethod(HttpRequest::Method::Post);
+DescribeDatabasesRequest::DescribeDatabasesRequest()
+    : RpcServiceRequest("rds", "2014-08-15", "DescribeDatabases") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DescribeDatabasesRequest::~DescribeDatabasesRequest()
-{}
+DescribeDatabasesRequest::~DescribeDatabasesRequest() {}
 
-long DescribeDatabasesRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long DescribeDatabasesRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void DescribeDatabasesRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void DescribeDatabasesRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-int DescribeDatabasesRequest::getPageNumber()const
-{
-	return pageNumber_;
+int DescribeDatabasesRequest::getPageNumber() const {
+  return pageNumber_;
 }
 
-void DescribeDatabasesRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+void DescribeDatabasesRequest::setPageNumber(int pageNumber) {
+  pageNumber_ = pageNumber;
+  setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
-std::string DescribeDatabasesRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string DescribeDatabasesRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void DescribeDatabasesRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void DescribeDatabasesRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string DescribeDatabasesRequest::getDBStatus()const
-{
-	return dBStatus_;
+std::string DescribeDatabasesRequest::getDBStatus() const {
+  return dBStatus_;
 }
 
-void DescribeDatabasesRequest::setDBStatus(const std::string& dBStatus)
-{
-	dBStatus_ = dBStatus;
-	setParameter("DBStatus", dBStatus);
+void DescribeDatabasesRequest::setDBStatus(const std::string &dBStatus) {
+  dBStatus_ = dBStatus;
+  setParameter(std::string("DBStatus"), dBStatus);
 }
 
-int DescribeDatabasesRequest::getPageSize()const
-{
-	return pageSize_;
+int DescribeDatabasesRequest::getPageSize() const {
+  return pageSize_;
 }
 
-void DescribeDatabasesRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+void DescribeDatabasesRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
-std::string DescribeDatabasesRequest::getDBInstanceId()const
-{
-	return dBInstanceId_;
+std::string DescribeDatabasesRequest::getDBInstanceId() const {
+  return dBInstanceId_;
 }
 
-void DescribeDatabasesRequest::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-	setParameter("DBInstanceId", dBInstanceId);
+void DescribeDatabasesRequest::setDBInstanceId(const std::string &dBInstanceId) {
+  dBInstanceId_ = dBInstanceId;
+  setParameter(std::string("DBInstanceId"), dBInstanceId);
 }
 
-std::string DescribeDatabasesRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string DescribeDatabasesRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void DescribeDatabasesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void DescribeDatabasesRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string DescribeDatabasesRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string DescribeDatabasesRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void DescribeDatabasesRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void DescribeDatabasesRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-long DescribeDatabasesRequest::getOwnerId()const
-{
-	return ownerId_;
+long DescribeDatabasesRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void DescribeDatabasesRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void DescribeDatabasesRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string DescribeDatabasesRequest::getDBName()const
-{
-	return dBName_;
+std::string DescribeDatabasesRequest::getDBName() const {
+  return dBName_;
 }
 
-void DescribeDatabasesRequest::setDBName(const std::string& dBName)
-{
-	dBName_ = dBName;
-	setParameter("DBName", dBName);
+void DescribeDatabasesRequest::setDBName(const std::string &dBName) {
+  dBName_ = dBName;
+  setParameter(std::string("DBName"), dBName);
 }
 

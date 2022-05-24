@@ -41,10 +41,10 @@ void UpgradeDBInstanceKernelVersionResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["DBInstanceName"].isNull())
 		dBInstanceName_ = value["DBInstanceName"].asString();
-	if(!value["TaskId"].isNull())
-		taskId_ = value["TaskId"].asString();
 	if(!value["TargetMinorVersion"].isNull())
 		targetMinorVersion_ = value["TargetMinorVersion"].asString();
+	if(!value["TaskId"].isNull())
+		taskId_ = value["TaskId"].asString();
 
 }
 

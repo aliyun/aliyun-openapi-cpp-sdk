@@ -43,60 +43,62 @@ void DescribeDBInstanceNetInfoResult::parse(const std::string &payload)
 	for (auto valueDBInstanceNetInfosDBInstanceNetInfo : allDBInstanceNetInfosNode)
 	{
 		DBInstanceNetInfo dBInstanceNetInfosObject;
-		if(!valueDBInstanceNetInfosDBInstanceNetInfo["Upgradeable"].isNull())
-			dBInstanceNetInfosObject.upgradeable = valueDBInstanceNetInfosDBInstanceNetInfo["Upgradeable"].asString();
-		if(!valueDBInstanceNetInfosDBInstanceNetInfo["ExpiredTime"].isNull())
-			dBInstanceNetInfosObject.expiredTime = valueDBInstanceNetInfosDBInstanceNetInfo["ExpiredTime"].asString();
-		if(!valueDBInstanceNetInfosDBInstanceNetInfo["ConnectionString"].isNull())
-			dBInstanceNetInfosObject.connectionString = valueDBInstanceNetInfosDBInstanceNetInfo["ConnectionString"].asString();
-		if(!valueDBInstanceNetInfosDBInstanceNetInfo["IPAddress"].isNull())
-			dBInstanceNetInfosObject.iPAddress = valueDBInstanceNetInfosDBInstanceNetInfo["IPAddress"].asString();
-		if(!valueDBInstanceNetInfosDBInstanceNetInfo["IPType"].isNull())
-			dBInstanceNetInfosObject.iPType = valueDBInstanceNetInfosDBInstanceNetInfo["IPType"].asString();
-		if(!valueDBInstanceNetInfosDBInstanceNetInfo["Port"].isNull())
-			dBInstanceNetInfosObject.port = valueDBInstanceNetInfosDBInstanceNetInfo["Port"].asString();
-		if(!valueDBInstanceNetInfosDBInstanceNetInfo["VPCId"].isNull())
-			dBInstanceNetInfosObject.vPCId = valueDBInstanceNetInfosDBInstanceNetInfo["VPCId"].asString();
 		if(!valueDBInstanceNetInfosDBInstanceNetInfo["VSwitchId"].isNull())
 			dBInstanceNetInfosObject.vSwitchId = valueDBInstanceNetInfosDBInstanceNetInfo["VSwitchId"].asString();
 		if(!valueDBInstanceNetInfosDBInstanceNetInfo["ConnectionStringType"].isNull())
 			dBInstanceNetInfosObject.connectionStringType = valueDBInstanceNetInfosDBInstanceNetInfo["ConnectionStringType"].asString();
+		if(!valueDBInstanceNetInfosDBInstanceNetInfo["ConnectionString"].isNull())
+			dBInstanceNetInfosObject.connectionString = valueDBInstanceNetInfosDBInstanceNetInfo["ConnectionString"].asString();
+		if(!valueDBInstanceNetInfosDBInstanceNetInfo["ExpiredTime"].isNull())
+			dBInstanceNetInfosObject.expiredTime = valueDBInstanceNetInfosDBInstanceNetInfo["ExpiredTime"].asString();
+		if(!valueDBInstanceNetInfosDBInstanceNetInfo["Upgradeable"].isNull())
+			dBInstanceNetInfosObject.upgradeable = valueDBInstanceNetInfosDBInstanceNetInfo["Upgradeable"].asString();
 		if(!valueDBInstanceNetInfosDBInstanceNetInfo["MaxDelayTime"].isNull())
 			dBInstanceNetInfosObject.maxDelayTime = valueDBInstanceNetInfosDBInstanceNetInfo["MaxDelayTime"].asString();
+		if(!valueDBInstanceNetInfosDBInstanceNetInfo["IPType"].isNull())
+			dBInstanceNetInfosObject.iPType = valueDBInstanceNetInfosDBInstanceNetInfo["IPType"].asString();
+		if(!valueDBInstanceNetInfosDBInstanceNetInfo["Port"].isNull())
+			dBInstanceNetInfosObject.port = valueDBInstanceNetInfosDBInstanceNetInfo["Port"].asString();
+		if(!valueDBInstanceNetInfosDBInstanceNetInfo["BabelfishPort"].isNull())
+			dBInstanceNetInfosObject.babelfishPort = valueDBInstanceNetInfosDBInstanceNetInfo["BabelfishPort"].asString();
+		if(!valueDBInstanceNetInfosDBInstanceNetInfo["VPCId"].isNull())
+			dBInstanceNetInfosObject.vPCId = valueDBInstanceNetInfosDBInstanceNetInfo["VPCId"].asString();
 		if(!valueDBInstanceNetInfosDBInstanceNetInfo["DistributionType"].isNull())
 			dBInstanceNetInfosObject.distributionType = valueDBInstanceNetInfosDBInstanceNetInfo["DistributionType"].asString();
+		if(!valueDBInstanceNetInfosDBInstanceNetInfo["IPAddress"].isNull())
+			dBInstanceNetInfosObject.iPAddress = valueDBInstanceNetInfosDBInstanceNetInfo["IPAddress"].asString();
 		auto allSecurityIPGroupsNode = valueDBInstanceNetInfosDBInstanceNetInfo["SecurityIPGroups"]["securityIPGroup"];
 		for (auto valueDBInstanceNetInfosDBInstanceNetInfoSecurityIPGroupssecurityIPGroup : allSecurityIPGroupsNode)
 		{
 			DBInstanceNetInfo::SecurityIPGroup securityIPGroupsObject;
-			if(!valueDBInstanceNetInfosDBInstanceNetInfoSecurityIPGroupssecurityIPGroup["SecurityIPGroupName"].isNull())
-				securityIPGroupsObject.securityIPGroupName = valueDBInstanceNetInfosDBInstanceNetInfoSecurityIPGroupssecurityIPGroup["SecurityIPGroupName"].asString();
 			if(!valueDBInstanceNetInfosDBInstanceNetInfoSecurityIPGroupssecurityIPGroup["SecurityIPs"].isNull())
 				securityIPGroupsObject.securityIPs = valueDBInstanceNetInfosDBInstanceNetInfoSecurityIPGroupssecurityIPGroup["SecurityIPs"].asString();
+			if(!valueDBInstanceNetInfosDBInstanceNetInfoSecurityIPGroupssecurityIPGroup["SecurityIPGroupName"].isNull())
+				securityIPGroupsObject.securityIPGroupName = valueDBInstanceNetInfosDBInstanceNetInfoSecurityIPGroupssecurityIPGroup["SecurityIPGroupName"].asString();
 			dBInstanceNetInfosObject.securityIPGroups.push_back(securityIPGroupsObject);
 		}
 		auto allDBInstanceWeightsNode = valueDBInstanceNetInfosDBInstanceNetInfo["DBInstanceWeights"]["DBInstanceWeight"];
 		for (auto valueDBInstanceNetInfosDBInstanceNetInfoDBInstanceWeightsDBInstanceWeight : allDBInstanceWeightsNode)
 		{
 			DBInstanceNetInfo::DBInstanceWeight dBInstanceWeightsObject;
-			if(!valueDBInstanceNetInfosDBInstanceNetInfoDBInstanceWeightsDBInstanceWeight["DBInstanceId"].isNull())
-				dBInstanceWeightsObject.dBInstanceId = valueDBInstanceNetInfosDBInstanceNetInfoDBInstanceWeightsDBInstanceWeight["DBInstanceId"].asString();
-			if(!valueDBInstanceNetInfosDBInstanceNetInfoDBInstanceWeightsDBInstanceWeight["DBInstanceType"].isNull())
-				dBInstanceWeightsObject.dBInstanceType = valueDBInstanceNetInfosDBInstanceNetInfoDBInstanceWeightsDBInstanceWeight["DBInstanceType"].asString();
 			if(!valueDBInstanceNetInfosDBInstanceNetInfoDBInstanceWeightsDBInstanceWeight["Availability"].isNull())
 				dBInstanceWeightsObject.availability = valueDBInstanceNetInfosDBInstanceNetInfoDBInstanceWeightsDBInstanceWeight["Availability"].asString();
 			if(!valueDBInstanceNetInfosDBInstanceNetInfoDBInstanceWeightsDBInstanceWeight["Weight"].isNull())
 				dBInstanceWeightsObject.weight = valueDBInstanceNetInfosDBInstanceNetInfoDBInstanceWeightsDBInstanceWeight["Weight"].asString();
+			if(!valueDBInstanceNetInfosDBInstanceNetInfoDBInstanceWeightsDBInstanceWeight["DBInstanceId"].isNull())
+				dBInstanceWeightsObject.dBInstanceId = valueDBInstanceNetInfosDBInstanceNetInfoDBInstanceWeightsDBInstanceWeight["DBInstanceId"].asString();
 			if(!valueDBInstanceNetInfosDBInstanceNetInfoDBInstanceWeightsDBInstanceWeight["Role"].isNull())
 				dBInstanceWeightsObject.role = valueDBInstanceNetInfosDBInstanceNetInfoDBInstanceWeightsDBInstanceWeight["Role"].asString();
+			if(!valueDBInstanceNetInfosDBInstanceNetInfoDBInstanceWeightsDBInstanceWeight["DBInstanceType"].isNull())
+				dBInstanceWeightsObject.dBInstanceType = valueDBInstanceNetInfosDBInstanceNetInfoDBInstanceWeightsDBInstanceWeight["DBInstanceType"].asString();
 			dBInstanceNetInfosObject.dBInstanceWeights.push_back(dBInstanceWeightsObject);
 		}
 		dBInstanceNetInfos_.push_back(dBInstanceNetInfosObject);
 	}
-	if(!value["InstanceNetworkType"].isNull())
-		instanceNetworkType_ = value["InstanceNetworkType"].asString();
 	if(!value["SecurityIPMode"].isNull())
 		securityIPMode_ = value["SecurityIPMode"].asString();
+	if(!value["InstanceNetworkType"].isNull())
+		instanceNetworkType_ = value["InstanceNetworkType"].asString();
 
 }
 

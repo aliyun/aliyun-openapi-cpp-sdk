@@ -37,15 +37,15 @@ namespace AlibabaCloud
 				ModifyDTCSecurityIpHostsForSQLServerResult();
 				explicit ModifyDTCSecurityIpHostsForSQLServerResult(const std::string &payload);
 				~ModifyDTCSecurityIpHostsForSQLServerResult();
-				std::string getDTCSetResult()const;
 				std::string getTaskId()const;
+				std::string getDTCSetResult()const;
 				std::string getDBInstanceId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string dTCSetResult_;
 				std::string taskId_;
+				std::string dTCSetResult_;
 				std::string dBInstanceId_;
 
 			};

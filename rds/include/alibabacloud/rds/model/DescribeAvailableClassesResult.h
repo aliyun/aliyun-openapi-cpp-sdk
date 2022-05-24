@@ -37,8 +37,8 @@ namespace AlibabaCloud
 					struct DBInstanceStorageRange
 					{
 						int minValue;
-						int maxValue;
 						int step;
+						int maxValue;
 					};
 					std::string dBInstanceClass;
 					DBInstanceStorageRange dBInstanceStorageRange;

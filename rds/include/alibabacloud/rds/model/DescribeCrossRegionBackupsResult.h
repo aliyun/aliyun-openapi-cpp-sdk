@@ -38,8 +38,8 @@ namespace AlibabaCloud
 					std::string engineVersion;
 					std::string category;
 					int instanceId;
-					std::string crossBackupRegion;
 					std::string crossBackupDownloadLink;
+					std::string crossBackupRegion;
 					std::string crossBackupSetLocation;
 					int backupSetStatus;
 					std::string dBInstanceStorageType;
@@ -49,8 +49,8 @@ namespace AlibabaCloud
 					std::string hasBackupTableMeta;
 					std::vector<std::string> restoreRegions;
 					std::string backupEndTime;
-					std::string backupStartTime;
 					std::string consistentTime;
+					std::string backupStartTime;
 					std::string backupType;
 					int crossBackupId;
 					std::string engine;

@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,144 +18,118 @@
 
 using AlibabaCloud::Rds::Model::DescribeDBInstancesByExpireTimeRequest;
 
-DescribeDBInstancesByExpireTimeRequest::DescribeDBInstancesByExpireTimeRequest() :
-	RpcServiceRequest("rds", "2014-08-15", "DescribeDBInstancesByExpireTime")
-{
-	setMethod(HttpRequest::Method::Post);
+DescribeDBInstancesByExpireTimeRequest::DescribeDBInstancesByExpireTimeRequest()
+    : RpcServiceRequest("rds", "2014-08-15", "DescribeDBInstancesByExpireTime") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DescribeDBInstancesByExpireTimeRequest::~DescribeDBInstancesByExpireTimeRequest()
-{}
+DescribeDBInstancesByExpireTimeRequest::~DescribeDBInstancesByExpireTimeRequest() {}
 
-long DescribeDBInstancesByExpireTimeRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long DescribeDBInstancesByExpireTimeRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void DescribeDBInstancesByExpireTimeRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void DescribeDBInstancesByExpireTimeRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-int DescribeDBInstancesByExpireTimeRequest::getPageNumber()const
-{
-	return pageNumber_;
+int DescribeDBInstancesByExpireTimeRequest::getPageNumber() const {
+  return pageNumber_;
 }
 
-void DescribeDBInstancesByExpireTimeRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+void DescribeDBInstancesByExpireTimeRequest::setPageNumber(int pageNumber) {
+  pageNumber_ = pageNumber;
+  setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
-std::string DescribeDBInstancesByExpireTimeRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string DescribeDBInstancesByExpireTimeRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void DescribeDBInstancesByExpireTimeRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void DescribeDBInstancesByExpireTimeRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-bool DescribeDBInstancesByExpireTimeRequest::getExpired()const
-{
-	return expired_;
+bool DescribeDBInstancesByExpireTimeRequest::getExpired() const {
+  return expired_;
 }
 
-void DescribeDBInstancesByExpireTimeRequest::setExpired(bool expired)
-{
-	expired_ = expired;
-	setParameter("Expired", expired ? "true" : "false");
+void DescribeDBInstancesByExpireTimeRequest::setExpired(bool expired) {
+  expired_ = expired;
+  setParameter(std::string("Expired"), expired ? "true" : "false");
 }
 
-std::string DescribeDBInstancesByExpireTimeRequest::getRegionId()const
-{
-	return regionId_;
+std::string DescribeDBInstancesByExpireTimeRequest::getRegionId() const {
+  return regionId_;
 }
 
-void DescribeDBInstancesByExpireTimeRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void DescribeDBInstancesByExpireTimeRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
-int DescribeDBInstancesByExpireTimeRequest::getPageSize()const
-{
-	return pageSize_;
+int DescribeDBInstancesByExpireTimeRequest::getPageSize() const {
+  return pageSize_;
 }
 
-void DescribeDBInstancesByExpireTimeRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+void DescribeDBInstancesByExpireTimeRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
-int DescribeDBInstancesByExpireTimeRequest::getExpirePeriod()const
-{
-	return expirePeriod_;
+int DescribeDBInstancesByExpireTimeRequest::getExpirePeriod() const {
+  return expirePeriod_;
 }
 
-void DescribeDBInstancesByExpireTimeRequest::setExpirePeriod(int expirePeriod)
-{
-	expirePeriod_ = expirePeriod;
-	setParameter("ExpirePeriod", std::to_string(expirePeriod));
+void DescribeDBInstancesByExpireTimeRequest::setExpirePeriod(int expirePeriod) {
+  expirePeriod_ = expirePeriod;
+  setParameter(std::string("ExpirePeriod"), std::to_string(expirePeriod));
 }
 
-std::string DescribeDBInstancesByExpireTimeRequest::getProxyId()const
-{
-	return proxyId_;
+std::string DescribeDBInstancesByExpireTimeRequest::getProxyId() const {
+  return proxyId_;
 }
 
-void DescribeDBInstancesByExpireTimeRequest::setProxyId(const std::string& proxyId)
-{
-	proxyId_ = proxyId;
-	setParameter("ProxyId", proxyId);
+void DescribeDBInstancesByExpireTimeRequest::setProxyId(const std::string &proxyId) {
+  proxyId_ = proxyId;
+  setParameter(std::string("proxyId"), proxyId);
 }
 
-std::string DescribeDBInstancesByExpireTimeRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string DescribeDBInstancesByExpireTimeRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void DescribeDBInstancesByExpireTimeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void DescribeDBInstancesByExpireTimeRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string DescribeDBInstancesByExpireTimeRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string DescribeDBInstancesByExpireTimeRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void DescribeDBInstancesByExpireTimeRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void DescribeDBInstancesByExpireTimeRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-long DescribeDBInstancesByExpireTimeRequest::getOwnerId()const
-{
-	return ownerId_;
+long DescribeDBInstancesByExpireTimeRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void DescribeDBInstancesByExpireTimeRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void DescribeDBInstancesByExpireTimeRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string DescribeDBInstancesByExpireTimeRequest::getTags()const
-{
-	return tags_;
+std::string DescribeDBInstancesByExpireTimeRequest::getTags() const {
+  return tags_;
 }
 
-void DescribeDBInstancesByExpireTimeRequest::setTags(const std::string& tags)
-{
-	tags_ = tags;
-	setParameter("Tags", tags);
+void DescribeDBInstancesByExpireTimeRequest::setTags(const std::string &tags) {
+  tags_ = tags;
+  setParameter(std::string("Tags"), tags);
 }
 

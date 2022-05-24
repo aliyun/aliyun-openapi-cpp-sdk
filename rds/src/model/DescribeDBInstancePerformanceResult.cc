@@ -45,30 +45,30 @@ void DescribeDBInstancePerformanceResult::parse(const std::string &payload)
 		PerformanceKey performanceKeysObject;
 		if(!valuePerformanceKeysPerformanceKey["Key"].isNull())
 			performanceKeysObject.key = valuePerformanceKeysPerformanceKey["Key"].asString();
-		if(!valuePerformanceKeysPerformanceKey["Unit"].isNull())
-			performanceKeysObject.unit = valuePerformanceKeysPerformanceKey["Unit"].asString();
 		if(!valuePerformanceKeysPerformanceKey["ValueFormat"].isNull())
 			performanceKeysObject.valueFormat = valuePerformanceKeysPerformanceKey["ValueFormat"].asString();
+		if(!valuePerformanceKeysPerformanceKey["Unit"].isNull())
+			performanceKeysObject.unit = valuePerformanceKeysPerformanceKey["Unit"].asString();
 		auto allValuesNode = valuePerformanceKeysPerformanceKey["Values"]["PerformanceValue"];
 		for (auto valuePerformanceKeysPerformanceKeyValuesPerformanceValue : allValuesNode)
 		{
 			PerformanceKey::PerformanceValue valuesObject;
-			if(!valuePerformanceKeysPerformanceKeyValuesPerformanceValue["Value"].isNull())
-				valuesObject.value = valuePerformanceKeysPerformanceKeyValuesPerformanceValue["Value"].asString();
 			if(!valuePerformanceKeysPerformanceKeyValuesPerformanceValue["Date"].isNull())
 				valuesObject.date = valuePerformanceKeysPerformanceKeyValuesPerformanceValue["Date"].asString();
+			if(!valuePerformanceKeysPerformanceKeyValuesPerformanceValue["Value"].isNull())
+				valuesObject.value = valuePerformanceKeysPerformanceKeyValuesPerformanceValue["Value"].asString();
 			performanceKeysObject.values.push_back(valuesObject);
 		}
 		performanceKeys_.push_back(performanceKeysObject);
 	}
+	if(!value["EndTime"].isNull())
+		endTime_ = value["EndTime"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
 	if(!value["DBInstanceId"].isNull())
 		dBInstanceId_ = value["DBInstanceId"].asString();
 	if(!value["Engine"].isNull())
 		engine_ = value["Engine"].asString();
-	if(!value["StartTime"].isNull())
-		startTime_ = value["StartTime"].asString();
-	if(!value["EndTime"].isNull())
-		endTime_ = value["EndTime"].asString();
 
 }
 

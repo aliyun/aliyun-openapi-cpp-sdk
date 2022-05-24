@@ -139,6 +139,8 @@ void DescribeDBInstancesResult::parse(const std::string &payload)
 			itemsObject.dBInstanceClass = valueItemsDBInstance["DBInstanceClass"].asString();
 		if(!valueItemsDBInstance["SwitchWeight"].isNull())
 			itemsObject.switchWeight = std::stoi(valueItemsDBInstance["SwitchWeight"].asString());
+		if(!valueItemsDBInstance["DeletionProtection"].isNull())
+			itemsObject.deletionProtection = valueItemsDBInstance["DeletionProtection"].asString() == "true";
 		auto allReadOnlyDBInstanceIdsNode = valueItemsDBInstance["ReadOnlyDBInstanceIds"]["ReadOnlyDBInstanceId"];
 		for (auto valueItemsDBInstanceReadOnlyDBInstanceIdsReadOnlyDBInstanceId : allReadOnlyDBInstanceIdsNode)
 		{

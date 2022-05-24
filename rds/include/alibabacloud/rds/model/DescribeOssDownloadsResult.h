@@ -37,10 +37,10 @@ namespace AlibabaCloud
 					std::string status;
 					std::string description;
 					std::string endTime;
-					std::string fileName;
 					std::string createTime;
 					std::string backupMode;
 					std::string isAvailable;
+					std::string fileName;
 					std::string fileSize;
 				};
 

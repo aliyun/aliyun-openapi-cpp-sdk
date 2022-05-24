@@ -51,30 +51,30 @@ void DescribeSQLLogReportListResult::parse(const std::string &payload)
 			Item::LatencyTopNItem latencyTopNItemsObject;
 			if(!valueItemsItemLatencyTopNItemsLatencyTopNItem["SQLText"].isNull())
 				latencyTopNItemsObject.sQLText = valueItemsItemLatencyTopNItemsLatencyTopNItem["SQLText"].asString();
-			if(!valueItemsItemLatencyTopNItemsLatencyTopNItem["AvgLatency"].isNull())
-				latencyTopNItemsObject.avgLatency = std::stol(valueItemsItemLatencyTopNItemsLatencyTopNItem["AvgLatency"].asString());
 			if(!valueItemsItemLatencyTopNItemsLatencyTopNItem["SQLExecuteTimes"].isNull())
 				latencyTopNItemsObject.sQLExecuteTimes = std::stol(valueItemsItemLatencyTopNItemsLatencyTopNItem["SQLExecuteTimes"].asString());
+			if(!valueItemsItemLatencyTopNItemsLatencyTopNItem["AvgLatency"].isNull())
+				latencyTopNItemsObject.avgLatency = std::stol(valueItemsItemLatencyTopNItemsLatencyTopNItem["AvgLatency"].asString());
 			itemsObject.latencyTopNItems.push_back(latencyTopNItemsObject);
 		}
 		auto allQPSTopNItemsNode = valueItemsItem["QPSTopNItems"]["QPSTopNItem"];
 		for (auto valueItemsItemQPSTopNItemsQPSTopNItem : allQPSTopNItemsNode)
 		{
 			Item::QPSTopNItem qPSTopNItemsObject;
-			if(!valueItemsItemQPSTopNItemsQPSTopNItem["SQLText"].isNull())
-				qPSTopNItemsObject.sQLText = valueItemsItemQPSTopNItemsQPSTopNItem["SQLText"].asString();
 			if(!valueItemsItemQPSTopNItemsQPSTopNItem["SQLExecuteTimes"].isNull())
 				qPSTopNItemsObject.sQLExecuteTimes = std::stol(valueItemsItemQPSTopNItemsQPSTopNItem["SQLExecuteTimes"].asString());
+			if(!valueItemsItemQPSTopNItemsQPSTopNItem["SQLText"].isNull())
+				qPSTopNItemsObject.sQLText = valueItemsItemQPSTopNItemsQPSTopNItem["SQLText"].asString();
 			itemsObject.qPSTopNItems.push_back(qPSTopNItemsObject);
 		}
 		items_.push_back(itemsObject);
 	}
-	if(!value["TotalRecordCount"].isNull())
-		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
 	if(!value["PageNumber"].isNull())
 		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageRecordCount"].isNull())
 		pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
+	if(!value["TotalRecordCount"].isNull())
+		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
 
 }
 

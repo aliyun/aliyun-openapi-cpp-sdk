@@ -38,8 +38,8 @@ namespace AlibabaCloud
 				explicit DescribeDBInstanceSSLResult(const std::string &payload);
 				~DescribeDBInstanceSSLResult();
 				std::string getClientCertRevocationList()const;
-				std::string getCAType()const;
 				std::string getRequireUpdateItem()const;
+				std::string getCAType()const;
 				std::string getACL()const;
 				std::string getLastModifyStatus()const;
 				std::string getRequireUpdate()const;
@@ -51,8 +51,8 @@ namespace AlibabaCloud
 				std::string getServerCert()const;
 				std::string getSSLEnabled()const;
 				std::string getClientCACert()const;
-				std::string getRequireUpdateReason()const;
 				std::string getReplicationACL()const;
+				std::string getRequireUpdateReason()const;
 				std::string getConnectionString()const;
 				std::string getServerCAUrl()const;
 
@@ -60,8 +60,8 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string clientCertRevocationList_;
-				std::string cAType_;
 				std::string requireUpdateItem_;
+				std::string cAType_;
 				std::string aCL_;
 				std::string lastModifyStatus_;
 				std::string requireUpdate_;
@@ -73,8 +73,8 @@ namespace AlibabaCloud
 				std::string serverCert_;
 				std::string sSLEnabled_;
 				std::string clientCACert_;
-				std::string requireUpdateReason_;
 				std::string replicationACL_;
+				std::string requireUpdateReason_;
 				std::string connectionString_;
 				std::string serverCAUrl_;
 

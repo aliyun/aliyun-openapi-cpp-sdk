@@ -39,16 +39,16 @@ void DescribeAvailableRecoveryTimeResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["RecoveryBeginTime"].isNull())
-		recoveryBeginTime_ = value["RecoveryBeginTime"].asString();
 	if(!value["RecoveryEndTime"].isNull())
 		recoveryEndTime_ = value["RecoveryEndTime"].asString();
-	if(!value["DBInstanceId"].isNull())
-		dBInstanceId_ = value["DBInstanceId"].asString();
-	if(!value["RegionId"].isNull())
-		regionId_ = value["RegionId"].asString();
 	if(!value["CrossBackupId"].isNull())
 		crossBackupId_ = std::stoi(value["CrossBackupId"].asString());
+	if(!value["DBInstanceId"].isNull())
+		dBInstanceId_ = value["DBInstanceId"].asString();
+	if(!value["RecoveryBeginTime"].isNull())
+		recoveryBeginTime_ = value["RecoveryBeginTime"].asString();
+	if(!value["RegionId"].isNull())
+		regionId_ = value["RegionId"].asString();
 
 }
 

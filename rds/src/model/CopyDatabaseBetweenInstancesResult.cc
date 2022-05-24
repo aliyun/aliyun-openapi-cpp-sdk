@@ -39,13 +39,6 @@ void CopyDatabaseBetweenInstancesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["DBInstanceId"].isNull())
-		dBInstanceId_ = value["DBInstanceId"].asString();
 
-}
-
-std::string CopyDatabaseBetweenInstancesResult::getDBInstanceId()const
-{
-	return dBInstanceId_;
 }
 

@@ -70,11 +70,11 @@ void DescribeVSwitchesResult::parse(const std::string &payload)
 		vSwitchs_.push_back(vSwitchsObject);
 	}
 	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stol(value["TotalCount"].asString());
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stol(value["PageNumber"].asString());
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
-		pageSize_ = std::stol(value["PageSize"].asString());
+		pageSize_ = std::stoi(value["PageSize"].asString());
 
 }
 
@@ -83,17 +83,17 @@ std::vector<DescribeVSwitchesResult::VSwitch> DescribeVSwitchesResult::getVSwitc
 	return vSwitchs_;
 }
 
-long DescribeVSwitchesResult::getTotalCount()const
+int DescribeVSwitchesResult::getTotalCount()const
 {
 	return totalCount_;
 }
 
-long DescribeVSwitchesResult::getPageSize()const
+int DescribeVSwitchesResult::getPageSize()const
 {
 	return pageSize_;
 }
 
-long DescribeVSwitchesResult::getPageNumber()const
+int DescribeVSwitchesResult::getPageNumber()const
 {
 	return pageNumber_;
 }

@@ -43,18 +43,18 @@ void DescribeDatabasesResult::parse(const std::string &payload)
 	for (auto valueDatabasesDatabase : allDatabasesNode)
 	{
 		Database databasesObject;
+		if(!valueDatabasesDatabase["DBDescription"].isNull())
+			databasesObject.dBDescription = valueDatabasesDatabase["DBDescription"].asString();
+		if(!valueDatabasesDatabase["DBStatus"].isNull())
+			databasesObject.dBStatus = valueDatabasesDatabase["DBStatus"].asString();
 		if(!valueDatabasesDatabase["DBName"].isNull())
 			databasesObject.dBName = valueDatabasesDatabase["DBName"].asString();
 		if(!valueDatabasesDatabase["DBInstanceId"].isNull())
 			databasesObject.dBInstanceId = valueDatabasesDatabase["DBInstanceId"].asString();
 		if(!valueDatabasesDatabase["Engine"].isNull())
 			databasesObject.engine = valueDatabasesDatabase["Engine"].asString();
-		if(!valueDatabasesDatabase["DBStatus"].isNull())
-			databasesObject.dBStatus = valueDatabasesDatabase["DBStatus"].asString();
 		if(!valueDatabasesDatabase["CharacterSetName"].isNull())
 			databasesObject.characterSetName = valueDatabasesDatabase["CharacterSetName"].asString();
-		if(!valueDatabasesDatabase["DBDescription"].isNull())
-			databasesObject.dBDescription = valueDatabasesDatabase["DBDescription"].asString();
 		auto allAccountsNode = valueDatabasesDatabase["Accounts"]["AccountPrivilegeInfo"];
 		for (auto valueDatabasesDatabaseAccountsAccountPrivilegeInfo : allAccountsNode)
 		{

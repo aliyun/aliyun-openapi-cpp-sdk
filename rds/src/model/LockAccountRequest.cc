@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,78 +18,64 @@
 
 using AlibabaCloud::Rds::Model::LockAccountRequest;
 
-LockAccountRequest::LockAccountRequest() :
-	RpcServiceRequest("rds", "2014-08-15", "LockAccount")
-{
-	setMethod(HttpRequest::Method::Post);
+LockAccountRequest::LockAccountRequest()
+    : RpcServiceRequest("rds", "2014-08-15", "LockAccount") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-LockAccountRequest::~LockAccountRequest()
-{}
+LockAccountRequest::~LockAccountRequest() {}
 
-long LockAccountRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long LockAccountRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void LockAccountRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void LockAccountRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string LockAccountRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string LockAccountRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void LockAccountRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void LockAccountRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-long LockAccountRequest::getOwnerId()const
-{
-	return ownerId_;
+long LockAccountRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void LockAccountRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void LockAccountRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string LockAccountRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string LockAccountRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void LockAccountRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void LockAccountRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string LockAccountRequest::getAccountName()const
-{
-	return accountName_;
+std::string LockAccountRequest::getAccountName() const {
+  return accountName_;
 }
 
-void LockAccountRequest::setAccountName(const std::string& accountName)
-{
-	accountName_ = accountName;
-	setParameter("AccountName", accountName);
+void LockAccountRequest::setAccountName(const std::string &accountName) {
+  accountName_ = accountName;
+  setParameter(std::string("AccountName"), accountName);
 }
 
-std::string LockAccountRequest::getDBInstanceId()const
-{
-	return dBInstanceId_;
+std::string LockAccountRequest::getDBInstanceId() const {
+  return dBInstanceId_;
 }
 
-void LockAccountRequest::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-	setParameter("DBInstanceId", dBInstanceId);
+void LockAccountRequest::setDBInstanceId(const std::string &dBInstanceId) {
+  dBInstanceId_ = dBInstanceId;
+  setParameter(std::string("DBInstanceId"), dBInstanceId);
 }
 

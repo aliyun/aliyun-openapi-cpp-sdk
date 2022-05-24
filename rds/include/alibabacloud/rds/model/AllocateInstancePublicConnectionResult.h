@@ -37,14 +37,14 @@ namespace AlibabaCloud
 				AllocateInstancePublicConnectionResult();
 				explicit AllocateInstancePublicConnectionResult(const std::string &payload);
 				~AllocateInstancePublicConnectionResult();
-				std::string getConnectionString()const;
 				std::string getDbInstanceName()const;
+				std::string getConnectionString()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string connectionString_;
 				std::string dbInstanceName_;
+				std::string connectionString_;
 
 			};
 		}

@@ -52,8 +52,8 @@ namespace AlibabaCloud
 				std::string getReleasedKeepPolicy()const;
 				DuplicationLocation getDuplicationLocation()const;
 				std::string getPreferredNextBackupTime()const;
-				std::string getPreferredBackupPeriod()const;
 				std::string getArchiveBackupKeepCount()const;
+				std::string getPreferredBackupPeriod()const;
 				int getLogBackupRetentionPeriod()const;
 				int getLogBackupLocalRetentionNumber()const;
 				int getSupportReleasedKeep()const;
@@ -81,8 +81,8 @@ namespace AlibabaCloud
 				std::string releasedKeepPolicy_;
 				DuplicationLocation duplicationLocation_;
 				std::string preferredNextBackupTime_;
-				std::string preferredBackupPeriod_;
 				std::string archiveBackupKeepCount_;
+				std::string preferredBackupPeriod_;
 				int logBackupRetentionPeriod_;
 				int logBackupLocalRetentionNumber_;
 				int supportReleasedKeep_;

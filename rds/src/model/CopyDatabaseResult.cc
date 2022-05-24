@@ -41,10 +41,10 @@ void CopyDatabaseResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["DBName"].isNull())
 		dBName_ = value["DBName"].asString();
-	if(!value["DBStatus"].isNull())
-		dBStatus_ = value["DBStatus"].asString();
 	if(!value["TaskId"].isNull())
 		taskId_ = value["TaskId"].asString();
+	if(!value["DBStatus"].isNull())
+		dBStatus_ = value["DBStatus"].asString();
 
 }
 

@@ -41,8 +41,8 @@ namespace AlibabaCloud
 				long getBackupSize()const;
 				long getArchiveBackupSize()const;
 				long getColdBackupSize()const;
-				long getLogSize()const;
 				long getBackupOssLogSize()const;
+				long getLogSize()const;
 				std::string getDBInstanceId()const;
 				long getBackupDataSize()const;
 				long getDataSize()const;
@@ -59,8 +59,8 @@ namespace AlibabaCloud
 				long backupSize_;
 				long archiveBackupSize_;
 				long coldBackupSize_;
-				long logSize_;
 				long backupOssLogSize_;
+				long logSize_;
 				std::string dBInstanceId_;
 				long backupDataSize_;
 				long dataSize_;

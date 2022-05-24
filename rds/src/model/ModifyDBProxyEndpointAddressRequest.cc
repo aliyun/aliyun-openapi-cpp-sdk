@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,111 +18,91 @@
 
 using AlibabaCloud::Rds::Model::ModifyDBProxyEndpointAddressRequest;
 
-ModifyDBProxyEndpointAddressRequest::ModifyDBProxyEndpointAddressRequest() :
-	RpcServiceRequest("rds", "2014-08-15", "ModifyDBProxyEndpointAddress")
-{
-	setMethod(HttpRequest::Method::Post);
+ModifyDBProxyEndpointAddressRequest::ModifyDBProxyEndpointAddressRequest()
+    : RpcServiceRequest("rds", "2014-08-15", "ModifyDBProxyEndpointAddress") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-ModifyDBProxyEndpointAddressRequest::~ModifyDBProxyEndpointAddressRequest()
-{}
+ModifyDBProxyEndpointAddressRequest::~ModifyDBProxyEndpointAddressRequest() {}
 
-long ModifyDBProxyEndpointAddressRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long ModifyDBProxyEndpointAddressRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void ModifyDBProxyEndpointAddressRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void ModifyDBProxyEndpointAddressRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string ModifyDBProxyEndpointAddressRequest::getDBProxyConnectStringNetType()const
-{
-	return dBProxyConnectStringNetType_;
+std::string ModifyDBProxyEndpointAddressRequest::getDBProxyConnectStringNetType() const {
+  return dBProxyConnectStringNetType_;
 }
 
-void ModifyDBProxyEndpointAddressRequest::setDBProxyConnectStringNetType(const std::string& dBProxyConnectStringNetType)
-{
-	dBProxyConnectStringNetType_ = dBProxyConnectStringNetType;
-	setParameter("DBProxyConnectStringNetType", dBProxyConnectStringNetType);
+void ModifyDBProxyEndpointAddressRequest::setDBProxyConnectStringNetType(const std::string &dBProxyConnectStringNetType) {
+  dBProxyConnectStringNetType_ = dBProxyConnectStringNetType;
+  setParameter(std::string("DBProxyConnectStringNetType"), dBProxyConnectStringNetType);
 }
 
-std::string ModifyDBProxyEndpointAddressRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string ModifyDBProxyEndpointAddressRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void ModifyDBProxyEndpointAddressRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void ModifyDBProxyEndpointAddressRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string ModifyDBProxyEndpointAddressRequest::getDBInstanceId()const
-{
-	return dBInstanceId_;
+std::string ModifyDBProxyEndpointAddressRequest::getDBInstanceId() const {
+  return dBInstanceId_;
 }
 
-void ModifyDBProxyEndpointAddressRequest::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-	setParameter("DBInstanceId", dBInstanceId);
+void ModifyDBProxyEndpointAddressRequest::setDBInstanceId(const std::string &dBInstanceId) {
+  dBInstanceId_ = dBInstanceId;
+  setParameter(std::string("DBInstanceId"), dBInstanceId);
 }
 
-std::string ModifyDBProxyEndpointAddressRequest::getDBProxyNewConnectStringPort()const
-{
-	return dBProxyNewConnectStringPort_;
+std::string ModifyDBProxyEndpointAddressRequest::getDBProxyNewConnectStringPort() const {
+  return dBProxyNewConnectStringPort_;
 }
 
-void ModifyDBProxyEndpointAddressRequest::setDBProxyNewConnectStringPort(const std::string& dBProxyNewConnectStringPort)
-{
-	dBProxyNewConnectStringPort_ = dBProxyNewConnectStringPort;
-	setParameter("DBProxyNewConnectStringPort", dBProxyNewConnectStringPort);
+void ModifyDBProxyEndpointAddressRequest::setDBProxyNewConnectStringPort(const std::string &dBProxyNewConnectStringPort) {
+  dBProxyNewConnectStringPort_ = dBProxyNewConnectStringPort;
+  setParameter(std::string("DBProxyNewConnectStringPort"), dBProxyNewConnectStringPort);
 }
 
-std::string ModifyDBProxyEndpointAddressRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string ModifyDBProxyEndpointAddressRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void ModifyDBProxyEndpointAddressRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void ModifyDBProxyEndpointAddressRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-long ModifyDBProxyEndpointAddressRequest::getOwnerId()const
-{
-	return ownerId_;
+long ModifyDBProxyEndpointAddressRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void ModifyDBProxyEndpointAddressRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void ModifyDBProxyEndpointAddressRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string ModifyDBProxyEndpointAddressRequest::getDBProxyEndpointId()const
-{
-	return dBProxyEndpointId_;
+std::string ModifyDBProxyEndpointAddressRequest::getDBProxyEndpointId() const {
+  return dBProxyEndpointId_;
 }
 
-void ModifyDBProxyEndpointAddressRequest::setDBProxyEndpointId(const std::string& dBProxyEndpointId)
-{
-	dBProxyEndpointId_ = dBProxyEndpointId;
-	setParameter("DBProxyEndpointId", dBProxyEndpointId);
+void ModifyDBProxyEndpointAddressRequest::setDBProxyEndpointId(const std::string &dBProxyEndpointId) {
+  dBProxyEndpointId_ = dBProxyEndpointId;
+  setParameter(std::string("DBProxyEndpointId"), dBProxyEndpointId);
 }
 
-std::string ModifyDBProxyEndpointAddressRequest::getDBProxyNewConnectString()const
-{
-	return dBProxyNewConnectString_;
+std::string ModifyDBProxyEndpointAddressRequest::getDBProxyNewConnectString() const {
+  return dBProxyNewConnectString_;
 }
 
-void ModifyDBProxyEndpointAddressRequest::setDBProxyNewConnectString(const std::string& dBProxyNewConnectString)
-{
-	dBProxyNewConnectString_ = dBProxyNewConnectString;
-	setParameter("DBProxyNewConnectString", dBProxyNewConnectString);
+void ModifyDBProxyEndpointAddressRequest::setDBProxyNewConnectString(const std::string &dBProxyNewConnectString) {
+  dBProxyNewConnectString_ = dBProxyNewConnectString;
+  setParameter(std::string("DBProxyNewConnectString"), dBProxyNewConnectString);
 }
 

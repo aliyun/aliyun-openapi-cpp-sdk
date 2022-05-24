@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,100 +18,82 @@
 
 using AlibabaCloud::Rds::Model::DeleteDBInstanceRequest;
 
-DeleteDBInstanceRequest::DeleteDBInstanceRequest() :
-	RpcServiceRequest("rds", "2014-08-15", "DeleteDBInstance")
-{
-	setMethod(HttpRequest::Method::Post);
+DeleteDBInstanceRequest::DeleteDBInstanceRequest()
+    : RpcServiceRequest("rds", "2014-08-15", "DeleteDBInstance") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DeleteDBInstanceRequest::~DeleteDBInstanceRequest()
-{}
+DeleteDBInstanceRequest::~DeleteDBInstanceRequest() {}
 
-long DeleteDBInstanceRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long DeleteDBInstanceRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void DeleteDBInstanceRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void DeleteDBInstanceRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string DeleteDBInstanceRequest::getClientToken()const
-{
-	return clientToken_;
+std::string DeleteDBInstanceRequest::getClientToken() const {
+  return clientToken_;
 }
 
-void DeleteDBInstanceRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+void DeleteDBInstanceRequest::setClientToken(const std::string &clientToken) {
+  clientToken_ = clientToken;
+  setParameter(std::string("ClientToken"), clientToken);
 }
 
-std::string DeleteDBInstanceRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string DeleteDBInstanceRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void DeleteDBInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void DeleteDBInstanceRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string DeleteDBInstanceRequest::getDBInstanceId()const
-{
-	return dBInstanceId_;
+std::string DeleteDBInstanceRequest::getDBInstanceId() const {
+  return dBInstanceId_;
 }
 
-void DeleteDBInstanceRequest::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-	setParameter("DBInstanceId", dBInstanceId);
+void DeleteDBInstanceRequest::setDBInstanceId(const std::string &dBInstanceId) {
+  dBInstanceId_ = dBInstanceId;
+  setParameter(std::string("DBInstanceId"), dBInstanceId);
 }
 
-std::string DeleteDBInstanceRequest::getReleasedKeepPolicy()const
-{
-	return releasedKeepPolicy_;
+std::string DeleteDBInstanceRequest::getReleasedKeepPolicy() const {
+  return releasedKeepPolicy_;
 }
 
-void DeleteDBInstanceRequest::setReleasedKeepPolicy(const std::string& releasedKeepPolicy)
-{
-	releasedKeepPolicy_ = releasedKeepPolicy;
-	setParameter("ReleasedKeepPolicy", releasedKeepPolicy);
+void DeleteDBInstanceRequest::setReleasedKeepPolicy(const std::string &releasedKeepPolicy) {
+  releasedKeepPolicy_ = releasedKeepPolicy;
+  setParameter(std::string("ReleasedKeepPolicy"), releasedKeepPolicy);
 }
 
-std::string DeleteDBInstanceRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string DeleteDBInstanceRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void DeleteDBInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void DeleteDBInstanceRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string DeleteDBInstanceRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string DeleteDBInstanceRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void DeleteDBInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void DeleteDBInstanceRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-long DeleteDBInstanceRequest::getOwnerId()const
-{
-	return ownerId_;
+long DeleteDBInstanceRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void DeleteDBInstanceRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void DeleteDBInstanceRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 

@@ -43,26 +43,26 @@ void DescribeParameterGroupResult::parse(const std::string &payload)
 	for (auto valueParamGroupParameterGroup : allParamGroupNode)
 	{
 		ParameterGroup paramGroupObject;
-		if(!valueParamGroupParameterGroup["ParameterGroupType"].isNull())
-			paramGroupObject.parameterGroupType = std::stoi(valueParamGroupParameterGroup["ParameterGroupType"].asString());
-		if(!valueParamGroupParameterGroup["ParameterGroupName"].isNull())
-			paramGroupObject.parameterGroupName = valueParamGroupParameterGroup["ParameterGroupName"].asString();
-		if(!valueParamGroupParameterGroup["ParamCounts"].isNull())
-			paramGroupObject.paramCounts = std::stoi(valueParamGroupParameterGroup["ParamCounts"].asString());
-		if(!valueParamGroupParameterGroup["ParameterGroupDesc"].isNull())
-			paramGroupObject.parameterGroupDesc = valueParamGroupParameterGroup["ParameterGroupDesc"].asString();
-		if(!valueParamGroupParameterGroup["ForceRestart"].isNull())
-			paramGroupObject.forceRestart = std::stoi(valueParamGroupParameterGroup["ForceRestart"].asString());
-		if(!valueParamGroupParameterGroup["Engine"].isNull())
-			paramGroupObject.engine = valueParamGroupParameterGroup["Engine"].asString();
-		if(!valueParamGroupParameterGroup["EngineVersion"].isNull())
-			paramGroupObject.engineVersion = valueParamGroupParameterGroup["EngineVersion"].asString();
-		if(!valueParamGroupParameterGroup["ParameterGroupId"].isNull())
-			paramGroupObject.parameterGroupId = valueParamGroupParameterGroup["ParameterGroupId"].asString();
-		if(!valueParamGroupParameterGroup["CreateTime"].isNull())
-			paramGroupObject.createTime = valueParamGroupParameterGroup["CreateTime"].asString();
 		if(!valueParamGroupParameterGroup["UpdateTime"].isNull())
 			paramGroupObject.updateTime = valueParamGroupParameterGroup["UpdateTime"].asString();
+		if(!valueParamGroupParameterGroup["ParameterGroupDesc"].isNull())
+			paramGroupObject.parameterGroupDesc = valueParamGroupParameterGroup["ParameterGroupDesc"].asString();
+		if(!valueParamGroupParameterGroup["CreateTime"].isNull())
+			paramGroupObject.createTime = valueParamGroupParameterGroup["CreateTime"].asString();
+		if(!valueParamGroupParameterGroup["ForceRestart"].isNull())
+			paramGroupObject.forceRestart = std::stoi(valueParamGroupParameterGroup["ForceRestart"].asString());
+		if(!valueParamGroupParameterGroup["ParameterGroupId"].isNull())
+			paramGroupObject.parameterGroupId = valueParamGroupParameterGroup["ParameterGroupId"].asString();
+		if(!valueParamGroupParameterGroup["ParameterGroupName"].isNull())
+			paramGroupObject.parameterGroupName = valueParamGroupParameterGroup["ParameterGroupName"].asString();
+		if(!valueParamGroupParameterGroup["Engine"].isNull())
+			paramGroupObject.engine = valueParamGroupParameterGroup["Engine"].asString();
+		if(!valueParamGroupParameterGroup["ParamCounts"].isNull())
+			paramGroupObject.paramCounts = std::stoi(valueParamGroupParameterGroup["ParamCounts"].asString());
+		if(!valueParamGroupParameterGroup["EngineVersion"].isNull())
+			paramGroupObject.engineVersion = valueParamGroupParameterGroup["EngineVersion"].asString();
+		if(!valueParamGroupParameterGroup["ParameterGroupType"].isNull())
+			paramGroupObject.parameterGroupType = std::stoi(valueParamGroupParameterGroup["ParameterGroupType"].asString());
 		auto allParamDetailNode = valueParamGroupParameterGroup["ParamDetail"]["ParameterDetail"];
 		for (auto valueParamGroupParameterGroupParamDetailParameterDetail : allParamDetailNode)
 		{

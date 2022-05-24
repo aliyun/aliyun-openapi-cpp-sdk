@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,78 +18,64 @@
 
 using AlibabaCloud::Rds::Model::ModifySecurityGroupConfigurationRequest;
 
-ModifySecurityGroupConfigurationRequest::ModifySecurityGroupConfigurationRequest() :
-	RpcServiceRequest("rds", "2014-08-15", "ModifySecurityGroupConfiguration")
-{
-	setMethod(HttpRequest::Method::Post);
+ModifySecurityGroupConfigurationRequest::ModifySecurityGroupConfigurationRequest()
+    : RpcServiceRequest("rds", "2014-08-15", "ModifySecurityGroupConfiguration") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-ModifySecurityGroupConfigurationRequest::~ModifySecurityGroupConfigurationRequest()
-{}
+ModifySecurityGroupConfigurationRequest::~ModifySecurityGroupConfigurationRequest() {}
 
-long ModifySecurityGroupConfigurationRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long ModifySecurityGroupConfigurationRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void ModifySecurityGroupConfigurationRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void ModifySecurityGroupConfigurationRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string ModifySecurityGroupConfigurationRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string ModifySecurityGroupConfigurationRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void ModifySecurityGroupConfigurationRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void ModifySecurityGroupConfigurationRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string ModifySecurityGroupConfigurationRequest::getSecurityGroupId()const
-{
-	return securityGroupId_;
+std::string ModifySecurityGroupConfigurationRequest::getSecurityGroupId() const {
+  return securityGroupId_;
 }
 
-void ModifySecurityGroupConfigurationRequest::setSecurityGroupId(const std::string& securityGroupId)
-{
-	securityGroupId_ = securityGroupId;
-	setParameter("SecurityGroupId", securityGroupId);
+void ModifySecurityGroupConfigurationRequest::setSecurityGroupId(const std::string &securityGroupId) {
+  securityGroupId_ = securityGroupId;
+  setParameter(std::string("SecurityGroupId"), securityGroupId);
 }
 
-long ModifySecurityGroupConfigurationRequest::getOwnerId()const
-{
-	return ownerId_;
+long ModifySecurityGroupConfigurationRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void ModifySecurityGroupConfigurationRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void ModifySecurityGroupConfigurationRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string ModifySecurityGroupConfigurationRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string ModifySecurityGroupConfigurationRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void ModifySecurityGroupConfigurationRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void ModifySecurityGroupConfigurationRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string ModifySecurityGroupConfigurationRequest::getDBInstanceId()const
-{
-	return dBInstanceId_;
+std::string ModifySecurityGroupConfigurationRequest::getDBInstanceId() const {
+  return dBInstanceId_;
 }
 
-void ModifySecurityGroupConfigurationRequest::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-	setParameter("DBInstanceId", dBInstanceId);
+void ModifySecurityGroupConfigurationRequest::setDBInstanceId(const std::string &dBInstanceId) {
+  dBInstanceId_ = dBInstanceId;
+  setParameter(std::string("DBInstanceId"), dBInstanceId);
 }
 

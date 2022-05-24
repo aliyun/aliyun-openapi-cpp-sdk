@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,53 +17,47 @@
 #ifndef ALIBABACLOUD_RDS_MODEL_MODIFYDBINSTANCEHACONFIGREQUEST_H_
 #define ALIBABACLOUD_RDS_MODEL_MODIFYDBINSTANCEHACONFIGREQUEST_H_
 
+#include <alibabacloud/rds/RdsExport.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
-#include <alibabacloud/rds/RdsExport.h>
+#include <map>
 
-namespace AlibabaCloud
-{
-	namespace Rds
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_RDS_EXPORT ModifyDBInstanceHAConfigRequest : public RpcServiceRequest
-			{
+namespace AlibabaCloud {
+namespace Rds {
+namespace Model {
+class ALIBABACLOUD_RDS_EXPORT ModifyDBInstanceHAConfigRequest : public RpcServiceRequest {
+public:
+	ModifyDBInstanceHAConfigRequest();
+	~ModifyDBInstanceHAConfigRequest();
+	long getResourceOwnerId() const;
+	void setResourceOwnerId(long resourceOwnerId);
+	std::string getAccessKeyId() const;
+	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getDbInstanceId() const;
+	void setDbInstanceId(const std::string &dbInstanceId);
+	std::string getHAMode() const;
+	void setHAMode(const std::string &hAMode);
+	std::string getResourceOwnerAccount() const;
+	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
+	std::string getOwnerAccount() const;
+	void setOwnerAccount(const std::string &ownerAccount);
+	std::string getSyncMode() const;
+	void setSyncMode(const std::string &syncMode);
+	long getOwnerId() const;
+	void setOwnerId(long ownerId);
 
-			public:
-				ModifyDBInstanceHAConfigRequest();
-				~ModifyDBInstanceHAConfigRequest();
-
-				long getResourceOwnerId()const;
-				void setResourceOwnerId(long resourceOwnerId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getDbInstanceId()const;
-				void setDbInstanceId(const std::string& dbInstanceId);
-				std::string getHAMode()const;
-				void setHAMode(const std::string& hAMode);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getSyncMode()const;
-				void setSyncMode(const std::string& syncMode);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
-
-            private:
-				long resourceOwnerId_;
-				std::string accessKeyId_;
-				std::string dbInstanceId_;
-				std::string hAMode_;
-				std::string resourceOwnerAccount_;
-				std::string ownerAccount_;
-				std::string syncMode_;
-				long ownerId_;
-
-			};
-		}
-	}
-}
+private:
+	long resourceOwnerId_;
+	std::string accessKeyId_;
+	std::string dbInstanceId_;
+	std::string hAMode_;
+	std::string resourceOwnerAccount_;
+	std::string ownerAccount_;
+	std::string syncMode_;
+	long ownerId_;
+};
+} // namespace Model
+} // namespace Rds
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_RDS_MODEL_MODIFYDBINSTANCEHACONFIGREQUEST_H_

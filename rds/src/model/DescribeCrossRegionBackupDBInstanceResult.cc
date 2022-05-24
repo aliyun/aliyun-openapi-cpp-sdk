@@ -43,52 +43,52 @@ void DescribeCrossRegionBackupDBInstanceResult::parse(const std::string &payload
 	for (auto valueItemsItem : allItemsNode)
 	{
 		Item itemsObject;
-		if(!valueItemsItem["DBInstanceId"].isNull())
-			itemsObject.dBInstanceId = valueItemsItem["DBInstanceId"].asString();
-		if(!valueItemsItem["DBInstanceDescription"].isNull())
-			itemsObject.dBInstanceDescription = valueItemsItem["DBInstanceDescription"].asString();
-		if(!valueItemsItem["DBInstanceStatus"].isNull())
-			itemsObject.dBInstanceStatus = valueItemsItem["DBInstanceStatus"].asString();
-		if(!valueItemsItem["DBInstanceStatusDesc"].isNull())
-			itemsObject.dBInstanceStatusDesc = valueItemsItem["DBInstanceStatusDesc"].asString();
-		if(!valueItemsItem["Engine"].isNull())
-			itemsObject.engine = valueItemsItem["Engine"].asString();
-		if(!valueItemsItem["EngineVersion"].isNull())
-			itemsObject.engineVersion = valueItemsItem["EngineVersion"].asString();
-		if(!valueItemsItem["CrossBackupRegion"].isNull())
-			itemsObject.crossBackupRegion = valueItemsItem["CrossBackupRegion"].asString();
-		if(!valueItemsItem["CrossBackupType"].isNull())
-			itemsObject.crossBackupType = valueItemsItem["CrossBackupType"].asString();
-		if(!valueItemsItem["BackupEnabled"].isNull())
-			itemsObject.backupEnabled = valueItemsItem["BackupEnabled"].asString();
-		if(!valueItemsItem["LogBackupEnabled"].isNull())
-			itemsObject.logBackupEnabled = valueItemsItem["LogBackupEnabled"].asString();
+		if(!valueItemsItem["RelServiceId"].isNull())
+			itemsObject.relServiceId = valueItemsItem["RelServiceId"].asString();
 		if(!valueItemsItem["LogBackupEnabledTime"].isNull())
 			itemsObject.logBackupEnabledTime = valueItemsItem["LogBackupEnabledTime"].asString();
-		if(!valueItemsItem["BackupEnabledTime"].isNull())
-			itemsObject.backupEnabledTime = valueItemsItem["BackupEnabledTime"].asString();
+		if(!valueItemsItem["DBInstanceStatusDesc"].isNull())
+			itemsObject.dBInstanceStatusDesc = valueItemsItem["DBInstanceStatusDesc"].asString();
+		if(!valueItemsItem["RelService"].isNull())
+			itemsObject.relService = valueItemsItem["RelService"].asString();
+		if(!valueItemsItem["BackupEnabled"].isNull())
+			itemsObject.backupEnabled = valueItemsItem["BackupEnabled"].asString();
+		if(!valueItemsItem["DBInstanceStatus"].isNull())
+			itemsObject.dBInstanceStatus = valueItemsItem["DBInstanceStatus"].asString();
+		if(!valueItemsItem["LockMode"].isNull())
+			itemsObject.lockMode = valueItemsItem["LockMode"].asString();
+		if(!valueItemsItem["EngineVersion"].isNull())
+			itemsObject.engineVersion = valueItemsItem["EngineVersion"].asString();
+		if(!valueItemsItem["LogBackupEnabled"].isNull())
+			itemsObject.logBackupEnabled = valueItemsItem["LogBackupEnabled"].asString();
 		if(!valueItemsItem["RetentType"].isNull())
 			itemsObject.retentType = std::stoi(valueItemsItem["RetentType"].asString());
 		if(!valueItemsItem["Retention"].isNull())
 			itemsObject.retention = std::stoi(valueItemsItem["Retention"].asString());
-		if(!valueItemsItem["LockMode"].isNull())
-			itemsObject.lockMode = valueItemsItem["LockMode"].asString();
-		if(!valueItemsItem["RelService"].isNull())
-			itemsObject.relService = valueItemsItem["RelService"].asString();
-		if(!valueItemsItem["RelServiceId"].isNull())
-			itemsObject.relServiceId = valueItemsItem["RelServiceId"].asString();
+		if(!valueItemsItem["CrossBackupType"].isNull())
+			itemsObject.crossBackupType = valueItemsItem["CrossBackupType"].asString();
+		if(!valueItemsItem["CrossBackupRegion"].isNull())
+			itemsObject.crossBackupRegion = valueItemsItem["CrossBackupRegion"].asString();
+		if(!valueItemsItem["DBInstanceId"].isNull())
+			itemsObject.dBInstanceId = valueItemsItem["DBInstanceId"].asString();
+		if(!valueItemsItem["Engine"].isNull())
+			itemsObject.engine = valueItemsItem["Engine"].asString();
+		if(!valueItemsItem["BackupEnabledTime"].isNull())
+			itemsObject.backupEnabledTime = valueItemsItem["BackupEnabledTime"].asString();
+		if(!valueItemsItem["DBInstanceDescription"].isNull())
+			itemsObject.dBInstanceDescription = valueItemsItem["DBInstanceDescription"].asString();
 		items_.push_back(itemsObject);
 	}
-	if(!value["RegionId"].isNull())
-		regionId_ = value["RegionId"].asString();
 	if(!value["TotalRecords"].isNull())
 		totalRecords_ = std::stoi(value["TotalRecords"].asString());
+	if(!value["ItemsNumbers"].isNull())
+		itemsNumbers_ = std::stoi(value["ItemsNumbers"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["PageNumber"].isNull())
 		pageNumber_ = std::stoi(value["PageNumber"].asString());
-	if(!value["ItemsNumbers"].isNull())
-		itemsNumbers_ = std::stoi(value["ItemsNumbers"].asString());
+	if(!value["RegionId"].isNull())
+		regionId_ = value["RegionId"].asString();
 
 }
 

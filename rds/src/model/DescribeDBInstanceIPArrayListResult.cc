@@ -43,16 +43,16 @@ void DescribeDBInstanceIPArrayListResult::parse(const std::string &payload)
 	for (auto valueItemsDBInstanceIPArray : allItemsNode)
 	{
 		DBInstanceIPArray itemsObject;
-		if(!valueItemsDBInstanceIPArray["DBInstanceIPArrayName"].isNull())
-			itemsObject.dBInstanceIPArrayName = valueItemsDBInstanceIPArray["DBInstanceIPArrayName"].asString();
 		if(!valueItemsDBInstanceIPArray["DBInstanceIPArrayAttribute"].isNull())
 			itemsObject.dBInstanceIPArrayAttribute = valueItemsDBInstanceIPArray["DBInstanceIPArrayAttribute"].asString();
+		if(!valueItemsDBInstanceIPArray["WhitelistNetworkType"].isNull())
+			itemsObject.whitelistNetworkType = valueItemsDBInstanceIPArray["WhitelistNetworkType"].asString();
+		if(!valueItemsDBInstanceIPArray["DBInstanceIPArrayName"].isNull())
+			itemsObject.dBInstanceIPArrayName = valueItemsDBInstanceIPArray["DBInstanceIPArrayName"].asString();
 		if(!valueItemsDBInstanceIPArray["SecurityIPType"].isNull())
 			itemsObject.securityIPType = valueItemsDBInstanceIPArray["SecurityIPType"].asString();
 		if(!valueItemsDBInstanceIPArray["SecurityIPList"].isNull())
 			itemsObject.securityIPList = valueItemsDBInstanceIPArray["SecurityIPList"].asString();
-		if(!valueItemsDBInstanceIPArray["WhitelistNetworkType"].isNull())
-			itemsObject.whitelistNetworkType = valueItemsDBInstanceIPArray["WhitelistNetworkType"].asString();
 		items_.push_back(itemsObject);
 	}
 

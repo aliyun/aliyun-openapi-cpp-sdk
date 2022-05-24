@@ -62,6 +62,7 @@ namespace AlibabaCloud
 					std::string payType;
 					std::string guardDBInstanceId;
 					std::string lockMode;
+					bool deletionProtection;
 					int switchWeight;
 					int insId;
 					std::string dedicatedHostIdForSlave;

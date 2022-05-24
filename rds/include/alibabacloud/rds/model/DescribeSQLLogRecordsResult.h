@@ -40,8 +40,8 @@ namespace AlibabaCloud
 					std::string dBName;
 					long totalExecutionTimes;
 					std::string hostAddress;
-					std::string accountName;
 					std::string sQLText;
+					std::string accountName;
 				};
 
 

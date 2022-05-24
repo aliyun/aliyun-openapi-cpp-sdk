@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,578 +18,502 @@
 
 using AlibabaCloud::Rds::Model::CreateDBInstanceRequest;
 
-CreateDBInstanceRequest::CreateDBInstanceRequest() :
-	RpcServiceRequest("rds", "2014-08-15", "CreateDBInstance")
-{
-	setMethod(HttpRequest::Method::Post);
+CreateDBInstanceRequest::CreateDBInstanceRequest()
+    : RpcServiceRequest("rds", "2014-08-15", "CreateDBInstance") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-CreateDBInstanceRequest::~CreateDBInstanceRequest()
-{}
+CreateDBInstanceRequest::~CreateDBInstanceRequest() {}
 
-std::string CreateDBInstanceRequest::getDBParamGroupId()const
-{
-	return dBParamGroupId_;
+std::string CreateDBInstanceRequest::getDBParamGroupId() const {
+  return dBParamGroupId_;
 }
 
-void CreateDBInstanceRequest::setDBParamGroupId(const std::string& dBParamGroupId)
-{
-	dBParamGroupId_ = dBParamGroupId;
-	setParameter("DBParamGroupId", dBParamGroupId);
+void CreateDBInstanceRequest::setDBParamGroupId(const std::string &dBParamGroupId) {
+  dBParamGroupId_ = dBParamGroupId;
+  setParameter(std::string("DBParamGroupId"), dBParamGroupId);
 }
 
-long CreateDBInstanceRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+std::string CreateDBInstanceRequest::getBabelfishConfig() const {
+  return babelfishConfig_;
 }
 
-void CreateDBInstanceRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void CreateDBInstanceRequest::setBabelfishConfig(const std::string &babelfishConfig) {
+  babelfishConfig_ = babelfishConfig;
+  setParameter(std::string("BabelfishConfig"), babelfishConfig);
 }
 
-int CreateDBInstanceRequest::getDBInstanceStorage()const
-{
-	return dBInstanceStorage_;
+long CreateDBInstanceRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void CreateDBInstanceRequest::setDBInstanceStorage(int dBInstanceStorage)
-{
-	dBInstanceStorage_ = dBInstanceStorage;
-	setParameter("DBInstanceStorage", std::to_string(dBInstanceStorage));
+void CreateDBInstanceRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string CreateDBInstanceRequest::getSystemDBCharset()const
-{
-	return systemDBCharset_;
+int CreateDBInstanceRequest::getDBInstanceStorage() const {
+  return dBInstanceStorage_;
 }
 
-void CreateDBInstanceRequest::setSystemDBCharset(const std::string& systemDBCharset)
-{
-	systemDBCharset_ = systemDBCharset;
-	setParameter("SystemDBCharset", systemDBCharset);
+void CreateDBInstanceRequest::setDBInstanceStorage(int dBInstanceStorage) {
+  dBInstanceStorage_ = dBInstanceStorage;
+  setParameter(std::string("DBInstanceStorage"), std::to_string(dBInstanceStorage));
 }
 
-std::string CreateDBInstanceRequest::getEngineVersion()const
-{
-	return engineVersion_;
+std::string CreateDBInstanceRequest::getSystemDBCharset() const {
+  return systemDBCharset_;
 }
 
-void CreateDBInstanceRequest::setEngineVersion(const std::string& engineVersion)
-{
-	engineVersion_ = engineVersion;
-	setParameter("EngineVersion", engineVersion);
+void CreateDBInstanceRequest::setSystemDBCharset(const std::string &systemDBCharset) {
+  systemDBCharset_ = systemDBCharset;
+  setParameter(std::string("SystemDBCharset"), systemDBCharset);
 }
 
-std::string CreateDBInstanceRequest::getResourceGroupId()const
-{
-	return resourceGroupId_;
+std::string CreateDBInstanceRequest::getEngineVersion() const {
+  return engineVersion_;
 }
 
-void CreateDBInstanceRequest::setResourceGroupId(const std::string& resourceGroupId)
-{
-	resourceGroupId_ = resourceGroupId;
-	setParameter("ResourceGroupId", resourceGroupId);
+void CreateDBInstanceRequest::setEngineVersion(const std::string &engineVersion) {
+  engineVersion_ = engineVersion;
+  setParameter(std::string("EngineVersion"), engineVersion);
 }
 
-std::string CreateDBInstanceRequest::getTargetDedicatedHostIdForMaster()const
-{
-	return targetDedicatedHostIdForMaster_;
+bool CreateDBInstanceRequest::getDeletionProtection() const {
+  return deletionProtection_;
 }
 
-void CreateDBInstanceRequest::setTargetDedicatedHostIdForMaster(const std::string& targetDedicatedHostIdForMaster)
-{
-	targetDedicatedHostIdForMaster_ = targetDedicatedHostIdForMaster;
-	setParameter("TargetDedicatedHostIdForMaster", targetDedicatedHostIdForMaster);
+void CreateDBInstanceRequest::setDeletionProtection(bool deletionProtection) {
+  deletionProtection_ = deletionProtection;
+  setParameter(std::string("DeletionProtection"), deletionProtection ? "true" : "false");
 }
 
-std::string CreateDBInstanceRequest::getDBInstanceDescription()const
-{
-	return dBInstanceDescription_;
+std::string CreateDBInstanceRequest::getResourceGroupId() const {
+  return resourceGroupId_;
 }
 
-void CreateDBInstanceRequest::setDBInstanceDescription(const std::string& dBInstanceDescription)
-{
-	dBInstanceDescription_ = dBInstanceDescription;
-	setParameter("DBInstanceDescription", dBInstanceDescription);
+void CreateDBInstanceRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
-std::vector<CreateDBInstanceRequest::Tag> CreateDBInstanceRequest::getTag()const
-{
-	return tag_;
+std::string CreateDBInstanceRequest::getTargetDedicatedHostIdForMaster() const {
+  return targetDedicatedHostIdForMaster_;
 }
 
-void CreateDBInstanceRequest::setTag(const std::vector<Tag>& tag)
-{
-	tag_ = tag;
-	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
-		auto tagObj = tag.at(dep1);
-		std::string tagObjStr = "Tag." + std::to_string(dep1 + 1);
-		setParameter(tagObjStr + ".Value", tagObj.value);
-		setParameter(tagObjStr + ".Key", tagObj.key);
-	}
+void CreateDBInstanceRequest::setTargetDedicatedHostIdForMaster(const std::string &targetDedicatedHostIdForMaster) {
+  targetDedicatedHostIdForMaster_ = targetDedicatedHostIdForMaster;
+  setParameter(std::string("TargetDedicatedHostIdForMaster"), targetDedicatedHostIdForMaster);
 }
 
-std::string CreateDBInstanceRequest::getBusinessInfo()const
-{
-	return businessInfo_;
+std::string CreateDBInstanceRequest::getDBInstanceDescription() const {
+  return dBInstanceDescription_;
 }
 
-void CreateDBInstanceRequest::setBusinessInfo(const std::string& businessInfo)
-{
-	businessInfo_ = businessInfo;
-	setParameter("BusinessInfo", businessInfo);
+void CreateDBInstanceRequest::setDBInstanceDescription(const std::string &dBInstanceDescription) {
+  dBInstanceDescription_ = dBInstanceDescription;
+  setParameter(std::string("DBInstanceDescription"), dBInstanceDescription);
 }
 
-std::string CreateDBInstanceRequest::getPeriod()const
-{
-	return period_;
+std::vector<CreateDBInstanceRequest::Tag> CreateDBInstanceRequest::getTag() const {
+  return tag_;
 }
 
-void CreateDBInstanceRequest::setPeriod(const std::string& period)
-{
-	period_ = period;
-	setParameter("Period", period);
+void CreateDBInstanceRequest::setTag(const std::vector<CreateDBInstanceRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setParameter(tagObjStr + ".Value", tagObj.value);
+    setParameter(tagObjStr + ".Key", tagObj.key);
+  }
 }
 
-bool CreateDBInstanceRequest::getDryRun()const
-{
-	return dryRun_;
+std::string CreateDBInstanceRequest::getBusinessInfo() const {
+  return businessInfo_;
 }
 
-void CreateDBInstanceRequest::setDryRun(bool dryRun)
-{
-	dryRun_ = dryRun;
-	setParameter("DryRun", dryRun ? "true" : "false");
+void CreateDBInstanceRequest::setBusinessInfo(const std::string &businessInfo) {
+  businessInfo_ = businessInfo;
+  setParameter(std::string("BusinessInfo"), businessInfo);
 }
 
-std::string CreateDBInstanceRequest::getBackupId()const
-{
-	return backupId_;
+std::string CreateDBInstanceRequest::getPeriod() const {
+  return period_;
 }
 
-void CreateDBInstanceRequest::setBackupId(const std::string& backupId)
-{
-	backupId_ = backupId;
-	setParameter("BackupId", backupId);
+void CreateDBInstanceRequest::setPeriod(const std::string &period) {
+  period_ = period;
+  setParameter(std::string("Period"), period);
 }
 
-std::string CreateDBInstanceRequest::getEncryptionKey()const
-{
-	return encryptionKey_;
+bool CreateDBInstanceRequest::getDryRun() const {
+  return dryRun_;
 }
 
-void CreateDBInstanceRequest::setEncryptionKey(const std::string& encryptionKey)
-{
-	encryptionKey_ = encryptionKey;
-	setParameter("EncryptionKey", encryptionKey);
+void CreateDBInstanceRequest::setDryRun(bool dryRun) {
+  dryRun_ = dryRun;
+  setParameter(std::string("DryRun"), dryRun ? "true" : "false");
 }
 
-long CreateDBInstanceRequest::getOwnerId()const
-{
-	return ownerId_;
+std::string CreateDBInstanceRequest::getBackupId() const {
+  return backupId_;
 }
 
-void CreateDBInstanceRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void CreateDBInstanceRequest::setBackupId(const std::string &backupId) {
+  backupId_ = backupId;
+  setParameter(std::string("BackupId"), backupId);
 }
 
-std::string CreateDBInstanceRequest::getDBInstanceClass()const
-{
-	return dBInstanceClass_;
+std::string CreateDBInstanceRequest::getEncryptionKey() const {
+  return encryptionKey_;
 }
 
-void CreateDBInstanceRequest::setDBInstanceClass(const std::string& dBInstanceClass)
-{
-	dBInstanceClass_ = dBInstanceClass;
-	setParameter("DBInstanceClass", dBInstanceClass);
+void CreateDBInstanceRequest::setEncryptionKey(const std::string &encryptionKey) {
+  encryptionKey_ = encryptionKey;
+  setParameter(std::string("EncryptionKey"), encryptionKey);
 }
 
-std::string CreateDBInstanceRequest::getSecurityIPList()const
-{
-	return securityIPList_;
+long CreateDBInstanceRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void CreateDBInstanceRequest::setSecurityIPList(const std::string& securityIPList)
-{
-	securityIPList_ = securityIPList;
-	setParameter("SecurityIPList", securityIPList);
+void CreateDBInstanceRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string CreateDBInstanceRequest::getVSwitchId()const
-{
-	return vSwitchId_;
+std::string CreateDBInstanceRequest::getDBInstanceClass() const {
+  return dBInstanceClass_;
 }
 
-void CreateDBInstanceRequest::setVSwitchId(const std::string& vSwitchId)
-{
-	vSwitchId_ = vSwitchId;
-	setParameter("VSwitchId", vSwitchId);
+void CreateDBInstanceRequest::setDBInstanceClass(const std::string &dBInstanceClass) {
+  dBInstanceClass_ = dBInstanceClass;
+  setParameter(std::string("DBInstanceClass"), dBInstanceClass);
 }
 
-std::string CreateDBInstanceRequest::getPrivateIpAddress()const
-{
-	return privateIpAddress_;
+std::string CreateDBInstanceRequest::getSecurityIPList() const {
+  return securityIPList_;
 }
 
-void CreateDBInstanceRequest::setPrivateIpAddress(const std::string& privateIpAddress)
-{
-	privateIpAddress_ = privateIpAddress;
-	setParameter("PrivateIpAddress", privateIpAddress);
+void CreateDBInstanceRequest::setSecurityIPList(const std::string &securityIPList) {
+  securityIPList_ = securityIPList;
+  setParameter(std::string("SecurityIPList"), securityIPList);
 }
 
-std::string CreateDBInstanceRequest::getTargetDedicatedHostIdForLog()const
-{
-	return targetDedicatedHostIdForLog_;
+std::string CreateDBInstanceRequest::getVSwitchId() const {
+  return vSwitchId_;
 }
 
-void CreateDBInstanceRequest::setTargetDedicatedHostIdForLog(const std::string& targetDedicatedHostIdForLog)
-{
-	targetDedicatedHostIdForLog_ = targetDedicatedHostIdForLog;
-	setParameter("TargetDedicatedHostIdForLog", targetDedicatedHostIdForLog);
+void CreateDBInstanceRequest::setVSwitchId(const std::string &vSwitchId) {
+  vSwitchId_ = vSwitchId;
+  setParameter(std::string("VSwitchId"), vSwitchId);
 }
 
-std::string CreateDBInstanceRequest::getAutoRenew()const
-{
-	return autoRenew_;
+std::string CreateDBInstanceRequest::getPrivateIpAddress() const {
+  return privateIpAddress_;
 }
 
-void CreateDBInstanceRequest::setAutoRenew(const std::string& autoRenew)
-{
-	autoRenew_ = autoRenew;
-	setParameter("AutoRenew", autoRenew);
+void CreateDBInstanceRequest::setPrivateIpAddress(const std::string &privateIpAddress) {
+  privateIpAddress_ = privateIpAddress;
+  setParameter(std::string("PrivateIpAddress"), privateIpAddress);
 }
 
-std::string CreateDBInstanceRequest::getRoleARN()const
-{
-	return roleARN_;
+std::string CreateDBInstanceRequest::getTargetDedicatedHostIdForLog() const {
+  return targetDedicatedHostIdForLog_;
 }
 
-void CreateDBInstanceRequest::setRoleARN(const std::string& roleARN)
-{
-	roleARN_ = roleARN;
-	setParameter("RoleARN", roleARN);
+void CreateDBInstanceRequest::setTargetDedicatedHostIdForLog(const std::string &targetDedicatedHostIdForLog) {
+  targetDedicatedHostIdForLog_ = targetDedicatedHostIdForLog;
+  setParameter(std::string("TargetDedicatedHostIdForLog"), targetDedicatedHostIdForLog);
 }
 
-std::string CreateDBInstanceRequest::getTunnelId()const
-{
-	return tunnelId_;
+std::string CreateDBInstanceRequest::getAutoRenew() const {
+  return autoRenew_;
 }
 
-void CreateDBInstanceRequest::setTunnelId(const std::string& tunnelId)
-{
-	tunnelId_ = tunnelId;
-	setParameter("TunnelId", tunnelId);
+void CreateDBInstanceRequest::setAutoRenew(const std::string &autoRenew) {
+  autoRenew_ = autoRenew;
+  setParameter(std::string("AutoRenew"), autoRenew);
 }
 
-std::string CreateDBInstanceRequest::getZoneId()const
-{
-	return zoneId_;
+std::string CreateDBInstanceRequest::getRoleARN() const {
+  return roleARN_;
 }
 
-void CreateDBInstanceRequest::setZoneId(const std::string& zoneId)
-{
-	zoneId_ = zoneId;
-	setParameter("ZoneId", zoneId);
+void CreateDBInstanceRequest::setRoleARN(const std::string &roleARN) {
+  roleARN_ = roleARN;
+  setParameter(std::string("RoleARN"), roleARN);
 }
 
-std::string CreateDBInstanceRequest::getStorageAutoScale()const
-{
-	return storageAutoScale_;
+std::string CreateDBInstanceRequest::getTunnelId() const {
+  return tunnelId_;
 }
 
-void CreateDBInstanceRequest::setStorageAutoScale(const std::string& storageAutoScale)
-{
-	storageAutoScale_ = storageAutoScale;
-	setParameter("StorageAutoScale", storageAutoScale);
+void CreateDBInstanceRequest::setTunnelId(const std::string &tunnelId) {
+  tunnelId_ = tunnelId;
+  setParameter(std::string("TunnelId"), tunnelId);
 }
 
-std::string CreateDBInstanceRequest::getInstanceNetworkType()const
-{
-	return instanceNetworkType_;
+std::string CreateDBInstanceRequest::getZoneId() const {
+  return zoneId_;
 }
 
-void CreateDBInstanceRequest::setInstanceNetworkType(const std::string& instanceNetworkType)
-{
-	instanceNetworkType_ = instanceNetworkType;
-	setParameter("InstanceNetworkType", instanceNetworkType);
+void CreateDBInstanceRequest::setZoneId(const std::string &zoneId) {
+  zoneId_ = zoneId;
+  setParameter(std::string("ZoneId"), zoneId);
 }
 
-std::string CreateDBInstanceRequest::getConnectionMode()const
-{
-	return connectionMode_;
+std::string CreateDBInstanceRequest::getStorageAutoScale() const {
+  return storageAutoScale_;
 }
 
-void CreateDBInstanceRequest::setConnectionMode(const std::string& connectionMode)
-{
-	connectionMode_ = connectionMode;
-	setParameter("ConnectionMode", connectionMode);
+void CreateDBInstanceRequest::setStorageAutoScale(const std::string &storageAutoScale) {
+  storageAutoScale_ = storageAutoScale;
+  setParameter(std::string("StorageAutoScale"), storageAutoScale);
 }
 
-std::string CreateDBInstanceRequest::getClientToken()const
-{
-	return clientToken_;
+std::string CreateDBInstanceRequest::getInstanceNetworkType() const {
+  return instanceNetworkType_;
 }
 
-void CreateDBInstanceRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+void CreateDBInstanceRequest::setInstanceNetworkType(const std::string &instanceNetworkType) {
+  instanceNetworkType_ = instanceNetworkType;
+  setParameter(std::string("InstanceNetworkType"), instanceNetworkType);
 }
 
-std::string CreateDBInstanceRequest::getTargetDedicatedHostIdForSlave()const
-{
-	return targetDedicatedHostIdForSlave_;
+std::string CreateDBInstanceRequest::getConnectionMode() const {
+  return connectionMode_;
 }
 
-void CreateDBInstanceRequest::setTargetDedicatedHostIdForSlave(const std::string& targetDedicatedHostIdForSlave)
-{
-	targetDedicatedHostIdForSlave_ = targetDedicatedHostIdForSlave;
-	setParameter("TargetDedicatedHostIdForSlave", targetDedicatedHostIdForSlave);
+void CreateDBInstanceRequest::setConnectionMode(const std::string &connectionMode) {
+  connectionMode_ = connectionMode;
+  setParameter(std::string("ConnectionMode"), connectionMode);
 }
 
-std::string CreateDBInstanceRequest::getZoneIdSlave1()const
-{
-	return zoneIdSlave1_;
+std::string CreateDBInstanceRequest::getClientToken() const {
+  return clientToken_;
 }
 
-void CreateDBInstanceRequest::setZoneIdSlave1(const std::string& zoneIdSlave1)
-{
-	zoneIdSlave1_ = zoneIdSlave1;
-	setParameter("ZoneIdSlave1", zoneIdSlave1);
+void CreateDBInstanceRequest::setClientToken(const std::string &clientToken) {
+  clientToken_ = clientToken;
+  setParameter(std::string("ClientToken"), clientToken);
 }
 
-std::string CreateDBInstanceRequest::getZoneIdSlave2()const
-{
-	return zoneIdSlave2_;
+std::string CreateDBInstanceRequest::getTargetDedicatedHostIdForSlave() const {
+  return targetDedicatedHostIdForSlave_;
 }
 
-void CreateDBInstanceRequest::setZoneIdSlave2(const std::string& zoneIdSlave2)
-{
-	zoneIdSlave2_ = zoneIdSlave2;
-	setParameter("ZoneIdSlave2", zoneIdSlave2);
+void CreateDBInstanceRequest::setTargetDedicatedHostIdForSlave(const std::string &targetDedicatedHostIdForSlave) {
+  targetDedicatedHostIdForSlave_ = targetDedicatedHostIdForSlave;
+  setParameter(std::string("TargetDedicatedHostIdForSlave"), targetDedicatedHostIdForSlave);
 }
 
-std::string CreateDBInstanceRequest::getDBIsIgnoreCase()const
-{
-	return dBIsIgnoreCase_;
+std::string CreateDBInstanceRequest::getZoneIdSlave1() const {
+  return zoneIdSlave1_;
 }
 
-void CreateDBInstanceRequest::setDBIsIgnoreCase(const std::string& dBIsIgnoreCase)
-{
-	dBIsIgnoreCase_ = dBIsIgnoreCase;
-	setParameter("DBIsIgnoreCase", dBIsIgnoreCase);
+void CreateDBInstanceRequest::setZoneIdSlave1(const std::string &zoneIdSlave1) {
+  zoneIdSlave1_ = zoneIdSlave1;
+  setParameter(std::string("ZoneIdSlave1"), zoneIdSlave1);
 }
 
-std::string CreateDBInstanceRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string CreateDBInstanceRequest::getZoneIdSlave2() const {
+  return zoneIdSlave2_;
 }
 
-void CreateDBInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void CreateDBInstanceRequest::setZoneIdSlave2(const std::string &zoneIdSlave2) {
+  zoneIdSlave2_ = zoneIdSlave2;
+  setParameter(std::string("ZoneIdSlave2"), zoneIdSlave2);
 }
 
-std::string CreateDBInstanceRequest::getRegionId()const
-{
-	return regionId_;
+std::string CreateDBInstanceRequest::getDBIsIgnoreCase() const {
+  return dBIsIgnoreCase_;
 }
 
-void CreateDBInstanceRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void CreateDBInstanceRequest::setDBIsIgnoreCase(const std::string &dBIsIgnoreCase) {
+  dBIsIgnoreCase_ = dBIsIgnoreCase;
+  setParameter(std::string("DBIsIgnoreCase"), dBIsIgnoreCase);
 }
 
-std::string CreateDBInstanceRequest::getEngine()const
-{
-	return engine_;
+std::string CreateDBInstanceRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void CreateDBInstanceRequest::setEngine(const std::string& engine)
-{
-	engine_ = engine;
-	setParameter("Engine", engine);
+void CreateDBInstanceRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string CreateDBInstanceRequest::getDBTimeZone()const
-{
-	return dBTimeZone_;
+std::string CreateDBInstanceRequest::getRegionId() const {
+  return regionId_;
 }
 
-void CreateDBInstanceRequest::setDBTimeZone(const std::string& dBTimeZone)
-{
-	dBTimeZone_ = dBTimeZone;
-	setParameter("DBTimeZone", dBTimeZone);
+void CreateDBInstanceRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
-std::string CreateDBInstanceRequest::getDBInstanceStorageType()const
-{
-	return dBInstanceStorageType_;
+std::string CreateDBInstanceRequest::getEngine() const {
+  return engine_;
 }
 
-void CreateDBInstanceRequest::setDBInstanceStorageType(const std::string& dBInstanceStorageType)
-{
-	dBInstanceStorageType_ = dBInstanceStorageType;
-	setParameter("DBInstanceStorageType", dBInstanceStorageType);
+void CreateDBInstanceRequest::setEngine(const std::string &engine) {
+  engine_ = engine;
+  setParameter(std::string("Engine"), engine);
 }
 
-std::string CreateDBInstanceRequest::getDedicatedHostGroupId()const
-{
-	return dedicatedHostGroupId_;
+std::string CreateDBInstanceRequest::getDBTimeZone() const {
+  return dBTimeZone_;
 }
 
-void CreateDBInstanceRequest::setDedicatedHostGroupId(const std::string& dedicatedHostGroupId)
-{
-	dedicatedHostGroupId_ = dedicatedHostGroupId;
-	setParameter("DedicatedHostGroupId", dedicatedHostGroupId);
+void CreateDBInstanceRequest::setDBTimeZone(const std::string &dBTimeZone) {
+  dBTimeZone_ = dBTimeZone;
+  setParameter(std::string("DBTimeZone"), dBTimeZone);
 }
 
-std::string CreateDBInstanceRequest::getCreateStrategy()const
-{
-	return createStrategy_;
+std::string CreateDBInstanceRequest::getDBInstanceStorageType() const {
+  return dBInstanceStorageType_;
 }
 
-void CreateDBInstanceRequest::setCreateStrategy(const std::string& createStrategy)
-{
-	createStrategy_ = createStrategy;
-	setParameter("CreateStrategy", createStrategy);
+void CreateDBInstanceRequest::setDBInstanceStorageType(const std::string &dBInstanceStorageType) {
+  dBInstanceStorageType_ = dBInstanceStorageType;
+  setParameter(std::string("DBInstanceStorageType"), dBInstanceStorageType);
 }
 
-std::string CreateDBInstanceRequest::getDBInstanceNetType()const
-{
-	return dBInstanceNetType_;
+std::string CreateDBInstanceRequest::getDedicatedHostGroupId() const {
+  return dedicatedHostGroupId_;
 }
 
-void CreateDBInstanceRequest::setDBInstanceNetType(const std::string& dBInstanceNetType)
-{
-	dBInstanceNetType_ = dBInstanceNetType;
-	setParameter("DBInstanceNetType", dBInstanceNetType);
+void CreateDBInstanceRequest::setDedicatedHostGroupId(const std::string &dedicatedHostGroupId) {
+  dedicatedHostGroupId_ = dedicatedHostGroupId;
+  setParameter(std::string("DedicatedHostGroupId"), dedicatedHostGroupId);
 }
 
-int CreateDBInstanceRequest::getAmount()const
-{
-	return amount_;
+std::string CreateDBInstanceRequest::getCreateStrategy() const {
+  return createStrategy_;
 }
 
-void CreateDBInstanceRequest::setAmount(int amount)
-{
-	amount_ = amount;
-	setParameter("Amount", std::to_string(amount));
+void CreateDBInstanceRequest::setCreateStrategy(const std::string &createStrategy) {
+  createStrategy_ = createStrategy;
+  setParameter(std::string("CreateStrategy"), createStrategy);
 }
 
-std::string CreateDBInstanceRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string CreateDBInstanceRequest::getDBInstanceNetType() const {
+  return dBInstanceNetType_;
 }
 
-void CreateDBInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void CreateDBInstanceRequest::setDBInstanceNetType(const std::string &dBInstanceNetType) {
+  dBInstanceNetType_ = dBInstanceNetType;
+  setParameter(std::string("DBInstanceNetType"), dBInstanceNetType);
 }
 
-std::string CreateDBInstanceRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+int CreateDBInstanceRequest::getAmount() const {
+  return amount_;
 }
 
-void CreateDBInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void CreateDBInstanceRequest::setAmount(int amount) {
+  amount_ = amount;
+  setParameter(std::string("Amount"), std::to_string(amount));
 }
 
-std::string CreateDBInstanceRequest::getUsedTime()const
-{
-	return usedTime_;
+CreateDBInstanceRequest::ServerlessConfig CreateDBInstanceRequest::getServerlessConfig() const {
+  return serverlessConfig_;
 }
 
-void CreateDBInstanceRequest::setUsedTime(const std::string& usedTime)
-{
-	usedTime_ = usedTime;
-	setParameter("UsedTime", usedTime);
+void CreateDBInstanceRequest::setServerlessConfig(const CreateDBInstanceRequest::ServerlessConfig &serverlessConfig) {
+  serverlessConfig_ = serverlessConfig;
+  setParameter(std::string("ServerlessConfig") + ".MinCapacity", std::to_string(serverlessConfig.minCapacity));
+  setParameter(std::string("ServerlessConfig") + ".MaxCapacity", std::to_string(serverlessConfig.maxCapacity));
 }
 
-std::string CreateDBInstanceRequest::getTargetMinorVersion()const
-{
-	return targetMinorVersion_;
+std::string CreateDBInstanceRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void CreateDBInstanceRequest::setTargetMinorVersion(const std::string& targetMinorVersion)
-{
-	targetMinorVersion_ = targetMinorVersion;
-	setParameter("TargetMinorVersion", targetMinorVersion);
+void CreateDBInstanceRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string CreateDBInstanceRequest::getUserBackupId()const
-{
-	return userBackupId_;
+std::string CreateDBInstanceRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void CreateDBInstanceRequest::setUserBackupId(const std::string& userBackupId)
-{
-	userBackupId_ = userBackupId;
-	setParameter("UserBackupId", userBackupId);
+void CreateDBInstanceRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-int CreateDBInstanceRequest::getStorageUpperBound()const
-{
-	return storageUpperBound_;
+std::string CreateDBInstanceRequest::getUsedTime() const {
+  return usedTime_;
 }
 
-void CreateDBInstanceRequest::setStorageUpperBound(int storageUpperBound)
-{
-	storageUpperBound_ = storageUpperBound;
-	setParameter("StorageUpperBound", std::to_string(storageUpperBound));
+void CreateDBInstanceRequest::setUsedTime(const std::string &usedTime) {
+  usedTime_ = usedTime;
+  setParameter(std::string("UsedTime"), usedTime);
 }
 
-int CreateDBInstanceRequest::getStorageThreshold()const
-{
-	return storageThreshold_;
+std::string CreateDBInstanceRequest::getTargetMinorVersion() const {
+  return targetMinorVersion_;
 }
 
-void CreateDBInstanceRequest::setStorageThreshold(int storageThreshold)
-{
-	storageThreshold_ = storageThreshold;
-	setParameter("StorageThreshold", std::to_string(storageThreshold));
+void CreateDBInstanceRequest::setTargetMinorVersion(const std::string &targetMinorVersion) {
+  targetMinorVersion_ = targetMinorVersion;
+  setParameter(std::string("TargetMinorVersion"), targetMinorVersion);
 }
 
-std::string CreateDBInstanceRequest::getVPCId()const
-{
-	return vPCId_;
+std::string CreateDBInstanceRequest::getUserBackupId() const {
+  return userBackupId_;
 }
 
-void CreateDBInstanceRequest::setVPCId(const std::string& vPCId)
-{
-	vPCId_ = vPCId;
-	setParameter("VPCId", vPCId);
+void CreateDBInstanceRequest::setUserBackupId(const std::string &userBackupId) {
+  userBackupId_ = userBackupId;
+  setParameter(std::string("UserBackupId"), userBackupId);
 }
 
-std::string CreateDBInstanceRequest::getCategory()const
-{
-	return category_;
+int CreateDBInstanceRequest::getStorageUpperBound() const {
+  return storageUpperBound_;
 }
 
-void CreateDBInstanceRequest::setCategory(const std::string& category)
-{
-	category_ = category;
-	setParameter("Category", category);
+void CreateDBInstanceRequest::setStorageUpperBound(int storageUpperBound) {
+  storageUpperBound_ = storageUpperBound;
+  setParameter(std::string("StorageUpperBound"), std::to_string(storageUpperBound));
 }
 
-std::string CreateDBInstanceRequest::getPayType()const
-{
-	return payType_;
+int CreateDBInstanceRequest::getStorageThreshold() const {
+  return storageThreshold_;
 }
 
-void CreateDBInstanceRequest::setPayType(const std::string& payType)
-{
-	payType_ = payType;
-	setParameter("PayType", payType);
+void CreateDBInstanceRequest::setStorageThreshold(int storageThreshold) {
+  storageThreshold_ = storageThreshold;
+  setParameter(std::string("StorageThreshold"), std::to_string(storageThreshold));
+}
+
+std::string CreateDBInstanceRequest::getVPCId() const {
+  return vPCId_;
+}
+
+void CreateDBInstanceRequest::setVPCId(const std::string &vPCId) {
+  vPCId_ = vPCId;
+  setParameter(std::string("VPCId"), vPCId);
+}
+
+std::string CreateDBInstanceRequest::getCategory() const {
+  return category_;
+}
+
+void CreateDBInstanceRequest::setCategory(const std::string &category) {
+  category_ = category;
+  setParameter(std::string("Category"), category);
+}
+
+std::string CreateDBInstanceRequest::getPayType() const {
+  return payType_;
+}
+
+void CreateDBInstanceRequest::setPayType(const std::string &payType) {
+  payType_ = payType;
+  setParameter(std::string("PayType"), payType);
 }
 

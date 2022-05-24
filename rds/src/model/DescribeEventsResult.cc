@@ -43,38 +43,38 @@ void DescribeEventsResult::parse(const std::string &payload)
 	for (auto valueEventItemsEventItemsItem : allEventItemsNode)
 	{
 		EventItemsItem eventItemsObject;
-		if(!valueEventItemsEventItemsItem["EventId"].isNull())
-			eventItemsObject.eventId = std::stoi(valueEventItemsEventItemsItem["EventId"].asString());
-		if(!valueEventItemsEventItemsItem["EventType"].isNull())
-			eventItemsObject.eventType = valueEventItemsEventItemsItem["EventType"].asString();
 		if(!valueEventItemsEventItemsItem["EventName"].isNull())
 			eventItemsObject.eventName = valueEventItemsEventItemsItem["EventName"].asString();
 		if(!valueEventItemsEventItemsItem["EventTime"].isNull())
 			eventItemsObject.eventTime = valueEventItemsEventItemsItem["EventTime"].asString();
-		if(!valueEventItemsEventItemsItem["ResourceType"].isNull())
-			eventItemsObject.resourceType = valueEventItemsEventItemsItem["ResourceType"].asString();
-		if(!valueEventItemsEventItemsItem["ResourceName"].isNull())
-			eventItemsObject.resourceName = valueEventItemsEventItemsItem["ResourceName"].asString();
-		if(!valueEventItemsEventItemsItem["RegionId"].isNull())
-			eventItemsObject.regionId = valueEventItemsEventItemsItem["RegionId"].asString();
 		if(!valueEventItemsEventItemsItem["EventUserType"].isNull())
 			eventItemsObject.eventUserType = valueEventItemsEventItemsItem["EventUserType"].asString();
-		if(!valueEventItemsEventItemsItem["EventReason"].isNull())
-			eventItemsObject.eventReason = valueEventItemsEventItemsItem["EventReason"].asString();
-		if(!valueEventItemsEventItemsItem["EventPayload"].isNull())
-			eventItemsObject.eventPayload = valueEventItemsEventItemsItem["EventPayload"].asString();
 		if(!valueEventItemsEventItemsItem["EventRecordTime"].isNull())
 			eventItemsObject.eventRecordTime = valueEventItemsEventItemsItem["EventRecordTime"].asString();
 		if(!valueEventItemsEventItemsItem["CallerUid"].isNull())
 			eventItemsObject.callerUid = std::stol(valueEventItemsEventItemsItem["CallerUid"].asString());
+		if(!valueEventItemsEventItemsItem["RegionId"].isNull())
+			eventItemsObject.regionId = valueEventItemsEventItemsItem["RegionId"].asString();
+		if(!valueEventItemsEventItemsItem["EventId"].isNull())
+			eventItemsObject.eventId = std::stoi(valueEventItemsEventItemsItem["EventId"].asString());
+		if(!valueEventItemsEventItemsItem["EventType"].isNull())
+			eventItemsObject.eventType = valueEventItemsEventItemsItem["EventType"].asString();
+		if(!valueEventItemsEventItemsItem["ResourceType"].isNull())
+			eventItemsObject.resourceType = valueEventItemsEventItemsItem["ResourceType"].asString();
+		if(!valueEventItemsEventItemsItem["EventPayload"].isNull())
+			eventItemsObject.eventPayload = valueEventItemsEventItemsItem["EventPayload"].asString();
+		if(!valueEventItemsEventItemsItem["EventReason"].isNull())
+			eventItemsObject.eventReason = valueEventItemsEventItemsItem["EventReason"].asString();
+		if(!valueEventItemsEventItemsItem["ResourceName"].isNull())
+			eventItemsObject.resourceName = valueEventItemsEventItemsItem["ResourceName"].asString();
 		eventItems_.push_back(eventItemsObject);
 	}
-	if(!value["TotalRecordCount"].isNull())
-		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["PageNumber"].isNull())
 		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalRecordCount"].isNull())
+		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
 
 }
 

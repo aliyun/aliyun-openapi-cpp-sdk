@@ -35,9 +35,9 @@ namespace AlibabaCloud
 				struct DedicatedHostGroupsItem
 				{
 					int diskAllocationRatio;
-					std::string allocationPolicy;
 					int instanceNumber;
 					float diskUsedAmount;
+					std::string allocationPolicy;
 					std::string dedicatedHostGroupId;
 					std::string hostReplacePolicy;
 					std::string bastionInstanceId;
@@ -48,8 +48,8 @@ namespace AlibabaCloud
 					std::string engine;
 					float memUtility;
 					int memAllocationRatio;
-					std::string vPCId;
 					float cpuAllocateRation;
+					std::string vPCId;
 					std::string createTime;
 					std::string text;
 					std::vector<std::string> zoneIDList;
@@ -57,8 +57,8 @@ namespace AlibabaCloud
 					std::string dedicatedHostGroupDesc;
 					float diskUtility;
 					int cpuAllocationRatio;
-					int hostNumber;
 					float diskAllocateRation;
+					int hostNumber;
 					float cpuAllocatedAmount;
 					std::string dedicatedHostCountGroupByHostType;
 				};

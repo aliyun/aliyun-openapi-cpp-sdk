@@ -43,36 +43,36 @@ void DescribeBinlogFilesResult::parse(const std::string &payload)
 	for (auto valueItemsBinLogFile : allItemsNode)
 	{
 		BinLogFile itemsObject;
-		if(!valueItemsBinLogFile["FileSize"].isNull())
-			itemsObject.fileSize = std::stol(valueItemsBinLogFile["FileSize"].asString());
-		if(!valueItemsBinLogFile["LogBeginTime"].isNull())
-			itemsObject.logBeginTime = valueItemsBinLogFile["LogBeginTime"].asString();
-		if(!valueItemsBinLogFile["LogEndTime"].isNull())
-			itemsObject.logEndTime = valueItemsBinLogFile["LogEndTime"].asString();
-		if(!valueItemsBinLogFile["DownloadLink"].isNull())
-			itemsObject.downloadLink = valueItemsBinLogFile["DownloadLink"].asString();
-		if(!valueItemsBinLogFile["IntranetDownloadLink"].isNull())
-			itemsObject.intranetDownloadLink = valueItemsBinLogFile["IntranetDownloadLink"].asString();
-		if(!valueItemsBinLogFile["LinkExpiredTime"].isNull())
-			itemsObject.linkExpiredTime = valueItemsBinLogFile["LinkExpiredTime"].asString();
-		if(!valueItemsBinLogFile["Checksum"].isNull())
-			itemsObject.checksum = valueItemsBinLogFile["Checksum"].asString();
-		if(!valueItemsBinLogFile["HostInstanceID"].isNull())
-			itemsObject.hostInstanceID = valueItemsBinLogFile["HostInstanceID"].asString();
-		if(!valueItemsBinLogFile["LogFileName"].isNull())
-			itemsObject.logFileName = valueItemsBinLogFile["LogFileName"].asString();
 		if(!valueItemsBinLogFile["RemoteStatus"].isNull())
 			itemsObject.remoteStatus = valueItemsBinLogFile["RemoteStatus"].asString();
+		if(!valueItemsBinLogFile["IntranetDownloadLink"].isNull())
+			itemsObject.intranetDownloadLink = valueItemsBinLogFile["IntranetDownloadLink"].asString();
+		if(!valueItemsBinLogFile["LogBeginTime"].isNull())
+			itemsObject.logBeginTime = valueItemsBinLogFile["LogBeginTime"].asString();
+		if(!valueItemsBinLogFile["LinkExpiredTime"].isNull())
+			itemsObject.linkExpiredTime = valueItemsBinLogFile["LinkExpiredTime"].asString();
+		if(!valueItemsBinLogFile["DownloadLink"].isNull())
+			itemsObject.downloadLink = valueItemsBinLogFile["DownloadLink"].asString();
+		if(!valueItemsBinLogFile["LogFileName"].isNull())
+			itemsObject.logFileName = valueItemsBinLogFile["LogFileName"].asString();
+		if(!valueItemsBinLogFile["Checksum"].isNull())
+			itemsObject.checksum = valueItemsBinLogFile["Checksum"].asString();
+		if(!valueItemsBinLogFile["LogEndTime"].isNull())
+			itemsObject.logEndTime = valueItemsBinLogFile["LogEndTime"].asString();
+		if(!valueItemsBinLogFile["HostInstanceID"].isNull())
+			itemsObject.hostInstanceID = valueItemsBinLogFile["HostInstanceID"].asString();
+		if(!valueItemsBinLogFile["FileSize"].isNull())
+			itemsObject.fileSize = std::stol(valueItemsBinLogFile["FileSize"].asString());
 		items_.push_back(itemsObject);
 	}
-	if(!value["TotalRecordCount"].isNull())
-		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
+	if(!value["TotalFileSize"].isNull())
+		totalFileSize_ = std::stol(value["TotalFileSize"].asString());
 	if(!value["PageNumber"].isNull())
 		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageRecordCount"].isNull())
 		pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
-	if(!value["TotalFileSize"].isNull())
-		totalFileSize_ = std::stol(value["TotalFileSize"].asString());
+	if(!value["TotalRecordCount"].isNull())
+		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
 
 }
 

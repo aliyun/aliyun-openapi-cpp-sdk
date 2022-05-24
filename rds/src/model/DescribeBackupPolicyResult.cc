@@ -43,58 +43,58 @@ void DescribeBackupPolicyResult::parse(const std::string &payload)
 	if(!duplicationLocationNode["Sotrage"].isNull())
 		duplicationLocation_.sotrage = duplicationLocationNode["Sotrage"].asString();
 	auto locationNode = duplicationLocationNode["Location"];
-	if(!locationNode["Endpoint"].isNull())
-		duplicationLocation_.location.endpoint = locationNode["Endpoint"].asString();
 	if(!locationNode["Bucket"].isNull())
 		duplicationLocation_.location.bucket = locationNode["Bucket"].asString();
-	if(!value["BackupRetentionPeriod"].isNull())
-		backupRetentionPeriod_ = std::stoi(value["BackupRetentionPeriod"].asString());
-	if(!value["PreferredNextBackupTime"].isNull())
-		preferredNextBackupTime_ = value["PreferredNextBackupTime"].asString();
-	if(!value["PreferredBackupTime"].isNull())
-		preferredBackupTime_ = value["PreferredBackupTime"].asString();
-	if(!value["PreferredBackupPeriod"].isNull())
-		preferredBackupPeriod_ = value["PreferredBackupPeriod"].asString();
-	if(!value["BackupLog"].isNull())
-		backupLog_ = value["BackupLog"].asString();
+	if(!locationNode["Endpoint"].isNull())
+		duplicationLocation_.location.endpoint = locationNode["Endpoint"].asString();
 	if(!value["LogBackupRetentionPeriod"].isNull())
 		logBackupRetentionPeriod_ = std::stoi(value["LogBackupRetentionPeriod"].asString());
-	if(!value["EnableBackupLog"].isNull())
-		enableBackupLog_ = value["EnableBackupLog"].asString();
-	if(!value["LocalLogRetentionHours"].isNull())
-		localLogRetentionHours_ = std::stoi(value["LocalLogRetentionHours"].asString());
-	if(!value["LocalLogRetentionSpace"].isNull())
-		localLogRetentionSpace_ = value["LocalLogRetentionSpace"].asString();
-	if(!value["Duplication"].isNull())
-		duplication_ = value["Duplication"].asString();
-	if(!value["DuplicationContent"].isNull())
-		duplicationContent_ = value["DuplicationContent"].asString();
-	if(!value["HighSpaceUsageProtection"].isNull())
-		highSpaceUsageProtection_ = value["HighSpaceUsageProtection"].asString();
-	if(!value["LogBackupFrequency"].isNull())
-		logBackupFrequency_ = value["LogBackupFrequency"].asString();
-	if(!value["CompressType"].isNull())
-		compressType_ = value["CompressType"].asString();
-	if(!value["ArchiveBackupRetentionPeriod"].isNull())
-		archiveBackupRetentionPeriod_ = value["ArchiveBackupRetentionPeriod"].asString();
 	if(!value["ArchiveBackupKeepPolicy"].isNull())
 		archiveBackupKeepPolicy_ = value["ArchiveBackupKeepPolicy"].asString();
 	if(!value["ArchiveBackupKeepCount"].isNull())
 		archiveBackupKeepCount_ = value["ArchiveBackupKeepCount"].asString();
-	if(!value["ReleasedKeepPolicy"].isNull())
-		releasedKeepPolicy_ = value["ReleasedKeepPolicy"].asString();
-	if(!value["LogBackupLocalRetentionNumber"].isNull())
-		logBackupLocalRetentionNumber_ = std::stoi(value["LogBackupLocalRetentionNumber"].asString());
-	if(!value["Category"].isNull())
-		category_ = value["Category"].asString();
+	if(!value["LocalLogRetentionHours"].isNull())
+		localLogRetentionHours_ = std::stoi(value["LocalLogRetentionHours"].asString());
+	if(!value["BackupRetentionPeriod"].isNull())
+		backupRetentionPeriod_ = std::stoi(value["BackupRetentionPeriod"].asString());
+	if(!value["PreferredBackupPeriod"].isNull())
+		preferredBackupPeriod_ = value["PreferredBackupPeriod"].asString();
+	if(!value["CompressType"].isNull())
+		compressType_ = value["CompressType"].asString();
 	if(!value["SupportReleasedKeep"].isNull())
 		supportReleasedKeep_ = std::stoi(value["SupportReleasedKeep"].asString());
-	if(!value["BackupInterval"].isNull())
-		backupInterval_ = value["BackupInterval"].asString();
+	if(!value["LocalLogRetentionSpace"].isNull())
+		localLogRetentionSpace_ = value["LocalLogRetentionSpace"].asString();
 	if(!value["SupportVolumeShadowCopy"].isNull())
 		supportVolumeShadowCopy_ = std::stoi(value["SupportVolumeShadowCopy"].asString());
 	if(!value["BackupMethod"].isNull())
 		backupMethod_ = value["BackupMethod"].asString();
+	if(!value["LogBackupFrequency"].isNull())
+		logBackupFrequency_ = value["LogBackupFrequency"].asString();
+	if(!value["PreferredNextBackupTime"].isNull())
+		preferredNextBackupTime_ = value["PreferredNextBackupTime"].asString();
+	if(!value["HighSpaceUsageProtection"].isNull())
+		highSpaceUsageProtection_ = value["HighSpaceUsageProtection"].asString();
+	if(!value["DuplicationContent"].isNull())
+		duplicationContent_ = value["DuplicationContent"].asString();
+	if(!value["ArchiveBackupRetentionPeriod"].isNull())
+		archiveBackupRetentionPeriod_ = value["ArchiveBackupRetentionPeriod"].asString();
+	if(!value["BackupInterval"].isNull())
+		backupInterval_ = value["BackupInterval"].asString();
+	if(!value["ReleasedKeepPolicy"].isNull())
+		releasedKeepPolicy_ = value["ReleasedKeepPolicy"].asString();
+	if(!value["PreferredBackupTime"].isNull())
+		preferredBackupTime_ = value["PreferredBackupTime"].asString();
+	if(!value["Duplication"].isNull())
+		duplication_ = value["Duplication"].asString();
+	if(!value["LogBackupLocalRetentionNumber"].isNull())
+		logBackupLocalRetentionNumber_ = std::stoi(value["LogBackupLocalRetentionNumber"].asString());
+	if(!value["Category"].isNull())
+		category_ = value["Category"].asString();
+	if(!value["EnableBackupLog"].isNull())
+		enableBackupLog_ = value["EnableBackupLog"].asString();
+	if(!value["BackupLog"].isNull())
+		backupLog_ = value["BackupLog"].asString();
 
 }
 
@@ -123,14 +123,14 @@ std::string DescribeBackupPolicyResult::getPreferredNextBackupTime()const
 	return preferredNextBackupTime_;
 }
 
-std::string DescribeBackupPolicyResult::getPreferredBackupPeriod()const
-{
-	return preferredBackupPeriod_;
-}
-
 std::string DescribeBackupPolicyResult::getArchiveBackupKeepCount()const
 {
 	return archiveBackupKeepCount_;
+}
+
+std::string DescribeBackupPolicyResult::getPreferredBackupPeriod()const
+{
+	return preferredBackupPeriod_;
 }
 
 int DescribeBackupPolicyResult::getLogBackupRetentionPeriod()const

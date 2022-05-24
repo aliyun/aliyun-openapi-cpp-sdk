@@ -37,12 +37,10 @@ namespace AlibabaCloud
 				CopyDatabaseBetweenInstancesResult();
 				explicit CopyDatabaseBetweenInstancesResult(const std::string &payload);
 				~CopyDatabaseBetweenInstancesResult();
-				std::string getDBInstanceId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string dBInstanceId_;
 
 			};
 		}

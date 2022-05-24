@@ -43,34 +43,34 @@ void DescribeDBProxyEndpointResult::parse(const std::string &payload)
 	for (auto valueEndpointConnectItemsEndpointConnectItemsItem : allEndpointConnectItemsNode)
 	{
 		EndpointConnectItemsItem endpointConnectItemsObject;
-		if(!valueEndpointConnectItemsEndpointConnectItemsItem["DbProxyEndpointConnectString"].isNull())
-			endpointConnectItemsObject.dbProxyEndpointConnectString = valueEndpointConnectItemsEndpointConnectItemsItem["DbProxyEndpointConnectString"].asString();
 		if(!valueEndpointConnectItemsEndpointConnectItemsItem["DbProxyEndpointPort"].isNull())
 			endpointConnectItemsObject.dbProxyEndpointPort = valueEndpointConnectItemsEndpointConnectItemsItem["DbProxyEndpointPort"].asString();
+		if(!valueEndpointConnectItemsEndpointConnectItemsItem["DbProxyEndpointConnectString"].isNull())
+			endpointConnectItemsObject.dbProxyEndpointConnectString = valueEndpointConnectItemsEndpointConnectItemsItem["DbProxyEndpointConnectString"].asString();
 		if(!valueEndpointConnectItemsEndpointConnectItemsItem["DbProxyEndpointNetType"].isNull())
 			endpointConnectItemsObject.dbProxyEndpointNetType = valueEndpointConnectItemsEndpointConnectItemsItem["DbProxyEndpointNetType"].asString();
 		endpointConnectItems_.push_back(endpointConnectItemsObject);
 	}
-	if(!value["DBProxyEndpointId"].isNull())
-		dBProxyEndpointId_ = value["DBProxyEndpointId"].asString();
-	if(!value["DBProxyConnectString"].isNull())
-		dBProxyConnectString_ = value["DBProxyConnectString"].asString();
-	if(!value["DBProxyConnectStringPort"].isNull())
-		dBProxyConnectStringPort_ = value["DBProxyConnectStringPort"].asString();
 	if(!value["DBProxyConnectStringNetType"].isNull())
 		dBProxyConnectStringNetType_ = value["DBProxyConnectStringNetType"].asString();
 	if(!value["DBProxyFeatures"].isNull())
 		dBProxyFeatures_ = value["DBProxyFeatures"].asString();
-	if(!value["ReadOnlyInstanceMaxDelayTime"].isNull())
-		readOnlyInstanceMaxDelayTime_ = value["ReadOnlyInstanceMaxDelayTime"].asString();
-	if(!value["ReadOnlyInstanceDistributionType"].isNull())
-		readOnlyInstanceDistributionType_ = value["ReadOnlyInstanceDistributionType"].asString();
 	if(!value["ReadOnlyInstanceWeight"].isNull())
 		readOnlyInstanceWeight_ = value["ReadOnlyInstanceWeight"].asString();
-	if(!value["DbProxyEndpointAliases"].isNull())
-		dbProxyEndpointAliases_ = value["DbProxyEndpointAliases"].asString();
+	if(!value["ReadOnlyInstanceDistributionType"].isNull())
+		readOnlyInstanceDistributionType_ = value["ReadOnlyInstanceDistributionType"].asString();
+	if(!value["ReadOnlyInstanceMaxDelayTime"].isNull())
+		readOnlyInstanceMaxDelayTime_ = value["ReadOnlyInstanceMaxDelayTime"].asString();
 	if(!value["DbProxyEndpointReadWriteMode"].isNull())
 		dbProxyEndpointReadWriteMode_ = value["DbProxyEndpointReadWriteMode"].asString();
+	if(!value["DbProxyEndpointAliases"].isNull())
+		dbProxyEndpointAliases_ = value["DbProxyEndpointAliases"].asString();
+	if(!value["DBProxyEndpointId"].isNull())
+		dBProxyEndpointId_ = value["DBProxyEndpointId"].asString();
+	if(!value["DBProxyConnectStringPort"].isNull())
+		dBProxyConnectStringPort_ = value["DBProxyConnectStringPort"].asString();
+	if(!value["DBProxyConnectString"].isNull())
+		dBProxyConnectString_ = value["DBProxyConnectString"].asString();
 
 }
 

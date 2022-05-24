@@ -40,8 +40,8 @@ namespace AlibabaCloud
 				int getLogBackupLocalRetentionNumber()const;
 				std::string getDBInstanceID()const;
 				std::string getEnableBackupLog()const;
-				int getLocalLogRetentionHours()const;
 				std::string getLocalLogRetentionSpace()const;
+				int getLocalLogRetentionHours()const;
 				std::string getHighSpaceUsageProtection()const;
 				std::string getCompressType()const;
 
@@ -51,8 +51,8 @@ namespace AlibabaCloud
 				int logBackupLocalRetentionNumber_;
 				std::string dBInstanceID_;
 				std::string enableBackupLog_;
-				int localLogRetentionHours_;
 				std::string localLogRetentionSpace_;
+				int localLogRetentionHours_;
 				std::string highSpaceUsageProtection_;
 				std::string compressType_;
 

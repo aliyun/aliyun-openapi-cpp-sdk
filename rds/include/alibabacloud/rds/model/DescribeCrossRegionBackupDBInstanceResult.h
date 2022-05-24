@@ -41,16 +41,16 @@ namespace AlibabaCloud
 					std::string logBackupEnabledTime;
 					std::string crossBackupRegion;
 					int retentType;
-					std::string lockMode;
 					std::string relServiceId;
+					std::string lockMode;
 					int retention;
 					std::string backupEnabled;
 					std::string crossBackupType;
 					std::string dBInstanceId;
 					std::string dBInstanceStatusDesc;
 					std::string relService;
-					std::string dBInstanceDescription;
 					std::string engine;
+					std::string dBInstanceDescription;
 				};
 
 

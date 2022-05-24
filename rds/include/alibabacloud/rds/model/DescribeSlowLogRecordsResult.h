@@ -34,17 +34,17 @@ namespace AlibabaCloud
 			public:
 				struct SQLSlowRecord
 				{
+					std::string applicationName;
 					long writeIOCount;
 					std::string userName;
-					std::string applicationName;
 					std::string executionStartTime;
 					long lastRowsAffectedCount;
 					long rowsAffectedCount;
 					long parseRowCounts;
 					long physicalIORead;
 					std::string hostAddress;
-					long queryTimeMS;
 					long cpuTime;
+					long queryTimeMS;
 					long logicalIORead;
 					std::string sQLText;
 					long queryTimes;

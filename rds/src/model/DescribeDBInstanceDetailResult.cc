@@ -39,14 +39,14 @@ void DescribeDBInstanceDetailResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["DBInstanceId"].isNull())
-		dBInstanceId_ = value["DBInstanceId"].asString();
-	if(!value["RegionId"].isNull())
-		regionId_ = value["RegionId"].asString();
-	if(!value["LicenseType"].isNull())
-		licenseType_ = value["LicenseType"].asString();
 	if(!value["ActivationState"].isNull())
 		activationState_ = value["ActivationState"].asString();
+	if(!value["DBInstanceId"].isNull())
+		dBInstanceId_ = value["DBInstanceId"].asString();
+	if(!value["LicenseType"].isNull())
+		licenseType_ = value["LicenseType"].asString();
+	if(!value["RegionId"].isNull())
+		regionId_ = value["RegionId"].asString();
 
 }
 

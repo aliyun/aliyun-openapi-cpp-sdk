@@ -43,32 +43,32 @@ void DescribeMigrateTasksResult::parse(const std::string &payload)
 	for (auto valueItemsMigrateTask : allItemsNode)
 	{
 		MigrateTask itemsObject;
-		if(!valueItemsMigrateTask["DBName"].isNull())
-			itemsObject.dBName = valueItemsMigrateTask["DBName"].asString();
-		if(!valueItemsMigrateTask["MigrateTaskId"].isNull())
-			itemsObject.migrateTaskId = valueItemsMigrateTask["MigrateTaskId"].asString();
-		if(!valueItemsMigrateTask["CreateTime"].isNull())
-			itemsObject.createTime = valueItemsMigrateTask["CreateTime"].asString();
 		if(!valueItemsMigrateTask["EndTime"].isNull())
 			itemsObject.endTime = valueItemsMigrateTask["EndTime"].asString();
-		if(!valueItemsMigrateTask["BackupMode"].isNull())
-			itemsObject.backupMode = valueItemsMigrateTask["BackupMode"].asString();
 		if(!valueItemsMigrateTask["Status"].isNull())
 			itemsObject.status = valueItemsMigrateTask["Status"].asString();
-		if(!valueItemsMigrateTask["IsDBReplaced"].isNull())
-			itemsObject.isDBReplaced = valueItemsMigrateTask["IsDBReplaced"].asString();
 		if(!valueItemsMigrateTask["Description"].isNull())
 			itemsObject.description = valueItemsMigrateTask["Description"].asString();
+		if(!valueItemsMigrateTask["CreateTime"].isNull())
+			itemsObject.createTime = valueItemsMigrateTask["CreateTime"].asString();
+		if(!valueItemsMigrateTask["DBName"].isNull())
+			itemsObject.dBName = valueItemsMigrateTask["DBName"].asString();
+		if(!valueItemsMigrateTask["BackupMode"].isNull())
+			itemsObject.backupMode = valueItemsMigrateTask["BackupMode"].asString();
+		if(!valueItemsMigrateTask["MigrateTaskId"].isNull())
+			itemsObject.migrateTaskId = valueItemsMigrateTask["MigrateTaskId"].asString();
+		if(!valueItemsMigrateTask["IsDBReplaced"].isNull())
+			itemsObject.isDBReplaced = valueItemsMigrateTask["IsDBReplaced"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["DBInstanceId"].isNull())
 		dBInstanceId_ = value["DBInstanceId"].asString();
-	if(!value["TotalRecordCount"].isNull())
-		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
 	if(!value["PageNumber"].isNull())
 		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageRecordCount"].isNull())
 		pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
+	if(!value["TotalRecordCount"].isNull())
+		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
 
 }
 

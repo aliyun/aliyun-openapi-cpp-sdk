@@ -39,14 +39,14 @@ void ModifyCollationTimeZoneResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["DBInstanceId"].isNull())
-		dBInstanceId_ = value["DBInstanceId"].asString();
-	if(!value["TaskId"].isNull())
-		taskId_ = value["TaskId"].asString();
-	if(!value["Timezone"].isNull())
-		timezone_ = value["Timezone"].asString();
 	if(!value["Collation"].isNull())
 		collation_ = value["Collation"].asString();
+	if(!value["DBInstanceId"].isNull())
+		dBInstanceId_ = value["DBInstanceId"].asString();
+	if(!value["Timezone"].isNull())
+		timezone_ = value["Timezone"].asString();
+	if(!value["TaskId"].isNull())
+		taskId_ = value["TaskId"].asString();
 
 }
 

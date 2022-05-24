@@ -43,8 +43,8 @@ namespace AlibabaCloud
 				DescribeCrossBackupMetaListResult();
 				explicit DescribeCrossBackupMetaListResult(const std::string &payload);
 				~DescribeCrossBackupMetaListResult();
-				int getTotalRecordCount()const;
 				int getTotalPageCount()const;
+				int getTotalRecordCount()const;
 				int getPageRecordCount()const;
 				int getPageNumber()const;
 				std::vector<Meta> getItems()const;
@@ -53,8 +53,8 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int totalRecordCount_;
 				int totalPageCount_;
+				int totalRecordCount_;
 				int pageRecordCount_;
 				int pageNumber_;
 				std::vector<Meta> items_;

@@ -45,24 +45,24 @@ void DescribeDBInstancesByPerformanceResult::parse(const std::string &payload)
 		DBInstancePerformance itemsObject;
 		if(!valueItemsDBInstancePerformance["CPUUsage"].isNull())
 			itemsObject.cPUUsage = valueItemsDBInstancePerformance["CPUUsage"].asString();
-		if(!valueItemsDBInstancePerformance["IOPSUsage"].isNull())
-			itemsObject.iOPSUsage = valueItemsDBInstancePerformance["IOPSUsage"].asString();
-		if(!valueItemsDBInstancePerformance["DiskUsage"].isNull())
-			itemsObject.diskUsage = valueItemsDBInstancePerformance["DiskUsage"].asString();
 		if(!valueItemsDBInstancePerformance["SessionUsage"].isNull())
 			itemsObject.sessionUsage = valueItemsDBInstancePerformance["SessionUsage"].asString();
 		if(!valueItemsDBInstancePerformance["DBInstanceId"].isNull())
 			itemsObject.dBInstanceId = valueItemsDBInstancePerformance["DBInstanceId"].asString();
 		if(!valueItemsDBInstancePerformance["DBInstanceDescription"].isNull())
 			itemsObject.dBInstanceDescription = valueItemsDBInstancePerformance["DBInstanceDescription"].asString();
+		if(!valueItemsDBInstancePerformance["IOPSUsage"].isNull())
+			itemsObject.iOPSUsage = valueItemsDBInstancePerformance["IOPSUsage"].asString();
+		if(!valueItemsDBInstancePerformance["DiskUsage"].isNull())
+			itemsObject.diskUsage = valueItemsDBInstancePerformance["DiskUsage"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["PageNumber"].isNull())
 		pageNumber_ = std::stoi(value["PageNumber"].asString());
-	if(!value["TotalRecordCount"].isNull())
-		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
 	if(!value["PageRecordCount"].isNull())
 		pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
+	if(!value["TotalRecordCount"].isNull())
+		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
 
 }
 
