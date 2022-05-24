@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CBN_MODEL_LISTTRANSITROUTERSRESULT_H_
-#define ALIBABACLOUD_CBN_MODEL_LISTTRANSITROUTERSRESULT_H_
+#ifndef ALIBABACLOUD_CBN_MODEL_LISTTRANSITROUTERMULTICASTDOMAINSRESULT_H_
+#define ALIBABACLOUD_CBN_MODEL_LISTTRANSITROUTERMULTICASTDOMAINSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,43 +29,36 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CBN_EXPORT ListTransitRoutersResult : public ServiceResult
+			class ALIBABACLOUD_CBN_EXPORT ListTransitRouterMulticastDomainsResult : public ServiceResult
 			{
 			public:
-				struct TransitRouter
+				struct TransitRouterMulticastDomain
 				{
 					std::string status;
-					std::string type;
-					bool supportMulticast;
-					std::string creationTime;
-					std::string cenId;
-					std::string transitRouterDescription;
-					std::string transitRouterName;
-					std::string regionId;
-					std::string serviceMode;
-					std::string transitRouterId;
-					long aliUid;
+					std::string transitRouterMulticastDomainId;
+					std::string transitRouterMulticastDomainName;
+					std::string transitRouterMulticastDomainDescription;
 				};
 
 
-				ListTransitRoutersResult();
-				explicit ListTransitRoutersResult(const std::string &payload);
-				~ListTransitRoutersResult();
+				ListTransitRouterMulticastDomainsResult();
+				explicit ListTransitRouterMulticastDomainsResult(const std::string &payload);
+				~ListTransitRouterMulticastDomainsResult();
 				int getTotalCount()const;
-				int getPageSize()const;
-				int getPageNumber()const;
-				std::vector<TransitRouter> getTransitRouters()const;
+				std::string getNextToken()const;
+				int getMaxResults()const;
+				std::vector<TransitRouterMulticastDomain> getTransitRouterMulticastDomains()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				int totalCount_;
-				int pageSize_;
-				int pageNumber_;
-				std::vector<TransitRouter> transitRouters_;
+				std::string nextToken_;
+				int maxResults_;
+				std::vector<TransitRouterMulticastDomain> transitRouterMulticastDomains_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CBN_MODEL_LISTTRANSITROUTERSRESULT_H_
+#endif // !ALIBABACLOUD_CBN_MODEL_LISTTRANSITROUTERMULTICASTDOMAINSRESULT_H_

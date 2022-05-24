@@ -115,3 +115,12 @@ void UpdateTransitRouterRequest::setTransitRouterDescription(const std::string &
   setParameter(std::string("TransitRouterDescription"), transitRouterDescription);
 }
 
+bool UpdateTransitRouterRequest::getSupportMulticast() const {
+  return supportMulticast_;
+}
+
+void UpdateTransitRouterRequest::setSupportMulticast(bool supportMulticast) {
+  supportMulticast_ = supportMulticast;
+  setParameter(std::string("SupportMulticast"), supportMulticast ? "true" : "false");
+}
+

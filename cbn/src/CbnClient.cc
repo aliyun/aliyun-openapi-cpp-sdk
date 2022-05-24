@@ -87,6 +87,42 @@ CbnClient::ActiveFlowLogOutcomeCallable CbnClient::activeFlowLogCallable(const A
 	return task->get_future();
 }
 
+CbnClient::AddTrafficMatchRuleToTrafficMarkingPolicyOutcome CbnClient::addTrafficMatchRuleToTrafficMarkingPolicy(const AddTrafficMatchRuleToTrafficMarkingPolicyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddTrafficMatchRuleToTrafficMarkingPolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddTrafficMatchRuleToTrafficMarkingPolicyOutcome(AddTrafficMatchRuleToTrafficMarkingPolicyResult(outcome.result()));
+	else
+		return AddTrafficMatchRuleToTrafficMarkingPolicyOutcome(outcome.error());
+}
+
+void CbnClient::addTrafficMatchRuleToTrafficMarkingPolicyAsync(const AddTrafficMatchRuleToTrafficMarkingPolicyRequest& request, const AddTrafficMatchRuleToTrafficMarkingPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addTrafficMatchRuleToTrafficMarkingPolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::AddTrafficMatchRuleToTrafficMarkingPolicyOutcomeCallable CbnClient::addTrafficMatchRuleToTrafficMarkingPolicyCallable(const AddTrafficMatchRuleToTrafficMarkingPolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddTrafficMatchRuleToTrafficMarkingPolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->addTrafficMatchRuleToTrafficMarkingPolicy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CbnClient::AddTraficMatchRuleToTrafficMarkingPolicyOutcome CbnClient::addTraficMatchRuleToTrafficMarkingPolicy(const AddTraficMatchRuleToTrafficMarkingPolicyRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -189,6 +225,42 @@ CbnClient::AssociateTransitRouterAttachmentWithRouteTableOutcomeCallable CbnClie
 			[this, request]()
 			{
 			return this->associateTransitRouterAttachmentWithRouteTable(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CbnClient::AssociateTransitRouterMulticastDomainOutcome CbnClient::associateTransitRouterMulticastDomain(const AssociateTransitRouterMulticastDomainRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AssociateTransitRouterMulticastDomainOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AssociateTransitRouterMulticastDomainOutcome(AssociateTransitRouterMulticastDomainResult(outcome.result()));
+	else
+		return AssociateTransitRouterMulticastDomainOutcome(outcome.error());
+}
+
+void CbnClient::associateTransitRouterMulticastDomainAsync(const AssociateTransitRouterMulticastDomainRequest& request, const AssociateTransitRouterMulticastDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, associateTransitRouterMulticastDomain(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::AssociateTransitRouterMulticastDomainOutcomeCallable CbnClient::associateTransitRouterMulticastDomainCallable(const AssociateTransitRouterMulticastDomainRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AssociateTransitRouterMulticastDomainOutcome()>>(
+			[this, request]()
+			{
+			return this->associateTransitRouterMulticastDomain(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -585,6 +657,42 @@ CbnClient::CreateTransitRouterOutcomeCallable CbnClient::createTransitRouterCall
 			[this, request]()
 			{
 			return this->createTransitRouter(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CbnClient::CreateTransitRouterMulticastDomainOutcome CbnClient::createTransitRouterMulticastDomain(const CreateTransitRouterMulticastDomainRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateTransitRouterMulticastDomainOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateTransitRouterMulticastDomainOutcome(CreateTransitRouterMulticastDomainResult(outcome.result()));
+	else
+		return CreateTransitRouterMulticastDomainOutcome(outcome.error());
+}
+
+void CbnClient::createTransitRouterMulticastDomainAsync(const CreateTransitRouterMulticastDomainRequest& request, const CreateTransitRouterMulticastDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createTransitRouterMulticastDomain(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::CreateTransitRouterMulticastDomainOutcomeCallable CbnClient::createTransitRouterMulticastDomainCallable(const CreateTransitRouterMulticastDomainRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateTransitRouterMulticastDomainOutcome()>>(
+			[this, request]()
+			{
+			return this->createTransitRouterMulticastDomain(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1203,6 +1311,42 @@ CbnClient::DeleteTransitRouterOutcomeCallable CbnClient::deleteTransitRouterCall
 	return task->get_future();
 }
 
+CbnClient::DeleteTransitRouterMulticastDomainOutcome CbnClient::deleteTransitRouterMulticastDomain(const DeleteTransitRouterMulticastDomainRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteTransitRouterMulticastDomainOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteTransitRouterMulticastDomainOutcome(DeleteTransitRouterMulticastDomainResult(outcome.result()));
+	else
+		return DeleteTransitRouterMulticastDomainOutcome(outcome.error());
+}
+
+void CbnClient::deleteTransitRouterMulticastDomainAsync(const DeleteTransitRouterMulticastDomainRequest& request, const DeleteTransitRouterMulticastDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteTransitRouterMulticastDomain(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::DeleteTransitRouterMulticastDomainOutcomeCallable CbnClient::deleteTransitRouterMulticastDomainCallable(const DeleteTransitRouterMulticastDomainRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteTransitRouterMulticastDomainOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteTransitRouterMulticastDomain(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CbnClient::DeleteTransitRouterPeerAttachmentOutcome CbnClient::deleteTransitRouterPeerAttachment(const DeleteTransitRouterPeerAttachmentRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1377,6 +1521,78 @@ CbnClient::DeleteTransitRouterVpcAttachmentOutcomeCallable CbnClient::deleteTran
 			[this, request]()
 			{
 			return this->deleteTransitRouterVpcAttachment(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CbnClient::DeregisterTransitRouterMulticastGroupMembersOutcome CbnClient::deregisterTransitRouterMulticastGroupMembers(const DeregisterTransitRouterMulticastGroupMembersRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeregisterTransitRouterMulticastGroupMembersOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeregisterTransitRouterMulticastGroupMembersOutcome(DeregisterTransitRouterMulticastGroupMembersResult(outcome.result()));
+	else
+		return DeregisterTransitRouterMulticastGroupMembersOutcome(outcome.error());
+}
+
+void CbnClient::deregisterTransitRouterMulticastGroupMembersAsync(const DeregisterTransitRouterMulticastGroupMembersRequest& request, const DeregisterTransitRouterMulticastGroupMembersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deregisterTransitRouterMulticastGroupMembers(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::DeregisterTransitRouterMulticastGroupMembersOutcomeCallable CbnClient::deregisterTransitRouterMulticastGroupMembersCallable(const DeregisterTransitRouterMulticastGroupMembersRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeregisterTransitRouterMulticastGroupMembersOutcome()>>(
+			[this, request]()
+			{
+			return this->deregisterTransitRouterMulticastGroupMembers(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CbnClient::DeregisterTransitRouterMulticastGroupSourcesOutcome CbnClient::deregisterTransitRouterMulticastGroupSources(const DeregisterTransitRouterMulticastGroupSourcesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeregisterTransitRouterMulticastGroupSourcesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeregisterTransitRouterMulticastGroupSourcesOutcome(DeregisterTransitRouterMulticastGroupSourcesResult(outcome.result()));
+	else
+		return DeregisterTransitRouterMulticastGroupSourcesOutcome(outcome.error());
+}
+
+void CbnClient::deregisterTransitRouterMulticastGroupSourcesAsync(const DeregisterTransitRouterMulticastGroupSourcesRequest& request, const DeregisterTransitRouterMulticastGroupSourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deregisterTransitRouterMulticastGroupSources(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::DeregisterTransitRouterMulticastGroupSourcesOutcomeCallable CbnClient::deregisterTransitRouterMulticastGroupSourcesCallable(const DeregisterTransitRouterMulticastGroupSourcesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeregisterTransitRouterMulticastGroupSourcesOutcome()>>(
+			[this, request]()
+			{
+			return this->deregisterTransitRouterMulticastGroupSources(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2175,6 +2391,42 @@ CbnClient::DisableTransitRouterRouteTablePropagationOutcomeCallable CbnClient::d
 	return task->get_future();
 }
 
+CbnClient::DisassociateTransitRouterMulticastDomainOutcome CbnClient::disassociateTransitRouterMulticastDomain(const DisassociateTransitRouterMulticastDomainRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DisassociateTransitRouterMulticastDomainOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DisassociateTransitRouterMulticastDomainOutcome(DisassociateTransitRouterMulticastDomainResult(outcome.result()));
+	else
+		return DisassociateTransitRouterMulticastDomainOutcome(outcome.error());
+}
+
+void CbnClient::disassociateTransitRouterMulticastDomainAsync(const DisassociateTransitRouterMulticastDomainRequest& request, const DisassociateTransitRouterMulticastDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, disassociateTransitRouterMulticastDomain(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::DisassociateTransitRouterMulticastDomainOutcomeCallable CbnClient::disassociateTransitRouterMulticastDomainCallable(const DisassociateTransitRouterMulticastDomainRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DisassociateTransitRouterMulticastDomainOutcome()>>(
+			[this, request]()
+			{
+			return this->disassociateTransitRouterMulticastDomain(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CbnClient::DissociateTransitRouterAttachmentFromRouteTableOutcome CbnClient::dissociateTransitRouterAttachmentFromRouteTable(const DissociateTransitRouterAttachmentFromRouteTableRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2355,6 +2607,42 @@ CbnClient::ListCenInterRegionTrafficQosPoliciesOutcomeCallable CbnClient::listCe
 	return task->get_future();
 }
 
+CbnClient::ListGrantVSwitchEnisOutcome CbnClient::listGrantVSwitchEnis(const ListGrantVSwitchEnisRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListGrantVSwitchEnisOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListGrantVSwitchEnisOutcome(ListGrantVSwitchEnisResult(outcome.result()));
+	else
+		return ListGrantVSwitchEnisOutcome(outcome.error());
+}
+
+void CbnClient::listGrantVSwitchEnisAsync(const ListGrantVSwitchEnisRequest& request, const ListGrantVSwitchEnisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listGrantVSwitchEnis(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::ListGrantVSwitchEnisOutcomeCallable CbnClient::listGrantVSwitchEnisCallable(const ListGrantVSwitchEnisRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListGrantVSwitchEnisOutcome()>>(
+			[this, request]()
+			{
+			return this->listGrantVSwitchEnis(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CbnClient::ListGrantVSwitchesToCenOutcome CbnClient::listGrantVSwitchesToCen(const ListGrantVSwitchesToCenRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2493,6 +2781,150 @@ CbnClient::ListTransitRouterAvailableResourceOutcomeCallable CbnClient::listTran
 			[this, request]()
 			{
 			return this->listTransitRouterAvailableResource(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CbnClient::ListTransitRouterMulticastDomainAssociationsOutcome CbnClient::listTransitRouterMulticastDomainAssociations(const ListTransitRouterMulticastDomainAssociationsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListTransitRouterMulticastDomainAssociationsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListTransitRouterMulticastDomainAssociationsOutcome(ListTransitRouterMulticastDomainAssociationsResult(outcome.result()));
+	else
+		return ListTransitRouterMulticastDomainAssociationsOutcome(outcome.error());
+}
+
+void CbnClient::listTransitRouterMulticastDomainAssociationsAsync(const ListTransitRouterMulticastDomainAssociationsRequest& request, const ListTransitRouterMulticastDomainAssociationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listTransitRouterMulticastDomainAssociations(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::ListTransitRouterMulticastDomainAssociationsOutcomeCallable CbnClient::listTransitRouterMulticastDomainAssociationsCallable(const ListTransitRouterMulticastDomainAssociationsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListTransitRouterMulticastDomainAssociationsOutcome()>>(
+			[this, request]()
+			{
+			return this->listTransitRouterMulticastDomainAssociations(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CbnClient::ListTransitRouterMulticastDomainVSwitchesOutcome CbnClient::listTransitRouterMulticastDomainVSwitches(const ListTransitRouterMulticastDomainVSwitchesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListTransitRouterMulticastDomainVSwitchesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListTransitRouterMulticastDomainVSwitchesOutcome(ListTransitRouterMulticastDomainVSwitchesResult(outcome.result()));
+	else
+		return ListTransitRouterMulticastDomainVSwitchesOutcome(outcome.error());
+}
+
+void CbnClient::listTransitRouterMulticastDomainVSwitchesAsync(const ListTransitRouterMulticastDomainVSwitchesRequest& request, const ListTransitRouterMulticastDomainVSwitchesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listTransitRouterMulticastDomainVSwitches(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::ListTransitRouterMulticastDomainVSwitchesOutcomeCallable CbnClient::listTransitRouterMulticastDomainVSwitchesCallable(const ListTransitRouterMulticastDomainVSwitchesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListTransitRouterMulticastDomainVSwitchesOutcome()>>(
+			[this, request]()
+			{
+			return this->listTransitRouterMulticastDomainVSwitches(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CbnClient::ListTransitRouterMulticastDomainsOutcome CbnClient::listTransitRouterMulticastDomains(const ListTransitRouterMulticastDomainsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListTransitRouterMulticastDomainsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListTransitRouterMulticastDomainsOutcome(ListTransitRouterMulticastDomainsResult(outcome.result()));
+	else
+		return ListTransitRouterMulticastDomainsOutcome(outcome.error());
+}
+
+void CbnClient::listTransitRouterMulticastDomainsAsync(const ListTransitRouterMulticastDomainsRequest& request, const ListTransitRouterMulticastDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listTransitRouterMulticastDomains(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::ListTransitRouterMulticastDomainsOutcomeCallable CbnClient::listTransitRouterMulticastDomainsCallable(const ListTransitRouterMulticastDomainsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListTransitRouterMulticastDomainsOutcome()>>(
+			[this, request]()
+			{
+			return this->listTransitRouterMulticastDomains(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CbnClient::ListTransitRouterMulticastGroupsOutcome CbnClient::listTransitRouterMulticastGroups(const ListTransitRouterMulticastGroupsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListTransitRouterMulticastGroupsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListTransitRouterMulticastGroupsOutcome(ListTransitRouterMulticastGroupsResult(outcome.result()));
+	else
+		return ListTransitRouterMulticastGroupsOutcome(outcome.error());
+}
+
+void CbnClient::listTransitRouterMulticastGroupsAsync(const ListTransitRouterMulticastGroupsRequest& request, const ListTransitRouterMulticastGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listTransitRouterMulticastGroups(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::ListTransitRouterMulticastGroupsOutcomeCallable CbnClient::listTransitRouterMulticastGroupsCallable(const ListTransitRouterMulticastGroupsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListTransitRouterMulticastGroupsOutcome()>>(
+			[this, request]()
+			{
+			return this->listTransitRouterMulticastGroups(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2967,6 +3399,42 @@ CbnClient::ModifyFlowLogAttributeOutcomeCallable CbnClient::modifyFlowLogAttribu
 	return task->get_future();
 }
 
+CbnClient::ModifyTransitRouterMulticastDomainOutcome CbnClient::modifyTransitRouterMulticastDomain(const ModifyTransitRouterMulticastDomainRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyTransitRouterMulticastDomainOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyTransitRouterMulticastDomainOutcome(ModifyTransitRouterMulticastDomainResult(outcome.result()));
+	else
+		return ModifyTransitRouterMulticastDomainOutcome(outcome.error());
+}
+
+void CbnClient::modifyTransitRouterMulticastDomainAsync(const ModifyTransitRouterMulticastDomainRequest& request, const ModifyTransitRouterMulticastDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyTransitRouterMulticastDomain(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::ModifyTransitRouterMulticastDomainOutcomeCallable CbnClient::modifyTransitRouterMulticastDomainCallable(const ModifyTransitRouterMulticastDomainRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyTransitRouterMulticastDomainOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyTransitRouterMulticastDomain(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CbnClient::MoveResourceGroupOutcome CbnClient::moveResourceGroup(const MoveResourceGroupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3069,6 +3537,78 @@ CbnClient::PublishRouteEntriesOutcomeCallable CbnClient::publishRouteEntriesCall
 			[this, request]()
 			{
 			return this->publishRouteEntries(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CbnClient::RegisterTransitRouterMulticastGroupMembersOutcome CbnClient::registerTransitRouterMulticastGroupMembers(const RegisterTransitRouterMulticastGroupMembersRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RegisterTransitRouterMulticastGroupMembersOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RegisterTransitRouterMulticastGroupMembersOutcome(RegisterTransitRouterMulticastGroupMembersResult(outcome.result()));
+	else
+		return RegisterTransitRouterMulticastGroupMembersOutcome(outcome.error());
+}
+
+void CbnClient::registerTransitRouterMulticastGroupMembersAsync(const RegisterTransitRouterMulticastGroupMembersRequest& request, const RegisterTransitRouterMulticastGroupMembersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, registerTransitRouterMulticastGroupMembers(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::RegisterTransitRouterMulticastGroupMembersOutcomeCallable CbnClient::registerTransitRouterMulticastGroupMembersCallable(const RegisterTransitRouterMulticastGroupMembersRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RegisterTransitRouterMulticastGroupMembersOutcome()>>(
+			[this, request]()
+			{
+			return this->registerTransitRouterMulticastGroupMembers(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CbnClient::RegisterTransitRouterMulticastGroupSourcesOutcome CbnClient::registerTransitRouterMulticastGroupSources(const RegisterTransitRouterMulticastGroupSourcesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RegisterTransitRouterMulticastGroupSourcesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RegisterTransitRouterMulticastGroupSourcesOutcome(RegisterTransitRouterMulticastGroupSourcesResult(outcome.result()));
+	else
+		return RegisterTransitRouterMulticastGroupSourcesOutcome(outcome.error());
+}
+
+void CbnClient::registerTransitRouterMulticastGroupSourcesAsync(const RegisterTransitRouterMulticastGroupSourcesRequest& request, const RegisterTransitRouterMulticastGroupSourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, registerTransitRouterMulticastGroupSources(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::RegisterTransitRouterMulticastGroupSourcesOutcomeCallable CbnClient::registerTransitRouterMulticastGroupSourcesCallable(const RegisterTransitRouterMulticastGroupSourcesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RegisterTransitRouterMulticastGroupSourcesOutcome()>>(
+			[this, request]()
+			{
+			return this->registerTransitRouterMulticastGroupSources(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

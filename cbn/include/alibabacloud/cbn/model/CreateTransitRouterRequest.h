@@ -54,6 +54,8 @@ public:
 	void setOwnerId(long ownerId);
 	std::string getTransitRouterDescription() const;
 	void setTransitRouterDescription(const std::string &transitRouterDescription);
+	bool getSupportMulticast() const;
+	void setSupportMulticast(bool supportMulticast);
 
 private:
 	std::string transitRouterName_;
@@ -68,6 +70,7 @@ private:
 	std::string ownerAccount_;
 	long ownerId_;
 	std::string transitRouterDescription_;
+	bool supportMulticast_;
 };
 } // namespace Model
 } // namespace Cbn

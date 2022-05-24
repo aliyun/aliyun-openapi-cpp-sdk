@@ -88,3 +88,12 @@ void ListTransitRouterAvailableResourceRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+bool ListTransitRouterAvailableResourceRequest::getSupportMulticast() const {
+  return supportMulticast_;
+}
+
+void ListTransitRouterAvailableResourceRequest::setSupportMulticast(bool supportMulticast) {
+  supportMulticast_ = supportMulticast;
+  setParameter(std::string("SupportMulticast"), supportMulticast ? "true" : "false");
+}
+

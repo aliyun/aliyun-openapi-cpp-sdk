@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CBN_MODEL_LISTTRANSITROUTERVPCATTACHMENTSRESULT_H_
-#define ALIBABACLOUD_CBN_MODEL_LISTTRANSITROUTERVPCATTACHMENTSRESULT_H_
+#ifndef ALIBABACLOUD_CBN_MODEL_LISTTRANSITROUTERMULTICASTGROUPSRESULT_H_
+#define ALIBABACLOUD_CBN_MODEL_LISTTRANSITROUTERMULTICASTGROUPSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,40 +29,34 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CBN_EXPORT ListTransitRouterVpcAttachmentsResult : public ServiceResult
+			class ALIBABACLOUD_CBN_EXPORT ListTransitRouterMulticastGroupsResult : public ServiceResult
 			{
 			public:
-				struct TransitRouterAttachment
+				struct TransitRouterMulticastGroup
 				{
-					struct ZoneMapping
-					{
-						std::string zoneId;
-						std::string vSwitchId;
-						std::string networkInterfaceId;
-					};
-					std::string status;
 					std::string transitRouterAttachmentId;
-					std::string transitRouterAttachmentName;
+					std::string status;
+					bool groupMember;
+					std::string vSwitchId;
+					std::string sourceType;
 					std::string resourceType;
-					std::vector<TransitRouterAttachment::ZoneMapping> zoneMappings;
-					std::string serviceMode;
-					long vpcOwnerId;
-					std::string vpcId;
-					std::string chargeType;
-					std::string creationTime;
-					std::string vpcRegionId;
-					std::string transitRouterAttachmentDescription;
-					std::string transitRouterId;
+					std::string networkInterfaceId;
+					long resourceOwnerId;
+					std::string groupIpAddress;
+					std::string peerTransitRouterMulticastDomainId;
+					std::string memberType;
+					std::string resourceId;
+					bool groupSource;
 				};
 
 
-				ListTransitRouterVpcAttachmentsResult();
-				explicit ListTransitRouterVpcAttachmentsResult(const std::string &payload);
-				~ListTransitRouterVpcAttachmentsResult();
+				ListTransitRouterMulticastGroupsResult();
+				explicit ListTransitRouterMulticastGroupsResult(const std::string &payload);
+				~ListTransitRouterMulticastGroupsResult();
 				int getTotalCount()const;
 				std::string getNextToken()const;
 				int getMaxResults()const;
-				std::vector<TransitRouterAttachment> getTransitRouterAttachments()const;
+				std::vector<TransitRouterMulticastGroup> getTransitRouterMulticastGroups()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -70,10 +64,10 @@ namespace AlibabaCloud
 				int totalCount_;
 				std::string nextToken_;
 				int maxResults_;
-				std::vector<TransitRouterAttachment> transitRouterAttachments_;
+				std::vector<TransitRouterMulticastGroup> transitRouterMulticastGroups_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CBN_MODEL_LISTTRANSITROUTERVPCATTACHMENTSRESULT_H_
+#endif // !ALIBABACLOUD_CBN_MODEL_LISTTRANSITROUTERMULTICASTGROUPSRESULT_H_

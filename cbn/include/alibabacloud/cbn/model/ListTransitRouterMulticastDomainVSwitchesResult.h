@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CBN_MODEL_LISTTRANSITROUTERSRESULT_H_
-#define ALIBABACLOUD_CBN_MODEL_LISTTRANSITROUTERSRESULT_H_
+#ifndef ALIBABACLOUD_CBN_MODEL_LISTTRANSITROUTERMULTICASTDOMAINVSWITCHESRESULT_H_
+#define ALIBABACLOUD_CBN_MODEL_LISTTRANSITROUTERMULTICASTDOMAINVSWITCHESRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,43 +29,29 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CBN_EXPORT ListTransitRoutersResult : public ServiceResult
+			class ALIBABACLOUD_CBN_EXPORT ListTransitRouterMulticastDomainVSwitchesResult : public ServiceResult
 			{
 			public:
-				struct TransitRouter
-				{
-					std::string status;
-					std::string type;
-					bool supportMulticast;
-					std::string creationTime;
-					std::string cenId;
-					std::string transitRouterDescription;
-					std::string transitRouterName;
-					std::string regionId;
-					std::string serviceMode;
-					std::string transitRouterId;
-					long aliUid;
-				};
 
 
-				ListTransitRoutersResult();
-				explicit ListTransitRoutersResult(const std::string &payload);
-				~ListTransitRoutersResult();
+				ListTransitRouterMulticastDomainVSwitchesResult();
+				explicit ListTransitRouterMulticastDomainVSwitchesResult(const std::string &payload);
+				~ListTransitRouterMulticastDomainVSwitchesResult();
 				int getTotalCount()const;
-				int getPageSize()const;
-				int getPageNumber()const;
-				std::vector<TransitRouter> getTransitRouters()const;
+				std::string getNextToken()const;
+				std::vector<std::string> getVSwitchIds()const;
+				int getMaxResults()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				int totalCount_;
-				int pageSize_;
-				int pageNumber_;
-				std::vector<TransitRouter> transitRouters_;
+				std::string nextToken_;
+				std::vector<std::string> vSwitchIds_;
+				int maxResults_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CBN_MODEL_LISTTRANSITROUTERSRESULT_H_
+#endif // !ALIBABACLOUD_CBN_MODEL_LISTTRANSITROUTERMULTICASTDOMAINVSWITCHESRESULT_H_

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CBN_MODEL_UPDATETRANSITROUTERREQUEST_H_
-#define ALIBABACLOUD_CBN_MODEL_UPDATETRANSITROUTERREQUEST_H_
+#ifndef ALIBABACLOUD_CBN_MODEL_MODIFYTRANSITROUTERMULTICASTDOMAINREQUEST_H_
+#define ALIBABACLOUD_CBN_MODEL_MODIFYTRANSITROUTERMULTICASTDOMAINREQUEST_H_
 
 #include <alibabacloud/cbn/CbnExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,18 +26,20 @@
 namespace AlibabaCloud {
 namespace Cbn {
 namespace Model {
-class ALIBABACLOUD_CBN_EXPORT UpdateTransitRouterRequest : public RpcServiceRequest {
+class ALIBABACLOUD_CBN_EXPORT ModifyTransitRouterMulticastDomainRequest : public RpcServiceRequest {
 public:
-	UpdateTransitRouterRequest();
-	~UpdateTransitRouterRequest();
-	std::string getTransitRouterName() const;
-	void setTransitRouterName(const std::string &transitRouterName);
+	ModifyTransitRouterMulticastDomainRequest();
+	~ModifyTransitRouterMulticastDomainRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getClientToken() const;
 	void setClientToken(const std::string &clientToken);
-	std::string getRegionId() const;
-	void setRegionId(const std::string &regionId);
+	std::string getTransitRouterMulticastDomainId() const;
+	void setTransitRouterMulticastDomainId(const std::string &transitRouterMulticastDomainId);
+	std::string getTransitRouterMulticastDomainDescription() const;
+	void setTransitRouterMulticastDomainDescription(const std::string &transitRouterMulticastDomainDescription);
+	std::string getTransitRouterMulticastDomainName() const;
+	void setTransitRouterMulticastDomainName(const std::string &transitRouterMulticastDomainName);
 	bool getDryRun() const;
 	void setDryRun(bool dryRun);
 	std::string getResourceOwnerAccount() const;
@@ -46,27 +48,19 @@ public:
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
-	std::string getTransitRouterId() const;
-	void setTransitRouterId(const std::string &transitRouterId);
-	std::string getTransitRouterDescription() const;
-	void setTransitRouterDescription(const std::string &transitRouterDescription);
-	bool getSupportMulticast() const;
-	void setSupportMulticast(bool supportMulticast);
 
 private:
-	std::string transitRouterName_;
 	long resourceOwnerId_;
 	std::string clientToken_;
-	std::string regionId_;
+	std::string transitRouterMulticastDomainId_;
+	std::string transitRouterMulticastDomainDescription_;
+	std::string transitRouterMulticastDomainName_;
 	bool dryRun_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
-	std::string transitRouterId_;
-	std::string transitRouterDescription_;
-	bool supportMulticast_;
 };
 } // namespace Model
 } // namespace Cbn
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_CBN_MODEL_UPDATETRANSITROUTERREQUEST_H_
+#endif // !ALIBABACLOUD_CBN_MODEL_MODIFYTRANSITROUTERMULTICASTDOMAINREQUEST_H_

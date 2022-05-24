@@ -63,6 +63,8 @@ void ListTransitRoutersResult::parse(const std::string &payload)
 			transitRoutersObject.regionId = valueTransitRoutersTransitRouter["RegionId"].asString();
 		if(!valueTransitRoutersTransitRouter["ServiceMode"].isNull())
 			transitRoutersObject.serviceMode = valueTransitRoutersTransitRouter["ServiceMode"].asString();
+		if(!valueTransitRoutersTransitRouter["SupportMulticast"].isNull())
+			transitRoutersObject.supportMulticast = valueTransitRoutersTransitRouter["SupportMulticast"].asString() == "true";
 		transitRouters_.push_back(transitRoutersObject);
 	}
 	if(!value["PageSize"].isNull())

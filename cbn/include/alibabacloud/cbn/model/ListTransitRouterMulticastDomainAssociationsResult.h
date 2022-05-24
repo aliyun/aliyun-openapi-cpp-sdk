@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CBN_MODEL_LISTTRANSITROUTERVPCATTACHMENTSRESULT_H_
-#define ALIBABACLOUD_CBN_MODEL_LISTTRANSITROUTERVPCATTACHMENTSRESULT_H_
+#ifndef ALIBABACLOUD_CBN_MODEL_LISTTRANSITROUTERMULTICASTDOMAINASSOCIATIONSRESULT_H_
+#define ALIBABACLOUD_CBN_MODEL_LISTTRANSITROUTERMULTICASTDOMAINASSOCIATIONSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,51 +29,39 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CBN_EXPORT ListTransitRouterVpcAttachmentsResult : public ServiceResult
+			class ALIBABACLOUD_CBN_EXPORT ListTransitRouterMulticastDomainAssociationsResult : public ServiceResult
 			{
 			public:
-				struct TransitRouterAttachment
+				struct TransitRouterMulticastAssociation
 				{
-					struct ZoneMapping
-					{
-						std::string zoneId;
-						std::string vSwitchId;
-						std::string networkInterfaceId;
-					};
-					std::string status;
 					std::string transitRouterAttachmentId;
-					std::string transitRouterAttachmentName;
+					std::string status;
+					std::string resourceId;
+					std::string transitRouterMulticastDomainId;
+					std::string vSwitchId;
 					std::string resourceType;
-					std::vector<TransitRouterAttachment::ZoneMapping> zoneMappings;
-					std::string serviceMode;
-					long vpcOwnerId;
-					std::string vpcId;
-					std::string chargeType;
-					std::string creationTime;
-					std::string vpcRegionId;
-					std::string transitRouterAttachmentDescription;
-					std::string transitRouterId;
+					long resourceOwnerId;
 				};
 
 
-				ListTransitRouterVpcAttachmentsResult();
-				explicit ListTransitRouterVpcAttachmentsResult(const std::string &payload);
-				~ListTransitRouterVpcAttachmentsResult();
+				ListTransitRouterMulticastDomainAssociationsResult();
+				explicit ListTransitRouterMulticastDomainAssociationsResult(const std::string &payload);
+				~ListTransitRouterMulticastDomainAssociationsResult();
 				int getTotalCount()const;
+				std::vector<TransitRouterMulticastAssociation> getTransitRouterMulticastAssociations()const;
 				std::string getNextToken()const;
 				int getMaxResults()const;
-				std::vector<TransitRouterAttachment> getTransitRouterAttachments()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				int totalCount_;
+				std::vector<TransitRouterMulticastAssociation> transitRouterMulticastAssociations_;
 				std::string nextToken_;
 				int maxResults_;
-				std::vector<TransitRouterAttachment> transitRouterAttachments_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CBN_MODEL_LISTTRANSITROUTERVPCATTACHMENTSRESULT_H_
+#endif // !ALIBABACLOUD_CBN_MODEL_LISTTRANSITROUTERMULTICASTDOMAINASSOCIATIONSRESULT_H_
