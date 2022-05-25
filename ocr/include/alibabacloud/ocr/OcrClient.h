@@ -44,8 +44,12 @@
 #include "model/RecognizeDrivingLicenseResult.h"
 #include "model/RecognizeIdentityCardRequest.h"
 #include "model/RecognizeIdentityCardResult.h"
+#include "model/RecognizeIndonesiaIdentityCardRequest.h"
+#include "model/RecognizeIndonesiaIdentityCardResult.h"
 #include "model/RecognizeLicensePlateRequest.h"
 #include "model/RecognizeLicensePlateResult.h"
+#include "model/RecognizeMalaysiaIdentityCardRequest.h"
+#include "model/RecognizeMalaysiaIdentityCardResult.h"
 #include "model/RecognizePassportMRZRequest.h"
 #include "model/RecognizePassportMRZResult.h"
 #include "model/RecognizePdfRequest.h"
@@ -56,6 +60,8 @@
 #include "model/RecognizeQrCodeResult.h"
 #include "model/RecognizeQuotaInvoiceRequest.h"
 #include "model/RecognizeQuotaInvoiceResult.h"
+#include "model/RecognizeRussiaIdentityCardRequest.h"
+#include "model/RecognizeRussiaIdentityCardResult.h"
 #include "model/RecognizeStampRequest.h"
 #include "model/RecognizeStampResult.h"
 #include "model/RecognizeTableRequest.h"
@@ -68,6 +74,8 @@
 #include "model/RecognizeTicketInvoiceResult.h"
 #include "model/RecognizeTrainTicketRequest.h"
 #include "model/RecognizeTrainTicketResult.h"
+#include "model/RecognizeTurkeyIdentityCardRequest.h"
+#include "model/RecognizeTurkeyIdentityCardResult.h"
 #include "model/RecognizeUkraineIdentityCardRequest.h"
 #include "model/RecognizeUkraineIdentityCardResult.h"
 #include "model/RecognizeVATInvoiceRequest.h"
@@ -80,6 +88,8 @@
 #include "model/RecognizeVideoCastCrewListResult.h"
 #include "model/RecognizeVideoCharacterRequest.h"
 #include "model/RecognizeVideoCharacterResult.h"
+#include "model/RecognizeVietnamIdentityCardRequest.h"
+#include "model/RecognizeVietnamIdentityCardResult.h"
 #include "model/TrimDocumentRequest.h"
 #include "model/TrimDocumentResult.h"
 
@@ -124,9 +134,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RecognizeIdentityCardResult> RecognizeIdentityCardOutcome;
 			typedef std::future<RecognizeIdentityCardOutcome> RecognizeIdentityCardOutcomeCallable;
 			typedef std::function<void(const OcrClient*, const Model::RecognizeIdentityCardRequest&, const RecognizeIdentityCardOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeIdentityCardAsyncHandler;
+			typedef Outcome<Error, Model::RecognizeIndonesiaIdentityCardResult> RecognizeIndonesiaIdentityCardOutcome;
+			typedef std::future<RecognizeIndonesiaIdentityCardOutcome> RecognizeIndonesiaIdentityCardOutcomeCallable;
+			typedef std::function<void(const OcrClient*, const Model::RecognizeIndonesiaIdentityCardRequest&, const RecognizeIndonesiaIdentityCardOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeIndonesiaIdentityCardAsyncHandler;
 			typedef Outcome<Error, Model::RecognizeLicensePlateResult> RecognizeLicensePlateOutcome;
 			typedef std::future<RecognizeLicensePlateOutcome> RecognizeLicensePlateOutcomeCallable;
 			typedef std::function<void(const OcrClient*, const Model::RecognizeLicensePlateRequest&, const RecognizeLicensePlateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeLicensePlateAsyncHandler;
+			typedef Outcome<Error, Model::RecognizeMalaysiaIdentityCardResult> RecognizeMalaysiaIdentityCardOutcome;
+			typedef std::future<RecognizeMalaysiaIdentityCardOutcome> RecognizeMalaysiaIdentityCardOutcomeCallable;
+			typedef std::function<void(const OcrClient*, const Model::RecognizeMalaysiaIdentityCardRequest&, const RecognizeMalaysiaIdentityCardOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeMalaysiaIdentityCardAsyncHandler;
 			typedef Outcome<Error, Model::RecognizePassportMRZResult> RecognizePassportMRZOutcome;
 			typedef std::future<RecognizePassportMRZOutcome> RecognizePassportMRZOutcomeCallable;
 			typedef std::function<void(const OcrClient*, const Model::RecognizePassportMRZRequest&, const RecognizePassportMRZOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RecognizePassportMRZAsyncHandler;
@@ -142,6 +158,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RecognizeQuotaInvoiceResult> RecognizeQuotaInvoiceOutcome;
 			typedef std::future<RecognizeQuotaInvoiceOutcome> RecognizeQuotaInvoiceOutcomeCallable;
 			typedef std::function<void(const OcrClient*, const Model::RecognizeQuotaInvoiceRequest&, const RecognizeQuotaInvoiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeQuotaInvoiceAsyncHandler;
+			typedef Outcome<Error, Model::RecognizeRussiaIdentityCardResult> RecognizeRussiaIdentityCardOutcome;
+			typedef std::future<RecognizeRussiaIdentityCardOutcome> RecognizeRussiaIdentityCardOutcomeCallable;
+			typedef std::function<void(const OcrClient*, const Model::RecognizeRussiaIdentityCardRequest&, const RecognizeRussiaIdentityCardOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeRussiaIdentityCardAsyncHandler;
 			typedef Outcome<Error, Model::RecognizeStampResult> RecognizeStampOutcome;
 			typedef std::future<RecognizeStampOutcome> RecognizeStampOutcomeCallable;
 			typedef std::function<void(const OcrClient*, const Model::RecognizeStampRequest&, const RecognizeStampOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeStampAsyncHandler;
@@ -160,6 +179,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RecognizeTrainTicketResult> RecognizeTrainTicketOutcome;
 			typedef std::future<RecognizeTrainTicketOutcome> RecognizeTrainTicketOutcomeCallable;
 			typedef std::function<void(const OcrClient*, const Model::RecognizeTrainTicketRequest&, const RecognizeTrainTicketOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeTrainTicketAsyncHandler;
+			typedef Outcome<Error, Model::RecognizeTurkeyIdentityCardResult> RecognizeTurkeyIdentityCardOutcome;
+			typedef std::future<RecognizeTurkeyIdentityCardOutcome> RecognizeTurkeyIdentityCardOutcomeCallable;
+			typedef std::function<void(const OcrClient*, const Model::RecognizeTurkeyIdentityCardRequest&, const RecognizeTurkeyIdentityCardOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeTurkeyIdentityCardAsyncHandler;
 			typedef Outcome<Error, Model::RecognizeUkraineIdentityCardResult> RecognizeUkraineIdentityCardOutcome;
 			typedef std::future<RecognizeUkraineIdentityCardOutcome> RecognizeUkraineIdentityCardOutcomeCallable;
 			typedef std::function<void(const OcrClient*, const Model::RecognizeUkraineIdentityCardRequest&, const RecognizeUkraineIdentityCardOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeUkraineIdentityCardAsyncHandler;
@@ -178,6 +200,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RecognizeVideoCharacterResult> RecognizeVideoCharacterOutcome;
 			typedef std::future<RecognizeVideoCharacterOutcome> RecognizeVideoCharacterOutcomeCallable;
 			typedef std::function<void(const OcrClient*, const Model::RecognizeVideoCharacterRequest&, const RecognizeVideoCharacterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeVideoCharacterAsyncHandler;
+			typedef Outcome<Error, Model::RecognizeVietnamIdentityCardResult> RecognizeVietnamIdentityCardOutcome;
+			typedef std::future<RecognizeVietnamIdentityCardOutcome> RecognizeVietnamIdentityCardOutcomeCallable;
+			typedef std::function<void(const OcrClient*, const Model::RecognizeVietnamIdentityCardRequest&, const RecognizeVietnamIdentityCardOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeVietnamIdentityCardAsyncHandler;
 			typedef Outcome<Error, Model::TrimDocumentResult> TrimDocumentOutcome;
 			typedef std::future<TrimDocumentOutcome> TrimDocumentOutcomeCallable;
 			typedef std::function<void(const OcrClient*, const Model::TrimDocumentRequest&, const TrimDocumentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TrimDocumentAsyncHandler;
@@ -219,9 +244,15 @@ namespace AlibabaCloud
 			RecognizeIdentityCardOutcome recognizeIdentityCard(const Model::RecognizeIdentityCardRequest &request)const;
 			void recognizeIdentityCardAsync(const Model::RecognizeIdentityCardRequest& request, const RecognizeIdentityCardAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RecognizeIdentityCardOutcomeCallable recognizeIdentityCardCallable(const Model::RecognizeIdentityCardRequest& request) const;
+			RecognizeIndonesiaIdentityCardOutcome recognizeIndonesiaIdentityCard(const Model::RecognizeIndonesiaIdentityCardRequest &request)const;
+			void recognizeIndonesiaIdentityCardAsync(const Model::RecognizeIndonesiaIdentityCardRequest& request, const RecognizeIndonesiaIdentityCardAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RecognizeIndonesiaIdentityCardOutcomeCallable recognizeIndonesiaIdentityCardCallable(const Model::RecognizeIndonesiaIdentityCardRequest& request) const;
 			RecognizeLicensePlateOutcome recognizeLicensePlate(const Model::RecognizeLicensePlateRequest &request)const;
 			void recognizeLicensePlateAsync(const Model::RecognizeLicensePlateRequest& request, const RecognizeLicensePlateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RecognizeLicensePlateOutcomeCallable recognizeLicensePlateCallable(const Model::RecognizeLicensePlateRequest& request) const;
+			RecognizeMalaysiaIdentityCardOutcome recognizeMalaysiaIdentityCard(const Model::RecognizeMalaysiaIdentityCardRequest &request)const;
+			void recognizeMalaysiaIdentityCardAsync(const Model::RecognizeMalaysiaIdentityCardRequest& request, const RecognizeMalaysiaIdentityCardAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RecognizeMalaysiaIdentityCardOutcomeCallable recognizeMalaysiaIdentityCardCallable(const Model::RecognizeMalaysiaIdentityCardRequest& request) const;
 			RecognizePassportMRZOutcome recognizePassportMRZ(const Model::RecognizePassportMRZRequest &request)const;
 			void recognizePassportMRZAsync(const Model::RecognizePassportMRZRequest& request, const RecognizePassportMRZAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RecognizePassportMRZOutcomeCallable recognizePassportMRZCallable(const Model::RecognizePassportMRZRequest& request) const;
@@ -237,6 +268,9 @@ namespace AlibabaCloud
 			RecognizeQuotaInvoiceOutcome recognizeQuotaInvoice(const Model::RecognizeQuotaInvoiceRequest &request)const;
 			void recognizeQuotaInvoiceAsync(const Model::RecognizeQuotaInvoiceRequest& request, const RecognizeQuotaInvoiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RecognizeQuotaInvoiceOutcomeCallable recognizeQuotaInvoiceCallable(const Model::RecognizeQuotaInvoiceRequest& request) const;
+			RecognizeRussiaIdentityCardOutcome recognizeRussiaIdentityCard(const Model::RecognizeRussiaIdentityCardRequest &request)const;
+			void recognizeRussiaIdentityCardAsync(const Model::RecognizeRussiaIdentityCardRequest& request, const RecognizeRussiaIdentityCardAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RecognizeRussiaIdentityCardOutcomeCallable recognizeRussiaIdentityCardCallable(const Model::RecognizeRussiaIdentityCardRequest& request) const;
 			RecognizeStampOutcome recognizeStamp(const Model::RecognizeStampRequest &request)const;
 			void recognizeStampAsync(const Model::RecognizeStampRequest& request, const RecognizeStampAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RecognizeStampOutcomeCallable recognizeStampCallable(const Model::RecognizeStampRequest& request) const;
@@ -255,6 +289,9 @@ namespace AlibabaCloud
 			RecognizeTrainTicketOutcome recognizeTrainTicket(const Model::RecognizeTrainTicketRequest &request)const;
 			void recognizeTrainTicketAsync(const Model::RecognizeTrainTicketRequest& request, const RecognizeTrainTicketAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RecognizeTrainTicketOutcomeCallable recognizeTrainTicketCallable(const Model::RecognizeTrainTicketRequest& request) const;
+			RecognizeTurkeyIdentityCardOutcome recognizeTurkeyIdentityCard(const Model::RecognizeTurkeyIdentityCardRequest &request)const;
+			void recognizeTurkeyIdentityCardAsync(const Model::RecognizeTurkeyIdentityCardRequest& request, const RecognizeTurkeyIdentityCardAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RecognizeTurkeyIdentityCardOutcomeCallable recognizeTurkeyIdentityCardCallable(const Model::RecognizeTurkeyIdentityCardRequest& request) const;
 			RecognizeUkraineIdentityCardOutcome recognizeUkraineIdentityCard(const Model::RecognizeUkraineIdentityCardRequest &request)const;
 			void recognizeUkraineIdentityCardAsync(const Model::RecognizeUkraineIdentityCardRequest& request, const RecognizeUkraineIdentityCardAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RecognizeUkraineIdentityCardOutcomeCallable recognizeUkraineIdentityCardCallable(const Model::RecognizeUkraineIdentityCardRequest& request) const;
@@ -273,6 +310,9 @@ namespace AlibabaCloud
 			RecognizeVideoCharacterOutcome recognizeVideoCharacter(const Model::RecognizeVideoCharacterRequest &request)const;
 			void recognizeVideoCharacterAsync(const Model::RecognizeVideoCharacterRequest& request, const RecognizeVideoCharacterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RecognizeVideoCharacterOutcomeCallable recognizeVideoCharacterCallable(const Model::RecognizeVideoCharacterRequest& request) const;
+			RecognizeVietnamIdentityCardOutcome recognizeVietnamIdentityCard(const Model::RecognizeVietnamIdentityCardRequest &request)const;
+			void recognizeVietnamIdentityCardAsync(const Model::RecognizeVietnamIdentityCardRequest& request, const RecognizeVietnamIdentityCardAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RecognizeVietnamIdentityCardOutcomeCallable recognizeVietnamIdentityCardCallable(const Model::RecognizeVietnamIdentityCardRequest& request) const;
 			TrimDocumentOutcome trimDocument(const Model::TrimDocumentRequest &request)const;
 			void trimDocumentAsync(const Model::TrimDocumentRequest& request, const TrimDocumentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			TrimDocumentOutcomeCallable trimDocumentCallable(const Model::TrimDocumentRequest& request) const;

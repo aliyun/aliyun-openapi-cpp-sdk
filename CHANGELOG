@@ -1,3 +1,6 @@
+2022-05-25 Version: 1.36.1136
+- Release RecognizeTurkeyIdentityCard RecognizeMalaysiaIdentityCard RecognizeRussiaIdentityCard RecognizeIndonesiaIdentityCard RecognizeIndonesiaIdentityCard.
+
 2022-05-24 Version: 1.36.1135
 - StartDBInstance parameter change.
 
