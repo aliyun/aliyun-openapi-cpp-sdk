@@ -38,12 +38,18 @@
 #include "model/DetectKneeXRayResult.h"
 #include "model/DetectLungNoduleRequest.h"
 #include "model/DetectLungNoduleResult.h"
+#include "model/DetectLymphRequest.h"
+#include "model/DetectLymphResult.h"
+#include "model/DetectPancRequest.h"
+#include "model/DetectPancResult.h"
 #include "model/DetectRibFractureRequest.h"
 #include "model/DetectRibFractureResult.h"
 #include "model/DetectSkinDiseaseRequest.h"
 #include "model/DetectSkinDiseaseResult.h"
 #include "model/DetectSpineMRIRequest.h"
 #include "model/DetectSpineMRIResult.h"
+#include "model/FeedbackSessionRequest.h"
+#include "model/FeedbackSessionResult.h"
 #include "model/GetAsyncJobResultRequest.h"
 #include "model/GetAsyncJobResultResult.h"
 #include "model/RunCTRegistrationRequest.h"
@@ -87,6 +93,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DetectLungNoduleResult> DetectLungNoduleOutcome;
 			typedef std::future<DetectLungNoduleOutcome> DetectLungNoduleOutcomeCallable;
 			typedef std::function<void(const ImageprocessClient*, const Model::DetectLungNoduleRequest&, const DetectLungNoduleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetectLungNoduleAsyncHandler;
+			typedef Outcome<Error, Model::DetectLymphResult> DetectLymphOutcome;
+			typedef std::future<DetectLymphOutcome> DetectLymphOutcomeCallable;
+			typedef std::function<void(const ImageprocessClient*, const Model::DetectLymphRequest&, const DetectLymphOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetectLymphAsyncHandler;
+			typedef Outcome<Error, Model::DetectPancResult> DetectPancOutcome;
+			typedef std::future<DetectPancOutcome> DetectPancOutcomeCallable;
+			typedef std::function<void(const ImageprocessClient*, const Model::DetectPancRequest&, const DetectPancOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetectPancAsyncHandler;
 			typedef Outcome<Error, Model::DetectRibFractureResult> DetectRibFractureOutcome;
 			typedef std::future<DetectRibFractureOutcome> DetectRibFractureOutcomeCallable;
 			typedef std::function<void(const ImageprocessClient*, const Model::DetectRibFractureRequest&, const DetectRibFractureOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetectRibFractureAsyncHandler;
@@ -96,6 +108,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DetectSpineMRIResult> DetectSpineMRIOutcome;
 			typedef std::future<DetectSpineMRIOutcome> DetectSpineMRIOutcomeCallable;
 			typedef std::function<void(const ImageprocessClient*, const Model::DetectSpineMRIRequest&, const DetectSpineMRIOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetectSpineMRIAsyncHandler;
+			typedef Outcome<Error, Model::FeedbackSessionResult> FeedbackSessionOutcome;
+			typedef std::future<FeedbackSessionOutcome> FeedbackSessionOutcomeCallable;
+			typedef std::function<void(const ImageprocessClient*, const Model::FeedbackSessionRequest&, const FeedbackSessionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> FeedbackSessionAsyncHandler;
 			typedef Outcome<Error, Model::GetAsyncJobResultResult> GetAsyncJobResultOutcome;
 			typedef std::future<GetAsyncJobResultOutcome> GetAsyncJobResultOutcomeCallable;
 			typedef std::function<void(const ImageprocessClient*, const Model::GetAsyncJobResultRequest&, const GetAsyncJobResultOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAsyncJobResultAsyncHandler;
@@ -140,6 +155,12 @@ namespace AlibabaCloud
 			DetectLungNoduleOutcome detectLungNodule(const Model::DetectLungNoduleRequest &request)const;
 			void detectLungNoduleAsync(const Model::DetectLungNoduleRequest& request, const DetectLungNoduleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DetectLungNoduleOutcomeCallable detectLungNoduleCallable(const Model::DetectLungNoduleRequest& request) const;
+			DetectLymphOutcome detectLymph(const Model::DetectLymphRequest &request)const;
+			void detectLymphAsync(const Model::DetectLymphRequest& request, const DetectLymphAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DetectLymphOutcomeCallable detectLymphCallable(const Model::DetectLymphRequest& request) const;
+			DetectPancOutcome detectPanc(const Model::DetectPancRequest &request)const;
+			void detectPancAsync(const Model::DetectPancRequest& request, const DetectPancAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DetectPancOutcomeCallable detectPancCallable(const Model::DetectPancRequest& request) const;
 			DetectRibFractureOutcome detectRibFracture(const Model::DetectRibFractureRequest &request)const;
 			void detectRibFractureAsync(const Model::DetectRibFractureRequest& request, const DetectRibFractureAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DetectRibFractureOutcomeCallable detectRibFractureCallable(const Model::DetectRibFractureRequest& request) const;
@@ -149,6 +170,9 @@ namespace AlibabaCloud
 			DetectSpineMRIOutcome detectSpineMRI(const Model::DetectSpineMRIRequest &request)const;
 			void detectSpineMRIAsync(const Model::DetectSpineMRIRequest& request, const DetectSpineMRIAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DetectSpineMRIOutcomeCallable detectSpineMRICallable(const Model::DetectSpineMRIRequest& request) const;
+			FeedbackSessionOutcome feedbackSession(const Model::FeedbackSessionRequest &request)const;
+			void feedbackSessionAsync(const Model::FeedbackSessionRequest& request, const FeedbackSessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			FeedbackSessionOutcomeCallable feedbackSessionCallable(const Model::FeedbackSessionRequest& request) const;
 			GetAsyncJobResultOutcome getAsyncJobResult(const Model::GetAsyncJobResultRequest &request)const;
 			void getAsyncJobResultAsync(const Model::GetAsyncJobResultRequest& request, const GetAsyncJobResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetAsyncJobResultOutcomeCallable getAsyncJobResultCallable(const Model::GetAsyncJobResultRequest& request) const;

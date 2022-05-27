@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IMAGEPROCESS_MODEL_CALCCACSRESULT_H_
-#define ALIBABACLOUD_IMAGEPROCESS_MODEL_CALCCACSRESULT_H_
+#ifndef ALIBABACLOUD_IMAGEPROCESS_MODEL_DETECTPANCRESULT_H_
+#define ALIBABACLOUD_IMAGEPROCESS_MODEL_DETECTPANCRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,27 +29,26 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IMAGEPROCESS_EXPORT CalcCACSResult : public ServiceResult
+			class ALIBABACLOUD_IMAGEPROCESS_EXPORT DetectPancResult : public ServiceResult
 			{
 			public:
 				struct Data
 				{
-					struct DetectionsItem
+					struct Lesion
 					{
-						float calciumVolume;
-						float calciumScore;
-						long calciumId;
+						std::string pdacVol;
+						std::string pancVol;
+						std::string mask;
+						std::string nonPdacVol;
+						std::vector<std::string> possibilities;
 					};
-					std::string score;
-					std::vector<DetectionsItem> detections;
-					std::string volumeScore;
-					std::string resultUrl;
+					Lesion lesion;
 				};
 
 
-				CalcCACSResult();
-				explicit CalcCACSResult(const std::string &payload);
-				~CalcCACSResult();
+				DetectPancResult();
+				explicit DetectPancResult(const std::string &payload);
+				~DetectPancResult();
 				std::string getMessage()const;
 				Data getData()const;
 				std::string getCode()const;
@@ -65,4 +64,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IMAGEPROCESS_MODEL_CALCCACSRESULT_H_
+#endif // !ALIBABACLOUD_IMAGEPROCESS_MODEL_DETECTPANCRESULT_H_

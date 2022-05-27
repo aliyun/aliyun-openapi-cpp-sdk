@@ -339,6 +339,78 @@ ImageprocessClient::DetectLungNoduleOutcomeCallable ImageprocessClient::detectLu
 	return task->get_future();
 }
 
+ImageprocessClient::DetectLymphOutcome ImageprocessClient::detectLymph(const DetectLymphRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DetectLymphOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DetectLymphOutcome(DetectLymphResult(outcome.result()));
+	else
+		return DetectLymphOutcome(outcome.error());
+}
+
+void ImageprocessClient::detectLymphAsync(const DetectLymphRequest& request, const DetectLymphAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, detectLymph(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ImageprocessClient::DetectLymphOutcomeCallable ImageprocessClient::detectLymphCallable(const DetectLymphRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DetectLymphOutcome()>>(
+			[this, request]()
+			{
+			return this->detectLymph(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ImageprocessClient::DetectPancOutcome ImageprocessClient::detectPanc(const DetectPancRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DetectPancOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DetectPancOutcome(DetectPancResult(outcome.result()));
+	else
+		return DetectPancOutcome(outcome.error());
+}
+
+void ImageprocessClient::detectPancAsync(const DetectPancRequest& request, const DetectPancAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, detectPanc(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ImageprocessClient::DetectPancOutcomeCallable ImageprocessClient::detectPancCallable(const DetectPancRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DetectPancOutcome()>>(
+			[this, request]()
+			{
+			return this->detectPanc(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ImageprocessClient::DetectRibFractureOutcome ImageprocessClient::detectRibFracture(const DetectRibFractureRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -441,6 +513,42 @@ ImageprocessClient::DetectSpineMRIOutcomeCallable ImageprocessClient::detectSpin
 			[this, request]()
 			{
 			return this->detectSpineMRI(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ImageprocessClient::FeedbackSessionOutcome ImageprocessClient::feedbackSession(const FeedbackSessionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return FeedbackSessionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return FeedbackSessionOutcome(FeedbackSessionResult(outcome.result()));
+	else
+		return FeedbackSessionOutcome(outcome.error());
+}
+
+void ImageprocessClient::feedbackSessionAsync(const FeedbackSessionRequest& request, const FeedbackSessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, feedbackSession(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ImageprocessClient::FeedbackSessionOutcomeCallable ImageprocessClient::feedbackSessionCallable(const FeedbackSessionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<FeedbackSessionOutcome()>>(
+			[this, request]()
+			{
+			return this->feedbackSession(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

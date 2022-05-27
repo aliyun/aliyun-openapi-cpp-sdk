@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IMAGEPROCESS_MODEL_CALCCACSRESULT_H_
-#define ALIBABACLOUD_IMAGEPROCESS_MODEL_CALCCACSRESULT_H_
+#ifndef ALIBABACLOUD_IMAGEPROCESS_MODEL_DETECTLYMPHRESULT_H_
+#define ALIBABACLOUD_IMAGEPROCESS_MODEL_DETECTLYMPHRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,40 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IMAGEPROCESS_EXPORT CalcCACSResult : public ServiceResult
+			class ALIBABACLOUD_IMAGEPROCESS_EXPORT DetectLymphResult : public ServiceResult
 			{
 			public:
-				struct Data
-				{
-					struct DetectionsItem
-					{
-						float calciumVolume;
-						float calciumScore;
-						long calciumId;
-					};
-					std::string score;
-					std::vector<DetectionsItem> detections;
-					std::string volumeScore;
-					std::string resultUrl;
-				};
 
 
-				CalcCACSResult();
-				explicit CalcCACSResult(const std::string &payload);
-				~CalcCACSResult();
-				std::string getMessage()const;
-				Data getData()const;
-				std::string getCode()const;
+				DetectLymphResult();
+				explicit DetectLymphResult(const std::string &payload);
+				~DetectLymphResult();
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string message_;
-				Data data_;
-				std::string code_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IMAGEPROCESS_MODEL_CALCCACSRESULT_H_
+#endif // !ALIBABACLOUD_IMAGEPROCESS_MODEL_DETECTLYMPHRESULT_H_

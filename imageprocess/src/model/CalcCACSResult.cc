@@ -44,11 +44,39 @@ void CalcCACSResult::parse(const std::string &payload)
 		data_.resultUrl = dataNode["ResultUrl"].asString();
 	if(!dataNode["Score"].isNull())
 		data_.score = dataNode["Score"].asString();
+	if(!dataNode["VolumeScore"].isNull())
+		data_.volumeScore = dataNode["VolumeScore"].asString();
+	auto allDetectionsNode = dataNode["Detections"]["detectionsItem"];
+	for (auto dataNodeDetectionsdetectionsItem : allDetectionsNode)
+	{
+		Data::DetectionsItem detectionsItemObject;
+		if(!dataNodeDetectionsdetectionsItem["CalciumId"].isNull())
+			detectionsItemObject.calciumId = std::stol(dataNodeDetectionsdetectionsItem["CalciumId"].asString());
+		if(!dataNodeDetectionsdetectionsItem["CalciumScore"].isNull())
+			detectionsItemObject.calciumScore = std::stof(dataNodeDetectionsdetectionsItem["CalciumScore"].asString());
+		if(!dataNodeDetectionsdetectionsItem["CalciumVolume"].isNull())
+			detectionsItemObject.calciumVolume = std::stof(dataNodeDetectionsdetectionsItem["CalciumVolume"].asString());
+		data_.detections.push_back(detectionsItemObject);
+	}
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 
+}
+
+std::string CalcCACSResult::getMessage()const
+{
+	return message_;
 }
 
 CalcCACSResult::Data CalcCACSResult::getData()const
 {
 	return data_;
+}
+
+std::string CalcCACSResult::getCode()const
+{
+	return code_;
 }
 
