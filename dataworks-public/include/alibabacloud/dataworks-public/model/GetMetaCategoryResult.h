@@ -42,8 +42,8 @@ namespace AlibabaCloud
 						std::string ownerId;
 						std::string lastOperatorId;
 						long createTime;
-						long parentCategoryId;
 						int depth;
+						long parentCategoryId;
 						std::string name;
 					};
 					long totalCount;

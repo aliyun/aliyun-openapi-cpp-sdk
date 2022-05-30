@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,34 +18,28 @@
 
 using AlibabaCloud::Dataworks_public::Model::GetMetaTableIntroWikiRequest;
 
-GetMetaTableIntroWikiRequest::GetMetaTableIntroWikiRequest() :
-	RpcServiceRequest("dataworks-public", "2020-05-18", "GetMetaTableIntroWiki")
-{
-	setMethod(HttpRequest::Method::Post);
+GetMetaTableIntroWikiRequest::GetMetaTableIntroWikiRequest()
+    : RpcServiceRequest("dataworks-public", "2020-05-18", "GetMetaTableIntroWiki") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-GetMetaTableIntroWikiRequest::~GetMetaTableIntroWikiRequest()
-{}
+GetMetaTableIntroWikiRequest::~GetMetaTableIntroWikiRequest() {}
 
-long GetMetaTableIntroWikiRequest::getWikiVersion()const
-{
-	return wikiVersion_;
+long GetMetaTableIntroWikiRequest::getWikiVersion() const {
+  return wikiVersion_;
 }
 
-void GetMetaTableIntroWikiRequest::setWikiVersion(long wikiVersion)
-{
-	wikiVersion_ = wikiVersion;
-	setParameter("WikiVersion", std::to_string(wikiVersion));
+void GetMetaTableIntroWikiRequest::setWikiVersion(long wikiVersion) {
+  wikiVersion_ = wikiVersion;
+  setParameter(std::string("WikiVersion"), std::to_string(wikiVersion));
 }
 
-std::string GetMetaTableIntroWikiRequest::getTableGuid()const
-{
-	return tableGuid_;
+std::string GetMetaTableIntroWikiRequest::getTableGuid() const {
+  return tableGuid_;
 }
 
-void GetMetaTableIntroWikiRequest::setTableGuid(const std::string& tableGuid)
-{
-	tableGuid_ = tableGuid;
-	setParameter("TableGuid", tableGuid);
+void GetMetaTableIntroWikiRequest::setTableGuid(const std::string &tableGuid) {
+  tableGuid_ = tableGuid;
+  setParameter(std::string("TableGuid"), tableGuid);
 }
 

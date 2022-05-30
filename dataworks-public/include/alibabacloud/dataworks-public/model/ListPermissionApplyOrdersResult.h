@@ -53,8 +53,8 @@ namespace AlibabaCloud
 							ProjectMeta projectMeta;
 						};
 						ApproveContent approveContent;
-						std::string flowId;
 						long applyTimestamp;
+						std::string flowId;
 						std::string applyBaseId;
 						int flowStatus;
 					};

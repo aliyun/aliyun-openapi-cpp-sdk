@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,56 +18,46 @@
 
 using AlibabaCloud::Dataworks_public::Model::DeleteDataServiceApiAuthorityRequest;
 
-DeleteDataServiceApiAuthorityRequest::DeleteDataServiceApiAuthorityRequest() :
-	RpcServiceRequest("dataworks-public", "2020-05-18", "DeleteDataServiceApiAuthority")
-{
-	setMethod(HttpRequest::Method::Post);
+DeleteDataServiceApiAuthorityRequest::DeleteDataServiceApiAuthorityRequest()
+    : RpcServiceRequest("dataworks-public", "2020-05-18", "DeleteDataServiceApiAuthority") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DeleteDataServiceApiAuthorityRequest::~DeleteDataServiceApiAuthorityRequest()
-{}
+DeleteDataServiceApiAuthorityRequest::~DeleteDataServiceApiAuthorityRequest() {}
 
-long DeleteDataServiceApiAuthorityRequest::getAuthorizedProjectId()const
-{
-	return authorizedProjectId_;
+long DeleteDataServiceApiAuthorityRequest::getAuthorizedProjectId() const {
+  return authorizedProjectId_;
 }
 
-void DeleteDataServiceApiAuthorityRequest::setAuthorizedProjectId(long authorizedProjectId)
-{
-	authorizedProjectId_ = authorizedProjectId;
-	setBodyParameter("AuthorizedProjectId", std::to_string(authorizedProjectId));
+void DeleteDataServiceApiAuthorityRequest::setAuthorizedProjectId(long authorizedProjectId) {
+  authorizedProjectId_ = authorizedProjectId;
+  setBodyParameter(std::string("AuthorizedProjectId"), std::to_string(authorizedProjectId));
 }
 
-long DeleteDataServiceApiAuthorityRequest::getTenantId()const
-{
-	return tenantId_;
+long DeleteDataServiceApiAuthorityRequest::getTenantId() const {
+  return tenantId_;
 }
 
-void DeleteDataServiceApiAuthorityRequest::setTenantId(long tenantId)
-{
-	tenantId_ = tenantId;
-	setBodyParameter("TenantId", std::to_string(tenantId));
+void DeleteDataServiceApiAuthorityRequest::setTenantId(long tenantId) {
+  tenantId_ = tenantId;
+  setBodyParameter(std::string("TenantId"), std::to_string(tenantId));
 }
 
-long DeleteDataServiceApiAuthorityRequest::getProjectId()const
-{
-	return projectId_;
+long DeleteDataServiceApiAuthorityRequest::getProjectId() const {
+  return projectId_;
 }
 
-void DeleteDataServiceApiAuthorityRequest::setProjectId(long projectId)
-{
-	projectId_ = projectId;
-	setBodyParameter("ProjectId", std::to_string(projectId));
+void DeleteDataServiceApiAuthorityRequest::setProjectId(long projectId) {
+  projectId_ = projectId;
+  setBodyParameter(std::string("ProjectId"), std::to_string(projectId));
 }
 
-long DeleteDataServiceApiAuthorityRequest::getApiId()const
-{
-	return apiId_;
+long DeleteDataServiceApiAuthorityRequest::getApiId() const {
+  return apiId_;
 }
 
-void DeleteDataServiceApiAuthorityRequest::setApiId(long apiId)
-{
-	apiId_ = apiId;
-	setBodyParameter("ApiId", std::to_string(apiId));
+void DeleteDataServiceApiAuthorityRequest::setApiId(long apiId) {
+  apiId_ = apiId;
+  setBodyParameter(std::string("ApiId"), std::to_string(apiId));
 }
 

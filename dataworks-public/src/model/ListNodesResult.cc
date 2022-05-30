@@ -50,54 +50,54 @@ void ListNodesResult::parse(const std::string &payload)
 	for (auto dataNodeNodesNodesItem : allNodesNode)
 	{
 		Data::NodesItem nodesItemObject;
-		if(!dataNodeNodesNodesItem["NodeId"].isNull())
-			nodesItemObject.nodeId = std::stol(dataNodeNodesNodesItem["NodeId"].asString());
-		if(!dataNodeNodesNodesItem["NodeName"].isNull())
-			nodesItemObject.nodeName = dataNodeNodesNodesItem["NodeName"].asString();
-		if(!dataNodeNodesNodesItem["CronExpress"].isNull())
-			nodesItemObject.cronExpress = dataNodeNodesNodesItem["CronExpress"].asString();
 		if(!dataNodeNodesNodesItem["SchedulerType"].isNull())
 			nodesItemObject.schedulerType = dataNodeNodesNodesItem["SchedulerType"].asString();
-		if(!dataNodeNodesNodesItem["ProgramType"].isNull())
-			nodesItemObject.programType = dataNodeNodesNodesItem["ProgramType"].asString();
-		if(!dataNodeNodesNodesItem["OwnerId"].isNull())
-			nodesItemObject.ownerId = dataNodeNodesNodesItem["OwnerId"].asString();
-		if(!dataNodeNodesNodesItem["ProjectId"].isNull())
-			nodesItemObject.projectId = std::stol(dataNodeNodesNodesItem["ProjectId"].asString());
-		if(!dataNodeNodesNodesItem["Repeatability"].isNull())
-			nodesItemObject.repeatability = dataNodeNodesNodesItem["Repeatability"].asString() == "true";
-		if(!dataNodeNodesNodesItem["ParamValues"].isNull())
-			nodesItemObject.paramValues = dataNodeNodesNodesItem["ParamValues"].asString();
-		if(!dataNodeNodesNodesItem["Description"].isNull())
-			nodesItemObject.description = dataNodeNodesNodesItem["Description"].asString();
-		if(!dataNodeNodesNodesItem["ResGroupName"].isNull())
-			nodesItemObject.resGroupName = dataNodeNodesNodesItem["ResGroupName"].asString();
-		if(!dataNodeNodesNodesItem["Priority"].isNull())
-			nodesItemObject.priority = std::stoi(dataNodeNodesNodesItem["Priority"].asString());
-		if(!dataNodeNodesNodesItem["BaselineId"].isNull())
-			nodesItemObject.baselineId = std::stol(dataNodeNodesNodesItem["BaselineId"].asString());
 		if(!dataNodeNodesNodesItem["RepeatInterval"].isNull())
 			nodesItemObject.repeatInterval = std::stol(dataNodeNodesNodesItem["RepeatInterval"].asString());
+		if(!dataNodeNodesNodesItem["Repeatability"].isNull())
+			nodesItemObject.repeatability = dataNodeNodesNodesItem["Repeatability"].asString() == "true";
+		if(!dataNodeNodesNodesItem["ProjectId"].isNull())
+			nodesItemObject.projectId = std::stol(dataNodeNodesNodesItem["ProjectId"].asString());
+		if(!dataNodeNodesNodesItem["ProgramType"].isNull())
+			nodesItemObject.programType = dataNodeNodesNodesItem["ProgramType"].asString();
+		if(!dataNodeNodesNodesItem["Priority"].isNull())
+			nodesItemObject.priority = std::stoi(dataNodeNodesNodesItem["Priority"].asString());
+		if(!dataNodeNodesNodesItem["OwnerId"].isNull())
+			nodesItemObject.ownerId = dataNodeNodesNodesItem["OwnerId"].asString();
 		if(!dataNodeNodesNodesItem["Connection"].isNull())
 			nodesItemObject.connection = dataNodeNodesNodesItem["Connection"].asString();
-		if(!dataNodeNodesNodesItem["DqcType"].isNull())
-			nodesItemObject.dqcType = std::stoi(dataNodeNodesNodesItem["DqcType"].asString());
-		if(!dataNodeNodesNodesItem["DqcDescription"].isNull())
-			nodesItemObject.dqcDescription = dataNodeNodesNodesItem["DqcDescription"].asString();
+		if(!dataNodeNodesNodesItem["ParamValues"].isNull())
+			nodesItemObject.paramValues = dataNodeNodesNodesItem["ParamValues"].asString();
 		if(!dataNodeNodesNodesItem["RelatedFlowId"].isNull())
 			nodesItemObject.relatedFlowId = std::stol(dataNodeNodesNodesItem["RelatedFlowId"].asString());
+		if(!dataNodeNodesNodesItem["DqcType"].isNull())
+			nodesItemObject.dqcType = std::stoi(dataNodeNodesNodesItem["DqcType"].asString());
+		if(!dataNodeNodesNodesItem["BaselineId"].isNull())
+			nodesItemObject.baselineId = std::stol(dataNodeNodesNodesItem["BaselineId"].asString());
+		if(!dataNodeNodesNodesItem["Description"].isNull())
+			nodesItemObject.description = dataNodeNodesNodesItem["Description"].asString();
+		if(!dataNodeNodesNodesItem["NodeName"].isNull())
+			nodesItemObject.nodeName = dataNodeNodesNodesItem["NodeName"].asString();
+		if(!dataNodeNodesNodesItem["ResGroupName"].isNull())
+			nodesItemObject.resGroupName = dataNodeNodesNodesItem["ResGroupName"].asString();
 		if(!dataNodeNodesNodesItem["BusinessId"].isNull())
 			nodesItemObject.businessId = std::stol(dataNodeNodesNodesItem["BusinessId"].asString());
+		if(!dataNodeNodesNodesItem["DqcDescription"].isNull())
+			nodesItemObject.dqcDescription = dataNodeNodesNodesItem["DqcDescription"].asString();
+		if(!dataNodeNodesNodesItem["CronExpress"].isNull())
+			nodesItemObject.cronExpress = dataNodeNodesNodesItem["CronExpress"].asString();
+		if(!dataNodeNodesNodesItem["NodeId"].isNull())
+			nodesItemObject.nodeId = std::stol(dataNodeNodesNodesItem["NodeId"].asString());
 		data_.nodes.push_back(nodesItemObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
 	if(!value["ErrorMessage"].isNull())
 		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

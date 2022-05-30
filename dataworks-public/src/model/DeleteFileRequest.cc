@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,45 +18,37 @@
 
 using AlibabaCloud::Dataworks_public::Model::DeleteFileRequest;
 
-DeleteFileRequest::DeleteFileRequest() :
-	RpcServiceRequest("dataworks-public", "2020-05-18", "DeleteFile")
-{
-	setMethod(HttpRequest::Method::Post);
+DeleteFileRequest::DeleteFileRequest()
+    : RpcServiceRequest("dataworks-public", "2020-05-18", "DeleteFile") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DeleteFileRequest::~DeleteFileRequest()
-{}
+DeleteFileRequest::~DeleteFileRequest() {}
 
-long DeleteFileRequest::getProjectId()const
-{
-	return projectId_;
+long DeleteFileRequest::getProjectId() const {
+  return projectId_;
 }
 
-void DeleteFileRequest::setProjectId(long projectId)
-{
-	projectId_ = projectId;
-	setBodyParameter("ProjectId", std::to_string(projectId));
+void DeleteFileRequest::setProjectId(long projectId) {
+  projectId_ = projectId;
+  setBodyParameter(std::string("ProjectId"), std::to_string(projectId));
 }
 
-std::string DeleteFileRequest::getProjectIdentifier()const
-{
-	return projectIdentifier_;
+std::string DeleteFileRequest::getProjectIdentifier() const {
+  return projectIdentifier_;
 }
 
-void DeleteFileRequest::setProjectIdentifier(const std::string& projectIdentifier)
-{
-	projectIdentifier_ = projectIdentifier;
-	setBodyParameter("ProjectIdentifier", projectIdentifier);
+void DeleteFileRequest::setProjectIdentifier(const std::string &projectIdentifier) {
+  projectIdentifier_ = projectIdentifier;
+  setBodyParameter(std::string("ProjectIdentifier"), projectIdentifier);
 }
 
-long DeleteFileRequest::getFileId()const
-{
-	return fileId_;
+long DeleteFileRequest::getFileId() const {
+  return fileId_;
 }
 
-void DeleteFileRequest::setFileId(long fileId)
-{
-	fileId_ = fileId;
-	setBodyParameter("FileId", std::to_string(fileId));
+void DeleteFileRequest::setFileId(long fileId) {
+  fileId_ = fileId;
+  setBodyParameter(std::string("FileId"), std::to_string(fileId));
 }
 

@@ -43,14 +43,14 @@ void ListProjectRolesResult::parse(const std::string &payload)
 	for (auto valueProjectRoleListRole : allProjectRoleListNode)
 	{
 		Role projectRoleListObject;
-		if(!valueProjectRoleListRole["ProjectRoleCode"].isNull())
-			projectRoleListObject.projectRoleCode = valueProjectRoleListRole["ProjectRoleCode"].asString();
 		if(!valueProjectRoleListRole["ProjectRoleId"].isNull())
 			projectRoleListObject.projectRoleId = std::stoi(valueProjectRoleListRole["ProjectRoleId"].asString());
-		if(!valueProjectRoleListRole["ProjectRoleName"].isNull())
-			projectRoleListObject.projectRoleName = valueProjectRoleListRole["ProjectRoleName"].asString();
 		if(!valueProjectRoleListRole["ProjectRoleType"].isNull())
 			projectRoleListObject.projectRoleType = valueProjectRoleListRole["ProjectRoleType"].asString();
+		if(!valueProjectRoleListRole["ProjectRoleName"].isNull())
+			projectRoleListObject.projectRoleName = valueProjectRoleListRole["ProjectRoleName"].asString();
+		if(!valueProjectRoleListRole["ProjectRoleCode"].isNull())
+			projectRoleListObject.projectRoleCode = valueProjectRoleListRole["ProjectRoleCode"].asString();
 		projectRoleList_.push_back(projectRoleListObject);
 	}
 

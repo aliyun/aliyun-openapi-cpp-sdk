@@ -40,24 +40,24 @@ void GetDataServiceGroupResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto groupNode = value["Group"];
-	if(!groupNode["TenantId"].isNull())
-		group_.tenantId = std::stol(groupNode["TenantId"].asString());
-	if(!groupNode["ProjectId"].isNull())
-		group_.projectId = std::stol(groupNode["ProjectId"].asString());
-	if(!groupNode["GroupId"].isNull())
-		group_.groupId = groupNode["GroupId"].asString();
-	if(!groupNode["ApiGatewayGroupId"].isNull())
-		group_.apiGatewayGroupId = groupNode["ApiGatewayGroupId"].asString();
-	if(!groupNode["GroupName"].isNull())
-		group_.groupName = groupNode["GroupName"].asString();
-	if(!groupNode["Description"].isNull())
-		group_.description = groupNode["Description"].asString();
-	if(!groupNode["CreatedTime"].isNull())
-		group_.createdTime = groupNode["CreatedTime"].asString();
 	if(!groupNode["ModifiedTime"].isNull())
 		group_.modifiedTime = groupNode["ModifiedTime"].asString();
+	if(!groupNode["Description"].isNull())
+		group_.description = groupNode["Description"].asString();
+	if(!groupNode["GroupName"].isNull())
+		group_.groupName = groupNode["GroupName"].asString();
+	if(!groupNode["GroupId"].isNull())
+		group_.groupId = groupNode["GroupId"].asString();
+	if(!groupNode["ProjectId"].isNull())
+		group_.projectId = std::stol(groupNode["ProjectId"].asString());
+	if(!groupNode["ApiGatewayGroupId"].isNull())
+		group_.apiGatewayGroupId = groupNode["ApiGatewayGroupId"].asString();
 	if(!groupNode["CreatorId"].isNull())
 		group_.creatorId = groupNode["CreatorId"].asString();
+	if(!groupNode["CreatedTime"].isNull())
+		group_.createdTime = groupNode["CreatedTime"].asString();
+	if(!groupNode["TenantId"].isNull())
+		group_.tenantId = std::stol(groupNode["TenantId"].asString());
 
 }
 

@@ -52,40 +52,40 @@ void ListDataServiceAuthorizedApisResult::parse(const std::string &payload)
 		Data::ApiAuthorized apiAuthorizedObject;
 		if(!dataNodeApiAuthorizedListApiAuthorized["ApiId"].isNull())
 			apiAuthorizedObject.apiId = std::stol(dataNodeApiAuthorizedListApiAuthorized["ApiId"].asString());
-		if(!dataNodeApiAuthorizedListApiAuthorized["ApiName"].isNull())
-			apiAuthorizedObject.apiName = dataNodeApiAuthorizedListApiAuthorized["ApiName"].asString();
-		if(!dataNodeApiAuthorizedListApiAuthorized["ApiPath"].isNull())
-			apiAuthorizedObject.apiPath = dataNodeApiAuthorizedListApiAuthorized["ApiPath"].asString();
 		if(!dataNodeApiAuthorizedListApiAuthorized["ApiStatus"].isNull())
 			apiAuthorizedObject.apiStatus = std::stoi(dataNodeApiAuthorizedListApiAuthorized["ApiStatus"].asString());
-		if(!dataNodeApiAuthorizedListApiAuthorized["CreatedTime"].isNull())
-			apiAuthorizedObject.createdTime = dataNodeApiAuthorizedListApiAuthorized["CreatedTime"].asString();
-		if(!dataNodeApiAuthorizedListApiAuthorized["CreatorId"].isNull())
-			apiAuthorizedObject.creatorId = dataNodeApiAuthorizedListApiAuthorized["CreatorId"].asString();
-		if(!dataNodeApiAuthorizedListApiAuthorized["GrantCreatedTime"].isNull())
-			apiAuthorizedObject.grantCreatedTime = dataNodeApiAuthorizedListApiAuthorized["GrantCreatedTime"].asString();
-		if(!dataNodeApiAuthorizedListApiAuthorized["GrantEndTime"].isNull())
-			apiAuthorizedObject.grantEndTime = dataNodeApiAuthorizedListApiAuthorized["GrantEndTime"].asString();
 		if(!dataNodeApiAuthorizedListApiAuthorized["GrantOperatorId"].isNull())
 			apiAuthorizedObject.grantOperatorId = dataNodeApiAuthorizedListApiAuthorized["GrantOperatorId"].asString();
-		if(!dataNodeApiAuthorizedListApiAuthorized["GroupId"].isNull())
-			apiAuthorizedObject.groupId = dataNodeApiAuthorizedListApiAuthorized["GroupId"].asString();
-		if(!dataNodeApiAuthorizedListApiAuthorized["ModifiedTime"].isNull())
-			apiAuthorizedObject.modifiedTime = dataNodeApiAuthorizedListApiAuthorized["ModifiedTime"].asString();
 		if(!dataNodeApiAuthorizedListApiAuthorized["ProjectId"].isNull())
 			apiAuthorizedObject.projectId = std::stol(dataNodeApiAuthorizedListApiAuthorized["ProjectId"].asString());
+		if(!dataNodeApiAuthorizedListApiAuthorized["CreatorId"].isNull())
+			apiAuthorizedObject.creatorId = dataNodeApiAuthorizedListApiAuthorized["CreatorId"].asString();
+		if(!dataNodeApiAuthorizedListApiAuthorized["GrantEndTime"].isNull())
+			apiAuthorizedObject.grantEndTime = dataNodeApiAuthorizedListApiAuthorized["GrantEndTime"].asString();
+		if(!dataNodeApiAuthorizedListApiAuthorized["ModifiedTime"].isNull())
+			apiAuthorizedObject.modifiedTime = dataNodeApiAuthorizedListApiAuthorized["ModifiedTime"].asString();
+		if(!dataNodeApiAuthorizedListApiAuthorized["GroupId"].isNull())
+			apiAuthorizedObject.groupId = dataNodeApiAuthorizedListApiAuthorized["GroupId"].asString();
+		if(!dataNodeApiAuthorizedListApiAuthorized["GrantCreatedTime"].isNull())
+			apiAuthorizedObject.grantCreatedTime = dataNodeApiAuthorizedListApiAuthorized["GrantCreatedTime"].asString();
+		if(!dataNodeApiAuthorizedListApiAuthorized["CreatedTime"].isNull())
+			apiAuthorizedObject.createdTime = dataNodeApiAuthorizedListApiAuthorized["CreatedTime"].asString();
+		if(!dataNodeApiAuthorizedListApiAuthorized["ApiName"].isNull())
+			apiAuthorizedObject.apiName = dataNodeApiAuthorizedListApiAuthorized["ApiName"].asString();
 		if(!dataNodeApiAuthorizedListApiAuthorized["TenantId"].isNull())
 			apiAuthorizedObject.tenantId = std::stol(dataNodeApiAuthorizedListApiAuthorized["TenantId"].asString());
+		if(!dataNodeApiAuthorizedListApiAuthorized["ApiPath"].isNull())
+			apiAuthorizedObject.apiPath = dataNodeApiAuthorizedListApiAuthorized["ApiPath"].asString();
 		data_.apiAuthorizedList.push_back(apiAuthorizedObject);
 	}
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
 
 }
 

@@ -60,14 +60,14 @@ void GetPermissionApplyOrderDetailResult::parse(const std::string &payload)
 	for (auto applyOrderDetailNodeGranteeObjectListGranteeObjectListItem : allGranteeObjectListNode)
 	{
 		ApplyOrderDetail::GranteeObjectListItem granteeObjectListItemObject;
-		if(!applyOrderDetailNodeGranteeObjectListGranteeObjectListItem["GranteeId"].isNull())
-			granteeObjectListItemObject.granteeId = applyOrderDetailNodeGranteeObjectListGranteeObjectListItem["GranteeId"].asString();
-		if(!applyOrderDetailNodeGranteeObjectListGranteeObjectListItem["GranteeName"].isNull())
-			granteeObjectListItemObject.granteeName = applyOrderDetailNodeGranteeObjectListGranteeObjectListItem["GranteeName"].asString();
 		if(!applyOrderDetailNodeGranteeObjectListGranteeObjectListItem["GranteeType"].isNull())
 			granteeObjectListItemObject.granteeType = std::stoi(applyOrderDetailNodeGranteeObjectListGranteeObjectListItem["GranteeType"].asString());
 		if(!applyOrderDetailNodeGranteeObjectListGranteeObjectListItem["GranteeTypeSub"].isNull())
 			granteeObjectListItemObject.granteeTypeSub = std::stoi(applyOrderDetailNodeGranteeObjectListGranteeObjectListItem["GranteeTypeSub"].asString());
+		if(!applyOrderDetailNodeGranteeObjectListGranteeObjectListItem["GranteeName"].isNull())
+			granteeObjectListItemObject.granteeName = applyOrderDetailNodeGranteeObjectListGranteeObjectListItem["GranteeName"].asString();
+		if(!applyOrderDetailNodeGranteeObjectListGranteeObjectListItem["GranteeId"].isNull())
+			granteeObjectListItemObject.granteeId = applyOrderDetailNodeGranteeObjectListGranteeObjectListItem["GranteeId"].asString();
 		applyOrderDetail_.granteeObjectList.push_back(granteeObjectListItemObject);
 	}
 	auto approveContentNode = applyOrderDetailNode["ApproveContent"];
@@ -78,10 +78,10 @@ void GetPermissionApplyOrderDetailResult::parse(const std::string &payload)
 	if(!approveContentNode["OrderType"].isNull())
 		applyOrderDetail_.approveContent.orderType = std::stoi(approveContentNode["OrderType"].asString());
 	auto projectMetaNode = approveContentNode["ProjectMeta"];
-	if(!projectMetaNode["WorkspaceId"].isNull())
-		applyOrderDetail_.approveContent.projectMeta.workspaceId = std::stoi(projectMetaNode["WorkspaceId"].asString());
 	if(!projectMetaNode["MaxComputeProjectName"].isNull())
 		applyOrderDetail_.approveContent.projectMeta.maxComputeProjectName = projectMetaNode["MaxComputeProjectName"].asString();
+	if(!projectMetaNode["WorkspaceId"].isNull())
+		applyOrderDetail_.approveContent.projectMeta.workspaceId = std::stoi(projectMetaNode["WorkspaceId"].asString());
 	auto allObjectMetaListNode = projectMetaNode["ObjectMetaList"]["ObjectMetaListItem"];
 	for (auto projectMetaNodeObjectMetaListObjectMetaListItem : allObjectMetaListNode)
 	{
@@ -92,10 +92,10 @@ void GetPermissionApplyOrderDetailResult::parse(const std::string &payload)
 		for (auto projectMetaNodeObjectMetaListObjectMetaListItemColumnMetaListColumnMetaListItem : allColumnMetaListNode)
 		{
 			ApplyOrderDetail::ApproveContent::ProjectMeta::ObjectMetaListItem::ColumnMetaListItem columnMetaListObject;
-			if(!projectMetaNodeObjectMetaListObjectMetaListItemColumnMetaListColumnMetaListItem["ColumnComment"].isNull())
-				columnMetaListObject.columnComment = projectMetaNodeObjectMetaListObjectMetaListItemColumnMetaListColumnMetaListItem["ColumnComment"].asString();
 			if(!projectMetaNodeObjectMetaListObjectMetaListItemColumnMetaListColumnMetaListItem["ColumnName"].isNull())
 				columnMetaListObject.columnName = projectMetaNodeObjectMetaListObjectMetaListItemColumnMetaListColumnMetaListItem["ColumnName"].asString();
+			if(!projectMetaNodeObjectMetaListObjectMetaListItemColumnMetaListColumnMetaListItem["ColumnComment"].isNull())
+				columnMetaListObject.columnComment = projectMetaNodeObjectMetaListObjectMetaListItemColumnMetaListColumnMetaListItem["ColumnComment"].asString();
 			objectMetaListItemObject.columnMetaList.push_back(columnMetaListObject);
 		}
 		applyOrderDetail_.approveContent.projectMeta.objectMetaList.push_back(objectMetaListItemObject);

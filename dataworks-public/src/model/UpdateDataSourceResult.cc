@@ -39,12 +39,12 @@ void UpdateDataSourceResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = value["HttpStatusCode"].asString();
 	if(!value["Data"].isNull())
 		data_ = value["Data"].asString() == "true";
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

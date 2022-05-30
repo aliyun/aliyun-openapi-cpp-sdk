@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,34 +18,28 @@
 
 using AlibabaCloud::Dataworks_public::Model::DesensitizeDataRequest;
 
-DesensitizeDataRequest::DesensitizeDataRequest() :
-	RpcServiceRequest("dataworks-public", "2020-05-18", "DesensitizeData")
-{
-	setMethod(HttpRequest::Method::Get);
+DesensitizeDataRequest::DesensitizeDataRequest()
+    : RpcServiceRequest("dataworks-public", "2020-05-18", "DesensitizeData") {
+  setMethod(HttpRequest::Method::Get);
 }
 
-DesensitizeDataRequest::~DesensitizeDataRequest()
-{}
+DesensitizeDataRequest::~DesensitizeDataRequest() {}
 
-std::string DesensitizeDataRequest::getSceneCode()const
-{
-	return sceneCode_;
+std::string DesensitizeDataRequest::getSceneCode() const {
+  return sceneCode_;
 }
 
-void DesensitizeDataRequest::setSceneCode(const std::string& sceneCode)
-{
-	sceneCode_ = sceneCode;
-	setBodyParameter("SceneCode", sceneCode);
+void DesensitizeDataRequest::setSceneCode(const std::string &sceneCode) {
+  sceneCode_ = sceneCode;
+  setBodyParameter(std::string("SceneCode"), sceneCode);
 }
 
-std::string DesensitizeDataRequest::getData()const
-{
-	return data_;
+std::string DesensitizeDataRequest::getData() const {
+  return data_;
 }
 
-void DesensitizeDataRequest::setData(const std::string& data)
-{
-	data_ = data;
-	setBodyParameter("Data", data);
+void DesensitizeDataRequest::setData(const std::string &data) {
+  data_ = data;
+  setBodyParameter(std::string("Data"), data);
 }
 

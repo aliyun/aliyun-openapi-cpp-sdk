@@ -134,12 +134,12 @@ namespace AlibabaCloud
 						WizardDetails wizardDetails;
 						int visibleRange;
 						std::vector<std::string> protocols;
-						std::string createdTime;
 						std::string description;
+						std::string createdTime;
 						std::string apiName;
+						int timeout;
 						std::string creatorId;
 						int requestMethod;
-						int timeout;
 						long projectId;
 						int responseContentType;
 						std::string operatorId;

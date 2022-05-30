@@ -50,28 +50,28 @@ void ListProjectMembersResult::parse(const std::string &payload)
 	for (auto dataNodeProjectMemberListProjectMember : allProjectMemberListNode)
 	{
 		Data::ProjectMember projectMemberObject;
-		if(!dataNodeProjectMemberListProjectMember["Nick"].isNull())
-			projectMemberObject.nick = dataNodeProjectMemberListProjectMember["Nick"].asString();
+		if(!dataNodeProjectMemberListProjectMember["Status"].isNull())
+			projectMemberObject.status = dataNodeProjectMemberListProjectMember["Status"].asString();
 		if(!dataNodeProjectMemberListProjectMember["ProjectMemberId"].isNull())
 			projectMemberObject.projectMemberId = dataNodeProjectMemberListProjectMember["ProjectMemberId"].asString();
+		if(!dataNodeProjectMemberListProjectMember["Nick"].isNull())
+			projectMemberObject.nick = dataNodeProjectMemberListProjectMember["Nick"].asString();
 		if(!dataNodeProjectMemberListProjectMember["ProjectMemberName"].isNull())
 			projectMemberObject.projectMemberName = dataNodeProjectMemberListProjectMember["ProjectMemberName"].asString();
 		if(!dataNodeProjectMemberListProjectMember["ProjectMemberType"].isNull())
 			projectMemberObject.projectMemberType = dataNodeProjectMemberListProjectMember["ProjectMemberType"].asString();
-		if(!dataNodeProjectMemberListProjectMember["Status"].isNull())
-			projectMemberObject.status = dataNodeProjectMemberListProjectMember["Status"].asString();
 		auto allProjectRoleListNode = dataNodeProjectMemberListProjectMember["ProjectRoleList"]["Role"];
 		for (auto dataNodeProjectMemberListProjectMemberProjectRoleListRole : allProjectRoleListNode)
 		{
 			Data::ProjectMember::Role projectRoleListObject;
-			if(!dataNodeProjectMemberListProjectMemberProjectRoleListRole["ProjectRoleCode"].isNull())
-				projectRoleListObject.projectRoleCode = dataNodeProjectMemberListProjectMemberProjectRoleListRole["ProjectRoleCode"].asString();
 			if(!dataNodeProjectMemberListProjectMemberProjectRoleListRole["ProjectRoleId"].isNull())
 				projectRoleListObject.projectRoleId = std::stoi(dataNodeProjectMemberListProjectMemberProjectRoleListRole["ProjectRoleId"].asString());
-			if(!dataNodeProjectMemberListProjectMemberProjectRoleListRole["ProjectRoleName"].isNull())
-				projectRoleListObject.projectRoleName = dataNodeProjectMemberListProjectMemberProjectRoleListRole["ProjectRoleName"].asString();
 			if(!dataNodeProjectMemberListProjectMemberProjectRoleListRole["ProjectRoleType"].isNull())
 				projectRoleListObject.projectRoleType = dataNodeProjectMemberListProjectMemberProjectRoleListRole["ProjectRoleType"].asString();
+			if(!dataNodeProjectMemberListProjectMemberProjectRoleListRole["ProjectRoleName"].isNull())
+				projectRoleListObject.projectRoleName = dataNodeProjectMemberListProjectMemberProjectRoleListRole["ProjectRoleName"].asString();
+			if(!dataNodeProjectMemberListProjectMemberProjectRoleListRole["ProjectRoleCode"].isNull())
+				projectRoleListObject.projectRoleCode = dataNodeProjectMemberListProjectMemberProjectRoleListRole["ProjectRoleCode"].asString();
 			projectMemberObject.projectRoleList.push_back(projectRoleListObject);
 		}
 		data_.projectMemberList.push_back(projectMemberObject);

@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,67 +18,55 @@
 
 using AlibabaCloud::Dataworks_public::Model::CreateDataServiceGroupRequest;
 
-CreateDataServiceGroupRequest::CreateDataServiceGroupRequest() :
-	RpcServiceRequest("dataworks-public", "2020-05-18", "CreateDataServiceGroup")
-{
-	setMethod(HttpRequest::Method::Post);
+CreateDataServiceGroupRequest::CreateDataServiceGroupRequest()
+    : RpcServiceRequest("dataworks-public", "2020-05-18", "CreateDataServiceGroup") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-CreateDataServiceGroupRequest::~CreateDataServiceGroupRequest()
-{}
+CreateDataServiceGroupRequest::~CreateDataServiceGroupRequest() {}
 
-std::string CreateDataServiceGroupRequest::getApiGatewayGroupId()const
-{
-	return apiGatewayGroupId_;
+std::string CreateDataServiceGroupRequest::getApiGatewayGroupId() const {
+  return apiGatewayGroupId_;
 }
 
-void CreateDataServiceGroupRequest::setApiGatewayGroupId(const std::string& apiGatewayGroupId)
-{
-	apiGatewayGroupId_ = apiGatewayGroupId;
-	setBodyParameter("ApiGatewayGroupId", apiGatewayGroupId);
+void CreateDataServiceGroupRequest::setApiGatewayGroupId(const std::string &apiGatewayGroupId) {
+  apiGatewayGroupId_ = apiGatewayGroupId;
+  setBodyParameter(std::string("ApiGatewayGroupId"), apiGatewayGroupId);
 }
 
-long CreateDataServiceGroupRequest::getTenantId()const
-{
-	return tenantId_;
+long CreateDataServiceGroupRequest::getTenantId() const {
+  return tenantId_;
 }
 
-void CreateDataServiceGroupRequest::setTenantId(long tenantId)
-{
-	tenantId_ = tenantId;
-	setBodyParameter("TenantId", std::to_string(tenantId));
+void CreateDataServiceGroupRequest::setTenantId(long tenantId) {
+  tenantId_ = tenantId;
+  setBodyParameter(std::string("TenantId"), std::to_string(tenantId));
 }
 
-std::string CreateDataServiceGroupRequest::getDescription()const
-{
-	return description_;
+std::string CreateDataServiceGroupRequest::getDescription() const {
+  return description_;
 }
 
-void CreateDataServiceGroupRequest::setDescription(const std::string& description)
-{
-	description_ = description;
-	setBodyParameter("Description", description);
+void CreateDataServiceGroupRequest::setDescription(const std::string &description) {
+  description_ = description;
+  setBodyParameter(std::string("Description"), description);
 }
 
-long CreateDataServiceGroupRequest::getProjectId()const
-{
-	return projectId_;
+long CreateDataServiceGroupRequest::getProjectId() const {
+  return projectId_;
 }
 
-void CreateDataServiceGroupRequest::setProjectId(long projectId)
-{
-	projectId_ = projectId;
-	setBodyParameter("ProjectId", std::to_string(projectId));
+void CreateDataServiceGroupRequest::setProjectId(long projectId) {
+  projectId_ = projectId;
+  setBodyParameter(std::string("ProjectId"), std::to_string(projectId));
 }
 
-std::string CreateDataServiceGroupRequest::getGroupName()const
-{
-	return groupName_;
+std::string CreateDataServiceGroupRequest::getGroupName() const {
+  return groupName_;
 }
 
-void CreateDataServiceGroupRequest::setGroupName(const std::string& groupName)
-{
-	groupName_ = groupName;
-	setBodyParameter("GroupName", groupName);
+void CreateDataServiceGroupRequest::setGroupName(const std::string &groupName) {
+  groupName_ = groupName;
+  setBodyParameter(std::string("GroupName"), groupName);
 }
 

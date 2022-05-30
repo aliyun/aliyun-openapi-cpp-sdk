@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,23 +18,19 @@
 
 using AlibabaCloud::Dataworks_public::Model::ListProjectIdsRequest;
 
-ListProjectIdsRequest::ListProjectIdsRequest() :
-	RpcServiceRequest("dataworks-public", "2020-05-18", "ListProjectIds")
-{
-	setMethod(HttpRequest::Method::Post);
+ListProjectIdsRequest::ListProjectIdsRequest()
+    : RpcServiceRequest("dataworks-public", "2020-05-18", "ListProjectIds") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-ListProjectIdsRequest::~ListProjectIdsRequest()
-{}
+ListProjectIdsRequest::~ListProjectIdsRequest() {}
 
-std::string ListProjectIdsRequest::getUserId()const
-{
-	return userId_;
+std::string ListProjectIdsRequest::getUserId() const {
+  return userId_;
 }
 
-void ListProjectIdsRequest::setUserId(const std::string& userId)
-{
-	userId_ = userId;
-	setParameter("UserId", userId);
+void ListProjectIdsRequest::setUserId(const std::string &userId) {
+  userId_ = userId;
+  setParameter(std::string("UserId"), userId);
 }
 

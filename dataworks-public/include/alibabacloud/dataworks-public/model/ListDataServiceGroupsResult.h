@@ -42,8 +42,8 @@ namespace AlibabaCloud
 						std::string createdTime;
 						std::string modifiedTime;
 						std::string creatorId;
-						std::string apiGatewayGroupId;
 						long projectId;
+						std::string apiGatewayGroupId;
 						std::string groupId;
 					};
 					int totalCount;

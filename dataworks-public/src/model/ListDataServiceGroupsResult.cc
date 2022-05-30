@@ -50,24 +50,24 @@ void ListDataServiceGroupsResult::parse(const std::string &payload)
 	for (auto groupPagingResultNodeGroupsGroup : allGroupsNode)
 	{
 		GroupPagingResult::Group groupObject;
-		if(!groupPagingResultNodeGroupsGroup["TenantId"].isNull())
-			groupObject.tenantId = std::stol(groupPagingResultNodeGroupsGroup["TenantId"].asString());
-		if(!groupPagingResultNodeGroupsGroup["GroupId"].isNull())
-			groupObject.groupId = groupPagingResultNodeGroupsGroup["GroupId"].asString();
-		if(!groupPagingResultNodeGroupsGroup["ApiGatewayGroupId"].isNull())
-			groupObject.apiGatewayGroupId = groupPagingResultNodeGroupsGroup["ApiGatewayGroupId"].asString();
-		if(!groupPagingResultNodeGroupsGroup["GroupName"].isNull())
-			groupObject.groupName = groupPagingResultNodeGroupsGroup["GroupName"].asString();
-		if(!groupPagingResultNodeGroupsGroup["Description"].isNull())
-			groupObject.description = groupPagingResultNodeGroupsGroup["Description"].asString();
-		if(!groupPagingResultNodeGroupsGroup["CreatedTime"].isNull())
-			groupObject.createdTime = groupPagingResultNodeGroupsGroup["CreatedTime"].asString();
 		if(!groupPagingResultNodeGroupsGroup["ModifiedTime"].isNull())
 			groupObject.modifiedTime = groupPagingResultNodeGroupsGroup["ModifiedTime"].asString();
-		if(!groupPagingResultNodeGroupsGroup["CreatorId"].isNull())
-			groupObject.creatorId = groupPagingResultNodeGroupsGroup["CreatorId"].asString();
+		if(!groupPagingResultNodeGroupsGroup["Description"].isNull())
+			groupObject.description = groupPagingResultNodeGroupsGroup["Description"].asString();
+		if(!groupPagingResultNodeGroupsGroup["GroupName"].isNull())
+			groupObject.groupName = groupPagingResultNodeGroupsGroup["GroupName"].asString();
+		if(!groupPagingResultNodeGroupsGroup["GroupId"].isNull())
+			groupObject.groupId = groupPagingResultNodeGroupsGroup["GroupId"].asString();
 		if(!groupPagingResultNodeGroupsGroup["ProjectId"].isNull())
 			groupObject.projectId = std::stol(groupPagingResultNodeGroupsGroup["ProjectId"].asString());
+		if(!groupPagingResultNodeGroupsGroup["ApiGatewayGroupId"].isNull())
+			groupObject.apiGatewayGroupId = groupPagingResultNodeGroupsGroup["ApiGatewayGroupId"].asString();
+		if(!groupPagingResultNodeGroupsGroup["CreatorId"].isNull())
+			groupObject.creatorId = groupPagingResultNodeGroupsGroup["CreatorId"].asString();
+		if(!groupPagingResultNodeGroupsGroup["CreatedTime"].isNull())
+			groupObject.createdTime = groupPagingResultNodeGroupsGroup["CreatedTime"].asString();
+		if(!groupPagingResultNodeGroupsGroup["TenantId"].isNull())
+			groupObject.tenantId = std::stol(groupPagingResultNodeGroupsGroup["TenantId"].asString());
 		groupPagingResult_.groups.push_back(groupObject);
 	}
 

@@ -36,8 +36,8 @@ namespace AlibabaCloud
 				{
 					std::string projectRoleName;
 					std::string projectRoleType;
-					std::string projectRoleCode;
 					int projectRoleId;
+					std::string projectRoleCode;
 				};
 
 

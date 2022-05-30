@@ -39,14 +39,14 @@ void PublishDataServiceApiResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Data"].isNull())
-		data_ = value["Data"].asString() == "true";
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["Data"].isNull())
+		data_ = value["Data"].asString() == "true";
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 

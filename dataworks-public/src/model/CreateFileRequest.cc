@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,331 +18,271 @@
 
 using AlibabaCloud::Dataworks_public::Model::CreateFileRequest;
 
-CreateFileRequest::CreateFileRequest() :
-	RpcServiceRequest("dataworks-public", "2020-05-18", "CreateFile")
-{
-	setMethod(HttpRequest::Method::Post);
+CreateFileRequest::CreateFileRequest()
+    : RpcServiceRequest("dataworks-public", "2020-05-18", "CreateFile") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-CreateFileRequest::~CreateFileRequest()
-{}
+CreateFileRequest::~CreateFileRequest() {}
 
-int CreateFileRequest::getFileType()const
-{
-	return fileType_;
+int CreateFileRequest::getFileType() const {
+  return fileType_;
 }
 
-void CreateFileRequest::setFileType(int fileType)
-{
-	fileType_ = fileType;
-	setBodyParameter("FileType", std::to_string(fileType));
+void CreateFileRequest::setFileType(int fileType) {
+  fileType_ = fileType;
+  setBodyParameter(std::string("FileType"), std::to_string(fileType));
 }
 
-std::string CreateFileRequest::getDependentNodeIdList()const
-{
-	return dependentNodeIdList_;
+std::string CreateFileRequest::getDependentNodeIdList() const {
+  return dependentNodeIdList_;
 }
 
-void CreateFileRequest::setDependentNodeIdList(const std::string& dependentNodeIdList)
-{
-	dependentNodeIdList_ = dependentNodeIdList;
-	setBodyParameter("DependentNodeIdList", dependentNodeIdList);
+void CreateFileRequest::setDependentNodeIdList(const std::string &dependentNodeIdList) {
+  dependentNodeIdList_ = dependentNodeIdList;
+  setBodyParameter(std::string("DependentNodeIdList"), dependentNodeIdList);
 }
 
-std::string CreateFileRequest::getContent()const
-{
-	return content_;
+std::string CreateFileRequest::getContent() const {
+  return content_;
 }
 
-void CreateFileRequest::setContent(const std::string& content)
-{
-	content_ = content;
-	setBodyParameter("Content", content);
+void CreateFileRequest::setContent(const std::string &content) {
+  content_ = content;
+  setBodyParameter(std::string("Content"), content);
 }
 
-std::string CreateFileRequest::getProjectIdentifier()const
-{
-	return projectIdentifier_;
+std::string CreateFileRequest::getProjectIdentifier() const {
+  return projectIdentifier_;
 }
 
-void CreateFileRequest::setProjectIdentifier(const std::string& projectIdentifier)
-{
-	projectIdentifier_ = projectIdentifier;
-	setBodyParameter("ProjectIdentifier", projectIdentifier);
+void CreateFileRequest::setProjectIdentifier(const std::string &projectIdentifier) {
+  projectIdentifier_ = projectIdentifier;
+  setBodyParameter(std::string("ProjectIdentifier"), projectIdentifier);
 }
 
-long CreateFileRequest::getResourceGroupId()const
-{
-	return resourceGroupId_;
+long CreateFileRequest::getResourceGroupId() const {
+  return resourceGroupId_;
 }
 
-void CreateFileRequest::setResourceGroupId(long resourceGroupId)
-{
-	resourceGroupId_ = resourceGroupId;
-	setBodyParameter("ResourceGroupId", std::to_string(resourceGroupId));
+void CreateFileRequest::setResourceGroupId(long resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setBodyParameter(std::string("ResourceGroupId"), std::to_string(resourceGroupId));
 }
 
-bool CreateFileRequest::getStartImmediately()const
-{
-	return startImmediately_;
+bool CreateFileRequest::getStartImmediately() const {
+  return startImmediately_;
 }
 
-void CreateFileRequest::setStartImmediately(bool startImmediately)
-{
-	startImmediately_ = startImmediately;
-	setBodyParameter("StartImmediately", startImmediately ? "true" : "false");
+void CreateFileRequest::setStartImmediately(bool startImmediately) {
+  startImmediately_ = startImmediately;
+  setBodyParameter(std::string("StartImmediately"), startImmediately ? "true" : "false");
 }
 
-long CreateFileRequest::getProjectId()const
-{
-	return projectId_;
+long CreateFileRequest::getProjectId() const {
+  return projectId_;
 }
 
-void CreateFileRequest::setProjectId(long projectId)
-{
-	projectId_ = projectId;
-	setBodyParameter("ProjectId", std::to_string(projectId));
+void CreateFileRequest::setProjectId(long projectId) {
+  projectId_ = projectId;
+  setBodyParameter(std::string("ProjectId"), std::to_string(projectId));
 }
 
-std::string CreateFileRequest::getAdvancedSettings()const
-{
-	return advancedSettings_;
+std::string CreateFileRequest::getAdvancedSettings() const {
+  return advancedSettings_;
 }
 
-void CreateFileRequest::setAdvancedSettings(const std::string& advancedSettings)
-{
-	advancedSettings_ = advancedSettings;
-	setBodyParameter("AdvancedSettings", advancedSettings);
+void CreateFileRequest::setAdvancedSettings(const std::string &advancedSettings) {
+  advancedSettings_ = advancedSettings;
+  setBodyParameter(std::string("AdvancedSettings"), advancedSettings);
 }
 
-long CreateFileRequest::getStartEffectDate()const
-{
-	return startEffectDate_;
+long CreateFileRequest::getStartEffectDate() const {
+  return startEffectDate_;
 }
 
-void CreateFileRequest::setStartEffectDate(long startEffectDate)
-{
-	startEffectDate_ = startEffectDate;
-	setBodyParameter("StartEffectDate", std::to_string(startEffectDate));
+void CreateFileRequest::setStartEffectDate(long startEffectDate) {
+  startEffectDate_ = startEffectDate;
+  setBodyParameter(std::string("StartEffectDate"), std::to_string(startEffectDate));
 }
 
-std::string CreateFileRequest::getCycleType()const
-{
-	return cycleType_;
+std::string CreateFileRequest::getCycleType() const {
+  return cycleType_;
 }
 
-void CreateFileRequest::setCycleType(const std::string& cycleType)
-{
-	cycleType_ = cycleType;
-	setBodyParameter("CycleType", cycleType);
+void CreateFileRequest::setCycleType(const std::string &cycleType) {
+  cycleType_ = cycleType;
+  setBodyParameter(std::string("CycleType"), cycleType);
 }
 
-std::string CreateFileRequest::getOwner()const
-{
-	return owner_;
+std::string CreateFileRequest::getOwner() const {
+  return owner_;
 }
 
-void CreateFileRequest::setOwner(const std::string& owner)
-{
-	owner_ = owner;
-	setBodyParameter("Owner", owner);
+void CreateFileRequest::setOwner(const std::string &owner) {
+  owner_ = owner;
+  setBodyParameter(std::string("Owner"), owner);
 }
 
-int CreateFileRequest::getAutoRerunIntervalMillis()const
-{
-	return autoRerunIntervalMillis_;
+int CreateFileRequest::getAutoRerunIntervalMillis() const {
+  return autoRerunIntervalMillis_;
 }
 
-void CreateFileRequest::setAutoRerunIntervalMillis(int autoRerunIntervalMillis)
-{
-	autoRerunIntervalMillis_ = autoRerunIntervalMillis;
-	setBodyParameter("AutoRerunIntervalMillis", std::to_string(autoRerunIntervalMillis));
+void CreateFileRequest::setAutoRerunIntervalMillis(int autoRerunIntervalMillis) {
+  autoRerunIntervalMillis_ = autoRerunIntervalMillis;
+  setBodyParameter(std::string("AutoRerunIntervalMillis"), std::to_string(autoRerunIntervalMillis));
 }
 
-std::string CreateFileRequest::getInputList()const
-{
-	return inputList_;
+std::string CreateFileRequest::getInputList() const {
+  return inputList_;
 }
 
-void CreateFileRequest::setInputList(const std::string& inputList)
-{
-	inputList_ = inputList;
-	setBodyParameter("InputList", inputList);
+void CreateFileRequest::setInputList(const std::string &inputList) {
+  inputList_ = inputList;
+  setBodyParameter(std::string("InputList"), inputList);
 }
 
-std::string CreateFileRequest::getRerunMode()const
-{
-	return rerunMode_;
+std::string CreateFileRequest::getRerunMode() const {
+  return rerunMode_;
 }
 
-void CreateFileRequest::setRerunMode(const std::string& rerunMode)
-{
-	rerunMode_ = rerunMode;
-	setBodyParameter("RerunMode", rerunMode);
+void CreateFileRequest::setRerunMode(const std::string &rerunMode) {
+  rerunMode_ = rerunMode;
+  setBodyParameter(std::string("RerunMode"), rerunMode);
 }
 
-std::string CreateFileRequest::getConnectionName()const
-{
-	return connectionName_;
+std::string CreateFileRequest::getConnectionName() const {
+  return connectionName_;
 }
 
-void CreateFileRequest::setConnectionName(const std::string& connectionName)
-{
-	connectionName_ = connectionName;
-	setBodyParameter("ConnectionName", connectionName);
+void CreateFileRequest::setConnectionName(const std::string &connectionName) {
+  connectionName_ = connectionName;
+  setBodyParameter(std::string("ConnectionName"), connectionName);
 }
 
-std::string CreateFileRequest::getOutputParameters()const
-{
-	return outputParameters_;
+std::string CreateFileRequest::getOutputParameters() const {
+  return outputParameters_;
 }
 
-void CreateFileRequest::setOutputParameters(const std::string& outputParameters)
-{
-	outputParameters_ = outputParameters;
-	setBodyParameter("OutputParameters", outputParameters);
+void CreateFileRequest::setOutputParameters(const std::string &outputParameters) {
+  outputParameters_ = outputParameters;
+  setBodyParameter(std::string("OutputParameters"), outputParameters);
 }
 
-std::string CreateFileRequest::getParaValue()const
-{
-	return paraValue_;
+std::string CreateFileRequest::getParaValue() const {
+  return paraValue_;
 }
 
-void CreateFileRequest::setParaValue(const std::string& paraValue)
-{
-	paraValue_ = paraValue;
-	setBodyParameter("ParaValue", paraValue);
+void CreateFileRequest::setParaValue(const std::string &paraValue) {
+  paraValue_ = paraValue;
+  setBodyParameter(std::string("ParaValue"), paraValue);
 }
 
-std::string CreateFileRequest::getResourceGroupIdentifier()const
-{
-	return resourceGroupIdentifier_;
+std::string CreateFileRequest::getResourceGroupIdentifier() const {
+  return resourceGroupIdentifier_;
 }
 
-void CreateFileRequest::setResourceGroupIdentifier(const std::string& resourceGroupIdentifier)
-{
-	resourceGroupIdentifier_ = resourceGroupIdentifier;
-	setBodyParameter("ResourceGroupIdentifier", resourceGroupIdentifier);
+void CreateFileRequest::setResourceGroupIdentifier(const std::string &resourceGroupIdentifier) {
+  resourceGroupIdentifier_ = resourceGroupIdentifier;
+  setBodyParameter(std::string("ResourceGroupIdentifier"), resourceGroupIdentifier);
 }
 
-int CreateFileRequest::getAutoRerunTimes()const
-{
-	return autoRerunTimes_;
+int CreateFileRequest::getAutoRerunTimes() const {
+  return autoRerunTimes_;
 }
 
-void CreateFileRequest::setAutoRerunTimes(int autoRerunTimes)
-{
-	autoRerunTimes_ = autoRerunTimes;
-	setBodyParameter("AutoRerunTimes", std::to_string(autoRerunTimes));
+void CreateFileRequest::setAutoRerunTimes(int autoRerunTimes) {
+  autoRerunTimes_ = autoRerunTimes;
+  setBodyParameter(std::string("AutoRerunTimes"), std::to_string(autoRerunTimes));
 }
 
-std::string CreateFileRequest::getCronExpress()const
-{
-	return cronExpress_;
+std::string CreateFileRequest::getCronExpress() const {
+  return cronExpress_;
 }
 
-void CreateFileRequest::setCronExpress(const std::string& cronExpress)
-{
-	cronExpress_ = cronExpress;
-	setBodyParameter("CronExpress", cronExpress);
+void CreateFileRequest::setCronExpress(const std::string &cronExpress) {
+  cronExpress_ = cronExpress;
+  setBodyParameter(std::string("CronExpress"), cronExpress);
 }
 
-long CreateFileRequest::getEndEffectDate()const
-{
-	return endEffectDate_;
+long CreateFileRequest::getEndEffectDate() const {
+  return endEffectDate_;
 }
 
-void CreateFileRequest::setEndEffectDate(long endEffectDate)
-{
-	endEffectDate_ = endEffectDate;
-	setBodyParameter("EndEffectDate", std::to_string(endEffectDate));
+void CreateFileRequest::setEndEffectDate(long endEffectDate) {
+  endEffectDate_ = endEffectDate;
+  setBodyParameter(std::string("EndEffectDate"), std::to_string(endEffectDate));
 }
 
-std::string CreateFileRequest::getFileName()const
-{
-	return fileName_;
+std::string CreateFileRequest::getFileName() const {
+  return fileName_;
 }
 
-void CreateFileRequest::setFileName(const std::string& fileName)
-{
-	fileName_ = fileName;
-	setBodyParameter("FileName", fileName);
+void CreateFileRequest::setFileName(const std::string &fileName) {
+  fileName_ = fileName;
+  setBodyParameter(std::string("FileName"), fileName);
 }
 
-std::string CreateFileRequest::getInputParameters()const
-{
-	return inputParameters_;
+std::string CreateFileRequest::getInputParameters() const {
+  return inputParameters_;
 }
 
-void CreateFileRequest::setInputParameters(const std::string& inputParameters)
-{
-	inputParameters_ = inputParameters;
-	setBodyParameter("InputParameters", inputParameters);
+void CreateFileRequest::setInputParameters(const std::string &inputParameters) {
+  inputParameters_ = inputParameters;
+  setBodyParameter(std::string("InputParameters"), inputParameters);
 }
 
-bool CreateFileRequest::getStop()const
-{
-	return stop_;
+bool CreateFileRequest::getStop() const {
+  return stop_;
 }
 
-void CreateFileRequest::setStop(bool stop)
-{
-	stop_ = stop;
-	setBodyParameter("Stop", stop ? "true" : "false");
+void CreateFileRequest::setStop(bool stop) {
+  stop_ = stop;
+  setBodyParameter(std::string("Stop"), stop ? "true" : "false");
 }
 
-std::string CreateFileRequest::getDependentType()const
-{
-	return dependentType_;
+std::string CreateFileRequest::getDependentType() const {
+  return dependentType_;
 }
 
-void CreateFileRequest::setDependentType(const std::string& dependentType)
-{
-	dependentType_ = dependentType;
-	setBodyParameter("DependentType", dependentType);
+void CreateFileRequest::setDependentType(const std::string &dependentType) {
+  dependentType_ = dependentType;
+  setBodyParameter(std::string("DependentType"), dependentType);
 }
 
-std::string CreateFileRequest::getFileFolderPath()const
-{
-	return fileFolderPath_;
+std::string CreateFileRequest::getFileFolderPath() const {
+  return fileFolderPath_;
 }
 
-void CreateFileRequest::setFileFolderPath(const std::string& fileFolderPath)
-{
-	fileFolderPath_ = fileFolderPath;
-	setBodyParameter("FileFolderPath", fileFolderPath);
+void CreateFileRequest::setFileFolderPath(const std::string &fileFolderPath) {
+  fileFolderPath_ = fileFolderPath;
+  setBodyParameter(std::string("FileFolderPath"), fileFolderPath);
 }
 
-std::string CreateFileRequest::getFileDescription()const
-{
-	return fileDescription_;
+std::string CreateFileRequest::getFileDescription() const {
+  return fileDescription_;
 }
 
-void CreateFileRequest::setFileDescription(const std::string& fileDescription)
-{
-	fileDescription_ = fileDescription;
-	setBodyParameter("FileDescription", fileDescription);
+void CreateFileRequest::setFileDescription(const std::string &fileDescription) {
+  fileDescription_ = fileDescription;
+  setBodyParameter(std::string("FileDescription"), fileDescription);
 }
 
-bool CreateFileRequest::getAutoParsing()const
-{
-	return autoParsing_;
+bool CreateFileRequest::getAutoParsing() const {
+  return autoParsing_;
 }
 
-void CreateFileRequest::setAutoParsing(bool autoParsing)
-{
-	autoParsing_ = autoParsing;
-	setBodyParameter("AutoParsing", autoParsing ? "true" : "false");
+void CreateFileRequest::setAutoParsing(bool autoParsing) {
+  autoParsing_ = autoParsing;
+  setBodyParameter(std::string("AutoParsing"), autoParsing ? "true" : "false");
 }
 
-std::string CreateFileRequest::getSchedulerType()const
-{
-	return schedulerType_;
+std::string CreateFileRequest::getSchedulerType() const {
+  return schedulerType_;
 }
 
-void CreateFileRequest::setSchedulerType(const std::string& schedulerType)
-{
-	schedulerType_ = schedulerType;
-	setBodyParameter("SchedulerType", schedulerType);
+void CreateFileRequest::setSchedulerType(const std::string &schedulerType) {
+  schedulerType_ = schedulerType;
+  setBodyParameter(std::string("SchedulerType"), schedulerType);
 }
 

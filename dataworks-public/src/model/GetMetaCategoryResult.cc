@@ -50,34 +50,34 @@ void GetMetaCategoryResult::parse(const std::string &payload)
 	for (auto dataNodeDataEntityListDataEntityListItem : allDataEntityListNode)
 	{
 		Data::DataEntityListItem dataEntityListItemObject;
-		if(!dataNodeDataEntityListDataEntityListItem["CategoryId"].isNull())
-			dataEntityListItemObject.categoryId = std::stol(dataNodeDataEntityListDataEntityListItem["CategoryId"].asString());
-		if(!dataNodeDataEntityListDataEntityListItem["Name"].isNull())
-			dataEntityListItemObject.name = dataNodeDataEntityListDataEntityListItem["Name"].asString();
-		if(!dataNodeDataEntityListDataEntityListItem["CreateTime"].isNull())
-			dataEntityListItemObject.createTime = std::stol(dataNodeDataEntityListDataEntityListItem["CreateTime"].asString());
-		if(!dataNodeDataEntityListDataEntityListItem["ModifiedTime"].isNull())
-			dataEntityListItemObject.modifiedTime = std::stol(dataNodeDataEntityListDataEntityListItem["ModifiedTime"].asString());
-		if(!dataNodeDataEntityListDataEntityListItem["Comment"].isNull())
-			dataEntityListItemObject.comment = dataNodeDataEntityListDataEntityListItem["Comment"].asString();
-		if(!dataNodeDataEntityListDataEntityListItem["OwnerId"].isNull())
-			dataEntityListItemObject.ownerId = dataNodeDataEntityListDataEntityListItem["OwnerId"].asString();
-		if(!dataNodeDataEntityListDataEntityListItem["LastOperatorId"].isNull())
-			dataEntityListItemObject.lastOperatorId = dataNodeDataEntityListDataEntityListItem["LastOperatorId"].asString();
-		if(!dataNodeDataEntityListDataEntityListItem["ParentCategoryId"].isNull())
-			dataEntityListItemObject.parentCategoryId = std::stol(dataNodeDataEntityListDataEntityListItem["ParentCategoryId"].asString());
 		if(!dataNodeDataEntityListDataEntityListItem["Depth"].isNull())
 			dataEntityListItemObject.depth = std::stoi(dataNodeDataEntityListDataEntityListItem["Depth"].asString());
+		if(!dataNodeDataEntityListDataEntityListItem["Comment"].isNull())
+			dataEntityListItemObject.comment = dataNodeDataEntityListDataEntityListItem["Comment"].asString();
+		if(!dataNodeDataEntityListDataEntityListItem["ModifiedTime"].isNull())
+			dataEntityListItemObject.modifiedTime = std::stol(dataNodeDataEntityListDataEntityListItem["ModifiedTime"].asString());
+		if(!dataNodeDataEntityListDataEntityListItem["CreateTime"].isNull())
+			dataEntityListItemObject.createTime = std::stol(dataNodeDataEntityListDataEntityListItem["CreateTime"].asString());
+		if(!dataNodeDataEntityListDataEntityListItem["CategoryId"].isNull())
+			dataEntityListItemObject.categoryId = std::stol(dataNodeDataEntityListDataEntityListItem["CategoryId"].asString());
+		if(!dataNodeDataEntityListDataEntityListItem["LastOperatorId"].isNull())
+			dataEntityListItemObject.lastOperatorId = dataNodeDataEntityListDataEntityListItem["LastOperatorId"].asString();
+		if(!dataNodeDataEntityListDataEntityListItem["Name"].isNull())
+			dataEntityListItemObject.name = dataNodeDataEntityListDataEntityListItem["Name"].asString();
+		if(!dataNodeDataEntityListDataEntityListItem["ParentCategoryId"].isNull())
+			dataEntityListItemObject.parentCategoryId = std::stol(dataNodeDataEntityListDataEntityListItem["ParentCategoryId"].asString());
+		if(!dataNodeDataEntityListDataEntityListItem["OwnerId"].isNull())
+			dataEntityListItemObject.ownerId = dataNodeDataEntityListDataEntityListItem["OwnerId"].asString();
 		data_.dataEntityList.push_back(dataEntityListItemObject);
 	}
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
 
 }
 

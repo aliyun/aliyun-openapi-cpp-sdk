@@ -50,63 +50,63 @@ void ListDataServiceApisResult::parse(const std::string &payload)
 	for (auto dataNodeApisApi : allApisNode)
 	{
 		Data::Api apiObject;
+		if(!dataNodeApisApi["Timeout"].isNull())
+			apiObject.timeout = std::stoi(dataNodeApisApi["Timeout"].asString());
+		if(!dataNodeApisApi["Status"].isNull())
+			apiObject.status = std::stoi(dataNodeApisApi["Status"].asString());
 		if(!dataNodeApisApi["ApiId"].isNull())
 			apiObject.apiId = std::stol(dataNodeApisApi["ApiId"].asString());
 		if(!dataNodeApisApi["ApiMode"].isNull())
 			apiObject.apiMode = std::stoi(dataNodeApisApi["ApiMode"].asString());
-		if(!dataNodeApisApi["ApiName"].isNull())
-			apiObject.apiName = dataNodeApisApi["ApiName"].asString();
-		if(!dataNodeApisApi["ApiPath"].isNull())
-			apiObject.apiPath = dataNodeApisApi["ApiPath"].asString();
-		if(!dataNodeApisApi["CreatedTime"].isNull())
-			apiObject.createdTime = dataNodeApisApi["CreatedTime"].asString();
+		if(!dataNodeApisApi["ProjectId"].isNull())
+			apiObject.projectId = std::stol(dataNodeApisApi["ProjectId"].asString());
+		if(!dataNodeApisApi["ResponseContentType"].isNull())
+			apiObject.responseContentType = std::stoi(dataNodeApisApi["ResponseContentType"].asString());
 		if(!dataNodeApisApi["CreatorId"].isNull())
 			apiObject.creatorId = dataNodeApisApi["CreatorId"].asString();
-		if(!dataNodeApisApi["Description"].isNull())
-			apiObject.description = dataNodeApisApi["Description"].asString();
-		if(!dataNodeApisApi["GroupId"].isNull())
-			apiObject.groupId = dataNodeApisApi["GroupId"].asString();
+		if(!dataNodeApisApi["VisibleRange"].isNull())
+			apiObject.visibleRange = std::stoi(dataNodeApisApi["VisibleRange"].asString());
 		if(!dataNodeApisApi["ModifiedTime"].isNull())
 			apiObject.modifiedTime = dataNodeApisApi["ModifiedTime"].asString();
 		if(!dataNodeApisApi["OperatorId"].isNull())
 			apiObject.operatorId = dataNodeApisApi["OperatorId"].asString();
-		if(!dataNodeApisApi["ProjectId"].isNull())
-			apiObject.projectId = std::stol(dataNodeApisApi["ProjectId"].asString());
-		if(!dataNodeApisApi["RequestMethod"].isNull())
-			apiObject.requestMethod = std::stoi(dataNodeApisApi["RequestMethod"].asString());
-		if(!dataNodeApisApi["ResponseContentType"].isNull())
-			apiObject.responseContentType = std::stoi(dataNodeApisApi["ResponseContentType"].asString());
-		if(!dataNodeApisApi["Status"].isNull())
-			apiObject.status = std::stoi(dataNodeApisApi["Status"].asString());
-		if(!dataNodeApisApi["TenantId"].isNull())
-			apiObject.tenantId = std::stol(dataNodeApisApi["TenantId"].asString());
-		if(!dataNodeApisApi["Timeout"].isNull())
-			apiObject.timeout = std::stoi(dataNodeApisApi["Timeout"].asString());
-		if(!dataNodeApisApi["VisibleRange"].isNull())
-			apiObject.visibleRange = std::stoi(dataNodeApisApi["VisibleRange"].asString());
+		if(!dataNodeApisApi["GroupId"].isNull())
+			apiObject.groupId = dataNodeApisApi["GroupId"].asString();
+		if(!dataNodeApisApi["Description"].isNull())
+			apiObject.description = dataNodeApisApi["Description"].asString();
 		if(!dataNodeApisApi["FolderId"].isNull())
 			apiObject.folderId = std::stol(dataNodeApisApi["FolderId"].asString());
+		if(!dataNodeApisApi["RequestMethod"].isNull())
+			apiObject.requestMethod = std::stoi(dataNodeApisApi["RequestMethod"].asString());
+		if(!dataNodeApisApi["CreatedTime"].isNull())
+			apiObject.createdTime = dataNodeApisApi["CreatedTime"].asString();
+		if(!dataNodeApisApi["ApiName"].isNull())
+			apiObject.apiName = dataNodeApisApi["ApiName"].asString();
+		if(!dataNodeApisApi["TenantId"].isNull())
+			apiObject.tenantId = std::stol(dataNodeApisApi["TenantId"].asString());
+		if(!dataNodeApisApi["ApiPath"].isNull())
+			apiObject.apiPath = dataNodeApisApi["ApiPath"].asString();
 		auto registrationDetailsNode = value["RegistrationDetails"];
-		if(!registrationDetailsNode["FailedResultSample"].isNull())
-			apiObject.registrationDetails.failedResultSample = registrationDetailsNode["FailedResultSample"].asString();
-		if(!registrationDetailsNode["ServiceContentType"].isNull())
-			apiObject.registrationDetails.serviceContentType = std::stoi(registrationDetailsNode["ServiceContentType"].asString());
 		if(!registrationDetailsNode["ServiceHost"].isNull())
 			apiObject.registrationDetails.serviceHost = registrationDetailsNode["ServiceHost"].asString();
+		if(!registrationDetailsNode["ServiceContentType"].isNull())
+			apiObject.registrationDetails.serviceContentType = std::stoi(registrationDetailsNode["ServiceContentType"].asString());
 		if(!registrationDetailsNode["ServicePath"].isNull())
 			apiObject.registrationDetails.servicePath = registrationDetailsNode["ServicePath"].asString();
-		if(!registrationDetailsNode["ServiceRequestBodyDescription"].isNull())
-			apiObject.registrationDetails.serviceRequestBodyDescription = registrationDetailsNode["ServiceRequestBodyDescription"].asString();
 		if(!registrationDetailsNode["SuccessfulResultSample"].isNull())
 			apiObject.registrationDetails.successfulResultSample = registrationDetailsNode["SuccessfulResultSample"].asString();
+		if(!registrationDetailsNode["FailedResultSample"].isNull())
+			apiObject.registrationDetails.failedResultSample = registrationDetailsNode["FailedResultSample"].asString();
+		if(!registrationDetailsNode["ServiceRequestBodyDescription"].isNull())
+			apiObject.registrationDetails.serviceRequestBodyDescription = registrationDetailsNode["ServiceRequestBodyDescription"].asString();
 		auto allRegistrationErrorCodesNode = registrationDetailsNode["RegistrationErrorCodes"]["RegistrationErrorCode"];
 		for (auto registrationDetailsNodeRegistrationErrorCodesRegistrationErrorCode : allRegistrationErrorCodesNode)
 		{
 			Data::Api::RegistrationDetails::RegistrationErrorCode registrationErrorCodeObject;
-			if(!registrationDetailsNodeRegistrationErrorCodesRegistrationErrorCode["ErrorCode"].isNull())
-				registrationErrorCodeObject.errorCode = registrationDetailsNodeRegistrationErrorCodesRegistrationErrorCode["ErrorCode"].asString();
 			if(!registrationDetailsNodeRegistrationErrorCodesRegistrationErrorCode["ErrorMessage"].isNull())
 				registrationErrorCodeObject.errorMessage = registrationDetailsNodeRegistrationErrorCodesRegistrationErrorCode["ErrorMessage"].asString();
+			if(!registrationDetailsNodeRegistrationErrorCodesRegistrationErrorCode["ErrorCode"].isNull())
+				registrationErrorCodeObject.errorCode = registrationDetailsNodeRegistrationErrorCodesRegistrationErrorCode["ErrorCode"].asString();
 			if(!registrationDetailsNodeRegistrationErrorCodesRegistrationErrorCode["ErrorSolution"].isNull())
 				registrationErrorCodeObject.errorSolution = registrationDetailsNodeRegistrationErrorCodesRegistrationErrorCode["ErrorSolution"].asString();
 			apiObject.registrationDetails.registrationErrorCodes.push_back(registrationErrorCodeObject);
@@ -117,74 +117,74 @@ void ListDataServiceApisResult::parse(const std::string &payload)
 			Data::Api::RegistrationDetails::RegistrationRequestParameter registrationRequestParameterObject;
 			if(!registrationDetailsNodeRegistrationRequestParametersRegistrationRequestParameter["ColumnName"].isNull())
 				registrationRequestParameterObject.columnName = registrationDetailsNodeRegistrationRequestParametersRegistrationRequestParameter["ColumnName"].asString();
+			if(!registrationDetailsNodeRegistrationRequestParametersRegistrationRequestParameter["ParameterName"].isNull())
+				registrationRequestParameterObject.parameterName = registrationDetailsNodeRegistrationRequestParametersRegistrationRequestParameter["ParameterName"].asString();
+			if(!registrationDetailsNodeRegistrationRequestParametersRegistrationRequestParameter["ParameterPosition"].isNull())
+				registrationRequestParameterObject.parameterPosition = std::stoi(registrationDetailsNodeRegistrationRequestParametersRegistrationRequestParameter["ParameterPosition"].asString());
+			if(!registrationDetailsNodeRegistrationRequestParametersRegistrationRequestParameter["ParameterDescription"].isNull())
+				registrationRequestParameterObject.parameterDescription = registrationDetailsNodeRegistrationRequestParametersRegistrationRequestParameter["ParameterDescription"].asString();
 			if(!registrationDetailsNodeRegistrationRequestParametersRegistrationRequestParameter["DefaultValue"].isNull())
 				registrationRequestParameterObject.defaultValue = registrationDetailsNodeRegistrationRequestParametersRegistrationRequestParameter["DefaultValue"].asString();
+			if(!registrationDetailsNodeRegistrationRequestParametersRegistrationRequestParameter["ParameterOperator"].isNull())
+				registrationRequestParameterObject.parameterOperator = std::stoi(registrationDetailsNodeRegistrationRequestParametersRegistrationRequestParameter["ParameterOperator"].asString());
+			if(!registrationDetailsNodeRegistrationRequestParametersRegistrationRequestParameter["ParameterDataType"].isNull())
+				registrationRequestParameterObject.parameterDataType = std::stoi(registrationDetailsNodeRegistrationRequestParametersRegistrationRequestParameter["ParameterDataType"].asString());
 			if(!registrationDetailsNodeRegistrationRequestParametersRegistrationRequestParameter["ExampleValue"].isNull())
 				registrationRequestParameterObject.exampleValue = registrationDetailsNodeRegistrationRequestParametersRegistrationRequestParameter["ExampleValue"].asString();
 			if(!registrationDetailsNodeRegistrationRequestParametersRegistrationRequestParameter["IsRequiredParameter"].isNull())
 				registrationRequestParameterObject.isRequiredParameter = registrationDetailsNodeRegistrationRequestParametersRegistrationRequestParameter["IsRequiredParameter"].asString() == "true";
-			if(!registrationDetailsNodeRegistrationRequestParametersRegistrationRequestParameter["ParameterDataType"].isNull())
-				registrationRequestParameterObject.parameterDataType = std::stoi(registrationDetailsNodeRegistrationRequestParametersRegistrationRequestParameter["ParameterDataType"].asString());
-			if(!registrationDetailsNodeRegistrationRequestParametersRegistrationRequestParameter["ParameterDescription"].isNull())
-				registrationRequestParameterObject.parameterDescription = registrationDetailsNodeRegistrationRequestParametersRegistrationRequestParameter["ParameterDescription"].asString();
-			if(!registrationDetailsNodeRegistrationRequestParametersRegistrationRequestParameter["ParameterName"].isNull())
-				registrationRequestParameterObject.parameterName = registrationDetailsNodeRegistrationRequestParametersRegistrationRequestParameter["ParameterName"].asString();
-			if(!registrationDetailsNodeRegistrationRequestParametersRegistrationRequestParameter["ParameterOperator"].isNull())
-				registrationRequestParameterObject.parameterOperator = std::stoi(registrationDetailsNodeRegistrationRequestParametersRegistrationRequestParameter["ParameterOperator"].asString());
-			if(!registrationDetailsNodeRegistrationRequestParametersRegistrationRequestParameter["ParameterPosition"].isNull())
-				registrationRequestParameterObject.parameterPosition = std::stoi(registrationDetailsNodeRegistrationRequestParametersRegistrationRequestParameter["ParameterPosition"].asString());
 			apiObject.registrationDetails.registrationRequestParameters.push_back(registrationRequestParameterObject);
 		}
 		auto scriptDetailsNode = value["ScriptDetails"];
-		if(!scriptDetailsNode["IsPagedResponse"].isNull())
-			apiObject.scriptDetails.isPagedResponse = scriptDetailsNode["IsPagedResponse"].asString() == "true";
 		if(!scriptDetailsNode["Script"].isNull())
 			apiObject.scriptDetails.script = scriptDetailsNode["Script"].asString();
+		if(!scriptDetailsNode["IsPagedResponse"].isNull())
+			apiObject.scriptDetails.isPagedResponse = scriptDetailsNode["IsPagedResponse"].asString() == "true";
 		auto allScriptRequestParametersNode = scriptDetailsNode["ScriptRequestParameters"]["ScriptRequestParameter"];
 		for (auto scriptDetailsNodeScriptRequestParametersScriptRequestParameter : allScriptRequestParametersNode)
 		{
 			Data::Api::ScriptDetails::ScriptRequestParameter scriptRequestParameterObject;
 			if(!scriptDetailsNodeScriptRequestParametersScriptRequestParameter["ColumnName"].isNull())
 				scriptRequestParameterObject.columnName = scriptDetailsNodeScriptRequestParametersScriptRequestParameter["ColumnName"].asString();
+			if(!scriptDetailsNodeScriptRequestParametersScriptRequestParameter["ParameterName"].isNull())
+				scriptRequestParameterObject.parameterName = scriptDetailsNodeScriptRequestParametersScriptRequestParameter["ParameterName"].asString();
+			if(!scriptDetailsNodeScriptRequestParametersScriptRequestParameter["ParameterPosition"].isNull())
+				scriptRequestParameterObject.parameterPosition = std::stoi(scriptDetailsNodeScriptRequestParametersScriptRequestParameter["ParameterPosition"].asString());
+			if(!scriptDetailsNodeScriptRequestParametersScriptRequestParameter["ParameterDescription"].isNull())
+				scriptRequestParameterObject.parameterDescription = scriptDetailsNodeScriptRequestParametersScriptRequestParameter["ParameterDescription"].asString();
 			if(!scriptDetailsNodeScriptRequestParametersScriptRequestParameter["DefaultValue"].isNull())
 				scriptRequestParameterObject.defaultValue = scriptDetailsNodeScriptRequestParametersScriptRequestParameter["DefaultValue"].asString();
+			if(!scriptDetailsNodeScriptRequestParametersScriptRequestParameter["ParameterOperator"].isNull())
+				scriptRequestParameterObject.parameterOperator = std::stoi(scriptDetailsNodeScriptRequestParametersScriptRequestParameter["ParameterOperator"].asString());
+			if(!scriptDetailsNodeScriptRequestParametersScriptRequestParameter["ParameterDataType"].isNull())
+				scriptRequestParameterObject.parameterDataType = std::stoi(scriptDetailsNodeScriptRequestParametersScriptRequestParameter["ParameterDataType"].asString());
 			if(!scriptDetailsNodeScriptRequestParametersScriptRequestParameter["ExampleValue"].isNull())
 				scriptRequestParameterObject.exampleValue = scriptDetailsNodeScriptRequestParametersScriptRequestParameter["ExampleValue"].asString();
 			if(!scriptDetailsNodeScriptRequestParametersScriptRequestParameter["IsRequiredParameter"].isNull())
 				scriptRequestParameterObject.isRequiredParameter = scriptDetailsNodeScriptRequestParametersScriptRequestParameter["IsRequiredParameter"].asString() == "true";
-			if(!scriptDetailsNodeScriptRequestParametersScriptRequestParameter["ParameterDataType"].isNull())
-				scriptRequestParameterObject.parameterDataType = std::stoi(scriptDetailsNodeScriptRequestParametersScriptRequestParameter["ParameterDataType"].asString());
-			if(!scriptDetailsNodeScriptRequestParametersScriptRequestParameter["ParameterDescription"].isNull())
-				scriptRequestParameterObject.parameterDescription = scriptDetailsNodeScriptRequestParametersScriptRequestParameter["ParameterDescription"].asString();
-			if(!scriptDetailsNodeScriptRequestParametersScriptRequestParameter["ParameterName"].isNull())
-				scriptRequestParameterObject.parameterName = scriptDetailsNodeScriptRequestParametersScriptRequestParameter["ParameterName"].asString();
-			if(!scriptDetailsNodeScriptRequestParametersScriptRequestParameter["ParameterOperator"].isNull())
-				scriptRequestParameterObject.parameterOperator = std::stoi(scriptDetailsNodeScriptRequestParametersScriptRequestParameter["ParameterOperator"].asString());
-			if(!scriptDetailsNodeScriptRequestParametersScriptRequestParameter["ParameterPosition"].isNull())
-				scriptRequestParameterObject.parameterPosition = std::stoi(scriptDetailsNodeScriptRequestParametersScriptRequestParameter["ParameterPosition"].asString());
 			apiObject.scriptDetails.scriptRequestParameters.push_back(scriptRequestParameterObject);
 		}
 		auto allScriptResponseParametersNode = scriptDetailsNode["ScriptResponseParameters"]["ScriptResponseParameter"];
 		for (auto scriptDetailsNodeScriptResponseParametersScriptResponseParameter : allScriptResponseParametersNode)
 		{
 			Data::Api::ScriptDetails::ScriptResponseParameter scriptResponseParameterObject;
-			if(!scriptDetailsNodeScriptResponseParametersScriptResponseParameter["ColumnName"].isNull())
-				scriptResponseParameterObject.columnName = scriptDetailsNodeScriptResponseParametersScriptResponseParameter["ColumnName"].asString();
-			if(!scriptDetailsNodeScriptResponseParametersScriptResponseParameter["ExampleValue"].isNull())
-				scriptResponseParameterObject.exampleValue = scriptDetailsNodeScriptResponseParametersScriptResponseParameter["ExampleValue"].asString();
-			if(!scriptDetailsNodeScriptResponseParametersScriptResponseParameter["ParameterDataType"].isNull())
-				scriptResponseParameterObject.parameterDataType = std::stoi(scriptDetailsNodeScriptResponseParametersScriptResponseParameter["ParameterDataType"].asString());
 			if(!scriptDetailsNodeScriptResponseParametersScriptResponseParameter["ParameterDescription"].isNull())
 				scriptResponseParameterObject.parameterDescription = scriptDetailsNodeScriptResponseParametersScriptResponseParameter["ParameterDescription"].asString();
+			if(!scriptDetailsNodeScriptResponseParametersScriptResponseParameter["ColumnName"].isNull())
+				scriptResponseParameterObject.columnName = scriptDetailsNodeScriptResponseParametersScriptResponseParameter["ColumnName"].asString();
 			if(!scriptDetailsNodeScriptResponseParametersScriptResponseParameter["ParameterName"].isNull())
 				scriptResponseParameterObject.parameterName = scriptDetailsNodeScriptResponseParametersScriptResponseParameter["ParameterName"].asString();
+			if(!scriptDetailsNodeScriptResponseParametersScriptResponseParameter["ParameterDataType"].isNull())
+				scriptResponseParameterObject.parameterDataType = std::stoi(scriptDetailsNodeScriptResponseParametersScriptResponseParameter["ParameterDataType"].asString());
+			if(!scriptDetailsNodeScriptResponseParametersScriptResponseParameter["ExampleValue"].isNull())
+				scriptResponseParameterObject.exampleValue = scriptDetailsNodeScriptResponseParametersScriptResponseParameter["ExampleValue"].asString();
 			apiObject.scriptDetails.scriptResponseParameters.push_back(scriptResponseParameterObject);
 		}
 		auto scriptConnectionNode = scriptDetailsNode["ScriptConnection"];
-		if(!scriptConnectionNode["ConnectionId"].isNull())
-			apiObject.scriptDetails.scriptConnection.connectionId = std::stol(scriptConnectionNode["ConnectionId"].asString());
 		if(!scriptConnectionNode["TableName"].isNull())
 			apiObject.scriptDetails.scriptConnection.tableName = scriptConnectionNode["TableName"].asString();
+		if(!scriptConnectionNode["ConnectionId"].isNull())
+			apiObject.scriptDetails.scriptConnection.connectionId = std::stol(scriptConnectionNode["ConnectionId"].asString());
 		auto wizardDetailsNode = value["WizardDetails"];
 		if(!wizardDetailsNode["IsPagedResponse"].isNull())
 			apiObject.wizardDetails.isPagedResponse = wizardDetailsNode["IsPagedResponse"].asString() == "true";
@@ -194,58 +194,58 @@ void ListDataServiceApisResult::parse(const std::string &payload)
 			Data::Api::WizardDetails::WizardRequestParameter wizardRequestParameterObject;
 			if(!wizardDetailsNodeWizardRequestParametersWizardRequestParameter["ColumnName"].isNull())
 				wizardRequestParameterObject.columnName = wizardDetailsNodeWizardRequestParametersWizardRequestParameter["ColumnName"].asString();
+			if(!wizardDetailsNodeWizardRequestParametersWizardRequestParameter["ParameterName"].isNull())
+				wizardRequestParameterObject.parameterName = wizardDetailsNodeWizardRequestParametersWizardRequestParameter["ParameterName"].asString();
+			if(!wizardDetailsNodeWizardRequestParametersWizardRequestParameter["ParameterPosition"].isNull())
+				wizardRequestParameterObject.parameterPosition = std::stoi(wizardDetailsNodeWizardRequestParametersWizardRequestParameter["ParameterPosition"].asString());
+			if(!wizardDetailsNodeWizardRequestParametersWizardRequestParameter["ParameterDescription"].isNull())
+				wizardRequestParameterObject.parameterDescription = wizardDetailsNodeWizardRequestParametersWizardRequestParameter["ParameterDescription"].asString();
 			if(!wizardDetailsNodeWizardRequestParametersWizardRequestParameter["DefaultValue"].isNull())
 				wizardRequestParameterObject.defaultValue = wizardDetailsNodeWizardRequestParametersWizardRequestParameter["DefaultValue"].asString();
+			if(!wizardDetailsNodeWizardRequestParametersWizardRequestParameter["ParameterOperator"].isNull())
+				wizardRequestParameterObject.parameterOperator = std::stoi(wizardDetailsNodeWizardRequestParametersWizardRequestParameter["ParameterOperator"].asString());
+			if(!wizardDetailsNodeWizardRequestParametersWizardRequestParameter["ParameterDataType"].isNull())
+				wizardRequestParameterObject.parameterDataType = std::stoi(wizardDetailsNodeWizardRequestParametersWizardRequestParameter["ParameterDataType"].asString());
 			if(!wizardDetailsNodeWizardRequestParametersWizardRequestParameter["ExampleValue"].isNull())
 				wizardRequestParameterObject.exampleValue = wizardDetailsNodeWizardRequestParametersWizardRequestParameter["ExampleValue"].asString();
 			if(!wizardDetailsNodeWizardRequestParametersWizardRequestParameter["IsRequiredParameter"].isNull())
 				wizardRequestParameterObject.isRequiredParameter = wizardDetailsNodeWizardRequestParametersWizardRequestParameter["IsRequiredParameter"].asString() == "true";
-			if(!wizardDetailsNodeWizardRequestParametersWizardRequestParameter["ParameterDataType"].isNull())
-				wizardRequestParameterObject.parameterDataType = std::stoi(wizardDetailsNodeWizardRequestParametersWizardRequestParameter["ParameterDataType"].asString());
-			if(!wizardDetailsNodeWizardRequestParametersWizardRequestParameter["ParameterDescription"].isNull())
-				wizardRequestParameterObject.parameterDescription = wizardDetailsNodeWizardRequestParametersWizardRequestParameter["ParameterDescription"].asString();
-			if(!wizardDetailsNodeWizardRequestParametersWizardRequestParameter["ParameterName"].isNull())
-				wizardRequestParameterObject.parameterName = wizardDetailsNodeWizardRequestParametersWizardRequestParameter["ParameterName"].asString();
-			if(!wizardDetailsNodeWizardRequestParametersWizardRequestParameter["ParameterOperator"].isNull())
-				wizardRequestParameterObject.parameterOperator = std::stoi(wizardDetailsNodeWizardRequestParametersWizardRequestParameter["ParameterOperator"].asString());
-			if(!wizardDetailsNodeWizardRequestParametersWizardRequestParameter["ParameterPosition"].isNull())
-				wizardRequestParameterObject.parameterPosition = std::stoi(wizardDetailsNodeWizardRequestParametersWizardRequestParameter["ParameterPosition"].asString());
 			apiObject.wizardDetails.wizardRequestParameters.push_back(wizardRequestParameterObject);
 		}
 		auto allWizardResponseParametersNode = wizardDetailsNode["WizardResponseParameters"]["WizardResponseParameter"];
 		for (auto wizardDetailsNodeWizardResponseParametersWizardResponseParameter : allWizardResponseParametersNode)
 		{
 			Data::Api::WizardDetails::WizardResponseParameter wizardResponseParameterObject;
-			if(!wizardDetailsNodeWizardResponseParametersWizardResponseParameter["ColumnName"].isNull())
-				wizardResponseParameterObject.columnName = wizardDetailsNodeWizardResponseParametersWizardResponseParameter["ColumnName"].asString();
-			if(!wizardDetailsNodeWizardResponseParametersWizardResponseParameter["ExampleValue"].isNull())
-				wizardResponseParameterObject.exampleValue = wizardDetailsNodeWizardResponseParametersWizardResponseParameter["ExampleValue"].asString();
-			if(!wizardDetailsNodeWizardResponseParametersWizardResponseParameter["ParameterDataType"].isNull())
-				wizardResponseParameterObject.parameterDataType = std::stoi(wizardDetailsNodeWizardResponseParametersWizardResponseParameter["ParameterDataType"].asString());
 			if(!wizardDetailsNodeWizardResponseParametersWizardResponseParameter["ParameterDescription"].isNull())
 				wizardResponseParameterObject.parameterDescription = wizardDetailsNodeWizardResponseParametersWizardResponseParameter["ParameterDescription"].asString();
+			if(!wizardDetailsNodeWizardResponseParametersWizardResponseParameter["ColumnName"].isNull())
+				wizardResponseParameterObject.columnName = wizardDetailsNodeWizardResponseParametersWizardResponseParameter["ColumnName"].asString();
 			if(!wizardDetailsNodeWizardResponseParametersWizardResponseParameter["ParameterName"].isNull())
 				wizardResponseParameterObject.parameterName = wizardDetailsNodeWizardResponseParametersWizardResponseParameter["ParameterName"].asString();
+			if(!wizardDetailsNodeWizardResponseParametersWizardResponseParameter["ParameterDataType"].isNull())
+				wizardResponseParameterObject.parameterDataType = std::stoi(wizardDetailsNodeWizardResponseParametersWizardResponseParameter["ParameterDataType"].asString());
+			if(!wizardDetailsNodeWizardResponseParametersWizardResponseParameter["ExampleValue"].isNull())
+				wizardResponseParameterObject.exampleValue = wizardDetailsNodeWizardResponseParametersWizardResponseParameter["ExampleValue"].asString();
 			apiObject.wizardDetails.wizardResponseParameters.push_back(wizardResponseParameterObject);
 		}
 		auto wizardConnectionNode = wizardDetailsNode["WizardConnection"];
-		if(!wizardConnectionNode["ConnectionId"].isNull())
-			apiObject.wizardDetails.wizardConnection.connectionId = std::stol(wizardConnectionNode["ConnectionId"].asString());
 		if(!wizardConnectionNode["TableName"].isNull())
 			apiObject.wizardDetails.wizardConnection.tableName = wizardConnectionNode["TableName"].asString();
+		if(!wizardConnectionNode["ConnectionId"].isNull())
+			apiObject.wizardDetails.wizardConnection.connectionId = std::stol(wizardConnectionNode["ConnectionId"].asString());
 		auto allProtocols = value["Protocols"]["Protocol"];
 		for (auto value : allProtocols)
 			apiObject.protocols.push_back(value.asString());
 		data_.apis.push_back(apiObject);
 	}
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
 
 }
 

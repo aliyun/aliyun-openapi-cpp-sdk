@@ -35,8 +35,8 @@ namespace AlibabaCloud
 				struct Data
 				{
 					std::string applicationKey;
-					std::string applicationName;
 					std::string applicationSecret;
+					std::string applicationName;
 					long projectId;
 					long applicationId;
 					std::string applicationCode;

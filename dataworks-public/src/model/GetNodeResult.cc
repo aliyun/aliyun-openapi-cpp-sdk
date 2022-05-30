@@ -40,52 +40,52 @@ void GetNodeResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["NodeId"].isNull())
-		data_.nodeId = std::stol(dataNode["NodeId"].asString());
-	if(!dataNode["OwnerId"].isNull())
-		data_.ownerId = dataNode["OwnerId"].asString();
-	if(!dataNode["Description"].isNull())
-		data_.description = dataNode["Description"].asString();
-	if(!dataNode["ResGroupName"].isNull())
-		data_.resGroupName = dataNode["ResGroupName"].asString();
-	if(!dataNode["NodeName"].isNull())
-		data_.nodeName = dataNode["NodeName"].asString();
-	if(!dataNode["CronExpress"].isNull())
-		data_.cronExpress = dataNode["CronExpress"].asString();
-	if(!dataNode["Repeatability"].isNull())
-		data_.repeatability = dataNode["Repeatability"].asString();
-	if(!dataNode["ProgramType"].isNull())
-		data_.programType = dataNode["ProgramType"].asString();
-	if(!dataNode["ProjectId"].isNull())
-		data_.projectId = std::stol(dataNode["ProjectId"].asString());
 	if(!dataNode["SchedulerType"].isNull())
 		data_.schedulerType = dataNode["SchedulerType"].asString();
-	if(!dataNode["ParamValues"].isNull())
-		data_.paramValues = dataNode["ParamValues"].asString();
-	if(!dataNode["Priority"].isNull())
-		data_.priority = std::stoi(dataNode["Priority"].asString());
-	if(!dataNode["BaselineId"].isNull())
-		data_.baselineId = std::stol(dataNode["BaselineId"].asString());
 	if(!dataNode["RepeatInterval"].isNull())
 		data_.repeatInterval = std::stol(dataNode["RepeatInterval"].asString());
+	if(!dataNode["Repeatability"].isNull())
+		data_.repeatability = dataNode["Repeatability"].asString();
+	if(!dataNode["ProjectId"].isNull())
+		data_.projectId = std::stol(dataNode["ProjectId"].asString());
+	if(!dataNode["ProgramType"].isNull())
+		data_.programType = dataNode["ProgramType"].asString();
+	if(!dataNode["Priority"].isNull())
+		data_.priority = std::stoi(dataNode["Priority"].asString());
+	if(!dataNode["OwnerId"].isNull())
+		data_.ownerId = dataNode["OwnerId"].asString();
 	if(!dataNode["Connection"].isNull())
 		data_.connection = dataNode["Connection"].asString();
-	if(!dataNode["DqcType"].isNull())
-		data_.dqcType = std::stoi(dataNode["DqcType"].asString());
-	if(!dataNode["DqcDescription"].isNull())
-		data_.dqcDescription = dataNode["DqcDescription"].asString();
+	if(!dataNode["ParamValues"].isNull())
+		data_.paramValues = dataNode["ParamValues"].asString();
 	if(!dataNode["RelatedFlowId"].isNull())
 		data_.relatedFlowId = std::stol(dataNode["RelatedFlowId"].asString());
+	if(!dataNode["DqcType"].isNull())
+		data_.dqcType = std::stoi(dataNode["DqcType"].asString());
+	if(!dataNode["BaselineId"].isNull())
+		data_.baselineId = std::stol(dataNode["BaselineId"].asString());
+	if(!dataNode["Description"].isNull())
+		data_.description = dataNode["Description"].asString();
+	if(!dataNode["NodeName"].isNull())
+		data_.nodeName = dataNode["NodeName"].asString();
+	if(!dataNode["ResGroupName"].isNull())
+		data_.resGroupName = dataNode["ResGroupName"].asString();
 	if(!dataNode["BusinessId"].isNull())
 		data_.businessId = std::stol(dataNode["BusinessId"].asString());
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
+	if(!dataNode["DqcDescription"].isNull())
+		data_.dqcDescription = dataNode["DqcDescription"].asString();
+	if(!dataNode["CronExpress"].isNull())
+		data_.cronExpress = dataNode["CronExpress"].asString();
+	if(!dataNode["NodeId"].isNull())
+		data_.nodeId = std::stol(dataNode["NodeId"].asString());
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

@@ -162,6 +162,8 @@
 #include "model/GetDagResult.h"
 #include "model/GetDataServiceApiRequest.h"
 #include "model/GetDataServiceApiResult.h"
+#include "model/GetDataServiceApiTestRequest.h"
+#include "model/GetDataServiceApiTestResult.h"
 #include "model/GetDataServiceApplicationRequest.h"
 #include "model/GetDataServiceApplicationResult.h"
 #include "model/GetDataServiceFolderRequest.h"
@@ -174,6 +176,10 @@
 #include "model/GetDataSourceMetaResult.h"
 #include "model/GetDeploymentRequest.h"
 #include "model/GetDeploymentResult.h"
+#include "model/GetDutyRosterRequest.h"
+#include "model/GetDutyRosterResult.h"
+#include "model/GetExtensionRequest.h"
+#include "model/GetExtensionResult.h"
 #include "model/GetFileRequest.h"
 #include "model/GetFileResult.h"
 #include "model/GetFileTypeStatisticRequest.h"
@@ -248,6 +254,8 @@
 #include "model/GetOpRiskDataResult.h"
 #include "model/GetOpSensitiveDataRequest.h"
 #include "model/GetOpSensitiveDataResult.h"
+#include "model/GetOptionValueForProjectRequest.h"
+#include "model/GetOptionValueForProjectResult.h"
 #include "model/GetPermissionApplyOrderDetailRequest.h"
 #include "model/GetPermissionApplyOrderDetailResult.h"
 #include "model/GetProjectRequest.h"
@@ -284,12 +292,18 @@
 #include "model/ListCalcEnginesResult.h"
 #include "model/ListConnectionsRequest.h"
 #include "model/ListConnectionsResult.h"
+#include "model/ListCurrentTasksForResourceGroupRequest.h"
+#include "model/ListCurrentTasksForResourceGroupResult.h"
+#include "model/ListCurrentUsageForResourceGroupRequest.h"
+#include "model/ListCurrentUsageForResourceGroupResult.h"
 #include "model/ListDIProjectConfigRequest.h"
 #include "model/ListDIProjectConfigResult.h"
 #include "model/ListDagsRequest.h"
 #include "model/ListDagsResult.h"
 #include "model/ListDataServiceApiAuthoritiesRequest.h"
 #include "model/ListDataServiceApiAuthoritiesResult.h"
+#include "model/ListDataServiceApiTestRequest.h"
+#include "model/ListDataServiceApiTestResult.h"
 #include "model/ListDataServiceApisRequest.h"
 #include "model/ListDataServiceApisResult.h"
 #include "model/ListDataServiceApplicationsRequest.h"
@@ -306,6 +320,10 @@
 #include "model/ListDataSourcesResult.h"
 #include "model/ListDeploymentsRequest.h"
 #include "model/ListDeploymentsResult.h"
+#include "model/ListDutyRostersRequest.h"
+#include "model/ListDutyRostersResult.h"
+#include "model/ListExtensionsRequest.h"
+#include "model/ListExtensionsResult.h"
 #include "model/ListFileTypeRequest.h"
 #include "model/ListFileTypeResult.h"
 #include "model/ListFileVersionsRequest.h"
@@ -314,6 +332,8 @@
 #include "model/ListFilesResult.h"
 #include "model/ListFoldersRequest.h"
 #include "model/ListFoldersResult.h"
+#include "model/ListHistoryTasksForResourceGroupRequest.h"
+#include "model/ListHistoryTasksForResourceGroupResult.h"
 #include "model/ListInstanceAmountRequest.h"
 #include "model/ListInstanceAmountResult.h"
 #include "model/ListInstancesRequest.h"
@@ -322,6 +342,8 @@
 #include "model/ListManualDagInstancesResult.h"
 #include "model/ListMetaDBRequest.h"
 #include "model/ListMetaDBResult.h"
+#include "model/ListMigrationsRequest.h"
+#include "model/ListMigrationsResult.h"
 #include "model/ListNodeIORequest.h"
 #include "model/ListNodeIOResult.h"
 #include "model/ListNodeInputOrOutputRequest.h"
@@ -364,6 +386,8 @@
 #include "model/ListTableThemeResult.h"
 #include "model/ListTopicsRequest.h"
 #include "model/ListTopicsResult.h"
+#include "model/ListUsageForResourceGroupRequest.h"
+#include "model/ListUsageForResourceGroupResult.h"
 #include "model/PublishDataServiceApiRequest.h"
 #include "model/PublishDataServiceApiResult.h"
 #include "model/QueryDISyncTaskConfigProcessResultRequest.h"
@@ -412,6 +436,8 @@
 #include "model/SuspendInstanceResult.h"
 #include "model/TerminateDISyncInstanceRequest.h"
 #include "model/TerminateDISyncInstanceResult.h"
+#include "model/TestDataServiceApiRequest.h"
+#include "model/TestDataServiceApiResult.h"
 #include "model/TestNetworkConnectionRequest.h"
 #include "model/TestNetworkConnectionResult.h"
 #include "model/TopTenElapsedTimeInstanceRequest.h"
@@ -685,6 +711,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetDataServiceApiResult> GetDataServiceApiOutcome;
 			typedef std::future<GetDataServiceApiOutcome> GetDataServiceApiOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::GetDataServiceApiRequest&, const GetDataServiceApiOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDataServiceApiAsyncHandler;
+			typedef Outcome<Error, Model::GetDataServiceApiTestResult> GetDataServiceApiTestOutcome;
+			typedef std::future<GetDataServiceApiTestOutcome> GetDataServiceApiTestOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::GetDataServiceApiTestRequest&, const GetDataServiceApiTestOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDataServiceApiTestAsyncHandler;
 			typedef Outcome<Error, Model::GetDataServiceApplicationResult> GetDataServiceApplicationOutcome;
 			typedef std::future<GetDataServiceApplicationOutcome> GetDataServiceApplicationOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::GetDataServiceApplicationRequest&, const GetDataServiceApplicationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDataServiceApplicationAsyncHandler;
@@ -703,6 +732,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetDeploymentResult> GetDeploymentOutcome;
 			typedef std::future<GetDeploymentOutcome> GetDeploymentOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::GetDeploymentRequest&, const GetDeploymentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDeploymentAsyncHandler;
+			typedef Outcome<Error, Model::GetDutyRosterResult> GetDutyRosterOutcome;
+			typedef std::future<GetDutyRosterOutcome> GetDutyRosterOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::GetDutyRosterRequest&, const GetDutyRosterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDutyRosterAsyncHandler;
+			typedef Outcome<Error, Model::GetExtensionResult> GetExtensionOutcome;
+			typedef std::future<GetExtensionOutcome> GetExtensionOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::GetExtensionRequest&, const GetExtensionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetExtensionAsyncHandler;
 			typedef Outcome<Error, Model::GetFileResult> GetFileOutcome;
 			typedef std::future<GetFileOutcome> GetFileOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::GetFileRequest&, const GetFileOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetFileAsyncHandler;
@@ -814,6 +849,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetOpSensitiveDataResult> GetOpSensitiveDataOutcome;
 			typedef std::future<GetOpSensitiveDataOutcome> GetOpSensitiveDataOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::GetOpSensitiveDataRequest&, const GetOpSensitiveDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetOpSensitiveDataAsyncHandler;
+			typedef Outcome<Error, Model::GetOptionValueForProjectResult> GetOptionValueForProjectOutcome;
+			typedef std::future<GetOptionValueForProjectOutcome> GetOptionValueForProjectOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::GetOptionValueForProjectRequest&, const GetOptionValueForProjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetOptionValueForProjectAsyncHandler;
 			typedef Outcome<Error, Model::GetPermissionApplyOrderDetailResult> GetPermissionApplyOrderDetailOutcome;
 			typedef std::future<GetPermissionApplyOrderDetailOutcome> GetPermissionApplyOrderDetailOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::GetPermissionApplyOrderDetailRequest&, const GetPermissionApplyOrderDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetPermissionApplyOrderDetailAsyncHandler;
@@ -868,6 +906,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListConnectionsResult> ListConnectionsOutcome;
 			typedef std::future<ListConnectionsOutcome> ListConnectionsOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::ListConnectionsRequest&, const ListConnectionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListConnectionsAsyncHandler;
+			typedef Outcome<Error, Model::ListCurrentTasksForResourceGroupResult> ListCurrentTasksForResourceGroupOutcome;
+			typedef std::future<ListCurrentTasksForResourceGroupOutcome> ListCurrentTasksForResourceGroupOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::ListCurrentTasksForResourceGroupRequest&, const ListCurrentTasksForResourceGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListCurrentTasksForResourceGroupAsyncHandler;
+			typedef Outcome<Error, Model::ListCurrentUsageForResourceGroupResult> ListCurrentUsageForResourceGroupOutcome;
+			typedef std::future<ListCurrentUsageForResourceGroupOutcome> ListCurrentUsageForResourceGroupOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::ListCurrentUsageForResourceGroupRequest&, const ListCurrentUsageForResourceGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListCurrentUsageForResourceGroupAsyncHandler;
 			typedef Outcome<Error, Model::ListDIProjectConfigResult> ListDIProjectConfigOutcome;
 			typedef std::future<ListDIProjectConfigOutcome> ListDIProjectConfigOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::ListDIProjectConfigRequest&, const ListDIProjectConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDIProjectConfigAsyncHandler;
@@ -877,6 +921,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListDataServiceApiAuthoritiesResult> ListDataServiceApiAuthoritiesOutcome;
 			typedef std::future<ListDataServiceApiAuthoritiesOutcome> ListDataServiceApiAuthoritiesOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::ListDataServiceApiAuthoritiesRequest&, const ListDataServiceApiAuthoritiesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDataServiceApiAuthoritiesAsyncHandler;
+			typedef Outcome<Error, Model::ListDataServiceApiTestResult> ListDataServiceApiTestOutcome;
+			typedef std::future<ListDataServiceApiTestOutcome> ListDataServiceApiTestOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::ListDataServiceApiTestRequest&, const ListDataServiceApiTestOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDataServiceApiTestAsyncHandler;
 			typedef Outcome<Error, Model::ListDataServiceApisResult> ListDataServiceApisOutcome;
 			typedef std::future<ListDataServiceApisOutcome> ListDataServiceApisOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::ListDataServiceApisRequest&, const ListDataServiceApisOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDataServiceApisAsyncHandler;
@@ -901,6 +948,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListDeploymentsResult> ListDeploymentsOutcome;
 			typedef std::future<ListDeploymentsOutcome> ListDeploymentsOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::ListDeploymentsRequest&, const ListDeploymentsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDeploymentsAsyncHandler;
+			typedef Outcome<Error, Model::ListDutyRostersResult> ListDutyRostersOutcome;
+			typedef std::future<ListDutyRostersOutcome> ListDutyRostersOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::ListDutyRostersRequest&, const ListDutyRostersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDutyRostersAsyncHandler;
+			typedef Outcome<Error, Model::ListExtensionsResult> ListExtensionsOutcome;
+			typedef std::future<ListExtensionsOutcome> ListExtensionsOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::ListExtensionsRequest&, const ListExtensionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListExtensionsAsyncHandler;
 			typedef Outcome<Error, Model::ListFileTypeResult> ListFileTypeOutcome;
 			typedef std::future<ListFileTypeOutcome> ListFileTypeOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::ListFileTypeRequest&, const ListFileTypeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListFileTypeAsyncHandler;
@@ -913,6 +966,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListFoldersResult> ListFoldersOutcome;
 			typedef std::future<ListFoldersOutcome> ListFoldersOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::ListFoldersRequest&, const ListFoldersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListFoldersAsyncHandler;
+			typedef Outcome<Error, Model::ListHistoryTasksForResourceGroupResult> ListHistoryTasksForResourceGroupOutcome;
+			typedef std::future<ListHistoryTasksForResourceGroupOutcome> ListHistoryTasksForResourceGroupOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::ListHistoryTasksForResourceGroupRequest&, const ListHistoryTasksForResourceGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListHistoryTasksForResourceGroupAsyncHandler;
 			typedef Outcome<Error, Model::ListInstanceAmountResult> ListInstanceAmountOutcome;
 			typedef std::future<ListInstanceAmountOutcome> ListInstanceAmountOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::ListInstanceAmountRequest&, const ListInstanceAmountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListInstanceAmountAsyncHandler;
@@ -925,6 +981,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListMetaDBResult> ListMetaDBOutcome;
 			typedef std::future<ListMetaDBOutcome> ListMetaDBOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::ListMetaDBRequest&, const ListMetaDBOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListMetaDBAsyncHandler;
+			typedef Outcome<Error, Model::ListMigrationsResult> ListMigrationsOutcome;
+			typedef std::future<ListMigrationsOutcome> ListMigrationsOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::ListMigrationsRequest&, const ListMigrationsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListMigrationsAsyncHandler;
 			typedef Outcome<Error, Model::ListNodeIOResult> ListNodeIOOutcome;
 			typedef std::future<ListNodeIOOutcome> ListNodeIOOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::ListNodeIORequest&, const ListNodeIOOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListNodeIOAsyncHandler;
@@ -988,6 +1047,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListTopicsResult> ListTopicsOutcome;
 			typedef std::future<ListTopicsOutcome> ListTopicsOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::ListTopicsRequest&, const ListTopicsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTopicsAsyncHandler;
+			typedef Outcome<Error, Model::ListUsageForResourceGroupResult> ListUsageForResourceGroupOutcome;
+			typedef std::future<ListUsageForResourceGroupOutcome> ListUsageForResourceGroupOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::ListUsageForResourceGroupRequest&, const ListUsageForResourceGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListUsageForResourceGroupAsyncHandler;
 			typedef Outcome<Error, Model::PublishDataServiceApiResult> PublishDataServiceApiOutcome;
 			typedef std::future<PublishDataServiceApiOutcome> PublishDataServiceApiOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::PublishDataServiceApiRequest&, const PublishDataServiceApiOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PublishDataServiceApiAsyncHandler;
@@ -1060,6 +1122,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::TerminateDISyncInstanceResult> TerminateDISyncInstanceOutcome;
 			typedef std::future<TerminateDISyncInstanceOutcome> TerminateDISyncInstanceOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::TerminateDISyncInstanceRequest&, const TerminateDISyncInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TerminateDISyncInstanceAsyncHandler;
+			typedef Outcome<Error, Model::TestDataServiceApiResult> TestDataServiceApiOutcome;
+			typedef std::future<TestDataServiceApiOutcome> TestDataServiceApiOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::TestDataServiceApiRequest&, const TestDataServiceApiOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TestDataServiceApiAsyncHandler;
 			typedef Outcome<Error, Model::TestNetworkConnectionResult> TestNetworkConnectionOutcome;
 			typedef std::future<TestNetworkConnectionOutcome> TestNetworkConnectionOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::TestNetworkConnectionRequest&, const TestNetworkConnectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TestNetworkConnectionAsyncHandler;
@@ -1356,6 +1421,9 @@ namespace AlibabaCloud
 			GetDataServiceApiOutcome getDataServiceApi(const Model::GetDataServiceApiRequest &request)const;
 			void getDataServiceApiAsync(const Model::GetDataServiceApiRequest& request, const GetDataServiceApiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetDataServiceApiOutcomeCallable getDataServiceApiCallable(const Model::GetDataServiceApiRequest& request) const;
+			GetDataServiceApiTestOutcome getDataServiceApiTest(const Model::GetDataServiceApiTestRequest &request)const;
+			void getDataServiceApiTestAsync(const Model::GetDataServiceApiTestRequest& request, const GetDataServiceApiTestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetDataServiceApiTestOutcomeCallable getDataServiceApiTestCallable(const Model::GetDataServiceApiTestRequest& request) const;
 			GetDataServiceApplicationOutcome getDataServiceApplication(const Model::GetDataServiceApplicationRequest &request)const;
 			void getDataServiceApplicationAsync(const Model::GetDataServiceApplicationRequest& request, const GetDataServiceApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetDataServiceApplicationOutcomeCallable getDataServiceApplicationCallable(const Model::GetDataServiceApplicationRequest& request) const;
@@ -1374,6 +1442,12 @@ namespace AlibabaCloud
 			GetDeploymentOutcome getDeployment(const Model::GetDeploymentRequest &request)const;
 			void getDeploymentAsync(const Model::GetDeploymentRequest& request, const GetDeploymentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetDeploymentOutcomeCallable getDeploymentCallable(const Model::GetDeploymentRequest& request) const;
+			GetDutyRosterOutcome getDutyRoster(const Model::GetDutyRosterRequest &request)const;
+			void getDutyRosterAsync(const Model::GetDutyRosterRequest& request, const GetDutyRosterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetDutyRosterOutcomeCallable getDutyRosterCallable(const Model::GetDutyRosterRequest& request) const;
+			GetExtensionOutcome getExtension(const Model::GetExtensionRequest &request)const;
+			void getExtensionAsync(const Model::GetExtensionRequest& request, const GetExtensionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetExtensionOutcomeCallable getExtensionCallable(const Model::GetExtensionRequest& request) const;
 			GetFileOutcome getFile(const Model::GetFileRequest &request)const;
 			void getFileAsync(const Model::GetFileRequest& request, const GetFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetFileOutcomeCallable getFileCallable(const Model::GetFileRequest& request) const;
@@ -1485,6 +1559,9 @@ namespace AlibabaCloud
 			GetOpSensitiveDataOutcome getOpSensitiveData(const Model::GetOpSensitiveDataRequest &request)const;
 			void getOpSensitiveDataAsync(const Model::GetOpSensitiveDataRequest& request, const GetOpSensitiveDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetOpSensitiveDataOutcomeCallable getOpSensitiveDataCallable(const Model::GetOpSensitiveDataRequest& request) const;
+			GetOptionValueForProjectOutcome getOptionValueForProject(const Model::GetOptionValueForProjectRequest &request)const;
+			void getOptionValueForProjectAsync(const Model::GetOptionValueForProjectRequest& request, const GetOptionValueForProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetOptionValueForProjectOutcomeCallable getOptionValueForProjectCallable(const Model::GetOptionValueForProjectRequest& request) const;
 			GetPermissionApplyOrderDetailOutcome getPermissionApplyOrderDetail(const Model::GetPermissionApplyOrderDetailRequest &request)const;
 			void getPermissionApplyOrderDetailAsync(const Model::GetPermissionApplyOrderDetailRequest& request, const GetPermissionApplyOrderDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetPermissionApplyOrderDetailOutcomeCallable getPermissionApplyOrderDetailCallable(const Model::GetPermissionApplyOrderDetailRequest& request) const;
@@ -1539,6 +1616,12 @@ namespace AlibabaCloud
 			ListConnectionsOutcome listConnections(const Model::ListConnectionsRequest &request)const;
 			void listConnectionsAsync(const Model::ListConnectionsRequest& request, const ListConnectionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListConnectionsOutcomeCallable listConnectionsCallable(const Model::ListConnectionsRequest& request) const;
+			ListCurrentTasksForResourceGroupOutcome listCurrentTasksForResourceGroup(const Model::ListCurrentTasksForResourceGroupRequest &request)const;
+			void listCurrentTasksForResourceGroupAsync(const Model::ListCurrentTasksForResourceGroupRequest& request, const ListCurrentTasksForResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListCurrentTasksForResourceGroupOutcomeCallable listCurrentTasksForResourceGroupCallable(const Model::ListCurrentTasksForResourceGroupRequest& request) const;
+			ListCurrentUsageForResourceGroupOutcome listCurrentUsageForResourceGroup(const Model::ListCurrentUsageForResourceGroupRequest &request)const;
+			void listCurrentUsageForResourceGroupAsync(const Model::ListCurrentUsageForResourceGroupRequest& request, const ListCurrentUsageForResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListCurrentUsageForResourceGroupOutcomeCallable listCurrentUsageForResourceGroupCallable(const Model::ListCurrentUsageForResourceGroupRequest& request) const;
 			ListDIProjectConfigOutcome listDIProjectConfig(const Model::ListDIProjectConfigRequest &request)const;
 			void listDIProjectConfigAsync(const Model::ListDIProjectConfigRequest& request, const ListDIProjectConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListDIProjectConfigOutcomeCallable listDIProjectConfigCallable(const Model::ListDIProjectConfigRequest& request) const;
@@ -1548,6 +1631,9 @@ namespace AlibabaCloud
 			ListDataServiceApiAuthoritiesOutcome listDataServiceApiAuthorities(const Model::ListDataServiceApiAuthoritiesRequest &request)const;
 			void listDataServiceApiAuthoritiesAsync(const Model::ListDataServiceApiAuthoritiesRequest& request, const ListDataServiceApiAuthoritiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListDataServiceApiAuthoritiesOutcomeCallable listDataServiceApiAuthoritiesCallable(const Model::ListDataServiceApiAuthoritiesRequest& request) const;
+			ListDataServiceApiTestOutcome listDataServiceApiTest(const Model::ListDataServiceApiTestRequest &request)const;
+			void listDataServiceApiTestAsync(const Model::ListDataServiceApiTestRequest& request, const ListDataServiceApiTestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListDataServiceApiTestOutcomeCallable listDataServiceApiTestCallable(const Model::ListDataServiceApiTestRequest& request) const;
 			ListDataServiceApisOutcome listDataServiceApis(const Model::ListDataServiceApisRequest &request)const;
 			void listDataServiceApisAsync(const Model::ListDataServiceApisRequest& request, const ListDataServiceApisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListDataServiceApisOutcomeCallable listDataServiceApisCallable(const Model::ListDataServiceApisRequest& request) const;
@@ -1572,6 +1658,12 @@ namespace AlibabaCloud
 			ListDeploymentsOutcome listDeployments(const Model::ListDeploymentsRequest &request)const;
 			void listDeploymentsAsync(const Model::ListDeploymentsRequest& request, const ListDeploymentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListDeploymentsOutcomeCallable listDeploymentsCallable(const Model::ListDeploymentsRequest& request) const;
+			ListDutyRostersOutcome listDutyRosters(const Model::ListDutyRostersRequest &request)const;
+			void listDutyRostersAsync(const Model::ListDutyRostersRequest& request, const ListDutyRostersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListDutyRostersOutcomeCallable listDutyRostersCallable(const Model::ListDutyRostersRequest& request) const;
+			ListExtensionsOutcome listExtensions(const Model::ListExtensionsRequest &request)const;
+			void listExtensionsAsync(const Model::ListExtensionsRequest& request, const ListExtensionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListExtensionsOutcomeCallable listExtensionsCallable(const Model::ListExtensionsRequest& request) const;
 			ListFileTypeOutcome listFileType(const Model::ListFileTypeRequest &request)const;
 			void listFileTypeAsync(const Model::ListFileTypeRequest& request, const ListFileTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListFileTypeOutcomeCallable listFileTypeCallable(const Model::ListFileTypeRequest& request) const;
@@ -1584,6 +1676,9 @@ namespace AlibabaCloud
 			ListFoldersOutcome listFolders(const Model::ListFoldersRequest &request)const;
 			void listFoldersAsync(const Model::ListFoldersRequest& request, const ListFoldersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListFoldersOutcomeCallable listFoldersCallable(const Model::ListFoldersRequest& request) const;
+			ListHistoryTasksForResourceGroupOutcome listHistoryTasksForResourceGroup(const Model::ListHistoryTasksForResourceGroupRequest &request)const;
+			void listHistoryTasksForResourceGroupAsync(const Model::ListHistoryTasksForResourceGroupRequest& request, const ListHistoryTasksForResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListHistoryTasksForResourceGroupOutcomeCallable listHistoryTasksForResourceGroupCallable(const Model::ListHistoryTasksForResourceGroupRequest& request) const;
 			ListInstanceAmountOutcome listInstanceAmount(const Model::ListInstanceAmountRequest &request)const;
 			void listInstanceAmountAsync(const Model::ListInstanceAmountRequest& request, const ListInstanceAmountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListInstanceAmountOutcomeCallable listInstanceAmountCallable(const Model::ListInstanceAmountRequest& request) const;
@@ -1596,6 +1691,9 @@ namespace AlibabaCloud
 			ListMetaDBOutcome listMetaDB(const Model::ListMetaDBRequest &request)const;
 			void listMetaDBAsync(const Model::ListMetaDBRequest& request, const ListMetaDBAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListMetaDBOutcomeCallable listMetaDBCallable(const Model::ListMetaDBRequest& request) const;
+			ListMigrationsOutcome listMigrations(const Model::ListMigrationsRequest &request)const;
+			void listMigrationsAsync(const Model::ListMigrationsRequest& request, const ListMigrationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListMigrationsOutcomeCallable listMigrationsCallable(const Model::ListMigrationsRequest& request) const;
 			ListNodeIOOutcome listNodeIO(const Model::ListNodeIORequest &request)const;
 			void listNodeIOAsync(const Model::ListNodeIORequest& request, const ListNodeIOAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListNodeIOOutcomeCallable listNodeIOCallable(const Model::ListNodeIORequest& request) const;
@@ -1659,6 +1757,9 @@ namespace AlibabaCloud
 			ListTopicsOutcome listTopics(const Model::ListTopicsRequest &request)const;
 			void listTopicsAsync(const Model::ListTopicsRequest& request, const ListTopicsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListTopicsOutcomeCallable listTopicsCallable(const Model::ListTopicsRequest& request) const;
+			ListUsageForResourceGroupOutcome listUsageForResourceGroup(const Model::ListUsageForResourceGroupRequest &request)const;
+			void listUsageForResourceGroupAsync(const Model::ListUsageForResourceGroupRequest& request, const ListUsageForResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListUsageForResourceGroupOutcomeCallable listUsageForResourceGroupCallable(const Model::ListUsageForResourceGroupRequest& request) const;
 			PublishDataServiceApiOutcome publishDataServiceApi(const Model::PublishDataServiceApiRequest &request)const;
 			void publishDataServiceApiAsync(const Model::PublishDataServiceApiRequest& request, const PublishDataServiceApiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			PublishDataServiceApiOutcomeCallable publishDataServiceApiCallable(const Model::PublishDataServiceApiRequest& request) const;
@@ -1731,6 +1832,9 @@ namespace AlibabaCloud
 			TerminateDISyncInstanceOutcome terminateDISyncInstance(const Model::TerminateDISyncInstanceRequest &request)const;
 			void terminateDISyncInstanceAsync(const Model::TerminateDISyncInstanceRequest& request, const TerminateDISyncInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			TerminateDISyncInstanceOutcomeCallable terminateDISyncInstanceCallable(const Model::TerminateDISyncInstanceRequest& request) const;
+			TestDataServiceApiOutcome testDataServiceApi(const Model::TestDataServiceApiRequest &request)const;
+			void testDataServiceApiAsync(const Model::TestDataServiceApiRequest& request, const TestDataServiceApiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			TestDataServiceApiOutcomeCallable testDataServiceApiCallable(const Model::TestDataServiceApiRequest& request) const;
 			TestNetworkConnectionOutcome testNetworkConnection(const Model::TestNetworkConnectionRequest &request)const;
 			void testNetworkConnectionAsync(const Model::TestNetworkConnectionRequest& request, const TestNetworkConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			TestNetworkConnectionOutcomeCallable testNetworkConnectionCallable(const Model::TestNetworkConnectionRequest& request) const;

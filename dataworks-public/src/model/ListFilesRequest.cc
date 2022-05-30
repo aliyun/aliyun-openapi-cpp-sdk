@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,122 +18,100 @@
 
 using AlibabaCloud::Dataworks_public::Model::ListFilesRequest;
 
-ListFilesRequest::ListFilesRequest() :
-	RpcServiceRequest("dataworks-public", "2020-05-18", "ListFiles")
-{
-	setMethod(HttpRequest::Method::Post);
+ListFilesRequest::ListFilesRequest()
+    : RpcServiceRequest("dataworks-public", "2020-05-18", "ListFiles") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-ListFilesRequest::~ListFilesRequest()
-{}
+ListFilesRequest::~ListFilesRequest() {}
 
-std::string ListFilesRequest::getOwner()const
-{
-	return owner_;
+std::string ListFilesRequest::getOwner() const {
+  return owner_;
 }
 
-void ListFilesRequest::setOwner(const std::string& owner)
-{
-	owner_ = owner;
-	setBodyParameter("Owner", owner);
+void ListFilesRequest::setOwner(const std::string &owner) {
+  owner_ = owner;
+  setBodyParameter(std::string("Owner"), owner);
 }
 
-std::string ListFilesRequest::getFileTypes()const
-{
-	return fileTypes_;
+std::string ListFilesRequest::getFileTypes() const {
+  return fileTypes_;
 }
 
-void ListFilesRequest::setFileTypes(const std::string& fileTypes)
-{
-	fileTypes_ = fileTypes;
-	setBodyParameter("FileTypes", fileTypes);
+void ListFilesRequest::setFileTypes(const std::string &fileTypes) {
+  fileTypes_ = fileTypes;
+  setBodyParameter(std::string("FileTypes"), fileTypes);
 }
 
-std::string ListFilesRequest::getProjectIdentifier()const
-{
-	return projectIdentifier_;
+std::string ListFilesRequest::getProjectIdentifier() const {
+  return projectIdentifier_;
 }
 
-void ListFilesRequest::setProjectIdentifier(const std::string& projectIdentifier)
-{
-	projectIdentifier_ = projectIdentifier;
-	setBodyParameter("ProjectIdentifier", projectIdentifier);
+void ListFilesRequest::setProjectIdentifier(const std::string &projectIdentifier) {
+  projectIdentifier_ = projectIdentifier;
+  setBodyParameter(std::string("ProjectIdentifier"), projectIdentifier);
 }
 
-int ListFilesRequest::getPageNumber()const
-{
-	return pageNumber_;
+int ListFilesRequest::getPageNumber() const {
+  return pageNumber_;
 }
 
-void ListFilesRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setBodyParameter("PageNumber", std::to_string(pageNumber));
+void ListFilesRequest::setPageNumber(int pageNumber) {
+  pageNumber_ = pageNumber;
+  setBodyParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
-std::string ListFilesRequest::getFileFolderPath()const
-{
-	return fileFolderPath_;
+std::string ListFilesRequest::getFileFolderPath() const {
+  return fileFolderPath_;
 }
 
-void ListFilesRequest::setFileFolderPath(const std::string& fileFolderPath)
-{
-	fileFolderPath_ = fileFolderPath;
-	setBodyParameter("FileFolderPath", fileFolderPath);
+void ListFilesRequest::setFileFolderPath(const std::string &fileFolderPath) {
+  fileFolderPath_ = fileFolderPath;
+  setBodyParameter(std::string("FileFolderPath"), fileFolderPath);
 }
 
-int ListFilesRequest::getPageSize()const
-{
-	return pageSize_;
+int ListFilesRequest::getPageSize() const {
+  return pageSize_;
 }
 
-void ListFilesRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setBodyParameter("PageSize", std::to_string(pageSize));
+void ListFilesRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setBodyParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
-std::string ListFilesRequest::getKeyword()const
-{
-	return keyword_;
+std::string ListFilesRequest::getKeyword() const {
+  return keyword_;
 }
 
-void ListFilesRequest::setKeyword(const std::string& keyword)
-{
-	keyword_ = keyword;
-	setBodyParameter("Keyword", keyword);
+void ListFilesRequest::setKeyword(const std::string &keyword) {
+  keyword_ = keyword;
+  setBodyParameter(std::string("Keyword"), keyword);
 }
 
-long ListFilesRequest::getProjectId()const
-{
-	return projectId_;
+long ListFilesRequest::getProjectId() const {
+  return projectId_;
 }
 
-void ListFilesRequest::setProjectId(long projectId)
-{
-	projectId_ = projectId;
-	setBodyParameter("ProjectId", std::to_string(projectId));
+void ListFilesRequest::setProjectId(long projectId) {
+  projectId_ = projectId;
+  setBodyParameter(std::string("ProjectId"), std::to_string(projectId));
 }
 
-std::string ListFilesRequest::getUseType()const
-{
-	return useType_;
+std::string ListFilesRequest::getUseType() const {
+  return useType_;
 }
 
-void ListFilesRequest::setUseType(const std::string& useType)
-{
-	useType_ = useType;
-	setBodyParameter("UseType", useType);
+void ListFilesRequest::setUseType(const std::string &useType) {
+  useType_ = useType;
+  setBodyParameter(std::string("UseType"), useType);
 }
 
-long ListFilesRequest::getNodeId()const
-{
-	return nodeId_;
+long ListFilesRequest::getNodeId() const {
+  return nodeId_;
 }
 
-void ListFilesRequest::setNodeId(long nodeId)
-{
-	nodeId_ = nodeId;
-	setBodyParameter("NodeId", std::to_string(nodeId));
+void ListFilesRequest::setNodeId(long nodeId) {
+  nodeId_ = nodeId;
+  setBodyParameter(std::string("NodeId"), std::to_string(nodeId));
 }
 

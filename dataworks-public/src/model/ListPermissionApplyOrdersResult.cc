@@ -50,12 +50,12 @@ void ListPermissionApplyOrdersResult::parse(const std::string &payload)
 	for (auto applyOrdersNodeApplyOrderOrders : allApplyOrderNode)
 	{
 		ApplyOrders::Orders ordersObject;
-		if(!applyOrdersNodeApplyOrderOrders["FlowId"].isNull())
-			ordersObject.flowId = applyOrdersNodeApplyOrderOrders["FlowId"].asString();
 		if(!applyOrdersNodeApplyOrderOrders["ApplyBaseId"].isNull())
 			ordersObject.applyBaseId = applyOrdersNodeApplyOrderOrders["ApplyBaseId"].asString();
 		if(!applyOrdersNodeApplyOrderOrders["ApplyTimestamp"].isNull())
 			ordersObject.applyTimestamp = std::stol(applyOrdersNodeApplyOrderOrders["ApplyTimestamp"].asString());
+		if(!applyOrdersNodeApplyOrderOrders["FlowId"].isNull())
+			ordersObject.flowId = applyOrdersNodeApplyOrderOrders["FlowId"].asString();
 		if(!applyOrdersNodeApplyOrderOrders["FlowStatus"].isNull())
 			ordersObject.flowStatus = std::stoi(applyOrdersNodeApplyOrderOrders["FlowStatus"].asString());
 		auto approveContentNode = value["ApproveContent"];

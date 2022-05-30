@@ -42,24 +42,24 @@ void GetDataServiceApplicationResult::parse(const std::string &payload)
 	auto dataNode = value["Data"];
 	if(!dataNode["ApplicationCode"].isNull())
 		data_.applicationCode = dataNode["ApplicationCode"].asString();
-	if(!dataNode["ApplicationId"].isNull())
-		data_.applicationId = std::stol(dataNode["ApplicationId"].asString());
 	if(!dataNode["ApplicationKey"].isNull())
 		data_.applicationKey = dataNode["ApplicationKey"].asString();
-	if(!dataNode["ApplicationName"].isNull())
-		data_.applicationName = dataNode["ApplicationName"].asString();
 	if(!dataNode["ApplicationSecret"].isNull())
 		data_.applicationSecret = dataNode["ApplicationSecret"].asString();
 	if(!dataNode["ProjectId"].isNull())
 		data_.projectId = std::stol(dataNode["ProjectId"].asString());
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
+	if(!dataNode["ApplicationName"].isNull())
+		data_.applicationName = dataNode["ApplicationName"].asString();
+	if(!dataNode["ApplicationId"].isNull())
+		data_.applicationId = std::stol(dataNode["ApplicationId"].asString());
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
 
 }
 

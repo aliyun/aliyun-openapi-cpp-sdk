@@ -50,10 +50,10 @@ void ListFileTypeResult::parse(const std::string &payload)
 	for (auto nodeTypeInfoListNodeNodeTypeInfoNodeTypeInfoItem : allNodeTypeInfoNode)
 	{
 		NodeTypeInfoList::NodeTypeInfoItem nodeTypeInfoItemObject;
-		if(!nodeTypeInfoListNodeNodeTypeInfoNodeTypeInfoItem["NodeType"].isNull())
-			nodeTypeInfoItemObject.nodeType = std::stoi(nodeTypeInfoListNodeNodeTypeInfoNodeTypeInfoItem["NodeType"].asString());
 		if(!nodeTypeInfoListNodeNodeTypeInfoNodeTypeInfoItem["NodeTypeName"].isNull())
 			nodeTypeInfoItemObject.nodeTypeName = nodeTypeInfoListNodeNodeTypeInfoNodeTypeInfoItem["NodeTypeName"].asString();
+		if(!nodeTypeInfoListNodeNodeTypeInfoNodeTypeInfoItem["NodeType"].isNull())
+			nodeTypeInfoItemObject.nodeType = std::stoi(nodeTypeInfoListNodeNodeTypeInfoNodeTypeInfoItem["NodeType"].asString());
 		nodeTypeInfoList_.nodeTypeInfo.push_back(nodeTypeInfoItemObject);
 	}
 

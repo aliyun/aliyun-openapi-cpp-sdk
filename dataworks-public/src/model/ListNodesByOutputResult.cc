@@ -49,56 +49,56 @@ void ListNodesByOutputResult::parse(const std::string &payload)
 		for (auto valueDataOutputNodePairNodeListNode : allNodeListNode)
 		{
 			OutputNodePair::Node nodeListObject;
-			if(!valueDataOutputNodePairNodeListNode["NodeId"].isNull())
-				nodeListObject.nodeId = std::stol(valueDataOutputNodePairNodeListNode["NodeId"].asString());
-			if(!valueDataOutputNodePairNodeListNode["NodeName"].isNull())
-				nodeListObject.nodeName = valueDataOutputNodePairNodeListNode["NodeName"].asString();
-			if(!valueDataOutputNodePairNodeListNode["OwnerId"].isNull())
-				nodeListObject.ownerId = valueDataOutputNodePairNodeListNode["OwnerId"].asString();
-			if(!valueDataOutputNodePairNodeListNode["Description"].isNull())
-				nodeListObject.description = valueDataOutputNodePairNodeListNode["Description"].asString();
-			if(!valueDataOutputNodePairNodeListNode["ResGroupName"].isNull())
-				nodeListObject.resGroupName = valueDataOutputNodePairNodeListNode["ResGroupName"].asString();
-			if(!valueDataOutputNodePairNodeListNode["CronExpress"].isNull())
-				nodeListObject.cronExpress = valueDataOutputNodePairNodeListNode["CronExpress"].asString();
-			if(!valueDataOutputNodePairNodeListNode["Repeatability"].isNull())
-				nodeListObject.repeatability = valueDataOutputNodePairNodeListNode["Repeatability"].asString() == "true";
-			if(!valueDataOutputNodePairNodeListNode["ProgramType"].isNull())
-				nodeListObject.programType = valueDataOutputNodePairNodeListNode["ProgramType"].asString();
-			if(!valueDataOutputNodePairNodeListNode["ProjectId"].isNull())
-				nodeListObject.projectId = std::stol(valueDataOutputNodePairNodeListNode["ProjectId"].asString());
 			if(!valueDataOutputNodePairNodeListNode["SchedulerType"].isNull())
 				nodeListObject.schedulerType = valueDataOutputNodePairNodeListNode["SchedulerType"].asString();
-			if(!valueDataOutputNodePairNodeListNode["ParamValues"].isNull())
-				nodeListObject.paramValues = valueDataOutputNodePairNodeListNode["ParamValues"].asString();
-			if(!valueDataOutputNodePairNodeListNode["Priority"].isNull())
-				nodeListObject.priority = std::stoi(valueDataOutputNodePairNodeListNode["Priority"].asString());
-			if(!valueDataOutputNodePairNodeListNode["BaselineId"].isNull())
-				nodeListObject.baselineId = std::stol(valueDataOutputNodePairNodeListNode["BaselineId"].asString());
 			if(!valueDataOutputNodePairNodeListNode["RepeatInterval"].isNull())
 				nodeListObject.repeatInterval = std::stoi(valueDataOutputNodePairNodeListNode["RepeatInterval"].asString());
-			if(!valueDataOutputNodePairNodeListNode["Connection"].isNull())
-				nodeListObject.connection = valueDataOutputNodePairNodeListNode["Connection"].asString();
-			if(!valueDataOutputNodePairNodeListNode["DqcType"].isNull())
-				nodeListObject.dqcType = std::stoi(valueDataOutputNodePairNodeListNode["DqcType"].asString());
-			if(!valueDataOutputNodePairNodeListNode["DqcDescription"].isNull())
-				nodeListObject.dqcDescription = valueDataOutputNodePairNodeListNode["DqcDescription"].asString();
-			if(!valueDataOutputNodePairNodeListNode["RelatedFlowId"].isNull())
-				nodeListObject.relatedFlowId = std::stol(valueDataOutputNodePairNodeListNode["RelatedFlowId"].asString());
+			if(!valueDataOutputNodePairNodeListNode["Repeatability"].isNull())
+				nodeListObject.repeatability = valueDataOutputNodePairNodeListNode["Repeatability"].asString() == "true";
 			if(!valueDataOutputNodePairNodeListNode["FileType"].isNull())
 				nodeListObject.fileType = valueDataOutputNodePairNodeListNode["FileType"].asString();
+			if(!valueDataOutputNodePairNodeListNode["ProjectId"].isNull())
+				nodeListObject.projectId = std::stol(valueDataOutputNodePairNodeListNode["ProjectId"].asString());
+			if(!valueDataOutputNodePairNodeListNode["ProgramType"].isNull())
+				nodeListObject.programType = valueDataOutputNodePairNodeListNode["ProgramType"].asString();
+			if(!valueDataOutputNodePairNodeListNode["Priority"].isNull())
+				nodeListObject.priority = std::stoi(valueDataOutputNodePairNodeListNode["Priority"].asString());
+			if(!valueDataOutputNodePairNodeListNode["OwnerId"].isNull())
+				nodeListObject.ownerId = valueDataOutputNodePairNodeListNode["OwnerId"].asString();
+			if(!valueDataOutputNodePairNodeListNode["Connection"].isNull())
+				nodeListObject.connection = valueDataOutputNodePairNodeListNode["Connection"].asString();
+			if(!valueDataOutputNodePairNodeListNode["ParamValues"].isNull())
+				nodeListObject.paramValues = valueDataOutputNodePairNodeListNode["ParamValues"].asString();
+			if(!valueDataOutputNodePairNodeListNode["RelatedFlowId"].isNull())
+				nodeListObject.relatedFlowId = std::stol(valueDataOutputNodePairNodeListNode["RelatedFlowId"].asString());
+			if(!valueDataOutputNodePairNodeListNode["DqcType"].isNull())
+				nodeListObject.dqcType = std::stoi(valueDataOutputNodePairNodeListNode["DqcType"].asString());
+			if(!valueDataOutputNodePairNodeListNode["BaselineId"].isNull())
+				nodeListObject.baselineId = std::stol(valueDataOutputNodePairNodeListNode["BaselineId"].asString());
+			if(!valueDataOutputNodePairNodeListNode["Description"].isNull())
+				nodeListObject.description = valueDataOutputNodePairNodeListNode["Description"].asString();
+			if(!valueDataOutputNodePairNodeListNode["NodeName"].isNull())
+				nodeListObject.nodeName = valueDataOutputNodePairNodeListNode["NodeName"].asString();
+			if(!valueDataOutputNodePairNodeListNode["ResGroupName"].isNull())
+				nodeListObject.resGroupName = valueDataOutputNodePairNodeListNode["ResGroupName"].asString();
+			if(!valueDataOutputNodePairNodeListNode["DqcDescription"].isNull())
+				nodeListObject.dqcDescription = valueDataOutputNodePairNodeListNode["DqcDescription"].asString();
+			if(!valueDataOutputNodePairNodeListNode["CronExpress"].isNull())
+				nodeListObject.cronExpress = valueDataOutputNodePairNodeListNode["CronExpress"].asString();
+			if(!valueDataOutputNodePairNodeListNode["NodeId"].isNull())
+				nodeListObject.nodeId = std::stol(valueDataOutputNodePairNodeListNode["NodeId"].asString());
 			dataObject.nodeList.push_back(nodeListObject);
 		}
 		data_.push_back(dataObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
 	if(!value["ErrorMessage"].isNull())
 		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

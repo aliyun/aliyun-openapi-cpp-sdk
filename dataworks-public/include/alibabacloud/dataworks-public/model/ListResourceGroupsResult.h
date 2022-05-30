@@ -34,10 +34,10 @@ namespace AlibabaCloud
 			public:
 				struct DataItem
 				{
-					bool isDefault;
 					int status;
-					std::string mode;
+					bool isDefault;
 					std::string createTime;
+					std::string mode;
 					std::string cluster;
 					int sequence;
 					std::string resourceGroupType;

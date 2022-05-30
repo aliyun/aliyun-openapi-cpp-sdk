@@ -40,22 +40,22 @@ void GetDataServiceFolderResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto folderNode = value["Folder"];
-	if(!folderNode["TenantId"].isNull())
-		folder_.tenantId = std::stol(folderNode["TenantId"].asString());
-	if(!folderNode["ProjectId"].isNull())
-		folder_.projectId = std::stol(folderNode["ProjectId"].asString());
-	if(!folderNode["FolderId"].isNull())
-		folder_.folderId = std::stol(folderNode["FolderId"].asString());
-	if(!folderNode["FolderName"].isNull())
-		folder_.folderName = folderNode["FolderName"].asString();
-	if(!folderNode["CreatedTime"].isNull())
-		folder_.createdTime = folderNode["CreatedTime"].asString();
+	if(!folderNode["ParentId"].isNull())
+		folder_.parentId = std::stol(folderNode["ParentId"].asString());
 	if(!folderNode["ModifiedTime"].isNull())
 		folder_.modifiedTime = folderNode["ModifiedTime"].asString();
 	if(!folderNode["GroupId"].isNull())
 		folder_.groupId = folderNode["GroupId"].asString();
-	if(!folderNode["ParentId"].isNull())
-		folder_.parentId = std::stol(folderNode["ParentId"].asString());
+	if(!folderNode["FolderId"].isNull())
+		folder_.folderId = std::stol(folderNode["FolderId"].asString());
+	if(!folderNode["ProjectId"].isNull())
+		folder_.projectId = std::stol(folderNode["ProjectId"].asString());
+	if(!folderNode["FolderName"].isNull())
+		folder_.folderName = folderNode["FolderName"].asString();
+	if(!folderNode["CreatedTime"].isNull())
+		folder_.createdTime = folderNode["CreatedTime"].asString();
+	if(!folderNode["TenantId"].isNull())
+		folder_.tenantId = std::stol(folderNode["TenantId"].asString());
 
 }
 

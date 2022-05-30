@@ -2571,6 +2571,42 @@ Dataworks_publicClient::GetDataServiceApiOutcomeCallable Dataworks_publicClient:
 	return task->get_future();
 }
 
+Dataworks_publicClient::GetDataServiceApiTestOutcome Dataworks_publicClient::getDataServiceApiTest(const GetDataServiceApiTestRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetDataServiceApiTestOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetDataServiceApiTestOutcome(GetDataServiceApiTestResult(outcome.result()));
+	else
+		return GetDataServiceApiTestOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::getDataServiceApiTestAsync(const GetDataServiceApiTestRequest& request, const GetDataServiceApiTestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getDataServiceApiTest(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::GetDataServiceApiTestOutcomeCallable Dataworks_publicClient::getDataServiceApiTestCallable(const GetDataServiceApiTestRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetDataServiceApiTestOutcome()>>(
+			[this, request]()
+			{
+			return this->getDataServiceApiTest(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dataworks_publicClient::GetDataServiceApplicationOutcome Dataworks_publicClient::getDataServiceApplication(const GetDataServiceApplicationRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2781,6 +2817,78 @@ Dataworks_publicClient::GetDeploymentOutcomeCallable Dataworks_publicClient::get
 			[this, request]()
 			{
 			return this->getDeployment(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dataworks_publicClient::GetDutyRosterOutcome Dataworks_publicClient::getDutyRoster(const GetDutyRosterRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetDutyRosterOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetDutyRosterOutcome(GetDutyRosterResult(outcome.result()));
+	else
+		return GetDutyRosterOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::getDutyRosterAsync(const GetDutyRosterRequest& request, const GetDutyRosterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getDutyRoster(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::GetDutyRosterOutcomeCallable Dataworks_publicClient::getDutyRosterCallable(const GetDutyRosterRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetDutyRosterOutcome()>>(
+			[this, request]()
+			{
+			return this->getDutyRoster(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dataworks_publicClient::GetExtensionOutcome Dataworks_publicClient::getExtension(const GetExtensionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetExtensionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetExtensionOutcome(GetExtensionResult(outcome.result()));
+	else
+		return GetExtensionOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::getExtensionAsync(const GetExtensionRequest& request, const GetExtensionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getExtension(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::GetExtensionOutcomeCallable Dataworks_publicClient::getExtensionCallable(const GetExtensionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetExtensionOutcome()>>(
+			[this, request]()
+			{
+			return this->getExtension(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4119,6 +4227,42 @@ Dataworks_publicClient::GetOpSensitiveDataOutcomeCallable Dataworks_publicClient
 	return task->get_future();
 }
 
+Dataworks_publicClient::GetOptionValueForProjectOutcome Dataworks_publicClient::getOptionValueForProject(const GetOptionValueForProjectRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetOptionValueForProjectOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetOptionValueForProjectOutcome(GetOptionValueForProjectResult(outcome.result()));
+	else
+		return GetOptionValueForProjectOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::getOptionValueForProjectAsync(const GetOptionValueForProjectRequest& request, const GetOptionValueForProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getOptionValueForProject(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::GetOptionValueForProjectOutcomeCallable Dataworks_publicClient::getOptionValueForProjectCallable(const GetOptionValueForProjectRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetOptionValueForProjectOutcome()>>(
+			[this, request]()
+			{
+			return this->getOptionValueForProject(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dataworks_publicClient::GetPermissionApplyOrderDetailOutcome Dataworks_publicClient::getPermissionApplyOrderDetail(const GetPermissionApplyOrderDetailRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4767,6 +4911,78 @@ Dataworks_publicClient::ListConnectionsOutcomeCallable Dataworks_publicClient::l
 	return task->get_future();
 }
 
+Dataworks_publicClient::ListCurrentTasksForResourceGroupOutcome Dataworks_publicClient::listCurrentTasksForResourceGroup(const ListCurrentTasksForResourceGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListCurrentTasksForResourceGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListCurrentTasksForResourceGroupOutcome(ListCurrentTasksForResourceGroupResult(outcome.result()));
+	else
+		return ListCurrentTasksForResourceGroupOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::listCurrentTasksForResourceGroupAsync(const ListCurrentTasksForResourceGroupRequest& request, const ListCurrentTasksForResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listCurrentTasksForResourceGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::ListCurrentTasksForResourceGroupOutcomeCallable Dataworks_publicClient::listCurrentTasksForResourceGroupCallable(const ListCurrentTasksForResourceGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListCurrentTasksForResourceGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->listCurrentTasksForResourceGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dataworks_publicClient::ListCurrentUsageForResourceGroupOutcome Dataworks_publicClient::listCurrentUsageForResourceGroup(const ListCurrentUsageForResourceGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListCurrentUsageForResourceGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListCurrentUsageForResourceGroupOutcome(ListCurrentUsageForResourceGroupResult(outcome.result()));
+	else
+		return ListCurrentUsageForResourceGroupOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::listCurrentUsageForResourceGroupAsync(const ListCurrentUsageForResourceGroupRequest& request, const ListCurrentUsageForResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listCurrentUsageForResourceGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::ListCurrentUsageForResourceGroupOutcomeCallable Dataworks_publicClient::listCurrentUsageForResourceGroupCallable(const ListCurrentUsageForResourceGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListCurrentUsageForResourceGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->listCurrentUsageForResourceGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dataworks_publicClient::ListDIProjectConfigOutcome Dataworks_publicClient::listDIProjectConfig(const ListDIProjectConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4869,6 +5085,42 @@ Dataworks_publicClient::ListDataServiceApiAuthoritiesOutcomeCallable Dataworks_p
 			[this, request]()
 			{
 			return this->listDataServiceApiAuthorities(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dataworks_publicClient::ListDataServiceApiTestOutcome Dataworks_publicClient::listDataServiceApiTest(const ListDataServiceApiTestRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListDataServiceApiTestOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListDataServiceApiTestOutcome(ListDataServiceApiTestResult(outcome.result()));
+	else
+		return ListDataServiceApiTestOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::listDataServiceApiTestAsync(const ListDataServiceApiTestRequest& request, const ListDataServiceApiTestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listDataServiceApiTest(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::ListDataServiceApiTestOutcomeCallable Dataworks_publicClient::listDataServiceApiTestCallable(const ListDataServiceApiTestRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListDataServiceApiTestOutcome()>>(
+			[this, request]()
+			{
+			return this->listDataServiceApiTest(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5163,6 +5415,78 @@ Dataworks_publicClient::ListDeploymentsOutcomeCallable Dataworks_publicClient::l
 	return task->get_future();
 }
 
+Dataworks_publicClient::ListDutyRostersOutcome Dataworks_publicClient::listDutyRosters(const ListDutyRostersRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListDutyRostersOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListDutyRostersOutcome(ListDutyRostersResult(outcome.result()));
+	else
+		return ListDutyRostersOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::listDutyRostersAsync(const ListDutyRostersRequest& request, const ListDutyRostersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listDutyRosters(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::ListDutyRostersOutcomeCallable Dataworks_publicClient::listDutyRostersCallable(const ListDutyRostersRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListDutyRostersOutcome()>>(
+			[this, request]()
+			{
+			return this->listDutyRosters(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dataworks_publicClient::ListExtensionsOutcome Dataworks_publicClient::listExtensions(const ListExtensionsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListExtensionsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListExtensionsOutcome(ListExtensionsResult(outcome.result()));
+	else
+		return ListExtensionsOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::listExtensionsAsync(const ListExtensionsRequest& request, const ListExtensionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listExtensions(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::ListExtensionsOutcomeCallable Dataworks_publicClient::listExtensionsCallable(const ListExtensionsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListExtensionsOutcome()>>(
+			[this, request]()
+			{
+			return this->listExtensions(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dataworks_publicClient::ListFileTypeOutcome Dataworks_publicClient::listFileType(const ListFileTypeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5307,6 +5631,42 @@ Dataworks_publicClient::ListFoldersOutcomeCallable Dataworks_publicClient::listF
 	return task->get_future();
 }
 
+Dataworks_publicClient::ListHistoryTasksForResourceGroupOutcome Dataworks_publicClient::listHistoryTasksForResourceGroup(const ListHistoryTasksForResourceGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListHistoryTasksForResourceGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListHistoryTasksForResourceGroupOutcome(ListHistoryTasksForResourceGroupResult(outcome.result()));
+	else
+		return ListHistoryTasksForResourceGroupOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::listHistoryTasksForResourceGroupAsync(const ListHistoryTasksForResourceGroupRequest& request, const ListHistoryTasksForResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listHistoryTasksForResourceGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::ListHistoryTasksForResourceGroupOutcomeCallable Dataworks_publicClient::listHistoryTasksForResourceGroupCallable(const ListHistoryTasksForResourceGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListHistoryTasksForResourceGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->listHistoryTasksForResourceGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dataworks_publicClient::ListInstanceAmountOutcome Dataworks_publicClient::listInstanceAmount(const ListInstanceAmountRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5445,6 +5805,42 @@ Dataworks_publicClient::ListMetaDBOutcomeCallable Dataworks_publicClient::listMe
 			[this, request]()
 			{
 			return this->listMetaDB(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dataworks_publicClient::ListMigrationsOutcome Dataworks_publicClient::listMigrations(const ListMigrationsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListMigrationsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListMigrationsOutcome(ListMigrationsResult(outcome.result()));
+	else
+		return ListMigrationsOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::listMigrationsAsync(const ListMigrationsRequest& request, const ListMigrationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listMigrations(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::ListMigrationsOutcomeCallable Dataworks_publicClient::listMigrationsCallable(const ListMigrationsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListMigrationsOutcome()>>(
+			[this, request]()
+			{
+			return this->listMigrations(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -6201,6 +6597,42 @@ Dataworks_publicClient::ListTopicsOutcomeCallable Dataworks_publicClient::listTo
 			[this, request]()
 			{
 			return this->listTopics(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dataworks_publicClient::ListUsageForResourceGroupOutcome Dataworks_publicClient::listUsageForResourceGroup(const ListUsageForResourceGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListUsageForResourceGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListUsageForResourceGroupOutcome(ListUsageForResourceGroupResult(outcome.result()));
+	else
+		return ListUsageForResourceGroupOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::listUsageForResourceGroupAsync(const ListUsageForResourceGroupRequest& request, const ListUsageForResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listUsageForResourceGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::ListUsageForResourceGroupOutcomeCallable Dataworks_publicClient::listUsageForResourceGroupCallable(const ListUsageForResourceGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListUsageForResourceGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->listUsageForResourceGroup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -7065,6 +7497,42 @@ Dataworks_publicClient::TerminateDISyncInstanceOutcomeCallable Dataworks_publicC
 			[this, request]()
 			{
 			return this->terminateDISyncInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dataworks_publicClient::TestDataServiceApiOutcome Dataworks_publicClient::testDataServiceApi(const TestDataServiceApiRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return TestDataServiceApiOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return TestDataServiceApiOutcome(TestDataServiceApiResult(outcome.result()));
+	else
+		return TestDataServiceApiOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::testDataServiceApiAsync(const TestDataServiceApiRequest& request, const TestDataServiceApiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, testDataServiceApi(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::TestDataServiceApiOutcomeCallable Dataworks_publicClient::testDataServiceApiCallable(const TestDataServiceApiRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<TestDataServiceApiOutcome()>>(
+			[this, request]()
+			{
+			return this->testDataServiceApi(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,45 +18,37 @@
 
 using AlibabaCloud::Dataworks_public::Model::UpdateTableThemeRequest;
 
-UpdateTableThemeRequest::UpdateTableThemeRequest() :
-	RpcServiceRequest("dataworks-public", "2020-05-18", "UpdateTableTheme")
-{
-	setMethod(HttpRequest::Method::Post);
+UpdateTableThemeRequest::UpdateTableThemeRequest()
+    : RpcServiceRequest("dataworks-public", "2020-05-18", "UpdateTableTheme") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-UpdateTableThemeRequest::~UpdateTableThemeRequest()
-{}
+UpdateTableThemeRequest::~UpdateTableThemeRequest() {}
 
-std::string UpdateTableThemeRequest::getName()const
-{
-	return name_;
+std::string UpdateTableThemeRequest::getName() const {
+  return name_;
 }
 
-void UpdateTableThemeRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setParameter("Name", name);
+void UpdateTableThemeRequest::setName(const std::string &name) {
+  name_ = name;
+  setParameter(std::string("Name"), name);
 }
 
-long UpdateTableThemeRequest::getThemeId()const
-{
-	return themeId_;
+long UpdateTableThemeRequest::getThemeId() const {
+  return themeId_;
 }
 
-void UpdateTableThemeRequest::setThemeId(long themeId)
-{
-	themeId_ = themeId;
-	setParameter("ThemeId", std::to_string(themeId));
+void UpdateTableThemeRequest::setThemeId(long themeId) {
+  themeId_ = themeId;
+  setParameter(std::string("ThemeId"), std::to_string(themeId));
 }
 
-long UpdateTableThemeRequest::getProjectId()const
-{
-	return projectId_;
+long UpdateTableThemeRequest::getProjectId() const {
+  return projectId_;
 }
 
-void UpdateTableThemeRequest::setProjectId(long projectId)
-{
-	projectId_ = projectId;
-	setParameter("ProjectId", std::to_string(projectId));
+void UpdateTableThemeRequest::setProjectId(long projectId) {
+  projectId_ = projectId;
+  setParameter(std::string("ProjectId"), std::to_string(projectId));
 }
 

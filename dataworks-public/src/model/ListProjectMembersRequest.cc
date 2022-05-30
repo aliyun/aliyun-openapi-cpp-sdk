@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,45 +18,37 @@
 
 using AlibabaCloud::Dataworks_public::Model::ListProjectMembersRequest;
 
-ListProjectMembersRequest::ListProjectMembersRequest() :
-	RpcServiceRequest("dataworks-public", "2020-05-18", "ListProjectMembers")
-{
-	setMethod(HttpRequest::Method::Post);
+ListProjectMembersRequest::ListProjectMembersRequest()
+    : RpcServiceRequest("dataworks-public", "2020-05-18", "ListProjectMembers") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-ListProjectMembersRequest::~ListProjectMembersRequest()
-{}
+ListProjectMembersRequest::~ListProjectMembersRequest() {}
 
-int ListProjectMembersRequest::getPageSize()const
-{
-	return pageSize_;
+int ListProjectMembersRequest::getPageSize() const {
+  return pageSize_;
 }
 
-void ListProjectMembersRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+void ListProjectMembersRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
-long ListProjectMembersRequest::getProjectId()const
-{
-	return projectId_;
+long ListProjectMembersRequest::getProjectId() const {
+  return projectId_;
 }
 
-void ListProjectMembersRequest::setProjectId(long projectId)
-{
-	projectId_ = projectId;
-	setParameter("ProjectId", std::to_string(projectId));
+void ListProjectMembersRequest::setProjectId(long projectId) {
+  projectId_ = projectId;
+  setParameter(std::string("ProjectId"), std::to_string(projectId));
 }
 
-int ListProjectMembersRequest::getPageNumber()const
-{
-	return pageNumber_;
+int ListProjectMembersRequest::getPageNumber() const {
+  return pageNumber_;
 }
 
-void ListProjectMembersRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+void ListProjectMembersRequest::setPageNumber(int pageNumber) {
+  pageNumber_ = pageNumber;
+  setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 

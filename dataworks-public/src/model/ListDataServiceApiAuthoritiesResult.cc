@@ -50,50 +50,50 @@ void ListDataServiceApiAuthoritiesResult::parse(const std::string &payload)
 	for (auto dataNodeApiAuthorizationListApiAuthorization : allApiAuthorizationListNode)
 	{
 		Data::ApiAuthorization apiAuthorizationObject;
-		if(!dataNodeApiAuthorizationListApiAuthorization["ApiId"].isNull())
-			apiAuthorizationObject.apiId = std::stol(dataNodeApiAuthorizationListApiAuthorization["ApiId"].asString());
-		if(!dataNodeApiAuthorizationListApiAuthorization["ApiName"].isNull())
-			apiAuthorizationObject.apiName = dataNodeApiAuthorizationListApiAuthorization["ApiName"].asString();
-		if(!dataNodeApiAuthorizationListApiAuthorization["ApiPath"].isNull())
-			apiAuthorizationObject.apiPath = dataNodeApiAuthorizationListApiAuthorization["ApiPath"].asString();
 		if(!dataNodeApiAuthorizationListApiAuthorization["ApiStatus"].isNull())
 			apiAuthorizationObject.apiStatus = std::stoi(dataNodeApiAuthorizationListApiAuthorization["ApiStatus"].asString());
-		if(!dataNodeApiAuthorizationListApiAuthorization["CreatedTime"].isNull())
-			apiAuthorizationObject.createdTime = dataNodeApiAuthorizationListApiAuthorization["CreatedTime"].asString();
-		if(!dataNodeApiAuthorizationListApiAuthorization["CreatorId"].isNull())
-			apiAuthorizationObject.creatorId = dataNodeApiAuthorizationListApiAuthorization["CreatorId"].asString();
-		if(!dataNodeApiAuthorizationListApiAuthorization["GroupId"].isNull())
-			apiAuthorizationObject.groupId = dataNodeApiAuthorizationListApiAuthorization["GroupId"].asString();
+		if(!dataNodeApiAuthorizationListApiAuthorization["ApiId"].isNull())
+			apiAuthorizationObject.apiId = std::stol(dataNodeApiAuthorizationListApiAuthorization["ApiId"].asString());
 		if(!dataNodeApiAuthorizationListApiAuthorization["ModifiedTime"].isNull())
 			apiAuthorizationObject.modifiedTime = dataNodeApiAuthorizationListApiAuthorization["ModifiedTime"].asString();
+		if(!dataNodeApiAuthorizationListApiAuthorization["GroupId"].isNull())
+			apiAuthorizationObject.groupId = dataNodeApiAuthorizationListApiAuthorization["GroupId"].asString();
 		if(!dataNodeApiAuthorizationListApiAuthorization["ProjectId"].isNull())
 			apiAuthorizationObject.projectId = std::stol(dataNodeApiAuthorizationListApiAuthorization["ProjectId"].asString());
+		if(!dataNodeApiAuthorizationListApiAuthorization["CreatorId"].isNull())
+			apiAuthorizationObject.creatorId = dataNodeApiAuthorizationListApiAuthorization["CreatorId"].asString();
+		if(!dataNodeApiAuthorizationListApiAuthorization["CreatedTime"].isNull())
+			apiAuthorizationObject.createdTime = dataNodeApiAuthorizationListApiAuthorization["CreatedTime"].asString();
+		if(!dataNodeApiAuthorizationListApiAuthorization["ApiName"].isNull())
+			apiAuthorizationObject.apiName = dataNodeApiAuthorizationListApiAuthorization["ApiName"].asString();
 		if(!dataNodeApiAuthorizationListApiAuthorization["TenantId"].isNull())
 			apiAuthorizationObject.tenantId = std::stol(dataNodeApiAuthorizationListApiAuthorization["TenantId"].asString());
+		if(!dataNodeApiAuthorizationListApiAuthorization["ApiPath"].isNull())
+			apiAuthorizationObject.apiPath = dataNodeApiAuthorizationListApiAuthorization["ApiPath"].asString();
 		auto allAuthorizationRecordsNode = dataNodeApiAuthorizationListApiAuthorization["AuthorizationRecords"]["AuthorizationRecord"];
 		for (auto dataNodeApiAuthorizationListApiAuthorizationAuthorizationRecordsAuthorizationRecord : allAuthorizationRecordsNode)
 		{
 			Data::ApiAuthorization::AuthorizationRecord authorizationRecordsObject;
-			if(!dataNodeApiAuthorizationListApiAuthorizationAuthorizationRecordsAuthorizationRecord["CreatedTime"].isNull())
-				authorizationRecordsObject.createdTime = dataNodeApiAuthorizationListApiAuthorizationAuthorizationRecordsAuthorizationRecord["CreatedTime"].asString();
-			if(!dataNodeApiAuthorizationListApiAuthorizationAuthorizationRecordsAuthorizationRecord["CreatorId"].isNull())
-				authorizationRecordsObject.creatorId = dataNodeApiAuthorizationListApiAuthorizationAuthorizationRecordsAuthorizationRecord["CreatorId"].asString();
 			if(!dataNodeApiAuthorizationListApiAuthorizationAuthorizationRecordsAuthorizationRecord["EndTime"].isNull())
 				authorizationRecordsObject.endTime = dataNodeApiAuthorizationListApiAuthorizationAuthorizationRecordsAuthorizationRecord["EndTime"].asString();
+			if(!dataNodeApiAuthorizationListApiAuthorizationAuthorizationRecordsAuthorizationRecord["CreatorId"].isNull())
+				authorizationRecordsObject.creatorId = dataNodeApiAuthorizationListApiAuthorizationAuthorizationRecordsAuthorizationRecord["CreatorId"].asString();
+			if(!dataNodeApiAuthorizationListApiAuthorizationAuthorizationRecordsAuthorizationRecord["CreatedTime"].isNull())
+				authorizationRecordsObject.createdTime = dataNodeApiAuthorizationListApiAuthorizationAuthorizationRecordsAuthorizationRecord["CreatedTime"].asString();
 			if(!dataNodeApiAuthorizationListApiAuthorizationAuthorizationRecordsAuthorizationRecord["ProjectId"].isNull())
 				authorizationRecordsObject.projectId = std::stol(dataNodeApiAuthorizationListApiAuthorizationAuthorizationRecordsAuthorizationRecord["ProjectId"].asString());
 			apiAuthorizationObject.authorizationRecords.push_back(authorizationRecordsObject);
 		}
 		data_.apiAuthorizationList.push_back(apiAuthorizationObject);
 	}
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
 
 }
 

@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,56 +18,46 @@
 
 using AlibabaCloud::Dataworks_public::Model::GetDISyncTaskMetricInfoRequest;
 
-GetDISyncTaskMetricInfoRequest::GetDISyncTaskMetricInfoRequest() :
-	RpcServiceRequest("dataworks-public", "2020-05-18", "GetDISyncTaskMetricInfo")
-{
-	setMethod(HttpRequest::Method::Get);
+GetDISyncTaskMetricInfoRequest::GetDISyncTaskMetricInfoRequest()
+    : RpcServiceRequest("dataworks-public", "2020-05-18", "GetDISyncTaskMetricInfo") {
+  setMethod(HttpRequest::Method::Get);
 }
 
-GetDISyncTaskMetricInfoRequest::~GetDISyncTaskMetricInfoRequest()
-{}
+GetDISyncTaskMetricInfoRequest::~GetDISyncTaskMetricInfoRequest() {}
 
-long GetDISyncTaskMetricInfoRequest::getEndDate()const
-{
-	return endDate_;
+long GetDISyncTaskMetricInfoRequest::getEndDate() const {
+  return endDate_;
 }
 
-void GetDISyncTaskMetricInfoRequest::setEndDate(long endDate)
-{
-	endDate_ = endDate;
-	setParameter("EndDate", std::to_string(endDate));
+void GetDISyncTaskMetricInfoRequest::setEndDate(long endDate) {
+  endDate_ = endDate;
+  setParameter(std::string("EndDate"), std::to_string(endDate));
 }
 
-long GetDISyncTaskMetricInfoRequest::getStartDate()const
-{
-	return startDate_;
+long GetDISyncTaskMetricInfoRequest::getStartDate() const {
+  return startDate_;
 }
 
-void GetDISyncTaskMetricInfoRequest::setStartDate(long startDate)
-{
-	startDate_ = startDate;
-	setParameter("StartDate", std::to_string(startDate));
+void GetDISyncTaskMetricInfoRequest::setStartDate(long startDate) {
+  startDate_ = startDate;
+  setParameter(std::string("StartDate"), std::to_string(startDate));
 }
 
-long GetDISyncTaskMetricInfoRequest::getProjectId()const
-{
-	return projectId_;
+long GetDISyncTaskMetricInfoRequest::getProjectId() const {
+  return projectId_;
 }
 
-void GetDISyncTaskMetricInfoRequest::setProjectId(long projectId)
-{
-	projectId_ = projectId;
-	setParameter("ProjectId", std::to_string(projectId));
+void GetDISyncTaskMetricInfoRequest::setProjectId(long projectId) {
+  projectId_ = projectId;
+  setParameter(std::string("ProjectId"), std::to_string(projectId));
 }
 
-long GetDISyncTaskMetricInfoRequest::getFileId()const
-{
-	return fileId_;
+long GetDISyncTaskMetricInfoRequest::getFileId() const {
+  return fileId_;
 }
 
-void GetDISyncTaskMetricInfoRequest::setFileId(long fileId)
-{
-	fileId_ = fileId;
-	setParameter("FileId", std::to_string(fileId));
+void GetDISyncTaskMetricInfoRequest::setFileId(long fileId) {
+  fileId_ = fileId;
+  setParameter(std::string("FileId"), std::to_string(fileId));
 }
 

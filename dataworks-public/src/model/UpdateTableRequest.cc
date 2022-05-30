@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,236 +18,196 @@
 
 using AlibabaCloud::Dataworks_public::Model::UpdateTableRequest;
 
-UpdateTableRequest::UpdateTableRequest() :
-	RpcServiceRequest("dataworks-public", "2020-05-18", "UpdateTable")
-{
-	setMethod(HttpRequest::Method::Post);
+UpdateTableRequest::UpdateTableRequest()
+    : RpcServiceRequest("dataworks-public", "2020-05-18", "UpdateTable") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-UpdateTableRequest::~UpdateTableRequest()
-{}
+UpdateTableRequest::~UpdateTableRequest() {}
 
-std::vector<UpdateTableRequest::Columns> UpdateTableRequest::getColumns()const
-{
-	return columns_;
+std::vector<UpdateTableRequest::Columns> UpdateTableRequest::getColumns() const {
+  return columns_;
 }
 
-void UpdateTableRequest::setColumns(const std::vector<Columns>& columns)
-{
-	columns_ = columns;
-	for(int dep1 = 0; dep1!= columns.size(); dep1++) {
-		auto columnsObj = columns.at(dep1);
-		std::string columnsObjStr = "Columns." + std::to_string(dep1 + 1);
-		setParameter(columnsObjStr + ".SeqNumber", std::to_string(columnsObj.seqNumber));
-		setParameter(columnsObjStr + ".IsPartitionCol", columnsObj.isPartitionCol ? "true" : "false");
-		setParameter(columnsObjStr + ".ColumnNameCn", columnsObj.columnNameCn);
-		setParameter(columnsObjStr + ".Length", std::to_string(columnsObj.length));
-		setParameter(columnsObjStr + ".Comment", columnsObj.comment);
-		setParameter(columnsObjStr + ".ColumnName", columnsObj.columnName);
-		setParameter(columnsObjStr + ".ColumnType", columnsObj.columnType);
-	}
+void UpdateTableRequest::setColumns(const std::vector<UpdateTableRequest::Columns> &columns) {
+  columns_ = columns;
+  for(int dep1 = 0; dep1 != columns.size(); dep1++) {
+  auto columnsObj = columns.at(dep1);
+  std::string columnsObjStr = std::string("Columns") + "." + std::to_string(dep1 + 1);
+    setBodyParameter(columnsObjStr + ".SeqNumber", std::to_string(columnsObj.seqNumber));
+    setBodyParameter(columnsObjStr + ".IsPartitionCol", columnsObj.isPartitionCol ? "true" : "false");
+    setBodyParameter(columnsObjStr + ".ColumnNameCn", columnsObj.columnNameCn);
+    setBodyParameter(columnsObjStr + ".Length", std::to_string(columnsObj.length));
+    setBodyParameter(columnsObjStr + ".Comment", columnsObj.comment);
+    setBodyParameter(columnsObjStr + ".ColumnName", columnsObj.columnName);
+    setBodyParameter(columnsObjStr + ".ColumnType", columnsObj.columnType);
+  }
 }
 
-int UpdateTableRequest::getLifeCycle()const
-{
-	return lifeCycle_;
+int UpdateTableRequest::getLifeCycle() const {
+  return lifeCycle_;
 }
 
-void UpdateTableRequest::setLifeCycle(int lifeCycle)
-{
-	lifeCycle_ = lifeCycle;
-	setParameter("LifeCycle", std::to_string(lifeCycle));
+void UpdateTableRequest::setLifeCycle(int lifeCycle) {
+  lifeCycle_ = lifeCycle;
+  setParameter(std::string("LifeCycle"), std::to_string(lifeCycle));
 }
 
-std::vector<UpdateTableRequest::Themes> UpdateTableRequest::getThemes()const
-{
-	return themes_;
+std::vector<UpdateTableRequest::Themes> UpdateTableRequest::getThemes() const {
+  return themes_;
 }
 
-void UpdateTableRequest::setThemes(const std::vector<Themes>& themes)
-{
-	themes_ = themes;
-	for(int dep1 = 0; dep1!= themes.size(); dep1++) {
-		auto themesObj = themes.at(dep1);
-		std::string themesObjStr = "Themes." + std::to_string(dep1 + 1);
-		setParameter(themesObjStr + ".ThemeLevel", std::to_string(themesObj.themeLevel));
-		setParameter(themesObjStr + ".ThemeId", std::to_string(themesObj.themeId));
-	}
+void UpdateTableRequest::setThemes(const std::vector<UpdateTableRequest::Themes> &themes) {
+  themes_ = themes;
+  for(int dep1 = 0; dep1 != themes.size(); dep1++) {
+  auto themesObj = themes.at(dep1);
+  std::string themesObjStr = std::string("Themes") + "." + std::to_string(dep1 + 1);
+    setBodyParameter(themesObjStr + ".ThemeLevel", std::to_string(themesObj.themeLevel));
+    setBodyParameter(themesObjStr + ".ThemeId", std::to_string(themesObj.themeId));
+  }
 }
 
-long UpdateTableRequest::getLogicalLevelId()const
-{
-	return logicalLevelId_;
+long UpdateTableRequest::getLogicalLevelId() const {
+  return logicalLevelId_;
 }
 
-void UpdateTableRequest::setLogicalLevelId(long logicalLevelId)
-{
-	logicalLevelId_ = logicalLevelId;
-	setParameter("LogicalLevelId", std::to_string(logicalLevelId));
+void UpdateTableRequest::setLogicalLevelId(long logicalLevelId) {
+  logicalLevelId_ = logicalLevelId;
+  setParameter(std::string("LogicalLevelId"), std::to_string(logicalLevelId));
 }
 
-std::string UpdateTableRequest::getEndpoint()const
-{
-	return endpoint_;
+std::string UpdateTableRequest::getEndpoint() const {
+  return endpoint_;
 }
 
-void UpdateTableRequest::setEndpoint(const std::string& endpoint)
-{
-	endpoint_ = endpoint;
-	setBodyParameter("Endpoint", endpoint);
+void UpdateTableRequest::setEndpoint(const std::string &endpoint) {
+  endpoint_ = endpoint;
+  setBodyParameter(std::string("Endpoint"), endpoint);
 }
 
-int UpdateTableRequest::getEnvType()const
-{
-	return envType_;
+int UpdateTableRequest::getEnvType() const {
+  return envType_;
 }
 
-void UpdateTableRequest::setEnvType(int envType)
-{
-	envType_ = envType;
-	setBodyParameter("EnvType", std::to_string(envType));
+void UpdateTableRequest::setEnvType(int envType) {
+  envType_ = envType;
+  setBodyParameter(std::string("EnvType"), std::to_string(envType));
 }
 
-int UpdateTableRequest::getHasPart()const
-{
-	return hasPart_;
+int UpdateTableRequest::getHasPart() const {
+  return hasPart_;
 }
 
-void UpdateTableRequest::setHasPart(int hasPart)
-{
-	hasPart_ = hasPart;
-	setParameter("HasPart", std::to_string(hasPart));
+void UpdateTableRequest::setHasPart(int hasPart) {
+  hasPart_ = hasPart;
+  setParameter(std::string("HasPart"), std::to_string(hasPart));
 }
 
-std::string UpdateTableRequest::getTableName()const
-{
-	return tableName_;
+std::string UpdateTableRequest::getTableName() const {
+  return tableName_;
 }
 
-void UpdateTableRequest::setTableName(const std::string& tableName)
-{
-	tableName_ = tableName;
-	setParameter("TableName", tableName);
+void UpdateTableRequest::setTableName(const std::string &tableName) {
+  tableName_ = tableName;
+  setParameter(std::string("TableName"), tableName);
 }
 
-std::string UpdateTableRequest::getAppGuid()const
-{
-	return appGuid_;
+std::string UpdateTableRequest::getAppGuid() const {
+  return appGuid_;
 }
 
-void UpdateTableRequest::setAppGuid(const std::string& appGuid)
-{
-	appGuid_ = appGuid;
-	setParameter("AppGuid", appGuid);
+void UpdateTableRequest::setAppGuid(const std::string &appGuid) {
+  appGuid_ = appGuid;
+  setParameter(std::string("AppGuid"), appGuid);
 }
 
-long UpdateTableRequest::getProjectId()const
-{
-	return projectId_;
+long UpdateTableRequest::getProjectId() const {
+  return projectId_;
 }
 
-void UpdateTableRequest::setProjectId(long projectId)
-{
-	projectId_ = projectId;
-	setParameter("ProjectId", std::to_string(projectId));
+void UpdateTableRequest::setProjectId(long projectId) {
+  projectId_ = projectId;
+  setParameter(std::string("ProjectId"), std::to_string(projectId));
 }
 
-long UpdateTableRequest::getCategoryId()const
-{
-	return categoryId_;
+long UpdateTableRequest::getCategoryId() const {
+  return categoryId_;
 }
 
-void UpdateTableRequest::setCategoryId(long categoryId)
-{
-	categoryId_ = categoryId;
-	setParameter("CategoryId", std::to_string(categoryId));
+void UpdateTableRequest::setCategoryId(long categoryId) {
+  categoryId_ = categoryId;
+  setParameter(std::string("CategoryId"), std::to_string(categoryId));
 }
 
-int UpdateTableRequest::getVisibility()const
-{
-	return visibility_;
+int UpdateTableRequest::getVisibility() const {
+  return visibility_;
 }
 
-void UpdateTableRequest::setVisibility(int visibility)
-{
-	visibility_ = visibility;
-	setParameter("Visibility", std::to_string(visibility));
+void UpdateTableRequest::setVisibility(int visibility) {
+  visibility_ = visibility;
+  setParameter(std::string("Visibility"), std::to_string(visibility));
 }
 
-long UpdateTableRequest::getPhysicsLevelId()const
-{
-	return physicsLevelId_;
+long UpdateTableRequest::getPhysicsLevelId() const {
+  return physicsLevelId_;
 }
 
-void UpdateTableRequest::setPhysicsLevelId(long physicsLevelId)
-{
-	physicsLevelId_ = physicsLevelId;
-	setParameter("PhysicsLevelId", std::to_string(physicsLevelId));
+void UpdateTableRequest::setPhysicsLevelId(long physicsLevelId) {
+  physicsLevelId_ = physicsLevelId;
+  setParameter(std::string("PhysicsLevelId"), std::to_string(physicsLevelId));
 }
 
-std::string UpdateTableRequest::getOwnerId()const
-{
-	return ownerId_;
+std::string UpdateTableRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void UpdateTableRequest::setOwnerId(const std::string& ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", ownerId);
+void UpdateTableRequest::setOwnerId(const std::string &ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), ownerId);
 }
 
-int UpdateTableRequest::getIsView()const
-{
-	return isView_;
+int UpdateTableRequest::getIsView() const {
+  return isView_;
 }
 
-void UpdateTableRequest::setIsView(int isView)
-{
-	isView_ = isView;
-	setParameter("IsView", std::to_string(isView));
+void UpdateTableRequest::setIsView(int isView) {
+  isView_ = isView;
+  setParameter(std::string("IsView"), std::to_string(isView));
 }
 
-std::string UpdateTableRequest::getExternalTableType()const
-{
-	return externalTableType_;
+std::string UpdateTableRequest::getExternalTableType() const {
+  return externalTableType_;
 }
 
-void UpdateTableRequest::setExternalTableType(const std::string& externalTableType)
-{
-	externalTableType_ = externalTableType;
-	setParameter("ExternalTableType", externalTableType);
+void UpdateTableRequest::setExternalTableType(const std::string &externalTableType) {
+  externalTableType_ = externalTableType;
+  setParameter(std::string("ExternalTableType"), externalTableType);
 }
 
-std::string UpdateTableRequest::getLocation()const
-{
-	return location_;
+std::string UpdateTableRequest::getLocation() const {
+  return location_;
 }
 
-void UpdateTableRequest::setLocation(const std::string& location)
-{
-	location_ = location;
-	setParameter("Location", location);
+void UpdateTableRequest::setLocation(const std::string &location) {
+  location_ = location;
+  setParameter(std::string("Location"), location);
 }
 
-std::string UpdateTableRequest::getComment()const
-{
-	return comment_;
+std::string UpdateTableRequest::getComment() const {
+  return comment_;
 }
 
-void UpdateTableRequest::setComment(const std::string& comment)
-{
-	comment_ = comment;
-	setParameter("Comment", comment);
+void UpdateTableRequest::setComment(const std::string &comment) {
+  comment_ = comment;
+  setParameter(std::string("Comment"), comment);
 }
 
-bool UpdateTableRequest::getCreateIfNotExists()const
-{
-	return createIfNotExists_;
+bool UpdateTableRequest::getCreateIfNotExists() const {
+  return createIfNotExists_;
 }
 
-void UpdateTableRequest::setCreateIfNotExists(bool createIfNotExists)
-{
-	createIfNotExists_ = createIfNotExists;
-	setParameter("CreateIfNotExists", createIfNotExists ? "true" : "false");
+void UpdateTableRequest::setCreateIfNotExists(bool createIfNotExists) {
+  createIfNotExists_ = createIfNotExists;
+  setParameter(std::string("CreateIfNotExists"), createIfNotExists ? "true" : "false");
 }
 

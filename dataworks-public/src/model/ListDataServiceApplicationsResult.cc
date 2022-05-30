@@ -50,22 +50,22 @@ void ListDataServiceApplicationsResult::parse(const std::string &payload)
 	for (auto dataNodeApplicationsApplication : allApplicationsNode)
 	{
 		Data::Application applicationObject;
-		if(!dataNodeApplicationsApplication["ApplicationId"].isNull())
-			applicationObject.applicationId = std::stol(dataNodeApplicationsApplication["ApplicationId"].asString());
 		if(!dataNodeApplicationsApplication["ApplicationName"].isNull())
 			applicationObject.applicationName = dataNodeApplicationsApplication["ApplicationName"].asString();
+		if(!dataNodeApplicationsApplication["ApplicationId"].isNull())
+			applicationObject.applicationId = std::stol(dataNodeApplicationsApplication["ApplicationId"].asString());
 		if(!dataNodeApplicationsApplication["ProjectId"].isNull())
 			applicationObject.projectId = std::stol(dataNodeApplicationsApplication["ProjectId"].asString());
 		data_.applications.push_back(applicationObject);
 	}
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
 
 }
 

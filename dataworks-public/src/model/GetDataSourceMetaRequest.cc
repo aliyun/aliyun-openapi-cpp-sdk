@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,67 +18,55 @@
 
 using AlibabaCloud::Dataworks_public::Model::GetDataSourceMetaRequest;
 
-GetDataSourceMetaRequest::GetDataSourceMetaRequest() :
-	RpcServiceRequest("dataworks-public", "2020-05-18", "GetDataSourceMeta")
-{
-	setMethod(HttpRequest::Method::Post);
+GetDataSourceMetaRequest::GetDataSourceMetaRequest()
+    : RpcServiceRequest("dataworks-public", "2020-05-18", "GetDataSourceMeta") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-GetDataSourceMetaRequest::~GetDataSourceMetaRequest()
-{}
+GetDataSourceMetaRequest::~GetDataSourceMetaRequest() {}
 
-std::string GetDataSourceMetaRequest::getDatasourceName()const
-{
-	return datasourceName_;
+std::string GetDataSourceMetaRequest::getDatasourceName() const {
+  return datasourceName_;
 }
 
-void GetDataSourceMetaRequest::setDatasourceName(const std::string& datasourceName)
-{
-	datasourceName_ = datasourceName;
-	setParameter("DatasourceName", datasourceName);
+void GetDataSourceMetaRequest::setDatasourceName(const std::string &datasourceName) {
+  datasourceName_ = datasourceName;
+  setParameter(std::string("DatasourceName"), datasourceName);
 }
 
-long GetDataSourceMetaRequest::getPageNumber()const
-{
-	return pageNumber_;
+long GetDataSourceMetaRequest::getPageNumber() const {
+  return pageNumber_;
 }
 
-void GetDataSourceMetaRequest::setPageNumber(long pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+void GetDataSourceMetaRequest::setPageNumber(long pageNumber) {
+  pageNumber_ = pageNumber;
+  setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
-long GetDataSourceMetaRequest::getPageSize()const
-{
-	return pageSize_;
+long GetDataSourceMetaRequest::getPageSize() const {
+  return pageSize_;
 }
 
-void GetDataSourceMetaRequest::setPageSize(long pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+void GetDataSourceMetaRequest::setPageSize(long pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
-std::string GetDataSourceMetaRequest::getEnvType()const
-{
-	return envType_;
+std::string GetDataSourceMetaRequest::getEnvType() const {
+  return envType_;
 }
 
-void GetDataSourceMetaRequest::setEnvType(const std::string& envType)
-{
-	envType_ = envType;
-	setParameter("EnvType", envType);
+void GetDataSourceMetaRequest::setEnvType(const std::string &envType) {
+  envType_ = envType;
+  setParameter(std::string("EnvType"), envType);
 }
 
-long GetDataSourceMetaRequest::getProjectId()const
-{
-	return projectId_;
+long GetDataSourceMetaRequest::getProjectId() const {
+  return projectId_;
 }
 
-void GetDataSourceMetaRequest::setProjectId(long projectId)
-{
-	projectId_ = projectId;
-	setParameter("ProjectId", std::to_string(projectId));
+void GetDataSourceMetaRequest::setProjectId(long projectId) {
+  projectId_ = projectId;
+  setParameter(std::string("ProjectId"), std::to_string(projectId));
 }
 

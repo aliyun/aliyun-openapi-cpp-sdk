@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,35 +17,29 @@
 #ifndef ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_QUERYPUBLICMODELENGINEREQUEST_H_
 #define ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_QUERYPUBLICMODELENGINEREQUEST_H_
 
+#include <alibabacloud/dataworks-public/Dataworks_publicExport.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
-#include <alibabacloud/dataworks-public/Dataworks_publicExport.h>
+#include <map>
 
-namespace AlibabaCloud
-{
-	namespace Dataworks_public
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT QueryPublicModelEngineRequest : public RpcServiceRequest
-			{
+namespace AlibabaCloud {
+namespace Dataworks_public {
+namespace Model {
+class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT QueryPublicModelEngineRequest : public RpcServiceRequest {
+public:
+	QueryPublicModelEngineRequest();
+	~QueryPublicModelEngineRequest();
+	std::string getText() const;
+	void setText(const std::string &text);
+	std::string getProjectId() const;
+	void setProjectId(const std::string &projectId);
 
-			public:
-				QueryPublicModelEngineRequest();
-				~QueryPublicModelEngineRequest();
-
-				std::string getText()const;
-				void setText(const std::string& text);
-				std::string getProjectId()const;
-				void setProjectId(const std::string& projectId);
-
-            private:
-				std::string text_;
-				std::string projectId_;
-
-			};
-		}
-	}
-}
+private:
+	std::string text_;
+	std::string projectId_;
+};
+} // namespace Model
+} // namespace Dataworks_public
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_QUERYPUBLICMODELENGINEREQUEST_H_

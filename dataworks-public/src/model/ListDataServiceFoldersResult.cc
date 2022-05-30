@@ -50,22 +50,22 @@ void ListDataServiceFoldersResult::parse(const std::string &payload)
 	for (auto folderPagingResultNodeFoldersFolder : allFoldersNode)
 	{
 		FolderPagingResult::Folder folderObject;
+		if(!folderPagingResultNodeFoldersFolder["ParentId"].isNull())
+			folderObject.parentId = std::stol(folderPagingResultNodeFoldersFolder["ParentId"].asString());
+		if(!folderPagingResultNodeFoldersFolder["ModifiedTime"].isNull())
+			folderObject.modifiedTime = folderPagingResultNodeFoldersFolder["ModifiedTime"].asString();
+		if(!folderPagingResultNodeFoldersFolder["GroupId"].isNull())
+			folderObject.groupId = folderPagingResultNodeFoldersFolder["GroupId"].asString();
 		if(!folderPagingResultNodeFoldersFolder["FolderId"].isNull())
 			folderObject.folderId = std::stol(folderPagingResultNodeFoldersFolder["FolderId"].asString());
 		if(!folderPagingResultNodeFoldersFolder["FolderName"].isNull())
 			folderObject.folderName = folderPagingResultNodeFoldersFolder["FolderName"].asString();
 		if(!folderPagingResultNodeFoldersFolder["ProjectId"].isNull())
 			folderObject.projectId = std::stol(folderPagingResultNodeFoldersFolder["ProjectId"].asString());
-		if(!folderPagingResultNodeFoldersFolder["TenantId"].isNull())
-			folderObject.tenantId = std::stol(folderPagingResultNodeFoldersFolder["TenantId"].asString());
 		if(!folderPagingResultNodeFoldersFolder["CreatedTime"].isNull())
 			folderObject.createdTime = folderPagingResultNodeFoldersFolder["CreatedTime"].asString();
-		if(!folderPagingResultNodeFoldersFolder["ModifiedTime"].isNull())
-			folderObject.modifiedTime = folderPagingResultNodeFoldersFolder["ModifiedTime"].asString();
-		if(!folderPagingResultNodeFoldersFolder["GroupId"].isNull())
-			folderObject.groupId = folderPagingResultNodeFoldersFolder["GroupId"].asString();
-		if(!folderPagingResultNodeFoldersFolder["ParentId"].isNull())
-			folderObject.parentId = std::stol(folderPagingResultNodeFoldersFolder["ParentId"].asString());
+		if(!folderPagingResultNodeFoldersFolder["TenantId"].isNull())
+			folderObject.tenantId = std::stol(folderPagingResultNodeFoldersFolder["TenantId"].asString());
 		folderPagingResult_.folders.push_back(folderObject);
 	}
 

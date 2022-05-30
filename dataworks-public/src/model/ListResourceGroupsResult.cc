@@ -43,36 +43,36 @@ void ListResourceGroupsResult::parse(const std::string &payload)
 	for (auto valueDataDataItem : allDataNode)
 	{
 		DataItem dataObject;
-		if(!valueDataDataItem["Identifier"].isNull())
-			dataObject.identifier = valueDataDataItem["Identifier"].asString();
-		if(!valueDataDataItem["Cluster"].isNull())
-			dataObject.cluster = valueDataDataItem["Cluster"].asString();
-		if(!valueDataDataItem["BizExtKey"].isNull())
-			dataObject.bizExtKey = valueDataDataItem["BizExtKey"].asString();
-		if(!valueDataDataItem["EnableKp"].isNull())
-			dataObject.enableKp = valueDataDataItem["EnableKp"].asString() == "true";
-		if(!valueDataDataItem["UpdateTime"].isNull())
-			dataObject.updateTime = valueDataDataItem["UpdateTime"].asString();
-		if(!valueDataDataItem["ResourceGroupType"].isNull())
-			dataObject.resourceGroupType = valueDataDataItem["ResourceGroupType"].asString();
-		if(!valueDataDataItem["Mode"].isNull())
-			dataObject.mode = valueDataDataItem["Mode"].asString();
-		if(!valueDataDataItem["Sequence"].isNull())
-			dataObject.sequence = std::stoi(valueDataDataItem["Sequence"].asString());
-		if(!valueDataDataItem["IsDefault"].isNull())
-			dataObject.isDefault = valueDataDataItem["IsDefault"].asString() == "true";
-		if(!valueDataDataItem["CreateTime"].isNull())
-			dataObject.createTime = valueDataDataItem["CreateTime"].asString();
-		if(!valueDataDataItem["Name"].isNull())
-			dataObject.name = valueDataDataItem["Name"].asString();
-		if(!valueDataDataItem["TenantId"].isNull())
-			dataObject.tenantId = std::stol(valueDataDataItem["TenantId"].asString());
-		if(!valueDataDataItem["Id"].isNull())
-			dataObject.id = std::stol(valueDataDataItem["Id"].asString());
 		if(!valueDataDataItem["Status"].isNull())
 			dataObject.status = std::stoi(valueDataDataItem["Status"].asString());
+		if(!valueDataDataItem["UpdateTime"].isNull())
+			dataObject.updateTime = valueDataDataItem["UpdateTime"].asString();
+		if(!valueDataDataItem["IsDefault"].isNull())
+			dataObject.isDefault = valueDataDataItem["IsDefault"].asString() == "true";
+		if(!valueDataDataItem["Cluster"].isNull())
+			dataObject.cluster = valueDataDataItem["Cluster"].asString();
+		if(!valueDataDataItem["EnableKp"].isNull())
+			dataObject.enableKp = valueDataDataItem["EnableKp"].asString() == "true";
+		if(!valueDataDataItem["ResourceGroupType"].isNull())
+			dataObject.resourceGroupType = valueDataDataItem["ResourceGroupType"].asString();
+		if(!valueDataDataItem["CreateTime"].isNull())
+			dataObject.createTime = valueDataDataItem["CreateTime"].asString();
+		if(!valueDataDataItem["Identifier"].isNull())
+			dataObject.identifier = valueDataDataItem["Identifier"].asString();
+		if(!valueDataDataItem["Mode"].isNull())
+			dataObject.mode = valueDataDataItem["Mode"].asString();
+		if(!valueDataDataItem["BizExtKey"].isNull())
+			dataObject.bizExtKey = valueDataDataItem["BizExtKey"].asString();
+		if(!valueDataDataItem["Sequence"].isNull())
+			dataObject.sequence = std::stoi(valueDataDataItem["Sequence"].asString());
 		if(!valueDataDataItem["Specs"].isNull())
 			dataObject.specs = valueDataDataItem["Specs"].asString();
+		if(!valueDataDataItem["Name"].isNull())
+			dataObject.name = valueDataDataItem["Name"].asString();
+		if(!valueDataDataItem["Id"].isNull())
+			dataObject.id = std::stol(valueDataDataItem["Id"].asString());
+		if(!valueDataDataItem["TenantId"].isNull())
+			dataObject.tenantId = std::stol(valueDataDataItem["TenantId"].asString());
 		data_.push_back(dataObject);
 	}
 	if(!value["HttpStatusCode"].isNull())
