@@ -1635,6 +1635,42 @@ QualitycheckClient::ListAsrVocabOutcomeCallable QualitycheckClient::listAsrVocab
 	return task->get_future();
 }
 
+QualitycheckClient::ListBusinessSpacesOutcome QualitycheckClient::listBusinessSpaces(const ListBusinessSpacesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListBusinessSpacesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListBusinessSpacesOutcome(ListBusinessSpacesResult(outcome.result()));
+	else
+		return ListBusinessSpacesOutcome(outcome.error());
+}
+
+void QualitycheckClient::listBusinessSpacesAsync(const ListBusinessSpacesRequest& request, const ListBusinessSpacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listBusinessSpaces(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+QualitycheckClient::ListBusinessSpacesOutcomeCallable QualitycheckClient::listBusinessSpacesCallable(const ListBusinessSpacesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListBusinessSpacesOutcome()>>(
+			[this, request]()
+			{
+			return this->listBusinessSpaces(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 QualitycheckClient::ListHotWordsTasksOutcome QualitycheckClient::listHotWordsTasks(const ListHotWordsTasksRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2241,6 +2277,42 @@ QualitycheckClient::UpdateAsrVocabOutcomeCallable QualitycheckClient::updateAsrV
 			[this, request]()
 			{
 			return this->updateAsrVocab(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+QualitycheckClient::UpdateQualityCheckDataOutcome QualitycheckClient::updateQualityCheckData(const UpdateQualityCheckDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateQualityCheckDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateQualityCheckDataOutcome(UpdateQualityCheckDataResult(outcome.result()));
+	else
+		return UpdateQualityCheckDataOutcome(outcome.error());
+}
+
+void QualitycheckClient::updateQualityCheckDataAsync(const UpdateQualityCheckDataRequest& request, const UpdateQualityCheckDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateQualityCheckData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+QualitycheckClient::UpdateQualityCheckDataOutcomeCallable QualitycheckClient::updateQualityCheckDataCallable(const UpdateQualityCheckDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateQualityCheckDataOutcome()>>(
+			[this, request]()
+			{
+			return this->updateQualityCheckData(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

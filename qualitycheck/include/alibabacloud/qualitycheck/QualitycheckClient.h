@@ -110,6 +110,8 @@
 #include "model/InvalidRuleResult.h"
 #include "model/ListAsrVocabRequest.h"
 #include "model/ListAsrVocabResult.h"
+#include "model/ListBusinessSpacesRequest.h"
+#include "model/ListBusinessSpacesResult.h"
 #include "model/ListHotWordsTasksRequest.h"
 #include "model/ListHotWordsTasksResult.h"
 #include "model/ListPrecisionTaskRequest.h"
@@ -144,6 +146,8 @@
 #include "model/SyncQualityCheckResult.h"
 #include "model/UpdateAsrVocabRequest.h"
 #include "model/UpdateAsrVocabResult.h"
+#include "model/UpdateQualityCheckDataRequest.h"
+#include "model/UpdateQualityCheckDataResult.h"
 #include "model/UpdateRuleRequest.h"
 #include "model/UpdateRuleResult.h"
 #include "model/UpdateScoreForApiRequest.h"
@@ -315,6 +319,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListAsrVocabResult> ListAsrVocabOutcome;
 			typedef std::future<ListAsrVocabOutcome> ListAsrVocabOutcomeCallable;
 			typedef std::function<void(const QualitycheckClient*, const Model::ListAsrVocabRequest&, const ListAsrVocabOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAsrVocabAsyncHandler;
+			typedef Outcome<Error, Model::ListBusinessSpacesResult> ListBusinessSpacesOutcome;
+			typedef std::future<ListBusinessSpacesOutcome> ListBusinessSpacesOutcomeCallable;
+			typedef std::function<void(const QualitycheckClient*, const Model::ListBusinessSpacesRequest&, const ListBusinessSpacesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListBusinessSpacesAsyncHandler;
 			typedef Outcome<Error, Model::ListHotWordsTasksResult> ListHotWordsTasksOutcome;
 			typedef std::future<ListHotWordsTasksOutcome> ListHotWordsTasksOutcomeCallable;
 			typedef std::function<void(const QualitycheckClient*, const Model::ListHotWordsTasksRequest&, const ListHotWordsTasksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListHotWordsTasksAsyncHandler;
@@ -366,6 +373,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateAsrVocabResult> UpdateAsrVocabOutcome;
 			typedef std::future<UpdateAsrVocabOutcome> UpdateAsrVocabOutcomeCallable;
 			typedef std::function<void(const QualitycheckClient*, const Model::UpdateAsrVocabRequest&, const UpdateAsrVocabOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAsrVocabAsyncHandler;
+			typedef Outcome<Error, Model::UpdateQualityCheckDataResult> UpdateQualityCheckDataOutcome;
+			typedef std::future<UpdateQualityCheckDataOutcome> UpdateQualityCheckDataOutcomeCallable;
+			typedef std::function<void(const QualitycheckClient*, const Model::UpdateQualityCheckDataRequest&, const UpdateQualityCheckDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateQualityCheckDataAsyncHandler;
 			typedef Outcome<Error, Model::UpdateRuleResult> UpdateRuleOutcome;
 			typedef std::future<UpdateRuleOutcome> UpdateRuleOutcomeCallable;
 			typedef std::function<void(const QualitycheckClient*, const Model::UpdateRuleRequest&, const UpdateRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateRuleAsyncHandler;
@@ -548,6 +558,9 @@ namespace AlibabaCloud
 			ListAsrVocabOutcome listAsrVocab(const Model::ListAsrVocabRequest &request)const;
 			void listAsrVocabAsync(const Model::ListAsrVocabRequest& request, const ListAsrVocabAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListAsrVocabOutcomeCallable listAsrVocabCallable(const Model::ListAsrVocabRequest& request) const;
+			ListBusinessSpacesOutcome listBusinessSpaces(const Model::ListBusinessSpacesRequest &request)const;
+			void listBusinessSpacesAsync(const Model::ListBusinessSpacesRequest& request, const ListBusinessSpacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListBusinessSpacesOutcomeCallable listBusinessSpacesCallable(const Model::ListBusinessSpacesRequest& request) const;
 			ListHotWordsTasksOutcome listHotWordsTasks(const Model::ListHotWordsTasksRequest &request)const;
 			void listHotWordsTasksAsync(const Model::ListHotWordsTasksRequest& request, const ListHotWordsTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListHotWordsTasksOutcomeCallable listHotWordsTasksCallable(const Model::ListHotWordsTasksRequest& request) const;
@@ -599,6 +612,9 @@ namespace AlibabaCloud
 			UpdateAsrVocabOutcome updateAsrVocab(const Model::UpdateAsrVocabRequest &request)const;
 			void updateAsrVocabAsync(const Model::UpdateAsrVocabRequest& request, const UpdateAsrVocabAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateAsrVocabOutcomeCallable updateAsrVocabCallable(const Model::UpdateAsrVocabRequest& request) const;
+			UpdateQualityCheckDataOutcome updateQualityCheckData(const Model::UpdateQualityCheckDataRequest &request)const;
+			void updateQualityCheckDataAsync(const Model::UpdateQualityCheckDataRequest& request, const UpdateQualityCheckDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateQualityCheckDataOutcomeCallable updateQualityCheckDataCallable(const Model::UpdateQualityCheckDataRequest& request) const;
 			UpdateRuleOutcome updateRule(const Model::UpdateRuleRequest &request)const;
 			void updateRuleAsync(const Model::UpdateRuleRequest& request, const UpdateRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateRuleOutcomeCallable updateRuleCallable(const Model::UpdateRuleRequest& request) const;

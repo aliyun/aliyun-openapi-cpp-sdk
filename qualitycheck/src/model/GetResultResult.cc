@@ -107,6 +107,10 @@ void GetResultResult::parse(const std::string &payload)
 				hitResultObject.name = valueDataResultInfoHitResultHitResultItem["Name"].asString();
 			if(!valueDataResultInfoHitResultHitResultItem["Rid"].isNull())
 				hitResultObject.rid = valueDataResultInfoHitResultHitResultItem["Rid"].asString();
+			if(!valueDataResultInfoHitResultHitResultItem["SchemeId"].isNull())
+				hitResultObject.schemeId = std::stol(valueDataResultInfoHitResultHitResultItem["SchemeId"].asString());
+			if(!valueDataResultInfoHitResultHitResultItem["SchemeVersion"].isNull())
+				hitResultObject.schemeVersion = std::stol(valueDataResultInfoHitResultHitResultItem["SchemeVersion"].asString());
 			auto allHitsNode = valueDataResultInfoHitResultHitResultItem["Hits"]["Hit"];
 			for (auto valueDataResultInfoHitResultHitResultItemHitsHit : allHitsNode)
 			{
@@ -217,6 +221,12 @@ void GetResultResult::parse(const std::string &payload)
 			dataObject.agent.skillGroup = agentNode["SkillGroup"].asString();
 		if(!agentNode["Id"].isNull())
 			dataObject.agent.id = agentNode["Id"].asString();
+		auto allSchemeIdList = value["SchemeIdList"]["SchemeIdList"];
+		for (auto value : allSchemeIdList)
+			dataObject.schemeIdList.push_back(value.asString());
+		auto allSchemeNameList = value["SchemeNameList"]["SchemeNameList"];
+		for (auto value : allSchemeNameList)
+			dataObject.schemeNameList.push_back(value.asString());
 		data_.push_back(dataObject);
 	}
 	if(!value["Success"].isNull())

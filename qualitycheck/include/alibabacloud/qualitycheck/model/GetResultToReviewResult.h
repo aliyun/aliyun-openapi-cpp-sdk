@@ -86,6 +86,7 @@ namespace AlibabaCloud
 							struct KeyWord
 							{
 								std::string val;
+								std::string customizeCode;
 								int pid;
 								int from;
 								int to;

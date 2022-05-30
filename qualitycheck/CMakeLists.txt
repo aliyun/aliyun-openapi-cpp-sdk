@@ -109,6 +109,8 @@ set(qualitycheck_public_header_model
 	include/alibabacloud/qualitycheck/model/InvalidRuleResult.h
 	include/alibabacloud/qualitycheck/model/ListAsrVocabRequest.h
 	include/alibabacloud/qualitycheck/model/ListAsrVocabResult.h
+	include/alibabacloud/qualitycheck/model/ListBusinessSpacesRequest.h
+	include/alibabacloud/qualitycheck/model/ListBusinessSpacesResult.h
 	include/alibabacloud/qualitycheck/model/ListHotWordsTasksRequest.h
 	include/alibabacloud/qualitycheck/model/ListHotWordsTasksResult.h
 	include/alibabacloud/qualitycheck/model/ListPrecisionTaskRequest.h
@@ -143,6 +145,8 @@ set(qualitycheck_public_header_model
 	include/alibabacloud/qualitycheck/model/SyncQualityCheckResult.h
 	include/alibabacloud/qualitycheck/model/UpdateAsrVocabRequest.h
 	include/alibabacloud/qualitycheck/model/UpdateAsrVocabResult.h
+	include/alibabacloud/qualitycheck/model/UpdateQualityCheckDataRequest.h
+	include/alibabacloud/qualitycheck/model/UpdateQualityCheckDataResult.h
 	include/alibabacloud/qualitycheck/model/UpdateRuleRequest.h
 	include/alibabacloud/qualitycheck/model/UpdateRuleResult.h
 	include/alibabacloud/qualitycheck/model/UpdateScoreForApiRequest.h
@@ -264,6 +268,8 @@ set(qualitycheck_src
 	src/model/InvalidRuleResult.cc
 	src/model/ListAsrVocabRequest.cc
 	src/model/ListAsrVocabResult.cc
+	src/model/ListBusinessSpacesRequest.cc
+	src/model/ListBusinessSpacesResult.cc
 	src/model/ListHotWordsTasksRequest.cc
 	src/model/ListHotWordsTasksResult.cc
 	src/model/ListPrecisionTaskRequest.cc
@@ -298,6 +304,8 @@ set(qualitycheck_src
 	src/model/SyncQualityCheckResult.cc
 	src/model/UpdateAsrVocabRequest.cc
 	src/model/UpdateAsrVocabResult.cc
+	src/model/UpdateQualityCheckDataRequest.cc
+	src/model/UpdateQualityCheckDataResult.cc
 	src/model/UpdateRuleRequest.cc
 	src/model/UpdateRuleResult.cc
 	src/model/UpdateScoreForApiRequest.cc

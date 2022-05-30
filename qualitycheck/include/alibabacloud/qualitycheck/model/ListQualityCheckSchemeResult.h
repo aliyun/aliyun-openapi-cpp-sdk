@@ -61,13 +61,14 @@ namespace AlibabaCloud
 					std::string updateUserName;
 					std::vector<DataItem::RuleListItem> ruleList;
 					std::string description;
-					int schemeId;
+					long schemeId;
 					std::vector<DataItem::SchemeCheckTypeListItem> schemeCheckTypeList;
 					std::string createTime;
 					int templateType;
 					std::string createUserName;
 					std::string name;
 					int type;
+					long version;
 					std::string updateTime;
 					int dataType;
 				};

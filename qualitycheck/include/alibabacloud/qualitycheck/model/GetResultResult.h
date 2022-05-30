@@ -103,6 +103,8 @@ namespace AlibabaCloud
 						};
 						std::vector<HitResultItem::Hit> hits;
 						std::string type;
+						long schemeId;
+						long schemeVersion;
 						int reviewResult;
 						std::string rid;
 						std::string name;
@@ -118,6 +120,7 @@ namespace AlibabaCloud
 					Agent agent;
 					std::string taskId;
 					std::string resolver;
+					std::vector<std::string> schemeNameList;
 					std::string comments;
 					std::string createTime;
 					std::string reviewTime;
@@ -127,6 +130,7 @@ namespace AlibabaCloud
 					std::string reviewer;
 					std::vector<ResultInfo::HitResultItem> hitResult;
 					int score;
+					std::vector<std::string> schemeIdList;
 					std::string assignmentTime;
 					std::string taskName;
 					int reviewStatus;

@@ -164,6 +164,8 @@ void GetResultToReviewResult::parse(const std::string &payload)
 					keyWordsObject.cid = dataNodeHitRuleReviewInfoListHitRuleReviewInfoConditionHitInfoListConditionHitInfoKeyWordsKeyWord["Cid"].asString();
 				if(!dataNodeHitRuleReviewInfoListHitRuleReviewInfoConditionHitInfoListConditionHitInfoKeyWordsKeyWord["To"].isNull())
 					keyWordsObject.to = std::stoi(dataNodeHitRuleReviewInfoListHitRuleReviewInfoConditionHitInfoListConditionHitInfoKeyWordsKeyWord["To"].asString());
+				if(!dataNodeHitRuleReviewInfoListHitRuleReviewInfoConditionHitInfoListConditionHitInfoKeyWordsKeyWord["CustomizeCode"].isNull())
+					keyWordsObject.customizeCode = dataNodeHitRuleReviewInfoListHitRuleReviewInfoConditionHitInfoListConditionHitInfoKeyWordsKeyWord["CustomizeCode"].asString();
 				conditionHitInfoListObject.keyWords.push_back(keyWordsObject);
 			}
 			auto phraseNode = value["Phrase"];

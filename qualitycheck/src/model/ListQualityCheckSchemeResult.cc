@@ -44,7 +44,7 @@ void ListQualityCheckSchemeResult::parse(const std::string &payload)
 	{
 		DataItem dataObject;
 		if(!valueDatadataItem["SchemeId"].isNull())
-			dataObject.schemeId = std::stoi(valueDatadataItem["SchemeId"].asString());
+			dataObject.schemeId = std::stol(valueDatadataItem["SchemeId"].asString());
 		if(!valueDatadataItem["Name"].isNull())
 			dataObject.name = valueDatadataItem["Name"].asString();
 		if(!valueDatadataItem["Description"].isNull())
@@ -65,6 +65,8 @@ void ListQualityCheckSchemeResult::parse(const std::string &payload)
 			dataObject.updateUserName = valueDatadataItem["UpdateUserName"].asString();
 		if(!valueDatadataItem["UpdateTime"].isNull())
 			dataObject.updateTime = valueDatadataItem["UpdateTime"].asString();
+		if(!valueDatadataItem["Version"].isNull())
+			dataObject.version = std::stol(valueDatadataItem["Version"].asString());
 		auto allSchemeCheckTypeListNode = valueDatadataItem["SchemeCheckTypeList"]["schemeCheckTypeListItem"];
 		for (auto valueDatadataItemSchemeCheckTypeListschemeCheckTypeListItem : allSchemeCheckTypeListNode)
 		{
