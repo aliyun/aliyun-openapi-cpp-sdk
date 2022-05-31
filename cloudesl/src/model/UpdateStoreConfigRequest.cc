@@ -49,6 +49,17 @@ void UpdateStoreConfigRequest::setStoreId(const std::string& storeId)
 	setBodyParameter("StoreId", storeId);
 }
 
+std::string UpdateStoreConfigRequest::getSubscribeContents()const
+{
+	return subscribeContents_;
+}
+
+void UpdateStoreConfigRequest::setSubscribeContents(const std::string& subscribeContents)
+{
+	subscribeContents_ = subscribeContents;
+	setBodyParameter("SubscribeContents", subscribeContents);
+}
+
 bool UpdateStoreConfigRequest::getEnableNotification()const
 {
 	return enableNotification_;

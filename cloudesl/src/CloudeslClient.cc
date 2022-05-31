@@ -31,21 +31,21 @@ CloudeslClient::CloudeslClient(const Credentials &credentials, const ClientConfi
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "cloudesl");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 CloudeslClient::CloudeslClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "cloudesl");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 CloudeslClient::CloudeslClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "cloudesl");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 CloudeslClient::~CloudeslClient()
@@ -123,6 +123,78 @@ CloudeslClient::AddApDeviceOutcomeCallable CloudeslClient::addApDeviceCallable(c
 	return task->get_future();
 }
 
+CloudeslClient::AddCompanyTemplateOutcome CloudeslClient::addCompanyTemplate(const AddCompanyTemplateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddCompanyTemplateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddCompanyTemplateOutcome(AddCompanyTemplateResult(outcome.result()));
+	else
+		return AddCompanyTemplateOutcome(outcome.error());
+}
+
+void CloudeslClient::addCompanyTemplateAsync(const AddCompanyTemplateRequest& request, const AddCompanyTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addCompanyTemplate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudeslClient::AddCompanyTemplateOutcomeCallable CloudeslClient::addCompanyTemplateCallable(const AddCompanyTemplateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddCompanyTemplateOutcome()>>(
+			[this, request]()
+			{
+			return this->addCompanyTemplate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudeslClient::AddMaterialOutcome CloudeslClient::addMaterial(const AddMaterialRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddMaterialOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddMaterialOutcome(AddMaterialResult(outcome.result()));
+	else
+		return AddMaterialOutcome(outcome.error());
+}
+
+void CloudeslClient::addMaterialAsync(const AddMaterialRequest& request, const AddMaterialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addMaterial(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudeslClient::AddMaterialOutcomeCallable CloudeslClient::addMaterialCallable(const AddMaterialRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddMaterialOutcome()>>(
+			[this, request]()
+			{
+			return this->addMaterial(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CloudeslClient::AddUserOutcome CloudeslClient::addUser(const AddUserRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -153,6 +225,78 @@ CloudeslClient::AddUserOutcomeCallable CloudeslClient::addUserCallable(const Add
 			[this, request]()
 			{
 			return this->addUser(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudeslClient::ApplyCompanyTemplateVersionToStoresOutcome CloudeslClient::applyCompanyTemplateVersionToStores(const ApplyCompanyTemplateVersionToStoresRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ApplyCompanyTemplateVersionToStoresOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ApplyCompanyTemplateVersionToStoresOutcome(ApplyCompanyTemplateVersionToStoresResult(outcome.result()));
+	else
+		return ApplyCompanyTemplateVersionToStoresOutcome(outcome.error());
+}
+
+void CloudeslClient::applyCompanyTemplateVersionToStoresAsync(const ApplyCompanyTemplateVersionToStoresRequest& request, const ApplyCompanyTemplateVersionToStoresAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, applyCompanyTemplateVersionToStores(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudeslClient::ApplyCompanyTemplateVersionToStoresOutcomeCallable CloudeslClient::applyCompanyTemplateVersionToStoresCallable(const ApplyCompanyTemplateVersionToStoresRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ApplyCompanyTemplateVersionToStoresOutcome()>>(
+			[this, request]()
+			{
+			return this->applyCompanyTemplateVersionToStores(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudeslClient::ApplyImageDitheringOutcome CloudeslClient::applyImageDithering(const ApplyImageDitheringRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ApplyImageDitheringOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ApplyImageDitheringOutcome(ApplyImageDitheringResult(outcome.result()));
+	else
+		return ApplyImageDitheringOutcome(outcome.error());
+}
+
+void CloudeslClient::applyImageDitheringAsync(const ApplyImageDitheringRequest& request, const ApplyImageDitheringAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, applyImageDithering(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudeslClient::ApplyImageDitheringOutcomeCallable CloudeslClient::applyImageDitheringCallable(const ApplyImageDitheringRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ApplyImageDitheringOutcome()>>(
+			[this, request]()
+			{
+			return this->applyImageDithering(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -231,6 +375,42 @@ CloudeslClient::BatchInsertItemsOutcomeCallable CloudeslClient::batchInsertItems
 	return task->get_future();
 }
 
+CloudeslClient::BatchUpdateEventOutcome CloudeslClient::batchUpdateEvent(const BatchUpdateEventRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return BatchUpdateEventOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return BatchUpdateEventOutcome(BatchUpdateEventResult(outcome.result()));
+	else
+		return BatchUpdateEventOutcome(outcome.error());
+}
+
+void CloudeslClient::batchUpdateEventAsync(const BatchUpdateEventRequest& request, const BatchUpdateEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, batchUpdateEvent(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudeslClient::BatchUpdateEventOutcomeCallable CloudeslClient::batchUpdateEventCallable(const BatchUpdateEventRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<BatchUpdateEventOutcome()>>(
+			[this, request]()
+			{
+			return this->batchUpdateEvent(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CloudeslClient::BindEslDeviceOutcome CloudeslClient::bindEslDevice(const BindEslDeviceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -267,36 +447,36 @@ CloudeslClient::BindEslDeviceOutcomeCallable CloudeslClient::bindEslDeviceCallab
 	return task->get_future();
 }
 
-CloudeslClient::ConfirmServerLocationOutcome CloudeslClient::confirmServerLocation(const ConfirmServerLocationRequest &request) const
+CloudeslClient::CheckServiceLinkedRoleForDeletingOutcome CloudeslClient::checkServiceLinkedRoleForDeleting(const CheckServiceLinkedRoleForDeletingRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ConfirmServerLocationOutcome(endpointOutcome.error());
+		return CheckServiceLinkedRoleForDeletingOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ConfirmServerLocationOutcome(ConfirmServerLocationResult(outcome.result()));
+		return CheckServiceLinkedRoleForDeletingOutcome(CheckServiceLinkedRoleForDeletingResult(outcome.result()));
 	else
-		return ConfirmServerLocationOutcome(outcome.error());
+		return CheckServiceLinkedRoleForDeletingOutcome(outcome.error());
 }
 
-void CloudeslClient::confirmServerLocationAsync(const ConfirmServerLocationRequest& request, const ConfirmServerLocationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CloudeslClient::checkServiceLinkedRoleForDeletingAsync(const CheckServiceLinkedRoleForDeletingRequest& request, const CheckServiceLinkedRoleForDeletingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, confirmServerLocation(request), context);
+		handler(this, request, checkServiceLinkedRoleForDeleting(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CloudeslClient::ConfirmServerLocationOutcomeCallable CloudeslClient::confirmServerLocationCallable(const ConfirmServerLocationRequest &request) const
+CloudeslClient::CheckServiceLinkedRoleForDeletingOutcomeCallable CloudeslClient::checkServiceLinkedRoleForDeletingCallable(const CheckServiceLinkedRoleForDeletingRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ConfirmServerLocationOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<CheckServiceLinkedRoleForDeletingOutcome()>>(
 			[this, request]()
 			{
-			return this->confirmServerLocation(request);
+			return this->checkServiceLinkedRoleForDeleting(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -375,6 +555,42 @@ CloudeslClient::DeleteApDeviceOutcomeCallable CloudeslClient::deleteApDeviceCall
 	return task->get_future();
 }
 
+CloudeslClient::DeleteCompanyTemplateOutcome CloudeslClient::deleteCompanyTemplate(const DeleteCompanyTemplateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteCompanyTemplateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteCompanyTemplateOutcome(DeleteCompanyTemplateResult(outcome.result()));
+	else
+		return DeleteCompanyTemplateOutcome(outcome.error());
+}
+
+void CloudeslClient::deleteCompanyTemplateAsync(const DeleteCompanyTemplateRequest& request, const DeleteCompanyTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteCompanyTemplate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudeslClient::DeleteCompanyTemplateOutcomeCallable CloudeslClient::deleteCompanyTemplateCallable(const DeleteCompanyTemplateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteCompanyTemplateOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteCompanyTemplate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CloudeslClient::DeleteItemOutcome CloudeslClient::deleteItem(const DeleteItemRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -405,6 +621,42 @@ CloudeslClient::DeleteItemOutcomeCallable CloudeslClient::deleteItemCallable(con
 			[this, request]()
 			{
 			return this->deleteItem(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudeslClient::DeleteMaterialOutcome CloudeslClient::deleteMaterial(const DeleteMaterialRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteMaterialOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteMaterialOutcome(DeleteMaterialResult(outcome.result()));
+	else
+		return DeleteMaterialOutcome(outcome.error());
+}
+
+void CloudeslClient::deleteMaterialAsync(const DeleteMaterialRequest& request, const DeleteMaterialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteMaterial(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudeslClient::DeleteMaterialOutcomeCallable CloudeslClient::deleteMaterialCallable(const DeleteMaterialRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteMaterialOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteMaterial(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -519,6 +771,42 @@ CloudeslClient::DescribeApDevicesOutcomeCallable CloudeslClient::describeApDevic
 	return task->get_future();
 }
 
+CloudeslClient::DescribeAvailableEslModelsOutcome CloudeslClient::describeAvailableEslModels(const DescribeAvailableEslModelsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeAvailableEslModelsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeAvailableEslModelsOutcome(DescribeAvailableEslModelsResult(outcome.result()));
+	else
+		return DescribeAvailableEslModelsOutcome(outcome.error());
+}
+
+void CloudeslClient::describeAvailableEslModelsAsync(const DescribeAvailableEslModelsRequest& request, const DescribeAvailableEslModelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeAvailableEslModels(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudeslClient::DescribeAvailableEslModelsOutcomeCallable CloudeslClient::describeAvailableEslModelsCallable(const DescribeAvailableEslModelsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeAvailableEslModelsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeAvailableEslModels(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CloudeslClient::DescribeBindersOutcome CloudeslClient::describeBinders(const DescribeBindersRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -555,72 +843,108 @@ CloudeslClient::DescribeBindersOutcomeCallable CloudeslClient::describeBindersCa
 	return task->get_future();
 }
 
-CloudeslClient::DescribeClientPackageOutcome CloudeslClient::describeClientPackage(const DescribeClientPackageRequest &request) const
+CloudeslClient::DescribeCompanyTemplateAttributeOutcome CloudeslClient::describeCompanyTemplateAttribute(const DescribeCompanyTemplateAttributeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeClientPackageOutcome(endpointOutcome.error());
+		return DescribeCompanyTemplateAttributeOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeClientPackageOutcome(DescribeClientPackageResult(outcome.result()));
+		return DescribeCompanyTemplateAttributeOutcome(DescribeCompanyTemplateAttributeResult(outcome.result()));
 	else
-		return DescribeClientPackageOutcome(outcome.error());
+		return DescribeCompanyTemplateAttributeOutcome(outcome.error());
 }
 
-void CloudeslClient::describeClientPackageAsync(const DescribeClientPackageRequest& request, const DescribeClientPackageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CloudeslClient::describeCompanyTemplateAttributeAsync(const DescribeCompanyTemplateAttributeRequest& request, const DescribeCompanyTemplateAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeClientPackage(request), context);
+		handler(this, request, describeCompanyTemplateAttribute(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CloudeslClient::DescribeClientPackageOutcomeCallable CloudeslClient::describeClientPackageCallable(const DescribeClientPackageRequest &request) const
+CloudeslClient::DescribeCompanyTemplateAttributeOutcomeCallable CloudeslClient::describeCompanyTemplateAttributeCallable(const DescribeCompanyTemplateAttributeRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeClientPackageOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DescribeCompanyTemplateAttributeOutcome()>>(
 			[this, request]()
 			{
-			return this->describeClientPackage(request);
+			return this->describeCompanyTemplateAttribute(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-CloudeslClient::DescribeEslDeviceOutcome CloudeslClient::describeEslDevice(const DescribeEslDeviceRequest &request) const
+CloudeslClient::DescribeCompanyTemplateVersionsOutcome CloudeslClient::describeCompanyTemplateVersions(const DescribeCompanyTemplateVersionsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeEslDeviceOutcome(endpointOutcome.error());
+		return DescribeCompanyTemplateVersionsOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeEslDeviceOutcome(DescribeEslDeviceResult(outcome.result()));
+		return DescribeCompanyTemplateVersionsOutcome(DescribeCompanyTemplateVersionsResult(outcome.result()));
 	else
-		return DescribeEslDeviceOutcome(outcome.error());
+		return DescribeCompanyTemplateVersionsOutcome(outcome.error());
 }
 
-void CloudeslClient::describeEslDeviceAsync(const DescribeEslDeviceRequest& request, const DescribeEslDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CloudeslClient::describeCompanyTemplateVersionsAsync(const DescribeCompanyTemplateVersionsRequest& request, const DescribeCompanyTemplateVersionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeEslDevice(request), context);
+		handler(this, request, describeCompanyTemplateVersions(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CloudeslClient::DescribeEslDeviceOutcomeCallable CloudeslClient::describeEslDeviceCallable(const DescribeEslDeviceRequest &request) const
+CloudeslClient::DescribeCompanyTemplateVersionsOutcomeCallable CloudeslClient::describeCompanyTemplateVersionsCallable(const DescribeCompanyTemplateVersionsRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeEslDeviceOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DescribeCompanyTemplateVersionsOutcome()>>(
 			[this, request]()
 			{
-			return this->describeEslDevice(request);
+			return this->describeCompanyTemplateVersions(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudeslClient::DescribeCompanyTemplateViewOutcome CloudeslClient::describeCompanyTemplateView(const DescribeCompanyTemplateViewRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeCompanyTemplateViewOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeCompanyTemplateViewOutcome(DescribeCompanyTemplateViewResult(outcome.result()));
+	else
+		return DescribeCompanyTemplateViewOutcome(outcome.error());
+}
+
+void CloudeslClient::describeCompanyTemplateViewAsync(const DescribeCompanyTemplateViewRequest& request, const DescribeCompanyTemplateViewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeCompanyTemplateView(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudeslClient::DescribeCompanyTemplateViewOutcomeCallable CloudeslClient::describeCompanyTemplateViewCallable(const DescribeCompanyTemplateViewRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeCompanyTemplateViewOutcome()>>(
+			[this, request]()
+			{
+			return this->describeCompanyTemplateView(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -663,6 +987,150 @@ CloudeslClient::DescribeEslDevicesOutcomeCallable CloudeslClient::describeEslDev
 	return task->get_future();
 }
 
+CloudeslClient::DescribeEslModelByTemplateVersionOutcome CloudeslClient::describeEslModelByTemplateVersion(const DescribeEslModelByTemplateVersionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeEslModelByTemplateVersionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeEslModelByTemplateVersionOutcome(DescribeEslModelByTemplateVersionResult(outcome.result()));
+	else
+		return DescribeEslModelByTemplateVersionOutcome(outcome.error());
+}
+
+void CloudeslClient::describeEslModelByTemplateVersionAsync(const DescribeEslModelByTemplateVersionRequest& request, const DescribeEslModelByTemplateVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeEslModelByTemplateVersion(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudeslClient::DescribeEslModelByTemplateVersionOutcomeCallable CloudeslClient::describeEslModelByTemplateVersionCallable(const DescribeEslModelByTemplateVersionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeEslModelByTemplateVersionOutcome()>>(
+			[this, request]()
+			{
+			return this->describeEslModelByTemplateVersion(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudeslClient::DescribeEventReasonOutcome CloudeslClient::describeEventReason(const DescribeEventReasonRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeEventReasonOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeEventReasonOutcome(DescribeEventReasonResult(outcome.result()));
+	else
+		return DescribeEventReasonOutcome(outcome.error());
+}
+
+void CloudeslClient::describeEventReasonAsync(const DescribeEventReasonRequest& request, const DescribeEventReasonAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeEventReason(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudeslClient::DescribeEventReasonOutcomeCallable CloudeslClient::describeEventReasonCallable(const DescribeEventReasonRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeEventReasonOutcome()>>(
+			[this, request]()
+			{
+			return this->describeEventReason(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudeslClient::DescribeEventsOutcome CloudeslClient::describeEvents(const DescribeEventsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeEventsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeEventsOutcome(DescribeEventsResult(outcome.result()));
+	else
+		return DescribeEventsOutcome(outcome.error());
+}
+
+void CloudeslClient::describeEventsAsync(const DescribeEventsRequest& request, const DescribeEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeEvents(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudeslClient::DescribeEventsOutcomeCallable CloudeslClient::describeEventsCallable(const DescribeEventsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeEventsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeEvents(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudeslClient::DescribeItemMaterialsOutcome CloudeslClient::describeItemMaterials(const DescribeItemMaterialsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeItemMaterialsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeItemMaterialsOutcome(DescribeItemMaterialsResult(outcome.result()));
+	else
+		return DescribeItemMaterialsOutcome(outcome.error());
+}
+
+void CloudeslClient::describeItemMaterialsAsync(const DescribeItemMaterialsRequest& request, const DescribeItemMaterialsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeItemMaterials(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudeslClient::DescribeItemMaterialsOutcomeCallable CloudeslClient::describeItemMaterialsCallable(const DescribeItemMaterialsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeItemMaterialsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeItemMaterials(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CloudeslClient::DescribeItemsOutcome CloudeslClient::describeItems(const DescribeItemsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -693,6 +1161,114 @@ CloudeslClient::DescribeItemsOutcomeCallable CloudeslClient::describeItemsCallab
 			[this, request]()
 			{
 			return this->describeItems(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudeslClient::DescribeMaterialsOutcome CloudeslClient::describeMaterials(const DescribeMaterialsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeMaterialsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeMaterialsOutcome(DescribeMaterialsResult(outcome.result()));
+	else
+		return DescribeMaterialsOutcome(outcome.error());
+}
+
+void CloudeslClient::describeMaterialsAsync(const DescribeMaterialsRequest& request, const DescribeMaterialsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeMaterials(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudeslClient::DescribeMaterialsOutcomeCallable CloudeslClient::describeMaterialsCallable(const DescribeMaterialsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeMaterialsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeMaterials(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudeslClient::DescribeNotificationConfigOutcome CloudeslClient::describeNotificationConfig(const DescribeNotificationConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeNotificationConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeNotificationConfigOutcome(DescribeNotificationConfigResult(outcome.result()));
+	else
+		return DescribeNotificationConfigOutcome(outcome.error());
+}
+
+void CloudeslClient::describeNotificationConfigAsync(const DescribeNotificationConfigRequest& request, const DescribeNotificationConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeNotificationConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudeslClient::DescribeNotificationConfigOutcomeCallable CloudeslClient::describeNotificationConfigCallable(const DescribeNotificationConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeNotificationConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->describeNotificationConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudeslClient::DescribeStoreByTemplateVersionOutcome CloudeslClient::describeStoreByTemplateVersion(const DescribeStoreByTemplateVersionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeStoreByTemplateVersionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeStoreByTemplateVersionOutcome(DescribeStoreByTemplateVersionResult(outcome.result()));
+	else
+		return DescribeStoreByTemplateVersionOutcome(outcome.error());
+}
+
+void CloudeslClient::describeStoreByTemplateVersionAsync(const DescribeStoreByTemplateVersionRequest& request, const DescribeStoreByTemplateVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeStoreByTemplateVersion(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudeslClient::DescribeStoreByTemplateVersionOutcomeCallable CloudeslClient::describeStoreByTemplateVersionCallable(const DescribeStoreByTemplateVersionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeStoreByTemplateVersionOutcome()>>(
+			[this, request]()
+			{
+			return this->describeStoreByTemplateVersion(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -771,6 +1347,42 @@ CloudeslClient::DescribeStoresOutcomeCallable CloudeslClient::describeStoresCall
 	return task->get_future();
 }
 
+CloudeslClient::DescribeTemplateByModelOutcome CloudeslClient::describeTemplateByModel(const DescribeTemplateByModelRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeTemplateByModelOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeTemplateByModelOutcome(DescribeTemplateByModelResult(outcome.result()));
+	else
+		return DescribeTemplateByModelOutcome(outcome.error());
+}
+
+void CloudeslClient::describeTemplateByModelAsync(const DescribeTemplateByModelRequest& request, const DescribeTemplateByModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeTemplateByModel(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudeslClient::DescribeTemplateByModelOutcomeCallable CloudeslClient::describeTemplateByModelCallable(const DescribeTemplateByModelRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeTemplateByModelOutcome()>>(
+			[this, request]()
+			{
+			return this->describeTemplateByModel(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CloudeslClient::DescribeUserLogOutcome CloudeslClient::describeUserLog(const DescribeUserLogRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -843,6 +1455,186 @@ CloudeslClient::DescribeUsersOutcomeCallable CloudeslClient::describeUsersCallab
 	return task->get_future();
 }
 
+CloudeslClient::ExportEslDevicesOutcome CloudeslClient::exportEslDevices(const ExportEslDevicesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ExportEslDevicesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ExportEslDevicesOutcome(ExportEslDevicesResult(outcome.result()));
+	else
+		return ExportEslDevicesOutcome(outcome.error());
+}
+
+void CloudeslClient::exportEslDevicesAsync(const ExportEslDevicesRequest& request, const ExportEslDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, exportEslDevices(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudeslClient::ExportEslDevicesOutcomeCallable CloudeslClient::exportEslDevicesCallable(const ExportEslDevicesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ExportEslDevicesOutcome()>>(
+			[this, request]()
+			{
+			return this->exportEslDevices(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudeslClient::GetCompanyTemplatePictureOutcome CloudeslClient::getCompanyTemplatePicture(const GetCompanyTemplatePictureRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetCompanyTemplatePictureOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetCompanyTemplatePictureOutcome(GetCompanyTemplatePictureResult(outcome.result()));
+	else
+		return GetCompanyTemplatePictureOutcome(outcome.error());
+}
+
+void CloudeslClient::getCompanyTemplatePictureAsync(const GetCompanyTemplatePictureRequest& request, const GetCompanyTemplatePictureAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getCompanyTemplatePicture(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudeslClient::GetCompanyTemplatePictureOutcomeCallable CloudeslClient::getCompanyTemplatePictureCallable(const GetCompanyTemplatePictureRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetCompanyTemplatePictureOutcome()>>(
+			[this, request]()
+			{
+			return this->getCompanyTemplatePicture(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudeslClient::GetCompanyTemplatePictureByJobOutcome CloudeslClient::getCompanyTemplatePictureByJob(const GetCompanyTemplatePictureByJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetCompanyTemplatePictureByJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetCompanyTemplatePictureByJobOutcome(GetCompanyTemplatePictureByJobResult(outcome.result()));
+	else
+		return GetCompanyTemplatePictureByJobOutcome(outcome.error());
+}
+
+void CloudeslClient::getCompanyTemplatePictureByJobAsync(const GetCompanyTemplatePictureByJobRequest& request, const GetCompanyTemplatePictureByJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getCompanyTemplatePictureByJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudeslClient::GetCompanyTemplatePictureByJobOutcomeCallable CloudeslClient::getCompanyTemplatePictureByJobCallable(const GetCompanyTemplatePictureByJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetCompanyTemplatePictureByJobOutcome()>>(
+			[this, request]()
+			{
+			return this->getCompanyTemplatePictureByJob(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudeslClient::GetCompanyTemplatePictureNewOutcome CloudeslClient::getCompanyTemplatePictureNew(const GetCompanyTemplatePictureNewRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetCompanyTemplatePictureNewOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetCompanyTemplatePictureNewOutcome(GetCompanyTemplatePictureNewResult(outcome.result()));
+	else
+		return GetCompanyTemplatePictureNewOutcome(outcome.error());
+}
+
+void CloudeslClient::getCompanyTemplatePictureNewAsync(const GetCompanyTemplatePictureNewRequest& request, const GetCompanyTemplatePictureNewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getCompanyTemplatePictureNew(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudeslClient::GetCompanyTemplatePictureNewOutcomeCallable CloudeslClient::getCompanyTemplatePictureNewCallable(const GetCompanyTemplatePictureNewRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetCompanyTemplatePictureNewOutcome()>>(
+			[this, request]()
+			{
+			return this->getCompanyTemplatePictureNew(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudeslClient::GetItemMaterialOutcome CloudeslClient::getItemMaterial(const GetItemMaterialRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetItemMaterialOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetItemMaterialOutcome(GetItemMaterialResult(outcome.result()));
+	else
+		return GetItemMaterialOutcome(outcome.error());
+}
+
+void CloudeslClient::getItemMaterialAsync(const GetItemMaterialRequest& request, const GetItemMaterialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getItemMaterial(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudeslClient::GetItemMaterialOutcomeCallable CloudeslClient::getItemMaterialCallable(const GetItemMaterialRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetItemMaterialOutcome()>>(
+			[this, request]()
+			{
+			return this->getItemMaterial(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CloudeslClient::GetUserOutcome CloudeslClient::getUser(const GetUserRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -873,6 +1665,42 @@ CloudeslClient::GetUserOutcomeCallable CloudeslClient::getUserCallable(const Get
 			[this, request]()
 			{
 			return this->getUser(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudeslClient::SyncAddMaterialOutcome CloudeslClient::syncAddMaterial(const SyncAddMaterialRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SyncAddMaterialOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SyncAddMaterialOutcome(SyncAddMaterialResult(outcome.result()));
+	else
+		return SyncAddMaterialOutcome(outcome.error());
+}
+
+void CloudeslClient::syncAddMaterialAsync(const SyncAddMaterialRequest& request, const SyncAddMaterialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, syncAddMaterial(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudeslClient::SyncAddMaterialOutcomeCallable CloudeslClient::syncAddMaterialCallable(const SyncAddMaterialRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SyncAddMaterialOutcome()>>(
+			[this, request]()
+			{
+			return this->syncAddMaterial(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -987,6 +1815,78 @@ CloudeslClient::UpdateEslDeviceLightOutcomeCallable CloudeslClient::updateEslDev
 	return task->get_future();
 }
 
+CloudeslClient::UpdateItemMaterialOutcome CloudeslClient::updateItemMaterial(const UpdateItemMaterialRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateItemMaterialOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateItemMaterialOutcome(UpdateItemMaterialResult(outcome.result()));
+	else
+		return UpdateItemMaterialOutcome(outcome.error());
+}
+
+void CloudeslClient::updateItemMaterialAsync(const UpdateItemMaterialRequest& request, const UpdateItemMaterialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateItemMaterial(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudeslClient::UpdateItemMaterialOutcomeCallable CloudeslClient::updateItemMaterialCallable(const UpdateItemMaterialRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateItemMaterialOutcome()>>(
+			[this, request]()
+			{
+			return this->updateItemMaterial(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudeslClient::UpdateNotificationConfigOutcome CloudeslClient::updateNotificationConfig(const UpdateNotificationConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateNotificationConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateNotificationConfigOutcome(UpdateNotificationConfigResult(outcome.result()));
+	else
+		return UpdateNotificationConfigOutcome(outcome.error());
+}
+
+void CloudeslClient::updateNotificationConfigAsync(const UpdateNotificationConfigRequest& request, const UpdateNotificationConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateNotificationConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudeslClient::UpdateNotificationConfigOutcomeCallable CloudeslClient::updateNotificationConfigCallable(const UpdateNotificationConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateNotificationConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->updateNotificationConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CloudeslClient::UpdateStoreOutcome CloudeslClient::updateStore(const UpdateStoreRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1053,6 +1953,42 @@ CloudeslClient::UpdateStoreConfigOutcomeCallable CloudeslClient::updateStoreConf
 			[this, request]()
 			{
 			return this->updateStoreConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudeslClient::VerifyNotificationConfigOutcome CloudeslClient::verifyNotificationConfig(const VerifyNotificationConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return VerifyNotificationConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return VerifyNotificationConfigOutcome(VerifyNotificationConfigResult(outcome.result()));
+	else
+		return VerifyNotificationConfigOutcome(outcome.error());
+}
+
+void CloudeslClient::verifyNotificationConfigAsync(const VerifyNotificationConfigRequest& request, const VerifyNotificationConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, verifyNotificationConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudeslClient::VerifyNotificationConfigOutcomeCallable CloudeslClient::verifyNotificationConfigCallable(const VerifyNotificationConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<VerifyNotificationConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->verifyNotificationConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

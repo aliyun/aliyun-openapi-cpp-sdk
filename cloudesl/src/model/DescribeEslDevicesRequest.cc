@@ -93,6 +93,17 @@ void DescribeEslDevicesRequest::setPageSize(int pageSize)
 	setBodyParameter("PageSize", std::to_string(pageSize));
 }
 
+std::string DescribeEslDevicesRequest::getTypeEncode()const
+{
+	return typeEncode_;
+}
+
+void DescribeEslDevicesRequest::setTypeEncode(const std::string& typeEncode)
+{
+	typeEncode_ = typeEncode;
+	setBodyParameter("TypeEncode", typeEncode);
+}
+
 std::string DescribeEslDevicesRequest::getEslStatus()const
 {
 	return eslStatus_;

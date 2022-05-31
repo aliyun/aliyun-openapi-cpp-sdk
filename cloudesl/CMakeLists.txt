@@ -25,58 +25,110 @@ set(cloudesl_public_header_model
 	include/alibabacloud/cloudesl/model/ActivateApDeviceResult.h
 	include/alibabacloud/cloudesl/model/AddApDeviceRequest.h
 	include/alibabacloud/cloudesl/model/AddApDeviceResult.h
+	include/alibabacloud/cloudesl/model/AddCompanyTemplateRequest.h
+	include/alibabacloud/cloudesl/model/AddCompanyTemplateResult.h
+	include/alibabacloud/cloudesl/model/AddMaterialRequest.h
+	include/alibabacloud/cloudesl/model/AddMaterialResult.h
 	include/alibabacloud/cloudesl/model/AddUserRequest.h
 	include/alibabacloud/cloudesl/model/AddUserResult.h
+	include/alibabacloud/cloudesl/model/ApplyCompanyTemplateVersionToStoresRequest.h
+	include/alibabacloud/cloudesl/model/ApplyCompanyTemplateVersionToStoresResult.h
+	include/alibabacloud/cloudesl/model/ApplyImageDitheringRequest.h
+	include/alibabacloud/cloudesl/model/ApplyImageDitheringResult.h
 	include/alibabacloud/cloudesl/model/AssignUserRequest.h
 	include/alibabacloud/cloudesl/model/AssignUserResult.h
 	include/alibabacloud/cloudesl/model/BatchInsertItemsRequest.h
 	include/alibabacloud/cloudesl/model/BatchInsertItemsResult.h
+	include/alibabacloud/cloudesl/model/BatchUpdateEventRequest.h
+	include/alibabacloud/cloudesl/model/BatchUpdateEventResult.h
 	include/alibabacloud/cloudesl/model/BindEslDeviceRequest.h
 	include/alibabacloud/cloudesl/model/BindEslDeviceResult.h
-	include/alibabacloud/cloudesl/model/ConfirmServerLocationRequest.h
-	include/alibabacloud/cloudesl/model/ConfirmServerLocationResult.h
+	include/alibabacloud/cloudesl/model/CheckServiceLinkedRoleForDeletingRequest.h
+	include/alibabacloud/cloudesl/model/CheckServiceLinkedRoleForDeletingResult.h
 	include/alibabacloud/cloudesl/model/CreateStoreRequest.h
 	include/alibabacloud/cloudesl/model/CreateStoreResult.h
 	include/alibabacloud/cloudesl/model/DeleteApDeviceRequest.h
 	include/alibabacloud/cloudesl/model/DeleteApDeviceResult.h
+	include/alibabacloud/cloudesl/model/DeleteCompanyTemplateRequest.h
+	include/alibabacloud/cloudesl/model/DeleteCompanyTemplateResult.h
 	include/alibabacloud/cloudesl/model/DeleteItemRequest.h
 	include/alibabacloud/cloudesl/model/DeleteItemResult.h
+	include/alibabacloud/cloudesl/model/DeleteMaterialRequest.h
+	include/alibabacloud/cloudesl/model/DeleteMaterialResult.h
 	include/alibabacloud/cloudesl/model/DeleteStoreRequest.h
 	include/alibabacloud/cloudesl/model/DeleteStoreResult.h
 	include/alibabacloud/cloudesl/model/DeleteUserRequest.h
 	include/alibabacloud/cloudesl/model/DeleteUserResult.h
 	include/alibabacloud/cloudesl/model/DescribeApDevicesRequest.h
 	include/alibabacloud/cloudesl/model/DescribeApDevicesResult.h
+	include/alibabacloud/cloudesl/model/DescribeAvailableEslModelsRequest.h
+	include/alibabacloud/cloudesl/model/DescribeAvailableEslModelsResult.h
 	include/alibabacloud/cloudesl/model/DescribeBindersRequest.h
 	include/alibabacloud/cloudesl/model/DescribeBindersResult.h
-	include/alibabacloud/cloudesl/model/DescribeClientPackageRequest.h
-	include/alibabacloud/cloudesl/model/DescribeClientPackageResult.h
-	include/alibabacloud/cloudesl/model/DescribeEslDeviceRequest.h
-	include/alibabacloud/cloudesl/model/DescribeEslDeviceResult.h
+	include/alibabacloud/cloudesl/model/DescribeCompanyTemplateAttributeRequest.h
+	include/alibabacloud/cloudesl/model/DescribeCompanyTemplateAttributeResult.h
+	include/alibabacloud/cloudesl/model/DescribeCompanyTemplateVersionsRequest.h
+	include/alibabacloud/cloudesl/model/DescribeCompanyTemplateVersionsResult.h
+	include/alibabacloud/cloudesl/model/DescribeCompanyTemplateViewRequest.h
+	include/alibabacloud/cloudesl/model/DescribeCompanyTemplateViewResult.h
 	include/alibabacloud/cloudesl/model/DescribeEslDevicesRequest.h
 	include/alibabacloud/cloudesl/model/DescribeEslDevicesResult.h
+	include/alibabacloud/cloudesl/model/DescribeEslModelByTemplateVersionRequest.h
+	include/alibabacloud/cloudesl/model/DescribeEslModelByTemplateVersionResult.h
+	include/alibabacloud/cloudesl/model/DescribeEventReasonRequest.h
+	include/alibabacloud/cloudesl/model/DescribeEventReasonResult.h
+	include/alibabacloud/cloudesl/model/DescribeEventsRequest.h
+	include/alibabacloud/cloudesl/model/DescribeEventsResult.h
+	include/alibabacloud/cloudesl/model/DescribeItemMaterialsRequest.h
+	include/alibabacloud/cloudesl/model/DescribeItemMaterialsResult.h
 	include/alibabacloud/cloudesl/model/DescribeItemsRequest.h
 	include/alibabacloud/cloudesl/model/DescribeItemsResult.h
+	include/alibabacloud/cloudesl/model/DescribeMaterialsRequest.h
+	include/alibabacloud/cloudesl/model/DescribeMaterialsResult.h
+	include/alibabacloud/cloudesl/model/DescribeNotificationConfigRequest.h
+	include/alibabacloud/cloudesl/model/DescribeNotificationConfigResult.h
+	include/alibabacloud/cloudesl/model/DescribeStoreByTemplateVersionRequest.h
+	include/alibabacloud/cloudesl/model/DescribeStoreByTemplateVersionResult.h
 	include/alibabacloud/cloudesl/model/DescribeStoreConfigRequest.h
 	include/alibabacloud/cloudesl/model/DescribeStoreConfigResult.h
 	include/alibabacloud/cloudesl/model/DescribeStoresRequest.h
 	include/alibabacloud/cloudesl/model/DescribeStoresResult.h
+	include/alibabacloud/cloudesl/model/DescribeTemplateByModelRequest.h
+	include/alibabacloud/cloudesl/model/DescribeTemplateByModelResult.h
 	include/alibabacloud/cloudesl/model/DescribeUserLogRequest.h
 	include/alibabacloud/cloudesl/model/DescribeUserLogResult.h
 	include/alibabacloud/cloudesl/model/DescribeUsersRequest.h
 	include/alibabacloud/cloudesl/model/DescribeUsersResult.h
+	include/alibabacloud/cloudesl/model/ExportEslDevicesRequest.h
+	include/alibabacloud/cloudesl/model/ExportEslDevicesResult.h
+	include/alibabacloud/cloudesl/model/GetCompanyTemplatePictureRequest.h
+	include/alibabacloud/cloudesl/model/GetCompanyTemplatePictureResult.h
+	include/alibabacloud/cloudesl/model/GetCompanyTemplatePictureByJobRequest.h
+	include/alibabacloud/cloudesl/model/GetCompanyTemplatePictureByJobResult.h
+	include/alibabacloud/cloudesl/model/GetCompanyTemplatePictureNewRequest.h
+	include/alibabacloud/cloudesl/model/GetCompanyTemplatePictureNewResult.h
+	include/alibabacloud/cloudesl/model/GetItemMaterialRequest.h
+	include/alibabacloud/cloudesl/model/GetItemMaterialResult.h
 	include/alibabacloud/cloudesl/model/GetUserRequest.h
 	include/alibabacloud/cloudesl/model/GetUserResult.h
+	include/alibabacloud/cloudesl/model/SyncAddMaterialRequest.h
+	include/alibabacloud/cloudesl/model/SyncAddMaterialResult.h
 	include/alibabacloud/cloudesl/model/UnassignUserRequest.h
 	include/alibabacloud/cloudesl/model/UnassignUserResult.h
 	include/alibabacloud/cloudesl/model/UnbindEslDeviceRequest.h
 	include/alibabacloud/cloudesl/model/UnbindEslDeviceResult.h
 	include/alibabacloud/cloudesl/model/UpdateEslDeviceLightRequest.h
 	include/alibabacloud/cloudesl/model/UpdateEslDeviceLightResult.h
+	include/alibabacloud/cloudesl/model/UpdateItemMaterialRequest.h
+	include/alibabacloud/cloudesl/model/UpdateItemMaterialResult.h
+	include/alibabacloud/cloudesl/model/UpdateNotificationConfigRequest.h
+	include/alibabacloud/cloudesl/model/UpdateNotificationConfigResult.h
 	include/alibabacloud/cloudesl/model/UpdateStoreRequest.h
 	include/alibabacloud/cloudesl/model/UpdateStoreResult.h
 	include/alibabacloud/cloudesl/model/UpdateStoreConfigRequest.h
-	include/alibabacloud/cloudesl/model/UpdateStoreConfigResult.h )
+	include/alibabacloud/cloudesl/model/UpdateStoreConfigResult.h
+	include/alibabacloud/cloudesl/model/VerifyNotificationConfigRequest.h
+	include/alibabacloud/cloudesl/model/VerifyNotificationConfigResult.h )
 
 set(cloudesl_src 
 	src/CloudeslClient.cc
@@ -84,58 +136,110 @@ set(cloudesl_src
 	src/model/ActivateApDeviceResult.cc
 	src/model/AddApDeviceRequest.cc
 	src/model/AddApDeviceResult.cc
+	src/model/AddCompanyTemplateRequest.cc
+	src/model/AddCompanyTemplateResult.cc
+	src/model/AddMaterialRequest.cc
+	src/model/AddMaterialResult.cc
 	src/model/AddUserRequest.cc
 	src/model/AddUserResult.cc
+	src/model/ApplyCompanyTemplateVersionToStoresRequest.cc
+	src/model/ApplyCompanyTemplateVersionToStoresResult.cc
+	src/model/ApplyImageDitheringRequest.cc
+	src/model/ApplyImageDitheringResult.cc
 	src/model/AssignUserRequest.cc
 	src/model/AssignUserResult.cc
 	src/model/BatchInsertItemsRequest.cc
 	src/model/BatchInsertItemsResult.cc
+	src/model/BatchUpdateEventRequest.cc
+	src/model/BatchUpdateEventResult.cc
 	src/model/BindEslDeviceRequest.cc
 	src/model/BindEslDeviceResult.cc
-	src/model/ConfirmServerLocationRequest.cc
-	src/model/ConfirmServerLocationResult.cc
+	src/model/CheckServiceLinkedRoleForDeletingRequest.cc
+	src/model/CheckServiceLinkedRoleForDeletingResult.cc
 	src/model/CreateStoreRequest.cc
 	src/model/CreateStoreResult.cc
 	src/model/DeleteApDeviceRequest.cc
 	src/model/DeleteApDeviceResult.cc
+	src/model/DeleteCompanyTemplateRequest.cc
+	src/model/DeleteCompanyTemplateResult.cc
 	src/model/DeleteItemRequest.cc
 	src/model/DeleteItemResult.cc
+	src/model/DeleteMaterialRequest.cc
+	src/model/DeleteMaterialResult.cc
 	src/model/DeleteStoreRequest.cc
 	src/model/DeleteStoreResult.cc
 	src/model/DeleteUserRequest.cc
 	src/model/DeleteUserResult.cc
 	src/model/DescribeApDevicesRequest.cc
 	src/model/DescribeApDevicesResult.cc
+	src/model/DescribeAvailableEslModelsRequest.cc
+	src/model/DescribeAvailableEslModelsResult.cc
 	src/model/DescribeBindersRequest.cc
 	src/model/DescribeBindersResult.cc
-	src/model/DescribeClientPackageRequest.cc
-	src/model/DescribeClientPackageResult.cc
-	src/model/DescribeEslDeviceRequest.cc
-	src/model/DescribeEslDeviceResult.cc
+	src/model/DescribeCompanyTemplateAttributeRequest.cc
+	src/model/DescribeCompanyTemplateAttributeResult.cc
+	src/model/DescribeCompanyTemplateVersionsRequest.cc
+	src/model/DescribeCompanyTemplateVersionsResult.cc
+	src/model/DescribeCompanyTemplateViewRequest.cc
+	src/model/DescribeCompanyTemplateViewResult.cc
 	src/model/DescribeEslDevicesRequest.cc
 	src/model/DescribeEslDevicesResult.cc
+	src/model/DescribeEslModelByTemplateVersionRequest.cc
+	src/model/DescribeEslModelByTemplateVersionResult.cc
+	src/model/DescribeEventReasonRequest.cc
+	src/model/DescribeEventReasonResult.cc
+	src/model/DescribeEventsRequest.cc
+	src/model/DescribeEventsResult.cc
+	src/model/DescribeItemMaterialsRequest.cc
+	src/model/DescribeItemMaterialsResult.cc
 	src/model/DescribeItemsRequest.cc
 	src/model/DescribeItemsResult.cc
+	src/model/DescribeMaterialsRequest.cc
+	src/model/DescribeMaterialsResult.cc
+	src/model/DescribeNotificationConfigRequest.cc
+	src/model/DescribeNotificationConfigResult.cc
+	src/model/DescribeStoreByTemplateVersionRequest.cc
+	src/model/DescribeStoreByTemplateVersionResult.cc
 	src/model/DescribeStoreConfigRequest.cc
 	src/model/DescribeStoreConfigResult.cc
 	src/model/DescribeStoresRequest.cc
 	src/model/DescribeStoresResult.cc
+	src/model/DescribeTemplateByModelRequest.cc
+	src/model/DescribeTemplateByModelResult.cc
 	src/model/DescribeUserLogRequest.cc
 	src/model/DescribeUserLogResult.cc
 	src/model/DescribeUsersRequest.cc
 	src/model/DescribeUsersResult.cc
+	src/model/ExportEslDevicesRequest.cc
+	src/model/ExportEslDevicesResult.cc
+	src/model/GetCompanyTemplatePictureRequest.cc
+	src/model/GetCompanyTemplatePictureResult.cc
+	src/model/GetCompanyTemplatePictureByJobRequest.cc
+	src/model/GetCompanyTemplatePictureByJobResult.cc
+	src/model/GetCompanyTemplatePictureNewRequest.cc
+	src/model/GetCompanyTemplatePictureNewResult.cc
+	src/model/GetItemMaterialRequest.cc
+	src/model/GetItemMaterialResult.cc
 	src/model/GetUserRequest.cc
 	src/model/GetUserResult.cc
+	src/model/SyncAddMaterialRequest.cc
+	src/model/SyncAddMaterialResult.cc
 	src/model/UnassignUserRequest.cc
 	src/model/UnassignUserResult.cc
 	src/model/UnbindEslDeviceRequest.cc
 	src/model/UnbindEslDeviceResult.cc
 	src/model/UpdateEslDeviceLightRequest.cc
 	src/model/UpdateEslDeviceLightResult.cc
+	src/model/UpdateItemMaterialRequest.cc
+	src/model/UpdateItemMaterialResult.cc
+	src/model/UpdateNotificationConfigRequest.cc
+	src/model/UpdateNotificationConfigResult.cc
 	src/model/UpdateStoreRequest.cc
 	src/model/UpdateStoreResult.cc
 	src/model/UpdateStoreConfigRequest.cc
-	src/model/UpdateStoreConfigResult.cc )
+	src/model/UpdateStoreConfigResult.cc
+	src/model/VerifyNotificationConfigRequest.cc
+	src/model/VerifyNotificationConfigResult.cc )
 
 add_library(cloudesl ${LIB_TYPE}
 	${cloudesl_public_header}

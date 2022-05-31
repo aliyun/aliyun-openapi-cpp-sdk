@@ -34,15 +34,16 @@ namespace AlibabaCloud
 			public:
 				struct EslDeviceInfo
 				{
-					std::string eslBarCode;
 					std::string type;
+					std::string eslBarCode;
 					int eslSignal;
 					int batteryLevel;
 					std::string storeId;
+					std::string typeEncode;
 					std::string model;
 					int screenWidth;
-					std::string eslStatus;
 					int screenHeight;
+					std::string eslStatus;
 					std::string lastCommunicateTime;
 					std::string mac;
 				};
@@ -52,8 +53,8 @@ namespace AlibabaCloud
 				explicit DescribeEslDevicesResult(const std::string &payload);
 				~DescribeEslDevicesResult();
 				int getTotalCount()const;
-				int getPageSize()const;
 				std::string getMessage()const;
+				int getPageSize()const;
 				int getPageNumber()const;
 				std::vector<EslDeviceInfo> getEslDevices()const;
 				std::string getDynamicCode()const;
@@ -67,8 +68,8 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				int totalCount_;
-				int pageSize_;
 				std::string message_;
+				int pageSize_;
 				int pageNumber_;
 				std::vector<EslDeviceInfo> eslDevices_;
 				std::string dynamicCode_;

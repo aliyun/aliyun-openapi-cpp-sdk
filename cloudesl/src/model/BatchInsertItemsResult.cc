@@ -43,30 +43,30 @@ void BatchInsertItemsResult::parse(const std::string &payload)
 	for (auto valueBatchResultsBatchResult : allBatchResultsNode)
 	{
 		BatchResult batchResultsObject;
-		if(!valueBatchResultsBatchResult["Message"].isNull())
-			batchResultsObject.message = valueBatchResultsBatchResult["Message"].asString();
 		if(!valueBatchResultsBatchResult["Index"].isNull())
 			batchResultsObject.index = std::stoi(valueBatchResultsBatchResult["Index"].asString());
-		if(!valueBatchResultsBatchResult["ErrorCode"].isNull())
-			batchResultsObject.errorCode = valueBatchResultsBatchResult["ErrorCode"].asString();
+		if(!valueBatchResultsBatchResult["Message"].isNull())
+			batchResultsObject.message = valueBatchResultsBatchResult["Message"].asString();
 		if(!valueBatchResultsBatchResult["Success"].isNull())
 			batchResultsObject.success = valueBatchResultsBatchResult["Success"].asString() == "true";
+		if(!valueBatchResultsBatchResult["ErrorCode"].isNull())
+			batchResultsObject.errorCode = valueBatchResultsBatchResult["ErrorCode"].asString();
 		batchResults_.push_back(batchResultsObject);
 	}
 	if(!value["ErrorMessage"].isNull())
 		errorMessage_ = value["ErrorMessage"].asString();
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
-	if(!value["DynamicCode"].isNull())
-		dynamicCode_ = value["DynamicCode"].asString();
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
-	if(!value["DynamicMessage"].isNull())
-		dynamicMessage_ = value["DynamicMessage"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["DynamicMessage"].isNull())
+		dynamicMessage_ = value["DynamicMessage"].asString();
+	if(!value["DynamicCode"].isNull())
+		dynamicCode_ = value["DynamicCode"].asString();
 
 }
 

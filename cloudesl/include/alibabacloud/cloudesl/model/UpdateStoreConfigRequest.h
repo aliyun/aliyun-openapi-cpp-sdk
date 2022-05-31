@@ -39,6 +39,8 @@ namespace AlibabaCloud
 				void setExtraParams(const std::string& extraParams);
 				std::string getStoreId()const;
 				void setStoreId(const std::string& storeId);
+				std::string getSubscribeContents()const;
+				void setSubscribeContents(const std::string& subscribeContents);
 				bool getEnableNotification()const;
 				void setEnableNotification(bool enableNotification);
 				std::string getNotificationWebHook()const;
@@ -49,6 +51,7 @@ namespace AlibabaCloud
             private:
 				std::string extraParams_;
 				std::string storeId_;
+				std::string subscribeContents_;
 				bool enableNotification_;
 				std::string notificationWebHook_;
 				std::string notificationSilentTimes_;

@@ -34,8 +34,17 @@ namespace AlibabaCloud
 			public:
 				struct StoreConfigInfo
 				{
+					struct SubscribeContent
+					{
+						std::string category;
+						bool atAll;
+						bool enable;
+						std::string atMobileList;
+						std::string threshold;
+					};
 					std::string storeId;
 					bool enableNotification;
+					std::vector<SubscribeContent> subscribeContents;
 					std::string notificationSilentTimes;
 					std::string notificationWebHook;
 				};

@@ -47,6 +47,8 @@ namespace AlibabaCloud
 				void setEslBarCode(const std::string& eslBarCode);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
+				std::string getTypeEncode()const;
+				void setTypeEncode(const std::string& typeEncode);
 				std::string getEslStatus()const;
 				void setEslStatus(const std::string& eslStatus);
 				int getToBatteryLevel()const;
@@ -61,6 +63,7 @@ namespace AlibabaCloud
 				int pageNumber_;
 				std::string eslBarCode_;
 				int pageSize_;
+				std::string typeEncode_;
 				std::string eslStatus_;
 				int toBatteryLevel_;
 				int fromBatteryLevel_;

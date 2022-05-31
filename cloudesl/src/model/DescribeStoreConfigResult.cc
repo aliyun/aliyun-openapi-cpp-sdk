@@ -40,28 +40,44 @@ void DescribeStoreConfigResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto storeConfigInfoNode = value["StoreConfigInfo"];
+	if(!storeConfigInfoNode["StoreId"].isNull())
+		storeConfigInfo_.storeId = storeConfigInfoNode["StoreId"].asString();
 	if(!storeConfigInfoNode["EnableNotification"].isNull())
 		storeConfigInfo_.enableNotification = storeConfigInfoNode["EnableNotification"].asString() == "true";
 	if(!storeConfigInfoNode["NotificationWebHook"].isNull())
 		storeConfigInfo_.notificationWebHook = storeConfigInfoNode["NotificationWebHook"].asString();
 	if(!storeConfigInfoNode["NotificationSilentTimes"].isNull())
 		storeConfigInfo_.notificationSilentTimes = storeConfigInfoNode["NotificationSilentTimes"].asString();
-	if(!storeConfigInfoNode["StoreId"].isNull())
-		storeConfigInfo_.storeId = storeConfigInfoNode["StoreId"].asString();
+	auto allSubscribeContentsNode = storeConfigInfoNode["SubscribeContents"]["subscribeContent"];
+	for (auto storeConfigInfoNodeSubscribeContentssubscribeContent : allSubscribeContentsNode)
+	{
+		StoreConfigInfo::SubscribeContent subscribeContentObject;
+		if(!storeConfigInfoNodeSubscribeContentssubscribeContent["Category"].isNull())
+			subscribeContentObject.category = storeConfigInfoNodeSubscribeContentssubscribeContent["Category"].asString();
+		if(!storeConfigInfoNodeSubscribeContentssubscribeContent["Enable"].isNull())
+			subscribeContentObject.enable = storeConfigInfoNodeSubscribeContentssubscribeContent["Enable"].asString() == "true";
+		if(!storeConfigInfoNodeSubscribeContentssubscribeContent["Threshold"].isNull())
+			subscribeContentObject.threshold = storeConfigInfoNodeSubscribeContentssubscribeContent["Threshold"].asString();
+		if(!storeConfigInfoNodeSubscribeContentssubscribeContent["AtAll"].isNull())
+			subscribeContentObject.atAll = storeConfigInfoNodeSubscribeContentssubscribeContent["AtAll"].asString() == "true";
+		if(!storeConfigInfoNodeSubscribeContentssubscribeContent["AtMobileList"].isNull())
+			subscribeContentObject.atMobileList = storeConfigInfoNodeSubscribeContentssubscribeContent["AtMobileList"].asString();
+		storeConfigInfo_.subscribeContents.push_back(subscribeContentObject);
+	}
 	if(!value["ErrorMessage"].isNull())
 		errorMessage_ = value["ErrorMessage"].asString();
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
-	if(!value["DynamicCode"].isNull())
-		dynamicCode_ = value["DynamicCode"].asString();
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
-	if(!value["DynamicMessage"].isNull())
-		dynamicMessage_ = value["DynamicMessage"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["DynamicMessage"].isNull())
+		dynamicMessage_ = value["DynamicMessage"].asString();
+	if(!value["DynamicCode"].isNull())
+		dynamicCode_ = value["DynamicCode"].asString();
 
 }
 

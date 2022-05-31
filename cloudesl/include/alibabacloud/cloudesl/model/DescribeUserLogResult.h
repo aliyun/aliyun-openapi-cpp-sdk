@@ -35,18 +35,19 @@ namespace AlibabaCloud
 				struct UserLogInfo
 				{
 					std::string operationResponseTime;
-					std::string gmtModified;
 					std::string actionPrice;
+					std::string gmtModified;
 					std::string operationSendTime;
 					std::string itemBarCode;
 					std::string spendTime;
 					std::string itemId;
-					std::string gmtCreate;
 					std::string eslBarCode;
+					std::string gmtCreate;
 					int eslSignal;
 					std::string priceUnit;
 					std::string itemShortTitle;
 					std::string storeId;
+					std::string i18nResultKey;
 					std::string userId;
 					std::string operationStatus;
 					std::string operationType;

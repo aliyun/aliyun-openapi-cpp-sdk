@@ -43,50 +43,52 @@ void DescribeEslDevicesResult::parse(const std::string &payload)
 	for (auto valueEslDevicesEslDeviceInfo : allEslDevicesNode)
 	{
 		EslDeviceInfo eslDevicesObject;
-		if(!valueEslDevicesEslDeviceInfo["LastCommunicateTime"].isNull())
-			eslDevicesObject.lastCommunicateTime = valueEslDevicesEslDeviceInfo["LastCommunicateTime"].asString();
-		if(!valueEslDevicesEslDeviceInfo["Model"].isNull())
-			eslDevicesObject.model = valueEslDevicesEslDeviceInfo["Model"].asString();
-		if(!valueEslDevicesEslDeviceInfo["EslStatus"].isNull())
-			eslDevicesObject.eslStatus = valueEslDevicesEslDeviceInfo["EslStatus"].asString();
+		if(!valueEslDevicesEslDeviceInfo["Type"].isNull())
+			eslDevicesObject.type = valueEslDevicesEslDeviceInfo["Type"].asString();
 		if(!valueEslDevicesEslDeviceInfo["StoreId"].isNull())
 			eslDevicesObject.storeId = valueEslDevicesEslDeviceInfo["StoreId"].asString();
 		if(!valueEslDevicesEslDeviceInfo["EslBarCode"].isNull())
 			eslDevicesObject.eslBarCode = valueEslDevicesEslDeviceInfo["EslBarCode"].asString();
-		if(!valueEslDevicesEslDeviceInfo["Type"].isNull())
-			eslDevicesObject.type = valueEslDevicesEslDeviceInfo["Type"].asString();
-		if(!valueEslDevicesEslDeviceInfo["Mac"].isNull())
-			eslDevicesObject.mac = valueEslDevicesEslDeviceInfo["Mac"].asString();
-		if(!valueEslDevicesEslDeviceInfo["BatteryLevel"].isNull())
-			eslDevicesObject.batteryLevel = std::stoi(valueEslDevicesEslDeviceInfo["BatteryLevel"].asString());
-		if(!valueEslDevicesEslDeviceInfo["ScreenWidth"].isNull())
-			eslDevicesObject.screenWidth = std::stoi(valueEslDevicesEslDeviceInfo["ScreenWidth"].asString());
+		if(!valueEslDevicesEslDeviceInfo["Model"].isNull())
+			eslDevicesObject.model = valueEslDevicesEslDeviceInfo["Model"].asString();
+		if(!valueEslDevicesEslDeviceInfo["LastCommunicateTime"].isNull())
+			eslDevicesObject.lastCommunicateTime = valueEslDevicesEslDeviceInfo["LastCommunicateTime"].asString();
 		if(!valueEslDevicesEslDeviceInfo["ScreenHeight"].isNull())
 			eslDevicesObject.screenHeight = std::stoi(valueEslDevicesEslDeviceInfo["ScreenHeight"].asString());
+		if(!valueEslDevicesEslDeviceInfo["ScreenWidth"].isNull())
+			eslDevicesObject.screenWidth = std::stoi(valueEslDevicesEslDeviceInfo["ScreenWidth"].asString());
 		if(!valueEslDevicesEslDeviceInfo["EslSignal"].isNull())
 			eslDevicesObject.eslSignal = std::stoi(valueEslDevicesEslDeviceInfo["EslSignal"].asString());
+		if(!valueEslDevicesEslDeviceInfo["BatteryLevel"].isNull())
+			eslDevicesObject.batteryLevel = std::stoi(valueEslDevicesEslDeviceInfo["BatteryLevel"].asString());
+		if(!valueEslDevicesEslDeviceInfo["EslStatus"].isNull())
+			eslDevicesObject.eslStatus = valueEslDevicesEslDeviceInfo["EslStatus"].asString();
+		if(!valueEslDevicesEslDeviceInfo["Mac"].isNull())
+			eslDevicesObject.mac = valueEslDevicesEslDeviceInfo["Mac"].asString();
+		if(!valueEslDevicesEslDeviceInfo["TypeEncode"].isNull())
+			eslDevicesObject.typeEncode = valueEslDevicesEslDeviceInfo["TypeEncode"].asString();
 		eslDevices_.push_back(eslDevicesObject);
 	}
 	if(!value["ErrorMessage"].isNull())
 		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = value["ErrorCode"].asString();
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["DynamicMessage"].isNull())
+		dynamicMessage_ = value["DynamicMessage"].asString();
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
 	if(!value["DynamicCode"].isNull())
 		dynamicCode_ = value["DynamicCode"].asString();
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
-	if(!value["DynamicMessage"].isNull())
-		dynamicMessage_ = value["DynamicMessage"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 
 }
 
@@ -95,14 +97,14 @@ int DescribeEslDevicesResult::getTotalCount()const
 	return totalCount_;
 }
 
-int DescribeEslDevicesResult::getPageSize()const
-{
-	return pageSize_;
-}
-
 std::string DescribeEslDevicesResult::getMessage()const
 {
 	return message_;
+}
+
+int DescribeEslDevicesResult::getPageSize()const
+{
+	return pageSize_;
 }
 
 int DescribeEslDevicesResult::getPageNumber()const

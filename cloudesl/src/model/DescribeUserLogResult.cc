@@ -43,66 +43,68 @@ void DescribeUserLogResult::parse(const std::string &payload)
 	for (auto valueUserLogsUserLogInfo : allUserLogsNode)
 	{
 		UserLogInfo userLogsObject;
-		if(!valueUserLogsUserLogInfo["ResultCode"].isNull())
-			userLogsObject.resultCode = valueUserLogsUserLogInfo["ResultCode"].asString();
+		if(!valueUserLogsUserLogInfo["EslBarCode"].isNull())
+			userLogsObject.eslBarCode = valueUserLogsUserLogInfo["EslBarCode"].asString();
 		if(!valueUserLogsUserLogInfo["OperationSendTime"].isNull())
 			userLogsObject.operationSendTime = valueUserLogsUserLogInfo["OperationSendTime"].asString();
-		if(!valueUserLogsUserLogInfo["GmtCreate"].isNull())
-			userLogsObject.gmtCreate = valueUserLogsUserLogInfo["GmtCreate"].asString();
-		if(!valueUserLogsUserLogInfo["StoreId"].isNull())
-			userLogsObject.storeId = valueUserLogsUserLogInfo["StoreId"].asString();
-		if(!valueUserLogsUserLogInfo["GmtModified"].isNull())
-			userLogsObject.gmtModified = valueUserLogsUserLogInfo["GmtModified"].asString();
 		if(!valueUserLogsUserLogInfo["ActionPrice"].isNull())
 			userLogsObject.actionPrice = valueUserLogsUserLogInfo["ActionPrice"].asString();
-		if(!valueUserLogsUserLogInfo["OperationStatus"].isNull())
-			userLogsObject.operationStatus = valueUserLogsUserLogInfo["OperationStatus"].asString();
+		if(!valueUserLogsUserLogInfo["UserId"].isNull())
+			userLogsObject.userId = valueUserLogsUserLogInfo["UserId"].asString();
 		if(!valueUserLogsUserLogInfo["PriceUnit"].isNull())
 			userLogsObject.priceUnit = valueUserLogsUserLogInfo["PriceUnit"].asString();
-		if(!valueUserLogsUserLogInfo["LogId"].isNull())
-			userLogsObject.logId = valueUserLogsUserLogInfo["LogId"].asString();
-		if(!valueUserLogsUserLogInfo["ItemShortTitle"].isNull())
-			userLogsObject.itemShortTitle = valueUserLogsUserLogInfo["ItemShortTitle"].asString();
+		if(!valueUserLogsUserLogInfo["ResultCode"].isNull())
+			userLogsObject.resultCode = valueUserLogsUserLogInfo["ResultCode"].asString();
+		if(!valueUserLogsUserLogInfo["ItemId"].isNull())
+			userLogsObject.itemId = valueUserLogsUserLogInfo["ItemId"].asString();
+		if(!valueUserLogsUserLogInfo["GmtModified"].isNull())
+			userLogsObject.gmtModified = valueUserLogsUserLogInfo["GmtModified"].asString();
 		if(!valueUserLogsUserLogInfo["OperationType"].isNull())
 			userLogsObject.operationType = valueUserLogsUserLogInfo["OperationType"].asString();
 		if(!valueUserLogsUserLogInfo["OperationResponseTime"].isNull())
 			userLogsObject.operationResponseTime = valueUserLogsUserLogInfo["OperationResponseTime"].asString();
-		if(!valueUserLogsUserLogInfo["SpendTime"].isNull())
-			userLogsObject.spendTime = valueUserLogsUserLogInfo["SpendTime"].asString();
-		if(!valueUserLogsUserLogInfo["EslBarCode"].isNull())
-			userLogsObject.eslBarCode = valueUserLogsUserLogInfo["EslBarCode"].asString();
-		if(!valueUserLogsUserLogInfo["ItemId"].isNull())
-			userLogsObject.itemId = valueUserLogsUserLogInfo["ItemId"].asString();
-		if(!valueUserLogsUserLogInfo["ItemBarCode"].isNull())
-			userLogsObject.itemBarCode = valueUserLogsUserLogInfo["ItemBarCode"].asString();
+		if(!valueUserLogsUserLogInfo["OperationStatus"].isNull())
+			userLogsObject.operationStatus = valueUserLogsUserLogInfo["OperationStatus"].asString();
+		if(!valueUserLogsUserLogInfo["StoreId"].isNull())
+			userLogsObject.storeId = valueUserLogsUserLogInfo["StoreId"].asString();
+		if(!valueUserLogsUserLogInfo["ItemShortTitle"].isNull())
+			userLogsObject.itemShortTitle = valueUserLogsUserLogInfo["ItemShortTitle"].asString();
+		if(!valueUserLogsUserLogInfo["LogId"].isNull())
+			userLogsObject.logId = valueUserLogsUserLogInfo["LogId"].asString();
 		if(!valueUserLogsUserLogInfo["BePromotion"].isNull())
 			userLogsObject.bePromotion = valueUserLogsUserLogInfo["BePromotion"].asString() == "true";
-		if(!valueUserLogsUserLogInfo["UserId"].isNull())
-			userLogsObject.userId = valueUserLogsUserLogInfo["UserId"].asString();
+		if(!valueUserLogsUserLogInfo["GmtCreate"].isNull())
+			userLogsObject.gmtCreate = valueUserLogsUserLogInfo["GmtCreate"].asString();
 		if(!valueUserLogsUserLogInfo["EslSignal"].isNull())
 			userLogsObject.eslSignal = std::stoi(valueUserLogsUserLogInfo["EslSignal"].asString());
+		if(!valueUserLogsUserLogInfo["SpendTime"].isNull())
+			userLogsObject.spendTime = valueUserLogsUserLogInfo["SpendTime"].asString();
+		if(!valueUserLogsUserLogInfo["ItemBarCode"].isNull())
+			userLogsObject.itemBarCode = valueUserLogsUserLogInfo["ItemBarCode"].asString();
+		if(!valueUserLogsUserLogInfo["I18nResultKey"].isNull())
+			userLogsObject.i18nResultKey = valueUserLogsUserLogInfo["I18nResultKey"].asString();
 		userLogs_.push_back(userLogsObject);
 	}
 	if(!value["ErrorMessage"].isNull())
 		errorMessage_ = value["ErrorMessage"].asString();
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
-	if(!value["DynamicCode"].isNull())
-		dynamicCode_ = value["DynamicCode"].asString();
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
-	if(!value["DynamicMessage"].isNull())
-		dynamicMessage_ = value["DynamicMessage"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["DynamicMessage"].isNull())
+		dynamicMessage_ = value["DynamicMessage"].asString();
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["DynamicCode"].isNull())
+		dynamicCode_ = value["DynamicCode"].asString();
 
 }
 
