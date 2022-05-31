@@ -84,6 +84,8 @@ void ListAggregateConfigRuleEvaluationResultsResult::parse(const std::string &pa
 			evaluationResultObject.evaluationResultIdentifier.evaluationResultQualifier.regionId = evaluationResultQualifierNode["RegionId"].asString();
 		if(!evaluationResultQualifierNode["CompliancePackId"].isNull())
 			evaluationResultObject.evaluationResultIdentifier.evaluationResultQualifier.compliancePackId = evaluationResultQualifierNode["CompliancePackId"].asString();
+		if(!evaluationResultQualifierNode["IgnoreDate"].isNull())
+			evaluationResultObject.evaluationResultIdentifier.evaluationResultQualifier.ignoreDate = evaluationResultQualifierNode["IgnoreDate"].asString();
 		evaluationResults_.evaluationResultList.push_back(evaluationResultObject);
 	}
 

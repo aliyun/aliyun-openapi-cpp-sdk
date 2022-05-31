@@ -67,6 +67,8 @@ void ListAggregateRemediationsResult::parse(const std::string &payload)
 			remediationsObject.configRuleId = valueRemediationsRemediation["ConfigRuleId"].asString();
 		if(!valueRemediationsRemediation["LastSuccessfulInvocationTime"].isNull())
 			remediationsObject.lastSuccessfulInvocationTime = std::stol(valueRemediationsRemediation["LastSuccessfulInvocationTime"].asString());
+		if(!valueRemediationsRemediation["RemediaitonOriginParams"].isNull())
+			remediationsObject.remediaitonOriginParams = valueRemediationsRemediation["RemediaitonOriginParams"].asString();
 		remediations_.push_back(remediationsObject);
 	}
 

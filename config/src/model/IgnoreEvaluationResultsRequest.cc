@@ -43,6 +43,15 @@ void IgnoreEvaluationResultsRequest::setReason(const std::string &reason) {
   setBodyParameter(std::string("Reason"), reason);
 }
 
+std::string IgnoreEvaluationResultsRequest::getIgnoreDate() const {
+  return ignoreDate_;
+}
+
+void IgnoreEvaluationResultsRequest::setIgnoreDate(const std::string &ignoreDate) {
+  ignoreDate_ = ignoreDate;
+  setBodyParameter(std::string("IgnoreDate"), ignoreDate);
+}
+
 std::vector<IgnoreEvaluationResultsRequest::Resources> IgnoreEvaluationResultsRequest::getResources() const {
   return resources_;
 }

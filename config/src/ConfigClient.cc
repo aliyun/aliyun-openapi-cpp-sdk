@@ -195,6 +195,42 @@ ConfigClient::CreateAggregateCompliancePackOutcomeCallable ConfigClient::createA
 	return task->get_future();
 }
 
+ConfigClient::CreateAggregateConfigDeliveryChannelOutcome ConfigClient::createAggregateConfigDeliveryChannel(const CreateAggregateConfigDeliveryChannelRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateAggregateConfigDeliveryChannelOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateAggregateConfigDeliveryChannelOutcome(CreateAggregateConfigDeliveryChannelResult(outcome.result()));
+	else
+		return CreateAggregateConfigDeliveryChannelOutcome(outcome.error());
+}
+
+void ConfigClient::createAggregateConfigDeliveryChannelAsync(const CreateAggregateConfigDeliveryChannelRequest& request, const CreateAggregateConfigDeliveryChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createAggregateConfigDeliveryChannel(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ConfigClient::CreateAggregateConfigDeliveryChannelOutcomeCallable ConfigClient::createAggregateConfigDeliveryChannelCallable(const CreateAggregateConfigDeliveryChannelRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateAggregateConfigDeliveryChannelOutcome()>>(
+			[this, request]()
+			{
+			return this->createAggregateConfigDeliveryChannel(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ConfigClient::CreateAggregateConfigRuleOutcome ConfigClient::createAggregateConfigRule(const CreateAggregateConfigRuleRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -333,6 +369,42 @@ ConfigClient::CreateCompliancePackOutcomeCallable ConfigClient::createCompliance
 			[this, request]()
 			{
 			return this->createCompliancePack(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ConfigClient::CreateConfigDeliveryChannelOutcome ConfigClient::createConfigDeliveryChannel(const CreateConfigDeliveryChannelRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateConfigDeliveryChannelOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateConfigDeliveryChannelOutcome(CreateConfigDeliveryChannelResult(outcome.result()));
+	else
+		return CreateConfigDeliveryChannelOutcome(outcome.error());
+}
+
+void ConfigClient::createConfigDeliveryChannelAsync(const CreateConfigDeliveryChannelRequest& request, const CreateConfigDeliveryChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createConfigDeliveryChannel(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ConfigClient::CreateConfigDeliveryChannelOutcomeCallable ConfigClient::createConfigDeliveryChannelCallable(const CreateConfigDeliveryChannelRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateConfigDeliveryChannelOutcome()>>(
+			[this, request]()
+			{
+			return this->createConfigDeliveryChannel(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1023,6 +1095,42 @@ ConfigClient::GetAggregateCompliancePackReportOutcomeCallable ConfigClient::getA
 	return task->get_future();
 }
 
+ConfigClient::GetAggregateConfigDeliveryChannelOutcome ConfigClient::getAggregateConfigDeliveryChannel(const GetAggregateConfigDeliveryChannelRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetAggregateConfigDeliveryChannelOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetAggregateConfigDeliveryChannelOutcome(GetAggregateConfigDeliveryChannelResult(outcome.result()));
+	else
+		return GetAggregateConfigDeliveryChannelOutcome(outcome.error());
+}
+
+void ConfigClient::getAggregateConfigDeliveryChannelAsync(const GetAggregateConfigDeliveryChannelRequest& request, const GetAggregateConfigDeliveryChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getAggregateConfigDeliveryChannel(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ConfigClient::GetAggregateConfigDeliveryChannelOutcomeCallable ConfigClient::getAggregateConfigDeliveryChannelCallable(const GetAggregateConfigDeliveryChannelRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetAggregateConfigDeliveryChannelOutcome()>>(
+			[this, request]()
+			{
+			return this->getAggregateConfigDeliveryChannel(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ConfigClient::GetAggregateConfigRuleOutcome ConfigClient::getAggregateConfigRule(const GetAggregateConfigRuleRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1593,6 +1701,42 @@ ConfigClient::GetCompliancePackReportOutcomeCallable ConfigClient::getCompliance
 			[this, request]()
 			{
 			return this->getCompliancePackReport(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ConfigClient::GetConfigDeliveryChannelOutcome ConfigClient::getConfigDeliveryChannel(const GetConfigDeliveryChannelRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetConfigDeliveryChannelOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetConfigDeliveryChannelOutcome(GetConfigDeliveryChannelResult(outcome.result()));
+	else
+		return GetConfigDeliveryChannelOutcome(outcome.error());
+}
+
+void ConfigClient::getConfigDeliveryChannelAsync(const GetConfigDeliveryChannelRequest& request, const GetConfigDeliveryChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getConfigDeliveryChannel(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ConfigClient::GetConfigDeliveryChannelOutcomeCallable ConfigClient::getConfigDeliveryChannelCallable(const GetConfigDeliveryChannelRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetConfigDeliveryChannelOutcome()>>(
+			[this, request]()
+			{
+			return this->getConfigDeliveryChannel(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2211,6 +2355,42 @@ ConfigClient::ListAggregateCompliancePacksOutcomeCallable ConfigClient::listAggr
 	return task->get_future();
 }
 
+ConfigClient::ListAggregateConfigDeliveryChannelsOutcome ConfigClient::listAggregateConfigDeliveryChannels(const ListAggregateConfigDeliveryChannelsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListAggregateConfigDeliveryChannelsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListAggregateConfigDeliveryChannelsOutcome(ListAggregateConfigDeliveryChannelsResult(outcome.result()));
+	else
+		return ListAggregateConfigDeliveryChannelsOutcome(outcome.error());
+}
+
+void ConfigClient::listAggregateConfigDeliveryChannelsAsync(const ListAggregateConfigDeliveryChannelsRequest& request, const ListAggregateConfigDeliveryChannelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listAggregateConfigDeliveryChannels(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ConfigClient::ListAggregateConfigDeliveryChannelsOutcomeCallable ConfigClient::listAggregateConfigDeliveryChannelsCallable(const ListAggregateConfigDeliveryChannelsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListAggregateConfigDeliveryChannelsOutcome()>>(
+			[this, request]()
+			{
+			return this->listAggregateConfigDeliveryChannels(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ConfigClient::ListAggregateConfigRuleEvaluationResultsOutcome ConfigClient::listAggregateConfigRuleEvaluationResults(const ListAggregateConfigRuleEvaluationResultsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2499,6 +2679,42 @@ ConfigClient::ListCompliancePacksOutcomeCallable ConfigClient::listCompliancePac
 	return task->get_future();
 }
 
+ConfigClient::ListConfigDeliveryChannelsOutcome ConfigClient::listConfigDeliveryChannels(const ListConfigDeliveryChannelsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListConfigDeliveryChannelsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListConfigDeliveryChannelsOutcome(ListConfigDeliveryChannelsResult(outcome.result()));
+	else
+		return ListConfigDeliveryChannelsOutcome(outcome.error());
+}
+
+void ConfigClient::listConfigDeliveryChannelsAsync(const ListConfigDeliveryChannelsRequest& request, const ListConfigDeliveryChannelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listConfigDeliveryChannels(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ConfigClient::ListConfigDeliveryChannelsOutcomeCallable ConfigClient::listConfigDeliveryChannelsCallable(const ListConfigDeliveryChannelsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListConfigDeliveryChannelsOutcome()>>(
+			[this, request]()
+			{
+			return this->listConfigDeliveryChannels(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ConfigClient::ListConfigRuleEvaluationResultsOutcome ConfigClient::listConfigRuleEvaluationResults(const ListConfigRuleEvaluationResultsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2715,6 +2931,42 @@ ConfigClient::ListResourceEvaluationResultsOutcomeCallable ConfigClient::listRes
 	return task->get_future();
 }
 
+ConfigClient::ListTagResourcesOutcome ConfigClient::listTagResources(const ListTagResourcesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListTagResourcesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListTagResourcesOutcome(ListTagResourcesResult(outcome.result()));
+	else
+		return ListTagResourcesOutcome(outcome.error());
+}
+
+void ConfigClient::listTagResourcesAsync(const ListTagResourcesRequest& request, const ListTagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listTagResources(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ConfigClient::ListTagResourcesOutcomeCallable ConfigClient::listTagResourcesCallable(const ListTagResourcesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListTagResourcesOutcome()>>(
+			[this, request]()
+			{
+			return this->listTagResources(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ConfigClient::RevertAggregateEvaluationResultsOutcome ConfigClient::revertAggregateEvaluationResults(const RevertAggregateEvaluationResultsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2895,6 +3147,78 @@ ConfigClient::StartRemediationOutcomeCallable ConfigClient::startRemediationCall
 	return task->get_future();
 }
 
+ConfigClient::TagResourcesOutcome ConfigClient::tagResources(const TagResourcesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return TagResourcesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return TagResourcesOutcome(TagResourcesResult(outcome.result()));
+	else
+		return TagResourcesOutcome(outcome.error());
+}
+
+void ConfigClient::tagResourcesAsync(const TagResourcesRequest& request, const TagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, tagResources(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ConfigClient::TagResourcesOutcomeCallable ConfigClient::tagResourcesCallable(const TagResourcesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<TagResourcesOutcome()>>(
+			[this, request]()
+			{
+			return this->tagResources(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ConfigClient::UntagResourcesOutcome ConfigClient::untagResources(const UntagResourcesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UntagResourcesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UntagResourcesOutcome(UntagResourcesResult(outcome.result()));
+	else
+		return UntagResourcesOutcome(outcome.error());
+}
+
+void ConfigClient::untagResourcesAsync(const UntagResourcesRequest& request, const UntagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, untagResources(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ConfigClient::UntagResourcesOutcomeCallable ConfigClient::untagResourcesCallable(const UntagResourcesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UntagResourcesOutcome()>>(
+			[this, request]()
+			{
+			return this->untagResources(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ConfigClient::UpdateAggregateCompliancePackOutcome ConfigClient::updateAggregateCompliancePack(const UpdateAggregateCompliancePackRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2925,6 +3249,42 @@ ConfigClient::UpdateAggregateCompliancePackOutcomeCallable ConfigClient::updateA
 			[this, request]()
 			{
 			return this->updateAggregateCompliancePack(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ConfigClient::UpdateAggregateConfigDeliveryChannelOutcome ConfigClient::updateAggregateConfigDeliveryChannel(const UpdateAggregateConfigDeliveryChannelRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateAggregateConfigDeliveryChannelOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateAggregateConfigDeliveryChannelOutcome(UpdateAggregateConfigDeliveryChannelResult(outcome.result()));
+	else
+		return UpdateAggregateConfigDeliveryChannelOutcome(outcome.error());
+}
+
+void ConfigClient::updateAggregateConfigDeliveryChannelAsync(const UpdateAggregateConfigDeliveryChannelRequest& request, const UpdateAggregateConfigDeliveryChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateAggregateConfigDeliveryChannel(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ConfigClient::UpdateAggregateConfigDeliveryChannelOutcomeCallable ConfigClient::updateAggregateConfigDeliveryChannelCallable(const UpdateAggregateConfigDeliveryChannelRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateAggregateConfigDeliveryChannelOutcome()>>(
+			[this, request]()
+			{
+			return this->updateAggregateConfigDeliveryChannel(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3069,6 +3429,42 @@ ConfigClient::UpdateCompliancePackOutcomeCallable ConfigClient::updateCompliance
 			[this, request]()
 			{
 			return this->updateCompliancePack(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ConfigClient::UpdateConfigDeliveryChannelOutcome ConfigClient::updateConfigDeliveryChannel(const UpdateConfigDeliveryChannelRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateConfigDeliveryChannelOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateConfigDeliveryChannelOutcome(UpdateConfigDeliveryChannelResult(outcome.result()));
+	else
+		return UpdateConfigDeliveryChannelOutcome(outcome.error());
+}
+
+void ConfigClient::updateConfigDeliveryChannelAsync(const UpdateConfigDeliveryChannelRequest& request, const UpdateConfigDeliveryChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateConfigDeliveryChannel(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ConfigClient::UpdateConfigDeliveryChannelOutcomeCallable ConfigClient::updateConfigDeliveryChannelCallable(const UpdateConfigDeliveryChannelRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateConfigDeliveryChannelOutcome()>>(
+			[this, request]()
+			{
+			return this->updateConfigDeliveryChannel(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

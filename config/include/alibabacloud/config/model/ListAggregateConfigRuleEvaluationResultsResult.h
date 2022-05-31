@@ -45,6 +45,7 @@ namespace AlibabaCloud
 								std::string configRuleArn;
 								std::string resourceId;
 								std::string resourceName;
+								std::string ignoreDate;
 								std::string configRuleName;
 								std::string resourceType;
 								std::string regionId;

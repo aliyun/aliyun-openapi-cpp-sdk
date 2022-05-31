@@ -34,16 +34,17 @@ namespace AlibabaCloud
 			public:
 				struct Remediation
 				{
-					std::string lastSuccessfulInvocationType;
-					std::string configRuleId;
 					std::string remediationTemplateId;
 					long accountId;
 					std::string remediationSourceType;
+					std::string remediaitonOriginParams;
 					long lastSuccessfulInvocationTime;
-					std::string invokeType;
 					std::string remediationId;
-					std::string lastSuccessfulInvocationId;
 					std::string remediationDynamicParams;
+					std::string lastSuccessfulInvocationType;
+					std::string configRuleId;
+					std::string invokeType;
+					std::string lastSuccessfulInvocationId;
 					std::string remediationType;
 					std::string aggregatorId;
 				};

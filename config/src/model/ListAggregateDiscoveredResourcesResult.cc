@@ -44,8 +44,8 @@ void ListAggregateDiscoveredResourcesResult::parse(const std::string &payload)
 		discoveredResourceProfiles_.nextToken = discoveredResourceProfilesNode["NextToken"].asString();
 	if(!discoveredResourceProfilesNode["MaxResults"].isNull())
 		discoveredResourceProfiles_.maxResults = std::stoi(discoveredResourceProfilesNode["MaxResults"].asString());
-	if(!discoveredResourceProfilesNode["PreviousToken"].isNull())
-		discoveredResourceProfiles_.previousToken = discoveredResourceProfilesNode["PreviousToken"].asString();
+	if(!discoveredResourceProfilesNode["TotalCount"].isNull())
+		discoveredResourceProfiles_.totalCount = std::stoi(discoveredResourceProfilesNode["TotalCount"].asString());
 	auto allDiscoveredResourceProfileListNode = discoveredResourceProfilesNode["DiscoveredResourceProfileList"]["DiscoveredResourceProfile"];
 	for (auto discoveredResourceProfilesNodeDiscoveredResourceProfileListDiscoveredResourceProfile : allDiscoveredResourceProfileListNode)
 	{

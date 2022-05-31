@@ -40,12 +40,15 @@ public:
 	void setConfigRuleId(const std::string &configRuleId);
 	std::string getReason() const;
 	void setReason(const std::string &reason);
+	std::string getIgnoreDate() const;
+	void setIgnoreDate(const std::string &ignoreDate);
 	std::vector<Resources> getResources() const;
 	void setResources(const std::vector<Resources> &resources);
 
 private:
 	std::string configRuleId_;
 	std::string reason_;
+	std::string ignoreDate_;
 	std::vector<Resources> resources_;
 };
 } // namespace Model

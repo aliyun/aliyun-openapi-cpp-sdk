@@ -47,7 +47,7 @@ namespace AlibabaCloud
 						std::string tags;
 						int resourceDeleted;
 					};
-					std::string previousToken;
+					int totalCount;
 					std::string nextToken;
 					int maxResults;
 					std::vector<DiscoveredResourceProfile> discoveredResourceProfileList;

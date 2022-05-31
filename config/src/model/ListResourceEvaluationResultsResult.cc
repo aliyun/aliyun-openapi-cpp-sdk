@@ -80,6 +80,8 @@ void ListResourceEvaluationResultsResult::parse(const std::string &payload)
 			evaluationResultObject.evaluationResultIdentifier.evaluationResultQualifier.resourceName = evaluationResultQualifierNode["ResourceName"].asString();
 		if(!evaluationResultQualifierNode["RegionId"].isNull())
 			evaluationResultObject.evaluationResultIdentifier.evaluationResultQualifier.regionId = evaluationResultQualifierNode["RegionId"].asString();
+		if(!evaluationResultQualifierNode["IgnoreDate"].isNull())
+			evaluationResultObject.evaluationResultIdentifier.evaluationResultQualifier.ignoreDate = evaluationResultQualifierNode["IgnoreDate"].asString();
 		evaluationResults_.evaluationResultList.push_back(evaluationResultObject);
 	}
 

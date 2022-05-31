@@ -44,9 +44,9 @@ namespace AlibabaCloud
 						std::string messageType;
 						std::string maximumExecutionFrequency;
 					};
-					std::vector<std::string> optionalInputParameterDetails;
+					std::string optionalInputParameterDetails;
 					std::string description;
-					std::vector<std::string> compulsoryInputParameterDetails;
+					std::string compulsoryInputParameterDetails;
 					std::string helpHint;
 					std::vector<std::string> labels;
 					std::string helpUrls;

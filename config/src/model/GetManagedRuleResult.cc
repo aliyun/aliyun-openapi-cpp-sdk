@@ -46,8 +46,12 @@ void GetManagedRuleResult::parse(const std::string &payload)
 		managedRule_.helpHint = managedRuleNode["HelpHint"].asString();
 	if(!managedRuleNode["DefaultName"].isNull())
 		managedRule_.defaultName = managedRuleNode["DefaultName"].asString();
+	if(!managedRuleNode["OptionalInputParameterDetails"].isNull())
+		managedRule_.optionalInputParameterDetails = managedRuleNode["OptionalInputParameterDetails"].asString();
 	if(!managedRuleNode["Identifier"].isNull())
 		managedRule_.identifier = managedRuleNode["Identifier"].asString();
+	if(!managedRuleNode["CompulsoryInputParameterDetails"].isNull())
+		managedRule_.compulsoryInputParameterDetails = managedRuleNode["CompulsoryInputParameterDetails"].asString();
 	if(!managedRuleNode["RegionId"].isNull())
 		managedRule_.regionId = managedRuleNode["RegionId"].asString();
 	if(!managedRuleNode["Description"].isNull())
@@ -86,12 +90,6 @@ void GetManagedRuleResult::parse(const std::string &payload)
 		auto allSourceConditions = managedRuleNode["SourceConditions"]["SourceConditions"];
 		for (auto value : allSourceConditions)
 			managedRule_.sourceConditions.push_back(value.asString());
-		auto allOptionalInputParameterDetails = managedRuleNode["OptionalInputParameterDetails"]["OptionalInputParameterDetails"];
-		for (auto value : allOptionalInputParameterDetails)
-			managedRule_.optionalInputParameterDetails.push_back(value.asString());
-		auto allCompulsoryInputParameterDetails = managedRuleNode["CompulsoryInputParameterDetails"]["CompulsoryInputParameterDetails"];
-		for (auto value : allCompulsoryInputParameterDetails)
-			managedRule_.compulsoryInputParameterDetails.push_back(value.asString());
 
 }
 
