@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,100 +18,82 @@
 
 using AlibabaCloud::Adb::Model::UnbindDBResourcePoolWithUserRequest;
 
-UnbindDBResourcePoolWithUserRequest::UnbindDBResourcePoolWithUserRequest() :
-	RpcServiceRequest("adb", "2019-03-15", "UnbindDBResourcePoolWithUser")
-{
-	setMethod(HttpRequest::Method::Post);
+UnbindDBResourcePoolWithUserRequest::UnbindDBResourcePoolWithUserRequest()
+    : RpcServiceRequest("adb", "2019-03-15", "UnbindDBResourcePoolWithUser") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-UnbindDBResourcePoolWithUserRequest::~UnbindDBResourcePoolWithUserRequest()
-{}
+UnbindDBResourcePoolWithUserRequest::~UnbindDBResourcePoolWithUserRequest() {}
 
-std::string UnbindDBResourcePoolWithUserRequest::getPoolName()const
-{
-	return poolName_;
+std::string UnbindDBResourcePoolWithUserRequest::getPoolName() const {
+  return poolName_;
 }
 
-void UnbindDBResourcePoolWithUserRequest::setPoolName(const std::string& poolName)
-{
-	poolName_ = poolName;
-	setParameter("PoolName", poolName);
+void UnbindDBResourcePoolWithUserRequest::setPoolName(const std::string &poolName) {
+  poolName_ = poolName;
+  setParameter(std::string("PoolName"), poolName);
 }
 
-long UnbindDBResourcePoolWithUserRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long UnbindDBResourcePoolWithUserRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void UnbindDBResourcePoolWithUserRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void UnbindDBResourcePoolWithUserRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string UnbindDBResourcePoolWithUserRequest::getPoolUser()const
-{
-	return poolUser_;
+std::string UnbindDBResourcePoolWithUserRequest::getPoolUser() const {
+  return poolUser_;
 }
 
-void UnbindDBResourcePoolWithUserRequest::setPoolUser(const std::string& poolUser)
-{
-	poolUser_ = poolUser;
-	setParameter("PoolUser", poolUser);
+void UnbindDBResourcePoolWithUserRequest::setPoolUser(const std::string &poolUser) {
+  poolUser_ = poolUser;
+  setParameter(std::string("PoolUser"), poolUser);
 }
 
-std::string UnbindDBResourcePoolWithUserRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string UnbindDBResourcePoolWithUserRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void UnbindDBResourcePoolWithUserRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void UnbindDBResourcePoolWithUserRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string UnbindDBResourcePoolWithUserRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string UnbindDBResourcePoolWithUserRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void UnbindDBResourcePoolWithUserRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void UnbindDBResourcePoolWithUserRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string UnbindDBResourcePoolWithUserRequest::getDBClusterId()const
-{
-	return dBClusterId_;
+std::string UnbindDBResourcePoolWithUserRequest::getDBClusterId() const {
+  return dBClusterId_;
 }
 
-void UnbindDBResourcePoolWithUserRequest::setDBClusterId(const std::string& dBClusterId)
-{
-	dBClusterId_ = dBClusterId;
-	setParameter("DBClusterId", dBClusterId);
+void UnbindDBResourcePoolWithUserRequest::setDBClusterId(const std::string &dBClusterId) {
+  dBClusterId_ = dBClusterId;
+  setParameter(std::string("DBClusterId"), dBClusterId);
 }
 
-std::string UnbindDBResourcePoolWithUserRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string UnbindDBResourcePoolWithUserRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void UnbindDBResourcePoolWithUserRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void UnbindDBResourcePoolWithUserRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-long UnbindDBResourcePoolWithUserRequest::getOwnerId()const
-{
-	return ownerId_;
+long UnbindDBResourcePoolWithUserRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void UnbindDBResourcePoolWithUserRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void UnbindDBResourcePoolWithUserRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 

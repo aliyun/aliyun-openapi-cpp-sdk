@@ -37,10 +37,12 @@ namespace AlibabaCloud
 				ModifyAuditLogConfigResult();
 				explicit ModifyAuditLogConfigResult(const std::string &payload);
 				~ModifyAuditLogConfigResult();
+				bool getUpdateSucceed()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				bool updateSucceed_;
 
 			};
 		}

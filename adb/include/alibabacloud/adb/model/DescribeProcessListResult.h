@@ -37,10 +37,10 @@ namespace AlibabaCloud
 					std::string user;
 					std::string command;
 					std::string startTime;
-					std::string host;
 					int time;
-					int id;
+					std::string host;
 					std::string processId;
+					int id;
 					std::string info;
 					std::string dB;
 				};

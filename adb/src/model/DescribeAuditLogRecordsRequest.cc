@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,210 +18,181 @@
 
 using AlibabaCloud::Adb::Model::DescribeAuditLogRecordsRequest;
 
-DescribeAuditLogRecordsRequest::DescribeAuditLogRecordsRequest() :
-	RpcServiceRequest("adb", "2019-03-15", "DescribeAuditLogRecords")
-{
-	setMethod(HttpRequest::Method::Post);
+DescribeAuditLogRecordsRequest::DescribeAuditLogRecordsRequest()
+    : RpcServiceRequest("adb", "2019-03-15", "DescribeAuditLogRecords") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DescribeAuditLogRecordsRequest::~DescribeAuditLogRecordsRequest()
-{}
+DescribeAuditLogRecordsRequest::~DescribeAuditLogRecordsRequest() {}
 
-long DescribeAuditLogRecordsRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long DescribeAuditLogRecordsRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void DescribeAuditLogRecordsRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void DescribeAuditLogRecordsRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string DescribeAuditLogRecordsRequest::getStartTime()const
-{
-	return startTime_;
+std::string DescribeAuditLogRecordsRequest::getStartTime() const {
+  return startTime_;
 }
 
-void DescribeAuditLogRecordsRequest::setStartTime(const std::string& startTime)
-{
-	startTime_ = startTime;
-	setParameter("StartTime", startTime);
+void DescribeAuditLogRecordsRequest::setStartTime(const std::string &startTime) {
+  startTime_ = startTime;
+  setParameter(std::string("StartTime"), startTime);
 }
 
-int DescribeAuditLogRecordsRequest::getPageNumber()const
-{
-	return pageNumber_;
+int DescribeAuditLogRecordsRequest::getPageNumber() const {
+  return pageNumber_;
 }
 
-void DescribeAuditLogRecordsRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+void DescribeAuditLogRecordsRequest::setPageNumber(int pageNumber) {
+  pageNumber_ = pageNumber;
+  setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
-std::string DescribeAuditLogRecordsRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string DescribeAuditLogRecordsRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void DescribeAuditLogRecordsRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void DescribeAuditLogRecordsRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string DescribeAuditLogRecordsRequest::getHostAddress()const
-{
-	return hostAddress_;
+std::string DescribeAuditLogRecordsRequest::getHostAddress() const {
+  return hostAddress_;
 }
 
-void DescribeAuditLogRecordsRequest::setHostAddress(const std::string& hostAddress)
-{
-	hostAddress_ = hostAddress;
-	setParameter("HostAddress", hostAddress);
+void DescribeAuditLogRecordsRequest::setHostAddress(const std::string &hostAddress) {
+  hostAddress_ = hostAddress;
+  setParameter(std::string("HostAddress"), hostAddress);
 }
 
-std::string DescribeAuditLogRecordsRequest::getRegionId()const
-{
-	return regionId_;
+std::string DescribeAuditLogRecordsRequest::getRegionId() const {
+  return regionId_;
 }
 
-void DescribeAuditLogRecordsRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void DescribeAuditLogRecordsRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
-int DescribeAuditLogRecordsRequest::getPageSize()const
-{
-	return pageSize_;
+int DescribeAuditLogRecordsRequest::getPageSize() const {
+  return pageSize_;
 }
 
-void DescribeAuditLogRecordsRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+void DescribeAuditLogRecordsRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
-std::string DescribeAuditLogRecordsRequest::getSqlType()const
-{
-	return sqlType_;
+std::string DescribeAuditLogRecordsRequest::getOrder() const {
+  return order_;
 }
 
-void DescribeAuditLogRecordsRequest::setSqlType(const std::string& sqlType)
-{
-	sqlType_ = sqlType;
-	setParameter("SqlType", sqlType);
+void DescribeAuditLogRecordsRequest::setOrder(const std::string &order) {
+  order_ = order;
+  setParameter(std::string("Order"), order);
 }
 
-std::string DescribeAuditLogRecordsRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string DescribeAuditLogRecordsRequest::getSqlType() const {
+  return sqlType_;
 }
 
-void DescribeAuditLogRecordsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void DescribeAuditLogRecordsRequest::setSqlType(const std::string &sqlType) {
+  sqlType_ = sqlType;
+  setParameter(std::string("SqlType"), sqlType);
 }
 
-std::string DescribeAuditLogRecordsRequest::getDBClusterId()const
-{
-	return dBClusterId_;
+std::string DescribeAuditLogRecordsRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void DescribeAuditLogRecordsRequest::setDBClusterId(const std::string& dBClusterId)
-{
-	dBClusterId_ = dBClusterId;
-	setParameter("DBClusterId", dBClusterId);
+void DescribeAuditLogRecordsRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string DescribeAuditLogRecordsRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string DescribeAuditLogRecordsRequest::getDBClusterId() const {
+  return dBClusterId_;
 }
 
-void DescribeAuditLogRecordsRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void DescribeAuditLogRecordsRequest::setDBClusterId(const std::string &dBClusterId) {
+  dBClusterId_ = dBClusterId;
+  setParameter(std::string("DBClusterId"), dBClusterId);
 }
 
-std::string DescribeAuditLogRecordsRequest::getQueryKeyword()const
-{
-	return queryKeyword_;
+std::string DescribeAuditLogRecordsRequest::getQueryKeyword() const {
+  return queryKeyword_;
 }
 
-void DescribeAuditLogRecordsRequest::setQueryKeyword(const std::string& queryKeyword)
-{
-	queryKeyword_ = queryKeyword;
-	setParameter("QueryKeyword", queryKeyword);
+void DescribeAuditLogRecordsRequest::setQueryKeyword(const std::string &queryKeyword) {
+  queryKeyword_ = queryKeyword;
+  setParameter(std::string("QueryKeyword"), queryKeyword);
 }
 
-std::string DescribeAuditLogRecordsRequest::getEndTime()const
-{
-	return endTime_;
+std::string DescribeAuditLogRecordsRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void DescribeAuditLogRecordsRequest::setEndTime(const std::string& endTime)
-{
-	endTime_ = endTime;
-	setParameter("EndTime", endTime);
+void DescribeAuditLogRecordsRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-long DescribeAuditLogRecordsRequest::getOwnerId()const
-{
-	return ownerId_;
+std::string DescribeAuditLogRecordsRequest::getEndTime() const {
+  return endTime_;
 }
 
-void DescribeAuditLogRecordsRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void DescribeAuditLogRecordsRequest::setEndTime(const std::string &endTime) {
+  endTime_ = endTime;
+  setParameter(std::string("EndTime"), endTime);
 }
 
-std::string DescribeAuditLogRecordsRequest::getDBName()const
-{
-	return dBName_;
+long DescribeAuditLogRecordsRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void DescribeAuditLogRecordsRequest::setDBName(const std::string& dBName)
-{
-	dBName_ = dBName;
-	setParameter("DBName", dBName);
+void DescribeAuditLogRecordsRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string DescribeAuditLogRecordsRequest::getSucceed()const
-{
-	return succeed_;
+std::string DescribeAuditLogRecordsRequest::getDBName() const {
+  return dBName_;
 }
 
-void DescribeAuditLogRecordsRequest::setSucceed(const std::string& succeed)
-{
-	succeed_ = succeed;
-	setParameter("Succeed", succeed);
+void DescribeAuditLogRecordsRequest::setDBName(const std::string &dBName) {
+  dBName_ = dBName;
+  setParameter(std::string("DBName"), dBName);
 }
 
-std::string DescribeAuditLogRecordsRequest::getUser()const
-{
-	return user_;
+std::string DescribeAuditLogRecordsRequest::getSucceed() const {
+  return succeed_;
 }
 
-void DescribeAuditLogRecordsRequest::setUser(const std::string& user)
-{
-	user_ = user;
-	setParameter("User", user);
+void DescribeAuditLogRecordsRequest::setSucceed(const std::string &succeed) {
+  succeed_ = succeed;
+  setParameter(std::string("Succeed"), succeed);
 }
 
-std::string DescribeAuditLogRecordsRequest::getOrderType()const
-{
-	return orderType_;
+std::string DescribeAuditLogRecordsRequest::getUser() const {
+  return user_;
 }
 
-void DescribeAuditLogRecordsRequest::setOrderType(const std::string& orderType)
-{
-	orderType_ = orderType;
-	setParameter("OrderType", orderType);
+void DescribeAuditLogRecordsRequest::setUser(const std::string &user) {
+  user_ = user;
+  setParameter(std::string("User"), user);
+}
+
+std::string DescribeAuditLogRecordsRequest::getOrderType() const {
+  return orderType_;
+}
+
+void DescribeAuditLogRecordsRequest::setOrderType(const std::string &orderType) {
+  orderType_ = orderType;
+  setParameter(std::string("OrderType"), orderType);
 }
 

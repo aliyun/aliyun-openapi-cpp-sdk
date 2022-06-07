@@ -64,18 +64,18 @@ void DescribeAvailableResourceResult::parse(const std::string &payload)
 					if(!valueAvailableZoneListAvailableZoneSupportedModeSupportedModeItemSupportedSerialListSupportedSerialListItemSupportedFlexibleResourceSupportedFlexibleResourceItem["StorageType"].isNull())
 						supportedFlexibleResourceObject.storageType = valueAvailableZoneListAvailableZoneSupportedModeSupportedModeItemSupportedSerialListSupportedSerialListItemSupportedFlexibleResourceSupportedFlexibleResourceItem["StorageType"].asString();
 					auto supportedElasticIOResourceNode = value["SupportedElasticIOResource"];
+					if(!supportedElasticIOResourceNode["Step"].isNull())
+						supportedFlexibleResourceObject.supportedElasticIOResource.step = supportedElasticIOResourceNode["Step"].asString();
 					if(!supportedElasticIOResourceNode["MinCount"].isNull())
 						supportedFlexibleResourceObject.supportedElasticIOResource.minCount = supportedElasticIOResourceNode["MinCount"].asString();
 					if(!supportedElasticIOResourceNode["MaxCount"].isNull())
 						supportedFlexibleResourceObject.supportedElasticIOResource.maxCount = supportedElasticIOResourceNode["MaxCount"].asString();
-					if(!supportedElasticIOResourceNode["Step"].isNull())
-						supportedFlexibleResourceObject.supportedElasticIOResource.step = supportedElasticIOResourceNode["Step"].asString();
-					auto allSupportedStorageResource = value["SupportedStorageResource"]["SupportedStorageResource"];
-					for (auto value : allSupportedStorageResource)
-						supportedFlexibleResourceObject.supportedStorageResource.push_back(value.asString());
 					auto allSupportedComputeResource = value["SupportedComputeResource"]["SupportedComputeResource"];
 					for (auto value : allSupportedComputeResource)
 						supportedFlexibleResourceObject.supportedComputeResource.push_back(value.asString());
+					auto allSupportedStorageResource = value["SupportedStorageResource"]["SupportedStorageResource"];
+					for (auto value : allSupportedStorageResource)
+						supportedFlexibleResourceObject.supportedStorageResource.push_back(value.asString());
 					supportedSerialListObject.supportedFlexibleResource.push_back(supportedFlexibleResourceObject);
 				}
 				auto allSupportedInstanceClassListNode = valueAvailableZoneListAvailableZoneSupportedModeSupportedModeItemSupportedSerialListSupportedSerialListItem["SupportedInstanceClassList"]["SupportedInstanceClass"];
@@ -91,12 +91,12 @@ void DescribeAvailableResourceResult::parse(const std::string &payload)
 					{
 						AvailableZone::SupportedModeItem::SupportedSerialListItem::SupportedInstanceClass::SupportedNodeCount supportedNodeCountListObject;
 						auto nodeCountNode = value["NodeCount"];
+						if(!nodeCountNode["Step"].isNull())
+							supportedNodeCountListObject.nodeCount.step = nodeCountNode["Step"].asString();
 						if(!nodeCountNode["MinCount"].isNull())
 							supportedNodeCountListObject.nodeCount.minCount = nodeCountNode["MinCount"].asString();
 						if(!nodeCountNode["MaxCount"].isNull())
 							supportedNodeCountListObject.nodeCount.maxCount = nodeCountNode["MaxCount"].asString();
-						if(!nodeCountNode["Step"].isNull())
-							supportedNodeCountListObject.nodeCount.step = nodeCountNode["Step"].asString();
 						auto allStorageSize = value["StorageSize"]["StorageSize"];
 						for (auto value : allStorageSize)
 							supportedNodeCountListObject.storageSize.push_back(value.asString());
@@ -107,12 +107,12 @@ void DescribeAvailableResourceResult::parse(const std::string &payload)
 					{
 						AvailableZone::SupportedModeItem::SupportedSerialListItem::SupportedInstanceClass::SupportedExecutor supportedExecutorListObject;
 						auto nodeCount1Node = value["NodeCount"];
+						if(!nodeCount1Node["Step"].isNull())
+							supportedExecutorListObject.nodeCount1.step = nodeCount1Node["Step"].asString();
 						if(!nodeCount1Node["MinCount"].isNull())
 							supportedExecutorListObject.nodeCount1.minCount = nodeCount1Node["MinCount"].asString();
 						if(!nodeCount1Node["MaxCount"].isNull())
 							supportedExecutorListObject.nodeCount1.maxCount = nodeCount1Node["MaxCount"].asString();
-						if(!nodeCount1Node["Step"].isNull())
-							supportedExecutorListObject.nodeCount1.step = nodeCount1Node["Step"].asString();
 						supportedInstanceClassListObject.supportedExecutorList.push_back(supportedExecutorListObject);
 					}
 					supportedSerialListObject.supportedInstanceClassList.push_back(supportedInstanceClassListObject);

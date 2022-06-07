@@ -39,6 +39,13 @@ void ModifyAuditLogConfigResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["UpdateSucceed"].isNull())
+		updateSucceed_ = value["UpdateSucceed"].asString() == "true";
 
+}
+
+bool ModifyAuditLogConfigResult::getUpdateSucceed()const
+{
+	return updateSucceed_;
 }
 

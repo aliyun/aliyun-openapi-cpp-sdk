@@ -45,8 +45,8 @@ namespace AlibabaCloud
 					long cPUTime;
 					long queuedTime;
 					std::string state;
-					std::string database;
 					long totalTime;
+					std::string database;
 					long planningTime;
 					long outputRows;
 				};
@@ -60,14 +60,14 @@ namespace AlibabaCloud
 					long scanTimeMin;
 					long scanTimeAvg;
 					long inputSizeMax;
+					long scanSizeMax;
 					long inputSizeMin;
 					long inputSizeAvg;
-					long scanSizeMax;
 					std::string state;
 					long operatorCost;
 					long scanTimeMax;
-					long cPUTimeMin;
 					long cPUTimeAvg;
+					long cPUTimeMin;
 				};
 
 

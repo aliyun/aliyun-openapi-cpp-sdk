@@ -34,8 +34,8 @@ namespace AlibabaCloud
 			public:
 				struct Column
 				{
-					std::string tableName;
 					std::string columnName;
+					std::string tableName;
 					std::string type;
 					bool autoIncrementColumn;
 					std::string dBClusterId;

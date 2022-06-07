@@ -43,20 +43,20 @@ void DescribeColumnsResult::parse(const std::string &payload)
 	for (auto valueItemsColumn : allItemsNode)
 	{
 		Column itemsObject;
-		if(!valueItemsColumn["DBClusterId"].isNull())
-			itemsObject.dBClusterId = valueItemsColumn["DBClusterId"].asString();
-		if(!valueItemsColumn["SchemaName"].isNull())
-			itemsObject.schemaName = valueItemsColumn["SchemaName"].asString();
-		if(!valueItemsColumn["TableName"].isNull())
-			itemsObject.tableName = valueItemsColumn["TableName"].asString();
-		if(!valueItemsColumn["ColumnName"].isNull())
-			itemsObject.columnName = valueItemsColumn["ColumnName"].asString();
 		if(!valueItemsColumn["Type"].isNull())
 			itemsObject.type = valueItemsColumn["Type"].asString();
-		if(!valueItemsColumn["PrimaryKey"].isNull())
-			itemsObject.primaryKey = valueItemsColumn["PrimaryKey"].asString() == "true";
+		if(!valueItemsColumn["ColumnName"].isNull())
+			itemsObject.columnName = valueItemsColumn["ColumnName"].asString();
+		if(!valueItemsColumn["TableName"].isNull())
+			itemsObject.tableName = valueItemsColumn["TableName"].asString();
 		if(!valueItemsColumn["AutoIncrementColumn"].isNull())
 			itemsObject.autoIncrementColumn = valueItemsColumn["AutoIncrementColumn"].asString() == "true";
+		if(!valueItemsColumn["DBClusterId"].isNull())
+			itemsObject.dBClusterId = valueItemsColumn["DBClusterId"].asString();
+		if(!valueItemsColumn["PrimaryKey"].isNull())
+			itemsObject.primaryKey = valueItemsColumn["PrimaryKey"].asString() == "true";
+		if(!valueItemsColumn["SchemaName"].isNull())
+			itemsObject.schemaName = valueItemsColumn["SchemaName"].asString();
 		items_.push_back(itemsObject);
 	}
 

@@ -36,13 +36,13 @@ namespace AlibabaCloud
 				{
 					std::string weeklyRepeat;
 					std::string endTime;
-					int elasticNodeNum;
 					std::string startTime;
+					int elasticNodeNum;
 					std::string resourcePoolName;
 					bool enable;
 					std::string endDay;
-					std::string planName;
 					std::string startDay;
+					std::string planName;
 				};
 
 

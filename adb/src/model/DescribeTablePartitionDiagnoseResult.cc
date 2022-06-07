@@ -45,12 +45,12 @@ void DescribeTablePartitionDiagnoseResult::parse(const std::string &payload)
 		TablePartitionDiagnose itemsObject;
 		if(!valueItemsTablePartitionDiagnose["TableName"].isNull())
 			itemsObject.tableName = valueItemsTablePartitionDiagnose["TableName"].asString();
-		if(!valueItemsTablePartitionDiagnose["PartitionNumber"].isNull())
-			itemsObject.partitionNumber = std::stoi(valueItemsTablePartitionDiagnose["PartitionNumber"].asString());
 		if(!valueItemsTablePartitionDiagnose["PartitionDetail"].isNull())
 			itemsObject.partitionDetail = valueItemsTablePartitionDiagnose["PartitionDetail"].asString();
 		if(!valueItemsTablePartitionDiagnose["SchemaName"].isNull())
 			itemsObject.schemaName = valueItemsTablePartitionDiagnose["SchemaName"].asString();
+		if(!valueItemsTablePartitionDiagnose["PartitionNumber"].isNull())
+			itemsObject.partitionNumber = std::stoi(valueItemsTablePartitionDiagnose["PartitionNumber"].asString());
 		items_.push_back(itemsObject);
 	}
 	if(!value["TotalCount"].isNull())

@@ -49,16 +49,16 @@ namespace AlibabaCloud
 				explicit DescribeSlowLogTrendResult(const std::string &payload);
 				~DescribeSlowLogTrendResult();
 				std::string getEndTime()const;
-				std::string getDBClusterId()const;
 				std::string getStartTime()const;
+				std::string getDBClusterId()const;
 				std::vector<SlowLogTrendItem> getItems()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string endTime_;
-				std::string dBClusterId_;
 				std::string startTime_;
+				std::string dBClusterId_;
 				std::vector<SlowLogTrendItem> items_;
 
 			};

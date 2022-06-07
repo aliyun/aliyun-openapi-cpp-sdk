@@ -43,28 +43,28 @@ void DescribeBackupsResult::parse(const std::string &payload)
 	for (auto valueItemsBackup : allItemsNode)
 	{
 		Backup itemsObject;
-		if(!valueItemsBackup["BackupId"].isNull())
-			itemsObject.backupId = valueItemsBackup["BackupId"].asString();
 		if(!valueItemsBackup["DBClusterId"].isNull())
 			itemsObject.dBClusterId = valueItemsBackup["DBClusterId"].asString();
-		if(!valueItemsBackup["BackupStartTime"].isNull())
-			itemsObject.backupStartTime = valueItemsBackup["BackupStartTime"].asString();
-		if(!valueItemsBackup["BackupEndTime"].isNull())
-			itemsObject.backupEndTime = valueItemsBackup["BackupEndTime"].asString();
-		if(!valueItemsBackup["BackupSize"].isNull())
-			itemsObject.backupSize = std::stoi(valueItemsBackup["BackupSize"].asString());
-		if(!valueItemsBackup["BackupMethod"].isNull())
-			itemsObject.backupMethod = valueItemsBackup["BackupMethod"].asString();
 		if(!valueItemsBackup["BackupType"].isNull())
 			itemsObject.backupType = valueItemsBackup["BackupType"].asString();
+		if(!valueItemsBackup["BackupStartTime"].isNull())
+			itemsObject.backupStartTime = valueItemsBackup["BackupStartTime"].asString();
+		if(!valueItemsBackup["BackupSize"].isNull())
+			itemsObject.backupSize = std::stoi(valueItemsBackup["BackupSize"].asString());
+		if(!valueItemsBackup["BackupEndTime"].isNull())
+			itemsObject.backupEndTime = valueItemsBackup["BackupEndTime"].asString();
+		if(!valueItemsBackup["BackupId"].isNull())
+			itemsObject.backupId = valueItemsBackup["BackupId"].asString();
+		if(!valueItemsBackup["BackupMethod"].isNull())
+			itemsObject.backupMethod = valueItemsBackup["BackupMethod"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["TotalCount"].isNull())
 		totalCount_ = value["TotalCount"].asString();
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = value["PageNumber"].asString();
 	if(!value["PageSize"].isNull())
 		pageSize_ = value["PageSize"].asString();
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = value["PageNumber"].asString();
 
 }
 

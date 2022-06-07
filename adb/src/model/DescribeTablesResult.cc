@@ -43,12 +43,12 @@ void DescribeTablesResult::parse(const std::string &payload)
 	for (auto valueItemsTable : allItemsNode)
 	{
 		Table itemsObject;
+		if(!valueItemsTable["TableName"].isNull())
+			itemsObject.tableName = valueItemsTable["TableName"].asString();
 		if(!valueItemsTable["DBClusterId"].isNull())
 			itemsObject.dBClusterId = valueItemsTable["DBClusterId"].asString();
 		if(!valueItemsTable["SchemaName"].isNull())
 			itemsObject.schemaName = valueItemsTable["SchemaName"].asString();
-		if(!valueItemsTable["TableName"].isNull())
-			itemsObject.tableName = valueItemsTable["TableName"].asString();
 		items_.push_back(itemsObject);
 	}
 

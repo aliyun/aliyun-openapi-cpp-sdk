@@ -51,20 +51,20 @@ void DescribeSlowLogTrendResult::parse(const std::string &payload)
 		for (auto valueItemsSlowLogTrendItemSeriesSeriesItem : allSeriesNode)
 		{
 			SlowLogTrendItem::SeriesItem seriesObject;
-			if(!valueItemsSlowLogTrendItemSeriesSeriesItem["Name"].isNull())
-				seriesObject.name = valueItemsSlowLogTrendItemSeriesSeriesItem["Name"].asString();
 			if(!valueItemsSlowLogTrendItemSeriesSeriesItem["Values"].isNull())
 				seriesObject.values = valueItemsSlowLogTrendItemSeriesSeriesItem["Values"].asString();
+			if(!valueItemsSlowLogTrendItemSeriesSeriesItem["Name"].isNull())
+				seriesObject.name = valueItemsSlowLogTrendItemSeriesSeriesItem["Name"].asString();
 			itemsObject.series.push_back(seriesObject);
 		}
 		items_.push_back(itemsObject);
 	}
-	if(!value["DBClusterId"].isNull())
-		dBClusterId_ = value["DBClusterId"].asString();
-	if(!value["StartTime"].isNull())
-		startTime_ = value["StartTime"].asString();
 	if(!value["EndTime"].isNull())
 		endTime_ = value["EndTime"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
+	if(!value["DBClusterId"].isNull())
+		dBClusterId_ = value["DBClusterId"].asString();
 
 }
 
@@ -73,14 +73,14 @@ std::string DescribeSlowLogTrendResult::getEndTime()const
 	return endTime_;
 }
 
-std::string DescribeSlowLogTrendResult::getDBClusterId()const
-{
-	return dBClusterId_;
-}
-
 std::string DescribeSlowLogTrendResult::getStartTime()const
 {
 	return startTime_;
+}
+
+std::string DescribeSlowLogTrendResult::getDBClusterId()const
+{
+	return dBClusterId_;
 }
 
 std::vector<DescribeSlowLogTrendResult::SlowLogTrendItem> DescribeSlowLogTrendResult::getItems()const

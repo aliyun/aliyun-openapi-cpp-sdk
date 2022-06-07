@@ -38,10 +38,10 @@ namespace AlibabaCloud
 					long coldDataSize;
 					long dataSize;
 					long primaryKeyIndexSize;
-					long indexSize;
 					long rowCount;
-					long partitionCount;
+					long indexSize;
 					std::string schemaName;
+					long partitionCount;
 				};
 
 

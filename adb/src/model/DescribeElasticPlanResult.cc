@@ -43,24 +43,24 @@ void DescribeElasticPlanResult::parse(const std::string &payload)
 	for (auto valueElasticPlanListElasticPlanInfo : allElasticPlanListNode)
 	{
 		ElasticPlanInfo elasticPlanListObject;
-		if(!valueElasticPlanListElasticPlanInfo["PlanName"].isNull())
-			elasticPlanListObject.planName = valueElasticPlanListElasticPlanInfo["PlanName"].asString();
-		if(!valueElasticPlanListElasticPlanInfo["ResourcePoolName"].isNull())
-			elasticPlanListObject.resourcePoolName = valueElasticPlanListElasticPlanInfo["ResourcePoolName"].asString();
-		if(!valueElasticPlanListElasticPlanInfo["ElasticNodeNum"].isNull())
-			elasticPlanListObject.elasticNodeNum = std::stoi(valueElasticPlanListElasticPlanInfo["ElasticNodeNum"].asString());
-		if(!valueElasticPlanListElasticPlanInfo["StartTime"].isNull())
-			elasticPlanListObject.startTime = valueElasticPlanListElasticPlanInfo["StartTime"].asString();
 		if(!valueElasticPlanListElasticPlanInfo["EndTime"].isNull())
 			elasticPlanListObject.endTime = valueElasticPlanListElasticPlanInfo["EndTime"].asString();
 		if(!valueElasticPlanListElasticPlanInfo["WeeklyRepeat"].isNull())
 			elasticPlanListObject.weeklyRepeat = valueElasticPlanListElasticPlanInfo["WeeklyRepeat"].asString();
+		if(!valueElasticPlanListElasticPlanInfo["StartTime"].isNull())
+			elasticPlanListObject.startTime = valueElasticPlanListElasticPlanInfo["StartTime"].asString();
+		if(!valueElasticPlanListElasticPlanInfo["ResourcePoolName"].isNull())
+			elasticPlanListObject.resourcePoolName = valueElasticPlanListElasticPlanInfo["ResourcePoolName"].asString();
 		if(!valueElasticPlanListElasticPlanInfo["StartDay"].isNull())
 			elasticPlanListObject.startDay = valueElasticPlanListElasticPlanInfo["StartDay"].asString();
-		if(!valueElasticPlanListElasticPlanInfo["EndDay"].isNull())
-			elasticPlanListObject.endDay = valueElasticPlanListElasticPlanInfo["EndDay"].asString();
+		if(!valueElasticPlanListElasticPlanInfo["ElasticNodeNum"].isNull())
+			elasticPlanListObject.elasticNodeNum = std::stoi(valueElasticPlanListElasticPlanInfo["ElasticNodeNum"].asString());
 		if(!valueElasticPlanListElasticPlanInfo["Enable"].isNull())
 			elasticPlanListObject.enable = valueElasticPlanListElasticPlanInfo["Enable"].asString() == "true";
+		if(!valueElasticPlanListElasticPlanInfo["EndDay"].isNull())
+			elasticPlanListObject.endDay = valueElasticPlanListElasticPlanInfo["EndDay"].asString();
+		if(!valueElasticPlanListElasticPlanInfo["PlanName"].isNull())
+			elasticPlanListObject.planName = valueElasticPlanListElasticPlanInfo["PlanName"].asString();
 		elasticPlanList_.push_back(elasticPlanListObject);
 	}
 

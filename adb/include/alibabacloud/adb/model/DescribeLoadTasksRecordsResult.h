@@ -37,8 +37,8 @@ namespace AlibabaCloud
 					long processRows;
 					std::string state;
 					std::string createTime;
-					std::string jobName;
 					std::string updateTime;
+					std::string jobName;
 					std::string dBName;
 					std::string processID;
 					std::string sql;

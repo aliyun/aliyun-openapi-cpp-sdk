@@ -35,15 +35,15 @@ namespace AlibabaCloud
 				struct SqlPlanTask
 				{
 					long outputSize;
-					int taskId;
 					long scanRows;
-					long inputSize;
+					int taskId;
 					long scanCost;
+					long inputSize;
 					std::string state;
 					long peakMemory;
-					long elapsedTime;
 					long operatorCost;
 					long outputRows;
+					long elapsedTime;
 					long scanSize;
 					long inputRows;
 				};

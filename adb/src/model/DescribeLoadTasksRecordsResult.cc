@@ -43,22 +43,22 @@ void DescribeLoadTasksRecordsResult::parse(const std::string &payload)
 	for (auto valueLoadTasksRecordsLoadTaskRecord : allLoadTasksRecordsNode)
 	{
 		LoadTaskRecord loadTasksRecordsObject;
-		if(!valueLoadTasksRecordsLoadTaskRecord["ProcessRows"].isNull())
-			loadTasksRecordsObject.processRows = std::stol(valueLoadTasksRecordsLoadTaskRecord["ProcessRows"].asString());
+		if(!valueLoadTasksRecordsLoadTaskRecord["Sql"].isNull())
+			loadTasksRecordsObject.sql = valueLoadTasksRecordsLoadTaskRecord["Sql"].asString();
 		if(!valueLoadTasksRecordsLoadTaskRecord["State"].isNull())
 			loadTasksRecordsObject.state = valueLoadTasksRecordsLoadTaskRecord["State"].asString();
 		if(!valueLoadTasksRecordsLoadTaskRecord["CreateTime"].isNull())
 			loadTasksRecordsObject.createTime = valueLoadTasksRecordsLoadTaskRecord["CreateTime"].asString();
-		if(!valueLoadTasksRecordsLoadTaskRecord["JobName"].isNull())
-			loadTasksRecordsObject.jobName = valueLoadTasksRecordsLoadTaskRecord["JobName"].asString();
-		if(!valueLoadTasksRecordsLoadTaskRecord["UpdateTime"].isNull())
-			loadTasksRecordsObject.updateTime = valueLoadTasksRecordsLoadTaskRecord["UpdateTime"].asString();
 		if(!valueLoadTasksRecordsLoadTaskRecord["DBName"].isNull())
 			loadTasksRecordsObject.dBName = valueLoadTasksRecordsLoadTaskRecord["DBName"].asString();
 		if(!valueLoadTasksRecordsLoadTaskRecord["ProcessID"].isNull())
 			loadTasksRecordsObject.processID = valueLoadTasksRecordsLoadTaskRecord["ProcessID"].asString();
-		if(!valueLoadTasksRecordsLoadTaskRecord["Sql"].isNull())
-			loadTasksRecordsObject.sql = valueLoadTasksRecordsLoadTaskRecord["Sql"].asString();
+		if(!valueLoadTasksRecordsLoadTaskRecord["UpdateTime"].isNull())
+			loadTasksRecordsObject.updateTime = valueLoadTasksRecordsLoadTaskRecord["UpdateTime"].asString();
+		if(!valueLoadTasksRecordsLoadTaskRecord["JobName"].isNull())
+			loadTasksRecordsObject.jobName = valueLoadTasksRecordsLoadTaskRecord["JobName"].asString();
+		if(!valueLoadTasksRecordsLoadTaskRecord["ProcessRows"].isNull())
+			loadTasksRecordsObject.processRows = std::stol(valueLoadTasksRecordsLoadTaskRecord["ProcessRows"].asString());
 		loadTasksRecords_.push_back(loadTasksRecordsObject);
 	}
 	if(!value["TotalCount"].isNull())

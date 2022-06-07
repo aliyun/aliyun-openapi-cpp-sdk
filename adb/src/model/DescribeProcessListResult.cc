@@ -43,32 +43,32 @@ void DescribeProcessListResult::parse(const std::string &payload)
 	for (auto valueItemsProcess : allItemsNode)
 	{
 		Process itemsObject;
-		if(!valueItemsProcess["Id"].isNull())
-			itemsObject.id = std::stoi(valueItemsProcess["Id"].asString());
+		if(!valueItemsProcess["StartTime"].isNull())
+			itemsObject.startTime = valueItemsProcess["StartTime"].asString();
+		if(!valueItemsProcess["Time"].isNull())
+			itemsObject.time = std::stoi(valueItemsProcess["Time"].asString());
 		if(!valueItemsProcess["ProcessId"].isNull())
 			itemsObject.processId = valueItemsProcess["ProcessId"].asString();
-		if(!valueItemsProcess["User"].isNull())
-			itemsObject.user = valueItemsProcess["User"].asString();
 		if(!valueItemsProcess["Host"].isNull())
 			itemsObject.host = valueItemsProcess["Host"].asString();
 		if(!valueItemsProcess["DB"].isNull())
 			itemsObject.dB = valueItemsProcess["DB"].asString();
 		if(!valueItemsProcess["Command"].isNull())
 			itemsObject.command = valueItemsProcess["Command"].asString();
-		if(!valueItemsProcess["Time"].isNull())
-			itemsObject.time = std::stoi(valueItemsProcess["Time"].asString());
-		if(!valueItemsProcess["StartTime"].isNull())
-			itemsObject.startTime = valueItemsProcess["StartTime"].asString();
+		if(!valueItemsProcess["User"].isNull())
+			itemsObject.user = valueItemsProcess["User"].asString();
+		if(!valueItemsProcess["Id"].isNull())
+			itemsObject.id = std::stoi(valueItemsProcess["Id"].asString());
 		if(!valueItemsProcess["Info"].isNull())
 			itemsObject.info = valueItemsProcess["Info"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["TotalCount"].isNull())
 		totalCount_ = value["TotalCount"].asString();
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = value["PageNumber"].asString();
 	if(!value["PageSize"].isNull())
 		pageSize_ = value["PageSize"].asString();
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = value["PageNumber"].asString();
 
 }
 

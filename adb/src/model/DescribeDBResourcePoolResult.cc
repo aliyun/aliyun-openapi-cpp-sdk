@@ -43,18 +43,18 @@ void DescribeDBResourcePoolResult::parse(const std::string &payload)
 	for (auto valuePoolsInfoPoolInfo : allPoolsInfoNode)
 	{
 		PoolInfo poolsInfoObject;
-		if(!valuePoolsInfoPoolInfo["PoolName"].isNull())
-			poolsInfoObject.poolName = valuePoolsInfoPoolInfo["PoolName"].asString();
 		if(!valuePoolsInfoPoolInfo["QueryType"].isNull())
 			poolsInfoObject.queryType = valuePoolsInfoPoolInfo["QueryType"].asString();
-		if(!valuePoolsInfoPoolInfo["NodeNum"].isNull())
-			poolsInfoObject.nodeNum = std::stoi(valuePoolsInfoPoolInfo["NodeNum"].asString());
-		if(!valuePoolsInfoPoolInfo["PoolUsers"].isNull())
-			poolsInfoObject.poolUsers = valuePoolsInfoPoolInfo["PoolUsers"].asString();
-		if(!valuePoolsInfoPoolInfo["CreateTime"].isNull())
-			poolsInfoObject.createTime = valuePoolsInfoPoolInfo["CreateTime"].asString();
 		if(!valuePoolsInfoPoolInfo["UpdateTime"].isNull())
 			poolsInfoObject.updateTime = valuePoolsInfoPoolInfo["UpdateTime"].asString();
+		if(!valuePoolsInfoPoolInfo["PoolName"].isNull())
+			poolsInfoObject.poolName = valuePoolsInfoPoolInfo["PoolName"].asString();
+		if(!valuePoolsInfoPoolInfo["CreateTime"].isNull())
+			poolsInfoObject.createTime = valuePoolsInfoPoolInfo["CreateTime"].asString();
+		if(!valuePoolsInfoPoolInfo["PoolUsers"].isNull())
+			poolsInfoObject.poolUsers = valuePoolsInfoPoolInfo["PoolUsers"].asString();
+		if(!valuePoolsInfoPoolInfo["NodeNum"].isNull())
+			poolsInfoObject.nodeNum = std::stoi(valuePoolsInfoPoolInfo["NodeNum"].asString());
 		poolsInfo_.push_back(poolsInfoObject);
 	}
 

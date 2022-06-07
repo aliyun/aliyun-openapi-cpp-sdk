@@ -32,11 +32,6 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_ADB_EXPORT DescribeAllDataSourceResult : public ServiceResult
 			{
 			public:
-				struct Schema
-				{
-					std::string dBClusterId;
-					std::string schemaName;
-				};
 				struct Table
 				{
 					std::string tableName;
@@ -45,12 +40,17 @@ namespace AlibabaCloud
 				};
 				struct Column
 				{
-					std::string tableName;
 					std::string columnName;
+					std::string tableName;
 					std::string type;
 					bool autoIncrementColumn;
 					std::string dBClusterId;
 					bool primaryKey;
+					std::string schemaName;
+				};
+				struct Schema
+				{
+					std::string dBClusterId;
 					std::string schemaName;
 				};
 

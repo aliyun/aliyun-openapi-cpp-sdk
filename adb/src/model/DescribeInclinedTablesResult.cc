@@ -43,24 +43,24 @@ void DescribeInclinedTablesResult::parse(const std::string &payload)
 	for (auto valueItemsTable : allItemsNode)
 	{
 		Table itemsObject;
-		if(!valueItemsTable["Schema"].isNull())
-			itemsObject.schema = valueItemsTable["Schema"].asString();
-		if(!valueItemsTable["Name"].isNull())
-			itemsObject.name = valueItemsTable["Name"].asString();
 		if(!valueItemsTable["Type"].isNull())
 			itemsObject.type = valueItemsTable["Type"].asString();
+		if(!valueItemsTable["Schema"].isNull())
+			itemsObject.schema = valueItemsTable["Schema"].asString();
 		if(!valueItemsTable["Size"].isNull())
 			itemsObject.size = std::stol(valueItemsTable["Size"].asString());
+		if(!valueItemsTable["Name"].isNull())
+			itemsObject.name = valueItemsTable["Name"].asString();
 		if(!valueItemsTable["IsIncline"].isNull())
 			itemsObject.isIncline = valueItemsTable["IsIncline"].asString() == "true";
 		items_.push_back(itemsObject);
 	}
 	if(!value["TotalCount"].isNull())
 		totalCount_ = value["TotalCount"].asString();
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = value["PageNumber"].asString();
 	if(!value["PageSize"].isNull())
 		pageSize_ = value["PageSize"].asString();
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = value["PageNumber"].asString();
 
 }
 

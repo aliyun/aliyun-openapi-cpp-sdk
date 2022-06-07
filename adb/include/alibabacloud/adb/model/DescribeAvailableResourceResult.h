@@ -42,8 +42,8 @@ namespace AlibabaCloud
 							{
 								struct SupportedElasticIOResource
 								{
-									std::string maxCount;
 									std::string step;
+									std::string maxCount;
 									std::string minCount;
 								};
 								std::string storageType;
@@ -57,8 +57,8 @@ namespace AlibabaCloud
 								{
 									struct NodeCount
 									{
-										std::string maxCount;
 										std::string step;
+										std::string maxCount;
 										std::string minCount;
 									};
 									NodeCount nodeCount;
@@ -68,8 +68,8 @@ namespace AlibabaCloud
 								{
 									struct NodeCount1
 									{
-										std::string maxCount;
 										std::string step;
+										std::string maxCount;
 										std::string minCount;
 									};
 									NodeCount1 nodeCount1;

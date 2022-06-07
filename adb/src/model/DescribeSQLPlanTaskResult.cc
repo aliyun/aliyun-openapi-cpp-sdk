@@ -43,30 +43,30 @@ void DescribeSQLPlanTaskResult::parse(const std::string &payload)
 	for (auto valueTaskListSqlPlanTask : allTaskListNode)
 	{
 		SqlPlanTask taskListObject;
-		if(!valueTaskListSqlPlanTask["TaskId"].isNull())
-			taskListObject.taskId = std::stoi(valueTaskListSqlPlanTask["TaskId"].asString());
-		if(!valueTaskListSqlPlanTask["State"].isNull())
-			taskListObject.state = valueTaskListSqlPlanTask["State"].asString();
-		if(!valueTaskListSqlPlanTask["ElapsedTime"].isNull())
-			taskListObject.elapsedTime = std::stol(valueTaskListSqlPlanTask["ElapsedTime"].asString());
-		if(!valueTaskListSqlPlanTask["PeakMemory"].isNull())
-			taskListObject.peakMemory = std::stol(valueTaskListSqlPlanTask["PeakMemory"].asString());
-		if(!valueTaskListSqlPlanTask["OperatorCost"].isNull())
-			taskListObject.operatorCost = std::stol(valueTaskListSqlPlanTask["OperatorCost"].asString());
-		if(!valueTaskListSqlPlanTask["InputRows"].isNull())
-			taskListObject.inputRows = std::stol(valueTaskListSqlPlanTask["InputRows"].asString());
-		if(!valueTaskListSqlPlanTask["InputSize"].isNull())
-			taskListObject.inputSize = std::stol(valueTaskListSqlPlanTask["InputSize"].asString());
-		if(!valueTaskListSqlPlanTask["OutputRows"].isNull())
-			taskListObject.outputRows = std::stol(valueTaskListSqlPlanTask["OutputRows"].asString());
-		if(!valueTaskListSqlPlanTask["OutputSize"].isNull())
-			taskListObject.outputSize = std::stol(valueTaskListSqlPlanTask["OutputSize"].asString());
-		if(!valueTaskListSqlPlanTask["ScanRows"].isNull())
-			taskListObject.scanRows = std::stol(valueTaskListSqlPlanTask["ScanRows"].asString());
-		if(!valueTaskListSqlPlanTask["ScanSize"].isNull())
-			taskListObject.scanSize = std::stol(valueTaskListSqlPlanTask["ScanSize"].asString());
 		if(!valueTaskListSqlPlanTask["ScanCost"].isNull())
 			taskListObject.scanCost = std::stol(valueTaskListSqlPlanTask["ScanCost"].asString());
+		if(!valueTaskListSqlPlanTask["OutputSize"].isNull())
+			taskListObject.outputSize = std::stol(valueTaskListSqlPlanTask["OutputSize"].asString());
+		if(!valueTaskListSqlPlanTask["InputSize"].isNull())
+			taskListObject.inputSize = std::stol(valueTaskListSqlPlanTask["InputSize"].asString());
+		if(!valueTaskListSqlPlanTask["State"].isNull())
+			taskListObject.state = valueTaskListSqlPlanTask["State"].asString();
+		if(!valueTaskListSqlPlanTask["OperatorCost"].isNull())
+			taskListObject.operatorCost = std::stol(valueTaskListSqlPlanTask["OperatorCost"].asString());
+		if(!valueTaskListSqlPlanTask["OutputRows"].isNull())
+			taskListObject.outputRows = std::stol(valueTaskListSqlPlanTask["OutputRows"].asString());
+		if(!valueTaskListSqlPlanTask["ScanSize"].isNull())
+			taskListObject.scanSize = std::stol(valueTaskListSqlPlanTask["ScanSize"].asString());
+		if(!valueTaskListSqlPlanTask["ElapsedTime"].isNull())
+			taskListObject.elapsedTime = std::stol(valueTaskListSqlPlanTask["ElapsedTime"].asString());
+		if(!valueTaskListSqlPlanTask["ScanRows"].isNull())
+			taskListObject.scanRows = std::stol(valueTaskListSqlPlanTask["ScanRows"].asString());
+		if(!valueTaskListSqlPlanTask["PeakMemory"].isNull())
+			taskListObject.peakMemory = std::stol(valueTaskListSqlPlanTask["PeakMemory"].asString());
+		if(!valueTaskListSqlPlanTask["TaskId"].isNull())
+			taskListObject.taskId = std::stoi(valueTaskListSqlPlanTask["TaskId"].asString());
+		if(!valueTaskListSqlPlanTask["InputRows"].isNull())
+			taskListObject.inputRows = std::stol(valueTaskListSqlPlanTask["InputRows"].asString());
 		taskList_.push_back(taskListObject);
 	}
 

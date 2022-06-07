@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,100 +18,82 @@
 
 using AlibabaCloud::Adb::Model::ModifyAuditLogConfigRequest;
 
-ModifyAuditLogConfigRequest::ModifyAuditLogConfigRequest() :
-	RpcServiceRequest("adb", "2019-03-15", "ModifyAuditLogConfig")
-{
-	setMethod(HttpRequest::Method::Post);
+ModifyAuditLogConfigRequest::ModifyAuditLogConfigRequest()
+    : RpcServiceRequest("adb", "2019-03-15", "ModifyAuditLogConfig") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-ModifyAuditLogConfigRequest::~ModifyAuditLogConfigRequest()
-{}
+ModifyAuditLogConfigRequest::~ModifyAuditLogConfigRequest() {}
 
-long ModifyAuditLogConfigRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long ModifyAuditLogConfigRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void ModifyAuditLogConfigRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void ModifyAuditLogConfigRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string ModifyAuditLogConfigRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string ModifyAuditLogConfigRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void ModifyAuditLogConfigRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void ModifyAuditLogConfigRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string ModifyAuditLogConfigRequest::getRegionId()const
-{
-	return regionId_;
+std::string ModifyAuditLogConfigRequest::getDBClusterId() const {
+  return dBClusterId_;
 }
 
-void ModifyAuditLogConfigRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void ModifyAuditLogConfigRequest::setDBClusterId(const std::string &dBClusterId) {
+  dBClusterId_ = dBClusterId;
+  setParameter(std::string("DBClusterId"), dBClusterId);
 }
 
-std::string ModifyAuditLogConfigRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string ModifyAuditLogConfigRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void ModifyAuditLogConfigRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void ModifyAuditLogConfigRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-std::string ModifyAuditLogConfigRequest::getDBClusterId()const
-{
-	return dBClusterId_;
+long ModifyAuditLogConfigRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void ModifyAuditLogConfigRequest::setDBClusterId(const std::string& dBClusterId)
-{
-	dBClusterId_ = dBClusterId;
-	setParameter("DBClusterId", dBClusterId);
+void ModifyAuditLogConfigRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string ModifyAuditLogConfigRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string ModifyAuditLogConfigRequest::getAuditLogStatus() const {
+  return auditLogStatus_;
 }
 
-void ModifyAuditLogConfigRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void ModifyAuditLogConfigRequest::setAuditLogStatus(const std::string &auditLogStatus) {
+  auditLogStatus_ = auditLogStatus;
+  setParameter(std::string("AuditLogStatus"), auditLogStatus);
 }
 
-long ModifyAuditLogConfigRequest::getOwnerId()const
-{
-	return ownerId_;
+std::string ModifyAuditLogConfigRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void ModifyAuditLogConfigRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void ModifyAuditLogConfigRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string ModifyAuditLogConfigRequest::getAuditLogStatus()const
-{
-	return auditLogStatus_;
+std::string ModifyAuditLogConfigRequest::getRegionId() const {
+  return regionId_;
 }
 
-void ModifyAuditLogConfigRequest::setAuditLogStatus(const std::string& auditLogStatus)
-{
-	auditLogStatus_ = auditLogStatus;
-	setParameter("AuditLogStatus", auditLogStatus);
+void ModifyAuditLogConfigRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 

@@ -38,10 +38,10 @@ namespace AlibabaCloud
 					std::string userName;
 					std::string peakMemoryUsage;
 					std::string executionStartTime;
-					long parseRowCounts;
 					long queryTime;
-					long scanTime;
+					long parseRowCounts;
 					std::string hostAddress;
+					long scanTime;
 					std::string sQLText;
 					long wallTime;
 					long scanRows;
@@ -50,8 +50,8 @@ namespace AlibabaCloud
 					long planningTime;
 					std::string dBName;
 					long queueTime;
-					std::string processID;
 					std::string scanSize;
+					std::string processID;
 				};
 
 

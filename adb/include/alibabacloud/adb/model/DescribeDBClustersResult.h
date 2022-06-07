@@ -61,8 +61,8 @@ namespace AlibabaCloud
 					std::string vPCId;
 					std::string dBClusterStatus;
 					std::string createTime;
-					std::string vSwitchId;
 					std::string mode;
+					std::string vSwitchId;
 					std::string dBClusterDescription;
 					std::string computeResource;
 					std::string expired;
@@ -71,8 +71,8 @@ namespace AlibabaCloud
 					std::string dBNodeClass;
 					std::string vPCCloudInstanceId;
 					std::string regionId;
-					std::string expireTime;
 					std::string connectionString;
+					std::string expireTime;
 					std::string rdsInstanceId;
 				};
 

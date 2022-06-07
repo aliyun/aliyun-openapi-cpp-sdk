@@ -45,30 +45,32 @@ void DescribeAuditLogRecordsResult::parse(const std::string &payload)
 		SlowLogRecord itemsObject;
 		if(!valueItemsSlowLogRecord["HostAddress"].isNull())
 			itemsObject.hostAddress = valueItemsSlowLogRecord["HostAddress"].asString();
-		if(!valueItemsSlowLogRecord["DBName"].isNull())
-			itemsObject.dBName = valueItemsSlowLogRecord["DBName"].asString();
-		if(!valueItemsSlowLogRecord["SQLText"].isNull())
-			itemsObject.sQLText = valueItemsSlowLogRecord["SQLText"].asString();
-		if(!valueItemsSlowLogRecord["SQLType"].isNull())
-			itemsObject.sQLType = valueItemsSlowLogRecord["SQLType"].asString();
-		if(!valueItemsSlowLogRecord["ConnId"].isNull())
-			itemsObject.connId = valueItemsSlowLogRecord["ConnId"].asString();
-		if(!valueItemsSlowLogRecord["ExecuteTime"].isNull())
-			itemsObject.executeTime = valueItemsSlowLogRecord["ExecuteTime"].asString();
 		if(!valueItemsSlowLogRecord["Succeed"].isNull())
 			itemsObject.succeed = valueItemsSlowLogRecord["Succeed"].asString();
+		if(!valueItemsSlowLogRecord["SQLText"].isNull())
+			itemsObject.sQLText = valueItemsSlowLogRecord["SQLText"].asString();
 		if(!valueItemsSlowLogRecord["TotalTime"].isNull())
 			itemsObject.totalTime = valueItemsSlowLogRecord["TotalTime"].asString();
+		if(!valueItemsSlowLogRecord["ConnId"].isNull())
+			itemsObject.connId = valueItemsSlowLogRecord["ConnId"].asString();
+		if(!valueItemsSlowLogRecord["DBName"].isNull())
+			itemsObject.dBName = valueItemsSlowLogRecord["DBName"].asString();
+		if(!valueItemsSlowLogRecord["SQLType"].isNull())
+			itemsObject.sQLType = valueItemsSlowLogRecord["SQLType"].asString();
+		if(!valueItemsSlowLogRecord["ExecuteTime"].isNull())
+			itemsObject.executeTime = valueItemsSlowLogRecord["ExecuteTime"].asString();
 		if(!valueItemsSlowLogRecord["ProcessID"].isNull())
 			itemsObject.processID = valueItemsSlowLogRecord["ProcessID"].asString();
+		if(!valueItemsSlowLogRecord["User"].isNull())
+			itemsObject.user = valueItemsSlowLogRecord["User"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["TotalCount"].isNull())
 		totalCount_ = value["TotalCount"].asString();
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = value["PageNumber"].asString();
 	if(!value["PageSize"].isNull())
 		pageSize_ = value["PageSize"].asString();
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = value["PageNumber"].asString();
 	if(!value["DBClusterId"].isNull())
 		dBClusterId_ = value["DBClusterId"].asString();
 

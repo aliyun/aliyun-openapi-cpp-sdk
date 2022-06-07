@@ -32,14 +32,14 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_ADB_EXPORT DescribeConnectionCountRecordsResult : public ServiceResult
 			{
 			public:
-				struct Users
-				{
-					std::string user;
-					long count;
-				};
 				struct AccessIps
 				{
 					std::string accessIp;
+					long count;
+				};
+				struct Users
+				{
+					std::string user;
 					long count;
 				};
 

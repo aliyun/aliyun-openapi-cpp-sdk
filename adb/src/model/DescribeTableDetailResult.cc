@@ -43,10 +43,10 @@ void DescribeTableDetailResult::parse(const std::string &payload)
 	for (auto valueItemsShard : allItemsNode)
 	{
 		Shard itemsObject;
-		if(!valueItemsShard["Id"].isNull())
-			itemsObject.id = std::stoi(valueItemsShard["Id"].asString());
 		if(!valueItemsShard["Size"].isNull())
 			itemsObject.size = std::stol(valueItemsShard["Size"].asString());
+		if(!valueItemsShard["Id"].isNull())
+			itemsObject.id = std::stoi(valueItemsShard["Id"].asString());
 		items_.push_back(itemsObject);
 	}
 	if(!value["AvgSize"].isNull())

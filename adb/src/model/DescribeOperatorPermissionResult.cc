@@ -39,10 +39,10 @@ void DescribeOperatorPermissionResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Privileges"].isNull())
-		privileges_ = value["Privileges"].asString();
 	if(!value["CreatedTime"].isNull())
 		createdTime_ = value["CreatedTime"].asString();
+	if(!value["Privileges"].isNull())
+		privileges_ = value["Privileges"].asString();
 	if(!value["ExpiredTime"].isNull())
 		expiredTime_ = value["ExpiredTime"].asString();
 	if(!value["DBClusterId"].isNull())

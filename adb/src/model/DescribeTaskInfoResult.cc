@@ -40,16 +40,16 @@ void DescribeTaskInfoResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto taskInfoNode = value["TaskInfo"];
-	if(!taskInfoNode["TaskId"].isNull())
-		taskInfo_.taskId = std::stoi(taskInfoNode["TaskId"].asString());
-	if(!taskInfoNode["BeginTime"].isNull())
-		taskInfo_.beginTime = taskInfoNode["BeginTime"].asString();
+	if(!taskInfoNode["Status"].isNull())
+		taskInfo_.status = taskInfoNode["Status"].asString();
 	if(!taskInfoNode["FinishTime"].isNull())
 		taskInfo_.finishTime = taskInfoNode["FinishTime"].asString();
 	if(!taskInfoNode["Progress"].isNull())
 		taskInfo_.progress = taskInfoNode["Progress"].asString();
-	if(!taskInfoNode["Status"].isNull())
-		taskInfo_.status = taskInfoNode["Status"].asString();
+	if(!taskInfoNode["BeginTime"].isNull())
+		taskInfo_.beginTime = taskInfoNode["BeginTime"].asString();
+	if(!taskInfoNode["TaskId"].isNull())
+		taskInfo_.taskId = std::stoi(taskInfoNode["TaskId"].asString());
 
 }
 

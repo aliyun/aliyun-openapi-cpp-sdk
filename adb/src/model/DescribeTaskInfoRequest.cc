@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,89 +18,73 @@
 
 using AlibabaCloud::Adb::Model::DescribeTaskInfoRequest;
 
-DescribeTaskInfoRequest::DescribeTaskInfoRequest() :
-	RpcServiceRequest("adb", "2019-03-15", "DescribeTaskInfo")
-{
-	setMethod(HttpRequest::Method::Post);
+DescribeTaskInfoRequest::DescribeTaskInfoRequest()
+    : RpcServiceRequest("adb", "2019-03-15", "DescribeTaskInfo") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DescribeTaskInfoRequest::~DescribeTaskInfoRequest()
-{}
+DescribeTaskInfoRequest::~DescribeTaskInfoRequest() {}
 
-long DescribeTaskInfoRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long DescribeTaskInfoRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void DescribeTaskInfoRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void DescribeTaskInfoRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string DescribeTaskInfoRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string DescribeTaskInfoRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void DescribeTaskInfoRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void DescribeTaskInfoRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-int DescribeTaskInfoRequest::getTaskId()const
-{
-	return taskId_;
+int DescribeTaskInfoRequest::getTaskId() const {
+  return taskId_;
 }
 
-void DescribeTaskInfoRequest::setTaskId(int taskId)
-{
-	taskId_ = taskId;
-	setParameter("TaskId", std::to_string(taskId));
+void DescribeTaskInfoRequest::setTaskId(int taskId) {
+  taskId_ = taskId;
+  setParameter(std::string("TaskId"), std::to_string(taskId));
 }
 
-std::string DescribeTaskInfoRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string DescribeTaskInfoRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void DescribeTaskInfoRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void DescribeTaskInfoRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string DescribeTaskInfoRequest::getDBClusterId()const
-{
-	return dBClusterId_;
+std::string DescribeTaskInfoRequest::getDBClusterId() const {
+  return dBClusterId_;
 }
 
-void DescribeTaskInfoRequest::setDBClusterId(const std::string& dBClusterId)
-{
-	dBClusterId_ = dBClusterId;
-	setParameter("DBClusterId", dBClusterId);
+void DescribeTaskInfoRequest::setDBClusterId(const std::string &dBClusterId) {
+  dBClusterId_ = dBClusterId;
+  setParameter(std::string("DBClusterId"), dBClusterId);
 }
 
-std::string DescribeTaskInfoRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string DescribeTaskInfoRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void DescribeTaskInfoRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void DescribeTaskInfoRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-long DescribeTaskInfoRequest::getOwnerId()const
-{
-	return ownerId_;
+long DescribeTaskInfoRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void DescribeTaskInfoRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void DescribeTaskInfoRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 

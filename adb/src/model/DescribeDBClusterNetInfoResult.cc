@@ -43,18 +43,20 @@ void DescribeDBClusterNetInfoResult::parse(const std::string &payload)
 	for (auto valueItemsAddress : allItemsNode)
 	{
 		Address itemsObject;
+		if(!valueItemsAddress["VSwitchId"].isNull())
+			itemsObject.vSwitchId = valueItemsAddress["VSwitchId"].asString();
 		if(!valueItemsAddress["ConnectionString"].isNull())
 			itemsObject.connectionString = valueItemsAddress["ConnectionString"].asString();
-		if(!valueItemsAddress["IPAddress"].isNull())
-			itemsObject.iPAddress = valueItemsAddress["IPAddress"].asString();
 		if(!valueItemsAddress["NetType"].isNull())
 			itemsObject.netType = valueItemsAddress["NetType"].asString();
 		if(!valueItemsAddress["Port"].isNull())
 			itemsObject.port = valueItemsAddress["Port"].asString();
 		if(!valueItemsAddress["VPCId"].isNull())
 			itemsObject.vPCId = valueItemsAddress["VPCId"].asString();
-		if(!valueItemsAddress["VSwitchId"].isNull())
-			itemsObject.vSwitchId = valueItemsAddress["VSwitchId"].asString();
+		if(!valueItemsAddress["IPAddress"].isNull())
+			itemsObject.iPAddress = valueItemsAddress["IPAddress"].asString();
+		if(!valueItemsAddress["ConnectionStringPrefix"].isNull())
+			itemsObject.connectionStringPrefix = valueItemsAddress["ConnectionStringPrefix"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["ClusterNetworkType"].isNull())

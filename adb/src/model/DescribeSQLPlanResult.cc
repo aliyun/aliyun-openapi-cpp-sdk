@@ -43,71 +43,71 @@ void DescribeSQLPlanResult::parse(const std::string &payload)
 	for (auto valueStageListSqlPlanStage : allStageListNode)
 	{
 		SqlPlanStage stageListObject;
-		if(!valueStageListSqlPlanStage["StageId"].isNull())
-			stageListObject.stageId = std::stoi(valueStageListSqlPlanStage["StageId"].asString());
 		if(!valueStageListSqlPlanStage["State"].isNull())
 			stageListObject.state = valueStageListSqlPlanStage["State"].asString();
-		if(!valueStageListSqlPlanStage["OperatorCost"].isNull())
-			stageListObject.operatorCost = std::stol(valueStageListSqlPlanStage["OperatorCost"].asString());
-		if(!valueStageListSqlPlanStage["PeakMemory"].isNull())
-			stageListObject.peakMemory = std::stol(valueStageListSqlPlanStage["PeakMemory"].asString());
-		if(!valueStageListSqlPlanStage["CPUTimeMin"].isNull())
-			stageListObject.cPUTimeMin = std::stol(valueStageListSqlPlanStage["CPUTimeMin"].asString());
-		if(!valueStageListSqlPlanStage["CPUTimeMax"].isNull())
-			stageListObject.cPUTimeMax = std::stol(valueStageListSqlPlanStage["CPUTimeMax"].asString());
 		if(!valueStageListSqlPlanStage["CPUTimeAvg"].isNull())
 			stageListObject.cPUTimeAvg = std::stol(valueStageListSqlPlanStage["CPUTimeAvg"].asString());
-		if(!valueStageListSqlPlanStage["InputSizeMin"].isNull())
-			stageListObject.inputSizeMin = std::stol(valueStageListSqlPlanStage["InputSizeMin"].asString());
-		if(!valueStageListSqlPlanStage["InputSizeMax"].isNull())
-			stageListObject.inputSizeMax = std::stol(valueStageListSqlPlanStage["InputSizeMax"].asString());
-		if(!valueStageListSqlPlanStage["InputSizeAvg"].isNull())
-			stageListObject.inputSizeAvg = std::stol(valueStageListSqlPlanStage["InputSizeAvg"].asString());
-		if(!valueStageListSqlPlanStage["ScanSizeMin"].isNull())
-			stageListObject.scanSizeMin = std::stol(valueStageListSqlPlanStage["ScanSizeMin"].asString());
-		if(!valueStageListSqlPlanStage["ScanSizeMax"].isNull())
-			stageListObject.scanSizeMax = std::stol(valueStageListSqlPlanStage["ScanSizeMax"].asString());
-		if(!valueStageListSqlPlanStage["ScanSizeAvg"].isNull())
-			stageListObject.scanSizeAvg = std::stol(valueStageListSqlPlanStage["ScanSizeAvg"].asString());
-		if(!valueStageListSqlPlanStage["ScanTimeMin"].isNull())
-			stageListObject.scanTimeMin = std::stol(valueStageListSqlPlanStage["ScanTimeMin"].asString());
+		if(!valueStageListSqlPlanStage["CPUTimeMax"].isNull())
+			stageListObject.cPUTimeMax = std::stol(valueStageListSqlPlanStage["CPUTimeMax"].asString());
+		if(!valueStageListSqlPlanStage["OperatorCost"].isNull())
+			stageListObject.operatorCost = std::stol(valueStageListSqlPlanStage["OperatorCost"].asString());
 		if(!valueStageListSqlPlanStage["ScanTimeMax"].isNull())
 			stageListObject.scanTimeMax = std::stol(valueStageListSqlPlanStage["ScanTimeMax"].asString());
+		if(!valueStageListSqlPlanStage["InputSizeMax"].isNull())
+			stageListObject.inputSizeMax = std::stol(valueStageListSqlPlanStage["InputSizeMax"].asString());
+		if(!valueStageListSqlPlanStage["StageId"].isNull())
+			stageListObject.stageId = std::stoi(valueStageListSqlPlanStage["StageId"].asString());
+		if(!valueStageListSqlPlanStage["ScanSizeMax"].isNull())
+			stageListObject.scanSizeMax = std::stol(valueStageListSqlPlanStage["ScanSizeMax"].asString());
+		if(!valueStageListSqlPlanStage["CPUTimeMin"].isNull())
+			stageListObject.cPUTimeMin = std::stol(valueStageListSqlPlanStage["CPUTimeMin"].asString());
+		if(!valueStageListSqlPlanStage["ScanTimeMin"].isNull())
+			stageListObject.scanTimeMin = std::stol(valueStageListSqlPlanStage["ScanTimeMin"].asString());
+		if(!valueStageListSqlPlanStage["ScanSizeMin"].isNull())
+			stageListObject.scanSizeMin = std::stol(valueStageListSqlPlanStage["ScanSizeMin"].asString());
+		if(!valueStageListSqlPlanStage["InputSizeMin"].isNull())
+			stageListObject.inputSizeMin = std::stol(valueStageListSqlPlanStage["InputSizeMin"].asString());
+		if(!valueStageListSqlPlanStage["PeakMemory"].isNull())
+			stageListObject.peakMemory = std::stol(valueStageListSqlPlanStage["PeakMemory"].asString());
 		if(!valueStageListSqlPlanStage["ScanTimeAvg"].isNull())
 			stageListObject.scanTimeAvg = std::stol(valueStageListSqlPlanStage["ScanTimeAvg"].asString());
+		if(!valueStageListSqlPlanStage["ScanSizeAvg"].isNull())
+			stageListObject.scanSizeAvg = std::stol(valueStageListSqlPlanStage["ScanSizeAvg"].asString());
+		if(!valueStageListSqlPlanStage["InputSizeAvg"].isNull())
+			stageListObject.inputSizeAvg = std::stol(valueStageListSqlPlanStage["InputSizeAvg"].asString());
 		stageList_.push_back(stageListObject);
 	}
 	auto detailNode = value["Detail"];
 	if(!detailNode["SQL"].isNull())
 		detail_.sQL = detailNode["SQL"].asString();
-	if(!detailNode["State"].isNull())
-		detail_.state = detailNode["State"].asString();
-	if(!detailNode["User"].isNull())
-		detail_.user = detailNode["User"].asString();
-	if(!detailNode["ClientIP"].isNull())
-		detail_.clientIP = detailNode["ClientIP"].asString();
-	if(!detailNode["Database"].isNull())
-		detail_.database = detailNode["Database"].asString();
-	if(!detailNode["TotalStage"].isNull())
-		detail_.totalStage = std::stol(detailNode["TotalStage"].asString());
-	if(!detailNode["TotalTask"].isNull())
-		detail_.totalTask = std::stol(detailNode["TotalTask"].asString());
-	if(!detailNode["OutputRows"].isNull())
-		detail_.outputRows = std::stol(detailNode["OutputRows"].asString());
 	if(!detailNode["OutputSize"].isNull())
 		detail_.outputSize = std::stol(detailNode["OutputSize"].asString());
+	if(!detailNode["State"].isNull())
+		detail_.state = detailNode["State"].asString();
+	if(!detailNode["OutputRows"].isNull())
+		detail_.outputRows = std::stol(detailNode["OutputRows"].asString());
+	if(!detailNode["User"].isNull())
+		detail_.user = detailNode["User"].asString();
 	if(!detailNode["StartTime"].isNull())
 		detail_.startTime = detailNode["StartTime"].asString();
-	if(!detailNode["TotalTime"].isNull())
-		detail_.totalTime = std::stol(detailNode["TotalTime"].asString());
+	if(!detailNode["TotalStage"].isNull())
+		detail_.totalStage = std::stol(detailNode["TotalStage"].asString());
 	if(!detailNode["QueuedTime"].isNull())
 		detail_.queuedTime = std::stol(detailNode["QueuedTime"].asString());
+	if(!detailNode["TotalTime"].isNull())
+		detail_.totalTime = std::stol(detailNode["TotalTime"].asString());
+	if(!detailNode["TotalTask"].isNull())
+		detail_.totalTask = std::stol(detailNode["TotalTask"].asString());
+	if(!detailNode["Database"].isNull())
+		detail_.database = detailNode["Database"].asString();
+	if(!detailNode["PeakMemory"].isNull())
+		detail_.peakMemory = std::stol(detailNode["PeakMemory"].asString());
+	if(!detailNode["ClientIP"].isNull())
+		detail_.clientIP = detailNode["ClientIP"].asString();
 	if(!detailNode["PlanningTime"].isNull())
 		detail_.planningTime = std::stol(detailNode["PlanningTime"].asString());
 	if(!detailNode["CPUTime"].isNull())
 		detail_.cPUTime = std::stol(detailNode["CPUTime"].asString());
-	if(!detailNode["PeakMemory"].isNull())
-		detail_.peakMemory = std::stol(detailNode["PeakMemory"].asString());
 	if(!value["OriginInfo"].isNull())
 		originInfo_ = value["OriginInfo"].asString();
 

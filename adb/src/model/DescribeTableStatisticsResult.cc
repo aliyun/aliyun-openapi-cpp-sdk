@@ -43,22 +43,22 @@ void DescribeTableStatisticsResult::parse(const std::string &payload)
 	for (auto valueItemsTableStatisticRecords : allItemsNode)
 	{
 		TableStatisticRecords itemsObject;
-		if(!valueItemsTableStatisticRecords["TableName"].isNull())
-			itemsObject.tableName = valueItemsTableStatisticRecords["TableName"].asString();
-		if(!valueItemsTableStatisticRecords["ColdDataSize"].isNull())
-			itemsObject.coldDataSize = std::stol(valueItemsTableStatisticRecords["ColdDataSize"].asString());
-		if(!valueItemsTableStatisticRecords["DataSize"].isNull())
-			itemsObject.dataSize = std::stol(valueItemsTableStatisticRecords["DataSize"].asString());
-		if(!valueItemsTableStatisticRecords["PrimaryKeyIndexSize"].isNull())
-			itemsObject.primaryKeyIndexSize = std::stol(valueItemsTableStatisticRecords["PrimaryKeyIndexSize"].asString());
-		if(!valueItemsTableStatisticRecords["IndexSize"].isNull())
-			itemsObject.indexSize = std::stol(valueItemsTableStatisticRecords["IndexSize"].asString());
-		if(!valueItemsTableStatisticRecords["RowCount"].isNull())
-			itemsObject.rowCount = std::stol(valueItemsTableStatisticRecords["RowCount"].asString());
-		if(!valueItemsTableStatisticRecords["PartitionCount"].isNull())
-			itemsObject.partitionCount = std::stol(valueItemsTableStatisticRecords["PartitionCount"].asString());
 		if(!valueItemsTableStatisticRecords["SchemaName"].isNull())
 			itemsObject.schemaName = valueItemsTableStatisticRecords["SchemaName"].asString();
+		if(!valueItemsTableStatisticRecords["TableName"].isNull())
+			itemsObject.tableName = valueItemsTableStatisticRecords["TableName"].asString();
+		if(!valueItemsTableStatisticRecords["RowCount"].isNull())
+			itemsObject.rowCount = std::stol(valueItemsTableStatisticRecords["RowCount"].asString());
+		if(!valueItemsTableStatisticRecords["DataSize"].isNull())
+			itemsObject.dataSize = std::stol(valueItemsTableStatisticRecords["DataSize"].asString());
+		if(!valueItemsTableStatisticRecords["IndexSize"].isNull())
+			itemsObject.indexSize = std::stol(valueItemsTableStatisticRecords["IndexSize"].asString());
+		if(!valueItemsTableStatisticRecords["PrimaryKeyIndexSize"].isNull())
+			itemsObject.primaryKeyIndexSize = std::stol(valueItemsTableStatisticRecords["PrimaryKeyIndexSize"].asString());
+		if(!valueItemsTableStatisticRecords["PartitionCount"].isNull())
+			itemsObject.partitionCount = std::stol(valueItemsTableStatisticRecords["PartitionCount"].asString());
+		if(!valueItemsTableStatisticRecords["ColdDataSize"].isNull())
+			itemsObject.coldDataSize = std::stol(valueItemsTableStatisticRecords["ColdDataSize"].asString());
 		items_.push_back(itemsObject);
 	}
 	if(!value["TotalCount"].isNull())

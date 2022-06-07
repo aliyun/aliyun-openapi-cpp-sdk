@@ -39,6 +39,38 @@ void DescribeAllDataSourceResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto allTablesNode = value["Tables"]["Table"];
+	for (auto valueTablesTable : allTablesNode)
+	{
+		Table tablesObject;
+		if(!valueTablesTable["TableName"].isNull())
+			tablesObject.tableName = valueTablesTable["TableName"].asString();
+		if(!valueTablesTable["DBClusterId"].isNull())
+			tablesObject.dBClusterId = valueTablesTable["DBClusterId"].asString();
+		if(!valueTablesTable["SchemaName"].isNull())
+			tablesObject.schemaName = valueTablesTable["SchemaName"].asString();
+		tables_.push_back(tablesObject);
+	}
+	auto allColumnsNode = value["Columns"]["Column"];
+	for (auto valueColumnsColumn : allColumnsNode)
+	{
+		Column columnsObject;
+		if(!valueColumnsColumn["Type"].isNull())
+			columnsObject.type = valueColumnsColumn["Type"].asString();
+		if(!valueColumnsColumn["ColumnName"].isNull())
+			columnsObject.columnName = valueColumnsColumn["ColumnName"].asString();
+		if(!valueColumnsColumn["TableName"].isNull())
+			columnsObject.tableName = valueColumnsColumn["TableName"].asString();
+		if(!valueColumnsColumn["AutoIncrementColumn"].isNull())
+			columnsObject.autoIncrementColumn = valueColumnsColumn["AutoIncrementColumn"].asString() == "true";
+		if(!valueColumnsColumn["DBClusterId"].isNull())
+			columnsObject.dBClusterId = valueColumnsColumn["DBClusterId"].asString();
+		if(!valueColumnsColumn["PrimaryKey"].isNull())
+			columnsObject.primaryKey = valueColumnsColumn["PrimaryKey"].asString() == "true";
+		if(!valueColumnsColumn["SchemaName"].isNull())
+			columnsObject.schemaName = valueColumnsColumn["SchemaName"].asString();
+		columns_.push_back(columnsObject);
+	}
 	auto allSchemasNode = value["Schemas"]["Schema"];
 	for (auto valueSchemasSchema : allSchemasNode)
 	{
@@ -48,38 +80,6 @@ void DescribeAllDataSourceResult::parse(const std::string &payload)
 		if(!valueSchemasSchema["SchemaName"].isNull())
 			schemasObject.schemaName = valueSchemasSchema["SchemaName"].asString();
 		schemas_.push_back(schemasObject);
-	}
-	auto allTablesNode = value["Tables"]["Table"];
-	for (auto valueTablesTable : allTablesNode)
-	{
-		Table tablesObject;
-		if(!valueTablesTable["DBClusterId"].isNull())
-			tablesObject.dBClusterId = valueTablesTable["DBClusterId"].asString();
-		if(!valueTablesTable["SchemaName"].isNull())
-			tablesObject.schemaName = valueTablesTable["SchemaName"].asString();
-		if(!valueTablesTable["TableName"].isNull())
-			tablesObject.tableName = valueTablesTable["TableName"].asString();
-		tables_.push_back(tablesObject);
-	}
-	auto allColumnsNode = value["Columns"]["Column"];
-	for (auto valueColumnsColumn : allColumnsNode)
-	{
-		Column columnsObject;
-		if(!valueColumnsColumn["DBClusterId"].isNull())
-			columnsObject.dBClusterId = valueColumnsColumn["DBClusterId"].asString();
-		if(!valueColumnsColumn["SchemaName"].isNull())
-			columnsObject.schemaName = valueColumnsColumn["SchemaName"].asString();
-		if(!valueColumnsColumn["TableName"].isNull())
-			columnsObject.tableName = valueColumnsColumn["TableName"].asString();
-		if(!valueColumnsColumn["ColumnName"].isNull())
-			columnsObject.columnName = valueColumnsColumn["ColumnName"].asString();
-		if(!valueColumnsColumn["Type"].isNull())
-			columnsObject.type = valueColumnsColumn["Type"].asString();
-		if(!valueColumnsColumn["PrimaryKey"].isNull())
-			columnsObject.primaryKey = valueColumnsColumn["PrimaryKey"].asString() == "true";
-		if(!valueColumnsColumn["AutoIncrementColumn"].isNull())
-			columnsObject.autoIncrementColumn = valueColumnsColumn["AutoIncrementColumn"].asString() == "true";
-		columns_.push_back(columnsObject);
 	}
 
 }

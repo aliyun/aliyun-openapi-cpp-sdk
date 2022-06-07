@@ -43,12 +43,12 @@ void DescribeDBClusterAccessWhiteListResult::parse(const std::string &payload)
 	for (auto valueItemsIPArray : allItemsNode)
 	{
 		IPArray itemsObject;
-		if(!valueItemsIPArray["DBClusterIPArrayName"].isNull())
-			itemsObject.dBClusterIPArrayName = valueItemsIPArray["DBClusterIPArrayName"].asString();
-		if(!valueItemsIPArray["SecurityIPList"].isNull())
-			itemsObject.securityIPList = valueItemsIPArray["SecurityIPList"].asString();
 		if(!valueItemsIPArray["DBClusterIPArrayAttribute"].isNull())
 			itemsObject.dBClusterIPArrayAttribute = valueItemsIPArray["DBClusterIPArrayAttribute"].asString();
+		if(!valueItemsIPArray["SecurityIPList"].isNull())
+			itemsObject.securityIPList = valueItemsIPArray["SecurityIPList"].asString();
+		if(!valueItemsIPArray["DBClusterIPArrayName"].isNull())
+			itemsObject.dBClusterIPArrayName = valueItemsIPArray["DBClusterIPArrayName"].asString();
 		items_.push_back(itemsObject);
 	}
 

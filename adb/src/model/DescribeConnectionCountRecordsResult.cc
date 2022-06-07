@@ -39,16 +39,6 @@ void DescribeConnectionCountRecordsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allUserRecordsNode = value["UserRecords"]["Users"];
-	for (auto valueUserRecordsUsers : allUserRecordsNode)
-	{
-		Users userRecordsObject;
-		if(!valueUserRecordsUsers["User"].isNull())
-			userRecordsObject.user = valueUserRecordsUsers["User"].asString();
-		if(!valueUserRecordsUsers["Count"].isNull())
-			userRecordsObject.count = std::stol(valueUserRecordsUsers["Count"].asString());
-		userRecords_.push_back(userRecordsObject);
-	}
 	auto allAccessIpRecordsNode = value["AccessIpRecords"]["AccessIps"];
 	for (auto valueAccessIpRecordsAccessIps : allAccessIpRecordsNode)
 	{
@@ -58,6 +48,16 @@ void DescribeConnectionCountRecordsResult::parse(const std::string &payload)
 		if(!valueAccessIpRecordsAccessIps["Count"].isNull())
 			accessIpRecordsObject.count = std::stol(valueAccessIpRecordsAccessIps["Count"].asString());
 		accessIpRecords_.push_back(accessIpRecordsObject);
+	}
+	auto allUserRecordsNode = value["UserRecords"]["Users"];
+	for (auto valueUserRecordsUsers : allUserRecordsNode)
+	{
+		Users userRecordsObject;
+		if(!valueUserRecordsUsers["User"].isNull())
+			userRecordsObject.user = valueUserRecordsUsers["User"].asString();
+		if(!valueUserRecordsUsers["Count"].isNull())
+			userRecordsObject.count = std::stol(valueUserRecordsUsers["Count"].asString());
+		userRecords_.push_back(userRecordsObject);
 	}
 	if(!value["TotalCount"].isNull())
 		totalCount_ = value["TotalCount"].asString();

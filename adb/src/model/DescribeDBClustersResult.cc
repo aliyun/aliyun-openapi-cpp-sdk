@@ -43,74 +43,74 @@ void DescribeDBClustersResult::parse(const std::string &payload)
 	for (auto valueItemsDBCluster : allItemsNode)
 	{
 		DBCluster itemsObject;
-		if(!valueItemsDBCluster["DBClusterId"].isNull())
-			itemsObject.dBClusterId = valueItemsDBCluster["DBClusterId"].asString();
-		if(!valueItemsDBCluster["DBClusterType"].isNull())
-			itemsObject.dBClusterType = valueItemsDBCluster["DBClusterType"].asString();
-		if(!valueItemsDBCluster["DBClusterDescription"].isNull())
-			itemsObject.dBClusterDescription = valueItemsDBCluster["DBClusterDescription"].asString();
-		if(!valueItemsDBCluster["PayType"].isNull())
-			itemsObject.payType = valueItemsDBCluster["PayType"].asString();
-		if(!valueItemsDBCluster["RegionId"].isNull())
-			itemsObject.regionId = valueItemsDBCluster["RegionId"].asString();
-		if(!valueItemsDBCluster["ExpireTime"].isNull())
-			itemsObject.expireTime = valueItemsDBCluster["ExpireTime"].asString();
+		if(!valueItemsDBCluster["DtsJobId"].isNull())
+			itemsObject.dtsJobId = valueItemsDBCluster["DtsJobId"].asString();
+		if(!valueItemsDBCluster["DBNodeCount"].isNull())
+			itemsObject.dBNodeCount = std::stol(valueItemsDBCluster["DBNodeCount"].asString());
 		if(!valueItemsDBCluster["Expired"].isNull())
 			itemsObject.expired = valueItemsDBCluster["Expired"].asString();
-		if(!valueItemsDBCluster["DBClusterStatus"].isNull())
-			itemsObject.dBClusterStatus = valueItemsDBCluster["DBClusterStatus"].asString();
-		if(!valueItemsDBCluster["DBVersion"].isNull())
-			itemsObject.dBVersion = valueItemsDBCluster["DBVersion"].asString();
-		if(!valueItemsDBCluster["LockMode"].isNull())
-			itemsObject.lockMode = valueItemsDBCluster["LockMode"].asString();
-		if(!valueItemsDBCluster["LockReason"].isNull())
-			itemsObject.lockReason = valueItemsDBCluster["LockReason"].asString();
 		if(!valueItemsDBCluster["CreateTime"].isNull())
 			itemsObject.createTime = valueItemsDBCluster["CreateTime"].asString();
+		if(!valueItemsDBCluster["PayType"].isNull())
+			itemsObject.payType = valueItemsDBCluster["PayType"].asString();
+		if(!valueItemsDBCluster["DiskType"].isNull())
+			itemsObject.diskType = valueItemsDBCluster["DiskType"].asString();
+		if(!valueItemsDBCluster["Mode"].isNull())
+			itemsObject.mode = valueItemsDBCluster["Mode"].asString();
+		if(!valueItemsDBCluster["Port"].isNull())
+			itemsObject.port = valueItemsDBCluster["Port"].asString();
+		if(!valueItemsDBCluster["LockMode"].isNull())
+			itemsObject.lockMode = valueItemsDBCluster["LockMode"].asString();
+		if(!valueItemsDBCluster["StorageResource"].isNull())
+			itemsObject.storageResource = valueItemsDBCluster["StorageResource"].asString();
+		if(!valueItemsDBCluster["ExecutorCount"].isNull())
+			itemsObject.executorCount = valueItemsDBCluster["ExecutorCount"].asString();
+		if(!valueItemsDBCluster["DBClusterId"].isNull())
+			itemsObject.dBClusterId = valueItemsDBCluster["DBClusterId"].asString();
+		if(!valueItemsDBCluster["ConnectionString"].isNull())
+			itemsObject.connectionString = valueItemsDBCluster["ConnectionString"].asString();
+		if(!valueItemsDBCluster["RdsInstanceId"].isNull())
+			itemsObject.rdsInstanceId = valueItemsDBCluster["RdsInstanceId"].asString();
+		if(!valueItemsDBCluster["DBClusterType"].isNull())
+			itemsObject.dBClusterType = valueItemsDBCluster["DBClusterType"].asString();
+		if(!valueItemsDBCluster["CommodityCode"].isNull())
+			itemsObject.commodityCode = valueItemsDBCluster["CommodityCode"].asString();
+		if(!valueItemsDBCluster["ExpireTime"].isNull())
+			itemsObject.expireTime = valueItemsDBCluster["ExpireTime"].asString();
 		if(!valueItemsDBCluster["DBNodeStorage"].isNull())
 			itemsObject.dBNodeStorage = std::stol(valueItemsDBCluster["DBNodeStorage"].asString());
 		if(!valueItemsDBCluster["DBNodeClass"].isNull())
 			itemsObject.dBNodeClass = valueItemsDBCluster["DBNodeClass"].asString();
-		if(!valueItemsDBCluster["DBNodeCount"].isNull())
-			itemsObject.dBNodeCount = std::stol(valueItemsDBCluster["DBNodeCount"].asString());
-		if(!valueItemsDBCluster["CommodityCode"].isNull())
-			itemsObject.commodityCode = valueItemsDBCluster["CommodityCode"].asString();
-		if(!valueItemsDBCluster["Category"].isNull())
-			itemsObject.category = valueItemsDBCluster["Category"].asString();
-		if(!valueItemsDBCluster["RdsInstanceId"].isNull())
-			itemsObject.rdsInstanceId = valueItemsDBCluster["RdsInstanceId"].asString();
-		if(!valueItemsDBCluster["DtsJobId"].isNull())
-			itemsObject.dtsJobId = valueItemsDBCluster["DtsJobId"].asString();
-		if(!valueItemsDBCluster["ExecutorCount"].isNull())
-			itemsObject.executorCount = valueItemsDBCluster["ExecutorCount"].asString();
-		if(!valueItemsDBCluster["DiskType"].isNull())
-			itemsObject.diskType = valueItemsDBCluster["DiskType"].asString();
-		if(!valueItemsDBCluster["VPCCloudInstanceId"].isNull())
-			itemsObject.vPCCloudInstanceId = valueItemsDBCluster["VPCCloudInstanceId"].asString();
-		if(!valueItemsDBCluster["Engine"].isNull())
-			itemsObject.engine = valueItemsDBCluster["Engine"].asString();
-		if(!valueItemsDBCluster["DBClusterNetworkType"].isNull())
-			itemsObject.dBClusterNetworkType = valueItemsDBCluster["DBClusterNetworkType"].asString();
+		if(!valueItemsDBCluster["LockReason"].isNull())
+			itemsObject.lockReason = valueItemsDBCluster["LockReason"].asString();
 		if(!valueItemsDBCluster["VPCId"].isNull())
 			itemsObject.vPCId = valueItemsDBCluster["VPCId"].asString();
-		if(!valueItemsDBCluster["VSwitchId"].isNull())
-			itemsObject.vSwitchId = valueItemsDBCluster["VSwitchId"].asString();
-		if(!valueItemsDBCluster["ZoneId"].isNull())
-			itemsObject.zoneId = valueItemsDBCluster["ZoneId"].asString();
-		if(!valueItemsDBCluster["ConnectionString"].isNull())
-			itemsObject.connectionString = valueItemsDBCluster["ConnectionString"].asString();
-		if(!valueItemsDBCluster["Port"].isNull())
-			itemsObject.port = valueItemsDBCluster["Port"].asString();
+		if(!valueItemsDBCluster["RegionId"].isNull())
+			itemsObject.regionId = valueItemsDBCluster["RegionId"].asString();
 		if(!valueItemsDBCluster["ComputeResource"].isNull())
 			itemsObject.computeResource = valueItemsDBCluster["ComputeResource"].asString();
-		if(!valueItemsDBCluster["StorageResource"].isNull())
-			itemsObject.storageResource = valueItemsDBCluster["StorageResource"].asString();
-		if(!valueItemsDBCluster["Mode"].isNull())
-			itemsObject.mode = valueItemsDBCluster["Mode"].asString();
-		if(!valueItemsDBCluster["ResourceGroupId"].isNull())
-			itemsObject.resourceGroupId = valueItemsDBCluster["ResourceGroupId"].asString();
 		if(!valueItemsDBCluster["ElasticIOResource"].isNull())
 			itemsObject.elasticIOResource = std::stoi(valueItemsDBCluster["ElasticIOResource"].asString());
+		if(!valueItemsDBCluster["VSwitchId"].isNull())
+			itemsObject.vSwitchId = valueItemsDBCluster["VSwitchId"].asString();
+		if(!valueItemsDBCluster["DBVersion"].isNull())
+			itemsObject.dBVersion = valueItemsDBCluster["DBVersion"].asString();
+		if(!valueItemsDBCluster["VPCCloudInstanceId"].isNull())
+			itemsObject.vPCCloudInstanceId = valueItemsDBCluster["VPCCloudInstanceId"].asString();
+		if(!valueItemsDBCluster["DBClusterStatus"].isNull())
+			itemsObject.dBClusterStatus = valueItemsDBCluster["DBClusterStatus"].asString();
+		if(!valueItemsDBCluster["ResourceGroupId"].isNull())
+			itemsObject.resourceGroupId = valueItemsDBCluster["ResourceGroupId"].asString();
+		if(!valueItemsDBCluster["DBClusterNetworkType"].isNull())
+			itemsObject.dBClusterNetworkType = valueItemsDBCluster["DBClusterNetworkType"].asString();
+		if(!valueItemsDBCluster["DBClusterDescription"].isNull())
+			itemsObject.dBClusterDescription = valueItemsDBCluster["DBClusterDescription"].asString();
+		if(!valueItemsDBCluster["ZoneId"].isNull())
+			itemsObject.zoneId = valueItemsDBCluster["ZoneId"].asString();
+		if(!valueItemsDBCluster["Category"].isNull())
+			itemsObject.category = valueItemsDBCluster["Category"].asString();
+		if(!valueItemsDBCluster["Engine"].isNull())
+			itemsObject.engine = valueItemsDBCluster["Engine"].asString();
 		auto allTagsNode = valueItemsDBCluster["Tags"]["Tag"];
 		for (auto valueItemsDBClusterTagsTag : allTagsNode)
 		{
@@ -123,12 +123,12 @@ void DescribeDBClustersResult::parse(const std::string &payload)
 		}
 		items_.push_back(itemsObject);
 	}
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
 
 }
 

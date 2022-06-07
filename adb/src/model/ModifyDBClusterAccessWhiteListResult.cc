@@ -39,10 +39,10 @@ void ModifyDBClusterAccessWhiteListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["DBClusterId"].isNull())
-		dBClusterId_ = value["DBClusterId"].asString();
 	if(!value["TaskId"].isNull())
 		taskId_ = std::stoi(value["TaskId"].asString());
+	if(!value["DBClusterId"].isNull())
+		dBClusterId_ = value["DBClusterId"].asString();
 
 }
 

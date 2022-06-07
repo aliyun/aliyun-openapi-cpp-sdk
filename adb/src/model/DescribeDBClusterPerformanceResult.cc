@@ -60,12 +60,12 @@ void DescribeDBClusterPerformanceResult::parse(const std::string &payload)
 		}
 		performances_.push_back(performancesObject);
 	}
-	if(!value["DBClusterId"].isNull())
-		dBClusterId_ = value["DBClusterId"].asString();
-	if(!value["StartTime"].isNull())
-		startTime_ = value["StartTime"].asString();
 	if(!value["EndTime"].isNull())
 		endTime_ = value["EndTime"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
+	if(!value["DBClusterId"].isNull())
+		dBClusterId_ = value["DBClusterId"].asString();
 
 }
 
@@ -74,14 +74,14 @@ std::string DescribeDBClusterPerformanceResult::getEndTime()const
 	return endTime_;
 }
 
-std::string DescribeDBClusterPerformanceResult::getDBClusterId()const
-{
-	return dBClusterId_;
-}
-
 std::string DescribeDBClusterPerformanceResult::getStartTime()const
 {
 	return startTime_;
+}
+
+std::string DescribeDBClusterPerformanceResult::getDBClusterId()const
+{
+	return dBClusterId_;
 }
 
 std::vector<DescribeDBClusterPerformanceResult::PerformanceItem> DescribeDBClusterPerformanceResult::getPerformances()const

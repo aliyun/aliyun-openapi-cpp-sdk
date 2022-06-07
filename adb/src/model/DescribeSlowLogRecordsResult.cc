@@ -43,42 +43,42 @@ void DescribeSlowLogRecordsResult::parse(const std::string &payload)
 	for (auto valueItemsSlowLogRecord : allItemsNode)
 	{
 		SlowLogRecord itemsObject;
-		if(!valueItemsSlowLogRecord["OutputSize"].isNull())
-			itemsObject.outputSize = valueItemsSlowLogRecord["OutputSize"].asString();
-		if(!valueItemsSlowLogRecord["UserName"].isNull())
-			itemsObject.userName = valueItemsSlowLogRecord["UserName"].asString();
-		if(!valueItemsSlowLogRecord["PeakMemoryUsage"].isNull())
-			itemsObject.peakMemoryUsage = valueItemsSlowLogRecord["PeakMemoryUsage"].asString();
-		if(!valueItemsSlowLogRecord["ExecutionStartTime"].isNull())
-			itemsObject.executionStartTime = valueItemsSlowLogRecord["ExecutionStartTime"].asString();
-		if(!valueItemsSlowLogRecord["ParseRowCounts"].isNull())
-			itemsObject.parseRowCounts = std::stol(valueItemsSlowLogRecord["ParseRowCounts"].asString());
-		if(!valueItemsSlowLogRecord["QueryTime"].isNull())
-			itemsObject.queryTime = std::stol(valueItemsSlowLogRecord["QueryTime"].asString());
-		if(!valueItemsSlowLogRecord["ScanTime"].isNull())
-			itemsObject.scanTime = std::stol(valueItemsSlowLogRecord["ScanTime"].asString());
 		if(!valueItemsSlowLogRecord["HostAddress"].isNull())
 			itemsObject.hostAddress = valueItemsSlowLogRecord["HostAddress"].asString();
+		if(!valueItemsSlowLogRecord["ScanTime"].isNull())
+			itemsObject.scanTime = std::stol(valueItemsSlowLogRecord["ScanTime"].asString());
 		if(!valueItemsSlowLogRecord["SQLText"].isNull())
 			itemsObject.sQLText = valueItemsSlowLogRecord["SQLText"].asString();
-		if(!valueItemsSlowLogRecord["WallTime"].isNull())
-			itemsObject.wallTime = std::stol(valueItemsSlowLogRecord["WallTime"].asString());
-		if(!valueItemsSlowLogRecord["ScanRows"].isNull())
-			itemsObject.scanRows = std::stol(valueItemsSlowLogRecord["ScanRows"].asString());
+		if(!valueItemsSlowLogRecord["OutputSize"].isNull())
+			itemsObject.outputSize = valueItemsSlowLogRecord["OutputSize"].asString();
+		if(!valueItemsSlowLogRecord["PeakMemoryUsage"].isNull())
+			itemsObject.peakMemoryUsage = valueItemsSlowLogRecord["PeakMemoryUsage"].asString();
 		if(!valueItemsSlowLogRecord["State"].isNull())
 			itemsObject.state = valueItemsSlowLogRecord["State"].asString();
-		if(!valueItemsSlowLogRecord["ReturnRowCounts"].isNull())
-			itemsObject.returnRowCounts = std::stol(valueItemsSlowLogRecord["ReturnRowCounts"].asString());
-		if(!valueItemsSlowLogRecord["PlanningTime"].isNull())
-			itemsObject.planningTime = std::stol(valueItemsSlowLogRecord["PlanningTime"].asString());
-		if(!valueItemsSlowLogRecord["DBName"].isNull())
-			itemsObject.dBName = valueItemsSlowLogRecord["DBName"].asString();
-		if(!valueItemsSlowLogRecord["QueueTime"].isNull())
-			itemsObject.queueTime = std::stol(valueItemsSlowLogRecord["QueueTime"].asString());
-		if(!valueItemsSlowLogRecord["ProcessID"].isNull())
-			itemsObject.processID = valueItemsSlowLogRecord["ProcessID"].asString();
+		if(!valueItemsSlowLogRecord["WallTime"].isNull())
+			itemsObject.wallTime = std::stol(valueItemsSlowLogRecord["WallTime"].asString());
 		if(!valueItemsSlowLogRecord["ScanSize"].isNull())
 			itemsObject.scanSize = valueItemsSlowLogRecord["ScanSize"].asString();
+		if(!valueItemsSlowLogRecord["ExecutionStartTime"].isNull())
+			itemsObject.executionStartTime = valueItemsSlowLogRecord["ExecutionStartTime"].asString();
+		if(!valueItemsSlowLogRecord["QueryTime"].isNull())
+			itemsObject.queryTime = std::stol(valueItemsSlowLogRecord["QueryTime"].asString());
+		if(!valueItemsSlowLogRecord["ReturnRowCounts"].isNull())
+			itemsObject.returnRowCounts = std::stol(valueItemsSlowLogRecord["ReturnRowCounts"].asString());
+		if(!valueItemsSlowLogRecord["ScanRows"].isNull())
+			itemsObject.scanRows = std::stol(valueItemsSlowLogRecord["ScanRows"].asString());
+		if(!valueItemsSlowLogRecord["ParseRowCounts"].isNull())
+			itemsObject.parseRowCounts = std::stol(valueItemsSlowLogRecord["ParseRowCounts"].asString());
+		if(!valueItemsSlowLogRecord["DBName"].isNull())
+			itemsObject.dBName = valueItemsSlowLogRecord["DBName"].asString();
+		if(!valueItemsSlowLogRecord["PlanningTime"].isNull())
+			itemsObject.planningTime = std::stol(valueItemsSlowLogRecord["PlanningTime"].asString());
+		if(!valueItemsSlowLogRecord["QueueTime"].isNull())
+			itemsObject.queueTime = std::stol(valueItemsSlowLogRecord["QueueTime"].asString());
+		if(!valueItemsSlowLogRecord["UserName"].isNull())
+			itemsObject.userName = valueItemsSlowLogRecord["UserName"].asString();
+		if(!valueItemsSlowLogRecord["ProcessID"].isNull())
+			itemsObject.processID = valueItemsSlowLogRecord["ProcessID"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["TotalCount"].isNull())

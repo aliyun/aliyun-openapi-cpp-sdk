@@ -34,8 +34,8 @@ namespace AlibabaCloud
 			public:
 				struct IPArray
 				{
-					std::string dBClusterIPArrayName;
 					std::string securityIPList;
+					std::string dBClusterIPArrayName;
 					std::string dBClusterIPArrayAttribute;
 				};
 
