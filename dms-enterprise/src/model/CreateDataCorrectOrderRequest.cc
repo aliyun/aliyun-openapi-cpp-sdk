@@ -58,6 +58,7 @@ void CreateDataCorrectOrderRequest::setParam(const CreateDataCorrectOrderRequest
     setParameter(std::string("Param") + ".DbItemList." + std::to_string(dep1 + 1) + ".Logic", param.dbItemList[dep1].logic ? "true" : "false");
   }
   setParameter(std::string("Param") + ".ExecSQL", param.execSQL);
+  setParameter(std::string("Param") + ".ExecMode", param.execMode);
   setParameter(std::string("Param") + ".EstimateAffectRows", std::to_string(param.estimateAffectRows));
   setParameter(std::string("Param") + ".RollbackAttachmentName", param.rollbackAttachmentName);
   setParameter(std::string("Param") + ".AttachmentName", param.attachmentName);

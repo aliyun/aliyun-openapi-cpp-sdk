@@ -40,6 +40,7 @@ public:
 		DbItemListItem dbItemListItem;
 		std::vector<DbItemListItem> dbItemList;
 		std::string execSQL;
+		std::string execMode;
 		long estimateAffectRows;
 		std::string rollbackAttachmentName;
 		std::string attachmentName;

@@ -21,6 +21,8 @@ set(dms-enterprise_public_header
 	include/alibabacloud/dms-enterprise/Dms_enterpriseExport.h )
 
 set(dms-enterprise_public_header_model 
+	include/alibabacloud/dms-enterprise/model/AddDesensitizationRuleRequest.h
+	include/alibabacloud/dms-enterprise/model/AddDesensitizationRuleResult.h
 	include/alibabacloud/dms-enterprise/model/AddLhMembersRequest.h
 	include/alibabacloud/dms-enterprise/model/AddLhMembersResult.h
 	include/alibabacloud/dms-enterprise/model/AddLogicTableRouteConfigRequest.h
@@ -185,6 +187,8 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/ListDatabaseUserPermssionsResult.h
 	include/alibabacloud/dms-enterprise/model/ListDatabasesRequest.h
 	include/alibabacloud/dms-enterprise/model/ListDatabasesResult.h
+	include/alibabacloud/dms-enterprise/model/ListDesensitizationRuleRequest.h
+	include/alibabacloud/dms-enterprise/model/ListDesensitizationRuleResult.h
 	include/alibabacloud/dms-enterprise/model/ListIndexesRequest.h
 	include/alibabacloud/dms-enterprise/model/ListIndexesResult.h
 	include/alibabacloud/dms-enterprise/model/ListInstanceLoginAuditLogRequest.h
@@ -237,6 +241,8 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/ListWorkFlowTemplatesResult.h
 	include/alibabacloud/dms-enterprise/model/ModifyDataCorrectExecSQLRequest.h
 	include/alibabacloud/dms-enterprise/model/ModifyDataCorrectExecSQLResult.h
+	include/alibabacloud/dms-enterprise/model/ModifyDesensitizationStrategyRequest.h
+	include/alibabacloud/dms-enterprise/model/ModifyDesensitizationStrategyResult.h
 	include/alibabacloud/dms-enterprise/model/OfflineTaskFlowRequest.h
 	include/alibabacloud/dms-enterprise/model/OfflineTaskFlowResult.h
 	include/alibabacloud/dms-enterprise/model/PauseDataCorrectSQLJobRequest.h
@@ -274,6 +280,8 @@ set(dms-enterprise_public_header_model
 
 set(dms-enterprise_src 
 	src/Dms-enterpriseClient.cc
+	src/model/AddDesensitizationRuleRequest.cc
+	src/model/AddDesensitizationRuleResult.cc
 	src/model/AddLhMembersRequest.cc
 	src/model/AddLhMembersResult.cc
 	src/model/AddLogicTableRouteConfigRequest.cc
@@ -438,6 +446,8 @@ set(dms-enterprise_src
 	src/model/ListDatabaseUserPermssionsResult.cc
 	src/model/ListDatabasesRequest.cc
 	src/model/ListDatabasesResult.cc
+	src/model/ListDesensitizationRuleRequest.cc
+	src/model/ListDesensitizationRuleResult.cc
 	src/model/ListIndexesRequest.cc
 	src/model/ListIndexesResult.cc
 	src/model/ListInstanceLoginAuditLogRequest.cc
@@ -490,6 +500,8 @@ set(dms-enterprise_src
 	src/model/ListWorkFlowTemplatesResult.cc
 	src/model/ModifyDataCorrectExecSQLRequest.cc
 	src/model/ModifyDataCorrectExecSQLResult.cc
+	src/model/ModifyDesensitizationStrategyRequest.cc
+	src/model/ModifyDesensitizationStrategyResult.cc
 	src/model/OfflineTaskFlowRequest.cc
 	src/model/OfflineTaskFlowResult.cc
 	src/model/PauseDataCorrectSQLJobRequest.cc

@@ -22,6 +22,8 @@
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RpcServiceClient.h>
 #include "Dms_enterpriseExport.h"
+#include "model/AddDesensitizationRuleRequest.h"
+#include "model/AddDesensitizationRuleResult.h"
 #include "model/AddLhMembersRequest.h"
 #include "model/AddLhMembersResult.h"
 #include "model/AddLogicTableRouteConfigRequest.h"
@@ -186,6 +188,8 @@
 #include "model/ListDatabaseUserPermssionsResult.h"
 #include "model/ListDatabasesRequest.h"
 #include "model/ListDatabasesResult.h"
+#include "model/ListDesensitizationRuleRequest.h"
+#include "model/ListDesensitizationRuleResult.h"
 #include "model/ListIndexesRequest.h"
 #include "model/ListIndexesResult.h"
 #include "model/ListInstanceLoginAuditLogRequest.h"
@@ -238,6 +242,8 @@
 #include "model/ListWorkFlowTemplatesResult.h"
 #include "model/ModifyDataCorrectExecSQLRequest.h"
 #include "model/ModifyDataCorrectExecSQLResult.h"
+#include "model/ModifyDesensitizationStrategyRequest.h"
+#include "model/ModifyDesensitizationStrategyResult.h"
 #include "model/OfflineTaskFlowRequest.h"
 #include "model/OfflineTaskFlowResult.h"
 #include "model/PauseDataCorrectSQLJobRequest.h"
@@ -281,6 +287,9 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT Dms_enterpriseClient : public RpcServiceClient
 		{
 		public:
+			typedef Outcome<Error, Model::AddDesensitizationRuleResult> AddDesensitizationRuleOutcome;
+			typedef std::future<AddDesensitizationRuleOutcome> AddDesensitizationRuleOutcomeCallable;
+			typedef std::function<void(const Dms_enterpriseClient*, const Model::AddDesensitizationRuleRequest&, const AddDesensitizationRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddDesensitizationRuleAsyncHandler;
 			typedef Outcome<Error, Model::AddLhMembersResult> AddLhMembersOutcome;
 			typedef std::future<AddLhMembersOutcome> AddLhMembersOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::AddLhMembersRequest&, const AddLhMembersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddLhMembersAsyncHandler;
@@ -527,6 +536,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListDatabasesResult> ListDatabasesOutcome;
 			typedef std::future<ListDatabasesOutcome> ListDatabasesOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::ListDatabasesRequest&, const ListDatabasesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDatabasesAsyncHandler;
+			typedef Outcome<Error, Model::ListDesensitizationRuleResult> ListDesensitizationRuleOutcome;
+			typedef std::future<ListDesensitizationRuleOutcome> ListDesensitizationRuleOutcomeCallable;
+			typedef std::function<void(const Dms_enterpriseClient*, const Model::ListDesensitizationRuleRequest&, const ListDesensitizationRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDesensitizationRuleAsyncHandler;
 			typedef Outcome<Error, Model::ListIndexesResult> ListIndexesOutcome;
 			typedef std::future<ListIndexesOutcome> ListIndexesOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::ListIndexesRequest&, const ListIndexesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListIndexesAsyncHandler;
@@ -605,6 +617,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyDataCorrectExecSQLResult> ModifyDataCorrectExecSQLOutcome;
 			typedef std::future<ModifyDataCorrectExecSQLOutcome> ModifyDataCorrectExecSQLOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::ModifyDataCorrectExecSQLRequest&, const ModifyDataCorrectExecSQLOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDataCorrectExecSQLAsyncHandler;
+			typedef Outcome<Error, Model::ModifyDesensitizationStrategyResult> ModifyDesensitizationStrategyOutcome;
+			typedef std::future<ModifyDesensitizationStrategyOutcome> ModifyDesensitizationStrategyOutcomeCallable;
+			typedef std::function<void(const Dms_enterpriseClient*, const Model::ModifyDesensitizationStrategyRequest&, const ModifyDesensitizationStrategyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDesensitizationStrategyAsyncHandler;
 			typedef Outcome<Error, Model::OfflineTaskFlowResult> OfflineTaskFlowOutcome;
 			typedef std::future<OfflineTaskFlowOutcome> OfflineTaskFlowOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::OfflineTaskFlowRequest&, const OfflineTaskFlowOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OfflineTaskFlowAsyncHandler;
@@ -661,6 +676,9 @@ namespace AlibabaCloud
 			Dms_enterpriseClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			Dms_enterpriseClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~Dms_enterpriseClient();
+			AddDesensitizationRuleOutcome addDesensitizationRule(const Model::AddDesensitizationRuleRequest &request)const;
+			void addDesensitizationRuleAsync(const Model::AddDesensitizationRuleRequest& request, const AddDesensitizationRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddDesensitizationRuleOutcomeCallable addDesensitizationRuleCallable(const Model::AddDesensitizationRuleRequest& request) const;
 			AddLhMembersOutcome addLhMembers(const Model::AddLhMembersRequest &request)const;
 			void addLhMembersAsync(const Model::AddLhMembersRequest& request, const AddLhMembersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddLhMembersOutcomeCallable addLhMembersCallable(const Model::AddLhMembersRequest& request) const;
@@ -907,6 +925,9 @@ namespace AlibabaCloud
 			ListDatabasesOutcome listDatabases(const Model::ListDatabasesRequest &request)const;
 			void listDatabasesAsync(const Model::ListDatabasesRequest& request, const ListDatabasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListDatabasesOutcomeCallable listDatabasesCallable(const Model::ListDatabasesRequest& request) const;
+			ListDesensitizationRuleOutcome listDesensitizationRule(const Model::ListDesensitizationRuleRequest &request)const;
+			void listDesensitizationRuleAsync(const Model::ListDesensitizationRuleRequest& request, const ListDesensitizationRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListDesensitizationRuleOutcomeCallable listDesensitizationRuleCallable(const Model::ListDesensitizationRuleRequest& request) const;
 			ListIndexesOutcome listIndexes(const Model::ListIndexesRequest &request)const;
 			void listIndexesAsync(const Model::ListIndexesRequest& request, const ListIndexesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListIndexesOutcomeCallable listIndexesCallable(const Model::ListIndexesRequest& request) const;
@@ -985,6 +1006,9 @@ namespace AlibabaCloud
 			ModifyDataCorrectExecSQLOutcome modifyDataCorrectExecSQL(const Model::ModifyDataCorrectExecSQLRequest &request)const;
 			void modifyDataCorrectExecSQLAsync(const Model::ModifyDataCorrectExecSQLRequest& request, const ModifyDataCorrectExecSQLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyDataCorrectExecSQLOutcomeCallable modifyDataCorrectExecSQLCallable(const Model::ModifyDataCorrectExecSQLRequest& request) const;
+			ModifyDesensitizationStrategyOutcome modifyDesensitizationStrategy(const Model::ModifyDesensitizationStrategyRequest &request)const;
+			void modifyDesensitizationStrategyAsync(const Model::ModifyDesensitizationStrategyRequest& request, const ModifyDesensitizationStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyDesensitizationStrategyOutcomeCallable modifyDesensitizationStrategyCallable(const Model::ModifyDesensitizationStrategyRequest& request) const;
 			OfflineTaskFlowOutcome offlineTaskFlow(const Model::OfflineTaskFlowRequest &request)const;
 			void offlineTaskFlowAsync(const Model::OfflineTaskFlowRequest& request, const OfflineTaskFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			OfflineTaskFlowOutcomeCallable offlineTaskFlowCallable(const Model::OfflineTaskFlowRequest& request) const;

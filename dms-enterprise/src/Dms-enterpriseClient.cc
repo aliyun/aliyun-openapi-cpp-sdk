@@ -51,6 +51,42 @@ Dms_enterpriseClient::Dms_enterpriseClient(const std::string & accessKeyId, cons
 Dms_enterpriseClient::~Dms_enterpriseClient()
 {}
 
+Dms_enterpriseClient::AddDesensitizationRuleOutcome Dms_enterpriseClient::addDesensitizationRule(const AddDesensitizationRuleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddDesensitizationRuleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddDesensitizationRuleOutcome(AddDesensitizationRuleResult(outcome.result()));
+	else
+		return AddDesensitizationRuleOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::addDesensitizationRuleAsync(const AddDesensitizationRuleRequest& request, const AddDesensitizationRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addDesensitizationRule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::AddDesensitizationRuleOutcomeCallable Dms_enterpriseClient::addDesensitizationRuleCallable(const AddDesensitizationRuleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddDesensitizationRuleOutcome()>>(
+			[this, request]()
+			{
+			return this->addDesensitizationRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dms_enterpriseClient::AddLhMembersOutcome Dms_enterpriseClient::addLhMembers(const AddLhMembersRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3003,6 +3039,42 @@ Dms_enterpriseClient::ListDatabasesOutcomeCallable Dms_enterpriseClient::listDat
 	return task->get_future();
 }
 
+Dms_enterpriseClient::ListDesensitizationRuleOutcome Dms_enterpriseClient::listDesensitizationRule(const ListDesensitizationRuleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListDesensitizationRuleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListDesensitizationRuleOutcome(ListDesensitizationRuleResult(outcome.result()));
+	else
+		return ListDesensitizationRuleOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::listDesensitizationRuleAsync(const ListDesensitizationRuleRequest& request, const ListDesensitizationRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listDesensitizationRule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::ListDesensitizationRuleOutcomeCallable Dms_enterpriseClient::listDesensitizationRuleCallable(const ListDesensitizationRuleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListDesensitizationRuleOutcome()>>(
+			[this, request]()
+			{
+			return this->listDesensitizationRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dms_enterpriseClient::ListIndexesOutcome Dms_enterpriseClient::listIndexes(const ListIndexesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3933,6 +4005,42 @@ Dms_enterpriseClient::ModifyDataCorrectExecSQLOutcomeCallable Dms_enterpriseClie
 			[this, request]()
 			{
 			return this->modifyDataCorrectExecSQL(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::ModifyDesensitizationStrategyOutcome Dms_enterpriseClient::modifyDesensitizationStrategy(const ModifyDesensitizationStrategyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyDesensitizationStrategyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyDesensitizationStrategyOutcome(ModifyDesensitizationStrategyResult(outcome.result()));
+	else
+		return ModifyDesensitizationStrategyOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::modifyDesensitizationStrategyAsync(const ModifyDesensitizationStrategyRequest& request, const ModifyDesensitizationStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyDesensitizationStrategy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::ModifyDesensitizationStrategyOutcomeCallable Dms_enterpriseClient::modifyDesensitizationStrategyCallable(const ModifyDesensitizationStrategyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyDesensitizationStrategyOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyDesensitizationStrategy(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

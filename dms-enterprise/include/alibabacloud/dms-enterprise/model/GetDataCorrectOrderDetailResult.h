@@ -66,6 +66,7 @@ namespace AlibabaCloud
 					std::string status;
 					std::vector<Database> databaseList;
 					std::vector<TaskCheckDO> preCheckDetail;
+					std::string execMode;
 				};
 
 

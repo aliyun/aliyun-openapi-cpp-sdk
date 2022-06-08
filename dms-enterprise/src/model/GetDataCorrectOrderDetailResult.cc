@@ -42,6 +42,8 @@ void GetDataCorrectOrderDetailResult::parse(const std::string &payload)
 	auto dataCorrectOrderDetailNode = value["DataCorrectOrderDetail"];
 	if(!dataCorrectOrderDetailNode["Status"].isNull())
 		dataCorrectOrderDetail_.status = dataCorrectOrderDetailNode["Status"].asString();
+	if(!dataCorrectOrderDetailNode["ExecMode"].isNull())
+		dataCorrectOrderDetail_.execMode = dataCorrectOrderDetailNode["ExecMode"].asString();
 	auto allPreCheckDetailNode = dataCorrectOrderDetailNode["PreCheckDetail"]["TaskCheckDO"];
 	for (auto dataCorrectOrderDetailNodePreCheckDetailTaskCheckDO : allPreCheckDetailNode)
 	{
