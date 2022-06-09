@@ -43,6 +43,8 @@ public:
 	void setURLList(const std::vector<URLList> &uRLList);
 	std::string getOrgId() const;
 	void setOrgId(const std::string &orgId);
+	long getVerbose() const;
+	void setVerbose(long verbose);
 	bool getAsync() const;
 	void setAsync(bool async);
 
@@ -52,6 +54,7 @@ private:
 	std::string dataFormat_;
 	std::vector<URLList> uRLList_;
 	std::string orgId_;
+	long verbose_;
 	bool async_;
 };
 } // namespace Model

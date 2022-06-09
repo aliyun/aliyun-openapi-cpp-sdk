@@ -74,6 +74,15 @@ void ScreenChestCTRequest::setOrgId(const std::string &orgId) {
   setBodyParameter(std::string("OrgId"), orgId);
 }
 
+long ScreenChestCTRequest::getVerbose() const {
+  return verbose_;
+}
+
+void ScreenChestCTRequest::setVerbose(long verbose) {
+  verbose_ = verbose;
+  setBodyParameter(std::string("Verbose"), std::to_string(verbose));
+}
+
 bool ScreenChestCTRequest::getAsync() const {
   return async_;
 }
