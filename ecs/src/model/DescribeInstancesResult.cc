@@ -137,8 +137,6 @@ void DescribeInstancesResult::parse(const std::string &payload)
 			instancesObject.instanceTypeFamily = valueInstancesInstance["InstanceTypeFamily"].asString();
 		if(!valueInstancesInstance["OSType"].isNull())
 			instancesObject.oSType = valueInstancesInstance["OSType"].asString();
-		if(!valueInstancesInstance["SpotInterruptionBehavior"].isNull())
-			instancesObject.spotInterruptionBehavior = valueInstancesInstance["SpotInterruptionBehavior"].asString();
 		auto allNetworkInterfacesNode = valueInstancesInstance["NetworkInterfaces"]["NetworkInterface"];
 		for (auto valueInstancesInstanceNetworkInterfacesNetworkInterface : allNetworkInterfacesNode)
 		{

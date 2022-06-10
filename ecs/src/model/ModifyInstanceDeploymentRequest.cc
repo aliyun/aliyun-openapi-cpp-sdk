@@ -34,6 +34,15 @@ void ModifyInstanceDeploymentRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+bool ModifyInstanceDeploymentRequest::getRemoveFromDeploymentSet() const {
+  return removeFromDeploymentSet_;
+}
+
+void ModifyInstanceDeploymentRequest::setRemoveFromDeploymentSet(bool removeFromDeploymentSet) {
+  removeFromDeploymentSet_ = removeFromDeploymentSet;
+  setParameter(std::string("RemoveFromDeploymentSet"), removeFromDeploymentSet ? "true" : "false");
+}
+
 std::string ModifyInstanceDeploymentRequest::getRegionId() const {
   return regionId_;
 }

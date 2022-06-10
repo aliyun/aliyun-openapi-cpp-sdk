@@ -1419,42 +1419,6 @@ EcsClient::CreateDeploymentSetOutcomeCallable EcsClient::createDeploymentSetCall
 	return task->get_future();
 }
 
-EcsClient::CreateDiagnosticReportOutcome EcsClient::createDiagnosticReport(const CreateDiagnosticReportRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateDiagnosticReportOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateDiagnosticReportOutcome(CreateDiagnosticReportResult(outcome.result()));
-	else
-		return CreateDiagnosticReportOutcome(outcome.error());
-}
-
-void EcsClient::createDiagnosticReportAsync(const CreateDiagnosticReportRequest& request, const CreateDiagnosticReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createDiagnosticReport(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EcsClient::CreateDiagnosticReportOutcomeCallable EcsClient::createDiagnosticReportCallable(const CreateDiagnosticReportRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateDiagnosticReportOutcome()>>(
-			[this, request]()
-			{
-			return this->createDiagnosticReport(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 EcsClient::CreateDiskOutcome EcsClient::createDisk(const CreateDiskRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

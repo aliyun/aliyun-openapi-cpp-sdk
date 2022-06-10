@@ -38,8 +38,6 @@ public:
 	void setRegionId(const std::string &regionId);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
-	std::string getBizAliUid() const;
-	void setBizAliUid(const std::string &bizAliUid);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
 	std::string getZoneId() const;
@@ -50,7 +48,6 @@ private:
 	std::vector<std::string> attributeName_;
 	std::string regionId_;
 	std::string resourceOwnerAccount_;
-	std::string bizAliUid_;
 	long ownerId_;
 	std::string zoneId_;
 };

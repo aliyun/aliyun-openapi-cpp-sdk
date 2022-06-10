@@ -97,8 +97,6 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/CreateDemandResult.h
 	include/alibabacloud/ecs/model/CreateDeploymentSetRequest.h
 	include/alibabacloud/ecs/model/CreateDeploymentSetResult.h
-	include/alibabacloud/ecs/model/CreateDiagnosticReportRequest.h
-	include/alibabacloud/ecs/model/CreateDiagnosticReportResult.h
 	include/alibabacloud/ecs/model/CreateDiskRequest.h
 	include/alibabacloud/ecs/model/CreateDiskResult.h
 	include/alibabacloud/ecs/model/CreateElasticityAssuranceRequest.h
@@ -772,8 +770,6 @@ set(ecs_src
 	src/model/CreateDemandResult.cc
 	src/model/CreateDeploymentSetRequest.cc
 	src/model/CreateDeploymentSetResult.cc
-	src/model/CreateDiagnosticReportRequest.cc
-	src/model/CreateDiagnosticReportResult.cc
 	src/model/CreateDiskRequest.cc
 	src/model/CreateDiskResult.cc
 	src/model/CreateElasticityAssuranceRequest.cc

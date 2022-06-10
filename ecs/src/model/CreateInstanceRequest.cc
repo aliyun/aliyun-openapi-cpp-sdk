@@ -130,10 +130,7 @@ CreateInstanceRequest::SystemDisk CreateInstanceRequest::getSystemDisk() const {
 
 void CreateInstanceRequest::setSystemDisk(const CreateInstanceRequest::SystemDisk &systemDisk) {
   systemDisk_ = systemDisk;
-  setParameter(std::string("SystemDisk") + ".Encrypted", systemDisk.encrypted ? "true" : "false");
-  setParameter(std::string("SystemDisk") + ".EncryptAlgorithm", systemDisk.encryptAlgorithm);
   setParameter(std::string("SystemDisk") + ".StorageClusterId", systemDisk.storageClusterId);
-  setParameter(std::string("SystemDisk") + ".KMSKeyId", systemDisk.kMSKeyId);
 }
 
 int CreateInstanceRequest::getDeploymentSetGroupNo() const {

@@ -42,8 +42,6 @@ public:
 	void setScene(const std::string &scene);
 	int getCores() const;
 	void setCores(int cores);
-	std::vector<std::string> getZoneIds() const;
-	void setZoneIds(const std::vector<std::string> &zoneIds);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getSystemDiskCategory() const;
@@ -70,8 +68,6 @@ public:
 	void setPriorityStrategy(const std::string &priorityStrategy);
 	std::string getInstanceFamilyLevel() const;
 	void setInstanceFamilyLevel(const std::string &instanceFamilyLevel);
-	bool getInstanceTypeSupportIPv6() const;
-	void setInstanceTypeSupportIPv6(bool instanceTypeSupportIPv6);
 	std::string getZoneId() const;
 	void setZoneId(const std::string &zoneId);
 
@@ -82,7 +78,6 @@ private:
 	std::string networkType_;
 	std::string scene_;
 	int cores_;
-	std::vector<std::string> zoneIds_;
 	std::string regionId_;
 	std::string systemDiskCategory_;
 	std::string instanceType_;
@@ -96,7 +91,6 @@ private:
 	std::string spotStrategy_;
 	std::string priorityStrategy_;
 	std::string instanceFamilyLevel_;
-	bool instanceTypeSupportIPv6_;
 	std::string zoneId_;
 };
 } // namespace Model

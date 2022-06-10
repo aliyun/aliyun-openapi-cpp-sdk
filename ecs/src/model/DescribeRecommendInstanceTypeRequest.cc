@@ -79,14 +79,6 @@ void DescribeRecommendInstanceTypeRequest::setCores(int cores) {
   setParameter(std::string("Cores"), std::to_string(cores));
 }
 
-std::vector<std::string> DescribeRecommendInstanceTypeRequest::getZoneIds() const {
-  return zoneIds_;
-}
-
-void DescribeRecommendInstanceTypeRequest::setZoneIds(const std::vector<std::string> &zoneIds) {
-  zoneIds_ = zoneIds;
-}
-
 std::string DescribeRecommendInstanceTypeRequest::getRegionId() const {
   return regionId_;
 }
@@ -201,15 +193,6 @@ std::string DescribeRecommendInstanceTypeRequest::getInstanceFamilyLevel() const
 void DescribeRecommendInstanceTypeRequest::setInstanceFamilyLevel(const std::string &instanceFamilyLevel) {
   instanceFamilyLevel_ = instanceFamilyLevel;
   setParameter(std::string("InstanceFamilyLevel"), instanceFamilyLevel);
-}
-
-bool DescribeRecommendInstanceTypeRequest::getInstanceTypeSupportIPv6() const {
-  return instanceTypeSupportIPv6_;
-}
-
-void DescribeRecommendInstanceTypeRequest::setInstanceTypeSupportIPv6(bool instanceTypeSupportIPv6) {
-  instanceTypeSupportIPv6_ = instanceTypeSupportIPv6;
-  setParameter(std::string("InstanceTypeSupportIPv6"), instanceTypeSupportIPv6 ? "true" : "false");
 }
 
 std::string DescribeRecommendInstanceTypeRequest::getZoneId() const {

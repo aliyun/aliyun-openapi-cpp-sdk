@@ -60,15 +60,6 @@ void DescribeAccountAttributesRequest::setResourceOwnerAccount(const std::string
   setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string DescribeAccountAttributesRequest::getBizAliUid() const {
-  return bizAliUid_;
-}
-
-void DescribeAccountAttributesRequest::setBizAliUid(const std::string &bizAliUid) {
-  bizAliUid_ = bizAliUid;
-  setParameter(std::string("BizAliUid"), bizAliUid);
-}
-
 long DescribeAccountAttributesRequest::getOwnerId() const {
   return ownerId_;
 }

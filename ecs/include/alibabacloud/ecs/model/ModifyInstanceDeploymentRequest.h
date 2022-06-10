@@ -32,6 +32,8 @@ public:
 	~ModifyInstanceDeploymentRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	bool getRemoveFromDeploymentSet() const;
+	void setRemoveFromDeploymentSet(bool removeFromDeploymentSet);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	int getDeploymentSetGroupNo() const;
@@ -63,6 +65,7 @@ public:
 
 private:
 	long resourceOwnerId_;
+	bool removeFromDeploymentSet_;
 	std::string regionId_;
 	int deploymentSetGroupNo_;
 	std::string dedicatedHostClusterId_;
