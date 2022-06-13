@@ -34,15 +34,6 @@ void GetWorkerListRequest::setNamespaceSource(const std::string &namespaceSource
   setParameter(std::string("NamespaceSource"), namespaceSource);
 }
 
-std::string GetWorkerListRequest::getRegionId() const {
-  return regionId_;
-}
-
-void GetWorkerListRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
-}
-
 std::string GetWorkerListRequest::getGroupId() const {
   return groupId_;
 }
@@ -50,6 +41,15 @@ std::string GetWorkerListRequest::getGroupId() const {
 void GetWorkerListRequest::setGroupId(const std::string &groupId) {
   groupId_ = groupId;
   setParameter(std::string("GroupId"), groupId);
+}
+
+std::string GetWorkerListRequest::getRegionId() const {
+  return regionId_;
+}
+
+void GetWorkerListRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
 std::string GetWorkerListRequest::get_Namespace() const {

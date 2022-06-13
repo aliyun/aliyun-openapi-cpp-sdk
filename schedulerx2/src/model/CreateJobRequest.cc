@@ -320,3 +320,12 @@ void CreateJobRequest::setParameters(const std::string &parameters) {
   setBodyParameter(std::string("Parameters"), parameters);
 }
 
+int CreateJobRequest::getStatus() const {
+  return status_;
+}
+
+void CreateJobRequest::setStatus(int status) {
+  status_ = status;
+  setBodyParameter(std::string("Status"), std::to_string(status));
+}
+

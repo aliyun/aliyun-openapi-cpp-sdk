@@ -100,6 +100,8 @@ public:
 	void setTimeType(int timeType);
 	std::string getParameters() const;
 	void setParameters(const std::string &parameters);
+	int getStatus() const;
+	void setStatus(int status);
 
 private:
 	std::string namespaceSource_;
@@ -134,6 +136,7 @@ private:
 	int maxConcurrency_;
 	int timeType_;
 	std::string parameters_;
+	int status_;
 };
 } // namespace Model
 } // namespace Schedulerx2
