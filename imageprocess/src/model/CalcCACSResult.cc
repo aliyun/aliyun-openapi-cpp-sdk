@@ -56,6 +56,9 @@ void CalcCACSResult::parse(const std::string &payload)
 			detectionsItemObject.calciumScore = std::stof(dataNodeDetectionsdetectionsItem["CalciumScore"].asString());
 		if(!dataNodeDetectionsdetectionsItem["CalciumVolume"].isNull())
 			detectionsItemObject.calciumVolume = std::stof(dataNodeDetectionsdetectionsItem["CalciumVolume"].asString());
+		auto allCalciumCenter = value["CalciumCenter"]["calciumCenter"];
+		for (auto value : allCalciumCenter)
+			detectionsItemObject.calciumCenter.push_back(value.asString());
 		data_.detections.push_back(detectionsItemObject);
 	}
 	if(!value["Code"].isNull())

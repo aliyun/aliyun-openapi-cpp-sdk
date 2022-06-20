@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					struct DetectionsItem
 					{
+						std::vector<std::string> calciumCenter;
 						float calciumVolume;
 						float calciumScore;
 						long calciumId;
