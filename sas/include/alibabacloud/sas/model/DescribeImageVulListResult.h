@@ -68,6 +68,7 @@ namespace AlibabaCloud
 					std::string aliasName;
 					std::string level;
 					std::string tag;
+					std::string canFix;
 					ExtendContentJson extendContentJson;
 					std::vector<std::string> layers;
 					long primaryId;

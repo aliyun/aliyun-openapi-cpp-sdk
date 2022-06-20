@@ -39,33 +39,33 @@ void DescribeExportInfoResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Id"].isNull())
-		id_ = std::stol(value["Id"].asString());
-	if(!value["FileName"].isNull())
-		fileName_ = value["FileName"].asString();
-	if(!value["CurrentCount"].isNull())
-		currentCount_ = std::stoi(value["CurrentCount"].asString());
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["Progress"].isNull())
-		progress_ = std::stoi(value["Progress"].asString());
-	if(!value["ExportStatus"].isNull())
-		exportStatus_ = value["ExportStatus"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
 	if(!value["Link"].isNull())
 		link_ = value["Link"].asString();
+	if(!value["Progress"].isNull())
+		progress_ = std::stoi(value["Progress"].asString());
+	if(!value["CurrentCount"].isNull())
+		currentCount_ = std::stoi(value["CurrentCount"].asString());
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["FileName"].isNull())
+		fileName_ = value["FileName"].asString();
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["ExportStatus"].isNull())
+		exportStatus_ = value["ExportStatus"].asString();
+	if(!value["Id"].isNull())
+		id_ = std::stol(value["Id"].asString());
 
-}
-
-int DescribeExportInfoResult::getTotalCount()const
-{
-	return totalCount_;
 }
 
 int DescribeExportInfoResult::getProgress()const
 {
 	return progress_;
+}
+
+int DescribeExportInfoResult::getTotalCount()const
+{
+	return totalCount_;
 }
 
 std::string DescribeExportInfoResult::getMessage()const

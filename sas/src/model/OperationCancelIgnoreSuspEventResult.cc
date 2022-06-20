@@ -14,66 +14,65 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/sas/model/ListCriteriaStrategyResult.h>
+#include <alibabacloud/sas/model/OperationCancelIgnoreSuspEventResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Sas;
 using namespace AlibabaCloud::Sas::Model;
 
-ListCriteriaStrategyResult::ListCriteriaStrategyResult() :
+OperationCancelIgnoreSuspEventResult::OperationCancelIgnoreSuspEventResult() :
 	ServiceResult()
 {}
 
-ListCriteriaStrategyResult::ListCriteriaStrategyResult(const std::string &payload) :
+OperationCancelIgnoreSuspEventResult::OperationCancelIgnoreSuspEventResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-ListCriteriaStrategyResult::~ListCriteriaStrategyResult()
+OperationCancelIgnoreSuspEventResult::~OperationCancelIgnoreSuspEventResult()
 {}
 
-void ListCriteriaStrategyResult::parse(const std::string &payload)
+void OperationCancelIgnoreSuspEventResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDataNode = value["Data"]["DataItem"];
-	for (auto valueDataDataItem : allDataNode)
-	{
-		DataItem dataObject;
-		if(!valueDataDataItem["Id"].isNull())
-			dataObject.id = std::stol(valueDataDataItem["Id"].asString());
-		if(!valueDataDataItem["Value"].isNull())
-			dataObject.value = valueDataDataItem["Value"].asString();
-		data_.push_back(dataObject);
-	}
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["HttpStatusCode"].isNull())
+		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["TimeCost"].isNull())
+		timeCost_ = std::stol(value["TimeCost"].asString());
 
 }
 
-std::string ListCriteriaStrategyResult::getMessage()const
+std::string OperationCancelIgnoreSuspEventResult::getMessage()const
 {
 	return message_;
 }
 
-std::vector<ListCriteriaStrategyResult::DataItem> ListCriteriaStrategyResult::getData()const
+int OperationCancelIgnoreSuspEventResult::getHttpStatusCode()const
 {
-	return data_;
+	return httpStatusCode_;
 }
 
-std::string ListCriteriaStrategyResult::getCode()const
+long OperationCancelIgnoreSuspEventResult::getTimeCost()const
+{
+	return timeCost_;
+}
+
+std::string OperationCancelIgnoreSuspEventResult::getCode()const
 {
 	return code_;
 }
 
-bool ListCriteriaStrategyResult::getSuccess()const
+bool OperationCancelIgnoreSuspEventResult::getSuccess()const
 {
 	return success_;
 }

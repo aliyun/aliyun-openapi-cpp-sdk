@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,34 +18,28 @@
 
 using AlibabaCloud::Sas::Model::DescribeDomainDetailRequest;
 
-DescribeDomainDetailRequest::DescribeDomainDetailRequest() :
-	RpcServiceRequest("sas", "2018-12-03", "DescribeDomainDetail")
-{
-	setMethod(HttpRequest::Method::Post);
+DescribeDomainDetailRequest::DescribeDomainDetailRequest()
+    : RpcServiceRequest("sas", "2018-12-03", "DescribeDomainDetail") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DescribeDomainDetailRequest::~DescribeDomainDetailRequest()
-{}
+DescribeDomainDetailRequest::~DescribeDomainDetailRequest() {}
 
-std::string DescribeDomainDetailRequest::getDomainName()const
-{
-	return domainName_;
+std::string DescribeDomainDetailRequest::getDomainName() const {
+  return domainName_;
 }
 
-void DescribeDomainDetailRequest::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+void DescribeDomainDetailRequest::setDomainName(const std::string &domainName) {
+  domainName_ = domainName;
+  setParameter(std::string("DomainName"), domainName);
 }
 
-std::string DescribeDomainDetailRequest::getSourceIp()const
-{
-	return sourceIp_;
+std::string DescribeDomainDetailRequest::getSourceIp() const {
+  return sourceIp_;
 }
 
-void DescribeDomainDetailRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
+void DescribeDomainDetailRequest::setSourceIp(const std::string &sourceIp) {
+  sourceIp_ = sourceIp;
+  setParameter(std::string("SourceIp"), sourceIp);
 }
 

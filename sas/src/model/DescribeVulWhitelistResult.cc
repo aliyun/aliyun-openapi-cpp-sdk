@@ -43,24 +43,24 @@ void DescribeVulWhitelistResult::parse(const std::string &payload)
 	for (auto valueVulWhitelistsVulWhitelist : allVulWhitelistsNode)
 	{
 		VulWhitelist vulWhitelistsObject;
-		if(!valueVulWhitelistsVulWhitelist["Name"].isNull())
-			vulWhitelistsObject.name = valueVulWhitelistsVulWhitelist["Name"].asString();
 		if(!valueVulWhitelistsVulWhitelist["Type"].isNull())
 			vulWhitelistsObject.type = valueVulWhitelistsVulWhitelist["Type"].asString();
-		if(!valueVulWhitelistsVulWhitelist["AliasName"].isNull())
-			vulWhitelistsObject.aliasName = valueVulWhitelistsVulWhitelist["AliasName"].asString();
-		if(!valueVulWhitelistsVulWhitelist["Reason"].isNull())
-			vulWhitelistsObject.reason = valueVulWhitelistsVulWhitelist["Reason"].asString();
 		if(!valueVulWhitelistsVulWhitelist["TargetInfo"].isNull())
 			vulWhitelistsObject.targetInfo = valueVulWhitelistsVulWhitelist["TargetInfo"].asString();
+		if(!valueVulWhitelistsVulWhitelist["AliasName"].isNull())
+			vulWhitelistsObject.aliasName = valueVulWhitelistsVulWhitelist["AliasName"].asString();
+		if(!valueVulWhitelistsVulWhitelist["Name"].isNull())
+			vulWhitelistsObject.name = valueVulWhitelistsVulWhitelist["Name"].asString();
+		if(!valueVulWhitelistsVulWhitelist["Reason"].isNull())
+			vulWhitelistsObject.reason = valueVulWhitelistsVulWhitelist["Reason"].asString();
 		if(!valueVulWhitelistsVulWhitelist["Id"].isNull())
 			vulWhitelistsObject.id = valueVulWhitelistsVulWhitelist["Id"].asString();
 		vulWhitelists_.push_back(vulWhitelistsObject);
 	}
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["CurrentPage"].isNull())
 		currentPage_ = std::stoi(value["CurrentPage"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
 

@@ -14,59 +14,60 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/sas/model/DeleteVulAutoRepairConfigResult.h>
+#include <alibabacloud/sas/model/ModifyStrategyResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Sas;
 using namespace AlibabaCloud::Sas::Model;
 
-DeleteVulAutoRepairConfigResult::DeleteVulAutoRepairConfigResult() :
+ModifyStrategyResult::ModifyStrategyResult() :
 	ServiceResult()
 {}
 
-DeleteVulAutoRepairConfigResult::DeleteVulAutoRepairConfigResult(const std::string &payload) :
+ModifyStrategyResult::ModifyStrategyResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-DeleteVulAutoRepairConfigResult::~DeleteVulAutoRepairConfigResult()
+ModifyStrategyResult::~ModifyStrategyResult()
 {}
 
-void DeleteVulAutoRepairConfigResult::parse(const std::string &payload)
+void ModifyStrategyResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
+	auto resultNode = value["Result"];
+	if(!resultNode["StrategyId"].isNull())
+		result_.strategyId = std::stoi(resultNode["StrategyId"].asString());
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 
-std::string DeleteVulAutoRepairConfigResult::getMessage()const
+int ModifyStrategyResult::getTotalCount()const
 {
-	return message_;
+	return totalCount_;
 }
 
-int DeleteVulAutoRepairConfigResult::getHttpStatusCode()const
+int ModifyStrategyResult::getHttpStatusCode()const
 {
 	return httpStatusCode_;
 }
 
-std::string DeleteVulAutoRepairConfigResult::getCode()const
-{
-	return code_;
-}
-
-bool DeleteVulAutoRepairConfigResult::getSuccess()const
+bool ModifyStrategyResult::getSuccess()const
 {
 	return success_;
+}
+
+ModifyStrategyResult::Result ModifyStrategyResult::getResult()const
+{
+	return result_;
 }
 

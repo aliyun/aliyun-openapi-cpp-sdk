@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,56 +18,46 @@
 
 using AlibabaCloud::Sas::Model::DescribeSecurityEventOperationsRequest;
 
-DescribeSecurityEventOperationsRequest::DescribeSecurityEventOperationsRequest() :
-	RpcServiceRequest("sas", "2018-12-03", "DescribeSecurityEventOperations")
-{
-	setMethod(HttpRequest::Method::Post);
+DescribeSecurityEventOperationsRequest::DescribeSecurityEventOperationsRequest()
+    : RpcServiceRequest("sas", "2018-12-03", "DescribeSecurityEventOperations") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DescribeSecurityEventOperationsRequest::~DescribeSecurityEventOperationsRequest()
-{}
+DescribeSecurityEventOperationsRequest::~DescribeSecurityEventOperationsRequest() {}
 
-long DescribeSecurityEventOperationsRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long DescribeSecurityEventOperationsRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void DescribeSecurityEventOperationsRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void DescribeSecurityEventOperationsRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string DescribeSecurityEventOperationsRequest::getSourceIp()const
-{
-	return sourceIp_;
+std::string DescribeSecurityEventOperationsRequest::getSourceIp() const {
+  return sourceIp_;
 }
 
-void DescribeSecurityEventOperationsRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
+void DescribeSecurityEventOperationsRequest::setSourceIp(const std::string &sourceIp) {
+  sourceIp_ = sourceIp;
+  setParameter(std::string("SourceIp"), sourceIp);
 }
 
-std::string DescribeSecurityEventOperationsRequest::getLang()const
-{
-	return lang_;
+std::string DescribeSecurityEventOperationsRequest::getLang() const {
+  return lang_;
 }
 
-void DescribeSecurityEventOperationsRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setParameter("Lang", lang);
+void DescribeSecurityEventOperationsRequest::setLang(const std::string &lang) {
+  lang_ = lang;
+  setParameter(std::string("Lang"), lang);
 }
 
-long DescribeSecurityEventOperationsRequest::getSecurityEventId()const
-{
-	return securityEventId_;
+long DescribeSecurityEventOperationsRequest::getSecurityEventId() const {
+  return securityEventId_;
 }
 
-void DescribeSecurityEventOperationsRequest::setSecurityEventId(long securityEventId)
-{
-	securityEventId_ = securityEventId;
-	setParameter("SecurityEventId", std::to_string(securityEventId));
+void DescribeSecurityEventOperationsRequest::setSecurityEventId(long securityEventId) {
+  securityEventId_ = securityEventId;
+  setParameter(std::string("SecurityEventId"), std::to_string(securityEventId));
 }
 

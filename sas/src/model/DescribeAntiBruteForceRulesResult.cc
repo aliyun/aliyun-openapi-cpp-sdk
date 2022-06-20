@@ -43,36 +43,36 @@ void DescribeAntiBruteForceRulesResult::parse(const std::string &payload)
 	for (auto valueRulesAntiBruteForceRule : allRulesNode)
 	{
 		AntiBruteForceRule rulesObject;
-		if(!valueRulesAntiBruteForceRule["Id"].isNull())
-			rulesObject.id = std::stol(valueRulesAntiBruteForceRule["Id"].asString());
-		if(!valueRulesAntiBruteForceRule["DefaultRule"].isNull())
-			rulesObject.defaultRule = valueRulesAntiBruteForceRule["DefaultRule"].asString() == "true";
-		if(!valueRulesAntiBruteForceRule["Name"].isNull())
-			rulesObject.name = valueRulesAntiBruteForceRule["Name"].asString();
-		if(!valueRulesAntiBruteForceRule["Span"].isNull())
-			rulesObject.span = std::stoi(valueRulesAntiBruteForceRule["Span"].asString());
+		if(!valueRulesAntiBruteForceRule["MachineCount"].isNull())
+			rulesObject.machineCount = std::stoi(valueRulesAntiBruteForceRule["MachineCount"].asString());
+		if(!valueRulesAntiBruteForceRule["EnableSmartRule"].isNull())
+			rulesObject.enableSmartRule = valueRulesAntiBruteForceRule["EnableSmartRule"].asString() == "true";
 		if(!valueRulesAntiBruteForceRule["FailCount"].isNull())
 			rulesObject.failCount = std::stoi(valueRulesAntiBruteForceRule["FailCount"].asString());
 		if(!valueRulesAntiBruteForceRule["ForbiddenTime"].isNull())
 			rulesObject.forbiddenTime = std::stoi(valueRulesAntiBruteForceRule["ForbiddenTime"].asString());
-		if(!valueRulesAntiBruteForceRule["EnableSmartRule"].isNull())
-			rulesObject.enableSmartRule = valueRulesAntiBruteForceRule["EnableSmartRule"].asString() == "true";
-		if(!valueRulesAntiBruteForceRule["MachineCount"].isNull())
-			rulesObject.machineCount = std::stoi(valueRulesAntiBruteForceRule["MachineCount"].asString());
+		if(!valueRulesAntiBruteForceRule["Span"].isNull())
+			rulesObject.span = std::stoi(valueRulesAntiBruteForceRule["Span"].asString());
+		if(!valueRulesAntiBruteForceRule["DefaultRule"].isNull())
+			rulesObject.defaultRule = valueRulesAntiBruteForceRule["DefaultRule"].asString() == "true";
+		if(!valueRulesAntiBruteForceRule["Name"].isNull())
+			rulesObject.name = valueRulesAntiBruteForceRule["Name"].asString();
+		if(!valueRulesAntiBruteForceRule["Id"].isNull())
+			rulesObject.id = std::stol(valueRulesAntiBruteForceRule["Id"].asString());
 		auto allUuidList = value["UuidList"]["uuid"];
 		for (auto value : allUuidList)
 			rulesObject.uuidList.push_back(value.asString());
 		rules_.push_back(rulesObject);
 	}
 	auto pageInfoNode = value["PageInfo"];
-	if(!pageInfoNode["Count"].isNull())
-		pageInfo_.count = std::stoi(pageInfoNode["Count"].asString());
+	if(!pageInfoNode["CurrentPage"].isNull())
+		pageInfo_.currentPage = std::stoi(pageInfoNode["CurrentPage"].asString());
 	if(!pageInfoNode["PageSize"].isNull())
 		pageInfo_.pageSize = std::stoi(pageInfoNode["PageSize"].asString());
 	if(!pageInfoNode["TotalCount"].isNull())
 		pageInfo_.totalCount = std::stoi(pageInfoNode["TotalCount"].asString());
-	if(!pageInfoNode["CurrentPage"].isNull())
-		pageInfo_.currentPage = std::stoi(pageInfoNode["CurrentPage"].asString());
+	if(!pageInfoNode["Count"].isNull())
+		pageInfo_.count = std::stoi(pageInfoNode["Count"].asString());
 
 }
 

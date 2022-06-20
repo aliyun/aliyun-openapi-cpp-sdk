@@ -79,6 +79,8 @@ void DescribeImageVulListResult::parse(const std::string &payload)
 			vulRecordsObject.name = valueVulRecordsVulRecord["Name"].asString();
 		if(!valueVulRecordsVulRecord["Level"].isNull())
 			vulRecordsObject.level = valueVulRecordsVulRecord["Level"].asString();
+		if(!valueVulRecordsVulRecord["CanFix"].isNull())
+			vulRecordsObject.canFix = valueVulRecordsVulRecord["CanFix"].asString();
 		auto extendContentJsonNode = value["ExtendContentJson"];
 		if(!extendContentJsonNode["OsRelease"].isNull())
 			vulRecordsObject.extendContentJson.osRelease = extendContentJsonNode["OsRelease"].asString();

@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SAS_MODEL_DELETEVULAUTOREPAIRCONFIGREQUEST_H_
-#define ALIBABACLOUD_SAS_MODEL_DELETEVULAUTOREPAIRCONFIGREQUEST_H_
+#ifndef ALIBABACLOUD_SAS_MODEL_PUBLICPRECHECKIMAGESCANTASKRESULT_H_
+#define ALIBABACLOUD_SAS_MODEL_PUBLICPRECHECKIMAGESCANTASKRESULT_H_
 
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
+#include <utility>
+#include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/sas/SasExport.h>
 
 namespace AlibabaCloud
@@ -28,27 +29,28 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SAS_EXPORT DeleteVulAutoRepairConfigRequest : public RpcServiceRequest
+			class ALIBABACLOUD_SAS_EXPORT PublicPreCheckImageScanTaskResult : public ServiceResult
 			{
-
 			public:
-				DeleteVulAutoRepairConfigRequest();
-				~DeleteVulAutoRepairConfigRequest();
+				struct Data
+				{
+					int needAuthCount;
+					int scanImageCount;
+				};
 
-				std::string getType()const;
-				void setType(const std::string& type);
-				std::string getAliasName()const;
-				void setAliasName(const std::string& aliasName);
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 
-            private:
-				std::string type_;
-				std::string aliasName_;
-				std::string sourceIp_;
+				PublicPreCheckImageScanTaskResult();
+				explicit PublicPreCheckImageScanTaskResult(const std::string &payload);
+				~PublicPreCheckImageScanTaskResult();
+				Data getData()const;
+
+			protected:
+				void parse(const std::string &payload);
+			private:
+				Data data_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SAS_MODEL_DELETEVULAUTOREPAIRCONFIGREQUEST_H_
+#endif // !ALIBABACLOUD_SAS_MODEL_PUBLICPRECHECKIMAGESCANTASKRESULT_H_

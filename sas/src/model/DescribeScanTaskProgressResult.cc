@@ -39,10 +39,10 @@ void DescribeScanTaskProgressResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["ScanTaskProgress"].isNull())
-		scanTaskProgress_ = value["ScanTaskProgress"].asString();
 	if(!value["TargetInfo"].isNull())
 		targetInfo_ = value["TargetInfo"].asString();
+	if(!value["ScanTaskProgress"].isNull())
+		scanTaskProgress_ = value["ScanTaskProgress"].asString();
 
 }
 

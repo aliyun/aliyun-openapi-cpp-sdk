@@ -40,20 +40,20 @@ void PublicSyncAndCreateImageScanTaskResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["Status"].isNull())
-		data_.status = dataNode["Status"].asString();
-	if(!dataNode["TotalCount"].isNull())
-		data_.totalCount = std::stoi(dataNode["TotalCount"].asString());
-	if(!dataNode["Progress"].isNull())
-		data_.progress = std::stoi(dataNode["Progress"].asString());
 	if(!dataNode["TaskId"].isNull())
 		data_.taskId = dataNode["TaskId"].asString();
-	if(!dataNode["CollectTime"].isNull())
-		data_.collectTime = std::stol(dataNode["CollectTime"].asString());
+	if(!dataNode["TotalCount"].isNull())
+		data_.totalCount = std::stoi(dataNode["TotalCount"].asString());
 	if(!dataNode["FinishCount"].isNull())
 		data_.finishCount = std::stoi(dataNode["FinishCount"].asString());
+	if(!dataNode["CollectTime"].isNull())
+		data_.collectTime = std::stol(dataNode["CollectTime"].asString());
 	if(!dataNode["ExecTime"].isNull())
 		data_.execTime = std::stol(dataNode["ExecTime"].asString());
+	if(!dataNode["Status"].isNull())
+		data_.status = dataNode["Status"].asString();
+	if(!dataNode["Progress"].isNull())
+		data_.progress = std::stoi(dataNode["Progress"].asString());
 	if(!dataNode["Result"].isNull())
 		data_.result = dataNode["Result"].asString();
 	if(!dataNode["CanCreate"].isNull())

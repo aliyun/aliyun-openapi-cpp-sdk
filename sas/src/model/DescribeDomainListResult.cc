@@ -43,21 +43,21 @@ void DescribeDomainListResult::parse(const std::string &payload)
 	for (auto valueDomainListResponseListDomainResponse : allDomainListResponseListNode)
 	{
 		DomainResponse domainListResponseListObject;
-		if(!valueDomainListResponseListDomainResponse["Domain"].isNull())
-			domainListResponseListObject.domain = valueDomainListResponseListDomainResponse["Domain"].asString();
 		if(!valueDomainListResponseListDomainResponse["IpList"].isNull())
 			domainListResponseListObject.ipList = valueDomainListResponseListDomainResponse["IpList"].asString();
+		if(!valueDomainListResponseListDomainResponse["Domain"].isNull())
+			domainListResponseListObject.domain = valueDomainListResponseListDomainResponse["Domain"].asString();
 		domainListResponseList_.push_back(domainListResponseListObject);
 	}
 	auto pageInfoNode = value["PageInfo"];
-	if(!pageInfoNode["Count"].isNull())
-		pageInfo_.count = std::stoi(pageInfoNode["Count"].asString());
+	if(!pageInfoNode["CurrentPage"].isNull())
+		pageInfo_.currentPage = std::stoi(pageInfoNode["CurrentPage"].asString());
 	if(!pageInfoNode["PageSize"].isNull())
 		pageInfo_.pageSize = std::stoi(pageInfoNode["PageSize"].asString());
 	if(!pageInfoNode["TotalCount"].isNull())
 		pageInfo_.totalCount = std::stoi(pageInfoNode["TotalCount"].asString());
-	if(!pageInfoNode["CurrentPage"].isNull())
-		pageInfo_.currentPage = std::stoi(pageInfoNode["CurrentPage"].asString());
+	if(!pageInfoNode["Count"].isNull())
+		pageInfo_.count = std::stoi(pageInfoNode["Count"].asString());
 
 }
 

@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SAS_MODEL_GETHONEYPOTNODEREQUEST_H_
-#define ALIBABACLOUD_SAS_MODEL_GETHONEYPOTNODEREQUEST_H_
+#ifndef ALIBABACLOUD_SAS_MODEL_MODIFYSTRATEGYTARGETRESULT_H_
+#define ALIBABACLOUD_SAS_MODEL_MODIFYSTRATEGYTARGETRESULT_H_
 
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
+#include <utility>
+#include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/sas/SasExport.h>
 
 namespace AlibabaCloud
@@ -28,21 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SAS_EXPORT GetHoneypotNodeRequest : public RpcServiceRequest
+			class ALIBABACLOUD_SAS_EXPORT ModifyStrategyTargetResult : public ServiceResult
 			{
-
 			public:
-				GetHoneypotNodeRequest();
-				~GetHoneypotNodeRequest();
 
-				std::string getNodeId()const;
-				void setNodeId(const std::string& nodeId);
 
-            private:
-				std::string nodeId_;
+				ModifyStrategyTargetResult();
+				explicit ModifyStrategyTargetResult(const std::string &payload);
+				~ModifyStrategyTargetResult();
+
+			protected:
+				void parse(const std::string &payload);
+			private:
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SAS_MODEL_GETHONEYPOTNODEREQUEST_H_
+#endif // !ALIBABACLOUD_SAS_MODEL_MODIFYSTRATEGYTARGETRESULT_H_

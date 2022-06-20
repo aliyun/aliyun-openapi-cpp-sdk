@@ -43,10 +43,10 @@ void DescribeBackupFilesResult::parse(const std::string &payload)
 	for (auto valueBackupFilesBrowseFile : allBackupFilesNode)
 	{
 		BrowseFile backupFilesObject;
-		if(!valueBackupFilesBrowseFile["Name"].isNull())
-			backupFilesObject.name = valueBackupFilesBrowseFile["Name"].asString();
 		if(!valueBackupFilesBrowseFile["Type"].isNull())
 			backupFilesObject.type = valueBackupFilesBrowseFile["Type"].asString();
+		if(!valueBackupFilesBrowseFile["Name"].isNull())
+			backupFilesObject.name = valueBackupFilesBrowseFile["Name"].asString();
 		if(!valueBackupFilesBrowseFile["Subtree"].isNull())
 			backupFilesObject.subtree = valueBackupFilesBrowseFile["Subtree"].asString();
 		if(!valueBackupFilesBrowseFile["Size"].isNull())
@@ -54,14 +54,14 @@ void DescribeBackupFilesResult::parse(const std::string &payload)
 		backupFiles_.push_back(backupFilesObject);
 	}
 	auto pageInfoNode = value["PageInfo"];
-	if(!pageInfoNode["Count"].isNull())
-		pageInfo_.count = std::stoi(pageInfoNode["Count"].asString());
+	if(!pageInfoNode["CurrentPage"].isNull())
+		pageInfo_.currentPage = std::stoi(pageInfoNode["CurrentPage"].asString());
 	if(!pageInfoNode["PageSize"].isNull())
 		pageInfo_.pageSize = std::stoi(pageInfoNode["PageSize"].asString());
 	if(!pageInfoNode["TotalCount"].isNull())
 		pageInfo_.totalCount = std::stoi(pageInfoNode["TotalCount"].asString());
-	if(!pageInfoNode["CurrentPage"].isNull())
-		pageInfo_.currentPage = std::stoi(pageInfoNode["CurrentPage"].asString());
+	if(!pageInfoNode["Count"].isNull())
+		pageInfo_.count = std::stoi(pageInfoNode["Count"].asString());
 
 }
 

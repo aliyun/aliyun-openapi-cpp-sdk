@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SAS_MODEL_STARTIMAGEVULSCANRESULT_H_
-#define ALIBABACLOUD_SAS_MODEL_STARTIMAGEVULSCANRESULT_H_
+#ifndef ALIBABACLOUD_SAS_MODEL_PUBLICCREATEIMAGESCANTASKRESULT_H_
+#define ALIBABACLOUD_SAS_MODEL_PUBLICCREATEIMAGESCANTASKRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,21 +29,35 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SAS_EXPORT StartImageVulScanResult : public ServiceResult
+			class ALIBABACLOUD_SAS_EXPORT PublicCreateImageScanTaskResult : public ServiceResult
 			{
 			public:
+				struct Data
+				{
+					std::string status;
+					int totalCount;
+					int progress;
+					std::string taskId;
+					long collectTime;
+					int finishCount;
+					long execTime;
+					std::string result;
+					bool canCreate;
+				};
 
 
-				StartImageVulScanResult();
-				explicit StartImageVulScanResult(const std::string &payload);
-				~StartImageVulScanResult();
+				PublicCreateImageScanTaskResult();
+				explicit PublicCreateImageScanTaskResult(const std::string &payload);
+				~PublicCreateImageScanTaskResult();
+				Data getData()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				Data data_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SAS_MODEL_STARTIMAGEVULSCANRESULT_H_
+#endif // !ALIBABACLOUD_SAS_MODEL_PUBLICCREATEIMAGESCANTASKRESULT_H_

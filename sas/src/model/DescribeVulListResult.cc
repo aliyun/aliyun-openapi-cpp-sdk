@@ -121,6 +121,12 @@ void DescribeVulListResult::parse(const std::string &payload)
 			vulRecordsObject.containerName = valueVulRecordsVulRecord["ContainerName"].asString();
 		if(!valueVulRecordsVulRecord["Level"].isNull())
 			vulRecordsObject.level = valueVulRecordsVulRecord["Level"].asString();
+		if(!valueVulRecordsVulRecord["Bind"].isNull())
+			vulRecordsObject.bind = valueVulRecordsVulRecord["Bind"].asString() == "true";
+		if(!valueVulRecordsVulRecord["OsName"].isNull())
+			vulRecordsObject.osName = valueVulRecordsVulRecord["OsName"].asString();
+		if(!valueVulRecordsVulRecord["AuthVersion"].isNull())
+			vulRecordsObject.authVersion = valueVulRecordsVulRecord["AuthVersion"].asString();
 		auto extendContentJsonNode = value["ExtendContentJson"];
 		if(!extendContentJsonNode["Status"].isNull())
 			vulRecordsObject.extendContentJson.status = extendContentJsonNode["Status"].asString();

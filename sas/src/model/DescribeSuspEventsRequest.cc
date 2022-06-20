@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,267 +18,225 @@
 
 using AlibabaCloud::Sas::Model::DescribeSuspEventsRequest;
 
-DescribeSuspEventsRequest::DescribeSuspEventsRequest() :
-	RpcServiceRequest("sas", "2018-12-03", "DescribeSuspEvents")
-{
-	setMethod(HttpRequest::Method::Post);
+DescribeSuspEventsRequest::DescribeSuspEventsRequest()
+    : RpcServiceRequest("sas", "2018-12-03", "DescribeSuspEvents") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DescribeSuspEventsRequest::~DescribeSuspEventsRequest()
-{}
+DescribeSuspEventsRequest::~DescribeSuspEventsRequest() {}
 
-std::string DescribeSuspEventsRequest::getTargetType()const
-{
-	return targetType_;
+std::string DescribeSuspEventsRequest::getTargetType() const {
+  return targetType_;
 }
 
-void DescribeSuspEventsRequest::setTargetType(const std::string& targetType)
-{
-	targetType_ = targetType;
-	setParameter("TargetType", targetType);
+void DescribeSuspEventsRequest::setTargetType(const std::string &targetType) {
+  targetType_ = targetType;
+  setParameter(std::string("TargetType"), targetType);
 }
 
-std::string DescribeSuspEventsRequest::getRemark()const
-{
-	return remark_;
+std::string DescribeSuspEventsRequest::getRemark() const {
+  return remark_;
 }
 
-void DescribeSuspEventsRequest::setRemark(const std::string& remark)
-{
-	remark_ = remark;
-	setParameter("Remark", remark);
+void DescribeSuspEventsRequest::setRemark(const std::string &remark) {
+  remark_ = remark;
+  setParameter(std::string("Remark"), remark);
 }
 
-std::string DescribeSuspEventsRequest::getSource()const
-{
-	return source_;
+std::string DescribeSuspEventsRequest::getSource() const {
+  return source_;
 }
 
-void DescribeSuspEventsRequest::setSource(const std::string& source)
-{
-	source_ = source;
-	setParameter("Source", source);
+void DescribeSuspEventsRequest::setSource(const std::string &source) {
+  source_ = source;
+  setParameter(std::string("Source"), source);
 }
 
-std::string DescribeSuspEventsRequest::getContainerFieldName()const
-{
-	return containerFieldName_;
+std::string DescribeSuspEventsRequest::getContainerFieldName() const {
+  return containerFieldName_;
 }
 
-void DescribeSuspEventsRequest::setContainerFieldName(const std::string& containerFieldName)
-{
-	containerFieldName_ = containerFieldName;
-	setParameter("ContainerFieldName", containerFieldName);
+void DescribeSuspEventsRequest::setContainerFieldName(const std::string &containerFieldName) {
+  containerFieldName_ = containerFieldName;
+  setParameter(std::string("ContainerFieldName"), containerFieldName);
 }
 
-std::string DescribeSuspEventsRequest::getSourceIp()const
-{
-	return sourceIp_;
+std::string DescribeSuspEventsRequest::getSourceIp() const {
+  return sourceIp_;
 }
 
-void DescribeSuspEventsRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
+void DescribeSuspEventsRequest::setSourceIp(const std::string &sourceIp) {
+  sourceIp_ = sourceIp;
+  setParameter(std::string("SourceIp"), sourceIp);
 }
 
-std::string DescribeSuspEventsRequest::getContainerFieldValue()const
-{
-	return containerFieldValue_;
+std::string DescribeSuspEventsRequest::getContainerFieldValue() const {
+  return containerFieldValue_;
 }
 
-void DescribeSuspEventsRequest::setContainerFieldValue(const std::string& containerFieldValue)
-{
-	containerFieldValue_ = containerFieldValue;
-	setParameter("ContainerFieldValue", containerFieldValue);
+void DescribeSuspEventsRequest::setContainerFieldValue(const std::string &containerFieldValue) {
+  containerFieldValue_ = containerFieldValue;
+  setParameter(std::string("ContainerFieldValue"), containerFieldValue);
 }
 
-std::string DescribeSuspEventsRequest::getEventNames()const
-{
-	return eventNames_;
+std::string DescribeSuspEventsRequest::getEventNames() const {
+  return eventNames_;
 }
 
-void DescribeSuspEventsRequest::setEventNames(const std::string& eventNames)
-{
-	eventNames_ = eventNames;
-	setParameter("EventNames", eventNames);
+void DescribeSuspEventsRequest::setEventNames(const std::string &eventNames) {
+  eventNames_ = eventNames;
+  setParameter(std::string("EventNames"), eventNames);
 }
 
-std::string DescribeSuspEventsRequest::getPageSize()const
-{
-	return pageSize_;
+std::string DescribeSuspEventsRequest::getPageSize() const {
+  return pageSize_;
 }
 
-void DescribeSuspEventsRequest::setPageSize(const std::string& pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", pageSize);
+void DescribeSuspEventsRequest::setPageSize(const std::string &pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), pageSize);
 }
 
-std::string DescribeSuspEventsRequest::getFrom()const
-{
-	return from_;
+std::string DescribeSuspEventsRequest::getFrom() const {
+  return from_;
 }
 
-void DescribeSuspEventsRequest::setFrom(const std::string& from)
-{
-	from_ = from;
-	setParameter("From", from);
+void DescribeSuspEventsRequest::setFrom(const std::string &from) {
+  from_ = from;
+  setParameter(std::string("From"), from);
 }
 
-std::string DescribeSuspEventsRequest::getTacticId()const
-{
-	return tacticId_;
+long DescribeSuspEventsRequest::getId() const {
+  return id_;
 }
 
-void DescribeSuspEventsRequest::setTacticId(const std::string& tacticId)
-{
-	tacticId_ = tacticId;
-	setBodyParameter("TacticId", tacticId);
+void DescribeSuspEventsRequest::setId(long id) {
+  id_ = id;
+  setParameter(std::string("Id"), std::to_string(id));
 }
 
-std::string DescribeSuspEventsRequest::getLang()const
-{
-	return lang_;
+std::string DescribeSuspEventsRequest::getTacticId() const {
+  return tacticId_;
 }
 
-void DescribeSuspEventsRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setParameter("Lang", lang);
+void DescribeSuspEventsRequest::setTacticId(const std::string &tacticId) {
+  tacticId_ = tacticId;
+  setBodyParameter(std::string("TacticId"), tacticId);
 }
 
-std::string DescribeSuspEventsRequest::getAlarmUniqueInfo()const
-{
-	return alarmUniqueInfo_;
+std::string DescribeSuspEventsRequest::getLang() const {
+  return lang_;
 }
 
-void DescribeSuspEventsRequest::setAlarmUniqueInfo(const std::string& alarmUniqueInfo)
-{
-	alarmUniqueInfo_ = alarmUniqueInfo;
-	setParameter("AlarmUniqueInfo", alarmUniqueInfo);
+void DescribeSuspEventsRequest::setLang(const std::string &lang) {
+  lang_ = lang;
+  setParameter(std::string("Lang"), lang);
 }
 
-std::string DescribeSuspEventsRequest::getUniqueInfo()const
-{
-	return uniqueInfo_;
+std::string DescribeSuspEventsRequest::getAlarmUniqueInfo() const {
+  return alarmUniqueInfo_;
 }
 
-void DescribeSuspEventsRequest::setUniqueInfo(const std::string& uniqueInfo)
-{
-	uniqueInfo_ = uniqueInfo;
-	setParameter("UniqueInfo", uniqueInfo);
+void DescribeSuspEventsRequest::setAlarmUniqueInfo(const std::string &alarmUniqueInfo) {
+  alarmUniqueInfo_ = alarmUniqueInfo;
+  setParameter(std::string("AlarmUniqueInfo"), alarmUniqueInfo);
 }
 
-long DescribeSuspEventsRequest::getGroupId()const
-{
-	return groupId_;
+std::string DescribeSuspEventsRequest::getUniqueInfo() const {
+  return uniqueInfo_;
 }
 
-void DescribeSuspEventsRequest::setGroupId(long groupId)
-{
-	groupId_ = groupId;
-	setParameter("GroupId", std::to_string(groupId));
+void DescribeSuspEventsRequest::setUniqueInfo(const std::string &uniqueInfo) {
+  uniqueInfo_ = uniqueInfo;
+  setParameter(std::string("UniqueInfo"), uniqueInfo);
 }
 
-std::string DescribeSuspEventsRequest::getDealed()const
-{
-	return dealed_;
+long DescribeSuspEventsRequest::getGroupId() const {
+  return groupId_;
 }
 
-void DescribeSuspEventsRequest::setDealed(const std::string& dealed)
-{
-	dealed_ = dealed;
-	setParameter("Dealed", dealed);
+void DescribeSuspEventsRequest::setGroupId(long groupId) {
+  groupId_ = groupId;
+  setParameter(std::string("GroupId"), std::to_string(groupId));
 }
 
-std::string DescribeSuspEventsRequest::getCurrentPage()const
-{
-	return currentPage_;
+std::string DescribeSuspEventsRequest::getDealed() const {
+  return dealed_;
 }
 
-void DescribeSuspEventsRequest::setCurrentPage(const std::string& currentPage)
-{
-	currentPage_ = currentPage;
-	setParameter("CurrentPage", currentPage);
+void DescribeSuspEventsRequest::setDealed(const std::string &dealed) {
+  dealed_ = dealed;
+  setParameter(std::string("Dealed"), dealed);
 }
 
-std::string DescribeSuspEventsRequest::getClusterId()const
-{
-	return clusterId_;
+std::string DescribeSuspEventsRequest::getCurrentPage() const {
+  return currentPage_;
 }
 
-void DescribeSuspEventsRequest::setClusterId(const std::string& clusterId)
-{
-	clusterId_ = clusterId;
-	setParameter("ClusterId", clusterId);
+void DescribeSuspEventsRequest::setCurrentPage(const std::string &currentPage) {
+  currentPage_ = currentPage;
+  setParameter(std::string("CurrentPage"), currentPage);
 }
 
-std::vector<std::string> DescribeSuspEventsRequest::getOperateErrorCodeList()const
-{
-	return operateErrorCodeList_;
+std::string DescribeSuspEventsRequest::getClusterId() const {
+  return clusterId_;
 }
 
-void DescribeSuspEventsRequest::setOperateErrorCodeList(const std::vector<std::string>& operateErrorCodeList)
-{
-	operateErrorCodeList_ = operateErrorCodeList;
-	for(int dep1 = 0; dep1!= operateErrorCodeList.size(); dep1++) {
-		setParameter("OperateErrorCodeList."+ std::to_string(dep1), operateErrorCodeList.at(dep1));
-	}
+void DescribeSuspEventsRequest::setClusterId(const std::string &clusterId) {
+  clusterId_ = clusterId;
+  setParameter(std::string("ClusterId"), clusterId);
 }
 
-std::string DescribeSuspEventsRequest::getName()const
-{
-	return name_;
+std::vector<std::string> DescribeSuspEventsRequest::getOperateErrorCodeList() const {
+  return operateErrorCodeList_;
 }
 
-void DescribeSuspEventsRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setParameter("Name", name);
+void DescribeSuspEventsRequest::setOperateErrorCodeList(const std::vector<std::string> &operateErrorCodeList) {
+  operateErrorCodeList_ = operateErrorCodeList;
 }
 
-std::string DescribeSuspEventsRequest::getLevels()const
-{
-	return levels_;
+std::string DescribeSuspEventsRequest::getName() const {
+  return name_;
 }
 
-void DescribeSuspEventsRequest::setLevels(const std::string& levels)
-{
-	levels_ = levels;
-	setParameter("Levels", levels);
+void DescribeSuspEventsRequest::setName(const std::string &name) {
+  name_ = name;
+  setParameter(std::string("Name"), name);
 }
 
-std::string DescribeSuspEventsRequest::getParentEventTypes()const
-{
-	return parentEventTypes_;
+std::string DescribeSuspEventsRequest::getLevels() const {
+  return levels_;
 }
 
-void DescribeSuspEventsRequest::setParentEventTypes(const std::string& parentEventTypes)
-{
-	parentEventTypes_ = parentEventTypes;
-	setParameter("ParentEventTypes", parentEventTypes);
+void DescribeSuspEventsRequest::setLevels(const std::string &levels) {
+  levels_ = levels;
+  setParameter(std::string("Levels"), levels);
 }
 
-std::string DescribeSuspEventsRequest::getStatus()const
-{
-	return status_;
+std::string DescribeSuspEventsRequest::getParentEventTypes() const {
+  return parentEventTypes_;
 }
 
-void DescribeSuspEventsRequest::setStatus(const std::string& status)
-{
-	status_ = status;
-	setParameter("Status", status);
+void DescribeSuspEventsRequest::setParentEventTypes(const std::string &parentEventTypes) {
+  parentEventTypes_ = parentEventTypes;
+  setParameter(std::string("ParentEventTypes"), parentEventTypes);
 }
 
-std::string DescribeSuspEventsRequest::getUuids()const
-{
-	return uuids_;
+std::string DescribeSuspEventsRequest::getStatus() const {
+  return status_;
 }
 
-void DescribeSuspEventsRequest::setUuids(const std::string& uuids)
-{
-	uuids_ = uuids;
-	setParameter("Uuids", uuids);
+void DescribeSuspEventsRequest::setStatus(const std::string &status) {
+  status_ = status;
+  setParameter(std::string("Status"), status);
+}
+
+std::string DescribeSuspEventsRequest::getUuids() const {
+  return uuids_;
+}
+
+void DescribeSuspEventsRequest::setUuids(const std::string &uuids) {
+  uuids_ = uuids;
+  setParameter(std::string("Uuids"), uuids);
 }
 

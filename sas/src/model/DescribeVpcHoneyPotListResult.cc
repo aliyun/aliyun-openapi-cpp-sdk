@@ -43,51 +43,51 @@ void DescribeVpcHoneyPotListResult::parse(const std::string &payload)
 	for (auto valueVpcHoneyPotDTOListVpcHoneyPotDTO : allVpcHoneyPotDTOListNode)
 	{
 		VpcHoneyPotDTO vpcHoneyPotDTOListObject;
-		if(!valueVpcHoneyPotDTOListVpcHoneyPotDTO["VpcId"].isNull())
-			vpcHoneyPotDTOListObject.vpcId = valueVpcHoneyPotDTOListVpcHoneyPotDTO["VpcId"].asString();
 		if(!valueVpcHoneyPotDTOListVpcHoneyPotDTO["VpcName"].isNull())
 			vpcHoneyPotDTOListObject.vpcName = valueVpcHoneyPotDTOListVpcHoneyPotDTO["VpcName"].asString();
-		if(!valueVpcHoneyPotDTOListVpcHoneyPotDTO["VpcRegionId"].isNull())
-			vpcHoneyPotDTOListObject.vpcRegionId = valueVpcHoneyPotDTOListVpcHoneyPotDTO["VpcRegionId"].asString();
-		if(!valueVpcHoneyPotDTOListVpcHoneyPotDTO["CreateTime"].isNull())
-			vpcHoneyPotDTOListObject.createTime = std::stol(valueVpcHoneyPotDTOListVpcHoneyPotDTO["CreateTime"].asString());
-		if(!valueVpcHoneyPotDTOListVpcHoneyPotDTO["VpcStatus"].isNull())
-			vpcHoneyPotDTOListObject.vpcStatus = valueVpcHoneyPotDTOListVpcHoneyPotDTO["VpcStatus"].asString();
-		if(!valueVpcHoneyPotDTOListVpcHoneyPotDTO["CidrBlock"].isNull())
-			vpcHoneyPotDTOListObject.cidrBlock = valueVpcHoneyPotDTOListVpcHoneyPotDTO["CidrBlock"].asString();
-		if(!valueVpcHoneyPotDTOListVpcHoneyPotDTO["HoneyPotExistence"].isNull())
-			vpcHoneyPotDTOListObject.honeyPotExistence = valueVpcHoneyPotDTOListVpcHoneyPotDTO["HoneyPotExistence"].asString() == "true";
-		if(!valueVpcHoneyPotDTOListVpcHoneyPotDTO["HoneyPotVpcSwitchId"].isNull())
-			vpcHoneyPotDTOListObject.honeyPotVpcSwitchId = valueVpcHoneyPotDTOListVpcHoneyPotDTO["HoneyPotVpcSwitchId"].asString();
-		if(!valueVpcHoneyPotDTOListVpcHoneyPotDTO["HoneyPotInstanceStatus"].isNull())
-			vpcHoneyPotDTOListObject.honeyPotInstanceStatus = valueVpcHoneyPotDTOListVpcHoneyPotDTO["HoneyPotInstanceStatus"].asString();
+		if(!valueVpcHoneyPotDTOListVpcHoneyPotDTO["VpcId"].isNull())
+			vpcHoneyPotDTOListObject.vpcId = valueVpcHoneyPotDTOListVpcHoneyPotDTO["VpcId"].asString();
 		if(!valueVpcHoneyPotDTOListVpcHoneyPotDTO["HoneyPotEniInstanceId"].isNull())
 			vpcHoneyPotDTOListObject.honeyPotEniInstanceId = valueVpcHoneyPotDTOListVpcHoneyPotDTO["HoneyPotEniInstanceId"].asString();
+		if(!valueVpcHoneyPotDTOListVpcHoneyPotDTO["CidrBlock"].isNull())
+			vpcHoneyPotDTOListObject.cidrBlock = valueVpcHoneyPotDTOListVpcHoneyPotDTO["CidrBlock"].asString();
+		if(!valueVpcHoneyPotDTOListVpcHoneyPotDTO["VpcStatus"].isNull())
+			vpcHoneyPotDTOListObject.vpcStatus = valueVpcHoneyPotDTOListVpcHoneyPotDTO["VpcStatus"].asString();
+		if(!valueVpcHoneyPotDTOListVpcHoneyPotDTO["CreateTime"].isNull())
+			vpcHoneyPotDTOListObject.createTime = std::stol(valueVpcHoneyPotDTOListVpcHoneyPotDTO["CreateTime"].asString());
+		if(!valueVpcHoneyPotDTOListVpcHoneyPotDTO["HoneyPotVpcSwitchId"].isNull())
+			vpcHoneyPotDTOListObject.honeyPotVpcSwitchId = valueVpcHoneyPotDTOListVpcHoneyPotDTO["HoneyPotVpcSwitchId"].asString();
+		if(!valueVpcHoneyPotDTOListVpcHoneyPotDTO["HoneyPotExistence"].isNull())
+			vpcHoneyPotDTOListObject.honeyPotExistence = valueVpcHoneyPotDTOListVpcHoneyPotDTO["HoneyPotExistence"].asString() == "true";
+		if(!valueVpcHoneyPotDTOListVpcHoneyPotDTO["VpcRegionId"].isNull())
+			vpcHoneyPotDTOListObject.vpcRegionId = valueVpcHoneyPotDTOListVpcHoneyPotDTO["VpcRegionId"].asString();
 		if(!valueVpcHoneyPotDTOListVpcHoneyPotDTO["HoneyPotEcsInstanceStatus"].isNull())
 			vpcHoneyPotDTOListObject.honeyPotEcsInstanceStatus = valueVpcHoneyPotDTOListVpcHoneyPotDTO["HoneyPotEcsInstanceStatus"].asString();
+		if(!valueVpcHoneyPotDTOListVpcHoneyPotDTO["HoneyPotInstanceStatus"].isNull())
+			vpcHoneyPotDTOListObject.honeyPotInstanceStatus = valueVpcHoneyPotDTOListVpcHoneyPotDTO["HoneyPotInstanceStatus"].asString();
 		auto allVpcSwitchIdListNode = valueVpcHoneyPotDTOListVpcHoneyPotDTO["VpcSwitchIdList"]["VpcSwitchInfo"];
 		for (auto valueVpcHoneyPotDTOListVpcHoneyPotDTOVpcSwitchIdListVpcSwitchInfo : allVpcSwitchIdListNode)
 		{
 			VpcHoneyPotDTO::VpcSwitchInfo vpcSwitchIdListObject;
-			if(!valueVpcHoneyPotDTOListVpcHoneyPotDTOVpcSwitchIdListVpcSwitchInfo["VpcSwitchId"].isNull())
-				vpcSwitchIdListObject.vpcSwitchId = valueVpcHoneyPotDTOListVpcHoneyPotDTOVpcSwitchIdListVpcSwitchInfo["VpcSwitchId"].asString();
 			if(!valueVpcHoneyPotDTOListVpcHoneyPotDTOVpcSwitchIdListVpcSwitchInfo["VpcSwitchName"].isNull())
 				vpcSwitchIdListObject.vpcSwitchName = valueVpcHoneyPotDTOListVpcHoneyPotDTOVpcSwitchIdListVpcSwitchInfo["VpcSwitchName"].asString();
 			if(!valueVpcHoneyPotDTOListVpcHoneyPotDTOVpcSwitchIdListVpcSwitchInfo["ZoneId"].isNull())
 				vpcSwitchIdListObject.zoneId = valueVpcHoneyPotDTOListVpcHoneyPotDTOVpcSwitchIdListVpcSwitchInfo["ZoneId"].asString();
+			if(!valueVpcHoneyPotDTOListVpcHoneyPotDTOVpcSwitchIdListVpcSwitchInfo["VpcSwitchId"].isNull())
+				vpcSwitchIdListObject.vpcSwitchId = valueVpcHoneyPotDTOListVpcHoneyPotDTOVpcSwitchIdListVpcSwitchInfo["VpcSwitchId"].asString();
 			vpcHoneyPotDTOListObject.vpcSwitchIdList.push_back(vpcSwitchIdListObject);
 		}
 		vpcHoneyPotDTOList_.push_back(vpcHoneyPotDTOListObject);
 	}
 	auto pageInfoNode = value["PageInfo"];
-	if(!pageInfoNode["Count"].isNull())
-		pageInfo_.count = std::stoi(pageInfoNode["Count"].asString());
+	if(!pageInfoNode["CurrentPage"].isNull())
+		pageInfo_.currentPage = std::stoi(pageInfoNode["CurrentPage"].asString());
 	if(!pageInfoNode["PageSize"].isNull())
 		pageInfo_.pageSize = std::stoi(pageInfoNode["PageSize"].asString());
 	if(!pageInfoNode["TotalCount"].isNull())
 		pageInfo_.totalCount = std::stoi(pageInfoNode["TotalCount"].asString());
-	if(!pageInfoNode["CurrentPage"].isNull())
-		pageInfo_.currentPage = std::stoi(pageInfoNode["CurrentPage"].asString());
+	if(!pageInfoNode["Count"].isNull())
+		pageInfo_.count = std::stoi(pageInfoNode["Count"].asString());
 
 }
 

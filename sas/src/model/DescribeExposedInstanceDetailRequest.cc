@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,34 +18,28 @@
 
 using AlibabaCloud::Sas::Model::DescribeExposedInstanceDetailRequest;
 
-DescribeExposedInstanceDetailRequest::DescribeExposedInstanceDetailRequest() :
-	RpcServiceRequest("sas", "2018-12-03", "DescribeExposedInstanceDetail")
-{
-	setMethod(HttpRequest::Method::Post);
+DescribeExposedInstanceDetailRequest::DescribeExposedInstanceDetailRequest()
+    : RpcServiceRequest("sas", "2018-12-03", "DescribeExposedInstanceDetail") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DescribeExposedInstanceDetailRequest::~DescribeExposedInstanceDetailRequest()
-{}
+DescribeExposedInstanceDetailRequest::~DescribeExposedInstanceDetailRequest() {}
 
-std::string DescribeExposedInstanceDetailRequest::getUuid()const
-{
-	return uuid_;
+std::string DescribeExposedInstanceDetailRequest::getUuid() const {
+  return uuid_;
 }
 
-void DescribeExposedInstanceDetailRequest::setUuid(const std::string& uuid)
-{
-	uuid_ = uuid;
-	setParameter("Uuid", uuid);
+void DescribeExposedInstanceDetailRequest::setUuid(const std::string &uuid) {
+  uuid_ = uuid;
+  setParameter(std::string("Uuid"), uuid);
 }
 
-std::string DescribeExposedInstanceDetailRequest::getSourceIp()const
-{
-	return sourceIp_;
+std::string DescribeExposedInstanceDetailRequest::getSourceIp() const {
+  return sourceIp_;
 }
 
-void DescribeExposedInstanceDetailRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
+void DescribeExposedInstanceDetailRequest::setSourceIp(const std::string &sourceIp) {
+  sourceIp_ = sourceIp;
+  setParameter(std::string("SourceIp"), sourceIp);
 }
 

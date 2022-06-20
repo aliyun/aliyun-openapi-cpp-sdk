@@ -42,8 +42,8 @@ namespace AlibabaCloud
 				struct BackupPolicy
 				{
 					std::string status;
-					std::string policy;
 					std::string policyVersion;
+					std::string policy;
 					std::string clientStatus;
 					std::vector<std::string> serviceErrorUuidList;
 					std::vector<std::string> remarkedUuidList;

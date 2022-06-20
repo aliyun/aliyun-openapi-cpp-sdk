@@ -67,6 +67,8 @@ void DescribeInstanceStatisticsResult::parse(const std::string &payload)
 			dataObject.health = std::stoi(valueDataDataItem["Health"].asString());
 		if(!valueDataDataItem["SysNum"].isNull())
 			dataObject.sysNum = std::stoi(valueDataDataItem["SysNum"].asString());
+		if(!valueDataDataItem["WeakPWNum"].isNull())
+			dataObject.weakPWNum = std::stoi(valueDataDataItem["WeakPWNum"].asString());
 		data_.push_back(dataObject);
 	}
 

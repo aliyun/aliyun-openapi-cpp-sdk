@@ -40,10 +40,10 @@ void DescribeSecurityCheckScheduleConfigResult::parse(const std::string &payload
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto riskCheckJobConfigNode = value["RiskCheckJobConfig"];
-	if(!riskCheckJobConfigNode["StartTime"].isNull())
-		riskCheckJobConfig_.startTime = std::stoi(riskCheckJobConfigNode["StartTime"].asString());
 	if(!riskCheckJobConfigNode["EndTime"].isNull())
 		riskCheckJobConfig_.endTime = std::stoi(riskCheckJobConfigNode["EndTime"].asString());
+	if(!riskCheckJobConfigNode["StartTime"].isNull())
+		riskCheckJobConfig_.startTime = std::stoi(riskCheckJobConfigNode["StartTime"].asString());
 	if(!riskCheckJobConfigNode["DaysOfWeek"].isNull())
 		riskCheckJobConfig_.daysOfWeek = riskCheckJobConfigNode["DaysOfWeek"].asString();
 

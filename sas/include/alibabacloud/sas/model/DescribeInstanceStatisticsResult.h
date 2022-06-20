@@ -35,17 +35,18 @@ namespace AlibabaCloud
 				struct DataItem
 				{
 					int account;
+					int health;
+					int emgNum;
+					int appNum;
+					int vul;
 					std::string uuid;
 					int suspicious;
-					int health;
 					int cveNum;
 					int scaNum;
 					int trojan;
 					int cmsNum;
-					int emgNum;
 					int sysNum;
-					int appNum;
-					int vul;
+					int weakPWNum;
 				};
 
 

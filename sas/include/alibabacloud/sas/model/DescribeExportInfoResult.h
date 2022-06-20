@@ -37,8 +37,8 @@ namespace AlibabaCloud
 				DescribeExportInfoResult();
 				explicit DescribeExportInfoResult(const std::string &payload);
 				~DescribeExportInfoResult();
-				int getTotalCount()const;
 				int getProgress()const;
+				int getTotalCount()const;
 				std::string getMessage()const;
 				std::string getFileName()const;
 				std::string getExportStatus()const;
@@ -49,8 +49,8 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int totalCount_;
 				int progress_;
+				int totalCount_;
 				std::string message_;
 				std::string fileName_;
 				std::string exportStatus_;

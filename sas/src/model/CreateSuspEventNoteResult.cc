@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/sas/model/RetryInstallProbeResult.h>
+#include <alibabacloud/sas/model/CreateSuspEventNoteResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Sas;
 using namespace AlibabaCloud::Sas::Model;
 
-RetryInstallProbeResult::RetryInstallProbeResult() :
+CreateSuspEventNoteResult::CreateSuspEventNoteResult() :
 	ServiceResult()
 {}
 
-RetryInstallProbeResult::RetryInstallProbeResult(const std::string &payload) :
+CreateSuspEventNoteResult::CreateSuspEventNoteResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-RetryInstallProbeResult::~RetryInstallProbeResult()
+CreateSuspEventNoteResult::~CreateSuspEventNoteResult()
 {}
 
-void RetryInstallProbeResult::parse(const std::string &payload)
+void CreateSuspEventNoteResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -50,22 +50,22 @@ void RetryInstallProbeResult::parse(const std::string &payload)
 
 }
 
-std::string RetryInstallProbeResult::getMessage()const
+std::string CreateSuspEventNoteResult::getMessage()const
 {
 	return message_;
 }
 
-int RetryInstallProbeResult::getHttpStatusCode()const
+int CreateSuspEventNoteResult::getHttpStatusCode()const
 {
 	return httpStatusCode_;
 }
 
-std::string RetryInstallProbeResult::getCode()const
+std::string CreateSuspEventNoteResult::getCode()const
 {
 	return code_;
 }
 
-bool RetryInstallProbeResult::getSuccess()const
+bool CreateSuspEventNoteResult::getSuccess()const
 {
 	return success_;
 }

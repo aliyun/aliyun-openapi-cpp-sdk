@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,47 +18,36 @@
 
 using AlibabaCloud::Sas::Model::CheckQuaraFileIdRequest;
 
-CheckQuaraFileIdRequest::CheckQuaraFileIdRequest() :
-	RpcServiceRequest("sas", "2018-12-03", "CheckQuaraFileId")
-{
-	setMethod(HttpRequest::Method::Post);
+CheckQuaraFileIdRequest::CheckQuaraFileIdRequest()
+    : RpcServiceRequest("sas", "2018-12-03", "CheckQuaraFileId") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-CheckQuaraFileIdRequest::~CheckQuaraFileIdRequest()
-{}
+CheckQuaraFileIdRequest::~CheckQuaraFileIdRequest() {}
 
-std::vector<std::string> CheckQuaraFileIdRequest::getQuaraFileIds()const
-{
-	return quaraFileIds_;
+std::vector<std::string> CheckQuaraFileIdRequest::getQuaraFileIds() const {
+  return quaraFileIds_;
 }
 
-void CheckQuaraFileIdRequest::setQuaraFileIds(const std::vector<std::string>& quaraFileIds)
-{
-	quaraFileIds_ = quaraFileIds;
-	for(int dep1 = 0; dep1!= quaraFileIds.size(); dep1++) {
-		setParameter("QuaraFileIds."+ std::to_string(dep1), quaraFileIds.at(dep1));
-	}
+void CheckQuaraFileIdRequest::setQuaraFileIds(const std::vector<std::string> &quaraFileIds) {
+  quaraFileIds_ = quaraFileIds;
 }
 
-std::string CheckQuaraFileIdRequest::getUuid()const
-{
-	return uuid_;
+std::string CheckQuaraFileIdRequest::getUuid() const {
+  return uuid_;
 }
 
-void CheckQuaraFileIdRequest::setUuid(const std::string& uuid)
-{
-	uuid_ = uuid;
-	setParameter("Uuid", uuid);
+void CheckQuaraFileIdRequest::setUuid(const std::string &uuid) {
+  uuid_ = uuid;
+  setParameter(std::string("Uuid"), uuid);
 }
 
-std::string CheckQuaraFileIdRequest::getSourceIp()const
-{
-	return sourceIp_;
+std::string CheckQuaraFileIdRequest::getSourceIp() const {
+  return sourceIp_;
 }
 
-void CheckQuaraFileIdRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
+void CheckQuaraFileIdRequest::setSourceIp(const std::string &sourceIp) {
+  sourceIp_ = sourceIp;
+  setParameter(std::string("SourceIp"), sourceIp);
 }
 

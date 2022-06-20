@@ -50,14 +50,14 @@ namespace AlibabaCloud
 					std::vector<VpcHoneyPotDTO::VpcSwitchInfo> vpcSwitchIdList;
 					std::string honeyPotEcsInstanceStatus;
 					std::string vpcId;
-					bool honeyPotExistence;
 					std::string honeyPotVpcSwitchId;
+					bool honeyPotExistence;
 					std::string honeyPotInstanceStatus;
-					long createTime;
 					std::string vpcStatus;
-					std::string vpcRegionId;
-					std::string cidrBlock;
+					long createTime;
 					std::string honeyPotEniInstanceId;
+					std::string cidrBlock;
+					std::string vpcRegionId;
 					std::string vpcName;
 				};
 

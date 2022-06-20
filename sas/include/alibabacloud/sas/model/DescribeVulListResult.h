@@ -105,6 +105,7 @@ namespace AlibabaCloud
 						std::vector<Process> processList;
 						long gmtLastTs;
 					};
+					bool bind;
 					std::string k8sNodeId;
 					std::string k8sNodeName;
 					std::string osVersion;
@@ -126,6 +127,7 @@ namespace AlibabaCloud
 					int status;
 					int progress;
 					std::string instanceId;
+					std::string osName;
 					long lastTs;
 					std::string necessity;
 					ProcessInfo processInfo;
@@ -144,6 +146,7 @@ namespace AlibabaCloud
 					std::string tag;
 					std::string regionId;
 					bool online;
+					std::string authVersion;
 					long primaryId;
 					std::string resultCode;
 				};

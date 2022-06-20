@@ -39,16 +39,16 @@ void GetSuspiciousStatisticsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["TemindCount"].isNull())
-		temindCount_ = std::stoi(value["TemindCount"].asString());
-	if(!value["RemindCount"].isNull())
-		remindCount_ = std::stoi(value["RemindCount"].asString());
 	if(!value["SuspiciousCount"].isNull())
 		suspiciousCount_ = std::stoi(value["SuspiciousCount"].asString());
+	if(!value["RemindCount"].isNull())
+		remindCount_ = std::stoi(value["RemindCount"].asString());
+	if(!value["TemindCount"].isNull())
+		temindCount_ = std::stoi(value["TemindCount"].asString());
 	if(!value["SeriousCount"].isNull())
 		seriousCount_ = std::stoi(value["SeriousCount"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 
@@ -57,14 +57,14 @@ int GetSuspiciousStatisticsResult::getTotalCount()const
 	return totalCount_;
 }
 
-int GetSuspiciousStatisticsResult::getTemindCount()const
-{
-	return temindCount_;
-}
-
 int GetSuspiciousStatisticsResult::getSuspiciousCount()const
 {
 	return suspiciousCount_;
+}
+
+int GetSuspiciousStatisticsResult::getTemindCount()const
+{
+	return temindCount_;
 }
 
 int GetSuspiciousStatisticsResult::getRemindCount()const

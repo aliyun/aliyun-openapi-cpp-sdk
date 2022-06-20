@@ -67,6 +67,8 @@ void QueryGroupedSecurityEventMarkMissListResult::parse(const std::string &paylo
 			listObject.fieldValue = valueListListItem["FieldValue"].asString();
 		if(!valueListListItem["Operate"].isNull())
 			listObject.operate = valueListListItem["Operate"].asString();
+		if(!valueListListItem["DisposalWay"].isNull())
+			listObject.disposalWay = valueListListItem["DisposalWay"].asString();
 		list_.push_back(listObject);
 	}
 	auto pageInfoNode = value["PageInfo"];

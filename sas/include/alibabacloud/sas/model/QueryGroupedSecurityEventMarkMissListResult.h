@@ -41,16 +41,17 @@ namespace AlibabaCloud
 				};
 				struct ListItem
 				{
-					std::string field;
-					long gmtCreate;
+					std::string disposalWay;
 					std::string eventType;
-					std::string eventTypeOriginal;
 					long gmtModified;
 					std::string eventName;
-					std::string fieldValue;
 					std::string operate;
-					std::string uuids;
 					std::string eventNameOriginal;
+					std::string field;
+					long gmtCreate;
+					std::string eventTypeOriginal;
+					std::string fieldValue;
+					std::string uuids;
 					long aliUid;
 					std::string filedAliasName;
 				};

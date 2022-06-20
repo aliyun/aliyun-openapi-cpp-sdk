@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,56 +18,46 @@
 
 using AlibabaCloud::Sas::Model::CreateSimilarSecurityEventsQueryTaskRequest;
 
-CreateSimilarSecurityEventsQueryTaskRequest::CreateSimilarSecurityEventsQueryTaskRequest() :
-	RpcServiceRequest("sas", "2018-12-03", "CreateSimilarSecurityEventsQueryTask")
-{
-	setMethod(HttpRequest::Method::Post);
+CreateSimilarSecurityEventsQueryTaskRequest::CreateSimilarSecurityEventsQueryTaskRequest()
+    : RpcServiceRequest("sas", "2018-12-03", "CreateSimilarSecurityEventsQueryTask") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-CreateSimilarSecurityEventsQueryTaskRequest::~CreateSimilarSecurityEventsQueryTaskRequest()
-{}
+CreateSimilarSecurityEventsQueryTaskRequest::~CreateSimilarSecurityEventsQueryTaskRequest() {}
 
-long CreateSimilarSecurityEventsQueryTaskRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long CreateSimilarSecurityEventsQueryTaskRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void CreateSimilarSecurityEventsQueryTaskRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void CreateSimilarSecurityEventsQueryTaskRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string CreateSimilarSecurityEventsQueryTaskRequest::getSourceIp()const
-{
-	return sourceIp_;
+std::string CreateSimilarSecurityEventsQueryTaskRequest::getSourceIp() const {
+  return sourceIp_;
 }
 
-void CreateSimilarSecurityEventsQueryTaskRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
+void CreateSimilarSecurityEventsQueryTaskRequest::setSourceIp(const std::string &sourceIp) {
+  sourceIp_ = sourceIp;
+  setParameter(std::string("SourceIp"), sourceIp);
 }
 
-long CreateSimilarSecurityEventsQueryTaskRequest::getSecurityEventId()const
-{
-	return securityEventId_;
+long CreateSimilarSecurityEventsQueryTaskRequest::getSecurityEventId() const {
+  return securityEventId_;
 }
 
-void CreateSimilarSecurityEventsQueryTaskRequest::setSecurityEventId(long securityEventId)
-{
-	securityEventId_ = securityEventId;
-	setParameter("SecurityEventId", std::to_string(securityEventId));
+void CreateSimilarSecurityEventsQueryTaskRequest::setSecurityEventId(long securityEventId) {
+  securityEventId_ = securityEventId;
+  setParameter(std::string("SecurityEventId"), std::to_string(securityEventId));
 }
 
-std::string CreateSimilarSecurityEventsQueryTaskRequest::getSimilarEventScenarioCode()const
-{
-	return similarEventScenarioCode_;
+std::string CreateSimilarSecurityEventsQueryTaskRequest::getSimilarEventScenarioCode() const {
+  return similarEventScenarioCode_;
 }
 
-void CreateSimilarSecurityEventsQueryTaskRequest::setSimilarEventScenarioCode(const std::string& similarEventScenarioCode)
-{
-	similarEventScenarioCode_ = similarEventScenarioCode;
-	setParameter("SimilarEventScenarioCode", similarEventScenarioCode);
+void CreateSimilarSecurityEventsQueryTaskRequest::setSimilarEventScenarioCode(const std::string &similarEventScenarioCode) {
+  similarEventScenarioCode_ = similarEventScenarioCode;
+  setParameter(std::string("SimilarEventScenarioCode"), similarEventScenarioCode);
 }
 

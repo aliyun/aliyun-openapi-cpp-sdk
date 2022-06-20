@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SAS_MODEL_GETOPADEFENCEDETAILREQUEST_H_
-#define ALIBABACLOUD_SAS_MODEL_GETOPADEFENCEDETAILREQUEST_H_
+#ifndef ALIBABACLOUD_SAS_MODEL_CREATESUSPEVENTNOTERESULT_H_
+#define ALIBABACLOUD_SAS_MODEL_CREATESUSPEVENTNOTERESULT_H_
 
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
+#include <utility>
+#include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/sas/SasExport.h>
 
 namespace AlibabaCloud
@@ -28,27 +29,29 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SAS_EXPORT GetOpaDefenceDetailRequest : public RpcServiceRequest
+			class ALIBABACLOUD_SAS_EXPORT CreateSuspEventNoteResult : public ServiceResult
 			{
-
 			public:
-				GetOpaDefenceDetailRequest();
-				~GetOpaDefenceDetailRequest();
 
-				long getInterceptionId()const;
-				void setInterceptionId(long interceptionId);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
-				int getCurrentPage()const;
-				void setCurrentPage(int currentPage);
 
-            private:
-				long interceptionId_;
-				int pageSize_;
-				int currentPage_;
+				CreateSuspEventNoteResult();
+				explicit CreateSuspEventNoteResult(const std::string &payload);
+				~CreateSuspEventNoteResult();
+				std::string getMessage()const;
+				int getHttpStatusCode()const;
+				std::string getCode()const;
+				bool getSuccess()const;
+
+			protected:
+				void parse(const std::string &payload);
+			private:
+				std::string message_;
+				int httpStatusCode_;
+				std::string code_;
+				bool success_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SAS_MODEL_GETOPADEFENCEDETAILREQUEST_H_
+#endif // !ALIBABACLOUD_SAS_MODEL_CREATESUSPEVENTNOTERESULT_H_

@@ -59,8 +59,8 @@ namespace AlibabaCloud
 					std::vector<ExposedChain::ScaVulRecord> realVulList;
 					std::vector<ExposedChain::ScaVulRecord> allVulList;
 					std::string uuid;
-					std::string internetIp;
 					std::string exposureIp;
+					std::string internetIp;
 					std::string exposureTypeId;
 					std::string groupNo;
 					std::string regionId;

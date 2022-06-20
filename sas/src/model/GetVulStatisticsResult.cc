@@ -39,12 +39,12 @@ void GetVulStatisticsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["VulAsapSum"].isNull())
-		vulAsapSum_ = std::stoi(value["VulAsapSum"].asString());
 	if(!value["VulLaterSum"].isNull())
 		vulLaterSum_ = std::stoi(value["VulLaterSum"].asString());
 	if(!value["VulNntfSum"].isNull())
 		vulNntfSum_ = std::stoi(value["VulNntfSum"].asString());
+	if(!value["VulAsapSum"].isNull())
+		vulAsapSum_ = std::stoi(value["VulAsapSum"].asString());
 
 }
 

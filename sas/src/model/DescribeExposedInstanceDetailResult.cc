@@ -43,60 +43,60 @@ void DescribeExposedInstanceDetailResult::parse(const std::string &payload)
 	for (auto valueExposedChainsExposedChain : allExposedChainsNode)
 	{
 		ExposedChain exposedChainsObject;
-		if(!valueExposedChainsExposedChain["Uuid"].isNull())
-			exposedChainsObject.uuid = valueExposedChainsExposedChain["Uuid"].asString();
-		if(!valueExposedChainsExposedChain["IntranetIp"].isNull())
-			exposedChainsObject.intranetIp = valueExposedChainsExposedChain["IntranetIp"].asString();
-		if(!valueExposedChainsExposedChain["InternetIp"].isNull())
-			exposedChainsObject.internetIp = valueExposedChainsExposedChain["InternetIp"].asString();
-		if(!valueExposedChainsExposedChain["ExposureComponent"].isNull())
-			exposedChainsObject.exposureComponent = valueExposedChainsExposedChain["ExposureComponent"].asString();
-		if(!valueExposedChainsExposedChain["ExposureType"].isNull())
-			exposedChainsObject.exposureType = valueExposedChainsExposedChain["ExposureType"].asString();
-		if(!valueExposedChainsExposedChain["ExposurePort"].isNull())
-			exposedChainsObject.exposurePort = valueExposedChainsExposedChain["ExposurePort"].asString();
 		if(!valueExposedChainsExposedChain["ExposureIp"].isNull())
 			exposedChainsObject.exposureIp = valueExposedChainsExposedChain["ExposureIp"].asString();
-		if(!valueExposedChainsExposedChain["ExposureTypeId"].isNull())
-			exposedChainsObject.exposureTypeId = valueExposedChainsExposedChain["ExposureTypeId"].asString();
-		if(!valueExposedChainsExposedChain["InstanceId"].isNull())
-			exposedChainsObject.instanceId = valueExposedChainsExposedChain["InstanceId"].asString();
-		if(!valueExposedChainsExposedChain["InstanceName"].isNull())
-			exposedChainsObject.instanceName = valueExposedChainsExposedChain["InstanceName"].asString();
-		if(!valueExposedChainsExposedChain["RegionId"].isNull())
-			exposedChainsObject.regionId = valueExposedChainsExposedChain["RegionId"].asString();
 		if(!valueExposedChainsExposedChain["GroupNo"].isNull())
 			exposedChainsObject.groupNo = valueExposedChainsExposedChain["GroupNo"].asString();
+		if(!valueExposedChainsExposedChain["InternetIp"].isNull())
+			exposedChainsObject.internetIp = valueExposedChainsExposedChain["InternetIp"].asString();
+		if(!valueExposedChainsExposedChain["InstanceId"].isNull())
+			exposedChainsObject.instanceId = valueExposedChainsExposedChain["InstanceId"].asString();
+		if(!valueExposedChainsExposedChain["ExposureType"].isNull())
+			exposedChainsObject.exposureType = valueExposedChainsExposedChain["ExposureType"].asString();
+		if(!valueExposedChainsExposedChain["IntranetIp"].isNull())
+			exposedChainsObject.intranetIp = valueExposedChainsExposedChain["IntranetIp"].asString();
+		if(!valueExposedChainsExposedChain["ExposureTypeId"].isNull())
+			exposedChainsObject.exposureTypeId = valueExposedChainsExposedChain["ExposureTypeId"].asString();
+		if(!valueExposedChainsExposedChain["RegionId"].isNull())
+			exposedChainsObject.regionId = valueExposedChainsExposedChain["RegionId"].asString();
+		if(!valueExposedChainsExposedChain["Uuid"].isNull())
+			exposedChainsObject.uuid = valueExposedChainsExposedChain["Uuid"].asString();
+		if(!valueExposedChainsExposedChain["ExposurePort"].isNull())
+			exposedChainsObject.exposurePort = valueExposedChainsExposedChain["ExposurePort"].asString();
+		if(!valueExposedChainsExposedChain["InstanceName"].isNull())
+			exposedChainsObject.instanceName = valueExposedChainsExposedChain["InstanceName"].asString();
+		if(!valueExposedChainsExposedChain["ExposureComponent"].isNull())
+			exposedChainsObject.exposureComponent = valueExposedChainsExposedChain["ExposureComponent"].asString();
 		auto allRealVulListNode = valueExposedChainsExposedChain["RealVulList"]["ScaVulRecord"];
 		for (auto valueExposedChainsExposedChainRealVulListScaVulRecord : allRealVulListNode)
 		{
 			ExposedChain::ScaVulRecord realVulListObject;
-			if(!valueExposedChainsExposedChainRealVulListScaVulRecord["AliasName"].isNull())
-				realVulListObject.aliasName = valueExposedChainsExposedChainRealVulListScaVulRecord["AliasName"].asString();
-			if(!valueExposedChainsExposedChainRealVulListScaVulRecord["Necessity"].isNull())
-				realVulListObject.necessity = valueExposedChainsExposedChainRealVulListScaVulRecord["Necessity"].asString();
-			if(!valueExposedChainsExposedChainRealVulListScaVulRecord["Name"].isNull())
-				realVulListObject.name = valueExposedChainsExposedChainRealVulListScaVulRecord["Name"].asString();
 			if(!valueExposedChainsExposedChainRealVulListScaVulRecord["Type"].isNull())
 				realVulListObject.type = valueExposedChainsExposedChainRealVulListScaVulRecord["Type"].asString();
+			if(!valueExposedChainsExposedChainRealVulListScaVulRecord["Necessity"].isNull())
+				realVulListObject.necessity = valueExposedChainsExposedChainRealVulListScaVulRecord["Necessity"].asString();
 			if(!valueExposedChainsExposedChainRealVulListScaVulRecord["Uuid"].isNull())
 				realVulListObject.uuid = valueExposedChainsExposedChainRealVulListScaVulRecord["Uuid"].asString();
+			if(!valueExposedChainsExposedChainRealVulListScaVulRecord["AliasName"].isNull())
+				realVulListObject.aliasName = valueExposedChainsExposedChainRealVulListScaVulRecord["AliasName"].asString();
+			if(!valueExposedChainsExposedChainRealVulListScaVulRecord["Name"].isNull())
+				realVulListObject.name = valueExposedChainsExposedChainRealVulListScaVulRecord["Name"].asString();
 			exposedChainsObject.realVulList.push_back(realVulListObject);
 		}
 		auto allAllVulListNode = valueExposedChainsExposedChain["AllVulList"]["ScaVulRecord"];
 		for (auto valueExposedChainsExposedChainAllVulListScaVulRecord : allAllVulListNode)
 		{
 			ExposedChain::ScaVulRecord allVulListObject;
-			if(!valueExposedChainsExposedChainAllVulListScaVulRecord["AliasName"].isNull())
-				allVulListObject.aliasName = valueExposedChainsExposedChainAllVulListScaVulRecord["AliasName"].asString();
-			if(!valueExposedChainsExposedChainAllVulListScaVulRecord["Necessity"].isNull())
-				allVulListObject.necessity = valueExposedChainsExposedChainAllVulListScaVulRecord["Necessity"].asString();
-			if(!valueExposedChainsExposedChainAllVulListScaVulRecord["Name"].isNull())
-				allVulListObject.name = valueExposedChainsExposedChainAllVulListScaVulRecord["Name"].asString();
 			if(!valueExposedChainsExposedChainAllVulListScaVulRecord["Type"].isNull())
 				allVulListObject.type = valueExposedChainsExposedChainAllVulListScaVulRecord["Type"].asString();
+			if(!valueExposedChainsExposedChainAllVulListScaVulRecord["Necessity"].isNull())
+				allVulListObject.necessity = valueExposedChainsExposedChainAllVulListScaVulRecord["Necessity"].asString();
 			if(!valueExposedChainsExposedChainAllVulListScaVulRecord["Uuid"].isNull())
 				allVulListObject.uuid = valueExposedChainsExposedChainAllVulListScaVulRecord["Uuid"].asString();
+			if(!valueExposedChainsExposedChainAllVulListScaVulRecord["AliasName"].isNull())
+				allVulListObject.aliasName = valueExposedChainsExposedChainAllVulListScaVulRecord["AliasName"].asString();
+			if(!valueExposedChainsExposedChainAllVulListScaVulRecord["Name"].isNull())
+				allVulListObject.name = valueExposedChainsExposedChainAllVulListScaVulRecord["Name"].asString();
 			exposedChainsObject.allVulList.push_back(allVulListObject);
 		}
 		exposedChains_.push_back(exposedChainsObject);

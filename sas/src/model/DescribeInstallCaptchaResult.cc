@@ -39,10 +39,10 @@ void DescribeInstallCaptchaResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["CaptchaCode"].isNull())
-		captchaCode_ = value["CaptchaCode"].asString();
 	if(!value["Deadline"].isNull())
 		deadline_ = value["Deadline"].asString();
+	if(!value["CaptchaCode"].isNull())
+		captchaCode_ = value["CaptchaCode"].asString();
 
 }
 

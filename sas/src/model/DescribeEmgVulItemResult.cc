@@ -47,6 +47,8 @@ void DescribeEmgVulItemResult::parse(const std::string &payload)
 			groupedVulItemsObject.status = std::stoi(valueGroupedVulItemsGroupedVulItem["Status"].asString());
 		if(!valueGroupedVulItemsGroupedVulItem["Type"].isNull())
 			groupedVulItemsObject.type = valueGroupedVulItemsGroupedVulItem["Type"].asString();
+		if(!valueGroupedVulItemsGroupedVulItem["CheckType"].isNull())
+			groupedVulItemsObject.checkType = std::stoi(valueGroupedVulItemsGroupedVulItem["CheckType"].asString());
 		if(!valueGroupedVulItemsGroupedVulItem["GmtLastCheck"].isNull())
 			groupedVulItemsObject.gmtLastCheck = std::stol(valueGroupedVulItemsGroupedVulItem["GmtLastCheck"].asString());
 		if(!valueGroupedVulItemsGroupedVulItem["Progress"].isNull())

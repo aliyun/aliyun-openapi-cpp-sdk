@@ -43,20 +43,20 @@ void DescribeVpcListResult::parse(const std::string &payload)
 	for (auto valueVpcListVpc : allVpcListNode)
 	{
 		Vpc vpcListObject;
-		if(!valueVpcListVpc["InstanceId"].isNull())
-			vpcListObject.instanceId = valueVpcListVpc["InstanceId"].asString();
-		if(!valueVpcListVpc["MiddleStatus"].isNull())
-			vpcListObject.middleStatus = std::stoi(valueVpcListVpc["MiddleStatus"].asString());
-		if(!valueVpcListVpc["InstanceName"].isNull())
-			vpcListObject.instanceName = valueVpcListVpc["InstanceName"].asString();
-		if(!valueVpcListVpc["RegionId"].isNull())
-			vpcListObject.regionId = valueVpcListVpc["RegionId"].asString();
-		if(!valueVpcListVpc["InstanceDesc"].isNull())
-			vpcListObject.instanceDesc = valueVpcListVpc["InstanceDesc"].asString();
-		if(!valueVpcListVpc["EcsCount"].isNull())
-			vpcListObject.ecsCount = std::stoi(valueVpcListVpc["EcsCount"].asString());
 		if(!valueVpcListVpc["Status"].isNull())
 			vpcListObject.status = std::stoi(valueVpcListVpc["Status"].asString());
+		if(!valueVpcListVpc["InstanceDesc"].isNull())
+			vpcListObject.instanceDesc = valueVpcListVpc["InstanceDesc"].asString();
+		if(!valueVpcListVpc["InstanceName"].isNull())
+			vpcListObject.instanceName = valueVpcListVpc["InstanceName"].asString();
+		if(!valueVpcListVpc["EcsCount"].isNull())
+			vpcListObject.ecsCount = std::stoi(valueVpcListVpc["EcsCount"].asString());
+		if(!valueVpcListVpc["MiddleStatus"].isNull())
+			vpcListObject.middleStatus = std::stoi(valueVpcListVpc["MiddleStatus"].asString());
+		if(!valueVpcListVpc["InstanceId"].isNull())
+			vpcListObject.instanceId = valueVpcListVpc["InstanceId"].asString();
+		if(!valueVpcListVpc["RegionId"].isNull())
+			vpcListObject.regionId = valueVpcListVpc["RegionId"].asString();
 		vpcList_.push_back(vpcListObject);
 	}
 	if(!value["Count"].isNull())

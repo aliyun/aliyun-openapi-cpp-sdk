@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,34 +18,28 @@
 
 using AlibabaCloud::Sas::Model::DeleteGroupRequest;
 
-DeleteGroupRequest::DeleteGroupRequest() :
-	RpcServiceRequest("sas", "2018-12-03", "DeleteGroup")
-{
-	setMethod(HttpRequest::Method::Post);
+DeleteGroupRequest::DeleteGroupRequest()
+    : RpcServiceRequest("sas", "2018-12-03", "DeleteGroup") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DeleteGroupRequest::~DeleteGroupRequest()
-{}
+DeleteGroupRequest::~DeleteGroupRequest() {}
 
-long DeleteGroupRequest::getGroupId()const
-{
-	return groupId_;
+long DeleteGroupRequest::getGroupId() const {
+  return groupId_;
 }
 
-void DeleteGroupRequest::setGroupId(long groupId)
-{
-	groupId_ = groupId;
-	setParameter("GroupId", std::to_string(groupId));
+void DeleteGroupRequest::setGroupId(long groupId) {
+  groupId_ = groupId;
+  setParameter(std::string("GroupId"), std::to_string(groupId));
 }
 
-std::string DeleteGroupRequest::getSourceIp()const
-{
-	return sourceIp_;
+std::string DeleteGroupRequest::getSourceIp() const {
+  return sourceIp_;
 }
 
-void DeleteGroupRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
+void DeleteGroupRequest::setSourceIp(const std::string &sourceIp) {
+  sourceIp_ = sourceIp;
+  setParameter(std::string("SourceIp"), sourceIp);
 }
 

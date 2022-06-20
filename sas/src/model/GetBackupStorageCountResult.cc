@@ -40,16 +40,16 @@ void GetBackupStorageCountResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto backupStorageCountNode = value["BackupStorageCount"];
+	if(!backupStorageCountNode["Overflow"].isNull())
+		backupStorageCount_.overflow = std::stoi(backupStorageCountNode["Overflow"].asString());
+	if(!backupStorageCountNode["UniUsageStorageByte"].isNull())
+		backupStorageCount_.uniUsageStorageByte = std::stol(backupStorageCountNode["UniUsageStorageByte"].asString());
 	if(!backupStorageCountNode["BuyStorageByte"].isNull())
 		backupStorageCount_.buyStorageByte = std::stol(backupStorageCountNode["BuyStorageByte"].asString());
 	if(!backupStorageCountNode["UsageStorageByte"].isNull())
 		backupStorageCount_.usageStorageByte = std::stol(backupStorageCountNode["UsageStorageByte"].asString());
 	if(!backupStorageCountNode["EcsUsageStorageByte"].isNull())
 		backupStorageCount_.ecsUsageStorageByte = std::stol(backupStorageCountNode["EcsUsageStorageByte"].asString());
-	if(!backupStorageCountNode["UniUsageStorageByte"].isNull())
-		backupStorageCount_.uniUsageStorageByte = std::stol(backupStorageCountNode["UniUsageStorageByte"].asString());
-	if(!backupStorageCountNode["Overflow"].isNull())
-		backupStorageCount_.overflow = std::stoi(backupStorageCountNode["Overflow"].asString());
 
 }
 

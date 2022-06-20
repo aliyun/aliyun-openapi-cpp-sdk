@@ -38,8 +38,8 @@ namespace AlibabaCloud
 				explicit GetSuspiciousStatisticsResult(const std::string &payload);
 				~GetSuspiciousStatisticsResult();
 				int getTotalCount()const;
-				int getTemindCount()const;
 				int getSuspiciousCount()const;
+				int getTemindCount()const;
 				int getRemindCount()const;
 				int getSeriousCount()const;
 
@@ -47,8 +47,8 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				int totalCount_;
-				int temindCount_;
 				int suspiciousCount_;
+				int temindCount_;
 				int remindCount_;
 				int seriousCount_;
 

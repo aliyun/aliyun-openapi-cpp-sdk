@@ -43,23 +43,23 @@ void DescribeInstanceAntiBruteForceRulesResult::parse(const std::string &payload
 	for (auto valueRulesInstanceAntiBruteForceRule : allRulesNode)
 	{
 		InstanceAntiBruteForceRule rulesObject;
-		if(!valueRulesInstanceAntiBruteForceRule["Id"].isNull())
-			rulesObject.id = std::stol(valueRulesInstanceAntiBruteForceRule["Id"].asString());
-		if(!valueRulesInstanceAntiBruteForceRule["Name"].isNull())
-			rulesObject.name = valueRulesInstanceAntiBruteForceRule["Name"].asString();
 		if(!valueRulesInstanceAntiBruteForceRule["Uuid"].isNull())
 			rulesObject.uuid = valueRulesInstanceAntiBruteForceRule["Uuid"].asString();
+		if(!valueRulesInstanceAntiBruteForceRule["Name"].isNull())
+			rulesObject.name = valueRulesInstanceAntiBruteForceRule["Name"].asString();
+		if(!valueRulesInstanceAntiBruteForceRule["Id"].isNull())
+			rulesObject.id = std::stol(valueRulesInstanceAntiBruteForceRule["Id"].asString());
 		rules_.push_back(rulesObject);
 	}
 	auto pageInfoNode = value["PageInfo"];
-	if(!pageInfoNode["Count"].isNull())
-		pageInfo_.count = std::stoi(pageInfoNode["Count"].asString());
+	if(!pageInfoNode["CurrentPage"].isNull())
+		pageInfo_.currentPage = std::stoi(pageInfoNode["CurrentPage"].asString());
 	if(!pageInfoNode["PageSize"].isNull())
 		pageInfo_.pageSize = std::stoi(pageInfoNode["PageSize"].asString());
 	if(!pageInfoNode["TotalCount"].isNull())
 		pageInfo_.totalCount = std::stoi(pageInfoNode["TotalCount"].asString());
-	if(!pageInfoNode["CurrentPage"].isNull())
-		pageInfo_.currentPage = std::stoi(pageInfoNode["CurrentPage"].asString());
+	if(!pageInfoNode["Count"].isNull())
+		pageInfo_.count = std::stoi(pageInfoNode["Count"].asString());
 
 }
 

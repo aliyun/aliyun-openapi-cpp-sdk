@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/sas/model/GetOpaDefenceDetailResult.h>
+#include <alibabacloud/sas/model/ModifyStrategyTargetResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Sas;
 using namespace AlibabaCloud::Sas::Model;
 
-GetOpaDefenceDetailResult::GetOpaDefenceDetailResult() :
+ModifyStrategyTargetResult::ModifyStrategyTargetResult() :
 	ServiceResult()
 {}
 
-GetOpaDefenceDetailResult::GetOpaDefenceDetailResult(const std::string &payload) :
+ModifyStrategyTargetResult::ModifyStrategyTargetResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-GetOpaDefenceDetailResult::~GetOpaDefenceDetailResult()
+ModifyStrategyTargetResult::~ModifyStrategyTargetResult()
 {}
 
-void GetOpaDefenceDetailResult::parse(const std::string &payload)
+void ModifyStrategyTargetResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;

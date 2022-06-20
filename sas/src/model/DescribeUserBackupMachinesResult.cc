@@ -43,12 +43,12 @@ void DescribeUserBackupMachinesResult::parse(const std::string &payload)
 	for (auto valueMachinesSimpleBackupMachine : allMachinesNode)
 	{
 		SimpleBackupMachine machinesObject;
-		if(!valueMachinesSimpleBackupMachine["Id"].isNull())
-			machinesObject.id = std::stol(valueMachinesSimpleBackupMachine["Id"].asString());
 		if(!valueMachinesSimpleBackupMachine["Uuid"].isNull())
 			machinesObject.uuid = valueMachinesSimpleBackupMachine["Uuid"].asString();
 		if(!valueMachinesSimpleBackupMachine["PolicyName"].isNull())
 			machinesObject.policyName = valueMachinesSimpleBackupMachine["PolicyName"].asString();
+		if(!valueMachinesSimpleBackupMachine["Id"].isNull())
+			machinesObject.id = std::stol(valueMachinesSimpleBackupMachine["Id"].asString());
 		machines_.push_back(machinesObject);
 	}
 

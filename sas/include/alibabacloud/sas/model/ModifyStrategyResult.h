@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SAS_MODEL_DELETEVULAUTOREPAIRCONFIGRESULT_H_
-#define ALIBABACLOUD_SAS_MODEL_DELETEVULAUTOREPAIRCONFIGRESULT_H_
+#ifndef ALIBABACLOUD_SAS_MODEL_MODIFYSTRATEGYRESULT_H_
+#define ALIBABACLOUD_SAS_MODEL_MODIFYSTRATEGYRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,29 +29,33 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SAS_EXPORT DeleteVulAutoRepairConfigResult : public ServiceResult
+			class ALIBABACLOUD_SAS_EXPORT ModifyStrategyResult : public ServiceResult
 			{
 			public:
+				struct Result
+				{
+					int strategyId;
+				};
 
 
-				DeleteVulAutoRepairConfigResult();
-				explicit DeleteVulAutoRepairConfigResult(const std::string &payload);
-				~DeleteVulAutoRepairConfigResult();
-				std::string getMessage()const;
+				ModifyStrategyResult();
+				explicit ModifyStrategyResult(const std::string &payload);
+				~ModifyStrategyResult();
+				int getTotalCount()const;
 				int getHttpStatusCode()const;
-				std::string getCode()const;
 				bool getSuccess()const;
+				Result getResult()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string message_;
+				int totalCount_;
 				int httpStatusCode_;
-				std::string code_;
 				bool success_;
+				Result result_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SAS_MODEL_DELETEVULAUTOREPAIRCONFIGRESULT_H_
+#endif // !ALIBABACLOUD_SAS_MODEL_MODIFYSTRATEGYRESULT_H_

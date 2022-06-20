@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,45 +18,37 @@
 
 using AlibabaCloud::Sas::Model::DescribePropertyCountRequest;
 
-DescribePropertyCountRequest::DescribePropertyCountRequest() :
-	RpcServiceRequest("sas", "2018-12-03", "DescribePropertyCount")
-{
-	setMethod(HttpRequest::Method::Post);
+DescribePropertyCountRequest::DescribePropertyCountRequest()
+    : RpcServiceRequest("sas", "2018-12-03", "DescribePropertyCount") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DescribePropertyCountRequest::~DescribePropertyCountRequest()
-{}
+DescribePropertyCountRequest::~DescribePropertyCountRequest() {}
 
-std::string DescribePropertyCountRequest::getType()const
-{
-	return type_;
+std::string DescribePropertyCountRequest::getType() const {
+  return type_;
 }
 
-void DescribePropertyCountRequest::setType(const std::string& type)
-{
-	type_ = type;
-	setParameter("Type", type);
+void DescribePropertyCountRequest::setType(const std::string &type) {
+  type_ = type;
+  setParameter(std::string("Type"), type);
 }
 
-std::string DescribePropertyCountRequest::getSourceIp()const
-{
-	return sourceIp_;
+std::string DescribePropertyCountRequest::getSourceIp() const {
+  return sourceIp_;
 }
 
-void DescribePropertyCountRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
+void DescribePropertyCountRequest::setSourceIp(const std::string &sourceIp) {
+  sourceIp_ = sourceIp;
+  setParameter(std::string("SourceIp"), sourceIp);
 }
 
-std::string DescribePropertyCountRequest::getUuidList()const
-{
-	return uuidList_;
+std::string DescribePropertyCountRequest::getUuidList() const {
+  return uuidList_;
 }
 
-void DescribePropertyCountRequest::setUuidList(const std::string& uuidList)
-{
-	uuidList_ = uuidList;
-	setParameter("UuidList", uuidList);
+void DescribePropertyCountRequest::setUuidList(const std::string &uuidList) {
+  uuidList_ = uuidList;
+  setParameter(std::string("UuidList"), uuidList);
 }
 

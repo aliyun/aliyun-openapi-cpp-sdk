@@ -39,6 +39,7 @@ namespace AlibabaCloud
 					std::string type;
 					int progress;
 					std::string description;
+					int checkType;
 					std::string aliasName;
 					long gmtLastCheck;
 					long gmtPublish;

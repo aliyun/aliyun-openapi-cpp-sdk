@@ -34,8 +34,8 @@ namespace AlibabaCloud
 			public:
 				struct Vpc
 				{
-					std::string instanceName;
 					int status;
+					std::string instanceName;
 					int ecsCount;
 					std::string instanceId;
 					int middleStatus;

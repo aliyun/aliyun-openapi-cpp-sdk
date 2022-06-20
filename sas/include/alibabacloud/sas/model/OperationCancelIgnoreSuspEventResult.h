@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SAS_MODEL_LISTCRITERIASTRATEGYRESULT_H_
-#define ALIBABACLOUD_SAS_MODEL_LISTCRITERIASTRATEGYRESULT_H_
+#ifndef ALIBABACLOUD_SAS_MODEL_OPERATIONCANCELIGNORESUSPEVENTRESULT_H_
+#define ALIBABACLOUD_SAS_MODEL_OPERATIONCANCELIGNORESUSPEVENTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,21 +29,17 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SAS_EXPORT ListCriteriaStrategyResult : public ServiceResult
+			class ALIBABACLOUD_SAS_EXPORT OperationCancelIgnoreSuspEventResult : public ServiceResult
 			{
 			public:
-				struct DataItem
-				{
-					std::string value;
-					long id;
-				};
 
 
-				ListCriteriaStrategyResult();
-				explicit ListCriteriaStrategyResult(const std::string &payload);
-				~ListCriteriaStrategyResult();
+				OperationCancelIgnoreSuspEventResult();
+				explicit OperationCancelIgnoreSuspEventResult(const std::string &payload);
+				~OperationCancelIgnoreSuspEventResult();
 				std::string getMessage()const;
-				std::vector<DataItem> getData()const;
+				int getHttpStatusCode()const;
+				long getTimeCost()const;
 				std::string getCode()const;
 				bool getSuccess()const;
 
@@ -51,7 +47,8 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
-				std::vector<DataItem> data_;
+				int httpStatusCode_;
+				long timeCost_;
 				std::string code_;
 				bool success_;
 
@@ -59,4 +56,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SAS_MODEL_LISTCRITERIASTRATEGYRESULT_H_
+#endif // !ALIBABACLOUD_SAS_MODEL_OPERATIONCANCELIGNORESUSPEVENTRESULT_H_

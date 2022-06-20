@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,56 +18,46 @@
 
 using AlibabaCloud::Sas::Model::DescribeDingTalkRequest;
 
-DescribeDingTalkRequest::DescribeDingTalkRequest() :
-	RpcServiceRequest("sas", "2018-12-03", "DescribeDingTalk")
-{
-	setMethod(HttpRequest::Method::Post);
+DescribeDingTalkRequest::DescribeDingTalkRequest()
+    : RpcServiceRequest("sas", "2018-12-03", "DescribeDingTalk") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DescribeDingTalkRequest::~DescribeDingTalkRequest()
-{}
+DescribeDingTalkRequest::~DescribeDingTalkRequest() {}
 
-std::string DescribeDingTalkRequest::getRuleActionName()const
-{
-	return ruleActionName_;
+std::string DescribeDingTalkRequest::getRuleActionName() const {
+  return ruleActionName_;
 }
 
-void DescribeDingTalkRequest::setRuleActionName(const std::string& ruleActionName)
-{
-	ruleActionName_ = ruleActionName;
-	setParameter("RuleActionName", ruleActionName);
+void DescribeDingTalkRequest::setRuleActionName(const std::string &ruleActionName) {
+  ruleActionName_ = ruleActionName;
+  setParameter(std::string("RuleActionName"), ruleActionName);
 }
 
-int DescribeDingTalkRequest::getCurrentPage()const
-{
-	return currentPage_;
+int DescribeDingTalkRequest::getCurrentPage() const {
+  return currentPage_;
 }
 
-void DescribeDingTalkRequest::setCurrentPage(int currentPage)
-{
-	currentPage_ = currentPage;
-	setParameter("CurrentPage", std::to_string(currentPage));
+void DescribeDingTalkRequest::setCurrentPage(int currentPage) {
+  currentPage_ = currentPage;
+  setParameter(std::string("CurrentPage"), std::to_string(currentPage));
 }
 
-std::string DescribeDingTalkRequest::getSourceIp()const
-{
-	return sourceIp_;
+std::string DescribeDingTalkRequest::getSourceIp() const {
+  return sourceIp_;
 }
 
-void DescribeDingTalkRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
+void DescribeDingTalkRequest::setSourceIp(const std::string &sourceIp) {
+  sourceIp_ = sourceIp;
+  setParameter(std::string("SourceIp"), sourceIp);
 }
 
-int DescribeDingTalkRequest::getPageSize()const
-{
-	return pageSize_;
+int DescribeDingTalkRequest::getPageSize() const {
+  return pageSize_;
 }
 
-void DescribeDingTalkRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+void DescribeDingTalkRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 

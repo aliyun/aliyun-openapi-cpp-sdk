@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,80 +18,63 @@
 
 using AlibabaCloud::Sas::Model::DescribeRiskListCheckResultRequest;
 
-DescribeRiskListCheckResultRequest::DescribeRiskListCheckResultRequest() :
-	RpcServiceRequest("sas", "2018-12-03", "DescribeRiskListCheckResult")
-{
-	setMethod(HttpRequest::Method::Post);
+DescribeRiskListCheckResultRequest::DescribeRiskListCheckResultRequest()
+    : RpcServiceRequest("sas", "2018-12-03", "DescribeRiskListCheckResult") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DescribeRiskListCheckResultRequest::~DescribeRiskListCheckResultRequest()
-{}
+DescribeRiskListCheckResultRequest::~DescribeRiskListCheckResultRequest() {}
 
-long DescribeRiskListCheckResultRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long DescribeRiskListCheckResultRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void DescribeRiskListCheckResultRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void DescribeRiskListCheckResultRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-int DescribeRiskListCheckResultRequest::getCurrentPage()const
-{
-	return currentPage_;
+int DescribeRiskListCheckResultRequest::getCurrentPage() const {
+  return currentPage_;
 }
 
-void DescribeRiskListCheckResultRequest::setCurrentPage(int currentPage)
-{
-	currentPage_ = currentPage;
-	setParameter("CurrentPage", std::to_string(currentPage));
+void DescribeRiskListCheckResultRequest::setCurrentPage(int currentPage) {
+  currentPage_ = currentPage;
+  setParameter(std::string("CurrentPage"), std::to_string(currentPage));
 }
 
-std::string DescribeRiskListCheckResultRequest::getSourceIp()const
-{
-	return sourceIp_;
+std::string DescribeRiskListCheckResultRequest::getSourceIp() const {
+  return sourceIp_;
 }
 
-void DescribeRiskListCheckResultRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
+void DescribeRiskListCheckResultRequest::setSourceIp(const std::string &sourceIp) {
+  sourceIp_ = sourceIp;
+  setParameter(std::string("SourceIp"), sourceIp);
 }
 
-std::vector<std::string> DescribeRiskListCheckResultRequest::getInstanceIds()const
-{
-	return instanceIds_;
+std::vector<std::string> DescribeRiskListCheckResultRequest::getInstanceIds() const {
+  return instanceIds_;
 }
 
-void DescribeRiskListCheckResultRequest::setInstanceIds(const std::vector<std::string>& instanceIds)
-{
-	instanceIds_ = instanceIds;
-	for(int dep1 = 0; dep1!= instanceIds.size(); dep1++) {
-		setParameter("InstanceIds."+ std::to_string(dep1), instanceIds.at(dep1));
-	}
+void DescribeRiskListCheckResultRequest::setInstanceIds(const std::vector<std::string> &instanceIds) {
+  instanceIds_ = instanceIds;
 }
 
-int DescribeRiskListCheckResultRequest::getPageSize()const
-{
-	return pageSize_;
+int DescribeRiskListCheckResultRequest::getPageSize() const {
+  return pageSize_;
 }
 
-void DescribeRiskListCheckResultRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+void DescribeRiskListCheckResultRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
-std::string DescribeRiskListCheckResultRequest::getLang()const
-{
-	return lang_;
+std::string DescribeRiskListCheckResultRequest::getLang() const {
+  return lang_;
 }
 
-void DescribeRiskListCheckResultRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setParameter("Lang", lang);
+void DescribeRiskListCheckResultRequest::setLang(const std::string &lang) {
+  lang_ = lang;
+  setParameter(std::string("Lang"), lang);
 }
 

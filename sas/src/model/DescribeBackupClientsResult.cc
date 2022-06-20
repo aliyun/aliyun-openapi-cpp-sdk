@@ -47,10 +47,10 @@ void DescribeBackupClientsResult::parse(const std::string &payload)
 			clientsObject.uuid = valueClientsBackupMachineDTO["Uuid"].asString();
 		if(!valueClientsBackupMachineDTO["InstanceId"].isNull())
 			clientsObject.instanceId = valueClientsBackupMachineDTO["InstanceId"].asString();
-		if(!valueClientsBackupMachineDTO["ClientId"].isNull())
-			clientsObject.clientId = valueClientsBackupMachineDTO["ClientId"].asString();
 		if(!valueClientsBackupMachineDTO["ClientStatus"].isNull())
 			clientsObject.clientStatus = valueClientsBackupMachineDTO["ClientStatus"].asString();
+		if(!valueClientsBackupMachineDTO["ClientId"].isNull())
+			clientsObject.clientId = valueClientsBackupMachineDTO["ClientId"].asString();
 		clients_.push_back(clientsObject);
 	}
 

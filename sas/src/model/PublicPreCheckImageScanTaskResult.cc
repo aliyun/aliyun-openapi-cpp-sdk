@@ -14,31 +14,41 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/sas/model/StartImageVulScanResult.h>
+#include <alibabacloud/sas/model/PublicPreCheckImageScanTaskResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Sas;
 using namespace AlibabaCloud::Sas::Model;
 
-StartImageVulScanResult::StartImageVulScanResult() :
+PublicPreCheckImageScanTaskResult::PublicPreCheckImageScanTaskResult() :
 	ServiceResult()
 {}
 
-StartImageVulScanResult::StartImageVulScanResult(const std::string &payload) :
+PublicPreCheckImageScanTaskResult::PublicPreCheckImageScanTaskResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-StartImageVulScanResult::~StartImageVulScanResult()
+PublicPreCheckImageScanTaskResult::~PublicPreCheckImageScanTaskResult()
 {}
 
-void StartImageVulScanResult::parse(const std::string &payload)
+void PublicPreCheckImageScanTaskResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto dataNode = value["Data"];
+	if(!dataNode["ScanImageCount"].isNull())
+		data_.scanImageCount = std::stoi(dataNode["ScanImageCount"].asString());
+	if(!dataNode["NeedAuthCount"].isNull())
+		data_.needAuthCount = std::stoi(dataNode["NeedAuthCount"].asString());
 
+}
+
+PublicPreCheckImageScanTaskResult::Data PublicPreCheckImageScanTaskResult::getData()const
+{
+	return data_;
 }
 

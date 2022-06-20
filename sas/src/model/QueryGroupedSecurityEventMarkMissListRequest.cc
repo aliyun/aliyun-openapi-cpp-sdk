@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,100 +18,91 @@
 
 using AlibabaCloud::Sas::Model::QueryGroupedSecurityEventMarkMissListRequest;
 
-QueryGroupedSecurityEventMarkMissListRequest::QueryGroupedSecurityEventMarkMissListRequest() :
-	RpcServiceRequest("sas", "2018-12-03", "QueryGroupedSecurityEventMarkMissList")
-{
-	setMethod(HttpRequest::Method::Post);
+QueryGroupedSecurityEventMarkMissListRequest::QueryGroupedSecurityEventMarkMissListRequest()
+    : RpcServiceRequest("sas", "2018-12-03", "QueryGroupedSecurityEventMarkMissList") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-QueryGroupedSecurityEventMarkMissListRequest::~QueryGroupedSecurityEventMarkMissListRequest()
-{}
+QueryGroupedSecurityEventMarkMissListRequest::~QueryGroupedSecurityEventMarkMissListRequest() {}
 
-std::string QueryGroupedSecurityEventMarkMissListRequest::getRemark()const
-{
-	return remark_;
+std::string QueryGroupedSecurityEventMarkMissListRequest::getRemark() const {
+  return remark_;
 }
 
-void QueryGroupedSecurityEventMarkMissListRequest::setRemark(const std::string& remark)
-{
-	remark_ = remark;
-	setBodyParameter("Remark", remark);
+void QueryGroupedSecurityEventMarkMissListRequest::setRemark(const std::string &remark) {
+  remark_ = remark;
+  setBodyParameter(std::string("Remark"), remark);
 }
 
-std::string QueryGroupedSecurityEventMarkMissListRequest::getEventName()const
-{
-	return eventName_;
+std::string QueryGroupedSecurityEventMarkMissListRequest::getEventName() const {
+  return eventName_;
 }
 
-void QueryGroupedSecurityEventMarkMissListRequest::setEventName(const std::string& eventName)
-{
-	eventName_ = eventName;
-	setBodyParameter("EventName", eventName);
+void QueryGroupedSecurityEventMarkMissListRequest::setEventName(const std::string &eventName) {
+  eventName_ = eventName;
+  setBodyParameter(std::string("EventName"), eventName);
 }
 
-long QueryGroupedSecurityEventMarkMissListRequest::getMaxId()const
-{
-	return maxId_;
+std::string QueryGroupedSecurityEventMarkMissListRequest::getDisposalWay() const {
+  return disposalWay_;
 }
 
-void QueryGroupedSecurityEventMarkMissListRequest::setMaxId(long maxId)
-{
-	maxId_ = maxId;
-	setBodyParameter("MaxId", std::to_string(maxId));
+void QueryGroupedSecurityEventMarkMissListRequest::setDisposalWay(const std::string &disposalWay) {
+  disposalWay_ = disposalWay;
+  setParameter(std::string("DisposalWay"), disposalWay);
 }
 
-std::string QueryGroupedSecurityEventMarkMissListRequest::getSourceIp()const
-{
-	return sourceIp_;
+long QueryGroupedSecurityEventMarkMissListRequest::getMaxId() const {
+  return maxId_;
 }
 
-void QueryGroupedSecurityEventMarkMissListRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
+void QueryGroupedSecurityEventMarkMissListRequest::setMaxId(long maxId) {
+  maxId_ = maxId;
+  setBodyParameter(std::string("MaxId"), std::to_string(maxId));
 }
 
-int QueryGroupedSecurityEventMarkMissListRequest::getPageSize()const
-{
-	return pageSize_;
+std::string QueryGroupedSecurityEventMarkMissListRequest::getSourceIp() const {
+  return sourceIp_;
 }
 
-void QueryGroupedSecurityEventMarkMissListRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setBodyParameter("PageSize", std::to_string(pageSize));
+void QueryGroupedSecurityEventMarkMissListRequest::setSourceIp(const std::string &sourceIp) {
+  sourceIp_ = sourceIp;
+  setParameter(std::string("SourceIp"), sourceIp);
 }
 
-std::string QueryGroupedSecurityEventMarkMissListRequest::getFrom()const
-{
-	return from_;
+int QueryGroupedSecurityEventMarkMissListRequest::getPageSize() const {
+  return pageSize_;
 }
 
-void QueryGroupedSecurityEventMarkMissListRequest::setFrom(const std::string& from)
-{
-	from_ = from;
-	setBodyParameter("From", from);
+void QueryGroupedSecurityEventMarkMissListRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setBodyParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
-std::string QueryGroupedSecurityEventMarkMissListRequest::getLang()const
-{
-	return lang_;
+std::string QueryGroupedSecurityEventMarkMissListRequest::getFrom() const {
+  return from_;
 }
 
-void QueryGroupedSecurityEventMarkMissListRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setBodyParameter("Lang", lang);
+void QueryGroupedSecurityEventMarkMissListRequest::setFrom(const std::string &from) {
+  from_ = from;
+  setBodyParameter(std::string("From"), from);
 }
 
-int QueryGroupedSecurityEventMarkMissListRequest::getCurrentPage()const
-{
-	return currentPage_;
+std::string QueryGroupedSecurityEventMarkMissListRequest::getLang() const {
+  return lang_;
 }
 
-void QueryGroupedSecurityEventMarkMissListRequest::setCurrentPage(int currentPage)
-{
-	currentPage_ = currentPage;
-	setBodyParameter("CurrentPage", std::to_string(currentPage));
+void QueryGroupedSecurityEventMarkMissListRequest::setLang(const std::string &lang) {
+  lang_ = lang;
+  setBodyParameter(std::string("Lang"), lang);
+}
+
+int QueryGroupedSecurityEventMarkMissListRequest::getCurrentPage() const {
+  return currentPage_;
+}
+
+void QueryGroupedSecurityEventMarkMissListRequest::setCurrentPage(int currentPage) {
+  currentPage_ = currentPage;
+  setBodyParameter(std::string("CurrentPage"), std::to_string(currentPage));
 }
 

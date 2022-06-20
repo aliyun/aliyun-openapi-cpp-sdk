@@ -42,8 +42,8 @@ namespace AlibabaCloud
 				struct StatisticsDetail
 				{
 					std::string exposureType;
-					std::string exposureTypeId;
 					std::string exposureIp;
+					std::string exposureTypeId;
 					std::string exposureComponent;
 					int exposedCount;
 					std::string exposureTypeInstanceName;

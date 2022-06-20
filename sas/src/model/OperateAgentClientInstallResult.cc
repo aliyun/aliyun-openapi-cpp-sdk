@@ -43,12 +43,12 @@ void OperateAgentClientInstallResult::parse(const std::string &payload)
 	for (auto valueAegisCelintInstallResposeListAegisCelintInstallRespose : allAegisCelintInstallResposeListNode)
 	{
 		AegisCelintInstallRespose aegisCelintInstallResposeListObject;
+		if(!valueAegisCelintInstallResposeListAegisCelintInstallRespose["Uuid"].isNull())
+			aegisCelintInstallResposeListObject.uuid = valueAegisCelintInstallResposeListAegisCelintInstallRespose["Uuid"].asString();
 		if(!valueAegisCelintInstallResposeListAegisCelintInstallRespose["InstanceId"].isNull())
 			aegisCelintInstallResposeListObject.instanceId = valueAegisCelintInstallResposeListAegisCelintInstallRespose["InstanceId"].asString();
 		if(!valueAegisCelintInstallResposeListAegisCelintInstallRespose["RecordId"].isNull())
 			aegisCelintInstallResposeListObject.recordId = std::stol(valueAegisCelintInstallResposeListAegisCelintInstallRespose["RecordId"].asString());
-		if(!valueAegisCelintInstallResposeListAegisCelintInstallRespose["Uuid"].isNull())
-			aegisCelintInstallResposeListObject.uuid = valueAegisCelintInstallResposeListAegisCelintInstallRespose["Uuid"].asString();
 		aegisCelintInstallResposeList_.push_back(aegisCelintInstallResposeListObject);
 	}
 

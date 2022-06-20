@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,71 +18,53 @@
 
 using AlibabaCloud::Sas::Model::OperateVulsRequest;
 
-OperateVulsRequest::OperateVulsRequest() :
-	RpcServiceRequest("sas", "2018-12-03", "OperateVuls")
-{
-	setMethod(HttpRequest::Method::Post);
+OperateVulsRequest::OperateVulsRequest()
+    : RpcServiceRequest("sas", "2018-12-03", "OperateVuls") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-OperateVulsRequest::~OperateVulsRequest()
-{}
+OperateVulsRequest::~OperateVulsRequest() {}
 
-std::string OperateVulsRequest::getType()const
-{
-	return type_;
+std::string OperateVulsRequest::getType() const {
+  return type_;
 }
 
-void OperateVulsRequest::setType(const std::string& type)
-{
-	type_ = type;
-	setParameter("Type", type);
+void OperateVulsRequest::setType(const std::string &type) {
+  type_ = type;
+  setParameter(std::string("Type"), type);
 }
 
-std::vector<std::string> OperateVulsRequest::getVulNames()const
-{
-	return vulNames_;
+std::vector<std::string> OperateVulsRequest::getVulNames() const {
+  return vulNames_;
 }
 
-void OperateVulsRequest::setVulNames(const std::vector<std::string>& vulNames)
-{
-	vulNames_ = vulNames;
-	for(int dep1 = 0; dep1!= vulNames.size(); dep1++) {
-		setParameter("VulNames."+ std::to_string(dep1), vulNames.at(dep1));
-	}
+void OperateVulsRequest::setVulNames(const std::vector<std::string> &vulNames) {
+  vulNames_ = vulNames;
 }
 
-std::string OperateVulsRequest::getSourceIp()const
-{
-	return sourceIp_;
+std::string OperateVulsRequest::getSourceIp() const {
+  return sourceIp_;
 }
 
-void OperateVulsRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
+void OperateVulsRequest::setSourceIp(const std::string &sourceIp) {
+  sourceIp_ = sourceIp;
+  setParameter(std::string("SourceIp"), sourceIp);
 }
 
-std::string OperateVulsRequest::getOperateType()const
-{
-	return operateType_;
+std::string OperateVulsRequest::getOperateType() const {
+  return operateType_;
 }
 
-void OperateVulsRequest::setOperateType(const std::string& operateType)
-{
-	operateType_ = operateType;
-	setParameter("OperateType", operateType);
+void OperateVulsRequest::setOperateType(const std::string &operateType) {
+  operateType_ = operateType;
+  setParameter(std::string("OperateType"), operateType);
 }
 
-std::vector<std::string> OperateVulsRequest::getUuids()const
-{
-	return uuids_;
+std::vector<std::string> OperateVulsRequest::getUuids() const {
+  return uuids_;
 }
 
-void OperateVulsRequest::setUuids(const std::vector<std::string>& uuids)
-{
-	uuids_ = uuids;
-	for(int dep1 = 0; dep1!= uuids.size(); dep1++) {
-		setParameter("Uuids."+ std::to_string(dep1), uuids.at(dep1));
-	}
+void OperateVulsRequest::setUuids(const std::vector<std::string> &uuids) {
+  uuids_ = uuids;
 }
 
