@@ -14,93 +14,93 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/iot/model/CreateSoundCodeRequest.h>
+#include <alibabacloud/iot/model/UpdateSoundCodeRequest.h>
 
-using AlibabaCloud::Iot::Model::CreateSoundCodeRequest;
+using AlibabaCloud::Iot::Model::UpdateSoundCodeRequest;
 
-CreateSoundCodeRequest::CreateSoundCodeRequest() :
-	RpcServiceRequest("iot", "2018-01-20", "CreateSoundCode")
+UpdateSoundCodeRequest::UpdateSoundCodeRequest() :
+	RpcServiceRequest("iot", "2018-01-20", "UpdateSoundCode")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
-CreateSoundCodeRequest::~CreateSoundCodeRequest()
+UpdateSoundCodeRequest::~UpdateSoundCodeRequest()
 {}
 
-int CreateSoundCodeRequest::getDuration()const
+std::string UpdateSoundCodeRequest::getSoundCode()const
+{
+	return soundCode_;
+}
+
+void UpdateSoundCodeRequest::setSoundCode(const std::string& soundCode)
+{
+	soundCode_ = soundCode;
+	setBodyParameter("SoundCode", soundCode);
+}
+
+int UpdateSoundCodeRequest::getDuration()const
 {
 	return duration_;
 }
 
-void CreateSoundCodeRequest::setDuration(int duration)
+void UpdateSoundCodeRequest::setDuration(int duration)
 {
 	duration_ = duration;
 	setBodyParameter("Duration", std::to_string(duration));
 }
 
-std::string CreateSoundCodeRequest::getIotInstanceId()const
+std::string UpdateSoundCodeRequest::getIotInstanceId()const
 {
 	return iotInstanceId_;
 }
 
-void CreateSoundCodeRequest::setIotInstanceId(const std::string& iotInstanceId)
+void UpdateSoundCodeRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
 	setBodyParameter("IotInstanceId", iotInstanceId);
 }
 
-std::string CreateSoundCodeRequest::getSoundCodeContent()const
+std::string UpdateSoundCodeRequest::getSoundCodeContent()const
 {
 	return soundCodeContent_;
 }
 
-void CreateSoundCodeRequest::setSoundCodeContent(const std::string& soundCodeContent)
+void UpdateSoundCodeRequest::setSoundCodeContent(const std::string& soundCodeContent)
 {
 	soundCodeContent_ = soundCodeContent;
 	setBodyParameter("SoundCodeContent", soundCodeContent);
 }
 
-std::string CreateSoundCodeRequest::getApiProduct()const
+std::string UpdateSoundCodeRequest::getApiProduct()const
 {
 	return apiProduct_;
 }
 
-void CreateSoundCodeRequest::setApiProduct(const std::string& apiProduct)
+void UpdateSoundCodeRequest::setApiProduct(const std::string& apiProduct)
 {
 	apiProduct_ = apiProduct;
 	setBodyParameter("ApiProduct", apiProduct);
 }
 
-std::string CreateSoundCodeRequest::getName()const
+std::string UpdateSoundCodeRequest::getName()const
 {
 	return name_;
 }
 
-void CreateSoundCodeRequest::setName(const std::string& name)
+void UpdateSoundCodeRequest::setName(const std::string& name)
 {
 	name_ = name;
 	setBodyParameter("Name", name);
 }
 
-std::string CreateSoundCodeRequest::getApiRevision()const
+std::string UpdateSoundCodeRequest::getApiRevision()const
 {
 	return apiRevision_;
 }
 
-void CreateSoundCodeRequest::setApiRevision(const std::string& apiRevision)
+void UpdateSoundCodeRequest::setApiRevision(const std::string& apiRevision)
 {
 	apiRevision_ = apiRevision;
 	setBodyParameter("ApiRevision", apiRevision);
-}
-
-std::string CreateSoundCodeRequest::getOpenType()const
-{
-	return openType_;
-}
-
-void CreateSoundCodeRequest::setOpenType(const std::string& openType)
-{
-	openType_ = openType;
-	setBodyParameter("OpenType", openType);
 }
 

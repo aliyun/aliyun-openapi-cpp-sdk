@@ -68,6 +68,8 @@ void QuerySoundCodeScheduleListResult::parse(const std::string &payload)
 			itemsObject.startDate = dataNodeListItems["StartDate"].asString();
 		if(!dataNodeListItems["EndDate"].isNull())
 			itemsObject.endDate = dataNodeListItems["EndDate"].asString();
+		if(!dataNodeListItems["OpenType"].isNull())
+			itemsObject.openType = dataNodeListItems["OpenType"].asString();
 		data_.list.push_back(itemsObject);
 	}
 	if(!value["Success"].isNull())

@@ -51,7 +51,7 @@ std::string PubRequest::getMessageContent()const
 void PubRequest::setMessageContent(const std::string& messageContent)
 {
 	messageContent_ = messageContent;
-	setParameter("MessageContent", messageContent);
+	setBodyParameter("MessageContent", messageContent);
 }
 
 std::string PubRequest::getAccessKeyId()const
@@ -151,5 +151,16 @@ void PubRequest::setApiRevision(const std::string& apiRevision)
 {
 	apiRevision_ = apiRevision;
 	setBodyParameter("ApiRevision", apiRevision);
+}
+
+std::string PubRequest::getDeviceName()const
+{
+	return deviceName_;
+}
+
+void PubRequest::setDeviceName(const std::string& deviceName)
+{
+	deviceName_ = deviceName;
+	setParameter("DeviceName", deviceName);
 }
 

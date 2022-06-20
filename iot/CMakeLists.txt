@@ -37,6 +37,8 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/BatchBindProductsIntoProjectResult.h
 	include/alibabacloud/iot/model/BatchCheckDeviceNamesRequest.h
 	include/alibabacloud/iot/model/BatchCheckDeviceNamesResult.h
+	include/alibabacloud/iot/model/BatchCheckImportDeviceRequest.h
+	include/alibabacloud/iot/model/BatchCheckImportDeviceResult.h
 	include/alibabacloud/iot/model/BatchClearEdgeInstanceDeviceConfigRequest.h
 	include/alibabacloud/iot/model/BatchClearEdgeInstanceDeviceConfigResult.h
 	include/alibabacloud/iot/model/BatchCreateSoundCodeLabelRequest.h
@@ -63,6 +65,8 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/BatchGetEdgeInstanceDeviceDriverResult.h
 	include/alibabacloud/iot/model/BatchGetEdgeInstanceDriverConfigsRequest.h
 	include/alibabacloud/iot/model/BatchGetEdgeInstanceDriverConfigsResult.h
+	include/alibabacloud/iot/model/BatchImportDeviceRequest.h
+	include/alibabacloud/iot/model/BatchImportDeviceResult.h
 	include/alibabacloud/iot/model/BatchPubRequest.h
 	include/alibabacloud/iot/model/BatchPubResult.h
 	include/alibabacloud/iot/model/BatchQueryDeviceDetailRequest.h
@@ -89,6 +93,10 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/BindDriverToEdgeInstanceResult.h
 	include/alibabacloud/iot/model/BindGatewayToEdgeInstanceRequest.h
 	include/alibabacloud/iot/model/BindGatewayToEdgeInstanceResult.h
+	include/alibabacloud/iot/model/BindLicenseDeviceRequest.h
+	include/alibabacloud/iot/model/BindLicenseDeviceResult.h
+	include/alibabacloud/iot/model/BindLicenseProductRequest.h
+	include/alibabacloud/iot/model/BindLicenseProductResult.h
 	include/alibabacloud/iot/model/BindRoleToEdgeInstanceRequest.h
 	include/alibabacloud/iot/model/BindRoleToEdgeInstanceResult.h
 	include/alibabacloud/iot/model/BindSceneRuleToEdgeInstanceRequest.h
@@ -103,6 +111,8 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/CancelOTATaskByJobResult.h
 	include/alibabacloud/iot/model/CancelReleaseProductRequest.h
 	include/alibabacloud/iot/model/CancelReleaseProductResult.h
+	include/alibabacloud/iot/model/CheckBindLicenseDeviceProgressRequest.h
+	include/alibabacloud/iot/model/CheckBindLicenseDeviceProgressResult.h
 	include/alibabacloud/iot/model/ClearEdgeInstanceDriverConfigsRequest.h
 	include/alibabacloud/iot/model/ClearEdgeInstanceDriverConfigsResult.h
 	include/alibabacloud/iot/model/CloseDeviceTunnelRequest.h
@@ -331,6 +341,8 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/GisQueryDeviceLocationResult.h
 	include/alibabacloud/iot/model/GisSearchDeviceTraceRequest.h
 	include/alibabacloud/iot/model/GisSearchDeviceTraceResult.h
+	include/alibabacloud/iot/model/ImportDeviceRequest.h
+	include/alibabacloud/iot/model/ImportDeviceResult.h
 	include/alibabacloud/iot/model/ImportThingModelTslRequest.h
 	include/alibabacloud/iot/model/ImportThingModelTslResult.h
 	include/alibabacloud/iot/model/InvokeDataAPIServiceRequest.h
@@ -497,10 +509,14 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/QueryEdgeInstanceMessageRoutingResult.h
 	include/alibabacloud/iot/model/QueryEdgeInstanceSceneRuleRequest.h
 	include/alibabacloud/iot/model/QueryEdgeInstanceSceneRuleResult.h
+	include/alibabacloud/iot/model/QueryImportedDeviceByApplyIdRequest.h
+	include/alibabacloud/iot/model/QueryImportedDeviceByApplyIdResult.h
 	include/alibabacloud/iot/model/QueryJobRequest.h
 	include/alibabacloud/iot/model/QueryJobResult.h
 	include/alibabacloud/iot/model/QueryJobStatisticsRequest.h
 	include/alibabacloud/iot/model/QueryJobStatisticsResult.h
+	include/alibabacloud/iot/model/QueryLicenseDeviceListRequest.h
+	include/alibabacloud/iot/model/QueryLicenseDeviceListResult.h
 	include/alibabacloud/iot/model/QueryLoRaJoinPermissionsRequest.h
 	include/alibabacloud/iot/model/QueryLoRaJoinPermissionsResult.h
 	include/alibabacloud/iot/model/QueryMessageInfoRequest.h
@@ -645,6 +661,8 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/UnbindApplicationFromEdgeInstanceResult.h
 	include/alibabacloud/iot/model/UnbindDriverFromEdgeInstanceRequest.h
 	include/alibabacloud/iot/model/UnbindDriverFromEdgeInstanceResult.h
+	include/alibabacloud/iot/model/UnbindLicenseProductRequest.h
+	include/alibabacloud/iot/model/UnbindLicenseProductResult.h
 	include/alibabacloud/iot/model/UnbindRoleFromEdgeInstanceRequest.h
 	include/alibabacloud/iot/model/UnbindRoleFromEdgeInstanceResult.h
 	include/alibabacloud/iot/model/UnbindSceneRuleFromEdgeInstanceRequest.h
@@ -683,6 +701,8 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/UpdateSceneRuleResult.h
 	include/alibabacloud/iot/model/UpdateSchedulePeriodRequest.h
 	include/alibabacloud/iot/model/UpdateSchedulePeriodResult.h
+	include/alibabacloud/iot/model/UpdateSoundCodeRequest.h
+	include/alibabacloud/iot/model/UpdateSoundCodeResult.h
 	include/alibabacloud/iot/model/UpdateSoundCodeLabelRequest.h
 	include/alibabacloud/iot/model/UpdateSoundCodeLabelResult.h
 	include/alibabacloud/iot/model/UpdateSoundCodeScheduleRequest.h
@@ -714,6 +734,8 @@ set(iot_src
 	src/model/BatchBindProductsIntoProjectResult.cc
 	src/model/BatchCheckDeviceNamesRequest.cc
 	src/model/BatchCheckDeviceNamesResult.cc
+	src/model/BatchCheckImportDeviceRequest.cc
+	src/model/BatchCheckImportDeviceResult.cc
 	src/model/BatchClearEdgeInstanceDeviceConfigRequest.cc
 	src/model/BatchClearEdgeInstanceDeviceConfigResult.cc
 	src/model/BatchCreateSoundCodeLabelRequest.cc
@@ -740,6 +762,8 @@ set(iot_src
 	src/model/BatchGetEdgeInstanceDeviceDriverResult.cc
 	src/model/BatchGetEdgeInstanceDriverConfigsRequest.cc
 	src/model/BatchGetEdgeInstanceDriverConfigsResult.cc
+	src/model/BatchImportDeviceRequest.cc
+	src/model/BatchImportDeviceResult.cc
 	src/model/BatchPubRequest.cc
 	src/model/BatchPubResult.cc
 	src/model/BatchQueryDeviceDetailRequest.cc
@@ -766,6 +790,10 @@ set(iot_src
 	src/model/BindDriverToEdgeInstanceResult.cc
 	src/model/BindGatewayToEdgeInstanceRequest.cc
 	src/model/BindGatewayToEdgeInstanceResult.cc
+	src/model/BindLicenseDeviceRequest.cc
+	src/model/BindLicenseDeviceResult.cc
+	src/model/BindLicenseProductRequest.cc
+	src/model/BindLicenseProductResult.cc
 	src/model/BindRoleToEdgeInstanceRequest.cc
 	src/model/BindRoleToEdgeInstanceResult.cc
 	src/model/BindSceneRuleToEdgeInstanceRequest.cc
@@ -780,6 +808,8 @@ set(iot_src
 	src/model/CancelOTATaskByJobResult.cc
 	src/model/CancelReleaseProductRequest.cc
 	src/model/CancelReleaseProductResult.cc
+	src/model/CheckBindLicenseDeviceProgressRequest.cc
+	src/model/CheckBindLicenseDeviceProgressResult.cc
 	src/model/ClearEdgeInstanceDriverConfigsRequest.cc
 	src/model/ClearEdgeInstanceDriverConfigsResult.cc
 	src/model/CloseDeviceTunnelRequest.cc
@@ -1008,6 +1038,8 @@ set(iot_src
 	src/model/GisQueryDeviceLocationResult.cc
 	src/model/GisSearchDeviceTraceRequest.cc
 	src/model/GisSearchDeviceTraceResult.cc
+	src/model/ImportDeviceRequest.cc
+	src/model/ImportDeviceResult.cc
 	src/model/ImportThingModelTslRequest.cc
 	src/model/ImportThingModelTslResult.cc
 	src/model/InvokeDataAPIServiceRequest.cc
@@ -1174,10 +1206,14 @@ set(iot_src
 	src/model/QueryEdgeInstanceMessageRoutingResult.cc
 	src/model/QueryEdgeInstanceSceneRuleRequest.cc
 	src/model/QueryEdgeInstanceSceneRuleResult.cc
+	src/model/QueryImportedDeviceByApplyIdRequest.cc
+	src/model/QueryImportedDeviceByApplyIdResult.cc
 	src/model/QueryJobRequest.cc
 	src/model/QueryJobResult.cc
 	src/model/QueryJobStatisticsRequest.cc
 	src/model/QueryJobStatisticsResult.cc
+	src/model/QueryLicenseDeviceListRequest.cc
+	src/model/QueryLicenseDeviceListResult.cc
 	src/model/QueryLoRaJoinPermissionsRequest.cc
 	src/model/QueryLoRaJoinPermissionsResult.cc
 	src/model/QueryMessageInfoRequest.cc
@@ -1322,6 +1358,8 @@ set(iot_src
 	src/model/UnbindApplicationFromEdgeInstanceResult.cc
 	src/model/UnbindDriverFromEdgeInstanceRequest.cc
 	src/model/UnbindDriverFromEdgeInstanceResult.cc
+	src/model/UnbindLicenseProductRequest.cc
+	src/model/UnbindLicenseProductResult.cc
 	src/model/UnbindRoleFromEdgeInstanceRequest.cc
 	src/model/UnbindRoleFromEdgeInstanceResult.cc
 	src/model/UnbindSceneRuleFromEdgeInstanceRequest.cc
@@ -1360,6 +1398,8 @@ set(iot_src
 	src/model/UpdateSceneRuleResult.cc
 	src/model/UpdateSchedulePeriodRequest.cc
 	src/model/UpdateSchedulePeriodResult.cc
+	src/model/UpdateSoundCodeRequest.cc
+	src/model/UpdateSoundCodeResult.cc
 	src/model/UpdateSoundCodeLabelRequest.cc
 	src/model/UpdateSoundCodeLabelResult.cc
 	src/model/UpdateSoundCodeScheduleRequest.cc

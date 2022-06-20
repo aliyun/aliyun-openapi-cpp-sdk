@@ -40,6 +40,7 @@ namespace AlibabaCloud
 				std::string getErrorMessage()const;
 				std::string getCode()const;
 				bool getSuccess()const;
+				std::string getJobId()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -47,6 +48,7 @@ namespace AlibabaCloud
 				std::string errorMessage_;
 				std::string code_;
 				bool success_;
+				std::string jobId_;
 
 			};
 		}

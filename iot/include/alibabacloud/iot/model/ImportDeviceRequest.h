@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IOT_MODEL_CREATESOUNDCODESCHEDULEREQUEST_H_
-#define ALIBABACLOUD_IOT_MODEL_CREATESOUNDCODESCHEDULEREQUEST_H_
+#ifndef ALIBABACLOUD_IOT_MODEL_IMPORTDEVICEREQUEST_H_
+#define ALIBABACLOUD_IOT_MODEL_IMPORTDEVICEREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,42 +28,45 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IOT_EXPORT CreateSoundCodeScheduleRequest : public RpcServiceRequest
+			class ALIBABACLOUD_IOT_EXPORT ImportDeviceRequest : public RpcServiceRequest
 			{
 
 			public:
-				CreateSoundCodeScheduleRequest();
-				~CreateSoundCodeScheduleRequest();
+				ImportDeviceRequest();
+				~ImportDeviceRequest();
 
-				std::string getDescription()const;
-				void setDescription(const std::string& description);
-				std::string getStartDate()const;
-				void setStartDate(const std::string& startDate);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
-				std::string getEndDate()const;
-				void setEndDate(const std::string& endDate);
+				std::string getNickname()const;
+				void setNickname(const std::string& nickname);
+				std::string getSn()const;
+				void setSn(const std::string& sn);
+				std::string getDeviceSecret()const;
+				void setDeviceSecret(const std::string& deviceSecret);
+				std::string getProductKey()const;
+				void setProductKey(const std::string& productKey);
 				std::string getApiProduct()const;
 				void setApiProduct(const std::string& apiProduct);
-				std::string getName()const;
-				void setName(const std::string& name);
 				std::string getApiRevision()const;
 				void setApiRevision(const std::string& apiRevision);
-				std::string getOpenType()const;
-				void setOpenType(const std::string& openType);
+				std::string getDeviceName()const;
+				void setDeviceName(const std::string& deviceName);
 
             private:
-				std::string description_;
-				std::string startDate_;
+				std::string accessKeyId_;
 				std::string iotInstanceId_;
-				std::string endDate_;
+				std::string nickname_;
+				std::string sn_;
+				std::string deviceSecret_;
+				std::string productKey_;
 				std::string apiProduct_;
-				std::string name_;
 				std::string apiRevision_;
-				std::string openType_;
+				std::string deviceName_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IOT_MODEL_CREATESOUNDCODESCHEDULEREQUEST_H_
+#endif // !ALIBABACLOUD_IOT_MODEL_IMPORTDEVICEREQUEST_H_

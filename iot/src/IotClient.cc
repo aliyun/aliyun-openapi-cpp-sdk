@@ -339,6 +339,42 @@ IotClient::BatchCheckDeviceNamesOutcomeCallable IotClient::batchCheckDeviceNames
 	return task->get_future();
 }
 
+IotClient::BatchCheckImportDeviceOutcome IotClient::batchCheckImportDevice(const BatchCheckImportDeviceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return BatchCheckImportDeviceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return BatchCheckImportDeviceOutcome(BatchCheckImportDeviceResult(outcome.result()));
+	else
+		return BatchCheckImportDeviceOutcome(outcome.error());
+}
+
+void IotClient::batchCheckImportDeviceAsync(const BatchCheckImportDeviceRequest& request, const BatchCheckImportDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, batchCheckImportDevice(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::BatchCheckImportDeviceOutcomeCallable IotClient::batchCheckImportDeviceCallable(const BatchCheckImportDeviceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<BatchCheckImportDeviceOutcome()>>(
+			[this, request]()
+			{
+			return this->batchCheckImportDevice(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 IotClient::BatchClearEdgeInstanceDeviceConfigOutcome IotClient::batchClearEdgeInstanceDeviceConfig(const BatchClearEdgeInstanceDeviceConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -801,6 +837,42 @@ IotClient::BatchGetEdgeInstanceDriverConfigsOutcomeCallable IotClient::batchGetE
 			[this, request]()
 			{
 			return this->batchGetEdgeInstanceDriverConfigs(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::BatchImportDeviceOutcome IotClient::batchImportDevice(const BatchImportDeviceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return BatchImportDeviceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return BatchImportDeviceOutcome(BatchImportDeviceResult(outcome.result()));
+	else
+		return BatchImportDeviceOutcome(outcome.error());
+}
+
+void IotClient::batchImportDeviceAsync(const BatchImportDeviceRequest& request, const BatchImportDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, batchImportDevice(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::BatchImportDeviceOutcomeCallable IotClient::batchImportDeviceCallable(const BatchImportDeviceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<BatchImportDeviceOutcome()>>(
+			[this, request]()
+			{
+			return this->batchImportDevice(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1275,6 +1347,78 @@ IotClient::BindGatewayToEdgeInstanceOutcomeCallable IotClient::bindGatewayToEdge
 	return task->get_future();
 }
 
+IotClient::BindLicenseDeviceOutcome IotClient::bindLicenseDevice(const BindLicenseDeviceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return BindLicenseDeviceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return BindLicenseDeviceOutcome(BindLicenseDeviceResult(outcome.result()));
+	else
+		return BindLicenseDeviceOutcome(outcome.error());
+}
+
+void IotClient::bindLicenseDeviceAsync(const BindLicenseDeviceRequest& request, const BindLicenseDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, bindLicenseDevice(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::BindLicenseDeviceOutcomeCallable IotClient::bindLicenseDeviceCallable(const BindLicenseDeviceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<BindLicenseDeviceOutcome()>>(
+			[this, request]()
+			{
+			return this->bindLicenseDevice(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::BindLicenseProductOutcome IotClient::bindLicenseProduct(const BindLicenseProductRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return BindLicenseProductOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return BindLicenseProductOutcome(BindLicenseProductResult(outcome.result()));
+	else
+		return BindLicenseProductOutcome(outcome.error());
+}
+
+void IotClient::bindLicenseProductAsync(const BindLicenseProductRequest& request, const BindLicenseProductAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, bindLicenseProduct(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::BindLicenseProductOutcomeCallable IotClient::bindLicenseProductCallable(const BindLicenseProductRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<BindLicenseProductOutcome()>>(
+			[this, request]()
+			{
+			return this->bindLicenseProduct(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 IotClient::BindRoleToEdgeInstanceOutcome IotClient::bindRoleToEdgeInstance(const BindRoleToEdgeInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1521,6 +1665,42 @@ IotClient::CancelReleaseProductOutcomeCallable IotClient::cancelReleaseProductCa
 			[this, request]()
 			{
 			return this->cancelReleaseProduct(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::CheckBindLicenseDeviceProgressOutcome IotClient::checkBindLicenseDeviceProgress(const CheckBindLicenseDeviceProgressRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CheckBindLicenseDeviceProgressOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CheckBindLicenseDeviceProgressOutcome(CheckBindLicenseDeviceProgressResult(outcome.result()));
+	else
+		return CheckBindLicenseDeviceProgressOutcome(outcome.error());
+}
+
+void IotClient::checkBindLicenseDeviceProgressAsync(const CheckBindLicenseDeviceProgressRequest& request, const CheckBindLicenseDeviceProgressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, checkBindLicenseDeviceProgress(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::CheckBindLicenseDeviceProgressOutcomeCallable IotClient::checkBindLicenseDeviceProgressCallable(const CheckBindLicenseDeviceProgressRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CheckBindLicenseDeviceProgressOutcome()>>(
+			[this, request]()
+			{
+			return this->checkBindLicenseDeviceProgress(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5631,6 +5811,42 @@ IotClient::GisSearchDeviceTraceOutcomeCallable IotClient::gisSearchDeviceTraceCa
 	return task->get_future();
 }
 
+IotClient::ImportDeviceOutcome IotClient::importDevice(const ImportDeviceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ImportDeviceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ImportDeviceOutcome(ImportDeviceResult(outcome.result()));
+	else
+		return ImportDeviceOutcome(outcome.error());
+}
+
+void IotClient::importDeviceAsync(const ImportDeviceRequest& request, const ImportDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, importDevice(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::ImportDeviceOutcomeCallable IotClient::importDeviceCallable(const ImportDeviceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ImportDeviceOutcome()>>(
+			[this, request]()
+			{
+			return this->importDevice(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 IotClient::ImportThingModelTslOutcome IotClient::importThingModelTsl(const ImportThingModelTslRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -8619,6 +8835,42 @@ IotClient::QueryEdgeInstanceSceneRuleOutcomeCallable IotClient::queryEdgeInstanc
 	return task->get_future();
 }
 
+IotClient::QueryImportedDeviceByApplyIdOutcome IotClient::queryImportedDeviceByApplyId(const QueryImportedDeviceByApplyIdRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryImportedDeviceByApplyIdOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryImportedDeviceByApplyIdOutcome(QueryImportedDeviceByApplyIdResult(outcome.result()));
+	else
+		return QueryImportedDeviceByApplyIdOutcome(outcome.error());
+}
+
+void IotClient::queryImportedDeviceByApplyIdAsync(const QueryImportedDeviceByApplyIdRequest& request, const QueryImportedDeviceByApplyIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryImportedDeviceByApplyId(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::QueryImportedDeviceByApplyIdOutcomeCallable IotClient::queryImportedDeviceByApplyIdCallable(const QueryImportedDeviceByApplyIdRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryImportedDeviceByApplyIdOutcome()>>(
+			[this, request]()
+			{
+			return this->queryImportedDeviceByApplyId(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 IotClient::QueryJobOutcome IotClient::queryJob(const QueryJobRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -8685,6 +8937,42 @@ IotClient::QueryJobStatisticsOutcomeCallable IotClient::queryJobStatisticsCallab
 			[this, request]()
 			{
 			return this->queryJobStatistics(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::QueryLicenseDeviceListOutcome IotClient::queryLicenseDeviceList(const QueryLicenseDeviceListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryLicenseDeviceListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryLicenseDeviceListOutcome(QueryLicenseDeviceListResult(outcome.result()));
+	else
+		return QueryLicenseDeviceListOutcome(outcome.error());
+}
+
+void IotClient::queryLicenseDeviceListAsync(const QueryLicenseDeviceListRequest& request, const QueryLicenseDeviceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryLicenseDeviceList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::QueryLicenseDeviceListOutcomeCallable IotClient::queryLicenseDeviceListCallable(const QueryLicenseDeviceListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryLicenseDeviceListOutcome()>>(
+			[this, request]()
+			{
+			return this->queryLicenseDeviceList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -11283,6 +11571,42 @@ IotClient::UnbindDriverFromEdgeInstanceOutcomeCallable IotClient::unbindDriverFr
 	return task->get_future();
 }
 
+IotClient::UnbindLicenseProductOutcome IotClient::unbindLicenseProduct(const UnbindLicenseProductRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UnbindLicenseProductOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UnbindLicenseProductOutcome(UnbindLicenseProductResult(outcome.result()));
+	else
+		return UnbindLicenseProductOutcome(outcome.error());
+}
+
+void IotClient::unbindLicenseProductAsync(const UnbindLicenseProductRequest& request, const UnbindLicenseProductAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, unbindLicenseProduct(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::UnbindLicenseProductOutcomeCallable IotClient::unbindLicenseProductCallable(const UnbindLicenseProductRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UnbindLicenseProductOutcome()>>(
+			[this, request]()
+			{
+			return this->unbindLicenseProduct(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 IotClient::UnbindRoleFromEdgeInstanceOutcome IotClient::unbindRoleFromEdgeInstance(const UnbindRoleFromEdgeInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -11961,6 +12285,42 @@ IotClient::UpdateSchedulePeriodOutcomeCallable IotClient::updateSchedulePeriodCa
 			[this, request]()
 			{
 			return this->updateSchedulePeriod(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::UpdateSoundCodeOutcome IotClient::updateSoundCode(const UpdateSoundCodeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateSoundCodeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateSoundCodeOutcome(UpdateSoundCodeResult(outcome.result()));
+	else
+		return UpdateSoundCodeOutcome(outcome.error());
+}
+
+void IotClient::updateSoundCodeAsync(const UpdateSoundCodeRequest& request, const UpdateSoundCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateSoundCode(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::UpdateSoundCodeOutcomeCallable IotClient::updateSoundCodeCallable(const UpdateSoundCodeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateSoundCodeOutcome()>>(
+			[this, request]()
+			{
+			return this->updateSoundCode(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

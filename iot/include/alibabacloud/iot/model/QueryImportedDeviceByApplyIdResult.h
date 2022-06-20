@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IOT_MODEL_QUERYSOUNDCODELISTRESULT_H_
-#define ALIBABACLOUD_IOT_MODEL_QUERYSOUNDCODELISTRESULT_H_
+#ifndef ALIBABACLOUD_IOT_MODEL_QUERYIMPORTEDDEVICEBYAPPLYIDRESULT_H_
+#define ALIBABACLOUD_IOT_MODEL_QUERYIMPORTEDDEVICEBYAPPLYIDRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,45 +29,44 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IOT_EXPORT QuerySoundCodeListResult : public ServiceResult
+			class ALIBABACLOUD_IOT_EXPORT QueryImportedDeviceByApplyIdResult : public ServiceResult
 			{
 			public:
-				struct Data
+				struct Device
 				{
-					struct Items
-					{
-						long gmtCreate;
-						std::string openType;
-						int duration;
-						std::string soundCodeContent;
-						std::string soundCode;
-						std::string name;
-					};
-					int pageId;
-					int pageSize;
-					int total;
-					std::vector<Items> list;
+					std::string deviceSecret;
+					std::string sn;
+					std::string productKey;
+					std::string deviceName;
 				};
 
 
-				QuerySoundCodeListResult();
-				explicit QuerySoundCodeListResult(const std::string &payload);
-				~QuerySoundCodeListResult();
-				Data getData()const;
+				QueryImportedDeviceByApplyIdResult();
+				explicit QueryImportedDeviceByApplyIdResult(const std::string &payload);
+				~QueryImportedDeviceByApplyIdResult();
+				int getPageSize()const;
+				int getTotalPage()const;
+				std::vector<Device> getDeviceList()const;
+				int getPageNo()const;
 				std::string getErrorMessage()const;
 				std::string getCode()const;
 				bool getSuccess()const;
+				std::string getProductKey()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				Data data_;
+				int pageSize_;
+				int totalPage_;
+				std::vector<Device> deviceList_;
+				int pageNo_;
 				std::string errorMessage_;
 				std::string code_;
 				bool success_;
+				std::string productKey_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IOT_MODEL_QUERYSOUNDCODELISTRESULT_H_
+#endif // !ALIBABACLOUD_IOT_MODEL_QUERYIMPORTEDDEVICEBYAPPLYIDRESULT_H_

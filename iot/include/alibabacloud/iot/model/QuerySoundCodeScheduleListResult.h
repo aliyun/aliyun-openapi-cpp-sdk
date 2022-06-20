@@ -39,6 +39,7 @@ namespace AlibabaCloud
 						std::string status;
 						std::string startDate;
 						long gmtCreate;
+						std::string openType;
 						std::string description;
 						std::string endTime;
 						std::string startTime;

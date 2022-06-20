@@ -27,6 +27,28 @@ ResetThingRequest::ResetThingRequest() :
 ResetThingRequest::~ResetThingRequest()
 {}
 
+std::string ResetThingRequest::getRealTenantId()const
+{
+	return realTenantId_;
+}
+
+void ResetThingRequest::setRealTenantId(const std::string& realTenantId)
+{
+	realTenantId_ = realTenantId;
+	setParameter("RealTenantId", realTenantId);
+}
+
+std::string ResetThingRequest::getRealTripartiteKey()const
+{
+	return realTripartiteKey_;
+}
+
+void ResetThingRequest::setRealTripartiteKey(const std::string& realTripartiteKey)
+{
+	realTripartiteKey_ = realTripartiteKey;
+	setParameter("RealTripartiteKey", realTripartiteKey);
+}
+
 std::string ResetThingRequest::getIotId()const
 {
 	return iotId_;

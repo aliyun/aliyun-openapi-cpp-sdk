@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IOT_MODEL_QUERYSOUNDCODELISTRESULT_H_
-#define ALIBABACLOUD_IOT_MODEL_QUERYSOUNDCODELISTRESULT_H_
+#ifndef ALIBABACLOUD_IOT_MODEL_BINDLICENSEDEVICERESULT_H_
+#define ALIBABACLOUD_IOT_MODEL_BINDLICENSEDEVICERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,30 +29,22 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IOT_EXPORT QuerySoundCodeListResult : public ServiceResult
+			class ALIBABACLOUD_IOT_EXPORT BindLicenseDeviceResult : public ServiceResult
 			{
 			public:
 				struct Data
 				{
-					struct Items
-					{
-						long gmtCreate;
-						std::string openType;
-						int duration;
-						std::string soundCodeContent;
-						std::string soundCode;
-						std::string name;
-					};
-					int pageId;
-					int pageSize;
-					int total;
-					std::vector<Items> list;
+					std::string checkProgressId;
+					int progress;
+					std::string resultCsvFile;
+					long failSum;
+					long successSum;
 				};
 
 
-				QuerySoundCodeListResult();
-				explicit QuerySoundCodeListResult(const std::string &payload);
-				~QuerySoundCodeListResult();
+				BindLicenseDeviceResult();
+				explicit BindLicenseDeviceResult(const std::string &payload);
+				~BindLicenseDeviceResult();
 				Data getData()const;
 				std::string getErrorMessage()const;
 				std::string getCode()const;
@@ -70,4 +62,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IOT_MODEL_QUERYSOUNDCODELISTRESULT_H_
+#endif // !ALIBABACLOUD_IOT_MODEL_BINDLICENSEDEVICERESULT_H_

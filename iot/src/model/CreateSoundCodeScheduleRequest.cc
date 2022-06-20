@@ -104,3 +104,14 @@ void CreateSoundCodeScheduleRequest::setApiRevision(const std::string& apiRevisi
 	setBodyParameter("ApiRevision", apiRevision);
 }
 
+std::string CreateSoundCodeScheduleRequest::getOpenType()const
+{
+	return openType_;
+}
+
+void CreateSoundCodeScheduleRequest::setOpenType(const std::string& openType)
+{
+	openType_ = openType;
+	setBodyParameter("OpenType", openType);
+}
+

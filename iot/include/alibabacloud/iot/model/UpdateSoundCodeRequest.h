@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IOT_MODEL_CREATESOUNDCODESCHEDULEREQUEST_H_
-#define ALIBABACLOUD_IOT_MODEL_CREATESOUNDCODESCHEDULEREQUEST_H_
+#ifndef ALIBABACLOUD_IOT_MODEL_UPDATESOUNDCODEREQUEST_H_
+#define ALIBABACLOUD_IOT_MODEL_UPDATESOUNDCODEREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,42 +28,39 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IOT_EXPORT CreateSoundCodeScheduleRequest : public RpcServiceRequest
+			class ALIBABACLOUD_IOT_EXPORT UpdateSoundCodeRequest : public RpcServiceRequest
 			{
 
 			public:
-				CreateSoundCodeScheduleRequest();
-				~CreateSoundCodeScheduleRequest();
+				UpdateSoundCodeRequest();
+				~UpdateSoundCodeRequest();
 
-				std::string getDescription()const;
-				void setDescription(const std::string& description);
-				std::string getStartDate()const;
-				void setStartDate(const std::string& startDate);
+				std::string getSoundCode()const;
+				void setSoundCode(const std::string& soundCode);
+				int getDuration()const;
+				void setDuration(int duration);
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
-				std::string getEndDate()const;
-				void setEndDate(const std::string& endDate);
+				std::string getSoundCodeContent()const;
+				void setSoundCodeContent(const std::string& soundCodeContent);
 				std::string getApiProduct()const;
 				void setApiProduct(const std::string& apiProduct);
 				std::string getName()const;
 				void setName(const std::string& name);
 				std::string getApiRevision()const;
 				void setApiRevision(const std::string& apiRevision);
-				std::string getOpenType()const;
-				void setOpenType(const std::string& openType);
 
             private:
-				std::string description_;
-				std::string startDate_;
+				std::string soundCode_;
+				int duration_;
 				std::string iotInstanceId_;
-				std::string endDate_;
+				std::string soundCodeContent_;
 				std::string apiProduct_;
 				std::string name_;
 				std::string apiRevision_;
-				std::string openType_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IOT_MODEL_CREATESOUNDCODESCHEDULEREQUEST_H_
+#endif // !ALIBABACLOUD_IOT_MODEL_UPDATESOUNDCODEREQUEST_H_

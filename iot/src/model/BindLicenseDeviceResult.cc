@@ -14,59 +14,68 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/iot/model/ResetThingResult.h>
+#include <alibabacloud/iot/model/BindLicenseDeviceResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Iot;
 using namespace AlibabaCloud::Iot::Model;
 
-ResetThingResult::ResetThingResult() :
+BindLicenseDeviceResult::BindLicenseDeviceResult() :
 	ServiceResult()
 {}
 
-ResetThingResult::ResetThingResult(const std::string &payload) :
+BindLicenseDeviceResult::BindLicenseDeviceResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-ResetThingResult::~ResetThingResult()
+BindLicenseDeviceResult::~BindLicenseDeviceResult()
 {}
 
-void ResetThingResult::parse(const std::string &payload)
+void BindLicenseDeviceResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto dataNode = value["Data"];
+	if(!dataNode["SuccessSum"].isNull())
+		data_.successSum = std::stol(dataNode["SuccessSum"].asString());
+	if(!dataNode["FailSum"].isNull())
+		data_.failSum = std::stol(dataNode["FailSum"].asString());
+	if(!dataNode["ResultCsvFile"].isNull())
+		data_.resultCsvFile = dataNode["ResultCsvFile"].asString();
+	if(!dataNode["Progress"].isNull())
+		data_.progress = std::stoi(dataNode["Progress"].asString());
+	if(!dataNode["CheckProgressId"].isNull())
+		data_.checkProgressId = dataNode["CheckProgressId"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["ErrorMessage"].isNull())
 		errorMessage_ = value["ErrorMessage"].asString();
-	if(!value["JobId"].isNull())
-		jobId_ = value["JobId"].asString();
 
 }
 
-std::string ResetThingResult::getErrorMessage()const
+BindLicenseDeviceResult::Data BindLicenseDeviceResult::getData()const
+{
+	return data_;
+}
+
+std::string BindLicenseDeviceResult::getErrorMessage()const
 {
 	return errorMessage_;
 }
 
-std::string ResetThingResult::getCode()const
+std::string BindLicenseDeviceResult::getCode()const
 {
 	return code_;
 }
 
-bool ResetThingResult::getSuccess()const
+bool BindLicenseDeviceResult::getSuccess()const
 {
 	return success_;
-}
-
-std::string ResetThingResult::getJobId()const
-{
-	return jobId_;
 }
 

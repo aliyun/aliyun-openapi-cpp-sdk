@@ -14,59 +14,70 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/iot/model/ResetThingResult.h>
+#include <alibabacloud/iot/model/ImportDeviceResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Iot;
 using namespace AlibabaCloud::Iot::Model;
 
-ResetThingResult::ResetThingResult() :
+ImportDeviceResult::ImportDeviceResult() :
 	ServiceResult()
 {}
 
-ResetThingResult::ResetThingResult(const std::string &payload) :
+ImportDeviceResult::ImportDeviceResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-ResetThingResult::~ResetThingResult()
+ImportDeviceResult::~ImportDeviceResult()
 {}
 
-void ResetThingResult::parse(const std::string &payload)
+void ImportDeviceResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto dataNode = value["Data"];
+	if(!dataNode["IotId"].isNull())
+		data_.iotId = dataNode["IotId"].asString();
+	if(!dataNode["ProductKey"].isNull())
+		data_.productKey = dataNode["ProductKey"].asString();
+	if(!dataNode["DeviceName"].isNull())
+		data_.deviceName = dataNode["DeviceName"].asString();
+	if(!dataNode["DeviceSecret"].isNull())
+		data_.deviceSecret = dataNode["DeviceSecret"].asString();
+	if(!dataNode["Sn"].isNull())
+		data_.sn = dataNode["Sn"].asString();
+	if(!dataNode["Nickname"].isNull())
+		data_.nickname = dataNode["Nickname"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["ErrorMessage"].isNull())
 		errorMessage_ = value["ErrorMessage"].asString();
-	if(!value["JobId"].isNull())
-		jobId_ = value["JobId"].asString();
 
 }
 
-std::string ResetThingResult::getErrorMessage()const
+ImportDeviceResult::Data ImportDeviceResult::getData()const
+{
+	return data_;
+}
+
+std::string ImportDeviceResult::getErrorMessage()const
 {
 	return errorMessage_;
 }
 
-std::string ResetThingResult::getCode()const
+std::string ImportDeviceResult::getCode()const
 {
 	return code_;
 }
 
-bool ResetThingResult::getSuccess()const
+bool ImportDeviceResult::getSuccess()const
 {
 	return success_;
-}
-
-std::string ResetThingResult::getJobId()const
-{
-	return jobId_;
 }
 

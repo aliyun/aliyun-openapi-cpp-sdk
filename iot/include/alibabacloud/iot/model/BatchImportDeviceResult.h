@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IOT_MODEL_QUERYSOUNDCODELISTRESULT_H_
-#define ALIBABACLOUD_IOT_MODEL_QUERYSOUNDCODELISTRESULT_H_
+#ifndef ALIBABACLOUD_IOT_MODEL_BATCHIMPORTDEVICERESULT_H_
+#define ALIBABACLOUD_IOT_MODEL_BATCHIMPORTDEVICERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,30 +29,22 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IOT_EXPORT QuerySoundCodeListResult : public ServiceResult
+			class ALIBABACLOUD_IOT_EXPORT BatchImportDeviceResult : public ServiceResult
 			{
 			public:
 				struct Data
 				{
-					struct Items
-					{
-						long gmtCreate;
-						std::string openType;
-						int duration;
-						std::string soundCodeContent;
-						std::string soundCode;
-						std::string name;
-					};
-					int pageId;
-					int pageSize;
-					int total;
-					std::vector<Items> list;
+					std::vector<std::string> invalidDeviceNameList;
+					long applyId;
+					std::vector<std::string> repeatedDeviceNameList;
+					std::vector<std::string> invalidDeviceSecretList;
+					std::vector<std::string> invalidSnList;
 				};
 
 
-				QuerySoundCodeListResult();
-				explicit QuerySoundCodeListResult(const std::string &payload);
-				~QuerySoundCodeListResult();
+				BatchImportDeviceResult();
+				explicit BatchImportDeviceResult(const std::string &payload);
+				~BatchImportDeviceResult();
 				Data getData()const;
 				std::string getErrorMessage()const;
 				std::string getCode()const;
@@ -70,4 +62,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IOT_MODEL_QUERYSOUNDCODELISTRESULT_H_
+#endif // !ALIBABACLOUD_IOT_MODEL_BATCHIMPORTDEVICERESULT_H_

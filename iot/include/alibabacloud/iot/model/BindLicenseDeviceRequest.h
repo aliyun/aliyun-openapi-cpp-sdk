@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IOT_MODEL_CREATESOUNDCODESCHEDULEREQUEST_H_
-#define ALIBABACLOUD_IOT_MODEL_CREATESOUNDCODESCHEDULEREQUEST_H_
+#ifndef ALIBABACLOUD_IOT_MODEL_BINDLICENSEDEVICEREQUEST_H_
+#define ALIBABACLOUD_IOT_MODEL_BINDLICENSEDEVICEREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,42 +28,36 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IOT_EXPORT CreateSoundCodeScheduleRequest : public RpcServiceRequest
+			class ALIBABACLOUD_IOT_EXPORT BindLicenseDeviceRequest : public RpcServiceRequest
 			{
 
 			public:
-				CreateSoundCodeScheduleRequest();
-				~CreateSoundCodeScheduleRequest();
+				BindLicenseDeviceRequest();
+				~BindLicenseDeviceRequest();
 
-				std::string getDescription()const;
-				void setDescription(const std::string& description);
-				std::string getStartDate()const;
-				void setStartDate(const std::string& startDate);
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
-				std::string getEndDate()const;
-				void setEndDate(const std::string& endDate);
+				std::vector<std::string> getIotIdList()const;
+				void setIotIdList(const std::vector<std::string>& iotIdList);
+				std::string getProductKey()const;
+				void setProductKey(const std::string& productKey);
 				std::string getApiProduct()const;
 				void setApiProduct(const std::string& apiProduct);
-				std::string getName()const;
-				void setName(const std::string& name);
 				std::string getApiRevision()const;
 				void setApiRevision(const std::string& apiRevision);
-				std::string getOpenType()const;
-				void setOpenType(const std::string& openType);
+				std::string getLicenseCode()const;
+				void setLicenseCode(const std::string& licenseCode);
 
             private:
-				std::string description_;
-				std::string startDate_;
 				std::string iotInstanceId_;
-				std::string endDate_;
+				std::vector<std::string> iotIdList_;
+				std::string productKey_;
 				std::string apiProduct_;
-				std::string name_;
 				std::string apiRevision_;
-				std::string openType_;
+				std::string licenseCode_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IOT_MODEL_CREATESOUNDCODESCHEDULEREQUEST_H_
+#endif // !ALIBABACLOUD_IOT_MODEL_BINDLICENSEDEVICEREQUEST_H_

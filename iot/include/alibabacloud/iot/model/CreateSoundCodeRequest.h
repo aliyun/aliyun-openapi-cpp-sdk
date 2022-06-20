@@ -43,15 +43,21 @@ namespace AlibabaCloud
 				void setSoundCodeContent(const std::string& soundCodeContent);
 				std::string getApiProduct()const;
 				void setApiProduct(const std::string& apiProduct);
+				std::string getName()const;
+				void setName(const std::string& name);
 				std::string getApiRevision()const;
 				void setApiRevision(const std::string& apiRevision);
+				std::string getOpenType()const;
+				void setOpenType(const std::string& openType);
 
             private:
 				int duration_;
 				std::string iotInstanceId_;
 				std::string soundCodeContent_;
 				std::string apiProduct_;
+				std::string name_;
 				std::string apiRevision_;
+				std::string openType_;
 
 			};
 		}

@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/iot/model/ResetThingResult.h>
+#include <alibabacloud/iot/model/UpdateSoundCodeResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Iot;
 using namespace AlibabaCloud::Iot::Model;
 
-ResetThingResult::ResetThingResult() :
+UpdateSoundCodeResult::UpdateSoundCodeResult() :
 	ServiceResult()
 {}
 
-ResetThingResult::ResetThingResult(const std::string &payload) :
+UpdateSoundCodeResult::UpdateSoundCodeResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-ResetThingResult::~ResetThingResult()
+UpdateSoundCodeResult::~UpdateSoundCodeResult()
 {}
 
-void ResetThingResult::parse(const std::string &payload)
+void UpdateSoundCodeResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -45,28 +45,21 @@ void ResetThingResult::parse(const std::string &payload)
 		code_ = value["Code"].asString();
 	if(!value["ErrorMessage"].isNull())
 		errorMessage_ = value["ErrorMessage"].asString();
-	if(!value["JobId"].isNull())
-		jobId_ = value["JobId"].asString();
 
 }
 
-std::string ResetThingResult::getErrorMessage()const
+std::string UpdateSoundCodeResult::getErrorMessage()const
 {
 	return errorMessage_;
 }
 
-std::string ResetThingResult::getCode()const
+std::string UpdateSoundCodeResult::getCode()const
 {
 	return code_;
 }
 
-bool ResetThingResult::getSuccess()const
+bool UpdateSoundCodeResult::getSuccess()const
 {
 	return success_;
-}
-
-std::string ResetThingResult::getJobId()const
-{
-	return jobId_;
 }
 

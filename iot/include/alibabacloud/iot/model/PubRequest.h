@@ -63,6 +63,8 @@ namespace AlibabaCloud
 				void setApiProduct(const std::string& apiProduct);
 				std::string getApiRevision()const;
 				void setApiRevision(const std::string& apiRevision);
+				std::string getDeviceName()const;
+				void setDeviceName(const std::string& deviceName);
 
             private:
 				std::vector<UserProp> userProp_;
@@ -76,6 +78,7 @@ namespace AlibabaCloud
 				std::string productKey_;
 				std::string apiProduct_;
 				std::string apiRevision_;
+				std::string deviceName_;
 
 			};
 		}

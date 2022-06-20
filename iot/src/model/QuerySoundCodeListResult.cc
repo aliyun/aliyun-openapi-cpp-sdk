@@ -58,6 +58,10 @@ void QuerySoundCodeListResult::parse(const std::string &payload)
 			itemsObject.duration = std::stoi(dataNodeListItems["Duration"].asString());
 		if(!dataNodeListItems["GmtCreate"].isNull())
 			itemsObject.gmtCreate = std::stol(dataNodeListItems["GmtCreate"].asString());
+		if(!dataNodeListItems["OpenType"].isNull())
+			itemsObject.openType = dataNodeListItems["OpenType"].asString();
+		if(!dataNodeListItems["Name"].isNull())
+			itemsObject.name = dataNodeListItems["Name"].asString();
 		data_.list.push_back(itemsObject);
 	}
 	if(!value["Success"].isNull())

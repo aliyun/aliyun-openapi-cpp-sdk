@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IOT_MODEL_QUERYSOUNDCODELISTRESULT_H_
-#define ALIBABACLOUD_IOT_MODEL_QUERYSOUNDCODELISTRESULT_H_
+#ifndef ALIBABACLOUD_IOT_MODEL_BINDLICENSEPRODUCTRESULT_H_
+#define ALIBABACLOUD_IOT_MODEL_BINDLICENSEPRODUCTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,31 +29,15 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IOT_EXPORT QuerySoundCodeListResult : public ServiceResult
+			class ALIBABACLOUD_IOT_EXPORT BindLicenseProductResult : public ServiceResult
 			{
 			public:
-				struct Data
-				{
-					struct Items
-					{
-						long gmtCreate;
-						std::string openType;
-						int duration;
-						std::string soundCodeContent;
-						std::string soundCode;
-						std::string name;
-					};
-					int pageId;
-					int pageSize;
-					int total;
-					std::vector<Items> list;
-				};
 
 
-				QuerySoundCodeListResult();
-				explicit QuerySoundCodeListResult(const std::string &payload);
-				~QuerySoundCodeListResult();
-				Data getData()const;
+				BindLicenseProductResult();
+				explicit BindLicenseProductResult(const std::string &payload);
+				~BindLicenseProductResult();
+				bool getData()const;
 				std::string getErrorMessage()const;
 				std::string getCode()const;
 				bool getSuccess()const;
@@ -61,7 +45,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				Data data_;
+				bool data_;
 				std::string errorMessage_;
 				std::string code_;
 				bool success_;
@@ -70,4 +54,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IOT_MODEL_QUERYSOUNDCODELISTRESULT_H_
+#endif // !ALIBABACLOUD_IOT_MODEL_BINDLICENSEPRODUCTRESULT_H_

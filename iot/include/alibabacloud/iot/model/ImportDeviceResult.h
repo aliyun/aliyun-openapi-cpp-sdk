@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IOT_MODEL_QUERYSOUNDCODELISTRESULT_H_
-#define ALIBABACLOUD_IOT_MODEL_QUERYSOUNDCODELISTRESULT_H_
+#ifndef ALIBABACLOUD_IOT_MODEL_IMPORTDEVICERESULT_H_
+#define ALIBABACLOUD_IOT_MODEL_IMPORTDEVICERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,30 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IOT_EXPORT QuerySoundCodeListResult : public ServiceResult
+			class ALIBABACLOUD_IOT_EXPORT ImportDeviceResult : public ServiceResult
 			{
 			public:
 				struct Data
 				{
-					struct Items
-					{
-						long gmtCreate;
-						std::string openType;
-						int duration;
-						std::string soundCodeContent;
-						std::string soundCode;
-						std::string name;
-					};
-					int pageId;
-					int pageSize;
-					int total;
-					std::vector<Items> list;
+					std::string iotId;
+					std::string deviceSecret;
+					std::string sn;
+					std::string productKey;
+					std::string deviceName;
+					std::string nickname;
 				};
 
 
-				QuerySoundCodeListResult();
-				explicit QuerySoundCodeListResult(const std::string &payload);
-				~QuerySoundCodeListResult();
+				ImportDeviceResult();
+				explicit ImportDeviceResult(const std::string &payload);
+				~ImportDeviceResult();
 				Data getData()const;
 				std::string getErrorMessage()const;
 				std::string getCode()const;
@@ -70,4 +63,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IOT_MODEL_QUERYSOUNDCODELISTRESULT_H_
+#endif // !ALIBABACLOUD_IOT_MODEL_IMPORTDEVICERESULT_H_

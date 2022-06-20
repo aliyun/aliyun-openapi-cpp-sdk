@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/iot/model/ResetThingResult.h>
+#include <alibabacloud/iot/model/UnbindLicenseProductResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Iot;
 using namespace AlibabaCloud::Iot::Model;
 
-ResetThingResult::ResetThingResult() :
+UnbindLicenseProductResult::UnbindLicenseProductResult() :
 	ServiceResult()
 {}
 
-ResetThingResult::ResetThingResult(const std::string &payload) :
+UnbindLicenseProductResult::UnbindLicenseProductResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-ResetThingResult::~ResetThingResult()
+UnbindLicenseProductResult::~UnbindLicenseProductResult()
 {}
 
-void ResetThingResult::parse(const std::string &payload)
+void UnbindLicenseProductResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -45,28 +45,28 @@ void ResetThingResult::parse(const std::string &payload)
 		code_ = value["Code"].asString();
 	if(!value["ErrorMessage"].isNull())
 		errorMessage_ = value["ErrorMessage"].asString();
-	if(!value["JobId"].isNull())
-		jobId_ = value["JobId"].asString();
+	if(!value["Data"].isNull())
+		data_ = value["Data"].asString() == "true";
 
 }
 
-std::string ResetThingResult::getErrorMessage()const
+bool UnbindLicenseProductResult::getData()const
+{
+	return data_;
+}
+
+std::string UnbindLicenseProductResult::getErrorMessage()const
 {
 	return errorMessage_;
 }
 
-std::string ResetThingResult::getCode()const
+std::string UnbindLicenseProductResult::getCode()const
 {
 	return code_;
 }
 
-bool ResetThingResult::getSuccess()const
+bool UnbindLicenseProductResult::getSuccess()const
 {
 	return success_;
-}
-
-std::string ResetThingResult::getJobId()const
-{
-	return jobId_;
 }
 

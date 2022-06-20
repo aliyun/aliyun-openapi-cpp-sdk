@@ -58,6 +58,8 @@ void GetSoundCodeScheduleResult::parse(const std::string &payload)
 		data_.startDate = dataNode["StartDate"].asString();
 	if(!dataNode["EndDate"].isNull())
 		data_.endDate = dataNode["EndDate"].asString();
+	if(!dataNode["OpenType"].isNull())
+		data_.openType = dataNode["OpenType"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
