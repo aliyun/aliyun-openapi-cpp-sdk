@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,34 +18,28 @@
 
 using AlibabaCloud::Imageenhan::Model::ErasePersonRequest;
 
-ErasePersonRequest::ErasePersonRequest() :
-	RpcServiceRequest("imageenhan", "2019-09-30", "ErasePerson")
-{
-	setMethod(HttpRequest::Method::Post);
+ErasePersonRequest::ErasePersonRequest()
+    : RpcServiceRequest("imageenhan", "2019-09-30", "ErasePerson") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-ErasePersonRequest::~ErasePersonRequest()
-{}
+ErasePersonRequest::~ErasePersonRequest() {}
 
-std::string ErasePersonRequest::getImageURL()const
-{
-	return imageURL_;
+std::string ErasePersonRequest::getUserMask() const {
+  return userMask_;
 }
 
-void ErasePersonRequest::setImageURL(const std::string& imageURL)
-{
-	imageURL_ = imageURL;
-	setBodyParameter("ImageURL", imageURL);
+void ErasePersonRequest::setUserMask(const std::string &userMask) {
+  userMask_ = userMask;
+  setBodyParameter(std::string("UserMask"), userMask);
 }
 
-std::string ErasePersonRequest::getUserMask()const
-{
-	return userMask_;
+std::string ErasePersonRequest::getImageURL() const {
+  return imageURL_;
 }
 
-void ErasePersonRequest::setUserMask(const std::string& userMask)
-{
-	userMask_ = userMask;
-	setBodyParameter("UserMask", userMask);
+void ErasePersonRequest::setImageURL(const std::string &imageURL) {
+  imageURL_ = imageURL;
+  setBodyParameter(std::string("ImageURL"), imageURL);
 }
 

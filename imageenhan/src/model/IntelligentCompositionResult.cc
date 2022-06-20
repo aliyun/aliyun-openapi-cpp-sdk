@@ -46,14 +46,14 @@ void IntelligentCompositionResult::parse(const std::string &payload)
 		Data::Element elementObject;
 		if(!dataNodeElementsElement["MinX"].isNull())
 			elementObject.minX = std::stoi(dataNodeElementsElement["MinX"].asString());
-		if(!dataNodeElementsElement["MinY"].isNull())
-			elementObject.minY = std::stoi(dataNodeElementsElement["MinY"].asString());
-		if(!dataNodeElementsElement["MaxX"].isNull())
-			elementObject.maxX = std::stoi(dataNodeElementsElement["MaxX"].asString());
-		if(!dataNodeElementsElement["MaxY"].isNull())
-			elementObject.maxY = std::stoi(dataNodeElementsElement["MaxY"].asString());
 		if(!dataNodeElementsElement["Score"].isNull())
 			elementObject.score = std::stof(dataNodeElementsElement["Score"].asString());
+		if(!dataNodeElementsElement["MaxY"].isNull())
+			elementObject.maxY = std::stoi(dataNodeElementsElement["MaxY"].asString());
+		if(!dataNodeElementsElement["MaxX"].isNull())
+			elementObject.maxX = std::stoi(dataNodeElementsElement["MaxX"].asString());
+		if(!dataNodeElementsElement["MinY"].isNull())
+			elementObject.minY = std::stoi(dataNodeElementsElement["MinY"].asString());
 		data_.elements.push_back(elementObject);
 	}
 

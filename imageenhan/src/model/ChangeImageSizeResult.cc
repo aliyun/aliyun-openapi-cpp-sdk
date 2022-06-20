@@ -43,14 +43,14 @@ void ChangeImageSizeResult::parse(const std::string &payload)
 	if(!dataNode["Url"].isNull())
 		data_.url = dataNode["Url"].asString();
 	auto retainLocationNode = dataNode["RetainLocation"];
-	if(!retainLocationNode["X"].isNull())
-		data_.retainLocation.x = std::stoi(retainLocationNode["X"].asString());
-	if(!retainLocationNode["Y"].isNull())
-		data_.retainLocation.y = std::stoi(retainLocationNode["Y"].asString());
 	if(!retainLocationNode["Width"].isNull())
 		data_.retainLocation.width = std::stoi(retainLocationNode["Width"].asString());
 	if(!retainLocationNode["Height"].isNull())
 		data_.retainLocation.height = std::stoi(retainLocationNode["Height"].asString());
+	if(!retainLocationNode["Y"].isNull())
+		data_.retainLocation.y = std::stoi(retainLocationNode["Y"].asString());
+	if(!retainLocationNode["X"].isNull())
+		data_.retainLocation.x = std::stoi(retainLocationNode["X"].asString());
 
 }
 
