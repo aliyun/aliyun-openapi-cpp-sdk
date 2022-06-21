@@ -43,30 +43,30 @@ void DescribeCasterScenesResult::parse(const std::string &payload)
 	for (auto valueSceneListScene : allSceneListNode)
 	{
 		Scene sceneListObject;
-		if(!valueSceneListScene["Status"].isNull())
-			sceneListObject.status = std::stoi(valueSceneListScene["Status"].asString());
-		if(!valueSceneListScene["LayoutId"].isNull())
-			sceneListObject.layoutId = valueSceneListScene["LayoutId"].asString();
-		if(!valueSceneListScene["OutputType"].isNull())
-			sceneListObject.outputType = valueSceneListScene["OutputType"].asString();
-		if(!valueSceneListScene["RtsUrl"].isNull())
-			sceneListObject.rtsUrl = valueSceneListScene["RtsUrl"].asString();
 		if(!valueSceneListScene["SceneId"].isNull())
 			sceneListObject.sceneId = valueSceneListScene["SceneId"].asString();
 		if(!valueSceneListScene["SceneName"].isNull())
 			sceneListObject.sceneName = valueSceneListScene["SceneName"].asString();
+		if(!valueSceneListScene["OutputType"].isNull())
+			sceneListObject.outputType = valueSceneListScene["OutputType"].asString();
+		if(!valueSceneListScene["LayoutId"].isNull())
+			sceneListObject.layoutId = valueSceneListScene["LayoutId"].asString();
 		if(!valueSceneListScene["StreamUrl"].isNull())
 			sceneListObject.streamUrl = valueSceneListScene["StreamUrl"].asString();
+		if(!valueSceneListScene["RtsUrl"].isNull())
+			sceneListObject.rtsUrl = valueSceneListScene["RtsUrl"].asString();
+		if(!valueSceneListScene["Status"].isNull())
+			sceneListObject.status = std::stoi(valueSceneListScene["Status"].asString());
 		auto allStreamInfosNode = valueSceneListScene["StreamInfos"]["StreamInfo"];
 		for (auto valueSceneListSceneStreamInfosStreamInfo : allStreamInfosNode)
 		{
 			Scene::StreamInfo streamInfosObject;
+			if(!valueSceneListSceneStreamInfosStreamInfo["TranscodeConfig"].isNull())
+				streamInfosObject.transcodeConfig = valueSceneListSceneStreamInfosStreamInfo["TranscodeConfig"].asString();
 			if(!valueSceneListSceneStreamInfosStreamInfo["VideoFormat"].isNull())
 				streamInfosObject.videoFormat = valueSceneListSceneStreamInfosStreamInfo["VideoFormat"].asString();
 			if(!valueSceneListSceneStreamInfosStreamInfo["OutputStreamUrl"].isNull())
 				streamInfosObject.outputStreamUrl = valueSceneListSceneStreamInfosStreamInfo["OutputStreamUrl"].asString();
-			if(!valueSceneListSceneStreamInfosStreamInfo["TranscodeConfig"].isNull())
-				streamInfosObject.transcodeConfig = valueSceneListSceneStreamInfosStreamInfo["TranscodeConfig"].asString();
 			sceneListObject.streamInfos.push_back(streamInfosObject);
 		}
 		auto allComponentIds = value["ComponentIds"]["componentId"];

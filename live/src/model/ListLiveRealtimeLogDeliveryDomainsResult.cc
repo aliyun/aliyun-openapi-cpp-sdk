@@ -43,10 +43,10 @@ void ListLiveRealtimeLogDeliveryDomainsResult::parse(const std::string &payload)
 	for (auto valueContentDomains : allContentNode)
 	{
 		Domains contentObject;
-		if(!valueContentDomains["Status"].isNull())
-			contentObject.status = valueContentDomains["Status"].asString();
 		if(!valueContentDomains["DomainName"].isNull())
 			contentObject.domainName = valueContentDomains["DomainName"].asString();
+		if(!valueContentDomains["Status"].isNull())
+			contentObject.status = valueContentDomains["Status"].asString();
 		content_.push_back(contentObject);
 	}
 

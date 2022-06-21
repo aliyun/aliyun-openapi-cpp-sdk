@@ -52,8 +52,8 @@ namespace AlibabaCloud
 				std::string getOrder()const;
 				int getTotalNum()const;
 				int getPageNum()const;
-				int getTotalPage()const;
 				int getPageSize()const;
+				int getTotalPage()const;
 				std::vector<LiveStreamSnapshotConfig> getLiveStreamSnapshotConfigList()const;
 
 			protected:
@@ -62,8 +62,8 @@ namespace AlibabaCloud
 				std::string order_;
 				int totalNum_;
 				int pageNum_;
-				int totalPage_;
 				int pageSize_;
+				int totalPage_;
 				std::vector<LiveStreamSnapshotConfig> liveStreamSnapshotConfigList_;
 
 			};

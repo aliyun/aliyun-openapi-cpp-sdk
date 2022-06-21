@@ -43,12 +43,12 @@ void DescribeLiveDomainLimitResult::parse(const std::string &payload)
 	for (auto valueLiveDomainLimitListLiveDomainLimit : allLiveDomainLimitListNode)
 	{
 		LiveDomainLimit liveDomainLimitListObject;
-		if(!valueLiveDomainLimitListLiveDomainLimit["LimitTranscodeNum"].isNull())
-			liveDomainLimitListObject.limitTranscodeNum = std::stoi(valueLiveDomainLimitListLiveDomainLimit["LimitTranscodeNum"].asString());
 		if(!valueLiveDomainLimitListLiveDomainLimit["DomainName"].isNull())
 			liveDomainLimitListObject.domainName = valueLiveDomainLimitListLiveDomainLimit["DomainName"].asString();
 		if(!valueLiveDomainLimitListLiveDomainLimit["LimitNum"].isNull())
 			liveDomainLimitListObject.limitNum = std::stoi(valueLiveDomainLimitListLiveDomainLimit["LimitNum"].asString());
+		if(!valueLiveDomainLimitListLiveDomainLimit["LimitTranscodeNum"].isNull())
+			liveDomainLimitListObject.limitTranscodeNum = std::stoi(valueLiveDomainLimitListLiveDomainLimit["LimitTranscodeNum"].asString());
 		liveDomainLimitList_.push_back(liveDomainLimitListObject);
 	}
 

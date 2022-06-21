@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,37 +18,45 @@
 
 using AlibabaCloud::Live::Model::DescribeRoomStatusRequest;
 
-DescribeRoomStatusRequest::DescribeRoomStatusRequest()
-    : RpcServiceRequest("live", "2016-11-01", "DescribeRoomStatus") {
-  setMethod(HttpRequest::Method::Post);
+DescribeRoomStatusRequest::DescribeRoomStatusRequest() :
+	RpcServiceRequest("live", "2016-11-01", "DescribeRoomStatus")
+{
+	setMethod(HttpRequest::Method::Post);
 }
 
-DescribeRoomStatusRequest::~DescribeRoomStatusRequest() {}
+DescribeRoomStatusRequest::~DescribeRoomStatusRequest()
+{}
 
-long DescribeRoomStatusRequest::getOwnerId() const {
-  return ownerId_;
+long DescribeRoomStatusRequest::getOwnerId()const
+{
+	return ownerId_;
 }
 
-void DescribeRoomStatusRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
+void DescribeRoomStatusRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string DescribeRoomStatusRequest::getRoomId() const {
-  return roomId_;
+std::string DescribeRoomStatusRequest::getRoomId()const
+{
+	return roomId_;
 }
 
-void DescribeRoomStatusRequest::setRoomId(const std::string &roomId) {
-  roomId_ = roomId;
-  setParameter(std::string("RoomId"), roomId);
+void DescribeRoomStatusRequest::setRoomId(const std::string& roomId)
+{
+	roomId_ = roomId;
+	setParameter("RoomId", roomId);
 }
 
-std::string DescribeRoomStatusRequest::getAppId() const {
-  return appId_;
+std::string DescribeRoomStatusRequest::getAppId()const
+{
+	return appId_;
 }
 
-void DescribeRoomStatusRequest::setAppId(const std::string &appId) {
-  appId_ = appId;
-  setParameter(std::string("AppId"), appId);
+void DescribeRoomStatusRequest::setAppId(const std::string& appId)
+{
+	appId_ = appId;
+	setParameter("AppId", appId);
 }
 

@@ -43,18 +43,18 @@ void ListLiveRealtimeLogDeliveryResult::parse(const std::string &payload)
 	for (auto valueContentRealtimeLogDeliveryInfo : allContentNode)
 	{
 		RealtimeLogDeliveryInfo contentObject;
-		if(!valueContentRealtimeLogDeliveryInfo["Status"].isNull())
-			contentObject.status = valueContentRealtimeLogDeliveryInfo["Status"].asString();
-		if(!valueContentRealtimeLogDeliveryInfo["DmId"].isNull())
-			contentObject.dmId = std::stoi(valueContentRealtimeLogDeliveryInfo["DmId"].asString());
-		if(!valueContentRealtimeLogDeliveryInfo["Region"].isNull())
-			contentObject.region = valueContentRealtimeLogDeliveryInfo["Region"].asString();
-		if(!valueContentRealtimeLogDeliveryInfo["Logstore"].isNull())
-			contentObject.logstore = valueContentRealtimeLogDeliveryInfo["Logstore"].asString();
 		if(!valueContentRealtimeLogDeliveryInfo["Project"].isNull())
 			contentObject.project = valueContentRealtimeLogDeliveryInfo["Project"].asString();
+		if(!valueContentRealtimeLogDeliveryInfo["Logstore"].isNull())
+			contentObject.logstore = valueContentRealtimeLogDeliveryInfo["Logstore"].asString();
+		if(!valueContentRealtimeLogDeliveryInfo["Region"].isNull())
+			contentObject.region = valueContentRealtimeLogDeliveryInfo["Region"].asString();
 		if(!valueContentRealtimeLogDeliveryInfo["DomainName"].isNull())
 			contentObject.domainName = valueContentRealtimeLogDeliveryInfo["DomainName"].asString();
+		if(!valueContentRealtimeLogDeliveryInfo["DmId"].isNull())
+			contentObject.dmId = std::stoi(valueContentRealtimeLogDeliveryInfo["DmId"].asString());
+		if(!valueContentRealtimeLogDeliveryInfo["Status"].isNull())
+			contentObject.status = valueContentRealtimeLogDeliveryInfo["Status"].asString();
 		content_.push_back(contentObject);
 	}
 

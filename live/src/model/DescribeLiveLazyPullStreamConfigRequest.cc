@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,46 +18,56 @@
 
 using AlibabaCloud::Live::Model::DescribeLiveLazyPullStreamConfigRequest;
 
-DescribeLiveLazyPullStreamConfigRequest::DescribeLiveLazyPullStreamConfigRequest()
-    : RpcServiceRequest("live", "2016-11-01", "DescribeLiveLazyPullStreamConfig") {
-  setMethod(HttpRequest::Method::Post);
+DescribeLiveLazyPullStreamConfigRequest::DescribeLiveLazyPullStreamConfigRequest() :
+	RpcServiceRequest("live", "2016-11-01", "DescribeLiveLazyPullStreamConfig")
+{
+	setMethod(HttpRequest::Method::Post);
 }
 
-DescribeLiveLazyPullStreamConfigRequest::~DescribeLiveLazyPullStreamConfigRequest() {}
+DescribeLiveLazyPullStreamConfigRequest::~DescribeLiveLazyPullStreamConfigRequest()
+{}
 
-std::string DescribeLiveLazyPullStreamConfigRequest::getAppName() const {
-  return appName_;
+std::string DescribeLiveLazyPullStreamConfigRequest::getAppName()const
+{
+	return appName_;
 }
 
-void DescribeLiveLazyPullStreamConfigRequest::setAppName(const std::string &appName) {
-  appName_ = appName;
-  setParameter(std::string("AppName"), appName);
+void DescribeLiveLazyPullStreamConfigRequest::setAppName(const std::string& appName)
+{
+	appName_ = appName;
+	setParameter("AppName", appName);
 }
 
-std::string DescribeLiveLazyPullStreamConfigRequest::getLiveapiRequestFrom() const {
-  return liveapiRequestFrom_;
+std::string DescribeLiveLazyPullStreamConfigRequest::getLiveapiRequestFrom()const
+{
+	return liveapiRequestFrom_;
 }
 
-void DescribeLiveLazyPullStreamConfigRequest::setLiveapiRequestFrom(const std::string &liveapiRequestFrom) {
-  liveapiRequestFrom_ = liveapiRequestFrom;
-  setParameter(std::string("LiveapiRequestFrom"), liveapiRequestFrom);
+void DescribeLiveLazyPullStreamConfigRequest::setLiveapiRequestFrom(const std::string& liveapiRequestFrom)
+{
+	liveapiRequestFrom_ = liveapiRequestFrom;
+	setParameter("LiveapiRequestFrom", liveapiRequestFrom);
 }
 
-std::string DescribeLiveLazyPullStreamConfigRequest::getDomainName() const {
-  return domainName_;
+std::string DescribeLiveLazyPullStreamConfigRequest::getDomainName()const
+{
+	return domainName_;
 }
 
-void DescribeLiveLazyPullStreamConfigRequest::setDomainName(const std::string &domainName) {
-  domainName_ = domainName;
-  setParameter(std::string("DomainName"), domainName);
+void DescribeLiveLazyPullStreamConfigRequest::setDomainName(const std::string& domainName)
+{
+	domainName_ = domainName;
+	setParameter("DomainName", domainName);
 }
 
-long DescribeLiveLazyPullStreamConfigRequest::getOwnerId() const {
-  return ownerId_;
+long DescribeLiveLazyPullStreamConfigRequest::getOwnerId()const
+{
+	return ownerId_;
 }
 
-void DescribeLiveLazyPullStreamConfigRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
+void DescribeLiveLazyPullStreamConfigRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

@@ -43,16 +43,16 @@ void DescribeUpPeakPublishStreamDataResult::parse(const std::string &payload)
 	for (auto valueDescribeUpPeakPublishStreamDatasDescribeUpPeakPublishStreamData : allDescribeUpPeakPublishStreamDatasNode)
 	{
 		DescribeUpPeakPublishStreamData describeUpPeakPublishStreamDatasObject;
-		if(!valueDescribeUpPeakPublishStreamDatasDescribeUpPeakPublishStreamData["QueryTime"].isNull())
-			describeUpPeakPublishStreamDatasObject.queryTime = valueDescribeUpPeakPublishStreamDatasDescribeUpPeakPublishStreamData["QueryTime"].asString();
-		if(!valueDescribeUpPeakPublishStreamDatasDescribeUpPeakPublishStreamData["BandWidth"].isNull())
-			describeUpPeakPublishStreamDatasObject.bandWidth = valueDescribeUpPeakPublishStreamDatasDescribeUpPeakPublishStreamData["BandWidth"].asString();
-		if(!valueDescribeUpPeakPublishStreamDatasDescribeUpPeakPublishStreamData["StatName"].isNull())
-			describeUpPeakPublishStreamDatasObject.statName = valueDescribeUpPeakPublishStreamDatasDescribeUpPeakPublishStreamData["StatName"].asString();
-		if(!valueDescribeUpPeakPublishStreamDatasDescribeUpPeakPublishStreamData["PeakTime"].isNull())
-			describeUpPeakPublishStreamDatasObject.peakTime = valueDescribeUpPeakPublishStreamDatasDescribeUpPeakPublishStreamData["PeakTime"].asString();
 		if(!valueDescribeUpPeakPublishStreamDatasDescribeUpPeakPublishStreamData["PublishStreamNum"].isNull())
 			describeUpPeakPublishStreamDatasObject.publishStreamNum = std::stoi(valueDescribeUpPeakPublishStreamDatasDescribeUpPeakPublishStreamData["PublishStreamNum"].asString());
+		if(!valueDescribeUpPeakPublishStreamDatasDescribeUpPeakPublishStreamData["PeakTime"].isNull())
+			describeUpPeakPublishStreamDatasObject.peakTime = valueDescribeUpPeakPublishStreamDatasDescribeUpPeakPublishStreamData["PeakTime"].asString();
+		if(!valueDescribeUpPeakPublishStreamDatasDescribeUpPeakPublishStreamData["QueryTime"].isNull())
+			describeUpPeakPublishStreamDatasObject.queryTime = valueDescribeUpPeakPublishStreamDatasDescribeUpPeakPublishStreamData["QueryTime"].asString();
+		if(!valueDescribeUpPeakPublishStreamDatasDescribeUpPeakPublishStreamData["StatName"].isNull())
+			describeUpPeakPublishStreamDatasObject.statName = valueDescribeUpPeakPublishStreamDatasDescribeUpPeakPublishStreamData["StatName"].asString();
+		if(!valueDescribeUpPeakPublishStreamDatasDescribeUpPeakPublishStreamData["BandWidth"].isNull())
+			describeUpPeakPublishStreamDatasObject.bandWidth = valueDescribeUpPeakPublishStreamDatasDescribeUpPeakPublishStreamData["BandWidth"].asString();
 		describeUpPeakPublishStreamDatas_.push_back(describeUpPeakPublishStreamDatasObject);
 	}
 

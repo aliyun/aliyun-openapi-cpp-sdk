@@ -38,8 +38,8 @@ namespace AlibabaCloud
 					std::string clientAddr;
 					std::string domainName;
 					std::string transcodeId;
-					std::string publishType;
 					std::string streamUrl;
+					std::string publishType;
 					std::string appName;
 					std::string streamName;
 					std::string edgeNodeAddr;
@@ -54,18 +54,18 @@ namespace AlibabaCloud
 				explicit DescribeLiveStreamsPublishListResult(const std::string &payload);
 				~DescribeLiveStreamsPublishListResult();
 				int getTotalNum()const;
-				int getTotalPage()const;
 				int getPageNum()const;
 				int getPageSize()const;
+				int getTotalPage()const;
 				std::vector<LiveStreamPublishInfo> getPublishInfo()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				int totalNum_;
-				int totalPage_;
 				int pageNum_;
 				int pageSize_;
+				int totalPage_;
 				std::vector<LiveStreamPublishInfo> publishInfo_;
 
 			};

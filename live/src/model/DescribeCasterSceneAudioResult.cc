@@ -45,10 +45,10 @@ void DescribeCasterSceneAudioResult::parse(const std::string &payload)
 		AudioLayer audioLayersObject;
 		if(!valueAudioLayersAudioLayer["VolumeRate"].isNull())
 			audioLayersObject.volumeRate = std::stof(valueAudioLayersAudioLayer["VolumeRate"].asString());
-		if(!valueAudioLayersAudioLayer["FixedDelayDuration"].isNull())
-			audioLayersObject.fixedDelayDuration = std::stoi(valueAudioLayersAudioLayer["FixedDelayDuration"].asString());
 		if(!valueAudioLayersAudioLayer["ValidChannel"].isNull())
 			audioLayersObject.validChannel = valueAudioLayersAudioLayer["ValidChannel"].asString();
+		if(!valueAudioLayersAudioLayer["FixedDelayDuration"].isNull())
+			audioLayersObject.fixedDelayDuration = std::stoi(valueAudioLayersAudioLayer["FixedDelayDuration"].asString());
 		audioLayers_.push_back(audioLayersObject);
 	}
 	auto allMixList = value["MixList"]["LocationId"];

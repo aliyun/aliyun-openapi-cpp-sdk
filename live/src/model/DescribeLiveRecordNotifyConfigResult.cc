@@ -40,14 +40,14 @@ void DescribeLiveRecordNotifyConfigResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto liveRecordNotifyConfigNode = value["LiveRecordNotifyConfig"];
-	if(!liveRecordNotifyConfigNode["NeedStatusNotify"].isNull())
-		liveRecordNotifyConfig_.needStatusNotify = liveRecordNotifyConfigNode["NeedStatusNotify"].asString() == "true";
-	if(!liveRecordNotifyConfigNode["OnDemandUrl"].isNull())
-		liveRecordNotifyConfig_.onDemandUrl = liveRecordNotifyConfigNode["OnDemandUrl"].asString();
 	if(!liveRecordNotifyConfigNode["DomainName"].isNull())
 		liveRecordNotifyConfig_.domainName = liveRecordNotifyConfigNode["DomainName"].asString();
 	if(!liveRecordNotifyConfigNode["NotifyUrl"].isNull())
 		liveRecordNotifyConfig_.notifyUrl = liveRecordNotifyConfigNode["NotifyUrl"].asString();
+	if(!liveRecordNotifyConfigNode["OnDemandUrl"].isNull())
+		liveRecordNotifyConfig_.onDemandUrl = liveRecordNotifyConfigNode["OnDemandUrl"].asString();
+	if(!liveRecordNotifyConfigNode["NeedStatusNotify"].isNull())
+		liveRecordNotifyConfig_.needStatusNotify = liveRecordNotifyConfigNode["NeedStatusNotify"].asString() == "true";
 
 }
 

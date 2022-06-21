@@ -42,16 +42,16 @@ void DescribeLiveStreamsBlockListResult::parse(const std::string &payload)
 	auto allStreamUrls = value["StreamUrls"]["StreamUrl"];
 	for (const auto &item : allStreamUrls)
 		streamUrls_.push_back(item.asString());
+	if(!value["DomainName"].isNull())
+		domainName_ = value["DomainName"].asString();
 	if(!value["PageNum"].isNull())
 		pageNum_ = std::stoi(value["PageNum"].asString());
-	if(!value["TotalPage"].isNull())
-		totalPage_ = std::stoi(value["TotalPage"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["TotalNum"].isNull())
 		totalNum_ = std::stoi(value["TotalNum"].asString());
-	if(!value["DomainName"].isNull())
-		domainName_ = value["DomainName"].asString();
+	if(!value["TotalPage"].isNull())
+		totalPage_ = std::stoi(value["TotalPage"].asString());
 
 }
 
@@ -65,14 +65,14 @@ int DescribeLiveStreamsBlockListResult::getPageNum()const
 	return pageNum_;
 }
 
-int DescribeLiveStreamsBlockListResult::getTotalPage()const
-{
-	return totalPage_;
-}
-
 int DescribeLiveStreamsBlockListResult::getPageSize()const
 {
 	return pageSize_;
+}
+
+int DescribeLiveStreamsBlockListResult::getTotalPage()const
+{
+	return totalPage_;
 }
 
 std::string DescribeLiveStreamsBlockListResult::getDomainName()const

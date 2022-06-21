@@ -43,20 +43,20 @@ void DescribeLiveRecordVodConfigsResult::parse(const std::string &payload)
 	for (auto valueLiveRecordVodConfigsLiveRecordVodConfig : allLiveRecordVodConfigsNode)
 	{
 		LiveRecordVodConfig liveRecordVodConfigsObject;
-		if(!valueLiveRecordVodConfigsLiveRecordVodConfig["AppName"].isNull())
-			liveRecordVodConfigsObject.appName = valueLiveRecordVodConfigsLiveRecordVodConfig["AppName"].asString();
-		if(!valueLiveRecordVodConfigsLiveRecordVodConfig["AutoCompose"].isNull())
-			liveRecordVodConfigsObject.autoCompose = valueLiveRecordVodConfigsLiveRecordVodConfig["AutoCompose"].asString();
-		if(!valueLiveRecordVodConfigsLiveRecordVodConfig["StreamName"].isNull())
-			liveRecordVodConfigsObject.streamName = valueLiveRecordVodConfigsLiveRecordVodConfig["StreamName"].asString();
 		if(!valueLiveRecordVodConfigsLiveRecordVodConfig["CreateTime"].isNull())
 			liveRecordVodConfigsObject.createTime = valueLiveRecordVodConfigsLiveRecordVodConfig["CreateTime"].asString();
+		if(!valueLiveRecordVodConfigsLiveRecordVodConfig["DomainName"].isNull())
+			liveRecordVodConfigsObject.domainName = valueLiveRecordVodConfigsLiveRecordVodConfig["DomainName"].asString();
+		if(!valueLiveRecordVodConfigsLiveRecordVodConfig["AppName"].isNull())
+			liveRecordVodConfigsObject.appName = valueLiveRecordVodConfigsLiveRecordVodConfig["AppName"].asString();
+		if(!valueLiveRecordVodConfigsLiveRecordVodConfig["StreamName"].isNull())
+			liveRecordVodConfigsObject.streamName = valueLiveRecordVodConfigsLiveRecordVodConfig["StreamName"].asString();
 		if(!valueLiveRecordVodConfigsLiveRecordVodConfig["VodTranscodeGroupId"].isNull())
 			liveRecordVodConfigsObject.vodTranscodeGroupId = valueLiveRecordVodConfigsLiveRecordVodConfig["VodTranscodeGroupId"].asString();
 		if(!valueLiveRecordVodConfigsLiveRecordVodConfig["CycleDuration"].isNull())
 			liveRecordVodConfigsObject.cycleDuration = std::stoi(valueLiveRecordVodConfigsLiveRecordVodConfig["CycleDuration"].asString());
-		if(!valueLiveRecordVodConfigsLiveRecordVodConfig["DomainName"].isNull())
-			liveRecordVodConfigsObject.domainName = valueLiveRecordVodConfigsLiveRecordVodConfig["DomainName"].asString();
+		if(!valueLiveRecordVodConfigsLiveRecordVodConfig["AutoCompose"].isNull())
+			liveRecordVodConfigsObject.autoCompose = valueLiveRecordVodConfigsLiveRecordVodConfig["AutoCompose"].asString();
 		if(!valueLiveRecordVodConfigsLiveRecordVodConfig["ComposeVodTranscodeGroupId"].isNull())
 			liveRecordVodConfigsObject.composeVodTranscodeGroupId = valueLiveRecordVodConfigsLiveRecordVodConfig["ComposeVodTranscodeGroupId"].asString();
 		liveRecordVodConfigs_.push_back(liveRecordVodConfigsObject);

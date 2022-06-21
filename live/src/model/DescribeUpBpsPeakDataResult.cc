@@ -43,14 +43,14 @@ void DescribeUpBpsPeakDataResult::parse(const std::string &payload)
 	for (auto valueDescribeUpPeakTrafficsDescribeUpPeakTraffic : allDescribeUpPeakTrafficsNode)
 	{
 		DescribeUpPeakTraffic describeUpPeakTrafficsObject;
-		if(!valueDescribeUpPeakTrafficsDescribeUpPeakTraffic["QueryTime"].isNull())
-			describeUpPeakTrafficsObject.queryTime = valueDescribeUpPeakTrafficsDescribeUpPeakTraffic["QueryTime"].asString();
-		if(!valueDescribeUpPeakTrafficsDescribeUpPeakTraffic["BandWidth"].isNull())
-			describeUpPeakTrafficsObject.bandWidth = valueDescribeUpPeakTrafficsDescribeUpPeakTraffic["BandWidth"].asString();
-		if(!valueDescribeUpPeakTrafficsDescribeUpPeakTraffic["StatName"].isNull())
-			describeUpPeakTrafficsObject.statName = valueDescribeUpPeakTrafficsDescribeUpPeakTraffic["StatName"].asString();
 		if(!valueDescribeUpPeakTrafficsDescribeUpPeakTraffic["PeakTime"].isNull())
 			describeUpPeakTrafficsObject.peakTime = valueDescribeUpPeakTrafficsDescribeUpPeakTraffic["PeakTime"].asString();
+		if(!valueDescribeUpPeakTrafficsDescribeUpPeakTraffic["QueryTime"].isNull())
+			describeUpPeakTrafficsObject.queryTime = valueDescribeUpPeakTrafficsDescribeUpPeakTraffic["QueryTime"].asString();
+		if(!valueDescribeUpPeakTrafficsDescribeUpPeakTraffic["StatName"].isNull())
+			describeUpPeakTrafficsObject.statName = valueDescribeUpPeakTrafficsDescribeUpPeakTraffic["StatName"].asString();
+		if(!valueDescribeUpPeakTrafficsDescribeUpPeakTraffic["BandWidth"].isNull())
+			describeUpPeakTrafficsObject.bandWidth = valueDescribeUpPeakTrafficsDescribeUpPeakTraffic["BandWidth"].asString();
 		describeUpPeakTraffics_.push_back(describeUpPeakTrafficsObject);
 	}
 

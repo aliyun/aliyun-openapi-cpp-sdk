@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,55 +18,67 @@
 
 using AlibabaCloud::Live::Model::ModifyLiveRealtimeLogDeliveryRequest;
 
-ModifyLiveRealtimeLogDeliveryRequest::ModifyLiveRealtimeLogDeliveryRequest()
-    : RpcServiceRequest("live", "2016-11-01", "ModifyLiveRealtimeLogDelivery") {
-  setMethod(HttpRequest::Method::Get);
+ModifyLiveRealtimeLogDeliveryRequest::ModifyLiveRealtimeLogDeliveryRequest() :
+	RpcServiceRequest("live", "2016-11-01", "ModifyLiveRealtimeLogDelivery")
+{
+	setMethod(HttpRequest::Method::Get);
 }
 
-ModifyLiveRealtimeLogDeliveryRequest::~ModifyLiveRealtimeLogDeliveryRequest() {}
+ModifyLiveRealtimeLogDeliveryRequest::~ModifyLiveRealtimeLogDeliveryRequest()
+{}
 
-std::string ModifyLiveRealtimeLogDeliveryRequest::getProject() const {
-  return project_;
+std::string ModifyLiveRealtimeLogDeliveryRequest::getProject()const
+{
+	return project_;
 }
 
-void ModifyLiveRealtimeLogDeliveryRequest::setProject(const std::string &project) {
-  project_ = project;
-  setParameter(std::string("Project"), project);
+void ModifyLiveRealtimeLogDeliveryRequest::setProject(const std::string& project)
+{
+	project_ = project;
+	setParameter("Project", project);
 }
 
-std::string ModifyLiveRealtimeLogDeliveryRequest::getDomainName() const {
-  return domainName_;
+std::string ModifyLiveRealtimeLogDeliveryRequest::getDomainName()const
+{
+	return domainName_;
 }
 
-void ModifyLiveRealtimeLogDeliveryRequest::setDomainName(const std::string &domainName) {
-  domainName_ = domainName;
-  setParameter(std::string("DomainName"), domainName);
+void ModifyLiveRealtimeLogDeliveryRequest::setDomainName(const std::string& domainName)
+{
+	domainName_ = domainName;
+	setParameter("DomainName", domainName);
 }
 
-long ModifyLiveRealtimeLogDeliveryRequest::getOwnerId() const {
-  return ownerId_;
+long ModifyLiveRealtimeLogDeliveryRequest::getOwnerId()const
+{
+	return ownerId_;
 }
 
-void ModifyLiveRealtimeLogDeliveryRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
+void ModifyLiveRealtimeLogDeliveryRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string ModifyLiveRealtimeLogDeliveryRequest::getRegion() const {
-  return region_;
+std::string ModifyLiveRealtimeLogDeliveryRequest::getRegion()const
+{
+	return region_;
 }
 
-void ModifyLiveRealtimeLogDeliveryRequest::setRegion(const std::string &region) {
-  region_ = region;
-  setParameter(std::string("Region"), region);
+void ModifyLiveRealtimeLogDeliveryRequest::setRegion(const std::string& region)
+{
+	region_ = region;
+	setParameter("Region", region);
 }
 
-std::string ModifyLiveRealtimeLogDeliveryRequest::getLogstore() const {
-  return logstore_;
+std::string ModifyLiveRealtimeLogDeliveryRequest::getLogstore()const
+{
+	return logstore_;
 }
 
-void ModifyLiveRealtimeLogDeliveryRequest::setLogstore(const std::string &logstore) {
-  logstore_ = logstore;
-  setParameter(std::string("Logstore"), logstore);
+void ModifyLiveRealtimeLogDeliveryRequest::setLogstore(const std::string& logstore)
+{
+	logstore_ = logstore;
+	setParameter("Logstore", logstore);
 }
 

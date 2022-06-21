@@ -43,12 +43,12 @@ void DescribeLiveDomainTimeShiftDataResult::parse(const std::string &payload)
 	for (auto valueTimeShiftDataDataModule : allTimeShiftDataNode)
 	{
 		DataModule timeShiftDataObject;
-		if(!valueTimeShiftDataDataModule["Type"].isNull())
-			timeShiftDataObject.type = valueTimeShiftDataDataModule["Type"].asString();
 		if(!valueTimeShiftDataDataModule["TimeStamp"].isNull())
 			timeShiftDataObject.timeStamp = valueTimeShiftDataDataModule["TimeStamp"].asString();
 		if(!valueTimeShiftDataDataModule["Size"].isNull())
 			timeShiftDataObject.size = valueTimeShiftDataDataModule["Size"].asString();
+		if(!valueTimeShiftDataDataModule["Type"].isNull())
+			timeShiftDataObject.type = valueTimeShiftDataDataModule["Type"].asString();
 		timeShiftData_.push_back(timeShiftDataObject);
 	}
 

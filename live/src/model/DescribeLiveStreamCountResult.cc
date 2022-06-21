@@ -43,20 +43,20 @@ void DescribeLiveStreamCountResult::parse(const std::string &payload)
 	for (auto valueStreamCountInfosStreamCountInfo : allStreamCountInfosNode)
 	{
 		StreamCountInfo streamCountInfosObject;
-		if(!valueStreamCountInfosStreamCountInfo["Type"].isNull())
-			streamCountInfosObject.type = valueStreamCountInfosStreamCountInfo["Type"].asString();
 		if(!valueStreamCountInfosStreamCountInfo["Count"].isNull())
 			streamCountInfosObject.count = std::stol(valueStreamCountInfosStreamCountInfo["Count"].asString());
 		if(!valueStreamCountInfosStreamCountInfo["Limit"].isNull())
 			streamCountInfosObject.limit = std::stol(valueStreamCountInfosStreamCountInfo["Limit"].asString());
+		if(!valueStreamCountInfosStreamCountInfo["Type"].isNull())
+			streamCountInfosObject.type = valueStreamCountInfosStreamCountInfo["Type"].asString();
 		auto allStreamCountDetailsNode = valueStreamCountInfosStreamCountInfo["StreamCountDetails"]["StreamCountDetail"];
 		for (auto valueStreamCountInfosStreamCountInfoStreamCountDetailsStreamCountDetail : allStreamCountDetailsNode)
 		{
 			StreamCountInfo::StreamCountDetail streamCountDetailsObject;
-			if(!valueStreamCountInfosStreamCountInfoStreamCountDetailsStreamCountDetail["VideoDataRate"].isNull())
-				streamCountDetailsObject.videoDataRate = std::stol(valueStreamCountInfosStreamCountInfoStreamCountDetailsStreamCountDetail["VideoDataRate"].asString());
 			if(!valueStreamCountInfosStreamCountInfoStreamCountDetailsStreamCountDetail["Format"].isNull())
 				streamCountDetailsObject.format = valueStreamCountInfosStreamCountInfoStreamCountDetailsStreamCountDetail["Format"].asString();
+			if(!valueStreamCountInfosStreamCountInfoStreamCountDetailsStreamCountDetail["VideoDataRate"].isNull())
+				streamCountDetailsObject.videoDataRate = std::stol(valueStreamCountInfosStreamCountInfoStreamCountDetailsStreamCountDetail["VideoDataRate"].asString());
 			if(!valueStreamCountInfosStreamCountInfoStreamCountDetailsStreamCountDetail["Count"].isNull())
 				streamCountDetailsObject.count = std::stol(valueStreamCountInfosStreamCountInfoStreamCountDetailsStreamCountDetail["Count"].asString());
 			streamCountInfosObject.streamCountDetails.push_back(streamCountDetailsObject);

@@ -39,14 +39,14 @@ void DescribeLiveDomainRealtimeLogDeliveryResult::parse(const std::string &paylo
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Status"].isNull())
-		status_ = value["Status"].asString();
-	if(!value["Logstore"].isNull())
-		logstore_ = value["Logstore"].asString();
 	if(!value["Project"].isNull())
 		project_ = value["Project"].asString();
 	if(!value["Region"].isNull())
 		region_ = value["Region"].asString();
+	if(!value["Logstore"].isNull())
+		logstore_ = value["Logstore"].asString();
+	if(!value["Status"].isNull())
+		status_ = value["Status"].asString();
 
 }
 

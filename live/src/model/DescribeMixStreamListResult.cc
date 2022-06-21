@@ -43,24 +43,24 @@ void DescribeMixStreamListResult::parse(const std::string &payload)
 	for (auto valueMixStreamListMixStreamInfo : allMixStreamListNode)
 	{
 		MixStreamInfo mixStreamListObject;
-		if(!valueMixStreamListMixStreamInfo["MixStreamTemplate"].isNull())
-			mixStreamListObject.mixStreamTemplate = valueMixStreamListMixStreamInfo["MixStreamTemplate"].asString();
-		if(!valueMixStreamListMixStreamInfo["AppName"].isNull())
-			mixStreamListObject.appName = valueMixStreamListMixStreamInfo["AppName"].asString();
-		if(!valueMixStreamListMixStreamInfo["LayoutId"].isNull())
-			mixStreamListObject.layoutId = valueMixStreamListMixStreamInfo["LayoutId"].asString();
-		if(!valueMixStreamListMixStreamInfo["StreamName"].isNull())
-			mixStreamListObject.streamName = valueMixStreamListMixStreamInfo["StreamName"].asString();
-		if(!valueMixStreamListMixStreamInfo["GmtCreate"].isNull())
-			mixStreamListObject.gmtCreate = valueMixStreamListMixStreamInfo["GmtCreate"].asString();
 		if(!valueMixStreamListMixStreamInfo["MixstreamId"].isNull())
 			mixStreamListObject.mixstreamId = valueMixStreamListMixStreamInfo["MixstreamId"].asString();
-		if(!valueMixStreamListMixStreamInfo["GmtModified"].isNull())
-			mixStreamListObject.gmtModified = valueMixStreamListMixStreamInfo["GmtModified"].asString();
-		if(!valueMixStreamListMixStreamInfo["InputStreamNumber"].isNull())
-			mixStreamListObject.inputStreamNumber = std::stoi(valueMixStreamListMixStreamInfo["InputStreamNumber"].asString());
 		if(!valueMixStreamListMixStreamInfo["DomainName"].isNull())
 			mixStreamListObject.domainName = valueMixStreamListMixStreamInfo["DomainName"].asString();
+		if(!valueMixStreamListMixStreamInfo["AppName"].isNull())
+			mixStreamListObject.appName = valueMixStreamListMixStreamInfo["AppName"].asString();
+		if(!valueMixStreamListMixStreamInfo["StreamName"].isNull())
+			mixStreamListObject.streamName = valueMixStreamListMixStreamInfo["StreamName"].asString();
+		if(!valueMixStreamListMixStreamInfo["LayoutId"].isNull())
+			mixStreamListObject.layoutId = valueMixStreamListMixStreamInfo["LayoutId"].asString();
+		if(!valueMixStreamListMixStreamInfo["InputStreamNumber"].isNull())
+			mixStreamListObject.inputStreamNumber = std::stoi(valueMixStreamListMixStreamInfo["InputStreamNumber"].asString());
+		if(!valueMixStreamListMixStreamInfo["MixStreamTemplate"].isNull())
+			mixStreamListObject.mixStreamTemplate = valueMixStreamListMixStreamInfo["MixStreamTemplate"].asString();
+		if(!valueMixStreamListMixStreamInfo["GmtCreate"].isNull())
+			mixStreamListObject.gmtCreate = valueMixStreamListMixStreamInfo["GmtCreate"].asString();
+		if(!valueMixStreamListMixStreamInfo["GmtModified"].isNull())
+			mixStreamListObject.gmtModified = valueMixStreamListMixStreamInfo["GmtModified"].asString();
 		mixStreamList_.push_back(mixStreamListObject);
 	}
 	if(!value["Total"].isNull())

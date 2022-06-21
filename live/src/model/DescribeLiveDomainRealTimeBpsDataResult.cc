@@ -43,18 +43,18 @@ void DescribeLiveDomainRealTimeBpsDataResult::parse(const std::string &payload)
 	for (auto valueRealTimeBpsDataPerIntervalDataModule : allRealTimeBpsDataPerIntervalNode)
 	{
 		DataModule realTimeBpsDataPerIntervalObject;
-		if(!valueRealTimeBpsDataPerIntervalDataModule["Value"].isNull())
-			realTimeBpsDataPerIntervalObject.value = valueRealTimeBpsDataPerIntervalDataModule["Value"].asString();
 		if(!valueRealTimeBpsDataPerIntervalDataModule["TimeStamp"].isNull())
 			realTimeBpsDataPerIntervalObject.timeStamp = valueRealTimeBpsDataPerIntervalDataModule["TimeStamp"].asString();
+		if(!valueRealTimeBpsDataPerIntervalDataModule["Value"].isNull())
+			realTimeBpsDataPerIntervalObject.value = valueRealTimeBpsDataPerIntervalDataModule["Value"].asString();
 		realTimeBpsDataPerInterval_.push_back(realTimeBpsDataPerIntervalObject);
 	}
-	if(!value["EndTime"].isNull())
-		endTime_ = value["EndTime"].asString();
-	if(!value["StartTime"].isNull())
-		startTime_ = value["StartTime"].asString();
 	if(!value["DomainName"].isNull())
 		domainName_ = value["DomainName"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
+	if(!value["EndTime"].isNull())
+		endTime_ = value["EndTime"].asString();
 	if(!value["DataInterval"].isNull())
 		dataInterval_ = value["DataInterval"].asString();
 

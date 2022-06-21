@@ -34,10 +34,10 @@ namespace AlibabaCloud
 			public:
 				struct RecordContentInfo
 				{
-					std::string endTime;
 					std::string ossEndpoint;
-					std::string startTime;
+					std::string endTime;
 					std::string ossBucket;
+					std::string startTime;
 					float duration;
 					std::string ossObjectPrefix;
 				};

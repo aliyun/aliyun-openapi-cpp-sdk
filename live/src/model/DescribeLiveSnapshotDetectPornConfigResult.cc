@@ -43,18 +43,18 @@ void DescribeLiveSnapshotDetectPornConfigResult::parse(const std::string &payloa
 	for (auto valueLiveSnapshotDetectPornConfigListLiveSnapshotDetectPornConfig : allLiveSnapshotDetectPornConfigListNode)
 	{
 		LiveSnapshotDetectPornConfig liveSnapshotDetectPornConfigListObject;
-		if(!valueLiveSnapshotDetectPornConfigListLiveSnapshotDetectPornConfig["OssObject"].isNull())
-			liveSnapshotDetectPornConfigListObject.ossObject = valueLiveSnapshotDetectPornConfigListLiveSnapshotDetectPornConfig["OssObject"].asString();
-		if(!valueLiveSnapshotDetectPornConfigListLiveSnapshotDetectPornConfig["AppName"].isNull())
-			liveSnapshotDetectPornConfigListObject.appName = valueLiveSnapshotDetectPornConfigListLiveSnapshotDetectPornConfig["AppName"].asString();
-		if(!valueLiveSnapshotDetectPornConfigListLiveSnapshotDetectPornConfig["Interval"].isNull())
-			liveSnapshotDetectPornConfigListObject.interval = std::stoi(valueLiveSnapshotDetectPornConfigListLiveSnapshotDetectPornConfig["Interval"].asString());
-		if(!valueLiveSnapshotDetectPornConfigListLiveSnapshotDetectPornConfig["OssBucket"].isNull())
-			liveSnapshotDetectPornConfigListObject.ossBucket = valueLiveSnapshotDetectPornConfigListLiveSnapshotDetectPornConfig["OssBucket"].asString();
 		if(!valueLiveSnapshotDetectPornConfigListLiveSnapshotDetectPornConfig["DomainName"].isNull())
 			liveSnapshotDetectPornConfigListObject.domainName = valueLiveSnapshotDetectPornConfigListLiveSnapshotDetectPornConfig["DomainName"].asString();
+		if(!valueLiveSnapshotDetectPornConfigListLiveSnapshotDetectPornConfig["AppName"].isNull())
+			liveSnapshotDetectPornConfigListObject.appName = valueLiveSnapshotDetectPornConfigListLiveSnapshotDetectPornConfig["AppName"].asString();
 		if(!valueLiveSnapshotDetectPornConfigListLiveSnapshotDetectPornConfig["OssEndpoint"].isNull())
 			liveSnapshotDetectPornConfigListObject.ossEndpoint = valueLiveSnapshotDetectPornConfigListLiveSnapshotDetectPornConfig["OssEndpoint"].asString();
+		if(!valueLiveSnapshotDetectPornConfigListLiveSnapshotDetectPornConfig["OssBucket"].isNull())
+			liveSnapshotDetectPornConfigListObject.ossBucket = valueLiveSnapshotDetectPornConfigListLiveSnapshotDetectPornConfig["OssBucket"].asString();
+		if(!valueLiveSnapshotDetectPornConfigListLiveSnapshotDetectPornConfig["OssObject"].isNull())
+			liveSnapshotDetectPornConfigListObject.ossObject = valueLiveSnapshotDetectPornConfigListLiveSnapshotDetectPornConfig["OssObject"].asString();
+		if(!valueLiveSnapshotDetectPornConfigListLiveSnapshotDetectPornConfig["Interval"].isNull())
+			liveSnapshotDetectPornConfigListObject.interval = std::stoi(valueLiveSnapshotDetectPornConfigListLiveSnapshotDetectPornConfig["Interval"].asString());
 		auto allScenes = value["Scenes"]["scene"];
 		for (auto value : allScenes)
 			liveSnapshotDetectPornConfigListObject.scenes.push_back(value.asString());
@@ -62,14 +62,14 @@ void DescribeLiveSnapshotDetectPornConfigResult::parse(const std::string &payloa
 	}
 	if(!value["PageNum"].isNull())
 		pageNum_ = std::stoi(value["PageNum"].asString());
-	if(!value["Order"].isNull())
-		order_ = value["Order"].asString();
-	if(!value["TotalPage"].isNull())
-		totalPage_ = std::stoi(value["TotalPage"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["Order"].isNull())
+		order_ = value["Order"].asString();
 	if(!value["TotalNum"].isNull())
 		totalNum_ = std::stoi(value["TotalNum"].asString());
+	if(!value["TotalPage"].isNull())
+		totalPage_ = std::stoi(value["TotalPage"].asString());
 
 }
 
@@ -88,14 +88,14 @@ int DescribeLiveSnapshotDetectPornConfigResult::getPageNum()const
 	return pageNum_;
 }
 
-int DescribeLiveSnapshotDetectPornConfigResult::getTotalPage()const
-{
-	return totalPage_;
-}
-
 int DescribeLiveSnapshotDetectPornConfigResult::getPageSize()const
 {
 	return pageSize_;
+}
+
+int DescribeLiveSnapshotDetectPornConfigResult::getTotalPage()const
+{
+	return totalPage_;
 }
 
 std::vector<DescribeLiveSnapshotDetectPornConfigResult::LiveSnapshotDetectPornConfig> DescribeLiveSnapshotDetectPornConfigResult::getLiveSnapshotDetectPornConfigList()const

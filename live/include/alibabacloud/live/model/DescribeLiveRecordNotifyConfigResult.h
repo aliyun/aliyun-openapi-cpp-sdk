@@ -34,9 +34,9 @@ namespace AlibabaCloud
 			public:
 				struct LiveRecordNotifyConfig
 				{
-					bool needStatusNotify;
-					std::string onDemandUrl;
 					std::string domainName;
+					std::string onDemandUrl;
+					bool needStatusNotify;
 					std::string notifyUrl;
 				};
 

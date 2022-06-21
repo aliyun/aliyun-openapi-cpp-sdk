@@ -157,6 +157,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DeleteLiveSpecificStagingConfigResult.h
 	include/alibabacloud/live/model/DeleteLiveStreamMonitorRequest.h
 	include/alibabacloud/live/model/DeleteLiveStreamMonitorResult.h
+	include/alibabacloud/live/model/DeleteLiveStreamRecordIndexFilesRequest.h
+	include/alibabacloud/live/model/DeleteLiveStreamRecordIndexFilesResult.h
 	include/alibabacloud/live/model/DeleteLiveStreamTranscodeRequest.h
 	include/alibabacloud/live/model/DeleteLiveStreamTranscodeResult.h
 	include/alibabacloud/live/model/DeleteLiveStreamWatermarkRequest.h
@@ -177,6 +179,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DeleteRoomResult.h
 	include/alibabacloud/live/model/DeleteSnapshotCallbackAuthRequest.h
 	include/alibabacloud/live/model/DeleteSnapshotCallbackAuthResult.h
+	include/alibabacloud/live/model/DeleteSnapshotFilesRequest.h
+	include/alibabacloud/live/model/DeleteSnapshotFilesResult.h
 	include/alibabacloud/live/model/DeleteStudioLayoutRequest.h
 	include/alibabacloud/live/model/DeleteStudioLayoutResult.h
 	include/alibabacloud/live/model/DescribeAutoShowListTasksRequest.h
@@ -265,12 +269,12 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DescribeLiveDomainRecordUsageDataResult.h
 	include/alibabacloud/live/model/DescribeLiveDomainSnapshotDataRequest.h
 	include/alibabacloud/live/model/DescribeLiveDomainSnapshotDataResult.h
+	include/alibabacloud/live/model/DescribeLiveDomainSpecialConfigRequest.h
+	include/alibabacloud/live/model/DescribeLiveDomainSpecialConfigResult.h
 	include/alibabacloud/live/model/DescribeLiveDomainStagingConfigRequest.h
 	include/alibabacloud/live/model/DescribeLiveDomainStagingConfigResult.h
 	include/alibabacloud/live/model/DescribeLiveDomainStreamTranscodeDataRequest.h
 	include/alibabacloud/live/model/DescribeLiveDomainStreamTranscodeDataResult.h
-	include/alibabacloud/live/model/DescribeLiveDomainStreamWaterLevelRequest.h
-	include/alibabacloud/live/model/DescribeLiveDomainStreamWaterLevelResult.h
 	include/alibabacloud/live/model/DescribeLiveDomainTimeShiftDataRequest.h
 	include/alibabacloud/live/model/DescribeLiveDomainTimeShiftDataResult.h
 	include/alibabacloud/live/model/DescribeLiveDomainTrafficDataRequest.h
@@ -349,6 +353,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DescribeLiveUserBillPredictionResult.h
 	include/alibabacloud/live/model/DescribeLiveUserDomainsRequest.h
 	include/alibabacloud/live/model/DescribeLiveUserDomainsResult.h
+	include/alibabacloud/live/model/DescribeLiveUserQuotaRequest.h
+	include/alibabacloud/live/model/DescribeLiveUserQuotaResult.h
 	include/alibabacloud/live/model/DescribeLiveUserTagsRequest.h
 	include/alibabacloud/live/model/DescribeLiveUserTagsResult.h
 	include/alibabacloud/live/model/DescribeMixStreamListRequest.h
@@ -401,6 +407,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/GetMultiRateConfigResult.h
 	include/alibabacloud/live/model/GetMultiRateConfigListRequest.h
 	include/alibabacloud/live/model/GetMultiRateConfigListResult.h
+	include/alibabacloud/live/model/HotLiveRtcStreamRequest.h
+	include/alibabacloud/live/model/HotLiveRtcStreamResult.h
 	include/alibabacloud/live/model/InitializeAutoShowListTaskRequest.h
 	include/alibabacloud/live/model/InitializeAutoShowListTaskResult.h
 	include/alibabacloud/live/model/ListLiveRealtimeLogDeliveryRequest.h
@@ -463,6 +471,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/SetCasterSyncGroupResult.h
 	include/alibabacloud/live/model/SetLiveDomainCertificateRequest.h
 	include/alibabacloud/live/model/SetLiveDomainCertificateResult.h
+	include/alibabacloud/live/model/SetLiveDomainSpecialConfigRequest.h
+	include/alibabacloud/live/model/SetLiveDomainSpecialConfigResult.h
 	include/alibabacloud/live/model/SetLiveDomainStagingConfigRequest.h
 	include/alibabacloud/live/model/SetLiveDomainStagingConfigResult.h
 	include/alibabacloud/live/model/SetLiveEdgeTransferRequest.h
@@ -670,6 +680,8 @@ set(live_src
 	src/model/DeleteLiveSpecificStagingConfigResult.cc
 	src/model/DeleteLiveStreamMonitorRequest.cc
 	src/model/DeleteLiveStreamMonitorResult.cc
+	src/model/DeleteLiveStreamRecordIndexFilesRequest.cc
+	src/model/DeleteLiveStreamRecordIndexFilesResult.cc
 	src/model/DeleteLiveStreamTranscodeRequest.cc
 	src/model/DeleteLiveStreamTranscodeResult.cc
 	src/model/DeleteLiveStreamWatermarkRequest.cc
@@ -690,6 +702,8 @@ set(live_src
 	src/model/DeleteRoomResult.cc
 	src/model/DeleteSnapshotCallbackAuthRequest.cc
 	src/model/DeleteSnapshotCallbackAuthResult.cc
+	src/model/DeleteSnapshotFilesRequest.cc
+	src/model/DeleteSnapshotFilesResult.cc
 	src/model/DeleteStudioLayoutRequest.cc
 	src/model/DeleteStudioLayoutResult.cc
 	src/model/DescribeAutoShowListTasksRequest.cc
@@ -778,12 +792,12 @@ set(live_src
 	src/model/DescribeLiveDomainRecordUsageDataResult.cc
 	src/model/DescribeLiveDomainSnapshotDataRequest.cc
 	src/model/DescribeLiveDomainSnapshotDataResult.cc
+	src/model/DescribeLiveDomainSpecialConfigRequest.cc
+	src/model/DescribeLiveDomainSpecialConfigResult.cc
 	src/model/DescribeLiveDomainStagingConfigRequest.cc
 	src/model/DescribeLiveDomainStagingConfigResult.cc
 	src/model/DescribeLiveDomainStreamTranscodeDataRequest.cc
 	src/model/DescribeLiveDomainStreamTranscodeDataResult.cc
-	src/model/DescribeLiveDomainStreamWaterLevelRequest.cc
-	src/model/DescribeLiveDomainStreamWaterLevelResult.cc
 	src/model/DescribeLiveDomainTimeShiftDataRequest.cc
 	src/model/DescribeLiveDomainTimeShiftDataResult.cc
 	src/model/DescribeLiveDomainTrafficDataRequest.cc
@@ -862,6 +876,8 @@ set(live_src
 	src/model/DescribeLiveUserBillPredictionResult.cc
 	src/model/DescribeLiveUserDomainsRequest.cc
 	src/model/DescribeLiveUserDomainsResult.cc
+	src/model/DescribeLiveUserQuotaRequest.cc
+	src/model/DescribeLiveUserQuotaResult.cc
 	src/model/DescribeLiveUserTagsRequest.cc
 	src/model/DescribeLiveUserTagsResult.cc
 	src/model/DescribeMixStreamListRequest.cc
@@ -914,6 +930,8 @@ set(live_src
 	src/model/GetMultiRateConfigResult.cc
 	src/model/GetMultiRateConfigListRequest.cc
 	src/model/GetMultiRateConfigListResult.cc
+	src/model/HotLiveRtcStreamRequest.cc
+	src/model/HotLiveRtcStreamResult.cc
 	src/model/InitializeAutoShowListTaskRequest.cc
 	src/model/InitializeAutoShowListTaskResult.cc
 	src/model/ListLiveRealtimeLogDeliveryRequest.cc
@@ -976,6 +994,8 @@ set(live_src
 	src/model/SetCasterSyncGroupResult.cc
 	src/model/SetLiveDomainCertificateRequest.cc
 	src/model/SetLiveDomainCertificateResult.cc
+	src/model/SetLiveDomainSpecialConfigRequest.cc
+	src/model/SetLiveDomainSpecialConfigResult.cc
 	src/model/SetLiveDomainStagingConfigRequest.cc
 	src/model/SetLiveDomainStagingConfigResult.cc
 	src/model/SetLiveEdgeTransferRequest.cc

@@ -51,13 +51,13 @@ namespace AlibabaCloud
 						std::string ossObjectPrefix;
 					};
 					std::string streamName;
-					std::string endTime;
 					std::string ossEndpoint;
+					std::string endTime;
 					std::string domainName;
 					std::string createTime;
 					std::vector<std::string> transcodeTemplates;
-					std::string startTime;
 					std::string ossBucket;
+					std::string startTime;
 					std::vector<LiveAppRecord::RecordFormat> recordFormatList;
 					std::vector<LiveAppRecord::RecordFormat> transcodeRecordFormatList;
 					int onDemond;
@@ -71,8 +71,8 @@ namespace AlibabaCloud
 				std::string getOrder()const;
 				int getTotalNum()const;
 				int getPageNum()const;
-				int getTotalPage()const;
 				int getPageSize()const;
+				int getTotalPage()const;
 				std::vector<LiveAppRecord> getLiveAppRecordList()const;
 
 			protected:
@@ -81,8 +81,8 @@ namespace AlibabaCloud
 				std::string order_;
 				int totalNum_;
 				int pageNum_;
-				int totalPage_;
 				int pageSize_;
+				int totalPage_;
 				std::vector<LiveAppRecord> liveAppRecordList_;
 
 			};

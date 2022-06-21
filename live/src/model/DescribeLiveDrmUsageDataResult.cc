@@ -43,16 +43,16 @@ void DescribeLiveDrmUsageDataResult::parse(const std::string &payload)
 	for (auto valueDrmUsageDataDataModule : allDrmUsageDataNode)
 	{
 		DataModule drmUsageDataObject;
-		if(!valueDrmUsageDataDataModule["Domain"].isNull())
-			drmUsageDataObject.domain = valueDrmUsageDataDataModule["Domain"].asString();
 		if(!valueDrmUsageDataDataModule["TimeStamp"].isNull())
 			drmUsageDataObject.timeStamp = valueDrmUsageDataDataModule["TimeStamp"].asString();
-		if(!valueDrmUsageDataDataModule["Count"].isNull())
-			drmUsageDataObject.count = std::stol(valueDrmUsageDataDataModule["Count"].asString());
-		if(!valueDrmUsageDataDataModule["DrmType"].isNull())
-			drmUsageDataObject.drmType = valueDrmUsageDataDataModule["DrmType"].asString();
+		if(!valueDrmUsageDataDataModule["Domain"].isNull())
+			drmUsageDataObject.domain = valueDrmUsageDataDataModule["Domain"].asString();
 		if(!valueDrmUsageDataDataModule["Region"].isNull())
 			drmUsageDataObject.region = valueDrmUsageDataDataModule["Region"].asString();
+		if(!valueDrmUsageDataDataModule["DrmType"].isNull())
+			drmUsageDataObject.drmType = valueDrmUsageDataDataModule["DrmType"].asString();
+		if(!valueDrmUsageDataDataModule["Count"].isNull())
+			drmUsageDataObject.count = std::stol(valueDrmUsageDataDataModule["Count"].asString());
 		drmUsageData_.push_back(drmUsageDataObject);
 	}
 

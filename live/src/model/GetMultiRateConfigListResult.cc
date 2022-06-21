@@ -43,20 +43,20 @@ void GetMultiRateConfigListResult::parse(const std::string &payload)
 	for (auto valueGroupInfoInfo : allGroupInfoNode)
 	{
 		Info groupInfoObject;
-		if(!valueGroupInfoInfo["GroupId"].isNull())
-			groupInfoObject.groupId = valueGroupInfoInfo["GroupId"].asString();
-		if(!valueGroupInfoInfo["Count"].isNull())
-			groupInfoObject.count = std::stoi(valueGroupInfoInfo["Count"].asString());
 		if(!valueGroupInfoInfo["App"].isNull())
 			groupInfoObject.app = valueGroupInfoInfo["App"].asString();
 		if(!valueGroupInfoInfo["AvFormat"].isNull())
 			groupInfoObject.avFormat = valueGroupInfoInfo["AvFormat"].asString();
+		if(!valueGroupInfoInfo["GroupId"].isNull())
+			groupInfoObject.groupId = valueGroupInfoInfo["GroupId"].asString();
+		if(!valueGroupInfoInfo["Count"].isNull())
+			groupInfoObject.count = std::stoi(valueGroupInfoInfo["Count"].asString());
 		groupInfo_.push_back(groupInfoObject);
 	}
-	if(!value["Code"].isNull())
-		code_ = std::stoi(value["Code"].asString());
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Code"].isNull())
+		code_ = std::stoi(value["Code"].asString());
 
 }
 

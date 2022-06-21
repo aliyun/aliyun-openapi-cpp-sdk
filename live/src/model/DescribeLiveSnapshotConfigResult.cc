@@ -43,36 +43,36 @@ void DescribeLiveSnapshotConfigResult::parse(const std::string &payload)
 	for (auto valueLiveStreamSnapshotConfigListLiveStreamSnapshotConfig : allLiveStreamSnapshotConfigListNode)
 	{
 		LiveStreamSnapshotConfig liveStreamSnapshotConfigListObject;
-		if(!valueLiveStreamSnapshotConfigListLiveStreamSnapshotConfig["OverwriteOssObject"].isNull())
-			liveStreamSnapshotConfigListObject.overwriteOssObject = valueLiveStreamSnapshotConfigListLiveStreamSnapshotConfig["OverwriteOssObject"].asString();
-		if(!valueLiveStreamSnapshotConfigListLiveStreamSnapshotConfig["TimeInterval"].isNull())
-			liveStreamSnapshotConfigListObject.timeInterval = std::stoi(valueLiveStreamSnapshotConfigListLiveStreamSnapshotConfig["TimeInterval"].asString());
-		if(!valueLiveStreamSnapshotConfigListLiveStreamSnapshotConfig["AppName"].isNull())
-			liveStreamSnapshotConfigListObject.appName = valueLiveStreamSnapshotConfigListLiveStreamSnapshotConfig["AppName"].asString();
-		if(!valueLiveStreamSnapshotConfigListLiveStreamSnapshotConfig["CreateTime"].isNull())
-			liveStreamSnapshotConfigListObject.createTime = valueLiveStreamSnapshotConfigListLiveStreamSnapshotConfig["CreateTime"].asString();
-		if(!valueLiveStreamSnapshotConfigListLiveStreamSnapshotConfig["OssBucket"].isNull())
-			liveStreamSnapshotConfigListObject.ossBucket = valueLiveStreamSnapshotConfigListLiveStreamSnapshotConfig["OssBucket"].asString();
 		if(!valueLiveStreamSnapshotConfigListLiveStreamSnapshotConfig["DomainName"].isNull())
 			liveStreamSnapshotConfigListObject.domainName = valueLiveStreamSnapshotConfigListLiveStreamSnapshotConfig["DomainName"].asString();
-		if(!valueLiveStreamSnapshotConfigListLiveStreamSnapshotConfig["Callback"].isNull())
-			liveStreamSnapshotConfigListObject.callback = valueLiveStreamSnapshotConfigListLiveStreamSnapshotConfig["Callback"].asString();
-		if(!valueLiveStreamSnapshotConfigListLiveStreamSnapshotConfig["SequenceOssObject"].isNull())
-			liveStreamSnapshotConfigListObject.sequenceOssObject = valueLiveStreamSnapshotConfigListLiveStreamSnapshotConfig["SequenceOssObject"].asString();
+		if(!valueLiveStreamSnapshotConfigListLiveStreamSnapshotConfig["AppName"].isNull())
+			liveStreamSnapshotConfigListObject.appName = valueLiveStreamSnapshotConfigListLiveStreamSnapshotConfig["AppName"].asString();
+		if(!valueLiveStreamSnapshotConfigListLiveStreamSnapshotConfig["TimeInterval"].isNull())
+			liveStreamSnapshotConfigListObject.timeInterval = std::stoi(valueLiveStreamSnapshotConfigListLiveStreamSnapshotConfig["TimeInterval"].asString());
 		if(!valueLiveStreamSnapshotConfigListLiveStreamSnapshotConfig["OssEndpoint"].isNull())
 			liveStreamSnapshotConfigListObject.ossEndpoint = valueLiveStreamSnapshotConfigListLiveStreamSnapshotConfig["OssEndpoint"].asString();
+		if(!valueLiveStreamSnapshotConfigListLiveStreamSnapshotConfig["OssBucket"].isNull())
+			liveStreamSnapshotConfigListObject.ossBucket = valueLiveStreamSnapshotConfigListLiveStreamSnapshotConfig["OssBucket"].asString();
+		if(!valueLiveStreamSnapshotConfigListLiveStreamSnapshotConfig["OverwriteOssObject"].isNull())
+			liveStreamSnapshotConfigListObject.overwriteOssObject = valueLiveStreamSnapshotConfigListLiveStreamSnapshotConfig["OverwriteOssObject"].asString();
+		if(!valueLiveStreamSnapshotConfigListLiveStreamSnapshotConfig["SequenceOssObject"].isNull())
+			liveStreamSnapshotConfigListObject.sequenceOssObject = valueLiveStreamSnapshotConfigListLiveStreamSnapshotConfig["SequenceOssObject"].asString();
+		if(!valueLiveStreamSnapshotConfigListLiveStreamSnapshotConfig["CreateTime"].isNull())
+			liveStreamSnapshotConfigListObject.createTime = valueLiveStreamSnapshotConfigListLiveStreamSnapshotConfig["CreateTime"].asString();
+		if(!valueLiveStreamSnapshotConfigListLiveStreamSnapshotConfig["Callback"].isNull())
+			liveStreamSnapshotConfigListObject.callback = valueLiveStreamSnapshotConfigListLiveStreamSnapshotConfig["Callback"].asString();
 		liveStreamSnapshotConfigList_.push_back(liveStreamSnapshotConfigListObject);
 	}
 	if(!value["PageNum"].isNull())
 		pageNum_ = std::stoi(value["PageNum"].asString());
-	if(!value["Order"].isNull())
-		order_ = value["Order"].asString();
-	if(!value["TotalPage"].isNull())
-		totalPage_ = std::stoi(value["TotalPage"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["Order"].isNull())
+		order_ = value["Order"].asString();
 	if(!value["TotalNum"].isNull())
 		totalNum_ = std::stoi(value["TotalNum"].asString());
+	if(!value["TotalPage"].isNull())
+		totalPage_ = std::stoi(value["TotalPage"].asString());
 
 }
 
@@ -91,14 +91,14 @@ int DescribeLiveSnapshotConfigResult::getPageNum()const
 	return pageNum_;
 }
 
-int DescribeLiveSnapshotConfigResult::getTotalPage()const
-{
-	return totalPage_;
-}
-
 int DescribeLiveSnapshotConfigResult::getPageSize()const
 {
 	return pageSize_;
+}
+
+int DescribeLiveSnapshotConfigResult::getTotalPage()const
+{
+	return totalPage_;
 }
 
 std::vector<DescribeLiveSnapshotConfigResult::LiveStreamSnapshotConfig> DescribeLiveSnapshotConfigResult::getLiveStreamSnapshotConfigList()const

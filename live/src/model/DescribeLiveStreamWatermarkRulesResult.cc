@@ -43,20 +43,20 @@ void DescribeLiveStreamWatermarkRulesResult::parse(const std::string &payload)
 	for (auto valueRuleInfoListRuleInfo : allRuleInfoListNode)
 	{
 		RuleInfo ruleInfoListObject;
+		if(!valueRuleInfoListRuleInfo["RuleId"].isNull())
+			ruleInfoListObject.ruleId = valueRuleInfoListRuleInfo["RuleId"].asString();
+		if(!valueRuleInfoListRuleInfo["Name"].isNull())
+			ruleInfoListObject.name = valueRuleInfoListRuleInfo["Name"].asString();
 		if(!valueRuleInfoListRuleInfo["Domain"].isNull())
 			ruleInfoListObject.domain = valueRuleInfoListRuleInfo["Domain"].asString();
-		if(!valueRuleInfoListRuleInfo["Description"].isNull())
-			ruleInfoListObject.description = valueRuleInfoListRuleInfo["Description"].asString();
 		if(!valueRuleInfoListRuleInfo["App"].isNull())
 			ruleInfoListObject.app = valueRuleInfoListRuleInfo["App"].asString();
 		if(!valueRuleInfoListRuleInfo["Stream"].isNull())
 			ruleInfoListObject.stream = valueRuleInfoListRuleInfo["Stream"].asString();
-		if(!valueRuleInfoListRuleInfo["Name"].isNull())
-			ruleInfoListObject.name = valueRuleInfoListRuleInfo["Name"].asString();
 		if(!valueRuleInfoListRuleInfo["TemplateId"].isNull())
 			ruleInfoListObject.templateId = valueRuleInfoListRuleInfo["TemplateId"].asString();
-		if(!valueRuleInfoListRuleInfo["RuleId"].isNull())
-			ruleInfoListObject.ruleId = valueRuleInfoListRuleInfo["RuleId"].asString();
+		if(!valueRuleInfoListRuleInfo["Description"].isNull())
+			ruleInfoListObject.description = valueRuleInfoListRuleInfo["Description"].asString();
 		ruleInfoList_.push_back(ruleInfoListObject);
 	}
 

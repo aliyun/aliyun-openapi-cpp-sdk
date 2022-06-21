@@ -39,10 +39,10 @@ void InitializeAutoShowListTaskResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["StreamList"].isNull())
-		streamList_ = value["StreamList"].asString();
 	if(!value["CasterId"].isNull())
 		casterId_ = value["CasterId"].asString();
+	if(!value["StreamList"].isNull())
+		streamList_ = value["StreamList"].asString();
 
 }
 

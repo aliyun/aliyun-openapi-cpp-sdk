@@ -43,14 +43,14 @@ void DescribeLiveDomainFrameRateAndBitRateDataResult::parse(const std::string &p
 	for (auto valueFrameRateAndBitRateInfosFrameRateAndBitRateInfo : allFrameRateAndBitRateInfosNode)
 	{
 		FrameRateAndBitRateInfo frameRateAndBitRateInfosObject;
-		if(!valueFrameRateAndBitRateInfosFrameRateAndBitRateInfo["VideoFrameRate"].isNull())
-			frameRateAndBitRateInfosObject.videoFrameRate = std::stof(valueFrameRateAndBitRateInfosFrameRateAndBitRateInfo["VideoFrameRate"].asString());
-		if(!valueFrameRateAndBitRateInfosFrameRateAndBitRateInfo["StreamUrl"].isNull())
-			frameRateAndBitRateInfosObject.streamUrl = valueFrameRateAndBitRateInfosFrameRateAndBitRateInfo["StreamUrl"].asString();
 		if(!valueFrameRateAndBitRateInfosFrameRateAndBitRateInfo["AudioFrameRate"].isNull())
 			frameRateAndBitRateInfosObject.audioFrameRate = std::stof(valueFrameRateAndBitRateInfosFrameRateAndBitRateInfo["AudioFrameRate"].asString());
 		if(!valueFrameRateAndBitRateInfosFrameRateAndBitRateInfo["BitRate"].isNull())
 			frameRateAndBitRateInfosObject.bitRate = std::stof(valueFrameRateAndBitRateInfosFrameRateAndBitRateInfo["BitRate"].asString());
+		if(!valueFrameRateAndBitRateInfosFrameRateAndBitRateInfo["VideoFrameRate"].isNull())
+			frameRateAndBitRateInfosObject.videoFrameRate = std::stof(valueFrameRateAndBitRateInfosFrameRateAndBitRateInfo["VideoFrameRate"].asString());
+		if(!valueFrameRateAndBitRateInfosFrameRateAndBitRateInfo["StreamUrl"].isNull())
+			frameRateAndBitRateInfosObject.streamUrl = valueFrameRateAndBitRateInfosFrameRateAndBitRateInfo["StreamUrl"].asString();
 		frameRateAndBitRateInfos_.push_back(frameRateAndBitRateInfosObject);
 	}
 

@@ -39,8 +39,8 @@ namespace AlibabaCloud
 				~DescribeLiveStreamsBlockListResult();
 				int getTotalNum()const;
 				int getPageNum()const;
-				int getTotalPage()const;
 				int getPageSize()const;
+				int getTotalPage()const;
 				std::string getDomainName()const;
 				std::vector<std::string> getStreamUrls()const;
 
@@ -49,8 +49,8 @@ namespace AlibabaCloud
 			private:
 				int totalNum_;
 				int pageNum_;
-				int totalPage_;
 				int pageSize_;
+				int totalPage_;
 				std::string domainName_;
 				std::vector<std::string> streamUrls_;
 

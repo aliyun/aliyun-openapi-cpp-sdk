@@ -45,32 +45,32 @@ void DescribeCastersResult::parse(const std::string &payload)
 		Caster casterListObject;
 		if(!valueCasterListCaster["Status"].isNull())
 			casterListObject.status = std::stoi(valueCasterListCaster["Status"].asString());
+		if(!valueCasterListCaster["NormType"].isNull())
+			casterListObject.normType = std::stoi(valueCasterListCaster["NormType"].asString());
+		if(!valueCasterListCaster["CasterId"].isNull())
+			casterListObject.casterId = valueCasterListCaster["CasterId"].asString();
+		if(!valueCasterListCaster["CasterName"].isNull())
+			casterListObject.casterName = valueCasterListCaster["CasterName"].asString();
+		if(!valueCasterListCaster["CreateTime"].isNull())
+			casterListObject.createTime = valueCasterListCaster["CreateTime"].asString();
+		if(!valueCasterListCaster["StartTime"].isNull())
+			casterListObject.startTime = valueCasterListCaster["StartTime"].asString();
 		if(!valueCasterListCaster["PurchaseTime"].isNull())
 			casterListObject.purchaseTime = valueCasterListCaster["PurchaseTime"].asString();
 		if(!valueCasterListCaster["ExpireTime"].isNull())
 			casterListObject.expireTime = valueCasterListCaster["ExpireTime"].asString();
-		if(!valueCasterListCaster["CreateTime"].isNull())
-			casterListObject.createTime = valueCasterListCaster["CreateTime"].asString();
-		if(!valueCasterListCaster["CasterName"].isNull())
-			casterListObject.casterName = valueCasterListCaster["CasterName"].asString();
 		if(!valueCasterListCaster["ChargeType"].isNull())
 			casterListObject.chargeType = valueCasterListCaster["ChargeType"].asString();
 		if(!valueCasterListCaster["CasterTemplate"].isNull())
 			casterListObject.casterTemplate = valueCasterListCaster["CasterTemplate"].asString();
-		if(!valueCasterListCaster["RoomId"].isNull())
-			casterListObject.roomId = std::stoi(valueCasterListCaster["RoomId"].asString());
-		if(!valueCasterListCaster["CasterId"].isNull())
-			casterListObject.casterId = valueCasterListCaster["CasterId"].asString();
 		if(!valueCasterListCaster["ChannelEnable"].isNull())
 			casterListObject.channelEnable = std::stoi(valueCasterListCaster["ChannelEnable"].asString());
 		if(!valueCasterListCaster["LastModified"].isNull())
 			casterListObject.lastModified = valueCasterListCaster["LastModified"].asString();
-		if(!valueCasterListCaster["StartTime"].isNull())
-			casterListObject.startTime = valueCasterListCaster["StartTime"].asString();
-		if(!valueCasterListCaster["NormType"].isNull())
-			casterListObject.normType = std::stoi(valueCasterListCaster["NormType"].asString());
 		if(!valueCasterListCaster["Duration"].isNull())
 			casterListObject.duration = valueCasterListCaster["Duration"].asString();
+		if(!valueCasterListCaster["RoomId"].isNull())
+			casterListObject.roomId = std::stoi(valueCasterListCaster["RoomId"].asString());
 		casterList_.push_back(casterListObject);
 	}
 	if(!value["Total"].isNull())

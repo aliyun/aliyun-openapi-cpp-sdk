@@ -43,22 +43,22 @@ void DescribeLiveStreamMonitorListResult::parse(const std::string &payload)
 	for (auto valueLiveStreamMonitorListLiveStreamMonitorInfo : allLiveStreamMonitorListNode)
 	{
 		LiveStreamMonitorInfo liveStreamMonitorListObject;
-		if(!valueLiveStreamMonitorListLiveStreamMonitorInfo["Status"].isNull())
-			liveStreamMonitorListObject.status = std::stoi(valueLiveStreamMonitorListLiveStreamMonitorInfo["Status"].asString());
-		if(!valueLiveStreamMonitorListLiveStreamMonitorInfo["StartTime"].isNull())
-			liveStreamMonitorListObject.startTime = valueLiveStreamMonitorListLiveStreamMonitorInfo["StartTime"].asString();
 		if(!valueLiveStreamMonitorListLiveStreamMonitorInfo["MonitorId"].isNull())
 			liveStreamMonitorListObject.monitorId = valueLiveStreamMonitorListLiveStreamMonitorInfo["MonitorId"].asString();
+		if(!valueLiveStreamMonitorListLiveStreamMonitorInfo["MonitorName"].isNull())
+			liveStreamMonitorListObject.monitorName = valueLiveStreamMonitorListLiveStreamMonitorInfo["MonitorName"].asString();
 		if(!valueLiveStreamMonitorListLiveStreamMonitorInfo["Domain"].isNull())
 			liveStreamMonitorListObject.domain = valueLiveStreamMonitorListLiveStreamMonitorInfo["Domain"].asString();
 		if(!valueLiveStreamMonitorListLiveStreamMonitorInfo["OutputTemplate"].isNull())
 			liveStreamMonitorListObject.outputTemplate = valueLiveStreamMonitorListLiveStreamMonitorInfo["OutputTemplate"].asString();
+		if(!valueLiveStreamMonitorListLiveStreamMonitorInfo["Status"].isNull())
+			liveStreamMonitorListObject.status = std::stoi(valueLiveStreamMonitorListLiveStreamMonitorInfo["Status"].asString());
 		if(!valueLiveStreamMonitorListLiveStreamMonitorInfo["Region"].isNull())
 			liveStreamMonitorListObject.region = valueLiveStreamMonitorListLiveStreamMonitorInfo["Region"].asString();
 		if(!valueLiveStreamMonitorListLiveStreamMonitorInfo["AudioFrom"].isNull())
 			liveStreamMonitorListObject.audioFrom = std::stoi(valueLiveStreamMonitorListLiveStreamMonitorInfo["AudioFrom"].asString());
-		if(!valueLiveStreamMonitorListLiveStreamMonitorInfo["MonitorName"].isNull())
-			liveStreamMonitorListObject.monitorName = valueLiveStreamMonitorListLiveStreamMonitorInfo["MonitorName"].asString();
+		if(!valueLiveStreamMonitorListLiveStreamMonitorInfo["StartTime"].isNull())
+			liveStreamMonitorListObject.startTime = valueLiveStreamMonitorListLiveStreamMonitorInfo["StartTime"].asString();
 		if(!valueLiveStreamMonitorListLiveStreamMonitorInfo["StopTime"].isNull())
 			liveStreamMonitorListObject.stopTime = valueLiveStreamMonitorListLiveStreamMonitorInfo["StopTime"].asString();
 		auto allInputListNode = valueLiveStreamMonitorListLiveStreamMonitorInfo["InputList"]["InputConfig"];
@@ -67,12 +67,12 @@ void DescribeLiveStreamMonitorListResult::parse(const std::string &payload)
 			LiveStreamMonitorInfo::InputConfig inputListObject;
 			if(!valueLiveStreamMonitorListLiveStreamMonitorInfoInputListInputConfig["Index"].isNull())
 				inputListObject.index = std::stoi(valueLiveStreamMonitorListLiveStreamMonitorInfoInputListInputConfig["Index"].asString());
-			if(!valueLiveStreamMonitorListLiveStreamMonitorInfoInputListInputConfig["InputUrl"].isNull())
-				inputListObject.inputUrl = valueLiveStreamMonitorListLiveStreamMonitorInfoInputListInputConfig["InputUrl"].asString();
 			if(!valueLiveStreamMonitorListLiveStreamMonitorInfoInputListInputConfig["LayoutId"].isNull())
 				inputListObject.layoutId = std::stoi(valueLiveStreamMonitorListLiveStreamMonitorInfoInputListInputConfig["LayoutId"].asString());
 			if(!valueLiveStreamMonitorListLiveStreamMonitorInfoInputListInputConfig["StreamName"].isNull())
 				inputListObject.streamName = valueLiveStreamMonitorListLiveStreamMonitorInfoInputListInputConfig["StreamName"].asString();
+			if(!valueLiveStreamMonitorListLiveStreamMonitorInfoInputListInputConfig["InputUrl"].isNull())
+				inputListObject.inputUrl = valueLiveStreamMonitorListLiveStreamMonitorInfoInputListInputConfig["InputUrl"].asString();
 			auto layoutConfigNode = value["LayoutConfig"];
 			if(!layoutConfigNode["FillMode"].isNull())
 				inputListObject.layoutConfig.fillMode = layoutConfigNode["FillMode"].asString();
@@ -90,10 +90,10 @@ void DescribeLiveStreamMonitorListResult::parse(const std::string &payload)
 			liveStreamMonitorListObject.inputList.push_back(inputListObject);
 		}
 		auto outputUrlsNode = value["OutputUrls"];
-		if(!outputUrlsNode["FlvUrl"].isNull())
-			liveStreamMonitorListObject.outputUrls.flvUrl = outputUrlsNode["FlvUrl"].asString();
 		if(!outputUrlsNode["RtmpUrl"].isNull())
 			liveStreamMonitorListObject.outputUrls.rtmpUrl = outputUrlsNode["RtmpUrl"].asString();
+		if(!outputUrlsNode["FlvUrl"].isNull())
+			liveStreamMonitorListObject.outputUrls.flvUrl = outputUrlsNode["FlvUrl"].asString();
 		liveStreamMonitorList_.push_back(liveStreamMonitorListObject);
 	}
 	if(!value["Total"].isNull())

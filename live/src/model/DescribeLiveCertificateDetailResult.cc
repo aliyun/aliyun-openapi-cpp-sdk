@@ -39,12 +39,12 @@ void DescribeLiveCertificateDetailResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["CertName"].isNull())
-		certName_ = value["CertName"].asString();
 	if(!value["Cert"].isNull())
 		cert_ = value["Cert"].asString();
 	if(!value["CertId"].isNull())
 		certId_ = std::stol(value["CertId"].asString());
+	if(!value["CertName"].isNull())
+		certName_ = value["CertName"].asString();
 
 }
 
@@ -53,13 +53,13 @@ long DescribeLiveCertificateDetailResult::getCertId()const
 	return certId_;
 }
 
-std::string DescribeLiveCertificateDetailResult::getCertName()const
-{
-	return certName_;
-}
-
 std::string DescribeLiveCertificateDetailResult::getCert()const
 {
 	return cert_;
+}
+
+std::string DescribeLiveCertificateDetailResult::getCertName()const
+{
+	return certName_;
 }
 

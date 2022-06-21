@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,100 +18,122 @@
 
 using AlibabaCloud::Live::Model::DescribeCastersRequest;
 
-DescribeCastersRequest::DescribeCastersRequest()
-    : RpcServiceRequest("live", "2016-11-01", "DescribeCasters") {
-  setMethod(HttpRequest::Method::Post);
+DescribeCastersRequest::DescribeCastersRequest() :
+	RpcServiceRequest("live", "2016-11-01", "DescribeCasters")
+{
+	setMethod(HttpRequest::Method::Post);
 }
 
-DescribeCastersRequest::~DescribeCastersRequest() {}
+DescribeCastersRequest::~DescribeCastersRequest()
+{}
 
-std::string DescribeCastersRequest::getStartTime() const {
-  return startTime_;
+std::string DescribeCastersRequest::getStartTime()const
+{
+	return startTime_;
 }
 
-void DescribeCastersRequest::setStartTime(const std::string &startTime) {
-  startTime_ = startTime;
-  setParameter(std::string("StartTime"), startTime);
+void DescribeCastersRequest::setStartTime(const std::string& startTime)
+{
+	startTime_ = startTime;
+	setParameter("StartTime", startTime);
 }
 
-int DescribeCastersRequest::getPageNum() const {
-  return pageNum_;
+int DescribeCastersRequest::getPageNum()const
+{
+	return pageNum_;
 }
 
-void DescribeCastersRequest::setPageNum(int pageNum) {
-  pageNum_ = pageNum;
-  setParameter(std::string("PageNum"), std::to_string(pageNum));
+void DescribeCastersRequest::setPageNum(int pageNum)
+{
+	pageNum_ = pageNum;
+	setParameter("PageNum", std::to_string(pageNum));
 }
 
-std::string DescribeCastersRequest::getCasterName() const {
-  return casterName_;
+std::string DescribeCastersRequest::getCasterName()const
+{
+	return casterName_;
 }
 
-void DescribeCastersRequest::setCasterName(const std::string &casterName) {
-  casterName_ = casterName;
-  setParameter(std::string("CasterName"), casterName);
+void DescribeCastersRequest::setCasterName(const std::string& casterName)
+{
+	casterName_ = casterName;
+	setParameter("CasterName", casterName);
 }
 
-int DescribeCastersRequest::getPageSize() const {
-  return pageSize_;
+int DescribeCastersRequest::getPageSize()const
+{
+	return pageSize_;
 }
 
-void DescribeCastersRequest::setPageSize(int pageSize) {
-  pageSize_ = pageSize;
-  setParameter(std::string("PageSize"), std::to_string(pageSize));
+void DescribeCastersRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
-std::string DescribeCastersRequest::getCasterId() const {
-  return casterId_;
+std::string DescribeCastersRequest::getCasterId()const
+{
+	return casterId_;
 }
 
-void DescribeCastersRequest::setCasterId(const std::string &casterId) {
-  casterId_ = casterId;
-  setParameter(std::string("CasterId"), casterId);
+void DescribeCastersRequest::setCasterId(const std::string& casterId)
+{
+	casterId_ = casterId;
+	setParameter("CasterId", casterId);
 }
 
-std::string DescribeCastersRequest::getEndTime() const {
-  return endTime_;
+std::string DescribeCastersRequest::getEndTime()const
+{
+	return endTime_;
 }
 
-void DescribeCastersRequest::setEndTime(const std::string &endTime) {
-  endTime_ = endTime;
-  setParameter(std::string("EndTime"), endTime);
+void DescribeCastersRequest::setEndTime(const std::string& endTime)
+{
+	endTime_ = endTime;
+	setParameter("EndTime", endTime);
 }
 
-long DescribeCastersRequest::getOwnerId() const {
-  return ownerId_;
+long DescribeCastersRequest::getOwnerId()const
+{
+	return ownerId_;
 }
 
-void DescribeCastersRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
+void DescribeCastersRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string DescribeCastersRequest::getOrderByModifyAsc() const {
-  return orderByModifyAsc_;
+std::string DescribeCastersRequest::getOrderByModifyAsc()const
+{
+	return orderByModifyAsc_;
 }
 
-void DescribeCastersRequest::setOrderByModifyAsc(const std::string &orderByModifyAsc) {
-  orderByModifyAsc_ = orderByModifyAsc;
-  setParameter(std::string("OrderByModifyAsc"), orderByModifyAsc);
+void DescribeCastersRequest::setOrderByModifyAsc(const std::string& orderByModifyAsc)
+{
+	orderByModifyAsc_ = orderByModifyAsc;
+	setParameter("OrderByModifyAsc", orderByModifyAsc);
 }
 
-int DescribeCastersRequest::getChargeType() const {
-  return chargeType_;
+int DescribeCastersRequest::getChargeType()const
+{
+	return chargeType_;
 }
 
-void DescribeCastersRequest::setChargeType(int chargeType) {
-  chargeType_ = chargeType;
-  setParameter(std::string("ChargeType"), std::to_string(chargeType));
+void DescribeCastersRequest::setChargeType(int chargeType)
+{
+	chargeType_ = chargeType;
+	setParameter("ChargeType", std::to_string(chargeType));
 }
 
-int DescribeCastersRequest::getStatus() const {
-  return status_;
+int DescribeCastersRequest::getStatus()const
+{
+	return status_;
 }
 
-void DescribeCastersRequest::setStatus(int status) {
-  status_ = status;
-  setParameter(std::string("Status"), std::to_string(status));
+void DescribeCastersRequest::setStatus(int status)
+{
+	status_ = status;
+	setParameter("Status", std::to_string(status));
 }
 

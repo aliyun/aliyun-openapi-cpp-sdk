@@ -57,8 +57,8 @@ namespace AlibabaCloud
 				std::string getOrder()const;
 				int getTotalNum()const;
 				int getPageNum()const;
-				int getTotalPage()const;
 				int getPageSize()const;
+				int getTotalPage()const;
 				std::vector<RecordIndexInfo> getRecordIndexInfoList()const;
 
 			protected:
@@ -67,8 +67,8 @@ namespace AlibabaCloud
 				std::string order_;
 				int totalNum_;
 				int pageNum_;
-				int totalPage_;
 				int pageSize_;
+				int totalPage_;
 				std::vector<RecordIndexInfo> recordIndexInfoList_;
 
 			};

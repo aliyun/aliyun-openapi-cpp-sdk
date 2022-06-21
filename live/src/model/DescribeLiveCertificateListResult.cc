@@ -46,18 +46,18 @@ void DescribeLiveCertificateListResult::parse(const std::string &payload)
 	for (auto certificateListModelNodeCertListCert : allCertListNode)
 	{
 		CertificateListModel::Cert certObject;
-		if(!certificateListModelNodeCertListCert["LastTime"].isNull())
-			certObject.lastTime = std::stol(certificateListModelNodeCertListCert["LastTime"].asString());
-		if(!certificateListModelNodeCertListCert["Fingerprint"].isNull())
-			certObject.fingerprint = certificateListModelNodeCertListCert["Fingerprint"].asString();
 		if(!certificateListModelNodeCertListCert["CertName"].isNull())
 			certObject.certName = certificateListModelNodeCertListCert["CertName"].asString();
-		if(!certificateListModelNodeCertListCert["Issuer"].isNull())
-			certObject.issuer = certificateListModelNodeCertListCert["Issuer"].asString();
 		if(!certificateListModelNodeCertListCert["CertId"].isNull())
 			certObject.certId = std::stol(certificateListModelNodeCertListCert["CertId"].asString());
+		if(!certificateListModelNodeCertListCert["Fingerprint"].isNull())
+			certObject.fingerprint = certificateListModelNodeCertListCert["Fingerprint"].asString();
 		if(!certificateListModelNodeCertListCert["Common"].isNull())
 			certObject.common = certificateListModelNodeCertListCert["Common"].asString();
+		if(!certificateListModelNodeCertListCert["Issuer"].isNull())
+			certObject.issuer = certificateListModelNodeCertListCert["Issuer"].asString();
+		if(!certificateListModelNodeCertListCert["LastTime"].isNull())
+			certObject.lastTime = std::stol(certificateListModelNodeCertListCert["LastTime"].asString());
 		certificateListModel_.certList.push_back(certObject);
 	}
 

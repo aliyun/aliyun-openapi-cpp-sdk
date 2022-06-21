@@ -43,8 +43,8 @@ namespace AlibabaCloud
 					struct StreamInfo
 					{
 						std::string outputStreamUrl;
-						std::string videoFormat;
 						std::string transcodeConfig;
+						std::string videoFormat;
 					};
 					std::string sceneId;
 					std::vector<SceneInfo1::StreamInfo> streamInfos;

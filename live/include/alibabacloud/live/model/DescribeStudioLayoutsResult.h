@@ -36,8 +36,8 @@ namespace AlibabaCloud
 				{
 					struct CommonConfig
 					{
-						std::string channelId;
 						std::string videoResourceId;
+						std::string channelId;
 					};
 					struct BgImageConfig
 					{
@@ -56,8 +56,8 @@ namespace AlibabaCloud
 						std::string positionY;
 						std::string color;
 						AudioConfig audioConfig;
-						int portraitType;
 						float heightNormalized;
+						int portraitType;
 						int index;
 						std::string id;
 						std::string channelId;

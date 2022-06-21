@@ -43,40 +43,40 @@ void AddMultiRateConfigResult::parse(const std::string &payload)
 	for (auto valueBodyFailedTemplates : allBodyNode)
 	{
 		FailedTemplates bodyObject;
-		if(!valueBodyFailedTemplates["AudioBitrate"].isNull())
-			bodyObject.audioBitrate = std::stoi(valueBodyFailedTemplates["AudioBitrate"].asString());
 		if(!valueBodyFailedTemplates["Template"].isNull())
 			bodyObject._template = valueBodyFailedTemplates["Template"].asString();
-		if(!valueBodyFailedTemplates["Height"].isNull())
-			bodyObject.height = std::stoi(valueBodyFailedTemplates["Height"].asString());
 		if(!valueBodyFailedTemplates["TemplateType"].isNull())
 			bodyObject.templateType = valueBodyFailedTemplates["TemplateType"].asString();
-		if(!valueBodyFailedTemplates["BandWidth"].isNull())
-			bodyObject.bandWidth = std::stoi(valueBodyFailedTemplates["BandWidth"].asString());
-		if(!valueBodyFailedTemplates["Profile"].isNull())
-			bodyObject.profile = std::stoi(valueBodyFailedTemplates["Profile"].asString());
-		if(!valueBodyFailedTemplates["AudioRate"].isNull())
-			bodyObject.audioRate = std::stoi(valueBodyFailedTemplates["AudioRate"].asString());
-		if(!valueBodyFailedTemplates["AudioCodec"].isNull())
-			bodyObject.audioCodec = valueBodyFailedTemplates["AudioCodec"].asString();
-		if(!valueBodyFailedTemplates["Gop"].isNull())
-			bodyObject.gop = valueBodyFailedTemplates["Gop"].asString();
+		if(!valueBodyFailedTemplates["Height"].isNull())
+			bodyObject.height = std::stoi(valueBodyFailedTemplates["Height"].asString());
 		if(!valueBodyFailedTemplates["Width"].isNull())
 			bodyObject.width = std::stoi(valueBodyFailedTemplates["Width"].asString());
-		if(!valueBodyFailedTemplates["VideoBitrate"].isNull())
-			bodyObject.videoBitrate = std::stoi(valueBodyFailedTemplates["VideoBitrate"].asString());
-		if(!valueBodyFailedTemplates["AudioChannelNum"].isNull())
-			bodyObject.audioChannelNum = std::stoi(valueBodyFailedTemplates["AudioChannelNum"].asString());
 		if(!valueBodyFailedTemplates["Fps"].isNull())
 			bodyObject.fps = std::stoi(valueBodyFailedTemplates["Fps"].asString());
+		if(!valueBodyFailedTemplates["Gop"].isNull())
+			bodyObject.gop = valueBodyFailedTemplates["Gop"].asString();
+		if(!valueBodyFailedTemplates["VideoBitrate"].isNull())
+			bodyObject.videoBitrate = std::stoi(valueBodyFailedTemplates["VideoBitrate"].asString());
+		if(!valueBodyFailedTemplates["Profile"].isNull())
+			bodyObject.profile = std::stoi(valueBodyFailedTemplates["Profile"].asString());
 		if(!valueBodyFailedTemplates["AudioProfile"].isNull())
 			bodyObject.audioProfile = valueBodyFailedTemplates["AudioProfile"].asString();
+		if(!valueBodyFailedTemplates["AudioCodec"].isNull())
+			bodyObject.audioCodec = valueBodyFailedTemplates["AudioCodec"].asString();
+		if(!valueBodyFailedTemplates["AudioRate"].isNull())
+			bodyObject.audioRate = std::stoi(valueBodyFailedTemplates["AudioRate"].asString());
+		if(!valueBodyFailedTemplates["AudioBitrate"].isNull())
+			bodyObject.audioBitrate = std::stoi(valueBodyFailedTemplates["AudioBitrate"].asString());
+		if(!valueBodyFailedTemplates["AudioChannelNum"].isNull())
+			bodyObject.audioChannelNum = std::stoi(valueBodyFailedTemplates["AudioChannelNum"].asString());
+		if(!valueBodyFailedTemplates["BandWidth"].isNull())
+			bodyObject.bandWidth = std::stoi(valueBodyFailedTemplates["BandWidth"].asString());
 		body_.push_back(bodyObject);
 	}
-	if(!value["Code"].isNull())
-		code_ = std::stoi(value["Code"].asString());
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Code"].isNull())
+		code_ = std::stoi(value["Code"].asString());
 
 }
 

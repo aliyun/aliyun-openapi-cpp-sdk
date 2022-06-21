@@ -158,6 +158,8 @@
 #include "model/DeleteLiveSpecificStagingConfigResult.h"
 #include "model/DeleteLiveStreamMonitorRequest.h"
 #include "model/DeleteLiveStreamMonitorResult.h"
+#include "model/DeleteLiveStreamRecordIndexFilesRequest.h"
+#include "model/DeleteLiveStreamRecordIndexFilesResult.h"
 #include "model/DeleteLiveStreamTranscodeRequest.h"
 #include "model/DeleteLiveStreamTranscodeResult.h"
 #include "model/DeleteLiveStreamWatermarkRequest.h"
@@ -178,6 +180,8 @@
 #include "model/DeleteRoomResult.h"
 #include "model/DeleteSnapshotCallbackAuthRequest.h"
 #include "model/DeleteSnapshotCallbackAuthResult.h"
+#include "model/DeleteSnapshotFilesRequest.h"
+#include "model/DeleteSnapshotFilesResult.h"
 #include "model/DeleteStudioLayoutRequest.h"
 #include "model/DeleteStudioLayoutResult.h"
 #include "model/DescribeAutoShowListTasksRequest.h"
@@ -266,12 +270,12 @@
 #include "model/DescribeLiveDomainRecordUsageDataResult.h"
 #include "model/DescribeLiveDomainSnapshotDataRequest.h"
 #include "model/DescribeLiveDomainSnapshotDataResult.h"
+#include "model/DescribeLiveDomainSpecialConfigRequest.h"
+#include "model/DescribeLiveDomainSpecialConfigResult.h"
 #include "model/DescribeLiveDomainStagingConfigRequest.h"
 #include "model/DescribeLiveDomainStagingConfigResult.h"
 #include "model/DescribeLiveDomainStreamTranscodeDataRequest.h"
 #include "model/DescribeLiveDomainStreamTranscodeDataResult.h"
-#include "model/DescribeLiveDomainStreamWaterLevelRequest.h"
-#include "model/DescribeLiveDomainStreamWaterLevelResult.h"
 #include "model/DescribeLiveDomainTimeShiftDataRequest.h"
 #include "model/DescribeLiveDomainTimeShiftDataResult.h"
 #include "model/DescribeLiveDomainTrafficDataRequest.h"
@@ -350,6 +354,8 @@
 #include "model/DescribeLiveUserBillPredictionResult.h"
 #include "model/DescribeLiveUserDomainsRequest.h"
 #include "model/DescribeLiveUserDomainsResult.h"
+#include "model/DescribeLiveUserQuotaRequest.h"
+#include "model/DescribeLiveUserQuotaResult.h"
 #include "model/DescribeLiveUserTagsRequest.h"
 #include "model/DescribeLiveUserTagsResult.h"
 #include "model/DescribeMixStreamListRequest.h"
@@ -402,6 +408,8 @@
 #include "model/GetMultiRateConfigResult.h"
 #include "model/GetMultiRateConfigListRequest.h"
 #include "model/GetMultiRateConfigListResult.h"
+#include "model/HotLiveRtcStreamRequest.h"
+#include "model/HotLiveRtcStreamResult.h"
 #include "model/InitializeAutoShowListTaskRequest.h"
 #include "model/InitializeAutoShowListTaskResult.h"
 #include "model/ListLiveRealtimeLogDeliveryRequest.h"
@@ -464,6 +472,8 @@
 #include "model/SetCasterSyncGroupResult.h"
 #include "model/SetLiveDomainCertificateRequest.h"
 #include "model/SetLiveDomainCertificateResult.h"
+#include "model/SetLiveDomainSpecialConfigRequest.h"
+#include "model/SetLiveDomainSpecialConfigResult.h"
 #include "model/SetLiveDomainStagingConfigRequest.h"
 #include "model/SetLiveDomainStagingConfigResult.h"
 #include "model/SetLiveEdgeTransferRequest.h"
@@ -745,6 +755,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteLiveStreamMonitorResult> DeleteLiveStreamMonitorOutcome;
 			typedef std::future<DeleteLiveStreamMonitorOutcome> DeleteLiveStreamMonitorOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DeleteLiveStreamMonitorRequest&, const DeleteLiveStreamMonitorOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLiveStreamMonitorAsyncHandler;
+			typedef Outcome<Error, Model::DeleteLiveStreamRecordIndexFilesResult> DeleteLiveStreamRecordIndexFilesOutcome;
+			typedef std::future<DeleteLiveStreamRecordIndexFilesOutcome> DeleteLiveStreamRecordIndexFilesOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DeleteLiveStreamRecordIndexFilesRequest&, const DeleteLiveStreamRecordIndexFilesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLiveStreamRecordIndexFilesAsyncHandler;
 			typedef Outcome<Error, Model::DeleteLiveStreamTranscodeResult> DeleteLiveStreamTranscodeOutcome;
 			typedef std::future<DeleteLiveStreamTranscodeOutcome> DeleteLiveStreamTranscodeOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DeleteLiveStreamTranscodeRequest&, const DeleteLiveStreamTranscodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLiveStreamTranscodeAsyncHandler;
@@ -775,6 +788,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteSnapshotCallbackAuthResult> DeleteSnapshotCallbackAuthOutcome;
 			typedef std::future<DeleteSnapshotCallbackAuthOutcome> DeleteSnapshotCallbackAuthOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DeleteSnapshotCallbackAuthRequest&, const DeleteSnapshotCallbackAuthOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSnapshotCallbackAuthAsyncHandler;
+			typedef Outcome<Error, Model::DeleteSnapshotFilesResult> DeleteSnapshotFilesOutcome;
+			typedef std::future<DeleteSnapshotFilesOutcome> DeleteSnapshotFilesOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DeleteSnapshotFilesRequest&, const DeleteSnapshotFilesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSnapshotFilesAsyncHandler;
 			typedef Outcome<Error, Model::DeleteStudioLayoutResult> DeleteStudioLayoutOutcome;
 			typedef std::future<DeleteStudioLayoutOutcome> DeleteStudioLayoutOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DeleteStudioLayoutRequest&, const DeleteStudioLayoutOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteStudioLayoutAsyncHandler;
@@ -907,15 +923,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeLiveDomainSnapshotDataResult> DescribeLiveDomainSnapshotDataOutcome;
 			typedef std::future<DescribeLiveDomainSnapshotDataOutcome> DescribeLiveDomainSnapshotDataOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DescribeLiveDomainSnapshotDataRequest&, const DescribeLiveDomainSnapshotDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveDomainSnapshotDataAsyncHandler;
+			typedef Outcome<Error, Model::DescribeLiveDomainSpecialConfigResult> DescribeLiveDomainSpecialConfigOutcome;
+			typedef std::future<DescribeLiveDomainSpecialConfigOutcome> DescribeLiveDomainSpecialConfigOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DescribeLiveDomainSpecialConfigRequest&, const DescribeLiveDomainSpecialConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveDomainSpecialConfigAsyncHandler;
 			typedef Outcome<Error, Model::DescribeLiveDomainStagingConfigResult> DescribeLiveDomainStagingConfigOutcome;
 			typedef std::future<DescribeLiveDomainStagingConfigOutcome> DescribeLiveDomainStagingConfigOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DescribeLiveDomainStagingConfigRequest&, const DescribeLiveDomainStagingConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveDomainStagingConfigAsyncHandler;
 			typedef Outcome<Error, Model::DescribeLiveDomainStreamTranscodeDataResult> DescribeLiveDomainStreamTranscodeDataOutcome;
 			typedef std::future<DescribeLiveDomainStreamTranscodeDataOutcome> DescribeLiveDomainStreamTranscodeDataOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DescribeLiveDomainStreamTranscodeDataRequest&, const DescribeLiveDomainStreamTranscodeDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveDomainStreamTranscodeDataAsyncHandler;
-			typedef Outcome<Error, Model::DescribeLiveDomainStreamWaterLevelResult> DescribeLiveDomainStreamWaterLevelOutcome;
-			typedef std::future<DescribeLiveDomainStreamWaterLevelOutcome> DescribeLiveDomainStreamWaterLevelOutcomeCallable;
-			typedef std::function<void(const LiveClient*, const Model::DescribeLiveDomainStreamWaterLevelRequest&, const DescribeLiveDomainStreamWaterLevelOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveDomainStreamWaterLevelAsyncHandler;
 			typedef Outcome<Error, Model::DescribeLiveDomainTimeShiftDataResult> DescribeLiveDomainTimeShiftDataOutcome;
 			typedef std::future<DescribeLiveDomainTimeShiftDataOutcome> DescribeLiveDomainTimeShiftDataOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DescribeLiveDomainTimeShiftDataRequest&, const DescribeLiveDomainTimeShiftDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveDomainTimeShiftDataAsyncHandler;
@@ -1033,6 +1049,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeLiveUserDomainsResult> DescribeLiveUserDomainsOutcome;
 			typedef std::future<DescribeLiveUserDomainsOutcome> DescribeLiveUserDomainsOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DescribeLiveUserDomainsRequest&, const DescribeLiveUserDomainsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveUserDomainsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeLiveUserQuotaResult> DescribeLiveUserQuotaOutcome;
+			typedef std::future<DescribeLiveUserQuotaOutcome> DescribeLiveUserQuotaOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DescribeLiveUserQuotaRequest&, const DescribeLiveUserQuotaOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveUserQuotaAsyncHandler;
 			typedef Outcome<Error, Model::DescribeLiveUserTagsResult> DescribeLiveUserTagsOutcome;
 			typedef std::future<DescribeLiveUserTagsOutcome> DescribeLiveUserTagsOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DescribeLiveUserTagsRequest&, const DescribeLiveUserTagsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveUserTagsAsyncHandler;
@@ -1111,6 +1130,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetMultiRateConfigListResult> GetMultiRateConfigListOutcome;
 			typedef std::future<GetMultiRateConfigListOutcome> GetMultiRateConfigListOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::GetMultiRateConfigListRequest&, const GetMultiRateConfigListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetMultiRateConfigListAsyncHandler;
+			typedef Outcome<Error, Model::HotLiveRtcStreamResult> HotLiveRtcStreamOutcome;
+			typedef std::future<HotLiveRtcStreamOutcome> HotLiveRtcStreamOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::HotLiveRtcStreamRequest&, const HotLiveRtcStreamOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> HotLiveRtcStreamAsyncHandler;
 			typedef Outcome<Error, Model::InitializeAutoShowListTaskResult> InitializeAutoShowListTaskOutcome;
 			typedef std::future<InitializeAutoShowListTaskOutcome> InitializeAutoShowListTaskOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::InitializeAutoShowListTaskRequest&, const InitializeAutoShowListTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> InitializeAutoShowListTaskAsyncHandler;
@@ -1204,6 +1226,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SetLiveDomainCertificateResult> SetLiveDomainCertificateOutcome;
 			typedef std::future<SetLiveDomainCertificateOutcome> SetLiveDomainCertificateOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::SetLiveDomainCertificateRequest&, const SetLiveDomainCertificateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetLiveDomainCertificateAsyncHandler;
+			typedef Outcome<Error, Model::SetLiveDomainSpecialConfigResult> SetLiveDomainSpecialConfigOutcome;
+			typedef std::future<SetLiveDomainSpecialConfigOutcome> SetLiveDomainSpecialConfigOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::SetLiveDomainSpecialConfigRequest&, const SetLiveDomainSpecialConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetLiveDomainSpecialConfigAsyncHandler;
 			typedef Outcome<Error, Model::SetLiveDomainStagingConfigResult> SetLiveDomainStagingConfigOutcome;
 			typedef std::future<SetLiveDomainStagingConfigOutcome> SetLiveDomainStagingConfigOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::SetLiveDomainStagingConfigRequest&, const SetLiveDomainStagingConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetLiveDomainStagingConfigAsyncHandler;
@@ -1515,6 +1540,9 @@ namespace AlibabaCloud
 			DeleteLiveStreamMonitorOutcome deleteLiveStreamMonitor(const Model::DeleteLiveStreamMonitorRequest &request)const;
 			void deleteLiveStreamMonitorAsync(const Model::DeleteLiveStreamMonitorRequest& request, const DeleteLiveStreamMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteLiveStreamMonitorOutcomeCallable deleteLiveStreamMonitorCallable(const Model::DeleteLiveStreamMonitorRequest& request) const;
+			DeleteLiveStreamRecordIndexFilesOutcome deleteLiveStreamRecordIndexFiles(const Model::DeleteLiveStreamRecordIndexFilesRequest &request)const;
+			void deleteLiveStreamRecordIndexFilesAsync(const Model::DeleteLiveStreamRecordIndexFilesRequest& request, const DeleteLiveStreamRecordIndexFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteLiveStreamRecordIndexFilesOutcomeCallable deleteLiveStreamRecordIndexFilesCallable(const Model::DeleteLiveStreamRecordIndexFilesRequest& request) const;
 			DeleteLiveStreamTranscodeOutcome deleteLiveStreamTranscode(const Model::DeleteLiveStreamTranscodeRequest &request)const;
 			void deleteLiveStreamTranscodeAsync(const Model::DeleteLiveStreamTranscodeRequest& request, const DeleteLiveStreamTranscodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteLiveStreamTranscodeOutcomeCallable deleteLiveStreamTranscodeCallable(const Model::DeleteLiveStreamTranscodeRequest& request) const;
@@ -1545,6 +1573,9 @@ namespace AlibabaCloud
 			DeleteSnapshotCallbackAuthOutcome deleteSnapshotCallbackAuth(const Model::DeleteSnapshotCallbackAuthRequest &request)const;
 			void deleteSnapshotCallbackAuthAsync(const Model::DeleteSnapshotCallbackAuthRequest& request, const DeleteSnapshotCallbackAuthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteSnapshotCallbackAuthOutcomeCallable deleteSnapshotCallbackAuthCallable(const Model::DeleteSnapshotCallbackAuthRequest& request) const;
+			DeleteSnapshotFilesOutcome deleteSnapshotFiles(const Model::DeleteSnapshotFilesRequest &request)const;
+			void deleteSnapshotFilesAsync(const Model::DeleteSnapshotFilesRequest& request, const DeleteSnapshotFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteSnapshotFilesOutcomeCallable deleteSnapshotFilesCallable(const Model::DeleteSnapshotFilesRequest& request) const;
 			DeleteStudioLayoutOutcome deleteStudioLayout(const Model::DeleteStudioLayoutRequest &request)const;
 			void deleteStudioLayoutAsync(const Model::DeleteStudioLayoutRequest& request, const DeleteStudioLayoutAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteStudioLayoutOutcomeCallable deleteStudioLayoutCallable(const Model::DeleteStudioLayoutRequest& request) const;
@@ -1677,15 +1708,15 @@ namespace AlibabaCloud
 			DescribeLiveDomainSnapshotDataOutcome describeLiveDomainSnapshotData(const Model::DescribeLiveDomainSnapshotDataRequest &request)const;
 			void describeLiveDomainSnapshotDataAsync(const Model::DescribeLiveDomainSnapshotDataRequest& request, const DescribeLiveDomainSnapshotDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLiveDomainSnapshotDataOutcomeCallable describeLiveDomainSnapshotDataCallable(const Model::DescribeLiveDomainSnapshotDataRequest& request) const;
+			DescribeLiveDomainSpecialConfigOutcome describeLiveDomainSpecialConfig(const Model::DescribeLiveDomainSpecialConfigRequest &request)const;
+			void describeLiveDomainSpecialConfigAsync(const Model::DescribeLiveDomainSpecialConfigRequest& request, const DescribeLiveDomainSpecialConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeLiveDomainSpecialConfigOutcomeCallable describeLiveDomainSpecialConfigCallable(const Model::DescribeLiveDomainSpecialConfigRequest& request) const;
 			DescribeLiveDomainStagingConfigOutcome describeLiveDomainStagingConfig(const Model::DescribeLiveDomainStagingConfigRequest &request)const;
 			void describeLiveDomainStagingConfigAsync(const Model::DescribeLiveDomainStagingConfigRequest& request, const DescribeLiveDomainStagingConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLiveDomainStagingConfigOutcomeCallable describeLiveDomainStagingConfigCallable(const Model::DescribeLiveDomainStagingConfigRequest& request) const;
 			DescribeLiveDomainStreamTranscodeDataOutcome describeLiveDomainStreamTranscodeData(const Model::DescribeLiveDomainStreamTranscodeDataRequest &request)const;
 			void describeLiveDomainStreamTranscodeDataAsync(const Model::DescribeLiveDomainStreamTranscodeDataRequest& request, const DescribeLiveDomainStreamTranscodeDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLiveDomainStreamTranscodeDataOutcomeCallable describeLiveDomainStreamTranscodeDataCallable(const Model::DescribeLiveDomainStreamTranscodeDataRequest& request) const;
-			DescribeLiveDomainStreamWaterLevelOutcome describeLiveDomainStreamWaterLevel(const Model::DescribeLiveDomainStreamWaterLevelRequest &request)const;
-			void describeLiveDomainStreamWaterLevelAsync(const Model::DescribeLiveDomainStreamWaterLevelRequest& request, const DescribeLiveDomainStreamWaterLevelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeLiveDomainStreamWaterLevelOutcomeCallable describeLiveDomainStreamWaterLevelCallable(const Model::DescribeLiveDomainStreamWaterLevelRequest& request) const;
 			DescribeLiveDomainTimeShiftDataOutcome describeLiveDomainTimeShiftData(const Model::DescribeLiveDomainTimeShiftDataRequest &request)const;
 			void describeLiveDomainTimeShiftDataAsync(const Model::DescribeLiveDomainTimeShiftDataRequest& request, const DescribeLiveDomainTimeShiftDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLiveDomainTimeShiftDataOutcomeCallable describeLiveDomainTimeShiftDataCallable(const Model::DescribeLiveDomainTimeShiftDataRequest& request) const;
@@ -1803,6 +1834,9 @@ namespace AlibabaCloud
 			DescribeLiveUserDomainsOutcome describeLiveUserDomains(const Model::DescribeLiveUserDomainsRequest &request)const;
 			void describeLiveUserDomainsAsync(const Model::DescribeLiveUserDomainsRequest& request, const DescribeLiveUserDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLiveUserDomainsOutcomeCallable describeLiveUserDomainsCallable(const Model::DescribeLiveUserDomainsRequest& request) const;
+			DescribeLiveUserQuotaOutcome describeLiveUserQuota(const Model::DescribeLiveUserQuotaRequest &request)const;
+			void describeLiveUserQuotaAsync(const Model::DescribeLiveUserQuotaRequest& request, const DescribeLiveUserQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeLiveUserQuotaOutcomeCallable describeLiveUserQuotaCallable(const Model::DescribeLiveUserQuotaRequest& request) const;
 			DescribeLiveUserTagsOutcome describeLiveUserTags(const Model::DescribeLiveUserTagsRequest &request)const;
 			void describeLiveUserTagsAsync(const Model::DescribeLiveUserTagsRequest& request, const DescribeLiveUserTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLiveUserTagsOutcomeCallable describeLiveUserTagsCallable(const Model::DescribeLiveUserTagsRequest& request) const;
@@ -1881,6 +1915,9 @@ namespace AlibabaCloud
 			GetMultiRateConfigListOutcome getMultiRateConfigList(const Model::GetMultiRateConfigListRequest &request)const;
 			void getMultiRateConfigListAsync(const Model::GetMultiRateConfigListRequest& request, const GetMultiRateConfigListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetMultiRateConfigListOutcomeCallable getMultiRateConfigListCallable(const Model::GetMultiRateConfigListRequest& request) const;
+			HotLiveRtcStreamOutcome hotLiveRtcStream(const Model::HotLiveRtcStreamRequest &request)const;
+			void hotLiveRtcStreamAsync(const Model::HotLiveRtcStreamRequest& request, const HotLiveRtcStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			HotLiveRtcStreamOutcomeCallable hotLiveRtcStreamCallable(const Model::HotLiveRtcStreamRequest& request) const;
 			InitializeAutoShowListTaskOutcome initializeAutoShowListTask(const Model::InitializeAutoShowListTaskRequest &request)const;
 			void initializeAutoShowListTaskAsync(const Model::InitializeAutoShowListTaskRequest& request, const InitializeAutoShowListTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			InitializeAutoShowListTaskOutcomeCallable initializeAutoShowListTaskCallable(const Model::InitializeAutoShowListTaskRequest& request) const;
@@ -1974,6 +2011,9 @@ namespace AlibabaCloud
 			SetLiveDomainCertificateOutcome setLiveDomainCertificate(const Model::SetLiveDomainCertificateRequest &request)const;
 			void setLiveDomainCertificateAsync(const Model::SetLiveDomainCertificateRequest& request, const SetLiveDomainCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetLiveDomainCertificateOutcomeCallable setLiveDomainCertificateCallable(const Model::SetLiveDomainCertificateRequest& request) const;
+			SetLiveDomainSpecialConfigOutcome setLiveDomainSpecialConfig(const Model::SetLiveDomainSpecialConfigRequest &request)const;
+			void setLiveDomainSpecialConfigAsync(const Model::SetLiveDomainSpecialConfigRequest& request, const SetLiveDomainSpecialConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SetLiveDomainSpecialConfigOutcomeCallable setLiveDomainSpecialConfigCallable(const Model::SetLiveDomainSpecialConfigRequest& request) const;
 			SetLiveDomainStagingConfigOutcome setLiveDomainStagingConfig(const Model::SetLiveDomainStagingConfigRequest &request)const;
 			void setLiveDomainStagingConfigAsync(const Model::SetLiveDomainStagingConfigRequest& request, const SetLiveDomainStagingConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetLiveDomainStagingConfigOutcomeCallable setLiveDomainStagingConfigCallable(const Model::SetLiveDomainStagingConfigRequest& request) const;

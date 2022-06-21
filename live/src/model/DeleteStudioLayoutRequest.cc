@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,37 +18,45 @@
 
 using AlibabaCloud::Live::Model::DeleteStudioLayoutRequest;
 
-DeleteStudioLayoutRequest::DeleteStudioLayoutRequest()
-    : RpcServiceRequest("live", "2016-11-01", "DeleteStudioLayout") {
-  setMethod(HttpRequest::Method::Post);
+DeleteStudioLayoutRequest::DeleteStudioLayoutRequest() :
+	RpcServiceRequest("live", "2016-11-01", "DeleteStudioLayout")
+{
+	setMethod(HttpRequest::Method::Post);
 }
 
-DeleteStudioLayoutRequest::~DeleteStudioLayoutRequest() {}
+DeleteStudioLayoutRequest::~DeleteStudioLayoutRequest()
+{}
 
-std::string DeleteStudioLayoutRequest::getLayoutId() const {
-  return layoutId_;
+std::string DeleteStudioLayoutRequest::getLayoutId()const
+{
+	return layoutId_;
 }
 
-void DeleteStudioLayoutRequest::setLayoutId(const std::string &layoutId) {
-  layoutId_ = layoutId;
-  setParameter(std::string("LayoutId"), layoutId);
+void DeleteStudioLayoutRequest::setLayoutId(const std::string& layoutId)
+{
+	layoutId_ = layoutId;
+	setParameter("LayoutId", layoutId);
 }
 
-std::string DeleteStudioLayoutRequest::getCasterId() const {
-  return casterId_;
+std::string DeleteStudioLayoutRequest::getCasterId()const
+{
+	return casterId_;
 }
 
-void DeleteStudioLayoutRequest::setCasterId(const std::string &casterId) {
-  casterId_ = casterId;
-  setParameter(std::string("CasterId"), casterId);
+void DeleteStudioLayoutRequest::setCasterId(const std::string& casterId)
+{
+	casterId_ = casterId;
+	setParameter("CasterId", casterId);
 }
 
-long DeleteStudioLayoutRequest::getOwnerId() const {
-  return ownerId_;
+long DeleteStudioLayoutRequest::getOwnerId()const
+{
+	return ownerId_;
 }
 
-void DeleteStudioLayoutRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
+void DeleteStudioLayoutRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

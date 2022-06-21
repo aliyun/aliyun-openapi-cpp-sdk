@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,28 +18,34 @@
 
 using AlibabaCloud::Live::Model::DescribeCasterSyncGroupRequest;
 
-DescribeCasterSyncGroupRequest::DescribeCasterSyncGroupRequest()
-    : RpcServiceRequest("live", "2016-11-01", "DescribeCasterSyncGroup") {
-  setMethod(HttpRequest::Method::Post);
+DescribeCasterSyncGroupRequest::DescribeCasterSyncGroupRequest() :
+	RpcServiceRequest("live", "2016-11-01", "DescribeCasterSyncGroup")
+{
+	setMethod(HttpRequest::Method::Post);
 }
 
-DescribeCasterSyncGroupRequest::~DescribeCasterSyncGroupRequest() {}
+DescribeCasterSyncGroupRequest::~DescribeCasterSyncGroupRequest()
+{}
 
-std::string DescribeCasterSyncGroupRequest::getCasterId() const {
-  return casterId_;
+std::string DescribeCasterSyncGroupRequest::getCasterId()const
+{
+	return casterId_;
 }
 
-void DescribeCasterSyncGroupRequest::setCasterId(const std::string &casterId) {
-  casterId_ = casterId;
-  setParameter(std::string("CasterId"), casterId);
+void DescribeCasterSyncGroupRequest::setCasterId(const std::string& casterId)
+{
+	casterId_ = casterId;
+	setParameter("CasterId", casterId);
 }
 
-long DescribeCasterSyncGroupRequest::getOwnerId() const {
-  return ownerId_;
+long DescribeCasterSyncGroupRequest::getOwnerId()const
+{
+	return ownerId_;
 }
 
-void DescribeCasterSyncGroupRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
+void DescribeCasterSyncGroupRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

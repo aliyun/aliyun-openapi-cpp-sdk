@@ -43,12 +43,12 @@ void DescribeLiveStreamOptimizedFeatureConfigResult::parse(const std::string &pa
 	for (auto valueLiveStreamOptimizedFeatureConfigListLiveStreamOptimizedFeatureConfig : allLiveStreamOptimizedFeatureConfigListNode)
 	{
 		LiveStreamOptimizedFeatureConfig liveStreamOptimizedFeatureConfigListObject;
+		if(!valueLiveStreamOptimizedFeatureConfigListLiveStreamOptimizedFeatureConfig["DomainName"].isNull())
+			liveStreamOptimizedFeatureConfigListObject.domainName = valueLiveStreamOptimizedFeatureConfigListLiveStreamOptimizedFeatureConfig["DomainName"].asString();
 		if(!valueLiveStreamOptimizedFeatureConfigListLiveStreamOptimizedFeatureConfig["ConfigName"].isNull())
 			liveStreamOptimizedFeatureConfigListObject.configName = valueLiveStreamOptimizedFeatureConfigListLiveStreamOptimizedFeatureConfig["ConfigName"].asString();
 		if(!valueLiveStreamOptimizedFeatureConfigListLiveStreamOptimizedFeatureConfig["ConfigStatus"].isNull())
 			liveStreamOptimizedFeatureConfigListObject.configStatus = valueLiveStreamOptimizedFeatureConfigListLiveStreamOptimizedFeatureConfig["ConfigStatus"].asString();
-		if(!valueLiveStreamOptimizedFeatureConfigListLiveStreamOptimizedFeatureConfig["DomainName"].isNull())
-			liveStreamOptimizedFeatureConfigListObject.domainName = valueLiveStreamOptimizedFeatureConfigListLiveStreamOptimizedFeatureConfig["DomainName"].asString();
 		if(!valueLiveStreamOptimizedFeatureConfigListLiveStreamOptimizedFeatureConfig["ConfigValue"].isNull())
 			liveStreamOptimizedFeatureConfigListObject.configValue = valueLiveStreamOptimizedFeatureConfigListLiveStreamOptimizedFeatureConfig["ConfigValue"].asString();
 		liveStreamOptimizedFeatureConfigList_.push_back(liveStreamOptimizedFeatureConfigListObject);

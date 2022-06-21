@@ -43,73 +43,73 @@ void DescribeCasterComponentsResult::parse(const std::string &payload)
 	for (auto valueComponentsComponent : allComponentsNode)
 	{
 		Component componentsObject;
-		if(!valueComponentsComponent["Effect"].isNull())
-			componentsObject.effect = valueComponentsComponent["Effect"].asString();
-		if(!valueComponentsComponent["ComponentName"].isNull())
-			componentsObject.componentName = valueComponentsComponent["ComponentName"].asString();
 		if(!valueComponentsComponent["ComponentId"].isNull())
 			componentsObject.componentId = valueComponentsComponent["ComponentId"].asString();
-		if(!valueComponentsComponent["ComponentType"].isNull())
-			componentsObject.componentType = valueComponentsComponent["ComponentType"].asString();
+		if(!valueComponentsComponent["ComponentName"].isNull())
+			componentsObject.componentName = valueComponentsComponent["ComponentName"].asString();
 		if(!valueComponentsComponent["LocationId"].isNull())
 			componentsObject.locationId = valueComponentsComponent["LocationId"].asString();
+		if(!valueComponentsComponent["ComponentType"].isNull())
+			componentsObject.componentType = valueComponentsComponent["ComponentType"].asString();
+		if(!valueComponentsComponent["Effect"].isNull())
+			componentsObject.effect = valueComponentsComponent["Effect"].asString();
 		auto componentLayerNode = value["ComponentLayer"];
-		if(!componentLayerNode["Transparency"].isNull())
-			componentsObject.componentLayer.transparency = std::stoi(componentLayerNode["Transparency"].asString());
-		if(!componentLayerNode["WidthNormalized"].isNull())
-			componentsObject.componentLayer.widthNormalized = std::stof(componentLayerNode["WidthNormalized"].asString());
 		if(!componentLayerNode["HeightNormalized"].isNull())
 			componentsObject.componentLayer.heightNormalized = std::stof(componentLayerNode["HeightNormalized"].asString());
+		if(!componentLayerNode["WidthNormalized"].isNull())
+			componentsObject.componentLayer.widthNormalized = std::stof(componentLayerNode["WidthNormalized"].asString());
 		if(!componentLayerNode["PositionRefer"].isNull())
 			componentsObject.componentLayer.positionRefer = componentLayerNode["PositionRefer"].asString();
+		if(!componentLayerNode["Transparency"].isNull())
+			componentsObject.componentLayer.transparency = std::stoi(componentLayerNode["Transparency"].asString());
 			auto allPositionNormalizeds = componentLayerNode["PositionNormalizeds"]["Position"];
 			for (auto value : allPositionNormalizeds)
 				componentsObject.componentLayer.positionNormalizeds.push_back(value.asString());
 		auto textLayerContentNode = value["TextLayerContent"];
-		if(!textLayerContentNode["Color"].isNull())
-			componentsObject.textLayerContent.color = textLayerContentNode["Color"].asString();
-		if(!textLayerContentNode["BorderColor"].isNull())
-			componentsObject.textLayerContent.borderColor = textLayerContentNode["BorderColor"].asString();
-		if(!textLayerContentNode["BorderWidthNormalized"].isNull())
-			componentsObject.textLayerContent.borderWidthNormalized = std::stof(textLayerContentNode["BorderWidthNormalized"].asString());
 		if(!textLayerContentNode["Text"].isNull())
 			componentsObject.textLayerContent.text = textLayerContentNode["Text"].asString();
-		if(!textLayerContentNode["SizeNormalized"].isNull())
-			componentsObject.textLayerContent.sizeNormalized = std::stof(textLayerContentNode["SizeNormalized"].asString());
+		if(!textLayerContentNode["Color"].isNull())
+			componentsObject.textLayerContent.color = textLayerContentNode["Color"].asString();
 		if(!textLayerContentNode["FontName"].isNull())
 			componentsObject.textLayerContent.fontName = textLayerContentNode["FontName"].asString();
+		if(!textLayerContentNode["SizeNormalized"].isNull())
+			componentsObject.textLayerContent.sizeNormalized = std::stof(textLayerContentNode["SizeNormalized"].asString());
+		if(!textLayerContentNode["BorderWidthNormalized"].isNull())
+			componentsObject.textLayerContent.borderWidthNormalized = std::stof(textLayerContentNode["BorderWidthNormalized"].asString());
+		if(!textLayerContentNode["BorderColor"].isNull())
+			componentsObject.textLayerContent.borderColor = textLayerContentNode["BorderColor"].asString();
 		auto imageLayerContentNode = value["ImageLayerContent"];
 		if(!imageLayerContentNode["MaterialId"].isNull())
 			componentsObject.imageLayerContent.materialId = imageLayerContentNode["MaterialId"].asString();
 		auto captionLayerContentNode = value["CaptionLayerContent"];
-		if(!captionLayerContentNode["Color"].isNull())
-			componentsObject.captionLayerContent.color = captionLayerContentNode["Color"].asString();
-		if(!captionLayerContentNode["WordSpaceNormalized"].isNull())
-			componentsObject.captionLayerContent.wordSpaceNormalized = std::stof(captionLayerContentNode["WordSpaceNormalized"].asString());
-		if(!captionLayerContentNode["BorderWidthNormalized"].isNull())
-			componentsObject.captionLayerContent.borderWidthNormalized = std::stof(captionLayerContentNode["BorderWidthNormalized"].asString());
-		if(!captionLayerContentNode["SourceLan"].isNull())
-			componentsObject.captionLayerContent.sourceLan = captionLayerContentNode["SourceLan"].asString();
-		if(!captionLayerContentNode["WordCountPerLine"].isNull())
-			componentsObject.captionLayerContent.wordCountPerLine = std::stoi(captionLayerContentNode["WordCountPerLine"].asString());
-		if(!captionLayerContentNode["TargetLan"].isNull())
-			componentsObject.captionLayerContent.targetLan = captionLayerContentNode["TargetLan"].asString();
-		if(!captionLayerContentNode["BorderColor"].isNull())
-			componentsObject.captionLayerContent.borderColor = captionLayerContentNode["BorderColor"].asString();
 		if(!captionLayerContentNode["LocationId"].isNull())
 			componentsObject.captionLayerContent.locationId = captionLayerContentNode["LocationId"].asString();
-		if(!captionLayerContentNode["LineSpaceNormalized"].isNull())
-			componentsObject.captionLayerContent.lineSpaceNormalized = std::stof(captionLayerContentNode["LineSpaceNormalized"].asString());
+		if(!captionLayerContentNode["PtsOffset"].isNull())
+			componentsObject.captionLayerContent.ptsOffset = std::stoi(captionLayerContentNode["PtsOffset"].asString());
+		if(!captionLayerContentNode["WordsCount"].isNull())
+			componentsObject.captionLayerContent.wordsCount = std::stoi(captionLayerContentNode["WordsCount"].asString());
+		if(!captionLayerContentNode["Color"].isNull())
+			componentsObject.captionLayerContent.color = captionLayerContentNode["Color"].asString();
+		if(!captionLayerContentNode["FontName"].isNull())
+			componentsObject.captionLayerContent.fontName = captionLayerContentNode["FontName"].asString();
+		if(!captionLayerContentNode["SourceLan"].isNull())
+			componentsObject.captionLayerContent.sourceLan = captionLayerContentNode["SourceLan"].asString();
+		if(!captionLayerContentNode["TargetLan"].isNull())
+			componentsObject.captionLayerContent.targetLan = captionLayerContentNode["TargetLan"].asString();
 		if(!captionLayerContentNode["ShowSourceLan"].isNull())
 			componentsObject.captionLayerContent.showSourceLan = captionLayerContentNode["ShowSourceLan"].asString() == "true";
 		if(!captionLayerContentNode["SizeNormalized"].isNull())
 			componentsObject.captionLayerContent.sizeNormalized = std::stof(captionLayerContentNode["SizeNormalized"].asString());
-		if(!captionLayerContentNode["WordsCount"].isNull())
-			componentsObject.captionLayerContent.wordsCount = std::stoi(captionLayerContentNode["WordsCount"].asString());
-		if(!captionLayerContentNode["FontName"].isNull())
-			componentsObject.captionLayerContent.fontName = captionLayerContentNode["FontName"].asString();
-		if(!captionLayerContentNode["PtsOffset"].isNull())
-			componentsObject.captionLayerContent.ptsOffset = std::stoi(captionLayerContentNode["PtsOffset"].asString());
+		if(!captionLayerContentNode["BorderWidthNormalized"].isNull())
+			componentsObject.captionLayerContent.borderWidthNormalized = std::stof(captionLayerContentNode["BorderWidthNormalized"].asString());
+		if(!captionLayerContentNode["BorderColor"].isNull())
+			componentsObject.captionLayerContent.borderColor = captionLayerContentNode["BorderColor"].asString();
+		if(!captionLayerContentNode["WordCountPerLine"].isNull())
+			componentsObject.captionLayerContent.wordCountPerLine = std::stoi(captionLayerContentNode["WordCountPerLine"].asString());
+		if(!captionLayerContentNode["WordSpaceNormalized"].isNull())
+			componentsObject.captionLayerContent.wordSpaceNormalized = std::stof(captionLayerContentNode["WordSpaceNormalized"].asString());
+		if(!captionLayerContentNode["LineSpaceNormalized"].isNull())
+			componentsObject.captionLayerContent.lineSpaceNormalized = std::stof(captionLayerContentNode["LineSpaceNormalized"].asString());
 		components_.push_back(componentsObject);
 	}
 	if(!value["Total"].isNull())

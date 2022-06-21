@@ -63,13 +63,13 @@ namespace AlibabaCloud
 				~DescribeCasterConfigResult();
 				int getChannelEnable()const;
 				std::string getDomainName()const;
-				std::string getUrgentMaterialId()const;
 				std::string getSideOutputUrlList()const;
+				std::string getUrgentMaterialId()const;
 				TranscodeConfig getTranscodeConfig()const;
 				std::string getProgramName()const;
 				float getDelay()const;
-				std::string getCallbackUrl()const;
 				std::string getSideOutputUrl()const;
+				std::string getCallbackUrl()const;
 				std::string getCasterName()const;
 				int getProgramEffect()const;
 				std::vector<SyncGroup> getSyncGroupsConfig()const;
@@ -81,13 +81,13 @@ namespace AlibabaCloud
 			private:
 				int channelEnable_;
 				std::string domainName_;
-				std::string urgentMaterialId_;
 				std::string sideOutputUrlList_;
+				std::string urgentMaterialId_;
 				TranscodeConfig transcodeConfig_;
 				std::string programName_;
 				float delay_;
-				std::string callbackUrl_;
 				std::string sideOutputUrl_;
+				std::string callbackUrl_;
 				std::string casterName_;
 				int programEffect_;
 				std::vector<SyncGroup> syncGroupsConfig_;

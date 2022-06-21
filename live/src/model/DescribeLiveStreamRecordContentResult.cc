@@ -43,18 +43,18 @@ void DescribeLiveStreamRecordContentResult::parse(const std::string &payload)
 	for (auto valueRecordContentInfoListRecordContentInfo : allRecordContentInfoListNode)
 	{
 		RecordContentInfo recordContentInfoListObject;
-		if(!valueRecordContentInfoListRecordContentInfo["EndTime"].isNull())
-			recordContentInfoListObject.endTime = valueRecordContentInfoListRecordContentInfo["EndTime"].asString();
-		if(!valueRecordContentInfoListRecordContentInfo["StartTime"].isNull())
-			recordContentInfoListObject.startTime = valueRecordContentInfoListRecordContentInfo["StartTime"].asString();
-		if(!valueRecordContentInfoListRecordContentInfo["Duration"].isNull())
-			recordContentInfoListObject.duration = std::stof(valueRecordContentInfoListRecordContentInfo["Duration"].asString());
+		if(!valueRecordContentInfoListRecordContentInfo["OssEndpoint"].isNull())
+			recordContentInfoListObject.ossEndpoint = valueRecordContentInfoListRecordContentInfo["OssEndpoint"].asString();
 		if(!valueRecordContentInfoListRecordContentInfo["OssBucket"].isNull())
 			recordContentInfoListObject.ossBucket = valueRecordContentInfoListRecordContentInfo["OssBucket"].asString();
 		if(!valueRecordContentInfoListRecordContentInfo["OssObjectPrefix"].isNull())
 			recordContentInfoListObject.ossObjectPrefix = valueRecordContentInfoListRecordContentInfo["OssObjectPrefix"].asString();
-		if(!valueRecordContentInfoListRecordContentInfo["OssEndpoint"].isNull())
-			recordContentInfoListObject.ossEndpoint = valueRecordContentInfoListRecordContentInfo["OssEndpoint"].asString();
+		if(!valueRecordContentInfoListRecordContentInfo["StartTime"].isNull())
+			recordContentInfoListObject.startTime = valueRecordContentInfoListRecordContentInfo["StartTime"].asString();
+		if(!valueRecordContentInfoListRecordContentInfo["EndTime"].isNull())
+			recordContentInfoListObject.endTime = valueRecordContentInfoListRecordContentInfo["EndTime"].asString();
+		if(!valueRecordContentInfoListRecordContentInfo["Duration"].isNull())
+			recordContentInfoListObject.duration = std::stof(valueRecordContentInfoListRecordContentInfo["Duration"].asString());
 		recordContentInfoList_.push_back(recordContentInfoListObject);
 	}
 

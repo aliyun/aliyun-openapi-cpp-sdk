@@ -39,10 +39,10 @@ void GetCustomTemplateResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["CustomTemplate"].isNull())
-		customTemplate_ = value["CustomTemplate"].asString();
 	if(!value["Template"].isNull())
 		_template_ = value["Template"].asString();
+	if(!value["CustomTemplate"].isNull())
+		customTemplate_ = value["CustomTemplate"].asString();
 
 }
 

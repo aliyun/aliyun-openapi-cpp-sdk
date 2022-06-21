@@ -40,9 +40,9 @@ namespace AlibabaCloud
 					float bwDiff;
 					float fps;
 					std::string domain;
+					float bitrate;
 					float flr;
 					long timestamp;
-					float bitrate;
 				};
 
 

@@ -48,8 +48,8 @@ namespace AlibabaCloud
 					std::string streamName;
 					std::string publishDomain;
 					std::string transcoded;
-					int height;
 					std::string publishTime;
+					int height;
 					int audioCodecId;
 					int videoDataRate;
 					int width;
@@ -61,18 +61,18 @@ namespace AlibabaCloud
 				explicit DescribeLiveStreamsOnlineListResult(const std::string &payload);
 				~DescribeLiveStreamsOnlineListResult();
 				int getTotalNum()const;
-				int getTotalPage()const;
 				int getPageNum()const;
 				int getPageSize()const;
+				int getTotalPage()const;
 				std::vector<LiveStreamOnlineInfo> getOnlineInfo()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				int totalNum_;
-				int totalPage_;
 				int pageNum_;
 				int pageSize_;
+				int totalPage_;
 				std::vector<LiveStreamOnlineInfo> onlineInfo_;
 
 			};

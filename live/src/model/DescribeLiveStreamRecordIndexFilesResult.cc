@@ -43,46 +43,46 @@ void DescribeLiveStreamRecordIndexFilesResult::parse(const std::string &payload)
 	for (auto valueRecordIndexInfoListRecordIndexInfo : allRecordIndexInfoListNode)
 	{
 		RecordIndexInfo recordIndexInfoListObject;
-		if(!valueRecordIndexInfoListRecordIndexInfo["RecordUrl"].isNull())
-			recordIndexInfoListObject.recordUrl = valueRecordIndexInfoListRecordIndexInfo["RecordUrl"].asString();
-		if(!valueRecordIndexInfoListRecordIndexInfo["StreamName"].isNull())
-			recordIndexInfoListObject.streamName = valueRecordIndexInfoListRecordIndexInfo["StreamName"].asString();
-		if(!valueRecordIndexInfoListRecordIndexInfo["CreateTime"].isNull())
-			recordIndexInfoListObject.createTime = valueRecordIndexInfoListRecordIndexInfo["CreateTime"].asString();
 		if(!valueRecordIndexInfoListRecordIndexInfo["RecordId"].isNull())
 			recordIndexInfoListObject.recordId = valueRecordIndexInfoListRecordIndexInfo["RecordId"].asString();
-		if(!valueRecordIndexInfoListRecordIndexInfo["Height"].isNull())
-			recordIndexInfoListObject.height = std::stoi(valueRecordIndexInfoListRecordIndexInfo["Height"].asString());
-		if(!valueRecordIndexInfoListRecordIndexInfo["OssBucket"].isNull())
-			recordIndexInfoListObject.ossBucket = valueRecordIndexInfoListRecordIndexInfo["OssBucket"].asString();
+		if(!valueRecordIndexInfoListRecordIndexInfo["RecordUrl"].isNull())
+			recordIndexInfoListObject.recordUrl = valueRecordIndexInfoListRecordIndexInfo["RecordUrl"].asString();
 		if(!valueRecordIndexInfoListRecordIndexInfo["DomainName"].isNull())
 			recordIndexInfoListObject.domainName = valueRecordIndexInfoListRecordIndexInfo["DomainName"].asString();
-		if(!valueRecordIndexInfoListRecordIndexInfo["OssObject"].isNull())
-			recordIndexInfoListObject.ossObject = valueRecordIndexInfoListRecordIndexInfo["OssObject"].asString();
-		if(!valueRecordIndexInfoListRecordIndexInfo["EndTime"].isNull())
-			recordIndexInfoListObject.endTime = valueRecordIndexInfoListRecordIndexInfo["EndTime"].asString();
 		if(!valueRecordIndexInfoListRecordIndexInfo["AppName"].isNull())
 			recordIndexInfoListObject.appName = valueRecordIndexInfoListRecordIndexInfo["AppName"].asString();
-		if(!valueRecordIndexInfoListRecordIndexInfo["StartTime"].isNull())
-			recordIndexInfoListObject.startTime = valueRecordIndexInfoListRecordIndexInfo["StartTime"].asString();
-		if(!valueRecordIndexInfoListRecordIndexInfo["Width"].isNull())
-			recordIndexInfoListObject.width = std::stoi(valueRecordIndexInfoListRecordIndexInfo["Width"].asString());
-		if(!valueRecordIndexInfoListRecordIndexInfo["Duration"].isNull())
-			recordIndexInfoListObject.duration = std::stof(valueRecordIndexInfoListRecordIndexInfo["Duration"].asString());
+		if(!valueRecordIndexInfoListRecordIndexInfo["StreamName"].isNull())
+			recordIndexInfoListObject.streamName = valueRecordIndexInfoListRecordIndexInfo["StreamName"].asString();
+		if(!valueRecordIndexInfoListRecordIndexInfo["OssBucket"].isNull())
+			recordIndexInfoListObject.ossBucket = valueRecordIndexInfoListRecordIndexInfo["OssBucket"].asString();
 		if(!valueRecordIndexInfoListRecordIndexInfo["OssEndpoint"].isNull())
 			recordIndexInfoListObject.ossEndpoint = valueRecordIndexInfoListRecordIndexInfo["OssEndpoint"].asString();
+		if(!valueRecordIndexInfoListRecordIndexInfo["OssObject"].isNull())
+			recordIndexInfoListObject.ossObject = valueRecordIndexInfoListRecordIndexInfo["OssObject"].asString();
+		if(!valueRecordIndexInfoListRecordIndexInfo["StartTime"].isNull())
+			recordIndexInfoListObject.startTime = valueRecordIndexInfoListRecordIndexInfo["StartTime"].asString();
+		if(!valueRecordIndexInfoListRecordIndexInfo["EndTime"].isNull())
+			recordIndexInfoListObject.endTime = valueRecordIndexInfoListRecordIndexInfo["EndTime"].asString();
+		if(!valueRecordIndexInfoListRecordIndexInfo["Duration"].isNull())
+			recordIndexInfoListObject.duration = std::stof(valueRecordIndexInfoListRecordIndexInfo["Duration"].asString());
+		if(!valueRecordIndexInfoListRecordIndexInfo["Height"].isNull())
+			recordIndexInfoListObject.height = std::stoi(valueRecordIndexInfoListRecordIndexInfo["Height"].asString());
+		if(!valueRecordIndexInfoListRecordIndexInfo["Width"].isNull())
+			recordIndexInfoListObject.width = std::stoi(valueRecordIndexInfoListRecordIndexInfo["Width"].asString());
+		if(!valueRecordIndexInfoListRecordIndexInfo["CreateTime"].isNull())
+			recordIndexInfoListObject.createTime = valueRecordIndexInfoListRecordIndexInfo["CreateTime"].asString();
 		recordIndexInfoList_.push_back(recordIndexInfoListObject);
 	}
 	if(!value["PageNum"].isNull())
 		pageNum_ = std::stoi(value["PageNum"].asString());
-	if(!value["Order"].isNull())
-		order_ = value["Order"].asString();
-	if(!value["TotalPage"].isNull())
-		totalPage_ = std::stoi(value["TotalPage"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["Order"].isNull())
+		order_ = value["Order"].asString();
 	if(!value["TotalNum"].isNull())
 		totalNum_ = std::stoi(value["TotalNum"].asString());
+	if(!value["TotalPage"].isNull())
+		totalPage_ = std::stoi(value["TotalPage"].asString());
 
 }
 
@@ -101,14 +101,14 @@ int DescribeLiveStreamRecordIndexFilesResult::getPageNum()const
 	return pageNum_;
 }
 
-int DescribeLiveStreamRecordIndexFilesResult::getTotalPage()const
-{
-	return totalPage_;
-}
-
 int DescribeLiveStreamRecordIndexFilesResult::getPageSize()const
 {
 	return pageSize_;
+}
+
+int DescribeLiveStreamRecordIndexFilesResult::getTotalPage()const
+{
+	return totalPage_;
 }
 
 std::vector<DescribeLiveStreamRecordIndexFilesResult::RecordIndexInfo> DescribeLiveStreamRecordIndexFilesResult::getRecordIndexInfoList()const

@@ -43,22 +43,22 @@ void DescribeLiveUserDomainsResult::parse(const std::string &payload)
 	for (auto valueDomainsPageData : allDomainsNode)
 	{
 		PageData domainsObject;
-		if(!valueDomainsPageData["GmtCreated"].isNull())
-			domainsObject.gmtCreated = valueDomainsPageData["GmtCreated"].asString();
+		if(!valueDomainsPageData["DomainName"].isNull())
+			domainsObject.domainName = valueDomainsPageData["DomainName"].asString();
+		if(!valueDomainsPageData["Cname"].isNull())
+			domainsObject.cname = valueDomainsPageData["Cname"].asString();
 		if(!valueDomainsPageData["LiveDomainType"].isNull())
 			domainsObject.liveDomainType = valueDomainsPageData["LiveDomainType"].asString();
+		if(!valueDomainsPageData["GmtCreated"].isNull())
+			domainsObject.gmtCreated = valueDomainsPageData["GmtCreated"].asString();
+		if(!valueDomainsPageData["GmtModified"].isNull())
+			domainsObject.gmtModified = valueDomainsPageData["GmtModified"].asString();
+		if(!valueDomainsPageData["Description"].isNull())
+			domainsObject.description = valueDomainsPageData["Description"].asString();
 		if(!valueDomainsPageData["LiveDomainStatus"].isNull())
 			domainsObject.liveDomainStatus = valueDomainsPageData["LiveDomainStatus"].asString();
 		if(!valueDomainsPageData["RegionName"].isNull())
 			domainsObject.regionName = valueDomainsPageData["RegionName"].asString();
-		if(!valueDomainsPageData["Description"].isNull())
-			domainsObject.description = valueDomainsPageData["Description"].asString();
-		if(!valueDomainsPageData["Cname"].isNull())
-			domainsObject.cname = valueDomainsPageData["Cname"].asString();
-		if(!valueDomainsPageData["GmtModified"].isNull())
-			domainsObject.gmtModified = valueDomainsPageData["GmtModified"].asString();
-		if(!valueDomainsPageData["DomainName"].isNull())
-			domainsObject.domainName = valueDomainsPageData["DomainName"].asString();
 		domains_.push_back(domainsObject);
 	}
 	if(!value["PageNumber"].isNull())

@@ -43,10 +43,10 @@ void ListLiveRealtimeLogDeliveryInfosResult::parse(const std::string &payload)
 	for (auto valueContentRealtimeLogDeliveryInfos : allContentNode)
 	{
 		RealtimeLogDeliveryInfos contentObject;
-		if(!valueContentRealtimeLogDeliveryInfos["Logstore"].isNull())
-			contentObject.logstore = valueContentRealtimeLogDeliveryInfos["Logstore"].asString();
 		if(!valueContentRealtimeLogDeliveryInfos["Project"].isNull())
 			contentObject.project = valueContentRealtimeLogDeliveryInfos["Project"].asString();
+		if(!valueContentRealtimeLogDeliveryInfos["Logstore"].isNull())
+			contentObject.logstore = valueContentRealtimeLogDeliveryInfos["Logstore"].asString();
 		if(!valueContentRealtimeLogDeliveryInfos["Region"].isNull())
 			contentObject.region = valueContentRealtimeLogDeliveryInfos["Region"].asString();
 		content_.push_back(contentObject);
