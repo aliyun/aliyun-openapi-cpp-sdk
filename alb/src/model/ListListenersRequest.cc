@@ -83,3 +83,12 @@ void ListListenersRequest::setMaxResults(int maxResults) {
   setParameter(std::string("MaxResults"), std::to_string(maxResults));
 }
 
+std::string ListListenersRequest::getStatus() const {
+  return status_;
+}
+
+void ListListenersRequest::setStatus(const std::string &status) {
+  status_ = status;
+  setParameter(std::string("Status"), status);
+}
+

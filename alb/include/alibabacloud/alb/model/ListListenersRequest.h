@@ -42,6 +42,8 @@ public:
 	void setListenerIds(const std::vector<std::string> &listenerIds);
 	int getMaxResults() const;
 	void setMaxResults(int maxResults);
+	std::string getStatus() const;
+	void setStatus(const std::string &status);
 
 private:
 	std::vector<std::string> loadBalancerIds_;
@@ -50,6 +52,7 @@ private:
 	std::string listenerProtocol_;
 	std::vector<std::string> listenerIds_;
 	int maxResults_;
+	std::string status_;
 };
 } // namespace Model
 } // namespace Alb
