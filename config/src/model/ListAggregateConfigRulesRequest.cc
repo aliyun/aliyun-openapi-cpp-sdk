@@ -20,7 +20,7 @@ using AlibabaCloud::Config::Model::ListAggregateConfigRulesRequest;
 
 ListAggregateConfigRulesRequest::ListAggregateConfigRulesRequest()
     : RpcServiceRequest("config", "2020-09-07", "ListAggregateConfigRules") {
-  setMethod(HttpRequest::Method::Get);
+  setMethod(HttpRequest::Method::Post);
 }
 
 ListAggregateConfigRulesRequest::~ListAggregateConfigRulesRequest() {}

@@ -89,9 +89,16 @@ namespace AlibabaCloud
 					{
 						std::vector<std::string> complianceResourceTypes;
 					};
+					struct Compliance
+					{
+						std::string complianceType;
+						int count;
+					};
 					std::string tagValueScope;
 					std::string excludeAccountIdsScope;
 					std::string description;
+					long accountId;
+					Compliance compliance;
 					std::string tagKeyLogicScope;
 					CreateBy createBy;
 					ConfigRuleEvaluationStatus configRuleEvaluationStatus;

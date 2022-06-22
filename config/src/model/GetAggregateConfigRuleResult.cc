@@ -82,6 +82,8 @@ void GetAggregateConfigRuleResult::parse(const std::string &payload)
 		configRule_.excludeFolderIdsScope = configRuleNode["ExcludeFolderIdsScope"].asString();
 	if(!configRuleNode["ExcludeAccountIdsScope"].isNull())
 		configRule_.excludeAccountIdsScope = configRuleNode["ExcludeAccountIdsScope"].asString();
+	if(!configRuleNode["AccountId"].isNull())
+		configRule_.accountId = std::stol(configRuleNode["AccountId"].asString());
 	auto sourceNode = configRuleNode["Source"];
 	if(!sourceNode["Owner"].isNull())
 		configRule_.source.owner = sourceNode["Owner"].asString();
@@ -166,6 +168,11 @@ void GetAggregateConfigRuleResult::parse(const std::string &payload)
 		auto allComplianceResourceTypes = scopeNode["ComplianceResourceTypes"]["ComplianceResourceTypes"];
 		for (auto value : allComplianceResourceTypes)
 			configRule_.scope.complianceResourceTypes.push_back(value.asString());
+	auto complianceNode = configRuleNode["Compliance"];
+	if(!complianceNode["ComplianceType"].isNull())
+		configRule_.compliance.complianceType = complianceNode["ComplianceType"].asString();
+	if(!complianceNode["Count"].isNull())
+		configRule_.compliance.count = std::stoi(complianceNode["Count"].asString());
 
 }
 

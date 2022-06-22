@@ -182,8 +182,6 @@
 #include "model/ListRemediationsResult.h"
 #include "model/ListResourceEvaluationResultsRequest.h"
 #include "model/ListResourceEvaluationResultsResult.h"
-#include "model/ListTagResourcesRequest.h"
-#include "model/ListTagResourcesResult.h"
 #include "model/RevertAggregateEvaluationResultsRequest.h"
 #include "model/RevertAggregateEvaluationResultsResult.h"
 #include "model/RevertEvaluationResultsRequest.h"
@@ -194,10 +192,6 @@
 #include "model/StartAggregateRemediationResult.h"
 #include "model/StartRemediationRequest.h"
 #include "model/StartRemediationResult.h"
-#include "model/TagResourcesRequest.h"
-#include "model/TagResourcesResult.h"
-#include "model/UntagResourcesRequest.h"
-#include "model/UntagResourcesResult.h"
 #include "model/UpdateAggregateCompliancePackRequest.h"
 #include "model/UpdateAggregateCompliancePackResult.h"
 #include "model/UpdateAggregateConfigDeliveryChannelRequest.h"
@@ -463,9 +457,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListResourceEvaluationResultsResult> ListResourceEvaluationResultsOutcome;
 			typedef std::future<ListResourceEvaluationResultsOutcome> ListResourceEvaluationResultsOutcomeCallable;
 			typedef std::function<void(const ConfigClient*, const Model::ListResourceEvaluationResultsRequest&, const ListResourceEvaluationResultsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListResourceEvaluationResultsAsyncHandler;
-			typedef Outcome<Error, Model::ListTagResourcesResult> ListTagResourcesOutcome;
-			typedef std::future<ListTagResourcesOutcome> ListTagResourcesOutcomeCallable;
-			typedef std::function<void(const ConfigClient*, const Model::ListTagResourcesRequest&, const ListTagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTagResourcesAsyncHandler;
 			typedef Outcome<Error, Model::RevertAggregateEvaluationResultsResult> RevertAggregateEvaluationResultsOutcome;
 			typedef std::future<RevertAggregateEvaluationResultsOutcome> RevertAggregateEvaluationResultsOutcomeCallable;
 			typedef std::function<void(const ConfigClient*, const Model::RevertAggregateEvaluationResultsRequest&, const RevertAggregateEvaluationResultsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RevertAggregateEvaluationResultsAsyncHandler;
@@ -481,12 +472,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::StartRemediationResult> StartRemediationOutcome;
 			typedef std::future<StartRemediationOutcome> StartRemediationOutcomeCallable;
 			typedef std::function<void(const ConfigClient*, const Model::StartRemediationRequest&, const StartRemediationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartRemediationAsyncHandler;
-			typedef Outcome<Error, Model::TagResourcesResult> TagResourcesOutcome;
-			typedef std::future<TagResourcesOutcome> TagResourcesOutcomeCallable;
-			typedef std::function<void(const ConfigClient*, const Model::TagResourcesRequest&, const TagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TagResourcesAsyncHandler;
-			typedef Outcome<Error, Model::UntagResourcesResult> UntagResourcesOutcome;
-			typedef std::future<UntagResourcesOutcome> UntagResourcesOutcomeCallable;
-			typedef std::function<void(const ConfigClient*, const Model::UntagResourcesRequest&, const UntagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UntagResourcesAsyncHandler;
 			typedef Outcome<Error, Model::UpdateAggregateCompliancePackResult> UpdateAggregateCompliancePackOutcome;
 			typedef std::future<UpdateAggregateCompliancePackOutcome> UpdateAggregateCompliancePackOutcomeCallable;
 			typedef std::function<void(const ConfigClient*, const Model::UpdateAggregateCompliancePackRequest&, const UpdateAggregateCompliancePackOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAggregateCompliancePackAsyncHandler;
@@ -756,9 +741,6 @@ namespace AlibabaCloud
 			ListResourceEvaluationResultsOutcome listResourceEvaluationResults(const Model::ListResourceEvaluationResultsRequest &request)const;
 			void listResourceEvaluationResultsAsync(const Model::ListResourceEvaluationResultsRequest& request, const ListResourceEvaluationResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListResourceEvaluationResultsOutcomeCallable listResourceEvaluationResultsCallable(const Model::ListResourceEvaluationResultsRequest& request) const;
-			ListTagResourcesOutcome listTagResources(const Model::ListTagResourcesRequest &request)const;
-			void listTagResourcesAsync(const Model::ListTagResourcesRequest& request, const ListTagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListTagResourcesOutcomeCallable listTagResourcesCallable(const Model::ListTagResourcesRequest& request) const;
 			RevertAggregateEvaluationResultsOutcome revertAggregateEvaluationResults(const Model::RevertAggregateEvaluationResultsRequest &request)const;
 			void revertAggregateEvaluationResultsAsync(const Model::RevertAggregateEvaluationResultsRequest& request, const RevertAggregateEvaluationResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RevertAggregateEvaluationResultsOutcomeCallable revertAggregateEvaluationResultsCallable(const Model::RevertAggregateEvaluationResultsRequest& request) const;
@@ -774,12 +756,6 @@ namespace AlibabaCloud
 			StartRemediationOutcome startRemediation(const Model::StartRemediationRequest &request)const;
 			void startRemediationAsync(const Model::StartRemediationRequest& request, const StartRemediationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StartRemediationOutcomeCallable startRemediationCallable(const Model::StartRemediationRequest& request) const;
-			TagResourcesOutcome tagResources(const Model::TagResourcesRequest &request)const;
-			void tagResourcesAsync(const Model::TagResourcesRequest& request, const TagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			TagResourcesOutcomeCallable tagResourcesCallable(const Model::TagResourcesRequest& request) const;
-			UntagResourcesOutcome untagResources(const Model::UntagResourcesRequest &request)const;
-			void untagResourcesAsync(const Model::UntagResourcesRequest& request, const UntagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			UntagResourcesOutcomeCallable untagResourcesCallable(const Model::UntagResourcesRequest& request) const;
 			UpdateAggregateCompliancePackOutcome updateAggregateCompliancePack(const Model::UpdateAggregateCompliancePackRequest &request)const;
 			void updateAggregateCompliancePackAsync(const Model::UpdateAggregateCompliancePackRequest& request, const UpdateAggregateCompliancePackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateAggregateCompliancePackOutcomeCallable updateAggregateCompliancePackCallable(const Model::UpdateAggregateCompliancePackRequest& request) const;

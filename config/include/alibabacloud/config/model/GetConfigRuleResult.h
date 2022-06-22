@@ -89,29 +89,36 @@ namespace AlibabaCloud
 					{
 						std::vector<std::string> complianceResourceTypes;
 					};
-					std::string tagKeyScope;
+					struct Compliance
+					{
+						std::string complianceType;
+						int count;
+					};
 					std::string tagValueScope;
-					ManagedRule managedRule;
 					std::string description;
-					std::string excludeResourceIdsScope;
+					long accountId;
+					Compliance compliance;
 					std::string tagKeyLogicScope;
 					CreateBy createBy;
 					ConfigRuleEvaluationStatus configRuleEvaluationStatus;
 					Source source;
-					std::string configRuleState;
 					std::string maximumExecutionFrequency;
+					std::string regionIdsScope;
+					long modifiedTimestamp;
+					std::string resourceGroupIdsScope;
+					long createTimestamp;
+					std::string inputParameters;
+					std::string tagKeyScope;
+					ManagedRule managedRule;
+					std::string excludeResourceIdsScope;
+					std::string configRuleState;
 					std::string configRuleId;
 					Scope scope;
 					std::string configRuleArn;
-					std::string regionIdsScope;
-					long modifiedTimestamp;
 					std::string configRuleTriggerTypes;
 					std::string configRuleName;
-					std::string resourceGroupIdsScope;
 					int riskLevel;
-					long createTimestamp;
 					std::string resourceTypesScope;
-					std::string inputParameters;
 				};
 
 

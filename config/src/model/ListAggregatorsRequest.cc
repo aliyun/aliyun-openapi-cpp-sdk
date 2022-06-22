@@ -20,7 +20,7 @@ using AlibabaCloud::Config::Model::ListAggregatorsRequest;
 
 ListAggregatorsRequest::ListAggregatorsRequest()
     : RpcServiceRequest("config", "2020-09-07", "ListAggregators") {
-  setMethod(HttpRequest::Method::Get);
+  setMethod(HttpRequest::Method::Post);
 }
 
 ListAggregatorsRequest::~ListAggregatorsRequest() {}

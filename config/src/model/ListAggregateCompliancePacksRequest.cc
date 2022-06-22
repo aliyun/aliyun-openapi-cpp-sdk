@@ -20,7 +20,7 @@ using AlibabaCloud::Config::Model::ListAggregateCompliancePacksRequest;
 
 ListAggregateCompliancePacksRequest::ListAggregateCompliancePacksRequest()
     : RpcServiceRequest("config", "2020-09-07", "ListAggregateCompliancePacks") {
-  setMethod(HttpRequest::Method::Get);
+  setMethod(HttpRequest::Method::Post);
 }
 
 ListAggregateCompliancePacksRequest::~ListAggregateCompliancePacksRequest() {}

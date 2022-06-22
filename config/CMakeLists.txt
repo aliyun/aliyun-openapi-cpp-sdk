@@ -181,8 +181,6 @@ set(config_public_header_model
 	include/alibabacloud/config/model/ListRemediationsResult.h
 	include/alibabacloud/config/model/ListResourceEvaluationResultsRequest.h
 	include/alibabacloud/config/model/ListResourceEvaluationResultsResult.h
-	include/alibabacloud/config/model/ListTagResourcesRequest.h
-	include/alibabacloud/config/model/ListTagResourcesResult.h
 	include/alibabacloud/config/model/RevertAggregateEvaluationResultsRequest.h
 	include/alibabacloud/config/model/RevertAggregateEvaluationResultsResult.h
 	include/alibabacloud/config/model/RevertEvaluationResultsRequest.h
@@ -193,10 +191,6 @@ set(config_public_header_model
 	include/alibabacloud/config/model/StartAggregateRemediationResult.h
 	include/alibabacloud/config/model/StartRemediationRequest.h
 	include/alibabacloud/config/model/StartRemediationResult.h
-	include/alibabacloud/config/model/TagResourcesRequest.h
-	include/alibabacloud/config/model/TagResourcesResult.h
-	include/alibabacloud/config/model/UntagResourcesRequest.h
-	include/alibabacloud/config/model/UntagResourcesResult.h
 	include/alibabacloud/config/model/UpdateAggregateCompliancePackRequest.h
 	include/alibabacloud/config/model/UpdateAggregateCompliancePackResult.h
 	include/alibabacloud/config/model/UpdateAggregateConfigDeliveryChannelRequest.h
@@ -376,8 +370,6 @@ set(config_src
 	src/model/ListRemediationsResult.cc
 	src/model/ListResourceEvaluationResultsRequest.cc
 	src/model/ListResourceEvaluationResultsResult.cc
-	src/model/ListTagResourcesRequest.cc
-	src/model/ListTagResourcesResult.cc
 	src/model/RevertAggregateEvaluationResultsRequest.cc
 	src/model/RevertAggregateEvaluationResultsResult.cc
 	src/model/RevertEvaluationResultsRequest.cc
@@ -388,10 +380,6 @@ set(config_src
 	src/model/StartAggregateRemediationResult.cc
 	src/model/StartRemediationRequest.cc
 	src/model/StartRemediationResult.cc
-	src/model/TagResourcesRequest.cc
-	src/model/TagResourcesResult.cc
-	src/model/UntagResourcesRequest.cc
-	src/model/UntagResourcesResult.cc
 	src/model/UpdateAggregateCompliancePackRequest.cc
 	src/model/UpdateAggregateCompliancePackResult.cc
 	src/model/UpdateAggregateConfigDeliveryChannelRequest.cc
