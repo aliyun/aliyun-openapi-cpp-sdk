@@ -879,6 +879,42 @@ CbnClient::CreateTransitRouterVpcAttachmentOutcomeCallable CbnClient::createTran
 	return task->get_future();
 }
 
+CbnClient::CreateTransitRouterVpnAttachmentOutcome CbnClient::createTransitRouterVpnAttachment(const CreateTransitRouterVpnAttachmentRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateTransitRouterVpnAttachmentOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateTransitRouterVpnAttachmentOutcome(CreateTransitRouterVpnAttachmentResult(outcome.result()));
+	else
+		return CreateTransitRouterVpnAttachmentOutcome(outcome.error());
+}
+
+void CbnClient::createTransitRouterVpnAttachmentAsync(const CreateTransitRouterVpnAttachmentRequest& request, const CreateTransitRouterVpnAttachmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createTransitRouterVpnAttachment(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::CreateTransitRouterVpnAttachmentOutcomeCallable CbnClient::createTransitRouterVpnAttachmentCallable(const CreateTransitRouterVpnAttachmentRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateTransitRouterVpnAttachmentOutcome()>>(
+			[this, request]()
+			{
+			return this->createTransitRouterVpnAttachment(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CbnClient::DeactiveFlowLogOutcome CbnClient::deactiveFlowLog(const DeactiveFlowLogRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1527,6 +1563,42 @@ CbnClient::DeleteTransitRouterVpcAttachmentOutcomeCallable CbnClient::deleteTran
 	return task->get_future();
 }
 
+CbnClient::DeleteTransitRouterVpnAttachmentOutcome CbnClient::deleteTransitRouterVpnAttachment(const DeleteTransitRouterVpnAttachmentRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteTransitRouterVpnAttachmentOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteTransitRouterVpnAttachmentOutcome(DeleteTransitRouterVpnAttachmentResult(outcome.result()));
+	else
+		return DeleteTransitRouterVpnAttachmentOutcome(outcome.error());
+}
+
+void CbnClient::deleteTransitRouterVpnAttachmentAsync(const DeleteTransitRouterVpnAttachmentRequest& request, const DeleteTransitRouterVpnAttachmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteTransitRouterVpnAttachment(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::DeleteTransitRouterVpnAttachmentOutcomeCallable CbnClient::deleteTransitRouterVpnAttachmentCallable(const DeleteTransitRouterVpnAttachmentRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteTransitRouterVpnAttachmentOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteTransitRouterVpnAttachment(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CbnClient::DeregisterTransitRouterMulticastGroupMembersOutcome CbnClient::deregisterTransitRouterMulticastGroupMembers(const DeregisterTransitRouterMulticastGroupMembersRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1995,6 +2067,42 @@ CbnClient::DescribeCenVbrHealthCheckOutcomeCallable CbnClient::describeCenVbrHea
 	return task->get_future();
 }
 
+CbnClient::DescribeCenVpcFlowStatisticSwitchOutcome CbnClient::describeCenVpcFlowStatisticSwitch(const DescribeCenVpcFlowStatisticSwitchRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeCenVpcFlowStatisticSwitchOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeCenVpcFlowStatisticSwitchOutcome(DescribeCenVpcFlowStatisticSwitchResult(outcome.result()));
+	else
+		return DescribeCenVpcFlowStatisticSwitchOutcome(outcome.error());
+}
+
+void CbnClient::describeCenVpcFlowStatisticSwitchAsync(const DescribeCenVpcFlowStatisticSwitchRequest& request, const DescribeCenVpcFlowStatisticSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeCenVpcFlowStatisticSwitch(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::DescribeCenVpcFlowStatisticSwitchOutcomeCallable CbnClient::describeCenVpcFlowStatisticSwitchCallable(const DescribeCenVpcFlowStatisticSwitchRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeCenVpcFlowStatisticSwitchOutcome()>>(
+			[this, request]()
+			{
+			return this->describeCenVpcFlowStatisticSwitch(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CbnClient::DescribeCensOutcome CbnClient::describeCens(const DescribeCensRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2355,6 +2463,42 @@ CbnClient::DisableCenVbrHealthCheckOutcomeCallable CbnClient::disableCenVbrHealt
 	return task->get_future();
 }
 
+CbnClient::DisableCenVpcFlowStatisticOutcome CbnClient::disableCenVpcFlowStatistic(const DisableCenVpcFlowStatisticRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DisableCenVpcFlowStatisticOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DisableCenVpcFlowStatisticOutcome(DisableCenVpcFlowStatisticResult(outcome.result()));
+	else
+		return DisableCenVpcFlowStatisticOutcome(outcome.error());
+}
+
+void CbnClient::disableCenVpcFlowStatisticAsync(const DisableCenVpcFlowStatisticRequest& request, const DisableCenVpcFlowStatisticAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, disableCenVpcFlowStatistic(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::DisableCenVpcFlowStatisticOutcomeCallable CbnClient::disableCenVpcFlowStatisticCallable(const DisableCenVpcFlowStatisticRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DisableCenVpcFlowStatisticOutcome()>>(
+			[this, request]()
+			{
+			return this->disableCenVpcFlowStatistic(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CbnClient::DisableTransitRouterRouteTablePropagationOutcome CbnClient::disableTransitRouterRouteTablePropagation(const DisableTransitRouterRouteTablePropagationRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2493,6 +2637,42 @@ CbnClient::EnableCenVbrHealthCheckOutcomeCallable CbnClient::enableCenVbrHealthC
 			[this, request]()
 			{
 			return this->enableCenVbrHealthCheck(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CbnClient::EnableCenVpcFlowStatisticOutcome CbnClient::enableCenVpcFlowStatistic(const EnableCenVpcFlowStatisticRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return EnableCenVpcFlowStatisticOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return EnableCenVpcFlowStatisticOutcome(EnableCenVpcFlowStatisticResult(outcome.result()));
+	else
+		return EnableCenVpcFlowStatisticOutcome(outcome.error());
+}
+
+void CbnClient::enableCenVpcFlowStatisticAsync(const EnableCenVpcFlowStatisticRequest& request, const EnableCenVpcFlowStatisticAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, enableCenVpcFlowStatistic(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::EnableCenVpcFlowStatisticOutcomeCallable CbnClient::enableCenVpcFlowStatisticCallable(const EnableCenVpcFlowStatisticRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<EnableCenVpcFlowStatisticOutcome()>>(
+			[this, request]()
+			{
+			return this->enableCenVpcFlowStatistic(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3177,6 +3357,42 @@ CbnClient::ListTransitRouterVpcAttachmentsOutcomeCallable CbnClient::listTransit
 			[this, request]()
 			{
 			return this->listTransitRouterVpcAttachments(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CbnClient::ListTransitRouterVpnAttachmentsOutcome CbnClient::listTransitRouterVpnAttachments(const ListTransitRouterVpnAttachmentsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListTransitRouterVpnAttachmentsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListTransitRouterVpnAttachmentsOutcome(ListTransitRouterVpnAttachmentsResult(outcome.result()));
+	else
+		return ListTransitRouterVpnAttachmentsOutcome(outcome.error());
+}
+
+void CbnClient::listTransitRouterVpnAttachmentsAsync(const ListTransitRouterVpnAttachmentsRequest& request, const ListTransitRouterVpnAttachmentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listTransitRouterVpnAttachments(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::ListTransitRouterVpnAttachmentsOutcomeCallable CbnClient::listTransitRouterVpnAttachmentsCallable(const ListTransitRouterVpnAttachmentsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListTransitRouterVpnAttachmentsOutcome()>>(
+			[this, request]()
+			{
+			return this->listTransitRouterVpnAttachments(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4329,6 +4545,42 @@ CbnClient::UpdateTransitRouterVpcAttachmentAttributeOutcomeCallable CbnClient::u
 			[this, request]()
 			{
 			return this->updateTransitRouterVpcAttachmentAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CbnClient::UpdateTransitRouterVpnAttachmentAttributeOutcome CbnClient::updateTransitRouterVpnAttachmentAttribute(const UpdateTransitRouterVpnAttachmentAttributeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateTransitRouterVpnAttachmentAttributeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateTransitRouterVpnAttachmentAttributeOutcome(UpdateTransitRouterVpnAttachmentAttributeResult(outcome.result()));
+	else
+		return UpdateTransitRouterVpnAttachmentAttributeOutcome(outcome.error());
+}
+
+void CbnClient::updateTransitRouterVpnAttachmentAttributeAsync(const UpdateTransitRouterVpnAttachmentAttributeRequest& request, const UpdateTransitRouterVpnAttachmentAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateTransitRouterVpnAttachmentAttribute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::UpdateTransitRouterVpnAttachmentAttributeOutcomeCallable CbnClient::updateTransitRouterVpnAttachmentAttributeCallable(const UpdateTransitRouterVpnAttachmentAttributeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateTransitRouterVpnAttachmentAttributeOutcome()>>(
+			[this, request]()
+			{
+			return this->updateTransitRouterVpnAttachmentAttribute(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

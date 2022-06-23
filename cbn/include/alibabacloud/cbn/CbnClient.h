@@ -68,6 +68,8 @@
 #include "model/CreateTransitRouterVbrAttachmentResult.h"
 #include "model/CreateTransitRouterVpcAttachmentRequest.h"
 #include "model/CreateTransitRouterVpcAttachmentResult.h"
+#include "model/CreateTransitRouterVpnAttachmentRequest.h"
+#include "model/CreateTransitRouterVpnAttachmentResult.h"
 #include "model/DeactiveFlowLogRequest.h"
 #include "model/DeactiveFlowLogResult.h"
 #include "model/DeleteCenRequest.h"
@@ -104,6 +106,8 @@
 #include "model/DeleteTransitRouterVbrAttachmentResult.h"
 #include "model/DeleteTransitRouterVpcAttachmentRequest.h"
 #include "model/DeleteTransitRouterVpcAttachmentResult.h"
+#include "model/DeleteTransitRouterVpnAttachmentRequest.h"
+#include "model/DeleteTransitRouterVpnAttachmentResult.h"
 #include "model/DeregisterTransitRouterMulticastGroupMembersRequest.h"
 #include "model/DeregisterTransitRouterMulticastGroupMembersResult.h"
 #include "model/DeregisterTransitRouterMulticastGroupSourcesRequest.h"
@@ -130,6 +134,8 @@
 #include "model/DescribeCenRouteMapsResult.h"
 #include "model/DescribeCenVbrHealthCheckRequest.h"
 #include "model/DescribeCenVbrHealthCheckResult.h"
+#include "model/DescribeCenVpcFlowStatisticSwitchRequest.h"
+#include "model/DescribeCenVpcFlowStatisticSwitchResult.h"
 #include "model/DescribeCensRequest.h"
 #include "model/DescribeCensResult.h"
 #include "model/DescribeChildInstanceRegionsRequest.h"
@@ -150,6 +156,8 @@
 #include "model/DetachCenChildInstanceResult.h"
 #include "model/DisableCenVbrHealthCheckRequest.h"
 #include "model/DisableCenVbrHealthCheckResult.h"
+#include "model/DisableCenVpcFlowStatisticRequest.h"
+#include "model/DisableCenVpcFlowStatisticResult.h"
 #include "model/DisableTransitRouterRouteTablePropagationRequest.h"
 #include "model/DisableTransitRouterRouteTablePropagationResult.h"
 #include "model/DisassociateTransitRouterMulticastDomainRequest.h"
@@ -158,6 +166,8 @@
 #include "model/DissociateTransitRouterAttachmentFromRouteTableResult.h"
 #include "model/EnableCenVbrHealthCheckRequest.h"
 #include "model/EnableCenVbrHealthCheckResult.h"
+#include "model/EnableCenVpcFlowStatisticRequest.h"
+#include "model/EnableCenVpcFlowStatisticResult.h"
 #include "model/EnableTransitRouterRouteTablePropagationRequest.h"
 #include "model/EnableTransitRouterRouteTablePropagationResult.h"
 #include "model/GrantInstanceToTransitRouterRequest.h"
@@ -196,6 +206,8 @@
 #include "model/ListTransitRouterVbrAttachmentsResult.h"
 #include "model/ListTransitRouterVpcAttachmentsRequest.h"
 #include "model/ListTransitRouterVpcAttachmentsResult.h"
+#include "model/ListTransitRouterVpnAttachmentsRequest.h"
+#include "model/ListTransitRouterVpnAttachmentsResult.h"
 #include "model/ListTransitRoutersRequest.h"
 #include "model/ListTransitRoutersResult.h"
 #include "model/ModifyCenAttributeRequest.h"
@@ -260,6 +272,8 @@
 #include "model/UpdateTransitRouterVbrAttachmentAttributeResult.h"
 #include "model/UpdateTransitRouterVpcAttachmentAttributeRequest.h"
 #include "model/UpdateTransitRouterVpcAttachmentAttributeResult.h"
+#include "model/UpdateTransitRouterVpnAttachmentAttributeRequest.h"
+#include "model/UpdateTransitRouterVpnAttachmentAttributeResult.h"
 #include "model/WithdrawPublishedRouteEntriesRequest.h"
 #include "model/WithdrawPublishedRouteEntriesResult.h"
 
@@ -340,6 +354,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateTransitRouterVpcAttachmentResult> CreateTransitRouterVpcAttachmentOutcome;
 			typedef std::future<CreateTransitRouterVpcAttachmentOutcome> CreateTransitRouterVpcAttachmentOutcomeCallable;
 			typedef std::function<void(const CbnClient*, const Model::CreateTransitRouterVpcAttachmentRequest&, const CreateTransitRouterVpcAttachmentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateTransitRouterVpcAttachmentAsyncHandler;
+			typedef Outcome<Error, Model::CreateTransitRouterVpnAttachmentResult> CreateTransitRouterVpnAttachmentOutcome;
+			typedef std::future<CreateTransitRouterVpnAttachmentOutcome> CreateTransitRouterVpnAttachmentOutcomeCallable;
+			typedef std::function<void(const CbnClient*, const Model::CreateTransitRouterVpnAttachmentRequest&, const CreateTransitRouterVpnAttachmentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateTransitRouterVpnAttachmentAsyncHandler;
 			typedef Outcome<Error, Model::DeactiveFlowLogResult> DeactiveFlowLogOutcome;
 			typedef std::future<DeactiveFlowLogOutcome> DeactiveFlowLogOutcomeCallable;
 			typedef std::function<void(const CbnClient*, const Model::DeactiveFlowLogRequest&, const DeactiveFlowLogOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeactiveFlowLogAsyncHandler;
@@ -394,6 +411,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteTransitRouterVpcAttachmentResult> DeleteTransitRouterVpcAttachmentOutcome;
 			typedef std::future<DeleteTransitRouterVpcAttachmentOutcome> DeleteTransitRouterVpcAttachmentOutcomeCallable;
 			typedef std::function<void(const CbnClient*, const Model::DeleteTransitRouterVpcAttachmentRequest&, const DeleteTransitRouterVpcAttachmentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTransitRouterVpcAttachmentAsyncHandler;
+			typedef Outcome<Error, Model::DeleteTransitRouterVpnAttachmentResult> DeleteTransitRouterVpnAttachmentOutcome;
+			typedef std::future<DeleteTransitRouterVpnAttachmentOutcome> DeleteTransitRouterVpnAttachmentOutcomeCallable;
+			typedef std::function<void(const CbnClient*, const Model::DeleteTransitRouterVpnAttachmentRequest&, const DeleteTransitRouterVpnAttachmentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTransitRouterVpnAttachmentAsyncHandler;
 			typedef Outcome<Error, Model::DeregisterTransitRouterMulticastGroupMembersResult> DeregisterTransitRouterMulticastGroupMembersOutcome;
 			typedef std::future<DeregisterTransitRouterMulticastGroupMembersOutcome> DeregisterTransitRouterMulticastGroupMembersOutcomeCallable;
 			typedef std::function<void(const CbnClient*, const Model::DeregisterTransitRouterMulticastGroupMembersRequest&, const DeregisterTransitRouterMulticastGroupMembersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeregisterTransitRouterMulticastGroupMembersAsyncHandler;
@@ -433,6 +453,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeCenVbrHealthCheckResult> DescribeCenVbrHealthCheckOutcome;
 			typedef std::future<DescribeCenVbrHealthCheckOutcome> DescribeCenVbrHealthCheckOutcomeCallable;
 			typedef std::function<void(const CbnClient*, const Model::DescribeCenVbrHealthCheckRequest&, const DescribeCenVbrHealthCheckOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCenVbrHealthCheckAsyncHandler;
+			typedef Outcome<Error, Model::DescribeCenVpcFlowStatisticSwitchResult> DescribeCenVpcFlowStatisticSwitchOutcome;
+			typedef std::future<DescribeCenVpcFlowStatisticSwitchOutcome> DescribeCenVpcFlowStatisticSwitchOutcomeCallable;
+			typedef std::function<void(const CbnClient*, const Model::DescribeCenVpcFlowStatisticSwitchRequest&, const DescribeCenVpcFlowStatisticSwitchOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCenVpcFlowStatisticSwitchAsyncHandler;
 			typedef Outcome<Error, Model::DescribeCensResult> DescribeCensOutcome;
 			typedef std::future<DescribeCensOutcome> DescribeCensOutcomeCallable;
 			typedef std::function<void(const CbnClient*, const Model::DescribeCensRequest&, const DescribeCensOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCensAsyncHandler;
@@ -463,6 +486,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DisableCenVbrHealthCheckResult> DisableCenVbrHealthCheckOutcome;
 			typedef std::future<DisableCenVbrHealthCheckOutcome> DisableCenVbrHealthCheckOutcomeCallable;
 			typedef std::function<void(const CbnClient*, const Model::DisableCenVbrHealthCheckRequest&, const DisableCenVbrHealthCheckOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DisableCenVbrHealthCheckAsyncHandler;
+			typedef Outcome<Error, Model::DisableCenVpcFlowStatisticResult> DisableCenVpcFlowStatisticOutcome;
+			typedef std::future<DisableCenVpcFlowStatisticOutcome> DisableCenVpcFlowStatisticOutcomeCallable;
+			typedef std::function<void(const CbnClient*, const Model::DisableCenVpcFlowStatisticRequest&, const DisableCenVpcFlowStatisticOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DisableCenVpcFlowStatisticAsyncHandler;
 			typedef Outcome<Error, Model::DisableTransitRouterRouteTablePropagationResult> DisableTransitRouterRouteTablePropagationOutcome;
 			typedef std::future<DisableTransitRouterRouteTablePropagationOutcome> DisableTransitRouterRouteTablePropagationOutcomeCallable;
 			typedef std::function<void(const CbnClient*, const Model::DisableTransitRouterRouteTablePropagationRequest&, const DisableTransitRouterRouteTablePropagationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DisableTransitRouterRouteTablePropagationAsyncHandler;
@@ -475,6 +501,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::EnableCenVbrHealthCheckResult> EnableCenVbrHealthCheckOutcome;
 			typedef std::future<EnableCenVbrHealthCheckOutcome> EnableCenVbrHealthCheckOutcomeCallable;
 			typedef std::function<void(const CbnClient*, const Model::EnableCenVbrHealthCheckRequest&, const EnableCenVbrHealthCheckOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnableCenVbrHealthCheckAsyncHandler;
+			typedef Outcome<Error, Model::EnableCenVpcFlowStatisticResult> EnableCenVpcFlowStatisticOutcome;
+			typedef std::future<EnableCenVpcFlowStatisticOutcome> EnableCenVpcFlowStatisticOutcomeCallable;
+			typedef std::function<void(const CbnClient*, const Model::EnableCenVpcFlowStatisticRequest&, const EnableCenVpcFlowStatisticOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnableCenVpcFlowStatisticAsyncHandler;
 			typedef Outcome<Error, Model::EnableTransitRouterRouteTablePropagationResult> EnableTransitRouterRouteTablePropagationOutcome;
 			typedef std::future<EnableTransitRouterRouteTablePropagationOutcome> EnableTransitRouterRouteTablePropagationOutcomeCallable;
 			typedef std::function<void(const CbnClient*, const Model::EnableTransitRouterRouteTablePropagationRequest&, const EnableTransitRouterRouteTablePropagationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnableTransitRouterRouteTablePropagationAsyncHandler;
@@ -532,6 +561,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListTransitRouterVpcAttachmentsResult> ListTransitRouterVpcAttachmentsOutcome;
 			typedef std::future<ListTransitRouterVpcAttachmentsOutcome> ListTransitRouterVpcAttachmentsOutcomeCallable;
 			typedef std::function<void(const CbnClient*, const Model::ListTransitRouterVpcAttachmentsRequest&, const ListTransitRouterVpcAttachmentsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTransitRouterVpcAttachmentsAsyncHandler;
+			typedef Outcome<Error, Model::ListTransitRouterVpnAttachmentsResult> ListTransitRouterVpnAttachmentsOutcome;
+			typedef std::future<ListTransitRouterVpnAttachmentsOutcome> ListTransitRouterVpnAttachmentsOutcomeCallable;
+			typedef std::function<void(const CbnClient*, const Model::ListTransitRouterVpnAttachmentsRequest&, const ListTransitRouterVpnAttachmentsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTransitRouterVpnAttachmentsAsyncHandler;
 			typedef Outcome<Error, Model::ListTransitRoutersResult> ListTransitRoutersOutcome;
 			typedef std::future<ListTransitRoutersOutcome> ListTransitRoutersOutcomeCallable;
 			typedef std::function<void(const CbnClient*, const Model::ListTransitRoutersRequest&, const ListTransitRoutersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTransitRoutersAsyncHandler;
@@ -628,6 +660,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateTransitRouterVpcAttachmentAttributeResult> UpdateTransitRouterVpcAttachmentAttributeOutcome;
 			typedef std::future<UpdateTransitRouterVpcAttachmentAttributeOutcome> UpdateTransitRouterVpcAttachmentAttributeOutcomeCallable;
 			typedef std::function<void(const CbnClient*, const Model::UpdateTransitRouterVpcAttachmentAttributeRequest&, const UpdateTransitRouterVpcAttachmentAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateTransitRouterVpcAttachmentAttributeAsyncHandler;
+			typedef Outcome<Error, Model::UpdateTransitRouterVpnAttachmentAttributeResult> UpdateTransitRouterVpnAttachmentAttributeOutcome;
+			typedef std::future<UpdateTransitRouterVpnAttachmentAttributeOutcome> UpdateTransitRouterVpnAttachmentAttributeOutcomeCallable;
+			typedef std::function<void(const CbnClient*, const Model::UpdateTransitRouterVpnAttachmentAttributeRequest&, const UpdateTransitRouterVpnAttachmentAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateTransitRouterVpnAttachmentAttributeAsyncHandler;
 			typedef Outcome<Error, Model::WithdrawPublishedRouteEntriesResult> WithdrawPublishedRouteEntriesOutcome;
 			typedef std::future<WithdrawPublishedRouteEntriesOutcome> WithdrawPublishedRouteEntriesOutcomeCallable;
 			typedef std::function<void(const CbnClient*, const Model::WithdrawPublishedRouteEntriesRequest&, const WithdrawPublishedRouteEntriesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> WithdrawPublishedRouteEntriesAsyncHandler;
@@ -705,6 +740,9 @@ namespace AlibabaCloud
 			CreateTransitRouterVpcAttachmentOutcome createTransitRouterVpcAttachment(const Model::CreateTransitRouterVpcAttachmentRequest &request)const;
 			void createTransitRouterVpcAttachmentAsync(const Model::CreateTransitRouterVpcAttachmentRequest& request, const CreateTransitRouterVpcAttachmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateTransitRouterVpcAttachmentOutcomeCallable createTransitRouterVpcAttachmentCallable(const Model::CreateTransitRouterVpcAttachmentRequest& request) const;
+			CreateTransitRouterVpnAttachmentOutcome createTransitRouterVpnAttachment(const Model::CreateTransitRouterVpnAttachmentRequest &request)const;
+			void createTransitRouterVpnAttachmentAsync(const Model::CreateTransitRouterVpnAttachmentRequest& request, const CreateTransitRouterVpnAttachmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateTransitRouterVpnAttachmentOutcomeCallable createTransitRouterVpnAttachmentCallable(const Model::CreateTransitRouterVpnAttachmentRequest& request) const;
 			DeactiveFlowLogOutcome deactiveFlowLog(const Model::DeactiveFlowLogRequest &request)const;
 			void deactiveFlowLogAsync(const Model::DeactiveFlowLogRequest& request, const DeactiveFlowLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeactiveFlowLogOutcomeCallable deactiveFlowLogCallable(const Model::DeactiveFlowLogRequest& request) const;
@@ -759,6 +797,9 @@ namespace AlibabaCloud
 			DeleteTransitRouterVpcAttachmentOutcome deleteTransitRouterVpcAttachment(const Model::DeleteTransitRouterVpcAttachmentRequest &request)const;
 			void deleteTransitRouterVpcAttachmentAsync(const Model::DeleteTransitRouterVpcAttachmentRequest& request, const DeleteTransitRouterVpcAttachmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteTransitRouterVpcAttachmentOutcomeCallable deleteTransitRouterVpcAttachmentCallable(const Model::DeleteTransitRouterVpcAttachmentRequest& request) const;
+			DeleteTransitRouterVpnAttachmentOutcome deleteTransitRouterVpnAttachment(const Model::DeleteTransitRouterVpnAttachmentRequest &request)const;
+			void deleteTransitRouterVpnAttachmentAsync(const Model::DeleteTransitRouterVpnAttachmentRequest& request, const DeleteTransitRouterVpnAttachmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteTransitRouterVpnAttachmentOutcomeCallable deleteTransitRouterVpnAttachmentCallable(const Model::DeleteTransitRouterVpnAttachmentRequest& request) const;
 			DeregisterTransitRouterMulticastGroupMembersOutcome deregisterTransitRouterMulticastGroupMembers(const Model::DeregisterTransitRouterMulticastGroupMembersRequest &request)const;
 			void deregisterTransitRouterMulticastGroupMembersAsync(const Model::DeregisterTransitRouterMulticastGroupMembersRequest& request, const DeregisterTransitRouterMulticastGroupMembersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeregisterTransitRouterMulticastGroupMembersOutcomeCallable deregisterTransitRouterMulticastGroupMembersCallable(const Model::DeregisterTransitRouterMulticastGroupMembersRequest& request) const;
@@ -798,6 +839,9 @@ namespace AlibabaCloud
 			DescribeCenVbrHealthCheckOutcome describeCenVbrHealthCheck(const Model::DescribeCenVbrHealthCheckRequest &request)const;
 			void describeCenVbrHealthCheckAsync(const Model::DescribeCenVbrHealthCheckRequest& request, const DescribeCenVbrHealthCheckAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeCenVbrHealthCheckOutcomeCallable describeCenVbrHealthCheckCallable(const Model::DescribeCenVbrHealthCheckRequest& request) const;
+			DescribeCenVpcFlowStatisticSwitchOutcome describeCenVpcFlowStatisticSwitch(const Model::DescribeCenVpcFlowStatisticSwitchRequest &request)const;
+			void describeCenVpcFlowStatisticSwitchAsync(const Model::DescribeCenVpcFlowStatisticSwitchRequest& request, const DescribeCenVpcFlowStatisticSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeCenVpcFlowStatisticSwitchOutcomeCallable describeCenVpcFlowStatisticSwitchCallable(const Model::DescribeCenVpcFlowStatisticSwitchRequest& request) const;
 			DescribeCensOutcome describeCens(const Model::DescribeCensRequest &request)const;
 			void describeCensAsync(const Model::DescribeCensRequest& request, const DescribeCensAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeCensOutcomeCallable describeCensCallable(const Model::DescribeCensRequest& request) const;
@@ -828,6 +872,9 @@ namespace AlibabaCloud
 			DisableCenVbrHealthCheckOutcome disableCenVbrHealthCheck(const Model::DisableCenVbrHealthCheckRequest &request)const;
 			void disableCenVbrHealthCheckAsync(const Model::DisableCenVbrHealthCheckRequest& request, const DisableCenVbrHealthCheckAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DisableCenVbrHealthCheckOutcomeCallable disableCenVbrHealthCheckCallable(const Model::DisableCenVbrHealthCheckRequest& request) const;
+			DisableCenVpcFlowStatisticOutcome disableCenVpcFlowStatistic(const Model::DisableCenVpcFlowStatisticRequest &request)const;
+			void disableCenVpcFlowStatisticAsync(const Model::DisableCenVpcFlowStatisticRequest& request, const DisableCenVpcFlowStatisticAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DisableCenVpcFlowStatisticOutcomeCallable disableCenVpcFlowStatisticCallable(const Model::DisableCenVpcFlowStatisticRequest& request) const;
 			DisableTransitRouterRouteTablePropagationOutcome disableTransitRouterRouteTablePropagation(const Model::DisableTransitRouterRouteTablePropagationRequest &request)const;
 			void disableTransitRouterRouteTablePropagationAsync(const Model::DisableTransitRouterRouteTablePropagationRequest& request, const DisableTransitRouterRouteTablePropagationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DisableTransitRouterRouteTablePropagationOutcomeCallable disableTransitRouterRouteTablePropagationCallable(const Model::DisableTransitRouterRouteTablePropagationRequest& request) const;
@@ -840,6 +887,9 @@ namespace AlibabaCloud
 			EnableCenVbrHealthCheckOutcome enableCenVbrHealthCheck(const Model::EnableCenVbrHealthCheckRequest &request)const;
 			void enableCenVbrHealthCheckAsync(const Model::EnableCenVbrHealthCheckRequest& request, const EnableCenVbrHealthCheckAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			EnableCenVbrHealthCheckOutcomeCallable enableCenVbrHealthCheckCallable(const Model::EnableCenVbrHealthCheckRequest& request) const;
+			EnableCenVpcFlowStatisticOutcome enableCenVpcFlowStatistic(const Model::EnableCenVpcFlowStatisticRequest &request)const;
+			void enableCenVpcFlowStatisticAsync(const Model::EnableCenVpcFlowStatisticRequest& request, const EnableCenVpcFlowStatisticAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			EnableCenVpcFlowStatisticOutcomeCallable enableCenVpcFlowStatisticCallable(const Model::EnableCenVpcFlowStatisticRequest& request) const;
 			EnableTransitRouterRouteTablePropagationOutcome enableTransitRouterRouteTablePropagation(const Model::EnableTransitRouterRouteTablePropagationRequest &request)const;
 			void enableTransitRouterRouteTablePropagationAsync(const Model::EnableTransitRouterRouteTablePropagationRequest& request, const EnableTransitRouterRouteTablePropagationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			EnableTransitRouterRouteTablePropagationOutcomeCallable enableTransitRouterRouteTablePropagationCallable(const Model::EnableTransitRouterRouteTablePropagationRequest& request) const;
@@ -897,6 +947,9 @@ namespace AlibabaCloud
 			ListTransitRouterVpcAttachmentsOutcome listTransitRouterVpcAttachments(const Model::ListTransitRouterVpcAttachmentsRequest &request)const;
 			void listTransitRouterVpcAttachmentsAsync(const Model::ListTransitRouterVpcAttachmentsRequest& request, const ListTransitRouterVpcAttachmentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListTransitRouterVpcAttachmentsOutcomeCallable listTransitRouterVpcAttachmentsCallable(const Model::ListTransitRouterVpcAttachmentsRequest& request) const;
+			ListTransitRouterVpnAttachmentsOutcome listTransitRouterVpnAttachments(const Model::ListTransitRouterVpnAttachmentsRequest &request)const;
+			void listTransitRouterVpnAttachmentsAsync(const Model::ListTransitRouterVpnAttachmentsRequest& request, const ListTransitRouterVpnAttachmentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListTransitRouterVpnAttachmentsOutcomeCallable listTransitRouterVpnAttachmentsCallable(const Model::ListTransitRouterVpnAttachmentsRequest& request) const;
 			ListTransitRoutersOutcome listTransitRouters(const Model::ListTransitRoutersRequest &request)const;
 			void listTransitRoutersAsync(const Model::ListTransitRoutersRequest& request, const ListTransitRoutersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListTransitRoutersOutcomeCallable listTransitRoutersCallable(const Model::ListTransitRoutersRequest& request) const;
@@ -993,6 +1046,9 @@ namespace AlibabaCloud
 			UpdateTransitRouterVpcAttachmentAttributeOutcome updateTransitRouterVpcAttachmentAttribute(const Model::UpdateTransitRouterVpcAttachmentAttributeRequest &request)const;
 			void updateTransitRouterVpcAttachmentAttributeAsync(const Model::UpdateTransitRouterVpcAttachmentAttributeRequest& request, const UpdateTransitRouterVpcAttachmentAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateTransitRouterVpcAttachmentAttributeOutcomeCallable updateTransitRouterVpcAttachmentAttributeCallable(const Model::UpdateTransitRouterVpcAttachmentAttributeRequest& request) const;
+			UpdateTransitRouterVpnAttachmentAttributeOutcome updateTransitRouterVpnAttachmentAttribute(const Model::UpdateTransitRouterVpnAttachmentAttributeRequest &request)const;
+			void updateTransitRouterVpnAttachmentAttributeAsync(const Model::UpdateTransitRouterVpnAttachmentAttributeRequest& request, const UpdateTransitRouterVpnAttachmentAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateTransitRouterVpnAttachmentAttributeOutcomeCallable updateTransitRouterVpnAttachmentAttributeCallable(const Model::UpdateTransitRouterVpnAttachmentAttributeRequest& request) const;
 			WithdrawPublishedRouteEntriesOutcome withdrawPublishedRouteEntries(const Model::WithdrawPublishedRouteEntriesRequest &request)const;
 			void withdrawPublishedRouteEntriesAsync(const Model::WithdrawPublishedRouteEntriesRequest& request, const WithdrawPublishedRouteEntriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			WithdrawPublishedRouteEntriesOutcomeCallable withdrawPublishedRouteEntriesCallable(const Model::WithdrawPublishedRouteEntriesRequest& request) const;
