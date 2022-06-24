@@ -38,6 +38,7 @@ namespace AlibabaCloud
 					std::string skillGroup;
 					std::string conversationId;
 					bool hasLastPlaybackCompleted;
+					std::string calledNumber;
 					int endReason;
 					long endTime;
 					int rounds;

@@ -63,6 +63,8 @@ void ListConversationsResult::parse(const std::string &payload)
 			conversationsObject.hasLastPlaybackCompleted = valueConversationsConversation["HasLastPlaybackCompleted"].asString() == "true";
 		if(!valueConversationsConversation["SandBox"].isNull())
 			conversationsObject.sandBox = valueConversationsConversation["SandBox"].asString() == "true";
+		if(!valueConversationsConversation["CalledNumber"].isNull())
+			conversationsObject.calledNumber = valueConversationsConversation["CalledNumber"].asString();
 		conversations_.push_back(conversationsObject);
 	}
 	if(!value["TotalCount"].isNull())
