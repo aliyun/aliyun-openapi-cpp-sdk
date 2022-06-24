@@ -43,13 +43,14 @@ namespace AlibabaCloud
 						std::string failReason;
 						std::string debugStatus;
 						std::string scene;
-						bool miniPlaybackEnabled;
 						bool isDebugDrafted;
 						std::string industry;
 						bool isDrafted;
 						std::string scriptName;
 						long updateTime;
 						std::string rejectReason;
+						bool longWaitEnable;
+						bool miniPlaybackEnable;
 					};
 					int totalCount;
 					int pageSize;

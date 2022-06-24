@@ -36,9 +36,9 @@ namespace AlibabaCloud
 				{
 					std::string status;
 					std::string chatbotId;
-					bool miniPlaybackConfigEnabled;
 					std::string scriptDescription;
 					std::string scriptId;
+					bool newBargeInEnable;
 					std::string debugStatus;
 					std::string scene;
 					bool isDebugDrafted;
@@ -48,6 +48,8 @@ namespace AlibabaCloud
 					std::string scriptName;
 					long updateTime;
 					std::string ttsConfig;
+					bool longWaitEnable;
+					bool miniPlaybackEnable;
 				};
 
 

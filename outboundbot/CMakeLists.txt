@@ -153,8 +153,6 @@ set(outboundbot_public_header_model
 	include/alibabacloud/outboundbot/model/GetEffectiveDaysResult.h
 	include/alibabacloud/outboundbot/model/GetEmptyNumberNoMoreCallsInfoRequest.h
 	include/alibabacloud/outboundbot/model/GetEmptyNumberNoMoreCallsInfoResult.h
-	include/alibabacloud/outboundbot/model/GetInstanceConfigRequest.h
-	include/alibabacloud/outboundbot/model/GetInstanceConfigResult.h
 	include/alibabacloud/outboundbot/model/GetMaxAttemptsPerDayRequest.h
 	include/alibabacloud/outboundbot/model/GetMaxAttemptsPerDayResult.h
 	include/alibabacloud/outboundbot/model/GetNumberDistrictInfoTemplateDownloadUrlRequest.h
@@ -422,8 +420,6 @@ set(outboundbot_src
 	src/model/GetEffectiveDaysResult.cc
 	src/model/GetEmptyNumberNoMoreCallsInfoRequest.cc
 	src/model/GetEmptyNumberNoMoreCallsInfoResult.cc
-	src/model/GetInstanceConfigRequest.cc
-	src/model/GetInstanceConfigResult.cc
 	src/model/GetMaxAttemptsPerDayRequest.cc
 	src/model/GetMaxAttemptsPerDayResult.cc
 	src/model/GetNumberDistrictInfoTemplateDownloadUrlRequest.cc

@@ -54,8 +54,8 @@ void DescribeScriptResult::parse(const std::string &payload)
 		script_.industry = scriptNode["Industry"].asString();
 	if(!scriptNode["ScriptDescription"].isNull())
 		script_.scriptDescription = scriptNode["ScriptDescription"].asString();
-	if(!scriptNode["MiniPlaybackConfigEnabled"].isNull())
-		script_.miniPlaybackConfigEnabled = scriptNode["MiniPlaybackConfigEnabled"].asString() == "true";
+	if(!scriptNode["MiniPlaybackEnable"].isNull())
+		script_.miniPlaybackEnable = scriptNode["MiniPlaybackEnable"].asString() == "true";
 	if(!scriptNode["IsDrafted"].isNull())
 		script_.isDrafted = scriptNode["IsDrafted"].asString() == "true";
 	if(!scriptNode["TtsConfig"].isNull())
@@ -68,6 +68,10 @@ void DescribeScriptResult::parse(const std::string &payload)
 		script_.scene = scriptNode["Scene"].asString();
 	if(!scriptNode["ScriptName"].isNull())
 		script_.scriptName = scriptNode["ScriptName"].asString();
+	if(!scriptNode["NewBargeInEnable"].isNull())
+		script_.newBargeInEnable = scriptNode["NewBargeInEnable"].asString() == "true";
+	if(!scriptNode["LongWaitEnable"].isNull())
+		script_.longWaitEnable = scriptNode["LongWaitEnable"].asString() == "true";
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 	if(!value["Success"].isNull())

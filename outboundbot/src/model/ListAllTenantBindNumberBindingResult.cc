@@ -52,6 +52,8 @@ void ListAllTenantBindNumberBindingResult::parse(const std::string &payload)
 			listItemObject.trunkName = dataNodeListListItem["TrunkName"].asString();
 		if(!dataNodeListListItem["SerializedParams"].isNull())
 			listItemObject.serializedParams = dataNodeListListItem["SerializedParams"].asString();
+		if(!dataNodeListListItem["BillingType"].isNull())
+			listItemObject.billingType = dataNodeListListItem["BillingType"].asString();
 		auto allInstanceNameList = value["InstanceNameList"]["InstanceNameList"];
 		for (auto value : allInstanceNameList)
 			listItemObject.instanceNameList.push_back(value.asString());

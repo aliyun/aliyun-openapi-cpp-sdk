@@ -42,6 +42,8 @@ public:
 	void setText(const std::string &text);
 	int getSpeechRate() const;
 	void setSpeechRate(int speechRate);
+	int getPitchRate() const;
+	void setPitchRate(int pitchRate);
 
 private:
 	std::string voice_;
@@ -50,6 +52,7 @@ private:
 	std::string instanceId_;
 	std::string text_;
 	int speechRate_;
+	int pitchRate_;
 };
 } // namespace Model
 } // namespace OutboundBot

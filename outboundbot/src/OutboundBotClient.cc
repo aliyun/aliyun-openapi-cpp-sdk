@@ -2427,42 +2427,6 @@ OutboundBotClient::GetEmptyNumberNoMoreCallsInfoOutcomeCallable OutboundBotClien
 	return task->get_future();
 }
 
-OutboundBotClient::GetInstanceConfigOutcome OutboundBotClient::getInstanceConfig(const GetInstanceConfigRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetInstanceConfigOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetInstanceConfigOutcome(GetInstanceConfigResult(outcome.result()));
-	else
-		return GetInstanceConfigOutcome(outcome.error());
-}
-
-void OutboundBotClient::getInstanceConfigAsync(const GetInstanceConfigRequest& request, const GetInstanceConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getInstanceConfig(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-OutboundBotClient::GetInstanceConfigOutcomeCallable OutboundBotClient::getInstanceConfigCallable(const GetInstanceConfigRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetInstanceConfigOutcome()>>(
-			[this, request]()
-			{
-			return this->getInstanceConfig(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 OutboundBotClient::GetMaxAttemptsPerDayOutcome OutboundBotClient::getMaxAttemptsPerDay(const GetMaxAttemptsPerDayRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

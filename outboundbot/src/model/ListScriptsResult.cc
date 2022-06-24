@@ -66,8 +66,8 @@ void ListScriptsResult::parse(const std::string &payload)
 			scriptObject.isDrafted = scriptsNodeListScript["IsDrafted"].asString() == "true";
 		if(!scriptsNodeListScript["DebugStatus"].isNull())
 			scriptObject.debugStatus = scriptsNodeListScript["DebugStatus"].asString();
-		if(!scriptsNodeListScript["MiniPlaybackEnabled"].isNull())
-			scriptObject.miniPlaybackEnabled = scriptsNodeListScript["MiniPlaybackEnabled"].asString() == "true";
+		if(!scriptsNodeListScript["MiniPlaybackEnable"].isNull())
+			scriptObject.miniPlaybackEnable = scriptsNodeListScript["MiniPlaybackEnable"].asString() == "true";
 		if(!scriptsNodeListScript["RejectReason"].isNull())
 			scriptObject.rejectReason = scriptsNodeListScript["RejectReason"].asString();
 		if(!scriptsNodeListScript["FailReason"].isNull())
@@ -78,6 +78,8 @@ void ListScriptsResult::parse(const std::string &payload)
 			scriptObject.scriptName = scriptsNodeListScript["ScriptName"].asString();
 		if(!scriptsNodeListScript["NewBargeInEnable"].isNull())
 			scriptObject.newBargeInEnable = scriptsNodeListScript["NewBargeInEnable"].asString() == "true";
+		if(!scriptsNodeListScript["LongWaitEnable"].isNull())
+			scriptObject.longWaitEnable = scriptsNodeListScript["LongWaitEnable"].asString() == "true";
 		scripts_.list.push_back(scriptObject);
 	}
 	if(!value["HttpStatusCode"].isNull())

@@ -52,6 +52,8 @@ public:
 	void setInstanceId(const std::string &instanceId);
 	std::string getScriptDescription() const;
 	void setScriptDescription(const std::string &scriptDescription);
+	bool getLongWaitEnable() const;
+	void setLongWaitEnable(bool longWaitEnable);
 	std::vector<std::string> getScriptContent() const;
 	void setScriptContent(const std::vector<std::string> &scriptContent);
 
@@ -67,6 +69,7 @@ private:
 	std::string chatbotId_;
 	std::string instanceId_;
 	std::string scriptDescription_;
+	bool longWaitEnable_;
 	std::vector<std::string> scriptContent_;
 };
 } // namespace Model

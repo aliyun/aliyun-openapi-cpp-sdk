@@ -123,6 +123,15 @@ void CreateScriptRequest::setScriptDescription(const std::string &scriptDescript
   setParameter(std::string("ScriptDescription"), scriptDescription);
 }
 
+bool CreateScriptRequest::getLongWaitEnable() const {
+  return longWaitEnable_;
+}
+
+void CreateScriptRequest::setLongWaitEnable(bool longWaitEnable) {
+  longWaitEnable_ = longWaitEnable;
+  setParameter(std::string("LongWaitEnable"), longWaitEnable ? "true" : "false");
+}
+
 std::vector<std::string> CreateScriptRequest::getScriptContent() const {
   return scriptContent_;
 }

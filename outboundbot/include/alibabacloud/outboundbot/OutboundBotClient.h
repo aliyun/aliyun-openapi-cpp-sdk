@@ -154,8 +154,6 @@
 #include "model/GetEffectiveDaysResult.h"
 #include "model/GetEmptyNumberNoMoreCallsInfoRequest.h"
 #include "model/GetEmptyNumberNoMoreCallsInfoResult.h"
-#include "model/GetInstanceConfigRequest.h"
-#include "model/GetInstanceConfigResult.h"
 #include "model/GetMaxAttemptsPerDayRequest.h"
 #include "model/GetMaxAttemptsPerDayResult.h"
 #include "model/GetNumberDistrictInfoTemplateDownloadUrlRequest.h"
@@ -495,9 +493,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetEmptyNumberNoMoreCallsInfoResult> GetEmptyNumberNoMoreCallsInfoOutcome;
 			typedef std::future<GetEmptyNumberNoMoreCallsInfoOutcome> GetEmptyNumberNoMoreCallsInfoOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::GetEmptyNumberNoMoreCallsInfoRequest&, const GetEmptyNumberNoMoreCallsInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetEmptyNumberNoMoreCallsInfoAsyncHandler;
-			typedef Outcome<Error, Model::GetInstanceConfigResult> GetInstanceConfigOutcome;
-			typedef std::future<GetInstanceConfigOutcome> GetInstanceConfigOutcomeCallable;
-			typedef std::function<void(const OutboundBotClient*, const Model::GetInstanceConfigRequest&, const GetInstanceConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetInstanceConfigAsyncHandler;
 			typedef Outcome<Error, Model::GetMaxAttemptsPerDayResult> GetMaxAttemptsPerDayOutcome;
 			typedef std::future<GetMaxAttemptsPerDayOutcome> GetMaxAttemptsPerDayOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::GetMaxAttemptsPerDayRequest&, const GetMaxAttemptsPerDayOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetMaxAttemptsPerDayAsyncHandler;
@@ -899,9 +894,6 @@ namespace AlibabaCloud
 			GetEmptyNumberNoMoreCallsInfoOutcome getEmptyNumberNoMoreCallsInfo(const Model::GetEmptyNumberNoMoreCallsInfoRequest &request)const;
 			void getEmptyNumberNoMoreCallsInfoAsync(const Model::GetEmptyNumberNoMoreCallsInfoRequest& request, const GetEmptyNumberNoMoreCallsInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetEmptyNumberNoMoreCallsInfoOutcomeCallable getEmptyNumberNoMoreCallsInfoCallable(const Model::GetEmptyNumberNoMoreCallsInfoRequest& request) const;
-			GetInstanceConfigOutcome getInstanceConfig(const Model::GetInstanceConfigRequest &request)const;
-			void getInstanceConfigAsync(const Model::GetInstanceConfigRequest& request, const GetInstanceConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetInstanceConfigOutcomeCallable getInstanceConfigCallable(const Model::GetInstanceConfigRequest& request) const;
 			GetMaxAttemptsPerDayOutcome getMaxAttemptsPerDay(const Model::GetMaxAttemptsPerDayRequest &request)const;
 			void getMaxAttemptsPerDayAsync(const Model::GetMaxAttemptsPerDayRequest& request, const GetMaxAttemptsPerDayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetMaxAttemptsPerDayOutcomeCallable getMaxAttemptsPerDayCallable(const Model::GetMaxAttemptsPerDayRequest& request) const;

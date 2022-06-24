@@ -41,6 +41,7 @@ namespace AlibabaCloud
 						std::vector<std::string> instanceNameList;
 						std::string bindingId;
 						std::string trunkName;
+						std::string billingType;
 					};
 					std::vector<ListItem> list;
 				};

@@ -34,6 +34,15 @@ void DialogueRequest::setCallId(const std::string &callId) {
   setParameter(std::string("CallId"), callId);
 }
 
+std::string DialogueRequest::getScriptId() const {
+  return scriptId_;
+}
+
+void DialogueRequest::setScriptId(const std::string &scriptId) {
+  scriptId_ = scriptId;
+  setParameter(std::string("ScriptId"), scriptId);
+}
+
 long DialogueRequest::getInstanceOwnerId() const {
   return instanceOwnerId_;
 }

@@ -79,3 +79,12 @@ void DescribeTTSDemoRequest::setSpeechRate(int speechRate) {
   setParameter(std::string("SpeechRate"), std::to_string(speechRate));
 }
 
+int DescribeTTSDemoRequest::getPitchRate() const {
+  return pitchRate_;
+}
+
+void DescribeTTSDemoRequest::setPitchRate(int pitchRate) {
+  pitchRate_ = pitchRate;
+  setParameter(std::string("PitchRate"), std::to_string(pitchRate));
+}
+

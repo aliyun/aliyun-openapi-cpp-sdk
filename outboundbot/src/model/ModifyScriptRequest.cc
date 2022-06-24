@@ -96,13 +96,22 @@ void ModifyScriptRequest::setNlsConfig(const std::string &nlsConfig) {
   setParameter(std::string("NlsConfig"), nlsConfig);
 }
 
-bool ModifyScriptRequest::getMiniPlaybackEnabled() const {
-  return miniPlaybackEnabled_;
+bool ModifyScriptRequest::getNewBargeInEnable() const {
+  return newBargeInEnable_;
 }
 
-void ModifyScriptRequest::setMiniPlaybackEnabled(bool miniPlaybackEnabled) {
-  miniPlaybackEnabled_ = miniPlaybackEnabled;
-  setParameter(std::string("MiniPlaybackEnabled"), miniPlaybackEnabled ? "true" : "false");
+void ModifyScriptRequest::setNewBargeInEnable(bool newBargeInEnable) {
+  newBargeInEnable_ = newBargeInEnable;
+  setParameter(std::string("NewBargeInEnable"), newBargeInEnable ? "true" : "false");
+}
+
+bool ModifyScriptRequest::getMiniPlaybackEnable() const {
+  return miniPlaybackEnable_;
+}
+
+void ModifyScriptRequest::setMiniPlaybackEnable(bool miniPlaybackEnable) {
+  miniPlaybackEnable_ = miniPlaybackEnable;
+  setParameter(std::string("MiniPlaybackEnable"), miniPlaybackEnable ? "true" : "false");
 }
 
 std::string ModifyScriptRequest::getChatbotId() const {
@@ -130,6 +139,15 @@ std::string ModifyScriptRequest::getScriptDescription() const {
 void ModifyScriptRequest::setScriptDescription(const std::string &scriptDescription) {
   scriptDescription_ = scriptDescription;
   setParameter(std::string("ScriptDescription"), scriptDescription);
+}
+
+bool ModifyScriptRequest::getLongWaitEnable() const {
+  return longWaitEnable_;
+}
+
+void ModifyScriptRequest::setLongWaitEnable(bool longWaitEnable) {
+  longWaitEnable_ = longWaitEnable;
+  setParameter(std::string("LongWaitEnable"), longWaitEnable ? "true" : "false");
 }
 
 std::vector<std::string> ModifyScriptRequest::getScriptContent() const {

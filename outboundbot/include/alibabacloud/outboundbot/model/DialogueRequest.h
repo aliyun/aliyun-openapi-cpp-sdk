@@ -32,6 +32,8 @@ public:
 	~DialogueRequest();
 	std::string getCallId() const;
 	void setCallId(const std::string &callId);
+	std::string getScriptId() const;
+	void setScriptId(const std::string &scriptId);
 	long getInstanceOwnerId() const;
 	void setInstanceOwnerId(long instanceOwnerId);
 	std::string getCalledNumber() const;
@@ -55,6 +57,7 @@ public:
 
 private:
 	std::string callId_;
+	std::string scriptId_;
 	long instanceOwnerId_;
 	std::string calledNumber_;
 	std::string callType_;
