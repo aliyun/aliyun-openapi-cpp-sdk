@@ -1,3 +1,6 @@
+2022-06-28 Version: 1.36.1162
+- Update QuerySavingsPlansDeductLog add field OwnerId.
+
 2022-06-28 Version: 1.36.1161
 - Update RecognizeVideoCastCrewList.
 

@@ -40,6 +40,7 @@ namespace AlibabaCloud
 						std::string billModule;
 						std::string endTime;
 						std::string deductCommodity;
+						long ownerId;
 						std::string instanceId;
 						long userId;
 						std::string startTime;

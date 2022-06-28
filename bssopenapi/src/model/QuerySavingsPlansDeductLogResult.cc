@@ -72,6 +72,8 @@ void QuerySavingsPlansDeductLogResult::parse(const std::string &payload)
 			savingsPlansDeductDetailResponseObject.deductRate = dataNodeItemsSavingsPlansDeductDetailResponse["DeductRate"].asString();
 		if(!dataNodeItemsSavingsPlansDeductDetailResponse["DeductFee"].isNull())
 			savingsPlansDeductDetailResponseObject.deductFee = dataNodeItemsSavingsPlansDeductDetailResponse["DeductFee"].asString();
+		if(!dataNodeItemsSavingsPlansDeductDetailResponse["OwnerId"].isNull())
+			savingsPlansDeductDetailResponseObject.ownerId = std::stol(dataNodeItemsSavingsPlansDeductDetailResponse["OwnerId"].asString());
 		data_.items.push_back(savingsPlansDeductDetailResponseObject);
 	}
 	if(!value["Code"].isNull())
