@@ -14,47 +14,31 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/videorecog/model/GetAsyncJobResultResult.h>
+#include <alibabacloud/videorecog/model/RecognizeVideoCastCrewListResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Videorecog;
 using namespace AlibabaCloud::Videorecog::Model;
 
-GetAsyncJobResultResult::GetAsyncJobResultResult() :
+RecognizeVideoCastCrewListResult::RecognizeVideoCastCrewListResult() :
 	ServiceResult()
 {}
 
-GetAsyncJobResultResult::GetAsyncJobResultResult(const std::string &payload) :
+RecognizeVideoCastCrewListResult::RecognizeVideoCastCrewListResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-GetAsyncJobResultResult::~GetAsyncJobResultResult()
+RecognizeVideoCastCrewListResult::~RecognizeVideoCastCrewListResult()
 {}
 
-void GetAsyncJobResultResult::parse(const std::string &payload)
+void RecognizeVideoCastCrewListResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto dataNode = value["Data"];
-	if(!dataNode["Status"].isNull())
-		data_.status = dataNode["Status"].asString();
-	if(!dataNode["ErrorMessage"].isNull())
-		data_.errorMessage = dataNode["ErrorMessage"].asString();
-	if(!dataNode["Result"].isNull())
-		data_.result = dataNode["Result"].asString();
-	if(!dataNode["ErrorCode"].isNull())
-		data_.errorCode = dataNode["ErrorCode"].asString();
-	if(!dataNode["JobId"].isNull())
-		data_.jobId = dataNode["JobId"].asString();
 
-}
-
-GetAsyncJobResultResult::Data GetAsyncJobResultResult::getData()const
-{
-	return data_;
 }
 

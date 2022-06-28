@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VIDEORECOG_MODEL_UNDERSTANDVIDEOCONTENTRESULT_H_
-#define ALIBABACLOUD_VIDEORECOG_MODEL_UNDERSTANDVIDEOCONTENTRESULT_H_
+#ifndef ALIBABACLOUD_VIDEORECOG_MODEL_RECOGNIZEVIDEOCASTCREWLISTRESULT_H_
+#define ALIBABACLOUD_VIDEORECOG_MODEL_RECOGNIZEVIDEOCASTCREWLISTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,39 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VIDEORECOG_EXPORT UnderstandVideoContentResult : public ServiceResult
+			class ALIBABACLOUD_VIDEORECOG_EXPORT RecognizeVideoCastCrewListResult : public ServiceResult
 			{
 			public:
-				struct Data
-				{
-					struct VideoInfo
-					{
-						float fps;
-						long height;
-						long duration;
-						long width;
-					};
-					std::string tagInfo;
-					VideoInfo videoInfo;
-				};
 
 
-				UnderstandVideoContentResult();
-				explicit UnderstandVideoContentResult(const std::string &payload);
-				~UnderstandVideoContentResult();
-				std::string getMessage()const;
-				Data getData()const;
-				std::string getCode()const;
+				RecognizeVideoCastCrewListResult();
+				explicit RecognizeVideoCastCrewListResult(const std::string &payload);
+				~RecognizeVideoCastCrewListResult();
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string message_;
-				Data data_;
-				std::string code_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VIDEORECOG_MODEL_UNDERSTANDVIDEOCONTENTRESULT_H_
+#endif // !ALIBABACLOUD_VIDEORECOG_MODEL_RECOGNIZEVIDEOCASTCREWLISTRESULT_H_

@@ -159,6 +159,78 @@ VideorecogClient::GetAsyncJobResultOutcomeCallable VideorecogClient::getAsyncJob
 	return task->get_future();
 }
 
+VideorecogClient::RecognizeVideoCastCrewListOutcome VideorecogClient::recognizeVideoCastCrewList(const RecognizeVideoCastCrewListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RecognizeVideoCastCrewListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RecognizeVideoCastCrewListOutcome(RecognizeVideoCastCrewListResult(outcome.result()));
+	else
+		return RecognizeVideoCastCrewListOutcome(outcome.error());
+}
+
+void VideorecogClient::recognizeVideoCastCrewListAsync(const RecognizeVideoCastCrewListRequest& request, const RecognizeVideoCastCrewListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, recognizeVideoCastCrewList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VideorecogClient::RecognizeVideoCastCrewListOutcomeCallable VideorecogClient::recognizeVideoCastCrewListCallable(const RecognizeVideoCastCrewListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RecognizeVideoCastCrewListOutcome()>>(
+			[this, request]()
+			{
+			return this->recognizeVideoCastCrewList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VideorecogClient::SplitVideoPartsOutcome VideorecogClient::splitVideoParts(const SplitVideoPartsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SplitVideoPartsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SplitVideoPartsOutcome(SplitVideoPartsResult(outcome.result()));
+	else
+		return SplitVideoPartsOutcome(outcome.error());
+}
+
+void VideorecogClient::splitVideoPartsAsync(const SplitVideoPartsRequest& request, const SplitVideoPartsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, splitVideoParts(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VideorecogClient::SplitVideoPartsOutcomeCallable VideorecogClient::splitVideoPartsCallable(const SplitVideoPartsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SplitVideoPartsOutcome()>>(
+			[this, request]()
+			{
+			return this->splitVideoParts(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VideorecogClient::UnderstandVideoContentOutcome VideorecogClient::understandVideoContent(const UnderstandVideoContentRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

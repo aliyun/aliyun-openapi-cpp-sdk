@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VIDEORECOG_MODEL_GETASYNCJOBRESULTREQUEST_H_
-#define ALIBABACLOUD_VIDEORECOG_MODEL_GETASYNCJOBRESULTREQUEST_H_
+#ifndef ALIBABACLOUD_VIDEORECOG_MODEL_RECOGNIZEVIDEOCASTCREWLISTREQUEST_H_
+#define ALIBABACLOUD_VIDEORECOG_MODEL_RECOGNIZEVIDEOCASTCREWLISTREQUEST_H_
 
 #include <alibabacloud/videorecog/VideorecogExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,20 +26,29 @@
 namespace AlibabaCloud {
 namespace Videorecog {
 namespace Model {
-class ALIBABACLOUD_VIDEORECOG_EXPORT GetAsyncJobResultRequest : public RpcServiceRequest {
+class ALIBABACLOUD_VIDEORECOG_EXPORT RecognizeVideoCastCrewListRequest : public RpcServiceRequest {
 public:
-	GetAsyncJobResultRequest();
-	~GetAsyncJobResultRequest();
-	std::string getJobId() const;
-	void setJobId(const std::string &jobId);
+	struct Params {
+		std::string type;
+	};
+	RecognizeVideoCastCrewListRequest();
+	~RecognizeVideoCastCrewListRequest();
+	std::vector<Params> getParams() const;
+	void setParams(const std::vector<Params> &params);
 	bool getAsync() const;
 	void setAsync(bool async);
+	std::string getRegisterUrl() const;
+	void setRegisterUrl(const std::string &registerUrl);
+	std::string getVideoUrl() const;
+	void setVideoUrl(const std::string &videoUrl);
 
 private:
-	std::string jobId_;
+	std::vector<Params> params_;
 	bool async_;
+	std::string registerUrl_;
+	std::string videoUrl_;
 };
 } // namespace Model
 } // namespace Videorecog
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_VIDEORECOG_MODEL_GETASYNCJOBRESULTREQUEST_H_
+#endif // !ALIBABACLOUD_VIDEORECOG_MODEL_RECOGNIZEVIDEOCASTCREWLISTREQUEST_H_

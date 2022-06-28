@@ -28,6 +28,10 @@
 #include "model/GenerateVideoCoverResult.h"
 #include "model/GetAsyncJobResultRequest.h"
 #include "model/GetAsyncJobResultResult.h"
+#include "model/RecognizeVideoCastCrewListRequest.h"
+#include "model/RecognizeVideoCastCrewListResult.h"
+#include "model/SplitVideoPartsRequest.h"
+#include "model/SplitVideoPartsResult.h"
 #include "model/UnderstandVideoContentRequest.h"
 #include "model/UnderstandVideoContentResult.h"
 
@@ -48,6 +52,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetAsyncJobResultResult> GetAsyncJobResultOutcome;
 			typedef std::future<GetAsyncJobResultOutcome> GetAsyncJobResultOutcomeCallable;
 			typedef std::function<void(const VideorecogClient*, const Model::GetAsyncJobResultRequest&, const GetAsyncJobResultOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAsyncJobResultAsyncHandler;
+			typedef Outcome<Error, Model::RecognizeVideoCastCrewListResult> RecognizeVideoCastCrewListOutcome;
+			typedef std::future<RecognizeVideoCastCrewListOutcome> RecognizeVideoCastCrewListOutcomeCallable;
+			typedef std::function<void(const VideorecogClient*, const Model::RecognizeVideoCastCrewListRequest&, const RecognizeVideoCastCrewListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeVideoCastCrewListAsyncHandler;
+			typedef Outcome<Error, Model::SplitVideoPartsResult> SplitVideoPartsOutcome;
+			typedef std::future<SplitVideoPartsOutcome> SplitVideoPartsOutcomeCallable;
+			typedef std::function<void(const VideorecogClient*, const Model::SplitVideoPartsRequest&, const SplitVideoPartsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SplitVideoPartsAsyncHandler;
 			typedef Outcome<Error, Model::UnderstandVideoContentResult> UnderstandVideoContentOutcome;
 			typedef std::future<UnderstandVideoContentOutcome> UnderstandVideoContentOutcomeCallable;
 			typedef std::function<void(const VideorecogClient*, const Model::UnderstandVideoContentRequest&, const UnderstandVideoContentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnderstandVideoContentAsyncHandler;
@@ -65,6 +75,12 @@ namespace AlibabaCloud
 			GetAsyncJobResultOutcome getAsyncJobResult(const Model::GetAsyncJobResultRequest &request)const;
 			void getAsyncJobResultAsync(const Model::GetAsyncJobResultRequest& request, const GetAsyncJobResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetAsyncJobResultOutcomeCallable getAsyncJobResultCallable(const Model::GetAsyncJobResultRequest& request) const;
+			RecognizeVideoCastCrewListOutcome recognizeVideoCastCrewList(const Model::RecognizeVideoCastCrewListRequest &request)const;
+			void recognizeVideoCastCrewListAsync(const Model::RecognizeVideoCastCrewListRequest& request, const RecognizeVideoCastCrewListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RecognizeVideoCastCrewListOutcomeCallable recognizeVideoCastCrewListCallable(const Model::RecognizeVideoCastCrewListRequest& request) const;
+			SplitVideoPartsOutcome splitVideoParts(const Model::SplitVideoPartsRequest &request)const;
+			void splitVideoPartsAsync(const Model::SplitVideoPartsRequest& request, const SplitVideoPartsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SplitVideoPartsOutcomeCallable splitVideoPartsCallable(const Model::SplitVideoPartsRequest& request) const;
 			UnderstandVideoContentOutcome understandVideoContent(const Model::UnderstandVideoContentRequest &request)const;
 			void understandVideoContentAsync(const Model::UnderstandVideoContentRequest& request, const UnderstandVideoContentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UnderstandVideoContentOutcomeCallable understandVideoContentCallable(const Model::UnderstandVideoContentRequest& request) const;

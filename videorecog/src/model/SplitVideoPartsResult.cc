@@ -14,43 +14,44 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/videorecog/model/UnderstandVideoContentResult.h>
+#include <alibabacloud/videorecog/model/SplitVideoPartsResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Videorecog;
 using namespace AlibabaCloud::Videorecog::Model;
 
-UnderstandVideoContentResult::UnderstandVideoContentResult() :
+SplitVideoPartsResult::SplitVideoPartsResult() :
 	ServiceResult()
 {}
 
-UnderstandVideoContentResult::UnderstandVideoContentResult(const std::string &payload) :
+SplitVideoPartsResult::SplitVideoPartsResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-UnderstandVideoContentResult::~UnderstandVideoContentResult()
+SplitVideoPartsResult::~SplitVideoPartsResult()
 {}
 
-void UnderstandVideoContentResult::parse(const std::string &payload)
+void SplitVideoPartsResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["TagInfo"].isNull())
-		data_.tagInfo = dataNode["TagInfo"].asString();
-	auto videoInfoNode = dataNode["VideoInfo"];
-	if(!videoInfoNode["Width"].isNull())
-		data_.videoInfo.width = std::stol(videoInfoNode["Width"].asString());
-	if(!videoInfoNode["Height"].isNull())
-		data_.videoInfo.height = std::stol(videoInfoNode["Height"].asString());
-	if(!videoInfoNode["Duration"].isNull())
-		data_.videoInfo.duration = std::stol(videoInfoNode["Duration"].asString());
-	if(!videoInfoNode["Fps"].isNull())
-		data_.videoInfo.fps = std::stof(videoInfoNode["Fps"].asString());
+	auto allElementsNode = dataNode["Elements"]["elementsItem"];
+	for (auto dataNodeElementselementsItem : allElementsNode)
+	{
+		Data::ElementsItem elementsItemObject;
+		if(!dataNodeElementselementsItem["BeginTime"].isNull())
+			elementsItemObject.beginTime = std::stof(dataNodeElementselementsItem["BeginTime"].asString());
+		if(!dataNodeElementselementsItem["EndTime"].isNull())
+			elementsItemObject.endTime = std::stof(dataNodeElementselementsItem["EndTime"].asString());
+		if(!dataNodeElementselementsItem["Index"].isNull())
+			elementsItemObject.index = std::stol(dataNodeElementselementsItem["Index"].asString());
+		data_.elements.push_back(elementsItemObject);
+	}
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
@@ -58,17 +59,17 @@ void UnderstandVideoContentResult::parse(const std::string &payload)
 
 }
 
-std::string UnderstandVideoContentResult::getMessage()const
+std::string SplitVideoPartsResult::getMessage()const
 {
 	return message_;
 }
 
-UnderstandVideoContentResult::Data UnderstandVideoContentResult::getData()const
+SplitVideoPartsResult::Data SplitVideoPartsResult::getData()const
 {
 	return data_;
 }
 
-std::string UnderstandVideoContentResult::getCode()const
+std::string SplitVideoPartsResult::getCode()const
 {
 	return code_;
 }

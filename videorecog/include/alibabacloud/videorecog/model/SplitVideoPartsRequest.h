@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VIDEORECOG_MODEL_GETASYNCJOBRESULTREQUEST_H_
-#define ALIBABACLOUD_VIDEORECOG_MODEL_GETASYNCJOBRESULTREQUEST_H_
+#ifndef ALIBABACLOUD_VIDEORECOG_MODEL_SPLITVIDEOPARTSREQUEST_H_
+#define ALIBABACLOUD_VIDEORECOG_MODEL_SPLITVIDEOPARTSREQUEST_H_
 
 #include <alibabacloud/videorecog/VideorecogExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,20 +26,20 @@
 namespace AlibabaCloud {
 namespace Videorecog {
 namespace Model {
-class ALIBABACLOUD_VIDEORECOG_EXPORT GetAsyncJobResultRequest : public RpcServiceRequest {
+class ALIBABACLOUD_VIDEORECOG_EXPORT SplitVideoPartsRequest : public RpcServiceRequest {
 public:
-	GetAsyncJobResultRequest();
-	~GetAsyncJobResultRequest();
-	std::string getJobId() const;
-	void setJobId(const std::string &jobId);
+	SplitVideoPartsRequest();
+	~SplitVideoPartsRequest();
 	bool getAsync() const;
 	void setAsync(bool async);
+	std::string getVideoUrl() const;
+	void setVideoUrl(const std::string &videoUrl);
 
 private:
-	std::string jobId_;
 	bool async_;
+	std::string videoUrl_;
 };
 } // namespace Model
 } // namespace Videorecog
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_VIDEORECOG_MODEL_GETASYNCJOBRESULTREQUEST_H_
+#endif // !ALIBABACLOUD_VIDEORECOG_MODEL_SPLITVIDEOPARTSREQUEST_H_

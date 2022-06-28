@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VIDEORECOG_MODEL_UNDERSTANDVIDEOCONTENTRESULT_H_
-#define ALIBABACLOUD_VIDEORECOG_MODEL_UNDERSTANDVIDEOCONTENTRESULT_H_
+#ifndef ALIBABACLOUD_VIDEORECOG_MODEL_SPLITVIDEOPARTSRESULT_H_
+#define ALIBABACLOUD_VIDEORECOG_MODEL_SPLITVIDEOPARTSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,26 +29,24 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VIDEORECOG_EXPORT UnderstandVideoContentResult : public ServiceResult
+			class ALIBABACLOUD_VIDEORECOG_EXPORT SplitVideoPartsResult : public ServiceResult
 			{
 			public:
 				struct Data
 				{
-					struct VideoInfo
+					struct ElementsItem
 					{
-						float fps;
-						long height;
-						long duration;
-						long width;
+						float endTime;
+						float beginTime;
+						long index;
 					};
-					std::string tagInfo;
-					VideoInfo videoInfo;
+					std::vector<ElementsItem> elements;
 				};
 
 
-				UnderstandVideoContentResult();
-				explicit UnderstandVideoContentResult(const std::string &payload);
-				~UnderstandVideoContentResult();
+				SplitVideoPartsResult();
+				explicit SplitVideoPartsResult(const std::string &payload);
+				~SplitVideoPartsResult();
 				std::string getMessage()const;
 				Data getData()const;
 				std::string getCode()const;
@@ -64,4 +62,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VIDEORECOG_MODEL_UNDERSTANDVIDEOCONTENTRESULT_H_
+#endif // !ALIBABACLOUD_VIDEORECOG_MODEL_SPLITVIDEOPARTSRESULT_H_

@@ -14,32 +14,32 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/videorecog/model/UnderstandVideoContentRequest.h>
+#include <alibabacloud/videorecog/model/SplitVideoPartsRequest.h>
 
-using AlibabaCloud::Videorecog::Model::UnderstandVideoContentRequest;
+using AlibabaCloud::Videorecog::Model::SplitVideoPartsRequest;
 
-UnderstandVideoContentRequest::UnderstandVideoContentRequest()
-    : RpcServiceRequest("videorecog", "2020-03-20", "UnderstandVideoContent") {
+SplitVideoPartsRequest::SplitVideoPartsRequest()
+    : RpcServiceRequest("videorecog", "2020-03-20", "SplitVideoParts") {
   setMethod(HttpRequest::Method::Post);
 }
 
-UnderstandVideoContentRequest::~UnderstandVideoContentRequest() {}
+SplitVideoPartsRequest::~SplitVideoPartsRequest() {}
 
-bool UnderstandVideoContentRequest::getAsync() const {
+bool SplitVideoPartsRequest::getAsync() const {
   return async_;
 }
 
-void UnderstandVideoContentRequest::setAsync(bool async) {
+void SplitVideoPartsRequest::setAsync(bool async) {
   async_ = async;
   setBodyParameter(std::string("Async"), async ? "true" : "false");
 }
 
-std::string UnderstandVideoContentRequest::getVideoURL() const {
-  return videoURL_;
+std::string SplitVideoPartsRequest::getVideoUrl() const {
+  return videoUrl_;
 }
 
-void UnderstandVideoContentRequest::setVideoURL(const std::string &videoURL) {
-  videoURL_ = videoURL;
-  setBodyParameter(std::string("VideoURL"), videoURL);
+void SplitVideoPartsRequest::setVideoUrl(const std::string &videoUrl) {
+  videoUrl_ = videoUrl;
+  setBodyParameter(std::string("VideoUrl"), videoUrl);
 }
 
