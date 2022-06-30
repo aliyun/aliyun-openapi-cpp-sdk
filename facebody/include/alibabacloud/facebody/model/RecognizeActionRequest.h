@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,47 +17,48 @@
 #ifndef ALIBABACLOUD_FACEBODY_MODEL_RECOGNIZEACTIONREQUEST_H_
 #define ALIBABACLOUD_FACEBODY_MODEL_RECOGNIZEACTIONREQUEST_H_
 
+#include <alibabacloud/facebody/FacebodyExport.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
-#include <alibabacloud/facebody/FacebodyExport.h>
+#include <map>
 
-namespace AlibabaCloud
-{
-	namespace Facebody
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_FACEBODY_EXPORT RecognizeActionRequest : public RpcServiceRequest
-			{
-			public:
-				struct URLList
-				{
-					std::string imageData;
-					std::string uRL;
-				};
+namespace AlibabaCloud {
+namespace Facebody {
+namespace Model {
+class ALIBABACLOUD_FACEBODY_EXPORT RecognizeActionRequest : public RpcServiceRequest {
+public:
+	struct URLList {
+		std::string imageData;
+		std::string uRL;
+	};
+	RecognizeActionRequest();
+	~RecognizeActionRequest();
+	bool getFormatResultToJson() const;
+	void setFormatResultToJson(bool formatResultToJson);
+	int getType() const;
+	void setType(int type);
+	std::string getOssFile() const;
+	void setOssFile(const std::string &ossFile);
+	std::string getVideoData() const;
+	void setVideoData(const std::string &videoData);
+	std::vector<URLList> getURLList() const;
+	void setURLList(const std::vector<URLList> &uRLList);
+	std::string getRequestProxyBy() const;
+	void setRequestProxyBy(const std::string &requestProxyBy);
+	std::string getVideoUrl() const;
+	void setVideoUrl(const std::string &videoUrl);
 
-			public:
-				RecognizeActionRequest();
-				~RecognizeActionRequest();
-
-				int getType()const;
-				void setType(int type);
-				std::string getVideoData()const;
-				void setVideoData(const std::string& videoData);
-				std::vector<URLList> getURLList()const;
-				void setURLList(const std::vector<URLList>& uRLList);
-				std::string getVideoUrl()const;
-				void setVideoUrl(const std::string& videoUrl);
-
-            private:
-				int type_;
-				std::string videoData_;
-				std::vector<URLList> uRLList_;
-				std::string videoUrl_;
-
-			};
-		}
-	}
-}
+private:
+	bool formatResultToJson_;
+	int type_;
+	std::string ossFile_;
+	std::string videoData_;
+	std::vector<URLList> uRLList_;
+	std::string requestProxyBy_;
+	std::string videoUrl_;
+};
+} // namespace Model
+} // namespace Facebody
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_FACEBODY_MODEL_RECOGNIZEACTIONREQUEST_H_

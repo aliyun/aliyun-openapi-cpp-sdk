@@ -50,18 +50,6 @@ void HandPostureResult::parse(const std::string &payload)
 		for (auto dataNodeOutputsOutputResultsResult : allResultsNode)
 		{
 			Data::Output::Result resultsObject;
-			auto boxNode = value["Box"];
-			if(!boxNode["Confident"].isNull())
-				resultsObject.box.confident = std::stof(boxNode["Confident"].asString());
-			auto allPositionsNode = boxNode["Positions"]["Position"];
-			for (auto boxNodePositionsPosition : allPositionsNode)
-			{
-				Data::Output::Result::Box::Position positionObject;
-				auto allPoints = value["Points"]["Point"];
-				for (auto value : allPoints)
-					positionObject.points.push_back(value.asString());
-				resultsObject.box.positions.push_back(positionObject);
-			}
 			auto handsNode = value["Hands"];
 			if(!handsNode["Confident"].isNull())
 				resultsObject.hands.confident = std::stof(handsNode["Confident"].asString());
@@ -71,26 +59,38 @@ void HandPostureResult::parse(const std::string &payload)
 				Data::Output::Result::Hands::KeyPoint keyPointObject;
 				if(!handsNodeKeyPointsKeyPoint["Label"].isNull())
 					keyPointObject.label = handsNodeKeyPointsKeyPoint["Label"].asString();
-				auto allPositions1Node = handsNodeKeyPointsKeyPoint["Positions"]["Position"];
-				for (auto handsNodeKeyPointsKeyPointPositionsPosition : allPositions1Node)
+				auto allPositionsNode = handsNodeKeyPointsKeyPoint["Positions"]["Position"];
+				for (auto handsNodeKeyPointsKeyPointPositionsPosition : allPositionsNode)
 				{
-					Data::Output::Result::Hands::KeyPoint::Position2 positions1Object;
-					auto allPoints3 = value["Points"]["Point"];
-					for (auto value : allPoints3)
-						positions1Object.points3.push_back(value.asString());
-					keyPointObject.positions1.push_back(positions1Object);
+					Data::Output::Result::Hands::KeyPoint::Position positionsObject;
+					auto allPoints = value["Points"]["Point"];
+					for (auto value : allPoints)
+						positionsObject.points.push_back(value.asString());
+					keyPointObject.positions.push_back(positionsObject);
 				}
 				resultsObject.hands.keyPoints.push_back(keyPointObject);
+			}
+			auto boxNode = value["Box"];
+			if(!boxNode["Confident"].isNull())
+				resultsObject.box.confident = std::stof(boxNode["Confident"].asString());
+			auto allPositions1Node = boxNode["Positions"]["Position"];
+			for (auto boxNodePositionsPosition : allPositions1Node)
+			{
+				Data::Output::Result::Box::Position2 position2Object;
+				auto allPoints3 = value["Points"]["Point"];
+				for (auto value : allPoints3)
+					position2Object.points3.push_back(value.asString());
+				resultsObject.box.positions1.push_back(position2Object);
 			}
 			outputObject.results.push_back(resultsObject);
 		}
 		data_.outputs.push_back(outputObject);
 	}
 	auto metaObjectNode = dataNode["MetaObject"];
-	if(!metaObjectNode["Height"].isNull())
-		data_.metaObject.height = std::stoi(metaObjectNode["Height"].asString());
 	if(!metaObjectNode["Width"].isNull())
 		data_.metaObject.width = std::stoi(metaObjectNode["Width"].asString());
+	if(!metaObjectNode["Height"].isNull())
+		data_.metaObject.height = std::stoi(metaObjectNode["Height"].asString());
 
 }
 

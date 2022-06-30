@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,56 +18,76 @@
 
 using AlibabaCloud::Facebody::Model::AddBodyTraceRequest;
 
-AddBodyTraceRequest::AddBodyTraceRequest() :
-	RpcServiceRequest("facebody", "2019-12-30", "AddBodyTrace")
-{
-	setMethod(HttpRequest::Method::Post);
+AddBodyTraceRequest::AddBodyTraceRequest()
+    : RpcServiceRequest("facebody", "2019-12-30", "AddBodyTrace") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-AddBodyTraceRequest::~AddBodyTraceRequest()
-{}
+AddBodyTraceRequest::~AddBodyTraceRequest() {}
 
-std::string AddBodyTraceRequest::getExtraData()const
-{
-	return extraData_;
+bool AddBodyTraceRequest::getFormatResultToJson() const {
+  return formatResultToJson_;
 }
 
-void AddBodyTraceRequest::setExtraData(const std::string& extraData)
-{
-	extraData_ = extraData;
-	setBodyParameter("ExtraData", extraData);
+void AddBodyTraceRequest::setFormatResultToJson(bool formatResultToJson) {
+  formatResultToJson_ = formatResultToJson;
+  setParameter(std::string("FormatResultToJson"), formatResultToJson ? "true" : "false");
 }
 
-long AddBodyTraceRequest::getPersonId()const
-{
-	return personId_;
+std::string AddBodyTraceRequest::getExtraData() const {
+  return extraData_;
 }
 
-void AddBodyTraceRequest::setPersonId(long personId)
-{
-	personId_ = personId;
-	setBodyParameter("PersonId", std::to_string(personId));
+void AddBodyTraceRequest::setExtraData(const std::string &extraData) {
+  extraData_ = extraData;
+  setBodyParameter(std::string("ExtraData"), extraData);
 }
 
-Array AddBodyTraceRequest::getImages()const
-{
-	return images_;
+long AddBodyTraceRequest::getPersonId() const {
+  return personId_;
 }
 
-void AddBodyTraceRequest::setImages(const Array& images)
-{
-	images_ = images;
-	setBodyParameter("Images", std::to_string(images));
+void AddBodyTraceRequest::setPersonId(long personId) {
+  personId_ = personId;
+  setBodyParameter(std::string("PersonId"), std::to_string(personId));
 }
 
-long AddBodyTraceRequest::getDbId()const
-{
-	return dbId_;
+std::string AddBodyTraceRequest::getOssFile() const {
+  return ossFile_;
 }
 
-void AddBodyTraceRequest::setDbId(long dbId)
-{
-	dbId_ = dbId;
-	setBodyParameter("DbId", std::to_string(dbId));
+void AddBodyTraceRequest::setOssFile(const std::string &ossFile) {
+  ossFile_ = ossFile;
+  setParameter(std::string("OssFile"), ossFile);
+}
+
+std::vector<AddBodyTraceRequest::Images> AddBodyTraceRequest::getImages() const {
+  return images_;
+}
+
+void AddBodyTraceRequest::setImages(const std::vector<AddBodyTraceRequest::Images> &images) {
+  images_ = images;
+  for(int dep1 = 0; dep1 != images.size(); dep1++) {
+    setBodyParameter(std::string("Images") + "." + std::to_string(dep1 + 1) + ".ImageURL", images[dep1].imageURL);
+    setBodyParameter(std::string("Images") + "." + std::to_string(dep1 + 1) + ".ImageData", images[dep1].imageData);
+  }
+}
+
+std::string AddBodyTraceRequest::getRequestProxyBy() const {
+  return requestProxyBy_;
+}
+
+void AddBodyTraceRequest::setRequestProxyBy(const std::string &requestProxyBy) {
+  requestProxyBy_ = requestProxyBy;
+  setParameter(std::string("RequestProxyBy"), requestProxyBy);
+}
+
+long AddBodyTraceRequest::getDbId() const {
+  return dbId_;
+}
+
+void AddBodyTraceRequest::setDbId(long dbId) {
+  dbId_ = dbId;
+  setBodyParameter(std::string("DbId"), std::to_string(dbId));
 }
 

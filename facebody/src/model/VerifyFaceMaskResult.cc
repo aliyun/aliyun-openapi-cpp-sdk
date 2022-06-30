@@ -40,10 +40,10 @@ void VerifyFaceMaskResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["Confidence"].isNull())
-		data_.confidence = std::stof(dataNode["Confidence"].asString());
 	if(!dataNode["Mask"].isNull())
 		data_.mask = std::stoi(dataNode["Mask"].asString());
+	if(!dataNode["Confidence"].isNull())
+		data_.confidence = std::stof(dataNode["Confidence"].asString());
 	if(!dataNode["MaskRef"].isNull())
 		data_.maskRef = std::stoi(dataNode["MaskRef"].asString());
 		auto allThresholds = dataNode["Thresholds"]["Thresholds"];

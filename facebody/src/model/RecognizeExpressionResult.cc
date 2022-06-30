@@ -49,14 +49,14 @@ void RecognizeExpressionResult::parse(const std::string &payload)
 		if(!dataNodeElementsElement["FaceProbability"].isNull())
 			elementObject.faceProbability = std::stof(dataNodeElementsElement["FaceProbability"].asString());
 		auto faceRectangleNode = value["FaceRectangle"];
-		if(!faceRectangleNode["Height"].isNull())
-			elementObject.faceRectangle.height = std::stoi(faceRectangleNode["Height"].asString());
-		if(!faceRectangleNode["Left"].isNull())
-			elementObject.faceRectangle.left = std::stoi(faceRectangleNode["Left"].asString());
 		if(!faceRectangleNode["Top"].isNull())
 			elementObject.faceRectangle.top = std::stoi(faceRectangleNode["Top"].asString());
 		if(!faceRectangleNode["Width"].isNull())
 			elementObject.faceRectangle.width = std::stoi(faceRectangleNode["Width"].asString());
+		if(!faceRectangleNode["Height"].isNull())
+			elementObject.faceRectangle.height = std::stoi(faceRectangleNode["Height"].asString());
+		if(!faceRectangleNode["Left"].isNull())
+			elementObject.faceRectangle.left = std::stoi(faceRectangleNode["Left"].asString());
 		data_.elements.push_back(elementObject);
 	}
 

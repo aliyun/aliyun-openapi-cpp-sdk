@@ -38,8 +38,8 @@ namespace AlibabaCloud
 					{
 						float score;
 						long personId;
-						long traceId;
 						long dbId;
+						long traceId;
 						std::string extraData;
 					};
 					std::vector<Trace> matchList;

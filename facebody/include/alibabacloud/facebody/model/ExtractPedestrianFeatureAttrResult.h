@@ -35,23 +35,23 @@ namespace AlibabaCloud
 				struct Data
 				{
 					std::string hair;
-					std::string upperType;
 					float upperTypeScore;
-					std::string lowerColor;
+					std::string upperType;
 					float qualityScore;
+					std::string lowerColor;
 					std::string gender;
 					std::string orientation;
 					std::string feature;
 					float orientationScore;
 					float upperColorScore;
-					float genderScore;
 					float lowerColorScore;
+					float genderScore;
 					std::string objType;
 					float lowerTypeScore;
 					float hairScore;
 					std::string upperColor;
-					std::string lowerType;
 					float ageScore;
+					std::string lowerType;
 					float objTypeScore;
 					std::string age;
 				};

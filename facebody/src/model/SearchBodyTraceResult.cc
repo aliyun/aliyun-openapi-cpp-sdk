@@ -44,22 +44,22 @@ void SearchBodyTraceResult::parse(const std::string &payload)
 	for (auto dataNodeMatchListTrace : allMatchListNode)
 	{
 		Data::Trace traceObject;
-		if(!dataNodeMatchListTrace["Score"].isNull())
-			traceObject.score = std::stof(dataNodeMatchListTrace["Score"].asString());
+		if(!dataNodeMatchListTrace["DbId"].isNull())
+			traceObject.dbId = std::stol(dataNodeMatchListTrace["DbId"].asString());
 		if(!dataNodeMatchListTrace["PersonId"].isNull())
 			traceObject.personId = std::stol(dataNodeMatchListTrace["PersonId"].asString());
 		if(!dataNodeMatchListTrace["TraceId"].isNull())
 			traceObject.traceId = std::stol(dataNodeMatchListTrace["TraceId"].asString());
-		if(!dataNodeMatchListTrace["DbId"].isNull())
-			traceObject.dbId = std::stol(dataNodeMatchListTrace["DbId"].asString());
+		if(!dataNodeMatchListTrace["Score"].isNull())
+			traceObject.score = std::stof(dataNodeMatchListTrace["Score"].asString());
 		if(!dataNodeMatchListTrace["ExtraData"].isNull())
 			traceObject.extraData = dataNodeMatchListTrace["ExtraData"].asString();
 		data_.matchList.push_back(traceObject);
 	}
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 
 }
 

@@ -74,10 +74,10 @@ void BodyPostureResult::parse(const std::string &payload)
 		data_.outputs.push_back(outputObject);
 	}
 	auto metaObjectNode = dataNode["MetaObject"];
-	if(!metaObjectNode["Height"].isNull())
-		data_.metaObject.height = std::stoi(metaObjectNode["Height"].asString());
 	if(!metaObjectNode["Width"].isNull())
 		data_.metaObject.width = std::stoi(metaObjectNode["Width"].asString());
+	if(!metaObjectNode["Height"].isNull())
+		data_.metaObject.height = std::stoi(metaObjectNode["Height"].asString());
 
 }
 

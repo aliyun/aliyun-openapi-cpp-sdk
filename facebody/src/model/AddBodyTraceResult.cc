@@ -42,10 +42,10 @@ void AddBodyTraceResult::parse(const std::string &payload)
 	auto dataNode = value["Data"];
 	if(!dataNode["Id"].isNull())
 		data_.id = std::stol(dataNode["Id"].asString());
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 
 }
 

@@ -36,8 +36,8 @@ namespace AlibabaCloud
 				{
 					struct Trace
 					{
-						std::string extraData;
 						long id;
+						std::string extraData;
 					};
 					long traceCount;
 					long instanceId;

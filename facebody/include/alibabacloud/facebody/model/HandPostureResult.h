@@ -43,28 +43,28 @@ namespace AlibabaCloud
 					{
 						struct Result
 						{
-							struct Box
-							{
-								struct Position
-								{
-									std::vector<std::string> points;
-								};
-								float confident;
-								std::vector<Position> positions;
-							};
 							struct Hands
 							{
 								struct KeyPoint
 								{
-									struct Position2
+									struct Position
 									{
-										std::vector<std::string> points3;
+										std::vector<std::string> points;
 									};
-									std::vector<KeyPoint::Position2> positions1;
+									std::vector<KeyPoint::Position> positions;
 									std::string label;
 								};
 								float confident;
 								std::vector<KeyPoint> keyPoints;
+							};
+							struct Box
+							{
+								struct Position2
+								{
+									std::vector<std::string> points3;
+								};
+								float confident;
+								std::vector<Position2> positions1;
 							};
 							Hands hands;
 							Box box;

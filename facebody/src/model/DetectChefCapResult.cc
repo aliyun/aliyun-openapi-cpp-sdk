@@ -44,10 +44,10 @@ void DetectChefCapResult::parse(const std::string &payload)
 	for (auto dataNodeElementsElementsItem : allElementsNode)
 	{
 		Data::ElementsItem elementsItemObject;
-		if(!dataNodeElementsElementsItem["Category"].isNull())
-			elementsItemObject.category = dataNodeElementsElementsItem["Category"].asString();
 		if(!dataNodeElementsElementsItem["Confidence"].isNull())
 			elementsItemObject.confidence = std::stof(dataNodeElementsElementsItem["Confidence"].asString());
+		if(!dataNodeElementsElementsItem["Category"].isNull())
+			elementsItemObject.category = dataNodeElementsElementsItem["Category"].asString();
 		auto allBox = value["Box"]["Box"];
 		for (auto value : allBox)
 			elementsItemObject.box.push_back(value.asString());

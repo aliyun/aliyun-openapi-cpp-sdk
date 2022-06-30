@@ -40,8 +40,6 @@ void GetBodyPersonResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["TraceCount"].isNull())
-		data_.traceCount = std::stol(dataNode["TraceCount"].asString());
 	if(!dataNode["InstanceId"].isNull())
 		data_.instanceId = std::stol(dataNode["InstanceId"].asString());
 	if(!dataNode["DbId"].isNull())
@@ -50,20 +48,22 @@ void GetBodyPersonResult::parse(const std::string &payload)
 		data_.id = std::stol(dataNode["Id"].asString());
 	if(!dataNode["Name"].isNull())
 		data_.name = dataNode["Name"].asString();
+	if(!dataNode["TraceCount"].isNull())
+		data_.traceCount = std::stol(dataNode["TraceCount"].asString());
 	auto allTraceListNode = dataNode["TraceList"]["Trace"];
 	for (auto dataNodeTraceListTrace : allTraceListNode)
 	{
 		Data::Trace traceObject;
-		if(!dataNodeTraceListTrace["ExtraData"].isNull())
-			traceObject.extraData = dataNodeTraceListTrace["ExtraData"].asString();
 		if(!dataNodeTraceListTrace["Id"].isNull())
 			traceObject.id = std::stol(dataNodeTraceListTrace["Id"].asString());
+		if(!dataNodeTraceListTrace["ExtraData"].isNull())
+			traceObject.extraData = dataNodeTraceListTrace["ExtraData"].asString();
 		data_.traceList.push_back(traceObject);
 	}
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 
 }
 

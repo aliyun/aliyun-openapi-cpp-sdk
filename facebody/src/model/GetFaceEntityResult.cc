@@ -40,12 +40,12 @@ void GetFaceEntityResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
+	if(!dataNode["DbName"].isNull())
+		data_.dbName = dataNode["DbName"].asString();
 	if(!dataNode["EntityId"].isNull())
 		data_.entityId = dataNode["EntityId"].asString();
 	if(!dataNode["Labels"].isNull())
 		data_.labels = dataNode["Labels"].asString();
-	if(!dataNode["DbName"].isNull())
-		data_.dbName = dataNode["DbName"].asString();
 	auto allFacesNode = dataNode["Faces"]["Face"];
 	for (auto dataNodeFacesFace : allFacesNode)
 	{

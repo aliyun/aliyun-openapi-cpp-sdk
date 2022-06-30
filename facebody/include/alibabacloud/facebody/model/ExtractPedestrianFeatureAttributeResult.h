@@ -37,8 +37,8 @@ namespace AlibabaCloud
 					struct Element
 					{
 						std::string hair;
-						std::string upperType;
 						float upperTypeScore;
+						std::string upperType;
 						float qualityScore;
 						std::string lowerColor;
 						std::string gender;
@@ -50,14 +50,14 @@ namespace AlibabaCloud
 						float lowerTypeScore;
 						float hairScore;
 						std::string upperColor;
-						std::string lowerType;
 						float ageScore;
+						std::string lowerType;
 						float objTypeScore;
 						std::string age;
 					};
 					std::string hair;
-					std::string upperType;
 					float upperTypeScore;
+					std::string upperType;
 					float qualityScore;
 					std::string lowerColor;
 					std::string gender;
@@ -70,8 +70,8 @@ namespace AlibabaCloud
 					float lowerTypeScore;
 					float hairScore;
 					std::string upperColor;
-					std::string lowerType;
 					float ageScore;
+					std::string lowerType;
 					float objTypeScore;
 					std::string age;
 				};

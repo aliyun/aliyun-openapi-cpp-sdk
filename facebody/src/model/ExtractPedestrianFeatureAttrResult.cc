@@ -40,50 +40,50 @@ void ExtractPedestrianFeatureAttrResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["Hair"].isNull())
-		data_.hair = dataNode["Hair"].asString();
-	if(!dataNode["UpperType"].isNull())
-		data_.upperType = dataNode["UpperType"].asString();
-	if(!dataNode["UpperTypeScore"].isNull())
-		data_.upperTypeScore = std::stof(dataNode["UpperTypeScore"].asString());
-	if(!dataNode["LowerColor"].isNull())
-		data_.lowerColor = dataNode["LowerColor"].asString();
 	if(!dataNode["QualityScore"].isNull())
 		data_.qualityScore = std::stof(dataNode["QualityScore"].asString());
-	if(!dataNode["Gender"].isNull())
-		data_.gender = dataNode["Gender"].asString();
-	if(!dataNode["Orientation"].isNull())
-		data_.orientation = dataNode["Orientation"].asString();
-	if(!dataNode["Feature"].isNull())
-		data_.feature = dataNode["Feature"].asString();
-	if(!dataNode["OrientationScore"].isNull())
-		data_.orientationScore = std::stof(dataNode["OrientationScore"].asString());
-	if(!dataNode["UpperColorScore"].isNull())
-		data_.upperColorScore = std::stof(dataNode["UpperColorScore"].asString());
-	if(!dataNode["GenderScore"].isNull())
-		data_.genderScore = std::stof(dataNode["GenderScore"].asString());
-	if(!dataNode["LowerColorScore"].isNull())
-		data_.lowerColorScore = std::stof(dataNode["LowerColorScore"].asString());
 	if(!dataNode["ObjType"].isNull())
 		data_.objType = dataNode["ObjType"].asString();
-	if(!dataNode["LowerTypeScore"].isNull())
-		data_.lowerTypeScore = std::stof(dataNode["LowerTypeScore"].asString());
-	if(!dataNode["HairScore"].isNull())
-		data_.hairScore = std::stof(dataNode["HairScore"].asString());
-	if(!dataNode["UpperColor"].isNull())
-		data_.upperColor = dataNode["UpperColor"].asString();
-	if(!dataNode["LowerType"].isNull())
-		data_.lowerType = dataNode["LowerType"].asString();
-	if(!dataNode["AgeScore"].isNull())
-		data_.ageScore = std::stof(dataNode["AgeScore"].asString());
+	if(!dataNode["Feature"].isNull())
+		data_.feature = dataNode["Feature"].asString();
+	if(!dataNode["Gender"].isNull())
+		data_.gender = dataNode["Gender"].asString();
+	if(!dataNode["LowerColorScore"].isNull())
+		data_.lowerColorScore = std::stof(dataNode["LowerColorScore"].asString());
 	if(!dataNode["ObjTypeScore"].isNull())
 		data_.objTypeScore = std::stof(dataNode["ObjTypeScore"].asString());
 	if(!dataNode["Age"].isNull())
 		data_.age = dataNode["Age"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
+	if(!dataNode["AgeScore"].isNull())
+		data_.ageScore = std::stof(dataNode["AgeScore"].asString());
+	if(!dataNode["UpperTypeScore"].isNull())
+		data_.upperTypeScore = std::stof(dataNode["UpperTypeScore"].asString());
+	if(!dataNode["LowerTypeScore"].isNull())
+		data_.lowerTypeScore = std::stof(dataNode["LowerTypeScore"].asString());
+	if(!dataNode["LowerColor"].isNull())
+		data_.lowerColor = dataNode["LowerColor"].asString();
+	if(!dataNode["Hair"].isNull())
+		data_.hair = dataNode["Hair"].asString();
+	if(!dataNode["UpperColor"].isNull())
+		data_.upperColor = dataNode["UpperColor"].asString();
+	if(!dataNode["GenderScore"].isNull())
+		data_.genderScore = std::stof(dataNode["GenderScore"].asString());
+	if(!dataNode["UpperType"].isNull())
+		data_.upperType = dataNode["UpperType"].asString();
+	if(!dataNode["HairScore"].isNull())
+		data_.hairScore = std::stof(dataNode["HairScore"].asString());
+	if(!dataNode["LowerType"].isNull())
+		data_.lowerType = dataNode["LowerType"].asString();
+	if(!dataNode["UpperColorScore"].isNull())
+		data_.upperColorScore = std::stof(dataNode["UpperColorScore"].asString());
+	if(!dataNode["Orientation"].isNull())
+		data_.orientation = dataNode["Orientation"].asString();
+	if(!dataNode["OrientationScore"].isNull())
+		data_.orientationScore = std::stof(dataNode["OrientationScore"].asString());
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 
 }
 

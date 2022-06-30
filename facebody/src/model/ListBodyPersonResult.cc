@@ -46,22 +46,22 @@ void ListBodyPersonResult::parse(const std::string &payload)
 	for (auto dataNodePersonListPerson : allPersonListNode)
 	{
 		Data::Person personObject;
-		if(!dataNodePersonListPerson["TraceCount"].isNull())
-			personObject.traceCount = std::stol(dataNodePersonListPerson["TraceCount"].asString());
 		if(!dataNodePersonListPerson["InstanceId"].isNull())
 			personObject.instanceId = std::stol(dataNodePersonListPerson["InstanceId"].asString());
 		if(!dataNodePersonListPerson["DbId"].isNull())
 			personObject.dbId = std::stol(dataNodePersonListPerson["DbId"].asString());
-		if(!dataNodePersonListPerson["Id"].isNull())
-			personObject.id = std::stol(dataNodePersonListPerson["Id"].asString());
 		if(!dataNodePersonListPerson["Name"].isNull())
 			personObject.name = dataNodePersonListPerson["Name"].asString();
+		if(!dataNodePersonListPerson["TraceCount"].isNull())
+			personObject.traceCount = std::stol(dataNodePersonListPerson["TraceCount"].asString());
+		if(!dataNodePersonListPerson["Id"].isNull())
+			personObject.id = std::stol(dataNodePersonListPerson["Id"].asString());
 		data_.personList.push_back(personObject);
 	}
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 
 }
 

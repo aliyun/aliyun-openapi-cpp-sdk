@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,56 +18,73 @@
 
 using AlibabaCloud::Facebody::Model::FaceBeautyRequest;
 
-FaceBeautyRequest::FaceBeautyRequest() :
-	RpcServiceRequest("facebody", "2019-12-30", "FaceBeauty")
-{
-	setMethod(HttpRequest::Method::Post);
+FaceBeautyRequest::FaceBeautyRequest()
+    : RpcServiceRequest("facebody", "2019-12-30", "FaceBeauty") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-FaceBeautyRequest::~FaceBeautyRequest()
-{}
+FaceBeautyRequest::~FaceBeautyRequest() {}
 
-float FaceBeautyRequest::getWhite()const
-{
-	return white_;
+bool FaceBeautyRequest::getFormatResultToJson() const {
+  return formatResultToJson_;
 }
 
-void FaceBeautyRequest::setWhite(float white)
-{
-	white_ = white;
-	setBodyParameter("White", std::to_string(white));
+void FaceBeautyRequest::setFormatResultToJson(bool formatResultToJson) {
+  formatResultToJson_ = formatResultToJson;
+  setParameter(std::string("FormatResultToJson"), formatResultToJson ? "true" : "false");
 }
 
-float FaceBeautyRequest::getSmooth()const
-{
-	return smooth_;
+float FaceBeautyRequest::getWhite() const {
+  return white_;
 }
 
-void FaceBeautyRequest::setSmooth(float smooth)
-{
-	smooth_ = smooth;
-	setBodyParameter("Smooth", std::to_string(smooth));
+void FaceBeautyRequest::setWhite(float white) {
+  white_ = white;
+  setBodyParameter(std::string("White"), std::to_string(white));
 }
 
-float FaceBeautyRequest::getSharp()const
-{
-	return sharp_;
+std::string FaceBeautyRequest::getOssFile() const {
+  return ossFile_;
 }
 
-void FaceBeautyRequest::setSharp(float sharp)
-{
-	sharp_ = sharp;
-	setBodyParameter("Sharp", std::to_string(sharp));
+void FaceBeautyRequest::setOssFile(const std::string &ossFile) {
+  ossFile_ = ossFile;
+  setParameter(std::string("OssFile"), ossFile);
 }
 
-std::string FaceBeautyRequest::getImageURL()const
-{
-	return imageURL_;
+float FaceBeautyRequest::getSmooth() const {
+  return smooth_;
 }
 
-void FaceBeautyRequest::setImageURL(const std::string& imageURL)
-{
-	imageURL_ = imageURL;
-	setBodyParameter("ImageURL", imageURL);
+void FaceBeautyRequest::setSmooth(float smooth) {
+  smooth_ = smooth;
+  setBodyParameter(std::string("Smooth"), std::to_string(smooth));
+}
+
+std::string FaceBeautyRequest::getRequestProxyBy() const {
+  return requestProxyBy_;
+}
+
+void FaceBeautyRequest::setRequestProxyBy(const std::string &requestProxyBy) {
+  requestProxyBy_ = requestProxyBy;
+  setParameter(std::string("RequestProxyBy"), requestProxyBy);
+}
+
+float FaceBeautyRequest::getSharp() const {
+  return sharp_;
+}
+
+void FaceBeautyRequest::setSharp(float sharp) {
+  sharp_ = sharp;
+  setBodyParameter(std::string("Sharp"), std::to_string(sharp));
+}
+
+std::string FaceBeautyRequest::getImageURL() const {
+  return imageURL_;
+}
+
+void FaceBeautyRequest::setImageURL(const std::string &imageURL) {
+  imageURL_ = imageURL;
+  setBodyParameter(std::string("ImageURL"), imageURL);
 }
 

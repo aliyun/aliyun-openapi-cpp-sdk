@@ -52,10 +52,10 @@ void ListBodyDbsResult::parse(const std::string &payload)
 			dbListItemObject.name = dataNodeDbListDbListItem["Name"].asString();
 		data_.dbList.push_back(dbListItemObject);
 	}
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 
 }
 
