@@ -40,12 +40,14 @@ void DescribeDefenseCountStatisticsResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto defenseCountStatisticsNode = value["DefenseCountStatistics"];
-	if(!defenseCountStatisticsNode["DefenseCountTotalUsageOfCurrentMonth"].isNull())
-		defenseCountStatistics_.defenseCountTotalUsageOfCurrentMonth = std::stoi(defenseCountStatisticsNode["DefenseCountTotalUsageOfCurrentMonth"].asString());
 	if(!defenseCountStatisticsNode["FlowPackCountRemain"].isNull())
 		defenseCountStatistics_.flowPackCountRemain = std::stoi(defenseCountStatisticsNode["FlowPackCountRemain"].asString());
 	if(!defenseCountStatisticsNode["MaxUsableDefenseCountCurrentMonth"].isNull())
 		defenseCountStatistics_.maxUsableDefenseCountCurrentMonth = std::stoi(defenseCountStatisticsNode["MaxUsableDefenseCountCurrentMonth"].asString());
+	if(!defenseCountStatisticsNode["DefenseCountTotalUsageOfCurrentMonth"].isNull())
+		defenseCountStatistics_.defenseCountTotalUsageOfCurrentMonth = std::stoi(defenseCountStatisticsNode["DefenseCountTotalUsageOfCurrentMonth"].asString());
+	if(!defenseCountStatisticsNode["SecHighSpeedCountRemain"].isNull())
+		defenseCountStatistics_.secHighSpeedCountRemain = std::stoi(defenseCountStatisticsNode["SecHighSpeedCountRemain"].asString());
 
 }
 

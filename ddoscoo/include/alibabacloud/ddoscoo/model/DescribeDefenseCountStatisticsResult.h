@@ -34,6 +34,7 @@ namespace AlibabaCloud
 			public:
 				struct DefenseCountStatistics
 				{
+					int secHighSpeedCountRemain;
 					int defenseCountTotalUsageOfCurrentMonth;
 					int maxUsableDefenseCountCurrentMonth;
 					int flowPackCountRemain;

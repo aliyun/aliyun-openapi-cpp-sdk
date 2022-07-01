@@ -21,273 +21,649 @@ set(ddoscoo_public_header
 	include/alibabacloud/ddoscoo/DdoscooExport.h )
 
 set(ddoscoo_public_header_model 
-	include/alibabacloud/ddoscoo/model/AddLayer7CCRuleRequest.h
-	include/alibabacloud/ddoscoo/model/AddLayer7CCRuleResult.h
-	include/alibabacloud/ddoscoo/model/CloseDomainSlsConfigRequest.h
-	include/alibabacloud/ddoscoo/model/CloseDomainSlsConfigResult.h
-	include/alibabacloud/ddoscoo/model/ConfigHealthCheckRequest.h
-	include/alibabacloud/ddoscoo/model/ConfigHealthCheckResult.h
-	include/alibabacloud/ddoscoo/model/ConfigLayer4RuleRequest.h
-	include/alibabacloud/ddoscoo/model/ConfigLayer4RuleResult.h
-	include/alibabacloud/ddoscoo/model/ConfigLayer4RuleAttributeRequest.h
-	include/alibabacloud/ddoscoo/model/ConfigLayer4RuleAttributeResult.h
-	include/alibabacloud/ddoscoo/model/ConfigLayer7BlackWhiteListRequest.h
-	include/alibabacloud/ddoscoo/model/ConfigLayer7BlackWhiteListResult.h
-	include/alibabacloud/ddoscoo/model/ConfigLayer7CCRuleRequest.h
-	include/alibabacloud/ddoscoo/model/ConfigLayer7CCRuleResult.h
-	include/alibabacloud/ddoscoo/model/ConfigLayer7CCTemplateRequest.h
-	include/alibabacloud/ddoscoo/model/ConfigLayer7CCTemplateResult.h
-	include/alibabacloud/ddoscoo/model/ConfigLayer7CertRequest.h
-	include/alibabacloud/ddoscoo/model/ConfigLayer7CertResult.h
-	include/alibabacloud/ddoscoo/model/ConfigLayer7RuleRequest.h
-	include/alibabacloud/ddoscoo/model/ConfigLayer7RuleResult.h
+	include/alibabacloud/ddoscoo/model/AddAutoCcBlacklistRequest.h
+	include/alibabacloud/ddoscoo/model/AddAutoCcBlacklistResult.h
+	include/alibabacloud/ddoscoo/model/AddAutoCcWhitelistRequest.h
+	include/alibabacloud/ddoscoo/model/AddAutoCcWhitelistResult.h
+	include/alibabacloud/ddoscoo/model/AssociateWebCertRequest.h
+	include/alibabacloud/ddoscoo/model/AssociateWebCertResult.h
+	include/alibabacloud/ddoscoo/model/AttachSceneDefenseObjectRequest.h
+	include/alibabacloud/ddoscoo/model/AttachSceneDefenseObjectResult.h
+	include/alibabacloud/ddoscoo/model/ConfigL7RsPolicyRequest.h
+	include/alibabacloud/ddoscoo/model/ConfigL7RsPolicyResult.h
+	include/alibabacloud/ddoscoo/model/ConfigLayer4RemarkRequest.h
+	include/alibabacloud/ddoscoo/model/ConfigLayer4RemarkResult.h
+	include/alibabacloud/ddoscoo/model/ConfigLayer4RuleBakModeRequest.h
+	include/alibabacloud/ddoscoo/model/ConfigLayer4RuleBakModeResult.h
+	include/alibabacloud/ddoscoo/model/ConfigLayer4RulePolicyRequest.h
+	include/alibabacloud/ddoscoo/model/ConfigLayer4RulePolicyResult.h
+	include/alibabacloud/ddoscoo/model/ConfigNetworkRegionBlockRequest.h
+	include/alibabacloud/ddoscoo/model/ConfigNetworkRegionBlockResult.h
+	include/alibabacloud/ddoscoo/model/ConfigNetworkRulesRequest.h
+	include/alibabacloud/ddoscoo/model/ConfigNetworkRulesResult.h
+	include/alibabacloud/ddoscoo/model/ConfigUdpReflectRequest.h
+	include/alibabacloud/ddoscoo/model/ConfigUdpReflectResult.h
+	include/alibabacloud/ddoscoo/model/ConfigWebCCTemplateRequest.h
+	include/alibabacloud/ddoscoo/model/ConfigWebCCTemplateResult.h
+	include/alibabacloud/ddoscoo/model/ConfigWebIpSetRequest.h
+	include/alibabacloud/ddoscoo/model/ConfigWebIpSetResult.h
 	include/alibabacloud/ddoscoo/model/CreateAsyncTaskRequest.h
 	include/alibabacloud/ddoscoo/model/CreateAsyncTaskResult.h
-	include/alibabacloud/ddoscoo/model/CreateLayer4RuleRequest.h
-	include/alibabacloud/ddoscoo/model/CreateLayer4RuleResult.h
-	include/alibabacloud/ddoscoo/model/CreateLayer7RuleRequest.h
-	include/alibabacloud/ddoscoo/model/CreateLayer7RuleResult.h
+	include/alibabacloud/ddoscoo/model/CreateDomainResourceRequest.h
+	include/alibabacloud/ddoscoo/model/CreateDomainResourceResult.h
+	include/alibabacloud/ddoscoo/model/CreateNetworkRulesRequest.h
+	include/alibabacloud/ddoscoo/model/CreateNetworkRulesResult.h
+	include/alibabacloud/ddoscoo/model/CreatePortRequest.h
+	include/alibabacloud/ddoscoo/model/CreatePortResult.h
+	include/alibabacloud/ddoscoo/model/CreateSceneDefensePolicyRequest.h
+	include/alibabacloud/ddoscoo/model/CreateSceneDefensePolicyResult.h
+	include/alibabacloud/ddoscoo/model/CreateSchedulerRuleRequest.h
+	include/alibabacloud/ddoscoo/model/CreateSchedulerRuleResult.h
+	include/alibabacloud/ddoscoo/model/CreateTagResourcesRequest.h
+	include/alibabacloud/ddoscoo/model/CreateTagResourcesResult.h
+	include/alibabacloud/ddoscoo/model/CreateWebCCRuleRequest.h
+	include/alibabacloud/ddoscoo/model/CreateWebCCRuleResult.h
+	include/alibabacloud/ddoscoo/model/CreateWebRuleRequest.h
+	include/alibabacloud/ddoscoo/model/CreateWebRuleResult.h
 	include/alibabacloud/ddoscoo/model/DeleteAsyncTaskRequest.h
 	include/alibabacloud/ddoscoo/model/DeleteAsyncTaskResult.h
-	include/alibabacloud/ddoscoo/model/DeleteLayer4RuleRequest.h
-	include/alibabacloud/ddoscoo/model/DeleteLayer4RuleResult.h
-	include/alibabacloud/ddoscoo/model/DeleteLayer7CCRuleRequest.h
-	include/alibabacloud/ddoscoo/model/DeleteLayer7CCRuleResult.h
-	include/alibabacloud/ddoscoo/model/DeleteLayer7RuleRequest.h
-	include/alibabacloud/ddoscoo/model/DeleteLayer7RuleResult.h
+	include/alibabacloud/ddoscoo/model/DeleteAutoCcBlacklistRequest.h
+	include/alibabacloud/ddoscoo/model/DeleteAutoCcBlacklistResult.h
+	include/alibabacloud/ddoscoo/model/DeleteAutoCcWhitelistRequest.h
+	include/alibabacloud/ddoscoo/model/DeleteAutoCcWhitelistResult.h
+	include/alibabacloud/ddoscoo/model/DeleteDomainResourceRequest.h
+	include/alibabacloud/ddoscoo/model/DeleteDomainResourceResult.h
+	include/alibabacloud/ddoscoo/model/DeleteNetworkRuleRequest.h
+	include/alibabacloud/ddoscoo/model/DeleteNetworkRuleResult.h
+	include/alibabacloud/ddoscoo/model/DeletePortRequest.h
+	include/alibabacloud/ddoscoo/model/DeletePortResult.h
+	include/alibabacloud/ddoscoo/model/DeleteSceneDefensePolicyRequest.h
+	include/alibabacloud/ddoscoo/model/DeleteSceneDefensePolicyResult.h
+	include/alibabacloud/ddoscoo/model/DeleteSchedulerRuleRequest.h
+	include/alibabacloud/ddoscoo/model/DeleteSchedulerRuleResult.h
+	include/alibabacloud/ddoscoo/model/DeleteTagResourcesRequest.h
+	include/alibabacloud/ddoscoo/model/DeleteTagResourcesResult.h
+	include/alibabacloud/ddoscoo/model/DeleteWebCCRuleRequest.h
+	include/alibabacloud/ddoscoo/model/DeleteWebCCRuleResult.h
+	include/alibabacloud/ddoscoo/model/DeleteWebCacheCustomRuleRequest.h
+	include/alibabacloud/ddoscoo/model/DeleteWebCacheCustomRuleResult.h
+	include/alibabacloud/ddoscoo/model/DeleteWebPreciseAccessRuleRequest.h
+	include/alibabacloud/ddoscoo/model/DeleteWebPreciseAccessRuleResult.h
+	include/alibabacloud/ddoscoo/model/DeleteWebRuleRequest.h
+	include/alibabacloud/ddoscoo/model/DeleteWebRuleResult.h
+	include/alibabacloud/ddoscoo/model/DescribeAsyncTasksRequest.h
+	include/alibabacloud/ddoscoo/model/DescribeAsyncTasksResult.h
+	include/alibabacloud/ddoscoo/model/DescribeAttackAnalysisMaxQpsRequest.h
+	include/alibabacloud/ddoscoo/model/DescribeAttackAnalysisMaxQpsResult.h
+	include/alibabacloud/ddoscoo/model/DescribeAutoCcBlacklistRequest.h
+	include/alibabacloud/ddoscoo/model/DescribeAutoCcBlacklistResult.h
+	include/alibabacloud/ddoscoo/model/DescribeAutoCcListCountRequest.h
+	include/alibabacloud/ddoscoo/model/DescribeAutoCcListCountResult.h
+	include/alibabacloud/ddoscoo/model/DescribeAutoCcWhitelistRequest.h
+	include/alibabacloud/ddoscoo/model/DescribeAutoCcWhitelistResult.h
 	include/alibabacloud/ddoscoo/model/DescribeBackSourceCidrRequest.h
 	include/alibabacloud/ddoscoo/model/DescribeBackSourceCidrResult.h
-	include/alibabacloud/ddoscoo/model/DescribeBatchSlsDispatchStatusRequest.h
-	include/alibabacloud/ddoscoo/model/DescribeBatchSlsDispatchStatusResult.h
+	include/alibabacloud/ddoscoo/model/DescribeBlackholeStatusRequest.h
+	include/alibabacloud/ddoscoo/model/DescribeBlackholeStatusResult.h
+	include/alibabacloud/ddoscoo/model/DescribeBlockStatusRequest.h
+	include/alibabacloud/ddoscoo/model/DescribeBlockStatusResult.h
+	include/alibabacloud/ddoscoo/model/DescribeCertsRequest.h
+	include/alibabacloud/ddoscoo/model/DescribeCertsResult.h
+	include/alibabacloud/ddoscoo/model/DescribeCnameReusesRequest.h
+	include/alibabacloud/ddoscoo/model/DescribeCnameReusesResult.h
 	include/alibabacloud/ddoscoo/model/DescribeDDoSEventsRequest.h
 	include/alibabacloud/ddoscoo/model/DescribeDDoSEventsResult.h
-	include/alibabacloud/ddoscoo/model/DescribeDDoSTrafficRequest.h
-	include/alibabacloud/ddoscoo/model/DescribeDDoSTrafficResult.h
+	include/alibabacloud/ddoscoo/model/DescribeDDosAllEventListRequest.h
+	include/alibabacloud/ddoscoo/model/DescribeDDosAllEventListResult.h
+	include/alibabacloud/ddoscoo/model/DescribeDDosEventAreaRequest.h
+	include/alibabacloud/ddoscoo/model/DescribeDDosEventAreaResult.h
+	include/alibabacloud/ddoscoo/model/DescribeDDosEventAttackTypeRequest.h
+	include/alibabacloud/ddoscoo/model/DescribeDDosEventAttackTypeResult.h
+	include/alibabacloud/ddoscoo/model/DescribeDDosEventIspRequest.h
+	include/alibabacloud/ddoscoo/model/DescribeDDosEventIspResult.h
+	include/alibabacloud/ddoscoo/model/DescribeDDosEventMaxRequest.h
+	include/alibabacloud/ddoscoo/model/DescribeDDosEventMaxResult.h
+	include/alibabacloud/ddoscoo/model/DescribeDDosEventSrcIpRequest.h
+	include/alibabacloud/ddoscoo/model/DescribeDDosEventSrcIpResult.h
 	include/alibabacloud/ddoscoo/model/DescribeDefenseCountStatisticsRequest.h
 	include/alibabacloud/ddoscoo/model/DescribeDefenseCountStatisticsResult.h
-	include/alibabacloud/ddoscoo/model/DescribeDomainAccessModeRequest.h
-	include/alibabacloud/ddoscoo/model/DescribeDomainAccessModeResult.h
+	include/alibabacloud/ddoscoo/model/DescribeDefenseRecordsRequest.h
+	include/alibabacloud/ddoscoo/model/DescribeDefenseRecordsResult.h
 	include/alibabacloud/ddoscoo/model/DescribeDomainAttackEventsRequest.h
 	include/alibabacloud/ddoscoo/model/DescribeDomainAttackEventsResult.h
-	include/alibabacloud/ddoscoo/model/DescribeDomainQpsRequest.h
-	include/alibabacloud/ddoscoo/model/DescribeDomainQpsResult.h
+	include/alibabacloud/ddoscoo/model/DescribeDomainOverviewRequest.h
+	include/alibabacloud/ddoscoo/model/DescribeDomainOverviewResult.h
+	include/alibabacloud/ddoscoo/model/DescribeDomainQPSListRequest.h
+	include/alibabacloud/ddoscoo/model/DescribeDomainQPSListResult.h
 	include/alibabacloud/ddoscoo/model/DescribeDomainQpsWithCacheRequest.h
 	include/alibabacloud/ddoscoo/model/DescribeDomainQpsWithCacheResult.h
-	include/alibabacloud/ddoscoo/model/DescribeDomainSlsStatusRequest.h
-	include/alibabacloud/ddoscoo/model/DescribeDomainSlsStatusResult.h
+	include/alibabacloud/ddoscoo/model/DescribeDomainResourceRequest.h
+	include/alibabacloud/ddoscoo/model/DescribeDomainResourceResult.h
+	include/alibabacloud/ddoscoo/model/DescribeDomainStatusCodeCountRequest.h
+	include/alibabacloud/ddoscoo/model/DescribeDomainStatusCodeCountResult.h
+	include/alibabacloud/ddoscoo/model/DescribeDomainStatusCodeListRequest.h
+	include/alibabacloud/ddoscoo/model/DescribeDomainStatusCodeListResult.h
+	include/alibabacloud/ddoscoo/model/DescribeDomainTopAttackListRequest.h
+	include/alibabacloud/ddoscoo/model/DescribeDomainTopAttackListResult.h
+	include/alibabacloud/ddoscoo/model/DescribeDomainViewSourceCountriesRequest.h
+	include/alibabacloud/ddoscoo/model/DescribeDomainViewSourceCountriesResult.h
+	include/alibabacloud/ddoscoo/model/DescribeDomainViewSourceProvincesRequest.h
+	include/alibabacloud/ddoscoo/model/DescribeDomainViewSourceProvincesResult.h
+	include/alibabacloud/ddoscoo/model/DescribeDomainViewTopCostTimeRequest.h
+	include/alibabacloud/ddoscoo/model/DescribeDomainViewTopCostTimeResult.h
+	include/alibabacloud/ddoscoo/model/DescribeDomainViewTopUrlRequest.h
+	include/alibabacloud/ddoscoo/model/DescribeDomainViewTopUrlResult.h
 	include/alibabacloud/ddoscoo/model/DescribeDomainsRequest.h
 	include/alibabacloud/ddoscoo/model/DescribeDomainsResult.h
 	include/alibabacloud/ddoscoo/model/DescribeElasticBandwidthSpecRequest.h
 	include/alibabacloud/ddoscoo/model/DescribeElasticBandwidthSpecResult.h
 	include/alibabacloud/ddoscoo/model/DescribeHealthCheckListRequest.h
 	include/alibabacloud/ddoscoo/model/DescribeHealthCheckListResult.h
-	include/alibabacloud/ddoscoo/model/DescribeHealthCheckStatusListRequest.h
-	include/alibabacloud/ddoscoo/model/DescribeHealthCheckStatusListResult.h
+	include/alibabacloud/ddoscoo/model/DescribeHealthCheckStatusRequest.h
+	include/alibabacloud/ddoscoo/model/DescribeHealthCheckStatusResult.h
 	include/alibabacloud/ddoscoo/model/DescribeInstanceDetailsRequest.h
 	include/alibabacloud/ddoscoo/model/DescribeInstanceDetailsResult.h
+	include/alibabacloud/ddoscoo/model/DescribeInstanceIdsRequest.h
+	include/alibabacloud/ddoscoo/model/DescribeInstanceIdsResult.h
 	include/alibabacloud/ddoscoo/model/DescribeInstanceSpecsRequest.h
 	include/alibabacloud/ddoscoo/model/DescribeInstanceSpecsResult.h
 	include/alibabacloud/ddoscoo/model/DescribeInstanceStatisticsRequest.h
 	include/alibabacloud/ddoscoo/model/DescribeInstanceStatisticsResult.h
+	include/alibabacloud/ddoscoo/model/DescribeInstanceStatusRequest.h
+	include/alibabacloud/ddoscoo/model/DescribeInstanceStatusResult.h
 	include/alibabacloud/ddoscoo/model/DescribeInstancesRequest.h
 	include/alibabacloud/ddoscoo/model/DescribeInstancesResult.h
-	include/alibabacloud/ddoscoo/model/DescribeIpTrafficRequest.h
-	include/alibabacloud/ddoscoo/model/DescribeIpTrafficResult.h
-	include/alibabacloud/ddoscoo/model/DescribeLayer4RuleAttributesRequest.h
-	include/alibabacloud/ddoscoo/model/DescribeLayer4RuleAttributesResult.h
-	include/alibabacloud/ddoscoo/model/DescribeLayer4RulesRequest.h
-	include/alibabacloud/ddoscoo/model/DescribeLayer4RulesResult.h
-	include/alibabacloud/ddoscoo/model/DescribeLayer7CCRulesRequest.h
-	include/alibabacloud/ddoscoo/model/DescribeLayer7CCRulesResult.h
+	include/alibabacloud/ddoscoo/model/DescribeL7RsPolicyRequest.h
+	include/alibabacloud/ddoscoo/model/DescribeL7RsPolicyResult.h
+	include/alibabacloud/ddoscoo/model/DescribeLayer4RulePolicyRequest.h
+	include/alibabacloud/ddoscoo/model/DescribeLayer4RulePolicyResult.h
 	include/alibabacloud/ddoscoo/model/DescribeLogStoreExistStatusRequest.h
 	include/alibabacloud/ddoscoo/model/DescribeLogStoreExistStatusResult.h
+	include/alibabacloud/ddoscoo/model/DescribeNetworkRegionBlockRequest.h
+	include/alibabacloud/ddoscoo/model/DescribeNetworkRegionBlockResult.h
+	include/alibabacloud/ddoscoo/model/DescribeNetworkRuleAttributesRequest.h
+	include/alibabacloud/ddoscoo/model/DescribeNetworkRuleAttributesResult.h
+	include/alibabacloud/ddoscoo/model/DescribeNetworkRulesRequest.h
+	include/alibabacloud/ddoscoo/model/DescribeNetworkRulesResult.h
 	include/alibabacloud/ddoscoo/model/DescribeOpEntitiesRequest.h
 	include/alibabacloud/ddoscoo/model/DescribeOpEntitiesResult.h
-	include/alibabacloud/ddoscoo/model/DescribeSimpleDomainsRequest.h
-	include/alibabacloud/ddoscoo/model/DescribeSimpleDomainsResult.h
+	include/alibabacloud/ddoscoo/model/DescribePortRequest.h
+	include/alibabacloud/ddoscoo/model/DescribePortResult.h
+	include/alibabacloud/ddoscoo/model/DescribePortAttackMaxFlowRequest.h
+	include/alibabacloud/ddoscoo/model/DescribePortAttackMaxFlowResult.h
+	include/alibabacloud/ddoscoo/model/DescribePortAutoCcStatusRequest.h
+	include/alibabacloud/ddoscoo/model/DescribePortAutoCcStatusResult.h
+	include/alibabacloud/ddoscoo/model/DescribePortConnsCountRequest.h
+	include/alibabacloud/ddoscoo/model/DescribePortConnsCountResult.h
+	include/alibabacloud/ddoscoo/model/DescribePortConnsListRequest.h
+	include/alibabacloud/ddoscoo/model/DescribePortConnsListResult.h
+	include/alibabacloud/ddoscoo/model/DescribePortFlowListRequest.h
+	include/alibabacloud/ddoscoo/model/DescribePortFlowListResult.h
+	include/alibabacloud/ddoscoo/model/DescribePortMaxConnsRequest.h
+	include/alibabacloud/ddoscoo/model/DescribePortMaxConnsResult.h
+	include/alibabacloud/ddoscoo/model/DescribePortViewSourceCountriesRequest.h
+	include/alibabacloud/ddoscoo/model/DescribePortViewSourceCountriesResult.h
+	include/alibabacloud/ddoscoo/model/DescribePortViewSourceIspsRequest.h
+	include/alibabacloud/ddoscoo/model/DescribePortViewSourceIspsResult.h
+	include/alibabacloud/ddoscoo/model/DescribePortViewSourceProvincesRequest.h
+	include/alibabacloud/ddoscoo/model/DescribePortViewSourceProvincesResult.h
+	include/alibabacloud/ddoscoo/model/DescribeSceneDefenseObjectsRequest.h
+	include/alibabacloud/ddoscoo/model/DescribeSceneDefenseObjectsResult.h
+	include/alibabacloud/ddoscoo/model/DescribeSceneDefensePoliciesRequest.h
+	include/alibabacloud/ddoscoo/model/DescribeSceneDefensePoliciesResult.h
+	include/alibabacloud/ddoscoo/model/DescribeSchedulerRulesRequest.h
+	include/alibabacloud/ddoscoo/model/DescribeSchedulerRulesResult.h
 	include/alibabacloud/ddoscoo/model/DescribeSlsAuthStatusRequest.h
 	include/alibabacloud/ddoscoo/model/DescribeSlsAuthStatusResult.h
-	include/alibabacloud/ddoscoo/model/DescribeSlsEmptyCountRequest.h
-	include/alibabacloud/ddoscoo/model/DescribeSlsEmptyCountResult.h
 	include/alibabacloud/ddoscoo/model/DescribeSlsLogstoreInfoRequest.h
 	include/alibabacloud/ddoscoo/model/DescribeSlsLogstoreInfoResult.h
 	include/alibabacloud/ddoscoo/model/DescribeSlsOpenStatusRequest.h
 	include/alibabacloud/ddoscoo/model/DescribeSlsOpenStatusResult.h
-	include/alibabacloud/ddoscoo/model/DescribleCertListRequest.h
-	include/alibabacloud/ddoscoo/model/DescribleCertListResult.h
-	include/alibabacloud/ddoscoo/model/DescribleLayer7InstanceRelationsRequest.h
-	include/alibabacloud/ddoscoo/model/DescribleLayer7InstanceRelationsResult.h
-	include/alibabacloud/ddoscoo/model/DisableLayer7CCRequest.h
-	include/alibabacloud/ddoscoo/model/DisableLayer7CCResult.h
-	include/alibabacloud/ddoscoo/model/DisableLayer7CCRuleRequest.h
-	include/alibabacloud/ddoscoo/model/DisableLayer7CCRuleResult.h
+	include/alibabacloud/ddoscoo/model/DescribeStsGrantStatusRequest.h
+	include/alibabacloud/ddoscoo/model/DescribeStsGrantStatusResult.h
+	include/alibabacloud/ddoscoo/model/DescribeSystemLogRequest.h
+	include/alibabacloud/ddoscoo/model/DescribeSystemLogResult.h
+	include/alibabacloud/ddoscoo/model/DescribeTagKeysRequest.h
+	include/alibabacloud/ddoscoo/model/DescribeTagKeysResult.h
+	include/alibabacloud/ddoscoo/model/DescribeTagResourcesRequest.h
+	include/alibabacloud/ddoscoo/model/DescribeTagResourcesResult.h
+	include/alibabacloud/ddoscoo/model/DescribeUdpReflectRequest.h
+	include/alibabacloud/ddoscoo/model/DescribeUdpReflectResult.h
+	include/alibabacloud/ddoscoo/model/DescribeUnBlackholeCountRequest.h
+	include/alibabacloud/ddoscoo/model/DescribeUnBlackholeCountResult.h
+	include/alibabacloud/ddoscoo/model/DescribeUnBlockCountRequest.h
+	include/alibabacloud/ddoscoo/model/DescribeUnBlockCountResult.h
+	include/alibabacloud/ddoscoo/model/DescribeWebAccessLogDispatchStatusRequest.h
+	include/alibabacloud/ddoscoo/model/DescribeWebAccessLogDispatchStatusResult.h
+	include/alibabacloud/ddoscoo/model/DescribeWebAccessLogEmptyCountRequest.h
+	include/alibabacloud/ddoscoo/model/DescribeWebAccessLogEmptyCountResult.h
+	include/alibabacloud/ddoscoo/model/DescribeWebAccessLogStatusRequest.h
+	include/alibabacloud/ddoscoo/model/DescribeWebAccessLogStatusResult.h
+	include/alibabacloud/ddoscoo/model/DescribeWebAccessModeRequest.h
+	include/alibabacloud/ddoscoo/model/DescribeWebAccessModeResult.h
+	include/alibabacloud/ddoscoo/model/DescribeWebAreaBlockConfigsRequest.h
+	include/alibabacloud/ddoscoo/model/DescribeWebAreaBlockConfigsResult.h
+	include/alibabacloud/ddoscoo/model/DescribeWebCCRulesRequest.h
+	include/alibabacloud/ddoscoo/model/DescribeWebCCRulesResult.h
+	include/alibabacloud/ddoscoo/model/DescribeWebCacheConfigsRequest.h
+	include/alibabacloud/ddoscoo/model/DescribeWebCacheConfigsResult.h
+	include/alibabacloud/ddoscoo/model/DescribeWebCcProtectSwitchRequest.h
+	include/alibabacloud/ddoscoo/model/DescribeWebCcProtectSwitchResult.h
+	include/alibabacloud/ddoscoo/model/DescribeWebCustomPortsRequest.h
+	include/alibabacloud/ddoscoo/model/DescribeWebCustomPortsResult.h
+	include/alibabacloud/ddoscoo/model/DescribeWebInstanceRelationsRequest.h
+	include/alibabacloud/ddoscoo/model/DescribeWebInstanceRelationsResult.h
+	include/alibabacloud/ddoscoo/model/DescribeWebPreciseAccessRuleRequest.h
+	include/alibabacloud/ddoscoo/model/DescribeWebPreciseAccessRuleResult.h
+	include/alibabacloud/ddoscoo/model/DescribeWebRulesRequest.h
+	include/alibabacloud/ddoscoo/model/DescribeWebRulesResult.h
+	include/alibabacloud/ddoscoo/model/DetachSceneDefenseObjectRequest.h
+	include/alibabacloud/ddoscoo/model/DetachSceneDefenseObjectResult.h
+	include/alibabacloud/ddoscoo/model/DisableSceneDefensePolicyRequest.h
+	include/alibabacloud/ddoscoo/model/DisableSceneDefensePolicyResult.h
+	include/alibabacloud/ddoscoo/model/DisableWebAccessLogConfigRequest.h
+	include/alibabacloud/ddoscoo/model/DisableWebAccessLogConfigResult.h
+	include/alibabacloud/ddoscoo/model/DisableWebCCRequest.h
+	include/alibabacloud/ddoscoo/model/DisableWebCCResult.h
+	include/alibabacloud/ddoscoo/model/DisableWebCCRuleRequest.h
+	include/alibabacloud/ddoscoo/model/DisableWebCCRuleResult.h
+	include/alibabacloud/ddoscoo/model/EmptyAutoCcBlacklistRequest.h
+	include/alibabacloud/ddoscoo/model/EmptyAutoCcBlacklistResult.h
+	include/alibabacloud/ddoscoo/model/EmptyAutoCcWhitelistRequest.h
+	include/alibabacloud/ddoscoo/model/EmptyAutoCcWhitelistResult.h
 	include/alibabacloud/ddoscoo/model/EmptySlsLogstoreRequest.h
 	include/alibabacloud/ddoscoo/model/EmptySlsLogstoreResult.h
-	include/alibabacloud/ddoscoo/model/EnableLayer7CCRequest.h
-	include/alibabacloud/ddoscoo/model/EnableLayer7CCResult.h
-	include/alibabacloud/ddoscoo/model/EnableLayer7CCRuleRequest.h
-	include/alibabacloud/ddoscoo/model/EnableLayer7CCRuleResult.h
-	include/alibabacloud/ddoscoo/model/ListAsyncTaskRequest.h
-	include/alibabacloud/ddoscoo/model/ListAsyncTaskResult.h
-	include/alibabacloud/ddoscoo/model/ListLayer7CustomPortsRequest.h
-	include/alibabacloud/ddoscoo/model/ListLayer7CustomPortsResult.h
-	include/alibabacloud/ddoscoo/model/ListTagKeysRequest.h
-	include/alibabacloud/ddoscoo/model/ListTagKeysResult.h
-	include/alibabacloud/ddoscoo/model/ListTagResourcesRequest.h
-	include/alibabacloud/ddoscoo/model/ListTagResourcesResult.h
-	include/alibabacloud/ddoscoo/model/ListValueAddedRequest.h
-	include/alibabacloud/ddoscoo/model/ListValueAddedResult.h
+	include/alibabacloud/ddoscoo/model/EnableSceneDefensePolicyRequest.h
+	include/alibabacloud/ddoscoo/model/EnableSceneDefensePolicyResult.h
+	include/alibabacloud/ddoscoo/model/EnableWebAccessLogConfigRequest.h
+	include/alibabacloud/ddoscoo/model/EnableWebAccessLogConfigResult.h
+	include/alibabacloud/ddoscoo/model/EnableWebCCRequest.h
+	include/alibabacloud/ddoscoo/model/EnableWebCCResult.h
+	include/alibabacloud/ddoscoo/model/EnableWebCCRuleRequest.h
+	include/alibabacloud/ddoscoo/model/EnableWebCCRuleResult.h
+	include/alibabacloud/ddoscoo/model/ModifyBlackholeStatusRequest.h
+	include/alibabacloud/ddoscoo/model/ModifyBlackholeStatusResult.h
+	include/alibabacloud/ddoscoo/model/ModifyBlockStatusRequest.h
+	include/alibabacloud/ddoscoo/model/ModifyBlockStatusResult.h
+	include/alibabacloud/ddoscoo/model/ModifyCnameReuseRequest.h
+	include/alibabacloud/ddoscoo/model/ModifyCnameReuseResult.h
+	include/alibabacloud/ddoscoo/model/ModifyDomainResourceRequest.h
+	include/alibabacloud/ddoscoo/model/ModifyDomainResourceResult.h
 	include/alibabacloud/ddoscoo/model/ModifyElasticBandWidthRequest.h
 	include/alibabacloud/ddoscoo/model/ModifyElasticBandWidthResult.h
 	include/alibabacloud/ddoscoo/model/ModifyFullLogTtlRequest.h
 	include/alibabacloud/ddoscoo/model/ModifyFullLogTtlResult.h
+	include/alibabacloud/ddoscoo/model/ModifyHealthCheckConfigRequest.h
+	include/alibabacloud/ddoscoo/model/ModifyHealthCheckConfigResult.h
+	include/alibabacloud/ddoscoo/model/ModifyHttp2EnableRequest.h
+	include/alibabacloud/ddoscoo/model/ModifyHttp2EnableResult.h
 	include/alibabacloud/ddoscoo/model/ModifyInstanceRemarkRequest.h
 	include/alibabacloud/ddoscoo/model/ModifyInstanceRemarkResult.h
-	include/alibabacloud/ddoscoo/model/OpenDomainSlsConfigRequest.h
-	include/alibabacloud/ddoscoo/model/OpenDomainSlsConfigResult.h
+	include/alibabacloud/ddoscoo/model/ModifyNetworkRuleAttributeRequest.h
+	include/alibabacloud/ddoscoo/model/ModifyNetworkRuleAttributeResult.h
+	include/alibabacloud/ddoscoo/model/ModifyPortRequest.h
+	include/alibabacloud/ddoscoo/model/ModifyPortResult.h
+	include/alibabacloud/ddoscoo/model/ModifyPortAutoCcStatusRequest.h
+	include/alibabacloud/ddoscoo/model/ModifyPortAutoCcStatusResult.h
+	include/alibabacloud/ddoscoo/model/ModifySceneDefensePolicyRequest.h
+	include/alibabacloud/ddoscoo/model/ModifySceneDefensePolicyResult.h
+	include/alibabacloud/ddoscoo/model/ModifySchedulerRuleRequest.h
+	include/alibabacloud/ddoscoo/model/ModifySchedulerRuleResult.h
+	include/alibabacloud/ddoscoo/model/ModifyTlsConfigRequest.h
+	include/alibabacloud/ddoscoo/model/ModifyTlsConfigResult.h
+	include/alibabacloud/ddoscoo/model/ModifyWebAIProtectModeRequest.h
+	include/alibabacloud/ddoscoo/model/ModifyWebAIProtectModeResult.h
+	include/alibabacloud/ddoscoo/model/ModifyWebAIProtectSwitchRequest.h
+	include/alibabacloud/ddoscoo/model/ModifyWebAIProtectSwitchResult.h
+	include/alibabacloud/ddoscoo/model/ModifyWebAccessModeRequest.h
+	include/alibabacloud/ddoscoo/model/ModifyWebAccessModeResult.h
+	include/alibabacloud/ddoscoo/model/ModifyWebAreaBlockRequest.h
+	include/alibabacloud/ddoscoo/model/ModifyWebAreaBlockResult.h
+	include/alibabacloud/ddoscoo/model/ModifyWebAreaBlockSwitchRequest.h
+	include/alibabacloud/ddoscoo/model/ModifyWebAreaBlockSwitchResult.h
+	include/alibabacloud/ddoscoo/model/ModifyWebCCRuleRequest.h
+	include/alibabacloud/ddoscoo/model/ModifyWebCCRuleResult.h
+	include/alibabacloud/ddoscoo/model/ModifyWebCacheCustomRuleRequest.h
+	include/alibabacloud/ddoscoo/model/ModifyWebCacheCustomRuleResult.h
+	include/alibabacloud/ddoscoo/model/ModifyWebCacheModeRequest.h
+	include/alibabacloud/ddoscoo/model/ModifyWebCacheModeResult.h
+	include/alibabacloud/ddoscoo/model/ModifyWebCacheSwitchRequest.h
+	include/alibabacloud/ddoscoo/model/ModifyWebCacheSwitchResult.h
+	include/alibabacloud/ddoscoo/model/ModifyWebIpSetSwitchRequest.h
+	include/alibabacloud/ddoscoo/model/ModifyWebIpSetSwitchResult.h
+	include/alibabacloud/ddoscoo/model/ModifyWebPreciseAccessRuleRequest.h
+	include/alibabacloud/ddoscoo/model/ModifyWebPreciseAccessRuleResult.h
+	include/alibabacloud/ddoscoo/model/ModifyWebPreciseAccessSwitchRequest.h
+	include/alibabacloud/ddoscoo/model/ModifyWebPreciseAccessSwitchResult.h
+	include/alibabacloud/ddoscoo/model/ModifyWebRuleRequest.h
+	include/alibabacloud/ddoscoo/model/ModifyWebRuleResult.h
 	include/alibabacloud/ddoscoo/model/ReleaseInstanceRequest.h
 	include/alibabacloud/ddoscoo/model/ReleaseInstanceResult.h
-	include/alibabacloud/ddoscoo/model/ReleaseValueAddedRequest.h
-	include/alibabacloud/ddoscoo/model/ReleaseValueAddedResult.h
-	include/alibabacloud/ddoscoo/model/TagResourcesRequest.h
-	include/alibabacloud/ddoscoo/model/TagResourcesResult.h
-	include/alibabacloud/ddoscoo/model/UntagResourcesRequest.h
-	include/alibabacloud/ddoscoo/model/UntagResourcesResult.h )
+	include/alibabacloud/ddoscoo/model/SwitchSchedulerRuleRequest.h
+	include/alibabacloud/ddoscoo/model/SwitchSchedulerRuleResult.h )
 
 set(ddoscoo_src 
 	src/DdoscooClient.cc
-	src/model/AddLayer7CCRuleRequest.cc
-	src/model/AddLayer7CCRuleResult.cc
-	src/model/CloseDomainSlsConfigRequest.cc
-	src/model/CloseDomainSlsConfigResult.cc
-	src/model/ConfigHealthCheckRequest.cc
-	src/model/ConfigHealthCheckResult.cc
-	src/model/ConfigLayer4RuleRequest.cc
-	src/model/ConfigLayer4RuleResult.cc
-	src/model/ConfigLayer4RuleAttributeRequest.cc
-	src/model/ConfigLayer4RuleAttributeResult.cc
-	src/model/ConfigLayer7BlackWhiteListRequest.cc
-	src/model/ConfigLayer7BlackWhiteListResult.cc
-	src/model/ConfigLayer7CCRuleRequest.cc
-	src/model/ConfigLayer7CCRuleResult.cc
-	src/model/ConfigLayer7CCTemplateRequest.cc
-	src/model/ConfigLayer7CCTemplateResult.cc
-	src/model/ConfigLayer7CertRequest.cc
-	src/model/ConfigLayer7CertResult.cc
-	src/model/ConfigLayer7RuleRequest.cc
-	src/model/ConfigLayer7RuleResult.cc
+	src/model/AddAutoCcBlacklistRequest.cc
+	src/model/AddAutoCcBlacklistResult.cc
+	src/model/AddAutoCcWhitelistRequest.cc
+	src/model/AddAutoCcWhitelistResult.cc
+	src/model/AssociateWebCertRequest.cc
+	src/model/AssociateWebCertResult.cc
+	src/model/AttachSceneDefenseObjectRequest.cc
+	src/model/AttachSceneDefenseObjectResult.cc
+	src/model/ConfigL7RsPolicyRequest.cc
+	src/model/ConfigL7RsPolicyResult.cc
+	src/model/ConfigLayer4RemarkRequest.cc
+	src/model/ConfigLayer4RemarkResult.cc
+	src/model/ConfigLayer4RuleBakModeRequest.cc
+	src/model/ConfigLayer4RuleBakModeResult.cc
+	src/model/ConfigLayer4RulePolicyRequest.cc
+	src/model/ConfigLayer4RulePolicyResult.cc
+	src/model/ConfigNetworkRegionBlockRequest.cc
+	src/model/ConfigNetworkRegionBlockResult.cc
+	src/model/ConfigNetworkRulesRequest.cc
+	src/model/ConfigNetworkRulesResult.cc
+	src/model/ConfigUdpReflectRequest.cc
+	src/model/ConfigUdpReflectResult.cc
+	src/model/ConfigWebCCTemplateRequest.cc
+	src/model/ConfigWebCCTemplateResult.cc
+	src/model/ConfigWebIpSetRequest.cc
+	src/model/ConfigWebIpSetResult.cc
 	src/model/CreateAsyncTaskRequest.cc
 	src/model/CreateAsyncTaskResult.cc
-	src/model/CreateLayer4RuleRequest.cc
-	src/model/CreateLayer4RuleResult.cc
-	src/model/CreateLayer7RuleRequest.cc
-	src/model/CreateLayer7RuleResult.cc
+	src/model/CreateDomainResourceRequest.cc
+	src/model/CreateDomainResourceResult.cc
+	src/model/CreateNetworkRulesRequest.cc
+	src/model/CreateNetworkRulesResult.cc
+	src/model/CreatePortRequest.cc
+	src/model/CreatePortResult.cc
+	src/model/CreateSceneDefensePolicyRequest.cc
+	src/model/CreateSceneDefensePolicyResult.cc
+	src/model/CreateSchedulerRuleRequest.cc
+	src/model/CreateSchedulerRuleResult.cc
+	src/model/CreateTagResourcesRequest.cc
+	src/model/CreateTagResourcesResult.cc
+	src/model/CreateWebCCRuleRequest.cc
+	src/model/CreateWebCCRuleResult.cc
+	src/model/CreateWebRuleRequest.cc
+	src/model/CreateWebRuleResult.cc
 	src/model/DeleteAsyncTaskRequest.cc
 	src/model/DeleteAsyncTaskResult.cc
-	src/model/DeleteLayer4RuleRequest.cc
-	src/model/DeleteLayer4RuleResult.cc
-	src/model/DeleteLayer7CCRuleRequest.cc
-	src/model/DeleteLayer7CCRuleResult.cc
-	src/model/DeleteLayer7RuleRequest.cc
-	src/model/DeleteLayer7RuleResult.cc
+	src/model/DeleteAutoCcBlacklistRequest.cc
+	src/model/DeleteAutoCcBlacklistResult.cc
+	src/model/DeleteAutoCcWhitelistRequest.cc
+	src/model/DeleteAutoCcWhitelistResult.cc
+	src/model/DeleteDomainResourceRequest.cc
+	src/model/DeleteDomainResourceResult.cc
+	src/model/DeleteNetworkRuleRequest.cc
+	src/model/DeleteNetworkRuleResult.cc
+	src/model/DeletePortRequest.cc
+	src/model/DeletePortResult.cc
+	src/model/DeleteSceneDefensePolicyRequest.cc
+	src/model/DeleteSceneDefensePolicyResult.cc
+	src/model/DeleteSchedulerRuleRequest.cc
+	src/model/DeleteSchedulerRuleResult.cc
+	src/model/DeleteTagResourcesRequest.cc
+	src/model/DeleteTagResourcesResult.cc
+	src/model/DeleteWebCCRuleRequest.cc
+	src/model/DeleteWebCCRuleResult.cc
+	src/model/DeleteWebCacheCustomRuleRequest.cc
+	src/model/DeleteWebCacheCustomRuleResult.cc
+	src/model/DeleteWebPreciseAccessRuleRequest.cc
+	src/model/DeleteWebPreciseAccessRuleResult.cc
+	src/model/DeleteWebRuleRequest.cc
+	src/model/DeleteWebRuleResult.cc
+	src/model/DescribeAsyncTasksRequest.cc
+	src/model/DescribeAsyncTasksResult.cc
+	src/model/DescribeAttackAnalysisMaxQpsRequest.cc
+	src/model/DescribeAttackAnalysisMaxQpsResult.cc
+	src/model/DescribeAutoCcBlacklistRequest.cc
+	src/model/DescribeAutoCcBlacklistResult.cc
+	src/model/DescribeAutoCcListCountRequest.cc
+	src/model/DescribeAutoCcListCountResult.cc
+	src/model/DescribeAutoCcWhitelistRequest.cc
+	src/model/DescribeAutoCcWhitelistResult.cc
 	src/model/DescribeBackSourceCidrRequest.cc
 	src/model/DescribeBackSourceCidrResult.cc
-	src/model/DescribeBatchSlsDispatchStatusRequest.cc
-	src/model/DescribeBatchSlsDispatchStatusResult.cc
+	src/model/DescribeBlackholeStatusRequest.cc
+	src/model/DescribeBlackholeStatusResult.cc
+	src/model/DescribeBlockStatusRequest.cc
+	src/model/DescribeBlockStatusResult.cc
+	src/model/DescribeCertsRequest.cc
+	src/model/DescribeCertsResult.cc
+	src/model/DescribeCnameReusesRequest.cc
+	src/model/DescribeCnameReusesResult.cc
 	src/model/DescribeDDoSEventsRequest.cc
 	src/model/DescribeDDoSEventsResult.cc
-	src/model/DescribeDDoSTrafficRequest.cc
-	src/model/DescribeDDoSTrafficResult.cc
+	src/model/DescribeDDosAllEventListRequest.cc
+	src/model/DescribeDDosAllEventListResult.cc
+	src/model/DescribeDDosEventAreaRequest.cc
+	src/model/DescribeDDosEventAreaResult.cc
+	src/model/DescribeDDosEventAttackTypeRequest.cc
+	src/model/DescribeDDosEventAttackTypeResult.cc
+	src/model/DescribeDDosEventIspRequest.cc
+	src/model/DescribeDDosEventIspResult.cc
+	src/model/DescribeDDosEventMaxRequest.cc
+	src/model/DescribeDDosEventMaxResult.cc
+	src/model/DescribeDDosEventSrcIpRequest.cc
+	src/model/DescribeDDosEventSrcIpResult.cc
 	src/model/DescribeDefenseCountStatisticsRequest.cc
 	src/model/DescribeDefenseCountStatisticsResult.cc
-	src/model/DescribeDomainAccessModeRequest.cc
-	src/model/DescribeDomainAccessModeResult.cc
+	src/model/DescribeDefenseRecordsRequest.cc
+	src/model/DescribeDefenseRecordsResult.cc
 	src/model/DescribeDomainAttackEventsRequest.cc
 	src/model/DescribeDomainAttackEventsResult.cc
-	src/model/DescribeDomainQpsRequest.cc
-	src/model/DescribeDomainQpsResult.cc
+	src/model/DescribeDomainOverviewRequest.cc
+	src/model/DescribeDomainOverviewResult.cc
+	src/model/DescribeDomainQPSListRequest.cc
+	src/model/DescribeDomainQPSListResult.cc
 	src/model/DescribeDomainQpsWithCacheRequest.cc
 	src/model/DescribeDomainQpsWithCacheResult.cc
-	src/model/DescribeDomainSlsStatusRequest.cc
-	src/model/DescribeDomainSlsStatusResult.cc
+	src/model/DescribeDomainResourceRequest.cc
+	src/model/DescribeDomainResourceResult.cc
+	src/model/DescribeDomainStatusCodeCountRequest.cc
+	src/model/DescribeDomainStatusCodeCountResult.cc
+	src/model/DescribeDomainStatusCodeListRequest.cc
+	src/model/DescribeDomainStatusCodeListResult.cc
+	src/model/DescribeDomainTopAttackListRequest.cc
+	src/model/DescribeDomainTopAttackListResult.cc
+	src/model/DescribeDomainViewSourceCountriesRequest.cc
+	src/model/DescribeDomainViewSourceCountriesResult.cc
+	src/model/DescribeDomainViewSourceProvincesRequest.cc
+	src/model/DescribeDomainViewSourceProvincesResult.cc
+	src/model/DescribeDomainViewTopCostTimeRequest.cc
+	src/model/DescribeDomainViewTopCostTimeResult.cc
+	src/model/DescribeDomainViewTopUrlRequest.cc
+	src/model/DescribeDomainViewTopUrlResult.cc
 	src/model/DescribeDomainsRequest.cc
 	src/model/DescribeDomainsResult.cc
 	src/model/DescribeElasticBandwidthSpecRequest.cc
 	src/model/DescribeElasticBandwidthSpecResult.cc
 	src/model/DescribeHealthCheckListRequest.cc
 	src/model/DescribeHealthCheckListResult.cc
-	src/model/DescribeHealthCheckStatusListRequest.cc
-	src/model/DescribeHealthCheckStatusListResult.cc
+	src/model/DescribeHealthCheckStatusRequest.cc
+	src/model/DescribeHealthCheckStatusResult.cc
 	src/model/DescribeInstanceDetailsRequest.cc
 	src/model/DescribeInstanceDetailsResult.cc
+	src/model/DescribeInstanceIdsRequest.cc
+	src/model/DescribeInstanceIdsResult.cc
 	src/model/DescribeInstanceSpecsRequest.cc
 	src/model/DescribeInstanceSpecsResult.cc
 	src/model/DescribeInstanceStatisticsRequest.cc
 	src/model/DescribeInstanceStatisticsResult.cc
+	src/model/DescribeInstanceStatusRequest.cc
+	src/model/DescribeInstanceStatusResult.cc
 	src/model/DescribeInstancesRequest.cc
 	src/model/DescribeInstancesResult.cc
-	src/model/DescribeIpTrafficRequest.cc
-	src/model/DescribeIpTrafficResult.cc
-	src/model/DescribeLayer4RuleAttributesRequest.cc
-	src/model/DescribeLayer4RuleAttributesResult.cc
-	src/model/DescribeLayer4RulesRequest.cc
-	src/model/DescribeLayer4RulesResult.cc
-	src/model/DescribeLayer7CCRulesRequest.cc
-	src/model/DescribeLayer7CCRulesResult.cc
+	src/model/DescribeL7RsPolicyRequest.cc
+	src/model/DescribeL7RsPolicyResult.cc
+	src/model/DescribeLayer4RulePolicyRequest.cc
+	src/model/DescribeLayer4RulePolicyResult.cc
 	src/model/DescribeLogStoreExistStatusRequest.cc
 	src/model/DescribeLogStoreExistStatusResult.cc
+	src/model/DescribeNetworkRegionBlockRequest.cc
+	src/model/DescribeNetworkRegionBlockResult.cc
+	src/model/DescribeNetworkRuleAttributesRequest.cc
+	src/model/DescribeNetworkRuleAttributesResult.cc
+	src/model/DescribeNetworkRulesRequest.cc
+	src/model/DescribeNetworkRulesResult.cc
 	src/model/DescribeOpEntitiesRequest.cc
 	src/model/DescribeOpEntitiesResult.cc
-	src/model/DescribeSimpleDomainsRequest.cc
-	src/model/DescribeSimpleDomainsResult.cc
+	src/model/DescribePortRequest.cc
+	src/model/DescribePortResult.cc
+	src/model/DescribePortAttackMaxFlowRequest.cc
+	src/model/DescribePortAttackMaxFlowResult.cc
+	src/model/DescribePortAutoCcStatusRequest.cc
+	src/model/DescribePortAutoCcStatusResult.cc
+	src/model/DescribePortConnsCountRequest.cc
+	src/model/DescribePortConnsCountResult.cc
+	src/model/DescribePortConnsListRequest.cc
+	src/model/DescribePortConnsListResult.cc
+	src/model/DescribePortFlowListRequest.cc
+	src/model/DescribePortFlowListResult.cc
+	src/model/DescribePortMaxConnsRequest.cc
+	src/model/DescribePortMaxConnsResult.cc
+	src/model/DescribePortViewSourceCountriesRequest.cc
+	src/model/DescribePortViewSourceCountriesResult.cc
+	src/model/DescribePortViewSourceIspsRequest.cc
+	src/model/DescribePortViewSourceIspsResult.cc
+	src/model/DescribePortViewSourceProvincesRequest.cc
+	src/model/DescribePortViewSourceProvincesResult.cc
+	src/model/DescribeSceneDefenseObjectsRequest.cc
+	src/model/DescribeSceneDefenseObjectsResult.cc
+	src/model/DescribeSceneDefensePoliciesRequest.cc
+	src/model/DescribeSceneDefensePoliciesResult.cc
+	src/model/DescribeSchedulerRulesRequest.cc
+	src/model/DescribeSchedulerRulesResult.cc
 	src/model/DescribeSlsAuthStatusRequest.cc
 	src/model/DescribeSlsAuthStatusResult.cc
-	src/model/DescribeSlsEmptyCountRequest.cc
-	src/model/DescribeSlsEmptyCountResult.cc
 	src/model/DescribeSlsLogstoreInfoRequest.cc
 	src/model/DescribeSlsLogstoreInfoResult.cc
 	src/model/DescribeSlsOpenStatusRequest.cc
 	src/model/DescribeSlsOpenStatusResult.cc
-	src/model/DescribleCertListRequest.cc
-	src/model/DescribleCertListResult.cc
-	src/model/DescribleLayer7InstanceRelationsRequest.cc
-	src/model/DescribleLayer7InstanceRelationsResult.cc
-	src/model/DisableLayer7CCRequest.cc
-	src/model/DisableLayer7CCResult.cc
-	src/model/DisableLayer7CCRuleRequest.cc
-	src/model/DisableLayer7CCRuleResult.cc
+	src/model/DescribeStsGrantStatusRequest.cc
+	src/model/DescribeStsGrantStatusResult.cc
+	src/model/DescribeSystemLogRequest.cc
+	src/model/DescribeSystemLogResult.cc
+	src/model/DescribeTagKeysRequest.cc
+	src/model/DescribeTagKeysResult.cc
+	src/model/DescribeTagResourcesRequest.cc
+	src/model/DescribeTagResourcesResult.cc
+	src/model/DescribeUdpReflectRequest.cc
+	src/model/DescribeUdpReflectResult.cc
+	src/model/DescribeUnBlackholeCountRequest.cc
+	src/model/DescribeUnBlackholeCountResult.cc
+	src/model/DescribeUnBlockCountRequest.cc
+	src/model/DescribeUnBlockCountResult.cc
+	src/model/DescribeWebAccessLogDispatchStatusRequest.cc
+	src/model/DescribeWebAccessLogDispatchStatusResult.cc
+	src/model/DescribeWebAccessLogEmptyCountRequest.cc
+	src/model/DescribeWebAccessLogEmptyCountResult.cc
+	src/model/DescribeWebAccessLogStatusRequest.cc
+	src/model/DescribeWebAccessLogStatusResult.cc
+	src/model/DescribeWebAccessModeRequest.cc
+	src/model/DescribeWebAccessModeResult.cc
+	src/model/DescribeWebAreaBlockConfigsRequest.cc
+	src/model/DescribeWebAreaBlockConfigsResult.cc
+	src/model/DescribeWebCCRulesRequest.cc
+	src/model/DescribeWebCCRulesResult.cc
+	src/model/DescribeWebCacheConfigsRequest.cc
+	src/model/DescribeWebCacheConfigsResult.cc
+	src/model/DescribeWebCcProtectSwitchRequest.cc
+	src/model/DescribeWebCcProtectSwitchResult.cc
+	src/model/DescribeWebCustomPortsRequest.cc
+	src/model/DescribeWebCustomPortsResult.cc
+	src/model/DescribeWebInstanceRelationsRequest.cc
+	src/model/DescribeWebInstanceRelationsResult.cc
+	src/model/DescribeWebPreciseAccessRuleRequest.cc
+	src/model/DescribeWebPreciseAccessRuleResult.cc
+	src/model/DescribeWebRulesRequest.cc
+	src/model/DescribeWebRulesResult.cc
+	src/model/DetachSceneDefenseObjectRequest.cc
+	src/model/DetachSceneDefenseObjectResult.cc
+	src/model/DisableSceneDefensePolicyRequest.cc
+	src/model/DisableSceneDefensePolicyResult.cc
+	src/model/DisableWebAccessLogConfigRequest.cc
+	src/model/DisableWebAccessLogConfigResult.cc
+	src/model/DisableWebCCRequest.cc
+	src/model/DisableWebCCResult.cc
+	src/model/DisableWebCCRuleRequest.cc
+	src/model/DisableWebCCRuleResult.cc
+	src/model/EmptyAutoCcBlacklistRequest.cc
+	src/model/EmptyAutoCcBlacklistResult.cc
+	src/model/EmptyAutoCcWhitelistRequest.cc
+	src/model/EmptyAutoCcWhitelistResult.cc
 	src/model/EmptySlsLogstoreRequest.cc
 	src/model/EmptySlsLogstoreResult.cc
-	src/model/EnableLayer7CCRequest.cc
-	src/model/EnableLayer7CCResult.cc
-	src/model/EnableLayer7CCRuleRequest.cc
-	src/model/EnableLayer7CCRuleResult.cc
-	src/model/ListAsyncTaskRequest.cc
-	src/model/ListAsyncTaskResult.cc
-	src/model/ListLayer7CustomPortsRequest.cc
-	src/model/ListLayer7CustomPortsResult.cc
-	src/model/ListTagKeysRequest.cc
-	src/model/ListTagKeysResult.cc
-	src/model/ListTagResourcesRequest.cc
-	src/model/ListTagResourcesResult.cc
-	src/model/ListValueAddedRequest.cc
-	src/model/ListValueAddedResult.cc
+	src/model/EnableSceneDefensePolicyRequest.cc
+	src/model/EnableSceneDefensePolicyResult.cc
+	src/model/EnableWebAccessLogConfigRequest.cc
+	src/model/EnableWebAccessLogConfigResult.cc
+	src/model/EnableWebCCRequest.cc
+	src/model/EnableWebCCResult.cc
+	src/model/EnableWebCCRuleRequest.cc
+	src/model/EnableWebCCRuleResult.cc
+	src/model/ModifyBlackholeStatusRequest.cc
+	src/model/ModifyBlackholeStatusResult.cc
+	src/model/ModifyBlockStatusRequest.cc
+	src/model/ModifyBlockStatusResult.cc
+	src/model/ModifyCnameReuseRequest.cc
+	src/model/ModifyCnameReuseResult.cc
+	src/model/ModifyDomainResourceRequest.cc
+	src/model/ModifyDomainResourceResult.cc
 	src/model/ModifyElasticBandWidthRequest.cc
 	src/model/ModifyElasticBandWidthResult.cc
 	src/model/ModifyFullLogTtlRequest.cc
 	src/model/ModifyFullLogTtlResult.cc
+	src/model/ModifyHealthCheckConfigRequest.cc
+	src/model/ModifyHealthCheckConfigResult.cc
+	src/model/ModifyHttp2EnableRequest.cc
+	src/model/ModifyHttp2EnableResult.cc
 	src/model/ModifyInstanceRemarkRequest.cc
 	src/model/ModifyInstanceRemarkResult.cc
-	src/model/OpenDomainSlsConfigRequest.cc
-	src/model/OpenDomainSlsConfigResult.cc
+	src/model/ModifyNetworkRuleAttributeRequest.cc
+	src/model/ModifyNetworkRuleAttributeResult.cc
+	src/model/ModifyPortRequest.cc
+	src/model/ModifyPortResult.cc
+	src/model/ModifyPortAutoCcStatusRequest.cc
+	src/model/ModifyPortAutoCcStatusResult.cc
+	src/model/ModifySceneDefensePolicyRequest.cc
+	src/model/ModifySceneDefensePolicyResult.cc
+	src/model/ModifySchedulerRuleRequest.cc
+	src/model/ModifySchedulerRuleResult.cc
+	src/model/ModifyTlsConfigRequest.cc
+	src/model/ModifyTlsConfigResult.cc
+	src/model/ModifyWebAIProtectModeRequest.cc
+	src/model/ModifyWebAIProtectModeResult.cc
+	src/model/ModifyWebAIProtectSwitchRequest.cc
+	src/model/ModifyWebAIProtectSwitchResult.cc
+	src/model/ModifyWebAccessModeRequest.cc
+	src/model/ModifyWebAccessModeResult.cc
+	src/model/ModifyWebAreaBlockRequest.cc
+	src/model/ModifyWebAreaBlockResult.cc
+	src/model/ModifyWebAreaBlockSwitchRequest.cc
+	src/model/ModifyWebAreaBlockSwitchResult.cc
+	src/model/ModifyWebCCRuleRequest.cc
+	src/model/ModifyWebCCRuleResult.cc
+	src/model/ModifyWebCacheCustomRuleRequest.cc
+	src/model/ModifyWebCacheCustomRuleResult.cc
+	src/model/ModifyWebCacheModeRequest.cc
+	src/model/ModifyWebCacheModeResult.cc
+	src/model/ModifyWebCacheSwitchRequest.cc
+	src/model/ModifyWebCacheSwitchResult.cc
+	src/model/ModifyWebIpSetSwitchRequest.cc
+	src/model/ModifyWebIpSetSwitchResult.cc
+	src/model/ModifyWebPreciseAccessRuleRequest.cc
+	src/model/ModifyWebPreciseAccessRuleResult.cc
+	src/model/ModifyWebPreciseAccessSwitchRequest.cc
+	src/model/ModifyWebPreciseAccessSwitchResult.cc
+	src/model/ModifyWebRuleRequest.cc
+	src/model/ModifyWebRuleResult.cc
 	src/model/ReleaseInstanceRequest.cc
 	src/model/ReleaseInstanceResult.cc
-	src/model/ReleaseValueAddedRequest.cc
-	src/model/ReleaseValueAddedResult.cc
-	src/model/TagResourcesRequest.cc
-	src/model/TagResourcesResult.cc
-	src/model/UntagResourcesRequest.cc
-	src/model/UntagResourcesResult.cc )
+	src/model/SwitchSchedulerRuleRequest.cc
+	src/model/SwitchSchedulerRuleResult.cc )
 
 add_library(ddoscoo ${LIB_TYPE}
 	${ddoscoo_public_header}

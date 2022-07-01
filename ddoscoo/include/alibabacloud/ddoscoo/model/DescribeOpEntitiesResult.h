@@ -46,13 +46,13 @@ namespace AlibabaCloud
 				DescribeOpEntitiesResult();
 				explicit DescribeOpEntitiesResult(const std::string &payload);
 				~DescribeOpEntitiesResult();
-				long getTotal()const;
+				long getTotalCount()const;
 				std::vector<OpEntity> getOpEntities()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				long total_;
+				long totalCount_;
 				std::vector<OpEntity> opEntities_;
 
 			};

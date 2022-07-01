@@ -43,26 +43,28 @@ void DescribeInstanceSpecsResult::parse(const std::string &payload)
 	for (auto valueInstanceSpecsInstanceSpec : allInstanceSpecsNode)
 	{
 		InstanceSpec instanceSpecsObject;
-		if(!valueInstanceSpecsInstanceSpec["InstanceId"].isNull())
-			instanceSpecsObject.instanceId = valueInstanceSpecsInstanceSpec["InstanceId"].asString();
 		if(!valueInstanceSpecsInstanceSpec["BaseBandwidth"].isNull())
 			instanceSpecsObject.baseBandwidth = std::stoi(valueInstanceSpecsInstanceSpec["BaseBandwidth"].asString());
-		if(!valueInstanceSpecsInstanceSpec["ElasticBandwidth"].isNull())
-			instanceSpecsObject.elasticBandwidth = std::stoi(valueInstanceSpecsInstanceSpec["ElasticBandwidth"].asString());
-		if(!valueInstanceSpecsInstanceSpec["PortLimit"].isNull())
-			instanceSpecsObject.portLimit = std::stoi(valueInstanceSpecsInstanceSpec["PortLimit"].asString());
-		if(!valueInstanceSpecsInstanceSpec["SiteLimit"].isNull())
-			instanceSpecsObject.siteLimit = std::stoi(valueInstanceSpecsInstanceSpec["SiteLimit"].asString());
-		if(!valueInstanceSpecsInstanceSpec["DomainLimit"].isNull())
-			instanceSpecsObject.domainLimit = std::stoi(valueInstanceSpecsInstanceSpec["DomainLimit"].asString());
-		if(!valueInstanceSpecsInstanceSpec["BandwidthMbps"].isNull())
-			instanceSpecsObject.bandwidthMbps = std::stoi(valueInstanceSpecsInstanceSpec["BandwidthMbps"].asString());
-		if(!valueInstanceSpecsInstanceSpec["DefenseCount"].isNull())
-			instanceSpecsObject.defenseCount = std::stoi(valueInstanceSpecsInstanceSpec["DefenseCount"].asString());
-		if(!valueInstanceSpecsInstanceSpec["FunctionVersion"].isNull())
-			instanceSpecsObject.functionVersion = valueInstanceSpecsInstanceSpec["FunctionVersion"].asString();
 		if(!valueInstanceSpecsInstanceSpec["QpsLimit"].isNull())
 			instanceSpecsObject.qpsLimit = std::stoi(valueInstanceSpecsInstanceSpec["QpsLimit"].asString());
+		if(!valueInstanceSpecsInstanceSpec["BandwidthMbps"].isNull())
+			instanceSpecsObject.bandwidthMbps = std::stoi(valueInstanceSpecsInstanceSpec["BandwidthMbps"].asString());
+		if(!valueInstanceSpecsInstanceSpec["ElasticBw"].isNull())
+			instanceSpecsObject.elasticBw = std::stoi(valueInstanceSpecsInstanceSpec["ElasticBw"].asString());
+		if(!valueInstanceSpecsInstanceSpec["DefenseCount"].isNull())
+			instanceSpecsObject.defenseCount = std::stoi(valueInstanceSpecsInstanceSpec["DefenseCount"].asString());
+		if(!valueInstanceSpecsInstanceSpec["SiteLimit"].isNull())
+			instanceSpecsObject.siteLimit = std::stoi(valueInstanceSpecsInstanceSpec["SiteLimit"].asString());
+		if(!valueInstanceSpecsInstanceSpec["PortLimit"].isNull())
+			instanceSpecsObject.portLimit = std::stoi(valueInstanceSpecsInstanceSpec["PortLimit"].asString());
+		if(!valueInstanceSpecsInstanceSpec["ElasticBandwidth"].isNull())
+			instanceSpecsObject.elasticBandwidth = std::stoi(valueInstanceSpecsInstanceSpec["ElasticBandwidth"].asString());
+		if(!valueInstanceSpecsInstanceSpec["FunctionVersion"].isNull())
+			instanceSpecsObject.functionVersion = valueInstanceSpecsInstanceSpec["FunctionVersion"].asString();
+		if(!valueInstanceSpecsInstanceSpec["InstanceId"].isNull())
+			instanceSpecsObject.instanceId = valueInstanceSpecsInstanceSpec["InstanceId"].asString();
+		if(!valueInstanceSpecsInstanceSpec["DomainLimit"].isNull())
+			instanceSpecsObject.domainLimit = std::stoi(valueInstanceSpecsInstanceSpec["DomainLimit"].asString());
 		instanceSpecs_.push_back(instanceSpecsObject);
 	}
 

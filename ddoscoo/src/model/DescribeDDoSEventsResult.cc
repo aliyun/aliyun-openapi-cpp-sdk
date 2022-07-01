@@ -39,32 +39,40 @@ void DescribeDDoSEventsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allEventsNode = value["Events"]["Event"];
-	for (auto valueEventsEvent : allEventsNode)
+	auto allDDoSEventsNode = value["DDoSEvents"]["Data"];
+	for (auto valueDDoSEventsData : allDDoSEventsNode)
 	{
-		Event eventsObject;
-		if(!valueEventsEvent["StartTime"].isNull())
-			eventsObject.startTime = std::stol(valueEventsEvent["StartTime"].asString());
-		if(!valueEventsEvent["EndTime"].isNull())
-			eventsObject.endTime = std::stol(valueEventsEvent["EndTime"].asString());
-		if(!valueEventsEvent["Interval"].isNull())
-			eventsObject.interval = std::stoi(valueEventsEvent["Interval"].asString());
-		if(!valueEventsEvent["Status"].isNull())
-			eventsObject.status = valueEventsEvent["Status"].asString();
-		events_.push_back(eventsObject);
+		Data dDoSEventsObject;
+		if(!valueDDoSEventsData["EndTime"].isNull())
+			dDoSEventsObject.endTime = std::stol(valueDDoSEventsData["EndTime"].asString());
+		if(!valueDDoSEventsData["StartTime"].isNull())
+			dDoSEventsObject.startTime = std::stol(valueDDoSEventsData["StartTime"].asString());
+		if(!valueDDoSEventsData["EventType"].isNull())
+			dDoSEventsObject.eventType = valueDDoSEventsData["EventType"].asString();
+		if(!valueDDoSEventsData["Region"].isNull())
+			dDoSEventsObject.region = valueDDoSEventsData["Region"].asString();
+		if(!valueDDoSEventsData["Ip"].isNull())
+			dDoSEventsObject.ip = valueDDoSEventsData["Ip"].asString();
+		if(!valueDDoSEventsData["Port"].isNull())
+			dDoSEventsObject.port = valueDDoSEventsData["Port"].asString();
+		if(!valueDDoSEventsData["Bps"].isNull())
+			dDoSEventsObject.bps = std::stol(valueDDoSEventsData["Bps"].asString());
+		if(!valueDDoSEventsData["Pps"].isNull())
+			dDoSEventsObject.pps = std::stol(valueDDoSEventsData["Pps"].asString());
+		dDoSEvents_.push_back(dDoSEventsObject);
 	}
 	if(!value["Total"].isNull())
 		total_ = std::stol(value["Total"].asString());
 
 }
 
-std::vector<DescribeDDoSEventsResult::Event> DescribeDDoSEventsResult::getEvents()const
-{
-	return events_;
-}
-
 long DescribeDDoSEventsResult::getTotal()const
 {
 	return total_;
+}
+
+std::vector<DescribeDDoSEventsResult::Data> DescribeDDoSEventsResult::getDDoSEvents()const
+{
+	return dDoSEvents_;
 }
 

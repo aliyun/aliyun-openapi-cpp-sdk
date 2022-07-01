@@ -35,13 +35,16 @@ namespace AlibabaCloud
 				struct Instance
 				{
 					int status;
-					long gmtCreate;
+					std::string ipVersion;
 					std::string instanceId;
+					long createTime;
+					std::string connInstanceId;
 					int enabled;
+					std::string ipMode;
 					long expireTime;
 					int edition;
-					std::string remark;
 					int debtStatus;
+					std::string remark;
 				};
 
 
@@ -49,13 +52,13 @@ namespace AlibabaCloud
 				explicit DescribeInstancesResult(const std::string &payload);
 				~DescribeInstancesResult();
 				std::vector<Instance> getInstances()const;
-				long getTotal()const;
+				long getTotalCount()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::vector<Instance> instances_;
-				long total_;
+				long totalCount_;
 
 			};
 		}

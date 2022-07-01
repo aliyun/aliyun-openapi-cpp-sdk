@@ -39,6 +39,8 @@ void DescribeSlsLogstoreInfoResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["Ttl"].isNull())
+		ttl_ = std::stoi(value["Ttl"].asString());
 	if(!value["Quota"].isNull())
 		quota_ = std::stol(value["Quota"].asString());
 	if(!value["LogStore"].isNull())
@@ -47,8 +49,6 @@ void DescribeSlsLogstoreInfoResult::parse(const std::string &payload)
 		used_ = std::stol(value["Used"].asString());
 	if(!value["Project"].isNull())
 		project_ = value["Project"].asString();
-	if(!value["Ttl"].isNull())
-		ttl_ = std::stoi(value["Ttl"].asString());
 
 }
 

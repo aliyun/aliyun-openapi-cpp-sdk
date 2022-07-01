@@ -36,13 +36,14 @@ namespace AlibabaCloud
 				{
 					int qpsLimit;
 					int baseBandwidth;
+					int elasticBw;
 					int portLimit;
 					std::string instanceId;
 					int defenseCount;
-					int domainLimit;
 					std::string functionVersion;
-					int elasticBandwidth;
+					int domainLimit;
 					int siteLimit;
+					int elasticBandwidth;
 					int bandwidthMbps;
 				};
 

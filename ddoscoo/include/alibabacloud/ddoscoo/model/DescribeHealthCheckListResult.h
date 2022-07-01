@@ -32,7 +32,7 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_DDOSCOO_EXPORT DescribeHealthCheckListResult : public ServiceResult
 			{
 			public:
-				struct Listener
+				struct HealthCheckItem
 				{
 					struct HealthCheck
 					{
@@ -55,12 +55,12 @@ namespace AlibabaCloud
 				DescribeHealthCheckListResult();
 				explicit DescribeHealthCheckListResult(const std::string &payload);
 				~DescribeHealthCheckListResult();
-				std::vector<Listener> getListeners()const;
+				std::vector<HealthCheckItem> getHealthCheckList()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<Listener> listeners_;
+				std::vector<HealthCheckItem> healthCheckList_;
 
 			};
 		}

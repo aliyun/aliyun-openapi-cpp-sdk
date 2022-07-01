@@ -45,8 +45,8 @@ namespace AlibabaCloud
 				std::vector<std::string> getTotals()const;
 				long getStartTime()const;
 				std::vector<std::string> getCcBlockQps()const;
-				std::vector<std::string> getCacheHits()const;
 				std::vector<std::string> getRegionBlocks()const;
+				std::vector<std::string> getCacheHits()const;
 				int getInterval()const;
 
 			protected:
@@ -60,8 +60,8 @@ namespace AlibabaCloud
 				std::vector<std::string> totals_;
 				long startTime_;
 				std::vector<std::string> ccBlockQps_;
-				std::vector<std::string> cacheHits_;
 				std::vector<std::string> regionBlocks_;
+				std::vector<std::string> cacheHits_;
 				int interval_;
 
 			};

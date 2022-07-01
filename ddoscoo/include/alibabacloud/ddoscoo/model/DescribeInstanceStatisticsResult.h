@@ -34,8 +34,8 @@ namespace AlibabaCloud
 			public:
 				struct InstanceStatistic
 				{
-					int portUsage;
 					int siteUsage;
+					int portUsage;
 					std::string instanceId;
 					int defenseCountUsage;
 					int domainUsage;

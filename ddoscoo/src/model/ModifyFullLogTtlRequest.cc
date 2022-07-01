@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,56 +18,46 @@
 
 using AlibabaCloud::Ddoscoo::Model::ModifyFullLogTtlRequest;
 
-ModifyFullLogTtlRequest::ModifyFullLogTtlRequest() :
-	RpcServiceRequest("ddoscoo", "2017-12-28", "ModifyFullLogTtl")
-{
-	setMethod(HttpRequest::Method::Post);
+ModifyFullLogTtlRequest::ModifyFullLogTtlRequest()
+    : RpcServiceRequest("ddoscoo", "2020-01-01", "ModifyFullLogTtl") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-ModifyFullLogTtlRequest::~ModifyFullLogTtlRequest()
-{}
+ModifyFullLogTtlRequest::~ModifyFullLogTtlRequest() {}
 
-int ModifyFullLogTtlRequest::getTtl()const
-{
-	return ttl_;
+int ModifyFullLogTtlRequest::getTtl() const {
+  return ttl_;
 }
 
-void ModifyFullLogTtlRequest::setTtl(int ttl)
-{
-	ttl_ = ttl;
-	setParameter("Ttl", std::to_string(ttl));
+void ModifyFullLogTtlRequest::setTtl(int ttl) {
+  ttl_ = ttl;
+  setParameter(std::string("Ttl"), std::to_string(ttl));
 }
 
-std::string ModifyFullLogTtlRequest::getResourceGroupId()const
-{
-	return resourceGroupId_;
+std::string ModifyFullLogTtlRequest::getResourceGroupId() const {
+  return resourceGroupId_;
 }
 
-void ModifyFullLogTtlRequest::setResourceGroupId(const std::string& resourceGroupId)
-{
-	resourceGroupId_ = resourceGroupId;
-	setParameter("ResourceGroupId", resourceGroupId);
+void ModifyFullLogTtlRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
-std::string ModifyFullLogTtlRequest::getSourceIp()const
-{
-	return sourceIp_;
+std::string ModifyFullLogTtlRequest::getSourceIp() const {
+  return sourceIp_;
 }
 
-void ModifyFullLogTtlRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
+void ModifyFullLogTtlRequest::setSourceIp(const std::string &sourceIp) {
+  sourceIp_ = sourceIp;
+  setParameter(std::string("SourceIp"), sourceIp);
 }
 
-std::string ModifyFullLogTtlRequest::getLang()const
-{
-	return lang_;
+std::string ModifyFullLogTtlRequest::getLang() const {
+  return lang_;
 }
 
-void ModifyFullLogTtlRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setParameter("Lang", lang);
+void ModifyFullLogTtlRequest::setLang(const std::string &lang) {
+  lang_ = lang;
+  setParameter(std::string("Lang"), lang);
 }
 

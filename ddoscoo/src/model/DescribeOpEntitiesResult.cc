@@ -43,12 +43,12 @@ void DescribeOpEntitiesResult::parse(const std::string &payload)
 	for (auto valueOpEntitiesOpEntity : allOpEntitiesNode)
 	{
 		OpEntity opEntitiesObject;
-		if(!valueOpEntitiesOpEntity["GmtCreate"].isNull())
-			opEntitiesObject.gmtCreate = std::stol(valueOpEntitiesOpEntity["GmtCreate"].asString());
 		if(!valueOpEntitiesOpEntity["EntityType"].isNull())
 			opEntitiesObject.entityType = std::stoi(valueOpEntitiesOpEntity["EntityType"].asString());
 		if(!valueOpEntitiesOpEntity["EntityObject"].isNull())
 			opEntitiesObject.entityObject = valueOpEntitiesOpEntity["EntityObject"].asString();
+		if(!valueOpEntitiesOpEntity["GmtCreate"].isNull())
+			opEntitiesObject.gmtCreate = std::stol(valueOpEntitiesOpEntity["GmtCreate"].asString());
 		if(!valueOpEntitiesOpEntity["OpAction"].isNull())
 			opEntitiesObject.opAction = std::stoi(valueOpEntitiesOpEntity["OpAction"].asString());
 		if(!valueOpEntitiesOpEntity["OpAccount"].isNull())
@@ -57,14 +57,14 @@ void DescribeOpEntitiesResult::parse(const std::string &payload)
 			opEntitiesObject.opDesc = valueOpEntitiesOpEntity["OpDesc"].asString();
 		opEntities_.push_back(opEntitiesObject);
 	}
-	if(!value["Total"].isNull())
-		total_ = std::stol(value["Total"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stol(value["TotalCount"].asString());
 
 }
 
-long DescribeOpEntitiesResult::getTotal()const
+long DescribeOpEntitiesResult::getTotalCount()const
 {
-	return total_;
+	return totalCount_;
 }
 
 std::vector<DescribeOpEntitiesResult::OpEntity> DescribeOpEntitiesResult::getOpEntities()const

@@ -32,45 +32,17 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_DDOSCOO_EXPORT DescribeDomainsResult : public ServiceResult
 			{
 			public:
-				struct Domain
-				{
-					struct ProxyConfig
-					{
-						std::vector<std::string> proxyPorts;
-						std::string proxyType;
-					};
-					struct RealServer
-					{
-						std::string realServer;
-						int rsType;
-					};
-					bool ccEnabled;
-					std::vector<Domain::ProxyConfig> proxyTypeList;
-					std::string sslProtocols;
-					bool ccRuleEnabled;
-					std::vector<std::string> whiteList;
-					std::string sslCiphers;
-					std::vector<std::string> blackList;
-					std::string cname;
-					std::vector<Domain::RealServer> realServers;
-					std::string certName;
-					std::string domain;
-					bool http2Enable;
-					std::string ccTemplate;
-				};
 
 
 				DescribeDomainsResult();
 				explicit DescribeDomainsResult(const std::string &payload);
 				~DescribeDomainsResult();
-				std::vector<Domain> getDomains()const;
-				long getTotal()const;
+				std::vector<std::string> getDomains()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<Domain> domains_;
-				long total_;
+				std::vector<std::string> domains_;
 
 			};
 		}

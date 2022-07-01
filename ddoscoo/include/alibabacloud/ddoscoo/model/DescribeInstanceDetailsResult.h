@@ -37,11 +37,13 @@ namespace AlibabaCloud
 					struct EipInfo
 					{
 						std::string status;
+						std::string ipVersion;
+						std::string ipMode;
 						std::string eip;
 					};
 					std::string line;
 					std::string instanceId;
-					std::vector<InstanceDetail::EipInfo> eipInfoList;
+					std::vector<InstanceDetail::EipInfo> eipInfos;
 				};
 
 

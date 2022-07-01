@@ -43,16 +43,16 @@ void DescribeInstanceStatisticsResult::parse(const std::string &payload)
 	for (auto valueInstanceStatisticsInstanceStatistic : allInstanceStatisticsNode)
 	{
 		InstanceStatistic instanceStatisticsObject;
-		if(!valueInstanceStatisticsInstanceStatistic["InstanceId"].isNull())
-			instanceStatisticsObject.instanceId = valueInstanceStatisticsInstanceStatistic["InstanceId"].asString();
-		if(!valueInstanceStatisticsInstanceStatistic["PortUsage"].isNull())
-			instanceStatisticsObject.portUsage = std::stoi(valueInstanceStatisticsInstanceStatistic["PortUsage"].asString());
 		if(!valueInstanceStatisticsInstanceStatistic["DomainUsage"].isNull())
 			instanceStatisticsObject.domainUsage = std::stoi(valueInstanceStatisticsInstanceStatistic["DomainUsage"].asString());
-		if(!valueInstanceStatisticsInstanceStatistic["SiteUsage"].isNull())
-			instanceStatisticsObject.siteUsage = std::stoi(valueInstanceStatisticsInstanceStatistic["SiteUsage"].asString());
 		if(!valueInstanceStatisticsInstanceStatistic["DefenseCountUsage"].isNull())
 			instanceStatisticsObject.defenseCountUsage = std::stoi(valueInstanceStatisticsInstanceStatistic["DefenseCountUsage"].asString());
+		if(!valueInstanceStatisticsInstanceStatistic["InstanceId"].isNull())
+			instanceStatisticsObject.instanceId = valueInstanceStatisticsInstanceStatistic["InstanceId"].asString();
+		if(!valueInstanceStatisticsInstanceStatistic["SiteUsage"].isNull())
+			instanceStatisticsObject.siteUsage = std::stoi(valueInstanceStatisticsInstanceStatistic["SiteUsage"].asString());
+		if(!valueInstanceStatisticsInstanceStatistic["PortUsage"].isNull())
+			instanceStatisticsObject.portUsage = std::stoi(valueInstanceStatisticsInstanceStatistic["PortUsage"].asString());
 		instanceStatistics_.push_back(instanceStatisticsObject);
 	}
 

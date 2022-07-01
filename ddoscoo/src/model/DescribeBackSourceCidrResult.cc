@@ -39,14 +39,14 @@ void DescribeBackSourceCidrResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allCidrList = value["CidrList"]["Cidr"];
-	for (const auto &item : allCidrList)
-		cidrList_.push_back(item.asString());
+	auto allCidrs = value["Cidrs"]["Cidr"];
+	for (const auto &item : allCidrs)
+		cidrs_.push_back(item.asString());
 
 }
 
-std::vector<std::string> DescribeBackSourceCidrResult::getCidrList()const
+std::vector<std::string> DescribeBackSourceCidrResult::getCidrs()const
 {
-	return cidrList_;
+	return cidrs_;
 }
 

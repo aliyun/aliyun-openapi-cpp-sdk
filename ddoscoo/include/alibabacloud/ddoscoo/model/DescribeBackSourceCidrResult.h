@@ -37,12 +37,12 @@ namespace AlibabaCloud
 				DescribeBackSourceCidrResult();
 				explicit DescribeBackSourceCidrResult(const std::string &payload);
 				~DescribeBackSourceCidrResult();
-				std::vector<std::string> getCidrList()const;
+				std::vector<std::string> getCidrs()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<std::string> cidrList_;
+				std::vector<std::string> cidrs_;
 
 			};
 		}
