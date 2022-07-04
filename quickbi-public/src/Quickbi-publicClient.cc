@@ -31,21 +31,21 @@ Quickbi_publicClient::Quickbi_publicClient(const Credentials &credentials, const
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "quick");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "quickbi");
 }
 
 Quickbi_publicClient::Quickbi_publicClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "quick");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "quickbi");
 }
 
 Quickbi_publicClient::Quickbi_publicClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "quick");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "quickbi");
 }
 
 Quickbi_publicClient::~Quickbi_publicClient()
@@ -1629,6 +1629,42 @@ Quickbi_publicClient::QueryEmbeddedInfoOutcomeCallable Quickbi_publicClient::que
 			[this, request]()
 			{
 			return this->queryEmbeddedInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Quickbi_publicClient::QueryEmbeddedStatusOutcome Quickbi_publicClient::queryEmbeddedStatus(const QueryEmbeddedStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryEmbeddedStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryEmbeddedStatusOutcome(QueryEmbeddedStatusResult(outcome.result()));
+	else
+		return QueryEmbeddedStatusOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::queryEmbeddedStatusAsync(const QueryEmbeddedStatusRequest& request, const QueryEmbeddedStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryEmbeddedStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::QueryEmbeddedStatusOutcomeCallable Quickbi_publicClient::queryEmbeddedStatusCallable(const QueryEmbeddedStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryEmbeddedStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->queryEmbeddedStatus(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

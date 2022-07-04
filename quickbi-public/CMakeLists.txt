@@ -109,6 +109,8 @@ set(quickbi-public_public_header_model
 	include/alibabacloud/quickbi-public/model/QueryDatasetSwitchInfoResult.h
 	include/alibabacloud/quickbi-public/model/QueryEmbeddedInfoRequest.h
 	include/alibabacloud/quickbi-public/model/QueryEmbeddedInfoResult.h
+	include/alibabacloud/quickbi-public/model/QueryEmbeddedStatusRequest.h
+	include/alibabacloud/quickbi-public/model/QueryEmbeddedStatusResult.h
 	include/alibabacloud/quickbi-public/model/QueryOrganizationWorkspaceListRequest.h
 	include/alibabacloud/quickbi-public/model/QueryOrganizationWorkspaceListResult.h
 	include/alibabacloud/quickbi-public/model/QueryReadableResourcesListByUserIdRequest.h
@@ -266,6 +268,8 @@ set(quickbi-public_src
 	src/model/QueryDatasetSwitchInfoResult.cc
 	src/model/QueryEmbeddedInfoRequest.cc
 	src/model/QueryEmbeddedInfoResult.cc
+	src/model/QueryEmbeddedStatusRequest.cc
+	src/model/QueryEmbeddedStatusResult.cc
 	src/model/QueryOrganizationWorkspaceListRequest.cc
 	src/model/QueryOrganizationWorkspaceListResult.cc
 	src/model/QueryReadableResourcesListByUserIdRequest.cc

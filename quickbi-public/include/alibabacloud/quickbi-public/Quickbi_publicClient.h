@@ -110,6 +110,8 @@
 #include "model/QueryDatasetSwitchInfoResult.h"
 #include "model/QueryEmbeddedInfoRequest.h"
 #include "model/QueryEmbeddedInfoResult.h"
+#include "model/QueryEmbeddedStatusRequest.h"
+#include "model/QueryEmbeddedStatusResult.h"
 #include "model/QueryOrganizationWorkspaceListRequest.h"
 #include "model/QueryOrganizationWorkspaceListResult.h"
 #include "model/QueryReadableResourcesListByUserIdRequest.h"
@@ -317,6 +319,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryEmbeddedInfoResult> QueryEmbeddedInfoOutcome;
 			typedef std::future<QueryEmbeddedInfoOutcome> QueryEmbeddedInfoOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::QueryEmbeddedInfoRequest&, const QueryEmbeddedInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryEmbeddedInfoAsyncHandler;
+			typedef Outcome<Error, Model::QueryEmbeddedStatusResult> QueryEmbeddedStatusOutcome;
+			typedef std::future<QueryEmbeddedStatusOutcome> QueryEmbeddedStatusOutcomeCallable;
+			typedef std::function<void(const Quickbi_publicClient*, const Model::QueryEmbeddedStatusRequest&, const QueryEmbeddedStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryEmbeddedStatusAsyncHandler;
 			typedef Outcome<Error, Model::QueryOrganizationWorkspaceListResult> QueryOrganizationWorkspaceListOutcome;
 			typedef std::future<QueryOrganizationWorkspaceListOutcome> QueryOrganizationWorkspaceListOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::QueryOrganizationWorkspaceListRequest&, const QueryOrganizationWorkspaceListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryOrganizationWorkspaceListAsyncHandler;
@@ -553,6 +558,9 @@ namespace AlibabaCloud
 			QueryEmbeddedInfoOutcome queryEmbeddedInfo(const Model::QueryEmbeddedInfoRequest &request)const;
 			void queryEmbeddedInfoAsync(const Model::QueryEmbeddedInfoRequest& request, const QueryEmbeddedInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryEmbeddedInfoOutcomeCallable queryEmbeddedInfoCallable(const Model::QueryEmbeddedInfoRequest& request) const;
+			QueryEmbeddedStatusOutcome queryEmbeddedStatus(const Model::QueryEmbeddedStatusRequest &request)const;
+			void queryEmbeddedStatusAsync(const Model::QueryEmbeddedStatusRequest& request, const QueryEmbeddedStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryEmbeddedStatusOutcomeCallable queryEmbeddedStatusCallable(const Model::QueryEmbeddedStatusRequest& request) const;
 			QueryOrganizationWorkspaceListOutcome queryOrganizationWorkspaceList(const Model::QueryOrganizationWorkspaceListRequest &request)const;
 			void queryOrganizationWorkspaceListAsync(const Model::QueryOrganizationWorkspaceListRequest& request, const QueryOrganizationWorkspaceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryOrganizationWorkspaceListOutcomeCallable queryOrganizationWorkspaceListCallable(const Model::QueryOrganizationWorkspaceListRequest& request) const;
