@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,56 +18,46 @@
 
 using AlibabaCloud::Quickbi_public::Model::CancelCollectionRequest;
 
-CancelCollectionRequest::CancelCollectionRequest() :
-	RpcServiceRequest("quickbi-public", "2022-01-01", "CancelCollection")
-{
-	setMethod(HttpRequest::Method::Post);
+CancelCollectionRequest::CancelCollectionRequest()
+    : RpcServiceRequest("quickbi-public", "2022-01-01", "CancelCollection") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-CancelCollectionRequest::~CancelCollectionRequest()
-{}
+CancelCollectionRequest::~CancelCollectionRequest() {}
 
-std::string CancelCollectionRequest::getWorksId()const
-{
-	return worksId_;
+std::string CancelCollectionRequest::getWorksId() const {
+  return worksId_;
 }
 
-void CancelCollectionRequest::setWorksId(const std::string& worksId)
-{
-	worksId_ = worksId;
-	setParameter("WorksId", worksId);
+void CancelCollectionRequest::setWorksId(const std::string &worksId) {
+  worksId_ = worksId;
+  setParameter(std::string("WorksId"), worksId);
 }
 
-std::string CancelCollectionRequest::getAccessPoint()const
-{
-	return accessPoint_;
+std::string CancelCollectionRequest::getAccessPoint() const {
+  return accessPoint_;
 }
 
-void CancelCollectionRequest::setAccessPoint(const std::string& accessPoint)
-{
-	accessPoint_ = accessPoint;
-	setParameter("AccessPoint", accessPoint);
+void CancelCollectionRequest::setAccessPoint(const std::string &accessPoint) {
+  accessPoint_ = accessPoint;
+  setParameter(std::string("AccessPoint"), accessPoint);
 }
 
-std::string CancelCollectionRequest::getSignType()const
-{
-	return signType_;
+std::string CancelCollectionRequest::getSignType() const {
+  return signType_;
 }
 
-void CancelCollectionRequest::setSignType(const std::string& signType)
-{
-	signType_ = signType;
-	setParameter("SignType", signType);
+void CancelCollectionRequest::setSignType(const std::string &signType) {
+  signType_ = signType;
+  setParameter(std::string("SignType"), signType);
 }
 
-std::string CancelCollectionRequest::getUserId()const
-{
-	return userId_;
+std::string CancelCollectionRequest::getUserId() const {
+  return userId_;
 }
 
-void CancelCollectionRequest::setUserId(const std::string& userId)
-{
-	userId_ = userId;
-	setParameter("UserId", userId);
+void CancelCollectionRequest::setUserId(const std::string &userId) {
+  userId_ = userId;
+  setParameter(std::string("UserId"), userId);
 }
 

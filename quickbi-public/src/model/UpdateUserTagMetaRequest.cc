@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,67 +18,55 @@
 
 using AlibabaCloud::Quickbi_public::Model::UpdateUserTagMetaRequest;
 
-UpdateUserTagMetaRequest::UpdateUserTagMetaRequest() :
-	RpcServiceRequest("quickbi-public", "2022-01-01", "UpdateUserTagMeta")
-{
-	setMethod(HttpRequest::Method::Post);
+UpdateUserTagMetaRequest::UpdateUserTagMetaRequest()
+    : RpcServiceRequest("quickbi-public", "2022-01-01", "UpdateUserTagMeta") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-UpdateUserTagMetaRequest::~UpdateUserTagMetaRequest()
-{}
+UpdateUserTagMetaRequest::~UpdateUserTagMetaRequest() {}
 
-std::string UpdateUserTagMetaRequest::getTagDescription()const
-{
-	return tagDescription_;
+std::string UpdateUserTagMetaRequest::getTagDescription() const {
+  return tagDescription_;
 }
 
-void UpdateUserTagMetaRequest::setTagDescription(const std::string& tagDescription)
-{
-	tagDescription_ = tagDescription;
-	setParameter("TagDescription", tagDescription);
+void UpdateUserTagMetaRequest::setTagDescription(const std::string &tagDescription) {
+  tagDescription_ = tagDescription;
+  setParameter(std::string("TagDescription"), tagDescription);
 }
 
-std::string UpdateUserTagMetaRequest::getTagName()const
-{
-	return tagName_;
+std::string UpdateUserTagMetaRequest::getTagName() const {
+  return tagName_;
 }
 
-void UpdateUserTagMetaRequest::setTagName(const std::string& tagName)
-{
-	tagName_ = tagName;
-	setParameter("TagName", tagName);
+void UpdateUserTagMetaRequest::setTagName(const std::string &tagName) {
+  tagName_ = tagName;
+  setParameter(std::string("TagName"), tagName);
 }
 
-std::string UpdateUserTagMetaRequest::getTagId()const
-{
-	return tagId_;
+std::string UpdateUserTagMetaRequest::getTagId() const {
+  return tagId_;
 }
 
-void UpdateUserTagMetaRequest::setTagId(const std::string& tagId)
-{
-	tagId_ = tagId;
-	setParameter("TagId", tagId);
+void UpdateUserTagMetaRequest::setTagId(const std::string &tagId) {
+  tagId_ = tagId;
+  setParameter(std::string("TagId"), tagId);
 }
 
-std::string UpdateUserTagMetaRequest::getAccessPoint()const
-{
-	return accessPoint_;
+std::string UpdateUserTagMetaRequest::getAccessPoint() const {
+  return accessPoint_;
 }
 
-void UpdateUserTagMetaRequest::setAccessPoint(const std::string& accessPoint)
-{
-	accessPoint_ = accessPoint;
-	setParameter("AccessPoint", accessPoint);
+void UpdateUserTagMetaRequest::setAccessPoint(const std::string &accessPoint) {
+  accessPoint_ = accessPoint;
+  setParameter(std::string("AccessPoint"), accessPoint);
 }
 
-std::string UpdateUserTagMetaRequest::getSignType()const
-{
-	return signType_;
+std::string UpdateUserTagMetaRequest::getSignType() const {
+  return signType_;
 }
 
-void UpdateUserTagMetaRequest::setSignType(const std::string& signType)
-{
-	signType_ = signType;
-	setParameter("SignType", signType);
+void UpdateUserTagMetaRequest::setSignType(const std::string &signType) {
+  signType_ = signType;
+  setParameter(std::string("SignType"), signType);
 }
 

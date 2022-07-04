@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,89 +18,73 @@
 
 using AlibabaCloud::Quickbi_public::Model::AuthorizeMenuRequest;
 
-AuthorizeMenuRequest::AuthorizeMenuRequest() :
-	RpcServiceRequest("quickbi-public", "2022-01-01", "AuthorizeMenu")
-{
-	setMethod(HttpRequest::Method::Post);
+AuthorizeMenuRequest::AuthorizeMenuRequest()
+    : RpcServiceRequest("quickbi-public", "2022-01-01", "AuthorizeMenu") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-AuthorizeMenuRequest::~AuthorizeMenuRequest()
-{}
+AuthorizeMenuRequest::~AuthorizeMenuRequest() {}
 
-std::string AuthorizeMenuRequest::getDataPortalId()const
-{
-	return dataPortalId_;
+std::string AuthorizeMenuRequest::getDataPortalId() const {
+  return dataPortalId_;
 }
 
-void AuthorizeMenuRequest::setDataPortalId(const std::string& dataPortalId)
-{
-	dataPortalId_ = dataPortalId;
-	setParameter("DataPortalId", dataPortalId);
+void AuthorizeMenuRequest::setDataPortalId(const std::string &dataPortalId) {
+  dataPortalId_ = dataPortalId;
+  setParameter(std::string("DataPortalId"), dataPortalId);
 }
 
-std::string AuthorizeMenuRequest::getUserIds()const
-{
-	return userIds_;
+std::string AuthorizeMenuRequest::getUserIds() const {
+  return userIds_;
 }
 
-void AuthorizeMenuRequest::setUserIds(const std::string& userIds)
-{
-	userIds_ = userIds;
-	setParameter("UserIds", userIds);
+void AuthorizeMenuRequest::setUserIds(const std::string &userIds) {
+  userIds_ = userIds;
+  setParameter(std::string("UserIds"), userIds);
 }
 
-int AuthorizeMenuRequest::getAuthPointsValue()const
-{
-	return authPointsValue_;
+int AuthorizeMenuRequest::getAuthPointsValue() const {
+  return authPointsValue_;
 }
 
-void AuthorizeMenuRequest::setAuthPointsValue(int authPointsValue)
-{
-	authPointsValue_ = authPointsValue;
-	setParameter("AuthPointsValue", std::to_string(authPointsValue));
+void AuthorizeMenuRequest::setAuthPointsValue(int authPointsValue) {
+  authPointsValue_ = authPointsValue;
+  setParameter(std::string("AuthPointsValue"), std::to_string(authPointsValue));
 }
 
-std::string AuthorizeMenuRequest::getAccessPoint()const
-{
-	return accessPoint_;
+std::string AuthorizeMenuRequest::getAccessPoint() const {
+  return accessPoint_;
 }
 
-void AuthorizeMenuRequest::setAccessPoint(const std::string& accessPoint)
-{
-	accessPoint_ = accessPoint;
-	setParameter("AccessPoint", accessPoint);
+void AuthorizeMenuRequest::setAccessPoint(const std::string &accessPoint) {
+  accessPoint_ = accessPoint;
+  setParameter(std::string("AccessPoint"), accessPoint);
 }
 
-std::string AuthorizeMenuRequest::getSignType()const
-{
-	return signType_;
+std::string AuthorizeMenuRequest::getSignType() const {
+  return signType_;
 }
 
-void AuthorizeMenuRequest::setSignType(const std::string& signType)
-{
-	signType_ = signType;
-	setParameter("SignType", signType);
+void AuthorizeMenuRequest::setSignType(const std::string &signType) {
+  signType_ = signType;
+  setParameter(std::string("SignType"), signType);
 }
 
-std::string AuthorizeMenuRequest::getUserGroupIds()const
-{
-	return userGroupIds_;
+std::string AuthorizeMenuRequest::getUserGroupIds() const {
+  return userGroupIds_;
 }
 
-void AuthorizeMenuRequest::setUserGroupIds(const std::string& userGroupIds)
-{
-	userGroupIds_ = userGroupIds;
-	setParameter("UserGroupIds", userGroupIds);
+void AuthorizeMenuRequest::setUserGroupIds(const std::string &userGroupIds) {
+  userGroupIds_ = userGroupIds;
+  setParameter(std::string("UserGroupIds"), userGroupIds);
 }
 
-std::string AuthorizeMenuRequest::getMenuIds()const
-{
-	return menuIds_;
+std::string AuthorizeMenuRequest::getMenuIds() const {
+  return menuIds_;
 }
 
-void AuthorizeMenuRequest::setMenuIds(const std::string& menuIds)
-{
-	menuIds_ = menuIds;
-	setParameter("MenuIds", menuIds);
+void AuthorizeMenuRequest::setMenuIds(const std::string &menuIds) {
+  menuIds_ = menuIds;
+  setParameter(std::string("MenuIds"), menuIds);
 }
 

@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,47 +17,41 @@
 #ifndef ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_ADDUSERTAGMETAREQUEST_H_
 #define ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_ADDUSERTAGMETAREQUEST_H_
 
+#include <alibabacloud/quickbi-public/Quickbi_publicExport.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
-#include <alibabacloud/quickbi-public/Quickbi_publicExport.h>
+#include <map>
 
-namespace AlibabaCloud
-{
-	namespace Quickbi_public
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_QUICKBI_PUBLIC_EXPORT AddUserTagMetaRequest : public RpcServiceRequest
-			{
+namespace AlibabaCloud {
+namespace Quickbi_public {
+namespace Model {
+class ALIBABACLOUD_QUICKBI_PUBLIC_EXPORT AddUserTagMetaRequest : public RpcServiceRequest {
+public:
+	AddUserTagMetaRequest();
+	~AddUserTagMetaRequest();
+	std::string getTagDescription() const;
+	void setTagDescription(const std::string &tagDescription);
+	std::string getTagName() const;
+	void setTagName(const std::string &tagName);
+	std::string getTagId() const;
+	void setTagId(const std::string &tagId);
+	std::string getClientToken() const;
+	void setClientToken(const std::string &clientToken);
+	std::string getAccessPoint() const;
+	void setAccessPoint(const std::string &accessPoint);
+	std::string getSignType() const;
+	void setSignType(const std::string &signType);
 
-			public:
-				AddUserTagMetaRequest();
-				~AddUserTagMetaRequest();
-
-				std::string getTagDescription()const;
-				void setTagDescription(const std::string& tagDescription);
-				std::string getTagName()const;
-				void setTagName(const std::string& tagName);
-				std::string getTagId()const;
-				void setTagId(const std::string& tagId);
-				std::string getClientToken()const;
-				void setClientToken(const std::string& clientToken);
-				std::string getAccessPoint()const;
-				void setAccessPoint(const std::string& accessPoint);
-				std::string getSignType()const;
-				void setSignType(const std::string& signType);
-
-            private:
-				std::string tagDescription_;
-				std::string tagName_;
-				std::string tagId_;
-				std::string clientToken_;
-				std::string accessPoint_;
-				std::string signType_;
-
-			};
-		}
-	}
-}
+private:
+	std::string tagDescription_;
+	std::string tagName_;
+	std::string tagId_;
+	std::string clientToken_;
+	std::string accessPoint_;
+	std::string signType_;
+};
+} // namespace Model
+} // namespace Quickbi_public
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_ADDUSERTAGMETAREQUEST_H_

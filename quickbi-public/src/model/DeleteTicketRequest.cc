@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,45 +18,37 @@
 
 using AlibabaCloud::Quickbi_public::Model::DeleteTicketRequest;
 
-DeleteTicketRequest::DeleteTicketRequest() :
-	RpcServiceRequest("quickbi-public", "2022-01-01", "DeleteTicket")
-{
-	setMethod(HttpRequest::Method::Post);
+DeleteTicketRequest::DeleteTicketRequest()
+    : RpcServiceRequest("quickbi-public", "2022-01-01", "DeleteTicket") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DeleteTicketRequest::~DeleteTicketRequest()
-{}
+DeleteTicketRequest::~DeleteTicketRequest() {}
 
-std::string DeleteTicketRequest::getTicket()const
-{
-	return ticket_;
+std::string DeleteTicketRequest::getTicket() const {
+  return ticket_;
 }
 
-void DeleteTicketRequest::setTicket(const std::string& ticket)
-{
-	ticket_ = ticket;
-	setParameter("Ticket", ticket);
+void DeleteTicketRequest::setTicket(const std::string &ticket) {
+  ticket_ = ticket;
+  setParameter(std::string("Ticket"), ticket);
 }
 
-std::string DeleteTicketRequest::getAccessPoint()const
-{
-	return accessPoint_;
+std::string DeleteTicketRequest::getAccessPoint() const {
+  return accessPoint_;
 }
 
-void DeleteTicketRequest::setAccessPoint(const std::string& accessPoint)
-{
-	accessPoint_ = accessPoint;
-	setParameter("AccessPoint", accessPoint);
+void DeleteTicketRequest::setAccessPoint(const std::string &accessPoint) {
+  accessPoint_ = accessPoint;
+  setParameter(std::string("AccessPoint"), accessPoint);
 }
 
-std::string DeleteTicketRequest::getSignType()const
-{
-	return signType_;
+std::string DeleteTicketRequest::getSignType() const {
+  return signType_;
 }
 
-void DeleteTicketRequest::setSignType(const std::string& signType)
-{
-	signType_ = signType;
-	setParameter("SignType", signType);
+void DeleteTicketRequest::setSignType(const std::string &signType) {
+  signType_ = signType;
+  setParameter(std::string("SignType"), signType);
 }
 

@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,45 +18,37 @@
 
 using AlibabaCloud::Quickbi_public::Model::SetDataLevelPermissionRuleConfigRequest;
 
-SetDataLevelPermissionRuleConfigRequest::SetDataLevelPermissionRuleConfigRequest() :
-	RpcServiceRequest("quickbi-public", "2022-01-01", "SetDataLevelPermissionRuleConfig")
-{
-	setMethod(HttpRequest::Method::Post);
+SetDataLevelPermissionRuleConfigRequest::SetDataLevelPermissionRuleConfigRequest()
+    : RpcServiceRequest("quickbi-public", "2022-01-01", "SetDataLevelPermissionRuleConfig") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-SetDataLevelPermissionRuleConfigRequest::~SetDataLevelPermissionRuleConfigRequest()
-{}
+SetDataLevelPermissionRuleConfigRequest::~SetDataLevelPermissionRuleConfigRequest() {}
 
-std::string SetDataLevelPermissionRuleConfigRequest::getAccessPoint()const
-{
-	return accessPoint_;
+std::string SetDataLevelPermissionRuleConfigRequest::getAccessPoint() const {
+  return accessPoint_;
 }
 
-void SetDataLevelPermissionRuleConfigRequest::setAccessPoint(const std::string& accessPoint)
-{
-	accessPoint_ = accessPoint;
-	setParameter("AccessPoint", accessPoint);
+void SetDataLevelPermissionRuleConfigRequest::setAccessPoint(const std::string &accessPoint) {
+  accessPoint_ = accessPoint;
+  setParameter(std::string("AccessPoint"), accessPoint);
 }
 
-std::string SetDataLevelPermissionRuleConfigRequest::getSignType()const
-{
-	return signType_;
+std::string SetDataLevelPermissionRuleConfigRequest::getSignType() const {
+  return signType_;
 }
 
-void SetDataLevelPermissionRuleConfigRequest::setSignType(const std::string& signType)
-{
-	signType_ = signType;
-	setParameter("SignType", signType);
+void SetDataLevelPermissionRuleConfigRequest::setSignType(const std::string &signType) {
+  signType_ = signType;
+  setParameter(std::string("SignType"), signType);
 }
 
-std::string SetDataLevelPermissionRuleConfigRequest::getRuleModel()const
-{
-	return ruleModel_;
+std::string SetDataLevelPermissionRuleConfigRequest::getRuleModel() const {
+  return ruleModel_;
 }
 
-void SetDataLevelPermissionRuleConfigRequest::setRuleModel(const std::string& ruleModel)
-{
-	ruleModel_ = ruleModel;
-	setParameter("RuleModel", ruleModel);
+void SetDataLevelPermissionRuleConfigRequest::setRuleModel(const std::string &ruleModel) {
+  ruleModel_ = ruleModel;
+  setParameter(std::string("RuleModel"), ruleModel);
 }
 
