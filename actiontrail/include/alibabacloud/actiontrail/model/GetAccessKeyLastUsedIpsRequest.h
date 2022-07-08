@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ACTIONTRAIL_MODEL_STARTLOGGINGREQUEST_H_
-#define ALIBABACLOUD_ACTIONTRAIL_MODEL_STARTLOGGINGREQUEST_H_
+#ifndef ALIBABACLOUD_ACTIONTRAIL_MODEL_GETACCESSKEYLASTUSEDIPSREQUEST_H_
+#define ALIBABACLOUD_ACTIONTRAIL_MODEL_GETACCESSKEYLASTUSEDIPSREQUEST_H_
 
 #include <alibabacloud/actiontrail/ActiontrailExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,17 +26,26 @@
 namespace AlibabaCloud {
 namespace Actiontrail {
 namespace Model {
-class ALIBABACLOUD_ACTIONTRAIL_EXPORT StartLoggingRequest : public RpcServiceRequest {
+class ALIBABACLOUD_ACTIONTRAIL_EXPORT GetAccessKeyLastUsedIpsRequest : public RpcServiceRequest {
 public:
-	StartLoggingRequest();
-	~StartLoggingRequest();
-	std::string getName() const;
-	void setName(const std::string &name);
+	GetAccessKeyLastUsedIpsRequest();
+	~GetAccessKeyLastUsedIpsRequest();
+	std::string getAccessKey() const;
+	void setAccessKey(const std::string &accessKey);
+	std::string getNextToken() const;
+	void setNextToken(const std::string &nextToken);
+	std::string getPageSize() const;
+	void setPageSize(const std::string &pageSize);
+	std::string getServiceName() const;
+	void setServiceName(const std::string &serviceName);
 
 private:
-	std::string name_;
+	std::string accessKey_;
+	std::string nextToken_;
+	std::string pageSize_;
+	std::string serviceName_;
 };
 } // namespace Model
 } // namespace Actiontrail
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_ACTIONTRAIL_MODEL_STARTLOGGINGREQUEST_H_
+#endif // !ALIBABACLOUD_ACTIONTRAIL_MODEL_GETACCESSKEYLASTUSEDIPSREQUEST_H_

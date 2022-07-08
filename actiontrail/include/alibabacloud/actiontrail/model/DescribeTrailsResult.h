@@ -36,23 +36,24 @@ namespace AlibabaCloud
 				{
 					std::string status;
 					std::string homeRegion;
-					std::string startLoggingTime;
 					std::string createTime;
+					std::string startLoggingTime;
 					std::string stopLoggingTime;
-					std::string organizationId;
 					std::string slsWriteRoleArn;
-					std::string ossBucketLocation;
+					std::string organizationId;
 					std::string trailRegion;
-					std::string name;
+					std::string ossBucketLocation;
 					bool isOrganizationTrail;
+					std::string name;
 					std::string slsProjectArn;
 					std::string eventRW;
-					std::string ossKeyPrefix;
 					std::string updateTime;
+					std::string ossKeyPrefix;
 					std::string region;
 					std::string ossBucketName;
 					std::string ossWriteRoleArn;
 					long isShadowTrail;
+					std::string trailArn;
 				};
 
 

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ACTIONTRAIL_MODEL_UPDATETRAILRESULT_H_
-#define ALIBABACLOUD_ACTIONTRAIL_MODEL_UPDATETRAILRESULT_H_
+#ifndef ALIBABACLOUD_ACTIONTRAIL_MODEL_GETDELIVERYHISTORYJOBRESULT_H_
+#define ALIBABACLOUD_ACTIONTRAIL_MODEL_GETDELIVERYHISTORYJOBRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,39 +29,44 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ACTIONTRAIL_EXPORT UpdateTrailResult : public ServiceResult
+			class ALIBABACLOUD_ACTIONTRAIL_EXPORT GetDeliveryHistoryJobResult : public ServiceResult
 			{
 			public:
+				struct StatusItem
+				{
+					int status;
+					std::string region;
+				};
 
 
-				UpdateTrailResult();
-				explicit UpdateTrailResult(const std::string &payload);
-				~UpdateTrailResult();
-				std::string getSlsProjectArn()const;
-				std::string getEventRW()const;
+				GetDeliveryHistoryJobResult();
+				explicit GetDeliveryHistoryJobResult(const std::string &payload);
+				~GetDeliveryHistoryJobResult();
+				std::vector<StatusItem> getStatus()const;
+				int getJobStatus()const;
+				std::string getCreatedTime()const;
+				std::string getEndTime()const;
 				std::string getHomeRegion()const;
-				std::string getOssKeyPrefix()const;
-				std::string getOssBucketName()const;
-				std::string getOssWriteRoleArn()const;
-				std::string getSlsWriteRoleArn()const;
-				std::string getTrailRegion()const;
-				std::string getName()const;
+				std::string getStartTime()const;
+				std::string getTrailName()const;
+				std::string getUpdatedTime()const;
+				long getJobId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string slsProjectArn_;
-				std::string eventRW_;
+				std::vector<StatusItem> status_;
+				int jobStatus_;
+				std::string createdTime_;
+				std::string endTime_;
 				std::string homeRegion_;
-				std::string ossKeyPrefix_;
-				std::string ossBucketName_;
-				std::string ossWriteRoleArn_;
-				std::string slsWriteRoleArn_;
-				std::string trailRegion_;
-				std::string name_;
+				std::string startTime_;
+				std::string trailName_;
+				std::string updatedTime_;
+				long jobId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ACTIONTRAIL_MODEL_UPDATETRAILRESULT_H_
+#endif // !ALIBABACLOUD_ACTIONTRAIL_MODEL_GETDELIVERYHISTORYJOBRESULT_H_

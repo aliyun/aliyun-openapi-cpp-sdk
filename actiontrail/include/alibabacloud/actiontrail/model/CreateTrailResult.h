@@ -42,8 +42,8 @@ namespace AlibabaCloud
 				std::string getHomeRegion()const;
 				std::string getOssKeyPrefix()const;
 				std::string getOssBucketName()const;
-				std::string getSlsWriteRoleArn()const;
 				std::string getOssWriteRoleArn()const;
+				std::string getSlsWriteRoleArn()const;
 				std::string getTrailRegion()const;
 				std::string getName()const;
 
@@ -55,8 +55,8 @@ namespace AlibabaCloud
 				std::string homeRegion_;
 				std::string ossKeyPrefix_;
 				std::string ossBucketName_;
-				std::string slsWriteRoleArn_;
 				std::string ossWriteRoleArn_;
+				std::string slsWriteRoleArn_;
 				std::string trailRegion_;
 				std::string name_;
 

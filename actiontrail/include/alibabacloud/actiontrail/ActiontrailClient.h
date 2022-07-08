@@ -34,6 +34,18 @@
 #include "model/DescribeRegionsResult.h"
 #include "model/DescribeTrailsRequest.h"
 #include "model/DescribeTrailsResult.h"
+#include "model/GetAccessKeyLastUsedEventsRequest.h"
+#include "model/GetAccessKeyLastUsedEventsResult.h"
+#include "model/GetAccessKeyLastUsedInfoRequest.h"
+#include "model/GetAccessKeyLastUsedInfoResult.h"
+#include "model/GetAccessKeyLastUsedIpsRequest.h"
+#include "model/GetAccessKeyLastUsedIpsResult.h"
+#include "model/GetAccessKeyLastUsedProductsRequest.h"
+#include "model/GetAccessKeyLastUsedProductsResult.h"
+#include "model/GetAccessKeyLastUsedResourcesRequest.h"
+#include "model/GetAccessKeyLastUsedResourcesResult.h"
+#include "model/GetDeliveryHistoryJobRequest.h"
+#include "model/GetDeliveryHistoryJobResult.h"
 #include "model/GetTrailStatusRequest.h"
 #include "model/GetTrailStatusResult.h"
 #include "model/ListDeliveryHistoryJobsRequest.h"
@@ -73,6 +85,24 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeTrailsResult> DescribeTrailsOutcome;
 			typedef std::future<DescribeTrailsOutcome> DescribeTrailsOutcomeCallable;
 			typedef std::function<void(const ActiontrailClient*, const Model::DescribeTrailsRequest&, const DescribeTrailsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTrailsAsyncHandler;
+			typedef Outcome<Error, Model::GetAccessKeyLastUsedEventsResult> GetAccessKeyLastUsedEventsOutcome;
+			typedef std::future<GetAccessKeyLastUsedEventsOutcome> GetAccessKeyLastUsedEventsOutcomeCallable;
+			typedef std::function<void(const ActiontrailClient*, const Model::GetAccessKeyLastUsedEventsRequest&, const GetAccessKeyLastUsedEventsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAccessKeyLastUsedEventsAsyncHandler;
+			typedef Outcome<Error, Model::GetAccessKeyLastUsedInfoResult> GetAccessKeyLastUsedInfoOutcome;
+			typedef std::future<GetAccessKeyLastUsedInfoOutcome> GetAccessKeyLastUsedInfoOutcomeCallable;
+			typedef std::function<void(const ActiontrailClient*, const Model::GetAccessKeyLastUsedInfoRequest&, const GetAccessKeyLastUsedInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAccessKeyLastUsedInfoAsyncHandler;
+			typedef Outcome<Error, Model::GetAccessKeyLastUsedIpsResult> GetAccessKeyLastUsedIpsOutcome;
+			typedef std::future<GetAccessKeyLastUsedIpsOutcome> GetAccessKeyLastUsedIpsOutcomeCallable;
+			typedef std::function<void(const ActiontrailClient*, const Model::GetAccessKeyLastUsedIpsRequest&, const GetAccessKeyLastUsedIpsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAccessKeyLastUsedIpsAsyncHandler;
+			typedef Outcome<Error, Model::GetAccessKeyLastUsedProductsResult> GetAccessKeyLastUsedProductsOutcome;
+			typedef std::future<GetAccessKeyLastUsedProductsOutcome> GetAccessKeyLastUsedProductsOutcomeCallable;
+			typedef std::function<void(const ActiontrailClient*, const Model::GetAccessKeyLastUsedProductsRequest&, const GetAccessKeyLastUsedProductsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAccessKeyLastUsedProductsAsyncHandler;
+			typedef Outcome<Error, Model::GetAccessKeyLastUsedResourcesResult> GetAccessKeyLastUsedResourcesOutcome;
+			typedef std::future<GetAccessKeyLastUsedResourcesOutcome> GetAccessKeyLastUsedResourcesOutcomeCallable;
+			typedef std::function<void(const ActiontrailClient*, const Model::GetAccessKeyLastUsedResourcesRequest&, const GetAccessKeyLastUsedResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAccessKeyLastUsedResourcesAsyncHandler;
+			typedef Outcome<Error, Model::GetDeliveryHistoryJobResult> GetDeliveryHistoryJobOutcome;
+			typedef std::future<GetDeliveryHistoryJobOutcome> GetDeliveryHistoryJobOutcomeCallable;
+			typedef std::function<void(const ActiontrailClient*, const Model::GetDeliveryHistoryJobRequest&, const GetDeliveryHistoryJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDeliveryHistoryJobAsyncHandler;
 			typedef Outcome<Error, Model::GetTrailStatusResult> GetTrailStatusOutcome;
 			typedef std::future<GetTrailStatusOutcome> GetTrailStatusOutcomeCallable;
 			typedef std::function<void(const ActiontrailClient*, const Model::GetTrailStatusRequest&, const GetTrailStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetTrailStatusAsyncHandler;
@@ -114,6 +144,24 @@ namespace AlibabaCloud
 			DescribeTrailsOutcome describeTrails(const Model::DescribeTrailsRequest &request)const;
 			void describeTrailsAsync(const Model::DescribeTrailsRequest& request, const DescribeTrailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeTrailsOutcomeCallable describeTrailsCallable(const Model::DescribeTrailsRequest& request) const;
+			GetAccessKeyLastUsedEventsOutcome getAccessKeyLastUsedEvents(const Model::GetAccessKeyLastUsedEventsRequest &request)const;
+			void getAccessKeyLastUsedEventsAsync(const Model::GetAccessKeyLastUsedEventsRequest& request, const GetAccessKeyLastUsedEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetAccessKeyLastUsedEventsOutcomeCallable getAccessKeyLastUsedEventsCallable(const Model::GetAccessKeyLastUsedEventsRequest& request) const;
+			GetAccessKeyLastUsedInfoOutcome getAccessKeyLastUsedInfo(const Model::GetAccessKeyLastUsedInfoRequest &request)const;
+			void getAccessKeyLastUsedInfoAsync(const Model::GetAccessKeyLastUsedInfoRequest& request, const GetAccessKeyLastUsedInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetAccessKeyLastUsedInfoOutcomeCallable getAccessKeyLastUsedInfoCallable(const Model::GetAccessKeyLastUsedInfoRequest& request) const;
+			GetAccessKeyLastUsedIpsOutcome getAccessKeyLastUsedIps(const Model::GetAccessKeyLastUsedIpsRequest &request)const;
+			void getAccessKeyLastUsedIpsAsync(const Model::GetAccessKeyLastUsedIpsRequest& request, const GetAccessKeyLastUsedIpsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetAccessKeyLastUsedIpsOutcomeCallable getAccessKeyLastUsedIpsCallable(const Model::GetAccessKeyLastUsedIpsRequest& request) const;
+			GetAccessKeyLastUsedProductsOutcome getAccessKeyLastUsedProducts(const Model::GetAccessKeyLastUsedProductsRequest &request)const;
+			void getAccessKeyLastUsedProductsAsync(const Model::GetAccessKeyLastUsedProductsRequest& request, const GetAccessKeyLastUsedProductsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetAccessKeyLastUsedProductsOutcomeCallable getAccessKeyLastUsedProductsCallable(const Model::GetAccessKeyLastUsedProductsRequest& request) const;
+			GetAccessKeyLastUsedResourcesOutcome getAccessKeyLastUsedResources(const Model::GetAccessKeyLastUsedResourcesRequest &request)const;
+			void getAccessKeyLastUsedResourcesAsync(const Model::GetAccessKeyLastUsedResourcesRequest& request, const GetAccessKeyLastUsedResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetAccessKeyLastUsedResourcesOutcomeCallable getAccessKeyLastUsedResourcesCallable(const Model::GetAccessKeyLastUsedResourcesRequest& request) const;
+			GetDeliveryHistoryJobOutcome getDeliveryHistoryJob(const Model::GetDeliveryHistoryJobRequest &request)const;
+			void getDeliveryHistoryJobAsync(const Model::GetDeliveryHistoryJobRequest& request, const GetDeliveryHistoryJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetDeliveryHistoryJobOutcomeCallable getDeliveryHistoryJobCallable(const Model::GetDeliveryHistoryJobRequest& request) const;
 			GetTrailStatusOutcome getTrailStatus(const Model::GetTrailStatusRequest &request)const;
 			void getTrailStatusAsync(const Model::GetTrailStatusRequest& request, const GetTrailStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetTrailStatusOutcomeCallable getTrailStatusCallable(const Model::GetTrailStatusRequest& request) const;

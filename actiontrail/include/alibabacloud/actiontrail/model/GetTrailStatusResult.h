@@ -44,8 +44,8 @@ namespace AlibabaCloud
 				std::string getLatestDeliveryError()const;
 				std::string getStopLoggingTime()const;
 				bool getSlsLogStoreStatus()const;
-				std::string getLatestDeliveryTime()const;
 				bool getIsLogging()const;
+				std::string getLatestDeliveryTime()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -57,8 +57,8 @@ namespace AlibabaCloud
 				std::string latestDeliveryError_;
 				std::string stopLoggingTime_;
 				bool slsLogStoreStatus_;
-				std::string latestDeliveryTime_;
 				bool isLogging_;
+				std::string latestDeliveryTime_;
 
 			};
 		}

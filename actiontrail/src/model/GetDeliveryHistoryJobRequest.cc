@@ -14,22 +14,22 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/actiontrail/model/DeleteDeliveryHistoryJobRequest.h>
+#include <alibabacloud/actiontrail/model/GetDeliveryHistoryJobRequest.h>
 
-using AlibabaCloud::Actiontrail::Model::DeleteDeliveryHistoryJobRequest;
+using AlibabaCloud::Actiontrail::Model::GetDeliveryHistoryJobRequest;
 
-DeleteDeliveryHistoryJobRequest::DeleteDeliveryHistoryJobRequest()
-    : RpcServiceRequest("actiontrail", "2020-07-06", "DeleteDeliveryHistoryJob") {
+GetDeliveryHistoryJobRequest::GetDeliveryHistoryJobRequest()
+    : RpcServiceRequest("actiontrail", "2020-07-06", "GetDeliveryHistoryJob") {
   setMethod(HttpRequest::Method::Post);
 }
 
-DeleteDeliveryHistoryJobRequest::~DeleteDeliveryHistoryJobRequest() {}
+GetDeliveryHistoryJobRequest::~GetDeliveryHistoryJobRequest() {}
 
-int DeleteDeliveryHistoryJobRequest::getJobId() const {
+long GetDeliveryHistoryJobRequest::getJobId() const {
   return jobId_;
 }
 
-void DeleteDeliveryHistoryJobRequest::setJobId(int jobId) {
+void GetDeliveryHistoryJobRequest::setJobId(long jobId) {
   jobId_ = jobId;
   setParameter(std::string("JobId"), std::to_string(jobId));
 }

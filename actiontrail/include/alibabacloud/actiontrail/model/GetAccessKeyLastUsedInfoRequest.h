@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ACTIONTRAIL_MODEL_STARTLOGGINGREQUEST_H_
-#define ALIBABACLOUD_ACTIONTRAIL_MODEL_STARTLOGGINGREQUEST_H_
+#ifndef ALIBABACLOUD_ACTIONTRAIL_MODEL_GETACCESSKEYLASTUSEDINFOREQUEST_H_
+#define ALIBABACLOUD_ACTIONTRAIL_MODEL_GETACCESSKEYLASTUSEDINFOREQUEST_H_
 
 #include <alibabacloud/actiontrail/ActiontrailExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,17 +26,17 @@
 namespace AlibabaCloud {
 namespace Actiontrail {
 namespace Model {
-class ALIBABACLOUD_ACTIONTRAIL_EXPORT StartLoggingRequest : public RpcServiceRequest {
+class ALIBABACLOUD_ACTIONTRAIL_EXPORT GetAccessKeyLastUsedInfoRequest : public RpcServiceRequest {
 public:
-	StartLoggingRequest();
-	~StartLoggingRequest();
-	std::string getName() const;
-	void setName(const std::string &name);
+	GetAccessKeyLastUsedInfoRequest();
+	~GetAccessKeyLastUsedInfoRequest();
+	std::string getAccessKey() const;
+	void setAccessKey(const std::string &accessKey);
 
 private:
-	std::string name_;
+	std::string accessKey_;
 };
 } // namespace Model
 } // namespace Actiontrail
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_ACTIONTRAIL_MODEL_STARTLOGGINGREQUEST_H_
+#endif // !ALIBABACLOUD_ACTIONTRAIL_MODEL_GETACCESSKEYLASTUSEDINFOREQUEST_H_

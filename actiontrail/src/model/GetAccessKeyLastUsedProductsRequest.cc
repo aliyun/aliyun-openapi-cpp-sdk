@@ -14,23 +14,23 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/actiontrail/model/DeleteDeliveryHistoryJobRequest.h>
+#include <alibabacloud/actiontrail/model/GetAccessKeyLastUsedProductsRequest.h>
 
-using AlibabaCloud::Actiontrail::Model::DeleteDeliveryHistoryJobRequest;
+using AlibabaCloud::Actiontrail::Model::GetAccessKeyLastUsedProductsRequest;
 
-DeleteDeliveryHistoryJobRequest::DeleteDeliveryHistoryJobRequest()
-    : RpcServiceRequest("actiontrail", "2020-07-06", "DeleteDeliveryHistoryJob") {
+GetAccessKeyLastUsedProductsRequest::GetAccessKeyLastUsedProductsRequest()
+    : RpcServiceRequest("actiontrail", "2020-07-06", "GetAccessKeyLastUsedProducts") {
   setMethod(HttpRequest::Method::Post);
 }
 
-DeleteDeliveryHistoryJobRequest::~DeleteDeliveryHistoryJobRequest() {}
+GetAccessKeyLastUsedProductsRequest::~GetAccessKeyLastUsedProductsRequest() {}
 
-int DeleteDeliveryHistoryJobRequest::getJobId() const {
-  return jobId_;
+std::string GetAccessKeyLastUsedProductsRequest::getAccessKey() const {
+  return accessKey_;
 }
 
-void DeleteDeliveryHistoryJobRequest::setJobId(int jobId) {
-  jobId_ = jobId;
-  setParameter(std::string("JobId"), std::to_string(jobId));
+void GetAccessKeyLastUsedProductsRequest::setAccessKey(const std::string &accessKey) {
+  accessKey_ = accessKey;
+  setParameter(std::string("AccessKey"), accessKey);
 }
 

@@ -31,21 +31,21 @@ ActiontrailClient::ActiontrailClient(const Credentials &credentials, const Clien
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "actiontrail");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 ActiontrailClient::ActiontrailClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "actiontrail");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 ActiontrailClient::ActiontrailClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "actiontrail");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 ActiontrailClient::~ActiontrailClient()
@@ -261,6 +261,222 @@ ActiontrailClient::DescribeTrailsOutcomeCallable ActiontrailClient::describeTrai
 			[this, request]()
 			{
 			return this->describeTrails(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ActiontrailClient::GetAccessKeyLastUsedEventsOutcome ActiontrailClient::getAccessKeyLastUsedEvents(const GetAccessKeyLastUsedEventsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetAccessKeyLastUsedEventsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetAccessKeyLastUsedEventsOutcome(GetAccessKeyLastUsedEventsResult(outcome.result()));
+	else
+		return GetAccessKeyLastUsedEventsOutcome(outcome.error());
+}
+
+void ActiontrailClient::getAccessKeyLastUsedEventsAsync(const GetAccessKeyLastUsedEventsRequest& request, const GetAccessKeyLastUsedEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getAccessKeyLastUsedEvents(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ActiontrailClient::GetAccessKeyLastUsedEventsOutcomeCallable ActiontrailClient::getAccessKeyLastUsedEventsCallable(const GetAccessKeyLastUsedEventsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetAccessKeyLastUsedEventsOutcome()>>(
+			[this, request]()
+			{
+			return this->getAccessKeyLastUsedEvents(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ActiontrailClient::GetAccessKeyLastUsedInfoOutcome ActiontrailClient::getAccessKeyLastUsedInfo(const GetAccessKeyLastUsedInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetAccessKeyLastUsedInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetAccessKeyLastUsedInfoOutcome(GetAccessKeyLastUsedInfoResult(outcome.result()));
+	else
+		return GetAccessKeyLastUsedInfoOutcome(outcome.error());
+}
+
+void ActiontrailClient::getAccessKeyLastUsedInfoAsync(const GetAccessKeyLastUsedInfoRequest& request, const GetAccessKeyLastUsedInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getAccessKeyLastUsedInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ActiontrailClient::GetAccessKeyLastUsedInfoOutcomeCallable ActiontrailClient::getAccessKeyLastUsedInfoCallable(const GetAccessKeyLastUsedInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetAccessKeyLastUsedInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->getAccessKeyLastUsedInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ActiontrailClient::GetAccessKeyLastUsedIpsOutcome ActiontrailClient::getAccessKeyLastUsedIps(const GetAccessKeyLastUsedIpsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetAccessKeyLastUsedIpsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetAccessKeyLastUsedIpsOutcome(GetAccessKeyLastUsedIpsResult(outcome.result()));
+	else
+		return GetAccessKeyLastUsedIpsOutcome(outcome.error());
+}
+
+void ActiontrailClient::getAccessKeyLastUsedIpsAsync(const GetAccessKeyLastUsedIpsRequest& request, const GetAccessKeyLastUsedIpsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getAccessKeyLastUsedIps(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ActiontrailClient::GetAccessKeyLastUsedIpsOutcomeCallable ActiontrailClient::getAccessKeyLastUsedIpsCallable(const GetAccessKeyLastUsedIpsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetAccessKeyLastUsedIpsOutcome()>>(
+			[this, request]()
+			{
+			return this->getAccessKeyLastUsedIps(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ActiontrailClient::GetAccessKeyLastUsedProductsOutcome ActiontrailClient::getAccessKeyLastUsedProducts(const GetAccessKeyLastUsedProductsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetAccessKeyLastUsedProductsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetAccessKeyLastUsedProductsOutcome(GetAccessKeyLastUsedProductsResult(outcome.result()));
+	else
+		return GetAccessKeyLastUsedProductsOutcome(outcome.error());
+}
+
+void ActiontrailClient::getAccessKeyLastUsedProductsAsync(const GetAccessKeyLastUsedProductsRequest& request, const GetAccessKeyLastUsedProductsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getAccessKeyLastUsedProducts(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ActiontrailClient::GetAccessKeyLastUsedProductsOutcomeCallable ActiontrailClient::getAccessKeyLastUsedProductsCallable(const GetAccessKeyLastUsedProductsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetAccessKeyLastUsedProductsOutcome()>>(
+			[this, request]()
+			{
+			return this->getAccessKeyLastUsedProducts(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ActiontrailClient::GetAccessKeyLastUsedResourcesOutcome ActiontrailClient::getAccessKeyLastUsedResources(const GetAccessKeyLastUsedResourcesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetAccessKeyLastUsedResourcesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetAccessKeyLastUsedResourcesOutcome(GetAccessKeyLastUsedResourcesResult(outcome.result()));
+	else
+		return GetAccessKeyLastUsedResourcesOutcome(outcome.error());
+}
+
+void ActiontrailClient::getAccessKeyLastUsedResourcesAsync(const GetAccessKeyLastUsedResourcesRequest& request, const GetAccessKeyLastUsedResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getAccessKeyLastUsedResources(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ActiontrailClient::GetAccessKeyLastUsedResourcesOutcomeCallable ActiontrailClient::getAccessKeyLastUsedResourcesCallable(const GetAccessKeyLastUsedResourcesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetAccessKeyLastUsedResourcesOutcome()>>(
+			[this, request]()
+			{
+			return this->getAccessKeyLastUsedResources(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ActiontrailClient::GetDeliveryHistoryJobOutcome ActiontrailClient::getDeliveryHistoryJob(const GetDeliveryHistoryJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetDeliveryHistoryJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetDeliveryHistoryJobOutcome(GetDeliveryHistoryJobResult(outcome.result()));
+	else
+		return GetDeliveryHistoryJobOutcome(outcome.error());
+}
+
+void ActiontrailClient::getDeliveryHistoryJobAsync(const GetDeliveryHistoryJobRequest& request, const GetDeliveryHistoryJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getDeliveryHistoryJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ActiontrailClient::GetDeliveryHistoryJobOutcomeCallable ActiontrailClient::getDeliveryHistoryJobCallable(const GetDeliveryHistoryJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetDeliveryHistoryJobOutcome()>>(
+			[this, request]()
+			{
+			return this->getDeliveryHistoryJob(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -41,6 +41,8 @@ void UpdateTrailResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["SlsProjectArn"].isNull())
 		slsProjectArn_ = value["SlsProjectArn"].asString();
+	if(!value["OssWriteRoleArn"].isNull())
+		ossWriteRoleArn_ = value["OssWriteRoleArn"].asString();
 	if(!value["EventRW"].isNull())
 		eventRW_ = value["EventRW"].asString();
 	if(!value["HomeRegion"].isNull())
@@ -51,8 +53,6 @@ void UpdateTrailResult::parse(const std::string &payload)
 		ossBucketName_ = value["OssBucketName"].asString();
 	if(!value["SlsWriteRoleArn"].isNull())
 		slsWriteRoleArn_ = value["SlsWriteRoleArn"].asString();
-	if(!value["OssWriteRoleArn"].isNull())
-		ossWriteRoleArn_ = value["OssWriteRoleArn"].asString();
 	if(!value["TrailRegion"].isNull())
 		trailRegion_ = value["TrailRegion"].asString();
 	if(!value["Name"].isNull())
@@ -85,14 +85,14 @@ std::string UpdateTrailResult::getOssBucketName()const
 	return ossBucketName_;
 }
 
-std::string UpdateTrailResult::getSlsWriteRoleArn()const
-{
-	return slsWriteRoleArn_;
-}
-
 std::string UpdateTrailResult::getOssWriteRoleArn()const
 {
 	return ossWriteRoleArn_;
+}
+
+std::string UpdateTrailResult::getSlsWriteRoleArn()const
+{
+	return slsWriteRoleArn_;
 }
 
 std::string UpdateTrailResult::getTrailRegion()const

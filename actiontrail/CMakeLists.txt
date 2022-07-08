@@ -33,6 +33,18 @@ set(actiontrail_public_header_model
 	include/alibabacloud/actiontrail/model/DescribeRegionsResult.h
 	include/alibabacloud/actiontrail/model/DescribeTrailsRequest.h
 	include/alibabacloud/actiontrail/model/DescribeTrailsResult.h
+	include/alibabacloud/actiontrail/model/GetAccessKeyLastUsedEventsRequest.h
+	include/alibabacloud/actiontrail/model/GetAccessKeyLastUsedEventsResult.h
+	include/alibabacloud/actiontrail/model/GetAccessKeyLastUsedInfoRequest.h
+	include/alibabacloud/actiontrail/model/GetAccessKeyLastUsedInfoResult.h
+	include/alibabacloud/actiontrail/model/GetAccessKeyLastUsedIpsRequest.h
+	include/alibabacloud/actiontrail/model/GetAccessKeyLastUsedIpsResult.h
+	include/alibabacloud/actiontrail/model/GetAccessKeyLastUsedProductsRequest.h
+	include/alibabacloud/actiontrail/model/GetAccessKeyLastUsedProductsResult.h
+	include/alibabacloud/actiontrail/model/GetAccessKeyLastUsedResourcesRequest.h
+	include/alibabacloud/actiontrail/model/GetAccessKeyLastUsedResourcesResult.h
+	include/alibabacloud/actiontrail/model/GetDeliveryHistoryJobRequest.h
+	include/alibabacloud/actiontrail/model/GetDeliveryHistoryJobResult.h
 	include/alibabacloud/actiontrail/model/GetTrailStatusRequest.h
 	include/alibabacloud/actiontrail/model/GetTrailStatusResult.h
 	include/alibabacloud/actiontrail/model/ListDeliveryHistoryJobsRequest.h
@@ -60,6 +72,18 @@ set(actiontrail_src
 	src/model/DescribeRegionsResult.cc
 	src/model/DescribeTrailsRequest.cc
 	src/model/DescribeTrailsResult.cc
+	src/model/GetAccessKeyLastUsedEventsRequest.cc
+	src/model/GetAccessKeyLastUsedEventsResult.cc
+	src/model/GetAccessKeyLastUsedInfoRequest.cc
+	src/model/GetAccessKeyLastUsedInfoResult.cc
+	src/model/GetAccessKeyLastUsedIpsRequest.cc
+	src/model/GetAccessKeyLastUsedIpsResult.cc
+	src/model/GetAccessKeyLastUsedProductsRequest.cc
+	src/model/GetAccessKeyLastUsedProductsResult.cc
+	src/model/GetAccessKeyLastUsedResourcesRequest.cc
+	src/model/GetAccessKeyLastUsedResourcesResult.cc
+	src/model/GetDeliveryHistoryJobRequest.cc
+	src/model/GetDeliveryHistoryJobResult.cc
 	src/model/GetTrailStatusRequest.cc
 	src/model/GetTrailStatusResult.cc
 	src/model/ListDeliveryHistoryJobsRequest.cc
