@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IOT_MODEL_CREATEDATASOURCEITEMREQUEST_H_
-#define ALIBABACLOUD_IOT_MODEL_CREATEDATASOURCEITEMREQUEST_H_
+#ifndef ALIBABACLOUD_IOT_MODEL_UPDATEPARSERREQUEST_H_
+#define ALIBABACLOUD_IOT_MODEL_UPDATEPARSERREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,42 +28,36 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IOT_EXPORT CreateDataSourceItemRequest : public RpcServiceRequest
+			class ALIBABACLOUD_IOT_EXPORT UpdateParserRequest : public RpcServiceRequest
 			{
 
 			public:
-				CreateDataSourceItemRequest();
-				~CreateDataSourceItemRequest();
+				UpdateParserRequest();
+				~UpdateParserRequest();
 
-				std::string getScopeType()const;
-				void setScopeType(const std::string& scopeType);
+				std::string getDescription()const;
+				void setDescription(const std::string& description);
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
-				std::string getProductKey()const;
-				void setProductKey(const std::string& productKey);
+				long getParserId()const;
+				void setParserId(long parserId);
 				std::string getApiProduct()const;
 				void setApiProduct(const std::string& apiProduct);
-				long getDataSourceId()const;
-				void setDataSourceId(long dataSourceId);
-				std::string getTopic()const;
-				void setTopic(const std::string& topic);
+				std::string getName()const;
+				void setName(const std::string& name);
 				std::string getApiRevision()const;
 				void setApiRevision(const std::string& apiRevision);
-				std::string getDeviceName()const;
-				void setDeviceName(const std::string& deviceName);
 
             private:
-				std::string scopeType_;
+				std::string description_;
 				std::string iotInstanceId_;
-				std::string productKey_;
+				long parserId_;
 				std::string apiProduct_;
-				long dataSourceId_;
-				std::string topic_;
+				std::string name_;
 				std::string apiRevision_;
-				std::string deviceName_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IOT_MODEL_CREATEDATASOURCEITEMREQUEST_H_
+#endif // !ALIBABACLOUD_IOT_MODEL_UPDATEPARSERREQUEST_H_

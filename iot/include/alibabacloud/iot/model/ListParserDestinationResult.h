@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IOT_MODEL_LISTDATASOURCEITEMRESULT_H_
-#define ALIBABACLOUD_IOT_MODEL_LISTDATASOURCEITEMRESULT_H_
+#ifndef ALIBABACLOUD_IOT_MODEL_LISTPARSERDESTINATIONRESULT_H_
+#define ALIBABACLOUD_IOT_MODEL_LISTPARSERDESTINATIONRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,26 +29,25 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IOT_EXPORT ListDataSourceItemResult : public ServiceResult
+			class ALIBABACLOUD_IOT_EXPORT ListParserDestinationResult : public ServiceResult
 			{
 			public:
-				struct DataSourceItem
+				struct Destinations
 				{
-					std::string scopeType;
-					long dataSourceItemId;
-					std::string topic;
-					std::string productKey;
-					std::string deviceName;
+					std::string type;
+					std::string configuration;
+					std::string utcCreated;
+					std::string utcModified;
+					bool isFailover;
+					long destinationId;
+					std::string name;
 				};
 
 
-				ListDataSourceItemResult();
-				explicit ListDataSourceItemResult(const std::string &payload);
-				~ListDataSourceItemResult();
-				std::vector<DataSourceItem> getDataSourceItems()const;
-				int getPageSize()const;
-				int getTotal()const;
-				int getPage()const;
+				ListParserDestinationResult();
+				explicit ListParserDestinationResult(const std::string &payload);
+				~ListParserDestinationResult();
+				std::vector<Destinations> getData()const;
 				std::string getErrorMessage()const;
 				std::string getCode()const;
 				bool getSuccess()const;
@@ -56,10 +55,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<DataSourceItem> dataSourceItems_;
-				int pageSize_;
-				int total_;
-				int page_;
+				std::vector<Destinations> data_;
 				std::string errorMessage_;
 				std::string code_;
 				bool success_;
@@ -68,4 +64,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IOT_MODEL_LISTDATASOURCEITEMRESULT_H_
+#endif // !ALIBABACLOUD_IOT_MODEL_LISTPARSERDESTINATIONRESULT_H_

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IOT_MODEL_LISTDATASOURCEITEMRESULT_H_
-#define ALIBABACLOUD_IOT_MODEL_LISTDATASOURCEITEMRESULT_H_
+#ifndef ALIBABACLOUD_IOT_MODEL_GETDESTINATIONRESULT_H_
+#define ALIBABACLOUD_IOT_MODEL_GETDESTINATIONRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,26 +29,24 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IOT_EXPORT ListDataSourceItemResult : public ServiceResult
+			class ALIBABACLOUD_IOT_EXPORT GetDestinationResult : public ServiceResult
 			{
 			public:
-				struct DataSourceItem
+				struct Destination
 				{
-					std::string scopeType;
-					long dataSourceItemId;
-					std::string topic;
-					std::string productKey;
-					std::string deviceName;
+					std::string type;
+					std::string configuration;
+					std::string utcCreated;
+					bool isFailover;
+					std::string destinationId;
+					std::string name;
 				};
 
 
-				ListDataSourceItemResult();
-				explicit ListDataSourceItemResult(const std::string &payload);
-				~ListDataSourceItemResult();
-				std::vector<DataSourceItem> getDataSourceItems()const;
-				int getPageSize()const;
-				int getTotal()const;
-				int getPage()const;
+				GetDestinationResult();
+				explicit GetDestinationResult(const std::string &payload);
+				~GetDestinationResult();
+				Destination getDestination()const;
 				std::string getErrorMessage()const;
 				std::string getCode()const;
 				bool getSuccess()const;
@@ -56,10 +54,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<DataSourceItem> dataSourceItems_;
-				int pageSize_;
-				int total_;
-				int page_;
+				Destination destination_;
 				std::string errorMessage_;
 				std::string code_;
 				bool success_;
@@ -68,4 +63,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IOT_MODEL_LISTDATASOURCEITEMRESULT_H_
+#endif // !ALIBABACLOUD_IOT_MODEL_GETDESTINATIONRESULT_H_

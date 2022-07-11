@@ -87,6 +87,78 @@ IotClient::AddDataForApiSourceOutcomeCallable IotClient::addDataForApiSourceCall
 	return task->get_future();
 }
 
+IotClient::AttachDestinationOutcome IotClient::attachDestination(const AttachDestinationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AttachDestinationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AttachDestinationOutcome(AttachDestinationResult(outcome.result()));
+	else
+		return AttachDestinationOutcome(outcome.error());
+}
+
+void IotClient::attachDestinationAsync(const AttachDestinationRequest& request, const AttachDestinationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, attachDestination(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::AttachDestinationOutcomeCallable IotClient::attachDestinationCallable(const AttachDestinationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AttachDestinationOutcome()>>(
+			[this, request]()
+			{
+			return this->attachDestination(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::AttachParserDataSourceOutcome IotClient::attachParserDataSource(const AttachParserDataSourceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AttachParserDataSourceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AttachParserDataSourceOutcome(AttachParserDataSourceResult(outcome.result()));
+	else
+		return AttachParserDataSourceOutcome(outcome.error());
+}
+
+void IotClient::attachParserDataSourceAsync(const AttachParserDataSourceRequest& request, const AttachParserDataSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, attachParserDataSource(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::AttachParserDataSourceOutcomeCallable IotClient::attachParserDataSourceCallable(const AttachParserDataSourceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AttachParserDataSourceOutcome()>>(
+			[this, request]()
+			{
+			return this->attachParserDataSource(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 IotClient::BatchAddDataForApiSourceOutcome IotClient::batchAddDataForApiSource(const BatchAddDataForApiSourceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2031,6 +2103,42 @@ IotClient::CreateDataSourceItemOutcomeCallable IotClient::createDataSourceItemCa
 	return task->get_future();
 }
 
+IotClient::CreateDestinationOutcome IotClient::createDestination(const CreateDestinationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateDestinationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateDestinationOutcome(CreateDestinationResult(outcome.result()));
+	else
+		return CreateDestinationOutcome(outcome.error());
+}
+
+void IotClient::createDestinationAsync(const CreateDestinationRequest& request, const CreateDestinationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createDestination(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::CreateDestinationOutcomeCallable IotClient::createDestinationCallable(const CreateDestinationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateDestinationOutcome()>>(
+			[this, request]()
+			{
+			return this->createDestination(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 IotClient::CreateDeviceDistributeJobOutcome IotClient::createDeviceDistributeJob(const CreateDeviceDistributeJobRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2673,6 +2781,78 @@ IotClient::CreateOTAVerifyJobOutcomeCallable IotClient::createOTAVerifyJobCallab
 			[this, request]()
 			{
 			return this->createOTAVerifyJob(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::CreateParserOutcome IotClient::createParser(const CreateParserRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateParserOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateParserOutcome(CreateParserResult(outcome.result()));
+	else
+		return CreateParserOutcome(outcome.error());
+}
+
+void IotClient::createParserAsync(const CreateParserRequest& request, const CreateParserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createParser(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::CreateParserOutcomeCallable IotClient::createParserCallable(const CreateParserRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateParserOutcome()>>(
+			[this, request]()
+			{
+			return this->createParser(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::CreateParserDataSourceOutcome IotClient::createParserDataSource(const CreateParserDataSourceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateParserDataSourceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateParserDataSourceOutcome(CreateParserDataSourceResult(outcome.result()));
+	else
+		return CreateParserDataSourceOutcome(outcome.error());
+}
+
+void IotClient::createParserDataSourceAsync(const CreateParserDataSourceRequest& request, const CreateParserDataSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createParserDataSource(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::CreateParserDataSourceOutcomeCallable IotClient::createParserDataSourceCallable(const CreateParserDataSourceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateParserDataSourceOutcome()>>(
+			[this, request]()
+			{
+			return this->createParserDataSource(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3399,6 +3579,78 @@ IotClient::DeleteConsumerGroupSubscribeRelationOutcomeCallable IotClient::delete
 	return task->get_future();
 }
 
+IotClient::DeleteDataSourceItemOutcome IotClient::deleteDataSourceItem(const DeleteDataSourceItemRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteDataSourceItemOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteDataSourceItemOutcome(DeleteDataSourceItemResult(outcome.result()));
+	else
+		return DeleteDataSourceItemOutcome(outcome.error());
+}
+
+void IotClient::deleteDataSourceItemAsync(const DeleteDataSourceItemRequest& request, const DeleteDataSourceItemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteDataSourceItem(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::DeleteDataSourceItemOutcomeCallable IotClient::deleteDataSourceItemCallable(const DeleteDataSourceItemRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteDataSourceItemOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteDataSourceItem(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::DeleteDestinationOutcome IotClient::deleteDestination(const DeleteDestinationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteDestinationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteDestinationOutcome(DeleteDestinationResult(outcome.result()));
+	else
+		return DeleteDestinationOutcome(outcome.error());
+}
+
+void IotClient::deleteDestinationAsync(const DeleteDestinationRequest& request, const DeleteDestinationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteDestination(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::DeleteDestinationOutcomeCallable IotClient::deleteDestinationCallable(const DeleteDestinationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteDestinationOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteDestination(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 IotClient::DeleteDeviceOutcome IotClient::deleteDevice(const DeleteDeviceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3933,6 +4185,78 @@ IotClient::DeleteOTAModuleOutcomeCallable IotClient::deleteOTAModuleCallable(con
 			[this, request]()
 			{
 			return this->deleteOTAModule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::DeleteParserOutcome IotClient::deleteParser(const DeleteParserRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteParserOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteParserOutcome(DeleteParserResult(outcome.result()));
+	else
+		return DeleteParserOutcome(outcome.error());
+}
+
+void IotClient::deleteParserAsync(const DeleteParserRequest& request, const DeleteParserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteParser(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::DeleteParserOutcomeCallable IotClient::deleteParserCallable(const DeleteParserRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteParserOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteParser(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::DeleteParserDataSourceOutcome IotClient::deleteParserDataSource(const DeleteParserDataSourceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteParserDataSourceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteParserDataSourceOutcome(DeleteParserDataSourceResult(outcome.result()));
+	else
+		return DeleteParserDataSourceOutcome(outcome.error());
+}
+
+void IotClient::deleteParserDataSourceAsync(const DeleteParserDataSourceRequest& request, const DeleteParserDataSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteParserDataSource(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::DeleteParserDataSourceOutcomeCallable IotClient::deleteParserDataSourceCallable(const DeleteParserDataSourceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteParserDataSourceOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteParserDataSource(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4479,6 +4803,78 @@ IotClient::DeleteTopicRouteTableOutcomeCallable IotClient::deleteTopicRouteTable
 	return task->get_future();
 }
 
+IotClient::DetachDestinationOutcome IotClient::detachDestination(const DetachDestinationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DetachDestinationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DetachDestinationOutcome(DetachDestinationResult(outcome.result()));
+	else
+		return DetachDestinationOutcome(outcome.error());
+}
+
+void IotClient::detachDestinationAsync(const DetachDestinationRequest& request, const DetachDestinationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, detachDestination(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::DetachDestinationOutcomeCallable IotClient::detachDestinationCallable(const DetachDestinationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DetachDestinationOutcome()>>(
+			[this, request]()
+			{
+			return this->detachDestination(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::DetachParserDataSourceOutcome IotClient::detachParserDataSource(const DetachParserDataSourceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DetachParserDataSourceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DetachParserDataSourceOutcome(DetachParserDataSourceResult(outcome.result()));
+	else
+		return DetachParserDataSourceOutcome(outcome.error());
+}
+
+void IotClient::detachParserDataSourceAsync(const DetachParserDataSourceRequest& request, const DetachParserDataSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, detachParserDataSource(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::DetachParserDataSourceOutcomeCallable IotClient::detachParserDataSourceCallable(const DetachParserDataSourceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DetachParserDataSourceOutcome()>>(
+			[this, request]()
+			{
+			return this->detachParserDataSource(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 IotClient::DisableDeviceTunnelOutcome IotClient::disableDeviceTunnel(const DisableDeviceTunnelRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4911,6 +5307,42 @@ IotClient::GetDataAPIServiceDetailOutcomeCallable IotClient::getDataAPIServiceDe
 	return task->get_future();
 }
 
+IotClient::GetDestinationOutcome IotClient::getDestination(const GetDestinationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetDestinationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetDestinationOutcome(GetDestinationResult(outcome.result()));
+	else
+		return GetDestinationOutcome(outcome.error());
+}
+
+void IotClient::getDestinationAsync(const GetDestinationRequest& request, const GetDestinationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getDestination(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::GetDestinationOutcomeCallable IotClient::getDestinationCallable(const GetDestinationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetDestinationOutcome()>>(
+			[this, request]()
+			{
+			return this->getDestination(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 IotClient::GetDeviceShadowOutcome IotClient::getDeviceShadow(const GetDeviceShadowRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5265,6 +5697,78 @@ IotClient::GetLoraNodesTaskOutcomeCallable IotClient::getLoraNodesTaskCallable(c
 			[this, request]()
 			{
 			return this->getLoraNodesTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::GetParserOutcome IotClient::getParser(const GetParserRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetParserOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetParserOutcome(GetParserResult(outcome.result()));
+	else
+		return GetParserOutcome(outcome.error());
+}
+
+void IotClient::getParserAsync(const GetParserRequest& request, const GetParserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getParser(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::GetParserOutcomeCallable IotClient::getParserCallable(const GetParserRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetParserOutcome()>>(
+			[this, request]()
+			{
+			return this->getParser(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::GetParserDataSourceOutcome IotClient::getParserDataSource(const GetParserDataSourceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetParserDataSourceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetParserDataSourceOutcome(GetParserDataSourceResult(outcome.result()));
+	else
+		return GetParserDataSourceOutcome(outcome.error());
+}
+
+void IotClient::getParserDataSourceAsync(const GetParserDataSourceRequest& request, const GetParserDataSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getParserDataSource(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::GetParserDataSourceOutcomeCallable IotClient::getParserDataSourceCallable(const GetParserDataSourceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetParserDataSourceOutcome()>>(
+			[this, request]()
+			{
+			return this->getParserDataSource(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -6063,6 +6567,42 @@ IotClient::ListDataSourceItemOutcomeCallable IotClient::listDataSourceItemCallab
 	return task->get_future();
 }
 
+IotClient::ListDestinationOutcome IotClient::listDestination(const ListDestinationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListDestinationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListDestinationOutcome(ListDestinationResult(outcome.result()));
+	else
+		return ListDestinationOutcome(outcome.error());
+}
+
+void IotClient::listDestinationAsync(const ListDestinationRequest& request, const ListDestinationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listDestination(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::ListDestinationOutcomeCallable IotClient::listDestinationCallable(const ListDestinationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListDestinationOutcome()>>(
+			[this, request]()
+			{
+			return this->listDestination(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 IotClient::ListDeviceDistributeJobOutcome IotClient::listDeviceDistributeJob(const ListDeviceDistributeJobRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -6453,6 +6993,114 @@ IotClient::ListOTAUnfinishedTaskByDeviceOutcomeCallable IotClient::listOTAUnfini
 			[this, request]()
 			{
 			return this->listOTAUnfinishedTaskByDevice(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::ListParserOutcome IotClient::listParser(const ListParserRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListParserOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListParserOutcome(ListParserResult(outcome.result()));
+	else
+		return ListParserOutcome(outcome.error());
+}
+
+void IotClient::listParserAsync(const ListParserRequest& request, const ListParserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listParser(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::ListParserOutcomeCallable IotClient::listParserCallable(const ListParserRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListParserOutcome()>>(
+			[this, request]()
+			{
+			return this->listParser(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::ListParserDataSourceOutcome IotClient::listParserDataSource(const ListParserDataSourceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListParserDataSourceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListParserDataSourceOutcome(ListParserDataSourceResult(outcome.result()));
+	else
+		return ListParserDataSourceOutcome(outcome.error());
+}
+
+void IotClient::listParserDataSourceAsync(const ListParserDataSourceRequest& request, const ListParserDataSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listParserDataSource(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::ListParserDataSourceOutcomeCallable IotClient::listParserDataSourceCallable(const ListParserDataSourceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListParserDataSourceOutcome()>>(
+			[this, request]()
+			{
+			return this->listParserDataSource(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::ListParserDestinationOutcome IotClient::listParserDestination(const ListParserDestinationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListParserDestinationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListParserDestinationOutcome(ListParserDestinationResult(outcome.result()));
+	else
+		return ListParserDestinationOutcome(outcome.error());
+}
+
+void IotClient::listParserDestinationAsync(const ListParserDestinationRequest& request, const ListParserDestinationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listParserDestination(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::ListParserDestinationOutcomeCallable IotClient::listParserDestinationCallable(const ListParserDestinationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListParserDestinationOutcome()>>(
+			[this, request]()
+			{
+			return this->listParserDestination(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -6921,6 +7569,42 @@ IotClient::PubBroadcastOutcomeCallable IotClient::pubBroadcastCallable(const Pub
 			[this, request]()
 			{
 			return this->pubBroadcast(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::PublishScriptOutcome IotClient::publishScript(const PublishScriptRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return PublishScriptOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return PublishScriptOutcome(PublishScriptResult(outcome.result()));
+	else
+		return PublishScriptOutcome(outcome.error());
+}
+
+void IotClient::publishScriptAsync(const PublishScriptRequest& request, const PublishScriptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, publishScript(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::PublishScriptOutcomeCallable IotClient::publishScriptCallable(const PublishScriptRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<PublishScriptOutcome()>>(
+			[this, request]()
+			{
+			return this->publishScript(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -10887,6 +11571,42 @@ IotClient::SaveDevicePropOutcomeCallable IotClient::saveDevicePropCallable(const
 	return task->get_future();
 }
 
+IotClient::SaveScriptOutcome IotClient::saveScript(const SaveScriptRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SaveScriptOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SaveScriptOutcome(SaveScriptResult(outcome.result()));
+	else
+		return SaveScriptOutcome(outcome.error());
+}
+
+void IotClient::saveScriptAsync(const SaveScriptRequest& request, const SaveScriptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, saveScript(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::SaveScriptOutcomeCallable IotClient::saveScriptCallable(const SaveScriptRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SaveScriptOutcome()>>(
+			[this, request]()
+			{
+			return this->saveScript(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 IotClient::SetDeviceDesiredPropertyOutcome IotClient::setDeviceDesiredProperty(const SetDeviceDesiredPropertyRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -11247,6 +11967,42 @@ IotClient::SpeechBySynthesisOutcomeCallable IotClient::speechBySynthesisCallable
 	return task->get_future();
 }
 
+IotClient::StartParserOutcome IotClient::startParser(const StartParserRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return StartParserOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return StartParserOutcome(StartParserResult(outcome.result()));
+	else
+		return StartParserOutcome(outcome.error());
+}
+
+void IotClient::startParserAsync(const StartParserRequest& request, const StartParserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, startParser(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::StartParserOutcomeCallable IotClient::startParserCallable(const StartParserRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<StartParserOutcome()>>(
+			[this, request]()
+			{
+			return this->startParser(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 IotClient::StartRuleOutcome IotClient::startRule(const StartRuleRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -11277,6 +12033,42 @@ IotClient::StartRuleOutcomeCallable IotClient::startRuleCallable(const StartRule
 			[this, request]()
 			{
 			return this->startRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::StopParserOutcome IotClient::stopParser(const StopParserRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return StopParserOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return StopParserOutcome(StopParserResult(outcome.result()));
+	else
+		return StopParserOutcome(outcome.error());
+}
+
+void IotClient::stopParserAsync(const StopParserRequest& request, const StopParserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, stopParser(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::StopParserOutcomeCallable IotClient::stopParserCallable(const StopParserRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<StopParserOutcome()>>(
+			[this, request]()
+			{
+			return this->stopParser(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -11715,6 +12507,42 @@ IotClient::UpdateConsumerGroupOutcomeCallable IotClient::updateConsumerGroupCall
 	return task->get_future();
 }
 
+IotClient::UpdateDestinationOutcome IotClient::updateDestination(const UpdateDestinationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateDestinationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateDestinationOutcome(UpdateDestinationResult(outcome.result()));
+	else
+		return UpdateDestinationOutcome(outcome.error());
+}
+
+void IotClient::updateDestinationAsync(const UpdateDestinationRequest& request, const UpdateDestinationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateDestination(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::UpdateDestinationOutcomeCallable IotClient::updateDestinationCallable(const UpdateDestinationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateDestinationOutcome()>>(
+			[this, request]()
+			{
+			return this->updateDestination(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 IotClient::UpdateDeviceGroupOutcome IotClient::updateDeviceGroup(const UpdateDeviceGroupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -11997,6 +12825,78 @@ IotClient::UpdateOTAModuleOutcomeCallable IotClient::updateOTAModuleCallable(con
 			[this, request]()
 			{
 			return this->updateOTAModule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::UpdateParserOutcome IotClient::updateParser(const UpdateParserRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateParserOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateParserOutcome(UpdateParserResult(outcome.result()));
+	else
+		return UpdateParserOutcome(outcome.error());
+}
+
+void IotClient::updateParserAsync(const UpdateParserRequest& request, const UpdateParserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateParser(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::UpdateParserOutcomeCallable IotClient::updateParserCallable(const UpdateParserRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateParserOutcome()>>(
+			[this, request]()
+			{
+			return this->updateParser(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::UpdateParserDataSourceOutcome IotClient::updateParserDataSource(const UpdateParserDataSourceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateParserDataSourceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateParserDataSourceOutcome(UpdateParserDataSourceResult(outcome.result()));
+	else
+		return UpdateParserDataSourceOutcome(outcome.error());
+}
+
+void IotClient::updateParserDataSourceAsync(const UpdateParserDataSourceRequest& request, const UpdateParserDataSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateParserDataSource(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::UpdateParserDataSourceOutcomeCallable IotClient::updateParserDataSourceCallable(const UpdateParserDataSourceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateParserDataSourceOutcome()>>(
+			[this, request]()
+			{
+			return this->updateParserDataSource(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

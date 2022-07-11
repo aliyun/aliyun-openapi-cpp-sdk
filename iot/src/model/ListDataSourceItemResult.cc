@@ -47,6 +47,12 @@ void ListDataSourceItemResult::parse(const std::string &payload)
 			dataSourceItemsObject.dataSourceItemId = std::stol(valueDataSourceItemsdataSourceItem["DataSourceItemId"].asString());
 		if(!valueDataSourceItemsdataSourceItem["Topic"].isNull())
 			dataSourceItemsObject.topic = valueDataSourceItemsdataSourceItem["Topic"].asString();
+		if(!valueDataSourceItemsdataSourceItem["ScopeType"].isNull())
+			dataSourceItemsObject.scopeType = valueDataSourceItemsdataSourceItem["ScopeType"].asString();
+		if(!valueDataSourceItemsdataSourceItem["ProductKey"].isNull())
+			dataSourceItemsObject.productKey = valueDataSourceItemsdataSourceItem["ProductKey"].asString();
+		if(!valueDataSourceItemsdataSourceItem["DeviceName"].isNull())
+			dataSourceItemsObject.deviceName = valueDataSourceItemsdataSourceItem["DeviceName"].asString();
 		dataSourceItems_.push_back(dataSourceItemsObject);
 	}
 	if(!value["Success"].isNull())

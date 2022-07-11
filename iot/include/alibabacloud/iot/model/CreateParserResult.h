@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IOT_MODEL_LISTDATASOURCEITEMRESULT_H_
-#define ALIBABACLOUD_IOT_MODEL_LISTDATASOURCEITEMRESULT_H_
+#ifndef ALIBABACLOUD_IOT_MODEL_CREATEPARSERRESULT_H_
+#define ALIBABACLOUD_IOT_MODEL_CREATEPARSERRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,43 +29,29 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IOT_EXPORT ListDataSourceItemResult : public ServiceResult
+			class ALIBABACLOUD_IOT_EXPORT CreateParserResult : public ServiceResult
 			{
 			public:
-				struct DataSourceItem
-				{
-					std::string scopeType;
-					long dataSourceItemId;
-					std::string topic;
-					std::string productKey;
-					std::string deviceName;
-				};
 
 
-				ListDataSourceItemResult();
-				explicit ListDataSourceItemResult(const std::string &payload);
-				~ListDataSourceItemResult();
-				std::vector<DataSourceItem> getDataSourceItems()const;
-				int getPageSize()const;
-				int getTotal()const;
-				int getPage()const;
+				CreateParserResult();
+				explicit CreateParserResult(const std::string &payload);
+				~CreateParserResult();
 				std::string getErrorMessage()const;
 				std::string getCode()const;
+				long getParserId()const;
 				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<DataSourceItem> dataSourceItems_;
-				int pageSize_;
-				int total_;
-				int page_;
 				std::string errorMessage_;
 				std::string code_;
+				long parserId_;
 				bool success_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IOT_MODEL_LISTDATASOURCEITEMRESULT_H_
+#endif // !ALIBABACLOUD_IOT_MODEL_CREATEPARSERRESULT_H_

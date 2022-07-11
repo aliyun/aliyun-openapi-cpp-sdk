@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IOT_MODEL_CREATEDATASOURCEITEMREQUEST_H_
-#define ALIBABACLOUD_IOT_MODEL_CREATEDATASOURCEITEMREQUEST_H_
+#ifndef ALIBABACLOUD_IOT_MODEL_LISTDESTINATIONREQUEST_H_
+#define ALIBABACLOUD_IOT_MODEL_LISTDESTINATIONREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,42 +28,39 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IOT_EXPORT CreateDataSourceItemRequest : public RpcServiceRequest
+			class ALIBABACLOUD_IOT_EXPORT ListDestinationRequest : public RpcServiceRequest
 			{
 
 			public:
-				CreateDataSourceItemRequest();
-				~CreateDataSourceItemRequest();
+				ListDestinationRequest();
+				~ListDestinationRequest();
 
-				std::string getScopeType()const;
-				void setScopeType(const std::string& scopeType);
+				std::string getSearchName()const;
+				void setSearchName(const std::string& searchName);
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
-				std::string getProductKey()const;
-				void setProductKey(const std::string& productKey);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				std::vector<std::string> getTypes()const;
+				void setTypes(const std::vector<std::string>& types);
 				std::string getApiProduct()const;
 				void setApiProduct(const std::string& apiProduct);
-				long getDataSourceId()const;
-				void setDataSourceId(long dataSourceId);
-				std::string getTopic()const;
-				void setTopic(const std::string& topic);
 				std::string getApiRevision()const;
 				void setApiRevision(const std::string& apiRevision);
-				std::string getDeviceName()const;
-				void setDeviceName(const std::string& deviceName);
+				int getPage()const;
+				void setPage(int page);
 
             private:
-				std::string scopeType_;
+				std::string searchName_;
 				std::string iotInstanceId_;
-				std::string productKey_;
+				int pageSize_;
+				std::vector<std::string> types_;
 				std::string apiProduct_;
-				long dataSourceId_;
-				std::string topic_;
 				std::string apiRevision_;
-				std::string deviceName_;
+				int page_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IOT_MODEL_CREATEDATASOURCEITEMREQUEST_H_
+#endif // !ALIBABACLOUD_IOT_MODEL_LISTDESTINATIONREQUEST_H_

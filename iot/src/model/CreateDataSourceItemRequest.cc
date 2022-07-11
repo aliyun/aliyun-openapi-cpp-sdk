@@ -27,6 +27,17 @@ CreateDataSourceItemRequest::CreateDataSourceItemRequest() :
 CreateDataSourceItemRequest::~CreateDataSourceItemRequest()
 {}
 
+std::string CreateDataSourceItemRequest::getScopeType()const
+{
+	return scopeType_;
+}
+
+void CreateDataSourceItemRequest::setScopeType(const std::string& scopeType)
+{
+	scopeType_ = scopeType;
+	setParameter("ScopeType", scopeType);
+}
+
 std::string CreateDataSourceItemRequest::getIotInstanceId()const
 {
 	return iotInstanceId_;
@@ -36,6 +47,17 @@ void CreateDataSourceItemRequest::setIotInstanceId(const std::string& iotInstanc
 {
 	iotInstanceId_ = iotInstanceId;
 	setParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string CreateDataSourceItemRequest::getProductKey()const
+{
+	return productKey_;
+}
+
+void CreateDataSourceItemRequest::setProductKey(const std::string& productKey)
+{
+	productKey_ = productKey;
+	setParameter("ProductKey", productKey);
 }
 
 std::string CreateDataSourceItemRequest::getApiProduct()const
@@ -80,5 +102,16 @@ void CreateDataSourceItemRequest::setApiRevision(const std::string& apiRevision)
 {
 	apiRevision_ = apiRevision;
 	setBodyParameter("ApiRevision", apiRevision);
+}
+
+std::string CreateDataSourceItemRequest::getDeviceName()const
+{
+	return deviceName_;
+}
+
+void CreateDataSourceItemRequest::setDeviceName(const std::string& deviceName)
+{
+	deviceName_ = deviceName;
+	setParameter("DeviceName", deviceName);
 }
 

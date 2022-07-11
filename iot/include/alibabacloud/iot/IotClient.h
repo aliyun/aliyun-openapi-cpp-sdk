@@ -24,6 +24,10 @@
 #include "IotExport.h"
 #include "model/AddDataForApiSourceRequest.h"
 #include "model/AddDataForApiSourceResult.h"
+#include "model/AttachDestinationRequest.h"
+#include "model/AttachDestinationResult.h"
+#include "model/AttachParserDataSourceRequest.h"
+#include "model/AttachParserDataSourceResult.h"
 #include "model/BatchAddDataForApiSourceRequest.h"
 #include "model/BatchAddDataForApiSourceResult.h"
 #include "model/BatchAddDeviceGroupRelationsRequest.h"
@@ -132,6 +136,8 @@
 #include "model/CreateDataAPIServiceResult.h"
 #include "model/CreateDataSourceItemRequest.h"
 #include "model/CreateDataSourceItemResult.h"
+#include "model/CreateDestinationRequest.h"
+#include "model/CreateDestinationResult.h"
 #include "model/CreateDeviceDistributeJobRequest.h"
 #include "model/CreateDeviceDistributeJobResult.h"
 #include "model/CreateDeviceDynamicGroupRequest.h"
@@ -168,6 +174,10 @@
 #include "model/CreateOTAStaticUpgradeJobResult.h"
 #include "model/CreateOTAVerifyJobRequest.h"
 #include "model/CreateOTAVerifyJobResult.h"
+#include "model/CreateParserRequest.h"
+#include "model/CreateParserResult.h"
+#include "model/CreateParserDataSourceRequest.h"
+#include "model/CreateParserDataSourceResult.h"
 #include "model/CreateProductRequest.h"
 #include "model/CreateProductResult.h"
 #include "model/CreateProductDistributeJobRequest.h"
@@ -208,6 +218,10 @@
 #include "model/DeleteConsumerGroupResult.h"
 #include "model/DeleteConsumerGroupSubscribeRelationRequest.h"
 #include "model/DeleteConsumerGroupSubscribeRelationResult.h"
+#include "model/DeleteDataSourceItemRequest.h"
+#include "model/DeleteDataSourceItemResult.h"
+#include "model/DeleteDestinationRequest.h"
+#include "model/DeleteDestinationResult.h"
 #include "model/DeleteDeviceRequest.h"
 #include "model/DeleteDeviceResult.h"
 #include "model/DeleteDeviceDistributeJobRequest.h"
@@ -238,6 +252,10 @@
 #include "model/DeleteOTAFirmwareResult.h"
 #include "model/DeleteOTAModuleRequest.h"
 #include "model/DeleteOTAModuleResult.h"
+#include "model/DeleteParserRequest.h"
+#include "model/DeleteParserResult.h"
+#include "model/DeleteParserDataSourceRequest.h"
+#include "model/DeleteParserDataSourceResult.h"
 #include "model/DeleteProductRequest.h"
 #include "model/DeleteProductResult.h"
 #include "model/DeleteProductTagsRequest.h"
@@ -268,6 +286,10 @@
 #include "model/DeleteThingModelResult.h"
 #include "model/DeleteTopicRouteTableRequest.h"
 #include "model/DeleteTopicRouteTableResult.h"
+#include "model/DetachDestinationRequest.h"
+#include "model/DetachDestinationResult.h"
+#include "model/DetachParserDataSourceRequest.h"
+#include "model/DetachParserDataSourceResult.h"
 #include "model/DisableDeviceTunnelRequest.h"
 #include "model/DisableDeviceTunnelResult.h"
 #include "model/DisableDeviceTunnelShareRequest.h"
@@ -292,6 +314,8 @@
 #include "model/GenerateOTAUploadURLResult.h"
 #include "model/GetDataAPIServiceDetailRequest.h"
 #include "model/GetDataAPIServiceDetailResult.h"
+#include "model/GetDestinationRequest.h"
+#include "model/GetDestinationResult.h"
 #include "model/GetDeviceShadowRequest.h"
 #include "model/GetDeviceShadowResult.h"
 #include "model/GetDeviceStatusRequest.h"
@@ -312,6 +336,10 @@
 #include "model/GetGatewayBySubDeviceResult.h"
 #include "model/GetLoraNodesTaskRequest.h"
 #include "model/GetLoraNodesTaskResult.h"
+#include "model/GetParserRequest.h"
+#include "model/GetParserResult.h"
+#include "model/GetParserDataSourceRequest.h"
+#include "model/GetParserDataSourceResult.h"
 #include "model/GetRuleRequest.h"
 #include "model/GetRuleResult.h"
 #include "model/GetRuleActionRequest.h"
@@ -356,6 +384,8 @@
 #include "model/ListAnalyticsDataResult.h"
 #include "model/ListDataSourceItemRequest.h"
 #include "model/ListDataSourceItemResult.h"
+#include "model/ListDestinationRequest.h"
+#include "model/ListDestinationResult.h"
 #include "model/ListDeviceDistributeJobRequest.h"
 #include "model/ListDeviceDistributeJobResult.h"
 #include "model/ListDistributedDeviceRequest.h"
@@ -378,6 +408,12 @@
 #include "model/ListOTATaskByJobResult.h"
 #include "model/ListOTAUnfinishedTaskByDeviceRequest.h"
 #include "model/ListOTAUnfinishedTaskByDeviceResult.h"
+#include "model/ListParserRequest.h"
+#include "model/ListParserResult.h"
+#include "model/ListParserDataSourceRequest.h"
+#include "model/ListParserDataSourceResult.h"
+#include "model/ListParserDestinationRequest.h"
+#include "model/ListParserDestinationResult.h"
 #include "model/ListProductByTagsRequest.h"
 #include "model/ListProductByTagsResult.h"
 #include "model/ListProductTagsRequest.h"
@@ -404,6 +440,8 @@
 #include "model/PubResult.h"
 #include "model/PubBroadcastRequest.h"
 #include "model/PubBroadcastResult.h"
+#include "model/PublishScriptRequest.h"
+#include "model/PublishScriptResult.h"
 #include "model/PublishStudioAppRequest.h"
 #include "model/PublishStudioAppResult.h"
 #include "model/PublishThingModelRequest.h"
@@ -624,6 +662,8 @@
 #include "model/ReupgradeOTATaskResult.h"
 #include "model/SaveDevicePropRequest.h"
 #include "model/SaveDevicePropResult.h"
+#include "model/SaveScriptRequest.h"
+#include "model/SaveScriptResult.h"
 #include "model/SetDeviceDesiredPropertyRequest.h"
 #include "model/SetDeviceDesiredPropertyResult.h"
 #include "model/SetDeviceGroupTagsRequest.h"
@@ -644,8 +684,12 @@
 #include "model/SpeechByCombinationResult.h"
 #include "model/SpeechBySynthesisRequest.h"
 #include "model/SpeechBySynthesisResult.h"
+#include "model/StartParserRequest.h"
+#include "model/StartParserResult.h"
 #include "model/StartRuleRequest.h"
 #include "model/StartRuleResult.h"
+#include "model/StopParserRequest.h"
+#include "model/StopParserResult.h"
 #include "model/StopRuleRequest.h"
 #include "model/StopRuleResult.h"
 #include "model/SubscribeTopicRequest.h"
@@ -670,6 +714,8 @@
 #include "model/UnbindSceneRuleFromEdgeInstanceResult.h"
 #include "model/UpdateConsumerGroupRequest.h"
 #include "model/UpdateConsumerGroupResult.h"
+#include "model/UpdateDestinationRequest.h"
+#include "model/UpdateDestinationResult.h"
 #include "model/UpdateDeviceGroupRequest.h"
 #include "model/UpdateDeviceGroupResult.h"
 #include "model/UpdateDeviceShadowRequest.h"
@@ -686,6 +732,10 @@
 #include "model/UpdateJobResult.h"
 #include "model/UpdateOTAModuleRequest.h"
 #include "model/UpdateOTAModuleResult.h"
+#include "model/UpdateParserRequest.h"
+#include "model/UpdateParserResult.h"
+#include "model/UpdateParserDataSourceRequest.h"
+#include "model/UpdateParserDataSourceResult.h"
 #include "model/UpdateProductRequest.h"
 #include "model/UpdateProductResult.h"
 #include "model/UpdateProductFilterConfigRequest.h"
@@ -728,6 +778,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AddDataForApiSourceResult> AddDataForApiSourceOutcome;
 			typedef std::future<AddDataForApiSourceOutcome> AddDataForApiSourceOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::AddDataForApiSourceRequest&, const AddDataForApiSourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddDataForApiSourceAsyncHandler;
+			typedef Outcome<Error, Model::AttachDestinationResult> AttachDestinationOutcome;
+			typedef std::future<AttachDestinationOutcome> AttachDestinationOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::AttachDestinationRequest&, const AttachDestinationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AttachDestinationAsyncHandler;
+			typedef Outcome<Error, Model::AttachParserDataSourceResult> AttachParserDataSourceOutcome;
+			typedef std::future<AttachParserDataSourceOutcome> AttachParserDataSourceOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::AttachParserDataSourceRequest&, const AttachParserDataSourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AttachParserDataSourceAsyncHandler;
 			typedef Outcome<Error, Model::BatchAddDataForApiSourceResult> BatchAddDataForApiSourceOutcome;
 			typedef std::future<BatchAddDataForApiSourceOutcome> BatchAddDataForApiSourceOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::BatchAddDataForApiSourceRequest&, const BatchAddDataForApiSourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchAddDataForApiSourceAsyncHandler;
@@ -890,6 +946,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateDataSourceItemResult> CreateDataSourceItemOutcome;
 			typedef std::future<CreateDataSourceItemOutcome> CreateDataSourceItemOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::CreateDataSourceItemRequest&, const CreateDataSourceItemOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDataSourceItemAsyncHandler;
+			typedef Outcome<Error, Model::CreateDestinationResult> CreateDestinationOutcome;
+			typedef std::future<CreateDestinationOutcome> CreateDestinationOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::CreateDestinationRequest&, const CreateDestinationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDestinationAsyncHandler;
 			typedef Outcome<Error, Model::CreateDeviceDistributeJobResult> CreateDeviceDistributeJobOutcome;
 			typedef std::future<CreateDeviceDistributeJobOutcome> CreateDeviceDistributeJobOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::CreateDeviceDistributeJobRequest&, const CreateDeviceDistributeJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDeviceDistributeJobAsyncHandler;
@@ -944,6 +1003,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateOTAVerifyJobResult> CreateOTAVerifyJobOutcome;
 			typedef std::future<CreateOTAVerifyJobOutcome> CreateOTAVerifyJobOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::CreateOTAVerifyJobRequest&, const CreateOTAVerifyJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateOTAVerifyJobAsyncHandler;
+			typedef Outcome<Error, Model::CreateParserResult> CreateParserOutcome;
+			typedef std::future<CreateParserOutcome> CreateParserOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::CreateParserRequest&, const CreateParserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateParserAsyncHandler;
+			typedef Outcome<Error, Model::CreateParserDataSourceResult> CreateParserDataSourceOutcome;
+			typedef std::future<CreateParserDataSourceOutcome> CreateParserDataSourceOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::CreateParserDataSourceRequest&, const CreateParserDataSourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateParserDataSourceAsyncHandler;
 			typedef Outcome<Error, Model::CreateProductResult> CreateProductOutcome;
 			typedef std::future<CreateProductOutcome> CreateProductOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::CreateProductRequest&, const CreateProductOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateProductAsyncHandler;
@@ -1004,6 +1069,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteConsumerGroupSubscribeRelationResult> DeleteConsumerGroupSubscribeRelationOutcome;
 			typedef std::future<DeleteConsumerGroupSubscribeRelationOutcome> DeleteConsumerGroupSubscribeRelationOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::DeleteConsumerGroupSubscribeRelationRequest&, const DeleteConsumerGroupSubscribeRelationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteConsumerGroupSubscribeRelationAsyncHandler;
+			typedef Outcome<Error, Model::DeleteDataSourceItemResult> DeleteDataSourceItemOutcome;
+			typedef std::future<DeleteDataSourceItemOutcome> DeleteDataSourceItemOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::DeleteDataSourceItemRequest&, const DeleteDataSourceItemOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDataSourceItemAsyncHandler;
+			typedef Outcome<Error, Model::DeleteDestinationResult> DeleteDestinationOutcome;
+			typedef std::future<DeleteDestinationOutcome> DeleteDestinationOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::DeleteDestinationRequest&, const DeleteDestinationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDestinationAsyncHandler;
 			typedef Outcome<Error, Model::DeleteDeviceResult> DeleteDeviceOutcome;
 			typedef std::future<DeleteDeviceOutcome> DeleteDeviceOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::DeleteDeviceRequest&, const DeleteDeviceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDeviceAsyncHandler;
@@ -1049,6 +1120,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteOTAModuleResult> DeleteOTAModuleOutcome;
 			typedef std::future<DeleteOTAModuleOutcome> DeleteOTAModuleOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::DeleteOTAModuleRequest&, const DeleteOTAModuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteOTAModuleAsyncHandler;
+			typedef Outcome<Error, Model::DeleteParserResult> DeleteParserOutcome;
+			typedef std::future<DeleteParserOutcome> DeleteParserOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::DeleteParserRequest&, const DeleteParserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteParserAsyncHandler;
+			typedef Outcome<Error, Model::DeleteParserDataSourceResult> DeleteParserDataSourceOutcome;
+			typedef std::future<DeleteParserDataSourceOutcome> DeleteParserDataSourceOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::DeleteParserDataSourceRequest&, const DeleteParserDataSourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteParserDataSourceAsyncHandler;
 			typedef Outcome<Error, Model::DeleteProductResult> DeleteProductOutcome;
 			typedef std::future<DeleteProductOutcome> DeleteProductOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::DeleteProductRequest&, const DeleteProductOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteProductAsyncHandler;
@@ -1094,6 +1171,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteTopicRouteTableResult> DeleteTopicRouteTableOutcome;
 			typedef std::future<DeleteTopicRouteTableOutcome> DeleteTopicRouteTableOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::DeleteTopicRouteTableRequest&, const DeleteTopicRouteTableOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTopicRouteTableAsyncHandler;
+			typedef Outcome<Error, Model::DetachDestinationResult> DetachDestinationOutcome;
+			typedef std::future<DetachDestinationOutcome> DetachDestinationOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::DetachDestinationRequest&, const DetachDestinationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetachDestinationAsyncHandler;
+			typedef Outcome<Error, Model::DetachParserDataSourceResult> DetachParserDataSourceOutcome;
+			typedef std::future<DetachParserDataSourceOutcome> DetachParserDataSourceOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::DetachParserDataSourceRequest&, const DetachParserDataSourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetachParserDataSourceAsyncHandler;
 			typedef Outcome<Error, Model::DisableDeviceTunnelResult> DisableDeviceTunnelOutcome;
 			typedef std::future<DisableDeviceTunnelOutcome> DisableDeviceTunnelOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::DisableDeviceTunnelRequest&, const DisableDeviceTunnelOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DisableDeviceTunnelAsyncHandler;
@@ -1130,6 +1213,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetDataAPIServiceDetailResult> GetDataAPIServiceDetailOutcome;
 			typedef std::future<GetDataAPIServiceDetailOutcome> GetDataAPIServiceDetailOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::GetDataAPIServiceDetailRequest&, const GetDataAPIServiceDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDataAPIServiceDetailAsyncHandler;
+			typedef Outcome<Error, Model::GetDestinationResult> GetDestinationOutcome;
+			typedef std::future<GetDestinationOutcome> GetDestinationOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::GetDestinationRequest&, const GetDestinationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDestinationAsyncHandler;
 			typedef Outcome<Error, Model::GetDeviceShadowResult> GetDeviceShadowOutcome;
 			typedef std::future<GetDeviceShadowOutcome> GetDeviceShadowOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::GetDeviceShadowRequest&, const GetDeviceShadowOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDeviceShadowAsyncHandler;
@@ -1160,6 +1246,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetLoraNodesTaskResult> GetLoraNodesTaskOutcome;
 			typedef std::future<GetLoraNodesTaskOutcome> GetLoraNodesTaskOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::GetLoraNodesTaskRequest&, const GetLoraNodesTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetLoraNodesTaskAsyncHandler;
+			typedef Outcome<Error, Model::GetParserResult> GetParserOutcome;
+			typedef std::future<GetParserOutcome> GetParserOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::GetParserRequest&, const GetParserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetParserAsyncHandler;
+			typedef Outcome<Error, Model::GetParserDataSourceResult> GetParserDataSourceOutcome;
+			typedef std::future<GetParserDataSourceOutcome> GetParserDataSourceOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::GetParserDataSourceRequest&, const GetParserDataSourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetParserDataSourceAsyncHandler;
 			typedef Outcome<Error, Model::GetRuleResult> GetRuleOutcome;
 			typedef std::future<GetRuleOutcome> GetRuleOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::GetRuleRequest&, const GetRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetRuleAsyncHandler;
@@ -1226,6 +1318,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListDataSourceItemResult> ListDataSourceItemOutcome;
 			typedef std::future<ListDataSourceItemOutcome> ListDataSourceItemOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::ListDataSourceItemRequest&, const ListDataSourceItemOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDataSourceItemAsyncHandler;
+			typedef Outcome<Error, Model::ListDestinationResult> ListDestinationOutcome;
+			typedef std::future<ListDestinationOutcome> ListDestinationOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::ListDestinationRequest&, const ListDestinationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDestinationAsyncHandler;
 			typedef Outcome<Error, Model::ListDeviceDistributeJobResult> ListDeviceDistributeJobOutcome;
 			typedef std::future<ListDeviceDistributeJobOutcome> ListDeviceDistributeJobOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::ListDeviceDistributeJobRequest&, const ListDeviceDistributeJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDeviceDistributeJobAsyncHandler;
@@ -1259,6 +1354,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListOTAUnfinishedTaskByDeviceResult> ListOTAUnfinishedTaskByDeviceOutcome;
 			typedef std::future<ListOTAUnfinishedTaskByDeviceOutcome> ListOTAUnfinishedTaskByDeviceOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::ListOTAUnfinishedTaskByDeviceRequest&, const ListOTAUnfinishedTaskByDeviceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListOTAUnfinishedTaskByDeviceAsyncHandler;
+			typedef Outcome<Error, Model::ListParserResult> ListParserOutcome;
+			typedef std::future<ListParserOutcome> ListParserOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::ListParserRequest&, const ListParserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListParserAsyncHandler;
+			typedef Outcome<Error, Model::ListParserDataSourceResult> ListParserDataSourceOutcome;
+			typedef std::future<ListParserDataSourceOutcome> ListParserDataSourceOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::ListParserDataSourceRequest&, const ListParserDataSourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListParserDataSourceAsyncHandler;
+			typedef Outcome<Error, Model::ListParserDestinationResult> ListParserDestinationOutcome;
+			typedef std::future<ListParserDestinationOutcome> ListParserDestinationOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::ListParserDestinationRequest&, const ListParserDestinationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListParserDestinationAsyncHandler;
 			typedef Outcome<Error, Model::ListProductByTagsResult> ListProductByTagsOutcome;
 			typedef std::future<ListProductByTagsOutcome> ListProductByTagsOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::ListProductByTagsRequest&, const ListProductByTagsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListProductByTagsAsyncHandler;
@@ -1298,6 +1402,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::PubBroadcastResult> PubBroadcastOutcome;
 			typedef std::future<PubBroadcastOutcome> PubBroadcastOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::PubBroadcastRequest&, const PubBroadcastOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PubBroadcastAsyncHandler;
+			typedef Outcome<Error, Model::PublishScriptResult> PublishScriptOutcome;
+			typedef std::future<PublishScriptOutcome> PublishScriptOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::PublishScriptRequest&, const PublishScriptOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PublishScriptAsyncHandler;
 			typedef Outcome<Error, Model::PublishStudioAppResult> PublishStudioAppOutcome;
 			typedef std::future<PublishStudioAppOutcome> PublishStudioAppOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::PublishStudioAppRequest&, const PublishStudioAppOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PublishStudioAppAsyncHandler;
@@ -1628,6 +1735,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SaveDevicePropResult> SaveDevicePropOutcome;
 			typedef std::future<SaveDevicePropOutcome> SaveDevicePropOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::SaveDevicePropRequest&, const SaveDevicePropOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SaveDevicePropAsyncHandler;
+			typedef Outcome<Error, Model::SaveScriptResult> SaveScriptOutcome;
+			typedef std::future<SaveScriptOutcome> SaveScriptOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::SaveScriptRequest&, const SaveScriptOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SaveScriptAsyncHandler;
 			typedef Outcome<Error, Model::SetDeviceDesiredPropertyResult> SetDeviceDesiredPropertyOutcome;
 			typedef std::future<SetDeviceDesiredPropertyOutcome> SetDeviceDesiredPropertyOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::SetDeviceDesiredPropertyRequest&, const SetDeviceDesiredPropertyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetDeviceDesiredPropertyAsyncHandler;
@@ -1658,9 +1768,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SpeechBySynthesisResult> SpeechBySynthesisOutcome;
 			typedef std::future<SpeechBySynthesisOutcome> SpeechBySynthesisOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::SpeechBySynthesisRequest&, const SpeechBySynthesisOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SpeechBySynthesisAsyncHandler;
+			typedef Outcome<Error, Model::StartParserResult> StartParserOutcome;
+			typedef std::future<StartParserOutcome> StartParserOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::StartParserRequest&, const StartParserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartParserAsyncHandler;
 			typedef Outcome<Error, Model::StartRuleResult> StartRuleOutcome;
 			typedef std::future<StartRuleOutcome> StartRuleOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::StartRuleRequest&, const StartRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartRuleAsyncHandler;
+			typedef Outcome<Error, Model::StopParserResult> StopParserOutcome;
+			typedef std::future<StopParserOutcome> StopParserOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::StopParserRequest&, const StopParserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopParserAsyncHandler;
 			typedef Outcome<Error, Model::StopRuleResult> StopRuleOutcome;
 			typedef std::future<StopRuleOutcome> StopRuleOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::StopRuleRequest&, const StopRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopRuleAsyncHandler;
@@ -1697,6 +1813,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateConsumerGroupResult> UpdateConsumerGroupOutcome;
 			typedef std::future<UpdateConsumerGroupOutcome> UpdateConsumerGroupOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::UpdateConsumerGroupRequest&, const UpdateConsumerGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateConsumerGroupAsyncHandler;
+			typedef Outcome<Error, Model::UpdateDestinationResult> UpdateDestinationOutcome;
+			typedef std::future<UpdateDestinationOutcome> UpdateDestinationOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::UpdateDestinationRequest&, const UpdateDestinationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDestinationAsyncHandler;
 			typedef Outcome<Error, Model::UpdateDeviceGroupResult> UpdateDeviceGroupOutcome;
 			typedef std::future<UpdateDeviceGroupOutcome> UpdateDeviceGroupOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::UpdateDeviceGroupRequest&, const UpdateDeviceGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDeviceGroupAsyncHandler;
@@ -1721,6 +1840,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateOTAModuleResult> UpdateOTAModuleOutcome;
 			typedef std::future<UpdateOTAModuleOutcome> UpdateOTAModuleOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::UpdateOTAModuleRequest&, const UpdateOTAModuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateOTAModuleAsyncHandler;
+			typedef Outcome<Error, Model::UpdateParserResult> UpdateParserOutcome;
+			typedef std::future<UpdateParserOutcome> UpdateParserOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::UpdateParserRequest&, const UpdateParserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateParserAsyncHandler;
+			typedef Outcome<Error, Model::UpdateParserDataSourceResult> UpdateParserDataSourceOutcome;
+			typedef std::future<UpdateParserDataSourceOutcome> UpdateParserDataSourceOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::UpdateParserDataSourceRequest&, const UpdateParserDataSourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateParserDataSourceAsyncHandler;
 			typedef Outcome<Error, Model::UpdateProductResult> UpdateProductOutcome;
 			typedef std::future<UpdateProductOutcome> UpdateProductOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::UpdateProductRequest&, const UpdateProductOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateProductAsyncHandler;
@@ -1774,6 +1899,12 @@ namespace AlibabaCloud
 			AddDataForApiSourceOutcome addDataForApiSource(const Model::AddDataForApiSourceRequest &request)const;
 			void addDataForApiSourceAsync(const Model::AddDataForApiSourceRequest& request, const AddDataForApiSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddDataForApiSourceOutcomeCallable addDataForApiSourceCallable(const Model::AddDataForApiSourceRequest& request) const;
+			AttachDestinationOutcome attachDestination(const Model::AttachDestinationRequest &request)const;
+			void attachDestinationAsync(const Model::AttachDestinationRequest& request, const AttachDestinationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AttachDestinationOutcomeCallable attachDestinationCallable(const Model::AttachDestinationRequest& request) const;
+			AttachParserDataSourceOutcome attachParserDataSource(const Model::AttachParserDataSourceRequest &request)const;
+			void attachParserDataSourceAsync(const Model::AttachParserDataSourceRequest& request, const AttachParserDataSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AttachParserDataSourceOutcomeCallable attachParserDataSourceCallable(const Model::AttachParserDataSourceRequest& request) const;
 			BatchAddDataForApiSourceOutcome batchAddDataForApiSource(const Model::BatchAddDataForApiSourceRequest &request)const;
 			void batchAddDataForApiSourceAsync(const Model::BatchAddDataForApiSourceRequest& request, const BatchAddDataForApiSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			BatchAddDataForApiSourceOutcomeCallable batchAddDataForApiSourceCallable(const Model::BatchAddDataForApiSourceRequest& request) const;
@@ -1936,6 +2067,9 @@ namespace AlibabaCloud
 			CreateDataSourceItemOutcome createDataSourceItem(const Model::CreateDataSourceItemRequest &request)const;
 			void createDataSourceItemAsync(const Model::CreateDataSourceItemRequest& request, const CreateDataSourceItemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateDataSourceItemOutcomeCallable createDataSourceItemCallable(const Model::CreateDataSourceItemRequest& request) const;
+			CreateDestinationOutcome createDestination(const Model::CreateDestinationRequest &request)const;
+			void createDestinationAsync(const Model::CreateDestinationRequest& request, const CreateDestinationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateDestinationOutcomeCallable createDestinationCallable(const Model::CreateDestinationRequest& request) const;
 			CreateDeviceDistributeJobOutcome createDeviceDistributeJob(const Model::CreateDeviceDistributeJobRequest &request)const;
 			void createDeviceDistributeJobAsync(const Model::CreateDeviceDistributeJobRequest& request, const CreateDeviceDistributeJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateDeviceDistributeJobOutcomeCallable createDeviceDistributeJobCallable(const Model::CreateDeviceDistributeJobRequest& request) const;
@@ -1990,6 +2124,12 @@ namespace AlibabaCloud
 			CreateOTAVerifyJobOutcome createOTAVerifyJob(const Model::CreateOTAVerifyJobRequest &request)const;
 			void createOTAVerifyJobAsync(const Model::CreateOTAVerifyJobRequest& request, const CreateOTAVerifyJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateOTAVerifyJobOutcomeCallable createOTAVerifyJobCallable(const Model::CreateOTAVerifyJobRequest& request) const;
+			CreateParserOutcome createParser(const Model::CreateParserRequest &request)const;
+			void createParserAsync(const Model::CreateParserRequest& request, const CreateParserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateParserOutcomeCallable createParserCallable(const Model::CreateParserRequest& request) const;
+			CreateParserDataSourceOutcome createParserDataSource(const Model::CreateParserDataSourceRequest &request)const;
+			void createParserDataSourceAsync(const Model::CreateParserDataSourceRequest& request, const CreateParserDataSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateParserDataSourceOutcomeCallable createParserDataSourceCallable(const Model::CreateParserDataSourceRequest& request) const;
 			CreateProductOutcome createProduct(const Model::CreateProductRequest &request)const;
 			void createProductAsync(const Model::CreateProductRequest& request, const CreateProductAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateProductOutcomeCallable createProductCallable(const Model::CreateProductRequest& request) const;
@@ -2050,6 +2190,12 @@ namespace AlibabaCloud
 			DeleteConsumerGroupSubscribeRelationOutcome deleteConsumerGroupSubscribeRelation(const Model::DeleteConsumerGroupSubscribeRelationRequest &request)const;
 			void deleteConsumerGroupSubscribeRelationAsync(const Model::DeleteConsumerGroupSubscribeRelationRequest& request, const DeleteConsumerGroupSubscribeRelationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteConsumerGroupSubscribeRelationOutcomeCallable deleteConsumerGroupSubscribeRelationCallable(const Model::DeleteConsumerGroupSubscribeRelationRequest& request) const;
+			DeleteDataSourceItemOutcome deleteDataSourceItem(const Model::DeleteDataSourceItemRequest &request)const;
+			void deleteDataSourceItemAsync(const Model::DeleteDataSourceItemRequest& request, const DeleteDataSourceItemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteDataSourceItemOutcomeCallable deleteDataSourceItemCallable(const Model::DeleteDataSourceItemRequest& request) const;
+			DeleteDestinationOutcome deleteDestination(const Model::DeleteDestinationRequest &request)const;
+			void deleteDestinationAsync(const Model::DeleteDestinationRequest& request, const DeleteDestinationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteDestinationOutcomeCallable deleteDestinationCallable(const Model::DeleteDestinationRequest& request) const;
 			DeleteDeviceOutcome deleteDevice(const Model::DeleteDeviceRequest &request)const;
 			void deleteDeviceAsync(const Model::DeleteDeviceRequest& request, const DeleteDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteDeviceOutcomeCallable deleteDeviceCallable(const Model::DeleteDeviceRequest& request) const;
@@ -2095,6 +2241,12 @@ namespace AlibabaCloud
 			DeleteOTAModuleOutcome deleteOTAModule(const Model::DeleteOTAModuleRequest &request)const;
 			void deleteOTAModuleAsync(const Model::DeleteOTAModuleRequest& request, const DeleteOTAModuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteOTAModuleOutcomeCallable deleteOTAModuleCallable(const Model::DeleteOTAModuleRequest& request) const;
+			DeleteParserOutcome deleteParser(const Model::DeleteParserRequest &request)const;
+			void deleteParserAsync(const Model::DeleteParserRequest& request, const DeleteParserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteParserOutcomeCallable deleteParserCallable(const Model::DeleteParserRequest& request) const;
+			DeleteParserDataSourceOutcome deleteParserDataSource(const Model::DeleteParserDataSourceRequest &request)const;
+			void deleteParserDataSourceAsync(const Model::DeleteParserDataSourceRequest& request, const DeleteParserDataSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteParserDataSourceOutcomeCallable deleteParserDataSourceCallable(const Model::DeleteParserDataSourceRequest& request) const;
 			DeleteProductOutcome deleteProduct(const Model::DeleteProductRequest &request)const;
 			void deleteProductAsync(const Model::DeleteProductRequest& request, const DeleteProductAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteProductOutcomeCallable deleteProductCallable(const Model::DeleteProductRequest& request) const;
@@ -2140,6 +2292,12 @@ namespace AlibabaCloud
 			DeleteTopicRouteTableOutcome deleteTopicRouteTable(const Model::DeleteTopicRouteTableRequest &request)const;
 			void deleteTopicRouteTableAsync(const Model::DeleteTopicRouteTableRequest& request, const DeleteTopicRouteTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteTopicRouteTableOutcomeCallable deleteTopicRouteTableCallable(const Model::DeleteTopicRouteTableRequest& request) const;
+			DetachDestinationOutcome detachDestination(const Model::DetachDestinationRequest &request)const;
+			void detachDestinationAsync(const Model::DetachDestinationRequest& request, const DetachDestinationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DetachDestinationOutcomeCallable detachDestinationCallable(const Model::DetachDestinationRequest& request) const;
+			DetachParserDataSourceOutcome detachParserDataSource(const Model::DetachParserDataSourceRequest &request)const;
+			void detachParserDataSourceAsync(const Model::DetachParserDataSourceRequest& request, const DetachParserDataSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DetachParserDataSourceOutcomeCallable detachParserDataSourceCallable(const Model::DetachParserDataSourceRequest& request) const;
 			DisableDeviceTunnelOutcome disableDeviceTunnel(const Model::DisableDeviceTunnelRequest &request)const;
 			void disableDeviceTunnelAsync(const Model::DisableDeviceTunnelRequest& request, const DisableDeviceTunnelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DisableDeviceTunnelOutcomeCallable disableDeviceTunnelCallable(const Model::DisableDeviceTunnelRequest& request) const;
@@ -2176,6 +2334,9 @@ namespace AlibabaCloud
 			GetDataAPIServiceDetailOutcome getDataAPIServiceDetail(const Model::GetDataAPIServiceDetailRequest &request)const;
 			void getDataAPIServiceDetailAsync(const Model::GetDataAPIServiceDetailRequest& request, const GetDataAPIServiceDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetDataAPIServiceDetailOutcomeCallable getDataAPIServiceDetailCallable(const Model::GetDataAPIServiceDetailRequest& request) const;
+			GetDestinationOutcome getDestination(const Model::GetDestinationRequest &request)const;
+			void getDestinationAsync(const Model::GetDestinationRequest& request, const GetDestinationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetDestinationOutcomeCallable getDestinationCallable(const Model::GetDestinationRequest& request) const;
 			GetDeviceShadowOutcome getDeviceShadow(const Model::GetDeviceShadowRequest &request)const;
 			void getDeviceShadowAsync(const Model::GetDeviceShadowRequest& request, const GetDeviceShadowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetDeviceShadowOutcomeCallable getDeviceShadowCallable(const Model::GetDeviceShadowRequest& request) const;
@@ -2206,6 +2367,12 @@ namespace AlibabaCloud
 			GetLoraNodesTaskOutcome getLoraNodesTask(const Model::GetLoraNodesTaskRequest &request)const;
 			void getLoraNodesTaskAsync(const Model::GetLoraNodesTaskRequest& request, const GetLoraNodesTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetLoraNodesTaskOutcomeCallable getLoraNodesTaskCallable(const Model::GetLoraNodesTaskRequest& request) const;
+			GetParserOutcome getParser(const Model::GetParserRequest &request)const;
+			void getParserAsync(const Model::GetParserRequest& request, const GetParserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetParserOutcomeCallable getParserCallable(const Model::GetParserRequest& request) const;
+			GetParserDataSourceOutcome getParserDataSource(const Model::GetParserDataSourceRequest &request)const;
+			void getParserDataSourceAsync(const Model::GetParserDataSourceRequest& request, const GetParserDataSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetParserDataSourceOutcomeCallable getParserDataSourceCallable(const Model::GetParserDataSourceRequest& request) const;
 			GetRuleOutcome getRule(const Model::GetRuleRequest &request)const;
 			void getRuleAsync(const Model::GetRuleRequest& request, const GetRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetRuleOutcomeCallable getRuleCallable(const Model::GetRuleRequest& request) const;
@@ -2272,6 +2439,9 @@ namespace AlibabaCloud
 			ListDataSourceItemOutcome listDataSourceItem(const Model::ListDataSourceItemRequest &request)const;
 			void listDataSourceItemAsync(const Model::ListDataSourceItemRequest& request, const ListDataSourceItemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListDataSourceItemOutcomeCallable listDataSourceItemCallable(const Model::ListDataSourceItemRequest& request) const;
+			ListDestinationOutcome listDestination(const Model::ListDestinationRequest &request)const;
+			void listDestinationAsync(const Model::ListDestinationRequest& request, const ListDestinationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListDestinationOutcomeCallable listDestinationCallable(const Model::ListDestinationRequest& request) const;
 			ListDeviceDistributeJobOutcome listDeviceDistributeJob(const Model::ListDeviceDistributeJobRequest &request)const;
 			void listDeviceDistributeJobAsync(const Model::ListDeviceDistributeJobRequest& request, const ListDeviceDistributeJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListDeviceDistributeJobOutcomeCallable listDeviceDistributeJobCallable(const Model::ListDeviceDistributeJobRequest& request) const;
@@ -2305,6 +2475,15 @@ namespace AlibabaCloud
 			ListOTAUnfinishedTaskByDeviceOutcome listOTAUnfinishedTaskByDevice(const Model::ListOTAUnfinishedTaskByDeviceRequest &request)const;
 			void listOTAUnfinishedTaskByDeviceAsync(const Model::ListOTAUnfinishedTaskByDeviceRequest& request, const ListOTAUnfinishedTaskByDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListOTAUnfinishedTaskByDeviceOutcomeCallable listOTAUnfinishedTaskByDeviceCallable(const Model::ListOTAUnfinishedTaskByDeviceRequest& request) const;
+			ListParserOutcome listParser(const Model::ListParserRequest &request)const;
+			void listParserAsync(const Model::ListParserRequest& request, const ListParserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListParserOutcomeCallable listParserCallable(const Model::ListParserRequest& request) const;
+			ListParserDataSourceOutcome listParserDataSource(const Model::ListParserDataSourceRequest &request)const;
+			void listParserDataSourceAsync(const Model::ListParserDataSourceRequest& request, const ListParserDataSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListParserDataSourceOutcomeCallable listParserDataSourceCallable(const Model::ListParserDataSourceRequest& request) const;
+			ListParserDestinationOutcome listParserDestination(const Model::ListParserDestinationRequest &request)const;
+			void listParserDestinationAsync(const Model::ListParserDestinationRequest& request, const ListParserDestinationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListParserDestinationOutcomeCallable listParserDestinationCallable(const Model::ListParserDestinationRequest& request) const;
 			ListProductByTagsOutcome listProductByTags(const Model::ListProductByTagsRequest &request)const;
 			void listProductByTagsAsync(const Model::ListProductByTagsRequest& request, const ListProductByTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListProductByTagsOutcomeCallable listProductByTagsCallable(const Model::ListProductByTagsRequest& request) const;
@@ -2344,6 +2523,9 @@ namespace AlibabaCloud
 			PubBroadcastOutcome pubBroadcast(const Model::PubBroadcastRequest &request)const;
 			void pubBroadcastAsync(const Model::PubBroadcastRequest& request, const PubBroadcastAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			PubBroadcastOutcomeCallable pubBroadcastCallable(const Model::PubBroadcastRequest& request) const;
+			PublishScriptOutcome publishScript(const Model::PublishScriptRequest &request)const;
+			void publishScriptAsync(const Model::PublishScriptRequest& request, const PublishScriptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			PublishScriptOutcomeCallable publishScriptCallable(const Model::PublishScriptRequest& request) const;
 			PublishStudioAppOutcome publishStudioApp(const Model::PublishStudioAppRequest &request)const;
 			void publishStudioAppAsync(const Model::PublishStudioAppRequest& request, const PublishStudioAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			PublishStudioAppOutcomeCallable publishStudioAppCallable(const Model::PublishStudioAppRequest& request) const;
@@ -2674,6 +2856,9 @@ namespace AlibabaCloud
 			SaveDevicePropOutcome saveDeviceProp(const Model::SaveDevicePropRequest &request)const;
 			void saveDevicePropAsync(const Model::SaveDevicePropRequest& request, const SaveDevicePropAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SaveDevicePropOutcomeCallable saveDevicePropCallable(const Model::SaveDevicePropRequest& request) const;
+			SaveScriptOutcome saveScript(const Model::SaveScriptRequest &request)const;
+			void saveScriptAsync(const Model::SaveScriptRequest& request, const SaveScriptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SaveScriptOutcomeCallable saveScriptCallable(const Model::SaveScriptRequest& request) const;
 			SetDeviceDesiredPropertyOutcome setDeviceDesiredProperty(const Model::SetDeviceDesiredPropertyRequest &request)const;
 			void setDeviceDesiredPropertyAsync(const Model::SetDeviceDesiredPropertyRequest& request, const SetDeviceDesiredPropertyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetDeviceDesiredPropertyOutcomeCallable setDeviceDesiredPropertyCallable(const Model::SetDeviceDesiredPropertyRequest& request) const;
@@ -2704,9 +2889,15 @@ namespace AlibabaCloud
 			SpeechBySynthesisOutcome speechBySynthesis(const Model::SpeechBySynthesisRequest &request)const;
 			void speechBySynthesisAsync(const Model::SpeechBySynthesisRequest& request, const SpeechBySynthesisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SpeechBySynthesisOutcomeCallable speechBySynthesisCallable(const Model::SpeechBySynthesisRequest& request) const;
+			StartParserOutcome startParser(const Model::StartParserRequest &request)const;
+			void startParserAsync(const Model::StartParserRequest& request, const StartParserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			StartParserOutcomeCallable startParserCallable(const Model::StartParserRequest& request) const;
 			StartRuleOutcome startRule(const Model::StartRuleRequest &request)const;
 			void startRuleAsync(const Model::StartRuleRequest& request, const StartRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StartRuleOutcomeCallable startRuleCallable(const Model::StartRuleRequest& request) const;
+			StopParserOutcome stopParser(const Model::StopParserRequest &request)const;
+			void stopParserAsync(const Model::StopParserRequest& request, const StopParserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			StopParserOutcomeCallable stopParserCallable(const Model::StopParserRequest& request) const;
 			StopRuleOutcome stopRule(const Model::StopRuleRequest &request)const;
 			void stopRuleAsync(const Model::StopRuleRequest& request, const StopRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StopRuleOutcomeCallable stopRuleCallable(const Model::StopRuleRequest& request) const;
@@ -2743,6 +2934,9 @@ namespace AlibabaCloud
 			UpdateConsumerGroupOutcome updateConsumerGroup(const Model::UpdateConsumerGroupRequest &request)const;
 			void updateConsumerGroupAsync(const Model::UpdateConsumerGroupRequest& request, const UpdateConsumerGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateConsumerGroupOutcomeCallable updateConsumerGroupCallable(const Model::UpdateConsumerGroupRequest& request) const;
+			UpdateDestinationOutcome updateDestination(const Model::UpdateDestinationRequest &request)const;
+			void updateDestinationAsync(const Model::UpdateDestinationRequest& request, const UpdateDestinationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateDestinationOutcomeCallable updateDestinationCallable(const Model::UpdateDestinationRequest& request) const;
 			UpdateDeviceGroupOutcome updateDeviceGroup(const Model::UpdateDeviceGroupRequest &request)const;
 			void updateDeviceGroupAsync(const Model::UpdateDeviceGroupRequest& request, const UpdateDeviceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateDeviceGroupOutcomeCallable updateDeviceGroupCallable(const Model::UpdateDeviceGroupRequest& request) const;
@@ -2767,6 +2961,12 @@ namespace AlibabaCloud
 			UpdateOTAModuleOutcome updateOTAModule(const Model::UpdateOTAModuleRequest &request)const;
 			void updateOTAModuleAsync(const Model::UpdateOTAModuleRequest& request, const UpdateOTAModuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateOTAModuleOutcomeCallable updateOTAModuleCallable(const Model::UpdateOTAModuleRequest& request) const;
+			UpdateParserOutcome updateParser(const Model::UpdateParserRequest &request)const;
+			void updateParserAsync(const Model::UpdateParserRequest& request, const UpdateParserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateParserOutcomeCallable updateParserCallable(const Model::UpdateParserRequest& request) const;
+			UpdateParserDataSourceOutcome updateParserDataSource(const Model::UpdateParserDataSourceRequest &request)const;
+			void updateParserDataSourceAsync(const Model::UpdateParserDataSourceRequest& request, const UpdateParserDataSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateParserDataSourceOutcomeCallable updateParserDataSourceCallable(const Model::UpdateParserDataSourceRequest& request) const;
 			UpdateProductOutcome updateProduct(const Model::UpdateProductRequest &request)const;
 			void updateProductAsync(const Model::UpdateProductRequest& request, const UpdateProductAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateProductOutcomeCallable updateProductCallable(const Model::UpdateProductRequest& request) const;
