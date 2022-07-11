@@ -71,6 +71,23 @@ void DescribeCommandsResult::parse(const std::string &payload)
 			commandsObject.name = valueCommandsCommand["Name"].asString();
 		if(!valueCommandsCommand["EnableParameter"].isNull())
 			commandsObject.enableParameter = valueCommandsCommand["EnableParameter"].asString() == "true";
+		auto allParameterDefinitionsNode = valueCommandsCommand["ParameterDefinitions"]["ParameterDefinition"];
+		for (auto valueCommandsCommandParameterDefinitionsParameterDefinition : allParameterDefinitionsNode)
+		{
+			Command::ParameterDefinition parameterDefinitionsObject;
+			if(!valueCommandsCommandParameterDefinitionsParameterDefinition["Required"].isNull())
+				parameterDefinitionsObject.required = valueCommandsCommandParameterDefinitionsParameterDefinition["Required"].asString() == "true";
+			if(!valueCommandsCommandParameterDefinitionsParameterDefinition["Description"].isNull())
+				parameterDefinitionsObject.description = valueCommandsCommandParameterDefinitionsParameterDefinition["Description"].asString();
+			if(!valueCommandsCommandParameterDefinitionsParameterDefinition["DefaultValue"].isNull())
+				parameterDefinitionsObject.defaultValue = valueCommandsCommandParameterDefinitionsParameterDefinition["DefaultValue"].asString();
+			if(!valueCommandsCommandParameterDefinitionsParameterDefinition["ParameterName"].isNull())
+				parameterDefinitionsObject.parameterName = valueCommandsCommandParameterDefinitionsParameterDefinition["ParameterName"].asString();
+			auto allPossibleValues = value["PossibleValues"]["PossibleValue"];
+			for (auto value : allPossibleValues)
+				parameterDefinitionsObject.possibleValues.push_back(value.asString());
+			commandsObject.parameterDefinitions.push_back(parameterDefinitionsObject);
+		}
 		auto allParameterNames = value["ParameterNames"]["ParameterName"];
 		for (auto value : allParameterNames)
 			commandsObject.parameterNames.push_back(value.asString());

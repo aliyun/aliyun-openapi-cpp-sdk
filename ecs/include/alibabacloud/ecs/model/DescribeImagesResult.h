@@ -34,6 +34,22 @@ namespace AlibabaCloud
 			public:
 				struct Image
 				{
+					struct DetectionOptions
+					{
+						struct Item
+						{
+							std::string riskCode;
+							std::string value;
+							std::string riskLevel;
+							std::string name;
+						};
+						std::string status;
+						std::vector<Item> items;
+					};
+					struct Features
+					{
+						std::string nvmeSupport;
+					};
 					struct DiskDeviceMapping
 					{
 						std::string snapshotId;
@@ -61,6 +77,8 @@ namespace AlibabaCloud
 					std::string oSName;
 					bool isPublic;
 					std::string imageId;
+					DetectionOptions detectionOptions;
+					Features features;
 					std::vector<Image::Tag> tags;
 					std::string oSNameEn;
 					bool loginAsNonRootSupported;

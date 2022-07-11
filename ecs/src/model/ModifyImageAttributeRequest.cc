@@ -52,6 +52,15 @@ void ModifyImageAttributeRequest::setDescription(const std::string &description)
   setParameter(std::string("Description"), description);
 }
 
+ModifyImageAttributeRequest::Features ModifyImageAttributeRequest::getFeatures() const {
+  return features_;
+}
+
+void ModifyImageAttributeRequest::setFeatures(const ModifyImageAttributeRequest::Features &features) {
+  features_ = features;
+  setParameter(std::string("Features") + ".NvmeSupport", features.nvmeSupport);
+}
+
 std::string ModifyImageAttributeRequest::getBootMode() const {
   return bootMode_;
 }

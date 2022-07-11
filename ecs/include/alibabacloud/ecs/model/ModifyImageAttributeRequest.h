@@ -28,6 +28,9 @@ namespace Ecs {
 namespace Model {
 class ALIBABACLOUD_ECS_EXPORT ModifyImageAttributeRequest : public RpcServiceRequest {
 public:
+	struct Features {
+		std::string nvmeSupport;
+	};
 	ModifyImageAttributeRequest();
 	~ModifyImageAttributeRequest();
 	long getResourceOwnerId() const;
@@ -36,6 +39,8 @@ public:
 	void setImageId(const std::string &imageId);
 	std::string getDescription() const;
 	void setDescription(const std::string &description);
+	Features getFeatures() const;
+	void setFeatures(const Features &features);
 	std::string getBootMode() const;
 	void setBootMode(const std::string &bootMode);
 	std::string getRegionId() const;
@@ -59,6 +64,7 @@ private:
 	long resourceOwnerId_;
 	std::string imageId_;
 	std::string description_;
+	Features features_;
 	std::string bootMode_;
 	std::string regionId_;
 	std::string imageName_;

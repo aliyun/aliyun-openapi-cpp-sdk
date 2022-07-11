@@ -65,10 +65,16 @@ void DescribeInvocationsResult::parse(const std::string &payload)
 			invocationsObject.commandContent = valueInvocationsInvocation["CommandContent"].asString();
 		if(!valueInvocationsInvocation["CommandName"].isNull())
 			invocationsObject.commandName = valueInvocationsInvocation["CommandName"].asString();
+		if(!valueInvocationsInvocation["CommandDescription"].isNull())
+			invocationsObject.commandDescription = valueInvocationsInvocation["CommandDescription"].asString();
 		if(!valueInvocationsInvocation["InvokeId"].isNull())
 			invocationsObject.invokeId = valueInvocationsInvocation["InvokeId"].asString();
 		if(!valueInvocationsInvocation["Username"].isNull())
 			invocationsObject.username = valueInvocationsInvocation["Username"].asString();
+		if(!valueInvocationsInvocation["WorkingDir"].isNull())
+			invocationsObject.workingDir = valueInvocationsInvocation["WorkingDir"].asString();
+		if(!valueInvocationsInvocation["Timeout"].isNull())
+			invocationsObject.timeout = std::stol(valueInvocationsInvocation["Timeout"].asString());
 		auto allInvokeInstancesNode = valueInvocationsInvocation["InvokeInstances"]["InvokeInstance"];
 		for (auto valueInvocationsInvocationInvokeInstancesInvokeInstance : allInvokeInstancesNode)
 		{

@@ -42,6 +42,8 @@ public:
 		std::string description;
 		std::string securityGroupId;
 		std::string primaryIpAddress;
+		std::string instanceType;
+		std::string networkInterfaceTrafficMode;
 	};
 	struct DataDisk {
 		std::string performanceLevel;
@@ -53,6 +55,9 @@ public:
 		std::string category;
 		bool deleteWithInstance;
 		std::string encrypted;
+		std::string autoSnapshotPolicyId;
+		long provisionedIops;
+		bool burstingEnabled;
 	};
 	CreateLaunchTemplateRequest();
 	~CreateLaunchTemplateRequest();
@@ -80,6 +85,8 @@ public:
 	void setTemplateTag(const std::vector<TemplateTag> &templateTag);
 	std::vector<Tag> getTag() const;
 	void setTag(const std::vector<Tag> &tag);
+	std::string getSystemDiskAutoSnapshotPolicyId() const;
+	void setSystemDiskAutoSnapshotPolicyId(const std::string &systemDiskAutoSnapshotPolicyId);
 	int getPeriod() const;
 	void setPeriod(int period);
 	int getIpv6AddressCount() const;
@@ -94,6 +101,8 @@ public:
 	void setSpotStrategy(const std::string &spotStrategy);
 	std::string getPrivateIpAddress() const;
 	void setPrivateIpAddress(const std::string &privateIpAddress);
+	bool getSystemDiskBurstingEnabled() const;
+	void setSystemDiskBurstingEnabled(bool systemDiskBurstingEnabled);
 	std::string getInstanceName() const;
 	void setInstanceName(const std::string &instanceName);
 	std::string getInternetChargeType() const;
@@ -152,6 +161,8 @@ public:
 	void setSecurityGroupIds(const std::vector<std::string> &securityGroupIds);
 	std::vector<DataDisk> getDataDisk() const;
 	void setDataDisk(const std::vector<DataDisk> &dataDisk);
+	long getSystemDiskProvisionedIops() const;
+	void setSystemDiskProvisionedIops(long systemDiskProvisionedIops);
 	int getSystemDiskSize() const;
 	void setSystemDiskSize(int systemDiskSize);
 	std::string getVpcId() const;
@@ -172,6 +183,7 @@ private:
 	int systemDiskIops_;
 	std::vector<TemplateTag> templateTag_;
 	std::vector<Tag> tag_;
+	std::string systemDiskAutoSnapshotPolicyId_;
 	int period_;
 	int ipv6AddressCount_;
 	std::string templateResourceGroupId_;
@@ -179,6 +191,7 @@ private:
 	std::string vSwitchId_;
 	std::string spotStrategy_;
 	std::string privateIpAddress_;
+	bool systemDiskBurstingEnabled_;
 	std::string instanceName_;
 	std::string internetChargeType_;
 	std::string zoneId_;
@@ -208,6 +221,7 @@ private:
 	int spotDuration_;
 	std::vector<std::string> securityGroupIds_;
 	std::vector<DataDisk> dataDisk_;
+	long systemDiskProvisionedIops_;
 	int systemDiskSize_;
 	std::string vpcId_;
 	std::string systemDiskDescription_;

@@ -88,6 +88,15 @@ void CreateCommandRequest::setRegionId(const std::string &regionId) {
   setParameter(std::string("RegionId"), regionId);
 }
 
+std::string CreateCommandRequest::getContentEncoding() const {
+  return contentEncoding_;
+}
+
+void CreateCommandRequest::setContentEncoding(const std::string &contentEncoding) {
+  contentEncoding_ = contentEncoding;
+  setParameter(std::string("ContentEncoding"), contentEncoding);
+}
+
 std::string CreateCommandRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }

@@ -112,6 +112,8 @@ void DescribeLaunchTemplateVersionsResult::parse(const std::string &payload)
 			launchTemplateVersionSetsObject.launchTemplateData.hostName = launchTemplateDataNode["HostName"].asString();
 		if(!launchTemplateDataNode["SystemDisk.Iops"].isNull())
 			launchTemplateVersionSetsObject.launchTemplateData.systemDiskIops = std::stoi(launchTemplateDataNode["SystemDisk.Iops"].asString());
+		if(!launchTemplateDataNode["SystemDisk.AutoSnapshotPolicyId"].isNull())
+			launchTemplateVersionSetsObject.launchTemplateData.systemDiskAutoSnapshotPolicyId = launchTemplateDataNode["SystemDisk.AutoSnapshotPolicyId"].asString();
 		if(!launchTemplateDataNode["InternetMaxBandwidthOut"].isNull())
 			launchTemplateVersionSetsObject.launchTemplateData.internetMaxBandwidthOut = std::stoi(launchTemplateDataNode["InternetMaxBandwidthOut"].asString());
 		if(!launchTemplateDataNode["InternetMaxBandwidthIn"].isNull())
@@ -136,6 +138,10 @@ void DescribeLaunchTemplateVersionsResult::parse(const std::string &payload)
 			launchTemplateVersionSetsObject.launchTemplateData.zoneId = launchTemplateDataNode["ZoneId"].asString();
 		if(!launchTemplateDataNode["Ipv6AddressCount"].isNull())
 			launchTemplateVersionSetsObject.launchTemplateData.ipv6AddressCount = std::stoi(launchTemplateDataNode["Ipv6AddressCount"].asString());
+		if(!launchTemplateDataNode["SystemDisk.ProvisionedIops"].isNull())
+			launchTemplateVersionSetsObject.launchTemplateData.systemDiskProvisionedIops = std::stol(launchTemplateDataNode["SystemDisk.ProvisionedIops"].asString());
+		if(!launchTemplateDataNode["SystemDisk.BurstingEnabled"].isNull())
+			launchTemplateVersionSetsObject.launchTemplateData.systemDiskBurstingEnabled = launchTemplateDataNode["SystemDisk.BurstingEnabled"].asString() == "true";
 		auto allDataDisksNode = launchTemplateDataNode["DataDisks"]["DataDisk"];
 		for (auto launchTemplateDataNodeDataDisksDataDisk : allDataDisksNode)
 		{
@@ -158,6 +164,12 @@ void DescribeLaunchTemplateVersionsResult::parse(const std::string &payload)
 				dataDiskObject.deleteWithInstance = launchTemplateDataNodeDataDisksDataDisk["DeleteWithInstance"].asString() == "true";
 			if(!launchTemplateDataNodeDataDisksDataDisk["Encrypted"].isNull())
 				dataDiskObject.encrypted = launchTemplateDataNodeDataDisksDataDisk["Encrypted"].asString();
+			if(!launchTemplateDataNodeDataDisksDataDisk["ProvisionedIops"].isNull())
+				dataDiskObject.provisionedIops = std::stol(launchTemplateDataNodeDataDisksDataDisk["ProvisionedIops"].asString());
+			if(!launchTemplateDataNodeDataDisksDataDisk["BurstingEnabled"].isNull())
+				dataDiskObject.burstingEnabled = launchTemplateDataNodeDataDisksDataDisk["BurstingEnabled"].asString() == "true";
+			if(!launchTemplateDataNodeDataDisksDataDisk["AutoSnapshotPolicyId"].isNull())
+				dataDiskObject.autoSnapshotPolicyId = launchTemplateDataNodeDataDisksDataDisk["AutoSnapshotPolicyId"].asString();
 			launchTemplateVersionSetsObject.launchTemplateData.dataDisks.push_back(dataDiskObject);
 		}
 		auto allNetworkInterfacesNode = launchTemplateDataNode["NetworkInterfaces"]["NetworkInterface"];
@@ -174,6 +186,10 @@ void DescribeLaunchTemplateVersionsResult::parse(const std::string &payload)
 				networkInterfaceObject.primaryIpAddress = launchTemplateDataNodeNetworkInterfacesNetworkInterface["PrimaryIpAddress"].asString();
 			if(!launchTemplateDataNodeNetworkInterfacesNetworkInterface["SecurityGroupId"].isNull())
 				networkInterfaceObject.securityGroupId = launchTemplateDataNodeNetworkInterfacesNetworkInterface["SecurityGroupId"].asString();
+			if(!launchTemplateDataNodeNetworkInterfacesNetworkInterface["InstanceType"].isNull())
+				networkInterfaceObject.instanceType = launchTemplateDataNodeNetworkInterfacesNetworkInterface["InstanceType"].asString();
+			if(!launchTemplateDataNodeNetworkInterfacesNetworkInterface["NetworkInterfaceTrafficMode"].isNull())
+				networkInterfaceObject.networkInterfaceTrafficMode = launchTemplateDataNodeNetworkInterfacesNetworkInterface["NetworkInterfaceTrafficMode"].asString();
 			auto allSecurityGroupIds1 = value["SecurityGroupIds"]["SecurityGroupId"];
 			for (auto value : allSecurityGroupIds1)
 				networkInterfaceObject.securityGroupIds1.push_back(value.asString());

@@ -39,6 +39,7 @@ namespace AlibabaCloud
 						struct DataDisk
 						{
 							std::string snapshotId;
+							bool burstingEnabled;
 							std::string description;
 							std::string category;
 							std::string performanceLevel;
@@ -46,16 +47,20 @@ namespace AlibabaCloud
 							int size;
 							std::string encrypted;
 							bool deleteWithInstance;
+							std::string autoSnapshotPolicyId;
 							std::string diskName;
+							long provisionedIops;
 						};
 						struct NetworkInterface
 						{
+							std::string networkInterfaceTrafficMode;
 							std::string description;
 							std::vector<std::string> securityGroupIds1;
 							std::string vSwitchId;
 							std::string securityGroupId;
 							std::string networkInterfaceName;
 							std::string primaryIpAddress;
+							std::string instanceType;
 						};
 						struct InstanceTag
 						{
@@ -71,7 +76,9 @@ namespace AlibabaCloud
 						int systemDiskSize;
 						std::string systemDiskDescription;
 						std::string instanceChargeType;
+						long systemDiskProvisionedIops;
 						int spotDuration;
+						std::string systemDiskAutoSnapshotPolicyId;
 						std::string ramRoleName;
 						std::string systemDiskPerformanceLevel;
 						std::string networkType;
@@ -96,6 +103,7 @@ namespace AlibabaCloud
 						std::string internetChargeType;
 						std::string deploymentSetId;
 						std::string instanceName;
+						bool systemDiskBurstingEnabled;
 						bool systemDiskDeleteWithInstance;
 						bool enableVmOsConfig;
 						int internetMaxBandwidthOut;

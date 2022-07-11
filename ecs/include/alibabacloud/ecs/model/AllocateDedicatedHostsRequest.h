@@ -72,6 +72,8 @@ public:
 	void setAutoReleaseTime(const std::string &autoReleaseTime);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getSchedulerOptionsFenceId() const;
+	void setSchedulerOptionsFenceId(const std::string &schedulerOptionsFenceId);
 	std::string getPeriodUnit() const;
 	void setPeriodUnit(const std::string &periodUnit);
 	bool getAutoRenew() const;
@@ -107,6 +109,7 @@ private:
 	std::string ownerAccount_;
 	std::string autoReleaseTime_;
 	long ownerId_;
+	std::string schedulerOptionsFenceId_;
 	std::string periodUnit_;
 	bool autoRenew_;
 	int networkAttributesSlbUdpTimeout_;

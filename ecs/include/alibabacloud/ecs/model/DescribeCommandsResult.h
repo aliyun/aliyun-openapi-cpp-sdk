@@ -34,6 +34,15 @@ namespace AlibabaCloud
 			public:
 				struct Command
 				{
+					struct ParameterDefinition
+					{
+						std::string defaultValue;
+						std::string description;
+						bool required;
+						std::string parameterName;
+						std::vector<std::string> possibleValues;
+					};
+					std::vector<Command::ParameterDefinition> parameterDefinitions;
 					std::string description;
 					std::string category;
 					std::vector<std::string> parameterNames;

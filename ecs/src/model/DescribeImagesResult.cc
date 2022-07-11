@@ -131,6 +131,26 @@ void DescribeImagesResult::parse(const std::string &payload)
 				tagsObject.tagKey = valueImagesImageTagsTag["TagKey"].asString();
 			imagesObject.tags.push_back(tagsObject);
 		}
+		auto detectionOptionsNode = value["DetectionOptions"];
+		if(!detectionOptionsNode["Status"].isNull())
+			imagesObject.detectionOptions.status = detectionOptionsNode["Status"].asString();
+		auto allItemsNode = detectionOptionsNode["Items"]["Item"];
+		for (auto detectionOptionsNodeItemsItem : allItemsNode)
+		{
+			Image::DetectionOptions::Item itemObject;
+			if(!detectionOptionsNodeItemsItem["Name"].isNull())
+				itemObject.name = detectionOptionsNodeItemsItem["Name"].asString();
+			if(!detectionOptionsNodeItemsItem["Value"].isNull())
+				itemObject.value = detectionOptionsNodeItemsItem["Value"].asString();
+			if(!detectionOptionsNodeItemsItem["RiskLevel"].isNull())
+				itemObject.riskLevel = detectionOptionsNodeItemsItem["RiskLevel"].asString();
+			if(!detectionOptionsNodeItemsItem["RiskCode"].isNull())
+				itemObject.riskCode = detectionOptionsNodeItemsItem["RiskCode"].asString();
+			imagesObject.detectionOptions.items.push_back(itemObject);
+		}
+		auto featuresNode = value["Features"];
+		if(!featuresNode["NvmeSupport"].isNull())
+			imagesObject.features.nvmeSupport = featuresNode["NvmeSupport"].asString();
 		images_.push_back(imagesObject);
 	}
 	if(!value["PageSize"].isNull())

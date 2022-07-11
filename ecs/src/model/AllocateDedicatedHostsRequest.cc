@@ -201,6 +201,15 @@ void AllocateDedicatedHostsRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string AllocateDedicatedHostsRequest::getSchedulerOptionsFenceId() const {
+  return schedulerOptionsFenceId_;
+}
+
+void AllocateDedicatedHostsRequest::setSchedulerOptionsFenceId(const std::string &schedulerOptionsFenceId) {
+  schedulerOptionsFenceId_ = schedulerOptionsFenceId;
+  setParameter(std::string("SchedulerOptions.FenceId"), schedulerOptionsFenceId);
+}
+
 std::string AllocateDedicatedHostsRequest::getPeriodUnit() const {
   return periodUnit_;
 }

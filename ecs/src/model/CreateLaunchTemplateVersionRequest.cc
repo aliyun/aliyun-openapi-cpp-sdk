@@ -129,6 +129,15 @@ void CreateLaunchTemplateVersionRequest::setTag(const std::vector<CreateLaunchTe
   }
 }
 
+std::string CreateLaunchTemplateVersionRequest::getSystemDiskAutoSnapshotPolicyId() const {
+  return systemDiskAutoSnapshotPolicyId_;
+}
+
+void CreateLaunchTemplateVersionRequest::setSystemDiskAutoSnapshotPolicyId(const std::string &systemDiskAutoSnapshotPolicyId) {
+  systemDiskAutoSnapshotPolicyId_ = systemDiskAutoSnapshotPolicyId;
+  setParameter(std::string("SystemDisk.AutoSnapshotPolicyId"), systemDiskAutoSnapshotPolicyId);
+}
+
 int CreateLaunchTemplateVersionRequest::getPeriod() const {
   return period_;
 }
@@ -190,6 +199,15 @@ std::string CreateLaunchTemplateVersionRequest::getPrivateIpAddress() const {
 void CreateLaunchTemplateVersionRequest::setPrivateIpAddress(const std::string &privateIpAddress) {
   privateIpAddress_ = privateIpAddress;
   setParameter(std::string("PrivateIpAddress"), privateIpAddress);
+}
+
+bool CreateLaunchTemplateVersionRequest::getSystemDiskBurstingEnabled() const {
+  return systemDiskBurstingEnabled_;
+}
+
+void CreateLaunchTemplateVersionRequest::setSystemDiskBurstingEnabled(bool systemDiskBurstingEnabled) {
+  systemDiskBurstingEnabled_ = systemDiskBurstingEnabled;
+  setParameter(std::string("SystemDisk.BurstingEnabled"), systemDiskBurstingEnabled ? "true" : "false");
 }
 
 std::string CreateLaunchTemplateVersionRequest::getInstanceName() const {
@@ -386,6 +404,8 @@ void CreateLaunchTemplateVersionRequest::setNetworkInterface(const std::vector<C
     setParameter(networkInterfaceObjStr + ".Description", networkInterfaceObj.description);
     setParameter(networkInterfaceObjStr + ".SecurityGroupId", networkInterfaceObj.securityGroupId);
     setParameter(networkInterfaceObjStr + ".PrimaryIpAddress", networkInterfaceObj.primaryIpAddress);
+    setParameter(networkInterfaceObjStr + ".InstanceType", networkInterfaceObj.instanceType);
+    setParameter(networkInterfaceObjStr + ".NetworkInterfaceTrafficMode", networkInterfaceObj.networkInterfaceTrafficMode);
   }
 }
 
@@ -469,7 +489,19 @@ void CreateLaunchTemplateVersionRequest::setDataDisk(const std::vector<CreateLau
     setParameter(dataDiskObjStr + ".Category", dataDiskObj.category);
     setParameter(dataDiskObjStr + ".DeleteWithInstance", dataDiskObj.deleteWithInstance ? "true" : "false");
     setParameter(dataDiskObjStr + ".Encrypted", dataDiskObj.encrypted);
+    setParameter(dataDiskObjStr + ".ProvisionedIops", std::to_string(dataDiskObj.provisionedIops));
+    setParameter(dataDiskObjStr + ".BurstingEnabled", dataDiskObj.burstingEnabled ? "true" : "false");
+    setParameter(dataDiskObjStr + ".AutoSnapshotPolicyId", dataDiskObj.autoSnapshotPolicyId);
   }
+}
+
+long CreateLaunchTemplateVersionRequest::getSystemDiskProvisionedIops() const {
+  return systemDiskProvisionedIops_;
+}
+
+void CreateLaunchTemplateVersionRequest::setSystemDiskProvisionedIops(long systemDiskProvisionedIops) {
+  systemDiskProvisionedIops_ = systemDiskProvisionedIops;
+  setParameter(std::string("SystemDisk.ProvisionedIops"), std::to_string(systemDiskProvisionedIops));
 }
 
 int CreateLaunchTemplateVersionRequest::getSystemDiskSize() const {

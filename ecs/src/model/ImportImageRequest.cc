@@ -138,6 +138,15 @@ void ImportImageRequest::setLicenseType(const std::string &licenseType) {
   setParameter(std::string("LicenseType"), licenseType);
 }
 
+std::string ImportImageRequest::getDetectionStrategy() const {
+  return detectionStrategy_;
+}
+
+void ImportImageRequest::setDetectionStrategy(const std::string &detectionStrategy) {
+  detectionStrategy_ = detectionStrategy;
+  setParameter(std::string("DetectionStrategy"), detectionStrategy);
+}
+
 std::string ImportImageRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }

@@ -48,6 +48,8 @@ public:
 	void setContentEncoding(const std::string &contentEncoding);
 	long getPageSize() const;
 	void setPageSize(long pageSize);
+	bool getLatest() const;
+	void setLatest(bool latest);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
@@ -67,6 +69,7 @@ private:
 	std::string provider_;
 	std::string contentEncoding_;
 	long pageSize_;
+	bool latest_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;

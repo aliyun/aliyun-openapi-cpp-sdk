@@ -44,6 +44,8 @@ public:
 	void setTimeout(long timeout);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	std::string getContentEncoding() const;
+	void setContentEncoding(const std::string &contentEncoding);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
@@ -63,6 +65,7 @@ private:
 	std::string commandContent_;
 	long timeout_;
 	std::string regionId_;
+	std::string contentEncoding_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;

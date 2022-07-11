@@ -64,6 +64,8 @@ public:
 	void setArchitecture(const std::string &architecture);
 	std::string getLicenseType() const;
 	void setLicenseType(const std::string &licenseType);
+	std::string getDetectionStrategy() const;
+	void setDetectionStrategy(const std::string &detectionStrategy);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getRoleName() const;
@@ -85,6 +87,7 @@ private:
 	std::vector<Tag> tag_;
 	std::string architecture_;
 	std::string licenseType_;
+	std::string detectionStrategy_;
 	std::string resourceOwnerAccount_;
 	std::string roleName_;
 	std::string oSType_;
