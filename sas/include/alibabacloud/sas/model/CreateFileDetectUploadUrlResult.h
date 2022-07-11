@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SAS_MODEL_DESCRIBEASSETSUMMARYRESULT_H_
-#define ALIBABACLOUD_SAS_MODEL_DESCRIBEASSETSUMMARYRESULT_H_
+#ifndef ALIBABACLOUD_SAS_MODEL_CREATEFILEDETECTUPLOADURLRESULT_H_
+#define ALIBABACLOUD_SAS_MODEL_CREATEFILEDETECTUPLOADURLRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,29 +29,39 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SAS_EXPORT DescribeAssetSummaryResult : public ServiceResult
+			class ALIBABACLOUD_SAS_EXPORT CreateFileDetectUploadUrlResult : public ServiceResult
 			{
 			public:
-				struct AssetsSummary
+				struct UploadUrList
 				{
-					int totalCoreAllRegion;
-					int totalAssetAllRegion;
-					int totalCoreNum;
+					struct Context
+					{
+						std::string policy;
+						std::string accessId;
+						std::string signature;
+						std::string ossKey;
+					};
+					Context context;
+					std::string internalUrl;
+					std::string expire;
+					std::string publicUrl;
+					std::string hashKey;
+					bool fileExist;
 				};
 
 
-				DescribeAssetSummaryResult();
-				explicit DescribeAssetSummaryResult(const std::string &payload);
-				~DescribeAssetSummaryResult();
-				AssetsSummary getAssetsSummary()const;
+				CreateFileDetectUploadUrlResult();
+				explicit CreateFileDetectUploadUrlResult(const std::string &payload);
+				~CreateFileDetectUploadUrlResult();
+				std::vector<UploadUrList> getUploadUrlList()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				AssetsSummary assetsSummary_;
+				std::vector<UploadUrList> uploadUrlList_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SAS_MODEL_DESCRIBEASSETSUMMARYRESULT_H_
+#endif // !ALIBABACLOUD_SAS_MODEL_CREATEFILEDETECTUPLOADURLRESULT_H_

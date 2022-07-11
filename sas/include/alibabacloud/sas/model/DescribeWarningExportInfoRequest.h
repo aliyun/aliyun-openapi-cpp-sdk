@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SAS_MODEL_MODIFYOPENLOGSHIPPERREQUEST_H_
-#define ALIBABACLOUD_SAS_MODEL_MODIFYOPENLOGSHIPPERREQUEST_H_
+#ifndef ALIBABACLOUD_SAS_MODEL_DESCRIBEWARNINGEXPORTINFOREQUEST_H_
+#define ALIBABACLOUD_SAS_MODEL_DESCRIBEWARNINGEXPORTINFOREQUEST_H_
 
 #include <alibabacloud/sas/SasExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,38 +26,20 @@
 namespace AlibabaCloud {
 namespace Sas {
 namespace Model {
-class ALIBABACLOUD_SAS_EXPORT ModifyOpenLogShipperRequest : public RpcServiceRequest {
+class ALIBABACLOUD_SAS_EXPORT DescribeWarningExportInfoRequest : public RpcServiceRequest {
 public:
-	struct LogMetaList {
-		int hotTtl;
-		int ttl;
-		std::string configLogStore;
-		std::string status;
-	};
-	ModifyOpenLogShipperRequest();
-	~ModifyOpenLogShipperRequest();
-	std::vector<LogMetaList> getLogMetaList() const;
-	void setLogMetaList(const std::vector<LogMetaList> &logMetaList);
-	int getTtl() const;
-	void setTtl(int ttl);
+	DescribeWarningExportInfoRequest();
+	~DescribeWarningExportInfoRequest();
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
-	int getHotTtl() const;
-	void setHotTtl(int hotTtl);
-	std::string getFrom() const;
-	void setFrom(const std::string &from);
-	std::string getTargetRegionId() const;
-	void setTargetRegionId(const std::string &targetRegionId);
+	long getExportId() const;
+	void setExportId(long exportId);
 
 private:
-	std::vector<LogMetaList> logMetaList_;
-	int ttl_;
 	std::string sourceIp_;
-	int hotTtl_;
-	std::string from_;
-	std::string targetRegionId_;
+	long exportId_;
 };
 } // namespace Model
 } // namespace Sas
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_SAS_MODEL_MODIFYOPENLOGSHIPPERREQUEST_H_
+#endif // !ALIBABACLOUD_SAS_MODEL_DESCRIBEWARNINGEXPORTINFOREQUEST_H_

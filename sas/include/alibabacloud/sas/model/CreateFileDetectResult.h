@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SAS_MODEL_DESCRIBEASSETSUMMARYRESULT_H_
-#define ALIBABACLOUD_SAS_MODEL_DESCRIBEASSETSUMMARYRESULT_H_
+#ifndef ALIBABACLOUD_SAS_MODEL_CREATEFILEDETECTRESULT_H_
+#define ALIBABACLOUD_SAS_MODEL_CREATEFILEDETECTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,29 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SAS_EXPORT DescribeAssetSummaryResult : public ServiceResult
+			class ALIBABACLOUD_SAS_EXPORT CreateFileDetectResult : public ServiceResult
 			{
 			public:
-				struct AssetsSummary
-				{
-					int totalCoreAllRegion;
-					int totalAssetAllRegion;
-					int totalCoreNum;
-				};
 
 
-				DescribeAssetSummaryResult();
-				explicit DescribeAssetSummaryResult(const std::string &payload);
-				~DescribeAssetSummaryResult();
-				AssetsSummary getAssetsSummary()const;
+				CreateFileDetectResult();
+				explicit CreateFileDetectResult(const std::string &payload);
+				~CreateFileDetectResult();
+				std::string getHashKey()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				AssetsSummary assetsSummary_;
+				std::string hashKey_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SAS_MODEL_DESCRIBEASSETSUMMARYRESULT_H_
+#endif // !ALIBABACLOUD_SAS_MODEL_CREATEFILEDETECTRESULT_H_

@@ -25,6 +25,15 @@ DescribeAlarmEventListRequest::DescribeAlarmEventListRequest()
 
 DescribeAlarmEventListRequest::~DescribeAlarmEventListRequest() {}
 
+std::string DescribeAlarmEventListRequest::getTimeEnd() const {
+  return timeEnd_;
+}
+
+void DescribeAlarmEventListRequest::setTimeEnd(const std::string &timeEnd) {
+  timeEnd_ = timeEnd;
+  setParameter(std::string("TimeEnd"), timeEnd);
+}
+
 std::string DescribeAlarmEventListRequest::getTargetType() const {
   return targetType_;
 }
@@ -178,12 +187,39 @@ void DescribeAlarmEventListRequest::setClusterId(const std::string &clusterId) {
   setParameter(std::string("ClusterId"), clusterId);
 }
 
+std::string DescribeAlarmEventListRequest::getOperateTimeEnd() const {
+  return operateTimeEnd_;
+}
+
+void DescribeAlarmEventListRequest::setOperateTimeEnd(const std::string &operateTimeEnd) {
+  operateTimeEnd_ = operateTimeEnd;
+  setParameter(std::string("OperateTimeEnd"), operateTimeEnd);
+}
+
 std::vector<std::string> DescribeAlarmEventListRequest::getOperateErrorCodeList() const {
   return operateErrorCodeList_;
 }
 
 void DescribeAlarmEventListRequest::setOperateErrorCodeList(const std::vector<std::string> &operateErrorCodeList) {
   operateErrorCodeList_ = operateErrorCodeList;
+}
+
+std::string DescribeAlarmEventListRequest::getOperateTimeStart() const {
+  return operateTimeStart_;
+}
+
+void DescribeAlarmEventListRequest::setOperateTimeStart(const std::string &operateTimeStart) {
+  operateTimeStart_ = operateTimeStart;
+  setParameter(std::string("OperateTimeStart"), operateTimeStart);
+}
+
+std::string DescribeAlarmEventListRequest::getTimeStart() const {
+  return timeStart_;
+}
+
+void DescribeAlarmEventListRequest::setTimeStart(const std::string &timeStart) {
+  timeStart_ = timeStart;
+  setParameter(std::string("TimeStart"), timeStart);
 }
 
 std::string DescribeAlarmEventListRequest::getLevels() const {
@@ -193,5 +229,14 @@ std::string DescribeAlarmEventListRequest::getLevels() const {
 void DescribeAlarmEventListRequest::setLevels(const std::string &levels) {
   levels_ = levels;
   setParameter(std::string("Levels"), levels);
+}
+
+std::string DescribeAlarmEventListRequest::getUuids() const {
+  return uuids_;
+}
+
+void DescribeAlarmEventListRequest::setUuids(const std::string &uuids) {
+  uuids_ = uuids;
+  setParameter(std::string("Uuids"), uuids);
 }
 

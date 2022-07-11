@@ -32,6 +32,10 @@
 #include "model/CreateAntiBruteForceRuleResult.h"
 #include "model/CreateBackupPolicyRequest.h"
 #include "model/CreateBackupPolicyResult.h"
+#include "model/CreateFileDetectRequest.h"
+#include "model/CreateFileDetectResult.h"
+#include "model/CreateFileDetectUploadUrlRequest.h"
+#include "model/CreateFileDetectUploadUrlResult.h"
 #include "model/CreateOrUpdateAssetGroupRequest.h"
 #include "model/CreateOrUpdateAssetGroupResult.h"
 #include "model/CreateServiceLinkedRoleRequest.h"
@@ -286,6 +290,8 @@
 #include "model/DescribeVulListResult.h"
 #include "model/DescribeVulWhitelistRequest.h"
 #include "model/DescribeVulWhitelistResult.h"
+#include "model/DescribeWarningExportInfoRequest.h"
+#include "model/DescribeWarningExportInfoResult.h"
 #include "model/DescribeWarningMachinesRequest.h"
 #include "model/DescribeWarningMachinesResult.h"
 #include "model/DescribeWebLockBindListRequest.h"
@@ -302,6 +308,8 @@
 #include "model/FixCheckWarningsResult.h"
 #include "model/GetBackupStorageCountRequest.h"
 #include "model/GetBackupStorageCountResult.h"
+#include "model/GetFileDetectResultRequest.h"
+#include "model/GetFileDetectResultResult.h"
 #include "model/GetSuspiciousStatisticsRequest.h"
 #include "model/GetSuspiciousStatisticsResult.h"
 #include "model/GetVulStatisticsRequest.h"
@@ -438,6 +446,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateBackupPolicyResult> CreateBackupPolicyOutcome;
 			typedef std::future<CreateBackupPolicyOutcome> CreateBackupPolicyOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::CreateBackupPolicyRequest&, const CreateBackupPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateBackupPolicyAsyncHandler;
+			typedef Outcome<Error, Model::CreateFileDetectResult> CreateFileDetectOutcome;
+			typedef std::future<CreateFileDetectOutcome> CreateFileDetectOutcomeCallable;
+			typedef std::function<void(const SasClient*, const Model::CreateFileDetectRequest&, const CreateFileDetectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateFileDetectAsyncHandler;
+			typedef Outcome<Error, Model::CreateFileDetectUploadUrlResult> CreateFileDetectUploadUrlOutcome;
+			typedef std::future<CreateFileDetectUploadUrlOutcome> CreateFileDetectUploadUrlOutcomeCallable;
+			typedef std::function<void(const SasClient*, const Model::CreateFileDetectUploadUrlRequest&, const CreateFileDetectUploadUrlOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateFileDetectUploadUrlAsyncHandler;
 			typedef Outcome<Error, Model::CreateOrUpdateAssetGroupResult> CreateOrUpdateAssetGroupOutcome;
 			typedef std::future<CreateOrUpdateAssetGroupOutcome> CreateOrUpdateAssetGroupOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::CreateOrUpdateAssetGroupRequest&, const CreateOrUpdateAssetGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateOrUpdateAssetGroupAsyncHandler;
@@ -819,6 +833,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeVulWhitelistResult> DescribeVulWhitelistOutcome;
 			typedef std::future<DescribeVulWhitelistOutcome> DescribeVulWhitelistOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::DescribeVulWhitelistRequest&, const DescribeVulWhitelistOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVulWhitelistAsyncHandler;
+			typedef Outcome<Error, Model::DescribeWarningExportInfoResult> DescribeWarningExportInfoOutcome;
+			typedef std::future<DescribeWarningExportInfoOutcome> DescribeWarningExportInfoOutcomeCallable;
+			typedef std::function<void(const SasClient*, const Model::DescribeWarningExportInfoRequest&, const DescribeWarningExportInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWarningExportInfoAsyncHandler;
 			typedef Outcome<Error, Model::DescribeWarningMachinesResult> DescribeWarningMachinesOutcome;
 			typedef std::future<DescribeWarningMachinesOutcome> DescribeWarningMachinesOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::DescribeWarningMachinesRequest&, const DescribeWarningMachinesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWarningMachinesAsyncHandler;
@@ -843,6 +860,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetBackupStorageCountResult> GetBackupStorageCountOutcome;
 			typedef std::future<GetBackupStorageCountOutcome> GetBackupStorageCountOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::GetBackupStorageCountRequest&, const GetBackupStorageCountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetBackupStorageCountAsyncHandler;
+			typedef Outcome<Error, Model::GetFileDetectResultResult> GetFileDetectResultOutcome;
+			typedef std::future<GetFileDetectResultOutcome> GetFileDetectResultOutcomeCallable;
+			typedef std::function<void(const SasClient*, const Model::GetFileDetectResultRequest&, const GetFileDetectResultOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetFileDetectResultAsyncHandler;
 			typedef Outcome<Error, Model::GetSuspiciousStatisticsResult> GetSuspiciousStatisticsOutcome;
 			typedef std::future<GetSuspiciousStatisticsOutcome> GetSuspiciousStatisticsOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::GetSuspiciousStatisticsRequest&, const GetSuspiciousStatisticsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetSuspiciousStatisticsAsyncHandler;
@@ -1031,6 +1051,12 @@ namespace AlibabaCloud
 			CreateBackupPolicyOutcome createBackupPolicy(const Model::CreateBackupPolicyRequest &request)const;
 			void createBackupPolicyAsync(const Model::CreateBackupPolicyRequest& request, const CreateBackupPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateBackupPolicyOutcomeCallable createBackupPolicyCallable(const Model::CreateBackupPolicyRequest& request) const;
+			CreateFileDetectOutcome createFileDetect(const Model::CreateFileDetectRequest &request)const;
+			void createFileDetectAsync(const Model::CreateFileDetectRequest& request, const CreateFileDetectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateFileDetectOutcomeCallable createFileDetectCallable(const Model::CreateFileDetectRequest& request) const;
+			CreateFileDetectUploadUrlOutcome createFileDetectUploadUrl(const Model::CreateFileDetectUploadUrlRequest &request)const;
+			void createFileDetectUploadUrlAsync(const Model::CreateFileDetectUploadUrlRequest& request, const CreateFileDetectUploadUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateFileDetectUploadUrlOutcomeCallable createFileDetectUploadUrlCallable(const Model::CreateFileDetectUploadUrlRequest& request) const;
 			CreateOrUpdateAssetGroupOutcome createOrUpdateAssetGroup(const Model::CreateOrUpdateAssetGroupRequest &request)const;
 			void createOrUpdateAssetGroupAsync(const Model::CreateOrUpdateAssetGroupRequest& request, const CreateOrUpdateAssetGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateOrUpdateAssetGroupOutcomeCallable createOrUpdateAssetGroupCallable(const Model::CreateOrUpdateAssetGroupRequest& request) const;
@@ -1412,6 +1438,9 @@ namespace AlibabaCloud
 			DescribeVulWhitelistOutcome describeVulWhitelist(const Model::DescribeVulWhitelistRequest &request)const;
 			void describeVulWhitelistAsync(const Model::DescribeVulWhitelistRequest& request, const DescribeVulWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeVulWhitelistOutcomeCallable describeVulWhitelistCallable(const Model::DescribeVulWhitelistRequest& request) const;
+			DescribeWarningExportInfoOutcome describeWarningExportInfo(const Model::DescribeWarningExportInfoRequest &request)const;
+			void describeWarningExportInfoAsync(const Model::DescribeWarningExportInfoRequest& request, const DescribeWarningExportInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeWarningExportInfoOutcomeCallable describeWarningExportInfoCallable(const Model::DescribeWarningExportInfoRequest& request) const;
 			DescribeWarningMachinesOutcome describeWarningMachines(const Model::DescribeWarningMachinesRequest &request)const;
 			void describeWarningMachinesAsync(const Model::DescribeWarningMachinesRequest& request, const DescribeWarningMachinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeWarningMachinesOutcomeCallable describeWarningMachinesCallable(const Model::DescribeWarningMachinesRequest& request) const;
@@ -1436,6 +1465,9 @@ namespace AlibabaCloud
 			GetBackupStorageCountOutcome getBackupStorageCount(const Model::GetBackupStorageCountRequest &request)const;
 			void getBackupStorageCountAsync(const Model::GetBackupStorageCountRequest& request, const GetBackupStorageCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetBackupStorageCountOutcomeCallable getBackupStorageCountCallable(const Model::GetBackupStorageCountRequest& request) const;
+			GetFileDetectResultOutcome getFileDetectResult(const Model::GetFileDetectResultRequest &request)const;
+			void getFileDetectResultAsync(const Model::GetFileDetectResultRequest& request, const GetFileDetectResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetFileDetectResultOutcomeCallable getFileDetectResultCallable(const Model::GetFileDetectResultRequest& request) const;
 			GetSuspiciousStatisticsOutcome getSuspiciousStatistics(const Model::GetSuspiciousStatisticsRequest &request)const;
 			void getSuspiciousStatisticsAsync(const Model::GetSuspiciousStatisticsRequest& request, const GetSuspiciousStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetSuspiciousStatisticsOutcomeCallable getSuspiciousStatisticsCallable(const Model::GetSuspiciousStatisticsRequest& request) const;

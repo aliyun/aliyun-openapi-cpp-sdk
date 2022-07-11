@@ -25,24 +25,6 @@ DescribeSuspEventsRequest::DescribeSuspEventsRequest()
 
 DescribeSuspEventsRequest::~DescribeSuspEventsRequest() {}
 
-std::string DescribeSuspEventsRequest::getTargetType() const {
-  return targetType_;
-}
-
-void DescribeSuspEventsRequest::setTargetType(const std::string &targetType) {
-  targetType_ = targetType;
-  setParameter(std::string("TargetType"), targetType);
-}
-
-std::string DescribeSuspEventsRequest::getRemark() const {
-  return remark_;
-}
-
-void DescribeSuspEventsRequest::setRemark(const std::string &remark) {
-  remark_ = remark;
-  setParameter(std::string("Remark"), remark);
-}
-
 std::string DescribeSuspEventsRequest::getSource() const {
   return source_;
 }
@@ -70,15 +52,6 @@ void DescribeSuspEventsRequest::setSourceIp(const std::string &sourceIp) {
   setParameter(std::string("SourceIp"), sourceIp);
 }
 
-std::string DescribeSuspEventsRequest::getContainerFieldValue() const {
-  return containerFieldValue_;
-}
-
-void DescribeSuspEventsRequest::setContainerFieldValue(const std::string &containerFieldValue) {
-  containerFieldValue_ = containerFieldValue;
-  setParameter(std::string("ContainerFieldValue"), containerFieldValue);
-}
-
 std::string DescribeSuspEventsRequest::getEventNames() const {
   return eventNames_;
 }
@@ -86,15 +59,6 @@ std::string DescribeSuspEventsRequest::getEventNames() const {
 void DescribeSuspEventsRequest::setEventNames(const std::string &eventNames) {
   eventNames_ = eventNames;
   setParameter(std::string("EventNames"), eventNames);
-}
-
-std::string DescribeSuspEventsRequest::getPageSize() const {
-  return pageSize_;
-}
-
-void DescribeSuspEventsRequest::setPageSize(const std::string &pageSize) {
-  pageSize_ = pageSize;
-  setParameter(std::string("PageSize"), pageSize);
 }
 
 std::string DescribeSuspEventsRequest::getFrom() const {
@@ -124,15 +88,6 @@ void DescribeSuspEventsRequest::setTacticId(const std::string &tacticId) {
   setBodyParameter(std::string("TacticId"), tacticId);
 }
 
-std::string DescribeSuspEventsRequest::getLang() const {
-  return lang_;
-}
-
-void DescribeSuspEventsRequest::setLang(const std::string &lang) {
-  lang_ = lang;
-  setParameter(std::string("Lang"), lang);
-}
-
 std::string DescribeSuspEventsRequest::getAlarmUniqueInfo() const {
   return alarmUniqueInfo_;
 }
@@ -158,6 +113,96 @@ long DescribeSuspEventsRequest::getGroupId() const {
 void DescribeSuspEventsRequest::setGroupId(long groupId) {
   groupId_ = groupId;
   setParameter(std::string("GroupId"), std::to_string(groupId));
+}
+
+std::string DescribeSuspEventsRequest::getOperateTimeEnd() const {
+  return operateTimeEnd_;
+}
+
+void DescribeSuspEventsRequest::setOperateTimeEnd(const std::string &operateTimeEnd) {
+  operateTimeEnd_ = operateTimeEnd;
+  setParameter(std::string("OperateTimeEnd"), operateTimeEnd);
+}
+
+std::string DescribeSuspEventsRequest::getName() const {
+  return name_;
+}
+
+void DescribeSuspEventsRequest::setName(const std::string &name) {
+  name_ = name;
+  setParameter(std::string("Name"), name);
+}
+
+std::string DescribeSuspEventsRequest::getStatus() const {
+  return status_;
+}
+
+void DescribeSuspEventsRequest::setStatus(const std::string &status) {
+  status_ = status;
+  setParameter(std::string("Status"), status);
+}
+
+std::string DescribeSuspEventsRequest::getUuids() const {
+  return uuids_;
+}
+
+void DescribeSuspEventsRequest::setUuids(const std::string &uuids) {
+  uuids_ = uuids;
+  setParameter(std::string("Uuids"), uuids);
+}
+
+std::string DescribeSuspEventsRequest::getTimeEnd() const {
+  return timeEnd_;
+}
+
+void DescribeSuspEventsRequest::setTimeEnd(const std::string &timeEnd) {
+  timeEnd_ = timeEnd;
+  setParameter(std::string("TimeEnd"), timeEnd);
+}
+
+std::string DescribeSuspEventsRequest::getTargetType() const {
+  return targetType_;
+}
+
+void DescribeSuspEventsRequest::setTargetType(const std::string &targetType) {
+  targetType_ = targetType;
+  setParameter(std::string("TargetType"), targetType);
+}
+
+std::string DescribeSuspEventsRequest::getRemark() const {
+  return remark_;
+}
+
+void DescribeSuspEventsRequest::setRemark(const std::string &remark) {
+  remark_ = remark;
+  setParameter(std::string("Remark"), remark);
+}
+
+std::string DescribeSuspEventsRequest::getContainerFieldValue() const {
+  return containerFieldValue_;
+}
+
+void DescribeSuspEventsRequest::setContainerFieldValue(const std::string &containerFieldValue) {
+  containerFieldValue_ = containerFieldValue;
+  setParameter(std::string("ContainerFieldValue"), containerFieldValue);
+}
+
+std::string DescribeSuspEventsRequest::getPageSize() const {
+  return pageSize_;
+}
+
+void DescribeSuspEventsRequest::setPageSize(const std::string &pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), pageSize);
+}
+
+std::string DescribeSuspEventsRequest::getLang() const {
+  return lang_;
+}
+
+void DescribeSuspEventsRequest::setLang(const std::string &lang) {
+  lang_ = lang;
+  setParameter(std::string("Lang"), lang);
 }
 
 std::string DescribeSuspEventsRequest::getDealed() const {
@@ -195,13 +240,22 @@ void DescribeSuspEventsRequest::setOperateErrorCodeList(const std::vector<std::s
   operateErrorCodeList_ = operateErrorCodeList;
 }
 
-std::string DescribeSuspEventsRequest::getName() const {
-  return name_;
+std::string DescribeSuspEventsRequest::getOperateTimeStart() const {
+  return operateTimeStart_;
 }
 
-void DescribeSuspEventsRequest::setName(const std::string &name) {
-  name_ = name;
-  setParameter(std::string("Name"), name);
+void DescribeSuspEventsRequest::setOperateTimeStart(const std::string &operateTimeStart) {
+  operateTimeStart_ = operateTimeStart;
+  setParameter(std::string("OperateTimeStart"), operateTimeStart);
+}
+
+std::string DescribeSuspEventsRequest::getTimeStart() const {
+  return timeStart_;
+}
+
+void DescribeSuspEventsRequest::setTimeStart(const std::string &timeStart) {
+  timeStart_ = timeStart;
+  setParameter(std::string("TimeStart"), timeStart);
 }
 
 std::string DescribeSuspEventsRequest::getLevels() const {
@@ -220,23 +274,5 @@ std::string DescribeSuspEventsRequest::getParentEventTypes() const {
 void DescribeSuspEventsRequest::setParentEventTypes(const std::string &parentEventTypes) {
   parentEventTypes_ = parentEventTypes;
   setParameter(std::string("ParentEventTypes"), parentEventTypes);
-}
-
-std::string DescribeSuspEventsRequest::getStatus() const {
-  return status_;
-}
-
-void DescribeSuspEventsRequest::setStatus(const std::string &status) {
-  status_ = status;
-  setParameter(std::string("Status"), status);
-}
-
-std::string DescribeSuspEventsRequest::getUuids() const {
-  return uuids_;
-}
-
-void DescribeSuspEventsRequest::setUuids(const std::string &uuids) {
-  uuids_ = uuids;
-  setParameter(std::string("Uuids"), uuids);
 }
 

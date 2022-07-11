@@ -42,6 +42,10 @@ void DescribeAssetSummaryResult::parse(const std::string &payload)
 	auto assetsSummaryNode = value["AssetsSummary"];
 	if(!assetsSummaryNode["TotalCoreNum"].isNull())
 		assetsSummary_.totalCoreNum = std::stoi(assetsSummaryNode["TotalCoreNum"].asString());
+	if(!assetsSummaryNode["TotalAssetAllRegion"].isNull())
+		assetsSummary_.totalAssetAllRegion = std::stoi(assetsSummaryNode["TotalAssetAllRegion"].asString());
+	if(!assetsSummaryNode["TotalCoreAllRegion"].isNull())
+		assetsSummary_.totalCoreAllRegion = std::stoi(assetsSummaryNode["TotalCoreAllRegion"].asString());
 
 }
 

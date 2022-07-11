@@ -79,6 +79,8 @@ void DescribeVulDetailsResult::parse(const std::string &payload)
 			cvesObject.content = valueCvesCve["Content"].asString();
 		if(!valueCvesCve["Poc"].isNull())
 			cvesObject.poc = valueCvesCve["Poc"].asString();
+		if(!valueCvesCve["OtherId"].isNull())
+			cvesObject.otherId = valueCvesCve["OtherId"].asString();
 		auto allClassifysNode = valueCvesCve["Classifys"]["Classify"];
 		for (auto valueCvesCveClassifysClassify : allClassifysNode)
 		{

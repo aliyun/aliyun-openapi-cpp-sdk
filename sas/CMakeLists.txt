@@ -31,6 +31,10 @@ set(sas_public_header_model
 	include/alibabacloud/sas/model/CreateAntiBruteForceRuleResult.h
 	include/alibabacloud/sas/model/CreateBackupPolicyRequest.h
 	include/alibabacloud/sas/model/CreateBackupPolicyResult.h
+	include/alibabacloud/sas/model/CreateFileDetectRequest.h
+	include/alibabacloud/sas/model/CreateFileDetectResult.h
+	include/alibabacloud/sas/model/CreateFileDetectUploadUrlRequest.h
+	include/alibabacloud/sas/model/CreateFileDetectUploadUrlResult.h
 	include/alibabacloud/sas/model/CreateOrUpdateAssetGroupRequest.h
 	include/alibabacloud/sas/model/CreateOrUpdateAssetGroupResult.h
 	include/alibabacloud/sas/model/CreateServiceLinkedRoleRequest.h
@@ -285,6 +289,8 @@ set(sas_public_header_model
 	include/alibabacloud/sas/model/DescribeVulListResult.h
 	include/alibabacloud/sas/model/DescribeVulWhitelistRequest.h
 	include/alibabacloud/sas/model/DescribeVulWhitelistResult.h
+	include/alibabacloud/sas/model/DescribeWarningExportInfoRequest.h
+	include/alibabacloud/sas/model/DescribeWarningExportInfoResult.h
 	include/alibabacloud/sas/model/DescribeWarningMachinesRequest.h
 	include/alibabacloud/sas/model/DescribeWarningMachinesResult.h
 	include/alibabacloud/sas/model/DescribeWebLockBindListRequest.h
@@ -301,6 +307,8 @@ set(sas_public_header_model
 	include/alibabacloud/sas/model/FixCheckWarningsResult.h
 	include/alibabacloud/sas/model/GetBackupStorageCountRequest.h
 	include/alibabacloud/sas/model/GetBackupStorageCountResult.h
+	include/alibabacloud/sas/model/GetFileDetectResultRequest.h
+	include/alibabacloud/sas/model/GetFileDetectResultResult.h
 	include/alibabacloud/sas/model/GetSuspiciousStatisticsRequest.h
 	include/alibabacloud/sas/model/GetSuspiciousStatisticsResult.h
 	include/alibabacloud/sas/model/GetVulStatisticsRequest.h
@@ -426,6 +434,10 @@ set(sas_src
 	src/model/CreateAntiBruteForceRuleResult.cc
 	src/model/CreateBackupPolicyRequest.cc
 	src/model/CreateBackupPolicyResult.cc
+	src/model/CreateFileDetectRequest.cc
+	src/model/CreateFileDetectResult.cc
+	src/model/CreateFileDetectUploadUrlRequest.cc
+	src/model/CreateFileDetectUploadUrlResult.cc
 	src/model/CreateOrUpdateAssetGroupRequest.cc
 	src/model/CreateOrUpdateAssetGroupResult.cc
 	src/model/CreateServiceLinkedRoleRequest.cc
@@ -680,6 +692,8 @@ set(sas_src
 	src/model/DescribeVulListResult.cc
 	src/model/DescribeVulWhitelistRequest.cc
 	src/model/DescribeVulWhitelistResult.cc
+	src/model/DescribeWarningExportInfoRequest.cc
+	src/model/DescribeWarningExportInfoResult.cc
 	src/model/DescribeWarningMachinesRequest.cc
 	src/model/DescribeWarningMachinesResult.cc
 	src/model/DescribeWebLockBindListRequest.cc
@@ -696,6 +710,8 @@ set(sas_src
 	src/model/FixCheckWarningsResult.cc
 	src/model/GetBackupStorageCountRequest.cc
 	src/model/GetBackupStorageCountResult.cc
+	src/model/GetFileDetectResultRequest.cc
+	src/model/GetFileDetectResultResult.cc
 	src/model/GetSuspiciousStatisticsRequest.cc
 	src/model/GetSuspiciousStatisticsResult.cc
 	src/model/GetVulStatisticsRequest.cc

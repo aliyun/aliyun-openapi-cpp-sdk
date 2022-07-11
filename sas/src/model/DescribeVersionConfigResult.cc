@@ -101,6 +101,10 @@ void DescribeVersionConfigResult::parse(const std::string &payload)
 		isTrialVersion_ = std::stoi(value["IsTrialVersion"].asString());
 	if(!value["UserDefinedAlarms"].isNull())
 		userDefinedAlarms_ = std::stoi(value["UserDefinedAlarms"].asString());
+	if(!value["OpenTime"].isNull())
+		openTime_ = std::stol(value["OpenTime"].asString());
+	if(!value["IsNewContainerVersion"].isNull())
+		isNewContainerVersion_ = value["IsNewContainerVersion"].asString() == "true";
 
 }
 
@@ -127,6 +131,11 @@ int DescribeVersionConfigResult::getLogTime()const
 int DescribeVersionConfigResult::getSasLog()const
 {
 	return sasLog_;
+}
+
+long DescribeVersionConfigResult::getOpenTime()const
+{
+	return openTime_;
 }
 
 int DescribeVersionConfigResult::getVersion()const
@@ -242,6 +251,11 @@ long DescribeVersionConfigResult::getGmtCreate()const
 long DescribeVersionConfigResult::getReleaseTime()const
 {
 	return releaseTime_;
+}
+
+bool DescribeVersionConfigResult::getIsNewContainerVersion()const
+{
+	return isNewContainerVersion_;
 }
 
 int DescribeVersionConfigResult::getMVUnusedAuthCount()const

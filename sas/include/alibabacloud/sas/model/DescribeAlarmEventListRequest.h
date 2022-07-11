@@ -30,6 +30,8 @@ class ALIBABACLOUD_SAS_EXPORT DescribeAlarmEventListRequest : public RpcServiceR
 public:
 	DescribeAlarmEventListRequest();
 	~DescribeAlarmEventListRequest();
+	std::string getTimeEnd() const;
+	void setTimeEnd(const std::string &timeEnd);
 	std::string getTargetType() const;
 	void setTargetType(const std::string &targetType);
 	std::string getAlarmEventType() const;
@@ -64,12 +66,21 @@ public:
 	void setCurrentPage(int currentPage);
 	std::string getClusterId() const;
 	void setClusterId(const std::string &clusterId);
+	std::string getOperateTimeEnd() const;
+	void setOperateTimeEnd(const std::string &operateTimeEnd);
 	std::vector<std::string> getOperateErrorCodeList() const;
 	void setOperateErrorCodeList(const std::vector<std::string> &operateErrorCodeList);
+	std::string getOperateTimeStart() const;
+	void setOperateTimeStart(const std::string &operateTimeStart);
+	std::string getTimeStart() const;
+	void setTimeStart(const std::string &timeStart);
 	std::string getLevels() const;
 	void setLevels(const std::string &levels);
+	std::string getUuids() const;
+	void setUuids(const std::string &uuids);
 
 private:
+	std::string timeEnd_;
 	std::string targetType_;
 	std::string alarmEventType_;
 	std::string remark_;
@@ -87,8 +98,12 @@ private:
 	std::string dealed_;
 	int currentPage_;
 	std::string clusterId_;
+	std::string operateTimeEnd_;
 	std::vector<std::string> operateErrorCodeList_;
+	std::string operateTimeStart_;
+	std::string timeStart_;
 	std::string levels_;
+	std::string uuids_;
 };
 } // namespace Model
 } // namespace Sas

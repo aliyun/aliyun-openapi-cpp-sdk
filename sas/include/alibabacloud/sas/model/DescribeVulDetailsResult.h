@@ -51,6 +51,7 @@ namespace AlibabaCloud
 					std::string title;
 					std::string cveId;
 					std::string vendor;
+					std::string otherId;
 					std::string cnvdId;
 					std::string complexity;
 					long pocCreateTime;

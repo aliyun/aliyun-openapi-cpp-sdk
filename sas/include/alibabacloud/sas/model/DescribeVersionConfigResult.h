@@ -42,6 +42,7 @@ namespace AlibabaCloud
 				long getAppWhiteListAuthCount()const;
 				int getLogTime()const;
 				int getSasLog()const;
+				long getOpenTime()const;
 				int getVersion()const;
 				int getAvdsFlag()const;
 				int getHighestVersion()const;
@@ -65,6 +66,7 @@ namespace AlibabaCloud
 				int getMVAuthCount()const;
 				long getGmtCreate()const;
 				long getReleaseTime()const;
+				bool getIsNewContainerVersion()const;
 				int getMVUnusedAuthCount()const;
 				int getIsTrialVersion()const;
 				int getAppWhiteList()const;
@@ -77,6 +79,7 @@ namespace AlibabaCloud
 				long appWhiteListAuthCount_;
 				int logTime_;
 				int sasLog_;
+				long openTime_;
 				int version_;
 				int avdsFlag_;
 				int highestVersion_;
@@ -100,6 +103,7 @@ namespace AlibabaCloud
 				int mVAuthCount_;
 				long gmtCreate_;
 				long releaseTime_;
+				bool isNewContainerVersion_;
 				int mVUnusedAuthCount_;
 				int isTrialVersion_;
 				int appWhiteList_;

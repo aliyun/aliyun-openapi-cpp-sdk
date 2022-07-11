@@ -231,6 +231,78 @@ SasClient::CreateBackupPolicyOutcomeCallable SasClient::createBackupPolicyCallab
 	return task->get_future();
 }
 
+SasClient::CreateFileDetectOutcome SasClient::createFileDetect(const CreateFileDetectRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateFileDetectOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateFileDetectOutcome(CreateFileDetectResult(outcome.result()));
+	else
+		return CreateFileDetectOutcome(outcome.error());
+}
+
+void SasClient::createFileDetectAsync(const CreateFileDetectRequest& request, const CreateFileDetectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createFileDetect(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::CreateFileDetectOutcomeCallable SasClient::createFileDetectCallable(const CreateFileDetectRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateFileDetectOutcome()>>(
+			[this, request]()
+			{
+			return this->createFileDetect(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SasClient::CreateFileDetectUploadUrlOutcome SasClient::createFileDetectUploadUrl(const CreateFileDetectUploadUrlRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateFileDetectUploadUrlOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateFileDetectUploadUrlOutcome(CreateFileDetectUploadUrlResult(outcome.result()));
+	else
+		return CreateFileDetectUploadUrlOutcome(outcome.error());
+}
+
+void SasClient::createFileDetectUploadUrlAsync(const CreateFileDetectUploadUrlRequest& request, const CreateFileDetectUploadUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createFileDetectUploadUrl(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::CreateFileDetectUploadUrlOutcomeCallable SasClient::createFileDetectUploadUrlCallable(const CreateFileDetectUploadUrlRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateFileDetectUploadUrlOutcome()>>(
+			[this, request]()
+			{
+			return this->createFileDetectUploadUrl(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SasClient::CreateOrUpdateAssetGroupOutcome SasClient::createOrUpdateAssetGroup(const CreateOrUpdateAssetGroupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4803,6 +4875,42 @@ SasClient::DescribeVulWhitelistOutcomeCallable SasClient::describeVulWhitelistCa
 	return task->get_future();
 }
 
+SasClient::DescribeWarningExportInfoOutcome SasClient::describeWarningExportInfo(const DescribeWarningExportInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeWarningExportInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeWarningExportInfoOutcome(DescribeWarningExportInfoResult(outcome.result()));
+	else
+		return DescribeWarningExportInfoOutcome(outcome.error());
+}
+
+void SasClient::describeWarningExportInfoAsync(const DescribeWarningExportInfoRequest& request, const DescribeWarningExportInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeWarningExportInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::DescribeWarningExportInfoOutcomeCallable SasClient::describeWarningExportInfoCallable(const DescribeWarningExportInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeWarningExportInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->describeWarningExportInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SasClient::DescribeWarningMachinesOutcome SasClient::describeWarningMachines(const DescribeWarningMachinesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5085,6 +5193,42 @@ SasClient::GetBackupStorageCountOutcomeCallable SasClient::getBackupStorageCount
 			[this, request]()
 			{
 			return this->getBackupStorageCount(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SasClient::GetFileDetectResultOutcome SasClient::getFileDetectResult(const GetFileDetectResultRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetFileDetectResultOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetFileDetectResultOutcome(GetFileDetectResultResult(outcome.result()));
+	else
+		return GetFileDetectResultOutcome(outcome.error());
+}
+
+void SasClient::getFileDetectResultAsync(const GetFileDetectResultRequest& request, const GetFileDetectResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getFileDetectResult(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::GetFileDetectResultOutcomeCallable SasClient::getFileDetectResultCallable(const GetFileDetectResultRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetFileDetectResultOutcome()>>(
+			[this, request]()
+			{
+			return this->getFileDetectResult(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
