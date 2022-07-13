@@ -43,7 +43,14 @@ void GetLjxAccountInfoResult::parse(const std::string &payload)
 		ljxAccountInfoId_ = value["LjxAccountInfoId"].asString();
 	if(!value["requestId"].isNull())
 		requestId_ = value["requestId"].asString();
+	if(!value["Apple"].isNull())
+		apple_ = value["Apple"].asString();
 
+}
+
+std::string GetLjxAccountInfoResult::getApple()const
+{
+	return apple_;
 }
 
 std::string GetLjxAccountInfoResult::getRequestId()const

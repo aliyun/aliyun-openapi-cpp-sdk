@@ -37,12 +37,14 @@ namespace AlibabaCloud
 				GetLjxAccountInfoResult();
 				explicit GetLjxAccountInfoResult(const std::string &payload);
 				~GetLjxAccountInfoResult();
+				std::string getApple()const;
 				std::string getRequestId()const;
 				std::string getLjxAccountInfoId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string apple_;
 				std::string requestId_;
 				std::string ljxAccountInfoId_;
 
