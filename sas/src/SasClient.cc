@@ -2823,6 +2823,42 @@ SasClient::DescribeInstanceAntiBruteForceRulesOutcomeCallable SasClient::describ
 	return task->get_future();
 }
 
+SasClient::DescribeInstanceRebootStatusOutcome SasClient::describeInstanceRebootStatus(const DescribeInstanceRebootStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeInstanceRebootStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeInstanceRebootStatusOutcome(DescribeInstanceRebootStatusResult(outcome.result()));
+	else
+		return DescribeInstanceRebootStatusOutcome(outcome.error());
+}
+
+void SasClient::describeInstanceRebootStatusAsync(const DescribeInstanceRebootStatusRequest& request, const DescribeInstanceRebootStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeInstanceRebootStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::DescribeInstanceRebootStatusOutcomeCallable SasClient::describeInstanceRebootStatusCallable(const DescribeInstanceRebootStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeInstanceRebootStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->describeInstanceRebootStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SasClient::DescribeInstanceStatisticsOutcome SasClient::describeInstanceStatistics(const DescribeInstanceStatisticsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -6921,6 +6957,42 @@ SasClient::QueryGroupedSecurityEventMarkMissListOutcomeCallable SasClient::query
 			[this, request]()
 			{
 			return this->queryGroupedSecurityEventMarkMissList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SasClient::RebootMachineOutcome SasClient::rebootMachine(const RebootMachineRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RebootMachineOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RebootMachineOutcome(RebootMachineResult(outcome.result()));
+	else
+		return RebootMachineOutcome(outcome.error());
+}
+
+void SasClient::rebootMachineAsync(const RebootMachineRequest& request, const RebootMachineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, rebootMachine(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::RebootMachineOutcomeCallable SasClient::rebootMachineCallable(const RebootMachineRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RebootMachineOutcome()>>(
+			[this, request]()
+			{
+			return this->rebootMachine(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

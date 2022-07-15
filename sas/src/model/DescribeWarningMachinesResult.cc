@@ -67,6 +67,10 @@ void DescribeWarningMachinesResult::parse(const std::string &payload)
 			warningMachinesObject.passCount = std::stoi(valueWarningMachinesWarningMachine["PassCount"].asString());
 		if(!valueWarningMachinesWarningMachine["InstanceName"].isNull())
 			warningMachinesObject.instanceName = valueWarningMachinesWarningMachine["InstanceName"].asString();
+		if(!valueWarningMachinesWarningMachine["Bind"].isNull())
+			warningMachinesObject.bind = valueWarningMachinesWarningMachine["Bind"].asString() == "true";
+		if(!valueWarningMachinesWarningMachine["AuthVersion"].isNull())
+			warningMachinesObject.authVersion = std::stoi(valueWarningMachinesWarningMachine["AuthVersion"].asString());
 		warningMachines_.push_back(warningMachinesObject);
 	}
 	if(!value["CurrentPage"].isNull())

@@ -176,6 +176,8 @@
 #include "model/DescribeInstallCodesResult.h"
 #include "model/DescribeInstanceAntiBruteForceRulesRequest.h"
 #include "model/DescribeInstanceAntiBruteForceRulesResult.h"
+#include "model/DescribeInstanceRebootStatusRequest.h"
+#include "model/DescribeInstanceRebootStatusResult.h"
 #include "model/DescribeInstanceStatisticsRequest.h"
 #include "model/DescribeInstanceStatisticsResult.h"
 #include "model/DescribeLoginBaseConfigsRequest.h"
@@ -404,6 +406,8 @@
 #include "model/QueryGroupIdByGroupNameResult.h"
 #include "model/QueryGroupedSecurityEventMarkMissListRequest.h"
 #include "model/QueryGroupedSecurityEventMarkMissListResult.h"
+#include "model/RebootMachineRequest.h"
+#include "model/RebootMachineResult.h"
 #include "model/RefreshAssetsRequest.h"
 #include "model/RefreshAssetsResult.h"
 #include "model/RefreshContainerAssetsRequest.h"
@@ -662,6 +666,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeInstanceAntiBruteForceRulesResult> DescribeInstanceAntiBruteForceRulesOutcome;
 			typedef std::future<DescribeInstanceAntiBruteForceRulesOutcome> DescribeInstanceAntiBruteForceRulesOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::DescribeInstanceAntiBruteForceRulesRequest&, const DescribeInstanceAntiBruteForceRulesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceAntiBruteForceRulesAsyncHandler;
+			typedef Outcome<Error, Model::DescribeInstanceRebootStatusResult> DescribeInstanceRebootStatusOutcome;
+			typedef std::future<DescribeInstanceRebootStatusOutcome> DescribeInstanceRebootStatusOutcomeCallable;
+			typedef std::function<void(const SasClient*, const Model::DescribeInstanceRebootStatusRequest&, const DescribeInstanceRebootStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceRebootStatusAsyncHandler;
 			typedef Outcome<Error, Model::DescribeInstanceStatisticsResult> DescribeInstanceStatisticsOutcome;
 			typedef std::future<DescribeInstanceStatisticsOutcome> DescribeInstanceStatisticsOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::DescribeInstanceStatisticsRequest&, const DescribeInstanceStatisticsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceStatisticsAsyncHandler;
@@ -1004,6 +1011,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryGroupedSecurityEventMarkMissListResult> QueryGroupedSecurityEventMarkMissListOutcome;
 			typedef std::future<QueryGroupedSecurityEventMarkMissListOutcome> QueryGroupedSecurityEventMarkMissListOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::QueryGroupedSecurityEventMarkMissListRequest&, const QueryGroupedSecurityEventMarkMissListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryGroupedSecurityEventMarkMissListAsyncHandler;
+			typedef Outcome<Error, Model::RebootMachineResult> RebootMachineOutcome;
+			typedef std::future<RebootMachineOutcome> RebootMachineOutcomeCallable;
+			typedef std::function<void(const SasClient*, const Model::RebootMachineRequest&, const RebootMachineOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RebootMachineAsyncHandler;
 			typedef Outcome<Error, Model::RefreshAssetsResult> RefreshAssetsOutcome;
 			typedef std::future<RefreshAssetsOutcome> RefreshAssetsOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::RefreshAssetsRequest&, const RefreshAssetsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RefreshAssetsAsyncHandler;
@@ -1267,6 +1277,9 @@ namespace AlibabaCloud
 			DescribeInstanceAntiBruteForceRulesOutcome describeInstanceAntiBruteForceRules(const Model::DescribeInstanceAntiBruteForceRulesRequest &request)const;
 			void describeInstanceAntiBruteForceRulesAsync(const Model::DescribeInstanceAntiBruteForceRulesRequest& request, const DescribeInstanceAntiBruteForceRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeInstanceAntiBruteForceRulesOutcomeCallable describeInstanceAntiBruteForceRulesCallable(const Model::DescribeInstanceAntiBruteForceRulesRequest& request) const;
+			DescribeInstanceRebootStatusOutcome describeInstanceRebootStatus(const Model::DescribeInstanceRebootStatusRequest &request)const;
+			void describeInstanceRebootStatusAsync(const Model::DescribeInstanceRebootStatusRequest& request, const DescribeInstanceRebootStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeInstanceRebootStatusOutcomeCallable describeInstanceRebootStatusCallable(const Model::DescribeInstanceRebootStatusRequest& request) const;
 			DescribeInstanceStatisticsOutcome describeInstanceStatistics(const Model::DescribeInstanceStatisticsRequest &request)const;
 			void describeInstanceStatisticsAsync(const Model::DescribeInstanceStatisticsRequest& request, const DescribeInstanceStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeInstanceStatisticsOutcomeCallable describeInstanceStatisticsCallable(const Model::DescribeInstanceStatisticsRequest& request) const;
@@ -1609,6 +1622,9 @@ namespace AlibabaCloud
 			QueryGroupedSecurityEventMarkMissListOutcome queryGroupedSecurityEventMarkMissList(const Model::QueryGroupedSecurityEventMarkMissListRequest &request)const;
 			void queryGroupedSecurityEventMarkMissListAsync(const Model::QueryGroupedSecurityEventMarkMissListRequest& request, const QueryGroupedSecurityEventMarkMissListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryGroupedSecurityEventMarkMissListOutcomeCallable queryGroupedSecurityEventMarkMissListCallable(const Model::QueryGroupedSecurityEventMarkMissListRequest& request) const;
+			RebootMachineOutcome rebootMachine(const Model::RebootMachineRequest &request)const;
+			void rebootMachineAsync(const Model::RebootMachineRequest& request, const RebootMachineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RebootMachineOutcomeCallable rebootMachineCallable(const Model::RebootMachineRequest& request) const;
 			RefreshAssetsOutcome refreshAssets(const Model::RefreshAssetsRequest &request)const;
 			void refreshAssetsAsync(const Model::RefreshAssetsRequest& request, const RefreshAssetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RefreshAssetsOutcomeCallable refreshAssetsCallable(const Model::RefreshAssetsRequest& request) const;

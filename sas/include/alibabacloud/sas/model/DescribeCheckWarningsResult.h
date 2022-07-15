@@ -40,7 +40,9 @@ namespace AlibabaCloud
 					std::string uuid;
 					long checkId;
 					long checkWarningId;
+					int fixStatus;
 					std::string level;
+					std::string reason;
 				};
 
 

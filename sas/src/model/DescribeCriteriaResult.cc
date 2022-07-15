@@ -49,6 +49,8 @@ void DescribeCriteriaResult::parse(const std::string &payload)
 			criteriaListObject.name = valueCriteriaListCriteria["Name"].asString();
 		if(!valueCriteriaListCriteria["Values"].isNull())
 			criteriaListObject.values = valueCriteriaListCriteria["Values"].asString();
+		if(!valueCriteriaListCriteria["MultiValues"].isNull())
+			criteriaListObject.multiValues = valueCriteriaListCriteria["MultiValues"].asString();
 		criteriaList_.push_back(criteriaListObject);
 	}
 

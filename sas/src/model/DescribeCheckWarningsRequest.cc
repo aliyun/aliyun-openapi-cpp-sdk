@@ -34,6 +34,15 @@ void DescribeCheckWarningsRequest::setUuid(const std::string &uuid) {
   setParameter(std::string("Uuid"), uuid);
 }
 
+std::string DescribeCheckWarningsRequest::getCheckType() const {
+  return checkType_;
+}
+
+void DescribeCheckWarningsRequest::setCheckType(const std::string &checkType) {
+  checkType_ = checkType;
+  setParameter(std::string("CheckType"), checkType);
+}
+
 std::string DescribeCheckWarningsRequest::getSourceIp() const {
   return sourceIp_;
 }

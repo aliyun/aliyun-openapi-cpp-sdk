@@ -34,6 +34,7 @@ namespace AlibabaCloud
 			public:
 				struct Criteria
 				{
+					std::string multiValues;
 					std::string type;
 					std::string values;
 					std::string name;

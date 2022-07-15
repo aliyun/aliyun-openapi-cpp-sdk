@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SAS_MODEL_DESCRIBERISKCHECKITEMRESULTRESULT_H_
-#define ALIBABACLOUD_SAS_MODEL_DESCRIBERISKCHECKITEMRESULTRESULT_H_
+#ifndef ALIBABACLOUD_SAS_MODEL_REBOOTMACHINERESULT_H_
+#define ALIBABACLOUD_SAS_MODEL_REBOOTMACHINERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,14 +29,14 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SAS_EXPORT DescribeRiskCheckItemResultResult : public ServiceResult
+			class ALIBABACLOUD_SAS_EXPORT RebootMachineResult : public ServiceResult
 			{
 			public:
 
 
-				DescribeRiskCheckItemResultResult();
-				explicit DescribeRiskCheckItemResultResult(const std::string &payload);
-				~DescribeRiskCheckItemResultResult();
+				RebootMachineResult();
+				explicit RebootMachineResult(const std::string &payload);
+				~RebootMachineResult();
 
 			protected:
 				void parse(const std::string &payload);
@@ -46,4 +46,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SAS_MODEL_DESCRIBERISKCHECKITEMRESULTRESULT_H_
+#endif // !ALIBABACLOUD_SAS_MODEL_REBOOTMACHINERESULT_H_

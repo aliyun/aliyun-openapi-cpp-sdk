@@ -57,6 +57,10 @@ void DescribeCheckWarningsResult::parse(const std::string &payload)
 			checkWarningsObject.checkId = std::stol(valueCheckWarningsCheckWarning["CheckId"].asString());
 		if(!valueCheckWarningsCheckWarning["Level"].isNull())
 			checkWarningsObject.level = valueCheckWarningsCheckWarning["Level"].asString();
+		if(!valueCheckWarningsCheckWarning["Reason"].isNull())
+			checkWarningsObject.reason = valueCheckWarningsCheckWarning["Reason"].asString();
+		if(!valueCheckWarningsCheckWarning["FixStatus"].isNull())
+			checkWarningsObject.fixStatus = std::stoi(valueCheckWarningsCheckWarning["FixStatus"].asString());
 		checkWarnings_.push_back(checkWarningsObject);
 	}
 	if(!value["CurrentPage"].isNull())

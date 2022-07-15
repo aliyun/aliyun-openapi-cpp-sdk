@@ -175,6 +175,8 @@ set(sas_public_header_model
 	include/alibabacloud/sas/model/DescribeInstallCodesResult.h
 	include/alibabacloud/sas/model/DescribeInstanceAntiBruteForceRulesRequest.h
 	include/alibabacloud/sas/model/DescribeInstanceAntiBruteForceRulesResult.h
+	include/alibabacloud/sas/model/DescribeInstanceRebootStatusRequest.h
+	include/alibabacloud/sas/model/DescribeInstanceRebootStatusResult.h
 	include/alibabacloud/sas/model/DescribeInstanceStatisticsRequest.h
 	include/alibabacloud/sas/model/DescribeInstanceStatisticsResult.h
 	include/alibabacloud/sas/model/DescribeLoginBaseConfigsRequest.h
@@ -403,6 +405,8 @@ set(sas_public_header_model
 	include/alibabacloud/sas/model/QueryGroupIdByGroupNameResult.h
 	include/alibabacloud/sas/model/QueryGroupedSecurityEventMarkMissListRequest.h
 	include/alibabacloud/sas/model/QueryGroupedSecurityEventMarkMissListResult.h
+	include/alibabacloud/sas/model/RebootMachineRequest.h
+	include/alibabacloud/sas/model/RebootMachineResult.h
 	include/alibabacloud/sas/model/RefreshAssetsRequest.h
 	include/alibabacloud/sas/model/RefreshAssetsResult.h
 	include/alibabacloud/sas/model/RefreshContainerAssetsRequest.h
@@ -578,6 +582,8 @@ set(sas_src
 	src/model/DescribeInstallCodesResult.cc
 	src/model/DescribeInstanceAntiBruteForceRulesRequest.cc
 	src/model/DescribeInstanceAntiBruteForceRulesResult.cc
+	src/model/DescribeInstanceRebootStatusRequest.cc
+	src/model/DescribeInstanceRebootStatusResult.cc
 	src/model/DescribeInstanceStatisticsRequest.cc
 	src/model/DescribeInstanceStatisticsResult.cc
 	src/model/DescribeLoginBaseConfigsRequest.cc
@@ -806,6 +812,8 @@ set(sas_src
 	src/model/QueryGroupIdByGroupNameResult.cc
 	src/model/QueryGroupedSecurityEventMarkMissListRequest.cc
 	src/model/QueryGroupedSecurityEventMarkMissListResult.cc
+	src/model/RebootMachineRequest.cc
+	src/model/RebootMachineResult.cc
 	src/model/RefreshAssetsRequest.cc
 	src/model/RefreshAssetsResult.cc
 	src/model/RefreshContainerAssetsRequest.cc

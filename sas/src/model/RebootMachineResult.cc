@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/sas/model/DescribeRiskCheckItemResultResult.h>
+#include <alibabacloud/sas/model/RebootMachineResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Sas;
 using namespace AlibabaCloud::Sas::Model;
 
-DescribeRiskCheckItemResultResult::DescribeRiskCheckItemResultResult() :
+RebootMachineResult::RebootMachineResult() :
 	ServiceResult()
 {}
 
-DescribeRiskCheckItemResultResult::DescribeRiskCheckItemResultResult(const std::string &payload) :
+RebootMachineResult::RebootMachineResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-DescribeRiskCheckItemResultResult::~DescribeRiskCheckItemResultResult()
+RebootMachineResult::~RebootMachineResult()
 {}
 
-void DescribeRiskCheckItemResultResult::parse(const std::string &payload)
+void RebootMachineResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SAS_MODEL_DESCRIBEWARNINGMACHINESRESULT_H_
-#define ALIBABACLOUD_SAS_MODEL_DESCRIBEWARNINGMACHINESRESULT_H_
+#ifndef ALIBABACLOUD_SAS_MODEL_DESCRIBEINSTANCEREBOOTSTATUSRESULT_H_
+#define ALIBABACLOUD_SAS_MODEL_DESCRIBEINSTANCEREBOOTSTATUSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,48 +29,32 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SAS_EXPORT DescribeWarningMachinesResult : public ServiceResult
+			class ALIBABACLOUD_SAS_EXPORT DescribeInstanceRebootStatusResult : public ServiceResult
 			{
 			public:
-				struct WarningMachine
+				struct RebootStatus
 				{
-					int status;
-					bool bind;
-					std::string instanceId;
-					bool portOpen;
-					std::string intranetIp;
-					int lowWarningCount;
-					std::string instanceName;
-					int mediumWarningCount;
+					std::string msg;
 					std::string uuid;
-					std::string internetIp;
-					int highWarningCount;
-					std::string regionId;
-					int passCount;
-					int authVersion;
+					int rebootStatus;
+					std::string code;
 				};
 
 
-				DescribeWarningMachinesResult();
-				explicit DescribeWarningMachinesResult(const std::string &payload);
-				~DescribeWarningMachinesResult();
+				DescribeInstanceRebootStatusResult();
+				explicit DescribeInstanceRebootStatusResult(const std::string &payload);
+				~DescribeInstanceRebootStatusResult();
+				std::vector<RebootStatus> getRebootStatuses()const;
 				int getTotalCount()const;
-				int getPageSize()const;
-				int getCurrentPage()const;
-				std::vector<WarningMachine> getWarningMachines()const;
-				int getCount()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::vector<RebootStatus> rebootStatuses_;
 				int totalCount_;
-				int pageSize_;
-				int currentPage_;
-				std::vector<WarningMachine> warningMachines_;
-				int count_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SAS_MODEL_DESCRIBEWARNINGMACHINESRESULT_H_
+#endif // !ALIBABACLOUD_SAS_MODEL_DESCRIBEINSTANCEREBOOTSTATUSRESULT_H_
