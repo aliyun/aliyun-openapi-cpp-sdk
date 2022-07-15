@@ -5523,6 +5523,42 @@ SasClient::InstallCloudMonitorOutcomeCallable SasClient::installCloudMonitorCall
 	return task->get_future();
 }
 
+SasClient::ListCheckResultOutcome SasClient::listCheckResult(const ListCheckResultRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListCheckResultOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListCheckResultOutcome(ListCheckResultResult(outcome.result()));
+	else
+		return ListCheckResultOutcome(outcome.error());
+}
+
+void SasClient::listCheckResultAsync(const ListCheckResultRequest& request, const ListCheckResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listCheckResult(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::ListCheckResultOutcomeCallable SasClient::listCheckResultCallable(const ListCheckResultRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListCheckResultOutcome()>>(
+			[this, request]()
+			{
+			return this->listCheckResult(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SasClient::ListVulAutoRepairConfigOutcome SasClient::listVulAutoRepairConfig(const ListVulAutoRepairConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

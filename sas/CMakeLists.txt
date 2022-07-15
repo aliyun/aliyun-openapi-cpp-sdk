@@ -325,6 +325,8 @@ set(sas_public_header_model
 	include/alibabacloud/sas/model/InstallBackupClientResult.h
 	include/alibabacloud/sas/model/InstallCloudMonitorRequest.h
 	include/alibabacloud/sas/model/InstallCloudMonitorResult.h
+	include/alibabacloud/sas/model/ListCheckResultRequest.h
+	include/alibabacloud/sas/model/ListCheckResultResult.h
 	include/alibabacloud/sas/model/ListVulAutoRepairConfigRequest.h
 	include/alibabacloud/sas/model/ListVulAutoRepairConfigResult.h
 	include/alibabacloud/sas/model/ModifyAntiBruteForceRuleRequest.h
@@ -732,6 +734,8 @@ set(sas_src
 	src/model/InstallBackupClientResult.cc
 	src/model/InstallCloudMonitorRequest.cc
 	src/model/InstallCloudMonitorResult.cc
+	src/model/ListCheckResultRequest.cc
+	src/model/ListCheckResultResult.cc
 	src/model/ListVulAutoRepairConfigRequest.cc
 	src/model/ListVulAutoRepairConfigResult.cc
 	src/model/ModifyAntiBruteForceRuleRequest.cc

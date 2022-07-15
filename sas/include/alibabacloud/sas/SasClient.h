@@ -326,6 +326,8 @@
 #include "model/InstallBackupClientResult.h"
 #include "model/InstallCloudMonitorRequest.h"
 #include "model/InstallCloudMonitorResult.h"
+#include "model/ListCheckResultRequest.h"
+#include "model/ListCheckResultResult.h"
 #include "model/ListVulAutoRepairConfigRequest.h"
 #include "model/ListVulAutoRepairConfigResult.h"
 #include "model/ModifyAntiBruteForceRuleRequest.h"
@@ -891,6 +893,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::InstallCloudMonitorResult> InstallCloudMonitorOutcome;
 			typedef std::future<InstallCloudMonitorOutcome> InstallCloudMonitorOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::InstallCloudMonitorRequest&, const InstallCloudMonitorOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> InstallCloudMonitorAsyncHandler;
+			typedef Outcome<Error, Model::ListCheckResultResult> ListCheckResultOutcome;
+			typedef std::future<ListCheckResultOutcome> ListCheckResultOutcomeCallable;
+			typedef std::function<void(const SasClient*, const Model::ListCheckResultRequest&, const ListCheckResultOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListCheckResultAsyncHandler;
 			typedef Outcome<Error, Model::ListVulAutoRepairConfigResult> ListVulAutoRepairConfigOutcome;
 			typedef std::future<ListVulAutoRepairConfigOutcome> ListVulAutoRepairConfigOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::ListVulAutoRepairConfigRequest&, const ListVulAutoRepairConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListVulAutoRepairConfigAsyncHandler;
@@ -1502,6 +1507,9 @@ namespace AlibabaCloud
 			InstallCloudMonitorOutcome installCloudMonitor(const Model::InstallCloudMonitorRequest &request)const;
 			void installCloudMonitorAsync(const Model::InstallCloudMonitorRequest& request, const InstallCloudMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			InstallCloudMonitorOutcomeCallable installCloudMonitorCallable(const Model::InstallCloudMonitorRequest& request) const;
+			ListCheckResultOutcome listCheckResult(const Model::ListCheckResultRequest &request)const;
+			void listCheckResultAsync(const Model::ListCheckResultRequest& request, const ListCheckResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListCheckResultOutcomeCallable listCheckResultCallable(const Model::ListCheckResultRequest& request) const;
 			ListVulAutoRepairConfigOutcome listVulAutoRepairConfig(const Model::ListVulAutoRepairConfigRequest &request)const;
 			void listVulAutoRepairConfigAsync(const Model::ListVulAutoRepairConfigRequest& request, const ListVulAutoRepairConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListVulAutoRepairConfigOutcomeCallable listVulAutoRepairConfigCallable(const Model::ListVulAutoRepairConfigRequest& request) const;
