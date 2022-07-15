@@ -115,6 +115,40 @@ void AuthorizeSecurityGroupRequest::setRegionId(const std::string &regionId) {
   setParameter(std::string("RegionId"), regionId);
 }
 
+std::vector<AuthorizeSecurityGroupRequest::Permissions> AuthorizeSecurityGroupRequest::getPermissions() const {
+  return permissions_;
+}
+
+void AuthorizeSecurityGroupRequest::setPermissions(const std::vector<AuthorizeSecurityGroupRequest::Permissions> &permissions) {
+  permissions_ = permissions;
+  for(int dep1 = 0; dep1 != permissions.size(); dep1++) {
+    setParameter(std::string("Permissions") + "." + std::to_string(dep1 + 1) + ".Policy", permissions[dep1].policy);
+    setParameter(std::string("Permissions") + "." + std::to_string(dep1 + 1) + ".Priority", permissions[dep1].priority);
+    setParameter(std::string("Permissions") + "." + std::to_string(dep1 + 1) + ".IpProtocol", permissions[dep1].ipProtocol);
+    setParameter(std::string("Permissions") + "." + std::to_string(dep1 + 1) + ".SourceCidrIp", permissions[dep1].sourceCidrIp);
+    setParameter(std::string("Permissions") + "." + std::to_string(dep1 + 1) + ".Ipv6SourceCidrIp", permissions[dep1].ipv6SourceCidrIp);
+    setParameter(std::string("Permissions") + "." + std::to_string(dep1 + 1) + ".SourceGroupId", permissions[dep1].sourceGroupId);
+    setParameter(std::string("Permissions") + "." + std::to_string(dep1 + 1) + ".SourcePrefixListId", permissions[dep1].sourcePrefixListId);
+    setParameter(std::string("Permissions") + "." + std::to_string(dep1 + 1) + ".PortRange", permissions[dep1].portRange);
+    setParameter(std::string("Permissions") + "." + std::to_string(dep1 + 1) + ".DestCidrIp", permissions[dep1].destCidrIp);
+    setParameter(std::string("Permissions") + "." + std::to_string(dep1 + 1) + ".Ipv6DestCidrIp", permissions[dep1].ipv6DestCidrIp);
+    setParameter(std::string("Permissions") + "." + std::to_string(dep1 + 1) + ".SourcePortRange", permissions[dep1].sourcePortRange);
+    setParameter(std::string("Permissions") + "." + std::to_string(dep1 + 1) + ".SourceGroupOwnerAccount", permissions[dep1].sourceGroupOwnerAccount);
+    setParameter(std::string("Permissions") + "." + std::to_string(dep1 + 1) + ".SourceGroupOwnerId", std::to_string(permissions[dep1].sourceGroupOwnerId));
+    setParameter(std::string("Permissions") + "." + std::to_string(dep1 + 1) + ".NicType", permissions[dep1].nicType);
+    setParameter(std::string("Permissions") + "." + std::to_string(dep1 + 1) + ".Description", permissions[dep1].description);
+  }
+}
+
+std::string AuthorizeSecurityGroupRequest::getPolicy() const {
+  return policy_;
+}
+
+void AuthorizeSecurityGroupRequest::setPolicy(const std::string &policy) {
+  policy_ = policy;
+  setParameter(std::string("Policy"), policy);
+}
+
 std::string AuthorizeSecurityGroupRequest::getIpv6SourceCidrIp() const {
   return ipv6SourceCidrIp_;
 }
@@ -131,15 +165,6 @@ std::string AuthorizeSecurityGroupRequest::getIpv6DestCidrIp() const {
 void AuthorizeSecurityGroupRequest::setIpv6DestCidrIp(const std::string &ipv6DestCidrIp) {
   ipv6DestCidrIp_ = ipv6DestCidrIp;
   setParameter(std::string("Ipv6DestCidrIp"), ipv6DestCidrIp);
-}
-
-std::string AuthorizeSecurityGroupRequest::getPolicy() const {
-  return policy_;
-}
-
-void AuthorizeSecurityGroupRequest::setPolicy(const std::string &policy) {
-  policy_ = policy;
-  setParameter(std::string("Policy"), policy);
 }
 
 std::string AuthorizeSecurityGroupRequest::getPortRange() const {

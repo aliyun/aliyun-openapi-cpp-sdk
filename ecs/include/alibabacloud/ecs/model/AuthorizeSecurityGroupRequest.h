@@ -28,6 +28,23 @@ namespace Ecs {
 namespace Model {
 class ALIBABACLOUD_ECS_EXPORT AuthorizeSecurityGroupRequest : public RpcServiceRequest {
 public:
+	struct Permissions {
+		std::string policy;
+		std::string priority;
+		std::string ipProtocol;
+		std::string sourceCidrIp;
+		std::string ipv6SourceCidrIp;
+		std::string sourceGroupId;
+		std::string sourcePrefixListId;
+		std::string portRange;
+		std::string destCidrIp;
+		std::string ipv6DestCidrIp;
+		std::string sourcePortRange;
+		std::string sourceGroupOwnerAccount;
+		long sourceGroupOwnerId;
+		std::string nicType;
+		std::string description;
+	};
 	AuthorizeSecurityGroupRequest();
 	~AuthorizeSecurityGroupRequest();
 	std::string getNicType() const;
@@ -50,12 +67,14 @@ public:
 	void setSourceGroupOwnerAccount(const std::string &sourceGroupOwnerAccount);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	std::vector<Permissions> getPermissions() const;
+	void setPermissions(const std::vector<Permissions> &permissions);
+	std::string getPolicy() const;
+	void setPolicy(const std::string &policy);
 	std::string getIpv6SourceCidrIp() const;
 	void setIpv6SourceCidrIp(const std::string &ipv6SourceCidrIp);
 	std::string getIpv6DestCidrIp() const;
 	void setIpv6DestCidrIp(const std::string &ipv6DestCidrIp);
-	std::string getPolicy() const;
-	void setPolicy(const std::string &policy);
 	std::string getPortRange() const;
 	void setPortRange(const std::string &portRange);
 	std::string getResourceOwnerAccount() const;
@@ -86,9 +105,10 @@ private:
 	long sourceGroupOwnerId_;
 	std::string sourceGroupOwnerAccount_;
 	std::string regionId_;
+	std::vector<Permissions> permissions_;
+	std::string policy_;
 	std::string ipv6SourceCidrIp_;
 	std::string ipv6DestCidrIp_;
-	std::string policy_;
 	std::string portRange_;
 	std::string resourceOwnerAccount_;
 	std::string ipProtocol_;

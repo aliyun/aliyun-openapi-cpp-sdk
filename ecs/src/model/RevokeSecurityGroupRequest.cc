@@ -115,13 +115,38 @@ void RevokeSecurityGroupRequest::setRegionId(const std::string &regionId) {
   setParameter(std::string("RegionId"), regionId);
 }
 
-std::string RevokeSecurityGroupRequest::getIpv6DestCidrIp() const {
-  return ipv6DestCidrIp_;
+std::vector<RevokeSecurityGroupRequest::Permissions> RevokeSecurityGroupRequest::getPermissions() const {
+  return permissions_;
 }
 
-void RevokeSecurityGroupRequest::setIpv6DestCidrIp(const std::string &ipv6DestCidrIp) {
-  ipv6DestCidrIp_ = ipv6DestCidrIp;
-  setParameter(std::string("Ipv6DestCidrIp"), ipv6DestCidrIp);
+void RevokeSecurityGroupRequest::setPermissions(const std::vector<RevokeSecurityGroupRequest::Permissions> &permissions) {
+  permissions_ = permissions;
+  for(int dep1 = 0; dep1 != permissions.size(); dep1++) {
+    setParameter(std::string("Permissions") + "." + std::to_string(dep1 + 1) + ".Policy", permissions[dep1].policy);
+    setParameter(std::string("Permissions") + "." + std::to_string(dep1 + 1) + ".Priority", permissions[dep1].priority);
+    setParameter(std::string("Permissions") + "." + std::to_string(dep1 + 1) + ".IpProtocol", permissions[dep1].ipProtocol);
+    setParameter(std::string("Permissions") + "." + std::to_string(dep1 + 1) + ".SourceCidrIp", permissions[dep1].sourceCidrIp);
+    setParameter(std::string("Permissions") + "." + std::to_string(dep1 + 1) + ".Ipv6SourceCidrIp", permissions[dep1].ipv6SourceCidrIp);
+    setParameter(std::string("Permissions") + "." + std::to_string(dep1 + 1) + ".SourceGroupId", permissions[dep1].sourceGroupId);
+    setParameter(std::string("Permissions") + "." + std::to_string(dep1 + 1) + ".SourcePrefixListId", permissions[dep1].sourcePrefixListId);
+    setParameter(std::string("Permissions") + "." + std::to_string(dep1 + 1) + ".PortRange", permissions[dep1].portRange);
+    setParameter(std::string("Permissions") + "." + std::to_string(dep1 + 1) + ".DestCidrIp", permissions[dep1].destCidrIp);
+    setParameter(std::string("Permissions") + "." + std::to_string(dep1 + 1) + ".Ipv6DestCidrIp", permissions[dep1].ipv6DestCidrIp);
+    setParameter(std::string("Permissions") + "." + std::to_string(dep1 + 1) + ".SourcePortRange", permissions[dep1].sourcePortRange);
+    setParameter(std::string("Permissions") + "." + std::to_string(dep1 + 1) + ".SourceGroupOwnerAccount", permissions[dep1].sourceGroupOwnerAccount);
+    setParameter(std::string("Permissions") + "." + std::to_string(dep1 + 1) + ".SourceGroupOwnerId", std::to_string(permissions[dep1].sourceGroupOwnerId));
+    setParameter(std::string("Permissions") + "." + std::to_string(dep1 + 1) + ".NicType", permissions[dep1].nicType);
+    setParameter(std::string("Permissions") + "." + std::to_string(dep1 + 1) + ".Description", permissions[dep1].description);
+  }
+}
+
+std::string RevokeSecurityGroupRequest::getPolicy() const {
+  return policy_;
+}
+
+void RevokeSecurityGroupRequest::setPolicy(const std::string &policy) {
+  policy_ = policy;
+  setParameter(std::string("Policy"), policy);
 }
 
 std::string RevokeSecurityGroupRequest::getIpv6SourceCidrIp() const {
@@ -133,13 +158,13 @@ void RevokeSecurityGroupRequest::setIpv6SourceCidrIp(const std::string &ipv6Sour
   setParameter(std::string("Ipv6SourceCidrIp"), ipv6SourceCidrIp);
 }
 
-std::string RevokeSecurityGroupRequest::getPolicy() const {
-  return policy_;
+std::string RevokeSecurityGroupRequest::getIpv6DestCidrIp() const {
+  return ipv6DestCidrIp_;
 }
 
-void RevokeSecurityGroupRequest::setPolicy(const std::string &policy) {
-  policy_ = policy;
-  setParameter(std::string("Policy"), policy);
+void RevokeSecurityGroupRequest::setIpv6DestCidrIp(const std::string &ipv6DestCidrIp) {
+  ipv6DestCidrIp_ = ipv6DestCidrIp;
+  setParameter(std::string("Ipv6DestCidrIp"), ipv6DestCidrIp);
 }
 
 std::string RevokeSecurityGroupRequest::getPortRange() const {
