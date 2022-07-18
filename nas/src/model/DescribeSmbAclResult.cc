@@ -42,6 +42,8 @@ void DescribeSmbAclResult::parse(const std::string &payload)
 	auto aclNode = value["Acl"];
 	if(!aclNode["AuthMethod"].isNull())
 		acl_.authMethod = aclNode["AuthMethod"].asString();
+	if(!aclNode["AuthCenter"].isNull())
+		acl_.authCenter = aclNode["AuthCenter"].asString();
 	if(!aclNode["EnableAnonymousAccess"].isNull())
 		acl_.enableAnonymousAccess = aclNode["EnableAnonymousAccess"].asString() == "true";
 	if(!aclNode["Enabled"].isNull())

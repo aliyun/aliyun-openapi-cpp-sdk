@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_NAS_MODEL_GETRECYCLEBINATTRIBUTERESULT_H_
-#define ALIBABACLOUD_NAS_MODEL_GETRECYCLEBINATTRIBUTERESULT_H_
+#ifndef ALIBABACLOUD_NAS_MODEL_CREATEFILERESULT_H_
+#define ALIBABACLOUD_NAS_MODEL_CREATEFILERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,31 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_NAS_EXPORT GetRecycleBinAttributeResult : public ServiceResult
+			class ALIBABACLOUD_NAS_EXPORT CreateFileResult : public ServiceResult
 			{
 			public:
-				struct RecycleBinAttribute
-				{
-					std::string status;
-					long reservedDays;
-					long size;
-					long secondarySize;
-					std::string enableTime;
-				};
 
 
-				GetRecycleBinAttributeResult();
-				explicit GetRecycleBinAttributeResult(const std::string &payload);
-				~GetRecycleBinAttributeResult();
-				RecycleBinAttribute getRecycleBinAttribute()const;
+				CreateFileResult();
+				explicit CreateFileResult(const std::string &payload);
+				~CreateFileResult();
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				RecycleBinAttribute recycleBinAttribute_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_NAS_MODEL_GETRECYCLEBINATTRIBUTERESULT_H_
+#endif // !ALIBABACLOUD_NAS_MODEL_CREATEFILERESULT_H_

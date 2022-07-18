@@ -31,21 +31,21 @@ NASClient::NASClient(const Credentials &credentials, const ClientConfiguration &
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "nas");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "NAS");
 }
 
 NASClient::NASClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "nas");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "NAS");
 }
 
 NASClient::NASClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "nas");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "NAS");
 }
 
 NASClient::~NASClient()
@@ -585,6 +585,42 @@ NASClient::CreateDataFlowTaskOutcomeCallable NASClient::createDataFlowTaskCallab
 			[this, request]()
 			{
 			return this->createDataFlowTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+NASClient::CreateFileOutcome NASClient::createFile(const CreateFileRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateFileOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateFileOutcome(CreateFileResult(outcome.result()));
+	else
+		return CreateFileOutcome(outcome.error());
+}
+
+void NASClient::createFileAsync(const CreateFileRequest& request, const CreateFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createFile(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+NASClient::CreateFileOutcomeCallable NASClient::createFileCallable(const CreateFileRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateFileOutcome()>>(
+			[this, request]()
+			{
+			return this->createFile(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -54,6 +54,7 @@ namespace AlibabaCloud
 					std::string networkType;
 					std::vector<MountTarget::ClientMasterNode> clientMasterNodes;
 					std::vector<MountTarget::Tag> tags;
+					std::string iPVersion;
 				};
 
 

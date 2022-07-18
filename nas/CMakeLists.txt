@@ -51,6 +51,8 @@ set(nas_public_header_model
 	include/alibabacloud/nas/model/CreateDataFlowResult.h
 	include/alibabacloud/nas/model/CreateDataFlowTaskRequest.h
 	include/alibabacloud/nas/model/CreateDataFlowTaskResult.h
+	include/alibabacloud/nas/model/CreateFileRequest.h
+	include/alibabacloud/nas/model/CreateFileResult.h
 	include/alibabacloud/nas/model/CreateFileSystemRequest.h
 	include/alibabacloud/nas/model/CreateFileSystemResult.h
 	include/alibabacloud/nas/model/CreateFilesetRequest.h
@@ -252,6 +254,8 @@ set(nas_src
 	src/model/CreateDataFlowResult.cc
 	src/model/CreateDataFlowTaskRequest.cc
 	src/model/CreateDataFlowTaskResult.cc
+	src/model/CreateFileRequest.cc
+	src/model/CreateFileResult.cc
 	src/model/CreateFileSystemRequest.cc
 	src/model/CreateFileSystemResult.cc
 	src/model/CreateFilesetRequest.cc

@@ -35,6 +35,7 @@ namespace AlibabaCloud
 				struct Entry
 				{
 					std::string type;
+					std::string owner;
 					std::string storageType;
 					std::string inode;
 					std::string atime;

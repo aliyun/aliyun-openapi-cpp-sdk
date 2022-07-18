@@ -57,6 +57,8 @@ void DescribeMountTargetsResult::parse(const std::string &payload)
 			mountTargetsObject.vswId = valueMountTargetsMountTarget["VswId"].asString();
 		if(!valueMountTargetsMountTarget["NetworkType"].isNull())
 			mountTargetsObject.networkType = valueMountTargetsMountTarget["NetworkType"].asString();
+		if(!valueMountTargetsMountTarget["IPVersion"].isNull())
+			mountTargetsObject.iPVersion = valueMountTargetsMountTarget["IPVersion"].asString();
 		auto allClientMasterNodesNode = valueMountTargetsMountTarget["ClientMasterNodes"]["ClientMasterNode"];
 		for (auto valueMountTargetsMountTargetClientMasterNodesClientMasterNode : allClientMasterNodesNode)
 		{

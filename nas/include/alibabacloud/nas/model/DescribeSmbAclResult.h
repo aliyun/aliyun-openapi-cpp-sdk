@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					std::string homeDirPath;
 					bool enableAnonymousAccess;
+					std::string authCenter;
 					bool enabled;
 					std::string superAdminSid;
 					bool rejectUnencryptedAccess;

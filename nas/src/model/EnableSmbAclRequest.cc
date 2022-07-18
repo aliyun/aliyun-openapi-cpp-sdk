@@ -52,3 +52,21 @@ void EnableSmbAclRequest::setFileSystemId(const std::string &fileSystemId) {
   setParameter(std::string("FileSystemId"), fileSystemId);
 }
 
+std::string EnableSmbAclRequest::getAuthCenter() const {
+  return authCenter_;
+}
+
+void EnableSmbAclRequest::setAuthCenter(const std::string &authCenter) {
+  authCenter_ = authCenter;
+  setParameter(std::string("AuthCenter"), authCenter);
+}
+
+std::string EnableSmbAclRequest::getAuthMethod() const {
+  return authMethod_;
+}
+
+void EnableSmbAclRequest::setAuthMethod(const std::string &authMethod) {
+  authMethod_ = authMethod;
+  setParameter(std::string("AuthMethod"), authMethod);
+}
+

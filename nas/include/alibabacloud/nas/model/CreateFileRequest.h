@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_NAS_MODEL_ENABLESMBACLREQUEST_H_
-#define ALIBABACLOUD_NAS_MODEL_ENABLESMBACLREQUEST_H_
+#ifndef ALIBABACLOUD_NAS_MODEL_CREATEFILEREQUEST_H_
+#define ALIBABACLOUD_NAS_MODEL_CREATEFILEREQUEST_H_
 
 #include <alibabacloud/nas/NASExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,29 +26,29 @@
 namespace AlibabaCloud {
 namespace NAS {
 namespace Model {
-class ALIBABACLOUD_NAS_EXPORT EnableSmbAclRequest : public RpcServiceRequest {
+class ALIBABACLOUD_NAS_EXPORT CreateFileRequest : public RpcServiceRequest {
 public:
-	EnableSmbAclRequest();
-	~EnableSmbAclRequest();
-	std::string getKeytab() const;
-	void setKeytab(const std::string &keytab);
-	std::string getKeytabMd5() const;
-	void setKeytabMd5(const std::string &keytabMd5);
+	CreateFileRequest();
+	~CreateFileRequest();
+	bool getOwnerAccessInheritable() const;
+	void setOwnerAccessInheritable(bool ownerAccessInheritable);
+	std::string getType() const;
+	void setType(const std::string &type);
+	std::string getPath() const;
+	void setPath(const std::string &path);
 	std::string getFileSystemId() const;
 	void setFileSystemId(const std::string &fileSystemId);
-	std::string getAuthCenter() const;
-	void setAuthCenter(const std::string &authCenter);
-	std::string getAuthMethod() const;
-	void setAuthMethod(const std::string &authMethod);
+	std::string getOwner() const;
+	void setOwner(const std::string &owner);
 
 private:
-	std::string keytab_;
-	std::string keytabMd5_;
+	bool ownerAccessInheritable_;
+	std::string type_;
+	std::string path_;
 	std::string fileSystemId_;
-	std::string authCenter_;
-	std::string authMethod_;
+	std::string owner_;
 };
 } // namespace Model
 } // namespace NAS
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_NAS_MODEL_ENABLESMBACLREQUEST_H_
+#endif // !ALIBABACLOUD_NAS_MODEL_CREATEFILEREQUEST_H_

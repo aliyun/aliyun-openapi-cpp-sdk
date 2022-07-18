@@ -42,6 +42,8 @@ void GetRecycleBinAttributeResult::parse(const std::string &payload)
 	auto recycleBinAttributeNode = value["RecycleBinAttribute"];
 	if(!recycleBinAttributeNode["Size"].isNull())
 		recycleBinAttribute_.size = std::stol(recycleBinAttributeNode["Size"].asString());
+	if(!recycleBinAttributeNode["SecondarySize"].isNull())
+		recycleBinAttribute_.secondarySize = std::stol(recycleBinAttributeNode["SecondarySize"].asString());
 	if(!recycleBinAttributeNode["Status"].isNull())
 		recycleBinAttribute_.status = recycleBinAttributeNode["Status"].asString();
 	if(!recycleBinAttributeNode["ReservedDays"].isNull())

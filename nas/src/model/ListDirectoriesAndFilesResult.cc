@@ -65,6 +65,8 @@ void ListDirectoriesAndFilesResult::parse(const std::string &payload)
 			entriesObject.inode = valueEntriesEntry["Inode"].asString();
 		if(!valueEntriesEntry["FileId"].isNull())
 			entriesObject.fileId = valueEntriesEntry["FileId"].asString();
+		if(!valueEntriesEntry["Owner"].isNull())
+			entriesObject.owner = valueEntriesEntry["Owner"].asString();
 		entries_.push_back(entriesObject);
 	}
 	if(!value["NextToken"].isNull())

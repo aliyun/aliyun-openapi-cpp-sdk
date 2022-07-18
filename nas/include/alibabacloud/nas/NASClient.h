@@ -52,6 +52,8 @@
 #include "model/CreateDataFlowResult.h"
 #include "model/CreateDataFlowTaskRequest.h"
 #include "model/CreateDataFlowTaskResult.h"
+#include "model/CreateFileRequest.h"
+#include "model/CreateFileResult.h"
 #include "model/CreateFileSystemRequest.h"
 #include "model/CreateFileSystemResult.h"
 #include "model/CreateFilesetRequest.h"
@@ -274,6 +276,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateDataFlowTaskResult> CreateDataFlowTaskOutcome;
 			typedef std::future<CreateDataFlowTaskOutcome> CreateDataFlowTaskOutcomeCallable;
 			typedef std::function<void(const NASClient*, const Model::CreateDataFlowTaskRequest&, const CreateDataFlowTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDataFlowTaskAsyncHandler;
+			typedef Outcome<Error, Model::CreateFileResult> CreateFileOutcome;
+			typedef std::future<CreateFileOutcome> CreateFileOutcomeCallable;
+			typedef std::function<void(const NASClient*, const Model::CreateFileRequest&, const CreateFileOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateFileAsyncHandler;
 			typedef Outcome<Error, Model::CreateFileSystemResult> CreateFileSystemOutcome;
 			typedef std::future<CreateFileSystemOutcome> CreateFileSystemOutcomeCallable;
 			typedef std::function<void(const NASClient*, const Model::CreateFileSystemRequest&, const CreateFileSystemOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateFileSystemAsyncHandler;
@@ -576,6 +581,9 @@ namespace AlibabaCloud
 			CreateDataFlowTaskOutcome createDataFlowTask(const Model::CreateDataFlowTaskRequest &request)const;
 			void createDataFlowTaskAsync(const Model::CreateDataFlowTaskRequest& request, const CreateDataFlowTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateDataFlowTaskOutcomeCallable createDataFlowTaskCallable(const Model::CreateDataFlowTaskRequest& request) const;
+			CreateFileOutcome createFile(const Model::CreateFileRequest &request)const;
+			void createFileAsync(const Model::CreateFileRequest& request, const CreateFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateFileOutcomeCallable createFileCallable(const Model::CreateFileRequest& request) const;
 			CreateFileSystemOutcome createFileSystem(const Model::CreateFileSystemRequest &request)const;
 			void createFileSystemAsync(const Model::CreateFileSystemRequest& request, const CreateFileSystemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateFileSystemOutcomeCallable createFileSystemCallable(const Model::CreateFileSystemRequest& request) const;

@@ -79,6 +79,15 @@ void ModifySmbAclRequest::setFileSystemId(const std::string &fileSystemId) {
   setParameter(std::string("FileSystemId"), fileSystemId);
 }
 
+std::string ModifySmbAclRequest::getAuthCenter() const {
+  return authCenter_;
+}
+
+void ModifySmbAclRequest::setAuthCenter(const std::string &authCenter) {
+  authCenter_ = authCenter;
+  setParameter(std::string("AuthCenter"), authCenter);
+}
+
 std::string ModifySmbAclRequest::getHomeDirPath() const {
   return homeDirPath_;
 }
@@ -95,5 +104,14 @@ bool ModifySmbAclRequest::getEnableAnonymousAccess() const {
 void ModifySmbAclRequest::setEnableAnonymousAccess(bool enableAnonymousAccess) {
   enableAnonymousAccess_ = enableAnonymousAccess;
   setParameter(std::string("EnableAnonymousAccess"), enableAnonymousAccess ? "true" : "false");
+}
+
+std::string ModifySmbAclRequest::getAuthMethod() const {
+  return authMethod_;
+}
+
+void ModifySmbAclRequest::setAuthMethod(const std::string &authMethod) {
+  authMethod_ = authMethod;
+  setParameter(std::string("AuthMethod"), authMethod);
 }
 

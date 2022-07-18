@@ -42,10 +42,14 @@ public:
 	void setRejectUnencryptedAccess(bool rejectUnencryptedAccess);
 	std::string getFileSystemId() const;
 	void setFileSystemId(const std::string &fileSystemId);
+	std::string getAuthCenter() const;
+	void setAuthCenter(const std::string &authCenter);
 	std::string getHomeDirPath() const;
 	void setHomeDirPath(const std::string &homeDirPath);
 	bool getEnableAnonymousAccess() const;
 	void setEnableAnonymousAccess(bool enableAnonymousAccess);
+	std::string getAuthMethod() const;
+	void setAuthMethod(const std::string &authMethod);
 
 private:
 	bool encryptData_;
@@ -54,8 +58,10 @@ private:
 	std::string keytabMd5_;
 	bool rejectUnencryptedAccess_;
 	std::string fileSystemId_;
+	std::string authCenter_;
 	std::string homeDirPath_;
 	bool enableAnonymousAccess_;
+	std::string authMethod_;
 };
 } // namespace Model
 } // namespace NAS
