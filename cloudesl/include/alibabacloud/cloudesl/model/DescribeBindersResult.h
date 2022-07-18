@@ -36,8 +36,8 @@ namespace AlibabaCloud
 				{
 					std::string bindId;
 					std::string originalPrice;
-					std::string gmtModified;
 					std::string actionPrice;
+					std::string gmtModified;
 					std::string eslPic;
 					std::string promotionStart;
 					std::string itemBarCode;
@@ -50,12 +50,13 @@ namespace AlibabaCloud
 					std::string priceUnit;
 					std::string itemShortTitle;
 					std::string storeId;
+					std::string containerName;
 					std::string itemTitle;
-					std::string eslStatus;
 					std::string skuId;
-					std::string templateId;
-					std::string eslConnectAp;
+					std::string eslStatus;
 					bool bePromotion;
+					std::string eslConnectAp;
+					std::string templateId;
 				};
 
 

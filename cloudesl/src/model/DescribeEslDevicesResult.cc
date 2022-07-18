@@ -67,6 +67,10 @@ void DescribeEslDevicesResult::parse(const std::string &payload)
 			eslDevicesObject.mac = valueEslDevicesEslDeviceInfo["Mac"].asString();
 		if(!valueEslDevicesEslDeviceInfo["TypeEncode"].isNull())
 			eslDevicesObject.typeEncode = valueEslDevicesEslDeviceInfo["TypeEncode"].asString();
+		if(!valueEslDevicesEslDeviceInfo["LayoutId"].isNull())
+			eslDevicesObject.layoutId = valueEslDevicesEslDeviceInfo["LayoutId"].asString();
+		if(!valueEslDevicesEslDeviceInfo["LayoutName"].isNull())
+			eslDevicesObject.layoutName = valueEslDevicesEslDeviceInfo["LayoutName"].asString();
 		eslDevices_.push_back(eslDevicesObject);
 	}
 	if(!value["ErrorMessage"].isNull())

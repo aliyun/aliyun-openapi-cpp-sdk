@@ -42,10 +42,18 @@
 #include "model/BatchInsertItemsResult.h"
 #include "model/BatchUpdateEventRequest.h"
 #include "model/BatchUpdateEventResult.h"
+#include "model/BindDeviceLayoutRequest.h"
+#include "model/BindDeviceLayoutResult.h"
 #include "model/BindEslDeviceRequest.h"
 #include "model/BindEslDeviceResult.h"
 #include "model/CheckServiceLinkedRoleForDeletingRequest.h"
 #include "model/CheckServiceLinkedRoleForDeletingResult.h"
+#include "model/CopyCompanyTemplateViewRequest.h"
+#include "model/CopyCompanyTemplateViewResult.h"
+#include "model/CopyLayoutRequest.h"
+#include "model/CopyLayoutResult.h"
+#include "model/CopyTemplateGroupRequest.h"
+#include "model/CopyTemplateGroupResult.h"
 #include "model/CreateStoreRequest.h"
 #include "model/CreateStoreResult.h"
 #include "model/DeleteApDeviceRequest.h"
@@ -54,10 +62,14 @@
 #include "model/DeleteCompanyTemplateResult.h"
 #include "model/DeleteItemRequest.h"
 #include "model/DeleteItemResult.h"
+#include "model/DeleteLayoutRequest.h"
+#include "model/DeleteLayoutResult.h"
 #include "model/DeleteMaterialRequest.h"
 #include "model/DeleteMaterialResult.h"
 #include "model/DeleteStoreRequest.h"
 #include "model/DeleteStoreResult.h"
+#include "model/DeleteTemplateGroupRequest.h"
+#include "model/DeleteTemplateGroupResult.h"
 #include "model/DeleteUserRequest.h"
 #include "model/DeleteUserResult.h"
 #include "model/DescribeApDevicesRequest.h"
@@ -102,22 +114,44 @@
 #include "model/DescribeUsersResult.h"
 #include "model/ExportEslDevicesRequest.h"
 #include "model/ExportEslDevicesResult.h"
+#include "model/GetAddMaterialStatusRequest.h"
+#include "model/GetAddMaterialStatusResult.h"
 #include "model/GetCompanyTemplatePictureRequest.h"
 #include "model/GetCompanyTemplatePictureResult.h"
 #include "model/GetCompanyTemplatePictureByJobRequest.h"
 #include "model/GetCompanyTemplatePictureByJobResult.h"
 #include "model/GetCompanyTemplatePictureNewRequest.h"
 #include "model/GetCompanyTemplatePictureNewResult.h"
+#include "model/GetEslDevicesRequest.h"
+#include "model/GetEslDevicesResult.h"
 #include "model/GetItemMaterialRequest.h"
 #include "model/GetItemMaterialResult.h"
 #include "model/GetUserRequest.h"
 #include "model/GetUserResult.h"
+#include "model/QueryContainerListRequest.h"
+#include "model/QueryContainerListResult.h"
+#include "model/QueryLayoutByDeviceRequest.h"
+#include "model/QueryLayoutByDeviceResult.h"
+#include "model/QueryLayoutDetailRequest.h"
+#include "model/QueryLayoutDetailResult.h"
+#include "model/QueryTemplateGroupListRequest.h"
+#include "model/QueryTemplateGroupListResult.h"
+#include "model/QueryTemplateListByGroupIdRequest.h"
+#include "model/QueryTemplateListByGroupIdResult.h"
+#include "model/SaveLayoutRequest.h"
+#include "model/SaveLayoutResult.h"
+#include "model/SaveTemplateGroupRequest.h"
+#include "model/SaveTemplateGroupResult.h"
 #include "model/SyncAddMaterialRequest.h"
 #include "model/SyncAddMaterialResult.h"
 #include "model/UnassignUserRequest.h"
 #include "model/UnassignUserResult.h"
 #include "model/UnbindEslDeviceRequest.h"
 #include "model/UnbindEslDeviceResult.h"
+#include "model/UpdateCompanyTemplateRequest.h"
+#include "model/UpdateCompanyTemplateResult.h"
+#include "model/UpdateCompanyTemplateViewRequest.h"
+#include "model/UpdateCompanyTemplateViewResult.h"
 #include "model/UpdateEslDeviceLightRequest.h"
 #include "model/UpdateEslDeviceLightResult.h"
 #include "model/UpdateItemMaterialRequest.h"
@@ -169,12 +203,24 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::BatchUpdateEventResult> BatchUpdateEventOutcome;
 			typedef std::future<BatchUpdateEventOutcome> BatchUpdateEventOutcomeCallable;
 			typedef std::function<void(const CloudeslClient*, const Model::BatchUpdateEventRequest&, const BatchUpdateEventOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchUpdateEventAsyncHandler;
+			typedef Outcome<Error, Model::BindDeviceLayoutResult> BindDeviceLayoutOutcome;
+			typedef std::future<BindDeviceLayoutOutcome> BindDeviceLayoutOutcomeCallable;
+			typedef std::function<void(const CloudeslClient*, const Model::BindDeviceLayoutRequest&, const BindDeviceLayoutOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BindDeviceLayoutAsyncHandler;
 			typedef Outcome<Error, Model::BindEslDeviceResult> BindEslDeviceOutcome;
 			typedef std::future<BindEslDeviceOutcome> BindEslDeviceOutcomeCallable;
 			typedef std::function<void(const CloudeslClient*, const Model::BindEslDeviceRequest&, const BindEslDeviceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BindEslDeviceAsyncHandler;
 			typedef Outcome<Error, Model::CheckServiceLinkedRoleForDeletingResult> CheckServiceLinkedRoleForDeletingOutcome;
 			typedef std::future<CheckServiceLinkedRoleForDeletingOutcome> CheckServiceLinkedRoleForDeletingOutcomeCallable;
 			typedef std::function<void(const CloudeslClient*, const Model::CheckServiceLinkedRoleForDeletingRequest&, const CheckServiceLinkedRoleForDeletingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckServiceLinkedRoleForDeletingAsyncHandler;
+			typedef Outcome<Error, Model::CopyCompanyTemplateViewResult> CopyCompanyTemplateViewOutcome;
+			typedef std::future<CopyCompanyTemplateViewOutcome> CopyCompanyTemplateViewOutcomeCallable;
+			typedef std::function<void(const CloudeslClient*, const Model::CopyCompanyTemplateViewRequest&, const CopyCompanyTemplateViewOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CopyCompanyTemplateViewAsyncHandler;
+			typedef Outcome<Error, Model::CopyLayoutResult> CopyLayoutOutcome;
+			typedef std::future<CopyLayoutOutcome> CopyLayoutOutcomeCallable;
+			typedef std::function<void(const CloudeslClient*, const Model::CopyLayoutRequest&, const CopyLayoutOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CopyLayoutAsyncHandler;
+			typedef Outcome<Error, Model::CopyTemplateGroupResult> CopyTemplateGroupOutcome;
+			typedef std::future<CopyTemplateGroupOutcome> CopyTemplateGroupOutcomeCallable;
+			typedef std::function<void(const CloudeslClient*, const Model::CopyTemplateGroupRequest&, const CopyTemplateGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CopyTemplateGroupAsyncHandler;
 			typedef Outcome<Error, Model::CreateStoreResult> CreateStoreOutcome;
 			typedef std::future<CreateStoreOutcome> CreateStoreOutcomeCallable;
 			typedef std::function<void(const CloudeslClient*, const Model::CreateStoreRequest&, const CreateStoreOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateStoreAsyncHandler;
@@ -187,12 +233,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteItemResult> DeleteItemOutcome;
 			typedef std::future<DeleteItemOutcome> DeleteItemOutcomeCallable;
 			typedef std::function<void(const CloudeslClient*, const Model::DeleteItemRequest&, const DeleteItemOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteItemAsyncHandler;
+			typedef Outcome<Error, Model::DeleteLayoutResult> DeleteLayoutOutcome;
+			typedef std::future<DeleteLayoutOutcome> DeleteLayoutOutcomeCallable;
+			typedef std::function<void(const CloudeslClient*, const Model::DeleteLayoutRequest&, const DeleteLayoutOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLayoutAsyncHandler;
 			typedef Outcome<Error, Model::DeleteMaterialResult> DeleteMaterialOutcome;
 			typedef std::future<DeleteMaterialOutcome> DeleteMaterialOutcomeCallable;
 			typedef std::function<void(const CloudeslClient*, const Model::DeleteMaterialRequest&, const DeleteMaterialOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteMaterialAsyncHandler;
 			typedef Outcome<Error, Model::DeleteStoreResult> DeleteStoreOutcome;
 			typedef std::future<DeleteStoreOutcome> DeleteStoreOutcomeCallable;
 			typedef std::function<void(const CloudeslClient*, const Model::DeleteStoreRequest&, const DeleteStoreOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteStoreAsyncHandler;
+			typedef Outcome<Error, Model::DeleteTemplateGroupResult> DeleteTemplateGroupOutcome;
+			typedef std::future<DeleteTemplateGroupOutcome> DeleteTemplateGroupOutcomeCallable;
+			typedef std::function<void(const CloudeslClient*, const Model::DeleteTemplateGroupRequest&, const DeleteTemplateGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTemplateGroupAsyncHandler;
 			typedef Outcome<Error, Model::DeleteUserResult> DeleteUserOutcome;
 			typedef std::future<DeleteUserOutcome> DeleteUserOutcomeCallable;
 			typedef std::function<void(const CloudeslClient*, const Model::DeleteUserRequest&, const DeleteUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUserAsyncHandler;
@@ -259,6 +311,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ExportEslDevicesResult> ExportEslDevicesOutcome;
 			typedef std::future<ExportEslDevicesOutcome> ExportEslDevicesOutcomeCallable;
 			typedef std::function<void(const CloudeslClient*, const Model::ExportEslDevicesRequest&, const ExportEslDevicesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ExportEslDevicesAsyncHandler;
+			typedef Outcome<Error, Model::GetAddMaterialStatusResult> GetAddMaterialStatusOutcome;
+			typedef std::future<GetAddMaterialStatusOutcome> GetAddMaterialStatusOutcomeCallable;
+			typedef std::function<void(const CloudeslClient*, const Model::GetAddMaterialStatusRequest&, const GetAddMaterialStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAddMaterialStatusAsyncHandler;
 			typedef Outcome<Error, Model::GetCompanyTemplatePictureResult> GetCompanyTemplatePictureOutcome;
 			typedef std::future<GetCompanyTemplatePictureOutcome> GetCompanyTemplatePictureOutcomeCallable;
 			typedef std::function<void(const CloudeslClient*, const Model::GetCompanyTemplatePictureRequest&, const GetCompanyTemplatePictureOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetCompanyTemplatePictureAsyncHandler;
@@ -268,12 +323,36 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetCompanyTemplatePictureNewResult> GetCompanyTemplatePictureNewOutcome;
 			typedef std::future<GetCompanyTemplatePictureNewOutcome> GetCompanyTemplatePictureNewOutcomeCallable;
 			typedef std::function<void(const CloudeslClient*, const Model::GetCompanyTemplatePictureNewRequest&, const GetCompanyTemplatePictureNewOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetCompanyTemplatePictureNewAsyncHandler;
+			typedef Outcome<Error, Model::GetEslDevicesResult> GetEslDevicesOutcome;
+			typedef std::future<GetEslDevicesOutcome> GetEslDevicesOutcomeCallable;
+			typedef std::function<void(const CloudeslClient*, const Model::GetEslDevicesRequest&, const GetEslDevicesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetEslDevicesAsyncHandler;
 			typedef Outcome<Error, Model::GetItemMaterialResult> GetItemMaterialOutcome;
 			typedef std::future<GetItemMaterialOutcome> GetItemMaterialOutcomeCallable;
 			typedef std::function<void(const CloudeslClient*, const Model::GetItemMaterialRequest&, const GetItemMaterialOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetItemMaterialAsyncHandler;
 			typedef Outcome<Error, Model::GetUserResult> GetUserOutcome;
 			typedef std::future<GetUserOutcome> GetUserOutcomeCallable;
 			typedef std::function<void(const CloudeslClient*, const Model::GetUserRequest&, const GetUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetUserAsyncHandler;
+			typedef Outcome<Error, Model::QueryContainerListResult> QueryContainerListOutcome;
+			typedef std::future<QueryContainerListOutcome> QueryContainerListOutcomeCallable;
+			typedef std::function<void(const CloudeslClient*, const Model::QueryContainerListRequest&, const QueryContainerListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryContainerListAsyncHandler;
+			typedef Outcome<Error, Model::QueryLayoutByDeviceResult> QueryLayoutByDeviceOutcome;
+			typedef std::future<QueryLayoutByDeviceOutcome> QueryLayoutByDeviceOutcomeCallable;
+			typedef std::function<void(const CloudeslClient*, const Model::QueryLayoutByDeviceRequest&, const QueryLayoutByDeviceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryLayoutByDeviceAsyncHandler;
+			typedef Outcome<Error, Model::QueryLayoutDetailResult> QueryLayoutDetailOutcome;
+			typedef std::future<QueryLayoutDetailOutcome> QueryLayoutDetailOutcomeCallable;
+			typedef std::function<void(const CloudeslClient*, const Model::QueryLayoutDetailRequest&, const QueryLayoutDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryLayoutDetailAsyncHandler;
+			typedef Outcome<Error, Model::QueryTemplateGroupListResult> QueryTemplateGroupListOutcome;
+			typedef std::future<QueryTemplateGroupListOutcome> QueryTemplateGroupListOutcomeCallable;
+			typedef std::function<void(const CloudeslClient*, const Model::QueryTemplateGroupListRequest&, const QueryTemplateGroupListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryTemplateGroupListAsyncHandler;
+			typedef Outcome<Error, Model::QueryTemplateListByGroupIdResult> QueryTemplateListByGroupIdOutcome;
+			typedef std::future<QueryTemplateListByGroupIdOutcome> QueryTemplateListByGroupIdOutcomeCallable;
+			typedef std::function<void(const CloudeslClient*, const Model::QueryTemplateListByGroupIdRequest&, const QueryTemplateListByGroupIdOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryTemplateListByGroupIdAsyncHandler;
+			typedef Outcome<Error, Model::SaveLayoutResult> SaveLayoutOutcome;
+			typedef std::future<SaveLayoutOutcome> SaveLayoutOutcomeCallable;
+			typedef std::function<void(const CloudeslClient*, const Model::SaveLayoutRequest&, const SaveLayoutOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SaveLayoutAsyncHandler;
+			typedef Outcome<Error, Model::SaveTemplateGroupResult> SaveTemplateGroupOutcome;
+			typedef std::future<SaveTemplateGroupOutcome> SaveTemplateGroupOutcomeCallable;
+			typedef std::function<void(const CloudeslClient*, const Model::SaveTemplateGroupRequest&, const SaveTemplateGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SaveTemplateGroupAsyncHandler;
 			typedef Outcome<Error, Model::SyncAddMaterialResult> SyncAddMaterialOutcome;
 			typedef std::future<SyncAddMaterialOutcome> SyncAddMaterialOutcomeCallable;
 			typedef std::function<void(const CloudeslClient*, const Model::SyncAddMaterialRequest&, const SyncAddMaterialOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SyncAddMaterialAsyncHandler;
@@ -283,6 +362,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UnbindEslDeviceResult> UnbindEslDeviceOutcome;
 			typedef std::future<UnbindEslDeviceOutcome> UnbindEslDeviceOutcomeCallable;
 			typedef std::function<void(const CloudeslClient*, const Model::UnbindEslDeviceRequest&, const UnbindEslDeviceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnbindEslDeviceAsyncHandler;
+			typedef Outcome<Error, Model::UpdateCompanyTemplateResult> UpdateCompanyTemplateOutcome;
+			typedef std::future<UpdateCompanyTemplateOutcome> UpdateCompanyTemplateOutcomeCallable;
+			typedef std::function<void(const CloudeslClient*, const Model::UpdateCompanyTemplateRequest&, const UpdateCompanyTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateCompanyTemplateAsyncHandler;
+			typedef Outcome<Error, Model::UpdateCompanyTemplateViewResult> UpdateCompanyTemplateViewOutcome;
+			typedef std::future<UpdateCompanyTemplateViewOutcome> UpdateCompanyTemplateViewOutcomeCallable;
+			typedef std::function<void(const CloudeslClient*, const Model::UpdateCompanyTemplateViewRequest&, const UpdateCompanyTemplateViewOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateCompanyTemplateViewAsyncHandler;
 			typedef Outcome<Error, Model::UpdateEslDeviceLightResult> UpdateEslDeviceLightOutcome;
 			typedef std::future<UpdateEslDeviceLightOutcome> UpdateEslDeviceLightOutcomeCallable;
 			typedef std::function<void(const CloudeslClient*, const Model::UpdateEslDeviceLightRequest&, const UpdateEslDeviceLightOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateEslDeviceLightAsyncHandler;
@@ -336,12 +421,24 @@ namespace AlibabaCloud
 			BatchUpdateEventOutcome batchUpdateEvent(const Model::BatchUpdateEventRequest &request)const;
 			void batchUpdateEventAsync(const Model::BatchUpdateEventRequest& request, const BatchUpdateEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			BatchUpdateEventOutcomeCallable batchUpdateEventCallable(const Model::BatchUpdateEventRequest& request) const;
+			BindDeviceLayoutOutcome bindDeviceLayout(const Model::BindDeviceLayoutRequest &request)const;
+			void bindDeviceLayoutAsync(const Model::BindDeviceLayoutRequest& request, const BindDeviceLayoutAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			BindDeviceLayoutOutcomeCallable bindDeviceLayoutCallable(const Model::BindDeviceLayoutRequest& request) const;
 			BindEslDeviceOutcome bindEslDevice(const Model::BindEslDeviceRequest &request)const;
 			void bindEslDeviceAsync(const Model::BindEslDeviceRequest& request, const BindEslDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			BindEslDeviceOutcomeCallable bindEslDeviceCallable(const Model::BindEslDeviceRequest& request) const;
 			CheckServiceLinkedRoleForDeletingOutcome checkServiceLinkedRoleForDeleting(const Model::CheckServiceLinkedRoleForDeletingRequest &request)const;
 			void checkServiceLinkedRoleForDeletingAsync(const Model::CheckServiceLinkedRoleForDeletingRequest& request, const CheckServiceLinkedRoleForDeletingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CheckServiceLinkedRoleForDeletingOutcomeCallable checkServiceLinkedRoleForDeletingCallable(const Model::CheckServiceLinkedRoleForDeletingRequest& request) const;
+			CopyCompanyTemplateViewOutcome copyCompanyTemplateView(const Model::CopyCompanyTemplateViewRequest &request)const;
+			void copyCompanyTemplateViewAsync(const Model::CopyCompanyTemplateViewRequest& request, const CopyCompanyTemplateViewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CopyCompanyTemplateViewOutcomeCallable copyCompanyTemplateViewCallable(const Model::CopyCompanyTemplateViewRequest& request) const;
+			CopyLayoutOutcome copyLayout(const Model::CopyLayoutRequest &request)const;
+			void copyLayoutAsync(const Model::CopyLayoutRequest& request, const CopyLayoutAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CopyLayoutOutcomeCallable copyLayoutCallable(const Model::CopyLayoutRequest& request) const;
+			CopyTemplateGroupOutcome copyTemplateGroup(const Model::CopyTemplateGroupRequest &request)const;
+			void copyTemplateGroupAsync(const Model::CopyTemplateGroupRequest& request, const CopyTemplateGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CopyTemplateGroupOutcomeCallable copyTemplateGroupCallable(const Model::CopyTemplateGroupRequest& request) const;
 			CreateStoreOutcome createStore(const Model::CreateStoreRequest &request)const;
 			void createStoreAsync(const Model::CreateStoreRequest& request, const CreateStoreAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateStoreOutcomeCallable createStoreCallable(const Model::CreateStoreRequest& request) const;
@@ -354,12 +451,18 @@ namespace AlibabaCloud
 			DeleteItemOutcome deleteItem(const Model::DeleteItemRequest &request)const;
 			void deleteItemAsync(const Model::DeleteItemRequest& request, const DeleteItemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteItemOutcomeCallable deleteItemCallable(const Model::DeleteItemRequest& request) const;
+			DeleteLayoutOutcome deleteLayout(const Model::DeleteLayoutRequest &request)const;
+			void deleteLayoutAsync(const Model::DeleteLayoutRequest& request, const DeleteLayoutAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteLayoutOutcomeCallable deleteLayoutCallable(const Model::DeleteLayoutRequest& request) const;
 			DeleteMaterialOutcome deleteMaterial(const Model::DeleteMaterialRequest &request)const;
 			void deleteMaterialAsync(const Model::DeleteMaterialRequest& request, const DeleteMaterialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteMaterialOutcomeCallable deleteMaterialCallable(const Model::DeleteMaterialRequest& request) const;
 			DeleteStoreOutcome deleteStore(const Model::DeleteStoreRequest &request)const;
 			void deleteStoreAsync(const Model::DeleteStoreRequest& request, const DeleteStoreAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteStoreOutcomeCallable deleteStoreCallable(const Model::DeleteStoreRequest& request) const;
+			DeleteTemplateGroupOutcome deleteTemplateGroup(const Model::DeleteTemplateGroupRequest &request)const;
+			void deleteTemplateGroupAsync(const Model::DeleteTemplateGroupRequest& request, const DeleteTemplateGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteTemplateGroupOutcomeCallable deleteTemplateGroupCallable(const Model::DeleteTemplateGroupRequest& request) const;
 			DeleteUserOutcome deleteUser(const Model::DeleteUserRequest &request)const;
 			void deleteUserAsync(const Model::DeleteUserRequest& request, const DeleteUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteUserOutcomeCallable deleteUserCallable(const Model::DeleteUserRequest& request) const;
@@ -426,6 +529,9 @@ namespace AlibabaCloud
 			ExportEslDevicesOutcome exportEslDevices(const Model::ExportEslDevicesRequest &request)const;
 			void exportEslDevicesAsync(const Model::ExportEslDevicesRequest& request, const ExportEslDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ExportEslDevicesOutcomeCallable exportEslDevicesCallable(const Model::ExportEslDevicesRequest& request) const;
+			GetAddMaterialStatusOutcome getAddMaterialStatus(const Model::GetAddMaterialStatusRequest &request)const;
+			void getAddMaterialStatusAsync(const Model::GetAddMaterialStatusRequest& request, const GetAddMaterialStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetAddMaterialStatusOutcomeCallable getAddMaterialStatusCallable(const Model::GetAddMaterialStatusRequest& request) const;
 			GetCompanyTemplatePictureOutcome getCompanyTemplatePicture(const Model::GetCompanyTemplatePictureRequest &request)const;
 			void getCompanyTemplatePictureAsync(const Model::GetCompanyTemplatePictureRequest& request, const GetCompanyTemplatePictureAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetCompanyTemplatePictureOutcomeCallable getCompanyTemplatePictureCallable(const Model::GetCompanyTemplatePictureRequest& request) const;
@@ -435,12 +541,36 @@ namespace AlibabaCloud
 			GetCompanyTemplatePictureNewOutcome getCompanyTemplatePictureNew(const Model::GetCompanyTemplatePictureNewRequest &request)const;
 			void getCompanyTemplatePictureNewAsync(const Model::GetCompanyTemplatePictureNewRequest& request, const GetCompanyTemplatePictureNewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetCompanyTemplatePictureNewOutcomeCallable getCompanyTemplatePictureNewCallable(const Model::GetCompanyTemplatePictureNewRequest& request) const;
+			GetEslDevicesOutcome getEslDevices(const Model::GetEslDevicesRequest &request)const;
+			void getEslDevicesAsync(const Model::GetEslDevicesRequest& request, const GetEslDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetEslDevicesOutcomeCallable getEslDevicesCallable(const Model::GetEslDevicesRequest& request) const;
 			GetItemMaterialOutcome getItemMaterial(const Model::GetItemMaterialRequest &request)const;
 			void getItemMaterialAsync(const Model::GetItemMaterialRequest& request, const GetItemMaterialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetItemMaterialOutcomeCallable getItemMaterialCallable(const Model::GetItemMaterialRequest& request) const;
 			GetUserOutcome getUser(const Model::GetUserRequest &request)const;
 			void getUserAsync(const Model::GetUserRequest& request, const GetUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetUserOutcomeCallable getUserCallable(const Model::GetUserRequest& request) const;
+			QueryContainerListOutcome queryContainerList(const Model::QueryContainerListRequest &request)const;
+			void queryContainerListAsync(const Model::QueryContainerListRequest& request, const QueryContainerListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryContainerListOutcomeCallable queryContainerListCallable(const Model::QueryContainerListRequest& request) const;
+			QueryLayoutByDeviceOutcome queryLayoutByDevice(const Model::QueryLayoutByDeviceRequest &request)const;
+			void queryLayoutByDeviceAsync(const Model::QueryLayoutByDeviceRequest& request, const QueryLayoutByDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryLayoutByDeviceOutcomeCallable queryLayoutByDeviceCallable(const Model::QueryLayoutByDeviceRequest& request) const;
+			QueryLayoutDetailOutcome queryLayoutDetail(const Model::QueryLayoutDetailRequest &request)const;
+			void queryLayoutDetailAsync(const Model::QueryLayoutDetailRequest& request, const QueryLayoutDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryLayoutDetailOutcomeCallable queryLayoutDetailCallable(const Model::QueryLayoutDetailRequest& request) const;
+			QueryTemplateGroupListOutcome queryTemplateGroupList(const Model::QueryTemplateGroupListRequest &request)const;
+			void queryTemplateGroupListAsync(const Model::QueryTemplateGroupListRequest& request, const QueryTemplateGroupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryTemplateGroupListOutcomeCallable queryTemplateGroupListCallable(const Model::QueryTemplateGroupListRequest& request) const;
+			QueryTemplateListByGroupIdOutcome queryTemplateListByGroupId(const Model::QueryTemplateListByGroupIdRequest &request)const;
+			void queryTemplateListByGroupIdAsync(const Model::QueryTemplateListByGroupIdRequest& request, const QueryTemplateListByGroupIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryTemplateListByGroupIdOutcomeCallable queryTemplateListByGroupIdCallable(const Model::QueryTemplateListByGroupIdRequest& request) const;
+			SaveLayoutOutcome saveLayout(const Model::SaveLayoutRequest &request)const;
+			void saveLayoutAsync(const Model::SaveLayoutRequest& request, const SaveLayoutAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SaveLayoutOutcomeCallable saveLayoutCallable(const Model::SaveLayoutRequest& request) const;
+			SaveTemplateGroupOutcome saveTemplateGroup(const Model::SaveTemplateGroupRequest &request)const;
+			void saveTemplateGroupAsync(const Model::SaveTemplateGroupRequest& request, const SaveTemplateGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SaveTemplateGroupOutcomeCallable saveTemplateGroupCallable(const Model::SaveTemplateGroupRequest& request) const;
 			SyncAddMaterialOutcome syncAddMaterial(const Model::SyncAddMaterialRequest &request)const;
 			void syncAddMaterialAsync(const Model::SyncAddMaterialRequest& request, const SyncAddMaterialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SyncAddMaterialOutcomeCallable syncAddMaterialCallable(const Model::SyncAddMaterialRequest& request) const;
@@ -450,6 +580,12 @@ namespace AlibabaCloud
 			UnbindEslDeviceOutcome unbindEslDevice(const Model::UnbindEslDeviceRequest &request)const;
 			void unbindEslDeviceAsync(const Model::UnbindEslDeviceRequest& request, const UnbindEslDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UnbindEslDeviceOutcomeCallable unbindEslDeviceCallable(const Model::UnbindEslDeviceRequest& request) const;
+			UpdateCompanyTemplateOutcome updateCompanyTemplate(const Model::UpdateCompanyTemplateRequest &request)const;
+			void updateCompanyTemplateAsync(const Model::UpdateCompanyTemplateRequest& request, const UpdateCompanyTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateCompanyTemplateOutcomeCallable updateCompanyTemplateCallable(const Model::UpdateCompanyTemplateRequest& request) const;
+			UpdateCompanyTemplateViewOutcome updateCompanyTemplateView(const Model::UpdateCompanyTemplateViewRequest &request)const;
+			void updateCompanyTemplateViewAsync(const Model::UpdateCompanyTemplateViewRequest& request, const UpdateCompanyTemplateViewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateCompanyTemplateViewOutcomeCallable updateCompanyTemplateViewCallable(const Model::UpdateCompanyTemplateViewRequest& request) const;
 			UpdateEslDeviceLightOutcome updateEslDeviceLight(const Model::UpdateEslDeviceLightRequest &request)const;
 			void updateEslDeviceLightAsync(const Model::UpdateEslDeviceLightRequest& request, const UpdateEslDeviceLightAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateEslDeviceLightOutcomeCallable updateEslDeviceLightCallable(const Model::UpdateEslDeviceLightRequest& request) const;

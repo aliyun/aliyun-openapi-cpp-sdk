@@ -411,6 +411,42 @@ CloudeslClient::BatchUpdateEventOutcomeCallable CloudeslClient::batchUpdateEvent
 	return task->get_future();
 }
 
+CloudeslClient::BindDeviceLayoutOutcome CloudeslClient::bindDeviceLayout(const BindDeviceLayoutRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return BindDeviceLayoutOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return BindDeviceLayoutOutcome(BindDeviceLayoutResult(outcome.result()));
+	else
+		return BindDeviceLayoutOutcome(outcome.error());
+}
+
+void CloudeslClient::bindDeviceLayoutAsync(const BindDeviceLayoutRequest& request, const BindDeviceLayoutAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, bindDeviceLayout(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudeslClient::BindDeviceLayoutOutcomeCallable CloudeslClient::bindDeviceLayoutCallable(const BindDeviceLayoutRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<BindDeviceLayoutOutcome()>>(
+			[this, request]()
+			{
+			return this->bindDeviceLayout(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CloudeslClient::BindEslDeviceOutcome CloudeslClient::bindEslDevice(const BindEslDeviceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -477,6 +513,114 @@ CloudeslClient::CheckServiceLinkedRoleForDeletingOutcomeCallable CloudeslClient:
 			[this, request]()
 			{
 			return this->checkServiceLinkedRoleForDeleting(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudeslClient::CopyCompanyTemplateViewOutcome CloudeslClient::copyCompanyTemplateView(const CopyCompanyTemplateViewRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CopyCompanyTemplateViewOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CopyCompanyTemplateViewOutcome(CopyCompanyTemplateViewResult(outcome.result()));
+	else
+		return CopyCompanyTemplateViewOutcome(outcome.error());
+}
+
+void CloudeslClient::copyCompanyTemplateViewAsync(const CopyCompanyTemplateViewRequest& request, const CopyCompanyTemplateViewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, copyCompanyTemplateView(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudeslClient::CopyCompanyTemplateViewOutcomeCallable CloudeslClient::copyCompanyTemplateViewCallable(const CopyCompanyTemplateViewRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CopyCompanyTemplateViewOutcome()>>(
+			[this, request]()
+			{
+			return this->copyCompanyTemplateView(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudeslClient::CopyLayoutOutcome CloudeslClient::copyLayout(const CopyLayoutRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CopyLayoutOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CopyLayoutOutcome(CopyLayoutResult(outcome.result()));
+	else
+		return CopyLayoutOutcome(outcome.error());
+}
+
+void CloudeslClient::copyLayoutAsync(const CopyLayoutRequest& request, const CopyLayoutAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, copyLayout(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudeslClient::CopyLayoutOutcomeCallable CloudeslClient::copyLayoutCallable(const CopyLayoutRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CopyLayoutOutcome()>>(
+			[this, request]()
+			{
+			return this->copyLayout(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudeslClient::CopyTemplateGroupOutcome CloudeslClient::copyTemplateGroup(const CopyTemplateGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CopyTemplateGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CopyTemplateGroupOutcome(CopyTemplateGroupResult(outcome.result()));
+	else
+		return CopyTemplateGroupOutcome(outcome.error());
+}
+
+void CloudeslClient::copyTemplateGroupAsync(const CopyTemplateGroupRequest& request, const CopyTemplateGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, copyTemplateGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudeslClient::CopyTemplateGroupOutcomeCallable CloudeslClient::copyTemplateGroupCallable(const CopyTemplateGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CopyTemplateGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->copyTemplateGroup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -627,6 +771,42 @@ CloudeslClient::DeleteItemOutcomeCallable CloudeslClient::deleteItemCallable(con
 	return task->get_future();
 }
 
+CloudeslClient::DeleteLayoutOutcome CloudeslClient::deleteLayout(const DeleteLayoutRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteLayoutOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteLayoutOutcome(DeleteLayoutResult(outcome.result()));
+	else
+		return DeleteLayoutOutcome(outcome.error());
+}
+
+void CloudeslClient::deleteLayoutAsync(const DeleteLayoutRequest& request, const DeleteLayoutAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteLayout(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudeslClient::DeleteLayoutOutcomeCallable CloudeslClient::deleteLayoutCallable(const DeleteLayoutRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteLayoutOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteLayout(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CloudeslClient::DeleteMaterialOutcome CloudeslClient::deleteMaterial(const DeleteMaterialRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -693,6 +873,42 @@ CloudeslClient::DeleteStoreOutcomeCallable CloudeslClient::deleteStoreCallable(c
 			[this, request]()
 			{
 			return this->deleteStore(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudeslClient::DeleteTemplateGroupOutcome CloudeslClient::deleteTemplateGroup(const DeleteTemplateGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteTemplateGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteTemplateGroupOutcome(DeleteTemplateGroupResult(outcome.result()));
+	else
+		return DeleteTemplateGroupOutcome(outcome.error());
+}
+
+void CloudeslClient::deleteTemplateGroupAsync(const DeleteTemplateGroupRequest& request, const DeleteTemplateGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteTemplateGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudeslClient::DeleteTemplateGroupOutcomeCallable CloudeslClient::deleteTemplateGroupCallable(const DeleteTemplateGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteTemplateGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteTemplateGroup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1491,6 +1707,42 @@ CloudeslClient::ExportEslDevicesOutcomeCallable CloudeslClient::exportEslDevices
 	return task->get_future();
 }
 
+CloudeslClient::GetAddMaterialStatusOutcome CloudeslClient::getAddMaterialStatus(const GetAddMaterialStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetAddMaterialStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetAddMaterialStatusOutcome(GetAddMaterialStatusResult(outcome.result()));
+	else
+		return GetAddMaterialStatusOutcome(outcome.error());
+}
+
+void CloudeslClient::getAddMaterialStatusAsync(const GetAddMaterialStatusRequest& request, const GetAddMaterialStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getAddMaterialStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudeslClient::GetAddMaterialStatusOutcomeCallable CloudeslClient::getAddMaterialStatusCallable(const GetAddMaterialStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetAddMaterialStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->getAddMaterialStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CloudeslClient::GetCompanyTemplatePictureOutcome CloudeslClient::getCompanyTemplatePicture(const GetCompanyTemplatePictureRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1599,6 +1851,42 @@ CloudeslClient::GetCompanyTemplatePictureNewOutcomeCallable CloudeslClient::getC
 	return task->get_future();
 }
 
+CloudeslClient::GetEslDevicesOutcome CloudeslClient::getEslDevices(const GetEslDevicesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetEslDevicesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetEslDevicesOutcome(GetEslDevicesResult(outcome.result()));
+	else
+		return GetEslDevicesOutcome(outcome.error());
+}
+
+void CloudeslClient::getEslDevicesAsync(const GetEslDevicesRequest& request, const GetEslDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getEslDevices(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudeslClient::GetEslDevicesOutcomeCallable CloudeslClient::getEslDevicesCallable(const GetEslDevicesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetEslDevicesOutcome()>>(
+			[this, request]()
+			{
+			return this->getEslDevices(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CloudeslClient::GetItemMaterialOutcome CloudeslClient::getItemMaterial(const GetItemMaterialRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1665,6 +1953,258 @@ CloudeslClient::GetUserOutcomeCallable CloudeslClient::getUserCallable(const Get
 			[this, request]()
 			{
 			return this->getUser(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudeslClient::QueryContainerListOutcome CloudeslClient::queryContainerList(const QueryContainerListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryContainerListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryContainerListOutcome(QueryContainerListResult(outcome.result()));
+	else
+		return QueryContainerListOutcome(outcome.error());
+}
+
+void CloudeslClient::queryContainerListAsync(const QueryContainerListRequest& request, const QueryContainerListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryContainerList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudeslClient::QueryContainerListOutcomeCallable CloudeslClient::queryContainerListCallable(const QueryContainerListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryContainerListOutcome()>>(
+			[this, request]()
+			{
+			return this->queryContainerList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudeslClient::QueryLayoutByDeviceOutcome CloudeslClient::queryLayoutByDevice(const QueryLayoutByDeviceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryLayoutByDeviceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryLayoutByDeviceOutcome(QueryLayoutByDeviceResult(outcome.result()));
+	else
+		return QueryLayoutByDeviceOutcome(outcome.error());
+}
+
+void CloudeslClient::queryLayoutByDeviceAsync(const QueryLayoutByDeviceRequest& request, const QueryLayoutByDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryLayoutByDevice(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudeslClient::QueryLayoutByDeviceOutcomeCallable CloudeslClient::queryLayoutByDeviceCallable(const QueryLayoutByDeviceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryLayoutByDeviceOutcome()>>(
+			[this, request]()
+			{
+			return this->queryLayoutByDevice(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudeslClient::QueryLayoutDetailOutcome CloudeslClient::queryLayoutDetail(const QueryLayoutDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryLayoutDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryLayoutDetailOutcome(QueryLayoutDetailResult(outcome.result()));
+	else
+		return QueryLayoutDetailOutcome(outcome.error());
+}
+
+void CloudeslClient::queryLayoutDetailAsync(const QueryLayoutDetailRequest& request, const QueryLayoutDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryLayoutDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudeslClient::QueryLayoutDetailOutcomeCallable CloudeslClient::queryLayoutDetailCallable(const QueryLayoutDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryLayoutDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->queryLayoutDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudeslClient::QueryTemplateGroupListOutcome CloudeslClient::queryTemplateGroupList(const QueryTemplateGroupListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryTemplateGroupListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryTemplateGroupListOutcome(QueryTemplateGroupListResult(outcome.result()));
+	else
+		return QueryTemplateGroupListOutcome(outcome.error());
+}
+
+void CloudeslClient::queryTemplateGroupListAsync(const QueryTemplateGroupListRequest& request, const QueryTemplateGroupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryTemplateGroupList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudeslClient::QueryTemplateGroupListOutcomeCallable CloudeslClient::queryTemplateGroupListCallable(const QueryTemplateGroupListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryTemplateGroupListOutcome()>>(
+			[this, request]()
+			{
+			return this->queryTemplateGroupList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudeslClient::QueryTemplateListByGroupIdOutcome CloudeslClient::queryTemplateListByGroupId(const QueryTemplateListByGroupIdRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryTemplateListByGroupIdOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryTemplateListByGroupIdOutcome(QueryTemplateListByGroupIdResult(outcome.result()));
+	else
+		return QueryTemplateListByGroupIdOutcome(outcome.error());
+}
+
+void CloudeslClient::queryTemplateListByGroupIdAsync(const QueryTemplateListByGroupIdRequest& request, const QueryTemplateListByGroupIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryTemplateListByGroupId(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudeslClient::QueryTemplateListByGroupIdOutcomeCallable CloudeslClient::queryTemplateListByGroupIdCallable(const QueryTemplateListByGroupIdRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryTemplateListByGroupIdOutcome()>>(
+			[this, request]()
+			{
+			return this->queryTemplateListByGroupId(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudeslClient::SaveLayoutOutcome CloudeslClient::saveLayout(const SaveLayoutRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SaveLayoutOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SaveLayoutOutcome(SaveLayoutResult(outcome.result()));
+	else
+		return SaveLayoutOutcome(outcome.error());
+}
+
+void CloudeslClient::saveLayoutAsync(const SaveLayoutRequest& request, const SaveLayoutAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, saveLayout(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudeslClient::SaveLayoutOutcomeCallable CloudeslClient::saveLayoutCallable(const SaveLayoutRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SaveLayoutOutcome()>>(
+			[this, request]()
+			{
+			return this->saveLayout(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudeslClient::SaveTemplateGroupOutcome CloudeslClient::saveTemplateGroup(const SaveTemplateGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SaveTemplateGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SaveTemplateGroupOutcome(SaveTemplateGroupResult(outcome.result()));
+	else
+		return SaveTemplateGroupOutcome(outcome.error());
+}
+
+void CloudeslClient::saveTemplateGroupAsync(const SaveTemplateGroupRequest& request, const SaveTemplateGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, saveTemplateGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudeslClient::SaveTemplateGroupOutcomeCallable CloudeslClient::saveTemplateGroupCallable(const SaveTemplateGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SaveTemplateGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->saveTemplateGroup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1773,6 +2313,78 @@ CloudeslClient::UnbindEslDeviceOutcomeCallable CloudeslClient::unbindEslDeviceCa
 			[this, request]()
 			{
 			return this->unbindEslDevice(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudeslClient::UpdateCompanyTemplateOutcome CloudeslClient::updateCompanyTemplate(const UpdateCompanyTemplateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateCompanyTemplateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateCompanyTemplateOutcome(UpdateCompanyTemplateResult(outcome.result()));
+	else
+		return UpdateCompanyTemplateOutcome(outcome.error());
+}
+
+void CloudeslClient::updateCompanyTemplateAsync(const UpdateCompanyTemplateRequest& request, const UpdateCompanyTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateCompanyTemplate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudeslClient::UpdateCompanyTemplateOutcomeCallable CloudeslClient::updateCompanyTemplateCallable(const UpdateCompanyTemplateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateCompanyTemplateOutcome()>>(
+			[this, request]()
+			{
+			return this->updateCompanyTemplate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudeslClient::UpdateCompanyTemplateViewOutcome CloudeslClient::updateCompanyTemplateView(const UpdateCompanyTemplateViewRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateCompanyTemplateViewOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateCompanyTemplateViewOutcome(UpdateCompanyTemplateViewResult(outcome.result()));
+	else
+		return UpdateCompanyTemplateViewOutcome(outcome.error());
+}
+
+void CloudeslClient::updateCompanyTemplateViewAsync(const UpdateCompanyTemplateViewRequest& request, const UpdateCompanyTemplateViewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateCompanyTemplateView(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudeslClient::UpdateCompanyTemplateViewOutcomeCallable CloudeslClient::updateCompanyTemplateViewCallable(const UpdateCompanyTemplateViewRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateCompanyTemplateViewOutcome()>>(
+			[this, request]()
+			{
+			return this->updateCompanyTemplateView(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

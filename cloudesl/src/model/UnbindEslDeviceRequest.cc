@@ -38,6 +38,17 @@ void UnbindEslDeviceRequest::setExtraParams(const std::string& extraParams)
 	setBodyParameter("ExtraParams", extraParams);
 }
 
+std::string UnbindEslDeviceRequest::getContainerName()const
+{
+	return containerName_;
+}
+
+void UnbindEslDeviceRequest::setContainerName(const std::string& containerName)
+{
+	containerName_ = containerName;
+	setBodyParameter("ContainerName", containerName);
+}
+
 std::string UnbindEslDeviceRequest::getStoreId()const
 {
 	return storeId_;

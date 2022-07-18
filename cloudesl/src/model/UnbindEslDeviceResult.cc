@@ -41,18 +41,18 @@ void UnbindEslDeviceResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["ErrorMessage"].isNull())
 		errorMessage_ = value["ErrorMessage"].asString();
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
-	if(!value["DynamicCode"].isNull())
-		dynamicCode_ = value["DynamicCode"].asString();
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
-	if(!value["DynamicMessage"].isNull())
-		dynamicMessage_ = value["DynamicMessage"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["DynamicMessage"].isNull())
+		dynamicMessage_ = value["DynamicMessage"].asString();
+	if(!value["DynamicCode"].isNull())
+		dynamicCode_ = value["DynamicCode"].asString();
 
 }
 

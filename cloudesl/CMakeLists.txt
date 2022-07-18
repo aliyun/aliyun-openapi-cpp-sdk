@@ -41,10 +41,18 @@ set(cloudesl_public_header_model
 	include/alibabacloud/cloudesl/model/BatchInsertItemsResult.h
 	include/alibabacloud/cloudesl/model/BatchUpdateEventRequest.h
 	include/alibabacloud/cloudesl/model/BatchUpdateEventResult.h
+	include/alibabacloud/cloudesl/model/BindDeviceLayoutRequest.h
+	include/alibabacloud/cloudesl/model/BindDeviceLayoutResult.h
 	include/alibabacloud/cloudesl/model/BindEslDeviceRequest.h
 	include/alibabacloud/cloudesl/model/BindEslDeviceResult.h
 	include/alibabacloud/cloudesl/model/CheckServiceLinkedRoleForDeletingRequest.h
 	include/alibabacloud/cloudesl/model/CheckServiceLinkedRoleForDeletingResult.h
+	include/alibabacloud/cloudesl/model/CopyCompanyTemplateViewRequest.h
+	include/alibabacloud/cloudesl/model/CopyCompanyTemplateViewResult.h
+	include/alibabacloud/cloudesl/model/CopyLayoutRequest.h
+	include/alibabacloud/cloudesl/model/CopyLayoutResult.h
+	include/alibabacloud/cloudesl/model/CopyTemplateGroupRequest.h
+	include/alibabacloud/cloudesl/model/CopyTemplateGroupResult.h
 	include/alibabacloud/cloudesl/model/CreateStoreRequest.h
 	include/alibabacloud/cloudesl/model/CreateStoreResult.h
 	include/alibabacloud/cloudesl/model/DeleteApDeviceRequest.h
@@ -53,10 +61,14 @@ set(cloudesl_public_header_model
 	include/alibabacloud/cloudesl/model/DeleteCompanyTemplateResult.h
 	include/alibabacloud/cloudesl/model/DeleteItemRequest.h
 	include/alibabacloud/cloudesl/model/DeleteItemResult.h
+	include/alibabacloud/cloudesl/model/DeleteLayoutRequest.h
+	include/alibabacloud/cloudesl/model/DeleteLayoutResult.h
 	include/alibabacloud/cloudesl/model/DeleteMaterialRequest.h
 	include/alibabacloud/cloudesl/model/DeleteMaterialResult.h
 	include/alibabacloud/cloudesl/model/DeleteStoreRequest.h
 	include/alibabacloud/cloudesl/model/DeleteStoreResult.h
+	include/alibabacloud/cloudesl/model/DeleteTemplateGroupRequest.h
+	include/alibabacloud/cloudesl/model/DeleteTemplateGroupResult.h
 	include/alibabacloud/cloudesl/model/DeleteUserRequest.h
 	include/alibabacloud/cloudesl/model/DeleteUserResult.h
 	include/alibabacloud/cloudesl/model/DescribeApDevicesRequest.h
@@ -101,22 +113,44 @@ set(cloudesl_public_header_model
 	include/alibabacloud/cloudesl/model/DescribeUsersResult.h
 	include/alibabacloud/cloudesl/model/ExportEslDevicesRequest.h
 	include/alibabacloud/cloudesl/model/ExportEslDevicesResult.h
+	include/alibabacloud/cloudesl/model/GetAddMaterialStatusRequest.h
+	include/alibabacloud/cloudesl/model/GetAddMaterialStatusResult.h
 	include/alibabacloud/cloudesl/model/GetCompanyTemplatePictureRequest.h
 	include/alibabacloud/cloudesl/model/GetCompanyTemplatePictureResult.h
 	include/alibabacloud/cloudesl/model/GetCompanyTemplatePictureByJobRequest.h
 	include/alibabacloud/cloudesl/model/GetCompanyTemplatePictureByJobResult.h
 	include/alibabacloud/cloudesl/model/GetCompanyTemplatePictureNewRequest.h
 	include/alibabacloud/cloudesl/model/GetCompanyTemplatePictureNewResult.h
+	include/alibabacloud/cloudesl/model/GetEslDevicesRequest.h
+	include/alibabacloud/cloudesl/model/GetEslDevicesResult.h
 	include/alibabacloud/cloudesl/model/GetItemMaterialRequest.h
 	include/alibabacloud/cloudesl/model/GetItemMaterialResult.h
 	include/alibabacloud/cloudesl/model/GetUserRequest.h
 	include/alibabacloud/cloudesl/model/GetUserResult.h
+	include/alibabacloud/cloudesl/model/QueryContainerListRequest.h
+	include/alibabacloud/cloudesl/model/QueryContainerListResult.h
+	include/alibabacloud/cloudesl/model/QueryLayoutByDeviceRequest.h
+	include/alibabacloud/cloudesl/model/QueryLayoutByDeviceResult.h
+	include/alibabacloud/cloudesl/model/QueryLayoutDetailRequest.h
+	include/alibabacloud/cloudesl/model/QueryLayoutDetailResult.h
+	include/alibabacloud/cloudesl/model/QueryTemplateGroupListRequest.h
+	include/alibabacloud/cloudesl/model/QueryTemplateGroupListResult.h
+	include/alibabacloud/cloudesl/model/QueryTemplateListByGroupIdRequest.h
+	include/alibabacloud/cloudesl/model/QueryTemplateListByGroupIdResult.h
+	include/alibabacloud/cloudesl/model/SaveLayoutRequest.h
+	include/alibabacloud/cloudesl/model/SaveLayoutResult.h
+	include/alibabacloud/cloudesl/model/SaveTemplateGroupRequest.h
+	include/alibabacloud/cloudesl/model/SaveTemplateGroupResult.h
 	include/alibabacloud/cloudesl/model/SyncAddMaterialRequest.h
 	include/alibabacloud/cloudesl/model/SyncAddMaterialResult.h
 	include/alibabacloud/cloudesl/model/UnassignUserRequest.h
 	include/alibabacloud/cloudesl/model/UnassignUserResult.h
 	include/alibabacloud/cloudesl/model/UnbindEslDeviceRequest.h
 	include/alibabacloud/cloudesl/model/UnbindEslDeviceResult.h
+	include/alibabacloud/cloudesl/model/UpdateCompanyTemplateRequest.h
+	include/alibabacloud/cloudesl/model/UpdateCompanyTemplateResult.h
+	include/alibabacloud/cloudesl/model/UpdateCompanyTemplateViewRequest.h
+	include/alibabacloud/cloudesl/model/UpdateCompanyTemplateViewResult.h
 	include/alibabacloud/cloudesl/model/UpdateEslDeviceLightRequest.h
 	include/alibabacloud/cloudesl/model/UpdateEslDeviceLightResult.h
 	include/alibabacloud/cloudesl/model/UpdateItemMaterialRequest.h
@@ -152,10 +186,18 @@ set(cloudesl_src
 	src/model/BatchInsertItemsResult.cc
 	src/model/BatchUpdateEventRequest.cc
 	src/model/BatchUpdateEventResult.cc
+	src/model/BindDeviceLayoutRequest.cc
+	src/model/BindDeviceLayoutResult.cc
 	src/model/BindEslDeviceRequest.cc
 	src/model/BindEslDeviceResult.cc
 	src/model/CheckServiceLinkedRoleForDeletingRequest.cc
 	src/model/CheckServiceLinkedRoleForDeletingResult.cc
+	src/model/CopyCompanyTemplateViewRequest.cc
+	src/model/CopyCompanyTemplateViewResult.cc
+	src/model/CopyLayoutRequest.cc
+	src/model/CopyLayoutResult.cc
+	src/model/CopyTemplateGroupRequest.cc
+	src/model/CopyTemplateGroupResult.cc
 	src/model/CreateStoreRequest.cc
 	src/model/CreateStoreResult.cc
 	src/model/DeleteApDeviceRequest.cc
@@ -164,10 +206,14 @@ set(cloudesl_src
 	src/model/DeleteCompanyTemplateResult.cc
 	src/model/DeleteItemRequest.cc
 	src/model/DeleteItemResult.cc
+	src/model/DeleteLayoutRequest.cc
+	src/model/DeleteLayoutResult.cc
 	src/model/DeleteMaterialRequest.cc
 	src/model/DeleteMaterialResult.cc
 	src/model/DeleteStoreRequest.cc
 	src/model/DeleteStoreResult.cc
+	src/model/DeleteTemplateGroupRequest.cc
+	src/model/DeleteTemplateGroupResult.cc
 	src/model/DeleteUserRequest.cc
 	src/model/DeleteUserResult.cc
 	src/model/DescribeApDevicesRequest.cc
@@ -212,22 +258,44 @@ set(cloudesl_src
 	src/model/DescribeUsersResult.cc
 	src/model/ExportEslDevicesRequest.cc
 	src/model/ExportEslDevicesResult.cc
+	src/model/GetAddMaterialStatusRequest.cc
+	src/model/GetAddMaterialStatusResult.cc
 	src/model/GetCompanyTemplatePictureRequest.cc
 	src/model/GetCompanyTemplatePictureResult.cc
 	src/model/GetCompanyTemplatePictureByJobRequest.cc
 	src/model/GetCompanyTemplatePictureByJobResult.cc
 	src/model/GetCompanyTemplatePictureNewRequest.cc
 	src/model/GetCompanyTemplatePictureNewResult.cc
+	src/model/GetEslDevicesRequest.cc
+	src/model/GetEslDevicesResult.cc
 	src/model/GetItemMaterialRequest.cc
 	src/model/GetItemMaterialResult.cc
 	src/model/GetUserRequest.cc
 	src/model/GetUserResult.cc
+	src/model/QueryContainerListRequest.cc
+	src/model/QueryContainerListResult.cc
+	src/model/QueryLayoutByDeviceRequest.cc
+	src/model/QueryLayoutByDeviceResult.cc
+	src/model/QueryLayoutDetailRequest.cc
+	src/model/QueryLayoutDetailResult.cc
+	src/model/QueryTemplateGroupListRequest.cc
+	src/model/QueryTemplateGroupListResult.cc
+	src/model/QueryTemplateListByGroupIdRequest.cc
+	src/model/QueryTemplateListByGroupIdResult.cc
+	src/model/SaveLayoutRequest.cc
+	src/model/SaveLayoutResult.cc
+	src/model/SaveTemplateGroupRequest.cc
+	src/model/SaveTemplateGroupResult.cc
 	src/model/SyncAddMaterialRequest.cc
 	src/model/SyncAddMaterialResult.cc
 	src/model/UnassignUserRequest.cc
 	src/model/UnassignUserResult.cc
 	src/model/UnbindEslDeviceRequest.cc
 	src/model/UnbindEslDeviceResult.cc
+	src/model/UpdateCompanyTemplateRequest.cc
+	src/model/UpdateCompanyTemplateResult.cc
+	src/model/UpdateCompanyTemplateViewRequest.cc
+	src/model/UpdateCompanyTemplateViewResult.cc
 	src/model/UpdateEslDeviceLightRequest.cc
 	src/model/UpdateEslDeviceLightResult.cc
 	src/model/UpdateItemMaterialRequest.cc

@@ -173,6 +173,8 @@ void DescribeItemsResult::parse(const std::string &payload)
 			itemsObject.promotionEnd = valueItemsItemInfo["PromotionEnd"].asString();
 		if(!valueItemsItemInfo["ItemBarCode"].isNull())
 			itemsObject.itemBarCode = valueItemsItemInfo["ItemBarCode"].asString();
+		if(!valueItemsItemInfo["BeClearance"].isNull())
+			itemsObject.beClearance = valueItemsItemInfo["BeClearance"].asString() == "true";
 		items_.push_back(itemsObject);
 	}
 	if(!value["TemplateSceneId"].isNull())

@@ -126,6 +126,7 @@ void BatchInsertItemsRequest::setItemInfo(const std::vector<ItemInfo>& itemInfo)
 		setParameter(itemInfoObjStr + ".ItemPicUrl", itemInfoObj.itemPicUrl);
 		setParameter(itemInfoObjStr + ".ForestSecondId", itemInfoObj.forestSecondId);
 		setParameter(itemInfoObjStr + ".SupplierName", itemInfoObj.supplierName);
+		setParameter(itemInfoObjStr + ".BeClearance", itemInfoObj.beClearance ? "true" : "false");
 		setParameter(itemInfoObjStr + ".Material", itemInfoObj.material);
 		setParameter(itemInfoObjStr + ".ModelNumber", itemInfoObj.modelNumber);
 		setParameter(itemInfoObjStr + ".SaleSpec", itemInfoObj.saleSpec);

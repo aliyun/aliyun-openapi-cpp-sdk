@@ -89,6 +89,7 @@ namespace AlibabaCloud
 					std::string itemTitle;
 					bool beMember;
 					std::string productionPlace;
+					bool beClearance;
 					std::string forestFirstId;
 					int actionPrice;
 					std::string rank;

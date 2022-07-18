@@ -42,6 +42,7 @@ namespace AlibabaCloud
 					long height;
 					std::string eslSize;
 					std::string scene;
+					std::string templateSceneId;
 					std::string eslType;
 					long width;
 					std::string templateId;

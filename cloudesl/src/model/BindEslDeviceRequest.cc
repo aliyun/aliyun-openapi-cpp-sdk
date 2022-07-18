@@ -38,6 +38,17 @@ void BindEslDeviceRequest::setExtraParams(const std::string& extraParams)
 	setBodyParameter("ExtraParams", extraParams);
 }
 
+std::string BindEslDeviceRequest::getContainerName()const
+{
+	return containerName_;
+}
+
+void BindEslDeviceRequest::setContainerName(const std::string& containerName)
+{
+	containerName_ = containerName;
+	setBodyParameter("ContainerName", containerName);
+}
+
 std::string BindEslDeviceRequest::getStoreId()const
 {
 	return storeId_;
@@ -47,6 +58,17 @@ void BindEslDeviceRequest::setStoreId(const std::string& storeId)
 {
 	storeId_ = storeId;
 	setBodyParameter("StoreId", storeId);
+}
+
+std::string BindEslDeviceRequest::getLayoutId()const
+{
+	return layoutId_;
+}
+
+void BindEslDeviceRequest::setLayoutId(const std::string& layoutId)
+{
+	layoutId_ = layoutId;
+	setBodyParameter("LayoutId", layoutId);
 }
 
 int BindEslDeviceRequest::getLayer()const
@@ -69,6 +91,17 @@ void BindEslDeviceRequest::setEslBarCode(const std::string& eslBarCode)
 {
 	eslBarCode_ = eslBarCode;
 	setBodyParameter("EslBarCode", eslBarCode);
+}
+
+std::string BindEslDeviceRequest::getLayoutName()const
+{
+	return layoutName_;
+}
+
+void BindEslDeviceRequest::setLayoutName(const std::string& layoutName)
+{
+	layoutName_ = layoutName;
+	setBodyParameter("LayoutName", layoutName);
 }
 
 std::string BindEslDeviceRequest::getItemBarCode()const
@@ -102,5 +135,16 @@ void BindEslDeviceRequest::setShelf(const std::string& shelf)
 {
 	shelf_ = shelf;
 	setBodyParameter("Shelf", shelf);
+}
+
+std::string BindEslDeviceRequest::getContainerId()const
+{
+	return containerId_;
+}
+
+void BindEslDeviceRequest::setContainerId(const std::string& containerId)
+{
+	containerId_ = containerId;
+	setBodyParameter("ContainerId", containerId);
 }
 

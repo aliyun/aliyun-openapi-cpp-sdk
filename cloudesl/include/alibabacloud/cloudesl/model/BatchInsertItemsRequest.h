@@ -88,6 +88,7 @@ namespace AlibabaCloud
 					std::string itemPicUrl;
 					std::string forestSecondId;
 					std::string supplierName;
+					bool beClearance;
 					std::string material;
 					std::string modelNumber;
 					std::string saleSpec;

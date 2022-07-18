@@ -65,6 +65,8 @@ void DescribeTemplateByModelResult::parse(const std::string &payload)
 			itemsObject.scene = valueItemsSelectItemInfo["Scene"].asString();
 		if(!valueItemsSelectItemInfo["Brand"].isNull())
 			itemsObject.brand = valueItemsSelectItemInfo["Brand"].asString();
+		if(!valueItemsSelectItemInfo["TemplateSceneId"].isNull())
+			itemsObject.templateSceneId = valueItemsSelectItemInfo["TemplateSceneId"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["ErrorMessage"].isNull())

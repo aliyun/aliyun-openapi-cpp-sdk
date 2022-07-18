@@ -34,18 +34,20 @@ namespace AlibabaCloud
 			public:
 				struct EslDeviceInfo
 				{
+					int batteryLevel;
+					std::string layoutId;
+					int screenHeight;
+					std::string lastCommunicateTime;
+					std::string mac;
 					std::string type;
 					std::string eslBarCode;
 					int eslSignal;
-					int batteryLevel;
 					std::string storeId;
 					std::string typeEncode;
 					std::string model;
 					int screenWidth;
-					int screenHeight;
+					std::string layoutName;
 					std::string eslStatus;
-					std::string lastCommunicateTime;
-					std::string mac;
 				};
 
 

@@ -55,8 +55,12 @@ namespace AlibabaCloud
 				void setIfDefault(bool ifDefault);
 				std::string getTemplateName()const;
 				void setTemplateName(const std::string& templateName);
+				std::string getTemplateSceneId()const;
+				void setTemplateSceneId(const std::string& templateSceneId);
 				bool getIfSourceCode()const;
 				void setIfSourceCode(bool ifSourceCode);
+				std::string getGroupId()const;
+				void setGroupId(const std::string& groupId);
 				bool getIfMember()const;
 				void setIfMember(bool ifMember);
 				int getLayout()const;
@@ -75,7 +79,9 @@ namespace AlibabaCloud
 				std::string vendor_;
 				bool ifDefault_;
 				std::string templateName_;
+				std::string templateSceneId_;
 				bool ifSourceCode_;
+				std::string groupId_;
 				bool ifMember_;
 				int layout_;
 				bool ifOutOfInventory_;

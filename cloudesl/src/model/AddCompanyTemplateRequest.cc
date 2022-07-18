@@ -137,6 +137,17 @@ void AddCompanyTemplateRequest::setTemplateName(const std::string& templateName)
 	setBodyParameter("TemplateName", templateName);
 }
 
+std::string AddCompanyTemplateRequest::getTemplateSceneId()const
+{
+	return templateSceneId_;
+}
+
+void AddCompanyTemplateRequest::setTemplateSceneId(const std::string& templateSceneId)
+{
+	templateSceneId_ = templateSceneId;
+	setBodyParameter("TemplateSceneId", templateSceneId);
+}
+
 bool AddCompanyTemplateRequest::getIfSourceCode()const
 {
 	return ifSourceCode_;
@@ -146,6 +157,17 @@ void AddCompanyTemplateRequest::setIfSourceCode(bool ifSourceCode)
 {
 	ifSourceCode_ = ifSourceCode;
 	setBodyParameter("IfSourceCode", ifSourceCode ? "true" : "false");
+}
+
+std::string AddCompanyTemplateRequest::getGroupId()const
+{
+	return groupId_;
+}
+
+void AddCompanyTemplateRequest::setGroupId(const std::string& groupId)
+{
+	groupId_ = groupId;
+	setBodyParameter("GroupId", groupId);
 }
 
 bool AddCompanyTemplateRequest::getIfMember()const

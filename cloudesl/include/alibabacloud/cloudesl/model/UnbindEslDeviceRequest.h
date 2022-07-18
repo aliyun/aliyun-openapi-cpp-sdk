@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				std::string getExtraParams()const;
 				void setExtraParams(const std::string& extraParams);
+				std::string getContainerName()const;
+				void setContainerName(const std::string& containerName);
 				std::string getStoreId()const;
 				void setStoreId(const std::string& storeId);
 				int getLayer()const;
@@ -52,6 +54,7 @@ namespace AlibabaCloud
 
             private:
 				std::string extraParams_;
+				std::string containerName_;
 				std::string storeId_;
 				int layer_;
 				std::string eslBarCode_;
