@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_BTRIPOPEN_MODEL_TAKEACCESSTOKENRESULT_H_
-#define ALIBABACLOUD_BTRIPOPEN_MODEL_TAKEACCESSTOKENRESULT_H_
+#ifndef ALIBABACLOUD_BTRIPOPEN_MODEL_ACCESSTOKENRESULT_H_
+#define ALIBABACLOUD_BTRIPOPEN_MODEL_ACCESSTOKENRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,36 +29,36 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_BTRIPOPEN_EXPORT TakeAccessTokenResult : public ServiceResult
+			class ALIBABACLOUD_BTRIPOPEN_EXPORT AccessTokenResult : public ServiceResult
 			{
 			public:
 				struct Data
 				{
 					long expire;
-					std::string access_token;
+					std::string token;
 				};
 
 
-				TakeAccessTokenResult();
-				explicit TakeAccessTokenResult(const std::string &payload);
-				~TakeAccessTokenResult();
+				AccessTokenResult();
+				explicit AccessTokenResult(const std::string &payload);
+				~AccessTokenResult();
 				std::string getRequestId()const;
 				std::string getMessage()const;
+				std::string getTraceId()const;
 				Data getData()const;
 				std::string getCode()const;
-				std::string getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string requestId_;
 				std::string message_;
+				std::string traceId_;
 				Data data_;
 				std::string code_;
-				std::string success_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_BTRIPOPEN_MODEL_TAKEACCESSTOKENRESULT_H_
+#endif // !ALIBABACLOUD_BTRIPOPEN_MODEL_ACCESSTOKENRESULT_H_

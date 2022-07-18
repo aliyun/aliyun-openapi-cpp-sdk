@@ -21,13 +21,13 @@ set(btripopen_public_header
 	include/alibabacloud/btripopen/BtripOpenExport.h )
 
 set(btripopen_public_header_model 
-	include/alibabacloud/btripopen/model/TakeAccessTokenRequest.h
-	include/alibabacloud/btripopen/model/TakeAccessTokenResult.h )
+	include/alibabacloud/btripopen/model/AccessTokenRequest.h
+	include/alibabacloud/btripopen/model/AccessTokenResult.h )
 
 set(btripopen_src 
 	src/BtripOpenClient.cc
-	src/model/TakeAccessTokenRequest.cc
-	src/model/TakeAccessTokenResult.cc )
+	src/model/AccessTokenRequest.cc
+	src/model/AccessTokenResult.cc )
 
 add_library(btripopen ${LIB_TYPE}
 	${btripopen_public_header}

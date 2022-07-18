@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_BTRIPOPEN_MODEL_TAKEACCESSTOKENREQUEST_H_
-#define ALIBABACLOUD_BTRIPOPEN_MODEL_TAKEACCESSTOKENREQUEST_H_
+#ifndef ALIBABACLOUD_BTRIPOPEN_MODEL_ACCESSTOKENREQUEST_H_
+#define ALIBABACLOUD_BTRIPOPEN_MODEL_ACCESSTOKENREQUEST_H_
 
 #include <alibabacloud/btripopen/BtripOpenExport.h>
 #include <alibabacloud/core/RoaServiceRequest.h>
@@ -26,10 +26,10 @@
 namespace AlibabaCloud {
 namespace BtripOpen {
 namespace Model {
-class ALIBABACLOUD_BTRIPOPEN_EXPORT TakeAccessTokenRequest : public RoaServiceRequest {
+class ALIBABACLOUD_BTRIPOPEN_EXPORT AccessTokenRequest : public RoaServiceRequest {
 public:
-	TakeAccessTokenRequest();
-	~TakeAccessTokenRequest();
+	AccessTokenRequest();
+	~AccessTokenRequest();
 	std::string getApp_key() const;
 	void setApp_key(const std::string &app_key);
 	std::string getApp_secret() const;
@@ -42,4 +42,4 @@ private:
 } // namespace Model
 } // namespace BtripOpen
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_BTRIPOPEN_MODEL_TAKEACCESSTOKENREQUEST_H_
+#endif // !ALIBABACLOUD_BTRIPOPEN_MODEL_ACCESSTOKENREQUEST_H_

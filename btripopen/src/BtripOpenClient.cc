@@ -51,36 +51,36 @@ BtripOpenClient::BtripOpenClient(const std::string & accessKeyId, const std::str
 BtripOpenClient::~BtripOpenClient()
 {}
 
-BtripOpenClient::TakeAccessTokenOutcome BtripOpenClient::takeAccessToken(const TakeAccessTokenRequest &request) const
+BtripOpenClient::AccessTokenOutcome BtripOpenClient::accessToken(const AccessTokenRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return TakeAccessTokenOutcome(endpointOutcome.error());
+		return AccessTokenOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return TakeAccessTokenOutcome(TakeAccessTokenResult(outcome.result()));
+		return AccessTokenOutcome(AccessTokenResult(outcome.result()));
 	else
-		return TakeAccessTokenOutcome(outcome.error());
+		return AccessTokenOutcome(outcome.error());
 }
 
-void BtripOpenClient::takeAccessTokenAsync(const TakeAccessTokenRequest& request, const TakeAccessTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void BtripOpenClient::accessTokenAsync(const AccessTokenRequest& request, const AccessTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, takeAccessToken(request), context);
+		handler(this, request, accessToken(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-BtripOpenClient::TakeAccessTokenOutcomeCallable BtripOpenClient::takeAccessTokenCallable(const TakeAccessTokenRequest &request) const
+BtripOpenClient::AccessTokenOutcomeCallable BtripOpenClient::accessTokenCallable(const AccessTokenRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<TakeAccessTokenOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<AccessTokenOutcome()>>(
 			[this, request]()
 			{
-			return this->takeAccessToken(request);
+			return this->accessToken(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

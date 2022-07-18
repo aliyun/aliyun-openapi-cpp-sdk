@@ -14,32 +14,32 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/btripopen/model/TakeAccessTokenRequest.h>
+#include <alibabacloud/btripopen/model/AccessTokenRequest.h>
 
-using AlibabaCloud::BtripOpen::Model::TakeAccessTokenRequest;
+using AlibabaCloud::BtripOpen::Model::AccessTokenRequest;
 
-TakeAccessTokenRequest::TakeAccessTokenRequest()
-    : RoaServiceRequest("btripopen", "2022-05-17") {
-  setResourcePath("/btrip/open/access-token/take"};
+AccessTokenRequest::AccessTokenRequest()
+    : RoaServiceRequest("btripopen", "2022-05-20") {
+  setResourcePath("/btrip-open-auth/v1/access-token/action/take"};
   setMethod(HttpRequest::Method::Get);
 }
 
-TakeAccessTokenRequest::~TakeAccessTokenRequest() {}
+AccessTokenRequest::~AccessTokenRequest() {}
 
-std::string TakeAccessTokenRequest::getApp_key() const {
+std::string AccessTokenRequest::getApp_key() const {
   return app_key_;
 }
 
-void TakeAccessTokenRequest::setApp_key(const std::string &app_key) {
+void AccessTokenRequest::setApp_key(const std::string &app_key) {
   app_key_ = app_key;
   setParameter(std::string("app_key"), app_key);
 }
 
-std::string TakeAccessTokenRequest::getApp_secret() const {
+std::string AccessTokenRequest::getApp_secret() const {
   return app_secret_;
 }
 
-void TakeAccessTokenRequest::setApp_secret(const std::string &app_secret) {
+void AccessTokenRequest::setApp_secret(const std::string &app_secret) {
   app_secret_ = app_secret;
   setParameter(std::string("app_secret"), app_secret);
 }

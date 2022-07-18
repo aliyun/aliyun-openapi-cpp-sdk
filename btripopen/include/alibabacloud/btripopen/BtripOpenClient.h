@@ -22,8 +22,8 @@
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RoaServiceClient.h>
 #include "BtripOpenExport.h"
-#include "model/TakeAccessTokenRequest.h"
-#include "model/TakeAccessTokenResult.h"
+#include "model/AccessTokenRequest.h"
+#include "model/AccessTokenResult.h"
 
 
 namespace AlibabaCloud
@@ -33,17 +33,17 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_BTRIPOPEN_EXPORT BtripOpenClient : public RoaServiceClient
 		{
 		public:
-			typedef Outcome<Error, Model::TakeAccessTokenResult> TakeAccessTokenOutcome;
-			typedef std::future<TakeAccessTokenOutcome> TakeAccessTokenOutcomeCallable;
-			typedef std::function<void(const BtripOpenClient*, const Model::TakeAccessTokenRequest&, const TakeAccessTokenOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TakeAccessTokenAsyncHandler;
+			typedef Outcome<Error, Model::AccessTokenResult> AccessTokenOutcome;
+			typedef std::future<AccessTokenOutcome> AccessTokenOutcomeCallable;
+			typedef std::function<void(const BtripOpenClient*, const Model::AccessTokenRequest&, const AccessTokenOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AccessTokenAsyncHandler;
 
 			BtripOpenClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			BtripOpenClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			BtripOpenClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~BtripOpenClient();
-			TakeAccessTokenOutcome takeAccessToken(const Model::TakeAccessTokenRequest &request)const;
-			void takeAccessTokenAsync(const Model::TakeAccessTokenRequest& request, const TakeAccessTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			TakeAccessTokenOutcomeCallable takeAccessTokenCallable(const Model::TakeAccessTokenRequest& request) const;
+			AccessTokenOutcome accessToken(const Model::AccessTokenRequest &request)const;
+			void accessTokenAsync(const Model::AccessTokenRequest& request, const AccessTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AccessTokenOutcomeCallable accessTokenCallable(const Model::AccessTokenRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

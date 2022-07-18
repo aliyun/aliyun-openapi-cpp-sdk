@@ -14,69 +14,69 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/btripopen/model/TakeAccessTokenResult.h>
+#include <alibabacloud/btripopen/model/AccessTokenResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::BtripOpen;
 using namespace AlibabaCloud::BtripOpen::Model;
 
-TakeAccessTokenResult::TakeAccessTokenResult() :
+AccessTokenResult::AccessTokenResult() :
 	ServiceResult()
 {}
 
-TakeAccessTokenResult::TakeAccessTokenResult(const std::string &payload) :
+AccessTokenResult::AccessTokenResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-TakeAccessTokenResult::~TakeAccessTokenResult()
+AccessTokenResult::~AccessTokenResult()
 {}
 
-void TakeAccessTokenResult::parse(const std::string &payload)
+void AccessTokenResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["data"];
-	if(!dataNode["access_token"].isNull())
-		data_.access_token = dataNode["access_token"].asString();
+	if(!dataNode["token"].isNull())
+		data_.token = dataNode["token"].asString();
 	if(!dataNode["expire"].isNull())
 		data_.expire = std::stol(dataNode["expire"].asString());
 	if(!value["requestId"].isNull())
 		requestId_ = value["requestId"].asString();
-	if(!value["code"].isNull())
-		code_ = value["code"].asString();
+	if(!value["traceId"].isNull())
+		traceId_ = value["traceId"].asString();
 	if(!value["message"].isNull())
 		message_ = value["message"].asString();
-	if(!value["success"].isNull())
-		success_ = value["success"].asString();
+	if(!value["code"].isNull())
+		code_ = value["code"].asString();
 
 }
 
-std::string TakeAccessTokenResult::getRequestId()const
+std::string AccessTokenResult::getRequestId()const
 {
 	return requestId_;
 }
 
-std::string TakeAccessTokenResult::getMessage()const
+std::string AccessTokenResult::getMessage()const
 {
 	return message_;
 }
 
-TakeAccessTokenResult::Data TakeAccessTokenResult::getData()const
+std::string AccessTokenResult::getTraceId()const
+{
+	return traceId_;
+}
+
+AccessTokenResult::Data AccessTokenResult::getData()const
 {
 	return data_;
 }
 
-std::string TakeAccessTokenResult::getCode()const
+std::string AccessTokenResult::getCode()const
 {
 	return code_;
-}
-
-std::string TakeAccessTokenResult::getSuccess()const
-{
-	return success_;
 }
 
