@@ -61,15 +61,6 @@ void CreateDataSourceRequest::setSubType(const std::string &subType) {
   setParameter(std::string("SubType"), subType);
 }
 
-std::string CreateDataSourceRequest::getName() const {
-  return name_;
-}
-
-void CreateDataSourceRequest::setName(const std::string &name) {
-  name_ = name;
-  setParameter(std::string("Name"), name);
-}
-
 int CreateDataSourceRequest::getEnvType() const {
   return envType_;
 }
@@ -86,5 +77,14 @@ long CreateDataSourceRequest::getProjectId() const {
 void CreateDataSourceRequest::setProjectId(long projectId) {
   projectId_ = projectId;
   setParameter(std::string("ProjectId"), std::to_string(projectId));
+}
+
+std::string CreateDataSourceRequest::getName() const {
+  return name_;
+}
+
+void CreateDataSourceRequest::setName(const std::string &name) {
+  name_ = name;
+  setParameter(std::string("Name"), name);
 }
 

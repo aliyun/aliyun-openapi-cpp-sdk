@@ -80,6 +80,8 @@ void GetMetaTableFullInfoResult::parse(const std::string &payload)
 		data_.clusterId = dataNode["ClusterId"].asString();
 	if(!dataNode["TenantId"].isNull())
 		data_.tenantId = std::stol(dataNode["TenantId"].asString());
+	if(!dataNode["Schema"].isNull())
+		data_.schema = dataNode["Schema"].asString();
 	auto allColumnListNode = dataNode["ColumnList"]["ColumnListItem"];
 	for (auto dataNodeColumnListColumnListItem : allColumnListNode)
 	{

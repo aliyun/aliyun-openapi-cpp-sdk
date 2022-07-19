@@ -43,6 +43,8 @@ public:
 	};
 	CreateTableRequest();
 	~CreateTableRequest();
+	std::string getSchema() const;
+	void setSchema(const std::string &schema);
 	std::string getClientToken() const;
 	void setClientToken(const std::string &clientToken);
 	std::vector<Columns> getColumns() const;
@@ -83,6 +85,7 @@ public:
 	void setComment(const std::string &comment);
 
 private:
+	std::string schema_;
 	std::string clientToken_;
 	std::vector<Columns> columns_;
 	int lifeCycle_;

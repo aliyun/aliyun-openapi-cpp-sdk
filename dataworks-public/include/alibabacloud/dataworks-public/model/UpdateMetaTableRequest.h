@@ -30,6 +30,8 @@ class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT UpdateMetaTableRequest : public RpcSe
 public:
 	UpdateMetaTableRequest();
 	~UpdateMetaTableRequest();
+	std::string getSchema() const;
+	void setSchema(const std::string &schema);
 	int getVisibility() const;
 	void setVisibility(int visibility);
 	std::string getCaption() const;
@@ -52,6 +54,7 @@ public:
 	void setCategoryId(long categoryId);
 
 private:
+	std::string schema_;
 	int visibility_;
 	std::string caption_;
 	std::string newOwnerId_;

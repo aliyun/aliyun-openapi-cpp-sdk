@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTDUTYROSTERSRESULT_H_
-#define ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTDUTYROSTERSRESULT_H_
+#ifndef ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTSHIFTPERSONNELSRESULT_H_
+#define ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTSHIFTPERSONNELSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,26 +29,28 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT ListDutyRostersResult : public ServiceResult
+			class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT ListShiftPersonnelsResult : public ServiceResult
 			{
 			public:
 				struct Paging
 				{
-					struct DutyRostersItem
+					struct ShiftPersonsItem
 					{
-						std::string dutyRosterName;
-						std::string dutyRosterIdentifier;
+						std::string shiftPersonName;
+						long endTime;
+						long beginTime;
+						std::string shiftPersonUID;
 					};
 					int totalCount;
 					int pageSize;
 					int pageNumber;
-					std::vector<DutyRostersItem> dutyRosters;
+					std::vector<ShiftPersonsItem> shiftPersons;
 				};
 
 
-				ListDutyRostersResult();
-				explicit ListDutyRostersResult(const std::string &payload);
-				~ListDutyRostersResult();
+				ListShiftPersonnelsResult();
+				explicit ListShiftPersonnelsResult(const std::string &payload);
+				~ListShiftPersonnelsResult();
 				Paging getPaging()const;
 
 			protected:
@@ -60,4 +62,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTDUTYROSTERSRESULT_H_
+#endif // !ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTSHIFTPERSONNELSRESULT_H_

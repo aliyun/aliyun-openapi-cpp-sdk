@@ -70,6 +70,8 @@ void SearchMetaTablesResult::parse(const std::string &payload)
 			dataEntityListItemObject.envType = std::stoi(dataNodeDataEntityListDataEntityListItem["EnvType"].asString());
 		if(!dataNodeDataEntityListDataEntityListItem["TenantId"].isNull())
 			dataEntityListItemObject.tenantId = std::stol(dataNodeDataEntityListDataEntityListItem["TenantId"].asString());
+		if(!dataNodeDataEntityListDataEntityListItem["Schema"].isNull())
+			dataEntityListItemObject.schema = dataNodeDataEntityListDataEntityListItem["Schema"].asString();
 		data_.dataEntityList.push_back(dataEntityListItemObject);
 	}
 	if(!value["HttpStatusCode"].isNull())

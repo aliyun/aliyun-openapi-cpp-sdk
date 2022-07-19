@@ -2823,42 +2823,6 @@ Dataworks_publicClient::GetDeploymentOutcomeCallable Dataworks_publicClient::get
 	return task->get_future();
 }
 
-Dataworks_publicClient::GetDutyRosterOutcome Dataworks_publicClient::getDutyRoster(const GetDutyRosterRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetDutyRosterOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetDutyRosterOutcome(GetDutyRosterResult(outcome.result()));
-	else
-		return GetDutyRosterOutcome(outcome.error());
-}
-
-void Dataworks_publicClient::getDutyRosterAsync(const GetDutyRosterRequest& request, const GetDutyRosterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getDutyRoster(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Dataworks_publicClient::GetDutyRosterOutcomeCallable Dataworks_publicClient::getDutyRosterCallable(const GetDutyRosterRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetDutyRosterOutcome()>>(
-			[this, request]()
-			{
-			return this->getDutyRoster(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 Dataworks_publicClient::GetExtensionOutcome Dataworks_publicClient::getExtension(const GetExtensionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5415,42 +5379,6 @@ Dataworks_publicClient::ListDeploymentsOutcomeCallable Dataworks_publicClient::l
 	return task->get_future();
 }
 
-Dataworks_publicClient::ListDutyRostersOutcome Dataworks_publicClient::listDutyRosters(const ListDutyRostersRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListDutyRostersOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListDutyRostersOutcome(ListDutyRostersResult(outcome.result()));
-	else
-		return ListDutyRostersOutcome(outcome.error());
-}
-
-void Dataworks_publicClient::listDutyRostersAsync(const ListDutyRostersRequest& request, const ListDutyRostersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listDutyRosters(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Dataworks_publicClient::ListDutyRostersOutcomeCallable Dataworks_publicClient::listDutyRostersCallable(const ListDutyRostersRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListDutyRostersOutcome()>>(
-			[this, request]()
-			{
-			return this->listDutyRosters(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 Dataworks_publicClient::ListExtensionsOutcome Dataworks_publicClient::listExtensions(const ListExtensionsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -6453,6 +6381,78 @@ Dataworks_publicClient::ListResourceGroupsOutcomeCallable Dataworks_publicClient
 			[this, request]()
 			{
 			return this->listResourceGroups(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dataworks_publicClient::ListShiftPersonnelsOutcome Dataworks_publicClient::listShiftPersonnels(const ListShiftPersonnelsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListShiftPersonnelsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListShiftPersonnelsOutcome(ListShiftPersonnelsResult(outcome.result()));
+	else
+		return ListShiftPersonnelsOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::listShiftPersonnelsAsync(const ListShiftPersonnelsRequest& request, const ListShiftPersonnelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listShiftPersonnels(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::ListShiftPersonnelsOutcomeCallable Dataworks_publicClient::listShiftPersonnelsCallable(const ListShiftPersonnelsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListShiftPersonnelsOutcome()>>(
+			[this, request]()
+			{
+			return this->listShiftPersonnels(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dataworks_publicClient::ListShiftSchedulesOutcome Dataworks_publicClient::listShiftSchedules(const ListShiftSchedulesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListShiftSchedulesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListShiftSchedulesOutcome(ListShiftSchedulesResult(outcome.result()));
+	else
+		return ListShiftSchedulesOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::listShiftSchedulesAsync(const ListShiftSchedulesRequest& request, const ListShiftSchedulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listShiftSchedules(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::ListShiftSchedulesOutcomeCallable Dataworks_publicClient::listShiftSchedulesCallable(const ListShiftSchedulesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListShiftSchedulesOutcome()>>(
+			[this, request]()
+			{
+			return this->listShiftSchedules(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -92,6 +92,8 @@ void GetMetaTableBasicInfoResult::parse(const std::string &payload)
 		data_.caption = dataNode["Caption"].asString();
 	if(!dataNode["TenantId"].isNull())
 		data_.tenantId = std::stol(dataNode["TenantId"].asString());
+	if(!dataNode["Schema"].isNull())
+		data_.schema = dataNode["Schema"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 	if(!value["ErrorMessage"].isNull())

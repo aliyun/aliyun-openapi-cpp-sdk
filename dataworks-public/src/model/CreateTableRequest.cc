@@ -25,6 +25,15 @@ CreateTableRequest::CreateTableRequest()
 
 CreateTableRequest::~CreateTableRequest() {}
 
+std::string CreateTableRequest::getSchema() const {
+  return schema_;
+}
+
+void CreateTableRequest::setSchema(const std::string &schema) {
+  schema_ = schema;
+  setParameter(std::string("Schema"), schema);
+}
+
 std::string CreateTableRequest::getClientToken() const {
   return clientToken_;
 }

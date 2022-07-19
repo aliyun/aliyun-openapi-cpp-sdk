@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_GETDUTYROSTERREQUEST_H_
-#define ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_GETDUTYROSTERREQUEST_H_
+#ifndef ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTSHIFTSCHEDULESREQUEST_H_
+#define ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTSHIFTSCHEDULESREQUEST_H_
 
 #include <alibabacloud/dataworks-public/Dataworks_publicExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,29 +26,26 @@
 namespace AlibabaCloud {
 namespace Dataworks_public {
 namespace Model {
-class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT GetDutyRosterRequest : public RpcServiceRequest {
+class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT ListShiftSchedulesRequest : public RpcServiceRequest {
 public:
-	GetDutyRosterRequest();
-	~GetDutyRosterRequest();
-	std::string getDutyRosterIdentifier() const;
-	void setDutyRosterIdentifier(const std::string &dutyRosterIdentifier);
-	std::string getWatchkeeper() const;
-	void setWatchkeeper(const std::string &watchkeeper);
-	std::string getUserType() const;
-	void setUserType(const std::string &userType);
-	long getEndTime() const;
-	void setEndTime(long endTime);
-	long getBeginTime() const;
-	void setBeginTime(long beginTime);
+	ListShiftSchedulesRequest();
+	~ListShiftSchedulesRequest();
+	std::string getOwner() const;
+	void setOwner(const std::string &owner);
+	int getPageSize() const;
+	void setPageSize(int pageSize);
+	std::string getShiftScheduleName() const;
+	void setShiftScheduleName(const std::string &shiftScheduleName);
+	int getPageNumber() const;
+	void setPageNumber(int pageNumber);
 
 private:
-	std::string dutyRosterIdentifier_;
-	std::string watchkeeper_;
-	std::string userType_;
-	long endTime_;
-	long beginTime_;
+	std::string owner_;
+	int pageSize_;
+	std::string shiftScheduleName_;
+	int pageNumber_;
 };
 } // namespace Model
 } // namespace Dataworks_public
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_GETDUTYROSTERREQUEST_H_
+#endif // !ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTSHIFTSCHEDULESREQUEST_H_

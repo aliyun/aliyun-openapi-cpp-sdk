@@ -53,6 +53,7 @@ namespace AlibabaCloud
 					long lastDdlTime;
 					long createTime;
 					long totalColumnCount;
+					std::string schema;
 					long projectId;
 					std::string databaseName;
 					long lastAccessTime;

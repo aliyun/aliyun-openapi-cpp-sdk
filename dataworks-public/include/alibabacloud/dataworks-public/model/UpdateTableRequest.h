@@ -43,6 +43,8 @@ public:
 	};
 	UpdateTableRequest();
 	~UpdateTableRequest();
+	std::string getSchema() const;
+	void setSchema(const std::string &schema);
 	std::vector<Columns> getColumns() const;
 	void setColumns(const std::vector<Columns> &columns);
 	int getLifeCycle() const;
@@ -83,6 +85,7 @@ public:
 	void setCreateIfNotExists(bool createIfNotExists);
 
 private:
+	std::string schema_;
 	std::vector<Columns> columns_;
 	int lifeCycle_;
 	std::vector<Themes> themes_;

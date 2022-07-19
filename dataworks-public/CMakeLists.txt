@@ -175,8 +175,6 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/GetDataSourceMetaResult.h
 	include/alibabacloud/dataworks-public/model/GetDeploymentRequest.h
 	include/alibabacloud/dataworks-public/model/GetDeploymentResult.h
-	include/alibabacloud/dataworks-public/model/GetDutyRosterRequest.h
-	include/alibabacloud/dataworks-public/model/GetDutyRosterResult.h
 	include/alibabacloud/dataworks-public/model/GetExtensionRequest.h
 	include/alibabacloud/dataworks-public/model/GetExtensionResult.h
 	include/alibabacloud/dataworks-public/model/GetFileRequest.h
@@ -319,8 +317,6 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/ListDataSourcesResult.h
 	include/alibabacloud/dataworks-public/model/ListDeploymentsRequest.h
 	include/alibabacloud/dataworks-public/model/ListDeploymentsResult.h
-	include/alibabacloud/dataworks-public/model/ListDutyRostersRequest.h
-	include/alibabacloud/dataworks-public/model/ListDutyRostersResult.h
 	include/alibabacloud/dataworks-public/model/ListExtensionsRequest.h
 	include/alibabacloud/dataworks-public/model/ListExtensionsResult.h
 	include/alibabacloud/dataworks-public/model/ListFileTypeRequest.h
@@ -377,6 +373,10 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/ListRemindsResult.h
 	include/alibabacloud/dataworks-public/model/ListResourceGroupsRequest.h
 	include/alibabacloud/dataworks-public/model/ListResourceGroupsResult.h
+	include/alibabacloud/dataworks-public/model/ListShiftPersonnelsRequest.h
+	include/alibabacloud/dataworks-public/model/ListShiftPersonnelsResult.h
+	include/alibabacloud/dataworks-public/model/ListShiftSchedulesRequest.h
+	include/alibabacloud/dataworks-public/model/ListShiftSchedulesResult.h
 	include/alibabacloud/dataworks-public/model/ListSuccessInstanceAmountRequest.h
 	include/alibabacloud/dataworks-public/model/ListSuccessInstanceAmountResult.h
 	include/alibabacloud/dataworks-public/model/ListTableLevelRequest.h
@@ -648,8 +648,6 @@ set(dataworks-public_src
 	src/model/GetDataSourceMetaResult.cc
 	src/model/GetDeploymentRequest.cc
 	src/model/GetDeploymentResult.cc
-	src/model/GetDutyRosterRequest.cc
-	src/model/GetDutyRosterResult.cc
 	src/model/GetExtensionRequest.cc
 	src/model/GetExtensionResult.cc
 	src/model/GetFileRequest.cc
@@ -792,8 +790,6 @@ set(dataworks-public_src
 	src/model/ListDataSourcesResult.cc
 	src/model/ListDeploymentsRequest.cc
 	src/model/ListDeploymentsResult.cc
-	src/model/ListDutyRostersRequest.cc
-	src/model/ListDutyRostersResult.cc
 	src/model/ListExtensionsRequest.cc
 	src/model/ListExtensionsResult.cc
 	src/model/ListFileTypeRequest.cc
@@ -850,6 +846,10 @@ set(dataworks-public_src
 	src/model/ListRemindsResult.cc
 	src/model/ListResourceGroupsRequest.cc
 	src/model/ListResourceGroupsResult.cc
+	src/model/ListShiftPersonnelsRequest.cc
+	src/model/ListShiftPersonnelsResult.cc
+	src/model/ListShiftSchedulesRequest.cc
+	src/model/ListShiftSchedulesResult.cc
 	src/model/ListSuccessInstanceAmountRequest.cc
 	src/model/ListSuccessInstanceAmountResult.cc
 	src/model/ListTableLevelRequest.cc

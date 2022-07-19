@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTDUTYROSTERSREQUEST_H_
-#define ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTDUTYROSTERSREQUEST_H_
+#ifndef ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTSHIFTPERSONNELSREQUEST_H_
+#define ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTSHIFTPERSONNELSREQUEST_H_
 
 #include <alibabacloud/dataworks-public/Dataworks_publicExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,26 +26,29 @@
 namespace AlibabaCloud {
 namespace Dataworks_public {
 namespace Model {
-class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT ListDutyRostersRequest : public RpcServiceRequest {
+class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT ListShiftPersonnelsRequest : public RpcServiceRequest {
 public:
-	ListDutyRostersRequest();
-	~ListDutyRostersRequest();
-	std::string getDutyRosterOwner() const;
-	void setDutyRosterOwner(const std::string &dutyRosterOwner);
-	std::string getDutyRosterName() const;
-	void setDutyRosterName(const std::string &dutyRosterName);
-	int getPageSize() const;
-	void setPageSize(int pageSize);
-	int getPageNumber() const;
-	void setPageNumber(int pageNumber);
+	ListShiftPersonnelsRequest();
+	~ListShiftPersonnelsRequest();
+	std::string getShiftPersonUID() const;
+	void setShiftPersonUID(const std::string &shiftPersonUID);
+	std::string getUserType() const;
+	void setUserType(const std::string &userType);
+	long getEndTime() const;
+	void setEndTime(long endTime);
+	long getBeginTime() const;
+	void setBeginTime(long beginTime);
+	std::string getShiftScheduleIdentifier() const;
+	void setShiftScheduleIdentifier(const std::string &shiftScheduleIdentifier);
 
 private:
-	std::string dutyRosterOwner_;
-	std::string dutyRosterName_;
-	int pageSize_;
-	int pageNumber_;
+	std::string shiftPersonUID_;
+	std::string userType_;
+	long endTime_;
+	long beginTime_;
+	std::string shiftScheduleIdentifier_;
 };
 } // namespace Model
 } // namespace Dataworks_public
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTDUTYROSTERSREQUEST_H_
+#endif // !ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTSHIFTPERSONNELSREQUEST_H_

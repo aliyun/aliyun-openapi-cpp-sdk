@@ -176,8 +176,6 @@
 #include "model/GetDataSourceMetaResult.h"
 #include "model/GetDeploymentRequest.h"
 #include "model/GetDeploymentResult.h"
-#include "model/GetDutyRosterRequest.h"
-#include "model/GetDutyRosterResult.h"
 #include "model/GetExtensionRequest.h"
 #include "model/GetExtensionResult.h"
 #include "model/GetFileRequest.h"
@@ -320,8 +318,6 @@
 #include "model/ListDataSourcesResult.h"
 #include "model/ListDeploymentsRequest.h"
 #include "model/ListDeploymentsResult.h"
-#include "model/ListDutyRostersRequest.h"
-#include "model/ListDutyRostersResult.h"
 #include "model/ListExtensionsRequest.h"
 #include "model/ListExtensionsResult.h"
 #include "model/ListFileTypeRequest.h"
@@ -378,6 +374,10 @@
 #include "model/ListRemindsResult.h"
 #include "model/ListResourceGroupsRequest.h"
 #include "model/ListResourceGroupsResult.h"
+#include "model/ListShiftPersonnelsRequest.h"
+#include "model/ListShiftPersonnelsResult.h"
+#include "model/ListShiftSchedulesRequest.h"
+#include "model/ListShiftSchedulesResult.h"
 #include "model/ListSuccessInstanceAmountRequest.h"
 #include "model/ListSuccessInstanceAmountResult.h"
 #include "model/ListTableLevelRequest.h"
@@ -732,9 +732,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetDeploymentResult> GetDeploymentOutcome;
 			typedef std::future<GetDeploymentOutcome> GetDeploymentOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::GetDeploymentRequest&, const GetDeploymentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDeploymentAsyncHandler;
-			typedef Outcome<Error, Model::GetDutyRosterResult> GetDutyRosterOutcome;
-			typedef std::future<GetDutyRosterOutcome> GetDutyRosterOutcomeCallable;
-			typedef std::function<void(const Dataworks_publicClient*, const Model::GetDutyRosterRequest&, const GetDutyRosterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDutyRosterAsyncHandler;
 			typedef Outcome<Error, Model::GetExtensionResult> GetExtensionOutcome;
 			typedef std::future<GetExtensionOutcome> GetExtensionOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::GetExtensionRequest&, const GetExtensionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetExtensionAsyncHandler;
@@ -948,9 +945,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListDeploymentsResult> ListDeploymentsOutcome;
 			typedef std::future<ListDeploymentsOutcome> ListDeploymentsOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::ListDeploymentsRequest&, const ListDeploymentsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDeploymentsAsyncHandler;
-			typedef Outcome<Error, Model::ListDutyRostersResult> ListDutyRostersOutcome;
-			typedef std::future<ListDutyRostersOutcome> ListDutyRostersOutcomeCallable;
-			typedef std::function<void(const Dataworks_publicClient*, const Model::ListDutyRostersRequest&, const ListDutyRostersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDutyRostersAsyncHandler;
 			typedef Outcome<Error, Model::ListExtensionsResult> ListExtensionsOutcome;
 			typedef std::future<ListExtensionsOutcome> ListExtensionsOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::ListExtensionsRequest&, const ListExtensionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListExtensionsAsyncHandler;
@@ -1035,6 +1029,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListResourceGroupsResult> ListResourceGroupsOutcome;
 			typedef std::future<ListResourceGroupsOutcome> ListResourceGroupsOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::ListResourceGroupsRequest&, const ListResourceGroupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListResourceGroupsAsyncHandler;
+			typedef Outcome<Error, Model::ListShiftPersonnelsResult> ListShiftPersonnelsOutcome;
+			typedef std::future<ListShiftPersonnelsOutcome> ListShiftPersonnelsOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::ListShiftPersonnelsRequest&, const ListShiftPersonnelsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListShiftPersonnelsAsyncHandler;
+			typedef Outcome<Error, Model::ListShiftSchedulesResult> ListShiftSchedulesOutcome;
+			typedef std::future<ListShiftSchedulesOutcome> ListShiftSchedulesOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::ListShiftSchedulesRequest&, const ListShiftSchedulesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListShiftSchedulesAsyncHandler;
 			typedef Outcome<Error, Model::ListSuccessInstanceAmountResult> ListSuccessInstanceAmountOutcome;
 			typedef std::future<ListSuccessInstanceAmountOutcome> ListSuccessInstanceAmountOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::ListSuccessInstanceAmountRequest&, const ListSuccessInstanceAmountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListSuccessInstanceAmountAsyncHandler;
@@ -1442,9 +1442,6 @@ namespace AlibabaCloud
 			GetDeploymentOutcome getDeployment(const Model::GetDeploymentRequest &request)const;
 			void getDeploymentAsync(const Model::GetDeploymentRequest& request, const GetDeploymentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetDeploymentOutcomeCallable getDeploymentCallable(const Model::GetDeploymentRequest& request) const;
-			GetDutyRosterOutcome getDutyRoster(const Model::GetDutyRosterRequest &request)const;
-			void getDutyRosterAsync(const Model::GetDutyRosterRequest& request, const GetDutyRosterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetDutyRosterOutcomeCallable getDutyRosterCallable(const Model::GetDutyRosterRequest& request) const;
 			GetExtensionOutcome getExtension(const Model::GetExtensionRequest &request)const;
 			void getExtensionAsync(const Model::GetExtensionRequest& request, const GetExtensionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetExtensionOutcomeCallable getExtensionCallable(const Model::GetExtensionRequest& request) const;
@@ -1658,9 +1655,6 @@ namespace AlibabaCloud
 			ListDeploymentsOutcome listDeployments(const Model::ListDeploymentsRequest &request)const;
 			void listDeploymentsAsync(const Model::ListDeploymentsRequest& request, const ListDeploymentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListDeploymentsOutcomeCallable listDeploymentsCallable(const Model::ListDeploymentsRequest& request) const;
-			ListDutyRostersOutcome listDutyRosters(const Model::ListDutyRostersRequest &request)const;
-			void listDutyRostersAsync(const Model::ListDutyRostersRequest& request, const ListDutyRostersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListDutyRostersOutcomeCallable listDutyRostersCallable(const Model::ListDutyRostersRequest& request) const;
 			ListExtensionsOutcome listExtensions(const Model::ListExtensionsRequest &request)const;
 			void listExtensionsAsync(const Model::ListExtensionsRequest& request, const ListExtensionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListExtensionsOutcomeCallable listExtensionsCallable(const Model::ListExtensionsRequest& request) const;
@@ -1745,6 +1739,12 @@ namespace AlibabaCloud
 			ListResourceGroupsOutcome listResourceGroups(const Model::ListResourceGroupsRequest &request)const;
 			void listResourceGroupsAsync(const Model::ListResourceGroupsRequest& request, const ListResourceGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListResourceGroupsOutcomeCallable listResourceGroupsCallable(const Model::ListResourceGroupsRequest& request) const;
+			ListShiftPersonnelsOutcome listShiftPersonnels(const Model::ListShiftPersonnelsRequest &request)const;
+			void listShiftPersonnelsAsync(const Model::ListShiftPersonnelsRequest& request, const ListShiftPersonnelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListShiftPersonnelsOutcomeCallable listShiftPersonnelsCallable(const Model::ListShiftPersonnelsRequest& request) const;
+			ListShiftSchedulesOutcome listShiftSchedules(const Model::ListShiftSchedulesRequest &request)const;
+			void listShiftSchedulesAsync(const Model::ListShiftSchedulesRequest& request, const ListShiftSchedulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListShiftSchedulesOutcomeCallable listShiftSchedulesCallable(const Model::ListShiftSchedulesRequest& request) const;
 			ListSuccessInstanceAmountOutcome listSuccessInstanceAmount(const Model::ListSuccessInstanceAmountRequest &request)const;
 			void listSuccessInstanceAmountAsync(const Model::ListSuccessInstanceAmountRequest& request, const ListSuccessInstanceAmountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListSuccessInstanceAmountOutcomeCallable listSuccessInstanceAmountCallable(const Model::ListSuccessInstanceAmountRequest& request) const;

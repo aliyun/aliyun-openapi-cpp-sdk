@@ -25,6 +25,15 @@ DeleteTableRequest::DeleteTableRequest()
 
 DeleteTableRequest::~DeleteTableRequest() {}
 
+std::string DeleteTableRequest::getSchema() const {
+  return schema_;
+}
+
+void DeleteTableRequest::setSchema(const std::string &schema) {
+  schema_ = schema;
+  setParameter(std::string("Schema"), schema);
+}
+
 int DeleteTableRequest::getEnvType() const {
   return envType_;
 }

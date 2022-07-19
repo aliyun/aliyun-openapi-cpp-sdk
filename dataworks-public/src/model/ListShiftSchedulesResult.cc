@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/dataworks-public/model/GetDutyRosterResult.h>
+#include <alibabacloud/dataworks-public/model/ListShiftSchedulesResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Dataworks_public;
 using namespace AlibabaCloud::Dataworks_public::Model;
 
-GetDutyRosterResult::GetDutyRosterResult() :
+ListShiftSchedulesResult::ListShiftSchedulesResult() :
 	ServiceResult()
 {}
 
-GetDutyRosterResult::GetDutyRosterResult(const std::string &payload) :
+ListShiftSchedulesResult::ListShiftSchedulesResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-GetDutyRosterResult::~GetDutyRosterResult()
+ListShiftSchedulesResult::~ListShiftSchedulesResult()
 {}
 
-void GetDutyRosterResult::parse(const std::string &payload)
+void ListShiftSchedulesResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -46,24 +46,20 @@ void GetDutyRosterResult::parse(const std::string &payload)
 		paging_.pageSize = std::stoi(pagingNode["PageSize"].asString());
 	if(!pagingNode["TotalCount"].isNull())
 		paging_.totalCount = std::stoi(pagingNode["TotalCount"].asString());
-	auto allDutyRosterNode = pagingNode["DutyRoster"]["DutyRosterItem"];
-	for (auto pagingNodeDutyRosterDutyRosterItem : allDutyRosterNode)
+	auto allShiftSchedulesNode = pagingNode["ShiftSchedules"]["ShiftSchedulesItem"];
+	for (auto pagingNodeShiftSchedulesShiftSchedulesItem : allShiftSchedulesNode)
 	{
-		Paging::DutyRosterItem dutyRosterItemObject;
-		if(!pagingNodeDutyRosterDutyRosterItem["Watchkeeper"].isNull())
-			dutyRosterItemObject.watchkeeper = pagingNodeDutyRosterDutyRosterItem["Watchkeeper"].asString();
-		if(!pagingNodeDutyRosterDutyRosterItem["WatchkeeperName"].isNull())
-			dutyRosterItemObject.watchkeeperName = pagingNodeDutyRosterDutyRosterItem["WatchkeeperName"].asString();
-		if(!pagingNodeDutyRosterDutyRosterItem["StartLong"].isNull())
-			dutyRosterItemObject.startLong = std::stol(pagingNodeDutyRosterDutyRosterItem["StartLong"].asString());
-		if(!pagingNodeDutyRosterDutyRosterItem["EndLong"].isNull())
-			dutyRosterItemObject.endLong = std::stol(pagingNodeDutyRosterDutyRosterItem["EndLong"].asString());
-		paging_.dutyRoster.push_back(dutyRosterItemObject);
+		Paging::ShiftSchedulesItem shiftSchedulesItemObject;
+		if(!pagingNodeShiftSchedulesShiftSchedulesItem["ShiftScheduleIdentifier"].isNull())
+			shiftSchedulesItemObject.shiftScheduleIdentifier = pagingNodeShiftSchedulesShiftSchedulesItem["ShiftScheduleIdentifier"].asString();
+		if(!pagingNodeShiftSchedulesShiftSchedulesItem["ShiftScheduleName"].isNull())
+			shiftSchedulesItemObject.shiftScheduleName = pagingNodeShiftSchedulesShiftSchedulesItem["ShiftScheduleName"].asString();
+		paging_.shiftSchedules.push_back(shiftSchedulesItemObject);
 	}
 
 }
 
-GetDutyRosterResult::Paging GetDutyRosterResult::getPaging()const
+ListShiftSchedulesResult::Paging ListShiftSchedulesResult::getPaging()const
 {
 	return paging_;
 }

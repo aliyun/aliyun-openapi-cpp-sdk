@@ -25,6 +25,15 @@ UpdateTableRequest::UpdateTableRequest()
 
 UpdateTableRequest::~UpdateTableRequest() {}
 
+std::string UpdateTableRequest::getSchema() const {
+  return schema_;
+}
+
+void UpdateTableRequest::setSchema(const std::string &schema) {
+  schema_ = schema;
+  setParameter(std::string("Schema"), schema);
+}
+
 std::vector<UpdateTableRequest::Columns> UpdateTableRequest::getColumns() const {
   return columns_;
 }

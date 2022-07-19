@@ -38,21 +38,21 @@ public:
 	void setContent(const std::string &content);
 	std::string getSubType() const;
 	void setSubType(const std::string &subType);
-	std::string getName() const;
-	void setName(const std::string &name);
 	int getEnvType() const;
 	void setEnvType(int envType);
 	long getProjectId() const;
 	void setProjectId(long projectId);
+	std::string getName() const;
+	void setName(const std::string &name);
 
 private:
 	std::string dataSourceType_;
 	std::string description_;
 	std::string content_;
 	std::string subType_;
-	std::string name_;
 	int envType_;
 	long projectId_;
+	std::string name_;
 };
 } // namespace Model
 } // namespace Dataworks_public

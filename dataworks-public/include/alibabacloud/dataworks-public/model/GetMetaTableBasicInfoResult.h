@@ -38,6 +38,7 @@ namespace AlibabaCloud
 					int lifeCycle;
 					bool isPartitionTable;
 					std::string projectName;
+					std::string schema;
 					long lastAccessTime;
 					long lastModifyTime;
 					int envType;

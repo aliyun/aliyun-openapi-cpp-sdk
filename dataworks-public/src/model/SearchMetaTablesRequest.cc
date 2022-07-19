@@ -25,6 +25,15 @@ SearchMetaTablesRequest::SearchMetaTablesRequest()
 
 SearchMetaTablesRequest::~SearchMetaTablesRequest() {}
 
+std::string SearchMetaTablesRequest::getSchema() const {
+  return schema_;
+}
+
+void SearchMetaTablesRequest::setSchema(const std::string &schema) {
+  schema_ = schema;
+  setParameter(std::string("Schema"), schema);
+}
+
 std::string SearchMetaTablesRequest::getDataSourceType() const {
   return dataSourceType_;
 }

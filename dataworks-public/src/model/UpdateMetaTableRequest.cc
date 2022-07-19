@@ -25,6 +25,15 @@ UpdateMetaTableRequest::UpdateMetaTableRequest()
 
 UpdateMetaTableRequest::~UpdateMetaTableRequest() {}
 
+std::string UpdateMetaTableRequest::getSchema() const {
+  return schema_;
+}
+
+void UpdateMetaTableRequest::setSchema(const std::string &schema) {
+  schema_ = schema;
+  setParameter(std::string("Schema"), schema);
+}
+
 int UpdateMetaTableRequest::getVisibility() const {
   return visibility_;
 }

@@ -30,6 +30,8 @@ class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT DeleteTableRequest : public RpcServic
 public:
 	DeleteTableRequest();
 	~DeleteTableRequest();
+	std::string getSchema() const;
+	void setSchema(const std::string &schema);
 	int getEnvType() const;
 	void setEnvType(int envType);
 	std::string getTableName() const;
@@ -40,6 +42,7 @@ public:
 	void setProjectId(long projectId);
 
 private:
+	std::string schema_;
 	int envType_;
 	std::string tableName_;
 	std::string appGuid_;

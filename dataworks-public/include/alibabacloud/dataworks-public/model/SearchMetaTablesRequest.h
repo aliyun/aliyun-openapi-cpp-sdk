@@ -30,6 +30,8 @@ class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT SearchMetaTablesRequest : public RpcS
 public:
 	SearchMetaTablesRequest();
 	~SearchMetaTablesRequest();
+	std::string getSchema() const;
+	void setSchema(const std::string &schema);
 	std::string getDataSourceType() const;
 	void setDataSourceType(const std::string &dataSourceType);
 	std::string getClusterId() const;
@@ -46,6 +48,7 @@ public:
 	void setKeyword(const std::string &keyword);
 
 private:
+	std::string schema_;
 	std::string dataSourceType_;
 	std::string clusterId_;
 	int pageNumber_;
