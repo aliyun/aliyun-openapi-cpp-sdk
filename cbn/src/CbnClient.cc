@@ -735,6 +735,42 @@ CbnClient::CreateTransitRouterPeerAttachmentOutcomeCallable CbnClient::createTra
 	return task->get_future();
 }
 
+CbnClient::CreateTransitRouterPrefixListAssociationOutcome CbnClient::createTransitRouterPrefixListAssociation(const CreateTransitRouterPrefixListAssociationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateTransitRouterPrefixListAssociationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateTransitRouterPrefixListAssociationOutcome(CreateTransitRouterPrefixListAssociationResult(outcome.result()));
+	else
+		return CreateTransitRouterPrefixListAssociationOutcome(outcome.error());
+}
+
+void CbnClient::createTransitRouterPrefixListAssociationAsync(const CreateTransitRouterPrefixListAssociationRequest& request, const CreateTransitRouterPrefixListAssociationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createTransitRouterPrefixListAssociation(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::CreateTransitRouterPrefixListAssociationOutcomeCallable CbnClient::createTransitRouterPrefixListAssociationCallable(const CreateTransitRouterPrefixListAssociationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateTransitRouterPrefixListAssociationOutcome()>>(
+			[this, request]()
+			{
+			return this->createTransitRouterPrefixListAssociation(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CbnClient::CreateTransitRouterRouteEntryOutcome CbnClient::createTransitRouterRouteEntry(const CreateTransitRouterRouteEntryRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1413,6 +1449,42 @@ CbnClient::DeleteTransitRouterPeerAttachmentOutcomeCallable CbnClient::deleteTra
 			[this, request]()
 			{
 			return this->deleteTransitRouterPeerAttachment(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CbnClient::DeleteTransitRouterPrefixListAssociationOutcome CbnClient::deleteTransitRouterPrefixListAssociation(const DeleteTransitRouterPrefixListAssociationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteTransitRouterPrefixListAssociationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteTransitRouterPrefixListAssociationOutcome(DeleteTransitRouterPrefixListAssociationResult(outcome.result()));
+	else
+		return DeleteTransitRouterPrefixListAssociationOutcome(outcome.error());
+}
+
+void CbnClient::deleteTransitRouterPrefixListAssociationAsync(const DeleteTransitRouterPrefixListAssociationRequest& request, const DeleteTransitRouterPrefixListAssociationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteTransitRouterPrefixListAssociation(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::DeleteTransitRouterPrefixListAssociationOutcomeCallable CbnClient::deleteTransitRouterPrefixListAssociationCallable(const DeleteTransitRouterPrefixListAssociationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteTransitRouterPrefixListAssociationOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteTransitRouterPrefixListAssociation(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3141,6 +3213,42 @@ CbnClient::ListTransitRouterPeerAttachmentsOutcomeCallable CbnClient::listTransi
 			[this, request]()
 			{
 			return this->listTransitRouterPeerAttachments(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CbnClient::ListTransitRouterPrefixListAssociationOutcome CbnClient::listTransitRouterPrefixListAssociation(const ListTransitRouterPrefixListAssociationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListTransitRouterPrefixListAssociationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListTransitRouterPrefixListAssociationOutcome(ListTransitRouterPrefixListAssociationResult(outcome.result()));
+	else
+		return ListTransitRouterPrefixListAssociationOutcome(outcome.error());
+}
+
+void CbnClient::listTransitRouterPrefixListAssociationAsync(const ListTransitRouterPrefixListAssociationRequest& request, const ListTransitRouterPrefixListAssociationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listTransitRouterPrefixListAssociation(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::ListTransitRouterPrefixListAssociationOutcomeCallable CbnClient::listTransitRouterPrefixListAssociationCallable(const ListTransitRouterPrefixListAssociationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListTransitRouterPrefixListAssociationOutcome()>>(
+			[this, request]()
+			{
+			return this->listTransitRouterPrefixListAssociation(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -59,6 +59,8 @@ set(cbn_public_header_model
 	include/alibabacloud/cbn/model/CreateTransitRouterMulticastDomainResult.h
 	include/alibabacloud/cbn/model/CreateTransitRouterPeerAttachmentRequest.h
 	include/alibabacloud/cbn/model/CreateTransitRouterPeerAttachmentResult.h
+	include/alibabacloud/cbn/model/CreateTransitRouterPrefixListAssociationRequest.h
+	include/alibabacloud/cbn/model/CreateTransitRouterPrefixListAssociationResult.h
 	include/alibabacloud/cbn/model/CreateTransitRouterRouteEntryRequest.h
 	include/alibabacloud/cbn/model/CreateTransitRouterRouteEntryResult.h
 	include/alibabacloud/cbn/model/CreateTransitRouterRouteTableRequest.h
@@ -97,6 +99,8 @@ set(cbn_public_header_model
 	include/alibabacloud/cbn/model/DeleteTransitRouterMulticastDomainResult.h
 	include/alibabacloud/cbn/model/DeleteTransitRouterPeerAttachmentRequest.h
 	include/alibabacloud/cbn/model/DeleteTransitRouterPeerAttachmentResult.h
+	include/alibabacloud/cbn/model/DeleteTransitRouterPrefixListAssociationRequest.h
+	include/alibabacloud/cbn/model/DeleteTransitRouterPrefixListAssociationResult.h
 	include/alibabacloud/cbn/model/DeleteTransitRouterRouteEntryRequest.h
 	include/alibabacloud/cbn/model/DeleteTransitRouterRouteEntryResult.h
 	include/alibabacloud/cbn/model/DeleteTransitRouterRouteTableRequest.h
@@ -193,6 +197,8 @@ set(cbn_public_header_model
 	include/alibabacloud/cbn/model/ListTransitRouterMulticastGroupsResult.h
 	include/alibabacloud/cbn/model/ListTransitRouterPeerAttachmentsRequest.h
 	include/alibabacloud/cbn/model/ListTransitRouterPeerAttachmentsResult.h
+	include/alibabacloud/cbn/model/ListTransitRouterPrefixListAssociationRequest.h
+	include/alibabacloud/cbn/model/ListTransitRouterPrefixListAssociationResult.h
 	include/alibabacloud/cbn/model/ListTransitRouterRouteEntriesRequest.h
 	include/alibabacloud/cbn/model/ListTransitRouterRouteEntriesResult.h
 	include/alibabacloud/cbn/model/ListTransitRouterRouteTableAssociationsRequest.h
@@ -316,6 +322,8 @@ set(cbn_src
 	src/model/CreateTransitRouterMulticastDomainResult.cc
 	src/model/CreateTransitRouterPeerAttachmentRequest.cc
 	src/model/CreateTransitRouterPeerAttachmentResult.cc
+	src/model/CreateTransitRouterPrefixListAssociationRequest.cc
+	src/model/CreateTransitRouterPrefixListAssociationResult.cc
 	src/model/CreateTransitRouterRouteEntryRequest.cc
 	src/model/CreateTransitRouterRouteEntryResult.cc
 	src/model/CreateTransitRouterRouteTableRequest.cc
@@ -354,6 +362,8 @@ set(cbn_src
 	src/model/DeleteTransitRouterMulticastDomainResult.cc
 	src/model/DeleteTransitRouterPeerAttachmentRequest.cc
 	src/model/DeleteTransitRouterPeerAttachmentResult.cc
+	src/model/DeleteTransitRouterPrefixListAssociationRequest.cc
+	src/model/DeleteTransitRouterPrefixListAssociationResult.cc
 	src/model/DeleteTransitRouterRouteEntryRequest.cc
 	src/model/DeleteTransitRouterRouteEntryResult.cc
 	src/model/DeleteTransitRouterRouteTableRequest.cc
@@ -450,6 +460,8 @@ set(cbn_src
 	src/model/ListTransitRouterMulticastGroupsResult.cc
 	src/model/ListTransitRouterPeerAttachmentsRequest.cc
 	src/model/ListTransitRouterPeerAttachmentsResult.cc
+	src/model/ListTransitRouterPrefixListAssociationRequest.cc
+	src/model/ListTransitRouterPrefixListAssociationResult.cc
 	src/model/ListTransitRouterRouteEntriesRequest.cc
 	src/model/ListTransitRouterRouteEntriesResult.cc
 	src/model/ListTransitRouterRouteTableAssociationsRequest.cc

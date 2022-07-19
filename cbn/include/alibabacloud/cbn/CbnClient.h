@@ -60,6 +60,8 @@
 #include "model/CreateTransitRouterMulticastDomainResult.h"
 #include "model/CreateTransitRouterPeerAttachmentRequest.h"
 #include "model/CreateTransitRouterPeerAttachmentResult.h"
+#include "model/CreateTransitRouterPrefixListAssociationRequest.h"
+#include "model/CreateTransitRouterPrefixListAssociationResult.h"
 #include "model/CreateTransitRouterRouteEntryRequest.h"
 #include "model/CreateTransitRouterRouteEntryResult.h"
 #include "model/CreateTransitRouterRouteTableRequest.h"
@@ -98,6 +100,8 @@
 #include "model/DeleteTransitRouterMulticastDomainResult.h"
 #include "model/DeleteTransitRouterPeerAttachmentRequest.h"
 #include "model/DeleteTransitRouterPeerAttachmentResult.h"
+#include "model/DeleteTransitRouterPrefixListAssociationRequest.h"
+#include "model/DeleteTransitRouterPrefixListAssociationResult.h"
 #include "model/DeleteTransitRouterRouteEntryRequest.h"
 #include "model/DeleteTransitRouterRouteEntryResult.h"
 #include "model/DeleteTransitRouterRouteTableRequest.h"
@@ -194,6 +198,8 @@
 #include "model/ListTransitRouterMulticastGroupsResult.h"
 #include "model/ListTransitRouterPeerAttachmentsRequest.h"
 #include "model/ListTransitRouterPeerAttachmentsResult.h"
+#include "model/ListTransitRouterPrefixListAssociationRequest.h"
+#include "model/ListTransitRouterPrefixListAssociationResult.h"
 #include "model/ListTransitRouterRouteEntriesRequest.h"
 #include "model/ListTransitRouterRouteEntriesResult.h"
 #include "model/ListTransitRouterRouteTableAssociationsRequest.h"
@@ -342,6 +348,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateTransitRouterPeerAttachmentResult> CreateTransitRouterPeerAttachmentOutcome;
 			typedef std::future<CreateTransitRouterPeerAttachmentOutcome> CreateTransitRouterPeerAttachmentOutcomeCallable;
 			typedef std::function<void(const CbnClient*, const Model::CreateTransitRouterPeerAttachmentRequest&, const CreateTransitRouterPeerAttachmentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateTransitRouterPeerAttachmentAsyncHandler;
+			typedef Outcome<Error, Model::CreateTransitRouterPrefixListAssociationResult> CreateTransitRouterPrefixListAssociationOutcome;
+			typedef std::future<CreateTransitRouterPrefixListAssociationOutcome> CreateTransitRouterPrefixListAssociationOutcomeCallable;
+			typedef std::function<void(const CbnClient*, const Model::CreateTransitRouterPrefixListAssociationRequest&, const CreateTransitRouterPrefixListAssociationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateTransitRouterPrefixListAssociationAsyncHandler;
 			typedef Outcome<Error, Model::CreateTransitRouterRouteEntryResult> CreateTransitRouterRouteEntryOutcome;
 			typedef std::future<CreateTransitRouterRouteEntryOutcome> CreateTransitRouterRouteEntryOutcomeCallable;
 			typedef std::function<void(const CbnClient*, const Model::CreateTransitRouterRouteEntryRequest&, const CreateTransitRouterRouteEntryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateTransitRouterRouteEntryAsyncHandler;
@@ -399,6 +408,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteTransitRouterPeerAttachmentResult> DeleteTransitRouterPeerAttachmentOutcome;
 			typedef std::future<DeleteTransitRouterPeerAttachmentOutcome> DeleteTransitRouterPeerAttachmentOutcomeCallable;
 			typedef std::function<void(const CbnClient*, const Model::DeleteTransitRouterPeerAttachmentRequest&, const DeleteTransitRouterPeerAttachmentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTransitRouterPeerAttachmentAsyncHandler;
+			typedef Outcome<Error, Model::DeleteTransitRouterPrefixListAssociationResult> DeleteTransitRouterPrefixListAssociationOutcome;
+			typedef std::future<DeleteTransitRouterPrefixListAssociationOutcome> DeleteTransitRouterPrefixListAssociationOutcomeCallable;
+			typedef std::function<void(const CbnClient*, const Model::DeleteTransitRouterPrefixListAssociationRequest&, const DeleteTransitRouterPrefixListAssociationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTransitRouterPrefixListAssociationAsyncHandler;
 			typedef Outcome<Error, Model::DeleteTransitRouterRouteEntryResult> DeleteTransitRouterRouteEntryOutcome;
 			typedef std::future<DeleteTransitRouterRouteEntryOutcome> DeleteTransitRouterRouteEntryOutcomeCallable;
 			typedef std::function<void(const CbnClient*, const Model::DeleteTransitRouterRouteEntryRequest&, const DeleteTransitRouterRouteEntryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTransitRouterRouteEntryAsyncHandler;
@@ -543,6 +555,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListTransitRouterPeerAttachmentsResult> ListTransitRouterPeerAttachmentsOutcome;
 			typedef std::future<ListTransitRouterPeerAttachmentsOutcome> ListTransitRouterPeerAttachmentsOutcomeCallable;
 			typedef std::function<void(const CbnClient*, const Model::ListTransitRouterPeerAttachmentsRequest&, const ListTransitRouterPeerAttachmentsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTransitRouterPeerAttachmentsAsyncHandler;
+			typedef Outcome<Error, Model::ListTransitRouterPrefixListAssociationResult> ListTransitRouterPrefixListAssociationOutcome;
+			typedef std::future<ListTransitRouterPrefixListAssociationOutcome> ListTransitRouterPrefixListAssociationOutcomeCallable;
+			typedef std::function<void(const CbnClient*, const Model::ListTransitRouterPrefixListAssociationRequest&, const ListTransitRouterPrefixListAssociationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTransitRouterPrefixListAssociationAsyncHandler;
 			typedef Outcome<Error, Model::ListTransitRouterRouteEntriesResult> ListTransitRouterRouteEntriesOutcome;
 			typedef std::future<ListTransitRouterRouteEntriesOutcome> ListTransitRouterRouteEntriesOutcomeCallable;
 			typedef std::function<void(const CbnClient*, const Model::ListTransitRouterRouteEntriesRequest&, const ListTransitRouterRouteEntriesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTransitRouterRouteEntriesAsyncHandler;
@@ -728,6 +743,9 @@ namespace AlibabaCloud
 			CreateTransitRouterPeerAttachmentOutcome createTransitRouterPeerAttachment(const Model::CreateTransitRouterPeerAttachmentRequest &request)const;
 			void createTransitRouterPeerAttachmentAsync(const Model::CreateTransitRouterPeerAttachmentRequest& request, const CreateTransitRouterPeerAttachmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateTransitRouterPeerAttachmentOutcomeCallable createTransitRouterPeerAttachmentCallable(const Model::CreateTransitRouterPeerAttachmentRequest& request) const;
+			CreateTransitRouterPrefixListAssociationOutcome createTransitRouterPrefixListAssociation(const Model::CreateTransitRouterPrefixListAssociationRequest &request)const;
+			void createTransitRouterPrefixListAssociationAsync(const Model::CreateTransitRouterPrefixListAssociationRequest& request, const CreateTransitRouterPrefixListAssociationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateTransitRouterPrefixListAssociationOutcomeCallable createTransitRouterPrefixListAssociationCallable(const Model::CreateTransitRouterPrefixListAssociationRequest& request) const;
 			CreateTransitRouterRouteEntryOutcome createTransitRouterRouteEntry(const Model::CreateTransitRouterRouteEntryRequest &request)const;
 			void createTransitRouterRouteEntryAsync(const Model::CreateTransitRouterRouteEntryRequest& request, const CreateTransitRouterRouteEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateTransitRouterRouteEntryOutcomeCallable createTransitRouterRouteEntryCallable(const Model::CreateTransitRouterRouteEntryRequest& request) const;
@@ -785,6 +803,9 @@ namespace AlibabaCloud
 			DeleteTransitRouterPeerAttachmentOutcome deleteTransitRouterPeerAttachment(const Model::DeleteTransitRouterPeerAttachmentRequest &request)const;
 			void deleteTransitRouterPeerAttachmentAsync(const Model::DeleteTransitRouterPeerAttachmentRequest& request, const DeleteTransitRouterPeerAttachmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteTransitRouterPeerAttachmentOutcomeCallable deleteTransitRouterPeerAttachmentCallable(const Model::DeleteTransitRouterPeerAttachmentRequest& request) const;
+			DeleteTransitRouterPrefixListAssociationOutcome deleteTransitRouterPrefixListAssociation(const Model::DeleteTransitRouterPrefixListAssociationRequest &request)const;
+			void deleteTransitRouterPrefixListAssociationAsync(const Model::DeleteTransitRouterPrefixListAssociationRequest& request, const DeleteTransitRouterPrefixListAssociationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteTransitRouterPrefixListAssociationOutcomeCallable deleteTransitRouterPrefixListAssociationCallable(const Model::DeleteTransitRouterPrefixListAssociationRequest& request) const;
 			DeleteTransitRouterRouteEntryOutcome deleteTransitRouterRouteEntry(const Model::DeleteTransitRouterRouteEntryRequest &request)const;
 			void deleteTransitRouterRouteEntryAsync(const Model::DeleteTransitRouterRouteEntryRequest& request, const DeleteTransitRouterRouteEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteTransitRouterRouteEntryOutcomeCallable deleteTransitRouterRouteEntryCallable(const Model::DeleteTransitRouterRouteEntryRequest& request) const;
@@ -929,6 +950,9 @@ namespace AlibabaCloud
 			ListTransitRouterPeerAttachmentsOutcome listTransitRouterPeerAttachments(const Model::ListTransitRouterPeerAttachmentsRequest &request)const;
 			void listTransitRouterPeerAttachmentsAsync(const Model::ListTransitRouterPeerAttachmentsRequest& request, const ListTransitRouterPeerAttachmentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListTransitRouterPeerAttachmentsOutcomeCallable listTransitRouterPeerAttachmentsCallable(const Model::ListTransitRouterPeerAttachmentsRequest& request) const;
+			ListTransitRouterPrefixListAssociationOutcome listTransitRouterPrefixListAssociation(const Model::ListTransitRouterPrefixListAssociationRequest &request)const;
+			void listTransitRouterPrefixListAssociationAsync(const Model::ListTransitRouterPrefixListAssociationRequest& request, const ListTransitRouterPrefixListAssociationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListTransitRouterPrefixListAssociationOutcomeCallable listTransitRouterPrefixListAssociationCallable(const Model::ListTransitRouterPrefixListAssociationRequest& request) const;
 			ListTransitRouterRouteEntriesOutcome listTransitRouterRouteEntries(const Model::ListTransitRouterRouteEntriesRequest &request)const;
 			void listTransitRouterRouteEntriesAsync(const Model::ListTransitRouterRouteEntriesRequest& request, const ListTransitRouterRouteEntriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListTransitRouterRouteEntriesOutcomeCallable listTransitRouterRouteEntriesCallable(const Model::ListTransitRouterRouteEntriesRequest& request) const;
