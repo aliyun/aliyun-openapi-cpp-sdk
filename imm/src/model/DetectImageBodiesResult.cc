@@ -43,31 +43,24 @@ void DetectImageBodiesResult::parse(const std::string &payload)
 	for (auto valueBodiesBodiesItem : allBodiesNode)
 	{
 		BodiesItem bodiesObject;
-		if(!valueBodiesBodiesItem["BodyConfidence"].isNull())
-			bodiesObject.bodyConfidence = std::stof(valueBodiesBodiesItem["BodyConfidence"].asString());
-		auto bodyBoundaryNode = value["BodyBoundary"];
-		if(!bodyBoundaryNode["Top"].isNull())
-			bodiesObject.bodyBoundary.top = std::stoi(bodyBoundaryNode["Top"].asString());
-		if(!bodyBoundaryNode["Width"].isNull())
-			bodiesObject.bodyBoundary.width = std::stoi(bodyBoundaryNode["Width"].asString());
-		if(!bodyBoundaryNode["Height"].isNull())
-			bodiesObject.bodyBoundary.height = std::stoi(bodyBoundaryNode["Height"].asString());
-		if(!bodyBoundaryNode["Left"].isNull())
-			bodiesObject.bodyBoundary.left = std::stoi(bodyBoundaryNode["Left"].asString());
+		if(!valueBodiesBodiesItem["Confidence"].isNull())
+			bodiesObject.confidence = std::stof(valueBodiesBodiesItem["Confidence"].asString());
+		auto boundaryNode = value["Boundary"];
+		if(!boundaryNode["Width"].isNull())
+			bodiesObject.boundary.width = std::stol(boundaryNode["Width"].asString());
+		if(!boundaryNode["Height"].isNull())
+			bodiesObject.boundary.height = std::stol(boundaryNode["Height"].asString());
+		if(!boundaryNode["Left"].isNull())
+			bodiesObject.boundary.left = std::stol(boundaryNode["Left"].asString());
+		if(!boundaryNode["Top"].isNull())
+			bodiesObject.boundary.top = std::stol(boundaryNode["Top"].asString());
 		bodies_.push_back(bodiesObject);
 	}
-	if(!value["ImageUri"].isNull())
-		imageUri_ = value["ImageUri"].asString();
 
 }
 
 std::vector<DetectImageBodiesResult::BodiesItem> DetectImageBodiesResult::getBodies()const
 {
 	return bodies_;
-}
-
-std::string DetectImageBodiesResult::getImageUri()const
-{
-	return imageUri_;
 }
 

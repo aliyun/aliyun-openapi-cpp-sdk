@@ -34,29 +34,37 @@ namespace AlibabaCloud
 			public:
 				struct ProjectsItem
 				{
-					std::string project;
-					std::string modifyTime;
-					std::string type;
-					int cU;
-					std::string serviceRole;
-					std::string endpoint;
+					std::string description;
+					long fileCount;
+					std::string projectName;
 					std::string createTime;
-					std::string regionId;
-					std::string billingType;
+					long projectMaxDatasetCount;
+					long datasetMaxTotalFileSize;
+					long datasetMaxRelationCount;
+					long datasetMaxFileCount;
+					long engineConcurrency;
+					std::string serviceRole;
+					long datasetMaxBindCount;
+					long datasetCount;
+					std::string updateTime;
+					long datasetMaxEntityCount;
+					long totalFileSize;
+					std::string templateId;
+					long projectQueriesPerSecond;
 				};
 
 
 				ListProjectsResult();
 				explicit ListProjectsResult(const std::string &payload);
 				~ListProjectsResult();
+				std::string getNextToken()const;
 				std::vector<ProjectsItem> getProjects()const;
-				std::string getNextMarker()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string nextToken_;
 				std::vector<ProjectsItem> projects_;
-				std::string nextMarker_;
 
 			};
 		}

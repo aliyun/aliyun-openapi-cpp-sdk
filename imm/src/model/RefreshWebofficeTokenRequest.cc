@@ -19,20 +19,11 @@
 using AlibabaCloud::Imm::Model::RefreshWebofficeTokenRequest;
 
 RefreshWebofficeTokenRequest::RefreshWebofficeTokenRequest()
-    : RpcServiceRequest("imm", "2017-09-06", "RefreshWebofficeToken") {
+    : RpcServiceRequest("imm", "2020-09-30", "RefreshWebofficeToken") {
   setMethod(HttpRequest::Method::Post);
 }
 
 RefreshWebofficeTokenRequest::~RefreshWebofficeTokenRequest() {}
-
-std::string RefreshWebofficeTokenRequest::getProject() const {
-  return project_;
-}
-
-void RefreshWebofficeTokenRequest::setProject(const std::string &project) {
-  project_ = project;
-  setParameter(std::string("Project"), project);
-}
 
 std::string RefreshWebofficeTokenRequest::getAccessToken() const {
   return accessToken_;
@@ -43,15 +34,6 @@ void RefreshWebofficeTokenRequest::setAccessToken(const std::string &accessToken
   setParameter(std::string("AccessToken"), accessToken);
 }
 
-std::string RefreshWebofficeTokenRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void RefreshWebofficeTokenRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
 std::string RefreshWebofficeTokenRequest::getRefreshToken() const {
   return refreshToken_;
 }
@@ -59,5 +41,29 @@ std::string RefreshWebofficeTokenRequest::getRefreshToken() const {
 void RefreshWebofficeTokenRequest::setRefreshToken(const std::string &refreshToken) {
   refreshToken_ = refreshToken;
   setParameter(std::string("RefreshToken"), refreshToken);
+}
+
+std::string RefreshWebofficeTokenRequest::getProjectName() const {
+  return projectName_;
+}
+
+void RefreshWebofficeTokenRequest::setProjectName(const std::string &projectName) {
+  projectName_ = projectName;
+  setParameter(std::string("ProjectName"), projectName);
+}
+
+RefreshWebofficeTokenRequest::CredentialConfig RefreshWebofficeTokenRequest::getCredentialConfig() const {
+  return credentialConfig_;
+}
+
+void RefreshWebofficeTokenRequest::setCredentialConfig(const RefreshWebofficeTokenRequest::CredentialConfig &credentialConfig) {
+  credentialConfig_ = credentialConfig;
+  for(int dep1 = 0; dep1 != credentialConfig.chain.size(); dep1++) {
+    setParameter(std::string("CredentialConfig") + ".Chain." + std::to_string(dep1 + 1) + ".Role", credentialConfig.chain[dep1].role);
+    setParameter(std::string("CredentialConfig") + ".Chain." + std::to_string(dep1 + 1) + ".RoleType", credentialConfig.chain[dep1].roleType);
+    setParameter(std::string("CredentialConfig") + ".Chain." + std::to_string(dep1 + 1) + ".AssumeRoleFor", credentialConfig.chain[dep1].assumeRoleFor);
+  }
+  setParameter(std::string("CredentialConfig") + ".ServiceRole", credentialConfig.serviceRole);
+  setParameter(std::string("CredentialConfig") + ".Policy", credentialConfig.policy);
 }
 

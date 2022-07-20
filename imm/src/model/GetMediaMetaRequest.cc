@@ -19,36 +19,42 @@
 using AlibabaCloud::Imm::Model::GetMediaMetaRequest;
 
 GetMediaMetaRequest::GetMediaMetaRequest()
-    : RpcServiceRequest("imm", "2017-09-06", "GetMediaMeta") {
+    : RpcServiceRequest("imm", "2020-09-30", "GetMediaMeta") {
   setMethod(HttpRequest::Method::Post);
 }
 
 GetMediaMetaRequest::~GetMediaMetaRequest() {}
 
-std::string GetMediaMetaRequest::getMediaUri() const {
-  return mediaUri_;
+std::string GetMediaMetaRequest::getProjectName() const {
+  return projectName_;
 }
 
-void GetMediaMetaRequest::setMediaUri(const std::string &mediaUri) {
-  mediaUri_ = mediaUri;
-  setParameter(std::string("MediaUri"), mediaUri);
+void GetMediaMetaRequest::setProjectName(const std::string &projectName) {
+  projectName_ = projectName;
+  setParameter(std::string("ProjectName"), projectName);
 }
 
-std::string GetMediaMetaRequest::getProject() const {
-  return project_;
+GetMediaMetaRequest::CredentialConfig GetMediaMetaRequest::getCredentialConfig() const {
+  return credentialConfig_;
 }
 
-void GetMediaMetaRequest::setProject(const std::string &project) {
-  project_ = project;
-  setParameter(std::string("Project"), project);
+void GetMediaMetaRequest::setCredentialConfig(const GetMediaMetaRequest::CredentialConfig &credentialConfig) {
+  credentialConfig_ = credentialConfig;
+  for(int dep1 = 0; dep1 != credentialConfig.chain.size(); dep1++) {
+    setParameter(std::string("CredentialConfig") + ".Chain." + std::to_string(dep1 + 1) + ".Role", credentialConfig.chain[dep1].role);
+    setParameter(std::string("CredentialConfig") + ".Chain." + std::to_string(dep1 + 1) + ".RoleType", credentialConfig.chain[dep1].roleType);
+    setParameter(std::string("CredentialConfig") + ".Chain." + std::to_string(dep1 + 1) + ".AssumeRoleFor", credentialConfig.chain[dep1].assumeRoleFor);
+  }
+  setParameter(std::string("CredentialConfig") + ".ServiceRole", credentialConfig.serviceRole);
+  setParameter(std::string("CredentialConfig") + ".Policy", credentialConfig.policy);
 }
 
-std::string GetMediaMetaRequest::getAccessKeyId() const {
-  return accessKeyId_;
+std::string GetMediaMetaRequest::getSourceURI() const {
+  return sourceURI_;
 }
 
-void GetMediaMetaRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
+void GetMediaMetaRequest::setSourceURI(const std::string &sourceURI) {
+  sourceURI_ = sourceURI;
+  setParameter(std::string("SourceURI"), sourceURI);
 }
 

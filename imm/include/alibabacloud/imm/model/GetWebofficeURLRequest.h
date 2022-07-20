@@ -28,43 +28,91 @@ namespace Imm {
 namespace Model {
 class ALIBABACLOUD_IMM_EXPORT GetWebofficeURLRequest : public RpcServiceRequest {
 public:
+	struct Watermark {
+		float rotate;
+		long horizontal;
+		std::string fillStyle;
+		long vertical;
+		long type;
+		std::string value;
+		std::string font;
+	};
+	struct Permission {
+		bool print;
+		bool readonly;
+		bool rename;
+		bool history;
+		bool copy;
+		bool export;
+	};
+	struct CredentialConfig {
+		struct ChainItem {
+			std::string role;
+			std::string roleType;
+			std::string assumeRoleFor;
+		};
+		ChainItem chainItem;
+		std::vector<ChainItem> chain;
+		std::string serviceRole;
+		std::string policy;
+	};
+	struct User {
+		std::string name;
+		std::string id;
+		std::string avatar;
+	};
 	GetWebofficeURLRequest();
 	~GetWebofficeURLRequest();
-	std::string getSrcType() const;
-	void setSrcType(const std::string &srcType);
-	std::string getProject() const;
-	void setProject(const std::string &project);
-	std::string getAccessKeyId() const;
-	void setAccessKeyId(const std::string &accessKeyId);
-	std::string getFile() const;
-	void setFile(const std::string &file);
-	bool getHidecmb() const;
-	void setHidecmb(bool hidecmb);
+	std::string getReferer() const;
+	void setReferer(const std::string &referer);
+	std::string getPassword() const;
+	void setPassword(const std::string &password);
 	std::string getNotifyEndpoint() const;
 	void setNotifyEndpoint(const std::string &notifyEndpoint);
-	std::string getFileID() const;
-	void setFileID(const std::string &fileID);
-	std::string getWatermark() const;
-	void setWatermark(const std::string &watermark);
+	std::string getProjectName() const;
+	void setProjectName(const std::string &projectName);
+	Watermark getWatermark() const;
+	void setWatermark(const Watermark &watermark);
 	std::string getNotifyTopicName() const;
 	void setNotifyTopicName(const std::string &notifyTopicName);
-	std::string getPermission() const;
-	void setPermission(const std::string &permission);
-	std::string getUser() const;
-	void setUser(const std::string &user);
+	std::string getFilename() const;
+	void setFilename(const std::string &filename);
+	std::string getSourceURI() const;
+	void setSourceURI(const std::string &sourceURI);
+	bool getExternalUploaded() const;
+	void setExternalUploaded(bool externalUploaded);
+	std::string getUserData() const;
+	void setUserData(const std::string &userData);
+	long getPreviewPages() const;
+	void setPreviewPages(long previewPages);
+	bool getHidecmb() const;
+	void setHidecmb(bool hidecmb);
+	bool getCachePreview() const;
+	void setCachePreview(bool cachePreview);
+	Permission getPermission() const;
+	void setPermission(const Permission &permission);
+	CredentialConfig getCredentialConfig() const;
+	void setCredentialConfig(const CredentialConfig &credentialConfig);
+	User getUser() const;
+	void setUser(const User &user);
 
 private:
-	std::string srcType_;
-	std::string project_;
-	std::string accessKeyId_;
-	std::string file_;
-	bool hidecmb_;
+	std::string referer_;
+	std::string password_;
 	std::string notifyEndpoint_;
-	std::string fileID_;
-	std::string watermark_;
+	std::string projectName_;
+	Watermark watermark_;
 	std::string notifyTopicName_;
-	std::string permission_;
-	std::string user_;
+	std::string filename_;
+	std::string sourceURI_;
+	bool externalUploaded_;
+	std::string userData_;
+	long previewPages_;
+	bool hidecmb_;
+	bool cachePreview_;
+	Permission permission_;
+	CredentialConfig credentialConfig_;
+	User user_;
 };
 } // namespace Model
 } // namespace Imm

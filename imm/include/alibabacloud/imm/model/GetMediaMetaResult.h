@@ -32,115 +32,137 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_IMM_EXPORT GetMediaMetaResult : public ServiceResult
 			{
 			public:
-				struct MediaMeta
+				struct VideoStreamsItem
 				{
-					struct MediaFormat
-					{
-						struct Tag
-						{
-							std::string artist;
-							std::string performer;
-							std::string composer;
-							std::string language;
-							std::string creationTime;
-							std::string album;
-							std::string title;
-							std::string albumArtist;
-						};
-						struct Address
-						{
-							std::string township;
-							std::string addressLine;
-							std::string country;
-							std::string city;
-							std::string district;
-							std::string province;
-						};
-						Address address;
-						int numberStreams;
-						std::string size;
-						std::string formatLongName;
-						std::string creationTime;
-						std::string startTime;
-						std::string formatName;
-						std::string duration;
-						Tag tag;
-						std::string bitrate;
-						int numberPrograms;
-						std::string location;
-					};
-					struct MediaStreams
-					{
-						struct VideoStream
-						{
-							std::string codecTag;
-							std::string frames;
-							std::string codecTimeBase;
-							std::string rotate;
-							std::string sampleAspectRatio;
-							std::string startTime;
-							int index;
-							std::string duration;
-							std::string bitrate;
-							std::string codecName;
-							std::string profile;
-							std::string displayAspectRatio;
-							std::string codecTagString;
-							int hasBFrames;
-							std::string averageFrameRate;
-							std::string language;
-							std::string codecLongName;
-							int height;
-							int level;
-							std::string pixelFormat;
-							std::string frameRrate;
-							int width;
-							std::string timeBase;
-						};
-						struct AudioStream
-						{
-							std::string codecTag;
-							std::string frames;
-							std::string codecTimeBase;
-							std::string channelLayout;
-							std::string startTime;
-							int index;
-							std::string duration;
-							std::string bitrate;
-							std::string codecName;
-							int channels;
-							std::string sampleFormat;
-							std::string codecTagString;
-							std::string sampleRate;
-							std::string language;
-							std::string codecLongName;
-							std::string timeBase;
-						};
-						struct SubtitleStream
-						{
-							std::string language;
-							int index;
-						};
-						std::vector<VideoStream> videoStreams;
-						std::vector<SubtitleStream> subtitleStreams;
-						std::vector<AudioStream> audioStreams;
-					};
-					MediaFormat mediaFormat;
-					MediaStreams mediaStreams;
+					std::string codecTimeBase;
+					std::string rotate;
+					std::string sampleAspectRatio;
+					std::string colorSpace;
+					long index;
+					std::string colorRange;
+					std::string codecName;
+					long bitDepth;
+					std::string profile;
+					std::string colorPrimaries;
+					std::string language;
+					long height;
+					std::string pixelFormat;
+					long width;
+					std::string timeBase;
+					std::string colorTransfer;
+					std::string codecTag;
+					std::string frameRate;
+					long frameCount;
+					double startTime;
+					double duration;
+					long bitrate;
+					std::string displayAspectRatio;
+					std::string codecTagString;
+					long hasBFrames;
+					std::string averageFrameRate;
+					std::string codecLongName;
+					long level;
+				};
+				struct AudioStreamsItem
+				{
+					std::string codecTag;
+					std::string codecTimeBase;
+					std::string channelLayout;
+					long frameCount;
+					double startTime;
+					long index;
+					double duration;
+					std::string codecName;
+					long bitrate;
+					std::string sampleFormat;
+					long channels;
+					std::string codecTagString;
+					long sampleRate;
+					std::string language;
+					std::string codecLongName;
+					std::string lyric;
+					std::string timeBase;
+				};
+				struct SubtitlesItem
+				{
+					std::string codecTag;
+					std::string codecTagString;
+					std::string language;
+					std::string content;
+					std::string codecLongName;
+					double startTime;
+					long index;
+					double duration;
+					long height;
+					std::string codecName;
+					long bitrate;
+					long width;
+				};
+				struct AddressesItem
+				{
+					std::string language;
+					std::string township;
+					std::string addressLine;
+					std::string country;
+					std::string city;
+					std::string district;
+					std::string province;
 				};
 
 
 				GetMediaMetaResult();
 				explicit GetMediaMetaResult(const std::string &payload);
 				~GetMediaMetaResult();
-				std::string getMediaUri()const;
-				MediaMeta getMediaMeta()const;
+				std::string getArtist()const;
+				std::string getProduceTime()const;
+				std::string getComposer()const;
+				std::vector<VideoStreamsItem> getVideoStreams()const;
+				long getSize()const;
+				long getVideoWidth()const;
+				std::string getFormatLongName()const;
+				long getProgramCount()const;
+				double getStartTime()const;
+				std::string getTitle()const;
+				std::string getAlbum()const;
+				double getDuration()const;
+				long getBitrate()const;
+				std::string getAlbumArtist()const;
+				std::vector<AudioStreamsItem> getAudioStreams()const;
+				std::vector<AddressesItem> getAddresses()const;
+				long getStreamCount()const;
+				std::string getPerformer()const;
+				std::string getLanguage()const;
+				long getVideoHeight()const;
+				std::vector<SubtitlesItem> getSubtitles()const;
+				std::string getFormatName()const;
+				std::string getLatLong()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string mediaUri_;
-				MediaMeta mediaMeta_;
+				std::string artist_;
+				std::string produceTime_;
+				std::string composer_;
+				std::vector<VideoStreamsItem> videoStreams_;
+				long size_;
+				long videoWidth_;
+				std::string formatLongName_;
+				long programCount_;
+				double startTime_;
+				std::string title_;
+				std::string album_;
+				double duration_;
+				long bitrate_;
+				std::string albumArtist_;
+				std::vector<AudioStreamsItem> audioStreams_;
+				std::vector<AddressesItem> addresses_;
+				long streamCount_;
+				std::string performer_;
+				std::string language_;
+				long videoHeight_;
+				std::vector<SubtitlesItem> subtitles_;
+				std::string formatName_;
+				std::string latLong_;
 
 			};
 		}

@@ -19,36 +19,36 @@
 using AlibabaCloud::Imm::Model::ListProjectsRequest;
 
 ListProjectsRequest::ListProjectsRequest()
-    : RpcServiceRequest("imm", "2017-09-06", "ListProjects") {
+    : RpcServiceRequest("imm", "2020-09-30", "ListProjects") {
   setMethod(HttpRequest::Method::Post);
 }
 
 ListProjectsRequest::~ListProjectsRequest() {}
 
-int ListProjectsRequest::getMaxKeys() const {
-  return maxKeys_;
+std::string ListProjectsRequest::getPrefix() const {
+  return prefix_;
 }
 
-void ListProjectsRequest::setMaxKeys(int maxKeys) {
-  maxKeys_ = maxKeys;
-  setParameter(std::string("MaxKeys"), std::to_string(maxKeys));
+void ListProjectsRequest::setPrefix(const std::string &prefix) {
+  prefix_ = prefix;
+  setParameter(std::string("Prefix"), prefix);
 }
 
-std::string ListProjectsRequest::getAccessKeyId() const {
-  return accessKeyId_;
+std::string ListProjectsRequest::getNextToken() const {
+  return nextToken_;
 }
 
-void ListProjectsRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
+void ListProjectsRequest::setNextToken(const std::string &nextToken) {
+  nextToken_ = nextToken;
+  setParameter(std::string("NextToken"), nextToken);
 }
 
-std::string ListProjectsRequest::getMarker() const {
-  return marker_;
+long ListProjectsRequest::getMaxResults() const {
+  return maxResults_;
 }
 
-void ListProjectsRequest::setMarker(const std::string &marker) {
-  marker_ = marker;
-  setParameter(std::string("Marker"), marker);
+void ListProjectsRequest::setMaxResults(long maxResults) {
+  maxResults_ = maxResults;
+  setParameter(std::string("MaxResults"), std::to_string(maxResults));
 }
 
