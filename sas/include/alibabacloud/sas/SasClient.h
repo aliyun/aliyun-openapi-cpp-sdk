@@ -338,6 +338,8 @@
 #include "model/ModifyBackupPolicyResult.h"
 #include "model/ModifyBackupPolicyStatusRequest.h"
 #include "model/ModifyBackupPolicyStatusResult.h"
+#include "model/ModifyClearLogstoreStorageRequest.h"
+#include "model/ModifyClearLogstoreStorageResult.h"
 #include "model/ModifyCreateVulWhitelistRequest.h"
 #include "model/ModifyCreateVulWhitelistResult.h"
 #include "model/ModifyEmgVulSubmitRequest.h"
@@ -911,6 +913,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyBackupPolicyStatusResult> ModifyBackupPolicyStatusOutcome;
 			typedef std::future<ModifyBackupPolicyStatusOutcome> ModifyBackupPolicyStatusOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::ModifyBackupPolicyStatusRequest&, const ModifyBackupPolicyStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBackupPolicyStatusAsyncHandler;
+			typedef Outcome<Error, Model::ModifyClearLogstoreStorageResult> ModifyClearLogstoreStorageOutcome;
+			typedef std::future<ModifyClearLogstoreStorageOutcome> ModifyClearLogstoreStorageOutcomeCallable;
+			typedef std::function<void(const SasClient*, const Model::ModifyClearLogstoreStorageRequest&, const ModifyClearLogstoreStorageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClearLogstoreStorageAsyncHandler;
 			typedef Outcome<Error, Model::ModifyCreateVulWhitelistResult> ModifyCreateVulWhitelistOutcome;
 			typedef std::future<ModifyCreateVulWhitelistOutcome> ModifyCreateVulWhitelistOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::ModifyCreateVulWhitelistRequest&, const ModifyCreateVulWhitelistOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCreateVulWhitelistAsyncHandler;
@@ -1525,6 +1530,9 @@ namespace AlibabaCloud
 			ModifyBackupPolicyStatusOutcome modifyBackupPolicyStatus(const Model::ModifyBackupPolicyStatusRequest &request)const;
 			void modifyBackupPolicyStatusAsync(const Model::ModifyBackupPolicyStatusRequest& request, const ModifyBackupPolicyStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyBackupPolicyStatusOutcomeCallable modifyBackupPolicyStatusCallable(const Model::ModifyBackupPolicyStatusRequest& request) const;
+			ModifyClearLogstoreStorageOutcome modifyClearLogstoreStorage(const Model::ModifyClearLogstoreStorageRequest &request)const;
+			void modifyClearLogstoreStorageAsync(const Model::ModifyClearLogstoreStorageRequest& request, const ModifyClearLogstoreStorageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyClearLogstoreStorageOutcomeCallable modifyClearLogstoreStorageCallable(const Model::ModifyClearLogstoreStorageRequest& request) const;
 			ModifyCreateVulWhitelistOutcome modifyCreateVulWhitelist(const Model::ModifyCreateVulWhitelistRequest &request)const;
 			void modifyCreateVulWhitelistAsync(const Model::ModifyCreateVulWhitelistRequest& request, const ModifyCreateVulWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyCreateVulWhitelistOutcomeCallable modifyCreateVulWhitelistCallable(const Model::ModifyCreateVulWhitelistRequest& request) const;

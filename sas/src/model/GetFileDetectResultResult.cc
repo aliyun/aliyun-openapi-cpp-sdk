@@ -43,10 +43,14 @@ void GetFileDetectResultResult::parse(const std::string &payload)
 	for (auto valueResultListResult : allResultListNode)
 	{
 		Result resultListObject;
-		if(!valueResultListResult["Result"].isNull())
-			resultListObject.result = std::stoi(valueResultListResult["Result"].asString());
 		if(!valueResultListResult["HashKey"].isNull())
 			resultListObject.hashKey = valueResultListResult["HashKey"].asString();
+		if(!valueResultListResult["Result"].isNull())
+			resultListObject.result = std::stoi(valueResultListResult["Result"].asString());
+		if(!valueResultListResult["Score"].isNull())
+			resultListObject.score = std::stoi(valueResultListResult["Score"].asString());
+		if(!valueResultListResult["VirusType"].isNull())
+			resultListObject.virusType = valueResultListResult["VirusType"].asString();
 		auto extNode = value["Ext"];
 		if(!extNode["VirusName"].isNull())
 			resultListObject.ext.virusName = extNode["VirusName"].asString();

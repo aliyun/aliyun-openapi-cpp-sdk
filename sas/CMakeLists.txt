@@ -337,6 +337,8 @@ set(sas_public_header_model
 	include/alibabacloud/sas/model/ModifyBackupPolicyResult.h
 	include/alibabacloud/sas/model/ModifyBackupPolicyStatusRequest.h
 	include/alibabacloud/sas/model/ModifyBackupPolicyStatusResult.h
+	include/alibabacloud/sas/model/ModifyClearLogstoreStorageRequest.h
+	include/alibabacloud/sas/model/ModifyClearLogstoreStorageResult.h
 	include/alibabacloud/sas/model/ModifyCreateVulWhitelistRequest.h
 	include/alibabacloud/sas/model/ModifyCreateVulWhitelistResult.h
 	include/alibabacloud/sas/model/ModifyEmgVulSubmitRequest.h
@@ -746,6 +748,8 @@ set(sas_src
 	src/model/ModifyBackupPolicyResult.cc
 	src/model/ModifyBackupPolicyStatusRequest.cc
 	src/model/ModifyBackupPolicyStatusResult.cc
+	src/model/ModifyClearLogstoreStorageRequest.cc
+	src/model/ModifyClearLogstoreStorageResult.cc
 	src/model/ModifyCreateVulWhitelistRequest.cc
 	src/model/ModifyCreateVulWhitelistResult.cc
 	src/model/ModifyEmgVulSubmitRequest.cc

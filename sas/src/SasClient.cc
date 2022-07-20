@@ -5739,6 +5739,42 @@ SasClient::ModifyBackupPolicyStatusOutcomeCallable SasClient::modifyBackupPolicy
 	return task->get_future();
 }
 
+SasClient::ModifyClearLogstoreStorageOutcome SasClient::modifyClearLogstoreStorage(const ModifyClearLogstoreStorageRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyClearLogstoreStorageOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyClearLogstoreStorageOutcome(ModifyClearLogstoreStorageResult(outcome.result()));
+	else
+		return ModifyClearLogstoreStorageOutcome(outcome.error());
+}
+
+void SasClient::modifyClearLogstoreStorageAsync(const ModifyClearLogstoreStorageRequest& request, const ModifyClearLogstoreStorageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyClearLogstoreStorage(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::ModifyClearLogstoreStorageOutcomeCallable SasClient::modifyClearLogstoreStorageCallable(const ModifyClearLogstoreStorageRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyClearLogstoreStorageOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyClearLogstoreStorage(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SasClient::ModifyCreateVulWhitelistOutcome SasClient::modifyCreateVulWhitelist(const ModifyCreateVulWhitelistRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SAS_MODEL_GETFILEDETECTRESULTRESULT_H_
-#define ALIBABACLOUD_SAS_MODEL_GETFILEDETECTRESULTRESULT_H_
+#ifndef ALIBABACLOUD_SAS_MODEL_MODIFYCLEARLOGSTORESTORAGERESULT_H_
+#define ALIBABACLOUD_SAS_MODEL_MODIFYCLEARLOGSTORESTORAGERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,35 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SAS_EXPORT GetFileDetectResultResult : public ServiceResult
+			class ALIBABACLOUD_SAS_EXPORT ModifyClearLogstoreStorageResult : public ServiceResult
 			{
 			public:
-				struct Result
-				{
-					struct Ext
-					{
-						std::string virusName;
-					};
-					Ext ext;
-					int score;
-					std::string virusType;
-					std::string hashKey;
-					int result;
-				};
 
 
-				GetFileDetectResultResult();
-				explicit GetFileDetectResultResult(const std::string &payload);
-				~GetFileDetectResultResult();
-				std::vector<Result> getResultList()const;
+				ModifyClearLogstoreStorageResult();
+				explicit ModifyClearLogstoreStorageResult(const std::string &payload);
+				~ModifyClearLogstoreStorageResult();
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<Result> resultList_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SAS_MODEL_GETFILEDETECTRESULTRESULT_H_
+#endif // !ALIBABACLOUD_SAS_MODEL_MODIFYCLEARLOGSTORESTORAGERESULT_H_
