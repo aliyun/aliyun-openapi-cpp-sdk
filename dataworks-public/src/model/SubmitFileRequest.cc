@@ -25,6 +25,15 @@ SubmitFileRequest::SubmitFileRequest()
 
 SubmitFileRequest::~SubmitFileRequest() {}
 
+bool SubmitFileRequest::getSkipAllDeployFileExtensions() const {
+  return skipAllDeployFileExtensions_;
+}
+
+void SubmitFileRequest::setSkipAllDeployFileExtensions(bool skipAllDeployFileExtensions) {
+  skipAllDeployFileExtensions_ = skipAllDeployFileExtensions;
+  setBodyParameter(std::string("SkipAllDeployFileExtensions"), skipAllDeployFileExtensions ? "true" : "false");
+}
+
 std::string SubmitFileRequest::getComment() const {
   return comment_;
 }

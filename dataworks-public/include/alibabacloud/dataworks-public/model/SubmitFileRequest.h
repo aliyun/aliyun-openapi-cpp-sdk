@@ -30,6 +30,8 @@ class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT SubmitFileRequest : public RpcService
 public:
 	SubmitFileRequest();
 	~SubmitFileRequest();
+	bool getSkipAllDeployFileExtensions() const;
+	void setSkipAllDeployFileExtensions(bool skipAllDeployFileExtensions);
 	std::string getComment() const;
 	void setComment(const std::string &comment);
 	long getProjectId() const;
@@ -40,6 +42,7 @@ public:
 	void setFileId(long fileId);
 
 private:
+	bool skipAllDeployFileExtensions_;
 	std::string comment_;
 	long projectId_;
 	std::string projectIdentifier_;
