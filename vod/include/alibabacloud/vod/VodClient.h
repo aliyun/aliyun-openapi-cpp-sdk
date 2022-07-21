@@ -56,6 +56,8 @@
 #include "model/CreateUploadImageResult.h"
 #include "model/CreateUploadVideoRequest.h"
 #include "model/CreateUploadVideoResult.h"
+#include "model/DecryptKMSDataKeyRequest.h"
+#include "model/DecryptKMSDataKeyResult.h"
 #include "model/DeleteAIImageInfosRequest.h"
 #include "model/DeleteAIImageInfosResult.h"
 #include "model/DeleteAITemplateRequest.h"
@@ -132,6 +134,8 @@
 #include "model/DescribeVodVerifyContentResult.h"
 #include "model/DetachAppPolicyFromIdentityRequest.h"
 #include "model/DetachAppPolicyFromIdentityResult.h"
+#include "model/GenerateKMSDataKeyRequest.h"
+#include "model/GenerateKMSDataKeyResult.h"
 #include "model/GetAIImageJobsRequest.h"
 #include "model/GetAIImageJobsResult.h"
 #include "model/GetAIMediaAuditJobRequest.h"
@@ -366,6 +370,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateUploadVideoResult> CreateUploadVideoOutcome;
 			typedef std::future<CreateUploadVideoOutcome> CreateUploadVideoOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::CreateUploadVideoRequest&, const CreateUploadVideoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateUploadVideoAsyncHandler;
+			typedef Outcome<Error, Model::DecryptKMSDataKeyResult> DecryptKMSDataKeyOutcome;
+			typedef std::future<DecryptKMSDataKeyOutcome> DecryptKMSDataKeyOutcomeCallable;
+			typedef std::function<void(const VodClient*, const Model::DecryptKMSDataKeyRequest&, const DecryptKMSDataKeyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DecryptKMSDataKeyAsyncHandler;
 			typedef Outcome<Error, Model::DeleteAIImageInfosResult> DeleteAIImageInfosOutcome;
 			typedef std::future<DeleteAIImageInfosOutcome> DeleteAIImageInfosOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::DeleteAIImageInfosRequest&, const DeleteAIImageInfosOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAIImageInfosAsyncHandler;
@@ -480,6 +487,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DetachAppPolicyFromIdentityResult> DetachAppPolicyFromIdentityOutcome;
 			typedef std::future<DetachAppPolicyFromIdentityOutcome> DetachAppPolicyFromIdentityOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::DetachAppPolicyFromIdentityRequest&, const DetachAppPolicyFromIdentityOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetachAppPolicyFromIdentityAsyncHandler;
+			typedef Outcome<Error, Model::GenerateKMSDataKeyResult> GenerateKMSDataKeyOutcome;
+			typedef std::future<GenerateKMSDataKeyOutcome> GenerateKMSDataKeyOutcomeCallable;
+			typedef std::function<void(const VodClient*, const Model::GenerateKMSDataKeyRequest&, const GenerateKMSDataKeyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GenerateKMSDataKeyAsyncHandler;
 			typedef Outcome<Error, Model::GetAIImageJobsResult> GetAIImageJobsOutcome;
 			typedef std::future<GetAIImageJobsOutcome> GetAIImageJobsOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::GetAIImageJobsRequest&, const GetAIImageJobsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAIImageJobsAsyncHandler;
@@ -797,6 +807,9 @@ namespace AlibabaCloud
 			CreateUploadVideoOutcome createUploadVideo(const Model::CreateUploadVideoRequest &request)const;
 			void createUploadVideoAsync(const Model::CreateUploadVideoRequest& request, const CreateUploadVideoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateUploadVideoOutcomeCallable createUploadVideoCallable(const Model::CreateUploadVideoRequest& request) const;
+			DecryptKMSDataKeyOutcome decryptKMSDataKey(const Model::DecryptKMSDataKeyRequest &request)const;
+			void decryptKMSDataKeyAsync(const Model::DecryptKMSDataKeyRequest& request, const DecryptKMSDataKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DecryptKMSDataKeyOutcomeCallable decryptKMSDataKeyCallable(const Model::DecryptKMSDataKeyRequest& request) const;
 			DeleteAIImageInfosOutcome deleteAIImageInfos(const Model::DeleteAIImageInfosRequest &request)const;
 			void deleteAIImageInfosAsync(const Model::DeleteAIImageInfosRequest& request, const DeleteAIImageInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteAIImageInfosOutcomeCallable deleteAIImageInfosCallable(const Model::DeleteAIImageInfosRequest& request) const;
@@ -911,6 +924,9 @@ namespace AlibabaCloud
 			DetachAppPolicyFromIdentityOutcome detachAppPolicyFromIdentity(const Model::DetachAppPolicyFromIdentityRequest &request)const;
 			void detachAppPolicyFromIdentityAsync(const Model::DetachAppPolicyFromIdentityRequest& request, const DetachAppPolicyFromIdentityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DetachAppPolicyFromIdentityOutcomeCallable detachAppPolicyFromIdentityCallable(const Model::DetachAppPolicyFromIdentityRequest& request) const;
+			GenerateKMSDataKeyOutcome generateKMSDataKey(const Model::GenerateKMSDataKeyRequest &request)const;
+			void generateKMSDataKeyAsync(const Model::GenerateKMSDataKeyRequest& request, const GenerateKMSDataKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GenerateKMSDataKeyOutcomeCallable generateKMSDataKeyCallable(const Model::GenerateKMSDataKeyRequest& request) const;
 			GetAIImageJobsOutcome getAIImageJobs(const Model::GetAIImageJobsRequest &request)const;
 			void getAIImageJobsAsync(const Model::GetAIImageJobsRequest& request, const GetAIImageJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetAIImageJobsOutcomeCallable getAIImageJobsCallable(const Model::GetAIImageJobsRequest& request) const;

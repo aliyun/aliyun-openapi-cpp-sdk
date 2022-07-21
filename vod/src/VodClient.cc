@@ -663,6 +663,42 @@ VodClient::CreateUploadVideoOutcomeCallable VodClient::createUploadVideoCallable
 	return task->get_future();
 }
 
+VodClient::DecryptKMSDataKeyOutcome VodClient::decryptKMSDataKey(const DecryptKMSDataKeyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DecryptKMSDataKeyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DecryptKMSDataKeyOutcome(DecryptKMSDataKeyResult(outcome.result()));
+	else
+		return DecryptKMSDataKeyOutcome(outcome.error());
+}
+
+void VodClient::decryptKMSDataKeyAsync(const DecryptKMSDataKeyRequest& request, const DecryptKMSDataKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, decryptKMSDataKey(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::DecryptKMSDataKeyOutcomeCallable VodClient::decryptKMSDataKeyCallable(const DecryptKMSDataKeyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DecryptKMSDataKeyOutcome()>>(
+			[this, request]()
+			{
+			return this->decryptKMSDataKey(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VodClient::DeleteAIImageInfosOutcome VodClient::deleteAIImageInfos(const DeleteAIImageInfosRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2025,6 +2061,42 @@ VodClient::DetachAppPolicyFromIdentityOutcomeCallable VodClient::detachAppPolicy
 			[this, request]()
 			{
 			return this->detachAppPolicyFromIdentity(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VodClient::GenerateKMSDataKeyOutcome VodClient::generateKMSDataKey(const GenerateKMSDataKeyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GenerateKMSDataKeyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GenerateKMSDataKeyOutcome(GenerateKMSDataKeyResult(outcome.result()));
+	else
+		return GenerateKMSDataKeyOutcome(outcome.error());
+}
+
+void VodClient::generateKMSDataKeyAsync(const GenerateKMSDataKeyRequest& request, const GenerateKMSDataKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, generateKMSDataKey(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::GenerateKMSDataKeyOutcomeCallable VodClient::generateKMSDataKeyCallable(const GenerateKMSDataKeyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GenerateKMSDataKeyOutcome()>>(
+			[this, request]()
+			{
+			return this->generateKMSDataKey(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

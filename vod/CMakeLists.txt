@@ -55,6 +55,8 @@ set(vod_public_header_model
 	include/alibabacloud/vod/model/CreateUploadImageResult.h
 	include/alibabacloud/vod/model/CreateUploadVideoRequest.h
 	include/alibabacloud/vod/model/CreateUploadVideoResult.h
+	include/alibabacloud/vod/model/DecryptKMSDataKeyRequest.h
+	include/alibabacloud/vod/model/DecryptKMSDataKeyResult.h
 	include/alibabacloud/vod/model/DeleteAIImageInfosRequest.h
 	include/alibabacloud/vod/model/DeleteAIImageInfosResult.h
 	include/alibabacloud/vod/model/DeleteAITemplateRequest.h
@@ -131,6 +133,8 @@ set(vod_public_header_model
 	include/alibabacloud/vod/model/DescribeVodVerifyContentResult.h
 	include/alibabacloud/vod/model/DetachAppPolicyFromIdentityRequest.h
 	include/alibabacloud/vod/model/DetachAppPolicyFromIdentityResult.h
+	include/alibabacloud/vod/model/GenerateKMSDataKeyRequest.h
+	include/alibabacloud/vod/model/GenerateKMSDataKeyResult.h
 	include/alibabacloud/vod/model/GetAIImageJobsRequest.h
 	include/alibabacloud/vod/model/GetAIImageJobsResult.h
 	include/alibabacloud/vod/model/GetAIMediaAuditJobRequest.h
@@ -342,6 +346,8 @@ set(vod_src
 	src/model/CreateUploadImageResult.cc
 	src/model/CreateUploadVideoRequest.cc
 	src/model/CreateUploadVideoResult.cc
+	src/model/DecryptKMSDataKeyRequest.cc
+	src/model/DecryptKMSDataKeyResult.cc
 	src/model/DeleteAIImageInfosRequest.cc
 	src/model/DeleteAIImageInfosResult.cc
 	src/model/DeleteAITemplateRequest.cc
@@ -418,6 +424,8 @@ set(vod_src
 	src/model/DescribeVodVerifyContentResult.cc
 	src/model/DetachAppPolicyFromIdentityRequest.cc
 	src/model/DetachAppPolicyFromIdentityResult.cc
+	src/model/GenerateKMSDataKeyRequest.cc
+	src/model/GenerateKMSDataKeyResult.cc
 	src/model/GetAIImageJobsRequest.cc
 	src/model/GetAIImageJobsResult.cc
 	src/model/GetAIMediaAuditJobRequest.cc
