@@ -70,6 +70,16 @@ void ListAggregateConfigRulesResult::parse(const std::string &payload)
 			configRuleObject.configRuleName = configRulesNodeConfigRuleListConfigRule["ConfigRuleName"].asString();
 		if(!configRulesNodeConfigRuleListConfigRule["ConfigRuleId"].isNull())
 			configRuleObject.configRuleId = configRulesNodeConfigRuleListConfigRule["ConfigRuleId"].asString();
+		auto allTagsNode = configRulesNodeConfigRuleListConfigRule["Tags"]["tag"];
+		for (auto configRulesNodeConfigRuleListConfigRuleTagstag : allTagsNode)
+		{
+			ConfigRules::ConfigRule::Tag tagsObject;
+			if(!configRulesNodeConfigRuleListConfigRuleTagstag["Key"].isNull())
+				tagsObject.key = configRulesNodeConfigRuleListConfigRuleTagstag["Key"].asString();
+			if(!configRulesNodeConfigRuleListConfigRuleTagstag["Value"].isNull())
+				tagsObject.value = configRulesNodeConfigRuleListConfigRuleTagstag["Value"].asString();
+			configRuleObject.tags.push_back(tagsObject);
+		}
 		auto complianceNode = value["Compliance"];
 		if(!complianceNode["ComplianceType"].isNull())
 			configRuleObject.compliance.complianceType = complianceNode["ComplianceType"].asString();

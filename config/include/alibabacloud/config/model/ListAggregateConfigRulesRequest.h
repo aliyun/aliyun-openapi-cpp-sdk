@@ -28,6 +28,10 @@ namespace Config {
 namespace Model {
 class ALIBABACLOUD_CONFIG_EXPORT ListAggregateConfigRulesRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string value;
+		std::string key;
+	};
 	ListAggregateConfigRulesRequest();
 	~ListAggregateConfigRulesRequest();
 	bool getFilterInCompliancePack() const;
@@ -46,6 +50,8 @@ public:
 	void setPageSize(int pageSize);
 	std::string getCompliancePackId() const;
 	void setCompliancePackId(const std::string &compliancePackId);
+	Tag getTag() const;
+	void setTag(const Tag &tag);
 	std::string getComplianceType() const;
 	void setComplianceType(const std::string &complianceType);
 	int getRiskLevel() const;
@@ -62,6 +68,7 @@ private:
 	int pageNumber_;
 	int pageSize_;
 	std::string compliancePackId_;
+	Tag tag_;
 	std::string complianceType_;
 	int riskLevel_;
 	std::string configRuleName_;

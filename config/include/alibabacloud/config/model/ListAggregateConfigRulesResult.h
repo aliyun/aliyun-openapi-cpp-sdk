@@ -51,18 +51,24 @@ namespace AlibabaCloud
 							std::string creatorName;
 							std::string aggregatorId;
 						};
-						std::string configRuleId;
+						struct Tag
+						{
+							std::string value;
+							std::string key;
+						};
 						long accountId;
 						std::string description;
 						Compliance compliance;
-						std::string configRuleArn;
-						std::string automationType;
 						std::string sourceOwner;
 						CreateBy createBy;
 						std::string sourceIdentifier;
+						std::string configRuleState;
+						std::string configRuleId;
+						std::string configRuleArn;
+						std::string automationType;
 						std::string configRuleName;
 						int riskLevel;
-						std::string configRuleState;
+						std::vector<ConfigRule::Tag> tags;
 					};
 					long totalCount;
 					int pageSize;

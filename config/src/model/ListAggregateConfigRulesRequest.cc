@@ -97,6 +97,16 @@ void ListAggregateConfigRulesRequest::setCompliancePackId(const std::string &com
   setParameter(std::string("CompliancePackId"), compliancePackId);
 }
 
+ListAggregateConfigRulesRequest::Tag ListAggregateConfigRulesRequest::getTag() const {
+  return tag_;
+}
+
+void ListAggregateConfigRulesRequest::setTag(const ListAggregateConfigRulesRequest::Tag &tag) {
+  tag_ = tag;
+  setParameter(std::string("Tag") + ".Value", tag.value);
+  setParameter(std::string("Tag") + ".Key", tag.key);
+}
+
 std::string ListAggregateConfigRulesRequest::getComplianceType() const {
   return complianceType_;
 }
